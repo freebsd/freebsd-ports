@@ -1,9 +1,9 @@
---- src/STEPConstruct/STEPConstruct_AP203Context.cxx.orig	2022-09-30 11:53:57 UTC
+--- src/STEPConstruct/STEPConstruct_AP203Context.cxx.orig	2025-02-17 22:00:23 UTC
 +++ src/STEPConstruct/STEPConstruct_AP203Context.cxx
-@@ -121,7 +121,15 @@ Handle(StepBasic_DateAndTime) STEPConstruct_AP203Conte
+@@ -110,7 +110,15 @@ Handle(StepBasic_DateAndTime) STEPConstruct_AP203Conte
      long shift = 0;
-     _get_timezone (&shift);
-   #else
+     _get_timezone(&shift);
+ #else
 -    Standard_Integer shift = Standard_Integer(timezone);
 +    #if defined(__FreeBSD__)
 +	struct tm *lt;
@@ -14,6 +14,6 @@
 +    #else
 +      Standard_Integer shift = Standard_Integer(timezone);
 +    #endif
-   #endif
-     Standard_Integer shifth = abs ( shift ) / 3600;
-     Standard_Integer shiftm = ( abs ( shift ) - shifth * 3600 ) / 60;
+ #endif
+     Standard_Integer        shifth = abs(shift) / 3600;
+     Standard_Integer        shiftm = (abs(shift) - shifth * 3600) / 60;

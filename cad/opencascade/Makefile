@@ -1,7 +1,6 @@
 PORTNAME=	opencascade
 DISTVERSIONPREFIX=	V
-DISTVERSION=	7_8_1
-PORTREVISION=	5
+DISTVERSION=	7_9_0
 CATEGORIES=	cad science
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
@@ -26,8 +25,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
 		libvtksys-${VTK_VER}.so:math/vtk${VTK_VER:R}
 RUN_DEPENDS=	bash:shells/bash
 
-# Check ${WRKSRC}/dox/overview/overview.md
-# and ${WRKSRC}/dox/dev_guides/building
+# Check ${WRKSRC}/dox/build/build_occt/building_occt.md
 USES=		alias:10 cmake compiler:c++14-lang eigen:3 gettext-runtime	\
 		gl gnome localbase python qt:5 shebangfix tk xorg
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xi xmu xrender xscrnsaver xt
@@ -42,9 +40,7 @@ GH_PROJECT=	OCCT
 SHEBANG_FILES=	adm/templates/*.sh	\
 		adm/templates/*.sh.in	\
 		adm/templates/*.sh.main	\
-		adm/genconf.tcl		\
-		adm/start.tcl		\
-		gendoc
+		adm/*.tcl
 ENVSH=		adm/templates/env.sh
 
 OPTIONS_DEFINE=	DOCS DOXYGEN FFMPEG VIS
@@ -159,27 +155,33 @@ pre-everything::
 	@${ECHO_MSG} "2.6 Gb of free disk space in build area!"
 	@${ECHO_MSG}
 
-pre-patch:
-	${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|' \
-		${WRKSRC}/src/BRepMesh/delabella.cpp\
-		${WRKSRC}/src/OSD/OSD_MemInfo.cxx
-
 pre-configure:
-	${REINPLACE_CMD} -e 's|tclsh|${TCLSH}|' ${WRKSRC}/gendoc
-	${REINPLACE_CMD} -e 's|/usr/bin/|${LOCALBASE}/bin/|' ${WRKSRC}/adm/genconfdeps.tcl
+	${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|'	\
+		${WRKSRC}/src/BRepMesh/delabella.cpp	\
+		${WRKSRC}/src/OSD/OSD_MemInfo.cxx
+	${REINPLACE_CMD} -e 's|tclsh|${TCLSH}|' ${WRKSRC}/adm/gendoc
+	${REINPLACE_CMD} -e 's|/usr/bin/|${LOCALBASE}/bin/|'	\
+		${WRKSRC}/adm/vcpkg/ports/ffmpeg/portfile.cmake
 	${GREP} -rl x86_64 ${WRKSRC} | ${XARGS} ${REINPLACE_CMD}	\
 		-e 's|x86_64|amd64|'
 .for es in ${ENVSH}
 	${REINPLACE_CMD} -e 's|lin|bsd|' ${WRKSRC}/${es}
 .endfor
 
+post-configure:
+	${REINPLACE_CMD} -e '/Standard_Version.hxx/s|${BUILD_WRKSRC}/||'	\
+		${BUILD_WRKSRC}/cmake_install.cmake
+
 post-stage:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/cmake/OpenCASCADE
 	${MV} ${STAGEDIR}${PREFIX}/lib/cmake/*.cmake	\
 		${STAGEDIR}${PREFIX}/lib/cmake/OpenCASCADE
+	${REINPLACE_CMD} -e '/Standard_Version.hxx/s|${STAGEDIR}${PREFIX}/||'	\
+		-e '/^@dir/d' ${WRKDIR}/.PLIST.mktmp
 
 post-install:
-	${MV} ${STAGEDIR}${OCCROOT}/bin/DRAWEXE-${PORTVERSION} ${STAGEDIR}${PREFIX}/bin/DRAWEXE
+	${MV} ${STAGEDIR}${OCCROOT}/bin/DRAWEXE-${PORTVERSION}	\
+		${STAGEDIR}${PREFIX}/bin/DRAWEXE
 	${RLN} ${STAGEDIR}${PREFIX}/bin/DRAWEXE ${STAGEDIR}${OCCROOT}/bin
 
 post-install-DOXYGEN-on:
