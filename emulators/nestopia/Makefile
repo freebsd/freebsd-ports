@@ -1,5 +1,5 @@
 PORTNAME=	nestopia
-DISTVERSION=	1.52.1
+DISTVERSION=	1.53.1
 CATEGORIES=	emulators
 
 MAINTAINER=	mclay@astate.edu
@@ -14,11 +14,12 @@ BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive \
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libpng.so:graphics/png
+		libpng.so:graphics/png \
+		libsamplerate.so:audio/libsamplerate
 
 USES=		autoreconf gl gnome jpeg libarchive \
 		localbase:ldflags pkgconfig sdl
-USE_CXXSTD=	c++98
+USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 GH_ACCOUNT=	0ldsk00l
 GNU_CONFIGURE=	yes

@@ -3,6 +3,7 @@ share/applications/nestopia.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/readme.html
+share/icons/hicolor/256x256/apps/nestopia.png
 share/icons/hicolor/128x128/apps/nestopia.png
 share/icons/hicolor/32x32/apps/nestopia.png
 share/icons/hicolor/48x48/apps/nestopia.png
@@ -11,3 +12,16 @@ share/icons/hicolor/96x96/apps/nestopia.png
 share/icons/hicolor/scalable/apps/nespad.svg
 share/icons/hicolor/scalable/apps/nestopia.svg
 %%DATADIR%%/NstDatabase.xml
+%%DATADIR%%/palettes/Digital_Prime_FBX.pal
+%%DATADIR%%/palettes/Magnum_FBX.pal
+%%DATADIR%%/palettes/Nobilitea.pal
+%%DATADIR%%/palettes/PVM_Style_D93_FBX.pal
+%%DATADIR%%/palettes/Royaltea.pal
+%%DATADIR%%/palettes/SONY_CXA2025AS_US.pal
+%%DATADIR%%/palettes/Smooth_V2_FBX.pal
+%%DATADIR%%/shaders/crtea.fs
+%%DATADIR%%/shaders/default.fs
+%%DATADIR%%/shaders/default.vs
+%%DATADIR%%/shaders/mmpx.fs
+%%DATADIR%%/shaders/omniscale.fs
+%%DATADIR%%/shaders/sharp-bilinear.fs
