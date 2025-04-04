@@ -1,4 +1,3 @@
-bin/ctags
 bin/ebrowse
 bin/emacs
 bin/emacs-%%EMACS_VER%%
@@ -4042,6 +4041,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/tree-widget.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/treesit.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/treesit.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/treesit-x.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/treesit-x.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tty-tip.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/tty-tip.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tutorial.el.gz
@@ -4525,7 +4526,6 @@ share/icons/hicolor/scalable/apps/emacs.ico
 share/icons/hicolor/scalable/apps/emacs.svg
 share/icons/hicolor/scalable/mimetypes/emacs-document.svg
 share/icons/hicolor/scalable/mimetypes/emacs-document23.svg
-share/man/man1/ctags.1.gz
 share/man/man1/ebrowse.1.gz
 share/man/man1/emacs.1.gz
 share/man/man1/emacsclient.1.gz
