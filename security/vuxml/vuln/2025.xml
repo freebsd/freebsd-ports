@@ -1,3 +1,358 @@
+  <vuln vid="1205eccf-116d-11f0-8b2c-b42e991fc52e">
+    <topic>Mozilla -- Memory corruption bug</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>134.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>134.0</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.6.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>134.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1827142%2C1932783">
+	  <p>Memory safety bugs present in Firefox 133, Thunderbird 133,
+	  Firefox ESR 128.5, and Thunderbird 128.5.  Some of these
+	  bugs showed evidence of memory corruption and we presume
+	  that with enough effort some of these could have been
+	  exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0243</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-0243</url>
+    </references>
+    <dates>
+      <discovery>2025-01-07</discovery>
+      <entry>2025-04-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f9d7b6ae-116c-11f0-8b2c-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>134.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>134.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>134.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1835193%2C1910021%2C1919803%2C1931576%2C1931948%2C1932173">
+	  <p>Memory safety bugs present in Firefox 133 and Thunderbird 133.
+	  Some of these bugs showed evidence of memory corruption and
+	  we presume that with enough effort some of these could have
+	  been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0247</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-0247</url>
+    </references>
+    <dates>
+      <discovery>2025-01-07</discovery>
+      <entry>2025-04-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f7d80111-116c-11f0-8b2c-b42e991fc52e">
+    <topic>firefox -- authentication bypass</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>134.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>134.0,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1895342">
+	  <p>Under certain circumstances, a user opt-in setting that
+	  Focus should require authentication before use could have
+	  been be bypassed.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0245</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-0245</url>
+    </references>
+    <dates>
+      <discovery>2025-01-07</discovery>
+      <entry>2025-04-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f508f81e-116c-11f0-8b2c-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>134.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>134.0</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>115.19</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>134.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1874523%2C1926454%2C1931873%2C1932169">
+	  <p>Memory safety bugs present in Firefox 133, Thunderbird 133,
+	  Firefox ESR 115.18, Firefox ESR 128.5, Thunderbird 115.18,
+	  and Thunderbird 128.5.  Some of these bugs showed evidence
+	  of memory corruption and we presume that with enough effort
+	  some of these could have been exploited to run arbitrary
+	  code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0242</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-0242</url>
+    </references>
+    <dates>
+      <discovery>2025-01-07</discovery>
+      <entry>2025-04-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f38dd0f1-116c-11f0-8b2c-b42e991fc52e">
+    <topic>Mozilla -- DoS via segmentation fault</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>134.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>134.0</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.6.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>134.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1933023">
+	  <p>When segmenting specially crafted text, segmentation
+	  would corrupt memory leading to a potentially exploitable
+	  crash.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0241</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-0241</url>
+    </references>
+    <dates>
+      <discovery>2025-01-07</discovery>
+      <entry>2025-04-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f1f92cd3-116c-11f0-8b2c-b42e991fc52e">
+    <topic>Mozilla -- use-after-free while parsing JSON</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>134.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>134.0</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.6.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>134.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1929623">
+	  <p>Parsing a JavaScript module as JSON could, under some
+	  circumstances, cause cross-compartment access, which may
+	  result in a use-after-free.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0240</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-0240</url>
+    </references>
+    <dates>
+      <discovery>2025-01-07</discovery>
+      <entry>2025-04-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f02e3c59-116c-11f0-8b2c-b42e991fc52e">
+    <topic>Mozilla -- redirection to insecure site</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>134.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>134.0</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.6.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>134.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1929156">
+	  <p>When using Alt-Svc, ALPN did not properly validate
+	    certificates when the original server is redirecting to an
+	    insecure site.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0239</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-0239</url>
+    </references>
+    <dates>
+      <discovery>2025-01-07</discovery>
+      <entry>2025-04-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ee407762-116c-11f0-8b2c-b42e991fc52e">
+    <topic>Mozilla -- use-after-free after failed memory allocation</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>134.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>134.0</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.6.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1915535">
+	  <p>Assuming a controlled failed memory allocation, an
+	  attacker could have caused a use-after-free, leading to a
+	  potentially exploitable crash.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0238</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-0238</url>
+    </references>
+    <dates>
+      <discovery>2025-01-07</discovery>
+      <entry>2025-04-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ea51e89a-116c-11f0-8b2c-b42e991fc52e">
+    <topic>Mozilla -- privilege scalation attack</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>134.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>134.0</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.6.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1915257">
+	  <p>The WebChannel API, which is used to transport various
+	  information across processes, did not check the sending
+	  principal but rather accepted the principal being sent.
+	  This could have led to privilege escalation attacks.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0237</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-0237</url>
+    </references>
+    <dates>
+      <discovery>2025-01-07</discovery>
+      <entry>2025-04-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="37c368f1-10a2-11f0-8195-b42e991fc52e">
     <topic>mozilla -- memory corruption</topic>
     <affects>
