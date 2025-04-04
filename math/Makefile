@@ -500,7 +500,6 @@
     SUBDIR += mathomatic
     SUBDIR += mathpresso
     SUBDIR += matio
-    SUBDIR += matlab-installer
     SUBDIR += maxima
     SUBDIR += mbasecalc
     SUBDIR += mcsim
