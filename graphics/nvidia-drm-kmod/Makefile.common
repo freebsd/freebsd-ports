@@ -1,6 +1,6 @@
 # Common rules for nvidia-drm-*-kmod ports
 
-MAINTAINER=	ashafer@badland.io
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	NVIDIA DRM Kernel Module
 WWW=		https://www.nvidia.com/object/unix.html
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${NVIDIA_DISTVERSION}:nvidia \
