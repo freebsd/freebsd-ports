@@ -1,7 +1,6 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.40.1
-PORTREVISION=	1
+DISTVERSION=	0.41.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -36,7 +35,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libxxhash.so:devel/xxhash
 
 USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
-		go:1.23,modules magick pkgconfig python shebangfix ssl tar:xz \
+		go:1.24,modules magick pkgconfig python shebangfix ssl tar:xz \
 		terminfo xorg
 CPE_VENDOR=	kitty_project
 

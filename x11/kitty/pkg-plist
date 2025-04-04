@@ -689,6 +689,7 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/graphics_fragment.glsl
 %%DATADIR%%/kitty/graphics_vertex.glsl
 %%DATADIR%%/kitty/guess_mime_type.py
+%%DATADIR%%/kitty/hsluv.glsl
 %%DATADIR%%/kitty/key_encoding.py
 %%DATADIR%%/kitty/key_names.py
 %%DATADIR%%/kitty/keys.py
