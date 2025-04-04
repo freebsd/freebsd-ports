@@ -4307,3 +4307,4 @@ sysutils/mcweject||2025-04-04|Has expired: Unmaintained, redundant to "cdcontrol
 ports-mgmt/genplist||2025-04-04|Has expired: Unmaintained, obsoleted by "make makeplist"
 databases/rubygem-scenic61||2025-04-04|Has expired: Uses EOL version 6.1.X of Rails
 devel/py-blist||2025-04-04|Has expired: Abandoned project, no consumers, no modern python support
+textproc/rubygem-case_transform61||2025-04-04|Has expired: Uses EOL version 6.1.X of Rails
