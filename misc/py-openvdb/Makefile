@@ -1,18 +1,18 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	11.0.0
-PORTREVISION=	6
+DISTVERSION=	12.0.1
 CATEGORIES=	misc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tools for storage and manipulation of sparse volumetric data
-WWW=		https://www.openvdb.org/
+WWW=		https://www.openvdb.org \
+		https://github.com/AcademySoftwareFoundation/openvdb
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/../../../LICENSE
 
-BUILD_DEPENDS=	pybind11>0:devel/pybind11 \
+BUILD_DEPENDS=	nanobind>0:devel/nanobind \
 		${PYNUMPY}
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libopenvdb.so:misc/openvdb \
@@ -28,13 +28,14 @@ GH_ACCOUNT=	AcademySoftwareFoundation
 
 CMAKE_ON=	USE_NUMPY OPENVDB_PYTHON_WRAP_ALL_GRID_TYPES
 CMAKE_OFF=	OPENVDB_BUILD_PYTHON_UNITTESTS
-CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD}
+CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD} \
+		-DFREEBSD_PYTHON_VER=${PYTHON_VER}
 
 WRKSRC_SUBDIR=	openvdb/openvdb/python
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-PLIST_FILES=	${PYTHON_SITELIBDIR}/pyopenvdb${PYTHON_EXT_SUFFIX}.so
+PLIST_FILES=	${PYTHON_SITELIBDIR}/openvdb${PYTHON_EXT_SUFFIX}.so
 
 do-test: # run an example, since the supplied test appears to be only for Windows
 	@cd ${WRKSRC} && \

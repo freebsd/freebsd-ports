@@ -1,11 +1,18 @@
---- CMakeLists.txt.orig	2022-10-27 23:35:20 UTC
+--- CMakeLists.txt.orig	2025-04-03 05:22:14 UTC
 +++ CMakeLists.txt
-@@ -12,6 +12,9 @@ project(OpenVDBPython LANGUAGES CXX)
+@@ -12,6 +12,16 @@ include(GNUInstallDirs)
  
  include(GNUInstallDirs)
  
 +set(CMAKE_MODULE_PATH "${CMAKE_INSTALL_PREFIX}/lib/cmake/OpenVDB" ${CMAKE_MODULE_PATH})
 +find_package(OpenVDB REQUIRED)
++find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS Development Interpreter)
++find_package(nanobind REQUIRED)
++set(Python_PACKAGES_DIR "site-packages")
++set(VDB_PYTHON_INSTALL_DIRECTORY
++  ${CMAKE_INSTALL_LIBDIR}/python${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}/${Python_PACKAGES_DIR}
++  CACHE STRING "The directory to install the openvdb and nanovdb Python modules."
++)
 +
  ###### OpenVDB Python Options
  

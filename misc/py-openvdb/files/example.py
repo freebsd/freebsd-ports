@@ -1,6 +1,6 @@
 # example from https://www.openvdb.org/documentation/doxygen/python.html
 
-import pyopenvdb as vdb
+import openvdb as vdb
 
 # A grid comprises a sparse tree representation of voxel data,
 # user-supplied metadata and a voxel space to world space transform,
