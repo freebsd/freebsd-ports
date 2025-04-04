@@ -1,6 +1,5 @@
 PORTNAME=	qrcode
-PORTVERSION=	8.0
-PORTREVISION=	2
+PORTVERSION=	8.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +10,7 @@ WWW=		https://github.com/lincolnloop/python-qrcode
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS= ${PYTHON_PKGNAMEPREFIX}poetry-core>=0:devel/py-poetry-core@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=9.1.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}png>=0.0.17:graphics/py-png@${PY_FLAVOR}
 
