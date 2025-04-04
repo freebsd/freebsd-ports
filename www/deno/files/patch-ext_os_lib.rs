@@ -1,6 +1,24 @@
 --- ext/os/lib.rs.orig	2023-01-13 13:12:37 UTC
 +++ ext/os/lib.rs
-@@ -669,6 +669,51 @@ fn rss() -> usize {
+@@ -3,6 +3,7 @@
+ use std::collections::HashMap;
+ use std::collections::HashSet;
+ use std::env;
++use std::path::PathBuf;
+ use std::sync::atomic::AtomicI32;
+ use std::sync::atomic::Ordering;
+ use std::sync::Arc;
+@@ -155,7 +156,8 @@ pub enum OsError {
+ #[op2(stack_trace)]
+ #[string]
+ fn op_exec_path(state: &mut OpState) -> Result<String, OsError> {
+-  let current_exe = env::current_exe().unwrap();
++  let current_exe
++    = env::current_exe().unwrap_or_else(|_| PathBuf::from("LOCALBASE/bin/deno"));
+   state
+     .borrow_mut::<PermissionsContainer>()
+     .check_read_blind(&current_exe, "exec_path", "Deno.execPath()")?;
+@@ -668,6 +668,46 @@ fn rss() -> usize {
    }
  }
  
@@ -20,11 +38,6 @@
 +    libc::KERN_PROC,
 +    libc::KERN_PROC_PID,
 +    pid,
-+    // mib is an array of integers, size is of type size_t
-+    // conversion is safe, because the size of a libc::kinfo_proc
-+    // structure will not exceed i32::MAX
-+    size.try_into().unwrap(),
-+    1,
 +  ];
 +  // SAFETY: libc call, mib has been statically initialized,
 +  // kinfoproc is a valid pointer to a libc::kinfo_proc struct
@@ -45,7 +58,7 @@
 +    // get size in bytes.
 +    pagesize * unsafe { (*kinfoproc.as_mut_ptr()).ki_rssize as usize }
 +  } else {
-+    0
++  0
 +  } 
 +}
 +

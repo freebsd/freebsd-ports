@@ -1,6 +1,6 @@
---- cargo-crates/v8-134.4.0/build/toolchain/gcc_toolchain.gni.orig	1970-01-01 01:00:00 UTC
-+++ cargo-crates/v8-134.4.0/build/toolchain/gcc_toolchain.gni
-@@ -56,6 +56,13 @@ if (enable_resource_allowlist_generation) {
+--- cargo-crates/v8-135.0.0/build/toolchain/gcc_toolchain.gni.orig	1970-01-01 01:00:00 UTC
++++ cargo-crates/v8-135.0.0/build/toolchain/gcc_toolchain.gni
+@@ -56,6 +56,12 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
  }
  
@@ -10,17 +10,16 @@
 +  extra_cxxflags = ""
 +  extra_ldflags = ""
 +}
-+
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -864,22 +871,12 @@ template("gcc_toolchain") {
+@@ -896,22 +902,13 @@ template("gcc_toolchain") {
  # actually just be doing a native compile.
  template("clang_toolchain") {
    gcc_toolchain(target_name) {
 -    _path = "$clang_base_path/bin"
 -    _is_path_absolute = get_path_info(_path, "abspath") == _path
--
+ 
 -    # Preserve absolute paths for tools like distcc.
 -    if (_is_path_absolute && filter_include([ _path ], [ "//*" ]) == []) {
 -      prefix = _path

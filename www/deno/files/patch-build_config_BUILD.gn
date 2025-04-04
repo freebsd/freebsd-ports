@@ -1,13 +1,21 @@
---- cargo-crates/v8-134.4.0/build/config/BUILD.gn.orig	2024-07-30 11:12:21 UTC
-+++ cargo-crates/v8-134.4.0/build/config/BUILD.gn
-@@ -213,6 +213,10 @@ config("default_libs") {
-     # Targets should choose to explicitly link frameworks they require. Since
-     # linking can have run-time side effects, nothing should be listed here.
+--- cargo-crates/v8-135.0.0/build/config/BUILD.gn.orig	2024-07-30 11:12:21 UTC
++++ cargo-crates/v8-135.0.0/build/config/BUILD.gn
+@@ -123,7 +123,7 @@ config("debug") {
+       # builds, and we have to tell it to turn it off.
+       defines += [ "_HAS_ITERATOR_DEBUGGING=0" ]
+     }
+-  } else if ((is_linux || is_chromeos) && current_cpu == "x64" &&
++  } else if ((is_linux || is_bsd || is_chromeos) && current_cpu == "x64" &&
+              enable_iterator_debugging) {
+     # Enable libstdc++ debugging facilities to help catch problems early, see
+     # http://crbug.com/65151 .
+@@ -217,9 +217,7 @@ config("default_libs") {
      libs = []
-+  } else if (is_bsd) {
-+    libs = [
-+      "pthread",
-+    ]
    } else if (is_linux || is_chromeos) {
      libs = [
-       "dl",
+-      "dl",
+       "pthread",
+-      "rt",
+     ]
+   }
+ }
