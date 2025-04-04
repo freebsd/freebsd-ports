@@ -4303,3 +4303,4 @@ ports-mgmt/packagekit-qt@qt6|ports-mgmt/packagekit-qt|2025-04-03|Unflavorize; on
 devel/rubygem-makara61||2025-04-04|Has expired: Uses EOL version 6.1.X of Rails
 security/rubygem-pundit61||2025-04-04|Has expired: Uses EOL version 6.1.X of Rails
 math/matlab-installer||2025-04-04|Has expired: Unmaintained, does not support recent Matlab
+sysutils/mcweject||2025-04-04|Has expired: Unmaintained, redundant to "cdcontrol eject"
