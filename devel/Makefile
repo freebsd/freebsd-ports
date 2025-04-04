@@ -4578,7 +4578,6 @@
     SUBDIR += py-blessed
     SUBDIR += py-blessings
     SUBDIR += py-blinker
-    SUBDIR += py-blist
     SUBDIR += py-bluelet
     SUBDIR += py-boltons
     SUBDIR += py-boolean.py
