@@ -12,6 +12,9 @@ WWW=		https://gluon-nlp.mxnet.io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expiring misc/py-mxnet
+EXPIRATION_DATE=2025-06-01
+
 PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}mxnet>0:misc/py-mxnet@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS}

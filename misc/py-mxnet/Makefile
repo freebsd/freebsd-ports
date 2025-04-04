@@ -10,6 +10,9 @@ WWW=		https://mxnet.apache.org/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Depends on expired misc/mxnet
+EXPIRATION_DATE=2025-06-01
+
 BUILD_DEPENDS=	mxnet>0:misc/mxnet
 RUN_DEPENDS=	mxnet>0:misc/mxnet \
 		${PYTHON_PKGNAMEPREFIX}graphviz>0:graphics/py-graphviz@${PY_FLAVOR} \

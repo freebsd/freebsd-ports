@@ -12,6 +12,9 @@ WWW=		https://gluon-cv.mxnet.io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expiring misc/py-mxnet
+EXPIRATION_DATE=2025-06-01
+
 PY_DEPENDS=	${PYNUMPY} \
 		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
