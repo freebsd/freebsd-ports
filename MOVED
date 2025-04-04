@@ -4300,3 +4300,4 @@ devel/appstream-qt@qt5||2025-04-03|Unflavorize; only Qt6 support is needed
 devel/appstream-qt@qt6|devel/appstream-qt|2025-04-03|Unflavorize; only Qt6 support is needed
 ports-mgmt/packagekit-qt@qt5||2025-04-03|Unflavorize; only Qt6 support is needed
 ports-mgmt/packagekit-qt@qt6|ports-mgmt/packagekit-qt|2025-04-03|Unflavorize; only Qt6 support is needed
+devel/rubygem-makara61||2025-04-04|Has expired: Uses EOL version 6.1.X of Rails
