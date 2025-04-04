@@ -93,9 +93,11 @@
 %%DATADIR%%/America/Cayman
 %%DATADIR%%/America/Chicago
 %%DATADIR%%/America/Chihuahua
+%%DATADIR%%/America/Ciudad_Juarez
 %%DATADIR%%/America/Coral_Harbour
 %%DATADIR%%/America/Cordoba
 %%DATADIR%%/America/Costa_Rica
+%%DATADIR%%/America/Coyhaique
 %%DATADIR%%/America/Creston
 %%DATADIR%%/America/Cuiaba
 %%DATADIR%%/America/Curacao
@@ -447,6 +449,7 @@
 %%DATADIR%%/Europe/Kaliningrad
 %%DATADIR%%/Europe/Kiev
 %%DATADIR%%/Europe/Kirov
+%%DATADIR%%/Europe/Kyiv
 %%DATADIR%%/Europe/Lisbon
 %%DATADIR%%/Europe/Ljubljana
 %%DATADIR%%/Europe/London
