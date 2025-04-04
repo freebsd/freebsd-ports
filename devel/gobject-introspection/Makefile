@@ -1,5 +1,6 @@
 PORTNAME=	gobject-introspection
 DISTVERSION=	1.82.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -20,12 +21,10 @@ FLAVORS=	default bootstrap
 FLAVOR?=	${FLAVORS:[1]}
 
 default_LIB_DEPENDS=	libglib-2.0.so:devel/glib20
-default_CONFLICTS_INSTALL=	gobject-introspection-bootstrap
 
 bootstrap_PKGNAMESUFFIX=	-bootstrap
 bootstrap_BUILD_DEPENDS=	${LOCALBASE}/glib-bootstrap/lib/libglib-2.0.so:devel/glib20@bootstrap
 bootstrap_RUN_DEPENDS=		${LOCALBASE}/glib-bootstrap/lib/libglib-2.0.so:devel/glib20@bootstrap
-bootstrap_CONFLICTS_INSTALL=	gobject-introspection
 
 USES=		bison gettext localbase:ldflags meson pkgconfig python tar:xz
 USE_LDCONFIG=	yes
@@ -41,6 +40,7 @@ TEST_LIB_DEPENDS=	libcairo.so:graphics/cairo
 .if ${FLAVOR:U} == bootstrap
 MESON_ARGS+=	-Dcairo=disabled
 OPTIONS_DEFINE=
+PREFIX=		${LOCALBASE}/${PORTNAME}-bootstrap
 .endif
 
 .include <bsd.port.pre.mk>

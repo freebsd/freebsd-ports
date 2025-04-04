@@ -27,7 +27,7 @@ FLAVORS=	default bootstrap
 FLAVOR?=	${FLAVORS:[1]}
 FLAVORS_SUB=	yes
 
-default_BUILD_DEPENDS=	g-ir-scanner:devel/gobject-introspection@bootstrap
+default_EXTRACT_DEPENDS=	${LOCALBASE}/gobject-introspection-bootstrap/bin/g-ir-scanner:devel/gobject-introspection@bootstrap
 default_USES=		trigger
 
 bootstrap_PKGNAMESUFFIX=	-bootstrap
@@ -82,7 +82,14 @@ OPTIONS_DEFINE=
 PREFIX=		${LOCALBASE}/glib-bootstrap
 PLIST_SUB+=	PORTDOCS='@comment ' NLS='@comment ' MANPAGES='@comment '
 .else
+BINARY_ALIAS+=	g-ir-scanner=${LOCALBASE}/gobject-introspection-bootstrap/bin/g-ir-scanner
 MESON_ARGS+=	-Dintrospection=enabled
+.endif
+
+.if ${FLAVOR:U} == default
+post-extract:
+	${CP} -r ${LOCALBASE}/gobject-introspection-bootstrap/libdata/pkgconfig ${PKGCONFIG_LINKDIR}
+	${CP} ${LOCALBASE}/glib-bootstrap/libdata/pkgconfig/* ${PKGCONFIG_LINKDIR}
 .endif
 
 pre-configure-FAM_ALTBACKEND-on:
