@@ -6,6 +6,10 @@
 	<range><lt>136.0,2</lt></range>
       </package>
       <package>
+	<name>librewolf</name>
+	<range><lt>136.0,2</lt></range>
+      </package>
+      <package>
 	<name>thunderbird</name>
 	<range><lt>136.0</lt></range>
       </package>
@@ -36,6 +40,10 @@
     <affects>
       <package>
 	<name>firefox</name>
+	<range><lt>136.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
 	<range><lt>136.0,2</lt></range>
       </package>
       <package>
@@ -87,6 +95,10 @@
 	<range><lt>136.0,2</lt></range>
       </package>
       <package>
+	<name>librewolf</name>
+	<range><lt>136.0,2</lt></range>
+      </package>
+      <package>
 	<name>firefox-esr</name>
 	<range><lt>115.21,1</lt></range>
       </package>
@@ -122,6 +134,10 @@
     <affects>
       <package>
 	<name>firefox</name>
+	<range><lt>136.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
 	<range><lt>136.0,2</lt></range>
       </package>
       <package>
@@ -163,6 +179,10 @@
       <package>
 	<name>firefox-esr</name>
 	<range><lt>115.21,1</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>136.0,2</lt></range>
       </package>
       <package>
 	<name>thunderbird</name>
