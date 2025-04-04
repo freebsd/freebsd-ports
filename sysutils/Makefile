@@ -965,6 +965,7 @@
     SUBDIR += polkit
     SUBDIR += polkit-gnome
     SUBDIR += polkit-qt-1
+    SUBDIR += pollinfo
     SUBDIR += popeye
     SUBDIR += porch
     SUBDIR += pot
