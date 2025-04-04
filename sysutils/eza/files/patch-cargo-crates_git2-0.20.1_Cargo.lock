@@ -1,5 +1,5 @@
---- cargo-crates/git2-0.20.0/Cargo.lock.orig	1970-01-01 00:00:01 UTC
-+++ cargo-crates/git2-0.20.0/Cargo.lock
+--- cargo-crates/git2-0.20.1/Cargo.lock.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/git2-0.20.1/Cargo.lock
 @@ -451,15 +451,6 @@ checksum = "ff011a302c396a5197692431fc1948019154afc178
  checksum = "ff011a302c396a5197692431fc1948019154afc178baf7d8e37367442a4601cf"
  
