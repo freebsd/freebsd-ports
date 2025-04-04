@@ -1,7 +1,7 @@
 PORTNAME=	portfmt
-DISTVERSION=	1.1.5
+DISTVERSION=	1.1.6
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	https://codeberg.org/attachments/585aad14-d6b4-47e4-b8fa-813cb0fcf020?dummy=/
+MASTER_SITES=	https://codeberg.org/tobik/portfmt/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Format FreeBSD Ports Makefiles
