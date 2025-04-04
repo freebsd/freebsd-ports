@@ -23,10 +23,11 @@ default_LIB_DEPENDS=	libglib-2.0.so:devel/glib20
 default_CONFLICTS_INSTALL=	gobject-introspection-bootstrap
 
 bootstrap_PKGNAMESUFFIX=	-bootstrap
-bootstrap_LIB_DEPENDS=	libglib-2.0.so:devel/glib20@bootstrap
+bootstrap_BUILD_DEPENDS=	${LOCALBASE}/glib-bootstrap/lib/libglib-2.0.so:devel/glib20@bootstrap
+bootstrap_RUN_DEPENDS=		${LOCALBASE}/glib-bootstrap/lib/libglib-2.0.so:devel/glib20@bootstrap
 bootstrap_CONFLICTS_INSTALL=	gobject-introspection
 
-USES=		bison gettext localbase meson pkgconfig python tar:xz
+USES=		bison gettext localbase:ldflags meson pkgconfig python tar:xz
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Ddoctool=disabled \
 		-Dpython=${PYTHON_CMD}
@@ -37,11 +38,21 @@ OPTIONS_DEFINE=	TEST
 TEST_MESON_ENABLED=	cairo
 TEST_LIB_DEPENDS=	libcairo.so:graphics/cairo
 
+.if ${FLAVOR:U} == bootstrap
+MESON_ARGS+=	-Dcairo=disabled
+OPTIONS_DEFINE=
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 31200
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+.endif
+
+.if ${FLAVOR:U} == bootstrap
+post-extract:
+	${LN} -s ${LOCALBASE}/glib-bootstrap/libdata/pkgconfig ${PKGCONFIG_LINKDIR}
 .endif
 
 post-patch:

@@ -1,5 +1,6 @@
 PORTNAME=	glib
 DISTVERSION=	2.82.4
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -26,19 +27,19 @@ FLAVORS=	default bootstrap
 FLAVOR?=	${FLAVORS:[1]}
 FLAVORS_SUB=	yes
 
-default_CONFLICTS_INSTALL=	glib-bootstrap
 default_BUILD_DEPENDS=	g-ir-scanner:devel/gobject-introspection@bootstrap
+default_USES=		trigger
 
 bootstrap_PKGNAMESUFFIX=	-bootstrap
-bootstrap_CONFLICTS_INSTALL=	glib
 
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
 USES=		compiler:c11 cpe gettext gnome iconv:wchar_t localbase:ldflags \
-		meson perl5 pkgconfig python tar:xz trigger
+		meson perl5 pkgconfig python tar:xz ${${FLAVOR}_USES}
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_PYTHON=	py3kplist
+TRIGGERS=	gio-modules glib-schemas
 MESON_ARGS=	-Db_lundef=false \
 		-Ddefault_library=both \
 		-Dinstalled_tests=false \
@@ -76,13 +77,11 @@ TEST_MESON_TRUE=	tests
 MESON_ARGS+=	-Ddtrace=disabled
 
 .if ${FLAVOR:U} == bootstrap
-TRIGGERS=
 MESON_ARGS+=	-Dintrospection=disabled -Ddocumentation=false -Dman-pages=disabled
 OPTIONS_DEFINE=
+PREFIX=		${LOCALBASE}/glib-bootstrap
 PLIST_SUB+=	PORTDOCS='@comment ' NLS='@comment ' MANPAGES='@comment '
-PLIST_FILES+=	'@dir share/pkg/triggers'
 .else
-TRIGGERS=	gio-modules glib-schemas
 MESON_ARGS+=	-Dintrospection=enabled
 .endif
 
