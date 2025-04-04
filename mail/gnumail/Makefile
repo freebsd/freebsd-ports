@@ -1,11 +1,11 @@
 PORTNAME=	gnumail
-PORTVERSION=	1.4.0
+DISTVERSION=	1.4.0
 PORTREVISION=	1
 CATEGORIES=	mail gnustep
 MASTER_SITES=	SAVANNAH/gnustep-nonfsf/
 DISTNAME=	GNUMail-${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep mail client
 WWW=		https://www.nongnu.org/gnustep-nonfsf/gnumail/
 
