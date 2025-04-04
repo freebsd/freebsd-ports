@@ -39,20 +39,11 @@ you update your ports collection, before attempting any port upgrades.
   devel/gobject-introspection@bootstrap. This in turn provides for a normal
   devel/glib20 build, which finally fulfills a dependency for normal devel/gobject-introspection
 
-  Users that are building outside of the isolated environments would need to
-  manually resolve the conflict when installing devel/glib20 for the first time.
-  At some point during the build the installed *-boostrap packages will prevent
-  a corresponding normal package from installing. Users would need to run
+  Users that are building outside of the isolated environments will be ending
+  up with useless glib-bootstrap and gobject-introspection-bootstrap packages
+  installed after each update. These can be removed with
 
-  pkg remove glib-bootstrap
-
-  and later
-
-  pkg remove gobject-introspection-bootstrap
-
-  to proceed with installation. Luckily, this should not be required for the
-  further upgrades, because the installed packages would directly provide for
-  the being built ones.
+  pkg remove glib-bootstrap gobject-introspection-bootstrap
 
 20250327:
   AFFECTS: users of thunderbird
