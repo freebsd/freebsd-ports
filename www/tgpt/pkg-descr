@@ -12,6 +12,8 @@ Currently available providers:
 - OpenAI (All models, Requires API Key, supports custom endpoints)
 - Phind (Phind Model)
 - Pollinations (Many free models)
+- Gemini (Requires a free API key, supports many models,
+  default model is gemini-2.0-flash)
 
 Image Generation Models:
 
