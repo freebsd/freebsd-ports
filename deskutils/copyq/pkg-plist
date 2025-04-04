@@ -25,6 +25,7 @@ share/bash-completion/completions/copyq
 %%DATADIR%%/themes/tooltip.css
 %%DATADIR%%/themes/wine.ini
 %%DATADIR%%/translations/copyq_ar.qm
+%%DATADIR%%/translations/copyq_ca.qm
 %%DATADIR%%/translations/copyq_cs.qm
 %%DATADIR%%/translations/copyq_da.qm
 %%DATADIR%%/translations/copyq_de.qm
