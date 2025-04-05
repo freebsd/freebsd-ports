@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/web_apps/web_app_integration_test_driver.cc.orig	2025-03-05 08:14:56 UTC
+--- chrome/browser/ui/views/web_apps/web_app_integration_test_driver.cc.orig	2025-04-04 08:52:13 UTC
 +++ chrome/browser/ui/views/web_apps/web_app_integration_test_driver.cc
 @@ -510,7 +510,7 @@ std::string GetFileExtension(FileExtension file_extens
  }
@@ -54,7 +54,7 @@
    if (!BeforeStateCheckAction(__FUNCTION__)) {
      return;
    }
-@@ -4242,7 +4242,7 @@ base::FilePath WebAppIntegrationTestDriver::GetShortcu
+@@ -4243,7 +4243,7 @@ base::FilePath WebAppIntegrationTestDriver::GetShortcu
      base::FilePath shortcut_dir,
      const std::string& app_name,
      const webapps::AppId& app_id) {
@@ -63,7 +63,7 @@
    return override_registration_->test_override().GetShortcutPath(
        profile(), shortcut_dir, app_id, app_name);
  #else
-@@ -4442,7 +4442,7 @@ bool WebAppIntegrationTestDriver::IsShortcutAndIconCre
+@@ -4443,7 +4443,7 @@ bool WebAppIntegrationTestDriver::IsShortcutAndIconCre
      const webapps::AppId& id) {
    base::ScopedAllowBlockingForTesting allow_blocking;
    bool is_shortcut_and_icon_correct = false;
@@ -72,7 +72,7 @@
    bool is_shortcut_correct =
        override_registration_->test_override().IsShortcutCreated(profile, id,
                                                                  name);
-@@ -4486,7 +4486,7 @@ bool WebAppIntegrationTestDriver::DoIconColorsMatch(Pr
+@@ -4487,7 +4487,7 @@ bool WebAppIntegrationTestDriver::DoIconColorsMatch(Pr
      do_icon_colors_match =
          (expected_icon_pixel_color == shortcut_pixel_color_apps_folder.value());
    }

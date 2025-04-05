@@ -1,6 +1,6 @@
---- net/third_party/quiche/BUILD.gn.orig	2023-11-03 10:09:45 UTC
+--- net/third_party/quiche/BUILD.gn.orig	2025-04-04 08:52:13 UTC
 +++ net/third_party/quiche/BUILD.gn
-@@ -29,7 +29,7 @@ import("//net/third_party/quiche/src/build/source_list
+@@ -28,7 +28,7 @@ import("//net/third_party/quiche/src/build/source_list
  import("//testing/libfuzzer/fuzzer_test.gni")
  import("//third_party/protobuf/proto_library.gni")
  

@@ -1,6 +1,6 @@
---- net/socket/socks5_client_socket.cc.orig	2024-07-30 11:12:21 UTC
+--- net/socket/socks5_client_socket.cc.orig	2025-04-04 08:52:13 UTC
 +++ net/socket/socks5_client_socket.cc
-@@ -24,6 +24,9 @@
+@@ -23,6 +23,9 @@
  #include "net/log/net_log_event_type.h"
  #include "net/traffic_annotation/network_traffic_annotation.h"
  

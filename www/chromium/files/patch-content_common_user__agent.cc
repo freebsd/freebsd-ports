@@ -1,4 +1,4 @@
---- content/common/user_agent.cc.orig	2025-03-05 08:14:56 UTC
+--- content/common/user_agent.cc.orig	2025-04-04 08:52:13 UTC
 +++ content/common/user_agent.cc
 @@ -50,7 +50,7 @@ std::string GetUserAgentPlatform() {
    return "";
@@ -18,7 +18,7 @@
    return "X11; Linux x86_64";
  #elif BUILDFLAG(IS_IOS)
    if (ui::GetDeviceFormFactor() == ui::DEVICE_FORM_FACTOR_TABLET) {
-@@ -301,6 +301,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
+@@ -305,6 +305,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
                        "Android %s", os_version.c_str()
  #elif BUILDFLAG(IS_FUCHSIA)
                        "Fuchsia"

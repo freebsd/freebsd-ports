@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/profiles/profile_menu_view.cc.orig	2025-03-05 08:14:56 UTC
+--- chrome/browser/ui/views/profiles/profile_menu_view.cc.orig	2025-04-04 08:52:13 UTC
 +++ chrome/browser/ui/views/profiles/profile_menu_view.cc
 @@ -91,7 +91,7 @@
  #include "ui/strings/grit/ui_strings.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #endif
  
-@@ -563,7 +563,7 @@ void ProfileMenuView::SetMenuTitleForAccessibility() {
+@@ -549,7 +549,7 @@ void ProfileMenuView::SetMenuTitleForAccessibility() {
      case signin_util::SignedInState::kSignedOut:
      case signin_util::SignedInState::kWebOnlySignedIn: {
        std::string profile_user_display_name, profile_user_email;
@@ -18,7 +18,7 @@
        profile_user_display_name = profile->GetPrefs()->GetString(
            enterprise_signin::prefs::kProfileUserDisplayName);
        profile_user_email = profile->GetPrefs()->GetString(
-@@ -669,7 +669,7 @@ void ProfileMenuView::BuildIdentity() {
+@@ -646,7 +646,7 @@ void ProfileMenuView::BuildIdentity() {
          badge_image_model, menu_title_, menu_subtitle_, management_label);
    } else {
      std::string profile_user_display_name, profile_user_email;

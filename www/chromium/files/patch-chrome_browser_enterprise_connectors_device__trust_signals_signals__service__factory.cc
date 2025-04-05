@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc.orig	2025-03-05 08:14:56 UTC
+--- chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc.orig	2025-04-04 08:52:13 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc
-@@ -24,7 +24,7 @@
+@@ -23,7 +23,7 @@
  #include "chrome/browser/enterprise/connectors/connectors_service.h"
  #endif  // BUILDFLAG(ENTERPRISE_CLOUD_CONTENT_ANALYSIS)
  
@@ -9,7 +9,7 @@
  #include "base/check.h"
  #include "chrome/browser/enterprise/connectors/device_trust/signals/decorators/browser/browser_signals_decorator.h"
  #include "chrome/browser/enterprise/core/dependency_factory_impl.h"
-@@ -64,7 +64,7 @@ std::unique_ptr<SignalsService> CreateSignalsService(P
+@@ -63,7 +63,7 @@ std::unique_ptr<SignalsService> CreateSignalsService(P
            profile, ConnectorsServiceFactory::GetForBrowserContext(profile))));
  #endif  // BUILDFLAG(ENTERPRISE_CLOUD_CONTENT_ANALYSIS)
  

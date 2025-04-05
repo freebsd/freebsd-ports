@@ -1,6 +1,6 @@
---- v8/src/base/platform/platform-posix.cc.orig	2024-11-14 07:57:23 UTC
+--- v8/src/base/platform/platform-posix.cc.orig	2025-04-04 08:52:13 UTC
 +++ v8/src/base/platform/platform-posix.cc
-@@ -75,7 +75,7 @@
+@@ -76,7 +76,7 @@
  #include <sys/syscall.h>
  #endif
  
@@ -9,7 +9,7 @@
  #define MAP_ANONYMOUS MAP_ANON
  #endif
  
-@@ -314,8 +314,15 @@ void OS::SetRandomMmapSeed(int64_t seed) {
+@@ -315,8 +315,15 @@ void OS::SetRandomMmapSeed(int64_t seed) {
    }
  }
  
@@ -25,7 +25,7 @@
    uintptr_t raw_addr;
    {
      MutexGuard guard(rng_mutex.Pointer());
-@@ -412,6 +419,7 @@ void* OS::GetRandomMmapAddr() {
+@@ -413,6 +420,7 @@ void* OS::GetRandomMmapAddr() {
  #endif
    return reinterpret_cast<void*>(raw_addr);
  }
@@ -33,7 +33,7 @@
  
  // TODO(bbudge) Move Cygwin and Fuchsia stuff into platform-specific files.
  #if !V8_OS_CYGWIN && !V8_OS_FUCHSIA
-@@ -700,7 +708,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
+@@ -701,7 +709,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
  #if !V8_OS_ZOS
  // static
  bool OS::HasLazyCommits() {

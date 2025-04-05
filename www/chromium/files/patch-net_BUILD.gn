@@ -1,6 +1,6 @@
---- net/BUILD.gn.orig	2025-03-05 08:14:56 UTC
+--- net/BUILD.gn.orig	2025-04-04 08:52:13 UTC
 +++ net/BUILD.gn
-@@ -126,7 +126,7 @@ net_configs = [
+@@ -125,7 +125,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
  ]
  
@@ -9,7 +9,7 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1309,6 +1309,19 @@ component("net") {
+@@ -1312,6 +1312,19 @@ component("net") {
      ]
    }
  
@@ -29,7 +29,7 @@
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1472,7 +1485,7 @@ component("net") {
+@@ -1475,7 +1488,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -38,7 +38,24 @@
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2989,7 +3002,7 @@ target(_test_target_type, "net_unittests") {
+@@ -2174,7 +2187,7 @@ static_library("test_support") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos || is_android) {
++  if (!is_bsd && (is_linux || is_chromeos || is_android)) {
+     sources += [
+       "base/address_tracker_linux_test_util.cc",
+       "base/address_tracker_linux_test_util.h",
+@@ -2985,14 +2998,14 @@ target(_test_target_type, "net_unittests") {
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     sources += [
+       "base/network_change_notifier_linux_unittest.cc",
+       "proxy_resolution/proxy_config_service_linux_unittest.cc",
      ]
    }
  
@@ -47,7 +64,7 @@
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -3083,6 +3096,10 @@ target(_test_target_type, "net_unittests") {
+@@ -3086,6 +3099,10 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -58,7 +75,7 @@
    if (enable_websockets) {
      sources += [
        "server/http_connection_unittest.cc",
-@@ -3149,7 +3166,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3152,7 +3169,7 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -67,7 +84,7 @@
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3288,7 +3305,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3291,7 +3308,7 @@ target(_test_target_type, "net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

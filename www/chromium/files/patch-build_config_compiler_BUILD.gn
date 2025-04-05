@@ -1,4 +1,4 @@
---- build/config/compiler/BUILD.gn.orig	2025-03-05 08:14:56 UTC
+--- build/config/compiler/BUILD.gn.orig	2025-04-04 08:52:13 UTC
 +++ build/config/compiler/BUILD.gn
 @@ -198,7 +198,7 @@ declare_args() {
    # This greatly reduces the size of debug builds, at the cost of
@@ -47,7 +47,7 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
      if (save_reproducers_on_lld_crash && use_lld) {
        ldflags += [
-@@ -1234,7 +1241,7 @@ config("compiler_cpu_abi") {
+@@ -1223,7 +1230,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -56,7 +56,7 @@
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -1249,7 +1256,7 @@ config("compiler_cpu_abi") {
+@@ -1238,7 +1245,7 @@ config("compiler_cpu_abi") {
        }
      } else if (current_cpu == "arm64") {
        if (is_clang && !is_android && !is_nacl && !is_fuchsia &&
@@ -65,7 +65,7 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1583,7 +1590,7 @@ config("compiler_deterministic") {
+@@ -1572,7 +1579,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
      # we build same files with same compile flag.
      # Other paths are already given in relative, no need to normalize them.
@@ -74,7 +74,7 @@
        # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
        cflags += [
          "-Xclang",
-@@ -1641,7 +1648,7 @@ config("compiler_deterministic") {
+@@ -1630,7 +1637,7 @@ config("compiler_deterministic") {
  }
  
  config("clang_revision") {
@@ -83,17 +83,23 @@
        current_os != "zos") {
      update_args = [
        "--print-revision",
-@@ -1962,9 +1969,6 @@ config("default_warnings") {
-       cflags += [
-         # TODO(crbug.com/330524456): -Wcast-function-type is under -Wextra now.
-         "-Wno-cast-function-type",
+@@ -1960,23 +1967,12 @@ config("default_warnings") {
+         ]
+       }
+ 
+-      cflags += [
+-        # TODO(crbug.com/330524456): -Wcast-function-type is under -Wextra now.
+-        "-Wno-cast-function-type",
 -
 -        # TODO(crbug.com/40284799): Fix and re-enable.
 -        "-Wno-thread-safety-reference-return",
-       ]
- 
+-
+-        # TODO(crbug.com/376641662): Fix and re-enable.
+-        "-Wno-nontrivial-memcall",
+-      ]
+-
        cflags_cc += [
-@@ -1972,7 +1976,7 @@ config("default_warnings") {
+         # TODO(crbug.com/328490295): Fix and re-enable for C flags.
          "-Wenum-compare-conditional",
        ]
  
@@ -102,7 +108,7 @@
          cflags_cc += [
            # TODO(crbug.com/41486292): Fix and re-enable.
            "-Wno-c++11-narrowing-const-reference",
-@@ -2741,7 +2745,7 @@ config("afdo_optimize_size") {
+@@ -2742,7 +2738,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -111,7 +117,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2768,7 +2772,7 @@ config("afdo") {
+@@ -2769,7 +2765,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -120,7 +126,7 @@
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2945,7 +2949,7 @@ config("symbols") {
+@@ -2946,7 +2942,7 @@ config("symbols") {
      cflags += [ "-gomit-unreferenced-methods" ]
    }
  

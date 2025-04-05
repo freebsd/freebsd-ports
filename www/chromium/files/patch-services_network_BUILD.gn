@@ -1,6 +1,6 @@
---- services/network/BUILD.gn.orig	2025-02-19 07:43:18 UTC
+--- services/network/BUILD.gn.orig	2025-04-04 08:52:13 UTC
 +++ services/network/BUILD.gn
-@@ -396,7 +396,6 @@ if (is_linux || is_chromeos) {
+@@ -397,7 +397,6 @@ if (is_linux || is_chromeos) {
      ]
      deps = [
        "//base:base",

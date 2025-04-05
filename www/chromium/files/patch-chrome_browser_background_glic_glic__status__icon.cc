@@ -1,6 +1,6 @@
---- chrome/browser/glic/launcher/glic_status_icon.cc.orig	2025-03-05 08:14:56 UTC
-+++ chrome/browser/glic/launcher/glic_status_icon.cc
-@@ -84,7 +84,7 @@ GlicStatusIcon::GlicStatusIcon(GlicController* control
+--- chrome/browser/background/glic/glic_status_icon.cc.orig	2025-04-04 08:52:13 UTC
++++ chrome/browser/background/glic/glic_status_icon.cc
+@@ -83,7 +83,7 @@ GlicStatusIcon::GlicStatusIcon(GlicController* control
    if (!status_icon_) {
      return;
    }
@@ -9,7 +9,7 @@
    //  Set a vector icon for proper themeing on Linux.
    status_icon_->SetIcon(
        GlicVectorIconManager::GetVectorIcon(IDR_GLIC_BUTTON_VECTOR_ICON));
-@@ -108,7 +108,7 @@ GlicStatusIcon::GlicStatusIcon(GlicController* control
+@@ -113,7 +113,7 @@ GlicStatusIcon::GlicStatusIcon(GlicController* control
  GlicStatusIcon::~GlicStatusIcon() {
    context_menu_ = nullptr;
    if (status_icon_) {
@@ -18,7 +18,7 @@
      status_icon_->RemoveObserver(this);
  #endif
      std::unique_ptr<StatusIcon> removed_icon =
-@@ -196,7 +196,7 @@ std::unique_ptr<StatusIconMenuModel> GlicStatusIcon::C
+@@ -201,7 +201,7 @@ std::unique_ptr<StatusIconMenuModel> GlicStatusIcon::C
    menu->AddItem(
        IDC_GLIC_STATUS_ICON_MENU_REMOVE_ICON,
        l10n_util::GetStringUTF16(IDS_GLIC_STATUS_ICON_MENU_REMOVE_ICON));

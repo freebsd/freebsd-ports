@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/peerconnection/rtc_video_encoder_factory.cc.orig	2025-02-19 07:43:18 UTC
+--- third_party/blink/renderer/platform/peerconnection/rtc_video_encoder_factory.cc.orig	2025-04-04 08:52:13 UTC
 +++ third_party/blink/renderer/platform/peerconnection/rtc_video_encoder_factory.cc
-@@ -334,12 +334,12 @@ SupportedFormats GetSupportedFormatsInternal(
+@@ -329,12 +329,12 @@ SupportedFormats GetSupportedFormatsInternal(
        supported_formats.profiles.push_back(profile.profile);
        supported_formats.sdp_formats.push_back(std::move(*format));
  
