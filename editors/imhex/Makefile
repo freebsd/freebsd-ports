@@ -116,7 +116,7 @@ IGNORE=	requires libc++ of LLVM 17 on the base system
 .endif
 
 # After LLVM 18 import into the base system
-.if (${OSREL:R} == 15 && ${OSVERSION} >= 1500018)
+.if (${OSREL:R} == 15 && ${OSVERSION} >= 1500018) || ${OSREL:R} == 14
 CXXFLAGS+=	-fexperimental-library -D_LIBCPP_ENABLE_EXPERIMENTAL
 .endif
 
