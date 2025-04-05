@@ -1,6 +1,6 @@
 --- config.make.orig	2003-04-15 18:45:20 UTC
 +++ config.make
-@@ -57,13 +57,13 @@
+@@ -57,13 +57,13 @@ DEFAULT_V_CONFIGDIR	= /etc/fidogate
  
  # variable parameters, can be changed at run-time, DO NOT DELETE ANYTHING!!!
  DEFAULT_V_CONFIGDIR	= /etc/fidogate
@@ -19,7 +19,7 @@
  DEFAULT_V_INBOUND	= $(DEFAULT_V_BTBASEDIR)/in
  DEFAULT_V_PINBOUND	= $(DEFAULT_V_BTBASEDIR)/pin
  DEFAULT_V_UUINBOUND	= $(DEFAULT_V_BTBASEDIR)/uuin
-@@ -87,7 +87,7 @@ DEFAULT_F_NEWSETCDIR	= /etc/news
+@@ -87,7 +87,7 @@ DEFAULT_F_NEWSVARDIR	= /var/lib/news
  DEFAULT_F_NEWSVARDIR	= /var/lib/news
  # INN 1.7
  #DEFAULT_F_NEWSLIBDIR	= /usr/lib/news
@@ -37,7 +37,7 @@
  
  # Directory with sendmail m4 configuration files
  # RedHat 6.x
-@@ -158,9 +158,9 @@ PERL			= /usr/bin/perl
+@@ -158,9 +158,9 @@ SENDMAIL_CF_DIR		= /usr/share/sendmail-cf
  SENDMAIL_CF_DIR		= /usr/share/sendmail-cf
  
  # Directories for installing documentation, not used by subst.pl
@@ -50,3 +50,19 @@
  
  # RedHat RPM related dirs
  RPMBASEDIR	= /usr/src/redhat
+@@ -224,13 +224,13 @@ INCLUDE		= -I$(TOPDIR) -I$(TOPDIR)/src/include
+ # OS2			   
+ # CFLAGS	= $(DEBUG) $(INCLUDE) -Wall -DOS2
+ # Linux, SunOS
+-CFLAGS		= $(DEBUG) $(INCLUDE) -Wall
++CFLAGS		:= $(DEBUG) $(INCLUDE) -Wall $(CFLAGS)
+ 
+ # NEXTSTEP 3.3
+ # LFLAGS	= $(DEBUG) -L$(TOPDIR)/src/common -posix
+ # OS2
+ # LFLAGS	= -Zexe $(DEBUG) -L$(TOPDIR)/src/common
+-LFLAGS		= $(DEBUG) -L$(TOPDIR)/src/common
++LFLAGS		:= $(DEBUG) -L$(TOPDIR)/src/common $(LDFLAGS)
+ 
+ # ISC 3.x
+ # LIBS		= -lfidogate -linet -lPW -lcposix
