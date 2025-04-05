@@ -1,5 +1,6 @@
 PORTNAME=	c-ares
 DISTVERSION=	1.34.4
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -12,8 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cmake pathfix
 USE_LDCONFIG=	yes
-
-CONFLICTS=	py*-ripe.atlas.tools
 
 OPTIONS_DEFINE=	STATIC TEST
 OPTIONS_SUB=	yes
