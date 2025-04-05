@@ -1,4 +1,5 @@
 PORTNAME=	claws-mail
+PORTREVISION=	1
 CATEGORIES=	mail news
 
 COMMENT=	Lightweight and featureful GTK based e-mail and news client
@@ -14,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		mime-support>0:misc/mime-support
 
 USES=		cpe desktop-file-utils pathfix perl5 python shebangfix xorg
-USE_GNOME=	librsvg2
+USE_GNOME=	gdkpixbufextra:run librsvg2
 USE_XORG=	ice sm
 SHEBANG_FILES=	tools/*.pl tools/*.py tools/tb2claws-mail
 
