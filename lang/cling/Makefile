@@ -1,6 +1,7 @@
 PORTNAME=		cling
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.2
+PORTREVISION=		1
 CATEGORIES=		lang devel
 
 MAINTAINER=		arrowd@FreeBSD.org
@@ -27,19 +28,30 @@ CMAKE_ARGS=	-DLLVM_EXTERNAL_PROJECTS=cling \
 CMAKE_ARGS+=	-DLLVM_ENABLE_ASSERTIONS:BOOL=OFF
 
 ALL_TARGET=	cling
+INSTALL_TARGET=	install-clang-resource-headers
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)
-CFLAGS=		-DNDEBUG -g -O0
-CXXFLAGS=	-DNDEBUG -g -O0
-INSTALL_TARGET=	tools/cling/tools/install
+# even when building with debug, disable all assertions
+CFLAGS+=		-DNDEBUG -g -O0
+CXXFLAGS+=		-DNDEBUG -g -O0
+INSTALL_TARGET+=	tools/cling/tools/install
 .else
-INSTALL_TARGET=	tools/cling/tools/install/strip
+INSTALL_TARGET+=	tools/cling/tools/install/strip
 .endif
 
 post-extract:
 # for patching purposes
 	${MV} ${WRKSRC_llvm} ${WRKSRC}/llvm
+
+post-patch:
+	${REINPLACE_CMD} -e 's|Interp(argc, argv)|Interp(argc, argv, "${PREFIX}/cling")|' \
+		${WRKSRC}/tools/driver/cling.cpp
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/cling
+	cd ${WRKSRC}/include/cling && \
+		${COPYTREE_SHARE} Interpreter ${STAGEDIR}${PREFIX}/include/cling
 
 .include <bsd.port.post.mk>

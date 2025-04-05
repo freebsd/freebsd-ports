@@ -1,0 +1,11 @@
+--- llvm/clang/lib/Headers/CMakeLists.txt.orig	2025-02-07 08:51:59 UTC
++++ llvm/clang/lib/Headers/CMakeLists.txt
+@@ -497,7 +497,7 @@ add_header_target("utility-resource-headers" ${utility
+ add_header_target("windows-resource-headers" ${windows_only_files})
+ add_header_target("utility-resource-headers" ${utility_files})
+ 
+-get_clang_resource_dir(header_install_dir SUBDIR include)
++get_clang_resource_dir(header_install_dir SUBDIR include PREFIX cling)
+ 
+ #############################################################
+ # Install rules for the catch-all clang-resource-headers target
