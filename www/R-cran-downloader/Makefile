@@ -1,6 +1,5 @@
 PORTNAME=	downloader
-PORTVERSION=	0.4
-PORTREVISION=	5
+PORTVERSION=	0.4.1
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,9 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/downloader/
 
 LICENSE=	GPLv2
 
-CRAN_DEPENDS=	R-cran-digest>0:security/R-cran-digest
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-digest>0:security/R-cran-digest
 
 USES=		cran:auto-plist
 
