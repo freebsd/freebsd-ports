@@ -1,3 +1,50 @@
+  <vuln vid="789bcfb6-1224-11f0-85f3-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>135.0.7049.52</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>135.0.7049.52</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/04/stable-channel-update-for-desktop.html">
+	 <p>This update includes 13 security fixes:</p>
+	 <ul>
+	    <li>[376491759] Medium CVE-2025-3067: Inappropriate implementation in Custom Tabs. Reported by Philipp Beer (TU Wien) on 2024-10-31</li>
+	    <li>[401823929] Medium CVE-2025-3068: Inappropriate implementation in Intents. Reported by Simon Rawet on 2025-03-09</li>
+	    <li>[40060076] Medium CVE-2025-3069: Inappropriate implementation in Extensions. Reported by NDevTK on 2022-06-26</li>
+	    <li>[40086360] Medium CVE-2025-3070: Insufficient validation of untrusted input in Extensions. Reported by Anonymous on 2017-01-01</li>
+	    <li>[40051596] Low CVE-2025-3071: Inappropriate implementation in Navigations. Reported by David Erceg on 2020-02-23</li>
+	    <li>[362545037] Low CVE-2025-3072: Inappropriate implementation in Custom Tabs. Reported by Om Apip on 2024-08-27</li>
+	    <li>[388680893] Low CVE-2025-3073: Inappropriate implementation in Autofill. Reported by Hafiizh on 2025-01-09</li>
+	    <li>[392818696] Low CVE-2025-3074: Inappropriate implementation in Downloads. Reported by Farras Givari on 2025-01-28</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3067</cvename>
+      <cvename>CVE-2025-3068</cvename>
+      <cvename>CVE-2025-3069</cvename>
+      <cvename>CVE-2025-3070</cvename>
+      <cvename>CVE-2025-3071</cvename>
+      <cvename>CVE-2025-3072</cvename>
+      <cvename>CVE-2025-3073</cvename>
+      <cvename>CVE-2025-3074</cvename>
+      <url>https://chromereleases.googleblog.com/2025/04/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2025-04-01</discovery>
+      <entry>2025-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1205eccf-116d-11f0-8b2c-b42e991fc52e">
     <topic>Mozilla -- Memory corruption bug</topic>
     <affects>
