@@ -1,6 +1,6 @@
 PORTNAME=	navidrome
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.55.1
+DISTVERSION=	0.55.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~kbowling/distfiles/:npmcache
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
@@ -20,7 +20,7 @@ BUILD_DEPENDS+=	npm>0:www/npm
 LIB_DEPENDS+=	libtag.so:audio/taglib
 RUN_DEPENDS+=	ffmpeg:multimedia/ffmpeg
 
-USES=		cpe go:1.23,modules pkgconfig
+USES=		cpe go:1.24,modules pkgconfig
 USE_GITHUB=	yes
 GH_TUPLE=	\
 		Masterminds:squirrel:v1.5.4:masterminds_squirrel/vendor/github.com/Masterminds/squirrel \
@@ -30,7 +30,9 @@ GH_TUPLE=	\
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bmatcuk:doublestar:v4.8.1:bmatcuk_doublestar_v4/vendor/github.com/bmatcuk/doublestar/v4 \
 		bradleyjkemp:cupaloy:v2.8.0:bradleyjkemp_cupaloy_v2/vendor/github.com/bradleyjkemp/cupaloy/v2 \
+		cespare:reflex:v0.3.1:cespare_reflex/vendor/github.com/cespare/reflex \
 		cespare:xxhash:v2.3.0:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
+		creack:pty:v1.1.11:creack_pty/vendor/github.com/creack/pty \
 		davecgh:go-spew:d8f796af33cc:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		deluan:rest:6260bc399cbf:deluan_rest/vendor/github.com/deluan/rest \
 		deluan:sanitize:fdfd8fdfaa55:deluan_sanitize/vendor/github.com/deluan/sanitize \
@@ -51,12 +53,15 @@ GH_TUPLE=	\
 		go-ini:ini:v1.67.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-logr:logr:v1.4.2:go_logr_logr/vendor/github.com/go-logr/logr \
 		go-task:slim-sprig:v3.0.0:go_task_slim_sprig_v3/vendor/github.com/go-task/slim-sprig/v3 \
+		go-viper:encoding:ini/v0.1.1:go_viper_encoding_ini/vendor/github.com/go-viper/encoding \
+		go-viper:mapstructure:v2.2.1:go_viper_mapstructure_v2/vendor/github.com/go-viper/mapstructure/v2 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		goccy:go-json:v0.10.5:goccy_go_json/vendor/github.com/goccy/go-json \
 		gohugoio:hashstructure:v0.5.0:gohugoio_hashstructure/vendor/github.com/gohugoio/hashstructure \
 		golang:crypto:v0.36.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:054e65f0b394:golang_exp/vendor/golang.org/x/exp \
 		golang:image:v0.25.0:golang_image/vendor/golang.org/x/image \
+		golang:mod:v0.24.0:golang_mod/vendor/golang.org/x/mod \
 		golang:net:v0.37.0:golang_net/vendor/golang.org/x/net \
 		golang:sync:v0.12.0:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:v0.31.0:golang_sys/vendor/golang.org/x/sys \
@@ -66,15 +71,16 @@ GH_TUPLE=	\
 		google:go-cmp:v0.7.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-pipeline:6cbedfc1d3fc:google_go_pipeline/vendor/github.com/google/go-pipeline \
 		google:pprof:9094ed2288e7:google_pprof/vendor/github.com/google/pprof \
+		google:subcommands:v1.2.0:google_subcommands/vendor/github.com/google/subcommands \
 		google:uuid:v1.6.0:google_uuid/vendor/github.com/google/uuid \
 		google:wire:v0.6.0:google_wire/vendor/github.com/google/wire \
 		gorilla:css:v1.0.1:gorilla_css/vendor/github.com/gorilla/css \
 		hashicorp:errwrap:v1.1.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-multierror:v1.1.1:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
-		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jellydator:ttlcache:v3.3.0:jellydator_ttlcache_v3/vendor/github.com/jellydator/ttlcache/v3 \
 		kardianos:service:v1.2.2:kardianos_service/vendor/github.com/kardianos/service \
+		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		klauspost:compress:v1.17.11:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.3.1:kr_pretty/vendor/github.com/kr/pretty \
 		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
@@ -86,15 +92,14 @@ GH_TUPLE=	\
 		lestrrat-go:iter:v1.0.2:lestrrat_go_iter/vendor/github.com/lestrrat-go/iter \
 		lestrrat-go:jwx:v2.1.4:lestrrat_go_jwx_v2/vendor/github.com/lestrrat-go/jwx/v2 \
 		lestrrat-go:option:v1.0.1:lestrrat_go_option/vendor/github.com/lestrrat-go/option \
-		magiconair:properties:v1.8.9:magiconair_properties/vendor/github.com/magiconair/properties \
 		matoous:go-nanoid:v2.1.0:matoous_go_nanoid_v2/vendor/github.com/matoous/go-nanoid/v2 \
 		mattn:go-sqlite3:v1.14.24:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		mfridman:interpolate:v0.0.2:mfridman_interpolate/vendor/github.com/mfridman/interpolate \
 		microcosm-cc:bluemonday:v1.0.27:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		mileusna:useragent:v1.3.5:mileusna_useragent/vendor/github.com/mileusna/useragent \
-		mitchellh:mapstructure:v1.5.0:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		munnerz:goautoneg:a7dc8b61c822:munnerz_goautoneg/vendor/github.com/munnerz/goautoneg \
 		natefinch:npipe:c1b8fa8bdcce:natefinch_npipe/vendor/gopkg.in/natefinch/npipe.v2 \
+		ogier:pflag:v0.0.1:ogier_pflag/vendor/github.com/ogier/pflag \
 		onsi:ginkgo:v2.23.0:onsi_ginkgo_v2/vendor/github.com/onsi/ginkgo/v2 \
 		onsi:gomega:v1.36.2:onsi_gomega/vendor/github.com/onsi/gomega \
 		pelletier:go-toml:v2.2.3:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
@@ -111,7 +116,6 @@ GH_TUPLE=	\
 		rogpeppe:go-internal:v1.14.1:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		sabhiram:go-gitignore:525f6e181f06:sabhiram_go_gitignore/vendor/github.com/sabhiram/go-gitignore \
 		sagikazarmark:locafero:v0.7.0:sagikazarmark_locafero/vendor/github.com/sagikazarmark/locafero \
-		sagikazarmark:slog-shim:v0.1.0:sagikazarmark_slog_shim/vendor/github.com/sagikazarmark/slog-shim \
 		segmentio:asm:v1.2.0:segmentio_asm/vendor/github.com/segmentio/asm \
 		sethvargo:go-retry:v0.3.0:sethvargo_go_retry/vendor/github.com/sethvargo/go-retry \
 		sirupsen:logrus:v1.9.3:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
@@ -120,7 +124,7 @@ GH_TUPLE=	\
 		spf13:cast:v1.7.1:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v1.9.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.6:spf13_pflag/vendor/github.com/spf13/pflag \
-		spf13:viper:v1.19.0:spf13_viper/vendor/github.com/spf13/viper \
+		spf13:viper:v1.20.0:spf13_viper/vendor/github.com/spf13/viper \
 		stretchr:objx:v0.5.2:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.10.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.6.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
@@ -131,7 +135,7 @@ GH_TUPLE=	\
 
 USE_RC_SUBR=	${PORTNAME}
 
-_BUILD_SHA=	beb768c
+_BUILD_SHA=	a057a68
 
 GO_BUILDFLAGS=	-ldflags="-X github.com/navidrome/navidrome/consts.gitSha=${_BUILD_SHA} -X github.com/navidrome/navidrome/consts.gitTag=${GH_TAGNAME}-FREEBSD" -tags=netgo
 
