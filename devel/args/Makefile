@@ -1,5 +1,5 @@
 PORTNAME=	args
-DISTVERSION=	6.4.6
+DISTVERSION=	6.4.7
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,5 +24,7 @@ PLIST_FILES=	include/args.hxx \
 		lib/cmake/args/args-config.cmake \
 		lib/cmake/args/args-config-version.cmake \
 		libdata/pkgconfig/args.pc
+
+# tests as of 6.4.7: 100% tests passed, 0 tests failed out of 2
 
 .include <bsd.port.mk>
