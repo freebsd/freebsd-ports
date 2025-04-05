@@ -1,6 +1,6 @@
 PORTNAME=	ripe.atlas.tools
 DISTVERSION=	3.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,8 +29,6 @@ USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 PYTEST_IGNORED_TESTS=	test_arg_radius test_html_documentation \
 			test_text_documentation test_basic #WIP
-
-CONFLICTS_INSTALL=	c-ares # bin/adig
 
 NO_ARCH=	yes
 
