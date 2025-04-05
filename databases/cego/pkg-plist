@@ -50,7 +50,7 @@ include/cego/CegoCheckpoint.h
 include/cego/CegoCheckpointDump.h
 include/cego/CegoClob.h
 include/cego/CegoComparison.h
-include/cego/CegoCondDesc.h
+include/cego/CegoCondition.h
 include/cego/CegoContentObject.h
 include/cego/CegoDataPointer.h
 include/cego/CegoDataType.h
@@ -75,8 +75,6 @@ include/cego/CegoFunction.h
 include/cego/CegoGroupCursor.h
 include/cego/CegoGroupNode.h
 include/cego/CegoGroupSpace.h
-include/cego/CegoHavingCond.h
-include/cego/CegoHavingDesc.h
 include/cego/CegoImpInStream.h
 include/cego/CegoJDBCInfo.h
 include/cego/CegoJoinObject.h
@@ -97,11 +95,10 @@ include/cego/CegoOrderCursor.h
 include/cego/CegoOrderNode.h
 include/cego/CegoOrderSpace.h
 include/cego/CegoOutput.h
-include/cego/CegoPredDesc.h
+include/cego/CegoPredicate.h
 include/cego/CegoProcAssignStmt.h
 include/cego/CegoProcBlock.h
 include/cego/CegoProcBlockStmt.h
-include/cego/CegoProcCond.h
 include/cego/CegoProcCursor.h
 include/cego/CegoProcCursorCloseStmt.h
 include/cego/CegoProcCursorCreateStmt.h
@@ -110,7 +107,6 @@ include/cego/CegoProcFetch.h
 include/cego/CegoProcIfStmt.h
 include/cego/CegoProcNoopStmt.h
 include/cego/CegoProcObject.h
-include/cego/CegoProcPred.h
 include/cego/CegoProcQueryStmt.h
 include/cego/CegoProcReturnStmt.h
 include/cego/CegoProcStmt.h
