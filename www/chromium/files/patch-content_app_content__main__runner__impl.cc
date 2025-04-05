@@ -1,6 +1,6 @@
---- content/app/content_main_runner_impl.cc.orig	2025-03-05 08:14:56 UTC
+--- content/app/content_main_runner_impl.cc.orig	2025-04-04 08:52:13 UTC
 +++ content/app/content_main_runner_impl.cc
-@@ -142,18 +142,20 @@
+@@ -144,18 +144,20 @@
  #include "content/browser/posix_file_descriptor_info_impl.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -23,7 +23,7 @@
  #include "third_party/boringssl/src/include/openssl/crypto.h"
  #include "third_party/webrtc_overrides/init_webrtc.h"  // nogncheck
  
-@@ -182,6 +184,10 @@
+@@ -184,6 +186,10 @@
  #include "media/base/media_switches.h"
  #endif
  
@@ -34,7 +34,7 @@
  #if BUILDFLAG(IS_ANDROID)
  #include "base/system/sys_info.h"
  #include "content/browser/android/battery_metrics.h"
-@@ -380,7 +386,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+@@ -382,7 +388,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE)
  
@@ -43,7 +43,7 @@
  
  #if BUILDFLAG(ENABLE_PPAPI)
  // Loads the (native) libraries but does not initialize them (i.e., does not
-@@ -418,7 +424,10 @@ void PreloadLibraryCdms() {
+@@ -420,7 +426,10 @@ void PreloadLibraryCdms() {
  
  void PreSandboxInit() {
    // Ensure the /dev/urandom is opened.
@@ -54,7 +54,7 @@
  
    // May use sysinfo(), sched_getaffinity(), and open various /sys/ and /proc/
    // files.
-@@ -430,9 +439,16 @@ void PreSandboxInit() {
+@@ -432,9 +441,16 @@ void PreSandboxInit() {
    // https://boringssl.googlesource.com/boringssl/+/HEAD/SANDBOXING.md
    CRYPTO_pre_sandbox_init();
  
@@ -71,7 +71,7 @@
  
  #if BUILDFLAG(ENABLE_PPAPI)
    // Ensure access to the Pepper plugins before the sandbox is turned on.
-@@ -742,7 +758,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
+@@ -748,7 +764,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
      unregister_thread_closure = base::HangWatcher::RegisterThread(
          base::HangWatcher::ThreadType::kMainThread);
      bool start_hang_watcher_now;
@@ -80,7 +80,7 @@
      // On Linux/ChromeOS, the HangWatcher can't start until after the sandbox is
      // initialized, because the sandbox can't be started with multiple threads.
      // TODO(mpdenton): start the HangWatcher after the sandbox is initialized.
-@@ -855,11 +871,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -861,11 +877,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
                   base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -94,12 +94,14 @@
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -1040,8 +1055,20 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1046,10 +1061,22 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
        process_type == switches::kZygoteProcess) {
      PreSandboxInit();
    }
 +#elif BUILDFLAG(IS_BSD)
 +  PreSandboxInit();
+ #elif BUILDFLAG(IS_IOS)
+   ChildProcessEnterSandbox();
  #endif
  
 +#if BUILDFLAG(IS_BSD)
@@ -115,7 +117,7 @@
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE)
-@@ -1138,6 +1165,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
+@@ -1146,6 +1173,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
    content_main_params_.reset();
  
    RegisterMainThreadFactories();

@@ -1,4 +1,4 @@
---- base/profiler/stack_base_address_posix.cc.orig	2025-02-19 07:43:18 UTC
+--- base/profiler/stack_base_address_posix.cc.orig	2025-04-04 08:52:13 UTC
 +++ base/profiler/stack_base_address_posix.cc
 @@ -17,6 +17,10 @@
  #include "base/files/scoped_file.h"
@@ -52,8 +52,8 @@
    // trying to work around the problem.
    return std::nullopt;
  #else
--  const bool is_main_thread = id == GetCurrentProcId();
-+  const bool is_main_thread = id == checked_cast<PlatformThreadId>(GetCurrentProcId());
+-  const bool is_main_thread = id.raw() == GetCurrentProcId();
++  const bool is_main_thread = id.raw() == (checked_cast<uint64_t>(GetCurrentProcId()));
    if (is_main_thread) {
  #if BUILDFLAG(IS_ANDROID)
      // The implementation of pthread_getattr_np() in Bionic reads proc/self/maps

@@ -1,20 +1,20 @@
---- chrome/browser/media/webrtc/chrome_screen_enumerator.h.orig	2024-02-23 21:04:38 UTC
+--- chrome/browser/media/webrtc/chrome_screen_enumerator.h.orig	2025-04-04 08:52:13 UTC
 +++ chrome/browser/media/webrtc/chrome_screen_enumerator.h
-@@ -20,7 +20,7 @@ namespace aura {
+@@ -18,7 +18,7 @@
+ namespace aura {
  class Window;
  }
- 
--#elif BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#elif BUILDFLAG(IS_LINUX)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  namespace webrtc {
  class DesktopCapturer;
  }
-@@ -42,7 +42,7 @@ class ChromeScreenEnumerator : public media::ScreenEnu
- #if BUILDFLAG(IS_CHROMEOS_ASH)
+@@ -39,7 +39,7 @@ class ChromeScreenEnumerator : public media::ScreenEnu
+ #if BUILDFLAG(IS_CHROMEOS)
    static void SetRootWindowsForTesting(
        std::vector<raw_ptr<aura::Window, VectorExperimental>> root_windows);
--#elif BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#elif BUILDFLAG(IS_LINUX)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    static void SetDesktopCapturerForTesting(
        std::unique_ptr<webrtc::DesktopCapturer> capturer);
  #endif

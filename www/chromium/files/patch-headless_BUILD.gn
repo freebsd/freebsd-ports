@@ -1,0 +1,11 @@
+--- headless/BUILD.gn.orig	2025-04-04 08:52:13 UTC
++++ headless/BUILD.gn
+@@ -474,7 +474,7 @@ component("headless_non_renderer") {
+     }
+   }
+ 
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     deps += [
+       "//components/crash/content/browser",
+       "//components/crash/core/app",

@@ -1,6 +1,6 @@
---- net/http/http_auth_preferences.cc.orig	2023-10-11 18:22:24 UTC
+--- net/http/http_auth_preferences.cc.orig	2025-04-04 08:52:13 UTC
 +++ net/http/http_auth_preferences.cc
-@@ -39,7 +39,7 @@ std::string HttpAuthPreferences::AuthAndroidNegotiateA
+@@ -38,7 +38,7 @@ std::string HttpAuthPreferences::AuthAndroidNegotiateA
  }
  #endif  // BUILDFLAG(IS_ANDROID)
  

@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/util/managed_browser_utils.cc.orig	2025-03-05 08:14:56 UTC
+--- chrome/browser/enterprise/util/managed_browser_utils.cc.orig	2025-04-04 08:52:13 UTC
 +++ chrome/browser/enterprise/util/managed_browser_utils.cc
-@@ -222,7 +222,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
+@@ -224,7 +224,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
            .GetProfileAttributesWithPath(profile->GetPath());
    if (entry) {
      entry->SetUserAcceptedAccountManagement(accepted);

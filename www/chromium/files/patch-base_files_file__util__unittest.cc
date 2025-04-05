@@ -1,6 +1,6 @@
---- base/files/file_util_unittest.cc.orig	2025-03-05 08:14:56 UTC
+--- base/files/file_util_unittest.cc.orig	2025-04-04 08:52:13 UTC
 +++ base/files/file_util_unittest.cc
-@@ -3911,7 +3911,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithNamedPipe) {
+@@ -3920,7 +3920,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithNamedPipe) {
  }
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -9,7 +9,27 @@
  TEST_F(FileUtilTest, ReadFileToStringWithProcFileSystem) {
    FilePath file_path("/proc/cpuinfo");
    std::string data = "temp";
-@@ -4648,7 +4648,7 @@ TEST(FileUtilMultiThreadedTest, MultiThreadedTempFiles
+@@ -4505,6 +4505,19 @@ TEST_F(FileUtilTest, CreateDirectoryOnlyCheckMissingSu
+ 
+ #endif  // BUILDFLAG(IS_ANDROID)
+ 
++#if BUILDFLAG(IS_OPENBSD)
++TEST_F(FileUtilTest, CreateDirectoryInUnveiledPath) {
++  FilePath dir = PathService::CheckedGet(DIR_GEN_TEST_DATA_ROOT);
++  dir = dir.Append(FILE_PATH_LITERAL("base"));
++  dir = dir.Append(FILE_PATH_LITERAL("test"));
++  dir = dir.Append(FILE_PATH_LITERAL("unveil"));
++  unveil(dir.value().c_str(), "rwc");
++  EXPECT_TRUE(CreateDirectory(dir));
++  dir = dir.Append(FILE_PATH_LITERAL("test"));
++  EXPECT_FALSE(CreateDirectory(dir));
++}
++#endif
++
+ #if BUILDFLAG(IS_WIN) && BUILDFLAG(GOOGLE_CHROME_BRANDING) && \
+     defined(ARCH_CPU_32_BITS)
+ // TODO(crbug.com/327582285): Re-enable these tests. They may be failing due to
+@@ -4671,7 +4684,7 @@ TEST(FileUtilMultiThreadedTest, MultiThreadedTempFiles
                  NULL);
  #else
      size_t bytes_written =

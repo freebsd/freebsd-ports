@@ -1,11 +1,11 @@
---- content/shell/browser/shell_browser_main_parts.cc.orig	2025-02-19 07:43:18 UTC
+--- content/shell/browser/shell_browser_main_parts.cc.orig	2025-04-04 08:52:13 UTC
 +++ content/shell/browser/shell_browser_main_parts.cc
 @@ -50,7 +50,7 @@
  #include "net/base/network_change_notifier.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX) && defined(USE_AURA)
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) && defined(USE_AURA)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && defined(USE_AURA)
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  

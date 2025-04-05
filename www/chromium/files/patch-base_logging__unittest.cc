@@ -1,6 +1,6 @@
---- base/logging_unittest.cc.orig	2025-02-19 07:43:18 UTC
+--- base/logging_unittest.cc.orig	2025-04-04 08:52:13 UTC
 +++ base/logging_unittest.cc
-@@ -41,7 +41,7 @@
+@@ -40,7 +40,7 @@
  #include "base/posix/eintr_wrapper.h"
  #endif  // BUILDFLAG(IS_POSIX)
  
@@ -9,7 +9,7 @@
  #include <ucontext.h>
  #endif
  
-@@ -589,14 +589,18 @@ void CheckCrashTestSighandler(int, siginfo_t* info, vo
+@@ -588,14 +588,18 @@ void CheckCrashTestSighandler(int, siginfo_t* info, vo
    // need the arch-specific boilerplate below, which is inspired by breakpad.
    // At the same time, on OSX, ucontext.h is deprecated but si_addr works fine.
    uintptr_t crash_addr = 0;

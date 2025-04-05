@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/features/password_features.cc.orig	2025-03-05 08:14:56 UTC
+--- components/password_manager/core/browser/features/password_features.cc.orig	2025-04-04 08:52:13 UTC
 +++ components/password_manager/core/browser/features/password_features.cc
-@@ -35,7 +35,7 @@ BASE_FEATURE(kClearUndecryptablePasswords,
+@@ -40,7 +40,7 @@ BASE_FEATURE(kClearUndecryptablePasswords,
  BASE_FEATURE(kClearUndecryptablePasswordsOnSync,
               "ClearUndecryptablePasswordsInSync",
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_IOS) || \
@@ -9,9 +9,9 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -107,7 +107,7 @@ BASE_FEATURE(kReuseDetectionBasedOnPasswordHashes,
+@@ -112,7 +112,7 @@ BASE_FEATURE(kReuseDetectionBasedOnPasswordHashes,
               "ReuseDetectionBasedOnPasswordHashes",
-              base::FEATURE_DISABLED_BY_DEFAULT);
+              base::FEATURE_ENABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

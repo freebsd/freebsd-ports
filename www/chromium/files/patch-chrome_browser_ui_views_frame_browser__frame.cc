@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_frame.cc.orig	2025-02-19 07:43:18 UTC
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig	2025-04-04 08:52:13 UTC
 +++ chrome/browser/ui/views/frame/browser_frame.cc
 @@ -52,7 +52,7 @@
  #include "ui/aura/window.h"
@@ -27,7 +27,7 @@
    SelectNativeTheme();
  #else
    SetNativeTheme(ui::NativeTheme::GetInstanceForNativeUi());
-@@ -369,7 +369,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
+@@ -368,7 +368,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
    chrome::SaveWindowWorkspace(browser_view_->browser(), GetWorkspace());
    chrome::SaveWindowVisibleOnAllWorkspaces(browser_view_->browser(),
                                             IsVisibleOnAllWorkspaces());
@@ -36,7 +36,7 @@
    // If the window was sent to a different workspace, prioritize it if
    // it was sent to the current workspace and deprioritize it
    // otherwise.  This is done by MoveBrowsersInWorkspaceToFront()
-@@ -567,7 +567,7 @@ void BrowserFrame::OnMenuClosed() {
+@@ -566,7 +566,7 @@ void BrowserFrame::OnMenuClosed() {
  }
  
  void BrowserFrame::SelectNativeTheme() {
@@ -45,7 +45,7 @@
    // Use the regular NativeTheme instance if running incognito mode, regardless
    // of system theme (gtk, qt etc).
    ui::NativeTheme* native_theme = ui::NativeTheme::GetInstanceForNativeUi();
-@@ -608,7 +608,7 @@ void BrowserFrame::OnTouchUiChanged() {
+@@ -607,7 +607,7 @@ void BrowserFrame::OnTouchUiChanged() {
  bool BrowserFrame::RegenerateFrameOnThemeChange(
      BrowserThemeChangeType theme_change_type) {
    bool need_regenerate = false;

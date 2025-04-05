@@ -1,7 +1,7 @@
---- components/device_signals/core/common/signals_features.h.orig	2025-03-05 08:14:56 UTC
+--- components/device_signals/core/common/signals_features.h.orig	2025-04-04 08:52:13 UTC
 +++ components/device_signals/core/common/signals_features.h
-@@ -14,7 +14,7 @@ namespace enterprise_signals::features {
- BASE_DECLARE_FEATURE(kAllowClientCertificateReportingForUsers);
+@@ -24,7 +24,7 @@ bool IsProfileSignalsReportingEnabled();
+ bool IsBrowserSignalsReportingEnabled();
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_CHROMEOS)

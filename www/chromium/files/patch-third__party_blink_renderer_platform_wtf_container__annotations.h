@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/wtf/container_annotations.h.orig	2022-03-25 21:59:56 UTC
+--- third_party/blink/renderer/platform/wtf/container_annotations.h.orig	2025-04-04 08:52:13 UTC
 +++ third_party/blink/renderer/platform/wtf/container_annotations.h
-@@ -12,7 +12,7 @@
+@@ -11,7 +11,7 @@
  // TODO(ochang): Remove the ARCH_CPU_X86_64 condition to enable this for X86
  // once the crashes there have been fixed: http://crbug.com/461406
  #if defined(ADDRESS_SANITIZER) &&                      \
