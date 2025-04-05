@@ -1,7 +1,6 @@
 PORTNAME=	kubie
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.1
-PORTREVISION=	2
+DISTVERSION=	0.25.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -17,6 +16,8 @@ ONLY_FOR_ARCHS_REASON=	Requires 64-bit processor
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	sbstp
+
+BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/bash_completion.d/${PORTNAME}.bash \
