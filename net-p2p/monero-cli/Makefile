@@ -1,10 +1,9 @@
 PORTNAME=	monero-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.3.4
-PORTREVISION=	1
+DISTVERSION=	0.18.4.0
 CATEGORIES=	net-p2p finance
 
-MAINTAINER=	alexander@perechnev.com
+MAINTAINER=	alex.perechnev@gmail.com
 COMMENT=	Private, secure, untraceable, decentralised digital currency (CLI)
 WWW=		https://getmonero.org/
 
@@ -12,7 +11,6 @@ LICENSE=	BSD3CLAUSE
 
 BROKEN_SSL=	libressl
 BROKEN_aarch64=	fails to compile: uses unavailable HWCAP_AES and getauxval
-BROKEN=		fails to build with boost-1.85+
 
 BUILD_DEPENDS=	${LOCALBASE}/include/rapidjson/document.h:devel/rapidjson \
 		${LOCALBASE}/include/zmq.hpp:net/cppzmq
