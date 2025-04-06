@@ -1,12 +1,13 @@
 PORTNAME=	license-expression
-DISTVERSION=	30.3.0
+DISTVERSION=	30.4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	license_expression-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Parses, normalizes and compares license expressions
-WWW=		https://github.com/nexB/license-expression
+WWW=		https://github.com/aboutcode-org/license-expression
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/NOTICE
