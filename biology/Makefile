@@ -52,6 +52,7 @@
     SUBDIR += erminej
     SUBDIR += exonerate
     SUBDIR += fasda
+    SUBDIR += fasda-utils
     SUBDIR += fasta
     SUBDIR += fasta3
     SUBDIR += fastahack
