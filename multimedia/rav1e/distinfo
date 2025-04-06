@@ -1,4 +1,4 @@
-TIMESTAMP = 1704876138
+TIMESTAMP = 1743953353
 SHA256 (rust/crates/addr2line-0.21.0.crate) = 8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb
 SIZE (rust/crates/addr2line-0.21.0.crate) = 40807
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -47,8 +47,8 @@ SHA256 (rust/crates/bitstream-io-2.2.0.crate) = 06c9989a51171e2e81038ab168b6ae22
 SIZE (rust/crates/bitstream-io-2.2.0.crate) = 34113
 SHA256 (rust/crates/bstr-1.9.0.crate) = c48f0051a4b4c5e0b6d365cd04af53aeaa209e3cc15ec2cdb69e73cc87fbd0dc
 SIZE (rust/crates/bstr-1.9.0.crate) = 380170
-SHA256 (rust/crates/built-0.7.1.crate) = 38d17f4d6e4dc36d1a02fbedc2753a096848e7c1b0772f7654eab8e2c927dd53
-SIZE (rust/crates/built-0.7.1.crate) = 21085
+SHA256 (rust/crates/built-0.7.2.crate) = 41bfbdb21256b87a8b5e80fab81a8eed158178e812fd7ba451907518b2742f16
+SIZE (rust/crates/built-0.7.2.crate) = 21148
 SHA256 (rust/crates/bumpalo-3.14.0.crate) = 7f30e7476521f6f8af1a1c4c0b8cc94f0bee37d91763d0ca2665f299b6cd8aec
 SIZE (rust/crates/bumpalo-3.14.0.crate) = 82400
 SHA256 (rust/crates/bytemuck-1.14.0.crate) = 374d28ec25809ee0e23827c2ab573d729e293f281dfe393500e7ad618baa61c6
