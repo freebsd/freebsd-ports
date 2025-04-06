@@ -1,10 +1,7 @@
 PORTNAME=	hyprgraphics
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.3
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	575ae47b782b.patch:-p1 # https://github.com/hyprwm/hyprgraphics/pull/13
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hyprland graphics / resource utilities
