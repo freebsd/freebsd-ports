@@ -341,6 +341,10 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/object/rct2/audio/rct2.audio.base.rctc.json
 %%DATADIR%%/object/rct2/audio/rct2.audio.circus.json
 %%DATADIR%%/object/rct2/audio/rct2.audio.title.json
+%%DATADIR%%/object/rct2/climate/rct2.climate.cold.json
+%%DATADIR%%/object/rct2/climate/rct2.climate.cool_and_wet.json
+%%DATADIR%%/object/rct2/climate/rct2.climate.hot_and_dry.json
+%%DATADIR%%/object/rct2/climate/rct2.climate.warm.json
 %%DATADIR%%/object/rct2/footpath_banner/rct2.footpath_banner.bn1.json
 %%DATADIR%%/object/rct2/footpath_banner/rct2.footpath_banner.bn2.json
 %%DATADIR%%/object/rct2/footpath_banner/rct2.footpath_banner.bn3.json
@@ -1167,10 +1171,10 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/object/rct2/station/rct2.station.snow.json
 %%DATADIR%%/object/rct2/station/rct2.station.space.json
 %%DATADIR%%/object/rct2/station/rct2.station.wooden.json
-%%DATADIR%%/object/rct2/terrain_edge/rct2.terrain_edge.ice.json
-%%DATADIR%%/object/rct2/terrain_edge/rct2.terrain_edge.rock.json
-%%DATADIR%%/object/rct2/terrain_edge/rct2.terrain_edge.wood_black.json
-%%DATADIR%%/object/rct2/terrain_edge/rct2.terrain_edge.wood_red.json
+%%DATADIR%%/object/rct2/terrain_edge/rct2.terrain_edge.ice.parkobj
+%%DATADIR%%/object/rct2/terrain_edge/rct2.terrain_edge.rock.parkobj
+%%DATADIR%%/object/rct2/terrain_edge/rct2.terrain_edge.wood_black.parkobj
+%%DATADIR%%/object/rct2/terrain_edge/rct2.terrain_edge.wood_red.parkobj
 %%DATADIR%%/object/rct2/terrain_surface/rct2.terrain_surface.chequerboard.json
 %%DATADIR%%/object/rct2/terrain_surface/rct2.terrain_surface.dirt.json
 %%DATADIR%%/object/rct2/terrain_surface/rct2.terrain_surface.grass.json
