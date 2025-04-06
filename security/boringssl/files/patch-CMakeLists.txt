@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2025-01-14 22:15:03 UTC
+--- CMakeLists.txt.orig	2025-04-05 04:28:51 UTC
 +++ CMakeLists.txt
-@@ -659,6 +659,8 @@ target_link_libraries(ssl crypto)
+@@ -654,6 +654,8 @@ target_link_libraries(ssl crypto)
  # here.
  set_property(TARGET ssl PROPERTY EXPORT_NAME SSL)
  target_link_libraries(ssl crypto)
@@ -8,4 +8,4 @@
 +SET_TARGET_PROPERTIES(crypto PROPERTIES SOVERSION 1)
  
  add_library(decrepit ${DECREPIT_SOURCES})
- target_link_libraries(decrepit crypto ssl)
+ target_link_libraries(decrepit ssl crypto)
