@@ -1,6 +1,6 @@
 PORTNAME=	quat
-PORTVERSION=	1.20
-PORTREVISION=	17
+DISTVERSION=	1.20
+PORTREVISION=	18
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.physcip.uni-stuttgart.de/pages/~phy11733/download/
 PKGNAMESUFFIX=	-gui
@@ -10,6 +10,9 @@ COMMENT=	Three-dimensional fractal creator (X11 GUI)
 WWW=		https://www.physcip.uni-stuttgart.de/pages/~phy11733/index_e.html
 
 LICENSE=	GPLv2+
+
+DEPRECATED=	Last upstream release was in 2003
+EXPIRATION_DATE=	2025-05-05
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
