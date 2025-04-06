@@ -6,7 +6,8 @@ PKGNAMESUFFIX=	-library
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for working with units of measurement
-WWW=		https://units.readthedocs.io/en/latest/
+WWW=		https://units.readthedocs.io/en/latest\ \
+		https://github.com/LLNL/units
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,7 +17,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
-GH_TUPLE=	google:googletest:v1.15.2:googletest/ThirdParty/googletest
+GH_TUPLE=	google:googletest:v1.15.2:googletest/ThirdParty/googletest # next release will have UNITS_USE_EXTERNAL_GTEST
 
 CMAKE_ON=	UNITS_BUILD_OBJECT_LIBRARY \
 		UNITS_BUILD_SHARED_LIBRARY
