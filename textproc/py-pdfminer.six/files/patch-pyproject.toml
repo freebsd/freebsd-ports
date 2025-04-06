@@ -1,0 +1,27 @@
+* Omit "license" keyword for now to be able to build with older py-setuptools.
+
+* Provide the console scripts without their ".py" extension.
+
+See also: https://github.com/pdfminer/pdfminer.six/issues/724
+
+--- pyproject.toml.orig	2025-04-05 16:54:46 UTC
++++ pyproject.toml
+@@ -7,7 +7,6 @@ readme = "README.md"
+ dynamic = ["version"]
+ description = "PDF parser and analyzer"
+ readme = "README.md"
+-license = "MIT"
+ requires-python = ">=3.9"
+ authors = [
+     { name = "Yusuke Shinyama" },
+@@ -63,8 +62,8 @@ script-files = [
+ [tool.setuptools]
+ packages = ["pdfminer"]
+ script-files = [
+-    "tools/pdf2txt.py",
+-    "tools/dumppdf.py",
++    "tools/pdf2txt",
++    "tools/dumppdf",
+ ]
+ 
+ [tool.setuptools_scm]

@@ -1,9 +1,9 @@
 PORTNAME=	pdfminer.six
-DISTVERSION=	20240706
-PORTREVISION=	1
+DISTVERSION=	20250327
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pdfminer_six-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	PDF parser and analyzer
@@ -12,11 +12,13 @@ WWW=		https://github.com/pdfminer/pdfminer.six
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-git-versioning<3:devel/py-setuptools-git-versioning@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>0:textproc/py-charset-normalizer@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8:devel/py-setuptools-scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=2.0.0:textproc/py-charset-normalizer@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent cryptography distutils
+USE_PYTHON=	autoplist concurrent cryptography pep517
 
 CONFLICTS_INSTALL=	py??-pdfminer py??-pdfminer3k
 NO_ARCH=		yes
