@@ -21,6 +21,6 @@ include/hyprutils/string/String.hpp
 include/hyprutils/string/VarList.hpp
 include/hyprutils/utils/ScopeGuard.hpp
 lib/libhyprutils.so
-lib/libhyprutils.so.4
+lib/libhyprutils.so.5
 lib/libhyprutils.so.%%VERSION%%
 libdata/pkgconfig/hyprutils.pc
