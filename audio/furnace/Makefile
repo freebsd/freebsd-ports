@@ -1,6 +1,7 @@
 PORTNAME=	furnace
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.8.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -11,39 +12,49 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libfftw3.so:math/fftw3 \
 		libfmt.so:devel/libfmt \
+		libfreetype.so:print/freetype2 \
+		libsndfile.so:audio/libsndfile \
+		libportaudio.so:audio/portaudio \
 		librtmidi.so:audio/rtmidi \
-		libsndfile.so:audio/libsndfile
 
-USES=		cmake desktop-file-utils gl localbase:ldflags pkgconfig sdl \
-		shared-mime-info tar:xz
+USES=		cmake compiler:c++14-lang desktop-file-utils gl \
+		localbase:ldflags pkgconfig sdl shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	tildearrow
-GH_TUPLE=	libsdl-org:SDL:2359383fc:sdl/extern/SDL \
-		superctr:adpcm:ef7a21715:adpcm/extern/adpcm \
-		fmtlib:fmt:e57ca2e36:fmt/extern/fmt
+GH_TUPLE=	superctr:adpcm:ef7a21715:adpcm/extern/adpcm
 USE_GL=		gl
 USE_SDL=	sdl2
 
-CMAKE_ARGS+=	-DBUILD_GUI:BOOL=ON \
-		-DSYSTEM_FMT:BOOL=ON \
-		-DSYSTEM_LIBSNDFILE:BOOL=ON \
-		-DSYSTEM_RTMIDI=ON \
-		-DSYSTEM_SDL2:BOOL=ON \
-		-DSYSTEM_ZLIB:BOOL=ON
+CMAKE_ON=	SYSTEM_FFTW \
+		SYSTEM_FMT \
+		SYSTEM_FREETYPE \
+		SYSTEM_LIBSNDFILE \
+		SYSTEM_PORTAUDIO \
+		SYSTEM_RTMIDI \
+		SYSTEM_SDL2 \
+		SYSTEM_ZLIB
+CMAKE_OFF=	WITH_RENDER_OPENGL1
 
-# tags are bogus, ignore until 0.6 is released
-PORTSCOUT=	ignore:1
+EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/extern/fftw \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/extern/fmt \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/extern/freetype \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/extern/libsndfile-modified \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/extern/portaudio \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/extern/rtmidi \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/extern/SDL \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/extern/zlib \
+			--no-same-owner --no-same-permissions
 
 OPTIONS_DEFINE=	DOCS JACK NLS
 OPTIONS_SUB=	yes
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
-JACK_CMAKE_OFF=		-DWITH_JACK:BOOL=OFF
+JACK_CMAKE_BOOL=	WITH_JACK
 
 NLS_USES=	gettext-runtime
-NLS_CMAKE_ON=	-DWITH_LOCALE:BOOL=ON
-NLS_CMAKE_OFF=	-DWITH_LOCALE:BOOL=OFF
+NLS_CMAKE_BOOL=	WITH_LOCALE
 
 post-install:
 	${INSTALL_DATA} \
