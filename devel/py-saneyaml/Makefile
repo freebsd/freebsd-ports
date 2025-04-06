@@ -1,13 +1,12 @@
 PORTNAME=	saneyaml
-DISTVERSION=	0.6.0
-PORTREVISION=	1
+DISTVERSION=	0.6.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Dump readable YAML and load safely any YAML data
-WWW=		https://github.com/nexB/saneyaml
+WWW=		https://github.com/aboutcode-org/saneyaml
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/apache-2.0.LICENSE
