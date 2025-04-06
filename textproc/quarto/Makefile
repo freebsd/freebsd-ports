@@ -1,5 +1,5 @@
-PORTNAME=	quarto
-DISTVERSION=	1.6.42
+PORTNAME=	quarto # quarto also requires some Linux base to be installed, for example linux_base-rl9
+DISTVERSION=	1.7.21
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/quarto-dev/quarto-cli/releases/download/v${DISTVERSION}/
 DISTFILES=	quarto-${DISTVERSION}-linux-amd64.tar.gz # same for all architectures
@@ -104,5 +104,14 @@ do-test: # tests fail to run with: RuntimeError: Failed to lock Pipfile.lock!
 	@cd ${WRKSRC_repo}/tests && \
 		${SETENV} QUARTO_TESTS_FORCE_NO_PIPENV=yes \
 		./run-tests.sh smoke/extensions/extension-render-doc.test.ts
+
+test-quick: install
+.for test in py-line-plot-on-a-polar-axis r-airquality julia-fig-parametric
+	@cd ${TEST_WRKSRC} && \
+		${CP} ${FILESDIR}/example-${test}.qmd . && \
+		${PORTNAME} render example-${test}.qmd --to pdf && \
+		okular example-${test}.pdf
+	# the Julia example above fails, see https://github.com/quarto-dev/quarto-cli/issues/12468
+.endfor
 
 .include <bsd.port.mk>
