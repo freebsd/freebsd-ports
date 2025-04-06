@@ -1,6 +1,5 @@
 PORTNAME=	HPCombi
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math devel
 
@@ -20,7 +19,7 @@ TEST_DEPENDS=	boost-libs>0:devel/boost-libs
 USE_GITHUB=	yes
 GH_ACCOUNT=	hivert
 
-USES=		cmake:testing compiler:c++11-lang localbase:ldflags pathfix	\
+USES=		cmake:testing compiler:c++17-lang localbase:ldflags pathfix	\
 		pkgconfig
 
 CMAKE_ARGS=	-DHPCOMBI_DISABLE_MARCH_NATIVE:BOOL=on
