@@ -1,7 +1,7 @@
 PORTNAME=	elmerfem
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	9.0
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	science
 
 PATCH_SITES=	https://github.com/ElmerCSC/${PORTNAME}/commit/
