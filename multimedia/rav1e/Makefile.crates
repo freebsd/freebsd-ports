@@ -22,7 +22,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bitflags-2.4.1 \
 		bitstream-io-2.2.0 \
 		bstr-1.9.0 \
-		built-0.7.1 \
+		built-0.7.2 \
 		bumpalo-3.14.0 \
 		bytemuck-1.14.0 \
 		byteorder-1.5.0 \
