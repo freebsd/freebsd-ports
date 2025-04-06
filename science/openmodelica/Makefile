@@ -1,11 +1,11 @@
 PORTNAME=	openmodelica
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24.5
+DISTVERSION=	1.25.0
 CATEGORIES=	science cad java
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	6f8126fcd491d8c4d8b8c643bf0b6abd3a1f23f5.patch:-p1 # https://github.com/OpenModelica/OpenModelica/pull/13683
+#PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+#PATCHFILES=	6f8126fcd491d8c4d8b8c643bf0b6abd3a1f23f5.patch:-p1 # https://github.com/OpenModelica/OpenModelica/pull/13683
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modelica-based modeling and simulation environment
@@ -41,7 +41,7 @@ USES=		cmake compiler:c++14-lang iconv fortran gettext-runtime gl \
 		python:build shebangfix java
 USE_QT=		concurrent core declarative gui location network opengl \
 		printsupport svg webchannel webengine widgets xml xmlpatterns \
-		buildtools:build qmake:build
+		buildtools:build linguisttools:build qmake:build
 USE_GL=		gl opengl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	${PREFIX}/lib/omc ${PREFIX}/lib/omc/OMSimulator ${PREFIX}/lib/omc/cpp ${PREFIX}/lib/omc/ffi # https://github.com/OpenModelica/OpenModelica/issues/9925

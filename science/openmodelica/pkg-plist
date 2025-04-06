@@ -896,6 +896,15 @@ share/omc/sources/c/util/simulation_options.c
 share/omc/sources/c/util/string_array.c
 share/omc/sources/c/util/utility.c
 share/omc/sources/c/util/varinfo.c
+share/omedit/nls/OMEdit_de.qm
+share/omedit/nls/OMEdit_es.qm
+share/omedit/nls/OMEdit_fr.qm
+share/omedit/nls/OMEdit_it.qm
+share/omedit/nls/OMEdit_ja.qm
+share/omedit/nls/OMEdit_ro.qm
+share/omedit/nls/OMEdit_ru.qm
+share/omedit/nls/OMEdit_sv.qm
+share/omedit/nls/OMEdit_zh_CN.qm
 share/omnotebook/OMNotebookHelp.onb
 share/omnotebook/commands.xml
 share/omnotebook/drmodelica/AccessControl/AccessDemo.onb
