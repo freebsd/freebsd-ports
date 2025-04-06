@@ -1,5 +1,5 @@
 PORTNAME=	libva-intel-driver
-DISTVERSION=	2.4.3
+DISTVERSION=	2.4.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
