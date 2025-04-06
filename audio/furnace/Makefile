@@ -1,6 +1,6 @@
 PORTNAME=	furnace
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.8
+DISTVERSION=	0.6.8.1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -19,10 +19,9 @@ USES=		cmake desktop-file-utils gl localbase:ldflags pkgconfig sdl \
 		shared-mime-info tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	tildearrow
-GH_TUPLE=	libsdl-org:SDL:ffa78e6be:sdl/extern/SDL \
+GH_TUPLE=	libsdl-org:SDL:2359383fc:sdl/extern/SDL \
 		superctr:adpcm:ef7a21715:adpcm/extern/adpcm \
-		fmtlib:fmt:e57ca2e36:fmt/extern/fmt \
-		libsndfile:libsndfile:72f6af15e:libsndfile/extern/libsndfile
+		fmtlib:fmt:e57ca2e36:fmt/extern/fmt
 USE_GL=		gl
 USE_SDL=	sdl2
 
@@ -50,5 +49,9 @@ post-install:
 	${INSTALL_DATA} \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/1024x1024/apps/furnace.png \
 		${STAGEDIR}${PREFIX}/share/icons/
+
+# maintainer section
+maketuples:
+	submodules2tuple -b ${DISTVERSIONPREFIX}${DISTVERSION} ${WWW}
 
 .include <bsd.port.mk>
