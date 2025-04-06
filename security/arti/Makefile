@@ -1,5 +1,5 @@
 PORTNAME=	arti
-DISTVERSION=	1.4.1
+DISTVERSION=	1.4.2
 CATEGORIES=	security
 
 MAINTAINER=	cs@FreeBSD.org
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 FLAVORS=	default full
 full_PKGNAMESUFFIX=	-full
-USES=		cargo sqlite ssl
+USES=		cargo sqlite ssl llvm
 USE_RC_SUBR=	arti
 GROUPS=		_arti
 USERS=		_arti
@@ -23,7 +23,7 @@ PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.torproject.org
 GL_ACCOUNT=	tpo/core
-GL_TAGNAME=	590c6d748881807873d3e31d03b70938949e2d5c
+GL_TAGNAME=	7e8852f7596f8ce3fb58e89b5a17b9d634b8282b
 CARGO_INSTALL=	no
 default_DESCR=	${.CURDIR}/pkg-descr
 full_DESCR=	${.CURDIR}/pkg-descr-full

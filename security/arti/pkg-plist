@@ -2,6 +2,6 @@ bin/arti
 @sample %%ETCDIR%%/arti.toml.sample
 @owner %%USERS%%
 @group %%GROUPS%%
-@dir /var/db/arti
-@dir /var/log/arti
-@dir /var/run/arti
+@dir(,,750) /var/db/arti
+@dir(,,750) /var/log/arti
+@dir(,,750) /var/run/arti
