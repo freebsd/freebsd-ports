@@ -1,5 +1,5 @@
---- cargo-crates/v8-135.0.0/build/config/BUILDCONFIG.gn.orig	2024-05-21 18:07:39 UTC
-+++ cargo-crates/v8-135.0.0/build/config/BUILDCONFIG.gn
+--- cargo-crates/v8-135.1.0/build/config/BUILDCONFIG.gn.orig	2024-05-21 18:07:39 UTC
++++ cargo-crates/v8-135.1.0/build/config/BUILDCONFIG.gn
 @@ -136,7 +136,7 @@ declare_args() {
    is_official_build = false
  

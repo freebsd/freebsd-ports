@@ -1,5 +1,5 @@
---- cargo-crates/deno_core-0.341.0/Cargo.toml.orig
-+++ cargo-crates/deno_core-0.341.0/Cargo.toml
+--- cargo-crates/deno_core-0.342.0/Cargo.toml.orig
++++ cargo-crates/deno_core-0.342.0/Cargo.toml
 @@ -28,8 +28,7 @@ resolver = "2"
  
  [features]

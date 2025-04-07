@@ -53,9 +53,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bincode-1.3.3 \
 		bindgen-0.70.1 \
 		bindgen-0.71.1 \
-		bit-set-0.5.3 \
 		bit-set-0.8.0 \
-		bit-vec-0.6.3 \
 		bit-vec-0.8.0 \
 		bitflags-1.3.2 \
 		bitflags-2.8.0 \
@@ -75,7 +73,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		byteorder-lite-0.1.0 \
 		bytes-1.9.0 \
 		cache_control-0.2.0 \
-		capacity_builder-0.1.3 \
 		capacity_builder-0.5.0 \
 		capacity_builder_macros-0.3.0 \
 		caseless-0.2.1 \
@@ -149,25 +146,26 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		deno-tower-lsp-macros-0.11.3 \
 		deno_ast-0.46.2 \
 		deno_cache_dir-0.18.0 \
-		deno_config-0.51.0 \
-		deno_core-0.341.0 \
+		deno_config-0.52.0 \
+		deno_core-0.342.0 \
 		deno_core_icudata-0.74.0 \
 		deno_doc-0.169.1 \
 		deno_error-0.5.6 \
 		deno_error_macro-0.5.6 \
-		deno_graph-0.89.3 \
+		deno_graph-0.89.4 \
 		deno_lint-0.74.0 \
 		deno_lockfile-0.24.0 \
 		deno_lockfile-0.25.0 \
 		deno_media_type-0.2.8 \
 		deno_native_certs-0.3.0 \
 		deno_npm-0.27.2 \
-		deno_npm-0.30.1 \
-		deno_ops-0.217.0 \
+		deno_npm-0.30.3 \
+		deno_ops-0.218.0 \
 		deno_package_json-0.6.0 \
+		deno_panic-0.1.0 \
 		deno_path_util-0.3.2 \
 		deno_semver-0.7.1 \
-		deno_task_shell-0.20.2 \
+		deno_task_shell-0.22.0 \
 		deno_terminal-0.1.1 \
 		deno_terminal-0.2.2 \
 		deno_tower_lsp-0.4.3 \
@@ -259,10 +257,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fsevent-sys-4.1.0 \
 		fslock-0.2.1 \
 		funty-2.0.0 \
-		futures-0.3.30 \
+		futures-0.3.31 \
 		futures-channel-0.3.31 \
 		futures-core-0.3.31 \
-		futures-executor-0.3.30 \
+		futures-executor-0.3.31 \
 		futures-io-0.3.31 \
 		futures-macro-0.3.31 \
 		futures-sink-0.3.31 \
@@ -345,7 +343,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		image-0.25.4 \
 		import_map-0.21.0 \
 		indexmap-1.9.3 \
-		indexmap-2.7.1 \
+		indexmap-2.8.0 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		inout-0.1.3 \
@@ -376,7 +374,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lazy_static-1.5.0 \
 		lcms2-6.1.0 \
 		lcms2-sys-4.0.5 \
-		libc-0.2.168 \
+		libc-0.2.171 \
 		libffi-3.2.0 \
 		libffi-sys-2.3.0 \
 		libloading-0.7.4 \
@@ -424,6 +422,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		new_debug_unreachable-1.0.6 \
 		nibble_vec-0.1.0 \
 		nix-0.27.1 \
+		nix-0.29.0 \
 		nom-5.1.3 \
 		nom-7.1.3 \
 		notify-6.1.1 \
@@ -591,7 +590,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_json-1.0.122 \
 		serde_repr-0.1.19 \
 		serde_urlencoded-0.7.1 \
-		serde_v8-0.250.0 \
+		serde_v8-0.251.0 \
 		serdect-0.2.0 \
 		sha1-0.10.6 \
 		sha1_smol-1.0.0 \
@@ -614,11 +613,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		slotmap-1.0.7 \
 		slug-0.1.5 \
 		sm3-0.4.2 \
-		smallvec-1.13.2 \
+		smallvec-1.14.0 \
 		smartstring-1.0.1 \
 		socket2-0.5.5 \
-		sourcemap-8.0.1 \
-		sourcemap-9.0.0 \
+		sourcemap-9.1.2 \
 		spin-0.9.8 \
 		spirv-0.3.0+sdk-1.3.268.0 \
 		spki-0.7.3 \
@@ -629,13 +627,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		static_assertions-1.1.0 \
 		string_capacity-0.1.5 \
 		string_enum-1.0.0 \
-		stringcase-0.3.0 \
+		stringcase-0.4.0 \
 		strip-ansi-escapes-0.2.0 \
 		strsim-0.11.1 \
-		strum-0.25.0 \
 		strum-0.26.3 \
-		strum_macros-0.25.3 \
+		strum-0.27.1 \
 		strum_macros-0.26.4 \
+		strum_macros-0.27.1 \
 		subtle-2.5.0 \
 		swc_allocator-4.0.0 \
 		swc_atoms-5.0.0 \
@@ -748,7 +746,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.1 \
 		uuid-1.8.0 \
-		v8-135.0.0 \
+		v8-135.1.0 \
 		v8_valueserializer-0.1.1 \
 		valuable-0.1.0 \
 		value-trait-0.10.0 \
@@ -770,6 +768,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wasm-bindgen-shared-0.2.100 \
 		wasm-streams-0.4.0 \
 		wasm_dep_analyzer-0.2.0 \
+		weak-table-0.3.2 \
 		web-sys-0.3.77 \
 		web-time-1.1.0 \
 		web-transport-proto-0.2.3 \
