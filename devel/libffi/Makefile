@@ -1,7 +1,10 @@
 PORTNAME=	libffi
-DISTVERSION=	3.4.6
+DISTVERSION=	3.4.7
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	fe203ffbb2bd7f93a86013d341aa767a406150bc.patch:-p1
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Foreign Function Interface
@@ -12,18 +15,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	runtest:misc/dejagnu
 
-USES=		compiler:c11 cpe libtool pathfix
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CPE_VENDOR=	libffi_project
+USES=				compiler:c11 cpe libtool pathfix
+CPE_VENDOR=			libffi_project
+USE_LDCONFIG=			yes
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS=	--disable-multi-os-directory
 INSTALL_TARGET=	install-strip
-INFO=		libffi
 TEST_TARGET=	check
 
 LDFLAGS+=	-Wl,--undefined-version
+
+INFO=		libffi
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -Wno-psabi||g' \
