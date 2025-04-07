@@ -1,6 +1,5 @@
 PORTNAME=	pdal
-DISTVERSION=	2.7.2
-PORTREVISION=	6
+DISTVERSION=	2.8.4
 CATEGORIES=	math databases graphics
 MASTER_SITES=	https://github.com/PDAL/PDAL/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
