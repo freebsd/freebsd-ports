@@ -12,7 +12,7 @@ WWW=		https://www.stixfonts.org/
 
 LICENSE=	OFL11
 
-USES=		fonts xorg zip
+USES=		fonts zip
 USE_XORG=	x11
 
 #USE_GITHUB=	yes
