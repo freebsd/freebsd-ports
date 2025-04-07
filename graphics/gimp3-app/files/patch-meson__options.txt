@@ -1,0 +1,24 @@
+--- meson_options.txt.orig	2025-03-19 00:53:29 UTC
++++ meson_options.txt
+@@ -41,10 +41,10 @@ option('heif',              type: 'feature', value: 'a
+ option('ghostscript',       type: 'feature', value: 'auto', description: 'Ghostscript support')
+ option('gudev',             type: 'feature', value: 'auto', description: 'Gudev support')
+ option('heif',              type: 'feature', value: 'auto', description: 'HEIF support')
+-option('ilbm',              type: 'feature', value: 'auto', description: 'Amiga IFF support')
++option('ilbm',              type: 'feature', value: 'disabled', description: 'Amiga IFF support')
+ option('jpeg2000',          type: 'feature', value: 'auto', description: 'Jpeg-2000 support')
+ option('jpeg-xl',           type: 'feature', value: 'auto', description: 'JPEG XL support')
+-option('mng',               type: 'feature', value: 'auto', description: 'Mng support')
++option('mng',               type: 'feature', value: 'disabled', description: 'Mng support')
+ option('openexr',           type: 'feature', value: 'auto', description: 'Openexr support')
+ option('openmp',            type: 'feature', value: 'auto', description: 'OpenMP support')
+ option('print',             type: 'boolean', value: true,   description: 'Print support')
+@@ -53,7 +53,7 @@ option('xpm',               type: 'feature', value: 'a
+ option('wmf',               type: 'feature', value: 'auto', description: 'Wmf support')
+ option('xcursor',           type: 'feature', value: 'auto', description: 'Xcursor support')
+ option('xpm',               type: 'feature', value: 'auto', description: 'XPM support')
+-option('headless-tests',    type: 'feature', value: 'auto', description: 'Use xvfb-run/dbus-run-session for UI-dependent automatic tests')
++option('headless-tests',    type: 'feature', value: 'disabled', description: 'Use xvfb-run/dbus-run-session for UI-dependent automatic tests')
+ option('file-plug-ins-test', type: 'boolean', value: 'false', description: 'Always install test-file-plug-ins (mostly for CI testing)')
+ 
+ option('can-crosscompile-gir', type: 'boolean', value: false, description: 'GIR is buildable even if crosscompiling')

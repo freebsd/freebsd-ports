@@ -260,6 +260,7 @@
     SUBDIR += gimp-lqr-plugin
     SUBDIR += gimp-refocus-plugin
     SUBDIR += gimp-resynthesizer
+    SUBDIR += gimp3-app
     SUBDIR += gkrellkam2
     SUBDIR += glad
     SUBDIR += glaxnimate
