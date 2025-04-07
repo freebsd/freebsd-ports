@@ -10,6 +10,8 @@ WWW=		https://pypi.org/project/tlv8/
 
 LICENSE=	APACHE20
 
+IGNORE=		run error:No module named 'magika'
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mammoth>=0:converters/py-mammoth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdownify>=0:textproc/py-markdownify@${PY_FLAVOR} \
