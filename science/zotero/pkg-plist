@@ -1,5 +1,8 @@
 bin/zotero
 lib/zotero/app/application.ini
+lib/zotero/app/chrome/icons/default/defaul32.png
+lib/zotero/app/chrome/icons/default/default128.png
+lib/zotero/app/chrome/icons/default/default64.png
 lib/zotero/app/hyphenation/hyph_af.hyf
 lib/zotero/app/hyphenation/hyph_bg.hyf
 lib/zotero/app/hyphenation/hyph_bn.hyf
