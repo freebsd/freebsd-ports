@@ -1,0 +1,30 @@
+[
+{
+  message: <<EOM
+Stirling PDF was installed successfully.
+
+It listens by default on localhost:9105.
+
+Enable it with:
+service stirlingpdf enable
+
+Start it with:
+service stirlingpdf start
+
+It is recommended to use a reverse proxy like nginx to connect to it
+or change the configuration in:
+/usr/local/stirlingpdf/configs/custom_settings.yml
+
+For more details check the manual:
+https://docs.stirlingpdf.com/
+
+Authentication is enabled by default.
+Initial username: admin
+Initial password: stirling
+
+You must change the password after first login.
+
+EOM
+  type: install
+}
+]

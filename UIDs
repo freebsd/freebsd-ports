@@ -732,7 +732,7 @@ monero:*:781:781::0:0:Monero Daemon:/var/db/monero:/usr/sbin/nologin
 zeek:*:782:782::0:0:Zeek Network Security Monitor:/nonexistent:/usr/sbin/nologin
 # free: 783
 # free: 784
-# free: 785
+stirlingpdf:*:785:785::0:0:Stirling PDF Daemon:/usr/local/stirlingpdf:/usr/sbin/nologin
 # free: 786
 # free: 787
 # free: 788
