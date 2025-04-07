@@ -69,6 +69,7 @@ include/folly/MicroLock.h
 include/folly/MicroSpinLock.h
 include/folly/MoveWrapper.h
 include/folly/ObserverContainer.h
+include/folly/OperationCancelled.h
 include/folly/Optional.h
 include/folly/Overload.h
 include/folly/PackedSyncPtr.h
@@ -250,6 +251,7 @@ include/folly/coro/AsyncStack.h
 include/folly/coro/AutoCleanup-fwd.h
 include/folly/coro/AutoCleanup.h
 include/folly/coro/AwaitImmediately.h
+include/folly/coro/AwaitResult.h
 include/folly/coro/Baton.h
 include/folly/coro/BlockingWait.h
 include/folly/coro/BoundedQueue.h
@@ -273,6 +275,7 @@ include/folly/coro/Merge.h
 include/folly/coro/Mutex.h
 include/folly/coro/Noexcept.h
 include/folly/coro/Promise.h
+include/folly/coro/Ready.h
 include/folly/coro/Result.h
 include/folly/coro/Retry.h
 include/folly/coro/RustAdaptors.h
@@ -936,6 +939,7 @@ include/folly/portability/FmtCompile.h
 include/folly/portability/GFlags.h
 include/folly/portability/GMock.h
 include/folly/portability/GTest.h
+include/folly/portability/GTestProd.h
 include/folly/portability/IOVec.h
 include/folly/portability/Libgen.h
 include/folly/portability/Libunwind.h
@@ -965,6 +969,7 @@ include/folly/portability/Unistd.h
 include/folly/portability/Windows.h
 include/folly/portability/openat2.h
 include/folly/python/AsyncioExecutor.h
+include/folly/python/Weak.h
 include/folly/python/async_generator.h
 include/folly/python/coro.h
 include/folly/python/error.h
@@ -972,6 +977,9 @@ include/folly/python/executor.h
 include/folly/python/futures.h
 include/folly/python/import.h
 include/folly/python/iobuf.h
+include/folly/result/gtest_helpers.h
+include/folly/result/result.h
+include/folly/result/try.h
 include/folly/settings/CommandLineParser.h
 include/folly/settings/Immutables.h
 include/folly/settings/Observer.h
