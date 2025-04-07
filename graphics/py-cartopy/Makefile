@@ -36,7 +36,7 @@ OWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}OWSLib>=0.20.0:graphics/py-OWSLib@${PY_F
 			${PYTHON_PKGNAMEPREFIX}pillow>=6.1.0:graphics/py-pillow@${PY_FLAVOR}
 PLOTTING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=6.1.0:graphics/py-pillow@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}scipy>=1.3.1:science/py-scipy@${PY_FLAVOR}
-SPEEDUPS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Fiona>=0:graphics/py-fiona@${PY_FLAVOR} \
+SPEEDUPS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fiona>=0:graphics/py-fiona@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pykdtree>=0:devel/py-pykdtree@${PY_FLAVOR}
 
 post-install:
