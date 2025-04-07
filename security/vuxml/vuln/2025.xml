@@ -1,3 +1,228 @@
+  <vuln vid="34c51a2b-13c8-11f0-a5bd-b42e991fc52e">
+    <topic>Mozilla -- memory corruption</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>137.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>137.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>137.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1894100%2C1934086%2C1950360">
+	  <p>Memory safety bugs present in Firefox 136 and Thunderbird 136.
+	  Some of these bugs showed evidence of memory corruption and
+	  we presume that with enough effort some of these could have
+	  been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3034</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-3034</url>
+    </references>
+    <dates>
+      <discovery>2025-04-01</discovery>
+      <entry>2025-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="315f568e-13c8-11f0-a5bd-b42e991fc52e">
+    <topic>Mozilla -- privilege scalation attack</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>137.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>137.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>137.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1949987">
+	  <p>Leaking of file descriptors from the fork server to web
+	    content processes could allow for privilege escalation
+	    attacks.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3032</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-3032</url>
+    </references>
+    <dates>
+      <discovery>2025-04-01</discovery>
+      <entry>2025-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2fc74cae-13c8-11f0-a5bd-b42e991fc52e">
+    <topic>Mozilla -- stack memory read</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>137.0,2</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>137.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>137.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1947141">
+	  <p>An attacker could read 32 bits of values spilled onto the stack in
+	a JIT compiled function.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3031</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-3031</url>
+    </references>
+    <dates>
+      <discovery>2025-04-01</discovery>
+      <entry>2025-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2e0ff31b-13c8-11f0-a5bd-b42e991fc52e">
+    <topic>Mozilla -- Memory corruption</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>137.0</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.9.0</lt></range>
+      </package>
+      <package>
+	<name>firefox</name>
+	<range><lt>137.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1850615%2C1932468%2C1942551%2C1951017%2C1951494">
+	  <p>Memory safety bugs present in Firefox 136, Thunderbird
+	  136, Firefox ESR 128.8, and Thunderbird 128.8. Some of these
+	  bugs showed evidence of memory corruption and we presume
+	  that with enough effort some of these could have been
+	  exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3030</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-3030</url>
+    </references>
+    <dates>
+      <discovery>2025-04-01</discovery>
+      <entry>2025-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2c0180a5-13c8-11f0-a5bd-b42e991fc52e">
+    <topic>Mozilla -- URL spoofing attack</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>137.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.9</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>137.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>137.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1952213">
+	  <p>A crafted URL containing specific Unicode characters
+	  could have hidden the true origin of the page, resulting in
+	  a potential spoofing attack.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3029</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-3029</url>
+    </references>
+    <dates>
+      <discovery>2025-04-01</discovery>
+      <entry>2025-04-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="28e5f7be-13c8-11f0-a5bd-b42e991fc52e">
+    <topic>Mozilla -- use-after-free error</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>137.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>115.22</lt></range>
+      </package>
+      <package>
+	<name>librewolf</name>
+	<range><lt>137.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>137.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1941002">
+	  <p>JavaScript code running while transforming a document
+	  with the XSLTProcessor could lead to a use-after-free.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3028</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-3028</url>
+    </references>
+    <dates>
+      <discovery>2025-04-01</discovery>
+      <entry>2025-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="789bcfb6-1224-11f0-85f3-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
