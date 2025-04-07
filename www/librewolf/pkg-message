@@ -47,7 +47,7 @@ setup public key authentication to `remote_host`:
 The SSH server on `remote_host` must allow pub key authentication.
 
 ## Profile
-Librewolf moved profile folder to ${HOME}/.mozilla/librewolf
+Librewolf moved profile directory to ${HOME}/.mozilla/librewolf
 EOM
 }
 ]
