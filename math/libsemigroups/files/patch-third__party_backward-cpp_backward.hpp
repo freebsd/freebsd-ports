@@ -1,5 +1,5 @@
---- extern/backward-cpp/backward.hpp.orig	2024-01-19 14:15:04 UTC
-+++ extern/backward-cpp/backward.hpp
+--- third_party/backward-cpp/backward.hpp.orig	2025-04-01 12:04:08 UTC
++++ third_party/backward-cpp/backward.hpp
 @@ -52,6 +52,9 @@
  // #define BACKWARD_SYSTEM_DARWIN
  //	- specialization for Mac OS X 10.5 and later.
