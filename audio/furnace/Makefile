@@ -47,6 +47,9 @@ EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/extern
 			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/extern/zlib \
 			--no-same-owner --no-same-permissions
 
+# bogus tags
+PORTSCOUT=	ignore:1
+
 OPTIONS_DEFINE=	DOCS JACK NLS
 OPTIONS_SUB=	yes
 
