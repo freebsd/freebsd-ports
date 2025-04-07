@@ -1,0 +1,6 @@
+server:
+  host: 127.0.0.1
+  port: 9105
+security:
+  enableLogin: true # set to 'true' to enable login
+

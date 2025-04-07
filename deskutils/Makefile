@@ -264,6 +264,7 @@
     SUBDIR += sowon
     SUBDIR += spacefm
     SUBDIR += spice-gtk
+    SUBDIR += stirling-pdf
     SUBDIR += subsurface
     SUBDIR += synapse
     SUBDIR += syncthingtray
