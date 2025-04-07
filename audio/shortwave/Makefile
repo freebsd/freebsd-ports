@@ -1,6 +1,6 @@
 PORTNAME=	shortwave
 DISTVERSION=	3.2.0
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://gitlab.gnome.org/World/Shortwave
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.md
+
+DEPRECATED=	fails to build with rust 1.86.0
+EXPIRATION_DATE=2025-04-30
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libshumate-1.0.so:x11-toolkits/libshumate
