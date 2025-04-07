@@ -1,6 +1,6 @@
 PORTNAME=	health
 DISTVERSION=	0.95.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	deskutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://gitlab.gnome.org/World/Health
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=    fails to build with rust 1.86.0
+EXPIRATION_DATE=2025-04-30
 
 BUILD_DEPENDS=	blueprint-compiler:devel/blueprint-compiler
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
