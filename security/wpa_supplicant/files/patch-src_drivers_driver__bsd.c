@@ -1,5 +1,5 @@
 --- src/drivers/driver_bsd.c.orig	2024-07-20 11:04:37.000000000 -0700
-+++ src/drivers/driver_bsd.c	2025-03-17 06:07:14.891847000 -0700
++++ src/drivers/driver_bsd.c	2025-04-07 12:47:28.984390000 -0700
 @@ -9,11 +9,13 @@
  
  #include "includes.h"
@@ -60,13 +60,19 @@
  }
  
  static int
-@@ -349,6 +379,14 @@
+@@ -349,6 +379,20 @@
  	case WPA_ALG_CCMP:
  		wk.ik_type = IEEE80211_CIPHER_AES_CCM;
  		break;
 +#if defined(__FreeBSD_version) && __FreeBSD_version >= 1500027
++	case WPA_ALG_CCMP_256:
++		wk.ik_type = IEEE80211_CIPHER_AES_CCM_256;
++		break;
 +	case WPA_ALG_GCMP:
 +		wk.ik_type = IEEE80211_CIPHER_AES_GCM_128;
++		break;
++	case WPA_ALG_GCMP_256:
++		wk.ik_type = IEEE80211_CIPHER_AES_GCM_256;
 +		break;
 +	case WPA_ALG_BIP_CMAC_128:
 +		wk.ik_type = IEEE80211_CIPHER_BIP_CMAC_128;
@@ -75,13 +81,33 @@
  	default:
  		wpa_printf(MSG_ERROR, "%s: unknown alg=%d", __func__, alg);
  		return -1;
-@@ -420,6 +458,14 @@
+@@ -413,13 +457,34 @@
+ {
+ #ifndef IEEE80211_IOC_APPIE
+ 	static const char *ciphernames[] =
++#if defined(__FreeBSD_version) && __FreeBSD_version >= 1500027
++		{ "WEP", "TKIP", "AES-OCB", "AES-CCM", "CKIP", "NONE",
++		  "AES-CCM-256", "BIP-CMAC-128", "BIP-CMAC-256", "BIP-GMAC-128",
++		  "BIP-GMAC-256", "AES-GCM-128", "AES-GCM-256" };
++#else
+ 		{ "WEP", "TKIP", "AES-OCB", "AES-CCM", "CKIP", "NONE" };
++#endif
++
+ 	int v;
+ 
+ 	switch (params->wpa_group) {
  	case WPA_CIPHER_CCMP:
  		v = IEEE80211_CIPHER_AES_CCM;
  		break;
 +#if defined(__FreeBSD_version) && __FreeBSD_version >= 1500027
++	case WPA_CIPHER_CCMP_256:
++		v = IEEE80211_CIPHER_AES_CCM_256;
++		break;
 +	case WPA_CIPHER_GCMP:
 +		v = IEEE80211_CIPHER_AES_GCM_128;
++		break;
++	case WPA_CIPHER_GCMP_256:
++		v = IEEE80211_CIPHER_AES_GCM_256;
 +		break;
 +	case WPA_CIPHER_BIP_CMAC_128:
 +		v = IEEE80211_CIPHER_BIP_CMAC_128;
@@ -90,7 +116,7 @@
  	case WPA_CIPHER_TKIP:
  		v = IEEE80211_CIPHER_TKIP;
  		break;
-@@ -456,6 +502,12 @@
+@@ -456,8 +521,18 @@
  	}
  
  	v = 0;
@@ -99,11 +125,17 @@
 +		v |= 1<<IEEE80211_CIPHER_BIP_CMAC_128;
 +	if (params->wpa_pairwise & WPA_CIPHER_GCMP)
 +		v |= 1<<IEEE80211_CIPHER_AES_GCM_128;
-+#endif
++	if (params->wpa_pairwise & WPA_CIPHER_GCMP_256)
++		v |= 1<<IEEE80211_CIPHER_AES_GCM_256;
  	if (params->wpa_pairwise & WPA_CIPHER_CCMP)
  		v |= 1<<IEEE80211_CIPHER_AES_CCM;
++	if (params->wpa_pairwise & WPA_CIPHER_CCMP_256)
++		v |= 1<<IEEE80211_CIPHER_AES_CCM_256;
++#endif
  	if (params->wpa_pairwise & WPA_CIPHER_TKIP)
-@@ -525,7 +577,7 @@
+ 		v |= 1<<IEEE80211_CIPHER_TKIP;
+ 	if (params->wpa_pairwise & WPA_CIPHER_NONE)
+@@ -525,7 +600,7 @@
  			   __func__);
  		return -1;
  	}
@@ -112,7 +144,7 @@
  }
  
  static void
-@@ -586,6 +638,7 @@
+@@ -586,6 +661,7 @@
  		mode = IFM_IEEE80211_11B;
  	} else {
  		mode =
@@ -120,7 +152,7 @@
  			freq->ht_enabled ? IFM_IEEE80211_11NA :
  			IFM_IEEE80211_11A;
  	}
-@@ -853,14 +906,18 @@
+@@ -853,14 +929,18 @@
  		drv = bsd_get_drvindex(global, ifm->ifm_index);
  		if (drv == NULL)
  			return;
@@ -142,7 +174,7 @@
  			wpa_printf(MSG_DEBUG, "RTM_IFINFO: Interface '%s' UP",
  				   drv->ifname);
  			wpa_supplicant_event(drv->ctx, EVENT_INTERFACE_ENABLED,
-@@ -1027,7 +1084,8 @@
+@@ -1027,7 +1107,8 @@
  	if (l2_packet_get_own_addr(drv->sock_xmit, params->own_addr))
  		goto bad;
  
@@ -152,7 +184,7 @@
  		goto bad;
  
  	if (bsd_set_mediaopt(drv, IFM_OMASK, IFM_IEEE80211_HOSTAP) < 0) {
-@@ -1052,12 +1110,13 @@
+@@ -1052,12 +1133,13 @@
  {
  	struct bsd_driver_data *drv = priv;
  
@@ -167,7 +199,7 @@
  static int
  bsd_set_sta_authorized(void *priv, const u8 *addr,
  		       unsigned int total_flags, unsigned int flags_or,
-@@ -1199,13 +1258,41 @@
+@@ -1199,13 +1281,41 @@
  }
  
  static int
@@ -210,7 +242,7 @@
  
  	wpa_printf(MSG_DEBUG,
  		"%s: ssid '%.*s' wpa ie len %u pairwise %u group %u key mgmt %u"
-@@ -1222,7 +1309,10 @@
+@@ -1222,7 +1332,10 @@
  		mode = 0 /* STA */;
  		break;
  	case IEEE80211_MODE_IBSS:
@@ -221,7 +253,7 @@
  		break;
  	case IEEE80211_MODE_AP:
  		mode = IFM_IEEE80211_HOSTAP;
-@@ -1251,24 +1341,33 @@
+@@ -1251,22 +1364,31 @@
  		ret = -1;
  	if (wpa_driver_bsd_set_auth_alg(drv, params->auth_alg) < 0)
  		ret = -1;
@@ -234,6 +266,9 @@
 -	    params->key_mgmt_suite == WPA_KEY_MGMT_NONE &&
 -	    params->wpa_ie_len == 0);
 -	wpa_printf(MSG_DEBUG, "%s: set PRIVACY %u", __func__, privacy);
+-
+-	if (set80211param(drv, IEEE80211_IOC_PRIVACY, privacy) < 0)
+-		return -1;
 +	if (params->wpa_ie_len) {
 +		rsn_ie = get_ie(params->wpa_ie, params->wpa_ie_len,
 +		    WLAN_EID_RSN);
@@ -253,7 +288,9 @@
 +		}
 +	}
  
--	if (set80211param(drv, IEEE80211_IOC_PRIVACY, privacy) < 0)
+-	if (params->wpa_ie_len &&
+-	    set80211param(drv, IEEE80211_IOC_WPA,
+-			  params->wpa_ie[0] == WLAN_EID_RSN ? 2 : 1) < 0)
 +	/*
 +	 * NB: interface must be marked UP for association
 +	 * or scanning (ap_scan=2)
@@ -261,15 +298,8 @@
 +	if (bsd_ctrl_iface(drv, 1) < 0)
  		return -1;
  
--	if (params->wpa_ie_len &&
--	    set80211param(drv, IEEE80211_IOC_WPA,
--			  params->wpa_ie[0] == WLAN_EID_RSN ? 2 : 1) < 0)
--		return -1;
--
  	os_memset(&mlme, 0, sizeof(mlme));
- 	mlme.im_op = IEEE80211_MLME_ASSOC;
- 	if (params->ssid != NULL)
-@@ -1311,11 +1410,8 @@
+@@ -1311,11 +1433,8 @@
  	}
  
  	/* NB: interface must be marked UP to do a scan */
@@ -282,7 +312,7 @@
  
  #ifdef IEEE80211_IOC_SCAN_MAX_SSID
  	os_memset(&sr, 0, sizeof(sr));
-@@ -1495,6 +1591,12 @@
+@@ -1495,6 +1614,12 @@
  		drv->capa.enc |= WPA_DRIVER_CAPA_ENC_TKIP;
  	if (devcaps.dc_cryptocaps & IEEE80211_CRYPTO_AES_CCM)
  		drv->capa.enc |= WPA_DRIVER_CAPA_ENC_CCMP;
@@ -295,7 +325,7 @@
  
  	if (devcaps.dc_drivercaps & IEEE80211_C_HOSTAP)
  		drv->capa.flags |= WPA_DRIVER_FLAGS_AP;
-@@ -1547,6 +1649,8 @@
+@@ -1547,6 +1672,8 @@
  		}
  		if (ifmr.ifm_current & IFM_IEEE80211_HOSTAP)
  			return IEEE80211_M_HOSTAP;
@@ -304,7 +334,7 @@
  		if (ifmr.ifm_current & IFM_IEEE80211_MONITOR)
  			return IEEE80211_M_MONITOR;
  #ifdef IEEE80211_M_MBSS
-@@ -1607,7 +1711,7 @@
+@@ -1607,7 +1734,7 @@
  		drv->capa.key_mgmt_iftype[i] = drv->capa.key_mgmt;
  
  	/* Down interface during setup. */
@@ -313,13 +343,13 @@
  		goto fail;
  
  	/* Proven to work, lets go! */
-@@ -1630,6 +1734,9 @@
- 
+@@ -1631,6 +1758,9 @@
  	if (drv->ifindex != 0 && !drv->if_removed) {
  		wpa_driver_bsd_set_wpa(drv, 0);
-+
+ 
 +		/* NB: mark interface down */
 +		bsd_ctrl_iface(drv, 0);
- 
++
  		wpa_driver_bsd_set_wpa_internal(drv, drv->prev_wpa,
  						drv->prev_privacy);
+ 
