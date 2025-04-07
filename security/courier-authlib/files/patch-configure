@@ -1,6 +1,6 @@
---- configure.orig	2024-01-28 13:22:04 UTC
+--- configure.orig	2025-04-06 14:25:31 UTC
 +++ configure
-@@ -669,6 +669,10 @@ LTLIBOBJS
+@@ -662,6 +662,10 @@ LTLIBOBJS
  am__EXEEXT_FALSE
  am__EXEEXT_TRUE
  LTLIBOBJS
@@ -9,9 +9,9 @@
 +HAVE_USERDB_TRUE
 +HAVE_USERDB_FALSE
  LIBOBJS
- using_systemd
- SOVERSION
-@@ -710,6 +714,9 @@ authpgsqlrc
+ DATEFULL
+ DATE
+@@ -705,6 +709,9 @@ authpgsqlrc
  PGSQL_LIBS
  PG_CONFIG
  authpgsqlrc
@@ -21,7 +21,7 @@
  LIBAUTHPWD
  LIBAUTHSHADOW
  SHADOWLIBS
-@@ -1610,6 +1617,7 @@ Optional Packages:
+@@ -1605,6 +1612,7 @@ Optional Packages:
   --with-authldaprc=filename         Expect to find authldaprc here
   --without-authpwd                  Do not include the authpwd module
   --without-authshadow               Do not include the authshadow module
@@ -29,7 +29,7 @@
   --with-authpgsqlrc=filename        Expect to find authpgsql here
   --without-authpgsql               Do not include the authpgsql module
   --with-pgsql-libs=DIR		Look for pgsql libs in this dir
-@@ -3493,7 +3501,7 @@ fi
+@@ -3523,7 +3531,7 @@ fi
  fi
  
  fi
@@ -38,7 +38,7 @@
  
  
    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for a race-free mkdir -p" >&5
-@@ -19387,8 +19395,12 @@ then
+@@ -19748,8 +19756,12 @@ then
  
  if test "$doauthuserdb" = "no"
  then
@@ -51,7 +51,7 @@
  	AUTHUSERDB="authuserdb"
  	LIBAUTHUSERDB="libauthuserdb.la"
  
-@@ -19832,7 +19844,21 @@ fi
+@@ -20236,7 +20248,21 @@ fi
  fi
  
  
@@ -73,7 +73,7 @@
   if test "$HAVE_LDAP" = 1; then
    HAVE_LDAP_TRUE=
    HAVE_LDAP_FALSE='#'
-@@ -20037,6 +20063,256 @@ fi
+@@ -20460,6 +20486,256 @@ fi
  
  
  
@@ -330,7 +330,7 @@
  # Check whether --with-authpgsqlrc was given.
  if test ${with_authpgsqlrc+y}
  then :
-@@ -20390,8 +20666,8 @@ then
+@@ -20823,8 +21099,8 @@ then
  	SQLITE_LIBS="`pkg-config --libs sqlite3 2>/dev/null`"
          saveLIBS="$LIBS"
  	LIBS="$SQLITE_LIBS $LIBS"
@@ -341,7 +341,7 @@
  then :
    doauthsqlite="yes"
  
-@@ -20409,14 +20685,14 @@ else
+@@ -20842,15 +21118,15 @@ else
  else
  	saveLIBS="$LIBS"
  	LIBS="$SQLITE_LIBS $LIBS"
@@ -349,17 +349,19 @@
 -if test "x$ac_cv_func_sqlite3_version" = xyes
 -then :
 -   :
--else $as_nop
--   as_fn_error $? "Cannot link with $SQLITE_LIBS" "$LINENO" 5
--
+-else case e in #(
+-  e)  as_fn_error $? "Cannot link with $SQLITE_LIBS" "$LINENO" 5
+-		 ;;
+-esac
 -fi
 +#	ac_fn_c_check_func "$LINENO" "sqlite3_version" "ac_cv_func_sqlite3_version"
 +#if test "x$ac_cv_func_sqlite3_version" = xyes
 +#then :
 +#   :
-+#else $as_nop
-+#   as_fn_error $? "Cannot link with $SQLITE_LIBS" "$LINENO" 5
-+#
++#else case e in #(
++#  e)  as_fn_error $? "Cannot link with $SQLITE_LIBS" "$LINENO" 5
++#		 ;;
++#esac
 +#fi
  
  	LIBS="$saveLIBS"
