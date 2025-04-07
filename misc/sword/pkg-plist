@@ -10,7 +10,6 @@ bin/mod2osis
 bin/mod2vpl
 bin/mod2zmod
 bin/osis2mod
-bin/stripaccents
 bin/tei2mod
 bin/vpl2mod
 bin/vs2osisref
@@ -170,7 +169,6 @@ include/sword/thmlxhtml.h
 include/sword/treekey.h
 include/sword/treekeyidx.h
 include/sword/unicodertf.h
-include/sword/untgz.h
 include/sword/url.h
 include/sword/utf16utf8.h
 include/sword/utf8arabicpoints.h
@@ -261,6 +259,7 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/lt-utf8.conf
 %%DATADIR%%/locales.d/lv-utf8.conf
 %%DATADIR%%/locales.d/mt-utf8.conf
+%%DATADIR%%/locales.d/my-utf8.conf
 %%DATADIR%%/locales.d/nb-utf8.conf
 %%DATADIR%%/locales.d/nb.conf
 %%DATADIR%%/locales.d/nl-utf8.conf
