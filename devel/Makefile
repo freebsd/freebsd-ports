@@ -4442,6 +4442,7 @@
     SUBDIR += py-atomiclong
     SUBDIR += py-atomicwrites
     SUBDIR += py-atpublic
+    SUBDIR += py-attr
     SUBDIR += py-attrdict
     SUBDIR += py-attrs
     SUBDIR += py-attrs-strict

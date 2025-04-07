@@ -1,0 +1,2 @@
+attr is a simple decorator to set attributes of target function or class in
+a DRY way.
