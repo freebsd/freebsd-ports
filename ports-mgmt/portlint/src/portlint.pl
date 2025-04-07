@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 22;
-my $micro = 6;
+my $micro = 7;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -3306,6 +3306,7 @@ MAINTAINER COMMENT WWW
 			LICENSE LICENSE_COMB LICENSE_GROUPS LICENSE_NAME
 			LICENSE_TEXT LICENSE_FILE LICENSE_PERMS
 		));
+		&checkearlier($file, $tmp, @varnames);
 	} else {
 		&perror("WARN", $file, -1, "Consider defining LICENSE.");
 	}
@@ -3327,16 +3328,15 @@ NOT_FOR_ARCHS NOT_FOR_ARCHS_REASON(_\w+)? LEGAL_TEXT
 
 	if ($tmp =~ /$brokenpattern/) {
 		$idx++;
+		$tmp = "\n" . $tmp;
+
+		foreach my $i (@linestocheck) {
+			$tmp =~ s/$i[?+:]?=[^\n]+\n//g;
+		}
+
+		push(@varnames, @linestocheck);
+		&checkearlier($file, $tmp, @varnames);
 	}
-
-	$tmp = "\n" . $tmp;
-
-	foreach my $i (@linestocheck) {
-		$tmp =~ s/$i[?+:]?=[^\n]+\n//g;
-	}
-
-	push(@varnames, @linestocheck);
-	&checkearlier($file, $tmp, @varnames);
 
 	#
 	# section 7: *_DEPENDS (may not be there)
