@@ -134,6 +134,7 @@ include/quic/happyeyeballs/QuicHappyEyeballsFunctions.h
 include/quic/logging/BaseQLogger.h
 include/quic/logging/FileQLogger.h
 include/quic/logging/QLogger.h
+include/quic/logging/QLoggerCommon.h
 include/quic/logging/QLoggerConstants.h
 include/quic/logging/QLoggerTypes.h
 include/quic/loss/QuicLossFunctions.h
