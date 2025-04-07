@@ -1,6 +1,7 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.42.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -273,7 +274,6 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		object-0.36.7 \
 		once_cell-1.18.0 \
 		openssl-probe-0.1.5 \
-		openssl-src-300.1.6+3.1.4 \
 		openssl-sys-0.9.93 \
 		option-ext-0.2.0 \
 		ordered-float-2.10.0 \
@@ -448,7 +448,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		wasm-bindgen-shared-0.2.87 \
 		wasm-encoder-0.221.2 \
 		wasm-encoder-0.224.0 \
-		wasmparser-0.221.2 \
+		wasmparser-0.221.3 \
 		wasmparser-0.224.0 \
 		wasmprinter-0.221.2 \
 		wasmtime-29.0.1 \
@@ -520,7 +520,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		winnow-0.6.8 \
 		winx-0.36.3 \
 		wit-bindgen-rt-0.33.0 \
-		wit-parser-0.221.2 \
+		wit-parser-0.221.3 \
 		witx-0.9.1 \
 		xflags-0.3.2 \
 		xflags-macros-0.3.2 \
