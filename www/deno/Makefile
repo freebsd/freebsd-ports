@@ -21,6 +21,10 @@ USES=		cargo cpe gmake gnome llvm:min=16,build ninja:build pkgconfig:build pytho
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
+GH_TUPLE=	denoland:deno_lsp_benchdata:a787434:denolsp/cli/bench/testdata/lsp_benchdata \
+		denoland:node_test:8846b53:nodetest/tests/node_compat/runner/suite \
+		denoland:std:1f032bb7:denostd/tests/util/std \
+		web-platform-tests:wpt:e78446e:webp/tests/wpt/suite
 
 USE_GNOME=	glib20
 
@@ -58,8 +62,22 @@ post-patch:
 		${WRKSRC}/cli/task_runner.rs \
 		${WRKSRC}/cli/tools/jupyter/install.rs \
 		${WRKSRC}/ext/os/lib.rs
+	${REINPLACE_CMD} "s|PREFIX|${PREFIX}|" \
+		${WRKSRC}/tests/unit_node/process_test.ts
 	${REINPLACE_CMD} "s|WRKDIR|${WRKDIR}|" \
 		${WRKSRC}/tests/util/server/src/lib.rs
+	${REINPLACE_CMD} "s|linux|freebsd|g" \
+		${WRKSRC}/tests/ffi/tests/ffi_callback_errors.ts \
+		${WRKSRC}/tests/ffi/tests/test.js \
+		${WRKSRC}/tests/ffi/tests/bench.js \
+		${WRKSRC}/tests/ffi/tests/event_loop_integration.ts \
+		${WRKSRC}/tests/ffi/tests/thread_safe_test_worker.js \
+		${WRKSRC}/tests/ffi/tests/thread_safe_test.js \
+		${WRKSRC}/tests/integration/cache_tests.rs \
+		${WRKSRC}/tests/napi/common.js \
+		${WRKSRC}/tests/unit/build_test.ts \
+		${WRKSRC}/tests/unit/dir_test.ts \
+		${WRKSRC}/tests/specs/mod.rs
 
 	${MKDIR} ${V8_BPGO_DIR}/arm64.profile ${V8_BPGO_DIR}/x64.profile
 
@@ -69,6 +87,11 @@ post-patch:
 	${MKDIR} ${V8_DISTDIR}/third_party/icu/common
 	${CP} ${CARGO_VENDOR_DIR}/deno_core_icudata-${DENO_CORE_ICUDATA_V}/src/icudtl.dat \
 		${V8_DISTDIR}/third_party/icu/common/
+
+# do not pass RUST_BACKTRACE=1 to cargo test as some tests fails if it's there
+do-test:
+	cd ${WRKSRC} ; \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${CARGO_ENV:S/RUST_BACKTRACE=1//g} ${CARGO} test -vv ${CARGO_BUILD_ARGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/deno ${STAGEDIR}${LOCALBASE}/bin
