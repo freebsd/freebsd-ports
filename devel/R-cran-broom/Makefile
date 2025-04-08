@@ -1,5 +1,5 @@
 PORTNAME=	broom
-DISTVERSION=	1.0.7
+DISTVERSION=	1.0.8
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,6 +10,7 @@ WWW=		https://cran.r-project.org/web/packages/broom/
 LICENSE=	MIT
 
 RUN_DEPENDS=	R-cran-backports>0:math/R-cran-backports \
+		R-cran-cli>0:devel/R-cran-cli \
 		R-cran-dplyr>=1.0.0:math/R-cran-dplyr \
 		R-cran-generics>=0.0.2:devel/R-cran-generics \
 		R-cran-glue>0:devel/R-cran-glue \
