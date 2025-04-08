@@ -1,13 +1,12 @@
 PORTNAME=	xiphos
-DISTVERSION=	4.2.1
-PORTREVISION=	15
+DISTVERSION=	4.3.1
 CATEGORIES=	misc gnome
 # Don't use USE_GITHUB: the sources downloaded by USE_GITHUB cannot be
 # built as they miss the file ${WRKSRC}/cmake/source_version.txt.
 # See also: https://github.com/crosswire/xiphos/issues/1037
-MASTER_SITES=	https://github.com/crosswire/${PORTNAME}/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://github.com/crosswire/${PORTNAME}/archive/refs/tags/${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Bible interface utilizing the sword framework
 WWW=		https://xiphos.org
 
