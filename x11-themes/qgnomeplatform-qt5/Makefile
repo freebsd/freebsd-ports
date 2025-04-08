@@ -1,4 +1,4 @@
-PORTNAME=	qgnomeplatform
+PORTNAME=	qgnomeplatform-qt5
 DISTVERSION=	0.9.2
 CATEGORIES=	x11-themes
 
