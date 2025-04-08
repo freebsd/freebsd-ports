@@ -14,6 +14,7 @@ bin/decorate
 %%NLS%%share/locale/nb/LC_MESSAGES/datamash.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/datamash.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/datamash.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/datamash.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/datamash.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/datamash.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/datamash.mo
