@@ -1,6 +1,5 @@
 PORTNAME=	yfklog
-PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTVERSION=	0.7.0
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/yfklog/ \
 		LOCAL/db
