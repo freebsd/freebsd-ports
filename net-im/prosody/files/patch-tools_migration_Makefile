@@ -1,4 +1,4 @@
---- tools/migration/Makefile.orig	2022-03-08 12:34:39 UTC
+--- tools/migration/Makefile.orig	2025-03-13 13:12:42 UTC
 +++ tools/migration/Makefile
 @@ -18,14 +18,14 @@ install: prosody-migrator.install migrator.cfg.lua.ins
  	install -d $(BIN) $(CONFIG) $(SOURCE)

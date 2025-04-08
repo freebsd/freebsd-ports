@@ -1,6 +1,5 @@
 PORTNAME=	prosody
-DISTVERSION=	0.12.5
-PORTREVISION=	1
+DISTVERSION=	13.0.1
 CATEGORIES=	net-im
 MASTER_SITES=	https://prosody.im/downloads/source/
 
@@ -22,8 +21,9 @@ RUN_DEPENDS=	${LUA_REFMODLIBDIR}/lfs.so:devel/luafilesystem@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/ssl.so:security/luasec@${LUA_FLAVOR}
 
 USES=		cpe gmake lua:54 shebangfix ssl
+USE_RC_SUBR=	prosody
 SHEBANG_FILES=	prosody prosodyctl tools/migration/prosody-migrator.lua
-LUA_PREMK=	yes
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--datadir="/var/db/prosody" \
@@ -41,13 +41,19 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--no-example-certs
 
 MAKEFILE=	GNUmakefile
+
+SUB_FILES=	pkg-message
+SUB_LIST=	USERS=${USERS} \
+		GROUPS=${GROUPS} \
+		LUA_PREFIX=${LUA_PREFIX} \
+		LUA_CMD=${LUA_CMD} \
+		PORTNAME="${PORTNAME}"
+
 USERS=		prosody
 GROUPS=		${USERS}
 
-USE_RC_SUBR=	prosody
-SUB_FILES=	pkg-message
-SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS} LUA_PREFIX=${LUA_PREFIX} LUA_CMD=${LUA_CMD} PORTNAME="${PORTNAME}"
-PLIST_SUB=	PROSODY_USER=${USERS} PROSODY_GROUP=${GROUPS}
+PLIST_SUB=	PROSODY_USER=${USERS} \
+		PROSODY_GROUP=${GROUPS}
 
 post-install:
 	@${REINPLACE_CMD} -e "s|\"luarocks |\"luarocks${LUA_VER_STR} |" ${STAGEDIR}${PREFIX}/lib/prosody/util/prosodyctl.lua
@@ -55,4 +61,10 @@ post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/prosody
 	@${RM} ${STAGEDIR}${ETCDIR}/certs/*
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000 && ${SSL_DEFAULT} == base
+EXTRA_PATCHES=	${PATCHDIR}/freebsd-13-patches
+.endif
+
+.include <bsd.port.post.mk>

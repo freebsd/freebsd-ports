@@ -9,6 +9,26 @@ interfaces = { 'x.x.x.x' }
 where 'x.x.x.x' is the public IP you wish Prosody to bind to.
 EOM
 },
+{ type: upgrade
+  maximum-version: "13.0.0"
+  message: <<EOM
+Prosody 13.0 will function correctly on any config file that is compatible
+with 0.12. No changes are required, however there may be some recommendations.
+The best way to find these is to run:
+
+  prosodyctl check config
+
+If you are upgrading from an earlier release and you use PostgreSQL or SQLite
+for storage, Prosody may refuse to initialize storage until you complete a
+schema upgrade. To check for any necessary schema upgrades and apply them, run:
+
+  prosodyctl mod_storage_sql upgrade
+
+For more detailed information check the release notes at:
+
+  https://prosody.im/doc/release/13.0.0
+EOM
+},
 { type: remove
   message: <<EOM
 ===> post-deinstallation information for %%PORTNAME%%:"

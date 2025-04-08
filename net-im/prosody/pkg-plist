@@ -1,9 +1,11 @@
-bin/prosody
-bin/prosodyctl
-bin/prosody-migrator
 @dir %%ETCDIR%%/certs
+@dir(%%PROSODY_USER%%,%%PROSODY_GROUP%%,) /var/db/prosody
+@dir(%%PROSODY_USER%%,%%PROSODY_GROUP%%,) /var/run/prosody
 @sample %%ETCDIR%%/migrator.cfg.lua.sample
 @sample %%ETCDIR%%/prosody.cfg.lua.sample
+bin/prosody
+bin/prosody-migrator
+bin/prosodyctl
 lib/prosody/core/certmanager.lua
 lib/prosody/core/configmanager.lua
 lib/prosody/core/features.lua
@@ -19,8 +21,10 @@ lib/prosody/core/stanza_router.lua
 lib/prosody/core/statsmanager.lua
 lib/prosody/core/storagemanager.lua
 lib/prosody/core/usermanager.lua
+lib/prosody/loader.lua
 lib/prosody/modules/adhoc/adhoc.lib.lua
 lib/prosody/modules/adhoc/mod_adhoc.lua
+lib/prosody/modules/mod_account_activity.lua
 lib/prosody/modules/mod_admin_adhoc.lua
 lib/prosody/modules/mod_admin_shell.lua
 lib/prosody/modules/mod_admin_socket.lua
@@ -37,16 +41,21 @@ lib/prosody/modules/mod_bookmarks.lua
 lib/prosody/modules/mod_bosh.lua
 lib/prosody/modules/mod_c2s.lua
 lib/prosody/modules/mod_carbons.lua
+lib/prosody/modules/mod_cloud_notify.lua
 lib/prosody/modules/mod_component.lua
 lib/prosody/modules/mod_cron.lua
 lib/prosody/modules/mod_csi.lua
 lib/prosody/modules/mod_csi_simple.lua
+lib/prosody/modules/mod_debug_reset.lua
 lib/prosody/modules/mod_debug_sql.lua
+lib/prosody/modules/mod_debug_stanzas/watcher.lib.lua
 lib/prosody/modules/mod_dialback.lua
 lib/prosody/modules/mod_disco.lua
 lib/prosody/modules/mod_external_services.lua
+lib/prosody/modules/mod_flags.lua
 lib/prosody/modules/mod_groups.lua
 lib/prosody/modules/mod_http.lua
+lib/prosody/modules/mod_http_altconnect.lua
 lib/prosody/modules/mod_http_errors.lua
 lib/prosody/modules/mod_http_file_share.lua
 lib/prosody/modules/mod_http_files.lua
@@ -76,6 +85,7 @@ lib/prosody/modules/mod_posix.lua
 lib/prosody/modules/mod_presence.lua
 lib/prosody/modules/mod_private.lua
 lib/prosody/modules/mod_proxy65.lua
+lib/prosody/modules/mod_pubsub/commands.lib.lua
 lib/prosody/modules/mod_pubsub/mod_pubsub.lua
 lib/prosody/modules/mod_pubsub/pubsub.lib.lua
 lib/prosody/modules/mod_register.lua
@@ -84,10 +94,12 @@ lib/prosody/modules/mod_register_limits.lua
 lib/prosody/modules/mod_roster.lua
 lib/prosody/modules/mod_s2s.lua
 lib/prosody/modules/mod_s2s_auth_certs.lua
+lib/prosody/modules/mod_s2s_auth_dane_in.lua
 lib/prosody/modules/mod_s2s_bidi.lua
 lib/prosody/modules/mod_saslauth.lua
 lib/prosody/modules/mod_scansion_record.lua
 lib/prosody/modules/mod_server_contact_info.lua
+lib/prosody/modules/mod_server_info.lua
 lib/prosody/modules/mod_smacks.lua
 lib/prosody/modules/mod_stanza_debug.lua
 lib/prosody/modules/mod_storage_internal.lua
@@ -130,8 +142,10 @@ lib/prosody/modules/muc/persistent.lib.lua
 lib/prosody/modules/muc/presence_broadcast.lib.lua
 lib/prosody/modules/muc/register.lib.lua
 lib/prosody/modules/muc/request.lib.lua
+lib/prosody/modules/muc/restrict_pm.lib.lua
 lib/prosody/modules/muc/subject.lib.lua
 lib/prosody/modules/muc/util.lib.lua
+lib/prosody/modules/muc/vcard.lib.lua
 lib/prosody/modules/muc/whois.lib.lua
 lib/prosody/net/adns.lua
 lib/prosody/net/connect.lua
@@ -143,7 +157,6 @@ lib/prosody/net/http/errors.lua
 lib/prosody/net/http/files.lua
 lib/prosody/net/http/parser.lua
 lib/prosody/net/http/server.lua
-lib/prosody/net/httpserver.lua
 lib/prosody/net/resolvers/basic.lua
 lib/prosody/net/resolvers/chain.lua
 lib/prosody/net/resolvers/manual.lua
@@ -153,6 +166,7 @@ lib/prosody/net/server_epoll.lua
 lib/prosody/net/server_event.lua
 lib/prosody/net/server_select.lua
 lib/prosody/net/stun.lua
+lib/prosody/net/tls_luasec.lua
 lib/prosody/net/unbound.lua
 lib/prosody/net/websocket.lua
 lib/prosody/net/websocket/frames.lua
@@ -168,6 +182,7 @@ lib/prosody/util/cache.lua
 lib/prosody/util/caps.lua
 lib/prosody/util/compat.so
 lib/prosody/util/crand.so
+lib/prosody/util/crypto.so
 lib/prosody/util/dataforms.lua
 lib/prosody/util/datamanager.lua
 lib/prosody/util/datamapper.lua
@@ -183,6 +198,7 @@ lib/prosody/util/error.lua
 lib/prosody/util/events.lua
 lib/prosody/util/filters.lua
 lib/prosody/util/format.lua
+lib/prosody/util/fsm.lua
 lib/prosody/util/gc.lua
 lib/prosody/util/hashes.so
 lib/prosody/util/hashring.lua
@@ -204,11 +220,13 @@ lib/prosody/util/jsonpointer.lua
 lib/prosody/util/jsonschema.lua
 lib/prosody/util/jwt.lua
 lib/prosody/util/logger.lua
+lib/prosody/util/mathcompat.lua
 lib/prosody/util/mercurial.lua
 lib/prosody/util/multitable.lua
 lib/prosody/util/net.so
 lib/prosody/util/openmetrics.lua
 lib/prosody/util/openssl.lua
+lib/prosody/util/paseto.lua
 lib/prosody/util/paths.lua
 lib/prosody/util/pluginloader.lua
 lib/prosody/util/poll.so
@@ -222,12 +240,13 @@ lib/prosody/util/prosodyctl/shell.lua
 lib/prosody/util/pubsub.lua
 lib/prosody/util/queue.lua
 lib/prosody/util/random.lua
-lib/prosody/util/rfc6724.lua
 lib/prosody/util/ringbuffer.so
+lib/prosody/util/roles.lua
 lib/prosody/util/rsm.lua
 lib/prosody/util/sasl.lua
 lib/prosody/util/sasl/anonymous.lua
 lib/prosody/util/sasl/external.lua
+lib/prosody/util/sasl/oauthbearer.lua
 lib/prosody/util/sasl/plain.lua
 lib/prosody/util/sasl/scram.lua
 lib/prosody/util/serialization.lua
@@ -236,6 +255,7 @@ lib/prosody/util/set.lua
 lib/prosody/util/signal.so
 lib/prosody/util/smqueue.lua
 lib/prosody/util/sql.lua
+lib/prosody/util/sqlite3.lua
 lib/prosody/util/sslconfig.lua
 lib/prosody/util/stanza.lua
 lib/prosody/util/startup.lua
@@ -250,7 +270,6 @@ lib/prosody/util/throttle.lua
 lib/prosody/util/time.so
 lib/prosody/util/timer.lua
 lib/prosody/util/uuid.lua
-lib/prosody/util/vcard.lua
 lib/prosody/util/watchdog.lua
 lib/prosody/util/x509.lua
 lib/prosody/util/xml.lua
@@ -258,5 +277,3 @@ lib/prosody/util/xmppstream.lua
 lib/prosody/util/xpcall.lua
 lib/prosody/util/xtemplate.lua
 share/man/man1/prosodyctl.1.gz
-@dir(%%PROSODY_USER%%,%%PROSODY_GROUP%%,) /var/db/prosody
-@dir(%%PROSODY_USER%%,%%PROSODY_GROUP%%,) /var/run/prosody

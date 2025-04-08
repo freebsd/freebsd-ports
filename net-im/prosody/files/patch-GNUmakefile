@@ -1,4 +1,4 @@
---- GNUmakefile.orig	2022-03-08 12:34:39 UTC
+--- GNUmakefile.orig	2025-03-13 13:12:42 UTC
 +++ GNUmakefile
 @@ -35,7 +35,7 @@ install-etc: prosody.cfg.lua.install
  	$(MKDIR) $(CONFIG)
@@ -9,10 +9,10 @@
  
  install-bin: prosody.install prosodyctl.install
  	$(MKDIR) $(BIN)
-@@ -89,6 +89,7 @@ install-data:
+@@ -94,6 +94,7 @@ install: install-util install-net install-core install
  	$(MKDIR_PRIVATE) $(DATA)
  
- install: install-util install-net install-core install-plugins install-bin install-etc install-man install-meta install-data
+ install: install-util install-net install-core install-plugins install-bin install-etc install-man install-meta install-data install-loader
 +	$(MAKE) -C tools/migration install
  
  clean:
