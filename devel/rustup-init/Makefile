@@ -1,5 +1,6 @@
 PORTNAME=	rustup-init
 DISTVERSION=	1.28.1
+PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	rustup
 

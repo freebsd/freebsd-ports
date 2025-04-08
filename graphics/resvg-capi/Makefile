@@ -1,5 +1,6 @@
 PORTNAME=	resvg-c-api
 DISTVERSION=	0.45.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
