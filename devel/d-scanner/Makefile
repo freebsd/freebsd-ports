@@ -31,12 +31,14 @@ GH_PROJECT=	D-Scanner
 
 PLIST_FILES=	bin/dscanner
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
+DC=		${PREFIX}/bin/ldmd2
 
 post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/dub.json
 
 do-build:
-	@cd ${WRKSRC} && ${DUB_CMD}
+	@cd ${WRKSRC} && \
+		${SETENV} DUB_HOME=${WRKDIR}/dub_home DC=${DC} ${DUB_CMD}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/dscanner ${STAGEDIR}${PREFIX}/bin/
