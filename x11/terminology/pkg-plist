@@ -28,10 +28,12 @@ share/icons/hicolor/128x128/apps/terminology.png
 %%NLS%%share/locale/he/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/hi/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/id/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/it/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/terminology.mo
@@ -40,6 +42,7 @@ share/icons/hicolor/128x128/apps/terminology.png
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/si/LC_MESSAGES/terminology.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/terminology.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/terminology.mo
