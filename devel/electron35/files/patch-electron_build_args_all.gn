@@ -1,0 +1,13 @@
+--- electron/build/args/all.gn.orig	2025-04-04 05:26:44 UTC
++++ electron/build/args/all.gn
+@@ -14,8 +14,8 @@ enable_cdm_host_verification = false
+ v8_enable_javascript_promise_hooks = true
+ 
+ enable_cdm_host_verification = false
+-ffmpeg_branding = "Chrome"
+-proprietary_codecs = true
++# ffmpeg_branding = "Chrome"
++# proprietary_codecs = true
+ 
+ enable_printing = true
+ 

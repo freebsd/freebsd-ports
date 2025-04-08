@@ -1,0 +1,11 @@
+--- third_party/electron_node/deps/histogram/unofficial.gni.orig	2025-02-10 16:22:55 UTC
++++ third_party/electron_node/deps/histogram/unofficial.gni
+@@ -25,7 +25,7 @@ template("histogram_gn_build") {
+         "-Wno-unused-function",
+       ]
+     }
+-    if (is_linux) {
++    if (is_linux && !is_bsd) {
+       libs = [ "atomic" ]
+     }
+   }

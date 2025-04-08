@@ -1,0 +1,31 @@
+--- net/dns/BUILD.gn.orig	2025-04-06 11:53:44 UTC
++++ net/dns/BUILD.gn
+@@ -140,7 +140,7 @@ source_set("dns") {
+       "dns_config_service_android.cc",
+       "dns_config_service_android.h",
+     ]
+-  } else if (is_linux) {
++  } else if (is_linux && !is_bsd) {
+     sources += [
+       "dns_config_service_linux.cc",
+       "dns_config_service_linux.h",
+@@ -181,6 +181,7 @@ source_set("dns") {
+     ":host_resolver_manager",
+     ":mdns_client",
+     "//net:net_public_deps",
++    "//printing/buildflags",
+   ]
+ 
+   allow_circular_includes_from = [
+@@ -452,9 +453,9 @@ source_set("tests") {
+ 
+   if (is_android) {
+     sources += [ "dns_config_service_android_unittest.cc" ]
+-  } else if (is_linux) {
++  } else if (is_linux && !is_bsd) {
+     sources += [ "dns_config_service_linux_unittest.cc" ]
+-  } else if (is_posix) {
++  } else if (is_posix && !is_bsd) {
+     sources += [ "dns_config_service_posix_unittest.cc" ]
+   }
+ 

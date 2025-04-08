@@ -1,0 +1,16 @@
+--- services/resource_coordinator/public/cpp/memory_instrumentation/BUILD.gn.orig	2025-03-24 20:50:14 UTC
++++ services/resource_coordinator/public/cpp/memory_instrumentation/BUILD.gn
+@@ -27,8 +27,12 @@ component("memory_instrumentation") {
+     sources += [ "os_metrics_win.cc" ]
+   }
+ 
+-  if (is_android || is_linux || is_chromeos) {
++  if ((is_android || is_linux || is_chromeos) && !is_bsd) {
+     sources += [ "os_metrics_linux.cc" ]
++  }
++
++  if (is_bsd) {
++    sources += [ "os_metrics_bsd.cc" ]
+   }
+ 
+   if (is_fuchsia) {
