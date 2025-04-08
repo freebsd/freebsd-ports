@@ -1,5 +1,5 @@
 PORTNAME=	passman
-PORTVERSION=	2.4.11
+PORTVERSION=	2.4.12
 CATEGORIES=	security
 MASTER_SITES=	https://releases.passman.cc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
