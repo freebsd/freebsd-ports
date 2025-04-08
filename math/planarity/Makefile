@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	graph-algorithms
 GH_PROJECT=	edge-addition-planarity-suite
 
-USES=		autoreconf libtool
+USES=		autoreconf libtool pkgconfig
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
