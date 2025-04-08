@@ -1,6 +1,6 @@
 PORTNAME=	tumbler
 PORTVERSION=	4.20.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE
 PKGNAMEPREFIX=	xfce4-
@@ -45,7 +45,7 @@ GSTREAMER_DESC=	GStreamer thumbnailer plugin
 COVER_LIB_DEPENDS=	libcurl.so:ftp/curl
 COVER_CONFIGURE_ENABLE=	cover-thumbnailer
 
-EPUB_LIB_DEPENDS=	libgepub-0.6.so:textproc/libgepub
+EPUB_LIB_DEPENDS=	libgepub-0.7.so:textproc/libgepub
 EPUB_CONFIGURE_ENABLE=	gepub-thumbnailer
 
 FFMPEG_LIB_DEPENDS=		libffmpegthumbnailer.so:multimedia/ffmpegthumbnailer
