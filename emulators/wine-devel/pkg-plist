@@ -1631,6 +1631,7 @@ lib/wine/%%WINEARCH%%-unix/opengl32.so
 lib/wine/%%WINEARCH%%-unix/qcap.so
 lib/wine/%%WINEARCH%%-unix/secur32.so
 lib/wine/%%WINEARCH%%-unix/win32u.so
+lib/wine/%%WINEARCH%%-unix/wine
 %%ALSA%%lib/wine/%%WINEARCH%%-unix/winealsa.so
 lib/wine/%%WINEARCH%%-unix/winebth.so
 lib/wine/%%WINEARCH%%-unix/winebus.so
@@ -2028,6 +2029,7 @@ lib/wine/%%WINEARCH%%-windows/libinetcomm.a
 lib/wine/%%WINEARCH%%-windows/libiphlpapi.a
 lib/wine/%%WINEARCH%%-windows/libjsproxy.a
 lib/wine/%%WINEARCH%%-windows/libkernel32.a
+%%WINE32%%lib/wine/%%WINEARCH%%-windows/libkernel.a
 lib/wine/%%WINEARCH%%-windows/libkernelbase.a
 lib/wine/%%WINEARCH%%-windows/libloadperf.a
 lib/wine/%%WINEARCH%%-windows/liblz32.a
@@ -2162,6 +2164,7 @@ lib/wine/%%WINEARCH%%-windows/libwldap32.a
 lib/wine/%%WINEARCH%%-windows/libwmcodecdspuuid.a
 lib/wine/%%WINEARCH%%-windows/libwmvcore.a
 lib/wine/%%WINEARCH%%-windows/libwnaspi32.a
+%%WINE32%%lib/wine/%%WINEARCH%%-windows/libwow32.a
 %%WINE64%%lib/wine/%%WINEARCH%%-windows/libwow64.a
 lib/wine/%%WINEARCH%%-windows/libws2_32.a
 lib/wine/%%WINEARCH%%-windows/libwsdapi.a
@@ -2473,6 +2476,7 @@ lib/wine/%%WINEARCH%%-windows/tdh.dll
 lib/wine/%%WINEARCH%%-windows/tdi.sys
 lib/wine/%%WINEARCH%%-windows/termsv.exe
 lib/wine/%%WINEARCH%%-windows/threadpoolwinrt.dll
+lib/wine/%%WINEARCH%%-windows/timeout.exe
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/toolhelp.dll16
 lib/wine/%%WINEARCH%%-windows/traffic.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/twain.dll16
@@ -2557,6 +2561,7 @@ lib/wine/%%WINEARCH%%-windows/windows.networking.hostname.dll
 lib/wine/%%WINEARCH%%-windows/windows.perception.stub.dll
 lib/wine/%%WINEARCH%%-windows/windows.security.authentication.onlineid.dll
 lib/wine/%%WINEARCH%%-windows/windows.security.credentials.ui.userconsentverifier.dll
+lib/wine/%%WINEARCH%%-windows/windows.storage.dll
 lib/wine/%%WINEARCH%%-windows/windows.storage.applicationdata.dll
 lib/wine/%%WINEARCH%%-windows/windows.system.profile.systemmanufacturers.dll
 lib/wine/%%WINEARCH%%-windows/windows.ui.dll
