@@ -3,33 +3,24 @@
   message: <<EOM
 You installed Zoom: A video conferencing client.
 
-CAVEAT: Sound doesn't yet work in Zoom on FreeBSD.
+CAVEAT: Sound does not yet work in Zoom on FreeBSD.
 
 In order to run Zoom you need:
-1. Linux emulation enabled. For this you should execute:
-   # sysrc linux_enable=YES
-   and reboot and/or execute:
-   # kldload linux
-2. Have devfs mounted for the Linux emulator.
-   For this you should execute:
-   # mount -t devfs none /compat/linux/dev
-   and reboot and/or add this line to /etc/fstab:
-   devfs /compat/linux/dev devfs rw 0 0
-3. Have Linux OpenGL package for your video card is installed.
-   It could be one of linux-nvidia-libs*, etc.
-   Enable a port option corresponding to your OpenGL driver, if applicable.
-   Try running with LIBGL_ALWAYS_SOFTWARE=1 if zoom crashes because of OpenGL.
-4. Have multimedia/webcamd installed and running. The usual way to
-   start webcamd is to have these two lines in /etc/rc.conf:
-   webcamd_enable="YES"
-   webcamd_flags="-H"
 
-Zoom stores configuration values in ~/.config/zoomus.conf, some
-of which you can adjust.
+1. Linux emulation:
+   # service linux enable && service linux start
+2. multimedia/webcamd installed, then start its daemon: 
+   # service webcamd enable && service webcamd start
+3. a Linux OpenGL package for your video card. It could be one of 
+   linux-nvidia-libs*, etc. Enable a port option corresponding to your 
+   OpenGL driver, if applicable. If zoom crashes because of OpenGL, try 
+   running with LIBGL_ALWAYS_SOFTWARE=1 
+
+Configuration file: ~/.config/zoomus.conf
 
 If you have linux-c7-pulseaudio-libs or linux-c7-alsa-plugins-pulseaudio
-installed and zoom asserts in pulseaudio, please change system.audio.type
-to "alsa" in ~/.config/zoomus.conf
+installed and Zoom asserts in PulseAudio, please change system.audio.type
+to "alsa" in the configuration file.
 
 EOM
 }
