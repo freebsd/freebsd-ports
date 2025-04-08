@@ -1,6 +1,5 @@
 PORTNAME=	prismlauncher
-DISTVERSION=	9.2
-PORTREVISION=	1
+DISTVERSION=	9.4
 CATEGORIES=	games java
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -24,7 +23,7 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gl java kde:6 qt:6 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	PrismLauncher
 GH_PROJECT=	${GH_ACCOUNT}
-GH_TUPLE=	gulrak:filesystem:2fc4b463:filesystem/libraries/filesystem \
+GH_TUPLE=	gulrak:filesystem:9fda7b0a:filesystem/libraries/filesystem \
 		PrismLauncher:libnbtplusplus:23b95512:libnbtplusplus/libraries/libnbtplusplus
 USE_GL=		opengl
 USE_KDE=	ecm:build
