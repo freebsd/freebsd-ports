@@ -4,6 +4,9 @@ DISTVERSION=	1.9.22
 PORTREVISION=	3
 CATEGORIES=	audio
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	250420381b1a6974798939ad7104ab1a4b9a9994.patch:-p1
+
 MAINTAINER=	dev@submerge.ch
 COMMENT=	Low latency audio server
 WWW=		https://jackaudio.org/
