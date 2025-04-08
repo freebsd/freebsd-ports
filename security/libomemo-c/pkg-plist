@@ -15,5 +15,5 @@ include/omemo/signal_protocol.h
 include/omemo/signal_protocol_types.h
 lib/libomemo-c.so
 lib/libomemo-c.so.0
-lib/libomemo-c.so.0.5.0
+lib/libomemo-c.so.%%SHLIB_VER%%
 libdata/pkgconfig/libomemo-c.pc
