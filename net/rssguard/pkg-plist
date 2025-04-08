@@ -13,6 +13,7 @@ include/librssguard/exceptions/ioexception.h
 include/librssguard/exceptions/networkexception.h
 include/librssguard/exceptions/processexception.h
 include/librssguard/exceptions/scriptexception.h
+include/librssguard/gui/dialogs/filedialog.h
 include/librssguard/gui/dialogs/formabout.h
 include/librssguard/gui/dialogs/formmain.h
 include/librssguard/gui/dialogs/formupdate.h
