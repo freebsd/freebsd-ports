@@ -316,7 +316,7 @@ _INCLUDE_USES_PYTHON_MK=	yes
 # What Python version and what Python interpreters are currently supported?
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-_PYTHON_VERSIONS=		3.11 3.10 3.9 2.7 # preferred first
+_PYTHON_VERSIONS=		3.11 3.12 3.10 3.9 2.7 # preferred first
 _PYTHON_PORTBRANCH=		3.11		# ${_PYTHON_VERSIONS:[1]}
 _PYTHON_BASECMD=		${LOCALBASE}/bin/python
 _PYTHON_RELPORTDIR=		lang/python
