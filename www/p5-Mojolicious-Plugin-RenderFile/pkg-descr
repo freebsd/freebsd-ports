@@ -1,0 +1,3 @@
+Mojolicious::Plugin::RenderFile is a Mojolicious plugin that adds
+"render_file" helper. It does not read file in memory and just
+streaming it to a client.
