@@ -1,5 +1,5 @@
 PORTNAME=	visualvm
-DISTVERSION=	2.1.7
+DISTVERSION=	2.1.8
 CATEGORIES=	java devel
 MASTER_SITES=	https://github.com/oracle/visualvm/releases/download/${PORTVERSION}/
 DISTNAME=	visualvm_${PORTVERSION:S/.//g}

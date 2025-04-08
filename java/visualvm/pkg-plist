@@ -75,9 +75,9 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/config/Modules/org-openide-nodes.xml
 %%DATADIR%%/platform/config/Modules/org-openide-text.xml
 %%DATADIR%%/platform/config/Modules/org-openide-windows.xml
-%%DATADIR%%/platform/core/asm-9.2.jar
-%%DATADIR%%/platform/core/asm-commons-9.2.jar
-%%DATADIR%%/platform/core/asm-tree-9.2.jar
+%%DATADIR%%/platform/core/asm-9.5.jar
+%%DATADIR%%/platform/core/asm-commons-9.5.jar
+%%DATADIR%%/platform/core/asm-tree-9.5.jar
 %%DATADIR%%/platform/core/core-base.jar
 %%DATADIR%%/platform/core/core.jar
 %%DATADIR%%/platform/core/org-netbeans-libs-asm.jar
@@ -88,7 +88,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/lib/org-openide-util-lookup.jar
 %%DATADIR%%/platform/lib/org-openide-util-ui.jar
 %%DATADIR%%/platform/lib/org-openide-util.jar
-%%DATADIR%%/platform/modules/ext/flatlaf-2.1.jar
+%%DATADIR%%/platform/modules/ext/flatlaf-3.1.jar
 %%DATADIR%%/platform/modules/ext/jna-5.12.1.jar
 %%DATADIR%%/platform/modules/ext/jna-platform-5.12.1.jar
 %%DATADIR%%/platform/modules/ext/updater.jar
@@ -96,6 +96,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/platform/modules/lib/aarch64/linux/libjnidispatch-nb.so
 %%DATADIR%%/platform/modules/lib/amd64/linux/libjnidispatch-nb.so
 %%DATADIR%%/platform/modules/lib/i386/linux/libjnidispatch-nb.so
+%%DATADIR%%/platform/modules/lib/libflatlaf-linux-x86_64.so
 %%DATADIR%%/platform/modules/lib/riscv64/linux/libjnidispatch-nb.so
 %%DATADIR%%/platform/modules/lib/x86_64/libjnidispatch-nb.jnilib
 %%DATADIR%%/platform/modules/org-netbeans-api-annotations-common.jar
@@ -247,7 +248,6 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-host.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-jfr-generic.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-jfr-jdk11.xml
-%%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-jfr-jdk9.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-jfr.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-jmx.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-jvm.xml
@@ -265,6 +265,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-lib-profiler.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-lib-ui.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-modules-appui.xml
+%%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-modules-nashorn-jdk15.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-pluginimporter.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-profiler.xml
 %%DATADIR%%/visualvm/config/Modules/org-graalvm-visualvm-profiling.xml
@@ -299,11 +300,13 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/lib/deployed/jdk16/windows/profilerinterface.map
 %%DATADIR%%/visualvm/lib/jfluid-server-15.jar
 %%DATADIR%%/visualvm/lib/jfluid-server.jar
-%%DATADIR%%/visualvm/modules/ext/common-8.3.0.jar
+%%DATADIR%%/visualvm/modules/ext/asm-util-9.5.jar
+%%DATADIR%%/visualvm/modules/ext/common-8.3.1.jar
 %%DATADIR%%/visualvm/modules/ext/encoder-1.2.3.jar
-%%DATADIR%%/visualvm/modules/ext/flightrecorder-8.3.0.jar
+%%DATADIR%%/visualvm/modules/ext/flightrecorder-8.3.1.jar
 %%DATADIR%%/visualvm/modules/ext/locale/updater_visualvm.jar
 %%DATADIR%%/visualvm/modules/ext/lz4-java-1.8.0.jar
+%%DATADIR%%/visualvm/modules/ext/nashorn-core-15.4.jar
 %%DATADIR%%/visualvm/modules/ext/profilerprobe.jar
 %%DATADIR%%/visualvm/modules/ext/stagent.jar
 %%DATADIR%%/visualvm/modules/locale/org-netbeans-core-windows_visualvm.jar
@@ -328,7 +331,6 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-host.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-jfr-generic.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-jfr-jdk11.jar
-%%DATADIR%%/visualvm/modules/org-graalvm-visualvm-jfr-jdk9.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-jfr.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-jmx.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-jvm.jar
@@ -346,6 +348,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-lib-profiler.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-lib-ui.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-modules-appui.jar
+%%DATADIR%%/visualvm/modules/org-graalvm-visualvm-modules-nashorn-jdk15.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-pluginimporter.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-profiler.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-profiling.jar
@@ -373,7 +376,6 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-host.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-jfr-generic.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-jfr-jdk11.xml
-%%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-jfr-jdk9.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-jfr.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-jmx.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-jvm.xml
@@ -391,6 +393,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-lib-profiler.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-lib-ui.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-modules-appui.xml
+%%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-modules-nashorn-jdk15.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-modules-startup.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-pluginimporter.xml
 %%DATADIR%%/visualvm/update_tracking/org-graalvm-visualvm-profiler.xml
