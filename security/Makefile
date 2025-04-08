@@ -1335,6 +1335,7 @@
     SUBDIR += su-exec
     SUBDIR += subversion-gnome-keyring
     SUBDIR += sudo
+    SUBDIR += sudo-rs
     SUBDIR += sudoscript
     SUBDIR += super
     SUBDIR += suricata
