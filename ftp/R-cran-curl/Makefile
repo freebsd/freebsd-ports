@@ -1,11 +1,11 @@
 PORTNAME=	curl
-DISTVERSION=	6.2.1
+DISTVERSION=	6.2.2
 CATEGORIES=	ftp
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Modern and Flexible Web Client for R
-WWW=		https://cran.r-project.org/web/packages/curl/
+WWW=		https://cran.r-project.org/package=curl
 
 LICENSE=	MIT
 
