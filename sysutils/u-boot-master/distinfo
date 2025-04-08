@@ -1,3 +1,5 @@
-TIMESTAMP = 1727176237
+TIMESTAMP = 1729748230
 SHA256 (u-boot/u-boot-2024.07.tar.bz2) = f591da9ab90ef3d6b3d173766d0ddff90c4ed7330680897486117df390d83c8f
 SIZE (u-boot/u-boot-2024.07.tar.bz2) = 26086110
+SHA256 (u-boot/u-boot-2024.10.tar.bz2) = b28daf4ac17e43156363078bf510297584137f6df50fced9b12df34f61a92fb0
+SIZE (u-boot/u-boot-2024.10.tar.bz2) = 26398495

@@ -4,6 +4,7 @@ MODEL=		bhyve-arm64
 BOARD_CONFIG=	bhyve_arm64_defconfig
 FAMILY=		bhyve
 UBOOT_ARCH=	aarch64
+UBOOT_VERSION=	2024.07
 
 UBOOT_PLIST=	u-boot.bin
 
