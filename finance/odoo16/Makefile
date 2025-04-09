@@ -1,6 +1,6 @@
 PORTNAME=	odoo
 PORTVERSION=	16.0.20250108
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	16
@@ -10,9 +10,6 @@ COMMENT=	Suite of web based open source business apps
 WWW=		https://www.odoo.com
 
 LICENSE=	LGPL3
-
-DEPRECATED=	Depends on expired print/py-pypdf2
-EXPIRATION_DATE=2025-03-31
 
 USE_GITHUB=	yes
 GH_TAGNAME=	f4c41aa2836cd937cd476e50dcd494fc8549476a
@@ -49,7 +46,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydot>=0:graphics/py-pydot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pypdf2>0:print/py-pypdf2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pypdf>0:print/py-pypdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial>=0:comms/py-pyserial@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-ldap>=0:net/py-python-ldap@${PY_FLAVOR} \
