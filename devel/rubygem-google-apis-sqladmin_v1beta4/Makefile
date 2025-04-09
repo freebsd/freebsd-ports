@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-sqladmin_v1beta4
-PORTVERSION=	0.79.0
+PORTVERSION=	0.80.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
