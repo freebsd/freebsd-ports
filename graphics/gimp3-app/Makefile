@@ -56,7 +56,7 @@ USES=		cpe desktop-file-utils gettext gnome jpeg libarchive \
 		localbase:ldflags meson ninja perl5 pkgconfig python:3.7+ \
 		shebangfix tar:xz xorg
 USE_CXXSTD=	gnu++14
-USE_GNOME=	gtk30 introspection cairo gdkpixbuf librsvg2
+USE_GNOME=	gtk30 introspection cairo gdkpixbuf librsvg2 libxslt
 USE_XORG=	ice sm x11 xcursor xext xfixes xmu xpm xt
 USE_LDCONFIG=	yes
 
