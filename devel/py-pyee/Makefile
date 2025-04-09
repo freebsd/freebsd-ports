@@ -1,5 +1,5 @@
 PORTNAME=	pyee
-PORTVERSION=	12.1.1
+PORTVERSION=	13.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jfhbrook/pyee/releases/download/v${PORTVERSION}/
