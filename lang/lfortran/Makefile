@@ -1,6 +1,6 @@
 PORTNAME=	lfortran
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.48.0
+DISTVERSION=	0.51.0
 CATEGORIES=	lang
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -19,21 +19,24 @@ BUILD_DEPENDS=	bash:shells/bash		\
 LIB_DEPENDS=	libfmt.so:devel/libfmt	\
 		libzstd.so:archivers/zstd	\
 		libunwind.so:devel/libunwind	\
-		libkokkoscore.so:devel/kokkos	\
-		libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION}
+		libkokkoscore.so:devel/kokkos
 RUN_DEPENDS=	dwarfdump:devel/dwarfdump
 
 USE_GITHUB=	yes
 
-USES=		bison cmake:testing compiler:c++17-lang pkgconfig	\
+USES=		bison cmake:testing compiler:c++17-lang llvm:20,lib pkgconfig	\
 		python:build ssl shebangfix
 SHEBANG_GLOB=	*.py *.sh
 BINARY_ALIAS=	python=${PYTHON_CMD}
 CMAKE_ON=	LFORTRAN_BUILD_ALL WITH_DWARFDUMP WITH_FMT WITH_JSON	\
-		WITH_KOKKOS WITH_LINKH WITH_LLVM WITH_STACKTRACE WITH_UNWIND
+		WITH_KOKKOS WITH_LINKH WITH_LLVM WITH_LLVM_STACKTRACE	\
+		WITH_MLIR WITH_STACKTRACE WITH_UNWIND
+CMAKE_ARGS=	-DLLVM_INSTALL_DIR:PATH="${LOCALBASE}/llvm${LLVM_VERSION}"	\
+		-DMLIR_DIR:PATH="${LOCALBASE}/llvm${LLVM_VERSION}/lib/cmake/mlir"	\
+		-DCMAKE_PREFIX_PATH:PATH="${LOCALBASE}/llvm${LLVM_VERSION};${CMAKE_PREFIX_PATH}"
 USE_LDCONFIG=	yes
 
-LLVM_VERSION=	17
+LLVM_VERSION=	20
 
 OPTIONS_DEFINE=	EXAMPLES # NB
 # NB is broken ATM
@@ -48,7 +51,7 @@ NB_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}	\
 
 PORTEXAMPLES=	*
 
-# Xeus: version 3.0.5 is required and xeus-zmq 1.0.2
+# Xeus: version 5.1.0 is required and xeus-zmq 3.0.0
 # + xtl-quant-stack + cppzmq + nlohmann_json + LibUUID + libzmq4
 # See https://github.com/lfortran/lfortran/issues/1255
 #BUILD_DEPENDS+=	xtl-quant-stack>=0.7:devel/xtl-quant-stack	\
