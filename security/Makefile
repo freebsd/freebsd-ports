@@ -921,6 +921,7 @@
     SUBDIR += py-cryptography
     SUBDIR += py-cryptography-legacy
     SUBDIR += py-cryptography-vectors
+    SUBDIR += py-cryptojwt
     SUBDIR += py-ctypescrypto
     SUBDIR += py-cybox
     SUBDIR += py-detect-secrets
