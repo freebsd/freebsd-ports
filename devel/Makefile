@@ -6148,8 +6148,8 @@
     SUBDIR += py-websockets
     SUBDIR += py-websockify
     SUBDIR += py-wheel
-    SUBDIR += py-wheel044
     SUBDIR += py-wheel-filename
+    SUBDIR += py-wheel044
     SUBDIR += py-whichcraft
     SUBDIR += py-whistle
     SUBDIR += py-widgetsnbextension
