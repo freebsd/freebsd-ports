@@ -1,5 +1,5 @@
 PORTNAME=	mDNSResponder
-PORTVERSION=	2200.140.11
+PORTVERSION=	2559.80.8
 CATEGORIES?=	net dns
 MASTER_SITES=	https://opensource.apple.com/tarballs/mDNSResponder/
 
@@ -34,7 +34,7 @@ CONFLICTS_INSTALL?=	avahi-libdns openmdns # lib/libdns_sd.so.1 sbin/mdnsd
 OPTIONS_DEFINE=	IPV6
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CFLAGS_DEBUG/ s|-Os|${CFLAGS}|' ${WRKSRC}/mDNSPosix/Makefile
+	@${REINPLACE_CMD} -e '/^CFLAGS_DEBUG/ s|-O0|${CFLAGS}|' ${WRKSRC}/mDNSPosix/Makefile
 	@${REINPLACE_CMD} -e 's|\(#define IPV6_2292_PKTINFO \).*|\1IPV6_PKTINFO|; s|\(#define IPV6_2292_HOPLIMIT \).*|\1IPV6_HOPLIMIT|' ${WRKSRC}/mDNSPosix/mDNSUNP.h
 	@${MV} ${WRKSRC}/mDNSShared/mDNSResponder.8 ${WRKSRC}/mDNSShared/mDNSResponderPosix.8
 
