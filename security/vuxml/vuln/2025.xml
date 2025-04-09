@@ -1,3 +1,35 @@
+  <vuln vid="8f71ad3b-14f5-11f0-87ba-002590c1f29c">
+    <topic>expat: improper restriction of xml entity expansion depth</topic>
+    <affects>
+      <package>
+	<name>expat</name>
+	<range><lt>2.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secalert@redhat.com reports:</p>
+	<blockquote cite="https://access.redhat.com/errata/RHSA-2025:3531">
+	  <p>A stack overflow vulnerability exists in the libexpat library due
+	  to the way it handles recursive entity expansion in XML documents.
+	  When parsing an XML document with deeply nested entity references,
+	  libexpat can be forced to recurse indefinitely, exhausting the stack
+	  space and causing a crash.  This issue could lead to denial of
+	  service (DoS) or, in some cases, exploitable memory corruption,
+	  depending on the environment and library usage.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-8176</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-8176</url>
+    </references>
+    <dates>
+      <discovery>2025-03-14</discovery>
+      <entry>2025-04-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="34c51a2b-13c8-11f0-a5bd-b42e991fc52e">
     <topic>Mozilla -- memory corruption</topic>
     <affects>
