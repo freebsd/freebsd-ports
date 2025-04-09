@@ -24,6 +24,8 @@ USE_GNOME=	cairo gtk40 librsvg2 libxml2:build
 USE_GL=		egl gl
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
+LDFLAGS+=	-lm
+
 GLIB_SCHEMAS=	org.gnome.Chess.gschema.xml
 
 OPTIONS_DEFINE=		GNUCHESS
