@@ -1,9 +1,8 @@
 PORTNAME=	pspg
-DISTVERSION=	5.7.4
-PORTREVISION=	1
+DISTVERSION=	5.7.5
 CATEGORIES=	databases
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tabular data pager designed to be used with psql
 WWW=		https://github.com/okbob/pspg
 
