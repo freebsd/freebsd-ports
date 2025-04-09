@@ -20,6 +20,8 @@ RUN_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler \
 
 USES=		gem shebangfix
 
+NO_ARCH=	yes
+
 PLIST_FILES=	bin/merb
 
 SHEBANG_FILES=	spec10/public/core_ext/fixtures/gems/bin/edit_json.rb \
