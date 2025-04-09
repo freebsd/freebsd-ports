@@ -4,7 +4,7 @@ DISTVERSION=	1.7
 PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of window manipulation tools
 WWW=		https://github.com/wmutils/core
 

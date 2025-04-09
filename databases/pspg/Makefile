@@ -3,7 +3,7 @@ DISTVERSION=	5.7.4
 PORTREVISION=	1
 CATEGORIES=	databases
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tabular data pager designed to be used with psql
 WWW=		https://github.com/okbob/pspg
 

@@ -5,7 +5,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 PKGNAMESUFFIX=	-browser
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Web browser based on WebKit2/GTK
 WWW=		https://surf.suckless.org
 

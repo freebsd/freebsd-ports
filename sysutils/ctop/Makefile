@@ -4,7 +4,7 @@ DISTVERSION=	0.7.7
 PORTREVISION=	23
 CATEGORIES=	sysutils
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Top-like interface for Docker container metrics
 WWW=		https://ctop.sh
 

@@ -4,7 +4,7 @@ DISTVERSION=	3.9.1
 PORTREVISION=	2
 CATEGORIES=	security editors
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor of encrypted files that supports YAML, JSON and BINARY formats
 WWW=		https://github.com/mozilla/sops
 

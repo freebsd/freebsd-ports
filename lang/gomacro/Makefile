@@ -5,7 +5,7 @@ DISTVERSIONSUFFIX=	-g9aafa23
 PORTREVISION=	17
 CATEGORIES=	lang
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive Go interpreter and debugger with REPL, generics and macros
 WWW=		https://github.com/cosmos72/gomacro
 

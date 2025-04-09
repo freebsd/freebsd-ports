@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	25
 CATEGORIES=	benchmarks
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny program that sends some load to a web application
 WWW=		https://github.com/rakyll/hey
 

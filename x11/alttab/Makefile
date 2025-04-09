@@ -4,7 +4,7 @@ DISTVERSION=	1.7.0
 PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Task switcher for minimalistic window managers
 WWW=		https://github.com/sagb/alttab
 

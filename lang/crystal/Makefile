@@ -7,7 +7,7 @@ MASTER_SITES=	https://github.com/dmgk/crystal-bootstrap/releases/download/${BOOT
 DISTFILES=	${BOOTSTRAP_NAME}.tar.xz:bootstrap
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language with Ruby-like syntax and static type checking
 WWW=		https://crystal-lang.org
 

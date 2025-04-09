@@ -4,7 +4,7 @@ DISTVERSION=	1.9.1
 PORTREVISION=	1
 CATEGORIES=	editors
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and easy to use console text editor
 WWW=		https://craigbarnes.gitlab.io/dte/
 

@@ -4,7 +4,7 @@ DISTVERSION=	2.2.4
 PORTREVISION=	23
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate GH_TUPLE from modules.txt
 WWW=		https://github.com/dmgk/modules2tuple
 

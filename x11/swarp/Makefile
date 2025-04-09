@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 generic pointer warping utility
 WWW=		https://tools.suckless.org/x/swarp
 

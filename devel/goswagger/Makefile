@@ -4,7 +4,7 @@ DISTVERSION=	0.30.4
 PORTREVISION=	16
 CATEGORIES=	devel
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Swagger 2.0 implementation for Go
 WWW=		https://goswagger.io/
 

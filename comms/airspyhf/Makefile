@@ -3,7 +3,7 @@ DISTVERSION=	1.6.8-7
 DISTVERSIONSUFFIX=	-gb93dedd
 CATEGORIES=	comms hamradio
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User mode driver for Airspy HF+ SDR
 WWW=		https://github.com/airspy/airspyhf
 

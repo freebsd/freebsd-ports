@@ -3,7 +3,7 @@ DISTVERSION=	5.0
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Linear Programming Kit
 WWW=		https://www.gnu.org/software/glpk/glpk.html
 

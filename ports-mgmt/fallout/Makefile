@@ -4,7 +4,7 @@ DISTVERSION=	1.0.4
 PORTREVISION=	21
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download and search pkg-fallout logs
 WWW=		https://github.com/dmgk/fallout
 

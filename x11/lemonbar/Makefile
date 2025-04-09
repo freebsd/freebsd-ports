@@ -4,7 +4,7 @@ DISTVERSION=	1.4
 PORTREVISION=	2
 CATEGORIES=	x11
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight xcb based bar
 WWW=		https://github.com/LemonBoy/bar
 

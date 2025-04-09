@@ -4,7 +4,7 @@ DISTVERSION=	22.12.14.113
 PORTREVISION=	1
 CATEGORIES=	devel lisp
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common Lisp installer and launcher
 WWW=		https://roswell.github.io/
 

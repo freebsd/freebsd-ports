@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	24
 CATEGORIES=	www
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Go web development eco-system, designed to make the life easier
 WWW=		https://gobuffalo.io/
 

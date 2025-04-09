@@ -4,7 +4,7 @@ DISTVERSION=	2.5
 PORTREVISION=	1
 CATEGORIES=	misc
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tools that enables control of LXI compatible instruments
 WWW=		https://lxi-tools.github.io/
 

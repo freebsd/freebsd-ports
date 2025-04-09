@@ -4,7 +4,7 @@ DISTVERSION=	0.17.3
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dependency manager for the Crystal programming language
 WWW=		https://github.com/crystal-lang/shards
 

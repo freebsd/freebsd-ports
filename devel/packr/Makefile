@@ -4,7 +4,7 @@ DISTVERSION=	2.8.3
 PORTREVISION=	24
 CATEGORIES=	devel
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and easy way to embed static files into Go binaries
 WWW=		https://github.com/gobuffalo/packr
 

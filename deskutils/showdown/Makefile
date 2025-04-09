@@ -3,7 +3,7 @@ DISTVERSION=	0.6
 PORTREVISION=	5
 CATEGORIES=	deskutils
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple markdown viewer, written in Vala and GTK 3
 WWW=		https://github.com/craigbarnes/showdown
 

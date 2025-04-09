@@ -4,7 +4,7 @@ DISTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optional addons to wmutils
 WWW=		https://github.com/wmutils/opt
 

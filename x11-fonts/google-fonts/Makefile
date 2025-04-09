@@ -3,7 +3,7 @@ DISTVERSION=	0.0.0.20210120
 PORTREVISION=	3
 CATEGORIES=	x11-fonts
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of freely redistributable TrueType fonts from Google
 WWW=		https://fonts.google.com/
 
