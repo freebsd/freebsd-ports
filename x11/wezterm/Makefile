@@ -1,11 +1,11 @@
 PORTNAME=	wezterm
-DISTVERSION=	20240203-110809-5046fc22
-PORTREVISION=	9
+DISTVERSION=	20250213-133349
+DISTVERSIONSUFFIX=	-ee0c04e7
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	vladislav.movchan@gmail.com
 COMMENT=	GPU-accelerated terminal emulator and multiplexer
-WWW=		https://wezfurlong.org/wezterm/
+WWW=		https://wezterm.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -23,29 +23,37 @@ USE_GITHUB=	yes
 USE_GITLAB=	nodefault
 USE_XORG=	x11 xcb
 GH_ACCOUNT=	wez
-GH_TUPLE=	harfbuzz:harfbuzz:63973005b:harfbuzz/deps/harfbuzz/harfbuzz \
-		glennrp:libpng:v1.6.36-805-g8439534da:libpng/deps/freetype/libpng \
-		madler:zlib:v1.2.11:zlib/deps/freetype/zlib \
-		fcitx:xcb-imdkit:1.0.3:xcb_imdkit/../${WRKSRC_crate_xcb-imdkit:T}/deps/xcb-imdkit \
-		freetype:freetype:e4586d960:freetype2/deps/freetype/freetype2
+GH_TAGNAME=	ee0c04e735fb94cb5119681f704fb7fa6731e713
+
+GH_TUPLE=	freetype:freetype:42608f77f:freetype2/deps/freetype/freetype2 \
+		nyorain:dlg:72dfcc858:dlg/deps/freetype/freetype2/subprojects/dlg \
+		glennrp:libpng:f5e92d769:libpng/deps/freetype/libpng \
+		madler:zlib:51b7f2abd:zlib/deps/freetype/zlib \
+		harfbuzz:harfbuzz:7b27c8edd:harfbuzz/deps/harfbuzz/harfbuzz \
+		fcitx:xcb-imdkit:30e2f16:xcb_imdkit/../${WRKSRC_crate_xcb-imdkit:T}/deps/xcb-imdkit
+
 PLIST_FILES=	bin/strip-ansi-escapes \
-		bin/${PORTNAME} \
-		bin/${PORTNAME}-gui \
-		bin/${PORTNAME}-mux-server \
-		etc/profile.d/${PORTNAME}.sh \
+		bin/wezterm \
+		bin/wezterm-gui \
+		bin/wezterm-mux-server \
+		etc/profile.d/wezterm.sh \
 		share/applications/org.wezfurlong.wezterm.desktop \
 		share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png \
 		share/icons/hicolor/scalable/apps/org.wezfurlong.wezterm.svg \
 		share/metainfo/org.wezfurlong.wezterm.appdata.xml \
-		share/nautilus-python/extensions/${PORTNAME}-nautilus.py \
-		${NULL}
+		share/nautilus-python/extensions/wezterm-nautilus.py \
+		share/bash-completion/completions/wezterm \
+		share/fish/completions/wezterm.fish \
+		share/zsh/site-functions/_wezterm
 
 # XXX https://github.com/rust-lang/cargo/issues/4101
 CARGO_INSTALL_PATH=	${PLIST_FILES:Mbin/*:T}
 
+CARGO_BUILD_ARGS+=	--features=distro-defaults
+
 .if exists(/usr/bin/tic)
 PKGMESSAGE=	${NONEXISTENT}
-PLIST_FILES+=	share/site-terminfo/${PORTNAME:C,^.,&/&,}
+PLIST_FILES+=	share/site-terminfo/w/wezterm
 .endif
 
 OPTIONS_DEFINE=	DOCS
@@ -77,7 +85,7 @@ do-build-DOCS-on:
 	mdbook build ${WRKSRC}/docs
 	${CP} ${WRKSRC}/assets/icon/terminal.png \
 		${WRKSRC}/gh_pages/html/favicon.png
-	${CP} ${WRKSRC}/assets/icon/${PORTNAME}-icon.svg \
+	${CP} ${WRKSRC}/assets/icon/wezterm-icon.svg \
 		${WRKSRC}/gh_pages/html/favicon.svg
 	${RMDIR} ${WRKSRC}/gh_pages/html/install
 
@@ -87,15 +95,39 @@ do-install-DOCS-on:
 
 post-install:
 # Install assets similar to ci/deploy.sh
-.for f in ${PORTNAME}.desktop ${PORTNAME}.appdata.xml ${PORTNAME}-nautilus.py \
-	icon/terminal.png icon/${PORTNAME}-icon.svg shell-integration/${PORTNAME}.sh
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}:H}
-	${INSTALL_DATA} ${WRKSRC}/assets/${f:R}.${f:E} \
-		${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}}
-.endfor
+	( cd ${STAGEDIR}${PREFIX} && \
+		${MKDIR} \
+			./etc/profile.d/ \
+			./share/applications/ \
+			./share/bash-completion/completions/ \
+			./share/fish/completions/ \
+			./share/icons/hicolor/128x128/apps/ \
+			./share/icons/hicolor/scalable/apps/ \
+			./share/metainfo/ \
+			./share/nautilus-python/extensions/ \
+			./share/zsh/site-functions/ \
+	)
+	${INSTALL_DATA} ${WRKSRC}/assets/wezterm.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/org.wezfurlong.wezterm.desktop
+	${INSTALL_DATA} ${WRKSRC}/assets/wezterm.appdata.xml \
+		${STAGEDIR}${PREFIX}/share/metainfo/org.wezfurlong.wezterm.appdata.xml
+	${INSTALL_DATA} ${WRKSRC}/assets/wezterm-nautilus.py \
+		${STAGEDIR}${PREFIX}/share/nautilus-python/extensions/
+	${INSTALL_DATA} ${WRKSRC}/assets/icon/terminal.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
+	${INSTALL_DATA} ${WRKSRC}/assets/icon/wezterm-icon.svg \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/org.wezfurlong.wezterm.svg
+	${INSTALL_DATA} ${WRKSRC}/assets/shell-integration/wezterm.sh \
+		${STAGEDIR}${PREFIX}/etc/profile.d/
+	${INSTALL_DATA} ${WRKSRC}/assets/shell-completion/bash \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/wezterm
+	${INSTALL_DATA} ${WRKSRC}/assets/shell-completion/fish \
+		${STAGEDIR}${PREFIX}/share/fish/completions/wezterm.fish
+	${INSTALL_DATA} ${WRKSRC}/assets/shell-completion/zsh \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_wezterm
 .if exists(/usr/bin/tic)
-	tic -x -o ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*terminfo*:[1]:H:H} \
-		${WRKSRC}/termwiz/data/${PORTNAME}.terminfo
+	tic -x -o ${STAGEDIR}${PREFIX}/share/site-terminfo \
+		${WRKSRC}/termwiz/data/wezterm.terminfo
 .endif
 
 .include <bsd.port.post.mk>
