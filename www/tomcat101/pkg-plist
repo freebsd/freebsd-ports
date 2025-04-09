@@ -161,6 +161,7 @@
 %%DOCS%%%%T%%/webapps/docs/config/manager.html
 %%DOCS%%%%T%%/webapps/docs/config/realm.html
 %%DOCS%%%%T%%/webapps/docs/config/resources.html
+%%DOCS%%%%T%%/webapps/docs/config/runtime-attributes.html
 %%DOCS%%%%T%%/webapps/docs/config/server.html
 %%DOCS%%%%T%%/webapps/docs/config/service.html
 %%DOCS%%%%T%%/webapps/docs/config/sessionidgenerator.html
