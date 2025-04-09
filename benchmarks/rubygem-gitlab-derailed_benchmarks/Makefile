@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-derailed_benchmarks
 PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks rubygems
 MASTER_SITES=	RG
 

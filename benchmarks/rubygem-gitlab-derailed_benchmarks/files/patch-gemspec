@@ -1,0 +1,11 @@
+--- gitlab-derailed_benchmarks.gemspec.orig	2025-03-21 09:33:49 UTC
++++ gitlab-derailed_benchmarks.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<heapy>.freeze, ["~> 0".freeze])
+-  s.add_runtime_dependency(%q<memory_profiler>.freeze, ["~> 0".freeze])
++  s.add_runtime_dependency(%q<memory_profiler>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<get_process_mem>.freeze, ["~> 0".freeze])
+   s.add_runtime_dependency(%q<benchmark-ips>.freeze, ["~> 2".freeze])
+   s.add_runtime_dependency(%q<rack>.freeze, [">= 1".freeze])
