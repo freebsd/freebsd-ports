@@ -174,7 +174,6 @@ libexec/appjail/network/network
 %%DATADIR%%/scripts/run_jail.sh
 %%DATADIR%%/scripts/runas.sh
 %%DATADIR%%/scripts/super-mv.sh
-%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%EXAMPLESDIR%%/appjail.conf
 %%EXAMPLESDIR%%/templates/bridge.conf
 %%EXAMPLESDIR%%/templates/freebsd-oci.conf

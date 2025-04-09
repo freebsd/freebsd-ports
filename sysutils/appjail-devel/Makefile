@@ -1,5 +1,5 @@
 PORTNAME=	appjail
-DISTVERSION=	3.6.0.20250211
+DISTVERSION=	3.7.0.20250328
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
@@ -16,7 +16,7 @@ CONFLICTS=	appjail
 USE_GITHUB=	yes
 GH_ACCOUNT=	DtxdF
 GH_PROJECT=	AppJail
-GH_TAGNAME=	b6ff76f20c97a6c422140e791e46922b4818cb36
+GH_TAGNAME=	724ecfbe08a2d7d3960dfb4f931a410ad4007047
 
 MAKE_ARGS=	APPJAIL_VERSION=${DISTVERSION}+${GH_TAGNAME}
 ALL_TARGET=	utils-strip
@@ -37,12 +37,12 @@ GIT_RUN_DEPENDS=		git>0:devel/git
 OCI_RUN_DEPENDS=		buildah>0:sysutils/buildah \
 				jq>0:textproc/jq
 
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}/${DOCSDIR}
-
 post-install:
 	${MKDIR} ${STAGEDIR}/${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/share/examples/appjail/appjail.conf ${STAGEDIR}/${ETCDIR}/appjail.conf.sample
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}/${DOCSDIR}
 
 .include <bsd.port.mk>
