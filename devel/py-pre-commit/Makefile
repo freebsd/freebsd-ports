@@ -26,10 +26,4 @@ SHEBANG_FILES=	pre_commit/resources/hook-tmpl
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30900
-IGNORE=	python-3.9 or higher is required
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
