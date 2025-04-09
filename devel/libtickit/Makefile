@@ -1,5 +1,5 @@
 PORTNAME=	libtickit
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpad.net/libtickit/trunk/v${PORTVERSION:R}/+download/
 
