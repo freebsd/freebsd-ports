@@ -1,0 +1,3 @@
+pip-check gives you a quick overview of all installed packages and their update
+status. Under the hood it calls pip list --outdated --format=columns and
+transforms it into a more user friendly table.
