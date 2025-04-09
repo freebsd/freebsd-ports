@@ -4246,7 +4246,6 @@ finance/odoo14||2025-03-31|Has expired: Depends on expired converters/wkhtmltopd
 net/nsscache||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 security/caldera4||2025-03-31|Has expired: Upgrade to a newer caldera version. 4.2.0 is vulnerable to remote code execution
 net/opensips31||2025-03-31|Has expired: Deprecated upstream
-security/py-python-jose||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 textproc/rubygem-nokogumbo||2025-03-31|Has expired: Upstream has merged into textproc/rubygem-nokogiri
 net/libmediawiki||2025-03-31|Has expired: Project abandoned upstream
 net/py-tacacs_plus||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
