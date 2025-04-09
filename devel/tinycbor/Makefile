@@ -1,6 +1,7 @@
 PORTNAME=	tinycbor
 PORTVERSION=	0.6.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/intel/tinycbor/commit/
