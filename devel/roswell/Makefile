@@ -1,10 +1,9 @@
 PORTNAME=	roswell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	22.12.14.113
-PORTREVISION=	1
+DISTVERSION=	23.10.14.114
 CATEGORIES=	devel lisp
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Common Lisp installer and launcher
 WWW=		https://roswell.github.io/
 
@@ -17,7 +16,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/automake:devel/automake \
 USES=		autoreconf localbase uidfix
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 pre-configure:
 	(cd ${WRKSRC}/ && ${SH} bootstrap)
