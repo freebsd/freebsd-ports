@@ -1,6 +1,6 @@
 PORTNAME=	vdt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.4
+DISTVERSION=	0.4.6
 CATEGORIES=	math devel science
 
 MAINTAINER=	erik@tenku.dk
