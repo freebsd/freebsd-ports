@@ -1,5 +1,4 @@
 bin/shotcut
-bin/shotcut-real
 lib/libCuteLogger.so
 share/applications/org.shotcut.Shotcut.desktop
 share/icons/hicolor/128x128/apps/org.shotcut.Shotcut.png
@@ -101,6 +100,8 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/audiolevelgraph/meta.qml
 %%DATADIR%%/qml/filters/audiolevelgraph/ui.qml
 %%DATADIR%%/qml/filters/audiolevelgraph/vui.qml
+%%DATADIR%%/qml/filters/bigsh0t_eq_cap/meta.qml
+%%DATADIR%%/qml/filters/bigsh0t_eq_cap/ui.qml
 %%DATADIR%%/qml/filters/bigsh0t_eq_mask/icon.webp
 %%DATADIR%%/qml/filters/bigsh0t_eq_mask/meta.qml
 %%DATADIR%%/qml/filters/bigsh0t_eq_mask/ui.qml
@@ -112,6 +113,8 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/bigsh0t_eq_to_stereo/meta.qml
 %%DATADIR%%/qml/filters/bigsh0t_eq_to_stereo/ui.qml
 %%DATADIR%%/qml/filters/bigsh0t_eq_to_stereo/vui.qml
+%%DATADIR%%/qml/filters/bigsh0t_eq_wrap/meta.qml
+%%DATADIR%%/qml/filters/bigsh0t_eq_wrap/ui.qml
 %%DATADIR%%/qml/filters/bigsh0t_hemi_to_eq/icon.webp
 %%DATADIR%%/qml/filters/bigsh0t_hemi_to_eq/meta.qml
 %%DATADIR%%/qml/filters/bigsh0t_hemi_to_eq/ui.qml
