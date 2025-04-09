@@ -11,6 +11,7 @@ WWW=		https://github.com/graphite-project/carbon
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Python-3.9 or later is not supported
 DEPRECATED=	In bandaid mode as the concentration is on go-carbon
 EXPIRATION_DATE=	2025-04-27
 
@@ -32,12 +33,6 @@ MAKE_ENV=	GRAPHITE_NO_PREFIX=yes
 NO_ARCH=	yes
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} > 30900
-BROKEN=		Python-3.9 or later is not supported
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/setup.py
 
@@ -45,4 +40,4 @@ post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/examples/init.d
 	${RMDIR} ${STAGEDIR}${PREFIX}/examples
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
