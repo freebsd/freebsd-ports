@@ -16,6 +16,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 USES=		cmake compiler:c++11-lang minizip pathfix
 
+CMAKE_ARGS=	-DEXPAT_LIBRARY=${LOCALBASE}/lib/libexpat.so
 CMAKE_OFF=	BUILD_TESTING WITH_JAVA WITH_PYTHON WITH_SWIG
 CMAKE_ON=	BUILD_SHARED_LIBS
 LDFLAGS+=	-lz
