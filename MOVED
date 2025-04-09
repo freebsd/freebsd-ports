@@ -4301,6 +4301,7 @@ devel/appstream-qt@qt5||2025-04-03|Unflavorize; only Qt6 support is needed
 devel/appstream-qt@qt6|devel/appstream-qt|2025-04-03|Unflavorize; only Qt6 support is needed
 ports-mgmt/packagekit-qt@qt5||2025-04-03|Unflavorize; only Qt6 support is needed
 ports-mgmt/packagekit-qt@qt6|ports-mgmt/packagekit-qt|2025-04-03|Unflavorize; only Qt6 support is needed
+lang/python-doc-pdf-letter|lang/python-doc-pdf-a4|2025-04-09|Letter-size PDF no longer provided since 3.12
 devel/rubygem-sidekiq72|devel/rubygem-sidekiq-gitlab|2025-04-18|Please use devel/sidekiq-gitlab instead
 devel/rubygem-view_component-rails70|devel/rubygem-view_component-rails-gitlab|2025-05-17|Expired, please use devel/rubygem-view_component-rails-gitlab instead
 security/rubygem-devise-two-factor41-rails70|security/rubygem-devise-two-factor-rails-gitlab|2025-05-17|Expired, please use security/rubygem-devise-two-factor-rails-gitlab instead
