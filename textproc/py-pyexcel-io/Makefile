@@ -1,9 +1,9 @@
 PORTNAME=	pyexcel-io
-PORTVERSION=	0.6.6
-PORTREVISION=	1
+PORTVERSION=	0.6.7
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pyexcel_io-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read/write structured data in CSV, zipped CSV format and to/from databases
