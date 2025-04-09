@@ -1,0 +1,16 @@
+--- pyproject.toml.orig	2024-12-10 20:04:14 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=64", "setuptools_scm>=8"]
++requires = ["setuptools>=61", "setuptools_scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -61,4 +61,4 @@ Repository = "https://github.com/planetlabs/planet-cli
+ [project.urls]
+ Repository = "https://github.com/planetlabs/planet-client-python"
+ 
+-[tool.setuptools_scm]
+\ No newline at end of file
++[tool.setuptools_scm]
