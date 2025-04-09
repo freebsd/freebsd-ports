@@ -4221,7 +4221,6 @@ www/ytdl|www/yt-dlp|2025-03-24|ytdl doesn't work and is archived upstream, www/y
 textproc/py-docstring-parser|textproc/py-docstring_parser|2025-03-25|Renamed to match upstream naming
 www/py-flask-security||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 devel/py-aiocontextvars||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
-finance/odoo||2025-03-31|Has expired: Depends on expired print/py-pypdf2
 converters/libutf-8||2025-03-31|Has expired: Upstream disapeared and distfile is no more available
 science/py-moltemplate||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 math/py-numdifftools||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
@@ -4250,7 +4249,6 @@ net/opensips31||2025-03-31|Has expired: Deprecated upstream
 security/py-python-jose||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 textproc/rubygem-nokogumbo||2025-03-31|Has expired: Upstream has merged into textproc/rubygem-nokogiri
 net/libmediawiki||2025-03-31|Has expired: Project abandoned upstream
-finance/odoo16||2025-03-31|Has expired: Depends on expired print/py-pypdf2
 net/py-tacacs_plus||2025-03-31|Has expired: Depends on expired devel/py-pytest-runner
 devel/py-imgkit||2025-03-31|Has expired: Depends on expired converters/wkhtmltopdf
 sysutils/py-google-compute-engine||2025-03-31|Has expired: Depends on expired devel/py-boto
@@ -4265,7 +4263,6 @@ textproc/p5-PDF-WebKit||2025-03-31|Has expired: Depends on expired converters/wk
 net-im/py-telepot||2025-03-31|Has expired: Upstream repository has been archived on Jun 2, 2019
 multimedia/msdl||2025-03-31|Has expired: Obsolete utility for obsolete protocols
 net-im/sayaka||2025-03-31|Has expired: Depends on expired security/mbedtls2
-finance/odoo17||2025-03-31|Has expired: Depends on expired print/py-pypdf2
 databases/grass7|databases/grass8|2025-03-31|Has expired: Please use databases/grass8
 multimedia/tcmplex-panteltje||2025-03-31|Has expired: Abandonware, upstream is gone and no consumers in tree
 games/minecraft-client||2025-03-31|Has expired: dead upstream, no longer functional
