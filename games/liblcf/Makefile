@@ -1,6 +1,5 @@
 PORTNAME=	liblcf
-PORTVERSION=	0.8
-PORTREVISION=	2
+PORTVERSION=	0.8.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,7 +11,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libicui18n.so:devel/icu \
-		libexpat.so:textproc/expat2
+		libexpat.so:textproc/expat2 \
+		libinih.so:devel/inih
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	EasyRPG

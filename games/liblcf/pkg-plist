@@ -9,7 +9,6 @@ include/lcf/dbstring.h
 include/lcf/encoder.h
 include/lcf/enum_tags.h
 include/lcf/flag_set.h
-include/lcf/ini.h
 include/lcf/inireader.h
 include/lcf/ldb/chunks.h
 include/lcf/ldb/reader.h
@@ -17,6 +16,7 @@ include/lcf/lmt/chunks.h
 include/lcf/lmt/reader.h
 include/lcf/lmu/chunks.h
 include/lcf/lmu/reader.h
+include/lcf/log_handler.h
 include/lcf/lsd/chunks.h
 include/lcf/lsd/reader.h
 include/lcf/reader_lcf.h
@@ -80,6 +80,7 @@ include/lcf/rpg/skill.h
 include/lcf/rpg/sound.h
 include/lcf/rpg/start.h
 include/lcf/rpg/state.h
+include/lcf/rpg/stringvariable.h
 include/lcf/rpg/switch.h
 include/lcf/rpg/system.h
 include/lcf/rpg/terms.h
@@ -96,9 +97,9 @@ include/lcf/scope_guard.h
 include/lcf/span.h
 include/lcf/string_view.h
 include/lcf/third_party/span.h
-include/lcf/third_party/string_view.h
 include/lcf/writer_lcf.h
 include/lcf/writer_xml.h
+lib/cmake/liblcf/Findinih.cmake
 lib/cmake/liblcf/liblcf-config-version.cmake
 lib/cmake/liblcf/liblcf-config.cmake
 lib/cmake/liblcf/liblcf-targets-%%CMAKE_BUILD_TYPE%%.cmake
