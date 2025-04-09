@@ -27,15 +27,9 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30900
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.3.1:devel/py-importlib-resources@${PY_FLAVOR}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|apache2ctl|apachectl|' ${WRKSRC}/certbot_apache/_internal/configurator.py
 	@${REINPLACE_CMD} -e 's|/etc/apache2|${LOCALBASE}/etc/apache24|' ${WRKSRC}/certbot_apache/_internal/configurator.py
 
 .include "${.CURDIR}/../py-acme/version.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
