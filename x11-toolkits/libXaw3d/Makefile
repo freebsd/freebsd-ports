@@ -2,7 +2,7 @@ PORTNAME=	libXaw3d
 PORTVERSION=	1.6.6
 CATEGORIES=	x11-toolkits
 
-MAINTAINER=	x11@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Xaw3d is the X 3D Athena Widget Set
 WWW=		https://www.freedesktop.org/wiki/Software/xlibs/
 
