@@ -26,7 +26,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--with-jpeg=${LOCALBASE} \
 		--with-szlib=${LOCALBASE}
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share/
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
