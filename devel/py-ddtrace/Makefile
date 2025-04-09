@@ -1,6 +1,6 @@
 PORTNAME=	ddtrace
 PORTVERSION=	2.21.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/abseil/abseil-cpp/releases/download/${ABSEIL_VERSION}/:abseil
@@ -39,7 +39,7 @@ CARGO_CARGOLOCK=${WRKSRC}/src/core/Cargo.lock
 CARGO_CARGOTOML=${WRKSRC}/src/core/Cargo.toml
 CARGO_INSTALL=	no
 
-ABSEIL_VERSION=	20240722.0
+ABSEIL_VERSION=	20250127.1
 
 PORTSCOUT=	limit:^[0-9]*\.[0-9]*\.[0-9]*
 
