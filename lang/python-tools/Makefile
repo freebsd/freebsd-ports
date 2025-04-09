@@ -30,12 +30,6 @@ PLIST_FILES=	${SCRIPT_FILES:C|^|bin/|} ${PYLIB_FILES:C|^|bin/|}
 SHEBANG_FILES=	${SCRIPT_FILES:C|$|.py|} \
 		${PYLIB_FILES:C|.*|../../Lib/&.py|}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30900
-SCRIPT_FILES+=	checkpyc
-.endif
-
 do-install:
 .for fname in ${SCRIPT_FILES}
 	${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/${fname}.py \
@@ -46,4 +40,4 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin/${fname}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
