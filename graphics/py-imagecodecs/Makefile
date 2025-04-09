@@ -11,8 +11,7 @@ WWW=		https://github.com/cgohlke/imagecodecs
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython3>=3.0.11:lang/cython3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libaec.so:science/libaec \
@@ -46,7 +45,7 @@ LIB_DEPENDS=	libaec.so:science/libaec \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 
 USES=		jpeg localbase python:3.9+
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent cython3 pep517
 
 CPPFLAGS+=	-I${LOCALBASE}/include/jxrlib \
 		-I${LOCALBASE}/include/openjpeg-2.5

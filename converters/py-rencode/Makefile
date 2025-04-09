@@ -11,13 +11,12 @@ WWW=		https://github.com/aresch/rencode
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		cpe python
 CPE_VENDOR=	${PORTNAME}_project
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist cython3 pep517
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aresch

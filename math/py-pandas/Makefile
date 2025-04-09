@@ -14,8 +14,7 @@ WWW=		https://pandas.pydata.org \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3 \
-		meson>=1.2.1:devel/meson@${PY_FLAVOR} \
+BUILD_DEPENDS=	meson>=1.2.1:devel/meson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}meson-python>=0.13.1:devel/meson-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.26.0,1<2,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}versioneer>=0:devel/py-versioneer@${PY_FLAVOR} \
@@ -28,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.26.0,1<2,1:math/py-numpy@${PY_FLAVO
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=0:devel/py-arrow@${PY_FLAVOR}
 
 USES=		cpe python
-USE_PYTHON=	autoplist concurrent pep517 pytest
+USE_PYTHON=	autoplist concurrent cython3 pep517 pytest
 
 CPE_VENDOR=	numfocus
 

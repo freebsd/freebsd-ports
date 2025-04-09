@@ -11,7 +11,6 @@ WWW=		https://github.com/fplll/fpylll
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYNUMPY}	\
-		${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}black>0:devel/py-black@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}pythran>0:devel/py-pythran@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR} \
@@ -31,7 +30,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fplll
 
 USES=		compiler:c++11-lang python
-USE_PYTHON=	distutils
+USE_PYTHON=	cython3 distutils
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s
 .endif

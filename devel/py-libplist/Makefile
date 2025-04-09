@@ -5,11 +5,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Python bindings for libplist
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython3>=3.0.0:lang/cython3@${PY_FLAVOR}
 LIB_DEPENDS=	libplist-2.0.so:${MASTER_PORT}
 
 USES+=		localbase:ldflags python
-USE_PYTHON=	flavors
+USE_PYTHON=	cython3 flavors
 
 CONFIGURE_ENV=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"
 

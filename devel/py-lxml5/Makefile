@@ -14,13 +14,12 @@ WWW=		https://lxml.de/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython3>=3.0.11<3.1.0:lang/cython3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		cpe gnome python
 USE_GNOME=	libxml2 libxslt
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent cython3 pep517
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}lxml ${PYTHON_PKGNAMEPREFIX}lxml5
 

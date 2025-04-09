@@ -14,14 +14,13 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}cython3>=3.0:lang/cython3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}extension-helpers>=0:astro/py-extension-helpers@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyerfa>=0:astro/py-pyerfa@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}astropy-iers-data>=0:astro/py-astropy-iers-data@${PY_FLAVOR}
 
 USES=		compiler:c11 python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist cython3 distutils
 
 CONFLICTS_INSTALL=	p5-Data-ShowTable # bin/showtable
 

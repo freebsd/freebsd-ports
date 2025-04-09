@@ -13,14 +13,13 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	proj>=9.2.0,1:graphics/proj \
-		${PYTHON_PKGNAMEPREFIX}cython3>=3:lang/cython3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=61.0.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libproj.so:graphics/proj
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR}
 
 USES=		python:3.10+
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent cython3 pep517
 
 MAKE_ENV=	PROJ_DIR=${LOCALBASE}
 

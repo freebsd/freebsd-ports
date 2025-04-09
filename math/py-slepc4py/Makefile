@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
 PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}petsc4py>0:math/py-petsc4py@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3
+BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 LIB_DEPENDS=	libmpich.so:net/mpich \
 		libpetsc.so:science/PETSc \
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libmpich.so:net/mpich \
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		fortran python
-USE_PYTHON=	distutils autoplist pytest
+USE_PYTHON=	autoplist cython3 distutils pytest
 
 MAKE_ENV=	PETSC_DIR=${LOCALBASE} SLEPC_DIR=${LOCALBASE}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}

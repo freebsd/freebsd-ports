@@ -12,12 +12,11 @@ WWW=		https://github.com/scoder/lupa
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython3>=3.0.11<3.1:lang/cython3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		lua pkgconfig python
-USE_PYTHON=	autoplist concurrent pep517 unittest
+USE_PYTHON=	autoplist concurrent cython3 pep517 unittest
 
 MAKE_ARGS=	--no-bundle --with-cython --with-lua-checks
 TEST_ARGS=	lupa.tests.test

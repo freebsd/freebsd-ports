@@ -12,13 +12,12 @@ WWW=		https://github.com/SCIP-Interfaces/PySCIPOpt
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3
 LIB_DEPENDS=	libscip.so:math/SCIP
 RUN_DEPENDS=	${PYNUMPY}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR}
 
 USES=		localbase python
-USE_PYTHON=	distutils autoplist pytest # 1 test fails, see https://github.com/scipopt/PySCIPOpt/issues/840
+USE_PYTHON=	autoplist cython3 distutils pytest # 1 test fails, see https://github.com/scipopt/PySCIPOpt/issues/840
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	scipopt

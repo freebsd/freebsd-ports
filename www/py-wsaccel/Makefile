@@ -15,11 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 DEPRECATED=	Upstream ceased development
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-	${PYTHON_PKGNAMEPREFIX}cython3>=3.0.11:lang/cython3@${PY_FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist pep517 pytest
+USE_PYTHON=	autoplist cython3 pep517 pytest
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/utf8validator*.so

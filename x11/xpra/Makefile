@@ -9,8 +9,7 @@ WWW=		https://xpra.org/
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	pandoc:textproc/hs-pandoc \
-		cython-${PYTHON_VER}:lang/cython3@${PY_FLAVOR}
+BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libbrotlidec.so:archivers/brotli \
 		libdrm.so:graphics/libdrm \
@@ -42,7 +41,7 @@ USES=		desktop-file-utils gettext-runtime gnome localbase pkgconfig \
 		python shared-mime-info shebangfix tar:xz xorg
 
 USE_GNOME=	cairo gdkpixbuf gtk30 pygobject3
-USE_PYTHON=	cryptography distutils noflavors
+USE_PYTHON=	cryptography cython3 distutils noflavors
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xkbfile xrandr xres xtst
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PYTHON_SUFFIX=${PYTHON_SUFFIX} \

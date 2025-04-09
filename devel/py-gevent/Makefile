@@ -17,7 +17,6 @@ BUILD_DEPENDS=	c-ares>=1.15.0:dns/c-ares \
 		libev>=4.31:devel/libev \
 		libuv>=1.34.0:devel/libuv \
 		${PYTHON_PKGNAMEPREFIX}cffi>=1.12.3:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cython3>=3.0.8:lang/cython3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}greenlet>=3.0.3:devel/py-greenlet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=40.8.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
@@ -31,7 +30,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.12.3:devel/py-cffi@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		compiler:c11 localbase python
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent cython3 pep517
 
 MAKE_ENV=	GEVENTSETUP_EMBED_CARES=0 GEVENTSETUP_EMBED_LIBEV=0 GEVENTSETUP_EMBED_LIBUV=0
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}

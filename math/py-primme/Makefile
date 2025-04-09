@@ -15,7 +15,6 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libprimme.so:math/primme \
 		libblas.so:math/blas \
@@ -26,7 +25,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
 USES=		fortran gmake localbase:ldflags python shebangfix
-USE_PYTHON=	pep517 autoplist
+USE_PYTHON=	autoplist cython3 pep517
 
 TEST_TARGET=	test
 

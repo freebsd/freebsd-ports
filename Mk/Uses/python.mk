@@ -96,6 +96,12 @@
 #
 #	cython_test	- Depend on lang/cython for tests.
 #
+#	cython3		- Depend on lang/cython3 at build-time.
+#
+#	cython3_run	- Depend on lang/cython3 at run-time.
+#
+#	cython3_test	- Depend on lang/cython3 for tests.
+#
 #	flavors		- Force creation of flavors for Python 2 and 3 default
 #			  versions, where applicable.
 #
@@ -331,6 +337,9 @@ _VALID_PYTHON_FEATURES=	allflavors \
 			cython \
 			cython_run \
 			cython_test \
+			cython3 \
+			cython3_run \
+			cython3_test \
 			distutils \
 			flavors \
 			noegginfo \
@@ -624,16 +633,29 @@ TEST_DEPENDS+=	${CRYPTOGRAPHY_DEPENDS}
 .  endif
 
 # cython* support
+
 .  if defined(_PYTHON_FEATURE_CYTHON)
-BUILD_DEPENDS+=	cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.37<3:lang/cython@${PY_FLAVOR}
 .  endif
 
 .  if defined(_PYTHON_FEATURE_CYTHON_RUN)
-RUN_DEPENDS+=	cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.37<3:lang/cython@${PY_FLAVOR}
 .  endif
 
 .  if defined(_PYTHON_FEATURE_CYTHON_TEST)
-TEST_DEPENDS+=	cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.37<3:lang/cython@${PY_FLAVOR}
+.  endif
+
+.  if defined(_PYTHON_FEATURE_CYTHON3)
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cython3>=3.0.12<3.1:lang/cython3@${PY_FLAVOR}
+.  endif
+
+.  if defined(_PYTHON_FEATURE_CYTHON3_RUN)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cython3>=3.0.12<3.1:lang/cython3@${PY_FLAVOR}
+.  endif
+
+.  if defined(_PYTHON_FEATURE_CYTHON3_TEST)
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cython3>=3.0.12<3.1:lang/cython3@${PY_FLAVOR}
 .  endif
 
 .  if defined(_PYTHON_FEATURE_CONCURRENT)

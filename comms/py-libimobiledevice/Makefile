@@ -7,12 +7,11 @@ COMMENT=	Python bindings for libimobiledevice
 
 LIB_DEPENDS=	libimobiledevice-1.0.so:${MASTER_PORT} \
 		libplist-2.0.so:devel/libplist
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libplist>=2.2.0:devel/py-libplist@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cython3>=3.0.0:lang/cython3@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libplist>=2.2.0:devel/py-libplist@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libplist>=2.2.0:devel/py-libplist@${PY_FLAVOR}
 
 USES+=		python
-USE_PYTHON=	flavors
+USE_PYTHON=	cython3 flavors
 
 CONFIGURE_ENV=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"
 

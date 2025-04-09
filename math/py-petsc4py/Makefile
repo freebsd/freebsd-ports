@@ -13,13 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
 BROKEN_armv7=	compilation fails: LLVM ERROR: out of memory
 
-BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3
+BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libpetsc.so:science/PETSc
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python
-USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://gitlab.com/petsc/petsc/-/issues/1301
+USE_PYTHON=	autoplist cython3 distutils pytest # tests fail to run, see https://gitlab.com/petsc/petsc/-/issues/1301
 
 MAKE_ENV=	PETSC_DIR=${LOCALBASE}
 
