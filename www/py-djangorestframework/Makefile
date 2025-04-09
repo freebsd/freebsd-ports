@@ -22,10 +22,4 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=		yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30900
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.zoneinfo>0:devel/py-backports.zoneinfo@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
