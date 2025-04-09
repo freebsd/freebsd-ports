@@ -31,6 +31,7 @@ USE_PYTHON=	pep517 cython autoplist pytest # few tests fail due to missing files
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	tee-ar-ex
 
+NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.mk>
