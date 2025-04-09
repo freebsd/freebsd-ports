@@ -1,0 +1,66 @@
+#!/bin/sh
+
+#
+# PROVIDE: llama_server
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable llama_server
+# llama_server_enable="YES"
+#
+# llama_server_enable (bool): 	Set to YES to enable llama_server
+#				Default: NO
+# llama_server_user (str):	llama_server daemon user
+#				Default: %%USER%%
+# llama_server_model (str):	AI model that llama-server will use
+#				Default: "" (required)
+# llama_server_args (str):	Additional arguments for llama-server
+#				Default: "" (optional)
+# llama_server_log (str):	Log file that llama-server will write log to
+#				Default: "/var/log/llama-server.log" (optional)
+# llama_server_pidfile (str):	Pidfile file that llama-server's pid will be written to
+#				Default: "" (optional)
+
+. /etc/rc.subr
+
+name="llama_server"
+rcvar=llama_server_enable
+load_rc_config $name
+
+: ${llama_server_enable:="NO"}
+: ${llama_server_user:="%%USER%%"}
+: ${llama_server_model:=""}
+: ${llama_server_args:=""}
+: ${llama_server_log:="/var/log/llama-server.log"}
+: ${llama_server_pidfile:="/var/run/${name}.pid"}
+
+run_command="%%PREFIX%%/bin/llama-server"
+procname="${run_command}"
+pidfile=${llama_server_pidfile}
+command=/usr/sbin/daemon
+command_args="-f -t ${name} -p ${pidfile} -o ${llama_server_log} ${run_command} -m ${llama_server_model} ${llama_server_args} --keep -1"
+start_precmd="llama_server_precmd"
+llama_server_chdir=/tmp
+
+llama_server_precmd()
+{
+	# check model
+	if [ -z "${llama_server_model}" ]; then
+		echo "llama_server_model isn't set, it is required"
+		exit 1
+	fi
+	if [ ! -f "${llama_server_model}" ]; then
+		echo "llama_server_model isn't a file"
+		exit 1
+	fi
+
+	# initialize pifile
+	#install -o ${llama_server_user} /dev/null ${llama_server_pidfile}
+
+	# ensure that the log file exists and has right permissions
+	touch ${llama_server_log}
+	chown ${llama_server_user} ${llama_server_log}
+	chmod 640 ${llama_server_log}
+}
+
+run_rc_command "$1"

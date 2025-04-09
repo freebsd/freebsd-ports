@@ -10,7 +10,17 @@ to communicate with this AI model.
 
 $ llama-server -m $MODEL \
   --host 0.0.0.0 \
-  --port 9011
+  --port 9011 \
+  -ngl 15
+
+or
+
+you can add the following lines to /etc/rc.conf,
+start the llama-server service,
+and navigate to http://localhost:8080:
+> llama_server_enable=YES
+> llama_server_model=/path/to/models/llama-2-7b-chat.Q4_K_M.gguf
+> llama_server_args="--device Vulkan0 -ngl 27"
 
 EOM
 }
