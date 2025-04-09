@@ -1,37 +1,15 @@
---- pyproject.toml.orig	2024-08-14 19:46:41 UTC
+--- pyproject.toml.orig	2025-02-04 21:28:15 UTC
 +++ pyproject.toml
-@@ -32,7 +32,7 @@ dependencies = [
-     "cmarkgfm >= 0.4",
+@@ -33,7 +33,7 @@ dependencies = [
      "defcon",
-     "fontTools[ufo] >= 4.46.0",
+     "dehinter >= 3.1.0",  # 3.1.0 added dehinter.font.hint function
+     "fontTools[ufo] >= 4.47.0",  # varLib.interpolatableHelpers.InterpolatableProblem
 -    "freetype-py < 2.4.0",  # see: https://github.com/fonttools/fontbakery/issues/4143
 +    "freetype-py",  # see: https://github.com/fonttools/fontbakery/issues/4143
      "Jinja2 >= 3.0.0",  # issue #4717
      "munkres",
      "opentypespec",
-@@ -66,7 +66,7 @@ shaperglot = [
- ]
- 
- shaperglot = [
--    "shaperglot >= 0.3.0, < 0.6.0",
-+    "shaperglot >= 0.3.0, < 0.7.0",
-     # versions prior to v0.3.0 had too stric dependency rules
-     # for other deps such as protobuf, making it harder satisfy all dependencies.
- ]
-@@ -76,10 +76,10 @@ googlefontsalwayslatest = [
- # deal with API-breaking updates. Only the latest released version is acceptable:
- googlefontsalwayslatest = [
-     "axisregistry >= 0.4.10, == 0.4.*",
--    "gflanguages >= 0.6.2, == 0.6.*",
-+    "gflanguages >= 0.6.2, < 0.8",
-     "gfsubsets >= 2024.5.9",
-     "glyphsets >= 1.0.0, == 1.*",
--    "shaperglot >= 0.5.0, == 0.5.*",
-+    "shaperglot >= 0.3.0, < 0.7.0",
- ]
- 
- 
-@@ -112,7 +112,7 @@ googlefonts = [
+@@ -108,7 +108,7 @@ googlefonts = [
      "fonttools[lxml,unicode]",
      # (see https://github.com/googlefonts/gflanguages/pull/7)
  
