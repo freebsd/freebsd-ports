@@ -54,9 +54,6 @@ llama_server_precmd()
 		exit 1
 	fi
 
-	# initialize pifile
-	#install -o ${llama_server_user} /dev/null ${llama_server_pidfile}
-
 	# ensure that the log file exists and has right permissions
 	touch ${llama_server_log}
 	chown ${llama_server_user} ${llama_server_log}
