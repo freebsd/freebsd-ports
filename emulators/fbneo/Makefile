@@ -1,5 +1,5 @@
 PORTNAME=	fbneo
-DISTVERSION=	1.0.0.3.20241120
+DISTVERSION=	1.0.0.3.20250406
 CATEGORIES=	emulators
 
 MAINTAINER=	acm@FreeBSD.org
@@ -18,7 +18,7 @@ USES=		compiler:c11 gl gmake perl5 sdl shebangfix
 USE_GITHUB=     yes
 GH_ACCOUNT=     finalburnneo
 GH_PROJECT=     FBNeo
-GH_TAGNAME=     60b73a1fd017d7d8af5a428e16be17e24847d3a2
+GH_TAGNAME=     83c57f2b85787091fd1adc17e27d62043fbbab3a
 
 USE_GL=		gl
 USE_SDL=	sdl2 image2
