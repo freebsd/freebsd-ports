@@ -1,5 +1,5 @@
 PORTNAME=	sidekiq
-PORTVERSION=	7.3.9
+PORTVERSION=	8.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,11 +10,11 @@ WWW=		https://sidekiq.org/ \
 
 LICENSE=	LGPL3
 
-RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
-		rubygem-connection_pool>=2.3.0:net/rubygem-connection_pool \
-		rubygem-logger>=0:devel/rubygem-logger \
-		rubygem-rack>=2.2.4,3:www/rubygem-rack \
-		rubygem-redis-client>=0.22.2:databases/rubygem-redis-client
+RUN_DEPENDS=	rubygem-connection_pool>=2.5.0:net/rubygem-connection_pool \
+		rubygem-json>=2.9.0:devel/rubygem-json \
+		rubygem-logger>=1.6.2:devel/rubygem-logger \
+		rubygem-rack>=3.1.0,3:www/rubygem-rack \
+		rubygem-redis-client>=0.23.2:databases/rubygem-redis-client
 
 USES=		cpe gem
 
