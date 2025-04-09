@@ -1,6 +1,5 @@
 PORTNAME=	osm2pgsql
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -31,7 +30,7 @@ CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git \
 		EXTERNAL_LIBOSMIUM \
 		EXTERNAL_PROTOZERO \
 		EXTERNAL_CLI11
-#		EXTERNAL_FMT  # XXX: does not build with libfmt 9.x from ports, so use bundled version until upstream fixes
+#		EXTERNAL_FMT  # XXX: does not build with libfmt from ports, so use bundled version until upstream fixes
 CMAKE_ARGS=	-DLUA_EXE="${LOCALBASE}/bin/${LUA_CMD}"
 
 PORTDOCS=	AUTHORS CONTRIBUTING.md README.md
