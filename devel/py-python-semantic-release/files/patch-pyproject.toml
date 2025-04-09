@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2024-12-03 07:47:20 UTC
+--- pyproject.toml.orig	2025-02-23 20:38:39 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@
  # Ref: https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
@@ -9,7 +9,7 @@
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -28,7 +28,7 @@ dependencies = [
+@@ -28,12 +28,12 @@ dependencies = [
    "gitpython ~= 3.0",
    "requests ~= 2.25",
    "jinja2 ~= 3.1",
@@ -18,3 +18,9 @@
    "tomlkit ~= 0.11",
    "dotty-dict ~= 1.3",
    "importlib-resources ~= 6.0",
+   "pydantic ~= 2.0",
+-  "rich ~= 13.0",
++  "rich ~= 14.0",
+   "shellingham ~= 1.5",
+   "Deprecated ~= 1.2",  # Backport of deprecated decorator for python 3.8
+ ]
