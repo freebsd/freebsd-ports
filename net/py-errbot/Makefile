@@ -50,10 +50,4 @@ XMPP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.5.0:devel/py-pyasn1@${PY_FLAV
 			${PYTHON_PKGNAMEPREFIX}pyasn1-modules>=0.3.0:devel/py-pyasn1-modules@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}slixmpp>=1.8.4:net-im/py-slixmpp@${PY_FLAVOR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30900
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}graphlib-backport>=1.0.3:graphics/py-graphlib-backport@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
