@@ -7,12 +7,3 @@
  dynamic = ["version"]
  description = "Tools for converting FontLab Studio 5 (VFB) files."
  keywords = ["vfb", "vfbLib", "fonttools"]
-@@ -23,7 +23,7 @@ dependencies = [
- requires-python = ">=3.10"
- dependencies = [
-     "fonttools[ufo] >= 4.45.1",
--    "orjson >= 3.10.13, < 4",
-+    "orjson >= 3.10.11, < 4",
-     "typing_extensions >= 4.8.0",
-     "ufonormalizer >= 0.6.1",
-     "ufoLib2 >= 0.16.0",
