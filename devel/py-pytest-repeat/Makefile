@@ -1,5 +1,5 @@
 PORTNAME=	pytest-repeat
-DISTVERSION=	0.9.3
+DISTVERSION=	0.9.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-# tests as of 0.9.3: 16 passed in 3.79s
+# tests as of 0.9.4: 16 passed in 4.66s
 
 .include <bsd.port.mk>
