@@ -4,7 +4,7 @@ DISTVERSION=	1.2.1
 PORTREVISION=	2
 CATEGORIES=	security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Simple, modern and secure file encryption tool
 WWW=		https://github.com/FiloSottile/age
 
