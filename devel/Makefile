@@ -1409,6 +1409,7 @@
     SUBDIR += libplist
     SUBDIR += libpo6
     SUBDIR += libpololu-avr
+    SUBDIR += libprotobuf-mutator
     SUBDIR += libpru
     SUBDIR += libqb
     SUBDIR += libqcow

@@ -1,0 +1,2 @@
+libprotobuf-mutator is a library to randomly mutate protobuffers. It could be
+used together with guided fuzzing engines, such as libFuzzer.
