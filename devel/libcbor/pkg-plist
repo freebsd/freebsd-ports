@@ -22,6 +22,8 @@ include/cbor/strings.h
 include/cbor/tags.h
 lib/cmake/libcbor/libcborConfig.cmake
 lib/cmake/libcbor/libcborConfigVersion.cmake
+lib/cmake/libcbor/libcborTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libcbor/libcborTargets.cmake
 lib/libcbor.so
 lib/libcbor.so.0
 lib/libcbor.so.%%PORTVERSION%%
