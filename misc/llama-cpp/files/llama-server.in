@@ -19,7 +19,7 @@
 # llama_server_log (str):	Log file that llama-server will write log to
 #				Default: "/var/log/llama-server.log" (optional)
 # llama_server_pidfile (str):	Pidfile file that llama-server's pid will be written to
-#				Default: "" (optional)
+#				Default: "/var/run/llama_server.pid" (optional)
 
 . /etc/rc.subr
 
@@ -38,7 +38,7 @@ run_command="%%PREFIX%%/bin/llama-server"
 procname="${run_command}"
 pidfile=${llama_server_pidfile}
 command=/usr/sbin/daemon
-command_args="-f -t ${name} -p ${pidfile} -o ${llama_server_log} ${run_command} -m ${llama_server_model} ${llama_server_args} --keep -1"
+command_args="-f -t ${name} -p ${pidfile} -o ${llama_server_log} ${run_command} -m ${llama_server_model} ${llama_server_args}"
 start_precmd="llama_server_precmd"
 llama_server_chdir=/tmp
 

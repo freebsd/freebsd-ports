@@ -1,6 +1,7 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
 DISTVERSION=	5083
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
