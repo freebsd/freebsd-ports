@@ -1,9 +1,8 @@
 PORTNAME=	pebble
-PORTVERSION=	5.1.0
+PORTVERSION=	5.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Pebble-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Threading and multiprocessing eye-candy
