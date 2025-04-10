@@ -11,8 +11,8 @@
 %%DATADIR%%/library-packs/Microsoft.NETCore.App.Runtime.%%SDK_RID%%.%%FULL_DOTNETVERSION%%.nupkg
 %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.DotNet.ILCompiler.%%FULL_DOTNETVERSION%%.nupkg
 %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.DotNetAppHost.%%FULL_DOTNETVERSION%%.nupkg
-%%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.ILAsm.%%FULL_DOTNETVERSION%%%%LIBPACKSUFFIX%%.nupkg
-%%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.ILDAsm.%%FULL_DOTNETVERSION%%%%LIBPACKSUFFIX%%.nupkg
+%%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.ILAsm.%%FULL_DOTNETVERSION%%.nupkg
+%%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.ILDAsm.%%FULL_DOTNETVERSION%%.nupkg
 @comment %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.TestHost.%%FULL_DOTNETVERSION%%%%LIBPACKSUFFIX%%.nupkg
 %%DATADIR%%/metadata/workloads/%%MANIFESTSUFFIX%%/userlocal
 %%DATADIR%%/packs/Microsoft.AspNetCore.App.Ref/%%FULL_DOTNETVERSION%%/analyzers/dotnet/cs/Microsoft.AspNetCore.App.Analyzers.dll
