@@ -1,0 +1,15 @@
+https://gitlab.gnome.org/World/Rust/tracker-rs/-/commit/c5bece2c2f34
+
+ld: error: unable to find library -ltracker-sparql-3.0
+
+--- cargo-crates/tracker-sys-0.4.3/src/lib.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/tracker-sys-0.4.3/src/lib.rs
+@@ -310,7 +310,7 @@ impl ::std::fmt::Debug for TrackerSparqlStatement {
+     }
+ }
+ 
+-#[link(name = "tracker-sparql-3.0")]
++#[link(name = "tinysparql-3.0")]
+ extern "C" {
+ 
+     //=========================================================================
