@@ -1,5 +1,5 @@
 PORTNAME=	adminer
-PORTVERSION=	4.8.1
+DISTVERSION=	5.2.0
 CATEGORIES=	databases www
 MASTER_SITES=	https://github.com/vrana/adminer/releases/download/v${PORTVERSION}/
 EXTRACT_SUFX=	.php
@@ -19,7 +19,8 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PHPVER="${PHP_VER}"
-PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
+PLIST_SUB=	WWWGRP="${WWWGRP}" \
+		WWWOWN="${WWWOWN}"
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
