@@ -1,2 +1,23 @@
-CTPL is a template engine library. It allows fast and easy parsing
-of templates and fine control over template parsing environment.
+CTPL is a template library written in C. It allows fast and easy parsing of
+templates from many sources (including in-memory data and local and remote
+streaming, thanks to GIO) and fine control over template parsing environment.
+
+CTPL depends on the following libraries:
+- GLib :: General purpose C utility library
+- GIO  :: GLib's I/O abstraction library
+
+* Advantages
+
+- It is a library, then it can be easily used from programs;
+- Separated lexer and parser;
+- It is written in portable C;
+- Simple syntax;
+- Fast and strict parsing;
+- Possible in-memory parsing, allowing non-file data parsing and avoiding
+  I/O-latency, through GIO's GMemoryInputStream and GMemoryOutputStream.
+
+* Disadvantages
+
+- Since the input is first completely loaded as a token tree in memory -- which
+is also one of the advantages -- , it may consume a little more memory than the
+input template size.

@@ -1,27 +1,31 @@
 PORTNAME=	ctpl
-PORTVERSION=	0.3.4
-PORTREVISION=	1
+DISTVERSION=	0.3.5
 CATEGORIES=	textproc devel
-MASTER_SITES=	http://download.tuxfamily.org/ctpl/releases/
+MASTER_SITES=	https://git.tuxfamily.org/ctpl/ctpl.git/snapshot/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alster@vinterdalen.se
 COMMENT=	C Template (Parser) Library
 WWW=		https://ctpl.tuxfamily.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USE_GNOME=	glib20
-USES=		gnome libtool pathfix pkgconfig
-USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
+BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
 
-OPTIONS_DEFINE=	NLS
+USES=		autoreconf gettext-tools gmake gnome libtool pathfix pkgconfig
+USE_GNOME=	glib20
+USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check # PASS: 4/4
+
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
+DOCS_CONFIGURE_ENABLE=	gtk-doc
+NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext-runtime
 
 .include <bsd.port.mk>
