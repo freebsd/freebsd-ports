@@ -1,5 +1,5 @@
 PORTNAME=	diffutils
-DISTVERSION=	3.11
+DISTVERSION=	3.12
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -17,10 +17,10 @@ TEST_TARGET=	check
 
 INFO=		diffutils
 
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
-NLS_USES=	gettext iconv
-NLS_CONFIGURE_ENABLE=nls
+OPTIONS_DEFINE=		NLS
+OPTIONS_SUB=		yes
+NLS_USES=		gettext iconv
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^mkdir/s:@mkdir_p@:${MKDIR}:' \
