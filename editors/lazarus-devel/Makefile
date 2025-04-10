@@ -1,5 +1,5 @@
 PORTNAME=	lazarus
-DISTVERSION=	4.99.20250131
+DISTVERSION=	4.99.20250409
 PKGNAMESUFFIX?=  -gtk2-devel
 PORTREVISION?=	0
 CATEGORIES=	editors devel
@@ -16,12 +16,12 @@ RUN_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
 		gmake:devel/gmake \
 		${LOCALBASE}/share/fpc${FPC_DEVELSUFFIX}-source-${FPC_DEFAULT}/Makefile.fpc:lang/fpc${FPC_DEVELSUFFIX}-source
 
-ONLY_FOR_ARCHS=	i386 amd64 aarch64
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	freepascal.org/lazarus
 GL_PROJECT=	${PORTNAME}
-GL_COMMIT=	4feac3a6f1dfdd2a626d0dfaefaacb432a657a69
+GL_COMMIT=	90027a9d870594cdcef8909480eabb5e581669f0
 
 USES=		desktop-file-utils fpc:run gettext gmake iconv shared-mime-info xorg
 USE_XORG=	x11
