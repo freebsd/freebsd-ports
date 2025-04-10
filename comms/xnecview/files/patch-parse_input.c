@@ -1,6 +1,6 @@
---- parse_input.c.orig	Mon Jun  5 08:56:55 2006
-+++ parse_input.c	Mon Jun  5 08:57:56 2006
-@@ -527,6 +527,7 @@
+--- parse_input.c.orig	2020-01-12 14:16:26 UTC
++++ parse_input.c
+@@ -525,6 +525,7 @@ int read_nec_SC(char *s)     /* SC -> continuation of 
  int read_nec_SC(char *s)     /* SC -> continuation of SM, SP, or SC */
  {
     Surface *su;
@@ -8,7 +8,7 @@
     int ns;
     Point p3;
     int n;
-@@ -575,7 +576,7 @@
+@@ -573,7 +574,7 @@ int read_nec_SC(char *s)     /* SC -> continuation of 
        case 'C':
           n=sscanf(s,"SC%*i%d%g%g%g%g%g%g",&ns,&su->p2.x,&su->p2.y,&su->p2.z,&su->p3.x,&su->p3.y,&su->p3.z);
           if (n!=7 && n!=4) return Err_scan;

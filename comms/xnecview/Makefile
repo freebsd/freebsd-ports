@@ -1,12 +1,14 @@
 PORTNAME=	xnecview
-PORTVERSION=	1.36
-PORTREVISION=	4
+DISTVERSION=	1.37
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://wwwhome.cs.utwente.nl/%7Eptdeboer/ham/xnecview/
+MASTER_SITES=	https://wwwhome.cs.utwente.nl/%7Eptdeboer/ham/xnecview/
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	X11 viewer of NEC2 input and output data
 WWW=		https://wwwhome.cs.utwente.nl/%7Eptdeboer/ham/xnecview/
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
