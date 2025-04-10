@@ -1,3 +1,40 @@
+  <vuln vid="ed602f8b-15c2-11f0-b4e4-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.10.0</ge><lt>17.10.4</lt></range>
+	<range><ge>17.9.0</ge><lt>17.9.6</lt></range>
+	<range><ge>7.7.0</ge><lt>17.8.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/04/09/patch-release-gitlab-17-10-4-released/">
+	  <p>Denial of service via CI pipelines</p>
+	  <p>Unintentionally authorizing sensitive actions on users behalf</p>
+	  <p>IP Restriction Bypass through GraphQL Subscription</p>
+	  <p>Unauthorized users can list the number of confidential issues</p>
+	  <p>Debugging Information Disclosed</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1677</cvename>
+      <cvename>CVE-2025-0362</cvename>
+      <cvename>CVE-2025-2408</cvename>
+      <cvename>CVE-2024-11129</cvename>
+      <cvename>CVE-2025-2469</cvename>
+      <url>https://about.gitlab.com/releases/2025/04/09/patch-release-gitlab-17-10-4-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-04-09</discovery>
+      <entry>2025-04-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8f71ad3b-14f5-11f0-87ba-002590c1f29c">
     <topic>expat: improper restriction of xml entity expansion depth</topic>
     <affects>
