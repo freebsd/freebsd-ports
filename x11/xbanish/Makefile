@@ -4,7 +4,7 @@ DISTVERSION=	1.8
 PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Banish the mouse cursor when typing
 WWW=		https://github.com/jcs/xbanish/
 
