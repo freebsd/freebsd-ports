@@ -1,0 +1,23 @@
+--- configure.orig	2025-04-10 19:24:26 UTC
++++ configure
+@@ -17892,9 +17892,9 @@ case $host_os in #(
+   freebsd*) :
+     sr_libusb_req='libusb-1.0' sr_have_libusb=yes ;; #(
+   mingw*) :
+-    sr_libusb_req='libusb-1.0 >= 1.0.20' ;; #(
++    sr_libusb_req='libusb-1.0' ;; #(
+   *) :
+-    sr_libusb_req='libusb-1.0 >= 1.0.16' ;;
++    sr_libusb_req='libusb-1.0' ;;
+ esac
+ 
+ 
+@@ -22346,7 +22346,7 @@ else
+   $as_echo_n "(cached) " >&6
+ else
+ 
+-	for am_cv_pathless_PYTHON in python python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
++	for am_cv_pathless_PYTHON in python python3  python3.9 python3.10 python3.11 python3.12 python3.13 python3.14 none; do
+ 	  test "$am_cv_pathless_PYTHON" = none && break
+ 	  prog="import sys
+ # split strings by '.' and convert to numeric.  Append some zeros
