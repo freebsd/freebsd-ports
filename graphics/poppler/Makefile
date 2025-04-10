@@ -1,5 +1,5 @@
 PORTNAME=	poppler
-DISTVERSION=	25.02.0
+DISTVERSION=	25.04.0
 CATEGORIES=	graphics print
 MASTER_SITES=	https://poppler.freedesktop.org/
 
@@ -17,8 +17,6 @@ LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libfreetype.so:print/freetype2 \
 		libnss3.so:security/nss \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libgpgme.so:security/gpgme \
-		libgpgmepp.so:security/gpgme-cpp \
 		libassuan.so:security/libassuan
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/container/small_vector.hpp:devel/boost-libs \
 		gsed:textproc/gsed
@@ -29,7 +27,6 @@ USES=		cmake:insource compiler:c++20-lang cpe gperf jpeg \
 CPE_VENDOR=	freedesktop
 USE_LDCONFIG=	yes
 CMAKE_ON=	ENABLE_BOOST \
-		ENABLE_GPGME \
 		ENABLE_LCMS \
 		ENABLE_LIBTIFF \
 		ENABLE_NSS3 \
@@ -59,10 +56,10 @@ CMAKE_OFF+=	${_POPPLER_SLAVES:N${_SLAVE_PORT}:tu:S/^/ENABLE_/}
 PORTSCOUT=	limitw:1,even
 USES+=		iconv
 CMAKE_ON+=	ENABLE_CPP
-PLIST_SUB+=	SHLIB_VER=146
+PLIST_SUB+=	SHLIB_VER=148
 
-OPTIONS_DEFINE=		CURL OPENJPEG
-OPTIONS_DEFAULT=	OPENJPEG
+OPTIONS_DEFINE=		CURL OPENJPEG GNUPG
+OPTIONS_DEFAULT=	OPENJPEG GNUPG
 OPTIONS_SUB=		yes
 .else
 PORTSCOUT=		ignore:1
@@ -101,6 +98,10 @@ CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 OPENJPEG_CMAKE_ON=	-DENABLE_LIBOPENJPEG:STRING="openjpeg2"
 OPENJPEG_CMAKE_OFF=	-DENABLE_LIBOPENJPEG:STRING="none"
+
+GNUPG_CMAKE_BOOL=	ENABLE_GPGME
+GNUPG_LIB_DEPENDS=	libgpgme.so:security/gpgme \
+		libgpgmepp.so:security/gpgme-cpp
 
 post-install:
 .if ${_SLAVE_PORT} == glib
