@@ -28,6 +28,9 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_OFF=	--disable-nls
 
+post-patch:
+	@${REINPLACE_CMD} -e 's, 33, ${:!seq 33 39!},' ${WRKSRC}/configure
+
 post-stage:
 	${CHMOD} -s ${STAGEDIR}${PREFIX}/sbin/mount.davfs
 	cd ${STAGEDIR}${DOCSDIR} && ${RM} AUTHORS COPYING INSTALL
