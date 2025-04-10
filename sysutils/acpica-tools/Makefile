@@ -1,7 +1,7 @@
 PORTNAME=	acpica
-PORTVERSION=	20241212
+PORTVERSION=	20250404
 CATEGORIES=	sysutils devel
-MASTER_SITES=	https://github.com/user-attachments/files/18117992/ \
+MASTER_SITES=	https://github.com/user-attachments/files/19600803/ \
 		LOCAL/jkim
 PKGNAMESUFFIX=	-tools
 DISTNAME=	${PORTNAME}-unix-${PORTVERSION}
@@ -24,6 +24,9 @@ PLIST_FILES=	${ACPICA_TOOLS:S,^,bin/,}
 
 MAKE_ARGS=	HOST=_FreeBSD PROGS="${ACPICA_TOOLS}"
 MAKE_ARGS+=	CC="${CC}" LEX="${FLEX}" YACC="${YACC}"
+
+post-patch:
+	( cd ${WRKSRC}/source/include && ${MV} ACPIXF.H acpixf.h )
 
 do-install:
 	${INSTALL_PROGRAM} ${ACPICA_TOOLS:S,^,${BUILD_WRKSRC}/bin/,} \
