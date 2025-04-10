@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	${DOTNETVERSION}.4
 CATEGORIES=	lang devel
 MASTER_SITES=	https://github.com/dotnet/dotnet/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/release.json?dummy=/:dotnetmanifest \
-		https://github.com/sec/dotnet-core-freebsd-source-build/releases/download/${SDKVERSION}-vmr/:bootstrap
+		https://github.com/sec/dotnet-core-freebsd-source-build/releases/download/${BOOTSTRAP_SDKVERSION}-vmr/:bootstrap
 DISTFILES=	release.json-${PORTVERSION}:dotnetmanifest \
 		${BOOTSTRAP_SOURCEBUILT_ARTIFACTS_DISTNAME}${EXTRACT_SUFX}:bootstrap \
 		${BOOTSTRAP_SDK_DISTNAME}${EXTRACT_SUFX}:bootstrap
