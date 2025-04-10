@@ -1,5 +1,5 @@
 PORTNAME=	librnd
-DISTVERSION=	4.3.1
+DISTVERSION=	4.3.2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.repo.hu/projects/${PORTNAME}/releases/
 
@@ -17,7 +17,8 @@ USES=		gmake pkgconfig tar:bz2
 USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--all=plugin --plugin-hid_remote \
+CONFIGURE_ARGS=	--all=plugin \
+		--plugin-hid_remote \
 		${WITH_DEBUG:D--debug} \
 		--CC=${CC} \
 		--CFLAGS='${CFLAGS}' \
@@ -60,7 +61,7 @@ GTK4_CONFIGURE_OFF=	--disable-hid_gtk4_gl
 
 MOTIF_BROKEN=	Fails to build
 MOTIF_USES=	motif
-MOTIF_USE=	xorg=xt,x11,xinerama,xrender
+MOTIF_USE=	xorg=x11,xinerama,xrender,xt
 MOTIF_CONFIGURE_OFF=	--disable-hid_lesstif
 
 STROKE_LIB_DEPENDS=	libstroke.so:devel/libstroke
