@@ -420,7 +420,9 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_make_plugin/events.py
 %%DATADIR%%/py/cuda_make_plugin/install.inf
 %%DATADIR%%/py/cuda_make_plugin/sample_begin.py
+%%DATADIR%%/py/cuda_make_plugin/sample_begin_config.py
 %%DATADIR%%/py/cuda_make_plugin/sample_body.py
+%%DATADIR%%/py/cuda_make_plugin/sample_body_config.py
 %%DATADIR%%/py/cuda_multi_installer/__init__.py
 %%DATADIR%%/py/cuda_multi_installer/install.inf
 %%DATADIR%%/py/cuda_new_file/__init__.py
@@ -502,6 +504,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/sys/certifi/core.py
 %%DATADIR%%/py/sys/certifi/py.typed
 %%DATADIR%%/py/sys/chardet/__init__.py
+%%DATADIR%%/py/sys/chardet/__main__.py
 %%DATADIR%%/py/sys/chardet/big5freq.py
 %%DATADIR%%/py/sys/chardet/big5prober.py
 %%DATADIR%%/py/sys/chardet/chardistribution.py
@@ -510,7 +513,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/sys/chardet/cli/__init__.py
 %%DATADIR%%/py/sys/chardet/cli/chardetect.py
 %%DATADIR%%/py/sys/chardet/codingstatemachine.py
-%%DATADIR%%/py/sys/chardet/compat.py
+%%DATADIR%%/py/sys/chardet/codingstatemachinedict.py
 %%DATADIR%%/py/sys/chardet/cp949prober.py
 %%DATADIR%%/py/sys/chardet/enums.py
 %%DATADIR%%/py/sys/chardet/escprober.py
@@ -524,6 +527,8 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/sys/chardet/gb2312prober.py
 %%DATADIR%%/py/sys/chardet/hebrewprober.py
 %%DATADIR%%/py/sys/chardet/jisfreq.py
+%%DATADIR%%/py/sys/chardet/johabfreq.py
+%%DATADIR%%/py/sys/chardet/johabprober.py
 %%DATADIR%%/py/sys/chardet/jpcntx.py
 %%DATADIR%%/py/sys/chardet/langbulgarianmodel.py
 %%DATADIR%%/py/sys/chardet/langgreekmodel.py
@@ -533,15 +538,19 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/sys/chardet/langthaimodel.py
 %%DATADIR%%/py/sys/chardet/langturkishmodel.py
 %%DATADIR%%/py/sys/chardet/latin1prober.py
+%%DATADIR%%/py/sys/chardet/macromanprober.py
 %%DATADIR%%/py/sys/chardet/mbcharsetprober.py
 %%DATADIR%%/py/sys/chardet/mbcsgroupprober.py
 %%DATADIR%%/py/sys/chardet/mbcssm.py
 %%DATADIR%%/py/sys/chardet/metadata/__init__.py
 %%DATADIR%%/py/sys/chardet/metadata/languages.py
+%%DATADIR%%/py/sys/chardet/py.typed
+%%DATADIR%%/py/sys/chardet/resultdict.py
 %%DATADIR%%/py/sys/chardet/sbcharsetprober.py
 %%DATADIR%%/py/sys/chardet/sbcsgroupprober.py
 %%DATADIR%%/py/sys/chardet/sjisprober.py
 %%DATADIR%%/py/sys/chardet/universaldetector.py
+%%DATADIR%%/py/sys/chardet/utf1632prober.py
 %%DATADIR%%/py/sys/chardet/utf8prober.py
 %%DATADIR%%/py/sys/chardet/version.py
 %%DATADIR%%/py/sys/idna/__init__.py
@@ -551,6 +560,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/sys/idna/idnadata.py
 %%DATADIR%%/py/sys/idna/intranges.py
 %%DATADIR%%/py/sys/idna/package_data.py
+%%DATADIR%%/py/sys/idna/py.typed
 %%DATADIR%%/py/sys/idna/uts46data.py
 %%DATADIR%%/py/sys/requests/__init__.py
 %%DATADIR%%/py/sys/requests/__version__.py
@@ -589,7 +599,9 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/sys/urllib3/exceptions.py
 %%DATADIR%%/py/sys/urllib3/fields.py
 %%DATADIR%%/py/sys/urllib3/filepost.py
-%%DATADIR%%/py/sys/urllib3/http2.py
+%%DATADIR%%/py/sys/urllib3/http2/__init__.py
+%%DATADIR%%/py/sys/urllib3/http2/connection.py
+%%DATADIR%%/py/sys/urllib3/http2/probe.py
 %%DATADIR%%/py/sys/urllib3/poolmanager.py
 %%DATADIR%%/py/sys/urllib3/py.typed
 %%DATADIR%%/py/sys/urllib3/response.py
@@ -622,6 +634,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/tutorials/TutorialLexerLig.odt
 %%DATADIR%%/readme/wiki/atsynedit-carets.gif
 %%DATADIR%%/readme/wiki/atsynedit-sel.gif
+%%DATADIR%%/readme/wiki/atsynedit_ide_defines.png
 %%DATADIR%%/readme/wiki/atsynedit_tree.png
 %%DATADIR%%/readme/wiki/controls_autosizes.png
 %%DATADIR%%/readme/wiki/cudatext-breadcrumbs.png
@@ -706,12 +719,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/settings_default/lexer CSS.json
 %%DATADIR%%/settings_default/lexer JSON.json
 %%DATADIR%%/settings_default/lexer JavaScript.json
-%%DATADIR%%/settings_default/lexer Lua.json
-%%DATADIR%%/settings_default/lexer PHP.json
-%%DATADIR%%/settings_default/lexer Pascal.json
 %%DATADIR%%/settings_default/lexer Python.json
-%%DATADIR%%/settings_default/lexer Ruby.json
-%%DATADIR%%/settings_default/lexer TypeScript.json
-%%DATADIR%%/settings_default/lexer VBScript.json
 %%DATADIR%%/settings_default/lexer YAML.json
 share/icons/hicolor/512x512/apps/cudatext.png
