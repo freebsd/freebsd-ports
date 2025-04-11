@@ -72,6 +72,7 @@
 %%WWWDIR%%/extras/curves/QuadraticBezierCurve.js
 %%WWWDIR%%/extras/curves/QuadraticBezierCurve3.js
 %%WWWDIR%%/extras/curves/SplineCurve.js
+%%WWWDIR%%/extras/lib/earcut.js
 %%WWWDIR%%/geometries/BoxGeometry.js
 %%WWWDIR%%/geometries/CapsuleGeometry.js
 %%WWWDIR%%/geometries/CircleGeometry.js
@@ -158,7 +159,6 @@
 %%WWWDIR%%/materials/ShaderMaterial.js
 %%WWWDIR%%/materials/ShadowMaterial.js
 %%WWWDIR%%/materials/SpriteMaterial.js
-%%WWWDIR%%/materials/nodes/InstancedPointsNodeMaterial.js
 %%WWWDIR%%/materials/nodes/Line2NodeMaterial.js
 %%WWWDIR%%/materials/nodes/LineBasicNodeMaterial.js
 %%WWWDIR%%/materials/nodes/LineDashedNodeMaterial.js
@@ -219,7 +219,6 @@
 %%WWWDIR%%/nodes/accessors/CubeTextureNode.js
 %%WWWDIR%%/nodes/accessors/InstanceNode.js
 %%WWWDIR%%/nodes/accessors/InstancedMeshNode.js
-%%WWWDIR%%/nodes/accessors/InstancedPointsMaterialNode.js
 %%WWWDIR%%/nodes/accessors/Lights.js
 %%WWWDIR%%/nodes/accessors/MaterialNode.js
 %%WWWDIR%%/nodes/accessors/MaterialProperties.js
@@ -255,6 +254,7 @@
 %%WWWDIR%%/nodes/code/FunctionNode.js
 %%WWWDIR%%/nodes/code/ScriptableNode.js
 %%WWWDIR%%/nodes/code/ScriptableValueNode.js
+%%WWWDIR%%/nodes/core/ArrayNode.js
 %%WWWDIR%%/nodes/core/AssignNode.js
 %%WWWDIR%%/nodes/core/AttributeNode.js
 %%WWWDIR%%/nodes/core/BypassNode.js
@@ -282,6 +282,8 @@
 %%WWWDIR%%/nodes/core/ParameterNode.js
 %%WWWDIR%%/nodes/core/PropertyNode.js
 %%WWWDIR%%/nodes/core/StackNode.js
+%%WWWDIR%%/nodes/core/StructNode.js
+%%WWWDIR%%/nodes/core/StructType.js
 %%WWWDIR%%/nodes/core/StructTypeNode.js
 %%WWWDIR%%/nodes/core/TempNode.js
 %%WWWDIR%%/nodes/core/UniformGroupNode.js
@@ -325,6 +327,7 @@
 %%WWWDIR%%/nodes/functions/PhysicalLightingModel.js
 %%WWWDIR%%/nodes/functions/ShadowMaskModel.js
 %%WWWDIR%%/nodes/functions/ToonLightingModel.js
+%%WWWDIR%%/nodes/functions/VolumetricLightingModel.js
 %%WWWDIR%%/nodes/functions/material/getAlphaHashThreshold.js
 %%WWWDIR%%/nodes/functions/material/getGeometryRoughness.js
 %%WWWDIR%%/nodes/functions/material/getParallaxCorrectNormal.js
@@ -373,11 +376,13 @@
 %%WWWDIR%%/nodes/pmrem/PMREMNode.js
 %%WWWDIR%%/nodes/pmrem/PMREMUtils.js
 %%WWWDIR%%/nodes/procedural/Checker.js
+%%WWWDIR%%/nodes/shapes/Shapes.js
 %%WWWDIR%%/nodes/tsl/TSLBase.js
 %%WWWDIR%%/nodes/tsl/TSLCore.js
 %%WWWDIR%%/nodes/utils/ArrayElementNode.js
 %%WWWDIR%%/nodes/utils/ConvertNode.js
 %%WWWDIR%%/nodes/utils/CubeMapNode.js
+%%WWWDIR%%/nodes/utils/DebugNode.js
 %%WWWDIR%%/nodes/utils/Discard.js
 %%WWWDIR%%/nodes/utils/EquirectUVNode.js
 %%WWWDIR%%/nodes/utils/FlipNode.js
@@ -386,6 +391,7 @@
 %%WWWDIR%%/nodes/utils/LoopNode.js
 %%WWWDIR%%/nodes/utils/MatcapUVNode.js
 %%WWWDIR%%/nodes/utils/MaxMipLevelNode.js
+%%WWWDIR%%/nodes/utils/MemberNode.js
 %%WWWDIR%%/nodes/utils/Oscillators.js
 %%WWWDIR%%/nodes/utils/Packing.js
 %%WWWDIR%%/nodes/utils/PostProcessingUtils.js
@@ -465,9 +471,12 @@
 %%WWWDIR%%/renderers/common/StorageInstancedBufferAttribute.js
 %%WWWDIR%%/renderers/common/StorageTexture.js
 %%WWWDIR%%/renderers/common/Textures.js
+%%WWWDIR%%/renderers/common/TimestampQueryPool.js
 %%WWWDIR%%/renderers/common/Uniform.js
 %%WWWDIR%%/renderers/common/UniformBuffer.js
 %%WWWDIR%%/renderers/common/UniformsGroup.js
+%%WWWDIR%%/renderers/common/XRManager.js
+%%WWWDIR%%/renderers/common/XRRenderTarget.js
 %%WWWDIR%%/renderers/common/extras/PMREMGenerator.js
 %%WWWDIR%%/renderers/common/nodes/NodeBuilderState.js
 %%WWWDIR%%/renderers/common/nodes/NodeLibrary.js
@@ -618,6 +627,7 @@
 %%WWWDIR%%/renderers/webgl-fallback/utils/WebGLExtensions.js
 %%WWWDIR%%/renderers/webgl-fallback/utils/WebGLState.js
 %%WWWDIR%%/renderers/webgl-fallback/utils/WebGLTextureUtils.js
+%%WWWDIR%%/renderers/webgl-fallback/utils/WebGLTimestampQueryPool.js
 %%WWWDIR%%/renderers/webgl-fallback/utils/WebGLUtils.js
 %%WWWDIR%%/renderers/webgl/WebGLAnimation.js
 %%WWWDIR%%/renderers/webgl/WebGLAttributes.js
@@ -663,6 +673,7 @@
 %%WWWDIR%%/renderers/webgpu/utils/WebGPUPipelineUtils.js
 %%WWWDIR%%/renderers/webgpu/utils/WebGPUTexturePassUtils.js
 %%WWWDIR%%/renderers/webgpu/utils/WebGPUTextureUtils.js
+%%WWWDIR%%/renderers/webgpu/utils/WebGPUTimestampQueryPool.js
 %%WWWDIR%%/renderers/webgpu/utils/WebGPUUtils.js
 %%WWWDIR%%/renderers/webxr/WebXRController.js
 %%WWWDIR%%/renderers/webxr/WebXRDepthSensing.js
@@ -682,5 +693,6 @@
 %%WWWDIR%%/textures/FramebufferTexture.js
 %%WWWDIR%%/textures/Source.js
 %%WWWDIR%%/textures/Texture.js
+%%WWWDIR%%/textures/VideoFrameTexture.js
 %%WWWDIR%%/textures/VideoTexture.js
 %%WWWDIR%%/utils.js
