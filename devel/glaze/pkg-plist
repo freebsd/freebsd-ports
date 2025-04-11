@@ -55,6 +55,15 @@ include/glaze/core/write_chars.hpp
 include/glaze/csv.hpp
 include/glaze/csv/read.hpp
 include/glaze/csv/write.hpp
+include/glaze/eetf.hpp
+include/glaze/eetf/cmp.hpp
+include/glaze/eetf/defs.hpp
+include/glaze/eetf/ei.hpp
+include/glaze/eetf/opts.hpp
+include/glaze/eetf/read.hpp
+include/glaze/eetf/types.hpp
+include/glaze/eetf/wrappers.hpp
+include/glaze/eetf/write.hpp
 include/glaze/exceptions/binary_exceptions.hpp
 include/glaze/exceptions/core_exceptions.hpp
 include/glaze/exceptions/csv_exceptions.hpp
