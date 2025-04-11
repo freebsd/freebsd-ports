@@ -203,7 +203,7 @@
   </vuln>
 
   <vuln vid="315f568e-13c8-11f0-a5bd-b42e991fc52e">
-    <topic>Mozilla -- privilege scalation attack</topic>
+    <topic>Mozilla -- privilege escalation attack</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -752,7 +752,7 @@
   </vuln>
 
   <vuln vid="ea51e89a-116c-11f0-8b2c-b42e991fc52e">
-    <topic>Mozilla -- privilege scalation attack</topic>
+    <topic>Mozilla -- privilege escalation attack</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -964,7 +964,7 @@
   </vuln>
 
   <vuln vid="a93a1d2a-109d-11f0-8195-b42e991fc52e">
-    <topic>mozilla -- 64 bit JIT WASM read on left over memroy</topic>
+    <topic>mozilla -- 64 bit JIT WASM read on left over memory</topic>
     <affects>
       <package>
 	<name>firefox</name>
