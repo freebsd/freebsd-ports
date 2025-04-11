@@ -1,5 +1,5 @@
---- package.json.orig	2025-03-27 15:07:08.187146000 +0100
-+++ package.json	2025-03-27 15:44:17.983021000 +0100
+--- package.json.orig	2025-04-10 19:28:40 UTC
++++ package.json
 @@ -101,9 +101,6 @@
      "react-devtools": "react-devtools",
      "run-with-devtools": "cross-env REACT_DEVTOOLS=1 run-p --print-label react-devtools start"
@@ -10,7 +10,7 @@
    "dependencies": {
      "@electron/asar": "3.3.1",
      "@formatjs/fast-memoize": "2.2.3",
-@@ -172,6 +169,7 @@
+@@ -173,6 +170,7 @@
      "p-timeout": "4.1.0",
      "pify": "3.0.0",
      "pino": "9.5.0",
@@ -18,18 +18,18 @@
      "protobufjs": "7.3.2",
      "proxy-agent": "6.4.0",
      "qrcode-generator": "1.4.4",
-@@ -222,7 +220,6 @@
+@@ -223,7 +221,6 @@
      "@indutny/parallel-prettier": "3.0.0",
      "@indutny/rezip-electron": "2.0.1",
      "@napi-rs/canvas": "0.1.61",
--    "@signalapp/mock-server": "11.1.0",
+-    "@signalapp/mock-server": "11.2.0",
      "@storybook/addon-a11y": "8.4.4",
      "@storybook/addon-actions": "8.4.4",
      "@storybook/addon-controls": "8.4.4",
 @@ -294,7 +291,7 @@
      "danger": "12.3.3",
      "debug": "4.3.7",
-     "electron": "35.0.2",
+     "electron": "35.1.4",
 -    "electron-builder": "26.0.10",
 +    "electron-builder": "26.0.12",
      "electron-mocha": "13.0.1",
@@ -43,7 +43,7 @@
        "protobufjs-cli@1.1.1": "patches/protobufjs-cli+1.1.1.patch",
        "@types/fabric@4.5.3": "patches/@types+fabric+4.5.3.patch",
        "electron-util@0.13.1": "patches/electron-util+0.13.1.patch",
-@@ -372,14 +368,16 @@
+@@ -372,14 +368,15 @@
        "@vitest/expect@2.0.5": "patches/@vitest+expect+2.0.5.patch",
        "got@11.8.5": "patches/got+11.8.5.patch",
        "react-textarea-autosize@8.5.5": "patches/react-textarea-autosize+8.5.5.patch",
@@ -57,12 +57,11 @@
 -      "mac-screen-capture-permissions": "patches/mac-screen-capture-permissions.patch"
 +      "mac-screen-capture-permissions": "patches/mac-screen-capture-permissions.patch",
 +      "electron-builder": "patches/electron-builder.patch",
-+      "@signalapp/better-sqlite3": "patches/better-sqlite3.patch",
 +      "@signalapp/ringrtc": "patches/signalapp-ringrtc.patch"
      },
      "onlyBuiltDependencies": [
        "@indutny/mac-screen-share",
-@@ -392,7 +390,6 @@
+@@ -392,7 +389,6 @@
        "bufferutil",
        "electron",
        "esbuild",
@@ -70,7 +69,7 @@
        "mac-screen-capture-permissions",
        "utf-8-validate"
      ],
-@@ -404,7 +401,7 @@
+@@ -404,7 +400,7 @@
      ]
    },
    "engines": {

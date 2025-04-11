@@ -1,13 +1,13 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.48.0
+DISTVERSION=	7.50.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
-		https://build-artifacts.signal.org/desktop/:sqlcipher
+		https://registry.npmjs.org/@esbuild/freebsd-arm64/-/:esbuildarm64 \
+		https://registry.npmjs.org/@esbuild/freebsd-x64/-/:esbuildx64
 DISTFILES=	signal-desktop-${DISTVERSION}-npm-cache.tar.gz:npm \
-		${SQLCIPHER}.tar.gz:sqlcipher
-# for online build
-#DISTFILES=	${SQLCIPHER}.tar.gz:sqlcipher
+		freebsd-arm64-${ESBUILD_VERS}.tgz:esbuildarm64 \
+		freebsd-x64-${ESBUILD_VERS}.tgz:esbuildx64
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Cross-platform centralized encrypted messaging service
@@ -21,9 +21,10 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 BUILD_DEPENDS=	${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
 		${LOCALBASE}/lib/libsignal_node.so:net-im/libsignal-node \
 		${LOCALBASE}/lib/libsignal_sqlcipher_extension.a:devel/signal-sqlcipher-extension \
+		${LOCALBASE}/lib/node_sqlcipher.node:security/node-sqlcipher \
 		app-builder>0:devel/app-builder \
 		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
-		npm:www/npm-node20
+		npm:www/npm${NODEJS_SUFFIX}
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
@@ -52,7 +53,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxshmfence.so:x11/libxshmfence
 
-USES=		desktop-file-utils gettext-runtime gl gnome jpeg pkgconfig ssl xorg
+USES=		desktop-file-utils gettext-runtime gl gnome jpeg nodejs:20,build pkgconfig ssl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
 GH_PROJECT=	Signal-Desktop
@@ -78,13 +79,15 @@ MAKE_ENV+=	ELECTRON_SKIP_BINARY_DOWNLOAD=1
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
+MAKE_ENV+=	ESBUILD_BINARY_PATH=${WRKDIR}/esbuild-freebsd-64/package/bin/esbuild
+
 _BUILD_DATE=	$$(date +'%s')
 
 ELECTRON_VER_MAJOR=	34
-
-SQLCIPHER=	sqlcipher-v2-4.6.1-signal-patch2--0.2.1-asm2-6253f886c40e49bf892d5cdc92b2eb200b12cd8d80c48ce5b05967cfd01ee8c7
+ESBUILD_VERS=		0.24.0
 
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
+ESBUILD_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 APP_OUT_DIR=	linux-${ARCH:S/aarch64/arm64-/:S/amd64//}unpacked
 
 PLIST_SUB=	NODE_ARCH=${NODE_ARCH} \
@@ -113,21 +116,25 @@ do-build:
 	${CP} ${FILESDIR}/package-lock.json ${WRKSRC}
 	${CP} ${FILESDIR}/pnpm-lock.yaml ${WRKSRC}
 
+	${MKDIR} ${WRKDIR}/esbuild-freebsd-64
+	${TAR} xf ${DISTDIR}/freebsd-${ESBUILD_ARCH}-${ESBUILD_VERS}.tgz -C ${WRKDIR}/esbuild-freebsd-64
+
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} npm install --ignore-scripts pnpm@10.6.3
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers pnpm install --ignore-scripts || ${TRUE}
 
-	# Install libsignal_node.so and libringrtc.so binaries in node_modules
+	# Install libsignal_node.so, libringrtc.so and node_sqlcipher.node binaries in node_modules
 	${MKDIR} ${WRKSRC}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-${NODE_ARCH} \
-		 ${WRKSRC}/node_modules/@signalapp/ringrtc/build/freebsd
+		 ${WRKSRC}/node_modules/@signalapp/ringrtc/build/freebsd \
+		 ${WRKSRC}/node_modules/@signalapp/sqlcipher/prebuilds/freebsd-${NODE_ARCH}
+
 	${CP} ${LOCALBASE}/lib/libsignal_node.so \
 		${WRKSRC}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-${NODE_ARCH}/@signalapp+libsignal-client.node
 	${CP} ${LOCALBASE}/lib/libringrtc.so \
 		${WRKSRC}/node_modules/@signalapp/ringrtc/build/freebsd/libringrtc-${NODE_ARCH}.node
-
-	${CP} ${DISTDIR}/${SQLCIPHER}.tar.gz \
-		${WRKSRC}/node_modules/@signalapp/better-sqlite3/deps/sqlcipher.tar.gz
+	 ${CP} ${LOCALBASE}/lib/node_sqlcipher.node \
+		${WRKSRC}/node_modules/@signalapp/sqlcipher/prebuilds/freebsd-${NODE_ARCH}
 
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers pnpm install
