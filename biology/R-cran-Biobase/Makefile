@@ -1,10 +1,10 @@
 PORTNAME=	Biobase
-PORTVERSION=	2.62.0
+PORTVERSION=	2.66.0
 CATEGORIES=	biology
 MASTER_SITES=	https://www.bioconductor.org/packages/release/bioc/src/contrib/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Base functions for Bioconductor
 WWW=		https://bioconductor.org/packages/Biobase
 
