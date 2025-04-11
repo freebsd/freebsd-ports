@@ -1,7 +1,6 @@
 PORTNAME=	grcov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.23
-PORTREVISION=	1
+DISTVERSION=	0.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,8 +38,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		chrono-0.4.40 \
 		chrono-tz-0.9.0 \
 		chrono-tz-build-0.3.0 \
-		clap-4.5.34 \
-		clap_builder-4.5.34 \
+		clap-4.5.35 \
+		clap_builder-4.5.35 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.2 \
@@ -63,7 +62,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		equivalent-1.0.1 \
 		errno-0.3.10 \
 		fastrand-2.1.1 \
-		flate2-1.1.0 \
+		flate2-1.1.1 \
 		fnv-1.0.7 \
 		generic-array-0.14.7 \
 		getrandom-0.2.15 \
@@ -99,7 +98,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
 		num_threads-0.1.7 \
-		once_cell-1.21.2 \
+		once_cell-1.21.3 \
 		papergrid-0.14.0 \
 		parse-zoneinfo-0.3.1 \
 		percent-encoding-2.3.1 \
@@ -118,7 +117,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		proc-macro-error-attr2-2.0.0 \
 		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.94 \
-		quick-xml-0.37.3 \
+		quick-xml-0.37.4 \
 		quote-1.0.37 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -145,7 +144,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		simplelog-0.12.2 \
 		siphasher-0.3.11 \
 		slug-0.1.6 \
-		smallvec-1.14.0 \
+		smallvec-1.15.0 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
 		symbolic-common-12.14.1 \
@@ -203,7 +202,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		yansi-1.0.1 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
-		zip-2.5.0 \
+		zip-2.6.1 \
 		zopfli-0.8.1
 
 PLIST_FILES=	bin/grcov
