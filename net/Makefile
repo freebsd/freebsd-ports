@@ -1497,6 +1497,7 @@
     SUBDIR += self-service-password
     SUBDIR += sems
     SUBDIR += sendemail
+    SUBDIR += sendme
     SUBDIR += sendsms
     SUBDIR += sendsnpp
     SUBDIR += serveez

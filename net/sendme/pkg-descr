@@ -1,0 +1,4 @@
+It's like scp without needing to know the IP address. Add some files to
+sendme, and it will give you a pastable ticket that you can give to
+anyone who needs your files. Sendme will connect your devices directly &
+transfer the data without any accounts or configuration.
