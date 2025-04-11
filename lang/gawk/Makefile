@@ -1,5 +1,5 @@
 PORTNAME=	gawk
-PORTVERSION=	5.3.1
+PORTVERSION=	5.3.2
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
@@ -24,7 +24,6 @@ INFO=		gawk gawkinet gawkworkflow pm-gawk
 
 USES=		gmake iconv libtool readline tar:lz
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-libintl-prefix=${LOCALBASE} \
 		AWK=${AWK}
