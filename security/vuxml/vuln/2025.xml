@@ -1,3 +1,39 @@
+  <vuln vid="45276ea6-1653-4240-9986-ccfc6fec7ece">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.504</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.492.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2025-04-02/">
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-3512 / CVE-2025-31720</h5>
+	  <p>Missing permission check allows retrieving agent configurations</p>
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-3513 / CVE-2025-31721</h5>
+	  <p>Missing permission check allows retrieving secrets from agent configurations</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-31720</cvename>
+      <cvename>CVE-2025-31721</cvename>
+      <url>https://www.jenkins.io/security/advisory/2025-04-02/</url>
+    </references>
+    <dates>
+      <discovery>2025-04-02</discovery>
+      <entry>2025-04-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ed602f8b-15c2-11f0-b4e4-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
