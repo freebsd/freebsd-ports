@@ -1,3 +1,5 @@
 TIMESTAMP = 1717169470
 SHA256 (google-highway-1.2.0_GH0.tar.gz) = 7e0be78b8318e8bdbf6fa545d2ecb4c90f947df03f7aadc42c1967f019e63343
 SIZE (google-highway-1.2.0_GH0.tar.gz) = 2234665
+SHA256 (c95cc0237d2f.patch) = 81d2248de29b07fce1a949f7c251d8279687ee38fe8646e131ca7d1ea8a72d6a
+SIZE (c95cc0237d2f.patch) = 3460
