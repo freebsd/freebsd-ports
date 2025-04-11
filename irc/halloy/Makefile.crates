@@ -265,7 +265,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		hashlink-0.9.1 \
 		heck-0.4.1 \
 		heck-0.5.0 \
-		hermit-abi-0.3.9 \
 		hermit-abi-0.4.0 \
 		hex-0.4.3 \
 		hexf-parse-0.2.1 \
@@ -392,7 +391,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		num-iter-0.1.45 \
 		num-rational-0.4.2 \
 		num-traits-0.2.19 \
-		num_cpus-1.16.0 \
 		num_enum-0.7.3 \
 		num_enum_derive-0.7.3 \
 		objc-0.2.7 \
@@ -564,7 +562,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		simd-adler32-0.3.7 \
 		simd_helpers-0.1.0 \
 		siphasher-1.0.1 \
-		sipper-0.1.0 \
 		skrifa-0.26.6 \
 		slab-0.4.9 \
 		slotmap-1.0.7 \
@@ -854,6 +851,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		zvariant_derive-5.2.0 \
 		zvariant_utils-3.1.0 \
 		dpi,winit@git+https://github.com/iced-rs/winit.git?rev=11414b6aa45699f038114e61b4ddf5102b2d3b4b\#11414b6aa45699f038114e61b4ddf5102b2d3b4b \
-		iced,iced_core,iced_futures,iced_graphics,iced_renderer,iced_runtime,iced_tiny_skia,iced_wgpu,iced_widget,iced_winit@git+https://github.com/iced-rs/iced?rev=fd5ed0d0a6e84b3c036ff8e1f0d62d383d4b1e82\#fd5ed0d0a6e84b3c036ff8e1f0d62d383d4b1e82 \
 		dark-light@git+https://github.com/rust-dark-light/dark-light?rev=8e1f745f91e1e805fa772a83e4744afe95d70aa1\#8e1f745f91e1e805fa772a83e4744afe95d70aa1 \
+		iced,iced_core,iced_futures,iced_graphics,iced_renderer,iced_runtime,iced_tiny_skia,iced_wgpu,iced_widget,iced_winit@git+https://github.com/iced-rs/iced?rev=1b22d7d5fcdf519a3cac7a3cfd14398a3108c3b8\#1b22d7d5fcdf519a3cac7a3cfd14398a3108c3b8 \
 		cryoglyph@git+https://github.com/iced-rs/cryoglyph.git?rev=be2defe4a13fd7c97c6f4c81e8e085463eb578dc\#be2defe4a13fd7c97c6f4c81e8e085463eb578dc

@@ -1,11 +1,10 @@
 PORTNAME=	halloy
-DISTVERSION=	2025.3
-PORTREVISION=	1
+DISTVERSION=	2025.4
 CATEGORIES=	irc
 
 MAINTAINER=	pokeysquirrel@gmail.com
 COMMENT=	IRC client written in Rust, with the iced GUI library
-WWW=		https://halloy.squidowl.org
+WWW=		https://halloy.chat/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
