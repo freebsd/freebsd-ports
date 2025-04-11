@@ -83,7 +83,6 @@ include/libadwaita-1/adw-wrap-box.h
 include/libadwaita-1/adw-wrap-layout.h
 include/libadwaita-1/adwaita.h
 lib/girepository-1.0/Adw-1.typelib
-lib/libadwaita-1-internal.a
 lib/libadwaita-1.so
 lib/libadwaita-1.so.0
 libdata/pkgconfig/libadwaita-1.pc
