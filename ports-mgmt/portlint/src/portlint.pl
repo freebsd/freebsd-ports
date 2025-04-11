@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 22;
-my $micro = 7;
+my $micro = 8;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -3306,7 +3306,6 @@ MAINTAINER COMMENT WWW
 			LICENSE LICENSE_COMB LICENSE_GROUPS LICENSE_NAME
 			LICENSE_TEXT LICENSE_FILE LICENSE_PERMS
 		));
-		&checkearlier($file, $tmp, @varnames);
 	} else {
 		&perror("WARN", $file, -1, "Consider defining LICENSE.");
 	}
