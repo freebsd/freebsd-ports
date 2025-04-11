@@ -1637,6 +1637,7 @@ lib/wine/%%WINEARCH%%-unix/winedmo.so
 %%OSS%%lib/wine/%%WINEARCH%%-unix/wineoss.so
 lib/wine/%%WINEARCH%%-unix/wineps.so
 lib/wine/%%WINEARCH%%-unix/winevulkan.so
+%%WAYLAND%%lib/wine/%%WINEARCH%%-unix/winewayland.so
 %%X11%%lib/wine/%%WINEARCH%%-unix/winex11.so
 lib/wine/%%WINEARCH%%-unix/winspool.so
 lib/wine/%%WINEARCH%%-unix/ws2_32.so
@@ -2584,6 +2585,7 @@ lib/wine/%%WINEARCH%%-windows/wineps.drv
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/wineps16.drv16
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/winevdm.exe
 lib/wine/%%WINEARCH%%-windows/winevulkan.dll
+%%WAYLAND%%lib/wine/%%WINEARCH%%-windows/winewayland.drv
 %%X11%%lib/wine/%%WINEARCH%%-windows/winex11.drv
 %%X11%%lib/wine/%%WINEARCH%%-windows/winexinput.sys
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/wing.dll16

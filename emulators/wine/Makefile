@@ -52,8 +52,7 @@ CONFIGURE_ARGS+=--verbose \
 		--with-sdl \
 		--without-udev \
 		--without-unwind \
-		--without-usb \
-		--without-wayland
+		--without-usb
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
@@ -71,7 +70,7 @@ PIE_UNSAFE=	yes
 
 PORTDATA=	wine.inf
 
-OPTIONS_DEFINE=	CUPS DOCS DOSBOX GNUTLS V4L WINEMAKER X11 GECKO MONO
+OPTIONS_DEFINE=	CUPS DOCS DOSBOX GNUTLS V4L WAYLAND WINEMAKER X11 GECKO MONO
 OPTIONS_DEFAULT=ALSA GNUTLS X11
 OPTIONS_RADIO=	AUDIO
 OPTIONS_RADIO_AUDIO=	ALSA OSS
@@ -81,6 +80,7 @@ DOSBOX_DESC=	Use DOSBox to run MS-DOS programs
 WINEMAKER_DESC=	Fully support winemaker (requires Perl)
 GECKO_DESC=	Bundle Gecko MSI package for Wine
 MONO_DESC=	Bundle Mono MSI package for Wine
+WAYLAND_DESC=	Wayland Support
 
 PORTSCOUT=	limit:^9\.0
 
@@ -109,6 +109,11 @@ OSS_USE=		GNOME=glib20
 V4L_CONFIGURE_WITH=	v4l2
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
+
+WAYLAND_CONFIGURE_WITH=	wayland
+WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
+WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
+			libxkbcommon.so:x11/libxkbcommon
 
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:textproc/p5-XML-LibXML
 
