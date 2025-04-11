@@ -18,8 +18,8 @@ include/lcalc/Lriemannsiegel_blfi.h
 include/lcalc/Lvalue.h
 include/lcalc/config.h
 lib/libLfunction.so
-lib/libLfunction.so.1
-lib/libLfunction.so.1.0.1
+lib/libLfunction.so.2
+lib/libLfunction.so.2.0.0
 libdata/pkgconfig/lcalc.pc
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

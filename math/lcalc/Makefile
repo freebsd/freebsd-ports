@@ -1,6 +1,5 @@
 PORTNAME=	lcalc
-PORTVERSION=	2.0.5
-PORTREVISION=	4
+PORTVERSION=	2.1.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/misc/sage/spkg/upstream/lcalc/
 
@@ -15,10 +14,8 @@ LIB_DEPENDS=	libgmp.so:math/gmp	\
 		libmpfr.so:math/mpfr	\
 		libpari.so:math/pari
 
-#USE_GITHUB=	yes
-#GH_ACCOUNT=	agrawroh
-#GH_PROJECT=	l-calc
-#GH_TAGNAME=	4c57471
+#USE_GITLAB=	yes
+#GL_ACCOUNT=	sagemath
 
 USES=		autoreconf compiler:c++11-lang gmake libtool localbase	\
 		pkgconfig tar:xz
