@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	liblutok.so:devel/lutok
 
-USES=		autoreconf lua pkgconfig sqlite
+USES=		autoreconf libtool lua pkgconfig sqlite
 USE_CXXSTD=	gnu++14
 
 GNU_CONFIGURE=	yes
