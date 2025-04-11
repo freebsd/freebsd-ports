@@ -524,19 +524,19 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  #if !defined(WITH_OPENSSL)
  # undef BIGNUM
  # undef EC_KEY
---- work/openssh/readconf.c.orig	2021-09-08 09:56:20.567664000 -0700
-+++ work/openssh/readconf.c	2021-09-08 09:57:31.560617000 -0700
-@@ -67,6 +67,9 @@
- #include "uidswap.h"
+--- work/openssh/readconf.c.orig	2025-04-09 00:02:43.000000000 -0700
++++ work/openssh/readconf.c	2025-04-10 22:29:45.138038000 -0700
+@@ -71,6 +71,9 @@
  #include "myproposal.h"
  #include "digest.h"
+ #include "version.h"
 +#ifdef HPN_ENABLED
 +#include "sshbuf.h"
 +#endif
  
  /* Format of the configuration file:
  
-@@ -168,6 +171,12 @@ typedef enum {
+@@ -172,6 +175,12 @@ typedef enum {
  	oLocalCommand, oPermitLocalCommand, oRemoteCommand,
  	oVisualHostKey,
  	oKexAlgorithms, oIPQoS, oRequestTTY, oSessionType, oStdinNull,
@@ -549,7 +549,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	oForkAfterAuthentication, oIgnoreUnknown, oProxyUseFdpass,
  	oCanonicalDomains, oCanonicalizeHostname, oCanonicalizeMaxDots,
  	oCanonicalizeFallbackLocal, oCanonicalizePermittedCNAMEs,
-@@ -316,6 +325,16 @@ static struct {
+@@ -323,6 +332,16 @@ static struct {
  	{ "hostbasedkeytypes", oHostbasedAcceptedAlgorithms }, /* obsolete */
  	{ "pubkeyacceptedalgorithms", oPubkeyAcceptedAlgorithms },
  	{ "pubkeyacceptedkeytypes", oPubkeyAcceptedAlgorithms }, /* obsolete */
@@ -566,7 +566,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	{ "ignoreunknown", oIgnoreUnknown },
  	{ "proxyjump", oProxyJump },
  	{ "securitykeyprovider", oSecurityKeyProvider },
-@@ -1125,6 +1144,44 @@ parse_time:
+@@ -1332,6 +1351,44 @@ parse_time:
  		intptr = &options->check_host_ip;
  		goto parse_flag;
  
@@ -611,7 +611,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	case oVerifyHostKeyDNS:
  		intptr = &options->verify_host_key_dns;
  		multistate_ptr = multistate_yesnoask;
-@@ -2386,6 +2443,16 @@ initialize_options(Options * options)
+@@ -2742,6 +2799,16 @@ initialize_options(Options * options)
  	options->ip_qos_interactive = -1;
  	options->ip_qos_bulk = -1;
  	options->request_tty = -1;
@@ -628,7 +628,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	options->session_type = -1;
  	options->stdin_null = -1;
  	options->fork_after_authentication = -1;
-@@ -2557,6 +2624,34 @@ fill_default_options(Options * options)
+@@ -2916,6 +2983,34 @@ fill_default_options(Options * options)
  		options->server_alive_interval = 0;
  	if (options->server_alive_count_max == -1)
  		options->server_alive_count_max = 3;
@@ -693,19 +693,19 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	char **patterns = NULL;
  	size_t n, npatterns = 0;
  	struct timeval tv[2];
---- work/openssh-7.7p1/servconf.c.orig	2018-04-01 22:38:28.000000000 -0700
-+++ work/openssh-7.7p1/servconf.c	2018-06-27 17:01:05.276677000 -0700
-@@ -63,6 +63,9 @@
- #include "auth.h"
+--- work/openssh/servconf.c.orig	2025-04-09 00:02:43.000000000 -0700
++++ work/openssh/servconf.c	2025-04-10 22:30:44.919047000 -0700
+@@ -69,6 +69,9 @@
  #include "myproposal.h"
  #include "digest.h"
+ #include "version.h"
 +#ifdef HPN_ENABLED
 +#include "sshbuf.h"
 +#endif
  
- static void add_listen_addr(ServerOptions *, const char *,
-     const char *, int);
-@@ -169,6 +172,14 @@ initialize_server_options(ServerOptions *options)
+ #if !defined(SSHD_PAM_SERVICE)
+ # define SSHD_PAM_SERVICE		"sshd"
+@@ -204,6 +207,14 @@ initialize_server_options(ServerOptions *options)
  	options->authorized_principals_file = NULL;
  	options->authorized_principals_command = NULL;
  	options->authorized_principals_command_user = NULL;
@@ -720,7 +720,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	options->ip_qos_interactive = -1;
  	options->ip_qos_bulk = -1;
  	options->version_addendum = NULL;
-@@ -371,6 +382,57 @@ fill_default_server_options(ServerOptions *options)
+@@ -471,6 +482,57 @@ fill_default_server_options(ServerOptions *options)
  	}
  	if (options->permit_tun == -1)
  		options->permit_tun = SSH_TUNMODE_NO;
@@ -776,11 +776,11 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +#endif
 +
  	if (options->ip_qos_interactive == -1)
- 		options->ip_qos_interactive = IPTOS_LOWDELAY;
+ 		options->ip_qos_interactive = IPTOS_DSCP_AF21;
  	if (options->ip_qos_bulk == -1)
-@@ -466,6 +528,12 @@ typedef enum {
+@@ -573,6 +635,12 @@ typedef enum {
  	sUsePrivilegeSeparation, sAllowAgentForwarding,
- 	sHostCertificate,
+ 	sHostCertificate, sInclude,
  	sRevokedKeys, sTrustedUserCAKeys, sAuthorizedPrincipalsFile,
 +#ifdef NONE_CIPHER_ENABLED
 +	sNoneEnabled,
@@ -789,9 +789,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +	sTcpRcvBufPoll, sHPNDisabled, sHPNBufferSize,
 +#endif
  	sAuthorizedPrincipalsCommand, sAuthorizedPrincipalsCommandUser,
- 	sKexAlgorithms, sIPQoS, sVersionAddendum,
+ 	sKexAlgorithms, sCASignatureAlgorithms, sIPQoS, sVersionAddendum,
  	sAuthorizedKeysCommand, sAuthorizedKeysCommandUser,
-@@ -603,6 +671,14 @@ static struct {
+@@ -727,6 +795,14 @@ static struct {
  	{ "revokedkeys", sRevokedKeys, SSHCFG_ALL },
  	{ "trustedusercakeys", sTrustedUserCAKeys, SSHCFG_ALL },
  	{ "authorizedprincipalsfile", sAuthorizedPrincipalsFile, SSHCFG_ALL },
@@ -804,13 +804,12 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +	{ "tcprcvbufpoll", sTcpRcvBufPoll, SSHCFG_ALL },
 +#endif
  	{ "kexalgorithms", sKexAlgorithms, SSHCFG_GLOBAL },
+ 	{ "include", sInclude, SSHCFG_ALL },
  	{ "ipqos", sIPQoS, SSHCFG_ALL },
- 	{ "authorizedkeyscommand", sAuthorizedKeysCommand, SSHCFG_ALL },
-@@ -1351,6 +1427,25 @@ process_server_config_line(ServerOptions *options, cha
- 	case sIgnoreUserKnownHosts:
- 		intptr = &options->ignore_user_known_hosts;
+@@ -1568,6 +1644,25 @@ process_server_config_line_depth(ServerOptions *option
+ 		intptr = &options->hostbased_authentication;
  		goto parse_flag;
-+
+ 
 +#ifdef NONE_CIPHER_ENABLED
 +	case sNoneEnabled:
 +		intptr = &options->none_enabled;
@@ -829,9 +828,10 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +		intptr = &options->hpn_buffer_size;
 +		goto parse_int;
 +#endif
- 
- 	case sHostbasedAuthentication:
- 		intptr = &options->hostbased_authentication;
++
+ 	case sHostbasedUsesNameFromPacketOnly:
+ 		intptr = &options->hostbased_uses_name_from_packet_only;
+ 		goto parse_flag;
 --- work.clean/openssh-6.8p1/servconf.h	2015-03-17 00:49:20.000000000 -0500
 +++ work/openssh-6.8p1/servconf.h	2015-04-03 13:48:37.316827000 -0500
 @@ -169,6 +169,15 @@
@@ -1062,14 +1062,17 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  #define SSHBUF_REFS_MAX		0x100000	/* Max child buffers */
  #define SSHBUF_MAX_BIGNUM	(16384 / 8)	/* Max bignum *bytes* */
  #define SSHBUF_MAX_ECPOINT	((528 * 2 / 8) + 1) /* Max EC point *bytes* */
---- work/openssh/sshconnect.c.orig	2020-09-27 00:25:01.000000000 -0700
-+++ work/openssh/sshconnect.c	2020-11-10 21:35:40.945330000 -0800
-@@ -361,7 +361,32 @@ check_ifaddrs(const char *ifname, int af, const struct
- }
- #endif
- 
+--- work/openssh/sshconnect.c.orig	2025-04-09 00:02:43.000000000 -0700
++++ work/openssh/sshconnect.c	2025-04-10 22:32:59.573577000 -0700
+@@ -341,6 +341,31 @@ check_ifaddrs(const char *ifname, int af, const struct
+ 		}
+ 	}
+ 	return -1;
++}
++#endif
++
 +#ifdef HPN_ENABLED
- /*
++/*
 + * Set TCP receive buffer if requested.
 + * Note: tuning needs to happen after the socket is
 + * created but before the connection happens
@@ -1090,16 +1093,12 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +	} else
 +		error("Couldn't set socket receive buffer to %d: %.100s",
 +		    options.tcp_rcv_buf, strerror(errno));
-+}
-+#endif
-+
-+/*
-  * Creates a socket for use as the ssh connection.
-  */
- static int
-@@ -383,6 +408,11 @@ ssh_create_socket(struct addrinfo *ai)
- 	}
- 	fcntl(sock, F_SETFD, FD_CLOEXEC);
+ }
+ #endif
+ 
+@@ -370,6 +395,11 @@ ssh_create_socket(struct addrinfo *ai)
+ 	if (options.ip_qos_interactive != INT_MAX)
+ 		set_sock_tos(sock, options.ip_qos_interactive);
  
 +#ifdef HPN_ENABLED
 +	if (options.tcp_rcv_buf > 0)
@@ -1109,13 +1108,12 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	/* Bind the socket to an alternative local IP address */
  	if (options.bind_address == NULL && options.bind_interface == NULL)
  		return sock;
-@@ -1289,7 +1319,8 @@ ssh_login(struct ssh *ssh, Sensitive *sensitive, const
- 	lowercase(host);
+@@ -1605,7 +1635,7 @@ ssh_login(struct ssh *ssh, Sensitive *sensitive, const
  
  	/* Exchange protocol version identification strings with the server. */
--	if ((r = kex_exchange_identification(ssh, timeout_ms, NULL)) != 0)
-+	if ((r = kex_exchange_identification(ssh, timeout_ms, NULL,
-+	    options.hpn_disabled)) != 0)
+ 	if ((r = kex_exchange_identification(ssh, timeout_ms,
+-	    options.version_addendum)) != 0)
++	    options.version_addendum, options.hpn_disabled)) != 0)
  		sshpkt_fatal(ssh, r, "banner exchange");
  
  	/* Put the connection into non-blocking mode. */
@@ -1246,17 +1244,6 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		sshpkt_fatal(ssh, r, "banner exchange");
  
  	ssh_packet_set_nonblocking(ssh);
-@@ -1444,6 +1444,10 @@ do_ssh2_kex(struct ssh *ssh)
- 	struct kex *kex;
- 	int r;
- 
-+#ifdef NONE_CIPHER_ENABLED
-+        if (options.none_enabled == 1)
-+                debug ("WARNING: None cipher enabled");
-+#endif
- 	if (options.rekey_limit || options.rekey_interval)
- 		ssh_packet_set_rekey_limits(ssh, options.rekey_limit,
- 		    options.rekey_interval);
 --- work.clean/openssh-6.8p1/sshd_config	2015-04-01 22:07:18.248858000 -0500
 +++ work/openssh-6.8p1/sshd_config	2015-04-01 22:16:49.932279000 -0500
 @@ -111,6 +111,20 @@ AuthorizedKeysFile	.ssh/authorized_keys
@@ -1298,3 +1285,16 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  struct kex *kex_new(void);
  int	 kex_ready(struct ssh *, char *[PROPOSAL_MAX]);
+--- work/openssh/sshd-auth.c.orig	2025-04-10 22:36:29.699636000 -0700
++++ work/openssh/sshd-auth.c	2025-04-10 22:36:33.770235000 -0700
+@@ -827,6 +827,10 @@ do_ssh2_kex(struct ssh *ssh)
+ 	struct kex *kex;
+ 	int r;
+ 
++#ifdef NONE_CIPHER_ENABLED
++        if (options.none_enabled == 1)
++                debug ("WARNING: None cipher enabled");
++#endif
+ 	if (options.rekey_limit || options.rekey_interval)
+ 		ssh_packet_set_rekey_limits(ssh, options.rekey_limit,
+ 		    options.rekey_interval);

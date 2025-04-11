@@ -16,12 +16,12 @@ r294563 was incomplete; re-add the client-side options as well.
 
 ------------------------------------------------------------------------
 
---- readconf.c.orig	2023-12-19 17:09:41.366788000 -0800
-+++ readconf.c	2023-12-19 17:10:24.155247000 -0800
-@@ -329,6 +329,12 @@
- 	{ "enableescapecommandline", oEnableEscapeCommandline },
+--- readconf.c.orig	2025-04-09 00:02:43.000000000 -0700
++++ readconf.c	2025-04-10 21:55:30.974643000 -0700
+@@ -332,6 +332,12 @@ static struct {
  	{ "obscurekeystroketiming", oObscureKeystrokeTiming },
  	{ "channeltimeout", oChannelTimeout },
+ 	{ "versionaddendum", oVersionAddendum },
 +	{ "hpndisabled", oDeprecated },
 +	{ "hpnbuffersize", oDeprecated },
 +	{ "tcprcvbufpoll", oDeprecated },

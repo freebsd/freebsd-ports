@@ -1,17 +1,17 @@
---- sshd_config.nopam	2022-02-11 19:19:59.515475000 +0000
-+++ sshd_config	2022-02-11 19:20:45.334738000 +0000
-@@ -55,8 +55,8 @@
+--- sshd_config.orig	2025-04-09 00:02:43.000000000 -0700
++++ sshd_config	2025-04-10 21:52:39.463528000 -0700
+@@ -53,8 +53,8 @@ AuthorizedKeysFile	.ssh/authorized_keys
  # Don't read the user's ~/.rhosts and ~/.shosts files
  #IgnoreRhosts yes
  
--# To disable tunneled clear text passwords, change to no here!
+-# To disable tunneled clear text passwords, change to "no" here!
 -#PasswordAuthentication yes
 +# To enable tunneled clear text passwords, change to yes here!
 +#PasswordAuthentication no
  #PermitEmptyPasswords no
  
- # Change to no to disable s/key passwords
-@@ -72,7 +72,7 @@
+ # Change to "no" to disable keyboard-interactive authentication.  Depending on
+@@ -72,7 +72,7 @@ AuthorizedKeysFile	.ssh/authorized_keys
  #GSSAPIAuthentication no
  #GSSAPICleanupCredentials yes
  
@@ -20,7 +20,7 @@
  # and session processing. If this is enabled, PAM authentication will
  # be allowed through the KbdInteractiveAuthentication and
  # PasswordAuthentication.  Depending on your PAM configuration,
-@@ -81,7 +81,7 @@
+@@ -81,7 +81,7 @@ AuthorizedKeysFile	.ssh/authorized_keys
  # If you just want the PAM account and session checks to run without
  # PAM authentication, then enable this but set PasswordAuthentication
  # and KbdInteractiveAuthentication to 'no'.
