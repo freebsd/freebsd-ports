@@ -1,0 +1,2 @@
+A fast N-API-based Node.js addon wrapping sqlcipher and Signal-specific FTS5
+segmenting APIs.
