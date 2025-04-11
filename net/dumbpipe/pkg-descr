@@ -1,0 +1,7 @@
+Easy, direct connections that punch through NATs & stay connected as
+network conditions change.
+
+Dumbpipe is inspired by the unix tool netcat. While netcat works with IP
+addresses, dumbpipe works with 256 bit node ids and therefore is
+somewhat location transparent. In addition, connections are encrypted
+using TLS.

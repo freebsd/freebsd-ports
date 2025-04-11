@@ -138,6 +138,7 @@
     SUBDIR += dtcpclient
     SUBDIR += dual-dhclient
     SUBDIR += dual-dhclient-daemon
+    SUBDIR += dumbpipe
     SUBDIR += ecal
     SUBDIR += echoping
     SUBDIR += empty
