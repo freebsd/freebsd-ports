@@ -6,3 +6,5 @@ entry <http://en.wikipedia.org/wiki/Cpplint>.
 While Google maintains cpplint, Google is not (very) responsive to issues and
 pull requests, this fork aims to be (somewhat) more open to add fixes to cpplint
 to enable fixes, when those fixes make cpplint usable in wider contexts.
+
+See also https://github.com/cpplint/cpplint
