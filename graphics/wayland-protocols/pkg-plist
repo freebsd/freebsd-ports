@@ -49,6 +49,7 @@ include/wayland-protocols/xdg-shell-unstable-v6-enum.h
 include/wayland-protocols/xdg-system-bell-v1-enum.h
 include/wayland-protocols/xdg-toplevel-drag-v1-enum.h
 include/wayland-protocols/xdg-toplevel-icon-v1-enum.h
+include/wayland-protocols/xdg-toplevel-tag-v1-enum.h
 include/wayland-protocols/xwayland-keyboard-grab-unstable-v1-enum.h
 include/wayland-protocols/xwayland-shell-v1-enum.h
 share/pkgconfig/wayland-protocols.pc
@@ -82,6 +83,7 @@ share/pkgconfig/wayland-protocols.pc
 %%DATADIR%%/staging/xdg-system-bell/xdg-system-bell-v1.xml
 %%DATADIR%%/staging/xdg-toplevel-drag/xdg-toplevel-drag-v1.xml
 %%DATADIR%%/staging/xdg-toplevel-icon/xdg-toplevel-icon-v1.xml
+%%DATADIR%%/staging/xdg-toplevel-tag/xdg-toplevel-tag-v1.xml
 %%DATADIR%%/staging/xwayland-shell/xwayland-shell-v1.xml
 %%DATADIR%%/unstable/fullscreen-shell/fullscreen-shell-unstable-v1.xml
 %%DATADIR%%/unstable/idle-inhibit/idle-inhibit-unstable-v1.xml
