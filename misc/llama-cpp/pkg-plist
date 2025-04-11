@@ -69,4 +69,5 @@ lib/libggml-cpu.so
 lib/libggml.so
 lib/libllama.so
 %%EXAMPLES%%lib/libllava_shared.so
+lib/libmtmd_shared.so
 libdata/pkgconfig/llama.pc
