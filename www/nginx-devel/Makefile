@@ -1,6 +1,6 @@
 PORTNAME?=	nginx
 PORTVERSION=	1.27.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -308,7 +308,7 @@ post-patch-NJS_QJS-on:
 
 post-patch-PASSENGER-on:
 	@${REINPLACE_CMD} \
-		'168,170s!true!false!' \
+		'176,178s!true!false!' \
 		${WRKSRC_PASSENGER}/build/basics.rb
 	@${REINPLACE_CMD} \
 		's!-I/usr/include/libev!!; \
