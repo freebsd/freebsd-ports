@@ -1,6 +1,6 @@
 PORTNAME=	cobalt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.8
+DISTVERSION=	0.20.0
 CATEGORIES=	www
 PKGNAMESUFFIX=	-site-generator
 
@@ -24,7 +24,9 @@ GH_PROJECT=	cobalt.rs
 CARGO_BUILDDEP=	no
 CARGO_CRATES=	addr2line-0.24.2 \
 		adler2-2.0.0 \
+		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
+		allocator-api2-0.2.21 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.18 \
@@ -52,11 +54,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		chrono-0.4.40 \
 		chrono_utils-0.1.3 \
 		chunked_transfer-1.5.0 \
-		clap-4.5.31 \
+		clap-4.5.35 \
 		clap-verbosity-flag-3.0.2 \
-		clap_builder-4.5.31 \
-		clap_derive-4.5.28 \
+		clap_builder-4.5.35 \
+		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
+		codemap-0.1.3 \
 		colorchoice-1.0.3 \
 		colorchoice-clap-1.0.6 \
 		content_inspector-0.2.4 \
@@ -71,11 +74,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		darling-0.20.10 \
 		darling_core-0.20.10 \
 		darling_macro-0.20.10 \
-		deranged-0.3.11 \
+		deranged-0.4.1 \
 		derive_builder-0.20.2 \
 		derive_builder_core-0.20.2 \
 		derive_builder_macro-0.20.2 \
-		deunicode-1.6.0 \
+		deunicode-1.6.1 \
 		digest-0.10.7 \
 		diligent-date-parser-0.1.5 \
 		displaydoc-0.2.5 \
@@ -87,7 +90,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		enum-ordinalize-4.3.0 \
 		enum-ordinalize-derive-4.3.1 \
 		env_filter-0.1.3 \
-		env_logger-0.11.6 \
+		env_logger-0.11.8 \
 		equivalent-1.0.2 \
 		errno-0.3.10 \
 		error-chain-0.10.0 \
@@ -99,14 +102,17 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		form_urlencoded-1.2.1 \
 		fsevent-sys-4.1.0 \
 		generic-array-0.14.7 \
+		getrandom-0.2.15 \
 		getrandom-0.3.1 \
 		gimli-0.31.1 \
 		glob-0.3.2 \
 		globset-0.4.16 \
+		grass-0.13.4 \
+		grass_compiler-0.13.4 \
 		hashbrown-0.12.3 \
+		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
-		hermit-abi-0.3.9 \
 		html-escape-0.2.13 \
 		html-minifier-5.0.0 \
 		httpdate-1.0.3 \
@@ -139,21 +145,25 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.14 \
+		jiff-0.2.5 \
+		jiff-static-0.2.5 \
 		js-sys-0.3.77 \
 		jsonfeed-0.2.0 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
 		kstring-2.0.2 \
+		lasso-0.7.3 \
 		libc-0.2.170 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.15 \
+		linux-raw-sys-0.9.3 \
 		liquid-0.26.9 \
 		liquid-core-0.26.9 \
 		liquid-derive-0.26.8 \
 		liquid-lib-0.26.9 \
 		litemap-0.7.5 \
-		log-0.4.26 \
+		log-0.4.27 \
 		memchr-2.7.4 \
 		mime-0.3.17 \
 		mime_guess-2.0.5 \
@@ -166,9 +176,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		notify-types-2.0.0 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
-		num_cpus-1.16.0 \
 		object-0.36.7 \
-		once_cell-1.20.3 \
+		once_cell-1.21.3 \
 		open-5.3.2 \
 		os_info-3.10.0 \
 		os_pipe-1.2.1 \
@@ -178,14 +187,23 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pest_derive-2.7.15 \
 		pest_generator-2.7.15 \
 		pest_meta-2.7.15 \
-		pkg-config-0.3.31 \
+		phf-0.11.3 \
+		phf_generator-0.11.3 \
+		phf_macros-0.11.3 \
+		phf_shared-0.11.3 \
+		portable-atomic-1.11.0 \
+		portable-atomic-util-0.2.4 \
 		powerfmt-0.2.0 \
+		ppv-lite86-0.2.21 \
 		proc-exit-2.0.2 \
 		proc-macro2-1.0.93 \
 		pulldown-cmark-0.13.0 \
 		pulldown-cmark-escape-0.11.0 \
 		quick-xml-0.37.2 \
 		quote-1.0.38 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.5.9 \
@@ -196,20 +214,20 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rss-2.0.12 \
 		rustc-demangle-0.1.24 \
 		rustix-0.38.44 \
+		rustix-1.0.5 \
 		rustversion-1.0.19 \
 		ryu-1.0.19 \
 		same-file-1.0.6 \
-		sass-rs-0.2.2 \
-		sass-sys-0.4.22 \
 		scrawl-2.0.0 \
-		serde-1.0.218 \
-		serde_derive-1.0.218 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
 		serde_json-1.0.140 \
 		serde_spanned-0.6.8 \
 		serde_yaml-0.9.34+deprecated \
 		sha2-0.10.8 \
 		shlex-1.3.0 \
 		similar-2.7.0 \
+		siphasher-1.0.1 \
 		sitemap-0.4.1 \
 		smallvec-1.14.0 \
 		snapbox-0.6.21 \
@@ -221,15 +239,15 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		syn-2.0.98 \
 		synstructure-0.13.1 \
 		syntect-5.2.0 \
-		tempfile-3.17.1 \
+		tempfile-3.19.1 \
 		terminal_size-0.4.1 \
 		thiserror-1.0.69 \
 		thiserror-2.0.12 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.12 \
-		time-0.3.37 \
-		time-core-0.1.2 \
-		time-macros-0.2.19 \
+		time-0.3.41 \
+		time-core-0.1.4 \
+		time-macros-0.2.22 \
 		tiny_http-0.12.0 \
 		tinystr-0.7.6 \
 		toml-0.8.20 \
@@ -280,6 +298,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		yaml-rust-0.4.5 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
+		zerocopy-0.7.35 \
+		zerocopy-0.8.24 \
+		zerocopy-derive-0.7.35 \
+		zerocopy-derive-0.8.24 \
 		zerofrom-0.1.6 \
 		zerofrom-derive-0.1.6 \
 		zerovec-0.10.4 \
