@@ -1,6 +1,6 @@
 PORTNAME=	roswell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.10.14.114
+DISTVERSION=	24.10.115
 CATEGORIES=	devel lisp
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -15,6 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/automake:devel/automake \
 
 USES=		autoreconf localbase uidfix
 USE_GITHUB=	yes
+
 GNU_CONFIGURE=	yes
 
 pre-configure:
