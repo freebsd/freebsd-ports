@@ -28,8 +28,8 @@ include/libint2/config.h
 include/libint2/cxxapi.h
 include/libint2/deriv_iter.h
 include/libint2/deriv_map.h
-include/libint2/diis.h
 include/libint2/dfbs_generator.h
+include/libint2/diis.h
 include/libint2/engine.h
 include/libint2/engine.impl.h
 include/libint2/initialize.h
@@ -80,6 +80,7 @@ libdata/pkgconfig/libint2.pc
 %%DATADIR%%/%%VER%%/basis/6-31g.g94
 %%DATADIR%%/%%VER%%/basis/6-31gs.g94
 %%DATADIR%%/%%VER%%/basis/6-31gss.g94
+%%DATADIR%%/%%VER%%/basis/ano-rcc-mb.g94
 %%DATADIR%%/%%VER%%/basis/ano-rcc.g94
 %%DATADIR%%/%%VER%%/basis/aug-cc-pv5z-cabs.g94
 %%DATADIR%%/%%VER%%/basis/aug-cc-pvdz-cabs.g94
@@ -90,6 +91,7 @@ libdata/pkgconfig/libint2.pc
 %%DATADIR%%/%%VER%%/basis/augmentation-cc-pv5z.g94
 %%DATADIR%%/%%VER%%/basis/augmentation-cc-pv6z-ri.g94
 %%DATADIR%%/%%VER%%/basis/augmentation-cc-pv6z.g94
+%%DATADIR%%/%%VER%%/basis/augmentation-cc-pv7z.g94
 %%DATADIR%%/%%VER%%/basis/augmentation-cc-pvdz-jkfit.g94
 %%DATADIR%%/%%VER%%/basis/augmentation-cc-pvdz-ri.g94
 %%DATADIR%%/%%VER%%/basis/augmentation-cc-pvdz.g94
@@ -104,6 +106,7 @@ libdata/pkgconfig/libint2.pc
 %%DATADIR%%/%%VER%%/basis/cc-pv5z.g94
 %%DATADIR%%/%%VER%%/basis/cc-pv6z-ri.g94
 %%DATADIR%%/%%VER%%/basis/cc-pv6z.g94
+%%DATADIR%%/%%VER%%/basis/cc-pv7z.g94
 %%DATADIR%%/%%VER%%/basis/cc-pvdz-f12-cabs.g94
 %%DATADIR%%/%%VER%%/basis/cc-pvdz-f12.g94
 %%DATADIR%%/%%VER%%/basis/cc-pvdz-jkfit.g94
@@ -155,5 +158,7 @@ libdata/pkgconfig/libint2.pc
 %%DATADIR%%/%%VER%%/basis/def2-tzvppd-c.g94
 %%DATADIR%%/%%VER%%/basis/def2-tzvppd.g94
 %%DATADIR%%/%%VER%%/basis/mini.g94
+%%DATADIR%%/%%VER%%/basis/sap_grasp_large.g94
+%%DATADIR%%/%%VER%%/basis/sap_helfem_large.g94
 %%DATADIR%%/%%VER%%/basis/sto-3g.g94
 %%DATADIR%%/%%VER%%/basis/sto-6g.g94
