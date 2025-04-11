@@ -9,4 +9,4 @@ lib/libmsp430.so
 lib/libmsp430.a
 %%PORTDOCS%%%%DOCSDIR%%/slau320aj.pdf
 %%PORTDOCS%%%%DOCSDIR%%/slau656d.pdf
-etc/devd/mspfet.conf
+@sample etc/devd/mspfet.conf.sample

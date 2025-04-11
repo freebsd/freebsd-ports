@@ -1,0 +1,53 @@
+# replacement /usr/local/etc/devd/mspfet.conf file that allows
+# unprivileged users in the 'operator' group to rw the MSP FETs
+# Warning: Only a single instance of each FET product is supported
+# while using mspdebug with the tilib interface
+
+attach 20 {
+    device-name "umodem[0-9]+";
+    match "vendor" "0x2047"; # TI MSPBSL_STANDARD_USB_VID
+    match "product" "0x001(0|3|4)"; # UIF eZ-FET MSP-FET
+    match "interface" "0"; # JTAG interface
+    action "cd /dev; p=$product; dn=$device-name; \
+        un=$(sysctl -n dev.umodem.${dn#umodem}.ttyname); \
+        chgrp operator cua${un}; chmod 660 cua${un}; \
+        ln -sf cua${un} mspfet${p#0x}";
+};
+
+attach 20 {
+    device-name "umodem[0-9]+";
+    match "vendor" "0x2047";
+    match "product" "0x001(0|3|4)";
+    match "interface" "2"; # back-channel uart interface
+    action "cd /dev; p=$product; dn=$device-name; \
+        un=$(sysctl -n dev.umodem.${dn#umodem}.ttyname); \
+        chgrp operator tty${un}; chmod 660 tty${un}";
+};
+
+notify 20 {
+    match "system" "USB";
+    match "subsystem" "INTERFACE";
+    match "type" "DETACH";
+    match "vendor" "0x2047";
+    match "product" "0x001(0|3|4)";
+    match "interface" "0"; # JTAG interface
+    action "p=$product; rm /dev/mspfet${p#0x}";
+};
+
+notify 100 {
+    match "system" "USB";
+    match "subsystem" "INTERFACE";
+    match "type" "ATTACH";
+    match "vendor" "0x2047";
+    match "product" "0x001(0|3|4)";
+    action "chgrp operator /dev/$cdev; chmod 660 /dev/$cdev";
+};
+
+notify 100 {
+    match "system" "USB";
+    match "subsystem" "INTERFACE";
+    match "type" "ATTACH";
+    match "vendor" "0x15ba"; # OLIMEX LTD
+    match "product" "0x0100"; # MSP430 JTAGISO ver.2
+    action "chgrp operator /dev/$cdev; chmod 660 /dev/$cdev";
+};
