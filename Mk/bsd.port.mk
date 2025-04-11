@@ -2042,6 +2042,7 @@ CFLAGS+=       -fno-strict-aliasing
 .    for lang in C CXX
 .      if defined(USE_${lang}STD)
 ${lang}FLAGS:=	${${lang}FLAGS:N-std=*} -std=${USE_${lang}STD}
+MAKE_ENV+=	${lang}STD=${USE_${lang}STD}
 .      endif
 
 ${lang}FLAGS+=	${${lang}FLAGS_${ARCH}}
