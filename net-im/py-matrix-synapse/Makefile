@@ -14,7 +14,7 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE-AGPL-3.0
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.1.0<2.1.1_99:devel/py-poetry-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools-rust>=1.3<1.10.2_99:devel/py-setuptools-rust@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}setuptools-rust>=1.3:devel/py-setuptools-rust@${PY_FLAVOR}
 # Keep the RUN_DEPENDS layout similar to the pyproject.toml file
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0.0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}immutabledict>=2.0:devel/py-immutabledict@${PY_FLAVOR} \
