@@ -316,7 +316,7 @@ lib/libkwin.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kwin/plugins/KeyNotificationPlugin.so
 %%QT_PLUGINDIR%%/kwin/plugins/StickyKeysPlugin.so
 %%QT_PLUGINDIR%%/kwin/plugins/buttonsrebind.so
-%%QT_PLUGINDIR%%/kwin/plugins/eis.so
+%%EI%%%%QT_PLUGINDIR%%/kwin/plugins/eis.so
 %%QT_PLUGINDIR%%/kwin/plugins/krunnerintegration.so
 %%QT_PLUGINDIR%%/kwin/plugins/nightlight.so
 %%QT_PLUGINDIR%%/kwin/plugins/screencast.so
