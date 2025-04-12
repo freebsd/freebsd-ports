@@ -1,17 +1,17 @@
---- etc/Makefile.orig	2000-02-06 21:00:07.000000000 +0100
-+++ etc/Makefile	2013-11-29 05:40:51.000000000 +0100
-@@ -18,7 +18,7 @@
+--- etc/Makefile.orig	2000-02-06 20:00:07 UTC
++++ etc/Makefile
+@@ -18,7 +18,7 @@ install:
  install:
  	for i in $(FILES); do \
  	if test ! -f $(ETCDIR)/$$i; then \
 -		$(INSTALL_DATA) $$i $(ETCDIR); \
-+		$(INSTALL_DATA) $$i $(DESTDIR)$(ETCDIR); \
++		$(INSTALL_DATA) $$i $(DESTDIR)$(ETCDIR)/$$i.sample; \
  	fi; done
  
  uninstall:
---- gate/Makefile.orig	2001-05-23 08:58:13.000000000 +0200
-+++ gate/Makefile	2013-11-29 05:41:23.000000000 +0100
-@@ -48,11 +48,11 @@
+--- gate/Makefile.orig	2001-05-23 06:58:13 UTC
++++ gate/Makefile
+@@ -48,11 +48,11 @@ install:	all
  all:	$(PROGS)
  
  install:	all
@@ -26,9 +26,9 @@
  
  clean:
  	-rm -f $(CLEANFILES) $(PROGS) $(TPROGS)
---- shell/Makefile.orig	2001-05-23 08:55:45.000000000 +0200
-+++ shell/Makefile	2013-11-29 05:50:46.000000000 +0100
-@@ -71,13 +71,13 @@
+--- shell/Makefile.orig	2001-05-23 06:55:45 UTC
++++ shell/Makefile
+@@ -71,13 +71,13 @@ install: $(FILES)
  install: $(FILES)
  	for i in $(FILESKEEP) ; do \
  		if [ ! -e $(BINDIR)/$$i ] ; then \
@@ -45,9 +45,9 @@
  
  clean:
  	-rm -f $(CLEANFILES)
---- online/Makefile.orig	2001-05-23 08:55:47.000000000 +0200
-+++ online/Makefile	2013-11-29 05:44:29.000000000 +0100
-@@ -52,10 +52,10 @@
+--- online/Makefile.orig	2001-05-23 06:55:47 UTC
++++ online/Makefile
+@@ -52,10 +52,10 @@ install:	all
  all:	$(PROGS)
  
  install:	all
@@ -60,9 +60,9 @@
  
  clean:
  	-rm -f $(CLEANFILES) $(PROGS)
---- rsmtp/Makefile.orig	2000-01-14 22:42:19.000000000 +0100
-+++ rsmtp/Makefile	2013-11-29 05:50:02.000000000 +0100
-@@ -19,20 +19,20 @@
+--- rsmtp/Makefile.orig	2000-01-14 21:42:19 UTC
++++ rsmtp/Makefile
+@@ -19,20 +19,20 @@ BINMIN	= \
  	bsmtp
  
  BINMIN	= \
@@ -88,7 +88,7 @@
  
  clean:
  	-rm -f $(CLEANFILES) $(TARMIN)
-@@ -47,20 +47,20 @@
+@@ -47,20 +47,20 @@ bsmtp:	bsmtp.o
  
  # install rules
  
@@ -119,9 +119,9 @@
  	$(INSTALL_PROGRAM) rsmtp $@
  
  # end of makefile
---- mail-and-news/inn/Makefile.orig	2000-01-15 21:51:30.000000000 +0100
-+++ mail-and-news/inn/Makefile	2013-11-29 05:52:39.000000000 +0100
-@@ -7,10 +7,10 @@
+--- mail-and-news/inn/Makefile.orig	2000-01-15 20:51:30 UTC
++++ mail-and-news/inn/Makefile
+@@ -7,10 +7,10 @@ install: $(FILES)
  all: $(FILES)
  
  install: $(FILES)
@@ -134,9 +134,9 @@
  
  clean:
  	-rm -f $(CLEANFILES)
---- mail-and-news/postfix/Makefile.orig	2002-04-07 13:07:30.000000000 +0200
-+++ mail-and-news/postfix/Makefile	2013-11-29 05:53:11.000000000 +0100
-@@ -7,10 +7,10 @@
+--- mail-and-news/postfix/Makefile.orig	2002-04-07 11:07:30 UTC
++++ mail-and-news/postfix/Makefile
+@@ -7,10 +7,10 @@ install: $(FILES)
  all: $(FILES) README ucpf.pl
  
  install: $(FILES)
@@ -149,9 +149,9 @@
  
  clean:
  	-rm -f $(CLEANFILES)
---- mail-and-news/qmail/Makefile.orig	2000-01-15 22:06:49.000000000 +0100
-+++ mail-and-news/qmail/Makefile	2013-11-29 05:53:27.000000000 +0100
-@@ -7,10 +7,10 @@
+--- mail-and-news/qmail/Makefile.orig	2000-01-15 21:06:49 UTC
++++ mail-and-news/qmail/Makefile
+@@ -7,10 +7,10 @@ install: $(FILES)
  all: $(FILES)
  
  install: $(FILES)
@@ -164,9 +164,9 @@
  
  clean:
  	-rm -f $(CLEANFILES)
---- mail-and-news/sendmail/Makefile.orig	2001-03-27 07:59:06.000000000 +0200
-+++ mail-and-news/sendmail/Makefile	2013-11-29 05:53:48.000000000 +0100
-@@ -41,10 +41,10 @@
+--- mail-and-news/sendmail/Makefile.orig	2001-03-27 05:59:06 UTC
++++ mail-and-news/sendmail/Makefile
+@@ -41,10 +41,10 @@ install: $(FILES)
  all: RSMTP $(FILES) uconnect.m4
  
  install: $(FILES)
@@ -179,9 +179,9 @@
  
  clean:
  	-rm -f $(CLEANFILES)
---- mail-and-news/smail/Makefile.orig	2001-03-27 07:59:06.000000000 +0200
-+++ mail-and-news/smail/Makefile	2013-11-29 05:54:03.000000000 +0100
-@@ -41,10 +41,10 @@
+--- mail-and-news/smail/Makefile.orig	2001-03-27 05:59:06 UTC
++++ mail-and-news/smail/Makefile
+@@ -41,10 +41,10 @@ install: $(FILES)
  all: $(FILES)
  
  install: $(FILES)
@@ -194,9 +194,9 @@
  
  clean:
  	-rm -f $(CLEANFILES)
---- tools/Makefile.orig	2001-05-23 08:55:42.000000000 +0200
-+++ tools/Makefile	2013-11-29 05:51:27.000000000 +0100
-@@ -44,10 +44,10 @@
+--- tools/Makefile.orig	2001-05-23 06:55:42 UTC
++++ tools/Makefile
+@@ -44,10 +44,10 @@ install:	all
  all:	$(PROGS)
  
  install:	all

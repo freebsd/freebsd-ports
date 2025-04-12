@@ -1,23 +1,31 @@
-libexec/uconnect/januslogin
-libexec/uconnect/receiver
-libexec/uconnect/zcall
-libexec/uconnect/uuwnews
-libexec/uconnect/uuwsmtp
-libexec/uconnect/uursmtp
-libexec/uconnect/zconsplit
+@sample etc/uconnect/alias.sample
+@sample etc/uconnect/approved.sample
+@sample etc/uconnect/autoeintrag.zconnect.sample
+@sample etc/uconnect/config.sample
+@sample etc/uconnect/myself.zconnect.sample
+etc/uconnect/systems.sample
+@sample etc/uconnect/xprogs.sample
+@sample etc/uconnect/zconnecthosts.sample
 libexec/uconnect/anruf
 libexec/uconnect/auspack
+libexec/uconnect/bsmtp
+libexec/uconnect/cron.d.hourly
 libexec/uconnect/einpack
 libexec/uconnect/import
+libexec/uconnect/januslogin
 libexec/uconnect/list-systems
+libexec/uconnect/logrotate.d.entry
 libexec/uconnect/prearc
-libexec/uconnect/uumlist
-libexec/uconnect/bsmtp
 libexec/uconnect/rcsmtp
+libexec/uconnect/receiver
 libexec/uconnect/rgsmtp
 libexec/uconnect/rsmtp
-libexec/uconnect/cron.d.hourly
-libexec/uconnect/logrotate.d.entry
+libexec/uconnect/uumlist
+libexec/uconnect/uursmtp
+libexec/uconnect/uuwnews
+libexec/uconnect/uuwsmtp
+libexec/uconnect/zcall
+libexec/uconnect/zconsplit
 @(news,dialer,4555) libexec/uconnect/uurnews
 %%SENDMAIL%%libexec/uconnect/mail.uuconnect
 %%SENDMAIL%%libexec/uconnect/zbatchsmtp
@@ -27,14 +35,6 @@ libexec/uconnect/logrotate.d.entry
 %%SMAIL%%libexec/uconnect/zbatchsmtp
 %%CNEWS%%libexec/uconnect/viazconnect
 %%INN%%libexec/uconnect/send-zcon
-etc/uconnect/alias
-etc/uconnect/approved
-etc/uconnect/autoeintrag.zconnect
-etc/uconnect/config
-etc/uconnect/myself.zconnect
-etc/uconnect/systems.sample
-etc/uconnect/xprogs
-etc/uconnect/zconnecthosts
 @owner news
 @group dialer
 @dir etc/uconnect

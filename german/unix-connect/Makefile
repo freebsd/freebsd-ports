@@ -9,38 +9,40 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Mail and news gateway for Zconnect
 WWW=		https://www.dinoex.de/unix-connect.html
 
-BUILD_DEPENDS=	lrz:comms/lrzsz
-
-LICENSE_COMB=	multi
 LICENSE=	GPLv2 BSD3CLAUSE
+LICENSE_COMB=	multi
 
-MANUAL_PACKAGE_BUILD=	needs hostname
+.if !defined(UC_GATEWAY_HOSTNAME) || !defined(UC_GATEWAY_DOMAIN)
+IGNORE=		needs UC_GATEWAY_HOSTNAME and UC_GATEWAY_DOMAIN
+.endif
+
+BUILD_DEPENDS=	lrz:comms/lrzsz
 
 USES=		fakeroot gperf
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
-.if !defined(INSTALL_AS_USER)
-CONFIGURE_ARGS+=--with-user=news
-CONFIGURE_ARGS+=--with-group=dialer
-.else
 CONFIGURE_ARGS+=--with-user=`id -u -n`
 CONFIGURE_ARGS+=--with-group=`id -g -n`
-.endif
 CONFIGURE_ARGS+=--with-execdir=${PREFIX}/libexec/uconnect
 CONFIGURE_ARGS+=--with-confdir=${PREFIX}/etc/uconnect
 CONFIGURE_ARGS+=--with-spooldir=/var/spool/uconnect
+CONFIGURE_ARGS+=--with-sys=${UC_GATEWAY_HOSTNAME}
+CONFIGURE_ARGS+=--with-domain=${UC_GATEWAY_DOMAIN}
+CONFIGURE_ARGS+=--with-path=/sbin:/bin:/usr/sbin:/usr/bin:${LOCALBASE}/sbin:${LOCALBASE}/bin
 CONFIGURE_ARGS+=--enable-testing
+
 CFLAGS+=	-g
 CFLAGS:=	${CFLAGS:S/-O[0-9]*//g}	# gcc generates broken code in uwsmtp
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 DOC1=	README INSTALL TODO ChangeLog ChangeLog.configure
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=SENDMAIL CNEWS
 OPTIONS_SINGLE=	MAIL NEWS
 OPTIONS_SINGLE_MAIL=	SENDMAIL POSTFIX QMAIL SMAIL NO_MAIL
 OPTIONS_SINGLE_NEWS=	CNEWS INN NO_NEWS
-OPTIONS_DEFAULT=SENDMAIL CNEWS
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 SENDMAIL_DESC=	build mail scripts for sendmail
@@ -62,6 +64,10 @@ NO_NEWS_CONFIGURE_ON=	--with-news=no
 
 pre-install:
 	${MKDIR} ${STAGEDIR}/var/spool
+
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/uconnect/systems.sample.sample \
+		${STAGEDIR}${PREFIX}/etc/uconnect/systems.sample
 
 post-install-CNEWS-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/mail-and-news/cnews/viazconnect \

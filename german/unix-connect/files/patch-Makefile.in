@@ -1,6 +1,6 @@
---- Makefile.in.orig	2001-10-01 20:27:36.000000000 +0200
-+++ Makefile.in	2014-10-28 22:21:15.000000000 +0100
-@@ -55,12 +55,12 @@
+--- Makefile.in.orig	2001-10-01 18:27:36 UTC
++++ Makefile.in
+@@ -55,12 +55,12 @@ install:
  
  install:
  	for dir in $(TARGETDIRS); do \
