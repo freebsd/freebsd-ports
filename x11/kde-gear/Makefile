@@ -3,7 +3,7 @@ PORTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	x11 kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE Gear distribuition (meta port)
+COMMENT=	KDE Gear distribution (meta port)
 WWW=		https://apps.kde.org/
 
 USES=		kde:6 metaport qt:6
