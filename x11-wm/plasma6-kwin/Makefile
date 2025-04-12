@@ -49,4 +49,12 @@ USE_XORG=	ice sm x11 xcb xext xi
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 SHEBANG_FILES=	src/plugins/strip-effect-metadata.py
 
+OPTIONS_DEFINE=		EI
+OPTIONS_DEFAULT=	EI
+OPTIONS_SUB=		yes
+
+EI_DESC=		Emulated input for Wayland
+EI_LIB_DEPENDS=		libei.so:x11/libei
+EI_CMAKE_BOOL=		KWIN_BUILD_EIS
+
 .include <bsd.port.mk>
