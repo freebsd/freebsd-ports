@@ -1,7 +1,6 @@
 PORTNAME=	xcp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.0
-PORTREVISION=	1
+DISTVERSION=	0.24.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,16 +28,16 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		bstr-1.10.0 \
 		bumpalo-3.17.0 \
 		cfg-if-1.0.0 \
-		clap-4.5.34 \
-		clap_builder-4.5.34 \
+		clap-4.5.35 \
+		clap_builder-4.5.35 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
 		console-0.15.11 \
-		crossbeam-channel-0.5.14 \
+		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
-		crossbeam-utils-0.8.20 \
+		crossbeam-utils-0.8.21 \
 		deranged-0.3.11 \
 		encode_unicode-1.0.0 \
 		errno-0.3.10 \
@@ -58,7 +57,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		lazy_static-0.2.11 \
 		libc-0.2.171 \
 		libm-0.2.11 \
-		linux-raw-sys-0.9.3 \
+		linux-raw-sys-0.9.4 \
 		log-0.4.27 \
 		memchr-2.7.4 \
 		num-conv-0.1.0 \
@@ -81,7 +80,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-1.11.1 \
 		regex-automata-0.4.8 \
 		regex-syntax-0.8.5 \
-		rustix-1.0.3 \
+		rustix-1.0.5 \
 		rustversion-1.0.20 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
