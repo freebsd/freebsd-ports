@@ -1,16 +1,17 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.18.2
+DISTVERSION=	0.19.0-rc1
 CATEGORIES=	x11-toolkits
-PKGNAMESUFFIX=	018
+PKGNAMESUFFIX=	019
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Modular Wayland compositor library (deprecated 0.18.* series)
+COMMENT=	Modular Wayland compositor library (current 0.19.* series)
 WWW=		https://gitlab.freedesktop.org/wlroots/wlroots
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>=1.35:graphics/wayland-protocols
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		wayland-protocols>=1.41:graphics/wayland-protocols
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
@@ -21,18 +22,18 @@ USE_GL=		gbm
 USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
+MESON_ARGS=	-Dexamples=false -Dallocators=gbm \
+		-Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
 PLIST_SUB=	SUFFIX=-${DISTVERSION:R}
 
-PORTSCOUT=	limit:^0\.18\.
+PORTSCOUT=	limit:^0\.19\.
 
 OPTIONS_DEFINE=	DRM LCMS2 LIBLIFTOFF OPENGL VULKAN X11
 OPTIONS_DEFAULT=DRM LCMS2 LIBLIFTOFF OPENGL VULKAN X11
 OPTIONS_SUB=	yes
 
 DRM_DESC=		KMS console support
-DRM_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-			hwdata>0:misc/hwdata
+DRM_BUILD_DEPENDS=	hwdata>0:misc/hwdata
 DRM_LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 			libdisplay-info.so:sysutils/libdisplay-info \
 			libseat.so:sysutils/seatd \
