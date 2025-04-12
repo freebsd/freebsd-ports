@@ -110,6 +110,10 @@ UBOOT_ARCH_RK3399=	aarch64
 UBOOT_PLIST_RK356X=	idbloader.img u-boot.itb
 UBOOT_ARCH_RK356X=	aarch64
 
+# Override for RK3588 family
+UBOOT_PLIST_RK3588=	idbloader.img u-boot.itb
+UBOOT_ARCH_RK3588=	aarch64
+
 # Override for ARMADA38X family
 UBOOT_PLIST_ARMADA38X=	u-boot-with-spl.kwb
 UBOOT_METADATA_ARMADA38X_FILES=		${UBOOT_PLIST_ARMADA38X}
@@ -192,6 +196,13 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/rkbin/rk35/rk3566_ddr_1056MHz_v1.21.bin:sysut
 		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
 MAKE_ENV+=	BL31=${LOCALBASE}/share/rkbin/rk35/rk3568_bl31_v1.44.elf \
 		ROCKCHIP_TPL=${LOCALBASE}/share/rkbin/rk35/rk3566_ddr_1056MHz_v1.21.bin
+.endif
+
+.if defined(FAMILY) && ${FAMILY} == rk3588
+BUILD_DEPENDS+=	${LOCALBASE}/share/rkbin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.18.bin:sysutils/rkbin \
+		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
+MAKE_ENV+=	BL31=${LOCALBASE}/share/rkbin/rk35/rk3588_bl31_v1.47.elf \
+		ROCKCHIP_TPL=${LOCALBASE}/share/rkbin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.18.bin
 .endif
 
 # Each u-boot family has different files to include, bring them in.
