@@ -9,8 +9,8 @@ include/mpb/scalar.h
 include/mpb/verbosity.h
 lib/libmpb.a
 lib/libmpb.so
-lib/libmpb.so.1
-lib/libmpb.so.1.4.1
+lib/libmpb.so.6
+lib/libmpb.so.6.0.0
 %%EXAMPLESDIR%%/bragg-sine.ctl
 %%EXAMPLESDIR%%/bragg.ctl
 %%EXAMPLESDIR%%/check.ctl

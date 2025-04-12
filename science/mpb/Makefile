@@ -1,6 +1,5 @@
 PORTNAME=	mpb
-DISTVERSION=	1.11.1
-PORTREVISION=	11
+DISTVERSION=	1.12.0
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/NanoComp/mpb/releases/download/v${DISTVERSION}/
 
@@ -21,7 +20,8 @@ USES=		fortran guile:2.2,alias libtool pkgconfig readline
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 # Do not use --with-mpi, because it is not guaranted
-# that science/hdf5 also built with option PARALLEL
+# that science/hdf5 also built with option PARALLEL.
+# TODO: if bin/h5pcc exists, hdf5 is built with PARALLEL
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared
