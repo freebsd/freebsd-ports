@@ -1362,6 +1362,7 @@ lib/calibre/calibre/utils/fonts/sfnt/subset.py
 lib/calibre/calibre/utils/fonts/subset.py
 lib/calibre/calibre/utils/fonts/utils.py
 lib/calibre/calibre/utils/fonts/win_fonts.py
+lib/calibre/calibre/utils/forked_map.py
 lib/calibre/calibre/utils/formatter.py
 lib/calibre/calibre/utils/formatter_functions.py
 lib/calibre/calibre/utils/html2text.py
