@@ -1,6 +1,6 @@
 PORTNAME=	json
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.3
+DISTVERSION=	3.12.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	nlohmann-
 
@@ -20,6 +20,8 @@ NO_ARCH=	yes
 
 CMAKE_ON=	JSON_MultipleHeaders
 CMAKE_OFF=	JSON_BuildTests
-CMAKE_TESTING_ON=	JSON_BuildTests # 2 tests are expected to fail, see https://github.com/nlohmann/json/issues/2951
+CMAKE_TESTING_ON=	JSON_BuildTests
+
+# tests as of 3.12.0: 96% tests passed, 4 tests failed out of 101 (4 cmake_fetch_content* tests fail, https://github.com/nlohmann/json/issues/2951)
 
 .include <bsd.port.mk>
