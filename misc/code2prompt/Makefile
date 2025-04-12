@@ -1,7 +1,6 @@
 PORTNAME=	code2prompt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
-PORTREVISION=	3
+DISTVERSION=	3.0.2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,38 +26,37 @@ CARGO_CRATES=	adler2-2.0.0 \
 		anstyle-1.0.10 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
-		anstyle-wincon-3.0.6 \
-		anyhow-1.0.95 \
-		arboard-3.4.1 \
+		anstyle-wincon-3.0.7 \
+		anyhow-1.0.97 \
+		arboard-3.5.0 \
+		arrayvec-0.7.6 \
 		assert_cmd-2.0.16 \
 		autocfg-1.4.0 \
 		base64-0.21.7 \
+		bindgen-0.63.0 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
-		bitflags-2.6.0 \
+		bitflags-2.9.0 \
 		block-buffer-0.10.4 \
-		block2-0.5.1 \
 		bstr-1.11.3 \
-		bumpalo-3.16.0 \
-		bytemuck-1.21.0 \
+		bumpalo-3.17.0 \
+		bytemuck-1.22.0 \
 		byteorder-1.5.0 \
 		byteorder-lite-0.1.0 \
-		cc-1.2.7 \
+		cc-1.2.18 \
+		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
-		clap-4.5.24 \
-		clap_builder-4.5.24 \
-		clap_derive-4.5.24 \
+		clang-sys-1.8.1 \
+		clap-4.5.35 \
+		clap_builder-4.5.35 \
+		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		clipboard-win-5.4.0 \
 		colorchoice-1.0.3 \
 		colored-2.2.0 \
-		console-0.15.10 \
-		core-foundation-0.9.4 \
-		core-foundation-sys-0.8.7 \
-		core-graphics-0.23.2 \
-		core-graphics-types-0.1.3 \
-		cpufeatures-0.2.16 \
+		console-0.15.11 \
+		cpufeatures-0.2.17 \
 		crc32fast-1.4.2 \
 		crossbeam-0.8.4 \
 		crossbeam-channel-0.5.14 \
@@ -69,162 +67,192 @@ CARGO_CRATES=	adler2-2.0.0 \
 		crossterm-0.25.0 \
 		crossterm_winapi-0.9.1 \
 		crypto-common-0.1.6 \
+		darling-0.20.11 \
+		darling_core-0.20.11 \
+		darling_macro-0.20.11 \
+		derive_builder-0.20.2 \
+		derive_builder_core-0.20.2 \
+		derive_builder_macro-0.20.2 \
 		difflib-0.4.0 \
 		digest-0.10.7 \
 		displaydoc-0.2.5 \
 		doc-comment-0.3.3 \
-		dyn-clone-1.0.17 \
-		either-1.13.0 \
+		dyn-clone-1.0.19 \
+		either-1.15.0 \
 		encode_unicode-1.0.0 \
+		encoding_rs-0.8.35 \
 		env_filter-0.1.3 \
-		env_logger-0.11.6 \
-		errno-0.3.10 \
+		env_logger-0.11.8 \
+		errno-0.3.11 \
 		error-code-3.3.1 \
-		fancy-regex-0.12.0 \
+		fancy-regex-0.13.0 \
 		fastrand-2.3.0 \
 		fdeflate-0.3.7 \
-		flate2-1.0.35 \
+		flate2-1.1.1 \
 		float-cmp-0.9.0 \
-		foreign-types-0.5.0 \
-		foreign-types-macros-0.2.3 \
-		foreign-types-shared-0.3.1 \
+		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
 		fuzzy-matcher-0.3.7 \
 		fxhash-0.2.1 \
 		generic-array-0.14.7 \
 		gethostname-0.4.3 \
-		getrandom-0.2.15 \
+		getrandom-0.3.2 \
 		git2-0.18.3 \
 		glob-0.3.2 \
-		globset-0.4.15 \
+		globset-0.4.16 \
 		handlebars-4.5.0 \
 		heck-0.5.0 \
-		humantime-2.1.0 \
+		home-0.5.11 \
 		icu_collections-1.5.0 \
 		icu_locid-1.5.0 \
 		icu_locid_transform-1.5.0 \
-		icu_locid_transform_data-1.5.0 \
+		icu_locid_transform_data-1.5.1 \
 		icu_normalizer-1.5.0 \
-		icu_normalizer_data-1.5.0 \
+		icu_normalizer_data-1.5.1 \
 		icu_properties-1.5.1 \
-		icu_properties_data-1.5.0 \
+		icu_properties_data-1.5.1 \
 		icu_provider-1.5.0 \
 		icu_provider_macros-1.5.0 \
+		ident_case-1.0.1 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
 		ignore-0.4.23 \
-		image-0.25.5 \
-		indicatif-0.17.9 \
+		image-0.25.6 \
+		indicatif-0.17.11 \
+		indoc-2.0.6 \
 		inquire-0.7.5 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
-		itoa-1.0.14 \
-		jobserver-0.1.32 \
+		itoa-1.0.15 \
+		jiff-0.2.5 \
+		jiff-static-0.2.5 \
+		jobserver-0.1.33 \
 		jpeg-decoder-0.3.1 \
-		js-sys-0.3.76 \
+		js-sys-0.3.77 \
 		jwalk-0.8.1 \
 		lazy_static-1.5.0 \
-		libc-0.2.169 \
+		lazycell-1.3.0 \
+		libc-0.2.171 \
 		libgit2-sys-0.16.2+1.7.2 \
-		libz-sys-1.1.21 \
+		libloading-0.8.6 \
+		libz-sys-1.1.22 \
 		linux-raw-sys-0.4.15 \
-		litemap-0.7.4 \
+		linux-raw-sys-0.9.3 \
+		litemap-0.7.5 \
 		lock_api-0.4.12 \
-		log-0.4.22 \
+		log-0.4.27 \
 		memchr-2.7.4 \
-		miniz_oxide-0.8.2 \
+		memoffset-0.9.1 \
+		minimal-lexical-0.2.1 \
+		miniz_oxide-0.8.7 \
 		mio-0.8.11 \
 		newline-converter-0.3.0 \
+		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
+		num-format-0.4.4 \
+		num-format-windows-0.4.4 \
 		num-traits-0.2.19 \
 		number_prefix-0.4.0 \
-		objc-sys-0.3.5 \
-		objc2-0.5.2 \
-		objc2-app-kit-0.2.2 \
-		objc2-core-data-0.2.2 \
-		objc2-core-image-0.2.2 \
-		objc2-encode-4.0.3 \
-		objc2-foundation-0.2.2 \
-		objc2-metal-0.2.2 \
-		objc2-quartz-core-0.2.2 \
-		once_cell-1.20.2 \
-		openssl-probe-0.1.5 \
-		openssl-src-300.4.1+3.4.0 \
-		openssl-sys-0.9.104 \
+		objc2-0.6.0 \
+		objc2-app-kit-0.3.0 \
+		objc2-core-foundation-0.3.0 \
+		objc2-core-graphics-0.3.0 \
+		objc2-encode-4.1.0 \
+		objc2-foundation-0.3.0 \
+		objc2-io-surface-0.3.0 \
+		once_cell-1.21.3 \
+		openssl-probe-0.1.6 \
+		openssl-src-300.4.2+3.4.1 \
+		openssl-sys-0.9.107 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
+		peeking_take_while-0.1.2 \
 		percent-encoding-2.3.1 \
-		pest-2.7.15 \
-		pest_derive-2.7.15 \
-		pest_generator-2.7.15 \
-		pest_meta-2.7.15 \
-		pkg-config-0.3.31 \
+		pest-2.8.0 \
+		pest_derive-2.8.0 \
+		pest_generator-2.8.0 \
+		pest_meta-2.8.0 \
+		pkg-config-0.3.32 \
 		png-0.17.16 \
-		portable-atomic-1.10.0 \
+		portable-atomic-1.11.0 \
+		portable-atomic-util-0.2.4 \
 		predicates-2.1.5 \
 		predicates-3.1.3 \
 		predicates-core-1.0.9 \
 		predicates-tree-1.0.12 \
-		proc-macro2-1.0.92 \
-		quote-1.0.38 \
+		proc-macro2-1.0.94 \
+		pyo3-0.23.5 \
+		pyo3-build-config-0.23.5 \
+		pyo3-ffi-0.23.5 \
+		pyo3-macros-0.23.5 \
+		pyo3-macros-backend-0.23.5 \
+		quote-1.0.40 \
+		r-efi-5.2.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.8 \
+		redox_syscall-0.5.10 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
 		rustc-hash-1.1.0 \
-		rustix-0.38.43 \
-		ryu-1.0.18 \
+		rustix-0.38.44 \
+		rustix-1.0.5 \
+		ryu-1.0.20 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.217 \
-		serde_derive-1.0.217 \
-		serde_json-1.0.135 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
+		serde_json-1.0.140 \
 		sha2-0.10.8 \
 		shlex-1.3.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
 		simd-adler32-0.3.7 \
-		smallvec-1.13.2 \
+		smallvec-1.14.0 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
-		syn-2.0.95 \
+		syn-1.0.109 \
+		syn-2.0.100 \
 		synstructure-0.13.1 \
-		tempfile-3.15.0 \
+		target-lexicon-0.12.16 \
+		tempfile-3.19.1 \
 		termtree-0.4.1 \
 		termtree-0.5.1 \
 		thiserror-1.0.69 \
-		thiserror-2.0.9 \
+		thiserror-2.0.12 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.9 \
+		thiserror-impl-2.0.12 \
 		thread_local-1.1.8 \
 		tiff-0.9.1 \
-		tiktoken-rs-0.5.9 \
+		tiktoken-rs-0.6.0 \
 		tinystr-0.7.6 \
-		typenum-1.17.0 \
+		typenum-1.18.0 \
 		ucd-trie-0.1.7 \
-		unicode-ident-1.0.14 \
+		unicode-ident-1.0.18 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
+		unindent-0.2.4 \
 		url-2.5.4 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
-		wait-timeout-0.2.0 \
+		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.99 \
-		wasm-bindgen-backend-0.2.99 \
-		wasm-bindgen-macro-0.2.99 \
-		wasm-bindgen-macro-support-0.2.99 \
-		wasm-bindgen-shared-0.2.99 \
+		wasi-0.14.2+wasi-0.2.4 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
 		web-time-1.1.0 \
 		weezl-0.1.8 \
+		which-4.4.2 \
+		widestring-1.2.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
@@ -248,14 +276,15 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
+		wit-bindgen-rt-0.39.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		x11rb-0.13.1 \
 		x11rb-protocol-0.13.1 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
-		zerofrom-0.1.5 \
-		zerofrom-derive-0.1.5 \
+		zerofrom-0.1.6 \
+		zerofrom-derive-0.1.6 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3
 
@@ -271,7 +300,10 @@ LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
 LDFLAGS+=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
 .endif
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+do-install:
+	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
+	${INSTALL_PROGRAM} \
+		${WRKDIR}/target/release/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
