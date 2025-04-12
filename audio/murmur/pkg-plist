@@ -5,3 +5,6 @@ sbin/murmurd
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.Linux
+@dir(murmur,murmur,) /var/db/murmur
+@dir(murmur,wheel,) /var/log/murmur
+@dir(murmur,murmur,) /var/run/murmur
