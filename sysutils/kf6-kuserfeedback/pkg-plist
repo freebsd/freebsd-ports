@@ -59,6 +59,7 @@ lib/libKF6UserFeedbackWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/userfeedback/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/userfeedback/libKF6UserFeedbackQml.so
 %%QT_QMLDIR%%/org/kde/userfeedback/qmldir
+share/KDE/UserFeedbackConsole/user-feedback-manual.qch
 share/applications/org.kde.kuserfeedback-console.desktop
 share/locale/ar/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/ar/LC_MESSAGES/userfeedbackprovider6_qt.qm
