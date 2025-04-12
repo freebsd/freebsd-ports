@@ -1,7 +1,6 @@
 PORTNAME=	terraform-docs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.0
-PORTREVISION=	4
+DISTVERSION=	0.20.0
 CATEGORIES=	sysutils textproc
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/terraform-docs/terraform-docs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:1.24,modules
 GO_MODULE=	github.com/terraform-docs/terraform-docs
 
 PLIST_FILES=	bin/${PORTNAME}
