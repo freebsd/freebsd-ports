@@ -1,13 +1,13 @@
 PORTNAME=	base
 DISTVERSION=	${QT6_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt base (core, gui, widgets, network,...)
 
-BUILD_DEPENDS=	xml:textproc/xmlstarlet \
-		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
+BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libatk-1.0.so:accessibility/at-spi2-core \
 		libatk-bridge-2.0.so:accessibility/at-spi2-core \
