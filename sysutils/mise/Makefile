@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.4.1
+DISTVERSION=	2025.4.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -77,7 +77,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bzip2-sys-0.1.13+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.2.18 \
+		cc-1.2.19 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
@@ -87,8 +87,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		chrono-tz-build-0.3.0 \
 		ci_info-0.14.14 \
 		cipher-0.4.4 \
-		clap-4.5.35 \
-		clap_builder-4.5.35 \
+		clap-4.5.36 \
+		clap_builder-4.5.36 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		clap_mangen-0.2.26 \
@@ -411,7 +411,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pest_derive-2.8.0 \
 		pest_generator-2.8.0 \
 		pest_meta-2.8.0 \
-		petgraph-0.7.1 \
+		petgraph-0.8.1 \
 		phf-0.11.3 \
 		phf_codegen-0.11.3 \
 		phf_generator-0.11.3 \
@@ -464,16 +464,16 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		roff-0.2.2 \
 		rops-0.1.4 \
 		rowan-0.15.16 \
-		rust-embed-8.6.0 \
-		rust-embed-impl-8.6.0 \
-		rust-embed-utils-8.6.0 \
+		rust-embed-8.7.0 \
+		rust-embed-impl-8.7.0 \
+		rust-embed-utils-8.7.0 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
 		rustix-1.0.5 \
-		rustls-0.23.25 \
+		rustls-0.23.26 \
 		rustls-native-certs-0.8.1 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.11.0 \
@@ -493,7 +493,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		security-framework-sys-2.14.0 \
 		self-replace-1.5.0 \
 		self_cell-0.10.3 \
-		self_cell-1.1.0 \
+		self_cell-1.2.0 \
 		self_update-0.42.0 \
 		semver-1.0.26 \
 		serde-1.0.219 \
