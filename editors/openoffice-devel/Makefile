@@ -57,7 +57,6 @@ BUILD_DEPENDS=								\
 		zip:archivers/zip					\
 		ant:devel/apache-ant					\
 		dmake:devel/dmake					\
-		epm:devel/epm						\
 		${LOCALBASE}/bin/gperf:devel/gperf			\
 		imake:devel/imake					\
 		libunwind>=20211201_1:devel/libunwind			\
@@ -292,7 +291,6 @@ CONFIGURE_ARGS+=							\
 			--with-system-coinmp				\
 			--with-system-curl				\
 			--with-system-dicts				\
-			--with-epm=${LOCALBASE}/bin/epm			\
 			--with-system-expat				\
 			--disable-fetch-external			\
 			--without-fonts					\
