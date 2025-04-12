@@ -1,8 +1,8 @@
---- data/makefonts.sh.orig	Mon May  5 03:07:30 1997
-+++ data/makefonts.sh	Wed Oct 26 11:30:34 2005
-@@ -4,5 +4,5 @@
- ../fnttobdf -tr <$i | bdftopcf > `basename $i .fnt`-iso.pcf
+--- data/makefonts.sh.orig	2003-02-01 10:00:00 UTC
++++ data/makefonts.sh
+@@ -17,5 +17,5 @@ mkfontdir .
  done
+ 
  mkfontdir .
 -xset fp+ `pwd`
 -xset fp rehash

@@ -1,6 +1,6 @@
---- configure.orig	2004-08-15 15:36:21.000000000 +0200
-+++ configure	2010-04-03 09:57:44.000000000 +0200
-@@ -3989,6 +3990,30 @@
+--- configure.orig	2004-08-15 13:36:21 UTC
++++ configure
+@@ -3989,6 +3989,30 @@ _ACEOF
  	esac
  	copt="$copt -funroll-loops"
  	;;

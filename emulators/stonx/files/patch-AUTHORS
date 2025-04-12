@@ -1,0 +1,8 @@
+--- docs/AUTHORS.orig	2003-01-31 22:21:18 UTC
++++ docs/AUTHORS
+@@ -5,3 +5,5 @@ Alex Bennee <alex@bennee.com>
+ Till Harbaum <t.harbaum@tu-bs.de> (TH)
+ Thomas Huth <thothy@users.sourceforge.net> (Thothy)
+ Alex Bennee <alex@bennee.com>
++Hans-Peter Jansen <hpj@urpla.net> (hpj)
++Andreas Alich

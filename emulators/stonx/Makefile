@@ -1,29 +1,28 @@
 PORTNAME=	stonx
 PORTVERSION=	0.6.7e.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
-MASTER_SITES=	SF/stonx/stonx/0.6.7.6
+MASTER_SITES=	SF/stonx/stonx/0.6.7.6 SF/emutos/emutos/1.3:tos
 DISTNAME=	STonX-0.6.7.6
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} emutos-512k-1.3.zip:tos
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	AtariST emulator
+WWW=		https://stonx.sourceforge.net/
 
-LICENSE=	GPLv2+ ROM
-LICENSE_COMB=	multi
-LICENSE_NAME_ROM=	Atari ROM
-LICENSE_TEXT_ROM=	Contains ROM (C) by Atari
-LICENSE_PERMS_ROM=	auto-accept
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		gccmakedep:devel/gccmakedep \
 		mkfontscale:x11-fonts/mkfontscale \
 		${LOCALBASE}/share/fonts/misc/10x20-ISO8859-1.pcf.gz:x11-fonts/font-misc-misc
 
-TOSIMG?=	tos.img
 USES=		fonts xorg
 FONTNAME=	misc
 USE_XORG=	x11 sm ice xext xorgproto
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include \
 		--x-libraries=${LOCALBASE}/lib
 ALL_TARGET=	all fnttobdf tosfonts fonts
@@ -38,11 +37,36 @@ FONTS=	System0-iso.pcf System0.pcf System1-iso.pcf System1.pcf \
 	System2-iso.pcf System2.pcf
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFAULT=	UK
+OPTIONS_RADIO=  TOS
+OPTIONS_RADIO_TOS=	CZ DE ES FI FR GR HU IT NL NO RU SE SG TR UK US
+CZ_DESC=	Czech (PAL)
+DE_DESC=	German (PAL)
+ES_DESC=	Spanish (PAL)
+FI_DESC=	Finnish (PAL)
+FR_DESC=	French (PAL)
+GR_DESC=	Greek (PAL)
+HU_DESC=	Hungarian (PAL)
+IT_DESC=	Italian (PAL)
+NL_DESC=	Dutch (PAL)
+NO_DESC=	Norwegian (PAL)
+PL_DESC=	Polish (PAL)
+RO_DESC=	Romanian (PAL)
+RU_DESC=	Russian (PAL)
+SE_DESC=	Swedish (PAL)
+SG_DESC=	Swiss German (PAL)
+TR_DESC=	Turkish (PAL)
+UK_DESC=	English (PAL)
+US_DESC=	English (NTSC)
 
 .include <bsd.port.options.mk>
 
-pre-build:
-	${CP} ${DISTDIR}/${TOSIMG} ${WRKSRC}/tos.img
+pre-configure:
+.for l in ${OPTIONS_RADIO_TOS}
+.if ${PORT_OPTIONS:M${l}}
+	${CP} -v ${WRKDIR}/emutos-512k-1.3/etos512${l:tl}.img ${WRKSRC}/tos.img
+.endif
+.endfor
 
 post-install:
 .for f in ${ETCFILES}
@@ -62,10 +86,5 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${DATA:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}/
-
-.if !exists(${DISTDIR}/${TOSIMG})
-IGNORE=	please get a ROM dump from your AtariST and save it as\
-"${TOSIMG}" in "${DISTDIR}" manually, and then make again
-.endif
 
 .include <bsd.port.mk>

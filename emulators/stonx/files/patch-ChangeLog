@@ -1,0 +1,27 @@
+--- ChangeLog.orig	2004-08-15 14:10:06 UTC
++++ ChangeLog
+@@ -1,3 +1,24 @@
++
++2004-12-25  Andreas Alich
++	* di_dis.c
++	  Fixes a number of bugs of the disassembler
++	  (which led to wrong output and also to crashes).
++	  The disassembler still disassembles lots of invalid instructions
++	  (opcode/adressing modes) without any hint that they are invalid.
++	  But at least valid instructions should be disassembled correctly now.
++
++2004-12-25  Andreas Alich
++	* gemdos.c
++	  Increases compatibility of STonx with real GEMDOS:
++	  Fdatime did not return correct date/time (conversion missing).
++	  Setting date/time was not implemented (now needs /proc-based OS).
++	  Reading in files opened with Fcreate was not possible.
++	  Fopen allowed opening directories.
++	  Fopen/Fcreate did not return error in case of invalid path.
++
++2001-09-01 Hans-Peter Jansen
++	* LPPIPES and quoted arguments in rc files added
++
+ 2004-08-15  Thomas Huth,  STonX-0.6.7.6
+ 
+ 	* audio.c, di_dis.c, di_dis.h, x.c, xlib_vdi.c, mint/mint_stonxfs_fs.c:

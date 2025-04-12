@@ -1,6 +1,6 @@
---- STonX-0.6.7.6.orig/di_dis.c	2004-08-15 14:33:40.000000000 +0200
-+++ di_dis.c	2004-12-25 15:21:15.000000000 +0100
-@@ -76,7 +76,6 @@
+--- di_dis.c.orig	2004-08-15 12:33:40 UTC
++++ di_dis.c
+@@ -76,7 +76,6 @@ static const OP_DEF table[] = {
  
  static const OP_DEF table[] = {
  	"ABCD",0xc100,0xf1f0,type_14,
@@ -8,7 +8,7 @@
  
  	"RESET",0x4e70,0xffff,type_10,
  	"RTE",0x4e73,0xffff,type_10,
-@@ -105,12 +104,12 @@
+@@ -105,12 +104,12 @@ static const OP_DEF table[] = {
  	"NBCD",0x4800,0xffc0,type_15,
  	"PEA",0x4840,0xffc0,type_5,
  
@@ -23,7 +23,7 @@
  
  	"TST",0x4a00,0xff00,type_7,
  	"CLR",0x4200,0xff00,type_15,
-@@ -152,13 +151,13 @@
+@@ -152,13 +151,13 @@ static const OP_DEF table[] = {
  	"SVC",0x58c0,0xffc0,type_5,
  	"SVS",0x59c0,0xffc0,type_5,
  	"ADDQ",0x5000,0xf100,type_6,
@@ -41,7 +41,7 @@
  	"BCC",0x6400,0xff00,type_8,
  	"BCS",0x6500,0xff00,type_8,
  	"BEQ",0x6700,0xff00,type_8,
-@@ -175,15 +174,14 @@
+@@ -175,15 +174,14 @@ static const OP_DEF table[] = {
  	"BVS",0x6900,0xff00,type_8,
  	"BRA",0x6000,0xff00,type_8,
  	"BSR",0x6100,0xff00,type_8,
@@ -61,7 +61,7 @@
  	"MOVE.B",0x1000,0xf000,type_4,
  	"MOVE.W",0x3000,0xf000,type_4,
  	"MOVE.L",0x2000,0xf000,type_4,
-@@ -196,10 +194,10 @@
+@@ -196,10 +194,10 @@ static const OP_DEF table[] = {
  	"%6lx   EORI   #$%x,SR",0x0a7c,0xffff,type_27,
  	"%6lx   ANDI   #$%x,CCR",0x023c,0xffff,type_27,	/*	ANDI #<data>,CCR	*/
  	"%6lx   ANDI   #$%x,SR",0x027c,0xffff,type_27,	/*	ANDI #data,SR		*/
@@ -76,7 +76,7 @@
  	"BTST",0x0800,0xffc0,type_20,
  	"BSET",0x08c0,0xffc0,type_20,
  	"BCHG",0x0840,0xffc0,type_20,
-@@ -216,14 +214,23 @@
+@@ -216,14 +214,23 @@ static const OP_DEF table[] = {
  	"BCHG",0x0140,0xf1c0,type_21,
  	"BCLR",0x0180,0xf1c0,type_21,
  
@@ -104,18 +104,19 @@
  	"SUBQ",0x5100,0xf100,type_6,
  	"SUBA",0x90c0,0xf0c0,type_3,   /* SUBA can look like a SUBX! */
  	"SUBX",0x9100,0xf130,type_14,
-@@ -237,7 +244,9 @@
+@@ -237,8 +244,10 @@ static const char *data_regs[] = {
  static const char *data_regs[] = {
  	"D0","D1","D2","D3","D4","D5","D6","D7"};
  
 -static const char *sizes[] = {".B",".W",".L"};
 +static const char *sizes[] = {".B",".W",".L",".?"};
-+
-+static const char *unknown = "??";
  
++static const char *unknown = "??";
++
  void *dis(void *c,char *s)
  {
-@@ -309,7 +318,7 @@
+ 	/*
+@@ -309,7 +318,7 @@ static UWORD *type_27(UWORD *c,char *s,WORD index)
  	ULONG adr;
  /*	WORD data;	*/
  
@@ -124,7 +125,7 @@
          c++;
  	sprintf(s,table[index].op,adr,LM_UW(MEM(c)));
  	return(++c);
-@@ -524,7 +533,14 @@
+@@ -524,7 +533,14 @@ static UWORD *type_21(UWORD *c,char *s,WORD index)
  	adr = (long)c;
  	dest_reg = (LM_UW(MEM(c)) & 0x0e00) >> 9;	/*	get destination reg	*/
  	source = LM_UW(MEM(c)) & 0x3f;				/*	this is an effective address	*/
@@ -140,7 +141,7 @@
  	sprintf(s,"%6lx   %s  %s,%s",adr,table[index].op,data_regs[dest_reg],e_a);
  	++c;
  	return(c);
-@@ -575,7 +591,7 @@
+@@ -575,7 +591,7 @@ static UWORD *type_18(UWORD *c,char *s,WORD index)
  	const char *rx,*ry;
  
  	adr = (long)c;
@@ -149,7 +150,7 @@
  	source = (LM_UW(MEM(c)) & 0x0e00) >> 9;
  	op_mode = (LM_UW(MEM(c)) & 0xf8) >> 3;
  	if(op_mode == 0x08)
-@@ -593,6 +609,11 @@
+@@ -593,6 +609,11 @@ static UWORD *type_18(UWORD *c,char *s,WORD index)
  		rx = data_regs[source];
  		ry = adr_regs[dest];
  	}
@@ -161,7 +162,7 @@
  	sprintf(s,"%6lx   %s  %s,%s",adr,table[index].op,rx,ry);
  	++c;
  	return(c);
-@@ -693,7 +714,7 @@
+@@ -693,7 +714,7 @@ static UWORD *type_13(UWORD *c,char *s,WORD index)
  	}
  	else
  	{
@@ -170,7 +171,7 @@
  	}
  	c = effective_address(c,e_a,dest,index,0);
  	sprintf(s,"%6lx   %s%s  #$%lx,%s",adr,table[index].op,sizes[size],il_data,e_a);
-@@ -731,7 +752,7 @@
+@@ -731,7 +752,7 @@ static UWORD *type_11(UWORD *c,char *s,WORD index)
  	size = (LM_UW(MEM(c)) & 0x0c0) >> 6;
  	if(size < 3)	/*	register shifts	*/
  	{
@@ -179,7 +180,7 @@
  		dest = (LM_UW(MEM(c)) & 0x07);
  		count = (LM_UW(MEM(c)) & 0x0e00)>>9;
  		if(type)
-@@ -796,9 +817,9 @@
+@@ -796,9 +817,9 @@ static UWORD *type_8(UWORD *c,char *s,WORD index)
  	else
  	{
  		size = ".S";
@@ -191,7 +192,7 @@
  	sprintf(s,"%6lx   %s%s  $%lx",adr,table[index].op,size,dest);
  	++c;
  	return(c);
-@@ -952,7 +973,7 @@
+@@ -952,7 +973,7 @@ static UWORD *type_1(UWORD *c,char *s,WORD index)
  	adr = (long)c;
  	the_reg = LM_UW(MEM(c)) & 0x07;	/*	get register number	*/
  	++c;	                /*	point to word displacement	*/
@@ -200,7 +201,7 @@
  	++c;
  	return(c);
  }
-@@ -1043,7 +1064,7 @@
+@@ -1043,7 +1064,7 @@ static UWORD *effective_address(UWORD *a,char *s,UWORD
  			displacement = LM_UW(MEM(a)) & 0xff;
  			index_reg = (LM_UW(MEM(a)) & 0x7000) >> 12;
  			index_reg_ind = (LM_UW(MEM(a)) & 0x8000)>> 15;
@@ -209,7 +210,7 @@
  			if(index_size)
  			{
  				s1 = ".L";
-@@ -1082,15 +1103,15 @@
+@@ -1082,15 +1103,15 @@ static UWORD *effective_address(UWORD *a,char *s,UWORD
  				case 2:	/*	program counter with displacement	*/
  					++a;
  					displacement = LM_UW(MEM(a));
@@ -228,15 +229,15 @@
  					a1 += (long)a;
  					if(index_size)
  					{
-@@ -1134,6 +1155,11 @@
+@@ -1133,6 +1154,11 @@ static UWORD *effective_address(UWORD *a,char *s,UWORD
+ 						else if (op_mode == BYTE_SIZE)
  							sprintf(s,"#$%x.B",displacement);
  					}
- 					break;
++					break;
 +				case 5:
 +				case 6:
 +				case 7:
 +					sprintf (s, "%s", unknown);
-+					break;
+ 					break;
  			default:
  			  {
- 			    fprintf(stderr,"Overun decode!\n");

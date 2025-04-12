@@ -1,6 +1,6 @@
---- Makefile.in.orig	2004-08-15 16:35:04.000000000 +0200
-+++ Makefile.in	2014-04-11 20:36:37.000000000 +0200
-@@ -19,7 +19,7 @@
+--- Makefile.in.orig	2004-08-15 14:35:04 UTC
++++ Makefile.in
+@@ -19,7 +19,7 @@ STONXDIR=@datadir@/stonx
  exec_prefix = @exec_prefix@
  SYSCONFDIR = @sysconfdir@/stonx
  STONXDIR=@datadir@/stonx
@@ -9,7 +9,25 @@
  DISTDIR=STonX-@version@
  
  
-@@ -199,32 +199,32 @@
+@@ -41,7 +41,7 @@ XLIBS=@X_LIBS@ @X_PRE_LIBS@ -lXext -lX11 @X_EXTRA_LIBS
+ 
+ # X11 library path - I'm sure not everything here is X related?
+ XLIBS=@X_LIBS@ @X_PRE_LIBS@ -lXext -lX11 @X_EXTRA_LIBS@ @xtra@
+-SFLAGS=
++SFLAGS=@CFLAGS@
+ 
+ # Monitor support, call configure with --enable-monitor
+ MON_OBJS = @mon_objs@
+@@ -160,7 +160,7 @@ stonx:	$(OBJ) $(XOBJ) $(MOREOBJ)
+ cpu.o:	code.c
+ 
+ stonx:	$(OBJ) $(XOBJ) $(MOREOBJ)
+-	$(SCC) @static@ -o $@ $(OBJ) $(XOBJ) $(MOREOBJ) $(LIBS) $(XLIBS)
++	$(SCC) @static@ @LDFLAGS@ -o $@ $(OBJ) $(XOBJ) $(MOREOBJ) $(LIBS) $(XLIBS)
+ 
+ stonvga: $(OBJ) $(SVGAOBJ) $(MOREOBJ)
+ 	$(SCC) @static@ -o $@ $(OBJ) $(SVGAOBJ) $(MOREOBJ) $(SVGALIBS)
+@@ -199,32 +199,32 @@ install:
  
  install:
  	install -d -m 755 $(INSTBIN)
@@ -47,11 +65,11 @@
 -	echo "vbl 2 refresh 2 chunky" >> $(SYSCONFDIR)/stonxrc ; \
 -	echo "boot c" >> $(SYSCONFDIR)/stonxrc ; \
 +	echo "Creating ${DESTDIR}$(SYSCONFDIR)/stonxrc" >&2; \
-+	echo "cartridge $(STONXDIR)/cartridge.img" > ${DESTDIR}$(SYSCONFDIR)/stonxrc ; \
-+	echo "tos $(STONXDIR)/tos.img" >> ${DESTDIR}$(SYSCONFDIR)/stonxrc ; \
-+	echo "fs C:$(STONXDIR)/gemdos_c" >> ${DESTDIR}$(SYSCONFDIR)/stonxrc ; \
-+	echo "vbl 2 refresh 2 chunky" >> ${DESTDIR}$(SYSCONFDIR)/stonxrc ; \
-+	echo "boot c" >> ${DESTDIR}$(SYSCONFDIR)/stonxrc ; \
++	echo "cartridge $(STONXDIR)/cartridge.img" > ${DESTDIR}$(SYSCONFDIR)/stonxrc.sample ; \
++	echo "tos $(STONXDIR)/tos.img" >> ${DESTDIR}$(SYSCONFDIR)/stonxrc.sample ; \
++	echo "fs C:$(STONXDIR)/gemdos_c" >> ${DESTDIR}$(SYSCONFDIR)/stonxrc.sample ; \
++	echo "vbl 2 refresh 2 chunky" >> ${DESTDIR}$(SYSCONFDIR)/stonxrc.sample ; \
++	echo "boot c" >> ${DESTDIR}$(SYSCONFDIR)/stonxrc.sample ; \
  	fi
  	@if test -f data/tos.img ; then \
 -	  echo "install -c -m 0644  data/tos.img" $(STONXDIR)/tos.img ; \

@@ -3,7 +3,7 @@ bin/stonx
 %%ETCDIR%%/keysyms-alternative
 %%ETCDIR%%/keysyms-german
 %%ETCDIR%%/keysyms-spanish
-%%ETCDIR%%/stonxrc
+@sample %%ETCDIR%%/stonxrc.sample
 %%DATADIR%%/cartridge.img
 %%DATADIR%%/gemdos_c/bench1.prg
 %%DATADIR%%/gemdos_c/final.tos
