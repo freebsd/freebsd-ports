@@ -1,6 +1,6 @@
 PORTNAME=	ruff
-DISTVERSION=	0.11.2
-PORTREVISION=	1
+DISTVERSION=	0.11.5
+PORTREVISION=	0
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -49,7 +49,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		bitflags-1.3.2 \
 		bitflags-2.9.0 \
 		block-buffer-0.10.4 \
-		boxcar-0.2.10 \
+		boxcar-0.2.11 \
 		bstr-1.11.3 \
 		bumpalo-3.17.0 \
 		byteorder-1.5.0 \
@@ -64,8 +64,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.32 \
-		clap_builder-4.5.32 \
+		clap-4.5.35 \
+		clap_builder-4.5.35 \
 		clap_complete-4.5.46 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.5 \
@@ -97,7 +97,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		crossbeam-utils-0.8.21 \
 		crunchy-0.2.3 \
 		crypto-common-0.1.6 \
-		ctrlc-3.4.5 \
+		ctrlc-3.4.6 \
 		darling-0.20.10 \
 		darling_core-0.20.10 \
 		darling_macro-0.20.10 \
@@ -119,7 +119,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		encode_unicode-1.0.0 \
 		env_filter-0.1.3 \
 		env_home-0.1.0 \
-		env_logger-0.11.7 \
+		env_logger-0.11.8 \
 		equivalent-1.0.2 \
 		errno-0.3.10 \
 		escape8259-0.5.3 \
@@ -138,7 +138,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		generic-array-0.14.7 \
 		getopts-0.2.21 \
 		getrandom-0.2.15 \
-		getrandom-0.3.1 \
+		getrandom-0.3.2 \
 		glob-0.3.2 \
 		globset-0.4.16 \
 		globwalk-0.9.1 \
@@ -169,7 +169,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		ignore-0.4.23 \
 		imara-diff-0.1.8 \
 		imperative-1.0.6 \
-		indexmap-2.8.0 \
+		indexmap-2.9.0 \
 		indicatif-0.17.11 \
 		indoc-2.0.6 \
 		inotify-0.11.0 \
@@ -196,7 +196,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		libc-0.2.171 \
 		libcst-1.7.0 \
 		libcst_derive-1.7.0 \
-		libmimalloc-sys-0.1.39 \
+		libmimalloc-sys-0.1.41 \
 		libredox-0.1.3 \
 		libtest-mimic-0.7.3 \
 		linked-hash-map-0.5.6 \
@@ -204,14 +204,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		linux-raw-sys-0.9.3 \
 		litemap-0.7.5 \
 		lock_api-0.4.12 \
-		log-0.4.26 \
+		log-0.4.27 \
 		loom-0.7.2 \
 		lsp-server-0.7.8 \
 		matchers-0.1.0 \
 		matches-0.1.10 \
 		matchit-0.8.6 \
 		memchr-2.7.4 \
-		mimalloc-0.1.43 \
+		mimalloc-0.1.45 \
 		minicov-0.3.7 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.5 \
@@ -231,7 +231,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		once_cell-1.21.1 \
 		oorandom-11.1.5 \
 		option-ext-0.2.0 \
-		ordermap-0.5.6 \
+		ordermap-0.5.7 \
 		os_pipe-1.2.1 \
 		os_str_bytes-7.1.0 \
 		overload-0.1.1 \
@@ -274,6 +274,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		quickcheck-1.0.3 \
 		quickcheck_macros-1.0.0 \
 		quote-1.0.40 \
+		r-efi-5.2.0 \
 		rand-0.8.5 \
 		rand-0.9.0 \
 		rand_chacha-0.3.1 \
@@ -319,7 +320,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		shlex-1.3.0 \
 		similar-2.7.0 \
 		siphasher-1.0.1 \
-		smallvec-1.14.0 \
+		smallvec-1.15.0 \
 		snapbox-0.6.21 \
 		snapbox-macros-0.3.10 \
 		stable_deref_trait-1.2.0 \
@@ -331,7 +332,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		syn-1.0.109 \
 		syn-2.0.100 \
 		synstructure-0.13.1 \
-		tempfile-3.19.0 \
+		tempfile-3.19.1 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.2 \
 		terminfo-0.9.0 \
@@ -339,6 +340,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
+		thin-vec-0.2.14 \
 		thiserror-1.0.69 \
 		thiserror-2.0.12 \
 		thiserror-impl-1.0.69 \
@@ -396,7 +398,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasi-0.13.3+wasi-0.2.2 \
+		wasi-0.14.2+wasi-0.2.4 \
 		wasm-bindgen-0.2.100 \
 		wasm-bindgen-backend-0.2.100 \
 		wasm-bindgen-futures-0.4.50 \
@@ -443,7 +445,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.7.4 \
 		winsafe-0.0.19 \
-		wit-bindgen-rt-0.33.0 \
+		wit-bindgen-rt-0.39.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		yansi-1.0.1 \
@@ -459,7 +461,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.14+zstd.1.5.7 \
-		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=d758691ba17ee1a60c5356ea90888d529e1782ad\#d758691ba17ee1a60c5356ea90888d529e1782ad \
+		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=87bf6b6c2d5f6479741271da73bd9d30c2580c26\#87bf6b6c2d5f6479741271da73bd9d30c2580c26 \
 		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439
 
 CARGO_BUILD=	no
