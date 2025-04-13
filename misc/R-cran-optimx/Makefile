@@ -1,11 +1,11 @@
 PORTNAME=	optimx
-DISTVERSION=	2024-12.2
+DISTVERSION=	2025-4.9
 CATEGORIES=	misc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Expanded Replacement and Extension of the 'optim' Function
-WWW=		https://cran.r-project.org/web/packages/optimx/
+WWW=		https://cran.r-project.org/package=optimx
 
 LICENSE=	GPLv2
 
