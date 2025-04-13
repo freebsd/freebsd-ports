@@ -44,4 +44,8 @@ I18N_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.9.0:devel/py-babel@${PY_FLAVOR
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.4:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
 
+.if ${PYTHON_REL} >= 31200
+BUILD_DEPENDS+=	${PY_SETUPTOOLS}
+.endif
+
 .include <bsd.port.post.mk>
