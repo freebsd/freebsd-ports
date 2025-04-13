@@ -4306,3 +4306,4 @@ databases/rubygem-scenic61||2025-04-04|Has expired: Uses EOL version 6.1.X of Ra
 devel/py-blist||2025-04-04|Has expired: Abandoned project, no consumers, no modern python support
 textproc/rubygem-case_transform61||2025-04-04|Has expired: Uses EOL version 6.1.X of Rails
 lang/python-doc-pdf-letter|lang/python-doc-pdf-a4|2025-04-09|Letter-size PDF no longer provided since 3.12
+net-im/py-punjab||2025-04-13|Has expired: Abandoned project, not compatible with decent python/twisted
