@@ -1,5 +1,5 @@
 PORTNAME=	django-mptt
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj50-
@@ -16,7 +16,7 @@ DEPRECATED=	Extended support of Django 5.0 ends April 2025, upgrade to the Djang
 EXPIRATION_DATE=2025-05-31
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django50>=3.2:www/py-django50@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django50>=4.2:www/py-django50@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-django-js-asset>0:www/py-dj50-django-js-asset@${PY_FLAVOR}
 
 USES=		python:3.10+
