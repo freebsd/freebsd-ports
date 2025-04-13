@@ -5,7 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Shippable application packaging
-WWW=		https://axodotdev.github.io/cargo-dist/
+WWW=		https://github.com/astral-sh/cargo-dist
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
