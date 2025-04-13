@@ -11,6 +11,9 @@ WWW=		https://github.com/core-api/python-client
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Upstream archived the repository. Please use devel/py-openapi-core instead
+EXPIRATION_DATE=2025-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coreschema>0:devel/py-coreschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}itypes>0:devel/py-itypes@${PY_FLAVOR} \
