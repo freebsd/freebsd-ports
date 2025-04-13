@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libshumate-1.0.so:x11-toolkits/libshumate
 
-USES=		cargo gettext gnome gstreamer meson pkgconfig sqlite ssl
+USES=		cargo desktop-file-utils gettext gnome gstreamer meson pkgconfig sqlite ssl
 USE_GITLAB=	yes
 USE_GNOME=	gdkpixbuf gtk40 libadwaita
 USE_GSTREAMER=	good libav soup vorbis
