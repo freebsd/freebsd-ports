@@ -1,17 +1,13 @@
 PORTNAME=	shortwave
-DISTVERSION=	3.2.0
-PORTREVISION=	24
+DISTVERSION=	5.0.0
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Listen to internet radio
 WWW=		https://gitlab.gnome.org/World/Shortwave
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.md
-
-DEPRECATED=	fails to build with rust 1.86.0
-EXPIRATION_DATE=2025-04-30
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libshumate-1.0.so:x11-toolkits/libshumate
@@ -35,14 +31,8 @@ OPTIONS_DEFAULT=PULSEAUDIO
 PULSEAUDIO_USE=	GSTREAMER=pulse
 
 post-patch:
-	@${REINPLACE_CMD} -e '/dependency.*openssl/d' \
-		-e '/gstreamer.*bad/d' \
+	@${REINPLACE_CMD} -e '/gstreamer.*bad/d' \
 		-e "/vcs_tag/s/=.*/= '${DISTVERSIONFULL}'/" \
 		${WRKSRC}/meson.build
-	@${REINPLACE_CMD} -e '/update_desktop_database/d' \
-		${WRKSRC}/data/meson.build
-# Make each cargo subcommand very verbose
-	@${REINPLACE_CMD} -e "/cargo_options =/s/ '--/&verbose', &verbose', &/" \
-		${WRKSRC}/src/meson.build
 
 .include <bsd.port.mk>

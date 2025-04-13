@@ -4,6 +4,7 @@ share/dbus-1/services/de.haeckerfelix.Shortwave.service
 share/icons/hicolor/scalable/apps/de.haeckerfelix.Shortwave.svg
 share/icons/hicolor/symbolic/apps/de.haeckerfelix.Shortwave-symbolic.svg
 share/locale/be/LC_MESSAGES/shortwave.mo
+share/locale/bg/LC_MESSAGES/shortwave.mo
 share/locale/ca/LC_MESSAGES/shortwave.mo
 share/locale/cs/LC_MESSAGES/shortwave.mo
 share/locale/da/LC_MESSAGES/shortwave.mo
@@ -12,13 +13,18 @@ share/locale/el/LC_MESSAGES/shortwave.mo
 share/locale/en_GB/LC_MESSAGES/shortwave.mo
 share/locale/es/LC_MESSAGES/shortwave.mo
 share/locale/eu/LC_MESSAGES/shortwave.mo
+share/locale/fa/LC_MESSAGES/shortwave.mo
 share/locale/fi/LC_MESSAGES/shortwave.mo
 share/locale/fr/LC_MESSAGES/shortwave.mo
+share/locale/fur/LC_MESSAGES/shortwave.mo
 share/locale/gl/LC_MESSAGES/shortwave.mo
 share/locale/he/LC_MESSAGES/shortwave.mo
+share/locale/hi/LC_MESSAGES/shortwave.mo
 share/locale/hr/LC_MESSAGES/shortwave.mo
 share/locale/hu/LC_MESSAGES/shortwave.mo
+share/locale/ia/LC_MESSAGES/shortwave.mo
 share/locale/id/LC_MESSAGES/shortwave.mo
+share/locale/is/LC_MESSAGES/shortwave.mo
 share/locale/it/LC_MESSAGES/shortwave.mo
 share/locale/ka/LC_MESSAGES/shortwave.mo
 share/locale/nl/LC_MESSAGES/shortwave.mo
