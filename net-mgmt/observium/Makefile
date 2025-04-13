@@ -23,7 +23,7 @@ RUN_DEPENDS=	rrdtool:databases/rrdtool \
 		snmpget:net-mgmt/net-snmp \
 		sudo:security/sudo
 
-USES=		cpe php:cli,flavors,mod python shebangfix
+USES=		cpe php:cli,flavors python shebangfix
 USE_PHP=	ctype filter gd iconv mysqli posix session snmp tokenizer xml zlib
 SHEBANG_FILES=	\
 		poller-wrapper.py \
@@ -69,12 +69,12 @@ PORTEXAMPLES=	snmp.conf.example snmpd.conf.example
 
 .if ${PORT_OPTIONS:MAPACHEMOD}
 USES+=	apache:run
-.endif
 .if !defined(PACKAGE_BUILDING)
 USES+=	php:mod
 .else
 # Package builder doesn't create php8 with module
 USES+=	php:web
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MMYSQLD}
@@ -89,8 +89,11 @@ pre-install:
 	${MKDIR} ${WRKSRC}/logs ${WRKSRC}/rrd
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${WWWDIR} ${STAGEDIR}/${PREFIX}/${APACHEETCDIR}/Includes
+.if ${PORT_OPTIONS:MAPACHEMOD}
+	${MKDIR} ${STAGEDIR}/${PREFIX}/${APACHEETCDIR}/Includes
 	${INSTALL_DATA} ${WRKDIR}/observium.conf.sample ${STAGEDIR}/${PREFIX}/${APACHEETCDIR}/Includes
+.endif
+	${MKDIR} ${STAGEDIR}/${WWWDIR}
 .for dir in ${ROOT_DIRS}
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/${dir}
 	(cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/${dir})
@@ -117,7 +120,9 @@ do-install-EXAMPLES-on:
 .endfor
 
 post-install:
+.if ${PORT_OPTIONS:MAPACHEMOD}
 	@${ECHO_CMD}  "@sample ${APACHEETCDIR}/Includes/observium.conf.sample" >> ${TMPPLIST}
+.endif
 	@${FIND} -s ${STAGEDIR}${WWWDIR} -type f '(' -name '*.orig' -or -name '*.bak' ')' -delete
 	@${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
