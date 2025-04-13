@@ -1,0 +1,12 @@
+cargo-dist solves the problem of curring releases and distributing them.
+
+Cutting releases of your apps and distributing binaries for them has a lot of
+steps, and cargo-dist is quickly growing to try to cover them all.
+
+To accomplish this, dist functionality can be broken up into two parts:
+* building (planning the release; building binaries and installers)
+* distributing (**hosting** artifacts; publishing packages; announcing releases)
+
+The build functionality can be used on its own if you just want some tarballs
+and installers, but everything really comes together when you use the
+distribution functionality too.

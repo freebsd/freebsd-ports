@@ -370,6 +370,7 @@
     SUBDIR += cargo-cache
     SUBDIR += cargo-deny
     SUBDIR += cargo-depgraph
+    SUBDIR += cargo-dist
     SUBDIR += cargo-edit
     SUBDIR += cargo-generate
     SUBDIR += cargo-hack
