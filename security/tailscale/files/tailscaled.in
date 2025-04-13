@@ -21,6 +21,14 @@
 #						Default is "daemon". See daemon(8).
 # tailscaled_exitnode_enable (bool):	Set it to YES to announce tailscaled as
 #                                       an exit node. Default is "NO".
+# tailscaled_telemetry_enable (bool):	Set it to NO to disable real-time connection
+#                                       event streaming to `log.tailscale.io` for
+#                                       privacy when using alternate control planes.
+#                                       Default is "YES" because it's necessary if
+#                                       one wants technical support from Tailscale:
+#                                       https://tailscale.com/kb/1011#opting-out-of-client-logging
+# tailscaled_args (str):		Additional arguments to pass to tailscaled
+#                                       Default is "" (empty string).
 # tailscaled_up_args (str):		Additional arguments to pass to tailscale up
 #                                       Default is "" (empty string).
 # tailscaled_tun_dev (str):	Set the name of the tun interface tailscaled creates.
@@ -37,6 +45,8 @@ load_rc_config $name
 : ${tailscaled_state_dir:="/var/db/tailscale"}
 : ${tailscaled_port:="41641"}
 : ${tailscaled_exitnode_enable:="NO"}
+: ${tailscaled_telemetry_enable:="YES"}
+: ${tailscaled_args:=""}
 : ${tailscaled_up_args:=""}
 : ${tailscaled_tun_dev:="tailscale0"}
 
@@ -78,7 +88,12 @@ tailscaled_start()
 		/sbin/ifconfig ${tailscaled_tun_dev} destroy
 	)
 
-	/usr/sbin/daemon -f ${tailscaled_syslog_output_flags} -p ${pidfile} ${procname} -port ${tailscaled_port} -tun ${tailscaled_tun_dev} -statedir ${tailscaled_state_dir}
+        if ! checkyesno tailscaled_telemetry_enable; then
+		logger -s -t tailscale "Opting out of client logging telemetry."
+		tailscaled_args=" --no-logs-no-support ${tailscaled_args}"
+        fi
+
+	/usr/sbin/daemon -f ${tailscaled_syslog_output_flags} -p ${pidfile} ${procname} -port ${tailscaled_port} -tun ${tailscaled_tun_dev} -statedir ${tailscaled_state_dir} ${tailscaled_args}
 }
 
 tailscaled_poststart()
