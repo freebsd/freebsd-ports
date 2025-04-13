@@ -11,6 +11,9 @@ WWW=		https://github.com/core-api/python-openapi-codec
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Upstream archived the repository. Please use devel/py-openapi-core instead
+EXPIRATION_DATE=2025-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coreapi>0:devel/py-coreapi@${PY_FLAVOR}
 
 USES=		python
