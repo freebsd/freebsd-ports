@@ -1,3 +1,74 @@
+  <vuln vid="ba6361be-1887-11f0-a8ce-b42e991fc52e">
+    <topic>Mozilla -- null pointer dereference</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>133.0,2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>133.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1923767">
+	  <p>A null pointer dereference may have inadvertently
+	  occurred in `pk12util`, and specifically in the
+	  `SEC_ASN1DecodeItem_Util` function, when handling malformed
+	  or improperly formatted input files.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-11706</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-11706</url>
+    </references>
+    <dates>
+      <discovery>2024-11-26</discovery>
+      <entry>2025-04-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b65b1217-1887-11f0-a8ce-b42e991fc52e">
+    <topic>mozilla -- double free error</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>133.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.7.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>133.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1899402">
+	  <p>A double-free issue could have occurred in
+	  `sec_pkcs7_decoder_start_decrypt()` when handling an error
+	  path. Under specific conditions, the same symmetric key
+	  could have been freed twice, potentially leading to memory
+	  corruption.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-11704</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-11704</url>
+    </references>
+    <dates>
+      <discovery>2024-11-26</discovery>
+      <entry>2025-04-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ed0a052a-c5e6-11ef-a457-b42e991fc52e">
     <topic>Apache Tomcat -- RCE due to TOCTOU issue in JSP compilation</topic>
     <affects>
