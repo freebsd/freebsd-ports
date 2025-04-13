@@ -1,6 +1,5 @@
 PORTNAME=	musicpd
-PORTVERSION=	0.23.17
-PORTREVISION=	3
+PORTVERSION=	0.24.3
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -12,21 +11,22 @@ WWW=		https://www.musicpd.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
-		libfmt.so:devel/libfmt \
+LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libicudata.so:devel/icu
 
-USES=		compiler:c++17-lang localbase:ldflags meson pkgconfig \
+USES=		compiler:c++20-lang localbase:ldflags meson pkgconfig \
 		python:build tar:xz
 
 USE_RC_SUBR=	${PORTNAME}
 MESON_ARGS=	--auto-features=disabled \
 		-Dbzip2=enabled \
+		-Dchromaprint=disabled \
 		-Dhttpd=true \
 		-Dicu=enabled \
 		-Dmpcdec=disabled \
 		-Doss=enabled \
 		-Dpipe=true \
+		-Dshine=disabled \
 		-Dsyslog=enabled \
 		-Dzlib=enabled
 
@@ -55,7 +55,7 @@ OPTIONS_MULTI_FILE_FORMAT=	\
 OPTIONS_GROUP=	ACCESS PLAYBACK
 
 OPTIONS_GROUP_ACCESS=	CDPARANOIA CURL LAME NFS PLAYLISTS QOBUZ \
-			SMB SOUNDCLOUD UPNP YAJL
+			SMB UPNP
 
 OPTIONS_GROUP_PLAYBACK=	AO JACK OPENAL OPENMPT PIPEWIRE PULSEAUDIO \
 			SHOUTCAST SNDIO
@@ -71,11 +71,9 @@ PLAYLISTS_DESC=	Enable extra playlist support (wma, RSS)
 QOBUZ_DESC=	Streaming service support: Qobuz
 SIDPLAY_DESC=	Sidplay support (C64 mono and stereo files)
 SMB_DESC=	SMB network support (currently strongly discouraged)
-SOUNDCLOUD_DESC=Streaming service support: SoundCloud
 TWOLAME_DESC=	TwoLAME support (mp2)
 VORBISENC_DESC=	Ogg Vorbis encoder
 WILDMIDI_DESC=	WildMIDI support (MIDI files)
-YAJL_DESC=	JSON support via libyajl
 ZZIP_DESC=	Support for zzip archives
 
 OPTIONS_DEFAULT=CURL FFMPEG FLAC ID3TAG LAME MANPAGES OPUS \
@@ -83,7 +81,8 @@ OPTIONS_DEFAULT=CURL FFMPEG FLAC ID3TAG LAME MANPAGES OPUS \
 		WAVPACK
 
 MANPAGES_MESON_ENABLED=	documentation
-MANPAGES_BUILD_DEPENDS=	${LOCALBASE}/bin/sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
+MANPAGES_BUILD_DEPENDS=	${LOCALBASE}/bin/sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>=0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 
 # Decoder plugins
 ADPLUG_MESON_ENABLED=	adplug
@@ -193,11 +192,10 @@ ID3TAG_LIB_DEPENDS=	libid3tag.so:audio/libid3tag
 IPV6_MESON_ENABLED=	ipv6
 
 # Commercial service support
-QOBUZ_MESON_ENABLED=	qobuz
+QOBUZ_MESON_ON=		-Dqobuz=enabled -Dnlohmann_json=enabled
 QOBUZ_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
-QOBUZ_IMPLIES=		CURL YAJL
-SOUNDCLOUD_MESON_ENABLED=	soundcloud
-SOUNDCLOUD_IMPLIES=	CURL YAJL
+QOBUZ_BUILD_DEPENDS=	${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json
+QOBUZ_IMPLIES=		CURL
 
 # Misc library support
 AVAHI_MESON_ON=		-Dzeroconf=avahi
@@ -206,8 +204,6 @@ MDNSRESPONDER_MESON_ON=		-Dzeroconf=bonjour
 MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 UPNP_MESON_ON=		-Dupnp=npupnp
 UPNP_LIB_DEPENDS=	libnpupnp.so:net/libnpupnp
-YAJL_MESON_ENABLED=	yajl
-YAJL_LIB_DEPENDS=	libyajl.so:devel/yajl
 
 MPDUSER?=	mpd
 MPDGROUP?=	mpd
