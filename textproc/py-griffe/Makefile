@@ -1,5 +1,5 @@
 PORTNAME=	griffe
-DISTVERSION=	1.7.0
+DISTVERSION=	1.7.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.17.3:devel/py-jsonschema@${PY
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.3,1:devel/py-pytest-xdist@${PY_FLAVOR} \
 		git:devel/git
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 TEST_ARGS=	-n ${MAKE_JOBS_NUMBER}
