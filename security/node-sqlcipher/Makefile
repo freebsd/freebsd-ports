@@ -4,7 +4,7 @@ CATEGORIES=	security
 MASTER_SITES=	https://github.com/signalapp/node-sqlcipher/archive/refs/tags/v${DISTVERSION}/:sqlcipher \
 		LOCAL/mikael/signal-desktop/:npm
 DISTFILES=	node-sqlcipher-${DISTVERSION}.tar.gz:sqlcipher \
-		node-sqlcipher-${DISTVERSION}-npm-cache.tar.gz:npm \
+		node-sqlcipher-${DISTVERSION}-npm-cache.tar.gz:npm
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Fast N-API-based Node.js addon wrapping sqlcipher and FTS5 segmenting APIs
@@ -12,6 +12,8 @@ WWW=		https://github.com/signalapp/node-sqlcipher
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsignal_sqlcipher_extension.a:devel/signal-sqlcipher-extension \
 		npm:www/npm${NODEJS_SUFFIX}
