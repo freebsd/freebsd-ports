@@ -1,18 +1,20 @@
 include/quill/Backend.h
 include/quill/BackendTscClock.h
 include/quill/CsvWriter.h
+include/quill/DeferredFormatCodec.h
+include/quill/DirectFormatCodec.h
 include/quill/Frontend.h
 include/quill/LogMacros.h
 include/quill/Logger.h
 include/quill/StopWatch.h
 include/quill/StringRef.h
-include/quill/TriviallyCopyableCodec.h
 include/quill/UserClockSource.h
 include/quill/Utility.h
 include/quill/backend/BackendManager.h
 include/quill/backend/BackendOptions.h
 include/quill/backend/BackendUtilities.h
 include/quill/backend/BackendWorker.h
+include/quill/backend/BackendWorkerLock.h
 include/quill/backend/BacktraceStorage.h
 include/quill/backend/ManualBackendWorker.h
 include/quill/backend/PatternFormatter.h
@@ -39,6 +41,7 @@ include/quill/bundled/fmt/std.h
 include/quill/bundled/fmt/xchar.h
 include/quill/core/Attributes.h
 include/quill/core/BoundedSPSCQueue.h
+include/quill/core/ChronoTimeUtils.h
 include/quill/core/Codec.h
 include/quill/core/Common.h
 include/quill/core/DynamicFormatArgStore.h
@@ -59,6 +62,7 @@ include/quill/core/ThreadContextManager.h
 include/quill/core/TimeUtilities.h
 include/quill/core/UnboundedSPSCQueue.h
 include/quill/filters/Filter.h
+include/quill/sinks/AndroidSink.h
 include/quill/sinks/ConsoleSink.h
 include/quill/sinks/FileSink.h
 include/quill/sinks/JsonSink.h
@@ -68,6 +72,8 @@ include/quill/sinks/RotatingJsonFileSink.h
 include/quill/sinks/RotatingSink.h
 include/quill/sinks/Sink.h
 include/quill/sinks/StreamSink.h
+include/quill/sinks/SyslogSink.h
+include/quill/sinks/SystemdSink.h
 include/quill/std/Array.h
 include/quill/std/Chrono.h
 include/quill/std/Deque.h
@@ -86,4 +92,4 @@ include/quill/std/WideString.h
 lib/cmake/quill/quill-config-version.cmake
 lib/cmake/quill/quill-config.cmake
 lib/cmake/quill/quill-targets.cmake
-pkgconfig/quill.pc
+libdata/pkgconfig/quill.pc
