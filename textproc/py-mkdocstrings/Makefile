@@ -1,5 +1,5 @@
 PORTNAME=	mkdocstrings
-DISTVERSION=	0.29.0
+DISTVERSION=	0.29.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,11 +19,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.11.1:devel/py-Jinja2@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}mkdocs-autorefs>=1.4:textproc/py-mkdocs-autorefs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs-get-deps>=0.2:textproc/py-mkdocs-get-deps@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymdown-extensions>=6.3:textproc/py-pymdown-extensions@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs-material>0:textproc/py-mkdocs-material@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dirty-equals>0:devel/py-dirty-equals@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mkdocs-material>0:textproc/py-mkdocs-material@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>0:textproc/py-mkdocstrings-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 # Skip "test_sphinx_load_mkdocstrings_inventory_file" as it requires
 # mkdocs-gen-files (not in Ports tree, yet).
@@ -50,8 +51,7 @@ PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>=0.16.2:textproc/
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.6:devel/py-importlib-metadata@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.1:devel/py-typing-extensions@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.6:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
 
 # Prevent packaging of the Mypy cache folder
