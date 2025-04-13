@@ -23,4 +23,6 @@ PORTSCOUT=	ignore:1
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	py*-wheel
+
 .include <bsd.port.mk>
