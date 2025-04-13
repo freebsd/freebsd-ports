@@ -1,7 +1,6 @@
 PORTNAME=	outcome
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.11
-PORTREVISION=	1
+DISTVERSION=	2.2.12
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,5 +35,7 @@ PORTSCOUT=	limit:^.*[0-9]\.[0-9].*
 pre-configure:
 	${FIND} ${WRKDIR} \( -name \*.hpp -o -name \*.h \) -exec ${REINPLACE_CMD} -e 's,@progbits,%progbits,' {} +
 .endif
+
+# tests as of 2.2.12: 100% tests passed, 0 tests failed out of 4
 
 .include <bsd.port.post.mk>
