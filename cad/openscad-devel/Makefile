@@ -19,10 +19,12 @@ BUILD_DEPENDS=	cgal>0:math/cgal \
 		evdev-proto>0:devel/evdev-proto \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
+#libqscintilla2_qt5.so:devel/qscintilla2@qt5 \
+
 LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libhidapi.so:comms/hidapi \
 		libboost_regex.so:devel/boost-libs \
-		libqscintilla2_qt5.so:devel/qscintilla2@qt5 \
+		libqscintilla2_qt6.so:devel/qscintilla2@qt6 \
 		libopencsg.so:graphics/opencsg \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
@@ -34,12 +36,13 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 
 CONFLICTS=	openscad
 
-USES=		bison cmake compiler:c++14-lang cpe desktop-file-utils eigen:3 gettext \
-		gl gnome pkgconfig python qt:5 shared-mime-info xorg
+USES=		bison cmake compiler:c++17-lang cpe desktop-file-utils eigen:3 gettext \
+		gl gnome pkgconfig python qt:6 shared-mime-info xorg
 USE_GITHUB=	yes
 USE_GL=		gl glu glew
 USE_GNOME=	cairo glib20 libxml2
-USE_QT=		buildtools:build core concurrent:build dbus gui multimedia qmake svg widgets
+#USE_QT=		buildtools:build core concurrent:build dbus gui multimedia qmake svg widgets
+USE_QT=		base 5compat multimedia svg tools
 USE_XORG=	x11
 GH_ACCOUNT=	microsoft:mimalloc elalish:manifold arsenm:sanitizerscmake \
 		openscad:opencsg AngusJohnson:clipper2
@@ -57,6 +60,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-Wl,--as-needed -L${LOCALBASE}/lib
 #CMAKE_OFF=	USE_GLAD:BOOL=OFF
 #CMAKE_ON=	USE_GLEW:BOOL=ON
+CMAKE_ARGS+=	-DUSE_QT6="ON" -DUSE_MIMALLOC="OFF" -DENABLE_CGAL="ON" -DUSE_BUILTIN_OPENCSG="ON" -DENABLE_GLX="ON" -DCMAKE_BUILD_TYPE=Debug
 
 .include "Makefile.git_rev"
 
