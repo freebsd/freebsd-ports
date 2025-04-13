@@ -104,10 +104,6 @@ post-extract:
 
 	${ELFCTL} -e +noaslr ${WRKDIR}/bootstrap_sdk/dotnet
 
-post-patch:
-	${REINPLACE_CMD} -e 's|linux-${DOTNET_ARCH}|freebsd-${DOTNET_ARCH}|g' \
-		${WRKDIR}/bootstrap_sdk/sdk/${BOOTSTRAP_SDKVERSION}/Microsoft.NETCoreSdk.BundledVersions.props
-
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${DOTNET_ENV} ./build.sh \
 		--release-manifest release.json \
