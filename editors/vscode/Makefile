@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.98.2
-PORTREVISION=	3
+DISTVERSION=	1.99.2
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
@@ -70,7 +69,7 @@ USES=		desktop-file-utils gl gmake gnome iconv:wchar_t jpeg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	ddc367ed5c8936efe395cffeec279b04ffd7db78
+SOURCE_COMMIT_HASH=	4949701c880d4bdb949e3c0e6b400288da7f474b
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -95,6 +94,7 @@ MAKE_ENV+=	PLAYWRIGHT_BROWSERS_PATH=${WRKDIR}/pw-browsers \
 # Don't create __pycache__ directory when executing node-gyp
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
+TEST_ENV=	${MAKE_ENV:C/TMPDIR=.*//}
 
 NODEJS_DIR=	${.CURDIR:H:H}/www/node20
 .include "${NODEJS_DIR}/Makefile.version"
@@ -275,7 +275,7 @@ pre-test:
 do-test:
 # Note: Xvfb or something similar is necessary for headless testing
 # unit tests
-	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ./scripts/test.sh || ${TRUE}
+	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ./scripts/test.sh --build || ${TRUE}
 # UI smoke tests
 	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} yarn smoketest
 

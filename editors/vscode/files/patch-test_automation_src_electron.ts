@@ -1,5 +1,14 @@
---- test/automation/src/electron.ts.orig	2023-10-03 13:06:11 UTC
+--- test/automation/src/electron.ts.orig	2025-04-09 23:39:47 UTC
 +++ test/automation/src/electron.ts
+@@ -41,7 +41,7 @@ export async function resolveElectronConfiguration(opt
+ 		args.push('--verbose');
+ 	}
+ 
+-	if (process.platform === 'linux') {
++	if (process.platform === 'linux' || process.platform === 'freebsd') {
+ 		// --disable-dev-shm-usage: when run on docker containers where size of /dev/shm
+ 		// partition < 64MB which causes OOM failure for chromium compositor that uses
+ 		// this partition for shared memory.
 @@ -103,7 +103,7 @@ export function getDevElectronPath(): string {
  	switch (process.platform) {
  		case 'darwin':
