@@ -115,7 +115,7 @@ share/applications/fotocx.desktop
 %%DATADIR%%/data/patterns/wet-turquoise.jpg
 %%DATADIR%%/data/patterns/wood.jpg
 %%DATADIR%%/data/plugins_H
-%%DATADIR%%/data/raw_commands_H
+%%DATADIR%%/data/raw_commands_I
 %%DATADIR%%/data/slideshow-tone.oga
 %%DATADIR%%/data/tags_defined
 %%DATADIR%%/data/userguide
@@ -141,7 +141,7 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/amplify-contrast.png
 %%DATADIR%%/images/amplify-contrast2.jpg
 %%DATADIR%%/images/anti-alias.png
-%%DATADIR%%/images/area-blend.png
+%%DATADIR%%/images/area-blend.jpg
 %%DATADIR%%/images/area-blend2.jpg
 %%DATADIR%%/images/area-rescale.png
 %%DATADIR%%/images/area-rescale2.png
