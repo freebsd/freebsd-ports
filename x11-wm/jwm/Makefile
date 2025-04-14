@@ -1,6 +1,5 @@
 PORTNAME=	jwm
-PORTVERSION=	2.4.3
-PORTREVISION=	2
+PORTVERSION=	2.4.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/joewing/jwm/releases/download/v${PORTVERSION}/
 
