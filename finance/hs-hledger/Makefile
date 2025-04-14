@@ -1,5 +1,5 @@
 PORTNAME=	hledger
-DISTVERSION=	1.41
+DISTVERSION=	1.42.1
 CATEGORIES=	finance haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,64 +15,66 @@ USE_LOCALE=	en_US.UTF-8
 USE_CABAL=	Decimal-0.5.2 \
 		Diff-1.0.2 \
 		Glob-0.10.2_3 \
-		OneTuple-0.4.2 \
+		OneTuple-0.4.2_1 \
 		Only-0.1_2 \
-		QuickCheck-2.15.0.1 \
+		QuickCheck-2.15.0.1_1 \
 		StateVar-1.2.2 \
-		aeson-2.2.3.0_2 \
+		aeson-2.2.3.0_3 \
 		aeson-pretty-0.8.10 \
 		ansi-terminal-1.1.2 \
 		ansi-terminal-types-1.1 \
-		assoc-1.1.1 \
-		attoparsec-0.14.4_5 \
+		assoc-1.1.1_1 \
+		attoparsec-0.14.4_6 \
 		attoparsec-aeson-2.2.2.0 \
 		base-compat-0.14.1 \
 		base-orphans-0.9.3 \
-		bifunctors-5.6.2_1 \
+		bifunctors-5.6.2_2 \
 		blaze-builder-0.4.2.3 \
 		blaze-html-0.9.2.0_1 \
 		blaze-markup-0.8.3.0_2 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
-		cassava-0.5.3.2 \
+		cassava-0.5.3.2_1 \
 		cassava-megaparsec-2.1.1 \
 		character-ps-0.1 \
 		clock-0.8.4 \
 		cmdargs-0.10.22 \
 		colour-2.3.6 \
-		comonad-5.0.9 \
+		comonad-5.0.9_1 \
 		contravariant-1.5.5 \
 		control-monad-free-0.6.2 \
 		csv-0.1.2 \
 		data-default-0.8.0.0 \
 		data-default-class-0.2.0.0 \
-		data-fix-0.3.4 \
+		data-fix-0.3.4_1 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_2 \
 		doclayout-0.5 \
 		emojis-0.1.4.1 \
+		encoding-0.10 \
+		extensible-exceptions-0.1.1.4 \
 		extra-1.8 \
 		file-embed-0.0.16.0 \
 		generically-0.1.1_4 \
 		githash-0.1.7.0 \
-		hashable-1.5.0.0 \
-		hashtables-1.4.1 \
-		hledger-lib-1.41 \
+		hashable-1.5.0.0_1 \
+		hashtables-1.4.2 \
+		hledger-lib-1.42.1 \
 		hsc2hs-0.68.10_3 \
 		html-1.0.1.2 \
-		indexed-traversable-0.1.4 \
-		indexed-traversable-instances-0.1.2 \
-		integer-conversion-0.1.1 \
-		integer-logarithms-1.0.3.1_6 \
-		lucid-2.11.20230408_2 \
+		indexed-traversable-0.1.4_1 \
+		indexed-traversable-instances-0.1.2_1 \
+		integer-conversion-0.1.1_1 \
+		integer-logarithms-1.0.4 \
+		lucid-2.11.20250303 \
 		math-functions-0.3.4.4 \
 		megaparsec-9.7.0 \
-		microlens-0.4.13.1_1 \
-		microlens-th-0.4.3.15 \
+		microlens-0.4.14.0 \
+		microlens-th-0.4.3.17 \
 		mmorph-1.2.0_3 \
-		modern-uri-0.3.6.1_2 \
+		modern-uri-0.3.6.1_3 \
 		network-uri-2.6.4.2_1 \
-		optparse-applicative-0.18.1.0 \
+		optparse-applicative-0.18.1.0_1 \
 		os-string-2.0.7 \
 		parser-combinators-1.3.0_1 \
 		pretty-simple-4.1.3.0 \
@@ -81,41 +83,43 @@ USE_CABAL=	Decimal-0.5.2 \
 		primitive-0.9.0.0_2 \
 		profunctors-5.6.2_3 \
 		quote-quot-0.2.1.0 \
-		random-1.2.1.2 \
-		reflection-2.1.9 \
-		regex-base-0.94.0.2_4 \
-		regex-tdfa-1.3.2.2_3 \
+		random-1.2.1.3 \
+		reflection-2.1.9_1 \
+		regex-base-0.94.0.3 \
+		regex-compat-0.95.2.2 \
+		regex-posix-0.96.0.2 \
+		regex-tdfa-1.3.2.3 \
 		safe-0.3.21_1 \
-		scientific-0.3.8.0_1 \
-		semialign-1.3.1_1 \
-		semigroupoids-6.0.1_1 \
+		scientific-0.3.8.0_2 \
+		semialign-1.3.1_2 \
+		semigroupoids-6.0.1_2 \
 		shakespeare-2.1.0.1 \
 		split-0.2.5 \
-		splitmix-0.1.0.5_1 \
+		splitmix-0.1.1 \
 		strict-0.5.1_1 \
 		tabular-0.2.2.8_1 \
 		tagged-0.8.9 \
-		tasty-1.5.2 \
+		tasty-1.5.3_1 \
 		tasty-hunit-0.10.2 \
 		temporary-1.3 \
-		terminal-size-0.3.4_1 \
-		text-ansi-0.3.0.1_1 \
+		terminal-size-0.3.4 \
+		text-ansi-0.3.0.1_2 \
 		text-builder-linear-0.1.3 \
-		text-iso8601-0.1.1_1 \
-		text-short-0.1.6_2 \
-		th-abstraction-0.7.1.0 \
+		text-iso8601-0.1.1_2 \
+		text-short-0.1.6_3 \
+		th-abstraction-0.7.1.0_1 \
 		th-compat-0.1.6 \
 		th-lift-0.8.6 \
-		these-1.2.1_1 \
-		time-compat-1.9.7_2 \
+		these-1.2.1_2 \
+		time-compat-1.9.8 \
 		timeit-2.0_2 \
 		transformers-compat-0.7.2 \
 		uglymemo-0.1.0.1 \
-		unordered-containers-0.2.20_3 \
+		unordered-containers-0.2.20_4 \
 		utf8-string-1.0.2 \
 		utility-ht-0.0.17.2 \
-		uuid-types-1.0.6_1 \
-		vector-0.13.2.0 \
+		uuid-types-1.0.6_2 \
+		vector-0.13.2.0_1 \
 		vector-stream-0.1.0.1_3 \
 		witherable-0.5_1 \
 		wizards-1.0.3_3
