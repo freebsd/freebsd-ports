@@ -1,6 +1,6 @@
---- config/meson.build.orig	2025-03-31 05:27:01 UTC
+--- config/meson.build.orig	2025-04-13 22:12:29 UTC
 +++ config/meson.build
-@@ -4,77 +4,23 @@ afp_conf = configure_file(
+@@ -4,79 +4,23 @@ afp_conf = configure_file(
      configuration: cdata,
  )
  
@@ -53,13 +53,15 @@
 -
 -cups_libdir = ''
 -
--if host_os in ['netbsd']
+-if get_option('with-cups-libdir-path') != ''
+-    cups_libdir = get_option('with-cups-libdir-path')
+-elif host_os in ['netbsd']
 -    cups_libdir = '/usr/pkg/libexec'
--elif host_os in ['linux']
+-else
 -    cups_libdir = '/usr/lib'
 -endif
 -
--if have_appletalk and have_cups and cups_libdir != ''
+-if have_appletalk and have_cups and get_option('with-cups-pap-backend')
 -    configure_file(
 -        input: 'pap.in',
 -        output: 'pap',

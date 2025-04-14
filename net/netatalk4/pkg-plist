@@ -42,7 +42,6 @@ include/atalk/atp.h
 include/atalk/bstrlib.h
 include/atalk/cnid.h
 include/atalk/ddp.h
-include/atalk/dictionary.h
 include/atalk/ea.h
 include/atalk/globals.h
 include/atalk/hash.h
