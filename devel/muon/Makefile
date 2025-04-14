@@ -1,5 +1,5 @@
 PORTNAME=	muon
-DISTVERSION=	0.3.1
+DISTVERSION=	0.4.0
 CATEGORIES=	devel
 MASTER_SITES=	https://git.sr.ht/~lattis/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 do-configure:
 	@(cd ${WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${SH} bootstrap.sh . && \
-		${SETENV} ${CONFIGURE_ENV} ./muon setup \
+		${SETENV} ${CONFIGURE_ENV} ./muon-bootstrap setup \
 			-Dlibcurl=disabled \
 			-Dlibarchive=disabled \
 			-Dtracy=disabled \
