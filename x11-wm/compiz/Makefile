@@ -1,6 +1,6 @@
 PORTNAME=	compiz
-PORTVERSION=	0.8.8
-PORTREVISION=	17
+DISTVERSION=	0.8.8
+PORTREVISION=	18
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://BSDforge.com/projects/source/x11-wm/compiz/
 
@@ -14,7 +14,8 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING.GPL
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LGPL
 LICENSE_FILE_MIT=	${WRKSRC}/COPYING.MIT
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+LIB_DEPENDS=	libatk-1.0.so:accessibility/at-spi2-core \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgtop-2.0.so:devel/libgtop \
 		libpng.so:graphics/png \
@@ -28,7 +29,7 @@ RUN_DEPENDS_i386=	nvidia-settings:x11/nvidia-settings
 USES=		gettext-runtime gettext-tools gl gmake gnome libtool localbase \
 		pathfix tar:bzip2 xorg xorg-cat:app
 USE_GL=		gl glu
-USE_GNOME=	cairo intltool libxslt
+USE_GNOME=	cairo gtk20 intltool libxslt pango
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xinerama xorgproto \
 		xrandr xrender
@@ -41,6 +42,7 @@ CONFIGURE_ARGS=	--disable-gconf \
 		--disable-kde \
 		--disable-kde4 \
 		--disable-metacity
+
 INSTALL_TARGET=	install-strip
 
 DESKTOP_ENTRIES=	"Compiz Manager" \
