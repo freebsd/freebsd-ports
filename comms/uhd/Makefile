@@ -1,7 +1,6 @@
 PORTNAME=	uhd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.0.0
-PORTREVISION=	3
+DISTVERSION=	4.8.0.0
 CATEGORIES=	comms hamradio
 DIST_SUBDIR=	${PORTNAME}
 
@@ -16,14 +15,16 @@ WWW=		https://www.ettus.com/sdr-software/uhd-usrp-hardware-driver/
 # is understood and if appropriate, we can add that license here.
 LICENSE=	GPLv3
 
-BROKEN=		fails to build with Boost>=1.87
-
 LIB_DEPENDS=	${PY_BOOST} \
 		libboost_system.so:devel/boost-libs
-BUILD_DEPENDS=	orcc:devel/orc \
+BUILD_DEPENDS=	flatc:devel/flatbuffers \
+		orcc:devel/orc \
 		cheetah-analyze:devel/py-cheetah3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		rst2html:textproc/py-docutils@${PY_FLAVOR} \
+		${PYNUMPY} \
+		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0:devel/py-ruamel.yaml@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang cmake ncurses pkgconfig \
@@ -31,8 +32,6 @@ USES=		compiler:c++14-lang cmake ncurses pkgconfig \
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	EttusResearch
-
-CONFLICTS=	usrp
 
 BROKEN_FreeBSD_13_aarch64=	fails to configure: Could not find standard set_new_handler function
 BROKEN_FreeBSD_13_armv6=	fails to configure: Could not find standard set_new_handler function
@@ -62,15 +61,21 @@ DOXYGEN_CMAKE_OFF=	-DENABLE_DOXYGEN:STRING="OFF" \
 			-DENABLE_MANUAL:STRING="OFF"
 DOXYGEN_PORTDOCS=	doxygen
 
+#
+# XXX N.B. uhd compile will fail if the generated flatbuffers
+# files are out of date with current version of flatbuffers.
+# There is likely a better way of doing this, but this works.
+pre-configure:
+.for f in cal_metadata.fbs iq_cal.fbs dsa_cal.fbs pwr_cal.fbs
+	(cd ${WRKSRC}/host/include/uhd/cal;flatc --cpp ${f})
+.endfor
+
 do-install:
 # install host component
 # hack the install prefix now
 	@${REINPLACE_CMD} -e 's|"${LOCALBASE}"|"${STAGEDIR}${PREFIX}"|g' \
 		${CONFIGURE_WRKSRC}/cmake_install.cmake
 	cd ${CONFIGURE_WRKSRC} && ${MAKE_CMD} install
-#.for subdir in images
-#	${CP} -Rp ${WRKDIR}/uhd-ef1576780bc927b8611640091b15f3d051cb97ad/share/uhd/${subdir} ${STAGEDIR}${DATADIR}
-#.endfor
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/utils/b2xx_fx3_utils
