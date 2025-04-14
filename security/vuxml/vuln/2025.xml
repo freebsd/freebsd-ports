@@ -1,3 +1,32 @@
+  <vuln vid="e9b8e519-0d50-11f0-86d8-901b0e934d69">
+    <topic>py-matrix-synapse -- federation denial of service via malformed events</topic>
+    <affects>
+      <package>
+	<name>py38-matrix-synapse</name>
+	<name>py39-matrix-synapse</name>
+	<name>py310-matrix-synapse</name>
+	<name>py311-matrix-synapse</name>
+	<range><lt>1.127.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>element-hq/synapse developers report:</p>
+	<blockquote cite="https://github.com/element-hq/synapse/security/advisories/GHSA-v56r-hwv5-mxg6">
+	  <p>A malicious server can craft events which, when received, prevent Synapse version up to 1.127.0 from federating with other servers. The vulnerability has been exploited in the wild.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-30355</cvename>
+      <url>https://github.com/element-hq/synapse/security/advisories/GHSA-v56r-hwv5-mxg6</url>
+    </references>
+    <dates>
+      <discovery>2025-03-26</discovery>
+      <entry>2025-03-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="45276ea6-1653-4240-9986-ccfc6fec7ece">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
