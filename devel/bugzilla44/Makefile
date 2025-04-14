@@ -1,8 +1,8 @@
 PORTNAME=	bugzilla
 PORTVERSION=	4.4.13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
-MASTER_SITES=	MOZILLA/webtools MOZILLA/webtools/archived
+MASTER_SITES=	MOZILLA/webtools/bugzilla/4.4-branch
 
 MAINTAINER=	bz-ports@FreeBSD.org
 COMMENT=	Bug-tracking system developed by Mozilla Project
@@ -10,6 +10,9 @@ WWW=		https://www.bugzilla.org/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=		Upstream support ended 20250103
+EXPIRATION_DATE=	2025-06-14
 
 # see Bugzilla/Install/Requirements.pm
 # PR 194782: silence Module::Pluggable deprecated warnings
