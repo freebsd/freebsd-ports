@@ -38,6 +38,7 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/examples/Advanced/assert.scad
 %%DATADIR%%/examples/Advanced/children.scad
 %%DATADIR%%/examples/Advanced/children_indexed.scad
+%%DATADIR%%/examples/Advanced/example-dir.json
 %%DATADIR%%/examples/Advanced/module_recursion.scad
 %%DATADIR%%/examples/Advanced/offset.scad
 %%DATADIR%%/examples/Advanced/surface_image.png
@@ -45,6 +46,7 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/examples/Basics/CSG-modules.scad
 %%DATADIR%%/examples/Basics/CSG.scad
 %%DATADIR%%/examples/Basics/LetterBlock.scad
+%%DATADIR%%/examples/Basics/example-dir.json
 %%DATADIR%%/examples/Basics/hull.scad
 %%DATADIR%%/examples/Basics/linear_extrude.scad
 %%DATADIR%%/examples/Basics/logo.scad
@@ -56,6 +58,7 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/examples/Basics/text_on_cube.scad
 %%DATADIR%%/examples/COPYING-CC0.txt
 %%DATADIR%%/examples/Functions/echo.scad
+%%DATADIR%%/examples/Functions/example-dir.json
 %%DATADIR%%/examples/Functions/functions.scad
 %%DATADIR%%/examples/Functions/list_comprehensions.scad
 %%DATADIR%%/examples/Functions/polygon_areas.scad
@@ -93,9 +96,9 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/examples/Old/example024.scad
 %%DATADIR%%/examples/Parametric/candleStand.json
 %%DATADIR%%/examples/Parametric/candleStand.scad
+%%DATADIR%%/examples/Parametric/example-dir.json
 %%DATADIR%%/examples/Parametric/sign.json
 %%DATADIR%%/examples/Parametric/sign.scad
-%%DATADIR%%/examples/examples.json
 %%DATADIR%%/fonts/05-osx-fonts.conf
 %%DATADIR%%/fonts/10-liberation.conf
 %%DATADIR%%/fonts/Liberation-2.00.1/AUTHORS
@@ -180,8 +183,9 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/locale/zh_TW/LC_MESSAGES/openscad.mo
 %%DATADIR%%/shaders/MouseSelector.frag
 %%DATADIR%%/shaders/MouseSelector.vert
-%%DATADIR%%/shaders/Preview.frag
-%%DATADIR%%/shaders/Preview.vert
+%%DATADIR%%/shaders/OpenCSG.vert
+%%DATADIR%%/shaders/ViewEdges.frag
+%%DATADIR%%/shaders/ViewEdges.vert
 %%DATADIR%%/templates/CC0.json
 %%DATADIR%%/templates/difference.json
 %%DATADIR%%/templates/for.json

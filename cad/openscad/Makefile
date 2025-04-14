@@ -1,6 +1,6 @@
 PORTNAME=	openscad
-PORTVERSION=	2024.10.11
-PORTREVISION=	6
+PORTVERSION=	${GIT_SRC_DATE}
+#PORTREVISION=	1
 CATEGORIES=	cad
 
 #PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -16,12 +16,12 @@ WWW=		https://www.openscad.org/
 BUILD_DEPENDS=	cgal>0:math/cgal \
 		evdev-proto>0:devel/evdev-proto \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
-		${LOCALBASE}/include/clipper2/clipper.h:cad/Clipper2 \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
+
 LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libhidapi.so:comms/hidapi \
 		libboost_regex.so:devel/boost-libs \
-		libqscintilla2_qt5.so:devel/qscintilla2@qt5 \
+		libqscintilla2_qt6.so:devel/qscintilla2@qt6 \
 		libopencsg.so:graphics/opencsg \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
@@ -33,24 +33,30 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 
 CONFLICTS=	openscad-devel
 
-USES=		bison cmake compiler:c++14-lang cpe desktop-file-utils eigen:3 gettext \
-		gl gnome pkgconfig python qt:5 shared-mime-info xorg
+USES=		bison cmake compiler:c++17-lang cpe desktop-file-utils eigen:3 gettext \
+		gl gnome pkgconfig python qt:6 shared-mime-info xorg
 USE_GITHUB=	yes
 USE_GL=		gl glu glew
 USE_GNOME=	cairo glib20 libxml2
-USE_QT=		buildtools:build core concurrent:build dbus gui multimedia qmake svg widgets
+USE_QT=		base 5compat multimedia svg tools
 USE_XORG=	x11
-GH_ACCOUNT=	microsoft:mimalloc elalish:manifold arsenm:sanitizerscmake openscad:opencsg
-GH_PROJECT=	MCAD:mcad mimalloc:mimalloc manifold:manifold sanitizers-cmake:sanitizerscmake OpenCSG:opencsg
-GH_TAGNAME=	19a4d67 bd0a7ba3f042bfbced5ca1894b236cea08904e26:mcad \
-		fe61be8:mimalloc 22c6605:manifold c3dc841:sanitizerscmake 059a173:opencsg
+GH_ACCOUNT=	microsoft:mimalloc elalish:manifold arsenm:sanitizerscmake \
+		openscad:opencsg AngusJohnson:clipper2
+GH_PROJECT=	MCAD:mcad mimalloc:mimalloc manifold:manifold sanitizers-cmake:sanitizerscmake \
+		OpenCSG:opencsg Clipper2:clipper2
+GH_TAGNAME=	${GIT_SRC_HASH} ${GIT_MCAD_HASH}:mcad \
+		${GIT_CLIPPER2_HASH}:clipper2 ${GIT_OPENCSG_HASH}:opencsg \
+		${GIT_MANIFOLD_HASH}:manifold ${GIT_MIMALLOC_HASH}:mimalloc \
+		${GIT_SANITIZERSCMAKE_HASH}:sanitizerscmake
 GH_SUBDIR=	libraries/MCAD:mcad submodules/mimalloc:mimalloc submodules/manifold:manifold \
-		submodules/sanitizers-cmake:sanitizerscmake submodules/OpenCSG:opencsg
+		submodules/sanitizers-cmake:sanitizerscmake submodules/OpenCSG:opencsg \
+		submodules/Clipper2:clipper2
 # Avoid overlinking: kvm, procstat, boost(thread, system), Qt5(concurrent, network, printsupport)
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-Wl,--as-needed -L${LOCALBASE}/lib
-#CMAKE_ON=	USE_GLAD
-#CMAKE_OFF=	USE_GLEW
+CMAKE_ARGS+=	-DUSE_QT6="ON" -DUSE_MIMALLOC="OFF" -DENABLE_CGAL="ON" -DUSE_BUILTIN_OPENCSG="ON" -DENABLE_GLX="ON" -DCMAKE_BUILD_TYPE=Debug
+
+.include "Makefile.git_rev"
 
 .include <bsd.port.pre.mk>
 
