@@ -5,6 +5,7 @@ include/libnova/angular_separation.h
 include/libnova/apparent_position.h
 include/libnova/asteroid.h
 include/libnova/comet.h
+include/libnova/constellation.h
 include/libnova/dynamical_time.h
 include/libnova/earth.h
 include/libnova/elliptic_motion.h
@@ -34,7 +35,7 @@ include/libnova/uranus.h
 include/libnova/utility.h
 include/libnova/venus.h
 include/libnova/vsop87.h
-lib/libnova-0.15.so.0
-lib/libnova-0.15.so.0.0.0
+lib/libnova-%%SOVERSION%%.so.0
+lib/libnova-%%SOVERSION%%.so.0.0.0
 lib/libnova.a
 lib/libnova.so

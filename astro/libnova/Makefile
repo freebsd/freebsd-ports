@@ -1,24 +1,28 @@
 PORTNAME=	libnova
-PORTVERSION=	0.15.0
-PORTREVISION=	1
+DISTVERSION=	0.16.0
 CATEGORIES=	astro
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v%20${PORTVERSION}
+MASTER_SITES=	https://sourceforge.net/code-snapshots/git/l/li/${PORTNAME}/${PORTNAME}.git/
+DISTNAME=	${PORTNAME}-${PORTNAME}-${GIT_HASH}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alster@vinterdalen.se
 COMMENT=	Astronomical Calculation Library
 WWW=		https://libnova.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf libtool
-GNU_CONFIGURE=	yes
+USES=		autoreconf libtool zip
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
 INSTALL_TARGET=	install-strip
 
-PIE_UNSAFE=	yes
+PLIST_SUB=	SOVERSION=${DISTVERSION:R}
+
+GIT_HASH=	edbf65abe27ef1a2520eb9e839daaf58f15a6941
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>

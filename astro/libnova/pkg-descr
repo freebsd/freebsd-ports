@@ -1,3 +1,7 @@
-libnova is a general purpose, double precision, astronomical calculation
-library. The intended audience of libnova is C / C++ programmers, astronomers
-and anyone else interested in calculating positions of astronomical objects.
+libnova is a general purpose, double precision, Celestial Mechanics, Astrometry
+and Astrodynamics library.
+
+The intended audience of libnova is C / C++ programmers, astronomers and anyone
+else interested in calculating positions of astronomical objects or celestial
+mechanics. libnova is the calculation engine used by the Nova project and most
+importantly, is Free Software.
