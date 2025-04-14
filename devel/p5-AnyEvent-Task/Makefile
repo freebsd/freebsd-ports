@@ -5,7 +5,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bill.brinzer@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Client/server-based asynchronous worker pool
 WWW=		https://metacpan.org/release/AnyEvent-Task
 

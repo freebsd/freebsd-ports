@@ -5,7 +5,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bill.brinzer@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Library for sending email
 WWW=		https://metacpan.org/release/Email-Sender
 

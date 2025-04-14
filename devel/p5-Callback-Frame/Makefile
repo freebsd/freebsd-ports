@@ -4,7 +4,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bill.brinzer@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Preserve error handlers and "local" variables across callbacks
 WWW=		https://metacpan.org/release/Callback-Frame
 

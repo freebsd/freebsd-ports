@@ -4,7 +4,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bill.brinzer@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Deferred logs and timers
 WWW=		https://metacpan.org/release/Log-Defer
 

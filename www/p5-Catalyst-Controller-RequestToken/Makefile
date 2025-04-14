@@ -5,7 +5,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bill.brinzer@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate and validate unique tokens across HTTP requests (anti-CSRF)
 WWW=		https://metacpan.org/release/Catalyst-Controller-RequestToken
 
