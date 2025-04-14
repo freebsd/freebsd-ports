@@ -45,7 +45,7 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_2 \
 		generically-0.1.1_4 \
-		ghc-prof-1.4.1.12 \
+		ghc-prof-1.4.1.13 \
 		gi-atk-2.0.28 \
 		gi-cairo-1.0.30 \
 		gi-freetype2-2.0.5 \
