@@ -1,26 +1,11 @@
---- CMakeLists.txt.orig	2020-02-16 18:48:02 UTC
+--- CMakeLists.txt.orig	2025-04-10 17:17:39 UTC
 +++ CMakeLists.txt
-@@ -31,6 +31,7 @@ cmake_minimum_required(VERSION 3.8)
+@@ -26,6 +26,8 @@ option(BUILD_SHARED_LIBS "Build shared libraries" ON)
  project(gnuradio CXX C)
  enable_testing()
  option(BUILD_SHARED_LIBS "Build shared libraries" ON)
 +cmake_policy(SET CMP0002 OLD)
++cmake_policy(SET CMP0148 OLD)
  
  # Make sure our local CMake Modules path comes first
- list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake/Modules)
-@@ -67,6 +68,15 @@ set(GCC_MIN_VERSION "4.8.4")
- set(CLANG_MIN_VERSION "3.4.0")
- set(APPLECLANG_MIN_VERSION "500")
- set(MSVC_MIN_VERSION "1800")
-+
-+########################################################################
-+# FreeBSD libdata vs. lib
-+#
-+if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+set(GR_PKGCONFIG_DIR      libdata${LIB_SUFFIX})
-+else()
-+set(GR_PKGCONFIG_DIR      lib${LIB_SUFFIX})
-+endif()
- 
- # Enable generation of compile_commands.json for code completion engines
- set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+ list(INSERT CMAKE_MODULE_PATH 0 ${PROJECT_SOURCE_DIR}/cmake/Modules)
