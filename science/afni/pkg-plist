@@ -94,6 +94,7 @@ bin/3dFFT
 bin/3dFWHMx
 bin/3dFriedman
 bin/3dGC.R
+bin/3dGLMM
 bin/3dGLMM.R
 bin/3dGenFeatureDist
 bin/3dGenPriors
@@ -601,6 +602,7 @@ bin/gen_ss_review_table.py
 bin/get_afni_model_PRF
 bin/get_afni_model_PRF_6
 bin/get_afni_model_PRF_6_BAD
+bin/get_afni_model_PRF_DN
 bin/gifti_tool
 bin/gtkyd_check.py
 bin/help_format
@@ -755,6 +757,7 @@ lib/afni/model_constant.so
 lib/afni/model_conv_PRF.so
 lib/afni/model_conv_PRF_6.so
 lib/afni/model_conv_PRF_6_BAD.so
+lib/afni/model_conv_PRF_DN.so
 lib/afni/model_conv_PRF_DOG.so
 lib/afni/model_conv_cosine4.so
 lib/afni/model_conv_diffgamma.so
