@@ -1,5 +1,5 @@
 PORTNAME=	limine
-DISTVERSION=	9.2.2
+DISTVERSION=	9.2.3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}-bootloader/${PORTNAME}/releases/download/v${DISTVERSION}/
 
