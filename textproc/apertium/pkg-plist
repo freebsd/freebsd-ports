@@ -205,7 +205,6 @@ share/aclocal/apertium.m4
 %%DATADIR%%/crx.dtd
 %%DATADIR%%/deformat.xsl
 %%DATADIR%%/filter-dix.xslt
-%%DATADIR%%/filter-rules.xslt
 %%DATADIR%%/format.dtd
 %%DATADIR%%/format.rnc
 %%DATADIR%%/interchunk.dtd

@@ -1,7 +1,6 @@
 PORTNAME=	apertium
-PORTVERSION=	3.9.4
-PORTREVISION=	3
 DISTVERSIONPREFIX=	v
+DISTVERSION=	3.9.12
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -28,14 +27,13 @@ USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	apertium/apertium-get/apertium-get.sh scripts/apertium-editdist \
-		scripts/apertium-filter-dix.in scripts/apertium-filter-rules.in \
+		scripts/apertium-filter-dix.in scripts/apertium-filter-rules \
 		scripts/apertium-filter-xml scripts/apertium-genvdix \
 		scripts/apertium-genvldix scripts/apertium-genvrdix \
 		scripts/apertium-metalrx scripts/apertium-metalrx-to-lrx.in \
 		scripts/apertium-translate-to-default-equivalent.in
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
