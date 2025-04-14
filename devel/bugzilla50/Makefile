@@ -1,8 +1,7 @@
 PORTNAME=	bugzilla
-PORTVERSION=	5.0.4
-PORTREVISION=	6
+PORTVERSION=	5.0.4.1
 CATEGORIES=	devel
-MASTER_SITES=	MOZILLA/webtools MOZILLA/webtools/archived
+MASTER_SITES=	MOZILLA/webtools/bugzilla/5.0-branch
 
 MAINTAINER=	bz-ports@FreeBSD.org
 COMMENT=	Bug-tracking system developed by Mozilla Project
@@ -16,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # FreeBSD PR 196060,196100: explicitly depend on textproc/p5-Text-Tabv
 RUN_DEPENDS=	\
 		p5-CGI>=3.51:www/p5-CGI \
+		p5-Class-XSAccessor>0:devel/p5-Class-XSAccessor \
 		p5-DBI>=1.614:databases/p5-DBI \
 		p5-DateTime-TimeZone>=1.64:devel/p5-DateTime-TimeZone \
 		p5-DateTime>=0.75:devel/p5-DateTime \
@@ -27,7 +27,7 @@ RUN_DEPENDS=	\
 		p5-List-MoreUtils>=0.32:lang/p5-List-MoreUtils \
 		p5-Math-Random-ISAAC>=1.001:math/p5-Math-Random-ISAAC \
 		p5-Module-Pluggable>=5.1:devel/p5-Module-Pluggable \
-		p5-Template-Toolkit>=2.24:www/p5-Template-Toolkit \
+		p5-Template-Toolkit>=3.008:www/p5-Template-Toolkit \
 		p5-Text-Tabs+Wrap>=2013.0523:textproc/p5-Text-Tabs+Wrap \
 		p5-TimeDate>=2.23:devel/p5-TimeDate \
 		p5-URI>=1.55:net/p5-URI
@@ -83,6 +83,8 @@ JSONRPC_RUN_DEPENDS=	p5-Test-Taint>=1.06:devel/p5-Test-Taint \
 			p5-JSON-RPC>=0:devel/p5-JSON-RPC
 REST_RUN_DEPENDS=	p5-Test-Taint>=1.06:devel/p5-Test-Taint \
 			p5-JSON-RPC>=0:devel/p5-JSON-RPC
+MODPERL_BROKEN=		${PORTVERSION} now requires Apache::SizeLimit, which \
+			has not yet been ported to FreeBSD
 MODPERL_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2 \
 			p5-Apache-DBI>=0:www/p5-Apache-DBI
 GRAPHVIZ_RUN_DEPENDS=	dot:graphics/graphviz
@@ -90,6 +92,8 @@ EXPORT_IMPORT_RUN_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 				p5-XML-Twig>=0:textproc/p5-XML-Twig
 LDAP_RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap
 RADIUS_RUN_DEPENDS=	p5-Authen-Radius>=0:security/p5-Authen-Radius
+SMTP_AUTH_BROKEN=	${PORTVERSION} now requires Net::SMTP, which \
+			has not yet been ported to FreeBSD
 SMTP_AUTH_RUN_DEPENDS=	p5-Authen-SASL>=2.16:security/p5-Authen-SASL
 MIME_SNIFF_RUN_DEPENDS=	p5-File-MimeInfo>=0.16:devel/p5-File-MimeInfo \
 			p5-IO-Stringy>=2.110:devel/p5-IO-Stringy
