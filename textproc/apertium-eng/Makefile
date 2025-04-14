@@ -1,7 +1,6 @@
 PORTNAME=	apertium-eng
-PORTVERSION=	0.1.0.20220212
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.0.20250406
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libcg3.so:textproc/cg3
 USES=		autoreconf gmake pathfix pkgconfig python
 USE_GITHUB=	yes
 GH_ACCOUNT=	apertium
-GH_TAGNAME=	b230738
+GH_TAGNAME=	8e62ef0
 
 GNU_CONFIGURE=	yes
 
