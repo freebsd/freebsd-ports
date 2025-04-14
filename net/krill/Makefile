@@ -1,14 +1,13 @@
 PORTNAME=	krill
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.5
-PORTREVISION=	7
+DISTVERSION=	0.14.6
 CATEGORIES=	net
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	RPKI daemon, Certificate Authority and Publication Server
 WWW=		https://github.com/NLnetLabs/krill
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
@@ -33,6 +32,8 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/krillc.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/krillup.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/krillta.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/defaults/krill.conf \
