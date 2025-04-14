@@ -45,9 +45,6 @@ setup public key authentication to `remote_host`:
     $ cat ~/.ssh/id_rsa.pub | ssh remote_host "cat >> .ssh/authorized_keys"
 
 The SSH server on `remote_host` must allow pub key authentication.
-
-## Profile
-Librewolf moved profile directory to ${HOME}/.mozilla/librewolf
 EOM
 }
 ]
