@@ -1,5 +1,5 @@
 PORTNAME=	stirling-pdf
-PORTVERSION=	0.45.4
+PORTVERSION=	0.45.5
 CATEGORIES=	deskutils java
 MASTER_SITES=	https://files.stirlingpdf.com/v${PORTVERSION}/
 DISTNAME=	Stirling-PDF-with-login
