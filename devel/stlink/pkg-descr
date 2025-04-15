@@ -1,4 +1,8 @@
- ST-Link v1 / ST-Link v2 STMicroelectronics JTAG variat support.
+Open source version of the STMicroelectronics STLINK Tools
 
- This packahe provide utilities to flash and debug STMicro microcontrollers
-via ST-Link v1 / ST-Link v2 protocols.
+ stlink is an open source toolset to program and debug STM32 devices and boards
+manufactured by STMicroelectronics.
+
+ It supports several so called STLINK programmer boards (and clones thereof)
+which use a microcontroller chip to translate commands from USB to JTAG/SWD.
+
