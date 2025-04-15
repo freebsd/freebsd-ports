@@ -71,14 +71,13 @@ PIE_UNSAFE=	yes
 
 PORTDATA=	wine.inf
 
-OPTIONS_DEFINE=	CUPS DOCS DOSBOX GNUTLS V4L WINEMAKER X11 GECKO MONO WAYLAND
+OPTIONS_DEFINE=	CUPS DOCS DOSBOX GNUTLS V4L WAYLAND X11 GECKO MONO
 OPTIONS_DEFAULT=ALSA GNUTLS X11
 OPTIONS_RADIO=	AUDIO
 OPTIONS_RADIO_AUDIO=	ALSA OSS
 OPTIONS_SUB=	yes
 
 DOSBOX_DESC=	Use DOSBox to run MS-DOS programs
-WINEMAKER_DESC=	Fully support winemaker (requires Perl)
 GECKO_DESC=	Bundle Gecko MSI package for Wine
 MONO_DESC=	Bundle Mono MSI package for Wine
 WAYLAND_DESC=	Wayland Support
@@ -114,8 +113,6 @@ V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 WAYLAND_CONFIGURE_WITH=	wayland
-
-WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:textproc/p5-XML-LibXML
 
 X11_CONFIGURE_WITH=	x fontconfig freetype opengl xinerama xinput2 xrandr xrender
 X11_USES=		gl xorg
