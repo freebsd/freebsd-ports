@@ -4,6 +4,9 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://releases.pagure.org/${PORTNAME}/
 
+PATCH_SITES=	https://gitlab.com/libosinfo/libosinfo/-/commit/
+PATCHFILES+=	0adf385.patch:-p1
+
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Library for managing OS information for virtualization
 WWW=		https://libosinfo.org/

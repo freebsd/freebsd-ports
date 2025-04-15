@@ -1,3 +1,5 @@
-TIMESTAMP = 1730400876
+TIMESTAMP = 1744728738
 SHA256 (libosinfo-1.12.0.tar.xz) = ad8557ece26793da43d26de565e3d68ce2ee6bfb8d0113b7cc7dfe07f6bfc6b6
 SIZE (libosinfo-1.12.0.tar.xz) = 307984
+SHA256 (0adf385.patch) = 523bb780a13765fd1b76e9484ecdaf11aee48ce506d01819af7b9cfee56249a8
+SIZE (0adf385.patch) = 2838
