@@ -170,7 +170,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		debugid-0.8.0 \
 		deflate-1.0.0 \
 		deranged-0.3.11 \
-		deunicode-1.6.0 \
 		digest-0.10.7 \
 		directories-next-2.0.0 \
 		dirs-4.0.0 \
