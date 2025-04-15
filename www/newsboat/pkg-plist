@@ -43,7 +43,7 @@ bin/podboat
 %%PORTDOCS%%%%DOCSDIR%%/contrib/linkding/linkding.rb
 %%PORTDOCS%%%%DOCSDIR%%/contrib/miniflux/docker-compose.yml
 %%PORTDOCS%%%%DOCSDIR%%/contrib/move_url.py
-%%PORTDOCS%%%%DOCSDIR%%/contrib/newsboat.fish
+%%PORTDOCS%%%%DOCSDIR%%/contrib/newsboat-idlefeeds.sh
 %%PORTDOCS%%%%DOCSDIR%%/contrib/newsboat_reorganize.py
 %%PORTDOCS%%%%DOCSDIR%%/contrib/pinboard.pl
 %%PORTDOCS%%%%DOCSDIR%%/contrib/readeck/README.md
@@ -59,6 +59,7 @@ bin/podboat
 %%PORTDOCS%%%%DOCSDIR%%/examples/example-exec-script.py
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/newsboat.html
+share/fish/vendor_completions.d/newsboat.fish
 share/icons/hicolor/scalable/apps/newsboat.svg
 share/locale/ca/LC_MESSAGES/newsboat.mo
 share/locale/de/LC_MESSAGES/newsboat.mo
@@ -80,3 +81,4 @@ share/locale/zh/LC_MESSAGES/newsboat.mo
 share/locale/zh_TW/LC_MESSAGES/newsboat.mo
 share/man/man1/newsboat.1.gz
 share/man/man1/podboat.1.gz
+share/zsh/site-functions/_newsboat
