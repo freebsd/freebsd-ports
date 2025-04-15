@@ -1,6 +1,6 @@
---- ui/ozone/platform/x11/x11_window.cc.orig	2025-03-09 21:38:10 UTC
+--- ui/ozone/platform/x11/x11_window.cc.orig	2025-04-15 08:30:07 UTC
 +++ ui/ozone/platform/x11/x11_window.cc
-@@ -1502,7 +1502,7 @@ void X11Window::OnXWindowStateChanged() {
+@@ -1472,7 +1472,7 @@ void X11Window::OnXWindowStateChanged() {
    WindowTiledEdges tiled_state = GetTiledState();
    if (tiled_state != tiled_state_) {
      tiled_state_ = tiled_state;

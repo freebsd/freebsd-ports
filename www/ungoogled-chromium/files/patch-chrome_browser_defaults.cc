@@ -1,6 +1,6 @@
---- chrome/browser/defaults.cc.orig	2023-10-13 13:20:35 UTC
+--- chrome/browser/defaults.cc.orig	2025-04-15 08:30:07 UTC
 +++ chrome/browser/defaults.cc
-@@ -44,7 +44,7 @@ const bool kShowHelpMenuItemIcon = true;
+@@ -31,7 +31,7 @@ const bool kAlwaysCreateTabbedBrowserOnSessionRestore 
  const bool kShowHelpMenuItemIcon = false;
  #endif
  

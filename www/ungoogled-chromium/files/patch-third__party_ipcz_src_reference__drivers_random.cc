@@ -1,20 +1,20 @@
---- third_party/ipcz/src/reference_drivers/random.cc.orig	2023-09-17 07:59:53 UTC
+--- third_party/ipcz/src/reference_drivers/random.cc.orig	2025-04-15 08:30:07 UTC
 +++ third_party/ipcz/src/reference_drivers/random.cc
-@@ -14,7 +14,7 @@
- #include <windows.h>
- #elif BUILDFLAG(IS_FUCHSIA)
- #include <zircon/syscalls.h>
--#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
- #include <asm/unistd.h>
- #include <sys/syscall.h>
- #include <unistd.h>
-@@ -86,7 +86,7 @@ void RandomBytes(absl::Span<uint8_t> destination) {
-   process_prng_fn(destination.data(), destination.size());
- #elif BUILDFLAG(IS_FUCHSIA)
-   zx_cprng_draw(destination.data(), destination.size());
--#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
-   while (!destination.empty()) {
-     ssize_t result =
-         syscall(__NR_getrandom, destination.data(), destination.size(), 0);
+@@ -55,7 +55,7 @@ decltype(&ProcessPrng) GetProcessPrng() {
+ }
+ #endif
+ 
+-#if defined(OS_POSIX) && !BUILDFLAG(IS_MAC)
++#if defined(OS_POSIX) && !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_BSD)
+ void RandomBytesFromDevUrandom(absl::Span<uint8_t> destination) {
+   static int urandom_fd = [] {
+     for (;;) {
+@@ -99,7 +99,7 @@ void RandomBytes(absl::Span<uint8_t> destination) {
+       return;
+     }
+   }
+-#elif BUILDFLAG(IS_MAC)
++#elif BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+   const bool ok = getentropy(destination.data(), destination.size()) == 0;
+   ABSL_ASSERT(ok);
+ #elif BUILDFLAG(IS_IOS)

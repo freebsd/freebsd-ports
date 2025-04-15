@@ -1,6 +1,6 @@
---- chrome/browser/ui/ui_features.cc.orig	2025-03-09 21:38:10 UTC
+--- chrome/browser/ui/ui_features.cc.orig	2025-04-15 08:30:07 UTC
 +++ chrome/browser/ui/ui_features.cc
-@@ -74,7 +74,7 @@ bool IsExtensionMenuInRootAppMenu() {
+@@ -67,7 +67,7 @@ bool IsExtensionMenuInRootAppMenu() {
    return base::FeatureList::IsEnabled(kExtensionsMenuInAppMenu);
  }
  
@@ -9,7 +9,7 @@
  // Enables the feature to remove the last confirmation dialog when relaunching
  // to update Chrome.
  BASE_FEATURE(kFewerUpdateConfirmations,
-@@ -382,7 +382,7 @@ BASE_FEATURE(kViewsJSAppModalDialog,
+@@ -333,7 +333,7 @@ BASE_FEATURE(kViewsJSAppModalDialog,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

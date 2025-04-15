@@ -1,5 +1,5 @@
---- content/browser/utility_process_host_receiver_bindings.cc.orig	2025-01-25 09:34:31 UTC
-+++ content/browser/utility_process_host_receiver_bindings.cc
+--- content/browser/service_host/utility_process_host_receiver_bindings.cc.orig	2025-04-15 08:30:07 UTC
++++ content/browser/service_host/utility_process_host_receiver_bindings.cc
 @@ -10,7 +10,7 @@
  #include "content/public/common/content_client.h"
  #include "media/media_buildflags.h"

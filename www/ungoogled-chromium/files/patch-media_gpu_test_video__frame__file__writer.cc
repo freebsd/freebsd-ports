@@ -1,6 +1,6 @@
---- media/gpu/test/video_frame_file_writer.cc.orig	2024-10-01 07:26:23 UTC
+--- media/gpu/test/video_frame_file_writer.cc.orig	2025-04-15 08:30:07 UTC
 +++ media/gpu/test/video_frame_file_writer.cc
-@@ -26,7 +26,7 @@
+@@ -25,7 +25,7 @@
  #include "testing/gtest/include/gtest/gtest.h"
  #include "ui/gfx/codec/png_codec.h"
  

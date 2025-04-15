@@ -1,4 +1,4 @@
---- components/user_education/views/help_bubble_view.cc.orig	2025-02-20 09:59:21 UTC
+--- components/user_education/views/help_bubble_view.cc.orig	2025-04-15 08:30:07 UTC
 +++ components/user_education/views/help_bubble_view.cc
 @@ -299,7 +299,7 @@ DEFINE_CLASS_ELEMENT_IDENTIFIER_VALUE(HelpBubbleView, 
  // TODO(https://crbug.com/382611284): Temporarily handle the case when the
@@ -9,7 +9,7 @@
  class HelpBubbleView::PrimaryWidgetObserver : public views::WidgetObserver {
   public:
    explicit PrimaryWidgetObserver(HelpBubbleView& help_bubble)
-@@ -772,7 +772,7 @@ HelpBubbleView::HelpBubbleView(
+@@ -774,7 +774,7 @@ HelpBubbleView::HelpBubbleView(
      event_relay_->Init(this);
    }
  

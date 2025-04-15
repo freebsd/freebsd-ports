@@ -1,4 +1,4 @@
---- chrome/browser/component_updater/widevine_cdm_component_installer.cc.orig	2025-03-09 21:38:10 UTC
+--- chrome/browser/component_updater/widevine_cdm_component_installer.cc.orig	2025-04-15 08:30:07 UTC
 +++ chrome/browser/component_updater/widevine_cdm_component_installer.cc
 @@ -41,7 +41,7 @@
  #include "third_party/widevine/cdm/buildflags.h"
@@ -27,7 +27,7 @@
  // On Linux and ChromeOS the Widevine CDM is loaded at startup before the
  // zygote is locked down. To locate the Widevine CDM at startup, a hint file
  // is used. Update the hint file with the new Widevine CDM path.
-@@ -394,7 +394,7 @@ void WidevineCdmComponentInstallerPolicy::UpdateCdmPat
+@@ -392,7 +392,7 @@ void WidevineCdmComponentInstallerPolicy::UpdateCdmPat
      return;
    }
  

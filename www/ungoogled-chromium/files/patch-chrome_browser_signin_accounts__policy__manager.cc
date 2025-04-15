@@ -1,4 +1,4 @@
---- chrome/browser/signin/accounts_policy_manager.cc.orig	2025-03-09 21:38:10 UTC
+--- chrome/browser/signin/accounts_policy_manager.cc.orig	2025-04-15 08:30:07 UTC
 +++ chrome/browser/signin/accounts_policy_manager.cc
 @@ -40,7 +40,7 @@
  #include "chrome/browser/ui/webui/profile_helper.h"
@@ -27,7 +27,7 @@
    profile_pref_change_registrar_.RemoveAll();
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
    local_state_pref_registrar_.RemoveAll();
-@@ -320,7 +320,7 @@ void AccountsPolicyManager::OnUserConfirmedProfileDele
+@@ -311,7 +311,7 @@ void AccountsPolicyManager::OnUserConfirmedProfileDele
  }
  #endif  // defined(TOOLKIT_VIEWS) && !BUILDFLAG(IS_CHROMEOS)
  

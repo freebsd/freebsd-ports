@@ -1,4 +1,4 @@
---- base/threading/platform_thread_posix.cc.orig	2025-02-20 09:59:21 UTC
+--- base/threading/platform_thread_posix.cc.orig	2025-04-15 08:30:07 UTC
 +++ base/threading/platform_thread_posix.cc
 @@ -79,11 +79,11 @@ void* ThreadFunc(void* params) {
        base::DisallowSingleton();
@@ -14,16 +14,16 @@
  #if BUILDFLAG(IS_APPLE)
      PlatformThread::SetCurrentThreadRealtimePeriodValue(
          delegate->GetRealtimePeriod());
-@@ -270,6 +270,8 @@ PlatformThreadId PlatformThreadBase::CurrentId() {
-   return reinterpret_cast<int32_t>(pthread_self());
+@@ -272,6 +272,8 @@ PlatformThreadId PlatformThreadBase::CurrentId() {
+   return PlatformThreadId(reinterpret_cast<int32_t>(pthread_self()));
  #elif BUILDFLAG(IS_POSIX) && BUILDFLAG(IS_AIX)
-   return pthread_self();
+   return PlatformThreadId(pthread_self());
 +#elif BUILDFLAG(IS_BSD)
-+  return reinterpret_cast<uint64_t>(pthread_self());
++  return PlatformThreadId(reinterpret_cast<uint64_t>(pthread_self()));
  #elif BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_AIX)
-   return reinterpret_cast<int64_t>(pthread_self());
+   return PlatformThreadId(reinterpret_cast<int64_t>(pthread_self()));
  #endif
-@@ -363,7 +365,7 @@ void PlatformThreadBase::Detach(PlatformThreadHandle t
+@@ -365,7 +367,7 @@ void PlatformThreadBase::Detach(PlatformThreadHandle t
  
  // static
  bool PlatformThreadBase::CanChangeThreadType(ThreadType from, ThreadType to) {
@@ -32,7 +32,7 @@
    return false;
  #else
    if (from >= to) {
-@@ -384,6 +386,9 @@ void SetCurrentThreadTypeImpl(ThreadType thread_type,
+@@ -386,6 +388,9 @@ void SetCurrentThreadTypeImpl(ThreadType thread_type,
                                MessagePumpType pump_type_hint) {
  #if BUILDFLAG(IS_NACL)
    NOTIMPLEMENTED();
@@ -42,7 +42,7 @@
  #else
    if (internal::SetCurrentThreadTypeForPlatform(thread_type, pump_type_hint)) {
      return;
-@@ -407,7 +412,7 @@ void SetCurrentThreadTypeImpl(ThreadType thread_type,
+@@ -409,7 +414,7 @@ void SetCurrentThreadTypeImpl(ThreadType thread_type,
  
  // static
  ThreadPriorityForTest PlatformThreadBase::GetCurrentThreadPriorityForTest() {

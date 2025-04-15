@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/unix_socket.cc.orig	2025-03-09 21:38:10 UTC
+--- third_party/perfetto/src/base/unix_socket.cc.orig	2025-04-15 08:30:07 UTC
 +++ third_party/perfetto/src/base/unix_socket.cc
 @@ -45,7 +45,7 @@
  #include <unistd.h>
@@ -9,7 +9,7 @@
  #include <sys/ucred.h>
  #endif
  
-@@ -976,9 +976,13 @@ void UnixSocket::ReadPeerCredentialsPosix() {
+@@ -977,9 +977,13 @@ void UnixSocket::ReadPeerCredentialsPosix() {
    int res = getpeereid(fd, &peer_uid_, nullptr);
    PERFETTO_CHECK(res == 0);
    // There is no pid when obtaining peer credentials for QNX

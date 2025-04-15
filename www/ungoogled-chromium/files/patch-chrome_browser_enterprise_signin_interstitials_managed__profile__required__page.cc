@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/signin/interstitials/managed_profile_required_page.cc.orig	2025-02-20 09:59:21 UTC
+--- chrome/browser/enterprise/signin/interstitials/managed_profile_required_page.cc.orig	2025-04-15 08:30:07 UTC
 +++ chrome/browser/enterprise/signin/interstitials/managed_profile_required_page.cc
-@@ -92,7 +92,7 @@ void ManagedProfileRequiredPage::CommandReceived(const
+@@ -94,7 +94,7 @@ void ManagedProfileRequiredPage::CommandReceived(const
  
    switch (cmd) {
      case security_interstitials::CMD_DONT_PROCEED:

@@ -1,4 +1,4 @@
---- remoting/host/mojo_caller_security_checker.cc.orig	2024-11-16 12:20:41 UTC
+--- remoting/host/mojo_caller_security_checker.cc.orig	2025-04-15 08:30:07 UTC
 +++ remoting/host/mojo_caller_security_checker.cc
 @@ -37,7 +37,7 @@
  namespace remoting {
@@ -7,7 +7,7 @@
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  constexpr auto kAllowedCallerProgramNames =
-     base::MakeFixedFlatSet<base::FilePath::StringPieceType>({
+     base::MakeFixedFlatSet<base::FilePath::StringViewType>({
          "remote-open-url",
 @@ -98,7 +98,7 @@ bool IsTrustedMojoEndpoint(
    return true;

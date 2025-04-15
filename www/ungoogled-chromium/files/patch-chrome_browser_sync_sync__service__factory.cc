@@ -1,6 +1,6 @@
---- chrome/browser/sync/sync_service_factory.cc.orig	2025-01-25 09:34:31 UTC
+--- chrome/browser/sync/sync_service_factory.cc.orig	2025-04-15 08:30:07 UTC
 +++ chrome/browser/sync/sync_service_factory.cc
-@@ -110,7 +110,7 @@
+@@ -108,7 +108,7 @@
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/tabs/saved_tab_groups/saved_tab_group_keyed_service.h"
  #include "chrome/browser/ui/tabs/saved_tab_groups/saved_tab_group_service_factory.h"
  #include "chrome/browser/ui/tabs/saved_tab_groups/saved_tab_group_utils.h"
-@@ -137,7 +137,7 @@ namespace {
+@@ -135,7 +135,7 @@ namespace {
  tab_groups::TabGroupSyncService* GetTabGroupSyncService(Profile* profile) {
    CHECK(profile);
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -18,7 +18,7 @@
    tab_groups::TabGroupSyncService* service =
        tab_groups::SavedTabGroupUtils::GetServiceForProfile(profile);
    CHECK(service);
-@@ -379,7 +379,7 @@ std::unique_ptr<KeyedService> BuildSyncService(
+@@ -377,7 +377,7 @@ std::unique_ptr<KeyedService> BuildSyncService(
    bool local_sync_backend_enabled = false;
    // Only check the local sync backend pref on the supported platforms of
    // Windows, Mac and Linux.
@@ -27,7 +27,7 @@
    syncer::SyncPrefs prefs(profile->GetPrefs());
    local_sync_backend_enabled = prefs.IsLocalSyncEnabled();
    base::UmaHistogramBoolean("Sync.Local.Enabled2", local_sync_backend_enabled);
-@@ -514,7 +514,7 @@ SyncServiceFactory::SyncServiceFactory()
+@@ -512,7 +512,7 @@ SyncServiceFactory::SyncServiceFactory()
    DependsOn(ProfilePasswordStoreFactory::GetInstance());
    DependsOn(PowerBookmarkServiceFactory::GetInstance());
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

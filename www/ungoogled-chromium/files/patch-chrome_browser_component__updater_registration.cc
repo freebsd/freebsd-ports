@@ -1,4 +1,4 @@
---- chrome/browser/component_updater/registration.cc.orig	2025-03-09 21:38:10 UTC
+--- chrome/browser/component_updater/registration.cc.orig	2025-04-15 08:30:07 UTC
 +++ chrome/browser/component_updater/registration.cc
 @@ -99,7 +99,7 @@
  #endif  // BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT)
@@ -18,7 +18,7 @@
  #include "chrome/browser/component_updater/wasm_tts_engine_component_installer.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -253,12 +253,12 @@ void RegisterComponentsForUpdate() {
+@@ -256,12 +256,12 @@ void RegisterComponentsForUpdate() {
    RegisterCookieReadinessListComponent(cus);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
