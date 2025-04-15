@@ -1296,12 +1296,35 @@
 	<blockquote cite="https://forum.suricata.io/t/suricata-7-0-9-released/5495">
 	  <p>Multiple vulnerabilities</p>
 	</blockquote>
-	<p>These CVEs have been reserved and no details have been yet provided.</p>
 	<ul>
-	  <li>CVE-2025-29915: Severity HIGH</li>
-	  <li>CVE-2025-29916: Severity Moderate</li>
-	  <li>CVE-2025-29917: Severity HIGH</li>
-	  <li>CVE-2025-29918: Severity HIGH</li>
+	<li>
+	CVE-2025-29915: Severity HIGH. The AF_PACKET defrag option
+	is enabled by default and allows AF_PACKET to re-assemble
+	fragmented packets before reaching Suricata. However the
+	default packet size in Suricata is based on the network
+	interface MTU which leads to Suricata seeing truncated
+	packets.
+	</li>
+	<li>
+	CVE-2025-29916: Severity Moderate. Datasets declared in
+	rules have an option to specify the `hashsize` to use.
+	This size setting isn't properly limited, so the hash
+	table allocation can be large. Untrusted rules can lead to
+	large memory allocations, potentially leading to denial of
+	service due to resource starvation
+	</li>
+	<li>
+	CVE-2025-29917: Severity HIGH. The bytes setting in the
+	decode_base64 keyword is not properly limited. Due to
+	this, signatures using the keyword and setting can cause
+	large memory allocations of up to 4 GiB per thread.
+	</li>
+	<li>
+	CVE-2025-29918: Severity HIGH. A PCRE rule can be written
+	that leads to an infinite loop when negated PCRE is used.
+	Packet processing thread becomes stuck in infinite loop
+	limiting visibility and availability in inline mode.
+	</li>
 	</ul>
 	</body>
     </description>
