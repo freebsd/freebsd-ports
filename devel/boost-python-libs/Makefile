@@ -13,7 +13,7 @@ BUILD_DEPENDS=	bjam:devel/boost-jam \
 		${PYNUMPY}
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		python:3.9-3.11  # upper bound inherited from math/py-numpy
+USES=		python
 USE_PYTHON=	flavors
 
 #LDFLAGS+=	-Wl,--as-needed
