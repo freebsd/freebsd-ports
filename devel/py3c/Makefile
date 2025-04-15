@@ -17,7 +17,7 @@ GH_ACCOUNT=	encukou
 NO_BUILD=	yes
 
 do-install:
-	@${MAKE_CMD}                              \
+	${SETENVI} ${WRK_ENV} ${MAKE_CMD}         \
 	 prefix=${PREFIX}                         \
 	 pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 	 DESTDIR=${STAGEDIR}                      \
