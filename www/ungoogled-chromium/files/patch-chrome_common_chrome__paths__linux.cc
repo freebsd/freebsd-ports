@@ -1,6 +1,6 @@
---- chrome/common/chrome_paths_linux.cc.orig	2023-10-13 13:20:35 UTC
+--- chrome/common/chrome_paths_linux.cc.orig	2025-04-15 08:30:07 UTC
 +++ chrome/common/chrome_paths_linux.cc
-@@ -94,7 +94,7 @@ bool GetDefaultUserDataDirectory(base::FilePath* resul
+@@ -93,7 +93,7 @@ bool GetDefaultUserDataDirectory(base::FilePath* resul
  #elif BUILDFLAG(GOOGLE_CHROME_BRANDING)
    std::string data_dir_basename = "google-chrome";
  #else

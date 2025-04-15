@@ -1,8 +1,8 @@
---- base/profiler/sampling_profiler_thread_token.h.orig	2024-04-23 07:42:17 UTC
+--- base/profiler/sampling_profiler_thread_token.h.orig	2025-04-15 08:30:07 UTC
 +++ base/profiler/sampling_profiler_thread_token.h
 @@ -13,7 +13,7 @@
  
- #if BUILDFLAG(IS_ANDROID)
+ #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_APPLE)
  #include <pthread.h>
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
@@ -11,7 +11,7 @@
  
 @@ -27,7 +27,7 @@ struct SamplingProfilerThreadToken {
    PlatformThreadId id;
- #if BUILDFLAG(IS_ANDROID)
+ #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_APPLE)
    pthread_t pthread_id;
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

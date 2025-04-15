@@ -1,6 +1,6 @@
---- ui/base/accelerators/accelerator.cc.orig	2025-02-20 09:59:21 UTC
+--- ui/base/accelerators/accelerator.cc.orig	2025-04-15 08:30:07 UTC
 +++ ui/base/accelerators/accelerator.cc
-@@ -335,7 +335,7 @@ std::u16string Accelerator::ApplyLongFormModifiers(
+@@ -336,7 +336,7 @@ std::u16string Accelerator::ApplyLongFormModifiers(
      result = ApplyModifierToAcceleratorString(result, IDS_APP_SEARCH_KEY);
  #elif BUILDFLAG(IS_WIN)
      result = ApplyModifierToAcceleratorString(result, IDS_APP_WINDOWS_KEY);

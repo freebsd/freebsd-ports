@@ -1,6 +1,6 @@
---- media/cdm/library_cdm/cdm_paths.gni.orig	2023-10-13 13:20:35 UTC
+--- media/cdm/library_cdm/cdm_paths.gni.orig	2025-04-15 08:30:07 UTC
 +++ media/cdm/library_cdm/cdm_paths.gni
-@@ -15,7 +15,7 @@ assert(enable_library_cdms)
+@@ -14,7 +14,7 @@ assert(enable_library_cdms)
  # Explicitly define what we use to avoid confusion.
  if (is_chromeos) {
    component_os = "cros"

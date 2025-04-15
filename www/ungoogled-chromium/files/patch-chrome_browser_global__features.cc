@@ -1,7 +1,7 @@
---- chrome/browser/global_features.cc.orig	2025-03-09 21:38:10 UTC
+--- chrome/browser/global_features.cc.orig	2025-04-15 08:30:07 UTC
 +++ chrome/browser/global_features.cc
 @@ -21,7 +21,7 @@
- #include "chrome/browser/glic/launcher/glic_background_mode_manager.h"  // nogncheck
+ #include "chrome/browser/glic/glic_profile_manager.h"  // nogncheck
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

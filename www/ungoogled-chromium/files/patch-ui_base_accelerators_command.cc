@@ -1,6 +1,6 @@
---- ui/base/accelerators/command.cc.orig	2025-03-09 21:38:10 UTC
+--- ui/base/accelerators/command.cc.orig	2025-04-15 08:30:07 UTC
 +++ ui/base/accelerators/command.cc
-@@ -49,7 +49,7 @@ std::string Command::CommandPlatform() {
+@@ -81,7 +81,7 @@ std::string Command::CommandPlatform() {
    return ui::kKeybindingPlatformMac;
  #elif BUILDFLAG(IS_CHROMEOS)
    return ui::kKeybindingPlatformChromeOs;

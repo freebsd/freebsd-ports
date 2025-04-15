@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2025-03-09 21:38:10 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2025-04-15 08:30:07 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
-@@ -222,7 +222,7 @@
+@@ -225,7 +225,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include <sys/resource.h>
  
  #include "components/services/font/public/mojom/font_service.mojom.h"  // nogncheck
-@@ -1087,7 +1087,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
+@@ -1090,7 +1090,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
  // to indicate failure and std::numeric_limits<size_t>::max() to indicate
  // unlimited.
  size_t GetPlatformProcessLimit() {
@@ -18,7 +18,7 @@
    struct rlimit limit;
    if (getrlimit(RLIMIT_NPROC, &limit) != 0)
      return kUnknownPlatformProcessLimit;
-@@ -1255,7 +1255,7 @@ RenderProcessHostImpl::IOThreadHostImpl::~IOThreadHost
+@@ -1258,7 +1258,7 @@ RenderProcessHostImpl::IOThreadHostImpl::~IOThreadHost
  
  void RenderProcessHostImpl::IOThreadHostImpl::SetPid(
      base::ProcessId child_pid) {
@@ -44,7 +44,7 @@
        switches::kDisableV8IdleTasks,
        switches::kDisableVideoCaptureUseGpuMemoryBuffer,
        switches::kDisableWebGLImageChromium,
-@@ -5233,7 +5234,7 @@ uint64_t RenderProcessHostImpl::GetPrivateMemoryFootpr
+@@ -5224,7 +5225,7 @@ uint64_t RenderProcessHostImpl::GetPrivateMemoryFootpr
    // - Win: https://crbug.com/707022 .
    uint64_t total_size = 0;
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig	2025-03-09 21:38:10 UTC
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig	2025-04-15 08:30:07 UTC
 +++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc
-@@ -64,7 +64,7 @@
+@@ -65,7 +65,7 @@
  namespace {
  
  const int kModalDialogWidth = 448;
@@ -9,7 +9,7 @@
  const int kManagedUserNoticeConfirmationDialogWidth = 512;
  const int kManagedUserNoticeConfirmationDialogHeight = 576;
  const int kManagedUserNoticeConfirmationUpdatedDialogWidth = 780;
-@@ -191,7 +191,7 @@ SigninViewControllerDelegateViews::CreateSignoutConfir
+@@ -197,7 +197,7 @@ SigninViewControllerDelegateViews::CreateSignoutConfir
  }
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  
@@ -18,7 +18,7 @@
  // static
  std::unique_ptr<views::WebView>
  SigninViewControllerDelegateViews::CreateManagedUserNoticeConfirmationWebView(
-@@ -370,7 +370,7 @@ SigninViewControllerDelegateViews::SigninViewControlle
+@@ -382,7 +382,7 @@ SigninViewControllerDelegateViews::SigninViewControlle
  
    SetButtons(static_cast<int>(ui::mojom::DialogButton::kNone));
  
@@ -27,7 +27,7 @@
    // On the local profile creation dialog, cancelling the dialog (for instance
    // through the VKEY_ESCAPE accelerator) should delete the profile.
    if (delete_profile_on_cancel) {
-@@ -460,7 +460,7 @@ void SigninViewControllerDelegateViews::DisplayModal()
+@@ -472,7 +472,7 @@ void SigninViewControllerDelegateViews::DisplayModal()
    content_view_->RequestFocus();
  }
  
@@ -36,7 +36,7 @@
  void SigninViewControllerDelegateViews::DeleteProfileOnCancel() {
    ProfileAttributesEntry* entry =
        g_browser_process->profile_manager()
-@@ -536,7 +536,7 @@ SigninViewControllerDelegate::CreateSignoutConfirmatio
+@@ -553,7 +553,7 @@ SigninViewControllerDelegate::CreateSignoutConfirmatio
  }
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  
