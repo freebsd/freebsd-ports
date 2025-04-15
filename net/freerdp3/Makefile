@@ -1,15 +1,9 @@
 PORTNAME=	freerdp
-DISTVERSION=	3.14.1
+DISTVERSION=	3.15.0
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	3
-
-PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
-# [client,sdl] fix crash on suppress output
-# SDL events might be triggered before the RDP session is up.
-# Check the context for NULL.
-PATCHFILES+=	a82e0dec2f942b143977880654dd783f53c25c33.patch:-p1
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
