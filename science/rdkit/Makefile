@@ -1,7 +1,6 @@
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	2024_09_4
-PORTREVISION=	1
+DISTVERSION=	2025_03_1
 CATEGORIES=	science
 MASTER_SITES=	LOCAL/yuri/:font # unstable, changing font file: https://fonts.google.com/download?family=Comic%20Neue&dummy=/:font
 DISTFILES=	ComicNeue-Regular.ttf:font
@@ -28,12 +27,16 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libmaeparser.so:science/maeparser
 
-USES=		bison:build cmake:testing compiler:c++11-lang eigen:3 python
-USE_GITHUB=	yes
-GH_TUPLE=	rareylab:RingDecomposerLib:v1.1.3_rdkit:RingDecomposerLib/External/RingFamilies/RingDecomposerLib
-GH_TUPLE+=	ncbi:pubchem-align3d:daefab3:align3d/External/pubchem_shape/pubchem-align3d
+USES=		bison:build cmake:testing compiler:c++11-lang eigen:3 gnome python
+USE_GNOME=	cairo
 USE_LDCONFIG=	yes
 
+USE_GITHUB=	yes
+GH_TUPLE=	rareylab:RingDecomposerLib:v1.1.3_rdkit:RingDecomposerLib/External/RingFamilies/RingDecomposerLib
+GH_TUPLE+=	ncbi:pubchem-align3d:daefab3:align3d/External/pubchem_shape/pubchem-align3d \
+		aantron:better-enums:520d8ee:better_enums/better_enums
+
+CMAKE_ON=	RDK_BUILD_CAIRO_SUPPORT
 CMAKE_OFF=	RDK_INSTALL_INTREE RDK_USE_FLEXBISON \
 		RDK_INSTALL_STATIC_LIBS RDK_SWIG_STATIC RDK_PGSQL_STATIC \
 		RDK_OPTIMIZE_NATIVE \
@@ -42,6 +45,7 @@ CMAKE_ARGS=	-DCATCH_DIR=${LOCALBASE}/include/catch2
 
 CFLAGS+=	-D_GNU_SOURCE
 CXXFLAGS+=	-D_GNU_SOURCE
+		#-I${WRKSRC}/better_enums
 
 DATADIR=	${PREFIX}/share/RDKit
 DOCSDIR=	${PREFIX}/share/doc/RDKit
@@ -87,6 +91,7 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/External/rapidjson-1.1.0
 	@cd ${WRKSRC}/External/rapidjson-1.1.0 && ${LN} -s ${LOCALBASE}/include/rapidjson include
 	@cd ${WRKSRC}/Data/Fonts && ${CP} ${DISTDIR}/${DIST_SUBDIR}/ComicNeue-Regular.ttf .
+	@${CP} ${WRKSRC}/better_enums/enum.h ${WRKSRC}/Code/RDGeneral
 
 post-install-PGSQL-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/rdkit.so

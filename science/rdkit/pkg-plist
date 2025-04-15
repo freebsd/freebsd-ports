@@ -22,12 +22,9 @@ include/rdkit/DataStructs/SparseIntVect.h
 include/rdkit/DataStructs/base64.h
 include/rdkit/DistGeom/BoundsMatrix.h
 include/rdkit/DistGeom/ChiralSet.h
-include/rdkit/DistGeom/ChiralViolationContrib.h
 include/rdkit/DistGeom/ChiralViolationContribs.h
 include/rdkit/DistGeom/DistGeomUtils.h
-include/rdkit/DistGeom/DistViolationContrib.h
 include/rdkit/DistGeom/DistViolationContribs.h
-include/rdkit/DistGeom/FourthDimContrib.h
 include/rdkit/DistGeom/FourthDimContribs.h
 include/rdkit/DistGeom/TriangleSmooth.h
 include/rdkit/Features/Feature.h
@@ -100,6 +97,7 @@ include/rdkit/GraphMol/ChemReactions/ReactionUtils.h
 include/rdkit/GraphMol/ChemReactions/SanitizeRxn.h
 include/rdkit/GraphMol/ChemTransforms/ChemTransforms.h
 include/rdkit/GraphMol/ChemTransforms/MolFragmenter.h
+include/rdkit/GraphMol/ChemTransforms/MolFragmenterJSONParser.h
 include/rdkit/GraphMol/Chirality.h
 include/rdkit/GraphMol/Conformer.h
 include/rdkit/GraphMol/CoordGen.h
@@ -199,6 +197,7 @@ include/rdkit/GraphMol/MolChemicalFeatures/MolChemicalFeature.h
 include/rdkit/GraphMol/MolChemicalFeatures/MolChemicalFeatureDef.h
 include/rdkit/GraphMol/MolChemicalFeatures/MolChemicalFeatureFactory.h
 include/rdkit/GraphMol/MolDraw2D/MolDraw2D.h
+include/rdkit/GraphMol/MolDraw2D/MolDraw2DCairo.h
 include/rdkit/GraphMol/MolDraw2D/MolDraw2DHelpers.h
 include/rdkit/GraphMol/MolDraw2D/MolDraw2DJS.h
 include/rdkit/GraphMol/MolDraw2D/MolDraw2DSVG.h
@@ -246,6 +245,7 @@ include/rdkit/GraphMol/QueryOps.h
 include/rdkit/GraphMol/RDKitBase.h
 include/rdkit/GraphMol/RDKitQueries.h
 include/rdkit/GraphMol/RGroupDecomposition/RGroupDecomp.h
+include/rdkit/GraphMol/RGroupDecomposition/RGroupDecompJSONParsers.h
 include/rdkit/GraphMol/RGroupDecomposition/RGroupDecompParams.h
 include/rdkit/GraphMol/ROMol.h
 include/rdkit/GraphMol/RWMol.h
@@ -266,6 +266,7 @@ include/rdkit/GraphMol/ShapeHelpers/ShapeEncoder.h
 include/rdkit/GraphMol/ShapeHelpers/ShapeUtils.h
 include/rdkit/GraphMol/SmilesParse/CanonicalizeStereoGroups.h
 include/rdkit/GraphMol/SmilesParse/SmartsWrite.h
+include/rdkit/GraphMol/SmilesParse/SmilesJSONParsers.h
 include/rdkit/GraphMol/SmilesParse/SmilesParse.h
 include/rdkit/GraphMol/SmilesParse/SmilesParseOps.h
 include/rdkit/GraphMol/SmilesParse/SmilesWrite.h
@@ -283,6 +284,7 @@ include/rdkit/GraphMol/SynthonSpaceSearch/Synthon.h
 include/rdkit/GraphMol/SynthonSpaceSearch/SynthonSet.h
 include/rdkit/GraphMol/SynthonSpaceSearch/SynthonSpace.h
 include/rdkit/GraphMol/SynthonSpaceSearch/SynthonSpaceFingerprintSearcher.h
+include/rdkit/GraphMol/SynthonSpaceSearch/SynthonSpaceRascalSearcher.h
 include/rdkit/GraphMol/SynthonSpaceSearch/SynthonSpaceSearcher.h
 include/rdkit/GraphMol/SynthonSpaceSearch/SynthonSpaceSubstructureSearcher.h
 include/rdkit/GraphMol/TautomerQuery/TautomerQuery.h
@@ -320,9 +322,11 @@ include/rdkit/Query/XOrQuery.h
 %%PYTHON%%include/rdkit/RDBoost/python.h
 %%PYTHON%%include/rdkit/RDBoost/python_streambuf.h
 include/rdkit/RDGeneral/BadFileException.h
+include/rdkit/RDGeneral/BetterEnums.h
 include/rdkit/RDGeneral/BoostEndInclude.h
 include/rdkit/RDGeneral/BoostStartInclude.h
 include/rdkit/RDGeneral/ConcurrentQueue.h
+include/rdkit/RDGeneral/ControlCHandler.h
 include/rdkit/RDGeneral/Dict.h
 include/rdkit/RDGeneral/Exceptions.h
 include/rdkit/RDGeneral/FileParseException.h
@@ -339,6 +343,7 @@ include/rdkit/RDGeneral/RDValue-taggedunion.h
 include/rdkit/RDGeneral/RDValue.h
 include/rdkit/RDGeneral/Ranking.h
 include/rdkit/RDGeneral/StreamOps.h
+include/rdkit/RDGeneral/enum.h
 include/rdkit/RDGeneral/export.h
 include/rdkit/RDGeneral/hanoiSort.h
 include/rdkit/RDGeneral/hash/detail/float_functions.hpp
@@ -360,6 +365,10 @@ lib/cmake/rdkit/rdkit-config-version.cmake
 lib/cmake/rdkit/rdkit-config.cmake
 lib/cmake/rdkit/rdkit-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/rdkit/rdkit-targets.cmake
+lib/cmake/rdkitpython/rdkitpython-config-version.cmake
+lib/cmake/rdkitpython/rdkitpython-config.cmake
+lib/cmake/rdkitpython/rdkitpython-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/rdkitpython/rdkitpython-targets.cmake
 lib/libRDKitAbbreviations.so
 lib/libRDKitAbbreviations.so.1
 lib/libRDKitAbbreviations.so.1.%%SHLIB_VER%%
@@ -1064,6 +1073,10 @@ lib/libRDKitga.so.1.%%SHLIB_VER%%
 %%DATADIR%%/Contrib/SA_Score/data/zim.100.txt
 %%DATADIR%%/Contrib/SA_Score/fpscores.pkl.gz
 %%DATADIR%%/Contrib/SA_Score/sascorer.py
+%%DATADIR%%/Contrib/efgs/README.md
+%%DATADIR%%/Contrib/efgs/ch33query.sql
+%%DATADIR%%/Contrib/efgs/efgs.py
+%%DATADIR%%/Contrib/efgs/try_efgs.py
 %%DATADIR%%/Contrib/fraggle/atomcontrib.py
 %%DATADIR%%/Contrib/fraggle/cxn_tversky.py
 %%DATADIR%%/Contrib/fraggle/data/ChEMBL_11265_actives.smi

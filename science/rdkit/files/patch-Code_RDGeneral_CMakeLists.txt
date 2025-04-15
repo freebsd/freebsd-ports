@@ -1,0 +1,14 @@
+--- Code/RDGeneral/CMakeLists.txt.orig	2025-04-15 16:44:12 UTC
++++ Code/RDGeneral/CMakeLists.txt
+@@ -5,11 +5,6 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/RDConfig.h.
+ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/RDConfig.h.cmake
+         ${CMAKE_CURRENT_SOURCE_DIR}/RDConfig.h)
+ 
+-FetchContent_MakeAvailable(better_enums)
+-if (NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/enum.h)
+-    file(COPY ${better_enums_SOURCE_DIR}/enum.h DESTINATION ${CMAKE_CURRENT_SOURCE_DIR})
+-endif (NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/enum.h)
+-
+ rdkit_library(RDGeneral
+         Invariant.cpp types.cpp utils.cpp RDGeneralExceptions.cpp RDLog.cpp
+         LocaleSwitcher.cpp versions.cpp SHARED)

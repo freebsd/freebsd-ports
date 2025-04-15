@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-12-20 08:56:08 UTC
+--- CMakeLists.txt.orig	2025-03-31 18:11:10 UTC
 +++ CMakeLists.txt
-@@ -76,12 +76,12 @@ if(NOT MSVC)
+@@ -78,12 +78,12 @@ if(NOT MSVC)
  
  if(NOT MSVC)
    if(RDK_OPTIMIZE_POPCNT)
@@ -17,7 +17,26 @@
      endif()
    endif()
  endif()
-@@ -516,12 +516,14 @@ if(NOT RDK_INSTALL_INTREE)
+@@ -166,18 +166,6 @@ endif()
+   FetchContent_MakeAvailable(Catch2)
+ endif()
+ 
+-#include better-enums
+-find_package(better_enums 0 QUIET)
+-if(NOT better_enums)
+-  Include(FetchContent)
+-
+-  FetchContent_Declare(
+-    better_enums
+-    GIT_REPOSITORY https://github.com/aantron/better-enums.git
+-    GIT_TAG        c35576bed0295689540b39873126129adfa0b4c8 # 0.11.3
+-  )
+-endif()
+-
+ if(RDK_INSTALL_INTREE)
+   set(RDKit_BinDir "${CMAKE_SOURCE_DIR}/bin")
+   set(RDKit_LibDir "${CMAKE_SOURCE_DIR}/lib")
+@@ -530,12 +518,14 @@ if(NOT RDK_INSTALL_INTREE)
        COMPONENT data
        PATTERN ".svn" EXCLUDE
        )
