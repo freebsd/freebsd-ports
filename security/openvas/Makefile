@@ -1,6 +1,5 @@
 PORTNAME=	openvas
-DISTVERSION=	23.14.0
-PORTREVISION=	1
+DISTVERSION=	23.16.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -54,7 +53,7 @@ CFLAGS_armv7=	-Wno-error=unaligned-access
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>||g' ${WRKSRC}/src/nasl_plugins.c
-	@${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>|#include <unistd.h>|g' ${WRKSRC}//src/pluginload.c
+	@${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>|#include <unistd.h>|g' ${WRKSRC}/src/pluginload.c
 	@${REINPLACE_CMD} -e 's|vendor_version_get ()|vendor_version_get (void)|g' ${WRKSRC}/misc/vendorversion.c
 
 post-install:

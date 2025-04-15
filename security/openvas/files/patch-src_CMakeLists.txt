@@ -1,6 +1,6 @@
---- src/CMakeLists.txt	2022-07-18 04:07:38.000000000 -0500
-+++ src/CMakeLists.txt	2022-07-31 19:53:15.521197000 -0500
-@@ -30,7 +30,9 @@
+--- src/CMakeLists.txt	2025-03-03 04:49:55.000000000 -0800
++++ src/CMakeLists.txt	2025-04-14 20:15:02.381958000 -0700
+@@ -16,7 +16,9 @@
  pkg_check_modules (LIBGVM_BOREAS REQUIRED libgvm_boreas>=22.4)
  pkg_check_modules (LIBGVM_UTIL REQUIRED libgvm_util>=22.4)
  pkg_check_modules (GLIB REQUIRED glib-2.0>=2.42)
@@ -9,8 +9,8 @@
 +endif()
  
  message (STATUS "Looking for libgcrypt...")
- find_library (GCRYPT gcrypt)
-@@ -230,8 +232,8 @@
+ pkg_check_modules (GCRYPT REQUIRED libgcrypt)
+@@ -198,8 +200,8 @@
           PERMISSIONS OWNER_EXECUTE OWNER_READ OWNER_WRITE
           GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
  
@@ -19,5 +19,5 @@
 +install (FILES ${CMAKE_BINARY_DIR}/src/openvas_log.conf.sample
 +         DESTINATION "${OPENVAS_SYSCONF_DIR}")
  
- install (FILES ${CMAKE_BINARY_DIR}/tools/greenbone-nvt-sync
-          DESTINATION ${BINDIR}
+ install (FILES ${CMAKE_BINARY_DIR}/doc/man/openvas.8
+          DESTINATION ${DATADIR}/man/man8 )

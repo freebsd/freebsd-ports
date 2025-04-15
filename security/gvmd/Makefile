@@ -1,5 +1,5 @@
 PORTNAME=	gvmd
-DISTVERSION=	24.1.2
+DISTVERSION=	25.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -47,7 +47,6 @@ SHEBANG_FILES=	tools/gvm-lsc-rpm-creator \
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/src/manage_sql.c
-	${REINPLACE_CMD} -e 's|+660|660|g' ${WRKSRC}/tools/greenbone-feed-sync.in
 	${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>||g' ${WRKSRC}/src/manage.c \
 		${WRKSRC}/src/gvmd.c ${WRKSRC}/src/manage_sql_secinfo.c
 
