@@ -2,9 +2,17 @@ etc/pki/ca-trust/README
 etc/pki/ca-trust/ca-legacy.conf
 etc/pki/ca-trust/extracted/README
 etc/pki/ca-trust/extracted/edk2/README
+etc/pki/ca-trust/extracted/edk2/cacerts.bin
 etc/pki/ca-trust/extracted/java/README
+etc/pki/ca-trust/extracted/java/cacerts
 etc/pki/ca-trust/extracted/openssl/README
+etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt
 etc/pki/ca-trust/extracted/pem/README
+etc/pki/ca-trust/extracted/pem/directory-hash/ca-bundle.crt
+etc/pki/ca-trust/extracted/pem/directory-hash/ca-certificates.crt
+etc/pki/ca-trust/extracted/pem/email-ca-bundle.pem
+etc/pki/ca-trust/extracted/pem/objsign-ca-bundle.pem
+etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
 etc/pki/ca-trust/source/README
 etc/pki/java/cacerts
 etc/pki/tls/cert.pem
@@ -22,7 +30,6 @@ usr/share/pki/ca-trust-legacy/ca-bundle.legacy.default.crt
 usr/share/pki/ca-trust-legacy/ca-bundle.legacy.disable.crt
 usr/share/pki/ca-trust-source/README
 usr/share/pki/ca-trust-source/ca-bundle.trust.p11-kit
-@dir etc/pki/ca-trust/extracted/pem/directory-hash
 @dir etc/pki/ca-trust/source/anchors
 @dir etc/pki/ca-trust/source/blocklist
 @dir usr/share/pki/ca-trust-source/anchors
