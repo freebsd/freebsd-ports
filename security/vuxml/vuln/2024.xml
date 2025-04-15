@@ -1,3 +1,49 @@
+  <vuln vid="a380f43e-19e5-11f0-9568-b42e991fc52e">
+    <topic>Perl -- heap buffer overflow when transliterating non-ASCII bytes</topic>
+    <affects>
+      <package>
+	<name>perl5.36</name>
+	<range><lt>5.36.3</lt></range>
+      </package>
+      <package>
+	<name>perl5.38</name>
+	<range><lt>5.38.4</lt></range>
+      </package>
+      <package>
+	<name>perl5.40</name>
+	<range><lt>5.40.2</lt></range>
+      </package>
+      <package>
+	<name>perl5-devel</name>
+	<range><lt>5.41.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>9b29abf9-4ab0-4765-b253-1875cd9b441e reports:</p>
+	<blockquote cite="https://github.com/Perl/perl5/commit/87f42aa0e0096e9a346c9672aa3a0bd3bef8c1dd.patch">
+	<p>A heap buffer overflow vulnerability was discovered in Perl.
+	When there are non-ASCII bytes in the left-hand-side of the `tr`
+	operator, `S_do_trans_invmap` can overflow the destination pointer
+	`d`.
+	$ perl -e &apos;$_ = &quot;\x{FF}&quot; x 1000000; tr/\xFF/\x{100}/;&apos;
+	Segmentation fault (core dumped)
+	It is believed that this vulnerability can enable Denial of
+	Service and possibly Code Execution attacks on platforms that
+	lack sufficient defenses.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-56406</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-56406</url>
+    </references>
+    <dates>
+      <discovery>2025-04-13</discovery>
+      <entry>2025-04-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0230343c-1908-11f0-accc-b42e991fc52e">
     <topic>gogs -- Multiple vulnerabilities</topic>
     <affects>
