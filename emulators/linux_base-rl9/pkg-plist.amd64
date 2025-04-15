@@ -1180,6 +1180,7 @@ usr/lib/.build-id/db/6e9153381f1f8a6dd28b96ae6ce16c6170f75c
 usr/lib/.build-id/db/745e3accb90deeee150feda7e4a1eae1581c68
 usr/lib/.build-id/db/acb84aaef986dd3eb7fb04b90014241038a67d
 usr/lib/.build-id/dc/045cb4d1c446e0da68594aead14f77227933ec
+usr/lib/.build-id/dc/6c919a45d4cdcc1e9aa671ba513dfc1350d776
 usr/lib/.build-id/dc/8fb4bc44b44001849568ea8fbb43644780747b
 usr/lib/.build-id/dc/e36e3728dda8894bcae875a31705f9694401bc
 usr/lib/.build-id/dd/0e01313179969d8991222d262c4fb98775937a
@@ -1257,6 +1258,7 @@ usr/lib/.build-id/ee/44a7dbf77ceda0e8c90770c5ae088aef18938c
 usr/lib/.build-id/ee/a905ae972073934f747f732891abb38da6596a
 usr/lib/.build-id/ee/c6332ce279a71f4d350da89dc563d339927b5d
 usr/lib/.build-id/ef/345ecf247e01022dc8ce4ee0f02d1b8432f0fd
+usr/lib/.build-id/ef/55a1e1729fd6ac859ca7c25898e3314e1cb69c
 usr/lib/.build-id/ef/892035f0f947ac78c4ef86ce9f30687fedc936
 usr/lib/.build-id/ef/8ef837eafca150b87e55412b4d330cd29c293c
 usr/lib/.build-id/ef/998fa28f04a099e2de6fcc762ed911c4e5196e
@@ -1752,6 +1754,8 @@ usr/lib/librt.so.1
 usr/lib/libSegFault.so
 usr/lib/libselinux.so.1
 usr/lib/libsepol.so.2
+usr/lib/libsigsegv.so.2
+usr/lib/libsigsegv.so.2.0.6
 usr/lib/libslang.so.2
 usr/lib/libslang.so.2.3.2
 usr/lib/libsmartcols.so.1
@@ -2230,6 +2234,8 @@ usr/lib64/libresolv.so.2
 usr/lib64/librt.so.1
 usr/lib64/libselinux.so.1
 usr/lib64/libsepol.so.2
+usr/lib64/libsigsegv.so.2
+usr/lib64/libsigsegv.so.2.0.6
 usr/lib64/libslang.so.2
 usr/lib64/libslang.so.2.3.2
 usr/lib64/libsmartcols.so.1
@@ -2521,6 +2527,9 @@ usr/share/dbus-1/services/org.gtk.GLib.PACRunner.service
 %%PORTDOCS%%usr/share/doc/libevdev/COPYING
 %%PORTDOCS%%usr/share/doc/libffi/README.md
 %%PORTDOCS%%usr/share/doc/libgudev/NEWS
+%%PORTDOCS%%usr/share/doc/libsigsegv/AUTHORS
+%%PORTDOCS%%usr/share/doc/libsigsegv/NEWS
+%%PORTDOCS%%usr/share/doc/libsigsegv/README
 %%PORTDOCS%%usr/share/doc/libverto/AUTHORS
 %%PORTDOCS%%usr/share/doc/libverto/ChangeLog
 %%PORTDOCS%%usr/share/doc/libverto/NEWS
@@ -2650,6 +2659,7 @@ usr/share/licenses/libmount/COPYING
 usr/share/licenses/libmount/COPYING.LGPL-2.1-or-later
 usr/share/licenses/libselinux/LICENSE
 usr/share/licenses/libsepol/LICENSE
+usr/share/licenses/libsigsegv/COPYING
 usr/share/licenses/libsmartcols/COPYING
 usr/share/licenses/libsmartcols/COPYING.LGPL-2.1-or-later
 usr/share/licenses/libuuid/COPYING

@@ -31,6 +31,7 @@ libevdev_ver=		1.11.0-3.el9
 libffi_ver=		3.4.2-8.el9
 libgudev_ver=		237-1.el9
 libnattr_ver=		2.5.1-3.el9
+libsigsegv_ver=		2.13-4.el9
 libverto_ver=		0.3.2-3.el9
 mtdev_ver=		1.1.5-22.el9
 ncurses_ver=		6.2-10.20210508.el9

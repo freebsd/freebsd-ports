@@ -774,6 +774,7 @@ usr/lib/.build-id/bc/70bc5a44c0c84da5a32f5617d4052079ca0632
 usr/lib/.build-id/bc/9788e1a74f3b943bcb4e56f29cd27081f45c9c
 usr/lib/.build-id/bc/d445cd41358150f6dab338483ad46b86133498
 usr/lib/.build-id/bc/ef23bb1b2db2f32674eede07f5f598600cf7b2
+usr/lib/.build-id/bd/3a64916c76cf377d71563f0cc08dd3642c2b0f
 usr/lib/.build-id/bd/8f2fde312b98e2866cc99d404dfeb2aad48f28
 usr/lib/.build-id/bd/dc065a42841a1c70b262de6d022d677089770b
 usr/lib/.build-id/be/ab4f34ca1333bb518a7acc1203b899d486afbd
@@ -1411,6 +1412,8 @@ usr/lib64/libresolv.so.2
 usr/lib64/librt.so.1
 usr/lib64/libselinux.so.1
 usr/lib64/libsepol.so.2
+usr/lib64/libsigsegv.so.2
+usr/lib64/libsigsegv.so.2.0.6
 usr/lib64/libslang.so.2
 usr/lib64/libslang.so.2.3.2
 usr/lib64/libsmartcols.so.1
@@ -1696,6 +1699,9 @@ usr/share/dbus-1/services/org.gtk.GLib.PACRunner.service
 %%PORTDOCS%%usr/share/doc/libevdev/COPYING
 %%PORTDOCS%%usr/share/doc/libffi/README.md
 %%PORTDOCS%%usr/share/doc/libgudev/NEWS
+%%PORTDOCS%%usr/share/doc/libsigsegv/AUTHORS
+%%PORTDOCS%%usr/share/doc/libsigsegv/NEWS
+%%PORTDOCS%%usr/share/doc/libsigsegv/README
 %%PORTDOCS%%usr/share/doc/libverto/AUTHORS
 %%PORTDOCS%%usr/share/doc/libverto/ChangeLog
 %%PORTDOCS%%usr/share/doc/libverto/NEWS
@@ -1822,6 +1828,7 @@ usr/share/licenses/libmount/COPYING
 usr/share/licenses/libmount/COPYING.LGPL-2.1-or-later
 usr/share/licenses/libselinux/LICENSE
 usr/share/licenses/libsepol/LICENSE
+usr/share/licenses/libsigsegv/COPYING
 usr/share/licenses/libsmartcols/COPYING
 usr/share/licenses/libsmartcols/COPYING.LGPL-2.1-or-later
 usr/share/licenses/libuuid/COPYING

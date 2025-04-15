@@ -17,7 +17,7 @@ USE_LINUX=	alsalib alsa-lib-devel alsa-plugins-oss alsa-plugins-pulseaudio \
 		graphite2 gsm gstreamer1 gstreamer1-libav gtk2 gtk3 harfbuzz icu \
 		jasper jbigkit jpeg libassuan libasyncns libdrm libepoxy libevent \
 		libgcrypt libgfortran libglvnd libgpg-error libidn2 libksba libnghttp2 libogg \
-		libpciaccess libproxy libpsl librsvg2 libsecret libsigc++20 libsigsegv \
+		libpciaccess libproxy libpsl librsvg2 libsecret libsigc++20 \
 		libsndfile libsoup libssh libstemmer libtasn1 libthai libtheora libtool-ltdl \
 		libtracker-sparql libunistring libusb libv4l libva libvdpau \
 		libvorbis libvpx libxcrypt libxkbcommon libxml2 libxslt llvm \

@@ -1,7 +1,7 @@
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.2.7.1
 DISTVERSIONSUFFIX=	-1.el9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio linux
 MASTER_SITES=	ROCKY_LINUX
 MASTER_SITE_SUBDIR=	${LINUX_DIST_VER}/BaseOS/source/tree/Packages/a/ \
@@ -19,7 +19,7 @@ LICENSE=	LGPL21+
 
 USES=		autoreconf:build gmake libtool:build linux:rl9 pkgconfig
 USE_LDCONFIG=	yes
-USE_LINUX=	alsalib:build,run alsa-lib-devel:build base:build devtools:build libsigsegv:build,run
+USE_LINUX=	alsalib:build,run alsa-lib-devel:build base:build devtools:build
 USE_LINUX_PREFIX=yes
 
 CONFIG_ARGS=	--disable-static --disable-mix --disable-usbstream \

@@ -1,6 +1,6 @@
 PORTNAME=	rl9
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nf/filesystem-*:C/:[^:]+$//}
@@ -14,6 +14,8 @@ USES=		linux:rl9
 USE_LINUX=	# empty
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
+
+CONFLICTS_INSTALL=	linux-${linux_ARGS}-libsigsegv
 
 .include	"${.CURDIR}/Makefile.version"
 
@@ -67,6 +69,7 @@ LIB_DISTNAMES=	bzip2-libs-${bzip2_ver} \
 		libmount-${util_ver} \
 		libselinux-${selinux_ver} \
 		libsepol-${sepol_ver} \
+		libsigsegv-${libsigsegv_ver} \
 		libsmartcols-${util_ver} \
 		libstdc++-${gcc_ver} \
 		libuuid-${util_ver} \
@@ -124,6 +127,7 @@ SRC_DISTFILES=	acl-${libacl_ver}${SRC_SUFX}:SOURCE \
 		libgudev-${libgudev_ver}${SRC_SUFX}:SOURCE \
 		libselinux-${selinux_ver}${SRC_SUFX}:SOURCE \
 		libsepol-${sepol_ver}${SRC_SUFX}:SOURCE \
+		libsigsegv-${libsigsegv_ver}${SRC_SUFX}:SOURCE \
 		libverto-${libverto_ver}${SRC_SUFX}:SOURCE \
 		mtdev-${mtdev_ver}${SRC_SUFX}:SOURCE \
 		ncurses-${ncurses_ver}${SRC_SUFX}:SOURCE \

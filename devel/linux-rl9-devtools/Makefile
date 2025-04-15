@@ -1,6 +1,6 @@
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://gcc.gnu.org/
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	elfutils-libs libgfortran libsigsegv
+USE_LINUX=	elfutils-libs libgfortran
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 
