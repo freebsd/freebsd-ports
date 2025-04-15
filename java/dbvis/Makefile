@@ -1,5 +1,5 @@
 PORTNAME=	dbvis
-DISTVERSION=	24.3.4
+DISTVERSION=	25.1.3
 CATEGORIES=	java databases
 MASTER_SITES=	https://www.dbvis.com/product_download/${PORTNAME}-${DISTVERSION}/media/
 DISTNAME=	dbvis_linux_${DISTVERSION:S/./_/g}
