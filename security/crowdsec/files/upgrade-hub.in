@@ -8,7 +8,7 @@ sleep "$(jot -r 1 1 300)"
 # favor the opnsense plugin's cron if it's there
 test -e /usr/local/etc/cron.d/oscrowdsec.cron && exit 0
 
-%%PREFIX%%/bin/cscli --error -o human hub update
+%%PREFIX%%/bin/cscli --error -o human hub update >/dev/null
 
 upgraded=$(%%PREFIX%%/bin/cscli --error -o human hub upgrade)
 if [ -n "$upgraded" ]; then
