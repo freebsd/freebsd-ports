@@ -8,8 +8,6 @@ etc/pki/ca-trust/extracted/java/cacerts
 etc/pki/ca-trust/extracted/openssl/README
 etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt
 etc/pki/ca-trust/extracted/pem/README
-etc/pki/ca-trust/extracted/pem/directory-hash/ca-bundle.crt
-etc/pki/ca-trust/extracted/pem/directory-hash/ca-certificates.crt
 etc/pki/ca-trust/extracted/pem/email-ca-bundle.pem
 etc/pki/ca-trust/extracted/pem/objsign-ca-bundle.pem
 etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
