@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates syslog statistics to detect tendencies and unexpected change
 WWW=		http://www.vanheusden.com/slst/
 
+DEPRECATED=     No source. Source went missing in 2018.
+EXPIRATION_DATE=2025-05-15
+
 USES=		ncurses tar:tgz
 ALL_TARGET=	all
 
