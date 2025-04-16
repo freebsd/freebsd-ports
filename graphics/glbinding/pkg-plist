@@ -386,10 +386,10 @@ include/glbinding/glbinding_features.h
 include/glbinding/nogl.h
 lib/libglbinding-aux.so
 lib/libglbinding-aux.so.3
-lib/libglbinding-aux.so.3.4.0
+lib/libglbinding-aux.so.3.5.0
 lib/libglbinding.so
 lib/libglbinding.so.3
-lib/libglbinding.so.3.4.0
+lib/libglbinding.so.3.5.0
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/LICENSE
 %%DATADIR%%/README.md

@@ -1,6 +1,6 @@
 PORTNAME=	glbinding
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.0
+DISTVERSION=	3.5.0
 CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,5 +31,7 @@ CMAKE_TESTING_ON=	OPTION_BUILD_TESTS
 LDFLAGS+=	-lpthread # workaround for https://github.com/cginternals/glbinding/issues/327
 
 CONFLICTS_INSTALL=	mesa-demos # both install bin/glinfo, see https://github.com/cginternals/glbinding/issues/341
+
+# tests fail to compile, see https://github.com/cginternals/glbinding/issues/359
 
 .include <bsd.port.mk>
