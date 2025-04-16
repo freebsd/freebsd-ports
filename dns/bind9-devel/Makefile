@@ -1,7 +1,7 @@
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
-DISTVERSION=	9.21.6
+DISTVERSION=	9.21.7
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
 PORTREVISION=	0
@@ -57,9 +57,7 @@ GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--sysconfdir=${ETCDIR} \
 		--with-libxml2 \
-		--with-openssl=${OPENSSLBASE} \
-		--enable-dnsrps \
-		--with-readline=libedit
+		--with-openssl=${OPENSSLBASE}
 ETCDIR=		${PREFIX}/etc/namedb
 
 # FIXME: figure out why build fails if enabled
@@ -84,7 +82,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFAULT=	GSSAPI_NONE IDN JSON LMDB \
 			TCP_FASTOPEN DNSTAP
-OPTIONS_DEFINE=		DNSTAP DOCS FIXED_RRSET GEOIP IDN JSON LARGE_FILE LMDB \
+OPTIONS_DEFINE=		DNSTAP DOCS GEOIP IDN JSON LARGE_FILE LMDB \
 			OVERRIDECACHE QUERYTRACE \
 			START_LATE TCP_FASTOPEN
 
@@ -100,7 +98,6 @@ OPTIONS_EXCLUDE=	DOCS GEOIP LMDB \
 OPTIONS_SUB=	yes
 
 DNSTAP_DESC=		Provides fast passive logging of DNS messages
-FIXED_RRSET_DESC=	Enable fixed rrset ordering
 GSSAPI_BASE_DESC=	Using Heimdal in base (nsupdate is broken)
 GSSAPI_HEIMDAL_DESC=	Using security/heimdal (nsupdate is broken)
 GSSAPI_MIT_DESC=	Using security/krb5
@@ -120,8 +117,6 @@ DOCS_USES=	gmake python:env
 DNSTAP_CONFIGURE_ENABLE=	dnstap
 DNSTAP_LIB_DEPENDS=		libfstrm.so:devel/fstrm \
 				libprotobuf-c.so:devel/protobuf-c
-
-FIXED_RRSET_CONFIGURE_ENABLE=	fixed-rrset
 
 GEOIP_CONFIGURE_ENABLE=	geoip
 GEOIP_CONFIGURE_WITH=	maxminddb

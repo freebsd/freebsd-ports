@@ -1,8 +1,8 @@
 Add the override-cache-ttl feature.
 
---- bin/named/config.c.orig	2025-02-11 17:45:15 UTC
+--- bin/named/config.c.orig	2025-04-09 14:26:29 UTC
 +++ bin/named/config.c
-@@ -180,6 +180,7 @@ options {\n\
+@@ -183,6 +183,7 @@ options {\n\
  	notify-source *;\n\
  	notify-source-v6 *;\n\
  	nsec3-test-zone no;\n\
@@ -10,9 +10,9 @@ Add the override-cache-ttl feature.
  	parental-source *;\n\
  	parental-source-v6 *;\n\
  	provide-ixfr true;\n\
---- bin/named/server.c.orig	2025-02-11 17:45:15 UTC
+--- bin/named/server.c.orig	2025-04-09 14:26:29 UTC
 +++ bin/named/server.c
-@@ -4203,6 +4203,11 @@ configure_view(dns_view_t *view, dns_viewlist_t *viewl
+@@ -4204,6 +4204,11 @@ configure_view(dns_view_t *view, dns_viewlist_t *viewl
  	}
  
  	obj = NULL;
@@ -24,9 +24,9 @@ Add the override-cache-ttl feature.
  	result = named_config_get(maps, "max-cache-ttl", &obj);
  	INSIST(result == ISC_R_SUCCESS);
  	view->maxcachettl = cfg_obj_asduration(obj);
---- doc/arm/reference.rst.orig	2025-02-11 17:45:15 UTC
+--- doc/arm/reference.rst.orig	2025-04-09 14:26:29 UTC
 +++ doc/arm/reference.rst
-@@ -4109,6 +4109,10 @@ Tuning
+@@ -4163,6 +4163,10 @@ Tuning
     cannot exceed 7 days and is silently truncated to 7 days if set to a
     greater value.
  
@@ -37,19 +37,19 @@ Add the override-cache-ttl feature.
  .. namedconf:statement:: max-cache-ttl
     :tags: server
     :short: Specifies the maximum time (in seconds) that the server caches ordinary (positive) answers.
---- lib/dns/include/dns/view.h.orig	2025-02-11 17:45:15 UTC
+--- lib/dns/include/dns/view.h.orig	2025-04-09 14:26:29 UTC
 +++ lib/dns/include/dns/view.h
-@@ -147,6 +147,7 @@ struct dns_view {
- 	bool		      requestnsid;
+@@ -148,6 +148,7 @@ struct dns_view {
+ 	bool		      requestzoneversion;
  	bool		      sendcookie;
  	dns_ttl_t	      maxcachettl;
 +	dns_ttl_t	      overridecachettl;
  	dns_ttl_t	      maxncachettl;
  	dns_ttl_t	      mincachettl;
  	dns_ttl_t	      minncachettl;
---- lib/dns/resolver.c.orig	2025-02-11 17:45:15 UTC
+--- lib/dns/resolver.c.orig	2025-04-09 14:26:29 UTC
 +++ lib/dns/resolver.c
-@@ -5960,6 +5960,12 @@ cache_name(fetchctx_t *fctx, dns_name_t *name, dns_mes
+@@ -5937,6 +5937,12 @@ cache_name(fetchctx_t *fctx, dns_name_t *name, dns_mes
  		}
  
  		/*
@@ -62,7 +62,7 @@ Add the override-cache-ttl feature.
  		 * Enforce the configure maximum cache TTL.
  		 */
  		if (rdataset->ttl > res->view->maxcachettl) {
---- lib/isccfg/namedconf.c.orig	2025-02-11 17:45:15 UTC
+--- lib/isccfg/namedconf.c.orig	2025-04-09 14:26:29 UTC
 +++ lib/isccfg/namedconf.c
 @@ -2068,6 +2068,7 @@ static cfg_clausedef_t view_clauses[] = {
  #endif /* ifdef HAVE_LMDB */
