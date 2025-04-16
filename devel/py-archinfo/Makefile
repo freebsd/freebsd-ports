@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	schaiba@gmail.com
 COMMENT=	Classes with architecture-specific information useful to other projects
 WWW=		https://github.com/angr/archinfo
 
