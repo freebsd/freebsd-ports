@@ -1,6 +1,6 @@
---- Gemfile.orig	2025-03-19 10:41:02 UTC
+--- Gemfile.orig	2025-04-16 04:05:48 UTC
 +++ Gemfile
-@@ -164,8 +164,8 @@ gem 'rack-cors', '~> 2.0.1', require: 'rack/cors', fea
+@@ -168,8 +168,8 @@ gem 'rack-cors', '~> 2.0.1', require: 'rack/cors', fea
  gem 'rack-cors', '~> 2.0.1', require: 'rack/cors', feature_category: :shared
  
  # GraphQL API
@@ -9,9 +9,9 @@
 +gem 'graphql', '~> 2.4.11', path: 'vendor/gems/graphql', feature_category: :api
 +#gem 'graphql-docs', '~> 5.0.0', group: [:development, :test], feature_category: :api
  gem 'apollo_upload_server', '~> 2.1.6', feature_category: :api
- gem 'graphlient', '~> 0.8.0', feature_category: :importers # Used by BulkImport feature (group::import)
  
-@@ -217,7 +217,7 @@ gem 'google-cloud-storage', '~> 1.45.0', feature_categ
+ # Cells
+@@ -220,7 +220,7 @@ gem 'google-cloud-storage', '~> 1.45.0', feature_categ
  gem 'google-apis-storage_v1', '~> 0.29', feature_category: :shared
  gem 'google-cloud-storage', '~> 1.45.0', feature_category: :shared
  # We need >= 0.11.1 because that's when match_glob support is added to list_objects
@@ -20,7 +20,7 @@
  gem 'google-apis-compute_v1', '~> 0.57.0', feature_category: :shared
  gem 'google-apis-container_v1', '~> 0.43.0', feature_category: :shared
  gem 'google-apis-container_v1beta1', '~> 0.43.0', feature_category: :shared
-@@ -228,7 +228,7 @@ gem 'google-apis-androidpublisher_v3', '~> 0.34.0', fe
+@@ -231,7 +231,7 @@ gem 'google-apis-androidpublisher_v3', '~> 0.34.0', fe
  gem 'google-apis-sqladmin_v1beta4', '~> 0.41.0', feature_category: :shared
  gem 'google-apis-androidpublisher_v3', '~> 0.34.0', feature_category: :shared
  
@@ -29,7 +29,7 @@
  gem 'google-cloud-artifact_registry-v1', '~> 0.11.0', feature_category: :shared
  gem 'google-cloud-compute-v1', '~> 2.6.0', feature_category: :shared
  
-@@ -284,7 +284,7 @@ group :puma do
+@@ -287,7 +287,7 @@ group :puma do
  gem 'rack-timeout', '~> 0.7.0', require: 'rack/timeout/base', feature_category: :shared
  
  group :puma do
@@ -38,16 +38,16 @@
    gem 'sd_notify', '~> 0.1.0', require: false, feature_category: :shared
  end
  
-@@ -292,7 +292,7 @@ gem 'state_machines-activerecord', '~> 0.8.0', feature
+@@ -295,7 +295,7 @@ gem 'state_machines-activerecord', '~> 0.8.0', feature
  gem 'state_machines-activerecord', '~> 0.8.0', feature_category: :shared
  
  # Background jobs
--gem 'sidekiq', path: 'vendor/gems/sidekiq-7.2.4', require: 'sidekiq', feature_category: :scalability
-+gem 'sidekiq', '~> 7.2.4', require: 'sidekiq', feature_category: :scalability
+-gem 'sidekiq', path: 'vendor/gems/sidekiq', require: 'sidekiq', feature_category: :scalability
++gem 'sidekiq', '>= 7.3.9', require: 'sidekiq', feature_category: :scalability
  gem 'sidekiq-cron', '~> 1.12.0', feature_category: :scalability
  gem 'gitlab-sidekiq-fetcher',
    path: 'vendor/gems/sidekiq-reliable-fetch',
-@@ -430,7 +430,7 @@ gem 'snowplow-tracker', '~> 0.8.0', feature_category: 
+@@ -433,7 +433,7 @@ gem 'snowplow-tracker', '~> 0.8.0', feature_category: 
  gem 'snowplow-tracker', '~> 0.8.0', feature_category: :product_analytics
  
  # Metrics
@@ -56,7 +56,7 @@
  gem 'prometheus-client-mmap', '~> 1.2.8', require: 'prometheus/client', feature_category: :shared
  
  # Event-driven reactor for Ruby
-@@ -472,138 +472,15 @@ gem 'warning', '~> 1.5.0', feature_category: :shared
+@@ -475,140 +475,15 @@ gem 'warning', '~> 1.5.0', feature_category: :shared
  
  gem 'warning', '~> 1.5.0', feature_category: :shared
  
@@ -106,11 +106,11 @@
 -  # Prevent occasions where minitest is not bundled in packaged versions of ruby (see #3826)
 -  gem 'minitest', '~> 5.11.0', feature_category: :shared
 -
--  gem 'spring', '~> 4.1.0', feature_category: :shared
+-  gem 'spring', '~> 4.3.0', feature_category: :shared
 -  gem 'spring-commands-rspec', '~> 1.0.4', feature_category: :shared
 -
 -  gem 'gitlab-styles', '~> 13.1.0', feature_category: :tooling, require: false
--  gem 'haml_lint', '~> 0.58', feature_category: :tooling
+-  gem 'haml_lint', '~> 0.58', feature_category: :tooling, require: false
 -
 -  # Benchmarking & profiling
 -  gem 'benchmark-ips', '~> 2.14.0', require: false, feature_category: :shared
@@ -139,6 +139,8 @@
 -  gem 'vite_ruby', '~> 3.9.0', feature_category: :shared
 -
 -  gem 'gitlab-housekeeper', path: 'gems/gitlab-housekeeper', feature_category: :tooling
+-
+-  gem 'yard', '~> 0.9', require: false, feature_category: :tooling
 -end
 -
  group :development, :test, :danger do
@@ -195,7 +197,7 @@
  gem 'octokit', '~> 9.0', feature_category: :importers
  # Needed by octokit: https://github.com/octokit/octokit.rb/pull/1688
  gem 'faraday-multipart', '~> 1.0', feature_category: :importers
-@@ -638,16 +515,16 @@ gem 'spamcheck', '~> 1.3.0', feature_category: :inside
+@@ -643,16 +518,16 @@ gem 'spamcheck', '~> 1.3.0', feature_category: :inside
  gem 'spamcheck', '~> 1.3.0', feature_category: :insider_threat
  
  # Gitaly GRPC protocol definitions
@@ -215,7 +217,7 @@
  
  gem 'google-protobuf', '~> 3.25', '>= 3.25.3', feature_category: :shared
  
-@@ -668,7 +545,7 @@ gem 'gitlab-net-dns', '~> 0.10.0', feature_category: :
+@@ -673,7 +548,7 @@ gem 'gitlab-net-dns', '~> 0.10.0', feature_category: :
  gem 'gitlab-net-dns', '~> 0.10.0', feature_category: :shared
  
  # Countries list
@@ -224,7 +226,7 @@
  
  gem 'retriable', '~> 3.1.2', feature_category: :shared
  
-@@ -749,10 +626,15 @@ gem 'duo_api', '~> 1.3', feature_category: :system_acc
+@@ -754,10 +629,15 @@ gem 'duo_api', '~> 1.3', feature_category: :system_acc
  
  gem 'duo_api', '~> 1.3', feature_category: :system_access
  
@@ -240,4 +242,4 @@
 -gem "i18n_data", "~> 0.13.1", feature_category: :system_access
 +gem "i18n_data", "~> 0.13", feature_category: :system_access
  
- gem "gitlab-cloud-connector", "~> 1.0.0", require: 'gitlab/cloud_connector', feature_category: :cloud_connector
+ gem "gitlab-cloud-connector", "~> 1.5", require: 'gitlab/cloud_connector', feature_category: :cloud_connector
