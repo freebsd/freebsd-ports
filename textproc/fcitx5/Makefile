@@ -1,6 +1,5 @@
 PORTNAME=	fcitx5
-DISTVERSION=	5.1.11
-PORTREVISION=	1
+DISTVERSION=	5.1.12
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:dict
@@ -67,7 +66,7 @@ USE_KDE=	ecm
 
 USE_LDCONFIG=	yes
 
-# These must follow src/modules/spell/dict/CMakeLists.txt
+# These must follow src/modules/spell/CMakeLists.txt
 SPELL_EN_DICT_VER=	20121020
 SPELL_EN_DICT_TAR=	en_dict-${SPELL_EN_DICT_VER}.tar.gz
 

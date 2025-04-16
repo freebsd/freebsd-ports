@@ -70,6 +70,7 @@ include/Fcitx5/Utils/fcitx-utils/dbus/variant.h
 include/Fcitx5/Utils/fcitx-utils/element.h
 include/Fcitx5/Utils/fcitx-utils/event.h
 include/Fcitx5/Utils/fcitx-utils/eventdispatcher.h
+include/Fcitx5/Utils/fcitx-utils/eventloopinterface.h
 include/Fcitx5/Utils/fcitx-utils/fcitxutils_export.h
 include/Fcitx5/Utils/fcitx-utils/flags.h
 include/Fcitx5/Utils/fcitx-utils/fs.h
