@@ -1,7 +1,6 @@
 PORTNAME=		adjuster
 DISTVERSIONPREFIX=	v
-DISTVERSION=		3.239-2
-DISTVERSIONSUFFIX=	-g06eb487
+DISTVERSION=		3.243
 CATEGORIES=	www
 
 MAINTAINER=	ssb22@cam.ac.uk
@@ -20,7 +19,7 @@ SHEBANG_FILES=	*.py
 
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/adjuster                 \
+PLIST_FILES=	bin/adjuster         \
 		bin/annogen                  \
 		bin/termlayout               \
 		share/man/man1/adjuster.1.gz \
