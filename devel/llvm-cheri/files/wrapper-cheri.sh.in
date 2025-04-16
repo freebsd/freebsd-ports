@@ -82,15 +82,7 @@ set_sysroot()
 
 set_target()
 {
-	local target="$1"
-	case "$target" in
-	*-*-*)
-		_TARGET="$target"
-		;;
-	*)
-		echo "malformed target triple: '$target'"
-		;;
-	esac
+	_TARGET="$1"
 }
 
 tool=$0
@@ -147,7 +139,7 @@ arch_objdump_flags=
 # than a misguided -mcpu flag.
 if [ $CHERIBSD_VERSION -gt 0 ]; then
 	case "$_TARGET" in
-	aarch64-*-freebsd*)
+	aarch64-*-freebsd*|aarch64-freebsd*)
 		if run_tool llvm-readelf -h ${_SYSROOT}/lib/libc.so.7 | grep "Flags:.*purecap" >/dev/null; then
 			tls_flags=
 			vararg_flags=
@@ -180,7 +172,7 @@ if [ $CHERIBSD_VERSION -gt 0 ]; then
 			arch_objdump_flags="--mattr=+morello"
 		fi
 		;;
-	riscv64-*-freebsd*)
+	riscv64-*-freebsd*|riscv64-freebsd*)
 		if run_tool llvm-readelf -h ${_SYSROOT}/lib/libc.so.7 | grep "Flags:.*cheriabi" >/dev/null; then
 			mabi=l64pc128d
 		else
