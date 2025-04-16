@@ -347,6 +347,7 @@
     SUBDIR += scheme48
     SUBDIR += scm
     SUBDIR += scratch
+    SUBDIR += scryer-prolog
     SUBDIR += sdcc
     SUBDIR += see
     SUBDIR += seed7
