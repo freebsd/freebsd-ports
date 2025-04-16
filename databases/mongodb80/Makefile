@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	8.0.5
+DISTVERSION=	8.0.6
 CATEGORIES=	databases net
 MASTER_SITES=	https://hg.mozilla.org/mozilla-central/raw-rev/:patches
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
@@ -140,12 +140,12 @@ MOZJS_ARCH=	ppc64le
 MOZJS_ARCH=	${ARCH}
 .endif
 
-post-patch:
-	${PATCH} -d ${WRKSRC}/src/third_party/mozjs/extract --quiet -p1 -V none < ${DISTDIR}/223087fdc29f18678f6174e9807b8780e439acf6
-
-pre-configure:
+post-extract:
 # Verify we downloaded the proper mozjs git tag.
 	${SH} -xc "test \"X`grep -E '^LIB_GIT_REVISION=' ${WRKSRC}/src/third_party/mozjs/get-sources.sh`\" = \"XLIB_GIT_REVISION=${MOZJS_TAG}\""
+
+post-patch:
+	${PATCH} -d ${WRKSRC}/src/third_party/mozjs/extract --quiet -p1 -V none < ${DISTDIR}/223087fdc29f18678f6174e9807b8780e439acf6
 
 do-configure:
 # Replacement of ${WRKSRC}/src/third_party/mozjs/get-sources.sh
