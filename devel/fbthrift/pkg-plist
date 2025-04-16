@@ -212,6 +212,7 @@ include/thrift/lib/cpp2/async/ClientBufferedStream.h
 include/thrift/lib/cpp2/async/ClientChannel.h
 include/thrift/lib/cpp2/async/ClientInterceptor.h
 include/thrift/lib/cpp2/async/ClientInterceptorBase.h
+include/thrift/lib/cpp2/async/ClientInterceptorControl.h
 include/thrift/lib/cpp2/async/ClientInterceptorStorage.h
 include/thrift/lib/cpp2/async/ClientSinkBridge.h
 include/thrift/lib/cpp2/async/ClientStreamBridge.h
@@ -381,6 +382,8 @@ include/thrift/lib/cpp2/protocol/JSONProtocol.h
 include/thrift/lib/cpp2/protocol/JSONProtocolCommon-inl.h
 include/thrift/lib/cpp2/protocol/JSONProtocolCommon.h
 include/thrift/lib/cpp2/protocol/LazyDeserializationFlags.h
+include/thrift/lib/cpp2/protocol/NativeObject-inl.h
+include/thrift/lib/cpp2/protocol/NativeObject.h
 include/thrift/lib/cpp2/protocol/Object.h
 include/thrift/lib/cpp2/protocol/Patch.h
 include/thrift/lib/cpp2/protocol/Protocol.h
@@ -435,6 +438,7 @@ include/thrift/lib/cpp2/server/AdaptiveConcurrency.h
 include/thrift/lib/cpp2/server/CPUConcurrencyController.h
 include/thrift/lib/cpp2/server/ConcurrencyControllerBase.h
 include/thrift/lib/cpp2/server/ConcurrencyControllerInterface.h
+include/thrift/lib/cpp2/server/ConcurrencyControllerInterfaceUnsafeAPI.h
 include/thrift/lib/cpp2/server/ControlServerInterface.h
 include/thrift/lib/cpp2/server/Cpp2ConnContext.h
 include/thrift/lib/cpp2/server/Cpp2Connection.h
