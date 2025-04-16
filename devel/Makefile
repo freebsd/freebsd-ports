@@ -867,6 +867,7 @@
     SUBDIR += git-svn
     SUBDIR += git-town
     SUBDIR += git-tui
+    SUBDIR += git-who
     SUBDIR += git-workspace
     SUBDIR += gitaly
     SUBDIR += gitea-act_runner

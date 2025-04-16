@@ -1,0 +1,15 @@
+TIMESTAMP = 1750625954
+SHA256 (sinclairtarget-git-who-v1.1_GH0.tar.gz) = b88efe18a39987006df113e097a0e96493955237613997b56c940ff591473ea2
+SIZE (sinclairtarget-git-who-v1.1_GH0.tar.gz) = 558535
+SHA256 (bmatcuk-doublestar-v4.8.1_GH0.tar.gz) = 0e3302161fdad14119562cb2e978b9e7fb88e8f50c26e7b9c2c2054e5ae52121
+SIZE (bmatcuk-doublestar-v4.8.1_GH0.tar.gz) = 27786
+SHA256 (golang-sys-v0.29.0_GH0.tar.gz) = 7bac3e0a686a05d0e86ca110917b45f60553d6c146dba8a4cdafb911486428e7
+SIZE (golang-sys-v0.29.0_GH0.tar.gz) = 1519988
+SHA256 (golang-term-v0.28.0_GH0.tar.gz) = d51c19c748969584974813009910ff3c4f32a4d1798b9967d3129891bd7ff7be
+SIZE (golang-term-v0.28.0_GH0.tar.gz) = 14692
+SHA256 (google-go-cmp-v0.6.0_GH0.tar.gz) = d14f7d57b0f6d25771bee3d7d5d038f532539e71bfc934772b1c0467ab90fa86
+SIZE (google-go-cmp-v0.6.0_GH0.tar.gz) = 104784
+SHA256 (mattn-go-runewidth-v0.0.16_GH0.tar.gz) = e98c1e4a82b8a6d026ee63385955cc178c91c77f106c7cf3d743736301106a8f
+SIZE (mattn-go-runewidth-v0.0.16_GH0.tar.gz) = 18490
+SHA256 (rivo-uniseg-v0.2.0_GH0.tar.gz) = 3ad738b5c9162ede110d75b23564b6e40e52dd9150ebbced402f4f70be106197
+SIZE (rivo-uniseg-v0.2.0_GH0.tar.gz) = 44036
