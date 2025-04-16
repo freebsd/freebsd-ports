@@ -225,6 +225,7 @@ include/folly/container/SparseByteSet.h
 include/folly/container/View.h
 include/folly/container/WeightedEvictingCacheMap.h
 include/folly/container/detail/BitIteratorDetail.h
+include/folly/container/detail/BoolWrapper.h
 include/folly/container/detail/F14Defaults.h
 include/folly/container/detail/F14IntrinsicsAvailability.h
 include/folly/container/detail/F14MapFallback.h
@@ -242,6 +243,7 @@ include/folly/container/span.h
 include/folly/container/tape.h
 include/folly/container/test/F14TestUtil.h
 include/folly/container/test/TrackingTypes.h
+include/folly/container/vector_bool.h
 include/folly/coro/Accumulate-inl.h
 include/folly/coro/Accumulate.h
 include/folly/coro/AsyncGenerator.h
