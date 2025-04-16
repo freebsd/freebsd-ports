@@ -11,6 +11,8 @@ WWW=		https://julijane.de/gwhois/
 
 LICENSE=	GPLv2
 
+BROKEN=		source and WWW is gone. Hasn't been updated for 12yrs.
+
 RUN_DEPENDS=	p5-libwww>=5.805:www/p5-libwww \
 		p5-Net-LibIDN>=0:dns/p5-Net-LibIDN \
 		lynx:www/lynx \
