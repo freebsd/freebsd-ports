@@ -18,7 +18,7 @@ NO_ARCH=	yes
 MANPREFIX=	${PREFIX}/share
 
 do-install:
-	@${MKDIR} ${PREFIX}/sbin ${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/sbin ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/Man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
