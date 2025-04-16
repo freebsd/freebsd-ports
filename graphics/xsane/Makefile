@@ -10,12 +10,13 @@ WWW=		https://gitlab.com/sane-project/frontend/xsane
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/xsane.COPYING
 
-BUILD_DEPENDS=	scanimage:graphics/sane-backends
+BR_DEPENDS=	scanimage:graphics/sane-backends
+BUILD_DEPENDS=	${BR_DEPENDS}
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2 \
 		liblcms.so:graphics/lcms
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BR_DEPENDS}
 
 USES=		gmake gnome jpeg localbase:ldflags pkgconfig
 USE_GITLAB=	yes
