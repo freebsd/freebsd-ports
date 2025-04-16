@@ -12,6 +12,9 @@ WWW=		https://www.openbgpd.org/
 LICENSE=	ISCL
 LICENSE_FILE=	${FILESDIR}/COPYING
 
+DEPRECATED=	Unsupported upstream, consider using net/openbgpd8
+EXPIRATION_DATE=2025-05-30
+
 USES=		autoreconf libtool uidfix
 USE_RC_SUBR=	${PORTNAME}
 
