@@ -1,3 +1,38 @@
+  <vuln vid="bf5d29ea-1a93-11f0-8cb5-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>135.0.7049.95</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>135.0.7049.95</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/04/stable-channel-update-for-desktop_15.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[409619251] Critical CVE-2025-3619: Heap buffer overflow in Codecs. Reported by Elias Hohl on 2025-04-09</li>
+	    <li>[405292639] High CVE-2025-3620: Use after free in USB. Reported by @retsew0x01 on 2025-03-21</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3619</cvename>
+      <cvename>CVE-2025-3620</cvename>
+      <url>https://chromereleases.googleblog.com/2025/04/stable-channel-update-for-desktop_15.html</url>
+    </references>
+    <dates>
+      <discovery>2025-04-15</discovery>
+      <entry>2025-04-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="030778d5-19cc-11f0-8cb5-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
