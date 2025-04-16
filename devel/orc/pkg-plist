@@ -15,11 +15,9 @@ include/orc-0.4/orc/orccompiler.h
 include/orc-0.4/orc/orcconstant.h
 include/orc-0.4/orc/orccpu.h
 include/orc-0.4/orc/orcdebug.h
-include/orc-0.4/orc/orcemulateopcodes.h
 include/orc-0.4/orc/orcexecutor.h
 include/orc-0.4/orc/orcfunctions.h
 include/orc-0.4/orc/orcinstruction.h
-include/orc-0.4/orc/orcinternal.h
 include/orc-0.4/orc/orclimits.h
 include/orc-0.4/orc/orcmips.h
 include/orc-0.4/orc/orcmmx.h
