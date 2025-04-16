@@ -103,7 +103,6 @@ include/dns/validator.h
 include/dns/view.h
 include/dns/xfrin.h
 include/dns/zone.h
-include/dns/zonekey.h
 include/dns/zoneverify.h
 include/dns/zt.h
 include/dst/dst.h
@@ -131,6 +130,7 @@ include/isc/error.h
 include/isc/file.h
 include/isc/formatcheck.h
 include/isc/fuzz.h
+include/isc/fxhash.h
 include/isc/getaddresses.h
 include/isc/hash.h
 include/isc/hashmap.h
@@ -172,6 +172,7 @@ include/isc/quota.h
 include/isc/radix.h
 include/isc/random.h
 include/isc/ratelimiter.h
+include/isc/readline.h
 include/isc/refcount.h
 include/isc/regex.h
 include/isc/region.h
@@ -179,6 +180,7 @@ include/isc/result.h
 include/isc/rwlock.h
 include/isc/safe.h
 include/isc/serial.h
+include/isc/sieve.h
 include/isc/signal.h
 include/isc/siphash.h
 include/isc/sockaddr.h
@@ -232,15 +234,15 @@ include/ns/update.h
 include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
-lib/libdns-9.21.6.so
+lib/libdns-9.21.7.so
 lib/libdns.so
-lib/libisc-9.21.6.so
+lib/libisc-9.21.7.so
 lib/libisc.so
-lib/libisccc-9.21.6.so
+lib/libisccc-9.21.7.so
 lib/libisccc.so
-lib/libisccfg-9.21.6.so
+lib/libisccfg-9.21.7.so
 lib/libisccfg.so
-lib/libns-9.21.6.so
+lib/libns-9.21.7.so
 lib/libns.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
