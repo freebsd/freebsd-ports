@@ -1,4 +1,4 @@
---- config.toml.example.orig	2025-03-19 10:31:26 UTC
+--- config.toml.example.orig	2025-04-16 03:58:04 UTC
 +++ config.toml.example
 @@ -2,10 +2,10 @@
  # For Gitaly documentation, see https://docs.gitlab.com/administration/gitaly/.
@@ -13,8 +13,8 @@
  
  # # Optional. The directory where Gitaly can create all files required to
  # # properly operate at runtime. If not set, Gitaly will create a directory in
-@@ -40,9 +40,9 @@ bin_dir = "/home/git/gitaly/_build/bin"
- # key_path = '/home/git/key.pem'
+@@ -42,9 +42,9 @@ bin_dir = "/home/git/gitaly/_build/bin"
+ # min_version = "TLS 1.2"
  
  # # Git settings
 -# [git]
@@ -26,7 +26,7 @@
  # # Maximum number of cached 'cat-file' processes, which constitute a pair of 'git cat-file --batch' and
  # # 'git cat-file --batch-check' processes. Defaults to '100'.
  # catfile_cache_size = 100
-@@ -58,7 +58,7 @@ name = "default"
+@@ -60,7 +60,7 @@ name = "default"
  # # The name of the storage
  name = "default"
  # # The path to the storage.
@@ -35,7 +35,7 @@
  
  # # You can optionally configure more storages for this Gitaly instance to serve up
  #
-@@ -89,18 +89,18 @@ sentry_environment = ""
+@@ -91,18 +91,18 @@ sentry_environment = ""
  # # Custom Git hooks that are used to perform tasks based on changes performed in any repository.
  [hooks]
  # # Directory where custom Git hooks are installed. If left unset, no custom hooks are used.
