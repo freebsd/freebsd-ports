@@ -8,7 +8,7 @@ DIST_SUBDIR=	nawk-${PORTVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Brian Kernighan's pattern scanning and processing language
-WWW=		http://cm.bell-labs.com/cm/cs/awkbook/index.html
+WWW=		https://github.com/onetrueawk/awk
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
