@@ -49,7 +49,7 @@ share/metainfo/com.gitlab.tipp10.tipp10.metainfo.xml
 %%DATADIR%%/help/de/img/h_terminal_mac.png
 %%DATADIR%%/help/de/img/h_training_lesson.png
 %%DATADIR%%/help/de/img/h_training_numpad.png
-%%DATADIR%%/help/de/img/logo.png
+%%DATADIR%%/help/de/img/logo.svg
 %%DATADIR%%/help/de/img/tt_logo.png
 %%DATADIR%%/help/de/index.html
 %%DATADIR%%/help/en/content/about.html
@@ -97,7 +97,7 @@ share/metainfo/com.gitlab.tipp10.tipp10.metainfo.xml
 %%DATADIR%%/help/en/img/h_terminal_mac.png
 %%DATADIR%%/help/en/img/h_training_lesson.png
 %%DATADIR%%/help/en/img/h_training_numpad.png
-%%DATADIR%%/help/en/img/logo.png
+%%DATADIR%%/help/en/img/logo.svg
 %%DATADIR%%/help/en/img/tt_logo.png
 %%DATADIR%%/help/en/index.html
 %%DATADIR%%/help/nl/content/about.html
@@ -145,7 +145,7 @@ share/metainfo/com.gitlab.tipp10.tipp10.metainfo.xml
 %%DATADIR%%/help/nl/img/h_terminal_mac.png
 %%DATADIR%%/help/nl/img/h_training_lesson.png
 %%DATADIR%%/help/nl/img/h_training_numpad.png
-%%DATADIR%%/help/nl/img/logo.png
+%%DATADIR%%/help/nl/img/logo.svg
 %%DATADIR%%/help/nl/img/tt_logo.png
 %%DATADIR%%/help/nl/index.html
 %%DATADIR%%/metronome.wav
@@ -153,4 +153,8 @@ share/metainfo/com.gitlab.tipp10.tipp10.metainfo.xml
 %%DATADIR%%/translations/tipp10_de.qm
 %%DATADIR%%/translations/tipp10_en.qm
 %%DATADIR%%/translations/tipp10_fr.qm
+%%DATADIR%%/translations/tipp10_nb_NO.qm
 %%DATADIR%%/translations/tipp10_nl.qm
+%%DATADIR%%/translations/tipp10_pl.qm
+%%DATADIR%%/translations/tipp10_ta.qm
+%%DATADIR%%/translations/tipp10_uk.qm
