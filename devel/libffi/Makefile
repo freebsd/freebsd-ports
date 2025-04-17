@@ -1,10 +1,7 @@
 PORTNAME=	libffi
-DISTVERSION=	3.4.7
+DISTVERSION=	3.4.8
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	fe203ffbb2bd7f93a86013d341aa767a406150bc.patch:-p1
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Foreign Function Interface
