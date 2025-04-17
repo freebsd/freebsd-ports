@@ -1,6 +1,6 @@
 PORTNAME=	sops
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.10.1
+DISTVERSION=	3.10.2
 CATEGORIES=	security editors
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://github.com/mozilla/sops
 
 LICENSE=	MPL20
 
-USES=		go:1.22,modules
+USES=		go:1.23,modules
 
 GO_MODULE=	go.mozilla.org/sops/v3
 GO_TARGET=	./cmd/sops
