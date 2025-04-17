@@ -1,5 +1,5 @@
 PORTNAME=	tty-solitaire
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -10,10 +10,9 @@ WWW=		https://github.com/mpereira/tty-solitaire
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		gmake ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpereira
-
-USES=		gmake ncurses
 TEST_TARGET=	test
 
 MAKE_ARGS=	NCURSES="${NCURSESLIBS}"
