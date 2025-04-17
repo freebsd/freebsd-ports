@@ -1,5 +1,5 @@
 PORTNAME=	lsblk
-DISTVERSION=	3.9
+DISTVERSION=	4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/vermaden/lsblk/raw/master/release/:source \
 		https://github.com/vermaden/lsblk/raw/master/:license
