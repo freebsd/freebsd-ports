@@ -1,11 +1,11 @@
---- components/device_signals/test/signals_contract.cc.orig	2023-10-21 11:51:27 UTC
+--- components/device_signals/test/signals_contract.cc.orig	2025-04-16 18:18:42 UTC
 +++ components/device_signals/test/signals_contract.cc
-@@ -212,7 +212,7 @@ GetSignalsContract() {
+@@ -221,7 +221,7 @@ GetSignalsContract(bool is_av_signal_enabled) {
        base::BindRepeating(VerifyUnset, names::kCrowdStrike);
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUIDLFLAG(IS_BSD)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    contract[names::kAllowScreenLock] =
        base::BindRepeating(VerifyUnset, names::kAllowScreenLock);
    contract[names::kImei] = base::BindRepeating(VerifyUnset, names::kImei);

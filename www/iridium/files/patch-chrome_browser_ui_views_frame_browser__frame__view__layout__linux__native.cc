@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_frame_view_layout_linux_native.cc.orig	2024-06-25 12:08:48 UTC
+--- chrome/browser/ui/views/frame/browser_frame_view_layout_linux_native.cc.orig	2025-04-16 18:18:42 UTC
 +++ chrome/browser/ui/views/frame/browser_frame_view_layout_linux_native.cc
 @@ -18,7 +18,7 @@ BrowserFrameViewLayoutLinuxNative::~BrowserFrameViewLa
  
@@ -7,5 +7,5 @@
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    const bool tiled = delegate_->IsTiled();
+   const bool maximized = delegate_->IsMaximized();
  #else
-   const bool tiled = false;

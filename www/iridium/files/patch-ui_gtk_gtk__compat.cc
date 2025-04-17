@@ -1,6 +1,6 @@
---- ui/gtk/gtk_compat.cc.orig	2023-10-21 11:51:27 UTC
+--- ui/gtk/gtk_compat.cc.orig	2025-04-16 18:18:42 UTC
 +++ ui/gtk/gtk_compat.cc
-@@ -62,27 +62,47 @@ auto DlCast(void* symbol) {
+@@ -64,27 +64,47 @@ auto DlCast(void* symbol) {
  }
  
  void* GetLibGio() {

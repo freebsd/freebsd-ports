@@ -1,6 +1,6 @@
---- chrome/browser/gcm/gcm_profile_service_factory.cc.orig	2025-02-22 18:06:53 UTC
+--- chrome/browser/gcm/gcm_profile_service_factory.cc.orig	2025-04-16 18:18:42 UTC
 +++ chrome/browser/gcm/gcm_profile_service_factory.cc
-@@ -89,7 +89,7 @@ GCMProfileServiceFactory::ScopedTestingFactoryInstalle
+@@ -110,7 +110,7 @@ GCMProfileServiceFactory::ScopedTestingFactoryInstalle
  // static
  GCMProfileService* GCMProfileServiceFactory::GetForProfile(
      content::BrowserContext* profile) {
@@ -9,7 +9,7 @@
    // On desktop, incognito profiles are checked with IsIncognitoProfile().
    // It's possible for non-incognito profiles to also be off-the-record.
    bool is_profile_supported =
-@@ -132,7 +132,7 @@ std::unique_ptr<KeyedService>
+@@ -153,7 +153,7 @@ std::unique_ptr<KeyedService>
  GCMProfileServiceFactory::BuildServiceInstanceForBrowserContext(
      content::BrowserContext* context) const {
    Profile* profile = Profile::FromBrowserContext(context);
