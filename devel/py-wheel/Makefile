@@ -19,6 +19,4 @@ USE_PYTHON=	allflavors autoplist concurrent pep517
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	py*-wheel044
-
 .include <bsd.port.mk>
