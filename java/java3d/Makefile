@@ -6,12 +6,12 @@ MASTER_SITES=	https://sites.google.com/site/daemonwizard/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides API for creating and manipulation of 3D geometry
-WWW=		http://java3d.java.net/
+WWW=		https://www.oracle.com/java/technologies/javase/java-3d.html \
+		https://download.java.net/media/java3d/builds/release/1.5.2/README-download.html
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-BROKEN_aarch64=		fails to compile: GVector.java:168: bad use of '>'
 BROKEN_armv6=		fails to compile: build.xml: Compile failed; see the compiler error output for details
 BROKEN_armv7=		fails to compile: build.xml: Compile failed; see the compiler error output for details
 
