@@ -1,7 +1,6 @@
 PORTNAME=	v2ray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.28.0
-PORTREVISION=	3
+DISTVERSION=	5.30.0
 CATEGORIES=	net
 
 MAINTAINER=	shen.elf@gmail.com
@@ -12,7 +11,7 @@ WWW=		https://www.v2fly.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:1.23,modules
+USES=		cpe go:1.24,modules
 CPE_VENDOR=	v2fly
 CPE_PRODUCT=	v2ray-core
 USE_GITHUB=	yes
