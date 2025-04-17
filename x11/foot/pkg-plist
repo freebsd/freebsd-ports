@@ -38,9 +38,11 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/material-design
 %%DATADIR%%/themes/modus-operandi
 %%DATADIR%%/themes/modus-vivendi
+%%DATADIR%%/themes/molokai
 %%DATADIR%%/themes/monokai-pro
 %%DATADIR%%/themes/moonfly
 %%DATADIR%%/themes/neon
+%%DATADIR%%/themes/night-owl
 %%DATADIR%%/themes/nightfly
 %%DATADIR%%/themes/noirblaze
 %%DATADIR%%/themes/nord
