@@ -113,6 +113,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/avfilter_framestep.xml
 %%DATADIR%%/effects/avfilter_fspp.xml
 %%DATADIR%%/effects/avfilter_gblur.xml
+%%DATADIR%%/effects/avfilter_gradfun.xml
 %%DATADIR%%/effects/avfilter_graphmonitor.xml
 %%DATADIR%%/effects/avfilter_haas.xml
 %%DATADIR%%/effects/avfilter_hflip.xml
@@ -139,8 +140,10 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/avfilter_negate.xml
 %%DATADIR%%/effects/avfilter_noise.xml
 %%DATADIR%%/effects/avfilter_normalize.xml
+%%DATADIR%%/effects/avfilter_oscilloscope.xml
 %%DATADIR%%/effects/avfilter_phase.xml
 %%DATADIR%%/effects/avfilter_photosensitivity.xml
+%%DATADIR%%/effects/avfilter_pixelize.xml
 %%DATADIR%%/effects/avfilter_prewitt.xml
 %%DATADIR%%/effects/avfilter_random.xml
 %%DATADIR%%/effects/avfilter_removegrain.xml
@@ -184,6 +187,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/copychannelstostereo.xml
 %%DATADIR%%/effects/crop.xml
 %%DATADIR%%/effects/dance.xml
+%%DATADIR%%/effects/dropshadow.xml
 %%DATADIR%%/effects/dust.xml
 %%DATADIR%%/effects/dynamic_loudness.xml
 %%DATADIR%%/effects/dynamictext.xml
@@ -195,6 +199,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/frei0r_B.xml
 %%DATADIR%%/effects/frei0r_G.xml
 %%DATADIR%%/effects/frei0r_R.xml
+%%DATADIR%%/effects/frei0r_aech0r.xml
 %%DATADIR%%/effects/frei0r_alpha0ps.xml
 %%DATADIR%%/effects/frei0r_alpha0ps_alpha0ps.xml
 %%DATADIR%%/effects/frei0r_alpha0ps_alphagrad.xml
@@ -255,6 +260,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/frei0r_nosync0r.xml
 %%DATADIR%%/effects/frei0r_pixeliz0r.xml
 %%DATADIR%%/effects/frei0r_pixs0r.xml
+%%DATADIR%%/effects/frei0r_posterize.xml
 %%DATADIR%%/effects/frei0r_pr0be.xml
 %%DATADIR%%/effects/frei0r_pr0file.xml
 %%DATADIR%%/effects/frei0r_primaries.xml
@@ -337,12 +343,14 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/qtcrop.xml
 %%DATADIR%%/effects/rboctaveshift.xml
 %%DATADIR%%/effects/rbpitchscale.xml
+%%DATADIR%%/effects/rotate-3-way.xml
 %%DATADIR%%/effects/rotation.xml
 %%DATADIR%%/effects/rotation_keyframable.xml
 %%DATADIR%%/effects/rotoscoping.xml
 %%DATADIR%%/effects/scratchlines.xml
 %%DATADIR%%/effects/sepia.xml
 %%DATADIR%%/effects/shape.xml
+%%DATADIR%%/effects/shear.xml
 %%DATADIR%%/effects/sox_band.xml
 %%DATADIR%%/effects/sox_bass.xml
 %%DATADIR%%/effects/sox_echo.xml
@@ -352,6 +360,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/sox_stretch.xml
 %%DATADIR%%/effects/speed.xml
 %%DATADIR%%/effects/spot_remover.xml
+%%DATADIR%%/effects/strobe.xml
 %%DATADIR%%/effects/subtitles.xml
 %%DATADIR%%/effects/swapchannels.xml
 %%DATADIR%%/effects/tcolor.xml
@@ -435,16 +444,20 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/resourceproviders/pexels_video.json
 %%DATADIR%%/resourceproviders/pixabay_photo.json
 %%DATADIR%%/resourceproviders/pixabay_videos.json
+%%DATADIR%%/sammodelsinfo.rc
+%%DATADIR%%/scripts/automask/requirements-cuda118.txt
+%%DATADIR%%/scripts/automask/requirements-cuda124.txt
+%%DATADIR%%/scripts/automask/requirements-cuda126.txt
+%%DATADIR%%/scripts/automask/requirements-sam.txt
+%%DATADIR%%/scripts/automask/sam-objectmask.py
 %%DATADIR%%/scripts/checkgpu.py
 %%DATADIR%%/scripts/checkpackages.py
 %%DATADIR%%/scripts/otiointerface.py
-%%DATADIR%%/scripts/requirements-seamless.txt
-%%DATADIR%%/scripts/requirements-whisper-windows.txt
-%%DATADIR%%/scripts/requirements-whisper.txt
-%%DATADIR%%/scripts/speech.py
-%%DATADIR%%/scripts/speechtotext.py
 %%DATADIR%%/scripts/vosk/speech.py
 %%DATADIR%%/scripts/vosk/speechtotext.py
+%%DATADIR%%/scripts/whisper/requirements-cuda118.txt
+%%DATADIR%%/scripts/whisper/requirements-cuda124.txt
+%%DATADIR%%/scripts/whisper/requirements-cuda126.txt
 %%DATADIR%%/scripts/whisper/requirements-seamless.txt
 %%DATADIR%%/scripts/whisper/requirements-whisper-windows.txt
 %%DATADIR%%/scripts/whisper/requirements-whisper.txt
@@ -452,8 +465,6 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/scripts/whisper/whisperquery.py
 %%DATADIR%%/scripts/whisper/whispertosrt.py
 %%DATADIR%%/scripts/whisper/whispertotext.py
-%%DATADIR%%/scripts/whispertosrt.py
-%%DATADIR%%/scripts/whispertotext.py
 %%DATADIR%%/shortcuts/Premiere
 %%DATADIR%%/slideanimations.rc
 %%DATADIR%%/titles/simple-scroll.kdenlivetitle
@@ -541,6 +552,7 @@ share/locale/fr/LC_MESSAGES/kdenlive.mo
 share/locale/ga/LC_MESSAGES/kdenlive.mo
 share/locale/gl/LC_MESSAGES/kdenlive.mo
 share/locale/he/LC_MESSAGES/kdenlive.mo
+share/locale/hi/LC_MESSAGES/kdenlive.mo
 share/locale/hr/LC_MESSAGES/kdenlive.mo
 share/locale/hu/LC_MESSAGES/kdenlive.mo
 share/locale/id/LC_MESSAGES/kdenlive.mo
@@ -559,6 +571,7 @@ share/locale/pt/LC_MESSAGES/kdenlive.mo
 share/locale/pt_BR/LC_MESSAGES/kdenlive.mo
 share/locale/ro/LC_MESSAGES/kdenlive.mo
 share/locale/ru/LC_MESSAGES/kdenlive.mo
+share/locale/sa/LC_MESSAGES/kdenlive.mo
 share/locale/sk/LC_MESSAGES/kdenlive.mo
 share/locale/sl/LC_MESSAGES/kdenlive.mo
 share/locale/sv/LC_MESSAGES/kdenlive.mo

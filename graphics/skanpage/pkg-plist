@@ -20,6 +20,7 @@ share/locale/fi/LC_MESSAGES/skanpage.mo
 share/locale/fr/LC_MESSAGES/skanpage.mo
 share/locale/gl/LC_MESSAGES/skanpage.mo
 share/locale/he/LC_MESSAGES/skanpage.mo
+share/locale/hi/LC_MESSAGES/skanpage.mo
 share/locale/hu/LC_MESSAGES/skanpage.mo
 share/locale/ia/LC_MESSAGES/skanpage.mo
 share/locale/id/LC_MESSAGES/skanpage.mo
@@ -36,6 +37,7 @@ share/locale/pl/LC_MESSAGES/skanpage.mo
 share/locale/pt/LC_MESSAGES/skanpage.mo
 share/locale/pt_BR/LC_MESSAGES/skanpage.mo
 share/locale/ru/LC_MESSAGES/skanpage.mo
+share/locale/sa/LC_MESSAGES/skanpage.mo
 share/locale/sk/LC_MESSAGES/skanpage.mo
 share/locale/sl/LC_MESSAGES/skanpage.mo
 share/locale/sv/LC_MESSAGES/skanpage.mo

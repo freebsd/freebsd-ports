@@ -9,6 +9,7 @@ WWW=		https://userbase.kde.org/Dolphin
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libpackagekitqt6.so:ports-mgmt/packagekit-qt
 RUN_DEPENDS=	${QT_PLUGINDIR}/kf6/thumbcreator/ffmpegthumbs.so:multimedia/kdemultimedia-ffmpegthumbs \
 		${QT_PLUGINDIR}/kf6/thumbcreator/gsthumbnail.so:graphics/kdegraphics-thumbnailers \
 		${QT_PLUGINDIR}/kf6/kio/thumbnail.so:devel/kio-extras
@@ -19,7 +20,8 @@ USE_KDE=	activities attica auth baloo baloo-widgets bookmarks codecs \
 		completion config configwidgets coreaddons crash dbusaddons \
 		itemmodels itemviews jobwidgets kcmutils kde-cli-tools kio \
 		newstuff notifications parts phonon service solid sonnet \
-		texteditor textwidgets widgetsaddons windowsystem xmlgui \
+		texteditor textwidgets userfeedback widgetsaddons windowsystem \
+		xmlgui \
 		doctools:build ecm:build
 USE_QT=		base
 USE_XORG=	x11

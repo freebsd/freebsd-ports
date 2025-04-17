@@ -6,9 +6,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE library for PIM-specific text editing utilities
 WWW=		https://www.kde.org/
 
-PATCH_SITES=	https://invent.kde.org/pim/kpimtextedit/-/commit/
-PATCHFILES+=	2c36ea1bdd1dcb60cd042a10668d64447484615d.patch:-p1 # Fix build with Qt 6.9
-
 LICENSE=	LGPL21
 
 USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz xorg

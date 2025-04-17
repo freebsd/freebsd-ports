@@ -37,6 +37,7 @@ share/locale/fr/LC_MESSAGES/kigo.mo
 share/locale/ga/LC_MESSAGES/kigo.mo
 share/locale/gl/LC_MESSAGES/kigo.mo
 share/locale/he/LC_MESSAGES/kigo.mo
+share/locale/hi/LC_MESSAGES/kigo.mo
 share/locale/hr/LC_MESSAGES/kigo.mo
 share/locale/hsb/LC_MESSAGES/kigo.mo
 share/locale/hu/LC_MESSAGES/kigo.mo
@@ -64,6 +65,7 @@ share/locale/pt/LC_MESSAGES/kigo.mo
 share/locale/pt_BR/LC_MESSAGES/kigo.mo
 share/locale/ro/LC_MESSAGES/kigo.mo
 share/locale/ru/LC_MESSAGES/kigo.mo
+share/locale/sa/LC_MESSAGES/kigo.mo
 share/locale/sk/LC_MESSAGES/kigo.mo
 share/locale/sl/LC_MESSAGES/kigo.mo
 share/locale/sr/LC_MESSAGES/kigo.mo

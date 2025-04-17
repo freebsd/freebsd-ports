@@ -34,7 +34,7 @@ lib/libkwavegui.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kwave/volume.so
 %%QT_PLUGINDIR%%/kwave/zero.so
 share/applications/org.kde.kwave.desktop
-share/icons/hicolor/scalable/apps/kwave.svgz
+share/icons/hicolor/scalable/apps/org.kde.kwave.svg
 %%DATADIR%%/menus.config
 %%DATADIR%%/pics/amplify_free.png
 %%DATADIR%%/pics/fade_in.png
@@ -66,6 +66,7 @@ share/locale/eu/LC_MESSAGES/kwave.mo
 share/locale/fi/LC_MESSAGES/kwave.mo
 share/locale/fr/LC_MESSAGES/kwave.mo
 share/locale/gl/LC_MESSAGES/kwave.mo
+share/locale/hi/LC_MESSAGES/kwave.mo
 share/locale/ia/LC_MESSAGES/kwave.mo
 share/locale/it/LC_MESSAGES/kwave.mo
 share/locale/ja/LC_MESSAGES/kwave.mo
@@ -77,6 +78,7 @@ share/locale/pl/LC_MESSAGES/kwave.mo
 share/locale/pt/LC_MESSAGES/kwave.mo
 share/locale/pt_BR/LC_MESSAGES/kwave.mo
 share/locale/ru/LC_MESSAGES/kwave.mo
+share/locale/sa/LC_MESSAGES/kwave.mo
 share/locale/sk/LC_MESSAGES/kwave.mo
 share/locale/sl/LC_MESSAGES/kwave.mo
 share/locale/sv/LC_MESSAGES/kwave.mo

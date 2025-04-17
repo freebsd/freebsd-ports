@@ -8,6 +8,8 @@ lib/libkalarmcalendar.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libkalarmplugin.so.6
 lib/libkalarmplugin.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/pim6/kalarm/akonadiplugin.so
+%%MPV%%%%QT_PLUGINDIR%%/pim6/kalarm/audioplugin_mpv.so
+%%VLC%%%%QT_PLUGINDIR%%/pim6/kalarm/audioplugin_vlc.so
 share/applications/org.kde.kalarm.desktop
 share/config.kcfg/kalarmconfig.kcfg
 share/dbus-1/interfaces/org.kde.kalarm.kalarm.xml
@@ -81,6 +83,7 @@ share/locale/pt/LC_MESSAGES/kalarm.mo
 share/locale/pt_BR/LC_MESSAGES/kalarm.mo
 share/locale/ro/LC_MESSAGES/kalarm.mo
 share/locale/ru/LC_MESSAGES/kalarm.mo
+share/locale/sa/LC_MESSAGES/kalarm.mo
 share/locale/se/LC_MESSAGES/kalarm.mo
 share/locale/si/LC_MESSAGES/kalarm.mo
 share/locale/sk/LC_MESSAGES/kalarm.mo

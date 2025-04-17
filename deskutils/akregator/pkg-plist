@@ -12,6 +12,7 @@ lib/libakregatorprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/pim6/kcms/akregator/akregator_config_general.so
 %%QT_PLUGINDIR%%/pim6/kcms/akregator/akregator_config_plugins.so
 %%QT_PLUGINDIR%%/pim6/kcms/akregator/akregator_config_security.so
+%%QT_PLUGINDIR%%/pim6/kcms/akregator/akregator_config_userfeedback.so
 %%QT_PLUGINDIR%%/pim6/kontact/kontact_akregatorplugin.so
 share/applications/org.kde.akregator.desktop
 share/config.kcfg/akregator.kcfg
@@ -80,6 +81,7 @@ share/locale/pt/LC_MESSAGES/akregator.mo
 share/locale/pt_BR/LC_MESSAGES/akregator.mo
 share/locale/ro/LC_MESSAGES/akregator.mo
 share/locale/ru/LC_MESSAGES/akregator.mo
+share/locale/sa/LC_MESSAGES/akregator.mo
 share/locale/se/LC_MESSAGES/akregator.mo
 share/locale/sk/LC_MESSAGES/akregator.mo
 share/locale/sl/LC_MESSAGES/akregator.mo

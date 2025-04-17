@@ -9,6 +9,7 @@ lib/cmake/DolphinVcs/DolphinVcsConfig.cmake
 lib/cmake/DolphinVcs/DolphinVcsConfigVersion.cmake
 lib/cmake/DolphinVcs/DolphinVcsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/DolphinVcs/DolphinVcsTargets.cmake
+lib/kconf_update_bin/dolphin_25.04_update_statusandlocationbarssettings
 lib/libdolphinprivate.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libdolphinprivate.so.%%SHLIB_SHVER%%
 lib/libdolphinvcs.so
@@ -16,8 +17,8 @@ lib/libdolphinvcs.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libdolphinvcs.so.%%SHLIB_SHVER%%
 %%QT_PLUGINDIR%%/dolphin/kcms/kcm_dolphingeneral.so
 %%QT_PLUGINDIR%%/dolphin/kcms/kcm_dolphinviewmodes.so
-%%QT_PLUGINDIR%%/kf%%SHLIB_SHVER%%/kfileitemaction/movetonewfolderitemaction.so
-%%QT_PLUGINDIR%%/kf%%SHLIB_SHVER%%/parts/dolphinpart.so
+%%QT_PLUGINDIR%%/kf6/kfileitemaction/movetonewfolderitemaction.so
+%%QT_PLUGINDIR%%/kf6/parts/dolphinpart.so
 lib/systemd/user/plasma-dolphin.service
 share/applications/org.kde.dolphin.desktop
 share/config.kcfg/dolphin_compactmodesettings.kcfg
@@ -35,6 +36,7 @@ share/icons/hicolor/scalable/apps/org.kde.dolphin.svg
 share/kconf_update/dolphin_detailsmodesettings.upd
 share/kconf_update/dolphin_directorysizemode.py
 share/kconf_update/dolphin_directorysizemode.upd
+share/kconf_update/dolphin_statusandlocationbarssettings.upd
 share/kglobalaccel/org.kde.dolphin.desktop
 share/knsrcfiles/servicemenu.knsrc
 share/locale/ar/LC_MESSAGES/dolphin.mo
@@ -147,6 +149,8 @@ share/locale/ro/LC_MESSAGES/dolphin.mo
 share/locale/ro/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/ru/LC_MESSAGES/dolphin.mo
 share/locale/ru/LC_MESSAGES/dolphin_servicemenuinstaller.mo
+share/locale/sa/LC_MESSAGES/dolphin.mo
+share/locale/sa/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/se/LC_MESSAGES/dolphin.mo
 share/locale/si/LC_MESSAGES/dolphin.mo
 share/locale/sk/LC_MESSAGES/dolphin.mo
@@ -180,5 +184,5 @@ share/locale/zh_CN/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/zh_TW/LC_MESSAGES/dolphin.mo
 share/locale/zh_TW/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/metainfo/org.kde.dolphin.appdata.xml
-share/qlogging-categories%%SHLIB_SHVER%%/dolphin.categories
+share/qlogging-categories6/dolphin.categories
 share/zsh/site-functions/_dolphin

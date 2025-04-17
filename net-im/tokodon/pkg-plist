@@ -1,14 +1,6 @@
 bin/tokodon
 %%QT_PLUGINDIR%%/kf6/purpose/tokodonplugin.so
 share/applications/org.kde.tokodon.desktop
-share/icons/hicolor/scalable/actions/tokodon-chat-reply.svg
-share/icons/hicolor/scalable/actions/tokodon-post-bookmarked.svg
-share/icons/hicolor/scalable/actions/tokodon-post-boost.svg
-share/icons/hicolor/scalable/actions/tokodon-post-boosted.svg
-share/icons/hicolor/scalable/actions/tokodon-post-favorite.svg
-share/icons/hicolor/scalable/actions/tokodon-post-favorited.svg
-share/icons/hicolor/scalable/actions/tokodon-post-reply-filled.svg
-share/icons/hicolor/scalable/actions/tokodon-post-reply.svg
 share/icons/hicolor/scalable/apps/org.kde.tokodon.svg
 share/knotifications6/tokodon.notifyrc
 share/locale/ar/LC_MESSAGES/tokodon.mo
@@ -25,6 +17,7 @@ share/locale/fi/LC_MESSAGES/tokodon.mo
 share/locale/fr/LC_MESSAGES/tokodon.mo
 share/locale/gl/LC_MESSAGES/tokodon.mo
 share/locale/he/LC_MESSAGES/tokodon.mo
+share/locale/hi/LC_MESSAGES/tokodon.mo
 share/locale/hu/LC_MESSAGES/tokodon.mo
 share/locale/ia/LC_MESSAGES/tokodon.mo
 share/locale/id/LC_MESSAGES/tokodon.mo
@@ -42,6 +35,7 @@ share/locale/pl/LC_MESSAGES/tokodon.mo
 share/locale/pt/LC_MESSAGES/tokodon.mo
 share/locale/pt_BR/LC_MESSAGES/tokodon.mo
 share/locale/ru/LC_MESSAGES/tokodon.mo
+share/locale/sa/LC_MESSAGES/tokodon.mo
 share/locale/sk/LC_MESSAGES/tokodon.mo
 share/locale/sl/LC_MESSAGES/tokodon.mo
 share/locale/sq/LC_MESSAGES/tokodon.mo

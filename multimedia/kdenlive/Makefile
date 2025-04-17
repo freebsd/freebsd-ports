@@ -8,7 +8,9 @@ WWW=		https://www.kdenlive.org
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	librttr_core.so:devel/rttr
+LIB_DEPENDS=	libImath.so:math/Imath \
+		libopentimelineio.so:multimedia/opentimelineio \
+		librttr_core.so:devel/rttr
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/lib/mlt-7/libmltglaxnimate-qt6.so:multimedia/mlt7-glaxnimate@qt6
@@ -22,33 +24,30 @@ USE_GL=		gl glu
 USE_KDE=	archive attica auth bookmarks codecs completion config \
 		configwidgets coreaddons crash dbusaddons filemetadata \
 		guiaddons i18n iconthemes itemviews jobwidgets kdeclarative \
-		kio newstuff notifications notifyconfig package service solid \
-		sonnet textwidgets widgetsaddons windowsystem xmlgui \
+		kio newstuff notifications notifyconfig package purpose \
+		service solid sonnet textwidgets widgetsaddons \
+		windowsystem xmlgui \
 		qqc2-desktop-style:run \
 		ecm:build
 USE_QT=		base networkauth
 USE_XORG=	x11
 CFLAGS+=	-isystem${LOCALBASE}/include # linux/input.h
-CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
+CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}" \
+		-DFETCH_OTIO:BOOL=OFF
 
 # Keep in sync with multimedia/mlt, possibly.
 FFMPEG_SUFX=	# Currently empty.
 
-OPTIONS_DEFINE=	DVDWIZARD FILESHARE FREI0R LADSPA SCREENCAST V4L XINE DOCS
-OPTIONS_DEFAULT=DVDWIZARD FILESHARE FREI0R LADSPA SCREENCAST V4L
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	DVDWIZARD FREI0R LADSPA SCREENCAST V4L XINE DOCS
+OPTIONS_DEFAULT=DVDWIZARD FREI0R LADSPA SCREENCAST V4L
 
 DVDWIZARD_DESC=	DVD authoring via DVDAuthor and cdrtools
-FILESHARE_DESC=	Common KF6 filesharing support
 SCREENCAST_DESC=Screen capture support via recordMyDesktop
 V4L_DESC=	Webcam support via Video4Linux
 XINE_DESC=	DVD preview support via xine
 
 DVDWIZARD_RUN_DEPENDS=	dvdauthor:multimedia/dvdauthor \
 			cdrecord:sysutils/cdrtools
-
-FILESHARE_USE=	KDE=purpose
-FILESHARE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF6Purpose
 
 FREI0R_RUN_DEPENDS=	frei0r-plugins>=0:graphics/frei0r-plugins
 

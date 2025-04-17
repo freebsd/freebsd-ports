@@ -44,6 +44,7 @@ share/locale/fr/LC_MESSAGES/killbots.mo
 share/locale/ga/LC_MESSAGES/killbots.mo
 share/locale/gl/LC_MESSAGES/killbots.mo
 share/locale/he/LC_MESSAGES/killbots.mo
+share/locale/hi/LC_MESSAGES/killbots.mo
 share/locale/hr/LC_MESSAGES/killbots.mo
 share/locale/hu/LC_MESSAGES/killbots.mo
 share/locale/ia/LC_MESSAGES/killbots.mo
@@ -69,6 +70,7 @@ share/locale/pt/LC_MESSAGES/killbots.mo
 share/locale/pt_BR/LC_MESSAGES/killbots.mo
 share/locale/ro/LC_MESSAGES/killbots.mo
 share/locale/ru/LC_MESSAGES/killbots.mo
+share/locale/sa/LC_MESSAGES/killbots.mo
 share/locale/sk/LC_MESSAGES/killbots.mo
 share/locale/sl/LC_MESSAGES/killbots.mo
 share/locale/sr/LC_MESSAGES/killbots.mo

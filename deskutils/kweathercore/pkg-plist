@@ -40,6 +40,10 @@ lib/libKWeatherCore.so
 lib/libKWeatherCore.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libKWeatherCore.so.6
 %%QT_MKSPECDIR%%/modules/qt_KWeatherCore.pri
+%%QT_QMLDIR%%/org/kde/weathercore/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/weathercore/kweathercoreqmlplugin.qmltypes
+%%QT_QMLDIR%%/org/kde/weathercore/libkweathercoreqmlplugin.so
+%%QT_QMLDIR%%/org/kde/weathercore/qmldir
 share/locale/ar/LC_MESSAGES/kweathercore6.mo
 share/locale/ast/LC_MESSAGES/kweathercore6.mo
 share/locale/az/LC_MESSAGES/kweathercore6.mo
@@ -67,6 +71,7 @@ share/locale/ka/LC_MESSAGES/kweathercore6.mo
 share/locale/ko/LC_MESSAGES/kweathercore6.mo
 share/locale/lt/LC_MESSAGES/kweathercore6.mo
 share/locale/lv/LC_MESSAGES/kweathercore6.mo
+share/locale/nb/LC_MESSAGES/kweathercore6.mo
 share/locale/nl/LC_MESSAGES/kweathercore6.mo
 share/locale/nn/LC_MESSAGES/kweathercore6.mo
 share/locale/pa/LC_MESSAGES/kweathercore6.mo
@@ -74,6 +79,7 @@ share/locale/pl/LC_MESSAGES/kweathercore6.mo
 share/locale/pt/LC_MESSAGES/kweathercore6.mo
 share/locale/pt_BR/LC_MESSAGES/kweathercore6.mo
 share/locale/ru/LC_MESSAGES/kweathercore6.mo
+share/locale/sa/LC_MESSAGES/kweathercore6.mo
 share/locale/sk/LC_MESSAGES/kweathercore6.mo
 share/locale/sl/LC_MESSAGES/kweathercore6.mo
 share/locale/sv/LC_MESSAGES/kweathercore6.mo

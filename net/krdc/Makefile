@@ -30,9 +30,7 @@ OPTIONS_DEFINE=	FREERDP DOCS
 OPTIONS_DEFAULT=	FREERDP
 OPTIONS_SUB=	yes
 FREERDP_DESC=	Remote Desktop support via FreeRDP
-FREERDP_LIB_DEPENDS=	libfreerdp2.so:net/freerdp \
-			libfreerdp-client2.so:net/freerdp \
-			libwinpr2.so:net/freerdp
+FREERDP_LIB_DEPENDS=	libfreerdp3.so:net/freerdp3
 FREERDP_CMAKE_BOOL=	WITH_RDP
 
 .include <bsd.port.mk>

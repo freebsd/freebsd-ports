@@ -1,6 +1,5 @@
 PORTNAME=	calligra
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	editors kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -57,6 +56,6 @@ CMAKE_ON=	RELEASE_BUILD
 # Performance increase according to README.PACKAGERS
 CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS="-DKDE_NO_DEBUG_OUTPUT"
 
-PLIST_SUB=	SHLIB_VER=39
+PLIST_SUB=	SHLIB_VER=40
 
 .include <bsd.port.mk>

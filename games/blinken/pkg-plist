@@ -3,11 +3,6 @@ share/applications/org.kde.blinken.desktop
 %%DATADIR%%/README.packagers
 %%DATADIR%%/fonts/steve.ttf
 %%DATADIR%%/images/blinken.svg
-%%DATADIR%%/sounds/1.wav
-%%DATADIR%%/sounds/2.wav
-%%DATADIR%%/sounds/3.wav
-%%DATADIR%%/sounds/4.wav
-%%DATADIR%%/sounds/lose.wav
 share/config.kcfg/blinken.kcfg
 share/icons/hicolor/128x128/apps/blinken.png
 share/icons/hicolor/16x16/apps/blinken.png
@@ -73,6 +68,7 @@ share/locale/pt/LC_MESSAGES/blinken.mo
 share/locale/pt_BR/LC_MESSAGES/blinken.mo
 share/locale/ro/LC_MESSAGES/blinken.mo
 share/locale/ru/LC_MESSAGES/blinken.mo
+share/locale/sa/LC_MESSAGES/blinken.mo
 share/locale/se/LC_MESSAGES/blinken.mo
 share/locale/si/LC_MESSAGES/blinken.mo
 share/locale/sk/LC_MESSAGES/blinken.mo

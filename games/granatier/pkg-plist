@@ -133,6 +133,7 @@ share/locale/fr/LC_MESSAGES/granatier.mo
 share/locale/ga/LC_MESSAGES/granatier.mo
 share/locale/gl/LC_MESSAGES/granatier.mo
 share/locale/he/LC_MESSAGES/granatier.mo
+share/locale/hi/LC_MESSAGES/granatier.mo
 share/locale/hr/LC_MESSAGES/granatier.mo
 share/locale/hu/LC_MESSAGES/granatier.mo
 share/locale/ia/LC_MESSAGES/granatier.mo
@@ -159,6 +160,7 @@ share/locale/pt/LC_MESSAGES/granatier.mo
 share/locale/pt_BR/LC_MESSAGES/granatier.mo
 share/locale/ro/LC_MESSAGES/granatier.mo
 share/locale/ru/LC_MESSAGES/granatier.mo
+share/locale/sa/LC_MESSAGES/granatier.mo
 share/locale/sk/LC_MESSAGES/granatier.mo
 share/locale/sl/LC_MESSAGES/granatier.mo
 share/locale/sr/LC_MESSAGES/granatier.mo

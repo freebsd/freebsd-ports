@@ -6,10 +6,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Virtual globe and world atlas for KDE
 WWW=		https://marble.kde.org/
 
-PATCH_SITES=	https://invent.kde.org/education/marble/-/commit/
-PATCHFILES+=	8d21b43f569adcd3bb76d3f9d921f2aaddb2c303.patch:-p1 # Fix build with Qt 6.9
-PATCHFILES+=	a14a3a911f5a8f152783a97410267a6fd98cce48.patch:-p1 # Fix build with Qt 6.9
-
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 

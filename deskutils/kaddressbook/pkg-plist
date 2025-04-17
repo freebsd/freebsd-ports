@@ -29,7 +29,10 @@ lib/libKPim6AddressbookImportExport.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libkaddressbookprivate.so.6
 lib/libkaddressbookprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kaddressbookpart.so
+%%QT_PLUGINDIR%%/pim6/kcms/kaddressbook/kaddressbook_config_activities.so
+%%QT_PLUGINDIR%%/pim6/kcms/kaddressbook/kaddressbook_config_ldap.so
 %%QT_PLUGINDIR%%/pim6/kcms/kaddressbook/kaddressbook_config_plugins.so
+%%QT_PLUGINDIR%%/pim6/kcms/kaddressbook/kaddressbook_config_userfeedback.so
 %%QT_PLUGINDIR%%/pim6/kontact/kontact_kaddressbookplugin.so
 share/applications/kaddressbook-importer.desktop
 share/applications/kaddressbook-view.desktop
@@ -87,6 +90,7 @@ share/locale/fy/LC_MESSAGES/kaddressbook.mo
 share/locale/ga/LC_MESSAGES/kaddressbook.mo
 share/locale/gl/LC_MESSAGES/kaddressbook.mo
 share/locale/he/LC_MESSAGES/kaddressbook.mo
+share/locale/hi/LC_MESSAGES/kaddressbook.mo
 share/locale/hr/LC_MESSAGES/kaddressbook.mo
 share/locale/hu/LC_MESSAGES/kaddressbook.mo
 share/locale/ia/LC_MESSAGES/kaddressbook.mo
@@ -114,6 +118,7 @@ share/locale/pt/LC_MESSAGES/kaddressbook.mo
 share/locale/pt_BR/LC_MESSAGES/kaddressbook.mo
 share/locale/ro/LC_MESSAGES/kaddressbook.mo
 share/locale/ru/LC_MESSAGES/kaddressbook.mo
+share/locale/sa/LC_MESSAGES/kaddressbook.mo
 share/locale/se/LC_MESSAGES/kaddressbook.mo
 share/locale/sk/LC_MESSAGES/kaddressbook.mo
 share/locale/sl/LC_MESSAGES/kaddressbook.mo

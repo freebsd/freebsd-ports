@@ -48,6 +48,7 @@ share/icons/hicolor/scalable/apps/kajongg.svgz
 %%DATADIR%%/__pycache__/permutations%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/__pycache__/player%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/__pycache__/playerlist%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/point%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/__pycache__/predefined%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/__pycache__/qt%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/__pycache__/qtreactor%%PYTHON_EXT_SUFFIX%%.pyc
@@ -117,6 +118,7 @@ share/icons/hicolor/scalable/apps/kajongg.svgz
 %%DATADIR%%/permutations.py
 %%DATADIR%%/player.py
 %%DATADIR%%/playerlist.py
+%%DATADIR%%/point.py
 %%DATADIR%%/predefined.py
 %%DATADIR%%/qt.py
 %%DATADIR%%/qtreactor.py
@@ -516,6 +518,7 @@ share/locale/fr/LC_MESSAGES/kajongg.mo
 share/locale/ga/LC_MESSAGES/kajongg.mo
 share/locale/gl/LC_MESSAGES/kajongg.mo
 share/locale/he/LC_MESSAGES/kajongg.mo
+share/locale/hi/LC_MESSAGES/kajongg.mo
 share/locale/hu/LC_MESSAGES/kajongg.mo
 share/locale/ia/LC_MESSAGES/kajongg.mo
 share/locale/is/LC_MESSAGES/kajongg.mo
@@ -537,6 +540,7 @@ share/locale/pt/LC_MESSAGES/kajongg.mo
 share/locale/pt_BR/LC_MESSAGES/kajongg.mo
 share/locale/ro/LC_MESSAGES/kajongg.mo
 share/locale/ru/LC_MESSAGES/kajongg.mo
+share/locale/sa/LC_MESSAGES/kajongg.mo
 share/locale/sk/LC_MESSAGES/kajongg.mo
 share/locale/sl/LC_MESSAGES/kajongg.mo
 share/locale/sr/LC_MESSAGES/kajongg.mo

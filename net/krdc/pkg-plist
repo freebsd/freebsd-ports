@@ -13,6 +13,7 @@ lib/libkrdccore.so.5
 %%FREERDP%%%%QT_PLUGINDIR%%/krdc/krdc_rdpplugin.so
 share/applications/org.kde.krdc.desktop
 share/config.kcfg/krdc.kcfg
+share/icons/hicolor/scalable/apps/krdc.svg
 share/locale/af/LC_MESSAGES/krdc.mo
 share/locale/ar/LC_MESSAGES/krdc.mo
 share/locale/be/LC_MESSAGES/krdc.mo
@@ -68,6 +69,7 @@ share/locale/pt/LC_MESSAGES/krdc.mo
 share/locale/pt_BR/LC_MESSAGES/krdc.mo
 share/locale/ro/LC_MESSAGES/krdc.mo
 share/locale/ru/LC_MESSAGES/krdc.mo
+share/locale/sa/LC_MESSAGES/krdc.mo
 share/locale/se/LC_MESSAGES/krdc.mo
 share/locale/sk/LC_MESSAGES/krdc.mo
 share/locale/sl/LC_MESSAGES/krdc.mo

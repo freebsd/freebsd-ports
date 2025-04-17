@@ -1,11 +1,6 @@
 bin/kleopatra
 bin/kwatchgnupg
 etc/xdg/kleopatradebugcommandsrc
-lib/libkleopatraclientcore.so.1
-lib/libkleopatraclientcore.so.1.3.0
-lib/libkleopatraclientgui.so.1
-lib/libkleopatraclientgui.so.1.3.0
-%%QT_PLUGINDIR%%/pim6/kcms/kleopatra/kleopatra_config_gnupgsystem.so
 share/applications/kleopatra_import.desktop
 share/applications/org.kde.kleopatra.desktop
 share/applications/org.kde.kwatchgnupg.desktop
@@ -22,9 +17,9 @@ share/icons/hicolor/32x32/apps/org.kde.kwatchgnupg.png
 share/icons/hicolor/48x48/apps/kleopatra.png
 share/icons/hicolor/64x64/apps/kleopatra.png
 share/icons/hicolor/64x64/apps/org.kde.kwatchgnupg.png
+share/icons/hicolor/scalable/apps/kleopatra.svg
 share/icons/hicolor/scalable/apps/org.kde.kwatchgnupg.svg
 share/kio/servicemenus/kleopatra_decryptverifyfiles.desktop
-share/kio/servicemenus/kleopatra_decryptverifyfolders.desktop
 share/kio/servicemenus/kleopatra_signencryptfiles.desktop
 share/kio/servicemenus/kleopatra_signencryptfolders.desktop
 share/locale/af/LC_MESSAGES/kleopatra.mo
@@ -133,6 +128,8 @@ share/locale/ro/LC_MESSAGES/kleopatra.mo
 share/locale/ro/LC_MESSAGES/kwatchgnupg.mo
 share/locale/ru/LC_MESSAGES/kleopatra.mo
 share/locale/ru/LC_MESSAGES/kwatchgnupg.mo
+share/locale/sa/LC_MESSAGES/kleopatra.mo
+share/locale/sa/LC_MESSAGES/kwatchgnupg.mo
 share/locale/se/LC_MESSAGES/kleopatra.mo
 share/locale/se/LC_MESSAGES/kwatchgnupg.mo
 share/locale/sk/LC_MESSAGES/kleopatra.mo

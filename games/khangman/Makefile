@@ -15,8 +15,6 @@ USE_KDE=	completion config coreaddons crash i18n kio \
 USE_QT=		base declarative
 USE_LDCONFIG=	yes
 
-PATCH_STRIP=	-p1
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

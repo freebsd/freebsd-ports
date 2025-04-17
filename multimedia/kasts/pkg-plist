@@ -1,5 +1,9 @@
 bin/kasts
 lib/libKMediaSession.so
+%%QT_QMLDIR%%/org/kde/kmediasession/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/kmediasession/kmediasessionqmlplugin.qmltypes
+%%QT_QMLDIR%%/org/kde/kmediasession/libkmediasessionqmlplugin.so
+%%QT_QMLDIR%%/org/kde/kmediasession/qmldir
 share/applications/org.kde.kasts.desktop
 share/icons/hicolor/scalable/actions/media-playback-cloud.svg
 share/icons/hicolor/scalable/apps/kasts-tray-dark.svg
@@ -20,6 +24,7 @@ share/locale/fi/LC_MESSAGES/kasts.mo
 share/locale/fr/LC_MESSAGES/kasts.mo
 share/locale/gl/LC_MESSAGES/kasts.mo
 share/locale/he/LC_MESSAGES/kasts.mo
+share/locale/hi/LC_MESSAGES/kasts.mo
 share/locale/ia/LC_MESSAGES/kasts.mo
 share/locale/is/LC_MESSAGES/kasts.mo
 share/locale/it/LC_MESSAGES/kasts.mo
@@ -33,6 +38,7 @@ share/locale/pl/LC_MESSAGES/kasts.mo
 share/locale/pt/LC_MESSAGES/kasts.mo
 share/locale/pt_BR/LC_MESSAGES/kasts.mo
 share/locale/ru/LC_MESSAGES/kasts.mo
+share/locale/sa/LC_MESSAGES/kasts.mo
 share/locale/sk/LC_MESSAGES/kasts.mo
 share/locale/sl/LC_MESSAGES/kasts.mo
 share/locale/sv/LC_MESSAGES/kasts.mo

@@ -47,6 +47,7 @@ share/locale/gl/LC_MESSAGES/kalgebramobile.mo
 share/locale/he/LC_MESSAGES/kalgebra.mo
 share/locale/he/LC_MESSAGES/kalgebramobile.mo
 share/locale/hi/LC_MESSAGES/kalgebra.mo
+share/locale/hi/LC_MESSAGES/kalgebramobile.mo
 share/locale/hne/LC_MESSAGES/kalgebra.mo
 share/locale/hr/LC_MESSAGES/kalgebra.mo
 share/locale/hu/LC_MESSAGES/kalgebra.mo
@@ -66,6 +67,7 @@ share/locale/ko/LC_MESSAGES/kalgebramobile.mo
 share/locale/lt/LC_MESSAGES/kalgebra.mo
 share/locale/lt/LC_MESSAGES/kalgebramobile.mo
 share/locale/lv/LC_MESSAGES/kalgebra.mo
+share/locale/lv/LC_MESSAGES/kalgebramobile.mo
 share/locale/mai/LC_MESSAGES/kalgebra.mo
 share/locale/ml/LC_MESSAGES/kalgebra.mo
 share/locale/ml/LC_MESSAGES/kalgebramobile.mo
@@ -88,6 +90,8 @@ share/locale/pt_BR/LC_MESSAGES/kalgebramobile.mo
 share/locale/ro/LC_MESSAGES/kalgebra.mo
 share/locale/ru/LC_MESSAGES/kalgebra.mo
 share/locale/ru/LC_MESSAGES/kalgebramobile.mo
+share/locale/sa/LC_MESSAGES/kalgebra.mo
+share/locale/sa/LC_MESSAGES/kalgebramobile.mo
 share/locale/se/LC_MESSAGES/kalgebra.mo
 share/locale/si/LC_MESSAGES/kalgebra.mo
 share/locale/sk/LC_MESSAGES/kalgebra.mo

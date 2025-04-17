@@ -9,8 +9,8 @@ include/KPim6/MessageComposer/MessageComposer/AttachmentModel
 include/KPim6/MessageComposer/MessageComposer/AttachmentVcardFromAddressBookJob
 include/KPim6/MessageComposer/MessageComposer/AutocryptHeadersJob
 include/KPim6/MessageComposer/MessageComposer/AutocryptKeyResolverCore
-include/KPim6/MessageComposer/MessageComposer/Composer
 include/KPim6/MessageComposer/MessageComposer/ComposerAttachmentInterface
+include/KPim6/MessageComposer/MessageComposer/ComposerJob
 include/KPim6/MessageComposer/MessageComposer/ComposerLineEdit
 include/KPim6/MessageComposer/MessageComposer/ComposerViewBase
 include/KPim6/MessageComposer/MessageComposer/ComposerViewInterface
@@ -98,8 +98,8 @@ include/KPim6/MessageComposer/messagecomposer/attachmentmodel.h
 include/KPim6/MessageComposer/messagecomposer/attachmentvcardfromaddressbookjob.h
 include/KPim6/MessageComposer/messagecomposer/autocryptheadersjob.h
 include/KPim6/MessageComposer/messagecomposer/autocryptkeyresolvercore.h
-include/KPim6/MessageComposer/messagecomposer/composer.h
 include/KPim6/MessageComposer/messagecomposer/composerattachmentinterface.h
+include/KPim6/MessageComposer/messagecomposer/composerjob.h
 include/KPim6/MessageComposer/messagecomposer/composerlineedit.h
 include/KPim6/MessageComposer/messagecomposer/composerviewbase.h
 include/KPim6/MessageComposer/messagecomposer/composerviewinterface.h
@@ -220,6 +220,7 @@ include/KPim6/MessageCore/messagecore_version.h
 include/KPim6/MessageList/MessageList/AggregationComboBox
 include/KPim6/MessageList/MessageList/AggregationConfigButton
 include/KPim6/MessageList/MessageList/Enums
+include/KPim6/MessageList/MessageList/MD5Hash
 include/KPim6/MessageList/MessageList/MessageListUtil
 include/KPim6/MessageList/MessageList/Pane
 include/KPim6/MessageList/MessageList/QuickSearchLine
@@ -235,6 +236,7 @@ include/KPim6/MessageList/messagelist/aggregationcombobox.h
 include/KPim6/MessageList/messagelist/aggregationconfigbutton.h
 include/KPim6/MessageList/messagelist/config-messagelist.h
 include/KPim6/MessageList/messagelist/enums.h
+include/KPim6/MessageList/messagelist/md5hash.h
 include/KPim6/MessageList/messagelist/messagelist_export.h
 include/KPim6/MessageList/messagelist/messagelistsettings.h
 include/KPim6/MessageList/messagelist/messagelistutil.h
@@ -763,9 +765,13 @@ share/locale/he/LC_MESSAGES/libmessageviewer6.mo
 share/locale/he/LC_MESSAGES/libmimetreeparser6.mo
 share/locale/he/LC_MESSAGES/libtemplateparser6.mo
 share/locale/he/LC_MESSAGES/libwebengineviewer6.mo
+share/locale/hi/LC_MESSAGES/libmessagecomposer6.mo
+share/locale/hi/LC_MESSAGES/libmessagecore6.mo
 share/locale/hi/LC_MESSAGES/libmessagelist6.mo
 share/locale/hi/LC_MESSAGES/libmessageviewer6.mo
 share/locale/hi/LC_MESSAGES/libmimetreeparser6.mo
+share/locale/hi/LC_MESSAGES/libtemplateparser6.mo
+share/locale/hi/LC_MESSAGES/libwebengineviewer6.mo
 share/locale/hr/LC_MESSAGES/libmessagelist6.mo
 share/locale/hr/LC_MESSAGES/libmessageviewer6.mo
 share/locale/hr/LC_MESSAGES/libmimetreeparser6.mo
@@ -926,6 +932,13 @@ share/locale/ru/LC_MESSAGES/libmessageviewer6.mo
 share/locale/ru/LC_MESSAGES/libmimetreeparser6.mo
 share/locale/ru/LC_MESSAGES/libtemplateparser6.mo
 share/locale/ru/LC_MESSAGES/libwebengineviewer6.mo
+share/locale/sa/LC_MESSAGES/libmessagecomposer6.mo
+share/locale/sa/LC_MESSAGES/libmessagecore6.mo
+share/locale/sa/LC_MESSAGES/libmessagelist6.mo
+share/locale/sa/LC_MESSAGES/libmessageviewer6.mo
+share/locale/sa/LC_MESSAGES/libmimetreeparser6.mo
+share/locale/sa/LC_MESSAGES/libtemplateparser6.mo
+share/locale/sa/LC_MESSAGES/libwebengineviewer6.mo
 share/locale/se/LC_MESSAGES/libmessagelist6.mo
 share/locale/se/LC_MESSAGES/libmessageviewer6.mo
 share/locale/se/LC_MESSAGES/libmimetreeparser6.mo

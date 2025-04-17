@@ -80,6 +80,10 @@ share/locale/he/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/he/LC_MESSAGES/contactthemeeditor.mo
 share/locale/he/LC_MESSAGES/headerthemeeditor.mo
 share/locale/he/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/hi/LC_MESSAGES/contactprintthemeeditor.mo
+share/locale/hi/LC_MESSAGES/contactthemeeditor.mo
+share/locale/hi/LC_MESSAGES/headerthemeeditor.mo
+share/locale/hi/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/hu/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/hu/LC_MESSAGES/contactthemeeditor.mo
 share/locale/hu/LC_MESSAGES/headerthemeeditor.mo
@@ -140,6 +144,10 @@ share/locale/ru/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/ru/LC_MESSAGES/contactthemeeditor.mo
 share/locale/ru/LC_MESSAGES/headerthemeeditor.mo
 share/locale/ru/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/sa/LC_MESSAGES/contactprintthemeeditor.mo
+share/locale/sa/LC_MESSAGES/contactthemeeditor.mo
+share/locale/sa/LC_MESSAGES/headerthemeeditor.mo
+share/locale/sa/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/sk/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/sk/LC_MESSAGES/contactthemeeditor.mo
 share/locale/sk/LC_MESSAGES/headerthemeeditor.mo

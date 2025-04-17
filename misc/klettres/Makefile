@@ -11,7 +11,7 @@ USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		crash i18n itemmodels newstuff phonon service widgetsaddons \
 		xmlgui \
 		doctools:build ecm:build
-USE_QT=		base
+USE_QT=		base multimedia
 
 OPTIONS_DEFINE=	DOCS
 

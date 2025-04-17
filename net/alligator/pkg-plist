@@ -16,6 +16,7 @@ share/locale/fi/LC_MESSAGES/alligator.mo
 share/locale/fr/LC_MESSAGES/alligator.mo
 share/locale/gl/LC_MESSAGES/alligator.mo
 share/locale/he/LC_MESSAGES/alligator.mo
+share/locale/hi/LC_MESSAGES/alligator.mo
 share/locale/hu/LC_MESSAGES/alligator.mo
 share/locale/ia/LC_MESSAGES/alligator.mo
 share/locale/it/LC_MESSAGES/alligator.mo
@@ -31,6 +32,7 @@ share/locale/pl/LC_MESSAGES/alligator.mo
 share/locale/pt/LC_MESSAGES/alligator.mo
 share/locale/pt_BR/LC_MESSAGES/alligator.mo
 share/locale/ru/LC_MESSAGES/alligator.mo
+share/locale/sa/LC_MESSAGES/alligator.mo
 share/locale/sk/LC_MESSAGES/alligator.mo
 share/locale/sl/LC_MESSAGES/alligator.mo
 share/locale/sv/LC_MESSAGES/alligator.mo
@@ -39,3 +41,4 @@ share/locale/uk/LC_MESSAGES/alligator.mo
 share/locale/zh_CN/LC_MESSAGES/alligator.mo
 share/locale/zh_TW/LC_MESSAGES/alligator.mo
 share/metainfo/org.kde.alligator.appdata.xml
+share/qlogging-categories6/alligator.categories

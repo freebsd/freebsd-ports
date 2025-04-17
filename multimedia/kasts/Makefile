@@ -1,10 +1,6 @@
 PORTNAME=	kasts
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia kde kde-applications
-
-PATCH_SITES=	https://invent.kde.org/multimedia/kasts/-/commit/
-PATCHFILES=	39340fc3a24440dd4d42949a7b61be004e31e543.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE podcast app
@@ -18,8 +14,9 @@ LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6 \
 USES=		cmake desktop-file-utils gettext gettext-runtime gnome \
 		kde:6 pkgconfig qt:6 tar:xz xorg
 USE_GNOME=	glib20
-USE_KDE=	colorscheme config coreaddons crash i18n kirigami-addons \
-		kirigami2 syndication threadweaver \
+USE_KDE=	colorscheme config coreaddons crash dbusaddons i18n \
+		iconthemes kirigami-addons kirigami2 syndication \
+		threadweaver windowsystem \
 		ecm:build
 USE_QT=		base multimedia
 USE_XORG=	x11
