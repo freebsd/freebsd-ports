@@ -1,6 +1,6 @@
 PORTNAME=	k9s
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.40.10
+DISTVERSION=	0.50.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	gogolok@gmail.com
@@ -14,7 +14,7 @@ USES=		go:1.21,modules
 GO_MODULE=	github.com/derailed/k9s
 GO_BUILDFLAGS=	-ldflags="-X github.com/derailed/k9s/cmd.version=${DISTVERSIONFULL} \
 		-X github.com/derailed/k9s/cmd.date=$$(date +'%Y-%m-%dT%H:%M:%SZ') \
-		-X github.com/derailed/k9s/cmd.commit=35361bb23822761200fcc977653818faf054adad"
+		-X github.com/derailed/k9s/cmd.commit=594c2c6e4c8dce30e5553e84e4a16a3e55e36066"
 
 PLIST_FILES=	bin/${PORTNAME}
 
