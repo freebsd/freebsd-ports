@@ -1,6 +1,6 @@
 PORTNAME=	sirius
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.6.1
+DISTVERSION=	7.7.0
 CATEGORIES=	science
 PKGNAMESUFFIX=	-quantum-chemistry # other software also has the name "sirius"
 
@@ -47,5 +47,6 @@ OPENMPI_USES=		mpi:openmpi
 
 # pre-7.4.0: many tests fail, see https://github.com/electronic-structure/SIRIUS/issues/760
 # 7.6.0: several tests fail: Can't divide 1 ranks into groups of size 4
+# 7.7.0: tests fail to compile, see https://github.com/electronic-structure/SIRIUS/issues/1070
 
 .include <bsd.port.mk>

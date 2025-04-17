@@ -34,6 +34,7 @@ include/sirius/src/core/acc/rocsolver.hpp
 include/sirius/src/core/any_ptr.hpp
 include/sirius/src/core/cmd_args.hpp
 include/sirius/src/core/constants.hpp
+include/sirius/src/core/debug.hpp
 include/sirius/src/core/env/env.hpp
 include/sirius/src/core/fft/fft.hpp
 include/sirius/src/core/fft/fft3d_grid.hpp
