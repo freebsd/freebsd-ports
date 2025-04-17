@@ -629,6 +629,7 @@
     SUBDIR += thrill
     SUBDIR += timetrace
     SUBDIR += timezonemap
+    SUBDIR += timr-tui
     SUBDIR += tkcron
     SUBDIR += tkinfo
     SUBDIR += tkregexp
