@@ -6,5 +6,5 @@ include/pycairo/py3cairo.h
 %%PYTHON_SITELIBDIR%%/cairo/_cairo%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/cairo/include/py3cairo.h
 %%PYTHON_SITELIBDIR%%/cairo/py.typed
-%%PYTHON_SITELIBDIR%%/pycairo-%%PORTVER%%.egg-info
+%%PYTHON_SITELIBDIR%%/pycairo-%%PORTVER%%.dist-info/METADATA
 libdata/pkgconfig/py3cairo.pc

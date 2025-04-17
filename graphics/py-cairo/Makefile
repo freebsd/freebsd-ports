@@ -1,5 +1,5 @@
 PORTNAME=	cairo
-PORTVERSION=	1.21.0
+PORTVERSION=	1.28.0
 PORTEPOCH=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	https://github.com/pygobject/pycairo/releases/download/v${PORTVERSION}/
