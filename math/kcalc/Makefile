@@ -7,6 +7,7 @@ COMMENT=	Scientific calculator for KDE
 WWW=		https://utils.kde.org/projects/kcalc/
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml

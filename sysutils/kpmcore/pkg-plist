@@ -72,6 +72,7 @@ include/kpmcore/ops/resizevolumegroupoperation.h
 include/kpmcore/ops/restoreoperation.h
 include/kpmcore/ops/setfilesystemlabeloperation.h
 include/kpmcore/ops/setpartflagsoperation.h
+include/kpmcore/ops/setpartlabeloperation.h
 include/kpmcore/util/capacity.h
 include/kpmcore/util/externalcommand.h
 include/kpmcore/util/globallog.h
@@ -85,7 +86,7 @@ lib/cmake/KPMcore/KPMcoreTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KPMcore/KPMcoreTargets.cmake
 lib/libexec/kpmcore_externalcommand
 lib/libkpmcore.so
-lib/libkpmcore.so.12
+lib/libkpmcore.so.13
 lib/libkpmcore.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kpmcore/pmdummybackendplugin.so
 share/dbus-1/system-services/org.kde.kpmcore.helperinterface.service
@@ -128,6 +129,8 @@ share/locale/gl/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/gl/LC_MESSAGES/kpmcore.mo
 share/locale/he/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/he/LC_MESSAGES/kpmcore.mo
+share/locale/hi/LC_MESSAGES/kpmcore._policy_.mo
+share/locale/hi/LC_MESSAGES/kpmcore.mo
 share/locale/hr/LC_MESSAGES/kpmcore.mo
 share/locale/hu/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/hu/LC_MESSAGES/kpmcore.mo
@@ -163,6 +166,8 @@ share/locale/pt_BR/LC_MESSAGES/kpmcore.mo
 share/locale/ro/LC_MESSAGES/kpmcore.mo
 share/locale/ru/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/ru/LC_MESSAGES/kpmcore.mo
+share/locale/sa/LC_MESSAGES/kpmcore._policy_.mo
+share/locale/sa/LC_MESSAGES/kpmcore.mo
 share/locale/sk/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/sk/LC_MESSAGES/kpmcore.mo
 share/locale/sl/LC_MESSAGES/kpmcore._policy_.mo

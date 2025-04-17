@@ -1,6 +1,5 @@
 PORTNAME=	kalarm
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -35,6 +34,7 @@ OPTIONS_RADIO=		AUDIO
 AUDIO_DESC=		Audio backend
 OPTIONS_RADIO_AUDIO=	MPV VLC
 OPTIONS_DEFAULT=	MPV # VLC still uses Qt5
+OPTIONS_SUB=		yes
 
 MPV_DESC=		Play audio via libmpv
 MPV_LIB_DEPENDS=	libmpv.so:multimedia/mpv

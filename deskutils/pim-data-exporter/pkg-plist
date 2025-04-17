@@ -25,6 +25,7 @@ share/locale/fr/LC_MESSAGES/pimdataexporter.mo
 share/locale/ga/LC_MESSAGES/pimdataexporter.mo
 share/locale/gl/LC_MESSAGES/pimdataexporter.mo
 share/locale/he/LC_MESSAGES/pimdataexporter.mo
+share/locale/hi/LC_MESSAGES/pimdataexporter.mo
 share/locale/hu/LC_MESSAGES/pimdataexporter.mo
 share/locale/ia/LC_MESSAGES/pimdataexporter.mo
 share/locale/it/LC_MESSAGES/pimdataexporter.mo
@@ -44,6 +45,7 @@ share/locale/pt/LC_MESSAGES/pimdataexporter.mo
 share/locale/pt_BR/LC_MESSAGES/pimdataexporter.mo
 share/locale/ro/LC_MESSAGES/pimdataexporter.mo
 share/locale/ru/LC_MESSAGES/pimdataexporter.mo
+share/locale/sa/LC_MESSAGES/pimdataexporter.mo
 share/locale/sk/LC_MESSAGES/pimdataexporter.mo
 share/locale/sl/LC_MESSAGES/pimdataexporter.mo
 share/locale/sr/LC_MESSAGES/pimdataexporter.mo

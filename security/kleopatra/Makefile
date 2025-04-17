@@ -15,13 +15,13 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:6 \
 		qt:6 shared-mime-info tar:xz xorg
-USE_KDE=	auth codecs config configwidgets coreaddons crash dbusaddons \
-		doctools i18n iconthemes itemmodels kcmutils libkleo mime \
-		mimetreeparser notifications service sonnet statusnotifieritem \
-		textwidgets widgetsaddons windowsystem xmlgui \
+USE_KDE=	colorscheme config coreaddons crash dbusaddons \
+		doctools i18n iconthemes itemmodels kio \
+		notifications widgetsaddons windowsystem xmlgui \
 		ecm:build
 # KDE Pim
-USE_KDE+=	akonadimime identitymanagement mailtransport
+USE_KDE+=	akonadimime identitymanagement libkleo mailtransport \
+		mime mimetreeparser
 USE_QT=		base
 USE_XORG=	x11
 

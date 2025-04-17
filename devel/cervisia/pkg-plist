@@ -1,10 +1,7 @@
 bin/cervisia
 bin/cvsaskpass
 bin/cvsservice5
-lib/libkdeinit5_cervisia.so
-lib/libkdeinit5_cvsaskpass.so
-lib/libkdeinit5_cvsservice.so
-%%QT_PLUGINDIR%%/cervisiapart5.so
+%%QT_PLUGINDIR%%/kf5/parts/cervisiapart.so
 share/applications/org.kde.cervisia.desktop
 share/config.kcfg/cervisiapart.kcfg
 share/dbus-1/interfaces/org.kde.cervisia5.cvsjob.xml
@@ -47,7 +44,6 @@ share/icons/hicolor/scalable/actions/vcs-status-cvs-cervisia.svgz
 share/icons/hicolor/scalable/actions/vcs-update-cvs-cervisia.svgz
 share/icons/hicolor/scalable/apps/cervisia.svg
 share/knotifications5/cervisia.notifyrc
-share/kservices5/org.kde.cervisiapart5.desktop
 share/kservices5/org.kde.cvsservice5.desktop
 share/kxmlgui5/cervisia/cervisiashellui.rc
 share/kxmlgui5/cervisiapart/cervisiaui.rc

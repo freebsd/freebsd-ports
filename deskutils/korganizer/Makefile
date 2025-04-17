@@ -15,7 +15,8 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons i18n iconthemes \
 		itemmodels itemviews jobwidgets kcmutils kio newstuff \
 		notifications parts phonon service solid sonnet textwidgets \
-		unitconversion wallet widgetsaddons windowsystem xmlgui \
+		unitconversion userfeedback wallet widgetsaddons windowsystem \
+		xmlgui \
 		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadimime \

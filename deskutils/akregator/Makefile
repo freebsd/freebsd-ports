@@ -19,8 +19,8 @@ USES=		cmake compiler:c++11-lib desktop-file-utils gettext kde:6 qt:6 \
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		i18n iconthemes itemmodels jobwidgets kcmutils kio \
 		notifications notifyconfig parts service solid sonnet \
-		statusnotifieritem texteditor textwidgets widgetsaddons \
-		windowsystem xmlgui \
+		statusnotifieritem texteditor textwidgets userfeedback \
+		widgetsaddons windowsystem xmlgui \
 		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadimime contacts grantleetheme kontactinterface \

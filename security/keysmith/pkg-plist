@@ -1,6 +1,6 @@
 bin/keysmith
 share/applications/org.kde.keysmith.desktop
-share/icons/hicolor/scalable/apps/keysmith.svg
+share/icons/hicolor/scalable/apps/org.kde.keysmith.svg
 share/locale/ar/LC_MESSAGES/keysmith.mo
 share/locale/ast/LC_MESSAGES/keysmith.mo
 share/locale/ca/LC_MESSAGES/keysmith.mo
@@ -16,6 +16,7 @@ share/locale/fi/LC_MESSAGES/keysmith.mo
 share/locale/fr/LC_MESSAGES/keysmith.mo
 share/locale/gl/LC_MESSAGES/keysmith.mo
 share/locale/he/LC_MESSAGES/keysmith.mo
+share/locale/hi/LC_MESSAGES/keysmith.mo
 share/locale/hu/LC_MESSAGES/keysmith.mo
 share/locale/ia/LC_MESSAGES/keysmith.mo
 share/locale/it/LC_MESSAGES/keysmith.mo
@@ -31,6 +32,7 @@ share/locale/pt/LC_MESSAGES/keysmith.mo
 share/locale/pt_BR/LC_MESSAGES/keysmith.mo
 share/locale/ro/LC_MESSAGES/keysmith.mo
 share/locale/ru/LC_MESSAGES/keysmith.mo
+share/locale/sa/LC_MESSAGES/keysmith.mo
 share/locale/sk/LC_MESSAGES/keysmith.mo
 share/locale/sl/LC_MESSAGES/keysmith.mo
 share/locale/sv/LC_MESSAGES/keysmith.mo

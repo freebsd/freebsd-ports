@@ -504,6 +504,10 @@ share/locale/ru/LC_MESSAGES/k3b.mo
 share/locale/ru/LC_MESSAGES/kio_videodvd.mo
 share/locale/ru/LC_MESSAGES/libk3b.mo
 share/locale/ru/LC_MESSAGES/libk3bdevice.mo
+share/locale/sa/LC_MESSAGES/k3b.mo
+share/locale/sa/LC_MESSAGES/kio_videodvd.mo
+share/locale/sa/LC_MESSAGES/libk3b.mo
+share/locale/sa/LC_MESSAGES/libk3bdevice.mo
 share/locale/se/LC_MESSAGES/k3b.mo
 share/locale/se/LC_MESSAGES/libk3b.mo
 share/locale/se/LC_MESSAGES/libk3bdevice.mo

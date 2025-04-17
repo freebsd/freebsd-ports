@@ -90,6 +90,7 @@ share/locale/gl/LC_MESSAGES/ksirk.mo
 share/locale/gl/LC_MESSAGES/ksirkskineditor.mo
 share/locale/he/LC_MESSAGES/ksirk.mo
 share/locale/hi/LC_MESSAGES/ksirk.mo
+share/locale/hi/LC_MESSAGES/ksirkskineditor.mo
 share/locale/hne/LC_MESSAGES/ksirk.mo
 share/locale/hr/LC_MESSAGES/ksirk.mo
 share/locale/hr/LC_MESSAGES/ksirkskineditor.mo
@@ -139,6 +140,8 @@ share/locale/ro/LC_MESSAGES/ksirk.mo
 share/locale/ro/LC_MESSAGES/ksirkskineditor.mo
 share/locale/ru/LC_MESSAGES/ksirk.mo
 share/locale/ru/LC_MESSAGES/ksirkskineditor.mo
+share/locale/sa/LC_MESSAGES/ksirk.mo
+share/locale/sa/LC_MESSAGES/ksirkskineditor.mo
 share/locale/sk/LC_MESSAGES/ksirk.mo
 share/locale/sk/LC_MESSAGES/ksirkskineditor.mo
 share/locale/sl/LC_MESSAGES/ksirk.mo

@@ -70,6 +70,7 @@ share/locale/fr/LC_MESSAGES/kgpg.mo
 share/locale/ga/LC_MESSAGES/kgpg.mo
 share/locale/gl/LC_MESSAGES/kgpg.mo
 share/locale/he/LC_MESSAGES/kgpg.mo
+share/locale/hi/LC_MESSAGES/kgpg.mo
 share/locale/hr/LC_MESSAGES/kgpg.mo
 share/locale/hu/LC_MESSAGES/kgpg.mo
 share/locale/ia/LC_MESSAGES/kgpg.mo
@@ -99,6 +100,7 @@ share/locale/pt/LC_MESSAGES/kgpg.mo
 share/locale/pt_BR/LC_MESSAGES/kgpg.mo
 share/locale/ro/LC_MESSAGES/kgpg.mo
 share/locale/ru/LC_MESSAGES/kgpg.mo
+share/locale/sa/LC_MESSAGES/kgpg.mo
 share/locale/se/LC_MESSAGES/kgpg.mo
 share/locale/sk/LC_MESSAGES/kgpg.mo
 share/locale/sl/LC_MESSAGES/kgpg.mo

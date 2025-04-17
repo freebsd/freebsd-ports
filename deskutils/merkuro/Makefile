@@ -19,6 +19,7 @@ USE_KDE=	akonadi akonadicalendar akonadicontacts auth calendarcore \
 		pimtextedit qqc2-desktop-style service sonnet textwidgets \
 		widgetsaddons windowsystem xmlgui \
 		ecm:build
+USE_QT=		base location
 USE_XORG=	x11
 
 .include <bsd.port.mk>

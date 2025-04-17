@@ -54,6 +54,7 @@ share/locale/gl/LC_MESSAGES/kpartloader.mo
 share/locale/gl/LC_MESSAGES/kuiviewer.mo
 share/locale/he/LC_MESSAGES/kpartloader.mo
 share/locale/he/LC_MESSAGES/kuiviewer.mo
+share/locale/hi/LC_MESSAGES/kpartloader.mo
 share/locale/hi/LC_MESSAGES/kuiviewer.mo
 share/locale/hne/LC_MESSAGES/kuiviewer.mo
 share/locale/hr/LC_MESSAGES/kpartloader.mo
@@ -105,6 +106,8 @@ share/locale/ro/LC_MESSAGES/kpartloader.mo
 share/locale/ro/LC_MESSAGES/kuiviewer.mo
 share/locale/ru/LC_MESSAGES/kpartloader.mo
 share/locale/ru/LC_MESSAGES/kuiviewer.mo
+share/locale/sa/LC_MESSAGES/kpartloader.mo
+share/locale/sa/LC_MESSAGES/kuiviewer.mo
 share/locale/se/LC_MESSAGES/kuiviewer.mo
 share/locale/sk/LC_MESSAGES/kpartloader.mo
 share/locale/sk/LC_MESSAGES/kuiviewer.mo

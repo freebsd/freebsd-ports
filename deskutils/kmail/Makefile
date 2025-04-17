@@ -28,7 +28,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		itemmodels itemviews jobwidgets kcmutils kio notifications \
 		notifyconfig parts service solid sonnet statusnotifieritem \
 		syntaxhighlighting texteditor textwidgets unitconversion \
-		wallet widgetsaddons windowsystem xmlgui \
+		userfeedback wallet widgetsaddons windowsystem xmlgui \
 		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime akonadisearch calendarcore \

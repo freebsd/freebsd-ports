@@ -21,6 +21,7 @@ share/locale/fr/LC_MESSAGES/accountwizard.mo
 share/locale/ga/LC_MESSAGES/accountwizard.mo
 share/locale/gl/LC_MESSAGES/accountwizard.mo
 share/locale/he/LC_MESSAGES/accountwizard.mo
+share/locale/hi/LC_MESSAGES/accountwizard.mo
 share/locale/hu/LC_MESSAGES/accountwizard.mo
 share/locale/ia/LC_MESSAGES/accountwizard.mo
 share/locale/it/LC_MESSAGES/accountwizard.mo
@@ -43,6 +44,7 @@ share/locale/pt/LC_MESSAGES/accountwizard.mo
 share/locale/pt_BR/LC_MESSAGES/accountwizard.mo
 share/locale/ro/LC_MESSAGES/accountwizard.mo
 share/locale/ru/LC_MESSAGES/accountwizard.mo
+share/locale/sa/LC_MESSAGES/accountwizard.mo
 share/locale/se/LC_MESSAGES/accountwizard.mo
 share/locale/sk/LC_MESSAGES/accountwizard.mo
 share/locale/sl/LC_MESSAGES/accountwizard.mo

@@ -19,12 +19,7 @@ share/config.kcfg/kget_checksumsearchfactory.kcfg
 share/config.kcfg/kget_mirrorsearchfactory.kcfg
 share/config.kcfg/kget_multisegkiofactory.kcfg
 share/dbus-1/services/org.kde.kget.service
-share/icons/hicolor/128x128/apps/kget.png
-share/icons/hicolor/16x16/apps/kget.png
-share/icons/hicolor/22x22/apps/kget.png
-share/icons/hicolor/32x32/apps/kget.png
-share/icons/hicolor/48x48/apps/kget.png
-share/icons/hicolor/64x64/apps/kget.png
+share/icons/hicolor/scalable/apps/org.kde.kget.svg
 %%DATADIR%%/pics/kget_splash.png
 share/kio/servicemenus/kget_download.desktop
 share/knotifications6/kget.notifyrc
@@ -85,6 +80,7 @@ share/locale/pt/LC_MESSAGES/kget.mo
 share/locale/pt_BR/LC_MESSAGES/kget.mo
 share/locale/ro/LC_MESSAGES/kget.mo
 share/locale/ru/LC_MESSAGES/kget.mo
+share/locale/sa/LC_MESSAGES/kget.mo
 share/locale/se/LC_MESSAGES/kget.mo
 share/locale/si/LC_MESSAGES/kget.mo
 share/locale/sk/LC_MESSAGES/kget.mo

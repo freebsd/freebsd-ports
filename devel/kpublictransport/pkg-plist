@@ -31,6 +31,8 @@ include/KPublicTransport/KPublicTransport/Stopover
 include/KPublicTransport/KPublicTransport/StopoverQueryModel
 include/KPublicTransport/KPublicTransport/StopoverReply
 include/KPublicTransport/KPublicTransport/StopoverRequest
+include/KPublicTransport/KPublicTransport/TripReply
+include/KPublicTransport/KPublicTransport/TripRequest
 include/KPublicTransport/KPublicTransport/Vehicle
 include/KPublicTransport/KPublicTransport/VehicleLayoutQueryModel
 include/KPublicTransport/KPublicTransport/VehicleLayoutReply
@@ -70,6 +72,8 @@ include/KPublicTransport/kpublictransport/stopover.h
 include/KPublicTransport/kpublictransport/stopoverquerymodel.h
 include/KPublicTransport/kpublictransport/stopoverreply.h
 include/KPublicTransport/kpublictransport/stopoverrequest.h
+include/KPublicTransport/kpublictransport/tripreply.h
+include/KPublicTransport/kpublictransport/triprequest.h
 include/KPublicTransport/kpublictransport/vehicle.h
 include/KPublicTransport/kpublictransport/vehiclelayoutquerymodel.h
 include/KPublicTransport/kpublictransport/vehiclelayoutreply.h
@@ -94,7 +98,10 @@ lib/libKPublicTransportOnboard.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kpublictransport/onboard/qmldir
 %%QT_QMLDIR%%/org/kde/kpublictransport/qmldir
 %%QT_QMLDIR%%/org/kde/kpublictransport/ui/FeatureIcon.qml
+%%QT_QMLDIR%%/org/kde/kpublictransport/ui/JourneyHorizontalBar.qml
 %%QT_QMLDIR%%/org/kde/kpublictransport/ui/OccupancyIndicator.qml
+%%QT_QMLDIR%%/org/kde/kpublictransport/ui/TransportIcon.qml
+%%QT_QMLDIR%%/org/kde/kpublictransport/ui/TransportNameControl.qml
 %%QT_QMLDIR%%/org/kde/kpublictransport/ui/VehicleSectionItem.qml
 %%QT_QMLDIR%%/org/kde/kpublictransport/ui/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/kpublictransport/ui/kpublictransportquickplugin.qmltypes
@@ -112,6 +119,7 @@ share/locale/fi/LC_MESSAGES/kpublictransport.mo
 share/locale/fr/LC_MESSAGES/kpublictransport.mo
 share/locale/gl/LC_MESSAGES/kpublictransport.mo
 share/locale/he/LC_MESSAGES/kpublictransport.mo
+share/locale/hi/LC_MESSAGES/kpublictransport.mo
 share/locale/hu/LC_MESSAGES/kpublictransport.mo
 share/locale/ia/LC_MESSAGES/kpublictransport.mo
 share/locale/it/LC_MESSAGES/kpublictransport.mo
@@ -121,6 +129,7 @@ share/locale/lv/LC_MESSAGES/kpublictransport.mo
 share/locale/nl/LC_MESSAGES/kpublictransport.mo
 share/locale/pl/LC_MESSAGES/kpublictransport.mo
 share/locale/ru/LC_MESSAGES/kpublictransport.mo
+share/locale/sa/LC_MESSAGES/kpublictransport.mo
 share/locale/sk/LC_MESSAGES/kpublictransport.mo
 share/locale/sl/LC_MESSAGES/kpublictransport.mo
 share/locale/sv/LC_MESSAGES/kpublictransport.mo

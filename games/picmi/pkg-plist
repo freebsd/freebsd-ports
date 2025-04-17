@@ -25,6 +25,7 @@ share/locale/fr/LC_MESSAGES/picmi.mo
 share/locale/ga/LC_MESSAGES/picmi.mo
 share/locale/gl/LC_MESSAGES/picmi.mo
 share/locale/he/LC_MESSAGES/picmi.mo
+share/locale/hi/LC_MESSAGES/picmi.mo
 share/locale/hu/LC_MESSAGES/picmi.mo
 share/locale/ia/LC_MESSAGES/picmi.mo
 share/locale/it/LC_MESSAGES/picmi.mo
@@ -45,6 +46,7 @@ share/locale/pt/LC_MESSAGES/picmi.mo
 share/locale/pt_BR/LC_MESSAGES/picmi.mo
 share/locale/ro/LC_MESSAGES/picmi.mo
 share/locale/ru/LC_MESSAGES/picmi.mo
+share/locale/sa/LC_MESSAGES/picmi.mo
 share/locale/sk/LC_MESSAGES/picmi.mo
 share/locale/sl/LC_MESSAGES/picmi.mo
 share/locale/sr/LC_MESSAGES/picmi.mo

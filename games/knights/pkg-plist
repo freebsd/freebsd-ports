@@ -47,6 +47,7 @@ share/locale/fr/LC_MESSAGES/knights.mo
 share/locale/ga/LC_MESSAGES/knights.mo
 share/locale/gl/LC_MESSAGES/knights.mo
 share/locale/he/LC_MESSAGES/knights.mo
+share/locale/hi/LC_MESSAGES/knights.mo
 share/locale/hu/LC_MESSAGES/knights.mo
 share/locale/ia/LC_MESSAGES/knights.mo
 share/locale/id/LC_MESSAGES/knights.mo
@@ -68,6 +69,7 @@ share/locale/pt/LC_MESSAGES/knights.mo
 share/locale/pt_BR/LC_MESSAGES/knights.mo
 share/locale/ro/LC_MESSAGES/knights.mo
 share/locale/ru/LC_MESSAGES/knights.mo
+share/locale/sa/LC_MESSAGES/knights.mo
 share/locale/sk/LC_MESSAGES/knights.mo
 share/locale/sl/LC_MESSAGES/knights.mo
 share/locale/sr/LC_MESSAGES/knights.mo
