@@ -1,6 +1,5 @@
 PORTNAME=	posix_ipc
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +11,11 @@ WWW=		https://semanchuk.com/philip/posix_ipc/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist pep517
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}/${PYTHONPREFIX_SITELIBDIR}/posix_ipc*.so

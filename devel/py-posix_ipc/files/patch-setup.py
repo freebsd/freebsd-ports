@@ -1,18 +1,17 @@
---- setup.py.orig	2018-08-07 00:29:38 UTC
+--- setup.py.orig	2025-04-16 23:35:26 UTC
 +++ setup.py
-@@ -39,6 +39,7 @@ license = "http://creativecommons.org/licenses/BSD/"
- keywords = "ipc inter-process communication semaphore shared memory shm message queue"
+@@ -19,6 +19,7 @@ libraries = []
+ DEPENDS = ["src/posix_ipc_module.c", "src/system_info.h"]
  
  libraries = []
 +test_suite = "tests"
  
- d = prober.probe()
+ system_info = build_support.discover_system_info.discover()
  
-@@ -69,5 +70,6 @@ distutools.setup(name=name,
-                  classifiers=classifiers,
-                  license=license,
-                  keywords=keywords,
--                 ext_modules=ext_modules
-+                 ext_modules=ext_modules,
-+                 test_suite=test_suite
+@@ -36,5 +37,6 @@ setuptools.setup(ext_modules=ext_modules,
+                          )]
+ 
+ setuptools.setup(ext_modules=ext_modules,
++                 test_suite=test_suite,
+                  license=LICENSE,
                   )
