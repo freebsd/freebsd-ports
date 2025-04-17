@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc.orig	2025-03-18 16:46:04 UTC
+--- gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc.orig	2025-04-16 18:18:42 UTC
 +++ gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc
-@@ -168,7 +168,7 @@ bool IsFormatSupported(viz::SharedImageFormat format,
+@@ -143,7 +143,7 @@ bool IsFormatSupported(viz::SharedImageFormat format,
  
  SharedImageUsageSet SupportedUsage() {
    SharedImageUsageSet supported_usage =

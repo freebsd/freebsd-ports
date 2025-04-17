@@ -1,15 +1,15 @@
---- chrome/common/channel_info.h.orig	2024-06-25 12:08:48 UTC
+--- chrome/common/channel_info.h.orig	2025-04-16 18:18:42 UTC
 +++ chrome/common/channel_info.h
-@@ -12,7 +12,7 @@
+@@ -11,7 +11,7 @@
+ #include "build/branding_buildflags.h"
  #include "build/build_config.h"
- #include "build/chromeos_buildflags.h"
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  namespace base {
  class Environment;
  }
-@@ -100,7 +100,7 @@ void ClearChannelIdForTesting();
+@@ -99,7 +99,7 @@ void ClearChannelIdForTesting();
  std::string GetChannelSuffixForDataDir();
  #endif
  

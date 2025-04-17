@@ -1,7 +1,7 @@
---- chrome/browser/ui/signin/signin_view_controller_delegate.h.orig	2025-03-18 16:46:04 UTC
+--- chrome/browser/ui/signin/signin_view_controller_delegate.h.orig	2025-04-16 18:18:42 UTC
 +++ chrome/browser/ui/signin/signin_view_controller_delegate.h
 @@ -79,7 +79,7 @@ class SigninViewControllerDelegate {
-       base::OnceCallback<void(ChromeSignoutConfirmationChoice)> callback);
+       SignoutConfirmationCallback callback);
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

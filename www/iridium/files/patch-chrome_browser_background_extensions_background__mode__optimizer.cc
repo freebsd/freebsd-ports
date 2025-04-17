@@ -1,5 +1,5 @@
---- chrome/browser/background/background_mode_optimizer.cc.orig	2024-06-25 12:08:48 UTC
-+++ chrome/browser/background/background_mode_optimizer.cc
+--- chrome/browser/background/extensions/background_mode_optimizer.cc.orig	2025-04-16 18:18:42 UTC
++++ chrome/browser/background/extensions/background_mode_optimizer.cc
 @@ -31,7 +31,7 @@ std::unique_ptr<BackgroundModeOptimizer> BackgroundMod
      return nullptr;
    }
