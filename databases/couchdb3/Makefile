@@ -1,6 +1,6 @@
 PORTNAME=	couchdb3
 DISTVERSION=	3.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/couchdb/source/${DISTVERSION}
 DISTNAME=	apache-couchdb-${DISTVERSION}
@@ -116,7 +116,7 @@ do-install:
 		${COPYTREE_SHARE} . ${STAGEDIR}${_APPDIR})
 # strip binaries, and mark as executable, along with scripts
 # -- this was not as straightforward as it could have been
-	${FIND} ${STAGEDIR}${_APPDIR} -type f -name couchjs -exec ${STRIP_CMD} \
+	${FIND} ${STAGEDIR}${_APPDIR} -type f -name 'couchjs*' -exec ${STRIP_CMD} \
 		{} +
 	${FIND} ${STAGEDIR}${_APPDIR} -type f -name '*.so' -exec ${STRIP_CMD} \
 		{} +
@@ -124,6 +124,7 @@ do-install:
 		-exec ${STRIP_CMD} {} +
 	${STRIP_CMD} ${STAGEDIR}${_APPDIR}/lib/os_mon-*/priv/bin/*sup
 	${CHMOD} -R ${BINMODE} ${STAGEDIR}${_APPDIR}/bin
+	${CHMOD} -R ${BINMODE} ${STAGEDIR}${_APPDIR}/lib/couch_quickjs-*/priv/couchjs_*
 	${CHMOD} -R ${BINMODE} ${STAGEDIR}${_APPDIR}/lib/os_mon-*/priv/bin
 	${CHMOD} -R ${BINMODE} ${STAGEDIR}${_APPDIR}/erts-*/bin
 # fauxton UI is a required component
