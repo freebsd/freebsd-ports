@@ -1,4 +1,4 @@
-TIMESTAMP = 1741718330
+TIMESTAMP = 1744870876
 SHA256 (miktex/miktex-zzdb1-2.9.tar.lzma) = 5d885b2a5c615523a509c9b420eb3675d16002dfc259726863a22e2d2c3be32e
 SIZE (miktex/miktex-zzdb1-2.9.tar.lzma) = 380434
 SHA256 (miktex/miktex-zzdb3-2.9.tar.lzma) = e6f2ee1b08dd76ab49e45fc3b552ae45546a80635b906171445e35717c2c788b
@@ -13,5 +13,5 @@ SHA256 (miktex/miktex-misc.tar.lzma) = cac35112f9ca5ac7aaa8de7d730373955db552671
 SIZE (miktex/miktex-misc.tar.lzma) = 23382
 SHA256 (miktex/tetex.tar.lzma) = 0c4d68ebaaf6485c71c6e61e091b859fa2f5b819f6e881678def5bfea79597a4
 SIZE (miktex/tetex.tar.lzma) = 13084
-SHA256 (miktex/miktex-25.2.tar.xz) = 80dacc5bf4023fbef9aad3e24982f8bd98f639ee181180bc01ff561d24b4af99
-SIZE (miktex/miktex-25.2.tar.xz) = 28992232
+SHA256 (miktex/miktex-25.3.tar.xz) = 20f7581d451a78862682bdd5e0688ecf3176a16b0c9ab318d7085743cacffa9c
+SIZE (miktex/miktex-25.3.tar.xz) = 28990436
