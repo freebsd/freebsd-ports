@@ -1,6 +1,5 @@
 PORTNAME=	vorbis-tools
-DISTVERSION=	1.4.2
-PORTREVISION=	6
+DISTVERSION=	1.4.3
 PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/
@@ -25,6 +24,8 @@ CPE_VENDOR=	xiph
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 CONFIGURE_ARGS=	--without-kate
+
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
