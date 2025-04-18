@@ -1,4 +1,4 @@
---- chef.gemspec.orig	2025-03-15 15:57:37 UTC
+--- chef.gemspec.orig	2025-04-11 20:59:53 UTC
 +++ chef.gemspec
 @@ -35,12 +35,12 @@ Gem::Specification.new do |s|
    s.add_runtime_dependency(%q<mixlib-archive>.freeze, [">= 0.4".freeze, "< 2.0".freeze])
@@ -13,7 +13,7 @@
 -  s.add_runtime_dependency(%q<diff-lcs>.freeze, [">= 1.2.4".freeze, "!= 1.4.0".freeze, "< 1.6.0".freeze])
 +  s.add_runtime_dependency(%q<diff-lcs>.freeze, [">= 1.2.4".freeze, "!= 1.4.0".freeze])
    s.add_runtime_dependency(%q<ffi-libarchive>.freeze, ["~> 1.0".freeze, ">= 1.0.3".freeze])
-   s.add_runtime_dependency(%q<chef-zero>.freeze, [">= 14.0.11".freeze])
+   s.add_runtime_dependency(%q<chef-zero>.freeze, [">= 15.0.17".freeze])
    s.add_runtime_dependency(%q<chef-vault>.freeze, [">= 0".freeze])
 @@ -48,8 +48,8 @@ Gem::Specification.new do |s|
    s.add_runtime_dependency(%q<iniparse>.freeze, ["~> 1.4".freeze])
