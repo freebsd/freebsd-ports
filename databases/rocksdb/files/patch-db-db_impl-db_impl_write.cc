@@ -1,3 +1,5 @@
+Reference:	https://github.com/facebook/rocksdb/commit/1f0426c44b9416d90a90266a87d6a198b5f61627
+
 --- db/db_impl/db_impl_write.cc.orig	2024-12-16 20:45:14 UTC
 +++ db/db_impl/db_impl_write.cc
 @@ -205,7 +205,7 @@ Status DBImpl::IngestWBWI(std::shared_ptr<WriteBatchWi

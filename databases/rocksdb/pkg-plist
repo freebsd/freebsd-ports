@@ -38,6 +38,7 @@ include/rocksdb/db_stress_tool.h
 include/rocksdb/env.h
 include/rocksdb/env_encryption.h
 include/rocksdb/experimental.h
+include/rocksdb/external_table_reader.h
 include/rocksdb/file_checksum.h
 include/rocksdb/file_system.h
 include/rocksdb/filter_policy.h
@@ -109,6 +110,8 @@ include/rocksdb/utilities/options_type.h
 include/rocksdb/utilities/options_util.h
 include/rocksdb/utilities/replayer.h
 include/rocksdb/utilities/secondary_index.h
+include/rocksdb/utilities/secondary_index_faiss.h
+include/rocksdb/utilities/secondary_index_options.h
 include/rocksdb/utilities/sim_cache.h
 include/rocksdb/utilities/stackable_db.h
 include/rocksdb/utilities/table_properties_collectors.h
