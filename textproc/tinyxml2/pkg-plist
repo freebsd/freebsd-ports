@@ -1,5 +1,8 @@
 include/tinyxml2.h
-lib/libtinyxml2.a
+lib/cmake/tinyxml2/tinyxml2-config-version.cmake
+lib/cmake/tinyxml2/tinyxml2-config.cmake
+lib/cmake/tinyxml2/tinyxml2-shared-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/tinyxml2/tinyxml2-shared-targets.cmake
 lib/libtinyxml2.so
 lib/libtinyxml2.so.11
 lib/libtinyxml2.so.%%PORTVERSION%%
