@@ -1,6 +1,5 @@
 PORTNAME=	colortail
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.5
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/joakim666/colortail/releases/download/${PORTVERSION}/
 
