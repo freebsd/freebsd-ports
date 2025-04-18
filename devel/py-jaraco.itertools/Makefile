@@ -1,8 +1,9 @@
 PORTNAME=	jaraco.itertools
-PORTVERSION=	6.4.1
+PORTVERSION=	6.4.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	jaraco_itertools-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tools for working with iterables
