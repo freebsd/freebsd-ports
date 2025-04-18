@@ -1,5 +1,5 @@
 PORTNAME=	curl
-PORTVERSION=	8.12.1
+PORTVERSION=	8.13.0
 CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.se/download/ \
 		https://github.com/curl/curl/releases/download/curl-${PORTVERSION:S|.|_|g}/
@@ -91,7 +91,7 @@ CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 CARES_USES=		pkgconfig
 COOKIES_CONFIGURE_ENABLE=	cookies
 CURL_DEBUG_CONFIGURE_ENABLE=	curldebug
-DEBUG_CONFIGURE_ENABLE=	debug
+DEBUG_CONFIGURE_ENABLE=	debug server-debug
 DICT_CONFIGURE_ENABLE=	dict
 FTP_CONFIGURE_ENABLE=	ftp
 GNUTLS_CONFIGURE_ON=	--with-ca-fallback

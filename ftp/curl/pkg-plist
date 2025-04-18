@@ -79,7 +79,9 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/internals/HASH.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/LLIST.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/MQTT.md
+%%PORTDOCS%%%%DOCSDIR%%/internals/MULTI-EV.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/NEW-PROTOCOL.md
+%%PORTDOCS%%%%DOCSDIR%%/internals/PORTING.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/README.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/SPLAY.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/STRPARSE.md
@@ -612,6 +614,7 @@ share/man/man3/CURLOPT_UNRESTRICTED_AUTH.3.gz
 share/man/man3/CURLOPT_UPKEEP_INTERVAL_MS.3.gz
 share/man/man3/CURLOPT_UPLOAD.3.gz
 share/man/man3/CURLOPT_UPLOAD_BUFFERSIZE.3.gz
+share/man/man3/CURLOPT_UPLOAD_FLAGS.3.gz
 share/man/man3/CURLOPT_URL.3.gz
 share/man/man3/CURLOPT_USERAGENT.3.gz
 share/man/man3/CURLOPT_USERNAME.3.gz
