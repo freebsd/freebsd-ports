@@ -1,5 +1,5 @@
 PORTNAME=	blis
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
 		https://github.com/explosion/cython-blis/releases/download/release-v${PORTVERSION}/
@@ -12,7 +12,7 @@ WWW=		https://github.com/explosion/cython-blis
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.19.0,1<3.0.0,1:math/py-numpy@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.19.3,1<3.0.0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.19.0,1<3.0.0,1:math/py-numpy@${PY_FLAVOR}
