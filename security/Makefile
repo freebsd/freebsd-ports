@@ -395,6 +395,7 @@
     SUBDIR += monocypher
     SUBDIR += munge
     SUBDIR += n2n
+    SUBDIR += naabu
     SUBDIR += ncrack
     SUBDIR += ncrypt
     SUBDIR += nebula
