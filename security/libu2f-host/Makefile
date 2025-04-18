@@ -11,6 +11,9 @@ WWW=		https://developers.yubico.com/libu2f-host/
 LICENSE=	LGPL21+ GPLv3+
 LICENSE_COMB=	multi
 
+DEPRECATED=	This project is deprecated and is no longer being maintained. libfido2 is a new project with support for U2F and FIDO2. Use security/libfido2 instead
+EXPIRATION_DATE=2025-05-31
+
 BUILD_DEPENDS=	gengetopt:devel/gengetopt \
 		gtk-doc>0:textproc/gtk-doc \
 		help2man:misc/help2man
