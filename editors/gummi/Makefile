@@ -1,6 +1,6 @@
 PORTNAME=	gummi
 DISTVERSION=	0.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/alexandervdm/gummi/releases/download/${DISTVERSION}/
 
