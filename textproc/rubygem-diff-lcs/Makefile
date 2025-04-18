@@ -1,11 +1,12 @@
 PORTNAME=	diff-lcs
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	LCS-based diff library for ruby
-WWW=		https://github.com/halostatue/diff-lcs
+WWW=		https://halostatue.github.io/diff-lcs/ \
+		https://github.com/halostatue/diff-lcs
 
 LICENSE=	ART20 GPLv2+ MIT
 LICENSE_COMB=	dual
