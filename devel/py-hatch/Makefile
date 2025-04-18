@@ -1,5 +1,5 @@
 PORTNAME=	hatch
-PORTVERSION=	1.14.0
+PORTVERSION=	1.14.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.0.6:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}userpath>=1.7<2:devel/py-userpath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=20.26.6:devel/py-virtualenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zstandard>=0<1:archivers/py-zstandard@${PY_FLAVOR} \
-		uv>=0.1.35:devel/uv
+		uv>=0.5.23:devel/uv
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
