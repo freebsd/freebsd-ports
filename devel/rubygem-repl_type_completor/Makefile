@@ -1,5 +1,5 @@
 PORTNAME=	repl_type_completor
-PORTVERSION=	0.1.10
+PORTVERSION=	0.1.11
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
