@@ -2082,6 +2082,8 @@ usr/lib64/libcrypt.so
 usr/lib64/libdl.a
 usr/lib64/libdl.so
 usr/lib64/libg.a
+usr/lib64/libgfortran.so.3
+usr/lib64/libgfortran.so.3.0.0
 usr/lib64/libgomp.so.1
 usr/lib64/libgomp.so.1.0.0
 usr/lib64/libiberty.a

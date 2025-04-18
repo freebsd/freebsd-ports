@@ -2018,6 +2018,8 @@ usr/lib/libcrypt.so
 usr/lib/libdl.a
 usr/lib/libdl.so
 usr/lib/libg.a
+usr/lib/libgfortran.so.3
+usr/lib/libgfortran.so.3.0.0
 usr/lib/libgomp.so.1
 usr/lib/libgomp.so.1.0.0
 usr/lib/libiberty.a
