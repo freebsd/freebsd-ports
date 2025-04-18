@@ -1,6 +1,6 @@
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nfilesystem-*:C/:[^:]+$//}
@@ -54,6 +54,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		libsepol-2.5-10.el7 \
 		libstdc++-4.8.5-44.el7 \
 		libuuid-2.23.2-65.el7_9.1 \
+		libverto-0.2.5-4.el7 \
 		ncurses-libs-5.9-14.20130511.el7_4 \
 		nss-softokn-freebl-3.90.0-6.el7_9 \
 		openssl-libs-1.0.2k-26.el7_9 \

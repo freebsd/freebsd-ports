@@ -781,6 +781,8 @@ usr/lib/libutil-2.17.so
 usr/lib/libutil.so.1
 usr/lib/libuuid.so.1
 usr/lib/libuuid.so.1.3.0
+usr/lib/libverto.so.1
+usr/lib/libverto.so.1.0.0
 usr/lib/libz.so.1
 usr/lib/libz.so.1.2.7
 usr/lib/locale/locale-archive
@@ -1254,6 +1256,8 @@ usr/lib64/libutil-2.17.so
 usr/lib64/libutil.so.1
 usr/lib64/libuuid.so.1
 usr/lib64/libuuid.so.1.3.0
+usr/lib64/libverto.so.1
+usr/lib64/libverto.so.1.0.0
 usr/lib64/libz.so.1
 usr/lib64/libz.so.1.2.7
 usr/lib64/openssl/engines/lib4758cca.so
@@ -1613,6 +1617,11 @@ usr/share/centos-release/EULA
 %%PORTDOCS%%usr/share/doc/libidn-1.28/THANKS
 %%PORTDOCS%%usr/share/doc/libmount-2.23.2/COPYING
 %%PORTDOCS%%usr/share/doc/libuuid-2.23.2/COPYING
+%%PORTDOCS%%usr/share/doc/libverto-0.2.5/AUTHORS
+%%PORTDOCS%%usr/share/doc/libverto-0.2.5/COPYING
+%%PORTDOCS%%usr/share/doc/libverto-0.2.5/ChangeLog
+%%PORTDOCS%%usr/share/doc/libverto-0.2.5/NEWS
+%%PORTDOCS%%usr/share/doc/libverto-0.2.5/README
 %%PORTDOCS%%usr/share/doc/ncurses-5.9/ANNOUNCE
 %%PORTDOCS%%usr/share/doc/ncurses-5.9/AUTHORS
 %%PORTDOCS%%usr/share/doc/ncurses-5.9/NEWS.bz2
