@@ -1,3 +1,3 @@
-TIMESTAMP = 1731679210
-SHA256 (kjdev-php-ext-snappy-0.2.2_GH0.tar.gz) = f8c13adbe0796a5be2fe16c3417ed10daeac247b51c8583bc4b85dda9714c47b
-SIZE (kjdev-php-ext-snappy-0.2.2_GH0.tar.gz) = 14387
+TIMESTAMP = 1744288836
+SHA256 (snappy-0.2.3.tgz) = c6a96362dde37cdc601987fe1191dd962f4d98eb2fbc2ab678aa888415459ccc
+SIZE (snappy-0.2.3.tgz) = 54373
