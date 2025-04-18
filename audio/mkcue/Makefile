@@ -15,13 +15,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man
 
 ORIGVERSION=	1
-DEBIANVERSION=	7
+DEBIANVERSION=	8
 
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 
 EXTRA_PATCHES=	${WRKDIR}/debian/patches/fix_msf_offset:-p1 \
-		${WRKDIR}/debian/patches/use_ldflags:-p1
+		${WRKDIR}/debian/patches/use_ldflags:-p1 \
+		${WRKDIR}/debian/patches/fix_compilation:-p1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${ORIGVERSION}.orig
 
