@@ -1,5 +1,5 @@
 PORTNAME=	pdm
-PORTVERSION=	2.22.4
+PORTVERSION=	2.23.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hishel>=0.0.32:devel/py-hishel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpcore>=1.0.6:www/py-httpcore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.20<1:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}id>=1.5.0:devel/py-id@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}installer>=0.7<0.8:devel/py-installer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=1.0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=20.9:devel/py-packaging@${PY_FLAVOR} \
@@ -34,7 +35,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shellingham>=1.3.2:devel/py-shellingham@${PY_FLAVOR} \
 		${PY_TOMLI} \
 		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.11.1<1:textproc/py-tomlkit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}unearth>=0.17.0:devel/py-unearth@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}unearth>=0.17.5:devel/py-unearth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=20:devel/py-virtualenv@${PY_FLAVOR}
 
 USES=		python:3.9+
