@@ -1,12 +1,13 @@
 bin/dunst
 bin/dunstctl
+%%DUNSTIFY%%bin/dunstify
 @sample %%ETCDIR%%/dunstrc.sample
 share/bash-completion/completions/dunst
 share/bash-completion/completions/dunstctl
 share/dbus-1/services/org.knopwob.dunst.service
 share/fish/vendor_completions.d/dunst.fish
 share/fish/vendor_completions.d/dunstctl.fish
-share/fish/vendor_completions.d/dunstify.fish
+%%DUNSTIFY%%share/fish/vendor_completions.d/dunstify.fish
 share/man/man1/dunst.1.gz
 share/man/man1/dunstctl.1.gz
 share/man/man1/dunstify.1.gz
