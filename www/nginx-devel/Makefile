@@ -4,6 +4,7 @@ CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
 PKGNAMESUFFIX?=	-devel
+PORTREVISION=	1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	osa@FreeBSD.org

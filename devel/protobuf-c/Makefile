@@ -1,6 +1,6 @@
 PORTNAME=	protobuf-c
 DISTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/protobuf-c/protobuf-c/releases/download/v${DISTVERSION}/
 

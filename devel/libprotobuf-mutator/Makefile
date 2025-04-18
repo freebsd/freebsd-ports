@@ -1,6 +1,7 @@
 PORTNAME=	libprotobuf-mutator
 PORTVERSION=	1.5
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
