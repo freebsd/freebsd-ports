@@ -1,6 +1,5 @@
 PORTNAME=	ddtrace
-PORTVERSION=	2.21.3
-PORTREVISION=	2
+PORTVERSION=	2.21.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/abseil/abseil-cpp/releases/download/${ABSEIL_VERSION}/:abseil
@@ -18,8 +17,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.Apache
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE.BSD3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools-rust>=0<2:devel/py-setuptools-rust@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-rust>=0<2:devel/py-setuptools-rust@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=4:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libddwaf.so:devel/libddwaf
@@ -54,7 +52,7 @@ OPENAI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tiktoken>=0:textproc/py-tiktoken@${PY
 OPENTRACING_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}opentracing>=2.0.0:devel/py-opentracing@${PY_FLAVOR}
 
 post-patch:
-	${MV} ${WRKDIR}/abseil-cpp-${ABSEIL_VERSION}/ ${WRKSRC}/ddtrace/appsec/_iast/_taint_tracking/absl/
+	@${MV} ${WRKDIR}/abseil-cpp-${ABSEIL_VERSION}/ ${WRKSRC}/ddtrace/appsec/_iast/_taint_tracking/absl/
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +

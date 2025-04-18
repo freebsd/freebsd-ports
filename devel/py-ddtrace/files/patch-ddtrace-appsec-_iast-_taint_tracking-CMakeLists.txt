@@ -1,12 +1,21 @@
---- ddtrace/appsec/_iast/_taint_tracking/CMakeLists.txt.orig	2024-10-30 14:03:55 UTC
+--- ddtrace/appsec/_iast/_taint_tracking/CMakeLists.txt.orig	2025-04-07 19:46:51 UTC
 +++ ddtrace/appsec/_iast/_taint_tracking/CMakeLists.txt
-@@ -32,8 +32,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Release")
+@@ -3,7 +3,7 @@ option(BUILD_MACOS "Build for MacOS" OFF)
  
- if(CMAKE_BUILD_TYPE STREQUAL "Release")
-     message("Release mode: using abseil")
+ set(APP_NAME _native)
+ option(BUILD_MACOS "Build for MacOS" OFF)
+-option(NATIVE_TESTING "Load test subdirectories and targets" ON)
++option(NATIVE_TESTING "Load test subdirectories and targets" OFF)
+ 
+ project(${APP_NAME})
+ 
+@@ -45,8 +45,7 @@ else()
+     add_definitions(-DDONT_COMPILE_ABSEIL) # Define DONT_COMPILE_ABSEIL preprocessor variable
+ else()
+     message("Release mode: using abseil (DD_COMPILE_ABSEIL unset or not 0/false)")
 -    FetchContent_Declare(absl URL "https://github.com/abseil/abseil-cpp/archive/refs/tags/20230802.1.zip")
 -    FetchContent_MakeAvailable(absl)
 +    add_subdirectory(absl)
- else()
-     message("Debug mode: not using abseil")
  endif()
+ 
+ include_directories(".")

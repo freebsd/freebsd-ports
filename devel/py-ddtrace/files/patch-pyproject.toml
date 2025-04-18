@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2024-08-01 21:44:33 UTC
+--- pyproject.toml.orig	2025-04-07 19:46:51 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -7,3 +7,12 @@
  build-backend = "setuptools.build_meta"
  
  [project]
+@@ -30,7 +30,7 @@ dependencies = [
+     "bytecode>=0.15.0; python_version~='3.12.0'",
+     "bytecode>=0.14.0; python_version~='3.11.0'",
+     "bytecode>=0.13.0; python_version<'3.11'",
+-    "envier==0.5.2",
++    "envier>=0.5.2",
+     "importlib_metadata<=6.5.0; python_version<'3.8'",
+     "legacy-cgi>=2.0.0; python_version>='3.13.0'",
+     "opentelemetry-api>=1",
