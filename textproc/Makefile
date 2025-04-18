@@ -1454,6 +1454,7 @@
     SUBDIR += py-mistune0
     SUBDIR += py-mkdocs
     SUBDIR += py-mkdocs-autorefs
+    SUBDIR += py-mkdocs-exclude
     SUBDIR += py-mkdocs-get-deps
     SUBDIR += py-mkdocs-git-revision-date-localized-plugin
     SUBDIR += py-mkdocs-material
