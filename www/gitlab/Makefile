@@ -56,7 +56,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-rugged>=1.6<2:devel/rubygem-rugged \
 	rubygem-faraday-gitlab>=2<3:www/rubygem-faraday-gitlab \
 	rubygem-faraday-retry-gitlab>=2<3:www/rubygem-faraday-retry-gitlab \
-	rubygem-logger>=1.6.0<1.7:devel/rubygem-logger \
+	rubygem-logger-gitlab>=1.6.0<1.7:devel/rubygem-logger-gitlab \
 	rubygem-marginalia>=1.11.1<1.12:databases/rubygem-marginalia \
 	rubygem-declarative_policy>=1.1.0<1.2:security/rubygem-declarative_policy \
 	rubygem-coverband>=6.1.4<6.1.5:www/rubygem-coverband \
@@ -170,7 +170,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-sidekiq72>=7.2.4<7.3:devel/rubygem-sidekiq72 \
 	rubygem-sidekiq-cron-rails70>=1.12.0<1.13:devel/rubygem-sidekiq-cron-rails70 \
 	rubygem-fugit>=1.11.1<1.12:devel/rubygem-fugit \
-	rubygem-httparty>=0.22.0<0.23:www/rubygem-httparty \
+	rubygem-httparty-gitlab>=0.22.0<0.23:www/rubygem-httparty-gitlab \
 	rubygem-rainbow>=3.1.1<4.0:devel/rubygem-rainbow \
 	rubygem-ruby-progressbar>=1.11<2:devel/rubygem-ruby-progressbar \
 	rubygem-re2>=2.15.0<3:devel/rubygem-re2 \
@@ -302,7 +302,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-ed25519>=1.3.0<1.4:security/rubygem-ed25519 \
 	rubygem-cvss-suite>=3.3.0<3.4:security/rubygem-cvss-suite \
 	rubygem-arr-pm>=0.0.12<0.1:devel/rubygem-arr-pm \
-	rubygem-devfile>=0.1.1<0.2:net/rubygem-devfile \
+	rubygem-devfile-gitlab>=0.1.1<0.2:net/rubygem-devfile-gitlab \
 	rubygem-CFPropertyList-gitlab>=3.0.7<3.1:devel/rubygem-CFPropertyList-gitlab \
 	rubygem-app_store_connect>=0:net/rubygem-app_store_connect \
 	rubygem-telesignenterprise>=2.2<3:devel/rubygem-telesignenterprise \
