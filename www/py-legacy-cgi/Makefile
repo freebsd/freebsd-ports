@@ -1,5 +1,5 @@
 PORTNAME=	legacy-cgi
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +12,9 @@ WWW=		https://github.com/jackrosenthal/legacy-cgi
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 
-USES=		python:3.10+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
