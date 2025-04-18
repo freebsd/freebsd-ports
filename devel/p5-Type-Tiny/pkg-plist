@@ -76,6 +76,9 @@
 %%PERL5_MAN3%%/Type::Coercion::Union.3.gz
 %%PERL5_MAN3%%/Type::Library.3.gz
 %%PERL5_MAN3%%/Type::Params.3.gz
+%%PERL5_MAN3%%/Type::Params::Alternatives.3.gz
+%%PERL5_MAN3%%/Type::Params::Parameter.3.gz
+%%PERL5_MAN3%%/Type::Params::Signature.3.gz
 %%PERL5_MAN3%%/Type::Parser.3.gz
 %%PERL5_MAN3%%/Type::Registry.3.gz
 %%PERL5_MAN3%%/Type::Tie.3.gz
@@ -114,4 +117,12 @@
 %%PERL5_MAN3%%/Types::Common::Numeric.3.gz
 %%PERL5_MAN3%%/Types::Common::String.3.gz
 %%PERL5_MAN3%%/Types::Standard.3.gz
+%%PERL5_MAN3%%/Types::Standard::ArrayRef.3.gz
+%%PERL5_MAN3%%/Types::Standard::CycleTuple.3.gz
+%%PERL5_MAN3%%/Types::Standard::Dict.3.gz
+%%PERL5_MAN3%%/Types::Standard::HashRef.3.gz
+%%PERL5_MAN3%%/Types::Standard::Map.3.gz
+%%PERL5_MAN3%%/Types::Standard::ScalarRef.3.gz
+%%PERL5_MAN3%%/Types::Standard::StrMatch.3.gz
+%%PERL5_MAN3%%/Types::Standard::Tuple.3.gz
 %%PERL5_MAN3%%/Types::TypeTiny.3.gz
