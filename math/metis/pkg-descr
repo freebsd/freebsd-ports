@@ -6,3 +6,5 @@ multi-constraint partitioning schemes developed in our lab.
 
 METIS provides high-quality partitions, is extremely fast, and
 produces low-fill orderings.
+
+See also: https://github.com/KarypisLab/METIS

@@ -4,7 +4,6 @@
 %%SHARED%%bin/m2gmetis
 %%SHARED%%bin/mpmetis
 %%SHARED%%bin/ndmetis
-%%SHARED%%include/GKlib.h
 %%SHARED%%include/gk_arch.h
 %%SHARED%%include/gk_defs.h
 %%SHARED%%include/gk_externs.h
@@ -20,6 +19,10 @@
 %%SHARED%%include/gk_proto.h
 %%SHARED%%include/gk_struct.h
 %%SHARED%%include/gk_types.h
+%%SHARED%%include/gklib_defs.h
+%%SHARED%%include/gklib_rename.h
+%%SHARED%%include/gklib_tls.h
+%%SHARED%%include/GKlib.h
 %%SHARED%%include/gkregex.h
 %%STATIC%%include/libmetis/defs.h
 %%STATIC%%include/libmetis/gklib_defs.h
