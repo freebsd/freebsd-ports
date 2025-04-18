@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-sentry-ruby>=5.22.1<5.23:devel/rubygem-sentry-ruby \
-		rubygem-sidekiq72>=3.0:devel/rubygem-sidekiq72
+		rubygem-sidekiq-gitlab>=3.0:devel/rubygem-sidekiq-gitlab
 
 USES=		gem
 

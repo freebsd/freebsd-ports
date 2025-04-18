@@ -4309,3 +4309,4 @@ lang/python-doc-pdf-letter|lang/python-doc-pdf-a4|2025-04-09|Letter-size PDF no 
 net-im/py-punjab||2025-04-13|Has expired: Abandoned project, not compatible with decent python/twisted
 devel/linux-rl9-libsigsegv|emulators/linux_base-rl9|2025-04-15|Integrated into linux_base-rl9
 devel/linux-rl9-libatomic|devel/linux-rl9-devtools|2025-04-15|Integrated into linux-rl9-devtools
+devel/rubygem-sidekiq72|devel/rubygem-sidekiq-gitlab|2025-04-18|Please use devel/sidekiq-gitlab instead
