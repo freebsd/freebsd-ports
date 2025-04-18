@@ -1,3 +1,3 @@
-TIMESTAMP = 1738606433
-SHA256 (xrootd-5.7.3.tar.gz) = dcc051b1e58705b4654cc39f9a65167b9ea90e94f73f5671d8dd55e61aaa4a6b
-SIZE (xrootd-5.7.3.tar.gz) = 6837682
+TIMESTAMP = 1744288852
+SHA256 (xrootd-5.8.0.tar.gz) = dc4f5e81ec44cf6ffa7112d431c9caf675cbfd5c6b4443bd8598106100015461
+SIZE (xrootd-5.8.0.tar.gz) = 6891826
