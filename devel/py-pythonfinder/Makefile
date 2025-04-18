@@ -1,5 +1,5 @@
 PORTNAME=	pythonfinder
-PORTVERSION=	2.1.0
+PORTVERSION=	3.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,7 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=	CLI
 
-CLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=0:devel/py-click@${PY_FLAVOR}
+CLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=0:devel/py-click@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}colorama>=0:devel/py-colorama@${PY_FLAVOR}
 
 .include <bsd.port.mk>
