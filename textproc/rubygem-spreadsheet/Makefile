@@ -1,5 +1,5 @@
 PORTNAME=	spreadsheet
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
+		rubygem-logger>=0:devel/rubygem-logger \
 		rubygem-ruby-ole>=0:devel/rubygem-ruby-ole
 
 USES=		gem
