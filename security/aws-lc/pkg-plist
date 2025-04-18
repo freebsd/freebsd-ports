@@ -1,4 +1,5 @@
 bin/bssl
+bin/c_rehash
 bin/openssl
 include/openssl/aead.h
 include/openssl/aes.h
