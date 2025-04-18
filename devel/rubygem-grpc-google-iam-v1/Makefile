@@ -1,5 +1,5 @@
 PORTNAME=	grpc-google-iam-v1
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
