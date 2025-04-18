@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-core
-PORTVERSION=	3.220.1
+PORTVERSION=	3.222.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,8 @@ RUN_DEPENDS=	rubygem-aws-eventstream>=1.3.0<2:devel/rubygem-aws-eventstream \
 		rubygem-aws-partitions>=1.992.0<2:devel/rubygem-aws-partitions \
 		rubygem-aws-sigv4>=1.9<2:devel/rubygem-aws-sigv4 \
 		rubygem-base64>=0:converters/rubygem-base64 \
-		rubygem-jmespath>=1.6.1<2:devel/rubygem-jmespath
+		rubygem-jmespath>=1.6.1<2:devel/rubygem-jmespath \
+		rubygem-logger>=0:devel/rubygem-logger
 
 USES=		gem
 
