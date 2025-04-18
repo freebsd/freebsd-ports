@@ -1,0 +1,13 @@
+--- ikectl/CMakeLists.txt.orig	2025-04-09 19:47:21 UTC
++++ ikectl/CMakeLists.txt
+@@ -42,7 +42,9 @@ list(APPEND CFLAGS
+ 	-Wsign-compare
+ 	"$<$<CONFIG:DEBUG>:-O0;-g>"
+ )
+-
++if(DEFINED CADIR)
++	add_definitions( -DCADIR="${CADIR}" )
++endif()
+ target_compile_options(ikectl PRIVATE ${CFLAGS})
+ if(HAVE_LD_Z)
+ 	target_link_options(ikectl PRIVATE "LINKER:-z,relro,-z,now")
