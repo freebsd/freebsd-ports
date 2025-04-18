@@ -1,6 +1,7 @@
 PORTNAME=	umurmur
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	audio net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,21 +12,17 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
-		libmbedtls.so:security/mbedtls3 \
 		libprotobuf-c.so:devel/protobuf-c
 
-USES=		autoreconf gmake libtool localbase
+USES=		cmake ssl
 USE_GITHUB=	yes
 USE_RC_SUBR=	umurmur
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ssl=mbedtls
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/conf.c
 	@${REINPLACE_CMD} \
 		-e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/umurmur.conf.example
+	@${REINPLACE_CMD} -e 's|0.3.0|0.3.1|g' ${WRKSRC}/src/version.h
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/umurmur
