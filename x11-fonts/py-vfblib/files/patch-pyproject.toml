@@ -1,9 +1,24 @@
---- pyproject.toml.orig	2025-01-24 10:33:32 UTC
+--- pyproject.toml.orig	2025-04-09 11:40:14 UTC
 +++ pyproject.toml
-@@ -1,5 +1,5 @@
+@@ -1,11 +1,10 @@
  [project]
 -name = "vfbLib"
 +name = "vfblib"
  dynamic = ["version"]
  description = "Tools for converting FontLab Studio 5 (VFB) files."
  keywords = ["vfb", "vfbLib", "fonttools"]
+ 
+ readme = "README.md"
+-license-files = ["LICENSE"]
+ 
+ authors = [{ name = "Jens Kutílek", email = "webmail@kutilek.de" }]
+ classifiers = [
+@@ -60,7 +59,7 @@ vfbdiff = "vfbLib.diff:diffvfb"
+ # yuri = vfbLib.value:yuri
+ 
+ [build-system]
+-requires = ["setuptools>=78.0.2", "setuptools-scm[toml]>=6.2", "wheel"]
++requires = ["setuptools>=61", "setuptools-scm[toml]>=6.2", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools.package-data]
