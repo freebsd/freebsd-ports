@@ -1,5 +1,5 @@
 PORTNAME=	ack
-PORTVERSION=	3.8.1
+PORTVERSION=	3.8.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc sysutils perl5
 MASTER_SITES=	CPAN
@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Next>=1.18:sysutils/p5-File-Next
 TEST_DEPENDS=	bash:shells/bash \
-		p5-IO-Tty>=0:devel/p5-IO-Tty
+		p5-IO-Tty>=0:devel/p5-IO-Tty \
+		p5-YAML-PP>=0:textproc/p5-YAML-PP
 
 USES=		cpe perl5
 USE_PERL5=	configure
