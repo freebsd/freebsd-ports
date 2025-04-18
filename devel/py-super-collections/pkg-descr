@@ -1,0 +1,2 @@
+Python library to instantly convert JSON and YAML files into objects with
+attributes, without the need to create specific classes.

@@ -5981,6 +5981,7 @@
     SUBDIR += py-structlog
     SUBDIR += py-subprocess-tee
     SUBDIR += py-subversion
+    SUBDIR += py-super-collections
     SUBDIR += py-sure
     SUBDIR += py-swagger-spec-validator
     SUBDIR += py-synr
