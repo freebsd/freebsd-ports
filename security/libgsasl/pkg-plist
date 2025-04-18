@@ -22,10 +22,6 @@ libdata/pkgconfig/libgsasl.pc
 %%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-abstraction.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-controlflow.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-controlflow2.png
-%%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl-mech.h.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl-version.h.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl.h.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/gsasl.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%/reference/home.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/index.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/intro.html
