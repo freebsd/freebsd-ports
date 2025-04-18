@@ -1,5 +1,5 @@
 PORTNAME=	bogofilter
-PORTREVISION=	5
+PORTREVISION=	0
 CATEGORIES=	mail
 PKGNAMESUFFIX=	# blank, to override bogofilter-bdb's
 

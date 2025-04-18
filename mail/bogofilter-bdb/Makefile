@@ -1,6 +1,6 @@
 PORTNAME=	bogofilter
-DISTVERSION=	1.2.5
-PORTREVISION?=	5
+DISTVERSION=	1.3.0.rc1
+PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	SF/bogofilter/bogofilter-stable/
 PKGNAMESUFFIX?=	-bdb
@@ -47,6 +47,9 @@ TEST_TARGET=	check
 BF_LIBS?=		-l${BDB_LIB_NAME}
 BF_CPPFLAGS?=		-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
+.if !defined(MASTERDIR) || ${MASTERDIR} == ${.CURDIR}
+CONFIGURE_ARGS+=	--with-database=db
+.endif
 .if ${PORT_OPTIONS:MUNICODE}
 BF_LIBS+=		${ICONV_LIB}
 .endif
@@ -80,7 +83,6 @@ post-install:
 .for i in README.randomtrain README.contrib
 	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${STAGEDIR}${DOCSDIR}/contrib/${i}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/trio/AUTHORS ${STAGEDIR}${DOCSDIR}/AUTHORS.trio
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/*.xml ${STAGEDIR}${DOCSDIR}/xml
 	${INSTALL_DATA} ${WRKSRC}/doc/programmer/README.freebsd ${STAGEDIR}${DOCSDIR}/programmer
@@ -92,7 +94,7 @@ post-install:
 	  ${INSTALL_SCRIPT} ${WRKSRC}/contrib/${i} ${STAGEDIR}${DOCSDIR}/contrib/${i}
 .endfor
 .for i in dot-qmail-bogofilter-default \
-	mailfilter.example procmailrc.example vm-bogofilter.el
+	mailfilter.example vm-bogofilter.el
 	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${STAGEDIR}${DOCSDIR}/contrib/${i}
 .endfor
 
