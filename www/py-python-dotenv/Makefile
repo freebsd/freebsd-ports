@@ -1,9 +1,9 @@
 PORTNAME=	python-dotenv
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	python_dotenv-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Add .env support to your django/flask apps
