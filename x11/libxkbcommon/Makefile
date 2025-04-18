@@ -1,7 +1,10 @@
 PORTNAME=	libxkbcommon
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+DISTVERSION=	1.8.1
+PORTREVISION=	2
 CATEGORIES=	x11
+
+PATCH_SITES=	https://github.com/xkbcommon/libxkbcommon/commit/
+PATCHFILES=	d7e112febb7ab756563da6eced0a650396be5945.patch:-p1
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Keymap handling library for toolkits and window systems
@@ -14,19 +17,20 @@ RUN_DEPENDS=	xkeyboard-config>0:x11/xkeyboard-config
 
 USES=		bison compiler:c11 cpe gnome meson pkgconfig python:test \
 		shebangfix
-USE_GNOME=	libxml2
-USE_GITHUB=	yes
-GH_ACCOUNT=	xkbcommon
-GH_TAGNAME=	${GH_ACCOUNT}-${PORTVERSION}
-USE_LDCONFIG=	yes
-MESON_ARGS=	-Denable-docs=false \
-		-Dx-locale-root="${PREFIX}/lib/X11/locale" \
-		${MESON_ARGS_${OPSYS}_${OSREL:R}}
 CPE_VENDOR=	xkbcommon
 SHEBANG_FILES=	test/xkeyboard-config-test.py.in \
 		test/*.py
+USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	xkbcommon
+GH_TAGNAME=	${GH_ACCOUNT}-${DISTVERSION}
 
 HAS_SYMBOL_VERSION=	${PREFIX}/lib/libxkbregistry.so.0.8.1
+
+MESON_ARGS=	-Denable-docs=false \
+		-Dx-locale-root="${PREFIX}/lib/X11/locale"
 
 OPTIONS_DEFINE=	EVDEV WAYLAND X11
 OPTIONS_DEFAULT=EVDEV WAYLAND X11
