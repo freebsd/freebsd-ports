@@ -2,7 +2,8 @@ PORTNAME=	bogofilter
 DISTVERSION=	1.3.0.rc1
 PORTREVISION?=	0
 CATEGORIES?=	mail
-MASTER_SITES=	SF/bogofilter/bogofilter-stable/
+MASTER_SITES=	SF/bogofilter/bogofilter-current/bogofilter-1.3.0.beta/ \
+		https://gitlab.com/-/project/12408342/uploads/647db3bd2f28a1f91bdd3bb1945d91fe/
 PKGNAMESUFFIX?=	-bdb
 
 MAINTAINER?=	mandree@FreeBSD.org
