@@ -2,7 +2,7 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		HUnit-1.6.2.0 \
 		OneTuple-0.4.2_1 \
 		Only-0.1_2 \
-		QuickCheck-2.15.0.1 \
+		QuickCheck-2.15.0.1_1 \
 		Ranged-sets-0.4.0_2 \
 		StateVar-1.2.2 \
 		adjunctions-4.4.2_2 \
@@ -11,11 +11,11 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		ansi-terminal-1.1.2 \
 		ansi-terminal-types-1.1 \
 		appar-0.1.8 \
-		asn1-encoding-0.9.6_2 \
+		asn1-encoding-0.9.6 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
 		assoc-1.1.1_1 \
-		async-2.2.5_3 \
+		async-2.2.5 \
 		atomic-primops-0.8.8 \
 		attoparsec-0.14.4_6 \
 		attoparsec-aeson-2.2.2.0 \
@@ -26,7 +26,7 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		base-unicode-symbols-0.2.4.2 \
 		base64-bytestring-1.2.1.0_1 \
 		basement-0.0.16 \
-		bifunctors-5.6.2_1 \
+		bifunctors-5.6.2_2 \
 		binary-parser-0.5.7.7 \
 		bitvec-1.1.5.0_3 \
 		bsb-http-chunked-0.0.0.4_4 \
@@ -37,14 +37,14 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		cache-0.1.3.0_1 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
-		cassava-0.5.3.2 \
+		cassava-0.5.3.2_1 \
 		cereal-0.5.8.3 \
 		character-ps-0.1 \
 		charset-0.3.11 \
 		clock-0.8.4 \
 		cmdargs-0.10.22 \
 		colour-2.3.6 \
-		comonad-5.0.9 \
+		comonad-5.0.9_1 \
 		concise-0.1.0.1 \
 		configurator-pg-0.2.10_1 \
 		contravariant-1.5.5 \
@@ -77,7 +77,7 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		extra-1.8 \
 		fast-logger-3.2.4 \
 		foldl-1.4.18_1 \
-		free-5.2_6 \
+		free-5.2_7 \
 		fuzzyset-0.2.4 \
 		generically-0.1.1_4 \
 		generics-sop-0.5.1.4_2 \
@@ -97,7 +97,7 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		hasql-transaction-1.0.1.4 \
 		heredoc-0.2.0.0 \
 		hourglass-0.2.12_1 \
-		hsc2hs-0.68.10_3 \
+		hsc2hs-0.68.10_4 \
 		http-date-0.0.11 \
 		http-media-0.8.1.1_2 \
 		http-types-0.12.4 \
@@ -109,12 +109,12 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		integer-conversion-0.1.1_1 \
 		integer-logarithms-1.0.4 \
 		interpolatedstring-perl6-1.0.2 \
-		invariant-0.6.4 \
+		invariant-0.6.4_1 \
 		iproute-1.7.15 \
 		isomorphism-class-0.3 \
 		jose-0.11 \
-		kan-extensions-5.2.6 \
-		keys-3.12.4 \
+		kan-extensions-5.2.6_1 \
+		keys-3.12.4_1 \
 		lawful-conversions-0.1.6 \
 		lens-5.2.3_5 \
 		lens-aeson-1.2.3_2 \
@@ -134,14 +134,14 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		old-time-1.1.0.4 \
 		optics-core-0.4.1.1_1 \
 		optics-extra-0.4.2.1_4 \
-		optics-th-0.4.1_8 \
+		optics-th-0.4.1_9 \
 		optparse-applicative-0.18.1.0_1 \
 		os-string-2.0.7 \
 		parallel-3.2.2.0_9 \
 		parser-combinators-1.3.0_1 \
-		parsers-0.12.12 \
+		parsers-0.12.12_1 \
 		pem-0.2.4 \
-		pointed-5.0.5 \
+		pointed-5.0.5_1 \
 		postgresql-binary-0.13.1.3 \
 		postgresql-libpq-0.10.2.0 \
 		postgresql-libpq-configure-0.10.0.1 \
@@ -157,7 +157,7 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		random-1.2.1.3 \
 		rebase-1.21.2 \
 		recv-0.1.0 \
-		reflection-2.1.9 \
+		reflection-2.1.9_1 \
 		regex-base-0.94.0.2_4 \
 		regex-tdfa-1.3.2.2_3 \
 		rerebase-1.21.2 \
@@ -168,7 +168,7 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		scientific-0.3.8.0_2 \
 		selective-0.7.0.1 \
 		semialign-1.3.1_2 \
-		semigroupoids-6.0.1_1 \
+		semigroupoids-6.0.1_2 \
 		semigroups-0.20 \
 		simple-sendfile-0.2.32 \
 		sop-core-0.5.0.2_5 \
@@ -180,7 +180,7 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		swagger2-2.8.9 \
 		syb-0.7.2.4 \
 		tagged-0.8.9 \
-		tasty-1.5.3 \
+		tasty-1.5.3_1 \
 		template-haskell-compat-v0208-0.1.9.4 \
 		text-builder-0.6.7.2 \
 		text-builder-dev-0.3.9 \
@@ -189,7 +189,7 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		text-metrics-0.3.3 \
 		text-printer-0.5.0.2 \
 		text-short-0.1.6_3 \
-		th-abstraction-0.7.1.0 \
+		th-abstraction-0.7.1.0_1 \
 		th-compat-0.1.6 \
 		th-expand-syns-0.4.12.0 \
 		th-lift-0.8.6 \
@@ -208,9 +208,9 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		unliftio-core-0.2.1.0_4 \
 		unordered-containers-0.2.20_4 \
 		utf8-string-1.0.2 \
-		uuid-1.3.16_2 \
-		uuid-types-1.0.6_2 \
-		vault-0.3.1.5_9 \
+		uuid-1.3.16_3 \
+		uuid-types-1.0.6_3 \
+		vault-0.3.1.5_10 \
 		vector-0.13.2.0_1 \
 		vector-algorithms-0.9.0.3 \
 		vector-instances-3.4.2 \
