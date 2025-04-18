@@ -32,6 +32,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pyinfra-dev
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
 # Most of the ignored tests fail because docker is missing.
 # The *_ensure_newline_* ones fail when pyinfra is not installed first.
 PYTEST_IGNORED_TESTS=	test_int_docker_install_package_ubuntu \
