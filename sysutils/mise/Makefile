@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.4.2
+DISTVERSION=	2025.4.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,7 +44,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.7 \
-		anyhow-1.0.97 \
+		anyhow-1.0.98 \
 		arbitrary-1.4.1 \
 		arc-swap-1.7.1 \
 		arrayvec-0.5.2 \
@@ -73,6 +73,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		byteorder-1.5.0 \
 		bytes-1.10.1 \
 		bytesize-1.3.3 \
+		bytesize-2.0.1 \
 		bzip2-0.5.2 \
 		bzip2-sys-0.1.13+1.0.8 \
 		calm_io-0.1.1 \
@@ -259,7 +260,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		glob-0.3.2 \
 		globset-0.4.16 \
 		globwalk-0.9.1 \
-		h2-0.4.8 \
+		h2-0.4.9 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
@@ -322,8 +323,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
-		jiff-0.2.6 \
-		jiff-static-0.2.6 \
+		jiff-0.2.8 \
+		jiff-static-0.2.8 \
 		jiff-tzdb-0.1.4 \
 		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.33 \
@@ -334,7 +335,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lazy-regex-3.4.1 \
 		lazy-regex-proc_macros-3.4.1 \
 		lazy_static-1.5.0 \
-		libc-0.2.171 \
+		libc-0.2.172 \
 		libm-0.2.11 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
@@ -434,8 +435,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-error-attr2-2.0.0 \
 		proc-macro-error2-2.0.1 \
-		proc-macro2-1.0.94 \
-		prodash-29.0.1 \
+		proc-macro2-1.0.95 \
+		prodash-29.0.2 \
 		quick-xml-0.37.4 \
 		quinn-0.11.7 \
 		quinn-proto-0.11.10 \
@@ -443,7 +444,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		quote-1.0.40 \
 		r-efi-5.2.0 \
 		rand-0.8.5 \
-		rand-0.9.0 \
+		rand-0.9.1 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
