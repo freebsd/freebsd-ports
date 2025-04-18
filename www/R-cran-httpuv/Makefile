@@ -1,11 +1,11 @@
 PORTNAME=	httpuv
-DISTVERSION=	1.6.15
+DISTVERSION=	1.6.16
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	HTTP and WebSocket server library for R
-WWW=		https://cran.r-project.org/web/packages/httpuv/
+WWW=		https://cran.r-project.org/package=httpuv
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
