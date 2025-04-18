@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-server-ydoc
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.4.0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18.0:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-events>=0.10.0:devel/py-jupyter-events@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-server>=2.11.1<3.0.0:devel/py-jupyter-server@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-events>=0.11.0:devel/py-jupyter-events@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-server>=2.15.0<3.0.0:devel/py-jupyter-server@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-server-fileid>=0.7.0<1:devel/py-jupyter-server-fileid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-ydoc>=2.1.2<4.0.0:devel/py-jupyter-ydoc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycrdt>=0:devel/py-pycrdt@${PY_FLAVOR} \
