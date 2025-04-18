@@ -1,0 +1,11 @@
+--- zellij-server/Cargo.toml.orig	2025-04-15 07:13:16 UTC
++++ zellij-server/Cargo.toml
+@@ -38,7 +38,7 @@ sixel-tokenizer = { version = "0.1.0", default-feature
+ signal-hook = { workspace = true }
+ sixel-image = { version = "0.1.0", default-features = false }
+ sixel-tokenizer = { version = "0.1.0", default-features = false }
+-sysinfo = { version = "0.22.5", default-features = false }
++sysinfo = "0.22.5"
+ tempfile = { workspace = true }
+ typetag = { version = "0.1.7", default-features = false }
+ unicode-width = { workspace = true }
