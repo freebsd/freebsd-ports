@@ -1,3 +1,3 @@
-TIMESTAMP = 1742405490
-SHA256 (setuptools_rust-1.11.0.tar.gz) = f765d66f3def6fdc85e1e6d889c6a812aea1430c8dadcf1c7b6779b45f874fb2
-SIZE (setuptools_rust-1.11.0.tar.gz) = 310325
+TIMESTAMP = 1744288980
+SHA256 (setuptools_rust-1.11.1.tar.gz) = 7dabc4392252ced314b8050d63276e05fdc5d32398fc7d3cce1f6a6ac35b76c0
+SIZE (setuptools_rust-1.11.1.tar.gz) = 310804
