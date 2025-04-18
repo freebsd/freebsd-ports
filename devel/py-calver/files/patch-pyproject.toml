@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2025-04-02 14:49:56 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0.1"]  # https://github.com/di/calver/pull/19
++requires = ["setuptools>=61"]  # https://github.com/di/calver/pull/19
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,7 +8,7 @@ requires-python = ">=3.9"
+ description = "Setuptools extension for CalVer package versions"
+ readme = "README.md"
+ requires-python = ">=3.9"
+-license = "Apache-2.0"
++license = { text = "Apache-2.0" }
+ authors = [
+     { name = "Dustin Ingram", email = "di@python.org" }
+ ]
