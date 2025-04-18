@@ -1,1 +1,5 @@
-Lightweight unit testing for Perl.
+Test::Mini is a light, spry testing framework built to bring the familiarity of
+an xUnit testing framework to Perl as a first-class citizen. Based initially on
+Ryan Davis' minitest, it provides a not only a simple way to write and run
+tests, but the necessary infrastructure for more expressive test fromeworks to
+be written.
