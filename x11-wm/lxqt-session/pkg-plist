@@ -39,6 +39,7 @@ share/applications/lxqt-suspend.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_ka.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_lg.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_lt.qm
@@ -83,6 +84,7 @@ share/applications/lxqt-suspend.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_ka.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_kab.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_kk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_ko.qm
@@ -131,6 +133,7 @@ share/applications/lxqt-suspend.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_ka.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_kab.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_kk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-session/lxqt-session_ko.qm

@@ -10,6 +10,7 @@ etc/xdg/autostart/lxqt-policykit-agent.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_da.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_de.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_el.qm
+%%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_en_GB.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_es.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_et.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_fi.qm
@@ -21,6 +22,8 @@ etc/xdg/autostart/lxqt-policykit-agent.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_ka.qm
+%%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_kab.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_lg.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_lt.qm
@@ -37,4 +40,5 @@ etc/xdg/autostart/lxqt-policykit-agent.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_uk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_vi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_zh_CN.qm
+%%LXQT_TRANSLATIONS%%/lxqt-policykit-agent/lxqt-policykit-agent_zh_TW.qm
 share/man/man1/lxqt-policykit-agent.1.gz

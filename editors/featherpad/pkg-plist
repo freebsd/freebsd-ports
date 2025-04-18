@@ -2,9 +2,6 @@ bin/featherpad
 bin/fpad
 share/applications/featherpad.desktop
 %%DATADIR%%/help
-%%DATADIR%%/help_ca
-%%DATADIR%%/help_ja
-%%DATADIR%%/help_pt_BR
 %%DATADIR%%/translations/featherpad_ar_DZ.qm
 %%DATADIR%%/translations/featherpad_bg.qm
 %%DATADIR%%/translations/featherpad_ca.qm
@@ -26,6 +23,7 @@ share/applications/featherpad.desktop
 %%DATADIR%%/translations/featherpad_id.qm
 %%DATADIR%%/translations/featherpad_it.qm
 %%DATADIR%%/translations/featherpad_ja.qm
+%%DATADIR%%/translations/featherpad_ka.qm
 %%DATADIR%%/translations/featherpad_ko.qm
 %%DATADIR%%/translations/featherpad_lt.qm
 %%DATADIR%%/translations/featherpad_nb_NO.qm

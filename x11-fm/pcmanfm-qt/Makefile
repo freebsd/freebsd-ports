@@ -1,5 +1,5 @@
 PORTNAME=	pcmanfm-qt
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	LXQT
 
@@ -18,7 +18,7 @@ USES=		cmake compiler:c++17-lang gnome kde:6 gettext-runtime \
 		localbase:ldflags lxqt:2 perl5 pkgconfig qt:6 \
 		tar:xz xorg
 USE_PERL5=	build
-USE_GNOME=	glib20
+USE_GNOME=	glib20 gvfs
 USE_QT=		base:run tools:build svg
 USE_KDE=	layer-shell-qt
 USE_LXQT=	buildtools2 libfmqt6

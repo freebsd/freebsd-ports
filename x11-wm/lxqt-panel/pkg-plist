@@ -108,6 +108,7 @@ share/applications/lxqt-panel.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-panel/colorpicker/colorpicker_sr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/colorpicker/colorpicker_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/colorpicker/colorpicker_zh_CN.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/colorpicker/colorpicker_zh_TW.qm
 %%CPULOAD%%%%LXQT_TRANSLATIONS%%/lxqt-panel/cpuload/cpuload_ar.qm
 %%CPULOAD%%%%LXQT_TRANSLATIONS%%/lxqt-panel/cpuload/cpuload_arn.qm
 %%CPULOAD%%%%LXQT_TRANSLATIONS%%/lxqt-panel/cpuload/cpuload_ast.qm
@@ -290,6 +291,7 @@ share/applications/lxqt-panel.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-panel/directorymenu/directorymenu_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/directorymenu/directorymenu_uk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/directorymenu/directorymenu_zh_CN.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/directorymenu/directorymenu_zh_TW.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/dom/dom_ar.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/dom/dom_arn.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/dom/dom_ast.qm
@@ -848,6 +850,7 @@ share/applications/lxqt-panel.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-panel/sysstat/sysstat_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/sysstat/sysstat_uk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/sysstat/sysstat_zh_CN.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/sysstat/sysstat_zh_TW.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/taskbar/taskbar_ar.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/taskbar/taskbar_arn.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/taskbar/taskbar_ast.qm
@@ -991,4 +994,5 @@ share/applications/lxqt-panel.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-panel/worldclock/worldclock_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/worldclock/worldclock_uk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/worldclock/worldclock_zh_CN.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/worldclock/worldclock_zh_TW.qm
 share/man/man1/lxqt-panel.1.gz

@@ -24,6 +24,8 @@ share/icons/hicolor/scalable/apps/lxqt-archiver.svg
 %%DATADIR%%/translations/lxqt-archiver_id.qm
 %%DATADIR%%/translations/lxqt-archiver_it.qm
 %%DATADIR%%/translations/lxqt-archiver_ja.qm
+%%DATADIR%%/translations/lxqt-archiver_ka.qm
+%%DATADIR%%/translations/lxqt-archiver_kab.qm
 %%DATADIR%%/translations/lxqt-archiver_ko.qm
 %%DATADIR%%/translations/lxqt-archiver_lg.qm
 %%DATADIR%%/translations/lxqt-archiver_lt.qm

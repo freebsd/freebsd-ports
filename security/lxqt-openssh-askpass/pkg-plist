@@ -21,6 +21,8 @@ bin/lxqt-openssh-askpass
 %%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_ka.qm
+%%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_kab.qm
 %%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_lg.qm
 %%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_lt.qm
@@ -38,4 +40,5 @@ bin/lxqt-openssh-askpass
 %%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_uk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_vi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_zh_CN.qm
+%%LXQT_TRANSLATIONS%%/lxqt-openssh-askpass/lxqt-openssh-askpass_zh_TW.qm
 share/man/man1/lxqt-openssh-askpass.1.gz

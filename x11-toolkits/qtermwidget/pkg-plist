@@ -58,6 +58,7 @@ libdata/pkgconfig/qtermwidget6.pc
 %%DATADIR%%6/translations/qtermwidget_de.qm
 %%DATADIR%%6/translations/qtermwidget_de_CH.qm
 %%DATADIR%%6/translations/qtermwidget_el.qm
+%%DATADIR%%6/translations/qtermwidget_en_GB.qm
 %%DATADIR%%6/translations/qtermwidget_es.qm
 %%DATADIR%%6/translations/qtermwidget_et.qm
 %%DATADIR%%6/translations/qtermwidget_fi.qm
@@ -68,6 +69,8 @@ libdata/pkgconfig/qtermwidget6.pc
 %%DATADIR%%6/translations/qtermwidget_hu.qm
 %%DATADIR%%6/translations/qtermwidget_it.qm
 %%DATADIR%%6/translations/qtermwidget_ja.qm
+%%DATADIR%%6/translations/qtermwidget_ka.qm
+%%DATADIR%%6/translations/qtermwidget_kab.qm
 %%DATADIR%%6/translations/qtermwidget_ko.qm
 %%DATADIR%%6/translations/qtermwidget_lg.qm
 %%DATADIR%%6/translations/qtermwidget_lt.qm

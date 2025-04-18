@@ -20,14 +20,17 @@ libdata/pkgconfig/dbusmenu-lxqt.pc
 %%DOXYGEN%%%%DOCSDIR%%-doc/classDBusMenuImporter-members.html
 %%DOXYGEN%%%%DOCSDIR%%-doc/classDBusMenuImporter.html
 %%DOXYGEN%%%%DOCSDIR%%-doc/classDBusMenuImporter.png
+%%DOXYGEN%%%%DOCSDIR%%-doc/classMenu-members.html
+%%DOXYGEN%%%%DOCSDIR%%-doc/classMenu.html
+%%DOXYGEN%%%%DOCSDIR%%-doc/classMenu.png
 %%DOXYGEN%%%%DOCSDIR%%-doc/classes.html
 %%DOXYGEN%%%%DOCSDIR%%-doc/closed.png
 %%DOXYGEN%%%%DOCSDIR%%-doc/dbusmenu__export_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%-doc/dbusmenuexporter_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%-doc/dbusmenuimporter_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%-doc/deprecated.html
-%%DOXYGEN%%%%DOCSDIR%%-doc/dir_08c052f0722913558ec942d7cefdb0f9.html
-%%DOXYGEN%%%%DOCSDIR%%-doc/dir_384263614cc638a515a46a5f11c30091.html
+%%DOXYGEN%%%%DOCSDIR%%-doc/dir_92d905a2582396d400d240cfcac8b71c.html
+%%DOXYGEN%%%%DOCSDIR%%-doc/dir_d016f966dff4c898d0cf1468a4da86eb.html
 %%DOXYGEN%%%%DOCSDIR%%-doc/doc.png
 %%DOXYGEN%%%%DOCSDIR%%-doc/docd.png
 %%DOXYGEN%%%%DOCSDIR%%-doc/doxygen.css
@@ -58,6 +61,7 @@ libdata/pkgconfig/dbusmenu-lxqt.pc
 %%DOXYGEN%%%%DOCSDIR%%-doc/search/all_5.js
 %%DOXYGEN%%%%DOCSDIR%%-doc/search/all_6.js
 %%DOXYGEN%%%%DOCSDIR%%-doc/search/classes_0.js
+%%DOXYGEN%%%%DOCSDIR%%-doc/search/classes_1.js
 %%DOXYGEN%%%%DOCSDIR%%-doc/search/close.svg
 %%DOXYGEN%%%%DOCSDIR%%-doc/search/functions_0.js
 %%DOXYGEN%%%%DOCSDIR%%-doc/search/functions_1.js

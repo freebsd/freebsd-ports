@@ -3,11 +3,19 @@
   message: <<EOM
 LXQt 2 desktop was installed
 
-1) If you want to test wayland support, take a look at the following url:
+1) LXQt does not provide its own window manager but any arbitrary window
+   manager can be used, most notably x11-wm/openbox (installed by default),
+   x11-wm/plasma6-kwin (the window manager of KDE), and x11-wm/xfce4-wm (the
+   window manager of Xfce). Look at the following url for some tips about how
+   configure these window manager:
+
+   https://github.com/lxqt/lxqt/wiki/ConfigWindowManagers
+
+2) If you want to test wayland support, take a look at the following url:
 
    https://github.com/lxqt/lxqt/wiki/ConfigWaylandSettings
 
-2) Enjoy it ;)
+3) Enjoy it ;)
 EOM
 }
 ]

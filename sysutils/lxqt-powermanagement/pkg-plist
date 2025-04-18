@@ -13,6 +13,7 @@ share/icons/hicolor/scalable/devices/laptop-lid.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config-powermanagement/lxqt-config-powermanagement_da.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-powermanagement/lxqt-config-powermanagement_de.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-powermanagement/lxqt-config-powermanagement_el.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-powermanagement/lxqt-config-powermanagement_en_GB.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-powermanagement/lxqt-config-powermanagement_es.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-powermanagement/lxqt-config-powermanagement_et.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-powermanagement/lxqt-config-powermanagement_fi.qm
@@ -24,6 +25,7 @@ share/icons/hicolor/scalable/devices/laptop-lid.svg
 %%LXQT_TRANSLATIONS%%/lxqt-config-powermanagement/lxqt-config-powermanagement_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-powermanagement/lxqt-config-powermanagement_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-powermanagement/lxqt-config-powermanagement_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-powermanagement/lxqt-config-powermanagement_ka.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-powermanagement/lxqt-config-powermanagement_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-powermanagement/lxqt-config-powermanagement_lg.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-powermanagement/lxqt-config-powermanagement_lt.qm
@@ -51,6 +53,7 @@ share/icons/hicolor/scalable/devices/laptop-lid.svg
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_da.qm
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_de.qm
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_el.qm
+%%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_en_GB.qm
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_es.qm
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_et.qm
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_fi.qm
@@ -62,6 +65,8 @@ share/icons/hicolor/scalable/devices/laptop-lid.svg
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_ka.qm
+%%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_kab.qm
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_lg.qm
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_lt.qm
@@ -79,3 +84,4 @@ share/icons/hicolor/scalable/devices/laptop-lid.svg
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_uk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_vi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_zh_CN.qm
+%%LXQT_TRANSLATIONS%%/lxqt-powermanagement/lxqt-powermanagement_zh_TW.qm
