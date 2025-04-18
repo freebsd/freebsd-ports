@@ -1,6 +1,6 @@
 PORTNAME=	archinfo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	${ANGR_VERSION}
+DISTVERSION=	9.2.148
 PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	angr
 USE_PYTHON=	autoplist distutils
 
+TESTING_UNSAFE=	nose does not yet support Python 3.11 so 'make test' will fail
+
 NO_ARCH=	yes
 
+post-extract:
+	${CP} ${FILESDIR}/setup.py ${WRKSRC}/
 .include <bsd.port.mk>
