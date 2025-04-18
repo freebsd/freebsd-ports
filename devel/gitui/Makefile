@@ -6,7 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Terminal UI for git
-WWW=		https://github.com/extrawurst/gitui
+WWW=		https://github.com/gitui-org/gitui
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -22,7 +22,7 @@ USES=		cargo localbase:ldflags perl5 pkgconfig python:build ssl xorg
 USE_XORG=	xcb
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	extrawurst
+GH_ACCOUNT=	gitui-org
 
 RUSTFLAGS+=	--cap-lints=warn
 PLIST_FILES=	bin/${PORTNAME}
