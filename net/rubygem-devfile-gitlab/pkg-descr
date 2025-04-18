@@ -1,0 +1,2 @@
+This gem generates Kubernetes yamls from a Devfile. This gem wraps the existing
+go Devfile library using FFI.
