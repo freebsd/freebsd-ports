@@ -1,5 +1,5 @@
 PORTNAME=	hammer_cli_foreman
-PORTVERSION=	3.14.0
+PORTVERSION=	3.14.1
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/theforeman/hammer-cli-foreman
 LICENSE=	GPLv3+
 
 RUN_DEPENDS=	rubygem-apipie-bindings>=0.7.0:devel/rubygem-apipie-bindings \
-		rubygem-hammer_cli>=${PORTVERSION}:sysutils/rubygem-hammer_cli \
+		rubygem-hammer_cli>=${PORTVERSION:R}.0:sysutils/rubygem-hammer_cli \
 		rubygem-jwt>=2.2.1:www/rubygem-jwt \
 		rubygem-rest-client>=1.8.0<3.0.0:www/rubygem-rest-client
 
