@@ -1,4 +1,4 @@
---- tool/rbinstall.rb.orig	2024-07-08 23:28:22 UTC
+--- tool/rbinstall.rb.orig	2025-04-09 09:23:04 UTC
 +++ tool/rbinstall.rb
 @@ -970,175 +970,6 @@ end
  
@@ -14,7 +14,7 @@
 -def load_gemspec(file, base = nil)
 -  file = File.realpath(file)
 -  code = File.read(file, encoding: "utf-8:-")
--  code.gsub!(/(?:`git[^\`]*`|%x\[git[^\]]*\])\.split\([^\)]*\)/m) do
+-  code.gsub!(/(?:`git[^\`]*`|%x\[git[^\]]*\])\.split(\([^\)]*\))?/m) do
 -    files = []
 -    if base
 -      Dir.glob("**/*", File::FNM_DOTMATCH, base: base) do |n|
