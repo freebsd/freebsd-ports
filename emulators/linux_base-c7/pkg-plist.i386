@@ -24,6 +24,7 @@ etc/issue.net
 @sample etc/krb5.conf.sample
 @rmtry etc/ld.so.cache
 etc/ld.so.conf
+etc/libaudit.conf
 etc/lsb-release.d/core-4.1-ia32
 etc/lsb-release.d/core-4.1-noarch
 etc/mke2fs.conf
@@ -617,12 +618,18 @@ usr/lib/libanl-2.17.so
 usr/lib/libanl.so.1
 usr/lib/libattr.so.1
 usr/lib/libattr.so.1.1.0
+usr/lib/libaudit.so.1
+usr/lib/libaudit.so.1.0.0
+usr/lib/libauparse.so.0
+usr/lib/libauparse.so.0.0.0
 usr/lib/libblkid.so.1
 usr/lib/libblkid.so.1.1.0
 usr/lib/libbz2.so.1
 usr/lib/libbz2.so.1.0.6
 usr/lib/libc-2.17.so
 usr/lib/libc.so.6
+usr/lib/libcap-ng.so.0
+usr/lib/libcap-ng.so.0.0.0
 usr/lib/libcap.so.2
 usr/lib/libcap.so.2.22
 usr/lib/libcidn-2.17.so
@@ -1129,6 +1136,7 @@ usr/share/centos-release/EULA
 %%PORTDOCS%%usr/share/doc/libblkid-2.23.2/COPYING
 %%PORTDOCS%%usr/share/doc/libcap-2.22/License
 %%PORTDOCS%%usr/share/doc/libcap-2.22/capability.notes
+%%PORTDOCS%%usr/share/doc/libcap-ng-0.7.5/COPYING.LIB
 %%PORTDOCS%%usr/share/doc/libcom_err-1.42.9/COPYING
 %%PORTDOCS%%usr/share/doc/libdb-5.3.21/LICENSE
 %%PORTDOCS%%usr/share/doc/libdb-5.3.21/README
@@ -2582,6 +2590,7 @@ usr/share/man/man5/info.5.gz
 usr/share/man/man5/k5identity.5.gz
 usr/share/man/man5/k5login.5.gz
 usr/share/man/man5/krb5.conf.5.gz
+usr/share/man/man5/libaudit.conf.5.gz
 usr/share/man/man5/mke2fs.conf.5.gz
 usr/share/man/man5/request-key.conf.5.gz
 usr/share/man/man5/term.5.gz

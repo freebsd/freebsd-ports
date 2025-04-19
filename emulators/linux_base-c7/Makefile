@@ -30,7 +30,8 @@ BIN_DISTNAMES=	bash-4.2.46-35.el7_9 \
 		sed-4.2.2-7.el7 \
 		setserial-2.17-33.el7 \
 		which-2.20-7.el7
-LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
+LIB_DISTNAMES=	audit-libs-2.8.5-4.el7 \
+		bzip2-libs-1.0.6-13.el7 \
 		compat-db47-4.7.25-28.el7 \
 		e2fsprogs-libs-1.42.9-19.el7 \
 		gamin-0.1.10-16.el7 \
@@ -44,6 +45,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		libattr-2.4.46-13.el7 \
 		libblkid-2.23.2-65.el7_9.1 \
 		libcap-2.22-11.el7 \
+		libcap-ng-0.7.5-4.el7 \
 		libcom_err-1.42.9-19.el7 \
 		libdb-5.3.21-25.el7 \
 		libffi-3.0.13-19.el7 \
@@ -79,6 +81,7 @@ SHARE_DISTNAMES=basesystem-10.0-7.el7.centos \
 		setup-2.8.71-11.el7
 SRC_DISTFILES=	acl-2.2.51-15.el7${SRC_SUFX}:SOURCE \
 		attr-2.4.46-13.el7${SRC_SUFX}:SOURCE \
+		audit-2.8.5-4.el7${SRC_SUFX}:SOURCE \
 		basesystem-10.0-7.el7.centos${SRC_SUFX}:SOURCE \
 		bash-4.2.46-35.el7_9${SRC_SUFX}:SOURCE \
 		bzip2-1.0.6-13.el7${SRC_SUFX}:SOURCE \
@@ -102,6 +105,7 @@ SRC_DISTFILES=	acl-2.2.51-15.el7${SRC_SUFX}:SOURCE \
 		krb5-1.15.1-55.el7_9${SRC_SUFX}:SOURCE \
 		less-458-10.el7_9${SRC_SUFX}:SOURCE \
 		libcap-2.22-11.el7${SRC_SUFX}:SOURCE \
+		libcap-ng-0.7.5-4.el7${SRC_SUFX}:SOURCE \
 		libdb-5.3.21-25.el7${SRC_SUFX}:SOURCE \
 		libffi-3.0.13-19.el7${SRC_SUFX}:SOURCE \
 		libidn-1.28-4.el7${SRC_SUFX}:SOURCE \
