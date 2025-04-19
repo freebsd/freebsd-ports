@@ -1,6 +1,5 @@
 PORTNAME=	pollinfo
-DISTVERSION=	g20250404
-PORTREVISION=	2
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils devel
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -13,7 +12,7 @@ USES=		cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kostikbel
-GH_TAGNAME=	0f900f2ee101fc374c1d945c4a548683438cfe46
+GH_TAGNAME=	dbfc1c25d289c18c21e20c7ef5a0013e84724190
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/pollinfo.1.gz

@@ -1,4 +1,4 @@
-TIMESTAMP = 1743791911
+TIMESTAMP = 1745061759
 SHA256 (rust/crates/anstream-0.6.18.crate) = 8acc5369981196006228e28809f761875c0327210a891e941f4c683b3a99529b
 SIZE (rust/crates/anstream-0.6.18.crate) = 29681
 SHA256 (rust/crates/anstyle-1.0.10.crate) = 55cc3b69f167a1ef2e161439aa98aed94e6028e5f9a59be9a6ffb47aef1651f9
@@ -59,5 +59,5 @@ SHA256 (rust/crates/windows_x86_64_gnullvm-0.52.6.crate) = 24d5b23dc417412679681
 SIZE (rust/crates/windows_x86_64_gnullvm-0.52.6.crate) = 435707
 SHA256 (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec
 SIZE (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 832564
-SHA256 (kostikbel-pollinfo-g20250404-0f900f2ee101fc374c1d945c4a548683438cfe46_GH0.tar.gz) = 08d66008ebdc7f50f162f176fcf3844e5a3f132be9148033d66982e237faa377
-SIZE (kostikbel-pollinfo-g20250404-0f900f2ee101fc374c1d945c4a548683438cfe46_GH0.tar.gz) = 4788
+SHA256 (kostikbel-pollinfo-0.2.1-dbfc1c25d289c18c21e20c7ef5a0013e84724190_GH0.tar.gz) = e495c5a405ab3cf39469157ca0fee89cd08a618b0c1626f7af7c86a973e880fe
+SIZE (kostikbel-pollinfo-0.2.1-dbfc1c25d289c18c21e20c7ef5a0013e84724190_GH0.tar.gz) = 4793
