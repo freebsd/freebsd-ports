@@ -194,13 +194,15 @@ DEBUG_VARS=		BUILDTYPE=Debug \
 			GN_ARGS+=is_component_build=false \
 			GN_ARGS+=symbol_level=1 \
 			GN_BOOTSTRAP_FLAGS+=--debug \
-			WANTSPACE="21 GB"
+			WANTSPACE="60 GB" \
+			WANTMEM="8 GB"
 DEBUG_VARS_OFF=		BUILDTYPE=Release \
 			GN_ARGS+=blink_symbol_level=0 \
 			GN_ARGS+=is_debug=false \
 			GN_ARGS+=is_official_build=true \
 			GN_ARGS+=symbol_level=0 \
-			WANTSPACE="14 GB"
+			WANTSPACE="35 GB" \
+			WANTMEM="8 GB"
 
 DRIVER_MAKE_ARGS=	chromedriver
 
@@ -210,7 +212,8 @@ KERBEROS_VARS_OFF=	GN_ARGS+=use_kerberos=false
 
 LTO_VARS=		GN_ARGS+=use_thin_lto=true \
 			GN_ARGS+=thin_lto_enable_optimizations=true \
-			WANTSPACE="14 GB"
+			WANTSPACE="40 GB" \
+			WANTMEM="16 GB"
 LTO_VARS_OFF=		GN_ARGS+=use_thin_lto=false
 
 MIT_LIB_DEPENDS=	libkrb.so.3:security/krb5
@@ -290,8 +293,10 @@ GN_ARGS+=	enable_rust=true \
 
 pre-everything::
 	@${ECHO_MSG}
-	@${ECHO_MSG} "To build Ungoogled Chromium, you should have around 2GB of memory"
-	@${ECHO_MSG} "and around ${WANTSPACE} of free disk space."
+	@${ECHO_MSG} "To build ${PORTNAME}, you should have at least:"
+	@${ECHO_MSG} "- ${WANTMEM} of memory"
+	@${ECHO_MSG} "- ${WANTSPACE} of free disk space"
+	@${ECHO_MSG} "- 1.5 million free inodes"
 	@${ECHO_MSG}
 
 pre-patch:
