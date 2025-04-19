@@ -1,5 +1,5 @@
 PORTNAME=	forecast
-PORTVERSION=	8.23.0
+PORTVERSION=	8.24.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -20,6 +20,7 @@ RUN_DEPENDS=	R-cran-colorspace>0:graphics/R-cran-colorspace \
 		R-cran-timeDate>0:finance/R-cran-timeDate \
 		R-cran-tseries>0:finance/R-cran-tseries \
 		R-cran-urca>0:finance/R-cran-urca \
+		R-cran-withr>0:devel/R-cran-withr \
 		R-cran-zoo>0:math/R-cran-zoo
 
 USES=		cran:auto-plist,compiles
