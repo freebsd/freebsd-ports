@@ -26,20 +26,6 @@ NO_INSTALL=	yes # strip(1) breaks runtime
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz
 
-pre-patch:
-.if defined(PATCHFILES) && ${PATCHFILES:Mbbb9a15b41ed*}
-# Pretend to be a regular file for vendor patch to apply as is
-	@${MV} ${WRKSRC}/libs/zig-clap ${WRKSRC}/libs/zig-clap.moved
-	@${ECHO_CMD} "Subproject commit 749c43f1f846adc950a5920ed61b40cbc3ec2c54" \
-		>${WRKSRC}/libs/zig-clap
-.endif
-
-post-patch:
-.if defined(PATCHFILES) && ${PATCHFILES:Mbbb9a15b41ed*}
-	@${RM} ${WRKSRC}/libs/zig-clap
-	@${MV} ${WRKSRC}/libs/zig-clap.moved ${WRKSRC}/libs/zig-clap
-.endif
-
 do-build:
 	@(cd ${WRKSRC} && ${MAKE_ENV} zig build ${CONFIGURE_ARGS})
 
