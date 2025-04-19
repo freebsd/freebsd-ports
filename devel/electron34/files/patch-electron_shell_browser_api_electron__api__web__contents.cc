@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_web_contents.cc.orig	2025-03-27 16:32:44 UTC
+--- electron/shell/browser/api/electron_api_web_contents.cc.orig	2025-04-08 22:12:25 UTC
 +++ electron/shell/browser/api/electron_api_web_contents.cc
-@@ -156,11 +156,11 @@
+@@ -157,11 +157,11 @@
  #include "ui/base/cocoa/defaults_utils.h"
  #endif
  
@@ -14,7 +14,7 @@
  #include "ui/aura/window.h"
  #include "ui/gfx/font_render_params.h"
  #endif
-@@ -192,7 +192,7 @@
+@@ -193,7 +193,7 @@
  #include "content/public/browser/plugin_service.h"
  #endif
  
@@ -23,7 +23,7 @@
  #include "chrome/browser/hang_monitor/hang_crash_dump.h"  // nogncheck
  #endif
  
-@@ -566,7 +566,7 @@ std::optional<base::TimeDelta> GetCursorBlinkInterval(
+@@ -567,7 +567,7 @@ std::optional<base::TimeDelta> GetCursorBlinkInterval(
        ui::TextInsertionCaretBlinkPeriodFromDefaults());
    if (system_value)
      return *system_value;
@@ -32,7 +32,7 @@
    if (auto* linux_ui = ui::LinuxUi::instance())
      return linux_ui->GetCursorBlinkInterval();
  #elif BUILDFLAG(IS_WIN)
-@@ -927,7 +927,7 @@ void WebContents::InitWithSessionAndOptions(
+@@ -928,7 +928,7 @@ void WebContents::InitWithSessionAndOptions(
    accept_languages.pop_back();
    prefs->accept_languages = accept_languages;
  
