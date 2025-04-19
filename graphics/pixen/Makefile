@@ -12,6 +12,9 @@ WWW=		https://www.opensword.org/Pixen/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt
 
+DEPRECATED=		Unmaintained upstream
+EXPIRATION_DATE=	2025-05-20
+
 USES=		tar:bzip2 gnustep
 USE_GNUSTEP=	back build
 
