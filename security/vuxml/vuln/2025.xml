@@ -1,3 +1,34 @@
+  <vuln vid="1b8d502e-1cfd-11f0-944d-901b0e9408dc">
+    <topic>ejabberd -- mod_muc_occupantid: Fix handling multiple occupant-id</topic>
+    <affects>
+      <package>
+	<name>ejabberd</name>
+	<range><lt>25.04</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ejabberd team reports:</p>
+	<blockquote cite="https://www.process-one.net/blog/ejabberd-25-04/#occupantid">
+	  <p>Fixed issue with handling of user provided occupant-id in
+	  messages and presences sent to muc room. Server was
+	  replacing just first instance of occupant-id with its own
+	  version, leaving other ones untouched. That would mean that
+	  depending on order in which clients send occupant-id, they
+	  could see value provided by sender, and that could be used
+	  to spoof as different sender.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://www.process-one.net/blog/ejabberd-25-04/#occupantid</url>
+    </references>
+    <dates>
+      <discovery>2025-04-16</discovery>
+      <entry>2025-04-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bf5d29ea-1a93-11f0-8cb5-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
