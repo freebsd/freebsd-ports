@@ -7,6 +7,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-core.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-db.el
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-db.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-discussion.el
+%%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-discussion.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-forgejo.el
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-forgejo.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-gitea.el
