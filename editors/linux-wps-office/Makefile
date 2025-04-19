@@ -1,5 +1,6 @@
 PORTNAME=	wps-office
 DISTVERSION=	11.1.0.10161
+PORTREVISION=	1
 CATEGORIES=	editors linux
 MASTER_SITES=	https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/10161/
 PKGNAMEPREFIX=	linux-
@@ -20,7 +21,7 @@ ONLY_FOR_ARCHS=	amd64
 CONFLICTS_INSTALL=	linux-wps-office-zh_CN
 
 USES=		desktop-file-utils gnome linux shebangfix
-USE_LINUX=	png pulseaudio-libs xorglibs
+USE_LINUX=	imageformats-libs pulseaudio-libs xorglibs
 
 SHEBANG_FILES=	usr/bin/et \
 		usr/bin/wpp \

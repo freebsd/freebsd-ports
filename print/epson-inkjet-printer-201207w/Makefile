@@ -1,5 +1,6 @@
 PORTNAME=	epson-inkjet-printer-201207w
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	https://download.ebz.epson.net/dsc/op/stable/RPMS/x86_64/:amd64 \
 		https://download.ebz.epson.net/dsc/op/stable/RPMS/i486/:i386
@@ -25,7 +26,7 @@ NO_WRKSUBDIR=	yes
 PLIST_SUB=	LINUXBASE=${LINUXBASE} \
 		PORTNAME=${PORTNAME}
 USES=		linux
-USE_LINUX=	cups-libs jpeg
+USE_LINUX=	cups-libs imageformats-libs
 
 .include <bsd.port.options.mk>
 

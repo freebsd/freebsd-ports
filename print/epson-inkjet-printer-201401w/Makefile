@@ -1,5 +1,6 @@
 PORTNAME=	epson-inkjet-printer-201401w
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/03/45/41/d95c03482376873661d7a8d4c165b385cd082cf3/:amd64 \
 		https://download3.ebz.epson.net/dsc/f/03/00/03/45/41/0c527f1eef727e350302db951a45d31319ee501b/:i386
@@ -25,7 +26,7 @@ NO_WRKSUBDIR=	yes
 PLIST_SUB=	LINUXBASE=${LINUXBASE} \
 		PORTNAME=${PORTNAME}
 USES=		linux
-USE_LINUX=	cups-libs jpeg
+USE_LINUX=	cups-libs imageformats-libs
 
 .include <bsd.port.options.mk>
 

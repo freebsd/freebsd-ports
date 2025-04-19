@@ -1,6 +1,7 @@
 PORTNAME=	wps-office
 DISTVERSION=	11.1.0.10161
 DISTVERSIONSUFFIX=	-zh_CN
+PORTREVISION=	1
 CATEGORIES=	chinese editors linux
 MASTER_SITES=	https://wdl1.cache.wps.cn/wps/download/ep/Linux2019/10161/
 PKGNAMEPREFIX=	linux-
@@ -22,7 +23,7 @@ ONLY_FOR_ARCHS=	amd64
 CONFLICTS_INSTALL=	linux-wps-office
 
 USES=		desktop-file-utils gnome linux shebangfix
-USE_LINUX=	png pulseaudio-libs xorglibs
+USE_LINUX=	imageformats-libs pulseaudio-libs xorglibs
 
 SHEBANG_FILES=	usr/bin/et \
 		usr/bin/wpp \

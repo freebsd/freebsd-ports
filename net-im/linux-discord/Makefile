@@ -1,6 +1,6 @@
 PORTNAME=	discord
 DISTVERSION=	0.0.89
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://dl.discordapp.net/apps/linux/${DISTVERSION}/
@@ -22,7 +22,7 @@ RUN_DEPENDS=	pulseaudio:audio/pulseaudio
 
 USES=		linux:rl9
 USE_LINUX=	alsa-plugins-oss alsa-plugins-pulseaudio alsalib at-spi2-atk \
-		atk ca-certificates cups-libs dbuslibs devtools gtk3 jpeg \
+		atk ca-certificates cups-libs dbuslibs devtools gtk3 imageformats-libs \
 		libdrm libva nspr nss opus
 
 DATADIR=	${PREFIX}/share/${PKGBASE}

@@ -96,6 +96,7 @@ _linux_${linux_ARGS}_gtk3=		linux-${linux_ARGS}-gtk3>0:x11-toolkits/linux-${linu
 _linux_${linux_ARGS}_harfbuzz=		linux-${linux_ARGS}-harfbuzz>0:print/linux-${linux_ARGS}-harfbuzz
 _linux_rl9_highway=			linux-rl9-highway>0:devel/linux-rl9-highway
 _linux_${linux_ARGS}_icu=		linux-${linux_ARGS}-icu>0:devel/linux-${linux_ARGS}-icu
+_linux_${linux_ARGS}_imageformats-libs=	linux-${linux_ARGS}-imageformats-libs>0:graphics/linux-${linux_ARGS}-imageformats-libs
 _linux_${linux_ARGS}_jasper=		linux-${linux_ARGS}-jasper-libs>0:graphics/linux-${linux_ARGS}-jasper
 _linux_${linux_ARGS}_jbigkit=		linux-${linux_ARGS}-jbigkit-libs>0:graphics/linux-${linux_ARGS}-jbigkit
 _linux_${linux_ARGS}_jpeg=		linux-${linux_ARGS}-jpeg>0:graphics/linux-${linux_ARGS}-jpeg

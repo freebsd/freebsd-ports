@@ -1,6 +1,6 @@
 PORTNAME=	linux-c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -55,14 +55,11 @@ RUN_DEPENDS=	linux-c7-libasyncns>0:dns/linux-c7-libasyncns \
 		linux-c7-aspell>0:textproc/linux-c7-aspell \
 		linux-c7-libxml2>0:textproc/linux-c7-libxml2 \
 		linux-c7-dri>0:graphics/linux-c7-dri \
-		linux-c7-libpng>0:graphics/linux-c7-png \
-		linux-c7-libtiff>0:graphics/linux-c7-tiff \
-		linux-c7-jpeg>0:graphics/linux-c7-jpeg \
 		linux-c7-glx-utils>0:graphics/linux-c7-glx-utils \
 		linux-c7-gdk-pixbuf2>0:graphics/linux-c7-gdk-pixbuf2 \
 		linux-c7-cairo>0:graphics/linux-c7-cairo \
 		linux-c7-pixman>0:x11/linux-c7-pixman \
-		linux-c7-jasper-libs>0:graphics/linux-c7-jasper
+		linux-c7-imageformats-libs>0:graphics/linux-c7-imageformats-libs
 
 USES=		linux:c7 metaport
 

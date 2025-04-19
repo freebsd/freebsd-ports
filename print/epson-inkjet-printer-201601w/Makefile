@@ -1,5 +1,6 @@
 PORTNAME=	epson-inkjet-printer-201601w
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/05/62/39/770f0f7c12a304ceaec1ce13e5b5740a71522b68/:amd64 \
 		https://download3.ebz.epson.net/dsc/f/03/00/05/62/39/f1fd78aacb85fff1a3c59a80dae5a5ac25e33992/:i386
@@ -25,7 +26,7 @@ NO_WRKSUBDIR=	yes
 PLIST_SUB=	LINUXBASE=${LINUXBASE} \
 		PORTNAME=${PORTNAME}
 USES=		linux
-USE_LINUX=	cups-libs jpeg
+USE_LINUX=	cups-libs imageformats-libs
 
 .if defined(PACKAGE_BUILDING)
 IGNORE=	requires manual fetch

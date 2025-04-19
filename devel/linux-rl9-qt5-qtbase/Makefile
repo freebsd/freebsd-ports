@@ -1,7 +1,7 @@
 PORTNAME=	qt5
 PORTVERSION=	5.15.9
 DISTVERSIONSUFFIX=	-10.el9_4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel linux
 PKGNAMESUFFIX=	-qtbase
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	cups-libs dbuslibs dri jpeg libxml2 png tiff xorglibs
+USE_LINUX=	cups-libs dbuslibs dri imageformats-libs libxml2 xorglibs
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 

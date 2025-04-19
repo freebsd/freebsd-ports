@@ -1,7 +1,7 @@
 PORTNAME=	sdl_image
 PORTVERSION=	1.2.12
 DISTVERSIONSUFFIX=	-11.el7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics linux
 MASTER_SITES=	EPEL7/s
 DISTNAME=	SDL_image-${DISTVERSIONFULL}
@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 USES=		cpe linux:c7
 CPE_VENDOR=	libsdl
 USE_LDCONFIG=	yes
-USE_LINUX=	jpeg png sdl12 tiff
+USE_LINUX=	imageformats-libs sdl12
 USE_LINUX_RPM=	nolib
 
 CONFLICTS=	linux-c6-${PORTNAME}

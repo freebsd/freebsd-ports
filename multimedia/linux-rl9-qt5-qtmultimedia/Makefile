@@ -1,6 +1,7 @@
 PORTNAME=	qt5
 PORTVERSION=	5.15.9
 DISTVERSIONSUFFIX=	-1.el9
+PORTREVISION=	1
 CATEGORIES=	multimedia linux
 PKGNAMESUFFIX=	-qtmultimedia
 
@@ -12,8 +13,8 @@ LICENSE=	GPLv2+
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	alsalib cups-libs dbuslibs dri jpeg libxml2 png pulseaudio-libs \
-		qtbase tiff xorglibs webp
+USE_LINUX=	alsalib cups-libs dbuslibs dri imageformats-libs libxml2 pulseaudio-libs \
+		qtbase xorglibs
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 

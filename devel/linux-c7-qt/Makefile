@@ -1,7 +1,7 @@
 PORTNAME=	qt
 PORTVERSION=	4.8.7
 DISTVERSIONSUFFIX=	-9.el7_9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://qt-project.org
 USES=		cpe linux:c7
 CPE_VENDOR=	qt
 USE_LDCONFIG=	yes
-USE_LINUX=	fontconfig png dbuslibs sqlite3
+USE_LINUX=	fontconfig dbuslibs imageformats-libs sqlite3
 USE_LINUX_RPM=	yes
 
 CONFLICTS=	linux-c6-${PORTNAME}47

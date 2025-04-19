@@ -1,7 +1,7 @@
 PORTNAME=	cairo
 PORTVERSION=	1.15.12
 DISTVERSIONSUFFIX=	-4.el7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 PKGNAMESUFFIX=	-gobject
 
@@ -10,7 +10,7 @@ COMMENT=	Vector graphics library Cairo (Linux CentOS ${LINUX_DIST_VER})
 WWW=		https://www.cairographics.org/
 
 USES=		cpe linux:c7
-USE_LINUX=	cairo dri fontconfig freetype pixman png xorglibs
+USE_LINUX=	cairo dri fontconfig freetype imageformats-libs pixman xorglibs
 USE_LINUX_RPM=	yes
 CPE_VENDOR=	cairographics
 

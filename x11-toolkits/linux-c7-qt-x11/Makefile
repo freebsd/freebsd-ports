@@ -1,7 +1,7 @@
 PORTNAME=	qt
 PORTVERSION=	4.8.7
 DISTVERSIONSUFFIX=	-9.el7_9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits linux
 PKGNAMESUFFIX=	-x11
 
@@ -11,7 +11,7 @@ WWW=		https://qt-project.org
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes
-USE_LINUX=	alsalib dri fontconfig jpeg png qt tiff xorglibs
+USE_LINUX=	alsalib dri fontconfig imageformats-libs qt xorglibs
 USE_LINUX_RPM=	yes
 
 LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}

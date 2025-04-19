@@ -1,5 +1,6 @@
 PORTNAME=	komodo-edit
 DISTVERSION=	11.0.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/${DISTVERSION}/ \
 		http://downloads.activestate.com/Komodo/releases/archive/${DISTVERSION:R:R}.x/${DISTVERSION}/
@@ -19,7 +20,7 @@ LICENSE_PERMS_KEL11=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		linux
-USE_LINUX=	alsalib dbuslibs gtk2 jpeg xorglibs
+USE_LINUX=	alsalib dbuslibs gtk2 imageformats-libs xorglibs
 
 DESKTOP_ENTRIES="Komodo Edit" \
 		"Free multi-platform editor that makes it easy to write quality code." \

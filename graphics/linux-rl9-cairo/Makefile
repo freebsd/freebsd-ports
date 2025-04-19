@@ -1,7 +1,7 @@
 PORTNAME=	cairo
 PORTVERSION=	1.17.4
 DISTVERSIONSUFFIX=	-7.el9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://www.cairographics.org/
 
 USES=		cpe linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	dri fontconfig pixman png xorglibs
+USE_LINUX=	dri fontconfig pixman xorglibs
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 

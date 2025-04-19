@@ -1,7 +1,7 @@
 PORTNAME=	ffmpeg
 PORTVERSION=	5.1.6
 DISTVERSIONSUFFIX=	-2.el9
-PORTREVISION=	1
+PORTREVISION=	2
 MASTER_SITES=	RPMFUSION9
 PKGNAMESUFFIX=	-libs
 CATEGORIES=	multimedia linux
@@ -15,10 +15,10 @@ LICENSE_COMB=	multi
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	aom cairo fontconfig freetype fribidi gsm gnutls \
+USE_LINUX=	aom cairo fontconfig freetype fribidi gsm gnutls imageformats-libs \
 		libdrm libgcrypt libidn2 librsvg2 libssh libtheora \
 		libva libvdpau libvorbis libvpx libxml2 ocl-icd \
-		openjpeg opus shaderc spirv-tools vulkan xorglibs
+		opus shaderc spirv-tools vulkan xorglibs
 USE_LINUX_RPM=	yes
 
 LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}

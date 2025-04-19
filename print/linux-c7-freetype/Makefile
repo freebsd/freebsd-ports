@@ -1,7 +1,7 @@
 PORTNAME=	freetype
 PORTVERSION=	2.8
 DISTVERSIONSUFFIX=	-14.el7_9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://www.freetype.org/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes
-USE_LINUX=	png
+USE_LINUX=	imageformats-libs
 USE_LINUX_RPM=	yes
 
 DESCR=		${.CURDIR}/../${PORTNAME}2/pkg-descr

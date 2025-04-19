@@ -1,6 +1,7 @@
 PORTNAME=	sdl2_image
 PORTVERSION=	2.8.2
 DISTVERSIONSUFFIX=	-1.el9
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	EPEL9
 DISTNAME=	SDL2_image-${DISTVERSIONFULL}
@@ -14,7 +15,7 @@ LICENSE=	ZLIB
 USES=		cpe linux:rl9
 CPE_VENDOR=	libsdl
 USE_LDCONFIG=	yes
-USE_LINUX=	jpeg png sdl20 tiff
+USE_LINUX=	imageformats-libs sdl20
 USE_LINUX_RPM=	yes
 
 CONFLICTS=	linux-c7-${PORTNAME}
