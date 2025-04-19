@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_base_window.h.orig	2025-03-10 00:01:50 UTC
+--- electron/shell/browser/api/electron_api_base_window.h.orig	2025-04-08 22:12:25 UTC
 +++ electron/shell/browser/api/electron_api_base_window.h
-@@ -250,7 +250,7 @@ class BaseWindow : public gin_helper::TrackableObject<
+@@ -251,7 +251,7 @@ class BaseWindow : public gin_helper::TrackableObject<
    void SetAppDetails(const gin_helper::Dictionary& options);
  #endif
  
