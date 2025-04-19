@@ -91,11 +91,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${LINUXBASE}/etc/alsa/conf.d
 	${LN} -sf ../../../usr/share/alsa/alsa.conf.d/50-oss.conf \
 		${STAGEDIR}${LINUXBASE}/etc/alsa/conf.d
-
-## Pet poudriere's stage-qa
-post-install:
-.if defined(WRKDIRPREFIX) && !empty(WRKDIRPREFIX)
-	${RM} -r ${LINUXBASE}${WRKDIRPREFIX}
-.endif
+	${RM} -r ${STAGEDIR}${LINUXBASE}/usr/etc
 
 .include <bsd.port.mk>
