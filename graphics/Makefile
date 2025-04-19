@@ -531,6 +531,7 @@
     SUBDIR += linux-c7-gdk-pixbuf2
     SUBDIR += linux-c7-glx-utils
     SUBDIR += linux-c7-graphite2
+    SUBDIR += linux-c7-imageformats-libs
     SUBDIR += linux-c7-jasper
     SUBDIR += linux-c7-jbigkit
     SUBDIR += linux-c7-jpeg
