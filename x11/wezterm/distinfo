@@ -1,4 +1,4 @@
-TIMESTAMP = 1740169598
+TIMESTAMP = 1745088121
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -1377,6 +1377,8 @@ SHA256 (wez-xcb-imdkit-rs-358e226573461fe540efb920e2aad740e3c6fab1_GH0.tar.gz) =
 SIZE (wez-xcb-imdkit-rs-358e226573461fe540efb920e2aad740e3c6fab1_GH0.tar.gz) = 28457
 SHA256 (wez-wezterm-20250213-133349-ee0c04e7-ee0c04e735fb94cb5119681f704fb7fa6731e713_GH0.tar.gz) = 77ca469fc19d9e32faffd37083bd6683067b2eef284d53b1cd572e1fe39a7103
 SIZE (wez-wezterm-20250213-133349-ee0c04e7-ee0c04e735fb94cb5119681f704fb7fa6731e713_GH0.tar.gz) = 82433452
+SHA256 (vladmovchan-freebsd-wezterm-port-extra-files-253f1e8_GH0.tar.gz) = 697287f3ebe961507b55bade74dd0bd602af8c8d74d4613a85fdf7a82739a1fa
+SIZE (vladmovchan-freebsd-wezterm-port-extra-files-253f1e8_GH0.tar.gz) = 94164
 SHA256 (freetype-freetype-42608f77f_GH0.tar.gz) = 17d9fc59bdb6b3b091cba86a37e2cf0653c3d773929e0e852d2f3d2191b2cf02
 SIZE (freetype-freetype-42608f77f_GH0.tar.gz) = 2482500
 SHA256 (nyorain-dlg-72dfcc858_GH0.tar.gz) = 0597ba012ce49578f9ac6beab423c84fe5d8946984c577d4117a1d1f643ecb18

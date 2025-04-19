@@ -1,7 +1,7 @@
 PORTNAME=	wezterm
 DISTVERSION=	20250213-133349
 DISTVERSIONSUFFIX=	-ee0c04e7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	vladislav.movchan@gmail.com
@@ -23,8 +23,9 @@ USES=		cargo ssl xorg
 USE_GITHUB=	yes
 USE_GITLAB=	nodefault
 USE_XORG=	x11 xcb
-GH_ACCOUNT=	wez
-GH_TAGNAME=	ee0c04e735fb94cb5119681f704fb7fa6731e713
+GH_ACCOUNT=	wez vladmovchan:build_docs_offline
+GH_PROJECT=	wezterm freebsd-wezterm-port-extra-files:build_docs_offline
+GH_TAGNAME=	ee0c04e735fb94cb5119681f704fb7fa6731e713 253f1e8:build_docs_offline
 
 GH_TUPLE=	freetype:freetype:42608f77f:freetype2/deps/freetype/freetype2 \
 		nyorain:dlg:72dfcc858:dlg/deps/freetype/freetype2/subprojects/dlg \
@@ -60,9 +61,10 @@ PLIST_FILES+=	share/site-terminfo/w/wezterm
 OPTIONS_DEFINE=	DOCS
 
 DOCS_USES=		python:build
-DOCS_BUILD_DEPENDS=	mdbook:textproc/mdbook \
-			mdbook-linkcheck:textproc/mdbook-linkcheck \
-			mdbook-mermaid:textproc/mdbook-mermaid
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs-material>0:textproc/py-mkdocs-material@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}mkdocs-macros-plugin>0:textproc/py-mkdocs-macros-plugin@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}mkdocs-include-markdown-plugin>0:textproc/py-mkdocs-include-markdown-plugin@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}mkdocs-exclude>0:textproc/py-mkdocs-exclude@${PY_FLAVOR}
 PORTDOCS=		html
 
 .include <bsd.port.pre.mk>
@@ -82,17 +84,22 @@ post-patch:
 do-build-DOCS-on:
 # Build HTML documentation similar to ci/build-docs.sh
 	(cd ${WRKSRC} && ${PYTHON_CMD} ci/generate-docs.py)
-	mdbook-mermaid install ${WRKSRC}/docs
-	mdbook build ${WRKSRC}/docs
-	${CP} ${WRKSRC}/assets/icon/terminal.png \
-		${WRKSRC}/gh_pages/html/favicon.png
-	${CP} ${WRKSRC}/assets/icon/wezterm-icon.svg \
-		${WRKSRC}/gh_pages/html/favicon.svg
-	${RMDIR} ${WRKSRC}/gh_pages/html/install
+	${REINPLACE_CMD} \
+		-e 's,/tmp/wezterm.releases.json,${WRKSRC_build_docs_offline}/wezterm.releases.json,' \
+		-e 's,/tmp/wezterm.nightly.json,${WRKSRC_build_docs_offline}/wezterm.nightly.json,' \
+		${WRKSRC}/ci/subst-release-info.py
+	(cd ${WRKSRC} && ${PYTHON_CMD} ci/subst-release-info.py)
+	${CP} ${WRKSRC}/assets/icon/terminal.png ${WRKSRC}/docs/favicon.png
+	${CP} ${WRKSRC}/assets/icon/wezterm-icon.svg ${WRKSRC}/docs/favicon.svg
+	${MKDIR} ${WRKSRC}/docs/fonts
+	${CP} ${WRKSRC}/assets/fonts/SymbolsNerdFontMono-Regular.ttf \
+		${WRKSRC}/docs/fonts/
+	(cd ${WRKSRC} && mkdocs build)
 
 do-install-DOCS-on:
-	(cd ${WRKSRC}/gh_pages && ${COPYTREE_SHARE} \
-		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/gh_pages && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${PORTDOCS} \
+		"! -name *\.orig ! -name sitemap\.xml*")
 
 post-install:
 # Install assets similar to ci/deploy.sh
