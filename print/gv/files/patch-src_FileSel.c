@@ -1,6 +1,6 @@
---- src/FileSel.c.orig	2010-01-16 19:32:22.000000000 -0500
-+++ src/FileSel.c	2010-01-16 19:33:09.000000000 -0500
-@@ -1488,6 +1488,7 @@
+--- src/FileSel.c.orig	2012-04-01 14:43:24 UTC
++++ src/FileSel.c
+@@ -1414,6 +1414,7 @@ static void SetDirectoryView(FileSelectionWidget fs, c
       else          SetIncompleteDirectoryView(fs,cannotopenList);
       chdir(APP_DIR);
       ENDMESSAGE(SetDirectoryView)
