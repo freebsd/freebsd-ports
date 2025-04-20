@@ -1,4 +1,4 @@
---- Makefile.simde.orig	2021-11-18 22:11:48 UTC
+--- Makefile.simde.orig	2025-04-18 17:41:47 UTC
 +++ Makefile.simde
 @@ -1,13 +1,26 @@
 -CFLAGS=		-g -Wall -O2 -Wc++-compat #-Wextra
@@ -15,7 +15,7 @@
 +OBJS=		kthread.o kalloc.o misc.o bseq.o sketch.o sdust.o options.o \
 +		index.o lchain.o align.o hit.o map.o format.o pe.o seed.o \
 +		esterr.o splitidx.o ksw2_extz2_simde.o ksw2_extd2_simde.o \
-+		ksw2_exts2_simde.o ksw2_ll_simde.o
++		ksw2_exts2_simde.o ksw2_ll_simde.o jump.o
  PROG=		minimap2
  PROG_EXTRA=	sdust minimap2-lite
  LIBS=		-lm -lz -lpthread
@@ -32,7 +32,7 @@
  ifneq ($(arm_neon),) # if arm_neon is defined
  ifeq ($(aarch64),)   #if aarch64 is not defined
  	CFLAGS+=-D_FILE_OFFSET_BITS=64 -mfpu=neon -fsigned-char
-@@ -26,7 +39,7 @@ ifneq ($(tsan),)
+@@ -26,7 +39,7 @@ endif
  	LIBS+=-fsanitize=thread
  endif
  
@@ -41,9 +41,13 @@
  .SUFFIXES:.c .o
  
  .c.o:
-@@ -61,6 +74,22 @@ ksw2_exts2_simde.o:ksw2_exts2_sse.c ksw2.h kalloc.h
+@@ -60,7 +73,26 @@ ksw2_exts2_simde.o:ksw2_exts2_sse.c ksw2.h kalloc.h
+ ksw2_exts2_simde.o:ksw2_exts2_sse.c ksw2.h kalloc.h
  		$(CC) -c $(CFLAGS) -msse4.1 $(CPPFLAGS) $(INCLUDES) $< -o $@
  
++jump.o:jump.c ksw2.h kalloc.h
++		$(CC) -c $(CFLAGS) -msse4.1 $(CPPFLAGS) $(INCLUDES) $< -o $@
++
  # other non-file targets
 +
 +

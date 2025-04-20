@@ -1,7 +1,6 @@
 PORTNAME=		minimap2
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.28
-PORTREVISION=		1
+DISTVERSION=		2.29
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -26,6 +25,8 @@ INSTALL_TARGET=	install-strip
 
 MAKEFILE=	Makefile.simde
 MAKE_ARGS=	MAN1DIR=${PREFIX}/share/man/man1
+
+CFLAGS+=	-DHAVE_KALLOC
 
 pre-build:
 	${REINPLACE_CMD} -e 's|-msse4.1||g' -e 's|-msse2||g' ${WRKSRC}/Makefile.simde
