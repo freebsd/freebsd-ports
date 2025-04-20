@@ -1,6 +1,6 @@
---- src/lib/geogram/NL/nl_private.h.orig	2018-12-09 21:38:58 UTC
+--- src/lib/geogram/NL/nl_private.h.orig	2024-06-14 05:04:18 UTC
 +++ src/lib/geogram/NL/nl_private.h
-@@ -67,7 +67,7 @@
+@@ -62,7 +62,7 @@
  #define NL_OS_APPLE
  #endif
  

@@ -1,6 +1,6 @@
---- src/lib/geogram/basic/algorithm.h.orig	2018-12-09 17:43:13 UTC
+--- src/lib/geogram/basic/algorithm.h.orig	2024-06-14 05:04:18 UTC
 +++ src/lib/geogram/basic/algorithm.h
-@@ -48,7 +48,7 @@
+@@ -42,7 +42,7 @@
  
  #include <geogram/basic/common.h>
  

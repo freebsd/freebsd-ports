@@ -1,6 +1,6 @@
---- src/lib/geogram/basic/common.h.orig	2018-12-09 17:36:40 UTC
+--- src/lib/geogram/basic/common.h.orig	2024-06-14 05:04:18 UTC
 +++ src/lib/geogram/basic/common.h
-@@ -221,6 +221,35 @@ namespace GEO {
+@@ -216,6 +216,35 @@ namespace GEO {
  #  define GEO_ARCH_32
  #endif
  

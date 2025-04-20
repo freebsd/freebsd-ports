@@ -10,7 +10,6 @@ WWW=		https://github.com/BrunoLevy/geogram # was: https://github.com/alicevision
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/devkit/license.dox
 
-BROKEN_FreeBSD_15=	compilation is broken with clang-19, see https://github.com/BrunoLevy/geogram/issues/188
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	use of inline assembly for these architectures only, at least in src/lib/geogram/basic/atomics.h
 

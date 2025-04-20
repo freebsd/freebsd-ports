@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2018-12-09 18:48:27 UTC
+--- CMakeLists.txt.orig	2024-06-14 05:04:18 UTC
 +++ CMakeLists.txt
-@@ -132,7 +132,7 @@ if(NOT GEOGRAM_LIB_ONLY)
+@@ -141,7 +141,7 @@ endif()
    add_subdirectory(tests)
  endif()
  
