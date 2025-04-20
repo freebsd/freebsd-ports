@@ -1,3 +1,3 @@
-TIMESTAMP = 1739474695
-SHA256 (certbot_dns_digitalocean-3.2.0.tar.gz) = 47b206fffebb1ceb8a433141f37be65c85326f44e209c956aa579d34495c511f
-SIZE (certbot_dns_digitalocean-3.2.0.tar.gz) = 14579
+TIMESTAMP = 1745167598
+SHA256 (certbot_dns_digitalocean-4.0.0.tar.gz) = 00ce5b7c6fdcf360ab65558ec0e9c9a7247ddeb7ac8355bca3f5ca43496b0b87
+SIZE (certbot_dns_digitalocean-4.0.0.tar.gz) = 14571
