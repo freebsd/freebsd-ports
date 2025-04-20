@@ -1,5 +1,5 @@
 PORTNAME=	coreutils
-DISTVERSION=	9.6
+DISTVERSION=	9.7
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	GNU
 
