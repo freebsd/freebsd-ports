@@ -1,4 +1,4 @@
---- configure.ac.orig	2025-02-23 08:00:09 UTC
+--- configure.ac.orig	2025-04-13 09:17:52 UTC
 +++ configure.ac
 @@ -124,7 +124,7 @@ if test "x$with_anthy" = xyes; then
  if test "x$with_anthy" = xyes; then
@@ -9,12 +9,12 @@
                     [AC_DEFINE(LIBANTHY_UTF8_CAPABLE, 1,
                      "libanthy can handle UTF-8")])
  fi
-@@ -142,7 +142,7 @@ if test "x$with_anthy_utf8" != xno; then
-   [with_anthy_utf8=no])
- 
- if test "x$with_anthy_utf8" != xno; then
--  PKG_CHECK_MODULES(ANTHY_UTF8, anthy >= 8622,
-+  PKG_CHECK_MODULES(ANTHY_UTF8, anthy >= 0.4,
+@@ -146,7 +146,7 @@ if test "x$with_anthy_utf8" != xno; then
                      [with_anthy_utf8=yes
                       AC_DEFINE(LIBANTHY_UTF8_CAPABLE, 1,
-                      [libanthy can handle UTF-8])],
+                      [libanthy-unicode can handle UTF-8])],
+-                    [PKG_CHECK_MODULES(ANTHY_UTF8, anthy >= 8622,
++                    [PKG_CHECK_MODULES(ANTHY_UTF8, anthy >= 0.4,
+                                        [with_anthy_utf8=yes
+                                         AC_DEFINE(LIBANTHY_UTF8_CAPABLE, 1,
+                                         [libanthy can handle UTF-8])],

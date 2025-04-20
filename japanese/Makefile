@@ -281,6 +281,7 @@
     SUBDIR += today
     SUBDIR += tomoe
     SUBDIR += uim-anthy
+    SUBDIR += uim-anthy-unicode
     SUBDIR += uim-mozc
     SUBDIR += uim-tomoe-gtk
     SUBDIR += vera-fpw
