@@ -1,11 +1,11 @@
 PORTNAME=	syncthingtray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.2
+DISTVERSION=	1.7.6
 CATEGORIES=	deskutils
 
 MAINTAINER=	dsh@bamus.cz
 COMMENT=	Qt ${FLAVOR:S/qt//}-based Syncthing tray application
-WWW=		https://github.com/Martchus/syncthingtray
+WWW=		https://martchus.github.io/syncthingtray/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/syncthingtray/LICENSE
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKDIR}/syncthingtray/LICENSE
 BUILD_DEPENDS=	p5-YAML-LibYAML>0:textproc/p5-YAML-LibYAML
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
-FLAVORS=	qt5 qt6
+FLAVORS=	qt6 qt5
 FLAVOR?=	${FLAVORS:[1]}
 FLAVORS_SUB=	yes
 
@@ -31,11 +31,11 @@ CMAKE_SOURCE_PATH=	${WRKDIR}/subdirs/syncthingtray
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	Martchus
 GH_TUPLE:=	${GH_ACCOUNT}:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:${PORTNAME}/../${PORTNAME} \
-		${GH_ACCOUNT}:cpp-utilities:v5.27.3:cpputilities/../c++utilities \
-		${GH_ACCOUNT}:qtutilities:v6.14.6:qtutilities/../qtutilities \
-		${GH_ACCOUNT}:qtforkawesome:v0.3.0:qtforkawesome/../qtforkawesome \
+		${GH_ACCOUNT}:cpp-utilities:v5.28.1:cpputilities/../c++utilities \
+		${GH_ACCOUNT}:qtutilities:v6.15.0:qtutilities/../qtutilities \
+		${GH_ACCOUNT}:qtforkawesome:v0.3.1:qtforkawesome/../qtforkawesome \
 		ForkAwesome:Fork-Awesome:4fef70f:ForkAwesome/../forkawesome \
-		${GH_ACCOUNT}:subdirs:993f383:subdirs/../subdirs
+		${GH_ACCOUNT}:subdirs:52fe295:subdirs/../subdirs
 
 USE_QT=		declarative svg
 USE_XORG=	x11
