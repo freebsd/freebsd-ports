@@ -1,13 +1,22 @@
---- CMakeLists.txt.orig	2013-03-30 16:24:50 UTC
+--- CMakeLists.txt.orig	2025-03-31 19:32:32 UTC
 +++ CMakeLists.txt
-@@ -19,8 +19,10 @@ execute_process(COMMAND ${CMAKE_COMMAND}
+@@ -21,9 +21,11 @@ if(SHARED)
  # Prepare libraries.
  if(SHARED)
    set(ParMETIS_LIBRARY_TYPE SHARED)
 +  set(METIS_LIBRARY_TYPE SHARED)
+   set(CMAKE_INSTALL_NAME_DIR "${CMAKE_INSTALL_PREFIX}/lib")
  else()
    set(ParMETIS_LIBRARY_TYPE STATIC)
 +  set(METIS_LIBRARY_TYPE STATIC)
  endif()
  
- include(${GKLIB_PATH}/GKlibSystem.cmake)
+ # List of paths that the compiler will search for header files.
+@@ -36,6 +38,7 @@ include_directories(${CMAKE_INSTALL_PREFIX}/include)
+ 
+ # List of paths that the compiler will search for library files.
+ # i.e., the -L equivalent
++link_directories(${MPI_LINK_FLAGS})
+ link_directories(${METIS_PATH}/lib)
+ link_directories(${CMAKE_INSTALL_PREFIX}/lib)
+ 
