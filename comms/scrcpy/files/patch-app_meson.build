@@ -1,4 +1,4 @@
---- app/meson.build.orig	2024-12-04 21:48:27 UTC
+--- app/meson.build.orig	2025-03-29 15:15:14 UTC
 +++ app/meson.build
 @@ -67,8 +67,8 @@ conf = configuration_data()
  
@@ -13,9 +13,9 @@
  if host_machine.system() == 'windows'
 @@ -196,10 +196,10 @@ install_data('data/bash-completion/scrcpy',
  install_data('data/zsh-completion/_scrcpy',
-              install_dir: join_paths(datadir, 'zsh/site-functions'))
+              install_dir: datadir / 'zsh/site-functions')
  install_data('data/bash-completion/scrcpy',
--             install_dir: join_paths(datadir, 'bash-completion/completions'))
+-             install_dir: datadir / 'bash-completion/completions')
 +             install_dir: 'etc/bash_completion.d')
  
  # Desktop entry file for application launchers
@@ -23,4 +23,4 @@
 +if host_machine.system() == 'linux' or host_machine.system() == 'freebsd'
      # Install a launcher (ex: /usr/local/share/applications/scrcpy.desktop)
      install_data('data/scrcpy.desktop',
-                  install_dir: join_paths(datadir, 'applications'))
+                  install_dir: datadir / 'applications')
