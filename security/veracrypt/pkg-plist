@@ -133,7 +133,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/Monero_Logo_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Mounting VeraCrypt Volumes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Multi-User Environment.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Normal Dismount vs Force Dismount.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Normal Unmount vs Force Unmount.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Notation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Paging File.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Parallelization.html
@@ -201,6 +201,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/Whirlpool.html
 %%PORTDOCS%%%%DOCSDIR%%/html/arrow_right.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/bank_30x30.png
+%%PORTDOCS%%%%DOCSDIR%%/html/donation.js
 %%PORTDOCS%%%%DOCSDIR%%/html/flag-au-small.png
 %%PORTDOCS%%%%DOCSDIR%%/html/flag-au.png
 %%PORTDOCS%%%%DOCSDIR%%/html/flag-eu-small.png
@@ -323,7 +324,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Monero_Logo_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Mounting VeraCrypt Volumes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Multi-User Environment.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ru/Normal Dismount vs Force Dismount.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ru/Normal Unmount vs Force Unmount.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Notation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Paging File.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Parallelization.html
