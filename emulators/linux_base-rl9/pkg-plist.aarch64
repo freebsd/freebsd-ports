@@ -293,6 +293,7 @@ usr/bin/yes
 usr/bin/zdump
 usr/lib/.build-id/00/28e554acd9c16064b12195dcc8dffd7caea925
 usr/lib/.build-id/00/8c49e4fa52d5c6b4421efe93a2e0a97b34953f
+usr/lib/.build-id/00/e9e02ed1f5eceff9fd22ce6b60614cff4923ac
 usr/lib/.build-id/01/04e60502be3b325202b17234c18be5ca38aa65
 usr/lib/.build-id/01/0d96c7cac4f3abbd6e7952a6501fce60c5a4f9
 usr/lib/.build-id/01/583f6240dd9b8816b13a961865f5300765f96f
@@ -1405,6 +1406,8 @@ usr/lib64/libpcre2-posix.so.3
 usr/lib64/libpcre2-posix.so.3.0.2
 usr/lib64/libpopt.so.0
 usr/lib64/libpopt.so.0.0.1
+usr/lib64/libproxy.so.1
+usr/lib64/libproxy.so.1.0.0
 usr/lib64/libpsx.so.2
 usr/lib64/libpsx.so.2.48
 usr/lib64/libpthread.so.0
@@ -1701,6 +1704,8 @@ usr/share/dbus-1/services/org.gtk.GLib.PACRunner.service
 %%PORTDOCS%%usr/share/doc/libevdev/COPYING
 %%PORTDOCS%%usr/share/doc/libffi/README.md
 %%PORTDOCS%%usr/share/doc/libgudev/NEWS
+%%PORTDOCS%%usr/share/doc/libproxy/AUTHORS
+%%PORTDOCS%%usr/share/doc/libproxy/README
 %%PORTDOCS%%usr/share/doc/libsigsegv/AUTHORS
 %%PORTDOCS%%usr/share/doc/libsigsegv/NEWS
 %%PORTDOCS%%usr/share/doc/libsigsegv/README
@@ -1832,6 +1837,8 @@ usr/share/licenses/libgcc/COPYING3.LIB
 usr/share/licenses/libgudev/COPYING
 usr/share/licenses/libmount/COPYING
 usr/share/licenses/libmount/COPYING.LGPL-2.1-or-later
+usr/share/licenses/libproxy/COPYING
+usr/share/licenses/libproxy/Copyright.txt
 usr/share/licenses/libselinux/LICENSE
 usr/share/licenses/libsepol/LICENSE
 usr/share/licenses/libsigsegv/COPYING

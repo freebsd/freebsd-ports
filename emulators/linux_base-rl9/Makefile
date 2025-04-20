@@ -67,6 +67,7 @@ LIB_DISTNAMES=	bzip2-libs-${bzip2_ver} \
 		libgcc-${gcc_ver} \
 		libgudev-${libgudev_ver} \
 		libmount-${util_ver} \
+		libproxy-${libproxy_ver} \
 		libselinux-${selinux_ver} \
 		libsepol-${sepol_ver} \
 		libsigsegv-${libsigsegv_ver} \
@@ -126,6 +127,7 @@ SRC_DISTFILES=	acl-${libacl_ver}${SRC_SUFX}:SOURCE \
 		libevdev-${libevdev_ver}${SRC_SUFX}:SOURCE \
 		libffi-${libffi_ver}${SRC_SUFX}:SOURCE \
 		libgudev-${libgudev_ver}${SRC_SUFX}:SOURCE \
+		libproxy-${libproxy_ver}${SRC_SUFX}:SOURCE \
 		libselinux-${selinux_ver}${SRC_SUFX}:SOURCE \
 		libsepol-${sepol_ver}${SRC_SUFX}:SOURCE \
 		libsigsegv-${libsigsegv_ver}${SRC_SUFX}:SOURCE \

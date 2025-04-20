@@ -655,6 +655,7 @@ usr/lib/.build-id/58/bb916f28a8bafb0c2cf57d9c280d3e10735d7a
 usr/lib/.build-id/59/297066a74218178617a1cda5c1baf40172d6a8
 usr/lib/.build-id/59/48453eeb4fbe90095e3e09aba11d782bdf8403
 usr/lib/.build-id/59/a68e56d5456df11d1339f57f6e91a3af7581f2
+usr/lib/.build-id/59/d80c810d74964488e2a8ae54288d9e51026c60
 usr/lib/.build-id/5a/1ef8e14eff76e7eea536b7ddbfdb1e854e5571
 usr/lib/.build-id/5a/41662db4931d6c44ab3783c9be124f22b058fe
 usr/lib/.build-id/5a/4ab65e82a72e4b984e392401e6ac04ba1a2987
@@ -1108,6 +1109,7 @@ usr/lib/.build-id/c7/4af666d3e2be27f503f53e08e8d2dc07ff9b11
 usr/lib/.build-id/c7/8470aa2713df4416fcc65a174ea0f745eb6404
 usr/lib/.build-id/c7/8516f81d0c8620eeeea287557aa5cdcfbcdfde
 usr/lib/.build-id/c7/897b5562d46bd5e04f3ed28a3f3adf8b64030c
+usr/lib/.build-id/c7/8b941c6cb4b6790887e430352b82a0c045e6a4
 usr/lib/.build-id/c7/919c5fe2a8b32eb1a3d5422912707020f3b67b
 usr/lib/.build-id/c7/abc241a6b77797795d381ba7c765fbd7545f26
 usr/lib/.build-id/c7/bbe3eb07066fe1b27dc4c35baf6ecbda6e69df
@@ -1748,6 +1750,8 @@ usr/lib/libpcre2-posix.so.3
 usr/lib/libpcre2-posix.so.3.0.2
 usr/lib/libpopt.so.0
 usr/lib/libpopt.so.0.0.1
+usr/lib/libproxy.so.1
+usr/lib/libproxy.so.1.0.0
 usr/lib/libpsx.so.2
 usr/lib/libpsx.so.2.48
 usr/lib/libpthread.so.0
@@ -2231,6 +2235,8 @@ usr/lib64/libpcre2-posix.so.3
 usr/lib64/libpcre2-posix.so.3.0.2
 usr/lib64/libpopt.so.0
 usr/lib64/libpopt.so.0.0.1
+usr/lib64/libproxy.so.1
+usr/lib64/libproxy.so.1.0.0
 usr/lib64/libpsx.so.2
 usr/lib64/libpsx.so.2.48
 usr/lib64/libpthread.so.0
@@ -2533,6 +2539,8 @@ usr/share/dbus-1/services/org.gtk.GLib.PACRunner.service
 %%PORTDOCS%%usr/share/doc/libevdev/COPYING
 %%PORTDOCS%%usr/share/doc/libffi/README.md
 %%PORTDOCS%%usr/share/doc/libgudev/NEWS
+%%PORTDOCS%%usr/share/doc/libproxy/AUTHORS
+%%PORTDOCS%%usr/share/doc/libproxy/README
 %%PORTDOCS%%usr/share/doc/libsigsegv/AUTHORS
 %%PORTDOCS%%usr/share/doc/libsigsegv/NEWS
 %%PORTDOCS%%usr/share/doc/libsigsegv/README
@@ -2667,6 +2675,8 @@ usr/share/licenses/libgcc/COPYING3.LIB
 usr/share/licenses/libgudev/COPYING
 usr/share/licenses/libmount/COPYING
 usr/share/licenses/libmount/COPYING.LGPL-2.1-or-later
+usr/share/licenses/libproxy/COPYING
+usr/share/licenses/libproxy/Copyright.txt
 usr/share/licenses/libselinux/LICENSE
 usr/share/licenses/libsepol/LICENSE
 usr/share/licenses/libsigsegv/COPYING

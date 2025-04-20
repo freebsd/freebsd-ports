@@ -1,7 +1,7 @@
 PORTNAME=	gtk3
 PORTVERSION=	3.24.31
 DISTVERSIONSUFFIX=	-5.el9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -16,7 +16,7 @@ CPE_VENDOR=	gnome
 CPE_PRODUCT=	gtk
 USE_LDCONFIG=	yes
 USE_LINUX=	at-spi2-atk atk cairo-gobject dbuslibs fontconfig freetype gdkpixbuf2 \
-		gnutls icu libepoxy libproxy librsvg2 libstemmer libtracker-sparql \
+		gnutls icu libepoxy librsvg2 libstemmer libtracker-sparql \
 		libxkbcommon pango wayland xorglibs
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
