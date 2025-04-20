@@ -21,7 +21,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cmake compiler:c11
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-GH_ACCOUNT=	gianni-rosato
+GH_ACCOUNT=	psy-ex
 CMAKE_ON=	ENABLE_NASM
 CMAKE_OFF=	NATIVE
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
