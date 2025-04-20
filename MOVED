@@ -4310,3 +4310,4 @@ devel/linux-rl9-libsigsegv|emulators/linux_base-rl9|2025-04-15|Integrated into l
 devel/linux-rl9-libatomic|devel/linux-rl9-devtools|2025-04-15|Integrated into linux-rl9-devtools
 devel/rubygem-sidekiq72|devel/rubygem-sidekiq-gitlab|2025-04-18|Please use devel/sidekiq-gitlab instead
 security/solana|security/agave|2025-04-18|Solana repository is archived, switched to the fork Agave
+graphics/diffpdf||2025-04-20|Has expired: withdrawn from author
