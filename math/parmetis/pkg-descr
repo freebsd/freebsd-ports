@@ -1,0 +1,9 @@
+ParMETIS is an MPI-based parallel library that implements a variety
+of algorithms for partitioning unstructured graphs and for computing
+fill-reducing orderings of sparse matrices. ParMETIS extends the
+functionality provided by METIS and includes routines that are
+especially suited for parallel AMR computations and large scale
+numerical simulations. The algorithms implemented in ParMETIS are
+based on the parallel multilevel k-way graph-partitioning algorithms
+described in [KK95d], [KK96], [KK97], and the adaptive repartitioning
+algorithms described in [SKK97a], [SKK97b], [SK+98], and [SKK98].
