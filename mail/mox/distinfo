@@ -1,5 +1,5 @@
-TIMESTAMP = 1737117353
-SHA256 (go/mail_mox/mox-v0.0.13/v0.0.13.mod) = 514e6a06c876d0eeb95d3b389ddcccce6af406d5938bcb2f906e2d888f954d05
-SIZE (go/mail_mox/mox-v0.0.13/v0.0.13.mod) = 1207
-SHA256 (go/mail_mox/mox-v0.0.13/v0.0.13.zip) = e68181035f3ccd6cf4f814a29cbf1f2d4e755b34d56b6abf73482e31c622f80c
-SIZE (go/mail_mox/mox-v0.0.13/v0.0.13.zip) = 1931676
+TIMESTAMP = 1745006902
+SHA256 (go/mail_mox/mox-v0.0.15/v0.0.15.mod) = 6a32b83398a2caba3155c1c5e82fe813f7dfbcd215b19b7bbaacbdb8f29fa535
+SIZE (go/mail_mox/mox-v0.0.15/v0.0.15.mod) = 1201
+SHA256 (go/mail_mox/mox-v0.0.15/v0.0.15.zip) = a6f09e19009c678e488598a0af36f41c5b1e3fd5564a30e9e71a1930a02577ec
+SIZE (go/mail_mox/mox-v0.0.15/v0.0.15.zip) = 2126167
