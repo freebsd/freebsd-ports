@@ -1,5 +1,5 @@
 PORTNAME=	pipdeptree
-DISTVERSION=	2.26.0
+DISTVERSION=	2.26.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,14 +20,8 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3900
-IGNORE=		requires Python 3.9 or higher
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|import __version__|import version as __version__|g' \
 		${WRKSRC}/src/pipdeptree/_cli.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
