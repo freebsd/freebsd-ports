@@ -1,6 +1,5 @@
 PORTNAME=	libime
-DISTVERSION=	1.1.9
-PORTREVISION=	2
+DISTVERSION=	1.1.10
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:opengram_lm,opengram_dict,table_dict
@@ -32,7 +31,7 @@ CMAKE_OFF=	ENABLE_TEST
 MAKE_ENV=	FCITX5_DOWNLOAD_DISALLOWED=TRUE
 
 # These must follow data/CMakeLists.txt
-OPENGRAM_LM_TAR=	lm_sc.arpa-20241001.tar.zst
+OPENGRAM_LM_TAR=	lm_sc.arpa-20250113.tar.zst
 OPENGRAM_DICT_TAR=	dict-20241001.tar.zst
 TABLE_DICT_TAR=		table-20240108.tar.zst
 
