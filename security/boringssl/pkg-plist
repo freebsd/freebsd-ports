@@ -20,6 +20,7 @@ include/openssl/cast.h
 include/openssl/chacha.h
 include/openssl/cipher.h
 include/openssl/cmac.h
+include/openssl/cms.h
 include/openssl/conf.h
 include/openssl/cpu.h
 include/openssl/crypto.h
