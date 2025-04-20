@@ -1,5 +1,5 @@
 PORTNAME=	doBy
-DISTVERSION=	4.6.25
+DISTVERSION=	4.6.26
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,6 +16,7 @@ RUN_DEPENDS=	R-cran-broom>0:devel/R-cran-broom \
 		R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 		R-cran-microbenchmark>0:devel/R-cran-microbenchmark \
 		R-cran-modelr>0:devel/R-cran-modelr \
+		R-cran-rlang>0:devel/R-cran-rlang \
 		R-cran-tibble>0:devel/R-cran-tibble \
 		R-cran-tidyr>0:devel/R-cran-tidyr
 
