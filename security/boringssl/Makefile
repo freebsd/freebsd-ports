@@ -7,7 +7,7 @@ MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Fork of OpenSSL
 WWW=		https://boringssl.googlesource.com/boringssl/
 
-LICENSE=	OpenSSL
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:insource cpe go:no_targets,1.24 localbase perl5
