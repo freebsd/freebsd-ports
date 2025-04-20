@@ -22,8 +22,7 @@ RUN_DEPENDS=	libffi>=0:devel/libffi
 
 USES=		autoreconf cpe localbase ruby:none ssl tar:xz
 CPE_VENDOR=	ruby-lang
-CPE_VERSION=	${RUBY_RELVERSION}
-CPE_UPDATE=	p${RUBY_PATCHLEVEL}
+CPE_UPDATE=	p0
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -32,7 +31,7 @@ CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--enable-install-static-library \
 		--enable-pthread \
 		--enable-shared \
-		--with-ruby-version="${RUBY_VER}" \
+		--with-ruby-version=minor \
 		--with-sitedir="${PREFIX}/lib/ruby/site_ruby" \
 		--with-vendordir="${PREFIX}/lib/ruby/vendor_ruby"
 CONFIGURE_ENV=	debugflags=
@@ -40,13 +39,15 @@ CONFIGURE_ENV=	debugflags=
 # Keep this, else ruby will fail to load libraries dependent of libpthread.
 LIBS+=		-lpthread
 
-EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/gem --exclude \
-			${DISTNAME}/ext/win32* --exclude \
-			${DISTNAME}/lib/bundler* --exclude ${DISTNAME}/lib/irb* \
-			--exclude ${DISTNAME}/man/erb.1 --exclude \
-			${DISTNAME}/man/irb.1 --exclude ${DISTNAME}/man/ri.1 \
-			--exclude ${DISTNAME}/sample/win32ole --no-same-owner \
-			--no-same-permissions
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/gem \
+			--exclude ${DISTNAME}/ext/win32* \
+			--exclude ${DISTNAME}/lib/bundler* \
+			--exclude ${DISTNAME}/lib/irb* \
+			--exclude ${DISTNAME}/man/erb.1 \
+			--exclude ${DISTNAME}/man/irb.1 \
+			--exclude ${DISTNAME}/man/ri.1 \
+			--exclude ${DISTNAME}/sample/win32ole \
+			--no-same-owner --no-same-permissions
 
 WRKSRC=		${RUBY_WRKSRC}
 
@@ -92,8 +93,7 @@ _SUF2=		,${PORTEPOCH}
 
 # keep in sync with all platforms where libunwind is available
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == \
-	i386 || ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == \
-	powerpc64le
+	i386 || ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
@@ -115,9 +115,10 @@ INSTALLED_MANUALS=	ruby
 EXTDOCS=	ripper/README stringio/README.md
 
 # Macros to change variables in rbconfig.rb
+# NOTE: The last argument RB_SET_CONF_VAR is a dummy argument. See bug 222872.
 RB_SET_CONF_VAR=	${SH} -c \
 			'${REINPLACE_CMD} -E -e "s,(CONFIG\[\"$$0\"\][[:space:]]*=[[:space:]]*)(\(?)(.*)(\)?),\1\2$$1\4," ${WRKSRC}/rbconfig.rb' \
-			--
+			RB_SET_CONF_VAR
 
 post-extract-DOCS-on:
 	${MV} ${WRKSRC}/ChangeLog ${WRKSRC}/doc/ChangeLog
@@ -153,13 +154,13 @@ pre-install-RDOC-on:
 post-install:
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 #
-# Link just installed "ruby" to "ruby31", etc.
+# Link just installed "ruby" to "ruby34", etc.
 #
 . for FILE in ${INSTALLED_SCRIPTS}
 	${LN} -fs ${FILE}${RUBY_SUFFIX} ${STAGEDIR}${PREFIX}/bin/${FILE}
 . endfor
 #
-# Link "ruby.1.gz" to "ruby31.1.gz", etc.
+# Link "ruby.1.gz" to "ruby34.1.gz", etc.
 #
 . for FILE in ${INSTALLED_MANUALS}
 	${LN} -fs ${FILE}${RUBY_SUFFIX}.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/${FILE}.1.gz
