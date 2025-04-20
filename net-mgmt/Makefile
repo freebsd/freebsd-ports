@@ -312,6 +312,7 @@
     SUBDIR += prometheus-collectd-exporter
     SUBDIR += prometheus1
     SUBDIR += prometheus2
+    SUBDIR += prometheus3
     SUBDIR += promscale
     SUBDIR += promxy
     SUBDIR += pushgateway
