@@ -161,12 +161,12 @@ MASTER_SITE_ROCKY_LINUX+= \
 
 .if !defined(IGNORE_MASTER_SITE_EPEL7)
 MASTER_SITE_EPEL7+= \
-	https://dl.fedoraproject.org/pub/epel/7/aarch64/Packages/%SUBDIR%/:DEFAULT,aarch64 \
-	https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/%SUBDIR%/:DEFAULT,amd64 \
-	https://dl.fedoraproject.org/pub/epel/7/SRPMS/Packages/%SUBDIR%/:SOURCE \
-	http://dl.fedoraproject.org/pub/epel/7/aarch64/Packages/%SUBDIR%/:DEFAULT,aarch64 \
-	http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/%SUBDIR%/:DEFAULT,amd64 \
-	http://dl.fedoraproject.org/pub/epel/7/SRPMS/Packages/%SUBDIR%/:SOURCE
+	https://archives.fedoraproject.org/pub/archive/epel/7/aarch64/Packages/%SUBDIR%/:DEFAULT,aarch64 \
+	https://archives.fedoraproject.org/pub/archive/epel/7/x86_64/Packages/%SUBDIR%/:DEFAULT,amd64 \
+	https://archives.fedoraproject.org/pub/archive/epel/7/SRPMS/Packages/%SUBDIR%/:SOURCE \
+	http://archives.fedoraproject.org/pub/archive/epel/7/aarch64/Packages/%SUBDIR%/:DEFAULT,aarch64 \
+	http://archives.fedoraproject.org/pub/archive/epel/7/x86_64/Packages/%SUBDIR%/:DEFAULT,amd64 \
+	http://archives.fedoraproject.org/pub/archive/epel/7/SRPMS/Packages/%SUBDIR%/:SOURCE
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_EPEL9)
