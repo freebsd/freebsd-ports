@@ -20,14 +20,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		by_address-1.2.1 \
 		byteorder-1.5.0 \
 		cast-0.3.0 \
-		cc-1.2.17 \
+		cc-1.2.19 \
 		cfg-if-1.0.0 \
 		chrono-0.4.40 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.34 \
-		clap_builder-4.5.34 \
+		clap-4.5.37 \
+		clap_builder-4.5.37 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
 		content_inspector-0.2.4 \
@@ -39,14 +39,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		crossbeam-utils-0.8.21 \
 		crunchy-0.2.3 \
 		datetime-0.5.2 \
-		deranged-0.4.1 \
+		deranged-0.4.0 \
 		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
 		displaydoc-0.2.5 \
 		dunce-1.0.5 \
 		either-1.15.0 \
 		equivalent-1.0.2 \
-		errno-0.3.10 \
+		errno-0.3.11 \
 		fast-srgb8-1.0.0 \
 		fastrand-2.3.0 \
 		filetime-0.2.25 \
@@ -56,12 +56,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		gimli-0.31.1 \
 		git2-0.20.1 \
 		glob-0.3.2 \
-		half-2.5.0 \
+		half-2.6.0 \
 		hashbrown-0.15.2 \
 		hermit-abi-0.5.0 \
 		humantime-2.2.0 \
 		humantime-serde-1.1.1 \
-		iana-time-zone-0.1.62 \
+		iana-time-zone-0.1.63 \
 		iana-time-zone-haiku-0.1.2 \
 		icu_collections-1.5.0 \
 		icu_locid-1.5.0 \
@@ -75,23 +75,23 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		icu_provider_macros-1.5.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
-		indexmap-2.8.0 \
+		indexmap-2.9.0 \
 		is-terminal-0.4.16 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
 		itoa-1.0.15 \
-		jobserver-0.1.32 \
+		jobserver-0.1.33 \
 		js-sys-0.3.77 \
-		libc-0.2.171 \
+		libc-0.2.172 \
 		libgit2-sys-0.18.1+1.9.0 \
 		libredox-0.1.3 \
 		libz-sys-1.1.22 \
-		linux-raw-sys-0.9.3 \
+		linux-raw-sys-0.9.4 \
 		litemap-0.7.5 \
 		locale-0.2.2 \
 		log-0.4.27 \
 		memchr-2.7.4 \
-		miniz_oxide-0.8.5 \
+		miniz_oxide-0.8.8 \
 		natord-plus-plus-2.0.0 \
 		normalize-line-endings-0.3.0 \
 		nu-ansi-term-0.50.1 \
@@ -101,7 +101,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		object-0.36.7 \
 		once_cell-1.21.3 \
 		oorandom-11.1.5 \
-		openssl-sys-0.9.106 \
+		openssl-sys-0.9.107 \
 		option-ext-0.2.0 \
 		os_pipe-1.2.1 \
 		palette-0.7.6 \
@@ -119,7 +119,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		plotters-backend-0.3.7 \
 		plotters-svg-0.3.7 \
 		powerfmt-0.2.0 \
-		proc-macro2-1.0.94 \
+		proc-macro2-1.0.95 \
 		proc-mounts-0.3.0 \
 		quick-xml-0.32.0 \
 		quote-1.0.40 \
@@ -129,13 +129,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.1.57 \
-		redox_syscall-0.5.10 \
+		redox_syscall-0.5.11 \
 		redox_users-0.5.0 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
 		rustc-demangle-0.1.24 \
-		rustix-1.0.3 \
+		rustix-1.0.5 \
 		rustversion-1.0.20 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
@@ -147,7 +147,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		shlex-1.3.0 \
 		similar-2.7.0 \
 		siphasher-1.0.1 \
-		smallvec-1.14.0 \
+		smallvec-1.15.0 \
 		snapbox-0.6.21 \
 		snapbox-macros-0.3.10 \
 		stable_deref_trait-1.2.0 \
@@ -193,8 +193,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-core-0.52.0 \
+		windows-core-0.61.0 \
+		windows-implement-0.60.0 \
+		windows-interface-0.59.1 \
 		windows-link-0.1.1 \
+		windows-result-0.3.2 \
+		windows-strings-0.4.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
@@ -206,7 +210,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.7.4 \
+		winnow-0.7.6 \
 		wit-bindgen-rt-0.39.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \

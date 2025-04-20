@@ -1,0 +1,22 @@
+--- cargo-crates/openssl-sys-0.9.107/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/openssl-sys-0.9.107/Cargo.toml
+@@ -40,7 +40,6 @@ unstable_boringssl = ["bssl-sys"]
+ [features]
+ aws-lc = ["dep:aws-lc-sys"]
+ unstable_boringssl = ["bssl-sys"]
+-vendored = ["openssl-src"]
+ 
+ [lib]
+ name = "openssl_sys"
+@@ -65,11 +64,6 @@ version = "1.0.61"
+ 
+ [build-dependencies.cc]
+ version = "1.0.61"
+-
+-[build-dependencies.openssl-src]
+-version = "300.2.0"
+-features = ["legacy"]
+-optional = true
+ 
+ [build-dependencies.pkg-config]
+ version = "0.3.9"
