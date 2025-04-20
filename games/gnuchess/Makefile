@@ -1,6 +1,5 @@
 PORTNAME=	gnuchess
-PORTVERSION=	6.2.9
-PORTREVISION=	1
+DISTVERSION=	6.2.11
 CATEGORIES=	games
 MASTER_SITES=	GNU/chess
 # The DISTFILES here is explicitly needed because it can be extended later.
@@ -20,7 +19,6 @@ USE_CXXSTD=	c++14
 SHEBANG_FILES=	doc/quotes.rb
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 
 INFO=		gnuchess
