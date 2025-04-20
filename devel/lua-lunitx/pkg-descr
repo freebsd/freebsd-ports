@@ -1,0 +1,6 @@
+Lunitx is a unit testing framework for lua, written in lua,
+based heavily on Lunit 0.5, but modified to work with Lua 5.2.
+Lunitx provides 27 assert functions, and a few misc functions
+for usage in an easy unit testing framework.
+Lunit comes with a test suite to test itself. The testsuite
+consists of approximately 710 assertions.
