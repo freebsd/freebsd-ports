@@ -4,7 +4,6 @@ include/oqs/kem.h
 %%KEM_BIKE%%include/oqs/kem_bike.h
 include/oqs/kem_classic_mceliece.h
 include/oqs/kem_frodokem.h
-include/oqs/kem_hqc.h
 include/oqs/kem_kyber.h
 include/oqs/kem_ml_kem.h
 include/oqs/kem_ntruprime.h
@@ -22,11 +21,12 @@ include/oqs/sig_mayo.h
 include/oqs/sig_ml_dsa.h
 include/oqs/sig_sphincs.h
 include/oqs/sig_stfl.h
+include/oqs/sig_uov.h
 lib/cmake/liboqs/liboqsConfig.cmake
 lib/cmake/liboqs/liboqsConfigVersion.cmake
 lib/cmake/liboqs/liboqsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/liboqs/liboqsTargets.cmake
 lib/liboqs.so
-lib/liboqs.so.0.12.0
+lib/liboqs.so.0.13.0
 lib/liboqs.so.7
 libdata/pkgconfig/liboqs.pc
