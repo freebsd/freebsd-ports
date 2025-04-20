@@ -1,6 +1,7 @@
 PORTNAME=	alsa-utils
 PORTVERSION=	1.1.8
 DISTVERSIONSUFFIX=	-2.el7
+PORTREVISION=	1
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -18,5 +19,9 @@ DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
+
+post-install:
+# This binary needs libsamplerate.so, which we do not package
+	${RM} ${STAGEDIR}${PREFIX}/usr/bin/alsaloop
 
 .include <bsd.port.mk>

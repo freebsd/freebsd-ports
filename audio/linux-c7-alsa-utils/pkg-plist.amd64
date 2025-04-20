@@ -2,7 +2,6 @@ etc/alsa/alsactl.conf
 usr/bin/aconnect
 usr/bin/alsa-delay
 usr/bin/alsabat
-usr/bin/alsaloop
 usr/bin/alsamixer
 usr/bin/alsatplg
 usr/bin/alsaucm
