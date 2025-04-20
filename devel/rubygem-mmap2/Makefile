@@ -12,10 +12,14 @@ LICENSE=	RUBY
 
 USES=		gem
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 3.3
+BROKEN=	mmap.c:1108:24: error: no member named 'rmatch' in 'struct RMatch'
+.endif
 
 .if ${OPSYS} == FreeBSD
 CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

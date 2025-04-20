@@ -10,6 +10,8 @@ WWW=		https://bitbucket.org/osrf/sdformat/src/default/
 
 LICENSE=	APACHE20
 
+BROKEN=		tools/xmlschema.rb:268:in `<main>': undefined method `exists?' for File:Class (NoMethodError)
+
 BUILD_DEPENDS=	ignition-cmake==2:devel/ignition-cmake \
 		ignition-tools>0:devel/ignition-tools \
 		rubygem-rexml>0:textproc/rubygem-rexml
@@ -21,7 +23,6 @@ RUN_DEPENDS=	ignition-tools>0:devel/ignition-tools
 
 USES=		cmake compiler:c++17-lang pkgconfig ruby:build
 USE_LDCONFIG=	yes
-BROKEN_RUBY32=	yes
 
 CMAKE_OFF=	BUILD_TESTING
 

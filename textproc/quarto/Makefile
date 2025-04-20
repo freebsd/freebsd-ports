@@ -20,7 +20,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		typst:textproc/typst \
 		deno-dom>0:www/deno-dom \
 		tex-xetex>0:print/tex-xetex \
-		${LOCALBASE}/lib/ruby/gems/3.2/gems/dartsass-1.49.8/exe/linux/sass:textproc/rubygem-dartsass \
+		rubygem-dartsass>0:textproc/rubygem-dartsass \
 		${PYTHON_PKGNAMEPREFIX}jupyter>0:devel/py-jupyter@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pipenv>0:devel/py-pipenv@${PY_FLAVOR} \
 		${JULIA_RUN_DEPENS} \

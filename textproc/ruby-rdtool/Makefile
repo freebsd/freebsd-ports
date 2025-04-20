@@ -9,12 +9,13 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RD to HTML/man/etc. converter (RD is to Ruby as POD is to Perl)
 WWW=		https://github.com/uwabami/rdtool
 
+BROKEN=		hook /wrkdirs/usr/ports/textproc/ruby-rdtool/work/rdtool-0.6.38/lib/rd/pre-setup.rb failed: undefined method 'exists?' for module FileTest
+
 BUILD_DEPENDS=	racc:devel/rubygem-racc
 
 USES=	ruby:setup
 USE_GITHUB=	yes
 GH_ACCOUNT=	uwabami
-BROKEN_RUBY32=	yes
 
 RUBY_MODNAME=	rd
 

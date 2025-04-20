@@ -20,4 +20,10 @@ NO_ARCH=	yes
 
 PORTSCOUT=	limit:^7\.
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 3.3
+BROKEN=	ruby 3.3 and later is not supported
+.endif
+
+.include <bsd.port.post.mk>

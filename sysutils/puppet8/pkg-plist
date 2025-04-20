@@ -89,7 +89,7 @@ bin/puppet
 %%ETCDIR%%/vendor_modules/scheduled_task/examples/delete_task_v1.pp
 %%ETCDIR%%/vendor_modules/scheduled_task/hiera.yaml
 %%ETCDIR%%/vendor_modules/scheduled_task/lib/puppet/provider/scheduled_task/taskscheduler_api2.rb
-%%ETCDIR%%/vendor_modules/scheduled_task/lib/puppet/provider/scheduled_task/win%%RUBY_SUFFIX%%_taskscheduler.rb
+%%ETCDIR%%/vendor_modules/scheduled_task/lib/puppet/provider/scheduled_task/win32_taskscheduler.rb
 %%ETCDIR%%/vendor_modules/scheduled_task/lib/puppet/type/scheduled_task.rb
 %%ETCDIR%%/vendor_modules/scheduled_task/lib/puppet_x/puppetlabs/scheduled_task/error.rb
 %%ETCDIR%%/vendor_modules/scheduled_task/lib/puppet_x/puppetlabs/scheduled_task/task.rb

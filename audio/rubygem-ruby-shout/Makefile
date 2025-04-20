@@ -11,7 +11,8 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libshout.so:audio/libshout
 
-CONFIGURE_ARGS=	--with-opt-include="${LOCALBASE}/include"
+CONFIGURE_ARGS=	--with-cflags="-Wno-error=int-conversion" \
+		--with-opt-include="${LOCALBASE}/include"
 USES=		gem
 
 .include <bsd.port.mk>

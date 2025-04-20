@@ -78,7 +78,11 @@ THIN_RUN_DEPENDS=	rubygem-thin>=1.6.2:www/rubygem-thin
 THIN_SUB_LIST=		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 THIN_VARS=		USE_RC_SUBR=redmine
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 3.3
+BROKEN=		ruby 3.3 and later is not supported
+.endif
 
 post-extract:
 	@${RM} -r ${WRKSRC}/.hgignore ${WRKSRC}/.gitignore ${WRKSRC}/.github \
@@ -121,4 +125,4 @@ post-install:
 	${RM} ${STAGEDIR}${WWWDIR}/package.json \
 		${STAGEDIR}${WWWDIR}/yarn.lock
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
