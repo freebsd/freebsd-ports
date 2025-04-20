@@ -1371,6 +1371,8 @@ usr/lib64/libmenuw.so.6
 usr/lib64/libmenuw.so.6.2
 usr/lib64/libmount.so.1
 usr/lib64/libmount.so.1.1.0
+usr/lib64/libmpfr.so.6
+usr/lib64/libmpfr.so.6.1.0
 usr/lib64/libmtdev.so.1
 usr/lib64/libmtdev.so.1.0.0
 usr/lib64/libncurses.so.6
@@ -1706,6 +1708,10 @@ usr/share/dbus-1/services/org.gtk.GLib.PACRunner.service
 %%PORTDOCS%%usr/share/doc/libverto/ChangeLog
 %%PORTDOCS%%usr/share/doc/libverto/NEWS
 %%PORTDOCS%%usr/share/doc/libverto/README
+%%PORTDOCS%%usr/share/doc/mpfr/BUGS
+%%PORTDOCS%%usr/share/doc/mpfr/NEWS
+%%PORTDOCS%%usr/share/doc/mpfr/PATCHES
+%%PORTDOCS%%usr/share/doc/mpfr/README
 %%PORTDOCS%%usr/share/doc/mtdev/COPYING
 %%PORTDOCS%%usr/share/doc/mtdev/README
 %%PORTDOCS%%usr/share/doc/ncurses-base/README
@@ -1836,6 +1842,8 @@ usr/share/licenses/libuuid/COPYING.BSD-3-Clause
 usr/share/licenses/libverto/COPYING
 usr/share/licenses/libzstd/COPYING
 usr/share/licenses/libzstd/LICENSE
+usr/share/licenses/mpfr/COPYING
+usr/share/licenses/mpfr/COPYING.LESSER
 usr/share/licenses/ncurses-base/COPYING
 usr/share/licenses/openssl-libs/LICENSE.txt
 usr/share/licenses/pcre/COPYING

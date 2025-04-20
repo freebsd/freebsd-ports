@@ -1,6 +1,6 @@
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -31,8 +31,7 @@ BIN_DISTNAMES=	binutils-${BUVERSION} \
 		cpp-${GCCVERSION} \
 		gcc-${GCCVERSION} \
 		gcc-c++-${GCCVERSION} \
-		gcc-gfortran-${GCCVERSION} \
-		mpfr-${MPFRVERSION}
+		gcc-gfortran-${GCCVERSION}
 LIB_DISTNAMES=	binutils-devel-${BUVERSION} \
 		glibc-devel-${GLIBCVERSION} \
 		libatomic-${GCCVERSION} \
@@ -47,7 +46,6 @@ SRC_DISTFILES=	binutils-${BUVERSION}${SRC_SUFX}:SOURCE \
 		glibc-${GLIBCVERSION}${SRC_SUFX}:SOURCE \
 		kernel-${KERNELVERSION}${SRC_SUFX}:SOURCE \
 		libmpc-${LIBMPCVERSION}${SRC_SUFX}:SOURCE \
-		mpfr-${MPFRVERSION}${SRC_SUFX}:SOURCE \
 		gcc-${GCCVERSION}${SRC_SUFX}:SOURCE
 
 CONFLICTS=	linux-c7-${PORTNAME} \

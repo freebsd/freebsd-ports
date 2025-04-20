@@ -2272,7 +2272,6 @@ usr/lib/.build-id/5c/17f221c05d1d5ea1732d73f6684d6c334c70bb
 usr/lib/.build-id/5d/f2426bc9fa8c9a2632e59d7aea2541efdc3ed5
 usr/lib/.build-id/61/327d0c8c26d84fa4dfbd590c1baaf90fd29a03
 usr/lib/.build-id/63/66bca4e5dba0a1d16721f5e548262042d941ef
-usr/lib/.build-id/65/608143ad38c3f236e2266222c70a4800afc655
 usr/lib/.build-id/6a/aaf0e5cd18f75b9226d2604d5fcee23deda599
 usr/lib/.build-id/77/9886c95d6a658f265603b7d03fd3857d51c20c
 usr/lib/.build-id/79/d91111786ed60eeb81472bfe51addcf39b8bc1
@@ -2408,8 +2407,6 @@ usr/lib64/libm.so
 usr/lib64/libmcheck.a
 usr/lib64/libmpc.so.3
 usr/lib64/libmpc.so.3.2.1
-usr/lib64/libmpfr.so.6
-usr/lib64/libmpfr.so.6.1.0
 usr/lib64/libopcodes-%%BUVERSION%%.so
 usr/lib64/libopcodes.a
 usr/lib64/libopcodes.la
@@ -2565,10 +2562,6 @@ usr/libexec/getconf/default
 %%PORTDOCS%%usr/share/doc/libstdc++-devel/ChangeLog-2020.bz2
 %%PORTDOCS%%usr/share/doc/libstdc++-devel/ChangeLog.bz2
 %%PORTDOCS%%usr/share/doc/libstdc++-devel/README
-%%PORTDOCS%%usr/share/doc/mpfr/BUGS
-%%PORTDOCS%%usr/share/doc/mpfr/NEWS
-%%PORTDOCS%%usr/share/doc/mpfr/PATCHES
-%%PORTDOCS%%usr/share/doc/mpfr/README
 usr/share/info/as.info.gz
 usr/share/info/bfd.info.gz
 usr/share/info/binutils.info.gz
@@ -2591,8 +2584,6 @@ usr/share/licenses/gcc/COPYING.RUNTIME
 usr/share/licenses/gcc/COPYING3
 usr/share/licenses/gcc/COPYING3.LIB
 usr/share/licenses/libmpc/COPYING.LESSER
-usr/share/licenses/mpfr/COPYING
-usr/share/licenses/mpfr/COPYING.LESSER
 %%NLS%%usr/share/locale/be/LC_MESSAGES/cpplib.mo
 %%NLS%%usr/share/locale/be/LC_MESSAGES/gcc.mo
 %%NLS%%usr/share/locale/bg/LC_MESSAGES/binutils.mo

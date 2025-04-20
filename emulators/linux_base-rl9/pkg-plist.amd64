@@ -488,6 +488,7 @@ usr/lib/.build-id/2e/47295faecb3bcd4be152bc83e031021c320b16
 usr/lib/.build-id/2e/6af17020caef00d163c1303e507daf66f360e3
 usr/lib/.build-id/2e/8e9a70c3ed2395a28c638c50e862b2040856d7
 usr/lib/.build-id/2f/52468c489875db6409c9e8f58038c895a897ce
+usr/lib/.build-id/2f/f971b8e527fb547fc3133dff1fca1a26109cd4
 usr/lib/.build-id/30/5d600e11d1cd29d56d6a1563d2ce895fa780c8
 usr/lib/.build-id/30/df4cb1e0fa8f186eec409ae0408536451bb934
 usr/lib/.build-id/31/00f5a5c749df40a0007c0c915910b96b255c9b
@@ -821,6 +822,7 @@ usr/lib/.build-id/83/142a77e39a4036d7a4cd0d02da7369c1cd08b5
 usr/lib/.build-id/83/f6b1bf683edcfdfa9e2e326f213ce903cb8f99
 usr/lib/.build-id/84/17fbf8880dbaa8749efc9dada8ffc122ac60ee
 usr/lib/.build-id/84/35dcaf9bb49935568c0c44f46c9a20439f45cd
+usr/lib/.build-id/84/3e3ab2549df1d9397a4ef4797289fd485a4b33
 usr/lib/.build-id/84/9bb7cc1d1515503222043e7503294517e13b8e
 usr/lib/.build-id/84/cf2908cf7ce3634388628fe9f0ed17bde77596
 usr/lib/.build-id/85/2fba24ab65aa2f8db3643c0e3a7abe57670294
@@ -1712,6 +1714,8 @@ usr/lib/libmenuw.so.6
 usr/lib/libmenuw.so.6.2
 usr/lib/libmount.so.1
 usr/lib/libmount.so.1.1.0
+usr/lib/libmpfr.so.6
+usr/lib/libmpfr.so.6.1.0
 usr/lib/libmtdev.so.1
 usr/lib/libmtdev.so.1.0.0
 usr/lib/libncurses.so.6
@@ -2192,6 +2196,8 @@ usr/lib64/libmenuw.so.6
 usr/lib64/libmenuw.so.6.2
 usr/lib64/libmount.so.1
 usr/lib64/libmount.so.1.1.0
+usr/lib64/libmpfr.so.6
+usr/lib64/libmpfr.so.6.1.0
 usr/lib64/libmtdev.so.1
 usr/lib64/libmtdev.so.1.0.0
 usr/lib64/libmvec.so.1
@@ -2534,6 +2540,10 @@ usr/share/dbus-1/services/org.gtk.GLib.PACRunner.service
 %%PORTDOCS%%usr/share/doc/libverto/ChangeLog
 %%PORTDOCS%%usr/share/doc/libverto/NEWS
 %%PORTDOCS%%usr/share/doc/libverto/README
+%%PORTDOCS%%usr/share/doc/mpfr/BUGS
+%%PORTDOCS%%usr/share/doc/mpfr/NEWS
+%%PORTDOCS%%usr/share/doc/mpfr/PATCHES
+%%PORTDOCS%%usr/share/doc/mpfr/README
 %%PORTDOCS%%usr/share/doc/mtdev/COPYING
 %%PORTDOCS%%usr/share/doc/mtdev/README
 %%PORTDOCS%%usr/share/doc/ncurses-base/README
@@ -2667,6 +2677,8 @@ usr/share/licenses/libuuid/COPYING.BSD-3-Clause
 usr/share/licenses/libverto/COPYING
 usr/share/licenses/libzstd/COPYING
 usr/share/licenses/libzstd/LICENSE
+usr/share/licenses/mpfr/COPYING
+usr/share/licenses/mpfr/COPYING.LESSER
 usr/share/licenses/ncurses-base/COPYING
 usr/share/licenses/openssl-libs/LICENSE.txt
 usr/share/licenses/pcre/COPYING

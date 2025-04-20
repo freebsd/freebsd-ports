@@ -2353,7 +2353,6 @@ usr/lib/.build-id/29/57201d6e6ab3e45a4fa978fb928fbc8c66b83e
 usr/lib/.build-id/2b/0f7f6dfd615f8342c185e9b65b51743307801e
 usr/lib/.build-id/2c/8fff97e96c4f3bb44096094e474620957239db
 usr/lib/.build-id/2d/480a9f17dde884740ec5ecb3f392eccb01755c
-usr/lib/.build-id/2f/f971b8e527fb547fc3133dff1fca1a26109cd4
 usr/lib/.build-id/30/ee222f5c6cf85e9afd16922adbcd1de4c536f7
 usr/lib/.build-id/30/ee222f5c6cf85e9afd16922adbcd1de4c536f7.1
 usr/lib/.build-id/30/efa58ae921fa6505201801300d5284a2c43d43
@@ -2753,8 +2752,6 @@ usr/lib64/libm.so
 usr/lib64/libmcheck.a
 usr/lib64/libmpc.so.3
 usr/lib64/libmpc.so.3.2.1
-usr/lib64/libmpfr.so.6
-usr/lib64/libmpfr.so.6.1.0
 usr/lib64/libmvec.so
 usr/lib64/libopcodes-%%BUVERSION%%.so
 usr/lib64/libopcodes.a
@@ -2937,8 +2934,6 @@ usr/share/licenses/gcc/COPYING.RUNTIME
 usr/share/licenses/gcc/COPYING3
 usr/share/licenses/gcc/COPYING3.LIB
 usr/share/licenses/libmpc/COPYING.LESSER
-usr/share/licenses/mpfr/COPYING
-usr/share/licenses/mpfr/COPYING.LESSER
 %%NLS%%usr/share/locale/be/LC_MESSAGES/cpplib.mo
 %%NLS%%usr/share/locale/be/LC_MESSAGES/gcc.mo
 %%NLS%%usr/share/locale/bg/LC_MESSAGES/binutils.mo
