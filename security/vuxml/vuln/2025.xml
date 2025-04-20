@@ -1,3 +1,69 @@
+  <vuln vid="06269ae8-1e0d-11f0-ad0b-b42e991fc52e">
+    <topic>Erlang -- Erlang/OTP SSH Vulnerable to Pre-Authentication RCE</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><lt>26.2.5.11</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime21</name>
+	<range><lt>25.3.2.20</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime22</name>
+	<range><lt>25.3.2.20</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime23</name>
+	<range><lt>25.3.2.20</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime24</name>
+	<range><lt>25.3.2.20</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime25</name>
+	<range><lt>25.3.2.20</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime26</name>
+	<range><lt>26.2.5.11</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/commit/0fcd9c56524b28615e8ece65fc0c3f66ef6e4c12">
+	<p>
+	Erlang/OTP is a set of libraries for the Erlang
+	programming language. Prior to versions OTP-27.3.3,
+	OTP-26.2.5.11, and OTP-25.3.2.20, a SSH server may allow
+	an attacker to perform unauthenticated remote code
+	execution (RCE). By exploiting a flaw in SSH protocol
+	message handling, a malicious actor could gain
+	unauthorized access to affected systems and execute
+	arbitrary commands without valid credentials. This issue
+	is patched in versions OTP-27.3.3, OTP-26.2.5.11, and
+	OTP-25.3.2.20. A temporary workaround involves disabling
+	the SSH server or to prevent access via firewall rules.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-32433</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-32433</url>
+    </references>
+    <dates>
+      <discovery>2025-04-16</discovery>
+      <entry>2025-04-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1b8d502e-1cfd-11f0-944d-901b0e9408dc">
     <topic>ejabberd -- mod_muc_occupantid: Fix handling multiple occupant-id</topic>
     <affects>
