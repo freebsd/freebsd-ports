@@ -13,7 +13,7 @@ WWW=		https://www.softether.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#IGNORE=		no beta version available right now, use security/softether instead
+IGNORE=		no beta version available right now, use security/softether instead
 
 USES=		dos2unix gmake iconv:wchar_t localbase:ldflags ncurses \
 		readline ssl
