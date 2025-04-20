@@ -11,6 +11,7 @@ WWW=		https://pulseaudio.org/
 
 USES=		cpe linux:c7
 USE_LDCONFIG=	yes
+NO_SHLIB_REQUIRES_GLOB=	libpulsecommon-10.0.so:Linux*
 USE_LINUX=	xorglibs pulseaudio-libs
 USE_LINUX_RPM=	nolib
 
