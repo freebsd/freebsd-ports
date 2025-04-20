@@ -1,9 +1,9 @@
 PORTNAME=	psych
-DISTVERSION=	2.4.12
+DISTVERSION=	2.5.3
 CATEGORIES=	math science
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	drue@therub.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Psych package for the R project
 WWW=		https://cran.r-project.org/web/packages/psych/index.html
 
@@ -15,6 +15,7 @@ CRAN_DEPENDS=	R-cran-GPArotation>0:math/R-cran-GPArotation \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr \
+		R-cran-lme4>0:math/R-cran-lme4 \
 		R-cran-testthat>0:devel/R-cran-testthat
 
 USES=		cran:auto-plist
