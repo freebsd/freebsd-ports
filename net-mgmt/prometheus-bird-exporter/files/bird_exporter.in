@@ -1,0 +1,56 @@
+#!/bin/sh
+
+# PROVIDE: bird_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bird_exporter_enable (bool):          Set to NO by default.
+#               Set it to YES to enable bird_exporter.
+# bird_exporter_user (string):          Set user that bird_exporter will run under
+#               Default is "root".
+# bird_exporter_group (string):         Set group that bird_exporter will run under
+#               Default is "wheel".
+# bird_exporter_args (string):          Set extra arguments to pass to bird_exporter
+#               Default is "-bird.v2 -format.new".
+# bird_exporter_listen_address (string):Set ip:port that bird_exporter will listen on
+#               Default is "localhost:9324".
+
+. /etc/rc.subr
+
+name=bird_exporter
+rcvar=bird_exporter_enable
+
+load_rc_config $name
+
+: ${bird_exporter_enable:="NO"}
+: ${bird_exporter_user:="root"}
+: ${bird_exporter_group:="wheel"}
+: ${bird_exporter_args:="-bird.v2 -format.new"}
+: ${bird_exporter_listen_address:="localhost:9324"}
+: ${bird_exporter_socket:="/var/run/bird.ctl"}
+
+pidfile=/var/run/bird_exporter.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/bird_exporter"
+command_args="-f -p ${pidfile} -t ${name} \
+    /usr/bin/env ${procname} \
+    -web.listen-address=${bird_exporter_listen_address} \
+    ${bird_exporter_args}"
+
+start_precmd=bird_exporter_startprecmd
+
+bird_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install \
+            -o ${bird_exporter_user} \
+            -g ${bird_exporter_group} \
+            /dev/null ${pidfile};
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
