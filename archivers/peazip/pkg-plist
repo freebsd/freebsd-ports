@@ -91,12 +91,15 @@ share/icons/hicolor/256x256/apps/peazip_extract.png
 %%DATADIR%%/res/share/lang/uk.txt
 %%DATADIR%%/res/share/lang/uz.txt
 %%DATADIR%%/res/share/lang/vn.txt
+%%DATADIR%%/res/share/themes/line.theme.7z
+%%DATADIR%%/res/share/themes/mac-dark.theme.7z
 %%DATADIR%%/res/share/themes/mac.theme.7z
+%%DATADIR%%/res/share/themes/main-dark.theme.7z
 %%DATADIR%%/res/share/themes/main-embedded/fm-theme.bmp
 %%DATADIR%%/res/share/themes/main-embedded/readme.txt
 %%DATADIR%%/res/share/themes/main.theme.7z
-%%DATADIR%%/res/share/themes/nographic-embedded/fm-theme.bmp
-%%DATADIR%%/res/share/themes/nographic-embedded/readme.txt
+%%DATADIR%%/res/share/themes/ten-dark.theme.7z
 %%DATADIR%%/res/share/themes/ten.theme.7z
 %%DATADIR%%/res/share/themes/tux-alt.theme.7z
+%%DATADIR%%/res/share/themes/tux-dark.theme.7z
 %%DATADIR%%/res/share/themes/tux.theme.7z
