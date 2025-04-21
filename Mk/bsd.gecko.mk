@@ -76,7 +76,7 @@ ELF_FEATURES+=	+wxneeded:dist/bin/${MOZILLA} +wxneeded:dist/bin/${MOZILLA}-bin
 
 BUNDLE_LIBS=	yes
 
-BUILD_DEPENDS+=	rust-cbindgen>=0.26.0:devel/rust-cbindgen \
+BUILD_DEPENDS+=	rust-cbindgen>=0.28.0:devel/rust-cbindgen \
 				${RUST_DEFAULT}>=1.86.0:lang/${RUST_DEFAULT} \
 				node:www/node
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
