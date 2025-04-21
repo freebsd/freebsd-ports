@@ -2908,10 +2908,6 @@ usr/libexec/getconf/default
 %%PORTDOCS%%usr/share/doc/libstdc++-devel/ChangeLog-2020.bz2
 %%PORTDOCS%%usr/share/doc/libstdc++-devel/ChangeLog.bz2
 %%PORTDOCS%%usr/share/doc/libstdc++-devel/README
-%%PORTDOCS%%usr/share/doc/mpfr/BUGS
-%%PORTDOCS%%usr/share/doc/mpfr/NEWS
-%%PORTDOCS%%usr/share/doc/mpfr/PATCHES
-%%PORTDOCS%%usr/share/doc/mpfr/README
 usr/share/info/as.info.gz
 usr/share/info/bfd.info.gz
 usr/share/info/binutils.info.gz
