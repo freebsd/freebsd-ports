@@ -15,22 +15,22 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bytes-1.10.1 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.34 \
-		clap_builder-4.5.34 \
+		clap-4.5.37 \
+		clap_builder-4.5.37 \
 		clap_complete-4.5.47 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
-		crossbeam-channel-0.5.14 \
+		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
-		ctrlc-3.4.5 \
-		dirs-5.0.1 \
-		dirs-sys-0.4.1 \
+		ctrlc-3.4.6 \
+		dirs-6.0.0 \
+		dirs-sys-0.5.0 \
 		either-1.15.0 \
 		equivalent-1.0.2 \
-		errno-0.3.10 \
+		errno-0.3.11 \
 		fastrand-2.3.0 \
 		filetime-0.2.25 \
 		futures-core-0.3.31 \
@@ -41,8 +41,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		gimli-0.31.1 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
-		indexmap-2.8.0 \
-		inlet_manifold-0.1.4 \
+		indexmap-2.9.0 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		is_ci-1.2.0 \
@@ -50,45 +49,41 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		itoa-1.0.15 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
-		libc-0.2.171 \
+		libc-0.2.172 \
 		libredox-0.1.3 \
 		linemux-0.3.0 \
-		linux-raw-sys-0.9.3 \
+		linux-raw-sys-0.9.4 \
 		lock_api-0.4.12 \
 		log-0.4.27 \
 		memchr-2.7.4 \
 		miette-7.5.0 \
 		miette-derive-7.5.0 \
-		miniz_oxide-0.8.5 \
+		miniz_oxide-0.8.8 \
 		mio-0.8.11 \
 		mio-1.0.3 \
 		nix-0.29.0 \
 		notify-5.2.0 \
 		nu-ansi-term-0.50.1 \
 		object-0.36.7 \
-		once_cell-1.21.2 \
+		once_cell-1.21.3 \
 		option-ext-0.2.0 \
 		owo-colors-4.2.0 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
-		ppv-lite86-0.2.21 \
-		proc-macro2-1.0.94 \
+		proc-macro2-1.0.95 \
 		quote-1.0.40 \
 		r-efi-5.2.0 \
-		rand-0.9.0 \
-		rand_chacha-0.9.0 \
-		rand_core-0.9.3 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.10 \
-		redox_users-0.4.6 \
+		redox_syscall-0.5.11 \
+		redox_users-0.5.0 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
 		rustc-demangle-0.1.24 \
-		rustix-1.0.3 \
+		rustix-1.0.5 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
@@ -97,11 +92,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde_json-1.0.140 \
 		serde_spanned-0.6.8 \
 		shell-words-1.1.0 \
-		shellexpand-3.1.0 \
-		signal-hook-registry-1.4.2 \
+		shellexpand-3.1.1 \
+		signal-hook-registry-1.4.4 \
 		slab-0.4.9 \
-		smallvec-1.14.0 \
-		socket2-0.5.8 \
+		smallvec-1.15.0 \
+		socket2-0.5.9 \
 		strsim-0.11.1 \
 		supports-color-3.0.2 \
 		supports-hyperlinks-3.1.0 \
@@ -114,7 +109,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		thiserror-2.0.12 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.12 \
-		tokio-1.44.1 \
+		tokio-1.44.2 \
 		tokio-macros-2.5.0 \
 		toml-0.8.20 \
 		toml_datetime-0.6.8 \
@@ -124,6 +119,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
 		utf8parse-0.2.2 \
+		uuid-1.16.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasi-0.14.2+wasi-0.2.4 \
@@ -157,7 +153,5 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.7.4 \
-		wit-bindgen-rt-0.39.0 \
-		zerocopy-0.8.24 \
-		zerocopy-derive-0.8.24
+		winnow-0.7.6 \
+		wit-bindgen-rt-0.39.0
