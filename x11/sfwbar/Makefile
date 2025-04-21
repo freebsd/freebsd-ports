@@ -1,7 +1,9 @@
 PORTNAME=	sfwbar
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0_beta16
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
+PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	f101b45ae0ace422052463febe85c19dca8ad2ff.patch:-p1 \
@@ -21,6 +23,8 @@ LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
 		libjson-c.so:devel/json-c \
 		libwayland-client.so:graphics/wayland
 
+FLAVORS=	default nopulse
+
 USES=		gnome meson pkgconfig python:run
 
 USE_GITHUB=	yes
@@ -38,6 +42,9 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		ALSA MPD NM PULSEAUDIO XKB
 OPTIONS_DEFAULT=	ALSA MPD NM PULSEAUDIO XKB
+.if ${FLAVOR:U:M*nopulse}
+OPTIONS_EXCLUDE+=	PULSEAUDIO
+.endif
 OPTIONS_SUB=		yes
 
 ALSA_DESC=		ALSA audio volume control
