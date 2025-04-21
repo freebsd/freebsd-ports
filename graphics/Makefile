@@ -551,7 +551,6 @@
     SUBDIR += linux-rl9-libglvnd
     SUBDIR += linux-rl9-libjxl
     SUBDIR += linux-rl9-librsvg2
-    SUBDIR += linux-rl9-openjpeg
     SUBDIR += linux-rl9-qt5-qt3d
     SUBDIR += linux-rl9-qt5-qtgraphicaleffects
     SUBDIR += linux-rl9-qt5-qtimageformats

@@ -153,7 +153,6 @@ _linux_rl9_npth=			linux-rl9-npth>0:devel/linux-rl9-npth
 _linux_c7_numactl-libs=			linux-c7-numactl-libs>0:sysutils/linux-c7-numactl-libs
 _linux_rl9_ocl-icd=			linux-rl9-ocl-icd>0:devel/linux-rl9-ocl-icd
 _linux_${linux_ARGS}_openal-soft=	linux-${linux_ARGS}-openal-soft>0:audio/linux-${linux_ARGS}-openal-soft
-_linux_rl9_openjpeg=			linux-rl9-openjpeg2>0:graphics/linux-rl9-openjpeg
 _linux_${linux_ARGS}_openldap=		linux-${linux_ARGS}-openldap>0:net/linux-${linux_ARGS}-openldap
 _linux_c7_openmotif=			linux-c7-motif>0:x11-toolkits/linux-c7-openmotif
 _linux_c7_openssl-devel=		linux-c7-openssl-devel>0:security/linux-c7-openssl-devel
