@@ -1,15 +1,15 @@
---- CMakeLists.txt.orig	2024-09-13 16:19:36 UTC
+--- CMakeLists.txt.orig	2025-04-04 15:03:07 UTC
 +++ CMakeLists.txt
-@@ -143,6 +143,8 @@ elseif(NOT EMSCRIPTEN AND NOT ANDROID)
+@@ -155,6 +155,8 @@ elseif(NOT EMSCRIPTEN AND NOT ANDROID AND NOT IOS)
      find_package(Libgit2 REQUIRED)
      find_package(Pugixml REQUIRED)
      find_package(SDL2 REQUIRED)
-+    find_package(RapidJSON REQUIRED)
 +    find_package(rlottie REQUIRED)
++    use_pkgconfig(lunasvg lunasvg)
  endif()
  
  # Add libCEC support.
-@@ -184,8 +186,7 @@ if(CMAKE_BUILD_TYPE MATCHES Debug)
+@@ -197,8 +199,7 @@ if(CMAKE_BUILD_TYPE MATCHES Debug)
      if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
          set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17 /Od /DEBUG:FULL")
      else()
@@ -19,7 +19,7 @@
      endif()
      # If using Clang, then add additional debug data needed by GDB.
      # Comment this out if you're using LLDB for debugging as this flag makes the binary
-@@ -208,11 +209,11 @@ else()
+@@ -221,11 +222,11 @@ else()
      if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
          set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNDEBUG /std:c++17 /O2 /DEBUG:NONE")
      else()
@@ -33,39 +33,49 @@
          endif()
      endif()
  endif()
-@@ -454,12 +455,8 @@ set(COMMON_INCLUDE_DIRS ${CURL_INCLUDE_DIR}
- # Include files.
+@@ -540,7 +541,9 @@ else()
+                             ${HarfBuzz_INCLUDE_DIRS}
+                             ${ICU_INCLUDE_DIRS}
+                             ${PUGIXML_INCLUDE_DIRS}
+-                            ${SDL2_INCLUDE_DIR})
++                            ${SDL2_INCLUDE_DIR}
++                            ${UTF8CPP_INCLUDE_DIR}
++                            ${lunasvg_INCLUDE_DIRS})
+ endif()
  
- set(COMMON_INCLUDE_DIRS ${CURL_INCLUDE_DIR}
--                        ${CMAKE_CURRENT_SOURCE_DIR}/external/CImg
--                        ${CMAKE_CURRENT_SOURCE_DIR}/external/glm
-                         ${CMAKE_CURRENT_SOURCE_DIR}/external/lunasvg/include
--                        ${CMAKE_CURRENT_SOURCE_DIR}/external/rapidjson/include
--                        ${CMAKE_CURRENT_SOURCE_DIR}/external/rlottie/inc
--                        ${CMAKE_CURRENT_SOURCE_DIR}/external/utfcpp/source
-+                        ${UTF8CPP_INCLUDE_DIR}
-                         ${CMAKE_CURRENT_SOURCE_DIR}/es-core/src
-                         ${CMAKE_CURRENT_SOURCE_DIR}/es-pdf-converter/src)
- 
-@@ -647,7 +644,8 @@ else()
+ # Add libCEC include directory.
+@@ -698,7 +701,9 @@ else()
                           ${HarfBuzz_LIBRARIES}
                           ${ICU_LIBRARIES}
                           ${PUGIXML_LIBRARIES}
 -                         ${SDL2_LIBRARY})
 +                         ${SDL2_LIBRARY}
++                         ${lunasvg_LINK_LIBRARIES}
 +                         ${rlottie_LIBRARIES})
      if(Intl_LIBRARY)
          # On Unix systems where the gettext functions are not part of the C standard library
          # we need to explicitly link with the libintl library.
-@@ -662,7 +660,6 @@ if(NOT WIN32)
-         set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/android_${ANDROID_ABI}/librlottie.a)
-     else()
-         set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/liblunasvg.a)
+@@ -714,9 +719,6 @@ if(NOT WIN32)
+     elseif(IOS)
+         set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/${CMAKE_BUILD_TYPE}/liblunasvg.a)
+         set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/${CMAKE_BUILD_TYPE}/librlottie.a)
+-    else()
+-        set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/liblunasvg.a)
 -        set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/librlottie.a)
      endif()
  endif()
  
-@@ -726,8 +723,3 @@ endif()
+@@ -770,18 +772,9 @@ add_subdirectory(es-pdf-converter)
+ endif()
+ 
+ add_subdirectory(es-pdf-converter)
+-add_subdirectory(external)
+ add_subdirectory(es-core)
+ add_subdirectory(es-app)
+ 
+-# Make sure that es-pdf-convert is built first, and then that rlottie is built before es-core.
+-add_dependencies(lunasvg es-pdf-convert)
+-
  if(COMPILE_LOCALIZATIONS)
      add_dependencies(es-pdf-convert localization)
  endif()

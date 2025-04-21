@@ -19,6 +19,7 @@ share/applications/org.es_de.frontend.desktop
 %%PORTDOCS%%%%DOCSDIR%%/USERGUIDE.md
 %%DATADIR%%/LICENSE
 %%DATADIR%%/licenses/Akrobat_Fontfabric.pdf
+%%DATADIR%%/licenses/BlueZ
 %%DATADIR%%/licenses/CImg
 %%DATADIR%%/licenses/DejaVu
 %%DATADIR%%/licenses/DroidSans
@@ -38,6 +39,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/licenses/Ogg
 %%DATADIR%%/licenses/OpenSans
 %%DATADIR%%/licenses/Opus
+%%DATADIR%%/licenses/PhosphorIcons
 %%DATADIR%%/licenses/Poppler
 %%DATADIR%%/licenses/UTF8-CPP
 %%DATADIR%%/licenses/Vorbis
@@ -120,8 +122,6 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/resources/graphics/controllers/wii_remote_and_nunchuk_nintendo.svg
 %%DATADIR%%/resources/graphics/controllers/wii_remote_nintendo.svg
 %%DATADIR%%/resources/graphics/controllers/xbox_kinect.svg
-%%DATADIR%%/resources/graphics/frame.png
-%%DATADIR%%/resources/graphics/frame.svg
 %%DATADIR%%/resources/graphics/help/button_a_PS.svg
 %%DATADIR%%/resources/graphics/help/button_a_SNES.svg
 %%DATADIR%%/resources/graphics/help/button_a_XBOX.svg
@@ -207,6 +207,14 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/resources/graphics/splash.svg
 %%DATADIR%%/resources/graphics/star_filled.svg
 %%DATADIR%%/resources/graphics/star_unfilled.svg
+%%DATADIR%%/resources/graphics/systemstatus/battery_charging.svg
+%%DATADIR%%/resources/graphics/systemstatus/battery_full.svg
+%%DATADIR%%/resources/graphics/systemstatus/battery_high.svg
+%%DATADIR%%/resources/graphics/systemstatus/battery_low.svg
+%%DATADIR%%/resources/graphics/systemstatus/battery_medium.svg
+%%DATADIR%%/resources/graphics/systemstatus/bluetooth.svg
+%%DATADIR%%/resources/graphics/systemstatus/cellular.svg
+%%DATADIR%%/resources/graphics/systemstatus/wifi.svg
 %%DATADIR%%/resources/graphics/textinput.svg
 %%DATADIR%%/resources/graphics/textinput_focused.svg
 %%DATADIR%%/resources/graphics/white.png
@@ -227,6 +235,7 @@ share/applications/org.es_de.frontend.desktop
 %%NLS%%%%DATADIR%%/resources/locale/ru_RU/LC_MESSAGES/ru_RU.mo
 %%NLS%%%%DATADIR%%/resources/locale/sv_SE/LC_MESSAGES/sv_SE.mo
 %%NLS%%%%DATADIR%%/resources/locale/zh_CN/LC_MESSAGES/zh_CN.mo
+%%NLS%%%%DATADIR%%/resources/locale/zh_TW/LC_MESSAGES/zh_TW.mo
 %%DATADIR%%/resources/shaders/glsl/blur_horizontal.glsl
 %%DATADIR%%/resources/shaders/glsl/blur_vertical.glsl
 %%DATADIR%%/resources/shaders/glsl/core.glsl
@@ -371,6 +380,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/logos/macintosh.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/mame-advmame.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/mame.svg
+%%DATADIR%%/themes/linear-es-de/system/logos/mark3.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/mastersystem.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/megacd.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/megacdjp.svg
@@ -466,6 +476,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/logos/vectrex.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/vic20.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/videopac.svg
+%%DATADIR%%/themes/linear-es-de/system/logos/vircon32.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/virtualboy.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/vpinball.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/vsmile.svg
@@ -481,6 +492,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/logos/x68000.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/xbox.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/xbox360.svg
+%%DATADIR%%/themes/linear-es-de/system/logos/xboxone.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/zmachine.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/zx81.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/zxnext.svg
@@ -572,6 +584,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/macintosh.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/mame-advmame.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/mame.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/mark3.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/mastersystem.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/megacd.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/megacdjp.xml
@@ -664,6 +677,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/vectrex.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/vic20.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/videopac.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/vircon32.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/virtualboy.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/vpinball.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/vsmile.xml
@@ -679,6 +693,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/x68000.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/xbox.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/xbox360.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/xboxone.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/zmachine.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/zx81.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/zxnext.xml
@@ -757,9 +772,13 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata/gamegear.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/gb.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/gba.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata/gbah.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/gbc.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata/gbch.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata/gbh.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/gc.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/genesis.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata/genh.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/gmaster.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/gx4000.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/intellivision.xml
@@ -773,6 +792,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata/macintosh.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/mame-advmame.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/mame.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata/mark3.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/mastersystem.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/megacd.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/megacdjp.xml
@@ -801,6 +821,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata/neogeocd.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/neogeocdjp.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/nes.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata/nesh.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/ngage.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/ngp.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/ngpc.xml
@@ -843,7 +864,9 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata/sg-1000.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/sgb.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/snes.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata/snesh.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/snesna.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata/snesnah.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/solarus.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/spectravideo.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/steam.xml
@@ -869,6 +892,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata/vectrex.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/vic20.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/videopac.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata/vircon32.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/virtualboy.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/vpinball.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/vsmile.xml
@@ -884,6 +908,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata/x68000.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/xbox.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/xbox360.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata/xboxone.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/zmachine.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/zx81.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/zxnext.xml
@@ -976,6 +1001,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/systemart/mame-advmame.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/mame.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/mario.webp
+%%DATADIR%%/themes/linear-es-de/system/systemart/mark3.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/mastersystem.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/megacd.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/megacdjp.webp
@@ -1068,6 +1094,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/systemart/vectrex.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/vic20.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/videopac.webp
+%%DATADIR%%/themes/linear-es-de/system/systemart/vircon32.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/virtualboy.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/vpinball.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/vsmile.webp
@@ -1083,6 +1110,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/systemart/x68000.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/xbox.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/xbox360.webp
+%%DATADIR%%/themes/linear-es-de/system/systemart/xboxone.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/zelda.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/zmachine.webp
 %%DATADIR%%/themes/linear-es-de/system/systemart/zx81.webp
@@ -1179,6 +1207,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/modern-es-de/art/macintosh.webp
 %%DATADIR%%/themes/modern-es-de/art/mame-advmame.webp
 %%DATADIR%%/themes/modern-es-de/art/mame.webp
+%%DATADIR%%/themes/modern-es-de/art/mark3.webp
 %%DATADIR%%/themes/modern-es-de/art/mastersystem.webp
 %%DATADIR%%/themes/modern-es-de/art/megacd.webp
 %%DATADIR%%/themes/modern-es-de/art/megacdjp.webp
@@ -1271,6 +1300,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/modern-es-de/art/vectrex.webp
 %%DATADIR%%/themes/modern-es-de/art/vic20.webp
 %%DATADIR%%/themes/modern-es-de/art/videopac.webp
+%%DATADIR%%/themes/modern-es-de/art/vircon32.webp
 %%DATADIR%%/themes/modern-es-de/art/virtualboy.webp
 %%DATADIR%%/themes/modern-es-de/art/vpinball.webp
 %%DATADIR%%/themes/modern-es-de/art/vsmile.webp
@@ -1286,6 +1316,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/modern-es-de/art/x68000.webp
 %%DATADIR%%/themes/modern-es-de/art/xbox.webp
 %%DATADIR%%/themes/modern-es-de/art/xbox360.webp
+%%DATADIR%%/themes/modern-es-de/art/xboxone.webp
 %%DATADIR%%/themes/modern-es-de/art/zmachine.webp
 %%DATADIR%%/themes/modern-es-de/art/zx81.webp
 %%DATADIR%%/themes/modern-es-de/art/zxnext.webp
@@ -1380,6 +1411,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/modern-es-de/art_legacy/mame-advmame.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/mame-libretro.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/mame.webp
+%%DATADIR%%/themes/modern-es-de/art_legacy/mark3.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/mastersystem.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/megacd.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/megacdjp.webp
@@ -1474,6 +1506,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/modern-es-de/art_legacy/vectrex.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/vic20.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/videopac.webp
+%%DATADIR%%/themes/modern-es-de/art_legacy/vircon32.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/virtualboy.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/vpinball.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/vsmile.webp
@@ -1490,6 +1523,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/modern-es-de/art_legacy/x68000.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/xbox.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/xbox360.webp
+%%DATADIR%%/themes/modern-es-de/art_legacy/xboxone.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/zmachine.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/zx81.webp
 %%DATADIR%%/themes/modern-es-de/art_legacy/zxnext.webp
@@ -1911,6 +1945,9 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/slate-es-de/mame/images/controller.svg
 %%DATADIR%%/themes/slate-es-de/mame/images/logo.svg
 %%DATADIR%%/themes/slate-es-de/mame/systeminfo.xml
+%%DATADIR%%/themes/slate-es-de/mark3/colors.xml
+%%DATADIR%%/themes/slate-es-de/mark3/images/logo.svg
+%%DATADIR%%/themes/slate-es-de/mark3/systeminfo.xml
 %%DATADIR%%/themes/slate-es-de/mastersystem/colors.xml
 %%DATADIR%%/themes/slate-es-de/mastersystem/images/consolegame.svg
 %%DATADIR%%/themes/slate-es-de/mastersystem/images/controller.svg
@@ -2271,6 +2308,9 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/slate-es-de/videopac/images/controller.svg
 %%DATADIR%%/themes/slate-es-de/videopac/images/logo.svg
 %%DATADIR%%/themes/slate-es-de/videopac/systeminfo.xml
+%%DATADIR%%/themes/slate-es-de/vircon32/colors.xml
+%%DATADIR%%/themes/slate-es-de/vircon32/images/logo.svg
+%%DATADIR%%/themes/slate-es-de/vircon32/systeminfo.xml
 %%DATADIR%%/themes/slate-es-de/virtualboy/colors.xml
 %%DATADIR%%/themes/slate-es-de/virtualboy/images/consolegame.svg
 %%DATADIR%%/themes/slate-es-de/virtualboy/images/controller.svg
@@ -2330,6 +2370,9 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/slate-es-de/xbox360/images/controller.svg
 %%DATADIR%%/themes/slate-es-de/xbox360/images/logo.svg
 %%DATADIR%%/themes/slate-es-de/xbox360/systeminfo.xml
+%%DATADIR%%/themes/slate-es-de/xboxone/colors.xml
+%%DATADIR%%/themes/slate-es-de/xboxone/images/logo.svg
+%%DATADIR%%/themes/slate-es-de/xboxone/systeminfo.xml
 %%DATADIR%%/themes/slate-es-de/zmachine/colors.xml
 %%DATADIR%%/themes/slate-es-de/zmachine/images/logo.svg
 %%DATADIR%%/themes/slate-es-de/zmachine/systeminfo.xml
