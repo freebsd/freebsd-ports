@@ -10,7 +10,7 @@ WWW=		https://singlecell.biolab.si/
 
 LICENSE=	AGPLv3+
 
-DEPRECATED=	Depends on expired dmath/py-fastdtw and expiring misc/orange3
+DEPRECATED=	Depends on expired math/py-fastdtw and expiring misc/orange3
 EXPIRATION_DATE=2025-06-01
 
 RUN_DEPENDS=	orange3>0:misc/orange3 \
