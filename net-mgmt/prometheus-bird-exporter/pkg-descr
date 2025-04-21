@@ -1,0 +1,2 @@
+bird_exporter is a metric exporter for the BIRD routing daemon to use with
+Prometheus.
