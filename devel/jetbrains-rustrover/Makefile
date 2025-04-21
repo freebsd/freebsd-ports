@@ -1,5 +1,5 @@
 PORTNAME=	rustrover
-DISTVERSION=	2024.3.7
+DISTVERSION=	2024.3.8
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/rustrover/
 PKGNAMEPREFIX=	jetbrains-
@@ -90,5 +90,7 @@ do-install:
 # Use sqlite replacement provided by devel/jetbrains-sqlite
 	${MKDIR} ${STAGEDIR}${DATADIR}/lib/native/${_SQLITE_ARCH}
 	${LN} -sf ../../../../sqlite/${ARCH}/libsqliteij.so ${STAGEDIR}${DATADIR}/lib/native/${_SQLITE_ARCH}/libsqliteij.so
+# Disable automatic updates
+	${ECHO} "ide.no.platform.update=FreeBSD Ports" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
 
 .include <bsd.port.mk>

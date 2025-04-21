@@ -18,7 +18,7 @@ share/applications/rustrover.desktop
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-RR-243.26053.17
+%%DATADIR%%/lib/build-marker-RR-243.26053.64
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/ext/platform-main.jar
 %%DATADIR%%/lib/external-system-rt.jar
