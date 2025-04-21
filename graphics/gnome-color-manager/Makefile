@@ -12,6 +12,9 @@ WWW=		https://git.gnome.org/browse/gnome-color-manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired textproc-docbook-utils
+EXPIRATION_DATE=2025-06-21
+
 BUILD_DEPENDS=	docbook2man:textproc/docbook-utils \
 		itstool:textproc/itstool \
 		docbook-sgml>0:textproc/docbook-sgml
