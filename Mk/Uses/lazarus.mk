@@ -116,6 +116,7 @@ FLAVORS:=	${LAZARUS_FLAVORS}
 
 .    if empty(FLAVOR)
 LAZARUS_PKGNAMESUFFIX=	-${FLAVORS:[1]}
+FLAVOR=			${FLAVORS:[1]}
 .    endif
 .  else
 LAZARUS_PKGNAMESUFFIX=	-${lazarus_ARGS}
