@@ -538,7 +538,6 @@
     SUBDIR += linux-c7-librsvg2
     SUBDIR += linux-c7-sdl_image
     SUBDIR += linux-c7-sdl_ttf
-    SUBDIR += linux-c7-tiff
     SUBDIR += linux-c7-wayland
     SUBDIR += linux-rl9-cairo
     SUBDIR += linux-rl9-cairo-gobject
