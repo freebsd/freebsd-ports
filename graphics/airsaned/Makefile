@@ -5,7 +5,7 @@ PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g7ecfff3
 CATEGORIES=	graphics
 
-MAINTAINER=	fbsd@opal.com
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Apple AirScan compatible SANE web frontend
 WWW=		https://github.com/SimulPiscator/AirSane
 
