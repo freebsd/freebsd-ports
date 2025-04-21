@@ -4311,3 +4311,4 @@ devel/linux-rl9-libatomic|devel/linux-rl9-devtools|2025-04-15|Integrated into li
 devel/rubygem-sidekiq72|devel/rubygem-sidekiq-gitlab|2025-04-18|Please use devel/sidekiq-gitlab instead
 security/solana|security/agave|2025-04-18|Solana repository is archived, switched to the fork Agave
 graphics/diffpdf||2025-04-20|Has expired: withdrawn from author
+net/linux-rl9-libproxy|emulators/linux_base-rl9|2025-04-21|Merged into linux_base
