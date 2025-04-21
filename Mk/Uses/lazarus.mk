@@ -2,11 +2,14 @@
 #
 # Feature:      lazarus
 # Usage:        USES=lazarus
-# Valid ARGS:   (none), gtk2, qt5, qt6, flavors
+# Valid ARGS:   (none), gtk2, gtk3, qt5, qt6, flavors
 #
 # (none)    - This automatically build lazarus-app with gtk2 interface
 #
 # gtk2      - This automatically build lazarus-app with gtk2 interface
+#
+# gtk3      - This automatically build lazarus-app with gtk3 interface (only
+#             devel version)
 #     
 # qt5       - This automatically build lazarus-app with qt5 interface
 #
@@ -53,14 +56,22 @@ _INCLUDE_USES_LAZARUS_MK=   yes
 WARNING+=	"DEFAULT_LAZARUS_VER is defined, consider using DEFAULT_VERSIONS=lazarus=${DEFAULT_LAZARUS_VER} instead"
 .  endif
 
-.  if ${lazarus_ARGS:Ngtk2:Nqt5:Nqt6:Nflavors}
-IGNORE=		Unknown argument for USES=lazarus: ${lazarus_ARGS:Ngtk2:Nqt5:Nqt6:Nflavors}
+.  if empty(lazarus_ARGS)
+lazarus_ARGS=	gtk2
+.  endif
+
+.  if ${lazarus_ARGS:Ngtk2:Ngtk3:Nqt5:Nqt6:Nflavors}
+IGNORE=		Unknown argument for USES=lazarus: ${lazarus_ARGS:Ngtk2:Ngtk3:Nqt5:Nqt6:Nflavors}
 .  endif
 
 .  if !empty(LAZARUS_NO_FLAVORS)
-.    if ${LAZARUS_NO_FLAVORS:Ngtk2:Nqt5:Nqt6}
-IGNORE=         Unknown argument for LAZARUS_NO_FLAVORS: ${LAZARUS_NO_FLAVORS:Ngtk2:Nqt5:Nqt6}
+.    if ${LAZARUS_NO_FLAVORS:Ngtk2:Ngtk3:Nqt5:Nqt6}
+IGNORE=		Unknown argument for LAZARUS_NO_FLAVORS: ${LAZARUS_NO_FLAVORS:Ngtk2:Ngtk3:Nqt5:Nqt6}
 .    endif
+.  endif
+
+.  if (empty(WANT_LAZARUS_DEVEL) && ${lazarus_ARGS:Mgtk3})
+IGNORE=		No valid argument for USES=lazarus: gtk3. Consider using gtk2, qt5, qt6 or flavors instead
 .  endif
 
 DEFAULT_LAZARUS_VER=	${LAZARUS_DEFAULT}
@@ -86,7 +97,13 @@ MKINSTDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/fpmkinst/${BUILDNAME}
 BUILD_DEPENDS+=		${LOCALBASE}/bin/as:devel/binutils \
 			${MKINSTDIR}/utils-lexyacc.fpm:lang/fpc${FPC_DEVELSUFFIX}
 
+.  if (defined(WANT_LAZARUS_DEVEL) && !empty(WANT_LAZARUS_DEVEL)) || ${ARCH:Maarch64}
+LAZARUS_DEVELSUFFIX=	-devel
+LAZARUS_FLAVORS=	gtk2 gtk3 qt5 qt6
+.  else
+LAZARUS_DEVELSUFFIX=	#
 LAZARUS_FLAVORS=	gtk2 qt5 qt6
+.  endif
 
 .  if ${lazarus_ARGS:Mflavors}
 .    if defined(LAZARUS_NO_FLAVORS)
@@ -98,16 +115,10 @@ FLAVORS:=	${LAZARUS_FLAVORS}
 .    endif
 
 .    if empty(FLAVOR)
-FLAVOR=		${FLAVORS:[1]}
+LAZARUS_PKGNAMESUFFIX=	-${FLAVORS:[1]}
 .    endif
-.  endif
-
-LAZARUS_PKGNAMESUFFIX=	-${FLAVOR}
-
-.  if (defined(WANT_LAZARUS_DEVEL) && !empty(WANT_LAZARUS_DEVEL)) || ${ARCH:Maarch64}
-LAZARUS_DEVELSUFFIX=	-devel
 .  else
-LAZARUS_DEVELSUFFIX=	#
+LAZARUS_PKGNAMESUFFIX=	-${lazarus_ARGS}
 .  endif
 
 .  if ${lazarus_ARGS:Mgtk2} || ${FLAVOR} == gtk2
@@ -118,6 +129,15 @@ LIB_DEPENDS+=	libglib-2.0.so:devel/glib20 \
 		libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2
 LCL_PLATFORM=	gtk2
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus${LAZARUS_DEVELSUFFIX}
+.  endif
+
+.  if ${lazarus_ARGS:Mgtk3} || ${FLAVOR} == gtk3
+LIB_DEPENDS+=	libglib-2.0.so:devel/glib20 \
+		libgtk-3.so:x11-toolkits/gtk30 \
+		libcairo.so:graphics/cairo \
+		libpango-1.0.so:x11-toolkits/pango \
+LCL_PLATFORM=	gtk3
+BUILD_DEPENDS+= ${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-gtk3${LAZARUS_DEVELSUFFIX}
 .  endif
 
 .  if ${lazarus_ARGS:Mqt5} || ${FLAVOR} == qt5
