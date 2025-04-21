@@ -2376,6 +2376,7 @@
     SUBDIR += rubygem-sinatra-respond_to
     SUBDIR += rubygem-sinatra1
     SUBDIR += rubygem-sinatra2
+    SUBDIR += rubygem-sinatra3
     SUBDIR += rubygem-sitemap_generator
     SUBDIR += rubygem-smashing
     SUBDIR += rubygem-socksify
