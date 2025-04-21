@@ -9,6 +9,9 @@ WWW=		https://orange.biolab.si/
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Depends on expiring devel/py-orange-canvas-core
+EXPIRATION_DATE=2025-06-21
+
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}AnyQt>=0.0.11:x11-toolkits/py-AnyQt@${PY_FLAVOR} \

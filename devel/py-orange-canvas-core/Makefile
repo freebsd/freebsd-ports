@@ -12,6 +12,9 @@ WWW=		https://orangedatamining.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Depends on expired misc/py-dictdiffer
+EXPIRATION_DATE=2025-06-21
+
 RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}AnyQt>=0.0.11:x11-toolkits/py-AnyQt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}CommonMark>=0.8.1:textproc/py-CommonMark@${PY_FLAVOR} \

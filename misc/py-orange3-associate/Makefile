@@ -10,6 +10,9 @@ WWW=		https://github.com/biolab/orange3-associate
 
 LICENSE=	GPLv3+
 
+DEPRECATED=	Depends on expiring misc/orange3
+EXPIRATION_DATE=2025-06-21
+
 RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}

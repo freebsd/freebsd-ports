@@ -11,6 +11,9 @@ WWW=		https://github.com/biolab/orange3-network
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expiring misc/orange3
+EXPIRATION_DATE=2025-06-21
+
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYNUMPY} \

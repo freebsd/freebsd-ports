@@ -12,6 +12,9 @@ WWW=		https://orangedatamining.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expiring devel/py-orange-canvas-core
+EXPIRATION_DATE=2025-06-21
+
 RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}AnyQt>0:x11-toolkits/py-AnyQt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.0.0:math/py-matplotlib@${PY_FLAVOR} \

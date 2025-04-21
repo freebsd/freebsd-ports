@@ -12,6 +12,9 @@ WWW=		https://github.com/biolab/orange3-datafusion
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Depends on expiring misc/orange3
+EXPIRATION_DATE=2025-06-21
+
 RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYTHON_PKGNAMEPREFIX}scikit-fusion>0:misc/py-scikit-fusion@${PY_FLAVOR}
 

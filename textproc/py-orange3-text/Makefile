@@ -10,6 +10,9 @@ WWW=		https://github.com/biolab/orange3-text
 
 LICENSE=	AGPLv3
 
+DEPRECATED=	Depends on expiring misc/orange3
+EXPIRATION_DATE=2025-06-21
+
 RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FLAVOR} \

@@ -13,6 +13,9 @@ WWW=		https://github.com/biolab/orange3-bioinformatics/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expiring misc/orange3
+EXPIRATION_DATE=2025-06-21
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR}
 RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYTHON_PKGNAMEPREFIX}Genesis-PyAPI>0:biology/py-Genesis-PyAPI@${PY_FLAVOR} \
