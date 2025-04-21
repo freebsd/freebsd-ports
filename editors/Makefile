@@ -81,6 +81,7 @@
     SUBDIR += lapce
     SUBDIR += lazarus
     SUBDIR += lazarus-devel
+    SUBDIR += lazarus-gtk3-devel
     SUBDIR += lazarus-qt5
     SUBDIR += lazarus-qt5-devel
     SUBDIR += lazarus-qt6

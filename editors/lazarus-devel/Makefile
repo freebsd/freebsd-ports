@@ -58,6 +58,11 @@ USES+=		gnome
 USE_GNOME=	cairo gtk20 gdkpixbuf
 .endif
 
+.if ${PKGNAMESUFFIX} == "-gtk3-devel"
+USES+=		gnome
+USE_GNOME=	cairo glib20 gtk30 pango
+.endif
+
 post-extract:
 	@${MKDIR} ${WRKDIR}/man1
 	@${MV} ${WRKSRC}/install/man/man1/lazarus-ide.1 ${WRKDIR}/man1/
