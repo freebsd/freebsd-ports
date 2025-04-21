@@ -32,9 +32,9 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	SoftEtherVPN
 GH_PROJECT=	SoftEtherVPN
-GH_TUPLE=	SoftEtherVPN:libhamcore:2951ae5:libhamcore/src/libhamcore \
-		BLAKE2:BLAKE2:b52178a:BLAKE2/3rdparty/BLAKE2 \
-		cxong:tinydir:ec6bff2:tinydir/3rdparty/tinydir
+GH_TUPLE=	BLAKE2:BLAKE2:b52178a3:blake2/3rdparty/BLAKE2 \
+		cxong:tinydir:ec6bff20:tinydir/3rdparty/tinydir \
+		SoftEtherVPN:libhamcore:2951ae5b:libhamcore/src/libhamcore
 
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 		-DSE_DBDIR="${SE_DBDIR}" \
@@ -80,5 +80,8 @@ post-install-DOCS-on:
 .for doc in ${PORTDOCS}
 	${FIND} ${WRKSRC} -name ${doc} -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR} \;
 .endfor
+
+x-maintainer-tuples:
+	@submodules2tuple -s -b ${DISTVERSION} https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 .include <bsd.port.post.mk>
