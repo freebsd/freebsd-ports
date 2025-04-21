@@ -1,6 +1,6 @@
 PORTNAME=	spirv-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.1.rc1
+DISTVERSION=	2025.1.rc1 # please always bump all dependencies when updated because at least graphics/shaderc links in static libraries
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
