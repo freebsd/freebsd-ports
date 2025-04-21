@@ -39,6 +39,8 @@
 %%WWWDIR%%/app/assets/images/calendar.png
 %%WWWDIR%%/app/assets/images/cancel.png
 %%WWWDIR%%/app/assets/images/changeset.png
+%%WWWDIR%%/app/assets/images/chevron-down.svg
+%%WWWDIR%%/app/assets/images/chevron-right-idnt.svg
 %%WWWDIR%%/app/assets/images/close.png
 %%WWWDIR%%/app/assets/images/close_hl.png
 %%WWWDIR%%/app/assets/images/comment.png
@@ -62,6 +64,7 @@
 %%WWWDIR%%/app/assets/images/fav_off.png
 %%WWWDIR%%/app/assets/images/favicon.ico
 %%WWWDIR%%/app/assets/images/feed.png
+%%WWWDIR%%/app/assets/images/file-rss.svg
 %%WWWDIR%%/app/assets/images/files/c.png
 %%WWWDIR%%/app/assets/images/files/csharp.png
 %%WWWDIR%%/app/assets/images/files/css.png
