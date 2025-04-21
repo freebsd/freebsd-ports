@@ -1,8 +1,8 @@
-%%PYTHON_SITELIBDIR%%/beautifulsoup4-4.13.3.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/beautifulsoup4-4.13.3.dist-info/RECORD
-%%PYTHON_SITELIBDIR%%/beautifulsoup4-4.13.3.dist-info/WHEEL
-%%PYTHON_SITELIBDIR%%/beautifulsoup4-4.13.3.dist-info/licenses/AUTHORS
-%%PYTHON_SITELIBDIR%%/beautifulsoup4-4.13.3.dist-info/licenses/LICENSE
+%%PYTHON_SITELIBDIR%%/beautifulsoup4-%%BS_VER%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/beautifulsoup4-%%BS_VER%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/beautifulsoup4-%%BS_VER%%.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/beautifulsoup4-%%BS_VER%%.dist-info/licenses/AUTHORS
+%%PYTHON_SITELIBDIR%%/beautifulsoup4-%%BS_VER%%.dist-info/licenses/LICENSE
 %%PYTHON_SITELIBDIR%%/bs4/__init__.py
 %%PYTHON_SITELIBDIR%%/bs4/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/bs4/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc

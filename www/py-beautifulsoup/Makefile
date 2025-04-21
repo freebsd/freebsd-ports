@@ -1,6 +1,5 @@
 PORTNAME=	beautifulsoup
-PORTVERSION=	4.13.3
-PORTREVISION=	1
+PORTVERSION=	4.13.4
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensi
 USES=		python
 USE_PYTHON=	concurrent pep517 pytest
 NO_ARCH=	yes
+
+PLIST_SUB=	BS_VER=${PORTVERSION}
 
 do-build:
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} -m build --wheel --no-isolation --outdir ${WRKDIR}
