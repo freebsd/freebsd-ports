@@ -1,6 +1,5 @@
 PORTNAME=	snappy
-DISTVERSION=	1.2.1
-PORTREVISION=	1
+DISTVERSION=	1.2.2
 CATEGORIES=	archivers
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -10,7 +9,9 @@ WWW=		https://google.github.io/snappy/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang cpe
+TEST_DEPENDS=	googletest>0:devel/googletest
+
+USES=		cmake:testing compiler:c++14-lang cpe localbase:ldflags
 CPE_VENDOR=	google
 USE_LDCONFIG=	yes
 
@@ -21,6 +22,7 @@ PLIST_SUB=	DISTVERSION=${DISTVERSION}
 SUB_FILES=	snappy.pc
 SUB_LIST=	DISTVERSION=${DISTVERSION}
 
+CMAKE_TESTING_ON=	SNAPPY_BUILD_TESTS
 CMAKE_OFF=	SNAPPY_BUILD_BENCHMARKS \
 		SNAPPY_BUILD_TESTS
 CMAKE_ON=	BUILD_SHARED_LIBS

@@ -1,86 +1,57 @@
---- CMakeLists.txt.orig	2024-05-21 19:36:39 UTC
+--- CMakeLists.txt.orig	2025-03-26 15:19:22 UTC
 +++ CMakeLists.txt
-@@ -53,8 +53,10 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+@@ -32,7 +32,7 @@ if(NOT CMAKE_CXX_STANDARD)
+ # C++ standard can be overridden when this is used as a sub-project.
+ if(NOT CMAKE_CXX_STANDARD)
+   # This project requires C++11.
+-  set(CMAKE_CXX_STANDARD 11)
++  set(CMAKE_CXX_STANDARD 14)
+   set(CMAKE_CXX_STANDARD_REQUIRED ON)
+   set(CMAKE_CXX_EXTENSIONS OFF)
+ endif(NOT CMAKE_CXX_STANDARD)
+@@ -51,10 +51,6 @@ if(MSVC)
+   string(REGEX REPLACE "/EH[a-z]+" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHs-c-")
    add_definitions(-D_HAS_EXCEPTIONS=0)
- 
-   # Disable RTTI.
+-
+-  # Disable RTTI.
 -  string(REGEX REPLACE "/GR" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 -  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /GR-")
-+  if (NOT CMAKE_SYSTEM_NAME MATCHES "FreeBSD") # devel/folly requires RTTI info, see https://github.com/facebook/folly/issues/1606
-+    string(REGEX REPLACE "/GR" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
-+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /GR-")
-+  endif()
- else(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+ else(MSVC)
    # Use -Wall for clang and gcc.
    if(NOT CMAKE_CXX_FLAGS MATCHES "-Wall")
-@@ -83,8 +85,10 @@ else(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+@@ -81,10 +77,6 @@ else(MSVC)
+   # Disable C++ exceptions.
+   string(REGEX REPLACE "-fexceptions" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
- 
-   # Disable RTTI.
+-
+-  # Disable RTTI.
 -  string(REGEX REPLACE "-frtti" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 -  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
-+  if (NOT CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
-+    string(REGEX REPLACE "-frtti" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
-+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
-+  endif()
- endif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+ endif(MSVC)
  
  # BUILD_SHARED_LIBS is a standard CMake variable, but we declare it here to make
-@@ -248,8 +252,7 @@ configure_file(
-   "snappy-stubs-public.h.in"
-   "${PROJECT_BINARY_DIR}/snappy-stubs-public.h")
+@@ -329,19 +321,18 @@ if(SNAPPY_BUILD_TESTS)
+   set(install_gmock OFF)
+   set(build_gmock ON)
  
--add_library(snappy "")
--target_sources(snappy
-+set(SNAPPY_SRCS
-   PRIVATE
-     "snappy-internal.h"
-     "snappy-stubs-internal.h"
-@@ -270,20 +273,34 @@ target_sources(snappy
-     $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/snappy-stubs-public.h>
-     $<INSTALL_INTERFACE:include/snappy-stubs-public.h>
- )
--target_include_directories(snappy
-+set(SNAPPY_INCS
-   PUBLIC
-     $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}>
-     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
-     $<INSTALL_INTERFACE:include>
- )
-+add_library(snappy SHARED)
-+target_sources(snappy ${SNAPPY_SRCS})
-+target_include_directories(snappy ${SNAPPY_INCS})
- set_target_properties(snappy
-   PROPERTIES VERSION ${PROJECT_VERSION} SOVERSION ${PROJECT_VERSION_MAJOR})
+-  # This project is tested using GoogleTest.
+-  add_subdirectory("third_party/googletest")
++  find_package(GTest REQUIRED)
  
- target_compile_definitions(snappy PRIVATE -DHAVE_CONFIG_H)
--if(BUILD_SHARED_LIBS)
--  set_target_properties(snappy PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
--endif(BUILD_SHARED_LIBS)
-+set_target_properties(snappy PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
-+add_library(snappy-static STATIC)
-+target_sources(snappy-static ${SNAPPY_SRCS})
-+target_include_directories(snappy-static ${SNAPPY_INCS})
-+set_target_properties(snappy-static
-+  PROPERTIES VERSION ${PROJECT_VERSION} SOVERSION ${PROJECT_VERSION_MAJOR})
+   # GoogleTest triggers a missing field initializers warning.
+   if(SNAPPY_HAVE_NO_MISSING_FIELD_INITIALIZERS)
+-    set_property(TARGET gtest
++    set_property(TARGET GTest::gtest
+         APPEND PROPERTY COMPILE_OPTIONS -Wno-missing-field-initializers)
+-    set_property(TARGET gmock
++    set_property(TARGET GTest::gmock
+         APPEND PROPERTY COMPILE_OPTIONS -Wno-missing-field-initializers)
+   endif(SNAPPY_HAVE_NO_MISSING_FIELD_INITIALIZERS)
  
-+target_compile_definitions(snappy-static PRIVATE -DHAVE_CONFIG_H)
-+
-+if (MSVC)
-+  set_target_properties(snappy-static PROPERTIES OUTPUT_NAME snappy-static)
-+else()
-+  set_target_properties(snappy-static PROPERTIES OUTPUT_NAME snappy)
-+endif()
-+
- if(SNAPPY_BUILD_TESTS OR SNAPPY_BUILD_BENCHMARKS)
-   add_library(snappy_test_support "")
-   target_sources(snappy_test_support
-@@ -399,7 +416,7 @@ if(SNAPPY_INSTALL)
- include(GNUInstallDirs)
+   if(SNAPPY_HAVE_NO_IMPLICIT_INT_FLOAT_CONVERSION)
+-    set_property(TARGET gtest
++    set_property(TARGET GTest::gtest
+         APPEND PROPERTY COMPILE_OPTIONS -Wno-implicit-int-float-conversion)
+   endif(SNAPPY_HAVE_NO_IMPLICIT_INT_FLOAT_CONVERSION)
  
- if(SNAPPY_INSTALL)
--  install(TARGETS snappy
-+  install(TARGETS snappy snappy-static
-     EXPORT SnappyTargets
-     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
