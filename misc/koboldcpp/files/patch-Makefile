@@ -1,4 +1,4 @@
---- Makefile.orig	2025-02-09 08:59:56 UTC
+--- Makefile.orig	2025-04-20 12:57:11 UTC
 +++ Makefile
 @@ -45,8 +45,8 @@ endif
  #
@@ -11,16 +11,22 @@
  ifdef KCPP_DEBUG
  	CFLAGS = -g -O0
  	CXXFLAGS = -g -O0
-@@ -151,7 +151,7 @@ else
+@@ -151,10 +151,10 @@ else
  	FULLCFLAGS += -mavx2 -msse3 -mssse3 -mfma -mf16c -mavx
  endif # LLAMA_NOAVX2
  else
 -	CFLAGS += -march=native -mtune=native
+-	SIMPLECFLAGS += -march=native -mtune=native
+-	SIMPLERCFLAGS += -march=native -mtune=native
+-	FULLCFLAGS += -march=native -mtune=native
 +	#CFLAGS += -march=native -mtune=native
++	#SIMPLECFLAGS += -march=native -mtune=native
++	#SIMPLERCFLAGS += -march=native -mtune=native
++	#FULLCFLAGS += -march=native -mtune=native
  endif # LLAMA_PORTABLE
  endif # if x86
  
-@@ -289,8 +289,8 @@ else
+@@ -297,8 +297,8 @@ else
  	CXXFLAGS += -mcpu=native
  endif
  else
@@ -31,7 +37,7 @@
  endif
  endif
  endif
-@@ -746,4 +746,4 @@ finishedmsg:
+@@ -841,4 +841,4 @@ finishedmsg:
  #phony for printing messages
  finishedmsg:
  	$(NOTIFY_MSG)

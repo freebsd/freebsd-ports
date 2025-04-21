@@ -1,6 +1,6 @@
 PORTNAME=	koboldcpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.86.2
+DISTVERSION=	1.89
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +17,7 @@ FLAVORS=	default portable
 FLAVOR?=	${FLAVORS:[1]}
 portable_PKGNAMESUFFIX=	-portable
 
+BUILD_DEPENDS=	glslc:graphics/shaderc
 LIB_DEPENDS=	libopenblas.so:math/openblas \
 		libvulkan.so:graphics/vulkan-loader
 
@@ -48,6 +49,10 @@ PLIST_FILES=	${LIBS:S/^/%%DATADIR%%\//}
 .if defined(WITH_DEBUG)
 MAKE_ARGS+=	KCPP_DEBUG=1
 .endif
+
+post-patch:
+	@${RM} ${WRKSRC}/glslc-linux
+	@${LN} -s ${PREFIX}/bin/glslc ${WRKSRC}/glslc-linux
 
 do-install:
 	# dir
