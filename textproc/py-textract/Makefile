@@ -69,4 +69,11 @@ SPREADSHEET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlrd>=1.2.0:textproc/py-xlrd@${P
 TESSERACT_RUN_DEPENDS=	tesseract>0:graphics/tesseract
 UNRTF_RUN_DEPENDS=	unrtf>0:textproc/unrtf
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMSG}
+DEPRECATED=	Depends on expiring textproc/py-extract-msg
+EXPIRATION_DATE=2025-06-01
+.endif
+
 .include <bsd.port.mk>
