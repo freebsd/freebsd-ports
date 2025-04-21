@@ -11,6 +11,8 @@ WWW=		https://popeye.io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation breaks: probes.go:491:19: constant 4294967295 overflows int
+
 USES=		go:1.23,modules
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
