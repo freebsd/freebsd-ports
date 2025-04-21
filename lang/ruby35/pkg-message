@@ -1,0 +1,52 @@
+[
+{ type: install
+  message: <<EOM
+Some of the standard commands and libraries are provided as separate
+ports for ease of upgrading:
+
+	benchmarks/rubygem-benchmark:		benchmark - Performance benchmarking library
+	converters/rubygem-base64:		base64 - Encode and decode binary data using a Base64 representation
+	devel/ruby-gems:			gem - RubyGems package manager
+	devel/rubygem-csv:			csv - Interface to CSV files and data
+	devel/rubygem-debug:			debug - Debugging functionality for Ruby
+	devel/rubygem-drb:			drb - Distributed object system for Ruby
+	devel/rubygem-erb:			erb - Templating system for Ruby
+	devel/rubygem-fiddle:			fiddle - libffi wrapper for Ruby
+	devel/rubygem-getoptlong:		getoptlong -GetoptLong for Ruby
+	devel/rubygem-irb:			irb - Interactive Ruby
+	devel/rubygem-logger:			logger - Simple logging utility for outputting messages
+	devel/rubygem-minitest:			minitest - Complete suite of testing facilities
+	devel/rubygem-mutex_m:			mutex_m - Mixin to extend objects to be handled like a Mutex
+	devel/rubygem-observer:			observer - Implementation of the Observer object-oriented design pattern
+	devel/rubygem-ostruct:			ostruct - Class to build custom data structures, similar to a Hash
+	devel/rubygem-power_assert:		power_assert - Power Assert for Ruby
+	devel/rubygem-pstore:			pstore - Transactional File Storage for Ruby Objects
+	devel/rubygem-racc:			racc - LALR(1) parser generator for Ruby
+	devel/rubygem-rake:			rake - Ruby Make
+	devel/rubygem-rbs:			rbs - Language for type signatures for Ruby and standard library definitions
+	devel/rubygem-rdoc:			rdoc - Ruby Documentation System
+	devel/rubygem-readline:			readline - Loader for readline
+	devel/rubygem-reline:			reline - Alternative GNU Readline or Editline implementation by pure Ruby
+	devel/rubygem-repl_type_completor:	repl_type_completor - Type based completion for REPL
+	devel/rubygem-rinda:			rinda - Linda distributed computing paradigm in Ruby
+	devel/rubygem-syslog:			syslog - Ruby interface for the POSIX system logging facility
+	devel/rubygem-test-unit:		test-unit - Unit testing framework for Ruby
+	devel/rubygem-typeprof:			typeprof - Type analysis tool for Ruby code
+	dns/rubygem-resolv-replace:		resolv-replace - Replace Socket DNS with Resolv
+	ftp/rubygem-net-ftp:			net-ftp - Support for the File Transfer Protocol
+	mail/rubygem-net-imap:			net-imap - Ruby client api for Internet Message Access Protocol
+	mail/rubygem-net-pop:			net-pop - Ruby client library for POP3
+	mail/rubygem-net-smtp:			net-smtp - Simple Mail Transfer Protocol client library for Ruby
+	math/rubygem-bigdecimal:		bigdecimal - Arbitrary-precision decimal floating-point number class
+	math/rubygem-matrix:			matrix - Implementation of Matrix and Vector classes
+	math/rubygem-prime:			prime - Prime numbers and factorization library
+	net/rubygem-nkf:			nkf - Ruby extension for Network Kanji Filter
+	sysutils/rubygem-bundler:		bundler - Tool that manages gem dependencies for ruby applications
+	textproc/rubygem-abbrev:		abbrev - Calculate a set of unique abbreviations for a given set of strings
+	textproc/rubygem-rexml:			rexml - XML toolkit for Ruby
+	www/rubygem-rss:			rss - Family of libraries that support various formats of XML "feeds"
+
+Install them as occasion demands.
+EOM
+}
+]
