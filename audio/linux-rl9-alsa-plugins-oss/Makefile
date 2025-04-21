@@ -51,6 +51,10 @@ post-extract:
 	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${PORTNAME}-${PORTVERSION}.tar.bz2 ${EXTRACT_AFTER_ARGS})
 
+post-patch:
+	${REINPLACE_CMD} -e 's|mkdir -p|${MKDIR}|g' ${WRKSRC32}/install-hooks.am || true
+	${REINPLACE_CMD} -e 's|mkdir -p|${MKDIR}|g' ${WRKSRC}/install-hooks.am
+
 do-configure:
 .if !empty(COMPAT32_CFLAGS_${ARCH})
 	@(cd ${WRKSRC32} && ${AUTORECONF} -f -i && ${SETENV} \
@@ -58,6 +62,7 @@ do-configure:
 		CFLAGS="${CFLAGS:N-march=*} ${COMPAT32_CFLAGS_${ARCH}}" \
 		LDFLAGS="${LDFLAGS}" MAKE="${LOCALBASE}/bin/gmake" \
 		MKDIR_P="${MKDIR}" PKG_CONFIG="${LOCALBASE}/bin/pkgconf" \
+		INSTALL="/usr/bin/install -c" \
 		PKG_CONFIG_PATH=${LINUXBASE}/usr/lib/pkgconfig \
 		${CONFIG_ARGS})
 .endif
@@ -65,6 +70,7 @@ do-configure:
 		PATH=${LINUXBASE}/usr/bin ./configure CPPFLAGS="${CPPFLAGS}" \
 		CFLAGS="${CFLAGS:N-march=*}" LDFLAGS="${LDFLAGS}" \
 		MAKE="${LOCALBASE}/bin/gmake" MKDIR_P="${MKDIR}" \
+		INSTALL="/usr/bin/install -c" \
 		PKG_CONFIG="${LOCALBASE}/bin/pkgconf" \
 		PKG_CONFIG_PATH=${LINUXBASE}${LIBDIR_${ARCH}}/pkgconfig \
 		--libdir ${LIBDIR_${ARCH}} ${CONFIG_ARGS})
@@ -88,7 +94,7 @@ do-install:
 		${LOCALBASE}/bin/gmake install-strip \
 		DESTDIR=${STAGEDIR}${LINUXBASE})
 	${RM} -r ${STAGEDIR}${LINUXBASE}${LIBDIR_${ARCH}}/alsa-lib/*.la
-	${MKDIR} ${STAGEDIR}${LINUXBASE}/etc/alsa/conf.d
+	${MKDIR} -p ${STAGEDIR}${LINUXBASE}/etc/alsa/conf.d
 	${LN} -sf ../../../usr/share/alsa/alsa.conf.d/50-oss.conf \
 		${STAGEDIR}${LINUXBASE}/etc/alsa/conf.d
 	${RM} -r ${STAGEDIR}${LINUXBASE}/usr/etc
