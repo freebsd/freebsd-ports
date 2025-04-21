@@ -566,7 +566,6 @@
     SUBDIR += linux-rl9-spirv-tools
     SUBDIR += linux-rl9-vulkan
     SUBDIR += linux-rl9-wayland
-    SUBDIR += linux-rl9-webp
     SUBDIR += lua-gd
     SUBDIR += luminance-qt5
     SUBDIR += lunasvg

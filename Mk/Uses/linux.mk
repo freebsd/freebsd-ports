@@ -214,7 +214,6 @@ _linux_c7_userspace-rcu=		linux-c7-userspace-rcu>0:sysutils/linux-c7-userspace-r
 _linux_rl9_vmaf=			linux-rl9-vmaf>0:multimedia/linux-rl9-vmaf
 _linux_rl9_vulkan=			linux-rl9-vulkan-loader>0:graphics/linux-rl9-vulkan
 _linux_${linux_ARGS}_wayland=		linux-${linux_ARGS}-wayland>0:graphics/linux-${linux_ARGS}-wayland
-_linux_rl9_webp=			linux-rl9-libwebp>0:graphics/linux-rl9-webp
 _linux_rl9_wget=			linux-rl9-wget>0:ftp/linux-rl9-wget
 _linux_${linux_ARGS}_xcb-util=		linux-${linux_ARGS}-xcb-util>0:x11/linux-${linux_ARGS}-xcb-util
 _linux_${linux_ARGS}_xorglibs=		linux-${linux_ARGS}-xorg-libs>=7.7:x11/linux-${linux_ARGS}-xorg-libs
