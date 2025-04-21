@@ -97,7 +97,6 @@ _linux_${linux_ARGS}_harfbuzz=		linux-${linux_ARGS}-harfbuzz>0:print/linux-${lin
 _linux_rl9_highway=			linux-rl9-highway>0:devel/linux-rl9-highway
 _linux_${linux_ARGS}_icu=		linux-${linux_ARGS}-icu>0:devel/linux-${linux_ARGS}-icu
 _linux_${linux_ARGS}_imageformats-libs=	linux-${linux_ARGS}-imageformats-libs>0:graphics/linux-${linux_ARGS}-imageformats-libs
-_linux_${linux_ARGS}_jpeg=		linux-${linux_ARGS}-jpeg>0:graphics/linux-${linux_ARGS}-jpeg
 _linux_c7_libaio=			linux-c7-libaio>0:devel/linux-c7-libaio
 _linux_rl9_libassuan=			linux-rl9-libassuan>0:security/linux-rl9-libassuan
 _linux_${linux_ARGS}_libasyncns=	linux-${linux_ARGS}-libasyncns>0:dns/linux-${linux_ARGS}-libasyncns
