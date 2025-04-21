@@ -1,5 +1,6 @@
 PORTNAME=	elftools
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +10,7 @@ WWW=		https://github.com/david942j/rbelftools
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-bindata>=2:devel/rubygem-bindata
+RUN_DEPENDS=	rubygem-bindata24>=2:devel/rubygem-bindata24
 
 NO_ARCH=	yes
 

@@ -1,5 +1,6 @@
 PORTNAME=	metasploit-concern
 PORTVERSION=	5.0.4
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -10,9 +11,9 @@ WWW=		https://github.com/rapid7/metasploit-concern
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activemodel70>=7.0:databases/rubygem-activemodel70 \
-		rubygem-activesupport70>=7.0:devel/rubygem-activesupport70 \
-		rubygem-railties70>=7.0:www/rubygem-railties70 \
+RUN_DEPENDS=	rubygem-activemodel71>=7.1:databases/rubygem-activemodel71 \
+		rubygem-activesupport71>=7.1:devel/rubygem-activesupport71 \
+		rubygem-railties71>=7.1:www/rubygem-railties71 \
 		rubygem-zeitwerk>=0:devel/rubygem-zeitwerk
 
 NO_ARCH=	yes

@@ -1,6 +1,5 @@
 PORTNAME=	metasploit
-DISTVERSION=	6.4.49
-PORTREVISION=	2
+DISTVERSION=	6.4.58
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -14,9 +13,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		nmap:security/nmap \
 		rubygem-aarch64>=0:devel/rubygem-aarch64 \
 		rubygem-abbrev>=0:textproc/rubygem-abbrev \
-		rubygem-actionpack70>=7.0:www/rubygem-actionpack70 \
-		rubygem-activerecord70>=7.0:databases/rubygem-activerecord70 \
-		rubygem-activesupport70>=7.0:devel/rubygem-activesupport70 \
+		rubygem-actionpack71>=7.1:www/rubygem-actionpack71 \
+		rubygem-activerecord71>=7.1:databases/rubygem-activerecord71 \
+		rubygem-activesupport71>=7.1:devel/rubygem-activesupport71 \
 		rubygem-aws-sdk-ec2>=0:devel/rubygem-aws-sdk-ec2 \
 		rubygem-aws-sdk-ec2instanceconnect>=0:devel/rubygem-aws-sdk-ec2instanceconnect \
 		rubygem-aws-sdk-iam>=0:devel/rubygem-aws-sdk-iam \
@@ -71,7 +70,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-nexpose>=0:security/rubygem-nexpose \
 		rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
-		rubygem-octokit>=0:net/rubygem-octokit \
+		rubygem-octokit4>=4:net/rubygem-octokit4 \
 		rubygem-openssl-ccm>=0:security/rubygem-openssl-ccm \
 		rubygem-openvas-omp>=0:security/rubygem-openvas-omp \
 		rubygem-ostruct>=0:devel/rubygem-ostruct \
@@ -81,7 +80,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		rubygem-pdf-reader>=0:print/rubygem-pdf-reader \
 		rubygem-pg>=0:databases/rubygem-pg \
 		rubygem-puma>=0:www/rubygem-puma \
-		rubygem-railties70>=7.0:www/rubygem-railties70 \
+		rubygem-rack-session10>=0:www/rubygem-rack-session10 \
+		rubygem-rackup10>=0:www/rubygem-rackup10 \
+		rubygem-railties71>=7.1:www/rubygem-railties71 \
 		rubygem-rasn1>=0:security/rubygem-rasn1 \
 		rubygem-recog>=0:security/rubygem-recog \
 		rubygem-redcarpet>=0:textproc/rubygem-redcarpet \
@@ -104,12 +105,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		rubygem-rex-struct2>=0:security/rubygem-rex-struct2 \
 		rubygem-rex-text>=0:security/rubygem-rex-text \
 		rubygem-rex-zip>=0:security/rubygem-rex-zip \
+		rubygem-rinda>=0:devel/rubygem-rinda \
 		rubygem-ruby-macho>=0:devel/rubygem-ruby-macho \
 		rubygem-ruby-mysql>=0:databases/rubygem-ruby-mysql \
 		rubygem-ruby_smb>=0:net/rubygem-ruby_smb \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
 		rubygem-rubyzip>=0:archivers/rubygem-rubyzip \
-		rubygem-sinatra2>=0:www/rubygem-sinatra2 \
+		rubygem-sinatra3>=0:www/rubygem-sinatra3 \
 		rubygem-sqlite3>=0:databases/rubygem-sqlite3 \
 		rubygem-sshkey>=0:security/rubygem-sshkey \
 		rubygem-swagger-blocks>=0:devel/rubygem-swagger-blocks \
@@ -190,7 +192,7 @@ NO_ARCH_IGNORE=	template_x64_bsd.bin template_x86_bsd.bin CVE-2013-2171.bin
 
 post-patch:
 	${REINPLACE_CMD} "/rb-readline/d ; /win32api/d ; \
-		/msgpack/s|, '~> 1.6.0'|| ; /octokit/s|, '~> 4.0'|| ; /rasn1/s|, '0.13.0'|| ; /ffi/s|, '< 1.17.0'|| ; /sqlite3/s|, '1.7.3'|| ; /irb/s|, '~> 1.7.4'|| ; /faraday/s|, '2.7.11'|| ; /concurrent-ruby/s|, '1.3.4'||" \
+		/msgpack/s|, '~> 1.6.0'|| ; /octokit/s|, '~> 4.0'|| ; /rasn1/s|, '0.14.0'|| ; /ffi/s|, '< 1.17.0'|| ; /sqlite3/s|, '1.7.3'|| ; /irb/s|, '~> 1.7.4'|| ; /faraday/s|, '2.7.11'|| ; /concurrent-ruby/s|, '1.3.4'||" \
 		${WRKSRC}/metasploit-framework.gemspec
 
 do-build:
