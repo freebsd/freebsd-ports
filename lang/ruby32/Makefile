@@ -48,8 +48,6 @@ EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/gem \
 			--exclude ${DISTNAME}/man/ri.1 \
 			--no-same-owner --no-same-permissions
 
-WRKSRC=		${RUBY_WRKSRC}
-
 RUBY_VER=	3.2
 
 OPTIONS_DEFINE=		CAPIDOCS DEBUG DOCS EXAMPLES GMP RDOC YJIT

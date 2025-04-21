@@ -49,8 +49,6 @@ EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/gem \
 			--exclude ${DISTNAME}/sample/win32ole \
 			--no-same-owner --no-same-permissions
 
-WRKSRC=		${RUBY_WRKSRC}
-
 RUBY_VER=	3.4
 
 OPTIONS_DEFINE=		CAPIDOCS DEBUG DOCS EXAMPLES GMP RDOC YJIT
