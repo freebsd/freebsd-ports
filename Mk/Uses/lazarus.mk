@@ -56,10 +56,6 @@ _INCLUDE_USES_LAZARUS_MK=   yes
 WARNING+=	"DEFAULT_LAZARUS_VER is defined, consider using DEFAULT_VERSIONS=lazarus=${DEFAULT_LAZARUS_VER} instead"
 .  endif
 
-.  if empty(lazarus_ARGS)
-lazarus_ARGS=	gtk2
-.  endif
-
 .  if ${lazarus_ARGS:Ngtk2:Ngtk3:Nqt5:Nqt6:Nflavors}
 IGNORE=		Unknown argument for USES=lazarus: ${lazarus_ARGS:Ngtk2:Ngtk3:Nqt5:Nqt6:Nflavors}
 .  endif
@@ -115,12 +111,11 @@ FLAVORS:=	${LAZARUS_FLAVORS}
 .    endif
 
 .    if empty(FLAVOR)
-LAZARUS_PKGNAMESUFFIX=	-${FLAVORS:[1]}
 FLAVOR=			${FLAVORS:[1]}
 .    endif
-.  else
-LAZARUS_PKGNAMESUFFIX=	-${lazarus_ARGS}
 .  endif
+
+LAZARUS_PKGNAMESUFFIX=	-${FLAVOR}
 
 .  if ${lazarus_ARGS:Mgtk2} || ${FLAVOR} == gtk2
 LIB_DEPENDS+=	libglib-2.0.so:devel/glib20 \
