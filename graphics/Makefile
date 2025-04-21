@@ -565,7 +565,6 @@
     SUBDIR += linux-rl9-sdl_ttf
     SUBDIR += linux-rl9-shaderc
     SUBDIR += linux-rl9-spirv-tools
-    SUBDIR += linux-rl9-tiff
     SUBDIR += linux-rl9-vulkan
     SUBDIR += linux-rl9-wayland
     SUBDIR += linux-rl9-webp

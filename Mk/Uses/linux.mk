@@ -208,7 +208,6 @@ _linux_${linux_ARGS}_systemd-libs=	linux-${linux_ARGS}-systemd-libs>0:devel/linu
 _linux_c7_tcl85=			linux-c7-tcl85>0:lang/linux-c7-tcl85
 _linux_rl9_tcl86=			linux-rl9-tcl86>0:lang/linux-rl9-tcl86
 _linux_${linux_ARGS}_tcp_wrappers-libs=	linux-${linux_ARGS}-tcp_wrappers-libs>0:net/linux-${linux_ARGS}-tcp_wrappers-libs
-_linux_${linux_ARGS}_tiff=		linux-${linux_ARGS}-libtiff>0:graphics/linux-${linux_ARGS}-tiff
 _linux_c7_tk85=				linux-c7-tk85>0:x11-toolkits/linux-c7-tk85
 _linux_rl9_tk86=			linux-rl9-tk86>0:x11-toolkits/linux-rl9-tk86
 _linux_${linux_ARGS}_trousers=		linux-${linux_ARGS}-trousers>0:security/linux-${linux_ARGS}-trousers
