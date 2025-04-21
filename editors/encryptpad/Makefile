@@ -11,6 +11,9 @@ WWW=		https://evpo.net/encryptpad/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+DEPRECATED=	Depends on expired security/botan2
+EXPIRATION_DATE=2025-06-21
+
 LIB_DEPENDS=	libbotan-2.so:security/botan2
 
 USES=		compiler:c++11-lang desktop-file-utils gl gmake pkgconfig \

@@ -90,4 +90,11 @@ post-install-DOCS-on:
 	(cd ${WRKSRC}/doc/_build/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
 		"! -name .buildinfo")
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTLS}
+DEPRECATED=	Depends on expired security/botan2
+EXPIRATION_DATE=2025-06-21
+.endif
+
 .include <bsd.port.mk>

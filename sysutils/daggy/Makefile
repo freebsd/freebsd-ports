@@ -11,6 +11,9 @@ WWW=		https://daggy.dev/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+DEPRECATED=	Depends on expired security/botan2
+EXPIRATION_DATE=2025-06-21
+
 BUILD_DEPENDS=	${LOCALBASE}/include/kainjow/mustache.hpp:devel/mustache
 LIB_DEPENDS=	libbotan-2.so:security/botan2 \
 		libssh2.so:security/libssh2 \

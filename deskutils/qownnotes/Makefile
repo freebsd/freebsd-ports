@@ -9,6 +9,9 @@ WWW=		https://www.qownnotes.org/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on expired security/botan2
+EXPIRATION_DATE=2025-06-21
+
 LIB_DEPENDS=	libbotan-2.so:security/botan2
 RUN_DEPENDS=	git:devel/git
 

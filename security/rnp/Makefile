@@ -16,6 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS_OCB_Patent=	dist-mirror dist-sell pkg-mirror pkg-sell \
 				auto-accept
 
+DEPRECATED=	Depends on expired security/botan2
+EXPIRATION_DATE=2025-06-21
+
 BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
 LIB_DEPENDS=	libbotan-2.so:security/botan2 \
 		libjson-c.so:devel/json-c
