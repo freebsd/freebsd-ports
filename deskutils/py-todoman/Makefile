@@ -11,6 +11,9 @@ WWW=		https://github.com/pimutils/todoman/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+DEPRECATED=	Depends on expired devel/py-atomicwrites
+EXPIRATION_DATE=2025-06-21
+
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}

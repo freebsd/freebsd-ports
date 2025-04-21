@@ -14,6 +14,9 @@ WWW=		https://docs.pytest.org/en/latest/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired devel/py-atomicwrites
+EXPIRATION_DATE=2025-06-21
+
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pytest
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=40.0:devel/py-setuptools@${PY_FLAVOR} \

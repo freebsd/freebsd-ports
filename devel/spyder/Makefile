@@ -11,6 +11,9 @@ WWW=		https://www.spyder-ide.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Depends on expired devel/py-atomicwrites
+EXPIRATION_DATE=2025-06-21
+
 RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.9.3:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}asyncssh>=2.14.0:security/py-asyncssh@${PY_FLAVOR} \

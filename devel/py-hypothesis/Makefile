@@ -58,4 +58,11 @@ PYTEST_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.6,1:devel/py-pytest@${PY_FL
 PYTZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=2014.1,1:devel/py-pytz@${PY_FLAVOR}
 REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=3.0.0:databases/py-redis@${PY_FLAVOR}
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLARK}
+DEPRECATED=	Depends on expiring devel/py-lark
+EXPIRATION_DATE=2025-06-21
+.endif
+
 .include <bsd.port.mk>

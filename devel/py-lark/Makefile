@@ -31,4 +31,11 @@ INTEREGULAR_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}interegular>=0.3.1<0.4.0:textproc
 NEARLEY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Js2Py>=0:devel/py-Js2Py@${PY_FLAVOR}
 REGEX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}regex>=0:textproc/py-regex@${PY_FLAVOR}
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MATOMIC_CACHE}
+DEPRECATED=	Depends on expired devel/py-atomicwrites
+EXPIRATION_DATE=2025-06-21
+.endif
+
 .include <bsd.port.mk>

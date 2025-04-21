@@ -13,6 +13,9 @@ WWW=		https://github.com/fschulze/pytest-flakes
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expiring devel/py-pytest4
+EXPIRATION_DATE=2025-06-21
+
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pytest-flakes
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4>=2.8.0:devel/py-pytest4@${PY_FLAVOR}

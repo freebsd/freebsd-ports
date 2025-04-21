@@ -13,6 +13,9 @@ WWW=		https://github.com/pytest-dev/pytest-cov
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expiring devel/py-pytest4
+EXPIRATION_DATE=2025-06-21
+
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pytest-cov
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=4.4:devel/py-coverage@${PY_FLAVOR} \

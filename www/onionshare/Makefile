@@ -12,6 +12,9 @@ WWW=		https://onionshare.org
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired devel/py-atomicwrites
+EXPIRATION_DATE=2025-06-21
+
 RUN_DEPENDS=	meek-client:security/meek \
 		obfs4proxy:security/obfs4proxy-tor \
 		snowflake-client:security/snowflake-tor \

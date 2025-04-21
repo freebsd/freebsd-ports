@@ -13,6 +13,9 @@ WWW=		https://bitbucket.org/hpk42/pytest-cache/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expiring devel/py-pytest4
+EXPIRATION_DATE=2025-06-21
+
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pytest-cache
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4>=2.2:devel/py-pytest4@${PY_FLAVOR} \

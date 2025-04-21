@@ -10,6 +10,9 @@ WWW=		https://pypi.org/project/pynitrokey/
 
 LICENSE=	MIT
 
+DEPRECATED=	Depends on expiring comms/py-spsdk
+EXPIRATION_DATE=2025-06-21
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}spsdk>=0:comms/py-spsdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=14.5.14,:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cffi>=0:devel/py-cffi@${PY_FLAVOR} \

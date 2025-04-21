@@ -12,6 +12,9 @@ WWW=		https://lostpackets.de/khal/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired devel/py-atomicwrites
+EXPIRATION_DATE=2025-06-21
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>1.12.0:devel/py-setuptools-scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}atomicwrites>=0.1.7:devel/py-atomicwrites@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=3.2:devel/py-click@${PY_FLAVOR} \

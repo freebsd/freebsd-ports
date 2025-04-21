@@ -13,6 +13,9 @@ WWW=		https://github.com/pymtl/pymtl3
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Depends on expiring devel/py-hypothesis
+EXPIRATION_DATE=2025-06-21
+
 RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}greenlet>0:devel/py-greenlet@${PY_FLAVOR} \
