@@ -8,6 +8,9 @@ MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Cat with ASCII progress bar
 WWW=		http://www.theiling.de/projects/bar.html
 
+DEPRECATED=	Obsolete, consider using sysutils/pv
+EXPIRATION_DATE=2025-05-31
+
 USES=	tar:bzip2
 
 CONFLICTS_INSTALL=	clpbar # bin/bar
