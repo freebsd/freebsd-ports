@@ -1,4 +1,3 @@
-SHA256 (itcl3.2.1_src.tgz) = 9a225564fc94beef4cc0e627a368d9d2b4425c58b93d5a787c9836d6cceed2ad
-SIZE (itcl3.2.1_src.tgz) = 427026
-SHA256 (iwidgets4.0.1.tar.gz) = b0e9cb74370f863e17a05df81fd70af3a39a1cfb733181c61669b30ad7799426
-SIZE (iwidgets4.0.1.tar.gz) = 647960
+TIMESTAMP = 1745225981
+SHA256 (iwidgets-4.1.1.tar.gz) = 572fd8eed70786b1fbff6e7fec62eab7bd731beea074022d1b5a480ecf2df586
+SIZE (iwidgets-4.1.1.tar.gz) = 720630

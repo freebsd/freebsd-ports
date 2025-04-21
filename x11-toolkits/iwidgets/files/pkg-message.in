@@ -2,7 +2,7 @@
 { type: install
   message: <<EOM
 Iwidgets is a "mega-widget" set built using itk.  It includes
-a set of megawidgets, installed in %%PREFIX%%/lib/iwidgets4.0.1
+a set of megawidgets, installed in %%PREFIX%%/lib/%%IWIDGETS%%
 (and symlinked to %%PREFIX%%/lib/iwidgets), a set of man pages
 describing the various widgets, some scripts in
 %%PREFIX%%/lib/%%IWIDGETS%%/scripts and some demo files in

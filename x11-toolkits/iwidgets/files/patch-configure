@@ -1,0 +1,54 @@
+--- configure.orig	2018-03-22 16:21:09 UTC
++++ configure
+@@ -2029,13 +2029,6 @@ fi
+     ITCL_LIB_DIR=$itcl_SRC_DIR/library
+ fi
+ 
+-if test -z "$ITCL_LIB_DIR"; then
+-    { { echo "$as_me:$LINENO: error: Can't find Itcl source.  Use --with-itcl to specify the the toplevel incr Tcl directory on your system.  This directory should contain library/itcl.tcl." >&5
+-echo "$as_me: error: Can't find Itcl source.  Use --with-itcl to specify the the toplevel incr Tcl directory on your system.  This directory should contain library/itcl.tcl." >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+-
+-
+ # Check whether --with-itk or --without-itk was given.
+ if test "${with_itk+set}" = set; then
+   withval="$with_itk"
+@@ -2045,8 +2038,8 @@ ITK_LIB_DIR=""
+ fi;
+ 
+ ITK_LIB_DIR=""
+-if test -r $itk_search/library/itk.tcl; then
+-    ITK_LIB_DIR=$itk_search/library
++if test -r $itk_search/itk.tcl; then
++    ITK_LIB_DIR=$itk_search
+     ITK_SRC_DIR=$itk_search
+ fi
+ 
+@@ -3617,26 +3610,6 @@ echo $ECHO_N "checking system version (for dynamic loa
+ 	system=NEXTSTEP-`awk '/3/,/3/' /usr/lib/NextStep/software_version`
+     else
+ 	system=`uname -s`-`uname -r`
+-	if test "$?" -ne 0 ; then
+-	    echo "$as_me:$LINENO: result: unknown (can't find uname command)" >&5
+-echo "${ECHO_T}unknown (can't find uname command)" >&6
+-	    system=unknown
+-	else
+-	    # Special check for weird MP-RAS system (uname returns weird
+-	    # results, and the version is kept in special file).
+-
+-	    if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
+-		system=MP-RAS-`awk '{print }' /etc/.relid'`
+-	    fi
+-	    if test "`uname -s`" = "AIX" ; then
+-		system=AIX-`uname -v`.`uname -r`
+-	    fi
+-	    if test "${TEA_PLATFORM}" = "windows" ; then
+-		system=windows
+-	    fi
+-	    echo "$as_me:$LINENO: result: $system" >&5
+-echo "${ECHO_T}$system" >&6
+-	fi
+     fi
+ 
+     # Step 2: check for existence of -ldl library.  This is needed because
