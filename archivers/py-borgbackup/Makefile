@@ -1,6 +1,6 @@
 PORTNAME=	borgbackup
-DISTVERSION=	1.4.0
-PORTREVISION=	2
+DISTVERSION=	1.4.1
+PORTREVISION=	0
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,7 @@ TEST_DEPENDS=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
 		fakeroot:security/fakeroot
+
 USES=		pkgconfig python:3.9+ ssl
 USE_PYTHON=	autoplist distutils
 MAKE_ENV=	BORG_OPENSSL_PREFIX=${OPENSSLBASE}
@@ -50,7 +51,6 @@ EXTRA_PATCHES	+= ${FILESDIR}/extrapatch-setup.py
 post-patch:
 	${CP} ${FILESDIR}/acl_extended_file_np.c ${WRKSRC}/src/borg/platform/
 .endif
-
 
 _BORGHOME=${WRKDIR}/testhome
 _BORGENV=-i BORG_PASSPHRASE=secret123 PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} HOME=${_BORGHOME}
