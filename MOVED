@@ -4324,3 +4324,4 @@ graphics/linux-c7-tiff|graphics/linux-c7-imageformats-libs|2025-04-21|Merged int
 graphics/linux-rl9-tiff|graphics/linux-rl9-imageformats-libs|2025-04-21|Merged into imageformats-libs
 graphics/linux-rl9-openjpeg|graphics/linux-rl9-imageformats-libs|2025-04-21|Merged into imageformats-libs
 graphics/linux-rl9-webp|graphics/linux-rl9-imageformats-libs|2025-04-21|Merged into imageformats-libs
+textproc/py-grapheme||2025-04-21|Has expired: Upstream is inactive for 4 years
