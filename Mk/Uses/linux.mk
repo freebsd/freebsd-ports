@@ -163,7 +163,6 @@ _linux_rl9_orc=				linux-rl9-orc>0:devel/linux-rl9-orc
 _linux_${linux_ARGS}_p11-kit=		linux-${linux_ARGS}-p11-kit>0:security/linux-${linux_ARGS}-p11-kit
 _linux_${linux_ARGS}_pango=		linux-${linux_ARGS}-pango>0:x11-toolkits/linux-${linux_ARGS}-pango
 _linux_${linux_ARGS}_pixman=		linux-${linux_ARGS}-pixman>0:x11/linux-${linux_ARGS}-pixman
-_linux_${linux_ARGS}_png=		linux-${linux_ARGS}-libpng>0:graphics/linux-${linux_ARGS}-png
 _linux_${linux_ARGS}_pulseaudio-libs=	linux-${linux_ARGS}-pulseaudio-libs>0:audio/linux-${linux_ARGS}-pulseaudio-libs
 _linux_rl9_pulseaudio-utils=		linux-rl9-pulseaudio-utils>0:audio/linux-rl9-pulseaudio-utils
 _linux_rl9_python3=			linux-rl9-python39>0:lang/linux-rl9-python3
