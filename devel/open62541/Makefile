@@ -1,9 +1,9 @@
 PORTNAME=	open62541
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.4
+DISTVERSION=	1.4.11
 CATEGORIES=	devel
 
-MAINTAINER=	nsonack@outlook.com
+MAINTAINER=	nsonack@herrhotzenplotz.de
 COMMENT=	Open source implementation of OPC UA
 WWW=		https://open62541.org/
 
