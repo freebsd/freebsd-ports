@@ -7,8 +7,10 @@
 %%PYTHON_SITELIBDIR%%/symengine/lib/symengine_wrapper.pxd
 %%PYTHON_SITELIBDIR%%/symengine/printing.py
 %%PYTHON_SITELIBDIR%%/symengine/sympy_compat.py
+%%PYTHON_SITELIBDIR%%/symengine/test_utilities.py
 %%PYTHON_SITELIBDIR%%/symengine/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/symengine/tests/test_arit.py
+%%PYTHON_SITELIBDIR%%/symengine/tests/test_cse.py
 %%PYTHON_SITELIBDIR%%/symengine/tests/test_dict_basic.py
 %%PYTHON_SITELIBDIR%%/symengine/tests/test_eval.py
 %%PYTHON_SITELIBDIR%%/symengine/tests/test_expr.py
@@ -18,6 +20,7 @@
 %%PYTHON_SITELIBDIR%%/symengine/tests/test_matrices.py
 %%PYTHON_SITELIBDIR%%/symengine/tests/test_ntheory.py
 %%PYTHON_SITELIBDIR%%/symengine/tests/test_number.py
+%%PYTHON_SITELIBDIR%%/symengine/tests/test_pickling.py
 %%PYTHON_SITELIBDIR%%/symengine/tests/test_printing.py
 %%PYTHON_SITELIBDIR%%/symengine/tests/test_sage.py
 %%PYTHON_SITELIBDIR%%/symengine/tests/test_series_expansion.py

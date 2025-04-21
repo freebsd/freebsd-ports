@@ -1,6 +1,6 @@
 PORTNAME=	symengine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
+DISTVERSION=	0.14.1
 CATEGORIES=	math python
 #MASTER_SITES=	PYPI # latest release isn't compatible with math/symengine
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,6 +32,6 @@ BINARY_ALIAS=	python=${PYTHON_CMD} # cmake scripts expect python executable
 
 # cmake scripts copy build type and flags from math/symengine, and ignore all local variables of that kind
 
-# tests as of 0.14.0: 362 passed, 2 skipped, 1 warning in 18.87s
+# tests as of 0.14.0: 363 passed, 1 skipped, 1 warning in 7.76s
 
 .include <bsd.port.mk>
