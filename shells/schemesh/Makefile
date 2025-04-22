@@ -1,6 +1,6 @@
 PORTNAME=	schemesh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
+DISTVERSION=	0.8.3
 CATEGORIES=	shells
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -24,6 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/schemesh \
+		bin/countdown \
 		lib/schemesh/libschemesh_${DISTVERSION}.so
 
 post-patch:
