@@ -1,6 +1,5 @@
 PORTNAME=	naev
-PORTVERSION=	0.11.5
-PORTREVISION=	1
+PORTVERSION=	0.12.4
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/naev/naev/releases/download/v${PORTVERSION}/
@@ -23,6 +22,7 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libenet.so:net/enet \
 		libfreetype.so:print/freetype2 \
 		libglpk.so:math/glpk \
+		libmetis.so:math/metis \
 		libopenblas.so:math/openblas \
 		libpcre2-8.so:devel/pcre2 \
 		libphysfs.so:devel/physfs \
