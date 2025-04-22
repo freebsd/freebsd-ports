@@ -23,6 +23,7 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libfreetype.so:print/freetype2 \
 		libglpk.so:math/glpk \
 		libmetis.so:math/metis \
+		libnfd.so:devel/nativefiledialog-extended \
 		libopenblas.so:math/openblas \
 		libpcre2-8.so:devel/pcre2 \
 		libphysfs.so:devel/physfs \
