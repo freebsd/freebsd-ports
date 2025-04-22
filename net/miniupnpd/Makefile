@@ -1,5 +1,5 @@
 PORTNAME=	miniupnpd
-DISTVERSION=	2.3.7
+DISTVERSION=	2.3.9
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/ \
@@ -13,19 +13,16 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libpfctl.so:net/libpfctl
 
-USES=		cpe localbase:ldflags ssl
+USES=		cpe
 CPE_VENDOR=	miniupnp_project
 
 USE_RC_SUBR=	${PORTNAME}
 
 HAS_CONFIGURE=	yes
 # unconditionally use pf, ipfw does not work on FreeBSD
-CONFIGURE_ARGS=	--firewall=pf --libpfctl
+CONFIGURE_ARGS=	--firewall=pf --libpfctl --disable-pppconn
 
 MAKE_JOBS_UNSAFE=	yes
-
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB} -lpfctl
 
 PLIST_FILES=	etc/miniupnpd.conf.sample \
 		share/man/man8/miniupnpd.8.gz \
@@ -43,10 +40,5 @@ IPV6_CONFIGURE_ON=		--ipv6
 LEASEFILE_CONFIGURE_ON=		--leasefile
 UPNP_IGDV2_CONFIGURE_ON=	--igd2
 UPNP_STRICT_CONFIGURE_ON=	--strict
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|\(-lssl -lcrypto\)|$$(LDFLAGS) \1|g' \
-		-e 's|^INSTALLMANDIR.*|INSTALLMANDIR = ${PREFIX}/share/man|' \
-		${WRKSRC}/Makefile.bsd
 
 .include <bsd.port.mk>
