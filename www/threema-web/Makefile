@@ -1,5 +1,5 @@
 PORTNAME=	threema-web
-PORTVERSION=	2.5.5
+PORTVERSION=	2.6.2
 CATEGORIES=	www net-im
 MASTER_SITES=	https://github.com/threema-ch/${PORTNAME}/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-gh
