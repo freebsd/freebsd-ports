@@ -18,6 +18,7 @@
     SUBDIR += ejabberd
     SUBDIR += farstream
     SUBDIR += finch
+    SUBDIR += flare
     SUBDIR += folks
     SUBDIR += fractal
     SUBDIR += freetalk
