@@ -1,7 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.29.0
-PORTREVISION=	1
+DISTVERSION=	0.30.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,13 +39,13 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		castaway-0.2.3 \
 		cc-1.0.106 \
 		cfg-if-1.0.0 \
-		chrono-0.4.39 \
+		chrono-0.4.40 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.26 \
-		clap_builder-4.5.26 \
-		clap_derive-4.5.24 \
+		clap-4.5.34 \
+		clap_builder-4.5.34 \
+		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		clipboard-win-5.4.0 \
 		colorchoice-1.0.2 \
@@ -62,12 +61,13 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		crossterm_winapi-0.9.1 \
 		crunchy-0.2.2 \
 		diff-0.1.13 \
+		displaydoc-0.2.5 \
 		either-1.13.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
 		errno-0.3.10 \
 		error-code-3.3.1 \
-		etcetera-0.8.0 \
+		etcetera-0.10.0 \
 		figment-0.10.19 \
 		filetime-0.2.25 \
 		foldhash-0.1.3 \
@@ -86,7 +86,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		gethostname-0.4.3 \
 		git-version-0.3.9 \
 		git-version-macro-0.3.9 \
-		git2-0.20.0 \
+		git2-0.20.1 \
 		glob-0.3.1 \
 		globset-0.4.15 \
 		half-2.4.1 \
@@ -97,13 +97,24 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		home-0.5.9 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
-		idna-0.5.0 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.1 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.1 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.1 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
+		idna-1.0.3 \
+		idna_adapter-1.2.0 \
 		ignore-0.4.23 \
 		indexmap-2.6.0 \
 		indoc-2.0.5 \
 		inotify-0.10.2 \
 		inotify-sys-0.1.5 \
-		insta-1.42.0 \
+		insta-1.42.2 \
 		instability-0.3.2 \
 		instant-0.1.13 \
 		is-terminal-0.4.13 \
@@ -118,13 +129,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
 		libc-0.2.168 \
-		libgit2-sys-0.18.0+1.9.0 \
+		libgit2-sys-0.18.1+1.9.0 \
 		libredox-0.1.3 \
 		libz-sys-1.1.20 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
+		litemap-0.7.5 \
 		lock_api-0.4.12 \
-		log-0.4.25 \
+		log-0.4.27 \
 		lru-0.12.5 \
 		memchr-2.7.4 \
 		minimal-lexical-0.2.1 \
@@ -148,6 +160,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		parking_lot_core-0.9.10 \
 		paste-1.0.15 \
 		percent-encoding-2.3.1 \
+		pin-project-1.1.10 \
+		pin-project-internal-1.1.10 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.31 \
@@ -177,33 +191,34 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		semver-1.0.23 \
-		serde-1.0.217 \
-		serde_derive-1.0.217 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
 		serde_json-1.0.128 \
 		serde_spanned-0.6.8 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
-		similar-2.6.0 \
+		similar-2.7.0 \
 		simple-logging-2.0.2 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
+		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		strip-ansi-escapes-0.2.1 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
 		syn-2.0.85 \
+		synstructure-0.13.1 \
 		temp-dir-0.1.14 \
 		thiserror-1.0.64 \
 		thiserror-impl-1.0.64 \
 		thread-id-3.3.0 \
+		tinystr-0.7.6 \
 		tinytemplate-1.2.1 \
-		tinyvec-1.8.0 \
-		tinyvec_macros-0.1.1 \
-		toml-0.8.19 \
+		toml-0.8.20 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.22 \
+		toml_edit-0.22.24 \
 		tree-sitter-0.20.10 \
 		tree-sitter-bash-0.20.5 \
 		tree-sitter-c-0.20.8 \
@@ -227,14 +242,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		tree-sitter-typescript-0.20.5 \
 		tui-prompts-0.5.0 \
 		uncased-0.9.10 \
-		unicode-bidi-0.3.17 \
 		unicode-ident-1.0.13 \
-		unicode-normalization-0.1.24 \
 		unicode-segmentation-1.12.0 \
 		unicode-truncate-1.1.0 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
-		url-2.5.2 \
+		url-2.5.4 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
@@ -252,6 +267,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.52.0 \
+		windows-link-0.1.1 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
@@ -272,10 +288,18 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.20 \
+		winnow-0.7.4 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
 		x11rb-0.13.1 \
 		x11rb-protocol-0.13.1 \
-		yansi-1.0.1
+		yansi-1.0.1 \
+		yoke-0.7.5 \
+		yoke-derive-0.7.5 \
+		zerofrom-0.1.6 \
+		zerofrom-derive-0.1.6 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3
 
 PLIST_FILES=	bin/${PORTNAME}
 
