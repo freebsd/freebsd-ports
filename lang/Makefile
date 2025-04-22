@@ -384,6 +384,7 @@
     SUBDIR += tclX
     SUBDIR += tolua
     SUBDIR += tolua++
+    SUBDIR += trealla-prolog
     SUBDIR += tuareg-mode.el
     SUBDIR += typstfmt
     SUBDIR += typstyle
