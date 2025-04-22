@@ -2611,6 +2611,7 @@
     SUBDIR += websocketd
     SUBDIR += webstone
     SUBDIR += webtrees21
+    SUBDIR += webtrees22
     SUBDIR += wget2
     SUBDIR += wgetpaste
     SUBDIR += wiki-tui
