@@ -4,5 +4,5 @@ on Linux.
 
 hw.nvidiadrm.modeset=1
 
-This must be set before loading nvdidia-drm.ko, most easily done by placing the
+This must be set before loading nvidia-drm.ko, most easily done by placing the
 above in /boot/loader.conf.
