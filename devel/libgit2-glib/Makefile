@@ -1,14 +1,13 @@
 # Also update devel/libgit2, devel/rubygem-rugged, devel/py-pygit2
 
 PORTNAME=	libgit2-glib
-PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTVERSION=	1.2.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 PATCH_SITES=	https://gitlab.gnome.org/GNOME/libgit2-glib/-/commit/
-PATCHFILES=	a76fdf96c3a.patch:-p1 # https://gitlab.gnome.org/GNOME/libgit2-glib/-/merge_requests/40
+#PATCHFILES=	a76fdf96c3a.patch:-p1 # https://gitlab.gnome.org/GNOME/libgit2-glib/-/merge_requests/40
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Glib wrapper library around the libgit2 git access library
