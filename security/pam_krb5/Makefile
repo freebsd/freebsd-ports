@@ -29,14 +29,12 @@ INSTALL_TARGET=		install-strip
 FLAVORS=		mit heimdal_base heimdal_port
 FLAVOR?=		${FLAVORS:[1]}
 
-.for f in ${FLAVORS:Nmit}
-${f}_PKGNAMESUFFIX=	-${f}
-.endfor
-
 .if ${FLAVOR:U} == mit
 USES+=		gssapi:mit
+PKGNAMESUFFIX=	-mit
 .elif ${FLAVOR:U} == heimdal_port
 USES+=		gssapi:heimdal
+PKGNAMESUFFIX=	-heimdal
 .elif ${FLAVOR:U} == heimdal_base
 USES+=		gssapi:base
 .endif
