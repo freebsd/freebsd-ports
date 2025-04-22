@@ -1,116 +1,154 @@
---- doc/de/faked.1.orig	2018-07-01 19:03:32 UTC
+--- doc/de/faked.1.orig	2025-03-25 18:27:56 UTC
 +++ doc/de/faked.1
-@@ -89,5 +89,4 @@ Timo Savola
- größtenteils von J.H.M. Dassen <jdassen@debian.org>. Mods/Zusätze
- von Joost und Clint.
+@@ -90,5 +90,4 @@ und Ergänzungen von Joost und Clint.
+ größtenteils von J.H.M. Dassen <jdassen@debian.org> mit Anpassungen
+ und Ergänzungen von Joost und Clint.
  .SH "SIEHE AUCH"
 -\fBdebuild\fP(1), \fBdpkg\-buildpackage\fP(1), \fBfakeroot\fP(1),
 -\fB/usr/share/doc/fakeroot/DEBUG\fP
 +\fBfakeroot\fP(1)
---- doc/de/fakeroot.1.orig	2018-07-01 19:03:32 UTC
+--- doc/de/fakeroot.1.orig	2025-03-25 18:27:56 UTC
 +++ doc/de/fakeroot.1
-@@ -242,6 +242,4 @@ Timo Savola
- größtenteils von J.H.M. Dassen <jdassen@debian.org>. Ziemlich viele
- Mods/Zusätze von Joost und Clint.
+@@ -241,5 +241,4 @@ lot of modsifications and additions by joost and Clint
+ mostly by J.H.M. Dassen \fB<\fP\fIjdassen@debian.org\fP\fB>\fP with rather a
+ lot of modsifications and additions by joost and Clint.
  .SH "SIEHE AUCH"
 -\fBdebuild\fP(1), \fBdpkg\-buildpackage\fP(1), \fBfaked\fP(1),
 -\fB/usr/share/doc/fakeroot/DEBUG\fP
--
 +\fBfaked\fP(1)
---- doc/es/faked.1.orig	2018-07-01 19:03:32 UTC
+--- doc/es/faked.1.orig	2025-03-25 18:27:56 UTC
 +++ doc/es/faked.1
-@@ -86,5 +86,4 @@ Traducci�n de Rub�n Porras Campo <debian
- la mayor parte de J.H.M. Dassen <jdassen@debian.org> con muchas
- modificaciones y a�adiduras de joost y Clint.
- .SH "V�ASE ADEM�S"
--\fBfakeroot\fP(1), \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1)
+@@ -86,5 +86,4 @@ joost and Clint.
+ mostly by J.H.M.\& Dassen <\fIjdassen@debian.org\fP> mods/additions by
+ joost and Clint.
+ .SH "VÉASE ADEMÁS"
+-\fBfakeroot\fP(1), \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1),
 -\fB/usr/share/doc/fakeroot/DEBUG\fP
 +\fBfakeroot\fP(1)
---- doc/es/fakeroot.1.orig	2018-07-01 19:03:32 UTC
+--- doc/es/fakeroot.1.orig	2025-03-25 18:27:56 UTC
 +++ doc/es/fakeroot.1
-@@ -236,6 +236,4 @@ Traducci�n de Rub�n Porras Campo <debian
- la mayor parte de J.H.M. Dassen <jdassen@debian.org> con muchas
- modificaciones y a�adiduras de joost y Clint.
- .SH "V�ASE ADEM�S"
--\fBfaked\fP(1)  \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1)
+@@ -233,5 +233,4 @@ lot of modsifications and additions by joost and Clint
+ mostly by J.H.M. Dassen \fB<\fP\fIjdassen@debian.org\fP\fB>\fP with rather a
+ lot of modsifications and additions by joost and Clint.
+ .SH "VÉASE ADEMÁS"
+-\fBdebuild\fP(1), \fBdpkg\-buildpackage\fP(1), \fBfaked\fP(1),
 -\fB/usr/share/doc/fakeroot/DEBUG\fP
--
 +\fBfaked\fP(1)
---- doc/faked.1.orig	2018-07-01 19:01:34 UTC
+--- doc/faked.1.orig	2024-12-20 14:24:24 UTC
 +++ doc/faked.1
-@@ -91,7 +91,4 @@ mostly by J.H.M. Dassen 
- .RI <jdassen@debian.org> 
+@@ -97,7 +97,4 @@ mods/additions by joost and Clint.
+ .RI < jdassen@debian.org >
  mods/additions by joost and Clint.
  .SH "SEE ALSO"
 -.BR fakeroot (1),
 -.BR dpkg-buildpackage (1),
--.BR debuild (1)
--.BR /usr/share/doc/fakeroot/DEBUG
+-.BR debuild (1),
+-.B /usr/share/doc/fakeroot/DEBUG
 +.BR fakeroot (1)
---- doc/fakeroot.1.orig	2018-07-01 19:01:34 UTC
+--- doc/fakeroot.1.orig	2025-01-23 19:18:54 UTC
 +++ doc/fakeroot.1
-@@ -298,7 +298,3 @@ mostly by J.H.M. Dassen 
- Rather a lot mods/additions by joost and Clint.
+@@ -297,7 +297,4 @@ with rather a lot of modsifications and additions by j
+ .BI < jdassen@debian.org >
+ with rather a lot of modsifications and additions by joost and Clint.
  .SH "SEE ALSO"
- .BR faked (1)
+-.BR debuild (1),
 -.BR dpkg\-buildpackage (1),
--.BR debuild (1)
+-.BR faked (1),
 -.BR /usr/share/doc/fakeroot/DEBUG
--
---- doc/fr/faked.1.orig	2018-07-01 19:03:32 UTC
++.BR faked (1)
+--- doc/fr/faked.1.orig	2025-03-25 18:27:56 UTC
 +++ doc/fr/faked.1
-@@ -90,5 +90,4 @@ Sylvain Cherrier <sylvain.cherrier@free.
- En majeure partie �crite par J.H.M. Dassen <jdassen@debian.org>. La
- plupart des ajouts et des modifications par Joost et Clint.
+@@ -88,5 +88,4 @@ joost and Clint.
+ mostly by J.H.M.\& Dassen <\fIjdassen@debian.org\fP> mods/additions by
+ joost and Clint.
  .SH "VOIR AUSSI"
--\fBfakeroot\fP(1)  \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1)
+-\fBfakeroot\fP(1), \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1),
 -\fB/usr/share/doc/fakeroot/DEBUG\fP
 +\fBfakeroot\fP(1)
---- doc/fr/fakeroot.1.orig	2018-07-01 19:03:32 UTC
+--- doc/fr/fakeroot.1.orig	2025-03-25 18:27:56 UTC
 +++ doc/fr/fakeroot.1
-@@ -242,6 +242,4 @@ Sylvain Cherrier <sylvain.cherrier@free.
- En majeure partie �crite par J.H.M. Dassen <jdassen@debian.org>: La
- plupart des ajouts et des modifications par Joost et Clint.
+@@ -237,5 +237,4 @@ lot of modsifications and additions by joost and Clint
+ mostly by J.H.M. Dassen \fB<\fP\fIjdassen@debian.org\fP\fB>\fP with rather a
+ lot of modsifications and additions by joost and Clint.
  .SH "VOIR AUSSI"
--\fBfaked\fP(1)  \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1)
+-\fBdebuild\fP(1), \fBdpkg\-buildpackage\fP(1), \fBfaked\fP(1),
 -\fB/usr/share/doc/fakeroot/DEBUG\fP
--
 +\fBfaked\fP(1)
---- doc/nl/faked.1.orig	2018-07-01 19:03:32 UTC
+--- doc/nl/faked.1.orig	2025-03-25 18:27:56 UTC
 +++ doc/nl/faked.1
-@@ -90,5 +90,4 @@ Martijn Dekker
- Vooral door J.H.M. Dassen <\fIjdassen@debian.org\fP>. Wijzigingen en
- aanvullingen door joost en Clint.
+@@ -89,5 +89,4 @@ joost and Clint.
+ mostly by J.H.M.\& Dassen <\fIjdassen@debian.org\fP> mods/additions by
+ joost and Clint.
  .SH "ZIE OOK"
 -\fBfakeroot\fP(1), \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1),
 -\fB/usr/share/doc/fakeroot/DEBUG\fP
 +\fBfakeroot\fP(1)
---- doc/nl/fakeroot.1.orig	2018-07-01 19:03:32 UTC
+--- doc/nl/fakeroot.1.orig	2025-03-25 18:27:56 UTC
 +++ doc/nl/fakeroot.1
-@@ -249,6 +249,4 @@ Martijn Dekker
- Vooral door J.H.M. Dassen <\fIjdassen@debian.org\fP>. Nogal wat
- wijzigingen en aanvullingen door joost en Clint.
+@@ -240,5 +240,4 @@ lot of modsifications and additions by joost and Clint
+ mostly by J.H.M. Dassen \fB<\fP\fIjdassen@debian.org\fP\fB>\fP with rather a
+ lot of modsifications and additions by joost and Clint.
  .SH "ZIE OOK"
--\fBfaked\fP(1),  \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1),
+-\fBdebuild\fP(1), \fBdpkg\-buildpackage\fP(1), \fBfaked\fP(1),
 -\fB/usr/share/doc/fakeroot/DEBUG\fP
--
 +\fBfaked\fP(1)
---- doc/sv/faked.1.orig	2018-07-01 19:03:32 UTC
-+++ doc/sv/faked.1
-@@ -88,5 +88,4 @@ David Weinehall
- till större delen skriven av J.H.M. Dassen
- <\fIjdassen@wi.LeidenUniv.nl\fP> ändringar/tillägg av joost och Clint.
- .SH "SE ÄVEN"
--\fBfakeroot\fP(1), \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1)
+--- doc/pt/faked.1.orig	2025-03-25 18:27:56 UTC
++++ doc/pt/faked.1
+@@ -87,5 +87,4 @@ modificações/adições por joost e Clint.
+ a maioria por J.H.M.\& Dassen <\fIjdassen@debian.org\fP>
+ modificações/adições por joost e Clint.
+ .SH "VEJA TAMBÉM"
+-\fBfakeroot\fP(1), \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1),
 -\fB/usr/share/doc/fakeroot/DEBUG\fP
 +\fBfakeroot\fP(1)
---- doc/sv/fakeroot.1.orig	2018-07-01 19:03:32 UTC
-+++ doc/sv/fakeroot.1
-@@ -230,6 +230,4 @@ till större delen skriven av J.H.M. Das
- <jdassen@wi.LeidenUniv.nl> med ett flertal ändringar/tillägg av
- joost och Clint.
- .SH "SE ÄVEN"
--\fBfaked\fP(1)  \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1)
+--- doc/pt/fakeroot.1.orig	2025-03-25 18:27:56 UTC
++++ doc/pt/fakeroot.1
+@@ -235,5 +235,4 @@ lot of modsifications and additions by joost and Clint
+ mostly by J.H.M. Dassen \fB<\fP\fIjdassen@debian.org\fP\fB>\fP with rather a
+ lot of modsifications and additions by joost and Clint.
+ .SH "VEJA TAMBÉM"
+-\fBdebuild\fP(1), \fBdpkg\-buildpackage\fP(1), \fBfaked\fP(1),
 -\fB/usr/share/doc/fakeroot/DEBUG\fP
--
++\fBfaked\fP(1)
+--- doc/ro/faked.1.orig	2025-03-25 18:27:56 UTC
++++ doc/ro/faked.1
+@@ -86,8 +86,7 @@ modificări/adăugiri făcute de joost și Clint.
+ în mare parte scrisă de J.H.M. Dassen <\fIjdassen@debian.org\fP> cu
+ modificări/adăugiri făcute de joost și Clint.
+ .SH "CONSULTAȚI ȘI"
+-\fBfakeroot\fP(1), \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1),
+-\fB/usr/share/doc/fakeroot/DEBUG\fP
++\fBfakeroot\fP(1)
+ .SH TRADUCERE
+ Această traducere a fost creată în 2023 de Remus-Gabriel Chelu. Ea este supusă
+ licenței GNU GPL versiunea 2 (sau ulterioară).
+--- doc/ro/fakeroot.1.orig	2025-03-25 18:27:56 UTC
++++ doc/ro/fakeroot.1
+@@ -241,8 +241,7 @@ lot of modsifications and additions by joost and Clint
+ mostly by J.H.M. Dassen \fB<\fP\fIjdassen@debian.org\fP\fB>\fP with rather a
+ lot of modsifications and additions by joost and Clint.
+ .SH "CONSULTAȚI ȘI"
+-\fBdebuild\fP(1), \fBdpkg\-buildpackage\fP(1), \fBfaked\fP(1),
+-\fB/usr/share/doc/fakeroot/DEBUG\fP
++\fBfaked\fP(1)
+ .SH TRADUCERE
+ Această traducere a fost creată în 2023 de Remus-Gabriel Chelu. Ea este supusă
+ licenței GNU GPL versiunea 2 (sau ulterioară).
+--- doc/sv/faked.1.orig	2025-03-25 18:27:57 UTC
++++ doc/sv/faked.1
+@@ -88,5 +88,4 @@ joost and Clint.
+ mostly by J.H.M.\& Dassen <\fIjdassen@debian.org\fP> mods/additions by
+ joost and Clint.
+ .SH "SE ÄVEN"
+-\fBfakeroot\fP(1), \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1),
+-\fB/usr/share/doc/fakeroot/DEBUG\fP
++\fBfakeroot\fP(1)
+--- doc/sv/fakeroot.1.orig	2025-03-25 18:27:57 UTC
++++ doc/sv/fakeroot.1
+@@ -233,5 +233,4 @@ lot of modsifications and additions by joost and Clint
+ mostly by J.H.M. Dassen \fB<\fP\fIjdassen@debian.org\fP\fB>\fP with rather a
+ lot of modsifications and additions by joost and Clint.
+ .SH "SE ÄVEN"
+-\fBdebuild\fP(1), \fBdpkg\-buildpackage\fP(1), \fBfaked\fP(1),
+-\fB/usr/share/doc/fakeroot/DEBUG\fP
 +\fBfaked\fP(1)
