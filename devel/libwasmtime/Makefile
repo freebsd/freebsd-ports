@@ -1,7 +1,6 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	31.0.0
+PORTVERSION=	32.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
@@ -32,7 +31,6 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		adler-1.0.2 \
 		adler2-2.0.0 \
 		aes-0.8.4 \
-		ahash-0.8.11 \
 		aho-corasick-1.0.2 \
 		allocator-api2-0.2.20 \
 		ambient-authority-0.0.2 \
@@ -48,13 +46,13 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		arbtest-0.3.1 \
 		arrayvec-0.7.6 \
 		async-trait-0.1.71 \
+		auditable-serde-0.8.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.74 \
-		base64-0.21.0 \
 		base64-0.22.1 \
 		base64ct-1.6.0 \
 		beef-0.5.2 \
-		bindgen-0.69.4 \
+		bindgen-0.70.1 \
 		bit-set-0.5.2 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
@@ -64,7 +62,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		bumpalo-3.16.0 \
 		byteorder-1.4.3 \
 		bytes-1.5.0 \
-		bytesize-1.3.0 \
+		bytesize-2.0.1 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
 		camino-1.1.4 \
@@ -74,10 +72,10 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		cap-rand-3.4.1 \
 		cap-std-3.4.1 \
 		cap-time-ext-3.4.1 \
-		capstone-0.12.0 \
-		capstone-sys-0.16.0 \
+		capstone-0.13.0 \
+		capstone-sys-0.17.0 \
 		cargo-platform-0.1.2 \
-		cargo_metadata-0.18.1 \
+		cargo_metadata-0.19.2 \
 		cast-0.3.0 \
 		cc-1.2.5 \
 		cexpr-0.6.0 \
@@ -118,7 +116,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		dirs-sys-next-0.1.2 \
 		displaydoc-0.2.5 \
 		dlmalloc-0.2.4 \
-		downcast-rs-1.2.0 \
+		downcast-rs-2.0.1 \
 		easy-smt-0.2.2 \
 		egg-0.6.0 \
 		either-1.13.0 \
@@ -138,7 +136,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		filecheck-0.5.0 \
 		filetime-0.2.16 \
 		flagset-0.4.3 \
-		flate2-1.0.30 \
+		flate2-1.1.0 \
 		fnv-1.0.7 \
 		foldhash-0.1.3 \
 		form_urlencoded-1.2.1 \
@@ -164,7 +162,6 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		half-1.8.2 \
 		half-2.4.1 \
 		hashbrown-0.12.3 \
-		hashbrown-0.14.3 \
 		hashbrown-0.15.2 \
 		heck-0.4.1 \
 		heck-0.5.0 \
@@ -195,7 +192,6 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		idna_adapter-1.2.0 \
 		indexmap-1.9.1 \
 		indexmap-2.7.0 \
-		indexmap-nostd-0.4.0 \
 		indicatif-0.13.0 \
 		inout-0.1.3 \
 		instant-0.1.12 \
@@ -206,21 +202,22 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
 		itertools-0.12.1 \
+		itertools-0.14.0 \
 		itoa-1.0.14 \
 		ittapi-0.4.0 \
 		ittapi-sys-0.4.0 \
 		jobserver-0.1.32 \
 		js-sys-0.3.74 \
 		lazy_static-1.4.0 \
-		lazycell-1.3.0 \
 		leb128-0.2.5 \
 		leb128fmt-0.1.0 \
-		libc-0.2.161 \
+		libc-0.2.171 \
 		libfuzzer-sys-0.4.8 \
 		libloading-0.8.1 \
-		libm-0.2.8 \
-		libtest-mimic-0.7.0 \
+		libm-0.2.11 \
+		libtest-mimic-0.8.1 \
 		linux-raw-sys-0.4.14 \
+		linux-raw-sys-0.9.3 \
 		listenfd-1.0.0 \
 		litemap-0.7.4 \
 		log-0.4.22 \
@@ -236,7 +233,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		memmap2-0.2.3 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.4 \
-		miniz_oxide-0.8.0 \
+		miniz_oxide-0.8.5 \
 		mio-0.8.11 \
 		multi-stash-0.2.0 \
 		ndarray-0.15.6 \
@@ -271,7 +268,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.16 \
 		pretty_env_logger-0.5.0 \
-		prettyplease-0.2.20 \
+		prettyplease-0.2.31 \
 		proc-macro2-1.0.92 \
 		proptest-1.0.0 \
 		psm-0.1.18 \
@@ -288,7 +285,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		redox_syscall-0.2.13 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
-		regalloc2-0.11.1 \
+		regalloc2-0.11.2 \
 		regex-1.9.1 \
 		regex-automata-0.1.10 \
 		regex-automata-0.3.3 \
@@ -299,8 +296,9 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		ring-0.17.3 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
-		rustc-hash-2.0.0 \
+		rustc-hash-2.1.1 \
 		rustix-0.38.43 \
+		rustix-1.0.3 \
 		rustls-0.22.4 \
 		rustls-0.23.7 \
 		rustls-pki-types-1.3.1 \
@@ -313,7 +311,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		semver-1.0.17 \
 		serde-1.0.215 \
 		serde_derive-1.0.215 \
-		serde_json-1.0.107 \
+		serde_json-1.0.140 \
 		serde_spanned-0.6.5 \
 		sha1-0.10.6 \
 		sha2-0.10.2 \
@@ -332,14 +330,14 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		sptr-0.3.2 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
-		string-interner-0.17.0 \
+		string-interner-0.19.0 \
 		strsim-0.11.1 \
 		strum-0.24.1 \
 		strum_macros-0.24.3 \
 		subtle-2.5.0 \
 		symbolic_expressions-5.0.3 \
 		syn-1.0.92 \
-		syn-2.0.90 \
+		syn-2.0.100 \
 		synstructure-0.13.1 \
 		system-interface-0.27.1 \
 		tar-0.4.41 \
@@ -350,9 +348,10 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		terminal_size-0.3.0 \
 		test-log-0.2.11 \
 		thiserror-1.0.65 \
+		thiserror-2.0.12 \
 		thiserror-impl-1.0.65 \
+		thiserror-impl-2.0.12 \
 		thread_local-1.1.4 \
-		threadpool-1.8.1 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		tinystr-0.7.6 \
@@ -364,6 +363,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		toml-0.8.10 \
 		toml_datetime-0.6.5 \
 		toml_edit-0.22.4 \
+		topological-sort-0.2.2 \
 		torch-sys-0.17.0 \
 		tracing-0.1.37 \
 		tracing-attributes-0.1.26 \
@@ -385,7 +385,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.1 \
 		uuid-1.0.0 \
-		v8-129.0.0 \
+		v8-134.5.0 \
 		valuable-0.1.0 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
@@ -399,27 +399,25 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		wasm-bindgen-macro-0.2.97 \
 		wasm-bindgen-macro-support-0.2.97 \
 		wasm-bindgen-shared-0.2.97 \
-		wasm-encoder-0.225.0 \
-		wasm-encoder-0.226.0 \
-		wasm-metadata-0.225.0 \
-		wasm-metadata-0.226.0 \
-		wasm-mutate-0.226.0 \
-		wasm-smith-0.226.0 \
-		wasm-wave-0.226.0 \
-		wasmi-0.39.1 \
-		wasmi_collections-0.39.1 \
-		wasmi_core-0.39.1 \
-		wasmi_ir-0.39.1 \
-		wasmparser-0.225.0 \
-		wasmparser-0.226.0 \
-		wasmparser-nostd-0.100.2 \
-		wasmprinter-0.226.0 \
+		wasm-encoder-0.227.1 \
+		wasm-encoder-0.228.0 \
+		wasm-metadata-0.227.0 \
+		wasm-metadata-0.228.0 \
+		wasm-mutate-0.228.0 \
+		wasm-smith-0.228.0 \
+		wasm-wave-0.228.0 \
+		wasmi-0.43.0 \
+		wasmi_collections-0.43.0 \
+		wasmi_core-0.43.0 \
+		wasmi_ir-0.43.0 \
+		wasmparser-0.227.1 \
+		wasmparser-0.228.0 \
+		wasmprinter-0.228.0 \
 		wast-35.0.2 \
-		wast-226.0.0 \
-		wat-1.226.0 \
+		wast-228.0.0 \
+		wat-1.228.0 \
 		web-sys-0.3.57 \
 		webpki-roots-0.26.1 \
-		which-4.4.2 \
 		which-6.0.3 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -452,24 +450,22 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		winnow-0.5.39 \
 		winsafe-0.0.19 \
 		winx-0.36.3 \
-		wit-bindgen-0.39.0 \
-		wit-bindgen-core-0.39.0 \
+		wit-bindgen-0.41.0 \
+		wit-bindgen-core-0.41.0 \
 		wit-bindgen-rt-0.37.0 \
-		wit-bindgen-rt-0.39.0 \
-		wit-bindgen-rust-0.39.0 \
-		wit-bindgen-rust-macro-0.39.0 \
-		wit-component-0.225.0 \
-		wit-component-0.226.0 \
-		wit-parser-0.225.0 \
-		wit-parser-0.226.0 \
+		wit-bindgen-rt-0.41.0 \
+		wit-bindgen-rust-0.41.0 \
+		wit-bindgen-rust-macro-0.41.0 \
+		wit-component-0.227.0 \
+		wit-component-0.228.0 \
+		wit-parser-0.227.0 \
+		wit-parser-0.228.0 \
 		witx-0.9.1 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		xattr-1.3.1 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
-		zerocopy-0.7.32 \
-		zerocopy-derive-0.7.32 \
 		zerofrom-0.1.5 \
 		zerofrom-derive-0.1.5 \
 		zeroize-1.7.0 \
@@ -482,7 +478,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		zstd-safe-7.0.0 \
 		zstd-sys-2.0.9+zstd.1.5.5
 
-GH_TUPLE=	WebAssembly:testsuite:13527d8:testsuite/tests/spec_testsuite \
+GH_TUPLE=	WebAssembly:testsuite:596a817:testsuite/tests/spec_testsuite \
 		WebAssembly:wasi-testsuite:2fec29e:wasi_testsuite/tests/wasi_testsuite/wasi-common \
 		WebAssembly:wasi-threads:e1893c0:wasi_threads/tests/wasi_testsuite/wasi-threads
 
