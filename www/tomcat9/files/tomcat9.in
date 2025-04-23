@@ -113,6 +113,14 @@ _tomcat_java_version=`${_tomcat_java_home}/bin/java -version 2>&1 | /usr/bin/awk
 case "${_tomcat_java_version}" in
 	9* | [1-2][0-9]* )
 		_tomcat_endorsed_dirs_option=
+		export JAVA_TOOL_OPTIONS="\
+			--add-opens=java.base/java.lang=ALL-UNNAMED \
+			--add-opens=java.base/java.lang.invoke=ALL-UNNAMED \
+			--add-opens=java.base/java.lang.reflect=ALL-UNNAMED \
+			--add-opens=java.base/java.io=ALL-UNNAMED \
+			--add-opens=java.base/java.util=ALL-UNNAMED \
+			--add-opens=java.base/java.util.concurrent=ALL-UNNAMED \
+			--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED"
 		;;
 	*)
 		_tomcat_endorsed_dirs_option="-Djava.endorsed.dirs='${_tomcat_catalina_home}/endorsed'"
