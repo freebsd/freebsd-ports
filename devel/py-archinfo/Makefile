@@ -1,7 +1,6 @@
 PORTNAME=	archinfo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.2.148
-PORTREVISION=	1
+DISTVERSION=	9.2.152
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -26,4 +25,5 @@ NO_ARCH=	yes
 
 post-extract:
 	${CP} ${FILESDIR}/setup.py ${WRKSRC}/
+
 .include <bsd.port.mk>
