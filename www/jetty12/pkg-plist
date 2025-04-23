@@ -7,6 +7,7 @@
 %%APP_NAME%%/bin/%%APP_NAME%%.sh
 %%APP_NAME%%/etc/cdi/%%APP_NAME%%-ee10-cdi.xml
 %%APP_NAME%%/etc/cdi/%%APP_NAME%%-ee9-cdi.xml
+%%APP_NAME%%/etc/cdi/%%APP_NAME%%-ee8-cdi.xml
 %%APP_NAME%%/etc/console-capture.xml
 %%APP_NAME%%/etc/disable-urlcache.xml
 %%APP_NAME%%/etc/home-base-warning.xml
@@ -17,11 +18,11 @@
 %%APP_NAME%%/etc/jaspi/%%APP_NAME%%-ee9-jaspi-default.xml
 %%APP_NAME%%/etc/jaspi/%%APP_NAME%%-ee9-jaspi-demo.xml
 %%APP_NAME%%/etc/jdbcRealm.properties
-%%APP_NAME%%/%%ETCDIR%%-acceptratelimit.xml
 %%APP_NAME%%/%%ETCDIR%%-alpn.xml
+%%APP_NAME%%/%%ETCDIR%%-accept-rate-limit.xml
 %%APP_NAME%%/%%ETCDIR%%-bytebufferpool-quadratic.xml
 %%APP_NAME%%/%%ETCDIR%%-bytebufferpool.xml
-%%APP_NAME%%/%%ETCDIR%%-connectionlimit.xml
+%%APP_NAME%%/%%ETCDIR%%-connection-limit.xml
 %%APP_NAME%%/%%ETCDIR%%-core-deploy.xml
 %%APP_NAME%%/%%ETCDIR%%-cross-origin.xml
 %%APP_NAME%%/%%ETCDIR%%-debuglog.xml
@@ -40,10 +41,10 @@
 %%APP_NAME%%/%%ETCDIR%%-ee9-proxy.xml
 %%APP_NAME%%/%%ETCDIR%%-ee9-quickstart.xml
 %%APP_NAME%%/%%ETCDIR%%-ee9-webapp.xml
+%%APP_NAME%%/%%ETCDIR%%-forwarded.xml
 %%APP_NAME%%/%%ETCDIR%%-graceful.xml
 %%APP_NAME%%/%%ETCDIR%%-gzip.xml
 %%APP_NAME%%/%%ETCDIR%%-halt.xml
-%%APP_NAME%%/%%ETCDIR%%-http-forwarded.xml
 %%APP_NAME%%/%%ETCDIR%%-http.xml
 %%APP_NAME%%/%%ETCDIR%%-http2.xml
 %%APP_NAME%%/%%ETCDIR%%-http2c.xml
@@ -192,6 +193,7 @@
 %%APP_NAME%%/lib/jakarta.transaction-api-1.3.3.jar
 %%APP_NAME%%/lib/jakarta.transaction-api-2.0.1.jar
 %%APP_NAME%%/lib/%%APP_NAME%%-alpn-client-%%PORTVERSION%%.jar
+%%APP_NAME%%/lib/%%APP_NAME%%-alpn-bouncycastle-server-%%PORTVERSION%%.jar
 %%APP_NAME%%/lib/%%APP_NAME%%-alpn-conscrypt-server-%%PORTVERSION%%.jar
 %%APP_NAME%%/lib/%%APP_NAME%%-alpn-java-client-%%PORTVERSION%%.jar
 %%APP_NAME%%/lib/%%APP_NAME%%-alpn-java-server-%%PORTVERSION%%.jar
@@ -215,6 +217,7 @@
 %%APP_NAME%%/lib/%%APP_NAME%%-ee10-webapp-%%PORTVERSION%%.jar
 %%APP_NAME%%/lib/%%APP_NAME%%-ee8-annotations-%%PORTVERSION%%.jar
 %%APP_NAME%%/lib/%%APP_NAME%%-ee8-apache-jsp-%%PORTVERSION%%.jar
+%%APP_NAME%%/lib/%%APP_NAME%%-ee8-cdi-%%PORTVERSION%%.jar
 %%APP_NAME%%/lib/%%APP_NAME%%-ee8-glassfish-jstl-%%PORTVERSION%%.jar
 %%APP_NAME%%/lib/%%APP_NAME%%-ee8-jndi-%%PORTVERSION%%.jar
 %%APP_NAME%%/lib/%%APP_NAME%%-ee8-nested-%%PORTVERSION%%.jar
@@ -276,12 +279,16 @@
 %%APP_NAME%%/lib/logging/%%APP_NAME%%-slf4j-impl-%%PORTVERSION%%.jar
 %%APP_NAME%%/lib/logging/slf4j-api-2.0.16.jar
 %%APP_NAME%%/modules/acceptratelimit.mod
+%%APP_NAME%%/modules/accept-rate-limit.mod
 %%APP_NAME%%/modules/alpn-java.mod
 %%APP_NAME%%/modules/alpn.mod
+%%APP_NAME%%/modules/bouncycastle.mod
+%%APP_NAME%%/modules/bouncycastle/bouncycastle.xml
 %%APP_NAME%%/modules/bytebufferpool-quadratic.mod
 %%APP_NAME%%/modules/bytebufferpool.mod
 %%APP_NAME%%/modules/client.mod
 %%APP_NAME%%/modules/connectionlimit.mod
+%%APP_NAME%%/modules/connection-limit.mod
 %%APP_NAME%%/modules/conscrypt.mod
 %%APP_NAME%%/modules/conscrypt/conscrypt.xml
 %%APP_NAME%%/modules/console-capture.mod
@@ -388,6 +395,9 @@
 %%APP_NAME%%/modules/ee10-websocket-%%APP_NAME%%.mod
 %%APP_NAME%%/modules/ee8-annotations.mod
 %%APP_NAME%%/modules/ee8-apache-jsp.mod
+%%APP_NAME%%/modules/ee8-cdi-decorate.mod
+%%APP_NAME%%/modules/ee8-cdi-spi.mod
+%%APP_NAME%%/modules/ee8-cdi.mod
 %%APP_NAME%%/modules/ee8-demo-async-rest.mod
 %%APP_NAME%%/modules/ee8-demo-jaas.mod
 %%APP_NAME%%/modules/ee8-demo-%%APP_NAME%%.mod
@@ -457,6 +467,7 @@
 %%APP_NAME%%/modules/fcgi-proxy.mod
 %%APP_NAME%%/modules/fcgi.mod
 %%APP_NAME%%/modules/flight-recorder.mod
+%%APP_NAME%%/modules/forwarded.mod
 %%APP_NAME%%/modules/gcloud-datastore.mod
 %%APP_NAME%%/modules/gcloud.mod
 %%APP_NAME%%/modules/gcloud/index.yaml
@@ -569,6 +580,8 @@
 %%APP_NAME%%/modules/unixdomain-http.mod
 %%APP_NAME%%/modules/websocket-%%APP_NAME%%-client.mod
 %%APP_NAME%%/modules/websocket-%%APP_NAME%%.mod
+%%APP_NAME%%/modules/websocket-core-client.mod
+%%APP_NAME%%/modules/websocket-core-server.mod
 %%APP_NAME%%/modules/well-known.mod
 %%APP_NAME%%/modules/work.mod
 %%APP_NAME%%/start.jar
