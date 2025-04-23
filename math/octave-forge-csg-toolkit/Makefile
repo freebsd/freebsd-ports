@@ -1,6 +1,7 @@
 PORTNAME=	octave-forge-csg-toolkit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
