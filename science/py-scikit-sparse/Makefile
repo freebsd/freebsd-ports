@@ -1,7 +1,6 @@
 PORTNAME=	scikit-sparse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.15
-PORTREVISION=	3
+DISTVERSION=	0.4.16
 CATEGORIES=	science python
 #MASTER_SITES=	PYPI # missing files under tests/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,6 +31,6 @@ TEST_WRKSRC=	${WRKSRC}/tests
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sksparse/cholmod*.so
 
-# tests: 10 passed, 400 warnings in 25.73s
+# tests as of 0.4.16: 10 passed, 400 warnings in 27.47
 
 .include <bsd.port.mk>
