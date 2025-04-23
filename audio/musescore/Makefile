@@ -1,7 +1,6 @@
 PORTNAME=	${GH_PROJECT:tl}
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.5.0
-PORTREVISION=	1
+DISTVERSION=	4.5.1
 CATEGORIES=	audio
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -52,7 +51,7 @@ CMAKE_OFF=	MUE_BUILD_CRASHPAD_CLIENT \
 CMAKE_BUILD_TYPE=	release
 CMAKE_ARGS=	-DMUSE_APP_BUILD_MODE="release"
 
-post-stage:
+post-install:
 	# workaround for https://github.com/musescore/MuseScore/issues/26103
 	@${RM} -r \
 		${STAGEDIR}${PREFIX}/include \
@@ -60,5 +59,9 @@ post-stage:
 		${STAGEDIR}${PREFIX}/libdata
 	# workaround for https://github.com/musescore/MuseScore/issues/26104
 	@${INSTALL_DATA} ${FILESDIR}/mscore.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	@${REINPLACE_CMD} -e "\
+		s|^Version=.*|Version=${PORTVERSION}|; \
+		s|^Name=.*|Name=MuseScore|; \
+		"  ${STAGEDIR}${PREFIX}/share/applications/mscore.desktop
 
 .include <bsd.port.mk>
