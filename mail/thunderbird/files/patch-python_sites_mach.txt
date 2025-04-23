@@ -1,0 +1,18 @@
+commit 10ee367cbe7ff5a19acfcfe3bfb75a49671e4132
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+
+    bump psutil (same as ports)
+    
+    5.9.x breaks mach
+
+diff --git python/sites/mach.txt python/sites/mach.txt
+index 6e3db1c848f7..10ba12c2f13b 100644
+--- python/sites/mach.txt
++++ python/sites/mach.txt
+@@ -108,5 +108,5 @@ pypi-optional:glean-sdk==63.1.0:telemetry will not be collected
+ # Mach gracefully handles the case where `psutil` is unavailable.
+ # We aren't (yet) able to pin packages in automation, so we have to
+ # support down to the oldest locally-installed version (5.4.2).
+-pypi-optional:psutil>=5.4.2,<=5.9.4:telemetry will be missing some data
++pypi-optional:psutil>=5.4.2,<=7.0.0:telemetry will be missing some data
+ pypi-optional:zstandard>=0.11.1,<=0.23.0:zstd archives will not be possible to extract
