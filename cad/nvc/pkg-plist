@@ -96,11 +96,11 @@ lib/nvc/ieee/_NVC_LIB
 lib/nvc/ieee/_index
 lib/nvc/nvc.08/NVC.COVER_PKG
 lib/nvc/nvc.08/NVC.COVER_PKG-body
-lib/nvc/nvc.08/NVC.IEEE_SUPPORT
-lib/nvc/nvc.08/NVC.IEEE_SUPPORT-body
 lib/nvc/nvc.08/NVC.POLYFILL
 lib/nvc/nvc.08/NVC.PSL_SUPPORT
 lib/nvc/nvc.08/NVC.PSL_SUPPORT-body
+lib/nvc/nvc.08/NVC.RANDOM
+lib/nvc/nvc.08/NVC.RANDOM-body
 lib/nvc/nvc.08/NVC.SIM_PKG
 lib/nvc/nvc.08/NVC.SIM_PKG-body
 lib/nvc/nvc.08/NVC.TEXT_UTIL
@@ -111,11 +111,11 @@ lib/nvc/nvc.08/_NVC_LIB
 lib/nvc/nvc.08/_index
 lib/nvc/nvc.19/NVC.COVER_PKG
 lib/nvc/nvc.19/NVC.COVER_PKG-body
-lib/nvc/nvc.19/NVC.IEEE_SUPPORT
-lib/nvc/nvc.19/NVC.IEEE_SUPPORT-body
 lib/nvc/nvc.19/NVC.POLYFILL
 lib/nvc/nvc.19/NVC.PSL_SUPPORT
 lib/nvc/nvc.19/NVC.PSL_SUPPORT-body
+lib/nvc/nvc.19/NVC.RANDOM
+lib/nvc/nvc.19/NVC.RANDOM-body
 lib/nvc/nvc.19/NVC.SIM_PKG
 lib/nvc/nvc.19/NVC.SIM_PKG-body
 lib/nvc/nvc.19/NVC.TEXT_UTIL
@@ -130,6 +130,8 @@ lib/nvc/nvc/NVC.POLYFILL
 lib/nvc/nvc/NVC.POLYFILL-body
 lib/nvc/nvc/NVC.PSL_SUPPORT
 lib/nvc/nvc/NVC.PSL_SUPPORT-body
+lib/nvc/nvc/NVC.RANDOM
+lib/nvc/nvc/NVC.RANDOM-body
 lib/nvc/nvc/NVC.SIM_PKG
 lib/nvc/nvc/NVC.SIM_PKG-body
 lib/nvc/nvc/NVC.TEXT_UTIL

@@ -1,6 +1,6 @@
 PORTNAME=	nvc
 DISTVERSIONPREFIX=	r
-DISTVERSION=	1.15.2
+DISTVERSION=	1.16.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -60,7 +60,5 @@ CONFIGURE_ARGS+=	--disable-lto # workaround for https://github.com/nickg/nvc/iss
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX} -name "*.so" | ${XARGS} ${STRIP_CMD}
-
-# bin/unit_test fails, see https://github.com/nickg/nvc/issues/1167
 
 .include <bsd.port.mk>
