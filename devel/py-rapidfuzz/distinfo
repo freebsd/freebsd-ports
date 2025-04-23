@@ -1,5 +1,3 @@
-TIMESTAMP = 1740859243
-SHA256 (rapidfuzz-3.10.1.tar.gz) = 5a15546d847a915b3f42dc79ef9b0c78b998b4e2c53b252e7166284066585979
-SIZE (rapidfuzz-3.10.1.tar.gz) = 57982250
-SHA256 (d23b79f5fceea0cc04fc38f830ad54ca782e776d.patch) = 470eb369dc1a6cdadb3437eee02af34498f66f75992410a7b3b6fe40847aa421
-SIZE (d23b79f5fceea0cc04fc38f830ad54ca782e776d.patch) = 686
+TIMESTAMP = 1745438333
+SHA256 (rapidfuzz-3.13.0.tar.gz) = d2eaf3839e52cbcc0accbe9817a67b4b0fcf70aaeb229cfddc1c28061f9ce5d8
+SIZE (rapidfuzz-3.13.0.tar.gz) = 57904226

@@ -1,12 +1,8 @@
 PORTNAME=	rapidfuzz
-DISTVERSION=	3.10.1
-PORTREVISION=	1
+DISTVERSION=	3.13.0
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-
-PATCH_SITES=	https://github.com/${PORTNAME}/RapidFuzz/commit/
-PATCHFILES=	d23b79f5fceea0cc04fc38f830ad54ca782e776d.patch:-p1 # https://github.com/rapidfuzz/RapidFuzz/pull/433
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Rapid fuzzy string matching in Python
@@ -28,7 +24,7 @@ RUN_DEPENDS=	${PYNUMPY}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang python
-USE_PYTHON=	pep517 autoplist pytest # 1 test fails, see https://github.com/rapidfuzz/RapidFuzz/issues/372
+USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
@@ -39,5 +35,7 @@ post-install:
 			${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/distance/*.so
 	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+
+# tests as of 3.13.0: 387 passed in 79.76s (0:01:19)
 
 .include <bsd.port.mk>
