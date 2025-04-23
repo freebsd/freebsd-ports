@@ -1,6 +1,6 @@
 PORTNAME=	emilua
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.2
+DISTVERSION=	0.11.5
 CATEGORIES=	lang devel
 
 MAINTAINER=	manipuladordedados@gmail.com
@@ -37,5 +37,7 @@ MESON_ARGS=	--buildtype=plain \
 		-Db_pch=false \
 		-Denable_manpages=true \
 		-Denable_tests=true \
+
+PLIST_SUB=	SOVER="${DISTVERSION}"
 
 .include <bsd.port.mk>
