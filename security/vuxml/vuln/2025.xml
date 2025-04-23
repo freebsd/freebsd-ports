@@ -1,3 +1,32 @@
+  <vuln vid="194f79c3-1ffe-11f0-8cb5-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>135.0.7049.114</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>135.0.7049.114</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/04/stable-channel-update-for-desktop_22.html">
+	 <p>This update includes 1 security fix.</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://chromereleases.googleblog.com/2025/04/stable-channel-update-for-desktop_22.html</url>
+    </references>
+    <dates>
+      <discovery>2025-04-22</discovery>
+      <entry>2025-04-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5ca2cafa-1f24-11f0-ab07-f8f21e52f724">
     <topic>Navidrome -- Authentication bypass in Subsonic API</topic>
     <affects>
