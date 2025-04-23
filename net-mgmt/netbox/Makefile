@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.7
+DISTVERSION=	4.2.8
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -25,7 +25,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 #
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django51>=5.1.8<5.2:www/py-django51@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-django-cors-headers>=4.7.0<5:www/py-dj51-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj51-django-debug-toolbar>=5.0.1<6:www/py-dj51-django-debug-toolbar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj51-django-debug-toolbar>=5.1.0<6:www/py-dj51-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-django-filter>=25.1<26:www/py-dj51-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-django-htmx>=1.23.0<2:www/py-dj51-django-htmx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-django-mptt>=0.17.0<0.18:www/py-dj51-django-mptt@${PY_FLAVOR} \
@@ -40,13 +40,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django51>=5.1.8<5.2:www/py-django51@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj51-drf-spectacular>=0.28.0<1:www/py-dj51-drf-spectacular@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-drf-spectacular-sidecar>=2025.4.1:www/py-dj51-drf-spectacular-sidecar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-social-auth-app-django>=5.4.3<6:www/py-dj51-social-auth-app-django@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj51-strawberry-graphql>=0.263.2<0.300:devel/py-dj51-strawberry-graphql@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj51-strawberry-graphql-django>=0.52.0<1:www/py-dj51-strawberry-graphql-django@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj51-strawberry-graphql>=0.266.0<0.300:devel/py-dj51-strawberry-graphql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj51-strawberry-graphql-django>=0.58.0<1:www/py-dj51-strawberry-graphql-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.11<7:textproc/py-feedparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6<4:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}markdown>=3.6<3.8:textproc/py-markdown@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=9.6.11<10:textproc/py-mkdocs-material@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markdown>=3.6<3.9:textproc/py-markdown@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=9.6.12<10:textproc/py-mkdocs-material@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=0.29.1<1:textproc/py-mkdocstrings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>0:textproc/py-mkdocstrings-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=1.3.0<2:net/py-netaddr@${PY_FLAVOR} \
@@ -56,7 +56,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django51>=5.1.8<5.2:www/py-django51@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}psycopg-c>=3.1.20<4:databases/py-psycopg-c@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg-pool>=3.2.6<4:databases/py-psycopg-pool@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3<3:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rq>=2.1.0<3:devel/py-rq@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rq>=2.3.2<3:devel/py-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-core>=4.5.4<5:security/py-social-auth-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.3<2:graphics/py-svgwrite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tablib>=3.8.0<4:textproc/py-tablib@${PY_FLAVOR} \
