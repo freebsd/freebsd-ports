@@ -1,10 +1,10 @@
 PORTNAME=	tads
-PORTVERSION=	2.5.9
+DISTVERSION=	2.5.9
 CATEGORIES=	games lang
 MASTER_SITES=	LOCAL/kris
 DISTNAME=	tads23-unix
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TADS compiler/interpreter for interactive fiction
 WWW=		https://www.tads.org/
 
