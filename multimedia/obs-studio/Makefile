@@ -1,6 +1,10 @@
 PORTNAME=	obs-studio
 DISTVERSION=	31.0.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	ff4522e2edf0f3bb40753f412944344050139794.patch:-p1 # v4l2loopback/virtual camera: Add support for non-Linux environments (updated PR)
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
