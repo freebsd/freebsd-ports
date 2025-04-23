@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2025-04-23 14:13:07 UTC
++++ Makefile.in
+@@ -3139,7 +3139,7 @@ dist-hook:
+ 
+ $(PATHFILES): Makefile
+ 	@ rm -f $@ $@.tmp
+-	$(AM_V_at) mkdir -p $(dir $@)
++	$(AM_V_at) mkdir -p $$(dirname $@)
+ 	$(AM_V_GEN) srcdir=''; \
+ 		test -f ./$@.in || srcdir=$(srcdir)/; \
+ 		$(edit_cmd) $${srcdir}$@.in >$@.tmp
