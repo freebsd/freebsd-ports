@@ -7,6 +7,7 @@ share/man/man1/testssl.1.gz
 %%DATADIR%%/etc/Microsoft.pem
 %%DATADIR%%/etc/Mozilla.pem
 %%DATADIR%%/etc/README.md
+%%DATADIR%%/etc/SSLSocketClient.java
 %%DATADIR%%/etc/ca_hashes.txt
 %%DATADIR%%/etc/cipher-mapping.txt
 %%DATADIR%%/etc/client-simulation.txt
@@ -28,6 +29,7 @@ share/man/man1/testssl.1.gz
 %%DATADIR%%/utils/gmap2testssl.sh
 %%DATADIR%%/utils/heartbleed.bash
 %%DATADIR%%/utils/hexstream2cipher.sh
+%%DATADIR%%/utils/hexstream2curves.sh
 %%DATADIR%%/utils/make-openssl.sh
 %%DATADIR%%/utils/make-openssl111.sh
 %%DATADIR%%/utils/parse_client_ciphers.pl

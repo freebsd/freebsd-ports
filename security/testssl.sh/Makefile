@@ -1,6 +1,6 @@
 PORTNAME=	testssl.sh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.9
+DISTVERSION=	3.2.0
 CATEGORIES=	security
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -14,11 +14,12 @@ RUN_DEPENDS=	openssl-unsafe>=1.0.1:security/openssl-unsafe \
 		bash:shells/bash
 TEST_DEPENDS=	p5-JSON>=0:converters/p5-JSON
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	testssl
 
 SHEBANG_FILES=	testssl.sh utils/*
+SUB_LIST+=	OPENSSLBASE="${OPENSSLBASE}"
 
 USE_PERL5=	test
 TEST_ENV=	TESTSSL_INSTALL_DIR=${WRKSRC}
@@ -41,4 +42,5 @@ do-test:
 # run.
 	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} prove -v t/51_badssl.com.t
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include <bsd.port.post.mk>
