@@ -1,7 +1,6 @@
 PORTNAME=	ipmi_exporter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.0
-PORTREVISION=	2
+DISTVERSION=	1.10.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	meka@tilda.center
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfreeipmi.so:sysutils/freeipmi
 
-USES=		go:modules
+USES=		go:1.22,modules
 USE_RC_SUBR=	${PORTNAME}
 
 GO_MODULE=	github.com/prometheus-community/${PORTNAME}
