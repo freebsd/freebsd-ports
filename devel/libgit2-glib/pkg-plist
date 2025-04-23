@@ -68,7 +68,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-tree-builder.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-tree-entry.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-tree.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-types.h
-include/libgit2-glib-1.0/libgit2-glib/ggit-types-18.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-types-19.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-version.h
 include/libgit2-glib-1.0/libgit2-glib/ggit.h
 lib/girepository-1.0/Ggit-1.0.typelib
