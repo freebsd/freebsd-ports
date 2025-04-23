@@ -1,6 +1,6 @@
---- nslcd/attmap.c.orig	2019-11-02 16:23:45.000000000 +0100
-+++ nslcd/attmap.c	2023-05-29 19:22:02.233300000 +0200
-@@ -176,6 +176,7 @@
+--- nslcd/attmap.c.orig	2025-02-09 14:17:17 UTC
++++ nslcd/attmap.c
+@@ -176,6 +176,7 @@ const char **attmap_get_var(enum ldap_map_selector map
      if (strcasecmp(name, "gecos") == 0)             return &attmap_passwd_gecos;
      if (strcasecmp(name, "homeDirectory") == 0)     return &attmap_passwd_homeDirectory;
      if (strcasecmp(name, "loginShell") == 0)        return &attmap_passwd_loginShell;
@@ -8,7 +8,7 @@
    }
    else if (map == LM_PROTOCOLS)
    {
-@@ -230,6 +231,7 @@
+@@ -230,6 +231,7 @@ const char *attmap_set_mapping(const char **var, const
          (var != &attmap_shadow_shadowWarning) &&
          (var != &attmap_shadow_shadowInactive) &&
          (var != &attmap_shadow_shadowExpire) &&
