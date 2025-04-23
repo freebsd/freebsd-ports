@@ -1,6 +1,5 @@
 PORTNAME=	galera
-PORTVERSION=	26.4.21
-PORTREVISION=	1
+DISTVERSION=	26.4.22
 DISTVERSIONPREFIX=	mariadb-
 CATEGORIES=	databases
 PKGNAMESUFFIX=	26
@@ -32,7 +31,7 @@ USES=		compiler:c++11-lang python:build cmake ssl
 
 USE_GITHUB=	yes
 GH_TUPLE?=	mariadb:galera:${DISTVERSIONPREFIX}${PORTVERSION}${DISTVERSIONSUFFIX} \
-		codership:wsrep-API:b03acea3661835a48f52ed44dc0f6e7f037390a0:dummy/wsrep/src
+		codership:wsrep-API:65608d3f503ba9f4c170fc4e01c539be9fafd46c:dummy/wsrep/src
 
 CMAKE_ARGS+=	-DGALERA_REVISION=${GH_TAGNAME}
 
