@@ -1,5 +1,5 @@
 PORTNAME=	vpnc-scripts
-PORTVERSION=	20210402
+PORTVERSION=	20220510
 CATEGORIES=	sysutils net-vpn
 MASTER_SITES=	ftp://ftp.infradead.org/pub/${PORTNAME}/ \
 		ZI
