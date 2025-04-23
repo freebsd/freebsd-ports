@@ -1,5 +1,5 @@
 PORTNAME=	pyviz-comms
-DISTVERSION=	3.0.2
+DISTVERSION=	3.0.4
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +19,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-nodejs-version>=0:devel/py-hatch-nod
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}param>0:devel/py-param@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 6 tests fail
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
+
+# tests as of 3.0.4: 10 passed in 1.84s
 
 .include <bsd.port.mk>
