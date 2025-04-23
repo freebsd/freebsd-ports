@@ -1,6 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.11.5
-PORTREVISION=	0
+DISTVERSION=	0.11.6
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,7 +38,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		anstyle-query-1.1.2 \
 		anstyle-svg-0.1.7 \
 		anstyle-wincon-3.0.7 \
-		anyhow-1.0.97 \
+		anyhow-1.0.98 \
 		argfile-0.2.1 \
 		arrayvec-0.7.6 \
 		assert_fs-1.1.2 \
@@ -50,7 +49,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		bitflags-2.9.0 \
 		block-buffer-0.10.4 \
 		boxcar-0.2.11 \
-		bstr-1.11.3 \
+		bstr-1.12.0 \
 		bumpalo-3.17.0 \
 		byteorder-1.5.0 \
 		cachedir-0.3.1 \
@@ -64,8 +63,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.35 \
-		clap_builder-4.5.35 \
+		clap-4.5.36 \
+		clap_builder-4.5.36 \
 		clap_complete-4.5.46 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.5 \
@@ -187,6 +186,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		itoa-1.0.15 \
 		jiff-0.2.4 \
 		jiff-static-0.2.4 \
+		jiff-tzdb-0.1.4 \
+		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.32 \
 		jod-thread-0.1.2 \
 		js-sys-0.3.77 \
@@ -196,7 +197,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		libc-0.2.171 \
 		libcst-1.7.0 \
 		libcst_derive-1.7.0 \
-		libmimalloc-sys-0.1.41 \
+		libmimalloc-sys-0.1.42 \
 		libredox-0.1.3 \
 		libtest-mimic-0.7.3 \
 		linked-hash-map-0.5.6 \
@@ -211,7 +212,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		matches-0.1.10 \
 		matchit-0.8.6 \
 		memchr-2.7.4 \
-		mimalloc-0.1.45 \
+		mimalloc-0.1.46 \
 		minicov-0.3.7 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.5 \
