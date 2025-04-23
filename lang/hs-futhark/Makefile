@@ -1,6 +1,6 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.29
+DISTVERSION=	0.25.30
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -68,7 +68,7 @@ USE_CABAL=	Diff-1.0.2 \
 		futhark-data-1.1.1.0 \
 		futhark-manifest-1.5.0.0 \
 		futhark-server-1.2.3.0 \
-		generic-arbitrary-1.0.1 \
+		generic-arbitrary-1.0.1_1 \
 		generic-deriving-1.14.6_1 \
 		generic-lens-2.2.2.0_1 \
 		generic-lens-core-2.2.1.0_2 \
@@ -155,7 +155,7 @@ USE_CABAL=	Diff-1.0.2 \
 		unliftio-core-0.2.1.0_4 \
 		unordered-containers-0.2.20_4 \
 		utf8-string-1.0.2 \
-		uuid-types-1.0.6_2 \
+		uuid-types-1.0.6_3 \
 		vector-0.13.2.0_1 \
 		vector-algorithms-0.9.1.0 \
 		vector-binary-instances-0.2.5.2_5 \
