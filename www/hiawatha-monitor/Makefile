@@ -1,14 +1,13 @@
 PORTNAME=	hiawatha-monitor
-PORTVERSION=	1.6
-PORTREVISION=	1
+DISTVERSION=	1.7
 CATEGORIES=	www
-MASTER_SITES=	https://www.hiawatha-webserver.org/files/
+MASTER_SITES=	https://hiawatha.leisink.net/files/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-DISTNAME=	monitor-${PORTVERSION}
+DISTNAME=	monitor-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cpetrik@proton.me
 COMMENT=	Monitoring tool for the Hiawatha web server
-WWW=		https://www.hiawatha-webserver.org/monitor
+WWW=		https://hiawatha.leisink.net/monitor
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -25,7 +24,6 @@ SHEBANG_FILES=	database/delete_old_logs \
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-WRKSRC=		${WRKDIR}/monitor
 
 OPTIONS_DEFINE=	DOCS
 
@@ -35,7 +33,7 @@ post-patch:
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 	cd ${STAGEDIR}${WWWDIR} && ${CHMOD} ${BINMODE} ${SHEBANG_FILES}
-.for f in private_pages.conf public_pages.conf website.conf
+.for f in banshee.conf private_pages.conf public_pages.conf
 	${MV} ${STAGEDIR}${WWWDIR}/settings/${f} \
 		${STAGEDIR}${WWWDIR}/settings/${f}.sample
 .endfor

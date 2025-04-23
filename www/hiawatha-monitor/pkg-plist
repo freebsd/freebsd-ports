@@ -63,7 +63,8 @@
 %%WWWDIR%%/libraries/language.php
 %%WWWDIR%%/libraries/menu.php
 %%WWWDIR%%/libraries/model.php
-%%WWWDIR%%/libraries/nma.php
+%%WWWDIR%%/libraries/monitor.php
+%%WWWDIR%%/libraries/nmd.php
 %%WWWDIR%%/libraries/output.php
 %%WWWDIR%%/libraries/page.php
 %%WWWDIR%%/libraries/pagination.php
@@ -110,7 +111,6 @@
 %%WWWDIR%%/public/css/banshee/alphabetize.css
 %%WWWDIR%%/public/css/banshee/bootstrap-theme.css
 %%WWWDIR%%/public/css/banshee/bootstrap.css
-%%WWWDIR%%/public/css/banshee/browser.css
 %%WWWDIR%%/public/css/banshee/error.css
 %%WWWDIR%%/public/css/banshee/filter.css
 %%WWWDIR%%/public/css/banshee/graph.css
@@ -148,11 +148,6 @@
 %%WWWDIR%%/public/fonts/glyphicons-halflings-regular.ttf
 %%WWWDIR%%/public/fonts/glyphicons-halflings-regular.woff
 %%WWWDIR%%/public/fonts/glyphicons-halflings-regular.woff2
-%%WWWDIR%%/public/images/browsers/chrome.gif
-%%WWWDIR%%/public/images/browsers/firefox.gif
-%%WWWDIR%%/public/images/browsers/ie.gif
-%%WWWDIR%%/public/images/browsers/opera.gif
-%%WWWDIR%%/public/images/browsers/safari.gif
 %%WWWDIR%%/public/images/error.png
 %%WWWDIR%%/public/images/hiawatha_logo.png
 %%WWWDIR%%/public/images/icons/access.png
@@ -203,9 +198,8 @@
 %%WWWDIR%%/public/robots.txt
 @sample %%WWWDIR%%/settings/private_pages.conf.sample
 @sample %%WWWDIR%%/settings/public_pages.conf.sample
-@sample %%WWWDIR%%/settings/website.conf.sample
+@sample %%WWWDIR%%/settings/banshee.conf.sample
 %%WWWDIR%%/views/banshee/alphabetize.xslt
-%%WWWDIR%%/views/banshee/browser.xslt
 %%WWWDIR%%/views/banshee/error.xslt
 %%WWWDIR%%/views/banshee/filter.xslt
 %%WWWDIR%%/views/banshee/functions.xslt
