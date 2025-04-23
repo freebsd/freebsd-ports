@@ -110,6 +110,14 @@ extra_commands="reload"
 
 _tomcat_java_version=`${_tomcat_java_home}/bin/java -version 2>&1 | /usr/bin/awk -F '"' '/version/ {print $2}'`
 
+export JAVA_TOOL_OPTIONS="\
+	--add-opens=java.base/java.lang=ALL-UNNAMED \
+	--add-opens=java.base/java.lang.reflect=ALL-UNNAMED \
+	--add-opens=java.base/java.io=ALL-UNNAMED \
+	--add-opens=java.base/java.util=ALL-UNNAMED \
+	--add-opens=java.base/java.util.concurrent=ALL-UNNAMED \
+	--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED"
+
 command="%%LOCALBASE%%/bin/jsvc"
 command_args="-java-home '${_tomcat_java_home}' \
 	-server \
