@@ -1,5 +1,5 @@
 PORTNAME=	cmap
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,8 +32,11 @@ USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		DISPLAY=${DISPLAY} \
+		XAUTHORITY=${XAUTHORITY}
 
-# tests as of 0.5.0: 3 failed, 214 passed, 3 skipped in 160.75s (0:02:40) - because the $DISPLAY variable is missing
+# tests as of 0.5.0: 217 passed, 3 skipped in 109.38s (0:01:49)
 
 .include <bsd.port.mk>
