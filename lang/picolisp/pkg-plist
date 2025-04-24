@@ -98,7 +98,6 @@ lib/picolisp/lib/svg.l
 lib/picolisp/lib/sysdefs
 lib/picolisp/lib/term.l
 lib/picolisp/lib/test.l
-lib/picolisp/lib/tinymce.l
 lib/picolisp/lib/too.l
 lib/picolisp/lib/user.l
 lib/picolisp/lib/vip.l
