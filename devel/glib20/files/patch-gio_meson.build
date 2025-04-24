@@ -1,0 +1,11 @@
+--- gio/meson.build.orig	2025-04-03 14:38:51 UTC
++++ gio/meson.build
+@@ -971,7 +971,7 @@ else
+   # This fallback is necessary on *BSD. elfutils isn't the only libelf
+   # implementation, and *BSD usually includes their own libelf as a system
+   # library which doesn't have a corresponding .pc file.
+-  libelf = cc.find_library('elf', required : get_option ('libelf'))
++  libelf = declare_dependency(link_args: '/lib/libelf.so.2')
+   have_libelf = libelf.found()
+   have_libelf = have_libelf and cc.has_function('elf_begin', dependencies : libelf)
+   have_libelf = have_libelf and cc.has_function('elf_getshdrstrndx', dependencies : libelf)
