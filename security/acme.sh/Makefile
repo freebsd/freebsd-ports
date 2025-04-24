@@ -1,5 +1,5 @@
 PORTNAME=	acme.sh
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	security
 
 MAINTAINER=	dvl@FreeBSD.org
