@@ -2922,6 +2922,7 @@
 %%DATADIR%%/ntsc/ntsc-320px-svideo-scanline.slangp
 %%DATADIR%%/ntsc/ntsc-320px-svideo.slangp
 %%DATADIR%%/ntsc/ntsc-adaptive-4x.slangp
+%%DATADIR%%/ntsc/ntsc-adaptive-old-4x.slangp
 %%DATADIR%%/ntsc/ntsc-adaptive-old.slangp
 %%DATADIR%%/ntsc/ntsc-adaptive-tate.slangp
 %%DATADIR%%/ntsc/ntsc-adaptive.slangp
@@ -3046,6 +3047,7 @@
 %%DATADIR%%/pixel-art-scaling/shaders/sharp-bilinear.slang
 %%DATADIR%%/pixel-art-scaling/shaders/sharp-shimmerless.slang
 %%DATADIR%%/pixel-art-scaling/shaders/smootheststep.slang
+%%DATADIR%%/pixel-art-scaling/shaders/soft-pixel-art.slang
 %%DATADIR%%/pixel-art-scaling/shaders/uniform-nearest.slang
 %%DATADIR%%/pixel-art-scaling/sharp-bilinear-2x-prescale.slangp
 %%DATADIR%%/pixel-art-scaling/sharp-bilinear-scanlines.slangp
@@ -3054,6 +3056,7 @@
 %%DATADIR%%/pixel-art-scaling/sharp-shimmerless.slangp
 %%DATADIR%%/pixel-art-scaling/smootheststep.slangp
 %%DATADIR%%/pixel-art-scaling/smuberstep.slangp
+%%DATADIR%%/pixel-art-scaling/soft-pixel-art.slangp
 %%DATADIR%%/pixel-art-scaling/uniform-nearest.slangp
 %%DATADIR%%/presets/blurs/dual-bloom-filter-aa-lv2-fsr-gamma-ramp-glass.slangp
 %%DATADIR%%/presets/blurs/dual-bloom-filter-aa-lv2-fsr-gamma-ramp.slangp
@@ -3561,8 +3564,10 @@
 %%DATADIR%%/sharpen/shaders/super-res-ex.slang
 %%DATADIR%%/sharpen/super-xbr-super-res.slangp
 %%DATADIR%%/spec/SHADER_SPEC.md
+%%DATADIR%%/stereoscopic-3d/anaglyph-to-interlaced.slangp
 %%DATADIR%%/stereoscopic-3d/anaglyph-to-side-by-side.slangp
 %%DATADIR%%/stereoscopic-3d/fubax_vr.slangp
+%%DATADIR%%/stereoscopic-3d/shaders/anaglyph-to-interlaced.slang
 %%DATADIR%%/stereoscopic-3d/shaders/anaglyph-to-side-by-side.slang
 %%DATADIR%%/stereoscopic-3d/shaders/fubax_vr/Chromatic.slang
 %%DATADIR%%/stereoscopic-3d/shaders/fubax_vr/FilmicSharpen.slang
