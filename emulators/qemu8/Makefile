@@ -1,5 +1,6 @@
 PORTNAME=	qemu
 DISTVERSION=	8.2.10
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -9,6 +10,9 @@ COMMENT=	QEMU CPU Emulator ${${FLAVOR}_COMMENT} - 8.X.X
 WWW=		https://www.qemu.org/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	No value in maintaining older QEMU versions on FreeBSD
+EXPIRATION_DATE=	2025-06-30
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 # We need to check if it build with other ARCHS
