@@ -4325,3 +4325,4 @@ graphics/linux-rl9-tiff|graphics/linux-rl9-imageformats-libs|2025-04-21|Merged i
 graphics/linux-rl9-openjpeg|graphics/linux-rl9-imageformats-libs|2025-04-21|Merged into imageformats-libs
 graphics/linux-rl9-webp|graphics/linux-rl9-imageformats-libs|2025-04-21|Merged into imageformats-libs
 textproc/py-grapheme||2025-04-21|Has expired: Upstream is inactive for 4 years
+devel/p5-threads|lang/perl5.36|2025-04-24|part of Perl core since 5.7.3, the port was from 5.27.8
