@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.4.5
+DISTVERSION=	2025.4.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,8 +37,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		allocator-api2-0.2.21 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		ansi-str-0.8.0 \
-		ansitok-0.2.0 \
+		ansi-str-0.9.0 \
+		ansitok-0.3.0 \
 		anstream-0.6.18 \
 		anstyle-1.0.10 \
 		anstyle-parse-0.2.6 \
@@ -47,10 +47,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anyhow-1.0.98 \
 		arbitrary-1.4.1 \
 		arc-swap-1.7.1 \
-		arrayvec-0.5.2 \
 		arrayvec-0.7.6 \
 		assert-json-diff-2.0.2 \
-		async-compression-0.4.22 \
+		async-compression-0.4.23 \
 		async-trait-0.1.88 \
 		atomic-waker-1.1.2 \
 		autocfg-1.4.0 \
@@ -88,8 +87,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		chrono-tz-build-0.3.0 \
 		ci_info-0.14.14 \
 		cipher-0.4.4 \
-		clap-4.5.36 \
-		clap_builder-4.5.36 \
+		clap-4.5.37 \
+		clap_builder-4.5.37 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		clap_mangen-0.2.26 \
@@ -124,7 +123,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		crossterm-0.28.1 \
 		crossterm_winapi-0.9.1 \
 		crypto-common-0.1.6 \
-		ctor-0.4.1 \
+		ctor-0.4.2 \
 		ctor-proc-macro-0.0.5 \
 		ctr-0.9.2 \
 		curve25519-dalek-4.1.3 \
@@ -136,10 +135,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		dashmap-6.1.0 \
 		deflate64-0.1.9 \
 		demand-1.6.5 \
-		der-0.7.9 \
+		der-0.7.10 \
 		deranged-0.4.0 \
 		derive_arbitrary-1.4.1 \
-		derive_more-0.99.19 \
+		derive_more-0.99.20 \
 		deunicode-1.6.1 \
 		diff-0.1.13 \
 		digest-0.10.7 \
@@ -148,7 +147,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		displaydoc-0.2.5 \
 		document-features-0.2.11 \
 		dotenvy-0.15.7 \
-		dtor-0.0.5 \
+		dtor-0.0.6 \
 		dtor-proc-macro-0.0.5 \
 		duct-0.13.7 \
 		dunce-1.0.5 \
@@ -199,7 +198,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-util-0.3.31 \
 		fuzzy-matcher-0.3.7 \
 		generic-array-0.14.7 \
-		getrandom-0.2.15 \
+		getrandom-0.2.16 \
 		getrandom-0.3.2 \
 		ghash-0.5.1 \
 		gimli-0.28.1 \
@@ -264,7 +263,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
-		heck-0.4.1 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		hex-0.4.3 \
@@ -323,8 +321,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
-		jiff-0.2.8 \
-		jiff-static-0.2.8 \
+		jiff-0.2.10 \
+		jiff-static-0.2.10 \
 		jiff-tzdb-0.1.4 \
 		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.33 \
@@ -336,7 +334,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lazy-regex-proc_macros-3.4.1 \
 		lazy_static-1.5.0 \
 		libc-0.2.172 \
-		libm-0.2.11 \
+		libm-0.2.13 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.15 \
@@ -344,7 +342,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		litemap-0.7.5 \
 		litrs-0.4.1 \
 		lock_api-0.4.12 \
-		lockfree-object-pool-0.1.6 \
 		log-0.4.27 \
 		logos-0.12.1 \
 		logos-derive-0.12.1 \
@@ -399,7 +396,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		os_pipe-1.2.1 \
 		overload-0.1.1 \
 		owo-colors-3.5.0 \
-		papergrid-0.13.0 \
+		papergrid-0.14.0 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		parse-zoneinfo-0.3.1 \
@@ -439,7 +436,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		prodash-29.0.2 \
 		quick-xml-0.37.4 \
 		quinn-0.11.7 \
-		quinn-proto-0.11.10 \
+		quinn-proto-0.11.11 \
 		quinn-udp-0.5.11 \
 		quote-1.0.40 \
 		r-efi-5.2.0 \
@@ -483,7 +480,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ryu-1.0.20 \
 		salsa20-0.10.2 \
 		same-file-1.0.6 \
-		scc-2.3.3 \
+		scc-2.3.4 \
 		schannel-0.1.27 \
 		scopeguard-1.2.0 \
 		scrypt-0.11.0 \
@@ -520,7 +517,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
 		signal-hook-0.3.17 \
-		signal-hook-registry-1.4.2 \
+		signal-hook-registry-1.4.5 \
 		signature-2.2.0 \
 		simd-adler32-0.3.7 \
 		similar-2.7.0 \
@@ -546,8 +543,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		sys-info-0.9.1 \
 		system-configuration-0.6.1 \
 		system-configuration-sys-0.6.0 \
-		tabled-0.17.0 \
-		tabled_derive-0.9.0 \
+		tabled-0.18.0 \
+		tabled_derive-0.10.0 \
 		taplo-0.13.2 \
 		tar-0.4.44 \
 		tempfile-3.19.1 \
@@ -572,7 +569,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-macros-2.5.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.2 \
-		tokio-util-0.7.14 \
+		tokio-util-0.7.15 \
 		toml-0.5.11 \
 		toml-0.8.20 \
 		toml_datetime-0.6.8 \
@@ -622,8 +619,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		versions-6.3.2 \
 		versions-7.0.0 \
 		vfox-1.0.1 \
-		vte-0.10.1 \
-		vte_generate_state_changes-0.1.2 \
+		vte-0.14.1 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
@@ -710,7 +706,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zerovec-derive-0.10.3 \
 		zip-2.5.0 \
 		zipsign-api-0.1.3 \
-		zopfli-0.8.1 \
+		zopfli-0.8.2 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.15+zstd.1.5.7
