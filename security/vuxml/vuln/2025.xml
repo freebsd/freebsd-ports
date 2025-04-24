@@ -1,3 +1,40 @@
+  <vuln vid="11b71871-20ba-11f0-9471-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.11.0</ge><lt>17.11.1</lt></range>
+	<range><ge>17.10.0</ge><lt>17.10.5</lt></range>
+	<range><ge>16.6.0</ge><lt>17.9.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/04/23/patch-release-gitlab-17-11-1-released/">
+	  <p>Cross Site Scripting (XSS) in Maven Dependency Proxy through CSP directives</p>
+	  <p>Cross Site Scripting (XSS) in Maven dependency proxy through cache headers</p>
+	  <p>Network Error Logging (NEL) Header Injection in Maven Dependency Proxy Allows Browser Activity Monitoring</p>
+	  <p>Denial of service (DOS) via issue preview</p>
+	  <p>Unauthorized access to branch names when Repository assets are disabled in the project</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1763</cvename>
+      <cvename>CVE-2025-2443</cvename>
+      <cvename>CVE-2025-1908</cvename>
+      <cvename>CVE-2025-0639</cvename>
+      <cvename>CVE-2024-12244</cvename>
+      <url>https://about.gitlab.com/releases/2025/04/23/patch-release-gitlab-17-11-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-04-23</discovery>
+      <entry>2025-04-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="194f79c3-1ffe-11f0-8cb5-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
