@@ -1,4 +1,4 @@
-TIMESTAMP = 1744916800
+TIMESTAMP = 1745396744
 SHA256 (cabal/HTTP-4000.4.1/HTTP-4000.4.1.tar.gz) = df31d8efec775124dab856d7177ddcba31be9f9e0836ebdab03d94392f2dd453
 SIZE (cabal/HTTP-4000.4.1/HTTP-4000.4.1.tar.gz) = 74330
 SHA256 (cabal/HTTP-4000.4.1/revision/5.cabal) = 75ada03bd2d2b747319e38877a55bf8be529db4520a07d4e5ffbd24c5e850dcb
@@ -609,5 +609,5 @@ SHA256 (cabal/zlib-0.7.1.0/zlib-0.7.1.0.tar.gz) = 6edd38b6b81df8d274952aa85affa6
 SIZE (cabal/zlib-0.7.1.0/zlib-0.7.1.0.tar.gz) = 29318
 SHA256 (cabal/zlib-0.7.1.0/revision/2.cabal) = 85e64a75c0b490506a7edaa2d54950c668e66b65758bb08bb14cd31faf53a206
 SIZE (cabal/zlib-0.7.1.0/revision/2.cabal) = 5357
-SHA256 (cabal/PostgREST-postgrest-v12.2.9_GH0.tar.gz) = a9d8b9743ca1fa449c9afa67a2cf89a9a9a2d22dcdf490de38ceaec0f32217f3
-SIZE (cabal/PostgREST-postgrest-v12.2.9_GH0.tar.gz) = 1818373
+SHA256 (cabal/PostgREST-postgrest-v12.2.11_GH0.tar.gz) = 7e99b36e293b2a695dceff477a58bc5ff3aa4ece3e369fb4017bd78d2caa7f90
+SIZE (cabal/PostgREST-postgrest-v12.2.11_GH0.tar.gz) = 1818927
