@@ -1,13 +1,27 @@
---- Makefile.orig	2017-11-03 18:27:27 UTC
+Clang does not support -fthread-jumps as of now.
+This fixes "cc: error: unknown argument: '-fthread-jumps'"
+
+Replace hardcoded "gcc" with $CC
+
+Include system $CFLAGS to the local CFLAGS variable
+
+--- Makefile.orig	2025-04-05 22:56:41 UTC
 +++ Makefile
-@@ -57,8 +57,8 @@ endif
+@@ -50,14 +50,13 @@ ifeq ($(origin CC),default)
+ ######################################################################
+ 
+ ifeq ($(origin CC),default)
+-CC = gcc
++CC = ${CC}
+ endif
+ 
  PKG_CONFIG ?= pkg-config
- #CFLAGS    = -O0 -g -Wall
- CFLAGS    = -O2 -Wall \
+ INSTALL    ?= install
+-CFLAGS    = -O2 -Wall \
 -	    -fcaller-saves -ffast-math -fno-strength-reduce \
--	    -fthread-jumps #-march=pentium #-DSTAT_MACROS_BROKEN
-+	    -ffast-math -fno-strength-reduce \
-+	    #-march=pentium #-DSTAT_MACROS_BROKEN
- #CFLAGS    = -O2 -Wall -fomit-frame-pointer -finline-functions \
- #	    -fcaller-saves -ffast-math -fno-strength-reduce \
- #	    -fthread-jumps #-march=pentium #-DSTAT_MACROS_BROKEN
+-	    -fthread-jumps
++CFLAGS    := ${CFLAGS} -Wall \
++	    -fcaller-saves -ffast-math -fno-strength-reduce
+ 
+ GDK_VERS := 3
+ 

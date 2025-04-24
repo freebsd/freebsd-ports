@@ -1,9 +1,7 @@
 PORTNAME=	qiv
-PORTVERSION=	2.3.3
-PORTREVISION=	7
+PORTVERSION=	3.0.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://spiegl.de/qiv/download/ \
-		http://www.predatorlabs.net/dl/
+MASTER_SITES=	http://spiegl.de/qiv/download/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Small, fast GDK/Imlib2 image viewer
@@ -17,17 +15,10 @@ LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		libtiff.so:graphics/tiff
 
 USES=		gmake gnome jpeg pkgconfig tar:tgz xorg
-USE_GNOME=	cairo gdkpixbuf gtk20
+USE_GNOME=	cairo gdkpixbuf gtk30
 
 PLIST_FILES=	bin/qiv share/man/man1/qiv.1.gz
 USE_XORG+=	x11 xext
-
-do-configure:
-	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|; \
-		s|gcc|${CC}|; \
-		s|-O2|${CFLAGS}|; \
-		s|libs-gdk`|libs-gdk` ${LDFLAGS}|;' \
-		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qiv ${STAGEDIR}${PREFIX}/bin/
