@@ -5,12 +5,11 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library to import various 3D model formats in a uniform manner
-WWW=		https://www.assimp.org/
+WWW=		https://www.assimp.org \
+		https://github.com/assimp/assimp
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_armv6=	field within 'Assimp::MDL::Vertex_MDL7' is less aligned than 'Assimp::MDL::Vertex_MDL7::..., see https://github.com/assimp/assimp/issues/4640
 
 USES=		cmake:testing compiler:c++17-lang cpe localbase:ldflags pkgconfig # minizip is disabled for https://github.com/assimp/assimp/issues/4374
 

@@ -1,3 +1,5 @@
+- https://github.com/assimp/assimp/issues/4640
+
 --- code/AssetLib/MDL/MDLFileData.h.orig	2023-10-16 03:31:18 UTC
 +++ code/AssetLib/MDL/MDLFileData.h
 @@ -603,7 +603,7 @@ struct Vertex_MDL7
