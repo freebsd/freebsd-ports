@@ -1,5 +1,5 @@
 PORTNAME=	sakura
-DISTVERSION=	3.8.8
+DISTVERSION=	3.8.9
 CATEGORIES=	x11 gnome
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${DISTVERSION}/+download/
 
