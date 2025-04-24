@@ -116,4 +116,4 @@ lib/cmake/sedml-targets.cmake
 lib/libsedml-static.a
 lib/libsedml.so
 lib/libsedml.so.2
-lib/libsedml.so.2.0.32
+lib/libsedml.so.2.0.33
