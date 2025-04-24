@@ -1,5 +1,5 @@
 PORTNAME=	chiapos
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.7
 CATEGORIES=	finance
 MASTER_SITES=	PYPI
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -20,6 +20,8 @@ LICENSE_DISTFILES_MIT=		${DISTNAME}${EXTRACT_SUFX} ${DISTFILE_c} \
 
 NOT_FOR_ARCHS=	i386 powerpc
 
+BUILD_DEPENDS=	catch>0:devel/catch
+
 USES=		cmake:noninja
 USE_GITHUB=	nodefault
 GH_TUPLE=	jarro2783:cxxopts:302302b30839505703d37fb82f536c53cf9172fa:c/src-ext/cxxopts \
@@ -31,8 +33,6 @@ PLIST_FILES=	bin/ProofOfSpace \
 
 post-extract:
 # This example is experimental, currently broken (upstream) and unnecessary.
-# The placeholder Makefile is for when/if they release a future fixed version.
-	@${CP} ${FILESDIR}/Hellman-Makefile ${WRKSRC}/hellman_example/Makefile
 # Remove extraneous unused files to prevent confusion
 	@${RM} ${WRKSRC}/lib/FiniteStateEntropy/fetch-content-CMakeLists.txt
 	@${RM} ${WRKSRC}/pyproject.toml

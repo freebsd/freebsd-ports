@@ -1,17 +1,21 @@
---- CMakeLists.txt.orig	2021-05-28 02:40:44 UTC
+--- CMakeLists.txt.orig	2021-12-03 19:59:40 UTC
 +++ CMakeLists.txt
-@@ -14,29 +14,7 @@ endif()
+@@ -14,33 +14,7 @@ endif()
  project(chiapos C CXX ASM)
  
  # CMake 3.14+
 -include(FetchContent)
  
+-if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+-include(${CMAKE_INSTALL_PREFIX}/share/cmake/pybind11/pybind11Config.cmake)
+-else()
 -FetchContent_Declare(
 -  pybind11-src
 -  GIT_REPOSITORY https://github.com/pybind/pybind11.git
--  GIT_TAG        v2.6.2
+-  GIT_TAG        v2.7.1
 -)
 -FetchContent_MakeAvailable(pybind11-src)
+-endif()
 -
 -FetchContent_Declare(
 -  cxxopts
@@ -30,9 +34,11 @@
  set(FSE_LIB ${CMAKE_CURRENT_SOURCE_DIR}/lib/FiniteStateEntropy/lib)
  set(FSE_FILES
      ${FSE_LIB}/fse_compress.c
-@@ -48,8 +26,8 @@ set(FSE_FILES
+@@ -51,9 +25,10 @@ set(FSE_FILES
+ 
  include_directories(
    ${INCLUDE_DIRECTORIES}
++  ${CMAKE_INSTALL_PREFIX}/include
    ${CMAKE_CURRENT_SOURCE_DIR}/../lib/include
 -  ${cxxopts_SOURCE_DIR}/include
 -  ${gulrak_SOURCE_DIR}/include/ghc
@@ -41,7 +47,7 @@
    ${CMAKE_CURRENT_SOURCE_DIR}/../lib/FiniteStateEntropy/lib
    ${CMAKE_CURRENT_SOURCE_DIR}/src
    ${CMAKE_CURRENT_SOURCE_DIR}/test
-@@ -130,8 +108,6 @@ set(BLAKE3_SRC
+@@ -134,8 +109,6 @@ set(BLAKE3_SRC
  )
  ENDIF()
  
@@ -50,8 +56,25 @@
  add_executable(ProofOfSpace
      src/cli.cpp
      src/chacha8.c
-@@ -145,33 +121,30 @@ add_executable(RunTests
-     ${BLAKE3_SRC}
+@@ -148,13 +121,6 @@ IF (BUILD_PROOF_OF_SPACE_STATICALLY)
+   target_link_libraries(ProofOfSpace -static -Wl,--whole-archive -lrt -lpthread -Wl,--no-whole-archive)
+ ENDIF()
+ 
+-FetchContent_Declare(
+-  Catch2
+-  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+-  GIT_TAG        v2.13.7
+-)
+-FetchContent_MakeAvailable(Catch2)
+-
+ add_executable(RunTests
+     tests/test-main.cpp
+     tests/test.cpp
+@@ -166,18 +132,20 @@ target_link_libraries(RunTests
+   PRIVATE
+     fse
+     Threads::Threads
+-    Catch2::Catch2
  )
  
 +install(TARGETS ProofOfSpace DESTINATION bin)
@@ -66,24 +89,17 @@
 -target_compile_features(chiapos PUBLIC cxx_std_17)
  target_compile_features(RunTests PUBLIC cxx_std_17)
  
++
  if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
--  target_link_libraries(chiapos PRIVATE fse Threads::Threads)
+   target_link_libraries(chiapos PRIVATE fse Threads::Threads)
    target_link_libraries(ProofOfSpace fse Threads::Threads)
-   target_link_libraries(RunTests fse Threads::Threads)
- elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
--  target_link_libraries(chiapos PRIVATE fse Threads::Threads)
+@@ -185,8 +153,8 @@ elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+   target_link_libraries(chiapos PRIVATE fse Threads::Threads)
    target_link_libraries(ProofOfSpace fse Threads::Threads)
-   target_link_libraries(RunTests fse Threads::Threads)
  elseif (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
 -  target_link_libraries(chiapos PRIVATE fse Threads::Threads)
    target_link_libraries(ProofOfSpace fse Threads::Threads)
-   target_link_libraries(RunTests fse Threads::Threads)
++  include(${CMAKE_INSTALL_PREFIX}/lib/cmake/Catch2/Catch.cmake)
  elseif (MSVC)
--  target_link_libraries(chiapos PRIVATE fse Threads::Threads uint128)
+   target_link_libraries(chiapos PRIVATE fse Threads::Threads uint128)
    target_link_libraries(ProofOfSpace fse Threads::Threads uint128)
-   target_link_libraries(RunTests fse Threads::Threads uint128)
- else()
--  target_link_libraries(chiapos PRIVATE fse stdc++fs Threads::Threads)
-   target_link_libraries(ProofOfSpace fse stdc++fs Threads::Threads)
-   target_link_libraries(RunTests fse stdc++fs Threads::Threads)
- endif()
