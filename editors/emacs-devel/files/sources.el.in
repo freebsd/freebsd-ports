@@ -1,3 +1,5 @@
+;;; site-start.el --- Site-wide Initialization -*- lexical-binding: t -*-
+
 ;;; Path to Emacs C Sources.
 (when (string-match (regexp-quote "%%EMACS_VER%%") emacs-version)
   (setq find-function-C-source-directory
