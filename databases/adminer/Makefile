@@ -1,7 +1,7 @@
 PORTNAME=	adminer
-DISTVERSION=	5.2.0
+DISTVERSION=	5.2.1
 CATEGORIES=	databases www
-MASTER_SITES=	https://github.com/vrana/adminer/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/vrana/adminer/releases/download/v${DISTVERSION}/
 EXTRACT_SUFX=	.php
 EXTRACT_ONLY=
 
