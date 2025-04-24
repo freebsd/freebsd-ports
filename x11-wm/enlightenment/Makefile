@@ -11,8 +11,7 @@ WWW=		https://www.enlightenment.org/
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libefl.so:devel/efl \
-		libpulse.so:audio/pulseaudio
+LIB_DEPENDS=	libefl.so:devel/efl
 
 USES=		compiler:c11 cpe desktop-file-utils gettext-tools gnome \
 		localbase:ldflags meson ninja iconv libtool pathfix pkgconfig \
@@ -25,17 +24,24 @@ MESON_ARGS=	-Dsystemd=false -Ddevice-udev=false \
 		-Dmount-udisks=false -Dmount-eeze=false -Dbluez5=false \
 		-Delput=false -Dgesture-recognition=false
 
-OPTIONS_DEFINE=		NLS EXIF
-OPTIONS_DEFAULT=	NLS EXIF
+OPTIONS_DEFINE=		NLS EXIF MIXER MOUNT
+OPTIONS_DEFAULT=	NLS EXIF MIXER
 OPTIONS_SUB=		yes
 
 EXIF_DESC=		Exif metadata display support
+MIXER_DESC=		Build Mixer module (needs Pulseaudio and EFL support of Pulseaudio)
+MOUNT_DESC=		Volumes mount support in EFM (needs Bsdisks, experimental)
 
 NLS_USES=		gettext-runtime
 NLS_MESON_TRUE=		nls
 
 EXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
 EXIF_MESON_TRUE=	libexif
+
+MIXER_MESON_TRUE=	mixer
+MIXER_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+
+MOUNT_RUN_DEPENDS=	bsdisks:sysutils/bsdisks
 
 # MESON normalizes ${ARCH} so we cannot use it 'AS IS' without conversion
 CURRENT_ARCH=	${ARCH}

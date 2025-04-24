@@ -1,4 +1,4 @@
-bin/emixer
+%%MIXER%%bin/emixer
 bin/enlightenment
 bin/enlightenment_askpass
 bin/enlightenment_filemanager
@@ -273,10 +273,10 @@ lib/enlightenment/modules/ibox/e-module-ibox.edj
 lib/enlightenment/modules/ibox/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/ibox/module.desktop
 lib/enlightenment/modules/lokker/%%ENLIGHTENMENT_ARCH%%/module.so
-lib/enlightenment/modules/mixer/e-module-mixer.edj
-lib/enlightenment/modules/mixer/%%ENLIGHTENMENT_ARCH%%/module.so
-lib/enlightenment/modules/mixer/module.desktop
-lib/enlightenment/modules/mixer/sink-icons.txt
+%%MIXER%%lib/enlightenment/modules/mixer/e-module-mixer.edj
+%%MIXER%%lib/enlightenment/modules/mixer/%%ENLIGHTENMENT_ARCH%%/module.so
+%%MIXER%%lib/enlightenment/modules/mixer/module.desktop
+%%MIXER%%lib/enlightenment/modules/mixer/sink-icons.txt
 lib/enlightenment/modules/msgbus/e-module-msgbus.edj
 lib/enlightenment/modules/msgbus/%%ENLIGHTENMENT_ARCH%%/module.so
 lib/enlightenment/modules/msgbus/module.desktop
@@ -391,7 +391,7 @@ lib/enlightenment/utils/enlightenment_sys
 lib/enlightenment/utils/enlightenment_system
 lib/enlightenment/utils/enlightenment_thumb
 lib/enlightenment/utils/enlightenment_wallpaper_gen
-share/applications/emixer.desktop
+%%MIXER%%share/applications/emixer.desktop
 share/applications/enlightenment_askpass.desktop
 share/applications/enlightenment_filemanager.desktop
 share/applications/enlightenment_fprint.desktop
@@ -582,7 +582,7 @@ share/applications/enlightenment_paledit.desktop
 %%DATADIR%%/doc/illume2.html
 %%DATADIR%%/doc/illume2.png
 %%DATADIR%%/themes/enlightenment_fprint.edj
-share/icons/hicolor/128x128/apps/emixer.png
+%%MIXER%%share/icons/hicolor/128x128/apps/emixer.png
 share/icons/hicolor/128x128/apps/enlightenment_fprint.png
 share/icons/hicolor/128x128/apps/enlightenment_paledit.png
 share/icons/hicolor/512x512/apps/enlightenment.png
