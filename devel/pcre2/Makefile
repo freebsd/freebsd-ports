@@ -1,5 +1,6 @@
 PORTNAME=	pcre2
 DISTVERSION=	10.45
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/PCRE2Project/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
