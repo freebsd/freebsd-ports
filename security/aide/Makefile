@@ -1,6 +1,6 @@
 PORTNAME=	aide
 PORTVERSION=	0.18.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/aide/aide/releases/download/v${PORTVERSION}/
 
@@ -9,8 +9,7 @@ COMMENT=	File and directory integrity checker
 WWW=		https://aide.github.io/
 
 LIB_DEPENDS=	libmhash.so:security/mhash \
-		libpcre2-8.so:devel/pcre2 \
-		libe2p.so:filesystems/e2fsprogs-core
+		libpcre2-8.so:devel/pcre2
 
 USES=		bison gmake localbase pkgconfig:build
 
@@ -35,6 +34,7 @@ FLAVOR?=	${FLAVORS:[1]}
 .if ${FLAVOR:U} != without_acl
 CONFIGURE_ARGS+=--with-posix-acl \
 		--with-e2fsattrs
+LIB_DEPENDS+=	libe2p.so:filesystems/e2fsprogs-core
 .endif
 
 default_PKGNAMESUFFIX=
