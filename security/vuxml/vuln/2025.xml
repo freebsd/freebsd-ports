@@ -1,3 +1,53 @@
+  <vuln vid="af8d043f-20df-11f0-b9c5-000c295725e4">
+    <topic>redis,valkey -- DoS Vulnerability due to unlimited growth of output buffers abused by unauthenticated client</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><lt>7.4.3</lt></range>
+      </package>
+      <package>
+	<name>redis72</name>
+	<range><lt>7.2,8</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+	<range><lt>6.2.18</lt></range>
+      </package>
+      <package>
+	<name>valkey</name>
+	<range><lt>8.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Axel Mierczuk reports:</p>
+	<blockquote cite="https://github.com/redis/redis/security/advisories/GHSA-r67f-p999-2gff">
+	  <p>
+	    By default, the Redis configuration does not limit the
+	    output buffer of normal clients (see
+	    client-output-buffer-limit). Therefore, the output buffer
+	    can grow unlimitedly over time. As a result, the service
+	    is exhausted and the memory is unavailable.
+	  </p>
+	  <p>
+	    When password authentication is enabled on the Redis
+	    server, but no password is provided, the client can still
+	    cause the output buffer to grow from "NOAUTH" responses
+	    until the system will run out of memory.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-21605</cvename>
+      <url>https://github.com/redis/redis/security/advisories/GHSA-r67f-p999-2gff</url>
+    </references>
+    <dates>
+      <discovery>2025-04-23</discovery>
+      <entry>2025-04-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="11b71871-20ba-11f0-9471-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
