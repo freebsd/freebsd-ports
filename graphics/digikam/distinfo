@@ -1,4 +1,4 @@
-TIMESTAMP = 1742089499
+TIMESTAMP = 1745529278
 SHA256 (KDE/digikam/digiKam-8.6.0.tar.xz) = 000971e117201976cba413b6d7201720a8893799d6064bcf158d4388e829c233
 SIZE (KDE/digikam/digiKam-8.6.0.tar.xz) = 58958608
 SHA256 (KDE/digikam/weights_inceptionv3_299.pb) = 8923e3daff71c07533b9023ef32c69d8c058d1e0931d76d8b81241a201138538
@@ -9,8 +9,6 @@ SHA256 (KDE/digikam/coco.names) = 634a1132eb33f8091d60f2c346ababe8b905ae08387037
 SIZE (KDE/digikam/coco.names) = 625
 SHA256 (KDE/digikam/efficientnetb7.onnx) = 5133666ad23c6bd45c8d817739e66a4743f84080ba9e47301c323ed0986a52a1
 SIZE (KDE/digikam/efficientnetb7.onnx) = 265323876
-SHA256 (KDE/digikam/resnet152-v2-7.onnx) = 40fb3f6dd313ba786a2c8077a0ef7d7b4afeda5d037365400d3a7fbc2b1bee64
-SIZE (KDE/digikam/resnet152-v2-7.onnx) = 241503848
 SHA256 (KDE/digikam/yolo11n.onnx) = 82f23e3cdc299fb44317e8a4b2c1d4d67efd0acd5eb3abcb5bf87a307bca5c43
 SIZE (KDE/digikam/yolo11n.onnx) = 10720316
 SHA256 (KDE/digikam/yolo11x.onnx) = dd81d4d06a4c92a6e1066d024219efe5c4c1982566ddf6ce5c280ebd847f117a

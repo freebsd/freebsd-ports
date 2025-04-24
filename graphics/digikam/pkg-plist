@@ -400,7 +400,6 @@ share/applications/org.kde.showfoto.desktop
 %%AUTOTAGS%%%%DATADIR%%/facesengine/efficientnetb7.onnx
 %%FACEDETECT%%%%DATADIR%%/facesengine/face_detection_yunet_2023mar.onnx
 %%FACEDETECT%%%%DATADIR%%/facesengine/face_recognition_sface_2021dec.onnx
-%%AUTOTAGS%%%%DATADIR%%/facesengine/resnet152-v2-7.onnx
 %%AESTHETIC%%%%DATADIR%%/facesengine/weights_inceptionv3_299.pb
 %%AUTOTAGS%%%%DATADIR%%/facesengine/yolo11n.onnx
 %%AUTOTAGS%%%%DATADIR%%/facesengine/yolo11x.onnx

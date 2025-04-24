@@ -1,5 +1,6 @@
 PORTNAME=	digikam
 DISTVERSION=	8.6.0
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION} \
 		https://files.kde.org/${PORTNAME}/%SUBDIR%/:aesthetic,autotags,face,yunet \
@@ -81,11 +82,10 @@ OPTIONS_SUB=		yes
 AESTHETIC_DESC=		Install aesthetic detection data (~84 MiB)
 AESTHETIC_DISTFILES=	weights_inceptionv3_299.pb:aesthetic
 
-AUTOTAGS_DESC=		Install auto tags assignment data (~711 MiB)
+AUTOTAGS_DESC=		Install auto tags assignment data (~481 MiB)
 AUTOTAGS_DISTFILES=	classification_classes_ILSVRC2012.txt:autotags \
 			coco.names:autotags \
 			efficientnetb7.onnx:autotags \
-			resnet152-v2-7.onnx:autotags \
 			yolo11n.onnx:autotags \
 			yolo11x.onnx:autotags
 
