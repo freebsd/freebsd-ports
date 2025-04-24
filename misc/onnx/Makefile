@@ -6,7 +6,7 @@ CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Neural Network eXchange
-WWW=		https://onnx.ai/ \
+WWW=		https://onnx.ai \
 		https://github.com/onnx/onnx
 
 LICENSE=	MIT
