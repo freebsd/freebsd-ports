@@ -1,6 +1,7 @@
 PORTNAME=	realesrgan-ncnn-vulkan
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 # https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan/issues/29
 MASTER_SITES=	https://dev.gentoo.org/~slashbeast/distfiles/${PORTNAME}/:models
