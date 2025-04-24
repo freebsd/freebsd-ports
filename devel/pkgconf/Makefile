@@ -1,5 +1,6 @@
 PORTNAME=	pkgconf
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://distfiles.ariadne.space/${PORTNAME}/
