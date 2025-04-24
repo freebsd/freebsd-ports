@@ -1,4 +1,0 @@
-Utilization of this driver for GLX acceleration requires special configuration
-of an Xorg server instance.
-
-x11/nvidia-hybrid-graphics is provided to handle this configuration.
