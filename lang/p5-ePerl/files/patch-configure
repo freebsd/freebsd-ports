@@ -1,6 +1,8 @@
---- configure.orig	Sun Aug  2 15:48:40 1998
-+++ configure	Wed Feb 25 12:10:13 2004
-@@ -571,7 +571,7 @@
+Allow recent Perl versions, and keep CFLAGS/LDFLAGS
+
+--- configure.orig	1998-08-02 13:48:40 UTC
++++ configure
+@@ -571,7 +571,7 @@ if test "${with_perl+set}" = set; then
  if test "${with_perl+set}" = set; then
    withval="$with_perl"
    perlprog=$with_perl
@@ -9,16 +11,27 @@
  
  else
    TMPFILE=/tmp/x.$$
-@@ -600,7 +600,7 @@
+@@ -600,19 +600,6 @@ case $perlvers in
  PATH_PERL=$perlprog
  echo "$ac_t""$perlprog v$perlvers" 1>&6
  case $perlvers in
 -    5.003* | 5.004* | 5.005* | 5.006* )
-+    5.003* | 5.004* | 5.005* | 5.006* | 5.008* | 5.01* | 5.02* | 5.03* )
-         ;;
-     * ) echo ""
-         echo "Latest Perl found on your system is $perlvers,"
-@@ -901,7 +901,6 @@
+-        ;;
+-    * ) echo ""
+-        echo "Latest Perl found on your system is $perlvers,"
+-        echo "but at least Perl version 5.003 is required."
+-        echo "In case the newer one is not in PATH, just use"
+-        echo "the option --with-perl=/path/to/bin/perl to"
+-        echo "provide the correct executable."
+-        echo ""
+-        { echo "configure: error: Perl version too old" 1>&2; exit 1; } 
+-        ;;
+-esac
+-case $perlvers in
+     5.00[3-6]_[0-9][0-9] ) 
+ 	    perlvnum=`echo $perlvers | sed -e 's/\.//' -e 's/_//'` ;; 
+     5.00[3-6] ) 
+@@ -901,7 +888,6 @@ if test $ac_cv_prog_gcc = yes; then
    GCC=yes
    ac_test_CFLAGS="${CFLAGS+set}"
    ac_save_CFLAGS="$CFLAGS"
@@ -26,7 +39,7 @@
    echo $ac_n "checking whether ${CC-cc} accepts -g""... $ac_c" 1>&6
  echo "configure:907: checking whether ${CC-cc} accepts -g" >&5
  if eval "test \"`echo '$''{'ac_cv_prog_cc_g'+set}'`\" = set"; then
-@@ -918,16 +917,17 @@
+@@ -918,16 +904,17 @@ echo "$ac_t""$ac_cv_prog_cc_g" 1>&6
  fi
  
  echo "$ac_t""$ac_cv_prog_cc_g" 1>&6
@@ -47,7 +60,7 @@
  fi
  
  # Extract the first word of "ranlib", so it can be a program name with args.
-@@ -1025,11 +1025,8 @@
+@@ -1025,11 +1012,8 @@ if test "${enable_debug+set}" = set; then
  if test "${enable_debug+set}" = set; then
    enableval="$enable_debug"
    if test ".$ac_cv_prog_gcc" = ".yes"; then
@@ -60,7 +73,7 @@
  fi
  x="enabled"
  debug=on
-@@ -1039,8 +1036,6 @@
+@@ -1039,8 +1023,6 @@ else
  
  
  else

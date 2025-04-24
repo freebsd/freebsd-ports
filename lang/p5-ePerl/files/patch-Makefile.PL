@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Wed Jan 26 09:49:43 2005
-+++ Makefile.PL	Wed Jan 26 09:51:09 2005
-@@ -39,7 +39,8 @@
+--- Makefile.PL.orig	1998-07-10 08:06:41 UTC
++++ Makefile.PL
+@@ -39,7 +39,8 @@ all:
  	\@if [ ! -f mod/Makefile ]; then \\
  	    echo "cd mod && $perl Makefile.PL $args"; \\
  	    cd mod && $perl Makefile.PL $args; \\

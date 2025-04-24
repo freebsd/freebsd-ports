@@ -1,5 +1,5 @@
---- eperl_proto.h.orig	2009-02-27 12:23:02.000000000 +0000
-+++ eperl_proto.h	2009-02-27 12:24:39.000000000 +0000
+--- eperl_proto.h.orig	1998-07-10 07:52:24 UTC
++++ eperl_proto.h
 @@ -36,6 +36,7 @@
  #define EPERL_PROTO_H 1
  
@@ -8,7 +8,7 @@
  
  /* eperl_main.c */
  extern int mode;
-@@ -79,9 +80,14 @@
+@@ -79,9 +80,14 @@ extern char *strnchr(char *buf, char chr, int n);
  extern char *ePerl_Efwrite(char *cpBuf, int nBuf, int cNum, char *cpOut);
  extern char *ePerl_Cfwrite(char *cpBuf, int nBuf, int cNum, char *cpOut);
  extern char *strnchr(char *buf, char chr, int n);

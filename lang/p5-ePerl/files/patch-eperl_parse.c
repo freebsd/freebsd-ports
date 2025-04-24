@@ -1,6 +1,6 @@
---- eperl_parse.c.orig	2009-02-27 12:23:36.000000000 +0000
-+++ eperl_parse.c	2009-02-27 12:25:38.000000000 +0000
-@@ -298,6 +298,7 @@
+--- eperl_parse.c.orig	1998-07-10 07:50:48 UTC
++++ eperl_parse.c
+@@ -298,6 +298,7 @@ char *strnchr(char *buf, char chr, int n)
      return NULL;
  }
  
@@ -8,7 +8,7 @@
  char *strnstr(char *buf, char *str, int n)
  {
      char *cp;
-@@ -311,6 +312,7 @@
+@@ -311,6 +312,7 @@ char *strnstr(char *buf, char *str, int n)
      }
      return NULL;
  }
@@ -16,7 +16,7 @@
  
  char *strncasestr(char *buf, char *str, int n)
  {
-@@ -326,6 +328,9 @@
+@@ -326,6 +328,9 @@ char *strncasestr(char *buf, char *str, int n)
      return NULL;
  }
  
@@ -26,7 +26,7 @@
  char *strndup(char *buf, int n)
  {
      char *cp;
-@@ -334,7 +339,8 @@
+@@ -334,7 +339,8 @@ char *strndup(char *buf, int n)
      strncpy(cp, buf, n);
      return cp;
  }
