@@ -17,6 +17,7 @@ LICENSE_COMB=	dual
 
 BROKEN_riscv64=	error: Unknown Architecture
 
+BUILD_DEPENDS=	rubygem-getoptlong>0:devel/rubygem-getoptlong
 LIB_DEPENDS=	libavif.so:graphics/libavif \
 		libdrm.so:graphics/libdrm \
 		libenchant-2.so:textproc/enchant2 \
