@@ -84,6 +84,7 @@ include/qemu-plugin.h
 %%DATADIR%%/firmware/60-edk2-arm.json
 %%DATADIR%%/firmware/60-edk2-i386.json
 %%DATADIR%%/firmware/60-edk2-loongarch64.json
+%%DATADIR%%/firmware/60-edk2-riscv64.json
 %%DATADIR%%/firmware/60-edk2-x86_64.json
 %%DATADIR%%/hppa-firmware.img
 %%DATADIR%%/hppa-firmware64.img
