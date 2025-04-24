@@ -8,7 +8,7 @@
  #include <vm/vm.h>
  #include <vm/pmap.h>            /* for vtophys */
  #include <vm/vm_map.h>
-@@ -67,10 +68,10 @@
+@@ -67,10 +68,11 @@
  #include <vm/vm_kern.h>
  #include <vm/vm_param.h>        /* KERN_SUCCESS ++ */
  #include <vm/vm_page.h>
@@ -17,10 +17,11 @@
  #include <vm/vm_extern.h>       /* kmem_alloc_attr */
  #include <vm/vm_pageout.h>      /* vm_contig_grow_cache */
 -#include <sys/vmmeter.h>        /* cnt */
++#include <vm/vm_radix.h>
  #include <sys/resourcevar.h>
  #include <machine/cpu.h>
  
-@@ -114,6 +115,24 @@
+@@ -114,6 +116,24 @@
   */
  #if 0 /** @todo Not available yet. */
  # define USE_KMEM_ALLOC_PROT
