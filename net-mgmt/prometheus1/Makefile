@@ -1,7 +1,7 @@
 PORTNAME=	prometheus
 PORTVERSION=	1.8.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	1
 
@@ -13,6 +13,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe go
+
+CONFLICTS_INSTALL=	prometheus prometheus3
+
 USE_GITHUB=	yes
 GH_TUPLE=	golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys_v0.6.0
 
