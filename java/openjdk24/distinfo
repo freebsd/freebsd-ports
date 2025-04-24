@@ -1,3 +1,3 @@
-TIMESTAMP = 1742895111
-SHA256 (freebsd-openjdk-jdk-24.0.0+36-1-jdk-24-ga-freebsd-1_GH0.tar.gz) = d2dc74549c4038bcab0b54622e98083d48989976e4f221ce53d265e785d16abf
-SIZE (freebsd-openjdk-jdk-24.0.0+36-1-jdk-24-ga-freebsd-1_GH0.tar.gz) = 120821939
+TIMESTAMP = 1745490330
+SHA256 (freebsd-openjdk-jdk-24.0.1+9-1-jdk-24.0.1-ga-freebsd-1_GH0.tar.gz) = f9a5a14ba9205bcb6bced5a153d0d726d03c9ffdd459171683a9ade9ac31ea4e
+SIZE (freebsd-openjdk-jdk-24.0.1+9-1-jdk-24.0.1-ga-freebsd-1_GH0.tar.gz) = 120804490

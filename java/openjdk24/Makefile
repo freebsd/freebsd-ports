@@ -35,7 +35,7 @@ CPE_VENDOR=	oracle
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	openjdk
-GH_TAGNAME=	jdk-24-ga-freebsd-1
+GH_TAGNAME=	jdk-24.0.1-ga-freebsd-1
 
 NO_CCACHE=	yes
 
@@ -60,8 +60,8 @@ NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	24
 JDK_MINOR_VERSION=	0
-JDK_PATCH_VERSION=	0
-JDK_BUILD_NUMBER=	36
+JDK_PATCH_VERSION=	1
+JDK_BUILD_NUMBER=	9
 BSD_JDK_VERSION=	1
 
 JDK_BUG_URL=	https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26%20Packages&component=Individual%20Port(s)&short_desc=java/${PORTNAME}${JDK_MAJOR_VERSION}%3A%20
