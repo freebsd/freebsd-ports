@@ -1,5 +1,5 @@
 PORTNAME=	nsd
-DISTVERSION=	4.11.1
+DISTVERSION=	4.12.0
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/nsd/
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-USES=		cpe ssl
+USES=		cpe ssl pkgconfig
 
 CPE_VENDOR=	nlnetlabs
 USE_RC_SUBR=	nsd
