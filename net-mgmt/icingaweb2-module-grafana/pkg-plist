@@ -68,6 +68,7 @@
 %%WWWDIR%%/doc/05-update.md
 %%WWWDIR%%/doc/06-create-grafana-dashboards-influxdb.md
 %%WWWDIR%%/doc/07-create-grafana-dashboards-graphite.md
+%%WWWDIR%%/doc/08-config-jwt.md
 %%WWWDIR%%/doc/images/02-installation-01.png
 %%WWWDIR%%/doc/images/04-graph.configuration-01.png
 %%WWWDIR%%/doc/images/04-graph.configuration-02.png
@@ -109,8 +110,10 @@
 %%WWWDIR%%/doc/images/icingaweb2_grafana_screenshot_05.png
 %%WWWDIR%%/doc/images/icingaweb2_grafana_screenshot_06.png
 %%WWWDIR%%/doc/images/showallgraph.png
+%%WWWDIR%%/library/Grafana/Helpers/JwtToken.php
 %%WWWDIR%%/library/Grafana/Helpers/Timeranges.php
 %%WWWDIR%%/library/Grafana/Helpers/Util.php
+%%WWWDIR%%/library/Grafana/ProvidedHook/Icingadb/GeneralConfigFormHook.php
 %%WWWDIR%%/library/Grafana/ProvidedHook/Icingadb/HostActions.php
 %%WWWDIR%%/library/Grafana/ProvidedHook/Icingadb/HostDetailExtension.php
 %%WWWDIR%%/library/Grafana/ProvidedHook/Icingadb/IcingaDbGrapher.php
