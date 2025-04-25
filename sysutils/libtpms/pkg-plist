@@ -7,7 +7,7 @@ include/libtpms/tpm_types.h
 lib/libtpms.a
 lib/libtpms.so
 lib/libtpms.so.0
-lib/libtpms.so.0.9.6
+lib/libtpms.so.0.10.0
 libdata/pkgconfig/libtpms.pc
 share/man/man3/TPMLIB_CancelCommand.3.gz
 share/man/man3/TPMLIB_ChooseTPMVersion.3.gz
@@ -23,10 +23,12 @@ share/man/man3/TPMLIB_SetBufferSize.3.gz
 share/man/man3/TPMLIB_SetDebugFD.3.gz
 share/man/man3/TPMLIB_SetDebugLevel.3.gz
 share/man/man3/TPMLIB_SetDebugPrefix.3.gz
+share/man/man3/TPMLIB_SetProfile.3.gz
 share/man/man3/TPMLIB_SetState.3.gz
 share/man/man3/TPMLIB_Terminate.3.gz
 share/man/man3/TPMLIB_ValidateState.3.gz
 share/man/man3/TPMLIB_VolatileAll_Store.3.gz
+share/man/man3/TPMLIB_WasManufactured.3.gz
 share/man/man3/TPM_Free.3.gz
 share/man/man3/TPM_IO_Hash_Data.3.gz
 share/man/man3/TPM_IO_Hash_End.3.gz
