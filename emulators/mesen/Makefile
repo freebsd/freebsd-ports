@@ -1,10 +1,8 @@
 PORTNAME=	mesen
-DISTVERSION=	0.9.8-4
-DISTVERSIONSUFFIX=	-g4c701ad6
-PORTREVISION=	4
+DISTVERSION=	0.9.9
 CATEGORIES=	emulators
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cpetrik@proton.me
 COMMENT=	Cross-platform Nintendo Entertainment System (NES/Famicom) emulator
 WWW=		https://www.mesen.ca/
 
@@ -19,7 +17,7 @@ BUILD_DEPENDS=	zip:archivers/zip \
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libgdiplus.so:x11-toolkits/libgdiplus
 
-USES=		compiler:c++14-lang gmake pkgconfig sdl
+USES=		compiler:c++17-lang gmake pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	SourMesen
 GH_PROJECT=	Mesen
