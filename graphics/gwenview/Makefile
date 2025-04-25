@@ -1,5 +1,6 @@
 PORTNAME=	gwenview
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -25,7 +26,7 @@ USE_KDE=	activities auth baloo bookmarks codecs completion config \
 		purpose service solid sonnet textwidgets widgetsaddons \
 		windowsystem xmlgui \
 		ecm:build
-USE_QT=		base
+USE_QT=		base imageformats:run
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
