@@ -176,7 +176,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uutils_term_grid-0.6.0 \
+		uutils_term_grid-0.7.0 \
 		uzers-0.12.1 \
 		vcpkg-0.2.15 \
 		wait-timeout-0.2.1 \
