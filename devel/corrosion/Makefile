@@ -1,7 +1,6 @@
 PORTNAME=	corrosion
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
-PORTREVISION=	3
+DISTVERSION=	0.5.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,6 +29,6 @@ CMAKE_TESTING_ON=	CORROSION_BUILD_TESTS # 2 tests fail
 
 NO_ARCH=	yes
 
-# tests as of 0.5.1: 97% tests passed, 2 tests failed out of 72, see https://github.com/corrosion-rs/corrosion/issues/602
+# tests as of 0.5.2: 97% tests passed, 2 tests failed out of 72 (2 failures are in rustup and parsing of triplets)
 
 .include <bsd.port.mk>
