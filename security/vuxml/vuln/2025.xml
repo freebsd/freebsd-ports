@@ -1,3 +1,124 @@
+  <vuln vid="310f5923-211c-11f0-8ca6-6c3be5272acd">
+    <topic>Grafana -- Authorization bypass in data source proxy API</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>8.0.0</ge><lt>10.4.17+security-01</lt></range>
+	<range><ge>11.0.0</ge><lt>11.2.8+security-01</lt></range>
+	<range><ge>11.3.0</ge><lt>11.3.5+security-01</lt></range>
+	<range><ge>11.4.0</ge><lt>11.4.3+security-01</lt></range>
+	<range><ge>11.5.0</ge><lt>11.5.3+security-01</lt></range>
+	<range><ge>11.6.0</ge><lt>11.6.0+security-01</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2025/04/22/grafana-security-release-medium-and-high-severity-fixes-for-cve-2025-3260-cve-2025-2703-cve-2025-3454/">
+	  <p>This vulnerability, which was discovered while reviewing a pull
+	  request from an external contributor, effects Grafana’s data source
+	  proxy API and allows authorization checks to be bypassed by adding
+	  an extra slash character (/) in the URL path. Among Grafana-maintained
+	  data sources, the vulnerability only affects the read paths
+	  of Prometheus (all flavors) and Alertmanager when configured with
+	  basic authorization.</p>
+	  <p>The CVSS score for this vulnerability is
+	  <a href="https://www.first.org/cvss/calculator/3-1#CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N">5.0 MEDIUM</a>.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3454</cvename>
+      <url>https://grafana.com/blog/2025/04/22/grafana-security-release-medium-and-high-severity-fixes-for-cve-2025-3260-cve-2025-2703-cve-2025-3454/</url>
+    </references>
+    <dates>
+      <discovery>2025-03-25</discovery>
+      <entry>2025-04-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6adfda5a-2118-11f0-8ca6-6c3be5272acd">
+    <topic>Grafana -- Bypass Viewer and Editor permissions</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>11.6.0</ge><lt>11.6.0+security-01</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2025/04/22/grafana-security-release-medium-and-high-severity-fixes-for-cve-2025-3260-cve-2025-2703-cve-2025-3454/">
+	  <p>During the development of a new feature in Grafana 11.6.x,
+	  a security vulnerability was introduced that allows for Viewers
+	  and Editors to bypass dashboard-specific permissions. As a result,
+	  users with the Viewer role could view all the dashboards within their
+	  org and users with the Editor role could view, edit, and delete all
+	  the dashboards in their org.</p>
+	  <p><em>Note: Organization isolation boundaries still apply, which
+	  means viewers and editors in one organization cannot view or edit
+	  dashboards in another org. Also this vulnerability does not allow
+	  users to query data via data sources they don’t have access to.</em>
+	  </p>
+	  <p>The CVSS score for this vulnerability is
+	  <a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:L&amp;version=3.1">8.3 HIGH</a>.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3260</cvename>
+      <url>https://grafana.com/blog/2025/04/22/grafana-security-release-medium-and-high-severity-fixes-for-cve-2025-3260-cve-2025-2703-cve-2025-3454/</url>
+    </references>
+    <dates>
+      <discovery>2025-04-04</discovery>
+      <entry>2025-04-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f8b7af82-2116-11f0-8ca6-6c3be5272acd">
+    <topic>Grafana -- DOM XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>11.1.0</ge><lt>11.2.8+security-01</lt></range>
+	<range><ge>11.3.0</ge><lt>11.3.5+security-01</lt></range>
+	<range><ge>11.4.0</ge><lt>11.4.3+security-01</lt></range>
+	<range><ge>11.5.0</ge><lt>11.5.3+security-01</lt></range>
+	<range><ge>11.6.0</ge><lt>11.6.0+security-01</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2025/04/22/grafana-security-release-medium-and-high-severity-fixes-for-cve-2025-3260-cve-2025-2703-cve-2025-3454/">
+	  <p>An external security researcher responsibly reported a security
+	  vulnerability in Grafana’s built-in
+	  <a href="https://grafana.com/docs/grafana/latest/panels-visualizations/visualizations/xy-chart/">XY chart plugin</a>
+	  that is vulnerable to a
+	  <a href="https://grafana.com/blog/2023/07/11/trusted-types-how-we-mitigate-xss-threats-in-grafana-10/#what-is-dom-xss">DOM XSS vulnerability</a>.</p>
+	  <p>The CVSS score for this vulnerability is
+	  <a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:L/A:L&amp;version=3.1">6.8 MEDIUM</a>.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-2703</cvename>
+      <url>https://grafana.com/security/security-advisories/cve-2025-2703/</url>
+    </references>
+    <dates>
+      <discovery>2025-03-14</discovery>
+      <entry>2025-04-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="af8d043f-20df-11f0-b9c5-000c295725e4">
     <topic>redis,valkey -- DoS Vulnerability due to unlimited growth of output buffers abused by unauthenticated client</topic>
     <affects>
