@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_base_window.cc.orig	2025-04-04 05:26:44 UTC
+--- electron/shell/browser/api/electron_api_base_window.cc.orig	2025-04-17 14:56:35 UTC
 +++ electron/shell/browser/api/electron_api_base_window.cc
 @@ -41,7 +41,7 @@
  #include "shell/browser/ui/views/win_frame_view.h"
@@ -9,7 +9,7 @@
  #include "shell/browser/ui/views/opaque_frame_view.h"
  #endif
  
-@@ -1036,7 +1036,7 @@ void BaseWindow::SetIconImpl(v8::Isolate* isolate,
+@@ -1024,7 +1024,7 @@ void BaseWindow::SetIconImpl(v8::Isolate* isolate,
    static_cast<NativeWindowViews*>(window_.get())
        ->SetIcon(native_image->GetHICON(GetSystemMetrics(SM_CXSMICON)),
                  native_image->GetHICON(GetSystemMetrics(SM_CXICON)));
@@ -18,7 +18,7 @@
    static_cast<NativeWindowViews*>(window_.get())
        ->SetIcon(native_image->image().AsImageSkia());
  #endif
-@@ -1093,7 +1093,7 @@ void BaseWindow::SetAppDetails(const gin_helper::Dicti
+@@ -1081,7 +1081,7 @@ void BaseWindow::SetAppDetails(const gin_helper::Dicti
  }
  #endif
  
@@ -27,7 +27,7 @@
  void BaseWindow::SetTitleBarOverlay(const gin_helper::Dictionary& options,
                                      gin_helper::Arguments* args) {
    // Ensure WCO is already enabled on this window
-@@ -1344,7 +1344,7 @@ void BaseWindow::BuildPrototype(v8::Isolate* isolate,
+@@ -1332,7 +1332,7 @@ void BaseWindow::BuildPrototype(v8::Isolate* isolate,
        .SetMethod("setThumbnailToolTip", &BaseWindow::SetThumbnailToolTip)
        .SetMethod("setAppDetails", &BaseWindow::SetAppDetails)
  #endif
