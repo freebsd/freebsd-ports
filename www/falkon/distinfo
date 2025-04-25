@@ -1,3 +1,5 @@
-TIMESTAMP = 1744564318
+TIMESTAMP = 1745605917
 SHA256 (KDE/release-service/25.04.0/falkon-25.04.0.tar.xz) = aad010d664227ddfe1fc084bb6fb366aed752340e00c0f37ddfa3aa32362e84c
 SIZE (KDE/release-service/25.04.0/falkon-25.04.0.tar.xz) = 2705584
+SHA256 (KDE/release-service/25.04.0/31ba9472369256804400a2db36b3dca3b4be2d73.patch) = bc0f1a37c7f11f129968b218987ec5996eede4be9408d0ab69ad9b5451b6d0ef
+SIZE (KDE/release-service/25.04.0/31ba9472369256804400a2db36b3dca3b4be2d73.patch) = 2094
