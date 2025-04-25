@@ -1,6 +1,5 @@
 PORTNAME=	unbound
-DISTVERSION=	1.22.0
-PORTREVISION=	1
+DISTVERSION=	1.23.0
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/unbound/
 
@@ -37,7 +36,7 @@ PORTDOCS=	CNAME-basedRedirectionDesignNotes.pdf CREDITS Changelog \
 OPTIONS_DEFINE=		DEP-RSA1024 DNSCRYPT DNSTAP DOCS DYNLIB ECDSA EVAPI \
 			FILTER_AAAA GOST HIREDIS LIBEVENT MUNIN_PLUGIN PYTHON \
 			SUBNET TFOCL TFOSE THREADS
-OPTIONS_DEFAULT=	DNSCRYPT DYNLIB ECDSA GOST LIBEVENT THREADS
+OPTIONS_DEFAULT=	DNSCRYPT DYNLIB ECDSA EVAPI GOST LIBEVENT THREADS
 OPTIONS_SUB=		yes
 
 DEP-RSA1024_DESC=	Deprecate the use of RSA 1024 keys
@@ -45,7 +44,7 @@ DNSCRYPT_DESC=		Enable dnscrypt support
 DNSTAP_DESC=		Enable dnstap logging support
 DYNLIB_DESC=		Enable support for dynamic (shared) 3rd-party libraries
 ECDSA_DESC=		Enable ECDSA (elliptic curve) support (OpenSSL >= 1.0)
-EVAPI_DESC=		(Experimental) pluggable event based libunbound API support
+EVAPI_DESC=		Pluggable event based libunbound API support
 FILTER_AAAA_DESC=	Build with AAAA filter functionality (contrib)
 GOST_DESC=		Enable GOST support (requires OpenSSL >= 1.0)
 HIREDIS_DESC=		Enable hiredis support for the cachedb module
