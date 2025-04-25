@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-pulseaudio-plugin
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	audio xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libpulse-mainloop-glib.so:audio/pulseaudio
 RUN_DEPENDS=	pavucontrol>=2.0:audio/pavucontrol
 
-USES=		compiler:c11 gettext-tools gnome libtool meson pkgconfig tar:xz \
+USES=		compiler:c11 gettext-tools gnome meson pkgconfig tar:xz \
 		xfce xorg
 USE_GNOME=	cairo gdkpixbuf glib20 gtk30
 USE_XFCE=	libexo panel windowing xfconf
