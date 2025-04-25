@@ -1,6 +1,5 @@
 PORTNAME=	anki
-DISTVERSION=	25.02.1
-PORTREVISION=	1
+DISTVERSION=	25.02.4
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:yarncache
@@ -45,8 +44,8 @@ USES=		cargo desktop-file-utils ninja nodejs:build pyqt:6 python \
 USE_GITHUB=	yes
 GH_ACCOUNT=	ankitects
 # Translation files
-GH_TUPLE=	ankitects:anki-core-i18n:9a8824a:ftlrslib \
-		ankitects:anki-desktop-ftl:49c0c3b:ftlextra
+GH_TUPLE=	ankitects:anki-core-i18n:42ccadb:ftlrslib \
+		ankitects:anki-desktop-ftl:b3562ed:ftlextra
 
 USE_PYQT=	pyqt6 sip:build webengine
 
@@ -85,7 +84,7 @@ MPV_RUN_DEPENDS=	mpv:multimedia/mpv
 # Should contain the most recent commit that reflects ${DISTVERSION} and must
 # be exactly 8 digits otherwise the check for newer versions won't work as
 # expected.
-_MY_BUILDHASH=	fa1d6eae
+_MY_BUILDHASH=	a5c33ad0
 # Remove ${CARGO_BUILD_TARGET} from ${CARGO_ENV} to avoid problems with
 # hardcoded paths as the "runner" build system expects its components
 # in ${WRKSRC}/out/rust/debug
