@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.50.0
-PORTREVISION=	1
+DISTVERSION=	7.52.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://registry.npmjs.org/@esbuild/freebsd-arm64/-/:esbuildarm64 \
@@ -80,7 +79,7 @@ MAKE_ENV+=	ELECTRON_SKIP_BINARY_DOWNLOAD=1
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
-MAKE_ENV+=	ESBUILD_BINARY_PATH=${WRKDIR}/esbuild-freebsd-64/package/bin/esbuild
+MAKE_ENV+=	ESBUILD_BINARY_PATH=${WRKSRC}/node_modules/.pnpm/@esbuild+freebsd-${ESBUILD_ARCH}@${ESBUILD_VERS}/node_modules/@esbuild/freebsd-${ESBUILD_ARCH}/package/bin/esbuild
 
 _BUILD_DATE=	$$(date +'%s')
 
@@ -117,9 +116,6 @@ do-build:
 	${CP} ${FILESDIR}/package-lock.json ${WRKSRC}
 	${CP} ${FILESDIR}/pnpm-lock.yaml ${WRKSRC}
 
-	${MKDIR} ${WRKDIR}/esbuild-freebsd-64
-	${TAR} xf ${DISTDIR}/freebsd-${ESBUILD_ARCH}-${ESBUILD_VERS}.tgz -C ${WRKDIR}/esbuild-freebsd-64
-
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} npm install --ignore-scripts pnpm@10.6.3
 	cd ${WRKSRC} && \
@@ -136,6 +132,10 @@ do-build:
 		${WRKSRC}/node_modules/@signalapp/ringrtc/build/freebsd/libringrtc-${NODE_ARCH}.node
 	 ${CP} ${LOCALBASE}/lib/node_sqlcipher.node \
 		${WRKSRC}/node_modules/@signalapp/sqlcipher/prebuilds/freebsd-${NODE_ARCH}
+
+	# don't ask me why
+	${MKDIR} -p ${WRKSRC}/node_modules/.pnpm/@esbuild+freebsd-${ESBUILD_ARCH}@${ESBUILD_VERS}/node_modules/@esbuild/freebsd-${ESBUILD_ARCH}
+	${TAR} xf ${DISTDIR}/freebsd-${ESBUILD_ARCH}-${ESBUILD_VERS}.tgz -C ${WRKSRC}/node_modules/.pnpm/@esbuild+freebsd-${ESBUILD_ARCH}@${ESBUILD_VERS}/node_modules/@esbuild/freebsd-${ESBUILD_ARCH}
 
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers pnpm install
