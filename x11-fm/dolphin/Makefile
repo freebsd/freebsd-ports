@@ -1,5 +1,6 @@
 PORTNAME=	dolphin
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-fm kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -23,7 +24,7 @@ USE_KDE=	activities attica auth baloo baloo-widgets bookmarks codecs \
 		texteditor textwidgets userfeedback widgetsaddons windowsystem \
 		xmlgui \
 		doctools:build ecm:build
-USE_QT=		base
+USE_QT=		base imageformats:run
 USE_XORG=	x11
 
 SHLIB_VER=	6.0.0
