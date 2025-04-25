@@ -1,5 +1,5 @@
 PORTNAME=	rqrcode_core
-PORTVERSION=	1.2.0
+DISTVERSION=	2.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
