@@ -51,7 +51,7 @@ share/applications/kcm_proxy.desktop
 share/applications/kcm_trash.desktop
 share/applications/kcm_webshortcuts.desktop
 share/config.kcfg/jpegcreatorsettings5.kcfg
-share/dbus-1/services/org.kde.kmtpd5.service
+%%MTP%%share/dbus-1/services/org.kde.kmtpd5.service
 share/kio_filenamesearch/kio-filenamesearch-grep
 share/kio_info/kde-info2html
 share/kio_info/kde-info2html.conf
