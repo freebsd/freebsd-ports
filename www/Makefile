@@ -2591,6 +2591,7 @@
     SUBDIR += w3m-img
     SUBDIR += w3mir
     SUBDIR += wabt
+    SUBDIR += wasm-bindgen-cli
     SUBDIR += wasm-pack
     SUBDIR += waterfox
     SUBDIR += web2ldap
