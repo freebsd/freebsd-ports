@@ -1,6 +1,5 @@
 PORTNAME=	rustworkx
-DISTVERSION=	0.15.1
-PORTREVISION=	8
+DISTVERSION=	0.16.0
 CATEGORIES=	math python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,61 +23,58 @@ USE_PYTHON=	autoplist distutils pytest
 USE_GITHUB=	yes
 GH_ACCOUNT=	Qiskit
 
-CARGO_CRATES=	ahash-0.8.11 \
-		alga-0.9.3 \
-		allocator-api2-0.2.18 \
-		approx-0.3.2 \
-		autocfg-1.3.0 \
-		bitflags-2.6.0 \
+CARGO_CRATES=	adler2-2.0.0 \
+		ahash-0.8.11 \
+		allocator-api2-0.2.21 \
+		autocfg-1.4.0 \
+		byteorder-1.5.0 \
 		cfg-if-1.0.0 \
-		crossbeam-deque-0.8.5 \
+		crc32fast-1.4.2 \
+		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
-		crossbeam-utils-0.8.20 \
+		crossbeam-utils-0.8.21 \
 		either-1.13.0 \
 		equivalent-1.0.1 \
-		fixedbitset-0.4.2 \
+		fixedbitset-0.5.7 \
+		flate2-1.0.35 \
+		foldhash-0.1.4 \
 		getrandom-0.2.15 \
-		hashbrown-0.12.3 \
-		hashbrown-0.14.5 \
-		heck-0.4.1 \
+		hashbrown-0.15.2 \
+		heck-0.5.0 \
 		hermit-abi-0.3.9 \
-		indexmap-1.9.3 \
-		indexmap-2.2.6 \
+		indexmap-2.7.0 \
 		indoc-2.0.5 \
-		itertools-0.10.5 \
 		itertools-0.11.0 \
-		itoa-1.0.11 \
-		libc-0.2.155 \
-		libm-0.2.8 \
-		lock_api-0.4.12 \
-		matrixmultiply-0.3.8 \
+		itertools-0.13.0 \
+		itoa-1.0.14 \
+		libc-0.2.169 \
+		matrixmultiply-0.3.9 \
 		memchr-2.7.4 \
 		memoffset-0.9.1 \
-		ndarray-0.15.6 \
-		ndarray-stats-0.5.1 \
+		miniz_oxide-0.8.3 \
+		ndarray-0.16.1 \
+		ndarray-stats-0.6.0 \
 		noisy_float-0.2.0 \
 		num-bigint-0.4.6 \
-		num-complex-0.2.4 \
 		num-complex-0.4.6 \
 		num-integer-0.1.46 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
-		numpy-0.21.0 \
-		once_cell-1.19.0 \
-		parking_lot-0.12.3 \
-		parking_lot_core-0.9.10 \
-		petgraph-0.6.5 \
-		portable-atomic-1.6.0 \
-		ppv-lite86-0.2.17 \
-		priority-queue-2.0.3 \
-		proc-macro2-1.0.86 \
-		pyo3-0.21.2 \
-		pyo3-build-config-0.21.2 \
-		pyo3-ffi-0.21.2 \
-		pyo3-macros-0.21.2 \
-		pyo3-macros-backend-0.21.2 \
-		quick-xml-0.34.0 \
-		quote-1.0.36 \
+		numpy-0.23.0 \
+		once_cell-1.20.2 \
+		petgraph-0.7.1 \
+		portable-atomic-1.10.0 \
+		portable-atomic-util-0.2.4 \
+		ppv-lite86-0.2.20 \
+		priority-queue-2.1.1 \
+		proc-macro2-1.0.93 \
+		pyo3-0.23.4 \
+		pyo3-build-config-0.23.4 \
+		pyo3-ffi-0.23.4 \
+		pyo3-macros-0.23.4 \
+		pyo3-macros-backend-0.23.4 \
+		quick-xml-0.37.2 \
+		quote-1.0.38 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -87,32 +83,21 @@ CARGO_CRATES=	ahash-0.8.11 \
 		rayon-1.10.0 \
 		rayon-cond-0.3.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.2 \
-		rustc-hash-1.1.0 \
+		rustc-hash-2.1.0 \
 		ryu-1.0.18 \
-		scopeguard-1.2.0 \
-		serde-1.0.203 \
-		serde_derive-1.0.203 \
-		serde_json-1.0.118 \
+		serde-1.0.217 \
+		serde_derive-1.0.217 \
+		serde_json-1.0.135 \
 		smallvec-1.13.2 \
-		sprs-0.11.1 \
-		syn-2.0.68 \
-		target-lexicon-0.12.14 \
-		unicode-ident-1.0.12 \
+		sprs-0.11.2 \
+		syn-2.0.96 \
+		target-lexicon-0.12.16 \
+		unicode-ident-1.0.14 \
 		unindent-0.2.3 \
-		version_check-0.9.4 \
+		version_check-0.9.5 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		windows-targets-0.52.5 \
-		windows_aarch64_gnullvm-0.52.5 \
-		windows_aarch64_msvc-0.52.5 \
-		windows_i686_gnu-0.52.5 \
-		windows_i686_gnullvm-0.52.5 \
-		windows_i686_msvc-0.52.5 \
-		windows_x86_64_gnu-0.52.5 \
-		windows_x86_64_gnullvm-0.52.5 \
-		windows_x86_64_msvc-0.52.5 \
-		zerocopy-0.7.34 \
-		zerocopy-derive-0.7.34
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
