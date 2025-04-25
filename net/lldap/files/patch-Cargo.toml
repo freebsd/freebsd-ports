@@ -1,0 +1,8 @@
+--- Cargo.toml.orig	2024-11-22 21:47:49 UTC
++++ Cargo.toml
+@@ -18,4 +18,4 @@ opt-level = 's'
+ opt-level = 's'
+ 
+ [patch.crates-io.lber]
+-git = 'https://github.com/inejge/ldap3/'
++path = 'third_party/ldap3/lber'

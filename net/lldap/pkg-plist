@@ -1,0 +1,22 @@
+bin/lldap
+bin/lldap_migration_tool
+bin/lldap_set_password
+etc/rc.d/lldap
+@(root,wheel,755) %%DATADIR%%/ldap_config.toml.example
+@owner ldap
+@group ldap
+@dir lldap_server
+lldap_server/app/index.html
+lldap_server/app/pkg/.gitignore
+lldap_server/app/pkg/lldap_app.d.ts
+lldap_server/app/pkg/lldap_app.js
+lldap_server/app/pkg/lldap_app_bg.wasm
+lldap_server/app/pkg/lldap_app_bg.wasm.d.ts
+lldap_server/app/pkg/lldap_app_bg.wasm.gz
+lldap_server/app/static/fonts.css
+lldap_server/app/static/fonts/fonts.txt
+lldap_server/app/static/libraries.txt
+lldap_server/app/static/main.js
+lldap_server/app/static/spinner.gif
+lldap_server/app/static/style.css
+lldap_server/lldap

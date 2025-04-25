@@ -453,6 +453,7 @@
     SUBDIR += linux-rl9-tcp_wrappers-libs
     SUBDIR += liveMedia
     SUBDIR += lla
+    SUBDIR += lldap
     SUBDIR += lua-luasocket
     SUBDIR += lualdap
     SUBDIR += mDNSResponder
