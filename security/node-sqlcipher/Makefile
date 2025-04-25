@@ -1,12 +1,12 @@
 PORTNAME=	node-sqlcipher
-DISTVERSION=	1.0.0
+DISTVERSION=	2.0.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/signalapp/node-sqlcipher/archive/refs/tags/v${DISTVERSION}/:sqlcipher \
 		https://registry.npmjs.org/@esbuild/freebsd-arm64/-/:esbuildarm64 \
 		https://registry.npmjs.org/@esbuild/freebsd-x64/-/:esbuildx64 \
 		LOCAL/mikael/signal-desktop/:npm
 DISTFILES=	freebsd-arm64-${ESBUILD_VERS}.tgz:esbuildarm64 \
-                freebsd-x64-${ESBUILD_VERS}.tgz:esbuildx64 \
+		freebsd-x64-${ESBUILD_VERS}.tgz:esbuildx64 \
 		node-sqlcipher-${DISTVERSION}.tar.gz:sqlcipher \
 		node-sqlcipher-${DISTVERSION}-npm-cache.tar.gz:npm
 
@@ -26,7 +26,7 @@ USES=		nodejs:20,build
 
 PLIST_FILES=	lib/node_sqlcipher.node
 
-ESBUILD_VERS=	0.25.2
+ESBUILD_VERS=	0.25.3
 ESBUILD_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 
 MAKE_ENV+=	ESBUILD_BINARY_PATH=${WRKDIR}/esbuild-freebsd-64/package/bin/esbuild
