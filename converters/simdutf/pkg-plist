@@ -1,4 +1,4 @@
-bin/fastbase64
+%%TOOLS%%bin/fastbase64
 %%TOOLS%%bin/sutf
 include/simdutf.h
 include/simdutf/avx512.h
@@ -14,7 +14,7 @@ lib/cmake/simdutf/simdutf-config-version.cmake
 lib/cmake/simdutf/simdutf-config.cmake
 lib/cmake/simdutf/simdutfTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/simdutf/simdutfTargets.cmake
-lib/libsimdutf.so.19.0.0
-lib/libsimdutf.so.19
+lib/libsimdutf.so.20.0.0
+lib/libsimdutf.so.20
 lib/libsimdutf.so
 libdata/pkgconfig/simdutf.pc
