@@ -1,6 +1,6 @@
 #!/bin/sh
 
-WEBRTC_REV=6834g
+WEBRTC_REV=6998a
 
 base_url="https://chromium.googlesource.com/chromium/src/base.git/+archive/"
 boringssl_url="https://boringssl.googlesource.com/boringssl.git/+archive/"
@@ -123,3 +123,4 @@ if [ ! -f /usr/ports/distfiles/opus-${opus_hash}.tar.gz ] && [ ! -f dist_good/op
 fi
 
 echo "Copy dist_good/* in /usr/ports/distfiles and run make makesum"
+echo "rsync dist_good/ freefall:public_distfiles/ringrtc/"

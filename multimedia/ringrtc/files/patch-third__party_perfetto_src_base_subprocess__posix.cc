@@ -4,8 +4,8 @@
  #include <thread>
  #include <tuple>
  
--#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
-+#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && \
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) || \
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) && \
 +    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
  #include <sys/prctl.h>
@@ -14,8 +14,8 @@
  // Don't add any dynamic allocation in this function. This will be invoked
  // under a fork(), potentially in a state where the allocator lock is held.
  void __attribute__((noreturn)) ChildProcess(ChildProcessArgs* args) {
--#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
-+#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && \
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) || \
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) && \
 +    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
    // In no case we want a child process to outlive its parent process. This is

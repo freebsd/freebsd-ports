@@ -1,5 +1,5 @@
---- src/rust/src/webrtc/audio_device_module_utils.rs.orig	2024-11-18 16:04:01.050553000 +0100
-+++ src/rust/src/webrtc/audio_device_module_utils.rs	2024-11-18 16:06:58.737883000 +0100
+--- src/rust/src/webrtc/audio_device_module_utils.rs.orig	2024-11-18 16:04:01 UTC
++++ src/rust/src/webrtc/audio_device_module_utils.rs
 @@ -10,7 +10,7 @@ use cubeb_core::DevicePref;
  use anyhow::anyhow;
  use cubeb::{DeviceCollection, DeviceState};

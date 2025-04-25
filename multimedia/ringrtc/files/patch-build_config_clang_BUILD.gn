@@ -1,0 +1,11 @@
+--- src/webrtc/src/build/config/clang/BUILD.gn.orig	2024-07-30 11:12:21 UTC
++++ src/webrtc/src/build/config/clang/BUILD.gn
+@@ -224,7 +224,7 @@ clang_lib("compiler_builtins") {
+       libname = "ios"
+     }
+   } else {
+-    libname = "builtins"
++    #libname = "builtins"
+   }
+ }
+ 

@@ -68,9 +68,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		crossbeam-utils-0.8.21 \
 		crypto-common-0.1.6 \
 		ctr-0.9.2 \
-		cubeb-0.22.0 \
-		cubeb-core-0.22.0 \
-		cubeb-sys-0.22.0 \
+		cubeb-0.27.0 \
+		cubeb-core-0.27.0 \
+		cubeb-sys-0.27.0 \
 		darling-0.20.10 \
 		darling_core-0.20.10 \
 		darling_macro-0.20.10 \
