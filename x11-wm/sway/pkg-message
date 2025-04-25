@@ -3,6 +3,9 @@
   message: <<EOM
 Notes:
 - sway(1) can use mac_priority(4) to avoid stutter during high load
+Known issues:
+- Broken on amdgpu since sway 1.11. Switch to swayfx for now.
+  https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=286311
 EOM
 }
 ]
