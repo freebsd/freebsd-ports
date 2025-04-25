@@ -45,3 +45,4 @@ lib/cmake/ada/ada_targets.cmake
 lib/libada.so
 lib/libada.so.3
 lib/libada.so.%%SOVERSION%%
+libdata/pkgconfig/ada.pc
