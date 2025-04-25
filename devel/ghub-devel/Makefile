@@ -12,6 +12,9 @@ WWW=		https://github.com/magit/ghub
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use devel/ghub instead
+EXPIRATION_DATE=	2025-08-31
+
 BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.2.0:misc/compat.el@${EMACS_FLAVOR} \
 		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.1:devel/llama.el@${EMACS_FLAVOR} \
 		treepy.el${EMACS_PKGNAMESUFFIX}>=0.1.2:devel/treepy.el@${EMACS_FLAVOR}

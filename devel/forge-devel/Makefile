@@ -12,6 +12,9 @@ WWW=		https://github.com/magit/forge
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use devel/forge instead
+EXPIRATION_DATE=	2025-08-31
+
 BUILD_DEPENDS=	closql-devel${EMACS_PKGNAMESUFFIX}>=2.2.1:databases/closql-devel@${EMACS_FLAVOR} \
 		compat.el${EMACS_PKGNAMESUFFIX}>=30.0.2.0:misc/compat.el@${EMACS_FLAVOR} \
 		emacsql-devel${EMACS_PKGNAMESUFFIX}>=4.3.0:databases/emacsql-devel@${EMACS_FLAVOR} \

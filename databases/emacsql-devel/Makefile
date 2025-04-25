@@ -12,6 +12,9 @@ WWW=		https://github.com/magit/emacsql
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
+DEPRECATED=	Use databases/emacsql instead
+EXPIRATION_DATE=	2025-08-31
+
 BUILD_DEPENDS=	pg.el${EMACS_PKGNAMESUFFIX}>=0.39:databases/pg.el@${EMACS_FLAVOR}
 RUN_DEPENDS=	pg.el${EMACS_PKGNAMESUFFIX}>=0.39:databases/pg.el@${EMACS_FLAVOR}
 

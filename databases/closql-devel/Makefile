@@ -12,6 +12,9 @@ WWW=		https://github.com/magit/closql
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use databases/closql instead
+EXPIRATION_DATE=	2025-08-31
+
 BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.0.0:misc/compat.el@${EMACS_FLAVOR} \
 		emacsql-devel${EMACS_PKGNAMESUFFIX}>=4.2.0:databases/emacsql-devel@${EMACS_FLAVOR}
 RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.0.0:misc/compat.el@${EMACS_FLAVOR} \
