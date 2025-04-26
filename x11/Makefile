@@ -291,8 +291,6 @@
     SUBDIR += nvidia-driver-340
     SUBDIR += nvidia-driver-390
     SUBDIR += nvidia-driver-470
-    SUBDIR += nvidia-secondary-driver
-    SUBDIR += nvidia-secondary-driver-390
     SUBDIR += nvidia-settings
     SUBDIR += nvidia-xconfig
     SUBDIR += nwg-bar
