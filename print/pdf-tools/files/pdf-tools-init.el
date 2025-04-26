@@ -1,3 +1,5 @@
+;;; pdf-tools-init.el --- PDF Tools Initialization -*- lexical-binding: t -*-
+
 (load "pdf-tools-loaddefs.el")
 (autoload 'pdf-view-mode "pdf-tools")
 (add-to-list 'auto-mode-alist '("\\.[pP][dD][fF]\\'" . pdf-view-mode))
