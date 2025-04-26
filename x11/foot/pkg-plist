@@ -16,6 +16,7 @@ share/bash-completion/completions/footclient
 share/fish/vendor_completions.d/foot.fish
 share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/aeroroot
+%%DATADIR%%/themes/alacritty
 %%DATADIR%%/themes/apprentice
 %%DATADIR%%/themes/ayu-mirage
 %%DATADIR%%/themes/catppuccin-frappe
