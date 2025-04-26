@@ -75,6 +75,7 @@ bin/SABnzbd.py
 %%NLS%%%%DATADIR%%/email/badfetch-ru.tmpl
 %%NLS%%%%DATADIR%%/email/badfetch-sr.tmpl
 %%NLS%%%%DATADIR%%/email/badfetch-sv.tmpl
+%%NLS%%%%DATADIR%%/email/badfetch-tr.tmpl
 %%NLS%%%%DATADIR%%/email/badfetch-zh_CN.tmpl
 %%NLS%%%%DATADIR%%/email/email-cs.tmpl
 %%NLS%%%%DATADIR%%/email/email-da.tmpl
@@ -93,6 +94,7 @@ bin/SABnzbd.py
 %%NLS%%%%DATADIR%%/email/email-ru.tmpl
 %%NLS%%%%DATADIR%%/email/email-sr.tmpl
 %%NLS%%%%DATADIR%%/email/email-sv.tmpl
+%%NLS%%%%DATADIR%%/email/email-tr.tmpl
 %%NLS%%%%DATADIR%%/email/email-zh_CN.tmpl
 %%NLS%%%%DATADIR%%/email/rss-cs.tmpl
 %%NLS%%%%DATADIR%%/email/rss-da.tmpl
@@ -111,6 +113,7 @@ bin/SABnzbd.py
 %%NLS%%%%DATADIR%%/email/rss-ru.tmpl
 %%NLS%%%%DATADIR%%/email/rss-sr.tmpl
 %%NLS%%%%DATADIR%%/email/rss-sv.tmpl
+%%NLS%%%%DATADIR%%/email/rss-tr.tmpl
 %%NLS%%%%DATADIR%%/email/rss-zh_CN.tmpl
 %%DATADIR%%/icons/logo-arrow.svg
 %%DATADIR%%/icons/logo-arrow_gray.svg
@@ -240,4 +243,5 @@ bin/SABnzbd.py
 %%NLS%%%%DATADIR%%/locale/ru/LC_MESSAGES/SABnzbd.mo
 %%NLS%%%%DATADIR%%/locale/sr/LC_MESSAGES/SABnzbd.mo
 %%NLS%%%%DATADIR%%/locale/sv/LC_MESSAGES/SABnzbd.mo
+%%NLS%%%%DATADIR%%/locale/tr/LC_MESSAGES/SABnzbd.mo
 %%NLS%%%%DATADIR%%/locale/zh_CN/LC_MESSAGES/SABnzbd.mo
