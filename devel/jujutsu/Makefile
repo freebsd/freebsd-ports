@@ -1,6 +1,7 @@
 PORTNAME=	jujutsu
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.28.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	se@FreeBSD.org
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libssh2.so:security/libssh2
 
 USES=		cargo localbase ssl
 USE_GITHUB=	yes
-GH_ACCOUNT=	martinvonz
+GH_ACCOUNT=	jj-vcs
 GH_PROJECT=	jj
 
 PLIST_FILES=	bin/jj
