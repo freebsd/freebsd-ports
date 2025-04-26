@@ -1,9 +1,11 @@
 bin/fasda
 libexec/fasda/abundance
+libexec/fasda/filter
 libexec/fasda/fold-change
 libexec/fasda/normalize
 libexec/fasda/pval-sim
 share/man/man1/fasda-abundance.1.gz
+share/man/man1/fasda-filter.1.gz
 share/man/man1/fasda-fold-change.1.gz
 share/man/man1/fasda-normalize.1.gz
 share/man/man1/fasda-pval-sim.1.gz
