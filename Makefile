@@ -116,11 +116,7 @@ INDEX_SHELL=		/bin/sh
 INDEX_PORTS=.
 .endif
 
-.if exists(/usr/libexec/make_index)
-MAKE_INDEX=	/usr/libexec/make_index /dev/stdin
-.else
 MAKE_INDEX=	perl ${.CURDIR}/Tools/make_index
-.endif
 
 ${INDEXDIR}/${INDEXFILE}: .PHONY
 	@${INDEX_ECHO_1ST} "Generating ${INDEXFILE} - please wait.."; \
