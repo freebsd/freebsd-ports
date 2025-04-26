@@ -11,8 +11,9 @@ WWW=		https://www.nushell.sh/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo localbase ssl
+BROKEN_armv7=	compilation fails, see https://github.com/rust-lang/rust/issues/140343
 
+USES=		cargo localbase ssl
 USE_GITHUB=	yes
 
 CARGO_CRATES=	addr2line-0.24.2 \
