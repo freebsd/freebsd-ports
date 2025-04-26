@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	Compose
 
 COMMENT?=	AppStream Compose application and library
