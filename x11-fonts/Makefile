@@ -338,6 +338,7 @@
     SUBDIR += urwfonts
     SUBDIR += urwfonts-ttf
     SUBDIR += uw-ttyp0
+    SUBDIR += vazirmatn
     SUBDIR += victor-mono-ttf
     SUBDIR += vollkorn-ttf
     SUBDIR += webfonts
