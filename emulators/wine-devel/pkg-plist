@@ -704,6 +704,11 @@ include/wine/windows/mmreg.h
 include/wine/windows/mmstream.h
 include/wine/windows/mmstream.idl
 include/wine/windows/mmsystem.h
+include/wine/windows/mpeg2bits.h
+include/wine/windows/mpeg2data.h
+include/wine/windows/mpeg2data.idl
+include/wine/windows/mpeg2structs.h
+include/wine/windows/mpeg2structs.idl
 include/wine/windows/mpegtype.h
 include/wine/windows/mpegtype.idl
 include/wine/windows/mprapi.h
@@ -885,6 +890,8 @@ include/wine/windows/rmxfguid.h
 include/wine/windows/rmxftmpl.h
 include/wine/windows/rmxftmpl.x
 include/wine/windows/roapi.h
+include/wine/windows/robuffer.h
+include/wine/windows/robuffer.idl
 include/wine/windows/roerrorapi.h
 include/wine/windows/rometadata.h
 include/wine/windows/rometadataresolution.h
@@ -1411,6 +1418,7 @@ lib/wine/%%WINEARCH%%-unix/libcredui.a
 lib/wine/%%WINEARCH%%-unix/libcrypt32.a
 lib/wine/%%WINEARCH%%-unix/libcryptdll.a
 lib/wine/%%WINEARCH%%-unix/libcryptnet.a
+lib/wine/%%WINEARCH%%-unix/libcryptsp.a
 lib/wine/%%WINEARCH%%-unix/libcryptui.a
 lib/wine/%%WINEARCH%%-unix/libd2d1.a
 lib/wine/%%WINEARCH%%-unix/libd3d10.a
@@ -1439,6 +1447,8 @@ lib/wine/%%WINEARCH%%-unix/libd3dx10_42.a
 lib/wine/%%WINEARCH%%-unix/libd3dx11.a
 lib/wine/%%WINEARCH%%-unix/libd3dx11_42.a
 lib/wine/%%WINEARCH%%-unix/libd3dx9.a
+lib/wine/%%WINEARCH%%-unix/libd3dx9_35.a
+lib/wine/%%WINEARCH%%-unix/libd3dx9_42.a
 lib/wine/%%WINEARCH%%-unix/libd3dx9_43.a
 lib/wine/%%WINEARCH%%-unix/libd3dxof.a
 lib/wine/%%WINEARCH%%-unix/libdbgeng.a
@@ -1716,6 +1726,7 @@ lib/wine/%%WINEARCH%%-windows/coremessaging.dll
 lib/wine/%%WINEARCH%%-windows/credui.dll
 lib/wine/%%WINEARCH%%-windows/crtdll.dll
 lib/wine/%%WINEARCH%%-windows/crypt32.dll
+lib/wine/%%WINEARCH%%-windows/cryptbase.dll
 lib/wine/%%WINEARCH%%-windows/cryptdlg.dll
 lib/wine/%%WINEARCH%%-windows/cryptdll.dll
 lib/wine/%%WINEARCH%%-windows/cryptext.dll
@@ -1965,6 +1976,7 @@ lib/wine/%%WINEARCH%%-windows/libcredui.a
 lib/wine/%%WINEARCH%%-windows/libcrypt32.a
 lib/wine/%%WINEARCH%%-windows/libcryptdll.a
 lib/wine/%%WINEARCH%%-windows/libcryptnet.a
+lib/wine/%%WINEARCH%%-windows/libcryptsp.a
 lib/wine/%%WINEARCH%%-windows/libcryptui.a
 lib/wine/%%WINEARCH%%-windows/libd2d1.a
 lib/wine/%%WINEARCH%%-windows/libd3d10.a
@@ -1993,6 +2005,8 @@ lib/wine/%%WINEARCH%%-windows/libd3dx10_42.a
 lib/wine/%%WINEARCH%%-windows/libd3dx11.a
 lib/wine/%%WINEARCH%%-windows/libd3dx11_42.a
 lib/wine/%%WINEARCH%%-windows/libd3dx9.a
+lib/wine/%%WINEARCH%%-windows/libd3dx9_35.a
+lib/wine/%%WINEARCH%%-windows/libd3dx9_42.a
 lib/wine/%%WINEARCH%%-windows/libd3dx9_43.a
 lib/wine/%%WINEARCH%%-windows/libd3dxof.a
 lib/wine/%%WINEARCH%%-windows/libdbgeng.a
@@ -2569,6 +2583,7 @@ lib/wine/%%WINEARCH%%-windows/windows.security.authentication.onlineid.dll
 lib/wine/%%WINEARCH%%-windows/windows.security.credentials.ui.userconsentverifier.dll
 lib/wine/%%WINEARCH%%-windows/windows.storage.applicationdata.dll
 lib/wine/%%WINEARCH%%-windows/windows.storage.dll
+lib/wine/%%WINEARCH%%-windows/windows.system.profile.systemid.dll
 lib/wine/%%WINEARCH%%-windows/windows.system.profile.systemmanufacturers.dll
 lib/wine/%%WINEARCH%%-windows/windows.ui.dll
 lib/wine/%%WINEARCH%%-windows/windows.ui.xaml.dll

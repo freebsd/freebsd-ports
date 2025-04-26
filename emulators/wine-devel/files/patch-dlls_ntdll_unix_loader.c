@@ -1,5 +1,5 @@
---- dlls/ntdll/unix/loader.c.orig	2025-02-21 21:19:31.000000000 +0000
-+++ dlls/ntdll/unix/loader.c	2025-04-08 21:22:55.162201000 +0000
+--- dlls/ntdll/unix/loader.c.orig	2025-02-21 21:19:31 UTC
++++ dlls/ntdll/unix/loader.c	2025-04-08 21:22:55 UTC
 @@ -503,6 +503,24 @@
      BOOL force_wow64 = (arch = getenv( "WINEARCH" )) && !strcmp( arch, "wow64" );
      char *ret = NULL;
