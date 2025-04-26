@@ -1,6 +1,7 @@
 PORTNAME=	baresip
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.21.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	herbert@gojira.at
@@ -75,7 +76,7 @@ G711_VARS=		_MODULES_LIST+=g711
 G722_LIB_DEPENDS=	libspandsp.so:comms/spandsp
 G722_VARS=		_MODULES_LIST+=g722
 G726_LIB_DEPENDS=	libspandsp.so:comms/spandsp
-G722_VARS=		_MODULES_LIST+=g726
+G726_VARS=		_MODULES_LIST+=g726
 GST_USES=		gnome gstreamer:1
 GST_VARS=		USE_GNOME+=glib20
 MQTT_LIB_DEPENDS=	libmosquitto.so:net/mosquitto
@@ -83,7 +84,7 @@ MQTT_VARS=		_MODULES_LIST+=mqtt
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 OPUS_VARS=		_MODULES_LIST+=opus
 OPUS_MS_LIB_DEPENDS=	libopus.so:audio/opus
-OPUS_VARS=		_MODULES_LIST+=opus_multistream
+OPUS_MS_VARS=		_MODULES_LIST+=opus_multistream
 PLC_LIB_DEPENDS=	libspandsp.so:comms/spandsp
 PLC_VARS=		_MODULES_LIST+=plc
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio

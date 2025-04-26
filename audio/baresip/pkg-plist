@@ -21,6 +21,7 @@ lib/baresip/modules/ebuacip.so
 lib/baresip/modules/echo.so
 lib/baresip/modules/fakevideo.so
 %%G711%%lib/baresip/modules/g711.so
+%%G722%%lib/baresip/modules/g722.so
 %%G726%%lib/baresip/modules/g726.so
 lib/baresip/modules/httpd.so
 lib/baresip/modules/httpreq.so
@@ -33,6 +34,7 @@ lib/baresip/modules/mixminus.so
 lib/baresip/modules/mwi.so
 lib/baresip/modules/natpmp.so
 lib/baresip/modules/netroam.so
+%%OPUS%%lib/baresip/modules/opus.so
 %%OPUS_MS%%lib/baresip/modules/opus_multistream.so
 lib/baresip/modules/pcp.so
 %%PLC%%lib/baresip/modules/plc.so
