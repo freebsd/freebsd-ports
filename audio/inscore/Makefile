@@ -1,6 +1,5 @@
 PORTNAME=	inscore
-PORTVERSION=	1.31
-PORTREVISION=	2
+PORTVERSION=	1.34
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +21,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TAGNAME=	v${PORTVERSION:S/.//}
-GH_TUPLE=	grame-cncm:guidolib:3cf3d88:guidolib/modules/guidolib # this uses some un-installed parts of the guidolib project, partucularly QGuidoPainter.h
+GH_TUPLE=	grame-cncm:guidolib:acadbcc:guidolib/modules/guidolib # this uses some un-installed parts of the guidolib project, partucularly QGuidoPainter.h
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
 CMAKE_ARGS=	-DFREEBSD_EXAMPLESDIR=${EXAMPLESDIR} -DFREEBSD_DOCSDIR=${DOCSDIR}
