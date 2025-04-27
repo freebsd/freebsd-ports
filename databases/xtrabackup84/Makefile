@@ -1,9 +1,9 @@
 PORTNAME=	xtrabackup84
 PORTVERSION=	8.4.0
-DISTVERSIONSUFFIX=	-1
-PORTREVISION=	8
+DISTVERSIONSUFFIX=	-2
+PORTREVISION=	9
 CATEGORIES=	databases
-MASTER_SITES=	https://downloads.percona.com/downloads/Percona-XtraBackup-innovative-release/Percona-XtraBackup-8.4.0-1/source/tarball/:percona
+MASTER_SITES=	https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-2/source/tarball/:percona
 DISTFILES=	${PPORTNAME}-${DVERSION}${EXTRACT_SUFX}:percona
 
 MAINTAINER=	samm@FreeBSD.org
