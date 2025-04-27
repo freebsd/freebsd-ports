@@ -1,6 +1,8 @@
 PORTNAME=	kdeconnect-kde
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	deskutils kde kde-applications
+PATCH_SITES=	https://invent.kde.org/network/kdeconnect-kde/-/commit/
+PATCHFILES=	e840491c01e7ee895c6165a6b6b4a5dfa8ea147f.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Support for KDE to interface between your phone and your computer

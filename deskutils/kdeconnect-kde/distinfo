@@ -1,3 +1,5 @@
-TIMESTAMP = 1744564204
+TIMESTAMP = 1745696858
 SHA256 (KDE/release-service/25.04.0/kdeconnect-kde-25.04.0.tar.xz) = 144a65ed741dd37bec4e30703c939f49b8becdb51075bd5702d7adede91d5ca8
 SIZE (KDE/release-service/25.04.0/kdeconnect-kde-25.04.0.tar.xz) = 742472
+SHA256 (KDE/release-service/25.04.0/e840491c01e7ee895c6165a6b6b4a5dfa8ea147f.patch) = ca0cab0e83f860ca54eb44077dc8727064c22f91742f645ec69c34e9ed436bda
+SIZE (KDE/release-service/25.04.0/e840491c01e7ee895c6165a6b6b4a5dfa8ea147f.patch) = 3769
