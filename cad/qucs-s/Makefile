@@ -3,6 +3,9 @@ DISTVERSION=	25.1.1
 CATEGORIES=	cad
 MASTER_SITES=	https://github.com/ra3xdh/qucs_s/releases/download/${DISTVERSION}/
 
+PATCH_SITES=	https://github.com/ra3xdh/qucs_s/commit/
+PATCHFILES+=	4ae3a8e182027432b1aad3158798b91c073c4a86.patch:-p1 # Fix build with Qt >= 6.9.0
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quite Universal Circuit Simulator: GUI for circuit simulation kernels
 WWW=		https://ra3xdh.github.io/ \
