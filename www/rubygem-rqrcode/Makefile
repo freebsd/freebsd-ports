@@ -1,5 +1,5 @@
 PORTNAME=	rqrcode
-PORTVERSION=	2.2.0
+PORTVERSION=	3.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-chunky_png>=1.0<2:graphics/rubygem-chunky_png \
-		rubygem-rqrcode_core>=1.0<2:www/rubygem-rqrcode_core
+		rubygem-rqrcode_core>=2.0<3:www/rubygem-rqrcode_core
 
 USES=		gem
 
