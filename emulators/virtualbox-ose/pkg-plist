@@ -403,6 +403,8 @@ lib/virtualbox/VBoxManage
 lib/virtualbox/VBoxNetDHCP.so
 @(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetNAT
 lib/virtualbox/VBoxNetNAT.so
+%%PYTHON%%lib/virtualbox/VBoxPython.so
+%%PYTHON%%lib/virtualbox/VBoxPython%%PYTHON_VERU%%.so
 lib/virtualbox/VBoxRT.so
 %%X11%%@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxSDL
 %%X11%%lib/virtualbox/VBoxSDL.so
