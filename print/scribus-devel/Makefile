@@ -7,7 +7,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	https://github.com/scribusproject/scribus/commit/
-PATCHFILES=		188d030acd0cb71e89dbb57695fe52158b6a0959.patch:-p1
+PATCHFILES=	188d030acd0cb71e89dbb57695fe52158b6a0959.patch:-p1 \
+		f553dce73905d11b301901dc039e973c18adf0a5.patch:-p1
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Comprehensive desktop publishing program (development version)
