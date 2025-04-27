@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.4.8
+DISTVERSION=	2025.4.9
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -77,7 +77,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bzip2-sys-0.1.13+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.2.19 \
+		cc-1.2.20 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
@@ -396,7 +396,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		os_pipe-1.2.1 \
 		overload-0.1.1 \
 		owo-colors-3.5.0 \
-		papergrid-0.14.0 \
+		papergrid-0.15.0 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		parse-zoneinfo-0.3.1 \
@@ -543,8 +543,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		sys-info-0.9.1 \
 		system-configuration-0.6.1 \
 		system-configuration-sys-0.6.0 \
-		tabled-0.18.0 \
-		tabled_derive-0.10.0 \
+		tabled-0.19.0 \
+		tabled_derive-0.11.0 \
 		taplo-0.13.2 \
 		tar-0.4.44 \
 		tempfile-3.19.1 \
@@ -553,6 +553,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		terminal_size-0.4.2 \
 		test-log-0.2.17 \
 		test-log-macros-0.2.17 \
+		testing_table-0.3.0 \
 		text-size-1.1.1 \
 		thiserror-1.0.69 \
 		thiserror-2.0.12 \
@@ -682,14 +683,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
 		winnow-0.6.24 \
-		winnow-0.7.6 \
+		winnow-0.7.7 \
 		winsafe-0.0.19 \
 		wit-bindgen-rt-0.39.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		x25519-dalek-2.0.1 \
 		xattr-1.5.0 \
-		xx-2.0.5 \
+		xx-2.1.0 \
 		xz2-0.1.7 \
 		yansi-1.0.1 \
 		yoke-0.7.5 \
