@@ -441,6 +441,7 @@
     SUBDIR += py-gguf
     SUBDIR += py-gluoncv
     SUBDIR += py-gluonnlp
+    SUBDIR += py-gpiozero
     SUBDIR += py-halo
     SUBDIR += py-hist
     SUBDIR += py-histoprint
