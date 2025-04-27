@@ -848,6 +848,7 @@ include/wine/windows/perhist.idl
 include/wine/windows/physicalmonitorenumerationapi.h
 include/wine/windows/pktdef.h
 include/wine/windows/poppack.h
+include/wine/windows/powersetting.h
 include/wine/windows/powrprof.h
 include/wine/windows/prntvpt.h
 include/wine/windows/processthreadsapi.h
