@@ -11,6 +11,9 @@ WWW=		https://elm-lang.org/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Depends on expired sysutils/py-upt
+EXPIRATION_DATE=2025-06-01
+
 BUILD_DEPENDS=	ghc-8.10.7:lang/ghc810
 
 USES=		cabal

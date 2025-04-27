@@ -13,6 +13,9 @@ WWW=		https://www.hedgewars.org
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on expired lang/ghc810
+EXPIRATION_DATE=2025-06-01
+
 BUILD_DEPENDS=	ghc-8.10.7:lang/ghc810
 
 USES=		cabal:nodefault tar:bzip2
