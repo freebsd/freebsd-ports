@@ -1,5 +1,5 @@
 PORTNAME=	sway
-DISTVERSION=	1.11-rc1
+DISTVERSION=	1.11-rc2
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
