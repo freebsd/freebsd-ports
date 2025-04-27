@@ -1,7 +1,7 @@
 PORTNAME=	bip
-DISTVERSION=	0.9.1
+DISTVERSION=	0.9.2
 CATEGORIES=	irc
-MASTER_SITES=	https://projects.duckcorp.org/attachments/download/102/
+MASTER_SITES=	https://projects.duckcorp.org/attachments/download/103/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Simple IRC proxy with SSL support
@@ -10,19 +10,22 @@ WWW=		https://bip.milkypond.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
-CFLAGS+=	-Wno-sign-compare -Wno-error -I${OPENSSLINC}
-USES=		cpe gmake ssl
+USES=		cpe gmake localbase:ldflags ssl
 CPE_VENDOR=	duckcorp
+
+GNU_CONFIGURE=	yes
+
 INSTALL_TARGET=	SUBDIR=src install-exec
 TEST_TARGET=	check
+
+CFLAGS+=	-Wno-sign-compare -Wno-error -I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
 PATCH_STRIP=	-p1
 SUB_FILES=	pkg-message
 
 PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README TODO
+
 EXAMPLEFILES=	bip.conf bip.vim
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
