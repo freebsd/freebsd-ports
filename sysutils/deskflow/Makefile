@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.21.1
 CATEGORIES=	sysutils
 
+PATCH_SITES=	https://github.com/deskflow/deskflow/commit/
+PATCHFILES+=	12bcc1a4d6c7ae5edec8a43892a0a2e5f59ad11f.patch:-p1 # Fix build with Qt >= 6.9.0
+
 MAINTAINER=	ykasap@gmail.com
 COMMENT=	Mouse and keyboard sharing utility
 WWW=		https://deskflow.org/

@@ -1,3 +1,5 @@
-TIMESTAMP = 1743469942
+TIMESTAMP = 1745409053
 SHA256 (deskflow-deskflow-v1.21.1_GH0.tar.gz) = e284b0c90e4bcb08b93e3df85e8d062d51be60d6a23622629aafd5e92b86aa4b
 SIZE (deskflow-deskflow-v1.21.1_GH0.tar.gz) = 1884253
+SHA256 (12bcc1a4d6c7ae5edec8a43892a0a2e5f59ad11f.patch) = a2a9d6cebb901cb161f9c6dd07bba0eae64215d1c33122a0981efa5cb86e5f79
+SIZE (12bcc1a4d6c7ae5edec8a43892a0a2e5f59ad11f.patch) = 1522
