@@ -5,6 +5,10 @@ CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/YACReader/${PORTNAME}/releases/download/${DISTVERSION}/
 EXTRACT_SUFX=	-src.tar.xz
 
+PATCH_SITES=	https://github.com/YACReader/${PORTNAME}/commit/
+PATCHFILES+=	254652f03ec648423c9488929dc62fb3f4b817c7.patch:-p1 # Fix build with Qt >= 6.9.0
+PATCHFILES+=	6e0e6f3bc39ddc4d7241f4f946088291410feb50.patch:-p1 # Fix build with Qt >= 6.9.0
+
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Yet another comic reader
 WWW=		https://www.yacreader.com/
