@@ -1,3 +1,3 @@
 bin/miniflux
 share/man/man1/miniflux.1.gz
-@sample etc/miniflux.env.sample
+@sample(%%MINIFLUX_USER%%,%%MINIFLUX_GROUP%%,0640) etc/miniflux.env.sample

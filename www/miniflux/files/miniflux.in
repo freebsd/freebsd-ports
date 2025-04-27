@@ -1,28 +1,46 @@
 #!/bin/sh
+# shellcheck disable=SC2034
 #
 # Author: Mark Felder <feld@FreeBSd.org>
-
+#
 # PROVIDE: miniflux
-# REQUIRE: LOGIN
+# REQUIRE: LOGIN postgresql
 # KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# miniflux_enable: Set it to YES to enable miniflux.
+#			             Default: NO
+# miniflux_config: Name of configuration file.
+#                  Default: %%PREFIX%%/etc/miniflux.env
 
-# Add the following lines to /etc/rc.conf to enable miniflux:
-# miniflux_enable="YES"
-# miniflux_flags="<set as needed>"
-
+# shellcheck disable=SC1094
 . /etc/rc.subr
 
 name="miniflux"
-rcvar=miniflux_enable
-
+rcvar="${name}_enable"
 load_rc_config $name
 
-: ${miniflux_enable="NO"}
-: ${miniflux_config="%%PREFIX%%/etc/miniflux.env"}
+: "${miniflux_enable=NO}"
+: "${miniflux_user:=%%MINIFLUX_USER%%}"
+: "${miniflux_group:=%%MINIFLUX_GROUP%%}"
+: "${miniflux_config=%%PREFIX%%/etc/$name.env}"
+: "${miniflux_pidfile:=/var/run/$name/$name.pid}"
+: "${miniflux_daemonflags:=-fH -P $miniflux_pidfile -t $name -T $name}"
+: "${miniflux_extra_flags:=-c $miniflux_config}"
 
-pidfile="/var/run/miniflux.pid"
-procname="%%PREFIX%%/bin/miniflux"
+pidfile="$miniflux_pidfile"
 command="/usr/sbin/daemon"
-command_args="-f -T miniflux -p ${pidfile} -u miniflux %%PREFIX%%/bin/miniflux -c ${miniflux_config}"
+miniflux_command="%%PREFIX%%/bin/$name"
+command_args="$miniflux_daemonflags $miniflux_command $miniflux_extra_flags"
+
+start_precmd="miniflux_precmd"
+
+miniflux_precmd() {
+    rundir=$(dirname "$pidfile")
+    [ -d "$rundir" ] ||
+        install -d -o "$miniflux_user" -g "$miniflux_group" "$rundir"
+}
 
 run_rc_command "$1"
