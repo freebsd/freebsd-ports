@@ -10,7 +10,8 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Python bindings for Libvirt virtualization API
 WWW=		https://libvirt.org/python.html
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvirt.so:devel/libvirt
 
