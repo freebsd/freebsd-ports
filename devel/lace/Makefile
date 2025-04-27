@@ -1,12 +1,15 @@
 PORTNAME=	lace
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-work-stealing
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Implementation of work-stealing in C
 WWW=		https://github.com/trolando/lace
+
+BROKEN_i386=	compilation fails: static assertion failed due to requirement '(sizeof(struct _Task) % 64) == 0': Task size should be a multiple of LINE_SIZE
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
