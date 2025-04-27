@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 DISTVERSION=	6.1.50
-PORTREVISION?=	11
+PORTREVISION?=	12
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
 		LOCAL/bofh/emulators/virtualbox-ose:docs
@@ -270,6 +270,8 @@ post-patch:
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO_CMD} 'VBOX_WITH_VALIDATIONKIT =' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO_CMD} 'VBOX_WITH_X11_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_BLD_PYTHON = ${LOCALBASE}/bin/${PYTHON_VERSION}' >> \
+	    ${WRKSRC}/LocalConfig.kmk
 .if ${PORT_OPTIONS:MR0LOGGING}
 	@${ECHO_CMD} 'VBOX_WITH_R0_LOGGING = 1' >> ${WRKSRC}/LocalConfig.kmk
 .endif
