@@ -1,6 +1,6 @@
 PORTNAME=	libcomprex
-PORTVERSION=	0.3.3
-PORTREVISION=	14
+DISTVERSION=	0.3.3
+PORTREVISION=	15
 CATEGORIES=	archivers
 MASTER_SITES=	SF/gnupdate/${PORTNAME}/${PORTVERSION}
 
@@ -10,11 +10,13 @@ WWW=		https://gnupdate.sourceforge.net/components/libcomprex/index.xml
 
 LICENSE=	LGPL21
 
+DEPRECATDED=		Unmaintained upstream, laste release in 2003
+EXPIRATION_DATE=	2025-05-27
+
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 
