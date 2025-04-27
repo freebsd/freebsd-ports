@@ -1,7 +1,6 @@
 PORTNAME=	rash
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.7
-PORTREVISION=	1
+DISTVERSION=	2.9.9
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +11,7 @@ WWW=		https://rash-sh.github.io \
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	compilation fails, see https://github.com/rash-sh/rash/issues/749
 BROKEN_i386=	compilation fails, see https://github.com/japaric/syscall.rs/issues/37
 
 USES=		cargo
@@ -57,8 +57,8 @@ CARGO_CRATES=	ahash-0.7.8 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.34 \
-		clap_builder-4.5.34 \
+		clap-4.5.35 \
+		clap_builder-4.5.35 \
 		clap_complete-4.5.12 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
@@ -91,7 +91,7 @@ CARGO_CRATES=	ahash-0.7.8 \
 		either-1.13.0 \
 		encode_unicode-1.0.0 \
 		env_filter-0.1.2 \
-		env_logger-0.11.7 \
+		env_logger-0.11.8 \
 		equivalent-1.0.1 \
 		errno-0.2.8 \
 		errno-0.3.10 \
@@ -141,10 +141,10 @@ CARGO_CRATES=	ahash-0.7.8 \
 		linux-raw-sys-0.4.14 \
 		linux-raw-sys-0.9.2 \
 		log-0.4.27 \
-		mdbook-0.4.47 \
+		mdbook-0.4.48 \
 		memchr-2.7.4 \
 		memo-map-0.3.2 \
-		minijinja-2.8.0 \
+		minijinja-2.9.0 \
 		mio-1.0.1 \
 		nix-0.17.0 \
 		nix-0.29.0 \
