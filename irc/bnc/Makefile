@@ -1,5 +1,6 @@
 PORTNAME=	bnc
 DISTVERSION=	2.9.4
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://home.risingnet.net/download/
 DISTNAME=	${PORTNAME}${DISTVERSION}
@@ -9,6 +10,9 @@ COMMENT=	Simple IRC relay proxy with support for virtual hosting
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=		Unmaintained without upstream distfile and WWW
+EXPIRATION_DATE=	2025-05-27
 
 GNU_CONFIGURE=	yes
 
