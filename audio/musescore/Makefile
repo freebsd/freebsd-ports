@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.5.1
 CATEGORIES=	audio
 
+PATCH_SITES=	https://github.com/musescore/MuseScore/commit/
+PATCHFILES+=	05056ed19520060c3912a09a3adfa0927057f956.patch:-p1 # Fix build with Qt >= 6.9.0
+
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Free music composition & notation software
 WWW=		https://musescore.org/ \
