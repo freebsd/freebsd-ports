@@ -86,7 +86,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-akismet>=3.0<4.0:devel/rubygem-akismet \
 	rubygem-invisible_captcha>=2.1.0<2.2.0:graphics/rubygem-invisible_captcha \
 	rubygem-devise-two-factor41-rails70>=4.1.1<4.2:security/rubygem-devise-two-factor41-rails70 \
-	rubygem-rqrcode>=2.2.0<3:www/rubygem-rqrcode \
+	rubygem-rqrcode-gitlab>=2.2.0<3:www/rubygem-rqrcode-gitlab \
 	rubygem-validates_hostname>=1.0.13<1.1.0:dns/rubygem-validates_hostname \
 	rubygem-rubyzip>=2.3.2<2.4:archivers/rubygem-rubyzip \
 	rubygem-acme-client-gitlab>=2.0.21<3:security/rubygem-acme-client-gitlab \
