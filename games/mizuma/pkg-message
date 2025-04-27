@@ -5,14 +5,16 @@ An application shortcut for the desktop will be not created by the port.
 
 To open the main gui type: Mizuma
 
-For quick commandline tasks you can use the following examples:
+The following commandline tasks are currently available:
 
-    To install something use: 		Mizuma Install Skype
-    To launch something use: 		Mizuma Launch Skype
-    To uninstall something use: 	Mizuma Uninstall Skype
+Mizuma Install $APPNAME
+Mizuma Launch $APPNAME
+Mizuma Uninstall $APPNAME
+Mizuma List Library
+Mizuma List Installed
 
-For further possibly helpful information please read:
-https://codeberg.org/Alexander88207/Mizutamari#support
+For further possibly helpful information take a look at:
+https://codeberg.org/Alexander88207/Mizutamari
 
 Enjoy!
 EOM
