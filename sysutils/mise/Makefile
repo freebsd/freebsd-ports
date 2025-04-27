@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.4.9
+DISTVERSION=	2025.4.10
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -71,7 +71,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytecount-0.6.8 \
 		byteorder-1.5.0 \
 		bytes-1.10.1 \
-		bytesize-1.3.3 \
 		bytesize-2.0.1 \
 		bzip2-0.5.2 \
 		bzip2-sys-0.1.13+1.0.8 \
@@ -168,7 +167,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		exec-0.3.1 \
 		expr-lang-0.3.0 \
 		eyre-0.6.12 \
-		faster-hex-0.9.0 \
+		faster-hex-0.10.0 \
 		fastrand-2.3.0 \
 		fiat-crypto-0.2.9 \
 		filetime-0.2.25 \
@@ -202,67 +201,69 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		getrandom-0.3.2 \
 		ghash-0.5.1 \
 		gimli-0.28.1 \
-		gix-0.71.0 \
-		gix-actor-0.34.0 \
-		gix-archive-0.20.0 \
-		gix-attributes-0.25.0 \
+		gix-0.72.1 \
+		gix-actor-0.35.1 \
+		gix-archive-0.21.1 \
+		gix-attributes-0.26.0 \
 		gix-bitmap-0.2.14 \
 		gix-chunk-0.4.11 \
-		gix-command-0.5.0 \
-		gix-commitgraph-0.27.0 \
-		gix-config-0.44.0 \
-		gix-config-value-0.14.12 \
-		gix-credentials-0.28.0 \
-		gix-date-0.9.4 \
-		gix-diff-0.51.0 \
-		gix-dir-0.13.0 \
-		gix-discover-0.39.0 \
-		gix-features-0.41.1 \
-		gix-filter-0.18.0 \
-		gix-fs-0.14.0 \
-		gix-glob-0.19.0 \
-		gix-hash-0.17.0 \
-		gix-hashtable-0.8.0 \
-		gix-ignore-0.14.0 \
-		gix-index-0.39.0 \
-		gix-lock-17.0.0 \
-		gix-mailmap-0.26.0 \
-		gix-negotiate-0.19.0 \
-		gix-object-0.48.0 \
-		gix-odb-0.68.0 \
-		gix-pack-0.58.0 \
-		gix-packetline-0.18.4 \
-		gix-packetline-blocking-0.18.3 \
-		gix-path-0.10.15 \
-		gix-pathspec-0.10.0 \
-		gix-prompt-0.10.0 \
-		gix-protocol-0.49.0 \
-		gix-quote-0.5.0 \
-		gix-ref-0.51.0 \
-		gix-refspec-0.29.0 \
-		gix-revision-0.33.0 \
-		gix-revwalk-0.19.0 \
-		gix-sec-0.10.12 \
-		gix-shallow-0.3.0 \
-		gix-status-0.18.0 \
-		gix-submodule-0.18.0 \
-		gix-tempfile-17.0.0 \
+		gix-command-0.6.0 \
+		gix-commitgraph-0.28.0 \
+		gix-config-0.45.1 \
+		gix-config-value-0.15.0 \
+		gix-credentials-0.29.0 \
+		gix-date-0.10.1 \
+		gix-diff-0.52.1 \
+		gix-dir-0.14.1 \
+		gix-discover-0.40.1 \
+		gix-features-0.42.1 \
+		gix-filter-0.19.1 \
+		gix-fs-0.15.0 \
+		gix-glob-0.20.0 \
+		gix-hash-0.18.0 \
+		gix-hashtable-0.8.1 \
+		gix-ignore-0.15.0 \
+		gix-index-0.40.0 \
+		gix-lock-17.1.0 \
+		gix-mailmap-0.27.1 \
+		gix-negotiate-0.20.1 \
+		gix-object-0.49.1 \
+		gix-odb-0.69.1 \
+		gix-pack-0.59.1 \
+		gix-packetline-0.19.0 \
+		gix-packetline-blocking-0.19.0 \
+		gix-path-0.10.17 \
+		gix-pathspec-0.11.0 \
+		gix-prompt-0.11.0 \
+		gix-protocol-0.50.1 \
+		gix-quote-0.6.0 \
+		gix-ref-0.52.1 \
+		gix-refspec-0.30.1 \
+		gix-revision-0.34.1 \
+		gix-revwalk-0.20.1 \
+		gix-sec-0.11.0 \
+		gix-shallow-0.4.0 \
+		gix-status-0.19.1 \
+		gix-submodule-0.19.1 \
+		gix-tempfile-17.1.0 \
 		gix-trace-0.1.12 \
-		gix-transport-0.46.0 \
-		gix-traverse-0.45.0 \
-		gix-url-0.30.0 \
-		gix-utils-0.2.0 \
-		gix-validate-0.9.4 \
-		gix-worktree-0.40.0 \
-		gix-worktree-state-0.18.0 \
-		gix-worktree-stream-0.20.0 \
+		gix-transport-0.47.0 \
+		gix-traverse-0.46.1 \
+		gix-url-0.31.0 \
+		gix-utils-0.3.0 \
+		gix-validate-0.10.0 \
+		gix-worktree-0.41.0 \
+		gix-worktree-state-0.19.0 \
+		gix-worktree-stream-0.21.1 \
 		glob-0.3.2 \
 		globset-0.4.16 \
 		globwalk-0.9.1 \
 		h2-0.4.9 \
+		hash32-0.3.1 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
+		heapless-0.8.0 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		hex-0.4.3 \
@@ -310,7 +311,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		indicatif-0.17.11 \
 		indoc-2.0.6 \
 		inout-0.1.4 \
-		insta-1.42.2 \
+		insta-1.43.0 \
 		intl-memoizer-0.5.2 \
 		intl_pluralrules-7.0.2 \
 		io-close-0.3.7 \
@@ -336,7 +337,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libc-0.2.172 \
 		libm-0.2.13 \
 		libredox-0.1.3 \
-		linked-hash-map-0.5.6 \
+		libz-rs-sys-0.5.0 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.9.4 \
 		litemap-0.7.5 \
@@ -572,9 +573,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-rustls-0.26.2 \
 		tokio-util-0.7.15 \
 		toml-0.5.11 \
-		toml-0.8.20 \
-		toml_datetime-0.6.8 \
-		toml_edit-0.22.24 \
+		toml-0.8.21 \
+		toml_datetime-0.6.9 \
+		toml_edit-0.22.25 \
+		toml_write-0.1.0 \
 		tower-0.5.2 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
@@ -696,9 +698,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
 		zerocopy-0.7.35 \
-		zerocopy-0.8.24 \
+		zerocopy-0.8.25 \
 		zerocopy-derive-0.7.35 \
-		zerocopy-derive-0.8.24 \
+		zerocopy-derive-0.8.25 \
 		zerofrom-0.1.6 \
 		zerofrom-derive-0.1.6 \
 		zeroize-1.8.1 \
@@ -707,6 +709,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zerovec-derive-0.10.3 \
 		zip-2.5.0 \
 		zipsign-api-0.1.3 \
+		zlib-rs-0.5.0 \
 		zopfli-0.8.2 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
