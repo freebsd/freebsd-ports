@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_web_contents.cc.orig	2025-04-08 22:12:25 UTC
+--- electron/shell/browser/api/electron_api_web_contents.cc.orig	2025-04-23 00:27:29 UTC
 +++ electron/shell/browser/api/electron_api_web_contents.cc
 @@ -157,11 +157,11 @@
  #include "ui/base/cocoa/defaults_utils.h"
@@ -57,7 +57,7 @@
      CrashDumpHungChildProcess(rph->GetProcess().Handle());
  #endif
      rph->Shutdown(content::RESULT_CODE_HUNG);
-@@ -3466,7 +3466,7 @@ void WebContents::Focus() {
+@@ -3476,7 +3476,7 @@ void WebContents::Focus() {
  void WebContents::Focus() {
    // Focusing on WebContents does not automatically focus the window on macOS
    // and Linux, do it manually to match the behavior on Windows.
@@ -66,7 +66,7 @@
    if (owner_window())
      owner_window()->Focus(true);
  #endif
-@@ -4335,7 +4335,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
+@@ -4345,7 +4345,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
  }
  #endif
  
