@@ -61,6 +61,7 @@ include/libint2/util/intpart_iter.h
 include/libint2/util/intrinsic_operations.h
 include/libint2/util/intrinsic_types.h
 include/libint2/util/memory.h
+include/libint2/util/optional.h
 include/libint2/util/singleton.h
 include/libint2/util/small_vector.h
 include/libint2/util/timer.h
