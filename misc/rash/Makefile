@@ -12,6 +12,7 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=	compilation fails, see https://github.com/rash-sh/rash/issues/749
+BROKEN_armv7=	compilation fails, see https://github.com/rash-sh/rash/issues/749
 BROKEN_i386=	compilation fails, see https://github.com/japaric/syscall.rs/issues/37
 
 USES=		cargo
