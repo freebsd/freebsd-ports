@@ -1,3 +1,5 @@
-TIMESTAMP = 1739623404
+TIMESTAMP = 1744955150
 SHA256 (flatpak-libportal-0.9.1_GH0.tar.gz) = ea422b789ae487e04194d387bea031fd7485bf88a18aef8c767f7d1c29496a4e
 SIZE (flatpak-libportal-0.9.1_GH0.tar.gz) = 142301
+SHA256 (796053d2eebe4532aad6bd3fd80cdf3b197806ec.patch) = 8fa13c34e4bcf4bc1d439baac82707a6d9ed6d69db9f04f563d5cd961bf10f49
+SIZE (796053d2eebe4532aad6bd3fd80cdf3b197806ec.patch) = 1471

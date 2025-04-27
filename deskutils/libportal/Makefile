@@ -2,6 +2,9 @@ PORTNAME=	libportal
 PORTVERSION=	0.9.1
 CATEGORIES=	deskutils
 
+PATCH_SITES=	https://github.com/flatpak/libportal/commit/
+PATCHFILES+=	796053d2eebe4532aad6bd3fd80cdf3b197806ec.patch:-p1 # Fix build with Qt >= 6.9.0
+
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT?=	GIO-styled async APIs for Flatpak
 WWW=		https://github.com/flatpak/libportal
