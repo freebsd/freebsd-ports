@@ -3,7 +3,7 @@ DISTVERSION=	1.30.25
 CATEGORIES=	biology
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convenient tool to install and update Bioconductor packages
 WWW=		https://cran.r-project.org/web/packages/BiocManager/
 
