@@ -1,6 +1,6 @@
 PORTNAME=	gpiozero
 DISTVERSION=	2.0.1
-CATEGORIES=	misc python # machine-learning
+CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
