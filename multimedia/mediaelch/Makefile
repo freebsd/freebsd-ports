@@ -4,6 +4,9 @@ DISTVERSION=		2.12.0
 CATEGORIES=		multimedia
 PKGNAMESUFFIX=		-${FLAVOR}
 
+PATCH_SITES=	https://github.com/Komet/MediaElch/commit/
+PATCHFILES+=	dbea12fbf2c1fe603819392aa2a181cffa168548.patch:-p1 # Fix build with Qt >= 6.9.0
+
 MAINTAINER=	ports@freebsd.org
 COMMENT=	Desktop utility to manage metadata and artwork for Kodi and Jellyfin
 WWW=		https://www.mediaelch.de/mediaelch/
