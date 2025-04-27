@@ -11,13 +11,16 @@ share/bash-completion/completions/ietf2bibtex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Images/ListItem-Expanded.svg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Images/make-images
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ODT-Template.odt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/RSerPool.bib
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/authors-fix.list
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/authors.list
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/get-author-url
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/odt-example.export
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/publication-list-treeview.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/text-example.export
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/web-example.export
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/web-example1.export
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/web-example2.export
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/web-rserpool.export
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yaml-example.export
 share/man/man1/bibtexconv-odt.1.gz
 share/man/man1/bibtexconv.1.gz
