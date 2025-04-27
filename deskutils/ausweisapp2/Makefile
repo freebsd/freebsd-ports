@@ -1,5 +1,5 @@
 PORTNAME=	ausweisapp2
-DISTVERSION=	2.3.0
+DISTVERSION=	2.3.1
 CATEGORIES=	deskutils security
 
 MAINTAINER=	freebsd@sysctl.cz
