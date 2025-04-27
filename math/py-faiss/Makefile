@@ -1,6 +1,6 @@
 PORTNAME=	faiss
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.0
+DISTVERSION=	1.11.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -30,7 +30,7 @@ WRKSRC_SUBDIR=	faiss/python
 
 CMAKE_ARGS=	-DPython_EXECUTABLE:STRING=${PYTHON_CMD}
 
-TEST_WRKSRC=	${WRKSRC}/../..
+TEST_WRKSRC=	${WRKSRC}/../../tests
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-patch: # remove GPU testcases
@@ -43,5 +43,7 @@ do-install: # see https://github.com/facebookresearch/faiss/issues/2194
 	${INSTALL_DATA} ${BUILD_WRKSRC}/${f} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
 .endfor
 	cd ${BUILD_WRKSRC} && ${COPYTREE_SHARE} contrib ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
+
+# tests are broken, see https://github.com/facebookresearch/faiss/issues/4317
 
 .include <bsd.port.mk>
