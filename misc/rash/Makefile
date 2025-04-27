@@ -1,6 +1,6 @@
 PORTNAME=	rash
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.9
+DISTVERSION=	2.9.10
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,10 +10,6 @@ WWW=		https://rash-sh.github.io \
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_aarch64=	compilation fails, see https://github.com/rash-sh/rash/issues/749
-BROKEN_armv7=	compilation fails, see https://github.com/rash-sh/rash/issues/749
-BROKEN_i386=	compilation fails, see https://github.com/japaric/syscall.rs/issues/37
 
 USES=		cargo
 
@@ -58,8 +54,8 @@ CARGO_CRATES=	ahash-0.7.8 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.35 \
-		clap_builder-4.5.35 \
+		clap-4.5.37 \
+		clap_builder-4.5.37 \
 		clap_complete-4.5.12 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
@@ -70,7 +66,7 @@ CARGO_CRATES=	ahash-0.7.8 \
 		cpufeatures-0.2.12 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
-		crossbeam-channel-0.5.13 \
+		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.20 \
@@ -123,7 +119,6 @@ CARGO_CRATES=	ahash-0.7.8 \
 		ignore-0.4.23 \
 		indexmap-1.9.3 \
 		indexmap-2.3.0 \
-		ipc-channel-0.19.0 \
 		is-terminal-0.4.12 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
@@ -175,7 +170,7 @@ CARGO_CRATES=	ahash-0.7.8 \
 		proc-macro-crate-3.1.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.94 \
+		proc-macro2-1.0.95 \
 		prs-lib-0.5.2 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
@@ -184,8 +179,11 @@ CARGO_CRATES=	ahash-0.7.8 \
 		quote-1.0.40 \
 		radium-0.7.0 \
 		rand-0.8.5 \
+		rand-0.9.1 \
 		rand_chacha-0.3.1 \
+		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
+		rand_core-0.9.3 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_users-0.4.5 \
@@ -201,7 +199,6 @@ CARGO_CRATES=	ahash-0.7.8 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
-		sc-0.2.7 \
 		schemars-0.8.22 \
 		schemars_derive-0.8.22 \
 		seahash-4.1.0 \
@@ -225,7 +222,7 @@ CARGO_CRATES=	ahash-0.7.8 \
 		strum-0.27.1 \
 		strum_macros-0.27.1 \
 		syn-1.0.109 \
-		syn-2.0.100 \
+		syn-2.0.101 \
 		syn_derive-0.1.8 \
 		tap-1.0.1 \
 		tempfile-3.19.1 \
@@ -309,7 +306,8 @@ CARGO_CRATES=	ahash-0.7.8 \
 		wyz-0.5.1 \
 		zerocopy-0.6.6 \
 		zerocopy-derive-0.6.6 \
-		zeroize-1.8.1
+		zeroize-1.8.1 \
+		ipc-channel@git+https://github.com/servo/ipc-channel?rev=82f6c49096b116208861f928862f9eefaf47c3c9\#82f6c49096b116208861f928862f9eefaf47c3c9
 
 PLIST_FILES=	bin/${PORTNAME}
 
