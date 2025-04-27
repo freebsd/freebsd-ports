@@ -1,5 +1,5 @@
 PORTNAME=	serd
-DISTVERSION=	0.32.2
+DISTVERSION=	0.32.4
 CATEGORIES=	devel
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -14,9 +14,8 @@ USES=		meson pkgconfig python:test tar:xz
 USE_CSTD=	c99
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Ddocs=disabled
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 PLIST_SUB=	VERSION=${PORTVERSION}
-
-BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 .include <bsd.port.mk>
