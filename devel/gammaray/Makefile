@@ -4,6 +4,9 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/KDAB/GammaRay/releases/download/v${DISTVERSION}/
 
+PATCH_SITES=	https://github.com/KDAB/GammaRay/commit/
+PATCHFILES+=	73a102f50f0c4f9482f90b84814aa9cd812c3136.patch:-p1 # Fix build with Qt >= 6.9.0
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Debugging tool for Qt-application
 WWW=		https://www.kdab.com/development-resources/qt-tools/gammaray/
