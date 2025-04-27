@@ -401,6 +401,8 @@ lib/virtualbox/VBoxManage
 lib/virtualbox/VBoxNetDHCP.so
 @(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetNAT
 lib/virtualbox/VBoxNetNAT.so
+%%PYTHON%%lib/virtualbox/VBoxPython3.so
+%%PYTHON%%lib/virtualbox/VBoxPython3m.so
 lib/virtualbox/VBoxRT.so
 lib/virtualbox/VBoxSVC
 %%X11%%lib/virtualbox/VBoxSVGA3D.so

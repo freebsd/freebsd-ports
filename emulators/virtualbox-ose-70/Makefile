@@ -1,9 +1,8 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	7.0.24
-PORTREVISION?=	3
+DISTVERSION=	7.0.26
+PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
-		LOCAL/bofh/emulators/virtualbox-ose:docs \
 		LOCAL/vvd:docs
 PKGNAMESUFFIX?=	-70
 DISTFILES=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX}:src \
@@ -32,6 +31,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod-70
 USES=		compiler:c++14-lang cpe gnome iconv qt:5 pkgconfig ssl tar:bzip2
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
+USE_BINUTILS=	yes
 USE_GNOME=	libxml2
 USE_QT=		buildtools:build linguisttools:build
 USE_RC_SUBR=	vboxheadless vboxwatchdog
@@ -251,6 +251,8 @@ post-patch:
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO_CMD} 'VBOX_WITH_VALIDATIONKIT =' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO_CMD} 'VBOX_WITH_X11_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_BLD_PYTHON = ${LOCALBASE}/bin/${PYTHON_VERSION}' >> \
+	    ${WRKSRC}/LocalConfig.kmk
 .if ${PORT_OPTIONS:MR0LOGGING}
 	@${ECHO_CMD} 'VBOX_WITH_R0_LOGGING = 1' >> ${WRKSRC}/LocalConfig.kmk
 .endif
