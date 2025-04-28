@@ -1,7 +1,6 @@
 PORTNAME=	containerd
 DISTVERSIONPREFIX=v
-DISTVERSION=	2.0.4
-PORTREVISION=	1
+DISTVERSION=	2.0.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		cpe gmake go:1.22,modules,no_targets
+USES=		cpe gmake go:1.23,modules,no_targets
 USE_GITHUB=	yes
 GH_SUBDIR=	src/github.com/containerd/containerd
 
