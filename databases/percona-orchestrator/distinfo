@@ -1,6 +1,6 @@
-TIMESTAMP = 1712256381
-SHA256 (percona-orchestrator-v3.2.6-12_GH0.tar.gz) = 6ea9d25494f66fd67b18c71e155bc810ee13ea499617ffe2ec5e3caf17197d93
-SIZE (percona-orchestrator-v3.2.6-12_GH0.tar.gz) = 7913143
+TIMESTAMP = 1745531504
+SHA256 (percona-orchestrator-v3.2.6-16_GH0.tar.gz) = 8147cb8d9929ab8543d5cafb1b9db1961c1c74f78b97b5ce8591c60aa8955aea
+SIZE (percona-orchestrator-v3.2.6-16_GH0.tar.gz) = 16140265
 SHA256 (Showmax-go-fqdn-v1.0.0_GH0.tar.gz) = 99c53987211042ccd088193792c458e2c4abd2377b599ada4cfb6188752dec99
 SIZE (Showmax-go-fqdn-v1.0.0_GH0.tar.gz) = 7305
 SHA256 (armon-consul-api-eb2c6b5be1b6_GH0.tar.gz) = c4707c2cf495f918b229991c818fe59acd28259d7e2d738551312eb5c4347c39
