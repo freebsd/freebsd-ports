@@ -4328,3 +4328,4 @@ textproc/py-grapheme||2025-04-21|Has expired: Upstream is inactive for 4 years
 devel/p5-threads|lang/perl5.36|2025-04-24|part of Perl core since 5.7.3, the port was from 5.27.8
 databases/replibyte||2025-04-26|incompatible rust 1.86.0 and seems to be dead upstream
 net-im/chatterino2||2025-04-27|Has expired: Broken for more than a month with no available fixes
+shells/oil|shells/oils|2025-04-27|Project was renamed upstream
