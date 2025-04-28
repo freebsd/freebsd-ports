@@ -53,6 +53,8 @@ share/applications/hpct-viewer.desktop
 share/bash-completion/completions/dbshell
 share/bash-completion/completions/hipercontracer
 share/bash-completion/completions/hpct-importer
+share/bash-completion/completions/hpct-node-removal
+share/bash-completion/completions/hpct-node-setup
 share/bash-completion/completions/hpct-query
 share/bash-completion/completions/hpct-results
 share/bash-completion/completions/hpct-rtunnel
