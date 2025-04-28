@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BROKEN_i386=	https://github.com/openvkl/openvkl/issues/14
 
 BUILD_DEPENDS=	ispc:devel/ispc
-LIB_DEPENDS=	libembree3.so:graphics/embree \
+LIB_DEPENDS=	libembree3.so:graphics/embree3 \
 		libglfw.so:graphics/glfw \
 		librkcommon.so:devel/rkcommon \
 		libtbbmalloc.so:devel/onetbb

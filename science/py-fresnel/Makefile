@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	pybind11>0:devel/pybind11
-LIB_DEPENDS=	libembree3.so:graphics/embree \
+LIB_DEPENDS=	libembree3.so:graphics/embree3 \
 		libqhull_r.so:math/qhull \
 		libtbb.so:devel/onetbb
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}

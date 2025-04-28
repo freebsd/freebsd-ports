@@ -170,6 +170,7 @@
     SUBDIR += elastix
     SUBDIR += elementary-photos
     SUBDIR += embree
+    SUBDIR += embree3
     SUBDIR += enblend
     SUBDIR += engauge-digitizer
     SUBDIR += entangle

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	ispc:devel/ispc
 LIB_DEPENDS=	libbenchmark.so:devel/benchmark \
-		libembree3.so:graphics/embree \
+		libembree3.so:graphics/embree3 \
 		libglfw.so:graphics/glfw \
 		libopenvkl.so:graphics/openvkl \
 		librkcommon.so:devel/rkcommon \

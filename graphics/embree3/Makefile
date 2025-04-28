@@ -1,7 +1,8 @@
 PORTNAME=	embree
-PORTVERSION=	4.2.0
+PORTVERSION=	3.13.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
+PKGNAMESUFFIX=	3
 
 PATCH_SITES=	https://github.com/RenderKit/${PORTNAME}/commit/
 PATCHFILES+=	cda4cf1919bb2a748e78915fbd6e421a1056638d.patch:-p1 # https://github.com/RenderKit/embree/issues/486
@@ -18,14 +19,15 @@ ONLY_FOR_ARCHS_REASON=	heavy use of SSE instructions
 USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	RenderKit
 
 CMAKE_ARGS=	-DEMBREE_TASKING_SYSTEM:STRING=${_ETS} \
 		-DCMAKE_INSTALL_DOCDIR:STRING=${DOCSDIR} \
-		-DEMBREE_RAY_MASK:BOOL=ON \
-		-DEMBREE_ZIP_MODE:BOOL=OFF
+		-DEMBREE_RAY_MASK:BOOL=ON
 
-PLIST_SUB+=	VERSION=${PORTVERSION} MANSUFX=4${PORTNAME}4.gz
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${PKGNAMESUFFIX}
+
+PLIST_SUB+=	VERSION=${PORTVERSION} MANSUFX=3${PORTNAME}3.gz
 
 OPTIONS_DEFINE=	BACKFACE_CULLING DOCS EXAMPLES ISPC TBB
 OPTIONS_DEFAULT=	ISPC TBB
@@ -36,7 +38,7 @@ BACKFACE_CULLING_CMAKE_ON=	-DEMBREE_BACKFACE_CULLING:BOOL=ON
 
 ISPC_DESC=		ISPC applications support
 ISPC_BUILD_DEPENDS=	ispc:devel/ispc
-ISPC_CMAKE_ON=		-DEMBREE_ISPC_SUPPORT:BOOL=ON
+ISPC_CMAKE_OFF=		-DEMBREE_ISPC_SUPPORT:BOOL=OFF
 
 EXAMPLES_LIB_DEPENDS=	libglfw.so:graphics/glfw \
 			libpng.so:graphics/png
@@ -69,10 +71,6 @@ post-patch:
 		${WRKSRC}/common/cmake/check_globals.cmake \
 		${WRKSRC}/common/cmake/check_stack_frame_size.cmake
 .endif
-	@${REINPLACE_CMD} -e \
-	    '/DESTINATION "src" COMPONENT examples)/s,^INSTALL,#&,' \
-		${WRKSRC}/tutorials/minimal/CMakeLists.txt \
-		${WRKSRC}/tutorials/CMakeLists.txt
 
 do-test:
 	${TEST_WRKSRC}/${PORTNAME}_verify

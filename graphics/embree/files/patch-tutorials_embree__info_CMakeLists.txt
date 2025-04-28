@@ -1,0 +1,13 @@
+--- tutorials/embree_info/CMakeLists.txt.orig	2023-05-11 09:26:18 UTC
++++ tutorials/embree_info/CMakeLists.txt
+@@ -21,6 +21,10 @@ SET_PROPERTY(TARGET embree_info PROPERTY FOLDER tutori
+ INSTALL(TARGETS embree_info DESTINATION "${CMAKE_INSTALL_BINDIR}" COMPONENT examples)
+ #INSTALL(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}" DESTINATION "src" COMPONENT examples)
+ 
++IF (CMAKE_SYSTEM_PROCESSOR STREQUAL "i386")
++  SET_PROPERTY(TARGET embree_info APPEND PROPERTY COMPILE_FLAGS "-msse")
++ENDIF()
++
+ IF (EMBREE_SYCL_SUPPORT)
+   SET_PROPERTY(TARGET embree_info APPEND PROPERTY COMPILE_FLAGS "-fsycl -Xclang -fsycl-allow-func-ptr -fsycl-targets=spir64")
+   SET_PROPERTY(TARGET embree_info APPEND PROPERTY LINK_FLAGS    "-fsycl -fsycl-targets=spir64")

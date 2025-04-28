@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/functional/hash.hpp:devel/boost-libs \
 BUILD_DEPENDS+=	nlohmann-json>0:devel/nlohmann-json # is required by lib/cmake/paraview-5.11/vtk/VTK-vtk-module-find-packages.cmake:1167
 BUILD_DEPENDS+=	fast_float>0:math/fast_float # attempt to fix build failures triggered by find_package(fastfloat) from paraview's vtk cmake scripts
 LIB_DEPENDS=	libcgraph.so:graphics/graphviz \
-		libembree3.so:graphics/embree \
+		libembree3.so:graphics/embree3 \
 		libfreetype.so:print/freetype2 \
 		libjsoncpp.so:devel/jsoncpp \
 		libqhull_r.so:math/qhull \
