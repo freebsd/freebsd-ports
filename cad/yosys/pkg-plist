@@ -126,7 +126,9 @@ bin/yosys-witness
 %%DATADIR%%/include/kernel/ffmerge.h
 %%DATADIR%%/include/kernel/fmt.h
 %%DATADIR%%/include/kernel/fstdata.h
+%%DATADIR%%/include/kernel/gzip.h
 %%DATADIR%%/include/kernel/hashlib.h
+%%DATADIR%%/include/kernel/io.h
 %%DATADIR%%/include/kernel/json.h
 %%DATADIR%%/include/kernel/log.h
 %%DATADIR%%/include/kernel/macc.h
