@@ -1,7 +1,6 @@
 PORTNAME=	nethogs
-PORTVERSION=	0.8.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+DISTVERSION=	0.8.8
 CATEGORIES=	net
 
 MAINTAINER=	anastasios@mageirias.com
@@ -13,16 +12,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_i386=	non-constant-expression cannot be narrowed from type 'unsigned int' to 'time_t' (aka 'int') in initializer list
 
+USES=		compiler:c++11-lang gmake shebangfix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	raboof
-
-USES=	compiler:c++11-lang gmake shebangfix
 
 SHEBANG_FILES=	determineVersion.sh
 bash_CMD=	/bin/sh
 
-PLIST_FILES=	share/man/man8/nethogs.8.gz \
-		sbin/nethogs
+PLIST_FILES=	sbin/nethogs \
+		share/man/man8/nethogs.8.gz
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/nethogs
