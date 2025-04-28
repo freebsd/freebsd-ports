@@ -66,7 +66,6 @@ share/man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/gtkwave/fstapi.h
 %%DATADIR%%/include/gtkwave/lz4.c
 %%DATADIR%%/include/gtkwave/lz4.h
-%%DATADIR%%/include/gtkwave/wavealloca.h
 %%DATADIR%%/include/verilated.cpp
 %%DATADIR%%/include/verilated.h
 %%DATADIR%%/include/verilated.mk
@@ -90,6 +89,9 @@ share/man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/verilated_profiler.h
 %%DATADIR%%/include/verilated_random.cpp
 %%DATADIR%%/include/verilated_random.h
+%%DATADIR%%/include/verilated_saif_c.cpp
+%%DATADIR%%/include/verilated_saif_c.h
+%%DATADIR%%/include/verilated_saif_sc.h
 %%DATADIR%%/include/verilated_save.cpp
 %%DATADIR%%/include/verilated_save.h
 %%DATADIR%%/include/verilated_sc.h
@@ -115,6 +117,7 @@ share/man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/verilatedos_c.h
 %%DATADIR%%/include/vltstd/sv_vpi_user.h
 %%DATADIR%%/include/vltstd/svdpi.h
+%%DATADIR%%/include/vltstd/veriuser.h
 %%DATADIR%%/include/vltstd/vpi_user.h
 %%DATADIR%%/verilator-config-version.cmake
 %%DATADIR%%/verilator-config.cmake
