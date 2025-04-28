@@ -19,6 +19,7 @@ USE_PHP=	session simplexml soap xml
 ETCDIR=		${WWWDIR}
 NO_ARCH=	yes
 NO_BUILD=	yes
+PORTSCOUT=	limit:^6\.
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/share/phpvirtualbox#${WWWDIR}#g' \

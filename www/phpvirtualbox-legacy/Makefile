@@ -22,6 +22,7 @@ EXTRA_PATCHES+=	${.CURDIR}/../phpvirtualbox/files/patch-php8 \
 		${.CURDIR}/../phpvirtualbox/files/patch-panes_mediumEncryptionPasswords.html
 NO_ARCH=	yes
 NO_BUILD=	yes
+PORTSCOUT=	limit:^5\.
 
 post-patch:
 	@${MV} ${WRKSRC}/phpvirtualbox.conf ${WRKSRC}/phpvirtualbox-legacy.conf
