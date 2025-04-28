@@ -1,6 +1,5 @@
     COMMENT = X11 toolkits
 
-    SUBDIR += SoXt
     SUBDIR += Xmt
     SUBDIR += amtk
     SUBDIR += aquamarine
