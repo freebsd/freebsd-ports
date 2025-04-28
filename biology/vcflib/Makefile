@@ -1,6 +1,6 @@
 PORTNAME=		vcflib
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.0.12
+DISTVERSION=		1.0.13
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -42,7 +42,8 @@ ZIG_DESC=		Include Zig language support
 
 ZIG_BUILD_DEPENDS=	zig>0:lang/zig
 
-CMAKE_ARGS+=	-DWFA_GITMODULE=OFF -DWFALIB=${LOCALBASE}/lib/libwfa2.so.0
+CMAKE_ARGS+=	-DWFA_GITMODULE=OFF -DWFALIB=${LOCALBASE}/lib/libwfa2.so.0 \
+		-DTABIXPP_LOCAL=${WRKSRC}/contrib/tabixpp
 ZIG_CMAKE_OFF=	-DZIG=OFF
 
 # Clang and GCC disable sse2 by default on i386, but it's required for vcflib
