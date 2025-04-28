@@ -1,11 +1,8 @@
 PORTNAME=	phpvirtualbox
-DISTVERSION=	7.0
+DISTVERSION=	7.1-1
 CATEGORIES=	www
-MASTER_SITES=	https://sourceforge.net/code-snapshots/git/p/ph/${PORTNAME}-7-0/code.git/ \
-		LOCAL/vvd
-SUFFIX=		-70
+SUFFIX=		-71
 PKGNAMESUFFIX=	${SUFFIX}${PHP_PKGNAMESUFFIX}
-DISTNAME=	${PORTNAME}-7-0-code-0737ff1c4106661672e69ef5ff26c3f494f4c65f
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	AJAX Web Interface for VirtualBox
@@ -13,7 +10,8 @@ WWW=		https://sourceforge.net/projects/phpvirtualbox-7-0/
 
 LICENSE=	GPLv3
 
-USES=		php:flavors zip
+USES=		php:flavors
+USE_GITHUB=	yes
 USE_PHP=	session simplexml soap xml
 
 ETCDIR=		${WWWDIR}
@@ -21,9 +19,7 @@ WWWDIR=		${PREFIX}/www/${PORTNAME}${SUFFIX}
 EXTRA_PATCHES+=	${.CURDIR}/../phpvirtualbox/files/patch-panes_mediumEncryptionPasswords.html
 NO_ARCH=	yes
 NO_BUILD=	yes
-PORTSCOUT=	limit:^7\.0\.
-
-WRKSRC_SUBDIR=	${PORTNAME}-${DISTVERSION}
+PORTSCOUT=	limit:^7\.1\.
 
 post-patch:
 	@${MV} ${WRKSRC}/phpvirtualbox.conf ${WRKSRC}/phpvirtualbox${SUFFIX}.conf

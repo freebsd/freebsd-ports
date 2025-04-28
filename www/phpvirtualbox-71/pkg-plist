@@ -30,8 +30,14 @@
 %%WWWDIR%%/endpoints/lib/utils.php
 %%WWWDIR%%/endpoints/lib/vboxServiceWrappers.php
 %%WWWDIR%%/endpoints/lib/vboxconnector.php
-%%WWWDIR%%/endpoints/lib/vboxweb-7.0.wsdl
-%%WWWDIR%%/endpoints/lib/vboxwebService-7.0.wsdl
+%%WWWDIR%%/endpoints/lib/vboxweb-5.2.wsdl
+%%WWWDIR%%/endpoints/lib/vboxweb-6.0.wsdl
+%%WWWDIR%%/endpoints/lib/vboxweb-6.1.wsdl
+%%WWWDIR%%/endpoints/lib/vboxweb-7.1.wsdl
+%%WWWDIR%%/endpoints/lib/vboxwebService-5.2.wsdl
+%%WWWDIR%%/endpoints/lib/vboxwebService-6.0.wsdl
+%%WWWDIR%%/endpoints/lib/vboxwebService-6.1.wsdl
+%%WWWDIR%%/endpoints/lib/vboxwebService-7.1.wsdl
 %%WWWDIR%%/endpoints/rdp.php
 %%WWWDIR%%/endpoints/screen.php
 %%WWWDIR%%/images/30white.png
@@ -578,7 +584,7 @@
 %%WWWDIR%%/panes/wizardNewHDAdvanced.html
 %%WWWDIR%%/panes/wizardNewVM.html
 %%WWWDIR%%/panes/wizardNewVMAdvanced.html
-%%WWWDIR%%/phpvirtualbox-70.conf
+%%WWWDIR%%/phpvirtualbox-71.conf
 %%WWWDIR%%/rdpweb/RDPClientUI.swf
 %%WWWDIR%%/rdpweb/license_3rd.txt
 %%WWWDIR%%/rdpweb/swfobject.js
