@@ -10,7 +10,9 @@
 %%SITE_PERL%%/Authen/SASL/Perl/EXTERNAL.pm
 %%SITE_PERL%%/Authen/SASL/Perl/GSSAPI.pm
 %%SITE_PERL%%/Authen/SASL/Perl/LOGIN.pm
+%%SITE_PERL%%/Authen/SASL/Perl/OAUTHBEARER.pm
 %%SITE_PERL%%/Authen/SASL/Perl/PLAIN.pm
+%%SITE_PERL%%/Authen/SASL/Perl/XOAUTH2.pm
 %%PERL5_MAN3%%/Authen::SASL.3.gz
 %%PERL5_MAN3%%/Authen::SASL::Perl.3.gz
 %%PERL5_MAN3%%/Authen::SASL::Perl::ANONYMOUS.3.gz
@@ -19,4 +21,6 @@
 %%PERL5_MAN3%%/Authen::SASL::Perl::EXTERNAL.3.gz
 %%PERL5_MAN3%%/Authen::SASL::Perl::GSSAPI.3.gz
 %%PERL5_MAN3%%/Authen::SASL::Perl::LOGIN.3.gz
+%%PERL5_MAN3%%/Authen::SASL::Perl::OAUTHBEARER.3.gz
 %%PERL5_MAN3%%/Authen::SASL::Perl::PLAIN.3.gz
+%%PERL5_MAN3%%/Authen::SASL::Perl::XOAUTH2.3.gz
