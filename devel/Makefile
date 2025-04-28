@@ -955,6 +955,7 @@
     SUBDIR += grex
     SUBDIR += grpc
     SUBDIR += gsettings-desktop-schemas
+    SUBDIR += gsl-lite
     SUBDIR += gsoap
     SUBDIR += gstreamer1-plugins-soup
     SUBDIR += gtgt
