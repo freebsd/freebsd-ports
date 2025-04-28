@@ -1,10 +1,8 @@
 PORTNAME=	xtrabackup84
-PORTVERSION=	8.4.0
-DISTVERSIONSUFFIX=	-2
-PORTREVISION=	9
+DISTVERSION=	8.4.0-2
 CATEGORIES=	databases
-MASTER_SITES=	https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-8.4.0-2/source/tarball/:percona
-DISTFILES=	${PPORTNAME}-${DVERSION}${EXTRACT_SUFX}:percona
+MASTER_SITES=	https://downloads.percona.com/downloads/Percona-XtraBackup-8.4/Percona-XtraBackup-${DISTVERSION}/source/tarball/:percona
+DISTFILES=	${PPORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:percona
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Open-source backup tool for InnoDB and XtraDB
@@ -46,9 +44,8 @@ CFLAGS+=	-DNDEBUG -fPIC
 CXXFLAGS+=	-DNDEBUG -fPIC
 CFLAGS_aarch64?=	-march=armv8-a+crc+crypto
 
-DVERSION=	${PORTVERSION}${DISTVERSIONSUFFIX}
 PPORTNAME=	percona-xtrabackup
-WRKSRC=		${WRKDIR}/${PPORTNAME}-${DVERSION}
+WRKSRC=		${WRKDIR}/${PPORTNAME}-${DISTVERSION}
 
 .include <bsd.port.pre.mk>
 
