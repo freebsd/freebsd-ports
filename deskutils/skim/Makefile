@@ -1,7 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.1
-PORTREVISION=	1
+DISTVERSION=	0.16.2
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -37,18 +36,18 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.40 \
-		clap-4.5.31 \
-		clap_builder-4.5.31 \
-		clap_complete-4.5.46 \
+		clap-4.5.37 \
+		clap_builder-4.5.37 \
+		clap_complete-4.5.47 \
 		clap_complete_fig-4.5.2 \
 		clap_complete_nushell-4.5.5 \
-		clap_derive-4.5.28 \
+		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		clap_mangen-0.2.26 \
 		colorchoice-1.0.3 \
 		core-foundation-sys-0.8.7 \
 		crossbeam-0.8.4 \
-		crossbeam-channel-0.5.13 \
+		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-queue-0.3.11 \
@@ -57,7 +56,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		darling_core-0.20.10 \
 		darling_macro-0.20.10 \
 		defer-drop-1.3.0 \
-		deranged-0.3.11 \
+		deranged-0.4.1 \
 		derive_builder-0.20.2 \
 		derive_builder_core-0.20.2 \
 		derive_builder_macro-0.20.2 \
@@ -68,7 +67,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		env_home-0.1.0 \
 		env_logger-0.11.6 \
 		equivalent-1.0.1 \
-		errno-0.3.9 \
+		errno-0.3.10 \
 		fastrand-2.2.0 \
 		fnv-1.0.7 \
 		fuzzy-matcher-0.3.7 \
@@ -80,14 +79,15 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
 		ident_case-1.0.1 \
-		indexmap-2.7.1 \
+		indexmap-2.8.0 \
 		is_terminal_polyfill-1.70.1 \
 		js-sys-0.3.72 \
 		lazy_static-1.5.0 \
-		libc-0.2.165 \
+		libc-0.2.170 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.14 \
-		log-0.4.26 \
+		linux-raw-sys-0.9.2 \
+		log-0.4.27 \
 		memchr-2.7.4 \
 		nix-0.24.3 \
 		nix-0.29.0 \
@@ -97,7 +97,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.20 \
 		proc-macro2-1.0.92 \
-		pulldown-cmark-0.12.2 \
+		pulldown-cmark-0.13.0 \
 		quote-1.0.37 \
 		rand-0.9.0 \
 		rand_chacha-0.9.0 \
@@ -110,6 +110,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-syntax-0.8.5 \
 		roff-0.2.2 \
 		rustix-0.38.41 \
+		rustix-1.0.2 \
 		rustversion-1.0.18 \
 		serde-1.0.215 \
 		serde_derive-1.0.215 \
@@ -117,13 +118,13 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		shlex-1.3.0 \
 		strsim-0.11.1 \
 		syn-2.0.89 \
-		tempfile-3.17.1 \
+		tempfile-3.19.1 \
 		term-0.7.0 \
 		thiserror-1.0.69 \
 		thiserror-impl-1.0.69 \
 		thread_local-1.1.8 \
-		time-0.3.36 \
-		time-core-0.1.2 \
+		time-0.3.41 \
+		time-core-0.1.4 \
 		timer-0.2.0 \
 		tuikit-0.5.0 \
 		unicase-2.8.1 \
