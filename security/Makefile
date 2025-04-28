@@ -1398,7 +1398,6 @@
     SUBDIR += wazuh-server
     SUBDIR += webfwlog
     SUBDIR += webtunnel-tor
-    SUBDIR += weggli
     SUBDIR += whatweb
     SUBDIR += wipe
     SUBDIR += wolfssh
