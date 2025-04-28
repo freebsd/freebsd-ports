@@ -1,5 +1,5 @@
---- xdu.c.orig	Sun Jun  5 21:29:23 1994
-+++ xdu.c	Sun Aug 15 19:31:01 2004
+--- xdu.c.orig	2014-10-14 03:21:53.000000000 -0700
++++ xdu.c	2025-04-28 11:49:41.485062000 -0700
 @@ -20,9 +20,12 @@
   * the party supplying this software to the X Consortium.
   */
@@ -14,39 +14,16 @@
  
  #define	MAXDEPTH	80	/* max elements in a path */
  #define	MAXNAME		1024	/* max pathname element length */
-@@ -235,6 +238,7 @@
- 	char	name[4096];
+@@ -234,6 +237,7 @@
+ 	char	buf[4096];
  	int	size;
  	FILE	*fp;
 +	char	*p, *n;
  
  	if (strcmp(filename, "-") == 0) {
  		fp = stdin;
-@@ -244,11 +248,21 @@
- 			exit(1);
- 		}
- 	}
-+
- 	while (fgets(buf,sizeof(buf),fp) != NULL) {
--		sscanf(buf, "%d %s\n", &size, name);
-+		p = buf;
-+		while (*p && isspace(*p)) p++;
-+		size = atoi(p);
-+		while (*p && !isspace(*p)) p++;
-+		while (*p && isspace(*p)) p++;
-+		n = name;
-+		while (*p && *p != '\n' && *p != '\r')
-+			*n++ = *p++;
-+		*n++ = '\0';
- 		/*printf("%d %s\n", size, name);*/
- 		parse_entry(name,size);
- 	}
-+
- 	fclose(fp);
- }
- 
-@@ -269,7 +283,7 @@
- 	length = strlen(name);
+@@ -271,7 +275,7 @@
+ 	name[length] = 0;
  	if ((length > 0) && (name[length-1] == '/')) {
  		/* strip off trailing / (e.g. GNU du) */
 -		name[length-1] = 0;
@@ -54,7 +31,7 @@
  	}
  
  	arg = 0; indx = 0;
-@@ -289,8 +303,10 @@
+@@ -291,8 +295,10 @@
  		}
  		name++;
  	}
@@ -67,16 +44,17 @@
  	path[arg] = NULL;
  
  	addtree(&top,path,size);
-@@ -399,15 +415,15 @@
+@@ -400,16 +406,16 @@
+ 	struct	node *np;
  
  	/*printf("addtree(\"%s\",\"%s\",%d)\n", top->name, path[0], size);*/
- 
++
 +	if (path[0] == NULL) {
 +		/* end of the chain, save size */
 +		top->size = size;
 +		return;
 +	}
-+
+ 
  	/* check all children for a match */
  	for (np = top->child; np != NULL; np = np->peer) {
  		if (strcmp(path[0],np->name) == 0) {
@@ -89,7 +67,7 @@
  			/* recurse */
  			addtree(np,&path[1],size);
  			return;
-@@ -621,7 +637,7 @@
+@@ -623,7 +629,7 @@
  	printf("%s %d (%.2f%%)\n", path, topp->size,
  		100.0*topp->size/rootp->size);
  }
@@ -98,7 +76,7 @@
  char *
  strdup(s)
  char *s;
-@@ -635,7 +651,7 @@
+@@ -637,7 +643,7 @@
  
  	return	cp;
  }
