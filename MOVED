@@ -4330,3 +4330,4 @@ databases/replibyte||2025-04-26|incompatible rust 1.86.0 and seems to be dead up
 net-im/chatterino2||2025-04-27|Has expired: Broken for more than a month with no available fixes
 shells/oil|shells/oils|2025-04-27|Project was renamed upstream
 security/weggli||2025-04-28|Has expired: Upstream inactive as last release was in 2022
+databases/py-carbon||2025-04-28|Has expired: In bandaid mode as the concentration is on go-carbon
