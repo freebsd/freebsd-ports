@@ -71,6 +71,7 @@ share/applications/drawio.desktop
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/app-update.yml
 %%DATADIR%%/resources/app.asar
+%%DATADIR%%/resources/apparmor-profile
 %%DATADIR%%/resources/package-type
 %%DATADIR%%/snapshot_blob.bin
 %%DATADIR%%/v8_context_snapshot.bin
