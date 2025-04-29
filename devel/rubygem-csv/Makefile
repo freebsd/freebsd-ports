@@ -1,5 +1,5 @@
 PORTNAME=	csv
-PORTVERSION=	3.3.3
+PORTVERSION=	3.3.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,5 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 USES=		gem
 
 NO_ARCH=	yes
-
-PLIST_FILES=	bin/csv-filter
 
 .include <bsd.port.mk>
