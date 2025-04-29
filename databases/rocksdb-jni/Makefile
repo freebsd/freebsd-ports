@@ -1,6 +1,7 @@
 PORTNAME=	rocksdb-jni
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.11.1
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	https://rocksdb-deps.s3-us-west-2.amazonaws.com/jars/:deps
 DISTFILES=	assertj-core-2.9.0.jar:deps \
@@ -21,7 +22,7 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/../LICENSE.Apache
 LICENSE_FILE_GPLv2=	${WRKSRC}/../COPYING
 
 BUILD_DEPENDS=	googletest>0:devel/googletest
-LIB_DEPENDS=	librocksdb.so:databases/rocksdb # librocksdbjni.so in the rocksdb.jar file is linked to librocksdb.so
+LIB_DEPENDS=	librocksdb.so:databases/rocksdb9 # librocksdbjni.so in the rocksdb.jar file is linked to librocksdb.so
 
 USES=		cmake compiler:c++17-lang java localbase:ldflags
 
@@ -39,6 +40,7 @@ CXXFLAGS+=	-I${WRKSRC}/.. \
 		-DOS_FREEBSD \
 		-DROCKSDB_PLATFORM_POSIX
 LDFLAGS+=	-lrocksdb
+NO_ARCH=	yes
 
 #MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
 BINARY_ALIAS=	java=${JAVA_HOME}/bin/java
