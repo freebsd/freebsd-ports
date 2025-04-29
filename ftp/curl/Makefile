@@ -5,6 +5,9 @@ CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.se/download/ \
 		https://github.com/curl/curl/releases/download/curl-${PORTVERSION:S|.|_|g}/
 
+PATCH_SITES=	https://github.com/curl/curl/commit/
+PATCHFILES=	5caba3bd97a14b64d906ece77bc0e2b339161a1f.patch:-p1
+
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line tool and library for transferring data with URLs
 WWW=		https://curl.se/ \
@@ -15,9 +18,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe libtool localbase:ldflags pathfix perl5 shebangfix tar:xz
 USE_PERL5=	build
-
-PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/curl/curl/pull/
-PATCHFILES+=	16931.patch:-p1
 
 CONFIGURE_ARGS=	--disable-test-bundles \
 		--disable-unity \
