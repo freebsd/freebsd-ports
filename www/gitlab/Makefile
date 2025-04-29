@@ -159,7 +159,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-gitlab-glfm-markdown>=0.0.29<0.1:textproc/rubygem-gitlab-glfm-markdown \
 	rubygem-tanuki_emoji>=0.13<1:graphics/rubygem-tanuki_emoji \
 	rubygem-unicode-emoji>=4.0.4<5:devel/rubygem-unicode-emoji \
-	rubygem-icalendar>=2.10.3<2.11:devel/rubygem-icalendar \
+	rubygem-icalendar-gitlab>=2.10.3<2.11:devel/rubygem-icalendar-gitlab \
 	rubygem-diffy>=3.4<4:textproc/rubygem-diffy \
 	rubygem-rack22>=2.2.13,3<2.3,3:www/rubygem-rack22 \
 	rubygem-rack-timeout>=0.7.0<0.8:www/rubygem-rack-timeout \
