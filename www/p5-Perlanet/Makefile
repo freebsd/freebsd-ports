@@ -1,5 +1,5 @@
 PORTNAME=	Perlanet
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -23,7 +23,6 @@ RUN_DEPENDS=	p5-CHI>=0:devel/p5-CHI \
 		p5-MooseX-ConfigFromFile>=0:devel/p5-MooseX-ConfigFromFile \
 		p5-MooseX-Traits>=0:devel/p5-MooseX-Traits \
 		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
-		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-URI>=0:net/p5-URI \
 		p5-XML-Feed>=0.22:textproc/p5-XML-Feed \
 		p5-YAML>=0:textproc/p5-YAML \
