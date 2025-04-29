@@ -1,0 +1,5 @@
+TIMESTAMP = 1745923901
+SHA256 (go/security_sshesame/sshesame-v0.0.39/v0.0.39.mod) = c4f5d9cfa804935307c14fa9a884d83b1732b13bb80529871db5a5394254d33d
+SIZE (go/security_sshesame/sshesame-v0.0.39/v0.0.39.mod) = 630
+SHA256 (go/security_sshesame/sshesame-v0.0.39/v0.0.39.zip) = 4dfe91efa8b6d55886d29d9ec18c20ddcef4a828f463c562c1c73d1841e15f04
+SIZE (go/security_sshesame/sshesame-v0.0.39/v0.0.39.zip) = 63861

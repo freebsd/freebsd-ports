@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# PROVIDE: sshesame
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable sshesame:
+#
+# sshesame_enable (bool):	Set to "NO" by default.
+#                          	Set to "YES" to enable sshesame.
+# sshesame_user (str):      Default to "sshesame".
+# sshesame_group (str):     Default to "sshesame".
+#                          	User and group to run sshesame with.
+# sshesame_config (str):    Default to "%%PREFIX%%/etc/sshesame.yaml".
+#                          	sshesame config file.
+# sshesame_datadir (str):	Default to "/var/db/sshesame".
+#                          	Directory to store automatically generated host keys in
+# sshesame_logdir (str):    Default to "/var/log/sshesame".
+#                          	Directory to store sshesame logs
+
+. /etc/rc.subr
+
+name=sshesame
+rcvar=sshesame_enable
+desc="SSH honeypot"
+
+load_rc_config sshesame
+
+: ${sshesame_enable:=NO}
+: ${sshesame_user:=sshesame}
+: ${sshesame_group:=sshesame}
+: ${sshesame_config=%%PREFIX%%/etc/sshesame.yaml}
+: ${sshesame_datadir=/var/db/sshesame}
+: ${sshesame_logdir=/var/log/sshesame}
+
+pidfile=/var/run/${name}/${name}.pid
+start_precmd=sshesame_precmd
+procname="%%PREFIX%%/bin/sshesame"
+required_files="${sshesame_config}"
+command=/usr/sbin/daemon
+command_args="-cf -p ${pidfile} -o ${sshesame_logdir}/sshesame.out ${procname} -config ${sshesame_config} -data_dir ${sshesame_datadir}"
+
+sshesame_precmd()
+{
+    # Create PID file directory
+    install -d -o ${sshesame_user} -g ${sshesame_group} -m 0755 "$(dirname ${pidfile})"
+
+    install -d -o ${sshesame_user} -g ${sshesame_group} -m 0755 "${sshesame_datadir}"
+    install -d -o ${sshesame_user} -g ${sshesame_group} -m 0755 "${sshesame_logdir}"
+
+    # Remove default flags, they're added in `command_args` manually
+    rc_flags=""
+}
+
+run_rc_command "$1"

@@ -314,7 +314,7 @@ elog:*:364:364::0:0:Elog server:/nonexistent:/usr/sbin/nologin
 gotify:*:365:365::0:0:Gotify User:/var/db/gotify:/usr/sbin/nologin
 opengist:*:366:366::0:0:OpenGist User:/var/db/opengist:/usr/sbin/nologin
 velbustcpd:*:367:367::0:0:Velbustcp Deamon:/nonexistent:/usr/sbin/nologin
-# free: 368
+sshesame:*:368:368::0:0:Sshesame Daemon:/nonexistent:/usr/sbin/nologin
 # free: 369
 _wsdd:*:370:370::0:0:Web Service Discovery Daemon:/nonexistent:/usr/sbin/nologin
 # free: 371
