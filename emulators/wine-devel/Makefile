@@ -42,7 +42,6 @@ CONFIGURE_ARGS+=--verbose \
 		--without-krb5 \
 		--with-mingw CROSSCC="clang" \
 		--without-netapi \
-		--without-odbc \
 		--without-opencl \
 		--without-osmesa \
 		--without-pcap \
