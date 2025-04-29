@@ -5,7 +5,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/sablotron/sablotron-${PORTVERSION}
 DISTNAME=	Sablot-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	XML toolkit implementing XSLT 1.0, XPath 1.0 and DOM Level2
 WWW=		https://sourceforge.net/projects/sablotron/
 
@@ -14,11 +14,7 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-DEPRECATED=	Obsolete XML processor that only supports legacy languages
-EXPIRATION_DATE=2025-04-30
-
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gmake iconv libtool localbase:ldflags
 USE_CXXSTD=	c++98
 USE_LDCONFIG=	yes
