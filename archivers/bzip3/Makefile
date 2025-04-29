@@ -1,6 +1,5 @@
 PORTNAME=	bzip3
-DISTVERSION=	1.5.1
-PORTREVISION=	1
+DISTVERSION=	1.5.2
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/kspalaiologos/${PORTNAME}/releases/download/${DISTVERSION}/
 
