@@ -21,6 +21,7 @@ etc/pam.d/lms
 %%DATADIR%%/approot/mediaplayer.xml
 %%DATADIR%%/approot/messages.xml
 %%DATADIR%%/approot/messages_en-US.xml
+%%DATADIR%%/approot/messages_es.xml
 %%DATADIR%%/approot/messages_fr.xml
 %%DATADIR%%/approot/messages_it.xml
 %%DATADIR%%/approot/messages_pl.xml
