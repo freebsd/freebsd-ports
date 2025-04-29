@@ -1,5 +1,5 @@
 PORTNAME=	monit
-DISTVERSION=	5.35.0
+DISTVERSION=	5.35.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://mmonit.com/monit/dist/
 
