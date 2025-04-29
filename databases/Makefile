@@ -880,6 +880,7 @@
     SUBDIR += retcl
     SUBDIR += rocksdb
     SUBDIR += rocksdb-jni
+    SUBDIR += rocksdb9
     SUBDIR += rqlite
     SUBDIR += rrdman
     SUBDIR += rrdmerge
