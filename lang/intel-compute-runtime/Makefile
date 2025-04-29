@@ -11,6 +11,7 @@ WWW=		https://01.org/compute-runtime
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN=		Does not build with latest level-zero
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
 
