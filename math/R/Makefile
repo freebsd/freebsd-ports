@@ -1,5 +1,5 @@
 PORTNAME=	R
-DISTVERSION=	4.4.3
+DISTVERSION=	4.5.0
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -14,7 +14,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 BUILD_DEPENDS=	texi2any:print/texinfo
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libdeflate.so:archivers/libdeflate \
-		libpcre2-8.so:devel/pcre2
+		libpcre2-8.so:devel/pcre2 \
+		libzstd.so:archivers/zstd
 # R packages may require GNU make or cmake to build
 RUN_DEPENDS=	cmake:devel/cmake-core \
 		gmake:devel/gmake
@@ -25,7 +26,7 @@ RUN_DEPENDS=	cmake:devel/cmake-core \
 # - Create ports for each of the recommended packages
 # - Create a meta-port for the recommended packages
 
-USES=		compiler:c++11-lang cpe fortran gmake iconv libtool localbase \
+USES=		compiler:c++23-lang cpe fortran gmake iconv libtool localbase \
 		pathfix perl5 readline
 CPE_VENDOR=	r-project
 USE_LDCONFIG=	${PREFIX}/lib/R/lib
@@ -93,7 +94,7 @@ OPENBLAS_USES=			blaslapack:openblas
 OPENBLAS_CONFIGURE_ON=		--disable-BLAS-shlib
 OPENMP_CONFIGURE_ENABLE=	openmp
 PNG_IMPLIES=			X11
-PNG_LIB_DEPENDS=		libpng.so:graphics/png
+PNG_LIB_DEPENDS=		libpng16.so:graphics/png
 PNG_CONFIGURE_WITH=		libpng
 RBLAS_CONFIGURE_ON=		--enable-BLAS-shlib \
 				--without-blas \
