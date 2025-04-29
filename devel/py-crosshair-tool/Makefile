@@ -1,8 +1,9 @@
 PORTNAME=	crosshair-tool
-PORTVERSION=	0.0.85
+PORTVERSION=	0.0.86
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	crosshair_tool-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Analyze Python code for correctness using symbolic execution
