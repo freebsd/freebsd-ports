@@ -1,90 +1,96 @@
 CARGO_CRATES=	adler2-2.0.0 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
-		atty-0.2.14 \
+		anstream-0.6.18 \
+		anstyle-1.0.10 \
+		anstyle-parse-0.2.6 \
+		anstyle-query-1.1.2 \
+		anstyle-wincon-3.0.7 \
 		autocfg-1.4.0 \
-		bitflags-1.3.2 \
-		bitflags-2.6.0 \
-		blosc2-rs-0.3.1+2.15.1 \
-		blosc2-sys-0.3.1+2.15.1 \
+		bitflags-2.9.0 \
+		blosc2-rs-0.4.0+2.15.2 \
+		blosc2-sys-0.4.0+2.15.2 \
 		brotli-7.0.0 \
-		brotli-decompressor-4.0.1 \
+		brotli-decompressor-4.0.3 \
 		bzip2-0.4.4 \
-		bzip2-sys-0.1.11+1.0.8 \
-		cbindgen-0.24.5 \
-		cc-1.2.4 \
+		bzip2-sys-0.1.13+1.0.8 \
+		cbindgen-0.27.0 \
+		cc-1.2.19 \
 		cfg-if-1.0.0 \
-		clap-3.2.25 \
-		clap_lex-0.2.4 \
-		cmake-0.1.52 \
+		clap-4.5.37 \
+		clap_builder-4.5.37 \
+		clap_lex-0.7.4 \
+		cmake-0.1.54 \
+		colorchoice-1.0.3 \
 		copy_dir-0.1.3 \
 		crc32fast-1.4.2 \
-		errno-0.3.10 \
+		equivalent-1.0.2 \
+		errno-0.3.11 \
 		fastrand-2.3.0 \
-		flate2-1.0.35 \
-		hashbrown-0.12.3 \
+		flate2-1.1.1 \
+		getrandom-0.3.2 \
+		hashbrown-0.15.2 \
 		heck-0.4.1 \
 		heck-0.5.0 \
-		hermit-abi-0.1.19 \
-		indexmap-1.9.3 \
-		indoc-2.0.5 \
+		indexmap-2.9.0 \
+		indoc-2.0.6 \
+		is_terminal_polyfill-1.70.1 \
 		isal-rs-0.5.3+496255c \
 		isal-sys-0.5.3+496255c \
-		itoa-1.0.14 \
-		jobserver-0.1.32 \
-		libc-0.2.168 \
-		libcramjam-0.6.0 \
+		itoa-1.0.15 \
+		jobserver-0.1.33 \
+		libc-0.2.172 \
+		libcramjam-0.7.0 \
 		libdeflate-sys-1.19.3 \
 		libdeflater-1.19.3 \
-		linux-raw-sys-0.4.14 \
+		linux-raw-sys-0.9.4 \
 		lock_api-0.4.12 \
-		log-0.4.22 \
-		lz4-1.28.0 \
+		log-0.4.27 \
+		lz4-1.28.1 \
 		lz4-sys-1.11.1+lz4-1.10.0 \
 		lzma-sys-0.1.20 \
 		memchr-2.7.4 \
 		memoffset-0.9.1 \
-		miniz_oxide-0.8.0 \
-		once_cell-1.20.2 \
-		os_str_bytes-6.6.1 \
+		miniz_oxide-0.8.8 \
+		once_cell-1.21.3 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
-		pkg-config-0.3.31 \
-		portable-atomic-1.10.0 \
-		proc-macro2-1.0.92 \
-		pyo3-0.22.6 \
-		pyo3-build-config-0.22.6 \
-		pyo3-ffi-0.22.6 \
-		pyo3-macros-0.22.6 \
-		pyo3-macros-backend-0.22.6 \
-		python3-dll-a-0.2.11 \
-		quote-1.0.37 \
-		redox_syscall-0.5.8 \
-		rustix-0.38.42 \
-		ryu-1.0.18 \
+		pkg-config-0.3.32 \
+		portable-atomic-1.11.0 \
+		proc-macro2-1.0.95 \
+		pyo3-0.24.1 \
+		pyo3-build-config-0.24.1 \
+		pyo3-ffi-0.24.1 \
+		pyo3-macros-0.24.1 \
+		pyo3-macros-backend-0.24.1 \
+		python3-dll-a-0.2.13 \
+		quote-1.0.40 \
+		r-efi-5.2.0 \
+		redox_syscall-0.5.11 \
+		rustix-1.0.5 \
+		ryu-1.0.20 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.216 \
-		serde_derive-1.0.216 \
-		serde_json-1.0.133 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
+		serde_json-1.0.140 \
+		serde_spanned-0.6.8 \
 		shlex-1.3.0 \
-		smallvec-1.13.2 \
+		smallvec-1.15.0 \
 		snap-1.1.1 \
-		strsim-0.10.0 \
-		syn-1.0.109 \
-		syn-2.0.90 \
-		target-lexicon-0.12.16 \
-		tempfile-3.14.0 \
-		termcolor-1.4.1 \
-		textwrap-0.16.1 \
-		toml-0.5.11 \
-		unicode-ident-1.0.14 \
-		unindent-0.2.3 \
+		strsim-0.11.1 \
+		syn-2.0.100 \
+		target-lexicon-0.13.2 \
+		tempfile-3.19.1 \
+		toml-0.8.20 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.22.24 \
+		unicode-ident-1.0.18 \
+		unindent-0.2.4 \
+		utf8parse-0.2.2 \
 		walkdir-2.5.0 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
+		wasi-0.14.2+wasi-0.2.4 \
 		winapi-util-0.1.9 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.52.6 \
@@ -95,7 +101,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
+		winnow-0.7.6 \
+		wit-bindgen-rt-0.39.0 \
 		xz2-0.1.7 \
-		zstd-0.13.2 \
-		zstd-safe-7.2.1 \
-		zstd-sys-2.0.13+zstd.1.5.6
+		zstd-0.13.3 \
+		zstd-safe-7.2.4 \
+		zstd-sys-2.0.15+zstd.1.5.7
