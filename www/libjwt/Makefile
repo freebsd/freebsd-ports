@@ -1,8 +1,7 @@
 PORTNAME=	libjwt
 PORTVERSION=	2.1.2
-DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-#MASTER_SITES=	https://github.com/benmcollins/libjwt/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/benmcollins/libjwt/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON Web Token implementation in C
@@ -16,7 +15,7 @@ BUILD_DEPENDS=	jansson>=2.0:devel/jansson
 LIB_DEPENDS=	libjansson.so:devel/jansson
 TEST_DEPENDS=	check>=0.9.4:devel/check
 
-USES=		autoreconf gmake libtool pathfix pkgconfig ssl
+USES=		gmake libtool pathfix pkgconfig ssl tar:bz2
 
 CONFIGURE_ARGS=	--disable-doxygen-chi \
 		--disable-doxygen-chm \
@@ -35,9 +34,6 @@ INSTALL_TARGET=	install-strip
 TEST_ARGS=	CFLAGS+=-I${LOCALBASE}/include LIBS+="-L${LOCALBASE}/lib -lcheck"
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	benmcollins
 
 OPTIONS_DEFINE=	GNUTLS
 
