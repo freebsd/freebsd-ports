@@ -81,6 +81,7 @@ include/proxygen/lib/http/StatusTypeEnum.h
 include/proxygen/lib/http/SynchronizedLruQuicPskCache.h
 include/proxygen/lib/http/Types.h
 include/proxygen/lib/http/Window.h
+include/proxygen/lib/http/codec/CapsuleCodec.h
 include/proxygen/lib/http/codec/CodecProtocol.h
 include/proxygen/lib/http/codec/CodecUtil.h
 include/proxygen/lib/http/codec/ControlMessageRateLimitFilter.h
