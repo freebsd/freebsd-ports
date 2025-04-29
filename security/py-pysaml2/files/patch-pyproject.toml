@@ -1,6 +1,12 @@
---- pyproject.toml.orig	2024-01-30 11:43:56 UTC
+--- pyproject.toml.orig	2025-02-10 21:49:33 UTC
 +++ pyproject.toml
-@@ -47,7 +47,7 @@ requests = "^2"
+@@ -42,12 +42,12 @@ paste = {optional = true, version = "*"}
+ importlib-metadata = {version = ">=1.7.0", python = "<3.8"}
+ importlib-resources = {python = "<3.9", version = "*"}
+ paste = {optional = true, version = "*"}
+-pyopenssl = "<24.3.0"
++pyopenssl = "*"
+ python-dateutil = "*"
  pytz = "*"
  "repoze.who" = {optional = true, version = "*"}
  requests = "^2"
