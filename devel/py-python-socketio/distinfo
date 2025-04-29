@@ -1,3 +1,3 @@
-TIMESTAMP = 1735705177
-SHA256 (python_socketio-5.12.1.tar.gz) = 0299ff1f470b676c09c1bfab1dead25405077d227b2c13cf217a34dadc68ba9c
-SIZE (python_socketio-5.12.1.tar.gz) = 119991
+TIMESTAMP = 1745178058
+SHA256 (python_socketio-5.13.0.tar.gz) = ac4e19a0302ae812e23b712ec8b6427ca0521f7c582d6abb096e36e24a263029
+SIZE (python_socketio-5.13.0.tar.gz) = 121125
