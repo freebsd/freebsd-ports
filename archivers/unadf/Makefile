@@ -1,6 +1,6 @@
 PORTNAME=	unadf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.10.1
 CATEGORIES=	archivers
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -10,16 +10,12 @@ WWW=		http://lclevy.free.fr/adflib/unadf.html
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-TEST_DEPENDS=	bash>0:shells/bash
-
-USES=		autoreconf cpe libtool pathfix pkgconfig shebangfix
+USES=		autoreconf cpe libtool pathfix pkgconfig
 CPE_VENDOR=	unadf_project
 USE_GITHUB=	yes
-GH_ACCOUNT=	lclevy
+GH_ACCOUNT=	adflib
 GH_PROJECT=	ADFlib
 USE_LDCONFIG=	yes
-
-SHEBANG_FILES=	examples/tests/test_examples_basic.sh
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
