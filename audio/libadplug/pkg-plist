@@ -1,7 +1,6 @@
 bin/adplugdb
 include/adplug/a2m.h
 include/adplug/adl.h
-include/adplug/adlib.h
 include/adplug/adlibemu.h
 include/adplug/adplug.h
 include/adplug/adtrack.h
@@ -71,6 +70,18 @@ include/adplug/wemuopl.h
 include/adplug/woodyopl.h
 include/adplug/xad.h
 include/adplug/xsm.h
+include/adplug/a2m-v2.h
+include/adplug/coktel.h
+include/adplug/composer.h
+include/adplug/depack.h
+include/adplug/mtr.h
+include/adplug/pis.h
+include/adplug/plx.h
+include/adplug/sixdepack.h
+include/adplug/strnlen.h
+include/adplug/unlzh.h
+include/adplug/unlzss.h
+include/adplug/unlzw.h
 lib/libadplug-%%PORTVERSION%%.so.0
 lib/libadplug-%%PORTVERSION%%.so.0.0.0
 lib/libadplug.a
