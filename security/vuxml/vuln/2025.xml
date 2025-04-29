@@ -269,8 +269,7 @@
     <affects>
       <package>
 	<name>navidrome</name>
-	<range><lt>0.54.5</lt></range>
-	<range><gt>0.52.0</gt></range>
+	<range><gt>0.52.0</gt><lt>0.54.5</lt></range>
       </package>
     </affects>
     <description>
