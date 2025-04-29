@@ -34,14 +34,14 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		pyo3-macros-0.24.1 \
 		pyo3-macros-backend-0.24.1 \
 		quote-1.0.40 \
-		redox_syscall-0.5.10 \
+		redox_syscall-0.5.11 \
 		ryu-1.0.20 \
 		scopeguard-1.2.0 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
 		serde_json-1.0.140 \
 		smallstr-0.3.0 \
-		smallvec-1.14.0 \
+		smallvec-1.15.0 \
 		syn-2.0.100 \
 		target-lexicon-0.13.2 \
 		thiserror-1.0.69 \
