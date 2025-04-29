@@ -1,6 +1,5 @@
 PORTNAME=	ipyopt
-DISTVERSION=	0.12.9
-PORTREVISION=	1
+DISTVERSION=	0.12.10
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,5 +29,7 @@ post-install:
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} pytest
+
+# tests as of 0.12.10: 8 passed, 10 skipped in 18.39s
 
 .include <bsd.port.mk>
