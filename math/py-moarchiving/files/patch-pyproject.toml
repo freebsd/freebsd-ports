@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-04-17 21:02:13 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@ requires = [
+ 
+ [build-system]
+ requires = [
+-    "setuptools >=70.1",
++    "setuptools >=61",
+     # "setuptools-scm",   # if we want to use git versions for versioning
+     # "wheel",  # setuptools doesn't need wheel anymore, see https://pypi.org/project/wheel/
+ ]
