@@ -5,31 +5,27 @@ MASTER_SITES=	SF/${PORTNAME}/Webcpp/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	chip-set@mail.ru
-COMMENT=	Convert your source code to syntax highlighted HTML
+COMMENT=	Convert source code to syntax-highlighted HTML
 WWW=		https://webcpp.sourceforge.net/
 
-DEPRECATED=	Abandonware and obsolete, last release in 2004
-EXPIRATION_DATE=2025-04-30
+LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS FINAL
 
-.if defined(WANT_FINAL)
-CONFIGURE_ARGS+=	--enable-final
-USES=		gmake
-.endif
+FINAL_DESC=	Size-optimized build (experimental: needs lots of RAM)
+FINAL_USES=	gmake
+FINAL_CONFIGURE_ON=	--enable-final
 
 pre-patch:
 	${FIND} ${WRKSRC} -name '*.h' | ${XARGS} ${REINPLACE_CMD} \
-		's|IO->close()|if(IO) IO->close()|g'
+		-e 's|IO->close()|if (IO) &|'
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS COPYING README TODO docs.html
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
