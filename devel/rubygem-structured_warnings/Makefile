@@ -1,5 +1,5 @@
 PORTNAME=	structured_warnings
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
