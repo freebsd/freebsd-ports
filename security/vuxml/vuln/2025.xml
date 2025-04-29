@@ -1,3 +1,32 @@
+  <vuln vid="df126e23-24fa-11f0-ab92-f02f7497ecda">
+    <topic>h11 accepts some malformed Chunked-Encoding bodies</topic>
+    <affects>
+      <package>
+    <name>py39-h11</name>
+    <name>py310-h11</name>
+    <name>py311-h11</name>
+    <name>py312-h11</name>
+    <range><lt>0.16.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+    <p>h11 reports:</p>
+    <blockquote cite="https://github.com/python-hyper/h11/security/advisories/GHSA-vqfr-h8mv-ghfj">
+      <p>h11 is a Python implementation of HTTP/1.1. Prior to version 0.16.0, a leniency in h11's parsing of line t  erminators in chunked-coding message bodies can lead to request smuggling vulnerabilities under certain conditions. This issu  e has been patched in version 0.16.0. Since exploitation requires the combination of buggy h11 with a buggy (reverse) proxy,   fixing either component is sufficient to mitigate this issue.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-43859</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-43859</url>
+    </references>
+    <dates>
+      <discovery>2025-04-24</discovery>
+      <entry>2025-04-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="310f5923-211c-11f0-8ca6-6c3be5272acd">
     <topic>Grafana -- Authorization bypass in data source proxy API</topic>
     <affects>
