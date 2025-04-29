@@ -12,9 +12,6 @@ WWW=		https://www.mdanalysis.org
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expiring devel/py-hypothesis
-EXPIRATION_DATE=2025-06-21
-
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}MDAnalysis>0:science/py-MDAnalysis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}

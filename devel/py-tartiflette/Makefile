@@ -12,9 +12,6 @@ WWW=		https://github.com/tartiflette/tartiflette
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expiring devel/py-lark
-EXPIRATION_DATE=2025-06-21
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=39.2.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libgraphqlparser.so:devel/libgraphqlparser

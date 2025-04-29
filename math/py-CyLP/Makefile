@@ -14,9 +14,6 @@ LICENSE_NAME=	Common Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
-DEPRECATED=	Depends on expiring devel/py-hypothesis
-EXPIRATION_DATE=2025-06-21
-
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR} \
 		${PYNUMPY} \

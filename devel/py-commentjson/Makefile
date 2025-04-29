@@ -10,9 +10,6 @@ WWW=		https://pypi.org/project/commentjson/
 
 LICENSE=	MIT
 
-DEPRECATED=	Depends on expiring devel/py-lark
-EXPIRATION_DATE=2025-06-21
-
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lark>0:devel/py-lark@${PY_FLAVOR}

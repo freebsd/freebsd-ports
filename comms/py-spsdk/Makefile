@@ -11,9 +11,6 @@ WWW=		https://pypi.org/project/spsdk/
 
 LICENSE=	BSD3CLAUSE
 
-DEPRECATED=	Depends on expiring comms/py-pyocd
-EXPIRATION_DATE=2025-06-21
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=40.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}

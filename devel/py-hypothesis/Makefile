@@ -59,11 +59,4 @@ PYTZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=2014.1,1:devel/py-pytz@${PY_FLAVO
 REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=3.0.0:databases/py-redis@${PY_FLAVOR}
 WATCHDOG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}watchdog>=4.0.0:devel/py-watchdog@${PY_FLAVOR}
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLARK}
-DEPRECATED=	Depends on expiring devel/py-lark
-EXPIRATION_DATE=2025-06-21
-.endif
-
 .include <bsd.port.mk>

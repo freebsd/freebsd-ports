@@ -11,9 +11,6 @@ WWW=		https://github.com/Zac-HD/hypothesmith
 
 LICENSE=	MPL20
 
-DEPRECATED=	Depends on expiring devel/py-hypothesis
-EXPIRATION_DATE=2025-06-21
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=0:devel/py-hypothesis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libcst>=0:devel/py-libcst@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>=0:devel/py-black@${PY_FLAVOR} \

@@ -11,9 +11,6 @@ WWW=		https://github.com/life4/textdistance
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expiring devel/py-hypothesis
-EXPIRATION_DATE=2025-06-21
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \

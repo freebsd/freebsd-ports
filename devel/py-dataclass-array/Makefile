@@ -13,9 +13,6 @@ WWW=		https://dataclass-array.readthedocs.io/en/latest/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expiring devel/py-lark
-EXPIRATION_DATE=2025-06-21
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.8<4:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}einops>=0:misc/py-einops@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}etils>=0:devel/py-etils@${PY_FLAVOR} \

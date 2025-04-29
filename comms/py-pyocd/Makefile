@@ -10,9 +10,6 @@ WWW=		https://pyocd.io/
 
 LICENSE=	APACHE20
 
-DEPRECATED=	Depends on expiring devel/py-lark
-EXPIRATION_DATE=2025-06-21
-
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR}

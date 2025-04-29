@@ -10,9 +10,6 @@ WWW=		https://pypi.org/project/pyocd-pemicro/
 
 LICENSE=	BSD3CLAUSE
 
-DEPRECATED=	Depends on expiring comms/py-pyocd
-EXPIRATION_DATE=2025-06-21
-
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR}

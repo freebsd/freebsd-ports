@@ -12,9 +12,6 @@ WWW=		https://github.com/DtxdF/${PORTNAME}
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expiring devel/py-commentjson
-EXPIRATION_DATE=2025-06-21
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}commentjson>=0:devel/py-commentjson@${PY_FLAVOR}
 
 USES=		python
