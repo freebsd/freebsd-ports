@@ -1,6 +1,5 @@
 PORTNAME=	AnyEvent-Task
-PORTVERSION=	0.801
-PORTREVISION=	1
+PORTVERSION=	0.805
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,9 +19,9 @@ RUN_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Log-Defer>=0.300:devel/p5-Log-Defer \
 		p5-common-sense>=0:devel/p5-common-sense
 
-NO_ARCH=	yes
-
-USES=	perl5
+USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
