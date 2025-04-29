@@ -1,5 +1,5 @@
 PORTNAME=	xpra
-PORTVERSION=	6.2.5
+PORTVERSION=	6.3
 CATEGORIES=	x11
 MASTER_SITES=	https://xpra.org/src/
 
@@ -18,7 +18,8 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libopenh264.so:multimedia/openh264 \
 		libwebp.so:graphics/webp \
 		libx264.so:multimedia/libx264 \
-		libxxhash.so:devel/xxhash
+		libxxhash.so:devel/xxhash \
+		libwayland-client.so:graphics/wayland
 RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}bencode.py>1:converters/py-bencode.py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}brotli>1:archivers/py-brotli@${PY_FLAVOR} \
