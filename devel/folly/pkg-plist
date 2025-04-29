@@ -323,6 +323,7 @@ include/folly/crypto/Blake2xb.h
 include/folly/crypto/LtHash-inl.h
 include/folly/crypto/LtHash.h
 include/folly/crypto/detail/LtHashInternal.h
+include/folly/debugging/exception_tracer/Compatibility.h
 include/folly/debugging/exception_tracer/ExceptionAbi.h
 include/folly/debugging/exception_tracer/ExceptionCounterLib.h
 include/folly/debugging/exception_tracer/ExceptionTracer.h
