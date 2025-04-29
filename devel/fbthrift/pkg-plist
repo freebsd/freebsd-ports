@@ -245,7 +245,6 @@ include/thrift/lib/cpp2/async/RetryingRequestChannel.h
 include/thrift/lib/cpp2/async/RocketClientChannel.h
 include/thrift/lib/cpp2/async/RpcOptions.h
 include/thrift/lib/cpp2/async/RpcTypes.h
-include/thrift/lib/cpp2/async/SchemaV1.h
 include/thrift/lib/cpp2/async/ServerChannel.h
 include/thrift/lib/cpp2/async/ServerGeneratorStream-inl.h
 include/thrift/lib/cpp2/async/ServerGeneratorStream.h
@@ -279,7 +278,9 @@ include/thrift/lib/cpp2/debug_thrift_data_difference/detail/pretty_print-inl-pre
 include/thrift/lib/cpp2/debug_thrift_data_difference/diff.h
 include/thrift/lib/cpp2/debug_thrift_data_difference/pretty_print.h
 include/thrift/lib/cpp2/detail/EventHandlerRuntime.h
+include/thrift/lib/cpp2/detail/Isset.h
 include/thrift/lib/cpp2/detail/meta.h
+include/thrift/lib/cpp2/dynamic/TypeId.h
 include/thrift/lib/cpp2/folly_dynamic/folly_dynamic.h
 include/thrift/lib/cpp2/folly_dynamic/internal/folly_dynamic-inl-post.h
 include/thrift/lib/cpp2/folly_dynamic/internal/folly_dynamic-inl-pre.h
@@ -357,10 +358,10 @@ include/thrift/lib/cpp2/op/detail/Patch.h
 include/thrift/lib/cpp2/op/detail/PatchTraits.h
 include/thrift/lib/cpp2/op/detail/StructOp.h
 include/thrift/lib/cpp2/op/detail/StructPatch.h
+include/thrift/lib/cpp2/op/detail/StructPatchImpl.h
 include/thrift/lib/cpp2/op/detail/ValueOp.h
 include/thrift/lib/cpp2/op/detail/ValuePatch.h
 include/thrift/lib/cpp2/patch/DynamicPatch.h
-include/thrift/lib/cpp2/patch/detail/FieldPatchCustomVisit.h
 include/thrift/lib/cpp2/patch/detail/PatchBadge.h
 include/thrift/lib/cpp2/patch/detail/Scuba.h
 include/thrift/lib/cpp2/patch/detail/TaggedPatch.h
@@ -426,7 +427,11 @@ include/thrift/lib/cpp2/reflection/variant.h
 include/thrift/lib/cpp2/runtime/BaseSchemaRegistry.h
 include/thrift/lib/cpp2/runtime/Init.h
 include/thrift/lib/cpp2/runtime/SchemaRegistry.h
+include/thrift/lib/cpp2/schema/SchemaV1.h
 include/thrift/lib/cpp2/schema/SyntaxGraph.h
+include/thrift/lib/cpp2/schema/detail/Merge.h
+include/thrift/lib/cpp2/schema/detail/Resolver.h
+include/thrift/lib/cpp2/schema/detail/SchemaBackedResolver.h
 include/thrift/lib/cpp2/security/AsyncStopTLS.h
 include/thrift/lib/cpp2/security/FizzPeeker.h
 include/thrift/lib/cpp2/security/SSLUtil.h
@@ -482,6 +487,7 @@ include/thrift/lib/cpp2/server/ServiceInterceptor.h
 include/thrift/lib/cpp2/server/ServiceInterceptorBase.h
 include/thrift/lib/cpp2/server/ServiceInterceptorQualifiedName.h
 include/thrift/lib/cpp2/server/ServiceInterceptorStorage.h
+include/thrift/lib/cpp2/server/ServiceInterceptorControl.h
 include/thrift/lib/cpp2/server/StandardConcurrencyController.h
 include/thrift/lib/cpp2/server/StatusServerInterface.h
 include/thrift/lib/cpp2/server/TMConcurrencyController.h
@@ -656,6 +662,7 @@ include/thrift/lib/cpp2/util/AllocationColocator.h
 include/thrift/lib/cpp2/util/BucketedRate.h
 include/thrift/lib/cpp2/util/Checksum.h
 include/thrift/lib/cpp2/util/DebugString.h
+include/thrift/lib/cpp2/util/DebugTree.h
 include/thrift/lib/cpp2/util/EmptyAsyncProcessor.h
 include/thrift/lib/cpp2/util/Ewma.h
 include/thrift/lib/cpp2/util/EwmaRate.h
@@ -720,8 +727,10 @@ include/thrift/lib/python/util.h
 include/thrift/lib/thrift/RpcMetadata_extra.h
 include/thrift/lib/thrift/SerializableDynamic.h
 include/thrift/lib/thrift/TypeToMaskAdapter.h
+include/thrift/lib/thrift/bundled_lib_thrift.h
 include/thrift/lib/thrift/detail/AnyPatch.h
 include/thrift/lib/thrift/detail/DynamicPatch.h
+include/thrift/lib/thrift/detail/TypeIdAdapter.h
 include/thrift/lib/thrift/detail/id.h
 include/thrift/lib/thrift/detail/protocol.h
 include/thrift/lib/thrift/gen-cpp2/RocketUpgrade.h
@@ -962,6 +971,7 @@ lib/librpcmetadata.so.1.0.0
 lib/libruntime.so
 lib/libserverdbginfo.so
 lib/libserverdbginfo.so.1.0.0
+lib/libshared.so
 lib/libthrift-core.so
 lib/libthrift-core.so.1.0.0
 lib/libthriftannotation.so
