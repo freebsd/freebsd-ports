@@ -338,6 +338,7 @@ include/fxt/comb/mset-perm-lex-rec.h
 include/fxt/comb/mset-perm-lex.h
 include/fxt/comb/mset-perm-pref.h
 include/fxt/comb/msetpart.h
+include/fxt/comb/necklace-mod-color.h
 include/fxt/comb/necklace.h
 include/fxt/comb/num-compositions.h
 include/fxt/comb/num-necklaces.h
@@ -1218,6 +1219,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/necklace-gray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/necklace-gray3-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/necklace-gray3-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/necklace-mod-color-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/necklace-mod-color-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/necklace-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/necklace-sigma-tau-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/necklace-sigma-tau-out.txt
