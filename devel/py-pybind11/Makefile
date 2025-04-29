@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Seamless interoperability between C++11 and Python
-WWW=		https://github.com/pybind/pybind11
+WWW=		https://pybind11.readthedocs.io/en/stable/ \
+		https://github.com/pybind/pybind11
 
 LICENSE=	BSD3CLAUSE
 
