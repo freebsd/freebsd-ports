@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2025-04-15 09:12:43 UTC
++++ pyproject.toml
+@@ -115,5 +115,5 @@ warn_unused_ignores = true
+ warn_unused_ignores = true
+ 
+ [build-system]
+-requires = ["setuptools>=68"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
