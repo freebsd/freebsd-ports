@@ -1,5 +1,5 @@
 PORTNAME=	solarus-quest-editor
-PORTVERSION=	1.6.5
+PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -10,22 +10,32 @@ WWW=		https://www.solarus-games.org
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license_gpl.txt
 
+BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libmodplug.so:audio/libmodplug \
-		libvorbis.so:audio/libvorbis \
+		libvorbisfile.so:audio/libvorbis \
 		libogg.so:audio/libogg \
 		libsolarus.so:games/solarus \
+		libqlementine.so:devel/qlementine
 
-BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
-
-USES=		cmake compiler:c++11-lib openal qt:5 sdl
+USES=		cmake compiler:c++11-lib gl localbase:ldflags openal qt:6 sdl
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	solarus-games
-GL_TAGNAME=	c8d0835c3a62a0e60cdb32d26be8b75485a23a96
+GL_PROJECT=	solarus
+GL_TAGNAME=	b5d6aefbda31e0f436d25606478c4129504f914f
 
+USE_GL=		opengl
+USE_QT=		base svg
 USE_SDL=	sdl2 ttf2 image2
-USE_QT=		buildtools:build concurrent core gui linguist qmake:build widgets
+
+CMAKE_ARGS+=	-DSOLARUS_FETCHCONTENT=OFF
+
+DESKTOP_ENTRIES=	"Solarus Quest Editor" "${COMMENT}" \
+			"${PREFIX}/share/pixmaps/org.solarus-games.solarus-editor.png" \
+			"solarus-editor" "Game;" false
+
+WRKSRC_SUBDIR=	editor
 
 OPTIONS_DEFINE=	LUAJIT
 OPTIONS_DEFAULT_amd64=	LUAJIT
@@ -34,12 +44,9 @@ OPTIONS_DEFAULT_powerpc=	LUAJIT
 OPTIONS_DEFAULT_powerpc64=	LUAJIT
 OPTIONS_DEFAULT_powerpc64le=	LUAJIT
 
-LUAJIT_CMAKE_BOOL=	SOLARUS_USE_LUAJIT
 LUAJIT_DESC=	Use LuaJIT instead of standard Lua
 LUAJIT_USES=	luajit
 LUAJIT_USES_OFF=	lua:51
-
-DESKTOP_ENTRIES=	"Solarus Quest Editor" "${COMMENT}" "${PORTNAME}" "${PORTNAME}"  \
-			"Game;" false
+LUAJIT_CMAKE_BOOL=	SOLARUS_USE_LUAJIT
 
 .include <bsd.port.mk>
