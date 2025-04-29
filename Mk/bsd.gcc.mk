@@ -35,7 +35,7 @@ GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 # All GCC versions supported by this framework.
 #
 # When updating this, keep Mk/bsd.default-versions.mk in sync.
-GCCVERSIONS=	11 12 13 14 15
+GCCVERSIONS=	11 12 13 14 15 16
 
 # No configurable parts below this. ####################################
 #
@@ -85,7 +85,7 @@ IGNORE=	Unknown version of GCC specified (USE_GCC=${USE_GCC})
 # A concrete version has been selected. Set proper ports dependencies,
 # CC, CXX, CPP, and flags.
 V:=			${_USE_GCC:S/.//}
-.  if ${V} == 15
+.  if ${V} == 16
 _GCC_PORT:=		gcc${V}-devel
 .  else
 _GCC_PORT:=		gcc${V}
