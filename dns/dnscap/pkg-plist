@@ -4,6 +4,8 @@ lib/dnscap/anonaes128.a
 lib/dnscap/anonaes128.so
 lib/dnscap/anonmask.a
 lib/dnscap/anonmask.so
+lib/dnscap/asudp.a
+lib/dnscap/asudp.so
 lib/dnscap/cryptopan.a
 lib/dnscap/cryptopan.so
 lib/dnscap/cryptopant.a
