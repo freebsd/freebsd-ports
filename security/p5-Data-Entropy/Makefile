@@ -11,6 +11,9 @@ WWW=		https://metacpan.org/release/Data-Entropy
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	The maintainer of this distribution has indicated that it is deprecated and no longer suitable for use
+EXPIRATION_DATE=2025-05-31
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Crypt-Rijndael>=0:security/p5-Crypt-Rijndael \
 		p5-Crypt-URandom>=0.36:security/p5-Crypt-URandom \
