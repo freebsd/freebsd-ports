@@ -2,8 +2,12 @@ PORTNAME=	magit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.2
 DISTVERSIONSUFFIX=
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	4ed80c649ed3308158b81e88ca90a3f1af4463f7.patch:-p1
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Interface to Git for Emacs (Development Version)
@@ -21,8 +25,8 @@ BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.2.0:misc/compat.el@${EMACS_
 		transient-devel${EMACS_PKGNAMESUFFIX}>=0.8.7:devel/transient-devel@${EMACS_FLAVOR} \
 		with-editor-devel${EMACS_PKGNAMESUFFIX}>=3.4.3:editors/with-editor-devel@${EMACS_FLAVOR}
 RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.2.0:misc/compat.el@${EMACS_FLAVOR} \
-		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.2:devel/llama.el@${EMACS_FLAVOR} \
 		git:devel/git \
+		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.2:devel/llama.el@${EMACS_FLAVOR} \
 		transient-devel${EMACS_PKGNAMESUFFIX}>=0.8.7:devel/transient-devel@${EMACS_FLAVOR} \
 		with-editor-devel${EMACS_PKGNAMESUFFIX}>=3.4.3:editors/with-editor-devel@${EMACS_FLAVOR}
 
