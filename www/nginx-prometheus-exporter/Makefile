@@ -1,7 +1,6 @@
 PORTNAME=	nginx-prometheus-exporter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1
-PORTREVISION=	3
+DISTVERSION=	1.4.2
 CATEGORIES=	www
 
 MAINTAINER=	arcade@b1t.name
@@ -11,7 +10,7 @@ WWW=		https://github.com/nginxinc/nginx-prometheus-exporter
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,1.22
+USES=		go:1.24,modules
 
 USE_RC_SUBR=	${PORTNAME}
 GO_MODULE=	github.com/nginxinc/nginx-prometheus-exporter
