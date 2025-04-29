@@ -9,8 +9,6 @@ WWW=		https://github.com/fnando/browser
 
 LICENSE=	MIT
 
-BROKEN_RUBY31=	yes
-
 USES=		gem
 
 NO_ARCH=	yes

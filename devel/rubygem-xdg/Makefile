@@ -13,7 +13,6 @@ LICENSE_NAME=	Hippocratic License 2.1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.adoc
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
-BROKEN_RUBY31=	yes
 BROKEN_RUBY32=	yes
 
 USES=		gem
