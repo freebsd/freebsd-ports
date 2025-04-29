@@ -7428,6 +7428,7 @@
     SUBDIR += rubygem-i18n
     SUBDIR += rubygem-i18n_data
     SUBDIR += rubygem-icalendar
+    SUBDIR += rubygem-icalendar-gitlab
     SUBDIR += rubygem-ice_cube
     SUBDIR += rubygem-ice_nine
     SUBDIR += rubygem-inflecto
