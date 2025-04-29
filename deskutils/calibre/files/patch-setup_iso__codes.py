@@ -1,4 +1,4 @@
---- setup/iso_codes.py.orig	2024-07-31 01:47:58 UTC
+--- setup/iso_codes.py.orig	2025-04-18 03:14:01 UTC
 +++ setup/iso_codes.py
 @@ -2,6 +2,7 @@ import fnmatch
  # License: GPLv3 Copyright: 2023, Kovid Goyal <kovid at kovidgoyal.net>
@@ -10,7 +10,7 @@
  import shutil
 @@ -24,40 +25,60 @@ class ISOData(Command):
      description = 'Get ISO codes name localization data'
-     top_level_filename =  'iso-codes-main'
+     top_level_filename = 'iso-codes-main'
      _zip_data = None
 +    extracted = False
  
