@@ -1,6 +1,6 @@
---- sql/mysqld.cc.orig	2024-04-10 06:26:28 UTC
+--- sql/mysqld.cc.orig	2025-03-31 07:51:10 UTC
 +++ sql/mysqld.cc
-@@ -7000,7 +7000,7 @@ static PSI_memory_key key_memory_openssl = PSI_NOT_INS
+@@ -7001,7 +7001,7 @@ static PSI_memory_key key_memory_openssl = PSI_NOT_INS
  
  static PSI_memory_key key_memory_openssl = PSI_NOT_INSTRUMENTED;
  
