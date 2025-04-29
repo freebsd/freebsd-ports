@@ -1,0 +1,11 @@
+--- meson.build.orig	2025-04-24 18:28:05 UTC
++++ meson.build
+@@ -321,7 +321,7 @@ endif
+   error(subproject_clean_error_msg)
+ endif
+ 
+-rizin_grammar_c_dep = dependency('rizin-grammar-c', required: get_option('use_sys_tree_sitter'), static: is_static_build, fallback: [])
++rizin_grammar_c_dep = dependency('rizin-grammar-c', required: false, static: is_static_build, fallback: [])
+ if not rizin_grammar_c_dep.found()
+   rizin_grammar_c_proj = subproject('rizin-grammar-c', default_options: ['default_library=static'])
+   rizin_grammar_c_dep = rizin_grammar_c_proj.get_variable('rizin_grammar_c_dep')

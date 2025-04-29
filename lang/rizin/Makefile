@@ -1,6 +1,6 @@
 PORTNAME=	rizin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.4
+DISTVERSION=	0.8.0
 CATEGORIES=	lang security shells
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -29,7 +29,8 @@ USES=		localbase meson pkgconfig python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	rizinorg
 GH_TUPLE=	rizinorg:rz-libdemangle:0031d1a:libdemangle/subprojects/libdemangle \
-		rizinorg:tree-sitter-c:81d96d8:tree_sitter_c/subprojects/tree-sitter-c \
+		rizinorg:rizin-grammar-c:8158457:rizin_grammar_c/subprojects/rizin-grammar-c \
+		rizinorg:softfloat:537d18e7:rizin_softfloat/subprojects/softfloat \
 		BLAKE3-team:BLAKE3:54930c9:blake3/subprojects/blake3
 
 MESON_ARGS=	-D use_sys_capstone=enabled \
@@ -51,7 +52,7 @@ TESTING_UNSAFE=	requires additional test input files
 
 post-extract:
 	${CP} -r ${WRKSRC}/subprojects/packagefiles/blake3 ${WRKSRC}/subprojects
-	${CP} -r ${WRKSRC}/subprojects/packagefiles/tree-sitter-c ${WRKSRC}/subprojects
+	${CP} -r ${WRKSRC}/subprojects/packagefiles/rizin-grammar-c ${WRKSRC}/subprojects
 	${CP} ${WRKSRC}/librz/debug/p/native/linux/reg/linux-ppc64.h ${WRKSRC}/librz/debug/p/native/reg/kfbsd-ppc64.h
 
 .include <bsd.port.mk>
