@@ -207,6 +207,7 @@ lib/libspamc.so.0
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::FreeMail.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::FromNameSpoof.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::HashBL.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::HeaderEval.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::MIMEEval.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::MIMEHeader.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::OLEVBMacro.3.gz
@@ -232,6 +233,7 @@ lib/libspamc.so.0
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::URIDetail.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::URILocalBL.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::VBounce.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::WLBLEval.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::WelcomeListSubject.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::PluginHandler.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Pyzor.3.gz
