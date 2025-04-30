@@ -1,3 +1,37 @@
+  <vuln vid="409206f6-25e6-11f0-9360-b42e991fc52e">
+    <topic>sqlite -- integer overflow</topic>
+    <affects>
+      <package>
+	<name>sqlite</name>
+	<range><lt>3.49.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://gist.github.com/ylwango613/a44a29f1ef074fa783e29f04a0afd62a">
+	<p>
+	In SQLite 3.44.0 through 3.49.0 before 3.49.1, the
+	concat_ws() SQL function can cause memory to be written
+	beyond the end of a malloc-allocated buffer. If the
+	separator argument is attacker-controlled and has a large
+	string (e.g., 2MB or more), an integer overflow occurs in
+	calculating the size of the result buffer, and thus malloc
+	may not allocate enough memory.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-29087</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-29087</url>
+    </references>
+    <dates>
+      <discovery>2025-04-07</discovery>
+      <entry>2025-04-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="df126e23-24fa-11f0-ab92-f02f7497ecda">
     <topic>h11 accepts some malformed Chunked-Encoding bodies</topic>
     <affects>
