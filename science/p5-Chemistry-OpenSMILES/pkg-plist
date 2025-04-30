@@ -6,3 +6,5 @@
 %%SITE_PERL%%/Chemistry/OpenSMILES/Writer.pm
 %%PERL5_MAN3%%/Chemistry::OpenSMILES.3.gz
 %%PERL5_MAN3%%/Chemistry::OpenSMILES::Aromaticity.3.gz
+%%PERL5_MAN3%%/Chemistry::OpenSMILES::Parser.3.gz
+%%PERL5_MAN3%%/Chemistry::OpenSMILES::Writer.3.gz
