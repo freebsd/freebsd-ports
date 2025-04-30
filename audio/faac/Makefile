@@ -13,9 +13,6 @@ LICENSE_NAME_ISO=	ISO/IEC14496
 LICENSE_FILE_ISO=	${WRKSRC}/README
 LICENSE_PERMS_ISO=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATED=	Produces poor audio quality compared to other encoders, consider using audio/fdk-aac , audio/exhale (xHE-AAC which supersedes AAC-LC) or FFmpeg's native encoder
-EXPIRATION_DATE=2025-04-30
-
 USES=		autoreconf compiler:c11 gmake libtool pathfix
 USE_LDCONFIG=	yes
 
