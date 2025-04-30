@@ -26,7 +26,7 @@ GL_PROJECT=	solarus
 GL_TAGNAME=	b5d6aefbda31e0f436d25606478c4129504f914f
 
 USE_GL=		opengl
-USE_QT=		base svg
+USE_QT=		base svg tools:build
 USE_SDL=	sdl2 ttf2 image2
 
 CMAKE_ARGS+=	-DSOLARUS_FETCHCONTENT=OFF
