@@ -1,6 +1,6 @@
 PORTNAME=	compat13x
 PORTVERSION=	13.5.1305000.20250330
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/arrowd
 PKGNAMESUFFIX=	-${ARCH}
@@ -24,6 +24,10 @@ NO_SHLIB_REQUIRES_GLOB=	*:32
 
 .if ${OSREL:R} < 13
 IGNORE=		is for FreeBSD 13.x and newer
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000
+RUN_DEPENDS+=	compat14x-${ARCH}>=0:misc/compat14x
 .endif
 
 .if ${ARCH} == amd64

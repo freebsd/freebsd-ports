@@ -1,8 +1,8 @@
 lib/compat/libcrypto.so.111
-lib/compat/libmd.so.6
+@comment lib/compat/libmd.so.6
 lib/compat/libnv.so.0
 lib/compat/libssl.so.111
 lib32/compat/libcrypto.so.111
-lib32/compat/libmd.so.6
+@comment lib32/compat/libmd.so.6
 lib32/compat/libnv.so.0
 lib32/compat/libssl.so.111
