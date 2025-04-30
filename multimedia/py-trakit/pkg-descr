@@ -1,0 +1,4 @@
+TrakIt is a track name parser. It is a tiny library created to solve a very
+specific problem. It's very common that video files do not have precise
+metadata information, where you can have multiple subtitle tracks tagged as
+e.g., Portuguese, but one of them is actually Brazilian Portuguese

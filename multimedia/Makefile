@@ -320,6 +320,7 @@
     SUBDIR += py-srt
     SUBDIR += py-subliminal
     SUBDIR += py-tartube
+    SUBDIR += py-trakit
     SUBDIR += py-tvnamer
     SUBDIR += py-ustreamer
     SUBDIR += qmmp-plugin-pack-qt5
