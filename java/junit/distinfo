@@ -1,4 +1,5 @@
-SHA256 (junit-4.12.jar) = 59721f0805e223d84b90677887d9ff567dc534d7c502ca903c0c2b17f05c116a
-SIZE (junit-4.12.jar) = 314932
-SHA256 (junit-4.12-sources.jar) = 9f43fea92033ad82bcad2ae44cec5c82abc9d6ee4b095cab921d11ead98bf2ff
-SIZE (junit-4.12-sources.jar) = 200355
+TIMESTAMP = 1746036618
+SHA256 (junit-4.13.2.jar) = 8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3
+SIZE (junit-4.13.2.jar) = 384581
+SHA256 (junit-4.13.2-sources.jar) = 34181df6482d40ea4c046b063cb53c7ffae94bdf1b1d62695bdf3adf9dea7e3a
+SIZE (junit-4.13.2-sources.jar) = 234540
