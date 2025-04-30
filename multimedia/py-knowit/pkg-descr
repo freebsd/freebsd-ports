@@ -1,0 +1,2 @@
+KnowIt can use MediaInfo, ffprobe (FFmpeg) or mkvmerge (MKVToolNix)
+It supports MKV regardless if MediaInfo, FFmpeg or MKVToolNix are installed.

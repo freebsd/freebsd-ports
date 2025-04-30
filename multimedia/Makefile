@@ -305,6 +305,7 @@
     SUBDIR += py-ffmpeg-python
     SUBDIR += py-gstreamer1
     SUBDIR += py-guessit
+    SUBDIR += py-knowit
     SUBDIR += py-mat2
     SUBDIR += py-metadata-cleaner
     SUBDIR += py-mido
