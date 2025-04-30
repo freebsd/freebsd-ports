@@ -3141,7 +3141,6 @@ emulators/tuxnes||2024-04-04|Has expired: BROKEN for more than 4 months
 sysutils/vordog||2024-04-04|Has expired: BROKEN for more than 4 months
 science/py-qiskit-terra||2024-04-04|Removed: the upstream gutted the old project and re-imported some other repo; it should be re-ported as a totally new project
 misc/py-qiskit-machine-learning||2024-04-05|Removed
-science/py-qiskit||2024-04-05|Removed
 science/py-qiskit-aer||2024-04-05|Removed
 science/py-qiskit-dynamics||2024-04-05|Removed
 science/py-qiskit-experiments||2024-04-05|Removed
