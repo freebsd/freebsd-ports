@@ -157,7 +157,7 @@
       </package>
       <package>
 	<name>redis72</name>
-	<range><lt>7.2,8</lt></range>
+	<range><lt>7.2.8</lt></range>
       </package>
       <package>
 	<name>redis62</name>
