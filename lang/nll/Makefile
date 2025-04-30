@@ -1,8 +1,8 @@
 PORTNAME=	nll
-PORTVERSION=	20241222a
+PORTVERSION=	20250413a
 CATEGORIES=	lang
 MASTER_SITES=	https://kozos.jp/nlux/archive/
-DISTNAME=	nlux-alpha-20241222
+DISTNAME=	nlux-alpha-20250413
 
 MAINTAINER=	kozos@kozos.jp
 COMMENT=	Simple language for programming learning
