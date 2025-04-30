@@ -1,6 +1,7 @@
 PORTNAME=	qlementine
 PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake gl qt:6
 
-USE_QT=		base svg tools
+USE_QT=		base svg tools:build
 USE_GL=		opengl
 USE_LDCONFIG=	yes
 
