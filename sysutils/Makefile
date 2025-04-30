@@ -1136,6 +1136,7 @@
     SUBDIR += rsyncbackup
     SUBDIR += rsyncrypto
     SUBDIR += rsyslog8
+    SUBDIR += rtkit-unix
     SUBDIR += rtty
     SUBDIR += rubygem-backup
     SUBDIR += rubygem-bolt
