@@ -92,6 +92,7 @@ share/doc/HTML/ca/kstars/guides_page.png
 share/doc/HTML/ca/kstars/hips.docbook
 share/doc/HTML/ca/kstars/horizon.docbook
 share/doc/HTML/ca/kstars/hourangle.docbook
+share/doc/HTML/ca/kstars/imagingplanner.docbook
 share/doc/HTML/ca/kstars/index.cache.bz2
 share/doc/HTML/ca/kstars/index.docbook
 share/doc/HTML/ca/kstars/indi.docbook
@@ -363,6 +364,8 @@ share/doc/HTML/en/kstars/horizon.docbook
 share/doc/HTML/en/kstars/hourangle.docbook
 share/doc/HTML/en/kstars/imageOverlays1.png
 share/doc/HTML/en/kstars/imageOverlays2.png
+share/doc/HTML/en/kstars/imagingplanner.docbook
+share/doc/HTML/en/kstars/imagingplanner.png
 share/doc/HTML/en/kstars/import_catalog.png
 share/doc/HTML/en/kstars/index.cache.bz2
 share/doc/HTML/en/kstars/index.docbook
@@ -666,6 +669,7 @@ share/doc/HTML/fr/kstars/ecliptic.docbook
 share/doc/HTML/fr/kstars/ekos-align.docbook
 share/doc/HTML/fr/kstars/ekos-analyze.docbook
 share/doc/HTML/fr/kstars/ekos-capture.docbook
+share/doc/HTML/fr/kstars/ekos-extensions.docbook
 share/doc/HTML/fr/kstars/ekos-focus.docbook
 share/doc/HTML/fr/kstars/ekos-guide.docbook
 share/doc/HTML/fr/kstars/ekos-logs.docbook
@@ -763,6 +767,7 @@ share/doc/HTML/fr/kstars/guides_page.png
 share/doc/HTML/fr/kstars/hips.docbook
 share/doc/HTML/fr/kstars/horizon.docbook
 share/doc/HTML/fr/kstars/hourangle.docbook
+share/doc/HTML/fr/kstars/imagingplanner.docbook
 share/doc/HTML/fr/kstars/import_catalog.png
 share/doc/HTML/fr/kstars/index.cache.bz2
 share/doc/HTML/fr/kstars/index.docbook
@@ -950,6 +955,7 @@ share/doc/HTML/nl/kstars/greatcircle.docbook
 share/doc/HTML/nl/kstars/hips.docbook
 share/doc/HTML/nl/kstars/horizon.docbook
 share/doc/HTML/nl/kstars/hourangle.docbook
+share/doc/HTML/nl/kstars/imagingplanner.docbook
 share/doc/HTML/nl/kstars/index.cache.bz2
 share/doc/HTML/nl/kstars/index.docbook
 share/doc/HTML/nl/kstars/indi.docbook
@@ -1302,6 +1308,7 @@ share/doc/HTML/uk/kstars/guides_tab.png
 share/doc/HTML/uk/kstars/hips.docbook
 share/doc/HTML/uk/kstars/horizon.docbook
 share/doc/HTML/uk/kstars/hourangle.docbook
+share/doc/HTML/uk/kstars/imagingplanner.docbook
 share/doc/HTML/uk/kstars/index.cache.bz2
 share/doc/HTML/uk/kstars/index.docbook
 share/doc/HTML/uk/kstars/indi.docbook
