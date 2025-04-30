@@ -1,11 +1,12 @@
 PORTNAME=	ParMetis
 DISTVERSION=	4.0.3-p10
+PORTREVISION=	9
 CATEGORIES=	math parallel
 MASTER_SITES=	https://bitbucket.org/petsc/pkg-parmetis/get/
 DISTNAME=	${LGCOMMIT}
 DIST_SUBDIR=	Metis
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Package for parallel (MPI) unstructured graph partitioning
 WWW=		https://bitbucket.org/petsc/pkg-parmetis
 
