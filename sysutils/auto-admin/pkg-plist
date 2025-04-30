@@ -3,6 +3,16 @@ bin/auto-ask
 bin/auto-backup-file
 bin/auto-check-ports-branch
 bin/auto-clean-pkgsrc
+bin/auto-dreckly-clean
+bin/auto-dreckly-delete-all
+bin/auto-dreckly-dir
+bin/auto-dreckly-make
+bin/auto-dreckly-non-removable
+bin/auto-dreckly-prefix
+bin/auto-dreckly-remote-x11
+bin/auto-dreckly-setup
+bin/auto-dreckly-update
+bin/auto-dreckly-wip-checkout
 bin/auto-fastest-mirror
 bin/auto-fetch-install-media
 bin/auto-get-ip
@@ -25,6 +35,7 @@ bin/auto-pkg-branch
 bin/auto-pkg-latest
 bin/auto-pkgsrc-branch
 bin/auto-pkgsrc-checkout
+bin/auto-pkgsrc-clean
 bin/auto-pkgsrc-delete-all
 bin/auto-pkgsrc-dir
 bin/auto-pkgsrc-make
@@ -32,6 +43,7 @@ bin/auto-pkgsrc-non-removable
 bin/auto-pkgsrc-prefix
 bin/auto-pkgsrc-remote-x11
 bin/auto-pkgsrc-setup
+bin/auto-pkgsrc-update
 bin/auto-pkgsrc-wip-checkout
 bin/auto-ports-branch
 bin/auto-print-make-variable
@@ -40,7 +52,9 @@ bin/auto-replace-file
 bin/auto-software-manager
 bin/auto-ssh-authorize
 bin/auto-ssh-reverse-authorize
+bin/auto-update-manager
 bin/auto-update-pkgsrc
+bin/auto-using-dreckly
 bin/auto-using-pkgsrc
 bin/auto-wacom-map-display
 sbin/auto-add-fdesc-mount
