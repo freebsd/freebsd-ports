@@ -1,5 +1,5 @@
 PORTNAME=	aws-iam-authenticator
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
