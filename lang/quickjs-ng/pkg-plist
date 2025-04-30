@@ -11,6 +11,7 @@ lib/libqjs.so.%%PORTVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/fib_module.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/hello.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/hello_module.js
+%%PORTDOCS%%%%DOCSDIR%%/examples/meson.build
 %%PORTDOCS%%%%DOCSDIR%%/examples/pi_bigint.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/point.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/test_fib.js
