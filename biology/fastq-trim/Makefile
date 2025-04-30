@@ -1,6 +1,5 @@
 PORTNAME=	fastq-trim
-DISTVERSION=	0.1.3
-PORTREVISION=	1
+DISTVERSION=	0.1.4
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,15 +9,13 @@ WWW=		https://github.com/outpaddling/Fastq-trim
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libbiolibc.so:biology/biolibc libxtend.so:devel/libxtend
+BUILD_DEPENDS=	biolibc>=0.2.6.10:biology/biolibc
+LIB_DEPENDS=	libxtend.so:devel/libxtend libbiolibc.so:biology/biolibc
 
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
 
-MAKE_ENV=	VERSION=${PORTVERSION} MANPREFIX=${PREFIX}/share
-
-pre-build:
-	(cd ${WRKSRC} && ${MAKE} LOCALBASE=${LOCALBASE} depend)
+MAKE_ARGS=	MANPREFIX=${PREFIX}/share VERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
