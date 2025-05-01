@@ -4,8 +4,7 @@ CATEGORIES=	graphics geography java
 MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
-#implicit-approval+ jbo@
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	Open Source GIS server
 WWW=		https://geoserver.org/
 
