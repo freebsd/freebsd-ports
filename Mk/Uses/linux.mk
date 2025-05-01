@@ -195,7 +195,6 @@ _linux_${linux_ARGS}_sdl2image=		linux-${linux_ARGS}-sdl2_image>0:graphics/linux
 _linux_${linux_ARGS}_sdl2mixer=		linux-${linux_ARGS}-sdl2_mixer>0:audio/linux-${linux_ARGS}-sdl2_mixer
 _linux_${linux_ARGS}_sdl2ttf=		linux-${linux_ARGS}-sdl2_ttf>0:graphics/linux-${linux_ARGS}-sdl2_ttf
 _linux_${linux_ARGS}_sdl2sound=		linux-${linux_ARGS}-sdl2_sound>0:audio/linux-${linux_ARGS}-sdl2_sound
-_linux_${linux_ARGS}_sdlmixer=		linux-${linux_ARGS}-sdl_mixer>0:audio/linux-${linux_ARGS}-sdl_mixer
 _linux_${linux_ARGS}_sdlsound=		linux-${linux_ARGS}-sdl_sound>0:audio/linux-${linux_ARGS}-sdl_sound
 _linux_rl9_shaderc=			linux-rl9-shaderc>0:graphics/linux-rl9-shaderc
 _linux_rl9_spirv-tools=			linux-rl9-spirv-tools>0:graphics/linux-rl9-spirv-tools

@@ -4336,3 +4336,4 @@ graphics/linux-c7-sdl_ttf|misc/linux-c7-sdl12-extralibs|2025-05-03|Merged into m
 graphics/linux-rl9-sdl_image|misc/linux-rl9-sdl12-extralibs|2025-05-03|Merged into misc/linux-rl9-sdl12-extralibs
 graphics/linux-rl9-sdl_ttf|misc/linux-rl9-sdl12-extralibs|2025-05-03|Merged into misc/linux-rl9-sdl12-extralibs
 graphics/linux-rl9-sdl_gfx|misc/linux-rl9-sdl12-extralibs|2025-05-03|Merged into misc/linux-rl9-sdl12-extralibs
+audio/linux-c7-sdl_mixer|misc/linux-c7-sdl12-extralibs|2025-05-03|Merged into misc/linux-c7-sdl12-extralibs

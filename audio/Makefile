@@ -405,7 +405,6 @@
     SUBDIR += linux-c7-openal-soft
     SUBDIR += linux-c7-pulseaudio-libs
     SUBDIR += linux-c7-pulseaudio-utils
-    SUBDIR += linux-c7-sdl_mixer
     SUBDIR += linux-laudio
     SUBDIR += linux-rl9-alsa-lib
     SUBDIR += linux-rl9-alsa-lib-devel
