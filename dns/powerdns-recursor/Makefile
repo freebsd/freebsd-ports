@@ -1,6 +1,5 @@
 PORTNAME=	recursor
-DISTVERSION=	5.2.0
-PORTREVISION=	3
+DISTVERSION=	5.2.2
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -30,8 +29,8 @@ USE_RC_SUBR=	pdns_recursor
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/pdns \
 		--with-libsodium=no \
-		--with-service-user=pdns \
 		--with-service-group=pdns_recursor \
+		--with-service-user=pdns \
 		--without-net-snmp \
 		--without-systemd
 
