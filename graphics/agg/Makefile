@@ -1,22 +1,24 @@
 PORTNAME=	agg
-PORTVERSION=	2.5
-PORTREVISION=	11
+DISTVERSION=	2.7.0
+PORTREVISION=	0
 CATEGORIES=	graphics
-MASTER_SITES=	http://distfiles.alpinelinux.org/distfiles/ \
-		http://distfiles.lesslinux.org/ \
-		http://gentoo.netnitco.net/distfiles/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	High Quality Rendering Engine for C++
-WWW=		https://agg.sourceforge.net/antigrain.com/
+WWW=		https://github.com/clausecker/agg
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/copying
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		autoreconf cpe gmake libtool pathfix pkgconfig sdl xorg
+USES=		cpe localbase gmake libtool pkgconfig \
+		autoreconf pathfix xorg sdl
+CONFLICTS=      agg-2.*
 CPE_VENDOR=	antigrain
+USE_GITHUB=	yes
+GH_ACCOUNT=	clausecker
+GH_TAGNAME=	b064760 # 2024-09-28
 USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
@@ -26,9 +28,7 @@ GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 
-CONFLICTS=	agg26-2.*
-
 post-patch:
-	@${REINPLACE_CMD} 's/_LDFLAGS/_LDADD/' ${WRKSRC}/examples/Makefile.am
+	${REINPLACE_CMD} 's|_LDFLAGS|_LDADD|' ${WRKSRC}/examples/Makefile.am
 
 .include <bsd.port.mk>

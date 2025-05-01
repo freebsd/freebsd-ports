@@ -37,6 +37,7 @@ include/agg2/agg_ellipse.h
 include/agg2/agg_ellipse_bresenham.h
 include/agg2/agg_embedded_raster_fonts.h
 include/agg2/agg_font_cache_manager.h
+include/agg2/agg_font_cache_manager2.h
 include/agg2/agg_font_freetype.h
 include/agg2/agg_gamma_functions.h
 include/agg2/agg_gamma_lut.h
@@ -53,6 +54,7 @@ include/agg2/agg_path_storage.h
 include/agg2/agg_path_storage_integer.h
 include/agg2/agg_pattern_filters_rgba.h
 include/agg2/agg_pixfmt_amask_adaptor.h
+include/agg2/agg_pixfmt_base.h
 include/agg2/agg_pixfmt_gray.h
 include/agg2/agg_pixfmt_rgb.h
 include/agg2/agg_pixfmt_rgb_packed.h
@@ -63,6 +65,7 @@ include/agg2/agg_rasterizer_compound_aa.h
 include/agg2/agg_rasterizer_outline.h
 include/agg2/agg_rasterizer_outline_aa.h
 include/agg2/agg_rasterizer_scanline_aa.h
+include/agg2/agg_rasterizer_scanline_aa_nogamma.h
 include/agg2/agg_rasterizer_sl_clip.h
 include/agg2/agg_renderer_base.h
 include/agg2/agg_renderer_markers.h
@@ -90,6 +93,8 @@ include/agg2/agg_span_gouraud_gray.h
 include/agg2/agg_span_gouraud_rgba.h
 include/agg2/agg_span_gradient.h
 include/agg2/agg_span_gradient_alpha.h
+include/agg2/agg_span_gradient_contour.h
+include/agg2/agg_span_gradient_image.h
 include/agg2/agg_span_image_filter.h
 include/agg2/agg_span_image_filter_gray.h
 include/agg2/agg_span_image_filter_rgb.h
@@ -138,18 +143,18 @@ include/agg2/util/agg_color_conv_rgb8.h
 lib/libagg.a
 lib/libagg.so
 lib/libagg.so.2
-lib/libagg.so.2.0.4
+lib/libagg.so.2.0.7
 lib/libaggfontfreetype.a
 lib/libaggfontfreetype.so
 lib/libaggfontfreetype.so.2
-lib/libaggfontfreetype.so.2.0.4
+lib/libaggfontfreetype.so.2.0.7
 lib/libaggplatformX11.a
 lib/libaggplatformX11.so
 lib/libaggplatformX11.so.2
-lib/libaggplatformX11.so.2.0.4
+lib/libaggplatformX11.so.2.0.7
 lib/libaggplatformsdl.a
 lib/libaggplatformsdl.so
 lib/libaggplatformsdl.so.2
-lib/libaggplatformsdl.so.2.0.4
+lib/libaggplatformsdl.so.2.0.7
 libdata/pkgconfig/libagg.pc
 share/aclocal/libagg.m4
