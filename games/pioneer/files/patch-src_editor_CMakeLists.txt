@@ -1,7 +1,15 @@
---- src/editor/CMakeLists.txt.orig	2024-03-14 20:05:43 UTC
+--- src/editor/CMakeLists.txt.orig	2025-05-01 11:22:38 UTC
 +++ src/editor/CMakeLists.txt
-@@ -29,3 +29,4 @@ set_target_properties(editor PROPERTIES RUNTIME_OUTPUT
+@@ -28,9 +28,10 @@ target_link_libraries(editor LINK_PRIVATE ${EDITOR_LIB
+ add_executable(editor WIN32 editormain.cpp ${RESOURCES})
  set_cxx_properties(editor)
  target_link_libraries(editor LINK_PRIVATE ${EDITOR_LIBRARIES} ${pioneerLibs} ${winLibs})
- set_target_properties(editor PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 +set_target_properties(editor PROPERTIES OUTPUT_NAME pioneer-editor)
+ if (MSVC)
+ 	# Put the output into the root dir so it can be run from Visual Studio
+ 	set_target_properties(editor PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
+ else()
+ 	set_target_properties(editor PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+-endif (MSVC)
+\ No newline at end of file
++endif (MSVC)
