@@ -1,6 +1,6 @@
 PORTNAME=	clisp
 PORTVERSION=	2.49.95+20241228
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang lisp
 
 MAINTAINER=	kiri@TrueFC.org
@@ -16,9 +16,8 @@ LIB_DEPENDS=	libffcall.so:devel/libffcall \
 		libunistring.so:devel/libunistring
 RUN_DEPENDS=	cl-freebsd-asdf-init>=0:devel/cl-freebsd-asdf-init
 
-USES=		compiler gettext ghostscript iconv localbase:ldflags ncurses \
+USES=		gettext ghostscript iconv localbase:ldflags ncurses \
 		pkgconfig
-USE_GCC=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	gnu-clisp
 GL_PROJECT=	clisp
@@ -36,11 +35,6 @@ CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 
 MAKE_ENV=		${CONFIGURE_ENV}
 MAKE_JOBS_UNSAFE=	yes
-
-# Complaints if the environment changes between build stages.
-CFLAGS+=	-fpermissive
-LDFLAGS+=	${LDFLAGS_${CHOSEN_COMPILER_TYPE}}
-LDFLAGS_gcc=	-lthr
 
 SUB_FILES=	pkg-message
 
