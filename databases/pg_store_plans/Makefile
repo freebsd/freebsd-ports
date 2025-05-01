@@ -18,4 +18,10 @@ USES=		gmake pgsql:15+
 WANT_PGSQL=	server
 MAKE_ARGS=	USE_PGXS=YES
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PGSQL_VER} > 16
+IGNORE		Only supported up to pgsql 16
+.endif
+
+.include <bsd.port.post.mk>
