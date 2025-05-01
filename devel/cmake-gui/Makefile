@@ -7,9 +7,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt-based GUI for CMake
 WWW=		https://www.cmake.org
 
-PATCH_SITES=	https://gitlab.kitware.com/cmake/cmake/-/commit/
-PATCHFILES+=	1b0c92a3a1b782ff3e1c4499b6ab8db614d45bcd.patch:-p1 # Fix build with curl >= 8.13.0
-
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt
 

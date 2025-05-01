@@ -1,5 +1,3 @@
-TIMESTAMP = 1745845681
-SHA256 (cmake-3.31.6.tar.gz) = 653427f0f5014750aafff22727fb2aa60c6c732ca91808cfb78ce22ddd9e55f0
-SIZE (cmake-3.31.6.tar.gz) = 11710589
-SHA256 (1b0c92a3a1b782ff3e1c4499b6ab8db614d45bcd.patch) = fab4f6c4dfbdea777a5ccad3db97fd5f3336fcb48a30847c94c0a5636757c2ef
-SIZE (1b0c92a3a1b782ff3e1c4499b6ab8db614d45bcd.patch) = 1142
+TIMESTAMP = 1746076226
+SHA256 (cmake-3.31.7.tar.gz) = a6d2eb1ebeb99130dfe63ef5a340c3fdb11431cce3d7ca148524c125924cea68
+SIZE (cmake-3.31.7.tar.gz) = 11711975
