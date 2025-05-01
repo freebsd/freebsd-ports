@@ -32,6 +32,7 @@ lib/rancid/mrv.pm
 lib/rancid/nxos.pm
 lib/rancid/panos.pm
 lib/rancid/rancid.pm
+lib/rancid/rancidcontrib.pm
 lib/rancid/rbt.pm
 lib/rancid/routeros.pm
 lib/rancid/smc.pm
@@ -168,6 +169,7 @@ share/man/man1/xilogin.1.gz
 share/man/man1/xirancid.1.gz
 share/man/man1/xlogin.1.gz
 share/man/man3/rancid.3.gz
+share/man/man3/rancidcontrib.3.gz
 share/man/man5/cloginrc.5.gz
 share/man/man5/lg.conf.5.gz
 share/man/man5/rancid.conf.5.gz
