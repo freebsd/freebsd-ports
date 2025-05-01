@@ -1,7 +1,0 @@
-TIMESTAMP = 1739909301
-SHA256 (rocky/s/SDL_ttf-2.0.11-29.el9.aarch64.rpm) = 546e012f10f2eb528d295025a3af621279e26e5d43b782fa224b74d3d54c7420
-SIZE (rocky/s/SDL_ttf-2.0.11-29.el9.aarch64.rpm) = 25038
-SHA256 (rocky/s/SDL_ttf-2.0.11-29.el9.x86_64.rpm) = 5bb8f28b59b5e234c4e557dc3bd4e25294034673d8200356ce66e8d7a481baf9
-SIZE (rocky/s/SDL_ttf-2.0.11-29.el9.x86_64.rpm) = 25482
-SHA256 (rocky/s/SDL_ttf-2.0.11-29.el9.src.rpm) = cd8f36c70c4581d1bf3f62d767081c12b9aee685f17eacbebdbf346d2591f32c
-SIZE (rocky/s/SDL_ttf-2.0.11-29.el9.src.rpm) = 4060491

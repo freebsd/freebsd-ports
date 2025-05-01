@@ -4334,3 +4334,4 @@ x11-toolkits/SoXt||2025-04-28|Has expired: Broken for more than 6 months
 graphics/agg26|graphics/agg|2025-05-01|Merged into agg
 graphics/linux-c7-sdl_ttf|misc/linux-c7-sdl12-extralibs|2025-05-03|Merged into misc/linux-c7-sdl12-extralibs
 graphics/linux-rl9-sdl_image|misc/linux-rl9-sdl12-extralibs|2025-05-03|Merged into misc/linux-rl9-sdl12-extralibs
+graphics/linux-rl9-sdl_ttf|misc/linux-rl9-sdl12-extralibs|2025-05-03|Merged into misc/linux-rl9-sdl12-extralibs
