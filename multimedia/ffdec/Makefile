@@ -1,5 +1,5 @@
 PORTNAME=	ffdec
-DISTVERSION=	17.0.2
+DISTVERSION=	22.0.2
 CATEGORIES=	multimedia java
 MASTER_SITES=	https://github.com/jindrapetrik/jpexs-decompiler/releases/download/version${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
