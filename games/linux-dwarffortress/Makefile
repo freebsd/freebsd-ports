@@ -26,7 +26,7 @@ LICENSE_TEXT=	Copyright (c) 2002-2016. All rights are retained by Tarn Adams, \
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		linux tar:bzip2
-USE_LINUX=	dri gtk2 libsndfile openal-soft sdlimage sdlttf xorglibs
+USE_LINUX=	dri gtk2 libsndfile openal-soft sdl12-extralibs xorglibs
 
 SUB_FILES=	dwarffortress
 NO_BUILD=	yes
