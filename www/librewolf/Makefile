@@ -1,5 +1,5 @@
 PORTNAME=	librewolf
-DISTVERSION=	137.0.2
+DISTVERSION=	138.0
 LWPATCH=	-1
 DISTVERSIONSUFFIX=	${LWPATCH}.source
 CATEGORIES=	www wayland
@@ -12,10 +12,8 @@ WWW=		https://librewolf.net/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv7=	error: could not compile `gkrust` (lib)
-
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.109:security/nss \
+		nss>=3.110:security/nss \
 		icu>=76.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=10.1.0:print/harfbuzz \
