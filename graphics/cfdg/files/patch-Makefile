@@ -1,6 +1,6 @@
---- Makefile.orig	2023-02-04 00:34:00 UTC
+--- Makefile.orig	2025-03-23 20:30:34 UTC
 +++ Makefile
-@@ -19,7 +19,7 @@ vpath %.cpp $(SRC_DIRS)
+@@ -19,7 +19,7 @@ INC_DIRS = $(COMMON_DIR) $(UNIX_DIR) $(DERIVED_DIR) $(
  vpath %.cfdg input
  
  INC_DIRS = $(COMMON_DIR) $(UNIX_DIR) $(DERIVED_DIR) $(COMMON_DIR)/agg-extras
@@ -59,18 +59,21 @@
  #
  # Configuration for local AGG
  #
- SRCS += $(AGG_SRCS)
- INC_DIRS += $(AGG_DIR) $(AGG_DIR)/agg2
+-SRCS += $(AGG_SRCS)
+-INC_DIRS += $(AGG_DIR) $(AGG_DIR)/agg2
++#SRCS += $(AGG_SRCS)
++#INC_DIRS += $(AGG_DIR) $(AGG_DIR)/agg2
  
  
  #
  # Configuration for system AGG
  #
- #LIBS += agg
+-#LIBS += agg
++LIBS += agg
  
  
  OBJS = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRCS))
-@@ -113,6 +105,7 @@ DEPS = $(patsubst %.o,%.d,$(OBJS))
+@@ -113,6 +105,7 @@ LINKFLAGS += $(patsubst %,-l%,$(LIBS))
  
  LINKFLAGS += $(patsubst %,-L%,$(LIB_DIRS))
  LINKFLAGS += $(patsubst %,-l%,$(LIBS))
@@ -78,7 +81,7 @@
  LINKFLAGS += -fexceptions
  
  deps: $(OBJ_DIR) $(DEPS)
-@@ -133,7 +126,7 @@ $(OBJS): $(OBJ_DIR)/Sentry
+@@ -133,7 +126,7 @@ cfdg: $(OBJS)
  # Under Cygwin replace strip $@ with strip $@.exe
  
  cfdg: $(OBJS)
@@ -87,7 +90,7 @@
  	strip $@
  
  
-@@ -196,7 +189,7 @@ check: cfdg
+@@ -196,7 +189,7 @@ CXXFLAGS += $(patsubst %,-I%,$(INC_DIRS))
  #
  
  CXXFLAGS += $(patsubst %,-I%,$(INC_DIRS))

@@ -1,5 +1,6 @@
 PORTNAME=	cfdg
 DISTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.contextfreeart.org/download/ \
 		http://glyphic.s3.amazonaws.com/cfa/download/
@@ -12,7 +13,8 @@ WWW=		https://www.contextfreeart.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libicuuc.so:devel/icu \
+LIB_DEPENDS=	libagg.so:graphics/agg \
+		libicuuc.so:devel/icu \
 		libpng.so:graphics/png
 
 USES=		bison gmake tar:xz
@@ -20,10 +22,6 @@ MAKE_ARGS=	prefix=${PREFIX} \
 		DESTDIR=${STAGEDIR}
 TEST_TARGET=	check
 CXXFLAGS+=	-Wno-register
-
-# graphics/agg cannot be unbundled: version in ports too outdated
-# furthermore, its header files conflict with the headers bundled by cfdg
-CONFLICTS_BUILD=	agg
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/cfdg \
@@ -37,7 +35,7 @@ FFMPEG_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 			libx264.so:multimedia/libx264
 FFMPEG_MAKE_ARGS=	WANT_FFMPEG=yes
 
-post-patch:
+pre-configure:
 	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/Makefile
 
 do-install-EXAMPLES-on:
