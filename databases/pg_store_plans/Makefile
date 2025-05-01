@@ -21,7 +21,7 @@ MAKE_ARGS=	USE_PGXS=YES
 .include <bsd.port.pre.mk>
 
 .if ${PGSQL_VER} > 16
-IGNORE		Only supported up to pgsql 16
+IGNORE=		Only supported up to pgsql 16
 .endif
 
 .include <bsd.port.post.mk>
