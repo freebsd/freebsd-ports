@@ -3458,6 +3458,7 @@ bin/quarto
 %%DATADIR%%/share/lua-types/pandoc/version.lua
 %%DATADIR%%/share/lua-types/pandoc/zip.lua
 %%DATADIR%%/share/lua-types/quarto/base64.lua
+%%DATADIR%%/share/lua-types/quarto/brand.lua
 %%DATADIR%%/share/lua-types/quarto/callout.lua
 %%DATADIR%%/share/lua-types/quarto/config.lua
 %%DATADIR%%/share/lua-types/quarto/doc.lua
