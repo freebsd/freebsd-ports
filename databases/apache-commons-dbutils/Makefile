@@ -1,11 +1,11 @@
 PORTNAME=	commons-dbutils
-PORTVERSION=	1.7
+DISTVERSION=	1.8.1
 CATEGORIES=	databases java
 MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	apache-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
+DISTNAME=	${PORTNAME}-${DISTVERSION}-bin
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	atanubiswas484@gmail.com
 COMMENT=	JDBC helper library
 WWW=		https://commons.apache.org/proper/commons-dbutils/
 
@@ -14,18 +14,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		java
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar
 
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/commons-dbutils-1.7.jar \
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${DISTVERSION}.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 
 do-install-DOCS-on:
