@@ -2556,6 +2556,7 @@
     SUBDIR += p5-Env-PS1
     SUBDIR += p5-Env-Path
     SUBDIR += p5-Error-Helper
+    SUBDIR += p5-Escape-Houdini
     SUBDIR += p5-Eval-Closure
     SUBDIR += p5-Eval-Context
     SUBDIR += p5-Eval-LineNumbers

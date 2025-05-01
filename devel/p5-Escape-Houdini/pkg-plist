@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Escape/Houdini.pm
+%%SITE_ARCH%%/auto/Escape/Houdini/Houdini.so
+%%PERL5_MAN3%%/Escape::Houdini.3.gz
