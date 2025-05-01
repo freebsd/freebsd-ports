@@ -71,6 +71,7 @@ include/wolfssl/test.h
 include/wolfssl/version.h
 include/wolfssl/wolfcrypt/aes.h
 include/wolfssl/wolfcrypt/arc4.h
+include/wolfssl/wolfcrypt/ascon.h
 include/wolfssl/wolfcrypt/asn.h
 include/wolfssl/wolfcrypt/asn_public.h
 include/wolfssl/wolfcrypt/blake2-impl.h
@@ -95,8 +96,8 @@ include/wolfssl/wolfcrypt/eccsi.h
 include/wolfssl/wolfcrypt/ed25519.h
 include/wolfssl/wolfcrypt/ed448.h
 include/wolfssl/wolfcrypt/error-crypt.h
-include/wolfssl/wolfcrypt/ext_kyber.h
 include/wolfssl/wolfcrypt/ext_lms.h
+include/wolfssl/wolfcrypt/ext_mlkem.h
 include/wolfssl/wolfcrypt/ext_xmss.h
 include/wolfssl/wolfcrypt/falcon.h
 include/wolfssl/wolfcrypt/fe_448.h
@@ -109,7 +110,6 @@ include/wolfssl/wolfcrypt/hmac.h
 include/wolfssl/wolfcrypt/hpke.h
 include/wolfssl/wolfcrypt/integer.h
 include/wolfssl/wolfcrypt/kdf.h
-include/wolfssl/wolfcrypt/kyber.h
 include/wolfssl/wolfcrypt/lms.h
 include/wolfssl/wolfcrypt/logging.h
 include/wolfssl/wolfcrypt/md2.h
@@ -118,6 +118,7 @@ include/wolfssl/wolfcrypt/md5.h
 include/wolfssl/wolfcrypt/mem_track.h
 include/wolfssl/wolfcrypt/memory.h
 include/wolfssl/wolfcrypt/misc.h
+include/wolfssl/wolfcrypt/mlkem.h
 include/wolfssl/wolfcrypt/mpi_class.h
 include/wolfssl/wolfcrypt/mpi_superclass.h
 include/wolfssl/wolfcrypt/pkcs12.h
@@ -146,8 +147,8 @@ include/wolfssl/wolfcrypt/tfm.h
 include/wolfssl/wolfcrypt/types.h
 include/wolfssl/wolfcrypt/visibility.h
 include/wolfssl/wolfcrypt/wc_encrypt.h
-include/wolfssl/wolfcrypt/wc_kyber.h
 include/wolfssl/wolfcrypt/wc_lms.h
+include/wolfssl/wolfcrypt/wc_mlkem.h
 include/wolfssl/wolfcrypt/wc_port.h
 include/wolfssl/wolfcrypt/wc_xmss.h
 include/wolfssl/wolfcrypt/wolfevent.h
@@ -157,7 +158,7 @@ include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
 lib/libwolfssl.so.43
-lib/libwolfssl.so.43.0.0
+lib/libwolfssl.so.43.1.0
 libdata/pkgconfig/wolfssl.pc
 %%PORTDOCS%%%%DOCSDIR%%/QUIC.md
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
