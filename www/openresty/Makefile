@@ -1,5 +1,5 @@
 PORTNAME=	openresty
-PORTVERSION=	1.25.3.1
+PORTVERSION=	1.27.1.2
 CATEGORIES=	www
 MASTER_SITES=	https://openresty.org/download/
 
@@ -15,6 +15,8 @@ LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty \
 		libpcre.so:devel/pcre
 
 USES=		cpe gmake perl5 ssl
+
+PLIST_SUB=	CORE_VER=0.1.31
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--group=${WWWGRP} \
