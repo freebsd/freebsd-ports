@@ -4331,4 +4331,4 @@ shells/oil|shells/oils|2025-04-27|Project was renamed upstream
 security/weggli||2025-04-28|Has expired: Upstream inactive as last release was in 2022
 databases/py-carbon||2025-04-28|Has expired: In bandaid mode as the concentration is on go-carbon
 x11-toolkits/SoXt||2025-04-28|Has expired: Broken for more than 6 months
-graphics/agg26|graphics/agg|2025-05-91|Merged into agg
+graphics/agg26|graphics/agg|2025-05-01|Merged into agg
