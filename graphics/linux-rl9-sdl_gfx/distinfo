@@ -1,7 +1,0 @@
-TIMESTAMP = 1739909938
-SHA256 (rocky/s/SDL_gfx-2.0.27-3.el9.aarch64.rpm) = 154b599bcd0bfa41edc3c710f070d621e5889cfd8094968db94c73adb4dedb2a
-SIZE (rocky/s/SDL_gfx-2.0.27-3.el9.aarch64.rpm) = 55566
-SHA256 (rocky/s/SDL_gfx-2.0.27-3.el9.x86_64.rpm) = 4ecc41367d9da39661af01b7d6bb1da17bf362ef0760874625c462881e5b6baf
-SIZE (rocky/s/SDL_gfx-2.0.27-3.el9.x86_64.rpm) = 54481
-SHA256 (rocky/s/SDL_gfx-2.0.27-3.el9.src.rpm) = dfa314804111b8327e30bda0141f93d5ff58414a2964013594cc675ac08a9cfb
-SIZE (rocky/s/SDL_gfx-2.0.27-3.el9.src.rpm) = 1698936
