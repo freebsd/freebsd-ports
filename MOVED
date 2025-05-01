@@ -4332,3 +4332,4 @@ security/weggli||2025-04-28|Has expired: Upstream inactive as last release was i
 databases/py-carbon||2025-04-28|Has expired: In bandaid mode as the concentration is on go-carbon
 x11-toolkits/SoXt||2025-04-28|Has expired: Broken for more than 6 months
 graphics/agg26|graphics/agg|2025-05-01|Merged into agg
+graphics/linux-c7-sdl_ttf|misc/linux-c7-sdl12-extralibs|2025-05-03|Merged into misc/linux-c7-sdl12-extralibs
