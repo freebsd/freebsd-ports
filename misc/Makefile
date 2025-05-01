@@ -250,6 +250,7 @@
     SUBDIR += libxdf
     SUBDIR += lifelines
     SUBDIR += lightgbm
+    SUBDIR += linux-c7-sdl12-extralibs
     SUBDIR += llama-cpp
     SUBDIR += locale-en_DK
     SUBDIR += localedata
