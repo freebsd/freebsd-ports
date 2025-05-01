@@ -1,6 +1,6 @@
 PORTNAME=	transient
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.7
+DISTVERSION=	0.8.8
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -11,8 +11,8 @@ WWW=		https://github.com/magit/transient
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.2.0:misc/compat.el@${EMACS_FLAVOR}
-RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.2.0:misc/compat.el@${EMACS_FLAVOR}
+BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.1.0.0:misc/compat.el@${EMACS_FLAVOR}
+RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.1.0.0:misc/compat.el@${EMACS_FLAVOR}
 
 USES=		emacs gmake makeinfo
 USE_GITHUB=	yes
