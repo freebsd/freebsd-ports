@@ -9,8 +9,6 @@
 %%ELISPDIR%%/magit-autorevert.elc
 %%ELISPDIR%%/magit-base.el
 %%ELISPDIR%%/magit-base.elc
-%%ELISPDIR%%/magit-bundle.el
-%%ELISPDIR%%/magit-bundle.elc
 %%ELISPDIR%%/magit-bisect.el
 %%ELISPDIR%%/magit-bisect.elc
 %%ELISPDIR%%/magit-blame.el
@@ -19,6 +17,8 @@
 %%ELISPDIR%%/magit-bookmark.elc
 %%ELISPDIR%%/magit-branch.el
 %%ELISPDIR%%/magit-branch.elc
+%%ELISPDIR%%/magit-bundle.el
+%%ELISPDIR%%/magit-bundle.elc
 %%ELISPDIR%%/magit-clone.el
 %%ELISPDIR%%/magit-clone.elc
 %%ELISPDIR%%/magit-commit.el
@@ -27,6 +27,8 @@
 %%ELISPDIR%%/magit-core.elc
 %%ELISPDIR%%/magit-diff.el
 %%ELISPDIR%%/magit-diff.elc
+%%ELISPDIR%%/magit-dired.el
+%%ELISPDIR%%/magit-dired.elc
 %%ELISPDIR%%/magit-ediff.el
 %%ELISPDIR%%/magit-ediff.elc
 %%ELISPDIR%%/magit-extras.el

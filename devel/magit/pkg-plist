@@ -1,5 +1,3 @@
-%%ELISPDIR%%/magit-base.el
-%%ELISPDIR%%/magit-base.elc
 %%ELISPDIR%%/git-commit.el
 %%ELISPDIR%%/git-commit.elc
 %%ELISPDIR%%/git-rebase.el
@@ -9,6 +7,8 @@
 %%ELISPDIR%%/magit-autoloads.el
 %%ELISPDIR%%/magit-autorevert.el
 %%ELISPDIR%%/magit-autorevert.elc
+%%ELISPDIR%%/magit-base.el
+%%ELISPDIR%%/magit-base.elc
 %%ELISPDIR%%/magit-bisect.el
 %%ELISPDIR%%/magit-bisect.elc
 %%ELISPDIR%%/magit-blame.el
@@ -27,6 +27,8 @@
 %%ELISPDIR%%/magit-core.elc
 %%ELISPDIR%%/magit-diff.el
 %%ELISPDIR%%/magit-diff.elc
+%%ELISPDIR%%/magit-dired.el
+%%ELISPDIR%%/magit-dired.elc
 %%ELISPDIR%%/magit-ediff.el
 %%ELISPDIR%%/magit-ediff.elc
 %%ELISPDIR%%/magit-extras.el
