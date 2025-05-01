@@ -1,6 +1,6 @@
 PORTNAME=	icingaweb2-module-grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.0
+DISTVERSION=	3.1.1
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -17,10 +17,9 @@ USES=		php:web,flavors
 USE_GITHUB=	yes
 GH_ACCOUNT=	NETWAYS
 
-NO_BUILD=	yes
-NO_ARCH=	yes
-
 WWWDIR?=	${PREFIX}/www/icingaweb2/modules/${PORTNAME:C/^.*-//}
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 do-install:
 	@${RM} -r ${WRKSRC}/.idea ${WRKSRC}/.github
