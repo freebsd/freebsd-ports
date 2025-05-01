@@ -1,3 +1,30 @@
+  <vuln vid="d70d5e0a-1f5e-11f0-9c67-6805ca2fa271">
+    <topic>powerdns-recursor -- denial of service</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><eq>5.2.0</eq></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://blog.powerdns.com/2025/04/07/powerdns-recursor-5-2-1-released">
+	  <p>PowerDNS Security Advisory 2025-01: A crafted zone can
+	  lead to an illegal memory access in the Recursor</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-30195</cvename>
+      <url>https://docs.powerdns.com/recursor/security-advisories/powerdns-advisory-2025-01.html</url>
+    </references>
+    <dates>
+      <discovery>2025-04-07</discovery>
+      <entry>2025-04-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="409206f6-25e6-11f0-9360-b42e991fc52e">
     <topic>sqlite -- integer overflow</topic>
     <affects>
