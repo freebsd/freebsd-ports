@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.4.11
+DISTVERSION=	2025.4.12
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -138,7 +138,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		deranged-0.4.0 \
 		derive_arbitrary-1.4.1 \
 		derive_more-0.99.20 \
-		deunicode-1.6.1 \
+		deunicode-1.6.2 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		directories-5.0.1 \
@@ -356,8 +356,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		md-5-0.10.6 \
 		memchr-2.7.4 \
 		memmap2-0.9.5 \
-		miette-7.5.0 \
-		miette-derive-7.5.0 \
+		miette-7.6.0 \
+		miette-derive-7.6.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		minisign-verify-0.2.3 \
@@ -435,7 +435,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.95 \
 		prodash-29.0.2 \
-		quick-xml-0.37.4 \
+		quick-xml-0.37.5 \
 		quinn-0.11.7 \
 		quinn-proto-0.11.11 \
 		quinn-udp-0.5.11 \
@@ -573,10 +573,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-rustls-0.26.2 \
 		tokio-util-0.7.15 \
 		toml-0.5.11 \
-		toml-0.8.21 \
+		toml-0.8.22 \
 		toml_datetime-0.6.9 \
-		toml_edit-0.22.25 \
-		toml_write-0.1.0 \
+		toml_edit-0.22.26 \
+		toml_write-0.1.1 \
 		tower-0.5.2 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
@@ -635,7 +635,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-shared-0.2.100 \
 		web-sys-0.3.77 \
 		web-time-1.1.0 \
-		webpki-roots-0.26.8 \
+		webpki-roots-0.26.9 \
 		which-7.0.3 \
 		widestring-1.2.0 \
 		winapi-0.3.9 \
