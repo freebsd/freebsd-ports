@@ -1,5 +1,5 @@
 PORTNAME=	magic
-DISTVERSION=	8.3.522
+DISTVERSION=	8.3.526
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/
 
@@ -23,15 +23,16 @@ SHEBANG_FILES=	scripts/preproc.py tcltk/magic.sh.in tcltk/ext2sim.sh.in tcltk/ex
 
 CONFIGURE_ARGS=	--with-opengl \
 		--enable-modular # --enable-modular should fix build on 15, when failures were due to missing symbols defined in *.sym but not in code
-CONFIGURE_WRKSRC=	${WRKSRC}/scripts
 
 ALL_TARGET=	tcllibrary
+
+BINARY_ALIAS=	python3=${PYTHON_CMD} # this is needed, see https://github.com/RTimothyEdwards/magic/issues/173#issuecomment-1200065429
 
 DESKTOP_ENTRIES="Magic" "" "" "${PORTNAME}" "" ""
 
 PORTSCOUT=	limit:^8\.
 
-BINARY_ALIAS=	python3=${PYTHON_CMD} # this is needed, see https://github.com/RTimothyEdwards/magic/issues/173#issuecomment-1200065429
+CONFIGURE_WRKSRC=	${WRKSRC}/scripts
 
 .include <bsd.port.pre.mk>
 
