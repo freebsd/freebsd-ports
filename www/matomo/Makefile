@@ -1,8 +1,8 @@
 PORTNAME=	matomo
-PORTVERSION=	5.1.2
+PORTVERSION=	5.2.2
 CATEGORIES=	www
 MASTER_SITES=	http://builds.matomo.org/
-PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Open Source Web Analytics Software Program
@@ -42,7 +42,6 @@ pre-install:
 	fi
 
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp/cache/tracker
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>
