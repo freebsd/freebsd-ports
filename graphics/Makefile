@@ -558,7 +558,6 @@
     SUBDIR += linux-rl9-sdl2_image
     SUBDIR += linux-rl9-sdl2_ttf
     SUBDIR += linux-rl9-sdl_gfx
-    SUBDIR += linux-rl9-sdl_image
     SUBDIR += linux-rl9-sdl_ttf
     SUBDIR += linux-rl9-shaderc
     SUBDIR += linux-rl9-spirv-tools

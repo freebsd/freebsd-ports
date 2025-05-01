@@ -1,7 +1,0 @@
-TIMESTAMP = 1739908140
-SHA256 (rocky/s/SDL_image-1.2.12-31.el9.aarch64.rpm) = 1e0e8914576843466a246c6e96e7b4a2a0b8368a994d4f6d06eda69363166d2a
-SIZE (rocky/s/SDL_image-1.2.12-31.el9.aarch64.rpm) = 44744
-SHA256 (rocky/s/SDL_image-1.2.12-31.el9.x86_64.rpm) = 995492d9e25effed5b9d538feaceb8fc26314a91862ec3b7a044edeaae4471ac
-SIZE (rocky/s/SDL_image-1.2.12-31.el9.x86_64.rpm) = 44952
-SHA256 (rocky/s/SDL_image-1.2.12-31.el9.src.rpm) = 5091193fc3c11aaff920040c51e9dc5ffe8e538a16cc0e62b7fec668fc5716d3
-SIZE (rocky/s/SDL_image-1.2.12-31.el9.src.rpm) = 2242755
