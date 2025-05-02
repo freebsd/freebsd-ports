@@ -7,7 +7,7 @@ MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
 WWW=		https://redis.io/
 
-LICENSE=	RSALv2 SSPLv1
+LICENSE=	AGPLv3 RSALv2 SSPLv1
 LICENSE_COMB=	dual
 LICENSE_NAME_RSALv2=	Redis Source Available License v2
 LICENSE_NAME_SSPLv1=	Server Side Public License v1
