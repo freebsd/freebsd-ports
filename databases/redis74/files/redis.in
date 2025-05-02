@@ -1,0 +1,67 @@
+#!/bin/sh
+
+# PROVIDE: redis
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `redis':
+#
+#redis_enable="YES"
+#
+# Define profiles here to run separate redis instances:
+#
+#redis_profiles="foo bar" #  Script uses %%PREFIX%%/etc/redis-NAME.conf respectively.
+#			     For correct script working please update pidfile entries in
+#			     redis-NAME.conf files.
+
+. /etc/rc.subr
+
+name="redis"
+rcvar="${name}_enable"
+
+extra_commands="reload"
+
+command="%%PREFIX%%/bin/redis-server"
+pidfile="%%REDIS_RUNDIR%%/$name.pid"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${redis_enable="NO"}
+: ${redis_user="%%REDIS_USER%%"}
+: ${redis_config="%%PREFIX%%/etc/$name.conf"}
+
+command_args="${redis_config}"
+required_files="${redis_config}"
+
+_profile_exists() {
+	for _p in ${redis_profiles}; do
+		[ "${_p}" = "$1" ] && return 1;
+	done
+	return 0
+}
+
+if [ $# -eq 2 ]; then
+	_profile=$2
+	_profile_exists $_profile
+	_exists=$?
+	[ ${_exists} -ne 1 ] && {
+		echo "`basename %%PREFIX%%/etc/rc.d/redis`: no '$2' in 'redis_profiles'"
+		exit 1
+	};
+	echo "-- Profile: ${_profile} --"
+	config_file="%%PREFIX%%/etc/${name}-${_profile}.conf"
+	command_args="${config_file}"
+	pidfile="%%REDIS_RUNDIR%%/${_profile}.pid"
+	required_files="${config_file}"
+elif [ -n "${redis_profiles}" ]; then
+	_swap=$*; shift; _profiles=$*
+	_profiles=${_profiles:-${redis_profiles}}
+	set -- ${_swap}
+	for _profile in ${_profiles}; do
+		%%PREFIX%%/etc/rc.d/redis $1 ${_profile}
+	done
+	exit 0
+fi
+
+run_rc_command "$1"
