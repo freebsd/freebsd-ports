@@ -1,7 +1,7 @@
 PORTNAME=	subliminal
-DISTVERSION=	2.2.1
+DISTVERSION=	2.3.0
 CATEGORIES=	multimedia python
-MASTER_SITES=	PYPI
+MASTER_SITES=	https://github.com/Diaoul/subliminal/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -11,9 +11,10 @@ WWW=		https://subliminal.readthedocs.org/en/latest/index.html
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}babelfish>=0.6.1:devel/py-babelfish@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.4.0:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=5.0:textproc/py-chardet@${PY_FLAVOR} \
@@ -28,14 +29,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}babelfish>=0.6.1:devel/py-babelfish@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}requests>=2.0.1:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}srt>3.5:multimedia/py-srt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=3.0:devel/py-stevedore@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomli>2:textproc/py-tomli@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vcrpy>0:devel/py-vcrpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tomli>2:textproc/py-tomli@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.2:textproc/py-tomlkit@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>=0.7.1:devel/py-defusedxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}knowit>=0.5.5:multimedia/py-knowit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}vcrpy>0:devel/py-vcrpy@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
-
-PYTEST_BROKEN_TESTS=	test_refine_video_metadata # https://github.com/Diaoul/subliminal/issues/1157
 
 NO_ARCH=	yes
 
