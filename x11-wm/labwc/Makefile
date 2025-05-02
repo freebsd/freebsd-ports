@@ -1,5 +1,5 @@
 PORTNAME=	labwc
-DISTVERSION=	0.8.3
+DISTVERSION=	0.8.4
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 USE_GITLAB=	nodefault
 USE_GNOME=	cairo libxml2 pango
 USE_XORG=	pixman
-GL_TUPLE=	https://gitlab.freedesktop.org:vyivel:libsfdo:v0.1.3:libsfdo/subprojects/libsfdo-basedir
+GL_TUPLE=	https://gitlab.freedesktop.org:vyivel:libsfdo:v0.1.4:libsfdo/subprojects/libsfdo-basedir
 PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/scalable/apps/${PORTNAME}-symbolic.svg \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
@@ -47,6 +47,7 @@ MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz \
 NLS_USES=		gettext
 NLS_MESON_ENABLED=	nls
 NLS_PLIST_FILES=	share/locale/ar/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/ca/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/cs/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/da/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/de/LC_MESSAGES/${PORTNAME}.mo \
@@ -65,6 +66,7 @@ NLS_PLIST_FILES=	share/locale/ar/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/ka/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/ko/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/lt/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/ms/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/nl/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/pa/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/pl/LC_MESSAGES/${PORTNAME}.mo \
