@@ -1,0 +1,4 @@
+bin/cadaver
+share/man/man1/cadaver.1.gz
+%%NLS%%share/locale/en@quot/LC_MESSAGES/cadaver.mo
+%%NLS%%share/locale/es/LC_MESSAGES/cadaver.mo
