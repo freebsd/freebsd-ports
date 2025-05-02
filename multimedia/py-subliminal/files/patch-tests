@@ -1,0 +1,31 @@
+Fix windows dependency
+
+--- pyproject.toml.orig	2025-05-02 15:15:36 UTC
++++ pyproject.toml
+@@ -73,7 +73,7 @@ tests = [
+     "sympy",
+     "colorama",  # used in scripts/
+     "vcrpy>=5",  # keep synchronized with docs dependencies
+-    "win32-setctime",
++    "win32-setctime; sys_platform == 'win32'",
+     "importlib_metadata>=4.6; python_version<'3.10'",
+ ]
+ types = [
+
+--- tests/test_video.py.orig	2025-05-02 16:03:05 UTC
++++ tests/test_video.py
+@@ -7,7 +7,13 @@ import pytest
+ from unittest.mock import Mock
+ 
+ import pytest
+-from win32_setctime import SUPPORTED, setctime
++# Conditional import of win32_setctime
++try:
++    from win32_setctime import SUPPORTED, setctime
++except ImportError:
++    # Define default values if the import fails (we are on non-Windows or it's not installed)
++    SUPPORTED = False
++    setctime = None # Or a dummy function if preferred: def setctime(*args, **kwargs): pass
+ 
+ from subliminal.utils import sanitize, timestamp
+ from subliminal.video import Episode, Movie, Video
