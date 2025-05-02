@@ -1,7 +1,7 @@
 PORTNAME=	migrate
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.18.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go
 
@@ -18,6 +18,12 @@ CONFLICTS_INSTALL=	migrate
 
 GO_MODULE=	github.com/golang-migrate/migrate/v4
 GO_TARGET=	./cmd/${PORTNAME}
+_DATABASES=	postgres mysql redshift cassandra spanner cockroachdb \
+		yugabytedb clickhouse mongodb sqlserver firebird neo4j pgx pgx5 rqlite
+
+_FILES=file go_bindata github github_ee bitbucket aws_s3 google_cloud_storage godoc_vfs gitlab
+
+GO_BUILDFLAGS=	-ldflags="-X main.Version=${DISTVERSION}" -tags "${_DATABASES} ${_FILES}"
 
 PLIST_FILES=	bin/${PORTNAME}
 
