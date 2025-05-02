@@ -1,5 +1,5 @@
 PORTNAME=	sshguard
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -11,7 +11,6 @@ WWW=		https://www.sshguard.net/
 
 LICENSE=	BSD2CLAUSE
 
-USES=		autoreconf
 USE_RC_SUBR=	sshguard
 
 GNU_CONFIGURE=	yes
