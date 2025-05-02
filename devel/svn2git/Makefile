@@ -11,14 +11,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libapr-1.so:devel/apr1
 RUN_DEPENDS=	git:devel/git \
-		p5-subversion>=0:devel/p5-subversion \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 
-FLAVORS=		default lts
-FLAVOR?=		${FLAVORS:[1]}
-default_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
-lts_PKGNAMESUFFIX=	lts
-lts_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion-lts
+.if ${WITH_SUBVERSION_VER:U} == LTS
+LIB_DEPENDS=	libsvn_client-1.so:devel/subversion-lts
+RUN_DEPENDS=	p5-subversion-lts>=0:devel/p5-subversion
+.else
+LIB_DEPENDS+=	libsvn_client-1.so:devel/subversion
+RUN_DEPENDS=	p5-subversion>=0:devel/p5-subversion
+.endif
 
 USES=		compiler:c++11-lang qmake qt:5
 USE_GITHUB=	yes
