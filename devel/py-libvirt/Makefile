@@ -1,5 +1,5 @@
 PORTNAME=	libvirt
-PORTVERSION=	11.2.0
+PORTVERSION=	11.3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/python/ \
 		ftp://libvirt.org/libvirt/python/
