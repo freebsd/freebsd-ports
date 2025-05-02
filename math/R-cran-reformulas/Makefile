@@ -1,11 +1,11 @@
 PORTNAME=	reformulas
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Machinery for Processing Random Effect Formulas
-WWW=		https://cran.r-project.org/web/packages/reformulas/
+WWW=		https://cran.r-project.org/package=reformulas
 
 LICENSE=	GPLv3
 
