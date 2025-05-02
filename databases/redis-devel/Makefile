@@ -27,7 +27,7 @@ MAKE_ENV=	OPTIMIZATION= \
 CFLAGS+=	-Wno-deprecated-declarations
 LDFLAGS+=	-lpthread -lm -lexecinfo
 
-CONFLICTS_INSTALL=	redis redis62 redis72
+CONFLICTS_INSTALL=	redis redis62 redis72 redis74
 
 PORTSCOUT=	ignore:1
 SUB_FILES=	pkg-message
