@@ -1,6 +1,5 @@
 PORTNAME=	paraview
-DISTVERSION=	${PARAVIEW_VER}.1
-PORTREVISION=	20
+DISTVERSION=	${PARAVIEW_VER}.3
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${PARAVIEW_VER}/
 DISTNAME=	ParaView-v${PORTVERSION}
@@ -12,7 +11,6 @@ WWW=		https://www.paraview.org/
 # See https://www.paraview.org/license/
 LICENSE=	BSD3CLAUSE
 
-BROKEN=		error: non-virtual member function marked 'override' hides virtual member function
 #BROKEN_i386=	no matching member function for call to 'getArrayType'
 
 BUILD_DEPENDS=	${PYNUMPY}	\
@@ -63,21 +61,22 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		vtk${VTK_VER:R}>0:math/vtk${VTK_VER:R} \
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		alias cmake compiler:c11 desktop-file-utils eigen:3 fortran gl gnome	\
+USES=		alias cmake compiler:c++17-lang desktop-file-utils eigen:3 fortran gl gnome	\
 		jpeg localbase pkgconfig python qt:6 shebangfix sqlite tar:xz xorg
-USE_GL=		gl glew glu glut
+USE_GL=		glew opengl
 USE_GNOME=	libxml2
 USE_QT=		5compat base svg tools webengine
 #buildtools:build core gui help network opengl qmake:build sql svg	\
-#		webengine widgets x11extras xmlpatterns
+#		webengine widgets x11extras glew xmlpatterns
 USE_XORG=	ice sm x11 xau xcb xcursor xdamage xdmcp xext xfixes xorgproto xrender	\
 		xxf86vm
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-I${WRKSRC}/Clients/ParaView/Documentation
+CFLAGS+=	-Wno-missing-template-arg-list-after-template-kw	\
+		-I${WRKSRC}/Clients/ParaView/Documentation
 CMAKE_ARGS+=	-DPARAVIEW_BUILD_SHARED_LIBS=ON \
 		-DPARAVIEW_BUILD_WITH_EXTERNAL=ON \
-		-DVTK_HAVE_GETSOCKNAME_WITH_SOCKLEN_T=1 \
+		-DCMAKE_CXX_STANDARD=17 \
 		-DPARAVIEW_USE_PYTHON:BOOL=ON \
 		-DPARAVIEW_ENABLE_FFMPEG:BOOL=ON \
 		-DPARAVIEW_ENABLE_LAS:BOOL=OFF \
@@ -92,12 +91,16 @@ CMAKE_ARGS+=	-DPARAVIEW_BUILD_SHARED_LIBS=ON \
 		-DPARAVIEW_USE_QT:BOOL=ON \
 		-DPARAVIEW_BUILD_DEVELOPER_DOCUMENTATION:BOOL=OFF \
 		-DPARAVIEW_ENABLE_EMBEDDED_DOCUMENTATION:BOOL=OFF \
+		-DVTK_FORBID_DOWNLOADS:BOOL=OFF \
+		-DVTK_HAVE_GETSOCKNAME_WITH_SOCKLEN_T=1 \
 		-DVTK_MODULE_USE_EXTERNAL_VTK_fmt:BOOL=OFF \
 		-DVTK_MODULE_USE_EXTERNAL_VTK_ioss:BOOL=OFF \
 		-DVTK_MODULE_USE_EXTERNAL_VTK_pegtl:BOOL=OFF \
 		-DVTK_MODULE_USE_EXTERNAL_VTK_token:BOOL=OFF \
 		-DExternalData_OBJECT_STORES="${WRKDIR}/VTK/ExternalData/MD5" \
 		-DFREETYPE_INCLUDE_DIRS="${LOCALBASE}/include/freetype2"
+# VTKm is BROKEN ATM: https://gitlab.kitware.com/paraview/paraview/-/issues/22876
+CMAKE_ARGS+=	-DPARAVIEW_USE_VTKM:BOOL=OFF
 .if !defined(MAINTAINER_MODE)
 CMAKE_ARGS+=	-DVTK_FORBID_DOWNLOADS:BOOL=ON
 .endif
