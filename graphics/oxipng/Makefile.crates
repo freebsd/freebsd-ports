@@ -6,60 +6,59 @@ CARGO_CRATES=	adler2-2.0.0 \
 		anstyle-wincon-3.0.7 \
 		autocfg-1.4.0 \
 		bitflags-1.3.2 \
-		bitflags-2.8.0 \
+		bitflags-2.9.0 \
 		bitvec-1.0.1 \
 		bumpalo-3.17.0 \
-		bytemuck-1.21.0 \
+		bytemuck-1.22.0 \
 		byteorder-lite-0.1.0 \
-		cc-1.2.13 \
+		cc-1.2.19 \
 		cfg-if-1.0.0 \
-		clap-4.5.29 \
-		clap_builder-4.5.29 \
+		clap-4.5.36 \
+		clap_builder-4.5.36 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
 		crc32fast-1.4.2 \
-		crossbeam-channel-0.5.14 \
+		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
-		either-1.13.0 \
+		either-1.15.0 \
 		env_filter-0.1.3 \
-		env_logger-0.11.6 \
-		equivalent-1.0.1 \
-		errno-0.3.10 \
+		env_logger-0.11.8 \
+		equivalent-1.0.2 \
+		errno-0.3.11 \
 		fdeflate-0.3.7 \
 		filetime-0.2.25 \
-		flate2-1.0.35 \
+		flate2-1.1.1 \
 		funty-2.0.0 \
 		glob-0.3.2 \
 		hashbrown-0.15.2 \
-		image-0.25.5 \
-		indexmap-2.7.1 \
+		image-0.25.6 \
+		indexmap-2.9.0 \
 		is_terminal_polyfill-1.70.1 \
-		libc-0.2.169 \
-		libdeflate-sys-1.23.0 \
-		libdeflater-1.23.0 \
+		libc-0.2.172 \
+		libdeflate-sys-1.23.1 \
+		libdeflater-1.23.1 \
 		libredox-0.1.3 \
-		linux-raw-sys-0.4.15 \
-		lockfree-object-pool-0.1.6 \
-		log-0.4.25 \
-		miniz_oxide-0.8.4 \
+		linux-raw-sys-0.9.4 \
+		log-0.4.27 \
+		miniz_oxide-0.8.8 \
 		num-traits-0.2.19 \
-		once_cell-1.20.3 \
-		pkg-config-0.3.31 \
+		once_cell-1.21.3 \
+		pkg-config-0.3.32 \
 		png-0.17.16 \
 		radium-0.7.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.8 \
+		redox_syscall-0.5.11 \
 		rgb-0.8.50 \
 		rustc-hash-2.1.1 \
-		rustix-0.38.44 \
+		rustix-1.0.5 \
 		shlex-1.3.0 \
 		simd-adler32-0.3.7 \
 		strsim-0.11.1 \
 		tap-1.0.1 \
-		terminal_size-0.4.1 \
+		terminal_size-0.4.2 \
 		utf8parse-0.2.2 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
@@ -72,6 +71,6 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
 		wyz-0.5.1 \
-		zopfli-0.8.1 \
+		zopfli-0.8.2 \
 		clap_mangen-0.2.24 \
 		roff-0.2.2
