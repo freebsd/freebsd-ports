@@ -1,5 +1,5 @@
 PORTNAME=	stonesoup
-DISTVERSION=	0.32.1
+DISTVERSION=	0.33.0
 CATEGORIES=	games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -84,11 +84,11 @@ SOUND_RUN_DEPENDS=	sox:audio/sox
 NOWIZARD_MAKE_ARGS=	NOWIZARD=y
 LUA_MAKE_ARGS_OFF=	NO_LUA_BINDINGS=yes
 
-post-patch-SOUND-on:
+pre-configure-SOUND-on:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/sound.h
 	@${REINPLACE_CMD} -e "s,%%SOUND%%,," ${WRKSRC}/sound.h
 
-post-patch-SOUND-off:
+pre-configure-SOUND-off:
 	@${REINPLACE_CMD} -e "s,%%SOUND%%,// ," ${WRKSRC}/sound.h
 
 pre-build:

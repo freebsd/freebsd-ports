@@ -1,6 +1,6 @@
---- Makefile.orig	2022-01-25 18:04:53 UTC
+--- Makefile.orig	2025-05-02 16:11:38 UTC
 +++ Makefile
-@@ -131,7 +131,7 @@ include Makefile.obj
+@@ -131,7 +131,7 @@ STDFLAG = -std=c++11
  # Which C++ standard to support
  STDFLAG = -std=c++11
  
@@ -9,7 +9,7 @@
  # Build with FORCE_SSE=y to get better seed stability on 32 bit x86 builds. It
  # is not recommended to do this unless you are building with contrib lua.
  # On any 64bit  builds where the arch supports it, (at least) sse2 is implied.
-@@ -156,10 +156,6 @@ CFWARN_L += -Wextra \
+@@ -156,10 +156,6 @@ DEFINES := $(EXTERNAL_DEFINES)
  
  DEFINES := $(EXTERNAL_DEFINES)
  
@@ -20,7 +20,7 @@
  #
  # The GCC and GXX variables are set later.
  #
-@@ -505,7 +501,7 @@ endif
+@@ -511,7 +507,7 @@ endif
  
  # Attempt to use a full compiler name, to make
  # distcc builds work nicely.
@@ -29,23 +29,7 @@
  ifeq ($(LMACH),-)
  LMACH :=
  endif
-@@ -551,15 +547,6 @@ ifdef USE_ICC
- 
- # Some very good optimization flags.
-   CFOPTIMIZE := -O2 -parallel
--else
--
--  ifneq (,$(shell $(GXX) --version|grep 'g++.*4\.2\.'))
--    # OS X uses a buggy ancient version of gcc without fixes from even
--    # subsequent point releases of 4.2.
--    CFOPTIMIZE := -O0
--  else
--    CFOPTIMIZE := -O2
--  endif
- endif
- 
- # Define this to automatically generate code optimized for your machine
-@@ -860,7 +847,7 @@ ifndef NOWIZARD
+@@ -882,7 +878,7 @@ ifdef NO_OPTIMIZE
  DEFINES += -DWIZARD
  endif
  ifdef NO_OPTIMIZE
