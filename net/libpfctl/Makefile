@@ -36,7 +36,7 @@ do-install:
 	${LN} -s libpfctl.so.0 ${STAGEDIR}${PREFIX}/lib/libpfctl.so
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include
 
-_ALL_VERSIONS=	13.3 13.4 13.5 14.0 14.1 14.2
+_ALL_VERSIONS=	13.3 13.4 13.5 14.0 14.1 14.2 14.3
 .if make(makesum)
 DISTFILES=
 .for version in ${_ALL_VERSIONS}
