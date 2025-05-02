@@ -1,6 +1,6 @@
 PORTNAME=	gkrellm
 PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gkrellm.srcbox.net/releases/ \
 		LOCAL/ume
@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	GTK based system monitor
-WWW=		http://gkrellm.net
+WWW=		https://gkrellm.srcbox.net/
 
 LICENSE=	GPLv3
 
