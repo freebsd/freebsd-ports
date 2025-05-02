@@ -60,6 +60,7 @@ include/torrent/tracker/tracker_state.h
 include/torrent/tracker/wrappers.h
 include/torrent/tracker_controller.h
 include/torrent/tracker_list.h
+include/torrent/utils/chrono.h
 include/torrent/utils/directory_events.h
 include/torrent/utils/extents.h
 include/torrent/utils/log.h
@@ -67,9 +68,9 @@ include/torrent/utils/log_buffer.h
 include/torrent/utils/option_strings.h
 include/torrent/utils/ranges.h
 include/torrent/utils/resume.h
+include/torrent/utils/scheduler.h
 include/torrent/utils/signal_bitfield.h
 include/torrent/utils/thread.h
-include/torrent/utils/thread_interrupt.h
 include/torrent/utils/uri_parser.h
 lib/libtorrent.so
 lib/libtorrent.so.24
