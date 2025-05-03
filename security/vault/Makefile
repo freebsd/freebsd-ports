@@ -1,6 +1,6 @@
 PORTNAME=	vault
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19.2
+DISTVERSION=	1.19.3
 CATEGORIES=	security
 MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/vault/${DISTVERSIONFULL}/ \
 		LOCAL/bofh/security/${PORTNAME}/:web_ui
@@ -27,7 +27,7 @@ EXTRACT_DEPENDS=npm-node20>0:www/npm-node20 \
 		yarn-node20>0:www/yarn-node20
 .endif
 
-USES=		cpe go:1.23,modules
+USES=		cpe go:1.24,modules
 CPE_VENDOR=	hashicorp
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
@@ -46,7 +46,7 @@ GROUPS=		vault
 
 PLIST_FILES=	bin/${PORTNAME}
 
-GITID=	2ee4ea013b31a770a2fc421bb1e4bc74a9669185
+GITID=	a2de3bb7bcf4a073cbb8724863a5a88d3c2f83da
 
 .include <bsd.port.pre.mk>
 
