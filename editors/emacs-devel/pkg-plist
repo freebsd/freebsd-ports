@@ -3197,6 +3197,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/url-ns.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-arch.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-arch.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-dav.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-dav.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-mtn.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-mtn.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vt-control.el.gz
@@ -4189,8 +4191,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-bzr.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-cvs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-cvs.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-dav.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-dav.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-dir.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-dir.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-dispatcher.el.gz
