@@ -13,3 +13,14 @@ set(LibArchive_INCLUDE_DIR "/usr/include" CACHE PATH
     "Directory where LibArchive headers are located.")
 set(LibArchive_LIBRARY "/usr/lib/libarchive.so" CACHE PATH
     "LibArchive library to link against.")
+
+# Respect user CFLAGS/CXXFLAGS for DEBUG and RELEASE builds as in
+# Mk/Uses/cmake.mk.
+set(CMAKE_C_FLAGS_DEBUG "" CACHE STRING
+    "Flags used by the C compiler during DEBUG builds.")
+set(CMAKE_C_FLAGS_RELEASE "-DNDEBUG" CACHE STRING
+    "Flags used by the C compiler during RELEASE builds.")
+set(CMAKE_CXX_FLAGS_DEBUG "" CACHE STRING
+    "Flags used by the CXX compiler during DEBUG builds.")
+set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG" CACHE STRING
+    "Flags used by the CXX compiler during RELEASE builds.")
