@@ -52,6 +52,10 @@ LAZARUS_Include_MAINTAINER= acm@FreeBSD.org
 
 _INCLUDE_USES_LAZARUS_MK=   yes
 
+.  if empty(lazarus_ARGS)
+lazarus_ARGS=	gtk2
+.  endif
+
 .  if defined(DEFAULT_LAZARUS_VER)
 WARNING+=	"DEFAULT_LAZARUS_VER is defined, consider using DEFAULT_VERSIONS=lazarus=${DEFAULT_LAZARUS_VER} instead"
 .  endif
@@ -131,7 +135,7 @@ BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus$
 LIB_DEPENDS+=	libglib-2.0.so:devel/glib20 \
 		libgtk-3.so:x11-toolkits/gtk30 \
 		libcairo.so:graphics/cairo \
-		libpango-1.0.so:x11-toolkits/pango \
+		libpango-1.0.so:x11-toolkits/pango
 LCL_PLATFORM=	gtk3
 BUILD_DEPENDS+= ${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-gtk3${LAZARUS_DEVELSUFFIX}
 .  endif
