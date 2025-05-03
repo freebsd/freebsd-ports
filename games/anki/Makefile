@@ -123,7 +123,7 @@ pre-configure:
 pre-build:
 	${ECHO_CMD} -e "${_MY_BUILDHASH}" >> ${WRKSRC}/out/buildhash
 	${ECHO_MSG} "===> Building runner build framework"
-	cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} ${_MY_CARGO_ENV} \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${_MY_CARGO_ENV} \
 		${CARGO} build --package runner --release --verbose --verbose
 do-build:
 	${ECHO_MSG} "===> Executing runner build framework"
