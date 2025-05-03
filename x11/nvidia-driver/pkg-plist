@@ -1,10 +1,7 @@
 bin/nvidia-bug-report.sh
 bin/nvidia-debugdump
 bin/nvidia-smi
-%%LIBGLMAP%%etc/libmap.d/nvidia.conf
-%%LIBGLDIR%%/libGL.so.1
-%%LIBGLDIR%%/libEGL.so.1
-%%LIBGLDIR%%/libGLESv2.so.2
+etc/libmap.d/nvidia.conf
 lib/libEGL-NVIDIA.so
 lib/libEGL-NVIDIA.so.1
 lib/libEGL_nvidia.so
@@ -17,8 +14,6 @@ lib/libGLESv2-NVIDIA.so
 lib/libGLESv2-NVIDIA.so.2
 lib/libGLESv2_nvidia.so
 lib/libGLESv2_nvidia.so.2
-%%LIBGLDIR%%/libGLX.so
-%%LIBGLDIR%%/libGLX.so.0
 @comment lib/libGLX_indirect.so.0
 lib/libGLX_nvidia.so
 lib/libGLX_nvidia.so.0
