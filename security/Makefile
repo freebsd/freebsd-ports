@@ -100,6 +100,7 @@
     SUBDIR += clamtk
     SUBDIR += cloak
     SUBDIR += cops
+    SUBDIR += cosign
     SUBDIR += courier-authlib
     SUBDIR += courier-authlib-base
     SUBDIR += courierpassd
