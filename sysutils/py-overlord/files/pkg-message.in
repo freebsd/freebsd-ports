@@ -1,0 +1,49 @@
+[
+{ type: install
+  message: <<EOM
+The configuration file can be found at the following path:
+  %%PREFIX%%/etc/overlord.yml
+Edit it to suit your needs before starting the Overlord services.
+
+1. If you have configured Overlord to use Beanstalkd and Memcache locally (by default),
+   you need to start those services.
+
+   - enable required services:
+     # sysrc beanstalkd_enable=YES
+     # sysrc memcached_enable=YES
+
+   - start required services:
+     # service beanstalkd start
+     # service memcached start
+
+2. If you have not installed Director or AppJail from the development repository and
+   prefer to install them from precompiled binaries:
+
+   - install Director:
+     # pkg install %%PYTHON_PKGNAMEPREFIX%%director
+
+   - install AppJail:
+     # pkg install -y appjail # or appjail-devel
+
+3. Set up supervisord in order to execute Overlord services:
+  - Some processes may rely on the assumption that rctl(4) is enabled, if it is not
+    already enabled, please enable it by adding to /boot/loader.conf:
+kern.racct.enable=1
+
+    Remember to reboot for the above change take effect.
+
+  - let supervisord.conf load files contained in this directory by adding to
+    %%PREFIX%%/etc/supervisord.conf:
+[include]
+files = %%DATADIR%%/overlord.ini
+
+  - enable supervisord:
+    # sysrc supervisord_enable=YES
+
+  - start supervisord:
+    # service supervisord start
+
+4. Enjoy.
+EOM
+}
+]
