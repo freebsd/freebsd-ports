@@ -1,6 +1,6 @@
 PORTNAME=	yuzu
 PORTVERSION=	s20240301
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators wayland
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -31,7 +31,6 @@ DEPRECATED=	Project discontinued
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		nlohmann-json>0:devel/nlohmann-json \
 		simpleini>0:devel/simpleini \
-		xbyak>0:devel/xbyak \
 		glslangValidator:graphics/glslang \
 		vulkan-headers>0:graphics/vulkan-headers \
 		vulkan-utility-libraries>0:graphics/vulkan-utility-libraries
@@ -62,6 +61,7 @@ GH_TUPLE=	yuzu-mirror:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		arun11299:cpp-jwt:v1.4-18-g10ef573:cpp_jwt/externals/cpp-jwt \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		eggert:tz:2022g-11-g16ce126a:tz/externals/nx_tzdb/tzdb_to_nx/externals/tz/tz \
+		herumi:xbyak:v6.68:xbyak/externals/xbyak \
 		kinetiknz:cubeb:cubeb-0.2-1452-g48689ae:cubeb/externals/cubeb \
 		lat9nq:tzdb_to_nx:221202-15-g9792969:tzdb_to_nx/externals/nx_tzdb/tzdb_to_nx \
 		yhirose:cpp-httplib:v0.14.1:cpp_httplib/externals/cpp-httplib
