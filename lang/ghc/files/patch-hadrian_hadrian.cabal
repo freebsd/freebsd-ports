@@ -1,0 +1,15 @@
+Hack the bounds to avoid re-rolling the bootstrap compiler.
+The bound was added due to https://gitlab.haskell.org/ghc/ghc/-/issues/24382
+but we somehow doesn't seem to be affected by this
+
+--- hadrian/hadrian.cabal.orig	2025-03-02 13:05:33 UTC
++++ hadrian/hadrian.cabal
+@@ -155,7 +155,7 @@ executable hadrian
+                        , containers           >= 0.5     && < 0.7
+                          -- N.B. directory >=1.3.9 as earlier versions are
+                          -- afflicted by #24382.
+-                       , directory            >= 1.3.9.0 && < 1.4
++                       , directory            < 1.4
+                        , extra                >= 1.4.7
+                        , filepath
+                        , time
