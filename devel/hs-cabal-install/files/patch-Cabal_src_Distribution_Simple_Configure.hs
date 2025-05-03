@@ -1,6 +1,6 @@
---- Cabal/src/Distribution/Simple/Configure.hs.orig	2024-06-24 23:58:58 UTC
+--- Cabal/src/Distribution/Simple/Configure.hs.orig	2025-04-03 19:39:49 UTC
 +++ Cabal/src/Distribution/Simple/Configure.hs
-@@ -2631,6 +2631,7 @@ checkForeignLibSupported comp platform flib = go (comp
+@@ -2854,6 +2854,7 @@ checkForeignLibSupported comp platform flib = go (comp
      goGhcPlatform :: Platform -> Maybe String
      goGhcPlatform (Platform _ OSX) = goGhcOsx (foreignLibType flib)
      goGhcPlatform (Platform _ Linux) = goGhcLinux (foreignLibType flib)
