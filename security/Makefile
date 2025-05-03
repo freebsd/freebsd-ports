@@ -1368,6 +1368,7 @@
     SUBDIR += tpm2-tss
     SUBDIR += transcrypt
     SUBDIR += trezord
+    SUBDIR += trillian
     SUBDIR += tripwire
     SUBDIR += trivy
     SUBDIR += trousers

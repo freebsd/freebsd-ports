@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# PROVIDE: trillian_log_server
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# trillian_log_server_enable (bool):	Set it to YES to enable trillian_log_server.
+#			Default is "NO".
+# trillian_log_server_user (user):	Set user to run trillian_log_server.
+#			Default is "trillian".
+# trillian_log_server_group (group):	Set group to run trillian_log_server.
+#			Default is "trillian".
+# trillian_log_server_config (file):	Set trillian_log_server config file.
+#			Default is "%%PREFIX%%/etc/trillian/trillian_log_server.conf".
+
+. /etc/rc.subr
+
+name=trillian_log_server
+rcvar=trillian_log_server_enable
+
+load_rc_config $name
+
+: ${trillian_log_server_enable:="NO"}
+: ${trillian_log_server_user:="trillian"}
+: ${trillian_log_server_group:="trillian"}
+: ${trillian_log_server_config:="%%PREFIX%%/etc/trillian/trillian_log_server.conf"}
+
+pidfile=/var/run/trillian_log_server.pid
+procname="%%PREFIX%%/bin/trillian_log_server"
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} -p ${pidfile} ${procname} server -config=${trillian_log_server_config}"
+
+start_precmd=trillian_log_server_startprecmd
+required_files="$trillian_log_server_config"
+
+trillian_log_server_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${trillian_log_server_user} -g ${trillian_log_server_group} /dev/null ${pidfile};
+        fi
+}
+
+run_rc_command "$1"
