@@ -1,6 +1,5 @@
 PORTNAME=	arti
-DISTVERSION=	1.4.2
-PORTREVISION=	1
+DISTVERSION=	1.4.3
 CATEGORIES=	security
 
 MAINTAINER=	cs@FreeBSD.org
@@ -24,7 +23,7 @@ PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.torproject.org
 GL_ACCOUNT=	tpo/core
-GL_TAGNAME=	7e8852f7596f8ce3fb58e89b5a17b9d634b8282b
+GL_TAGNAME=	37c0c70ac5cacf49960b4ad91fddcd695708d6c2
 CARGO_INSTALL=	no
 default_DESCR=	${.CURDIR}/pkg-descr
 full_DESCR=	${.CURDIR}/pkg-descr-full
