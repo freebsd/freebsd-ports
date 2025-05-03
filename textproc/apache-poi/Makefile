@@ -1,5 +1,5 @@
 PORTNAME=	poi
-PORTVERSION=	5.4.0
+PORTVERSION=	5.4.1
 CATEGORIES=	textproc devel java
 MASTER_SITES=	${MAVEN_SITE}/poi/${PORTVERSION}/:poi	\
 		${MAVEN_SITE}/poi-examples/${PORTVERSION}/:examples	\
