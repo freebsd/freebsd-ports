@@ -1,0 +1,4 @@
+HTTPX Retries implements request retry for HTTPX.
+
+It's very common to deal with flaky and unreliable APIs. When
+requests fail, your program needs to be able to retry them.
