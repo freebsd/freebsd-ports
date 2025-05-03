@@ -1,5 +1,6 @@
 PORTNAME=	Dancer-Plugin-Swagger
 DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +21,7 @@ RUN_DEPENDS=	p5-JSON>=0:converters/p5-JSON \
 		p5-File-ShareDir-Install>=0:devel/p5-File-ShareDir-Install \
 		p5-File-ShareDir-Tarball>=0:devel/p5-File-ShareDir-Tarball \
 		p5-List-AllUtils>=0:devel/p5-List-AllUtils \
+		p5-Module-Version>=0:devel/p5-Module-Version \
 		p5-Moo>=0:devel/p5-Moo \
 		p5-MooseX-MungeHas>=0:devel/p5-MooseX-MungeHas \
 		p5-MooX-Singleton>=0:devel/p5-MooX-Singleton \
