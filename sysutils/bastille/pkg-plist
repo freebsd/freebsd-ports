@@ -21,6 +21,7 @@ etc/rc.d/bastille
 %%DATADIR%%/limits.sh
 %%DATADIR%%/list.sh
 %%DATADIR%%/mount.sh
+%%DATADIR%%/network.sh
 %%DATADIR%%/pkg.sh
 %%DATADIR%%/rcp.sh
 %%DATADIR%%/rdr.sh
@@ -39,6 +40,7 @@ etc/rc.d/bastille
 %%DATADIR%%/templates/default/linux/Bastillefile
 %%DATADIR%%/templates/default/thick/Bastillefile
 %%DATADIR%%/templates/default/thin/Bastillefile
+%%DATADIR%%/templates/default/vlan/Bastillefile
 %%DATADIR%%/templates/default/vnet/Bastillefile
 %%DATADIR%%/top.sh
 %%DATADIR%%/umount.sh

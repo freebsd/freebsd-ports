@@ -1,0 +1,18 @@
+[
+{
+  type: upgrade
+  minimum_version: "0.13"
+  message: <<EOM
+**Breaking changes since 0.14.20250420**
+
+The `rcorder` has been deprecated, and new `boot` and `priority` options have
+been added to the jails. A boot file will be created with default values of
+`boot=on` and `priority=99` on jail creation. For existing jails, the boot file
+will be generated on the next subcommand execution to the jail. If you want to
+generate the file for all the jails, you can use `bastille restart ALL` to fill
+in the defaults. To change these values, use `bastille config TARGET set boot off`
+or `bastille config TARGET set priority 10` or some other number according to
+your needs.
+EOM
+}
+]

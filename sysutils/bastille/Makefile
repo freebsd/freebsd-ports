@@ -1,8 +1,9 @@
 PORTNAME=	bastille
-DISTVERSION=	0.13.20250126
+DISTVERSION=	0.14.20250420
 CATEGORIES=	sysutils
 
-MAINTAINER=	christer.edwards@gmail.com
+MAINTAINER=	jdhurtado@orbiware.com
+# co-maintainer: snarfingcode666@gmail.com
 COMMENT=	Jail automation framework
 WWW=		https://bastillebsd.org
 
@@ -12,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	bastillebsd
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 post-patch:
 	@${REINPLACE_CMD} \
