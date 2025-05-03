@@ -1,10 +1,9 @@
 PORTNAME=	lsqlite3
-PORTVERSION=	0.9.5
-PORTREVISION=	1
+DISTVERSION=	0.9.6
 CATEGORIES=	databases
-MASTER_SITES=	http://Lua.SQLite.org/index.cgi/zip/
+MASTER_SITES=	https://lua.sqlite.org/home/zip/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}_fsl09y
+DISTNAME=	${PORTNAME}_v${DISTVERSION:C/\.//g}
 
 MAINTAINER=	yds@Necessitu.de
 COMMENT=	Lua wrapper for SQLite3 library
@@ -13,18 +12,24 @@ WWW=		http://Lua.SQLite.org/index.cgi/doc/tip/doc/lsqlite3.wiki
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${NONEXISTENT}:databases/sqlite3:build
+TEST_DEPENDS=	${LUA_FLAVOR}-lunitx>0:devel/lua-lunitx
 
 USES=		localbase:ldflags sqlite:3 zip lua:module
 
+TEST_TARGET=	test
+
 CFLAGS+=	-pedantic -Wall -Qunused-arguments -fPIC -DPIC\
 		-std=c99 -fno-strict-aliasing -I${LUA_INCDIR}\
-		-DLSQLITE_VERSION=\"${PORTVERSION}\"
+		-DLSQLITE_VERSION=\"${DISTVERSION}\"
 LDFLAGS+=	-shared -pthread -lm -L${LOCALBASE}/lib
 
 DOCSDIR=	${LUA_DOCSDIR}
 EXAMPLESDIR=	${LUA_EXAMPLESDIR}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+post-patch:
+	@${REINPLACE_CMD} 's|LUAEXE=.*|LUAEXE= ${LUA_CMD}|' ${WRKSRC}/Makefile
 
 pre-configure:
 	@${CP} -p `${SETENV} -u FLAVOR ${MAKE} -V WRKSRC -C ${PORTSDIR}/databases/sqlite3`/sqlite3.[ch] ${WRKSRC}
