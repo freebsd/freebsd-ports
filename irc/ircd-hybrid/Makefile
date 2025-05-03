@@ -1,5 +1,5 @@
 PORTNAME=	ircd-hybrid
-PORTVERSION=	8.2.46
+PORTVERSION=	8.2.47
 CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +16,8 @@ GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-LIB_DEPENDS+=	libltdl.so:devel/libltdl
+LIB_DEPENDS+=	libltdl.so:devel/libltdl \
+		libjansson.so:devel/jansson
 
 CONFLICTS_INSTALL=	ircd-ratbox ircd-ratbox-devel
 
