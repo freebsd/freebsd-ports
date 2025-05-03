@@ -1,4 +1,4 @@
---- R/onLoad.R.orig	2025-02-17 07:43:13 UTC
+--- R/onLoad.R.orig	2025-04-29 09:58:50 UTC
 +++ R/onLoad.R
 @@ -55,50 +55,7 @@
      repo <- "https://repo1.maven.org/maven2"
@@ -7,14 +7,14 @@
 -  sharedPaths <- tryCatch({
 -    c(
 -      xlcEnsureDependenciesFor(
--      paste0(apachePrefix, "/poi/poi-ooxml-full/5.4.0/poi-ooxml-full-5.4.0.jar"), "poi-ooxml-full.jar", 
--      "5.4.0",  libname, pkgname),
+-      paste0(apachePrefix, "/poi/poi-ooxml-full/5.4.1/poi-ooxml-full-5.4.1.jar"), "poi-ooxml-full.jar", 
+-      "5.4.1",  libname, pkgname),
 -    xlcEnsureDependenciesFor(
--      paste0(apachePrefix, "/poi/poi-ooxml/5.4.0/poi-ooxml-5.4.0.jar"), "poi-ooxml.jar", 
--      "5.4.0",  libname, pkgname, debianpkg = "libapache-poi-java", rpmpkg="apache-poi"),
+-      paste0(apachePrefix, "/poi/poi-ooxml/5.4.1/poi-ooxml-5.4.1.jar"), "poi-ooxml.jar", 
+-      "5.4.1",  libname, pkgname, debianpkg = "libapache-poi-java", rpmpkg="apache-poi"),
 -    xlcEnsureDependenciesFor(
--      paste0(apachePrefix, "/poi/poi/5.4.0/poi-5.4.0.jar"), "poi.jar", 
--      "5.4.0",  libname, pkgname, debianpkg = "libapache-poi-java", rpmpkg="apache-poi"),
+-      paste0(apachePrefix, "/poi/poi/5.4.1/poi-5.4.1.jar"), "poi.jar", 
+-      "5.4.1",  libname, pkgname, debianpkg = "libapache-poi-java", rpmpkg="apache-poi"),
 -    xlcEnsureDependenciesFor(
 -      paste0(apachePrefix, "/commons/commons-compress/1.27.1/commons-compress-1.27.1.jar"), "commons-compress.jar",
 -      "1\\.(2[5-9]|[2-9][0-9]).*",  libname, pkgname, debianpkg = "libcommons-compress-java", rpmpkg="apache-commons-compress"),
@@ -34,7 +34,7 @@
 -      paste0(apachePrefix, "/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar"), "log4j-api.jar",
 -      "2\\.24\\..*",  libname, pkgname),
 -    xlcEnsureDependenciesFor(
--      paste0(repo, "/commons-codec/commons-codec/1.17.1/commons-codec-1.17.1.jar"), "commons-codec-1.17.1.jar",
+-      paste0(repo, "/commons-codec/commons-codec/1.18.0/commons-codec-1.18.0.jar"), "commons-codec-1.18.0.jar",
 -      "1\\.(1[1-9]|[2-9][0-9]).*",  libname, pkgname, debianpkg="libcommons-codec-java", rpmpkg="apache-commons-codec"),
 -    xlcEnsureDependenciesFor(
 -      paste0(repo, "/commons-io/commons-io/2.18.0/commons-io-2.18.0.jar"), "commons-io-2.18.0.jar",
