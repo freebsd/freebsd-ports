@@ -1,0 +1,20 @@
+--- src/winetricks.orig	2025-02-12 05:00:41 UTC
++++ src/winetricks
+@@ -4462,7 +4462,7 @@ winetricks_set_wineprefix()
+             fi
+         fi
+         if [ -z "${_W_wine_binary_arch}" ]; then
+-            w_warn "Unknown file arch of ${WINE_BIN}."
++            true
+         fi
+ 
+         # determine wow64 type (new/old)
+@@ -4569,7 +4569,7 @@ winetricks_set_wineprefix()
+             if [ "${_W_wow64_style}" = "new" ]; then
+                 w_warn "You appear to be using Wine's new wow64 mode. Note that this is EXPERIMENTAL and not yet fully supported. If reporting an issue, be sure to mention this."
+             elif [ "${_W_wow64_style}" = "unknown" ]; then
+-                w_warn "WoW64 type could not be detected."
++                true
+             fi
+         fi
+ 
