@@ -4,7 +4,7 @@
  # Copyright (c) 2004 HIROSE, Masaaki. All rights reserved.
  #
  
-+=encoding utf8
++=encoding euc-jp
  =head1 NAME
  
  B<kcode> - 各種文字コードを表示する

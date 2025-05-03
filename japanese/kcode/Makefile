@@ -1,17 +1,18 @@
 PORTNAME=	kcode
-PORTVERSION=	1.0
-PORTREVISION=	1
+DISTVERSION=	1.0
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.irori.org/dl/tool/
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Handy utility to show codepoint information of given characters
 WWW=		https://www.irori.org/tool/kcode.html
 
 USES=		shebangfix perl5
 USE_PERL5=	extract run
 NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
 SHEBANG_FILES=	kcode
 
