@@ -134,6 +134,11 @@
 %%MANPAGES%%share/man/man1/gh-release-upload.1.gz
 %%MANPAGES%%share/man/man1/gh-release-view.1.gz
 %%MANPAGES%%share/man/man1/gh-release.1.gz
+%%MANPAGES%%share/man/man1/gh-repo-autolink-create.1.gz
+%%MANPAGES%%share/man/man1/gh-repo-autolink-delete.1.gz
+%%MANPAGES%%share/man/man1/gh-repo-autolink-list.1.gz
+%%MANPAGES%%share/man/man1/gh-repo-autolink-view.1.gz
+%%MANPAGES%%share/man/man1/gh-repo-autolink.1.gz
 %%MANPAGES%%share/man/man1/gh-repo-archive.1.gz
 %%MANPAGES%%share/man/man1/gh-repo-clone.1.gz
 %%MANPAGES%%share/man/man1/gh-repo-create.1.gz
