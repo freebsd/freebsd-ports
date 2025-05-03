@@ -1,4 +1,4 @@
-This package allows you to install the compat6x libraries on your
+This package provides the compat6x libraries for your
 system, so you can use legacy binaries that depend on them.
 
 Ports usage example:
