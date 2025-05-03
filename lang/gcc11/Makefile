@@ -12,6 +12,8 @@ LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le riscv64
+DEPRECATED=	End-of-life upstream since mid 2024, newer versions available
+EXPIRATION_DATE=2025-07-19
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
