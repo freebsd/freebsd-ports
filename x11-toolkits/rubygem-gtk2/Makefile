@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
 		rubygem-pango>=${PORTVERSION}:x11-toolkits/rubygem-pango
 
 USES=		gem gnome
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 introspection
 
 CONFIGURE_ARGS=	--with-cflags=-Wno-incompatible-function-pointer-types
 
