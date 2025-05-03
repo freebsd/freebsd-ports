@@ -24,7 +24,7 @@ do-extract:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/kcode ${STAGEDIR}${PREFIX}/bin
-	pod2man ${WRKSRC}/kcode ${WRKSRC}/kcode.1
+	pod2man -u ${WRKSRC}/kcode ${WRKSRC}/kcode.1
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man1
 	${INSTALL_MAN} ${WRKSRC}/kcode.1 ${STAGEDIR}${PREFIX}/share/man/ja/man1
 
