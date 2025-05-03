@@ -1,7 +1,6 @@
 PORTNAME=	powershell
 DISTVERSIONPREFIX=v
-DISTVERSION=	7.5.0
-PORTREVISION=	1
+DISTVERSION=	7.5.1
 CATEGORIES=	shells
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://microsoft.com/PowerShell
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	dotnet>=9.0.1:lang/dotnet
+BUILD_DEPENDS=	dotnet>=9.0.4:lang/dotnet
 LIB_DEPENDS=	libbrotlienc.so:archivers/brotli \
 		libinotify.so:devel/libinotify \
 		libunwind.so:devel/libunwind
@@ -41,98 +40,98 @@ NUGET_NUPKGS=	DotNetAnalyzers.DocumentationAnalyzers:1.0.0-beta.59 \
 		Microsoft.CodeAnalysis.Analyzers:3.11.0 \
 		Microsoft.CodeAnalysis.Common:4.11.0 \
 		Microsoft.CodeAnalysis.CSharp:4.11.0 \
-		Microsoft.Extensions.ObjectPool:8.0.12 \
+		Microsoft.Extensions.ObjectPool:8.0.15 \
 		Microsoft.Management.Infrastructure:3.0.0 \
 		Microsoft.Management.Infrastructure.Runtime.Unix:3.0.0 \
 		Microsoft.Management.Infrastructure.Runtime.Win:3.0.0 \
 		Microsoft.NETCore.Platforms:7.0.4 \
 		Microsoft.PowerShell.MarkdownRender:7.2.1 \
 		Microsoft.PowerShell.Native:7.4.0 \
-		Microsoft.Security.Extensions:1.3.0 \
+		Microsoft.Security.Extensions:1.4.0 \
 		Microsoft.Win32.Registry:5.0.0 \
-		Microsoft.Win32.Registry.AccessControl:9.0.1 \
-		Microsoft.Win32.SystemEvents:9.0.1 \
-		Microsoft.Windows.Compatibility:9.0.1 \
+		Microsoft.Win32.Registry.AccessControl:9.0.4 \
+		Microsoft.Win32.SystemEvents:9.0.4 \
+		Microsoft.Windows.Compatibility:9.0.4 \
 		NETStandard.Library:2.0.3 \
 		Newtonsoft.Json:13.0.3 \
-		runtime.linux-arm.runtime.native.System.IO.Ports:9.0.1 \
-		runtime.linux-arm64.runtime.native.System.IO.Ports:9.0.1 \
-		runtime.linux-x64.runtime.native.System.IO.Ports:9.0.1 \
-		runtime.android-arm.runtime.native.System.IO.Ports:9.0.1 \
-		runtime.android-arm64.runtime.native.System.IO.Ports:9.0.1 \
-		runtime.android-x64.runtime.native.System.IO.Ports:9.0.1 \
-		runtime.android-x86.runtime.native.System.IO.Ports:9.0.1 \
-		runtime.linux-bionic-arm64.runtime.native.System.IO.Ports:9.0.1 \
-		runtime.linux-bionic-x64.runtime.native.System.IO.Ports:9.0.1 \
-		runtime.linux-musl-arm.runtime.native.System.IO.Ports:9.0.1 \
-		runtime.linux-musl-arm64.runtime.native.System.IO.Ports:9.0.1 \
-		runtime.linux-musl-x64.runtime.native.System.IO.Ports:9.0.1 \
-		runtime.maccatalyst-arm64.runtime.native.System.IO.Ports:9.0.1 \
-		runtime.maccatalyst-x64.runtime.native.System.IO.Ports:9.0.1 \
+		runtime.linux-arm.runtime.native.System.IO.Ports:9.0.4 \
+		runtime.linux-arm64.runtime.native.System.IO.Ports:9.0.4 \
+		runtime.linux-x64.runtime.native.System.IO.Ports:9.0.4 \
+		runtime.android-arm.runtime.native.System.IO.Ports:9.0.4 \
+		runtime.android-arm64.runtime.native.System.IO.Ports:9.0.4 \
+		runtime.android-x64.runtime.native.System.IO.Ports:9.0.4 \
+		runtime.android-x86.runtime.native.System.IO.Ports:9.0.4 \
+		runtime.linux-bionic-arm64.runtime.native.System.IO.Ports:9.0.4 \
+		runtime.linux-bionic-x64.runtime.native.System.IO.Ports:9.0.4 \
+		runtime.linux-musl-arm.runtime.native.System.IO.Ports:9.0.4 \
+		runtime.linux-musl-arm64.runtime.native.System.IO.Ports:9.0.4 \
+		runtime.linux-musl-x64.runtime.native.System.IO.Ports:9.0.4 \
+		runtime.maccatalyst-arm64.runtime.native.System.IO.Ports:9.0.4 \
+		runtime.maccatalyst-x64.runtime.native.System.IO.Ports:9.0.4 \
 		runtime.native.System.Data.SqlClient.sni:4.7.0 \
-		runtime.native.System.IO.Ports:9.0.1 \
-		runtime.osx-arm64.runtime.native.System.IO.Ports:9.0.1 \
-		runtime.osx-x64.runtime.native.System.IO.Ports:9.0.1 \
+		runtime.native.System.IO.Ports:9.0.4 \
+		runtime.osx-arm64.runtime.native.System.IO.Ports:9.0.4 \
+		runtime.osx-x64.runtime.native.System.IO.Ports:9.0.4 \
 		runtime.win-arm64.runtime.native.System.Data.SqlClient.sni:4.4.0 \
 		runtime.win-x64.runtime.native.System.Data.SqlClient.sni:4.4.0 \
 		runtime.win-x86.runtime.native.System.Data.SqlClient.sni:4.4.0 \
 		StyleCop.Analyzers:1.2.0-beta.556 \
 		StyleCop.Analyzers.Unstable:1.2.0.556 \
 		System.Buffers:4.5.1 \
-		System.CodeDom:9.0.1 \
-		System.Collections.Immutable:9.0.1 \
+		System.CodeDom:9.0.4 \
+		System.Collections.Immutable:9.0.4 \
 		System.Collections.Immutable:8.0.0 \
-		System.ComponentModel.Composition:9.0.1 \
-		System.ComponentModel.Composition.Registration:9.0.1 \
-		System.Configuration.ConfigurationManager:9.0.1 \
-		System.Data.Odbc:9.0.1 \
-		System.Data.OleDb:9.0.1 \
+		System.ComponentModel.Composition:9.0.4 \
+		System.ComponentModel.Composition.Registration:9.0.4 \
+		System.Configuration.ConfigurationManager:9.0.4 \
+		System.Data.Odbc:9.0.4 \
+		System.Data.OleDb:9.0.4 \
 		System.Data.SqlClient:4.8.6 \
-		System.Diagnostics.DiagnosticSource:9.0.1 \
-		System.Diagnostics.EventLog:9.0.1 \
-		System.Diagnostics.PerformanceCounter:9.0.1 \
-		System.DirectoryServices:9.0.1 \
-		System.DirectoryServices.AccountManagement:9.0.1 \
-		System.DirectoryServices.Protocols:9.0.1 \
-		System.Drawing.Common:9.0.1 \
+		System.Diagnostics.DiagnosticSource:9.0.4 \
+		System.Diagnostics.EventLog:9.0.4 \
+		System.Diagnostics.PerformanceCounter:9.0.4 \
+		System.DirectoryServices:9.0.4 \
+		System.DirectoryServices.AccountManagement:9.0.4 \
+		System.DirectoryServices.Protocols:9.0.4 \
+		System.Drawing.Common:9.0.4 \
 		System.Formats.Asn1:6.0.0 \
-		System.IO.Packaging:9.0.1 \
-		System.IO.Ports:9.0.1 \
-		System.Management:9.0.1 \
+		System.IO.Packaging:9.0.4 \
+		System.IO.Ports:9.0.4 \
+		System.Management:9.0.4 \
 		System.Memory:4.5.5 \
-		System.Net.Http.WinHttpHandler:9.0.1 \
+		System.Net.Http.WinHttpHandler:9.0.4 \
 		System.Numerics.Vectors:4.4.0 \
 		System.Numerics.Vectors:4.5.0 \
 		System.Private.ServiceModel:4.10.3 \
-		System.Reflection.Context:9.0.1 \
+		System.Reflection.Context:9.0.4 \
 		System.Reflection.DispatchProxy:4.7.1 \
 		System.Reflection.Metadata:8.0.1 \
-		System.Runtime.Caching:9.0.1 \
+		System.Runtime.Caching:9.0.4 \
 		System.Runtime.CompilerServices.Unsafe:6.0.0 \
 		System.Security.AccessControl:6.0.1 \
-		System.Security.Cryptography.Pkcs:9.0.1 \
-		System.Security.Cryptography.ProtectedData:9.0.1 \
-		System.Security.Cryptography.Xml:9.0.1 \
-		System.Security.Permissions:9.0.1 \
+		System.Security.Cryptography.Pkcs:9.0.4 \
+		System.Security.Cryptography.ProtectedData:9.0.4 \
+		System.Security.Cryptography.Xml:9.0.4 \
+		System.Security.Permissions:9.0.4 \
 		System.Security.Principal.Windows:5.0.0 \
 		System.ServiceModel.Duplex:4.10.3 \
 		System.ServiceModel.Http:4.10.3 \
 		System.ServiceModel.NetTcp:4.10.3 \
 		System.ServiceModel.Primitives:4.10.3 \
 		System.ServiceModel.Security:4.10.3 \
-		System.ServiceModel.Syndication:9.0.1 \
-		System.ServiceProcess.ServiceController:9.0.1 \
-		System.Speech:9.0.1 \
+		System.ServiceModel.Syndication:9.0.4 \
+		System.ServiceProcess.ServiceController:9.0.4 \
+		System.Speech:9.0.4 \
 		System.Text.Encoding.CodePages:7.0.0 \
 		System.Text.Encoding.CodePages:8.0.0 \
-		System.Text.Encoding.CodePages:9.0.1 \
+		System.Text.Encoding.CodePages:9.0.4 \
 		System.Text.Encodings.Web:6.0.0 \
-		System.Text.Encodings.Web:9.0.1 \
+		System.Text.Encodings.Web:9.0.4 \
 		System.Text.Json:6.0.9 \
-		System.Threading.AccessControl:9.0.1 \
+		System.Threading.AccessControl:9.0.4 \
 		System.Threading.Tasks.Extensions:4.5.4 \
 		System.Web.Services.Description:8.0.0 \
-		System.Windows.Extensions:9.0.1 \
+		System.Windows.Extensions:9.0.4 \
 		Humanizer.Core:2.14.1
 PWSH_NUPKGS=	Microsoft.PowerShell.PSResourceGet:1.0.3 \
 		PSReadLine:2.3.4 \
@@ -155,6 +154,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%NUGET_DISTDIR%%|${DISTDIR}/${NUGET_DISTSUBDIR}|' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/nuget.config
+	${REINPLACE_CMD} -e 's|9.0.203|9.0.105|' ${WRKSRC}/global.json
 
 do-build:
 	cd ${WRKSRC}/src/ResGen && \
