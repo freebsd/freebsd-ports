@@ -1,6 +1,6 @@
 PORTNAME=	supervisor
 PORTVERSION=	4.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
@@ -18,6 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES.txt
 LICENSE_PERMS_MEDUSA=	dist-mirror pkg-mirror auto-accept
 LICENSE_PERMS_REPOZE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0.5.0:devel/py-mock@${PY_FLAVOR}
 
 USES=		cpe python shebangfix
