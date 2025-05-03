@@ -1,23 +1,31 @@
 PORTNAME=	tor-browser
-DISTVERSION=	14.0.9
-PORTREVISION=	2
+DISTVERSION=	14.5
 CATEGORIES=	www net security wayland
+TAG_BASE=	86442427facf038d5706644221de7e2fb733550b
+TAG_TOR=	2c0b448503d52c3b512d1e7a55ccc78ac19db146
 MASTER_SITES=	TOR \
 		LOCAL/vvd \
-		LOCAL/vvd:source1 \
 		https://build-sources.tbb.torproject.org/:source1 \
+		LOCAL/vvd:source1 \
 		LOCAL/jsm:source2 \
 		LOCAL/vvd:source2 \
+		https://secure.informaction.com/:source3 \
 		LOCAL/vvd:source3 \
-		https://secure.informaction.com/%SUBDIR%/:source3
+		https://gitlab.torproject.org/tpo/translation/-/archive/${TAG_BASE}.tar.gz?dummy=/:source4 \
+		LOCAL/vvd:source4 \
+		https://gitlab.torproject.org/tpo/translation/-/archive/${TAG_TOR}.tar.gz?dummy=/:source5 \
+		LOCAL/vvd:source5
 MASTER_SITE_SUBDIR=	torbrowser/${DISTVERSION}/:DEFAULT \
 			download/releases/:source3
-DISTNAME=	src-firefox-tor-browser-128.9.0esr-14.0-2-build2
+DISTNAME=	src-firefox-tor-browser-128.9.0esr-14.5-1-build4
+MANUAL=		manual_215922.zip
 NOSCRIPT=	noscript-12.1.1.xpi
 DISTFILES=	${DISTNAME}.tar.xz \
-		manual_215922.zip:source1 \
+		${MANUAL}:source1 \
 		fonts-3--4348e1.tar.zst:source2 \
-		${NOSCRIPT}:source3
+		${NOSCRIPT}:source3 \
+		tpo-translation-${TAG_BASE}_GL0.tar.gz:source4 \
+		tpo-translation-${TAG_TOR}_GL0.tar.gz:source5
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Tor Browser for FreeBSD
@@ -28,7 +36,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		nss>=3.101:security/nss \
-		icu>=73.1:devel/icu \
+		icu>=73.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=8.5.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
@@ -50,18 +58,13 @@ USE_GECKO=	gecko
 USE_GITHUB=	nodefault
 TAG_L10N=	fcd0300e8478d1ec4d1c097a073ddb8e1e0351e3
 GH_TUPLE=	mozilla-l10n:firefox-l10n:${TAG_L10N}:ffl10n
-USE_GITLAB=	nodefault
-GL_SITE=	https://gitlab.torproject.org/
-GL_ACCOUNT=	tpo
-GL_PROJECT=	translation:basebrowser translation:torbrowser
-TAG_BASE=	d687be19490caa48a46a3e2193bda95d57cbb96d
-TAG_TOR=	95b60f2679611d39b035f2e45555c2c3d64d991f
-GL_TAGNAME=	${TAG_BASE}:basebrowser ${TAG_TOR}:torbrowser
 USE_MOZILLA=	-sqlite
 
-LOCALES=	ar ca cs da de el es-ES fa fi fr ga-IE he hu id is it ja ka ko \
-		lt mk ms my nb-NO nl pl pt-BR ro ru sq sv-SE th tr uk vi zh-CN \
-		zh-TW
+LOCALES=	af ar az be bg bs ca cs da de el es-ES et fa fi fr ga-IE gu-IN \
+		he hi-IN hr hu hy-AM id is it ja ka km ko lt lv mk mr ms my \
+		nb-NO nl nn-NO pa-IN pl pt-BR pt-PT ro ru sk sl sq sr sv-SE ta \
+		te th tl tr uk ur vi zh-CN zh-TW
+
 CONFIGURE_ENV+=	BINDGEN_CFLAGS="-I${LOCALBASE}/include" \
 		MOZ_CHROME_MULTILOCALE="${LOCALES}"
 
@@ -114,40 +117,41 @@ MOZILLA_PLIST_DIRS=	bin lib share/applications share/pixmaps \
 			share/tor-browser
 MOZ_OPTIONS+=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 .endif
+
 post-patch:
 	@${REINPLACE_CMD} 's|LOCALBASE|${LOCALBASE}|g' \
 		"${WRKSRC}/browser/app/profile/000-tor-browser.js"
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/browser/app/nsBrowserApp.cpp
 	${MKDIR} ${WRKSRC}/tmp-manual
-	${UNZIP_NATIVE_CMD} -d ${WRKSRC}/tmp-manual ${DISTDIR}/manual_215922.zip
+	${UNZIP_NATIVE_CMD} -d ${WRKSRC}/tmp-manual ${DISTDIR}/${MANUAL}
+
 pre-configure:
 	@${REINPLACE_CMD} 's|export MOZ_GOOGLE_.*||g' ${WRKSRC}/.mozconfig
 	${PYTHON_CMD} ${FILESDIR}/packagemanual.py ${WRKSRC}/tmp-manual/public \
 		${WRKSRC}/browser/base/content/manual
+
 post-configure:
 	${MKDIR} ${WRKDIR}/.mozbuild/l10n-central
 	${CP} -r ${WRKDIR}/firefox-l10n-${TAG_L10N}/* \
 		${WRKDIR}/.mozbuild/l10n-central
-
 .for i in ${LOCALES}
 	${CP} ${WRKDIR}/translation-${TAG_BASE}/${i}/base-browser.ftl \
 		${WRKDIR}/.mozbuild/l10n-central/${i}/toolkit/toolkit/global/
-	${CP} ${WRKDIR}/translation-${TAG_BASE}/${i}/newIdentity.properties \
-		${WRKDIR}/.mozbuild/l10n-central/${i}/browser/chrome/browser/
-	${CP} ${WRKDIR}/translation-${TAG_BASE}/${i}/securityLevel.properties \
-		${WRKDIR}/.mozbuild/l10n-central/${i}/browser/chrome/browser/
 	${CP} ${WRKDIR}/translation-${TAG_TOR}/${i}/tor-browser.ftl \
 		${WRKDIR}/.mozbuild/l10n-central/${i}/toolkit/toolkit/global/
+	${MKDIR} ${WRKDIR}/.mozbuild/l10n-central/${i}/browser/branding/tb-release
+	${CP} ${WRKDIR}/translation-${TAG_TOR}/${i}/brand.properties \
+	      ${WRKDIR}/translation-${TAG_TOR}/${i}/branding/brand.ftl \
+		${WRKDIR}/.mozbuild/l10n-central/${i}/browser/branding/tb-release
 	${MKDIR} ${WRKSRC}/toolkit/torbutton/chrome/locale/${i}/
-.for j in aboutTBUpdate.dtd brand.dtd brand.properties onionLocation.properties \
-	settings.properties torConnect.properties torbutton.dtd \
-	torbutton.properties torlauncher.properties
+. for j in onionLocation.properties settings.properties torConnect.properties \
+	torlauncher.properties
 	${CP} ${WRKDIR}/translation-${TAG_TOR}/${i}/${j} \
 		${WRKSRC}/toolkit/torbutton/chrome/locale/${i}/
-.endfor
+. endfor
 	${CP} -r ${WRKDIR}/translation-${TAG_TOR}/${i}/branding \
-		${WRKSRC}/toolkit/torbutton/chrome/locale/${i}
+		${WRKSRC}/toolkit/torbutton/chrome/locale/${i}/
 .endfor
 
 post-build:
