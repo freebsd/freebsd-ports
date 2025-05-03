@@ -1,7 +1,0 @@
-TIMESTAMP = 1739910532
-SHA256 (rocky/s/SDL_sound-1.0.3-37.el9.aarch64.rpm) = 12a21c7f1d4f1ebe7b4904f3b22ee3271540a39237025f8163fc5c9610eb5b9f
-SIZE (rocky/s/SDL_sound-1.0.3-37.el9.aarch64.rpm) = 102265
-SHA256 (rocky/s/SDL_sound-1.0.3-37.el9.x86_64.rpm) = edc74ad0d27efadc3a6d47f840d05c968e246c0698ff656264ca0478988097f5
-SIZE (rocky/s/SDL_sound-1.0.3-37.el9.x86_64.rpm) = 101075
-SHA256 (rocky/s/SDL_sound-1.0.3-37.el9.src.rpm) = 01b24b1d761970b7a5cdaee518936c0e0f1183597fb483fdf96c328d35bf478e
-SIZE (rocky/s/SDL_sound-1.0.3-37.el9.src.rpm) = 635244

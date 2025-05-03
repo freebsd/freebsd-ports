@@ -420,7 +420,6 @@
     SUBDIR += linux-rl9-pulseaudio-libs
     SUBDIR += linux-rl9-pulseaudio-utils
     SUBDIR += linux-rl9-sdl2_mixer
-    SUBDIR += linux-rl9-sdl_sound
     SUBDIR += linuxsampler
     SUBDIR += linuxwave
     SUBDIR += liquidsfz
