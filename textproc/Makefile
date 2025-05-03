@@ -259,6 +259,7 @@
     SUBDIR += google-ctemplate
     SUBDIR += gpp
     SUBDIR += grap
+    SUBDIR += grass
     SUBDIR += grc-aspell
     SUBDIR += greple
     SUBDIR += groff

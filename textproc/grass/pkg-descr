@@ -1,0 +1,12 @@
+This crate aims to provide a high level interface for compiling
+Sass into plain CSS. It offers a very limited API, currently exposing
+only 2 functions.
+
+In addition to a library, this crate also includes a binary that
+is intended to act as an invisible replacement to the Sass commandline
+executable.
+
+This crate aims to achieve complete feature parity with the dart-sass
+reference implementation. A deviation from the dart-sass implementation
+can be considered a bug except for in the case of error messages
+and error spans.
