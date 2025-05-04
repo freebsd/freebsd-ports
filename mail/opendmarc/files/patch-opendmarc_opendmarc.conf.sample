@@ -1,0 +1,10 @@
+--- opendmarc/opendmarc.conf.sample.orig	2021-12-20 06:40:37 UTC
++++ opendmarc/opendmarc.conf.sample
+@@ -294,6 +294,7 @@
+ ##  One location to retrieve the file from is https://publicsuffix.org/list/
+ #
+ # PublicSuffixList path
++PublicSuffixList %%PREFIX%%/share/public_suffix_list/public_suffix_list.dat
+ 
+ ##  RecordAllMessages { true | false }
+ ##  	default "false"

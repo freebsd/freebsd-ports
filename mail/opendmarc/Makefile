@@ -1,6 +1,6 @@
 PORTNAME=	opendmarc
 PORTVERSION=	1.4.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail security
 MASTER_SITES=	GH
 
@@ -14,7 +14,8 @@ LICENSE_COMB=	multi
 RUN_DEPENDS=	p5-Switch>=0:lang/p5-Switch \
 		p5-DBI>=0:databases/p5-DBI \
 		${DBD_MYSQL} \
-		p5-HTTP-Message>=0:www/p5-HTTP-Message
+		p5-HTTP-Message>=0:www/p5-HTTP-Message \
+		public_suffix_list>=0:dns/public_suffix_list
 
 USES=		cpe libtool mysql perl5 shebangfix autoreconf
 LICENSE_FILE_SENDMAIL=	${WRKSRC}/LICENSE.Sendmail
@@ -54,6 +55,10 @@ PORTDOCS=	*
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 CONFIGURE_ARGS+=	--with-milter=${MILTERBASE}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/opendmarc/opendmarc.conf.sample
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
