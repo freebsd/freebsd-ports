@@ -2,7 +2,7 @@
 { type: install
   message: <<EOM
 Please do not edit the fail2ban.conf, jail.conf, or any other 
-files in the distributen as they will be overwritten upon each 
+files in the distribution as they will be overwritten upon each 
 upgrade of the port. Instead, create new files named *.local e.g. 
 fail2ban.local or jail.local.
 
