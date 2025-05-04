@@ -4350,3 +4350,4 @@ textproc/java2html||2025-05-04|Has expired: Upstream is gone and last update 20 
 textproc/word2x||2025-05-04|Has expired: Obsolete converter than only supports ancient versions of Word documents
 textproc/unoconv||2025-05-04|Has expired: Deprecated upstream in 2021
 textproc/syck||2025-05-04|Has expired: Unfetchable, no response from upstream in a year
+textproc/soothsayer||2025-05-04|Has expired: Deprecated upstream, consider using deskutils/presage

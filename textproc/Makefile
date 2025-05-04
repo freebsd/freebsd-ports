@@ -2053,7 +2053,6 @@
     SUBDIR += snowballstemmer
     SUBDIR += so-hunspell
     SUBDIR += sonic
-    SUBDIR += soothsayer
     SUBDIR += source-highlight
     SUBDIR += sowing
     SUBDIR += spellutils
