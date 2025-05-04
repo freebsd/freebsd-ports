@@ -38,6 +38,7 @@
 %%SITE_PERL%%/PPI/Structure/For.pm
 %%SITE_PERL%%/PPI/Structure/Given.pm
 %%SITE_PERL%%/PPI/Structure/List.pm
+%%SITE_PERL%%/PPI/Structure/Signature.pm
 %%SITE_PERL%%/PPI/Structure/Subscript.pm
 %%SITE_PERL%%/PPI/Structure/Unknown.pm
 %%SITE_PERL%%/PPI/Structure/When.pm
@@ -130,6 +131,7 @@
 %%PERL5_MAN3%%/PPI::Structure::For.3.gz
 %%PERL5_MAN3%%/PPI::Structure::Given.3.gz
 %%PERL5_MAN3%%/PPI::Structure::List.3.gz
+%%PERL5_MAN3%%/PPI::Structure::Signature.3.gz
 %%PERL5_MAN3%%/PPI::Structure::Subscript.3.gz
 %%PERL5_MAN3%%/PPI::Structure::Unknown.3.gz
 %%PERL5_MAN3%%/PPI::Structure::When.3.gz
