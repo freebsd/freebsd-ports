@@ -1,0 +1,17 @@
+TIMESTAMP = 1746316897
+SHA256 (grpc-grpc-go-v1.72.0_GH0.tar.gz) = bfd9b72523f56391aa568b464775a1241f5f38fba8d7f5f1edc1f1d8cde3d2f4
+SIZE (grpc-grpc-go-v1.72.0_GH0.tar.gz) = 2410705
+SHA256 (golang-net-v0.34.0_GH0.tar.gz) = 3d5ec65e81b6f1d9530a3008f35722e9cf6d4905b20c19a7126f58aae515996c
+SIZE (golang-net-v0.34.0_GH0.tar.gz) = 1466242
+SHA256 (golang-sys-v0.29.0_GH0.tar.gz) = 7bac3e0a686a05d0e86ca110917b45f60553d6c146dba8a4cdafb911486428e7
+SIZE (golang-sys-v0.29.0_GH0.tar.gz) = 1519988
+SHA256 (golang-text-v0.21.0_GH0.tar.gz) = d64dbf40a8ae06c4805895e48553ecdadaed07089d8ed2168a0d61551d17ff22
+SIZE (golang-text-v0.21.0_GH0.tar.gz) = 8964782
+SHA256 (google-go-genproto-1a7da9e5054f_GH0.tar.gz) = 66a043c0c3bccff28bed10bdde9f18ebcb615fd10fe5ddc0e0fab3c71ad429ec
+SIZE (google-go-genproto-1a7da9e5054f_GH0.tar.gz) = 5891519
+SHA256 (grpc-grpc-go-v1.70.0_GH0.tar.gz) = 40719afc7a6fed9572cb4deeb902e7659095370dac87bb74c4273128deff38c3
+SIZE (grpc-grpc-go-v1.70.0_GH0.tar.gz) = 2299149
+SHA256 (open-telemetry-opentelemetry-go-v1.34.0_GH0.tar.gz) = 16d562e15e7cdbd7e6c49cd5ac3fa2770969d7873295dd0387ad842126815436
+SIZE (open-telemetry-opentelemetry-go-v1.34.0_GH0.tar.gz) = 1873245
+SHA256 (protocolbuffers-protobuf-go-v1.36.5_GH0.tar.gz) = a669a85f92c229768e51877c6ed9b2c7d33c31ab089345b616dd3da1d815534d
+SIZE (protocolbuffers-protobuf-go-v1.36.5_GH0.tar.gz) = 1958977

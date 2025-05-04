@@ -4338,6 +4338,7 @@
     SUBDIR += protobuf-java
     SUBDIR += protobuf25
     SUBDIR += protobuf3
+    SUBDIR += protoc-gen-go-grpc
     SUBDIR += prototool
     SUBDIR += protozero
     SUBDIR += pructl
