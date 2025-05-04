@@ -1,5 +1,5 @@
 PORTNAME=	sequoia
-DISTVERSION=	1.18.0
+DISTVERSION=	2.0.0
 CATEGORIES=	security
 
 MAINTAINER=	vishwin@FreeBSD.org
