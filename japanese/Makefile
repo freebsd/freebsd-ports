@@ -183,7 +183,6 @@
     SUBDIR += mozc-tool
     SUBDIR += multiskkserv
     SUBDIR += mypaedia-fpw-package
-    SUBDIR += namazu
     SUBDIR += namazu2
     SUBDIR += navi2ch
     SUBDIR += ne
