@@ -4,6 +4,9 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.icculus.org/mp3check/
 EXTRACT_SUFX=	# empty
 
+DEPRECATED=	Depends on expired audio/id3tool
+EXPIRATION_DATE=2025-06-04
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for checking and fixing MP3 archive inconsistencies
 WWW=		https://www.icculus.org/mp3check/
