@@ -1,10 +1,7 @@
 PORTNAME=	libpoly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.13
+DISTVERSION=	0.2.0
 CATEGORIES=	math
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	c1f82e63ccf3f84e2a2234589caac287d2bf6f71.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library for manipulating polynomials
@@ -28,5 +25,7 @@ CMAKE_OFF=	LIBPOLY_BUILD_PYTHON_API LIBPOLY_BUILD_STATIC LIBPOLY_BUILD_STATIC_PI
 .if ${OPSYS} == FreeBSD
 CFLAGS+=       -Wno-error=unused-but-set-variable
 .endif
+
+# tests as of 0.2.0: 100% tests passed, 0 tests failed out of 14
 
 .include <bsd.port.post.mk>

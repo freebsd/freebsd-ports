@@ -3,6 +3,7 @@ include/poly/assignment.h
 include/poly/dyadic_interval.h
 include/poly/dyadic_rational.h
 include/poly/feasibility_set.h
+include/poly/feasibility_set_int.h
 include/poly/integer.h
 include/poly/interval.h
 include/poly/monomial.h
@@ -11,6 +12,7 @@ include/poly/poly.h
 include/poly/polynomial.h
 include/poly/polynomial_context.h
 include/poly/polynomial_hash_set.h
+include/poly/polynomial_heap.h
 include/poly/polynomial_vector.h
 include/poly/polyxx.h
 include/poly/polyxx/algebraic_number.h
@@ -43,7 +45,7 @@ include/poly/variable_order.h
 include/poly/version.h
 lib/libpoly.so
 lib/libpoly.so.0
-lib/libpoly.so.0.1.13
+lib/libpoly.so.0.2.0
 lib/libpolyxx.so
 lib/libpolyxx.so.0
-lib/libpolyxx.so.0.1.13
+lib/libpolyxx.so.0.2.0
