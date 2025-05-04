@@ -492,7 +492,6 @@
     SUBDIR += metauml
     SUBDIR += mgdiff
     SUBDIR += mi-aspell
-    SUBDIR += mifluz
     SUBDIR += miller
     SUBDIR += minify
     SUBDIR += minised
