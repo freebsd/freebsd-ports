@@ -574,7 +574,6 @@
     SUBDIR += ooni-mini
     SUBDIR += ooni-probe-cli
     SUBDIR += open-isns
-    SUBDIR += openbgpd
     SUBDIR += openbgpd6
     SUBDIR += openbgpd7
     SUBDIR += openbgpd8
