@@ -584,6 +584,7 @@
     SUBDIR += octave-forge-fileio
     SUBDIR += octave-forge-financial
     SUBDIR += octave-forge-fits
+    SUBDIR += octave-forge-fl-core
     SUBDIR += octave-forge-fpl
     SUBDIR += octave-forge-fuzzy-logic-toolkit
     SUBDIR += octave-forge-ga
