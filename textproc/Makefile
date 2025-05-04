@@ -195,7 +195,6 @@
     SUBDIR += es-hunspell
     SUBDIR += es-hyphen
     SUBDIR += es-mythes
-    SUBDIR += estraier
     SUBDIR += et-aspell
     SUBDIR += evtx
     SUBDIR += exempi
