@@ -1,12 +1,10 @@
 PORTNAME=	idesk
-PORTVERSION=	0.7.5
-PORTREVISION=	15
+PORTVERSION=	0.7.9
 CATEGORIES=	x11
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Place launch icons and background directly on your desktop
-WWW=		https://idesk.sourceforge.net
+WWW=		https://github.com/neagix/idesk
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -14,7 +12,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		libXft.so:x11-fonts/libXft
 
-USES=		gmake pkgconfig tar:bzip2 xorg
+USE_GITHUB=	yes
+GH_ACCOUNT=	neagix
+GH_TAGNAME=	15f0b51dc7c7adbdf191481423793d7726fa8fab
+
+USES=		autoreconf gmake localbase:ldflags pkgconfig \
+		tar:bzip2 xorg
 USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
@@ -36,6 +39,9 @@ SHAPE_CONFIGURE_ENABLE=	shape
 
 SN_LIB_DEPENDS=		libstartup-notification-1.so:x11/startup-notification
 SN_CONFIGURE_ON=	--enable-libsn
+
+post-patch:
+	${REINPLACE_CMD} -e 's|0.7.8|${PORTVERSION}|g' ${WRKSRC}/configure.ac
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/src/idesk ${STAGEDIR}${PREFIX}/bin
