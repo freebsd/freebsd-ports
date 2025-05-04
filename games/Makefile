@@ -1103,7 +1103,6 @@
     SUBDIR += xinvaders
     SUBDIR += xinvaders3d
     SUBDIR += xisola
-    SUBDIR += xjewel
     SUBDIR += xjig
     SUBDIR += xjump
     SUBDIR += xjumpx
