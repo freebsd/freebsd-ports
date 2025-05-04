@@ -1,6 +1,5 @@
 PORTNAME=	logcheck
-DISTVERSION=	1.4.3
-PORTREVISION=	2
+DISTVERSION=	1.4.4
 CATEGORIES=	security
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -71,10 +70,8 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/detectrotate \
 		  ${STAGEDIR}${DBDIR} \
-		  ${STAGEDIR}${DOCSDIR} \
 		  ${STAGEDIR}${ETCDIR} \
 		  ${STAGEDIR}${ETCDIR}/logcheck.logfiles.d \
-		  ${STAGEDIR}${EXAMPLESDIR} \
 		  ${STAGEDIR}${RUNDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck-test ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck ${STAGEDIR}${PREFIX}/sbin
@@ -93,14 +90,20 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/src/detectrotate/*.dtr \
 		${STAGEDIR}${DATADIR}/detectrotate
-	${INSTALL_DATA} ${WRKSRC}/debian/logcheck.cron.d \
-		${STAGEDIR}${EXAMPLESDIR}/crontab.in
 .for i in ${MAN1_FILES}
 	${INSTALL_MAN} ${WRKSRC}/docs/$i ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 .for i in ${MAN8_FILES}
 	${INSTALL_MAN} ${WRKSRC}/docs/$i ${STAGEDIR}${PREFIX}/share/man/man8
 .endfor
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/debian/logcheck.cron.d \
+		${STAGEDIR}${EXAMPLESDIR}/crontab.in
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,6 @@
---- src/logcheck.orig	2023-03-02 08:19:09 UTC
+--- src/logcheck.orig	2025-05-03 23:35:17 UTC
 +++ src/logcheck
-@@ -24,16 +24,16 @@
+@@ -24,16 +24,16 @@ if [ "$(id -u)" = 0 ]; then
  
  if [ "$(id -u)" = 0 ]; then
      echo "logcheck should not be run as root. Use su to invoke logcheck:"
@@ -22,7 +22,7 @@
      echo "fatal: lockfile-progs is a prerequisite for logcheck, but was not found."
      exit 1
  fi
-@@ -71,13 +71,13 @@ EVENTSSUBJECT="System Events"
+@@ -71,13 +71,13 @@ ADDTAG="no"
  ADDTAG="no"
  
  # Default paths
@@ -43,7 +43,7 @@
  SYSLOG_SUMMARY="/usr/bin/syslog-summary"
  
  # Defaults for options
-@@ -92,7 +92,7 @@ FQDN=0
+@@ -92,7 +92,7 @@ SYSLOGSUMMARY=0
  SORTUNIQ=0
  SUPPORT_CRACKING_IGNORE=0
  SYSLOGSUMMARY=0
@@ -52,14 +52,14 @@
  LOCKFILE="$LOCKDIR/logcheck"
  
  # Allow globs to return zero files
-@@ -183,8 +183,8 @@ ${TMPDIR:+"- Check temporary directory: $TMPDIR"
+@@ -183,8 +183,8 @@ logfiles specified in;
  }
  - verify that the logcheck user can read all
  logfiles specified in;
 -  /etc/logcheck/logcheck.logfiles
--  /etc/logcheck/logcheck.logfiled.d/*.logfiles
-+  %%ETCDIR%%/logcheck.logfiles
-+  %%ETCDIR%%/logcheck.logfiled.d/*.logfiles
+-  /etc/logcheck/logcheck.logfiles.d/*.logfiles
++  %%ETCDIR%%/logcheck/logcheck.logfiles
++  %%ETCDIR%%/logcheck/logcheck.logfiles.d/*.logfiles
  - check the system has enough space; (df -h output follows):
  $(df -h 2>&1|| :)
  - check the settings (environment follows):
@@ -81,7 +81,7 @@
  										 >> "$TMPDIR/report" || error "Could not write message about first-time check of journal to report"
  								offsettime="--since=-5h"
  						fi
-@@ -587,7 +587,7 @@ debug "Sourcing - $CONFFILE"
+@@ -589,7 +589,7 @@ if [ -r "$CONFFILE" ]; then
  
  # Now source the config file - before things that should not be changed
  if [ -r "$CONFFILE" ]; then
@@ -90,7 +90,7 @@
  		. "$CONFFILE"
  elif [ -f "$CONFFILE" ]; then
  		error  "Config file $CONFFILE could not be read"
-@@ -618,9 +618,9 @@ fi
+@@ -620,9 +620,9 @@ if [ "$FQDN" -eq 1 ]; then
  
  # HOSTNAME is either 'fully qualified' or 'short'
  if [ "$FQDN" -eq 1 ]; then
@@ -102,7 +102,7 @@
  fi
  
  # Now check for the other options
-@@ -725,8 +725,8 @@ else
+@@ -727,8 +727,8 @@ fi
  fi
  
  # Create a secure temporary working directory (or exit)

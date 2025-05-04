@@ -14,7 +14,6 @@
 %%ETCDIR%%/ignore.d.paranoid/logcheck
 %%ETCDIR%%/ignore.d.paranoid/postfix
 %%ETCDIR%%/ignore.d.paranoid/ppp
-%%ETCDIR%%/ignore.d.paranoid/pureftp
 %%ETCDIR%%/ignore.d.paranoid/qpopper
 %%ETCDIR%%/ignore.d.paranoid/squid
 %%ETCDIR%%/ignore.d.paranoid/ssh
@@ -44,6 +43,7 @@
 %%ETCDIR%%/ignore.d.server/cvs-pserver
 %%ETCDIR%%/ignore.d.server/cvsd
 %%ETCDIR%%/ignore.d.server/cyrus
+%%ETCDIR%%/ignore.d.server/dbus-daemon
 %%ETCDIR%%/ignore.d.server/dcc
 %%ETCDIR%%/ignore.d.server/ddclient
 %%ETCDIR%%/ignore.d.server/dhclient
@@ -80,6 +80,7 @@
 %%ETCDIR%%/ignore.d.server/krb5-kdc
 %%ETCDIR%%/ignore.d.server/libpam-krb5
 %%ETCDIR%%/ignore.d.server/libpam-mount
+%%ETCDIR%%/ignore.d.server/libpam-systemd
 %%ETCDIR%%/ignore.d.server/logcheck
 %%ETCDIR%%/ignore.d.server/login
 %%ETCDIR%%/ignore.d.server/maradns
@@ -92,6 +93,8 @@
 %%ETCDIR%%/ignore.d.server/nntpcache
 %%ETCDIR%%/ignore.d.server/nscd
 %%ETCDIR%%/ignore.d.server/nslcd
+%%ETCDIR%%/ignore.d.server/opendkim
+%%ETCDIR%%/ignore.d.server/opendmarc
 %%ETCDIR%%/ignore.d.server/openvpn
 %%ETCDIR%%/ignore.d.server/otrs
 %%ETCDIR%%/ignore.d.server/passwd
@@ -106,12 +109,12 @@
 %%ETCDIR%%/ignore.d.server/procmail
 %%ETCDIR%%/ignore.d.server/proftpd
 %%ETCDIR%%/ignore.d.server/pure-ftpd
-%%ETCDIR%%/ignore.d.server/pureftp
 %%ETCDIR%%/ignore.d.server/qpopper
 %%ETCDIR%%/ignore.d.server/rbldnsd
 %%ETCDIR%%/ignore.d.server/rpc_statd
 %%ETCDIR%%/ignore.d.server/rsnapshot
 %%ETCDIR%%/ignore.d.server/rsync
+%%ETCDIR%%/ignore.d.server/runuser
 %%ETCDIR%%/ignore.d.server/sa-exim
 %%ETCDIR%%/ignore.d.server/samba
 %%ETCDIR%%/ignore.d.server/saned
@@ -135,7 +138,9 @@
 %%ETCDIR%%/ignore.d.server/sympa
 %%ETCDIR%%/ignore.d.server/syslogd
 %%ETCDIR%%/ignore.d.server/systemd
+%%ETCDIR%%/ignore.d.server/systemd-journald
 %%ETCDIR%%/ignore.d.server/systemd-logind
+%%ETCDIR%%/ignore.d.server/systemd-networkd
 %%ETCDIR%%/ignore.d.server/systemd-timesyncd
 %%ETCDIR%%/ignore.d.server/teapop
 %%ETCDIR%%/ignore.d.server/telnetd
@@ -149,6 +154,7 @@
 %%ETCDIR%%/ignore.d.server/watchdog
 %%ETCDIR%%/ignore.d.server/wu-ftpd
 %%ETCDIR%%/ignore.d.server/xinetd
+%%ETCDIR%%/ignore.d.workstation/NetworkManager
 %%ETCDIR%%/ignore.d.workstation/automount
 %%ETCDIR%%/ignore.d.workstation/bind
 %%ETCDIR%%/ignore.d.workstation/bluetooth-alsa
@@ -176,6 +182,7 @@
 %%ETCDIR%%/ignore.d.workstation/ppp
 %%ETCDIR%%/ignore.d.workstation/proftpd
 %%ETCDIR%%/ignore.d.workstation/pump
+%%ETCDIR%%/ignore.d.workstation/rtkit-daemon
 %%ETCDIR%%/ignore.d.workstation/sendfile
 %%ETCDIR%%/ignore.d.workstation/slim
 %%ETCDIR%%/ignore.d.workstation/squid
