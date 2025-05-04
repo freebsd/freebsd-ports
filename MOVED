@@ -4342,3 +4342,4 @@ graphics/acidwarp-sdl||2025-05-04|Has expired: Unmaintained by upstream as last 
 games/xjewel||2025-05-04|Has expired: Unmaintained as last release was in 1994
 textproc/mysqlviz||2025-05-04|Has expired: Repo deleted upstream
 textproc/sdif||2025-05-04|Has expired: Deprecated upstream, repo archived Nov 21, 2018
+textproc/xp||2025-05-04|Has expired: Obsolete, never versions of Java already include XML parser(s)

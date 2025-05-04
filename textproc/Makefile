@@ -2199,7 +2199,6 @@
     SUBDIR += xmlwrapp
     SUBDIR += xom
     SUBDIR += xorg-sgml-doctools
-    SUBDIR += xp
     SUBDIR += xslide.el
     SUBDIR += xstream
     SUBDIR += xsv-rs
