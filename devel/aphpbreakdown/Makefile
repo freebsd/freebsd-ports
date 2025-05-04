@@ -11,6 +11,10 @@ WWW=		https://gitlab.code-mesa.com/code-mesa/aphpbreakdown/
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable
+DEPRECATED=	Upstream is gone and last release in 2018
+EXPIRATION_DATE=2025-05-31
+
 USES=		php:flavors
 USE_PHP=	tokenizer phar
 
