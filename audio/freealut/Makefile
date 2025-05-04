@@ -1,26 +1,28 @@
 PORTNAME=	freealut
-PORTVERSION=	1.1.0
-PORTREVISION=	4
+DISTVERSION=	1.1.0.20240801
+PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	DEBIAN_POOL
-DISTNAME=	freealut_${PORTVERSION}.orig
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	The OpenAL Utility Toolkit
-WWW=		http://connect.creativelabs.com/openal/default.aspx
+WWW=		https://github.com/vancegroup/freealut
 
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gmake libtool openal:al pathfix pkgconfig
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	No longer actively developed, consider migrating to another library
+
+USES=		cmake localbase:ldflags openal pathfix
 USE_LDCONFIG=	yes
-LDFLAGS_i386=	-Wl,-znotext
-INSTALL_TARGET=	install-strip
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/@CFLAGS@/& -lopenal -lpthread/g' \
-		${WRKSRC}/examples/Makefile.in \
-		${WRKSRC}/test_suite/Makefile.in
+USE_GITHUB=	yes
+GH_ACCOUNT=	vancegroup
+GH_TAGNAME=	8abb420
+
+LDFLAGS_i386=	-Wl,-znotext
+
+CMAKE_OFF=	BUILD_EXAMPLES \
+		BUILD_OPTIMIZATION \
+		BUILD_TESTS
 
 .include <bsd.port.mk>

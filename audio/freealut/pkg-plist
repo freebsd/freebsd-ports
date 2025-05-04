@@ -1,7 +1,6 @@
 bin/freealut-config
 include/AL/alut.h
 libdata/pkgconfig/freealut.pc
-lib/libalut.a
 lib/libalut.so
 lib/libalut.so.0
 lib/libalut.so.0.1.0
