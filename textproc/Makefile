@@ -70,7 +70,6 @@
     SUBDIR += aspell
     SUBDIR += aspell-ispell
     SUBDIR += ast-aspell
-    SUBDIR += atom
     SUBDIR += augeas
     SUBDIR += az-aspell
     SUBDIR += bar

@@ -4357,3 +4357,4 @@ textproc/saxon|textproc/saxon-he|2025-05-04|Has expired: Deprecated and unsuppor
 textproc/p5-Search-Saryer||2025-05-04|Has expired: Depends on deprecated port textproc/sary
 textproc/sary||2025-05-04|Has expired: Last release in 2005 and unmaintained in tree for years
 textproc/mifluz||2025-05-04|Has expired: Obsolete, no activity upstream since 2014 and unmaintained in tree for years
+textproc/atom||2025-05-04|Has expired: Upstream is gone and utility is considered obsolete
