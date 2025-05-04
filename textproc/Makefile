@@ -179,7 +179,6 @@
     SUBDIR += dwdiff
     SUBDIR += easydiff
     SUBDIR += ebook-tools
-    SUBDIR += ekhtml
     SUBDIR += el-aspell
     SUBDIR += el-hyphen
     SUBDIR += elasticsearch-plugin-head
