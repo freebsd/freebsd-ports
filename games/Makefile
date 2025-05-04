@@ -947,7 +947,6 @@
     SUBDIR += stonesoup
     SUBDIR += stormbaancoureur
     SUBDIR += stratagus
-    SUBDIR += stuntrally
     SUBDIR += sudsol
     SUBDIR += sulis
     SUBDIR += supertux
