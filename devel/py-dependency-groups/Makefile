@@ -1,5 +1,5 @@
 PORTNAME=	dependency-groups
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,6 @@ NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 1.3.0: 31 passed in 6.85s
+# tests as of 1.3.1: 39 passed in 0.15s
 
 .include <bsd.port.mk>
