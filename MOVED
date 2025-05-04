@@ -4388,3 +4388,4 @@ net/openbgpd||2025-05-04|Has expired: Unsupported upstream, consider using net/o
 japanese/namazu|japanese/namazu2|2025-05-04|Has expired: Obsolete and superseded by namazu2, last release in 2000
 games/stuntrally||2025-05-04|Has expired: Broken for months and outdated
 editors/ssed||2025-05-04|Has expired: Legacy "fork" that's based on legacy GNU sed 4.1 and last release in 2005
+devel/rubygem-webby||2025-05-04|Has expired: Deprecated upstream in 2011
