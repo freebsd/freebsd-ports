@@ -89,7 +89,6 @@
     SUBDIR += bn-aspell
     SUBDIR += br-aspell
     SUBDIR += bsd-spell
-    SUBDIR += bsddiff
     SUBDIR += c2html
     SUBDIR += ca-aspell
     SUBDIR += cast2gif
