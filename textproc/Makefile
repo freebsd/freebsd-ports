@@ -2009,7 +2009,6 @@
     SUBDIR += sarep
     SUBDIR += sary
     SUBDIR += sassc
-    SUBDIR += saxon
     SUBDIR += saxon-he
     SUBDIR += sc-aspell
     SUBDIR += scdoc
