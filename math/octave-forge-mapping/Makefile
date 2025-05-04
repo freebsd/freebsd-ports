@@ -1,6 +1,5 @@
 PORTNAME=	octave-forge-mapping
-PORTVERSION=	1.4.2
-PORTREVISION=	5
+PORTVERSION=	1.4.3
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
@@ -11,8 +10,6 @@ WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
-
-BROKEN=		depends upon math/octave-forge-geometry, which is broken
 
 RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/io.tar.gz:math/octave-forge-io \
 		${OCTAVE_TARBALLS_DIR}/geometry.tar.gz:math/octave-forge-geometry
