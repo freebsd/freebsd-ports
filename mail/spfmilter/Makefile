@@ -1,6 +1,5 @@
 PORTNAME=	spfmilter
-PORTVERSION=	2.1
-PORTREVISION=	3
+PORTVERSION=	2.2
 CATEGORIES=	mail
 MASTER_SITES=	https://acme.com/software/spfmilter/
 
