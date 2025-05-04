@@ -10,6 +10,9 @@ WWW=		https://jmeter.apache.org/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Depends on expiring java/jdom
+EXPIRATION_DATE=2025-06-04
+
 # These are JAR-files installed by other ports. The list should keep
 # growing until all Java applications install just their own JARs -- not
 # the 3rd-party ones:

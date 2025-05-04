@@ -12,6 +12,9 @@ WWW=		https://xincluder.sourceforge.net/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/lgpl.txt
 
+DEPRECATED=	Depends on expiring java/jdom
+EXPIRATION_DATE=2025-06-04
+
 BUILD_DEPENDS=	${JAVALIBDIR}/jdom.jar:java/jdom \
 		${JAVALIBDIR}/xercesImpl.jar:textproc/xerces-j
 RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:java/jdom \

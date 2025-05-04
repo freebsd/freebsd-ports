@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java library for accessing and manipulating XML documents
 WWW=		http://www.jdom.org/
 
+DEPRECATED=	Depends on exired java/jaxen
+EXPIRATION_DATE=2025-06-04
+
 RUN_DEPENDS=	${JAVALIBDIR}/jaxen-jdom.jar:java/jaxen
 
 USES=		java:ant,run
