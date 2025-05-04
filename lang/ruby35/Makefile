@@ -26,7 +26,11 @@ CPE_UPDATE=	p0
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-# Bug?: With preview1 `./configure --with-ruby-version=minor` sets ruby version string to "3.5+0"
+# Upstream says "+0" is intentionally added to ruby version string
+# ("3.5+0" for example ) with pre-release version.
+# So use --with-ruby-version="${RUBY_VER}" rather than
+# --with-ruby-version=minor until 3.5.0 is released.
+# Reference; https://bugs.ruby-lang.org/issues/21278
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--disable-rpath \
 		--enable-install-static-library \
