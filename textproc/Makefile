@@ -2010,7 +2010,6 @@
     SUBDIR += sary
     SUBDIR += sassc
     SUBDIR += saxon
-    SUBDIR += saxon-devel
     SUBDIR += saxon-he
     SUBDIR += sc-aspell
     SUBDIR += scdoc

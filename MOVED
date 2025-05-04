@@ -4352,3 +4352,4 @@ textproc/unoconv||2025-05-04|Has expired: Deprecated upstream in 2021
 textproc/syck||2025-05-04|Has expired: Unfetchable, no response from upstream in a year
 textproc/soothsayer||2025-05-04|Has expired: Deprecated upstream, consider using deskutils/presage
 textproc/nux||2025-05-04|Has expired: Depends on deprecated port textproc/saxon-devel
+textproc/saxon-devel|textproc/saxon-he|2025-05-04|Has expired: Deprecated and unsupported upstream, consider using textproc/saxon-he
