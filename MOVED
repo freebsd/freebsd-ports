@@ -4341,3 +4341,4 @@ audio/linux-rl9-sdl_sound|misc/linux-rl9-sdl12-extralibs|2025-05-03|Merged into 
 graphics/acidwarp-sdl||2025-05-04|Has expired: Unmaintained by upstream as last release was in 2022
 games/xjewel||2025-05-04|Has expired: Unmaintained as last release was in 1994
 textproc/mysqlviz||2025-05-04|Has expired: Repo deleted upstream
+textproc/sdif||2025-05-04|Has expired: Deprecated upstream, repo archived Nov 21, 2018
