@@ -4391,3 +4391,4 @@ editors/ssed||2025-05-04|Has expired: Legacy "fork" that's based on legacy GNU s
 devel/rubygem-webby||2025-05-04|Has expired: Deprecated upstream in 2011
 devel/ccdoc||2025-05-04|Has expired: Obsolete utility
 www/moodle43||2025-05-04|Has expired: EOLed upstream
+net/libtnl||2025-05-04|Has expired: Unmaintained upstream and no consumers in the ports tree
