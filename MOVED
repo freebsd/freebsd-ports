@@ -4374,3 +4374,4 @@ textproc/resume-extensions||2025-05-04|Has expired: Depends on deprecated port t
 textproc/resume||2025-05-04|Has expired: Obsolete XML and XSL based system that targets résumés and curricu vitae
 textproc/add-css-links||2025-05-04|Has expired: Obsolete and unmaintained in tree for years
 textproc/print-n-times||2025-05-04|Has expired: Obsolete and unmaintained in tree for years
+textproc/cdif||2025-05-04|Has expired: Deprecated upstream, repo archived on Jun 25, 2018
