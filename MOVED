@@ -4367,3 +4367,4 @@ textproc/domc||2025-05-04|Has expired: Obsolete, doesn't support HTML5, DOM Leve
 textproc/ekhtml||2025-05-04|Has expired: Abandonware and obsolete, last release in 2002
 textproc/estraier||2025-05-04|Has expired: Obsolete and abandonware, last update in 2005
 textproc/confetti||2025-05-04|Has expired: Outdated and unmaintained in tree since 2018
+textproc/c2man||2025-05-04|Has expired: Not recommended for use in new projects
