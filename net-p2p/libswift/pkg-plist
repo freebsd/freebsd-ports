@@ -1,3 +1,0 @@
-bin/libswift
-@dir(%%SWIFT_USER%%,%%SWIFT_GROUP%%,0750) %%SWIFT_PIDDIR%%
-@dir(%%SWIFT_USER%%,%%SWIFT_GROUP%%,0755) %%SWIFT_SHAREDIR%%

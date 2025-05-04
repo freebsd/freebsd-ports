@@ -41,7 +41,6 @@
     SUBDIR += jigdo
     SUBDIR += ktorrent
     SUBDIR += libktorrent
-    SUBDIR += libswift
     SUBDIR += libtorrent
     SUBDIR += libtorrent-rasterbar
     SUBDIR += libtorrent-rasterbar2
