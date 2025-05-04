@@ -4372,3 +4372,4 @@ textproc/bsddiff||2025-05-04|Has expired: Obsolete, newer version imported into 
 textproc/aft||2025-05-04|Has expired: Obscure markup language and unmaintained in tree for years
 textproc/resume-extensions||2025-05-04|Has expired: Depends on deprecated port textproc/resume
 textproc/resume||2025-05-04|Has expired: Obsolete XML and XSL based system that targets résumés and curricu vitae
+textproc/add-css-links||2025-05-04|Has expired: Obsolete and unmaintained in tree for years
