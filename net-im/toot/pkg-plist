@@ -14,6 +14,7 @@ bin/toot
 %%PYTHON_SITELIBDIR%%/toot/cli/statuses.py
 %%PYTHON_SITELIBDIR%%/toot/cli/tags.py
 %%PYTHON_SITELIBDIR%%/toot/cli/timelines.py
+%%PYTHON_SITELIBDIR%%/toot/cli/timelines_v2.py
 %%PYTHON_SITELIBDIR%%/toot/cli/tui.py
 %%PYTHON_SITELIBDIR%%/toot/cli/validators.py
 %%PYTHON_SITELIBDIR%%/toot/config.py

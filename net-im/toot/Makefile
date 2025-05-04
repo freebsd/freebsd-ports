@@ -1,5 +1,5 @@
 PORTNAME=	toot
-DISTVERSION=	0.47.1
+DISTVERSION=	0.48.0
 CATEGORIES=	net-im python
 MASTER_SITES=	PYPI \
 		https://github.com/ihabunek/toot/releases/download/${DISTVERSION}/
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.5.0<5.0:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.1<9:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.8.1<3.0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.13<3.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.10.0<1.0:textproc/py-tomlkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urwid>=2.0.0<3.0:devel/py-urwid@${PY_FLAVOR} \
@@ -23,8 +24,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>=0:devel/py-flake8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}urwidgets>=0:devel/py-urwidgets@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	flavors pytest
@@ -35,6 +35,19 @@ NO_INSTALL=	yes
 
 SUB_FILES=	toot
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
+
+OPTIONS_DEFAULT=	IMAGES RICHTEXT
+OPTIONS_GROUP=		SUPPORT
+OPTIONS_GROUP_SUPPORT=	IMAGES RICHTEXT
+
+IMAGES_DESC=	Required to display images in the TUI
+RICHTEXT_DESC=	Required to display rich text in the TUI
+
+IMAGES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=9.5.0:graphics/py-pillow@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}term-image>=0.7.2:graphics/py-term-image@${PY_FLAVOR}
+RICHTEXT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urwidgets>=0.2<0.3:devel/py-urwidgets@${PY_FLAVOR}
+
+PORTSCOUT=		skipv:0.48.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/toot \
