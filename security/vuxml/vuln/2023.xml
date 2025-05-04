@@ -2538,7 +2538,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <affects>
       <package>
 	<name>libspf2</name>
-	<range><le>1.2.11</le></range>
+	<range><lt>1.2.11_1</lt></range>
       </package>
     </affects>
     <description>
@@ -2562,6 +2562,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2022-06-06</discovery>
       <entry>2023-10-04</entry>
+      <modified>2025-05-04</modified>
     </dates>
   </vuln>
 
