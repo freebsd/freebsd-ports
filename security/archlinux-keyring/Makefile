@@ -1,5 +1,5 @@
 PORTNAME=	archlinux-keyring
-DISTVERSION=	20240520
+DISTVERSION=	20250430.1
 CATEGORIES=	security
 
 MAINTAINER=	vishwin@FreeBSD.org
