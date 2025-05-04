@@ -1,11 +1,11 @@
 PORTNAME=	R.oo
-DISTVERSION=	1.27.0
+DISTVERSION=	1.27.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Methods and classes for object-oriented programming
-WWW=		https://cran.r-project.org/web/packages/R.oo/
+WWW=		https://cran.r-project.org/package=R.oo
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
