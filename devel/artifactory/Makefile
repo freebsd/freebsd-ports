@@ -15,6 +15,8 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.AFFERO
 LICENSE_FILE_APACHE20=	${WRKSRC}/tomcat/LICENSE
 
 FORBIDDEN=	Ships a very vulnerable Tomcat 8.5.23
+DEPRECATED=	Outdated with known vulnerabilities and marked as forbidden in 2023
+EXPIRATION_DATE=2025-05-31
 
 RUN_DEPENDS=	bash:shells/bash
 
