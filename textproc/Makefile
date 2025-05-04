@@ -1732,7 +1732,6 @@
     SUBDIR += reflex
     SUBDIR += regex2dfa
     SUBDIR += replaceit
-    SUBDIR += resume
     SUBDIR += rfcdiff
     SUBDIR += riffdiff
     SUBDIR += ripgrep
