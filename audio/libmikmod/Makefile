@@ -1,5 +1,5 @@
 PORTNAME=	libmikmod
-DISTVERSION=	3.3.12
+DISTVERSION=	3.3.13
 CATEGORIES=	audio
 MASTER_SITES=	SF/mikmod/${PORTNAME}/${DISTVERSION}/
 
@@ -9,7 +9,7 @@ WWW=		https://mikmod.sourceforge.net/
 
 LICENSE=	LGPL21
 
-USES=		cmake cpe pathfix pkgconfig
+USES=		cmake cpe pathfix
 CPE_VENDOR=	raphael_assenat
 USE_LDCONFIG=	yes
 
