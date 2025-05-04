@@ -9,6 +9,10 @@ WWW=		https://embed.cs.utah.edu/csmith/
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable
+DEPRECATED=	Unmaintained for years
+EXPIRATION_DATE=2024-06-30
+
 USES=		gmake libtool localbase perl5 shebangfix
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
