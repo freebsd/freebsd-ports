@@ -2006,7 +2006,6 @@
     SUBDIR += sad
     SUBDIR += sansi
     SUBDIR += sarep
-    SUBDIR += sary
     SUBDIR += sassc
     SUBDIR += saxon-he
     SUBDIR += sc-aspell
