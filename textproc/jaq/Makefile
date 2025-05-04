@@ -95,4 +95,9 @@ LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
 LDFLAGS+=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
 .endif
 
+# attempt to fix build on i386, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=284196#c1
+.if ${ARCH} == i386 && !${CFLAGS:M-march=*}
+CFLAGS+= -march=i586
+.endif
+
 .include <bsd.port.mk>
