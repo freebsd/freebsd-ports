@@ -10,5 +10,5 @@
  
 -@reboot         logcheck    if [ ! -d /run/systemd/system ] && [ -x /usr/sbin/logcheck ]; then nice -n10 /usr/sbin/logcheck -R; fi
 -2 * * * *       logcheck    if [ ! -d /run/systemd/system ] && [ -x /usr/sbin/logcheck ]; then nice -n10 /usr/sbin/logcheck; fi
-+@reboot         logcheck    if [ ! -d /run/systemd/system ] && [ -x %%PREFIX%%/sbin/logcheck ]; then nice -n10 %%PREFIX%%/sbin/logcheck -R; fi
-+2 * * * *       logcheck    if [ ! -d /run/systemd/system ] && [ -x %%PREFIX%%/sbin/logcheck ]; then nice -n10 %%PREFIX%%/sbin/logcheck; fi
++@reboot         if [ ! -d /run/systemd/system ] && [ -x %%PREFIX%%/sbin/logcheck ]; then /usr/bin/lockf -t 0 /tmp/.logcheck nice -n10 %%PREFIX%%/sbin/logcheck -R; fi
++2 * * * *       if [ ! -d /run/systemd/system ] && [ -x %%PREFIX%%/sbin/logcheck ]; then /usr/bin/lockf -t 0 /tmp/.logcheck nice -n10 %%PREFIX%%/sbin/logcheck; fi
