@@ -1,8 +1,7 @@
 PORTNAME=	hsqldb
-PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTVERSION=	2.7.4
 CATEGORIES=	databases java
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_2_3
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_2_7
 
 MAINTAINER=	jim@ohlste.in
 COMMENT=	Embeddable SQL database written in Java
@@ -14,7 +13,8 @@ USES=		java:ant,run zip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/build
-ALL_TARGET=	hsqldb hsqljdbc
+ALL_TARGET=	hsqldb sqltool
+MAKE_ARGS+=	-Djdk8string=''
 
 OPTIONS_DEFINE=	DOCS
 
@@ -22,8 +22,6 @@ do-install:
 	${MKDIR}  ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/hsqldb.jar \
 		${STAGEDIR}${JAVAJARDIR}/hsqldb.jar
-	${INSTALL_DATA} ${WRKSRC}/lib/hsqljdbc.jar \
-		${STAGEDIR}${JAVAJARDIR}/hsqljdbc.jar
 	${INSTALL_DATA} ${WRKSRC}/lib/sqltool.jar \
 		${STAGEDIR}${JAVAJARDIR}/sqltool.jar
 
