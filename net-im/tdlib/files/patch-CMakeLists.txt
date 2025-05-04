@@ -1,14 +1,8 @@
-- make tests and benchmarks conditional on special cmake variables, see https://github.com/tdlib/td/issues/1583
-
---- CMakeLists.txt.orig	2021-05-20 23:05:03 UTC
+--- CMakeLists.txt.orig	2025-04-30 22:25:21 UTC
 +++ CMakeLists.txt
-@@ -189,9 +189,11 @@ add_subdirectory(sqlite)
- 
- add_subdirectory(tddb)
- 
-+if (BUILD_TESTING)
- add_subdirectory(test)
-+endif()
+@@ -213,7 +213,7 @@ add_subdirectory(tde2e)
+ set(TDE2E_ENABLE_INSTALL ${TD_INSTALL_STATIC_LIBRARIES} CACHE BOOL "" FORCE)
+ add_subdirectory(tde2e)
  
 -if (NOT CMAKE_CROSSCOMPILING)
 +if (FREEBSD_BUILD_BENCHMARKS AND NOT CMAKE_CROSSCOMPILING)
