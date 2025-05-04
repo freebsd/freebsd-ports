@@ -1456,7 +1456,6 @@
     SUBDIR += privoxy
     SUBDIR += protovis
     SUBDIR += proxygen
-    SUBDIR += publicfile
     SUBDIR += punbb
     SUBDIR += py-Pituophis
     SUBDIR += py-Tenjin
