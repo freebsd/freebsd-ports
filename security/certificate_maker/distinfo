@@ -1,0 +1,5 @@
+TIMESTAMP = 1746359699
+SHA256 (go/security_certificate_maker/certificate_maker-v1.7.1/v1.7.1.mod) = f73db55e2700414badd445bbbd28a504fdf60ba8208dc64693b9fee081af96b1
+SIZE (go/security_certificate_maker/certificate_maker-v1.7.1/v1.7.1.mod) = 8422
+SHA256 (go/security_certificate_maker/certificate_maker-v1.7.1/v1.7.1.zip) = 10ef150900b5fc340fe7393523377d815a19c70cb9b37b61b7360f05b9ef76b9
+SIZE (go/security_certificate_maker/certificate_maker-v1.7.1/v1.7.1.zip) = 1235824
