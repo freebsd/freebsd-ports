@@ -576,6 +576,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/bin/clone_mmap_write
 %%TESTS%%share/zfs/zfs-tests/bin/clonefile
 %%TESTS%%share/zfs/zfs-tests/bin/cp_files
+%%TESTS%%share/zfs/zfs-tests/bin/crypto_test
 %%TESTS%%share/zfs/zfs-tests/bin/ctime
 %%TESTS%%share/zfs/zfs-tests/bin/dir_rd_update
 %%TESTS%%share/zfs/zfs-tests/bin/dosmode_readonly_write
@@ -1591,6 +1592,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_set/zpool_set_002_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_set/zpool_set_003_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_set/zpool_set_ashift.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_set/zpool_set_clear_userprop.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_set/zpool_set_common.kshlib
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_set/zpool_set_features.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/cleanup.ksh
@@ -1831,6 +1833,12 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cp_files/cp_stress.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cp_files/seekflood
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cp_files/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/crypto/aes_ccm_test.json
+%%TESTS%%share/zfs/zfs-tests/tests/functional/crypto/aes_ccm_test.txt
+%%TESTS%%share/zfs/zfs-tests/tests/functional/crypto/aes_gcm_test.json
+%%TESTS%%share/zfs/zfs-tests/tests/functional/crypto/aes_gcm_test.txt
+%%TESTS%%share/zfs/zfs-tests/tests/functional/crypto/icp_aes_ccm.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/crypto/icp_aes_gcm.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/crtime/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/crtime/crtime_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/crtime/setup.ksh
@@ -1848,7 +1856,9 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_legacy_fdt_mixed.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_legacy_fdt_upgrade.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_legacy_import.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_prune.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_quota.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_zap_shrink.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/delegate/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/delegate/delegate.cfg
@@ -2586,6 +2596,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/stat/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/stat/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/stat/stat_001_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/stat/statx_dioalign.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/suid_write_to_none.ksh
