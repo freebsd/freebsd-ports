@@ -4344,3 +4344,4 @@ textproc/mysqlviz||2025-05-04|Has expired: Repo deleted upstream
 textproc/sdif||2025-05-04|Has expired: Deprecated upstream, repo archived Nov 21, 2018
 textproc/xp||2025-05-04|Has expired: Obsolete, never versions of Java already include XML parser(s)
 textproc/turboxsl||2025-05-04|Has expired: Obsolete, supports only legacy versions of XML and XSLT
+textproc/docbook2odf||2025-05-04|Has expired: Upstream is gone and unmaintained in tree for years

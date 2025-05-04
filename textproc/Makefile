@@ -169,7 +169,6 @@
     SUBDIR += docbook-xsl-ns
     SUBDIR += docbook2X
     SUBDIR += docbook2mdoc
-    SUBDIR += docbook2odf
     SUBDIR += docbookrx
     SUBDIR += docproj
     SUBDIR += docproj-fonts-cjk
