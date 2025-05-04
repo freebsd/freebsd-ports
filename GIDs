@@ -803,7 +803,7 @@ opensearch:*:855:
 # free: 859
 plocate:*:860:
 # free: 861
-# free: 862
+timestamp-authority:*:862:
 trillian:*:863:
 mediamtx:*:864:
 z2m:*:865:

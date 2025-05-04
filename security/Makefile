@@ -1354,6 +1354,7 @@
     SUBDIR += testssl.sh
     SUBDIR += tfhe
     SUBDIR += theonionbox
+    SUBDIR += timestamp-authority
     SUBDIR += tinc
     SUBDIR += tinc-devel
     SUBDIR += tinyca

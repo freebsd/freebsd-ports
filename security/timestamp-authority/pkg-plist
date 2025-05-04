@@ -1,0 +1,3 @@
+bin/fetch-tsa-certs
+bin/timestamp-cli
+bin/timestamp-server
