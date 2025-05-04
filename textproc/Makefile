@@ -1733,7 +1733,6 @@
     SUBDIR += regex2dfa
     SUBDIR += replaceit
     SUBDIR += resume
-    SUBDIR += resume-extensions
     SUBDIR += rfcdiff
     SUBDIR += riffdiff
     SUBDIR += ripgrep
