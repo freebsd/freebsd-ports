@@ -55,7 +55,7 @@ _GST1_SOVERSION=	0.${_GST1_VERSION:R:E}${${_GST1_VERSION:E} > 9:?:0}${_GST1_VERS
 _GST1_CATEGORIES=	audio comms devel ftp graphics multimedia net security \
 			sysutils textproc www x11 x11-toolkits
 _GST1_PLUGINS_audio= 	a52dec alsa amrnb amrwbdec bs2b cdparanoia chromaprint faac \
-			faad flac flite gme gsm jack ladspa lame lv2 modplug \
+			faad fdkaac flac flite gme gsm jack ladspa lame lv2 modplug \
 			mpg123 ogg openmpt opus pulse shout2 sidplay \
 			sndfile sndio soundtouch speex taglib twolame vorbis \
 			wavpack webrtcdsp
@@ -143,6 +143,9 @@ gst-faac_PORT=		audio/gstreamer${_GST_VER}-plugins-faac
 gst-faac_IMPL=		bad
 
 gst-faad_PORT=		audio/gstreamer${_GST_VER}-plugins-faad
+gst-faad_IMPL=		bad
+
+gst-fdkaac_PORT=	audio/gstreamer${_GST_VER}-plugins-fdkaac
 gst-faad_IMPL=		bad
 
 gst-flac_PORT=		audio/gstreamer${_GST_VER}-plugins-flac

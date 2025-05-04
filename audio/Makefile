@@ -233,6 +233,7 @@
     SUBDIR += gstreamer1-plugins-chromaprint
     SUBDIR += gstreamer1-plugins-faac
     SUBDIR += gstreamer1-plugins-faad
+    SUBDIR += gstreamer1-plugins-fdkaac
     SUBDIR += gstreamer1-plugins-flac
     SUBDIR += gstreamer1-plugins-flite
     SUBDIR += gstreamer1-plugins-gme
