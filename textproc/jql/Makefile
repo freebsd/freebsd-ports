@@ -1,6 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	jql-v
-DISTVERSION=	8.0.5
+DISTVERSION=	8.0.6
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.6 \
-		anyhow-1.0.97 \
+		anyhow-1.0.98 \
 		autocfg-1.4.0 \
 		backtrace-0.3.74 \
 		bumpalo-3.16.0 \
@@ -35,8 +35,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.35 \
-		clap_builder-4.5.35 \
+		clap-4.5.37 \
+		clap_builder-4.5.37 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
@@ -117,7 +117,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.7.4 \
+		winnow-0.7.8 \
 		yansi-1.0.1
 PLIST_FILES=	bin/${PORTNAME}
 
