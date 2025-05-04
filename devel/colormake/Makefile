@@ -8,6 +8,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper to color gmake output
 WWW=		https://bre.klaki.net/programs/colormake/
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=2025-05-31
+
 RUN_DEPENDS=	gmake:devel/gmake \
 		bash:shells/bash
 
