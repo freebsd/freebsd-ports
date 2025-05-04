@@ -1293,7 +1293,6 @@
     SUBDIR += pod2mdoc
     SUBDIR += popup-stacks
     SUBDIR += ppower4
-    SUBDIR += print-n-times
     SUBDIR += pugixml
     SUBDIR += pup
     SUBDIR += py-CommonMark
