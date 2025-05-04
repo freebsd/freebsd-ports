@@ -89,7 +89,6 @@
     SUBDIR += retroshare
     SUBDIR += rslsync
     SUBDIR += rtorrent
-    SUBDIR += shx
     SUBDIR += sonarr
     SUBDIR += torrent-file-editor
     SUBDIR += torrentcheck
