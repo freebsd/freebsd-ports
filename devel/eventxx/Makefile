@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper for libevent
 WWW=		http://www.llucax.com.ar/~luca/eventxx/
 
+DEPRECATED=	Upstream is gone, unmaintained for 10+ years in tree
+EXPIRATION_DATE=2025-05-31
+
 LIB_DEPENDS=	libevent.so:devel/libevent
 
 NO_BUILD=	yes
