@@ -2,7 +2,7 @@
 
 OPTIONS_GROUP+=	THIRDPARTYGRP
 # External modules (arrayvar MUST appear after devel_kit for build-dep)
-OPTIONS_GROUP_THIRDPARTYGRP=	AJP AWS_AUTH BROTLI CACHE_PURGE CT \
+OPTIONS_GROUP_THIRDPARTYGRP=	AJP AWS_AUTH BROTLI CACHE_PURGE \
 	DEVEL_KIT ARRAYVAR DRIZZLE DYNAMIC_UPSTREAM ECHO ENCRYPTSESSION \
 	FIPS_CHECK FORMINPUT GRIDFS HEADERS_MORE HTTP_ACCEPT_LANGUAGE HTTP_AUTH_DIGEST \
 	HTTP_AUTH_KRB5 HTTP_AUTH_LDAP HTTP_AUTH_PAM HTTP_DAV_EXT HTTP_EVAL \
@@ -32,12 +32,6 @@ BROTLI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_brotli_filter_config
 
 CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:a84b0f3:cache_purge
 CACHE_PURGE_VARS=	DSO_EXTMODS+=cache_purge
-
-CT_IMPLIES=		HTTP_SSL
-CT_GH_TUPLE=		grahamedgecombe:nginx-ct:93e9884:ct
-CT_VARS=		DSO_EXTMODS+=ct
-CT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-ct-LibreSSL \
-			${PATCHDIR}/extra-patch-ngx_stream_ssl_ct_module.c
 
 ECHO_GH_TUPLE=		openresty:echo-nginx-module:5a402aa:echo
 ECHO_VARS=		DSO_EXTMODS+=echo
@@ -217,7 +211,7 @@ LUASTREAM_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUASTREAM_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
 LUASTREAM_CONFIGURE_ENV=LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
-LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:v0.0.15:luastream
+LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:v0.0.16:luastream
 LUASTREAM_VARS=		DSO_EXTMODS+=luastream
 
 LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.4:link
@@ -259,7 +253,7 @@ OTEL_LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 OTEL_BUILD_DEPENDS=	${LOCALBASE}/include/opentelemetry/proto/common/v1/common.proto:devel/opentelemetry-proto
 OTEL_CONFIGURE_ENV+=	NGX_OTEL_PROTO_DIR=${PREFIX}/include
 
-PASSENGER_NGINX_VER=	6.0.23
+PASSENGER_NGINX_VER=	6.0.27
 PASSENGER_CATEGORIES=	ruby
 PASSENGER_USES=		ruby
 PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake
