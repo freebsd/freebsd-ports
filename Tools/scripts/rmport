@@ -203,11 +203,10 @@ check_dep()
 get_PRs()
 {
 	catport=${1}
-	synopsis=${2}
 
-	log "${catport}: getting PRs having ${synopsis} in the synopsis"
+	log "${catport}: getting PRs having ${catport} in the synopsis"
 
-	url="https://bugs.freebsd.org/bugzilla/buglist.cgi?quicksearch=${synopsis}"
+	url="https://bugs.freebsd.org/bugzilla/buglist.cgi?quicksearch=${catport}"
 
 	raw="$(fetch -q -T 20 -o - "${url}")"
 
@@ -225,12 +224,11 @@ get_PRs()
 check_PRs()
 {
 	catport=${1}
-	synopsis=${2}
 
-	PRs="$(get_PRs ${catport} "${synopsis}")" || exit
+	PRs="$(get_PRs ${catport})" || exit
 
 	if [ -n "${PRs}" ] ; then
-		log "${catport}: PRs found, related to ${synopsis}:"
+		log "${catport}: related PRs found:"
 		printf "%s\n" "${PRs}" >&2
 
 		echo "you can skip ${catport} and continue with the rest or remove it anyway" >&2
@@ -389,7 +387,7 @@ if [ ${1} = "-p" ] ; then
 	if [ ${#} -ne 2 ] ; then
 		usage
 	fi
-	get_PRs "dummy" ${2}
+	get_PRs ${2}
 	exit
 fi
 
@@ -439,7 +437,7 @@ for catport in $* ; do
 		continue
 	fi
 
-	if ! check_PRs ${catport} ${port} ; then
+	if ! check_PRs ${catport} ; then
 		continue
 	fi
 
