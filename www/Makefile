@@ -446,7 +446,6 @@
     SUBDIR += moinmoincli
     SUBDIR += mongoose
     SUBDIR += monolith
-    SUBDIR += moodle41
     SUBDIR += moodle44
     SUBDIR += moodle45
     SUBDIR += moodle50
