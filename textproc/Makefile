@@ -246,7 +246,6 @@
     SUBDIR += gitlab-elasticsearch-indexer
     SUBDIR += gl-aspell
     SUBDIR += gladtex
-    SUBDIR += gmetadom
     SUBDIR += gnugrep
     SUBDIR += go-md2man
     SUBDIR += go-transifex-client
