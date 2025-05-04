@@ -340,7 +340,6 @@
     SUBDIR += jalingo
     SUBDIR += jaq
     SUBDIR += jarnal
-    SUBDIR += java2html
     SUBDIR += jaxup
     SUBDIR += jdictionary
     SUBDIR += jdictionary-int-eng

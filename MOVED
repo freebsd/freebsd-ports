@@ -4346,3 +4346,4 @@ textproc/xp||2025-05-04|Has expired: Obsolete, never versions of Java already in
 textproc/turboxsl||2025-05-04|Has expired: Obsolete, supports only legacy versions of XML and XSLT
 textproc/docbook2odf||2025-05-04|Has expired: Upstream is gone and unmaintained in tree for years
 textproc/sxml||2025-05-04|Has expired: No consumers in tree and no active development upstream for over a decade
+textproc/java2html||2025-05-04|Has expired: Upstream is gone and last update 20 years ago
