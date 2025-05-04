@@ -1106,6 +1106,7 @@
     SUBDIR += ratproxy
     SUBDIR += rats
     SUBDIR += rcracki_mt
+    SUBDIR += rekor
     SUBDIR += reop
     SUBDIR += rhash
     SUBDIR += rhonabwy

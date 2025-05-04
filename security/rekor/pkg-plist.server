@@ -1,0 +1,5 @@
+bin/backfill-index
+bin/cleanup-index
+bin/copy-index
+bin/rekor-server
+@sample etc/rekor/rekor-server.yaml.sample

@@ -802,7 +802,7 @@ opensearch:*:855:
 # free: 858
 # free: 859
 plocate:*:860:
-# free: 861
+rekor:*:861:
 timestamp-authority:*:862:
 trillian:*:863:
 mediamtx:*:864:
