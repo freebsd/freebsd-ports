@@ -43,7 +43,6 @@
     SUBDIR += a2png
     SUBDIR += aalib
     SUBDIR += aaphoto
-    SUBDIR += acidwarp-sdl
     SUBDIR += aeskulap
     SUBDIR += agg
     SUBDIR += airsaned
