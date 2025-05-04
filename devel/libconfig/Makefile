@@ -9,7 +9,7 @@ WWW=		https://www.hyperrealm.com/libconfig/libconfig.html
 
 LICENSE=	LGPL21
 
-USES=		autoreconf libtool pathfix
+USES=		libtool pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
