@@ -2074,7 +2074,6 @@
     SUBDIR += sv-mythes
     SUBDIR += svn2cl
     SUBDIR += sw-aspell
-    SUBDIR += sxml
     SUBDIR += syck
     SUBDIR += ta-aspell
     SUBDIR += tagsoup
