@@ -953,6 +953,7 @@
     SUBDIR += grcov
     SUBDIR += grex
     SUBDIR += grpc
+    SUBDIR += grpc-gateway
     SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsl-lite
     SUBDIR += gsoap
