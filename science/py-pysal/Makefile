@@ -12,6 +12,9 @@ WWW=		https://pysal.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Depends on expired math/py-spvcm
+EXPIRATION_DATE=2025-06-04
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}access>=1.1.8:science/py-access@${PY_FLAVOR} \
