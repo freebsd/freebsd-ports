@@ -4376,3 +4376,4 @@ textproc/add-css-links||2025-05-04|Has expired: Obsolete and unmaintained in tre
 textproc/print-n-times||2025-05-04|Has expired: Obsolete and unmaintained in tree for years
 textproc/cdif||2025-05-04|Has expired: Deprecated upstream, repo archived on Jun 25, 2018
 security/i2p||2025-05-04|Has expired: Outdated and unsupported upstream
+security/libuecc||2025-05-04|Has expired: Deprecated, only user was some never properly ported FreiFunk control plane software
