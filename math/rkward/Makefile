@@ -1,5 +1,5 @@
 PORTNAME=	rkward
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	math
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 
@@ -9,6 +9,7 @@ WWW=		https://rkward.kde.org/
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libR.so:math/R	\
 		libcups.so:print/cups	\
 		libxkbcommon.so:x11/libxkbcommon
@@ -25,8 +26,8 @@ USE_GL=		opengl
 USE_QT=		5compat base declarative positioning webchannel webengine
 USE_XORG=	ice x11 xext
 USE_KDE=	archive bookmarks breeze-icons colorscheme completion config	\
-		configwidgets coreaddons crash ecm doctools i18n itemviews	\
-		jobwidgets kio notifications parts service solid		\
+		configwidgets coreaddons crash ecm doctools guiaddons i18n	\
+		itemviews jobwidgets kio notifications parts service solid	\
 		syntaxhighlighting texteditor widgetsaddons windowsystem xmlgui
 
 TEST_TARGET=	plugintests

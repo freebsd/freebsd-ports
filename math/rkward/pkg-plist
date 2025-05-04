@@ -37,6 +37,10 @@ share/applications/org.kde.rkward.desktop
 %%NLS%%share/doc/HTML/nl/rkward/index.docbook
 %%NLS%%share/doc/HTML/nl/rkwardplugins/index.cache.bz2
 %%NLS%%share/doc/HTML/nl/rkwardplugins/index.docbook
+%%NLS%%share/doc/HTML/sl/rkward/index.cache.bz2
+%%NLS%%share/doc/HTML/sl/rkward/index.docbook
+%%NLS%%share/doc/HTML/sl/rkwardplugins/index.cache.bz2
+%%NLS%%share/doc/HTML/sl/rkwardplugins/index.docbook
 %%NLS%%share/doc/HTML/sv/rkward/index.cache.bz2
 %%NLS%%share/doc/HTML/sv/rkward/index.docbook
 %%NLS%%share/doc/HTML/sv/rkwardplugins/index.cache.bz2
@@ -185,6 +189,8 @@ share/ktexteditor_snippets/data/RKWardutils.xml
 %%NLS%%share/locale/gl/LC_MESSAGES/rkward__item_response_theory.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/rkward__pages.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/rkward__plots.mo
+%%NLS%%share/locale/he/LC_MESSAGES/rkward__graphics_device.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/rkward__analysis.mo
 %%NLS%%share/locale/ia/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/ia/LC_MESSAGES/rkward__analysis.mo
 %%NLS%%share/locale/ia/LC_MESSAGES/rkward__data.mo
@@ -360,12 +366,16 @@ share/man/de/man1/rkward.1.gz
 share/man/it/man1/rkward.1.gz
 %%PORTDOCS%%share/man/man1/rkward.1.gz
 share/man/nl/man1/rkward.1.gz
+share/man/sl/man1/rkward.1.gz
 share/man/sv/man1/rkward.1.gz
 share/man/uk/man1/rkward.1.gz
 share/metainfo/org.kde.rkward.metainfo.xml
 share/mime/packages/vnd.kde.rkward-output.xml
 share/mime/packages/vnd.kde.rmarkdown.xml
 share/mime/packages/vnd.rkward.r.xml
+%%DATADIR%%/00saveload/DownloadAppImage.js
+%%DATADIR%%/00saveload/DownloadAppImage.rkh
+%%DATADIR%%/00saveload/DownloadAppImage.xml
 %%DATADIR%%/00saveload/import/convert_encoding.js
 %%DATADIR%%/00saveload/import/convert_encoding.xml
 %%DATADIR%%/00saveload/import/import_csv.js
@@ -855,6 +865,7 @@ share/mime/packages/vnd.rkward.r.xml
 %%DATADIR%%/rkwarddev_scripts/README_how_to_use_rkwarddev_scripts.md
 %%DATADIR%%/rkwarddev_scripts/rkwarddev_power_plugin_script.R
 %%DATADIR%%/rkwarddev_scripts/rkwarddev_rk.RMarkdown_plugin_script.R
+%%DATADIR%%/rkwarddev_scripts/rkwarddev_rk.download_appimage_plugin_script.R
 %%DATADIR%%/rkwarddev_scripts/subset_dataframe.R
 %%DATADIR%%/rkwarddev_scripts/write_csv.R
 %%DATADIR%%/rpackages/rkward.tgz
