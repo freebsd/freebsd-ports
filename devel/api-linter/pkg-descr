@@ -1,0 +1,3 @@
+The API linter provides real-time checks for compliance with many of
+Google's API standards, documented using API Improvement Proposals. It
+operates on API surfaces defined in protocol buffers.
