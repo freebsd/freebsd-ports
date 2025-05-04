@@ -11,6 +11,9 @@ WWW=		https://github.com/wallix/awless
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=2025-05-31
+
 USES=		go
 
 USE_GITHUB=	yes
