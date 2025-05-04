@@ -288,7 +288,6 @@
     SUBDIR += hs-pandoc-crossref
     SUBDIR += hs-yaml
     SUBDIR += hsb-aspell
-    SUBDIR += htdig
     SUBDIR += html
     SUBDIR += html-pretty
     SUBDIR += html-xml-utils
