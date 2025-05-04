@@ -1,6 +1,6 @@
 PORTNAME=	sphinx-markdown-tables
 PORTVERSION=	0.0.17
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
@@ -11,7 +11,6 @@ COMMENT=	Sphinx extension for rendering tables written in markdown
 WWW=		https://github.com/ryanfox/sphinx-markdown-tables
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>=3.4:textproc/py-markdown@${PY_FLAVOR}
 
