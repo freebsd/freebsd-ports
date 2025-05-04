@@ -1018,6 +1018,7 @@
     SUBDIR += py-svg.path
     SUBDIR += py-svgelements
     SUBDIR += py-svgwrite
+    SUBDIR += py-term-image
     SUBDIR += py-termtosvg
     SUBDIR += py-tifffile
     SUBDIR += py-tkcolorpicker
