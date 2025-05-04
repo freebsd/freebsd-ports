@@ -4363,3 +4363,4 @@ textproc/htdig||2025-05-04|Has expired: Abandonware, multiple unresolved bugs an
 textproc/gmetadom||2025-05-04|Has expired: Abandonware, last release in 2007
 textproc/flip|converters/dos2unix|2025-05-04|Has expired: Unmaintained and dead upstream, consider using converters/dos2unix
 textproc/dom4j||2025-05-04|Has expired: Outdated and unsupported upstream
+textproc/domc||2025-05-04|Has expired: Obsolete, doesn't support HTML5, DOM Level 4 and DOM 2020-06
