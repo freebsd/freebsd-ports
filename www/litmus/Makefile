@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --with-neon=${LOCALBASE}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|25 26 27 28 29|& 30 31 32|g' \
+	@${REINPLACE_CMD} -e 's|25 26 27 28 29|& 30 31 32 34|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>
