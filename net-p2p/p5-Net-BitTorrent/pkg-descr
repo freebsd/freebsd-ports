@@ -1,3 +1,0 @@
-Net::BitTorrent is a class based implementation of the current
-BitTorrent Protocol Specification. Each Net::BitTorrent object is
-capable of handling several concurrent .torrent sessions.
