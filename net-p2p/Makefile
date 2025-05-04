@@ -69,7 +69,6 @@
     SUBDIR += oura
     SUBDIR += p5-Net-DirectConnect
     SUBDIR += p5-WWW-BitTorrent
-    SUBDIR += phex
     SUBDIR += prowlarr
     SUBDIR += pulsar-client-cpp
     SUBDIR += py-ed2k-tools

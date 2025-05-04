@@ -4381,3 +4381,4 @@ net-p2p/p5-Net-BitTorrent-PeerPacket||2025-05-04|Has expired: Deprecated, no act
 net-p2p/p5-Net-BitTorrent||2025-05-04|Has expired: Deprecated, no active development in more than a decade so any "new" functionality is missing and interoperability with recent software is very limited if not completely broken
 net-p2p/p5-Net-BitTorrent-File||2025-05-04|Has expired: Deprecated, no active development in more than a decade so any "new" functionality is missing and interoperability with recent software is very limited if not completely broken
 net-p2p/libswift||2025-05-04|Has expired: Upstream archived repo on Feb 19, 2024 and no active development in several years
+net-p2p/phex|net-p2p/gtk-gnutella|2025-05-04|Has expired: Abandonware, last update upstream in 2009. Consider using net-p2p/gtk-gnutella
