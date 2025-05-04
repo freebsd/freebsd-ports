@@ -4366,3 +4366,4 @@ textproc/dom4j||2025-05-04|Has expired: Outdated and unsupported upstream
 textproc/domc||2025-05-04|Has expired: Obsolete, doesn't support HTML5, DOM Level 4 and DOM 2020-06
 textproc/ekhtml||2025-05-04|Has expired: Abandonware and obsolete, last release in 2002
 textproc/estraier||2025-05-04|Has expired: Obsolete and abandonware, last update in 2005
+textproc/confetti||2025-05-04|Has expired: Outdated and unmaintained in tree since 2018

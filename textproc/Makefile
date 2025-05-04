@@ -115,7 +115,6 @@
     SUBDIR += codespell
     SUBDIR += colordiff
     SUBDIR += comrak
-    SUBDIR += confetti
     SUBDIR += confget
     SUBDIR += consul-template
     SUBDIR += cpp-peglib
