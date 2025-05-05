@@ -1,4 +1,4 @@
---- native/arguments.c.orig	2019-09-04 15:44:04 UTC
+--- native/arguments.c.orig	2025-01-06 00:00:00 UTC
 +++ native/arguments.c
 @@ -157,7 +157,7 @@ static arg_data *parse(int argc, char *argv[])
      args->help = false;                /* Don't display help */
@@ -20,3 +20,14 @@
          }
          else if (!strcmp(argv[x], "-restarts")) {
              temp = optional(argc, argv, x++);
+@@ -424,6 +420,10 @@ static arg_data *parse(int argc, char *argv[])
+         }
+         /* Java 11 specific options */
+         else if (!strncmp(argv[x], "--enable-preview", 16)) {
++            args->opts[args->onum++] = strdup(argv[x]);
++        }
++        /* Java 21 specific options */
++        else if (!strncmp(argv[x], "--enable-native-access=", 23)) {
+             args->opts[args->onum++] = strdup(argv[x]);
+         }
+         else if (*argv[x] == '-') {
