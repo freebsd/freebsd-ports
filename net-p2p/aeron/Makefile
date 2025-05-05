@@ -33,6 +33,6 @@ CMAKE_TESTING_ON=	AERON_TESTS \
 LDFLAGS+=	-lm \
 		-luuid
 
-# tests as of 1.44.6: 89% tests passed, 15 tests failed out of 131, see https://github.com/real-logic/aeron/issues/1696
+TESTING_UNSAFE=	tests as of 1.44.6: 89% tests passed, 15 tests failed out of 131, see https://github.com/real-logic/aeron/issues/1696
 
 .include <bsd.port.mk>
