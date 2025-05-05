@@ -1,5 +1,5 @@
 PORTNAME=	rtkit-unix
-DISTVERSION=	0.20250430
+DISTVERSION=	0.20250505
 CATEGORIES=	sysutils deskutils
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -17,7 +17,7 @@ USE_QT=		base
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arrowd
-GH_TAGNAME=	85dd73460e58fb3440462ad61c8d82b377de8b1a
+GH_TAGNAME=	e4465ba18d43e13af35f075e75056e11200867c5
 
 PLIST_FILES=	libexec/rtkit-daemon \
 		share/dbus-1/system-services/org.freedesktop.RealtimeKit1.service \
