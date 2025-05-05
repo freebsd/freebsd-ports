@@ -260,10 +260,6 @@ RUNHASKELL?=	${BOOT_INSTALL_DIR}/bin/runhaskell
 RUNHASKELL?=	${LOCALBASE}/bin/runhaskell
 .endif
 
-.PHONY: fixup-plist
-fixup-plist:
-	${RUNHASKELL} ${PATCHDIR}/fixup-plist.hs ${.CURDIR}/pkg-plist
-
 # Create a bootstrap compiler tar ball: run this in an interactive poudriere jail
 # Set all OPTIONS to OFF when generating bootstraps
 .PHONY: create-bootstrap
