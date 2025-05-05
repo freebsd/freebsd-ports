@@ -1,6 +1,6 @@
---- native/jsvc-unix.c.orig	2017-11-15 11:51:22 UTC
+--- native/jsvc-unix.c.orig	2025-01-06 00:00:00 UTC
 +++ native/jsvc-unix.c
-@@ -717,18 +717,13 @@ static void remove_tmp_file(arg_data *ar
+@@ -731,18 +731,13 @@ static int wait_child(arg_data *args, int pid)
   */
  static int wait_child(arg_data *args, int pid)
  {
@@ -21,7 +21,7 @@
      while (count > 0) {
          sleep(1);
          /* check if the controler is still running */
-@@ -767,7 +762,6 @@ static int wait_child(arg_data *args, in
+@@ -781,7 +776,6 @@ static int wait_child(arg_data *args, int pid)
                  }
              }
          }
@@ -29,7 +29,7 @@
          count--;
      }
      /* It takes more than the wait time to start,
-@@ -901,11 +895,11 @@ static int child(arg_data *args, home_da
+@@ -915,11 +909,11 @@ static int child(arg_data *args, home_data *data, uid_
      create_tmp_file(args);
      while (!stopping) {
  #if defined(OSD_POSIX)
@@ -41,9 +41,9 @@
 -        sleep(60);
 +        sleep(1);
  #endif
-         if(doreopen) {
+         if (doreopen) {
              doreopen = false;
-@@ -924,7 +918,7 @@ static int child(arg_data *args, home_da
+@@ -938,7 +932,7 @@ static int child(arg_data *args, home_data *data, uid_
          return 6;
  
      if (doreload == true)
@@ -52,7 +52,7 @@
      else
          ret = 0;
  
-@@ -1341,10 +1335,10 @@ static int run_controller(arg_data *args
+@@ -1348,10 +1342,10 @@ static int run_controller(arg_data *args, home_data *d
              if (args->vers != true && args->chck != true && status != 122)
                  remove_pid_file(args, pid);
  
@@ -65,7 +65,7 @@
                      if (args->restarts == 0) {
                          log_debug("Service failure, restarts disabled");
                          return 1;
-@@ -1356,7 +1350,7 @@ static int run_controller(arg_data *args
+@@ -1363,7 +1357,7 @@ static int run_controller(arg_data *args, home_data *d
                      log_debug("Reloading service");
                      restarts++;
                      /* prevent looping */
