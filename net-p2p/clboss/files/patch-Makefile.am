@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2025-05-05 16:37:48 UTC
++++ Makefile.am
+@@ -571,7 +571,7 @@ EXTRA_DIST = \
+     generate_commit_hash.sh \
+     commit_hash.h
+ 
+-AM_CXXFLAGS = -Wall -Werror $(PTHREAD_CFLAGS) $(libev_CFLAGS) $(SQLITE3_CFLAGS) $(CURL_CFLAGS) $(CLBOSS_CXXFLAGS)
++AM_CXXFLAGS = -Wall $(PTHREAD_CFLAGS) $(libev_CFLAGS) $(SQLITE3_CFLAGS) $(CURL_CFLAGS) $(CLBOSS_CXXFLAGS)
+ LDADD = libclboss.la $(PTHREAD_LIBS) $(libev_LIBS) $(SQLITE3_LIBS) $(CURL_LIBS)
+ 
+ if ENABLE_EXCEPTION_BACKTRACE
