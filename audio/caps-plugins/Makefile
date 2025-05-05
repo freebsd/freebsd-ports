@@ -5,7 +5,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://quitte.de/dsp/
 DISTNAME=	caps_${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The C* LADSPA Audio Plugin Suite
 WWW=		http://quitte.de/dsp/caps.html
 
