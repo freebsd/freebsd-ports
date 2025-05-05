@@ -48,7 +48,9 @@ SHEBANG_FILES=	bin/bout-add-mod-path \
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		BOUT_USE_SYSTEM_FMT
 CMAKE_OFF=	BOUT_TESTS
-CMAKE_TESTING_ON=	BOUT_TESTS # 6 tests fail, see https://github.com/boutproject/BOUT-dev/issues/2980
+CMAKE_TESTING_ON=	BOUT_TESTS
+
+TESTING_UNSAFE=	6 tests fail, see https://github.com/boutproject/BOUT-dev/issues/2980
 
 CXXFLAGS+=	-I${WRKSRC}/include
 LDFLAGS+=	-lexecinfo
