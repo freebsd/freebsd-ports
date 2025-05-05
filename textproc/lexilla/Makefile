@@ -1,5 +1,5 @@
 PORTNAME=	lexilla
-DISTVERSION=	5.3.2
+DISTVERSION=	5.4.4
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.scintilla.org/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -13,10 +13,9 @@ LICENSE_NAME=	License for Lexilla, Scintilla and SciTE
 LICENSE_FILE=	${WRKSRC}/../License.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-#LIB_DEPENDS=	libscintilla.so:x11-toolkits/scintilla
 BUILD_DEPENDS=	scintilla>0:x11-toolkits/scintilla
 
-USES=		compiler:c++17-lang cpe gmake gnome iconv pkgconfig tar:tgz
+USES=		compiler:c++17-lang cpe gmake pkgconfig tar:tgz
 
 USE_LDCONFIG=	yes
 
@@ -40,6 +39,10 @@ PLIST_FILES=	include/lexilla/Lexilla.h \
 .if ${CHOSEN_COMPILER_TYPE} == clang
 MAKE_ARGS+=	CLANG=1
 .endif
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|../../scintilla/include|$$(LOCALBASE)/include/scintilla|g' \
+		${WRKSRC}/deps.mak
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/lexilla
