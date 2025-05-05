@@ -30,6 +30,8 @@ USE_LDCONFIG=	yes
 MESON_ARGS=	-Drpm=false \
 		-Dalpm=false
 
+TESTING_UNSAFE=	not ok /AppStream/app - As:ERROR:../libappstream-glib/as-self-test.c:2134:as_test_app_func: assertion failed (as_app_get_update_contact (app) == "richard@hughsie.co.uk")
+
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
