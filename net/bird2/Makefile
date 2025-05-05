@@ -1,5 +1,5 @@
 PORTNAME=	bird
-DISTVERSION=	2.17
+DISTVERSION=	2.17.1
 CATEGORIES=	net
 MASTER_SITES=	https://bird.network.cz/download/
 PKGNAMESUFFIX=	2
