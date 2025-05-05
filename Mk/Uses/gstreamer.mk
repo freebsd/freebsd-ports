@@ -146,7 +146,7 @@ gst-faad_PORT=		audio/gstreamer${_GST_VER}-plugins-faad
 gst-faad_IMPL=		bad
 
 gst-fdkaac_PORT=	audio/gstreamer${_GST_VER}-plugins-fdkaac
-gst-faad_IMPL=		bad
+gst-fdkaac_IMPL=	bad
 
 gst-flac_PORT=		audio/gstreamer${_GST_VER}-plugins-flac
 gst-flac_IMPL=		good
