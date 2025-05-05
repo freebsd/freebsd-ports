@@ -1,6 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.0
+DISTVERSION=	0.16.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -41,7 +41,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.7 \
-		anyhow-1.0.97 \
+		anyhow-1.0.98 \
 		arc-swap-1.7.1 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
@@ -49,17 +49,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		async-channel-2.3.1 \
 		async-trait-0.1.88 \
 		atoi-2.0.0 \
-		auto_impl-1.2.1 \
 		autocfg-1.4.0 \
 		backtrace-0.3.74 \
 		backtrace-ext-0.2.1 \
 		base64-0.21.7 \
-		base64-simd-0.7.0 \
+		base64-simd-0.8.0 \
 		bimap-0.6.3 \
 		bitflags-1.3.2 \
 		bitflags-2.9.0 \
 		bitvec-1.0.1 \
-		blake3-1.8.1 \
+		blake3-1.8.0 \
 		block-buffer-0.10.4 \
 		bstr-1.11.3 \
 		btoi-0.4.3 \
@@ -77,16 +76,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.35 \
-		clap_builder-4.5.35 \
-		clap_complete-4.5.47 \
+		clap-4.5.37 \
+		clap_builder-4.5.37 \
+		clap_complete-4.5.48 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		clru-0.6.2 \
 		codespan-reporting-0.11.1 \
-		codspeed-2.10.0 \
-		codspeed-criterion-compat-2.10.0 \
-		codspeed-criterion-compat-walltime-2.10.0 \
+		codspeed-2.9.1 \
+		codspeed-criterion-compat-2.9.1 \
+		codspeed-criterion-compat-walltime-2.9.1 \
 		colorchoice-1.0.3 \
 		colored-2.2.0 \
 		compact_str-0.6.1 \
@@ -101,14 +100,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		crc32fast-1.4.2 \
 		criterion-plot-0.5.0 \
 		crossbeam-0.8.4 \
-		crossbeam-channel-0.5.14 \
+		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-queue-0.3.12 \
 		crossbeam-utils-0.8.21 \
 		crunchy-0.2.3 \
 		crypto-common-0.1.6 \
-		daggy-0.8.1 \
+		daggy-0.9.0 \
 		darling-0.20.11 \
 		darling_core-0.20.11 \
 		darling_macro-0.20.11 \
@@ -139,7 +138,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		enum-as-inner-0.6.1 \
 		env_filter-0.1.3 \
 		env_home-0.1.0 \
-		env_logger-0.11.8 \
+		env_logger-0.11.7 \
 		equator-0.4.2 \
 		equator-macro-0.4.2 \
 		equivalent-1.0.2 \
@@ -153,7 +152,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		findshlibs-0.10.2 \
 		fixedbitset-0.4.2 \
 		fixedbitset-0.5.7 \
-		flate2-1.1.1 \
+		flate2-1.1.0 \
+		fluent-uri-0.1.4 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		form_urlencoded-1.2.1 \
@@ -298,7 +298,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lock_api-0.4.12 \
 		log-0.4.27 \
 		lru-cache-0.1.2 \
-		lsp-types-0.94.1 \
+		lsp-types-0.97.0 \
 		mac-0.1.1 \
 		maplit-1.0.2 \
 		mark-flaky-tests-1.0.2 \
@@ -310,8 +310,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		memmap2-0.5.10 \
 		memmap2-0.9.5 \
 		merkle_hash-3.8.0 \
-		miette-7.5.0 \
-		miette-derive-7.5.0 \
+		miette-7.6.0 \
+		miette-derive-7.6.0 \
 		mime-0.3.17 \
 		mime_guess-2.0.5 \
 		minimal-lexical-0.2.1 \
@@ -345,7 +345,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		oorandom-11.1.5 \
 		opener-0.7.2 \
 		option-ext-0.2.0 \
-		outref-0.1.0 \
+		outref-0.5.2 \
 		owo-colors-4.2.0 \
 		parking-2.2.1 \
 		parking_lot-0.12.3 \
@@ -361,7 +361,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pest_generator-2.8.0 \
 		pest_meta-2.8.0 \
 		petgraph-0.6.5 \
-		petgraph-0.7.1 \
+		petgraph-0.8.1 \
 		phf-0.11.3 \
 		phf_codegen-0.11.3 \
 		phf_generator-0.11.3 \
@@ -420,15 +420,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ring-0.17.14 \
 		rle-decode-fast-1.0.3 \
 		ropey-1.6.1 \
-		rust-embed-8.6.0 \
-		rust-embed-impl-8.6.0 \
-		rust-embed-utils-8.6.0 \
+		rust-embed-8.7.0 \
+		rust-embed-impl-8.7.0 \
+		rust-embed-utils-8.7.0 \
 		rustc-demangle-0.1.24 \
-		rustc-hash-1.1.0 \
 		rustc-hash-2.1.1 \
-		rustc_version-0.2.3 \
 		rustix-0.38.44 \
-		rustix-1.0.5 \
+		rustix-1.0.3 \
 		rustls-0.21.12 \
 		rustls-pemfile-1.0.4 \
 		rustls-webpki-0.101.7 \
@@ -439,9 +437,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
 		sct-0.7.1 \
-		semver-0.9.0 \
 		semver-1.0.26 \
-		semver-parser-0.7.0 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
 		serde_json-1.0.140 \
@@ -456,13 +452,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		shlex-1.3.0 \
 		signal-hook-0.3.17 \
 		signal-hook-registry-1.4.2 \
-		simd-abstraction-0.7.1 \
 		similar-2.7.0 \
 		siphasher-1.0.1 \
 		slab-0.4.9 \
-		smallvec-1.14.0 \
+		smallvec-1.15.0 \
 		socket2-0.5.9 \
-		sourcemap-9.1.2 \
+		sourcemap-9.2.0 \
 		spdx-0.10.8 \
 		stable_deref_trait-1.2.0 \
 		str_indices-0.4.4 \
@@ -479,6 +474,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		syn-1.0.109 \
 		syn-2.0.100 \
 		sync_wrapper-0.1.2 \
+		sync_wrapper-1.0.2 \
 		synstructure-0.13.1 \
 		syntree-0.18.0 \
 		syntree_layout-0.4.0 \
@@ -502,21 +498,21 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.44.1 \
+		tokio-1.44.2 \
 		tokio-macros-2.5.0 \
 		tokio-rustls-0.24.1 \
 		tokio-tungstenite-0.21.0 \
-		tokio-util-0.7.14 \
+		tokio-util-0.7.15 \
 		toml-0.5.11 \
-		toml-0.8.20 \
-		toml_datetime-0.6.8 \
+		toml-0.8.22 \
+		toml_datetime-0.6.9 \
 		toml_edit-0.19.15 \
-		toml_edit-0.22.24 \
+		toml_edit-0.22.26 \
+		toml_write-0.1.1 \
 		topological-sort-0.2.2 \
-		tower-0.4.13 \
+		tower-0.5.2 \
 		tower-layer-0.3.3 \
-		tower-lsp-0.20.0 \
-		tower-lsp-macros-0.9.0 \
+		tower-lsp-server-0.21.1 \
 		tower-service-0.3.3 \
 		tracing-0.1.41 \
 		tracing-attributes-0.1.28 \
@@ -545,6 +541,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		utf8parse-0.2.2 \
 		uuid-1.16.0 \
 		version_check-0.9.5 \
+		vsimd-0.8.0 \
 		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
@@ -602,7 +599,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.5.40 \
-		winnow-0.7.4 \
+		winnow-0.7.7 \
 		winreg-0.50.0 \
 		winsafe-0.0.19 \
 		wit-bindgen-rt-0.39.0 \
