@@ -1,0 +1,8 @@
+A Rust HTTP server for Python applications built on top of the
+Hyper crate.
+
+Features:
+- Supports ASGI/3, RSGI and WSGI interface applications
+- Implements HTTP/1 and HTTP/2 protocols
+- Supports HTTPS
+- Supports Websockets
