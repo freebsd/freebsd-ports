@@ -109,18 +109,24 @@ required_dirs="${_tomcat_catalina_tmpdir}"
 extra_commands="reload"
 
 _tomcat_java_version=`${_tomcat_java_home}/bin/java -version 2>&1 | /usr/bin/awk -F '"' '/version/ {print $2}'`
+_tomcat_java9_opts="\
+	--add-opens=java.base/java.lang=ALL-UNNAMED \
+	--add-opens=java.base/java.lang.invoke=ALL-UNNAMED \
+	--add-opens=java.base/java.lang.reflect=ALL-UNNAMED \
+	--add-opens=java.base/java.io=ALL-UNNAMED \
+	--add-opens=java.base/java.util=ALL-UNNAMED \
+	--add-opens=java.base/java.util.concurrent=ALL-UNNAMED \
+	--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED"
+_tomcat_java17_opts="--enable-native-access=ALL-UNNAMED"
 
 case "${_tomcat_java_version}" in
-	9* | [1-2][0-9]* )
+	1[7-9]* | [2-9][0-9]* )
 		_tomcat_endorsed_dirs_option=
-		export JAVA_TOOL_OPTIONS="\
-			--add-opens=java.base/java.lang=ALL-UNNAMED \
-			--add-opens=java.base/java.lang.invoke=ALL-UNNAMED \
-			--add-opens=java.base/java.lang.reflect=ALL-UNNAMED \
-			--add-opens=java.base/java.io=ALL-UNNAMED \
-			--add-opens=java.base/java.util=ALL-UNNAMED \
-			--add-opens=java.base/java.util.concurrent=ALL-UNNAMED \
-			--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED"
+		_tomcat_java_opts="${_tomcat_java_opts} ${_tomcat_java9_opts} ${_tomcat_java17_opts}"
+		;;
+	9* | 1[0-6]* )
+		_tomcat_endorsed_dirs_option=
+		_tomcat_java_opts="${_tomcat_java_opts} ${_tomcat_java9_opts}"
 		;;
 	*)
 		_tomcat_endorsed_dirs_option="-Djava.endorsed.dirs='${_tomcat_catalina_home}/endorsed'"
