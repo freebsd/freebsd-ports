@@ -1,6 +1,6 @@
 PORTNAME=	uae
 PORTVERSION=	0.8.29
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/grembo
 
@@ -16,19 +16,13 @@ USES=		gmake gnome pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD
-USES+=	llvm:max=15
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|build68kc|build68k|' \
-		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|struct socketbase {|extern &|' \
-		${WRKSRC}/src/include/bsdsocket.h
+pre-patch:
 	@${LN} -sf ../md-ppc/support.c ${WRKSRC}/src/md-ppc-gcc/support.c
 
 do-install:
