@@ -1,6 +1,5 @@
 PORTNAME=	mahjong
-PORTVERSION=	1.16
-PORTREVISION=	2
+PORTVERSION=	1.17
 CATEGORIES=	games net
 MASTER_SITES=	http://mahjong.julianbradfield.org/Source/%SUBDIR%/
 DISTNAME=	mj-${PORTVERSION}-src
