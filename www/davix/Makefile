@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libuuid.so:misc/e2fsprogs-libuuid
+TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++11-lang gnome localbase:ldflags python:build shebangfix ssl
 SHEBANG_GLOB=	*.py
@@ -23,7 +24,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cern-fts
 
 CMAKE_OFF=	EMBEDDED_LIBCURL DAVIX_TESTS
-CMAKE_TESTING_ON=	DAVIX_TESTS UNIT_TESTS BENCH_TESTS # 1 test fails, and several tests hang, see https://github.com/cern-fts/davix/issues/108
+CMAKE_TESTING_ON=	DAVIX_TESTS UNIT_TESTS BENCH_TESTS
+
+TESTING_UNSAFE=	1 test fails, and several tests hang, see https://github.com/cern-fts/davix/issues/108
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
