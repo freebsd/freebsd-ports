@@ -1536,6 +1536,7 @@
     SUBDIR += py-dj50-drf-spectacular-sidecar
     SUBDIR += py-dj50-strawberry-graphql-django
     SUBDIR += py-dj51-channels
+    SUBDIR += py-dj51-channels-redis
     SUBDIR += py-dj51-django-auth-ldap
     SUBDIR += py-dj51-django-choices-field
     SUBDIR += py-dj51-django-cors-headers
