@@ -132,6 +132,7 @@ share/man/man7/qemu-storage-daemon-qmp-ref.7.gz
 %%DATADIR%%/multiboot_dma.bin
 %%DATADIR%%/multiboot.bin
 %%DATADIR%%/npcm7xx_bootrom.bin
+%%DATADIR%%/npcm8xx_bootrom.bin
 %%DATADIR%%/openbios-ppc
 %%DATADIR%%/openbios-sparc32
 %%DATADIR%%/openbios-sparc64
