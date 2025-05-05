@@ -1,6 +1,6 @@
 --- Makefile.in.orig	2020-07-14 20:59:31.000000000 +0200
 +++ Makefile.in	2020-07-17 09:19:21.008884000 +0200
-@@ -59,7 +59,7 @@ RT_LAYOUT		=	@rt_layout_name@
+@@ -59,7 +59,7 @@ CONFIG_FILE		=	$(CONFIG_FILE_PATH)/RT_Config.pm
  
  CONFIG_FILE_PATH	=	@CONFIG_FILE_PATH_R@
  CONFIG_FILE		=	$(CONFIG_FILE_PATH)/RT_Config.pm
@@ -9,16 +9,7 @@
  
  
  RT_VERSION_MAJOR	=	@RT_VERSION_MAJOR@
-@@ -106,7 +106,7 @@ RT_FONT_PATH		=	@RT_FONT_PATH_R@
- RT_LEXICON_PATH		=	@RT_LEXICON_PATH_R@
- RT_STATIC_PATH		=	@RT_STATIC_PATH_R@
- RT_LOCAL_PATH		=	@RT_LOCAL_PATH_R@
--LOCAL_PLUGIN_PATH	=	@RT_LOCAL_PATH_R@/plugins
-+LOCAL_PLUGIN_PATH	=	@RT_LOCAL_PATH_R@/share/rt50/plugins
- LOCAL_ETC_PATH		=	@LOCAL_ETC_PATH_R@
- LOCAL_LIB_PATH		=	@LOCAL_LIB_PATH_R@
- LOCAL_LEXICON_PATH	=	@LOCAL_LEXICON_PATH_R@
-@@ -275,16 +275,13 @@ testdeps:
+@@ -279,16 +279,13 @@ fixdeps:
  depends: fixdeps
  
  fixdeps:
@@ -36,7 +27,7 @@
  
  
  	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_BIN_PATH)
-@@ -306,12 +303,6 @@ fixperms:
+@@ -310,12 +307,6 @@ fixperms:
  	# Make the system binaries executable also
  	cd $(DESTDIR)$(RT_SBIN_PATH) && ( chmod 0755 $(SYSTEM_BINARIES) ; chown $(BIN_OWNER) $(SYSTEM_BINARIES);  chgrp $(RTGROUP) $(SYSTEM_BINARIES))
  
@@ -49,7 +40,7 @@
  	# Make the web ui readable by all. 
  	chmod -R  u+rwX,go-w,go+rX 	$(DESTDIR)$(MASON_HTML_PATH) \
  					$(DESTDIR)$(MASON_LOCAL_HTML_PATH) \
-@@ -363,14 +354,14 @@ clean-mason-cache:
+@@ -367,14 +358,14 @@ clean-mason-cache:
  	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/etc/*
  	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/obj/*
  
@@ -64,11 +55,11 @@
 -@COMMENT_INPLACE_LAYOUT@	[ -f $(DESTDIR)$(SITE_CONFIG_FILE) ] || $(INSTALL) -m 0640 -o $(BIN_OWNER) -g $(RTGROUP) etc/RT_SiteConfig.pm $(DESTDIR)$(SITE_CONFIG_FILE) 
 +@COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -d $(DESTDIR)$(CONFIG_FILE_PATH)
 +@COMMENT_INPLACE_LAYOUT@	-$(INSTALL) -m 0440 etc/RT_Config.pm $(DESTDIR)$(CONFIG_FILE)
-+@COMMENT_INPLACE_LAYOUT@	[ -f $(DESTDIR)$(SITE_CONFIG_FILE) ] || $(INSTALL) -m 0640 etc/RT_SiteConfig.pm $(DESTDIR)$(SITE_CONFIG_FILE) 
++@COMMENT_INPLACE_LAYOUT@	[ -f $(DESTDIR)$(SITE_CONFIG_FILE) ] || $(INSTALL) -m 0640 etc/RT_SiteConfig.pm $(DESTDIR)$(SITE_CONFIG_FILE)
  @COMMENT_INPLACE_LAYOUT@	@echo "Installed configuration. About to install RT in  $(RT_PATH)"
  
  test: 
-@@ -462,19 +453,12 @@ etc-install:
+@@ -466,19 +457,12 @@ etc-install:
  @COMMENT_INPLACE_LAYOUT@	for file in $(ETC_FILES) ; do \
  @COMMENT_INPLACE_LAYOUT@	    $(INSTALL) -m 0644 "etc/$$file" "$(DESTDIR)$(RT_ETC_PATH)/" ; \
  @COMMENT_INPLACE_LAYOUT@	done
@@ -89,7 +80,7 @@
  @COMMENT_INPLACE_LAYOUT@	done
  
  
-@@ -482,7 +466,7 @@ sbin-install:
+@@ -486,7 +470,7 @@ bin-install:
  bin-install:
  @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -d $(DESTDIR)$(RT_BIN_PATH)
  @COMMENT_INPLACE_LAYOUT@	for file in $(BINARIES) ; do \
