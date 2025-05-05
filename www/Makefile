@@ -1557,6 +1557,7 @@
     SUBDIR += py-dj51-djangorestframework
     SUBDIR += py-dj51-drf-spectacular
     SUBDIR += py-dj51-drf-spectacular-sidecar
+    SUBDIR += py-dj51-drf-writable-nested
     SUBDIR += py-dj51-social-auth-app-django
     SUBDIR += py-dj51-strawberry-graphql-django
     SUBDIR += py-django-admin-rangefilter
