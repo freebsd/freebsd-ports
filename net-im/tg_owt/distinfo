@@ -1,7 +1,5 @@
-TIMESTAMP = 1745936846
-SHA256 (desktop-app-tg_owt-0.0.20250429-698c4f7_GH0.tar.gz) = 76dbcfc393dc8eef3e7d131778e7b78f0a9745c77deacc10adb7f186d29aa6d9
-SIZE (desktop-app-tg_owt-0.0.20250429-698c4f7_GH0.tar.gz) = 11716320
+TIMESTAMP = 1746127286
+SHA256 (desktop-app-tg_owt-0.0.20250501-c4192e8_GH0.tar.gz) = 87a58d153e0e0a12521335a41e695befd1abf72ec3545db48c8f4cc801116d52
+SIZE (desktop-app-tg_owt-0.0.20250501-c4192e8_GH0.tar.gz) = 11716225
 SHA256 (osokin-libyuv-04821d1_GH0.tar.gz) = cffd73dc527a8991e0fa78f0013d5db457a55298dada5896b4d6fa1b4ec5713f
 SIZE (osokin-libyuv-04821d1_GH0.tar.gz) = 559577
-SHA256 (4f7618d717335ec7e96ee665591aae87e8caf22d.patch) = 6fafbce24ffec707fa0556591cbe551aa946c0b4c6efa1ca25867dd3af0a2e89
-SIZE (4f7618d717335ec7e96ee665591aae87e8caf22d.patch) = 1478

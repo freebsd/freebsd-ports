@@ -1,5 +1,5 @@
 PORTNAME=	tg_owt
-PORTVERSION=	0.0.20250429
+PORTVERSION=	0.0.20250501
 CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org
@@ -27,7 +27,7 @@ USE_XORG=	x11 xcomposite xdamage xrender xrandr xtst
 USE_GL=		gbm gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	desktop-app
-GH_TAGNAME=	698c4f7
+GH_TAGNAME=	c4192e8
 
 CMAME_ON=	TG_OWT_PACKAGED_BUILD
 
