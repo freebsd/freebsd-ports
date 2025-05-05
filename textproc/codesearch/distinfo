@@ -1,3 +1,5 @@
-TIMESTAMP = 1578920429
-SHA256 (google-codesearch-v1.1.0_GH0.tar.gz) = b177021d1da1ddfc333fcbfc679eadd62c8677a6ae6119f25c4ad6b912bcdd7e
-SIZE (google-codesearch-v1.1.0_GH0.tar.gz) = 34076
+TIMESTAMP = 1746484009
+SHA256 (go/textproc_codesearch/codesearch-v1.3.0-rc.1/v1.3.0-rc.1.mod) = 6d44cd220a4066e0b61021d3d0bc7bcb431db29312e5b2f1160a692b8d07574f
+SIZE (go/textproc_codesearch/codesearch-v1.3.0-rc.1/v1.3.0-rc.1.mod) = 45
+SHA256 (go/textproc_codesearch/codesearch-v1.3.0-rc.1/v1.3.0-rc.1.zip) = 697c29ada1133f2407209b1ae94579002b7fe7d043a31e3c5e7492653e0e9429
+SIZE (go/textproc_codesearch/codesearch-v1.3.0-rc.1/v1.3.0-rc.1.zip) = 64308
