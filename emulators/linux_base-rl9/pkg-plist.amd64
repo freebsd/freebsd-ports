@@ -819,6 +819,7 @@ usr/lib/.build-id/82/363a52e5b0e59bffce32157e8de8e032c15c0f
 usr/lib/.build-id/82/964f150f13b476e3249b9eddc71aa34f4a503b
 usr/lib/.build-id/82/b4315c0b20cdc8f884c76cee57bf92d88750f7
 usr/lib/.build-id/82/fa01a9561169a388240813d130a6a70ffd0c0f
+usr/lib/.build-id/83/13151839f218d1aaaf5914591a7229202c1970
 usr/lib/.build-id/83/142a77e39a4036d7a4cd0d02da7369c1cd08b5
 usr/lib/.build-id/83/f6b1bf683edcfdfa9e2e326f213ce903cb8f99
 usr/lib/.build-id/84/17fbf8880dbaa8749efc9dada8ffc122ac60ee
@@ -1095,6 +1096,7 @@ usr/lib/.build-id/c4/384405c11f65665446337e271d1af591b07f87
 usr/lib/.build-id/c4/464cca186c4b981eb3fd1d0f590e2006f4d9a8
 usr/lib/.build-id/c4/78c694afccd3fb0f2831f5a61c40025eba23e9
 usr/lib/.build-id/c4/cf7d59fd91f56d82f139e528ac467fd31cd498
+usr/lib/.build-id/c4/f9a96f410f85fdc7c10775afc2e35d2c0a9808
 usr/lib/.build-id/c5/042c4086cce02570e41e355dee7dd79ccce20f
 usr/lib/.build-id/c5/2d447faca8e767ebe181b78a85c09ea0b45d6b
 usr/lib/.build-id/c5/2d447faca8e767ebe181b78a85c09ea0b45d6b.1
@@ -1724,6 +1726,7 @@ usr/lib/libncurses.so.6
 usr/lib/libncurses.so.6.2
 usr/lib/libncursesw.so.6
 usr/lib/libncursesw.so.6.2
+usr/lib/libnsl.so.1
 usr/lib/libnss_compat.so.2
 usr/lib/libnss_dns.so.2
 usr/lib/libnss_files.so.2
@@ -2209,6 +2212,7 @@ usr/lib64/libncurses.so.6
 usr/lib64/libncurses.so.6.2
 usr/lib64/libncursesw.so.6
 usr/lib64/libncursesw.so.6.2
+usr/lib64/libnsl.so.1
 usr/lib64/libnss_compat.so.2
 usr/lib64/libnss_dns.so.2
 usr/lib64/libnss_files.so.2

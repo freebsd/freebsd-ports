@@ -928,6 +928,7 @@ usr/lib/.build-id/ef/0dbde9a935b7aad080cf4e0a339f39b4b2e848
 usr/lib/.build-id/ef/b5632cead05a7106a883225ed5ade31d564133
 usr/lib/.build-id/f0/5ad2e73fe7df93582c144ac14509064367d6f8
 usr/lib/.build-id/f1/34d5797db2043828d4692273b8d856e9d2d5ce
+usr/lib/.build-id/f1/c1be488868ca7e5c5ef32322d338c73224f857
 usr/lib/.build-id/f1/cf2841a99ac548ca0c315276275dba6977bb25
 usr/lib/.build-id/f3/86e908501988cb70bae3ed53538f214425ad79
 usr/lib/.build-id/f4/3c6e756ddbc3dd0e3187757fe0747c4979c612
@@ -1381,6 +1382,7 @@ usr/lib64/libncurses.so.6
 usr/lib64/libncurses.so.6.2
 usr/lib64/libncursesw.so.6
 usr/lib64/libncursesw.so.6.2
+usr/lib64/libnsl.so.1
 usr/lib64/libnss_compat.so.2
 usr/lib64/libnss_dns.so.2
 usr/lib64/libnss_files.so.2

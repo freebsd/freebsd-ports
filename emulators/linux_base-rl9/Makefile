@@ -1,6 +1,6 @@
 PORTNAME=	rl9
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nf/filesystem-*:C/:[^:]+$//}
@@ -67,6 +67,7 @@ LIB_DISTNAMES=	bzip2-libs-${bzip2_ver} \
 		libgcc-${gcc_ver} \
 		libgudev-${libgudev_ver} \
 		libmount-${util_ver} \
+		libnsl-${glibc_ver} \
 		libproxy-${libproxy_ver} \
 		libselinux-${selinux_ver} \
 		libsepol-${sepol_ver} \
@@ -184,7 +185,6 @@ REMOVE_FILES=	bin/chfn bin/chsh bin/findmnt bin/login bin/lsblk bin/lscpu \
 		usr/share/man/man8/losetup.8.gz usr/share/man/man8/mkswap.8.gz \
 		usr/share/man/man8/partx.8.gz usr/share/man/man8/swapoff.8.gz \
 		usr/share/man/man8/swapon.8.gz usr/share/man/man8/switch_root.8.gz
-
 
 .include <bsd.port.options.mk>
 
