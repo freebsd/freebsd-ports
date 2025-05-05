@@ -1,10 +1,12 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	5.13.1
-PORTREVISION=	7
+DISTVERSION=	5.14.1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	https://github.com/telegramdesktop/tdesktop/commit/
+PATCHFILES=	f676d32f96e70874d9d8e78788c37b82b1e3324a.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Telegram Desktop messaging app
@@ -25,6 +27,7 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		tl-expected>0:devel/tl-expected \
 		v4l_compat>0:multimedia/v4l_compat \
 		yasm:devel/yasm \
+		${LOCALBASE}/lib/libtde2e.a:net-im/tdlib \
 		${LOCALBASE}/lib/libtg_owt.a:net-im/tg_owt
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libada.so:devel/libada \
