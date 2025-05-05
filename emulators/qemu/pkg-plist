@@ -127,6 +127,7 @@ include/qemu-plugin.h
 %%DATADIR%%/multiboot.bin
 %%DATADIR%%/multiboot_dma.bin
 %%DATADIR%%/npcm7xx_bootrom.bin
+%%DATADIR%%/npcm8xx_bootrom.bin
 %%DATADIR%%/openbios-ppc
 %%DATADIR%%/openbios-sparc32
 %%DATADIR%%/openbios-sparc64
@@ -134,6 +135,7 @@ include/qemu-plugin.h
 %%DATADIR%%/opensbi-riscv64-generic-fw_dynamic.bin
 %%DATADIR%%/palcode-clipper
 %%DATADIR%%/petalogix-ml605.dtb
+%%DATADIR%%/pnv-pnor.bin
 %%DATADIR%%/pxe-e1000.rom
 %%DATADIR%%/pxe-eepro100.rom
 %%DATADIR%%/pxe-ne2k_pci.rom
