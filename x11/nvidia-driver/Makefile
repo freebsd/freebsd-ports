@@ -14,7 +14,7 @@
 PORTNAME?=	nvidia-driver
 DISTVERSION?=	${NVIDIA_DISTVERSION}
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
@@ -83,7 +83,7 @@ SUB_PATCHES+=	extra-patch-src-nvidia_subr.c
 # Temporarily disable GSP firmware as it is known to cause
 # issues with suspend/resume
 .if ${NVVERSION} >= 565.00000
-SUB_PATCHES+=	extra-gsp-patch-src-nvidia_subr.c
+SUB_PATCHES+=	extra-gsp-patch-src-common-inc-nv_firmware_registry.h
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0

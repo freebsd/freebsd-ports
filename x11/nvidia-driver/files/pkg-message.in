@@ -32,9 +32,12 @@ If X.org cannot start and reports
 in /var/log/Xorg.0.log while actually you have ``options SYSVSHM''
 enabled in kernel, the sysctl ``kern.ipc.shmall'' should be increased.
 
-In certain 570 versions GSP firmware is known to cause issues with
-suspend/resume. To disable GSP firmware add
-hw.nvidia.registry.EnableGpuFirmware=0 to your loader.conf.
+Because in certain 570 versions GSP firmware is known to cause issues
+with suspend/resume, thus, disabled by default for now.
+On the other hand, some GPUs are known NOT to work without GSP
+firmware support.
+To enable GSP firmware add hw.nvidia.registry.EnableGpuFirmware=1
+to your loader.conf.
 
 https://download.nvidia.com/XFree86/FreeBSD-x86_64/560.31.02/README/gsp.html
 

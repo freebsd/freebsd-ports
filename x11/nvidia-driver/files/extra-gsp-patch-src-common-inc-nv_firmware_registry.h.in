@@ -1,0 +1,11 @@
+--- src/common/inc/nv-firmware-registry.h.orig
++++ src/common/inc/nv-firmware-registry.h
+@@ -62,7 +62,7 @@
+ #define NV_REG_ENABLE_GPU_FIRMWARE_POLICY_MASK            0x000000F0
+ #define NV_REG_ENABLE_GPU_FIRMWARE_POLICY_ALLOW_FALLBACK  0x00000010
+ 
+-#define NV_REG_ENABLE_GPU_FIRMWARE_DEFAULT_VALUE          0x00000012
++#define NV_REG_ENABLE_GPU_FIRMWARE_DEFAULT_VALUE          0x00000000
+ 
+ //
+ // Registry key that when enabled,  will send GPU firmware logs
