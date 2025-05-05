@@ -115,7 +115,6 @@
     SUBDIR += gramps
     SUBDIR += gromacs
     SUBDIR += gsmc
-    SUBDIR += gtamsanalyzer
     SUBDIR += h5utils
     SUBDIR += h5z-zfp
     SUBDIR += harminv

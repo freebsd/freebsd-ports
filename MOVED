@@ -4393,3 +4393,4 @@ www/moodle43||2025-05-04|Has expired: EOLed upstream
 net/libtnl||2025-05-04|Has expired: Unmaintained upstream and no consumers in the ports tree
 www/moodle41||2025-05-04|Has expired: Outdated version
 www/publicfile||2025-05-04|Has expired: Unmaintained for years upstream and in tree, consider using www/darkhttpd , www/miniserve and/or ftp/tnftpd , ftp/unftp
+science/gtamsanalyzer||2025-05-05|Has expired: Upstream unmaintained as last release was in 2004
