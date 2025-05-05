@@ -1,5 +1,5 @@
 PORTNAME=	tor-browser
-DISTVERSION=	14.5
+DISTVERSION=	14.5.1
 CATEGORIES=	www net security wayland
 TAG_BASE=	86442427facf038d5706644221de7e2fb733550b
 TAG_TOR=	2c0b448503d52c3b512d1e7a55ccc78ac19db146
@@ -17,7 +17,7 @@ MASTER_SITES=	TOR \
 		LOCAL/vvd:source5
 MASTER_SITE_SUBDIR=	torbrowser/${DISTVERSION}/:DEFAULT \
 			download/releases/:source3
-DISTNAME=	src-firefox-tor-browser-128.9.0esr-14.5-1-build4
+DISTNAME=	src-firefox-tor-browser-128.10.0esr-14.5-1-build2
 MANUAL=		manual_215922.zip
 NOSCRIPT=	noscript-12.1.1.xpi
 DISTFILES=	${DISTNAME}.tar.xz \
