@@ -980,6 +980,7 @@
     SUBDIR += py-keyring
     SUBDIR += py-keyrings.alt
     SUBDIR += py-krb5
+    SUBDIR += py-lib4sbom
     SUBDIR += py-libnacl
     SUBDIR += py-liboqs-python
     SUBDIR += py-m2crypto
