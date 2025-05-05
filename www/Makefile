@@ -2451,6 +2451,7 @@
     SUBDIR += serf
     SUBDIR += servlet-api
     SUBDIR += sfeed
+    SUBDIR += shellinabox
     SUBDIR += shiori
     SUBDIR += silicon
     SUBDIR += simple-web-server
