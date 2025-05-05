@@ -1,5 +1,6 @@
 PORTNAME=	kyotocabinet
 PORTVERSION=	1.2.80
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://dbmx.net/kyotocabinet/pkg/ \
 		LOCAL/sunpoet
@@ -27,6 +28,12 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++ ||g' ${WRKSRC}/configure ${WRKSRC}/doc/spex.html ${WRKSRC}/example/Makefile ${WRKSRC}/lab/kcdict/Makefile
+	@${REINPLACE_CMD} -e 's|-g0 -O2||g' \
+	    ${PATCH_WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-march=native||g' \
+	    ${PATCH_WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-m64 ||g' \
+	    ${PATCH_WRKSRC}/configure
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libkyotocabinet.so
