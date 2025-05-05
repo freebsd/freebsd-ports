@@ -27,8 +27,8 @@ EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/mswin3
 			--no-same-owner --no-same-permissions
 
 USE_GITHUB=	yes
-GH_TAGNAME=	4ab57093d
-NMAP_COMMIT_DATE=	20250323
+GH_TAGNAME=	eddc779a0
+NMAP_COMMIT_DATE=	20250430
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--without-localdirs \
