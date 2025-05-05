@@ -1,29 +1,33 @@
 PORTNAME=	commons-jxpath
-PORTVERSION=	1.3
+DISTVERSION=	1.4.0
 CATEGORIES=	devel www java
 MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	apache-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
+DISTNAME=	${PORTNAME}-${DISTVERSION}-bin
 
-LICENSE=	APACHE20
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	atanubiswas484@gmail.com
 COMMENT=	Utilities for manipulating Java Beans using the XPath syntax
 WWW=		https://commons.apache.org/proper/commons-jxpath/
 
+LICENSE=	APACHE20
+
 USES=		java
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}-${PORTVERSION}.jar \
+	${INSTALL_DATA} \
+		${WRKDIR}/${PORTNAME}-${DISTVERSION}/${PORTNAME}-${DISTVERSION}.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
-	(cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/apidocs && \
+
+do-install-DOCS-on:
+	(cd ${WRKDIR}/${PORTNAME}-${DISTVERSION}/apidocs && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
