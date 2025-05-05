@@ -11,6 +11,9 @@ WWW=		https://github.com/chriswalz/bit
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=     Upstream ceased development
+EXPIRATION_DATE=2025-06-21
+
 USES=		cpe go:modules
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
