@@ -1,0 +1,32 @@
+PORTNAME=	flag-icons
+PORTVERSION=	7.3.2
+DISTVERSIONPREFIX=	v
+CATEGORIES=	misc
+
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	Curated collection of all country flags rendered in PNG
+WWW=		https://flagicons.lipis.dev/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	convert:graphics/ImageMagick6 # ${IMAGEMAGICK_DEFAULT}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	lipis
+
+NO_ARCH=	yes
+NO_INSTALL=	yes
+
+FLAGS_TOPDIR=	${PREFIX}/share/icons/${PORTNAME}
+FLAG_SIZES=	24 32 48 64 96 128 192 256 # 512 adds 27MB for .tbz package
+
+# TODO: add bordered and plain versions maybe?
+do-build:
+	cd ${BUILD_WRKSRC}/flags && ${SH} ${FILESDIR}/makeflags.sh \
+	rounded_corners ${STAGEDIR}${FLAGS_TOPDIR}/rounded ${FLAG_SIZES}
+
+post-stage:
+	cd ${STAGEDIR}${PREFIX} && ${FIND} share -type f >> ${TMPPLIST}
+
+.include <bsd.port.mk>

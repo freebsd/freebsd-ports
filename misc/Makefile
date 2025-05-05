@@ -116,6 +116,7 @@
     SUBDIR += figlet-fonts
     SUBDIR += findutils
     SUBDIR += flag
+    SUBDIR += flag-icons
     SUBDIR += flashlight
     SUBDIR += fortune-mod-bible
     SUBDIR += fortune-mod-bofh
