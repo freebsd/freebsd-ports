@@ -1559,6 +1559,7 @@
     SUBDIR += py-dj51-django-taggit
     SUBDIR += py-dj51-django-timezone-field
     SUBDIR += py-dj51-djangorestframework
+    SUBDIR += py-dj51-djangorestframework-guardian
     SUBDIR += py-dj51-drf-spectacular
     SUBDIR += py-dj51-drf-spectacular-sidecar
     SUBDIR += py-dj51-drf-writable-nested
