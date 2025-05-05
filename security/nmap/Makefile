@@ -59,6 +59,10 @@ CONFIGURE_ARGS+=--without-localdirs \
 
 .include <bsd.port.options.mk>
 
+.if defined(SSL_DEFAULT) && ${SSL_DEFAULT} == libressl
+BROKEN=	error: OpenSSL-1.1.1 is the minimum supported version. LibreSSLis not supported
+.endif
+
 .if exists(/usr/lib/libibverbs.a)
 # Link with libibverbs is needed by static libpcap
 post-patch-PCAP-on:
