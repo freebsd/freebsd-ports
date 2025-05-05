@@ -1,4 +1,4 @@
---- configure.ac.orig	2024-12-26 07:15:43 UTC
+--- configure.ac.orig	2025-04-15 23:08:37 UTC
 +++ configure.ac
 @@ -23,9 +23,9 @@ m4_define([last_git_commit], patsubst(m4_esyscmd([git 
  
@@ -12,3 +12,22 @@
  
  AC_CONFIG_SRCDIR([schism/main.c])
  
+@@ -999,18 +999,6 @@ SCHISM_CHECK_COMPILE_FLAG([-Werror=return-type])
+ dnl Unlike a grand -Werror, this one could be rather important:
+ dnl functions returning random values are no good under any circumstances.
+ SCHISM_CHECK_COMPILE_FLAG([-Werror=return-type])
+-
+-dnl GCC by default does not error for mesopotamian pre-ANSI C constructs
+-dnl before GCC 14. Enforce C99 function and variable declarations.
+-SCHISM_CHECK_COMPILE_FLAG([-Werror=implicit-int])
+-SCHISM_CHECK_COMPILE_FLAG([-Werror=implicit-function-declaration])
+-SCHISM_CHECK_COMPILE_FLAG([-Werror=old-style-declaration])
+-SCHISM_CHECK_COMPILE_FLAG([-Werror=old-style-definition])
+-
+-dnl Error for misc. undefined behavior.
+-SCHISM_CHECK_COMPILE_FLAG([-Werror=write-strings])
+-SCHISM_CHECK_COMPILE_FLAG([-Werror=restrict])
+-SCHISM_CHECK_COMPILE_FLAG([-Werror=overlength-strings])
+ 
+ dnl disable this for now, clang's implementation is incorrect  --paper
+ dnl SCHISM_CHECK_COMPILE_FLAG([-Werror=cast-function-type])
