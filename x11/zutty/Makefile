@@ -1,7 +1,7 @@
 PORTNAME=	zutty
-DISTVERSION=	0.15
+DISTVERSION=	0.16
 CATEGORIES=	x11
-MASTER_SITES=	https://git.hq.sig7.se/zutty.git/snapshot/7e481c04507e9b5cacfe67fe2b96bdb449b08726?dummy=/
+MASTER_SITES=	https://git.hq.sig7.se/zutty.git/snapshot/${ZUTTY_COMMIT}?dummy=/
 
 MAINTAINER=	flo@purplekraken.com
 COMMENT=	High-end terminal for low-end systems
@@ -16,7 +16,8 @@ USES=		gl pkgconfig waf xorg
 USE_GL=		egl glesv2
 USE_XORG=	x11 xmu xt
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-7e481c0
+WRKSRC=		${WRKDIR}/${PORTNAME}-70150aa
+ZUTTY_COMMIT=	70150aa6d5eb93d0e9c5696f5ab101a523354298
 
 PLIST_FILES=	bin/zutty
 
