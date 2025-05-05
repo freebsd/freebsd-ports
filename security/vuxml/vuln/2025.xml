@@ -1,3 +1,33 @@
+  <vuln vid="5f868a5f-2943-11f0-bb22-f02f7432cf97">
+    <topic>fcgi -- Heap-based buffer overflow via crafted nameLen/valueLen in ReadParams</topic>
+    <affects>
+      <package>
+	<name>fcgi</name>
+	<range><lt>2.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://github.com/FastCGI-Archives/fcgi2/issues/67">
+	<p>FastCGI fcgi2 (aka fcgi) 2.x through 2.4.4 has an integer
+	overflow (and resultant heap-based buffer overflow) via
+	crafted nameLen or valueLen values in data to the IPC socket.
+	This occurs in ReadParams in fcgiapp.c.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-23016</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-23016</url>
+      <url>https://github.com/FastCGI-Archives/fcgi2/issues/67</url>
+    </references>
+    <dates>
+      <discovery>2025-01-10</discovery>
+      <entry>2025-05-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7e7a32e7-2901-11f0-ab20-b42e991fc52e">
     <topic>dnsdist -- Denial of service via crafted DoH exchange</topic>
     <affects>
