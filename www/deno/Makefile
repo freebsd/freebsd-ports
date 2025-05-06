@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.9
 CATEGORIES=	www
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure JavaScript and TypeScript runtime
 WWW=		https://deno.com/runtime
 
