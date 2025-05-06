@@ -1,6 +1,6 @@
 PORTNAME=	paperless-ngx
 PORTVERSION=	2.11.6
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	deskutils python
@@ -33,7 +33,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bleach>=6.1.0:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}drf-writable-nested>=0.7.0:www/py-drf-writable-nested@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.13.1:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flower>=2.0.1:www/py-flower@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gotenberg-client>=0.5.0:converters/py-gotenberg-client@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gotenberg-client>=0.10.0:converters/py-gotenberg-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=21.2.0:www/py-gunicorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h2>=4.1.0:www/py-h2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hiredis>=2.0.0:databases/py-hiredis@${PY_FLAVOR} \
