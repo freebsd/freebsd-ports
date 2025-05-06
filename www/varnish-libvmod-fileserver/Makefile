@@ -1,6 +1,5 @@
 PORTNAME=	libvmod-fileserver
-PORTVERSION=	0.0.7
-PORTREVISION=	4
+PORTVERSION=	0.0.9
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -30,16 +29,16 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		android_system_properties-0.1.5 \
 		autocfg-1.4.0 \
 		bindgen-0.70.1 \
-		bindgen_helpers-0.2.0 \
+		bindgen_helpers-0.4.3 \
 		bitflags-2.6.0 \
 		block-buffer-0.10.4 \
 		bumpalo-3.16.0 \
-		cc-1.1.31 \
+		cc-1.2.25 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		clang-sys-1.8.1 \
-		convert_case-0.6.0 \
+		convert_case-0.8.0 \
 		core-foundation-sys-0.8.7 \
 		cpufeatures-0.2.14 \
 		crypto-common-0.1.6 \
@@ -86,9 +85,9 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		typenum-1.17.0 \
 		unicode-ident-1.0.13 \
 		unicode-segmentation-1.12.0 \
-		varnish-0.1.0 \
-		varnish-macros-0.1.0 \
-		varnish-sys-0.1.0 \
+		varnish-0.5.0 \
+		varnish-macros-0.5.0 \
+		varnish-sys-0.5.0 \
 		version_check-0.9.5 \
 		wasm-bindgen-0.2.95 \
 		wasm-bindgen-backend-0.2.95 \
@@ -109,7 +108,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	gquintard
 GH_PROJECT=	vmod-fileserver
-GH_TAGNAME=	c6593f7
+GH_TAGNAME=	cbd486b
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
