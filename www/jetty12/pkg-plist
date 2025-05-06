@@ -277,7 +277,7 @@
 %%APP_NAME%%/lib/%%APP_NAME%%-websocket-%%APP_NAME%%-common-%%PORTVERSION%%.jar
 %%APP_NAME%%/lib/%%APP_NAME%%-xml-%%PORTVERSION%%.jar
 %%APP_NAME%%/lib/logging/%%APP_NAME%%-slf4j-impl-%%PORTVERSION%%.jar
-%%APP_NAME%%/lib/logging/slf4j-api-2.0.16.jar
+%%APP_NAME%%/lib/logging/slf4j-api-2.0.17.jar
 %%APP_NAME%%/modules/acceptratelimit.mod
 %%APP_NAME%%/modules/accept-rate-limit.mod
 %%APP_NAME%%/modules/alpn-java.mod
