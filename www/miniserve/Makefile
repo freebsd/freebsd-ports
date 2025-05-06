@@ -4,7 +4,7 @@ DISTVERSION=	0.29.0
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Ad-hoc HTTP server for file sharing
 WWW=		https://github.com/svenstaro/miniserve
 
