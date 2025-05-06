@@ -4,7 +4,7 @@ DISTVERSION=	12.1.2
 PORTREVISION=	39
 CATEGORIES=	devel
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display statistics about your code
 WWW=		https://github.com/XAMPPRocky/tokei
 
