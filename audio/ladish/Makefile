@@ -21,6 +21,7 @@ USES=		tar:bz2 localbase:ldflags pkgconfig python shebangfix waf
 USE_PERL5=	configure
 
 SHEBANG_FILES=	ladish_control
+TESTING_UNSAFE=	No function 'test' defined in ${WRKSRC}/wscript
 
 OPTIONS_DEFINE=		GUI
 OPTIONS_DEFAULT=	GUI
