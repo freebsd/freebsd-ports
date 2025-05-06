@@ -1,3 +1,42 @@
+  <vuln vid="e195e915-2a43-11f0-8cb5-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>136.0.7103.59</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>136.0.7103.59</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/04/stable-channel-update-for-desktop_29.html">
+	 <p>This update includes 8 security fixes:</p>
+	 <ul>
+	    <li>[409911705] High CVE-2025-4096: Heap buffer overflow in HTML. Reported by Anonymous on 2025-04-11</li>
+	    <li>[409342999] Medium CVE-2025-4050: Out of bounds memory access in DevTools. Reported by Anonymous on 2025-04-09</li>
+	    <li>[404000989] Medium CVE-2025-4051: Insufficient data validation in DevTools. Reported by Daniel Fröjdendahl on 2025-03-16</li>
+	    <li>[401927528] Low CVE-2025-4052: Inappropriate implementation in DevTools. Reported by vanillawebdev on 2025-03-10</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4096</cvename>
+      <cvename>CVE-2025-4050</cvename>
+      <cvename>CVE-2025-4051</cvename>
+      <cvename>CVE-2025-4052</cvename>
+      <url>https://chromereleases.googleblog.com/2025/04/stable-channel-update-for-desktop_29.html</url>
+    </references>
+    <dates>
+      <discovery>2025-04-29</discovery>
+      <entry>2025-05-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5f868a5f-2943-11f0-bb22-f02f7432cf97">
     <topic>fcgi -- Heap-based buffer overflow via crafted nameLen/valueLen in ReadParams</topic>
     <affects>
