@@ -136,7 +136,6 @@ _linux_rl9_libva=			linux-rl9-libva>0:multimedia/linux-rl9-libva
 _linux_rl9_libvdpau=			linux-rl9-libvdpau>0:multimedia/linux-rl9-libvdpau
 _linux_${linux_ARGS}_libvorbis=		linux-${linux_ARGS}-libvorbis>0:audio/linux-${linux_ARGS}-libvorbis
 _linux_rl9_libvpx=			linux-rl9-libvpx>0:multimedia/linux-rl9-libvpx
-_linux_${linux_ARGS}_libxcrypt=		linux-${linux_ARGS}-libxcrypt>0:security/linux-${linux_ARGS}-libxcrypt
 _linux_${linux_ARGS}_libxkbcommon=	linux-${linux_ARGS}-libxkbcommon>0:x11/linux-${linux_ARGS}-libxkbcommon
 _linux_${linux_ARGS}_libxml2=		linux-${linux_ARGS}-libxml2>0:textproc/linux-${linux_ARGS}-libxml2
 _linux_${linux_ARGS}_libxslt=		linux-${linux_ARGS}-libxslt>0:textproc/linux-${linux_ARGS}-libxslt

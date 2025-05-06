@@ -357,7 +357,6 @@
     SUBDIR += linux-rl9-libsecret
     SUBDIR += linux-rl9-libssh
     SUBDIR += linux-rl9-libtasn1
-    SUBDIR += linux-rl9-libxcrypt
     SUBDIR += linux-rl9-nettle
     SUBDIR += linux-rl9-nss
     SUBDIR += linux-rl9-p11-kit
