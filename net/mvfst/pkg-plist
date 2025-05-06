@@ -138,6 +138,7 @@ include/quic/logging/QLoggerCommon.h
 include/quic/logging/QLoggerConstants.h
 include/quic/logging/QLoggerTypes.h
 include/quic/loss/QuicLossFunctions.h
+include/quic/mvfst-config.h
 include/quic/observer/SocketObserverContainer.h
 include/quic/observer/SocketObserverInterface.h
 include/quic/observer/SocketObserverTypes.h
