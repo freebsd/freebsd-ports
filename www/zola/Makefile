@@ -4,7 +4,7 @@ DISTVERSION=	0.20.0
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast static site generator
 WWW=		https://www.getzola.org/
 
