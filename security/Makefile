@@ -938,6 +938,7 @@
     SUBDIR += py-dfdatetime
     SUBDIR += py-dfwinreg
     SUBDIR += py-dirhash
+    SUBDIR += py-distro2sbom
     SUBDIR += py-django-auth-kerberos
     SUBDIR += py-docker-pycreds
     SUBDIR += py-ecdsa
