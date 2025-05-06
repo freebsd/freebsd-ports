@@ -4697,6 +4697,7 @@
     SUBDIR += py-comm
     SUBDIR += py-commandlines
     SUBDIR += py-commentjson
+    SUBDIR += py-commoncode
     SUBDIR += py-condense-json
     SUBDIR += py-conditional
     SUBDIR += py-confection
