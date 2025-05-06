@@ -19,6 +19,7 @@ LIB_DEPENDS=	libgcab-1.0.so:archivers/gcab \
 		libgsf-1.so:devel/libgsf \
 		libuuid.so:misc/e2fsprogs-libuuid
 RUN_DEPENDS=	bash:shells/bash
+TEST_DEPENDS=	gsed:textproc/gsed
 
 USES=		bison gnome meson perl5 pkgconfig shebangfix tar:xz vala:build
 USE_LDCONFIG=	yes
@@ -31,5 +32,8 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
+
+post-patch:
+	${REINPLACE_CMD} 's|sed|gsed|g' ${WRKSRC}/tests/wixl.bats
 
 .include <bsd.port.mk>
