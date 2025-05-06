@@ -5,6 +5,9 @@ share/applications/org.deskflow.deskflow.desktop
 share/icons/hicolor/512x512/apps/org.deskflow.deskflow.png
 share/licenses/deskflow/LICENSE
 share/licenses/deskflow/LICENSE_EXCEPTION
+share/man/man1/deskflow-client.1.gz
+share/man/man1/deskflow-server.1.gz
+share/man/man1/deskflow.1.gz
 share/metainfo/org.deskflow.deskflow.metainfo.xml
 %%PORTDOCS%%%%DOCSDIR%%/html/bc_s.png
 %%PORTDOCS%%%%DOCSDIR%%/html/bc_sd.png

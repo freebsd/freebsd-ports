@@ -1,10 +1,9 @@
 PORTNAME=	deskflow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.21.1
+DISTVERSION=	1.21.2
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/deskflow/deskflow/commit/
-PATCHFILES+=	12bcc1a4d6c7ae5edec8a43892a0a2e5f59ad11f.patch:-p1 # Fix build with Qt >= 6.9.0
 
 MAINTAINER=	ykasap@gmail.com
 COMMENT=	Mouse and keyboard sharing utility
@@ -16,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_FreeBSD_13=	requires OpenSSL 3.0
 
 BUILD_DEPENDS=	${LOCALBASE}/include/CLI/Version.hpp:devel/cli11 \
-		googletest>0:devel/googletest
+		googletest>0:devel/googletest \
+		help2man:misc/help2man
 LIB_DEPENDS=	libei.so:x11/libei \
 		libportal.so:deskutils/libportal \
 		libtomlplusplus.so:devel/tomlplusplus \
