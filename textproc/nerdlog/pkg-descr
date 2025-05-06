@@ -1,0 +1,3 @@
+Nerdlog is a fast, remote-first, multi-host TUI log viewer with timeline
+histogram and no central server. Loosely inspired by Graylog/Kibana, but
+without the bloat. Pretty much no setup needed, either.
