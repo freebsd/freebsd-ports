@@ -1060,7 +1060,6 @@
     SUBDIR += qtpbfimageplugin
     SUBDIR += qtqr
     SUBDIR += quat
-    SUBDIR += quat-gui
     SUBDIR += quesa
     SUBDIR += quesoglc
     SUBDIR += quickqanava

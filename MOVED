@@ -4395,3 +4395,4 @@ www/publicfile||2025-05-04|Has expired: Unmaintained for years upstream and in t
 science/gtamsanalyzer||2025-05-05|Has expired: Upstream unmaintained as last release was in 2004
 www/dot-http||2025-05-05|Remove broken, unmaintained upstream port
 security/linux-rl9-libxcrypt|emulators/linux_base-rl9|2025-05-06|Integrated into linux_base-rl9
+graphics/quat-gui||2025-05-06|Has expired: Last upstream release was in 2003
