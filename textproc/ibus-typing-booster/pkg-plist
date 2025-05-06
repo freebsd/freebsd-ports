@@ -5,6 +5,7 @@ share/applications/emoji-picker.desktop
 share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/Blocks.txt
 %%DATADIR%%/data/DerivedAge.txt
+%%DATADIR%%/data/NameAliases.txt
 %%DATADIR%%/data/UnicodeData.txt
 %%DATADIR%%/data/annotations/af.xml
 %%DATADIR%%/data/annotations/ak.xml
@@ -442,6 +443,7 @@ share/locale/or/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/pl/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/pt/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/pt_BR/LC_MESSAGES/ibus-typing-booster.mo
+share/locale/ro/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/ru/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/si/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/sv/LC_MESSAGES/ibus-typing-booster.mo
