@@ -26,15 +26,15 @@ USE_LDCONFIG=	yes
 LDFLAGS+=	-lprotobuf # workaround for https://github.com/OpenLightingProject/ola/issues/1871
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS=		--disable-unittests --disable-examples
 CONFIGURE_ARGS+=	--disable-fatal-warnings # see https://github.com/OpenLightingProject/ola/issues/1962
 
 TEST_TARGET=	check
 INSTALL_TARGET=	install-strip
+TESTING_UNSAFE=	1 test fails, see https://github.com/OpenLightingProject/ola/issues/1872
 
-do-test: # 1 test fails, see https://github.com/OpenLightingProject/ola/issues/1872
+do-test:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ./configure ${CONFIGURE_ARGS} --enable-unittests && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${TEST_TARGET}
