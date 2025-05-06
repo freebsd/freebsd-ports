@@ -1,0 +1,11 @@
+--- mecab-naist-jdic/Makefile.am.orig	2018-12-25 06:09:00 UTC
++++ mecab-naist-jdic/Makefile.am
+@@ -5,7 +5,7 @@ DISTCLEANFILES = *.log *.out *~
+ 
+ MAINTAINERCLEANFILES = Makefile.in char.bin matrix.bin sys.dic unk.dic left-id.def rewrite.def pos-id.def right-id.def
+ 
+-dicdir = @prefix@/dic
++dicdir = @prefix@/share/open_jtalk/dic
+ 
+ dic_DATA   = char.bin matrix.bin sys.dic unk.dic left-id.def rewrite.def pos-id.def right-id.def
+ 

@@ -193,6 +193,7 @@
     SUBDIR += ng-devel
     SUBDIR += ngraph-fonts
     SUBDIR += nkf
+    SUBDIR += open_jtalk
     SUBDIR += p5-2chproxy
     SUBDIR += p5-Date-Japanese-Era
     SUBDIR += p5-Date-Japanese-Holiday
