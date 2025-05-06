@@ -4,7 +4,7 @@ CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails52
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helper for generating HTML mails in Rails applications
 WWW=		https://github.com/Mange/roadie-rails
 
