@@ -4,7 +4,7 @@ DISTVERSION=	18.1.3
 PORTREVISION=	1
 CATEGORIES=	editors
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kakoune Language Server Protocol Client
 WWW=		https://github.com/kakoune-lsp/kakoune-lsp
 
