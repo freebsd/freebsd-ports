@@ -4,7 +4,7 @@ DISTVERSION=	1.0.0
 PORTREVISION=	14
 CATEGORIES=	textproc
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intuitive find and replace tool
 WWW=		https://github.com/chmln/sd
 
