@@ -1,4 +1,4 @@
---- chrome/browser/ui/startup/startup_browser_creator_impl.cc.orig	2025-04-04 08:52:13 UTC
+--- chrome/browser/ui/startup/startup_browser_creator_impl.cc.orig	2025-05-05 10:57:53 UTC
 +++ chrome/browser/ui/startup/startup_browser_creator_impl.cc
 @@ -76,7 +76,7 @@
  #include "components/app_restore/full_restore_utils.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/webui/whats_new/whats_new_fetcher.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -207,7 +207,7 @@ Browser* StartupBrowserCreatorImpl::OpenTabsInBrowser(
+@@ -208,7 +208,7 @@ Browser* StartupBrowserCreatorImpl::OpenTabsInBrowser(
      // at the state of the MessageLoop.
      Browser::CreateParams params = Browser::CreateParams(profile_, false);
      params.creation_source = Browser::CreationSource::kStartupCreator;
@@ -18,7 +18,7 @@
      params.startup_id =
          command_line_->GetSwitchValueASCII("desktop-startup-id");
  #endif
-@@ -237,7 +237,7 @@ Browser* StartupBrowserCreatorImpl::OpenTabsInBrowser(
+@@ -238,7 +238,7 @@ Browser* StartupBrowserCreatorImpl::OpenTabsInBrowser(
        continue;
      }
  

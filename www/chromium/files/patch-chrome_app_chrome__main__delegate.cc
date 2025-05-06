@@ -1,4 +1,4 @@
---- chrome/app/chrome_main_delegate.cc.orig	2025-04-04 08:52:13 UTC
+--- chrome/app/chrome_main_delegate.cc.orig	2025-05-05 10:57:53 UTC
 +++ chrome/app/chrome_main_delegate.cc
 @@ -147,7 +147,7 @@
  #include "components/webui/about/credit_utils.h"
@@ -129,7 +129,7 @@
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess &&
        !command_line.HasSwitch(switches::kDisableCrashpadForTesting)) {
-@@ -1532,13 +1532,13 @@ absl::variant<int, content::MainFunctionParams> Chrome
+@@ -1532,13 +1532,13 @@ std::variant<int, content::MainFunctionParams> ChromeM
  #else
  
  #if BUILDFLAG(IS_MAC) || (BUILDFLAG(ENABLE_NACL) && !BUILDFLAG(IS_LINUX) && \

@@ -1,6 +1,6 @@
---- content/browser/service_host/utility_process_host.cc.orig	2025-04-04 08:52:13 UTC
+--- content/browser/service_host/utility_process_host.cc.orig	2025-05-05 10:57:53 UTC
 +++ content/browser/service_host/utility_process_host.cc
-@@ -67,7 +67,7 @@
+@@ -68,7 +68,7 @@
  #include "content/browser/v8_snapshot_files.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/files/file_util.h"
  #include "base/files/scoped_file.h"
  #include "base/pickle.h"
-@@ -95,7 +95,7 @@ namespace content {
+@@ -96,7 +96,7 @@ namespace content {
  
  namespace {
  
@@ -18,7 +18,7 @@
  base::ScopedFD PassNetworkContextParentDirs(
      std::vector<base::FilePath> network_context_parent_dirs) {
    base::Pickle pickle;
-@@ -425,7 +425,7 @@ bool UtilityProcessHost::StartProcess() {
+@@ -427,7 +427,7 @@ bool UtilityProcessHost::StartProcess() {
      file_data_->files_to_preload.merge(GetV8SnapshotFilesToPreload(*cmd_line));
  #endif  // BUILDFLAG(IS_POSIX)
  
@@ -27,7 +27,7 @@
      // The network service should have access to the parent directories
      // necessary for its usage.
      if (sandbox_type_ == sandbox::mojom::Sandbox::kNetwork) {
-@@ -442,7 +442,7 @@ bool UtilityProcessHost::StartProcess() {
+@@ -444,7 +444,7 @@ bool UtilityProcessHost::StartProcess() {
      if (metrics_name_ == video_capture::mojom::VideoCaptureService::Name_) {
        bool pass_gpu_buffer_flag =
            switches::IsVideoCaptureUseGpuMemoryBufferEnabled();

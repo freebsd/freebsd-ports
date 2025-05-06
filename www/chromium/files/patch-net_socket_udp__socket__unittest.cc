@@ -1,4 +1,4 @@
---- net/socket/udp_socket_unittest.cc.orig	2025-04-04 08:52:13 UTC
+--- net/socket/udp_socket_unittest.cc.orig	2025-05-05 10:57:53 UTC
 +++ net/socket/udp_socket_unittest.cc
 @@ -371,7 +371,7 @@ TEST_F(UDPSocketTest, PartialRecv) {
    EXPECT_EQ(second_packet, received);
@@ -27,7 +27,7 @@
      // TODO(crbug.com/42050633): IP_MTU_DISCOVER is not implemented on Fuchsia.
      EXPECT_THAT(rv, IsError(ERR_NOT_IMPLEMENTED));
  #else
-@@ -763,7 +763,7 @@ TEST_F(UDPSocketTest, JoinMulticastGroup) {
+@@ -770,7 +770,7 @@ TEST_F(UDPSocketTest, JoinMulticastGroup) {
  
  // TODO(crbug.com/40620614): failing on device on iOS 12.2.
  // TODO(crbug.com/40189274): flaky on Mac 11.
@@ -36,7 +36,7 @@
  #define MAYBE_SharedMulticastAddress DISABLED_SharedMulticastAddress
  #else
  #define MAYBE_SharedMulticastAddress SharedMulticastAddress
-@@ -817,7 +817,7 @@ TEST_F(UDPSocketTest, MAYBE_SharedMulticastAddress) {
+@@ -824,7 +824,7 @@ TEST_F(UDPSocketTest, MAYBE_SharedMulticastAddress) {
                                  NetLogSource());
    ASSERT_THAT(client_socket.Connect(send_address), IsOk());
  

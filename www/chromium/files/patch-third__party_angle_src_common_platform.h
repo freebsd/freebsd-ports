@@ -1,6 +1,6 @@
---- third_party/angle/src/common/platform.h.orig	2022-02-07 13:39:41 UTC
+--- third_party/angle/src/common/platform.h.orig	2025-05-05 10:57:53 UTC
 +++ third_party/angle/src/common/platform.h
-@@ -26,7 +26,15 @@
+@@ -23,7 +23,15 @@
  #elif defined(__linux__) || defined(EMSCRIPTEN)
  #    define ANGLE_PLATFORM_LINUX 1
  #    define ANGLE_PLATFORM_POSIX 1

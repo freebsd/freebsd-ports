@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2025-03-05 08:14:56 UTC
+--- content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2025-05-05 10:57:53 UTC
 +++ content/browser/renderer_host/render_widget_host_view_aura.cc
 @@ -121,7 +121,7 @@
  #include "ui/gfx/gdi_util.h"
@@ -18,7 +18,7 @@
    ui::BrowserAccessibilityManager* manager =
        host()->GetOrCreateRootBrowserAccessibilityManager();
    if (manager && manager->GetBrowserAccessibilityRoot())
-@@ -1867,7 +1867,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
+@@ -1882,7 +1882,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
    return host() && host()->delegate() && host()->delegate()->ShouldDoLearning();
  }
  
@@ -27,7 +27,7 @@
  bool RenderWidgetHostViewAura::SetCompositionFromExistingText(
      const gfx::Range& range,
      const std::vector<ui::ImeTextSpan>& ui_ime_text_spans) {
-@@ -2843,7 +2843,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
+@@ -2858,7 +2858,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
  }
  
  bool RenderWidgetHostViewAura::NeedsMouseCapture() {
@@ -36,12 +36,12 @@
    return NeedsInputGrab();
  #else
    return false;
-@@ -3027,7 +3027,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
+@@ -3042,7 +3042,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
    if (!target_host)
      return;
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    auto* linux_ui = ui::LinuxUi::instance();
-   std::vector<ui::TextEditCommandAuraLinux> commands;
-   if (!event.skip_if_unhandled && linux_ui && event.os_event &&
+   if (!event.skip_if_unhandled && linux_ui && event.os_event) {
+     const auto command = linux_ui->GetTextEditCommandForEvent(

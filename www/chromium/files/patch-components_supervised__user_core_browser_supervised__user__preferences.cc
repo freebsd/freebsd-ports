@@ -1,6 +1,6 @@
---- components/supervised_user/core/browser/supervised_user_preferences.cc.orig	2025-02-19 07:43:18 UTC
+--- components/supervised_user/core/browser/supervised_user_preferences.cc.orig	2025-05-05 10:57:53 UTC
 +++ components/supervised_user/core/browser/supervised_user_preferences.cc
-@@ -144,7 +144,7 @@ void RegisterProfilePrefs(PrefRegistrySimple* registry
+@@ -147,7 +147,7 @@ void RegisterProfilePrefs(PrefRegistrySimple* registry
    registry->RegisterBooleanPref(prefs::kChildAccountStatusKnown, false);
    registry->RegisterStringPref(prefs::kFamilyLinkUserMemberRole, std::string());
  #if BUILDFLAG(ENABLE_EXTENSIONS) && \

@@ -1,6 +1,6 @@
---- ui/views/BUILD.gn.orig	2025-04-04 08:52:13 UTC
+--- ui/views/BUILD.gn.orig	2025-05-05 10:57:53 UTC
 +++ ui/views/BUILD.gn
-@@ -836,7 +836,6 @@ component("views") {
+@@ -839,7 +839,6 @@ component("views") {
        sources += [ "accessibility/widget_ax_tree_id_map.cc" ]
      }
      deps += [

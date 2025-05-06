@@ -1,4 +1,4 @@
---- chrome/browser/profiles/profile_impl.cc.orig	2025-03-05 08:14:56 UTC
+--- chrome/browser/profiles/profile_impl.cc.orig	2025-05-05 10:57:53 UTC
 +++ chrome/browser/profiles/profile_impl.cc
 @@ -270,6 +270,10 @@
  #include "chrome/browser/safe_browsing/safe_browsing_service.h"
@@ -20,7 +20,7 @@
      ProfileManager* profile_manager = g_browser_process->profile_manager();
      ProfileAttributesEntry* entry =
          profile_manager->GetProfileAttributesStorage()
-@@ -892,7 +896,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
+@@ -890,7 +894,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
  }
  
  base::FilePath ProfileImpl::last_selected_directory() {

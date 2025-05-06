@@ -1,15 +1,15 @@
---- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig	2025-04-04 08:52:13 UTC
+--- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig	2025-05-05 10:57:53 UTC
 +++ chrome/browser/extensions/api/settings_private/prefs_util.cc
-@@ -191,7 +191,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
+@@ -196,7 +196,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
    (*s_allowlist)[autofill::prefs::kAutofillPaymentCardBenefits] =
        settings_api::PrefType::kBoolean;
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   (*s_allowlist)[autofill::prefs::kAutofillPredictionImprovementsEnabled] =
-       settings_api::PrefType::kBoolean;
    (*s_allowlist)[autofill::prefs::kAutofillBnplEnabled] =
-@@ -211,7 +211,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
+       settings_api::PrefType::kBoolean;
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
+@@ -214,7 +214,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
    (*s_allowlist)[tab_groups::prefs::kAutoPinNewTabGroups] =
        settings_api::PrefType::kBoolean;
  
@@ -18,7 +18,7 @@
    (*s_allowlist)[::prefs::kUseCustomChromeFrame] =
        settings_api::PrefType::kBoolean;
  #endif
-@@ -223,7 +223,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
+@@ -226,7 +226,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
    (*s_allowlist)[::prefs::kCurrentThemeID] = settings_api::PrefType::kString;
    (*s_allowlist)[::prefs::kPinnedActions] = settings_api::PrefType::kList;
    (*s_allowlist)[::prefs::kPolicyThemeColor] = settings_api::PrefType::kNumber;
