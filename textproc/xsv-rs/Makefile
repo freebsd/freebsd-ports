@@ -4,7 +4,7 @@ PORTREVISION=	66
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	-rs
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast CSV toolkit
 WWW=		https://github.com/BurntSushi/xsv
 
