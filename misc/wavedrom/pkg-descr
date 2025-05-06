@@ -1,0 +1,11 @@
+wavedrom is a digital timing diagram generator based on WaveDrom.
+
+Features:
+- [x] All original WaveDrom Signal Types
+- [x] Signal Groups
+- [x] Arrows and Indicator Markers
+- [x] Headers and Footers
+- [x] Cycle Enumeration Markers
+- [x] Editor Website through WASM
+- [x] MdBook Preprocessor
+- [x] Full Customization via Skins

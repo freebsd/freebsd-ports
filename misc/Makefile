@@ -671,6 +671,7 @@
     SUBDIR += viz
     SUBDIR += vote
     SUBDIR += vxl
+    SUBDIR += wavedrom
     SUBDIR += wego
     SUBDIR += whichman
     SUBDIR += window
