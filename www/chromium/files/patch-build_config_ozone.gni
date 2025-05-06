@@ -1,6 +1,6 @@
---- build/config/ozone.gni.orig	2025-04-04 08:52:13 UTC
+--- build/config/ozone.gni.orig	2025-05-05 10:57:53 UTC
 +++ build/config/ozone.gni
-@@ -81,7 +81,15 @@ declare_args() {
+@@ -80,7 +80,15 @@ declare_args() {
        ozone_platform = "x11"
        ozone_platform_drm = true
        ozone_platform_x11 = true

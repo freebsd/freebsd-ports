@@ -1,6 +1,6 @@
---- build/config/clang/BUILD.gn.orig	2025-04-15 07:33:26 UTC
+--- build/config/clang/BUILD.gn.orig	2025-05-05 10:57:53 UTC
 +++ build/config/clang/BUILD.gn
-@@ -251,7 +251,12 @@ template("clang_lib") {
+@@ -252,7 +252,12 @@ template("clang_lib") {
  
  # Adds a dependency on the Clang runtime library clang_rt.builtins.
  clang_lib("compiler_builtins") {
@@ -13,4 +13,4 @@
 +  } else if (is_mac) {
      libname = "osx"
    } else if (is_ios) {
-     if (target_environment == "simulator") {
+     if (target_platform == "iphoneos") {

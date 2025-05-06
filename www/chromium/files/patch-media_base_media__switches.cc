@@ -1,4 +1,4 @@
---- media/base/media_switches.cc.orig	2025-04-04 08:52:13 UTC
+--- media/base/media_switches.cc.orig	2025-05-05 10:57:53 UTC
 +++ media/base/media_switches.cc
 @@ -19,7 +19,7 @@
  #include "ui/gl/gl_features.h"
@@ -49,7 +49,7 @@
  #endif  // BUILDFLAG(IS_LINUX)
  
  // When enabled, MediaCapabilities will check with GPU Video Accelerator
-@@ -611,7 +633,7 @@ BASE_FEATURE(kFileDialogsBlockPictureInPicture,
+@@ -636,7 +658,7 @@ BASE_FEATURE(kFileDialogsBlockPictureInPicture,
  // Show toolbar button that opens dialog for controlling media sessions.
  BASE_FEATURE(kGlobalMediaControls,
               "GlobalMediaControls",
@@ -58,7 +58,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -634,7 +656,7 @@ BASE_FEATURE(kGlobalMediaControlsUpdatedUI,
+@@ -659,7 +681,7 @@ BASE_FEATURE(kGlobalMediaControlsUpdatedUI,
  // If enabled, users can request Media Remoting without fullscreen-in-tab.
  BASE_FEATURE(kMediaRemotingWithoutFullscreen,
               "MediaRemotingWithoutFullscreen",
@@ -67,7 +67,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -646,7 +668,7 @@ BASE_FEATURE(kMediaRemotingWithoutFullscreen,
+@@ -671,7 +693,7 @@ BASE_FEATURE(kMediaRemotingWithoutFullscreen,
  BASE_FEATURE(kGlobalMediaControlsPictureInPicture,
               "GlobalMediaControlsPictureInPicture",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -76,7 +76,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -675,7 +697,7 @@ BASE_FEATURE(kUnifiedAutoplay,
+@@ -700,7 +722,7 @@ BASE_FEATURE(kUnifiedAutoplay,
               "UnifiedAutoplay",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -85,7 +85,7 @@
  // Enable vaapi/v4l2 video decoding on linux. This is already enabled by default
  // on chromeos, but needs an experiment on linux.
  BASE_FEATURE(kAcceleratedVideoDecodeLinux,
-@@ -775,7 +797,7 @@ BASE_FEATURE(kVSyncMjpegDecoding,
+@@ -800,7 +822,7 @@ BASE_FEATURE(kVSyncMjpegDecoding,
               "VSyncMjpegDecoding",
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // defined(ARCH_CPU_X86_FAMILY) && BUILDFLAG(IS_CHROMEOS)
@@ -94,8 +94,8 @@
  // Enable H264 temporal layer encoding with V4L2 HW encoder on ChromeOS.
  BASE_FEATURE(kV4L2H264TemporalLayerHWEncoding,
               "V4L2H264TemporalLayerHWEncoding",
-@@ -1347,7 +1369,7 @@ BASE_FEATURE(kUseGTFOOutOfProcessVideoDecoding,
-              base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -1361,7 +1383,7 @@ BASE_FEATURE(kUseOutOfProcessVideoDecoding,
+ );
  #endif  // BUILDFLAG(ALLOW_OOP_VIDEO_DECODER)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -103,7 +103,7 @@
  // Spawn utility processes to perform hardware encode acceleration instead of
  // using the GPU process.
  BASE_FEATURE(kUseOutOfProcessVideoEncoding,
-@@ -1429,7 +1451,7 @@ BASE_FEATURE(kRecordWebAudioEngagement,
+@@ -1443,7 +1465,7 @@ BASE_FEATURE(kRecordWebAudioEngagement,
               "RecordWebAudioEngagement",
               base::FEATURE_ENABLED_BY_DEFAULT);
  

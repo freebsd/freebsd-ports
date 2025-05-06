@@ -1,6 +1,6 @@
---- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2025-04-04 08:52:13 UTC
+--- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2025-05-05 10:57:53 UTC
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
-@@ -196,11 +196,11 @@
+@@ -197,11 +197,11 @@
  #include "chrome/browser/metrics/google_update_metrics_provider_mac.h"
  #endif
  
@@ -41,7 +41,7 @@
    // Register the environment with the crash reporter. Note that there is a
    // window from startup to this point during which crash reports will not have
    // an environment set.
-@@ -724,7 +724,7 @@ void ChromeMetricsServiceClient::Initialize() {
+@@ -721,7 +721,7 @@ void ChromeMetricsServiceClient::Initialize() {
          std::make_unique<metrics::dwa::DwaService>(this, local_state);
    }
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -50,7 +50,7 @@
    metrics::structured::Recorder::GetInstance()->SetUiTaskRunner(
        base::SequencedTaskRunner::GetCurrentDefault());
  #endif
-@@ -784,7 +784,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -781,7 +781,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<metrics::CPUMetricsProvider>());
  
@@ -59,7 +59,7 @@
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<metrics::MotherboardMetricsProvider>());
  #endif
-@@ -873,7 +873,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -870,7 +870,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
        std::make_unique<GoogleUpdateMetricsProviderMac>());
  #endif
  

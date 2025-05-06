@@ -1,4 +1,4 @@
---- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2024-11-14 07:57:23 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2025-05-05 10:57:53 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.cc
 @@ -0,0 +1,392 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -333,7 +333,7 @@
 +      break;
 +    case sandbox::mojom::Sandbox::kGpu:
 +    case sandbox::mojom::Sandbox::kOnDeviceModelExecution:
-+      SetPledge("stdio drm rpath flock cpath wpath prot_exec recvfd sendfd tmppath", NULL);
++      SetPledge("stdio drm inet rpath flock cpath wpath prot_exec recvfd sendfd tmppath unix", NULL);
 +      break;
 +#if BUILDFLAG(ENABLE_PPAPI)
 +    case sandbox::mojom::Sandbox::kPpapi:

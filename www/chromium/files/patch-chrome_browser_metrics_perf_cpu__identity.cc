@@ -1,6 +1,6 @@
---- chrome/browser/metrics/perf/cpu_identity.cc.orig	2025-04-04 08:52:13 UTC
+--- chrome/browser/metrics/perf/cpu_identity.cc.orig	2025-05-05 10:57:53 UTC
 +++ chrome/browser/metrics/perf/cpu_identity.cc
-@@ -145,7 +145,7 @@ CPUIdentity GetCPUIdentity() {
+@@ -146,7 +146,7 @@ CPUIdentity GetCPUIdentity() {
    result.release =
  #if BUILDFLAG(IS_CHROMEOS)
        base::SysInfo::KernelVersion();

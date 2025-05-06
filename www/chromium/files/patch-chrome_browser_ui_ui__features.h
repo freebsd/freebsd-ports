@@ -1,6 +1,6 @@
---- chrome/browser/ui/ui_features.h.orig	2025-04-04 08:52:13 UTC
+--- chrome/browser/ui/ui_features.h.orig	2025-05-05 10:57:53 UTC
 +++ chrome/browser/ui/ui_features.h
-@@ -47,7 +47,7 @@ extern const base::FeatureParam<int> kMaxPromptCount;
+@@ -31,7 +31,7 @@ BASE_DECLARE_FEATURE(kCloseOmniboxPopupOnInactiveAreaC
  BASE_DECLARE_FEATURE(kExtensionsMenuInAppMenu);
  bool IsExtensionMenuInRootAppMenu();
  
@@ -9,7 +9,7 @@
  BASE_DECLARE_FEATURE(kFewerUpdateConfirmations);
  #endif
  
-@@ -211,7 +211,7 @@ BASE_DECLARE_FEATURE(kViewsFirstRunDialog);
+@@ -203,7 +203,7 @@ BASE_DECLARE_FEATURE(kViewsFirstRunDialog);
  BASE_DECLARE_FEATURE(kViewsJSAppModalDialog);
  #endif
  

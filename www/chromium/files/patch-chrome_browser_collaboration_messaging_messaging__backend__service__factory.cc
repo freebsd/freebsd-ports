@@ -1,6 +1,6 @@
---- chrome/browser/collaboration/messaging/messaging_backend_service_factory.cc.orig	2025-03-05 08:14:56 UTC
+--- chrome/browser/collaboration/messaging/messaging_backend_service_factory.cc.orig	2025-05-05 10:57:53 UTC
 +++ chrome/browser/collaboration/messaging/messaging_backend_service_factory.cc
-@@ -100,7 +100,7 @@ MessagingBackendServiceFactory::BuildServiceInstanceFo
+@@ -102,7 +102,7 @@ MessagingBackendServiceFactory::BuildServiceInstanceFo
    // This configuration object allows us to control platform specific behavior.
    MessagingBackendConfiguration configuration;
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

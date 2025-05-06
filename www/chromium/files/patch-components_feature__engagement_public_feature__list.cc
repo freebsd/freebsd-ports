@@ -1,7 +1,7 @@
---- components/feature_engagement/public/feature_list.cc.orig	2025-04-04 08:52:13 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2025-05-05 10:57:53 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -170,7 +170,7 @@ const base::Feature* const kAllFeatures[] = {
-     &kIPHiOSReminderNotificationsOverflowMenuNewBadgeFeature,
+@@ -175,7 +175,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHiOSSettingsInOverflowMenuBubbleFeature,
  #endif  // BUILDFLAG(IS_IOS)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
@@ -9,16 +9,16 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
      &kEsbDownloadRowPromoFeature,
  #endif
-@@ -241,7 +241,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -247,7 +247,7 @@ const base::Feature* const kAllFeatures[] = {
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
-     &kIPHAutofillCardInfoRetrievalSuggestionFeature,
-     &kIPHAutofillCreditCardBenefitFeature,
-@@ -294,7 +294,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHAutofillAiOptInFeature,
+     &kIPHAutofillBnplAffirmOrZipSuggestionFeature,
+@@ -302,7 +302,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHScalableIphGamingFeature,
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
