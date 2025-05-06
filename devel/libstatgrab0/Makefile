@@ -10,6 +10,9 @@ MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Provides a useful interface to system statistics
 WWW=		https://www.i-scream.org/libstatgrab/
 
+DEPRECATED=	Use devel/libstatgrab instead.
+EXPIRATION_DATE=2025-12-31
+
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig libtool
