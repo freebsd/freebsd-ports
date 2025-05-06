@@ -1,7 +1,9 @@
 bin/indi_Excalibur
 bin/indi_aaf2_focus
+bin/indi_aagsolo_weather
 bin/indi_activefocuser_focus
 bin/indi_alluna_tcs2
+bin/indi_alpaca_dome
 bin/indi_alto
 bin/indi_arduinost4
 bin/indi_astrolink4
@@ -127,9 +129,11 @@ bin/indi_setprop
 bin/indi_siefs_focus
 bin/indi_simulator_ccd
 bin/indi_simulator_dome
+bin/indi_simulator_dustcover
 bin/indi_simulator_focus
 bin/indi_simulator_gps
 bin/indi_simulator_guide
+bin/indi_simulator_io
 bin/indi_simulator_lightpanel
 bin/indi_simulator_receiver
 bin/indi_simulator_rotator
@@ -172,6 +176,7 @@ bin/indi_wanderercover_v4_ec
 bin/indi_watchdog
 bin/indi_watcher_weather
 bin/indi_wavesharemodbus_relay
+bin/indi_weather_safety_alpaca
 bin/indi_weather_safety_proxy
 bin/indi_xagyl_wheel
 bin/indiserver
