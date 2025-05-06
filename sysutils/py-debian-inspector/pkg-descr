@@ -1,0 +1,3 @@
+A python library to parse Debian deb822-style control and copyright files and
+all related Debian, Ubuntu and Debian-derivative manifest and metadata files,
+an alternative approach to python-debian.
