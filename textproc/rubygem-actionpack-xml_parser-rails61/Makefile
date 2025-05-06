@@ -4,7 +4,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails61
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML parameters parser for Action Pack
 WWW=		https://github.com/rails/actionpack-xml_parser
 
