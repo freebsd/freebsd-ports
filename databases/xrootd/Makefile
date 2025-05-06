@@ -19,6 +19,8 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtinyxml.so:textproc/tinyxml \
 		libuuid.so:misc/e2fsprogs-libuuid
+TEST_DEPENDS=	cppunit>0:devel/cppunit \
+		googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++14-lang cpe gnome localbase:ldflags pkgconfig readline shebangfix ssl
 SHEBANG_GLOB=	*.sh
@@ -35,6 +37,8 @@ CMAKE_TESTING_ON=	ENABLE_TESTS
 
 CXXFLAGS+=	-Ddirent64=dirent
 LDFLAGS+=	-lexecinfo
+
+TESTING_UNSAFE=	some tests hang on accept()
 
 OPTIONS_DEFINE=		KERBEROS5
 OPTIONS_GROUP=		PLUGINS
