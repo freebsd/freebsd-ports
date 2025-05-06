@@ -1,5 +1,6 @@
 PORTNAME=	metis
 DISTVERSION=	5.1.0-p13
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/petsc/pkg-metis/get/
@@ -54,7 +55,7 @@ CFLAGS+=	-fpic
 .include <bsd.port.options.mk>
 
 .if ${ARCH:M*64*}
-CFLAGS+=	-DMETIS_USE_LONGINDEX
+CMAKE_ARGS+=	-DMETIS_USE_LONGINDEX:BOOL="On"
 .endif
 
 pre-configure:
