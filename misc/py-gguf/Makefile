@@ -24,7 +24,7 @@ USE_PYTHON=	pep517 autoplist pytest
 USE_GITHUB=	yes
 GH_ACCOUNT=	ggml-org
 GH_PROJECT=	llama.cpp
-GH_TAGNAME=	b5195
+GH_TAGNAME=	b5287
 
 WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}/gguf-py
 
@@ -37,6 +37,6 @@ post-patch: # update version to reflect llama-cpp revision, have to use '.' sinc
 		-e 's/version = "${DISTVERSION:R}"/version = "${DISTVERSION:R}.${GH_TAGNAME:S/b//}"/' \
 		${WRKSRC}/pyproject.toml
 
-# tests as of 0.16.0: 5 passed in 1.64s
+# tests as of 0.16.2.5280: 5 passed in 10.59s
 
 .include <bsd.port.mk>
