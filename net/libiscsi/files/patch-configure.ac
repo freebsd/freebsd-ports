@@ -1,6 +1,6 @@
---- configure.ac.orig	2024-02-05 23:51:38 UTC
+--- configure.ac.orig	2025-05-03 00:02:42 UTC
 +++ configure.ac
-@@ -170,7 +170,8 @@ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
+@@ -205,7 +205,8 @@ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
  #include <infiniband/verbs.h>
  #include <rdma/rdma_cma.h>
@@ -10,3 +10,25 @@
  [[int ibv = IBV_WC_SEND;]])],
  [libiscsi_cv_HAVE_LINUX_ISER=yes],[libiscsi_cv_HAVE_LINUX_ISER=no])])
  if test x"$libiscsi_cv_HAVE_LINUX_ISER" = x"yes"; then
+@@ -229,6 +230,21 @@ AM_CONDITIONAL([HAVE_PTHREAD], [test x$libiscsi_cv_HAV
+ 	   AC_DEFINE(HAVE_MULTITHREADING,1,[Whether we have multithreading support])
+ 	fi
+ AM_CONDITIONAL([HAVE_PTHREAD], [test x$libiscsi_cv_HAVE_PTHREAD = xyes])
++
++AC_CACHE_CHECK([whether libthr is available],
++               [ac_cv_have_thr],
++               [ac_save_CFLAGS="$CFLAGS"
++                ac_save_LIBS="$LIBS"
++                CFLAGS="$CFLAGS $GLIB_CFLAGS"
++                LIBS="$GLIB_LIBS $LIBS -lthr"
++                AC_LINK_IFELSE([AC_LANG_PROGRAM([[
++                    #include <pthread.h>
++                    ]], [[]])],[ac_cv_have_thr=yes],[ac_cv_have_thr=no])
++                CFLAGS="$ac_save_CFLAGS"
++                LIBS="$ac_save_LIBS"])
++if test "$ac_cv_have_thr" = yes ; then
++	LIBS="$LIBS -lthr"
++fi
+ 
+ AC_CACHE_CHECK([whether libcunit is available],
+                [ac_cv_have_cunit],

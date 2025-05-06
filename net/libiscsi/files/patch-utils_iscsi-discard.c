@@ -1,4 +1,4 @@
---- utils/iscsi-discard.c.orig	2024-02-05 23:51:38 UTC
+--- utils/iscsi-discard.c.orig	2025-05-03 00:02:42 UTC
 +++ utils/iscsi-discard.c
 @@ -220,7 +220,11 @@ int main(int argc, char *argv[])
  
