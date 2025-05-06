@@ -5,7 +5,7 @@ PORTREVISION=	6
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-find
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Simple, fast and user-friendly alternative to find
 WWW=		https://github.com/sharkdp/fd
 
