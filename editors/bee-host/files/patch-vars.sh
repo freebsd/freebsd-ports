@@ -1,12 +1,14 @@
---- vars.sh.orig	2022-04-07 09:03:56 UTC
+--- vars.sh.orig	2025-05-06 17:29:25 UTC
 +++ vars.sh
-@@ -45,8 +45,8 @@ case "$kernel" in
+@@ -47,9 +47,9 @@ case "$kernel" in
    *)
      if [ $EUID == 0 ]; then
        # If superuser
 -      chrome_target_manifest_dir='/etc/opt/chrome/native-messaging-hosts'
+-      chromium_target_manifest_dir='/etc/chromium/native-messaging-hosts'
 -      firefox_target_manifest_dir='/usr/lib/mozilla/native-messaging-hosts'
 +      chrome_target_manifest_dir='%%LOCALBASE%%/chrome/native-messaging-hosts'
++      chromium_target_manifest_dir='%%LOCALBASE%%/chromium/native-messaging-hosts'
 +      firefox_target_manifest_dir='%%LOCALBASE%%/lib/mozilla/native-messaging-hosts'
      else
        # If normal user
