@@ -1,6 +1,6 @@
 PORTNAME=	echoping
 PORTVERSION=	6.0.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net
 
 MAINTAINER=	eugen@FreeBSD.org
@@ -61,7 +61,7 @@ LIB_DEPENDS+=		libidn2.so:dns/libidn2
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-idn2-acinclude.m4 \
 			${PATCHDIR}/extra-patch-idn2-configure.ac \
 			${PATCHDIR}/extra-patch-idn2-echoping.c \
-			${PATCHDIR}/extra-patch-idn2-echoping.h \
+			${PATCHDIR}/extra-patch-idn2-echoping.h
 .else
 CONFIGURE_ARGS+=	--with-libidn=${LOCALBASE}
 LIB_DEPENDS+=		libidn.so:dns/libidn
