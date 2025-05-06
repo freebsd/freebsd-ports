@@ -1,5 +1,6 @@
 PORTNAME=	tomee
 DISTVERSION=	8.0.16
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${PORTNAME}-${DISTVERSION}/
 DISTNAME=	apache-${PORTNAME}-${DISTVERSION}-webprofile
@@ -12,8 +13,12 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	jsvc:devel/apache-commons-daemon
 
-USES=		cpe java
+USES=		cpe dos2unix java
 CPE_VENDOR=	apache
+DOS2UNIX_FILES=		${TOMEE_CONF_FILES} catalina.policy.original \
+			server.xml.original tomcat-users.xml.original \
+			tomcat-users.xsd
+DOS2UNIX_WRKSRC=	${WRKSRC}/conf
 USE_RC_SUBR=	${PKGBASE}
 
 EXTRACT_AFTER_ARGS=	--exclude *.bat \

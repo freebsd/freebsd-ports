@@ -85,7 +85,7 @@ eval "${rcvar}=\${${rcvar}:-'NO'}"
 eval "_tomee_java_home=\${${name}_java_home:-'%%JAVA_HOME%%'}"
 eval "_tomee_catalina_user=\${${name}_catalina_user:-'%%TOMEE_USER%%'}"
 eval "_tomee_catalina_home=\${${name}_catalina_home:-'%%TOMEE_HOME%%'}"
-eval "_tomee_catalina_base=\${${name}_catalina_base:-'${_tomcat_catalina_home}'}"
+eval "_tomee_catalina_base=\${${name}_catalina_base:-'${_tomee_catalina_home}'}"
 eval "_tomee_catalina_tmpdir=\${${name}_catalina_tmpdir:-'${_tomee_catalina_base}/temp'}"
 eval "_tomee_stdout=\${${name}_stdout:-'${_tomee_catalina_base}/logs/catalina.out'}"
 eval "_tomee_stderr=\${${name}_stderr:-'&1'}"
@@ -104,10 +104,24 @@ required_dirs="${_tomee_catalina_tmpdir}"
 extra_commands="reload"
 
 _tomee_java_version=`${_tomee_java_home}/bin/java -version 2>&1 | /usr/bin/awk -F '"' '/version/ {print $2}'`
+_tomee_java9_opts="\
+	--add-opens=java.base/java.io=ALL-UNNAMED \
+	--add-opens=java.base/java.lang=ALL-UNNAMED \
+	--add-opens=java.base/java.net=ALL-UNNAMED \
+	--add-opens=java.base/java.util=ALL-UNNAMED \
+	--add-opens=java.base/java.util.concurrent=ALL-UNNAMED \
+	--add-opens=java.base/sun.net.www.protocol.jar=ALL-UNNAMED \
+	--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED"
+_tomee_java17_opts="--enable-native-access=ALL-UNNAMED"
 
 case "${_tomee_java_version}" in
-	9* | [1-2][0-9]* )
+	1[7-9]* | [2-9][0-9]* )
 		_tomee_endorsed_dirs_option=
+		_tomee_java_opts="${_tomee_java_opts} ${_tomee_java9_opts} ${_tomee_java17_opts}"
+		;;
+	9* | 1[0-6]* )
+		_tomee_endorsed_dirs_option=
+		_tomee_java_opts="${_tomee_java_opts} ${_tomee_java9_opts}"
 		;;
 	*)
 		_tomee_endorsed_dirs_option="-Djava.endorsed.dirs='${_tomee_catalina_home}/endorsed'"
