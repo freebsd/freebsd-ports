@@ -1,6 +1,6 @@
 PORTNAME=	rash
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.10
+DISTVERSION=	2.9.11
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,7 +50,7 @@ CARGO_CRATES=	ahash-0.7.8 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
-		chrono-0.4.40 \
+		chrono-0.4.41 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
