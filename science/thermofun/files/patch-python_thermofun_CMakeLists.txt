@@ -1,4 +1,4 @@
---- python/thermofun/CMakeLists.txt.orig	2023-03-02 11:19:26 UTC
+--- python/thermofun/CMakeLists.txt.orig	2025-05-05 07:34:58 UTC
 +++ python/thermofun/CMakeLists.txt
 @@ -26,7 +26,7 @@ add_custom_target(thermofun ALL
      COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:PyThermoFun> 
@@ -9,12 +9,12 @@
      WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
  
  # Set dependencies of thermofun target
-@@ -54,7 +54,7 @@ install(CODE
+@@ -71,7 +71,7 @@ install(CODE
      endif()
  
      execute_process(
--        COMMAND ${PYTHON_EXECUTABLE} -m pip install --prefix \${THERMOFUN_PYTHON_INSTALL_PREFIX_NATIVE} ${CMAKE_CURRENT_BINARY_DIR}
-+        COMMAND ${PYTHON_EXECUTABLE} -m pip install --root ${FREEBSD_STAGEDIR} --prefix ${FREEBSD_PREFIX} ${CMAKE_CURRENT_BINARY_DIR}
-         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+-        COMMAND \"${PYTHON_EXECUTABLE}\" -m pip install --prefix \"${THERMOFUN_PYTHON_INSTALL_PREFIX}\" \"${CMAKE_CURRENT_BINARY_DIR}\"
++        COMMAND \"${PYTHON_EXECUTABLE}\" -m pip install --root ${FREEBSD_STAGEDIR} --prefix ${FREEBSD_PREFIX} \"${CMAKE_CURRENT_BINARY_DIR}\"
+         WORKING_DIRECTORY \"${CMAKE_CURRENT_BINARY_DIR}\")
  "
  )
