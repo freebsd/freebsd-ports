@@ -1,11 +1,18 @@
---- pyproject.toml.orig	2025-03-30 21:20:26 UTC
+--- pyproject.toml.orig	2025-05-05 19:38:52 UTC
 +++ pyproject.toml
-@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
- build-backend = "setuptools.build_meta"
- 
+@@ -1,5 +1,5 @@
  [project]
 -name = "geoip2"
 +name = "GeoIP2"
- version = "5.0.1"
+ version = "5.1.0"
  description = "MaxMind GeoIP2 API"
  authors = [
+@@ -12,7 +12,7 @@ readme = "README.rst"
+ ]
+ requires-python = ">=3.9"
+ readme = "README.rst"
+-license = "Apache-2.0"
++license = {file = "LICENSE"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Web Environment",
