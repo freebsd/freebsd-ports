@@ -21,7 +21,7 @@ USE_LINUX=	alsalib alsa-lib-devel alsa-plugins-oss alsa-plugins-pulseaudio \
 		libpciaccess libpsl librsvg2 libsecret libsigc++20 \
 		libsndfile libsoup libssh libstemmer libtasn1 libthai libtheora libtool-ltdl \
 		libtracker-sparql libunistring libusb libv4l libva libvdpau \
-		libvorbis libvpx libxcrypt libxkbcommon libxml2 libxslt llvm \
+		libvorbis libvpx libxkbcommon libxml2 libxslt llvm \
 		lz4 nettle npth nspr nss ocl-icd openal-soft openldap opus orc \
 		p11-kit pango pixman pulseaudio-libs pulseaudio-utils python3 \
 		qt3d qtbase qtconnectivity qtdeclarative qtgraphicaleffects qtimageformats \
