@@ -1,6 +1,7 @@
 PORTNAME=	${GH_PROJECT:tl}
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.5.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 PATCH_SITES=	https://github.com/musescore/MuseScore/commit/
@@ -33,7 +34,6 @@ USE_GL=		gl
 
 USE_GITHUB=	yes
 GH_PROJECT=	MuseScore
-GH_TAGNAME=	v4.5
 
 # Each release gets a subdir containing the distfiles for that release,
 # so hope that scanning the parent dir finds new ones.
@@ -62,7 +62,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/libdata
 	# workaround for https://github.com/musescore/MuseScore/issues/26104
 	@${INSTALL_DATA} ${FILESDIR}/mscore.desktop ${STAGEDIR}${PREFIX}/share/applications/
-	@${REINPLACE_CMD} -e "\
+	@${REINPLACE_CMD} -i '' -e "\
 		s|^Version=.*|Version=${PORTVERSION}|; \
 		s|^Name=.*|Name=MuseScore|; \
 		"  ${STAGEDIR}${PREFIX}/share/applications/mscore.desktop

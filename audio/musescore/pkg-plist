@@ -11,6 +11,8 @@ share/icons/hicolor/512x512/mimetypes/application-x-musescore+xml.png
 share/icons/hicolor/512x512/mimetypes/application-x-musescore.png
 share/icons/hicolor/64x64/apps/mscore.png
 share/icons/hicolor/96x96/apps/mscore.png
+share/icons/hicolor/scalable/mimetypes/application-x-musescore+xml.svg
+share/icons/hicolor/scalable/mimetypes/application-x-musescore.svg
 %%DATADIR%%/autobotscripts/TC1.1_CreateSimpleScore.js
 %%DATADIR%%/autobotscripts/TC1.2_CreateSimpleScoreWithRandomInstruments.js
 %%DATADIR%%/autobotscripts/TC2_CreateSimpleScoreByTemplate.js
