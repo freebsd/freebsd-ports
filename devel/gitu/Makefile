@@ -1,6 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.30.3
+DISTVERSION=	0.31.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -88,7 +88,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		git-version-macro-0.3.9 \
 		git2-0.20.1 \
 		glob-0.3.1 \
-		globset-0.4.15 \
 		half-2.4.1 \
 		hashbrown-0.15.0 \
 		heck-0.5.0 \
@@ -109,7 +108,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		icu_provider_macros-1.5.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
-		ignore-0.4.23 \
 		indexmap-2.6.0 \
 		indoc-2.0.5 \
 		inotify-0.10.2 \
