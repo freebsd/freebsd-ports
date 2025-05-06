@@ -5,7 +5,7 @@ PORTREVISION=	8
 CATEGORIES=	shells
 PKGNAMESUFFIX=	-shell
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern system shell written in Rust
 WWW=		https://gitlab.redox-os.org/redox-os/ion
 
