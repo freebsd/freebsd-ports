@@ -11,6 +11,9 @@ WWW=		https://landrop.app
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Unmaintained version and the newer version turned to close source
+EXPIRATION_DATE=2025-06-13
+
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=	gl qmake:outsource qt:5
