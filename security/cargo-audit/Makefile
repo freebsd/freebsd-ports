@@ -5,7 +5,7 @@ PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	security
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audit Cargo.lock for crates with security vulnerabilities
 WWW=		https://rustsec.org/
 
