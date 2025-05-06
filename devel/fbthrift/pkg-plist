@@ -280,7 +280,9 @@ include/thrift/lib/cpp2/debug_thrift_data_difference/pretty_print.h
 include/thrift/lib/cpp2/detail/EventHandlerRuntime.h
 include/thrift/lib/cpp2/detail/Isset.h
 include/thrift/lib/cpp2/detail/meta.h
+include/thrift/lib/cpp2/dynamic/SerializableRecord.h
 include/thrift/lib/cpp2/dynamic/TypeId.h
+include/thrift/lib/cpp2/dynamic/TypeSystem.h
 include/thrift/lib/cpp2/folly_dynamic/folly_dynamic.h
 include/thrift/lib/cpp2/folly_dynamic/internal/folly_dynamic-inl-post.h
 include/thrift/lib/cpp2/folly_dynamic/internal/folly_dynamic-inl-pre.h
@@ -351,7 +353,6 @@ include/thrift/lib/cpp2/op/detail/ContainerPatch.h
 include/thrift/lib/cpp2/op/detail/Copy.h
 include/thrift/lib/cpp2/op/detail/Create.h
 include/thrift/lib/cpp2/op/detail/Encode.h
-include/thrift/lib/cpp2/op/detail/Get.h
 include/thrift/lib/cpp2/op/detail/Hash.h
 include/thrift/lib/cpp2/op/detail/HashProtocol.h
 include/thrift/lib/cpp2/op/detail/Patch.h
@@ -363,7 +364,6 @@ include/thrift/lib/cpp2/op/detail/ValueOp.h
 include/thrift/lib/cpp2/op/detail/ValuePatch.h
 include/thrift/lib/cpp2/patch/DynamicPatch.h
 include/thrift/lib/cpp2/patch/detail/PatchBadge.h
-include/thrift/lib/cpp2/patch/detail/Scuba.h
 include/thrift/lib/cpp2/patch/detail/TaggedPatch.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol-inl.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol.h
@@ -730,7 +730,9 @@ include/thrift/lib/thrift/TypeToMaskAdapter.h
 include/thrift/lib/thrift/bundled_lib_thrift.h
 include/thrift/lib/thrift/detail/AnyPatch.h
 include/thrift/lib/thrift/detail/DynamicPatch.h
+include/thrift/lib/thrift/detail/SerializableRecordAdapter.h
 include/thrift/lib/thrift/detail/TypeIdAdapter.h
+include/thrift/lib/thrift/detail/TypeSystemAdapter.h
 include/thrift/lib/thrift/detail/id.h
 include/thrift/lib/thrift/detail/protocol.h
 include/thrift/lib/thrift/gen-cpp2/RocketUpgrade.h
