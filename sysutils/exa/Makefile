@@ -4,7 +4,7 @@ DISTVERSION=	0.10.1
 PORTREVISION=	42
 CATEGORIES=	sysutils
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern replacement for ls
 WWW=		https://the.exa.website/
 
