@@ -1,5 +1,5 @@
 PORTNAME=	sslh
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -32,8 +32,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	sbin/sslh-fork \
 		sbin/sslh-select \
 		sbin/sslh-ev \
-		"@sample etc/sslh.conf.sample" \
-		share/man/man8/sslh.8.gz
+		"@sample etc/sslh.conf.sample"
 
 PORTEXAMPLES=	example.cfg test.cfg udp.cfg
 
@@ -48,7 +47,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sslh-ev ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/basic.cfg \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/sslh.8.gz ${STAGEDIR}${PREFIX}/share/man/man8
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
