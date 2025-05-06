@@ -19,6 +19,9 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
+# 1.20.2 only affects environments defining __APPLE__
+PORTSCOUT=	skipv:1.20.2
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so.11.0.0
 
