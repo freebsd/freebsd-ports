@@ -1,5 +1,5 @@
 PORTNAME=	mod_qos
-DISTVERSION=	11.75
+DISTVERSION=	11.76
 CATEGORIES=	www
 MASTER_SITES=	SF/mod-qos
 DIST_SUBDIR=	apache2
@@ -9,8 +9,6 @@ COMMENT=	QoS for Apache
 WWW=		https://mod-qos.sourceforge.net/
 
 LICENSE=	APACHE20
-
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		apache
 
