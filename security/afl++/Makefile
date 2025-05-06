@@ -4,7 +4,7 @@ DISTVERSION=	4.30c
 CATEGORIES=	security
 PKGNAMESUFFIX=	++-${FLAVOR}
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast instrumented fuzzer
 WWW=		https://aflplus.plus/
 
