@@ -5,6 +5,59 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250506:
+  AFFECTS: users of databases/postgresql* and other software using PostgreSQL to run
+  AUTHOR: kbowling@FreeBSD.org
+
+  The default version of PostgreSQL has been switched from 16 to 17.
+  The upgrade procedure can use up twice the space the databases
+  currently needs. If you have a big amount of stored data take a
+  closer look at the manpage of pg_upgrade for avoidance and/or
+  speedup of the upgrade.
+
+  The upgrade instructions consider a basic usage and do not match
+  complex scenarios like replication, sharding, or similar.
+
+  Upgrade instructions:
+
+  First stop your PostgreSQL, create PostgreSQL-binaries and backup your data.
+  If you have another Version of PostgreSQL installed, for example 16, your
+  files are named according to this.
+
+  # service postgresql stop
+  # pkg create postgresql16-server postgresql16-contrib
+  # mkdir /tmp/pg-upgrade
+  # tar xf postgresql16-server-16.8.pkg -C /tmp/pg-upgrade
+  # tar xf postgresql16-contrib-16.8.pkg -C /tmp/pg-upgrade
+  # pkg delete -f databases/postgresql16-server databases/postgresql16-contrib databases/postgresql16-client
+
+  Now update PostgreSQL:
+
+    pkg user:
+    # pkg install databases/postgresql17-server databases/postgresql17-contrib
+    # pkg upgrade
+
+    Portmaster users:
+    # portmaster databases/postgresql17-server databases/postgresql17-contrib
+    # portmaster -a
+
+    Portupgrade users:
+    # portinstall databases/postgresql17-server databases/postgresql17-contrib
+    # portupgrade -a
+
+  After installing the new PostgreSQL version you need to convert
+  all your databases to new version:
+
+  # su -l postgres -c "/usr/local/bin/initdb --encoding=utf-8 --lc-collate=C -D /var/db/postgres/data17 -U postgres"
+  # su -l postgres -c "pg_upgrade -b /tmp/pg-upgrade/usr/local/bin/ -d /var/db/postgres/data16/ -B /usr/local/bin/ -D /var/db/postgres/data17/ -U postgres "
+
+  Now the migration is finished. You can start PostgreSQL again with:
+
+  # service postgresql start
+
+  ATTENTION:
+  1) If you use non-default initdb options, you have to adjust the initdb-command accordingly
+
 20250503:
   AFFECTS: users of sysutils/bastille
   AUTHOR: jdhurtado@orbiware.com
