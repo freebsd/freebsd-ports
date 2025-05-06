@@ -1,5 +1,6 @@
 PORTNAME=	django-allauth
 PORTVERSION=	65.7.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj51-
@@ -32,7 +33,8 @@ SAML_DESC=		Security Assertion Markup Language support
 SOCIALACCOUNT_DESC=	Social network account support
 STEAM_DESC=		Steam OpenID authentication support
 
-MFA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qrcode>=7.0.0:textproc/py-qrcode@${PY_FLAVOR}
+MFA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qrcode>=7.0.0:textproc/py-qrcode@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}fido2>=0:security/py-fido2@${PY_FLAVOR}
 OPENID_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python3-openid>=3.0.8:security/py-python3-openid@${PY_FLAVOR}
 SAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python3-saml>=1.15.0<2.0.0:security/py-python3-saml@${PY_FLAVOR}
 SOCIALACCOUNT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyjwt>=1.7:www/py-pyjwt@${PY_FLAVOR} \
