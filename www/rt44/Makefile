@@ -4,7 +4,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	44
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Industrial-grade ticketing system written in Perl
 WWW=		https://www.bestpractical.com/rt/
 
