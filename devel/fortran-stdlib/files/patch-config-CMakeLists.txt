@@ -1,0 +1,11 @@
+--- config/CMakeLists.txt.orig	2024-07-01 17:21:34 UTC
++++ config/CMakeLists.txt
+@@ -3,7 +3,7 @@ if(NOT DEFINED CMAKE_INSTALL_MODULEDIR)
+ if(NOT DEFINED CMAKE_INSTALL_MODULEDIR)
+   set(
+     CMAKE_INSTALL_MODULEDIR
+-    "${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/${CMAKE_Fortran_COMPILER_ID}-${CMAKE_Fortran_COMPILER_VERSION}"
++    "${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/${CMAKE_Fortran_COMPILER_ID}"
+     CACHE
+     STRING
+     "Directory in prefix to install generated module files"
