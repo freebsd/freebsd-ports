@@ -1,5 +1,5 @@
 PORTNAME=	gtkwave
-DISTVERSION=	3.3.122
+DISTVERSION=	3.3.123
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 DISTNAME=	${PORTNAME}-gtk3-${DISTVERSION}
