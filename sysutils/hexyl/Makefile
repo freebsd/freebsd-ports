@@ -4,7 +4,7 @@ DISTVERSION=	0.16.0
 PORTREVISION=	3
 CATEGORIES=	sysutils
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line hex viewer
 WWW=		https://github.com/sharkdp/hexyl
 
