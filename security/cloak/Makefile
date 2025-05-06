@@ -4,7 +4,7 @@ DISTVERSION=	0.3.0
 PORTREVISION=	29
 CATEGORIES=	security
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line OTP Authenticator application
 WWW=		https://github.com/evansmurithi/cloak
 
