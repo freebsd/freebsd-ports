@@ -832,6 +832,7 @@
 %%WWWDIR%%/include/classes/html/CTextBox.php
 %%WWWDIR%%/include/classes/html/CUiWidget.php
 %%WWWDIR%%/include/classes/html/CVar.php
+%%WWWDIR%%/include/classes/html/CVertical.php
 %%WWWDIR%%/include/classes/html/CVisibilityBox.php
 %%WWWDIR%%/include/classes/html/CWarning.php
 %%WWWDIR%%/include/classes/html/interfaces/CButtonInterface.php
@@ -1256,6 +1257,7 @@
 %%WWWDIR%%/js/common.js
 %%WWWDIR%%/js/component.z-bar-gauge.js
 %%WWWDIR%%/js/component.z-select.js
+%%WWWDIR%%/js/component.z-vertical.js
 %%WWWDIR%%/js/flickerfreescreen.js
 %%WWWDIR%%/js/functions.js
 %%WWWDIR%%/js/gtlc.js
