@@ -23,9 +23,9 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
    |                |      help: a similar name exists in the module: `event`
    |                no `epoll` in `sys`
 
---- Cargo.lock.orig	2025-02-13 06:43:28 UTC
+--- Cargo.lock.orig	2025-05-07 12:24:01 UTC
 +++ Cargo.lock
-@@ -2629,9 +2629,9 @@ dependencies = [
+@@ -2622,9 +2622,9 @@ dependencies = [
  
  [[package]]
  name = "gilrs"
@@ -37,14 +37,14 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "fnv",
   "gilrs-core",
-@@ -2643,18 +2643,17 @@ dependencies = [
+@@ -2636,24 +2636,23 @@ dependencies = [
  
  [[package]]
  name = "gilrs-core"
--version = "0.6.1"
+-version = "0.6.4"
 +version = "0.5.7"
  source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "0ed2326d21aa97752d41b2c195aee1d99cd84456ff4d5a7f5e6e1cdbd3dcb0b8"
+-checksum = "a6d95ae10ce5aa99543a28cf74e41c11f3b9e3c14f0452bbde46024753cd683e"
 +checksum = "5ccc99e9b8d63ffcaa334c4babfa31f46e156618a11f63efb6e8e6bcb37b830d"
  dependencies = [
 - "core-foundation 0.10.0",
@@ -60,7 +60,14 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
   "serde",
   "uuid",
   "vec_map",
-@@ -3556,9 +3555,9 @@ dependencies = [
+  "wasm-bindgen",
+  "web-sys",
+- "windows 0.61.1",
++ "windows 0.51.1",
+ ]
+ 
+ [[package]]
+@@ -3539,9 +3538,9 @@ dependencies = [
  
  [[package]]
  name = "io-kit-sys"
@@ -72,7 +79,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "core-foundation-sys",
   "mach2",
-@@ -4388,6 +4387,17 @@ dependencies = [
+@@ -4364,6 +4363,17 @@ dependencies = [
   "memoffset 0.6.5",
  ]
  
@@ -90,6 +97,78 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  [[package]]
  name = "nix"
  version = "0.29.0"
+@@ -7560,7 +7570,7 @@ version = "1.6.3"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
+ dependencies = [
+- "cfg-if 1.0.0",
++ "cfg-if 0.1.10",
+  "rand 0.8.5",
+  "static_assertions",
+ ]
+@@ -9342,28 +9352,6 @@ dependencies = [
+  "windows-targets 0.52.6",
+ ]
+ 
+-[[package]]
+-name = "windows"
+-version = "0.61.1"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "c5ee8f3d025738cb02bad7868bbb5f8a6327501e870bf51f1b455b0a2454a419"
+-dependencies = [
+- "windows-collections",
+- "windows-core 0.61.0",
+- "windows-future",
+- "windows-link",
+- "windows-numerics",
+-]
+-
+-[[package]]
+-name = "windows-collections"
+-version = "0.2.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "3beeceb5e5cfd9eb1d76b381630e82c4241ccd0d27f1a39ed41b2760b255c5e8"
+-dependencies = [
+- "windows-core 0.61.0",
+-]
+-
+ [[package]]
+ name = "windows-core"
+ version = "0.51.1"
+@@ -9409,16 +9397,6 @@ dependencies = [
+  "windows-strings 0.4.0",
+ ]
+ 
+-[[package]]
+-name = "windows-future"
+-version = "0.2.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "7a1d6bbefcb7b60acd19828e1bc965da6fcf18a7e39490c5f8be71e54a19ba32"
+-dependencies = [
+- "windows-core 0.61.0",
+- "windows-link",
+-]
+-
+ [[package]]
+ name = "windows-implement"
+ version = "0.58.0"
+@@ -9469,16 +9447,6 @@ version = "0.1.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "76840935b766e1b0a05c0066835fb9ec80071d4c09a16f6bd5f7e655e3c14c38"
+ 
+-[[package]]
+-name = "windows-numerics"
+-version = "0.2.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "9150af68066c4c5c07ddc0ce30421554771e528bde427614c61038bc2c92c2b1"
+-dependencies = [
+- "windows-core 0.61.0",
+- "windows-link",
+-]
+-
+ [[package]]
+ name = "windows-result"
+ version = "0.1.2"
 --- cargo-crates/gilrs-0.10.2/examples/ev.rs.orig	1970-01-01 00:00:00 UTC
 +++ cargo-crates/gilrs-0.10.2/examples/ev.rs
 @@ -9,6 +9,8 @@ use std::process;
