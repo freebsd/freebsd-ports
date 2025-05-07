@@ -1,6 +1,6 @@
---- components/sync_preferences/common_syncable_prefs_database.cc.orig	2025-04-15 08:30:07 UTC
+--- components/sync_preferences/common_syncable_prefs_database.cc.orig	2025-05-06 12:23:00 UTC
 +++ components/sync_preferences/common_syncable_prefs_database.cc
-@@ -319,7 +319,7 @@ constexpr auto kCommonSyncablePrefsAllowlist =
+@@ -321,7 +321,7 @@ constexpr auto kCommonSyncablePrefsAllowlist =
            PrefSensitivity::kNone, MergeBehavior::kNone}},
  #endif  // BUILDFLAG(IS_ANDROID)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

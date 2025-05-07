@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/signals/device_info_fetcher.cc.orig	2025-03-09 21:38:10 UTC
+--- chrome/browser/enterprise/signals/device_info_fetcher.cc.orig	2025-05-06 12:23:00 UTC
 +++ chrome/browser/enterprise/signals/device_info_fetcher.cc
 @@ -10,7 +10,7 @@
  #include "chrome/browser/enterprise/signals/device_info_fetcher_mac.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/signals/device_info_fetcher_linux.h"
  #endif
  
-@@ -74,7 +74,7 @@ std::unique_ptr<DeviceInfoFetcher> DeviceInfoFetcher::
+@@ -76,7 +76,7 @@ std::unique_ptr<DeviceInfoFetcher> DeviceInfoFetcher::
    return CreateInstanceInternal();
  }
  

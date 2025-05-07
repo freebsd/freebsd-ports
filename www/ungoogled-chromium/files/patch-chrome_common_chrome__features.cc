@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.cc.orig	2025-04-15 08:30:07 UTC
+--- chrome/common/chrome_features.cc.orig	2025-05-06 12:23:00 UTC
 +++ chrome/common/chrome_features.cc
 @@ -80,7 +80,7 @@ BASE_FEATURE(kUseAdHocSigningForWebAppShims,
  #endif  // BUILDFLAG(IS_MAC)
@@ -36,7 +36,7 @@
  // Controls whether Chrome Apps are supported. See https://crbug.com/1221251.
  // If the feature is disabled, Chrome Apps continue to work. If enabled, Chrome
  // Apps will not launch and will be marked in the UI as deprecated.
-@@ -834,7 +834,7 @@ BASE_FEATURE(kKAnonymityServiceStorage,
+@@ -899,7 +899,7 @@ BASE_FEATURE(kKAnonymityServiceStorage,
               "KAnonymityServiceStorage",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -45,7 +45,7 @@
  BASE_FEATURE(kLinuxLowMemoryMonitor,
               "LinuxLowMemoryMonitor",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -847,7 +847,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -912,7 +912,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

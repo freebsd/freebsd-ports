@@ -1,4 +1,4 @@
---- content/utility/services.cc.orig	2025-02-20 09:59:21 UTC
+--- content/utility/services.cc.orig	2025-05-06 12:23:00 UTC
 +++ content/utility/services.cc
 @@ -73,7 +73,7 @@
  extern sandbox::TargetServices* g_utility_target_services;
@@ -17,7 +17,7 @@
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || BUILDFLAG(IS_CHROMEOS)) && \
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  #include "content/common/features.h"
- #include "media/mojo/services/stable_video_decoder_factory_process_service.h"  // nogncheck
+ #include "media/mojo/services/oop_video_decoder_factory_process_service.h"  // nogncheck
 @@ -237,7 +237,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
        << "task_policy_set TASK_QOS_POLICY";
  #endif
@@ -34,9 +34,9 @@
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && \
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || BUILDFLAG(IS_CHROMEOS)) && \
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
- auto RunStableVideoDecoderFactoryProcessService(
-     mojo::PendingReceiver<
-@@ -392,7 +392,7 @@ auto RunStableVideoDecoderFactoryProcessService(
+ auto RunOOPVideoDecoderFactoryProcessService(
+     mojo::PendingReceiver<media::mojom::VideoDecoderFactoryProcess> receiver) {
+@@ -391,7 +391,7 @@ auto RunOOPVideoDecoderFactoryProcessService(
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) &&
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  
@@ -45,16 +45,16 @@
  auto RunVideoEncodeAcceleratorProviderFactory(
      mojo::PendingReceiver<media::mojom::VideoEncodeAcceleratorProviderFactory>
          receiver) {
-@@ -415,7 +415,7 @@ void RegisterIOThreadServices(mojo::ServiceFactory& se
+@@ -414,7 +414,7 @@ void RegisterIOThreadServices(mojo::ServiceFactory& se
    // loop of type IO that can get notified when pipes have data.
    services.Add(RunNetworkService);
  
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && \
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || BUILDFLAG(IS_CHROMEOS)) && \
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
-   services.Add(RunStableVideoDecoderFactoryProcessService);
+   services.Add(RunOOPVideoDecoderFactoryProcessService);
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) &&
-@@ -468,7 +468,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -467,7 +467,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  #endif  // BUILDFLAG(IS_CHROMEOS) && \
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  

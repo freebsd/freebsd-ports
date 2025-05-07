@@ -1,6 +1,6 @@
---- ui/gfx/native_widget_types.h.orig	2025-01-25 09:34:31 UTC
+--- ui/gfx/native_widget_types.h.orig	2025-05-06 12:23:00 UTC
 +++ ui/gfx/native_widget_types.h
-@@ -101,7 +101,7 @@ class ViewAndroid;
+@@ -104,7 +104,7 @@ class ViewAndroid;
  #endif
  class SkBitmap;
  
@@ -9,7 +9,7 @@
  extern "C" {
  struct _AtkObject;
  using AtkObject = struct _AtkObject;
-@@ -214,7 +214,7 @@ using NativeViewAccessible = id;
+@@ -194,7 +194,7 @@ using NativeViewAccessible = id;
  #else
  using NativeViewAccessible = struct objc_object*;
  #endif

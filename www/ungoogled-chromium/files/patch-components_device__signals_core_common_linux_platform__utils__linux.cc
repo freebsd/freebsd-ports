@@ -1,8 +1,8 @@
---- chrome/browser/enterprise/signals/device_info_fetcher_linux.cc.orig	2025-03-09 21:38:10 UTC
-+++ chrome/browser/enterprise/signals/device_info_fetcher_linux.cc
+--- components/device_signals/core/common/linux/platform_utils_linux.cc.orig	2025-05-06 12:23:00 UTC
++++ components/device_signals/core/common/linux/platform_utils_linux.cc
 @@ -4,12 +4,23 @@
  
- #include "chrome/browser/enterprise/signals/device_info_fetcher_linux.h"
+ #include "components/device_signals/core/common/platform_utils.h"
  
 +#include "build/build_config.h"
 +
@@ -22,17 +22,17 @@
 +#endif
 +
  #include <algorithm>
+ #include <optional>
  #include <string>
- 
-@@ -117,6 +128,7 @@ SettingValue GetScreenlockSecured() {
+@@ -100,6 +111,7 @@ SettingValue GetScreenlockSecured() {
  // Implements the logic from the native host installation script. First find the
  // root device identifier, then locate its parent and get its type.
  SettingValue GetDiskEncrypted() {
 +#if !BUILDFLAG(IS_BSD)
    struct stat info;
    // First figure out the device identifier. Fail fast if this fails.
-   if (stat("/", &info) != 0)
-@@ -138,11 +150,35 @@ SettingValue GetDiskEncrypted() {
+   if (stat("/", &info) != 0) {
+@@ -122,11 +134,35 @@ SettingValue GetDiskEncrypted() {
      }
      return SettingValue::UNKNOWN;
    }
@@ -66,9 +66,9 @@
 +  }
 +#else
    base::DirReaderPosix reader("/sys/class/net");
-   if (!reader.IsValid())
+   if (!reader.IsValid()) {
      return result;
-@@ -165,6 +201,7 @@ std::vector<std::string> GetMacAddresses() {
+@@ -151,6 +187,7 @@ std::vector<std::string> GetMacAddresses() {
                                &address);
      result.push_back(address);
    }

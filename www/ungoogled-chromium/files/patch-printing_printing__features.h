@@ -1,7 +1,7 @@
---- printing/printing_features.h.orig	2024-07-31 14:19:23 UTC
+--- printing/printing_features.h.orig	2025-05-06 12:23:00 UTC
 +++ printing/printing_features.h
-@@ -22,7 +22,7 @@ COMPONENT_EXPORT(PRINTING_BASE)
- BASE_DECLARE_FEATURE(kAddPrinterViaPrintscanmgr);
+@@ -24,7 +24,7 @@ COMPONENT_EXPORT(PRINTING_BASE)
+ BASE_DECLARE_FEATURE(kApiPrintingMarginsAndScale);
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)

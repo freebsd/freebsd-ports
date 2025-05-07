@@ -1,6 +1,6 @@
---- services/device/public/cpp/device_features.cc.orig	2025-04-15 08:30:07 UTC
+--- services/device/public/cpp/device_features.cc.orig	2025-05-06 12:23:00 UTC
 +++ services/device/public/cpp/device_features.cc
-@@ -120,7 +120,7 @@ bool IsOsLevelGeolocationPermissionSupportEnabled() {
+@@ -135,7 +135,7 @@ bool IsOsLevelGeolocationPermissionSupportEnabled() {
  
  // Controls whether Chrome will try to automatically detach kernel drivers when
  // a USB interface is busy.

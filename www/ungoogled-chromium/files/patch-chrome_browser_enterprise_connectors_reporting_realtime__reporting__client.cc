@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc.orig	2025-04-15 08:30:07 UTC
+--- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc.orig	2025-05-06 12:23:00 UTC
 +++ chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc
-@@ -55,7 +55,7 @@
+@@ -53,7 +53,7 @@
  #include "base/strings/utf_string_conversions.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/signals/signals_aggregator_factory.h"
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #include "components/device_signals/core/browser/signals_aggregator.h"
-@@ -160,7 +160,7 @@ void RealtimeReportingClient::ReportPastEvent(const st
+@@ -158,7 +158,7 @@ void RealtimeReportingClient::ReportPastEvent(const st
                                       /*include_profile_user_name=*/false);
  }
  
@@ -18,7 +18,7 @@
  
  void AddCrowdstrikeSignalsToEvent(
      base::Value::Dict& event,
-@@ -235,7 +235,7 @@ std::string RealtimeReportingClient::GetBrowserClientI
+@@ -233,7 +233,7 @@ std::string RealtimeReportingClient::GetBrowserClientI
    return client_id;
  }
  

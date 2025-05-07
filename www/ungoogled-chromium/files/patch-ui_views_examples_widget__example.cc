@@ -1,6 +1,6 @@
---- ui/views/examples/widget_example.cc.orig	2024-10-01 07:26:23 UTC
+--- ui/views/examples/widget_example.cc.orig	2025-05-06 12:23:00 UTC
 +++ ui/views/examples/widget_example.cc
-@@ -50,7 +50,7 @@ void WidgetExample::CreateExampleView(View* container)
+@@ -51,7 +51,7 @@ void WidgetExample::CreateExampleView(View* container)
    modal_button->SetCallback(
        base::BindRepeating(&WidgetExample::CreateDialogWidget,
                            base::Unretained(this), modal_button, true));

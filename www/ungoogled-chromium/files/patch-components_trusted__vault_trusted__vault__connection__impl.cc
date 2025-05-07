@@ -1,6 +1,6 @@
---- components/trusted_vault/trusted_vault_connection_impl.cc.orig	2024-10-27 06:40:35 UTC
+--- components/trusted_vault/trusted_vault_connection_impl.cc.orig	2025-05-06 12:23:00 UTC
 +++ components/trusted_vault/trusted_vault_connection_impl.cc
-@@ -102,7 +102,7 @@ GetLocalPhysicalDeviceType() {
+@@ -103,7 +103,7 @@ GetLocalPhysicalDeviceType() {
    // currently used or even built on all platforms.
  #if BUILDFLAG(IS_CHROMEOS)
    return trusted_vault_pb::PhysicalDeviceMetadata::DEVICE_TYPE_CHROMEOS;

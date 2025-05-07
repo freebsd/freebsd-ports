@@ -1,6 +1,6 @@
---- components/performance_manager/public/features.h.orig	2025-03-09 21:38:10 UTC
+--- components/performance_manager/public/features.h.orig	2025-05-06 12:23:00 UTC
 +++ components/performance_manager/public/features.h
-@@ -17,7 +17,7 @@ namespace performance_manager::features {
+@@ -19,7 +19,7 @@ namespace performance_manager::features {
  
  #if !BUILDFLAG(IS_ANDROID)
  
