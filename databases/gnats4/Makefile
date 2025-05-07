@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_mips=		Does not build: error: conflicting types for yy_scan_string
 BROKEN_mips64=		Does not build: error: conflicting types for yy_scan_string
+DEPRECATED=	Abandoned upstream, last release in 2015 and last activity about 9 years ago
+EXPIRATION_DATE=2024-06-30
 
 USES=		cpe gettext-runtime gmake
 CPE_VENDOR=	gnu
