@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GLUT-based C++ user interface library
 WWW=		http://www.cs.unc.edu/~rademach/glui/
 
+DEPRECATED=	Abandoned upstream, outdated, last release in 2015 and upstream activity in 2019
+EXPIRATION_DATE=2024-06-30
+
 USES=		gl gmake tar:tgz xorg
 USE_GL=		glut
 USE_XORG=	xmu xext x11 xi
