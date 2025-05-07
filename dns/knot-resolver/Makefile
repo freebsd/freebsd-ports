@@ -1,6 +1,5 @@
 PORTNAME=	knot-resolver
-DISTVERSION=	5.7.4
-PORTREVISION=	5
+DISTVERSION=	5.7.5
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-resolver/ \
 		https://dns.company/downloads/knot-resolver/
@@ -42,7 +41,6 @@ SHEBANG_FILES=	scripts/bench.sh \
 		scripts/make-archive.sh \
 		scripts/make-doc.sh \
 		scripts/make-obs.sh \
-		scripts/run-pylint.sh \
 		scripts/run-scanbuild-with-args.sh \
 		scripts/test-config.sh \
 		scripts/test-integration-prepare.sh \
