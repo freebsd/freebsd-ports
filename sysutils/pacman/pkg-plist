@@ -17,8 +17,8 @@ bin/vercmp
 include/alpm.h
 include/alpm_list.h
 lib/libalpm.so
-lib/libalpm.so.14
-lib/libalpm.so.14.0.0
+lib/libalpm.so.15
+lib/libalpm.so.15.0.0
 libdata/pkgconfig/libalpm.pc
 libdata/pkgconfig/libmakepkg.pc
 share/bash-completion/completions/makepkg
@@ -152,6 +152,7 @@ share/makepkg/buildenv.sh
 share/makepkg/buildenv/buildflags.sh
 share/makepkg/buildenv/compiler.sh
 share/makepkg/buildenv/debugflags.sh
+share/makepkg/buildenv/fortran.sh
 share/makepkg/buildenv/lto.sh
 share/makepkg/buildenv/makeflags.sh
 share/makepkg/buildenv/rust.sh
