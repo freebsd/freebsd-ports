@@ -11,6 +11,9 @@ WWW=		https://www.gnu.org/software/gnats/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=     Abandoned upstream, last release in 2015 and no active development in the last 10 years
+EXPIRATION_DATE=2025-06-30
+
 USES=		apache:run perl5 shebangfix
 SHEBANG_FILES=	gnatsweb.pl
 USE_PERL5=	run
