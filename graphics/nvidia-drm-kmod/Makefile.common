@@ -6,7 +6,7 @@ WWW=		https://www.nvidia.com/object/unix.html
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${NVIDIA_DISTVERSION}:nvidia \
 				https://codeload.github.com/freebsd/drm-kmod/tar.gz/${DRM_KMOD_GH_TAGNAME}?dummy=/:drm
 DISTVERSION?=   ${NVIDIA_DISTVERSION}
-PORTREVISION=	1
+PORTREVISION?=	0
 DISTFILES=		NVIDIA-FreeBSD-${ARCH_SUFX}-${NVIDIA_DISTVERSION}${EXTRACT_SUFX}:nvidia \
 				freebsd-drm-kmod-${DRM_KMOD_GH_TAGNAME}_GH0.tar.gz:drm
 
@@ -58,6 +58,20 @@ post-patch:
 		${WRKSRC}/nvidia-drm-freebsd-lkpi.c
 	${REINPLACE_CMD} -e 's:bool nv_drm_fbdev_module_param = true;:bool nv_drm_fbdev_module_param = false;:' \
 		${WRKSRC}/nvidia-drm-os-interface.c
+.endif
+	# Workaround for build failure on 575.51.02.
+	# --- nvidia-drm-drv.o ---
+	# nvidia-drm-drv.c:386:80: error: cast from 'const void *' to 'struct nv_drm_mst_display_info *' drops const qualifier [-Werror,-Wcast-qual]
+	#   386 |     struct nv_drm_mst_display_info *l_info = (struct nv_drm_mst_display_info *)l;
+	#       |                                                                                ^
+	# nvidia-drm-drv.c:387:80: error: cast from 'const void *' to 'struct nv_drm_mst_display_info *' drops const qualifier [-Werror,-Wcast-qual]
+	#   387 |     struct nv_drm_mst_display_info *r_info = (struct nv_drm_mst_display_info *)r;
+	#       |                                                                                ^
+.if ${NVVERSION} >= 575.00000
+	${REINPLACE_CMD} -e 's:struct nv_drm_mst_display_info \*l_info = (struct nv_drm_mst_display_info:const struct nv_drm_mst_display_info \*l_info = (const struct nv_drm_mst_display_info:' \
+		${WRKSRC}/nvidia-drm-drv.c
+	${REINPLACE_CMD} -e 's:struct nv_drm_mst_display_info \*r_info = (struct nv_drm_mst_display_info:const struct nv_drm_mst_display_info \*r_info = (const struct nv_drm_mst_display_info:' \
+		${WRKSRC}/nvidia-drm-drv.c
 .endif
 	# We should support -CURRENT: kill the check (first #if __FreeBSD_version)
 	linenum=$$(${SED} -ne '/^#if __FreeBSD_version/ { = ; q ; }' \
