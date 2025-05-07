@@ -5,12 +5,9 @@ PORTEPOCH=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	linimon@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Utility library to make XKB stuff easier
 WWW=		https://gswitchit.sourceforge.net/
-
-DEPRECATED=		upstream claims unmaintained, folded into GNOME long ago
-EXPIRATION_DATE=	2025-07-05
 
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes
 RUN_DEPENDS=	xkbcomp:x11/xkbcomp \
