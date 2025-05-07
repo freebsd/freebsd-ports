@@ -14,6 +14,12 @@ the sample configuration installed by the package:
 
 Then merge in changes as required by editing
 %%PREFIX%%/etc/paperless.conf.
+
+Database migrations are run automatically on service start, but
+it's recommended to run them explicitly, especially on major upgrades:
+
+    service paperless-migrate onestart
+
 EOM
 }
 { type: upgrade

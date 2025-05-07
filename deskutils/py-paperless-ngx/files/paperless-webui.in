@@ -77,9 +77,8 @@ command_args="-cS -u ${paperless_webui_daemon_user} \
 	-s ${paperless_webui_log_priority} \
 	-T ${paperless_webui_log_tag} \
 	-R ${paperless_webui_restart_delay} \
-	%%PREFIX%%/bin/gunicorn \
-	-c %%PYTHONPREFIX_SITELIBDIR%%/paperless/gunicorn.conf.py \
-	paperless.asgi:application"
+	%%PREFIX%%/bin/granian --interface asginl \
+	--ws --loop uvloop paperless.asgi:application"
 
 paperless_webui_prestart()
 {

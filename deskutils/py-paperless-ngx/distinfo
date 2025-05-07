@@ -1,5 +1,5 @@
-TIMESTAMP = 1732099623
-SHA256 (paperless-ngx-v2.11.6.tar.xz) = 50b57e95d5e5d84f676f361f15d972866f4d3ad98d2aed81a433b31ee4e3e7ca
-SIZE (paperless-ngx-v2.11.6.tar.xz) = 63969744
-SHA256 (paperless-ngx-paperless-ngx-v2.11.6_GH0.tar.gz) = a12c30f8630f79d1e548f2e4f419cc443b7b99b396e1dff907c36a39e88e867a
-SIZE (paperless-ngx-paperless-ngx-v2.11.6_GH0.tar.gz) = 48771241
+TIMESTAMP = 1746350043
+SHA256 (paperless-ngx-v2.15.3.tar.xz) = 20cd5961b1f91bde5cb6743ae8eb7f8fd98d66ba67d49d5ab030d87c998ac2d1
+SIZE (paperless-ngx-v2.15.3.tar.xz) = 78329260
+SHA256 (paperless-ngx-paperless-ngx-v2.15.3_GH0.tar.gz) = 0c471d082ee03e94bf2b139bfadb98e758f94d17850e56966ef1793b1f1b7ee0
+SIZE (paperless-ngx-paperless-ngx-v2.15.3_GH0.tar.gz) = 49573227
