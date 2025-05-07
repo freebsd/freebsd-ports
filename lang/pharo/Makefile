@@ -1,5 +1,6 @@
 PORTNAME=	pharo
 DISTVERSION=	10.2.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	f4c5e2a
 CATEGORIES=	lang
 MASTER_SITES=	http://files.pharo.org/vm/pharo-spur64-headless/Linux-x86_64/source/
