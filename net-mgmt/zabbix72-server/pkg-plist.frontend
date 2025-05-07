@@ -1014,6 +1014,7 @@
 %%WWWDIR%%/include/classes/html/CTextAreaFlexible.php
 %%WWWDIR%%/include/classes/html/CTextBox.php
 %%WWWDIR%%/include/classes/html/CVar.php
+%%WWWDIR%%/include/classes/html/CVertical.php
 %%WWWDIR%%/include/classes/html/CVisibilityBox.php
 %%WWWDIR%%/include/classes/html/CWarning.php
 %%WWWDIR%%/include/classes/html/interfaces/CButtonInterface.php
@@ -1440,6 +1441,7 @@
 %%WWWDIR%%/js/component.z-bar-gauge.js
 %%WWWDIR%%/js/component.z-select.js
 %%WWWDIR%%/js/component.z-sparkline.js
+%%WWWDIR%%/js/component.z-vertical.js
 %%WWWDIR%%/js/defines.js
 %%WWWDIR%%/js/flickerfreescreen.js
 %%WWWDIR%%/js/functions.js
@@ -1554,6 +1556,8 @@
 %%WWWDIR%%/locale/uk/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/uk/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/update_po.sh
+%%WWWDIR%%/locale/uz/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/uz/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/vi/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/vi/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/zh_CN/LC_MESSAGES/frontend.mo
