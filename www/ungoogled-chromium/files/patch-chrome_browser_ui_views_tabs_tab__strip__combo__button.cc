@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/tab_strip_combo_button.cc.orig	2025-03-09 21:38:10 UTC
+--- chrome/browser/ui/views/tabs/tab_strip_combo_button.cc.orig	2025-05-06 12:23:00 UTC
 +++ chrome/browser/ui/views/tabs/tab_strip_combo_button.cc
-@@ -96,7 +96,7 @@ TabStripComboButton::TabStripComboButton(BrowserWindow
+@@ -97,7 +97,7 @@ TabStripComboButton::TabStripComboButton(BrowserWindow
        base::BindRepeating(&TabStripComboButton::OnNewTabButtonStateChanged,
                            base::Unretained(this))));
  

@@ -1,6 +1,6 @@
---- media/webrtc/audio_processor.cc.orig	2025-04-15 08:30:07 UTC
+--- media/webrtc/audio_processor.cc.orig	2025-05-06 12:23:00 UTC
 +++ media/webrtc/audio_processor.cc
-@@ -507,7 +507,7 @@ std::optional<double> AudioProcessor::ProcessData(
+@@ -509,7 +509,7 @@ std::optional<double> AudioProcessor::ProcessData(
    // controller.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
    DCHECK_LE(volume, 1.0);
