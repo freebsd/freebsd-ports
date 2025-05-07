@@ -1,6 +1,5 @@
 PORTNAME=	nbt
-PORTVERSION=	${REVISION_DATE}
-PORTREVISION=	1
+DISTVERSION=	${REVISION_DATE}
 CATEGORIES=	filesystems
 MASTER_SITES=	SF/nbtfsutils
 PKGNAMEPREFIX=	fusefs-
@@ -20,17 +19,14 @@ LICENSE_TEXT_BEERWARE=	Lukas Niederbremer <webmaster@flippeh.de> and Clark Gaebe
 LICENSE_FILE_MPL20=	${WRKSRC}/MPL-2.0
 LICENSE_PERMS_BEERWARE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		fuse tar:bz2
+USES=		fuse localbase:ldflags tar:bz2
 USE_LDCONFIG=	yes
 
-REVISION_DATE=	20231114
-REVISION_HASH=	7683255
+REVISION_DATE=	20250506
+REVISION_HASH=	dbd559a
 
 MAKE_ENV=	MANDIR=\${PREFIX}/share/man
 INSTALL_TARGET=	install-commands install-dev
-CFLAGS+=	${CPPFLAGS}
-CPPFLAGS+=	-I ${LOCALBASE}/include
-LDFLAGS+=	-L ${LOCALBASE}/lib
 NO_WRKSUBDIR=	yes
 
 do-build:
