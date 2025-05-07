@@ -1,6 +1,6 @@
 PORTNAME=	tpm2-abrmd
 DISTVERSION=	3.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/tpm2-software/tpm2-abrmd/releases/download/${DISTVERSION}/
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	dbus-daemon:devel/dbus
 USES=		gmake libtool pkgconfig gnome
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
-USE_RC_SUBR=	tpm2-abrmd
+USE_RC_SUBR=	tpm2_abrmd
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
@@ -27,9 +27,6 @@ GROUPS=		_tss
 USERS=		_tss
 
 SUB_LIST=	DBUS_DAEMON=dbus
-
-pre-install:
-	@${INSTALL_DATA} ${FILESDIR}/tpm2-abrmd-devd.conf ${STAGEDIR}${PREFIX}/etc/devd
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/lib/systemd/system-preset/tpm2-abrmd.preset
