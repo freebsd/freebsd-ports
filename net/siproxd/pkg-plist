@@ -1,5 +1,7 @@
 @sample etc/siproxd.conf.sample
 @sample etc/siproxd_passwd.cfg.sample
+lib/siproxd/plugin_blacklist.la
+lib/siproxd/plugin_blacklist.so
 lib/siproxd/plugin_codecfilter.la
 lib/siproxd/plugin_codecfilter.so
 lib/siproxd/plugin_defaulttarget.la
@@ -22,6 +24,8 @@ lib/siproxd/plugin_shortdial.la
 lib/siproxd/plugin_shortdial.so
 lib/siproxd/plugin_siptrunk.la
 lib/siproxd/plugin_siptrunk.so
+lib/siproxd/plugin_stats.la
+lib/siproxd/plugin_stats.so
 lib/siproxd/plugin_stripheader.la
 lib/siproxd/plugin_stripheader.so
 lib/siproxd/plugin_stun.la
