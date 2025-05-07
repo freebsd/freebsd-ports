@@ -1,5 +1,5 @@
 PORTNAME=	mpdecimal
-DISTVERSION=	4.0.0
+DISTVERSION=	4.0.1
 CATEGORIES=	math
 MASTER_SITES=	https://www.bytereef.org/software/mpdecimal/releases/
 
@@ -10,24 +10,15 @@ WWW=		https://www.bytereef.org/mpdecimal/index.html
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT.txt
 
-USES=		compiler:c++11-lang gmake
-
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+USES=		compiler:c++11-lang gmake pathfix
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	LDXXFLAGS="${LDFLAGS}"
 ALL_TARGET=	default
 TEST_TARGET=	check_local
-
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-CONFIGURE_ARGS=	LD="${CC}" LDXX="${CXX}"
-.endif
-
-CONFIGURE_ARGS+=	LDXXFLAGS="${LDFLAGS}"
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpdec.so.${DISTVERSION}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpdec++.so.${DISTVERSION}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
