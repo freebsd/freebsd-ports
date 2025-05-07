@@ -1,4 +1,4 @@
---- extensions/shell/browser/shell_extensions_api_client.cc.orig	2025-02-22 18:06:53 UTC
+--- extensions/shell/browser/shell_extensions_api_client.cc.orig	2025-05-07 06:48:23 UTC
 +++ extensions/shell/browser/shell_extensions_api_client.cc
 @@ -18,7 +18,7 @@
  #include "extensions/shell/browser/shell_virtual_keyboard_delegate.h"
@@ -9,7 +9,7 @@
  #include "extensions/shell/browser/api/file_system/shell_file_system_delegate.h"
  #endif
  
-@@ -54,7 +54,7 @@ ShellExtensionsAPIClient::CreateDisplayInfoProvider() 
+@@ -56,7 +56,7 @@ ShellExtensionsAPIClient::CreateDisplayInfoProvider() 
    return std::make_unique<ShellDisplayInfoProvider>();
  }
  

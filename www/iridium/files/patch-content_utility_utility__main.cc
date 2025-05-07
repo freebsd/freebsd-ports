@@ -1,4 +1,4 @@
---- content/utility/utility_main.cc.orig	2025-02-22 18:06:53 UTC
+--- content/utility/utility_main.cc.orig	2025-05-07 06:48:23 UTC
 +++ content/utility/utility_main.cc
 @@ -36,18 +36,22 @@
  #include "services/tracing/public/cpp/trace_startup.h"
@@ -28,15 +28,15 @@
  
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
--#if BUILDFLAG(ENABLE_VIDEO_EFFECTS) && BUILDFLAG(IS_LINUX)
+-#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_BSD)
 +#include "sandbox/policy/sandbox.h"
 +#include "content/common/gpu_pre_sandbox_hook_bsd.h"
 +#endif
 +
-+#if BUILDFLAG(ENABLE_VIDEO_EFFECTS) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "services/video_effects/video_effects_sandbox_hook_linux.h"  // nogncheck
- #endif  // BUILDFLAG(ENABLE_VIDEO_EFFECTS) && BUILDFLAG(IS_LINUX)
+ #endif  // BUILDFLAG(IS_LINUX)
  
 @@ -101,7 +110,7 @@
  sandbox::TargetServices* g_utility_target_services = nullptr;

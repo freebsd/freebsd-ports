@@ -1,6 +1,6 @@
---- components/soda/soda_util.cc.orig	2025-02-22 18:06:53 UTC
+--- components/soda/soda_util.cc.orig	2025-05-07 06:48:23 UTC
 +++ components/soda/soda_util.cc
-@@ -22,7 +22,7 @@
+@@ -23,7 +23,7 @@
  #include "base/win/windows_version.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/cpu.h"
  #endif
  
-@@ -38,7 +38,7 @@ bool IsSupportedChromeOS() {
+@@ -39,7 +39,7 @@ bool IsSupportedChromeOS() {
  }
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -18,7 +18,7 @@
  bool IsSupportedLinux() {
  #if defined(ARCH_CPU_X86_FAMILY)
    // Check if the CPU has the required instruction set to run the Speech
-@@ -69,7 +69,7 @@ bool IsSupportedWin() {
+@@ -70,7 +70,7 @@ bool IsSupportedWin() {
  bool IsOnDeviceSpeechRecognitionSupported() {
  #if BUILDFLAG(IS_CHROMEOS)
    return IsSupportedChromeOS();

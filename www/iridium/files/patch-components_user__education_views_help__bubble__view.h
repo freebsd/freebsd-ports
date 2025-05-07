@@ -1,6 +1,6 @@
---- components/user_education/views/help_bubble_view.h.orig	2025-02-22 18:06:53 UTC
+--- components/user_education/views/help_bubble_view.h.orig	2025-05-07 06:48:23 UTC
 +++ components/user_education/views/help_bubble_view.h
-@@ -162,7 +162,7 @@ class HelpBubbleView : public views::BubbleDialogDeleg
+@@ -160,7 +160,7 @@ class HelpBubbleView : public views::BubbleDialogDeleg
  // work around this problem by closing the bubble if the widget is minimized.
  // When the underlying issue is fixed at the framework level, this can be
  // removed.

@@ -1,6 +1,6 @@
---- content/app/BUILD.gn.orig	2025-02-22 18:06:53 UTC
+--- content/app/BUILD.gn.orig	2025-05-07 06:48:23 UTC
 +++ content/app/BUILD.gn
-@@ -89,9 +89,9 @@ source_set("content_main_runner_app") {
+@@ -90,9 +90,9 @@ source_set("content_main_runner_app") {
             "//third_party/tflite:buildflags",
             "//tools/v8_context_snapshot:buildflags",
           ]

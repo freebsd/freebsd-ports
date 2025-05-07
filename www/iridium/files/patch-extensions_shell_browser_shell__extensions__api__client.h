@@ -1,6 +1,6 @@
---- extensions/shell/browser/shell_extensions_api_client.h.orig	2025-02-22 18:06:53 UTC
+--- extensions/shell/browser/shell_extensions_api_client.h.orig	2025-05-07 06:48:23 UTC
 +++ extensions/shell/browser/shell_extensions_api_client.h
-@@ -34,14 +34,14 @@ class ShellExtensionsAPIClient : public ExtensionsAPIC
+@@ -36,14 +36,14 @@ class ShellExtensionsAPIClient : public ExtensionsAPIC
        content::BrowserContext* browser_context) const override;
    std::unique_ptr<DisplayInfoProvider> CreateDisplayInfoProvider()
        const override;
