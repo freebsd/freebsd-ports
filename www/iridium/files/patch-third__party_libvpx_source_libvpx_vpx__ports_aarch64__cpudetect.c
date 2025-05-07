@@ -1,4 +1,4 @@
---- third_party/libvpx/source/libvpx/vpx_ports/aarch64_cpudetect.c.orig	2024-12-22 12:24:29 UTC
+--- third_party/libvpx/source/libvpx/vpx_ports/aarch64_cpudetect.c.orig	2025-05-07 06:48:23 UTC
 +++ third_party/libvpx/source/libvpx/vpx_ports/aarch64_cpudetect.c
 @@ -120,9 +120,23 @@ static int arm_get_cpu_caps(void) {
    return flags;

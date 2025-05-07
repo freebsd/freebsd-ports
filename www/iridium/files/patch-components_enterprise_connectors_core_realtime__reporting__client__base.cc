@@ -1,4 +1,4 @@
---- components/enterprise/connectors/core/realtime_reporting_client_base.cc.orig	2025-04-16 18:18:42 UTC
+--- components/enterprise/connectors/core/realtime_reporting_client_base.cc.orig	2025-05-07 06:48:23 UTC
 +++ components/enterprise/connectors/core/realtime_reporting_client_base.cc
 @@ -190,7 +190,7 @@ void RealtimeReportingClientBase::ReportEvent(
      event.mutable_time()->set_nanos((timestamp_millis % 1000) * 1000000);

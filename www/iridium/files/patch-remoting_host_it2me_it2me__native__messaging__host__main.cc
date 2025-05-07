@@ -1,4 +1,4 @@
---- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig	2025-04-16 18:18:42 UTC
+--- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig	2025-05-07 06:48:23 UTC
 +++ remoting/host/it2me/it2me_native_messaging_host_main.cc
 @@ -30,7 +30,7 @@
  #include "remoting/host/resources.h"

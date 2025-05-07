@@ -1,4 +1,4 @@
---- third_party/fontconfig/include/config.h.orig	2024-06-25 12:08:48 UTC
+--- third_party/fontconfig/include/config.h.orig	2025-05-07 06:48:23 UTC
 +++ third_party/fontconfig/include/config.h
 @@ -13,7 +13,7 @@
  

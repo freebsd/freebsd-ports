@@ -1,4 +1,4 @@
---- build/config/linux/libdrm/BUILD.gn.orig	2025-02-22 18:06:53 UTC
+--- build/config/linux/libdrm/BUILD.gn.orig	2025-05-07 06:48:23 UTC
 +++ build/config/linux/libdrm/BUILD.gn
 @@ -15,7 +15,7 @@ declare_args() {
  }

@@ -1,4 +1,4 @@
---- net/http/http_auth_handler_negotiate.cc.orig	2025-04-16 18:18:42 UTC
+--- net/http/http_auth_handler_negotiate.cc.orig	2025-05-07 06:48:23 UTC
 +++ net/http/http_auth_handler_negotiate.cc
 @@ -119,7 +119,7 @@ int HttpAuthHandlerNegotiate::Factory::CreateAuthHandl
  #elif BUILDFLAG(IS_POSIX)

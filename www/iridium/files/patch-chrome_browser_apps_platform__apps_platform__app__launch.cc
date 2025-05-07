@@ -1,4 +1,4 @@
---- chrome/browser/apps/platform_apps/platform_app_launch.cc.orig	2024-06-25 12:08:48 UTC
+--- chrome/browser/apps/platform_apps/platform_app_launch.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/apps/platform_apps/platform_app_launch.cc
 @@ -19,7 +19,7 @@
  #include "extensions/common/constants.h"

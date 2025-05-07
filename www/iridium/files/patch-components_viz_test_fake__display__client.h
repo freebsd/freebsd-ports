@@ -1,4 +1,4 @@
---- components/viz/test/fake_display_client.h.orig	2024-06-25 12:08:48 UTC
+--- components/viz/test/fake_display_client.h.orig	2025-05-07 06:48:23 UTC
 +++ components/viz/test/fake_display_client.h
 @@ -36,7 +36,7 @@ class FakeDisplayClient : public mojom::DisplayClient 
    void AddChildWindowToBrowser(gpu::SurfaceHandle child_window) override;

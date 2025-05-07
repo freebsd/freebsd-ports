@@ -1,4 +1,4 @@
---- chrome/browser/extensions/component_extensions_allowlist/allowlist.cc.orig	2025-03-18 16:46:04 UTC
+--- chrome/browser/extensions/component_extensions_allowlist/allowlist.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/extensions/component_extensions_allowlist/allowlist.cc
 @@ -48,7 +48,7 @@ bool IsComponentExtensionAllowlisted(const std::string
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)

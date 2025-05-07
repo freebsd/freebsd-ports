@@ -1,4 +1,4 @@
---- base/files/file_path_watcher.h.orig	2024-06-25 12:08:48 UTC
+--- base/files/file_path_watcher.h.orig	2025-05-07 06:48:23 UTC
 +++ base/files/file_path_watcher.h
 @@ -105,7 +105,7 @@ class BASE_EXPORT FilePathWatcher {
      Type type = Type::kNonRecursive;

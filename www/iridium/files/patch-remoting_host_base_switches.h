@@ -1,4 +1,4 @@
---- remoting/host/base/switches.h.orig	2022-10-05 07:34:01 UTC
+--- remoting/host/base/switches.h.orig	2025-05-07 06:48:23 UTC
 +++ remoting/host/base/switches.h
 @@ -35,13 +35,13 @@ extern const char kProcessTypeRdpDesktopSession[];
  extern const char kProcessTypeEvaluateCapability[];

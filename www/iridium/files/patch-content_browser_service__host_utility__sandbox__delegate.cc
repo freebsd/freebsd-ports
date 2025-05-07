@@ -1,4 +1,4 @@
---- content/browser/service_host/utility_sandbox_delegate.cc.orig	2025-04-16 18:18:42 UTC
+--- content/browser/service_host/utility_sandbox_delegate.cc.orig	2025-05-07 06:48:23 UTC
 +++ content/browser/service_host/utility_sandbox_delegate.cc
 @@ -77,7 +77,7 @@ UtilitySandboxedProcessLauncherDelegate::
  #if BUILDFLAG(IS_FUCHSIA)

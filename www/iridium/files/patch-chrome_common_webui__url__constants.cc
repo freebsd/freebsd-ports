@@ -1,4 +1,4 @@
---- chrome/common/webui_url_constants.cc.orig	2025-02-22 18:06:53 UTC
+--- chrome/common/webui_url_constants.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/common/webui_url_constants.cc
 @@ -192,18 +192,18 @@ base::span<const base::cstring_view> ChromeURLHosts() 
        kChromeUIAssistantOptInHost,

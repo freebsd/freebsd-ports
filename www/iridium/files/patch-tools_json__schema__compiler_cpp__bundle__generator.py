@@ -1,4 +1,4 @@
---- tools/json_schema_compiler/cpp_bundle_generator.py.orig	2025-04-16 18:18:42 UTC
+--- tools/json_schema_compiler/cpp_bundle_generator.py.orig	2025-05-07 06:48:23 UTC
 +++ tools/json_schema_compiler/cpp_bundle_generator.py
 @@ -140,7 +140,7 @@ class CppBundleGenerator(object):
        elif platform == Platforms.FUCHSIA:

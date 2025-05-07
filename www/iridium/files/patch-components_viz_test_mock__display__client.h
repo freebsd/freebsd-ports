@@ -1,4 +1,4 @@
---- components/viz/test/mock_display_client.h.orig	2025-02-22 18:06:53 UTC
+--- components/viz/test/mock_display_client.h.orig	2025-05-07 06:48:23 UTC
 +++ components/viz/test/mock_display_client.h
 @@ -45,7 +45,7 @@ class MockDisplayClient : public mojom::DisplayClient 
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS)

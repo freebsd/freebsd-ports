@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc.orig	2024-08-27 06:28:16 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc.orig	2025-05-07 06:48:23 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc
 @@ -17,7 +17,16 @@
  #endif

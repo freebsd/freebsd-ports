@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread.h.orig	2024-08-01 05:47:53 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread.h.orig	2025-05-07 06:48:23 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread.h
 @@ -37,6 +37,8 @@ typedef DWORD PlatformThreadId;
  typedef zx_handle_t PlatformThreadId;

@@ -1,4 +1,4 @@
---- third_party/swiftshader/src/WSI/libXCB.cpp.orig	2023-03-13 07:33:08 UTC
+--- third_party/swiftshader/src/WSI/libXCB.cpp.orig	2025-05-07 06:48:23 UTC
 +++ third_party/swiftshader/src/WSI/libXCB.cpp
 @@ -57,7 +57,7 @@ LibXcbExports *LibXCB::loadExports()
  		}

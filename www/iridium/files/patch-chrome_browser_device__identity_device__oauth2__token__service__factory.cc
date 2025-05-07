@@ -1,4 +1,4 @@
---- chrome/browser/device_identity/device_oauth2_token_service_factory.cc.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/device_identity/device_oauth2_token_service_factory.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/device_identity/device_oauth2_token_service_factory.cc
 @@ -26,7 +26,7 @@ std::unique_ptr<DeviceOAuth2TokenStore> CreatePlatform
  #if BUILDFLAG(IS_CHROMEOS)

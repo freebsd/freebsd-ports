@@ -1,4 +1,4 @@
---- chrome/browser/ui/managed_ui.cc.orig	2025-03-18 16:46:04 UTC
+--- chrome/browser/ui/managed_ui.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/managed_ui.cc
 @@ -433,7 +433,7 @@ std::optional<std::string> GetDeviceManagerIdentity() 
        g_browser_process->platform_part()->browser_policy_connector_ash();

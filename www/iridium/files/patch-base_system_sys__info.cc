@@ -1,4 +1,4 @@
---- base/system/sys_info.cc.orig	2025-03-18 16:46:04 UTC
+--- base/system/sys_info.cc.orig	2025-05-07 06:48:23 UTC
 +++ base/system/sys_info.cc
 @@ -224,7 +224,7 @@ std::string SysInfo::SocManufacturer() {
  #endif

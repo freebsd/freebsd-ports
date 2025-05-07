@@ -1,4 +1,4 @@
---- ui/display/screen.h.orig	2025-02-22 18:06:53 UTC
+--- ui/display/screen.h.orig	2025-05-07 06:48:23 UTC
 +++ ui/display/screen.h
 @@ -140,7 +140,7 @@ class DISPLAY_EXPORT Screen {
    // (both of which may or may not be `nearest_id`).
@@ -9,7 +9,7 @@
    // Object which suspends the platform-specific screensaver for the duration of
    // its existence.
    class ScreenSaverSuspender {
-@@ -243,7 +243,7 @@ class DISPLAY_EXPORT Screen {
+@@ -246,7 +246,7 @@ class DISPLAY_EXPORT Screen {
    int64_t display_id_for_new_windows_;
    int64_t scoped_display_id_for_new_windows_ = display::kInvalidDisplayId;
  

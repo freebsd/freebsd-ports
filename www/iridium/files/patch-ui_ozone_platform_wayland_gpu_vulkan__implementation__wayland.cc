@@ -1,4 +1,4 @@
---- ui/ozone/platform/wayland/gpu/vulkan_implementation_wayland.cc.orig	2022-04-01 07:48:30 UTC
+--- ui/ozone/platform/wayland/gpu/vulkan_implementation_wayland.cc.orig	2025-05-07 06:48:23 UTC
 +++ ui/ozone/platform/wayland/gpu/vulkan_implementation_wayland.cc
 @@ -38,7 +38,11 @@ bool VulkanImplementationWayland::InitializeVulkanInst
  

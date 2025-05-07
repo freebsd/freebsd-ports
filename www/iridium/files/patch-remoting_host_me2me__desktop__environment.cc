@@ -1,4 +1,4 @@
---- remoting/host/me2me_desktop_environment.cc.orig	2025-04-16 18:18:42 UTC
+--- remoting/host/me2me_desktop_environment.cc.orig	2025-05-07 06:48:23 UTC
 +++ remoting/host/me2me_desktop_environment.cc
 @@ -112,7 +112,7 @@ std::string Me2MeDesktopEnvironment::GetCapabilities()
      capabilities += protocol::kRemoteWebAuthnCapability;

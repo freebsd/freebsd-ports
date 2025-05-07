@@ -1,4 +1,4 @@
---- components/policy/core/common/policy_paths.cc.orig	2025-02-22 18:06:53 UTC
+--- components/policy/core/common/policy_paths.cc.orig	2025-05-07 06:48:23 UTC
 +++ components/policy/core/common/policy_paths.cc
 @@ -17,6 +17,8 @@ namespace policy {
  const char kPolicyPath[] = "/etc/iridium-browser/policies";

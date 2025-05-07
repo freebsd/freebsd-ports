@@ -1,4 +1,4 @@
---- printing/print_settings.h.orig	2024-11-04 08:56:03 UTC
+--- printing/print_settings.h.orig	2025-05-07 06:48:23 UTC
 +++ printing/print_settings.h
 @@ -25,7 +25,7 @@
  #include "base/values.h"

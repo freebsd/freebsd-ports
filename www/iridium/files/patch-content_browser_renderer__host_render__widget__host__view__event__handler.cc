@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_widget_host_view_event_handler.cc.orig	2024-08-27 06:28:16 UTC
+--- content/browser/renderer_host/render_widget_host_view_event_handler.cc.orig	2025-05-07 06:48:23 UTC
 +++ content/browser/renderer_host/render_widget_host_view_event_handler.cc
 @@ -602,7 +602,7 @@ bool RenderWidgetHostViewEventHandler::CanRendererHand
    if (event->type() == ui::EventType::kMouseExited) {

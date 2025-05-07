@@ -1,4 +1,4 @@
---- sandbox/policy/BUILD.gn.orig	2025-04-16 18:18:42 UTC
+--- sandbox/policy/BUILD.gn.orig	2025-05-07 06:48:23 UTC
 +++ sandbox/policy/BUILD.gn
 @@ -43,7 +43,7 @@ component("policy") {
        "//third_party/jni_zero",

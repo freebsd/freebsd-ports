@@ -1,4 +1,4 @@
---- services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.cc.orig	2025-03-18 16:46:04 UTC
+--- services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.cc.orig	2025-05-07 06:48:23 UTC
 +++ services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.cc
 @@ -58,6 +58,7 @@ bool ScreenAIPreSandboxHook(base::FilePath binary_path
      }

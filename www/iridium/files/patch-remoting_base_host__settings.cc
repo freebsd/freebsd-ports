@@ -1,4 +1,4 @@
---- remoting/base/host_settings.cc.orig	2022-03-28 18:11:04 UTC
+--- remoting/base/host_settings.cc.orig	2025-05-07 06:48:23 UTC
 +++ remoting/base/host_settings.cc
 @@ -7,7 +7,7 @@
  #include "base/no_destructor.h"

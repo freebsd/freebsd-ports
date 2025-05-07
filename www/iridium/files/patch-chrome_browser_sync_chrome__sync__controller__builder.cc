@@ -1,4 +1,4 @@
---- chrome/browser/sync/chrome_sync_controller_builder.cc.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/sync/chrome_sync_controller_builder.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/sync/chrome_sync_controller_builder.cc
 @@ -280,7 +280,7 @@ ChromeSyncControllerBuilder::Build(syncer::SyncService
  #if BUILDFLAG(ENABLE_SPELLCHECK)

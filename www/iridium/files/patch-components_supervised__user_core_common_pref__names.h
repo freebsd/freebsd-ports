@@ -1,4 +1,4 @@
---- components/supervised_user/core/common/pref_names.h.orig	2025-02-22 18:06:53 UTC
+--- components/supervised_user/core/common/pref_names.h.orig	2025-05-07 06:48:23 UTC
 +++ components/supervised_user/core/common/pref_names.h
 @@ -129,7 +129,7 @@ inline constexpr char kDefaultSupervisedUserFilteringB
      "profile.managed.default_filtering_behavior";

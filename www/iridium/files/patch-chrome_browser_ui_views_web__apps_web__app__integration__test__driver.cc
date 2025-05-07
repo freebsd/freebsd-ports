@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/web_apps/web_app_integration_test_driver.cc.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/ui/views/web_apps/web_app_integration_test_driver.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/views/web_apps/web_app_integration_test_driver.cc
 @@ -510,7 +510,7 @@ std::string GetFileExtension(FileExtension file_extens
  }

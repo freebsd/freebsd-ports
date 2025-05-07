@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/profiles/profile_menu_coordinator.cc.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/ui/views/profiles/profile_menu_coordinator.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/views/profiles/profile_menu_coordinator.cc
 @@ -50,7 +50,7 @@ void ProfileMenuCoordinator::Show(bool is_source_accel
    browser.window()->NotifyFeaturePromoFeatureUsed(

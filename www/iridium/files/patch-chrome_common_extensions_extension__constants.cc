@@ -1,4 +1,4 @@
---- chrome/common/extensions/extension_constants.cc.orig	2025-04-16 18:18:42 UTC
+--- chrome/common/extensions/extension_constants.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/common/extensions/extension_constants.cc
 @@ -38,7 +38,7 @@ const char* const kBuiltInFirstPartyExtensionIds[] = {
      kGoogleSpeechSynthesisExtensionId,

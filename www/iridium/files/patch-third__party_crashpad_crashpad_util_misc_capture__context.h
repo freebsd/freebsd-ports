@@ -1,4 +1,4 @@
---- third_party/crashpad/crashpad/util/misc/capture_context.h.orig	2023-10-21 11:51:27 UTC
+--- third_party/crashpad/crashpad/util/misc/capture_context.h.orig	2025-05-07 06:48:23 UTC
 +++ third_party/crashpad/crashpad/util/misc/capture_context.h
 @@ -21,7 +21,8 @@
  #include <mach/mach.h>

@@ -1,4 +1,4 @@
---- ui/base/x/x11_cursor_loader.cc.orig	2025-04-16 18:18:42 UTC
+--- ui/base/x/x11_cursor_loader.cc.orig	2025-05-07 06:48:23 UTC
 +++ ui/base/x/x11_cursor_loader.cc
 @@ -42,7 +42,7 @@
  #include "ui/gfx/x/connection.h"

@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/management/management_ui.cc.orig	2025-03-18 16:46:04 UTC
+--- chrome/browser/ui/webui/management/management_ui.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/webui/management/management_ui.cc
 @@ -175,11 +175,11 @@ void ManagementUI::GetLocalizedStrings(
         IDS_MANAGEMENT_FILE_TRANSFER_VISIBLE_DATA},

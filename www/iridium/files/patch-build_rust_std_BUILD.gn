@@ -1,4 +1,4 @@
---- build/rust/std/BUILD.gn.orig	2025-04-05 13:54:50 UTC
+--- build/rust/std/BUILD.gn.orig	2025-05-07 06:48:23 UTC
 +++ build/rust/std/BUILD.gn
 @@ -89,13 +89,20 @@ if (toolchain_has_rust) {
      # These are no longer present in the Windows toolchain.

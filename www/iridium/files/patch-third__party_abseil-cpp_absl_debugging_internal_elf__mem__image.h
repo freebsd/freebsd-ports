@@ -1,4 +1,4 @@
---- third_party/abseil-cpp/absl/debugging/internal/elf_mem_image.h.orig	2025-02-22 18:06:53 UTC
+--- third_party/abseil-cpp/absl/debugging/internal/elf_mem_image.h.orig	2025-05-07 06:48:23 UTC
 +++ third_party/abseil-cpp/absl/debugging/internal/elf_mem_image.h
 @@ -35,7 +35,8 @@
  #if defined(__ELF__) && !defined(__OpenBSD__) && !defined(__QNX__) && \

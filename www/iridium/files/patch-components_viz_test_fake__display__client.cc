@@ -1,4 +1,4 @@
---- components/viz/test/fake_display_client.cc.orig	2024-06-25 12:08:48 UTC
+--- components/viz/test/fake_display_client.cc.orig	2025-05-07 06:48:23 UTC
 +++ components/viz/test/fake_display_client.cc
 @@ -27,7 +27,7 @@ void FakeDisplayClient::AddChildWindowToBrowser(
      gpu::SurfaceHandle child_window) {}

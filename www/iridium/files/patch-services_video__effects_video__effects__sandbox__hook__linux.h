@@ -1,4 +1,4 @@
---- services/video_effects/video_effects_sandbox_hook_linux.h.orig	2024-12-22 12:24:29 UTC
+--- services/video_effects/video_effects_sandbox_hook_linux.h.orig	2025-05-07 06:48:23 UTC
 +++ services/video_effects/video_effects_sandbox_hook_linux.h
 @@ -5,7 +5,13 @@
  #ifndef SERVICES_VIDEO_EFFECTS_VIDEO_EFFECTS_SANDBOX_HOOK_LINUX_H_

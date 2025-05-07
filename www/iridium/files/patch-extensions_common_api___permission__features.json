@@ -1,4 +1,4 @@
---- extensions/common/api/_permission_features.json.orig	2025-04-16 18:18:42 UTC
+--- extensions/common/api/_permission_features.json.orig	2025-05-07 06:48:23 UTC
 +++ extensions/common/api/_permission_features.json
 @@ -134,7 +134,7 @@
      {

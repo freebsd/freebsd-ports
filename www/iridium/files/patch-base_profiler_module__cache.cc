@@ -1,4 +1,4 @@
---- base/profiler/module_cache.cc.orig	2024-06-25 12:08:48 UTC
+--- base/profiler/module_cache.cc.orig	2025-05-07 06:48:23 UTC
 +++ base/profiler/module_cache.cc
 @@ -38,7 +38,7 @@ std::string TransformModuleIDToSymbolServerFormat(std:
    // Android and Linux Chrome builds use the "breakpad" format to index their

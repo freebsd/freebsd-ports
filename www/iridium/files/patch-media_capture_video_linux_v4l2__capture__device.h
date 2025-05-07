@@ -1,7 +1,7 @@
---- media/capture/video/linux/v4l2_capture_device.h.orig	2022-03-28 18:11:04 UTC
+--- media/capture/video/linux/v4l2_capture_device.h.orig	2025-05-07 06:48:23 UTC
 +++ media/capture/video/linux/v4l2_capture_device.h
-@@ -21,7 +21,7 @@ class CAPTURE_EXPORT V4L2CaptureDevice
-  public:
+@@ -23,7 +23,7 @@ class CAPTURE_EXPORT V4L2CaptureDevice
+ 
    virtual int open(const char* device_name, int flags) = 0;
    virtual int close(int fd) = 0;
 -  virtual int ioctl(int fd, int request, void* argp) = 0;

@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2025-02-22 18:06:53 UTC
+--- chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/web_applications/os_integration/web_app_shortcut.cc
 @@ -71,7 +71,7 @@ namespace {
  

@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2024-11-04 08:56:03 UTC
+--- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2025-05-07 06:48:23 UTC
 +++ third_party/blink/renderer/platform/fonts/font_cache.h
 @@ -55,7 +55,7 @@
  #include "third_party/skia/include/core/SkFontMgr.h"

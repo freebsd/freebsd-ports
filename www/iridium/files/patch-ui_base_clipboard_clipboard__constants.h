@@ -1,4 +1,4 @@
---- ui/base/clipboard/clipboard_constants.h.orig	2025-02-22 18:06:53 UTC
+--- ui/base/clipboard/clipboard_constants.h.orig	2025-05-07 06:48:23 UTC
 +++ ui/base/clipboard/clipboard_constants.h
 @@ -41,7 +41,7 @@ extern const char kMimeTypeWindowDrag[];
  

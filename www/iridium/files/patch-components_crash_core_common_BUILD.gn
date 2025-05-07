@@ -1,4 +1,4 @@
---- components/crash/core/common/BUILD.gn.orig	2023-07-24 14:27:53 UTC
+--- components/crash/core/common/BUILD.gn.orig	2025-05-07 06:48:23 UTC
 +++ components/crash/core/common/BUILD.gn
 @@ -9,7 +9,7 @@ import("//components/gwp_asan/buildflags/buildflags.gn
  

@@ -1,4 +1,4 @@
---- extensions/common/features/feature.cc.orig	2025-02-22 18:06:53 UTC
+--- extensions/common/features/feature.cc.orig	2025-05-07 06:48:23 UTC
 +++ extensions/common/features/feature.cc
 @@ -29,6 +29,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
    return WIN_PLATFORM;

@@ -1,4 +1,4 @@
---- chrome/browser/webauthn/gpm_user_verification_policy.cc.orig	2024-08-27 06:28:16 UTC
+--- chrome/browser/webauthn/gpm_user_verification_policy.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/webauthn/gpm_user_verification_policy.cc
 @@ -17,7 +17,7 @@ bool GpmWillDoUserVerification(device::UserVerificatio
        return platform_has_biometrics;

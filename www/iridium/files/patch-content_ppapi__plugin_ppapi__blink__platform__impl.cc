@@ -1,4 +1,4 @@
---- content/ppapi_plugin/ppapi_blink_platform_impl.cc.orig	2024-06-25 12:08:48 UTC
+--- content/ppapi_plugin/ppapi_blink_platform_impl.cc.orig	2025-05-07 06:48:23 UTC
 +++ content/ppapi_plugin/ppapi_blink_platform_impl.cc
 @@ -21,7 +21,7 @@
  

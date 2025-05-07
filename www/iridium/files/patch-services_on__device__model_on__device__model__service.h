@@ -1,4 +1,4 @@
---- services/on_device_model/on_device_model_service.h.orig	2024-12-22 12:24:29 UTC
+--- services/on_device_model/on_device_model_service.h.orig	2025-05-07 06:48:23 UTC
 +++ services/on_device_model/on_device_model_service.h
 @@ -31,6 +31,10 @@ class OnDeviceModelInternalImpl;
  class TsHolder;

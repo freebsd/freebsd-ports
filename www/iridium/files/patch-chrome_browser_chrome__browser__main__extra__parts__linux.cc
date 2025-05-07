@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_main_extra_parts_linux.cc.orig	2024-06-25 12:08:48 UTC
+--- chrome/browser/chrome_browser_main_extra_parts_linux.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/chrome_browser_main_extra_parts_linux.cc
 @@ -58,7 +58,7 @@ void ChromeBrowserMainExtraPartsLinux::PostBrowserStar
  

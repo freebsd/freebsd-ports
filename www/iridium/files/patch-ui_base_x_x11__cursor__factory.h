@@ -1,4 +1,4 @@
---- ui/base/x/x11_cursor_factory.h.orig	2023-11-22 14:00:11 UTC
+--- ui/base/x/x11_cursor_factory.h.orig	2025-05-07 06:48:23 UTC
 +++ ui/base/x/x11_cursor_factory.h
 @@ -20,7 +20,7 @@ namespace ui {
  class X11Cursor;

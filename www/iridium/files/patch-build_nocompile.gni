@@ -1,4 +1,4 @@
---- build/nocompile.gni.orig	2025-02-22 18:06:53 UTC
+--- build/nocompile.gni.orig	2025-05-07 06:48:23 UTC
 +++ build/nocompile.gni
 @@ -55,7 +55,7 @@ if (is_win) {
  }

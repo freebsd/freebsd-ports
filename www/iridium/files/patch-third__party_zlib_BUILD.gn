@@ -1,4 +1,4 @@
---- third_party/zlib/BUILD.gn.orig	2024-08-01 05:47:53 UTC
+--- third_party/zlib/BUILD.gn.orig	2025-05-07 06:48:23 UTC
 +++ third_party/zlib/BUILD.gn
 @@ -128,7 +128,7 @@ if (use_arm_neon_optimizations) {
      defines = [ "CRC32_ARMV8_CRC32" ]

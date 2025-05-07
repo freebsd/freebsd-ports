@@ -1,4 +1,4 @@
---- base/atomicops.h.orig	2025-02-22 18:06:53 UTC
+--- base/atomicops.h.orig	2025-05-07 06:48:23 UTC
 +++ base/atomicops.h
 @@ -74,7 +74,11 @@ typedef intptr_t Atomic64;
  

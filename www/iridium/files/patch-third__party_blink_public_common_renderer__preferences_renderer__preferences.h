@@ -1,4 +1,4 @@
---- third_party/blink/public/common/renderer_preferences/renderer_preferences.h.orig	2024-06-25 12:08:48 UTC
+--- third_party/blink/public/common/renderer_preferences/renderer_preferences.h.orig	2025-05-07 06:48:23 UTC
 +++ third_party/blink/public/common/renderer_preferences/renderer_preferences.h
 @@ -65,7 +65,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
    UserAgentOverride user_agent_override;

@@ -1,4 +1,4 @@
---- chrome/common/media/cdm_registration.cc.orig	2025-04-16 18:18:42 UTC
+--- chrome/common/media/cdm_registration.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/common/media/cdm_registration.cc
 @@ -32,7 +32,7 @@
  #if BUILDFLAG(ENABLE_WIDEVINE)

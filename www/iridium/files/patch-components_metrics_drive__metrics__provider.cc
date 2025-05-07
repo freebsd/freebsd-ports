@@ -1,9 +1,18 @@
---- components/metrics/drive_metrics_provider.cc.orig	2025-03-18 16:46:04 UTC
+--- components/metrics/drive_metrics_provider.cc.orig	2025-05-07 06:48:23 UTC
 +++ components/metrics/drive_metrics_provider.cc
-@@ -113,7 +113,7 @@ void DriveMetricsProvider::FillDriveMetrics(
-                        response.has_seek_penalty);
-   RecordTriStateMetric("UMA.SeekPenaltyResult.Base",
-                        response.has_seek_penalty_base);
+@@ -21,7 +21,7 @@
+ namespace metrics {
+ 
+ namespace {
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ void RecordTriStateMetric(const char* name, std::optional<bool> sample) {
+   base::UmaHistogramEnumeration(
+       name, !sample.has_value()
+@@ -106,7 +106,7 @@ void DriveMetricsProvider::FillDriveMetrics(
+     drive->set_has_seek_penalty(*response.has_seek_penalty);
+   }
+ 
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    RecordTriStateMetric("UMA.DriveIsRemovableResult", response.is_removable);

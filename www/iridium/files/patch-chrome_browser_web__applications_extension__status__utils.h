@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/extension_status_utils.h.orig	2024-11-04 08:56:03 UTC
+--- chrome/browser/web_applications/extension_status_utils.h.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/web_applications/extension_status_utils.h
 @@ -50,7 +50,7 @@ bool IsExtensionDefaultInstalled(content::BrowserConte
  bool IsExternalExtensionUninstalled(content::BrowserContext* context,

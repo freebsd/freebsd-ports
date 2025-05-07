@@ -1,4 +1,4 @@
---- chrome/browser/task_manager/sampling/task_group.h.orig	2025-03-18 16:46:04 UTC
+--- chrome/browser/task_manager/sampling/task_group.h.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/task_manager/sampling/task_group.h
 @@ -41,7 +41,7 @@ constexpr int kUnsupportedVMRefreshFlags =
      REFRESH_TYPE_WEBCACHE_STATS | REFRESH_TYPE_NETWORK_USAGE |

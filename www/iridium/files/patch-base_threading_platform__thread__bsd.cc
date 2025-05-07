@@ -1,4 +1,4 @@
---- base/threading/platform_thread_bsd.cc.orig	2024-06-25 12:08:48 UTC
+--- base/threading/platform_thread_bsd.cc.orig	2025-05-07 06:48:23 UTC
 +++ base/threading/platform_thread_bsd.cc
 @@ -0,0 +1,31 @@
 +// Copyright 2023 The Chromium Authors

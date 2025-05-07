@@ -1,4 +1,4 @@
---- content/browser/browser_child_process_host_impl.cc.orig	2025-03-18 16:46:04 UTC
+--- content/browser/browser_child_process_host_impl.cc.orig	2025-05-07 06:48:23 UTC
 +++ content/browser/browser_child_process_host_impl.cc
 @@ -326,6 +326,8 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
        switches::kLogBestEffortTasks,

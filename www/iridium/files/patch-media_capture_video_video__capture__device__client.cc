@@ -1,4 +1,4 @@
---- media/capture/video/video_capture_device_client.cc.orig	2025-04-16 18:18:42 UTC
+--- media/capture/video/video_capture_device_client.cc.orig	2025-05-07 06:48:23 UTC
 +++ media/capture/video/video_capture_device_client.cc
 @@ -172,7 +172,7 @@ FourccAndFlip GetFourccAndFlipFromPixelFormat(
        CHECK(!is_width_odd && !is_height_odd);

@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.h.orig	2024-11-04 08:56:03 UTC
+--- chrome/browser/net/system_network_context_manager.h.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/net/system_network_context_manager.h
 @@ -198,7 +198,7 @@ class SystemNetworkContextManager {
    class URLLoaderFactoryForSystem;

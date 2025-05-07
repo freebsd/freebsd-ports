@@ -1,4 +1,4 @@
---- chrome/app/chrome_main.cc.orig	2025-02-22 18:06:53 UTC
+--- chrome/app/chrome_main.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/app/chrome_main.cc
 @@ -28,11 +28,11 @@
  #include "chrome/app/chrome_main_mac.h"

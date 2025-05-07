@@ -1,4 +1,4 @@
---- components/policy/core/common/policy_loader_common.cc.orig	2025-02-22 18:06:53 UTC
+--- components/policy/core/common/policy_loader_common.cc.orig	2025-05-07 06:48:23 UTC
 +++ components/policy/core/common/policy_loader_common.cc
 @@ -46,7 +46,7 @@ const char* kSensitivePolicies[] = {
      key::kDefaultSearchProviderEnabled,

@@ -1,4 +1,4 @@
---- chrome/test/base/scoped_channel_override_posix.cc.orig	2024-06-25 12:08:48 UTC
+--- chrome/test/base/scoped_channel_override_posix.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/test/base/scoped_channel_override_posix.cc
 @@ -45,7 +45,7 @@ std::string GetVersionExtra(ScopedChannelOverride::Cha
        return "beta";

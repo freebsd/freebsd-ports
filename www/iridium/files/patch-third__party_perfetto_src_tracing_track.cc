@@ -1,4 +1,4 @@
---- third_party/perfetto/src/tracing/track.cc.orig	2025-02-22 18:06:53 UTC
+--- third_party/perfetto/src/tracing/track.cc.orig	2025-05-07 06:48:23 UTC
 +++ third_party/perfetto/src/tracing/track.cc
 @@ -60,8 +60,9 @@ protos::gen::TrackDescriptor ProcessTrack::Serialize()
    auto desc = Track::Serialize();

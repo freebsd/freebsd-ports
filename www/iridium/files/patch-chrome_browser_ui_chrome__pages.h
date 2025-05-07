@@ -1,4 +1,4 @@
---- chrome/browser/ui/chrome_pages.h.orig	2025-03-18 16:46:04 UTC
+--- chrome/browser/ui/chrome_pages.h.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/chrome_pages.h
 @@ -39,7 +39,7 @@ namespace signin {
  enum class ConsentLevel;

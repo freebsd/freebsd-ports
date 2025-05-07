@@ -1,4 +1,4 @@
---- components/cookie_config/cookie_store_util.cc.orig	2024-06-25 12:08:48 UTC
+--- components/cookie_config/cookie_store_util.cc.orig	2025-05-07 06:48:23 UTC
 +++ components/cookie_config/cookie_store_util.cc
 @@ -12,7 +12,7 @@
  namespace cookie_config {

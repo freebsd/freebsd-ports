@@ -1,4 +1,4 @@
---- third_party/crc32c/BUILD.gn.orig	2023-07-24 14:27:53 UTC
+--- third_party/crc32c/BUILD.gn.orig	2025-05-07 06:48:23 UTC
 +++ third_party/crc32c/BUILD.gn
 @@ -46,7 +46,7 @@ config("crc32c_config") {
    }

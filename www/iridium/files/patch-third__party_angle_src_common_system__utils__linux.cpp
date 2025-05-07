@@ -1,4 +1,4 @@
---- third_party/angle/src/common/system_utils_linux.cpp.orig	2025-02-22 18:06:53 UTC
+--- third_party/angle/src/common/system_utils_linux.cpp.orig	2025-05-07 06:48:23 UTC
 +++ third_party/angle/src/common/system_utils_linux.cpp
 @@ -15,10 +15,15 @@
  #include <sys/types.h>

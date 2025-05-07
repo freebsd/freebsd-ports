@@ -1,4 +1,4 @@
---- remoting/host/webauthn/remote_webauthn_extension_notifier.cc.orig	2024-11-04 08:56:03 UTC
+--- remoting/host/webauthn/remote_webauthn_extension_notifier.cc.orig	2025-05-07 06:48:23 UTC
 +++ remoting/host/webauthn/remote_webauthn_extension_notifier.cc
 @@ -30,7 +30,7 @@
  #include "base/task/thread_pool.h"

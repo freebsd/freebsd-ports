@@ -1,4 +1,4 @@
---- remoting/host/chromoting_host_services_client.cc.orig	2023-10-21 11:51:27 UTC
+--- remoting/host/chromoting_host_services_client.cc.orig	2025-05-07 06:48:23 UTC
 +++ remoting/host/chromoting_host_services_client.cc
 @@ -59,7 +59,7 @@ mojo::PendingRemote<mojom::ChromotingHostServices> Con
  

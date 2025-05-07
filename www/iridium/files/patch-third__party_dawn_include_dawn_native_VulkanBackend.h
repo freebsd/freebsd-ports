@@ -1,4 +1,4 @@
---- third_party/dawn/include/dawn/native/VulkanBackend.h.orig	2024-06-25 12:08:48 UTC
+--- third_party/dawn/include/dawn/native/VulkanBackend.h.orig	2025-05-07 06:48:23 UTC
 +++ third_party/dawn/include/dawn/native/VulkanBackend.h
 @@ -83,7 +83,7 @@ struct ExternalImageExportInfoVk : ExternalImageExport
  };

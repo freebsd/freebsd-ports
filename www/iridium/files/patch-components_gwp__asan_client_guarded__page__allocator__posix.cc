@@ -1,4 +1,4 @@
---- components/gwp_asan/client/guarded_page_allocator_posix.cc.orig	2023-10-21 11:51:27 UTC
+--- components/gwp_asan/client/guarded_page_allocator_posix.cc.orig	2025-05-07 06:48:23 UTC
 +++ components/gwp_asan/client/guarded_page_allocator_posix.cc
 @@ -35,8 +35,9 @@ void GuardedPageAllocator::MarkPageInaccessible(void* 
    // mmap() a PROT_NONE page over the address to release it to the system, if

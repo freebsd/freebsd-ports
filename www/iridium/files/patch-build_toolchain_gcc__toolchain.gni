@@ -1,4 +1,4 @@
---- build/toolchain/gcc_toolchain.gni.orig	2025-04-16 18:18:42 UTC
+--- build/toolchain/gcc_toolchain.gni.orig	2025-05-07 06:48:23 UTC
 +++ build/toolchain/gcc_toolchain.gni
 @@ -56,6 +56,13 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")

@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_interface_binders.cc.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/chrome_browser_interface_binders.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/chrome_browser_interface_binders.cc
 @@ -77,7 +77,7 @@
  #endif  // BUILDFLAG(ENABLE_UNHANDLED_TAP)

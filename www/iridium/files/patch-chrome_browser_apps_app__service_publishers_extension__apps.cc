@@ -1,4 +1,4 @@
---- chrome/browser/apps/app_service/publishers/extension_apps.cc.orig	2024-06-25 12:08:48 UTC
+--- chrome/browser/apps/app_service/publishers/extension_apps.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/apps/app_service/publishers/extension_apps.cc
 @@ -23,7 +23,7 @@ ExtensionApps::ExtensionApps(AppServiceProxy* proxy)
  ExtensionApps::~ExtensionApps() = default;

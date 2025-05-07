@@ -1,4 +1,4 @@
---- base/compiler_specific.h.orig	2025-03-18 16:46:04 UTC
+--- base/compiler_specific.h.orig	2025-05-07 06:48:23 UTC
 +++ base/compiler_specific.h
 @@ -729,6 +729,7 @@ inline constexpr bool AnalyzerAssumeTrue(bool arg) {
  #if __has_cpp_attribute(clang::preserve_most) &&             \

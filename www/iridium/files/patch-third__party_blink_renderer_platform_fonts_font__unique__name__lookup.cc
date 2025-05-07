@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/fonts/font_unique_name_lookup.cc.orig	2022-04-01 07:48:30 UTC
+--- third_party/blink/renderer/platform/fonts/font_unique_name_lookup.cc.orig	2025-05-07 06:48:23 UTC
 +++ third_party/blink/renderer/platform/fonts/font_unique_name_lookup.cc
 @@ -9,7 +9,7 @@
  #if BUILDFLAG(IS_ANDROID)

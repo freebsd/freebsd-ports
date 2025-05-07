@@ -1,4 +1,4 @@
---- ui/gfx/gpu_memory_buffer.cc.orig	2025-03-18 16:46:04 UTC
+--- ui/gfx/gpu_memory_buffer.cc.orig	2025-05-07 06:48:23 UTC
 +++ ui/gfx/gpu_memory_buffer.cc
 @@ -108,7 +108,7 @@ GpuMemoryBufferHandle GpuMemoryBufferHandle::Clone() c
    handle.id = id;

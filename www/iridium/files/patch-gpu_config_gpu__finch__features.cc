@@ -1,4 +1,4 @@
---- gpu/config/gpu_finch_features.cc.orig	2025-04-16 18:18:42 UTC
+--- gpu/config/gpu_finch_features.cc.orig	2025-05-07 06:48:23 UTC
 +++ gpu/config/gpu_finch_features.cc
 @@ -155,7 +155,8 @@ BASE_FEATURE(kAllowHardwareBufferUsageFlagsFromVulkanF
  BASE_FEATURE(kDefaultEnableGpuRasterization,

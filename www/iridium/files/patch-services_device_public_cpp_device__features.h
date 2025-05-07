@@ -1,4 +1,4 @@
---- services/device/public/cpp/device_features.h.orig	2025-04-16 18:18:42 UTC
+--- services/device/public/cpp/device_features.h.orig	2025-05-07 06:48:23 UTC
 +++ services/device/public/cpp/device_features.h
 @@ -53,7 +53,7 @@ extern const DEVICE_FEATURES_EXPORT
  

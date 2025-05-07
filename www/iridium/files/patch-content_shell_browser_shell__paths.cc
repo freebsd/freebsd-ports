@@ -1,4 +1,4 @@
---- content/shell/browser/shell_paths.cc.orig	2022-03-28 18:11:04 UTC
+--- content/shell/browser/shell_paths.cc.orig	2025-05-07 06:48:23 UTC
 +++ content/shell/browser/shell_paths.cc
 @@ -13,7 +13,7 @@
  

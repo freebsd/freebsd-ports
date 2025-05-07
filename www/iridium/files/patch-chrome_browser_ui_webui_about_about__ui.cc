@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/about/about_ui.cc.orig	2025-03-18 16:46:04 UTC
+--- chrome/browser/ui/webui/about/about_ui.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/webui/about/about_ui.cc
 @@ -496,7 +496,7 @@ std::string ChromeURLs(content::BrowserContext* browse
    return html;

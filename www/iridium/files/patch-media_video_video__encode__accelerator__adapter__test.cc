@@ -1,4 +1,4 @@
---- media/video/video_encode_accelerator_adapter_test.cc.orig	2025-03-18 16:46:04 UTC
+--- media/video/video_encode_accelerator_adapter_test.cc.orig	2025-05-07 06:48:23 UTC
 +++ media/video/video_encode_accelerator_adapter_test.cc
 @@ -260,7 +260,7 @@ TEST_F(VideoEncodeAcceleratorAdapterTest, InitializeAf
        });

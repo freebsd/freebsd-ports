@@ -1,4 +1,4 @@
---- third_party/blink/renderer/build/scripts/run_with_pythonpath.py.orig	2022-03-28 18:11:04 UTC
+--- third_party/blink/renderer/build/scripts/run_with_pythonpath.py.orig	2025-05-07 06:48:23 UTC
 +++ third_party/blink/renderer/build/scripts/run_with_pythonpath.py
 @@ -22,6 +22,7 @@ def main():
          existing_pp = (

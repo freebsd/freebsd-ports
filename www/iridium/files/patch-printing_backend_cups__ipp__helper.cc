@@ -1,4 +1,4 @@
---- printing/backend/cups_ipp_helper.cc.orig	2025-03-18 16:46:04 UTC
+--- printing/backend/cups_ipp_helper.cc.orig	2025-05-07 06:48:23 UTC
 +++ printing/backend/cups_ipp_helper.cc
 @@ -201,7 +201,7 @@ void ExtractResolutions(const CupsOptionProvider& prin
    // Provide a default DPI if no valid DPI is found.

@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_forward.h.orig	2024-02-04 14:46:08 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_forward.h.orig	2025-05-07 06:48:23 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_alloc_forward.h
 @@ -28,9 +28,13 @@ namespace internal {
  // the second one 16. We could technically return something different for

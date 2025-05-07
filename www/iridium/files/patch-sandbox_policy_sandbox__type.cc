@@ -1,4 +1,4 @@
---- sandbox/policy/sandbox_type.cc.orig	2025-04-16 18:18:42 UTC
+--- sandbox/policy/sandbox_type.cc.orig	2025-05-07 06:48:23 UTC
 +++ sandbox/policy/sandbox_type.cc
 @@ -38,7 +38,7 @@ constexpr char kPpapiSandbox[] = "ppapi";
  #endif

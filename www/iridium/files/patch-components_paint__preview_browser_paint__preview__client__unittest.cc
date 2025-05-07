@@ -1,4 +1,4 @@
---- components/paint_preview/browser/paint_preview_client_unittest.cc.orig	2024-06-25 12:08:48 UTC
+--- components/paint_preview/browser/paint_preview_client_unittest.cc.orig	2025-05-07 06:48:23 UTC
 +++ components/paint_preview/browser/paint_preview_client_unittest.cc
 @@ -174,8 +174,8 @@ TEST_P(PaintPreviewClientRenderViewHostTest, CaptureMa
    metadata->set_version(kPaintPreviewVersion);

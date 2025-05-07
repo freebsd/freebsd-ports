@@ -1,4 +1,4 @@
---- ui/gfx/x/generated_protos/shm.cc.orig	2024-06-25 12:08:48 UTC
+--- ui/gfx/x/generated_protos/shm.cc.orig	2025-05-07 06:48:23 UTC
 +++ ui/gfx/x/generated_protos/shm.cc
 @@ -27,6 +27,8 @@
  #include <xcb/xcb.h>

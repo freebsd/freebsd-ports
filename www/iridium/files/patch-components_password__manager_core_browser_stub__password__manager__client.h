@@ -1,4 +1,4 @@
---- components/password_manager/core/browser/stub_password_manager_client.h.orig	2025-03-18 16:46:04 UTC
+--- components/password_manager/core/browser/stub_password_manager_client.h.orig	2025-05-07 06:48:23 UTC
 +++ components/password_manager/core/browser/stub_password_manager_client.h
 @@ -77,7 +77,7 @@ class StubPasswordManagerClient : public PasswordManag
    MockPasswordFeatureManager* GetPasswordFeatureManager();

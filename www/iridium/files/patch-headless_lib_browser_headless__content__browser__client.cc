@@ -1,4 +1,4 @@
---- headless/lib/browser/headless_content_browser_client.cc.orig	2025-04-16 18:18:42 UTC
+--- headless/lib/browser/headless_content_browser_client.cc.orig	2025-05-07 06:48:23 UTC
 +++ headless/lib/browser/headless_content_browser_client.cc
 @@ -58,7 +58,7 @@
  #include "content/public/common/content_descriptors.h"

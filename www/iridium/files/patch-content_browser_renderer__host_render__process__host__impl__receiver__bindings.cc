@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc.orig	2025-03-18 16:46:04 UTC
+--- content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc.orig	2025-05-07 06:48:23 UTC
 +++ content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc
 @@ -52,7 +52,7 @@
  #include "third_party/blink/public/mojom/webdatabase/web_database.mojom.h"

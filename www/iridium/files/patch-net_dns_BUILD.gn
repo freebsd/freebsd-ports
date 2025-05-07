@@ -1,4 +1,4 @@
---- net/dns/BUILD.gn.orig	2025-02-22 18:06:53 UTC
+--- net/dns/BUILD.gn.orig	2025-05-07 06:48:23 UTC
 +++ net/dns/BUILD.gn
 @@ -140,7 +140,7 @@ source_set("dns") {
        "dns_config_service_android.cc",

@@ -1,4 +1,4 @@
---- chromecast/cast_core/runtime/browser/runtime_application_service_impl.cc.orig	2025-04-16 18:18:42 UTC
+--- chromecast/cast_core/runtime/browser/runtime_application_service_impl.cc.orig	2025-05-07 06:48:23 UTC
 +++ chromecast/cast_core/runtime/browser/runtime_application_service_impl.cc
 @@ -352,7 +352,7 @@ CastWebView::Scoped RuntimeApplicationServiceImpl::Cre
    params->force_720p_resolution =

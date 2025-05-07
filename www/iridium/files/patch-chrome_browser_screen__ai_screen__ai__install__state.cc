@@ -1,4 +1,4 @@
---- chrome/browser/screen_ai/screen_ai_install_state.cc.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/screen_ai/screen_ai_install_state.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/screen_ai/screen_ai_install_state.cc
 @@ -30,7 +30,7 @@ bool IsDeviceCompatible() {
    // TODO(crbug.com/381256355): Update when ScreenAI library is compatible with

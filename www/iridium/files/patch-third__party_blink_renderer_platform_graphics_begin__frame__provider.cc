@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/graphics/begin_frame_provider.cc.orig	2023-08-28 20:17:35 UTC
+--- third_party/blink/renderer/platform/graphics/begin_frame_provider.cc.orig	2025-05-07 06:48:23 UTC
 +++ third_party/blink/renderer/platform/graphics/begin_frame_provider.cc
 @@ -71,8 +71,12 @@ void BeginFrameProvider::CreateCompositorFrameSinkIfNe
  

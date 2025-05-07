@@ -1,4 +1,4 @@
---- ipc/ipc_channel_mojo.cc.orig	2023-03-13 07:33:08 UTC
+--- ipc/ipc_channel_mojo.cc.orig	2025-05-07 06:48:23 UTC
 +++ ipc/ipc_channel_mojo.cc
 @@ -105,7 +105,7 @@ class ThreadSafeChannelProxy : public mojo::ThreadSafe
  };

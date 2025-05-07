@@ -1,4 +1,4 @@
---- third_party/blink/renderer/build/scripts/gperf.py.orig	2025-05-05 18:35:31 UTC
+--- third_party/blink/renderer/build/scripts/gperf.py.orig	2025-05-07 06:48:23 UTC
 +++ third_party/blink/renderer/build/scripts/gperf.py
 @@ -35,10 +35,13 @@ def generate_gperf(gperf_path, gperf_input, gperf_args
          # https://savannah.gnu.org/bugs/index.php?53028

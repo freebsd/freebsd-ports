@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2024-06-25 12:08:48 UTC
+--- chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc
 @@ -7,7 +7,7 @@
  #include "build/build_config.h"

@@ -1,4 +1,4 @@
---- chrome/browser/sessions/session_restore.cc.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/sessions/session_restore.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/sessions/session_restore.cc
 @@ -108,7 +108,7 @@
  #include "ui/wm/core/scoped_animation_disabler.h"

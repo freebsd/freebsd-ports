@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/subprocess_posix.cc.orig	2025-02-22 18:06:53 UTC
+--- third_party/perfetto/src/base/subprocess_posix.cc.orig	2025-05-07 06:48:23 UTC
 +++ third_party/perfetto/src/base/subprocess_posix.cc
 @@ -35,7 +35,8 @@
  #include <thread>

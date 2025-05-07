@@ -1,4 +1,4 @@
---- third_party/skia/src/ports/SkOSFile_posix.cpp.orig	2022-03-28 18:11:04 UTC
+--- third_party/skia/src/ports/SkOSFile_posix.cpp.orig	2025-05-07 06:48:23 UTC
 +++ third_party/skia/src/ports/SkOSFile_posix.cpp
 @@ -25,7 +25,7 @@
  #endif

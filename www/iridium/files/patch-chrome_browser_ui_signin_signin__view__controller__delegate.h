@@ -1,4 +1,4 @@
---- chrome/browser/ui/signin/signin_view_controller_delegate.h.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/ui/signin/signin_view_controller_delegate.h.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/signin/signin_view_controller_delegate.h
 @@ -79,7 +79,7 @@ class SigninViewControllerDelegate {
        SignoutConfirmationCallback callback);

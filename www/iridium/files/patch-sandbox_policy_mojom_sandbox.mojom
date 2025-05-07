@@ -1,4 +1,4 @@
---- sandbox/policy/mojom/sandbox.mojom.orig	2025-02-22 18:06:53 UTC
+--- sandbox/policy/mojom/sandbox.mojom.orig	2025-05-07 06:48:23 UTC
 +++ sandbox/policy/mojom/sandbox.mojom
 @@ -74,6 +74,12 @@ enum Sandbox {
    // Minimally privileged sandbox on Fuchsia.

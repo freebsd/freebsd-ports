@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/app_settings/web_app_settings_ui.h.orig	2024-12-22 12:24:29 UTC
+--- chrome/browser/ui/webui/app_settings/web_app_settings_ui.h.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/webui/app_settings/web_app_settings_ui.h
 @@ -14,13 +14,13 @@
  #include "ui/webui/mojo_web_ui_controller.h"

@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_config.h.orig	2024-12-22 12:24:29 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_config.h.orig	2025-05-07 06:48:23 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_alloc_config.h
 @@ -170,7 +170,7 @@ constexpr bool kUseLazyCommit = false;
  // This may be required on more platforms in the future.

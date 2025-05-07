@@ -1,4 +1,4 @@
---- ui/base/ui_base_switches.h.orig	2025-02-22 18:06:53 UTC
+--- ui/base/ui_base_switches.h.orig	2025-05-07 06:48:23 UTC
 +++ ui/base/ui_base_switches.h
 @@ -22,11 +22,11 @@ COMPONENT_EXPORT(UI_BASE) extern const char kDisableMo
  COMPONENT_EXPORT(UI_BASE) extern const char kShowMacOverlayBorders[];

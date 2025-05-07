@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/password_manager/promo_cards/relaunch_chrome_promo.cc.orig	2024-06-25 12:08:48 UTC
+--- chrome/browser/ui/webui/password_manager/promo_cards/relaunch_chrome_promo.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/webui/password_manager/promo_cards/relaunch_chrome_promo.cc
 @@ -37,7 +37,7 @@ std::u16string RelaunchChromePromo::GetTitle() const {
    return l10n_util::GetStringUTF16(

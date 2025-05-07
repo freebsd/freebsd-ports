@@ -1,4 +1,4 @@
---- content/gpu/gpu_main.cc.orig	2025-04-16 18:18:42 UTC
+--- content/gpu/gpu_main.cc.orig	2025-05-07 06:48:23 UTC
 +++ content/gpu/gpu_main.cc
 @@ -95,10 +95,14 @@
  #include "sandbox/win/src/sandbox.h"

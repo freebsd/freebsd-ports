@@ -1,4 +1,4 @@
---- base/memory/protected_memory.h.orig	2025-02-22 18:06:53 UTC
+--- base/memory/protected_memory.h.orig	2025-05-07 06:48:23 UTC
 +++ base/memory/protected_memory.h
 @@ -120,12 +120,12 @@ __declspec(selectany) char __stop_protected_memory;
  

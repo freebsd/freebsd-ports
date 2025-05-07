@@ -1,4 +1,4 @@
---- third_party/nasm/config/config-linux.h.orig	2023-01-17 19:19:00 UTC
+--- third_party/nasm/config/config-linux.h.orig	2025-05-07 06:48:23 UTC
 +++ third_party/nasm/config/config-linux.h
 @@ -160,7 +160,7 @@
  

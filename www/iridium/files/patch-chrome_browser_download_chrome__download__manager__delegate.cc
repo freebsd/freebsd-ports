@@ -1,4 +1,4 @@
---- chrome/browser/download/chrome_download_manager_delegate.cc.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/download/chrome_download_manager_delegate.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/download/chrome_download_manager_delegate.cc
 @@ -1864,7 +1864,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
  bool ChromeDownloadManagerDelegate::IsOpenInBrowserPreferredForFile(

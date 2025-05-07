@@ -1,4 +1,4 @@
---- media/audio/alsa/audio_manager_alsa.cc.orig	2025-03-18 16:46:04 UTC
+--- media/audio/alsa/audio_manager_alsa.cc.orig	2025-05-07 06:48:23 UTC
 +++ media/audio/alsa/audio_manager_alsa.cc
 @@ -106,7 +106,9 @@ void AudioManagerAlsa::GetAlsaAudioDevices(StreamType 
    int card = -1;

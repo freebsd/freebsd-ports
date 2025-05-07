@@ -1,4 +1,4 @@
---- chrome/browser/ui/browser_view_prefs.cc.orig	2025-03-18 16:46:04 UTC
+--- chrome/browser/ui/browser_view_prefs.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/browser_view_prefs.cc
 @@ -14,7 +14,7 @@
  

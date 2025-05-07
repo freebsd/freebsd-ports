@@ -1,4 +1,4 @@
---- base/system/sys_info_openbsd.cc.orig	2025-02-22 18:06:53 UTC
+--- base/system/sys_info_openbsd.cc.orig	2025-05-07 06:48:23 UTC
 +++ base/system/sys_info_openbsd.cc
 @@ -12,6 +12,7 @@
  

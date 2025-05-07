@@ -1,4 +1,4 @@
---- remoting/host/policy_watcher.cc.orig	2025-03-18 16:46:04 UTC
+--- remoting/host/policy_watcher.cc.orig	2025-05-07 06:48:23 UTC
 +++ remoting/host/policy_watcher.cc
 @@ -177,7 +177,7 @@ base::Value::Dict PolicyWatcher::GetDefaultPolicies() 
               true);

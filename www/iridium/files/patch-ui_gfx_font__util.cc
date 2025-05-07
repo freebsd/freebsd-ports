@@ -1,4 +1,4 @@
---- ui/gfx/font_util.cc.orig	2024-06-25 12:08:48 UTC
+--- ui/gfx/font_util.cc.orig	2025-05-07 06:48:23 UTC
 +++ ui/gfx/font_util.cc
 @@ -6,7 +6,7 @@
  

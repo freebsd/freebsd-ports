@@ -1,4 +1,4 @@
---- base/functional/unretained_traits.h.orig	2025-02-22 18:06:53 UTC
+--- base/functional/unretained_traits.h.orig	2025-05-07 06:48:23 UTC
 +++ base/functional/unretained_traits.h
 @@ -90,7 +90,7 @@ struct SupportsUnretainedImpl {
  // official builds, and then in non-test code as well.

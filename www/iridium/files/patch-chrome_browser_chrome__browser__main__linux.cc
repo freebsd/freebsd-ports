@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_main_linux.cc.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/chrome_browser_main_linux.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/chrome_browser_main_linux.cc
 @@ -24,7 +24,7 @@
  #include "device/bluetooth/dbus/bluez_dbus_thread_manager.h"

@@ -1,4 +1,4 @@
---- components/error_page/common/localized_error.cc.orig	2025-02-22 18:06:53 UTC
+--- components/error_page/common/localized_error.cc.orig	2025-05-07 06:48:23 UTC
 +++ components/error_page/common/localized_error.cc
 @@ -901,7 +901,7 @@ void AddSuggestionsDetails(int error_code,
    if (suggestions & SUGGEST_PROXY_CONFIG) {

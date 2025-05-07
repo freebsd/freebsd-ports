@@ -1,4 +1,4 @@
---- third_party/ffmpeg/configure.orig	2025-04-16 18:18:42 UTC
+--- third_party/ffmpeg/configure.orig	2025-05-07 06:48:23 UTC
 +++ third_party/ffmpeg/configure
 @@ -6855,8 +6855,8 @@ if ! disabled pthreads && ! enabled w32threads && ! en
          if enabled pthread_np_h; then

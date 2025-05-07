@@ -1,4 +1,4 @@
---- chrome/browser/after_startup_task_utils.cc.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/after_startup_task_utils.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/after_startup_task_utils.cc
 @@ -112,7 +112,7 @@ void SetBrowserStartupIsComplete() {
                         TRACE_EVENT_SCOPE_GLOBAL, "BrowserCount", browser_count);

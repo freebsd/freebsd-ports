@@ -1,4 +1,4 @@
---- content/browser/file_system_access/file_path_watcher/file_path_watcher_bsd.cc.orig	2025-02-22 18:06:53 UTC
+--- content/browser/file_system_access/file_path_watcher/file_path_watcher_bsd.cc.orig	2025-05-07 06:48:23 UTC
 +++ content/browser/file_system_access/file_path_watcher/file_path_watcher_bsd.cc
 @@ -0,0 +1,60 @@
 +// Copyright 2024 The Chromium Authors

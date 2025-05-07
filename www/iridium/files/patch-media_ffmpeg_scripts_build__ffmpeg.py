@@ -1,4 +1,4 @@
---- media/ffmpeg/scripts/build_ffmpeg.py.orig	2024-08-01 05:47:53 UTC
+--- media/ffmpeg/scripts/build_ffmpeg.py.orig	2025-05-07 06:48:23 UTC
 +++ media/ffmpeg/scripts/build_ffmpeg.py
 @@ -33,7 +33,7 @@ NDK_ROOT_DIR = os.path.abspath(
  SUCCESS_TOKEN = 'THIS_BUILD_WORKED'

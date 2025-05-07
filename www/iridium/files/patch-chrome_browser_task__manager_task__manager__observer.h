@@ -1,4 +1,4 @@
---- chrome/browser/task_manager/task_manager_observer.h.orig	2025-03-18 16:46:04 UTC
+--- chrome/browser/task_manager/task_manager_observer.h.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/task_manager/task_manager_observer.h
 @@ -46,7 +46,7 @@ enum RefreshType {
    // or backgrounded.

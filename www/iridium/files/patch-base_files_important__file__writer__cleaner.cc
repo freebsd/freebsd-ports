@@ -1,4 +1,4 @@
---- base/files/important_file_writer_cleaner.cc.orig	2022-03-28 18:11:04 UTC
+--- base/files/important_file_writer_cleaner.cc.orig	2025-05-07 06:48:23 UTC
 +++ base/files/important_file_writer_cleaner.cc
 @@ -25,7 +25,8 @@ namespace base {
  namespace {

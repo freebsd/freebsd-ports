@@ -1,4 +1,4 @@
---- content/common/gpu_pre_sandbox_hook_bsd.h.orig	2024-06-25 12:08:48 UTC
+--- content/common/gpu_pre_sandbox_hook_bsd.h.orig	2025-05-07 06:48:23 UTC
 +++ content/common/gpu_pre_sandbox_hook_bsd.h
 @@ -0,0 +1,20 @@
 +// Copyright 2017 The Chromium Authors

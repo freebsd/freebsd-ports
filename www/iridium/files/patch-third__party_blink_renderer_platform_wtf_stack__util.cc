@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/wtf/stack_util.cc.orig	2025-02-22 18:06:53 UTC
+--- third_party/blink/renderer/platform/wtf/stack_util.cc.orig	2025-05-07 06:48:23 UTC
 +++ third_party/blink/renderer/platform/wtf/stack_util.cc
 @@ -23,6 +23,11 @@
  extern "C" void* __libc_stack_end;  // NOLINT

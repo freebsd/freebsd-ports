@@ -1,4 +1,4 @@
---- third_party/ffmpeg/libavutil/random_seed.c.orig	2023-10-21 11:51:27 UTC
+--- third_party/ffmpeg/libavutil/random_seed.c.orig	2025-05-07 06:48:23 UTC
 +++ third_party/ffmpeg/libavutil/random_seed.c
 @@ -35,6 +35,11 @@
  #elif CONFIG_OPENSSL

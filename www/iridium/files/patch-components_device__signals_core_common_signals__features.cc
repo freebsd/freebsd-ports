@@ -1,4 +1,4 @@
---- components/device_signals/core/common/signals_features.cc.orig	2025-04-16 18:18:42 UTC
+--- components/device_signals/core/common/signals_features.cc.orig	2025-05-07 06:48:23 UTC
 +++ components/device_signals/core/common/signals_features.cc
 @@ -31,7 +31,7 @@ bool IsBrowserSignalsReportingEnabled() {
  }

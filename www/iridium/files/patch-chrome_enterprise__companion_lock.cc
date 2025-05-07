@@ -1,4 +1,4 @@
---- chrome/enterprise_companion/lock.cc.orig	2024-08-27 06:28:16 UTC
+--- chrome/enterprise_companion/lock.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/enterprise_companion/lock.cc
 @@ -17,7 +17,7 @@
  

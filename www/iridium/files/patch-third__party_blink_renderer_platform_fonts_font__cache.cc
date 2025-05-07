@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2025-02-22 18:06:53 UTC
+--- third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2025-05-07 06:48:23 UTC
 +++ third_party/blink/renderer/platform/fonts/font_cache.cc
 @@ -82,7 +82,7 @@ extern const char kNotoColorEmojiCompat[] = "Noto Colo
  

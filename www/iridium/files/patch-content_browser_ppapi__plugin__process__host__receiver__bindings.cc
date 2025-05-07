@@ -1,4 +1,4 @@
---- content/browser/ppapi_plugin_process_host_receiver_bindings.cc.orig	2022-03-28 18:11:04 UTC
+--- content/browser/ppapi_plugin_process_host_receiver_bindings.cc.orig	2025-05-07 06:48:23 UTC
 +++ content/browser/ppapi_plugin_process_host_receiver_bindings.cc
 @@ -8,7 +8,7 @@
  

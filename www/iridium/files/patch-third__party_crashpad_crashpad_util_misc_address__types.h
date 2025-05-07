@@ -1,4 +1,4 @@
---- third_party/crashpad/crashpad/util/misc/address_types.h.orig	2022-03-28 18:11:04 UTC
+--- third_party/crashpad/crashpad/util/misc/address_types.h.orig	2025-05-07 06:48:23 UTC
 +++ third_party/crashpad/crashpad/util/misc/address_types.h
 @@ -25,7 +25,7 @@
  #include <mach/mach_types.h>

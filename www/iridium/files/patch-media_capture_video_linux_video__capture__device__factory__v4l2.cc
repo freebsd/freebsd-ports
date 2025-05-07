@@ -1,4 +1,4 @@
---- media/capture/video/linux/video_capture_device_factory_v4l2.cc.orig	2025-03-18 16:46:04 UTC
+--- media/capture/video/linux/video_capture_device_factory_v4l2.cc.orig	2025-05-07 06:48:23 UTC
 +++ media/capture/video/linux/video_capture_device_factory_v4l2.cc
 @@ -43,6 +43,7 @@ bool CompareCaptureDevices(const VideoCaptureDeviceInf
    return a.descriptor < b.descriptor;

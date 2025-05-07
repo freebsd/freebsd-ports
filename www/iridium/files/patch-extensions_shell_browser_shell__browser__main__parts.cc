@@ -1,4 +1,4 @@
---- extensions/shell/browser/shell_browser_main_parts.cc.orig	2025-02-22 18:06:53 UTC
+--- extensions/shell/browser/shell_browser_main_parts.cc.orig	2025-05-07 06:48:23 UTC
 +++ extensions/shell/browser/shell_browser_main_parts.cc
 @@ -137,7 +137,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
        switches::kAppShellAllowRoaming)) {

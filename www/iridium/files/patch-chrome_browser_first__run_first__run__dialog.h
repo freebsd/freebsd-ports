@@ -1,4 +1,4 @@
---- chrome/browser/first_run/first_run_dialog.h.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/first_run/first_run_dialog.h.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/first_run/first_run_dialog.h
 @@ -9,7 +9,7 @@
  #include "build/build_config.h"

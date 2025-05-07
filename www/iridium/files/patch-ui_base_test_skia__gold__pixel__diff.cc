@@ -1,4 +1,4 @@
---- ui/base/test/skia_gold_pixel_diff.cc.orig	2025-03-18 16:46:04 UTC
+--- ui/base/test/skia_gold_pixel_diff.cc.orig	2025-05-07 06:48:23 UTC
 +++ ui/base/test/skia_gold_pixel_diff.cc
 @@ -117,7 +117,7 @@ const char* GetPlatformName() {
    return "windows";

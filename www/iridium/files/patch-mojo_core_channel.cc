@@ -1,4 +1,4 @@
---- mojo/core/channel.cc.orig	2025-02-22 18:06:53 UTC
+--- mojo/core/channel.cc.orig	2025-05-07 06:48:23 UTC
 +++ mojo/core/channel.cc
 @@ -83,7 +83,11 @@ const size_t kMaxAttachedHandles = 64;
  const size_t kMaxAttachedHandles = 253;

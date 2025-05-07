@@ -1,4 +1,4 @@
---- chrome/browser/ui/sharing_hub/sharing_hub_bubble_controller.h.orig	2024-06-25 12:08:48 UTC
+--- chrome/browser/ui/sharing_hub/sharing_hub_bubble_controller.h.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/sharing_hub/sharing_hub_bubble_controller.h
 @@ -36,7 +36,7 @@ class SharingHubBubbleController {
    // Returns true if the omnibox icon should be shown.

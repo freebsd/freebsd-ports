@@ -1,4 +1,4 @@
---- components/device_signals/core/common/signals_features.h.orig	2025-04-16 18:18:42 UTC
+--- components/device_signals/core/common/signals_features.h.orig	2025-05-07 06:48:23 UTC
 +++ components/device_signals/core/common/signals_features.h
 @@ -24,7 +24,7 @@ bool IsProfileSignalsReportingEnabled();
  bool IsBrowserSignalsReportingEnabled();

@@ -1,4 +1,4 @@
---- sandbox/policy/sandbox.h.orig	2023-07-24 14:27:53 UTC
+--- sandbox/policy/sandbox.h.orig	2025-05-07 06:48:23 UTC
 +++ sandbox/policy/sandbox.h
 @@ -12,6 +12,12 @@
  #include "sandbox/policy/linux/sandbox_linux.h"

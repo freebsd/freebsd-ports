@@ -1,4 +1,4 @@
---- services/tracing/public/cpp/system_metrics_sampler.cc.orig	2025-02-22 18:06:53 UTC
+--- services/tracing/public/cpp/system_metrics_sampler.cc.orig	2025-05-07 06:48:23 UTC
 +++ services/tracing/public/cpp/system_metrics_sampler.cc
 @@ -176,8 +176,8 @@ void SystemMetricsSampler::ProcessSampler::SampleProce
      TRACE_COUNTER(TRACE_DISABLED_BY_DEFAULT("system_metrics"),

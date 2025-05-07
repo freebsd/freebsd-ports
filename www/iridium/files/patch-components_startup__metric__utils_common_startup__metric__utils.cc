@@ -1,4 +1,4 @@
---- components/startup_metric_utils/common/startup_metric_utils.cc.orig	2024-08-27 06:28:16 UTC
+--- components/startup_metric_utils/common/startup_metric_utils.cc.orig	2025-05-07 06:48:23 UTC
 +++ components/startup_metric_utils/common/startup_metric_utils.cc
 @@ -94,7 +94,7 @@ base::TimeTicks CommonStartupMetricRecorder::StartupTi
    // Enabling this logic on OS X causes a significant performance regression.

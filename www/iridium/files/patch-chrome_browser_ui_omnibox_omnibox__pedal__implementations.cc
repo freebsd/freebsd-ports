@@ -1,4 +1,4 @@
---- chrome/browser/ui/omnibox/omnibox_pedal_implementations.cc.orig	2025-03-18 16:46:04 UTC
+--- chrome/browser/ui/omnibox/omnibox_pedal_implementations.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/omnibox/omnibox_pedal_implementations.cc
 @@ -1985,7 +1985,7 @@ const gfx::VectorIcon& GetSharingHubVectorIcon() {
    return omnibox::kShareMacChromeRefreshIcon;

@@ -1,4 +1,4 @@
---- ui/gfx/native_pixmap_handle.cc.orig	2022-12-06 08:09:13 UTC
+--- ui/gfx/native_pixmap_handle.cc.orig	2025-05-07 06:48:23 UTC
 +++ ui/gfx/native_pixmap_handle.cc
 @@ -11,7 +11,7 @@
  #include "ui/gfx/buffer_format_util.h"

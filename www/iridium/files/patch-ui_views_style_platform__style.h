@@ -1,4 +1,4 @@
---- ui/views/style/platform_style.h.orig	2025-04-16 18:18:42 UTC
+--- ui/views/style/platform_style.h.orig	2025-05-07 06:48:23 UTC
 +++ ui/views/style/platform_style.h
 @@ -84,7 +84,7 @@ class VIEWS_EXPORT PlatformStyle {
    // Default setting at bubble creation time for whether arrow will be adjusted

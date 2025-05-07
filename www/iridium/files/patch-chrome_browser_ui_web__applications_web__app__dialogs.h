@@ -1,4 +1,4 @@
---- chrome/browser/ui/web_applications/web_app_dialogs.h.orig	2025-02-22 18:06:53 UTC
+--- chrome/browser/ui/web_applications/web_app_dialogs.h.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/web_applications/web_app_dialogs.h
 @@ -21,7 +21,7 @@
  #include "ui/gfx/native_widget_types.h"

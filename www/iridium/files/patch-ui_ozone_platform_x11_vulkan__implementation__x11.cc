@@ -1,4 +1,4 @@
---- ui/ozone/platform/x11/vulkan_implementation_x11.cc.orig	2024-06-25 12:08:48 UTC
+--- ui/ozone/platform/x11/vulkan_implementation_x11.cc.orig	2025-05-07 06:48:23 UTC
 +++ ui/ozone/platform/x11/vulkan_implementation_x11.cc
 @@ -59,7 +59,11 @@ bool VulkanImplementationX11::InitializeVulkanInstance
  

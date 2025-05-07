@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/remote_commands/cbcm_remote_commands_factory.cc.orig	2024-02-04 14:46:08 UTC
+--- chrome/browser/enterprise/remote_commands/cbcm_remote_commands_factory.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/enterprise/remote_commands/cbcm_remote_commands_factory.cc
 @@ -11,7 +11,7 @@
  #include "chrome/browser/profiles/profile_manager.h"

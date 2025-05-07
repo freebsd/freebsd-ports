@@ -1,4 +1,4 @@
---- remoting/host/chromoting_host.h.orig	2025-02-22 18:06:53 UTC
+--- remoting/host/chromoting_host.h.orig	2025-05-07 06:48:23 UTC
 +++ remoting/host/chromoting_host.h
 @@ -36,7 +36,7 @@
  #include "remoting/protocol/session_manager.h"
@@ -18,7 +18,7 @@
    // Starts running the ChromotingHostServices server and listening for incoming
    // IPC binding requests.
    // Currently only Linux runs the ChromotingHostServices server on the host
-@@ -220,7 +220,7 @@ class ChromotingHost : public ClientSession::EventHand
+@@ -222,7 +222,7 @@ class ChromotingHost : public ClientSession::EventHand
    // List of host extensions.
    std::vector<std::unique_ptr<HostExtension>> extensions_;
  

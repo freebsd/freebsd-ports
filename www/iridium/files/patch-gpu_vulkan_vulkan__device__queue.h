@@ -1,4 +1,4 @@
---- gpu/vulkan/vulkan_device_queue.h.orig	2025-03-18 16:46:04 UTC
+--- gpu/vulkan/vulkan_device_queue.h.orig	2025-05-07 06:48:23 UTC
 +++ gpu/vulkan/vulkan_device_queue.h
 @@ -182,7 +182,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanDeviceQueue
  #endif

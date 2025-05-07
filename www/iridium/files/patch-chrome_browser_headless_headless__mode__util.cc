@@ -1,4 +1,4 @@
---- chrome/browser/headless/headless_mode_util.cc.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/headless/headless_mode_util.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/headless/headless_mode_util.cc
 @@ -10,7 +10,7 @@
  // New headless mode is available on Linux, Windows and Mac platforms.

@@ -1,4 +1,4 @@
---- third_party/ffmpeg/BUILD.gn.orig	2024-11-04 08:56:03 UTC
+--- third_party/ffmpeg/BUILD.gn.orig	2025-05-07 06:48:23 UTC
 +++ third_party/ffmpeg/BUILD.gn
 @@ -350,7 +350,6 @@ target(link_target_type, "ffmpeg_internal") {
        libs += [

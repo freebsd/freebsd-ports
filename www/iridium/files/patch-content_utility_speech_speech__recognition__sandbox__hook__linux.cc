@@ -1,4 +1,4 @@
---- content/utility/speech/speech_recognition_sandbox_hook_linux.cc.orig	2024-06-25 12:08:48 UTC
+--- content/utility/speech/speech_recognition_sandbox_hook_linux.cc.orig	2025-05-07 06:48:23 UTC
 +++ content/utility/speech/speech_recognition_sandbox_hook_linux.cc
 @@ -12,11 +12,14 @@
  #include "sandbox/linux/syscall_broker/broker_command.h"

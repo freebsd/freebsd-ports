@@ -1,4 +1,4 @@
---- remoting/host/mojo_caller_security_checker.cc.orig	2025-04-16 18:18:42 UTC
+--- remoting/host/mojo_caller_security_checker.cc.orig	2025-05-07 06:48:23 UTC
 +++ remoting/host/mojo_caller_security_checker.cc
 @@ -37,7 +37,7 @@
  namespace remoting {

@@ -1,4 +1,4 @@
---- third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig	2024-11-04 08:56:03 UTC
+--- third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig	2025-05-07 06:48:23 UTC
 +++ third_party/abseil-cpp/absl/base/internal/sysinfo.cc
 @@ -30,7 +30,7 @@
  #include <sys/syscall.h>

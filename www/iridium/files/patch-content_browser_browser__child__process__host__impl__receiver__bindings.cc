@@ -1,4 +1,4 @@
---- content/browser/browser_child_process_host_impl_receiver_bindings.cc.orig	2025-03-18 16:46:04 UTC
+--- content/browser/browser_child_process_host_impl_receiver_bindings.cc.orig	2025-05-07 06:48:23 UTC
 +++ content/browser/browser_child_process_host_impl_receiver_bindings.cc
 @@ -64,7 +64,7 @@ void BrowserChildProcessHostImpl::BindHostReceiver(
      }

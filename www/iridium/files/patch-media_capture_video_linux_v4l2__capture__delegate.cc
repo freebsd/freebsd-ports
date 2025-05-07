@@ -1,4 +1,4 @@
---- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2025-03-18 16:46:04 UTC
+--- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2025-05-07 06:48:23 UTC
 +++ media/capture/video/linux/v4l2_capture_delegate.cc
 @@ -10,8 +10,10 @@
  #include "media/capture/video/linux/v4l2_capture_delegate.h"

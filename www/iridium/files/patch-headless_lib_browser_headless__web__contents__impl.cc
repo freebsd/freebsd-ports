@@ -1,4 +1,4 @@
---- headless/lib/browser/headless_web_contents_impl.cc.orig	2025-04-16 18:18:42 UTC
+--- headless/lib/browser/headless_web_contents_impl.cc.orig	2025-05-07 06:48:23 UTC
 +++ headless/lib/browser/headless_web_contents_impl.cc
 @@ -70,7 +70,7 @@ BASE_FEATURE(kPrerender2InHeadlessMode,
  namespace {

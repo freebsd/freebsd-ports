@@ -1,4 +1,4 @@
---- components/supervised_user/core/browser/supervised_user_metrics_service.cc.orig	2024-08-01 05:47:53 UTC
+--- components/supervised_user/core/browser/supervised_user_metrics_service.cc.orig	2025-05-07 06:48:23 UTC
 +++ components/supervised_user/core/browser/supervised_user_metrics_service.cc
 @@ -47,7 +47,7 @@ SupervisedUserMetricsService::SupervisedUserMetricsSer
        extensions_metrics_delegate_(std::move(extensions_metrics_delegate)) {

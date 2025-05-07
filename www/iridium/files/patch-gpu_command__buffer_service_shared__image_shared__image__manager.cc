@@ -1,4 +1,4 @@
---- gpu/command_buffer/service/shared_image/shared_image_manager.cc.orig	2025-04-16 18:18:42 UTC
+--- gpu/command_buffer/service/shared_image/shared_image_manager.cc.orig	2025-05-07 06:48:23 UTC
 +++ gpu/command_buffer/service/shared_image/shared_image_manager.cc
 @@ -756,7 +756,7 @@ bool SharedImageManager::SupportsScanoutImages() {
    return true;

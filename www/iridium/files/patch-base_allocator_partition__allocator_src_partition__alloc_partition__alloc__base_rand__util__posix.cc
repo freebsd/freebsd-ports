@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/rand_util_posix.cc.orig	2024-08-01 05:47:53 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/rand_util_posix.cc.orig	2025-05-07 06:48:23 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/rand_util_posix.cc
 @@ -102,6 +102,10 @@ void RandBytes(void* output, size_t output_length) {
    if (getentropy(output, output_length) == 0) {

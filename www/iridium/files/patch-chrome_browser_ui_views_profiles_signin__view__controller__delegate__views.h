@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h
 @@ -73,7 +73,7 @@ class SigninViewControllerDelegateViews
        SignoutConfirmationCallback callback);

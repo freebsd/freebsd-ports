@@ -1,4 +1,4 @@
---- media/audio/sndio/sndio_output.cc.orig	2023-03-13 07:33:08 UTC
+--- media/audio/sndio/sndio_output.cc.orig	2025-05-07 06:48:23 UTC
 +++ media/audio/sndio/sndio_output.cc
 @@ -0,0 +1,187 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.

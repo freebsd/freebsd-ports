@@ -1,4 +1,4 @@
---- build/config/linux/pkg-config.py.orig	2023-03-13 07:33:08 UTC
+--- build/config/linux/pkg-config.py.orig	2025-05-07 06:48:23 UTC
 +++ build/config/linux/pkg-config.py
 @@ -108,7 +108,7 @@ def main():
    # If this is run on non-Linux platforms, just return nothing and indicate

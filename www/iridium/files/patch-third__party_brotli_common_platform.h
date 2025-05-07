@@ -1,4 +1,4 @@
---- third_party/brotli/common/platform.h.orig	2022-03-28 18:11:04 UTC
+--- third_party/brotli/common/platform.h.orig	2025-05-07 06:48:23 UTC
 +++ third_party/brotli/common/platform.h
 @@ -28,7 +28,7 @@
  #include <brotli/port.h>

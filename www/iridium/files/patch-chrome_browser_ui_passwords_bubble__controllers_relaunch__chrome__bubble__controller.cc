@@ -1,4 +1,4 @@
---- chrome/browser/ui/passwords/bubble_controllers/relaunch_chrome_bubble_controller.cc.orig	2024-06-25 12:08:48 UTC
+--- chrome/browser/ui/passwords/bubble_controllers/relaunch_chrome_bubble_controller.cc.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/passwords/bubble_controllers/relaunch_chrome_bubble_controller.cc
 @@ -44,7 +44,7 @@ std::u16string RelaunchChromeBubbleController::GetTitl
  #if BUILDFLAG(IS_MAC)

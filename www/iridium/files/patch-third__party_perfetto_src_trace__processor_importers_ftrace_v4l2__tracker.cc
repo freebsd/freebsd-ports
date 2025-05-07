@@ -1,4 +1,4 @@
---- third_party/perfetto/src/trace_processor/importers/ftrace/v4l2_tracker.cc.orig	2025-02-22 18:06:53 UTC
+--- third_party/perfetto/src/trace_processor/importers/ftrace/v4l2_tracker.cc.orig	2025-05-07 06:48:23 UTC
 +++ third_party/perfetto/src/trace_processor/importers/ftrace/v4l2_tracker.cc
 @@ -62,7 +62,7 @@ void V4l2Tracker::ParseV4l2Event(uint64_t fld_id,
      case FtraceEvent::kV4l2QbufFieldNumber: {

@@ -1,4 +1,4 @@
---- chrome/browser/task_manager/sampling/task_group_sampler.h.orig	2023-10-21 11:51:27 UTC
+--- chrome/browser/task_manager/sampling/task_group_sampler.h.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/task_manager/sampling/task_group_sampler.h
 @@ -31,7 +31,7 @@ class TaskGroupSampler : public base::RefCountedThread
    using OnCpuRefreshCallback = base::RepeatingCallback<void(double)>;

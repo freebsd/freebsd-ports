@@ -1,4 +1,4 @@
---- third_party/libsync/src/include/sync/sync.h.orig	2022-03-28 18:11:04 UTC
+--- third_party/libsync/src/include/sync/sync.h.orig	2025-05-07 06:48:23 UTC
 +++ third_party/libsync/src/include/sync/sync.h
 @@ -22,7 +22,9 @@
  #include <sys/cdefs.h>

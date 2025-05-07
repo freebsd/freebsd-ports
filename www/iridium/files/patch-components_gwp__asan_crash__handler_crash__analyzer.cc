@@ -1,4 +1,4 @@
---- components/gwp_asan/crash_handler/crash_analyzer.cc.orig	2024-11-04 08:56:03 UTC
+--- components/gwp_asan/crash_handler/crash_analyzer.cc.orig	2025-05-07 06:48:23 UTC
 +++ components/gwp_asan/crash_handler/crash_analyzer.cc
 @@ -35,7 +35,7 @@
  #include "third_party/crashpad/crashpad/snapshot/process_snapshot.h"
@@ -9,7 +9,7 @@
  #include <signal.h>
  #elif BUILDFLAG(IS_APPLE)
  #include <mach/exception_types.h>
-@@ -95,7 +95,7 @@ bool CrashAnalyzer::GetExceptionInfo(
+@@ -113,7 +113,7 @@ bool CrashAnalyzer::GetExceptionInfo(
  
  crashpad::VMAddress CrashAnalyzer::GetAccessAddress(
      const crashpad::ExceptionSnapshot& exception) {

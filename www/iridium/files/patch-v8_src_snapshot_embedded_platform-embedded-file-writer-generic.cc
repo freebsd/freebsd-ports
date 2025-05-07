@@ -1,4 +1,4 @@
---- v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc.orig	2023-08-28 20:17:35 UTC
+--- v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc.orig	2025-05-07 06:48:23 UTC
 +++ v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc
 @@ -9,6 +9,10 @@
  

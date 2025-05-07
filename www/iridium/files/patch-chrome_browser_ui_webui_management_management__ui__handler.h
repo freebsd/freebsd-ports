@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/management/management_ui_handler.h.orig	2025-02-22 18:06:53 UTC
+--- chrome/browser/ui/webui/management/management_ui_handler.h.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/ui/webui/management/management_ui_handler.h
 @@ -30,7 +30,7 @@ namespace policy {
  class PolicyService;

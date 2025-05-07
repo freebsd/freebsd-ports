@@ -1,4 +1,4 @@
---- chrome/browser/media/webrtc/chrome_screen_enumerator.h.orig	2025-04-16 18:18:42 UTC
+--- chrome/browser/media/webrtc/chrome_screen_enumerator.h.orig	2025-05-07 06:48:23 UTC
 +++ chrome/browser/media/webrtc/chrome_screen_enumerator.h
 @@ -18,7 +18,7 @@
  namespace aura {

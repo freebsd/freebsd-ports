@@ -1,4 +1,4 @@
---- third_party/test_fonts/fontconfig/generate_fontconfig_caches.cc.orig	2023-04-22 17:45:15 UTC
+--- third_party/test_fonts/fontconfig/generate_fontconfig_caches.cc.orig	2025-05-07 06:48:23 UTC
 +++ third_party/test_fonts/fontconfig/generate_fontconfig_caches.cc
 @@ -56,7 +56,7 @@ int main() {
    FcFini();

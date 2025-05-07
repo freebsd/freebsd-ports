@@ -1,4 +1,4 @@
---- base/native_library_posix.cc.orig	2024-08-27 06:28:16 UTC
+--- base/native_library_posix.cc.orig	2025-05-07 06:48:23 UTC
 +++ base/native_library_posix.cc
 @@ -34,7 +34,7 @@ NativeLibrary LoadNativeLibraryWithOptions(const FileP
    // http://crbug.com/17943, http://crbug.com/17557, http://crbug.com/36892,

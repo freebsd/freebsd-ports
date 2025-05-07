@@ -1,4 +1,4 @@
---- content/browser/child_thread_type_switcher_linux.cc.orig	2025-04-16 18:18:42 UTC
+--- content/browser/child_thread_type_switcher_linux.cc.orig	2025-05-07 06:48:23 UTC
 +++ content/browser/child_thread_type_switcher_linux.cc
 @@ -20,6 +20,9 @@ void SetThreadTypeOnLauncherThread(base::ProcessId pee
                                     base::ThreadType thread_type) {
