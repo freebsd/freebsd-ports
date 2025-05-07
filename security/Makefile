@@ -1369,6 +1369,7 @@
     SUBDIR += tpm-quote-tools
     SUBDIR += tpm-tools
     SUBDIR += tpm2-abrmd
+    SUBDIR += tpm2-openssl
     SUBDIR += tpm2-pkcs11
     SUBDIR += tpm2-tools
     SUBDIR += tpm2-tss
