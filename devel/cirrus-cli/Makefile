@@ -1,6 +1,6 @@
 PORTNAME=	cirrus-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.130.1
+DISTVERSION=	0.130.2
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/cirruslabs/cirrus-cli
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:1.24,modules
 
 USE_RC_SUBR=	${PORTNAME}
 
