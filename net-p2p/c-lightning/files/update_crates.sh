@@ -7,4 +7,4 @@ set -e
 
 cargo-lock --file "$(make -V WRKSRC)/Cargo.lock" \
     | grep -vE "(cln-rpc|cln-grpc|clnrest|grpc-plugin|rest-plugin)" \
-    | sed -E 's/^- ([^ ]+) (.+)$/CARGO_CRATES+=\t\1-\2/g' > ../../Makefile.crates
+    | sed -E 's/^- ([^ ]+) (.+)$/CARGO_CRATES+=\t\1-\2/g' > Makefile.crates
