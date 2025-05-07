@@ -1,4 +1,4 @@
---- build/config/compiler/BUILD.gn.orig	2025-05-05 10:57:53 UTC
+--- build/config/compiler/BUILD.gn.orig	2025-05-07 13:11:00 UTC
 +++ build/config/compiler/BUILD.gn
 @@ -197,7 +197,7 @@ declare_args() {
    # This greatly reduces the size of debug builds, at the cost of
@@ -92,16 +92,17 @@
        !llvm_android_mainline && is_clang &&
        clang_warning_suppression_file != "") {
      from_build_root =
-@@ -1965,7 +1972,7 @@ config("default_warnings") {
-       "-Wno-unneeded-internal-declaration",
-     ]
+@@ -1985,9 +1992,6 @@ config("default_warnings") {
  
--    if (!is_nacl || is_nacl_saigo) {
-+    if (!is_bsd && !is_nacl || is_nacl_saigo) {
-       if (is_win) {
-         # TODO(thakis): https://crbug.com/617318
-         # Currently RBE can not handle case sensitiveness for windows well.
-@@ -2776,7 +2783,7 @@ config("afdo_optimize_size") {
+         # TODO(crbug.com/40284799): Fix and re-enable.
+         "-Wno-thread-safety-reference-return",
+-
+-        # TODO(crbug.com/376641662): Fix and re-enable.
+-        "-Wno-nontrivial-memcall",
+       ]
+ 
+       cflags_cc += [
+@@ -2776,7 +2780,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -110,7 +111,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2803,7 +2810,7 @@ config("afdo") {
+@@ -2803,7 +2807,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -119,7 +120,7 @@
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2980,7 +2987,7 @@ config("symbols") {
+@@ -2980,7 +2984,7 @@ config("symbols") {
      cflags += [ "-gomit-unreferenced-methods" ]
    }
  
