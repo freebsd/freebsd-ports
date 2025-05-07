@@ -1,6 +1,6 @@
---- koch.nim.orig	2025-02-06 01:49:40 UTC
+--- koch.nim.orig	2025-05-07 14:07:39 UTC
 +++ koch.nim
-@@ -150,31 +150,31 @@ proc csource(args: string) =
+@@ -150,38 +150,38 @@ proc csource(args: string) =
             "--main:compiler/nim.nim compiler/installer.ini $1") %
         [args, VersionAsString, compileNimInst])
  
@@ -39,7 +39,7 @@
 -  cloneDependency(distDir, "https://github.com/nim-lang/atlas.git",
 -                  commit = commit, allowBundled = true)
 -  cloneDependency(distDir / "atlas" / distDir, "https://github.com/nim-lang/sat.git",
--                commit = SatStableCommit, allowBundled = true)
+-                  commit = SatStableCommit, allowBundled = true)
 -  # installer.ini expects it under $nim/bin
 -  nimCompile("dist/atlas/src/atlas.nim",
 -             options = "-d:release --noNimblePath -d:nimAtlasBootstrap " & args)
@@ -48,23 +48,26 @@
 +#  cloneDependency(distDir, "https://github.com/nim-lang/atlas.git",
 +#                  commit = commit, allowBundled = true)
 +#  cloneDependency(distDir / "atlas" / distDir, "https://github.com/nim-lang/sat.git",
-+#                commit = SatStableCommit, allowBundled = true)
++#                  commit = SatStableCommit, allowBundled = true)
 +#  # installer.ini expects it under $nim/bin
 +#  nimCompile("dist/atlas/src/atlas.nim",
 +#             options = "-d:release --noNimblePath -d:nimAtlasBootstrap " & args)
- 
- proc bundleNimsuggest(args: string) =
-   nimCompileFold("Compile nimsuggest", "nimsuggest/nimsuggest.nim",
-@@ -205,14 +205,14 @@ proc bundleWinTools(args: string) =
-     nimCompile(r"tools\downloader.nim",
-                options = r"--cc:vcc --app:gui -d:ssl --noNimblePath --path:..\ui " & args)
  
 -proc bundleChecksums(latest: bool) =
 -  let commit = if latest: "HEAD" else: ChecksumsStableCommit
 -  cloneDependency(distDir, "https://github.com/nim-lang/checksums.git", commit, allowBundled = true)
 +#proc bundleChecksums(latest: bool) =
 +#  let commit = if latest: "HEAD" else: ChecksumsStableCommit
-+#  cloneDependency(distDir, "https://github.com/nim-lang/checksums.git", commit, allowBundled = true)
++#  cloneDependency(distDir, "https://github.com/nim-lang/checksums.git", commit, allowBundled #= true)
+ 
+ proc bundleNimsuggest(args: string) =
+-  bundleChecksums(false)
++  #bundleChecksums(false)
+   nimCompileFold("Compile nimsuggest", "nimsuggest/nimsuggest.nim",
+                  options = "-d:danger " & args)
+ 
+@@ -211,9 +211,9 @@ proc zip(latest: bool; args: string) =
+                options = r"--cc:vcc --app:gui -d:ssl --noNimblePath --path:..\ui " & args)
  
  proc zip(latest: bool; args: string) =
 -  bundleChecksums(latest)
@@ -76,7 +79,7 @@
    bundleNimsuggest(args)
    bundleNimpretty(args)
    bundleWinTools(args)
-@@ -221,15 +221,15 @@ proc zip(latest: bool; args: string) =
+@@ -222,15 +222,15 @@ proc zip(latest: bool; args: string) =
    exec("$# --var:version=$# --var:mingw=none --main:compiler/nim.nim zip compiler/installer.ini" %
         ["tools/niminst/niminst".exe, VersionAsString])
  
@@ -99,7 +102,7 @@
    nimexec("cc -r $2 --var:version=$1 --var:mingw=none --main:compiler/nim.nim scripts compiler/installer.ini" %
         [VersionAsString, compileNimInst])
    exec("$# --var:version=$# --var:mingw=none --main:compiler/nim.nim xz compiler/installer.ini" %
-@@ -264,9 +264,9 @@ proc nsis(latest: bool; args: string) =
+@@ -265,9 +265,9 @@ proc nsis(latest: bool; args: string) =
    nimCompileFold("Compile testament", "testament/testament.nim", options = "-d:release " & args)
  
  proc nsis(latest: bool; args: string) =
@@ -112,7 +115,7 @@
    bundleNimsuggest(args)
    bundleWinTools(args)
    # make sure we have generated the niminst executables:
-@@ -286,21 +286,21 @@ proc install(args: string) =
+@@ -287,21 +287,21 @@ proc install(args: string) =
    geninstall()
    exec("sh ./install.sh $#" % args)
  
@@ -149,7 +152,7 @@
  
  # -------------- boot ---------------------------------------------------------
  
-@@ -344,11 +344,11 @@ proc boot(args: string, skipIntegrityCheck: bool) =
+@@ -345,11 +345,11 @@ proc boot(args: string, skipIntegrityCheck: bool) =
    let smartNimcache = (if "release" in args or "danger" in args: "nimcache/r_" else: "nimcache/d_") &
                        hostOS & "_" & hostCPU
  
@@ -164,7 +167,7 @@
  
    let nimStart = findStartNim().quoteShell()
    let times = 2 - ord(skipIntegrityCheck)
-@@ -507,7 +507,7 @@ proc temp(args: string) =
+@@ -508,7 +508,7 @@ proc temp(args: string) =
        result[1].add " " & quoteShell(args[i])
        inc i
  
@@ -173,7 +176,7 @@
  
    let d = getAppDir()
    let output = d / "compiler" / "nim".exe
-@@ -551,27 +551,27 @@ proc icTest(args: string) =
+@@ -552,27 +552,27 @@ proc icTest(args: string) =
      exec(cmd)
      inc i
  
@@ -222,7 +225,7 @@
  
  
  proc hostInfo(): string =
-@@ -619,14 +619,14 @@ proc runCI(cmd: string) =
+@@ -620,14 +620,14 @@ proc runCI(cmd: string) =
      # BUG: with initOptParser, `--batch:'' all` interprets `all` as the argument of --batch, pending bug #14343
      execFold("Run tester", "nim c -r --putenv:NIM_TESTAMENT_REMOTE_NETWORKING:1 -d:nimStrictMode testament/testament $# all -d:nimCoroutines" % batchParam)
  
@@ -245,7 +248,7 @@
  
      execFold("Run nimdoc tests", "nim r nimdoc/tester")
      execFold("Run rst2html tests", "nim r nimdoc/rsttester")
-@@ -698,18 +698,18 @@ proc showHelp(success: bool) =
+@@ -699,18 +699,18 @@ proc showHelp(success: bool) =
    quit(HelpText % [VersionAsString & spaces(44-len(VersionAsString)),
                     CompileDate, CompileTime], if success: QuitSuccess else: QuitFailure)
  
@@ -271,7 +274,7 @@
      localDocsOut = ""
      skipIntegrityCheck = false
    while true:
-@@ -745,34 +745,34 @@ when isMainModule:
+@@ -746,34 +746,34 @@ when isMainModule:
        of "distrohelper": geninstall()
        of "install": install(op.cmdLineRest)
        of "testinstall": testUnixInstall(op.cmdLineRest)

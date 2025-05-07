@@ -1,6 +1,6 @@
---- tools/deps.nim.orig	2025-02-06 01:49:40 UTC
+--- tools/deps.nim.orig	2025-05-07 14:22:20 UTC
 +++ tools/deps.nim
-@@ -20,28 +20,29 @@ proc cloneDependency*(destDirBase: string, url: string
+@@ -22,30 +22,31 @@ proc cloneDependency*(destDirBase: string, url: string
  
  proc cloneDependency*(destDirBase: string, url: string, commit = commitHead,
                        appendRepoName = true, allowBundled = false) =
@@ -25,8 +25,10 @@
 -    let oldDir = getCurrentDir()
 -    setCurrentDir(destDir)
 -    try:
--      execRetry "git fetch -q"
--      exec fmt"git checkout -q {commit}"
+-      let checkoutCmd = fmt"git checkout -q {commit}"
+-      if tryexec(checkoutCmd) != 0:
+-        execRetry "git fetch -q"
+-        exec checkoutCmd
 -    finally:
 -      setCurrentDir(oldDir)
 -  elif allowBundled:
@@ -38,15 +40,17 @@
 +  #  let oldDir = getCurrentDir()
 +  #  setCurrentDir(destDir)
 +  #  try:
-+  #    execRetry "git fetch -q"
-+  #    exec fmt"git checkout -q {commit}"
++  #    let checkoutCmd = fmt"git checkout -q {commit}"
++  #    if tryexec(checkoutCmd) != 0:
++  #      execRetry "git fetch -q"
++  #      exec checkoutCmd
 +  #  finally:
 +  #    setCurrentDir(oldDir)
 +  #elif allowBundled:
 +  #  discard "this dependency was bundled with Nim, don't do anything"
 +  #else:
 +  #  quit "FAILURE: " & destdir & " already exists but is not a git repo"
-+  quit "FAILURE: git operations now allowed!: " & destDirBase
++  quit "FAILURE: git operations not allowed in ports!: " & destDirBase
  
  proc updateSubmodules*(dir: string, allowBundled = false) =
    if isGitRepo(dir):
