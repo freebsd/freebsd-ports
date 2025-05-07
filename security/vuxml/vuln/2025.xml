@@ -1,3 +1,36 @@
+  <vuln vid="db221414-2b0d-11f0-8cb5-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>136.0.7103.92</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>136.0.7103.92</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/05/stable-channel-update-for-desktop.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[412057896] Medium CVE-2025-4372: Use after free in WebAudio. Reported by Huang Xilin of Ant Group Light-Year Security Lab on 2025-04-20</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4372</cvename>
+      <url>https://chromereleases.googleblog.com/2025/05/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2025-05-06</discovery>
+      <entry>2025-05-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e195e915-2a43-11f0-8cb5-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
