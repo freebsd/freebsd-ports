@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	devel net
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
-MAINTAINER=	danger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MaxMind DB Reader extension for PHP
 WWW=		https://github.com/maxmind/MaxMind-DB-Reader-php
 

@@ -5,7 +5,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/danger \
 		http://danger.rulez.sk/projects/sysinfo/
 
-MAINTAINER=	danger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility used to gather system configuration information
 WWW=		https://forums.freebsd.org/showthread.php?t=3282
 
