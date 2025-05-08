@@ -1,4 +1,4 @@
---- functions.orig	2023-02-24 08:27:34 UTC
+--- functions.orig	2022-10-18 22:48:32 UTC
 +++ functions
 @@ -658,7 +658,7 @@ download_release_sig () {
  		info RELEASESIG "Checking Release signature"
@@ -9,6 +9,58 @@
  		 "$relsigdest" "$reldest" || true) | read_gpg_status
  		progress 100 100 DOWNRELSIG "Downloading Release file signature"
  	fi
+@@ -978,7 +978,7 @@ extract_dpkg_deb_field () {
+ extract_dpkg_deb_data () {
+ 	local pkg="$1"
+ 
+-	dpkg-deb --fsys-tarfile "$pkg" | tar $EXTRACT_DEB_TAR_OPTIONS -xf - || error 1 FILEEXIST "Tried to extract package, but file already exists. Exit..."
++	dpkg-deb --fsys-tarfile "$pkg" | gtar $EXTRACT_DEB_TAR_OPTIONS -xf - || error 1 FILEEXIST "Tried to extract package, but file already exists. Exit..."
+ }
+ 
+ # Raw .deb extractors
+@@ -998,7 +998,7 @@ extract_ar_deb_field () {
+ 
+ 	if in_path $cat_cmd; then
+ 		ar -p "$pkg" "$tarball" | $cat_cmd |
+-		    tar -O -xf - control ./control 2>/dev/null |
++		    gtar -O -xf - control ./control 2>/dev/null |
+ 		    grep -i "^$field:" | sed -e 's/[^:]*: *//' | head -n 1
+ 	else
+ 		error 1 UNPACKCMDUNVL "Extracting %s requires the %s command, which is not available" "$pkg" "$cat_cmd"
+@@ -1020,7 +1020,7 @@ extract_ar_deb_data () {
+ 	esac
+ 
+ 	if in_path "$cat_cmd"; then
+-		ar -p "$pkg" "$tarball" | "$cat_cmd" | tar $EXTRACT_DEB_TAR_OPTIONS -xf -
++		ar -p "$pkg" "$tarball" | "$cat_cmd" | gtar $EXTRACT_DEB_TAR_OPTIONS -xf -
+ 	else
+ 		error 1 UNPACKCMDUNVL "Extracting %s requires the %s command, which is not available" "$pkg" "$cat_cmd"
+ 	fi
+@@ -1515,7 +1515,7 @@ while (read STDIN, $x, 1) {
+ }' "$@"
+ 		elif [ "$1" = "GETDEPS" ]; then
+ 			local pkgdest="$2"; shift; shift
+-LC_ALL=C grep "$gropt" '^$|^Package:|^Depends:|^Pre-Depends:'  $pkgdest | perl -e '
++LC_ALL=C pcregrep '^$|^Package:|^Depends:|^Pre-Depends:' $pkgdest | perl -e '
+ %seen = map { $_ => 1 } @ARGV;
+ while (<STDIN>) {
+ 	if (/^Package: (.*)$/) {
+@@ -1543,13 +1543,13 @@ while (<STDIN>) {
+ 			local m="$2"
+ 			local p="$3"
+ 			shift; shift; shift
+-			LC_ALL=C grep "$gropt" '^$|^Architecture:|^Filename:|^MD5sum:|^Package:|^Priority:|^SHA256:|^Size:|^Version:|^Depends:|^Pre-Depends:' "$p" | pkgdetails_field 1 Package: "$m" "$@"
++			LC_ALL=C pcregrep '^$|^Architecture:|^Filename:|^MD5sum:|^Package:|^Priority:|^SHA256:|^Size:|^Version:|^Depends:|^Pre-Depends:' "$p" | pkgdetails_field 1 Package: "$m" "$@"
+ 		elif [ "$1" = "FIELD" ]; then
+ 			local f="$2"
+ 			local m="$3"
+ 			local p="$4"
+ 			shift; shift; shift; shift
+-			LC_ALL=C grep "$gropt" '^$|^Package:|^Priority:' "$p" | pkgdetails_field 0 "$f" "$m" "$@"
++			LC_ALL=C pcregrep '^$|^Package:|^Priority:' "$p" | pkgdetails_field 0 "$f" "$m" "$@"
+ 		elif [ "$1" = "STANZAS" ]; then
+ 			local pkgdest="$2"; shift; shift
+ 			perl -e '
 @@ -1706,7 +1706,7 @@ read_gpg_status () {
  	elif [ "$unkkey" ]; then
  		error 1 UNKNOWNRELSIG "Release signed by unknown key (key id %s)\n   The specified keyring $KEYRING may be incorrect or out of date.\n   You can find the latest Debian release key at https://ftp-master.debian.org/keys.html" "$unkkey"
