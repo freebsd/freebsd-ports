@@ -1,3 +1,3 @@
-TIMESTAMP = 1738233038
-SHA256 (haproxy-2.6.21.tar.gz) = b905898bf762adbde180a866dbae2e39a4a377767cf3dd08694be9e56e876274
-SIZE (haproxy-2.6.21.tar.gz) = 4114397
+TIMESTAMP = 1746703822
+SHA256 (haproxy-2.6.22.tar.gz) = 4c0797f450f997dc287d2c7aafa7a0e5b7a2d71593a2cd58e664e8f3aea614fa
+SIZE (haproxy-2.6.22.tar.gz) = 4120601
