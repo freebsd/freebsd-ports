@@ -445,6 +445,8 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/resourceproviders/pixabay_photo.json
 %%DATADIR%%/resourceproviders/pixabay_videos.json
 %%DATADIR%%/sammodelsinfo.rc
+%%DATADIR%%/scripts/automask/kdenlive_build_sam.py
+%%DATADIR%%/scripts/automask/kdenlive_sam2_video_predictor.py
 %%DATADIR%%/scripts/automask/requirements-cuda118.txt
 %%DATADIR%%/scripts/automask/requirements-cuda124.txt
 %%DATADIR%%/scripts/automask/requirements-cuda126.txt
