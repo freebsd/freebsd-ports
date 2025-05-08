@@ -85,7 +85,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/base/font-variants.dic
 %%DATADIR%%/locale/base/orca-chars.dic
 %%DATADIR%%/locale/base/orca.dic
-%%DATADIR%%/locale/base/symbols-fallback.dic
+%%DATADIR%%/locale/base/symbols.dic
 %%DATADIR%%/locale/be/emojis.dic
 %%DATADIR%%/locale/be/orca-chars.dic
 %%DATADIR%%/locale/be/orca.dic
