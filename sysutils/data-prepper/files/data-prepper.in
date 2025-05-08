@@ -31,7 +31,7 @@ load_rc_config ${name}
 : ${data_prepper_config:=%%PREFIX%%/etc/data-prepper/data-prepper-config.yaml}
 : ${data_prepper_config_dir:=%%PREFIX%%/etc/data-prepper}
 : ${data_prepper_java_home:="%%JAVA_HOME%%"}
-: ${data_prepper_home:="%%PREFIX%%/lib/data-prepper"}
+: ${data_prepper_home:="%%DATADIR%%"}
 
 export JAVA_HOME=${data_prepper_java_home}
 required_files="${data_prepper_config}"

@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Data Prepper needs pipelines to be configured in
+%%DATADIR%%/pipelines
+
+Examples can be found in %%EXAMPLESDIR%%
+EOM
+}
+]
