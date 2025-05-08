@@ -76,7 +76,6 @@ share/icons/hicolor/22x22/apps/okular.png
 share/icons/hicolor/32x32/apps/okular.png
 share/icons/hicolor/48x48/apps/okular.png
 share/icons/hicolor/64x64/apps/okular.png
-share/kconf_update/okular.upd
 share/locale/ar/LC_MESSAGES/okular.mo
 share/locale/ar/LC_MESSAGES/okular_comicbook.mo
 share/locale/ar/LC_MESSAGES/okular_djvu.mo

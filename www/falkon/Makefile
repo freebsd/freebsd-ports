@@ -1,9 +1,6 @@
 PORTNAME=	falkon
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	www kde kde-applications
-PATCH_SITES=	https://invent.kde.org/network/falkon/-/commit/
-PATCHFILES=	31ba9472369256804400a2db36b3dca3b4be2d73.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Web browser based on Webengine and Qt Framework
