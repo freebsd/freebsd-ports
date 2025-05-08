@@ -1,6 +1,5 @@
 PORTNAME=	syslog-ng
-DISTVERSION=	4.8.1
-PORTREVISION=	5
+DISTVERSION=	4.8.2
 CATEGORIES=	sysutils
 # official master site:
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
@@ -237,10 +236,12 @@ PYTHON_MOD_PLIST_FILES=		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-
                 lib/syslog-ng/python/syslogng/modules/s3/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc \
                 lib/syslog-ng/python/syslogng/modules/s3/__pycache__/compressable_file_buffer%%PYTHON_EXT_SUFFIX%%.pyc \
                 lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_destination%%PYTHON_EXT_SUFFIX%%.pyc \
-                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_object%%PYTHON_EXT_SUFFIX%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_object_buffer%%PYTHON_EXT_SUFFIX%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_session_handler%%PYTHON_EXT_SUFFIX%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/s3_object_buffer.py \
+                lib/syslog-ng/python/syslogng/modules/s3/s3_session_handler.py \
                 lib/syslog-ng/python/syslogng/modules/s3/compressable_file_buffer.py \
                 lib/syslog-ng/python/syslogng/modules/s3/s3_destination.py \
-                lib/syslog-ng/python/syslogng/modules/s3/s3_object.py \
                 lib/syslog-ng/python/syslogng/modules/s3/scl/s3.conf
 
 
