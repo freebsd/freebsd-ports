@@ -529,7 +529,6 @@
     SUBDIR += py-mailnag
     SUBDIR += py-mailsuite
     SUBDIR += py-managesieve3
-    SUBDIR += py-milter
     SUBDIR += py-notmuch
     SUBDIR += py-notmuch2
     SUBDIR += py-offlineimap3
@@ -537,6 +536,7 @@
     SUBDIR += py-premailer
     SUBDIR += py-pyisemail
     SUBDIR += py-pymailq
+    SUBDIR += py-pymilter
     SUBDIR += py-pysasl
     SUBDIR += py-pyspf
     SUBDIR += py-python-slimta
