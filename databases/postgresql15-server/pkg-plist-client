@@ -456,6 +456,7 @@ include/postgresql/server/libpq/auth.h
 include/postgresql/server/libpq/be-fsstubs.h
 include/postgresql/server/libpq/be-gssapi-common.h
 include/postgresql/server/libpq/crypt.h
+include/postgresql/server/libpq/libpq-be-fe-helpers.h
 include/postgresql/server/libpq/hba.h
 include/postgresql/server/libpq/ifaddr.h
 include/postgresql/server/libpq/libpq-be.h

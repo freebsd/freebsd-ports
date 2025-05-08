@@ -1079,6 +1079,7 @@ lib/postgresql/utf8_and_win.so
 %%TZDATA%%%%DATADIR%%/timezone/America/Coral_Harbour
 %%TZDATA%%%%DATADIR%%/timezone/America/Cordoba
 %%TZDATA%%%%DATADIR%%/timezone/America/Costa_Rica
+%%TZDATA%%%%DATADIR%%/timezone/America/Coyhaique
 %%TZDATA%%%%DATADIR%%/timezone/America/Creston
 %%TZDATA%%%%DATADIR%%/timezone/America/Cuiaba
 %%TZDATA%%%%DATADIR%%/timezone/America/Curacao
