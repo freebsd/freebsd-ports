@@ -1,9 +1,9 @@
 PORTNAME=	hiawatha
-DISTVERSION=	11.6
+DISTVERSION=	11.7
 CATEGORIES=	www
 MASTER_SITES=	https://hiawatha.leisink.net/files/
 
-MAINTAINER=	johntdarrah@gmail.com
+MAINTAINER=	cpetrik@proton.me
 COMMENT=	Advanced and secure web server for Unix
 WWW=		https://hiawatha.leisink.net/
 
