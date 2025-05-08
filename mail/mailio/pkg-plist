@@ -15,7 +15,9 @@ include/mailio/q_codec.hpp
 include/mailio/quoted_printable.hpp
 include/mailio/smtp.hpp
 include/mailio/version.hpp
+lib/cmake/mailio/mailio-config-version.cmake
+lib/cmake/mailio/mailio-config.cmake
+lib/cmake/mailio/mailio-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/mailio/mailio-targets.cmake
 lib/libmailio.so
 libdata/pkgconfig/mailio.pc
-%%DATADIR%%/cmake/mailioConfig-%%CMAKE_BUILD_TYPE%%.cmake
-%%DATADIR%%/cmake/mailioConfig.cmake
