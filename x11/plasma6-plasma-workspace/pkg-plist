@@ -3525,6 +3525,7 @@ share/locale/ko/LC_MESSAGES/kcm_users.mo
 share/locale/ko/LC_MESSAGES/kcminit.mo
 share/locale/ko/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/ko/LC_MESSAGES/kded_donationmessage.mo
+share/locale/ko/LC_MESSAGES/kded_geotimezoned.mo
 share/locale/ko/LC_MESSAGES/kfontinst.mo
 share/locale/ko/LC_MESSAGES/kio_applications.mo
 share/locale/ko/LC_MESSAGES/kio_desktop.mo
@@ -4658,6 +4659,7 @@ share/locale/ru/LC_MESSAGES/kcm_users.mo
 share/locale/ru/LC_MESSAGES/kcminit.mo
 share/locale/ru/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/ru/LC_MESSAGES/kded_donationmessage.mo
+share/locale/ru/LC_MESSAGES/kded_geotimezoned.mo
 share/locale/ru/LC_MESSAGES/kfontinst.mo
 share/locale/ru/LC_MESSAGES/kio_applications.mo
 share/locale/ru/LC_MESSAGES/kio_desktop.mo
@@ -4669,6 +4671,7 @@ share/locale/ru/LC_MESSAGES/libkicker.mo
 share/locale/ru/LC_MESSAGES/libkmpris.mo
 share/locale/ru/LC_MESSAGES/libkworkspace.mo
 share/locale/ru/LC_MESSAGES/libnotificationmanager.mo
+share/locale/ru/LC_MESSAGES/oom-notifier.mo
 share/locale/ru/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo

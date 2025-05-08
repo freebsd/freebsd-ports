@@ -290,6 +290,7 @@ share/locale/ms/LC_MESSAGES/plasma_runner_powerdevil.mo
 share/locale/ms/LC_MESSAGES/powerdevil.mo
 share/locale/nb/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/nb/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
+share/locale/nb/LC_MESSAGES/plasma_applet_org.kde.plasma.brightness.mo
 share/locale/nb/LC_MESSAGES/plasma_runner_powerdevil.mo
 share/locale/nb/LC_MESSAGES/powerdevil.mo
 share/locale/nds/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo

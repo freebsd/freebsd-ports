@@ -543,6 +543,7 @@ share/locale/ru/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/ru/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/ru/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
 share/locale/ru/LC_MESSAGES/ksysguard_sensors.mo
+share/locale/ru/LC_MESSAGES/ksysguard_systemstats.mo
 share/locale/ru/LC_MESSAGES/processcore.mo
 share/locale/sa/LC_MESSAGES/KSysGuardFormatter.mo
 share/locale/sa/LC_MESSAGES/KSysGuardSensorFaces.mo
