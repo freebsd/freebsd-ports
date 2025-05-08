@@ -13,6 +13,9 @@ WWW=		https://github.com/coreos/etcd
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	EOLed upstream, switch to a newer version
+EXPIRATION_DATE=	2025-07-08
+
 USES=		cpe go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	coreos
