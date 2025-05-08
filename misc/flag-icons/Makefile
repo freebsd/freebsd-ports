@@ -19,12 +19,17 @@ NO_ARCH=	yes
 NO_INSTALL=	yes
 
 FLAGS_TOPDIR=	${PREFIX}/share/icons/${PORTNAME}
-FLAG_SIZES=	24 32 48 64 96 128 192 256 # 512 adds 27MB for .tbz package
+FLAG_SIZES=	16 24 32 48 64 96 128 192 256 # 512 adds 25+ MB for .tbz package
 
-# TODO: add bordered and plain versions maybe?
+FLAVORS=	plain bordered rounded
+
+.if ${FLAVOR:U:Nplain}
+PKGNAMESUFFIX=	-${FLAVOR}
+.endif
+
 do-build:
 	cd ${BUILD_WRKSRC}/flags && ${SH} ${FILESDIR}/makeflags.sh \
-	rounded_corners ${STAGEDIR}${FLAGS_TOPDIR}/rounded ${FLAG_SIZES}
+	${FLAVOR} ${STAGEDIR}${FLAGS_TOPDIR}/${FLAVOR} ${FLAG_SIZES}
 
 post-stage:
 	cd ${STAGEDIR}${PREFIX} && ${FIND} share -type f >> ${TMPPLIST}
