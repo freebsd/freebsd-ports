@@ -1,6 +1,6 @@
 PORTNAME=	tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.32.0
+DISTVERSION=	0.33.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
@@ -14,10 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules,1.23
 GO_MODULE=	golang.org/x/tools
-GO_TARGET=	./cmd/auth/cookieauth \
-		./cmd/auth/gitauth \
-		./cmd/auth/netrcauth \
-		./cmd/bisect \
+GO_TARGET=	./cmd/bisect \
 		./cmd/bundle \
 		./cmd/callgraph \
 		./cmd/compilebench \
@@ -52,7 +49,6 @@ PLIST_FILES=	${GO_TARGET:T:S,^,bin/,}
 OPTIONS_DEFINE=	RARE
 RARE_DESC=	install rarely used tools
 RARE_VARS=	GO_TARGET+=" \
-		./cmd/auth/authtest \
 		./cmd/benchcmp
 
 .include <bsd.port.mk>
