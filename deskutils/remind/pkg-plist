@@ -586,7 +586,9 @@ share/man/man1/remind.1.gz
 %%DATADIR%%/lang/pl.rem
 %%DATADIR%%/lang/pt.rem
 %%DATADIR%%/lang/ro.rem
+%%DATADIR%%/lunar-eclipses.rem
 %%DATADIR%%/moonphases.rem
 %%DATADIR%%/seasons.rem
 %%DATADIR%%/site/README
+%%DATADIR%%/solar-eclipses.rem
 %%DATADIR%%/sun.rem
