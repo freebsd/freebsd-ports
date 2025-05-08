@@ -1,3 +1,73 @@
+  <vuln vid="78b8e808-2c45-11f0-9a65-6cc21735f730">
+    <topic>PostgreSQL -- PostgreSQL GB18030 encoding validation can read one byte past end of allocation for text that fails validation</topic>
+    <affects>
+      <package>
+	<name>postgresql17-client</name>
+	<range><lt>17.5</lt></range>
+      </package>
+      <package>
+	<name>postgresql16-client</name>
+	<range><lt>16.9</lt></range>
+      </package>
+      <package>
+	<name>postgresql15-client</name>
+	<range><lt>15.13</lt></range>
+      </package>
+      <package>
+	<name>postgresql14-client</name>
+	<range><lt>14.18</lt></range>
+      </package>
+      <package>
+	<name>postgresql13-client</name>
+	<range><lt>13.21</lt></range>
+      </package>
+      <package>
+	<name>postgresql17-server</name>
+	<range><lt>17.5</lt></range>
+      </package>
+      <package>
+	<name>postgresql16-server</name>
+	<range><lt>16.9</lt></range>
+      </package>
+      <package>
+	<name>postgresql15-server</name>
+	<range><lt>15.13</lt></range>
+      </package>
+      <package>
+	<name>postgresql14-server</name>
+	<range><lt>14.18</lt></range>
+      </package>
+      <package>
+	<name>postgresql13-server</name>
+	<range><lt>13.21</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL project reports:</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2025-4207/">
+	  <p>
+	    A buffer over-read in PostgreSQL GB18030 encoding
+	    validation allows a database input provider to achieve
+	    temporary denial of service on platforms where a 1-byte
+	    over-read can elicit process termination. This affects
+	    the database server and also libpq. Versions before
+	    PostgreSQL 17.5, 16.9, 15.13, 14.18, and 13.21 are
+	    affected.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4207</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2025-4207/</url>
+    </references>
+    <dates>
+      <discovery>2025-05-08</discovery>
+      <entry>2025-05-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="db221414-2b0d-11f0-8cb5-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
