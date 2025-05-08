@@ -101,7 +101,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-grape-swagger-entity>=0.5.5<0.6:devel/rubygem-grape-swagger-entity \
 	rubygem-grape-path-helpers>=2.0.1<2.1:devel/rubygem-grape-path-helpers \
 	rubygem-rack-cors>=2.0.1<2.1:www/rubygem-rack-cors \
-	rubygem-graphql>=2.4.11<2.5:devel/rubygem-graphql \
+	rubygem-graphql>=2.4.13<2.5:devel/rubygem-graphql \
 	rubygem-apollo_upload_server>=2.1.6<2.2:net/rubygem-apollo_upload_server \
 	rubygem-ffaker>=2.24.0<3:devel/rubygem-ffaker \
 	rubygem-hashie>=5.0.0<5.1:devel/rubygem-hashie \
@@ -301,7 +301,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-ed25519>=1.3.0<1.4:security/rubygem-ed25519 \
 	rubygem-cvss-suite>=3.3.0<3.4:security/rubygem-cvss-suite \
 	rubygem-arr-pm>=0.0.12<0.1:devel/rubygem-arr-pm \
-	rubygem-devfile>=0.4.0<0.5:net/rubygem-devfile \
+	rubygem-devfile>=0.4.3<0.5:net/rubygem-devfile \
 	rubygem-CFPropertyList-gitlab>=3.0.7<3.1:devel/rubygem-CFPropertyList-gitlab \
 	rubygem-app_store_connect>=0:net/rubygem-app_store_connect \
 	rubygem-telesignenterprise>=2.2<3:devel/rubygem-telesignenterprise \
