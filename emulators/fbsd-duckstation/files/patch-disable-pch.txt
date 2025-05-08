@@ -1,0 +1,61 @@
+Disable PCH to work around the following errors on arm64:
+
+In file included from /wrkdirs/usr/ports/emulators/fbsd-duckstation/work/duckstation-0.1-6937/src/util/audio_stream.cpp:9:
+In file included from /wrkdirs/usr/ports/emulators/fbsd-duckstation/work/duckstation-0.1-6937/src/util/../common/error.h:6:
+/wrkdirs/usr/ports/emulators/fbsd-duckstation/work/duckstation-0.1-6937/src/util/../common/small_string.h:353:3: error: non-const lvalue reference to type '__builtin_va_list' cannot bind to a value of unrelated type 'std::va_list' (aka 'std::__va_list')
+  353 |   va_start(ap, format);
+      |   ^~~~~~~~~~~~~~~~~~~~
+/usr/include/sys/_stdarg.h:43:49: note: expanded from macro 'va_start'
+   43 |   #define       va_start(ap, last)      __builtin_va_start((ap), (last))
+      |                                                            ^~~~
+In file included from /wrkdirs/usr/ports/emulators/fbsd-duckstation/work/duckstation-0.1-6937/src/util/audio_stream.cpp:9:
+In file included from /wrkdirs/usr/ports/emulators/fbsd-duckstation/work/duckstation-0.1-6937/src/util/../common/error.h:6:
+/wrkdirs/usr/ports/emulators/fbsd-duckstation/work/duckstation-0.1-6937/src/util/../common/small_string.h:358:10: error: non-const lvalue reference to type '__builtin_va_list' cannot bind to a value of unrelated type 'std::va_list' (aka 'std::__va_list')
+  358 |   va_end(ap);
+      |          ^~
+/usr/include/sys/_stdarg.h:49:40: note: expanded from macro 'va_end'
+   49 |   #define       va_end(ap)              __builtin_va_end(ap)
+      |                                                          ^~
+2 errors generated.
+
+(see also: https://reviews.llvm.org/D18557 and https://github.com/llvm/llvm-project/issues/69524)
+
+--- src/util/CMakeLists.txt.orig	2024-06-14 05:59:32 UTC
++++ src/util/CMakeLists.txt
+@@ -74,7 +74,9 @@ add_library(util
+   zstd_byte_stream.cpp
+ )
+ 
+-target_precompile_headers(util PRIVATE "pch.h")
++if(NOT((CMAKE_SYSTEM_NAME MATCHES "FreeBSD") AND (CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")))
++   target_precompile_headers(util PRIVATE "pch.h")
++endif()
+ target_include_directories(util PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/..")
+ target_include_directories(util PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/..")
+ target_link_libraries(util PUBLIC common simpleini imgui)
+--- src/core/CMakeLists.txt.orig	2024-06-14 05:59:32 UTC
++++ src/core/CMakeLists.txt
+@@ -133,7 +133,9 @@ set(NEWREC_SOURCES
+   cpu_newrec_compiler.h
+ )
+ 
+-target_precompile_headers(core PRIVATE "pch.h")
++if(NOT((CMAKE_SYSTEM_NAME MATCHES "FreeBSD") AND (CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")))
++   target_precompile_headers(core PRIVATE "pch.h")
++endif()
+ target_include_directories(core PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/..")
+ target_include_directories(core PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/..")
+ target_link_libraries(core PUBLIC Threads::Threads common util ZLIB::ZLIB)
+--- src/duckstation-qt/CMakeLists.txt.orig	2024-06-14 05:59:32 UTC
++++ src/duckstation-qt/CMakeLists.txt
+@@ -169,7 +169,9 @@ add_executable(duckstation-qt ${SRCS} ${QM_FILES})
+ )
+ 
+ add_executable(duckstation-qt ${SRCS} ${QM_FILES})
+-target_precompile_headers(duckstation-qt PRIVATE "pch.h")
++if(NOT((CMAKE_SYSTEM_NAME MATCHES "FreeBSD") AND (CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")))
++   target_precompile_headers(duckstation-qt PRIVATE "pch.h")
++endif()
+ target_include_directories(duckstation-qt PRIVATE "${Qt6Gui_PRIVATE_INCLUDE_DIRS}" "${CMAKE_CURRENT_SOURCE_DIR}")
+ target_link_libraries(duckstation-qt PRIVATE core common imgui minizip scmversion Qt6::Core Qt6::Gui Qt6::Widgets)
+ 
