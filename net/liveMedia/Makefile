@@ -1,5 +1,5 @@
 PORTNAME=	liveMedia
-DISTVERSION=	2025.01.17
+DISTVERSION=	2025.04.24
 PORTEPOCH=	2
 CATEGORIES=	net devel
 MASTER_SITES=	https://download.videolan.org/contrib/live555/
@@ -18,12 +18,11 @@ USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	genMakefiles
-CONFIGURE_ARGS=		fixed-freebsd
+CONFIGURE_ARGS=		linux-with-shared-libraries
 
 WRKSRC=		${WRKDIR}/live
 
 post-patch:
-	${CP} ${FILESDIR}/config.fixed-freebsd ${WRKSRC}
 	@${REINPLACE_CMD} \
 		-e '/^PREFIX/s|=|?=|' \
 			${WRKSRC}/*/Makefile.head
