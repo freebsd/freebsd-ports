@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}/extensions
 PKGNAMESUFFIX=	-mysql-plugin
 DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	MySQL DataStore implementation for GeoServer
 WWW=		http://geoserver.org/display/GEOSDOC/MySQL+DataStore
 
