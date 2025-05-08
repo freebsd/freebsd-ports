@@ -1008,7 +1008,6 @@ lib/postgresql/utf8_and_win.so
 %%TZDATA%%%%DATADIR%%/timezone/America/Bahia
 %%TZDATA%%%%DATADIR%%/timezone/America/Bahia_Banderas
 %%TZDATA%%%%DATADIR%%/timezone/America/Barbados
-%%TZDATA%%%%DATADIR%%/timezone/America/Ciudad_Juarez
 %%TZDATA%%%%DATADIR%%/timezone/America/Belem
 %%TZDATA%%%%DATADIR%%/timezone/America/Belize
 %%TZDATA%%%%DATADIR%%/timezone/America/Blanc-Sablon
@@ -1025,9 +1024,11 @@ lib/postgresql/utf8_and_win.so
 %%TZDATA%%%%DATADIR%%/timezone/America/Cayman
 %%TZDATA%%%%DATADIR%%/timezone/America/Chicago
 %%TZDATA%%%%DATADIR%%/timezone/America/Chihuahua
+%%TZDATA%%%%DATADIR%%/timezone/America/Ciudad_Juarez
 %%TZDATA%%%%DATADIR%%/timezone/America/Coral_Harbour
 %%TZDATA%%%%DATADIR%%/timezone/America/Cordoba
 %%TZDATA%%%%DATADIR%%/timezone/America/Costa_Rica
+%%TZDATA%%%%DATADIR%%/timezone/America/Coyhaique
 %%TZDATA%%%%DATADIR%%/timezone/America/Creston
 %%TZDATA%%%%DATADIR%%/timezone/America/Cuiaba
 %%TZDATA%%%%DATADIR%%/timezone/America/Curacao
