@@ -1,12 +1,12 @@
 PORTNAME=	data-prepper
-DISTVERSION=	2.10.2
+DISTVERSION=	2.11.0
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	sysutils java
-MASTER_SITES=   https://artifacts.opensearch.org/${PORTNAME}/${DISTVERSION}/
+MASTER_SITES=	https://artifacts.opensearch.org/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	opensearch-${PORTNAME}-jdk-${DISTVERSIONFULL}
 
 MAINTAINER=	opensearch@FreeBSD.org
-COMMENT=	A server-side data collector for OpenSearch
+COMMENT=	Server-side data collector for OpenSearch
 WWW=		https://opensearch.org
 
 LICENSE=	APACHE20
@@ -19,15 +19,16 @@ USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	bin/data-prepper
 
+NO_ARCH=	yes
 NO_BUILD=	yes
-SUB_FILES=	data-prepper
+SUB_FILES=	data-prepper pkg-message
 SUB_LIST=	SEARCHUSER=${SEARCHUSER} SEARCHGROUP=${SEARCHGROUP} JAVA_HOME=${JAVA_HOME}
 
 BINS=		data-prepper
 CONFIG_FILES=	data-prepper-config.yaml log4j2-rolling.properties
 
-SEARCHUSER?=	opensearch
-SEARCHGROUP?=	${SEARCHUSER}
+SEARCHUSER=	opensearch
+SEARCHGROUP=	${SEARCHUSER}
 USERS=		${SEARCHUSER}
 GROUPS=		${SEARCHGROUP}
 
