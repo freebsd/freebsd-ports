@@ -1,7 +1,7 @@
 PORTNAME=	subliminal
-DISTVERSION=	2.3.0
+DISTVERSION=	2.3.2
 CATEGORIES=	multimedia python
-MASTER_SITES=	https://github.com/Diaoul/subliminal/releases/download/${DISTVERSION}/
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	eduardo@FreeBSD.org
