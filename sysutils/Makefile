@@ -1028,6 +1028,7 @@
     SUBDIR += py-filelock
     SUBDIR += py-focker
     SUBDIR += py-glances
+    SUBDIR += py-google-compute-engine
     SUBDIR += py-hared
     SUBDIR += py-hcloud
     SUBDIR += py-honcho
