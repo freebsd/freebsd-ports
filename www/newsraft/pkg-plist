@@ -1,4 +1,5 @@
 bin/newsraft
+share/icons/hicolor/scalable/apps/newsraft.svg
 share/man/man1/newsraft.1.gz
 %%DATADIR%%/examples/config
 %%DATADIR%%/examples/feeds

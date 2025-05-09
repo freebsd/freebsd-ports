@@ -1,5 +1,5 @@
 PORTNAME=	newsraft
-DISTVERSION=	0.29
+DISTVERSION=	0.30
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/${PORTNAME}/${PORTNAME}/archive/
 
@@ -12,13 +12,13 @@ LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
-		libgumbo.so:devel/gumbo \
-		libyajl.so:devel/yajl
+		libgumbo.so:devel/gumbo
 
 USES=		ncurses pkgconfig sqlite
 
 MAKEFILE=	makefile
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
+TEST_ENV+=	LANG=C.UTF-8
 TEST_TARGET=	check
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
