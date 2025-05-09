@@ -10,6 +10,8 @@ WWW=		https://github.com/01mf02/jaq
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
+BROKEN_i386=	compilation fails: undefined symbol: __atomic_load_8
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	01mf02
@@ -93,11 +95,6 @@ PLIST_FILES=	bin/${PORTNAME}
 .if ${ARCH} == powerpc
 LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
 LDFLAGS+=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
-.endif
-
-# attempt to fix build on i386, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=284196#c1
-.if ${ARCH} == i386 && !${CFLAGS:M-march=*}
-CFLAGS+= -march=i586
 .endif
 
 .include <bsd.port.mk>
