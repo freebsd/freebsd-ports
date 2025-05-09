@@ -1,0 +1,6 @@
+# Google Compute Engine default console logging.
+#
+# daemon: logging from Google provided daemons.
+# kern: logging information in case of an unexpected crash during boot.
+#
+daemon,kern.* /dev/console
