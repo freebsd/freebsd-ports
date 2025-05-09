@@ -1,20 +1,24 @@
 [
 { type: install
   message: <<EOM
-You will need to load the kernel module 'fuse' to use this package. To load
-this at boot time, add the following line to /boot/loader.conf:
+You will need to load the kernel module fusefs(4) to use this package. To load
+it when system starts, add "fusefs" to "kld_list" in rc.conf(5).
+For example, you can use sysrc(8):
 
-fuse_load="YES"
+    sysrc kld_list+="fusefs"
 
-If you want unprivileged users to be able to use unionfs, add the following
-line to /etc/sysctl.conf:
+To load the module immediately, use:
 
-vfs.usermount=1
+    kldload fusefs
 
-You can enable them immediately with:
+If you want unprivileged users to be able to use unionfs(8),
+add the following sysctl.conf(5):
 
-kldload fuse
-sysctl vfs.usermount=1
+    vfs.usermount=1
+
+Or run sysctl(8) directly on the command-line for an immediate effect:
+
+    sysctl vfs.usermount=1
 EOM
 }
 ]
