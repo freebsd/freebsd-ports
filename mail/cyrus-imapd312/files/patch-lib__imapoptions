@@ -1,0 +1,20 @@
+--- lib/imapoptions.orig	2020-02-06 22:38:20 UTC
++++ lib/imapoptions
+@@ -2230,7 +2230,7 @@ If all partitions are over that limit, this feature is
+ { "seenstate_db", "twoskip", STRINGLIST("flat", "skiplist", "twoskip", "zeroskip"), "3.1.6" }
+ /* The cyrusdb backend to use for the seen state. */
+ 
+-{ "sendmail", "/usr/lib/sendmail", STRING, "2.3.17" }
++{ "sendmail", "/usr/sbin/sendmail", STRING, "2.3.17" }
+ /* The pathname of the sendmail executable.  Sieve invokes sendmail
+    for sending rejections, redirects and vacation responses. */
+ 
+@@ -2363,7 +2363,7 @@ product version in the capabilities
+    For backward compatibility, if no unit is specified, seconds is
+    assumed. */
+ 
+-{ "sievedir", "/usr/sieve", STRING, "2.3.17" }
++{ "sievedir", "/var/imap/sieve", STRING, "2.3.17" }
+ /* If sieveusehomedir is false, this directory is searched for Sieve
+    scripts. */
+ 
