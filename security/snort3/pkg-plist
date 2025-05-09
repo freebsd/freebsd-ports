@@ -56,6 +56,7 @@ include/snort/framework/ips_option.h
 include/snort/framework/logger.h
 include/snort/framework/module.h
 include/snort/framework/mp_data_bus.h
+include/snort/framework/mp_transport.h
 include/snort/framework/mpse.h
 include/snort/framework/mpse_batch.h
 include/snort/framework/parameter.h
@@ -127,6 +128,8 @@ include/snort/network_inspectors/appid/appid_http_session.h
 include/snort/network_inspectors/appid/appid_session_api.h
 include/snort/network_inspectors/appid/appid_types.h
 include/snort/network_inspectors/appid/application_ids.h
+include/snort/network_inspectors/appid/mp_data_bus.cc
+include/snort/network_inspectors/appid/mp_data_bus.h
 include/snort/network_inspectors/appid/tp_appid_module_api.h
 include/snort/network_inspectors/appid/tp_appid_session_api.h
 include/snort/network_inspectors/appid/tp_appid_types.h
@@ -200,8 +203,10 @@ include/snort/pub_sub/expect_events.h
 include/snort/pub_sub/external_event_ids.h
 include/snort/pub_sub/finalize_packet_event.h
 include/snort/pub_sub/ftp_events.h
+include/snort/pub_sub/http_body_event.h
 include/snort/pub_sub/http_event_ids.h
 include/snort/pub_sub/http_events.h
+include/snort/pub_sub/http_publish_length_event.h
 include/snort/pub_sub/http_request_body_event.h
 include/snort/pub_sub/http_transaction_end_event.h
 include/snort/pub_sub/intrinsic_event_ids.h
