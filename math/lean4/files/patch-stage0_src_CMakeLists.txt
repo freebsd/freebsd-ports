@@ -1,9 +1,9 @@
---- stage0/src/CMakeLists.txt.orig	2024-03-06 02:11:32 UTC
+--- stage0/src/CMakeLists.txt.orig	2025-05-06 09:12:17 UTC
 +++ stage0/src/CMakeLists.txt
-@@ -362,6 +362,15 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-   string(APPEND LEANC_EXTRA_FLAGS " -fPIC")
+@@ -472,6 +472,16 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
    string(APPEND TOOLCHAIN_SHARED_LINKER_FLAGS " -Wl,-rpath=\\$$ORIGIN/..:\\$$ORIGIN")
-   string(APPEND CMAKE_EXE_LINKER_FLAGS " -Wl,-rpath=\\\$ORIGIN/../lib:\\\$ORIGIN/../lib/lean")
+   string(APPEND LAKESHARED_LINKER_FLAGS " -Wl,--whole-archive ${CMAKE_BINARY_DIR}/lib/lean/libLake.a.export -Wl,--no-whole-archive")
+   string(APPEND CMAKE_EXE_LINKER_FLAGS " -Wl,-rpath=$ORIGIN/../lib:$ORIGIN/../lib/lean")
 +elseif(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
 +  if(BSYMBOLIC)
 +    string(APPEND LEANC_SHARED_LINKER_FLAGS " -Wl,-Bsymbolic")
@@ -12,11 +12,12 @@
 +  string(APPEND CMAKE_CXX_FLAGS " -fPIC -ftls-model=initial-exec")
 +  string(APPEND LEANC_EXTRA_FLAGS " -fPIC")
 +  string(APPEND TOOLCHAIN_SHARED_LINKER_FLAGS " -Wl,-rpath=\\$$ORIGIN/..:\\$$ORIGIN")
-+  string(APPEND CMAKE_EXE_LINKER_FLAGS " -Wl,-rpath=\\\$ORIGIN/../lib:\\\$ORIGIN/../lib/lean")
++  string(APPEND LAKESHARED_LINKER_FLAGS " -Wl,--whole-archive ${CMAKE_BINARY_DIR}/lib/lean/libLake.a.export -Wl,--no-whole-archive")
++  string(APPEND CMAKE_EXE_LINKER_FLAGS " -Wl,-rpath=$ORIGIN/../lib:$ORIGIN/../lib/lean")
  elseif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
    string(APPEND CMAKE_CXX_FLAGS " -ftls-model=initial-exec")
    string(APPEND INIT_SHARED_LINKER_FLAGS " -install_name @rpath/libInit_shared.dylib")
-@@ -624,7 +633,7 @@ endif()
+@@ -798,7 +808,7 @@ endif()
    file(CREATE_LINK ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR}/src/lean RESULT _IGNORE_RES SYMBOLIC)
  endif()
  

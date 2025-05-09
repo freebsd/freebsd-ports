@@ -1,6 +1,6 @@
---- src/runtime/io.cpp.orig	2024-01-13 17:13:25 UTC
+--- src/runtime/io.cpp.orig	2025-05-06 09:12:17 UTC
 +++ src/runtime/io.cpp
-@@ -855,7 +855,13 @@ extern "C" LEAN_EXPORT obj_res lean_io_app_path(obj_ar
+@@ -1253,7 +1253,13 @@ extern "C" LEAN_EXPORT obj_res lean_io_app_path(obj_ar
      char dest[PATH_MAX];
      memset(dest, 0, PATH_MAX);
      pid_t pid = getpid();
