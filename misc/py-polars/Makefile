@@ -556,7 +556,7 @@ TEST_WRKSRC=	${WRKSRC}/tests
 
 PORTSCOUT=	limit:^py-
 
-post-patch:
+post-patch: # see https://github.com/pola-rs/polars/issues/22679
 	@${REINPLACE_CMD} -e " \
 		s|\[patch.crates-io\]|#[patch.crates-io]|; \
 		s|tikv-jemallocator = |#tikv-jemallocator = |" \
