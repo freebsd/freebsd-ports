@@ -414,6 +414,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/itv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/ivi.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/ivideon.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/ivoox.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/iwara.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/ixigua.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/izlesene.py
@@ -639,6 +640,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/paramountplus.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/parler.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/parlview.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/parti.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/patreon.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/pbs.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/pearvideo.py
@@ -732,6 +734,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/rokfin.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/roosterteeth.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/rottentomatoes.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/roya.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/rozhlas.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/rte.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/rtl2.py
