@@ -59,8 +59,8 @@ paperless_webui_tmpdir=${paperless_webui_tmpdir:-"$TMPDIR"}
 
 paperless_webui_env="LANG=en_US.UTF-8 PATH=$PATH:%%PREFIX%%/bin\
   PYTHONPATH=%%PYTHONPREFIX_SITELIBDIR%%/paperless \
-  PAPERLESS_BIND_ADDR=${paperless_webui_listen_address} \
-  PAPERLESS_PORT=${paperless_webui_listen_port}"
+  GRANIAN_HOST=${paperless_webui_listen_address} \
+  GRANIAN_PORT=${paperless_webui_listen_port}"
 
 if [ -n "$paperless_webui_tmpdir" ]; then
 	paperless_webui_env="$paperless_webui_env TMPDIR=\
