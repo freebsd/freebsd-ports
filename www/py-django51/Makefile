@@ -1,12 +1,11 @@
 PORTNAME=	django
-PORTVERSION=	5.1.8
-PORTREVISION=	1
+PORTVERSION=	5.1.9
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://media.djangoproject.com/releases/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	51
-DISTNAME=	Django-${PORTVERSION}
+#DISTNAME=	Django-${PORTVERSION}
 DIST_SUBDIR=	python
 
 PATCH_SITES=	https://github.com/django/django/commit/
