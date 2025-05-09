@@ -1,7 +1,6 @@
 PORTNAME=	ocrs
 DISTVERSIONPREFIX=	ocrs-cli-v
-DISTVERSION=	0.10.2
-PORTREVISION=	2
+DISTVERSION=	0.10.3
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	robertknight
 
 CARGO_CRATES=	adler2-2.0.0 \
-		anyhow-1.0.95 \
+		anyhow-1.0.98 \
 		autocfg-1.1.0 \
 		base64-0.22.1 \
 		bitflags-1.3.2 \
@@ -34,7 +33,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		crossbeam-epoch-0.9.17 \
 		crossbeam-utils-0.8.18 \
 		either-1.9.0 \
-		fastrand-2.1.1 \
+		fastrand-2.3.0 \
 		fdeflate-0.3.3 \
 		flatbuffers-24.3.25 \
 		flate2-1.0.35 \
@@ -42,7 +41,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		form_urlencoded-1.2.1 \
 		getrandom-0.2.11 \
 		hermit-abi-0.3.9 \
-		home-0.5.9 \
+		home-0.5.11 \
 		http-1.2.0 \
 		httparse-1.10.0 \
 		idna-1.0.3 \
@@ -66,11 +65,11 @@ CARGO_CRATES=	adler2-2.0.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		ring-0.17.7 \
-		rten-0.16.0 \
-		rten-imageproc-0.16.0 \
-		rten-simd-0.16.0 \
-		rten-tensor-0.16.0 \
-		rten-vecmath-0.16.0 \
+		rten-0.18.0 \
+		rten-imageproc-0.18.0 \
+		rten-simd-0.18.0 \
+		rten-tensor-0.18.0 \
+		rten-vecmath-0.18.0 \
 		rustc-hash-2.0.0 \
 		rustc_version-0.4.0 \
 		rustls-0.23.22 \
@@ -82,14 +81,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		semver-1.0.20 \
 		serde-1.0.194 \
 		serde_derive-1.0.194 \
-		serde_json-1.0.134 \
+		serde_json-1.0.140 \
 		simd-adler32-0.3.7 \
 		smallvec-1.13.2 \
 		spin-0.9.8 \
 		subtle-2.5.0 \
 		syn-2.0.87 \
-		thiserror-2.0.3 \
-		thiserror-impl-2.0.3 \
+		thiserror-2.0.12 \
+		thiserror-impl-2.0.12 \
 		unicode-ident-1.0.12 \
 		untrusted-0.9.0 \
 		ureq-3.0.5 \
@@ -105,23 +104,24 @@ CARGO_CRATES=	adler2-2.0.0 \
 		wasm-bindgen-shared-0.2.100 \
 		webpki-roots-0.26.8 \
 		windows-sys-0.48.0 \
-		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.0 \
+		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.0 \
+		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.0 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.0 \
+		windows_i686_msvc-0.52.6 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.0 \
+		windows_x86_64_msvc-0.52.6 \
 		zeroize-1.7.0 \
 		zune-core-0.4.12 \
 		zune-jpeg-0.4.13
