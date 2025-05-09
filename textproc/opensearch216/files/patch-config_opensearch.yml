@@ -1,0 +1,15 @@
+--- config/opensearch.yml.orig	2021-07-02 23:22:08 UTC
++++ config/opensearch.yml
+@@ -31,10 +31,12 @@
+ # Path to directory where to store the data (separate multiple locations by comma):
+ #
+ #path.data: /path/to/data
++path.data: /var/db/opensearch
+ #
+ # Path to log files:
+ #
+ #path.logs: /path/to/logs
++path.logs: /var/log/opensearch
+ #
+ # ----------------------------------- Memory -----------------------------------
+ #

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+case "$2" in
+POST-DEINSTALL)
+	if [ -d %%WWWDIR%%/optimize ]; then
+		/usr/bin/find %%WWWDIR%%/optimize/ -delete
+	fi
+
+	cat <<EOMSG
+
+If %%PORTNAME%%%%PKGNAMESUFFIX%% is being deleted permanently, and you do not wish to keep any
+data that was in the cluster, then you may wish to delete the
+%%WWWDIR%% directory.  This can be done by with the command:
+
+	# rm -rf %%WWWDIR%%
+
+Please ignore this if %%PORTNAME%%%%PKGNAMESUFFIX%% is being upgraded
+EOMSG
+    ;;
+esac
