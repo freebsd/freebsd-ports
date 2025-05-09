@@ -1,6 +1,6 @@
 PORTNAME=	hammer2
-PORTVERSION=	1.2.8
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2.9
 CATEGORIES=	filesystems
 
 MAINTAINER=	tkusumi@netbsd.org
