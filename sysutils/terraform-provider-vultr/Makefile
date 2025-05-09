@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	25
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	zachary.crownover@gmail.com
 COMMENT=	Terraform provider for Vultr
 WWW=		https://github.com/squat/terraform-provider-vultr
 
