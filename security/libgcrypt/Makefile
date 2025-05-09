@@ -1,5 +1,5 @@
 PORTNAME=	libgcrypt
-DISTVERSION=	1.11.0
+DISTVERSION=	1.11.1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -19,6 +19,8 @@ CPE_VENDOR=	gnupg
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+
+CFLAGS+=	-pthread
 
 TEST_TARGET=	check
 
