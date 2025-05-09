@@ -5,10 +5,13 @@ CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Monte Carlo Particle Lists library
-WWW=		https://mctools.github.io/mcpl/
+WWW=		https://mctools.github.io/mcpl/ \
+		https://github.com/mctools/mcpl
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	compilation fails, see https://github.com/mctools/mcpl/issues/88
 
 USES=		cmake:testing
 USE_LDCONFIG=	yes
