@@ -1,0 +1,17 @@
+--- pyproject.toml.orig	2025-05-09 00:23:23 UTC
++++ pyproject.toml
+@@ -1,12 +1,12 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools>=75.8.1; python_version >= '3.9'",
++    "setuptools>=63; python_version >= '3.9'",
+     "setuptools<75.4.0; python_version < '3.9'",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "Django"
++name = "django"
+ dynamic = ["version"]
+ requires-python = ">= 3.8"
+ dependencies = [
