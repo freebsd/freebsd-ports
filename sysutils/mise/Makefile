@@ -1,7 +1,7 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.5.0
-PORTREVISION=	1
+DISTVERSION=	2025.5.2
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,8 +30,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		aead-0.5.2 \
 		aes-0.8.4 \
 		aes-gcm-0.10.3 \
-		age-0.10.1 \
-		age-core-0.10.0 \
+		age-0.11.1 \
+		age-core-0.11.0 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.21 \
@@ -53,7 +53,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		async-trait-0.1.88 \
 		atomic-waker-1.1.2 \
 		autocfg-1.4.0 \
-		backtrace-0.3.74 \
+		backtrace-0.3.75 \
 		base64-0.21.7 \
 		base64-0.22.1 \
 		base64ct-1.7.3 \
@@ -104,8 +104,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		console-0.15.11 \
 		const-oid-0.9.6 \
 		constant_time_eq-0.3.1 \
-		contracts-0.6.5 \
-		convert_case-0.4.0 \
+		contracts-0.6.6 \
 		cookie-factory-0.3.3 \
 		core-foundation-0.9.4 \
 		core-foundation-0.10.0 \
@@ -130,19 +129,19 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		darling-0.20.11 \
 		darling_core-0.20.11 \
 		darling_macro-0.20.11 \
-		dashmap-5.5.3 \
 		dashmap-6.1.0 \
 		deflate64-0.1.9 \
 		demand-1.7.0 \
 		der-0.7.10 \
 		deranged-0.4.0 \
 		derive_arbitrary-1.4.1 \
-		derive_more-0.99.20 \
+		derive_more-2.0.1 \
+		derive_more-impl-2.0.1 \
 		deunicode-1.6.2 \
 		diff-0.1.13 \
 		digest-0.10.7 \
-		directories-5.0.1 \
-		dirs-sys-0.4.1 \
+		directories-6.0.0 \
+		dirs-sys-0.5.0 \
 		displaydoc-0.2.5 \
 		document-features-0.2.11 \
 		dotenvy-0.15.7 \
@@ -258,7 +257,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		glob-0.3.2 \
 		globset-0.4.16 \
 		globwalk-0.9.1 \
-		h2-0.4.9 \
+		h2-0.4.10 \
 		hash32-0.3.1 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
@@ -283,8 +282,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		hyper-tls-0.6.0 \
 		hyper-util-0.1.11 \
 		i18n-config-0.4.7 \
-		i18n-embed-0.14.1 \
-		i18n-embed-fl-0.7.0 \
+		i18n-embed-0.15.4 \
+		i18n-embed-fl-0.9.4 \
 		i18n-embed-impl-0.8.4 \
 		iana-time-zone-0.1.63 \
 		iana-time-zone-haiku-0.1.2 \
@@ -322,8 +321,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
-		jiff-0.2.12 \
-		jiff-static-0.2.12 \
+		jiff-0.2.13 \
+		jiff-static-0.2.13 \
 		jiff-tzdb-0.1.4 \
 		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.33 \
@@ -335,7 +334,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lazy-regex-proc_macros-3.4.1 \
 		lazy_static-1.5.0 \
 		libc-0.2.172 \
-		libm-0.2.13 \
+		libm-0.2.15 \
 		libredox-0.1.3 \
 		libz-rs-sys-0.5.0 \
 		linux-raw-sys-0.4.15 \
@@ -428,8 +427,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
 		pretty_assertions-1.4.1 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
 		proc-macro-error-attr2-2.0.0 \
 		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.95 \
@@ -448,8 +445,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rand_core-0.9.3 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.11 \
-		redox_users-0.4.6 \
+		redox_syscall-0.5.12 \
+		redox_users-0.5.0 \
 		regex-1.11.1 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.9 \
@@ -460,9 +457,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rmp-0.8.14 \
 		rmp-serde-1.3.0 \
 		roff-0.2.2 \
-		rops-0.1.4 \
+		rops-0.1.5 \
 		rowan-0.15.16 \
-		rust-embed-8.7.0 \
+		rust-embed-8.7.1 \
 		rust-embed-impl-8.7.0 \
 		rust-embed-utils-8.7.0 \
 		rustc-demangle-0.1.24 \
@@ -471,11 +468,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
 		rustix-1.0.7 \
-		rustls-0.23.26 \
+		rustls-0.23.27 \
 		rustls-native-certs-0.8.1 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.11.0 \
-		rustls-webpki-0.103.1 \
+		rustls-webpki-0.103.2 \
 		rustversion-1.0.20 \
 		ryu-1.0.20 \
 		salsa20-0.10.2 \
@@ -485,7 +482,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		scopeguard-1.2.0 \
 		scrypt-0.11.0 \
 		sdd-3.0.8 \
-		secrecy-0.8.0 \
+		secrecy-0.10.3 \
 		security-framework-2.11.1 \
 		security-framework-3.2.0 \
 		security-framework-sys-2.14.0 \
@@ -529,11 +526,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		spki-0.7.3 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
-		strsim-0.10.0 \
 		strsim-0.11.1 \
-		strum-0.26.3 \
 		strum-0.27.1 \
-		strum_macros-0.26.4 \
 		strum_macros-0.27.1 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
@@ -566,7 +560,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinystr-0.7.6 \
 		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.44.2 \
+		tokio-1.45.0 \
 		tokio-macros-2.5.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.2 \
@@ -606,6 +600,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
+		unicode-xid-0.2.6 \
 		universal-hash-0.5.1 \
 		unsafe-libyaml-0.2.11 \
 		untrusted-0.9.0 \
@@ -620,7 +615,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		version_check-0.9.5 \
 		versions-6.3.2 \
 		versions-7.0.0 \
-		vfox-1.0.1 \
+		vfox-1.0.2 \
 		vte-0.14.1 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
@@ -634,7 +629,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wasm-bindgen-shared-0.2.100 \
 		web-sys-0.3.77 \
 		web-time-1.1.0 \
-		webpki-roots-0.26.10 \
+		webpki-roots-0.26.11 \
+		webpki-roots-1.0.0 \
 		which-7.0.3 \
 		widestring-1.2.0 \
 		winapi-0.3.9 \
@@ -654,37 +650,28 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows-result-0.3.2 \
 		windows-strings-0.3.1 \
 		windows-strings-0.4.0 \
-		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
-		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows-targets-0.53.0 \
-		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_gnullvm-0.53.0 \
-		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
 		windows_aarch64_msvc-0.53.0 \
-		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnu-0.53.0 \
 		windows_i686_gnullvm-0.52.6 \
 		windows_i686_gnullvm-0.53.0 \
-		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
 		windows_i686_msvc-0.53.0 \
-		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnu-0.53.0 \
-		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_gnullvm-0.53.0 \
-		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
 		winnow-0.6.24 \
-		winnow-0.7.9 \
+		winnow-0.7.10 \
 		winsafe-0.0.19 \
 		wit-bindgen-rt-0.39.0 \
 		write16-1.0.0 \
