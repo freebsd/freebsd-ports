@@ -1,6 +1,6 @@
-TIMESTAMP = 1743342896
-SHA256 (geant4/geant4-v11.3.1.tar.gz) = c93ca996f6f35aa43f948ffcaba9603468df01deeb62f61c33ba769227c319fe
-SIZE (geant4/geant4-v11.3.1.tar.gz) = 36801325
+TIMESTAMP = 1746783497
+SHA256 (geant4/geant4-v11.3.2.tar.gz) = 892aedd7425262a50ac3d3c7117d81c0c0da4b408c6880dbaf5478b9301e488c
+SIZE (geant4/geant4-v11.3.2.tar.gz) = 36805069
 SHA256 (geant4/G4ABLA.3.3.tar.gz) = 1e041b3252ee9cef886d624f753e693303aa32d7e5ef3bba87b34f36d92ea2b1
 SIZE (geant4/G4ABLA.3.3.tar.gz) = 170253
 SHA256 (geant4/G4CHANNELING.1.0.tar.gz) = 203e3c69984ca09acd181a1d31a9b0efafad4bc12e6c608f0b05e695120d67f2
