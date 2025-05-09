@@ -1,6 +1,6 @@
 PORTNAME=	cirrus-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.130.2
+DISTVERSION=	0.131.0
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -25,9 +25,5 @@ GROUPS=		cirrus
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/cirrus-worker.yml ${STAGEDIR}${PREFIX}/etc/cirrus-worker.yml.sample
-
-.if defined(MAINTAINER_MODE)
-GO_ENV+=	GOTOOLCHAIN=go1.22.6
-.endif
 
 .include <bsd.port.mk>
