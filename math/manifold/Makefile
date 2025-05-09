@@ -34,6 +34,13 @@ CMAKE_OFF=	MANIFOLD_DOWNLOADS		\
 
 USE_LDCONFIG=	yes
 
+.include <bsd.port.options.mk>
+
+pre-configure:
+.if ${ARCH} == "i386" || ${ARCH} == "armv7"
+	${REINPLACE_CMD} -e 's|-Werror|-Wno-format|' ${WRKSRC}/CMakeLists.txt
+.endif
+
 do-test:
 	(cd ${BUILD_WRKSRC}/test && ./manifold_test)
 
