@@ -1,6 +1,6 @@
 PORTNAME=	cimg
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	3.5.3
+DISTVERSION=	3.5.4
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
@@ -42,7 +42,6 @@ USES+=		blaslapack
 .endif
 
 REINPLACE_ARGS=	-i ""
-#LIB_DEPENDS+=	libboard.so:graphics/libboard
 
 . if !defined(WITH_DEBUG)
 LIB_DEPENDS+=	libcurl.so:ftp/curl			\
@@ -53,10 +52,11 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl			\
 		libOpenEXR.so:graphics/openexr		\
 		libfftw3.so:math/fftw3			\
 		libwebp.so:graphics/webp		\
+		libboard.so:graphics/libboard		\
 		libopencv_core.so:graphics/opencv	\
 		libGraphicsMagick.so:graphics/GraphicsMagick
 RUN_DEPENDS+=	dcraw:graphics/dcraw
-USES+=		jpeg
+USES+=		jpeg magick:7
 ALL_TARGET=	Mlinux
 . else
 ALL_TARGET=	dlinux

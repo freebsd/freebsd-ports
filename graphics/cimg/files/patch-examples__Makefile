@@ -1,4 +1,4 @@
---- examples/Makefile.orig	2024-12-29 17:54:58 UTC
+--- examples/Makefile.orig	2025-05-02 13:41:33 UTC
 +++ examples/Makefile
 @@ -89,7 +89,7 @@ SVERSION = $(VERSION1).$(VERSION2).$(VERSION3)
  VERSION3 = $(shell grep 'cimg_version\ ' ../CImg.h | tail -c2 | head -c1)
@@ -39,7 +39,7 @@
  
  # Flags used to disable display capablities of CImg
  NODISPLAY_CFLAGS = -Dcimg_display=0
-@@ -228,7 +228,7 @@ TIFF_CFLAGS = $(TIFF_DEFINE) $(TIFF_INCDIR)
+@@ -241,7 +241,7 @@ TIFF_CFLAGS = $(TIFF_DEFINE) $(TIFF_INCDIR)
  TIFF_DEFINE = -Dcimg_use_tiff
  TIFF_INCDIR =
  TIFF_CFLAGS = $(TIFF_DEFINE) $(TIFF_INCDIR)
@@ -48,7 +48,7 @@
  
  # Flags to enable native support for loading HEIF image files, using the libheif library.
  # ( https://github.com/strukturag/libheif )
-@@ -247,16 +247,16 @@ OPENEXR_DEFINE = -Dcimg_use_openexr
+@@ -260,16 +260,16 @@ OPENEXR_DEFINE = -Dcimg_use_openexr
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
  OPENEXR_DEFINE = -Dcimg_use_openexr
@@ -71,7 +71,7 @@
  
  # Flags to enable native support for compressed .cimgz files, using the Zlib library.
  # ( http://www.zlib.net/ )
-@@ -292,17 +292,17 @@ endif
+@@ -305,17 +305,17 @@ endif
  
  # Flags to enable the use of LAPACK routines for matrix computation
  # ( http://www.netlib.org/lapack/ )
@@ -87,15 +87,14 @@
  # ( https://github.com/GreycLab/libboard )
  BOARD_DEFINE = -Dcimg_use_board
 -BOARD_INCDIR = -I/usr/include/board
--BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
--BOARD_LIBS = -lboard
 +BOARD_INCDIR = -I$(LOCALBASE)/include/board
-+#BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
-+#BOARD_LIBS = -lboard
+ BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
+-BOARD_LIBS = -lboard
++BOARD_LIBS = -lboard -lMagick++-7
  
  # Enable native support of WebP image files, using the WebP library.
  # (https://chromium.googlesource.com/webm/libwebp/)
-@@ -379,6 +379,7 @@ $(XSHM_LIBS)" \
+@@ -392,6 +392,7 @@ $(XSHM_LIBS)" \
  $(HEIF_LIBS) \
  $(LAPACK_LIBS) \
  $(XSHM_LIBS)" \
@@ -103,7 +102,7 @@
  all $(EXTRA_FILES)
  
  # Linux/BSD/Mac OSX targets, with X11 display.
-@@ -459,6 +460,7 @@ $(OPT_CFLAGS) \
+@@ -470,6 +471,7 @@ $(OPT_CFLAGS) \
  	@$(MAKE) \
  "CONF_CFLAGS = \
  $(OPT_CFLAGS) \
@@ -111,7 +110,7 @@
  $(VT100_CFLAGS) \
  $(X11_CFLAGS) \
  $(XSHM_CFLAGS) \
-@@ -472,8 +474,12 @@ $(MAGICK_CFLAGS) \
+@@ -483,8 +485,12 @@ $(MAGICK_CFLAGS) \
  $(CURL_CFLAGS) \
  $(OPENCV_CFLAGS) \
  $(MAGICK_CFLAGS) \
@@ -124,7 +123,7 @@
  $(X11_LIBS) \
  $(XSHM_LIBS) \
  $(XRANDR_LIBS) \
-@@ -486,6 +492,9 @@ $(MAGICK_LIBS) \
+@@ -497,6 +503,9 @@ $(MAGICK_LIBS) \
  $(CURL_LIBS) \
  $(OPENCV_LIBS) \
  $(MAGICK_LIBS) \
