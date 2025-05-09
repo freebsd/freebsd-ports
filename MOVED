@@ -4396,3 +4396,4 @@ www/dot-http||2025-05-05|Remove broken, unmaintained upstream port
 security/linux-rl9-libxcrypt|emulators/linux_base-rl9|2025-05-06|Integrated into linux_base-rl9
 graphics/quat-gui||2025-05-06|Has expired: Last upstream release was in 2003
 mail/py-milter|mail/py-pymilter|2025-05-08|Renamed to match upstream PyPI package name
+sysutils/pxp-agent||2025-05-09|Has expired: Project got archived, dependencies are broken

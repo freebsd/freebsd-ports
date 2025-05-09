@@ -996,7 +996,6 @@
     SUBDIR += pwol
     SUBDIR += pwsafe
     SUBDIR += pxattr
-    SUBDIR += pxp-agent
     SUBDIR += py-ansible-compat
     SUBDIR += py-ansible-core
     SUBDIR += py-ansible-lint
