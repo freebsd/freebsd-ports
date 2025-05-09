@@ -9,7 +9,7 @@ hdf5/lib/plugin/lib__nch5bzip2.so
 hdf5/lib/plugin/lib__nch5deflate.so
 hdf5/lib/plugin/lib__nch5fletcher32.so
 hdf5/lib/plugin/lib__nch5shuffle.so
-hdf5/lib/plugin/lib__nch5szip.so
+%%SZIP%%hdf5/lib/plugin/lib__nch5szip.so
 hdf5/lib/plugin/lib__nch5zstd.so
 hdf5/lib/plugin/lib__nczhdf5filters.so
 hdf5/lib/plugin/lib__nczstdfilters.so
