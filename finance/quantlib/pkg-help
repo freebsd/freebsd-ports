@@ -26,10 +26,13 @@
                           If enabled, singleton initialization will be
                           thread-safe. This requires Boost 1.58 or later and
                           is not supported when sessions are enabled.
-  --enable-parallel-unit-test-runner
-                          If enabled, a parallel unit test runner is used to
-                          execute the C++ test suite. This will reduce the
-                          runtime on multi core CPUs.
+  --enable-throwing-in-cycles
+                          If enabled, lazy objects will raise an exception
+                          when they detect a notification cycle which would
+                          result in an infinite recursion loop. If disabled
+                          (the default), they will break the recursion without
+                          throwing. Enabling this option is recommended but
+                          might cause existing code to throw.
   --enable-examples       If enabled, examples are built and installed when
                           "make" and "make install" are invoked. If disabled
                           (the default) they are built but not installed.
