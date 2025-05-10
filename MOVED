@@ -4399,3 +4399,4 @@ mail/py-milter|mail/py-pymilter|2025-05-08|Renamed to match upstream PyPI packag
 sysutils/pxp-agent||2025-05-09|Has expired: Project got archived, dependencies are broken
 net/cpp-pcp-client||2025-05-09|Has expired: Project got archived, broken
 sysutils/puppetserver7||2025-05-10|Has expired: Reached EOL
+sysutils/puppet7||2025-05-10|Has expired: Reached EOL
