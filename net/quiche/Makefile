@@ -1,6 +1,5 @@
 PORTNAME=	quiche
-DISTVERSION=	0.22.0
-PORTREVISION=	8
+DISTVERSION=	0.24.2
 CATEGORIES=	net
 
 MAINTAINER=	junho.choi@gmail.com
@@ -10,19 +9,23 @@ WWW=		https://crates.io/crates/quiche
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cargo
+BUILD_DEPENDS=	git>0:devel/git
+
+USES=		cargo llvm:build,lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudflare
-GH_TUPLE=	google:boringssl:f1c75347d:boringssl/quiche/deps/boringssl
+GH_TUPLE=	google:boringssl:e1d6cd95a:boringssl/quiche/deps/boringssl
 USE_LDCONFIG=	yes
-
-RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
 CARGO_FEATURES=		ffi pkg-config-meta
 CARGO_BUILD=		yes
 CARGO_BUILD_ARGS+=	--workspace
 CARGO_TEST=		yes
 CARGO_TEST_ARGS+=	--all-targets
+
+MAKE_ENV+=	BORING_BSSL_RUST_CPPLIB=c++
+
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
 PLIST_FILES=	bin/quiche-client \
 		bin/quiche-server \
@@ -49,6 +52,9 @@ post-patch:
 # install quiche apps and libquiche
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/quiche/include/quiche.h ${STAGEDIR}${PREFIX}/include
+	${REINPLACE_CMD} -e "s|includedir=.*|prefix=${PREFIX}\nincludedir=\$${prefix}/include|" \
+		-e "s|libdir=.*|libdir=\$${prefix}/lib|" \
+		${CARGO_TARGET_DIR}/*/quiche.pc
 	${INSTALL_DATA} ${CARGO_TARGET_DIR}/*/quiche.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 	${INSTALL_LIB} ${CARGO_TARGET_DIR}/*/libquiche.so ${STAGEDIR}${PREFIX}/lib/libquiche.so.${DISTVERSION}
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libquiche.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libquiche.so.${MAJOR_VER}
