@@ -504,7 +504,6 @@
     SUBDIR += covtool
     SUBDIR += cpan-upload
     SUBDIR += cpan-upload-http
-    SUBDIR += cpp-hocon
     SUBDIR += cpp-netlib
     SUBDIR += cpp-utilities
     SUBDIR += cpp2py
