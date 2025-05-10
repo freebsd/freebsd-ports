@@ -1,3 +1,36 @@
+  <vuln vid="6943cbf2-2d55-11f0-9471-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.11.0</ge><lt>17.11.2</lt></range>
+	<range><ge>17.10.0</ge><lt>17.10.6</lt></range>
+	<range><ge>12.0.0</ge><lt>17.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/05/07/patch-release-gitlab-17-11-2-released/">
+	  <p>Partial Bypass for Device OAuth flow using Cross Window Forgery</p>
+	  <p>Denial of service by abusing Github import API</p>
+	  <p>Group IP restriction bypass allows disclosing issue title of restricted project</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0549</cvename>
+      <cvename>CVE-2024-8973</cvename>
+      <cvename>CVE-2025-1278</cvename>
+      <url>https://about.gitlab.com/releases/2025/05/07/patch-release-gitlab-17-11-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-05-07</discovery>
+      <entry>2025-05-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="78b8e808-2c45-11f0-9a65-6cc21735f730">
     <topic>PostgreSQL -- PostgreSQL GB18030 encoding validation can read one byte past end of allocation for text that fails validation</topic>
     <affects>
