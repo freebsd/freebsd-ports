@@ -12,13 +12,13 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
-		gcp:sysutils/coreutils \
-		gsed:textproc/gsed \
-		gpatch:devel/patch \
-		gdiff:textproc/diffutils \
 		diffstat:textproc/diffstat \
 		gawk:lang/gawk \
-		${LOCALBASE}/bin/ggrep:textproc/gnugrep
+		gcp:sysutils/coreutils \
+		gdiff:textproc/diffutils \
+		ggrep:textproc/gnugrep \
+		gpatch:devel/patch \
+		gsed:textproc/gsed
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		formail:mail/procmail
 
