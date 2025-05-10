@@ -4,6 +4,7 @@ PORTREVISION?=	0
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
+PKGNAMESUFFIX?=	216
 
 MAINTAINER=	opensearch@FreeBSD.org
 COMMENT?=	Visualization dashboards for OpenSearch
