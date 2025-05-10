@@ -720,7 +720,6 @@
     SUBDIR += pspg
     SUBDIR += puppetdb-terminus7
     SUBDIR += puppetdb-terminus8
-    SUBDIR += puppetdb7
     SUBDIR += puppetdb8
     SUBDIR += puredb
     SUBDIR += pxlib
