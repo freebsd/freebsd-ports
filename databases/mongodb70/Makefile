@@ -1,6 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	7.0.19
+PORTREVISION=	1
 CATEGORIES=	databases net
 MASTER_SITES=	https://hg.mozilla.org/mozilla-central/raw-rev/:patches
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
