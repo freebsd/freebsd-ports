@@ -1,5 +1,5 @@
 PORTNAME=	future
-DISTVERSION=	1.40.0
+DISTVERSION=	1.49.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,9 +10,9 @@ WWW=		https://cran.r-project.org/package=future
 LICENSE=	LGPL21+
 
 CRAN_DEPENDS=	R-cran-digest>0:security/R-cran-digest \
-		R-cran-globals>=0.16.1:devel/R-cran-globals \
+		R-cran-globals>=0.18.0:devel/R-cran-globals \
 		R-cran-listenv>=0.8.0:devel/R-cran-listenv \
-		R-cran-parallelly>=1.43.0:devel/R-cran-parallelly
+		R-cran-parallelly>=1.44.0:devel/R-cran-parallelly
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-R.rsp>0:textproc/R-cran-R.rsp
