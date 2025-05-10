@@ -13,7 +13,7 @@ LICENSE=	LGPL3
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgnutls.so:security/gnutls
 BUILD_DEPENDS=	dnsmasq:dns/dnsmasq \
-		${LOCALBASE}/bin/grep:textproc/gnugrep \
+		ggrep:textproc/gnugrep \
 		gsed:textproc/gsed \
 		rst2html:textproc/py-docutils@${PY_FLAVOR} \
 		xsltproc:textproc/libxslt
