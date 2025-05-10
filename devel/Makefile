@@ -1200,7 +1200,6 @@
     SUBDIR += lazygit
     SUBDIR += lcov
     SUBDIR += leaktracer
-    SUBDIR += leatherman
     SUBDIR += lefthook
     SUBDIR += leiningen
     SUBDIR += lemon
