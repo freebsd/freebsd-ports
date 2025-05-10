@@ -1189,6 +1189,7 @@
     SUBDIR += simpleviewer
     SUBDIR += skanlite
     SUBDIR += skanpage
+    SUBDIR += skia
     SUBDIR += spirv-cross
     SUBDIR += spirv-tools
     SUBDIR += springgraph
