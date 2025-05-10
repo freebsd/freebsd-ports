@@ -1,9 +1,9 @@
 PORTNAME=	menhir
-PORTVERSION=	20231231
+PORTVERSION=	20240715
 CATEGORIES=	devel
 MASTER_SITES=	http://cristal.inria.fr/~fpottier/menhir/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	LR(1) parser generator for OCaml
 WWW=		http://cristal.inria.fr/~fpottier/menhir
 
