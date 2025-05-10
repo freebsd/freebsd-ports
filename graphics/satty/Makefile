@@ -1,11 +1,8 @@
 PORTNAME=	satty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0
+DISTVERSION=	0.18.1
 CATEGORIES=	graphics wayland
 MASTER_SITES=	CRATESIO
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	57f5e68d2b23.patch:-p1 # https://github.com/gabm/Satty/pull/176
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modern screenshot annotation

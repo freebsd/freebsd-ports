@@ -22,7 +22,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bytes-1.10.1 \
 		cairo-rs-0.20.7 \
 		cairo-sys-rs-0.20.7 \
-		cc-1.2.21 \
+		cc-1.2.22 \
 		cfg-expr-0.17.2 \
 		cfg-if-1.0.0 \
 		chrono-0.4.41 \
