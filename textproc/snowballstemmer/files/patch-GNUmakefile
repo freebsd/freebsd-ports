@@ -1,12 +1,12 @@
---- GNUmakefile.orig	2021-11-10 02:42:18 UTC
+--- GNUmakefile.orig	2025-05-09 03:10:41 UTC
 +++ GNUmakefile
-@@ -170,12 +170,12 @@ C_OTHER_OBJECTS = $(C_OTHER_SOURCES:.c=.o)
+@@ -190,12 +190,12 @@ JAVA_RUNTIME_CLASSES=$(JAVARUNTIME_SOURCES:.java=.clas
  JAVA_CLASSES = $(JAVA_SOURCES:.java=.class)
  JAVA_RUNTIME_CLASSES=$(JAVARUNTIME_SOURCES:.java=.class)
  
--CFLAGS=-O2 -W -Wall -Wmissing-prototypes -Wmissing-declarations
+-CFLAGS=-g -O2 -W -Wall -Wmissing-prototypes -Wmissing-declarations -Wshadow $(WERROR)
 -CPPFLAGS=
-+CFLAGS+=-fPIC -O2 -W -Wall -Wmissing-prototypes -Wmissing-declarations
++CFLAGS+=-fPIC -W -Wall -Wmissing-prototypes -Wmissing-declarations -Wshadow $(WERROR)
 +CPPFLAGS+=
  
  INCLUDES=-Iinclude
@@ -16,13 +16,13 @@
  
  algorithms.mk: libstemmer/mkalgorithms.pl libstemmer/modules.txt
  	libstemmer/mkalgorithms.pl algorithms.mk libstemmer/modules.txt
-@@ -225,6 +225,9 @@ libstemmer/libstemmer.o: libstemmer/modules.h $(C_LIB_
+@@ -256,6 +256,9 @@ libstemmer.a: libstemmer/libstemmer.o $(RUNTIME_OBJECT
+ 
  libstemmer.a: libstemmer/libstemmer.o $(RUNTIME_OBJECTS) $(C_LIB_OBJECTS)
  	$(AR) -cru $@ $^
- 
++
 +libstemmer.so: libstemmer/libstemmer.o $(RUNTIME_OBJECTS) $(C_LIB_OBJECTS)
-+	$(CC) $(CFLAGS) -shared $(LDFLAGS) -Wl,-soname,libstemmer.so.0,-version-script,libstemmer/symbol.map -o $@.0.0.0 $^
-+ 
++	$(CC) $(CFLAGS) -shared $(LDFLAGS) -Wl,-soname,libstemmer.so.3,-version-script,libstemmer/symbol.map -o $@.3.0.1 $^
+ 
  examples/%.o: examples/%.c
  	$(CC) $(CFLAGS) $(INCLUDES) $(CPPFLAGS) -c -o $@ $<
- 
