@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250510:
+  AFFECTS: users of net-p2p/bitcoin and/or net-p2p/bitcoin-daemon
+  AUTHOR: kbowling@FreeBSD.org
+
+  29.x is the last release series that will support the legacy BDB wallet
+  format.  We are already doing this awkwardly since the format is BDB 4.8
+  and we are building with BDB 5.  This will be removed in 30.0 later this
+  year.
+
+  You should upgrade your wallet now if you are still using a legacy wallet.
+
+  Instructions:
+  https://github.com/bitcoin/bitcoin/blob/29.x/doc/managing-wallets.md#migrating-legacy-wallets-to-descriptor-wallets
+
+  This release switches to CMake which results in a major refacoring of
+  the port and underlying build.  The result seems good, but please
+  provide feedback if there are any unexpected changes or problems.
+
+  This release dropped UPnP support due to security concerns.  NAT-PMP is
+  implemented as an alternative.
+
 20250506:
   AFFECTS: users of databases/postgresql* and other software using PostgreSQL to run
   AUTHOR: kbowling@FreeBSD.org

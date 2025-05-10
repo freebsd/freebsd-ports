@@ -1,10 +1,10 @@
 PORTNAME=	bitcoin
-PORTVERSION=	28.1
-PORTREVISION=	1
+PORTVERSION=	29.0
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	https://bitcoincore.org/bin/bitcoin-core-${PORTVERSION}/ \
 		LOCAL/swills:icon
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bitcoin128.png:icon
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		bitcoin128.png:icon
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${_DISTFILES:N*.png}
 
@@ -19,28 +19,31 @@ LICENSE=	MIT
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libevent.so:devel/libevent
 
-USES=		autoreconf compiler:c++20-lang cpe gmake libtool pkgconfig qt:5 shebangfix
-
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-
 SLAVE_PORT?=	no
 
+USES=		cmake compiler:c++20-lang cpe pkgconfig
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
-USES+=		desktop-file-utils
-USE_QT=		core gui network widgets \
-		buildtools:build linguisttools:build qmake:build
-
-BUILD_DEPENDS+=	protoc:devel/protobuf
-LIB_DEPENDS+=	libprotobuf.so:devel/protobuf
-
-TESTS_USE=		QT=testlib
-TESTS_PLIST_FILES=	bin/test_bitcoin-qt \
-			bin/test_bitcoin
+USES+=		desktop-file-utils qt:5
+USE_QT=		core gui network widgets buildtools:build linguisttools:build \
+		qmake:build
 .endif
+GH_ACCOUNT=	bitcoin
 
-OPTIONS_DEFINE?=	DBUS DEBUG HARDENING QRCODES TESTS UPNP WALLET ZMQ
-OPTIONS_DEFAULT?=	DBUS HARDENING QRCODES UPNP WALLET ZMQ
+CMAKE_ARGS?=	-DBUILD_GUI=ON \
+		-DBUILD_CLI=OFF \
+		-DBUILD_DAEMON=OFF \
+		-DBUILD_SHARED_LIBS=OFF \
+		-DBUILD_TX=OFF \
+		-DBUILD_UTIL=OFF \
+		-DBUILD_WALLET_TOOL=OFF
+
+PLIST_FILES?=	bin/bitcoin-qt \
+		share/applications/bitcoin-qt.desktop \
+		share/man/man1/bitcoin-qt.1.gz \
+		share/pixmaps/bitcoin128.png
+
+OPTIONS_DEFINE?=	DBUS DEBUG HARDENING QRCODES TESTS WALLET ZMQ
+OPTIONS_DEFAULT?=	DBUS HARDENING QRCODES WALLET ZMQ
 OPTIONS_SUB=		yes
 
 HARDENING_DESC=	Attempt to harden binaries (PIE for ASLR, NX Stack)
@@ -49,54 +52,36 @@ TESTS_DESC=	Build test binary and unit tests
 WALLET_DESC=	Wallet Management Support
 ZMQ_DESC=	Block and transaction broadcasting with ZeroMQ
 
-DBUS_CONFIGURE_WITH=	dbus
 DBUS_USE=		QT=dbus
+DBUS_CMAKE_BOOL=	WITH_DBUS
 
-DEBUG_CONFIGURE_ENABLE=		debug
-DEBUG_INSTALL_TARGET_OFF=	install-strip
+DEBUG_CMAKE_ON=		-DCMAKE_BUILD_TYPE=Debug
+DEBUG_CMAKE_OFF=	-DCMAKE_BUILD_TYPE=Release
 
-HARDENING_CONFIGURE_ENABLE=	hardening
+HARDENING_CMAKE_BOOL=	ENABLE_HARDENING
 
-TESTS_CONFIGURE_ENABLE=	tests bench
-.if defined(SLAVE_PORT) && ${SLAVE_PORT} == "yes"
-TESTS_PLIST_FILES=	bin/test_bitcoin
-.endif
-TESTS_PLIST_FILES+=	bin/bench_bitcoin
-
-UPNP_CONFIGURE_WITH=	miniupnpc
-UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
-UPNP_CPPFLAGS=		-I${LOCALBASE}/include
-UPNP_LIBS=		-L${LOCALBASE}/lib
-
-QRCODES_CONFIGURE_WITH=	qrencode
 QRCODES_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
+QRCODES_CMAKE_BOOL=	WITH_QRENCODE
 
-WALLET_CONFIGURE_OFF=	--disable-wallet
-WALLET_CONFIGURE_ON=	--enable-wallet \
-			--with-incompatible-bdb \
-			--with-sqlite=yes \
-			BDB_CFLAGS=-I${BDB_INCLUDE_DIR} \
-			BDB_LIBS="-L${BDB_LIB_DIR} \
-				-Wl,-rpath=${BDB_LIB_DIR} \
-				-l${BDB_LIB_CXX_NAME}"
+.if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
+TESTS_USE=		QT=testlib
+.endif
+TESTS_CMAKE_BOOL=	BUILD_BENCH BUILD_TESTS SECP256K1_BUILD_TESTS
+TESTS_PLIST_FILES=	bin/bench_bitcoin \
+			bin/test_bitcoin
+.if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
+TESTS_PLIST_FILES+=	bin/test_bitcoin-qt
+.endif
+
 WALLET_USES=		bdb:5+ sqlite:3
+WALLET_CMAKE_ON=	-DENABLE_WALLET=ON \
+			-DWARN_INCOMPATIBLE_BDB=OFF \
+			-DWITH_BDB=ON
+WALLET_CMAKE_OFF=	-DENABLE_WALLET=OFF
 
-ZMQ_CONFIGURE_ENABLE=	zmq
 ZMQ_BUILD_DEPENDS=	libzmq4>0:net/libzmq4
 ZMQ_RUN_DEPENDS=	libzmq4>0:net/libzmq4
-
-GH_ACCOUNT=	bitcoin
-
-CONFIGURE_ARGS?=	--without-libs \
-			--with-gui=qt5 \
-			--without-daemon \
-			--without-utils
-
-CONFIGURE_ENV=	OBJCXX="${CXX}" OBJCXXFLAGS="${CXXFLAGS}"
-MAKE_ENV+=	V=1
-
-PLIST_FILES?=	bin/bitcoin-qt share/man/man1/bitcoin-qt.1.gz \
-		share/applications/bitcoin-qt.desktop share/pixmaps/bitcoin128.png
+ZMQ_CMAKE_BOOL=		WITH_ZMQ
 
 .include <bsd.port.pre.mk>
 
@@ -109,11 +94,5 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .endif
-
-regression-test: build
-	# To use this sucessfully, remove --without-daemon and --without-utils
-	# from CONFIGURE_ARGS above.
-
-	@cd ${WRKSRC} && ${GMAKE} check
 
 .include <bsd.port.post.mk>
