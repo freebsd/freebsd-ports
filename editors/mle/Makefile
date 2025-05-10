@@ -12,10 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
-TEST_DEPENDS=	${LOCALBASE}/bin/gpaste:sysutils/coreutils \
-		${LOCALBASE}/bin/grep:textproc/gnugrep \
-		bash:shells/bash \
-		gfind:misc/findutils
+TEST_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c11 gmake localbase:ldflags shebangfix lua:54
 SHEBANG_FILES=	tests/func/*.sh tests/run.sh
@@ -29,14 +26,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|lua5.4|lua54|g' ${WRKSRC}/mle.h
 	@${REINPLACE_CMD} -e 's|lua5.4|lua-5.4|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|-O0|-O2|g' ${WRKSRC}/Makefile
-
-	# Fix shell commands in tests
-	@${REINPLACE_CMD} -e 's|find|gfind|g' \
-		-e 's|grep|${LOCALBASE}/bin/grep|g' \
-		${WRKSRC}/tests/run.sh \
-		${WRKSRC}/tests/func/*.sh
-	@${REINPLACE_CMD} -e 's|p a s t e|g p a s t e|g' \
-		${WRKSRC}/tests/func/test_lua.sh
 
 	# Remove assertions that rely on GNU tooling output
 	@${REINPLACE_CMD} -e '/shell_line/d' \
