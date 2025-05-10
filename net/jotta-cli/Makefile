@@ -1,5 +1,5 @@
 PORTNAME=	jotta-cli
-DISTVERSION=	0.15.109709
+DISTVERSION=	0.17.132497
 CATEGORIES=	net
 MASTER_SITES=	https://repo.jotta.us/archives/freebsd/${ARCH:S|amd64|amd64|:S|i386|386|}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_freebsd_${ARCH:S|amd64|amd64|:S|i386|386|}
@@ -20,11 +20,10 @@ RESTRICTED=	yes
 USE_RC_SUBR=	jottad
 
 NO_BUILD=	yes
-SUB_FILES=	pkg-message \
-		jottad
+SUB_FILES=	jottad pkg-message
 
-USERS=	jottad
-GROUPS=	jottad
+USERS=		jottad
+GROUPS=		jottad
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/jottad
