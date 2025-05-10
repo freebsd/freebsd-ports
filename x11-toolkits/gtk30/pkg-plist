@@ -527,6 +527,7 @@ share/gtk-3.0/valgrind/gtk.supp
 %%DOCS%%share/gtk-doc/html/gdk3/GdkSeat.html
 %%DOCS%%share/gtk-doc/html/gdk3/X_cursor.png
 %%DOCS%%share/gtk-doc/html/gdk3/alias_cursor.png
+%%DOCS%%share/gtk-doc/html/gdk3/all_resize_cursor.png
 %%DOCS%%share/gtk-doc/html/gdk3/all_scroll_cursor.png
 %%DOCS%%share/gtk-doc/html/gdk3/annotation-glossary.html
 %%DOCS%%share/gtk-doc/html/gdk3/api-index-3-0.html
@@ -568,6 +569,7 @@ share/gtk-3.0/valgrind/gtk.supp
 %%DOCS%%share/gtk-doc/html/gdk3/crosshair_cursor.png
 %%DOCS%%share/gtk-doc/html/gdk3/default_cursor.png
 %%DOCS%%share/gtk-doc/html/gdk3/diamond_cross.png
+%%DOCS%%share/gtk-doc/html/gdk3/dnd_ask_cursor.png
 %%DOCS%%share/gtk-doc/html/gdk3/dot.png
 %%DOCS%%share/gtk-doc/html/gdk3/dotbox.png
 %%DOCS%%share/gtk-doc/html/gdk3/double_arrow.png
