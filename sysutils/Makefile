@@ -370,7 +370,6 @@
     SUBDIR += f-upgrade
     SUBDIR += f2
     SUBDIR += f3
-    SUBDIR += facter
     SUBDIR += fakertc
     SUBDIR += faketty
     SUBDIR += fand
