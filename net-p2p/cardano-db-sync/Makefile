@@ -25,7 +25,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	IntersectMBO
 
 GH_TUPLE=	IntersectMBO:libsodium:${LIBSODIUM_HASH}:sodium	\
-		IntersectMBO:cardano-node:cdb45dd5aa9b4cf43ef6a6c8ecd5b6afbef953e4:cardano_node/dist-newstyle/src/cardano-n_-5bf92c55f9471797
+		IntersectMBO:cardano-node:cdb45dd5aa9b4cf43ef6a6c8ecd5b6afbef953e4:cardano_node/dist-newstyle/src/cardano-n_-4abd519455c1b4f78e985afa5fc250698946913c0d932d4a5e30567de5e7b519
 
 CARDANO_DB_SYNC_HASH=	5b131e97210cf603a3aca5ddca7d1420f9cabeec
 LIBSODIUM_HASH=		dbb48cce5429cb6585c9034f002568964f1ce567
@@ -471,7 +471,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		tree-diff-0.3.1_1 \
 		typed-process-0.2.12.0 \
 		typed-protocols-0.1.1.0_3:chap \
-		typed-protocols-cborg-0.1.0.4_2:chap \
+		typed-protocols-cborg-0.1.0.4_3:chap \
 		typed-protocols-examples-0.2.0.2:chap \
 		unagi-chan-0.4.1.4 \
 		unbounded-delays-0.1.1.1 \

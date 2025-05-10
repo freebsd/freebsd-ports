@@ -1,4 +1,4 @@
-TIMESTAMP = 1731685306
+TIMESTAMP = 1746890206
 SHA256 (cabal/Cabal-3.12.1.0/Cabal-3.12.1.0.tar.gz) = 7642f4bfb4eb88ed82b4022940ad53206012ab116a19a367579ca6a7c2adb6d2
 SIZE (cabal/Cabal-3.12.1.0/Cabal-3.12.1.0.tar.gz) = 431658
 SHA256 (cabal/Cabal-syntax-3.12.1.0/Cabal-syntax-3.12.1.0.tar.gz) = e5f2d31ec4bf36a7fd5b478f339edde18a6d9a4928a156fe52d37b70082c04b4
@@ -1147,8 +1147,8 @@ SHA256 (cabal/typed-protocols-0.1.1.0/revision/3.cabal) = 3c1f4b32b2a61df886f146
 SIZE (cabal/typed-protocols-0.1.1.0/revision/3.cabal) = 1630
 SHA256 (cabal/typed-protocols-cborg-0.1.0.4.tar.gz) = 355a02848edf9447451dc7ca0d43bccc25b50b8cc4eac62216203796a2b223f1
 SIZE (cabal/typed-protocols-cborg-0.1.0.4.tar.gz) = 6287
-SHA256 (cabal/typed-protocols-cborg-0.1.0.4/revision/2.cabal) = be47d077271203fa614758115a7e3cad67c8c3ce68ad5897ae6f5d0655c150fc
-SIZE (cabal/typed-protocols-cborg-0.1.0.4/revision/2.cabal) = 1294
+SHA256 (cabal/typed-protocols-cborg-0.1.0.4/revision/3.cabal) = 025310a5c61e206cf8ae429b85f816a6922447e55ed70f7dd5ed58735c514206
+SIZE (cabal/typed-protocols-cborg-0.1.0.4/revision/3.cabal) = 1294
 SHA256 (cabal/typed-protocols-examples-0.2.0.2.tar.gz) = 8f964deef5b4db20c47ab35f477336e111611e6e95676dcf3d06097f93b4356a
 SIZE (cabal/typed-protocols-examples-0.2.0.2.tar.gz) = 20290
 SHA256 (cabal/unagi-chan-0.4.1.4/unagi-chan-0.4.1.4.tar.gz) = d9d6f4ab07def8e84a942bb23791830a61faf89166cb7185a3b2f97cb45128b5
