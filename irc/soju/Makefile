@@ -1,7 +1,6 @@
 PORTNAME=	soju
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2
-PORTREVISION=	2
+DISTVERSION=	0.9.0
 CATEGORIES=	irc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -11,9 +10,9 @@ WWW=		https://soju.im
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,no_targets sqlite:3
+USES=		go:1.23,modules,no_targets sqlite:3
 USE_GITHUB=	nodefault
-GH_TUPLE=	golang:sys:v0.20.0:sys
+GH_TUPLE=	golang:sys:v0.30.0:sys
 
 OPTIONS_DEFAULT=	DOCS
 OPTIONS_DEFINE=		DOCS
