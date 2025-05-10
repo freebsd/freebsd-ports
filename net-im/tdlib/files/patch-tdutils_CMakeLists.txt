@@ -1,11 +1,12 @@
---- tdutils/CMakeLists.txt.orig	2025-05-09 16:51:24 UTC
+--- tdutils/CMakeLists.txt.orig	2025-04-30 22:25:21 UTC
 +++ tdutils/CMakeLists.txt
-@@ -351,7 +351,7 @@ set(TDUTILS_TEST_SOURCE
-   PARENT_SCOPE
- )
+@@ -416,6 +416,9 @@ if (TDUTILS_ENABLE_INSTALL)
+     LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+     ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+   )
++  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/td
++    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
++    FILES_MATCHING PATTERN "*.h")
+ endif()
  
--add_library(tdutils STATIC ${TDUTILS_SOURCE})
-+add_library(tdutils ${TDUTILS_SOURCE})
- 
- if (NOT CMAKE_CROSSCOMPILING AND TDUTILS_MIME_TYPE)
-   add_dependencies(tdutils tdmime_auto)
+ if (TD_TEST_FOLLY AND ABSL_FOUND AND TDUTILS_USE_EXTERNAL_DEPENDENCIES)
