@@ -46,9 +46,9 @@
 +            struct pctrie_iter pages;
 +            vm_page_t page;
 +
-+            pctrie_iter_init(&pages, pMemFreeBSD->pObject);
++            vm_page_iter_init(&pages, pMemFreeBSD->pObject);
 +            VM_RADIX_FORALL(page, &pages)
-+                vm_page_unwire(page, PQ_INACTIVE);
++                (void)vm_page_unwire_noq(page);
 +#endif
  #if __FreeBSD_version >= 1000030
              VM_OBJECT_WUNLOCK(pMemFreeBSD->pObject);
@@ -248,6 +248,15 @@
  
      if (PhysHighest != NIL_RTHCPHYS)
          VmPhysAddrHigh = PhysHighest;
+@@ -453,7 +487,7 @@ static int rtR0MemObjFreeBSDAllocPhysPages(PPRTR0MEMOB
+ #else
+             VM_OBJECT_LOCK(pMemFreeBSD->pObject);
+ #endif
+-            pMemFreeBSD->Core.u.Phys.PhysBase = VM_PAGE_TO_PHYS(vm_page_find_least(pMemFreeBSD->pObject, 0));
++            pMemFreeBSD->Core.u.Phys.PhysBase = VM_PAGE_TO_PHYS(vm_radix_lookup_ge(&pMemFreeBSD->pObject->rtree, 0));
+ #if __FreeBSD_version >= 1000030
+             VM_OBJECT_WUNLOCK(pMemFreeBSD->pObject);
+ #else
 @@ -470,6 +504,7 @@ static int rtR0MemObjFreeBSDAllocPhysPages(PPRTR0MEMOB
          rtR0MemObjDelete(&pMemFreeBSD->Core);
      }
