@@ -32,7 +32,7 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=		DOCS EXAMPLES SAXON
 OPTIONS_DEFAULT=	SAXON
 SAXON_DESC=		Saxon XQuery processor for full XQuery and XPath support
-SAXON_RUN_DEPENDS=	saxon-he=12.5:textproc/saxon-he
+SAXON_RUN_DEPENDS=	saxon-he=12.6:textproc/saxon-he
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|'	\
