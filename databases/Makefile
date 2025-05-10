@@ -718,7 +718,6 @@
     SUBDIR += prometheus-postgresql-adapter
     SUBDIR += proxysql
     SUBDIR += pspg
-    SUBDIR += puppetdb-terminus7
     SUBDIR += puppetdb-terminus8
     SUBDIR += puppetdb8
     SUBDIR += puredb
