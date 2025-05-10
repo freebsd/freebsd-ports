@@ -988,7 +988,6 @@
     SUBDIR += puppet-mode.el
     SUBDIR += puppet7
     SUBDIR += puppet8
-    SUBDIR += puppetserver7
     SUBDIR += puppetserver8
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
