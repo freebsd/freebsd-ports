@@ -1,5 +1,5 @@
 PORTNAME=	Connector
-DISTVERSION=	1.54
+DISTVERSION=	1.55
 CATEGORIES=	devel perl5
 PKGNAMEPREFIX=	p5-
 
@@ -11,8 +11,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	bash:shells/bash \
+BR_DEPENDS=	bash:shells/bash \
 		p5-AppConfig>=0:devel/p5-AppConfig \
 		p5-Config-GitLike>=0:devel/p5-Config-GitLike \
 		p5-Config-Std>=0:devel/p5-Config-Std \
@@ -29,6 +28,8 @@ RUN_DEPENDS=	bash:shells/bash \
 		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
 		p5-Text-CSV_XS>=0:textproc/p5-Text-CSV_XS \
 		p5-YAML>=1.06:textproc/p5-YAML
+BUILD_DEPENDS=	${BR_DEPENDS}
+RUN_DEPENDS=	${BR_DEPENDS}
 TEST_DEPENDS=	p5-Config-Merge>=0:devel/p5-Config-Merge \
 		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 
