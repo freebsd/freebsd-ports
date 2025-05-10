@@ -1,6 +1,6 @@
---- src/auto/configure.orig	2023-09-03 18:37:03 UTC
+--- src/auto/configure.orig	2025-05-10 17:54:52 UTC
 +++ src/auto/configure
-@@ -938,7 +938,7 @@ pdfdir='${docdir}'
+@@ -936,7 +936,7 @@ localedir='${datarootdir}/locale'
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
  localedir='${datarootdir}/locale'
@@ -9,25 +9,25 @@
  
  ac_prev=
  ac_dashdash=
-@@ -5659,7 +5659,7 @@ if test ${vi_cv_version_lua_luajit+y}
+@@ -5955,7 +5955,7 @@ else case e in #(
  then :
    printf %s "(cached) " >&6
- else $as_nop
--   vi_cv_version_lua_luajit=`${vi_cv_path_luajit} -e "print(_VERSION)" | sed 's/.* //'`
-+   vi_cv_version_lua_luajit=`${vi_cv_path_luajit} -e "print(_VERSION)" | sed 's/.* //' | tr -d '/'`
+ else case e in #(
+-  e)  vi_cv_version_lua_luajit=`${vi_cv_path_luajit} -e "print(_VERSION)" | sed 's/.* //'`  ;;
++  e)  vi_cv_version_lua_luajit=`${vi_cv_path_luajit} -e "print(_VERSION)" | sed 's/.* //' | tr -d '/'`  ;;
+ esac
  fi
  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $vi_cv_version_lua_luajit" >&5
- printf "%s\n" "$vi_cv_version_lua_luajit" >&6; }
-@@ -5719,7 +5719,7 @@ if test ${vi_cv_version_plain_lua+y}
+@@ -6017,7 +6017,7 @@ else case e in #(
  then :
    printf %s "(cached) " >&6
- else $as_nop
--   vi_cv_version_plain_lua=`${vi_cv_path_plain_lua} -e "print(_VERSION)" | sed 's/.* //'`
-+   vi_cv_version_plain_lua=`${vi_cv_path_plain_lua} -e "print(_VERSION)" | sed 's/.* //' | tr -d '.'`
+ else case e in #(
+-  e)  vi_cv_version_plain_lua=`${vi_cv_path_plain_lua} -e "print(_VERSION)" | sed 's/.* //'`  ;;
++  e)  vi_cv_version_plain_lua=`${vi_cv_path_plain_lua} -e "print(_VERSION)" | sed 's/.* //' | tr -d '.'`  ;;
+ esac
  fi
  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $vi_cv_version_plain_lua" >&5
- printf "%s\n" "$vi_cv_version_plain_lua" >&6; }
-@@ -5838,7 +5838,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.b
+@@ -6138,7 +6138,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.b
        LIBS=$libs_save
      fi
      if test "x$lua_ok" = "xyes"; then
@@ -36,7 +36,7 @@
        LUA_SRC="if_lua.c"
        LUA_OBJ="objects/if_lua.o"
        LUA_PRO="if_lua.pro"
-@@ -5895,7 +5895,8 @@ printf "%s\n" "yes" >&6; }
+@@ -6195,7 +6195,8 @@ printf "%s\n" "yes" >&6; }
        printf "%s\n" "#define DYNAMIC_LUA 1" >>confdefs.h
  
        LUA_LIBS=""
