@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250511:
+  AFFECTS: users of www/tt-rss
+  AUTHOR: dereks@lifeofadishwasher.com
+
+  tt-rss has dropped support for mysql/mariadb starting with commit
+  4cb8a84df46d46b.  The next update (mid-June) to www/tt-rss will include this
+  update.
+
+  https://community.tt-rss.org/t/support-for-mysql-is-no-more/6897
+
+  You should migrate your data to databases/postgresqlXY-server.
+
 20250510:
   AFFECTS: users of net-p2p/bitcoin and/or net-p2p/bitcoin-daemon
   AUTHOR: kbowling@FreeBSD.org

@@ -36,6 +36,7 @@
 %%WWWDIR%%/classes/Cache_Local.php
 %%WWWDIR%%/classes/Config.php
 %%WWWDIR%%/classes/Counters.php
+%%WWWDIR%%/classes/Crypt.php
 %%WWWDIR%%/classes/Db.php
 %%WWWDIR%%/classes/Db_Migrations.php
 %%WWWDIR%%/classes/Db_Prefs.php
@@ -1979,6 +1980,8 @@
 %%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/sv_SE/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/sv_SE/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ta/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ta/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/tr_TR/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/tr_TR/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/uk_UA/LC_MESSAGES/messages.mo
@@ -2045,7 +2048,6 @@
 %%WWWDIR%%/public.php
 %%WWWDIR%%/schema/ttrss_schema_mysql.sql
 %%WWWDIR%%/schema/ttrss_schema_pgsql.sql
-%%WWWDIR%%/sql/mysql/schema.sql
 %%WWWDIR%%/sql/mysql/migrations/3.sql
 %%WWWDIR%%/sql/mysql/migrations/4.sql
 %%WWWDIR%%/sql/mysql/migrations/5.sql
@@ -2191,7 +2193,9 @@
 %%WWWDIR%%/sql/mysql/migrations/145.sql
 %%WWWDIR%%/sql/mysql/migrations/146.sql
 %%WWWDIR%%/sql/mysql/migrations/147.sql
-%%WWWDIR%%/sql/pgsql/schema.sql
+%%WWWDIR%%/sql/mysql/migrations/148.sql
+%%WWWDIR%%/sql/mysql/migrations/149.sql
+%%WWWDIR%%/sql/mysql/schema.sql
 %%WWWDIR%%/sql/pgsql/migrations/3.sql
 %%WWWDIR%%/sql/pgsql/migrations/4.sql
 %%WWWDIR%%/sql/pgsql/migrations/5.sql
@@ -2337,6 +2341,9 @@
 %%WWWDIR%%/sql/pgsql/migrations/145.sql
 %%WWWDIR%%/sql/pgsql/migrations/146.sql
 %%WWWDIR%%/sql/pgsql/migrations/147.sql
+%%WWWDIR%%/sql/pgsql/migrations/148.sql
+%%WWWDIR%%/sql/pgsql/migrations/149.sql
+%%WWWDIR%%/sql/pgsql/schema.sql
 %%WWWDIR%%/templates.local/index.html
 %%WWWDIR%%/templates/digest_template.txt
 %%WWWDIR%%/templates/digest_template_html.txt
@@ -2407,8 +2414,8 @@
 %%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/Hanzi.php
 %%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/Kanji.php
 %%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/Number.php
-%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/QRData.php
 %%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/QRCodeDataException.php
+%%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/QRData.php
 %%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/QRDataModeAbstract.php
 %%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/QRDataModeInterface.php
 %%WWWDIR%%/vendor/chillerlan/php-qrcode/src/Data/QRMatrix.php
