@@ -30,10 +30,10 @@ WWW=		https://docs.espressif.com/projects/esp-idf/en/v5.3.1/esp32/get-started/
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/grep:textproc/gnugrep \
-		${LOCALBASE}/include/libintl.h:devel/gettext-runtime \
+BUILD_DEPENDS=	${LOCALBASE}/include/libintl.h:devel/gettext-runtime \
 		bash:shells/bash \
 		gawk:lang/gawk \
+		ggrep:textproc/gnugrep \
 		gpatch:devel/patch \
 		gsed:textproc/gsed \
 		help2man:misc/help2man \
@@ -58,7 +58,7 @@ BINARY_ALIAS=	g++=${CXX} gcc=${CC} python=${PYTHON_VERSION}
 BUILD_ENV=	${WRK_ENV} \
 		CT_ALLOW_BUILD_AS_ROOT_SURE=1 \
 		CT_FORBID_DOWNLOAD=y \
-		GREP=${LOCALBASE}/bin/grep \
+		GREP=ggrep \
 		LD_RUN_PATH=${PREFIX}/lib/${CC} \
 		LDFLAGS=-I${PREFIX}/lib \
 		${MAKE_ENV:MPATH=*}
