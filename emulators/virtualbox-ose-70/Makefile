@@ -43,7 +43,9 @@ CONFIGURE_ARGS+=	--with-gcc="${CC}" --with-g++="${CXX}"
 CONFLICTS_INSTALL=	virtualbox-ose-legacy \
 			virtualbox-ose-nox11-legacy \
 			virtualbox-ose \
-			virtualbox-ose-nox11
+			virtualbox-ose-nox11 \
+			virtualbox-ose-70 \
+			virtualbox-ose-nox11-70
 
 PORTSCOUT=	limit:^7\.0\.
 SUB_FILES=	pkg-message

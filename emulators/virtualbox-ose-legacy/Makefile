@@ -42,7 +42,9 @@ CONFIGURE_ARGS+=	--with-gcc="${CC}" --with-g++="${CXX}"
 CONFLICTS_INSTALL=	virtualbox-ose \
 			virtualbox-ose-nox11 \
 			virtualbox-ose-70 \
-			virtualbox-ose-nox11-70
+			virtualbox-ose-nox11-70 \
+			virtualbox-ose-71 \
+			virtualbox-ose-nox11-71
 
 PORTSCOUT=	limit:^5\.
 SUB_LIST=	VBOXDIR=${VBOX_DIR} \
