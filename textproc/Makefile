@@ -526,6 +526,7 @@
     SUBDIR += opensearch210
     SUBDIR += opensearch213
     SUBDIR += opensearch216
+    SUBDIR += opensearch219
     SUBDIR += opensp
     SUBDIR += openvanilla-framework
     SUBDIR += or-aspell
