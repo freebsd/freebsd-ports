@@ -21,13 +21,13 @@ lib/kicad/plugins/3d/libs3d_plugin_idf.so
 lib/kicad/plugins/3d/libs3d_plugin_oce.so
 lib/kicad/plugins/3d/libs3d_plugin_vrml.so
 lib/libkiapi.so
-lib/libkiapi.so.%%PORTVERSION%%
+lib/libkiapi.so.%%SOVERSION%%
 lib/libkicad_3dsg.so
 lib/libkicad_3dsg.so.2.0.0
 lib/libkicommon.so
-lib/libkicommon.so.%%PORTVERSION%%
+lib/libkicommon.so.%%SOVERSION%%
 lib/libkigal.so
-lib/libkigal.so.%%PORTVERSION%%
+lib/libkigal.so.%%SOVERSION%%
 %%PYTHON_SITELIBDIR%%/_pcbnew.so
 %%PYTHON_SITELIBDIR%%/pcbnew.py
 %%DESKTOPDIR%%/org.kicad.bitmap2component.desktop

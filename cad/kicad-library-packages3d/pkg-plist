@@ -8402,6 +8402,8 @@
 %%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_MiniMELF.wrl
 %%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_PowerDI-123.step
 %%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_PowerDI-123.wrl
+%%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_Powermite_AK.step
+%%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_Powermite_AK.wrl
 %%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_SC-80.step
 %%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_SC-80.wrl
 %%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_SMA.step
@@ -10638,6 +10640,8 @@
 %%DATADIR%%/3dmodels/Package_BGA.3dshapes/Linear_BGA-133_15.0x15.0_Layout12x12_P1.27mm.wrl
 %%DATADIR%%/3dmodels/Package_BGA.3dshapes/Maxim_WLP-12.step
 %%DATADIR%%/3dmodels/Package_BGA.3dshapes/Maxim_WLP-12.wrl
+%%DATADIR%%/3dmodels/Package_BGA.3dshapes/NXP_SOT1982-1_VFBGA-98_7x7mm_Layout13x13_P0.5mm.step
+%%DATADIR%%/3dmodels/Package_BGA.3dshapes/NXP_SOT1982-1_VFBGA-98_7x7mm_Layout13x13_P0.5mm.wrl
 %%DATADIR%%/3dmodels/Package_BGA.3dshapes/NXP_SOT2162-1_VFBGA-59_4x4mm_Layout9x9_P0.4mm.step
 %%DATADIR%%/3dmodels/Package_BGA.3dshapes/NXP_SOT2162-1_VFBGA-59_4x4mm_Layout9x9_P0.4mm.wrl
 %%DATADIR%%/3dmodels/Package_BGA.3dshapes/NXP_VFBGA-42_2.6x3mm_Layout6x7_P0.4mm.step
@@ -10840,6 +10844,8 @@
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Nordic_AQFN-73-1EP_7x7mm_P0.5mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/OnSemi_DFN-14-1EP_4x4mm_P0.5mm_EP2.7x3.4mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/OnSemi_DFN-14-1EP_4x4mm_P0.5mm_EP2.7x3.4mm.wrl
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/OnSemi_SIP-38-6EP-9x7mm_P0.65mm_EP1.2x1.2mm.step
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/OnSemi_SIP-38-6EP-9x7mm_P0.65mm_EP1.2x1.2mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/OnSemi_XDFN4-1EP_1.0x1.0mm_EP0.52x0.52mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/OnSemi_XDFN4-1EP_1.0x1.0mm_EP0.52x0.52mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/PQFN-8-EP_6x5mm_P1.27mm_Generic.step
@@ -10852,6 +10858,8 @@
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-16-1EP_4x4mm_P0.65mm_EP2.15x2.15mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-16-1EP_4x4mm_P0.65mm_EP2.15x2.15mm.wrl
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-16-1EP_4x4mm_P0.65mm_EP2.1x2.1mm.step
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-16-1EP_4x4mm_P0.65mm_EP2.1x2.1mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-16-1EP_4x4mm_P0.65mm_EP2.5x2.5mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-16-1EP_4x4mm_P0.65mm_EP2.5x2.5mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-16-1EP_5x5mm_P0.8mm_EP2.7x2.7mm.step
@@ -10968,6 +10976,8 @@
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/TQFN-44-1EP_7x7mm_P0.5mm_EP4.7x4.7mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/TQFN-48-1EP_7x7mm_P0.5mm_EP5.1x5.1mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/TQFN-48-1EP_7x7mm_P0.5mm_EP5.1x5.1mm.wrl
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_DLH0010A_WSON-10-1EP_2.2x2mm_P0.4mm_EP0.9x1.5mm.step
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_DLH0010A_WSON-10-1EP_2.2x2mm_P0.4mm_EP0.9x1.5mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_PicoStar_DFN-3_0.69x0.60mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_PicoStar_DFN-3_0.69x0.60mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_R-PUQFN-N12.step
@@ -11586,6 +11596,10 @@
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/LQFP-80_12x12mm_P0.5mm.wrl
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/LQFP-80_14x14mm_P0.65mm.step
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/LQFP-80_14x14mm_P0.65mm.wrl
+%%DATADIR%%/3dmodels/Package_QFP.3dshapes/MO112AC1_PQFP-52_10x10mm_P0.65mm.step
+%%DATADIR%%/3dmodels/Package_QFP.3dshapes/MO112AC1_PQFP-52_10x10mm_P0.65mm.wrl
+%%DATADIR%%/3dmodels/Package_QFP.3dshapes/Microchip_PQFP-44_10x10mm_P0.8mm.step
+%%DATADIR%%/3dmodels/Package_QFP.3dshapes/Microchip_PQFP-44_10x10mm_P0.8mm.wrl
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/PQFP-100_14x20mm_P0.65mm.step
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/PQFP-100_14x20mm_P0.65mm.wrl
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/PQFP-112_20x20mm_P0.65mm.step
@@ -11660,8 +11674,6 @@
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/TQFP-80_12x12mm_P0.5mm.wrl
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/TQFP-80_14x14mm_P0.65mm.step
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/TQFP-80_14x14mm_P0.65mm.wrl
-%%DATADIR%%/3dmodels/Package_QFP.3dshapes/VQFP-100_14x14mm_P0.5mm.step
-%%DATADIR%%/3dmodels/Package_QFP.3dshapes/VQFP-100_14x14mm_P0.5mm.wrl
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/VQFP-128_14x14mm_P0.4mm.step
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/VQFP-128_14x14mm_P0.4mm.wrl
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/VQFP-176_20x20mm_P0.4mm.step
@@ -11840,8 +11852,6 @@
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOIC-8_5.3x6.2mm_P1.27mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOIC-8_7.5x5.85mm_P1.27mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOIC-8_7.5x5.85mm_P1.27mm.wrl
-%%DATADIR%%/3dmodels/Package_SO.3dshapes/SOIJ-8_5.3x5.3mm_P1.27mm.step
-%%DATADIR%%/3dmodels/Package_SO.3dshapes/SOIJ-8_5.3x5.3mm_P1.27mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOJ-36_10.16x23.49mm_P1.27mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOJ-36_10.16x23.49mm_P1.27mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOP-16_3.9x9.9mm_P1.27mm.step
@@ -11918,8 +11928,6 @@
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SSOP-8_3.95x5.21x3.27mm_P1.27mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SSOP-8_3.9x5.05mm_P1.27mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SSOP-8_3.9x5.05mm_P1.27mm.wrl
-%%DATADIR%%/3dmodels/Package_SO.3dshapes/SSOP-8_5.25x5.24mm_P1.27mm.step
-%%DATADIR%%/3dmodels/Package_SO.3dshapes/SSOP-8_5.25x5.24mm_P1.27mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/ST_MultiPowerSO-30.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/ST_MultiPowerSO-30.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/ST_PowerSSO-24_SlugDown.step
@@ -12118,8 +12126,8 @@
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/VSSOP-8_2.3x2mm_P0.5mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/VSSOP-8_2.4x2.1mm_P0.5mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/VSSOP-8_2.4x2.1mm_P0.5mm.wrl
-%%DATADIR%%/3dmodels/Package_SO.3dshapes/VSSOP-8_3.0x3.0mm_P0.65mm.step
-%%DATADIR%%/3dmodels/Package_SO.3dshapes/VSSOP-8_3.0x3.0mm_P0.65mm.wrl
+%%DATADIR%%/3dmodels/Package_SO.3dshapes/VSSOP-8_3x3mm_P0.65mm.step
+%%DATADIR%%/3dmodels/Package_SO.3dshapes/VSSOP-8_3x3mm_P0.65mm.wrl
 %%DATADIR%%/3dmodels/Package_SON.3dshapes/Diodes_PowerDI3333-8.step
 %%DATADIR%%/3dmodels/Package_SON.3dshapes/Diodes_PowerDI3333-8.wrl
 %%DATADIR%%/3dmodels/Package_SON.3dshapes/NXP_XSON-16.step
