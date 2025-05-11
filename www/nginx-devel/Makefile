@@ -1,6 +1,6 @@
 PORTNAME?=	nginx
 PORTVERSION=	1.28.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -18,7 +18,7 @@ CONFLICTS_INSTALL=	nginx
 
 PORTSCOUT=	limit:^1\.2[8-9]\.[0-9]*
 
-USES=		cpe
+USES=		cpe compiler:env
 
 CPE_VENDOR=	f5
 CPE_PRODUCT=	nginx
@@ -236,8 +236,8 @@ IGNORE=		required at least GSSAPI_HEIMDAL or \
 		'make config' again
 .endif
 
-.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1305000 && ${OSVERSION} < 1400000)
-CFLAGS+=	-Wno-cast-function-type-mismatch
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 191
+CFLAGS+=	-Wno-error=cast-function-type-mismatch
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER} && empty(PORT_OPTIONS:MDEBUG)
