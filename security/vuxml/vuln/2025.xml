@@ -1,3 +1,211 @@
+  <vuln vid="a8a1a8e7-2e85-11f0-a989-b42e991fc52e">
+    <topic>Mozilla -- memory corrupton</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>138.0,2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>138.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1924108%2C1950780%2C1959367">
+	  <p>Memory safety bugs present in Firefox 137 and Thunderbird 137.
+	  Some of these bugs showed evidence of memory corruption and
+	  we presume that with enough effort some of these could have
+	  been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4092</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-4092</url>
+    </references>
+    <dates>
+      <discovery>2025-04-29</discovery>
+      <entry>2025-05-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a59bd59e-2e85-11f0-a989-b42e991fc52e">
+    <topic>Mozilla -- insufficient character escaping</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>138.0,2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>138.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1949994%2C1956698%2C1960198">
+	  <p>Due to insufficient escaping of special characters in the
+	    &quot;copy as cURL&quot; feature, an attacker could trick
+	  a user into using this command, potentially leading to local
+	  code execution on the user&apos;s system.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4089</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-4089</url>
+    </references>
+    <dates>
+      <discovery>2025-04-29</discovery>
+      <entry>2025-05-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a4422500-2e85-11f0-a989-b42e991fc52e">
+    <topic>Mozilla -- Cross-Site Request Forgery</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>138.0,2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>138.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1953521">
+	  <p>A security vulnerability in Thunderbird allowed malicious
+	  sites to use redirects to send credentialed requests to
+	  arbitrary endpoints on any site that had invoked the Storage
+	  Access API.  This enabled potential Cross-Site Request
+	  Forgery attacks across origins.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4088</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-4088</url>
+    </references>
+    <dates>
+      <discovery>2025-04-29</discovery>
+      <entry>2025-05-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a2d5bd7b-2e85-11f0-a989-b42e991fc52e">
+    <topic>Mozilla -- XPath parsing undefined behavior</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>138.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.10,1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>138</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1952465">
+	  <p>A vulnerability was identified in Thunderbird where XPath
+	  parsing could trigger undefined behavior due to missing null
+	  checks during attribute access. This could lead to
+	  out-of-bounds read access and potentially, memory
+	  corruption.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4087</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-4087</url>
+    </references>
+    <dates>
+      <discovery>2025-04-29</discovery>
+      <entry>2025-05-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9fa8c4a2-2e85-11f0-a989-b42e991fc52e">
+    <topic>Mozilla -- Information leak</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>138.0,2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>138.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1915280">
+	  <p>An attacker with control over a content process could
+	  potentially leverage the privileged UITour actor to leak
+	  sensitive information or escalate privileges.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4085</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-4085</url>
+    </references>
+    <dates>
+      <discovery>2025-04-29</discovery>
+      <entry>2025-05-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9c37a02e-2e85-11f0-a989-b42e991fc52e">
+    <topic>Mozilla -- javescript content execution</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>138.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.10,1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>138.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1958350">
+	  <p>A process isolation vulnerability in Thunderbird stemmed
+	  from improper handling of javascript: URIs, which could
+	  allow content to execute in the top-level document&apos;s
+	  process instead of the intended frame, potentially enabling
+	  a sandbox escape.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4083</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-4083</url>
+    </references>
+    <dates>
+      <discovery>2025-04-29</discovery>
+      <entry>2025-05-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6943cbf2-2d55-11f0-9471-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
