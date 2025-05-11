@@ -1,5 +1,5 @@
 PORTNAME=	miktex
-DISTVERSION=	25.3
+DISTVERSION=	25.4
 CATEGORIES=	print
 MASTER_SITES=	https://miktex.org/download/ctan/systems/win32/miktex/source/ \
 		https://ctan.org/tex-archive/systems/win32/miktex/tm/packages/:bootstrap
@@ -25,6 +25,8 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 NOT_FOR_ARCHS=	aarch64 armv7
 NOT_FOR_ARCHS_REASON=	Programs/TeXAndFriends/Knuth/web/tangle.p:1: parse error before `û'
+
+WRKSRC=	${WRKDIR}/${PORTNAME}.${DISTVERSION}
 
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_locale.so:devel/boost-libs \
