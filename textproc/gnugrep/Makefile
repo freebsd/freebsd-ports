@@ -1,5 +1,5 @@
 PORTNAME=	grep
-PORTVERSION=	3.11
+PORTVERSION=	3.12
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu
@@ -10,11 +10,8 @@ WWW=		https://www.gnu.org/software/grep/
 
 LICENSE=	GPLv3+
 
-CONFLICTS=	bsd-grep
-
 USES=		charsetfix cpe tar:xz
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--program-prefix=g
 TEST_TARGET=	check
 
@@ -22,7 +19,7 @@ INFO=		grep
 CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=		COMPAT ICONV LIBSIGSEGV NLS PCRE
-OPTIONS_DEFAULT=	COMPAT ICONV PCRE
+OPTIONS_DEFAULT=	ICONV PCRE
 COMPAT_DESC=		Create g-prefixless compatibility symlinks
 LIBSIGSEGV_DESC=	Use alternative page fault handler (GNU libsigsegv)
 OPTIONS_SUB=		yes
@@ -45,8 +42,8 @@ post-patch:
 	@${REINPLACE_CMD} 's:@grep@:${PREFIX}/bin/&:' ${WRKSRC}/src/egrep.sh
 	@${REINPLACE_CMD} 's|mkinstalldirs = .*|mkinstalldirs = ${MKDIR}|g' \
 		${WRKSRC}/po/Makefile.in.in
-# Remove useless(?) macro to avoid run-time dependency on `textproc/groff'
-	@${REINPLACE_CMD} '/Map mono-width fonts to standard fonts/,+6d' \
+# Don't use extension register to avoid run-time dependency on `textproc/groff'
+	@${REINPLACE_CMD} 's,do nr mH .* groff extension register,nr mH 0,' \
 		${WRKSRC}/doc/grep.in.1
 
 post-patch-NLS-off:
