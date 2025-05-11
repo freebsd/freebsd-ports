@@ -1,6 +1,6 @@
---- src/VBox/Devices/Graphics/DevVGA-SVGA3d-ogl.cpp.orig	2021-01-07 15:39:17 UTC
+--- src/VBox/Devices/Graphics/DevVGA-SVGA3d-ogl.cpp.orig	2025-04-11 12:09:20 UTC
 +++ src/VBox/Devices/Graphics/DevVGA-SVGA3d-ogl.cpp
-@@ -1189,7 +1189,7 @@ int vmsvga3dTerminate(PVGASTATECC pThisCC)
+@@ -1198,7 +1198,7 @@ static DECLCALLBACK(int) vmsvga3dBackTerminate(PVGASTA
      RTSemEventDestroy(pState->WndRequestSem);
  #elif defined(RT_OS_DARWIN)
  
@@ -9,7 +9,7 @@
      /* signal to the thread that it is supposed to exit */
      pState->bTerminate = true;
      /* wait for it to terminate */
-@@ -3194,7 +3194,7 @@ int vmsvga3dGenerateMipmaps(PVGASTATECC pThisCC, uint3
+@@ -3216,7 +3216,7 @@ static DECLCALLBACK(int) vmsvga3dBackGenerateMipmaps(P
  }
  
  
@@ -18,7 +18,7 @@
  /**
   * X11 event handling thread.
   *
-@@ -3224,7 +3224,7 @@ DECLCALLBACK(int) vmsvga3dXEventThread(RTTHREAD hThrea
+@@ -3246,7 +3246,7 @@ DECLCALLBACK(int) vmsvga3dXEventThread(RTTHREAD hThrea
      }
      return VINF_SUCCESS;
  }
@@ -27,7 +27,25 @@
  
  
  /**
-@@ -4052,7 +4052,7 @@ static int vmsvga3dContextDestroyOgl(PVGASTATECC pThis
+@@ -3484,7 +3484,7 @@ int vmsvga3dContextDefineOgl(PVGASTATECC pThisCC, uint
+     return VINF_SUCCESS;
+ }
+ 
+-#if defined(RT_OS_LINUX)
++#if defined(RT_OS_FREEBSD) || defined(RT_OS_LINUX)
+ /*
+  * HW accelerated graphics output.
+  */
+@@ -3976,7 +3976,7 @@ static DECLCALLBACK(int) vmsvga3dBackSurfaceBlitToScre
+     return VINF_SUCCESS;
+ }
+ 
+-#else /* !RT_OS_LINUX */
++#else /* !RT_OS_FREEBSD && !RT_OS_LINUX */
+ 
+ static DECLCALLBACK(int) vmsvga3dBackDefineScreen(PVGASTATE pThis, PVGASTATECC pThisCC, VMSVGASCREENOBJECT *pScreen)
+ {
+@@ -4096,7 +4096,7 @@ static int vmsvga3dContextDestroyOgl(PVGASTATECC pThis
      AssertRC(rc);
  #elif defined(RT_OS_DARWIN)
      vmsvga3dCocoaDestroyViewAndContext(pContext->cocoaView, pContext->cocoaContext);
