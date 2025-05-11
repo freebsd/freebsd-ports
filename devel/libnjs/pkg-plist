@@ -5,6 +5,8 @@ include/njs_array.h
 include/njs_array_buffer.h
 include/njs_assert.h
 include/njs_async.h
+include/njs_atom.h
+include/njs_atom_defs.h
 include/njs_auto_config.h
 include/njs_boolean.h
 include/njs_buffer.h
@@ -24,7 +26,6 @@ include/njs_generator.h
 include/njs_iterator.h
 include/njs_json.h
 include/njs_lexer.h
-include/njs_lexer_tables.h
 include/njs_lvlhsh.h
 include/njs_main.h
 include/njs_malloc.h
@@ -34,7 +35,6 @@ include/njs_mp.h
 include/njs_murmur_hash.h
 include/njs_number.h
 include/njs_object.h
-include/njs_object_hash.h
 include/njs_object_prop_declare.h
 include/njs_parser.h
 include/njs_promise.h
