@@ -54,6 +54,7 @@
 %%SITE_PERL%%/URI/sftp.pm
 %%SITE_PERL%%/URI/sip.pm
 %%SITE_PERL%%/URI/sips.pm
+%%SITE_PERL%%/URI/smb.pm
 %%SITE_PERL%%/URI/snews.pm
 %%SITE_PERL%%/URI/ssh.pm
 %%SITE_PERL%%/URI/telnet.pm
@@ -76,3 +77,4 @@
 %%PERL5_MAN3%%/URI::icaps.3.gz
 %%PERL5_MAN3%%/URI::ldap.3.gz
 %%PERL5_MAN3%%/URI::otpauth.3.gz
+%%PERL5_MAN3%%/URI::smb.3.gz
