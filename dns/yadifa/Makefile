@@ -1,6 +1,6 @@
 PORTNAME=	yadifa
-DISTVERSION=	2.6.7
-DISTVERSIONSUFFIX=	-11259
+DISTVERSION=	3.0.2
+DISTVERSIONSUFFIX=	-11672
 CATEGORIES=	dns
 MASTER_SITES=	https://www.yadifa.eu/sites/default/files/releases/ \
 		https://dns.company/downloads/yadifa/
@@ -12,7 +12,7 @@ WWW=		https://www.yadifa.eu/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 cpe libtool ssl
+USES=		autoreconf compiler:c11 cpe libtool ssl
 USE_RC_SUBR=	${PORTNAME}d
 
 GNU_CONFIGURE=	yes
