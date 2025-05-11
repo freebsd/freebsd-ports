@@ -8,10 +8,12 @@ COMMENT=	Persistent key-value database with built-in net interface
 WWW=		https://redis.io/
 
 LICENSE=	AGPLv3 RSALv2 SSPLv1
-LICENSE_COMB=	dual
+LICENSE_COMB=	multi
+LICENSE_NAME_AGPLv3=	GNU Affero General Public License v3
 LICENSE_NAME_RSALv2=	Redis Source Available License v2
 LICENSE_NAME_SSPLv1=	Server Side Public License v1
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_PERMS_AGPLv3=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_RSALv2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
