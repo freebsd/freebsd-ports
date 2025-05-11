@@ -1,8 +1,8 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.11.2
+DISTVERSION=	4.12.0
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/35/libraries/sources/:wazuh_sources \
+MASTER_SITES=	https://packages.wazuh.com/deps/40/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
 PKGNAMESUFFIX=	-manager
 DISTFILES=	${EXTERNAL_DISTFILES} \
@@ -49,7 +49,7 @@ EXTERNAL_DISTFILES=	audit-userspace.tar.gz:wazuh_sources \
 			bzip2.tar.gz:wazuh_sources \
 			cJSON.tar.gz:wazuh_sources \
 			cpp-httplib.tar.gz:wazuh_sources \
-			cpython-3.11.11.tar.gz:wazuh_cache \
+			cpython-3.11.12.tar.gz:wazuh_cache \
 			curl.tar.gz:wazuh_sources \
 			flatbuffers.tar.gz:wazuh_sources \
 			googletest.tar.gz:wazuh_sources \
@@ -139,7 +139,7 @@ WAZUHMOD770=	/etc/decoders /etc/lists /etc/lists/amazon /etc/rootcheck \
 WAZUHPREFIX=	/var/ossec
 
 WZPYTHONWHEELS=	cffi-1.15.1-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		cryptography-43.0.1-cp37-abi3-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		cryptography-44.0.1-cp37-abi3-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		greenlet-2.0.2-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		grpcio-1.69.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		lazy_object_proxy-1.10.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
@@ -163,16 +163,16 @@ IGNORE=		FreeBSD ${OSVERSION} ${ARCH} is not supported
 .endif
 
 .if ${ARCH} == "aarch64"
-FBSD14_PATCH_LEVEL=     _p2
+FBSD14_PATCH_LEVEL=     _p3
 .endif
 
 .if ${ARCH} != "aarch64"
-FBSD13_PATCH_LEVEL=	_p3
+FBSD13_PATCH_LEVEL=	_p1
 FBSD14_PATCH_LEVEL=	_p1
 .endif
 
 .if ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
-FBSD_VERSION_BASE=freebsd_13_4_release${FBSD13_PATCH_LEVEL}
+FBSD_VERSION_BASE=freebsd_13_5_release${FBSD13_PATCH_LEVEL}
 FBSD_MAJOR_VERSION=13
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd13-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
@@ -376,6 +376,8 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/src/wazuh_modules/syscollector/build/lib/libsyscollector.so ${STAGEDIR}${WAZUHPREFIX}/lib
 
 	${INSTALL_DATA} ${WRKSRC}/src/wazuh_modules/vulnerability_scanner/indexer/template/index-template.json ${STAGEDIR}${WAZUHPREFIX}/templates/vd_states_template.json
+
+	${INSTALL_DATA} ${WRKSRC}/VERSION.json ${STAGEDIR}${WAZUHPREFIX}
 
 	cd ${WRKSRC}/src/ && ${SETENV} ${MAKE_ENV} STAGEDIR=${STAGEDIR} \
 		${MAKE_CMD} install_python ${MAKE_ARGS}

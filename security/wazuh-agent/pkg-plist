@@ -1,6 +1,7 @@
 @mode 750
 @owner root
 @group wazuh
+/var/ossec/VERSION.json
 /var/ossec/active-response/bin/default-firewall-drop
 /var/ossec/active-response/bin/disable-account
 /var/ossec/active-response/bin/firewall-drop
@@ -114,6 +115,7 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/aix/localfile-commands.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/aix/syscheck.agent.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/aix/wodle-syscollector.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/almalinux/10/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/almalinux/8/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/almalinux/9/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/almalinux/sca.files
@@ -123,6 +125,7 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/amzn/2023/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/bsd/localfile-commands.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/bsd/wodle-syscollector.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/10/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/5/rootcheck.agent.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/5/rootcheck.manager.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/5/sca.files
@@ -173,6 +176,7 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/32/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/33/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/34/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/41/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/rootcheck.agent.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/rootcheck.manager.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/sca.files
@@ -208,6 +212,7 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/wodle-syscollector.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/wodle-vulnerability-detection.manager.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ol/9/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/10/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/5/rootcheck.agent.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/5/rootcheck.manager.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/5/sca.files
@@ -258,6 +263,7 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/18/04/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/20/04/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/22/04/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/24/04/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/rootcheck.agent.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/rootcheck.manager.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/sca.files
@@ -279,6 +285,7 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/xp/profile.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/xp/syscheck.template
 /var/ossec/packages_files/agent_installation_scripts/gen_ossec.sh
+/var/ossec/packages_files/agent_installation_scripts/sca/almalinux/cis_alma_linux_10.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/almalinux/cis_alma_linux_8.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/almalinux/cis_alma_linux_9.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/amazon/cis_amazon_linux_1.yml
@@ -295,6 +302,7 @@
 /var/ossec/packages_files/agent_installation_scripts/sca/applications/cis_sqlserver_2017.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/applications/cis_sqlserver_2019.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/applications/web_vulnerabilities.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/centos/10/cis_centos10_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/centos/6/cis_centos6_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/centos/7/cis_centos7_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/centos/8/cis_centos8_linux.yml
@@ -318,13 +326,14 @@
 /var/ossec/packages_files/agent_installation_scripts/sca/freebsd/cis_freebsd13.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/freebsd/cis_freebsd14.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/freebsd/cis_freebsd15.yml
-/var/ossec/packages_files/agent_installation_scripts/sca/generic/sca_unix_audit.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/generic/sca_distro_independent_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/hpux/cis_hpux_11i.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/hpux/cis_hpux_11i_bastille.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/mongodb/cis_mongodb_36.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/nginx/cis_nginx_1.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/ol/9/cis_oracle_linux_9.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/oracledb/cis_oracle_database_19c.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/rhel/10/cis_rhel10_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/rhel/5/cis_rhel5_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/rhel/6/cis_rhel6_linux.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/rhel/7/cis_rhel7_linux.yml
@@ -342,6 +351,7 @@
 /var/ossec/packages_files/agent_installation_scripts/sca/ubuntu/cis_ubuntu18-04.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/ubuntu/cis_ubuntu20-04.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/ubuntu/cis_ubuntu22-04.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/ubuntu/cis_ubuntu24-04.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win10_enterprise.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win11_enterprise.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2012_non_r2.yml
@@ -349,6 +359,7 @@
 /var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2016.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2019.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2022.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/windows/cis_win2025.yml
 /var/ossec/packages_files/agent_installation_scripts/src/init/adduser.sh
 /var/ossec/packages_files/agent_installation_scripts/src/init/darwin-addusers.sh
 /var/ossec/packages_files/agent_installation_scripts/src/init/darwin-delete-oldusers.sh
@@ -386,7 +397,7 @@
 @owner root
 @group wazuh
 /var/ossec/queue/syscollector/norm_config.json
-/var/ossec/ruleset/sca/sca_unix_audit.yml
+/var/ossec/ruleset/sca/sca_distro_independent_linux.yml
 @mode 750
 @owner root
 @group wazuh
@@ -425,6 +436,7 @@
 @group wazuh
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/HP-UX
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/aix
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/almalinux/10
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/almalinux/8
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/almalinux/9
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/almalinux
@@ -434,6 +446,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/amzn/2023
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/amzn
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/bsd
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/10
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/5
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/6
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/7
@@ -463,11 +476,13 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/32
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/33
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/34
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora/41
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/fedora
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic/localfile-logs
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/generic
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ol/9
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ol
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/10
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/5
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/6
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/rhel/7
@@ -501,6 +516,8 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/20
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/22/04
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/22
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/24/04
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu/24
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/ubuntu
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/10
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/windows/2003
@@ -522,6 +539,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/almalinux
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/amazon
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/applications
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/centos/10
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/centos/6
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/centos/7
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/centos/8
@@ -546,6 +564,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/ol/9
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/ol
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/oracledb
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/rhel/10
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/rhel/5
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/rhel/6
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/rhel/7

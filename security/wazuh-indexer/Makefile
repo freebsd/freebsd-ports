@@ -1,5 +1,5 @@
 PORTNAME=	wazuh
-PORTVERSION=	4.11.2
+PORTVERSION=	4.12.0
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/${PORTNAME}/
 PKGNAMESUFFIX=	-indexer
@@ -12,7 +12,7 @@ WWW=		https://wazuh.com/
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/lib/opensearch/bin/opensearch:textproc/opensearch216
+RUN_DEPENDS=	${LOCALBASE}/lib/opensearch/bin/opensearch:textproc/opensearch219
 
 NO_BUILD=	yes
 

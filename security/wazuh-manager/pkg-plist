@@ -1,6 +1,7 @@
 @mode 750
 @owner root
 @group wazuh
+/var/ossec/VERSION.json
 /var/ossec/active-response/bin/default-firewall-drop
 /var/ossec/active-response/bin/disable-account
 /var/ossec/active-response/bin/firewall-drop
@@ -3154,9 +3155,9 @@
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib-dynload/xxlimited_35%%PYTHON_EXT_SUFFIX%%.so
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib-dynload/zlib%%PYTHON_EXT_SUFFIX%%.so
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-/var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/Grammar%%PYTHON_VER%%.11.final.0.pickle
+/var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/Grammar%%PYTHON_VER%%.12.final.0.pickle
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-/var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar%%PYTHON_VER%%.11.final.0.pickle
+/var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar%%PYTHON_VER%%.12.final.0.pickle
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/__init__.py
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/__main__.py
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -4556,13 +4557,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/streams/tls.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/to_process.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/to_thread.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.12.0.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.12.0.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.12.0.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.12.0.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.12.0.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.12.0.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.12.0.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -8497,15 +8498,15 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/content_size_limit_asgi/errors.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/content_size_limit_asgi/logger.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/content_size_limit_asgi/middleware.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-43.0.1.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-43.0.1.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-43.0.1.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-43.0.1.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-43.0.1.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-43.0.1.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-43.0.1.dist-info/licenses/LICENSE
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-43.0.1.dist-info/licenses/LICENSE.APACHE
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-43.0.1.dist-info/licenses/LICENSE.BSD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-44.0.1.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-44.0.1.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-44.0.1.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-44.0.1.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-44.0.1.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-44.0.1.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-44.0.1.dist-info/licenses/LICENSE
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-44.0.1.dist-info/licenses/LICENSE.APACHE
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-44.0.1.dist-info/licenses/LICENSE.BSD
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/__about__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/__pycache__/__about__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -8713,6 +8714,9 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__pycache__/argon2%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__pycache__/argon2%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__pycache__/argon2%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__pycache__/concatkdf%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__pycache__/concatkdf%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__pycache__/concatkdf%%PYTHON_EXT_SUFFIX%%.pyc
@@ -8731,6 +8735,7 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__pycache__/x963kdf%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__pycache__/x963kdf%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__pycache__/x963kdf%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/argon2.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/concatkdf.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/hkdf.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/kbkdf.py
@@ -11635,12 +11640,12 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_cloud_storage-1.39.0.dist-info/namespace_packages.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_cloud_storage-1.39.0.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c-1.1.2.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c-1.1.2.dist-info/LICENSE
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c-1.1.2.dist-info/METADATA
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c-1.1.2.dist-info/RECORD
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c-1.1.2.dist-info/REQUESTED
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c-1.1.2.dist-info/WHEEL
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c-1.1.2.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c-1.1.2.dist-info/licenses/LICENSE
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c-1.1.2.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c-1.1.2.dist-info/zip-safe
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c/__config__.py
@@ -12946,14 +12951,14 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/jwt/types.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/jwt/utils.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/jwt/warnings.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy-1.10.0.dist-info/AUTHORS.rst
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy-1.10.0.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy-1.10.0.dist-info/LICENSE
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy-1.10.0.dist-info/METADATA
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy-1.10.0.dist-info/RECORD
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy-1.10.0.dist-info/REQUESTED
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy-1.10.0.dist-info/WHEEL
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy-1.10.0.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy-1.10.0.dist-info/licenses/AUTHORS.rst
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy-1.10.0.dist-info/licenses/LICENSE
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy-1.10.0.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -14268,12 +14273,12 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/more_itertools/recipes.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/more_itertools/recipes.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict-5.2.0.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict-5.2.0.dist-info/LICENSE
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict-5.2.0.dist-info/METADATA
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict-5.2.0.dist-info/RECORD
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict-5.2.0.dist-info/REQUESTED
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict-5.2.0.dist-info/WHEEL
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict-5.2.0.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict-5.2.0.dist-info/licenses/LICENSE
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict-5.2.0.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict/__init__.pyi
@@ -20967,13 +20972,30 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_json_logger-2.0.2.dist-info/WHEEL
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_json_logger-2.0.2.dist-info/direct_url.json
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_json_logger-2.0.2.dist-info/top_level.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.9.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.9.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.9.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.9.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.9.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.9.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.9.dist-info/licenses/LICENSE.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.20.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.20.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.20.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.20.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.20.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.20.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.20.dist-info/licenses/LICENSE.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__init__.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__/decoders%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__/decoders%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__/decoders%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__/exceptions%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__/exceptions%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__/exceptions%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__/multipart%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__/multipart%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__/multipart%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/decoders.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/exceptions.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/multipart.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/py.typed
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pythonjsonlogger/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pythonjsonlogger/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pythonjsonlogger/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -21630,12 +21652,12 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyximport/pyxbuild.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyximport/pyximport.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/LICENSE
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/METADATA
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/RECORD
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/REQUESTED
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/WHEEL
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/licenses/LICENSE
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing-0.31.1.dist-info/INSTALLER
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing-0.31.1.dist-info/METADATA
@@ -21871,6 +21893,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rsa/randnum.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rsa/transform.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rsa/util.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rust/Cargo.toml
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rust/cryptography-cffi/Cargo.toml
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rust/cryptography-keepalive/Cargo.toml
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rust/cryptography-key-parsing/Cargo.toml
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rust/cryptography-openssl/Cargo.toml
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rust/cryptography-x509-verification/Cargo.toml
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rust/cryptography-x509/Cargo.toml
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/s3transfer-0.10.2.dist-info/INSTALLER
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/s3transfer-0.10.2.dist-info/LICENSE.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/s3transfer-0.10.2.dist-info/METADATA
@@ -21997,15 +22026,14 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/secure/headers.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/secure/py.typed
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/secure/secure.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-75.8.0.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-75.8.0.dist-info/LICENSE
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-75.8.0.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-75.8.0.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-75.8.0.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-75.8.0.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-75.8.0.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-75.8.0.dist-info/entry_points.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-75.8.0.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-80.3.1.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-80.3.1.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-80.3.1.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-80.3.1.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-80.3.1.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-80.3.1.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-80.3.1.dist-info/entry_points.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-80.3.1.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -22034,6 +22062,9 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/_reqs%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/_reqs%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/_reqs%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/_scripts%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/_scripts%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/_scripts%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/_shutil%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/_shutil%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/_shutil%%PYTHON_EXT_SUFFIX%%.pyc
@@ -22085,12 +22116,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/namespaces%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/namespaces%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/namespaces%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/package_index%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/package_index%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/package_index%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/sandbox%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/sandbox%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/sandbox%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/unicode_utils%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/unicode_utils%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/__pycache__/unicode_utils%%PYTHON_EXT_SUFFIX%%.pyc
@@ -22283,10 +22308,58 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compat/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compat/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compat/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compat/__pycache__/numpy%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compat/__pycache__/numpy%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compat/__pycache__/numpy%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compat/__pycache__/py39%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compat/__pycache__/py39%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compat/__pycache__/py39%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compat/numpy.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compat/py39.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/base%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/base%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/base%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/cygwin%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/cygwin%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/cygwin%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/errors%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/errors%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/errors%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/msvc%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/msvc%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/msvc%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/unix%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/unix%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/unix%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/zos%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/zos%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__/zos%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/base.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/cygwin.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/errors.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/msvc.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_base%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_base%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_base%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_cygwin%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_cygwin%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_cygwin%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_mingw%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_mingw%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_mingw%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_msvc%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_msvc%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_msvc%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_unix%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_unix%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__/test_unix%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/test_base.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/test_cygwin.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/test_mingw.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/test_msvc.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/test_unix.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/unix.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/zos.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/core.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/cygwinccompiler.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/debug.py
@@ -22335,9 +22408,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_build_scripts%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_build_scripts%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_build_scripts%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_ccompiler%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_ccompiler%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_ccompiler%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_check%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_check%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_check%%PYTHON_EXT_SUFFIX%%.pyc
@@ -22353,9 +22423,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_core%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_core%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_core%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_cygwinccompiler%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_cygwinccompiler%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_cygwinccompiler%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_dir_util%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_dir_util%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_dir_util%%PYTHON_EXT_SUFFIX%%.pyc
@@ -22389,15 +22456,9 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_log%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_log%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_log%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_mingwccompiler%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_mingwccompiler%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_mingwccompiler%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_modified%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_modified%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_modified%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_msvccompiler%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_msvccompiler%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_msvccompiler%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_sdist%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_sdist%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_sdist%%PYTHON_EXT_SUFFIX%%.pyc
@@ -22410,9 +22471,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_text_file%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_text_file%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_text_file%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_unixccompiler%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_unixccompiler%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_unixccompiler%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_util%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_util%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__/test_util%%PYTHON_EXT_SUFFIX%%.pyc
@@ -22443,13 +22501,11 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_build_ext.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_build_py.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_build_scripts.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_ccompiler.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_check.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_clean.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_cmd.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_config_cmd.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_core.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_cygwinccompiler.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_dir_util.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_dist.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_extension.py
@@ -22461,14 +22517,11 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_install_lib.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_install_scripts.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_log.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_mingwccompiler.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_modified.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_msvccompiler.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_sdist.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_spawn.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_sysconfig.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_text_file.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_unixccompiler.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_util.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_version.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/test_versionpredicate.py
@@ -22486,6 +22539,7 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_normalization.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_path.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_reqs.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_scripts.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_shutil.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_static.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/__pycache__/typing_extensions%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -22912,13 +22966,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/typing_extensions-4.12.2.dist-info/RECORD
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/typing_extensions-4.12.2.dist-info/WHEEL
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/typing_extensions.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.43.0.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.43.0.dist-info/LICENSE.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.43.0.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.43.0.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.43.0.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.43.0.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.43.0.dist-info/entry_points.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.45.1.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.45.1.dist-info/LICENSE.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.45.1.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.45.1.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.45.1.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.45.1.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.45.1.dist-info/entry_points.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__main__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -22927,6 +22981,9 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__pycache__/__main__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__pycache__/__main__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__pycache__/__main__%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__pycache__/_bdist_wheel%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__pycache__/_bdist_wheel%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__pycache__/_bdist_wheel%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__pycache__/_setuptools_logging%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__pycache__/_setuptools_logging%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__pycache__/_setuptools_logging%%PYTHON_EXT_SUFFIX%%.pyc
@@ -22945,6 +23002,7 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__pycache__/wheelfile%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__pycache__/wheelfile%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/__pycache__/wheelfile%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/_bdist_wheel.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/_setuptools_logging.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/bdist_wheel.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/cli/__init__.py
@@ -22974,6 +23032,9 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/vendored/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/vendored/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/vendored/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/vendored/packaging/LICENSE
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/vendored/packaging/LICENSE.APACHE
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/vendored/packaging/LICENSE.BSD
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/vendored/packaging/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/vendored/packaging/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/vendored/packaging/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -23239,8 +23300,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/monkey.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/msvc.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/namespaces.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/package_index.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/sandbox.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/script (dev).tmpl
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/script.tmpl
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__init__.py
@@ -23265,9 +23324,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/script-with-bom%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/script-with-bom%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/script-with-bom%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/server%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/server%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/server%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_archive_util%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_archive_util%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_archive_util%%PYTHON_EXT_SUFFIX%%.pyc
@@ -23316,9 +23372,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_distutils_adoption%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_distutils_adoption%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_distutils_adoption%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_easy_install%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_easy_install%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_easy_install%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_editable_install%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_editable_install%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_editable_install%%PYTHON_EXT_SUFFIX%%.pyc
@@ -23349,12 +23402,9 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_namespaces%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_namespaces%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_namespaces%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_packageindex%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_packageindex%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_packageindex%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_sandbox%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_sandbox%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_sandbox%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_scripts%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_scripts%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_scripts%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_sdist%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_sdist%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/__pycache__/test_sdist%%PYTHON_EXT_SUFFIX%%.pyc
@@ -23441,15 +23491,18 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/integration/__pycache__/helpers%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/integration/__pycache__/helpers%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/integration/__pycache__/helpers%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/integration/__pycache__/test_pbr%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/integration/__pycache__/test_pbr%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/integration/__pycache__/test_pbr%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/integration/__pycache__/test_pip_install_sdist%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/integration/__pycache__/test_pip_install_sdist%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/integration/__pycache__/test_pip_install_sdist%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/integration/helpers.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/integration/test_pbr.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/integration/test_pip_install_sdist.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/mod_with_constant.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/namespaces.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/script-with-bom.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/server.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_archive_util.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_bdist_deprecations.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_bdist_egg.py
@@ -23466,7 +23519,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_dist.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_dist_info.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_distutils_adoption.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_easy_install.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_editable_install.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_egg_info.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_extern.py
@@ -23477,8 +23529,7 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_logging.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_manifest.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_namespaces.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_packageindex.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_sandbox.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_scripts.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_sdist.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_setopt.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/test_setuptools.py
@@ -24563,13 +24614,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/sqlalchemy/util/tool_support.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/sqlalchemy/util/topological.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/sqlalchemy/util/typing.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.39.2.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.39.2.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.39.2.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.39.2.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.39.2.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.39.2.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.39.2.dist-info/licenses/LICENSE.md
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.42.0.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.42.0.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.42.0.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.42.0.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.42.0.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.42.0.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.42.0.dist-info/licenses/LICENSE.md
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -24721,6 +24772,10 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tabulate-0.8.9.dist-info/entry_points.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tabulate-0.8.9.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tabulate.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools/env/wazuh-manager/xml/__pycache__/xml_parser%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools/env/wazuh-manager/xml/__pycache__/xml_parser%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools/env/wazuh-manager/xml/__pycache__/xml_parser%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools/env/wazuh-manager/xml/xml_parser.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/typing_extensions-4.12.2.dist-info/INSTALLER
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/typing_extensions-4.12.2.dist-info/LICENSE
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/typing_extensions-4.12.2.dist-info/METADATA
@@ -25133,13 +25188,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/server.pyx
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/sslproto.pxd
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/sslproto.pyx
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.12.0.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.12.0.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.12.0.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.12.0.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.12.0.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.12.0.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.12.0.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__main__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -25501,13 +25556,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket_client-0.57.0.dist-info/WHEEL
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket_client-0.57.0.dist-info/direct_url.json
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket_client-0.57.0.dist-info/top_level.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.0.3.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.0.3.dist-info/LICENSE.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.0.3.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.0.3.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.0.3.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.0.3.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.0.3.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info/LICENSE.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info/direct_url.json
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -25591,24 +25646,15 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/__pycache__/structures%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/__pycache__/structures%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/accept.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/accept.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/auth.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/cache_control.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/cache_control.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/csp.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/csp.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/etag.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/etag.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/file_storage.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/file_storage.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/headers.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/headers.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/mixins.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/mixins.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/range.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/range.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/structures.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/datastructures/structures.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/debug/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/debug/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/debug/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -30485,6 +30531,7 @@
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/aix/localfile-commands.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/aix/syscheck.agent.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/aix/wodle-syscollector.template
+/var/ossec/packages_files/manager_installation_scripts/etc/templates/config/almalinux/10/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/almalinux/8/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/almalinux/9/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/almalinux/sca.files
@@ -30494,6 +30541,7 @@
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/amzn/2023/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/bsd/localfile-commands.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/bsd/wodle-syscollector.template
+/var/ossec/packages_files/manager_installation_scripts/etc/templates/config/centos/10/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/centos/5/rootcheck.agent.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/centos/5/rootcheck.manager.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/centos/5/sca.files
@@ -30544,6 +30592,7 @@
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/fedora/32/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/fedora/33/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/fedora/34/sca.files
+/var/ossec/packages_files/manager_installation_scripts/etc/templates/config/fedora/41/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/fedora/rootcheck.agent.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/fedora/rootcheck.manager.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/fedora/sca.files
@@ -30579,6 +30628,7 @@
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/generic/wodle-syscollector.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/generic/wodle-vulnerability-detection.manager.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ol/9/sca.files
+/var/ossec/packages_files/manager_installation_scripts/etc/templates/config/rhel/10/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/rhel/5/rootcheck.agent.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/rhel/5/rootcheck.manager.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/rhel/5/sca.files
@@ -30629,6 +30679,7 @@
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ubuntu/18/04/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ubuntu/20/04/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ubuntu/22/04/sca.files
+/var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ubuntu/24/04/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ubuntu/rootcheck.agent.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ubuntu/rootcheck.manager.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ubuntu/sca.files
@@ -30650,6 +30701,7 @@
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/windows/xp/profile.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/windows/xp/syscheck.template
 /var/ossec/packages_files/manager_installation_scripts/gen_ossec.sh
+/var/ossec/packages_files/manager_installation_scripts/sca/almalinux/cis_alma_linux_10.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/almalinux/cis_alma_linux_8.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/almalinux/cis_alma_linux_9.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/amazon/cis_amazon_linux_1.yml.disabled
@@ -30666,6 +30718,7 @@
 /var/ossec/packages_files/manager_installation_scripts/sca/applications/cis_sqlserver_2017.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/applications/cis_sqlserver_2019.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/applications/web_vulnerabilities.yml.disabled
+/var/ossec/packages_files/manager_installation_scripts/sca/centos/10/cis_centos10_linux.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/centos/6/cis_centos6_linux.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/centos/7/cis_centos7_linux.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/centos/8/cis_centos8_linux.yml.disabled
@@ -30689,13 +30742,14 @@
 /var/ossec/packages_files/manager_installation_scripts/sca/freebsd/cis_freebsd13.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/freebsd/cis_freebsd14.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/freebsd/cis_freebsd15.yml.disabled
-/var/ossec/packages_files/manager_installation_scripts/sca/generic/sca_unix_audit.yml.disabled
+/var/ossec/packages_files/manager_installation_scripts/sca/generic/sca_distro_independent_linux.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/hpux/cis_hpux_11i.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/hpux/cis_hpux_11i_bastille.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/mongodb/cis_mongodb_36.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/nginx/cis_nginx_1.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/ol/9/cis_oracle_linux_9.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/oracledb/cis_oracle_database_19c.yml.disabled
+/var/ossec/packages_files/manager_installation_scripts/sca/rhel/10/cis_rhel10_linux.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/rhel/5/cis_rhel5_linux.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/rhel/6/cis_rhel6_linux.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/rhel/7/cis_rhel7_linux.yml.disabled
@@ -30713,6 +30767,7 @@
 /var/ossec/packages_files/manager_installation_scripts/sca/ubuntu/cis_ubuntu18-04.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/ubuntu/cis_ubuntu20-04.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/ubuntu/cis_ubuntu22-04.yml.disabled
+/var/ossec/packages_files/manager_installation_scripts/sca/ubuntu/cis_ubuntu24-04.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/windows/cis_win10_enterprise.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/windows/cis_win11_enterprise.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/windows/cis_win2012_non_r2.yml.disabled
@@ -30720,6 +30775,7 @@
 /var/ossec/packages_files/manager_installation_scripts/sca/windows/cis_win2016.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/windows/cis_win2019.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/sca/windows/cis_win2022.yml.disabled
+/var/ossec/packages_files/manager_installation_scripts/sca/windows/cis_win2025.yml.disabled
 /var/ossec/packages_files/manager_installation_scripts/src/init/adduser.sh
 /var/ossec/packages_files/manager_installation_scripts/src/init/darwin-addusers.sh
 /var/ossec/packages_files/manager_installation_scripts/src/init/darwin-delete-oldusers.sh
@@ -31044,6 +31100,7 @@
 /var/ossec/ruleset/rules/0997-maltiverse_rules.xml
 /var/ossec/ruleset/rules/0998-aws-security-hub-rules.xml
 /var/ossec/ruleset/rules/1000-freebsd_rules.xml
+/var/ossec/ruleset/sca/cis_alma_linux_10.yml.disabled
 /var/ossec/ruleset/sca/cis_alma_linux_8.yml.disabled
 /var/ossec/ruleset/sca/cis_alma_linux_9.yml.disabled
 /var/ossec/ruleset/sca/cis_amazon_linux_1.yml.disabled
@@ -31060,6 +31117,7 @@
 /var/ossec/ruleset/sca/cis_apple_macOS_13.x.yml.disabled
 /var/ossec/ruleset/sca/cis_apple_macOS_14.x.yml.disabled
 /var/ossec/ruleset/sca/cis_apple_macOS_15.x.yml.disabled
+/var/ossec/ruleset/sca/cis_centos10_linux.yml.disabled
 /var/ossec/ruleset/sca/cis_centos6_linux.yml.disabled
 /var/ossec/ruleset/sca/cis_centos7_linux.yml.disabled
 /var/ossec/ruleset/sca/cis_centos8_linux.yml.disabled
@@ -31083,6 +31141,7 @@
 /var/ossec/ruleset/sca/cis_oracle_database_19c.yml.disabled
 /var/ossec/ruleset/sca/cis_oracle_linux_9.yml.disabled
 /var/ossec/ruleset/sca/cis_postgre-sql-13.yml.disabled
+/var/ossec/ruleset/sca/cis_rhel10_linux.yml.disabled
 /var/ossec/ruleset/sca/cis_rhel5_linux.yml.disabled
 /var/ossec/ruleset/sca/cis_rhel6_linux.yml.disabled
 /var/ossec/ruleset/sca/cis_rhel7_linux.yml.disabled
@@ -31105,6 +31164,7 @@
 /var/ossec/ruleset/sca/cis_ubuntu18-04.yml.disabled
 /var/ossec/ruleset/sca/cis_ubuntu20-04.yml.disabled
 /var/ossec/ruleset/sca/cis_ubuntu22-04.yml.disabled
+/var/ossec/ruleset/sca/cis_ubuntu24-04.yml.disabled
 /var/ossec/ruleset/sca/cis_win10_enterprise.yml.disabled
 /var/ossec/ruleset/sca/cis_win11_enterprise.yml.disabled
 /var/ossec/ruleset/sca/cis_win2012_non_r2.yml.disabled
@@ -31112,7 +31172,8 @@
 /var/ossec/ruleset/sca/cis_win2016.yml.disabled
 /var/ossec/ruleset/sca/cis_win2019.yml.disabled
 /var/ossec/ruleset/sca/cis_win2022.yml.disabled
-/var/ossec/ruleset/sca/sca_unix_audit.yml.disabled
+/var/ossec/ruleset/sca/cis_win2025.yml.disabled
+/var/ossec/ruleset/sca/sca_distro_independent_linux.yml.disabled
 /var/ossec/ruleset/sca/web_vulnerabilities.yml.disabled
 @(root,wazuh,440) /var/ossec/templates/vd_states_template.json
 @(root,wazuh,660) /var/ossec/var/db/mitre.db
@@ -31336,7 +31397,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/models
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/spec
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.11.2.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.12.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref-3.7.2.dist-info
@@ -32342,8 +32403,8 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/x509/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/x509
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-43.0.1.dist-info/licenses
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-43.0.1.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-44.0.1.dist-info/licenses
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-44.0.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/dateutil/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/dateutil/parser/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/dateutil/parser
@@ -32574,6 +32635,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_cloud_storage-1.39.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c-1.1.2.dist-info/licenses
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_crc32c-1.1.2.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/google_resumable_media-1.3.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/googleapis_common_protos-1.51.0.dist-info
@@ -32683,6 +32745,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/jwt
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy-1.10.0.dist-info/licenses
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/lazy_object_proxy-1.10.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/libcst/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/libcst/_nodes/__pycache__
@@ -32757,6 +32820,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict/_multilib
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict-5.2.0.dist-info/licenses
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multidict-5.2.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multipart/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/multipart
@@ -33156,8 +33220,10 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyparsing-2.4.7.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_dateutil-2.8.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_json_logger-2.0.2.dist-info
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.9.dist-info/licenses
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.9.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.20.dist-info/licenses
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.20.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pythonjsonlogger/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pythonjsonlogger
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pytz/__pycache__
@@ -33186,6 +33252,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pytz-2020.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyximport/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyximport
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info/licenses
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyyaml-6.0.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing/tests/__pycache__
@@ -33204,6 +33271,13 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rsa/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rsa
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rsa-4.7.2.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rust/cryptography-cffi
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rust/cryptography-keepalive
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rust/cryptography-key-parsing
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rust/cryptography-openssl
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rust/cryptography-x509
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rust/cryptography-x509-verification
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/rust
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/s3transfer/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/s3transfer
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/s3transfer-0.10.2.dist-info
@@ -33218,6 +33292,11 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/command
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compat/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compat
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/__pycache__
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests/__pycache__
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C/tests
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers/C
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/compilers
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/compat/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_distutils/tests/compat
@@ -33283,7 +33362,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/vendored/packaging
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel/vendored
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.43.0.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/wheel-0.45.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/zipp/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/zipp/compat/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/_vendor/zipp/compat
@@ -33313,7 +33392,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests/integration
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools/tests
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-75.8.0.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/setuptools-80.3.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/six-1.16.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/sniffio/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/sniffio/_tests/__pycache__
@@ -33372,9 +33451,14 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette/middleware/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette/middleware
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.39.2.dist-info/licenses
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.39.2.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.42.0.dist-info/licenses
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.42.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tabulate-0.8.9.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools/env/wazuh-manager/xml/__pycache__
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools/env/wazuh-manager/xml
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools/env/wazuh-manager
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools/env
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/typing_extensions-4.12.2.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/typing_inspect-0.7.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/urllib3/__pycache__
@@ -33424,7 +33508,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/rbac/default
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/rbac
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.11.2.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.12.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/tests/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/tests/data
@@ -33446,7 +33530,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/wrappers/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug/wrappers
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.0.3.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/werkzeug-3.1.3.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/xmltodict-0.12.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/yaml/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/yaml
@@ -33717,6 +33801,7 @@
 @dir /var/ossec/packages_files/manager_installation_scripts/databases
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/HP-UX
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/aix
+@dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/almalinux/10
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/almalinux/8
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/almalinux/9
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/almalinux
@@ -33726,6 +33811,7 @@
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/amzn/2023
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/amzn
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/bsd
+@dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/centos/10
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/centos/5
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/centos/6
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/centos/7
@@ -33755,11 +33841,13 @@
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/fedora/32
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/fedora/33
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/fedora/34
+@dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/fedora/41
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/fedora
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/generic/localfile-logs
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/generic
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ol/9
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ol
+@dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/rhel/10
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/rhel/5
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/rhel/6
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/rhel/7
@@ -33793,6 +33881,8 @@
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ubuntu/20
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ubuntu/22/04
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ubuntu/22
+@dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ubuntu/24/04
+@dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ubuntu/24
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/ubuntu
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/windows/10
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/windows/2003
@@ -33814,6 +33904,7 @@
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/almalinux
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/amazon
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/applications
+@dir /var/ossec/packages_files/manager_installation_scripts/sca/centos/10
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/centos/6
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/centos/7
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/centos/8
@@ -33838,6 +33929,7 @@
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/ol/9
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/ol
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/oracledb
+@dir /var/ossec/packages_files/manager_installation_scripts/sca/rhel/10
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/rhel/5
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/rhel/6
 @dir /var/ossec/packages_files/manager_installation_scripts/sca/rhel/7

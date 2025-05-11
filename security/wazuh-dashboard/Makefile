@@ -1,6 +1,6 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.11.2
+DISTVERSION=	4.12.0
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/${PORTNAME}/
 PKGNAMESUFFIX=  -dashboard
@@ -14,13 +14,13 @@ WWW=		https://github.com/wazuh/wazuh-dashboard-plugins
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/www/opensearch-dashboards/bin/opensearch-dashboards:textproc/opensearch-dashboards216
+RUN_DEPENDS=	${LOCALBASE}/www/opensearch-dashboards/bin/opensearch-dashboards:textproc/opensearch-dashboards219
 
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-OPENSEARCH_VERSION=	2.16.0
+OPENSEARCH_VERSION=	2.19.1
 ETCDIR=		${PREFIX}/etc/wazuh-dashboard
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-plugins
 

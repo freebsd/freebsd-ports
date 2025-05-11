@@ -1,5 +1,5 @@
---- src/Makefile	2025-01-08 01:15:05.000000000 -0800
-+++ src/Makefile	2025-01-14 19:17:44.081916000 -0800
+--- src/Makefile	2025-04-30 02:30:26.000000000 -0700
++++ src/Makefile	2025-05-09 19:40:18.856441000 -0700
 @@ -49,9 +49,11 @@
  
  HAS_CHECKMODULE = $(shell command -v checkmodule > /dev/null && echo YES)
@@ -12,7 +12,7 @@
  
  ARCH_FLAGS =
  
-@@ -109,7 +111,7 @@
+@@ -110,7 +112,7 @@
  USE_PRELUDE?=no
  USE_ZEROMQ?=no
  USE_GEOIP?=no
@@ -21,7 +21,7 @@
  USE_BIG_ENDIAN=no
  USE_AUDIT=no
  MINGW_HOST=unknown
-@@ -174,6 +176,8 @@
+@@ -175,6 +177,8 @@
  DEFINES+=-DUSER=\"${WAZUH_USER}\"
  DEFINES+=-DGROUPGLOBAL=\"${WAZUH_GROUP}\"
  
@@ -30,7 +30,7 @@
  ifneq (${TARGET},winagent)
  		DEFINES+=-D${uname_S}
  ifeq (${uname_S},Linux)
-@@ -268,10 +272,10 @@
+@@ -269,10 +273,10 @@
  ifeq (${uname_S},FreeBSD)
  		DEFINES+=-DFreeBSD
  		OSSEC_CFLAGS+=-pthread -I/usr/local/include
@@ -43,7 +43,7 @@
  		AR_LDFLAGS+=-L/usr/local/lib
  		AR_LDFLAGS+='-Wl,-rpath,$$ORIGIN/../../lib'
  		PRECOMPILED_OS:=freebsd
-@@ -433,7 +437,6 @@
+@@ -434,7 +438,6 @@
  
  OSSEC_CFLAGS+=${DEFINES}
  OSSEC_CFLAGS+=-pipe -Wall -Wextra -std=gnu99
@@ -51,7 +51,7 @@
  
  OSSEC_CFLAGS += ${CFLAGS}
  OSSEC_LDFLAGS += ${LDFLAGS}
-@@ -530,8 +533,8 @@
+@@ -531,8 +534,8 @@
  ifneq (,$(filter ${USE_INOTIFY},YES auto yes y Y 1))
  	DEFINES+=-DINOTIFY_ENABLED
  	ifeq (${uname_S},FreeBSD)
@@ -62,7 +62,7 @@
  		OSSEC_CFLAGS+=-I/usr/local/include
  	endif
  endif
-@@ -956,6 +959,8 @@
+@@ -957,6 +960,8 @@
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  else ifeq (${uname_S},Linux)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
@@ -71,7 +71,7 @@
  else ifeq (${uname_S},Darwin)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  endif
-@@ -1172,9 +1177,13 @@
+@@ -1186,9 +1191,13 @@
  	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-ldl -lpthread" ./configure --with-openssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-libpsl --without-brotli --without-nghttp2 --without-zstd
  endif
  else
@@ -85,16 +85,16 @@
  
  
  #### procps #########
-@@ -2263,7 +2272,7 @@
+@@ -2295,7 +2304,7 @@
  #### FIM ######
  
  wazuh-syscheckd: librootcheck.a libwazuh.a ${WAZUHEXT_LIB} build_shared_modules
--	cd syscheckd && mkdir -p build && cd build && cmake ${CMAKE_OPTS} -DCMAKE_C_FLAGS="${DEFINES} -pipe -Wall -Wextra -std=gnu99" ${SYSCHECK_TEST} ${SYSCHECK_RELEASE_TYPE} .. && ${MAKE}
+-	cd syscheckd && mkdir -p build && cd build && cmake ${SYSCHECK_OS} ${CMAKE_OPTS} -DCMAKE_C_FLAGS="${DEFINES} -pipe -Wall -Wextra -std=gnu99" ${SYSCHECK_TEST} ${SYSCHECK_RELEASE_TYPE} .. && ${MAKE}
 +	cd syscheckd && mkdir -p build && cd build && cmake ${CMAKE_OPTS} -DCMAKE_C_FLAGS="${DEFINES} ${OSSEC_CFLAGS} -pipe -Wall -Wextra -std=gnu99" -DCMAKE_EXE_LINKER_FLAGS="${OSSEC_LDFLAGS} ${OSSEC_LIBS}" ${SYSCHECK_TEST} ${SYSCHECK_RELEASE_TYPE} .. && ${MAKE}
  
  #### Monitor #######
  
-@@ -2441,7 +2450,7 @@
+@@ -2473,7 +2482,7 @@
  WPYTHON_DIR := ${INSTALLDIR}/framework/python
  OPTIMIZE_CPYTHON?=no
  WPYTHON_TAR=cpython.tar.gz
@@ -103,7 +103,7 @@
  
  ifneq (,$(filter ${OPTIMIZE_CPYTHON},YES yes y Y 1))
  CPYTHON_FLAGS=--enable-optimizations
-@@ -2455,7 +2464,7 @@
+@@ -2487,22 +2496,45 @@
  endif
  
  ifeq (,$(wildcard ${EXTERNAL_CPYTHON}/python))
@@ -112,7 +112,12 @@
  endif
  
  build_python: $(WAZUHEXT_LIB)
-@@ -2467,10 +2476,33 @@
+ 
+ install_python:
+ ifneq (,$(wildcard ${EXTERNAL_CPYTHON}))
+-	cd ${EXTERNAL_CPYTHON} && export WPATH_LIB=${INSTALLDIR}/lib && export SOURCE_PATH=${ROUTE_PATH} && export WAZUH_FFI_PATH=${EXTERNAL_LIBFFI} && ${MAKE} install
++	cd ${EXTERNAL_CPYTHON} && export WPATH_LIB=${INSTALLDIR}/lib && export SOURCE_PATH=${ROUTE_PATH} && export WAZUH_FFI_PATH=${EXTERNAL_LIBFFI} && export LD_LIBRARY_PATH=${ROUTE_PATH} && ${MAKE} install
+ else
  	mkdir -p ${WPYTHON_DIR}
  	cp external/${WPYTHON_TAR} ${WPYTHON_DIR}/${WPYTHON_TAR} && ${TAR} ${WPYTHON_DIR}/${WPYTHON_TAR} -C ${WPYTHON_DIR} && rm -rf ${WPYTHON_DIR}/${WPYTHON_TAR}
  endif
@@ -146,7 +151,7 @@
  install_dependencies: install_python
  ifneq (,$(wildcard ${EXTERNAL_CPYTHON}))
  	${WPYTHON_DIR}/bin/python3 -m pip install --upgrade pip --index-url=file://${ROUTE_PATH}/${EXTERNAL_CPYTHON}/Dependencies/simple
-@@ -2487,6 +2519,7 @@
+@@ -2519,6 +2551,7 @@
  
  install_mitre: install_python
  	cd ../tools/mitre && ${WPYTHON_DIR}/bin/python3 mitredb.py -d ${INSTALLDIR}/var/db/mitre.db
