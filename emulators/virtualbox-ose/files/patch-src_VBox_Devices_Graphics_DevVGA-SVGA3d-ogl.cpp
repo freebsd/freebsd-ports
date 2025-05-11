@@ -1,4 +1,4 @@
---- src/VBox/Devices/Graphics/DevVGA-SVGA3d-ogl.cpp.orig	2021-01-07 15:39:17 UTC
+--- src/VBox/Devices/Graphics/DevVGA-SVGA3d-ogl.cpp.orig	2024-01-11 12:18:21 UTC
 +++ src/VBox/Devices/Graphics/DevVGA-SVGA3d-ogl.cpp
 @@ -1189,7 +1189,7 @@ int vmsvga3dTerminate(PVGASTATECC pThisCC)
      RTSemEventDestroy(pState->WndRequestSem);
@@ -27,6 +27,24 @@
  
  
  /**
+@@ -3461,7 +3461,7 @@ int vmsvga3dContextDefineOgl(PVGASTATECC pThisCC, uint
+     return VINF_SUCCESS;
+ }
+ 
+-#if defined(RT_OS_LINUX)
++#if defined(RT_OS_FREEBSD) || defined(RT_OS_LINUX)
+ /*
+  * HW accelerated graphics output.
+  */
+@@ -3932,7 +3932,7 @@ int vmsvga3dBackSurfaceBlitToScreen(PVGASTATECC pThisC
+     return VINF_SUCCESS;
+ }
+ 
+-#else /* !RT_OS_LINUX */
++#else /* !RT_OS_FREEBSD && !RT_OS_LINUX */
+ 
+ int vmsvga3dBackDefineScreen(PVGASTATE pThis, PVGASTATECC pThisCC, VMSVGASCREENOBJECT *pScreen)
+ {
 @@ -4052,7 +4052,7 @@ static int vmsvga3dContextDestroyOgl(PVGASTATECC pThis
      AssertRC(rc);
  #elif defined(RT_OS_DARWIN)
