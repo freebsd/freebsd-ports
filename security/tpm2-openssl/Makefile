@@ -1,6 +1,5 @@
 PORTNAME=	tpm2-openssl
 DISTVERSION=	1.3.0
-PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/tpm2-software/tpm2-openssl/releases/download/${DISTVERSION}/
 
