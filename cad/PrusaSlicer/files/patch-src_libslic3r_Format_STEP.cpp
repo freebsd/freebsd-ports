@@ -1,6 +1,6 @@
---- src/libslic3r/Format/STEP.cpp.orig	2024-12-20 11:54:34 UTC
+--- src/libslic3r/Format/STEP.cpp.orig	2025-04-10 11:26:51 UTC
 +++ src/libslic3r/Format/STEP.cpp
-@@ -39,7 +39,7 @@ LoadStepFn get_load_step_fn()
+@@ -42,7 +42,7 @@ LoadStepFn get_load_step_fn()
  #endif
  
      if (!load_step_fn) {
@@ -9,7 +9,7 @@
  #ifdef _WIN32
          libpath /= "OCCTWrapper.dll";
          HMODULE module = LoadLibraryW(libpath.wstring().c_str());
-@@ -61,6 +61,7 @@ LoadStepFn get_load_step_fn()
+@@ -64,6 +64,7 @@ LoadStepFn get_load_step_fn()
  #elif __APPLE__
          load_step_fn = &load_step_internal;
  #else

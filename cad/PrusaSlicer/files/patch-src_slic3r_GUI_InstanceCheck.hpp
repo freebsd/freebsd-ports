@@ -1,6 +1,6 @@
---- src/slic3r/GUI/InstanceCheck.hpp.orig	2024-12-20 11:54:34 UTC
+--- src/slic3r/GUI/InstanceCheck.hpp.orig	2025-04-10 11:26:51 UTC
 +++ src/slic3r/GUI/InstanceCheck.hpp
-@@ -15,7 +15,7 @@
+@@ -16,7 +16,7 @@
  
  #include <boost/filesystem.hpp>
  
@@ -9,7 +9,7 @@
  #include <boost/thread.hpp>
  #include <mutex>
  #include <condition_variable>
-@@ -42,7 +42,7 @@ class MainFrame;
+@@ -44,7 +44,7 @@ class MainFrame;
  
  class MainFrame;
  

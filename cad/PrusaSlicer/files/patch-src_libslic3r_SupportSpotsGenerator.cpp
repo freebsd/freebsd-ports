@@ -1,6 +1,6 @@
---- src/libslic3r/SupportSpotsGenerator.cpp.orig	2024-12-20 11:54:34 UTC
+--- src/libslic3r/SupportSpotsGenerator.cpp.orig	2025-04-10 11:26:51 UTC
 +++ src/libslic3r/SupportSpotsGenerator.cpp
-@@ -1062,7 +1062,7 @@ SliceMappings update_active_object_parts(const Layer  
+@@ -1063,7 +1063,7 @@ SliceMappings update_active_object_parts(const Layer  
                  }
              }
              const float bottom_z = layer->bottom_z();

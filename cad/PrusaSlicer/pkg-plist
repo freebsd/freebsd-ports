@@ -3,6 +3,15 @@ bin/prusa-slicer
 lib/OCCTWrapper.so
 %%DATADIR%%/data/embossed_text.obj
 %%DATADIR%%/data/hints.ini
+%%DATADIR%%/data/printer_gantries/geometries.json
+%%DATADIR%%/data/printer_gantries/prusa3d_coreone_gantry.stl
+%%DATADIR%%/data/printer_gantries/prusa3d_ht90_actuator.stl
+%%DATADIR%%/data/printer_gantries/prusa3d_mini_gantry.stl
+%%DATADIR%%/data/printer_gantries/prusa3d_mk3s_gantry.stl
+%%DATADIR%%/data/printer_gantries/prusa3d_mk4_gantry.stl
+%%DATADIR%%/data/printer_gantries/prusa3d_mk4s_gantry.stl
+%%DATADIR%%/data/printer_gantries/prusa3d_xl_gantry.stl
+%%DATADIR%%/data/sla_support.svg
 %%DATADIR%%/fonts/NotoSans-Regular.ttf
 %%DATADIR%%/fonts/NotoSansCJK-Regular.ttc
 %%DATADIR%%/fonts/README.txt
@@ -274,6 +283,11 @@ lib/OCCTWrapper.so
 %%DATADIR%%/icons/sla_view_processed.svg
 %%DATADIR%%/icons/slice_all.svg
 %%DATADIR%%/icons/snap.svg
+%%DATADIR%%/icons/sphere_blueish.svg
+%%DATADIR%%/icons/sphere_cyan.svg
+%%DATADIR%%/icons/sphere_lightgray.svg
+%%DATADIR%%/icons/sphere_orange.svg
+%%DATADIR%%/icons/sphere_redish.svg
 %%DATADIR%%/icons/spin_dec.svg
 %%DATADIR%%/icons/spin_dec_act.svg
 %%DATADIR%%/icons/spin_inc.svg
@@ -289,6 +303,8 @@ lib/OCCTWrapper.so
 %%DATADIR%%/icons/support.svg
 %%DATADIR%%/icons/support_blocker.svg
 %%DATADIR%%/icons/support_enforcer.svg
+%%DATADIR%%/icons/support_structure.svg
+%%DATADIR%%/icons/support_structure_invisible.svg
 %%DATADIR%%/icons/svg_modifier.svg
 %%DATADIR%%/icons/svg_negative.svg
 %%DATADIR%%/icons/svg_part.svg
@@ -577,6 +593,8 @@ lib/OCCTWrapper.so
 %%DATADIR%%/profiles/Creality/sermoond1_bed.stl
 %%DATADIR%%/profiles/Creality/sermoonv1.svg
 %%DATADIR%%/profiles/Creality/sermoonv1_bed.stl
+%%DATADIR%%/profiles/E2D.idx
+%%DATADIR%%/profiles/E2D.ini
 %%DATADIR%%/profiles/Elegoo.idx
 %%DATADIR%%/profiles/Elegoo.ini
 %%DATADIR%%/profiles/Elegoo/NEPTUNE1_thumbnail.png
@@ -717,6 +735,7 @@ lib/OCCTWrapper.so
 %%DATADIR%%/profiles/Print4Taste/MC2.0_thumbnail.png
 %%DATADIR%%/profiles/PrusaResearch.idx
 %%DATADIR%%/profiles/PrusaResearch.ini
+%%DATADIR%%/profiles/PrusaResearch/COREONE_thumbnail.png
 %%DATADIR%%/profiles/PrusaResearch/MINIIS_ALPHA_thumbnail.png
 %%DATADIR%%/profiles/PrusaResearch/MINIIS_BETA_thumbnail.png
 %%DATADIR%%/profiles/PrusaResearch/MINIIS_thumbnail.png
@@ -756,6 +775,8 @@ lib/OCCTWrapper.so
 %%DATADIR%%/profiles/PrusaResearch/XLIS_beta_thumbnail.png
 %%DATADIR%%/profiles/PrusaResearch/XLIS_thumbnail.png
 %%DATADIR%%/profiles/PrusaResearch/XL_thumbnail.png
+%%DATADIR%%/profiles/PrusaResearch/coreone.svg
+%%DATADIR%%/profiles/PrusaResearch/coreone_bed.stl
 %%DATADIR%%/profiles/PrusaResearch/mini.svg
 %%DATADIR%%/profiles/PrusaResearch/miniIS.svg
 %%DATADIR%%/profiles/PrusaResearch/miniISbeta.svg
@@ -783,6 +804,8 @@ lib/OCCTWrapper.so
 %%DATADIR%%/profiles/PrusaResearchSLA/sl1_bed.stl
 %%DATADIR%%/profiles/PrusaResearchSLA/sl1s.svg
 %%DATADIR%%/profiles/PrusaResearchSLA/sl1s_bed.stl
+%%DATADIR%%/profiles/QIDITechnology.idx
+%%DATADIR%%/profiles/QIDITechnology.ini
 %%DATADIR%%/profiles/RatRig.idx
 %%DATADIR%%/profiles/RatRig.ini
 %%DATADIR%%/profiles/RatRig/VC3_300_thumbnail.png
@@ -973,6 +996,8 @@ lib/OCCTWrapper.so
 %%DATADIR%%/shaders/110/mm_gouraud.vs
 %%DATADIR%%/shaders/110/printbed.fs
 %%DATADIR%%/shaders/110/printbed.vs
+%%DATADIR%%/shaders/110/tool_marker.fs
+%%DATADIR%%/shaders/110/tool_marker.vs
 %%DATADIR%%/shaders/110/toolpaths_cog.fs
 %%DATADIR%%/shaders/110/toolpaths_cog.vs
 %%DATADIR%%/shaders/110/variable_layer_height.fs
@@ -1004,6 +1029,8 @@ lib/OCCTWrapper.so
 %%DATADIR%%/shaders/140/mm_gouraud.vs
 %%DATADIR%%/shaders/140/printbed.fs
 %%DATADIR%%/shaders/140/printbed.vs
+%%DATADIR%%/shaders/140/tool_marker.fs
+%%DATADIR%%/shaders/140/tool_marker.vs
 %%DATADIR%%/shaders/140/toolpaths_cog.fs
 %%DATADIR%%/shaders/140/toolpaths_cog.vs
 %%DATADIR%%/shaders/140/variable_layer_height.fs
@@ -1034,6 +1061,8 @@ lib/OCCTWrapper.so
 %%DATADIR%%/shaders/ES/mm_gouraud.vs
 %%DATADIR%%/shaders/ES/printbed.fs
 %%DATADIR%%/shaders/ES/printbed.vs
+%%DATADIR%%/shaders/ES/tool_marker.fs
+%%DATADIR%%/shaders/ES/tool_marker.vs
 %%DATADIR%%/shaders/ES/toolpaths_cog.fs
 %%DATADIR%%/shaders/ES/toolpaths_cog.vs
 %%DATADIR%%/shaders/ES/variable_layer_height.fs

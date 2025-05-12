@@ -1,6 +1,6 @@
---- src/slic3r/GUI/wxExtensions.cpp.orig	2024-12-20 11:54:34 UTC
+--- src/slic3r/GUI/wxExtensions.cpp.orig	2025-04-10 11:26:51 UTC
 +++ src/slic3r/GUI/wxExtensions.cpp
-@@ -28,7 +28,7 @@
+@@ -29,7 +29,7 @@
  
  #include "libslic3r/Color.hpp"
  
@@ -9,7 +9,7 @@
  // msw_menuitem_bitmaps is used for MSW and OSX
  static std::map<int, std::string> msw_menuitem_bitmaps;
  void sys_color_changed_menu(wxMenu* menu)
-@@ -137,7 +137,7 @@ wxMenuItem* append_menu_item(wxMenu* menu, int id, con
+@@ -142,7 +142,7 @@ wxMenuItem* append_menu_item(wxMenu* menu, int id, con
  
      wxBitmapBundle* bmp = icon.empty() ? nullptr : get_bmp_bundle(icon);
  
@@ -18,7 +18,7 @@
      if (bmp && bmp->IsOk())
          msw_menuitem_bitmaps[id] = icon;
  #endif /* no __linux__ */
-@@ -155,7 +155,7 @@ wxMenuItem* append_submenu(wxMenu* menu, wxMenu* sub_m
+@@ -160,7 +160,7 @@ wxMenuItem* append_submenu(wxMenu* menu, wxMenu* sub_m
      if (!icon.empty()) {
          item->SetBitmap(*get_bmp_bundle(icon));
  
@@ -27,7 +27,7 @@
          msw_menuitem_bitmaps[id] = icon;
  #endif // no __linux__
      }
-@@ -218,7 +218,7 @@ void set_menu_item_bitmap(wxMenuItem* item, const std:
+@@ -223,7 +223,7 @@ void set_menu_item_bitmap(wxMenuItem* item, const std:
  void set_menu_item_bitmap(wxMenuItem* item, const std::string& icon_name)
  {
      item->SetBitmap(*get_bmp_bundle(icon_name));

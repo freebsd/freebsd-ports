@@ -1,4 +1,4 @@
---- src/slic3r/GUI/Preferences.cpp.orig	2025-02-20 20:11:25 UTC
+--- src/slic3r/GUI/Preferences.cpp.orig	2025-04-10 11:26:51 UTC
 +++ src/slic3r/GUI/Preferences.cpp
 @@ -29,7 +29,7 @@
  #ifdef WIN32

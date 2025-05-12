@@ -1,6 +1,6 @@
---- src/libslic3r/CMakeLists.txt.orig	2024-12-20 11:54:34 UTC
+--- src/libslic3r/CMakeLists.txt.orig	2025-04-10 11:26:51 UTC
 +++ src/libslic3r/CMakeLists.txt
-@@ -568,7 +568,6 @@ target_link_libraries(libslic3r PRIVATE
+@@ -612,7 +612,6 @@ target_link_libraries(libslic3r PRIVATE
  
  target_link_libraries(libslic3r PRIVATE
      libnest2d

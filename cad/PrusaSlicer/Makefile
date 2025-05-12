@@ -1,7 +1,6 @@
 PORTNAME=	PrusaSlicer
 DISTVERSIONPREFIX=version_
-DISTVERSION=	2.9.0
-PORTREVISION=	2
+DISTVERSION=	2.9.2
 CATEGORIES=	cad
 DIST_SUBDIR=	PrusaSlicer
 
@@ -46,7 +45,8 @@ LIB_DEPENDS+=	libbgcode_convert.so:cad/libbgcode \
 		libwayland-egl.so:graphics/wayland \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
 		libsoup-2.4.so:devel/libsoup \
-		libjavascriptcoregtk-4.0.so:www/webkit2-gtk@40
+		libjavascriptcoregtk-4.0.so:www/webkit2-gtk@40 \
+		libz3.so:math/z3
 
 USES=		cmake cpe desktop-file-utils eigen:3 gettext gl gnome iconv \
 		jpeg pkgconfig xorg ssl tcl tk

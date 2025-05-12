@@ -1,6 +1,6 @@
---- src/slic3r/Utils/WifiScanner.cpp.orig	2024-12-20 11:54:34 UTC
+--- src/slic3r/Utils/WifiScanner.cpp.orig	2025-04-10 11:26:51 UTC
 +++ src/slic3r/Utils/WifiScanner.cpp
-@@ -16,7 +16,7 @@
+@@ -18,7 +18,7 @@
  #include "WifiScannerMac.h"
  #endif 
  
@@ -9,7 +9,7 @@
  #include <dbus/dbus.h> /* Pull in all of D-Bus headers. */
  #endif //__linux__
  
-@@ -353,7 +353,7 @@ std::string WifiScanner::get_psk(const std::string& ss
+@@ -355,7 +355,7 @@ std::string WifiScanner::get_psk(const std::string& ss
      }
      return {};
  }
@@ -18,7 +18,7 @@
  #ifdef _WIN32
  // Fill SSID map. Implementation from Raspberry Pi imager and Win32 Api examples.
  // https://github.com/raspberrypi/rpi-imager/blob/qml/src/windows/winwlancredentials.cpp
-@@ -489,4 +489,4 @@ void WifiScanner::fill_wifi_map(Slic3r::WifiSsidPskMap
+@@ -491,4 +491,4 @@ void WifiScanner::fill_wifi_map(Slic3r::WifiSsidPskMap
          wlanFreeMemoryFunc(interface_list);
  }
  #endif // _WIN32

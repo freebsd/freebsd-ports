@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2025-02-14 18:17:10 UTC
+--- CMakeLists.txt.orig	2025-04-10 11:26:51 UTC
 +++ CMakeLists.txt
 @@ -233,7 +233,7 @@ endif ()
      endif ()
@@ -9,7 +9,7 @@
      find_package(PkgConfig REQUIRED)
  
      if (CMAKE_VERSION VERSION_LESS "3.1")
-@@ -635,8 +635,14 @@ elseif (SLIC3R_FHS)
+@@ -634,8 +634,14 @@ elseif (SLIC3R_FHS)
      install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/ DESTINATION ${SLIC3R_FHS_RESOURCES}
          PATTERN "*/udev" EXCLUDE
      )
@@ -24,14 +24,14 @@
      foreach(SIZE 32 128 192)
          install(FILES ${SLIC3R_RESOURCES_DIR}/icons/PrusaSlicer_${SIZE}px.png
              DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer.png
-@@ -645,7 +651,10 @@ elseif (SLIC3R_FHS)
+@@ -644,7 +650,9 @@ elseif (SLIC3R_FHS)
              DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer-gcodeviewer.png
          )
      endforeach()
-+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-     install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/udev/ DESTINATION lib/udev/rules.d)
-+endif()
-+
+-    install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/udev/ DESTINATION lib/udev/rules.d)
++	if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
++		install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/udev/ DESTINATION lib/udev/rules.d)
++	endif()
+     target_compile_definitions(PrusaSlicer PUBLIC SLIC3R_FHS SLIC3R_FHS_RESOURCES="${SLIC3R_FHS_RESOURCES}")
  else ()
      install(FILES src/platform/unix/PrusaSlicer.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/resources/applications)
-     install(FILES src/platform/unix/PrusaGcodeviewer.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/resources/applications)

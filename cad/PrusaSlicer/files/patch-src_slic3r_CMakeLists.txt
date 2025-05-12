@@ -1,6 +1,6 @@
---- src/slic3r/CMakeLists.txt.orig	2024-12-20 11:54:34 UTC
+--- src/slic3r/CMakeLists.txt.orig	2025-04-10 11:26:51 UTC
 +++ src/slic3r/CMakeLists.txt
-@@ -392,11 +392,12 @@ set(SLIC3R_GUI_SOURCES
+@@ -396,11 +396,12 @@ set(SLIC3R_GUI_SOURCES
      Utils/ServiceConfig.cpp
  )
  
@@ -15,7 +15,7 @@
  if (APPLE)
      list(APPEND SLIC3R_GUI_SOURCES
              Utils/RetinaHelperImpl.mm
-@@ -433,14 +434,13 @@ encoding_check(libslic3r_gui)
+@@ -437,14 +438,13 @@ encoding_check(libslic3r_gui)
  endforeach()
  
  encoding_check(libslic3r_gui)
@@ -31,7 +31,7 @@
      imgui
      libvgcode
      GLEW::GLEW
-@@ -454,10 +454,29 @@ target_link_libraries(
+@@ -458,10 +458,29 @@ target_link_libraries(
      fastfloat
      boost_headeronly
  )
