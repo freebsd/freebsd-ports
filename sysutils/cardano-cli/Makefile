@@ -1,6 +1,7 @@
 PORTNAME=	cardano-cli
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	10.8.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
@@ -76,7 +77,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		bech32-th-1.1.8 \
 		bifunctors-5.6.2_2 \
 		bimap-0.5.0 \
-		bin-0.1.4_1 \
+		bin-0.1.4_2 \
 		binary-orphans-1.0.5_1 \
 		bitvec-1.1.5.0_3 \
 		blaze-builder-0.4.2.3 \
@@ -172,7 +173,6 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		dictionary-sharing-0.1.0.0_4 \
 		diff-containers-1.3.0.0:chap \
 		digest-0.0.2.1 \
-		directory-1.3.9.0_1 \
 		directory-ospath-streaming-0.2.2 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_2 \
@@ -186,7 +186,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		file-embed-0.0.16.0 \
 		file-io-0.1.5 \
 		filelock-0.1.1.7 \
-		fin-0.3.2 \
+		fin-0.3.2_1 \
 		fingertree-0.1.5.0 \
 		fingertree-rm-1.0.0.4:chap \
 		flat-0.6 \
@@ -211,7 +211,6 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		happy-2.1.5 \
 		happy-lib-2.1.5 \
 		hashable-1.4.7.0 \
-		haskeline-0.8.3.0 \
 		haskell-lexer-1.2.1 \
 		heapwords-0.1.0.2:chap \
 		hedgehog-1.5_2 \
@@ -260,7 +259,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		megaparsec-9.7.0 \
 		memory-0.18.0_1 \
 		memory-pool-0.1.0.0 \
-		mempack-0.1.1.0_1 \
+		mempack-0.1.1.0_2 \
 		microlens-0.4.13.1_1 \
 		microlens-aeson-2.5.2 \
 		microlens-mtl-0.2.1.0 \
@@ -323,7 +322,6 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		prettyprinter-configurable-1.36.0.0:chap \
 		primes-0.2.1.0 \
 		primitive-0.9.1.0 \
-		process-1.6.25.0_1 \
 		profunctors-5.6.2_3 \
 		psqueues-0.2.8.1 \
 		pvar-1.0.0.0_1 \
@@ -333,7 +331,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		quickcheck-state-machine-0.10.1 \
 		quickcheck-transformer-0.3.1.2_1 \
 		quiet-0.2 \
-		ral-0.2.2_1 \
+		ral-0.2.2_2 \
 		random-1.2.1.3 \
 		random-shuffle-0.0.4 \
 		rawlock-0.1.1.0_2 \
@@ -349,7 +347,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		safe-exceptions-0.1.7.4_1 \
 		safe-wild-cards-1.0.0.2_2 \
 		scientific-0.3.8.0_2 \
-		selective-0.5 \
+		selective-0.7.0.1 \
 		semialign-1.3.1_2 \
 		semigroupoids-6.0.1_2 \
 		semigroups-0.20 \
@@ -358,7 +356,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		si-timers-1.5.0.0_2 \
 		simple-sendfile-0.2.32 \
 		singletons-3.0.4 \
-		singletons-th-3.2 \
+		singletons-th-3.3 \
 		size-based-0.1.3.3_1 \
 		small-steps-1.1.1.0:chap \
 		socks-0.6.1 \
@@ -399,9 +397,9 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		text-short-0.1.6_3 \
 		text-zipper-0.13 \
 		tf-random-0.5 \
-		th-abstraction-0.6.0.0_2 \
+		th-abstraction-0.7.1.0_1 \
 		th-compat-0.1.6 \
-		th-desugar-1.15_1 \
+		th-desugar-1.16_1 \
 		th-env-0.1.1 \
 		th-expand-syns-0.4.12.0 \
 		th-lift-0.8.6 \
@@ -417,7 +415,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		transformers-except-0.1.4_1 \
-		tree-diff-0.3.4 \
+		tree-diff-0.3.4_1 \
 		typed-process-0.2.13.0 \
 		typed-protocols-0.3.0.0:chap \
 		typed-protocols-cborg-0.3.0.0:chap \
@@ -426,7 +424,6 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		typed-protocols-stateful-cborg-0.3.0.0:chap \
 		unbounded-delays-0.1.1.1 \
 		universe-base-1.1.4_1 \
-		unix-2.8.6.0_1 \
 		unix-bytestring-0.4.0.3 \
 		unix-compat-0.7.4 \
 		unix-time-0.4.16 \
@@ -436,7 +433,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.6_3 \
 		validation-1.1.3_1 \
-		validation-selective-0.2.0.0.0.0.0.0.1:chap \
+		validation-selective-0.2.0.0_5 \
 		validity-0.12.1.0 \
 		vary-0.1.1.2 \
 		vault-0.3.1.5_10 \
