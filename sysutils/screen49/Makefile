@@ -95,8 +95,8 @@ CONFIGURE_ARGS+=	--with-socket-dir=${SCREEN_SOCKET_DIR}
 
 do-fetch:
 	@cd ${DISTDIR} && \
-	if [ ! -f ${DISTNAME}${EXTRACT_SUFX} ]; then \
-		fetch -o ${DISTNAME}${EXTRACT_SUFX} \
+	if [ ! -f ${DISTNAME}-${GIT_TAGNAME}${EXTRACT_SUFX} ]; then \
+		fetch -o ${DISTNAME}-${GIT_TAGNAME}${EXTRACT_SUFX} \
 		    "https://git.savannah.gnu.org/gitweb/?p=screen.git;a=snapshot;h=${GIT_TAGNAME};sf=tgz"; \
 	fi    
 
