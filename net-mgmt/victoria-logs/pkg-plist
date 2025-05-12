@@ -31,4 +31,8 @@ bin/vlogscli
 %%PORTDOCS%%%%DOCSDIR%%/vmalert.md
 %%PORTDOCS%%%%DOCSDIR%%/vmalert_victorialogs.excalidraw
 %%PORTDOCS%%%%DOCSDIR%%/vmalert_victorialogs.webp
+%%PORTDOCS%%%%DOCSDIR%%/cluster.md
+%%PORTDOCS%%%%DOCSDIR%%/logql-to-logsql.md
+%%PORTDOCS%%%%DOCSDIR%%/sql-to-logsql.md
+
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
