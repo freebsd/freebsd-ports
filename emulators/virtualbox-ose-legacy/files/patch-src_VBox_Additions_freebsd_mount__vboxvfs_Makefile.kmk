@@ -1,6 +1,6 @@
---- src/VBox/Additions/freebsd/mount_vboxvfs/Makefile.kmk.orig	2018-11-29 19:03:21 UTC
+--- src/VBox/Additions/freebsd/mount_vboxvfs/Makefile.kmk.orig	2025-05-11 03:54:13 UTC
 +++ src/VBox/Additions/freebsd/mount_vboxvfs/Makefile.kmk
-@@ -0,0 +1,23 @@
+@@ -0,0 +1,28 @@
 +# $Id: Makefile.kmk $
 +## @file
 +# Sub-Makefile for the FreeBSD Shared folder mount utility.
@@ -19,8 +19,13 @@
 +
 +PROGRAMS                += mount_vboxvfs
 +mount_vboxvfs_TEMPLATE    = NewVBoxGuestR3Exe
-+mount_vboxvfs_SOURCES     = $(MOUNT)/getmntopts.c \
-+				mount_vboxvfs.c
++mount_vboxvfs_SOURCES     = mount_vboxvfs.c
++
++ifdef HAVE_MNTOPTS_IN_LIBUTIL
++mount_vboxvfs_LIBS        = util
++else
++mount_vboxvfs_SOURCES    += $(MOUNT)/getmntopts.c
++endif
 +
 +include $(FILE_KBUILD_SUB_FOOTER)
 +
