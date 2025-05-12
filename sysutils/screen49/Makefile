@@ -1,15 +1,15 @@
 PORTNAME=	screen
 PORTVERSION=	4.9.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
-MASTER_SITES=	GNU \
-		ftp://ftp.gnu.org/gnu/screen/ \
-		ftp://gnu.mirror.iweb.com/screen/ \
-		http://gnu.mirror.iweb.com/screen/ \
-		http://mirror.sdunix.com/gnu/ \
-		ftp://mirrors.kernel.org/gnu/screen/ \
-		http://cschubert.com/distfiles/ \
-		LOCAL/cy
+# MASTER_SITES=	GNU \
+# 		ftp://ftp.gnu.org/gnu/screen/ \
+# 		ftp://gnu.mirror.iweb.com/screen/ \
+# 		http://gnu.mirror.iweb.com/screen/ \
+# 		http://mirror.sdunix.com/gnu/ \
+# 		ftp://mirrors.kernel.org/gnu/screen/ \
+# 		http://cschubert.com/distfiles/ \
+# 		LOCAL/cy
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	49
 CONFLICTS=	screen-*
@@ -20,6 +20,12 @@ COMMENT=	Multi-screen window manager
 WWW=		https://www.gnu.org/software/screen/
 
 CONFLICTS+=	screen-devel*
+
+GIT_TAGNAME=	161f85b
+
+DISTFILES=	${DISTNAME}-${GIT_TAGNAME}${EXTRACT_SUFX}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GIT_TAGNAME}/src
 
 LICENSE=	GPLv3
 
@@ -86,6 +92,13 @@ CONFIGURE_ARGS+=	--disable-socket-dir
 .if defined(SCREEN_SOCKET_DIR)
 CONFIGURE_ARGS+=	--with-socket-dir=${SCREEN_SOCKET_DIR}
 .endif
+
+do-fetch:
+	@cd ${DISTDIR} && \
+	if [ ! -f ${DISTNAME}${EXTRACT_SUFX} ]; then \
+		fetch -o ${DISTNAME}${EXTRACT_SUFX} \
+		    "https://git.savannah.gnu.org/gitweb/?p=screen.git;a=snapshot;h=${GIT_TAGNAME};sf=tgz"; \
+	fi    
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/screen.info*
