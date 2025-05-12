@@ -1,5 +1,5 @@
 PORTNAME=	dooble
-DISTVERSION=	2025.04.27
+DISTVERSION=	2025.05.10
 CATEGORIES=	www
 
 MAINTAINER=	eric@camachat.org
@@ -14,7 +14,7 @@ USES=		compiler:c++17-lang desktop-file-utils gl gmake qmake qt:6 ssl \
 USE_GITHUB=	yes
 GH_ACCOUNT=	textbrowser
 GH_TUPLE=	textbrowser:dooble-dictionaries:0f1e715:dictionaries
-#textbrowser:dooble:${PORTVERSION}:DEFAULT
+#textbrowser:dooble:${DISTVERSION}:DEFAULT
 USE_GL=		opengl
 USE_QT=		base charts declarative positioning sqldriver-sqlite:run \
 		webchannel webengine
