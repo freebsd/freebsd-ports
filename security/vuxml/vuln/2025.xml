@@ -1,3 +1,35 @@
+  <vuln vid="89c668d5-2f80-11f0-9632-641c67a117d8">
+    <topic>www/varnish7 -- Request Smuggling Attack</topic>
+    <affects>
+      <package>
+	<name>varnish7</name>
+	<range><lt>7.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Varnish Development Team reports:</p>
+	<blockquote cite="https://varnish-cache.org/security/VSV00016.html">
+	<p>A client-side desync vulnerability can be triggered in Varnish Cache
+	   and Varnish Enterprise. This vulnerability can be triggered under
+	   specific circumstances involving malformed HTTP/1 requests.</p>
+	<p>An attacker can abuse a flaw in Varnish's handling of chunked
+	   transfer encoding which allows certain malformed HTTP/1 requests
+	   to exploit improper framing of the message body to smuggle additional
+	   requests. Specifically, Varnish incorrectly permits CRLF to be
+	   skipped to delimit chunk boundaries.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://varnish-cache.org/security/VSV00016.html</url>
+    </references>
+    <dates>
+      <discovery>2025-05-12</discovery>
+      <entry>2025-05-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8a1a8e7-2e85-11f0-a989-b42e991fc52e">
     <topic>Mozilla -- memory corrupton</topic>
     <affects>
