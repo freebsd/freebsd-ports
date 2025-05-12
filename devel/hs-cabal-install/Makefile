@@ -1,5 +1,6 @@
 PORTNAME=	cabal-install
 PORTVERSION=	3.14.2.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-v
 CATEGORIES=	devel haskell
 EXTRACT_ONLY=	${DISTNAME_DEFAULT}${_GITHUB_EXTRACT_SUFX}
@@ -68,7 +69,7 @@ post-extract:
 
 do-build:
 	cd ${WRKSRC} && \
-		${PYTHON_CMD} bootstrap/bootstrap.py -d bootstrap/linux-9.6.4.json
+		${PYTHON_CMD} bootstrap/bootstrap.py -d bootstrap/linux-9.8.2.json
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/_build/bin/cabal ${STAGEDIR}${PREFIX}/bin/
