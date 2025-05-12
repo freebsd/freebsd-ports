@@ -9,6 +9,8 @@ WWW=		https://dhall-lang.org/
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	ghc-9.6.7:lang/ghc96
+
 USES=		cabal
 
 USE_CABAL=	Cabal-3.10.2.1_1 \

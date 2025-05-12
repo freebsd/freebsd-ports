@@ -9,6 +9,8 @@ WWW=		https://github.com/hadolint/hadolint
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	ghc-9.6.7:lang/ghc96
+
 USES=		cabal
 USE_LOCALE=	en_US.UTF-8
 

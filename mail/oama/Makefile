@@ -10,6 +10,7 @@ WWW=		https://github.com/pdobsan/oama
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License
 
+BUILD_DEPENDS=	ghc-9.6.7:lang/ghc96
 LIB_DEPENDS=	libsecret-1.so:security/libsecret
 RUN_DEPENDS=	gpgme-config:security/gpgme
 

@@ -8,6 +8,8 @@ WWW=		https://github.com/jgm/gitit
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	ghc-9.6.7:lang/ghc96
+
 USES=		cabal
 
 OPTIONS_DEFINE=		PLUGINS EXPORTS

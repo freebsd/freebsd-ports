@@ -9,6 +9,8 @@ WWW=		https://github.com/matterhorn-chat/matterhorn/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS= ghc-9.6.7:lang/ghc96
+
 USES=		cabal
 
 USE_CABAL=	HTTP-4000.4.1_5 \

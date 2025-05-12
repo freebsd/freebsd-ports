@@ -11,6 +11,7 @@ LICENSE=	BSD3CLAUSE
 
 BROKEN_aarch64=	error: incompatible pointer to integer conversion assigning to 'ffi_arg' (aka 'unsigned long') from 'HsPtr' (aka 'void *')
 
+BUILD_DEPENDS=	ghc-9.6.7:lang/ghc96
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
