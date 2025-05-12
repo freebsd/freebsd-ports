@@ -168,12 +168,14 @@ lib/cmake/Cutter/CutterTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Cutter/CutterTargets.cmake
 share/applications/re.rizin.cutter.desktop
 share/icons/hicolor/scalable/apps/cutter.svg
+share/metainfo/re.rizin.cutter.appdata.xml
 share/rizin/cutter/translations/cutter_ar.qm
 share/rizin/cutter/translations/cutter_bn.qm
 share/rizin/cutter/translations/cutter_ca.qm
 share/rizin/cutter/translations/cutter_de.qm
 share/rizin/cutter/translations/cutter_es.qm
 share/rizin/cutter/translations/cutter_fa.qm
+share/rizin/cutter/translations/cutter_fi.qm
 share/rizin/cutter/translations/cutter_fr.qm
 share/rizin/cutter/translations/cutter_he.qm
 share/rizin/cutter/translations/cutter_hi.qm
@@ -181,6 +183,7 @@ share/rizin/cutter/translations/cutter_it.qm
 share/rizin/cutter/translations/cutter_ja.qm
 share/rizin/cutter/translations/cutter_ko.qm
 share/rizin/cutter/translations/cutter_nl.qm
+share/rizin/cutter/translations/cutter_pl.qm
 share/rizin/cutter/translations/cutter_pt.qm
 share/rizin/cutter/translations/cutter_ro.qm
 share/rizin/cutter/translations/cutter_ru.qm
