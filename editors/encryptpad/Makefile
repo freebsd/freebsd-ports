@@ -4,7 +4,7 @@ DISTVERSION=	0.5.0.2
 PORTREVISION=	1
 CATEGORIES=	editors security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Minimalist secure text editor and binary encryptor
 WWW=		https://evpo.net/encryptpad/
 
