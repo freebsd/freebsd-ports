@@ -1,5 +1,5 @@
 PORTNAME=	libxmp
-PORTVERSION=	4.6.2
+PORTVERSION=	4.6.3
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 
