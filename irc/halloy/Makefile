@@ -1,5 +1,5 @@
 PORTNAME=	halloy
-DISTVERSION=	2025.4
+DISTVERSION=	2025.5
 CATEGORIES=	irc
 
 MAINTAINER=	pokeysquirrel@gmail.com
