@@ -149,9 +149,9 @@ lib/cmake/TBB/TBBTargets.cmake
 lib/libtbb%%DBGSUFX%%.so
 lib/libtbb%%DBGSUFX%%.so.12
 lib/libtbb%%DBGSUFX%%.so.12.15
-lib/libtbbbind_2_0%%DBGSUFX%%.so
-lib/libtbbbind_2_0%%DBGSUFX%%.so.3
-lib/libtbbbind_2_0%%DBGSUFX%%.so.3.15
+lib/libtbbbind_2_5%%DBGSUFX%%.so
+lib/libtbbbind_2_5%%DBGSUFX%%.so.3
+lib/libtbbbind_2_5%%DBGSUFX%%.so.3.15
 lib/libtbbmalloc%%DBGSUFX%%.so
 lib/libtbbmalloc%%DBGSUFX%%.so.2
 lib/libtbbmalloc%%DBGSUFX%%.so.2.15
