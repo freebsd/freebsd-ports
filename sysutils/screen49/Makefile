@@ -21,6 +21,10 @@ WWW=		https://www.gnu.org/software/screen/
 
 CONFLICTS+=	screen-devel*
 
+FORBIDDEN=	Contains multiple CVEs
+DEPRECATED=	Contains multiple CVEs, use screen50 instead
+EXPIRATION_DATE=2025-06-31
+
 LICENSE=	GPLv3
 
 OPTIONS_DEFINE=		INFO NETHACK XTERM_256 SYSTEM_SCREENRC MULTIUSER \
