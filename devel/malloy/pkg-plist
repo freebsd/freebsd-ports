@@ -8,7 +8,6 @@
 include/malloy/core/controller.hpp
 include/malloy/core/detail/action_queue.hpp
 include/malloy/core/detail/controller_run_result.hpp
-include/malloy/core/detail/version_checks.hpp
 include/malloy/core/error.hpp
 include/malloy/core/mp.hpp
 %%HTML%%include/malloy/core/html/form.hpp
