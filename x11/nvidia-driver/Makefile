@@ -33,6 +33,12 @@ LICENSE_FILE=	${WRKSRC}/doc/license.txt
 # to end up depending on non existing libraries
 NO_SHLIB_REQUIRES_GLOB=*:32
 
+# Choose proper distinfo file using PKGNAMESUFFIX for slave ports.
+# Kept for switching to centralized distinfo with suffixes.
+.ifdef PKGNAMESUFFIX
+DISTINFO_FILE=	${.CURDIR}/distinfo
+.endif
+
 # Pull GNU sed(1) for "binary" patching of obj/libglvnd/libEGL.so.1 and
 # obj/libEGL_nvidia.so.0 (see below)
 .if ${NVVERSION} >= 410.057
