@@ -11,8 +11,10 @@ LLVM_COMMANDS=	\
 		llvm-bitcode-strip \
 		llvm-cat \
 		llvm-cfi-verify \
+		llvm-cgdata \
 		llvm-config \
 		llvm-cov \
+		llvm-ctxprof-util \
 		llvm-cvtres \
 		llvm-cxxdump \
 		llvm-cxxfilt \
@@ -70,6 +72,7 @@ LLVM_COMMANDS=	\
 		llvm-xray \
 		nvptx-arch \
 		opt \
+		reduce-chunk-list \
 		sancov
 
 CLANG_COMMANDS=	\
@@ -81,12 +84,14 @@ CLANG_COMMANDS=	\
 		clang-cpp \
 		clang-extdef-mapping \
 		clang-format \
+		clang-installapi \
 		clang-linker-wrapper \
+		clang-nvlink-wrapper \
 		clang-offload-bundler \
 		clang-offload-packager \
-		clang-rename \
 		clang-repl \
 		clang-scan-deps \
+		clang-sycl-linker \
 		clang-tblgen \
 		diagtool \
 		hmaptool \
@@ -102,7 +107,6 @@ EXTRAS_COMMANDS= \
 		clang-doc \
 		clang-include-fixer \
 		clang-move \
-		clang-pseudo \
 		clang-query \
 		clang-reorder-fields \
 		clang-tidy \
