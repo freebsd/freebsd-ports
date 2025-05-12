@@ -126,6 +126,10 @@ post-patch:
 	    ${WRKSRC}/src/VBox/Additions/x11/VBoxClient/Makefile.kmk
 	@${ECHO_CMD} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
+.if ${OSVERSION} >= 1500038
+	@${ECHO_CMD} 'HAVE_MNTOPTS_IN_LIBUTIL = 1' >> \
+	    ${WRKSRC}/LocalConfig.kmk
+.endif
 
 post-patch-X11-on:
 	@${ECHO_CMD} 'VBOX_USE_SYSTEM_XORG_HEADERS = 1' >> \
