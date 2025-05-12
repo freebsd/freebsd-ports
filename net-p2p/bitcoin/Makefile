@@ -73,7 +73,7 @@ TESTS_PLIST_FILES=	bin/bench_bitcoin \
 TESTS_PLIST_FILES+=	bin/test_bitcoin-qt
 .endif
 
-WALLET_USES=		bdb:5+ sqlite:3
+WALLET_USES=		bdb:5 sqlite:3
 WALLET_CMAKE_ON=	-DENABLE_WALLET=ON \
 			-DWARN_INCOMPATIBLE_BDB=OFF \
 			-DWITH_BDB=ON
