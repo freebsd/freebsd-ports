@@ -1,0 +1,3 @@
+TypeCode provides comprehensive filetype and mimetype detection using multiple
+detectors including libmagic (included as a dependency for Linux, Windows and macOS)
+and Pygments. It started as library in scancode-toolkit.

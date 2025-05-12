@@ -6077,6 +6077,7 @@
     SUBDIR += py-txi2p-tahoe
     SUBDIR += py-ty
     SUBDIR += py-typechecks
+    SUBDIR += py-typecode
     SUBDIR += py-typeguard
     SUBDIR += py-typer
     SUBDIR += py-types-Flask
