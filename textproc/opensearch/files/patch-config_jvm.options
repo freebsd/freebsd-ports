@@ -1,11 +1,11 @@
---- config/jvm.options.orig	2021-07-30 14:01:34 UTC
+--- config/jvm.options.orig	2025-04-30 02:05:24 UTC
 +++ config/jvm.options
-@@ -61,17 +61,17 @@
+@@ -61,20 +61,20 @@ -XX:HeapDumpPath=data
  -XX:HeapDumpPath=data
  
  # specify an alternative path for JVM fatal error logs
 --XX:ErrorFile=logs/hs_err_pid%p.log
-+-XX:ErrorFile=/hs_err_pid%p.log
++-XX:ErrorFile=${OPENSEARCH_TMPDIR}/hs_err_pid%p.log
  
  ## JDK 8 GC logging
  8:-XX:+PrintGCDetails
@@ -21,3 +21,12 @@
  # JDK 9+ GC logging
 -9-:-Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m
 +9-:-Xlog:gc*,gc+age=trace,safepoint:file=${OPENSEARCH_TMPDIR}/gc.log:utctime,pid,tags:filecount=32,filesize=64m
+ 
+ # JDK 20+ Incubating Vector Module for SIMD optimizations;
+ # disabling may reduce performance on vector optimized lucene
+@@ -85,4 +85,4 @@ -XX:ErrorFile=logs/hs_err_pid%p.log
+ 23:-XX:CompileCommand=dontinline,java/lang/invoke/MethodHandle.asTypeUncached
+ 
+ 21-:-javaagent:agent/opensearch-agent.jar
+-21-:--add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED
++21-:--add-opens=java.base/java.nio=ALL-UNNAMED
