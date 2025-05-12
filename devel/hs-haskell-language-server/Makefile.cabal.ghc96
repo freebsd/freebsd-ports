@@ -1,4 +1,4 @@
-default_USE_CABAL=	Diff-0.5_1 \
+ghc96_USE_CABAL=	Diff-0.5_1 \
 			Glob-0.10.2_3 \
 			HsYAML-0.2.1.5 \
 			HsYAML-aeson-0.2.0.2 \
@@ -97,7 +97,7 @@ default_USE_CABAL=	Diff-0.5_1 \
 			generic-lens-2.2.2.0_1 \
 			generic-lens-core-2.2.1.0_2 \
 			generically-0.1.1_4 \
-			ghc-exactprint-1.8.0.0 \
+			ghc-exactprint-1.7.1.0 \
 			ghc-lib-parser-9.8.5.20250214 \
 			ghc-lib-parser-ex-9.8.0.2 \
 			ghc-paths-0.1.0.12_7 \
@@ -120,7 +120,7 @@ default_USE_CABAL=	Diff-0.5_1 \
 			hls-test-utils-2.10.0.0 \
 			hsc2hs-0.68.10_4 \
 			hscolour-1.25 \
-			hw-fingertree-0.1.1.0 \
+			hw-fingertree-0.1.2.1_2 \
 			hw-prim-0.6.3.2_3 \
 			implicit-hie-0.1.4.0 \
 			indexed-profunctors-0.1.1.1 \

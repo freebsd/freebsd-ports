@@ -1,6 +1,6 @@
 PORTNAME=	haskell-language-server
 DISTVERSION=	2.10.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_aarch64=	compiler crashes
 NOT_FOR_ARCHS=	i386
 
-FLAVORS=	default ghc94
+FLAVORS=	default ghc94 ghc96
 FLAVOR?=	${FLAVORS:[1]}
 .if ${FLAVOR:U} != default
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -23,6 +23,9 @@ PKGNAMESUFFIX=	-${FLAVOR}
 .if ${FLAVOR:U} == ghc94
 BUILD_DEPENDS=	ghc-9.4.8:lang/ghc94
 GHC_VERSION=	9.4.8
+.elif ${FLAVOR:U} == ghc96
+BUILD_DEPENDS=	ghc-9.6.7:lang/ghc96
+GHC_VERSION=	9.6.7
 .endif
 
 USES=		cabal
