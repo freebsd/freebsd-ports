@@ -4,7 +4,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://download-mirror.savannah.gnu.org/releases/getfem/stable/
 DISTNAME=	${PORTNAME:S/+//g}-${PORTVERSION}
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic matrix template library
 WWW=		https://getfem.org/gmm/
 
