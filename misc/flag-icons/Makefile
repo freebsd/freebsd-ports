@@ -27,9 +27,13 @@ FLAVORS=	plain bordered rounded
 PKGNAMESUFFIX=	-${FLAVOR}
 .endif
 
+post-extract:
+	cd ${WRKSRC}/flags && ${SH} ${FILESDIR}/makeflags.sh add-missing-flags
+
 do-build:
-	cd ${BUILD_WRKSRC}/flags && ${SH} ${FILESDIR}/makeflags.sh \
-	${FLAVOR} ${STAGEDIR}${FLAGS_TOPDIR}/${FLAVOR} ${FLAG_SIZES}
+	cd ${BUILD_WRKSRC}/flags && JOBS=${MAKE_JOBS_NUMBER} ${SH} \
+		${FILESDIR}/makeflags.sh ${FLAVOR} \
+		${STAGEDIR}${FLAGS_TOPDIR}/${FLAVOR} ${FLAG_SIZES}
 
 post-stage:
 	cd ${STAGEDIR}${PREFIX} && ${FIND} share -type f >> ${TMPPLIST}
