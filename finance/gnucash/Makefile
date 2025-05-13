@@ -3,6 +3,9 @@ PORTVERSION=	5.11
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
+PATCH_SITES=	https://github.com/${PORTNAME:tt}/${PORTNAME}/commit/
+PATCHFILES=	940085a0.patch:-p1 99f86d31.patch:-p1 e00eade7.patch:-p1
+
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Quicken-like money and finance manager
 WWW=		https://www.gnucash.org/
