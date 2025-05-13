@@ -1,6 +1,6 @@
 PORTNAME=	vieb
-DISTVERSION=	12.2.0
-PORTREVISION=	2
+DISTVERSION=	12.3.0
+PORTREVISION=	0
 CATEGORIES=	www linux
 MASTER_SITES=	https://github.com/Jelmerro/Vieb/releases/download/${DISTVERSION}/ \
 		LOCAL/nivit/${PORTNAME}/:images
