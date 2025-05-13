@@ -1,5 +1,6 @@
 PORTNAME=	screen
 DISTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 # MASTER_SITES=	GNU \
 # 	        ftp://ftp.gnu.org/gnu/screen/ \
@@ -53,6 +54,7 @@ NCURSES_PORT_USES=	ncurses:port
 OPTIONS_SUB=
 
 USES=		autoreconf:build gmake cpe
+CONFIGURE_ARGS=	--with-system_screenrc=${ETCDIR}/etc/screenrc
 MAKE_ARGS+=	WITH_MAN=1
 
 CPE_VENDOR=	gnu
