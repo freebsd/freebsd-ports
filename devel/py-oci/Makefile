@@ -1,5 +1,5 @@
 PORTNAME=	oci
-DISTVERSION=	2.150.1
+DISTVERSION=	2.152.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.5.3<3.0.0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2016.10:devel/py-pytz@${PY_FLAVOR}
 
-USES=		python:3.9-3.11
+USES=		python:3.9-3.12
 USE_PYTHON=	autoplist cryptography pep517
 
 NO_ARCH=	yes
