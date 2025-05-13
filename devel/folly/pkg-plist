@@ -164,6 +164,7 @@ include/folly/chrono/Hardware.h
 include/folly/cli/NestedCommandLineApp.h
 include/folly/cli/ProgramOptions.h
 include/folly/codec/Uuid.h
+include/folly/codec/hex.h
 include/folly/compression/Compression.h
 include/folly/compression/CompressionContextPool.h
 include/folly/compression/CompressionContextPoolSingletons.h
