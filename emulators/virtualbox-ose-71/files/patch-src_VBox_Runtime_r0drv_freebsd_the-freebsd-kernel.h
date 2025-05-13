@@ -1,4 +1,4 @@
---- src/VBox/Runtime/r0drv/freebsd/the-freebsd-kernel.h.orig	2025-01-21 14:07:01 UTC
+--- src/VBox/Runtime/r0drv/freebsd/the-freebsd-kernel.h.orig	2025-04-14 17:59:14 UTC
 +++ src/VBox/Runtime/r0drv/freebsd/the-freebsd-kernel.h
 @@ -97,6 +97,7 @@
  #include <sys/smp.h>

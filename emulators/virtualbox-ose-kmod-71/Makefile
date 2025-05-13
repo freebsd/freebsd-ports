@@ -1,8 +1,8 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	7.0.26
+DISTVERSION=	7.1.8
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/
-PKGNAMESUFFIX=	-kmod-70
+PKGNAMESUFFIX=	-kmod-71
 DISTNAME=	VirtualBox-${DISTVERSION}
 
 MAINTAINER=	vbox@FreeBSD.org
@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	kmk:devel/kBuild
 
-USES=		cpe compiler:c++14-lang kmod tar:bzip2
+USES=		cpe compiler:c++17-lang kmod tar:bzip2
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 USE_RC_SUBR=	vboxnet
@@ -35,10 +35,10 @@ CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
 CONFLICTS_INSTALL=	virtualbox-ose-kmod-legacy \
 			virtualbox-ose-kmod \
-			virtualbox-ose-kmod-71
+			virtualbox-ose-kmod-70
 
-PATCHDIR=		${.CURDIR}/../${PORTNAME}-70/files
-PORTSCOUT=		limit:^7\.0\.
+PATCHDIR=		${.CURDIR}/../${PORTNAME}-71/files
+PORTSCOUT=		limit:^7\.1\.
 SUB_FILES=		pkg-message
 SUB_LIST=		OPSYS=${OPSYS} OSREL=${OSREL}
 

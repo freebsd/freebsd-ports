@@ -1,10 +1,10 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	7.0.26
-PORTREVISION?=	2
+DISTVERSION=	7.1.8
+PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
 		LOCAL/vvd:docs
-PKGNAMESUFFIX?=	-70
+PKGNAMESUFFIX?=	-71
 DISTFILES=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX}:src \
 		VirtualBox-docs-${DISTVERSION}${EXTRACT_SUFX}:docs
 EXTRACT_ONLY=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX} \
@@ -26,14 +26,14 @@ BUILD_DEPENDS=	gtar:archivers/gtar \
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libcurl.so:ftp/curl
-RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod-70
+RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod-71
 
-USES=		compiler:c++14-lang cpe gnome iconv pkgconfig qt:5 ssl tar:bzip2
+USES=		compiler:c++17-lang cpe gnome iconv pkgconfig qt:6 ssl tar:bzip2
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 USE_BINUTILS=	yes
 USE_GNOME=	libxml2
-USE_QT=		buildtools:build linguisttools:build
+USE_QT=		tools:build
 USE_RC_SUBR=	vboxheadless vboxwatchdog
 
 HAS_CONFIGURE=		yes
@@ -44,10 +44,10 @@ CONFLICTS_INSTALL=	virtualbox-ose-legacy \
 			virtualbox-ose-nox11-legacy \
 			virtualbox-ose \
 			virtualbox-ose-nox11 \
-			virtualbox-ose-71 \
-			virtualbox-ose-nox11-71
+			virtualbox-ose-70 \
+			virtualbox-ose-nox11-70
 
-PORTSCOUT=	limit:^7\.0\.
+PORTSCOUT=	limit:^7\.1\.
 SUB_FILES=	pkg-message
 SUB_LIST=	VBOXDIR=${VBOX_DIR} \
 		VBOX_ETC=${VBOX_ETC} \
@@ -69,7 +69,7 @@ VBOX_LINKS=	VBoxVRDP
 VBOX_PROGS=	VBoxAutostart VBoxBalloonCtrl VBoxBugReport VBoxHeadless \
 		VBoxManage
 VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
-		VBoxSVC VBoxXPCOMIPCD
+		VBoxSVC
 
 PLIST_SUB=	GUEST_VER=${DISTVERSION} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/}${PYTHON_ABIVER} \
@@ -78,9 +78,9 @@ PLIST_SUB=	GUEST_VER=${DISTVERSION} \
 SLAVE_PORT?=	no
 
 OPTIONS_DEFINE=		AIO ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS OGG PULSEAUDIO \
-			PYTHON QT5 R0LOGGING UDPTUNNEL VBOXIMG VDE VNC VORBIS VPX \
+			PYTHON QT6 R0LOGGING UDPTUNNEL VBOXIMG VDE VNC VORBIS VPX \
 			WEBSERVICE X11
-OPTIONS_DEFAULT=	AIO DBUS QT5 UDPTUNNEL VNC WEBSERVICE X11
+OPTIONS_DEFAULT=	AIO DBUS QT6 UDPTUNNEL VNC WEBSERVICE X11
 .if ${SLAVE_PORT} == no
 OPTIONS_DEFAULT+=	PYTHON
 .endif
@@ -92,9 +92,9 @@ OPTIONS_SUB=		yes
 AIO_DESC=		Enable Asyncronous IO support (check pkg-message)
 DEBUG_DESC=		Debug symbols, additional logs and assertions
 GUESTADDITIONS_DESC=	Build with Guest Additions
-NLS_DESC=		Native language support (requires QT5)
+NLS_DESC=		Native language support (requires QT6)
 OGG_DESC=		Use libogg from audio/libogg instead of bundled one
-QT5_DESC=		Build with QT5 frontend (requires X11)
+QT6_DESC=		Build with QT6 frontend (requires X11)
 R0LOGGING_DESC=		Enable R0 logging (requires DEBUG)
 UDPTUNNEL_DESC=		Build with UDP tunnel support
 VBOXIMG_DESC=		Build vboximg-mount (requires fuse-libs)
@@ -109,7 +109,7 @@ ALSA_CONFIGURE_OFF=	--disable-alsa
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_OFF=	--disable-dbus
 DEBUG_CONFIGURE_ON=	--build-debug
-NLS_IMPLIES=		QT5
+NLS_IMPLIES=		QT6
 OGG_LIB_DEPENDS=	libogg.so:audio/libogg
 OGG_CONFIGURE_ON=	--enable-libogg
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
@@ -119,12 +119,11 @@ PYTHON_USES_OFF=	python:build
 PYTHON_USE=		PYTHON=distutils,noegginfo,noflavors
 PYTHON_CONFIGURE_OFF=	--disable-python
 PYTHON_VARS=		pydistutils_pkgname=vboxapi pydistutils_pkgversion=1.0
-QT5_IMPLIES=		X11
-QT5_USES=		gl qmake:no_env qt:5 xorg
-QT5_USE=		QT=buildtools:build,core,dbus,gui,linguisttools:build,opengl \
-			QT=printsupport,widgets,x11extras,xml XORG=xcb GL=gl
-QT5_CONFIGURE_ON=	--enable-qt5
-QT5_CONFIGURE_OFF=	--disable-qt
+QT6_IMPLIES=		X11
+QT6_USES=		gl qmake:no_env qt:6 xorg
+QT6_USE=		QT=base,scxml,tools,translations \
+			XORG=xcb GL=gl
+QT6_CONFIGURE_OFF=	--disable-qt
 R0LOGGING_IMPLIES=	DEBUG
 UDPTUNNEL_CONFIGURE_OFF=	--disable-udptunnel
 VBOXIMG_LIB_DEPENDS=	libfuse.so.2:filesystems/fusefs-libs
@@ -138,8 +137,8 @@ VORBIS_CONFIGURE_ON=	--enable-libvorbis
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 VPX_CONFIGURE_OFF=	--disable-libvpx
 WEBSERVICE_BUILD_DEPENDS=	soapcpp2:devel/gsoap
-X11_USES=		gl sdl xorg
-X11_USE=		GL=gl SDL=sdl XORG=x11,xcursor,xext,xinerama,xmu,xorgproto,xt
+X11_USES=		sdl xorg
+X11_USE=		SDL=sdl XORG=x11,xcursor,xext,xinerama,xmu,xorgproto,xt
 X11_CONFIGURE_OFF=	--build-headless
 
 ENV=
@@ -148,9 +147,9 @@ ENV=
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == no
-CONFLICTS_INSTALL+=	virtualbox-ose-nox11-70
+CONFLICTS_INSTALL+=	virtualbox-ose-nox11-71
 .else
-CONFLICTS_INSTALL+=	virtualbox-ose-70
+CONFLICTS_INSTALL+=	virtualbox-ose-71
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -170,10 +169,9 @@ LICENSE_PERMS_Additions=	auto-accept
 LICENSE_DISTFILES_Additions=	${GUESTADDITIONS}
 .endif
 
-.if ${PORT_OPTIONS:MQT5}
+.if ${PORT_OPTIONS:MQT6}
 PLIST_SUB+=	QT=""
 VBOX_PROGS+=	VirtualBox VirtualBoxVM
-VBOX_UTILS+=	VBoxTestOGL
 VBOX_WITH_QT=	1
 .else
 PLIST_SUB+=	QT="@comment "
@@ -207,7 +205,7 @@ KMK_ARCH=	freebsd.${ARCH}
 PLIST_SUB+=	ARCH="${KMK_ARCH}"
 
 KMK_BUILDDIR=	${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}
-KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
+KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys VBOX_WITHOUT_DOCS=1 VBOX_GCC_std=-std=c++17
 KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.pre.mk>
@@ -295,7 +293,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 	    ${WRKSRC}/Config.kmk ${WRKSRC}/configure \
 	    ${WRKSRC}/kBuild/header.kmk ${WRKSRC}/kBuild/units/qt4.kmk \
-	    ${WRKSRC}/kBuild/units/qt5.kmk ${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
+	    ${WRKSRC}/kBuild/units/qt5.kmk ${WRKSRC}/kBuild/units/qt6.kmk ${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
 	    ${WRKSRC}/src/libs/xpcom18a4/python/gen_python_deps.py
 	@${REINPLACE_CMD} \
 	    -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' \
@@ -378,7 +376,7 @@ do-install:
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-	cd ${KMK_BUILDDIR}/bin/sdk/installer && \
+	cd ${KMK_BUILDDIR}/bin/sdk/installer/python && \
 	    ${SETENV} VBOX_INSTALL_PATH="${VBOX_DIR}" \
 	    ${PYTHON_CMD} vboxapisetup.py install --root=${STAGEDIR}
 
@@ -390,7 +388,7 @@ do-install:
 	    ${STAGEDIR}${DATADIR}/sdk/bindings/xpcom/python
 .endif
 
-.if ${PORT_OPTIONS:MQT5}
+.if ${PORT_OPTIONS:MQT6}
 	${INSTALL_DATA} \
 	    ${WRKSRC}/src/VBox/Frontends/VirtualBox/images/OSE/VirtualBox_48px.png \
 	    ${STAGEDIR}${PREFIX}/share/pixmaps/VBox.png

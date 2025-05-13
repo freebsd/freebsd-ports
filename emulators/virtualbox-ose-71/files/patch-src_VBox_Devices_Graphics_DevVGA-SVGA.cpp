@@ -1,4 +1,4 @@
---- src/VBox/Devices/Graphics/DevVGA-SVGA.cpp.orig	2025-04-11 12:09:20 UTC
+--- src/VBox/Devices/Graphics/DevVGA-SVGA.cpp.orig	2025-04-14 17:55:41 UTC
 +++ src/VBox/Devices/Graphics/DevVGA-SVGA.cpp
 @@ -178,7 +178,7 @@
  # ifdef RT_OS_DARWIN
@@ -9,7 +9,7 @@
  #  ifdef IN_RING3
  #   include "DevVGA-SVGA3d-glLdr.h"
  #  endif
-@@ -7153,7 +7153,7 @@ static void vmsvgaR3PowerOnDevice(PPDMDEVINS pDevIns, 
+@@ -7685,7 +7685,7 @@ static void vmsvgaR3PowerOnDevice(PPDMDEVINS pDevIns, 
      }
  # endif
  

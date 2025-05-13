@@ -1,4 +1,4 @@
---- src/VBox/Devices/Graphics/DevVGA-SVGA3d-ogl.cpp.orig	2025-04-11 12:09:20 UTC
+--- src/VBox/Devices/Graphics/DevVGA-SVGA3d-ogl.cpp.orig	2025-04-14 17:55:42 UTC
 +++ src/VBox/Devices/Graphics/DevVGA-SVGA3d-ogl.cpp
 @@ -1198,7 +1198,7 @@ static DECLCALLBACK(int) vmsvga3dBackTerminate(PVGASTA
      RTSemEventDestroy(pState->WndRequestSem);
@@ -18,7 +18,7 @@
  /**
   * X11 event handling thread.
   *
-@@ -3246,7 +3246,7 @@ DECLCALLBACK(int) vmsvga3dXEventThread(RTTHREAD hThrea
+@@ -3246,7 +3246,7 @@ static DECLCALLBACK(int) vmsvga3dXEventThread(RTTHREAD
      }
      return VINF_SUCCESS;
  }
