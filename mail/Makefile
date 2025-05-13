@@ -188,6 +188,7 @@
     SUBDIR += libspf2
     SUBDIR += libsrs2
     SUBDIR += libsrs_alt
+    SUBDIR += libtlsrpt
     SUBDIR += libvmime
     SUBDIR += linux-r7-organizer
     SUBDIR += linux-r7-organizer-pro

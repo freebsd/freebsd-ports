@@ -1,0 +1,6 @@
+The libtlsrpt project provides a low-level C Library which implements
+functions that help generate TLSRPT datagrams. Included into a MTA it
+assists the MTA in collecting and sending these datagrams to a TLSRPT
+reporting service where they can be collected, summarized and finally
+sent to a mail platform that requests TLSRPT reports as defined in in
+RFC 8460.
