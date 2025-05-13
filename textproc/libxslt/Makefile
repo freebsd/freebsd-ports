@@ -1,11 +1,8 @@
 PORTNAME=	libxslt
-DISTVERSION=	1.1.42
+DISTVERSION=	1.1.43
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R}/
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/libxslt/-/commit/
-PATCHFILES=	bf59c338121b8b45d66ba6ecea69ad498015c396.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	XML stylesheet transformation library
@@ -27,15 +24,18 @@ TEST_TARGET=	check
 
 PLIST_SUB=	LIBVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=	CRYPTO STATIC
-OPTIONS_DEFAULT=	CRYPTO STATIC
+OPTIONS_DEFINE=	CRYPTO PLUGINS STATIC
+OPTIONS_DEFAULT=	CRYPTO PLUGINS STATIC
 OPTIONS_SUB=		yes
 
 CRYPTO_DESC=	Enable crypto support
+PLUGINS_DESC=	Enable dynamically-loaded plugins support
 
 CRYPTO_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 			libgpg-error.so:security/libgpg-error
 CRYPTO_CONFIGURE_WITH=	crypto
+
+PLUGINS_CONFIGURE_WITH=	plugins
 
 STATIC_CONFIGURE_ENABLE=	static
 

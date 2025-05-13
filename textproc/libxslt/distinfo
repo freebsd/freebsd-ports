@@ -1,5 +1,3 @@
-TIMESTAMP = 1740975033
-SHA256 (gnome/libxslt-1.1.42.tar.xz) = 85ca62cac0d41fc77d3f6033da9df6fd73d20ea2fc18b0a3609ffb4110e1baeb
-SIZE (gnome/libxslt-1.1.42.tar.xz) = 1573668
-SHA256 (gnome/bf59c338121b8b45d66ba6ecea69ad498015c396.patch) = 6acb468675339f3d882fb8180608977625f9eded1e9653387833e23212bf9d3c
-SIZE (gnome/bf59c338121b8b45d66ba6ecea69ad498015c396.patch) = 8454
+TIMESTAMP = 1747170090
+SHA256 (gnome/libxslt-1.1.43.tar.xz) = 5a3d6b383ca5afc235b171118e90f5ff6aa27e9fea3303065231a6d403f0183a
+SIZE (gnome/libxslt-1.1.43.tar.xz) = 1518364
