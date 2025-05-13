@@ -1,6 +1,6 @@
---- src/VBox/Devices/Graphics/DevVGA-SVGA3d-glLdr.cpp.orig	2021-01-07 15:39:16 UTC
+--- src/VBox/Devices/Graphics/DevVGA-SVGA3d-glLdr.cpp.orig	2025-04-11 12:09:20 UTC
 +++ src/VBox/Devices/Graphics/DevVGA-SVGA3d-glLdr.cpp
-@@ -186,7 +186,7 @@ int glLdrInit(PPDMDEVINS pDevIns)
+@@ -196,7 +196,7 @@ int glLdrInit(PPDMDEVINS pDevIns)
      pfn_wglDeleteContext = 0;
      pfn_wglMakeCurrent = 0;
      pfn_wglShareLists = 0;
@@ -9,7 +9,7 @@
      pfn_XConfigureWindow = 0;
      pfn_XCloseDisplay = 0;
      pfn_XCreateColormap = 0;
-@@ -296,7 +296,7 @@ int glLdrInit(PPDMDEVINS pDevIns)
+@@ -306,7 +306,7 @@ int glLdrInit(PPDMDEVINS pDevIns)
      GLGETPROC_(wglDeleteContext, "");
      GLGETPROC_(wglMakeCurrent, "");
      GLGETPROC_(wglShareLists, "");
@@ -18,7 +18,7 @@
      X11GETPROC_(XConfigureWindow);
      X11GETPROC_(XCloseDisplay);
      X11GETPROC_(XCreateColormap);
-@@ -397,7 +397,7 @@ int glLdrInit(PPDMDEVINS pDevIns)
+@@ -407,7 +407,7 @@ int glLdrInit(PPDMDEVINS pDevIns)
      GLGETPROC_(glVertexPointer, "");
      GLGETPROC_(glViewport, "");
  
