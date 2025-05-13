@@ -28,7 +28,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod-70
 
-USES=		compiler:c++14-lang cpe gnome iconv qt:5 pkgconfig ssl tar:bzip2
+USES=		compiler:c++14-lang cpe gnome iconv pkgconfig qt:5 ssl tar:bzip2
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 USE_BINUTILS=	yes
