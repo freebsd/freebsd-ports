@@ -1,5 +1,6 @@
 PORTNAME=	Net-Curl
-PORTVERSION=	0.57
+DISTVERSION=	0.57
+PORTREVISION=	1
 CATEGORIES=	www ftp perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,10 +11,10 @@ WWW=		https://metacpan.org/dist/Net-Curl
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
 BUILD_DEPENDS=	p5-ExtUtils-PkgConfig>=1.16:devel/p5-ExtUtils-PkgConfig
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		perl5 localbase
+USES=		localbase perl5
 USE_PERL5=	configure
 
 post-install:
