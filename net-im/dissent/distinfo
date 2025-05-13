@@ -1,5 +1,5 @@
-TIMESTAMP = 1737743530
-SHA256 (go/net-im_dissent/dissent-v0.0.32/v0.0.32.mod) = 66ae8707c26c1a6bb9f1426c7f72415877af7fe8e4943f5646d0ed52e9d5a7d0
-SIZE (go/net-im_dissent/dissent-v0.0.32/v0.0.32.mod) = 2123
-SHA256 (go/net-im_dissent/dissent-v0.0.32/v0.0.32.zip) = 8d5fb8045f955ac587a381205387ab01c449abb501e745235c585f1db6d70a10
-SIZE (go/net-im_dissent/dissent-v0.0.32/v0.0.32.zip) = 4219755
+TIMESTAMP = 1747142599
+SHA256 (go/net-im_dissent/dissent-v0.0.34/v0.0.34.mod) = e690ac4b0fad8a0012908aea7ac7bd0e80bd5cb6d343b88d4e21f171782bf180
+SIZE (go/net-im_dissent/dissent-v0.0.34/v0.0.34.mod) = 2182
+SHA256 (go/net-im_dissent/dissent-v0.0.34/v0.0.34.zip) = 533378abf7496b7a6d4be9aea87ebf9eb37144803904b0a0e528f5206fcfa13a
+SIZE (go/net-im_dissent/dissent-v0.0.34/v0.0.34.zip) = 4224070
