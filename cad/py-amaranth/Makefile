@@ -1,6 +1,6 @@
 PORTNAME=	amaranth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.4
+DISTVERSION=	0.5.5
 CATEGORIES=	cad python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -50,6 +50,6 @@ do-install: # workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=2
 			${_PYTHONPKGLIST}
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} lib -name '*.pyc' >> ${_PYTHONPKGLIST}
 
-# tests as of 0.5.4: 1186 passed, 3 warnings in 50.72s
+# tests as of 0.5.4: 1187 passed, 1 warning in 44.70s
 
 .include <bsd.port.mk>
