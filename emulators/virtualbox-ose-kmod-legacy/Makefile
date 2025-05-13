@@ -99,7 +99,7 @@ post-patch:
 .if ${PORT_OPTIONS:MPAE}
 	@${ECHO_CMD} 'VBOX_FREEBSD = -DPAE' >> ${WRKSRC}/LocalConfig.kmk
 .endif
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; s|which \$$\*|which \$$1|g' \
 	    ${WRKSRC}/Config.kmk ${WRKSRC}/configure
 	@${REINPLACE_CMD} \
 	    -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' \
