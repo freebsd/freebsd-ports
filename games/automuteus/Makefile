@@ -3,7 +3,7 @@ DISTVERSION=	8.3.6
 PORTREVISION=	5
 CATEGORIES=	games
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Discord Bot to automute Among Us players at round transitions
 WWW=		https://automute.us/
 
