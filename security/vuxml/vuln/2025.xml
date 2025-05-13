@@ -1,3 +1,35 @@
+  <vuln vid="a96cd659-303e-11f0-94b5-54ee755069b5">
+    <topic>libxslt -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>libxslt</name>
+        <range><lt>1.1.43</lt></range>
+      </package>
+    </affects>
+    <description>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+        <h1>[CVE-2024-55549] Fix UAF related to excluded namespaces</h1>
+        <blockquote cite="https://gitlab.gnome.org/GNOME/libxslt/-/issues/127">
+        <p>xsltGetInheritedNsList in libxslt before 1.1.43 has a use-after-free issue related to exclusion of result prefixes.</p>
+        </blockquote>
+        <h1>[CVE-2025-24855] Fix use-after-free of XPath context node</h1>
+        <blockquote cite="https://gitlab.gnome.org/GNOME/libxslt/-/issues/128">
+        <p>numbers.c in libxslt before 1.1.43 has a use-after-free because, in nested XPath evaluations, an XPath context node can be modified but never restored. This is related to xsltNumberFormatGetValue, xsltEvalXPathPredicate, xsltEvalXPathStringNs, and xsltComputeSortResultInternal.</p>
+        </blockquote>
+        </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-55549</cvename>
+      <cvename>CVE-2025-24855</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-55549</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-24855</url>
+    </references>
+    <dates>
+      <discovery>2025-03-13</discovery>
+      <entry>2025-05-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="89c668d5-2f80-11f0-9632-641c67a117d8">
     <topic>www/varnish7 -- Request Smuggling Attack</topic>
     <affects>
