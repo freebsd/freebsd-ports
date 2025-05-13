@@ -1,5 +1,5 @@
 PORTNAME=	rsplib
-DISTVERSION=	3.5.1
+DISTVERSION=	3.5.2
 CATEGORIES=	net
 MASTER_SITES=	https://www.nntb.no/~dreibh/rserpool/download/
 
@@ -25,6 +25,9 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_DOCDIR=${DOCSDIR} \
 		-DENABLE_CSP=1 \
 		-DENABLE_QT=1 \
 		-DUSE_KERNEL_SCTP=1
+
+# Work-around for build issue on ARM (https://bugs.freebsd.org/285706):
+MAKE_ENV=	OMP_NUM_THREADS=1
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
