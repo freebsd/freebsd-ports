@@ -1,0 +1,11 @@
+--- src/VBox/VMM/Config.kmk.orig	2024-12-27 03:55:34.269311000 +0100
++++ src/VBox/VMM/Config.kmk	2024-12-27 03:42:41.858673000 +0100
+@@ -91,7 +91,7 @@
+   VMM_COMMON_DEFS += VBOX_WITH_NATIVE_NEM VBOX_WITH_NEM_R0
+  endif
+ endif
+-if1of ($(KBUILD_TARGET), freebsd linux solaris) # Hosts that implements SUPR0HCPhysToVirt.
++if1of ($(KBUILD_TARGET), linux solaris) # Hosts that implements SUPR0HCPhysToVirt.
+  VMM_COMMON_DEFS += VBOX_WITH_LINEAR_HOST_PHYS_MEM
+ endif
+ 

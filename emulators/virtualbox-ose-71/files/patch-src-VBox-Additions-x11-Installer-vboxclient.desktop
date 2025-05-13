@@ -1,0 +1,10 @@
+--- src/VBox/Additions/x11/Installer/vboxclient.desktop.orig	2020-05-13 19:37:09 UTC
++++ src/VBox/Additions/x11/Installer/vboxclient.desktop
+@@ -8,6 +8,6 @@ Comment[C]=VirtualBox User Session Services
+ Comment=VirtualBox User Session Services
+ Comment[it]=Servizi di sessione utente di VirtualBox
+ Comment[pl]=Usługi sesji użytkownika VirtualBox
+-Exec=/usr/bin/VBoxClient-all
++Exec=/usr/local/bin/VBoxClient-all
+ X-GNOME-Autostart-enabled=true
+ X-KDE-autostart-after=panel

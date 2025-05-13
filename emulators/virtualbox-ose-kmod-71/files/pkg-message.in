@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+The vboxdrv kernel module uses internal kernel APIs.
+
+To avoid crashes due to kernel incompatibility, this module will only
+load on %%OPSYS%% %%OSREL%% kernels.
+EOM
+}
+]

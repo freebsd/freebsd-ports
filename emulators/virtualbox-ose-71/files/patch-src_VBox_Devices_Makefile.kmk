@@ -1,0 +1,44 @@
+--- src/VBox/Devices/Makefile.kmk.orig	2024-10-10 20:29:17.000000000 +0200
++++ src/VBox/Devices/Makefile.kmk	2024-12-27 13:26:17.132294000 +0100
+@@ -132,6 +132,7 @@
+   VBoxDDU_LDFLAGS.darwin += -framework IOKit
+  endif
+ 
++ VBoxDDU_LDFLAGS.freebsd  = $(VBOX_GCC_NO_UNDEFINED)
+  VBoxDDU_LDFLAGS.linux    = $(VBOX_GCC_NO_UNDEFINED)
+  $(call VBOX_SET_VER_INFO_DLL,VBoxDDU,VirtualBox VMM Devices and Drivers Utilities)
+ 
+@@ -286,6 +287,7 @@
+  	-framework SystemConfiguration \
+  	-framework AVFoundation \
+  	-framework Foundation
++ VBoxDD_LDFLAGS.freebsd  = $(VBOX_GCC_NO_UNDEFINED)
+  VBoxDD_LDFLAGS.linux    = $(VBOX_GCC_NO_UNDEFINED)
+ 
+  # --- Tracing bits. ---
+@@ -331,7 +333,7 @@
+   	Graphics/DevVGA-SVGA-cmd.cpp
+  endif
+  ifdef VBOX_WITH_VMSVGA3D
+-  if1of ($(KBUILD_TARGET), linux win)
++  if1of ($(KBUILD_TARGET), linux win freebsd)
+    # Dynamically load 3D library (opengl32, libGL).
+    # This is a temporary solution. In future the 3D backend will be in a separate library.
+    VBOX_WITH_VMSVGA3D_DYNAMIC_LOAD = 1
+@@ -390,6 +392,7 @@
+     	Graphics/DevVGA-SVGA3d-glLdr.cpp
+    else
+     VBoxDD_LIBS.linux   += X11 GL
++    VBoxDD_LIBS.freebsd   += X11 GL
+     VBoxDD_LIBS.win     += $(PATH_SDK_$(VBOX_WINPSDK)_LIB)/Opengl32.lib
+    endif
+    VBoxDD_LDFLAGS.darwin += -framework OpenGL
+@@ -1701,6 +1704,8 @@
+  VBoxSVGA3D_INCS = $(VBOX_GRAPHICS_INCS)
+  VBoxSVGA3D_INCS.win    := \
+  	Graphics/shaderlib/libWineStub/include
++ VBoxSVGA3D_INCS.freebsd := \
++	 Graphics/shaderlib/wine/include
+  VBoxSVGA3D_INCS.linux  := \
+  	Graphics/shaderlib/wine/include
+  VBoxSVGA3D_INCS.darwin := \
