@@ -1,6 +1,6 @@
---- os.h.orig	2019-10-01 15:08:00.000000000 -0700
-+++ os.h	2019-10-28 19:37:41.585526000 -0700
-@@ -250,9 +250,11 @@
+--- os.h.orig	2023-08-16 00:29:26 UTC
++++ os.h
+@@ -250,9 +250,11 @@ extern int errno;
  #endif
  
  #if defined(UTMPOK) || defined(BUGGYGETLOGIN)
@@ -23,7 +23,7 @@
  #endif
  
  #ifndef MAXPATHLEN
-@@ -524,6 +526,6 @@
+@@ -524,6 +526,6 @@ typedef struct fd_set { int fds_bits[1]; } fd_set;
  /* Changing those you won't be able to attach to your old sessions
   * when changing those values in official tree don't forget to bump
   * MSG_VERSION */

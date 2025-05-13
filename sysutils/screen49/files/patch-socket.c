@@ -1,84 +1,97 @@
---- socket.c.orig	2022-01-28 14:06:02 UTC
+--- socket.c.orig	2025-05-13 14:58:03 UTC
 +++ socket.c
-@@ -141,12 +141,14 @@
-   char *firstn = NULL;
-   int nfound = 0, ngood = 0, ndead = 0, nwipe = 0, npriv = 0;
-   int nperfect = 0;
-+  char timestr[64];
-   struct sent
-     {
-       struct sent *next;
-       int mode;
-       char *name;
--    } *slist, **slisttail, *sent, *nsent;
-+      time_t time_created;
-+    } *slist, **slisttail, *sent, *nsent, *schosen;
- 
-   if (match)
-     {
-@@ -258,8 +260,13 @@
-       sent->next = 0;
-       sent->name = SaveStr(name);
-       sent->mode = mode;
-+      sent->time_created = SessionCreationTime(name);
-+      for (slisttail = &slist; *slisttail; slisttail = &((*slisttail)->next))
-+        {
-+          if ((*slisttail)->time_created < sent->time_created) break;
-+        }
-+      sent->next = *slisttail;
-       *slisttail = sent;
--      slisttail = &sent->next;
-       nfound++;
-       sockfd = MakeClientSocket(0, *is_sock);
- #ifdef USE_SETEUID
-@@ -359,34 +366,42 @@
- 	}
-       for (sent = slist; sent; sent = sent->next)
- 	{
-+          if (sent->time_created == 0)
-+            {
-+              sprintf(timestr, "??" "?");
-+            }
-+          else
-+            {
-+              strftime(timestr, 64, "%x %X", localtime(&sent->time_created));
-+            }
- 	  switch (sent->mode)
- 	    {
- 	    case 0700:
--	      printf("\t%s\t(Attached)\n", sent->name);
-+	      printf("\t%s\t(%s)\t(Attached)\n", sent->name, timestr);
- 	      break;
- 	    case 0600:
--	      printf("\t%s\t(Detached)\n", sent->name);
-+	      printf("\t%s\t(%s)\t(Detached)\n", sent->name, timestr);
- 	      break;
- #ifdef MULTIUSER
- 	    case 0701:
--	      printf("\t%s\t(Multi, attached)\n", sent->name);
-+	      printf("\t%s\t(%s)\t(Multi, attached)\n", sent->name, timestr);
- 	      break;
- 	    case 0601:
--	      printf("\t%s\t(Multi, detached)\n", sent->name);
-+	      printf("\t%s\t(%s)\t(Multi, detached)\n", sent->name, timestr);
- 	      break;
+@@ -171,8 +171,13 @@ bool *is_sock;
+   xsetegid(real_gid);
  #endif
- 	    case -1:
- 	      /* No trigraphs here! */
--	      printf("\t%s\t(Dead ?%c?)\n", sent->name, '?');
-+	      printf("\t%s\t(%s)\t(Dead ?%c?)\n", sent->name, timestr, '?');
- 	      break;
- 	    case -2:
--	      printf("\t%s\t(Removed)\n", sent->name);
-+	      printf("\t%s\t(%s)\t(Removed)\n", sent->name, timestr);
- 	      break;
- 	    case -3:
--	      printf("\t%s\t(Remote or dead)\n", sent->name);
-+	      printf("\t%s\t(%s)\t(Remote or dead)\n", sent->name, timestr);
- 	      break;
- 	    case -4:
--	      printf("\t%s\t(Private)\n", sent->name);
-+	      printf("\t%s\t(%s)\t(Private)\n", sent->name, timestr);
- 	      break;
+ 
+-  if ((dirp = opendir(SockPath)) == 0)
+-    Panic(errno, "Cannot opendir %s", SockPath);
++  if ((dirp = opendir(SockPath)) == 0) {
++    if (eff_uid == real_uid) {
++      Panic(errno, "Cannot opendir %s", SockPath);
++    } else {
++      Panic(0, "Error accessing %s", SockPath);
++    }
++  }
+ 
+   slist = 0;
+   slisttail = &slist;
+@@ -841,6 +846,11 @@ int pid;
+   return UserStatus();
+ }
+ 
++static void KillUnpriv(pid_t pid, int sig) {
++    UserContext();
++    UserReturn(kill(pid, sig));
++}
++
+ #ifdef hpux
+ /*
+  * From: "F. K. Bruner" <napalm@ugcs.caltech.edu>
+@@ -926,14 +936,14 @@ struct win *wi;
+             {
+ 	      Msg(errno, "Could not perform necessary sanity checks on pts device.");
+ 	      close(i);
+-	      Kill(pid, SIG_BYE);
++	      KillUnpriv(pid, SIG_BYE);
+ 	      return -1;
+             }
+           if (strcmp(ttyname_in_ns, m->m_tty))
+             {
+ 	      Msg(errno, "Attach: passed fd does not match tty: %s - %s!", ttyname_in_ns, m->m_tty[0] != '\0' ? m->m_tty : "(null)");
+ 	      close(i);
+-	      Kill(pid, SIG_BYE);
++	      KillUnpriv(pid, SIG_BYE);
+ 	      return -1;
  	    }
+ 	  /* m->m_tty so far contains the actual name of the pts device in the
+@@ -950,19 +960,19 @@ struct win *wi;
+ 	{
+ 	  Msg(errno, "Attach: passed fd does not match tty: %s - %s!", m->m_tty, myttyname ? myttyname : "NULL");
+ 	  close(i);
+-	  Kill(pid, SIG_BYE);
++	  KillUnpriv(pid, SIG_BYE);
+ 	  return -1;
  	}
+     }
+   else if ((i = secopen(m->m_tty, O_RDWR | O_NONBLOCK, 0)) < 0)
+     {
+       Msg(errno, "Attach: Could not open %s!", m->m_tty);
+-      Kill(pid, SIG_BYE);
++      KillUnpriv(pid, SIG_BYE);
+       return -1;
+     }
+ #ifdef MULTIUSER
+   if (attach)
+-    Kill(pid, SIGCONT);
++    KillUnpriv(pid, SIGCONT);
+ #endif
+ 
+ #if defined(ultrix) || defined(pyr) || defined(NeXT)
+@@ -975,7 +985,7 @@ struct win *wi;
+ 	{
+ 	  write(i, "Attaching from inside of screen?\n", 33);
+ 	  close(i);
+-	  Kill(pid, SIG_BYE);
++	  KillUnpriv(pid, SIG_BYE);
+ 	  Msg(0, "Attach msg ignored: coming from inside.");
+ 	  return -1;
+ 	}
+@@ -986,7 +996,7 @@ struct win *wi;
+ 	  {
+ 	      write(i, "Access to session denied.\n", 26);
+ 	      close(i);
+-	      Kill(pid, SIG_BYE);
++	      KillUnpriv(pid, SIG_BYE);
+ 	      Msg(0, "Attach: access denied for user %s.", user);
+ 	      return -1;
+ 	  }
+@@ -1304,7 +1314,7 @@ ReceiveMsg()
+             Msg(0, "Query attempt with bad pid(%d)!", m.m.command.apid);
+           }
+           else {
+-            Kill(m.m.command.apid,
++            KillUnpriv(m.m.command.apid,
+                (queryflag >= 0)
+                    ? SIGCONT
+                    : SIG_BYE); /* Send SIG_BYE if an error happened */

@@ -1,6 +1,6 @@
---- terminfo/checktc.c.orig	Fri Sep 29 09:13:22 1995
-+++ terminfo/checktc.c	Tue Apr 22 20:37:18 2003
-@@ -171,6 +171,7 @@
+--- terminfo/checktc.c.orig	2023-08-16 00:29:26 UTC
++++ terminfo/checktc.c
+@@ -171,6 +171,7 @@ char *s;
    fflush(stdout);
  }
  
@@ -8,7 +8,7 @@
  void CPutStr(s, c)
  char *s;
  int c;
-@@ -178,6 +179,7 @@
+@@ -178,6 +179,7 @@ int c;
    tputs(tgoto(s, 0, c), 1, putcha);
    fflush(stdout);
  }

@@ -1,8 +1,8 @@
---- resize.c.orig	Mon Sep  8 07:26:31 2003
-+++ resize.c	Mon Dec  1 17:16:29 2003
-@@ -682,6 +682,17 @@
-   if (wi == 0)
-     he = hi = 0;
+--- resize.c.orig	2023-08-16 00:29:26 UTC
++++ resize.c
+@@ -683,6 +683,17 @@ int wi, he, hi;
+       he = MAXWIDTH;
+     }
  
 +  if (wi > 1000)
 +    {

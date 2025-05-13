@@ -1,4 +1,4 @@
---- misc.c.orig	2022-01-28 14:06:02 UTC
+--- misc.c.orig	2023-08-16 00:29:26 UTC
 +++ misc.c
 @@ -28,8 +28,10 @@
  
@@ -11,7 +11,7 @@
  
  #include "config.h"
  #include "screen.h"
-@@ -796,3 +798,17 @@
+@@ -720,3 +722,17 @@ xvsnprintf(char *s, int n, char *fmt, xva_list stack)
  }
  
  #endif

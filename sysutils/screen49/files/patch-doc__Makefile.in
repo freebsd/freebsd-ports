@@ -1,7 +1,7 @@
---- doc/Makefile.in.orig	2014-04-29 20:26:42.618832001 -0700
-+++ doc/Makefile.in	2014-04-29 20:29:26.379384101 -0700
-@@ -31,7 +31,10 @@
- 	$(MAKEINFO) --no-split $(srcdir)/screen.texinfo -o screen.info
+--- doc/Makefile.in.orig	2023-08-16 00:29:26 UTC
++++ doc/Makefile.in
+@@ -31,7 +31,10 @@ install: installdirs
+ 	$(MAKEINFO) $(srcdir)/screen.texinfo -o screen.info
  
  install: installdirs
 +ifeq (${WITH_MAN},1)
@@ -11,8 +11,8 @@
  	-$(MAKE) screen.info
  	-if test -f screen.info; then d=.; else d=$(srcdir); fi; \
  	if test -f $$d/screen.info; then \
-@@ -40,13 +43,19 @@
- 	  install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/screen.info; \
+@@ -40,13 +43,19 @@ install: installdirs
+ 	  install-info --info-dir=$(DESTDIR)$(infodir) $$d/screen.info; \
  	else true; fi; \
  	fi
 +endif

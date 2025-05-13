@@ -1,5 +1,5 @@
---- utmp.c.orig	2023-08-15 17:29:26.000000000 -0700
-+++ utmp.c	2023-08-19 08:57:48.376313000 -0700
+--- utmp.c.orig	2023-08-16 00:29:26 UTC
++++ utmp.c
 @@ -26,6 +26,7 @@
   ****************************************************************
   */
@@ -8,7 +8,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <fcntl.h>
-@@ -89,11 +90,13 @@
+@@ -89,11 +90,13 @@ static struct utmp *getutslot __P((slot_t));
  static int  pututslot __P((slot_t, struct utmp *, char *, struct win *));
  static struct utmp *getutslot __P((slot_t));
  #ifndef GETUTENT
@@ -22,7 +22,7 @@
  #if defined(linux) && defined(GETUTENT)
  static struct utmp *xpututline __P((struct utmp *utmp));
  # define pututline xpututline
-@@ -102,9 +105,7 @@
+@@ -102,9 +105,7 @@ static char UtmpName[] = UTMPFILE;
  
  static int utmpok;
  static char UtmpName[] = UTMPFILE;
@@ -32,7 +32,7 @@
  
  
  # if defined(GETUTENT) && (!defined(SVR4) || defined(__hpux)) && ! defined(__CYGWIN__)
-@@ -409,12 +410,6 @@
+@@ -409,12 +410,6 @@ struct win *wi;
    register slot_t slot;
    struct utmp u;
    int saved_ut;
@@ -45,7 +45,7 @@
  
    wi->w_slot = (slot_t)0;
    if (!utmpok || wi->w_type != W_TYPE_PTY)
-@@ -435,51 +430,13 @@
+@@ -435,51 +430,13 @@ struct win *wi;
      makeuser(&u, stripdev(wi->w_tty), LoginName, wi->w_pid);
  
  #ifdef UTHOST
@@ -100,7 +100,7 @@
      {
        Msg(errno,"Could not write %s", UtmpName);
        UT_CLOSE;
-@@ -607,7 +564,7 @@
+@@ -607,7 +564,7 @@ struct utmp *u;
  struct utmp *u;
  {
    u->ut_type = DEAD_PROCESS;
@@ -109,7 +109,7 @@
    u->ut_exit.e_termination = 0;
    u->ut_exit.e_exit = 0;
  #endif
-@@ -640,7 +597,11 @@
+@@ -640,7 +597,11 @@ int pid;
    /* must use temp variable because of NetBSD/sparc64, where
     * ut_xtime is long(64) but time_t is int(32) */
    (void)time(&now);
@@ -122,7 +122,7 @@
  }
  
  static slot_t
-@@ -670,6 +631,7 @@
+@@ -670,6 +631,7 @@ initutmp()
    return (utmpfd = open(UtmpName, O_RDWR)) >= 0;
  }
  
@@ -130,7 +130,7 @@
  static void
  setutent()
  {
-@@ -694,6 +656,7 @@
+@@ -694,6 +656,7 @@ getutent()
      return 0;
    return &uent;
  }
@@ -138,7 +138,7 @@
  
  static struct utmp *
  getutslot(slot)
-@@ -750,9 +713,13 @@
+@@ -750,9 +713,13 @@ int pid;
  {
    time_t now;
    strncpy(u->ut_line, line, sizeof(u->ut_line));
