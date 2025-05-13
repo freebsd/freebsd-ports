@@ -1,6 +1,6 @@
 PORTNAME=	modsecurity
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.13
+DISTVERSION=	3.0.14
 CATEGORIES=	security www
 MASTER_SITES=	https://github.com/owasp-modsecurity/ModSecurity/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	3
