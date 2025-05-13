@@ -1,3 +1,9 @@
+===>  License MIT accepted by the user
+===>   dumbpipe-0.27.0 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by dumbpipe-0.27.0 for building
+===>  Extracting for dumbpipe-0.27.0
+=> SHA256 Checksum OK for n0-computer-dumbpipe-v0.27.0_GH0.tar.gz.
+===>  Moving crates to /usr/local/poudriere/ports/default/net/dumbpipe/work/dumbpipe-0.27.0/cargo-crates
 CARGO_CRATES=	addr2line-0.24.2 \
 		adler2-2.0.0 \
 		aead-0.5.2 \
@@ -14,14 +20,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		asn1-rs-0.6.2 \
 		asn1-rs-derive-0.5.1 \
 		asn1-rs-impl-0.2.0 \
-		async-recursion-1.1.1 \
+		async-compat-0.2.4 \
 		async-trait-0.1.86 \
+		async_io_stream-0.3.3 \
 		atomic-waker-1.1.2 \
 		attohttpc-0.24.1 \
 		autocfg-1.4.0 \
 		backon-1.4.0 \
 		backtrace-0.3.74 \
 		base16ct-0.2.0 \
+		base32-0.5.1 \
 		base64-0.22.1 \
 		base64ct-1.6.0 \
 		bitflags-1.3.2 \
@@ -54,6 +62,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cpufeatures-0.2.17 \
 		crc-3.2.1 \
 		crc-catalog-2.4.0 \
+		critical-section-1.2.0 \
 		crossbeam-channel-0.5.14 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
@@ -75,6 +84,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		dlopen2-0.5.0 \
 		document-features-0.2.10 \
 		duct-0.13.7 \
+		dyn-clone-1.0.19 \
 		ed25519-2.2.3 \
 		ed25519-dalek-2.1.1 \
 		embedded-io-0.4.0 \
@@ -83,17 +93,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		enumflags2-0.7.11 \
 		enumflags2_derive-0.7.11 \
 		equivalent-1.0.2 \
-		erased-serde-0.3.31 \
-		erased_set-0.8.0 \
 		fallible-iterator-0.3.0 \
 		fastrand-2.3.0 \
 		fiat-crypto-0.2.9 \
-		flume-0.11.1 \
 		fnv-1.0.7 \
 		foldhash-0.1.4 \
 		form_urlencoded-1.2.1 \
 		futures-0.3.31 \
-		futures-buffered-0.2.9 \
+		futures-buffered-0.2.11 \
 		futures-channel-0.3.31 \
 		futures-core-0.3.31 \
 		futures-executor-0.3.31 \
@@ -107,17 +114,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		generator-0.8.4 \
 		generic-array-0.14.7 \
 		getrandom-0.2.15 \
-		getrandom-0.3.1 \
+		getrandom-0.3.3 \
 		gimli-0.31.1 \
 		glob-0.3.2 \
 		gloo-timers-0.3.0 \
 		h2-0.4.7 \
-		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		hex-0.4.3 \
-		hickory-proto-0.25.0-alpha.5 \
-		hickory-resolver-0.25.0-alpha.5 \
+		hickory-proto-0.25.2 \
+		hickory-resolver-0.25.2 \
 		hmac-0.12.1 \
 		hmac-sha1-0.2.2 \
 		hmac-sha256-1.1.8 \
@@ -131,7 +137,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		httpdate-1.0.3 \
 		hyper-1.6.0 \
 		hyper-rustls-0.27.5 \
-		hyper-util-0.1.10 \
+		hyper-util-0.1.11 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
 		icu_collections-1.5.0 \
@@ -146,27 +152,27 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		icu_provider_macros-1.5.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
-		igd-next-0.15.1 \
+		igd-next-0.16.1 \
 		indexmap-2.7.1 \
 		inout-0.1.3 \
 		instant-0.1.13 \
 		ipconfig-0.3.2 \
 		ipnet-2.11.0 \
-		iroh-0.34.0 \
-		iroh-base-0.34.0 \
-		iroh-metrics-0.32.0 \
-		iroh-net-report-0.34.0 \
+		iroh-0.35.0 \
+		iroh-base-0.35.0 \
+		iroh-metrics-0.34.0 \
+		iroh-metrics-derive-0.2.0 \
 		iroh-quinn-0.13.0 \
 		iroh-quinn-proto-0.13.0 \
 		iroh-quinn-udp-0.5.7 \
-		iroh-relay-0.34.0 \
+		iroh-relay-0.35.0 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.14 \
 		jni-0.21.1 \
 		jni-sys-0.3.0 \
 		js-sys-0.3.77 \
 		lazy_static-1.5.0 \
-		libc-0.2.169 \
+		libc-0.2.172 \
 		litemap-0.7.4 \
 		litrs-0.4.1 \
 		lock_api-0.4.12 \
@@ -174,6 +180,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		loom-0.5.6 \
 		loom-0.7.2 \
 		lru-0.12.5 \
+		lru-0.13.0 \
 		match_cfg-0.1.0 \
 		matchers-0.1.0 \
 		md5-0.7.0 \
@@ -183,22 +190,20 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		miniz_oxide-0.8.4 \
 		mio-1.0.3 \
 		moka-0.12.10 \
-		n0-future-0.1.2 \
-		nanorand-0.7.0 \
+		n0-future-0.1.3 \
+		nested_enum_utils-0.2.2 \
 		netdev-0.31.0 \
 		netlink-packet-core-0.7.0 \
 		netlink-packet-route-0.17.1 \
-		netlink-packet-route-0.19.0 \
+		netlink-packet-route-0.23.0 \
 		netlink-packet-utils-0.5.2 \
 		netlink-proto-0.11.5 \
 		netlink-sys-0.8.7 \
-		netwatch-0.3.0 \
-		netwatch-0.4.0 \
-		nix-0.26.4 \
-		nix-0.27.1 \
+		netwatch-0.5.0 \
 		nix-0.29.0 \
 		no-std-net-0.6.0 \
 		nom-7.1.3 \
+		ntimestamp-1.0.0 \
 		nu-ansi-term-0.46.0 \
 		num-bigint-0.4.6 \
 		num-conv-0.1.0 \
@@ -224,11 +229,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pest_derive-2.7.15 \
 		pest_generator-2.7.15 \
 		pest_meta-2.7.15 \
+		pharos-0.5.3 \
 		pin-project-1.1.9 \
 		pin-project-internal-1.1.9 \
 		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
-		pkarr-2.3.1 \
+		pkarr-3.7.1 \
 		pkcs8-0.10.2 \
 		pnet_base-0.34.0 \
 		pnet_macros-0.34.0 \
@@ -236,14 +242,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pnet_packet-0.34.0 \
 		poly1305-0.8.0 \
 		portable-atomic-1.10.0 \
-		portmapper-0.4.0 \
+		portmapper-0.5.0 \
 		postcard-1.1.1 \
 		postcard-derive-0.1.2 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.20 \
-		precis-core-0.1.10 \
-		precis-profiles-0.1.11 \
-		precis-tools-0.1.8 \
+		precis-core-0.1.11 \
+		precis-profiles-0.1.12 \
+		precis-tools-0.1.9 \
 		proc-macro-crate-3.2.0 \
 		proc-macro2-1.0.93 \
 		quick-error-1.2.3 \
@@ -252,6 +258,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		quinn-udp-0.5.10 \
 		quote-1.0.38 \
 		quoted-string-parser-0.1.0 \
+		r-efi-5.2.0 \
 		rand-0.8.5 \
 		rand-0.9.0 \
 		rand_chacha-0.3.1 \
@@ -266,11 +273,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		regex-lite-0.1.6 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.5 \
-		reqwest-0.12.12 \
+		reqwest-0.12.15 \
 		resolv-conf-0.7.0 \
 		ring-0.17.9 \
-		rtnetlink-0.13.1 \
-		rtnetlink-0.14.1 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
@@ -294,32 +299,33 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		self_cell-1.1.0 \
 		semver-1.0.25 \
 		send_wrapper-0.6.0 \
-		serde-1.0.217 \
-		serde_derive-1.0.217 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
 		serde_json-1.0.138 \
 		serde_urlencoded-0.7.1 \
 		serdect-0.2.0 \
 		sha1-0.10.6 \
+		sha1_smol-1.0.1 \
 		sha2-0.10.8 \
 		sharded-slab-0.1.7 \
 		shared_child-1.0.1 \
 		shlex-1.3.0 \
 		signal-hook-registry-1.4.2 \
 		signature-2.2.0 \
+		simdutf8-0.1.5 \
 		simple-dns-0.9.3 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
-		socket2-0.5.8 \
+		snafu-0.8.5 \
+		snafu-derive-0.8.5 \
+		socket2-0.5.9 \
 		spin-0.9.8 \
 		spki-0.7.3 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
-		struct_iterable-0.1.1 \
-		struct_iterable_derive-0.1.0 \
-		struct_iterable_internal-0.1.1 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
-		stun-rs-0.1.9 \
+		stun-rs-0.1.11 \
 		subtle-2.6.1 \
 		surge-ping-0.8.1 \
 		syn-1.0.109 \
@@ -340,13 +346,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinystr-0.7.6 \
 		tinyvec-1.8.1 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.43.0 \
+		tokio-1.45.0 \
 		tokio-macros-2.5.0 \
 		tokio-rustls-0.26.1 \
 		tokio-stream-0.1.17 \
-		tokio-tungstenite-0.24.0 \
-		tokio-tungstenite-wasm-0.4.0 \
-		tokio-util-0.7.13 \
+		tokio-util-0.7.15 \
+		tokio-websockets-0.11.4 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.24 \
 		tower-0.5.2 \
@@ -358,7 +363,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.19 \
 		try-lock-0.2.5 \
-		tungstenite-0.24.0 \
 		typenum-1.17.0 \
 		ucd-parse-0.1.13 \
 		ucd-trie-0.1.7 \
@@ -367,9 +371,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unicode-xid-0.2.6 \
 		universal-hash-0.5.1 \
 		untrusted-0.9.0 \
-		ureq-2.12.1 \
 		url-2.5.4 \
-		utf-8-0.7.6 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
@@ -379,7 +381,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasi-0.13.3+wasi-0.2.2 \
+		wasi-0.14.2+wasi-0.2.4 \
 		wasm-bindgen-0.2.100 \
 		wasm-bindgen-backend-0.2.100 \
 		wasm-bindgen-futures-0.4.50 \
@@ -406,7 +408,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows-implement-0.59.0 \
 		windows-interface-0.58.0 \
 		windows-interface-0.59.0 \
-		windows-registry-0.2.0 \
+		windows-registry-0.4.0 \
 		windows-result-0.2.0 \
 		windows-result-0.3.0 \
 		windows-strings-0.1.0 \
@@ -451,10 +453,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_msvc-0.53.0 \
 		winnow-0.7.2 \
 		winreg-0.50.0 \
-		wit-bindgen-rt-0.33.0 \
+		wit-bindgen-rt-0.39.0 \
 		wmi-0.14.5 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
+		ws_stream_wasm-0.7.4 \
 		x509-parser-0.16.0 \
 		xml-rs-0.8.25 \
 		xmltree-0.10.3 \
