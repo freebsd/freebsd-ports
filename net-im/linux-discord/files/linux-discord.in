@@ -1,9 +1,22 @@
 #!%%LINUXBASE%%/bin/bash
 
+DISCORD_CONF="$HOME/.config/discord/settings.json"
+
+# disable automatic update
+if [ ! -f "$DISCORD_CONF" ]; then
+  echo '{"SKIP_HOST_UPDATE": true}' > "$DISCORD_CONF"
+else 
+  /usr/bin/grep -q 'SKIP_HOST_UPDATE' "$DISCORD_CONF" || \
+    mv -f "$DISCORD_CONF" "${DISCORD_CONF}.bak"
+    awk '{print $0; if (R==0 && $0 ~ /\{/) {print "  \"SKIP_HOST_UPDATE\": true,"; R=1;}}' \
+    "${DISCORD_CONF}.bak"  > "$DISCORD_CONF"
+fi
+
 # workaround Chromium bug https://bugs.chromium.org/p/chromium/issues/detail?id=918234
 if [ "$DBUS_SESSION_BUS_ADDRESS" = "" ]; then
     export DBUS_SESSION_BUS_ADDRESS="autolaunch:"
 fi
+
 export ELECTRON_IS_DEV=0
 export LIBGL_DRI3_DISABLE=1
 export NODE_ENV=production
