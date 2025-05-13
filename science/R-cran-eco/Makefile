@@ -10,6 +10,9 @@ WWW=		https://imai.princeton.edu/software/eco.html
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unsupported upstream
+EXPIRATION_DATE=2025-06-14
+
 USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
