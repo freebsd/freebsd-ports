@@ -1,5 +1,3 @@
-TIMESTAMP = 1707253056
-SHA256 (gxkb-0.9.5.tar.gz) = 255af5516a5b39acb0cd2a821404833decce00c2bfee42e2d68dfb461d18c82f
-SIZE (gxkb-0.9.5.tar.gz) = 236124
-SHA256 (gxkb-0.9.3.tar.gz) = ef0bbea5f40051e57ca35f304a91ff296044029913cd4d07470fd26b5204d831
-SIZE (gxkb-0.9.3.tar.gz) = 174152
+TIMESTAMP = 1722449975
+SHA256 (gxkb-0.9.6.tar.gz) = 43c68ff62d62fd6e2e9ca42b3f209c68cc37924c44302e28c1b04ef9f541ebdb
+SIZE (gxkb-0.9.6.tar.gz) = 236500
