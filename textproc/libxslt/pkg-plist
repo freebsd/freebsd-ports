@@ -29,7 +29,7 @@ lib/cmake/libxslt/libxslt-config.cmake
 %%STATIC%%lib/libexslt.a
 lib/libexslt.so
 lib/libexslt.so.0
-lib/libexslt.so.0.8.23
+lib/libexslt.so.0.8.24
 %%STATIC%%lib/libxslt.a
 lib/libxslt.so
 lib/libxslt.so.1
@@ -78,4 +78,4 @@ share/gtk-doc/html/libxslt/up.png
 share/man/man1/xsltproc.1.gz
 share/man/man3/libexslt.3.gz
 share/man/man3/libxslt.3.gz
-@dir lib/libxslt-plugins
+%%PLUGINS%%@dir lib/libxslt-plugins
