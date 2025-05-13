@@ -1,5 +1,5 @@
 PORTNAME=	asterisk
-DISTVERSION=	20.13.0
+DISTVERSION=	20.14.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -219,6 +219,10 @@ PJSIP_VERSION=	2.15.1
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500026
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-third-party_pjproject_Makefile
+.endif
 
 .if (${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base) || \
 	${SSL_DEFAULT:Mopenssl3*}
