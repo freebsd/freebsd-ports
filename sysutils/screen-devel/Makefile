@@ -1,6 +1,6 @@
 PORTNAME=	screen
 DISTVERSION=	5.0.0.${SCREEN_COMMIT_DATE}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 MASTER_SITES=	#
@@ -45,7 +45,7 @@ NCURSES_PORT_USES=	ncurses:port
 OPTIONS_SUB=
 
 USES=		autoreconf:build gmake cpe
-CONFIGURE_ARGS=	--with-system_screenrc=${ETCDIR}/etc/screenrc
+CONFIGURE_ARGS=	--with-system_screenrc=${ETCDIR}/screenrc
 MAKE_ARGS+=	WITH_MAN=1
 
 CPE_VENDOR=	gnu
