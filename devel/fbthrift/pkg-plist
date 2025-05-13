@@ -283,6 +283,8 @@ include/thrift/lib/cpp2/detail/meta.h
 include/thrift/lib/cpp2/dynamic/SerializableRecord.h
 include/thrift/lib/cpp2/dynamic/TypeId.h
 include/thrift/lib/cpp2/dynamic/TypeSystem.h
+include/thrift/lib/cpp2/dynamic/TypeSystemBuilder.h
+include/thrift/lib/cpp2/dynamic/detail/Traits.h
 include/thrift/lib/cpp2/folly_dynamic/folly_dynamic.h
 include/thrift/lib/cpp2/folly_dynamic/internal/folly_dynamic-inl-post.h
 include/thrift/lib/cpp2/folly_dynamic/internal/folly_dynamic-inl-pre.h
@@ -730,7 +732,6 @@ include/thrift/lib/thrift/TypeToMaskAdapter.h
 include/thrift/lib/thrift/bundled_lib_thrift.h
 include/thrift/lib/thrift/detail/AnyPatch.h
 include/thrift/lib/thrift/detail/DynamicPatch.h
-include/thrift/lib/thrift/detail/SerializableRecordAdapter.h
 include/thrift/lib/thrift/detail/TypeIdAdapter.h
 include/thrift/lib/thrift/detail/TypeSystemAdapter.h
 include/thrift/lib/thrift/detail/id.h
