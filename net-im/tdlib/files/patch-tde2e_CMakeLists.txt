@@ -1,10 +1,11 @@
---- tde2e/CMakeLists.txt.orig	2025-04-30 22:25:21 UTC
+--- tde2e/CMakeLists.txt.orig	2025-05-09 16:51:07 UTC
 +++ tde2e/CMakeLists.txt
-@@ -83,4 +83,7 @@ if (TDE2E_ENABLE_INSTALL)
-     LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
-     ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
-   )
-+  install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/td
-+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-+    FILES_MATCHING PATTERN "*.h")
+@@ -62,7 +62,7 @@ set(TDE2E_TEST_SOURCE "${TDE2E_TEST_SOURCE}" PARENT_SC
+ 
+ set(TDE2E_TEST_SOURCE "${TDE2E_TEST_SOURCE}" PARENT_SCOPE)
+ 
+-add_library(tde2e STATIC ${TDE2E_SOURCE})
++add_library(tde2e ${TDE2E_SOURCE})
+ if (NOT CMAKE_CROSSCOMPILING)
+   add_dependencies(tde2e tl_generate_common)
  endif()

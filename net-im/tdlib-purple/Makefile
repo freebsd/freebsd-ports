@@ -14,6 +14,8 @@ WWW=		https://github.com/ars3niy/tdlib-purple
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to compile with the latest revision of net-im/tdlib
+
 LIB_DEPENDS=	libfmt.so:devel/libfmt	\
 		libtdapi.so:net-im/tdlib	\
 		librlottie.so:graphics/rlottie	\
