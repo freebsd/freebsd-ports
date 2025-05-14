@@ -1,3 +1,30 @@
+  <vuln vid="6f10b49d-07b1-4be4-8abf-edf880b16ad2">
+    <topic>vscode -- security feature bypass vulnerability</topic>
+    <affects>
+      <package>
+	<name>vscode</name>
+	<range><lt>1.100.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VSCode developers report:</p>
+	<blockquote cite="https://github.com/microsoft/vscode/security/advisories/GHSA-742r-ggwg-vqxm">
+	  <p>A security feature bypass vulnerability exists in VS Code 1.100.0 and earlier versions where a maliciously crafted URL could be considered trusted when it should not have due to how VS Code handled glob patterns in the trusted domains feature. When paired with the #fetch tool in Chat, this scenario would require the attacker to convince an LLM (via prompt injection) to fetch the maliciously crafted URL but when fetched, the user would have no moment to confirm the flighting of the request.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-21264</cvename>
+      <url>https://github.com/microsoft/vscode/security/advisories/GHSA-742r-ggwg-vqxm</url>
+      <url>https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-21264</url>
+    </references>
+    <dates>
+      <discovery>2025-05-13</discovery>
+      <entry>2025-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a96cd659-303e-11f0-94b5-54ee755069b5">
     <topic>libxslt -- multiple vulnerabilities</topic>
     <affects>
