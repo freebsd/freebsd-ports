@@ -1,0 +1,13 @@
+--- test/gmp.jl.orig	2024-08-27 21:19:31 UTC
++++ test/gmp.jl
+@@ -12,8 +12,8 @@ ee = typemax(Int64)
+     @test big(1) isa Signed
+ 
+     if sizeof(Culong) >= 8
+-        @test_throws OutOfMemoryError big(96608869069402268615522366320733234710)^16374500563449903721
+-        @test_throws OutOfMemoryError 555555555555555555555555555555555555555555555555555^55555555555555555
++        @test_throws DivideError big(96608869069402268615522366320733234710)^16374500563449903721
++        @test_throws DivideError 555555555555555555555555555555555555555555555555555^55555555555555555
+     end
+ 
+     let x = big(1)

@@ -1,23 +1,9 @@
 PORTNAME=	julia
-DISTVERSION=	1.10.3
-PORTREVISION=	7
+DISTVERSION=	1.10.5
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
-DOCS_MASTER_SITES= https://www.unicode.org/Public/$(UNICODE_DATA_VERSION)/ucd/:unicode \
-		https://jp.pkg.julialang.org/registry/${JPKGUUID}/:jpkg \
-		https://github.com/JuliaBinaryWrappers/Expat_jll.jl/releases/download/Expat-v2.6.2+0/:afexpat \
-		https://github.com/JuliaBinaryWrappers/Git_jll.jl/releases/download/Git-v2.44.0+2/:afgit \
-		https://github.com/JuliaBinaryWrappers/Libiconv_jll.jl/releases/download/Libiconv-v1.17.0+0/:aflibiconv \
-		https://github.com/JuliaBinaryWrappers/OpenSSL_jll.jl/releases/download/OpenSSL-v3.0.13+1/:afopenssl
-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-DOCS_DISTFILES= UnicodeData.txt:unicode \
-		Expat.v2.6.2.x86_64-unknown-freebsd.tar.gz:afexpat \
-		Git.v2.44.0.x86_64-unknown-freebsd.tar.gz:afgit \
-		Libiconv.v1.17.0.x86_64-unknown-freebsd.tar.gz:aflibiconv \
-		OpenSSL.v3.0.13.x86_64-unknown-freebsd.tar.gz:afopenssl \
-		${JPKGSHA1}:jpkg
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -26,9 +12,6 @@ WWW=		https://julialang.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
-
-DEPRECATED=	Depends on expired security/mbedtls2
-EXPIRATION_DATE=2025-06-30
 
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	Has not been ported to this platform for freebsd
@@ -39,21 +22,22 @@ MY_DEPENDS=	7zz:archivers/7-zip \
 BUILD_DEPENDS=	patchelf:sysutils/patchelf \
 		cmake:devel/cmake-core \
 		${MY_DEPENDS}
-
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libdSFMT.so:math/dsfmt \
 		libgit2.so:devel/libgit2 \
 		libgmp.so:math/gmp \
 		libnghttp2.so:www/libnghttp2 \
-		libmbedtls.so:security/mbedtls2 \
 		libmpfr.so:math/mpfr \
 		libopenlibm.so:math/openlibm \
 		libpcre2-8.so:devel/pcre2 \
 		libssh2.so:security/libssh2 \
-		libsuitesparseconfig.so:math/suitesparse-config \
+		libmbedcrypto.so:security/mbedtls3 \
+		libspqr.so:math/suitesparse-spqr \
+		libumfpack.so:math/suitesparse-umfpack \
 		libutf8proc.so:textproc/utf8proc \
 		libunwind.so:devel/libunwind \
-		libzstd.so:archivers/zstd
+		libzstd.so:archivers/zstd \
+		libelf.so:devel/elfutils
 RUN_DEPENDS=	${MY_DEPENDS}
 
 BUILD_DEPENDS_amd64=	ittapi>0:devel/ittapi
@@ -61,16 +45,34 @@ BUILD_DEPENDS_i386=	ittapi>0:devel/ittapi
 
 # Do not set USES=fortran to avoid extra-linkage
 USES=		blaslapack:openblas compiler:c++17-lang cpe elfctl gmake \
-		perl5 python shebangfix
+		libedit perl5 python shebangfix
 _GCC_VER=	${GCC_DEFAULT:S/.//}
+
+DOCS_DISTFILES=	UnicodeData.txt:unicode \
+		Expat.v2.6.2.x86_64-unknown-freebsd.tar.gz:afexpat \
+		Git.v2.44.0.x86_64-unknown-freebsd.tar.gz:afgit \
+		Libiconv.v1.17.0.x86_64-unknown-freebsd.tar.gz:aflibiconv \
+		OpenSSL.v3.0.13.x86_64-unknown-freebsd.tar.gz:afopenssl \
+		${JPKGSHA1}:jpkg
+DOCS_MASTER_SITES=	https://www.unicode.org/Public/${UNICODE_DATA_VERSION}/ucd/:unicode \
+		https://jp.pkg.julialang.org/registry/${JPKGUUID}/:jpkg \
+		https://github.com/JuliaBinaryWrappers/Expat_jll.jl/releases/download/Expat-v2.6.2+0/:afexpat \
+		https://github.com/JuliaBinaryWrappers/Git_jll.jl/releases/download/Git-v2.44.0+2/:afgit \
+		https://github.com/JuliaBinaryWrappers/Libiconv_jll.jl/releases/download/Libiconv-v1.17.0+0/:aflibiconv \
+		https://github.com/JuliaBinaryWrappers/OpenSSL_jll.jl/releases/download/OpenSSL-v3.0.13+1/:afopenssl
 
 CPE_VENDOR=	julialang
 
 ELF_FEATURES=	+wxneeded:usr/bin/julia
 
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/julia
 
-MAKE_ARGS+=	JULIA_DEBUG=Documenter VERBOSE=1 NO_GIT=1 \
+GMP_VER=	6.3.0	# Version of math/gmp
+MPFR_VER=	4.2.2	# Version of math/mpfr
+
+MAKE_ARGS+=	JULIA_DEBUG=Documenter \
+		VERBOSE=1 \
+		NO_GIT=1 \
 		USE_BINARYBUILDER=0 \
 		prefix=${PREFIX} \
 		USE_GPL_LIBS=0 \
@@ -87,7 +89,6 @@ MAKE_ARGS+=	JULIA_DEBUG=Documenter VERBOSE=1 NO_GIT=1 \
 		USE_SYSTEM_LIBSSH2=1 \
 		USE_SYSTEM_LIBUNWIND=1 \
 		USE_SYSTEM_LLD=1 \
-		USE_SYSTEM_MBEDTLS=1 \
 		USE_SYSTEM_MPFR=1 \
 		USE_SYSTEM_NGHTTP2=1 \
 		USE_SYSTEM_P7ZIP=1 \
@@ -126,6 +127,8 @@ DOCS_MAKE_ENV+=		JULIA_PKG_OFFLINE="true"
 DOCS_VARS=		ALL_TARGET+=docs  \
 			INSTALL_TARGET+=install-docs
 
+TEST_ENV+=		OMP_NUM_THREADS=1
+
 LATE_SHEBANG_GLOB=	compile.jl generator.jl
 
 .include <bsd.port.pre.mk>
@@ -163,7 +166,7 @@ DOCPKGDIR_abstracttrees=	AbstractTrees
 DOCPKGDIR_ansicoloredprinters=	ANSIColoredPrinters
 DOCPKGDIR_codeczlib=	CodecZlib
 DOCPKGDIR_docstringextensions=	DocStringExtensions
-DOCPKGDIR_documenterinventorywritingbackport= DocumenterInventoryWritingBackport
+DOCPKGDIR_documenterinventorywritingbackport=	DocumenterInventoryWritingBackport
 DOCPKGDIR_expatjll=	Expat_jll
 DOCPKGDIR_git=		Git
 DOCPKGDIR_gitjll=	Git_jll
@@ -190,6 +193,10 @@ DARC_afgit=	Git.v2.44.0.x86_64-unknown-freebsd.tar.gz
 DARC_aflibiconv=	Libiconv.v1.17.0.x86_64-unknown-freebsd.tar.gz
 DARC_afopenssl=	OpenSSL.v3.0.13.x86_64-unknown-freebsd.tar.gz
 .endif
+
+LATE_PATCHES=	stdlib_SparseArrays_test_fixed.jl.patch \
+		stdlib_SparseArrays_test_testgroups.patch \
+		stdlib_Tar_test_runtest.jl.patch
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/deps/srccache
@@ -238,10 +245,17 @@ pre-configure:
 	) || ( \
 		echo "USE_BLAS64=0" >> ${WRKSRC}/Make.user \
 	)
+	${REINPLACE_CMD} -e 's|%%GMP_VER%%|${GMP_VER}|'		\
+		${WRKSRC}/stdlib/GMP_jll/test/runtests.jl
+	${REINPLACE_CMD} -e 's|%%MPFR_VER%%|${MPFR_VER}|'	\
+		${WRKSRC}/stdlib/MPFR_jll/test/runtests.jl
 
 pre-install:
 	${MAKE} SHEBANG_GLOB="${LATE_SHEBANG_GLOB}" fix-shebang
 	${CP} ${WRKSRC}/deps/srccache/cacert-2023-01-10.pem ${WRKSRC}/usr/share/julia/cert.pem
+.for patch in ${LATE_PATCHES}
+	${PATCH} -d ${WRKSRC} -p0 < ${PATCHDIR}/${patch}
+.endfor
 
 pre-install-DEBUG-on:
 	@(cd ${INSTALL_WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${FAKEROOT} \
@@ -262,8 +276,11 @@ post-install:
 
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/julia
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libjulia.so*
-.for bin in libccalltest.so libllvmcalltest.so libjulia-internal.so* libblastrampoline.so libuv.so* libz.so* libLLVM* sys.so libjulia-codegen.so*
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/julia/${bin}
+.for dir in lib/${PORTNAME} share/${PORTNAME}/compiled/v${PORTVERSION:R}
+	${FIND} ${STAGEDIR}${PREFIX}/${dir} \
+		\( -name *.so.* -o -name *.so \) -a -not \
+		\( -name *-debug.so.* -o -name *-debug.so \) \
+		-a -not -type l -exec ${STRIP_CMD} {} +
 .endfor
 .for bin in lld dsymutil
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/julia/${bin}
@@ -271,5 +288,9 @@ post-install:
 
 	@${MV} ${STAGEDIR}${ETCDIR}/startup.jl \
 		${STAGEDIR}${ETCDIR}/startup.jl.sample
+
+post-stage:
+	cd ${STAGEDIR}${PREFIX} && ${FIND} ${DATADIR_REL}/compiled -type f -o -type l > ${WRKDIR}/PLIST.compiled
+	cd ${WRKDIR} && ${SED} -i -e "/PLIST.compiled/r PLIST.compiled" ${TMPPLIST}
 
 .include <bsd.port.post.mk>

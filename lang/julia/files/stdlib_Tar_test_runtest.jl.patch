@@ -1,0 +1,16 @@
+--- stdlib/Tar-ff55460f4d329949661a33e6c8168ce6d890676c/test/runtests.jl.orig	2024-09-12 13:53:09.737915000 +0000
++++ stdlib/Tar-ff55460f4d329949661a33e6c8168ce6d890676c/test/runtests.jl	2024-09-12 13:52:09.602089000 +0000
+@@ -541,7 +541,12 @@
+                 VERSION < v"1.7" && return
+             end
+             for sk in [nothing, tempname()]
+-                dir = Tar.extract(tarball, skeleton=sk)
++                if name == "\xba\xdd"
++                    # FreeBSD's zfs does not allow a file to be of this name.
++                    return
++                else
++                    dir = Tar.extract(tarball, skeleton=sk)
++                end
+                 @test_no_throw Tar.create(dir, skeleton=sk)
+                 @test_no_throw Tar.create(dir, skeleton=sk, portable=false)
+                 @test_throws ErrorException Tar.create(dir, skeleton=sk, portable=true)

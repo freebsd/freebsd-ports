@@ -1,6 +1,6 @@
---- deps/llvm.mk.orig	2024-04-30 17:45:14 UTC
+--- deps/llvm.mk.orig	2024-08-27 21:19:31 UTC
 +++ deps/llvm.mk
-@@ -214,7 +214,7 @@ $$(SRCCACHE)/$$(LLVM_SRC_DIR)/$1.patch-applied: $$(SRC
+@@ -213,7 +213,7 @@ $$(SRCCACHE)/$$(LLVM_SRC_DIR)/$1.patch-applied: $$(SRC
  LLVM_PATCH_PREV :=
  define LLVM_PATCH
  $$(SRCCACHE)/$$(LLVM_SRC_DIR)/$1.patch-applied: $$(SRCCACHE)/$$(LLVM_SRC_DIR)/source-extracted | $$(SRCDIR)/patches/$1.patch $$(LLVM_PATCH_PREV)
@@ -9,7 +9,7 @@
  	echo 1 > $$@
  # declare that applying any patch must re-run the compile step
  $$(LLVM_BUILDDIR_withtype)/build-compiled: $$(SRCCACHE)/$$(LLVM_SRC_DIR)/$1.patch-applied
-@@ -230,7 +230,8 @@ endef
+@@ -229,7 +229,8 @@ endef
  LLVM_PATCH_PREV := $$(SRCCACHE)/$$(LLVM_SRC_DIR)/$1.patch-applied
  endef
  

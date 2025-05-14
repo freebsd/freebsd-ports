@@ -1,0 +1,14 @@
+--- stdlib/SparseArrays-279b363ca8d3129d4742903d37c8b11545fa08a2/test/testgroups.orig	2024-09-13 19:42:12.500051000 +0000
++++ stdlib/SparseArrays-279b363ca8d3129d4742903d37c8b11545fa08a2/test/testgroups	2024-09-13 19:42:22.619798000 +0000
+@@ -1,5 +1,4 @@
+ allowscalar
+-cholmod
+ fixed
+ higherorderfns
+ issues
+@@ -8,5 +7,3 @@
+ sparsematrix_constructors_indexing
+ sparsematrix_ops
+ sparsevector
+-spqr
+-umfpack

@@ -1,6 +1,6 @@
---- stdlib/LinearAlgebra/src/lbt.jl.orig	2023-08-24 16:20:21 UTC
+--- stdlib/LinearAlgebra/src/lbt.jl.orig	2024-08-27 21:19:31 UTC
 +++ stdlib/LinearAlgebra/src/lbt.jl
-@@ -210,7 +210,7 @@ function lbt_set_num_threads(nthreads)
+@@ -225,7 +225,7 @@ function lbt_set_num_threads(nthreads)
  end
  
  function lbt_set_num_threads(nthreads)

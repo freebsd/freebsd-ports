@@ -1,6 +1,6 @@
---- doc/make.jl.orig	2024-04-30 17:45:14.000000000 +0000
-+++ doc/make.jl	2024-05-10 03:22:43.203136000 +0000
-@@ -5,7 +5,30 @@
+--- doc/make.jl.orig	2024-08-27 21:19:31 UTC
++++ doc/make.jl
+@@ -5,7 +5,30 @@ using Pkg
  empty!(DEPOT_PATH)
  pushfirst!(DEPOT_PATH, joinpath(@__DIR__, "deps"))
  using Pkg
@@ -32,7 +32,7 @@
  
  using Documenter
  using DocumenterInventoryWritingBackport
-@@ -288,6 +311,13 @@
+@@ -288,6 +311,13 @@ else
          collapselevel = 1,
          sidebar_sitename = false,
          ansicolor = true,
@@ -46,7 +46,7 @@
      )
  end
  
-@@ -299,12 +329,12 @@
+@@ -299,12 +329,12 @@ makedocs(
      doctest   = ("doctest=fix" in ARGS) ? (:fix) : ("doctest=only" in ARGS) ? (:only) : ("doctest=true" in ARGS) ? true : false,
      linkcheck = "linkcheck=true" in ARGS,
      linkcheck_ignore = ["https://bugs.kde.org/show_bug.cgi?id=136779"], # fails to load from nanosoldier?
