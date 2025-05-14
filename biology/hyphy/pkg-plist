@@ -11,6 +11,7 @@ bin/hyphy
 %%DATADIR%%/GeneticCodes/Thraustochytrium_mtDNA.cod
 %%DATADIR%%/GeneticCodes/Vertebratemtdna.cod
 %%DATADIR%%/GeneticCodes/Yeast_mtDNA.cod
+%%DATADIR%%/README.md
 %%DATADIR%%/SubstitutionClasses/AAEFV/Equal
 %%DATADIR%%/SubstitutionClasses/AAEFV/Estimated
 %%DATADIR%%/SubstitutionClasses/AAEFV/Observed In Data Set
@@ -177,6 +178,7 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/Samplers/srs-ErrorEst.ibf
 %%DATADIR%%/TemplateBatchFiles/Samplers/srs.ibf
 %%DATADIR%%/TemplateBatchFiles/SandNSAmbigs.bf
+%%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/BUSTED-PH.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/BUSTED.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/BranchSiteREL.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/FADE.bf
@@ -333,7 +335,6 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/Utility/BranchLengthFitters.bf
 %%DATADIR%%/TemplateBatchFiles/Utility/CoalescentPostProcessor.bf
 %%DATADIR%%/TemplateBatchFiles/Utility/CodonTools.bf
-%%DATADIR%%/TemplateBatchFiles/Utility/DBTools.ibf
 %%DATADIR%%/TemplateBatchFiles/Utility/DescriptiveStatistics.bf
 %%DATADIR%%/TemplateBatchFiles/Utility/GrabBag.bf
 %%DATADIR%%/TemplateBatchFiles/Utility/HXB2Mapper.bf
@@ -371,6 +372,10 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/globalChecker.ibf
 %%DATADIR%%/TemplateBatchFiles/heuristicMethodNPBootstrap.bf
 %%DATADIR%%/TemplateBatchFiles/last.date
+%%DATADIR%%/TemplateBatchFiles/lib/label-tree.bf
+%%DATADIR%%/TemplateBatchFiles/lib/remove-duplicates.bf
+%%DATADIR%%/TemplateBatchFiles/lib/trim-label-tree.bf
+%%DATADIR%%/TemplateBatchFiles/lib/trim-tree.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/IOFunctions.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/UtilityFunctions.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/all-terms.bf
@@ -393,6 +398,7 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_REV.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_REV_MH.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_REV_PROPERTIES.bf
+%%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_REV_PROPERTIES_BSREL.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_REV_TRIP.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MSS.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/frequencies.bf
@@ -421,6 +427,7 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/libv3/tasks/mpi.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/tasks/trees.bf
 %%DATADIR%%/TemplateBatchFiles/molclockBootstrap.bf
+%%DATADIR%%/TemplateBatchFiles/molerate.bf
 %%DATADIR%%/TemplateBatchFiles/pairwiseDistanceEstimator.ibf
 %%DATADIR%%/TemplateBatchFiles/pairwiseDistanceEstimatorCounter.ibf
 %%DATADIR%%/TemplateBatchFiles/partitionSequences.ibf
