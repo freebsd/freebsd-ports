@@ -199,8 +199,6 @@ bin/yn00
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nhomo/data-MCU0.95-rep1.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nhomo/mlb-nhomo4.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nhomo/mlb-nhomo5.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nhomo/rst-nhomo4.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nhomo/rst-nhomo5.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nhomo/tree-nhomo4.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nhomo/tree-nhomo5.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pamp.ctl
