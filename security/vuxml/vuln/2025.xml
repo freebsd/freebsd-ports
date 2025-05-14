@@ -29,21 +29,25 @@
     <topic>libxslt -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>libxslt</name>
-        <range><lt>1.1.43</lt></range>
+	<name>libxslt</name>
+	<range><lt>1.1.43</lt></range>
       </package>
     </affects>
     <description>
-        <body xmlns="http://www.w3.org/1999/xhtml">
-        <h1>[CVE-2024-55549] Fix UAF related to excluded namespaces</h1>
-        <blockquote cite="https://gitlab.gnome.org/GNOME/libxslt/-/issues/127">
-        <p>xsltGetInheritedNsList in libxslt before 1.1.43 has a use-after-free issue related to exclusion of result prefixes.</p>
-        </blockquote>
-        <h1>[CVE-2025-24855] Fix use-after-free of XPath context node</h1>
-        <blockquote cite="https://gitlab.gnome.org/GNOME/libxslt/-/issues/128">
-        <p>numbers.c in libxslt before 1.1.43 has a use-after-free because, in nested XPath evaluations, an XPath context node can be modified but never restored. This is related to xsltNumberFormatGetValue, xsltEvalXPathPredicate, xsltEvalXPathStringNs, and xsltComputeSortResultInternal.</p>
-        </blockquote>
-        </body>
+    <body xmlns="http://www.w3.org/1999/xhtml">
+    <h1>[CVE-2024-55549] Fix UAF related to excluded namespaces</h1>
+    <blockquote cite="https://gitlab.gnome.org/GNOME/libxslt/-/issues/127">
+    <p>xsltGetInheritedNsList in libxslt before 1.1.43 has a use-after-free issue related to exclusion of result prefixes.</p>
+    </blockquote>
+    <h1>[CVE-2025-24855] Fix use-after-free of XPath context node</h1>
+    <blockquote cite="https://gitlab.gnome.org/GNOME/libxslt/-/issues/128">
+      <p>numbers.c in libxslt before 1.1.43 has a use-after-free because
+	, in nested XPath evaluations, an XPath context node can be
+	modified but never restored. This is related to
+	xsltNumberFormatGetValue, xsltEvalXPathPredicate,
+	xsltEvalXPathStringNs, and xsltComputeSortResultInternal.</p>
+    </blockquote>
+    </body>
     </description>
     <references>
       <cvename>CVE-2024-55549</cvename>
