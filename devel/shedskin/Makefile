@@ -7,7 +7,8 @@ DISTNAME=	${PORTNAME:S/-/_/g}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Restricted Python-to-C++ compiler
-WWW=		https://shedskin.github.io/
+WWW=		https://shedskin.github.io/ \
+		https://github.com/shedskin/shedskin
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
