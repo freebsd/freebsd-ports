@@ -1,11 +1,11 @@
 PORTNAME=	data.table
-DISTVERSION=	1.17.0
+DISTVERSION=	1.17.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Extension of Data.frame
-WWW=		https://cran.r-project.org/web/packages/data.table/
+WWW=		https://cran.r-project.org/package=data.table
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
