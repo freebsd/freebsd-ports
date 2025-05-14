@@ -1,7 +1,7 @@
 PORTNAME=	tdlib
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.48
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,10 +29,10 @@ post-patch:
 
 post-install: # see https://github.com/tdlib/td/issues/3328
 	@cd ${WRKSRC}/td && \
-		${COPYTREE_SHARE} telegram ${STAGEDIR}${PREFIX}/include/td
+		${COPYTREE_SHARE} telegram ${STAGEDIR}${PREFIX}/include/td "-name *\.h -o -name *\.hpp"
 	@cd ${WRKSRC}/tdutils/td && \
-		${COPYTREE_SHARE} utils ${STAGEDIR}${PREFIX}/include/td
+		${COPYTREE_SHARE} utils ${STAGEDIR}${PREFIX}/include/td "-name *\.h -o -name *\.hpp"
 	@cd ${WRKSRC}/tde2e/td && \
-		${COPYTREE_SHARE} e2e ${STAGEDIR}${PREFIX}/include/td
+		${COPYTREE_SHARE} e2e ${STAGEDIR}${PREFIX}/include/td "-name *\.h -o -name *\.hpp"
 
 .include <bsd.port.mk>
