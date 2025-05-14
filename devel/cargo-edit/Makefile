@@ -1,7 +1,6 @@
 PORTNAME=	cargo-edit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.2
-PORTREVISION=	1
+DISTVERSION=	0.13.4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -59,6 +58,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cfg_aliases-0.2.1 \
 		clap-4.5.27 \
 		clap-cargo-0.15.2 \
+		clap-verbosity-flag-3.0.2 \
 		clap_builder-4.5.27 \
 		clap_derive-4.5.24 \
 		clap_lex-0.7.4 \
@@ -90,6 +90,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ed25519-compact-2.1.1 \
 		either-1.13.0 \
 		elliptic-curve-0.13.8 \
+		env_filter-0.1.3 \
+		env_logger-0.11.8 \
 		equivalent-1.0.1 \
 		errno-0.3.10 \
 		fastrand-2.3.0 \
@@ -148,6 +150,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.13.0 \
 		itoa-1.0.14 \
+		jiff-0.2.13 \
+		jiff-static-0.2.13 \
 		jobserver-0.1.32 \
 		js-sys-0.3.76 \
 		libc-0.2.169 \
@@ -157,7 +161,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		libz-sys-1.1.20 \
 		linux-raw-sys-0.4.15 \
 		litemap-0.7.4 \
-		log-0.4.25 \
+		log-0.4.27 \
 		memchr-2.7.4 \
 		mime-0.3.17 \
 		miniz_oxide-0.8.3 \
@@ -180,6 +184,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pin-utils-0.1.0 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.31 \
+		portable-atomic-1.11.0 \
+		portable-atomic-util-0.2.4 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.20 \
 		primeorder-0.13.6 \
@@ -236,7 +242,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
-		syn-2.0.96 \
+		syn-2.0.101 \
 		sync_wrapper-1.0.1 \
 		synstructure-0.13.1 \
 		tame-index-0.17.0 \
