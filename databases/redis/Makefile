@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	8.0.0
+DISTVERSION=	8.0.1
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 
