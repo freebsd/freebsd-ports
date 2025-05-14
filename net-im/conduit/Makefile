@@ -1,7 +1,6 @@
 PORTNAME=	conduit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
-PORTREVISION=	5
+DISTVERSION=	0.10.3
 CATEGORIES=	net-im
 PKGNAMEPREFIX=	matrix-
 
@@ -15,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_i386=	fails to build
 
 BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
+LIB_DEPENDS=	librocksdb.so:databases/rocksdb
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		cargo gmake
@@ -32,7 +32,7 @@ DBDIR=		/var/db/${PORTNAME}
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	famedly
-GL_TAGNAME=	f8d7ef04e664580e882bac852877b68e7bd3ab1e
+GL_TAGNAME=	ff7b2af80db5e5dd2dddc02e42e8fd27abb6955f
 
 .include <bsd.port.pre.mk>
 
@@ -44,7 +44,7 @@ CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/conduit.toml,${PREFIX}/etc/conduit.toml,' \
 		${WRKSRC}/src/main.rs
-	@${REINPLACE_CMD} -e 's,/var/lib/conduit,${DBDIR},' \
+	@${REINPLACE_CMD} -e 's,/var/lib/matrix-conduit,${DBDIR},' \
 		${WRKSRC}/conduit-example.toml
 
 post-install:
