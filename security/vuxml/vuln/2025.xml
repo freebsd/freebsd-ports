@@ -1,3 +1,74 @@
+  <vuln vid="52efdd56-30bd-11f0-81be-b42e991fc52e">
+    <topic>Mozilla -- memory safety bugs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>138.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.10</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>138.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1951161%2C1952105">
+	  <p>Memory safety bugs present in Firefox 137, Thunderbird 137,
+	  Firefox ESR 128.9, and Thunderbird 128.9. Some of these bugs
+	  showed evidence of memory corruption and we presume that
+	  with enough effort some of these could have been exploited
+	  to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4091</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-4091</url>
+    </references>
+    <dates>
+      <discovery>2025-04-29</discovery>
+      <entry>2025-05-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4f17db64-30bd-11f0-81be-b42e991fc52e">
+    <topic>Mozilla -- memory corruption</topic>
+    <affects>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.10</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1894100">
+	  <p>Memory safety bug present in Firefox ESR 128.9, and
+	  Thunderbird 128.9. This bug showed evidence of memory
+	  corruption and we presume that with enough effort this could
+	  have been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4093</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-4093</url>
+    </references>
+    <dates>
+      <discovery>2025-04-29</discovery>
+      <entry>2025-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6f10b49d-07b1-4be4-8abf-edf880b16ad2">
     <topic>vscode -- security feature bypass vulnerability</topic>
     <affects>
