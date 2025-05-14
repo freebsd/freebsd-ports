@@ -1,6 +1,6 @@
---- configure.ac.orig	2024-12-13 18:13:57 UTC
+--- configure.ac.orig	2025-05-13 21:17:57 UTC
 +++ configure.ac
-@@ -208,7 +208,7 @@ fi
+@@ -246,7 +246,7 @@ fi
  		[Default PKCS#11 module.])
  fi
  

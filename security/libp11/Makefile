@@ -1,5 +1,5 @@
 PORTNAME=	libp11
-PORTVERSION=	0.4.13
+PORTVERSION=	0.4.14
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	security devel
 
@@ -35,7 +35,9 @@ CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \
 		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 
-CONFIGURE_ARGS=	--with-enginesdir=${PREFIX}/lib/engines
+CONFIGURE_ARGS=	--with-enginesdir=${PREFIX}/lib/engines \
+		--with-modulesdir=${PREFIX}/lib/ossl-modules \
+		--enable-static-engine
 
 INSTALL_TARGET=	install-strip
 
