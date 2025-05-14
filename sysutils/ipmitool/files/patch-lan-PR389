@@ -1,0 +1,33 @@
+From b293d87cac0183ca6872c450cb87d2dc873359a3 Mon Sep 17 00:00:00 2001
+From: Daniel Van Allen <dvanallen@google.com>
+Date: Wed, 21 Dec 2022 14:38:47 -0500
+Subject: [PATCH] lanp: Fix error response from Unsupported Parameter lookup
+
+Return a pointer to the lan_param instead of NULL in the case when the
+parameter is not supported.
+
+Resolves ipmitool/ipmitool#388
+Signed-off-by Daniel Van Allen <dvanallen@google.com>
+---
+ lib/ipmi_lanp.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git lib/ipmi_lanp.c lib/ipmi_lanp.c
+index 16c0d9a9..49dc697f 100644
+--- lib/ipmi_lanp.c
++++ lib/ipmi_lanp.c
+@@ -236,8 +236,12 @@ get_lan_param_select(struct ipmi_intf *intf, uint8_t chan, int param, int select
+ 		/* We treat them as valid but empty response */
+ 		p->data = NULL;
+ 		p->data_len = 0;
+-		rc = p;
+-		/* fall through */
++		lprintf(LOG_INFO, "Get LAN Parameter '%s' command unsupported: %s",
++			p->desc,
++			specific_val2str(rsp->ccode,
++			                 get_lan_cc_vals,
++			                 completion_code_vals));
++		return p;
+ 	default:
+ 		/* other completion codes are treated as error */
+ 		lprintf(LOG_INFO, "Get LAN Parameter '%s' command failed: %s",

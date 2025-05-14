@@ -1,0 +1,33 @@
+From b4bc5c335159b1c272e06dba98e2916e3ecc0462 Mon Sep 17 00:00:00 2001
+From: Howitzer105mm <howitzer105mm@noreply.codeberg.org>
+Date: Tue, 26 Mar 2024 11:28:16 +0000
+Subject: [PATCH] open: Eliminate buffer overrun (#24)
+
+clangd reports a buffer overrun issue in `open` interface.
+
+The sprintf() used to fill ipmi_devfs2 requires 17 bytes to store the
+null terminated string. The character buffer is only 16 bytes in
+length.
+
+Signed-off-by: Johnathan Mantey <johnathanx.mantey@intel.com>
+Reviewed-on: https://codeberg.org/IPMITool/ipmitool/pulls/24
+Reviewed-by: Alexander Amelkin <alexander@amelkin.msk.ru>
+Co-authored-by: Howitzer105mm <howitzer105mm@noreply.codeberg.org>
+Co-committed-by: Howitzer105mm <howitzer105mm@noreply.codeberg.org>
+---
+ src/plugins/open/open.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git src/plugins/open/open.c src/plugins/open/open.c
+index 39c8ea2..88cb6c3 100644
+--- src/plugins/open/open.c
++++ src/plugins/open/open.c
+@@ -94,7 +94,7 @@ ipmi_openipmi_open(struct ipmi_intf *intf)
+ {
+ 	char ipmi_dev[16];
+ 	char ipmi_devfs[16];
+-	char ipmi_devfs2[16];
++	char ipmi_devfs2[17];
+ 	int devnum = 0;
+ 
+ 	devnum = intf->devnum;
