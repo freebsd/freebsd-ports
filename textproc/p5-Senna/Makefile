@@ -15,9 +15,12 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	senna-cfg:textproc/senna
 
-USES=		perl5 localbase
+USES=		localbase perl5
 USE_PERL5=	modbuild
-CONFIGURE_ARGS+=</dev/null
+
+CONFIGURE_ARGS+=	</dev/null
+
+PORTSCOUT=	skipv:0.60000
 
 .include <bsd.port.options.mk>
 
