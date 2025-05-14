@@ -1,5 +1,5 @@
 PORTNAME=	Tree-DAG_Node
-PORTVERSION=	1.34
+PORTVERSION=	1.35
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,7 @@ LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Slurp-Tiny>=0.003:devel/p5-File-Slurp-Tiny
+TEST_DEPENDS=	p5-File-Slurper>=0:devel/p5-File-Slurper
 
 USES=		perl5 tar:tgz
 USE_PERL5=	configure
