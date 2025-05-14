@@ -1,10 +1,7 @@
 PORTNAME=	focuswriter
-DISTVERSION=	1.8.11
+DISTVERSION=	1.8.12
 CATEGORIES=	editors
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/
-
-PATCH_SITES=	https://github.com/gottcode/focuswriter/commit/
-PATCHFILES+=	dd74ed4559a141653a06e7984c1251b992925775.patch:-p1 # Fix build with Qt >= 6.9.0
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple, distraction-free writing environment
