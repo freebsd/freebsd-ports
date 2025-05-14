@@ -8,7 +8,7 @@ WWW=		https://github.com/ibireme/yyjson
 
 LICENSE=	MIT
 
-USES=		cmake
+USES=		cmake pathfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	ibireme
 
