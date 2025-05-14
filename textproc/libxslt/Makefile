@@ -9,7 +9,7 @@ COMMENT=	XML stylesheet transformation library
 WWW=		https://gitlab.gnome.org/GNOME/libxslt/
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/Copyright
 
 # See note in textproc/libxml2 for why this port uses autotools
 USES=		cpe gmake gnome libtool localbase:ldflags pathfix pkgconfig tar:xz
