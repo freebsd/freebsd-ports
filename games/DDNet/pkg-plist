@@ -7,7 +7,6 @@ lib/ddnet/demo_extract_chat
 lib/ddnet/dilate
 lib/ddnet/dummy_map
 lib/ddnet/map_convert_07
-lib/ddnet/map_create_pixelart
 lib/ddnet/map_diff
 lib/ddnet/map_extract
 lib/ddnet/map_find_env
@@ -15,6 +14,7 @@ lib/ddnet/map_optimize
 lib/ddnet/map_replace_area
 lib/ddnet/map_replace_image
 lib/ddnet/map_resave
+lib/ddnet/map_test
 lib/ddnet/packetgen
 lib/ddnet/stun
 lib/ddnet/twping
