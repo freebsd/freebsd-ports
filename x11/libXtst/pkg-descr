@@ -1,1 +1,10 @@
-This package contains the XKB file library.
+libXtst provides the Xlib-based client API for the XTEST & RECORD
+extensions.
+
+The XTEST extension is a minimal set of client and server extensions
+required to completely test the X11 server with no user intervention.
+This extension is not intended to support general journaling and
+playback of user actions.
+
+The RECORD extension supports the recording and reporting of all
+core X protocol and arbitrary X extension protocol.
