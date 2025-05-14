@@ -1,5 +1,5 @@
 PORTNAME=	Kvantum
-DISTVERSION=	1.1.4
+DISTVERSION=	1.1.5
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://github.com/tsujan/${PORTNAME}/releases/download/V${DISTVERSION}/
 
