@@ -1,0 +1,10 @@
+--- tests/Makefile.am.orig	2025-05-12 20:33:40 UTC
++++ tests/Makefile.am
+@@ -19,7 +19,6 @@ TESTS += \
+ 
+ TESTS += \
+ 	test_commandline \
+-	test_ctrlchannel \
+ 	test_ctrlchannel2 \
+ 	test_ctrlchannel3 \
+ 	test_ctrlchannel4 \

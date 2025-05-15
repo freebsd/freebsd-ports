@@ -30,7 +30,6 @@ pidpath="/var/run/${name}"
 
 # required_modules="cuse"
 swtpm_default_args="\
-  --daemon \
   --tpmstate dir=${pidpath} \
   --tpm2 \
   --log level=20"
@@ -64,6 +63,7 @@ start_instance()
     echo -n "Starting SWTPM config ${config} ..."
     ${command} \
       ${command_args} \
+      --daemon \
       --pid file=${pidpath}/${config}.pid \
       --ctrl type=unixio,path=${pidpath}/${config} \
       ${instance_args}
