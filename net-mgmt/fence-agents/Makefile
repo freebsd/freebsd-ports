@@ -4,7 +4,7 @@ DISTVERSION=	4.12.1
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCF Compliant Fence Agents
 WWW=		https://github.com/ClusterLabs/fence-agents
 
