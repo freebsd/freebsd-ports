@@ -1,6 +1,6 @@
 PORTNAME=	glaze
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.0
+DISTVERSION=	5.1.1
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,6 +32,6 @@ LDFLAGS+=	-pthread
 
 NO_ARCH=	yes
 
-# tests as of 5.1.0: 100% tests passed, 0 tests failed out of 26
+# tests as of 5.1.1: 100% tests passed, 0 tests failed out of 26
 
 .include <bsd.port.mk>
