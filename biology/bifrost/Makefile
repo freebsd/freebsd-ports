@@ -18,6 +18,17 @@ USE_GITHUB=	yes
 
 CMAKE_ARGS=	-DCOMPILATION_ARCH=${CPUTYPE:UOFF}
 
+CXXFLAGS+=	-Wno-unqualified-std-cast-call
+
 GH_ACCOUNT=	pmelsted
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# Build fails with clang19, but succeeds with gcc13
+# Have not figured out where this sz_link member is even supposed to come from
+# DataStorage.tcc:81:69: error: no member named 'sz_link' in 'DataStorage<Unitig_data_t>'
+.if ${OSVERSION} > 1500000
+USE_GCC=	yes
+.endif
+
+.include <bsd.port.post.mk>
