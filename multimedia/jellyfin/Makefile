@@ -1,5 +1,5 @@
 PORTNAME=	jellyfin
-DISTVERSION=	10.10.6
+DISTVERSION=	10.10.7
 CATEGORIES=	multimedia
 DISTFILES+=	${PREFETCH_FILE}:prefetch
 EXTRACT_ONLY+=	${PORTNAME}-${PORTNAME}-${GH_TAGNAME}_GH0.tar.gz \
@@ -71,7 +71,7 @@ ICU4N:60.1.0-alpha.356 \
 IDisposableAnalyzers:4.0.8 \
 J2N:2.0.0 \
 Jellyfin.XmlTv:10.8.0 \
-LrcParser:2024.728.2 \
+LrcParser:2025.228.1 \
 MetaBrainz.Common.Json:6.0.2 \
 MetaBrainz.Common:3.0.0 \
 MetaBrainz.MusicBrainz:6.1.0 \
@@ -373,7 +373,7 @@ runtime.unix.system.io.filesystem:4.3.0 \
 runtime.unix.system.net.primitives:4.3.0 \
 runtime.unix.system.private.uri:4.3.0 \
 runtime.unix.system.runtime.extensions:4.3.0 \
-z440.atl.core:6.16.0 \
+z440.atl.core:6.20.0 \
 Ude.NetStandard:1.2.0 \
 
 SUB_FILES=	jellyfin pkg-message
