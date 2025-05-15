@@ -1,7 +1,6 @@
 PORTNAME=	vcftools
-PORTVERSION=	0.1.16
+PORTVERSION=	0.1.17
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -11,11 +10,10 @@ WWW=		https://github.com/vcftools/vcftools
 LICENSE=	LGPL3
 
 USES=		autoreconf cpe gmake perl5 pkgconfig
-
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_GITHUB=	yes
 
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CXXFLAGS+=	-std=c++14
 
 CPE_VENDOR=	vcftools_project
