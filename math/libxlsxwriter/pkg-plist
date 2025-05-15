@@ -34,5 +34,5 @@ include/xlsxwriter/workbook.h
 include/xlsxwriter/worksheet.h
 include/xlsxwriter/xmlwriter.h
 lib/libxlsxwriter.so
-lib/libxlsxwriter.so.8
+lib/libxlsxwriter.so.9
 libdata/pkgconfig/xlsxwriter.pc
