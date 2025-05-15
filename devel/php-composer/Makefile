@@ -1,5 +1,5 @@
 PORTNAME=	composer
-DISTVERSION=	2.8.8
+DISTVERSION=	2.8.9
 CATEGORIES=	devel
 MASTER_SITES=	https://getcomposer.org/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
@@ -16,8 +16,6 @@ LICENSE=	MIT
 USES=		cpe php:flavors
 CPE_VENDOR=	getcomposer
 USE_PHP=	ctype filter intl mbstring phar
-
-CONFLICTS_INSTALL=	php*-composer
 
 NO_ARCH=	yes
 NO_BUILD=	yes
