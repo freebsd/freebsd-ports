@@ -1,6 +1,5 @@
 PORTNAME=	pkgconf
-PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTVERSION=	2.4.3
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://distfiles.ariadne.space/${PORTNAME}/
@@ -22,13 +21,13 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
+# eliminate PKG_CONFIG_LIBDIR from test env
+TEST_ENV=
 CONFIGURE_ARGS=	--with-pkg-config-dir=${PREFIX}/libdata/pkgconfig:/usr/libdata/pkgconfig:${PREFIX}/share/pkgconfig \
 		--with-system-libdir=/usr/lib \
 		--with-system-includedir=/usr/include
 
 OPTIONS_DEFINE=	DOCS
-
-TESTING_UNSAFE=	tests/Kyuafile:5: Non-existent test program 'tests/basic'
 
 post-install:
 	${LN} -sf pkgconf ${STAGEDIR}${PREFIX}/bin/pkg-config
