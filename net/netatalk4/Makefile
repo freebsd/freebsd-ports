@@ -1,5 +1,5 @@
 PORTNAME=	netatalk
-PORTVERSION=	4.2.2
+PORTVERSION=	4.2.3
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/netatalk-${PORTVERSION:S/./-/g}/
 PKGNAMESUFFIX=	4
@@ -99,7 +99,7 @@ post-patch:
 #		${WRKSRC}/contrib/shell_utils/afpstats
 
 post-install:
-	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/contrib/macusers/macusers \
+	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/contrib/shell_utils/macusers \
 		${STAGEDIR}${PREFIX}/bin/macusers
 
 .if ${PORT_OPTIONS:MPAM}
