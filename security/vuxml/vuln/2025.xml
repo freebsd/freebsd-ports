@@ -1,3 +1,38 @@
+  <vuln vid="79400d31-3166-11f0-8cb5-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>136.0.7103.113</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>136.0.7103.113</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/05/stable-channel-update-for-desktop_14.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[415810136] High CVE-2025-4664: Insufficient policy enforcement in Loader. Source: X post from @slonser_ on 2025-05-05</li>
+	    <li>[412578726] High CVE-2025-4609: Incorrect handle provided in unspecified circumstances in Mojo. Reported by Micky on 2025-04-22</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4664</cvename>
+      <cvename>CVE-2025-4609</cvename>
+      <url>https://chromereleases.googleblog.com/2025/05/stable-channel-update-for-desktop_14.html</url>
+    </references>
+    <dates>
+      <discovery>2025-05-14</discovery>
+      <entry>2025-05-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="52efdd56-30bd-11f0-81be-b42e991fc52e">
     <topic>Mozilla -- memory safety bugs</topic>
     <affects>
