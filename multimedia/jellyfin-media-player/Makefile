@@ -1,6 +1,7 @@
 PORTNAME=	jellyfin-media-player
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.12.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -17,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jellyfin
 
 USE_QT=		core gui network webengine webchannel dbus qmake buildtools \
-		xml x11extras
+		quickcontrols xml x11extras
 USE_SDL=	sdl2
 USE_XORG=	xext
 
