@@ -37,12 +37,22 @@ CMAKE_ARGS+=		-DUSE_HDF5:BOOL=ON -DUSE_BAM:BOOL=ON
 # WIP: Remove before committing
 CMAKE_ARGS+=		-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
 MAKE_JOBS_UNSAFE=	yes
+CXXFLAGS+=		-Wno-unqualified-std-cast-call
 LDFLAGS+=		-lhts -lz
 
 OPTIONS_DEFINE=	EXAMPLES
+
+.include <bsd.port.pre.mk>
+
+# Build fails with clang19, but succeeds with gcc13
+# Have not figured out where this sz_link member is even supposed to come from
+# DataStorage.tcc:81:69: error: no member named 'sz_link' in 'DataStorage<Unitig_data_t>'
+.if ${OSVERSION} > 1500000
+USE_GCC=	yes
+.endif
 
 post-install-EXAMPLES-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/kallisto-test ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC}/test && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
