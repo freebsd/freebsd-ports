@@ -109,6 +109,7 @@
 %%DATADIR%%/core/migrations/0010_gfk_indexes.py
 %%DATADIR%%/core/migrations/0011_move_objectchange.py
 %%DATADIR%%/core/migrations/0012_job_object_type_optional.py
+%%DATADIR%%/core/migrations/0013_job_data_encoder.py
 %%DATADIR%%/core/migrations/__init__.py
 %%DATADIR%%/core/models/__init__.py
 %%DATADIR%%/core/models/change_logging.py
