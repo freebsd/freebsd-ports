@@ -1,38 +1,26 @@
 PORTNAME=	csmith
-PORTVERSION=	2.3.0
+DISTVERSIONPREFIX=	csmith-
+DISTVERSION=	2.3.0-79
+DISTVERSIONSUFFIX=	-g0ec6f1b
 CATEGORIES=	devel
-MASTER_SITES=	http://embed.cs.utah.edu/csmith/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Generates random C programs that conform to the C99 standard
-WWW=		https://embed.cs.utah.edu/csmith/
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Unfetchable
-DEPRECATED=	Unmaintained for years
-EXPIRATION_DATE=2025-06-30
-
-USES=		gmake libtool localbase perl5 shebangfix
+USES=		cmake libtool localbase perl5 shebangfix
 USE_CXXSTD=	c++11
+USE_GITHUB=	yes
+GH_ACCOUNT=	csmith-project
 USE_LDCONFIG=	yes
 USE_PERL5=	run
 
 SHEBANG_FILES=	scripts/compiler_test.pl scripts/launchn.pl
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--docdir=${DOCSDIR}
-
-INSTALL_TARGET=	install-strip
-
+CXXFLAGS+=	-Wno-enum-constexpr-conversion
 PLIST_SUB=	PKGNAME="${PKGNAME}"
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD
-CPPFLAGS+=	-Wno-error=enum-constexpr-conversion
-.endif
 
 .include <bsd.port.mk>
