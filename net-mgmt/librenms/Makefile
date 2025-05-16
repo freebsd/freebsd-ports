@@ -1,5 +1,5 @@
 PORTNAME=	librenms
-PORTVERSION=	25.4.0
+PORTVERSION=	25.5.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -128,7 +128,7 @@ _SCRIPT_FILES=		daily.sh lnms
 # _RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-_RELEASE_TIMESTAMP=	1744632679
+_RELEASE_TIMESTAMP=	1747410665
 _ROOT_DIRS=		LibreNMS app bootstrap config database doc html \
 			includes lang licenses mibs misc resources routes \
 			scripts tests
@@ -144,7 +144,8 @@ _OTHER_DIRS=	database/seeders/config html/plugins html/js/lang \
 		resources/views/overview/custom tests/Browser/console \
 		tests/Browser/source tests/Browser/screenshots \
 		vendor/librenms/laravel-vue-i18n-generator/tests/output \
-		vendor/symfony/string/Resources/bin
+		vendor/symfony/mime/Resources/bin \
+		vendor/symfony/string/Resources/bin 
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
