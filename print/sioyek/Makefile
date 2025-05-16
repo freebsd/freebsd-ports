@@ -1,7 +1,6 @@
 PORTNAME=	sioyek
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
-PORTREVISION=	5
+DISTVERSION=	2.0.0.20250513
 CATEGORIES=	print
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -19,11 +18,12 @@ LIB_DEPENDS=	libmupdf.so:graphics/mupdf \
 		libopenjp2.so:graphics/openjpeg \
 		libsynctex.so:devel/tex-synctex
 
-USES=		desktop-file-utils jpeg gl qmake qt:5 sqlite
+USES=		desktop-file-utils jpeg gl qmake qt:6 sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	ahrm
+GH_TAGNAME=	eb03410682f70fa27cbe2f9ec3bf59ac086457d7
 USE_GL=		gl
-USE_QT=		3d buildtools:build core gui network opengl widgets
+USE_QT=		3d speech
 
 post-extract:
 .for f in sqlite3.h sqlite3ext.h sqlite3.c shell.c
@@ -38,5 +38,6 @@ post-install:
 .for f in keys prefs
 	${MV} ${STAGEDIR}${ETCDIR}/$f.config ${STAGEDIR}${ETCDIR}/$f.config.sample
 .endfor
+	${INSTALL_MAN} ${WRKSRC}/resources/sioyek.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>
