@@ -2,7 +2,7 @@
 # to upload them to ~/public_distfiles on freefall in preparation
 # for the next lang/rust update.
 PORTNAME=	rust
-PORTVERSION=	1.86.0
+PORTVERSION=	1.87.0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/
 PKGNAMEPREFIX=	${FLAVOR:S/_/-/g}-
@@ -80,11 +80,11 @@ do-configure:
 	@${SETENV} CC="${CC}" OPSYS="${OPSYS}" OSVERSION="${OSVERSION}" WRKDIR="${WRKDIR}" \
 		${SH} ${SCRIPTSDIR}/rust-compat11-canary.sh
 	@${ECHO_CMD} '# https://github.com/rust-lang/rust/issues/135358 (bug #947897)' >> ${WRKSRC}/config.toml
-	@${ECHO_CMD} 'profile = "dist"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'profile="dist"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[build]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'build-dir="${WRKDIR}/_build"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'vendor=true' >> ${WRKSRC}/config.toml
-	@${ECHO_CMD} 'extended=false' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'extended=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'python="${PYTHON_CMD}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'docs=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'verbose=2' >> ${WRKSRC}/config.toml
@@ -131,8 +131,7 @@ do-configure:
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} x.py dist --jobs=${MAKE_JOBS_NUMBER} \
-		cargo rustc rust-std
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} x.py dist --jobs=${MAKE_JOBS_NUMBER}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/rust-bootstrap/${FLAVOR}

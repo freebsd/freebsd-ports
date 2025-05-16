@@ -1,5 +1,5 @@
 PORTNAME=	rust
-PORTVERSION?=	1.86.0
+PORTVERSION?=	1.87.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -71,8 +71,8 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
 # See WRKSRC/src/stage0 for the date and version values
-BOOTSTRAPS_DATE?=		2025-02-20
-RUST_BOOTSTRAP_VERSION?=	1.85.0
+BOOTSTRAPS_DATE?=		2025-04-03
+RUST_BOOTSTRAP_VERSION?=	1.86.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -105,12 +105,6 @@ IGNORE=		is only for FreeBSD
 .if ${ARCH} == powerpc
 LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
 MAKE_ENV+=	RUSTFLAGS="-L/usr/local/lib/gcc${GCC_DEFAULT}"
-.endif
-
-# rls doesn't build on rust nightly
-.if !defined(NIGHTLY_DATE)
-_RUST_TOOLS+=	rls
-_COMPONENTS+=	rls-${_PACKAGE_VERS}-${_RUST_TARGET}
 .endif
 
 .if ${ARCH} != powerpc64le
@@ -198,7 +192,7 @@ do-configure:
 .endif
 	@${ECHO_CMD} 'remap-debuginfo=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
-	@${ECHO_CMD} 'download-ci-llvm = false' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'download-ci-llvm=false' >> ${WRKSRC}/config.toml
 .if ${PORT_OPTIONS:MLTO}
 	@${ECHO_CMD} 'thin-lto=true' >> ${WRKSRC}/config.toml
 .endif
