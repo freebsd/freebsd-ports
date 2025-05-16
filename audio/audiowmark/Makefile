@@ -1,5 +1,5 @@
 PORTNAME=	audiowmark
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
