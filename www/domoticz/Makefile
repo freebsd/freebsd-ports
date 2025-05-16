@@ -1,5 +1,6 @@
 PORTNAME=	domoticz
 DISTVERSION=	2024.7
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	kiwi@FreeBSD.org
@@ -8,8 +9,6 @@ WWW=		https://www.domoticz.com
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/License.txt
-
-BROKEN=		fails to build with Boost>=1.87
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libboost_system.so:devel/boost-libs \
