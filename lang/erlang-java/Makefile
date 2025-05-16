@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	26.2.5.6
+DISTVERSION=	26.2.5.12
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-java
@@ -19,19 +19,18 @@ USE_GITHUB=	yes
 GH_PROJECT=	otp
 USE_PERL5=	build
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--enable-threads \
+			--with-javac \
+			--without-odbc \
+			--without-wx
+CONFIGURE_ENV+=		ac_cv_prog_JAVAC="${JAVAC}"
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	APP_VERSION=${APP_VERSION}
 
 APP_VERSION=	1.14
 APP_DIR=	${PREFIX}/lib/erlang/lib/jinterface-${APP_VERSION}
-
-CONFIGURE_ARGS+=	--enable-threads \
-			--with-javac \
-			--without-odbc \
-			--without-wx
-CONFIGURE_ENV+=		ac_cv_prog_JAVAC="${JAVAC}"
 
 pre-configure:
 	@if [ ! $$(${CAT} ${WRKSRC}/lib/jinterface/vsn.mk | ${GREP} -E "JINTERFACE_VSN *=" | ${CUT} -w -f3) = ${APP_VERSION} ]; then \
