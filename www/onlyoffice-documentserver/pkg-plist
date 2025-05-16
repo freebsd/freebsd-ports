@@ -14,6 +14,7 @@ bin/documentserver-update-securelink.sh
 @sample %%ETCDIR%%/documentserver/newsyslog.conf.d/onlyoffice.newsyslog.sample
 @sample %%ETCDIR%%/documentserver/nginx/ds.conf.sample
 @sample %%ETCDIR%%/documentserver/nginx/ds-ssl.conf.sample
+%%ETCDIR%%/documentserver/nginx/includes/ds-cache.conf.sample
 @sample %%ETCDIR%%/documentserver/nginx/includes/ds-common.conf.sample
 @sample %%ETCDIR%%/documentserver/nginx/includes/ds-docservice.conf.sample
 @sample %%ETCDIR%%/documentserver/nginx/includes/ds-letsencrypt.conf.sample
@@ -703,6 +704,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/sdkjs/cell/css/main-mobile.css
 %%WWWDIR%%/documentserver/sdkjs/cell/css/main.css
 %%WWWDIR%%/documentserver/sdkjs/cell/sdk-all-min.js
+%%WWWDIR%%/documentserver/sdkjs/cell/sdk-all.bin
 %%WWWDIR%%/documentserver/sdkjs/cell/sdk-all.js
 %%WWWDIR%%/documentserver/sdkjs/common/Charts/ChartStyles.js
 %%WWWDIR%%/documentserver/sdkjs/common/Drawings/Format/path-boolean-min.js
@@ -1057,6 +1059,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/sdkjs/common/zlib/engine/zlib.js
 %%WWWDIR%%/documentserver/sdkjs/common/zlib/engine/zlib.wasm
 %%WWWDIR%%/documentserver/sdkjs/common/zlib/engine/zlib_ie.js
+%%WWWDIR%%/documentserver/sdkjs/pdf/sdk-all.bin
 %%WWWDIR%%/documentserver/sdkjs/pdf/src/annotations/stamps.json
 %%WWWDIR%%/documentserver/sdkjs/pdf/src/engine/cmap.bin
 %%WWWDIR%%/documentserver/sdkjs/pdf/src/engine/drawingfile.js
@@ -1065,6 +1068,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/sdkjs/pdf/src/engine/drawingfile_native.js
 %%WWWDIR%%/documentserver/sdkjs/pdf/src/engine/viewer.js
 %%WWWDIR%%/documentserver/sdkjs/slide/sdk-all-min.js
+%%WWWDIR%%/documentserver/sdkjs/slide/sdk-all.bin
 %%WWWDIR%%/documentserver/sdkjs/slide/sdk-all.js
 %%WWWDIR%%/documentserver/sdkjs/slide/themes/src/01_blank.pptx
 %%WWWDIR%%/documentserver/sdkjs/slide/themes/src/02_basic.pptx
@@ -1078,6 +1082,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/sdkjs/slide/themes/src/10_corner.pptx
 %%WWWDIR%%/documentserver/sdkjs/slide/themes/src/11_tort.pptx
 %%WWWDIR%%/documentserver/sdkjs/word/sdk-all-min.js
+%%WWWDIR%%/documentserver/sdkjs/word/sdk-all.bin
 %%WWWDIR%%/documentserver/sdkjs/word/sdk-all.js
 @(,,755) %%WWWDIR%%/documentserver/server/DocService/docservice
 %%WWWDIR%%/documentserver/server/FileConverter/bin/DoctRenderer.config
@@ -1631,6 +1636,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/toolbar/2.5x/btn-open.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/toolbar/2.5x/btn-page-landscape.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/toolbar/2.5x/btn-page-portrait.svg
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/toolbar/2.5x/btn-panel-left-collapse.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/toolbar/2.5x/btn-paracolor.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/toolbar/2.5x/btn-paragraph.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/toolbar/2.5x/btn-paste.svg
@@ -3374,6 +3380,8 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/images/interface/pluginstab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/images/interface/referencestab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/images/interface/reviewtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/images/keytips1.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/images/keytips2.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/images/mailmergerecipients.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/images/mergefields.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/images/mergeto.png
@@ -4525,6 +4533,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-hyphenation.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-ic-reviewview.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-img-wrap.svg
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-line-numbering-rtl.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-line-numbering.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-mailmerge.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-next-field.svg
@@ -4566,6 +4575,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/btn-dropcap-inmargin.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/btn-dropcap-intext.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/btn-field.svg
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/btn-filling-status.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/btn-fixed-field.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/btn-hand-tool.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/btn-mailmerge.svg
@@ -5448,6 +5458,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/shape_properties3.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/shape_properties4.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/shape_properties5.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/shape_properties6.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/shapesettingstab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/showsettings.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/slidebackground.png
@@ -5644,6 +5655,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/shape_properties3.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/shape_properties4.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/shape_properties5.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/shape_properties6.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/shapesettingstab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/showsettings.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/slidebackground.png
@@ -6044,6 +6056,8 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/images/interface/hometab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/images/interface/inserttab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/images/interface/pluginstab.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/images/keytips1.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/images/keytips2.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/images/orderedlistsettings.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/images/palettes.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/images/pastespecial.png
@@ -13077,6 +13091,8 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/images/isreffalse.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/images/isreftrue.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/images/istext.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/images/keytips1.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/images/keytips2.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/images/kurt.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/images/large.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/images/lcm.png
@@ -18214,6 +18230,10 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/vendor/socketio/socket.io.min.js
 %%WWWDIR%%/documentserver/web-apps/vendor/underscore/underscore-min.js
 %%WWWDIR%%/documentserver/web-apps/vendor/xregexp/xregexp-all-min.js
+@dir %%ETCDIR%%/documentserver/nginx/includes
+@dir %%ETCDIR%%/documentserver/nginx
+@dir %%ETCDIR%%/documentserver
+@dir %%ETCDIR%%
 @owner onlyoffice
 @group onlyoffice
 @dir %%WWWDIR%%/documentserver/server/Common/config/log4js
@@ -18233,11 +18253,26 @@ lib/libkernel_network.so
 @dir %%WWWDIR%%/Data
 @dir %%WWWDIR%%/documentserver/fonts
 @dir %%WWWDIR%%/documentserver/license
-@postunexec rm -rf %D/%%WWWDIR%%/documentserver/fonts
-@postunexec rm -rf %D/%%WWWDIR%%/documentserver/sdkjs/slide/themes/theme*
-@postunexec rm -rf %D/%%WWWDIR%%/documentserver/sdkjs/common/Images/themes*
-@postunexec rm -rf %D/%%WWWDIR%%/documentserver/sdkjs/common/Images/fonts*
-@postunexec rm -f %D/%%WWWDIR%%/documentserver/sdkjs/common/AllFonts.js
-@postunexec rm -f %D/%%WWWDIR%%/documentserver/server/FileConverter/bin/font_selection.bin
-@postunexec rm -f %D/%%WWWDIR%%/documentserver/server/FileConverter/bin/AllFonts.js
-@postunexec rm -f %D/%%WWWDIR%%/documentserver/server/FileConverter/bin/fonts.log
+@dir %%WWWDIR%%/documentserver/sdkjs/cell
+@dir %%WWWDIR%%/documentserver/sdkjs/pdf
+@dir %%WWWDIR%%/documentserver/sdkjs/slide
+@dir %%WWWDIR%%/documentserver/sdkjs/word
+@dir %%WWWDIR%%/documentserver/sdkjs
+@dir %%WWWDIR%%/documentserver/web-apps/apps/api/documents
+@dir %%WWWDIR%%/documentserver/web-apps/apps/api
+@dir %%WWWDIR%%/documentserver/web-apps/apps
+@dir %%WWWDIR%%/documentserver/web-apps
+@preunexec rm -f %D/%%ETCDIR%%/documentserver/nginx/includes/ds-cache.conf
+@preunexec rm -rf %D/%%WWWDIR%%/documentserver/fonts/*
+@preunexec rm -f %D/%%WWWDIR%%/documentserver/sdkjs/cell/sdk-all.cache
+@preunexec rm -rf %D/%%WWWDIR%%/documentserver/sdkjs/common/Images/themes*
+@preunexec rm -rf %D/%%WWWDIR%%/documentserver/sdkjs/common/Images/fonts*
+@preunexec rm -f %D/%%WWWDIR%%/documentserver/sdkjs/common/AllFonts.js
+@preunexec rm -f %D/%%WWWDIR%%/documentserver/sdkjs/pdf/sdk-all.cache
+@preunexec rm -f %D/%%WWWDIR%%/documentserver/sdkjs/slide/sdk-all.cache
+@preunexec rm -rf %D/%%WWWDIR%%/documentserver/sdkjs/slide/themes/theme*
+@preunexec rm -f %D/%%WWWDIR%%/documentserver/sdkjs/word/sdk-all.cache
+@preunexec rm -f %D/%%WWWDIR%%/documentserver/server/FileConverter/bin/font_selection.bin
+@preunexec rm -f %D/%%WWWDIR%%/documentserver/server/FileConverter/bin/AllFonts.js
+@preunexec rm -f %D/%%WWWDIR%%/documentserver/server/FileConverter/bin/fonts.log
+@preunexec rm -f %D/%%WWWDIR%%/documentserver/web-apps/apps/api/documents/api.js

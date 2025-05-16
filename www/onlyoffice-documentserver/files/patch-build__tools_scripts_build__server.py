@@ -1,11 +1,11 @@
---- build_tools/scripts/build_server.py.orig	2024-02-07 10:44:24.000000000 +0100
-+++ build_tools/scripts/build_server.py	2024-03-01 10:53:21.550159000 +0100
+--- build_tools/scripts/build_server.py.orig	2025-02-19 17:34:37 UTC
++++ build_tools/scripts/build_server.py
 @@ -38,8 +38,12 @@ def make():
    if(base.is_exist(custom_public_key)):
        base.copy_file(custom_public_key, server_dir + '/Common/sources')
  
 -  pkg_target = "node16"
-+  pkg_target = "node18"
++  pkg_target = "node22"
  
 +  if ("freebsd" == base.host_platform()):
 +    pkg_target += "-freebsd"

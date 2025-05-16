@@ -11,7 +11,7 @@
 + 
 +-	binBuild.url('https://downloads.sourceforge.net/project/optipng/OptiPNG/optipng-0.7.7/optipng-0.7.7.tar.gz', [
 +-		`./configure --with-system-zlib --prefix="${bin.dest()}" --bindir="${bin.dest()}"`,
-++	binBuild.file('%%DISTDIR%%/optipng-0.7.7.tar.gz', [
+++	binBuild.file('%%DISTDIR%%/optipng-0.7.8.tar.gz', [
 ++		`./configure --with-system-zlib --with-system-libpng --prefix="${bin.dest()}" --bindir="${bin.dest()}"`,
 + 		'make install'
 + 	]).then(() => {

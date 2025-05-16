@@ -1,14 +1,14 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.3.1.25
+DISTVERSION=	8.3.3.23
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		LOCAL/mikael/onlyoffice/:source2 \
 		https://nodejs.org/dist/v${NODE_VERSION_PKGFETCH}/:source3 \
-		SF/optipng/OptiPNG/optipng-0.7.7/:source4
+		SF/optipng/OptiPNG/optipng-0.7.8/:source4
 DISTFILES+=	v8-8.9.255.25_all.tar.gz:source1 \
 		node-v${NODE_VERSION_PKGFETCH}.tar.gz:source3 \
-		optipng-0.7.7.tar.gz:source4 \
+		optipng-0.7.8.tar.gz:source4 \
 		${PORTNAME}-${DISTVERSION}-npm-cache.tar.gz:source2
 
 MAINTAINER=	ports@FreeBSD.org
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		gn:devel/gn \
 		java:java/openjdk11 \
 		ninja:devel/ninja \
-		npm:www/npm-node18 \
+		npm:www/npm-node22 \
 		${LOCALBASE}/lib/libcrypto.a:security/openssl
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libetonyek-0.1.so:graphics/libetonyek01 \
@@ -44,7 +44,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLA
 		rabbitmq>0:net/rabbitmq \
 		webfonts>=0:x11-fonts/webfonts
 
-USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv localbase nodejs:18,build pkgconfig \
+USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv localbase nodejs:22,build pkgconfig \
 		python:3.9+,build qt:5 trigger
 USE_QT=		qmake:build
 USE_GITHUB=	yes
@@ -98,9 +98,9 @@ SUB_LIST=	DS_GROUPNAME=${DS_GROUPNAME} \
 		PREFIX=${PREFIX} \
 		WWWDIR=${WWWDIR}
 
-# node version used with "npm install @yao-pkg/pkg@5.11.1"
+# node version used with "npm install @yao-pkg/pkg@6.4.0"
 # keep in sync with patch-build__tools_scripts_build__server.py and patch-document-server-package_Makefile
-NODE_VERSION_PKGFETCH=	18.18.2
+NODE_VERSION_PKGFETCH=	22.14.0
 
 MAKE_ENV=	BUILD_NUMBER="36" \
 		PKG_CACHE_PATH=${WRKDIR}/.pkg-cache \
@@ -204,7 +204,7 @@ do-build:
 
 	@${MKDIR} ${WRKSRC}/yao-pkg
 	@${CP} ${FILESDIR}/package* ${WRKSRC}/yao-pkg
-	@cd ${WRKSRC}/yao-pkg ; ${SETENV} ${MAKE_ENV} npm install @yao-pkg/pkg@5.11.1
+	@cd ${WRKSRC}/yao-pkg ; ${SETENV} ${MAKE_ENV} npm install @yao-pkg/pkg@6.4.0
 
 	@cd ${WRKSRC} && ${PATCH} -N -s -i ${FILESDIR}/extra-patch-pkg-fetch_lib-es5_build.js || ${TRUE}
 	@cd ${WRKSRC} && ${PATCH} -N -s -i ${FILESDIR}/extra-patch-pkg-fetch_patches_node.v${NODE_VERSION_PKGFETCH}.cpp.patch || ${TRUE}
@@ -236,6 +236,7 @@ do-install:
 .for f in ds.conf ds-ssl.conf includes/http-common.conf includes/ds-common.conf includes/ds-docservice.conf includes/ds-letsencrypt.conf includes/ds-mime.types.conf
 	${INSTALL_DATA} ${WRKSRC}/document-server-package/common/documentserver/nginx/${f} ${STAGEDIR}${ETCDIR}/documentserver/nginx/${f}.sample
 .endfor
+	@echo "# Production ds-cache.conf is created automatically by documentserver-flush-cache.sh" > ${STAGEDIR}${ETCDIR}/documentserver/nginx/includes/ds-cache.conf.sample
 	cd ${WRKSRC}/document-server-package/common/documentserver/nginx/includes && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver/nginx/includes "-name *\.conf"
 	cd ${WRKSRC}/document-server-package/common/documentserver/config && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver
 	${INSTALL_DATA} ${FILESDIR}/local.json.sample ${STAGEDIR}${ETCDIR}/documentserver
