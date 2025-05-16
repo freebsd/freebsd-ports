@@ -562,6 +562,7 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/aqt/tts.py
 %%DATADIR%%/aqt/undo.py
 %%DATADIR%%/aqt/update.py
+%%DATADIR%%/aqt/url_schemes.py
 %%DATADIR%%/aqt/utils.py
 %%DATADIR%%/aqt/webview.py
 %%DATADIR%%/aqt/widgetgallery.py
