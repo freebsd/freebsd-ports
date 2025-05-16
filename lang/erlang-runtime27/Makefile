@@ -1,7 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	27.1.2
-PORTREVISION=	1
+DISTVERSION=	27.3.4
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime${PORTVERSION:C/\..*//}
 DIST_SUBDIR=	erlang
@@ -66,9 +65,9 @@ WX_DESC=	Enable WX application
 DTRACE_CONFIGURE_WITH=		dynamic-trace=dtrace
 DTRACE_CFLAGS=			-fno-omit-frame-pointer
 DTRACE_VARS=			STRIP=""
+JAVA_USES=			java
 JAVA_CONFIGURE_WITH=		javac
 JAVA_CONFIGURE_ENV=		ac_cv_prog_JAVAC="${JAVAC}"
-JAVA_USES=			java
 KQUEUE_CONFIGURE_ENABLE=	kernel-poll
 ODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
 ODBC_USES=			localbase:ldflags

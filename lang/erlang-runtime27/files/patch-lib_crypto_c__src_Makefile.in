@@ -1,6 +1,6 @@
---- lib/crypto/c_src/Makefile.in.orig	2021-05-27 09:40:45 UTC
+--- lib/crypto/c_src/Makefile.in.orig	2025-05-08 11:03:33 UTC
 +++ lib/crypto/c_src/Makefile.in
-@@ -136,7 +136,7 @@ endif
+@@ -147,7 +147,7 @@ ifeq ($(DYNAMIC_OR_WIN_CRYPTO_LIB),yes)
  endif
  
  ifeq ($(DYNAMIC_OR_WIN_CRYPTO_LIB),yes)
