@@ -1,9 +1,15 @@
 PORTNAME=	freerdp
 DISTVERSION=	3.15.0
+PORTREVISION=	1
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	3
+
+PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
+# Fix realm usage for Heimdal: https://bugs.freebsd.org/286816
+PATCHFILES+=	8c2be5fd53501c129042ec8205ca2ff1bae90cda.patch:-p1
+PATCHFILES+=	374707d4fa609e5434f2166b5c11df655f6ff952.patch:-p1
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
