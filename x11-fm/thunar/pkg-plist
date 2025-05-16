@@ -195,7 +195,6 @@ share/icons/hicolor/24x24/stock/navigation/stock_folder-move.png
 share/icons/hicolor/48x48/apps/org.xfce.thunar.png
 share/icons/hicolor/scalable/apps/org.xfce.thunar.svg
 %%NLS%%share/locale/am/LC_MESSAGES/thunar.mo
-%%NLS%%share/locale/en_AU/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/be/LC_MESSAGES/thunar.mo
@@ -206,6 +205,7 @@ share/icons/hicolor/scalable/apps/org.xfce.thunar.svg
 %%NLS%%share/locale/da/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/de/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/el/LC_MESSAGES/thunar.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/es/LC_MESSAGES/thunar.mo
@@ -226,6 +226,7 @@ share/icons/hicolor/scalable/apps/org.xfce.thunar.svg
 %%NLS%%share/locale/is/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/it/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/thunar.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/thunar.mo
@@ -254,6 +255,7 @@ share/icons/hicolor/scalable/apps/org.xfce.thunar.svg
 %%NLS%%share/locale/uk/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/thunar.mo
+%%NLS%%share/locale/vec/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/thunar.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/thunar.mo
