@@ -1,6 +1,6 @@
 PORTNAME=	trustedqsl
-DISTVERSION=	2.7.2
-PORTREVISION=	2
+DISTVERSION=	2.8.1
+#PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.arrl.org/files/file/LoTW%20Instructions/ \
 		LOCAL/shurd
