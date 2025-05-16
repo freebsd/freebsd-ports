@@ -1,5 +1,5 @@
-TIMESTAMP = 1679705787
-SHA256 (prometheus-mysqld_exporter-v0.12.1_GH0.tar.gz) = 8fdd21c629963f5275ac772f59e8d32bafc8aee1ae61cf8ae996f30c92cbc360
-SIZE (prometheus-mysqld_exporter-v0.12.1_GH0.tar.gz) = 1910780
-SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
-SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
+TIMESTAMP = 1744045231
+SHA256 (go/net-mgmt_mysqld_exporter/mysqld_exporter-v0.17.2/v0.17.2.mod) = c3ba33fc11f23aab46bfb72efc4ac968c8ce8111a24922370d7ff95f20fd9a6f
+SIZE (go/net-mgmt_mysqld_exporter/mysqld_exporter-v0.17.2/v0.17.2.mod) = 1737
+SHA256 (go/net-mgmt_mysqld_exporter/mysqld_exporter-v0.17.2/v0.17.2.zip) = 798f38caf66342ac72a1b0984633ede719d9b8b35a8a480c8250e2cf37828480
+SIZE (go/net-mgmt_mysqld_exporter/mysqld_exporter-v0.17.2/v0.17.2.zip) = 191673

@@ -1,1 +1,7 @@
-node_exporter is a prometheus exporter for MySQL server metrics
+mysqld_exporter is a Prometheus exporter for MySQL server metrics.
+
+This exporter also supports Prometheus' multi-target scraping pattern, which
+enables a single running instance of the exporter to collect metrics from
+multiple MySQL targets. For more information see:
+
+  https://github.com/prometheus/mysqld_exporter

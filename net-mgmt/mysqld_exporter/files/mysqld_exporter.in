@@ -16,13 +16,14 @@
 # mysqld_exporter_args (string):          Set extra arguments to pass to mysqld_exporter
 #               Default is "".
 # mysqld_exporter_listen_address (string):Set ip:port that mysqld_exporter will listen on
-#               Default is ":9100".
-# mysqld_exporter_conffile (string):      Set configuration file path for mysqld_exporter
-#               Default is "".
+#               Default is ":9104".
+# mysqld_exporter_config (string):        Set configuration file path for mysqld_exporter
+#               Default is "%%PREFIX%%/etc/my.cnf".
 
 . /etc/rc.subr
 
 name=mysqld_exporter
+desc="mysqld_exporter for use with Prometheus"
 rcvar=mysqld_exporter_enable
 
 load_rc_config $name
@@ -32,24 +33,17 @@ load_rc_config $name
 : ${mysqld_exporter_group:="nobody"}
 : ${mysqld_exporter_args:=""}
 : ${mysqld_exporter_listen_address:=":9104"}
-if [ -f "%%ETCDIR%%/my.cnf" ]; then
-: ${mysqld_exporter_conffile:="%%ETCDIR%%/my.cnf"}
-else
-: ${mysqld_exporter_conffile:=""}
-fi
+: ${mysqld_exporter_config:="%%PREFIX%%/etc/my.cnf"}
 
-if [ -z ${mysqld_exporter_conffile} ]; then
-conf_arg=""
-else
-conf_arg="--config.my-cnf=${mysqld_exporter_conffile}"
-fi
+conf_file="--config.my-cnf=${mysqld_exporter_config}"
 
 pidfile=/var/run/mysqld_exporter.pid
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/mysqld_exporter"
-command_args="-p ${pidfile} /usr/bin/env ${procname} \
+command_args="-f -p ${pidfile} -T ${name} \
+    /usr/bin/env ${procname} \
     --web.listen-address=${mysqld_exporter_listen_address} \
-    ${conf_arg} \
+    ${conf_file} \
     ${mysqld_exporter_args}"
 
 start_precmd=mysqld_exporter_startprecmd
@@ -58,8 +52,9 @@ mysqld_exporter_startprecmd()
 {
     if [ ! -e ${pidfile} ]; then
         install -o ${mysqld_exporter_user} -g ${mysqld_exporter_group} /dev/null ${pidfile};
+    else
+        chown ${mysqld_exporter_user}:${mysqld_exporter_group} ${pidfile};
     fi
 }
 
-load_rc_config $name
 run_rc_command "$1"

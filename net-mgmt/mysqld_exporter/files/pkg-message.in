@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+To start mysqld_exporter, create a configuration file at:
+
+  %%PREFIX%%/etc/my.cnf
+
+with default MySQL credentials, such as:
+
+  [client]
+  host = localhost
+  port = 3306
+  user = mysqld_exporter
+  password = foo123
+
+then run "sysrc mysqld_exporter_enable=yes" to enable.
+
+For more configuration options, visit:
+
+  https://github.com/prometheus/mysqld_exporter
+EOM
+}
+]
