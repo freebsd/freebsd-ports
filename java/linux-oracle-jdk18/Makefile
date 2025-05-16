@@ -47,7 +47,7 @@ DOWNLOAD_URL=		http://www.oracle.com/technetwork/java/javase/downloads/index.htm
 
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_INTERNAL_VERSION}
 BIN_DIRS=	bin jre/bin
-LIB_DIRS=	${BIN_DIRS:S|bin$|lib|}
+_LIB_DIRS=	${BIN_DIRS:S|bin$|lib|}
 SHEBANG_FILES=	${BIN_DIRS:S|$|/jcontrol|}
 bash_CMD=	${SH}
 
@@ -103,6 +103,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${APP_HOME}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${APP_HOME}
 	@cd ${STAGEDIR}${APP_HOME} && \
-	    ${CHMOD} ${BINMODE} ${BIN_DIRS:S|$|/*|} ${LIB_DIRS:S|$|/jexec|}
+	    ${CHMOD} ${BINMODE} ${BIN_DIRS:S|$|/*|} ${_LIB_DIRS:S|$|/jexec|}
 
 .include <bsd.port.post.mk>
