@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	26.2.5.6
+DISTVERSION=	26.2.5.12
 PORTEPOCH=	4
 CATEGORIES=	lang parallel java
 DIST_SUBDIR=	erlang
@@ -16,7 +16,6 @@ CPE_VENDOR=	erlang
 CPE_PRODUCT=	erlang/otp
 USE_GITHUB=	nodefault
 
-MAKE_ENV+=	ERL_LIBS=${WRKSRC}/lib
 GH_ACCOUNT=	erlang:otp,corba
 GH_PROJECT=	otp:otp corba:corba
 GH_TAGNAME=	5.2.1:corba
@@ -29,6 +28,7 @@ CONFIGURE_ARGS=	--enable-dirty-schedulers \
 		--enable-smp-support \
 		--enable-threads
 MAKE_ARGS=	all
+MAKE_ENV+=	ERL_LIBS=${WRKSRC}/lib
 
 _ERLANG_LIB=	${PORTNAME}
 
