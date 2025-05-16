@@ -44,4 +44,7 @@ USE_CABAL=	Cabal-syntax-3.12.1.0 \
 		th-env-0.1.1 \
 		transformers-compat-0.7.2
 
+post-patch:
+	${REINPLACE_CMD} 's|jobs: 1|jobs: 2|' ${CABAL_HOME}/.cabal/config
+
 .include <bsd.port.mk>

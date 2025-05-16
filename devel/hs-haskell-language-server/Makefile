@@ -52,6 +52,9 @@ USE_CABAL+=		${${f}_USE_CABAL}
 .endfor
 .endif
 
+post-patch:
+	${REINPLACE_CMD} 's|jobs: 1|jobs: 2|' ${CABAL_HOME}/.cabal/config
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == aarch64
