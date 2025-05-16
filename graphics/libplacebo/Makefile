@@ -1,11 +1,7 @@
 PORTNAME=	libplacebo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.349.0
-PORTREVISION=	1
+DISTVERSION=	7.351.0
 CATEGORIES=	graphics
-
-PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	056b852018db.patch:-p1 # https://code.videolan.org/videolan/libplacebo/-/merge_requests/685
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Reusable library for GPU-accelerated video/image rendering
