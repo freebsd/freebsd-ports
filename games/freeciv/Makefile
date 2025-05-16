@@ -1,5 +1,6 @@
 PORTNAME=	freeciv
-PORTVERSION=	3.1.4
+PORTVERSION=	3.1.5
+PORTREVISION?=	0
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION} \
 		http://files.freeciv.org/stable/
@@ -14,10 +15,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libicuuc.so:devel/icu \
-		libltdl.so:devel/libltdl
+		libltdl.so:devel/libltdl \
+		libzstd.so:archivers/zstd
+LIB_DEPENDS+=	${LIB_DEPENDS_${ARCH}}
+LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_i386=	libunwind.so:devel/libunwind
+LIB_DEPENDS_powerpc64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_powerpc64le=libunwind.so:devel/libunwind
 
 USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils gmake \
-		iconv:wchar_t libtool lua:53 pkgconfig readline shebangfix ssl tar:xz
+		iconv:wchar_t libtool lua:54 pkgconfig readline shebangfix ssl tar:xz
 SHEBANG_FILES=	bootstrap/*.sh data/flags/convert* scripts/mapimg2anim \
 		scripts/setup_auth_server.sh translations/*.sh
 
@@ -39,14 +47,15 @@ LDFLAGS+=	-Wl,--as-needed ${ICONV_LIB}
 PORTDATA=	*
 
 OPTIONS_DEFINE=		DOCS IPV6  NLS
-OPTIONS_DEFAULT=	QT5 SQLITE3
+OPTIONS_DEFAULT=	QT SQLITE3
 OPTIONS_MULTI=		DB UI
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE3
-OPTIONS_MULTI_UI=	GTK3 GTK4 QT5 SDL
+OPTIONS_MULTI_UI=	GTK3 GTK4 QT SDL
 OPTIONS_SUB=		yes
 
 DB_DESC=	Database support
 UI_DESC=	GUI clients
+QT_DESC=	QT GUI clients
 
 GTK3_USES=	gnome sdl
 GTK3_USE=	GNOME=cairo,gdkpixbuf,glib20,gtk30,pango \
@@ -75,14 +84,15 @@ PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-postgres-prefix=${LOCALBASE}
 PGSQL_VARS=		_FREECIV_DB+=postgres
 
-QT5_USES=		qt:5 sdl
-QT5_USE=		QT=core,gui,widgets,buildtools:build \
+QT_USES=		qt:6 sdl
+QT_USE=			QT=base,tools:build \
 			SDL=mixer2
-QT5_CONFIGURE_ON=	--with-qt5=yes \
-			--with-qt5-includes=${LOCALBASE}/${QT_INCDIR_REL} \
-			--with-qt5-libs=${LOCALBASE}/${QT_LIBDIR_REL}
-QT5_CONFIGURE_ENABLE=	ruledit
-QT5_VARS=		_FREECIV_CLIENT+=qt \
+QT_CONFIGURE_ON=	--with-qt6=yes \
+			--with-qt6-includes=${LOCALBASE}/${QT_INCDIR_REL} \
+			--with-qt6-libs=${LOCALBASE}/${QT_LIBDIR_REL}
+QT_CONFIGURE_ENV=	MOCCMD=${MOC}
+QT_CONFIGURE_ENABLE=	ruledit
+QT_VARS=		_FREECIV_CLIENT+=qt \
 			_FREECIV_MP+=qt
 
 SDL_USES=	sdl
