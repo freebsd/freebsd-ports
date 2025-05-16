@@ -1288,7 +1288,6 @@
     SUBDIR += skopeo
     SUBDIR += slack
     SUBDIR += sleuthkit
-    SUBDIR += slst
     SUBDIR += slurm-wlm
     SUBDIR += smart
     SUBDIR += smartmontools
