@@ -1,0 +1,14 @@
+_VER=	${PORTVERSION:C/\..*//g}.${PORTVERSION:C/[^\.]*\.//:C/\..*//g}
+
+makedist:
+.for lib in ${COMPAT_LIBS}
+	${ECHO_CMD} ${lib} >> /tmp/compat-libs
+.endfor
+.for arch in ${ONLY_FOR_ARCHS}
+	cd /tmp && ${SH} ${PORTSDIR}/Tools/scripts/gen-compat.sh ${_VER} ${arch} /tmp/compat-libs
+.endfor
+	@${ECHO_CMD}
+	@${ECHO_CMD} Now run
+	@${ECHO_CMD} 'mv /tmp/${PORTNAME}-* ${PORTSDIR}/distfiles/'
+	@${ECHO_CMD} adjust PORTVERSION accordingly and run
+	@${ECHO_CMD} ${MAKE} -C ${.CURDIR} makesum
