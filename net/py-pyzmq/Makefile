@@ -5,7 +5,7 @@ CATEGORIES=	net devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	novel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for ZeroMQ
 WWW=		https://github.com/zeromq/pyzmq
 
