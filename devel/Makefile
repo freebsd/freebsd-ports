@@ -4831,6 +4831,7 @@
     SUBDIR += py-dunamai
     SUBDIR += py-durus
     SUBDIR += py-dynrules
+    SUBDIR += py-e3-core
     SUBDIR += py-easydict
     SUBDIR += py-easyprocess
     SUBDIR += py-editables
