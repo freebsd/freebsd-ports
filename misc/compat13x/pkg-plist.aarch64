@@ -1,4 +1,5 @@
 lib/compat/libcrypto.so.111
-@comment lib/compat/libmd.so.6
+lib/compat/libdialog.so.9
+@comment lib/compat/libncursesw.so.9
 lib/compat/libnv.so.0
 lib/compat/libssl.so.111
