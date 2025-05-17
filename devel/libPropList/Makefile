@@ -8,6 +8,9 @@ DISTNAME=	libPropList-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Property library for gnome and Window Maker
 
+DEPRECATED=	Deprecated and unsupported upstream
+EXPIRATION_DATE=2025-06-30
+
 GNU_CONFIGURE=	yes
 USES=		libtool
 USE_LDCONFIG=	yes
