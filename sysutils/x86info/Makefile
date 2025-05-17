@@ -10,6 +10,9 @@ WWW=		https://github.com/kernelslacker/x86info
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandoned upstream, fails to identify anything remotely new according to upstream issue reports
+EXPIRATION_DATE=2025-06-30
+
 LIB_DEPENDS=	libpci.so:devel/libpci
 
 ONLY_FOR_ARCHS=	i386 amd64
