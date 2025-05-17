@@ -4409,3 +4409,4 @@ games/exult-devel||2025-05-12|exult-devel has been removed, encouraging users to
 sysutils/slst||2025-05-16|Has expired: No source. Source went missing in 2018
 databases/py-redis3|databases/py-redis|2025-05-18|Remove obsoleted port. Use databases/py-redis instead
 net/rubygem-devfile-gitlab|net/rubygem-devfile|2025-05-18|Remove obsoleted port. Use net/rubygem-devfile instead
+devel/rubygem-view_component-rails70|devel/rubygem-view_component-rails-gitlab|2025-05-17|Expired, please use devel/rubygem-view_component-rails-gitlab instead
