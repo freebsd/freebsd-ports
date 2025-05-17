@@ -9,6 +9,9 @@ WWW=		https://gitlab.mpcdf.mpg.de/mtr/libsharp
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Deprecated upstream in 2021, upstream recommends migrating to ducc0
+EXPIRATION_DATE=2025-06-30
+
 USES=		autoreconf gmake libtool
 USE_GITLAB=	yes
 
