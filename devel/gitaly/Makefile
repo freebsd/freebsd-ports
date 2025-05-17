@@ -26,7 +26,7 @@ CPE_VENDOR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GO_MOD_DIST=	gitlab
-GO_MODULE=	gitlab.com/gitlab-org/gitaly/v17
+GO_MODULE=	gitlab.com/gitlab-org/gitaly/v18
 GL_TUPLE=	gitlab-org:git:v${GITLAB_GIT_VERSION}:_build/_build/deps/git-v${GITLAB_GIT_VERSION_SHORT}
 
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"

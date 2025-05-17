@@ -1,15 +1,15 @@
---- gems/gitlab-backup-cli/gitlab-backup-cli.gemspec.orig	2025-03-19 10:41:02 UTC
+--- gems/gitlab-backup-cli/gitlab-backup-cli.gemspec.orig	2025-05-14 17:45:50 UTC
 +++ gems/gitlab-backup-cli/gitlab-backup-cli.gemspec
-@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
- 
+@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
    spec.add_dependency "activerecord", ">= 7"
    spec.add_dependency "activesupport", ">= 7"
+   spec.add_dependency "bigdecimal", "~> 3.1"
 -  spec.add_dependency "googleauth", "~> 1.8.1" # https://gitlab.com/gitlab-org/gitlab/-/issues/449019
 +  spec.add_dependency "googleauth", "~> 1.8" # https://gitlab.com/gitlab-org/gitlab/-/issues/449019
    spec.add_dependency "google-cloud-storage_transfer", "~> 1.2.0"
+   spec.add_dependency "mutex_m", "~> 0.3"
    spec.add_dependency "pg", "~> 1.5.6"
-   spec.add_dependency "rainbow", "~> 3.0"
-@@ -38,11 +38,11 @@ Gem::Specification.new do |spec|
+@@ -40,11 +40,11 @@ Gem::Specification.new do |spec|
    spec.add_dependency "concurrent-ruby", "~> 1.1"
    spec.add_dependency "faraday", "~> 2"
    spec.add_dependency "google-protobuf", "~> 3.25", ">= 3.25.3"
