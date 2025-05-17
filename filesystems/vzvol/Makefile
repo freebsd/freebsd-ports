@@ -11,6 +11,9 @@ WWW=		https://github.com/RainbowHackerHorse/vzvol
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Abandoned upstream, no activity in 5+ years and multiple unresolved issue reports upstream
+EXPIRATION_DATE=2025-06-30
+
 GROUPS=		operator
 
 USE_GITHUB=	yes
