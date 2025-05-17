@@ -1,6 +1,6 @@
 PORTNAME=	swayimg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.9
+DISTVERSION=	4.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,9 +10,8 @@ WWW=		https://github.com/artemsen/swayimg
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
-LIB_DEPENDS=	libjson-c.so:devel/json-c \
-		libinotify.so:devel/libinotify \
+BUILD_DEPENDS=	wayland-protocols>=1.35:graphics/wayland-protocols
+LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libwayland-client.so:graphics/wayland \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -39,8 +38,10 @@ PLIST_FILES=	bin/${PORTNAME} \
 LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
 .endif
 
-OPTIONS_DEFINE=	AVIF BASH GIF HEIF JPEG JXL LIBEXIF LIBRSVG2 OPENEXR PNG RAW SIXEL TIFF WEBP ZSH
-OPTIONS_DEFAULT=AVIF BASH GIF HEIF JPEG JXL LIBEXIF LIBRSVG2 OPENEXR PNG RAW SIXEL TIFF WEBP ZSH
+OPTIONS_DEFINE=	AVIF BASH GIF HEIF JPEG JSON JXL LIBEXIF LIBRSVG2 \
+		OPENEXR PNG RAW SIXEL TIFF WEBP ZSH
+OPTIONS_DEFAULT=AVIF BASH GIF HEIF JPEG JSON JXL LIBEXIF LIBRSVG2 \
+		OPENEXR PNG RAW SIXEL TIFF WEBP ZSH
 OPTIONS_EXCLUDE=${LIBRSVG2_DEFAULT:Mlegacy:C/.+/LIBRSVG2/}
 
 AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
@@ -58,6 +59,9 @@ HEIF_MESON_ENABLED=	heif
 
 JPEG_USES=		jpeg
 JPEG_MESON_ENABLED=	jpeg
+
+JSON_LIB_DEPENDS=	libjson-c.so:devel/json-c
+JSON_MESON_ENABLED=	sway
 
 JXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
 JXL_MESON_ENABLED=	jxl
