@@ -10,6 +10,9 @@ WWW=		https://github.com/dparrish/libcli/
 
 LICENSE=	LGPL21
 
+DEPRECATED=     Outdated and unmaintained in tree for years
+EXPIRATION_DATE=2025-06-30
+
 USES=		alias gmake
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
