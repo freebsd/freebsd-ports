@@ -1,5 +1,5 @@
 PORTNAME=	dxx-rebirth
-PORTVERSION=	20240706
+PORTVERSION=	20250329
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -21,7 +21,7 @@ USES=		gl localbase:ldflags pkgconfig scons sdl tar:xz
 USE_GCC=	yes
 USE_GL=		gl glu
 USE_GITHUB=	yes
-GH_TAGNAME=	898f9ca
+GH_TAGNAME=	ddc84fa
 USE_SDL=	image2 mixer2 sdl2
 
 MAKE_ARGS=	ignore_unknown_variables=1 sdl2=1
