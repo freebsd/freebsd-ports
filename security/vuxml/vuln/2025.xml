@@ -1,3 +1,28 @@
+  <vuln vid="46594aa3-32f7-11f0-a116-8447094a420f">
+    <topic>WeeChat -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>weechat</name>
+	<range><lt>4.6.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Weechat project reports:</p>
+	<blockquote cite="https://weechat.org/doc/weechat/security/">
+	  <p>Multiple integer and buffer overflows in WeeChat core.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://weechat.org/doc/weechat/security/</url>
+    </references>
+    <dates>
+      <discovery>2025-05-11</discovery>
+      <entry>2025-05-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="79400d31-3166-11f0-8cb5-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
