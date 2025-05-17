@@ -2045,7 +2045,7 @@
   </vuln>
 
   <vuln vid="a8a1a8e7-2e85-11f0-a989-b42e991fc52e">
-    <topic>Mozilla -- memory corrupton</topic>
+    <topic>Mozilla -- memory corruption</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -2215,7 +2215,7 @@
   </vuln>
 
   <vuln vid="9c37a02e-2e85-11f0-a989-b42e991fc52e">
-    <topic>Mozilla -- javescript content execution</topic>
+    <topic>Mozilla -- javascript content execution</topic>
     <affects>
       <package>
 	<name>firefox</name>
