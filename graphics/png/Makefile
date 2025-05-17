@@ -1,5 +1,5 @@
 PORTNAME=	png
-DISTVERSION=	1.6.47
+DISTVERSION=	1.6.48
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}16/${DISTVERSION}/
 PATCH_SITES=	SF/lib${PORTNAME}-apng/lib${PORTNAME}16/${DISTVERSION}/
@@ -20,8 +20,10 @@ USES=		cmake:testing cpe pathfix tar:xz
 CPE_PRODUCT=	libpng
 USE_LDCONFIG=	yes
 
+CMAKE_TESTING_ON=	 PNG_TESTS
+
+CMAKE_ARGS=	-DPNG_DEBUG_POSTFIX=""
 CMAKE_OFF=	PNG_TESTS
-CMAKE_TESTING_ON=	PNG_TESTS
 
 OPTIONS_DEFINE=	APNG SIMD
 OPTIONS_DEFAULT=APNG
@@ -48,11 +50,8 @@ CFLAGS+=	-maltivec -mvsx
 .if ${PORT_OPTIONS:MAPNG} || make(makesum)
 #PATCHFILES=	${DISTNAME}-apng.patch.gz:-p1
 # Keep this because you normally need to keep patch version in sync with release
-PATCHFILES=	lib${PORTNAME}-${DISTVERSION}-apng.patch.gz:-p1
+#PATCHFILES=	lib${PORTNAME}-${DISTVERSION}-apng.patch.gz:-p1
+PATCHFILES=	lib${PORTNAME}-1.6.47-apng.patch.gz:-p1
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|PNG_DEBUG_POSTFIX "d"|PNG_DEBUG_POSTFIX ""|g' \
-		${PATCH_WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
