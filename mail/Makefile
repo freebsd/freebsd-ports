@@ -598,12 +598,14 @@
     SUBDIR += rspamd-devel
     SUBDIR += rss2email3
     SUBDIR += ruby-notmuch
+    SUBDIR += rubygem-actionmailbox-gitlab
     SUBDIR += rubygem-actionmailbox60
     SUBDIR += rubygem-actionmailbox61
     SUBDIR += rubygem-actionmailbox70
     SUBDIR += rubygem-actionmailbox71
     SUBDIR += rubygem-actionmailbox72
     SUBDIR += rubygem-actionmailbox80
+    SUBDIR += rubygem-actionmailer-gitlab
     SUBDIR += rubygem-actionmailer4
     SUBDIR += rubygem-actionmailer5
     SUBDIR += rubygem-actionmailer50
@@ -632,6 +634,7 @@
     SUBDIR += rubygem-pony
     SUBDIR += rubygem-premailer
     SUBDIR += rubygem-premailer-rails
+    SUBDIR += rubygem-premailer-rails-rails-gitlab
     SUBDIR += rubygem-premailer-rails-rails5
     SUBDIR += rubygem-premailer-rails-rails52
     SUBDIR += rubygem-premailer-rails-rails60
