@@ -1,37 +1,39 @@
 PORTNAME=	lcalc
-PORTVERSION=	2.1.0
+DISTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/misc/sage/spkg/upstream/lcalc/
+MASTER_SITES=	https://mirror.csclub.uwaterloo.ca/sage/spkg/upstream/${PORTNAME}/ \
+		https://mirror.lyrahosting.com/sagemath/spkg/upstream/${PORTNAME}/ \
+		https://mirror.dogado.de/sage/spkg/upstream/${PORTNAME}/ \
+		http://files.sagemath.org/spkg/upstream/${PORTNAME}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	L-function c++ class library and the CLI program lcalc
 WWW=		https://gitlab.com/sagemath/lcalc
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 BUILD_DEPENDS=	gengetopt:devel/gengetopt
-LIB_DEPENDS=	libgmp.so:math/gmp	\
-		libmpfr.so:math/mpfr	\
-		libpari.so:math/pari
+LIB_DEPENDS=	libpari.so:math/pari
 
-#USE_GITLAB=	yes
-#GL_ACCOUNT=	sagemath
-
-USES=		autoreconf compiler:c++11-lang gmake libtool localbase	\
-		pkgconfig tar:xz
+USES=		compiler:c++11-lang gmake libtool localbase pkgconfig tar:xz
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-pari
+
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-USE_LDCONFIG=	yes
+
+CONFIGURE_ARGS=	--with-pari \
+		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-pre-configure:
-.for dir in . data
-	${REINPLACE_CMD} -e 's|@docdir@/examples|${EXAMPLESDIR}|'	\
-		${WRKSRC}/doc/examples/${dir}/Makefile.am
-.endfor
+post-configure:
+	${REINPLACE_CMD} -e 's|$$(DESTDIR)$$(docdir)|${STAGEDIR}${EXAMPLESDIR}|g' \
+	    ${PATCH_WRKSRC}/doc/examples/Makefile
+	${REINPLACE_CMD} -e 's|$$(DESTDIR)$$(docdir)|${STAGEDIR}${EXAMPLESDIR}/data|g' \
+	    ${PATCH_WRKSRC}/doc/examples/*/Makefile
 
 .include <bsd.port.mk>
