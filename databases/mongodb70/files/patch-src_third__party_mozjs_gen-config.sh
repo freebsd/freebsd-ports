@@ -1,5 +1,11 @@
---- src/third_party/mozjs/gen-config.sh.orig	2022-08-05 16:21:29 UTC
+--- src/third_party/mozjs/gen-config.sh.orig	2025-05-13 16:37:03 UTC
 +++ src/third_party/mozjs/gen-config.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ set -e
+ set -v
 @@ -29,6 +29,9 @@ case "$_Path" in
  }
  
@@ -10,16 +16,16 @@
      "platform/aarch64/linux")
          _CONFIG_OPTS="--host=aarch64-linux"
      ;;
-@@ -108,7 +111,7 @@ CFLAGS="$CFLAGS -D__STDC_FORMAT_MACROS" \
-     --disable-js-shell \
-     --disable-tests "$_CONFIG_OPTS"
+@@ -111,7 +114,7 @@ CFLAGS="$CFLAGS -D__STDC_FORMAT_MACROS" \
+     --disable-wasm-moz-intgemm \
+     "$_CONFIG_OPTS"
  
 -make recurse_export
 +gmake recurse_export
  
  cd ../../../..
  
-@@ -159,7 +162,7 @@ find "$_Path/build" -name '*.cpp' |
+@@ -166,7 +169,7 @@ find "$_Path/build" -name '*.cpp' |
  find "$_Path/build" -name '*.cpp' |
      while read unified_file ; do
          echo "Processing $unified_file"

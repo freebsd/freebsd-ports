@@ -1,4 +1,4 @@
---- SConstruct.orig	2024-06-19 03:26:19 UTC
+--- SConstruct.orig	2025-05-13 16:37:03 UTC
 +++ SConstruct
 @@ -23,7 +23,6 @@ import SCons.Script
  
@@ -25,9 +25,7 @@
  if get_option('build-metrics'):
      env['BUILD_METRICS_ARTIFACTS_DIR'] = '$BUILD_ROOT/$VARIANT_DIR'
      env.Tool('build_metrics')
-@@ -1799,9 +1788,9 @@ if has_option('variables-help'):
-     print(env_vars.GenerateHelpText(env))
-     Exit(0)
+@@ -1801,7 +1790,7 @@ if unknown_vars:
  
  unknown_vars = env_vars.UnknownVariables()
  if unknown_vars:
@@ -36,7 +34,7 @@
  
  install_actions.setup(env, get_option('install-action'))
  
-@@ -3024,7 +3013,7 @@ if env.TargetOSIs('posix'):
+@@ -3013,7 +3002,7 @@ if env.TargetOSIs('posix'):
              # If runtime hardening is requested, then build anything
              # destined for an executable with the necessary flags for PIE.
              env.AppendUnique(
@@ -45,7 +43,7 @@
                  PROGLINKFLAGS=['-pie'],
              )
  
-@@ -3032,7 +3021,6 @@ if env.TargetOSIs('posix'):
+@@ -3021,7 +3010,6 @@ if env.TargetOSIs('posix'):
      env.Append(
          CCFLAGS=[
              "-fasynchronous-unwind-tables",
