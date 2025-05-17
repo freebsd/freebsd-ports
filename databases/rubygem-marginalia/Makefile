@@ -1,6 +1,6 @@
 PORTNAME=	marginalia
 PORTVERSION=	1.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,8 @@ WWW=		https://github.com/basecamp/marginalia
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-actionpack70>=2.3:www/rubygem-actionpack70 \
-		rubygem-activerecord70>=2.3:databases/rubygem-activerecord70
+RUN_DEPENDS=	rubygem-actionpack-gitlab>=2.3:www/rubygem-actionpack-gitlab \
+		rubygem-activerecord-gitlab>=2.3:databases/rubygem-activerecord-gitlab
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
