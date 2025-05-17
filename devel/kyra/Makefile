@@ -11,6 +11,9 @@ WWW=		https://www.grinninglizard.com/kyra/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware, last release in 2006 and depdends on deprecated libraries
+EXPIRATION_DATE=2025-06-30
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
