@@ -1,5 +1,5 @@
 PORTNAME=	sentry-ruby-core
-PORTVERSION=	5.22.4
+PORTVERSION=	5.23.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>=0:devel/rubygem-concurrent-ruby \
-		rubygem-sentry-ruby>=5.22.4<5.22.5:devel/rubygem-sentry-ruby
+		rubygem-sentry-ruby>=5.23.0<5.23.1:devel/rubygem-sentry-ruby
 
 USES=		gem
 
