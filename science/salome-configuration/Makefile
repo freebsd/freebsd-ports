@@ -7,6 +7,10 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Salome Project: Multi-physics simulations: Configuration
 WWW=		https://www.salome-platform.org/
 
+BROKEN=		Unfetchable
+DEPRECATED=	Fails to fetch
+EXPIRATION_DATE=2025-06-30
+
 FETCH_DEPENDS=	git:devel/git
 
 GIT_URL=	https://git.salome-platform.org/gitpub/tools/configuration.git # all Salome repositories: https://git.salome-platform.org/gitweb/
