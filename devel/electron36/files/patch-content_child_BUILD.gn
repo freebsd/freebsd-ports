@@ -1,0 +1,16 @@
+--- content/child/BUILD.gn.orig	2025-04-22 20:15:27 UTC
++++ content/child/BUILD.gn
+@@ -135,6 +135,13 @@ target(link_target_type, "child") {
+     ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "sandboxed_process_thread_type_handler.cc",
++      "sandboxed_process_thread_type_handler.h",
++    ]
++  }
++
+   if (is_win) {
+     sources += [
+       "child_process_sandbox_support_impl_win.cc",

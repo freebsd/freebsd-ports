@@ -1,0 +1,15 @@
+--- content/app/BUILD.gn.orig	2025-04-22 20:15:27 UTC
++++ content/app/BUILD.gn
+@@ -90,9 +90,9 @@ source_set("content_main_runner_app") {
+            "//third_party/tflite:buildflags",
+            "//tools/v8_context_snapshot:buildflags",
+          ]
+-  if (build_tflite_with_xnnpack) {
+-    deps += [ "//third_party/cpuinfo" ]
+-  }
++#  if (build_tflite_with_xnnpack) {
++#    deps += [ "//third_party/cpuinfo" ]
++#  }
+ }
+ 
+ source_set("app") {

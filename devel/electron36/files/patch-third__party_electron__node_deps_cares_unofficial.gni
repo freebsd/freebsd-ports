@@ -1,0 +1,32 @@
+--- third_party/electron_node/deps/cares/unofficial.gni.orig	2025-02-10 16:22:55 UTC
++++ third_party/electron_node/deps/cares/unofficial.gni
+@@ -44,10 +44,12 @@ template("cares_gn_build") {
+     ]
+     if (is_win) {
+       include_dirs += [ "config/win32" ]
+-    } else if (is_linux) {
++    } else if (is_linux && !is_bsd) {
+       include_dirs += [ "config/linux" ]
+     } else if (is_mac) {
+       include_dirs += [ "config/darwin" ]
++    } else if (is_freebsd) {
++      include_dirs += [ "config/freebsd" ]
+     }
+ 
+     if (is_win) {
+@@ -58,11 +60,14 @@ template("cares_gn_build") {
+     }
+ 
+     sources = gypi_values.cares_sources_common
+-    if (is_linux) {
++    if (is_linux && !is_bsd) {
+       sources += [ "config/linux/ares_config.h" ]
+     }
+     if (is_mac) {
+       sources += gypi_values.cares_sources_mac
++    }
++    if (is_freebsd) {
++      sources += [ "config/freebsd/ares_config.h" ]
+     }
+ 
+     if (is_clang) {

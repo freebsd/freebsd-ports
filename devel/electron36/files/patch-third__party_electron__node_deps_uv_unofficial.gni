@@ -1,0 +1,34 @@
+--- third_party/electron_node/deps/uv/unofficial.gni.orig	2025-04-06 11:53:47 UTC
++++ third_party/electron_node/deps/uv/unofficial.gni
+@@ -27,7 +27,7 @@ template("uv_gn_build") {
+         "_FILE_OFFSET_BITS=64",
+       ]
+     }
+-    if (is_linux) {
++    if (is_linux && !is_bsd) {
+       defines += [
+         "_POSIX_C_SOURCE=200112",
+         "_GNU_SOURCE",
+@@ -105,12 +105,21 @@ template("uv_gn_build") {
+       sources += gypi_values.uv_sources_posix +
+                  [ "src/unix/proctitle.c" ]
+     }
+-    if (is_linux) {
++    if (is_linux && !is_bsd) {
+       sources += gypi_values.uv_sources_linux
+     }
+     if (is_apple) {
+       sources += gypi_values.uv_sources_apple +
+                  gypi_values.uv_sources_bsd_common
++    }
++    if (is_freebsd) {
++      sources += gypi_values.uv_sources_bsd_common + [
++        "src/unix/freebsd.c",
++        "src/unix/random-getrandom.c",
++        "src/unix/posix-hrtime.c",
++        "src/unix/bsd-proctitle.c",
++      ]
++      sources -= [ "src/unix/proctitle.c" ]
+     }
+   }
+ }
