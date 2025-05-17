@@ -1,6 +1,5 @@
 PORTNAME=	libsidplayfp
-DISTVERSION=	2.11.0
-PORTREVISION=	1
+DISTVERSION=	2.13.0
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	libgcrypt-config:security/libgcrypt
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
-USES=		compiler:c++20-lang libtool pathfix pkgconfig
+USES=		compiler:c++23-lang libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -26,7 +25,7 @@ LDFLAGS+=	-lpthread
 
 INSTALL_TARGET=	install-strip
 
-SIDPLAYFP_SHLIB_VERSION=        6.5.36
+SIDPLAYFP_SHLIB_VERSION=        6.5.38
 STILVIEW_SHLIB_VERSION=         0.0.6
 
 PLIST_SUB+=	SIDPLAYFP_SHLIB_VER=${SIDPLAYFP_SHLIB_VERSION:C/\.[[:digit:].]+//} \
