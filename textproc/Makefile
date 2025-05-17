@@ -1777,6 +1777,7 @@
     SUBDIR += rubygem-actionpack-xml_parser-rails52
     SUBDIR += rubygem-actionpack-xml_parser-rails61
     SUBDIR += rubygem-actionpack-xml_parser-rails72
+    SUBDIR += rubygem-actiontext-gitlab
     SUBDIR += rubygem-actiontext60
     SUBDIR += rubygem-actiontext61
     SUBDIR += rubygem-actiontext70
@@ -1921,6 +1922,7 @@
     SUBDIR += rubygem-puppet-strings
     SUBDIR += rubygem-raabro
     SUBDIR += rubygem-rails-dom-testing
+    SUBDIR += rubygem-rails-dom-testing-rails-gitlab
     SUBDIR += rubygem-rails-dom-testing-rails5
     SUBDIR += rubygem-rails-dom-testing-rails50
     SUBDIR += rubygem-rails-dom-testing-rails52

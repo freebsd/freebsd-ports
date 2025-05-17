@@ -1,0 +1,18 @@
+premailer-rails is a drop in solution for styling HTML emails with CSS without
+having to do the hard work yourself.
+
+Styling emails is not just a matter of linking to a stylesheet. Most clients,
+especially web clients, ignore linked stylesheets or <style> tags in the HTML.
+The workaround is to write all the CSS rules in the style attribute of each tag
+inside your email. This is a rather tedious and hard to maintain approach.
+
+Premailer to the rescue! The great premailer gem applies all CSS rules to each
+matching HTML element by adding them to the style attribute. This allows you to
+keep HTML and CSS in separate files, just as you're used to from web
+development, thus keeping your sanity.
+
+This gem is an adapter for premailer to work with actionmailer out of the box.
+Actionmailer is the email framework used in Rails, which also works outside of
+Rails. Although premailer-rails has certain Rails specific features, it also
+works in the absence of Rails making it compatible with other frameworks such as
+sinatra.

@@ -1257,6 +1257,7 @@
     SUBDIR += rtg
     SUBDIR += rtpproxy
     SUBDIR += rtptools
+    SUBDIR += rubygem-activestorage-gitlab
     SUBDIR += rubygem-activestorage52
     SUBDIR += rubygem-activestorage60
     SUBDIR += rubygem-activestorage61
