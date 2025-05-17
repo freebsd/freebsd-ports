@@ -2,6 +2,7 @@ PORTNAME=	pdfpc
 DISTVERSION=	4.7.0
 CATEGORIES=	graphics
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Keynote-like multi-monitor presentation viewer
@@ -17,8 +18,8 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libmarkdown.so:textproc/discount \
 		libpoppler-glib.so:graphics/poppler-glib \
 		libqrencode.so:graphics/libqrencode \
-		libsoup-2.4.so:devel/libsoup \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
+		libsoup-3.0.so:devel/libsoup3 \
+		libwebkit2gtk-4.1.so:www/webkit2-gtk@41
 
 USES=		cmake compiler:c11 gnome gstreamer pkgconfig vala:build xorg
 USE_GNOME=	cairo gdkpixbuf gtk30
