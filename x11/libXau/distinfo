@@ -1,3 +1,3 @@
-TIMESTAMP = 1716925378
-SHA256 (xorg/lib/libXau-1.0.11.tar.xz) = f3fa3282f5570c3f6bd620244438dbfbdd580fc80f02f549587a0f8ab329bbeb
-SIZE (xorg/lib/libXau-1.0.11.tar.xz) = 274108
+TIMESTAMP = 1747098837
+SHA256 (xorg/lib/libXau-1.0.12.tar.xz) = 74d0e4dfa3d39ad8939e99bda37f5967aba528211076828464d2777d477fc0fb
+SIZE (xorg/lib/libXau-1.0.12.tar.xz) = 282624

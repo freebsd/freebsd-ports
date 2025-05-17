@@ -1,1 +1,8 @@
 This package contains a library for the Authorization Protocol for X11.
+This is useful for restricting client access to the display.
+
+libXau provides mechanisms for individual access to an X Window System
+display. It uses existing core protocol and library hooks for specifying
+authorization data in the connection setup block to restrict use of the
+display to only those clients that show that they know a server-specific
+key called a "magic cookie".
