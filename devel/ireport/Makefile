@@ -9,6 +9,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual report builder/designer for JasperReports
 WWW=		https://www.jasperforge.org/projects/ireport
 
+BROKEN=		Unfetchable
+DEPRECATED=	Outdated, unsupported upstream and unmaintained for years in tree
+EXPIRATION_DATE=2025-06-30
+
 USES=		dos2unix java
 DOS2UNIX_GLOB=	*.txt
 NO_BUILD=	yes
