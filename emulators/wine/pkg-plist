@@ -2691,10 +2691,10 @@ lib/wine/%%WINEARCH%%-windows/xolehlp.dll
 lib/wine/%%WINEARCH%%-windows/xpsprint.dll
 lib/wine/%%WINEARCH%%-windows/xpssvcs.dll
 share/applications/wine.desktop
-%%WINE32%%share/man/de.UTF-8/man1/wine.1.gz
+share/man/de.UTF-8/man1/wine.1.gz
 share/man/de.UTF-8/man1/winemaker.1.gz
 share/man/de.UTF-8/man1/wineserver.1.gz
-%%WINE32%%share/man/fr.UTF-8/man1/wine.1.gz
+share/man/fr.UTF-8/man1/wine.1.gz
 share/man/fr.UTF-8/man1/winemaker.1.gz
 share/man/fr.UTF-8/man1/wineserver.1.gz
 share/man/man1/msiexec.1.gz
@@ -2702,7 +2702,7 @@ share/man/man1/notepad.1.gz
 share/man/man1/regedit.1.gz
 share/man/man1/regsvr32.1.gz
 share/man/man1/widl.1.gz
-%%WINE32%%share/man/man1/wine.1.gz
+share/man/man1/wine.1.gz
 share/man/man1/wineboot.1.gz
 share/man/man1/winebuild.1.gz
 share/man/man1/winecfg.1.gz
@@ -2719,7 +2719,7 @@ share/man/man1/winepath.1.gz
 share/man/man1/wineserver.1.gz
 share/man/man1/wmc.1.gz
 share/man/man1/wrc.1.gz
-%%WINE32%%share/man/pl.UTF-8/man1/wine.1.gz
+share/man/pl.UTF-8/man1/wine.1.gz
 %%DATADIR%%/nls/c_037.nls
 %%DATADIR%%/nls/c_10000.nls
 %%DATADIR%%/nls/c_10001.nls
