@@ -4,6 +4,7 @@ bin/appjail-config-user
 bin/appjail-dns
 bin/appjail-user
 @sample %%ETCDIR%%/appjail.conf.sample
+etc/bash_completion.d/_appjail.bash
 etc/rc.d/appjail
 etc/rc.d/appjail-dns
 etc/rc.d/appjail-health
@@ -158,6 +159,7 @@ libexec/appjail/network/network
 %%DATADIR%%/scripts/ajconf.sh
 %%DATADIR%%/scripts/ajdns.sh
 %%DATADIR%%/scripts/ajuser.sh
+%%DATADIR%%/scripts/appjail-completion.bash
 %%DATADIR%%/scripts/ascii2oct.sh
 %%DATADIR%%/scripts/bind-ddns-hook.sh
 %%DATADIR%%/scripts/create-bridge.sh
