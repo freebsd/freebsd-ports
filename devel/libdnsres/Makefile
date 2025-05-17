@@ -11,6 +11,9 @@ WWW=		https://www.monkey.org/~provos/libdnsres/
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No consumers in tree, last release in 2005 by upstream
+EXPIRATION_DATE=2025-06-30
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:devel/libevent
 
 USES=		libtool
