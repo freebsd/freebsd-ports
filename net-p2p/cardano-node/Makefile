@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NOT_FOR_ARCHS=	i386
 
+BUILD_DEPENDS=	ghc-9.6.7:lang/ghc96
 LIB_DEPENDS=	libsecp256k1.so:math/secp256k1 \
 		libblst.so:security/blst
 RUN_DEPENDS=	${LOCALBASE}/share/rc-subr-jail/rc.subr.jail:ports-mgmt/rc-subr-jail
