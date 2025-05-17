@@ -15,7 +15,7 @@ BUILD_DEPENDS=	git>=0:devel/git \
 		golangci-lint>=0:devel/golangci-lint
 
 USES=		go:modules,1.23
-GO_MODULE=	gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v17
+GO_MODULE=	gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v18
 
 _BUILD_DATE=	$$(date -u "+%Y-%m-%d-%H%M UTC")
 GO_TARGET=     ./cmd/kas
