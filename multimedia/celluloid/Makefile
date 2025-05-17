@@ -1,5 +1,5 @@
 PORTNAME=	celluloid
-DISTVERSION=	0.28
+DISTVERSION=	0.29
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/${PORTNAME}-player/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -18,5 +18,8 @@ USES=		compiler:c11 desktop-file-utils gettext-tools gnome meson \
 USE_GNOME=	gdkpixbuf gtk40 libadwaita
 GLIB_SCHEMAS=	io.github.celluloid_player.Celluloid.gschema.xml
 SHEBANG_FILES=	meson-post-install.py src/generate-authors.py
+
+do-test:
+	cd ${BUILD_WRKSRC} &&  ${DO_MAKE_BUILD} test
 
 .include <bsd.port.mk>
