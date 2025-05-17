@@ -751,7 +751,7 @@ GNUstep/Local/Library/Libraries/sogo/libSOGo.so.5
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.12
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.%%VERSION%%
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.12.0
 GNUstep/Local/Library/OCSTypeModels/appointment-oracle.ocs
 GNUstep/Local/Library/OCSTypeModels/appointment.ocs
 GNUstep/Local/Library/OCSTypeModels/contact-oracle.ocs
@@ -2092,6 +2092,13 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-file-upload.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-file-upload.js.map
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-file-upload.min.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-file-upload.min.js.map
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-material-dist/angular-material-mocks.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-material-dist/angular-material.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-material-dist/angular-material.min.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-material-dist/angular-material.scss
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-material-dist/layouts/angular-material.layout-attributes.scss
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-material-dist/layouts/angular-material.layouts.scss
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-material-dist/package.json
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-material.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-material.min.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/angular-messages.js
