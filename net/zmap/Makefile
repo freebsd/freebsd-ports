@@ -11,22 +11,18 @@ WWW=		https://zmap.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	gengetopt>0:devel/gengetopt \
-		gmake:devel/gmake
-LIB_DEPENDS=	libjson-c.so:devel/json-c \
+BUILD_DEPENDS=	gengetopt>0:devel/gengetopt
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libjson-c.so:devel/json-c \
 		libJudy.so:devel/judy \
-		libgmp.so:math/gmp \
 		libpcap.so:net/libpcap \
 		libunistring.so:devel/libunistring
 
-USES=		cmake:insource pkgconfig
+USES=		cmake pkgconfig
+
 USE_GITHUB=	yes
 
-CFLAGS+=	-D_SYSTYPE_BSD
-
 CMAKE_ON=	FORCE_CONF_INSTALL
-
-MANPAGE=	zblacklist.1 zmap.1 ztee.1
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/etc/zmap|${LOCALBASE}/etc/zmap|g' -e 's|/usr/local|${LOCALBASE}|g' \
@@ -39,8 +35,7 @@ post-patch:
 		${WRKSRC}/src/zmap.c
 
 post-install:
-.for cnf in blocklist.conf zmap.conf
-	@${MV} ${STAGEDIR}${ETCDIR}/${cnf} ${STAGEDIR}${ETCDIR}/${cnf}.sample
-.endfor
+	@${MV} ${STAGEDIR}${ETCDIR}/blocklist.conf ${STAGEDIR}${ETCDIR}/blocklist.conf.sample
+	@${MV} ${STAGEDIR}${ETCDIR}/zmap.conf ${STAGEDIR}${ETCDIR}/zmap.conf.sample
 
 .include <bsd.port.mk>
