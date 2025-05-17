@@ -14,6 +14,10 @@ WWW=		http://www.review-board.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+DEPRECATED=	Upstream is gone
+EXPIRATION_DATE=2025-05-31
+
 RUN_DEPENDS=	${PY_MERCURIAL} \
 		rbt:devel/rbtools
 
