@@ -10,6 +10,9 @@ WWW=		https://kristaps.bsd.lv/ksql/
 
 LICENSE=	ISCL
 
+DEPRECATED=	Last activity upstream 7 years ago, unmaintained in tree for several years and no consumers
+EXPIRATION_DATE=2025-06-30
+
 USES=		localbase:ldflags sqlite
 
 HAS_CONFIGURE=	yes
