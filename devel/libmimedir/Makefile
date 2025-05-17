@@ -10,6 +10,9 @@ COMMENT=	Library for parsing RFC2425 MIME Directory Profile information
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Last release in 2008, no consumers in tree and unmaintained for years
+EXPIRATION_DATE=2025-06-30
+
 USES=		cpe desthack libtool
 CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
