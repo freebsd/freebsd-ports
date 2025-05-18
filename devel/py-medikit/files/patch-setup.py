@@ -1,6 +1,6 @@
 --- setup.py.orig	2020-11-25 07:42:37 UTC
 +++ setup.py
-@@ -56,12 +56,12 @@ setup(
+@@ -56,13 +56,13 @@ setup(
      include_package_data=True,
      install_requires=[
          "git-semver ~= 0.3.2",
@@ -11,8 +11,10 @@
          "pip-tools ~= 4.5.0",
 -        "semantic_version < 2.7",
 -        "stevedore ~= 3.0",
+-        "whistle ~= 1.0",
 +        "semantic_version ~= 2.8",
 +        "stevedore >= 3.0",
-         "whistle ~= 1.0",
++        "whistle >= 1.0",
          "yapf ~= 0.20",
      ],
+     extras_require={
