@@ -13,6 +13,8 @@ WWW=		https://nodejs.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Node.js 18.* has reached its EoL on 2025-04-30. Use Node.js 22.* (www/node22) instead
+EXPIRATION_DATE=2025-05-31
 BROKEN_SSL=	libressl libressl-devel
 BROKEN_SSL_REASON=	Node.js ${PORTVERSION:R:R}.x requires OpenSSL or the BUNDLED_SSL option enabled
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
