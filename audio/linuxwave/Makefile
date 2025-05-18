@@ -1,6 +1,6 @@
 PORTNAME=	linuxwave
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
+DISTVERSION=	0.3.0
 CATEGORIES=	audio
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,11 +10,11 @@ WWW=		https://orhun.dev/linuxwave/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zig>=0.12.0:lang/zig
+BUILD_DEPENDS=	zig>=0.14.0:lang/zig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	orhun
-GH_TUPLE=	Hejsil:zig-clap:0.9.1:zig_clap/../.cache/zig/p/122062d301a203d003547b414237229b09a7980095061697349f8bef41be9c30266b
+GH_TUPLE=	Hejsil:zig-clap:0.10.0:zig_clap/../.cache/zig/p/clap-0.10.0-oBajB434AQBDh-Ei3YtoKIRxZacVPF1iSwp3IX_ZB8f0
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:D:U-Doptimize=ReleaseFast} \

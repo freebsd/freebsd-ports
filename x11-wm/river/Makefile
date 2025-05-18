@@ -1,7 +1,6 @@
 PORTNAME=	river
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.7
-PORTREVISION=	1
+DISTVERSION=	0.3.9
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>0:graphics/wayland-protocols \
-		zig>=0.13.0:lang/zig
+		zig>=0.14.0:lang/zig
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwayland-server.so:graphics/wayland \
 		libwlroots-0.18.so:x11-toolkits/wlroots018 \
@@ -24,10 +23,10 @@ USES=		pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	riverwm
-GH_TUPLE=	ifreund:zig-pixman:v0.2.0:zig_pixman/../.cache/zig/p/12209db20ce873af176138b76632931def33a10539387cba745db72933c43d274d56 \
-		ifreund:zig-wayland:v0.2.0:zig_wayland/../.cache/zig/p/1220687c8c47a48ba285d26a05600f8700d37fc637e223ced3aa8324f3650bf52242 \
-		ifreund:zig-xkbcommon:v0.2.0:zig_xkbcommon/../.cache/zig/p/1220c90b2228d65fd8427a837d31b0add83e9fade1dcfa539bb56fd06f1f8461605f \
-		swaywm:zig-wlroots:v0.18.1:zig_wlroots/../.cache/zig/p/122083317b028705b5d27be12976feebf17066a4e51802b3b5e9f970bec580e433e1
+GH_TUPLE=	ifreund:zig-pixman:v0.3.0:zig_pixman/../.cache/zig/p/pixman-0.3.0-LClMnz2VAAAs7QSCGwLimV5VUYx0JFnX5xWU6HwtMuDX \
+		ifreund:zig-wayland:v0.3.0:zig_wayland/../.cache/zig/p/wayland-0.3.0-lQa1kjPIAQDmhGYpY-zxiRzQJFHQ2VqhJkQLbKKdt5wl \
+		ifreund:zig-xkbcommon:v0.3.0:zig_xkbcommon/../.cache/zig/p/xkbcommon-0.3.0-VDqIe3K9AQB2fG5ZeRcMC9i7kfrp5m2rWgLrmdNn9azr \
+		swaywm:zig-wlroots:v0.18.2:zig_wlroots/../.cache/zig/p/wlroots-0.18.2-jmOlchnIAwBq45_cxU1V3OWErxxJjQZlc9PyJfR-l3uk
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:D:U-Doptimize=ReleaseFast} \

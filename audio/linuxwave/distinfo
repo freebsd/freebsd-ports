@@ -1,5 +1,5 @@
-TIMESTAMP = 1729460509
-SHA256 (orhun-linuxwave-v0.2.0_GH0.tar.gz) = d10aa53b9348be927654d753454726cc39baef656d37a40c6a44af0e6f65451f
-SIZE (orhun-linuxwave-v0.2.0_GH0.tar.gz) = 372837
-SHA256 (Hejsil-zig-clap-0.9.1_GH0.tar.gz) = eeac66ff8c5bfb9f0c186fa2533b2c52d47dece1b67518c0ab24b40407ade076
-SIZE (Hejsil-zig-clap-0.9.1_GH0.tar.gz) = 22875
+TIMESTAMP = 1741390019
+SHA256 (orhun-linuxwave-v0.3.0_GH0.tar.gz) = 55c7a8fbe741de6af7a48fb580c710d065acda31c605950ae76ea9c9a693ae80
+SIZE (orhun-linuxwave-v0.3.0_GH0.tar.gz) = 372862
+SHA256 (Hejsil-zig-clap-0.10.0_GH0.tar.gz) = 71b3c69959485f022e44f21f428157cf02ee953e1712ff2b416709525d6e7b2a
+SIZE (Hejsil-zig-clap-0.10.0_GH0.tar.gz) = 27187

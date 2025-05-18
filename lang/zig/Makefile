@@ -1,5 +1,5 @@
 PORTNAME=	zig
-DISTVERSION=	0.13.0
+DISTVERSION=	0.14.0
 CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/ \
 		https://ziglang.org/builds/
@@ -37,7 +37,7 @@ STATIC_CMAKE_BOOL=	ZIG_STATIC
 STATIC_LDFLAGS=		-licudata -licuuc -llzma -lm -lmd -lxml2 -lz -lzstd
 STATIC_LIB_DEPENDS+=	libxml2.so:textproc/libxml2
 
-_LLVM_VER=	18
+_LLVM_VER=	19
 _ZIG_BIN=	${STAGEDIR}${PREFIX}/bin/zig
 
 post-configure-STATIC-on:
