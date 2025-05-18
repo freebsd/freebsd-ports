@@ -1,5 +1,5 @@
 PORTNAME=	chef
-PORTVERSION=	18.7.3
+PORTVERSION=	18.7.6
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -29,7 +29,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-mixlib-archive>=0.4<2.0:devel/rubygem-mixlib-archive \
 		rubygem-mixlib-authentication>=2.1<4:devel/rubygem-mixlib-authentication \
 		rubygem-mixlib-cli>=2.1.1<3.0:devel/rubygem-mixlib-cli \
-		rubygem-mixlib-log>=2.0.3<3.1.1_99:devel/rubygem-mixlib-log \
+		rubygem-mixlib-log>=2.0.3<3.2:devel/rubygem-mixlib-log \
 		rubygem-mixlib-shellout>=3.1.1<4.0:devel/rubygem-mixlib-shellout \
 		rubygem-net-ftp>=0:ftp/rubygem-net-ftp \
 		rubygem-net-sftp>=2.1.2<5.0:security/rubygem-net-sftp \
