@@ -1,6 +1,6 @@
 PORTNAME=	protoc-gen-go-grpc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.72.0
+DISTVERSION=	1.72.1
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -23,12 +23,8 @@ GH_TUPLE=	\
 		open-telemetry:opentelemetry-go:v1.34.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
 		protocolbuffers:protobuf-go:v1.36.5:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf
 
-#GO_MODULE=	google.golang.org/grpc
 GO_TARGET=	./cmd/protoc-gen-go-grpc
 
 PLIST_FILES=	bin/protoc-gen-go-grpc
-
-#post-patch:
-#	@${CP} -R ${WRKDIR}/grpc-go-${DISTVERSION}/cmd ${WRKSRC}/
 
 .include <bsd.port.mk>
