@@ -20,20 +20,10 @@ CPPFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_ARGS=	PCDIR=${PREFIX}/libdata/pkgconfig
-REINPLACE_ARGS=	-i ''
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lstdc++ ||g' ${WRKSRC}/configure ${WRKSRC}/doc/spex.html ${WRKSRC}/example/Makefile ${WRKSRC}/lab/kcdict/Makefile
-	@${REINPLACE_CMD} -e 's|-g0 -O2||g' \
-	    ${PATCH_WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-march=native||g' \
-	    ${PATCH_WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-m64 ||g' \
-	    ${PATCH_WRKSRC}/configure
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libkyotocabinet.so
