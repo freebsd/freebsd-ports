@@ -1,0 +1,23 @@
+--- pyproject.toml.orig	2025-04-22 02:57:56 UTC
++++ pyproject.toml
+@@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools>=61"]
+ 
+ [project]
+ name = "types-setuptools"
+ version = "79.0.0.20250422"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = { text = "Apache-2.0" }
+ description = "Typing stubs for setuptools"
+ readme = { text = """\
+ ## Typing stubs for setuptools
+@@ -53,5 +52,4 @@ dependencies = ['setuptools']
+ "Chat" = "https://gitter.im/python/typing"
+ 
+ [tool.setuptools]
+-packages = ['distutils-stubs', 'setuptools-stubs']
+ include-package-data = false
