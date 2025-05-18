@@ -1,0 +1,70 @@
+Obtained from:	https://github.com/awslabs/aws-crt-python/pull/651
+		https://github.com/awslabs/aws-crt-python/pull/651/commits/aca159cc63187426a61e6c1cc8e4c18db2d73d71
+--- source/mqtt_request_response.c.orig	2025-04-25 19:28:57 UTC
++++ source/mqtt_request_response.c
+@@ -352,8 +352,7 @@ static void s_on_mqtt_request_complete(
+ }
+ 
+ static void s_on_mqtt_request_complete(
+-    const struct aws_byte_cursor *response_topic,
+-    const struct aws_byte_cursor *payload,
++    const struct aws_mqtt_rr_incoming_publish_event *publish_event,
+     int error_code,
+     void *user_data) {
+ 
+@@ -368,10 +367,10 @@ static void s_on_mqtt_request_complete(
+         request_binding->on_request_complete_callback,
+         "(is#y#)",
+         /* i */ error_code,
+-        /* s */ response_topic ? response_topic->ptr : NULL,
+-        /* # */ response_topic ? response_topic->len : 0,
+-        /* y */ payload ? payload->ptr : NULL,
+-        /* # */ payload ? payload->len : 0);
++        /* s */ publish_event ? publish_event->topic.ptr : NULL,
++        /* # */ publish_event ? publish_event->topic.len : 0,
++        /* y */ publish_event ? publish_event->payload.ptr : NULL,
++        /* # */ publish_event ? publish_event->payload.len : 0);
+     if (!result) {
+         PyErr_WriteUnraisable(PyErr_Occurred());
+     }
+@@ -467,7 +466,7 @@ PyObject *aws_py_mqtt_request_response_client_make_req
+         };
+ 
+         if (aws_mqtt_request_response_client_submit_request(client_binding->native, &request_options)) {
+-            s_on_mqtt_request_complete(NULL, NULL, aws_last_error(), request_binding);
++            s_on_mqtt_request_complete(NULL, aws_last_error(), request_binding);
+         }
+     }
+ 
+@@ -551,8 +550,7 @@ static void s_aws_mqtt_streaming_operation_incoming_pu
+ }
+ 
+ static void s_aws_mqtt_streaming_operation_incoming_publish_callback_python(
+-    struct aws_byte_cursor payload,
+-    struct aws_byte_cursor topic,
++    const struct aws_mqtt_rr_incoming_publish_event *publish_event,
+     void *user_data) {
+ 
+     struct mqtt_streaming_operation_binding *stream_binding = user_data;
+@@ -565,10 +563,10 @@ static void s_aws_mqtt_streaming_operation_incoming_pu
+     PyObject *result = PyObject_CallFunction(
+         stream_binding->incoming_publish_callable,
+         "(s#y#)",
+-        /* s */ topic.ptr,
+-        /* # */ topic.len,
+-        /* y */ payload.ptr,
+-        /* # */ payload.len);
++        /* s */ publish_event->topic.ptr,
++        /* # */ publish_event->topic.len,
++        /* y */ publish_event->payload.ptr,
++        /* # */ publish_event->payload.len);
+     if (!result) {
+         PyErr_WriteUnraisable(PyErr_Occurred());
+     }
+@@ -673,4 +671,4 @@ struct aws_mqtt_rr_client_operation *aws_py_get_mqtt_s
+         s_capsule_name_mqtt_streaming_operation,
+         "StreamingOperation",
+         mqtt_streaming_operation_binding);
+-}
+\ No newline at end of file
++}

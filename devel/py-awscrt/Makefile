@@ -1,7 +1,8 @@
 PORTNAME=	awscrt
-PORTVERSION=	0.26.1
+PORTVERSION=	0.27.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -24,13 +25,19 @@ LIB_DEPENDS=	libaws-c-auth.so:security/aws-c-auth \
 		libaws-c-s3.so:devel/aws-c-s3 \
 		libaws-c-sdkutils.so:devel/aws-c-sdkutils \
 		libaws-checksums.so:devel/aws-checksums \
-		libcrypto.so:security/aws-lc \
 		libs2n.so:security/s2n-tls
 
 USES=		localbase:ldflags python ssl
 USE_PYTHON=	autoplist concurrent pep517
 
-MAKE_ENV=	AWS_CRT_BUILD_USE_SYSTEM_LIBCRYPTO=1
+MAKE_ENV=	AWS_CRT_BUILD_FORCE_STATIC_LIBS=0 \
+		AWS_CRT_BUILD_USE_SYSTEM_LIBCRYPTO=1 \
+		AWS_CRT_BUILD_USE_SYSTEM_LIBS=1 \
+		AWS_CRT_BUILD_WARNINGS_ARE_ERRORS=0
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	awslabs
+GH_PROJECT=	aws-crt-python
 
 # Clean up bundled libraries
 post-patch:
