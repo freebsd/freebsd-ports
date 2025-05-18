@@ -20,6 +20,5 @@ USES=		perl5 tar:tgz
 USE_PERL5=	configure
 
 NO_ARCH=	yes
-REINPLACE_ARGS=	-i ''
 
 .include <bsd.port.mk>
