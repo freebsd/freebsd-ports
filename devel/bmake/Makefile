@@ -10,6 +10,9 @@ WWW=		https://www.crufty.net/help/sjg/bmake.html
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Outdated and redundant
+EXPIRATION_DATE=2025-06-30
+
 PORTSCOUT=	skipv:200910007
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
