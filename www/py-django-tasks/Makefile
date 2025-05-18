@@ -1,5 +1,5 @@
 PORTNAME=	django-tasks
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,10 +23,13 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	MYSQL POSTGRES
+OPTIONS_DEFINE=	MYSQL POSTGRES RQ
 POSTGRES_DESC=	PostgreSQL database support
+RQ_DESC=	RQ (Redis Queue) support
 
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mysqlclient>=0:databases/py-mysqlclient@${PY_FLAVOR}
 POSTGRES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg>=0:databases/py-psycopg@${PY_FLAVOR}
+RQ_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}django-rq>=0:devel/py-django-rq@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}rq-scheduler>=0:devel/py-rq-scheduler@${PY_FLAVOR}
 
 .include <bsd.port.mk>
