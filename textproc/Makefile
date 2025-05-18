@@ -498,8 +498,8 @@
     SUBDIR += mxml
     SUBDIR += mythes
     SUBDIR += nb-aspell
-    SUBDIR += nerdlog
     SUBDIR += nds-aspell
+    SUBDIR += nerdlog
     SUBDIR += nl-aspell
     SUBDIR += nl-hunspell
     SUBDIR += nl-hyphen
