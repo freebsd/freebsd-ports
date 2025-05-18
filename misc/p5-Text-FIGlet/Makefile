@@ -19,7 +19,6 @@ USES=		perl5 tar:tgz
 USE_PERL5=	configure
 
 NO_ARCH=	yes
-REINPLACE_ARGS=	-i ''
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/games/lib|${PREFIX}/share|' ${WRKSRC}/bin/*.pl ${WRKSRC}/lib/Text/FIGlet.pm ${WRKSRC}/lib/Text/FIGlet/*.pm
