@@ -1,5 +1,5 @@
 PORTNAME=	chef-winrm-fs
-PORTVERSION=	1.3.7
+PORTVERSION=	1.4.0
 CATEGORIES=	filesystems rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,9 @@ WWW=		https://github.com/chef/chef-winrm-fs
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-chef-winrm>=2.3.11:sysutils/rubygem-chef-winrm \
+RUN_DEPENDS=	rubygem-benchmark>=0.4.0<0.5:benchmarks/rubygem-benchmark \
+		rubygem-chef-winrm>=2.4<3:sysutils/rubygem-chef-winrm \
+		rubygem-csv>=3.3<4:devel/rubygem-csv \
 		rubygem-erubi>=1.7:www/rubygem-erubi \
 		rubygem-logging>=1.6.1<3.0:devel/rubygem-logging \
 		rubygem-rubyzip>=2.0<3:archivers/rubygem-rubyzip
