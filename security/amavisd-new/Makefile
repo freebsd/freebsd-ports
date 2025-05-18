@@ -1,6 +1,5 @@
 PORTNAME=	amavisd-new
-DISTVERSION=	2.12.3
-PORTREVISION=	7
+DISTVERSION=	2.13.1
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -10,45 +9,46 @@ WWW=		https://www.ijs.si/software/amavisd/
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	p5-Unix-Syslog>=0:sysutils/p5-Unix-Syslog \
-		p5-MIME-Tools>=0:mail/p5-MIME-Tools \
+RUN_DEPENDS=	p5-Archive-Zip>=1.14:archivers/p5-Archive-Zip \
 		p5-Convert-TNEF>=0:converters/p5-Convert-TNEF \
 		p5-Convert-UUlib>=1.08,1:converters/p5-Convert-UUlib \
-		p5-Archive-Zip>=1.14:archivers/p5-Archive-Zip \
-		p5-Net-Server>=2.0:net/p5-Net-Server \
 		p5-Mail-DKIM>=0.33:mail/p5-Mail-DKIM \
-		p5-Net-LibIDN>=0:dns/p5-Net-LibIDN
+		p5-MIME-Tools>=0:mail/p5-MIME-Tools \
+		p5-Net-LibIDN>=0:dns/p5-Net-LibIDN \
+		p5-Net-Server>=2.0:net/p5-Net-Server \
+		p5-Unix-Syslog>=0:sysutils/p5-Unix-Syslog
 
 USES=		perl5 shebangfix tar:bz2
-USE_GITLAB=	yes
 USE_PERL5=	run
+USE_GITLAB=	yes
 GL_ACCOUNT=	amavis
 GL_PROJECT=	amavis
-GL_TAGNAME=	3290c9c2a11a8cc9595b5810b2f86c1dac25a392
+GL_TAGNAME=	cdd11b069e20a4cb99960614ca9c3eb385d4e200
 
-SHEBANG_FILES=	amavisd-agent amavisd-nanny amavisd-release p0f-analyzer.pl \
-		amavisd-snmp-subagent amavisd
+SHEBANG_FILES=	bin/amavisd bin/amavisd-agent bin/amavisd-nanny \
+		bin/amavisd-release bin/amavisd-snmp-subagent \
+		contrib/p0f-analyzer.pl
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-DOCS=		AAAREADME.first AMAVIS-MIB.txt INSTALL LDAP.schema LICENSE \
+DOCS=		AAAREADME.first AMAVIS-MIB.txt contrib/LDAP.schema LICENSE \
 		RELEASE_NOTES README_FILES/README.* README_FILES/screen.css \
 		README_FILES/amavisd-new-docs.html
 
-AMAVISUSER?=	vscan
-AMAVISGROUP?=	vscan
-USERS=		${AMAVISUSER}
-GROUPS=		${AMAVISGROUP}
-AMAVISDIR?=	/var/amavis
+AMAVISUSER?=		vscan
+AMAVISGROUP?=		vscan
+USERS=			${AMAVISUSER}
+GROUPS=			${AMAVISGROUP}
+AMAVISDIR?=		/var/amavis
 AMAVISQUARANTINE?=	/var/virusmails
-DAEMON?=	/usr/sbin/daemon -p
+DAEMON?=		/usr/sbin/daemon -p
 
-OPTIONS_DEFINE=	IPV6 BDB SNMP SQLITE MYSQL PGSQL LDAP SASL SPAMASSASSIN P0F \
-		FILE RAR UNRAR ARJ UNARJ LHA ARC NOMARCH CAB RPM ZOO UNZOO LZOP \
-		7ZIP MSWORD TNEF DOCS
-OPTIONS_DEFAULT=	BDB SPAMASSASSIN FILE UNRAR ARJ ARC CAB RPM ZOO LZOP \
-			7ZIP MSWORD
+OPTIONS_DEFINE=		7ZIP ARC ARJ BDB CAB DOCS FILE IPV6 LDAP LHA LZOP \
+			MSWORD MYSQL NOMARCH P0F PGSQL RAR RPM SASL SNMP \
+			SPAMASSASSIN SQLITE TNEF UNARJ UNRAR UNZOO ZOO
+OPTIONS_DEFAULT=	7ZIP ARC ARJ BDB CAB FILE LZOP MSWORD RPM SPAMASSASSIN \
+			UNRAR ZOO
 BDB_DESC=		Use BerkeleyDB for nanny/cache/snmp
 SNMP_DESC=		Install amavisd snmp subagent
 SQLITE_DESC=		Use SQLite for lookups
@@ -77,18 +77,18 @@ TNEF_DESC=		Add external tnef decoder converters/tnef
 
 SUB_FILES=	pkg-deinstall pkg-message
 
-SUB_LIST+=	AMAVISUSER=${AMAVISUSER} \
+SUB_LIST+=	AMAVISDIR=${AMAVISDIR} \
 		AMAVISGROUP=${AMAVISGROUP} \
-		AMAVISDIR=${AMAVISDIR} \
 		AMAVISQUARANTINE=${AMAVISQUARANTINE} \
+		AMAVISUSER=${AMAVISUSER} \
 		DAEMON="${DAEMON}" \
 		PERL=${PERL}
 
-PLIST_SUB+=	AMAVISUSER=${AMAVISUSER} \
-		AMAVISGROUP=${AMAVISGROUP} \
+PLIST_SUB+=	AMAVIS_NOP0F=${AMAVIS_NOP0F} \
 		AMAVISDIR=${AMAVISDIR} \
+		AMAVISGROUP=${AMAVISGROUP} \
 		AMAVISQUARANTINE=${AMAVISQUARANTINE} \
-		AMAVIS_NOP0F=${AMAVIS_NOP0F}
+		AMAVISUSER=${AMAVISUSER}
 
 .include <bsd.port.options.mk>
 
@@ -151,7 +151,7 @@ RUN_DEPENDS+=	file>=4.21:sysutils/file
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 RUN_DEPENDS+=	${LOCALBASE}/bin/rar:archivers/rar
 .else
-IGNORE=	archivers/rar is a x86 binary port and is not compatible with ${ARCH}
+IGNORE=		archivers/rar is a x86 binary port and is not compatible with ${ARCH}
 .endif
 .endif
 
@@ -215,40 +215,41 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:converters/tnef
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|$$daemon_user  = 'vscan';|$$daemon_user  = '${AMAVISUSER}';|" \
-			-e "s|$$daemon_group = 'vscan';|$$daemon_group = '${AMAVISGROUP}';|" \
+	@${REINPLACE_CMD} -e "s|$daemon_user   = 'vscan';|$daemon_user   = '${AMAVISUSER}';|" \
+			-e "s|@daemon_groups = 'vscan';|@daemon_groups = '${AMAVISGROUP}';|" \
 			-e "s|/var/amavis|${AMAVISDIR}|" \
-			-e "s|/var/lib/amavis|${AMAVISDIR}|" \
 			-e "s|/var/virusmails|${AMAVISQUARANTINE}|" \
-			-e 's|$$localhost_name = .localhost.;|$$localhost_name = $$myhostname;|' \
-			-e 's|/var/run/clamav/clamd|/var/run/clamav/clamd|g' \
-			${WRKSRC}/amavisd.conf
-	@${REINPLACE_CMD} "s|/var/amavis/db|${AMAVISDIR}/db|" ${WRKSRC}/amavisd-agent
-	@${REINPLACE_CMD} "s|/var/amavis/db|${AMAVISDIR}/db|" ${WRKSRC}/amavisd-nanny
+			${WRKSRC}/conf/amavisd.conf
+	@${REINPLACE_CMD} "s|/var/amavis/db|${AMAVISDIR}/db|" ${WRKSRC}/bin/amavisd-agent
+	@${REINPLACE_CMD} "s|/var/amavis/db|${AMAVISDIR}/db|" ${WRKSRC}/bin/amavisd-nanny
 	@${REINPLACE_CMD} -e "s|/var/amavis/db|${AMAVISDIR}/db|" \
-			 ${WRKSRC}/amavisd-snmp-subagent
+			 ${WRKSRC}/bin/amavisd-snmp-subagent
 	@${REINPLACE_CMD} "s|/var/amavis/amavisd.sock|${AMAVISDIR}/amavisd.sock|" \
-			${WRKSRC}/amavisd-release
+			${WRKSRC}/bin/amavisd-release
 	@${REINPLACE_CMD} -e "s|/etc/amavisd.conf|${PREFIX}/etc/amavisd.conf|" \
-				-e "s|/var/amavis|${AMAVISDIR}|g" \
-				-e 's|$$localhost_name = .localhost.;|$$localhost_name = $$myhostname;|' \
-			${WRKSRC}/amavisd
+			-e "s|/var/amavis|${AMAVISDIR}|g" \
+			${WRKSRC}/lib/Amavis.pm
+	@${REINPLACE_CMD} -e "s|/var/amavis|${AMAVISDIR}|g" \
+			${WRKSRC}/lib/Amavis/Conf.pm
 
 do-install:
-.for i in amavisd amavisd-agent amavisd-nanny amavisd-release amavisd-snmp-subagent
-	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/sbin
+.for i in amavisd amavisd-agent amavisd-nanny amavisd-release \
+	amavisd-snmp-subagent
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${i} ${STAGEDIR}${PREFIX}/sbin
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/amavisd.conf ${STAGEDIR}${PREFIX}/etc/amavisd.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/amavisd.conf-default ${STAGEDIR}${PREFIX}/etc/amavisd.conf-default
-	${INSTALL_DATA} ${WRKSRC}/amavisd-custom.conf ${STAGEDIR}${PREFIX}/etc/amavisd-custom.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/conf/amavisd.conf ${STAGEDIR}${PREFIX}/etc/amavisd.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/conf/amavisd.conf-default ${STAGEDIR}${PREFIX}/etc/amavisd.conf-default
+	${INSTALL_DATA} ${WRKSRC}/conf/amavisd-custom.conf ${STAGEDIR}${PREFIX}/etc/amavisd-custom.conf.sample
 	${LN} -s ${PREFIX}/sbin/amavisd-release ${STAGEDIR}${PREFIX}/sbin/amavisd-requeue
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Amavis
+	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SITE_PERL_REL})
 	${MKDIR} ${STAGEDIR}${AMAVISDIR}/var
 	${MKDIR} ${STAGEDIR}${AMAVISDIR}/tmp
 	${MKDIR} ${STAGEDIR}${AMAVISDIR}/db
 	${MKDIR} ${STAGEDIR}${AMAVISQUARANTINE}
 
 do-install-P0F-on:
-	${INSTALL_SCRIPT} ${WRKSRC}/p0f-analyzer.pl ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/p0f-analyzer.pl ${STAGEDIR}${PREFIX}/sbin
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/images
