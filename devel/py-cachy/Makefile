@@ -20,13 +20,11 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	MEMCACHED MSGPACK REDIS
+OPTIONS_DEFINE=	MEMCACHED MSGPACK
 MEMCACHED_DESC=	Memcached support
 MSGPACK_DESC=	MessagePack support
-REDIS_DESC=	Redis support
 
 MEMCACHED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-memcached>=1.59<2.0:databases/py-python-memcached@${PY_FLAVOR}
 MSGPACK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0.5:devel/py-msgpack@${PY_FLAVOR}
-REDIS3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis3>=3.3.6<4.0.0:databases/py-redis3@${PY_FLAVOR}
 
 .include <bsd.port.mk>
