@@ -92,6 +92,7 @@ share/aclocal/zziplib.m4
 %%MANPAGES%%share/man/man3/zzip_file_real.3.gz
 %%MANPAGES%%share/man/man3/zzip_file_stat.3.gz
 %%MANPAGES%%share/man/man3/zzip_filesize.3.gz
+%%MANPAGES%%share/man/man3/zzip_filesize32.3.gz
 %%MANPAGES%%share/man/man3/zzip_fopen.3.gz
 %%MANPAGES%%share/man/man3/zzip_fread.3.gz
 %%MANPAGES%%share/man/man3/zzip_freopen.3.gz
@@ -99,6 +100,7 @@ share/aclocal/zziplib.m4
 %%MANPAGES%%share/man/man3/zzip_get_default_io.3.gz
 %%MANPAGES%%share/man/man3/zzip_inflate_init.3.gz
 %%MANPAGES%%share/man/man3/zzip_init_io.3.gz
+%%MANPAGES%%share/man/man3/zzip_io_size_off_t.3.gz
 %%MANPAGES%%share/man/man3/zzip_open.3.gz
 %%MANPAGES%%share/man/man3/zzip_open_ext_io.3.gz
 %%MANPAGES%%share/man/man3/zzip_open_shared_io.3.gz
