@@ -1,6 +1,6 @@
---- gtk2/immodule/Makefile.am.orig	2021-04-29 16:18:54 UTC
+--- gtk2/immodule/Makefile.am.orig	2025-05-18 06:24:43 UTC
 +++ gtk2/immodule/Makefile.am
-@@ -12,9 +12,7 @@ module_LTLIBRARIES = $(im_uim_la)
+@@ -17,9 +17,7 @@ im_uim_la_LDFLAGS = -module -avoid-version
  
  im_uim_la_SOURCES = $(IM_UIM_SOURCES)
  im_uim_la_LDFLAGS = -module -avoid-version

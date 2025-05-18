@@ -1,6 +1,6 @@
---- gtk2/switcher/Makefile.am.orig	2021-04-29 15:59:54 UTC
+--- gtk2/switcher/Makefile.am.orig	2025-05-18 07:34:02 UTC
 +++ gtk2/switcher/Makefile.am
-@@ -2,10 +2,7 @@ if GTK2
+@@ -7,10 +7,7 @@ uim_im_switcher_gtk_SOURCES  = gtk.c
  bin_PROGRAMS = uim-im-switcher-gtk
  
  uim_im_switcher_gtk_SOURCES  = gtk.c
@@ -9,6 +9,6 @@
 -			       $(top_builddir)/uim/libuim-scm.la \
 -			       $(top_builddir)/uim/libuim.la
 +uim_im_switcher_gtk_LDADD    = @GTK2_LIBS@ -luim-scm -luim-custom -luim
- uim_im_switcher_gtk_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir)
+ uim_im_switcher_gtk_CPPFLAGS = $(AM_CPPFLAGS)
  uim_im_switcher_gtk_CFLAGS   = @GTK2_CFLAGS@
  endif

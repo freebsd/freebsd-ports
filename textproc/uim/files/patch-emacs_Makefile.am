@@ -1,7 +1,7 @@
---- emacs/Makefile.am.orig	2021-04-29 07:41:09 UTC
+--- emacs/Makefile.am.orig	2025-05-18 06:22:16 UTC
 +++ emacs/Makefile.am
-@@ -3,9 +3,6 @@ EXTRA_DIST = README.ja uim-version.el.in
- if UIM_EL
+@@ -7,9 +7,6 @@ uimel_lispdir = $(UIMEL_LISP_DIR)
+ 	-I$(top_srcdir)
  
  uimel_lispdir = $(UIMEL_LISP_DIR)
 -dist_uimel_lisp_DATA = uim.el uim-var.el uim-version.el uim-keymap.el \

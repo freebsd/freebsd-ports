@@ -1,6 +1,6 @@
---- gtk2/toolbar/Makefile.am.orig	2022-05-04 18:55:24 UTC
+--- gtk2/toolbar/Makefile.am.orig	2025-05-18 07:36:36 UTC
 +++ gtk2/toolbar/Makefile.am
-@@ -6,9 +6,7 @@ if GNOME_APPLET
+@@ -11,9 +11,7 @@ uim_toolbar_applet_LDADD = @GTK2_LIBS@ @GNOME_APPLET_L
  libexec_PROGRAMS =  uim-toolbar-applet
  
  uim_toolbar_applet_LDADD = @GTK2_LIBS@ @GNOME_APPLET_LIBS@ \
@@ -8,10 +8,10 @@
 -			   $(top_builddir)/uim/libuim.la \
 -			   $(top_builddir)/uim/libuim-custom.la
 +			   -luim-scm -luim -luim-custom
- uim_toolbar_applet_CPPFLAGS = $(helper_defs) -I$(top_srcdir) -I$(top_builddir)
+ uim_toolbar_applet_CPPFLAGS = $(helper_defs) $(AM_CPPFLAGS)
  uim_toolbar_applet_CFLAGS = @GTK2_CFLAGS@ @GNOME_APPLET_CFLAGS@
  if GCC
-@@ -45,9 +43,7 @@ bin_PROGRAMS = uim-toolbar-gtk uim-toolbar-gtk-systray
+@@ -50,9 +48,7 @@ uim_toolbar_gtk_SOURCES  = standalone-gtk.c common-gtk
  endif
  
  uim_toolbar_gtk_SOURCES  = standalone-gtk.c common-gtk.c
@@ -19,10 +19,10 @@
 -			   $(top_builddir)/uim/libuim.la \
 -			   $(top_builddir)/uim/libuim-custom.la
 +uim_toolbar_gtk_LDADD    = @GTK2_LIBS@ -luim-scm -luim -luim-custom
- uim_toolbar_gtk_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir)
+ uim_toolbar_gtk_CPPFLAGS = $(AM_CPPFLAGS)
  uim_toolbar_gtk_CFLAGS   = @GTK2_CFLAGS@
  
-@@ -55,8 +51,6 @@ uim_toolbar_gtk_systray_SOURCES  = systray-gtk.c commo
+@@ -60,8 +56,6 @@ uim_toolbar_gtk_systray_LDADD    = @GTK2_LIBS@ \
  				   eggtrayicon.c eggtrayicon.h
  uim_toolbar_gtk_systray_LDADD    = @GTK2_LIBS@ \
  				   @X11_LIBS@ \
@@ -30,5 +30,5 @@
 -				   $(top_builddir)/uim/libuim.la \
 -				   $(top_builddir)/uim/libuim-custom.la
 +				   -luim-scm -luim -luim-custom
- uim_toolbar_gtk_systray_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir)
+ uim_toolbar_gtk_systray_CPPFLAGS = $(AM_CPPFLAGS)
  uim_toolbar_gtk_systray_CFLAGS   = @GTK2_CFLAGS@

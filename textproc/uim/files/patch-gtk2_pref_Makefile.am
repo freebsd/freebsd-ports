@@ -1,6 +1,14 @@
---- gtk2/pref/Makefile.am.orig	2021-04-29 15:56:45 UTC
+--- gtk2/pref/Makefile.am.orig	2025-05-18 08:33:21 UTC
 +++ gtk2/pref/Makefile.am
-@@ -9,9 +9,7 @@ uim_pref_gtk_SOURCES  = gtk.c \
+@@ -1,7 +1,5 @@ helper_defs = -DUIM_DATADIR=\""$(datadir)/@PACKAGE@"\"
+ helper_defs = -DUIM_DATADIR=\""$(datadir)/@PACKAGE@"\"
+ 
+-if PREF
+-if GTK2_4
+ AM_CPPFLAGS =					\
+ 	-I$(top_builddir)/uim			\
+ 	-I$(top_srcdir)/replace			\
+@@ -14,13 +12,9 @@ uim_pref_gtk_SOURCES  = gtk.c \
  			gtk-keytab.h \
  			../immodule/key-util-gtk.c \
  			../immodule/key-util-gtk.h
@@ -11,3 +19,7 @@
  if LIBUIM_X_UTIL
  uim_pref_gtk_LDADD += $(top_builddir)/uim/libuim-x-util.la
  endif
+ uim_pref_gtk_CPPFLAGS = $(helper_defs) $(AM_CPPFLAGS)
+ uim_pref_gtk_CFLAGS   = @GTK2_CFLAGS@
+-endif
+-endif

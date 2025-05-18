@@ -1,4 +1,4 @@
-PORTREVISION=	10
+PORTREVISION=	11
 PKGNAMEPREFIX=	ja-uim-
 
 COMMENT=	Mozc engine for uim
