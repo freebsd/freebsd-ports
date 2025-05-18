@@ -1,0 +1,10 @@
+Quite often you want or need your Perl module (CPAN or otherwise) to have access
+to a large amount of read-only data that is stored on the file-system at
+run-time.
+
+On a linux-like system, this would be in a place such as /usr/share, however
+Perl runs on a wide variety of different systems, and so the use of any one
+location is unreliable.
+
+File::ShareDir::Tiny provides a more portable way to have (read-only) data for
+your module.
