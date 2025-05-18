@@ -1,6 +1,6 @@
 PORTNAME=	radius
 PORTVERSION=	1.4.0b1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
