@@ -1,3 +1,3 @@
-%%SITE_ARCH%%/auto/Net/Patricia/Patricia.so
 %%SITE_ARCH%%/Net/Patricia.pm
+%%SITE_ARCH%%/auto/Net/Patricia/Patricia.so
 %%PERL5_MAN3%%/Net::Patricia.3.gz
