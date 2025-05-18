@@ -5483,6 +5483,7 @@
     SUBDIR += py-poetry
     SUBDIR += py-poetry-core
     SUBDIR += py-poetry-dynamic-versioning
+    SUBDIR += py-poetry-plugin-bundle
     SUBDIR += py-poetry-plugin-export
     SUBDIR += py-poetry-semver
     SUBDIR += py-poetry-types
