@@ -1,0 +1,5 @@
+This package is a plugin that runs a subshell with virtual environment
+activated.
+
+This plugin replaces the same feature as the shell command previously available
+in Poetry.
