@@ -19,7 +19,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
-REINPLACE_ARGS=	-i ''
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/lib/Lingua/Ispell.pm
