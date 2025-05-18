@@ -148,6 +148,7 @@ PLIST_SUB+=		WINE32="@comment " WINE64="" WINEARCH="x86_64"
 # FreeBSD yet.
 post-patch:
 	${REINPLACE_CMD} '/Exec/s|wine|wine64|g' ${WRKSRC}/loader/wine.desktop
+	${MV} ${WRKSRC}/loader/*.man.in ${WRKSRC}/tools/wine/
 
 .else
 EXTRA_PATCHES+=	files/extra-patch-tools-winebuild-res32
@@ -158,6 +159,14 @@ pre-build:
 	cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_CMD} depend
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/tools/wine/wine.man	${STAGEDIR}${PREFIX}/share/man/man1/wine.1
+	${GZIP_CMD}					${STAGEDIR}${PREFIX}/share/man/man1/wine.1
+.for m in de.UTF-8 fr.UTF-8 pl.UTF-8
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/${m}/man1
+	${INSTALL_MAN} ${WRKSRC}/tools/wine/wine.${m}.man	${STAGEDIR}${PREFIX}/share/man/${m}/man1/wine.1
+	${GZIP_CMD}						${STAGEDIR}${PREFIX}/share/man/${m}/man1/wine.1
+.endfor
 .if ${ARCH} == i386
 	${MV} ${STAGEDIR}${PREFIX}/bin/wineserver	${STAGEDIR}${PREFIX}/bin/wineserver32
 	${MV} ${STAGEDIR}${PREFIX}/bin/wine		${STAGEDIR}${PREFIX}/bin/wine.bin

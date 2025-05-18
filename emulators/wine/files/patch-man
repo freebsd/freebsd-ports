@@ -1,0 +1,94 @@
+This backports (parts of)
+
+  commit 22a90656baebdbbe8ec30d3f00f86d6e34f1451e
+  Author: Alexandre Julliard <julliard@winehq.org>
+  Date:   Thu Feb 13 13:44:17 2025 +0100
+
+    tools: Move the loader man pages to the new Wine loader directory.
+
+and
+
+  commit 6d28db86c9c2559e67a4820175416aff20f7abec
+  Author: Alexandre Julliard <julliard@winehq.org>
+  Date:   Thu Feb 13 13:40:44 2025 +0100
+
+    tools: Add a simpler Wine launcher in the bin directory.
+
+with some tweaks and hacks in the port Makefile. Luckily all of this
+will be obsolete with the next major version.
+    
+--- UTC
+--- configure
++++ configure
+@@ -1762,6 +1762,7 @@ enable_server
+ enable_tools
+ enable_sfnt2fon
+ enable_widl
++enable_wine
+ enable_winebuild
+ enable_winedump
+ enable_winegcc
+@@ -23212,6 +23214,7 @@ wine_fn_config_makefile server enable_server
+ test "x$enable_tools" = xno || wine_fn_config_makefile tools enable_tools
+ test "x$enable_tools" = xno || wine_fn_config_makefile tools/sfnt2fon enable_sfnt2fon
+ test "x$enable_tools" = xno || wine_fn_config_makefile tools/widl enable_widl
++test "x$enable_tools" = xno || wine_fn_config_makefile tools/wine enable_wine
+ test "x$enable_tools" = xno || wine_fn_config_makefile tools/winebuild enable_winebuild
+ test "x$enable_tools" = xno || wine_fn_config_makefile tools/winedump enable_winedump
+ test "x$enable_tools" = xno || wine_fn_config_makefile tools/winegcc enable_winegcc
+--- UTC
+--- configure.ac
++++ configure.ac
+@@ -3554,6 +3555,7 @@ WINE_CONFIG_MAKEFILE(server)
+ WINE_CONFIG_MAKEFILE(tools,,[test "x$enable_tools" = xno])
+ WINE_CONFIG_MAKEFILE(tools/sfnt2fon,,[test "x$enable_tools" = xno])
+ WINE_CONFIG_MAKEFILE(tools/widl,,[test "x$enable_tools" = xno])
++WINE_CONFIG_MAKEFILE(tools/wine,,[test "x$enable_tools" = xno])
+ WINE_CONFIG_MAKEFILE(tools/winebuild,,[test "x$enable_tools" = xno])
+ WINE_CONFIG_MAKEFILE(tools/winedump,,[test "x$enable_tools" = xno])
+ WINE_CONFIG_MAKEFILE(tools/winegcc,,[test "x$enable_tools" = xno])
+diff --git a/tools/wine/Makefile.in b/tools/wine/Makefile.in
+new file mode 100644
+index 00000000000..445e1dde9d0
+--- UTC
+--- /dev/null
++++ tools/wine/Makefile.in
+@@ -0,0 +1,8 @@
++PROGRAMS = wine
++
++SOURCES = \
++	wine.c \
++	wine.de.UTF-8.man.in \
++	wine.fr.UTF-8.man.in \
++	wine.man.in \
++	wine.pl.UTF-8.man.in
++
++wine_EXTRADEFS = -DBINDIR="\"${bindir}\"" -DLIBDIR="\"${libdir}\""
++
++INSTALL_LIB = $(PROGRAMS)
+--- UTC
+--- loader/Makefile.in
++++ loader/Makefile.in
+@@ -2,12 +2,8 @@ SOURCES = \
+ 	main.c \
+ 	preloader.c \
+ 	preloader_mac.c \
+-	wine.de.UTF-8.man.in \
+ 	wine.desktop \
+-	wine.fr.UTF-8.man.in \
+ 	wine.inf.in \
+-	wine.man.in \
+-	wine.pl.UTF-8.man.in \
+ 	wine_info.plist.in
+ 
+ PROGRAMS = $(WINELOADER_PROGRAMS)
+--- UTC
+--- /dev/null
++++ tools/wine/wine.c
+@@ -0,0 +1,6 @@
++#include <stdarg.h>
++
++int main( int argc, char *argv[] )
++{
++return 99;
++}
