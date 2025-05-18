@@ -7,7 +7,7 @@ MASTER_SITES=	https://mirror.csclub.uwaterloo.ca/sage/spkg/upstream/${PORTNAME}/
 		https://mirror.dogado.de/sage/spkg/upstream/${PORTNAME}/ \
 		http://files.sagemath.org/spkg/upstream/${PORTNAME}/
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	L-function c++ class library and the CLI program lcalc
 WWW=		https://gitlab.com/sagemath/lcalc
 
