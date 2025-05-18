@@ -1321,6 +1321,7 @@
     SUBDIR += py-awesome-slugify
     SUBDIR += py-backrefs
     SUBDIR += py-bibtexparser
+    SUBDIR += py-bistring
     SUBDIR += py-bracex
     SUBDIR += py-cchardet
     SUBDIR += py-chameleon
