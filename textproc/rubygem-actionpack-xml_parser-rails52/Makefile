@@ -5,15 +5,16 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails52
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XML parameters parser for Action Pack
-WWW=		https://github.com/rails/actionpack-xml_parser
+WWW=		https://rubyonrails.org/ \
+		https://github.com/rails/actionpack-xml_parser
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-actionpack52>=5.2:www/rubygem-actionpack52 \
-		rubygem-railties52>=5.2:www/rubygem-railties52
+RUN_DEPENDS=	rubygem-actionpack52>=5.0:www/rubygem-actionpack52 \
+		rubygem-railties52>=5.0:www/rubygem-railties52
 
 USES=		gem
 
