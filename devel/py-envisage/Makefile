@@ -1,5 +1,5 @@
 PORTNAME=	envisage
-PORTVERSION=	7.0.3
+PORTVERSION=	7.0.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apptools>=0:devel/py-apptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traits>=6.2:devel/py-traits@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitsui>=0:graphics/py-traitsui@${PY_FLAVOR}
+# apptools[preferences]
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}configobj>=0:devel/py-configobj@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 unittest
