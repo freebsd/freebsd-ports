@@ -17,16 +17,20 @@ share/man/man1/yash.1.gz
 %%DATADIR%%/completion/bash
 %%DATADIR%%/completion/bg
 %%DATADIR%%/completion/bindkey
+%%DATADIR%%/completion/bmake
 %%DATADIR%%/completion/break
 %%DATADIR%%/completion/bsdtar
 %%DATADIR%%/completion/carthage
 %%DATADIR%%/completion/cat
+%%DATADIR%%/completion/catgirl
 %%DATADIR%%/completion/cd
 %%DATADIR%%/completion/chgrp
 %%DATADIR%%/completion/chmod
 %%DATADIR%%/completion/chown
 %%DATADIR%%/completion/chsh
 %%DATADIR%%/completion/cmp
+%%DATADIR%%/completion/cmus
+%%DATADIR%%/completion/cmus-remote
 %%DATADIR%%/completion/comm
 %%DATADIR%%/completion/command
 %%DATADIR%%/completion/complete
@@ -62,6 +66,7 @@ share/man/man1/yash.1.gz
 %%DATADIR%%/completion/fgrep
 %%DATADIR%%/completion/file
 %%DATADIR%%/completion/find
+%%DATADIR%%/completion/fnf
 %%DATADIR%%/completion/fold
 %%DATADIR%%/completion/fzy
 %%DATADIR%%/completion/gawk
@@ -93,6 +98,7 @@ share/man/man1/yash.1.gz
 %%DATADIR%%/completion/git-log
 %%DATADIR%%/completion/git-ls-remote
 %%DATADIR%%/completion/git-merge
+%%DATADIR%%/completion/git-mv
 %%DATADIR%%/completion/git-name-rev
 %%DATADIR%%/completion/git-notes
 %%DATADIR%%/completion/git-pull
@@ -120,6 +126,7 @@ share/man/man1/yash.1.gz
 %%DATADIR%%/completion/gitg
 %%DATADIR%%/completion/gitk
 %%DATADIR%%/completion/gitx
+%%DATADIR%%/completion/gmake
 %%DATADIR%%/completion/gnutar
 %%DATADIR%%/completion/grep
 %%DATADIR%%/completion/gtar
