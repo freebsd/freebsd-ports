@@ -1,5 +1,5 @@
 PORTNAME=	lxml
-PORTVERSION=	5.3.2
+PORTVERSION=	5.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/lxml/lxml/releases/download/lxml-${PORTVERSION}/
