@@ -1,13 +1,13 @@
 PORTNAME=	django-markdownx
-PORTVERSION=	4.0.7
-PORTREVISION=	2
+PORTVERSION=	4.0.9
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Comprehensive Markdown editor built for Django
-WWW=		https://github.com/neutronX/django-markdownx
+WWW=		https://neutronx.github.io/django-markdownx/ \
+		https://github.com/neutronX/django-markdownx
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
