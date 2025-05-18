@@ -1,8 +1,8 @@
 PORTNAME=	arcan
-DISTVERSION=	0.6.3.3
+DISTVERSION=	0.7.0.1
 CATEGORIES=	multimedia
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hoanga@gmail.com	
 COMMENT=	Display Server, Multimedia Framework, Game Engine
 WWW=		https://arcan-fe.com/
 
