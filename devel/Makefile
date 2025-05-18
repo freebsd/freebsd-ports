@@ -3600,6 +3600,7 @@
     SUBDIR += p5-Term-App-Util-Size
     SUBDIR += p5-Term-CallEditor
     SUBDIR += p5-Term-Choose
+    SUBDIR += p5-Term-Choose-LineFold-XS
     SUBDIR += p5-Term-Choose-Util
     SUBDIR += p5-Term-Clui
     SUBDIR += p5-Term-Detect-Software

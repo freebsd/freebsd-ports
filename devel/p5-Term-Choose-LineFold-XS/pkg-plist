@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Term/Choose/LineFold/XS.pm
+%%SITE_ARCH%%/auto/Term/Choose/LineFold/XS/XS.so
+%%PERL5_MAN3%%/Term::Choose::LineFold::XS.3.gz
