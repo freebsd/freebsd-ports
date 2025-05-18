@@ -12,8 +12,6 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-		libgpg-error.so:security/libgpg-error
 RUN_DEPENDS=	p5-XML-LibXML>=1.70:textproc/p5-XML-LibXML
 
 USES=		gnome perl5 pkgconfig
