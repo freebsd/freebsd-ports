@@ -1,11 +1,21 @@
---- pyproject.toml.orig	2023-10-15 08:57:48 UTC
+--- pyproject.toml.orig	2025-04-12 17:02:40 UTC
 +++ pyproject.toml
-@@ -1,7 +1,7 @@
+@@ -1,7 +1,7 @@ requires = [
  [build-system]
  build-backend = "backend"
  requires = [
--  "setuptools>=67.8",
+-  "setuptools>=77",
 +  "setuptools>=61",
  ]
  backend-path = [
    "_custom_build",
+@@ -14,8 +14,7 @@ keywords = [
+ keywords = [
+   "Imaging",
+ ]
+-license = "MIT-CMU"
+-license-files = [ "LICENSE" ]
++license = { text = "MIT-CMU" }
+ authors = [
+   { name = "Jeffrey A. Clark", email = "aclark@aclark.net" },
+ ]
