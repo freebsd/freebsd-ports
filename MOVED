@@ -4408,3 +4408,4 @@ databases/puppetdb-terminus7||2025-05-10|Has expired: Reached EOL
 games/exult-devel||2025-05-12|exult-devel has been removed, encouraging users to use exult instead
 sysutils/slst||2025-05-16|Has expired: No source. Source went missing in 2018
 databases/py-redis3|databases/py-redis|2025-05-18|Remove obsoleted port. Use databases/py-redis instead
+net/rubygem-devfile-gitlab|net/rubygem-devfile|2025-05-18|Remove obsoleted port. Use net/rubygem-devfile instead
