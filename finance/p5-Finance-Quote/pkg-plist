@@ -19,7 +19,6 @@
 %%SITE_PERL%%/Finance/Quote/CurrencyRates/Fixer.pm
 %%SITE_PERL%%/Finance/Quote/CurrencyRates/OpenExchange.pm
 %%SITE_PERL%%/Finance/Quote/CurrencyRates/YahooJSON.pm
-%%SITE_PERL%%/Finance/Quote/DWS.pm
 %%SITE_PERL%%/Finance/Quote/Deka.pm
 %%SITE_PERL%%/Finance/Quote/FTfunds.pm
 %%SITE_PERL%%/Finance/Quote/FinanceAPI.pm
@@ -31,7 +30,6 @@
 %%SITE_PERL%%/Finance/Quote/HU.pm
 %%SITE_PERL%%/Finance/Quote/IndiaMutual.pm
 %%SITE_PERL%%/Finance/Quote/MarketWatch.pm
-%%SITE_PERL%%/Finance/Quote/MorningstarAU.pm
 %%SITE_PERL%%/Finance/Quote/MorningstarCH.pm
 %%SITE_PERL%%/Finance/Quote/MorningstarJP.pm
 %%SITE_PERL%%/Finance/Quote/MorningstarUK.pm
@@ -79,7 +77,6 @@
 %%PERL5_MAN3%%/Finance::Quote::CurrencyRates::Fixer.3.gz
 %%PERL5_MAN3%%/Finance::Quote::CurrencyRates::OpenExchange.3.gz
 %%PERL5_MAN3%%/Finance::Quote::CurrencyRates::YahooJSON.3.gz
-%%PERL5_MAN3%%/Finance::Quote::DWS.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Deka.3.gz
 %%PERL5_MAN3%%/Finance::Quote::FTfunds.3.gz
 %%PERL5_MAN3%%/Finance::Quote::FinanceAPI.3.gz
@@ -91,7 +88,6 @@
 %%PERL5_MAN3%%/Finance::Quote::HU.3.gz
 %%PERL5_MAN3%%/Finance::Quote::IndiaMutual.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MarketWatch.3.gz
-%%PERL5_MAN3%%/Finance::Quote::MorningstarAU.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MorningstarCH.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MorningstarJP.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MorningstarUK.3.gz
