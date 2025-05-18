@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-activemodel71>=4:databases/rubygem-activemodel71 \
 		rubygem-activesupport71>=4:devel/rubygem-activesupport71 \
-		rubygem-elasticsearch>=8<9:textproc/rubygem-elasticsearch \
+		rubygem-elasticsearch8>=8<9:textproc/rubygem-elasticsearch8 \
 		rubygem-elasticsearch-model>=${PORTVERSION}<${PORTVERSION}_99:textproc/rubygem-elasticsearch-model \
 		rubygem-hashie>=0:devel/rubygem-hashie
 
