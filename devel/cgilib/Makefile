@@ -11,6 +11,9 @@ WWW=		https://www.infodrom.org/projects/cgilib/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Last upstream release in 2009, last upstream activity in 2017 and no consumers in tree
+EXPIRATION_DATE=2025-06-30
+
 USES=		uidfix
 
 USE_LDCONFIG=	yes
