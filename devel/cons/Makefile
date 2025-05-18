@@ -11,6 +11,9 @@ MAINTAINER=	rv@gnu.org
 COMMENT=	Perl-based Make Replacement
 WWW=		http://www.dsmit.com/cons/
 
+DEPRECATED=	Upstream development seems to have stopped over 20 years ago
+EXPIRATION_DATE=2025-06-30
+
 USES=		perl5 tar:tgz
 NO_BUILD=	yes
 PLIST_SUB=	CONS_VER=${PORTVERSION}
