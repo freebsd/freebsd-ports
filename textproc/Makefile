@@ -1820,6 +1820,7 @@
     SUBDIR += rubygem-elasticsearch-transport-gitlab
     SUBDIR += rubygem-elasticsearch-xpack
     SUBDIR += rubygem-elasticsearch7
+    SUBDIR += rubygem-elasticsearch8
     SUBDIR += rubygem-emot
     SUBDIR += rubygem-escape_utils
     SUBDIR += rubygem-extended-markdown-filter
