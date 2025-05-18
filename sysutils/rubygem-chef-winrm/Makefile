@@ -1,5 +1,5 @@
 PORTNAME=	chef-winrm
-PORTVERSION=	2.3.11
+PORTVERSION=	2.4.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
-		rubygem-chef-gyoku>=1.4.1:textproc/rubygem-chef-gyoku \
+		rubygem-chef-gyoku>=1.5<2:textproc/rubygem-chef-gyoku \
 		rubygem-erubi>=1.8:www/rubygem-erubi \
 		rubygem-gssapi>=1.2<2:security/rubygem-gssapi \
 		rubygem-httpclient>=2.2.0.2<3:www/rubygem-httpclient \
