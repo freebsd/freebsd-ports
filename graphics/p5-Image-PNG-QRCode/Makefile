@@ -1,5 +1,5 @@
 PORTNAME=	Image-PNG-QRCode
-DISTVERSION=	0.10
+DISTVERSION=	0.11
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -9,6 +9,9 @@ COMMENT=	Make a PNG image containing a QR code from text
 WWW=		https://metacpan.org/pod/Image::PNG::QRCode
 
 LICENSE=	GPLv3
+
+DEPRECATED=	Abandoned
+EXPIRATION_DATE=	2025-12-31
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
