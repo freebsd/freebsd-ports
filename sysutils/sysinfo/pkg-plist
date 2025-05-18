@@ -1,4 +1,4 @@
-%%ETCDIR%%.conf.sample
+@sample %%ETCDIR%%.conf.sample
 sbin/sysinfo
 share/man/man5/sysinfo.conf.5.gz
 share/man/man8/sysinfo.8.gz

@@ -1,5 +1,6 @@
 PORTNAME=	sysinfo
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 
