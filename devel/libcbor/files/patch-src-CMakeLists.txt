@@ -1,6 +1,26 @@
---- src/CMakeLists.txt.orig	2025-03-16 19:29:33 UTC
+--- src/CMakeLists.txt.orig	2025-05-06 17:51:02 UTC
 +++ src/CMakeLists.txt
-@@ -62,7 +62,7 @@ set_target_properties(
+@@ -29,12 +29,19 @@ add_library(cbor ${SOURCES})
+ endif()
+ 
+ add_library(cbor ${SOURCES})
++add_library(cbor_static STATIC ${SOURCES})
+ target_include_directories(cbor PUBLIC
+   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+   $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
+   $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}>
+   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
++target_include_directories(cbor_static PUBLIC
++  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
++  $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
++  $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}>
++  $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
+ set_target_properties(cbor PROPERTIES EXPORT_NAME libcbor)
++set_target_properties(cbor_static PROPERTIES OUTPUT_NAME cbor)
+ # For vendored builds
+ add_library(libcbor::libcbor ALIAS cbor)
+ 
+@@ -62,7 +69,7 @@ set_target_properties(
    PROPERTIES VERSION ${CBOR_VERSION}
               MACHO_COMPATIBILITY_VERSION
               ${CBOR_VERSION_MAJOR}.${CBOR_VERSION_MINOR}.0
@@ -9,3 +29,12 @@
  
  join_paths(libdir_for_pc_file "\${prefix}" "${CMAKE_INSTALL_LIBDIR}")
  join_paths(includedir_for_pc_file "\${prefix}" "${CMAKE_INSTALL_INCLUDEDIR}")
+@@ -70,7 +77,7 @@ install(
+ 
+ # http://www.cmake.org/Wiki/CMake:Install_Commands
+ install(
+-  TARGETS cbor
++  TARGETS cbor cbor_static
+   EXPORT libcborTargets
+   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
