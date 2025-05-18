@@ -6,12 +6,15 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to system randomness
-WWW=		https://metacpan.org/release/Crypt-SysRandom
+WWW=		https://metacpan.org/dist/Crypt-SysRandom
 
-LICENSE=	ART20
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
