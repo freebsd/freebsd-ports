@@ -1,6 +1,6 @@
 PORTNAME=	notmuch
 DISTVERSION=	0.39
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	mail
 MASTER_SITES=	https://notmuchmail.org/releases/
 
