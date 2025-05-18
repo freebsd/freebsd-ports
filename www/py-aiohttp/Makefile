@@ -1,5 +1,5 @@
 PORTNAME=	aiohttp
-PORTVERSION=	3.11.16
+PORTVERSION=	3.11.18
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/aio-libs/aiohttp/releases/download/v${PORTVERSION}/
