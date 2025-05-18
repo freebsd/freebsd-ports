@@ -1,5 +1,6 @@
 PORTNAME=	CPAN-Requirements-Dynamic
 PORTVERSION=	0.002
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,4 +18,11 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 504000
+BUILD_DEPENDS+=	p5-CPAN-Meta-Requirements>=2.142:devel/p5-CPAN-Meta-Requirements
+RUN_DEPENDS+=	p5-CPAN-Meta-Requirements>=2.142:devel/p5-CPAN-Meta-Requirements
+.endif
+
+.include <bsd.port.post.mk>
