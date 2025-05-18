@@ -961,6 +961,8 @@
 %%WWWDIR%%/schema/mysql-migrations/upgrade_184.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_186.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_187.sql
+%%WWWDIR%%/schema/mysql-migrations/upgrade_188.sql
+%%WWWDIR%%/schema/mysql-migrations/upgrade_189.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_63.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_64.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_65.sql
@@ -1087,6 +1089,7 @@
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_186.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_187.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_188.sql
+%%WWWDIR%%/schema/pgsql-migrations/upgrade_189.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_77.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_78.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_79.sql
