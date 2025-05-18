@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gem python:env shebangfix
 
 NO_ARCH=	yes
-REINPLACE_ARGS=	-i ''
 
 SHEBANG_FILES=	codegen/codegen.py
 
