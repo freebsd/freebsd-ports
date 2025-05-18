@@ -9,6 +9,9 @@ COMMENT=	DFUI curses frontend
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Depends on deprecated port devel/libaura
+EXPIRATION_DATE=2025-06-30
+
 LIB_DEPENDS=	libaura3.so:devel/libaura \
 		libdfui4.so:devel/libdfui
 
