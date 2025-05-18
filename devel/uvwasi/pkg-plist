@@ -1,0 +1,10 @@
+include/uvwasi/uvwasi.h
+include/uvwasi/wasi_serdes.h
+include/uvwasi/wasi_types.h
+lib/cmake/uvwasi/uvwasiConfig.cmake
+lib/cmake/uvwasi/uvwasiConfigVersion.cmake
+lib/cmake/uvwasi/uvwasiTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/uvwasi/uvwasiTargets.cmake
+lib/libuvwasi.so
+lib/libuvwasi_a.a
+libdata/pkgconfig/uvwasi.pc

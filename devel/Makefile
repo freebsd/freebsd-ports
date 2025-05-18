@@ -8354,6 +8354,7 @@
     SUBDIR += uthash
     SUBDIR += util-linux
     SUBDIR += uv
+    SUBDIR += uvwasi
     SUBDIR += valgrind
     SUBDIR += valgrind-devel
     SUBDIR += vasm
