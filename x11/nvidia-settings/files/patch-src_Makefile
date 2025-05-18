@@ -1,0 +1,14 @@
+--- src/Makefile.orig	2025-03-18 20:18:43 UTC
++++ src/Makefile
+@@ -308,9 +308,11 @@ WAYLAND_LIB_install: $(WAYLANDLIB)
+ 
+ .PHONY: WAYLAND_LIB_install
+ WAYLAND_LIB_install: $(WAYLANDLIB)
++ifdef BUILD_WAYLANDLIB
+ 	$(MKDIR) $(LIBDIR)
+ 	$(INSTALL) $(INSTALL_LIB_ARGS) $(WAYLANDLIB) \
+ 	    $(LIBDIR)/$(WAYLANDLIB_SONAME)
++endif
+ 
+ .PHONY: NVIDIA_SETTINGS_install
+ NVIDIA_SETTINGS_install: $(NVIDIA_SETTINGS)

@@ -1,5 +1,6 @@
 PORTNAME=	nvidia-settings
 PORTVERSION=	570.133.07
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -19,7 +20,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libjansson.so:devel/jansson \
 		libvdpau.so:multimedia/libvdpau
 
-USES=		gl gmake gnome pkgconfig gettext-runtime xorg
+USES=		gl gmake gnome pkgconfig gettext-runtime xorg \
+		desktop-file-utils
 USE_GNOME=	gtk30 cairo gdkpixbuf
 USE_GL=		gl
 USE_XORG=	x11 xext xv xxf86vm
