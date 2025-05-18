@@ -1,1 +1,2 @@
-Hooks Roadie into Rails applications to help with HTML email generation.
+roadie-rails hooks up your Rails application with Roadie to help you generate
+HTML emails.
