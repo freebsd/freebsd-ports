@@ -1,5 +1,5 @@
 PORTNAME=	chef-utils
-PORTVERSION=	18.7.3
+PORTVERSION=	18.7.6
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
