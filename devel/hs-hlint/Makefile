@@ -95,4 +95,7 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		witherable-0.5_1 \
 		yaml-0.11.11.2_2
 
+post-patch:
+	${REINPLACE_CMD} 's|jobs: 1|jobs: 2|' ${CABAL_HOME}/.cabal/config
+
 .include <bsd.port.mk>
