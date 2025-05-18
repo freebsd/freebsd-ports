@@ -9,6 +9,9 @@ WWW=		https://netbsd.org
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Outdated and redundant
+EXPIRATION_DATE=2025-06-30
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	trociny
 
