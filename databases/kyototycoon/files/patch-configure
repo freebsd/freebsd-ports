@@ -1,6 +1,6 @@
---- configure.orig	2020-03-19 09:12:04 UTC
+--- configure.orig	2012-05-02 13:04:11 UTC
 +++ configure
-@@ -3389,10 +3389,10 @@ fi
+@@ -3389,10 +3389,10 @@ then
  if test "$enable_opt" != "no"
  then
    printf 'checking for CPU optimization availability... '
@@ -14,3 +14,21 @@
      printf 'yes\n'
    else
      printf 'no\n'
+@@ -3729,7 +3729,7 @@ else
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lstdc++  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -3758,7 +3758,7 @@ _ACEOF
+ #define HAVE_LIBSTDC__ 1
+ _ACEOF
+ 
+-  LIBS="-lstdc++ $LIBS"
++  LIBS="$LIBS"
+ 
+ fi
+ 

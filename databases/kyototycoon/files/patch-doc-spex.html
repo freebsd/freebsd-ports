@@ -1,0 +1,11 @@
+--- doc/spex.html.orig	2012-05-24 17:44:23 UTC
++++ doc/spex.html
+@@ -160,7 +160,7 @@
+ <p>Kyoto Tycoon provides API of the C++ language and it is available by programs conforming to the C++03 standard.  As the header files of Kyoto Tycoon are provided as `<code>ktutil.h</code>', `<code>ktremotedb.h</code>', and so on, applications should include one or more of them accordingly to use the API.  As the library is provided as `<code>libkyototycoon.a</code>' and `<code>libkyototycoon.so</code>' and they depends on underlying system libraries, linker options corresponding to them are required by the build command.  The typical build command is the following.</p>
+ 
+ <pre>$ g++ -I/usr/local/include example.cc -o example \
+-  -L/usr/local/lib -lkyototycoon -lkyotocabinet -lz -lstdc++ \
++  -L/usr/local/lib -lkyototycoon -lkyotocabinet -lz \
+   -lresolv -lnsl -ldl -lrt -lpthread -lm -lc
+ </pre>
+ 
