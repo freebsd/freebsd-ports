@@ -1,7 +1,6 @@
 PORTNAME=	bitwarden-cli
 DISTVERSIONPREFIX=	cli-v
-DISTVERSION=	2024.12.0
-PORTREVISION=	1
+DISTVERSION=	2025.4.0
 CATEGORIES=	security
 MASTER_SITES=	https://nodejs.org/dist/v${PKG_NODE_VER}/:node
 DISTFILES=	node-v${PKG_NODE_VER}${EXTRACT_SUFX}:node \
@@ -31,7 +30,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		ca_root_nss>0:security/ca_root_nss
 TEST_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
 
-USES=		gmake localbase:ldflags nodejs:20,build pkgconfig \
+USES=		gmake localbase:ldflags nodejs:22,build pkgconfig \
 		python:build ssl
 
 USE_GITHUB=	yes
@@ -51,7 +50,7 @@ OPTIONS_DEFINE=	DOCS
 
 PREFETCH_FILE=	${PORTNAME}-${DISTVERSION}-node-modules${EXTRACT_SUFX}
 PREFETCH_TIMESTAMP=	61171200
-PKG_NODE_VER=	20.18.0
+PKG_NODE_VER=	22.10.0
 PKG_FETCH_VER=	3.5
 PKG_NODE_CONFIGURE_ARGS=--openssl-use-def-ca-store \
 			--shared-brotli \

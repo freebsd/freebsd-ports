@@ -1,6 +1,6 @@
---- configure.py.orig	2024-10-03 09:20:49 UTC
+--- configure.py.orig	2024-10-16 14:36:50 UTC
 +++ configure.py
-@@ -1829,7 +1829,7 @@ def configure_intl(o):
+@@ -1876,7 +1876,7 @@ def configure_intl(o):
    elif with_intl == 'system-icu':
      # ICU from pkg-config.
      o['variables']['v8_enable_i18n_support'] = 1

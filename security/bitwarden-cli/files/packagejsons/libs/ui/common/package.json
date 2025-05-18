@@ -1,7 +1,7 @@
 {
-  "name": "@bitwarden/tools-card",
+  "name": "@bitwarden/ui-common",
   "version": "0.0.0",
-  "description": "Angular card component",
+  "description": "Low-level utilities for Angular applications",
   "keywords": [
     "bitwarden"
   ],
@@ -12,9 +12,12 @@
     "url": "https://github.com/bitwarden/clients"
   },
   "license": "GPL-3.0",
-  "scripts": {
-    "clean": "rimraf dist",
-    "build": "npm run clean && tsc",
-    "build:watch": "npm run clean && tsc -watch"
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    },
+    "./setup-jest": {
+      "import": "./src/setup-jest.ts"
+    }
   }
 }
