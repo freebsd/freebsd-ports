@@ -7,6 +7,9 @@ MASTER_SITES=	LOCAL/philip
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library of Assorted Useful Reusable Abstractions
 
+DEPRECATED=	Abandonware, upstream is gone and last release in 2005
+EXPIRATION_DATE=2025-06-30
+
 USES=		tar:bzip2
 USE_LDCONFIG=	yes
 
