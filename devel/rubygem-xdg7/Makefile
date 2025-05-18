@@ -1,5 +1,6 @@
 PORTNAME=	xdg
 PORTVERSION=	7.1.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	7
@@ -20,10 +21,4 @@ NO_ARCH=	yes
 
 PORTSCOUT=	limit:^7\.
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 3.3
-BROKEN=	ruby 3.3 and later is not supported
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
