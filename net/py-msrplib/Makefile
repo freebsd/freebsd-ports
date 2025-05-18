@@ -1,10 +1,9 @@
 PORTNAME=	msrplib
-PORTVERSION=	0.20.0
-PORTREVISION=	2
+PORTVERSION=	0.21.1
 CATEGORIES=	net python
-MASTER_SITES=	http://download.ag-projects.com/MSRP/
+MASTER_SITES=	https://download.ag-projects.com/MSRP/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-${PORTNAME}-${PORTVERSION}
+DISTNAME=	python3-msrplib-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python MSRP client library
