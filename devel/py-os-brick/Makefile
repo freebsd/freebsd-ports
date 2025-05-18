@@ -34,7 +34,6 @@ USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-REINPLACE_ARGS=	-i ''
 
 post-patch:
 	@${REINPLACE_CMD} -e '/etc\//d' ${WRKSRC}/setup.cfg
