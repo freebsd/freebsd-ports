@@ -151,6 +151,7 @@ libdata/pkgconfig/libfido2.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_clientdata_hash_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_display_name.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_empty_exclude_list.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_entattest.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_exclude.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_flags.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_fmt.html
@@ -173,6 +174,7 @@ libdata/pkgconfig/libfido2.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_blob.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_clientdata.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_clientdata_hash.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_entattest.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_fmt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_id.html
@@ -420,6 +422,7 @@ share/man/man3/fido_cred_clientdata_hash_len.3.gz
 share/man/man3/fido_cred_clientdata_hash_ptr.3.gz
 share/man/man3/fido_cred_display_name.3.gz
 share/man/man3/fido_cred_empty_exclude_list.3.gz
+share/man/man3/fido_cred_entattest.3.gz
 share/man/man3/fido_cred_exclude.3.gz
 share/man/man3/fido_cred_flags.3.gz
 share/man/man3/fido_cred_fmt.3.gz
@@ -442,6 +445,7 @@ share/man/man3/fido_cred_set_authdata_raw.3.gz
 share/man/man3/fido_cred_set_blob.3.gz
 share/man/man3/fido_cred_set_clientdata.3.gz
 share/man/man3/fido_cred_set_clientdata_hash.3.gz
+share/man/man3/fido_cred_set_entattest.3.gz
 share/man/man3/fido_cred_set_extensions.3.gz
 share/man/man3/fido_cred_set_fmt.3.gz
 share/man/man3/fido_cred_set_id.3.gz
