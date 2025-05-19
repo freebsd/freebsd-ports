@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250519:
+  AFFECTS: users of sysutils/screen
+  AUTHOR: cy@FreeBSD.org
+
+  sysutils/screen has been updated to 5.0.1 from 4.9.1. All currently
+  running screen sessions must be terminated before upgrading. Failure
+  to do so will result in orphaning remaining screen sessions. This is
+  expected when updating from one major version of screen to to another.
+
 20250514:
   AFFECTS: users of lang/perl5.*
   AUTHOR: mat@FreeBSD.org
