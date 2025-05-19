@@ -1,7 +1,6 @@
 PORTNAME=	cardano-cli
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	10.8.0.0
-PORTREVISION=	1
+DISTVERSION=	10.9.0.0
 CATEGORIES=	sysutils net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
@@ -93,7 +92,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		canonical-json-0.6.0.1_1 \
 		capability-0.5.0.1_4 \
 		cardano-addresses-4.0.0_1 \
-		cardano-api-10.14.0.0:chap \
+		cardano-api-10.16.0.0:chap \
 		cardano-binary-1.7.1.0:chap \
 		cardano-crypto-1.3.0 \
 		cardano-crypto-class-2.2.2.0:chap \
@@ -294,10 +293,10 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		optparse-applicative-fork-0.18.1.0:chap \
 		ordered-containers-0.2.4 \
 		os-string-2.0.7 \
-		ouroboros-consensus-0.25.0.0:chap \
-		ouroboros-consensus-cardano-0.24.0.0:chap \
-		ouroboros-consensus-diffusion-0.22.0.0:chap \
-		ouroboros-consensus-protocol-0.11.0.0_2:chap \
+		ouroboros-consensus-0.26.0.1:chap \
+		ouroboros-consensus-cardano-0.25.0.1:chap \
+		ouroboros-consensus-diffusion-0.22.0.1:chap \
+		ouroboros-consensus-protocol-0.12.0.0:chap \
 		ouroboros-network-0.20.1.0:chap \
 		ouroboros-network-api-0.13.0.0:chap \
 		ouroboros-network-framework-0.17.0.0:chap \
