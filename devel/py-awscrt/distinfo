@@ -1,3 +1,3 @@
-TIMESTAMP = 1745936114
-SHA256 (awslabs-aws-crt-python-v0.27.0_GH0.tar.gz) = 780e56c0eb7b09088084a613e526a271a39ebbb291255163351d2132e114f967
-SIZE (awslabs-aws-crt-python-v0.27.0_GH0.tar.gz) = 293885
+TIMESTAMP = 1747546494
+SHA256 (awscrt-0.27.1.tar.gz) = fceb989c91001934c7a764e5c0ba68d7cbd339e054260dc35291f3245b8859cb
+SIZE (awscrt-0.27.1.tar.gz) = 36843962
