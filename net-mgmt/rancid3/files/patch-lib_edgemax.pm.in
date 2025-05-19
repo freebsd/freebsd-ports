@@ -1,0 +1,17 @@
+--- lib/edgemax.pm.in.orig	2025-05-19 13:16:15 UTC
++++ lib/edgemax.pm.in
+@@ -237,9 +237,11 @@ sub WriteTerm {
+ 	next if (/^\s*$/);
+ 	$linecnt++;
+ 
+-	/^!current configuration\s*:/i && next;
+-	/^!system (description|software|up\s?time)/i && next;
+-	/^!current sntp synch/i && next;
++        /^!\s?current configuration\s*:/i && next;
++        /^!\s?system (description|software|up\s?time)/i && next;
++        /^!\s?current sntp synch/i && next;
++        /^!\s?config created time/i && next;
++        /^show running-config/ && next;
+ 	/^$/ && next;						# blank lines
+ 
+ 	/^ length /		&& next; # kill length on serial lines
