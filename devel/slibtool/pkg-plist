@@ -23,3 +23,4 @@ bin/slibtoolize
 %%DATADIR%%/ltmain.sh
 %%DATADIR%%/slibtool.m4
 %%DATADIR%%/slibtool.sh
+%%DATADIR%%/sltdl.m4
