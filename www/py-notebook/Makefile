@@ -1,5 +1,5 @@
 PORTNAME=	notebook
-PORTVERSION=	7.4.1
+PORTVERSION=	7.4.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,7 +44,7 @@ TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}hatch>=0:devel/py-hatch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}strict-rfc3339>=0:devel/py-strict-rfc3339@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>=0:www/py-werkzeug@${PY_FLAVOR}
 
-USES=		cpe desktop-file-utils python:3.9+
+USES=		cpe desktop-file-utils python
 USE_PYTHON=	pep517 concurrent autoplist pytest
 
 NO_ARCH=	yes
