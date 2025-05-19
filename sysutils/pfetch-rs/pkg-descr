@@ -1,0 +1,5 @@
+A rewrite of the pfetch system information tool by dylanaraps in Rust
+If you are familiar with the pfetch system information tool by dylanaraps,
+this does the exact same thing, but with an about 10x faster runtime.
+pfetch is simple by design with some (but not many) configuration options
+and a minimalistic look.

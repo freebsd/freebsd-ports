@@ -924,6 +924,7 @@
     SUBDIR += perp
     SUBDIR += personality
     SUBDIR += pfetch
+    SUBDIR += pfetch-rs
     SUBDIR += pflogx
     SUBDIR += pfstat
     SUBDIR += pftables
