@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.225.0
+PORTVERSION=	3.226.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -376,6 +376,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-sqs>=1<2:devel/rubygem-aws-sdk-sqs \
 		rubygem-aws-sdk-ssm>=1<2:devel/rubygem-aws-sdk-ssm \
 		rubygem-aws-sdk-ssmcontacts>=1<2:devel/rubygem-aws-sdk-ssmcontacts \
+		rubygem-aws-sdk-ssmguiconnect>=1<2:devel/rubygem-aws-sdk-ssmguiconnect \
 		rubygem-aws-sdk-ssmincidents>=1<2:devel/rubygem-aws-sdk-ssmincidents \
 		rubygem-aws-sdk-ssmquicksetup>=1<2:devel/rubygem-aws-sdk-ssmquicksetup \
 		rubygem-aws-sdk-ssmsap>=1<2:devel/rubygem-aws-sdk-ssmsap \
