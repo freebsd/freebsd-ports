@@ -1,6 +1,5 @@
 PORTNAME=	hy
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	lang python
 MASTER_SITES=	PYPI \
 		https://github.com/hylang/hy/releases/download/${PORTVERSION}/
