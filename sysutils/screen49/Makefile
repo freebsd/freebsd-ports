@@ -22,7 +22,7 @@ WWW=		https://www.gnu.org/software/screen/
 CONFLICTS+=	screen-devel*
 
 DEPRECATED=	Multiple CVEs
-EXPIRATION_DATE=20250531
+EXPIRATION_DATE=2025-05-31
 
 LICENSE=	GPLv3
 
