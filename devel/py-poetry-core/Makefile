@@ -1,5 +1,5 @@
 PORTNAME=	poetry-core
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-poetry/poetry-core/releases/download/${PORTVERSION}/
@@ -13,7 +13,7 @@ WWW=		https://github.com/python-poetry/poetry-core
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 BINARY_ALIAS=	git=false
