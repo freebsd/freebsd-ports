@@ -1,26 +1,11 @@
---- pyproject.toml.orig	2025-02-23 20:38:39 UTC
+--- pyproject.toml.orig	2025-05-05 04:21:19 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@
  # Ref: https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
  # and https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
  [build-system]
--requires = ["setuptools ~= 75.3.0", "wheel ~= 0.42"]
-+requires = ["setuptools >= 61.0", "wheel ~= 0.42"]
+-requires = ["setuptools >= 75.3.0, < 81.0.0", "wheel ~= 0.42"]
++requires = ["setuptools >= 61.0.0, < 81.0.0", "wheel ~= 0.42"]
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -28,12 +28,12 @@ dependencies = [
-   "gitpython ~= 3.0",
-   "requests ~= 2.25",
-   "jinja2 ~= 3.1",
--  "python-gitlab ~= 4.0",
-+  "python-gitlab >= 4.0",
-   "tomlkit ~= 0.11",
-   "dotty-dict ~= 1.3",
-   "importlib-resources ~= 6.0",
-   "pydantic ~= 2.0",
--  "rich ~= 13.0",
-+  "rich ~= 14.0",
-   "shellingham ~= 1.5",
-   "Deprecated ~= 1.2",  # Backport of deprecated decorator for python 3.8
- ]
