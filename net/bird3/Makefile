@@ -1,7 +1,7 @@
 PORTNAME=	bird
-DISTVERSION=	3.0.0
+DISTVERSION=	3.1.1
 CATEGORIES=	net
-MASTER_SITES=	https://bird.network.cz/download/
+MASTER_SITES=	https://bird.nic.cz/download/
 PKGNAMESUFFIX=	3
 
 MAINTAINER=	olivier@FreeBSD.org
