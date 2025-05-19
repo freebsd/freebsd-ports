@@ -1,4 +1,4 @@
-TIMESTAMP = 1737057858
+TIMESTAMP = 1747599788
 SHA256 (dolphin-emu-dolphin-2412_GH0.tar.gz) = 6aafc7d3b6f735a727db26c329679d4973b1b15e028c82e4452c33c4eb9fefa4
 SIZE (dolphin-emu-dolphin-2412_GH0.tar.gz) = 19926717
 SHA256 (GPUOpen-LibrariesAndSDKs-VulkanMemoryAllocator-009ecd192c1289c7529bff248a16cfe896254816_GH0.tar.gz) = 5ed5125086a92666f1698df907a29f54f11197c382996094b556a1b22186ecaf
@@ -17,3 +17,7 @@ SHA256 (syoyo-tinygltf-c5641f2c22d117da7971504591a8f6a41ece488b_GH0.tar.gz) = 63
 SIZE (syoyo-tinygltf-c5641f2c22d117da7971504591a8f6a41ece488b_GH0.tar.gz) = 5903179
 SHA256 (arsenm-sanitizers-cmake-aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a_GH0.tar.gz) = 9f5b073625375322236a94ce8d2d803cdedad321c91e63845f487b9ebfb2c433
 SIZE (arsenm-sanitizers-cmake-aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a_GH0.tar.gz) = 7234
+SHA256 (b79bdb13c05b.patch) = 1e4fe7e830f2d3ab61a24694e8b7470be844b56381481c44acce0f10945bcee2
+SIZE (b79bdb13c05b.patch) = 2867
+SHA256 (825092ad33a2.patch) = 5d68298c60ea7b891ef43e5361fe24559fa2981bcc0e40174dc8f850f95d5846
+SIZE (825092ad33a2.patch) = 829

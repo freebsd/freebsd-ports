@@ -1,7 +1,12 @@
 PORTNAME=	dolphin-emu
 PORTVERSION=	2412
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
+
+# XXX Backport fmt>=11 support
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	b79bdb13c05b.patch:-p1
+PATCHFILES+=	825092ad33a2.patch:-p1
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Gamecube and Wii Emulator
