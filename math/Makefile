@@ -569,6 +569,7 @@
     SUBDIR += octave-forge-coder
     SUBDIR += octave-forge-communications
     SUBDIR += octave-forge-control
+    SUBDIR += octave-forge-csg-dataset
     SUBDIR += octave-forge-csg-toolkit
     SUBDIR += octave-forge-data-smoothing
     SUBDIR += octave-forge-database
