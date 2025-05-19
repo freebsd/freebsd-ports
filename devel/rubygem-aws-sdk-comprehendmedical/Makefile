@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-comprehendmedical
-PORTVERSION=	1.67.0
+PORTVERSION=	1.68.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
