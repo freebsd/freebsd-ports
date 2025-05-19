@@ -1,3 +1,36 @@
+  <vuln vid="07560111-34cc-11f0-af94-b42e991fc52e">
+    <topic>firefox -- out-of-bounds read/write</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>138.0.4,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.10.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1966614">
+	  <p>An attacker was able to perform an out-of-bounds read or
+	  write on a JavaScript object by confusing array index sizes.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4918</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-4918</url>
+      <cvename>CVE-2025-4919</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-4919</url>
+    </references>
+    <dates>
+      <discovery>2025-05-17</discovery>
+      <entry>2025-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="46594aa3-32f7-11f0-a116-8447094a420f">
     <topic>WeeChat -- Multiple vulnerabilities</topic>
     <affects>
