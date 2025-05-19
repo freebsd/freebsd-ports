@@ -1,5 +1,5 @@
 PORTNAME=	elastic-apm
-PORTVERSION=	4.7.3
+PORTVERSION=	4.8.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
