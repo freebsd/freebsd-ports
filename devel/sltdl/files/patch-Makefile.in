@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2025-05-19 18:40:16 UTC
++++ Makefile.in
+@@ -173,7 +173,7 @@ include $(PROJECT_DIR)/project/arch.mk
+ include $(PROJECT_DIR)/project/headers.mk
+ include $(PROJECT_DIR)/project/common.mk
+ include $(PROJECT_DIR)/project/arch.mk
+-include $(PROJECT_DIR)/project/extras.mk
++#include $(PROJECT_DIR)/project/extras.mk
+ include $(PROJECT_DIR)/project/overrides.mk
+ 
+ 

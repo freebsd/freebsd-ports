@@ -8189,6 +8189,7 @@
     SUBDIR += skypat
     SUBDIR += slf4j
     SUBDIR += slibtool
+    SUBDIR += sltdl
     SUBDIR += smake
     SUBDIR += smc
     SUBDIR += smooth
