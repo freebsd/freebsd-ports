@@ -1,3 +1,3 @@
-TIMESTAMP = 1745649955
-SHA256 (httpx_retries-0.3.2.tar.gz) = af2cc82f18e9196612e3c73aba027982450b6581f565af659dd8f5c884e991e0
-SIZE (httpx_retries-0.3.2.tar.gz) = 12530
+TIMESTAMP = 1747637137
+SHA256 (httpx_retries-0.4.0.tar.gz) = a7aa513e3f1eef347aac69adecfad9f421210a84df88c88f935ec130f98e6642
+SIZE (httpx_retries-0.4.0.tar.gz) = 12571
