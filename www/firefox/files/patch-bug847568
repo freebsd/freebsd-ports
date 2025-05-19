@@ -178,38 +178,6 @@ index 1bb0430f01aa..0360e0f468c0 100644
  # need to include etld_data.inc
  LOCAL_INCLUDES += [
      "/netwerk/base",
-diff --git old-configure.in old-configure.in
-index 1af75c496b15..f1c7d7c48d28 100644
---- old-configure.in
-+++ old-configure.in
-@@ -167,6 +167,27 @@ fi
- AC_DEFINE_UNQUOTED(MOZ_MACBUNDLE_ID,$MOZ_MACBUNDLE_ID)
- AC_SUBST(MOZ_MACBUNDLE_ID)
- 
-+dnl ========================================================
-+dnl Check for graphite2
-+dnl ========================================================
-+if test -n "$MOZ_SYSTEM_GRAPHITE2"; then
-+    dnl graphite2.pc has bogus version, check manually
-+    _SAVE_CFLAGS=$CFLAGS
-+    CFLAGS="$CFLAGS $MOZ_GRAPHITE2_CFLAGS"
-+    AC_TRY_COMPILE([ #include <graphite2/Font.h>
-+                     #define GR2_VERSION_REQUIRE(major,minor,bugfix)  \
-+                             ( GR2_VERSION_MAJOR * 10000 + GR2_VERSION_MINOR \
-+                               * 100 + GR2_VERSION_BUGFIX >= \
-+                               (major) * 10000 + (minor) * 100 + (bugfix) )
-+                   ], [
-+                     #if !GR2_VERSION_REQUIRE(1,3,14)
-+                     #error "Insufficient graphite2 version."
-+                     #endif
-+                   ], [],
-+                   [AC_MSG_ERROR([--with-system-graphite2 requested but no working libgraphite2 found])])
-+    CFLAGS=$_SAVE_CFLAGS
-+fi
-+
- dnl ========================================================
- dnl = Child Process Name for IPC
- dnl ========================================================
 diff --git security/rlbox/moz.build security/rlbox/moz.build
 index 7ad8d076f0f1..835b9d905e03 100644
 --- security/rlbox/moz.build
