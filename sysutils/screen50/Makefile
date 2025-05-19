@@ -89,7 +89,7 @@ CONFIGURE_ARGS+=	--disable-socket-dir
 .endif
 
 .if defined(SCREEN_SOCKET_DIR)
-CONFIGURE_ARGS+=	--with-socket-dir=${SCREEN_SOCKET_DIR}
+CONFIGURE_ARGS+=	--enable-socket-dir=${SCREEN_SOCKET_DIR}
 .endif
 
 do-fetch:
