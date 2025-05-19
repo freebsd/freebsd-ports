@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-04-03 10:48:28 UTC
+--- CMakeLists.txt.orig	2025-05-05 04:53:07 UTC
 +++ CMakeLists.txt
-@@ -430,8 +430,6 @@ if(WITH_EXPAT)
+@@ -445,8 +445,6 @@ if(WITH_EXPAT)
      set(LIBSBML_XML_LIBRARY_INCLUDE ${EXPAT_INCLUDE_DIR})
      set(LIBSBML_XML_LIBRARY_LIBS ${EXPAT_LIBRARY})
  
@@ -9,7 +9,7 @@
  endif(WITH_EXPAT)
  
  
-@@ -452,8 +450,6 @@ if(WITH_LIBXML)
+@@ -467,8 +465,6 @@ if(WITH_LIBXML)
    set(LIBSBML_XML_LIBRARY_INCLUDE ${LIBXML_INCLUDE_DIR})
    set(LIBSBML_XML_LIBRARY_LIBS ${LIBXML_LIBRARY})
  
@@ -18,7 +18,7 @@
  endif(WITH_LIBXML)
  
  
-@@ -473,8 +469,6 @@ if(WITH_XERCES)
+@@ -488,8 +484,6 @@ if(WITH_XERCES)
      set(LIBSBML_XML_LIBRARY_INCLUDE ${XERCES_INCLUDE_DIR})
      set(LIBSBML_XML_LIBRARY_LIBS ${XERCES_LIBRARY})
  
@@ -27,7 +27,7 @@
  endif(WITH_XERCES)
  
  ###############################################################################
-@@ -498,7 +492,6 @@ if(WITH_BZIP2)
+@@ -513,7 +507,6 @@ if(WITH_BZIP2)
    set(USE_BZ2 ON)
    add_definitions( -DUSE_BZ2 )
    list(APPEND SWIG_EXTRA_ARGS -DUSE_BZ2)
@@ -35,16 +35,16 @@
  endif(WITH_BZIP2)
  
  
-@@ -608,8 +601,6 @@ valid. It should contain the file zlib.h, but it does 
-       INTERFACE_INCLUDE_DIRECTORIES "${LIBZ_INCLUDE_DIR}")
-   endif()
- 
+@@ -550,8 +543,6 @@ if(WITH_ZLIB)
+   set(USE_ZLIB ON)
+   add_definitions( -DUSE_ZLIB )
+   list(APPEND SWIG_EXTRA_ARGS -DUSE_ZLIB)
 -  list(APPEND LIBSBML_FIND_MODULES "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules/FindZLIB.cmake")
 -
  endif(WITH_ZLIB)
  
  # install find scripts only for used dependencies
-@@ -981,22 +972,6 @@ if(WITH_DOXYGEN)
+@@ -923,20 +914,6 @@ endif()
      add_subdirectory(docs)
  endif()
  
@@ -62,8 +62,6 @@
 -        README.md
 -        VERSION.txt
 -)
--
--install(FILES ${DOCUMENTATION_FILES} DESTINATION ${MISC_PREFIX})
  
- ###############################################################################
- #
+ install(FILES ${DOCUMENTATION_FILES} DESTINATION ${MISC_PREFIX})
+ 
