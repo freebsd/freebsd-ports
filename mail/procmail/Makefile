@@ -25,6 +25,8 @@ PORTDOCS=	FAQ FEATURES HISTORY KNOWN_BUGS README
 PORTEXAMPLES=	1procmailrc 1rmail 2procmailrc 2rmail 3procmailrc 3rmail \
 		advanced dirname forward local_procmail_lmtp.m4 mailstat
 
+PORTSCOUT=	ignore:1
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
