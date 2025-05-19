@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-11-28 03:40:50 UTC
++++ pyproject.toml
+@@ -35,7 +35,7 @@ keywords = [
+     "token",
+     "web",
+ ]
+-name = "PyJWT"
++name = "pyjwt"
+ requires-python = ">=3.9"
+ 
+ [project.license]
