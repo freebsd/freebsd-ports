@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-api
-PORTVERSION=	1.32.1
+PORTVERSION=	1.33.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecated>=1.2.6:devel/py-deprecated@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=6.0<8.7.0:devel/py-importlib-metadata@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=6.0:devel/py-importlib-metadata@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
