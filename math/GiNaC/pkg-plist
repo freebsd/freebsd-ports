@@ -51,7 +51,7 @@ include/ginac/wildcard.h
 lib/libginac.a
 lib/libginac.so
 lib/libginac.so.13
-lib/libginac.so.13.0.0
+lib/libginac.so.13.0.1
 libdata/pkgconfig/ginac.pc
 libexec/ginac-excompiler
 share/man/man1/ginsh.1.gz

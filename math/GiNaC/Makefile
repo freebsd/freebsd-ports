@@ -1,5 +1,5 @@
 PORTNAME=	GiNaC
-PORTVERSION=	1.8.8
+PORTVERSION=	1.8.9
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
