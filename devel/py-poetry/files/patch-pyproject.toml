@@ -1,8 +1,8 @@
 --- pyproject.toml.orig	1970-01-01 00:00:00 UTC
 +++ pyproject.toml
-@@ -12,7 +12,7 @@ dependencies = [
-     "fastjsonschema (>=2.18.0,<3.0.0)",
-     "importlib-metadata (>=4.4) ; python_version < '3.10'",
+@@ -14,7 +14,7 @@ dependencies = [
+     # which requires some adaptions to our code.
+     "importlib-metadata (>=4.4,<8.7) ; python_version < '3.10'",
      "installer (>=0.7.0,<0.8.0)",
 -    "keyring (>=25.1.0,<26.0.0)",
 +    "keyring (>=23.9.0,<26.0.0)",
