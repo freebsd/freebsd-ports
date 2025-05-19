@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-monitoring-metrics_scope-v1
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
