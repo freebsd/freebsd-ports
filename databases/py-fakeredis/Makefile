@@ -1,5 +1,5 @@
 PORTNAME=	fakeredis
-PORTVERSION=	2.28.1
+PORTVERSION=	2.29.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonpath-ng>=1.5<2:devel/py-jsonpath-ng@${P
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
