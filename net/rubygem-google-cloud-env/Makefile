@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-env
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
