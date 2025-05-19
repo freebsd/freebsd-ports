@@ -615,7 +615,7 @@ _PYTHONPKGLIST=	${WRKDIR}/.PLIST.pymodtmp
 
 # cryptography* support
 .  if ${PYCRYPTOGRAPHY_DEFAULT} == rust
-CRYPTOGRAPHY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=44.0.2,1:security/py-cryptography@${PY_FLAVOR}
+CRYPTOGRAPHY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=44.0.3,1:security/py-cryptography@${PY_FLAVOR}
 .  else
 CRYPTOGRAPHY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography-legacy>=3.4.8_3,1:security/py-cryptography-legacy@${PY_FLAVOR}
 .  endif
