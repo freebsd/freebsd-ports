@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-exporter-otlp-proto-http
-PORTVERSION=	1.32.1
+PORTVERSION=	1.33.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecated>=1.2.6:devel/py-deprecated@${PY_F
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.15<2:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp-proto-common>=${PORTVERSION}<${PORTVERSION}_99:devel/py-opentelemetry-exporter-otlp-proto-common@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-proto>=${PORTVERSION}<${PORTVERSION}_99:devel/py-opentelemetry-proto@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=${PORTVERSION}<1.33:devel/py-opentelemetry-sdk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=${PORTVERSION}<1.34:devel/py-opentelemetry-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.7<3:www/py-requests@${PY_FLAVOR}
 
 USES=		python
