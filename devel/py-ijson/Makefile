@@ -1,5 +1,5 @@
 PORTNAME=	ijson
-PORTVERSION=	3.3.0
+PORTVERSION=	3.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +11,13 @@ WWW=		https://github.com/ICRAR/ijson
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
+
+MAKE_ENV=	IJSON_EMBED_YAJL='0'
 
 OPTIONS_DEFINE=	YAJL
 YAJL_DESC=	Enable yajl2_c backend
