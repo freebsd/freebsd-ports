@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-qbusiness
-PORTVERSION=	1.36.0
+PORTVERSION=	1.38.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
