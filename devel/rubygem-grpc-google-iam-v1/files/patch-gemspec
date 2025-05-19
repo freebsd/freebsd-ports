@@ -1,0 +1,11 @@
+--- grpc-google-iam-v1.gemspec.orig	2025-05-18 07:33:39 UTC
++++ grpc-google-iam-v1.gemspec
+@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<googleapis-common-protos>.freeze, ["~> 1.7.0".freeze])
++  s.add_runtime_dependency(%q<googleapis-common-protos>.freeze, ["~> 1.7".freeze])
+   s.add_runtime_dependency(%q<google-protobuf>.freeze, [">= 3.18".freeze, "< 5.a".freeze])
+   s.add_runtime_dependency(%q<grpc>.freeze, ["~> 1.41".freeze])
+ end
