@@ -14,7 +14,7 @@ following:
 
 [provider_sect]
 default = default_sect
-tpm2provider = tpm2_sect
+tpm2 = tpm2_sect
 
 [default_sect]
 activate = 1
@@ -26,4 +26,3 @@ module = ${PREFIX}/lib/ossl-modules/tpm2.so
 EOM
 }
 ]
-
