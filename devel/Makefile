@@ -4308,6 +4308,7 @@
     SUBDIR += php84-tokenizer
     SUBDIR += phpunit10
     SUBDIR += phpunit11
+    SUBDIR += phpunit12
     SUBDIR += phpunit8
     SUBDIR += phpunit9
     SUBDIR += physfs
