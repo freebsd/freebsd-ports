@@ -1,0 +1,29 @@
+[
+{ type: install
+  message: <<EOM
+The tpm2 provider has been installed as ${PREFIX}/lib/ossl-modules/tpm2.so.
+
+In order to let openssl find it you might want to move it to the directory
+/usr/lib/ossl-modules, otherwise  openssl will find it if you do one of the 
+following:
+
+1. set the OPENSSL_MODULES environment variable 
+2. use the -provider-path option
+3. edit /etc/ssl/openssl.cnf replacing the existing [provider_sect] and 
+   [default_provider] sections with these:
+
+[provider_sect]
+default = default_sect
+tpm2provider = tpm2_sect
+
+[default_sect]
+activate = 1
+
+[tpm2_sect]
+activate = 1
+module = ${PREFIX}/lib/ossl-modules/tpm2.so
+
+EOM
+}
+]
+

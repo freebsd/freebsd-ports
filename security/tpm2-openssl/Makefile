@@ -13,11 +13,21 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=    libtss2-esys.so:security/tpm2-tss
 RUN_DEPENDS=    tpm2-abrmd:security/tpm2-abrmd
 
-USES=		gmake libtool pkgconfig
+USES=		gmake libtool pkgconfig ssl
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if "${OPENSSLLIB}" == /usr/lib
+post-install:
+	${MKDIR} -p ${STAGEDIR}${PREFIX}/lib/ossl-modules
+	${MV} ${STAGEDIR}/usr/lib/ossl-modules/tpm2.so ${STAGEDIR}${PREFIX}/lib/ossl-modules
+.endif
+
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.mk>
+PLIST_FILES=	lib/ossl-modules/tpm2.so
+
+.include <bsd.port.post.mk>
