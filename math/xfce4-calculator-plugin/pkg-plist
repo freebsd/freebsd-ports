@@ -12,6 +12,7 @@ share/icons/hicolor/64x64/apps/xfce4-calculator-plugin.png
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-calculator-plugin.mo
 %%NLS%%share/locale/da/LC_MESSAGES/xfce4-calculator-plugin.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xfce4-calculator-plugin.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xfce4-calculator-plugin.mo
 %%NLS%%share/locale/en_AU/LC_MESSAGES/xfce4-calculator-plugin.mo
 %%NLS%%share/locale/en_CA/LC_MESSAGES/xfce4-calculator-plugin.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-calculator-plugin.mo
@@ -50,6 +51,7 @@ share/icons/hicolor/64x64/apps/xfce4-calculator-plugin.png
 %%NLS%%share/locale/sv/LC_MESSAGES/xfce4-calculator-plugin.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfce4-calculator-plugin.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xfce4-calculator-plugin.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xfce4-calculator-plugin.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-calculator-plugin.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-calculator-plugin.mo
 share/xfce4/panel/plugins/calculator.desktop
