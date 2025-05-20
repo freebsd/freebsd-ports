@@ -13,6 +13,7 @@ share/icons/hicolor/scalable/apps/org.xfce.panel.genericslider.svg
 %%NLS%%share/locale/de/LC_MESSAGES/xfce4-generic-slider.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-generic-slider.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-generic-slider.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xfce4-generic-slider.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfce4-generic-slider.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xfce4-generic-slider.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfce4-generic-slider.mo
