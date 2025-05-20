@@ -1,6 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	6.0.23
+PORTREVISION=	1
 CATEGORIES=	databases net
 MASTER_SITES=	https://hg.mozilla.org/mozilla-central/raw-rev/:patches
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
@@ -17,6 +18,9 @@ LICENSE_COMB=	multi
 LICENSE_NAME_SSPLv1=	Server Side Public License Version 1
 LICENSE_FILE_SSPLv1=	${WRKSRC}/LICENSE-Community.txt
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+DEPRECATED=	EOL starting August 2025, see https://www.mongodb.com/legal/support-policy/lifecycles, please use databases/mongodb60
+EXPIRATION_DATE=	2025-10-30
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	only ported to amd64, aarch64, and powerpc64le on FreeBSD; upstream supports arm64, ppc64le, s390x, and x86-64
@@ -121,7 +125,7 @@ MOZJS_ARCH=	${ARCH}
 .endif
 
 post-extract:
-	# Verify we downloaded the proper mozjs git tag.
+# Verify we downloaded the proper mozjs git tag.
 	${SH} -xc "test \"X`grep -E '^LIB_GIT_REVISION=' ${WRKSRC}/src/third_party/mozjs/get-sources.sh`\" = \"XLIB_GIT_REVISION=${MOZJS_TAG}\""
 
 post-patch:

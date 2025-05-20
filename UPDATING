@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250520:
+  AFFECTS: users of databases/mongodb60
+  AUTHOR: ronald@FreeBSD.org
+
+  MongoDB version 6.0 is End of Life starting August 2025.
+  Please make sure you are running MongoDB version 7.0 or higher.
+  In-place upgrades are supported from version 6.0 to 7.0.
+  For an in-place upgrade it is important that the
+  'featureCompatibilityVersion' is set to 6.0 before the upgrade.
+  See: https://www.mongodb.com/docs/v7.0/release-notes/7.0-upgrade-standalone/#feature-compatibility-version
+
+  TL;DR, run these commands in mongodb60 before upgrading:
+  (see `pkg info -D mongodb60` how to install mongosh)
+  $ npx mongosh mongodb://127.0.0.1:27017/ # or use non-default port
+  > db.adminCommand( { setFeatureCompatibilityVersion: "6.0" } )
+  > exit
+
 20250519:
   AFFECTS: users of sysutils/screen
   AUTHOR: cy@FreeBSD.org
