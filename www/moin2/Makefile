@@ -4,7 +4,7 @@ CATEGORIES=	www python
 MASTER_SITES=	https://github.com/moinwiki/moin/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use, full-featured and extensible wiki software package
 WWW=		https://moinmo.in/
 
