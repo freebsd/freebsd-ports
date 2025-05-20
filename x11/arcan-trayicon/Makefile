@@ -1,8 +1,8 @@
 PORTNAME=	arcan-trayicon
-DISTVERSION=	0.6.3.3
+DISTVERSION=	0.7.0.1
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hoanga@gmail.com
 COMMENT=	Generic wrapper for registering Arcan clients as tray icons
 WWW=		https://arcan-fe.com/
 
