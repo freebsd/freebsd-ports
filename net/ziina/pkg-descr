@@ -1,0 +1,7 @@
+Ziina lets you invite peers into a local Zellij session over untrusted
+networks, despite you being behind a NAT gateway. It is heavily
+inspired by tmate.
+
+Ziina is (basically) server-less. You only need a standard OpenSSH
+server with a public IP that serves as an entry-point for your peers.
+Your peers only need a standard OpenSSH client.
