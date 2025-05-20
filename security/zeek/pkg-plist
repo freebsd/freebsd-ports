@@ -1928,7 +1928,6 @@ share/man/man8/zeek.8.gz
 %%DATADIR%%/cmake/CommonCMakeConfig.cmake
 %%DATADIR%%/cmake/ConfigurePackaging.cmake
 %%DATADIR%%/cmake/ConfigureSpicyBuild.cmake
-%%DATADIR%%/cmake/FindBIND.cmake
 %%DATADIR%%/cmake/FindBinPAC.cmake
 %%DATADIR%%/cmake/FindCAres.cmake
 %%DATADIR%%/cmake/FindCapstats.cmake
