@@ -6,7 +6,7 @@ PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://evolution.genetics.washington.edu/lamarc/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hayzam@alchemilla.io
 COMMENT=	Package of programs for computing population parameters
 WWW=		https://evolution.genetics.washington.edu/lamarc/
 
