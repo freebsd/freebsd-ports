@@ -1,6 +1,5 @@
 PORTNAME=	wob
-DISTVERSION=	0.15.1
-PORTREVISION=	1
+DISTVERSION=	0.16
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,7 +9,7 @@ WWW=		https://github.com/francma/wob
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>=1.13:graphics/wayland-protocols
+BUILD_DEPENDS=	wayland-protocols>=1.31:graphics/wayland-protocols
 LIB_DEPENDS=	libinih.so:devel/inih \
 		libwayland-client.so:graphics/wayland
 TEST_DEPENDS=	cmocka>0:sysutils/cmocka
@@ -18,7 +17,7 @@ TEST_DEPENDS=	cmocka>0:sysutils/cmocka
 USES=		meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	francma
-MESON_ARGS=	-Dseccomp=disabled -Dtests=disabled
+MESON_ARGS=	${seccomp systemd-unit-files tests:L:C/.*/-D&=disabled/}
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES
