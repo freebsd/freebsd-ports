@@ -1,7 +1,6 @@
 PORTNAME=	galera
-PORTVERSION=	26.4.21
-PORTREVISION=	1
 DISTVERSIONPREFIX=	mariadb-
+DISTVERSION=	26.4.22
 CATEGORIES=	databases
 PKGNAMESUFFIX=	26
 
@@ -24,22 +23,20 @@ NOT_FOR_ARCHS_REASON_i386=Uses 64 bit atomics that clang cannot generate on i386
 NOT_FOR_ARCHS_REASON_powerpc=Uses 64 bit atomics that clang cannot generate on powerpc
 
 BUILD_DEPENDS=	checkmk:devel/check \
-		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs \
 		objdump:devel/binutils
-LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
+LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
-USES=		compiler:c++11-lang python:build cmake ssl
+USES=		cmake compiler:c++11-lang python:build ssl
 
 USE_GITHUB=	yes
-GH_TUPLE?=	mariadb:galera:${DISTVERSIONPREFIX}${PORTVERSION}${DISTVERSIONSUFFIX} \
-		codership:wsrep-API:b03acea3661835a48f52ed44dc0f6e7f037390a0:dummy/wsrep/src
-
-CMAKE_ARGS+=	-DGALERA_REVISION=${GH_TAGNAME}
-
+GH_TUPLE?=	mariadb:galera:${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX} \
+		codership:wsrep-API:65608d3f503ba9f4c170fc4e01c539be9fafd46c:dummy/wsrep/src
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	garb.sh
 
-CONFLICTS_INSTALL=      galera
+CMAKE_ARGS+=	-DGALERA_REVISION=${GH_TAGNAME}
+
+CONFLICTS_INSTALL=	galera
 
 PLIST_FILES=	bin/garbd \
 		lib/libgalera.so \

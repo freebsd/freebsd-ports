@@ -1,5 +1,5 @@
-TIMESTAMP = 1738941683
-SHA256 (mariadb-galera-mariadb-26.4.21_GH0.tar.gz) = 3938d56b2ebffad1e1bee053b962f9922162caa13de5a2d33e8ca9d9385f9672
-SIZE (mariadb-galera-mariadb-26.4.21_GH0.tar.gz) = 3642929
-SHA256 (codership-wsrep-API-b03acea3661835a48f52ed44dc0f6e7f037390a0_GH0.tar.gz) = 3966894bcf142d8d8382204f6db3b7b70eee324bfb3e93ebdc7bcbc822e869f4
-SIZE (codership-wsrep-API-b03acea3661835a48f52ed44dc0f6e7f037390a0_GH0.tar.gz) = 92663
+TIMESTAMP = 1747761557
+SHA256 (mariadb-galera-mariadb-26.4.22_GH0.tar.gz) = 39a7b2f61dd36fee5d1ca7b4d19e71fe4c0029c1b0a2c8a1fe9f35b34fa49d79
+SIZE (mariadb-galera-mariadb-26.4.22_GH0.tar.gz) = 3644556
+SHA256 (codership-wsrep-API-65608d3f503ba9f4c170fc4e01c539be9fafd46c_GH0.tar.gz) = 65a99b338b7c7a7fc1e33350da9b13c56a518aa16be5e3de7cfa00e5fe5ef2fd
+SIZE (codership-wsrep-API-65608d3f503ba9f4c170fc4e01c539be9fafd46c_GH0.tar.gz) = 93726
