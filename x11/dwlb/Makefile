@@ -1,5 +1,5 @@
 PORTNAME=	dwlb
-PORTVERSION=	s20240516
+PORTVERSION=	s20250520
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,7 +19,7 @@ USES=		gmake pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	kolunmi
-GH_TAGNAME=	0daa1c1
+GH_TAGNAME=	48dbe00
 EXTRA_PATCHES=	${${PORTNAME:tu}_PATCHES}
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz
