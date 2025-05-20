@@ -1,6 +1,6 @@
 --- src/tools/stringx.h.orig	2011-04-23 02:02:49 UTC
 +++ src/tools/stringx.h
-@@ -107,6 +107,26 @@ struct CIStringCompare : public std::bin
+@@ -107,6 +107,26 @@ bool ciStringEqual(const std::string& s1, const std::s
  
  bool ciStringEqual(const std::string& s1, const std::string& s2);
  
@@ -27,10 +27,11 @@
  //------------------------------------------------------------------------------------
  
  template <class T>
-@@ -188,26 +208,6 @@ bool FromString(const std::string & in, 
+@@ -187,26 +207,6 @@ DoubleVec1d StringToDoubleVecOrBarf(const std::string&
+ bool FromString(const std::string & in, method_type& out);
  
  DoubleVec1d StringToDoubleVecOrBarf(const std::string& in);
- 
+-
 -// functions for making xmltags and lines of xml
 -std::string MakeTag(const std::string& str);
 -std::string MakeCloseTag(const std::string& str);
@@ -50,7 +51,6 @@
 -std::string Pretty(long number, int width=DEFWIDTH);
 -std::string Pretty(unsigned long number, int width=DEFWIDTH);
 -std::string Pretty(std::string str, int width=DEFWIDTH);
--
+ 
  bool   StringCompare(const std::string&, const char*, long, long);
  bool   StringCompare(const std::string&, const std::string&, long, long);
- 
