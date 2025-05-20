@@ -66,6 +66,8 @@ ICU_CONFIGURE_ON=	--with-intl=system-icu
 ICU_LIB_DEPENDS=	libicui18n.so:devel/icu
 JIT_CONFIGURE_OFF=	--v8-lite-mode
 
+CXXFLAGS_powerpc64=	-mpower8-vector
+
 .include "Makefile.version"
 .include <bsd.port.options.mk>
 
