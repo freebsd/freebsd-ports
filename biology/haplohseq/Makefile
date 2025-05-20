@@ -1,15 +1,14 @@
 PORTNAME=	haplohseq
-DISTVERSION=	0.1.2
-PORTREVISION=	13
+DISTVERSION=	0.1.2-3
+DISTVERSIONSUFFIX=	-gfeb9267
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Identify regions of allelic imbalance
-WWW=		https://sites.google.com/site/integrativecancergenomics/software/haplohseq
+WWW=		https://github.com/outpaddling/haplohseq \
+		https://sites.google.com/site/integrativecancergenomics/software/haplohseq
 
 LICENSE=	MIT
-
-BROKEN=		fails to build with Boost>=1.87
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 RUN_DEPENDS=	R-cran-optparse>0:devel/R-cran-optparse
