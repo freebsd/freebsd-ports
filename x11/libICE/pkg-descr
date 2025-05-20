@@ -1,1 +1,9 @@
-This package contains the Inter Client Exchange library for X11.
+This package provides the X11 Inter-Client Exchange library, which
+allows for communication of data between X clients.
+
+There are numerous possible inter-client protocols, with many
+similarities and common needs - authentication, version negotiation,
+byte order negotiation, and so on. The Inter-Client Exchange (ICE)
+protocol is intended to provide a framework for building such
+protocols, allowing them to make use of common negotiation mechanisms
+and to be multiplexed over a single transport connection.
