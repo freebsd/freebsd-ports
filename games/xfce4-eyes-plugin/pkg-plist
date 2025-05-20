@@ -71,8 +71,8 @@ share/xfce4/eyes/themes/Bizarre/config
 share/xfce4/eyes/themes/Bloodshot/Bloodshot-eye.png
 share/xfce4/eyes/themes/Bloodshot/Bloodshot-pupil.png
 share/xfce4/eyes/themes/Bloodshot/config
-share/xfce4/eyes/themes/Chibi/chibi-eye.png
-share/xfce4/eyes/themes/Chibi/chibi-pupil.png
+share/xfce4/eyes/themes/Chibi/Chibi-eye.png
+share/xfce4/eyes/themes/Chibi/Chibi-pupil.png
 share/xfce4/eyes/themes/Chibi/config
 share/xfce4/eyes/themes/Default-tiny/Default-tiny-eye.png
 share/xfce4/eyes/themes/Default-tiny/Default-tiny-pupil.png
@@ -84,6 +84,6 @@ share/xfce4/eyes/themes/Horrid/Horrid-eye.png
 share/xfce4/eyes/themes/Horrid/Horrid-pupil.png
 share/xfce4/eyes/themes/Horrid/config
 share/xfce4/eyes/themes/Tango/config
-share/xfce4/eyes/themes/Tango/tango-eye.png
-share/xfce4/eyes/themes/Tango/tango-pupil.png
+share/xfce4/eyes/themes/Tango/Tango-eye.png
+share/xfce4/eyes/themes/Tango/Tango-pupil.png
 share/xfce4/panel/plugins/eyes.desktop

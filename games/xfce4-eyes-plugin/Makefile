@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-eyes-plugin
-PORTVERSION=	4.6.2
+PORTVERSION=	4.7.0
 CATEGORIES=	games xfce
 MASTER_SITES=	XFCE/panel-plugins
 
@@ -9,18 +9,17 @@ WWW=		https://docs.xfce.org/panel-plugins/xfce4-eyes-plugin
 
 LICENSE=	GPLv2
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo gtk30
+USES=		gettext-tools gnome meson pkgconfig tar:xz xfce xorg
+USE_GNOME=	gtk30
 USE_XFCE=	libmenu panel
 USE_XORG=	x11
-
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=		gettext-runtime
-NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext-runtime
+
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
