@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-clipman-plugin
-PORTVERSION=	1.6.7
+PORTVERSION=	1.7.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -10,16 +10,14 @@ WWW=		https://docs.xfce.org/panel-plugins/xfce4-clipman-plugin/start
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
-
-USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
-		tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf glib20 gtk30
+USES=		compiler:c11 gettext-tools gnome meson pkgconfig tar:xz xfce \
+		xorg
+USE_GNOME=	glib20 gtk30
 USE_XFCE=	libmenu panel xfconf
 USE_XORG=	ice sm x11 xorgproto xtst
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+MESON_ARGS=	-Dx11=enabled \
+		-Dxtst=enabled
 
 OPTIONS_DEFINE=	NLS QRCODE WAYLAND
 OPTIONS_DEFAULT=WAYLAND
@@ -27,14 +25,16 @@ OPTIONS_SUB=	yes
 
 QRCODE_DESC=	QR Code support
 
-NLS_USES=		gettext-runtime
-NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext-runtime
 
 QRCODE_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
-QRCODE_CONFIGURE_ENABLE=libqrencode
+QRCODE_MESON_ENABLED=	qrencode
 
 WAYLAND_CATEGORIES=	wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
-WAYLAND_CONFIGURE_ENABLE=wayland
+WAYLAND_MESON_ENABLED=	wayland
+
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
