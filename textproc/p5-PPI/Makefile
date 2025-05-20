@@ -1,5 +1,6 @@
 PORTNAME=	PPI
 PORTVERSION=	1.283
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MITHALDU
@@ -16,6 +17,7 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Clone>=0.30:devel/p5-Clone \
 		p5-Params-Util>=1.00:devel/p5-Params-Util \
+		p5-Safe-Isa>=0:devel/p5-Safe-Isa \
 		p5-Task-Weaken>=0:devel/p5-Task-Weaken \
 		p5-YAML-PP>=0:textproc/p5-YAML-PP
 TEST_DEPENDS=	p5-Class-Inspector>=1.22:devel/p5-Class-Inspector \
