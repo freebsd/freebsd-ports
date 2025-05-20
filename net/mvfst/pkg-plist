@@ -59,7 +59,7 @@ include/quic/common/IntervalSet.h
 include/quic/common/NetworkData.h
 include/quic/common/Optional.h
 include/quic/common/QuicBuffer.h
-include/quic/common/SmallCollections.h
+include/quic/common/QuicRange.h
 include/quic/common/SocketUtil.h
 include/quic/common/TimePoints.h
 include/quic/common/TimeUtil.h
