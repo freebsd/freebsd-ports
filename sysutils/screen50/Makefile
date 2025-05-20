@@ -27,17 +27,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${GIT_TAGNAME}-ad9db35/src
 
 LICENSE=	GPLv3
 
-OPTIONS_DEFINE=		INFO NETHACK XTERM_256 SYSTEM_SCREENRC MULTIUSER \
+OPTIONS_DEFINE=		INFO SYSTEM_SCREENRC MULTIUSER \
 			NOSOCKETDIR
-OPTIONS_DEFAULT=	INFO NETHACK XTERM_256 SOCKETS SYSTEM_SCREENRC \
+OPTIONS_DEFAULT=	INFO SYSTEM_SCREENRC \
 			NCURSES_DEFAULT MULTIUSER
-OPTIONS_SINGLE=		IPC NCURSES
-OPTIONS_SINGLE_IPC=	SOCKETS NAMED_PIPES
+OPTIONS_SINGLE=		NCURSES
 OPTIONS_SINGLE_NCURSES=	NCURSES_DEFAULT NCURSES_BASE NCURSES_PORT
-NETHACK_DESC=		Enable nethack-style messages
-XTERM_256_DESC=		Enable support for 256 colour xterm
-SOCKETS_DESC=		Use new (4.2.1+) sockets for IPC (default)
-NAMED_PIPES_DESC=	Use legacy (4.0.3) named pipes for IPC (override)
 SYSTEM_SCREENRC_DESC=	Install system screenrc with helpful status line
 MULTIUSER_DESC=		Install setuid-root screen to support multiuser
 MULTIUSER_PLIST_SUB=	MULTISUID="@(,,4555) "
@@ -76,14 +71,6 @@ USES+=		makeinfo
 # set up a custom termcap entry or .screenrc which modifies termcap
 # to contain the following: Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm
 #
-.if ${PORT_OPTIONS:MXTERM_256}
-CFLAGS+=	-DCOLORS256
-.endif
-
-.if ! ${PORT_OPTIONS:MNETHACK}
-CFLAGS+=	-DNONETHACK
-.endif
-
 .if ${PORT_OPTIONS:MNOSOCKETDIR}
 CONFIGURE_ARGS+=	--disable-socket-dir
 .endif
@@ -110,10 +97,6 @@ post-patch:
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
-
-post-configure-NAMED_PIPES-on:
-	@${ECHO_CMD} '#define NAMEDPIPE 1' >> ${WRKSRC}/config.h
-	@${ECHO_CMD} User selected named pipes override set.
 
 ETCDIR?=	${PREFIX}/etc
 
