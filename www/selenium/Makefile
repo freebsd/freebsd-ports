@@ -1,8 +1,8 @@
 PORTNAME=	selenium
-PORTVERSION=	4.26.0
+DISTVERSION=	4.32.0
 CATEGORIES=	www devel java
-MASTER_SITES=	https://github.com/SeleniumHQ/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
-DISTNAME=	selenium-server-${PORTVERSION}
+MASTER_SITES=	https://github.com/SeleniumHQ/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
+DISTNAME=	selenium-server-${DISTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
@@ -21,7 +21,7 @@ USE_RC_SUBR=	selenium
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_LIST+=	JAVA_HOME=${JAVA_HOME} \
-		SELENIUM_VERSION=${PORTVERSION}
+		SELENIUM_VERSION=${DISTVERSION}
 
 SELENIUM_HOME=	${PREFIX}/selenium
 
