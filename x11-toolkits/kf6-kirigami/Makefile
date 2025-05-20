@@ -12,4 +12,5 @@ USE_GL=		gl opengl
 USE_KDE=	ecm:build
 USE_QT=		base declarative shadertools svg tools
 
+KDE_FRAMEWORKS_VERSION=	6.14.1
 .include <bsd.port.mk>

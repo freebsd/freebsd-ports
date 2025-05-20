@@ -83,6 +83,7 @@ lib/libKF6CoreAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/coreaddons/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/coreaddons/libkcoreaddonsplugin.so
 %%QT_QMLDIR%%/org/kde/coreaddons/qmldir
+libdata/pkgconfig/KF6CoreAddons.pc
 share/kf6/jsonschema/kpluginmetadata.schema.json
 share/locale/af/LC_MESSAGES/kcoreaddons6_qt.qm
 share/locale/ar/LC_MESSAGES/kcoreaddons6_qt.qm

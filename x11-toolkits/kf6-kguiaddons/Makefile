@@ -5,6 +5,7 @@ CATEGORIES=	x11-toolkits kde kde-frameworks
 COMMENT=	Utilities for graphical user interfaces
 MAINTAINER=	kde@FreeBSD.org
 
+BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 

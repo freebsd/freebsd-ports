@@ -1,5 +1,3 @@
-bin/UserFeedbackConsole
-bin/userfeedbackctl
 include/KF6/KUserFeedback/kuserfeedback_version.h
 include/KF6/KUserFeedbackCore/KUserFeedback/AbstractDataSource
 include/KF6/KUserFeedbackCore/KUserFeedback/ApplicationVersionSource
@@ -60,7 +58,6 @@ lib/libKF6UserFeedbackWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/userfeedback/libKF6UserFeedbackQml.so
 %%QT_QMLDIR%%/org/kde/userfeedback/qmldir
 share/KDE/UserFeedbackConsole/user-feedback-manual.qch
-share/applications/org.kde.kuserfeedback-console.desktop
 share/locale/ar/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/ar/LC_MESSAGES/userfeedbackprovider6_qt.qm
 share/locale/ast/LC_MESSAGES/userfeedbackconsole6_qt.qm
@@ -146,5 +143,4 @@ share/locale/zh_CN/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/zh_CN/LC_MESSAGES/userfeedbackprovider6_qt.qm
 share/locale/zh_TW/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/zh_TW/LC_MESSAGES/userfeedbackprovider6_qt.qm
-share/metainfo/org.kde.kuserfeedback-console.appdata.xml
 share/qlogging-categories6/org_kde_UserFeedback.categories
