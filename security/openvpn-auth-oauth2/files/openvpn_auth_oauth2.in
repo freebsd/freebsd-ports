@@ -1,0 +1,148 @@
+#!/bin/sh
+
+# PROVIDE: openvpn_auth_oauth2
+# REQUIRE: FILESYSTEMS defaultroute netwait resolv
+# BEFORE: NETWORKING
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable openvpn_auth_oauth2:
+#
+# openvpn_auth_oauth2_enable="YES"
+#
+# You also can set alternative config with
+# openvpn_auth_oauth2_config="/path/to/config"
+#
+# Multiple profiles are supported with
+#
+# openvpn_auth_oauth2_profiles="name1 name2"
+# openvpn_auth_oauth2_name1_enable="YES"
+# openvpn_auth_oauth2_name1_config="/path/to/config1"
+# openvpn_auth_oauth2_name2_enable="YES"
+# openvpn_auth_oauth2_name2_config="/path/to/config2"
+#
+
+. /etc/rc.subr
+
+name=openvpn_auth_oauth2
+rcvar=openvpn_auth_oauth2_enable
+desc="Single sign-on for OpenVPN"
+
+eval ": \${${name}_enable:=\"NO\"}"
+eval ": \${${name}_config:=%%ETCDIR%%/openvpn-auth-oauth2.yml}"
+load_rc_config "${name}"
+
+_openvpn_auth_oauth2="%%PREFIX%%/sbin/openvpn-auth-oauth2"
+_common_daemon_args=-Sfc
+_piddir=/var/run/openvpn-auth-oauth2
+
+# Set PID file
+pidfile="${_piddir}/openvpn-auth-oauth2.pid"
+
+required_files=${openvpn_auth_oauth2_config}
+command=/usr/sbin/daemon
+command_args="${_common_daemon_args} -p ${pidfile} -t ${name} \
+${_openvpn_auth_oauth2} --config ${openvpn_auth_oauth2_config}"
+procname="${_openvpn_auth_oauth2}"
+extra_commands=reload
+reload_cmd=openvpn_auth_oauth2_reload
+start_precmd="[ -d ${_piddir} ] || /usr/bin/install -d ${_piddir}"
+
+openvpn_auth_oauth2_reload()
+{
+        if [ "x${openvpn_auth_oauth2_profiles}" != "x" -a "x$1" != "x" ]; then
+                for profile in ${openvpn_auth_oauth2_profiles}; do
+                        eval _enable="\${openvpn_auth_oauth2_${profile}_enable}"
+                        case "x${_enable:-${openvpn_auth_oauth2_enable}}" in
+                        x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+                                continue
+                                ;;
+                        x[Yy][Ee][Ss])
+                                ;;
+                        *)
+                                if test -z "$_enable"; then
+                                        _var=openvpn_auth_oauth2_enable
+                                else
+                                        _var=openvpn_auth_oauth2_"${profile}"_enable
+                                fi
+                                echo "Bad value" \
+                                    "'${_enable:-${openvpn_auth_oauth2_enable}}'" \
+                                    "for ${_var}. " \
+                                    "Profile ${profile} skipped."
+                                continue
+                                ;;
+                        esac
+                        echo "===> openvpn-auth-oauth2 profile: ${profile}"
+			pidfile="${_piddir}/openvpn-auth-oauth2-${profile}.pid"
+                        kill -HUP `cat ${pidfile}`
+                        retcode="$?"
+                        if [ "0${retcode}" -ne 0 ]; then
+                                failed="${profile} (${retcode}) ${failed:-}"
+                        else
+                                success="${profile} ${success:-}"
+                        fi
+                done
+                exit 0
+        else
+		echo "===> openvpn-auth-outh2 profile ${profile} reloading"
+		kill -HUP `cat ${pidfile}`
+	fi
+}
+
+if [ -n "$2" ]; then
+        profile="$2"
+        if [ "x${openvpn_auth_oauth2_profiles}" != "x" ]; then
+                eval openvpn_auth_oauth2_config="\${openvpn_auth_oauth2_${profile}_config:-%%ETCDIR%%/openvpn-auth-oauth2-${profile}.yml}"
+                if [ "x${openvpn_auth_oauth2_config}" = "x" ]; then
+                        echo "You must define a configuration file (openvpn_auth_oauth2_${profile}_config)"
+                        exit 1
+                fi
+
+                pidfile="${_piddir}/openvpn-auth-oauth2-${profile}.pid"
+
+                [ -f ${pidfile} ] || /usr/bin/install /dev/null "${pidfile}"
+
+                required_files="${openvpn_auth_oauth2_config}"
+                eval openvpn_auth_oauth2_enable="\${openvpn_auth_oauth2_${profile}_enable:-${openvpn_auth_oauth2_enable}}"
+                command_args="${_common_daemon_args} -t ${name}-${profile} -p ${pidfile} \
+                        ${_openvpn_auth_oauth2} \
+                        --config ${openvpn_auth_oauth2_config}"
+        else
+                echo "$0: extra argument ignored"
+        fi
+else
+        if [ "x${openvpn_auth_oauth2_profiles}" != "x" -a "x$1" != "x" ]; then
+                for profile in ${openvpn_auth_oauth2_profiles}; do
+                        eval _enable="\${openvpn_auth_oauth2_${profile}_enable}"
+                        case "x${_enable:-${openvpn_auth_oauth2_enable}}" in
+                        x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+                                continue
+                                ;;
+                        x[Yy][Ee][Ss])
+                                ;;
+                        *)
+                                if test -z "$_enable"; then
+                                        _var=openvpn_auth_oauth2_enable
+                                else
+                                        _var=openvpn_auth_oauth2_"${profile}"_enable
+                                fi
+                                echo "Bad value" \
+                                    "'${_enable:-${openvpn_auth_oauth2_enable}}'" \
+                                    "for ${_var}. " \
+                                    "Profile ${profile} skipped."
+                                continue
+                                ;;
+                        esac
+                        echo "===> openvpn-auth-oauth2 profile: ${profile}"
+                        %%PREFIX%%/etc/rc.d/openvpn_auth_oauth2 $1 ${profile}
+                        retcode="$?"
+                        if [ "0${retcode}" -ne 0 ]; then
+                                failed="${profile} (${retcode}) ${failed:-}"
+                        else
+                                success="${profile} ${success:-}"
+                        fi
+                done
+                exit 0
+        fi
+fi
+
+run_rc_command "$1"
