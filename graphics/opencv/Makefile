@@ -1,6 +1,5 @@
 PORTNAME=	opencv
-DISTVERSION=	4.9.0
-PORTREVISION=	7
+DISTVERSION=	4.11.0
 CATEGORIES=	graphics
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -16,60 +15,43 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 
 USES=		cmake compiler:c++14-lang cpe gnome localbase:ldflags pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	WeChatCV:wechat
-GH_PROJECT=	opencv_contrib:contrib \
-		ade:ade \
-		opencv_3rdparty:extra_mod_3rdparty_boost_descr \
-		opencv_3rdparty:extra_mod_3rdparty_vgg \
-		opencv_3rdparty:wechat \
-		opencv_3rdparty:face \
-		opencv_3rdparty:ippicv
-GH_TAGNAME=	v0.1.1f:ade \
-		34e4206aef44d50e6bbcd0ab06354b52e7466d26:extra_mod_3rdparty_boost_descr \
-		fccf7cd6a4b12079f73bbfb21745f9babcd4eb1d:extra_mod_3rdparty_vgg \
-		a8b69ccc738421293254aec5ddb38bd523503252:wechat \
-		8afa57abc8229d611c4937165d20e2a2d9fc5a12:face \
-		a56b6ac6f030c312b2dce17430eef13aed9af274:ippicv
+GH_PROJECT=	ade:ade opencv_3rdparty:ippicv opencv_contrib:contrib
+GH_TAGNAME=	7f55c0c26be418d494615afca15218566775c725:ippicv v0.1.2e:ade
+USE_LDCONFIG=	yes
 
-CMAKE_ON=	OPENCV_GENERATE_PKGCONFIG \
-		OPENCV_SKIP_CMAKE_CXX_STANDARD
-CMAKE_OFF=	OPENCV_GENERATE_SETUPVARS \
-		BUILD_opencv_python2 \
-		BUILD_TESTS
-CMAKE_OFF+=	WITH_OBSENSOR # linux/uvcvideo.h is included when WITH_OBSENSOR is enabled
 CMAKE_ARGS=	-DOPENCV_EXTRA_MODULES_PATH="${WRKSRC}/contrib/modules"
+CMAKE_ON=	OPENCV_GENERATE_PKGCONFIG OPENCV_SKIP_CMAKE_CXX_STANDARD
+CMAKE_OFF=	BUILD_opencv_python2 BUILD_TESTS OPENCV_GENERATE_SETUPVARS
 
 DATADIR=	${PREFIX}/share/${PORTNAME}4
 
 PLIST_SUB=	SHLIB_VER=${DISTVERSION}
 
-OPTIONS_DEFINE=		EIGEN GDAL GDCM HARDENING JAVA LTO OPENCL \
-			PATENTED PROTOBUF PYTHON TBB TESSERACT
+OPTIONS_DEFINE=		EIGEN GDAL GDCM HARDENING JAVA LTO OPENCL PATENTED \
+			PROTOBUF PYTHON TBB TESSERACT
+OPTIONS_DEFAULT=	DC1394 EIGEN GDAL GDCM GPHOTO2 GSTREAMER JPEG OPENBLAS \
+			OPENCL OPENEXR OPENJPEG PNG PROTOBUF PYTHON TIFF V4L \
+			VULKAN WEBP
 
 OPTIONS_GROUP=		GUI IMAGE VIDEO
 OPTIONS_GROUP_GUI=	GTK3 VTK
 OPTIONS_GROUP_IMAGE=	GPHOTO2 JPEG OGRE3D OPENEXR PNG TIFF
-OPTIONS_GROUP_VIDEO=	DC1394 FFMPEG GSTREAMER V4L VULKAN WEBP XINE
-
-OPTIONS_SINGLE=		BLAS
-OPTIONS_SINGLE_BLAS=	ATLAS OPENBLAS NOBLAS
+OPTIONS_GROUP_VIDEO=	DC1394 FFMPEG GSTREAMER OBSENSOR V4L VULKAN WEBP XINE
 
 OPTIONS_RADIO=		JPEG2K
 OPTIONS_RADIO_JPEG2K=	JASPER OPENJPEG
 
-OPTIONS_DEFAULT=	EIGEN GDAL GDCM OPENCL PROTOBUF PYTHON \
-			DC1394 GSTREAMER V4L VULKAN WEBP \
-			GPHOTO2 JPEG OPENEXR PNG TIFF \
-			OPENBLAS \
-			OPENJPEG
-OPTIONS_SUB=		yes
+OPTIONS_SINGLE=		BLAS
+OPTIONS_SINGLE_BLAS=	ATLAS NOBLAS OPENBLAS
+
+OPTIONS_SUB=	yes
 
 # Normal options (EIGEN GDAL GDCM HARDENING JAVA LTO OPENCL PATENTED PROTOBUF PYTHON TBB)
 EIGEN_DESC=		Add Eigen v3 Support, builds sfm modules
 EIGEN_CMAKE_BOOL=	WITH_EIGEN
-EIGEN_LIB_DEPENDS=	libgflags.so:devel/gflags \
-			libglog.so:devel/glog \
-			libceres.so:math/ceres-solver
+EIGEN_LIB_DEPENDS=	libceres.so:math/ceres-solver \
+			libgflags.so:devel/gflags \
+			libglog.so:devel/glog
 EIGEN_USES=		eigen:3
 
 GDAL_DESC=		Add Geospatial Data Abstraction Library Support
@@ -85,12 +67,13 @@ HARDENING_CMAKE_BOOL=	ENABLE_BUILD_HARDENING
 
 JAVA_DESC=		Enable Java Support
 JAVA_BUILD_DEPENDS=	ant:devel/apache-ant
-JAVA_CMAKE_BOOL=	BUILD_opencv_java BUILD_opencv_java_bindings_generator BUILD_JAVA
+JAVA_CMAKE_BOOL=	BUILD_JAVA BUILD_opencv_java \
+			BUILD_opencv_java_bindings_generator
 JAVA_MAKE_ENV=		JAVACMD=${JAVA}
 JAVA_USES=		java
 
-LTO_DESC=		Enables Link Time Optimizations
-LTO_CMAKE_BOOL=		ENABLE_THIN_LTO
+LTO_DESC=	Enables Link Time Optimizations
+LTO_CMAKE_BOOL=	ENABLE_THIN_LTO
 
 OPENCL_DESC=		Add OpenCL Support
 OPENCL_CMAKE_BOOL=	WITH_OPENCL
@@ -104,8 +87,8 @@ PROTOBUF_DESC=		Enable protobuf support, builds dnn modules
 PROTOBUF_CMAKE_BOOL=	WITH_PROTOBUF # by default the bundled protobuf is built
 
 PYTHON_DESC=		Enable Python Support 3.6 or greater
-PYTHON_BUILD_DEPENDS=	${PYNUMPY}
-PYTHON_RUN_DEPENDS=	${PYNUMPY}
+PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
 PYTHON_USES=		python
 PYTHON_CMAKE_BOOL=	BUILD_opencv_python3
 PYTHON_CMAKE_ON=	-DOPENCV_PYTHON3_INSTALL_PATH=${PYTHON_SITELIBDIR}
@@ -120,7 +103,7 @@ TESSERACT_CMAKE_BOOL=	WITH_TESSERACT
 ###
 
 # GUI group options (GTK3 VTK)
-GTK3_USE=		gnome=gtk30,cairo,gdkpixbuf
+GTK3_USE=		cairo,gdkpixbuf,gnome=gtk30
 GTK3_CMAKE_BOOL=	WITH_GTK
 
 VTK_DESC=		Include VTK library support (build opencv_viz module)
@@ -168,10 +151,14 @@ FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 GSTREAMER_DESC=		Add GSTREAMER Support
 GSTREAMER_CMAKE_BOOL=	WITH_GSTREAMER
 GSTREAMER_USES=		gstreamer
-GSTREAMER_USE=		gnome=glib20
+GSTREAMER_USE=		GNOME=glib20
+
+OBSENSOR_DESC=		Orbbec 3D camera support
+OBSENSOR_CMAKE_BOOL=	WITH_OBSENSOR
+OBSENSOR_IMPLIES=	V4L
 
 V4L_DESC=		Enable support for Video for Linux
-V4L_CMAKE_BOOL=		WITH_V4L WITH_LIBV4L
+V4L_CMAKE_BOOL=		WITH_LIBV4L WITH_V4L
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
@@ -214,40 +201,35 @@ OPENJPEG_CMAKE_BOOL=	WITH_OPENJPEG
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 ###
 
-_IPPICV_i386=		ippicv/ippicv_2020_lnx_ia32_20191018_general.tgz
-_IPPICV_amd64=		ippicv/ippicv_2020_lnx_intel64_20191018_general.tgz
+_IPPICV_amd64=	ippicv/ippicv_2021.12.0_lnx_intel64_20240425_general.tgz
+_IPPICV_i386=	ippicv/ippicv_2021.12.0_lnx_ia32_20240425_general.tgz
 
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64le && defined(MACHINE_CPU) && ${MACHINE_CPU:Mvsx3}
-CMAKE_ARGS+=		-DCPU_BASELINE:STRING="VSX;VSX3;"
+CMAKE_ARGS+=	-DCPU_BASELINE:STRING="VSX;VSX3;"
 .endif
 
 post-extract:
-	# Handle contrib
-	${MV} ${WRKSRC_contrib} ${WRKSRC}/contrib
-	# Handle prefetched ade modul
+# Handle contrib
+	${MV} ${WRKSRC_contrib} \
+		${WRKSRC}/contrib
+# Handle prefetched ade modul
 	${MKDIR} ${BUILD_WRKSRC}/3rdparty/ade
-	${MV} ${WRKSRC_ade} ${BUILD_WRKSRC}/3rdparty/ade
-	# Handle prefetched xfeatures2d
-	${MKDIR} ${BUILD_WRKSRC}/downloads/xfeatures2d
-	${CP} ${WRKSRC_extra_mod_3rdparty_boost_descr}/* ${BUILD_WRKSRC}/downloads/xfeatures2d
-	${CP} ${WRKSRC_extra_mod_3rdparty_vgg}/* ${BUILD_WRKSRC}/downloads/xfeatures2d
-	# Handle prefetched wechat
-	${MKDIR} ${BUILD_WRKSRC}/downloads/wechat_qrcode
-	${CP} ${WRKSRC_wechat}/* ${BUILD_WRKSRC}/downloads/wechat_qrcode/
-	# Handle Face
-	${MKDIR} ${BUILD_WRKSRC}/share/opencv4/testdata/cv/face
-	${CP} ${WRKSRC_face}/* ${BUILD_WRKSRC}/share/opencv4/testdata/cv/face
-	# Handle ippicv
+	${MV} ${WRKSRC_ade} \
+		${BUILD_WRKSRC}/3rdparty/ade
+# Handle ippicv
 .if defined(_IPPICV_${ARCH})
 	${MKDIR} ${BUILD_WRKSRC}/3rdparty/ippicv
-	(cd ${BUILD_WRKSRC}/3rdparty/ippicv && ${EXTRACT_CMD} -xf ${WRKSRC_ippicv}/${_IPPICV_${ARCH}})
+	(cd ${BUILD_WRKSRC}/3rdparty/ippicv && \
+		${EXTRACT_CMD} -xf ${WRKSRC_ippicv}/${_IPPICV_${ARCH}})
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/lib/atlas-base|${LOCALBASE}/lib|g' ${WRKSRC}/cmake/OpenCVFindAtlas.cmake
-	${REINPLACE_CMD} -e 's|/usr/include/atlas|${LOCALBASE}/include|g' ${WRKSRC}/cmake/OpenCVFindAtlas.cmake
+	${REINPLACE_CMD} -e 's|/usr/lib/atlas-base|${LOCALBASE}/lib|g' \
+		${WRKSRC}/cmake/OpenCVFindAtlas.cmake
+	${REINPLACE_CMD} -e 's|/usr/include/atlas|${LOCALBASE}/include|g' \
+		${WRKSRC}/cmake/OpenCVFindAtlas.cmake
 
 .include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>
