@@ -1,10 +1,10 @@
 PORTNAME=	libFS
-PORTVERSION=	1.0.9
+DISTVERSION=	1.0.10
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	The FS library
-WWW=		https://www.x.org/
+COMMENT=	X Font Service client library
+WWW=		https://gitlab.freedesktop.org/xorg/lib/libfs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
