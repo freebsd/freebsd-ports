@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-docklike-plugin
-PORTVERSION=	0.4.3
+PORTVERSION=	0.5.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -10,22 +10,23 @@ WWW=		https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
-		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
-
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf gtk30
+USES=		gettext-tools gnome meson pkgconfig tar:xz xfce xorg
+USE_GNOME=	gdkpixbuf gtk30
 USE_XFCE=	libmenu panel windowing
 USE_XORG=	x11
 
-GNU_CONFIGURE=		yes
+MESON_ARGS=	-Dx11=enabled
 
-INSTALL_TARGET=	install-strip
-
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	NLS WAYLAND
+OPTIONS_DEFAULT=WAYLAND
 OPTIONS_SUB=	yes
 
-NLS_USES=		gettext-runtime
-NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext-runtime
+
+WAYLAND_LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
+WAYLAND_MESON_ENABLED=	wayland
+
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
