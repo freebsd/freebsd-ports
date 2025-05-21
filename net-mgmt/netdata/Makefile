@@ -1,7 +1,6 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.6
-PORTREVISION=	1
+DISTVERSION=	2.4.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/:netdata \
 				https://raw.githubusercontent.com/netdata/netdata/refs/tags/v${DISTVERSION}/src/go/:goplugin \
@@ -75,28 +74,28 @@ NETDATA_CACHE=	/var/cache/${PORTNAME}
 NETDATA_LOG=	/var/log/${PORTNAME}
 NETDATA_PERST=	/var/db/${PORTNAME}
 NETDATA_RUN=	/var/run/${PORTNAME}
-NETDATA_CLOUDVERSION=	20250307
+NETDATA_DASHBOARD_VERSION=	20250416
 
 PLIST_SUB=	NETDATA_CACHE=${NETDATA_CACHE} \
 		NETDATA_LOG=${NETDATA_LOG} \
 		NETDATA_PERST=${NETDATA_PERST} \
 		NETDATA_RUN=${NETDATA_RUN}
 
-OPTIONS_DEFINE=		CUPS CLOUD_DASHBOARD FREEIPMI GOPLUGIN ML PROMETHEUS
+OPTIONS_DEFINE=		CUPS DASHBOARD FREEIPMI GOPLUGIN ML PROMETHEUS
 OPTIONS_DEFAULT=	ML
 OPTIONS_EXCLUDE_powerpc64le=	ML
 OPTIONS_SUB=		YES
 
 CUPS_DESC=		Enable support for cups
-CLOUD_DASHBOARD_DESC=		Enable proprietary v3 dashboard
+DASHBOARD_DESC=		Enable agent dashboard
 FREEIPMI_DESC=		Enable support for freeipmi
 GOPLUGIN_DESC=		Enable the go collector plugin
 ML_DESC=		Enable anomaly detection via dlib
 PROMETHEUS_DESC=	Enable prometheus remote write exporter
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_CMAKE_BOOL=	ENABLE_PLUGIN_CUPS
-CLOUD_DASHBOARD_DISTFILES=	agent_${NETDATA_CLOUDVERSION}.tar.gz:nkeor
-CLOUD_DASHBOARD_EXTRACT_ONLY=	agent_${NETDATA_CLOUDVERSION}.tar.gz
+DASHBOARD_DISTFILES=	agent_${NETDATA_DASHBOARD_VERSION}.tar.gz:nkeor
+DASHBOARD_EXTRACT_ONLY=	agent_${NETDATA_DASHBOARD_VERSION}.tar.gz
 FREEIPMI_LIB_DEPENDS=	libfreeipmi.so:sysutils/freeipmi
 FREEIPMI_CMAKE_BOOL=	ENABLE_PLUGIN_FREEIPMI
 GOPLUGIN_DISTFILES=	go.mod:goplugin
@@ -156,10 +155,7 @@ post-install:
 	${RM} ${STAGEDIR}${LOCALBASE}/libexec/netdata/netdata-updater.sh
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/netdata/system
 
-post-install-CLOUD_DASHBOARD-on:
+post-install-DASHBOARD-on:
 	@(cd ${WRKDIR}/dist/agent && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/web)
-
-post-install-CLOUD_DASHBOARD-off:
-	${INSTALL_DATA} ${STAGEDIR}/${DATADIR}/web/v1/index.html ${STAGEDIR}/${DATADIR}/web/index.html
 
 .include <bsd.port.mk>
