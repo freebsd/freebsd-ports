@@ -1,4 +1,4 @@
---- aider/scrape.py.orig	2024-09-09 10:28:04 UTC
+--- aider/scrape.py.orig	2025-04-14 23:24:32 UTC
 +++ aider/scrape.py
 @@ -15,57 +15,8 @@ def install_playwright(io):
  
@@ -80,10 +80,12 @@
  
          if not content:
              self.print_error(f"Failed to retrieve content from {url}")
-@@ -130,56 +78,6 @@ class Scraper:
+@@ -128,58 +76,6 @@ class Scraper:
+             ]
+             return any(re.search(pattern, content, re.IGNORECASE) for pattern in html_patterns)
          return False
- 
-     # Internals...
+-
+-    # Internals...
 -    def scrape_with_playwright(self, url):
 -        import playwright  # noqa: F401
 -        from playwright.sync_api import Error as PlaywrightError
@@ -113,7 +115,8 @@
 -                try:
 -                    response = page.goto(url, wait_until="networkidle", timeout=5000)
 -                except PlaywrightTimeoutError:
--                    self.print_error(f"Timeout while loading {url}")
+-                    print(f"Page didn't quiesce, scraping content anyway: {url}")
+-                    response = None
 -                except PlaywrightError as e:
 -                    self.print_error(f"Error navigating to {url}: {str(e)}")
 -                    return None, None
@@ -133,7 +136,6 @@
 -                browser.close()
 -
 -        return content, mime_type
--
+ 
      def scrape_with_httpx(self, url):
          import httpx
- 

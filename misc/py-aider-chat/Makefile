@@ -1,5 +1,5 @@
 PORTNAME=	aider_chat
-DISTVERSION=	0.77.1
+DISTVERSION=	0.82.2
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=1.3:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.12:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}blinker>=1.8:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cachetools>=5.5:devel/py-cachetools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}colorama>=0.4.6:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configargparse>=1.5:devel/py-configargparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}diff-match-patch>=0:textproc/py-diff-match-patch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}diskcache>=5.6.0:devel/py-diskcache@${PY_FLAVOR} \
