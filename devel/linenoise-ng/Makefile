@@ -10,6 +10,9 @@ WWW=		https://github.com/arangodb/linenoise-ng
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream repo archived Oct 28, 2020
+EXPIRATION_DATE=2025-06-30
+
 USES=		cmake compiler:c++11-lang
 USE_LDCONFIG=	yes
 
