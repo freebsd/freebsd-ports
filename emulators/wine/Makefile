@@ -148,7 +148,7 @@ PLIST_SUB+=		WINE32="@comment " WINE64="" WINEARCH="x86_64"
 # FreeBSD yet.
 post-patch:
 	${REINPLACE_CMD} '/Exec/s|wine|wine64|g' ${WRKSRC}/loader/wine.desktop
-	${MV} ${WRKSRC}/loader/*.man.in ${WRKSRC}/tools/wine/
+	${CP} ${WRKSRC}/loader/*.man.in ${WRKSRC}/tools/wine/
 
 .else
 EXTRA_PATCHES+=	files/extra-patch-tools-winebuild-res32
