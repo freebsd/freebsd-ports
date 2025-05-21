@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.36 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-17723-g2f8ed1a6bd
+DISTVERSION=	0.0.36-17959 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gb54c2124cf
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,17 +25,17 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.14.0-2-g8b43a97:hidapi/3rdparty/hidapi/hidapi \
-		RPCS3:soundtouch:2.3.1-68-g394e1f5:soundtouch/3rdparty/SoundTouch/soundtouch \
+		RPCS3:soundtouch:2.3.1-78-g3982730:soundtouch/3rdparty/SoundTouch/soundtouch \
 		asmjit:asmjit:416f735:asmjit/3rdparty/asmjit/asmjit \
 		facebook:zstd:v1.5.7:zstd/3rdparty/zstd/zstd \
 		jbeder:yaml-cpp:0.8.0-11-g456c68f:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
-		KhronosGroup:glslang:13.1.1:glslang/3rdparty/glslang/glslang \
+		KhronosGroup:glslang:15.3.0:glslang/3rdparty/glslang/glslang \
 		kcat:openal-soft:1.23.1:openal_soft/3rdparty/OpenAL/openal-soft \
 		kinetiknz:cubeb:cubeb-0.2-1425-g88585b6:cubeb/3rdparty/cubeb/cubeb \
-		Megamouse:VulkanMemoryAllocator:3706484:vkalloc/3rdparty/GPUOpen/VulkanMemoryAllocator \
-		miniupnp:miniupnp:miniupnpd_2_3_6:miniupnp/3rdparty/miniupnp/miniupnp \
+		Megamouse:VulkanMemoryAllocator:1d8f600:vkalloc/3rdparty/GPUOpen/VulkanMemoryAllocator \
+		miniupnp:miniupnp:miniupnpd_2_3_9:miniupnp/3rdparty/miniupnp/miniupnp \
 		nothings:stb:013ac3b:stb/3rdparty/stblib/stb \
-		wolfSSL:wolfssl:v5.7.6-stable:wolfssl/3rdparty/wolfssl/wolfssl \
+		wolfSSL:wolfssl:v5.8.0-stable:wolfssl/3rdparty/wolfssl/wolfssl \
 		xioTechnologies:Fusion:v1.2.8:fusion/3rdparty/fusion/fusion
 
 USES=		cmake gl iconv:wchar_t llvm:min=19,lib localbase:ldflags \

@@ -43,8 +43,6 @@ share/metainfo/rpcs3.metainfo.xml
 %%DATADIR%%/Icons/ui/square.png
 %%DATADIR%%/Icons/ui/start.png
 %%DATADIR%%/Icons/ui/triangle.png
-%%DATADIR%%/git/README.md
-%%DATADIR%%/git/commits.lst
 %%DATADIR%%/test/dump_stack.elf
 %%DATADIR%%/test/gs_gcm_basic_triangle.elf
 %%DATADIR%%/test/gs_gcm_cube.elf
