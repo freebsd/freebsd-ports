@@ -1,8 +1,9 @@
 PORTNAME=	ansible-runner
-DISTVERSION=	2.4.0
+DISTVERSION=	2.4.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	ansible_runner-${PORTVERSION}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Extensible embeddable ansible job runner
