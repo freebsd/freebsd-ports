@@ -64,7 +64,7 @@ GHOSTSCRIPT_DEFAULT?=	10
 # Possible values: mesa-libs, mesa-devel
 GL_DEFAULT?=		mesa-libs
 # Possible values: 1.20, 1.21, 1.22, 1.23, 1.24, 1.25-devel
-GO_DEFAULT?=		1.21
+GO_DEFAULT?=		1.24
 # Possible values: 1.8, 2.2, 3.0
 GUILE_DEFAULT?=		2.2
 # Possible versions: 6, 7
