@@ -18,6 +18,9 @@ WWW=		https://ziglang.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Old zig implementation, no consumers in ports
+EXPIRATION_DATE=	2025-08-30
+
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	not yet supported
 
