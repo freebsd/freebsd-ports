@@ -1,7 +1,7 @@
 PORTNAME=		go-carbon
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.12.0
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=		databases
 
 MAINTAINER=		a.andersson.thn@gmail.com

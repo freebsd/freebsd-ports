@@ -1,7 +1,7 @@
 PORTNAME=	android-ota-payload-extractor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 
 MAINTAINER=	nxjoseph@protonmail.com

@@ -1,6 +1,6 @@
 PORTNAME=	ping_exporter
 DISTVERSION=	1.1.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	jp+ports@supplntr.io

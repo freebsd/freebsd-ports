@@ -1,5 +1,6 @@
 PORTNAME=	metasploit
 DISTVERSION=	6.4.58
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
