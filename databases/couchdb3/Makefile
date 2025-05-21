@@ -1,6 +1,5 @@
 PORTNAME=	couchdb3
-DISTVERSION=	3.4.3
-PORTREVISION=	2
+DISTVERSION=	3.5.0
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/couchdb/source/${DISTVERSION}
 DISTNAME=	apache-couchdb-${DISTVERSION}
@@ -15,7 +14,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	erlang-runtime${_ERLVER}>=${_ERLVER}.0:lang/erlang-runtime${_ERLVER} \
 		rebar:devel/rebar
 LIB_DEPENDS=	libicudata.so:devel/icu \
-		libmozjs-91.so:lang/spidermonkey91
+		libmozjs-102.so:lang/spidermonkey102
 
 USES=		compiler:c++17-lang cpe gmake libtool ncurses
 CPE_VENDOR=	apache
@@ -26,7 +25,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--skip-deps \
 		--user ${USERS} \
 		--rebar ${LOCALBASE}/bin/rebar \
-		--spidermonkey-version 91
+		--spidermonkey-version 102
 
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang${_ERLVER}/bin:${PATH}
 ALL_TARGET=	release
@@ -50,7 +49,7 @@ OPTIONS_SUB=	yes
 
 _APPDIR=	${LOCALBASE}/libexec/${PORTNAME}
 _DBDIR?=	/var/db/${PORTNAME}
-_ERLVER?=	26
+_ERLVER?=	27
 _LOGDIR?=	/var/log/${PORTNAME}
 _LOGFILE?=	${_LOGDIR}/couch.log
 _RELDIR=	${_APPDIR}/releases/${DISTVERSION}
@@ -107,6 +106,7 @@ do-install:
 		${WRKSRC}/rel/couchdb/lib/couch-*/priv/couch_js/60 \
 		${WRKSRC}/rel/couchdb/lib/couch-*/priv/couch_js/68 \
 		${WRKSRC}/rel/couchdb/lib/couch-*/priv/couch_js/86 \
+		${WRKSRC}/rel/couchdb/lib/couch-*/priv/couch_js/91 \
 		${WRKSRC}/rel/couchdb/lib/couch-*/priv/priv/couchjs \
 		${WRKSRC}/rel/couchdb/releases/*/vm.args \
 		${WRKSRC}/rel/couchdb/share/docs \
@@ -124,9 +124,10 @@ do-install:
 		-exec ${STRIP_CMD} {} +
 	${STRIP_CMD} ${STAGEDIR}${_APPDIR}/lib/os_mon-*/priv/bin/*sup
 	${CHMOD} -R ${BINMODE} ${STAGEDIR}${_APPDIR}/bin
+	${CHMOD} -R ${BINMODE} ${STAGEDIR}${_APPDIR}/erts-*/bin
+	${CHMOD} -R ${BINMODE} ${STAGEDIR}${_APPDIR}/lib/*/priv/*.so
 	${CHMOD} -R ${BINMODE} ${STAGEDIR}${_APPDIR}/lib/couch_quickjs-*/priv/couchjs_*
 	${CHMOD} -R ${BINMODE} ${STAGEDIR}${_APPDIR}/lib/os_mon-*/priv/bin
-	${CHMOD} -R ${BINMODE} ${STAGEDIR}${_APPDIR}/erts-*/bin
 # fauxton UI is a required component
 	(cd ${WRKSRC}/share/www && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
