@@ -50,6 +50,10 @@ stop_cmd="telegraf_stop"
 
 telegraf_prestart()
 {
+    if [ ! -r "${telegraf_conf}" ]; then
+        echo WARNING: missing ${telegraf} configuration. Start aborted.
+        exit 1
+    fi
     install -d -o ${telegraf_user} -g ${telegraf_group} -m750 %%TELEGRAF_LOGDIR%%
 }
 
