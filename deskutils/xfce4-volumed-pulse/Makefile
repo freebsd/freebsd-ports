@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-volumed-pulse
-PORTVERSION=	0.2.5
+PORTVERSION=	0.3.0
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -15,18 +15,18 @@ LIB_DEPENDS=	libkeybinder-3.0.so:x11/keybinder-gtk3 \
 		libnotify.so:devel/libnotify \
 		libpulse.so:audio/pulseaudio
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bz2 xfce
+USES=		gettext-tools gnome meson pkgconfig tar:xz xfce
 USE_GNOME=	glib20 gtk30
 USE_XFCE=	xfconf
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-libnotify
-INSTALL_TARGET=	install-strip
+MESON_ARGS=	-Dlibnotify=enabled
 
-OPTIONS_DEFINE=		NLS
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext-runtime
+NLS_USES=	gettext-runtime
+
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
