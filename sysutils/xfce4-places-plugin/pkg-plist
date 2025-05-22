@@ -52,6 +52,7 @@ lib/xfce4/panel/plugins/libplaces.so
 %%NLS%%share/locale/uk/LC_MESSAGES/xfce4-places-plugin.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/xfce4-places-plugin.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce4-places-plugin.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xfce4-places-plugin.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-places-plugin.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-places-plugin.mo
 share/xfce4/panel/plugins/places.desktop
