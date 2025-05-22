@@ -1,7 +1,0 @@
-TIMESTAMP = 1743426582
-SHA256 (rocky/s/SDL2_mixer-2.8.1-1.el9.aarch64.rpm) = d85f2590a7daf03ad73bc18f35e0868b3226b2624fd9940286131073de0dfa9e
-SIZE (rocky/s/SDL2_mixer-2.8.1-1.el9.aarch64.rpm) = 168550
-SHA256 (rocky/s/SDL2_mixer-2.8.1-1.el9.x86_64.rpm) = 736d9eeb48f24cedde2d704c5b237537eacf609b9bbfa996a9219c7efe8c7cf1
-SIZE (rocky/s/SDL2_mixer-2.8.1-1.el9.x86_64.rpm) = 171511
-SHA256 (rocky/s/SDL2_mixer-2.8.1-1.el9.src.rpm) = 7a750d39a5a1d45e02a8354b46fe97c7d6cb4c6f097283d1b5a7b2ac42429d0d
-SIZE (rocky/s/SDL2_mixer-2.8.1-1.el9.src.rpm) = 5992154

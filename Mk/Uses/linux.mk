@@ -192,7 +192,6 @@ _linux_${linux_ARGS}_sdl20=		linux-${linux_ARGS}-sdl20>0:devel/linux-${linux_ARG
 _linux_${linux_ARGS}_sdl20-extralibs=	linux-${linux_ARGS}-sdl20-extralibs>0:misc/linux-${linux_ARGS}-sdl20-extralibs
 _linux_${linux_ARGS}_sdl2gfx=		linux-${linux_ARGS}-sdl2_gfx>0:graphics/linux-${linux_ARGS}-sdl2_gfx
 _linux_${linux_ARGS}_sdl2image=		linux-${linux_ARGS}-sdl2_image>0:graphics/linux-${linux_ARGS}-sdl2_image
-_linux_${linux_ARGS}_sdl2mixer=		linux-${linux_ARGS}-sdl2_mixer>0:audio/linux-${linux_ARGS}-sdl2_mixer
 _linux_${linux_ARGS}_sdl2ttf=		linux-${linux_ARGS}-sdl2_ttf>0:graphics/linux-${linux_ARGS}-sdl2_ttf
 _linux_${linux_ARGS}_sdl2sound=		linux-${linux_ARGS}-sdl2_sound>0:audio/linux-${linux_ARGS}-sdl2_sound
 _linux_rl9_shaderc=			linux-rl9-shaderc>0:graphics/linux-rl9-shaderc
