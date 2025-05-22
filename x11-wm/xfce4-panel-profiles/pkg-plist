@@ -57,6 +57,7 @@ share/icons/hicolor/scalable/apps/org.xfce.PanelProfiles.svg
 %%NLS%%share/locale/th/LC_MESSAGES/xfce4-panel-profiles.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfce4-panel-profiles.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xfce4-panel-profiles.mo
+%%NLS%%share/locale/vec/LC_MESSAGES/xfce4-panel-profiles.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-panel-profiles.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/xfce4-panel-profiles.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-panel-profiles.mo
@@ -74,7 +75,6 @@ share/metainfo/org.xfce.PanelProfiles.appdata.xml
 %%DATADIR%%/layouts/Xubuntu 14.04 (Trusty).tar.bz2
 %%DATADIR%%/layouts/Xubuntu 18.04 (Bionic).tar.bz2
 %%DATADIR%%/layouts/openSUSE Leap 15.x.tar.bz2
-%%DATADIR%%/locale
 %%DATADIR%%/xfce4-panel-profiles/info.py
 %%DATADIR%%/xfce4-panel-profiles/panelconfig.py
 %%DATADIR%%/xfce4-panel-profiles/xfce4-panel-profiles.glade
