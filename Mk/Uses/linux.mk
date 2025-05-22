@@ -190,7 +190,6 @@ _linux_${linux_ARGS}_sdl12=		linux-${linux_ARGS}-sdl>0:devel/linux-${linux_ARGS}
 _linux_${linux_ARGS}_sdl12-extralibs=	linux-${linux_ARGS}-sdl12-extralibs>0:misc/linux-${linux_ARGS}-sdl12-extralibs
 _linux_${linux_ARGS}_sdl20=		linux-${linux_ARGS}-sdl20>0:devel/linux-${linux_ARGS}-sdl20
 _linux_${linux_ARGS}_sdl20-extralibs=	linux-${linux_ARGS}-sdl20-extralibs>0:misc/linux-${linux_ARGS}-sdl20-extralibs
-_linux_${linux_ARGS}_sdl2sound=		linux-${linux_ARGS}-sdl2_sound>0:audio/linux-${linux_ARGS}-sdl2_sound
 _linux_rl9_shaderc=			linux-rl9-shaderc>0:graphics/linux-rl9-shaderc
 _linux_rl9_spirv-tools=			linux-rl9-spirv-tools>0:graphics/linux-rl9-spirv-tools
 _linux_${linux_ARGS}_sqlite3=		linux-${linux_ARGS}-sqlite>0:databases/linux-${linux_ARGS}-sqlite3
