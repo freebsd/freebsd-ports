@@ -9,6 +9,7 @@ share/icons/hicolor/48x48/apps/wcktitle-plugin.png
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-windowck-plugin.mo
 %%NLS%%share/locale/da/LC_MESSAGES/xfce4-windowck-plugin.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xfce4-windowck-plugin.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xfce4-windowck-plugin.mo
 %%NLS%%share/locale/en_CA/LC_MESSAGES/xfce4-windowck-plugin.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-windowck-plugin.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-windowck-plugin.mo
