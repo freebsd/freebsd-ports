@@ -56,4 +56,8 @@ post-extract:
 	@(cd ${_DISTDIR}; ${CP} ${SRCS} ${WRKSRC})
 	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
+# ld.bfd supports neither -z relro nor -z norelro on armv7
+BINUTILS_NO_MAKE_ENV_armv7=	LD
+BINUTILS_NO_MAKE_ENV=	${BINUTILS_NO_MAKE_ENV_${ARCH}}
+
 .include <bsd.port.mk>
