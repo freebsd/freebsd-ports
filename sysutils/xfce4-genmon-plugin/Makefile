@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-genmon-plugin
-PORTVERSION=	4.2.1
+PORTVERSION=	4.3.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -10,20 +10,29 @@ WWW=		https://docs.xfce.org/panel-plugins/xfce4-genmon-plugin/start
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
-
-USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
-		tar:bzip2 xfce
-USE_GNOME=	cairo gdkpixbuf glib20 gtk30
+USES=		compiler:c11 gettext-tools gnome meson pkgconfig shebangfix \
+		tar:xz xfce
+USE_GNOME=	glib20 gtk30
 USE_XFCE=	libmenu panel xfconf
-
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+SHEBANG_FILES=	scripts/datetime \
+		scripts/disktemp \
+		scripts/dkspuse \
+		scripts/gmail \
+		scripts/googcal.in \
+		scripts/monBandwidth \
+		scripts/monBat \
+		scripts/monCPU \
+		scripts/monTime \
+		scripts/monUSB \
+		scripts/monWIFI \
+		scripts/sysstat
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=		gettext-runtime
-NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext-runtime
+
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
