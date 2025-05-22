@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-taskmanager
-PORTVERSION=	1.5.8
+PORTVERSION=	1.6.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -11,24 +11,20 @@ WWW=		https://goodies.xfce.org/projects/applications/xfce4-taskmanager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
-
-USES=		gettext-tools gmake gnome localbase pkgconfig tar:bzip2 xfce \
-		xorg
-USE_GNOME=	cairo gdkpixbuf glib20 gtk30 libwnck3
+USES=		gettext-tools gnome localbase meson pkgconfig tar:xz xfce xorg
+USE_GNOME=	glib20 gtk30 libwnck3
 USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11 xmu xt
 
-GNU_CONFIGURE=	yes
-
-CONFIGURE_ARGS=	--disable-gksu \
-		--disable-silent-rules \
-		--enable-wnck3
+MESON_ARGS=	-Dwnck=enabled \
+		-Dx11=enabled
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=		gettext-runtime
-NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext-runtime
+
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>

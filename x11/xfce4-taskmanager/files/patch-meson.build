@@ -1,0 +1,20 @@
+--- meson.build.orig	2025-05-21 07:00:22 UTC
++++ meson.build
+@@ -54,7 +54,7 @@ else
+ else
+   if target_os == 'freebsd'
+     os_implementation = 'freebsd'
+-    find_library('kvm')
++    kvm_lib = cc.find_library('kvm', required : true)
+     headers += [
+       'sys/param.h',
+       'sys/proc.h',
+@@ -83,7 +83,7 @@ else
+     ]
+   elif target_os == 'sunos'
+     os_implementation = 'solaris'
+-    find_library('kstat')
++    cc.find_library('kstat')
+     headers += [
+       'sys/procfs.h',
+       'sys/stat.h',
