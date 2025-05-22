@@ -1,3 +1,33 @@
+  <vuln vid="4abd86c1-366d-11f0-9c0c-000c29ffbb6c">
+    <topic>screen -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>screen</name>
+	<range><lt>5.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The screen project reports:</p>
+	<blockquote cite="https://lists.gnu.org/archive/html/info-gnu/2025-05/msg00002.html">
+	  <p>Multiple security issues in screen.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-46805</cvename>
+      <cvename>CVE-2025-46804</cvename>
+      <cvename>CVE-2025-46803</cvename>
+      <cvename>CVE-2025-46802</cvename>
+      <cvename>CVE-2025-23395</cvename>
+      <url>https://lists.gnu.org/archive/html/info-gnu/2025-05/msg00002.html</url>
+    </references>
+    <dates>
+      <discovery>2025-05-12</discovery>
+      <entry>2025-05-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="07560111-34cc-11f0-af94-b42e991fc52e">
     <topic>firefox -- out-of-bounds read/write</topic>
     <affects>
