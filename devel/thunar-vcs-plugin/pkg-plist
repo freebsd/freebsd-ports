@@ -1,6 +1,8 @@
 lib/thunarx-3/thunar-vcs-plugin.so
 %%GIT%%libexec/tvp-git-helper
 %%SUBVERSION%%libexec/tvp-svn-helper
+share/icons/hicolor/16x16/apps/git.png
+share/icons/hicolor/16x16/apps/subversion.png
 share/icons/hicolor/24x24/apps/git.png
 share/icons/hicolor/24x24/apps/subversion.png
 share/icons/hicolor/48x48/apps/git.png
