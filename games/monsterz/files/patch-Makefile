@@ -1,41 +1,33 @@
---- Makefile.orig	2007-12-17 22:05:00 UTC
+--- Makefile.orig	2025-05-17 14:19:52 UTC
 +++ Makefile
 @@ -1,8 +1,8 @@
- 
 -prefix = /usr/local
--gamesdir = ${prefix}/games
--datadir = ${prefix}/share
--pkgdatadir = $(datadir)/games/monsterz
+-gamesdir = $(prefix)/games
+-datadir = $(prefix)/share
 +prefix? = /usr/local
-+gamesdir = ${prefix}/bin
-+datadir = ${prefix}/share/monsterz
++gamesdir = $(prefix)/bin
++datadir = $(prefix)/share/monsterz
+ mandir = $(prefix)/share/man
+-pkgdatadir = $(datadir)/games/monsterz
 +pkgdatadir = $(datadir)
+ applicationsdir = $(datadir)/applications
  scoredir = /var/games
  scorefile = $(scoredir)/monsterz
- 
-@@ -22,7 +22,7 @@ INKSCAPE = inkscape -z
- all: monsterz
- 
- monsterz: monsterz.c
--	$(CC) -Wall monsterz.c -DDATADIR=\"$(pkgdatadir)\" -DSCOREFILE=\"$(scorefile)\" -o monsterz
-+	$(CC) $(CFLAGS) -Wall monsterz.c -DDATADIR=\"$(pkgdatadir)\" -DSCOREFILE=\"$(scorefile)\" -o monsterz
- 
- bitmap: $(BITMAP)
- 
-@@ -42,17 +42,17 @@ graphics/logo.png: graphics/graphics.svg
- install: all
- 	mkdir -p $(DESTDIR)$(gamesdir)
- 	cp monsterz $(DESTDIR)$(gamesdir)/
+@@ -53,8 +53,8 @@ install: all
+ 	$(INSTALL_DIR) $(DESTDIR)$(applicationsdir)
+ 	$(INSTALL_DIR) $(DESTDIR)$(mandir)/man6
+ 	$(INSTALL_PROGRAM) monsterz $(DESTDIR)$(gamesdir)/
 -	chown root:games $(DESTDIR)$(gamesdir)/monsterz
 -	chmod g+s $(DESTDIR)$(gamesdir)/monsterz
 +	#chown root:games $(DESTDIR)$(gamesdir)/monsterz
 +	#chmod g+s $(DESTDIR)$(gamesdir)/monsterz
- 	mkdir -p $(DESTDIR)$(pkgdatadir)/graphics
- 	mkdir -p $(DESTDIR)$(pkgdatadir)/sound
- 	cp monsterz.py $(DESTDIR)$(pkgdatadir)/
- 	cp $(BITMAP) $(DESTDIR)$(pkgdatadir)/graphics/
- 	cp $(SOUND) $(MUSIC) $(DESTDIR)$(pkgdatadir)/sound/
- 	mkdir -p $(DESTDIR)$(scoredir)
+ 	$(INSTALL_DIR) $(DESTDIR)$(pkgdatadir)/graphics
+ 	$(INSTALL_DIR) $(DESTDIR)$(pkgdatadir)/sound
+ 	$(INSTALL_SCRIPT) monsterz.py $(DESTDIR)$(pkgdatadir)/
+@@ -63,9 +63,9 @@ install: all
+ 	$(INSTALL_DATA) monsterz.desktop $(DESTDIR)$(applicationsdir)
+ 	$(INSTALL_DATA) monsterz.6 $(DESTDIR)$(mandir)/man6
+ 	$(INSTALL_DIR) $(DESTDIR)$(scoredir)
 -	test -f $(DESTDIR)$(scorefile) || echo "" > $(DESTDIR)$(scorefile)
 -	chown root:games $(DESTDIR)$(scorefile)
 -	chmod g+w $(DESTDIR)$(scorefile)

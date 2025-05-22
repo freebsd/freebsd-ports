@@ -1,6 +1,8 @@
 @(,games,2555) bin/monsterz
+share/man/man6/monsterz.6.gz
 %%DATADIR%%/__pycache__/monsterz.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/__pycache__/monsterz.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/applications/monsterz.desktop
 %%DATADIR%%/graphics/background.png
 %%DATADIR%%/graphics/bigtiles.png
 %%DATADIR%%/graphics/board.png
