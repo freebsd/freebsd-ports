@@ -1,7 +1,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	28.0
-DISTVERSIONSUFFIX=	-rc2
+PORTREVISION=	5
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime${PORTVERSION:C/\..*//}
 DIST_SUBDIR=	erlang
@@ -66,9 +66,9 @@ WX_DESC=	Enable WX application
 DTRACE_CONFIGURE_WITH=		dynamic-trace=dtrace
 DTRACE_CFLAGS=			-fno-omit-frame-pointer
 DTRACE_VARS=			STRIP=""
+JAVA_USES=			java
 JAVA_CONFIGURE_WITH=		javac
 JAVA_CONFIGURE_ENV=		ac_cv_prog_JAVAC="${JAVAC}"
-JAVA_USES=			java
 KQUEUE_CONFIGURE_ENABLE=	kernel-poll
 ODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
 ODBC_USES=			localbase:ldflags
@@ -95,7 +95,7 @@ CFLAGS+=	-DMAP_NORESERVE=0
 .endif
 
 .if ${ARCH} == i386
-MAKE_ARGS+=	ARCH=x86
+MAKE_ARGS+=		ARCH=x86
 CONFIGURE_ARGS+=	--disable-year2038
 .endif
 
@@ -117,9 +117,8 @@ post-configure-ODBC-off:
 
 post-install-CHUNKS-on:
 	cd ${WRKSRC_otp} && \
-		${SETENV} ERL_TOP=${WRKSRC_otp} \
-		${MAKE_CMD} release_docs DOC_TARGETS=chunks \
-		RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${_ERLANG_LIB}
+		${SETENV} ERL_TOP=${WRKSRC_otp} ${MAKE_CMD} release_docs \
+		DOC_TARGETS=chunks RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${_ERLANG_LIB}
 
 post-build-CORBA-on:
 	cd ${WRKSRC_corba} && \
