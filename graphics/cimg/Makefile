@@ -85,6 +85,9 @@ USE_XORG+=	xext
 DOCBASE=	README.txt
 CFLAGS+=	-I${LOCALBASE}/include/Imath -I${LOCALBASE}/include/OpenEXR
 MAKE_ARGS+=	CPPFLAGS="${CFLAGS}" FREEBSD_LDFLAGS="${LDFLAGS}"
+. if !exists(/usr/include/omp.h)
+MAKE_ARGS+=	OPENMP_CFLAGS=
+. endif
 PROGS=		CImg_demo captcha curve_editor2d dtmri_view3d			\
 	edge_explorer2d fade_images gaussian_fit1d generate_loop_macros		\
 	hough_transform2d image2ascii image_registration2d image_surface3d	\
