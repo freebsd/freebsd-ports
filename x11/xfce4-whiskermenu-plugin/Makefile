@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-whiskermenu-plugin
-PORTVERSION=	2.9.2
+PORTVERSION=	2.10.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -11,31 +11,29 @@ WWW=		https://docs.xfce.org/panel-plugins/xfce4-whiskermenu-plugin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++14-lang gettext-tools gnome localbase \
-		pkgconfig tar:bzip2 xfce
-USE_GNOME=	cairo gdkpixbuf gtk30
+USES=		compiler:c++14-lang gettext-tools gnome localbase meson \
+		pkgconfig tar:xz xfce
+USE_GNOME=	gtk30
 USE_XFCE=	garcon libexo panel xfconf
 
-OPTIONS_DEFINE=		ACCOUNTS_SERVICE LTO MENULIBRE NLS WAYLAND
-OPTIONS_DEFAULT=	ACCOUNTS_SERVICE LTO MENULIBRE WAYLAND
+OPTIONS_DEFINE=		ACCOUNTS_SERVICE MENULIBRE NLS WAYLAND
+OPTIONS_DEFAULT=	ACCOUNTS_SERVICE MENULIBRE WAYLAND
 OPTIONS_SUB=		yes
 
 ACCOUNTS_SERVICE_DESC=	Enable AccountsService support
 MENULIBRE_DESC=		Depend at runtime on x11/menulibre
 
 ACCOUNTS_SERVICE_LIB_DEPENDS=	libaccountsservice.so:sysutils/accountsservice
-ACCOUNTS_SERVICE_CMAKE_BOOL=	ENABLE_ACCOUNTS_SERVICE
-
-LTO_CMAKE_BOOL=	ENABLE_LINK_TIME_OPTIMIZATION
+ACCOUNTS_SERVICE_MESON_ENABLED=	accountsservice
 
 MENULIBRE_RUN_DEPENDS=	menulibre:x11/menulibre
 
 NLS_USES=	gettext-runtime
 
 WAYLAND_LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
-WAYLAND_CMAKE_BOOL=	ENABLE_GTK_LAYER_SHELL
+WAYLAND_MESON_ENABLED=	gtk-layer-shell
 
 post-patch-NLS-off:
-	@${REINPLACE_CMD} '/add_subdirectory(po)/d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
