@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-notes-plugin
-PORTVERSION=	1.11.2
+PORTVERSION=	1.12.0
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -10,21 +10,18 @@ WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-notes-plugin
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
-
-USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
-		tar:bzip2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf glib20 gtk30 gtksourceview4
+USES=		compiler:c11 gettext-tools gnome meson pkgconfig tar:xz \
+		vala:build xfce xorg
+USE_GNOME=	glib20 gtk30 gtksourceview4
 USE_XFCE=	libmenu panel xfconf
 USE_XORG=	ice sm x11
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=		NLS
-OPTIONS_SUB=		yes
+NLS_USES=	gettext-runtime
 
-NLS_USES=		gettext-runtime
-NLS_CONFIGURE_ENABLE=	nls
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
