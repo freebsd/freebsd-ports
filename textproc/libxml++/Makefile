@@ -1,5 +1,6 @@
 PORTNAME=	libxml++
 DISTVERSION=	5.4.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME \
 		https://github.com/libxmlplusplus/libxmlplusplus/releases/download/${DISTVERSION}/
@@ -16,11 +17,11 @@ USES=		compiler:c++17-lang gnome meson pkgconfig tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
-MESON_ARGS=	-Ddefault_library=both \
-		-Dbuild-examples=false \
-		-Dbuild-manual=false
+MESON_ARGS=	-Dbuild-examples=false \
+		-Dbuild-manual=false \
+		-Ddefault_library=both
 
-PLIST_SUB=	VERSION=5.0 \
-		API_VERSION=5.0
+PLIST_SUB=	API_VERSION=5.0 \
+		VERSION=5.0
 
 .include <bsd.port.mk>

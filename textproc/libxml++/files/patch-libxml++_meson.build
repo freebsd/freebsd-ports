@@ -1,0 +1,11 @@
+--- libxml++/meson.build.orig	2025-05-22 18:00:46 UTC
++++ libxml++/meson.build
+@@ -143,7 +143,7 @@ pkg_config.generate(xmlxx_library,
+   requires: xmlxx_pc_requires,
+   libraries: libxml2_lib_pkgconfig,
+   subdirs: [xmlxx_pcname],
+-  extra_cflags: ['-I${libdir}/' + xmlxx_pcname + '/include'],
++  extra_cflags: ['-I${includedir}/' + xmlxx_pcname + '/include'],
+ )
+ 
+ # This is used when building example programs and test programs.

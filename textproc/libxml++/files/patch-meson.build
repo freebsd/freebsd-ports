@@ -1,4 +1,4 @@
---- meson.build.orig	2024-01-11 13:10:47 UTC
+--- meson.build.orig	2024-08-13 14:23:04 UTC
 +++ meson.build
 @@ -98,7 +98,7 @@ install_datadir = get_option('datadir')
  install_includedir = get_option('includedir')
@@ -9,8 +9,8 @@
  
  # Dependencies.
  # xmlxx_build_dep: Dependencies when building the libxml++ library.
-@@ -370,7 +370,7 @@ xmlxxconfig_h_meson = files('libxml++config.h.meson')
- )
+@@ -295,7 +295,7 @@ xmlxxconfig_h_meson = files('libxml++config.h.meson')
+ endif
  
  xmlxxconfig_h_meson = files('libxml++config.h.meson')
 -install_includeconfigdir = install_libdir / xmlxx_pcname / 'include'
