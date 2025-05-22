@@ -1,5 +1,5 @@
 PORTNAME=	libxfce4windowing
-DISTVERSION=	4.20.2
+DISTVERSION=	4.20.3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -12,30 +12,36 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bz2 xfce xorg
-USE_GNOME=	cairo gdkpixbuf glib20 gtk30 libwnck3
+USES=		gettext-tools gnome meson pkgconfig python:build shebangfix \
+		tar:bz2 xfce xorg
+USE_GNOME=	glib20 gtk30 libwnck3
 USE_LDCONFIG=	yes
 USE_XFCE=	xdt
 USE_XORG=	x11 xrandr
+SHEBANG_FILES=	xdt-gen-visibility
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+MESON_ARGS=	-Dgtk-doc=false \
+		-Dx11=enabled
 
-OPTIONS_DEFINE=		DOCS GIR NLS WAYLAND
+OPTIONS_DEFINE=		GIR NLS WAYLAND
 OPTIONS_DEFAULT=	GIR WAYLAND
 OPTIONS_SUB=		yes
 
-DOCS_CONFIGURE_ENABLE=	gtk-doc-html
-
 GIR_DESC=	GObject Introspection support
+
+# At present gtk-doc is broken due to missing files in the distribution
+#DOCS_MESON_TRUE=	gtk-doc
+
 GIR_USE=	GNOME=introspection:build
 GIR_MESON_TRUE=	introspection
 
 NLS_USES=	gettext-runtime
-NLS_CONFIGURE_ENABLE=	nls
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
-WAYLAND_CONFIGURE_ENABLE=wayland
+WAYLAND_MESON_ENABLED=	wayland
+
+post-patch-NLS-off:
+	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
