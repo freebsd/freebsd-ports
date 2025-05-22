@@ -1,3 +1,3 @@
-TIMESTAMP = 1709444312
-SHA256 (xorg/lib/libXcursor-1.2.2.tar.xz) = 53d071bd2cc56e517a30998d5e685c8a74556ddada43c6985d14da9a023a88ee
-SIZE (xorg/lib/libXcursor-1.2.2.tar.xz) = 289536
+TIMESTAMP = 1747549658
+SHA256 (xorg/lib/libXcursor-1.2.3.tar.xz) = fde9402dd4cfe79da71e2d96bb980afc5e6ff4f8a7d74c159e1966afb2b2c2c0
+SIZE (xorg/lib/libXcursor-1.2.3.tar.xz) = 292764
