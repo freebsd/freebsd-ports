@@ -12,6 +12,9 @@ WWW=		https://www.microsoft.com/net/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Ancient version, no practical use
+EXPIRATION_DATE=2025-07-01
+
 ONLY_FOR_ARCHS=	amd64
 
 .if ${PORTNAME} != dotnet-cli
