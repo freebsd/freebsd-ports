@@ -1,6 +1,4 @@
 lib/xfce4/panel/plugins/libstopwatch.so
-lib/xfce4/panel/plugins/libstopwatch.so.0
-lib/xfce4/panel/plugins/libstopwatch.so.0.0.0
 share/icons/hicolor/16x16/apps/xfce4-stopwatch-plugin.png
 share/icons/hicolor/22x22/apps/xfce4-stopwatch-plugin.png
 share/icons/hicolor/24x24/apps/xfce4-stopwatch-plugin.png
@@ -54,6 +52,7 @@ share/icons/hicolor/scalable/apps/xfce4-stopwatch-plugin.svg
 %%NLS%%share/locale/tr/LC_MESSAGES/xfce4-stopwatch-plugin.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/xfce4-stopwatch-plugin.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xfce4-stopwatch-plugin.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xfce4-stopwatch-plugin.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-stopwatch-plugin.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-stopwatch-plugin.mo
 share/xfce4/panel/plugins/xfce4-stopwatch-plugin.desktop
