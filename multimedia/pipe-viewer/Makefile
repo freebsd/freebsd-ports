@@ -1,5 +1,5 @@
 PORTNAME=	pipe-viewer
-DISTVERSION=	0.5.5
+DISTVERSION=	0.5.6
 CATEGORIES=	multimedia perl5
 
 MAINTAINER?=	DtxdF@disroot.org
@@ -30,7 +30,7 @@ OPTIONS_DEFAULT?=		FORK_MANAGER JSON_XS LINE_BREAK LOCAL_CACHE \
 				READLINE YT_DLP
 OPTIONS_RADIO=			FIXED_WIDTH YOUTUBE
 OPTIONS_RADIO_FIXED_WIDTH=	CHAR_WIDTH LINE_BREAK
-OPTIONS_RADIO_YOUTUBE=		YOUTUBE_DL YT_DLP
+OPTIONS_RADIO_YOUTUBE=		YT_DLP
 
 OPTIONS_SUB=	yes
 
@@ -42,7 +42,6 @@ LINE_BREAK_DESC=	Install with p5-Text-CharWidth
 LOCAL_CACHE_DESC=	Local cache support
 SHARE_DIR_DESC=		Install with p5-File-ShareDir
 YOUTUBE_DESC=		Youtube support
-YOUTUBE_DL_DESC=	Enable Youtube support with youtube_dl
 YT_DLP_DESC=		Enable Youtube support with yt-dlp
 
 CHAR_WIDTH_RUN_DEPENDS=		p5-Text-CharWidth>0:textproc/p5-Text-CharWidth
@@ -54,7 +53,6 @@ LINE_BREAK_RUN_DEPENDS=		p5-Unicode-LineBreak>0:textproc/p5-Unicode-LineBreak
 LOCAL_CACHE_RUN_DEPENDS=	p5-LWP-UserAgent-Cached>0:www/p5-LWP-UserAgent-Cached
 READLINE_RUN_DEPENDS=		p5-Term-ReadLine-Gnu>0:devel/p5-Term-ReadLine-Gnu
 SHARE_DIR_RUN_DEPENDS=		p5-File-ShareDir>0:devel/p5-File-ShareDir
-YOUTUBE_DL_RUN_DEPENDS=		youtube_dl>0:www/youtube_dl
 YT_DLP_RUN_DEPENDS=		yt-dlp>0:www/yt-dlp
 
 post-install-GTK3-on:
