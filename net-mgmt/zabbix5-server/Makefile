@@ -13,6 +13,9 @@ WWW=		https://www.zabbix.com/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Upstream EOL reaches on 2025-05-31
+EXPIRATION_DATE=	2025-06-30
+
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CONFLICTS_INSTALL=	zabbix[0-9][0-9]${PKGNAMESUFFIX} zabbix[0-46-9]${PKGNAMESUFFIX}
