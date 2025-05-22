@@ -1,6 +1,6 @@
 PORTNAME=	picocrypt
 DISTVERSION=	1.48 # Missing modules.txt, generate one with `go mod vendor` and place it in ${FILESDIR}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS_REASON=	upstream only supports 64-bit
 
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
-USES=		gl gnome go:1.24,modules pkgconfig xorg
+USES=		gl gnome go:modules pkgconfig xorg
 USE_GL=		gl
 USE_GNOME=	cairo gdkpixbuf gtk30
 USE_XORG=	x11 xau xcb xdmcp

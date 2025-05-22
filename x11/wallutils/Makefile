@@ -1,6 +1,6 @@
 PORTNAME=	wallutils
 DISTVERSION=	5.12.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libX11.so:x11/libX11
 
-USES=		go:1.22,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	xyproto
 GH_TUPLE=	antchfx:xmlquery:v1.3.8:antchfx_xmlquery/vendor/github.com/antchfx/xmlquery \
