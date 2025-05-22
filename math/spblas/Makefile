@@ -1,5 +1,6 @@
 PORTNAME=	spblas
 DISTVERSION=	1_03
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://math.nist.gov/spblas/:1 NL/blas/blast-forum/:2
 DISTFILES=	nist_spblas_${DISTVERSION}.zip:1
@@ -11,7 +12,6 @@ WWW=		https://math.nist.gov/spblas/
 LICENSE=	PD
 
 USES=		dos2unix uidfix zip
-USE_GCC=	yes
 USE_LDCONFIG=	yes
 
 HEADERS=	blas_enum.h blas_sparse.h blas_sparse_proto.h
