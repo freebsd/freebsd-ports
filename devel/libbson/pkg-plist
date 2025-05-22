@@ -33,6 +33,8 @@ lib/cmake/bson-1.0/bson_static-targets.cmake
 lib/cmake/bson-1.0/bson-1.0-config-version.cmake
 lib/cmake/bson-1.0/bson-1.0-config.cmake
 lib/cmake/bson-1.0/bson-targets.cmake
+lib/cmake/bson-1.30.4/bsonConfig.cmake
+lib/cmake/bson-1.30.4/bsonConfigVersion.cmake
 lib/cmake/libbson-1.0/libbson-1.0-config-version.cmake
 lib/cmake/libbson-1.0/libbson-1.0-config.cmake
 lib/cmake/libbson-static-1.0/libbson-static-1.0-config-version.cmake
