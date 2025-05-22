@@ -62,6 +62,8 @@ lib/cmake/mongoc-1.0/mongoc-1.0-config-version.cmake
 lib/cmake/mongoc-1.0/mongoc-1.0-config.cmake
 lib/cmake/mongoc-1.0/mongoc-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mongoc-1.0/mongoc-targets.cmake
+lib/cmake/mongoc-1.30.4/mongocConfig.cmake
+lib/cmake/mongoc-1.30.4/mongocConfigVersion.cmake
 lib/libmongoc-1.0.so
 lib/libmongoc-1.0.so.0
 lib/libmongoc-1.0.so.0.0.0
