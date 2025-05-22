@@ -1,11 +1,7 @@
 PORTNAME=	wev
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
-
-PATCH_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/commit/
-PATCHFILES+=	0be512fb7058.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland event viewer
