@@ -1,5 +1,5 @@
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	2.27.46
+PORTVERSION=	2.27.59
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -14,12 +14,12 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}		\
 LIB_DEPENDS=	libibus-1.0.so:textproc/ibus	\
 		libm17n.so:devel/m17n-lib
 RUN_DEPENDS=	CLDR>0:textproc/CLDR	\
+		UCD>0:textproc/UCD	\
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}		\
 		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}		\
 		${PYTHON_PKGNAMEPREFIX}rapidfuzz>0:devel/py-rapidfuzz@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}hunspell>0:textproc/py-hunspell@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}pycountry>0:textproc/py-pycountry@${PY_FLAVOR}	\
-		${LOCALBASE}/share/unicode/ucd/Index.txt:textproc/UCD			\
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 TEST_DEPENDS=	${LOCALBASE}/share/hunspell/cs_CZ.dic:textproc/cs-hunspell	\
 		${LOCALBASE}/share/hunspell/de_DE.dic:german/hunspell		\
@@ -60,11 +60,10 @@ OPTIONS_DEFAULT=HUNSPELL
 HUNSPELL_RUN_DEPENDS=	hunspell:textproc/hunspell
 
 SPELL2FIX=	engine/itb_util.py setup/user_transliteration.py
-SHR2FIX=	engine/itb_util.py engine/itb_emoji.py engine/hunspell_table.py	\
-		tests/test_compose_sequences.py engine/itb_sound.py		\
-		setup/user_transliteration.py ${GLIB_SCHEMAS}
+SHR2FIX=	engine/itb_sound.py ${GLIB_SCHEMAS}
 XML2FIX=	org.freedesktop.ibus.engine.typing_booster.metainfo.xml.in	\
 		org.freedesktop.ibus.engine.typing_booster.emoji_picker.metainfo.xml.in
+X11LOC2FIX=	engine/itb_util.py tests/test_compose_sequences.py tests/test_itb.py
 COMP2DEL=	engine/Makefile setup/Makefile
 
 pre-configure:
@@ -80,6 +79,12 @@ pre-configure:
 .for f in ${SHR2FIX} ${XML2FIX}
 	${REINPLACE_CMD} -e 's|/usr/share/ibus-typing-booster|${DATADIR}|'	\
 		-e 's|/usr/share|${LOCALBASE}/share|' ${WRKSRC}/${f}
+.endfor
+	${REINPLACE_CMD} -e 's|/usr/share/unicode|${LOCALBASE}/share/unicode|'	\
+		${WRKSRC}/engine/itb_emoji.py
+.for f in ${X11LOC2FIX}
+	${REINPLACE_CMD} -e 's|/usr/share/X11/locale|${LOCALBASE}/lib/X11/locale|'	\
+		${WRKSRC}/${f}
 .endfor
 
 post-configure:
