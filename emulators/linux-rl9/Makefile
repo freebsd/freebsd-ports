@@ -1,6 +1,6 @@
 PORTNAME=	linux-rl9
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -27,7 +27,7 @@ USE_LINUX=	alsalib alsa-lib-devel alsa-plugins-oss alsa-plugins-pulseaudio \
 		qt3d qtbase qtconnectivity qtdeclarative qtgraphicaleffects qtimageformats \
 		qtmultimedia qtquickcontrols qtscript qtsensors qtserialbus qtserialport \
 		qtsvg qttools qtwayland qtwebchannel qtwebsockets qtx11extras qtxmlpatterns \
-		sdl12 sdl12-extralibs sdl20 sdl2gfx sdl2image sdl2mixer sdl2ttf \
+		sdl12 sdl12-extralibs sdl20 sdl20-extralibs \
 		sqlite3 strace systemd-libs tcp_wrappers-libs vulkan \
 		wayland wget xcb-util xorglibs
 

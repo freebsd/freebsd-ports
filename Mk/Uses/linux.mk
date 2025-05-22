@@ -189,6 +189,7 @@ _linux_rl9_qtxmlpatterns=		linux-rl9-qt5-qtxmlpatterns>0:textproc/linux-rl9-qt5-
 _linux_${linux_ARGS}_sdl12=		linux-${linux_ARGS}-sdl>0:devel/linux-${linux_ARGS}-sdl12
 _linux_${linux_ARGS}_sdl12-extralibs=	linux-${linux_ARGS}-sdl12-extralibs>0:misc/linux-${linux_ARGS}-sdl12-extralibs
 _linux_${linux_ARGS}_sdl20=		linux-${linux_ARGS}-sdl20>0:devel/linux-${linux_ARGS}-sdl20
+_linux_${linux_ARGS}_sdl20-extralibs=	linux-${linux_ARGS}-sdl20-extralibs>0:misc/linux-${linux_ARGS}-sdl20-extralibs
 _linux_${linux_ARGS}_sdl2gfx=		linux-${linux_ARGS}-sdl2_gfx>0:graphics/linux-${linux_ARGS}-sdl2_gfx
 _linux_${linux_ARGS}_sdl2image=		linux-${linux_ARGS}-sdl2_image>0:graphics/linux-${linux_ARGS}-sdl2_image
 _linux_${linux_ARGS}_sdl2mixer=		linux-${linux_ARGS}-sdl2_mixer>0:audio/linux-${linux_ARGS}-sdl2_mixer
