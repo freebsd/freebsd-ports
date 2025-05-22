@@ -4412,3 +4412,4 @@ net/rubygem-devfile-gitlab|net/rubygem-devfile|2025-05-18|Remove obsoleted port.
 devel/rubygem-view_component-rails70|devel/rubygem-view_component-rails-gitlab|2025-05-17|Expired, please use devel/rubygem-view_component-rails-gitlab instead
 security/rubygem-devise-two-factor41-rails70|security/rubygem-devise-two-factor-rails-gitlab|2025-05-17|Expired, please use security/rubygem-devise-two-factor-rails-gitlab instead
 audio/linux-rl9-sdl2_mixer|misc/linux-rl9-sdl20-extralibs|2025-05-22|Merged into misc/linux-rl9-sdl20-extralibs
+graphics/linux-rl9-sdl2_gfx|misc/linux-rl9-sdl20-extralibs|2025-05-22|Merged into misc/linux-rl9-sdl20-extralibs
