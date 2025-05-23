@@ -1,4 +1,4 @@
---- electron/spec/api-desktop-capturer-spec.ts.orig	2025-03-26 14:46:58 UTC
+--- electron/spec/api-desktop-capturer-spec.ts.orig	2025-05-22 22:48:48 UTC
 +++ electron/spec/api-desktop-capturer-spec.ts
 @@ -45,7 +45,7 @@ ifdescribe(!process.arch.includes('arm') && process.pl
    });
@@ -24,7 +24,7 @@
      // the --ci parameter.
 -    if (process.platform === 'linux' && sources.length === 0) {
 +    if ((process.platform === 'linux' || process.platform === 'freebsd') && sources.length === 0) {
-       it.skip('desktopCapturer.getSources returned an empty source list');
+       this.skip();
        return;
      }
 @@ -154,7 +154,7 @@ ifdescribe(!process.arch.includes('arm') && process.pl
@@ -33,7 +33,7 @@
      // the --ci parameter.
 -    if (process.platform === 'linux' && sources.length === 0) {
 +    if ((process.platform === 'linux' || process.platform === 'freebsd') && sources.length === 0) {
-       it.skip('desktopCapturer.getSources returned an empty source list');
+       this.skip();
        return;
      }
 @@ -223,7 +223,7 @@ ifdescribe(!process.arch.includes('arm') && process.pl
@@ -43,5 +43,5 @@
 -      if (process.platform === 'linux' && sources.length === 0) {
 +      if ((process.platform === 'linux' || process.platform === 'freebsd') && sources.length === 0) {
          destroyWindows();
-         it.skip('desktopCapturer.getSources returned an empty source list');
+         this.skip();
          return;
