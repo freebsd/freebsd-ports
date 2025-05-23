@@ -26,6 +26,10 @@ OPENBLAS_USES=	blaslapack:openblas
 
 .include <bsd.port.pre.mk>
 
+# ld.bfd supports neither -z relro nor -z norelro on armv7
+BINUTILS_NO_MAKE_ENV_armv7=	LD
+BINUTILS_NO_MAKE_ENV=	${BINUTILS_NO_MAKE_ENV_${ARCH}}
+
 PORTDOCS=	README.txt
 PORTEXAMPLES=	lmdemo.c Makefile.demo
 PLIST_FILES=	include/levmar.h \
