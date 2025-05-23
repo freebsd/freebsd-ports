@@ -1,3 +1,50 @@
+  <vuln vid="a1a1b0c2-3791-11f0-8600-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.0.0</ge><lt>18.0.1</lt></range>
+	<range><ge>17.11.0</ge><lt>17.11.3</lt></range>
+	<range><ge>10.2.0</ge><lt>17.10.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/05/21/patch-release-gitlab-18-0-1-released/">
+	  <p>Unprotected large blob endpoint in GitLab allows Denial of Service</p>
+	  <p>Improper XPath validation allows modified SAML response to bypass 2FA requirement</p>
+	  <p>A Discord webhook integration may cause DoS</p>
+	  <p>Unbounded Kubernetes cluster tokens may lead to DoS</p>
+	  <p>Unvalidated notes position may lead to Denial of Service</p>
+	  <p>Hidden/masked variables may get exposed in the UI</p>
+	  <p>Two-factor authentication requirement bypass</p>
+	  <p>View full email addresses that should be partially obscured</p>
+	  <p>Branch name confusion in confidential MRs</p>
+	  <p>Unauthorized access to job data via a GraphQL query</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-0993</cvename>
+      <cvename>CVE-2024-12093</cvename>
+      <cvename>CVE-2024-7803</cvename>
+      <cvename>CVE-2025-3111</cvename>
+      <cvename>CVE-2025-2853</cvename>
+      <cvename>CVE-2025-4979</cvename>
+      <cvename>CVE-2025-0605</cvename>
+      <cvename>CVE-2025-0679</cvename>
+      <cvename>CVE-2024-9163</cvename>
+      <cvename>CVE-2025-1110</cvename>
+      <url>https://about.gitlab.com/releases/2025/05/21/patch-release-gitlab-18-0-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-05-21</discovery>
+      <entry>2025-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4abd86c1-366d-11f0-9c0c-000c29ffbb6c">
     <topic>screen -- multiple vulnerabilities</topic>
     <affects>
