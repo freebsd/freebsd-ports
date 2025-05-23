@@ -1,9 +1,10 @@
 PORTNAME=	anubis
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.1
-PORTREVISION=	1
+DISTVERSION=	1.18.0
 CATEGORIES=	www
+MASTER_SITES=	https://github.com/techarohq/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMEPREFIX=	go-
+DISTNAME=	anubis-src-vendor-npm-${DISTVERSION}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Anti-scraper web proxy using browser-based proof-of-work challenges
@@ -12,17 +13,15 @@ WWW=		https://anubis.techaro.lol/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,1.24
+USES=		go:1.24,no_targets
 USE_RC_SUBR=	${PORTNAME}
-
-GO_MODULE=	github.com/techarohq/${PORTNAME}
-GO_TARGET=	./cmd/${PORTNAME}
-GO_BUILDFLAGS=	-ldflags="-X github.com/TecharoHQ/anubis.Version=v${DISTVERSION}"
 
 PLIST_FILES=	sbin/${PORTNAME}
 
+ALL_TARGET=	prebaked-build
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/${PORTNAME} \
+	${INSTALL_PROGRAM} ${WRKSRC}/var/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 
 .include <bsd.port.mk>
