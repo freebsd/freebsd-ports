@@ -1,3 +1,29 @@
+  <vuln vid="5baa64d6-37ee-11f0-a116-8447094a420f">
+    <topic>OpenSSL -- Inverted security logic in x509 app</topic>
+    <affects>
+      <package>
+	<name>openssl35</name>
+	<range><lt>3.5.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://openssl-library.org/news/secadv/20250522.txt">
+	  <p>The x509 application adds trusted use instead of rejected use (low)</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4575</cvename>
+      <url>https://openssl-library.org/news/secadv/20250522.txt</url>
+    </references>
+    <dates>
+      <discovery>2025-05-23</discovery>
+      <entry>2025-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6529e5e7-36d5-11f0-8f57-b42e991fc52e">
     <topic>Firefox -- memory corruption due to race condition</topic>
     <affects>
