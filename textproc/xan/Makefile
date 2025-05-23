@@ -1,0 +1,30 @@
+PORTNAME=	xan
+DISTVERSION=	0.50.0
+CATEGORIES=	textproc
+
+MAINTAINER=	tagattie@FreeBSD.org
+COMMENT=	CSV magician
+WWW=		https://github.com/medialab/xan
+
+LICENSE=		MIT UNLICENSE
+LICENSE_COMB=		dual
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+LICENSE_FILE_UNLICENSE=	${WRKSRC}/UNLICENSE
+
+LIB_DEPENDS=	libzstd.so:archivers/zstd
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	medialab
+
+PLIST_FILES=	bin/xan
+PORTDOCS=	CHANGELOG.md CONTRIBUTING.md README.md
+
+OPTIONS_DEFINE=	DOCS
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>
