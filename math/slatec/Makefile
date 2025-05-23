@@ -14,6 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLATEC Common Mathematical Library
 WWW=		https://www.netlib.org/slatec/
 
+LICENSE=	PD
+
 USES=		fortran uidfix
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/src
@@ -28,6 +30,10 @@ SRCCONF=	/dev/null
 MAKE_ENV+=	LDADD="${LDADD}" SHLIB_MAJOR="${SHLIB_MAJOR}" \
 		SRCCONF="${SRCCONF}"
 FFLAGS+=	-std=legacy
+
+# ld.bfd supports neither -z relro nor -z norelro on armv7
+BINUTILS_NO_MAKE_ENV_armv7=	LD
+BINUTILS_NO_MAKE_ENV=	${BINUTILS_NO_MAKE_ENV_${ARCH}}
 
 OPTIONS_DEFINE=	DOCS PROFILE
 
