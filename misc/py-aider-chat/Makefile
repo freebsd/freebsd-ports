@@ -1,5 +1,5 @@
 PORTNAME=	aider_chat
-DISTVERSION=	0.82.2
+DISTVERSION=	0.83.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -41,7 +41,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=1.3:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pathspec>=0.12.1:devel/py-pathspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>=4.9.0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=10.4.0:graphics/py-pillow@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}posthog>=3.7.0:misc/py-posthog@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}posthog>=4.0.1:misc/py-posthog@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prompt-toolkit>=3.0.47:devel/py-prompt-toolkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.8.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydub>=0.25:audio/py-pydub@${PY_FLAVOR} \
@@ -49,7 +49,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=1.3:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyperclip>=1.7.0:devel/py-pyperclip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml-include>=1.2:devel/py-pyyaml-include@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=13.8:textproc/py-rich@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>=1.11,1<1.14,1:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.11,1:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}shtab>0:devel/py-shtab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}socksio>=1<2:net/py-socksio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sounddevice>=0.5.0:audio/py-sounddevice@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}SoundFile>=0.12:audio/py-SoundFile@${PY_FLAVOR} \

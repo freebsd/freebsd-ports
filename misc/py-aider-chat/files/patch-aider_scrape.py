@@ -1,65 +1,6 @@
---- aider/scrape.py.orig	2025-04-14 23:24:32 UTC
+--- aider/scrape.py.orig	2025-05-09 22:41:18 UTC
 +++ aider/scrape.py
-@@ -15,57 +15,8 @@ def install_playwright(io):
- 
- 
- def install_playwright(io):
--    try:
--        from playwright.sync_api import sync_playwright
-+    return False
- 
--        has_pip = True
--    except ImportError:
--        has_pip = False
--
--    try:
--        with sync_playwright() as p:
--            p.chromium.launch()
--            has_chromium = True
--    except Exception:
--        has_chromium = False
--
--    if has_pip and has_chromium:
--        return True
--
--    pip_cmd = utils.get_pip_install(["aider-chat[playwright]"])
--    chromium_cmd = "-m playwright install --with-deps chromium"
--    chromium_cmd = [sys.executable] + chromium_cmd.split()
--
--    cmds = ""
--    if not has_pip:
--        cmds += " ".join(pip_cmd) + "\n"
--    if not has_chromium:
--        cmds += " ".join(chromium_cmd) + "\n"
--
--    text = f"""For the best web scraping, install Playwright:
--
--{cmds}
--See {urls.enable_playwright} for more info.
--"""
--
--    io.tool_output(text)
--    if not io.confirm_ask("Install playwright?", default="y"):
--        return
--
--    if not has_pip:
--        success, output = utils.run_install(pip_cmd)
--        if not success:
--            io.tool_error(output)
--            return
--
--    success, output = utils.run_install(chromium_cmd)
--    if not success:
--        io.tool_error(output)
--        return
--
--    return True
--
--
- class Scraper:
-     pandoc_available = None
-     playwright_available = None
-@@ -82,7 +33,7 @@ class Scraper:
+@@ -92,7 +92,7 @@ class Scraper:
          else:
              self.print_error = print
  
@@ -68,7 +9,7 @@
          self.verify_ssl = verify_ssl
  
      def scrape(self, url):
-@@ -93,10 +44,7 @@ class Scraper:
+@@ -103,10 +103,7 @@ class Scraper:
          `url` - the URL to scrape.
          """
  
@@ -80,7 +21,7 @@
  
          if not content:
              self.print_error(f"Failed to retrieve content from {url}")
-@@ -128,58 +76,6 @@ class Scraper:
+@@ -138,58 +135,6 @@ class Scraper:
              ]
              return any(re.search(pattern, content, re.IGNORECASE) for pattern in html_patterns)
          return False
