@@ -2,14 +2,14 @@ PORTNAME=	screen
 DISTVERSION=	5.0.1
 PORTREVISION=	3
 CATEGORIES=	sysutils
-# MASTER_SITES=	GNU \
-# 	        ftp://ftp.gnu.org/gnu/screen/ \
-# 	        ftp://gnu.mirror.iweb.com/screen/ \
-# 	        http://gnu.mirror.iweb.com/screen/ \
-# 	        http://mirror.sdunix.com/gnu/ \
-# 	        ftp://mirrors.kernel.org/gnu/screen/ \
-# 	        http://cschubert.com/distfiles/ \
-# 	        LOCAL/cy
+MASTER_SITES=	GNU \
+	        ftp://ftp.gnu.org/gnu/screen/ \
+	        ftp://gnu.mirror.iweb.com/screen/ \
+	        http://gnu.mirror.iweb.com/screen/ \
+	        http://mirror.sdunix.com/gnu/ \
+	        ftp://mirrors.kernel.org/gnu/screen/ \
+	        http://cschubert.com/distfiles/ \
+	        LOCAL/cy
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	50
 CONFLICTS=      screen-* screen49*
@@ -20,10 +20,6 @@ COMMENT=	Multi-screen window manager
 WWW=		https://www.gnu.org/software/screen/
 
 CONFLICTS+=	screen-devel
-
-GIT_TAGNAME=	v.${DISTVERSION}
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GIT_TAGNAME}-ad9db35/src
 
 LICENSE=	GPLv3
 
@@ -78,16 +74,6 @@ CONFIGURE_ARGS+=	--disable-socket-dir
 .if defined(SCREEN_SOCKET_DIR)
 CONFIGURE_ARGS+=	--enable-socket-dir=${SCREEN_SOCKET_DIR}
 .endif
-
-do-fetch:
-	@cd ${DISTDIR} && \
-	if [ ! -f ${DISTNAME}${EXTRACT_SUFX} ]; then \
-		fetch -o ${DISTNAME}${EXTRACT_SUFX} \
-		    "https://git.savannah.gnu.org/gitweb/?p=screen.git;a=snapshot;h=${GIT_TAGNAME};sf=tgz"; \
-	fi    
-
-post-patch:
-	@${RM} ${WRKSRC}/doc/screen.info*
 
 # Bug 191029:	Users can choose whether to use sockets or named pipes.
 #		Choose sockets if you don't know what the difference is.
