@@ -1,7 +1,7 @@
 PORTNAME=	tdlib
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.48
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,6 +11,8 @@ WWW=		https://github.com/tdlib/td
 LICENSE=	BSL
 
 USES=		cmake:testing compiler:c++14-lang gperf readline ssl
+
+CONFLICTS_INSTALL=	tde2e
 
 USE_GITHUB=	yes
 GH_PROJECT=	td
