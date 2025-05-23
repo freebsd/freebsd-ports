@@ -3,11 +3,13 @@
 %%SERVER%%bin/luantiserver
 %%SERVER%%bin/minetestserver
 @sample etc/minetest.conf.example etc/minetest.conf
-share/applications/net.minetest.minetest.desktop
+share/applications/org.luanti.luanti.desktop
 share/icons/hicolor/128x128/apps/luanti.png
 share/icons/hicolor/scalable/apps/luanti.svg
+%%CLIENT%%%%NLS%%share/locale/bar/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/be/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/bg/LC_MESSAGES/luanti.mo
+%%CLIENT%%%%NLS%%share/locale/br/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/ca/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/cs/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/cy/LC_MESSAGES/luanti.mo
@@ -32,6 +34,7 @@ share/icons/hicolor/scalable/apps/luanti.svg
 %%CLIENT%%%%NLS%%share/locale/ja/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/jbo/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/jv/LC_MESSAGES/luanti.mo
+%%CLIENT%%%%NLS%%share/locale/kab/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/kk/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/ko/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/kv/LC_MESSAGES/luanti.mo
@@ -54,6 +57,7 @@ share/icons/hicolor/scalable/apps/luanti.svg
 %%CLIENT%%%%NLS%%share/locale/ru/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/sk/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/sl/LC_MESSAGES/luanti.mo
+%%CLIENT%%%%NLS%%share/locale/sr/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/sr_Cyrl/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/sr_Latn/LC_MESSAGES/luanti.mo
 %%CLIENT%%%%NLS%%share/locale/sv/LC_MESSAGES/luanti.mo
@@ -68,4 +72,4 @@ share/icons/hicolor/scalable/apps/luanti.svg
 %%CLIENT%%%%NLS%%share/locale/zh_TW/LC_MESSAGES/luanti.mo
 share/man/man6/luanti.6.gz
 share/man/man6/luantiserver.6.gz
-share/metainfo/net.minetest.minetest.metainfo.xml
+share/metainfo/org.luanti.luanti.metainfo.xml

@@ -1,5 +1,5 @@
 PORTNAME=	luanti
-DISTVERSION=	5.11.0
+DISTVERSION=	5.13.0
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -13,10 +13,11 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libjsoncpp.so:devel/jsoncpp \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang cpe iconv:wchar_t ssl sqlite
+USES=		cmake compiler:c++17-lang cpe iconv:wchar_t sdl ssl sqlite
 GH_ACCOUNT=	luanti-org
 GH_PROJECT=	luanti
 USE_GITHUB=	yes
+USE_SDL=	sdl2
 CMAKE_ARGS=	-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc" \
 CMAKE_ON=	ENABLE_SYSTEM_JSONCPP
 CMAKE_OFF=	BUILD_DOCUMENTATION
