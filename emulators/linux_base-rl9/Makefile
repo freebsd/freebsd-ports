@@ -1,6 +1,6 @@
 PORTNAME=	rl9
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nf/filesystem-*:C/:[^:]+$//}
@@ -174,6 +174,7 @@ REMOVE_FILES=	bin/chfn bin/chsh bin/findmnt bin/login bin/lsblk bin/lscpu \
 		usr/bin/taskset usr/bin/unshare usr/sbin/agetty usr/sbin/blkid \
 		usr/sbin/blockdev usr/sbin/fsck usr/sbin/losetup usr/sbin/mkswap \
 		usr/sbin/partx usr/sbin/swapoff usr/sbin/swapon usr/sbin/switch_root \
+		usr/lib/gio/modules/libgiognutls.so usr/lib64/gio/modules/libgiognutls.so \
 		usr/share/man/man1/chrt.1.gz usr/share/man/man1/dmesg.1.gz \
 		usr/share/man/man1/flock.1.gz usr/share/man/man1/hardlink.1.gz \
 		usr/share/man/man1/ionice.1.gz usr/share/man/man1/ipcmk.1.gz \

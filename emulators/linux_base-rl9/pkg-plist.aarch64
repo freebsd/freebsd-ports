@@ -1275,7 +1275,6 @@ usr/lib64/gconv/libJIS.so
 usr/lib64/gconv/libJISX0213.so
 usr/lib64/gconv/libKSC.so
 usr/lib64/gio/modules/libgiognomeproxy.so
-usr/lib64/gio/modules/libgiognutls.so
 usr/lib64/gio/modules/libgiolibproxy.so
 usr/lib64/girepository-1.0/GUdev-1.0.typelib
 usr/lib64/girepository-1.0/GeocodeGlib-1.0.typelib
