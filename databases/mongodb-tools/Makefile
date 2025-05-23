@@ -1,6 +1,5 @@
 PORTNAME=	mongodb-tools
-DISTVERSION=	100.12.0
-PORTREVISION=	1
+DISTVERSION=	100.12.1
 CATEGORIES=	databases
 
 MAINTAINER=	ronald@FreeBSD.org
@@ -56,7 +55,7 @@ SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_USE=		my_tags=sasl
 SSL_USE=		my_tags=ssl
 
-pre-configure:
+post-extract:
 # Verify we use the proper go version.
 	${SH} -xc "test \"X`grep -E '^go [[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+$$' ${WRKSRC}/go.mod`\" = \"Xgo ${GO_VERSION}.0\""
 
