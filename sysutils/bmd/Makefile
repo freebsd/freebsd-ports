@@ -1,5 +1,5 @@
 PORTNAME=	bmd
-DISTVERSION=	3.2
+DISTVERSION=	3.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	naito.yuichiro@gmail.com
