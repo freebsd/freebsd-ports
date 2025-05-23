@@ -3299,6 +3299,7 @@
 %%WWWDIR%%/go/modules/community/activesync/Z-Push/src/lib/request/settings.php
 %%WWWDIR%%/go/modules/community/activesync/Z-Push/src/lib/request/sync.php
 %%WWWDIR%%/go/modules/community/activesync/Z-Push/src/lib/request/validatecert.php
+%%WWWDIR%%/go/modules/community/activesync/Z-Push/src/lib/syncobjects/responsetrait.php
 %%WWWDIR%%/go/modules/community/activesync/Z-Push/src/lib/syncobjects/syncaccount.php
 %%WWWDIR%%/go/modules/community/activesync/Z-Push/src/lib/syncobjects/syncappointment.php
 %%WWWDIR%%/go/modules/community/activesync/Z-Push/src/lib/syncobjects/syncappointmentexception.php
@@ -3314,6 +3315,7 @@
 %%WWWDIR%%/go/modules/community/activesync/Z-Push/src/lib/syncobjects/syncfindproperties.php
 %%WWWDIR%%/go/modules/community/activesync/Z-Push/src/lib/syncobjects/syncfolder.php
 %%WWWDIR%%/go/modules/community/activesync/Z-Push/src/lib/syncobjects/syncitemoperationsattachment.php
+%%WWWDIR%%/go/modules/community/activesync/Z-Push/src/lib/syncobjects/synclocation.php
 %%WWWDIR%%/go/modules/community/activesync/Z-Push/src/lib/syncobjects/syncmail.php
 %%WWWDIR%%/go/modules/community/activesync/Z-Push/src/lib/syncobjects/syncmailflags.php
 %%WWWDIR%%/go/modules/community/activesync/Z-Push/src/lib/syncobjects/syncmeetingrequest.php
@@ -3594,6 +3596,7 @@
 %%WWWDIR%%/go/modules/community/calendar/controller/Holiday.php
 %%WWWDIR%%/go/modules/community/calendar/controller/ParticipantIdentity.php
 %%WWWDIR%%/go/modules/community/calendar/controller/ResourceGroup.php
+%%WWWDIR%%/go/modules/community/calendar/cron/ImportWebcalIcs.php
 %%WWWDIR%%/go/modules/community/calendar/cron/ScanEmailForInvites.php
 %%WWWDIR%%/go/modules/community/calendar/filehandlers/Ics.php
 %%WWWDIR%%/go/modules/community/calendar/holidays/LICENSE
@@ -3864,6 +3867,7 @@
 %%WWWDIR%%/go/modules/community/calendar/views/goui/script/ResourcesWindow.ts
 %%WWWDIR%%/go/modules/community/calendar/views/goui/script/Settings.ts
 %%WWWDIR%%/go/modules/community/calendar/views/goui/script/SpltView.ts
+%%WWWDIR%%/go/modules/community/calendar/views/goui/script/SubscribeWebCalWindow.ts
 %%WWWDIR%%/go/modules/community/calendar/views/goui/script/SubscribeWindow.ts
 %%WWWDIR%%/go/modules/community/calendar/views/goui/script/WeekView.ts
 %%WWWDIR%%/go/modules/community/calendar/views/goui/script/YearView.ts
@@ -5645,6 +5649,7 @@
 %%WWWDIR%%/modules/leavedays/views/Extjs3/LeavedayDialog.js
 %%WWWDIR%%/modules/leavedays/views/Extjs3/MainPanel.js
 %%WWWDIR%%/modules/leavedays/views/Extjs3/MonthWindow.js
+%%WWWDIR%%/modules/leavedays/views/Extjs3/SelectSpecialLeaveBudgetDialog.js
 %%WWWDIR%%/modules/leavedays/views/Extjs3/SpecialLeaveBudgetGrid.js
 %%WWWDIR%%/modules/leavedays/views/Extjs3/SpecialLeaveDialog.js
 %%WWWDIR%%/modules/leavedays/views/Extjs3/UserPanel.js
@@ -10645,6 +10650,8 @@
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/jmap/JmapDataSource.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/jmap/index.d.ts
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/jmap/index.d.ts.map
+%%WWWDIR%%/views/goui/dist/groupoffice-core/script/LangLoader.d.ts
+%%WWWDIR%%/views/goui/dist/groupoffice-core/script/LangLoader.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/model/Link.d.ts
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/model/Link.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/permissions/SharePanel.d.ts
@@ -11637,6 +11644,7 @@
 %%WWWDIR%%/views/goui/groupoffice-core/package-lock.json
 %%WWWDIR%%/views/goui/groupoffice-core/package.json
 %%WWWDIR%%/views/goui/groupoffice-core/script/Entities.ts
+%%WWWDIR%%/views/goui/groupoffice-core/script/LangLoader.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/Modules.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/Router.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/Validators.ts
