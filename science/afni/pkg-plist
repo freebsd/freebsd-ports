@@ -527,6 +527,7 @@ bin/afni_seeds_per_space.txt
 bin/afni_skeleton.py
 bin/afni_system_check.py
 bin/afni_vcheck
+bin/afni_vlines_run_text.txt
 bin/afnisumafatcat_logo_128sq.png
 bin/afnisumafatcat_logo_905sq.png
 bin/afnisumagui_logo_128sq.jpg
