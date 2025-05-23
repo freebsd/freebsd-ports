@@ -5,7 +5,7 @@
    if (GIT_DIR STREQUAL "")
      set(${_refspecvar} "GITDIR-NOTFOUND" PARENT_SCOPE)
 -    set(${_hashvar} "GITDIR-NOTFOUND" PARENT_SCOPE)
-+    set(${_hashvar} "51743df" PARENT_SCOPE)
++    set(${_hashvar} "%%COMMIT%%" PARENT_SCOPE)
      return()
    endif()
  
