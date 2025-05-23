@@ -755,6 +755,10 @@ usr/lib64/libslang.so.2
 usr/lib64/libslang.so.2.3.2
 usr/lib64/libsmartcols.so.1
 usr/lib64/libsmartcols.so.1.1.0
+usr/lib64/libsoup-2.4.so.1
+usr/lib64/libsoup-2.4.so.1.11.0
+usr/lib64/libsoup-gnome-2.4.so.1
+usr/lib64/libsoup-gnome-2.4.so.1.11.0
 usr/lib64/libssl.so.3
 usr/lib64/libssl.so.3.2.2
 usr/lib64/libstdc++.so.6
@@ -1041,6 +1045,9 @@ usr/share/dbus-1/services/org.gtk.GLib.PACRunner.service
 %%PORTDOCS%%usr/share/doc/libsigsegv/AUTHORS
 %%PORTDOCS%%usr/share/doc/libsigsegv/NEWS
 %%PORTDOCS%%usr/share/doc/libsigsegv/README
+%%PORTDOCS%%usr/share/doc/libsoup/AUTHORS
+%%PORTDOCS%%usr/share/doc/libsoup/NEWS
+%%PORTDOCS%%usr/share/doc/libsoup/README
 %%PORTDOCS%%usr/share/doc/libverto/AUTHORS
 %%PORTDOCS%%usr/share/doc/libverto/ChangeLog
 %%PORTDOCS%%usr/share/doc/libverto/NEWS
@@ -1180,6 +1187,7 @@ usr/share/licenses/libsepol/LICENSE
 usr/share/licenses/libsigsegv/COPYING
 usr/share/licenses/libsmartcols/COPYING
 usr/share/licenses/libsmartcols/COPYING.LGPL-2.1-or-later
+usr/share/licenses/libsoup/COPYING
 usr/share/licenses/libuuid/COPYING
 usr/share/licenses/libuuid/COPYING.BSD-3-Clause
 usr/share/licenses/libverto/COPYING

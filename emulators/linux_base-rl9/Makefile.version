@@ -33,6 +33,7 @@ libgudev_ver=		237-1.el9
 libnattr_ver=		2.5.1-3.el9
 libproxy_ver=		0.4.15-35.el9
 libsigsegv_ver=		2.13-4.el9
+libsoup_ver=		2.72.0-8.el9_5.3
 libverto_ver=		0.3.2-3.el9
 libxcrypt_ver=		4.4.18-3.el9
 mpfr_ver=		4.1.0-7.el9
