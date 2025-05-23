@@ -1,5 +1,5 @@
 PORTNAME=	screengrab
-PORTVERSION=	2.10.0
+PORTVERSION=	3.0.0
 CATEGORIES=	x11
 MASTER_SITES=	LXQT
 
@@ -9,10 +9,11 @@ WWW=		https://github.com/lxqt/screengrab
 
 LICENSE=	LGPL21+
 
-USES=		cmake compiler:c++17-lang gnome kde:6 lxqt:2 perl5 qt:6 tar:xz xorg
-USE_LXQT=	qt6xdg
+USES=		cmake compiler:c++17-lang gnome kde:6 localbase:ldflags lxqt:2 \
+		perl5 qt:6 tar:xz xorg
+USE_LXQT=	buildtools2 qt6xdg
 USE_XORG=	x11 xcb sm ice xext
-USE_KDE=	windowsystem
+USE_KDE=	layer-shell-qt wayland windowsystem
 USE_PERL5=	build
 USE_QT=		base:run tools:build svg
 USE_GNOME=	glib20
