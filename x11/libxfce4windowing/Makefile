@@ -1,5 +1,6 @@
 PORTNAME=	libxfce4windowing
 DISTVERSION=	4.20.3
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -38,6 +39,7 @@ GIR_MESON_TRUE=	introspection
 NLS_USES=	gettext-runtime
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
+WAYLAND_RUN_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_MESON_ENABLED=	wayland
 
