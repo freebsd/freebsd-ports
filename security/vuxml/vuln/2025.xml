@@ -1,3 +1,47 @@
+  <vuln vid="e587b52d-38ac-11f0-b7b6-dcfe074bd614">
+    <topic>cpython -- Use-after-free in &quot;unicode_escape&quot; decoder with error handler</topic>
+    <affects>
+      <package>
+	<name>python39</name>
+	<range><lt>3.9.22</lt></range>
+      </package>
+      <package>
+	<name>python310</name>
+	<range><lt>3.10.17</lt></range>
+      </package>
+      <package>
+	<name>python311</name>
+	<range><lt>3.11.12</lt></range>
+      </package>
+      <package>
+	<name>python312</name>
+	<range><lt>3.12.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cna@python.org reports:</p>
+	<blockquote cite="https://github.com/python/cpython/commit/69b4387f78f413e8c47572a85b3478c47eba8142">
+	  <p>There is an issue in CPython when using
+	`bytes.decode(&quot;unicode_escape&quot;,
+	error=&quot;ignore|replace&quot;)`.  If you are not using the
+	&quot;unicode_escape&quot; encoding or an error handler your
+	usage is not affected.  To work-around this issue you may stop
+	using the error= handler and instead wrap the bytes.decode()
+	call in a try-except catching the DecodeError.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4516</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-4516</url>
+    </references>
+    <dates>
+      <discovery>2025-05-15</discovery>
+      <entry>2025-05-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5baa64d6-37ee-11f0-a116-8447094a420f">
     <topic>OpenSSL -- Inverted security logic in x509 app</topic>
     <affects>
