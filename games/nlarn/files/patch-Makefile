@@ -1,6 +1,15 @@
 --- Makefile.orig	2020-05-23 06:13:27 UTC
 +++ Makefile
-@@ -104,7 +104,7 @@ LDFLAGS += $(shell pkg-config --libs glib-2.0)
+@@ -57,7 +57,7 @@ DEFINES += -DG_DISABLE_DEPRECATED
+ 
+ # Definitions required regardless of host OS
+ DEFINES += -DG_DISABLE_DEPRECATED
+-CFLAGS  += -std=c99 -Wall -Wextra -Werror -Iinc -Iinc/external
++CFLAGS  += -std=c99 -Wall -Wextra -Iinc -Iinc/external
+ LDFLAGS += -lz -lm
+ 
+ ifneq (,$(findstring MINGW, $(MSYSTEM)))
+@@ -104,7 +104,7 @@ ifneq ($(SDLPDCURSES),Y)
  
  # Unless requested otherwise build with curses.
  ifneq ($(SDLPDCURSES),Y)
