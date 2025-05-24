@@ -1,17 +1,17 @@
---- qtwidgets.pas.orig	2025-05-23 12:42:39.954693000 -0700
-+++ qtwidgets.pas	2025-05-23 12:44:46.183970000 -0700
-@@ -16496,10 +16496,6 @@
- 
+--- lcl/interfaces/qt6/qtwidgets.pas.orig	2025-05-03 06:08:10 UTC
++++ lcl/interfaces/qt6/qtwidgets.pas
+@@ -16497,10 +16497,6 @@ begin
      FActions.Free;
    end;
--
+ 
 -  if Assigned(FActionHandle) then
 -    QAction_Destroy(FActionHandle);
 -  FActionHandle := nil;
- 
+-
    inherited Destroy;
  end;
-@@ -16554,6 +16550,11 @@
+ 
+@@ -16554,6 +16550,11 @@ begin
      QMenu_hook_destroy(FAboutToHideHook);
      FAboutToHideHook := nil;
    end;
