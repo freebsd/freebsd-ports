@@ -319,6 +319,8 @@
 .if !defined(_INCLUDE_USES_PYTHON_MK)
 _INCLUDE_USES_PYTHON_MK=	yes
 
+ZEROREGS_UNSAFE=	yes
+
 # What Python version and what Python interpreters are currently supported?
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
