@@ -1,5 +1,5 @@
 PORTNAME=	spyder-kernels
-DISTVERSION=	3.0.4
+DISTVERSION=	3.0.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>0:devel/py-cloudpickle@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}jupyter-client>=7.4.9:devel/py-jupyter-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=24.0.0:net/py-pyzmq@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}traitlets>0:devel/py-traitlets@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traitlets>=5.14.3:devel/py-traitlets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wurlitzer>=1.0.3:misc/py-wurlitzer@${PY_FLAVOR}
 # 'make test' not applicable for now because the test files are missing in the tarball
 # 100 passed, 7 skipped, 4 warnings
