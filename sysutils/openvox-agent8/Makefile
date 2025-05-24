@@ -1,23 +1,23 @@
-PORTNAME=	puppet
-PORTVERSION=	8.10.0
+PORTNAME=	openvox-agent
+PORTVERSION=	8.20.0
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	8
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Configuration management framework written in Ruby
-WWW=		https://puppet.com/docs/puppet/latest/puppet_index.html
+WWW=		https://github.com/OpenVoxProject/openvox
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
 		rubygem-deep_merge>1.0:devel/rubygem-deep_merge \
-		rubygem-facter>=4.3.0:sysutils/rubygem-facter \
 		rubygem-fast_gettext>=2.1:devel/rubygem-fast_gettext \
 		rubygem-getoptlong>=0.2.0:devel/rubygem-getoptlong \
 		rubygem-locale>=2.1:devel/rubygem-locale \
 		rubygem-multi_json>=1.13:devel/rubygem-multi_json \
+		rubygem-openfact>=5.0.0:sysutils/rubygem-openfact \
 		rubygem-puppet-resource_api>=1.5:devel/rubygem-puppet-resource_api \
 		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas \
 		rubygem-scanf>=1.0:devel/rubygem-scanf \
@@ -25,7 +25,8 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
 
 USES=		cpe ruby
 USE_GITHUB=	yes
-GH_ACCOUNT=	puppetlabs
+GH_ACCOUNT=	OpenVoxProject
+GH_PROJECT=	openvox
 
 CONFLICTS_INSTALL=	openvox-agent[0-9] puppet[0-9]
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
@@ -39,10 +40,13 @@ GROUPS=		puppet
 SUB_FILES+=	pkg-message
 SUB_LIST=	RUBY=${RUBY}
 
+DATADIR=	${PREFIX}/share/puppet
+ETCDIR=		${PREFIX}/etc/puppet
+
 OPTIONS_DEFINE=		DOCS EXAMPLES
 
 # Get versions from
-# https://github.com/puppetlabs/puppet-agent/tree/main/configs/components
+# https://github.com/OpenVoxProject/openvox-agent/tree/main/configs/components
 # for f in configs/components/module-puppetlabs-*.json; do echo ${${f#*/module-puppetlabs-}%.json}=${${$(jq .ref $f)#*/v}%\"}; done
 FORGE_MODULES=	augeas_core=1.5.0 \
 		cron_core=1.3.0 \
@@ -114,10 +118,10 @@ post-install:
 		> ${STAGEDIR}${ETCDIR}/puppet.conf-dist
 	@${ECHO} ${STAGEDIR}${RUBY_SITELIBDIR}/puppet.rb | \
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME} -type f | \
+	@${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/puppet -type f | \
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/specifications
-	${INSTALL_DATA} ${WRKSRC}/puppet.gemspec ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/specifications/${PORTNAME}-${PORTVERSION}.gemspec
+	${INSTALL_DATA} ${WRKSRC}/openvox.gemspec ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/specifications/openvox-${PORTVERSION}.gemspec
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
