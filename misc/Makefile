@@ -448,6 +448,7 @@
     SUBDIR += py-gluonnlp
     SUBDIR += py-gpiozero
     SUBDIR += py-halo
+    SUBDIR += py-hf-xet
     SUBDIR += py-hist
     SUBDIR += py-histoprint
     SUBDIR += py-huepy
