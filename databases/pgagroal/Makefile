@@ -9,6 +9,8 @@ WWW=		https://agroal.github.io/pgagroal/
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_armv7=	wants long to be a 64 bit type
+
 BUILD_DEPENDS=	rst2man:textproc/py-docutils
 LIB_DEPENDS=	libcjson.so:devel/libcjson \
 		libev.so:devel/libev
