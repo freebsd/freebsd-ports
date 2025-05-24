@@ -74,16 +74,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		nom-7.1.3 \
 		ntapi-0.4.1 \
 		nu-ansi-term-0.50.1 \
-		nu-derive-value-0.104.0 \
-		nu-engine-0.104.0 \
-		nu-glob-0.104.0 \
-		nu-path-0.104.0 \
-		nu-plugin-0.104.0 \
-		nu-plugin-core-0.104.0 \
-		nu-plugin-protocol-0.104.0 \
-		nu-protocol-0.104.0 \
-		nu-system-0.104.0 \
-		nu-utils-0.104.0 \
+		nu-derive-value-0.104.1 \
+		nu-engine-0.104.1 \
+		nu-glob-0.104.1 \
+		nu-path-0.104.1 \
+		nu-plugin-0.104.1 \
+		nu-plugin-core-0.104.1 \
+		nu-plugin-protocol-0.104.1 \
+		nu-protocol-0.104.1 \
+		nu-system-0.104.1 \
+		nu-utils-0.104.1 \
 		num-format-0.4.4 \
 		num-traits-0.2.19 \
 		omnipath-0.1.6 \
