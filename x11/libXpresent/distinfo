@@ -1,3 +1,3 @@
-TIMESTAMP = 1566903596
-SHA256 (xorg/lib/libXpresent-1.0.0.tar.bz2) = c11ae015141a9afbe10f4f2b8ee00b11adca6373dc1b9808d7c6c138b2da7b8a
-SIZE (xorg/lib/libXpresent-1.0.0.tar.bz2) = 263461
+TIMESTAMP = 1747637953
+SHA256 (xorg/lib/libXpresent-1.0.1.tar.xz) = b964df9e5a066daa5e08d2dc82692c57ca27d00b8cc257e8e960c9f1cf26231b
+SIZE (xorg/lib/libXpresent-1.0.1.tar.xz) = 257136

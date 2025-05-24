@@ -1,1 +1,6 @@
-Xlib-based library for the X Present Extension.
+Xpresent is a library designed to interface the X Present Extension.
+
+The Present extension provides a way for applications to update their
+window contents from a pixmap in a well defined fashion, synchronizing
+with the display refresh and potentially using a more efficient
+mechanism than copying the contents of the source pixmap.

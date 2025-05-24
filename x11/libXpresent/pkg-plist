@@ -4,4 +4,12 @@ lib/libXpresent.so
 lib/libXpresent.so.1
 lib/libXpresent.so.1.0.0
 libdata/pkgconfig/xpresent.pc
+share/man/man3/XPresentFreeInput.3.gz
+share/man/man3/XPresentNotifyMSC.3.gz
+share/man/man3/XPresentPixmap.3.gz
+share/man/man3/XPresentQueryCapabilities.3.gz
+share/man/man3/XPresentQueryExtension.3.gz
+share/man/man3/XPresentQueryVersion.3.gz
+share/man/man3/XPresentSelectInput.3.gz
+share/man/man3/XPresentVersion.3.gz
 share/man/man3/Xpresent.3.gz
