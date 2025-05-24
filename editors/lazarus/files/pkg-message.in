@@ -24,24 +24,21 @@ The Lazarus RAD was installed
    by default:
 
    editors/lazarus
-   editors/lazarus-devel
    editors/lazarus-qt5
-   editors/lazarus-qt5-devel
    editors/lazarus-qt6
-   editors/lazarus-qt6-devel
 
-   You can added those ports if you want support for gtk2, qt5 or qt6
-   interfaces. Please look at net-p2p/transmission-remote-gui like a example of
-   how use it
+   You can added those ports if you want support for gtk2, qt5 or qt6 interfaces.
+   Please look at sysutils/bhyvemgr like a example of how use it.
 
 6) If you want built apps using devel version of lazarus, you must add the
    following into /etc/make.conf file
 
    WANT_LAZARUS_DEVEL=  yes
 
-   It is neccesary for use devel version of lazarus (gtk2, qt5 or qt6)
+   It is neccesary for use devel version of lazarus (gtk2, gtk3, qt5 or qt6)
 
    editors/lazarus-devel
+   editors/lazarus-gtk3-devel
    editors/lazarus-qt5-devel
    editors/lazarus-qt6-devel
 

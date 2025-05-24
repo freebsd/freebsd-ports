@@ -1,5 +1,5 @@
 PORTNAME=	lazarus
-DISTVERSION=	3.8.0
+DISTVERSION=	4.0
 PKGNAMESUFFIX?=  -gtk2
 PORTREVISION?=	0
 CATEGORIES=	editors devel
@@ -9,8 +9,8 @@ MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Portable Delphi-like IDE for the FreePascal compiler (GTK2)
 WWW=		https://www.lazarus-ide.org/
 
-CONFLICTS?=	lazarus-gtk2-devel lazarus-qt5 lazarus-qt5-devel lazarus-qt6 \
-		lazarus-qt6-devel
+CONFLICTS?=	lazarus-gtk2-devel lazarus-gtk3-devel lazarus-qt5 lazarus-qt5-devel \
+		lazarus-qt6 lazarus-qt6-devel
 
 BUILD_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils
 RUN_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_GITLAB=	yes
 GL_ACCOUNT=	freepascal.org/lazarus
 GL_PROJECT=	${PORTNAME}
-GL_COMMIT=	57e899e4bbe50b6653ec20434bdb7799aa629e06
+GL_COMMIT=	9d15c73c91a1545be50bee02b27bd3b43f9d90e8
 
 USES=		desktop-file-utils fpc:run gettext gmake iconv shared-mime-info xorg
 USE_XORG=	x11
@@ -40,7 +40,7 @@ OPTIONS_DEFAULT=	GDB
 .include <bsd.port.options.mk>
 
 LAZARUS_ARCH=	${ARCH:S,amd64,x86_64,}
-LAZARUS_BASE=	3.8.0
+LAZARUS_BASE=	4.0
 
 BUILDNAME=	${LAZARUS_ARCH}-${OPSYS:tl}
 LCL_PLATFORM?=	gtk2
