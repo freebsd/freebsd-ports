@@ -1,5 +1,5 @@
 --- src/Makefile	2025-04-30 02:30:26.000000000 -0700
-+++ src/Makefile	2025-05-09 19:40:18.856441000 -0700
++++ src/Makefile	2025-05-23 14:25:52.122383000 -0700
 @@ -49,9 +49,11 @@
  
  HAS_CHECKMODULE = $(shell command -v checkmodule > /dev/null && echo YES)
@@ -30,7 +30,7 @@
  ifneq (${TARGET},winagent)
  		DEFINES+=-D${uname_S}
  ifeq (${uname_S},Linux)
-@@ -269,10 +273,10 @@
+@@ -269,13 +273,14 @@
  ifeq (${uname_S},FreeBSD)
  		DEFINES+=-DFreeBSD
  		OSSEC_CFLAGS+=-pthread -I/usr/local/include
@@ -43,7 +43,11 @@
  		AR_LDFLAGS+=-L/usr/local/lib
  		AR_LDFLAGS+='-Wl,-rpath,$$ORIGIN/../../lib'
  		PRECOMPILED_OS:=freebsd
-@@ -434,7 +438,6 @@
++		CC?=cc
+ else
+ ifeq (${uname_S},NetBSD)
+ 		DEFINES+=-DNetBSD
+@@ -434,7 +439,6 @@
  
  OSSEC_CFLAGS+=${DEFINES}
  OSSEC_CFLAGS+=-pipe -Wall -Wextra -std=gnu99
@@ -51,7 +55,7 @@
  
  OSSEC_CFLAGS += ${CFLAGS}
  OSSEC_LDFLAGS += ${LDFLAGS}
-@@ -531,8 +534,8 @@
+@@ -531,8 +535,8 @@
  ifneq (,$(filter ${USE_INOTIFY},YES auto yes y Y 1))
  	DEFINES+=-DINOTIFY_ENABLED
  	ifeq (${uname_S},FreeBSD)
@@ -62,7 +66,7 @@
  		OSSEC_CFLAGS+=-I/usr/local/include
  	endif
  endif
-@@ -957,6 +960,8 @@
+@@ -957,6 +961,8 @@
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  else ifeq (${uname_S},Linux)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
@@ -71,7 +75,7 @@
  else ifeq (${uname_S},Darwin)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  endif
-@@ -1186,9 +1191,13 @@
+@@ -1186,9 +1192,13 @@
  	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-ldl -lpthread" ./configure --with-openssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-libpsl --without-brotli --without-nghttp2 --without-zstd
  endif
  else
@@ -85,7 +89,7 @@
  
  
  #### procps #########
-@@ -2295,7 +2304,7 @@
+@@ -2295,7 +2305,7 @@
  #### FIM ######
  
  wazuh-syscheckd: librootcheck.a libwazuh.a ${WAZUHEXT_LIB} build_shared_modules
@@ -94,7 +98,7 @@
  
  #### Monitor #######
  
-@@ -2473,7 +2482,7 @@
+@@ -2473,7 +2483,7 @@
  WPYTHON_DIR := ${INSTALLDIR}/framework/python
  OPTIMIZE_CPYTHON?=no
  WPYTHON_TAR=cpython.tar.gz
@@ -103,7 +107,7 @@
  
  ifneq (,$(filter ${OPTIMIZE_CPYTHON},YES yes y Y 1))
  CPYTHON_FLAGS=--enable-optimizations
-@@ -2487,22 +2496,45 @@
+@@ -2487,22 +2497,45 @@
  endif
  
  ifeq (,$(wildcard ${EXTERNAL_CPYTHON}/python))
@@ -129,7 +133,7 @@
 +endif
  
  python_dependencies := requirements.txt
- 
++
 +ifeq (${uname_S},FreeBSD)
 +install_dependencies:
 +ifneq (,$(wildcard ${EXTERNAL_CPYTHON}))
@@ -144,14 +148,14 @@
 +
 +install_api:
 +	LD_LIBRARY_PATH="$(STAGEDIR)${INSTALLDIR}/lib" LDFLAGS="-L$(STAGEDIR)${INSTALLDIR}/lib" $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -m pip install wazuh-python/api*.whl --root=$(STAGEDIR) --prefix=${WPYTHON_DIR} --no-deps --no-compile
-+
+ 
 +install_mitre:
 +	export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1 && cd ../tools/mitre && $(STAGEDIR)${WPYTHON_DIR}/bin/python3 mitredb.py -d $(STAGEDIR)${INSTALLDIR}/var/db/mitre.db
 +else
  install_dependencies: install_python
  ifneq (,$(wildcard ${EXTERNAL_CPYTHON}))
  	${WPYTHON_DIR}/bin/python3 -m pip install --upgrade pip --index-url=file://${ROUTE_PATH}/${EXTERNAL_CPYTHON}/Dependencies/simple
-@@ -2519,6 +2551,7 @@
+@@ -2519,6 +2552,7 @@
  
  install_mitre: install_python
  	cd ../tools/mitre && ${WPYTHON_DIR}/bin/python3 mitredb.py -d ${INSTALLDIR}/var/db/mitre.db

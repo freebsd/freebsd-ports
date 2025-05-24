@@ -1,6 +1,7 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.12.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/40/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
@@ -20,15 +21,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 
-BUILD_DEPENDS=	cmake:devel/cmake-core \
-		autoconf>=2.71:devel/autoconf \
-		bash>0:shells/bash
-LIB_DEPENDS+=	libcurl.so:ftp/curl \
+BUILD_DEPENDS=	autoconf>=2.71:devel/autoconf \
+		bash>0:shells/bash \
+		cmake:devel/cmake-core
+LIB_DEPENDS+=	libarrow.so:databases/arrow \
+		libcurl.so:ftp/curl \
+		libepoll-shim.so:devel/libepoll-shim \
+		libffi.so:devel/libffi \
 		libgdbm.so:databases/gdbm \
 		libnghttp2.so:www/libnghttp2 \
-		libffi.so:devel/libffi \
-		libarrow.so:databases/arrow \
-		libepoll-shim.so:devel/libepoll-shim
+		libopenblas.so:math/openblas
 RUN_DEPENDS=	bash>0:shells/bash
 
 USES=		cpe gmake perl5 python:3.11 readline shebangfix sqlite:3 uidfix
@@ -64,7 +66,7 @@ EXTERNAL_DISTFILES=	audit-userspace.tar.gz:wazuh_sources \
 			lua.tar.gz:wazuh_sources \
 			lzma.tar.gz:wazuh_sources \
 			msgpack.tar.gz:wazuh_sources \
-			nlohmann.tar.gz:wazuh_sources \
+			nlohmann.tar.gz:wazuh_cache \
 			openssl.tar.gz:wazuh_sources \
 			popt.tar.gz:wazuh_sources \
 			procps.tar.gz:wazuh_sources \
