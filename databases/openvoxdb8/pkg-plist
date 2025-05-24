@@ -1,0 +1,23 @@
+bin/puppetdb
+%%DATADIR%%/cli/apps/anonymize
+%%DATADIR%%/cli/apps/config-migration
+%%DATADIR%%/cli/apps/delete-reports
+%%DATADIR%%/cli/apps/foreground
+%%DATADIR%%/cli/apps/ssl-setup
+%%DATADIR%%/cli/apps/start
+%%DATADIR%%/cli/apps/stop
+%%DATADIR%%/cli/apps/reload
+%%DATADIR%%/cli/apps/upgrade
+%%DATADIR%%/ezbake-functions.sh
+%%DATADIR%%/ezbake.manifest
+%%DATADIR%%/puppetdb.jar
+@group puppetdb
+@sample etc/puppetdb/bootstrap.cfg.sample
+@sample etc/puppetdb/conf.d/auth.conf.sample
+@sample etc/puppetdb/conf.d/config.ini.sample
+@sample etc/puppetdb/conf.d/database.ini.sample
+@sample etc/puppetdb/conf.d/jetty.ini.sample
+@sample etc/puppetdb/conf.d/repl.ini.sample
+@sample etc/puppetdb/logback.xml.sample
+@sample etc/puppetdb/request-logging.xml.sample
+@group

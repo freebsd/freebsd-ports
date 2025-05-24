@@ -1,7 +1,7 @@
-PORTNAME=	puppetdb
-PORTVERSION=	8.8.1
+PORTNAME=	openvoxdb
+PORTVERSION=	8.9.1
 CATEGORIES=	databases java
-MASTER_SITES=	https://downloads.puppetlabs.com/puppetdb/
+MASTER_SITES=	https://artifacts.voxpupuli.org/${PORTNAME}/${PORTVERSION}/
 PKGNAMESUFFIX=	8
 
 MAINTAINER=	puppet@FreeBSD.org
@@ -30,12 +30,16 @@ SHEBANG_FILES=	ext/bin/puppetdb \
 JAVA_VERSION=	11+
 NO_ARCH=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/puppetdb-${PORTVERSION}
 
 USERS=		puppetdb
 GROUPS=		puppetdb
 
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 SUB_FILES=	pkg-message
+
+DATADIR=	${PREFIX}/share/puppetdb
+ETCDIR=		${PREFIX}/etc/puppetdb
 
 post-patch:
 .for file in Makefile ext/bin/puppetdb ext/cli/ssl-setup \
