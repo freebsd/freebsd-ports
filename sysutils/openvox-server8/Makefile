@@ -1,7 +1,7 @@
-PORTNAME=	puppetserver
-PORTVERSION=	8.7.0
+PORTNAME=	openvox-server
+PORTVERSION=	8.8.1
 CATEGORIES=	sysutils java
-MASTER_SITES=	https://downloads.puppetlabs.com/puppet/
+MASTER_SITES=	https://artifacts.voxpupuli.org/${PORTNAME}/${PORTVERSION}/
 PKGNAMESUFFIX=	8
 
 MAINTAINER=	puppet@FreeBSD.org
@@ -14,14 +14,15 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=Bundled JNI only support some architectures
 
 RUN_DEPENDS=	bash>=0:shells/bash \
-		puppet8>=8.0:sysutils/puppet8 \
-		rubygem-puppetserver-ca>=1:sysutils/rubygem-puppetserver-ca \
+		openvox-agent8>=8.0:sysutils/openvox-agent8 \
+		rubygem-openvoxserver-ca>=1:sysutils/rubygem-openvoxserver-ca \
 		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet \
 		sudo>=1:security/sudo
 
 USES=		ruby java shebangfix
 JAVA_VERSION=	11+
 USE_RC_SUBR=	puppetserver
+WRKSRC=		${WRKDIR}/puppetserver-${PORTVERSION}
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -32,6 +33,9 @@ SHEBANG_FILES=	ext/bin/puppetserver
 
 USERS=		puppet
 GROUPS=		puppet
+
+DATADIR=	${PREFIX}/share/puppetserver
+ETCDIR=		${PREFIX}/etc/puppetserver
 
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 SUB_FILES=	pkg-message

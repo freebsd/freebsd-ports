@@ -800,6 +800,7 @@
     SUBDIR += opentofu
     SUBDIR += openupsd
     SUBDIR += openvox-agent8
+    SUBDIR += openvox-server8
     SUBDIR += osinfo-db-tools
     SUBDIR += p5-App-Regather
     SUBDIR += p5-App-RunCron
