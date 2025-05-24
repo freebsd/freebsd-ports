@@ -1,5 +1,5 @@
 PORTNAME=	instructor
-DISTVERSION=	1.8.2
+DISTVERSION=	1.8.3
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openai>=1.52.0<2.0.0:misc/py-openai@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openai>=1.70.0<2.0.0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.8.0<3.0.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docstring_parser>=0.16<1.0:textproc/py-docstring_parser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.9.0<1.0.0:devel/py-typer@${PY_FLAVOR} \
