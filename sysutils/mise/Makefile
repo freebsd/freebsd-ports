@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.5.5
+DISTVERSION=	2025.5.11
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -62,7 +62,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		binstall-tar-0.4.42 \
 		bit-set-0.6.0 \
 		bit-vec-0.7.0 \
-		bitflags-2.9.0 \
+		bitflags-2.9.1 \
 		block-buffer-0.10.4 \
 		bstr-1.12.0 \
 		built-0.8.0 \
@@ -75,7 +75,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bzip2-sys-0.1.13+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.2.22 \
+		cc-1.2.23 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
@@ -147,6 +147,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		dtor-0.0.6 \
 		dtor-proc-macro-0.0.5 \
 		duct-0.13.7 \
+		duct-1.0.0 \
 		dunce-1.0.5 \
 		ed25519-2.2.3 \
 		ed25519-dalek-2.1.1 \
@@ -160,7 +161,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		equivalent-1.0.2 \
 		erased-serde-0.4.6 \
 		errno-0.2.8 \
-		errno-0.3.11 \
+		errno-0.3.12 \
 		errno-dragonfly-0.1.2 \
 		exec-0.3.1 \
 		expr-lang-0.3.0 \
@@ -201,11 +202,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		gimli-0.31.1 \
 		gix-0.72.1 \
 		gix-actor-0.35.1 \
-		gix-archive-0.21.1 \
-		gix-attributes-0.26.0 \
+		gix-archive-0.21.2 \
+		gix-attributes-0.26.1 \
 		gix-bitmap-0.2.14 \
 		gix-chunk-0.4.11 \
-		gix-command-0.6.0 \
+		gix-command-0.6.1 \
 		gix-commitgraph-0.28.0 \
 		gix-config-0.45.1 \
 		gix-config-value-0.15.0 \
@@ -215,9 +216,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		gix-dir-0.14.1 \
 		gix-discover-0.40.1 \
 		gix-features-0.42.1 \
-		gix-filter-0.19.1 \
+		gix-filter-0.19.2 \
 		gix-fs-0.15.0 \
-		gix-glob-0.20.0 \
+		gix-glob-0.20.1 \
 		gix-hash-0.18.0 \
 		gix-hashtable-0.8.1 \
 		gix-ignore-0.15.0 \
@@ -252,7 +253,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		gix-validate-0.10.0 \
 		gix-worktree-0.41.0 \
 		gix-worktree-state-0.19.0 \
-		gix-worktree-stream-0.21.1 \
+		gix-worktree-stream-0.21.2 \
 		glob-0.3.2 \
 		globset-0.4.16 \
 		globwalk-0.9.1 \
@@ -279,7 +280,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		hyper-1.6.0 \
 		hyper-rustls-0.27.5 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.11 \
+		hyper-util-0.1.12 \
 		i18n-config-0.4.7 \
 		i18n-embed-0.15.4 \
 		i18n-embed-fl-0.9.4 \
@@ -290,8 +291,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		icu_locale_core-2.0.0 \
 		icu_normalizer-2.0.0 \
 		icu_normalizer_data-2.0.0 \
-		icu_properties-2.0.0 \
-		icu_properties_data-2.0.0 \
+		icu_properties-2.0.1 \
+		icu_properties_data-2.0.1 \
 		icu_provider-2.0.0 \
 		ident_case-1.0.1 \
 		idna-1.0.3 \
@@ -317,8 +318,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
-		jiff-0.2.13 \
-		jiff-static-0.2.13 \
+		jiff-0.2.14 \
+		jiff-static-0.2.14 \
 		jiff-tzdb-0.1.4 \
 		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.33 \
@@ -356,7 +357,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		miette-derive-7.6.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
-		minisign-verify-0.2.3 \
+		minisign-verify-0.2.4 \
 		miniz_oxide-0.8.8 \
 		mio-1.0.3 \
 		mlua-0.10.3 \
@@ -392,7 +393,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		os-release-0.1.0 \
 		os_pipe-1.2.1 \
 		overload-0.1.1 \
-		owo-colors-4.2.0 \
+		owo-colors-4.2.1 \
 		papergrid-0.15.0 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
@@ -509,6 +510,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		sha2-0.10.9 \
 		sharded-slab-0.1.7 \
 		shared_child-1.0.2 \
+		shared_thread-0.1.0 \
 		shell-escape-0.1.5 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
@@ -637,7 +639,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.57.0 \
 		windows-core-0.57.0 \
-		windows-core-0.61.0 \
+		windows-core-0.61.2 \
 		windows-implement-0.57.0 \
 		windows-implement-0.60.0 \
 		windows-interface-0.57.0 \
@@ -645,9 +647,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows-link-0.1.1 \
 		windows-registry-0.4.0 \
 		windows-result-0.1.2 \
-		windows-result-0.3.2 \
+		windows-result-0.3.4 \
 		windows-strings-0.3.1 \
-		windows-strings-0.4.0 \
+		windows-strings-0.4.2 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
@@ -675,7 +677,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		writeable-0.6.1 \
 		x25519-dalek-2.0.1 \
 		xattr-1.5.0 \
-		xx-2.1.0 \
+		xx-2.1.1 \
 		xz2-0.1.7 \
 		yansi-1.0.1 \
 		yoke-0.8.0 \
@@ -689,9 +691,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zerotrie-0.2.2 \
 		zerovec-0.11.2 \
 		zerovec-derive-0.11.1 \
-		zip-2.5.0 \
+		zip-2.4.2 \
 		zip-3.0.0 \
-		zipsign-api-0.1.3 \
+		zipsign-api-0.1.4 \
 		zlib-rs-0.5.0 \
 		zopfli-0.8.2 \
 		zstd-0.13.3 \
