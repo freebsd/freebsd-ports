@@ -1,11 +1,10 @@
 PORTNAME=	pyinfra
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2
-PORTREVISION=	1
+DISTVERSION=	3.3.1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dev@submerge.ch
+MAINTAINER=	DtxdF@disroot.org
 COMMENT=	Automates infrastructure using Python
 WWW=		https://pyinfra.com/
 
@@ -25,14 +24,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>2:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typeguard>0:devel/py-typeguard@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>6:devel/py-pyyaml@${PY_FLAVOR}
 
 USES=		pytest python
 USE_GITHUB=	yes
 GH_ACCOUNT=	pyinfra-dev
 USE_PYTHON=	autoplist distutils
 
-NO_ARCH=	yes
+# 'test_sshuserclient' fails because paramiko.PKey doesn't have the 'from_type_string' method
+# which was added in 3.2 and we currently have paramiko==2.x.x
+PYTEST_BROKEN_TESTS=	test_sshuserclient
 # Most of the ignored tests fail because docker is missing.
 # The *_ensure_newline_* ones fail when pyinfra is not installed first.
 PYTEST_IGNORED_TESTS=	test_int_docker_install_package_ubuntu \
@@ -47,6 +49,8 @@ PYTEST_IGNORED_TESTS=	test_int_docker_install_package_ubuntu \
 # TestSSHUserConfig.test_missing_hostkey is failing currently, due to an
 # undocumented dependency on code only available in paramiko >= 3.2:
 # https://github.com/pyinfra-dev/pyinfra/issues/1290
+
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
