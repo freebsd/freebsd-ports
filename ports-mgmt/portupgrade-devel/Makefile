@@ -32,12 +32,8 @@ DOCSDIR=	${PREFIX}/share/doc/pkgtools
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
-
 INSTALL_TARGET=		install
-.if ${PORT_OPTIONS:MDOCS}
-INSTALL_TARGET+=	install-doc
-.endif
+DOCS_INSTALL_TARGET=	install-doc
 
 # For PKG_DBDRIVER={bdb_btree,bdb_hash}
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:databases/ruby-bdb
@@ -48,13 +44,10 @@ regression-test: patch
 post-patch:	.SILENT
 	REVISION=`readlink "${_DISTDIR}/portupgrade/latest" | ${SED} -E -e 's,.*pkgtools-(.*).tar.gz,\1,g'` && ${SED} -E -e "s,%%DATE%%,${PORTVERSION},g;s,%%REVISION%%,$${REVISION},g" \
 	    ${WRKSRC}/lib/pkgtools/revision.rb.in > ${WRKSRC}/lib/pkgtools/revision.rb
-.if ${RUBY_VERSION_CODE:U} >= 320
 	cd ${WRKSRC} && ${FIND} bin etc lib -type f |\
 		${XARGS} ${REINPLACE_CMD} 's/File\.exists\?/File.exist?/'
-.endif
-
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
