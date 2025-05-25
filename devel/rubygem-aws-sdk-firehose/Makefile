@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-firehose
-PORTVERSION=	1.91.0
+PORTVERSION=	1.93.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
