@@ -291,7 +291,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-lockbox>=1.3.0<1.4:security/rubygem-lockbox \
 	rubygem-valid_email>=0.1<1:mail/rubygem-valid_email \
 	rubygem-jsonb_accessor>=1.4<2:www/rubygem-jsonb_accessor \
-	rubygem-json>=2.11.2<2.12:devel/rubygem-json \
+	rubygem-json-gitlab>=2.11.2<2.12:devel/rubygem-json-gitlab \
 	rubygem-json_schemer>=2.3.0<2.4:devel/rubygem-json_schemer \
 	rubygem-oj>=3.16.0<3.17:devel/rubygem-oj \
 	rubygem-oj-introspect>=0.8<1:devel/rubygem-oj-introspect \
