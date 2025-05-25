@@ -31,23 +31,17 @@ MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}" \
 EXAMPLESDIR=	${PREFIX}/share/examples/pkgtools
 DOCSDIR=	${PREFIX}/share/doc/pkgtools
 
-.include <bsd.port.pre.mk>
-
 INSTALL_TARGET=		install
-.if ${PORT_OPTIONS:MDOCS}
-INSTALL_TARGET+=	install-doc
-.endif
+DOCS_INSTALL_TARGET=	install-doc
 
 # For PKG_DBDRIVER={bdb_btree,bdb_hash}
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:databases/ruby-bdb
 
-.if ${RUBY_VERSION_CODE:U} >= 320
 post-patch:
 	cd ${WRKSRC} && ${FIND} bin etc lib -type f |\
 		${XARGS} ${REINPLACE_CMD} 's/File\.exists\?/File.exist?/'
-.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
