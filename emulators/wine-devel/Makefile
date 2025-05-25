@@ -1,12 +1,11 @@
 PORTNAME=	wine
-DISTVERSION=	10.6
-PORTREVISION=	2
+DISTVERSION=	10.8
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/10.x/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	monwarez@mailoo.org
 COMMENT=	Microsoft Windows compatibility environment
 WWW=		https://www.winehq.org
 

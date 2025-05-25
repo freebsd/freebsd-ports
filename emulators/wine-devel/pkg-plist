@@ -1254,6 +1254,8 @@ include/wine/windows/windows.ui.input.h
 include/wine/windows/windows.ui.input.idl
 include/wine/windows/windows.ui.notifications.h
 include/wine/windows/windows.ui.notifications.idl
+include/wine/windows/windows.ui.viewmanagement.core.h
+include/wine/windows/windows.ui.viewmanagement.core.idl
 include/wine/windows/windows.ui.viewmanagement.h
 include/wine/windows/windows.ui.viewmanagement.idl
 include/wine/windows/windows.ui.xaml.h
@@ -1415,6 +1417,7 @@ lib/wine/%%WINEARCH%%-unix/libcomdlg32.a
 lib/wine/%%WINEARCH%%-unix/libcoml2.a
 lib/wine/%%WINEARCH%%-unix/libcompstui.a
 lib/wine/%%WINEARCH%%-unix/libcomsvcs.a
+lib/wine/%%WINEARCH%%-unix/libcoremessaging.a
 lib/wine/%%WINEARCH%%-unix/libcredui.a
 lib/wine/%%WINEARCH%%-unix/libcrypt32.a
 lib/wine/%%WINEARCH%%-unix/libcryptdll.a
@@ -1973,6 +1976,7 @@ lib/wine/%%WINEARCH%%-windows/libcoml2.a
 lib/wine/%%WINEARCH%%-windows/libcompiler-rt.a
 lib/wine/%%WINEARCH%%-windows/libcompstui.a
 lib/wine/%%WINEARCH%%-windows/libcomsvcs.a
+lib/wine/%%WINEARCH%%-windows/libcoremessaging.a
 lib/wine/%%WINEARCH%%-windows/libcredui.a
 lib/wine/%%WINEARCH%%-windows/libcrypt32.a
 lib/wine/%%WINEARCH%%-windows/libcryptdll.a
