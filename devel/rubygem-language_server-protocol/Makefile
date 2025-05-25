@@ -1,5 +1,5 @@
 PORTNAME=	language_server-protocol
-PORTVERSION=	3.17.0.4
+PORTVERSION=	3.17.0.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
