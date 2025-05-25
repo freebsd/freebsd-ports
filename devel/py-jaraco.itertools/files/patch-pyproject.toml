@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-05-10 16:39:26 UTC
++++ pyproject.toml
+@@ -2,8 +2,6 @@ requires = [
+ requires = [
+ 	"setuptools>=61.2",
+ 	"setuptools_scm[toml]>=3.4.1",
+-	# jaraco/skeleton#174
+-	"coherent.licensed",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+@@ -21,7 +19,7 @@ requires-python = ">=3.9"
+ 	"Programming Language :: Python :: 3 :: Only",
+ ]
+ requires-python = ">=3.9"
+-license = "MIT"
++license = { text = "MIT" }
+ dependencies = [
+ 	"more_itertools>=4.0.0",
+ 	"inflect",
