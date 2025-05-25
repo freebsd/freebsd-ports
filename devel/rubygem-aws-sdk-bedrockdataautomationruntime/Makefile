@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-bedrockdataautomationruntime
-PORTVERSION=	1.6.0
+PORTVERSION=	1.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
