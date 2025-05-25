@@ -6,7 +6,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	XStatic-svg-edit-moin-${DISTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	svg-edit-moin 2012.11.27 (XStatic packaging standard)
 WWW=		https://code.google.com/archive/p/svg-edit/
 
