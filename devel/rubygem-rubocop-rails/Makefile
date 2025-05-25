@@ -1,5 +1,5 @@
 PORTNAME=	rubocop-rails
-PORTVERSION=	2.31.0
+PORTVERSION=	2.32.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-activesupport61>=4.2.0:devel/rubygem-activesupport61 \
 		rubygem-lint_roller>=1.1<2:devel/rubygem-lint_roller \
 		rubygem-rack>=1.1:www/rubygem-rack \
 		rubygem-rubocop>=1.75.0<2.0:devel/rubygem-rubocop \
-		rubygem-rubocop-ast>=1.38.0:devel/rubygem-rubocop-ast
+		rubygem-rubocop-ast>=1.44.0:devel/rubygem-rubocop-ast
 
 USES=		cpe gem
 
