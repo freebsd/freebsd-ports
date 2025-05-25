@@ -5,19 +5,20 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		anstyle-1.0.10 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
-		anstyle-wincon-3.0.7 \
+		anstyle-wincon-3.0.8 \
 		async-trait-0.1.88 \
 		autocfg-1.4.0 \
-		backtrace-0.3.74 \
+		backtrace-0.3.75 \
 		backtrace-ext-0.2.1 \
 		bitflags-1.3.2 \
-		bitflags-2.9.0 \
+		bitflags-2.9.1 \
+		bumpalo-3.17.0 \
 		bytes-1.10.1 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.37 \
-		clap_builder-4.5.37 \
-		clap_complete-4.5.47 \
+		clap-4.5.38 \
+		clap_builder-4.5.38 \
+		clap_complete-4.5.50 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
@@ -25,21 +26,21 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
-		ctrlc-3.4.6 \
+		ctrlc-3.4.7 \
 		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
 		either-1.15.0 \
 		equivalent-1.0.2 \
-		errno-0.3.11 \
+		errno-0.3.12 \
 		fastrand-2.3.0 \
 		filetime-0.2.25 \
 		futures-core-0.3.31 \
 		futures-task-0.3.31 \
 		futures-util-0.3.31 \
-		getrandom-0.2.15 \
-		getrandom-0.3.2 \
+		getrandom-0.2.16 \
+		getrandom-0.3.3 \
 		gimli-0.31.1 \
-		hashbrown-0.15.2 \
+		hashbrown-0.15.3 \
 		heck-0.5.0 \
 		indexmap-2.9.0 \
 		inotify-0.9.6 \
@@ -47,7 +48,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		is_ci-1.2.0 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.15 \
-		kqueue-1.0.8 \
+		js-sys-0.3.77 \
+		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
 		libc-0.2.172 \
 		libredox-0.1.3 \
@@ -56,18 +58,19 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lock_api-0.4.12 \
 		log-0.4.27 \
 		memchr-2.7.4 \
-		miette-7.5.0 \
-		miette-derive-7.5.0 \
+		miette-7.6.0 \
+		miette-derive-7.6.0 \
 		miniz_oxide-0.8.8 \
 		mio-0.8.11 \
-		mio-1.0.3 \
-		nix-0.29.0 \
+		mio-1.0.4 \
+		nix-0.30.1 \
 		notify-5.2.0 \
 		nu-ansi-term-0.50.1 \
 		object-0.36.7 \
 		once_cell-1.21.3 \
+		once_cell_polyfill-1.70.1 \
 		option-ext-0.2.0 \
-		owo-colors-4.2.0 \
+		owo-colors-4.2.1 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		pin-project-lite-0.2.16 \
@@ -77,13 +80,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		r-efi-5.2.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.11 \
+		redox_syscall-0.5.12 \
 		redox_users-0.5.0 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
 		rustc-demangle-0.1.24 \
-		rustix-1.0.5 \
+		rustix-1.0.7 \
+		rustversion-1.0.21 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
@@ -93,7 +97,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde_spanned-0.6.8 \
 		shell-words-1.1.0 \
 		shellexpand-3.1.1 \
-		signal-hook-registry-1.4.4 \
+		signal-hook-registry-1.4.5 \
 		slab-0.4.9 \
 		smallvec-1.15.0 \
 		socket2-0.5.9 \
@@ -101,28 +105,32 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		supports-color-3.0.2 \
 		supports-hyperlinks-3.1.0 \
 		supports-unicode-3.0.0 \
-		syn-2.0.100 \
-		tempfile-3.19.1 \
+		syn-2.0.101 \
+		tempfile-3.20.0 \
 		terminal_size-0.4.2 \
 		textwrap-0.16.2 \
-		thiserror-1.0.69 \
 		thiserror-2.0.12 \
-		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.12 \
-		tokio-1.44.2 \
+		tokio-1.45.1 \
 		tokio-macros-2.5.0 \
-		toml-0.8.20 \
-		toml_datetime-0.6.8 \
-		toml_edit-0.22.24 \
+		toml-0.8.22 \
+		toml_datetime-0.6.9 \
+		toml_edit-0.22.26 \
+		toml_write-0.1.1 \
 		unicode-ident-1.0.18 \
 		unicode-linebreak-0.1.5 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
 		utf8parse-0.2.2 \
-		uuid-1.16.0 \
+		uuid-1.17.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasi-0.14.2+wasi-0.2.4 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
 		winapi-util-0.1.9 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
@@ -153,5 +161,5 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.7.6 \
+		winnow-0.7.10 \
 		wit-bindgen-rt-0.39.0
