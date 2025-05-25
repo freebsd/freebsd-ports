@@ -67,6 +67,8 @@ lib/libKirigamiAddonsStatefulApp.so.6
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormDelegateSeparator.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormGridContainer.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormHeader.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormIconDelegate.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormLinkDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormPasswordFieldDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormPlaceholderMessageDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormRadioDelegate.qml
@@ -186,6 +188,7 @@ share/locale/ka/LC_MESSAGES/kirigami-addons6.mo
 share/locale/ko/LC_MESSAGES/kirigami-addons6.mo
 share/locale/lt/LC_MESSAGES/kirigami-addons6.mo
 share/locale/lv/LC_MESSAGES/kirigami-addons6.mo
+share/locale/nb/LC_MESSAGES/kirigami-addons6.mo
 share/locale/nl/LC_MESSAGES/kirigami-addons6.mo
 share/locale/nn/LC_MESSAGES/kirigami-addons6.mo
 share/locale/pl/LC_MESSAGES/kirigami-addons6.mo
