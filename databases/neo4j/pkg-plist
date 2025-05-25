@@ -1,7 +1,7 @@
 bin/cypher-shell
 bin/neo4j
 bin/neo4j-admin
-@sample etc/neo4j.conf.sample
+@sample %%ETCDIR%%/neo4j.conf.sample
 neo4j/lib/FastInfoset-1.2.16.jar
 neo4j/lib/WMI4Java-1.6.3.jar
 neo4j/lib/annotations-%%DISTVERSION%%.jar
@@ -172,6 +172,9 @@ neo4j/lib/txw2-2.3.2.jar
 neo4j/lib/zstd-jni-1.5.0-4.jar
 neo4j/lib/zstd-proxy-%%DISTVERSION%%.jar
 neo4j/libexec/tools/cypher-shell.jar
-@dir etc/neo4j-certificates
 @dir neo4j/lib/plugins
-@dir %%DBDIR%%
+@dir(%%USERS%%,%%GROUPS%%,750) %%CERTDIR%%
+@dir(%%USERS%%,%%GROUPS%%,750) %%DBDIR%%
+@dir(%%USERS%%,%%GROUPS%%,750) %%DBDATADIR%%
+@dir(%%USERS%%,%%GROUPS%%,750) %%METRICSDIR%%
+@dir(%%USERS%%,%%GROUPS%%,750) %%DBIMPORTDIR%%

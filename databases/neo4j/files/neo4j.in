@@ -7,6 +7,18 @@
 # Add the following line to /etc/rc.conf to enable neo4j:
 #
 # neo4j_enable=YES
+#
+# The following rc.conf variable can be set:
+#
+# For user/group to run neo4j under:
+#
+# neo4j_user	(str)	Default: neo4j
+# neo4j_group	(str)	Default: neo4j
+#
+# For service jail:
+#
+# neo4j_svcj_options	(str)	Default: net_basic
+#
 
 . /etc/rc.subr
 
@@ -17,21 +29,30 @@ desc="Graphing database"
 load_rc_config $name
 
 : ${neo4j_enable:=NO}
+: ${neo4j_user=neo4j}
+: ${neo4j_group=neo4j}
+: ${neo4j_svcj_options:=net_basic}
+: ${neo4j_env:="HOME=%%DBDIR%% NEO4J_CONF=%%ETCDIR%% JAVA_HOME=%%JAVA_HOME%%"}
 
 command=%%PREFIX%%/bin/neo4j
-start_cmd="$command start"
+procname=%%JAVA_HOME%%/bin/java
+start_cmd="su -m $neo4j_user -c \"$command start\""
 start_precmd=neo4j_prestart
-stop_cmd="$command stop"
-status_cmd="$command status"
+stop_cmd="su -m $neo4j_user -c \"$command stop\""
+status_cmd="su -m $neo4j_user -c \"$command status\""
 
 neo4j_prestart()
 {
-	NEO4J_DATA=%%DBDIR%%
+	NEO4J_DATA=%%DBDIR%%/data
+	NEO4J_METRICS=%%DBDIR%%/metrics
 	NEO4J_LIB=%%PREFIX%%/neo4j/lib
 	NEO4J_LOGS=%%LOGDIR%%
 	NEO4J_PLUGINS=${NEO4J_LIB}/plugins
 	NEO4J_RUN=%%RUNDIR%%
-	mkdir -p ${NEO4J_LOGS} ${NEO4J_RUN}
+	[ -d ${NEO4J_LOGS} ] || install -d -o ${neo4j_user} -g ${neo4j_group} -m 0750 ${NEO4J_LOGS}
+	[ -d ${NEO4J_RUN} ] || install -d -o ${neo4j_user} -g ${neo4j_group} ${NEO4J_RUN}
+	[ -d ${NEO4J_DATA} ] || install -d -o ${neo4j_user} -g ${neo4j_group} -m 0750 ${NEO4J_DATA}
+	[ -d ${NEO4J_METRICS} ] || install -d -o ${neo4j_user} -g ${neo4j_group} -m 0750 ${NEO4J_METRICS}
 }
 
 run_rc_command $1
