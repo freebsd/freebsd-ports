@@ -36,6 +36,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-nghttp2 \
 		--shared-zlib \
 		--without-npm
+CXXFLAGS_powerpc64=	-mpower8-vector
 HAS_CONFIGURE=	yes
 MAKE_ENV=	CC.host="${CCACHE_BIN} ${CC}" \
 		CFLAGS.host="${CFLAGS}" \
@@ -65,8 +66,6 @@ ICU_BUILD_DEPENDS=	icu>=69.1:devel/icu
 ICU_CONFIGURE_ON=	--with-intl=system-icu
 ICU_LIB_DEPENDS=	libicui18n.so:devel/icu
 JIT_CONFIGURE_OFF=	--v8-lite-mode
-
-CXXFLAGS_powerpc64=	-mpower8-vector
 
 .include "Makefile.version"
 .include <bsd.port.options.mk>
