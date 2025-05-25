@@ -1,3 +1,3 @@
-TIMESTAMP = 1722272048
-SHA256 (pytest_alembic-0.11.1.tar.gz) = a920d8770b5be77326c5c1b2bd8d4d4a0dd8fc2c2d57abbcd1fec28a21131b85
-SIZE (pytest_alembic-0.11.1.tar.gz) = 29977
+TIMESTAMP = 1747715414
+SHA256 (pytest_alembic-0.12.0.tar.gz) = 9db35d092c48ce537eef8f3268050bef8b75016b51cc626ff1f2259e4921fecc
+SIZE (pytest_alembic-0.12.0.tar.gz) = 30382
