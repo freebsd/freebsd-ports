@@ -1,6 +1,7 @@
 share/man/man3/RT::Extension::MandatoryOnTransition.3.gz
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Elements/EditCustomFields/BeforeCustomFields
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Elements/EditCustomFields/MassageCustomFields
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Elements/ListActions/ModifyRow
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/Helpers/TicketUpdate/ProcessArguments
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/RTIR/Incident/Elements/ReplyForm/AfterWorked
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/RTIR/Incident/Reply/index.html/BeforeUpdate
@@ -16,6 +17,18 @@ share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/m/ticket/create/BeforeCreate
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/m/ticket/reply/AfterWorked
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Callbacks/RT-Extension-MandatoryOnTransition/m/ticket/reply/BeforeUpdate
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Helpers/QueueRule
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Helpers/QueueRuleRequires
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Helpers/QueueTransition
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Helpers/QueueTransitionRequires
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/MandatoryOnTransition/Elements/QueueContent
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/MandatoryOnTransition/Elements/QueueNav
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/MandatoryOnTransition/Elements/QueueRule
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/MandatoryOnTransition/Elements/QueueRuleRequires
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/MandatoryOnTransition/Elements/QueueTransition
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/MandatoryOnTransition/Elements/QueueTransitionRequires
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/MandatoryOnTransition/Elements/SelectCustomFieldOperator
+share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/html/Widgets/Form/MandatoryOnTransition
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/lib/RT/Extension/MandatoryOnTransition.pm
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/lib/RT/Extension/MandatoryOnTransition/Test.pm
 share/rt%%RT_VER%%/plugins/RT-Extension-MandatoryOnTransition/lib/RT/Extension/MandatoryOnTransition/Test.pm.in

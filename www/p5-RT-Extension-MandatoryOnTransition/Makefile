@@ -1,5 +1,5 @@
 PORTNAME=	RT-Extension-MandatoryOnTransition
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 
