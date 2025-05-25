@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-synthetics
-PORTVERSION=	1.63.0
+PORTVERSION=	1.65.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
