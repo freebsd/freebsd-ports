@@ -479,6 +479,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/instruments/GB/open hihat.fui
 %%DATADIR%%/instruments/GB/snare.fui
 %%DATADIR%%/instruments/GB/square fade-in.fui
+%%DATADIR%%/instruments/Lynx/harmonica.fui
 %%DATADIR%%/instruments/NES/0-2-5_arp_lead.fui
 %%DATADIR%%/instruments/NES/0-3-5_arp_lead.fui
 %%DATADIR%%/instruments/NES/Noise Hi-Hat Closed.fui
