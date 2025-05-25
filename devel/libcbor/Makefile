@@ -1,7 +1,7 @@
 PORTNAME=	libcbor
 PORTVERSION=	0.12.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,8 +10,6 @@ WWW=		https://github.com/PJK/libcbor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
-
-LIB_DEPENDS=	libcjson.so:devel/libcjson
 
 USES=		cmake pathfix
 
