@@ -9,7 +9,7 @@ lib/cmake/libavif/libavif-config.cmake
 %%PIXBUF%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-avif.so
 lib/libavif.so
 lib/libavif.so.16
-lib/libavif.so.16.2.1
+lib/libavif.so.16.3.0
 libdata/pkgconfig/libavif.pc
 %%MANPAGES%%share/man/man1/avifdec.1.gz
 %%MANPAGES%%share/man/man1/avifenc.1.gz
