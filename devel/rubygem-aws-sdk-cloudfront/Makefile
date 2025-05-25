@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-cloudfront
-PORTVERSION=	1.117.0
+PORTVERSION=	1.118.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
