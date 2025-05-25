@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-monitoring-v3
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-monitoring-v3/la
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-gapic-common>=0.25.0<2.0:devel/rubygem-gapic-common \
+RUN_DEPENDS=	rubygem-gapic-common>=1.0<2:devel/rubygem-gapic-common \
 		rubygem-google-cloud-errors>=1.0<2:net/rubygem-google-cloud-errors
 
 USES=		gem
