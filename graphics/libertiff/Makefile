@@ -9,11 +9,11 @@ WWW=		https://github.com/libertiff/libertiff
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-TEST_DEPENDS=	googletest>=1.12.1:devel/googletest
+BUILD_DEPENDS=	googletest>=1.12.1:devel/googletest
 
 USES=		cmake:testing compiler:c++11-lang
 
-CMAKE_TESTING_ON=	USE_EXTERNAL_GTEST
+CMAKE_ON=	USE_EXTERNAL_GTEST
 NO_ARCH=	yes
 
 PLIST_FILES=	include/libertiff.hpp
