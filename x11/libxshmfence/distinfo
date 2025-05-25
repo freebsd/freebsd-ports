@@ -1,3 +1,3 @@
-TIMESTAMP = 1670515706
-SHA256 (xorg/lib/libxshmfence-1.3.2.tar.xz) = 870df257bc40b126d91b5a8f1da6ca8a524555268c50b59c0acd1a27f361606f
-SIZE (xorg/lib/libxshmfence-1.3.2.tar.xz) = 259024
+TIMESTAMP = 1747706454
+SHA256 (xorg/lib/libxshmfence-1.3.3.tar.xz) = d4a4df096aba96fea02c029ee3a44e11a47eb7f7213c1a729be83e85ec3fde10
+SIZE (xorg/lib/libxshmfence-1.3.3.tar.xz) = 264860
