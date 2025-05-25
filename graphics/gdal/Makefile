@@ -1,6 +1,5 @@
 PORTNAME=	gdal
-PORTVERSION=	3.10.3
-PORTREVISION=	2
+PORTVERSION=	3.11.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -13,7 +12,9 @@ WWW=		https://gdal.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-BUILD_DEPENDS=	libgeotiff>=1.5.0:graphics/libgeotiff \
+BUILD_DEPENDS=	fast_float>=0:math/fast_float \
+		libertiff>=0:graphics/libertiff \
+		libgeotiff>=1.5.0:graphics/libgeotiff \
 		proj>=6,1:graphics/proj
 LIB_DEPENDS=	libgeotiff.so:graphics/libgeotiff \
 		libgif.so:graphics/giflib \
@@ -94,8 +95,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 CPE_VENDOR=	osgeo
 
-HEADER_FILES=	alg/gdalwarpkernel_opencl.h \
-		alg/gvgcpfit.h \
+HEADER_FILES=	alg/gvgcpfit.h \
 		alg/internal_qhull_headers.h \
 		alg/thinplatespline.h\
 		gcore/gdalexif.h \
@@ -220,26 +220,29 @@ PLIST_SUB+=	BIGENDIAN=""
 EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/alg/internal_libqhull \
 			--exclude ${DISTNAME}/frmts/gif/giflib \
 			--exclude ${DISTNAME}/frmts/gtiff/libgeotiff \
-			--exclude ${DISTNAME}/frmts/gtiff/libtiff \
 			--exclude ${DISTNAME}/frmts/jpeg/libjpeg \
 			--exclude ${DISTNAME}/frmts/jpeg/libjpeg12 \
 			--exclude ${DISTNAME}/frmts/png/libpng \
 			--exclude ${DISTNAME}/frmts/zlib \
 			--exclude ${DISTNAME}/ogr/ogrsf_frmts/geojson/libjson \
+			--exclude ${DISTNAME}/third_party/fast_float \
 			--exclude ${DISTNAME}/third_party/LercLib \
+			--exclude ${DISTNAME}/third_party/libertiff \
 			--no-same-owner --no-same-permissions
 .else
 post-patch:
 	@${RM} -r ${WRKSRC}/alg/internal_libqhull/
 	@${RM} -r ${WRKSRC}/frmts/gif/giflib/
 	@${RM} -r ${WRKSRC}/frmts/gtiff/libgeotiff/
-	@${RM} -r ${WRKSRC}/frmts/gtiff/libtiff/
+#	@${RM} -r ${WRKSRC}/frmts/gtiff/libtiff/ # tif_lerc.c, tif_lzw.c, tif_packbits.c
 	@${RM} -r ${WRKSRC}/frmts/jpeg/libjpeg/
 	@${RM} -r ${WRKSRC}/frmts/jpeg/libjpeg12/
 	@${RM} -r ${WRKSRC}/frmts/png/libpng/
 	@${RM} -r ${WRKSRC}/frmts/zlib/
 	@${RM} -r ${WRKSRC}/ogr/ogrsf_frmts/geojson/libjson/
+	@${RM} -r ${WRKSRC}/third_party/fast_float/
 	@${RM} -r ${WRKSRC}/third_party/LercLib/
+	@${RM} -r ${WRKSRC}/third_party/libertiff/
 .endif
 
 post-install:

@@ -1,10 +1,10 @@
---- cmake/modules/packages/FindMySQL.cmake.orig	2023-07-06 11:14:14 UTC
+--- cmake/modules/packages/FindMySQL.cmake.orig	2025-05-06 16:38:14 UTC
 +++ cmake/modules/packages/FindMySQL.cmake
-@@ -23,6 +23,7 @@ if( MYSQL_INCLUDE_DIR AND EXISTS "${MYSQL_INCLUDE_DIR}
+@@ -23,6 +23,7 @@ endif()
              "${MYSQL_VERSION_H}" )
  endif()
  
 +set(CMAKE_FIND_LIBRARY_CUSTOM_LIB_SUFFIX "mysql")
- find_library(MYSQL_LIBRARY NAMES mysqlclient mysqlclient_r)
+ find_library(MYSQL_LIBRARY NAMES mysqlclient mysqlclient_r NAMES_PER_DIR)
  
  if( NOT CMAKE_C_COMPILER_LOADED )
