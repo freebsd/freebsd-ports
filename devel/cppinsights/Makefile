@@ -1,6 +1,6 @@
 PORTNAME=	cppinsights
 DISTVERSIONPREFIX=	v_
-DISTVERSION=	19.1
+DISTVERSION=	20.1
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -10,7 +10,7 @@ WWW=		https://github.com/andreasfertig/cppinsights
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake llvm:min=19,lib
+USES=		cmake llvm:min=20,lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreasfertig
 
