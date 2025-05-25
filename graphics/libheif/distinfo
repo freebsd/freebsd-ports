@@ -1,5 +1,3 @@
-TIMESTAMP = 1741882846
-SHA256 (libheif-1.19.7.tar.gz) = 161c042d2102665fcee3ded851c78a0eb5f2d4bfe39fba48ba6e588fd6e964f3
-SIZE (libheif-1.19.7.tar.gz) = 1717186
-SHA256 (4bc4cfb66055.patch) = e5f7eaee94aebeef387e10be6d515d2ba25b250fb15829d160a0c1a3cebe5e24
-SIZE (4bc4cfb66055.patch) = 2755
+TIMESTAMP = 1748198420
+SHA256 (libheif-1.19.8.tar.gz) = 6c4a5b08e6eae66d199977468859dea3b5e059081db8928f7c7c16e53836c906
+SIZE (libheif-1.19.8.tar.gz) = 1718218
