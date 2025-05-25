@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-bedrockagentruntime
-PORTVERSION=	1.53.0
+PORTVERSION=	1.55.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
