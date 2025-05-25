@@ -470,7 +470,7 @@ dkimproxy:*:525:
 # free: 527
 # free: 528
 # free: 529
-# free: 530
+_bgplgd:*:530:
 # free: 531
 # free: 532
 # free: 533

@@ -1,0 +1,21 @@
+--- src/bgplgd/bgplgd.8.in.orig    2025-04-28 17:23:51.692826000 +0200
++++ src/bgplgd/bgplgd.8.in 2025-04-28 17:24:32.798038000 +0200
+@@ -180,7 +180,7 @@
+ .Dl socket \&"@RUNSTATEDIR@/bgpd.rsock\&" restricted
+ .Pp
+ An example setup in
+-.Xr httpd 8
++.Xr obhttpd 8
+ is:
+ .Bd -literal -offset indent
+         location "/bgplgd/*" {
+@@ -191,7 +191,7 @@
+ .Sh SEE ALSO
+ .Xr bgpctl 8 ,
+ .Xr bgpd 8 ,
+-.Xr httpd 8
++.Xr obhttpd 8
+ .Sh HISTORY
+ The
+ .Nm
+

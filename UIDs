@@ -476,7 +476,7 @@ dkimproxy:*:525:525::0:0:DKIM Proxy Owner:/nonexistent:/usr/sbin/nologin
 # free: 527
 # free: 528
 # free: 529
-# free: 530
+_bgplgd:*:530:530::0:0:OpenBGP Looking Glass Daemon user:/nonexistent:/usr/sbin/nologin
 # free: 531
 # free: 532
 # free: 533
