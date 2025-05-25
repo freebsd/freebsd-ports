@@ -2,7 +2,7 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		async-lock-3.4.0 \
 		async-trait-0.1.88 \
 		autocfg-1.4.0 \
-		bitflags-2.9.0 \
+		bitflags-2.9.1 \
 		bumpalo-3.17.0 \
 		cfg-if-1.0.0 \
 		concurrent-queue-2.5.0 \
@@ -11,7 +11,7 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		event-listener-5.4.0 \
 		event-listener-strategy-0.5.4 \
 		fastrand-2.3.0 \
-		getrandom-0.2.15 \
+		getrandom-0.2.16 \
 		hashbrown-0.14.5 \
 		heck-0.5.0 \
 		indoc-2.0.6 \
@@ -28,13 +28,13 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		pin-project-lite-0.2.16 \
 		portable-atomic-1.11.0 \
 		proc-macro2-1.0.95 \
-		pyo3-0.24.2 \
-		pyo3-build-config-0.24.2 \
-		pyo3-ffi-0.24.2 \
-		pyo3-macros-0.24.2 \
-		pyo3-macros-backend-0.24.2 \
+		pyo3-0.25.0 \
+		pyo3-build-config-0.25.0 \
+		pyo3-ffi-0.25.0 \
+		pyo3-macros-0.25.0 \
+		pyo3-macros-backend-0.25.0 \
 		quote-1.0.40 \
-		redox_syscall-0.5.11 \
+		redox_syscall-0.5.12 \
 		ryu-1.0.20 \
 		scopeguard-1.2.0 \
 		serde-1.0.219 \
@@ -42,10 +42,10 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		serde_json-1.0.140 \
 		smallstr-0.3.0 \
 		smallvec-1.15.0 \
-		syn-2.0.100 \
+		syn-2.0.101 \
 		target-lexicon-0.13.2 \
-		thiserror-1.0.69 \
-		thiserror-impl-1.0.69 \
+		thiserror-2.0.12 \
+		thiserror-impl-2.0.12 \
 		unicode-ident-1.0.18 \
 		unindent-0.2.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
@@ -63,4 +63,4 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		yrs-0.23.1
+		yrs-0.23.3
