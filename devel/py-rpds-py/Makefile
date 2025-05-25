@@ -1,5 +1,5 @@
 PORTNAME=	rpds-py
-PORTVERSION=	0.24.0
+PORTVERSION=	0.25.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/crate-py/rpds/releases/download/v${PORTVERSION}/
