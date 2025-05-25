@@ -1,5 +1,5 @@
 PORTNAME=	hammer_cli_foreman
-PORTVERSION=	3.14.1
+PORTVERSION=	3.15.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
