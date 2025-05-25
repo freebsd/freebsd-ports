@@ -1,5 +1,6 @@
 include/minizip-ng/ioapi.h
 include/minizip-ng/mz.h
+include/minizip-ng/mz_compat.h
 include/minizip-ng/mz_crypt.h
 include/minizip-ng/mz_os.h
 include/minizip-ng/mz_strm.h
