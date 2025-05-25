@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2025-04-01 16:12:26 UTC
+--- pyproject.toml.orig	2025-05-09 14:35:59 UTC
 +++ pyproject.toml
-@@ -1,7 +1,7 @@ version = "0.1.11"
+@@ -1,7 +1,7 @@ version = "0.1.12"
  [project]
  name = "proglog"
- version = "0.1.11"
+ version = "0.1.12"
 -license = "MIT"
 +license = { text = "MIT" }
  authors = [{ name = "Zulko" }]
