@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-firestore-v1
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -12,9 +12,9 @@ WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-firestore-v1/lat
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-gapic-common>=0.25.0<2.0:devel/rubygem-gapic-common \
+RUN_DEPENDS=	rubygem-gapic-common>=1.0<2:devel/rubygem-gapic-common \
 		rubygem-google-cloud-errors>=1.0<2:net/rubygem-google-cloud-errors \
-		rubygem-google-cloud-location>=0.7<2.0:net/rubygem-google-cloud-location
+		rubygem-google-cloud-location>=1.0<2:net/rubygem-google-cloud-location
 
 USES=		gem
 
