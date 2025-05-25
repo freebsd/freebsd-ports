@@ -11,6 +11,9 @@ DISTFILES=	unifi_sysvinit_all.deb:unifi \
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	unifi_sysvinit_all.deb
 
+DEPRECATED=	No longer supported by upstream
+EXPIRATION_DATE=2025-06-30
+
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	UniFi Controller v8
 WWW=		https://help.ui.com/hc/en-us/categories/200320654-UniFi-Wireless
