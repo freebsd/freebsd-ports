@@ -1,13 +1,13 @@
 PORTNAME=	kirigami-addons
-DISTVERSION=	1.7.0
+DISTVERSION=	1.8.1
 CATEGORIES=	x11-toolkits kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 DIST_SUBDIR=	KDE
 PKGNAMESUFFIX=	-qt6
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Component library for KDE Kirigami
-WWW=		https://api.kde.org/frameworks/kirigami-addons/html/
+COMMENT=	Additional set of visual components for Kirigami framework
+WWW=		https://invent.kde.org/libraries/kirigami-addons
 
 LICENSE=	LGPL20
 
