@@ -1,0 +1,21 @@
+Libertiff is a C++11 simple, header-only, TIFF reader. It is MIT licensed.
+
+Handles both ClassicTIFF and BigTIFF, little-endian or big-endian ordered.
+
+The library does not offer codec facilities (and probably won't). It is mostly
+aimed at browsing through the linked chain of Image File Directory (IFD) and
+their tags.
+
+"Offline" tag values are not loaded at IFD opening time, but only upon request,
+which helps handling files with tags with an arbitrarily large number of values.
+
+The library is thread-safe (that is the instances that it returns can be used
+from multiple threads), if passed FileReader instances are themselves
+thread-safe.
+
+The library does not throw exceptions (but underlying std library might throw
+exceptions in case of out-of-memory situations)
+
+Optional features:
+- define LIBERTIFF_C_FILE_READER before including libertiff.hpp, so that the
+  libertiff::CFileReader class is available
