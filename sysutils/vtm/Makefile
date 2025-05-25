@@ -1,10 +1,11 @@
 PORTNAME=	vtm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.99.70
+DISTVERSION=	2025.05.21
+DISTVERSIONSUFFIX=	a
 CATEGORIES=	sysutils
 
 MAINTAINER=	nxjoseph@protonmail.com
-COMMENT=	Text-based desktop environment
+COMMENT=	Text-based desktop environment for your terminal
 WWW=		https://github.com/directvt/vtm
 
 LICENSE=	MIT
@@ -20,8 +21,17 @@ LDFLAGS+=	-L${LUA_LIBDIR}
 
 PLIST_FILES=	bin/vtm
 
+.include <bsd.port.pre.mk>
+.if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386
+# explicit: GCC uses libstdc++ by default, otherwise
+# using libc++ cause the build to fail due to
+# memory issues on these architectures above.
+USE_GCC=	yes
+CXXFLAGS+=	-stdlib=libstdc++
+.endif
+
 post-patch:
 	${REINPLACE_CMD} 's/lua-5.4/lua-${LUA_VER}/g' \
 		${WRKSRC}/CMakeLists.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

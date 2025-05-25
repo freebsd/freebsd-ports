@@ -1,3 +1,5 @@
-Text based desktop environment inside the terminal.
-Allows for tiling terminal buffers, detaching sessions
-and remote collaborative work.
+vtm is a text-based application that represents its user interface
+as a mosaic of text cells, forming a TUI matrix. This matrix can be
+rendered in its own GUI window or in a compatible text console.
+It wraps any console application and supports indefinite nesting,
+creating a text-based desktop environment within your terminal.
