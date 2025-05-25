@@ -5,7 +5,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF \
 		LOCAL/mat/vtun
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
 WWW=		https://vtun.sourceforge.net/
 
