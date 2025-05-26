@@ -11,6 +11,9 @@ WWW=		https://github.com/kkos/oniguruma
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Project archived upstream # but there are 30+ dependencies and deprecation is unlikely to happen
+EXPIRATION_DATE=	2026-12-01
+
 USES=		cmake cpe pathfix
 CPE_VENDOR=	oniguruma_project
 USE_LDCONFIG=	yes
