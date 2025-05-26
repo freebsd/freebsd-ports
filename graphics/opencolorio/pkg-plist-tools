@@ -1,10 +1,11 @@
 bin/ocioarchive
 bin/ociobakelut
 bin/ociocheck
+bin/ociochecklut
 bin/ocioconvert
+bin/ociocpuinfo
 bin/ociodisplay
 bin/ociolutimage
-bin/ociochecklut
 bin/ociomakeclf
 bin/ocioperf
 bin/ociowrite

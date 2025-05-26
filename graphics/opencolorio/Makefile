@@ -1,11 +1,11 @@
 PORTNAME=	opencolorio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.2
+DISTVERSION=	2.4.2
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-opencolorio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -20,8 +20,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpystring.so:devel/pystring \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		alias cmake compiler:c++14-lang localbase:ldflags \
-		pkgconfig minizip:ng
+USES=		alias cmake compiler:c++14-lang localbase:ldflags minizip:ng \
+		pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AcademySoftwareFoundation
@@ -29,15 +29,14 @@ GH_PROJECT=	OpenColorIO
 
 #GH_TUPLE+=	madler:zlib:v1.2.13:zlib/ext/dist/zlib
 
-CMAKE_OFF=	OCIO_BUILD_JAVA OCIO_BUILD_JNIGLUE OCIO_BUILD_NUKE \
-		OCIO_BUILD_TESTS OCIO_BUILD_GPU_TESTS
+CMAKE_OFF=	OCIO_BUILD_GPU_TESTS OCIO_BUILD_JAVA OCIO_BUILD_JNIGLUE \
+		OCIO_BUILD_NUKE OCIO_BUILD_TESTS
 
-PLIST_SUB=	SHL3=${PORTVERSION} SHL2=${PORTVERSION:R}
+PLIST_SUB=	SHL2=${PORTVERSION:R} \
+		SHL3=${PORTVERSION}
 
 OPTIONS_DEFINE=		DOCS
-OPTIONS_DEFAULT=	DOCS
 OPTIONS_SUB=		yes
-
 DOCS_BUILD_DEPENDS=	doxygen>0:devel/doxygen
 DOCS_CMAKE_BOOL=	OCIO_BUILD_DOCS
 
@@ -55,20 +54,22 @@ CMAKE_OFF+=	OCIO_USE_SSE2
 # py module can still be used without
 BUILD_DEPENDS+=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}breathe>=0:devel/py-breathe@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docutils>=0.18.1:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}recommonmark>=0:textproc/py-recommonmark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx-tabs>0:textproc/py-sphinx-tabs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx_press_theme>=0:textproc/py-sphinx_press_theme@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sphinx-tabs>0:textproc/py-sphinx-tabs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}testresources>=0:devel/py-testresources@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}testresources>=0:devel/py-testresources@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR}
 .endif
 
 .if defined(OCIO_SLAVE) && ${OCIO_SLAVE} == tools
 LIB_DEPENDS+=	liblcms2.so:graphics/lcms2 \
-		libOpenImageIO.so:graphics/openimageio \
-		libOpenEXR.so:graphics/openexr
+		libOpenEXR.so:graphics/openexr \
+		libOpenImageIO.so:graphics/openimageio
 USES+=		gl xorg
-USE_GL=		gl glu glut glew opengl
+USE_GL=		glew glu glut opengl
 USE_XORG=	xi xmu
 CMAKE_ARGS+=	-DCMAKE_CXX_STANDARD=14
 CMAKE_ON+=	OCIO_BUILD_APPS USE_EXTERNAL_LCMS
@@ -84,8 +85,8 @@ USES+=		python
 USE_PYTHON=	concurrent flavors
 CMAKE_ARGS+=	-DOCIO_PYTHON_VERSION=${PYTHON_VER}
 CMAKE_ON+=	OCIO_BUILD_PYTHON
-CMAKE_OFF+=	OCIO_BUILD_APPS BUILD_SHARED_LIBS OCIO_BUILD_DOCS \
-		OCIO_BUILD_TESTS OCIO_BUILD_GPU_TESTS
+CMAKE_OFF+=	BUILD_SHARED_LIBS OCIO_BUILD_APPS OCIO_BUILD_DOCS \
+		OCIO_BUILD_GPU_TESTS OCIO_BUILD_TESTS
 LDFLAGS+=	-lOpenColorIO
 PLIST=		${PKGDIR}/pkg-plist-pyglue
 # concurrent allows docs to not collide with master port
@@ -106,14 +107,18 @@ PLIST=		${PKGDIR}/pkg-plist ${PKGDIR}/pkg-plist-docs
 .endif
 
 post-install:
-	@cd ${STAGEDIR}${PREFIX} && ${RM} -r share/ocio
+	${RM} -r ${STAGEDIR}${PREFIX}/share/ocio
 .if defined(OCIO_SLAVE)
-	@cd ${STAGEDIR}${PREFIX} && ${RM} -r include lib/cmake lib/libOpenColorIO*.a libdata share/OpenColorIO
+	cd ${STAGEDIR}${PREFIX} && \
+		${RM} -r include lib/cmake lib/libOpenColorIO*.a libdata \
+			share/OpenColorIO
 .else
-	@cd ${STAGEDIR}${PREFIX} && ${RM} -r lib/python*
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/python*
 .endif
 
 post-install-DOCS-on:
-	@cd ${STAGEDIR}${PREFIX}/share/doc && ${MV} OpenColorIO ${PKGNAMEPREFIX}${PORTNAME}
+	@cd ${STAGEDIR}${PREFIX}/share/doc && \
+		${MV} OpenColorIO ${PKGNAMEPREFIX}${PORTNAME}
+	${RM} -r ${STAGEDIR}${DOCSDIR}/html/_sources
 
 .include <bsd.port.mk>
