@@ -197,6 +197,7 @@
     SUBDIR += gosec
     SUBDIR += gost-engine
     SUBDIR += gostsum
+    SUBDIR += govulncheck
     SUBDIR += gpa
     SUBDIR += gpg-gui
     SUBDIR += gpg-tui
