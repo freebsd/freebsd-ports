@@ -1,6 +1,6 @@
 PORTNAME=	salt
 PORTVERSION=	3006.9
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
@@ -33,7 +33,7 @@ USES=		cpe python
 
 CPE_VENDOR=	saltstack
 CPE_PRODUCT=	salt
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist cryptography distutils
 NO_ARCH=	yes
 
 CONFLICTS=	py[0-9]*-salt-2019*
