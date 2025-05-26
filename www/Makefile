@@ -1805,6 +1805,7 @@
     SUBDIR += py-httpretty
     SUBDIR += py-httptools
     SUBDIR += py-httpx
+    SUBDIR += py-httpx-aiohttp
     SUBDIR += py-httpx-oauth
     SUBDIR += py-httpx-retries
     SUBDIR += py-httpx-socks
