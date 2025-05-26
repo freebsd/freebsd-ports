@@ -1,6 +1,6 @@
 PORTNAME=	agave
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.10
+DISTVERSION=	2.2.14
 CATEGORIES=	security
 PKGNAMESUFFIX=	-blockchain
 
@@ -653,7 +653,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		solana-reserved-account-keys-2.2.1 \
 		solana-reward-info-2.2.1 \
 		solana-sanitize-2.2.1 \
-		solana-sbpf-0.10.0 \
+		solana-sbpf-0.10.1 \
 		solana-sdk-2.2.2 \
 		solana-sdk-ids-2.2.1 \
 		solana-sdk-macro-2.2.1 \
