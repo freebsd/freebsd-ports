@@ -88,6 +88,8 @@ share/metainfo/plank.appdata.xml
 %%DATADIR%%/themes/Default/dock.theme
 %%DATADIR%%/themes/Matte-Light/dock.theme
 %%DATADIR%%/themes/Matte/dock.theme
+%%DATADIR%%/themes/Minimal-Light/dock.theme
+%%DATADIR%%/themes/Minimal/dock.theme
 %%DATADIR%%/themes/Transparent/dock.theme
 share/vala/vapi/plank.deps
 share/vala/vapi/plank.vapi

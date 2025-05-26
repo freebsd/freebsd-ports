@@ -1,5 +1,5 @@
 PORTNAME=	plank
-DISTVERSION=	0.11.114
+DISTVERSION=	0.11.128
 CATEGORIES=	x11
 
 MAINTAINER=	daniel@shafer.cc
@@ -31,7 +31,7 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	DBUSMENU
 DBUSMENU_DESC=	DBusMenu protocol
 
-MESON_ARGS=	-Dproduction_release=true \
+MESON_ARGS=	-Dproduction-release=true \
 		-Denable-apport=false \
 		-Denable-barriers=yes
 
