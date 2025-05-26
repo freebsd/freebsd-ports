@@ -11,6 +11,6 @@ lib/cmake/primesieve/primesieveShared-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/primesieve/primesieveShared.cmake
 lib/libprimesieve.so
 lib/libprimesieve.so.12
-lib/libprimesieve.so.12.7.0
+lib/libprimesieve.so.12.9.0
 libdata/pkgconfig/primesieve.pc
 share/man/man1/primesieve.1.gz
