@@ -205,6 +205,7 @@
     SUBDIR += mg
     SUBDIR += mickey
     SUBDIR += micro
+    SUBDIR += microsoft-edit
     SUBDIR += mined
     SUBDIR += mle
     SUBDIR += mousepad
