@@ -1,7 +1,6 @@
 PORTNAME=	encryptpad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0.2
-PORTREVISION=	1
+DISTVERSION=	0.5.0.4
 CATEGORIES=	editors security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -11,22 +10,19 @@ WWW=		https://evpo.net/encryptpad/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-DEPRECATED=	Depends on expired security/botan2
-EXPIRATION_DATE=2025-06-21
-
-LIB_DEPENDS=	libbotan-2.so:security/botan2
+LIB_DEPENDS=	libbotan-3.so:security/botan3
 
 USES=		compiler:c++11-lang desktop-file-utils gl gmake pkgconfig \
-		python:build qt:5 shared-mime-info shebangfix
+		python:build qt:5 shared-mime-info
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	evpo
 GH_PROJECT=	EncryptPad
+GH_TAGNAME=	3593110ddc83395815caa6a00ce9412161c173e7 # botan3 branch, 20240627
 
 USE_GL=		gl
-USE_QT=		core gui widgets buildtools:build qmake:build
-BINARY_ALIAS=	python=${PYTHON_CMD} \
-		qmake=${QMAKE}
+USE_QT=		core gui printsupport svg widgets buildtools:build qmake:build
+BINARY_ALIAS=	python3=${PYTHON_CMD} qmake=${QMAKE}
 
 PORTDOCS=	*
 
