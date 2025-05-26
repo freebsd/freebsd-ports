@@ -1,3 +1,9 @@
-This package contains xbiff, which displays a little image of a mailbox in
-the X Window System. The flag on the mailbox is down when there is no mail,
-and the flag goes up when new mail arrives.
+The Xbiff program provides graphical notification of new e-mail. It only
+handles mail stored in a filesystem accessible file, not via IMAP, POP
+or other remote access protocols.
+
+It displays a little image of a mailbox in the X Window System. When
+there is no mail, the flag on the mailbox is down. When mail arrives,
+the flag goes up and the mailbox beeps. By default, pressing any mouse
+button in the image forces xbiff to remember the current size of the
+mail file as being the "empty" size and to lower the flag.
