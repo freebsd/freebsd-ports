@@ -1120,8 +1120,10 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/bin/sqldeveloper.boot
 %%DATADIR%%/sqldeveloper/bin/sqldeveloper.conf
 %%DATADIR%%/sqldeveloper/bin/version.properties
+%%DATADIR%%/sqldeveloper/doc/dataminer_help.jar
 %%DATADIR%%/sqldeveloper/doc/icon.png
 %%DATADIR%%/sqldeveloper/doc/otn_new.css
+%%DATADIR%%/sqldeveloper/doc/sqldeveloper_help.jar
 %%DATADIR%%/sqldeveloper/doc/sqldevtips.jar
 %%DATADIR%%/sqldeveloper/doc/welcome/TrainingPaths.gif
 %%DATADIR%%/sqldeveloper/doc/welcome/de/Training.html

@@ -1,5 +1,5 @@
 PORTNAME=	sqldeveloper
-DISTVERSION=	24.3.0.284.2209
+DISTVERSION=	24.3.1.347.1826
 DISTVERSIONSUFFIX=	-no-jre
 CATEGORIES=	databases java
 # https://www.oracle.com/tools/downloads/sqldev-downloads.html
