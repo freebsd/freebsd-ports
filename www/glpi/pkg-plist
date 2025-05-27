@@ -1203,6 +1203,8 @@
 %%WWWDIR%%/install/migrations/update_10.0.16_to_10.0.17/rule_tickets.php
 %%WWWDIR%%/install/migrations/update_10.0.16_to_10.0.17/tree_dropdowns.php
 %%WWWDIR%%/install/migrations/update_10.0.16_to_10.0.17/users.php
+%%WWWDIR%%/install/migrations/update_10.0.17_to_10.0.18.php
+%%WWWDIR%%/install/migrations/update_10.0.17_to_10.0.18/configs.php
 %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2.php
 %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2/agent.php
 %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2/configs.php
@@ -1379,6 +1381,7 @@
 %%WWWDIR%%/install/mysql/glpi-10.0.14-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.15-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.16-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.17-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.2-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.3-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.4-empty.sql
@@ -1654,228 +1657,6 @@
 %%WWWDIR%%/locales/zh_HK.po
 %%WWWDIR%%/locales/zh_TW.mo
 %%WWWDIR%%/locales/zh_TW.po
-%%WWWDIR%%/phpstan.neon.dist
-%%WWWDIR%%/phpunit/AbstractRightsDropdown.php
-%%WWWDIR%%/phpunit/Autoload.php
-%%WWWDIR%%/phpunit/CommonDropdown.php
-%%WWWDIR%%/phpunit/DbTestCase.php
-%%WWWDIR%%/phpunit/GLPITestCase.php
-%%WWWDIR%%/phpunit/InventoryTestCase.php
-%%WWWDIR%%/phpunit/NotificationSettingInstance.php
-%%WWWDIR%%/phpunit/RuleBuilder.php
-%%WWWDIR%%/phpunit/abstracts/AbstractITILChildTemplate.php
-%%WWWDIR%%/phpunit/abstracts/AbstractInventoryAsset.php
-%%WWWDIR%%/phpunit/abstracts/AbstractPlanningEvent.php
-%%WWWDIR%%/phpunit/abstracts/CommonITILRecurrentTest.php
-%%WWWDIR%%/phpunit/bootstrap.php
-%%WWWDIR%%/phpunit/functional/AgentTest.php
-%%WWWDIR%%/phpunit/functional/AlertTest.php
-%%WWWDIR%%/phpunit/functional/ApplianceTest.php
-%%WWWDIR%%/phpunit/functional/Appliance_ItemTest.php
-%%WWWDIR%%/phpunit/functional/Appliance_Item_RelationTest.php
-%%WWWDIR%%/phpunit/functional/AuthLdapReplicateTest.php
-%%WWWDIR%%/phpunit/functional/AuthTest.php
-%%WWWDIR%%/phpunit/functional/AutoloadTest.php
-%%WWWDIR%%/phpunit/functional/BlacklistTest.php
-%%WWWDIR%%/phpunit/functional/CableTest.php
-%%WWWDIR%%/phpunit/functional/CalendarTest.php
-%%WWWDIR%%/phpunit/functional/Calendar_HolidayTest.php
-%%WWWDIR%%/phpunit/functional/CartridgeTest.php
-%%WWWDIR%%/phpunit/functional/CertificateTest.php
-%%WWWDIR%%/phpunit/functional/Certificate_ItemTest.php
-%%WWWDIR%%/phpunit/functional/ChangeTest.php
-%%WWWDIR%%/phpunit/functional/CleanSoftwareCronTest.php
-%%WWWDIR%%/phpunit/functional/CommonDBTMTest.php
-%%WWWDIR%%/phpunit/functional/CommonITILValidationTest.php
-%%WWWDIR%%/phpunit/functional/CommonTreeDropdownTest.php
-%%WWWDIR%%/phpunit/functional/ComputerTest.php
-%%WWWDIR%%/phpunit/functional/ComputerVirtualMachineTest.php
-%%WWWDIR%%/phpunit/functional/ConfigTest.php
-%%WWWDIR%%/phpunit/functional/ConsumableTest.php
-%%WWWDIR%%/phpunit/functional/ContractTest.php
-%%WWWDIR%%/phpunit/functional/CronTaskTest.php
-%%WWWDIR%%/phpunit/functional/DatabaseInstanceTest.php
-%%WWWDIR%%/phpunit/functional/DbUtilsTest.php
-%%WWWDIR%%/phpunit/functional/DeviceSensorModelTest.php
-%%WWWDIR%%/phpunit/functional/DeviceSensorTest.php
-%%WWWDIR%%/phpunit/functional/DeviceSensorTypeTest.php
-%%WWWDIR%%/phpunit/functional/DeviceSimcardTest.php
-%%WWWDIR%%/phpunit/functional/DeviceSimcardTypeTest.php
-%%WWWDIR%%/phpunit/functional/DocumentTest.php
-%%WWWDIR%%/phpunit/functional/DocumentTypeTest.php
-%%WWWDIR%%/phpunit/functional/Document_ItemTest.php
-%%WWWDIR%%/phpunit/functional/DomainRelationTest.php
-%%WWWDIR%%/phpunit/functional/DomainTest.php
-%%WWWDIR%%/phpunit/functional/DropdownTest.php
-%%WWWDIR%%/phpunit/functional/DropdownTranslationTest.php
-%%WWWDIR%%/phpunit/functional/EntityTest.php
-%%WWWDIR%%/phpunit/functional/GLPIKeyTest.php
-%%WWWDIR%%/phpunit/functional/GLPIMailerTest.php
-%%WWWDIR%%/phpunit/functional/GLPITest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Agent/Communication/Headers/CommonTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Cache/CacheManagerTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Cache/SimpleCacheTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/AntivirusTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/BatteryTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/BiosTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/CameraTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/CartridgeTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/ComputerTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/ControllerTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/DeviceTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/DriveTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/FirmwareTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/GraphicCardTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/MemoryTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/MonitorTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/NetworkCardTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/NetworkEquipmentTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/NetworkPortTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/OperatingSystemTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/PeripheralTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/PowerSupplyTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/PrinterTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/ProcessorTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/RemoteManagementTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/SensorTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/SoftwareTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/SoundCardTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/UnmanagedTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/VirtualMachineTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets/VolumeTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/ConfTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/InventoryOptionsTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/InventoryTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Inventory/RequestTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/RichText/RichTextTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/RichText/UserMentionTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Toolbox/ArrayNormalizerTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Toolbox/DataExportTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Toolbox/DatabaseSchemaTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Toolbox/FilesystemTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Toolbox/FrontEndTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Toolbox/SanitizerTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Toolbox/URLTest.php
-%%WWWDIR%%/phpunit/functional/Glpi/Toolbox/VersionParserTest.php
-%%WWWDIR%%/phpunit/functional/Group_UserTest.php
-%%WWWDIR%%/phpunit/functional/HtmlTest.php
-%%WWWDIR%%/phpunit/functional/IPAddressTest.php
-%%WWWDIR%%/phpunit/functional/ITILCategoryTest.php
-%%WWWDIR%%/phpunit/functional/ITILFollowupTemplateTest.php
-%%WWWDIR%%/phpunit/functional/ITILFollowupTest.php
-%%WWWDIR%%/phpunit/functional/ITILSolutionTest.php
-%%WWWDIR%%/phpunit/functional/ITILTemplateTest.php
-%%WWWDIR%%/phpunit/functional/ImpactItemTest.php
-%%WWWDIR%%/phpunit/functional/ImpactRelationTest.php
-%%WWWDIR%%/phpunit/functional/ImpactTest.php
-%%WWWDIR%%/phpunit/functional/InfocomTest.php
-%%WWWDIR%%/phpunit/functional/Item_ClusterTest.php
-%%WWWDIR%%/phpunit/functional/Item_DeviceSensorTest.php
-%%WWWDIR%%/phpunit/functional/Item_DeviceSimcardTest.php
-%%WWWDIR%%/phpunit/functional/Item_DiskTest.php
-%%WWWDIR%%/phpunit/functional/Item_OperatingSystemTest.php
-%%WWWDIR%%/phpunit/functional/Item_RackTest.php
-%%WWWDIR%%/phpunit/functional/Item_SoftwareLicenseTest.php
-%%WWWDIR%%/phpunit/functional/Item_SoftwareVersionTest.php
-%%WWWDIR%%/phpunit/functional/Itil_ProjectTest.php
-%%WWWDIR%%/phpunit/functional/KnowbaseItemTest.php
-%%WWWDIR%%/phpunit/functional/KnowbaseItem_CommentTest.php
-%%WWWDIR%%/phpunit/functional/KnowbaseItem_ItemTest.php
-%%WWWDIR%%/phpunit/functional/KnowbaseItem_RevisionTest.php
-%%WWWDIR%%/phpunit/functional/KnowbaseTest.php
-%%WWWDIR%%/phpunit/functional/LineOperatorTest.php
-%%WWWDIR%%/phpunit/functional/LineTypeTest.php
-%%WWWDIR%%/phpunit/functional/LinkTest.php
-%%WWWDIR%%/phpunit/functional/LocationTest.php
-%%WWWDIR%%/phpunit/functional/LockedfieldTest.php
-%%WWWDIR%%/phpunit/functional/LogTest.php
-%%WWWDIR%%/phpunit/functional/MassiveActionTest.php
-%%WWWDIR%%/phpunit/functional/MonitorTest.php
-%%WWWDIR%%/phpunit/functional/NetworkEquipmentTest.php
-%%WWWDIR%%/phpunit/functional/NetworkNameTest.php
-%%WWWDIR%%/phpunit/functional/NetworkPortMetricsTest.php
-%%WWWDIR%%/phpunit/functional/NetworkPortTest.php
-%%WWWDIR%%/phpunit/functional/NetworkPortTypeTest.php
-%%WWWDIR%%/phpunit/functional/NetworkPort_NetworkPortTest.php
-%%WWWDIR%%/phpunit/functional/NotificationAjaxSettingTest.php
-%%WWWDIR%%/phpunit/functional/NotificationAjaxTest.php
-%%WWWDIR%%/phpunit/functional/NotificationEventAjaxTest.php
-%%WWWDIR%%/phpunit/functional/NotificationEventMailingTest.php
-%%WWWDIR%%/phpunit/functional/NotificationMailingSettingTest.php
-%%WWWDIR%%/phpunit/functional/NotificationMailingTest.php
-%%WWWDIR%%/phpunit/functional/NotificationSettingConfigTest.php
-%%WWWDIR%%/phpunit/functional/NotificationSettingInstanceTest.php
-%%WWWDIR%%/phpunit/functional/NotificationTargetSavedSearch_AlertTest.php
-%%WWWDIR%%/phpunit/functional/NotificationTargetTest.php
-%%WWWDIR%%/phpunit/functional/NotificationTargetTicketTest.php
-%%WWWDIR%%/phpunit/functional/NotificationTargetUserTest.php
-%%WWWDIR%%/phpunit/functional/NotificationTemplateTest.php
-%%WWWDIR%%/phpunit/functional/NotificationTemplateTranslationTest.php
-%%WWWDIR%%/phpunit/functional/NotificationTest.php
-%%WWWDIR%%/phpunit/functional/Notification_NotificationTemplateTest.php
-%%WWWDIR%%/phpunit/functional/OperatingSystemArchitectureTest.php
-%%WWWDIR%%/phpunit/functional/OperatingSystemEditionTest.php
-%%WWWDIR%%/phpunit/functional/OperatingSystemKernelTest.php
-%%WWWDIR%%/phpunit/functional/OperatingSystemKernelVersionTest.php
-%%WWWDIR%%/phpunit/functional/OperatingSystemTest.php
-%%WWWDIR%%/phpunit/functional/PCIVendorTest.php
-%%WWWDIR%%/phpunit/functional/PassiveDCEquipmentTest.php
-%%WWWDIR%%/phpunit/functional/PendingReasonTest.php
-%%WWWDIR%%/phpunit/functional/PlanningExternalEventTemplateTest.php
-%%WWWDIR%%/phpunit/functional/PlanningExternalEventTest.php
-%%WWWDIR%%/phpunit/functional/PlanningTest.php
-%%WWWDIR%%/phpunit/functional/PrinterLogTest.php
-%%WWWDIR%%/phpunit/functional/PrinterTest.php
-%%WWWDIR%%/phpunit/functional/ProblemTest.php
-%%WWWDIR%%/phpunit/functional/ProfileTest.php
-%%WWWDIR%%/phpunit/functional/Profile_UserTest.php
-%%WWWDIR%%/phpunit/functional/ProjectTaskTest.php
-%%WWWDIR%%/phpunit/functional/ProjectTeamTest.php
-%%WWWDIR%%/phpunit/functional/ProjectTest.php
-%%WWWDIR%%/phpunit/functional/QueryParamTest.php
-%%WWWDIR%%/phpunit/functional/QueuedNotificationTest.php
-%%WWWDIR%%/phpunit/functional/RecurrentChangeTest.php
-%%WWWDIR%%/phpunit/functional/ReminderTest.php
-%%WWWDIR%%/phpunit/functional/ReminderTranslationTest.php
-%%WWWDIR%%/phpunit/functional/ReservationTest.php
-%%WWWDIR%%/phpunit/functional/RuleAssetTest.php
-%%WWWDIR%%/phpunit/functional/RuleCriteriaTest.php
-%%WWWDIR%%/phpunit/functional/RuleDictionnarySoftwareCollectionTest.php
-%%WWWDIR%%/phpunit/functional/RuleDictionnarySoftwareTest.php
-%%WWWDIR%%/phpunit/functional/RuleImportAssetTest.php
-%%WWWDIR%%/phpunit/functional/RuleImportEntityTest.php
-%%WWWDIR%%/phpunit/functional/RuleLocationTest.php
-%%WWWDIR%%/phpunit/functional/RuleMailcollectorTest.php
-%%WWWDIR%%/phpunit/functional/RuleRightCollectionTest.php
-%%WWWDIR%%/phpunit/functional/RuleRightTest.php
-%%WWWDIR%%/phpunit/functional/RuleSoftwareCategoryCollectionTest.php
-%%WWWDIR%%/phpunit/functional/RuleSoftwareCategoryTest.php
-%%WWWDIR%%/phpunit/functional/RuleTest.php
-%%WWWDIR%%/phpunit/functional/RuleTicketTest.php
-%%WWWDIR%%/phpunit/functional/SLMTest.php
-%%WWWDIR%%/phpunit/functional/SavedSearchTest.php
-%%WWWDIR%%/phpunit/functional/SavedSearch_UserTest.php
-%%WWWDIR%%/phpunit/functional/SearchTest.php
-%%WWWDIR%%/phpunit/functional/ShareDashboardDropdownTest.php
-%%WWWDIR%%/phpunit/functional/SlaLevel_TicketTest.php
-%%WWWDIR%%/phpunit/functional/SoftwareLicenseTest.php
-%%WWWDIR%%/phpunit/functional/SoftwareTest.php
-%%WWWDIR%%/phpunit/functional/SoftwareVersionTest.php
-%%WWWDIR%%/phpunit/functional/SolutionTemplateTest.php
-%%WWWDIR%%/phpunit/functional/StateTest.php
-%%WWWDIR%%/phpunit/functional/TaskTemplateTest.php
-%%WWWDIR%%/phpunit/functional/TelemetryTest.php
-%%WWWDIR%%/phpunit/functional/TicketCostTest.php
-%%WWWDIR%%/phpunit/functional/TicketRecurrentTest.php
-%%WWWDIR%%/phpunit/functional/TicketTaskTest.php
-%%WWWDIR%%/phpunit/functional/TicketTest.php
-%%WWWDIR%%/phpunit/functional/Ticket_TicketTest.php
-%%WWWDIR%%/phpunit/functional/ToolboxTest.php
-%%WWWDIR%%/phpunit/functional/TransferTest.php
-%%WWWDIR%%/phpunit/functional/USBVendorTest.php
-%%WWWDIR%%/phpunit/functional/UnmanagedTest.php
-%%WWWDIR%%/phpunit/functional/UserEmailTest.php
-%%WWWDIR%%/phpunit/functional/UserTest.php
 %%WWWDIR%%/pics/PICS-AUTHORS.txt
 %%WWWDIR%%/pics/accepted.png
 %%WWWDIR%%/pics/actualiser.png
@@ -3999,6 +3780,7 @@
 %%WWWDIR%%/vendor/glpi-project/inventory_format/inventory.schema.json
 %%WWWDIR%%/vendor/glpi-project/inventory_format/lib/php/Converter.php
 %%WWWDIR%%/vendor/glpi-project/inventory_format/lib/php/FilesToJSON.php
+%%WWWDIR%%/vendor/glpi-project/inventory_format/lib/php/Schema.php
 %%WWWDIR%%/vendor/glpi-project/inventory_format/original-netdiscovery.md
 %%WWWDIR%%/vendor/glpi-project/inventory_format/original-netinventory.md
 %%WWWDIR%%/vendor/glpi-project/inventory_format/original.md
@@ -6923,7 +6705,7 @@
 %%WWWDIR%%/vendor/webmozart/assert/src/Assert.php
 %%WWWDIR%%/vendor/webmozart/assert/src/InvalidArgumentException.php
 %%WWWDIR%%/vendor/webmozart/assert/src/Mixin.php
-%%WWWDIR%%/version/10.0.17
+%%WWWDIR%%/version/10.0.18
 @dir %%WWWDIR%%/ajax
 @dir %%WWWDIR%%/bin
 @dir %%WWWDIR%%/config
@@ -7003,6 +6785,7 @@
 @dir %%WWWDIR%%/install/migrations/update_10.0.14_to_10.0.15
 @dir %%WWWDIR%%/install/migrations/update_10.0.15_to_10.0.16
 @dir %%WWWDIR%%/install/migrations/update_10.0.16_to_10.0.17
+@dir %%WWWDIR%%/install/migrations/update_10.0.17_to_10.0.18
 @dir %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2
 @dir %%WWWDIR%%/install/migrations/update_10.0.2_to_10.0.3
 @dir %%WWWDIR%%/install/migrations/update_10.0.3_to_10.0.4
@@ -7029,18 +6812,6 @@
 @dir %%WWWDIR%%/lib/bundles
 @dir %%WWWDIR%%/locales
 @dir %%WWWDIR%%/marketplace
-@dir %%WWWDIR%%/phpunit
-@dir %%WWWDIR%%/phpunit/abstracts
-@dir %%WWWDIR%%/phpunit/functional
-@dir %%WWWDIR%%/phpunit/functional/Glpi
-@dir %%WWWDIR%%/phpunit/functional/Glpi/Agent
-@dir %%WWWDIR%%/phpunit/functional/Glpi/Agent/Communication
-@dir %%WWWDIR%%/phpunit/functional/Glpi/Agent/Communication/Headers
-@dir %%WWWDIR%%/phpunit/functional/Glpi/Cache
-@dir %%WWWDIR%%/phpunit/functional/Glpi/Inventory
-@dir %%WWWDIR%%/phpunit/functional/Glpi/Inventory/Assets
-@dir %%WWWDIR%%/phpunit/functional/Glpi/RichText
-@dir %%WWWDIR%%/phpunit/functional/Glpi/Toolbox
 @dir %%WWWDIR%%/pics
 @dir %%WWWDIR%%/pics/charts
 @dir %%WWWDIR%%/pics/icones
