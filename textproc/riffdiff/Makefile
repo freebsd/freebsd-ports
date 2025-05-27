@@ -1,6 +1,5 @@
 PORTNAME=	riffdiff
-DISTVERSION=	3.3.8
-PORTREVISION=	3
+DISTVERSION=	3.3.10
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,20 +21,21 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		adler-0.2.3 \
 		aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
-		anstream-0.5.0 \
-		anstyle-1.0.2 \
+		anstream-0.6.18 \
+		anstyle-1.0.10 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
-		anstyle-wincon-2.1.0 \
+		anstyle-wincon-3.0.7 \
 		autocfg-1.0.1 \
 		backtrace-0.3.54 \
+		base64-0.22.1 \
 		bitflags-1.3.2 \
 		bytecount-0.6.2 \
 		cfg-if-1.0.0 \
-		clap-4.4.2 \
-		clap_builder-4.4.2 \
-		clap_derive-4.4.2 \
-		clap_lex-0.5.1 \
+		clap-4.5.26 \
+		clap_builder-4.5.26 \
+		clap_derive-4.5.24 \
+		clap_lex-0.7.4 \
 		colorchoice-1.0.0 \
 		ctor-0.1.16 \
 		difference-2.0.0 \
@@ -45,10 +45,11 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		gimli-0.23.0 \
 		git-version-0.3.4 \
 		git-version-macro-0.3.4 \
-		heck-0.4.1 \
+		heck-0.5.0 \
 		hermit-abi-0.1.19 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.6 \
+		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.1 \
 		lazy_static-1.4.0 \
 		libc-0.2.140 \
@@ -58,10 +59,11 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		miniz_oxide-0.4.3 \
 		num_cpus-1.13.0 \
 		object-0.22.0 \
+		once_cell-1.20.2 \
 		output_vt100-0.1.2 \
 		pretty_assertions-0.6.1 \
 		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.66 \
+		proc-macro2-1.0.93 \
 		quote-1.0.33 \
 		redox_syscall-0.2.10 \
 		regex-1.5.5 \
@@ -70,7 +72,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		rustix-0.36.16 \
 		rustversion-1.0.18 \
 		similar-2.6.0 \
-		strsim-0.10.0 \
+		strsim-0.11.1 \
 		syn-1.0.48 \
 		syn-2.0.30 \
 		tempfile-3.4.0 \
@@ -84,22 +86,32 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		windows-sys-0.42.0 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.42.1 \
 		windows-targets-0.48.5 \
+		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.42.1 \
 		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.42.1 \
 		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.42.1 \
 		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
 		windows_i686_msvc-0.42.1 \
 		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.6 \
 		windows_x86_64_gnu-0.42.1 \
 		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.42.1 \
 		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.42.1 \
-		windows_x86_64_msvc-0.48.5
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.6
 
 PLIST_FILES=	bin/riff
 
