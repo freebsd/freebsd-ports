@@ -1,5 +1,5 @@
 PORTNAME=	gotify-server
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/mfechner/freebsd-net-gotify-server/raw/refs/heads/main/:yarn_cache
