@@ -1,8 +1,12 @@
 bin/primecount
 include/primecount.h
 include/primecount.hpp
+lib/cmake/primecount/primecountConfig.cmake
+lib/cmake/primecount/primecountConfigVersion.cmake
+lib/cmake/primecount/primecountShared-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/primecount/primecountShared.cmake
 lib/libprimecount.so
-lib/libprimecount.so.7
 lib/libprimecount.so.%%VER%%
+lib/libprimecount.so.7
 libdata/pkgconfig/primecount.pc
 share/man/man1/primecount.1.gz
