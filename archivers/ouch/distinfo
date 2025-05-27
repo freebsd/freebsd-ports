@@ -1,4 +1,4 @@
-TIMESTAMP = 1745191382
+TIMESTAMP = 1748367559
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
 SIZE (rust/crates/adler2-2.0.0.crate) = 13529
 SHA256 (rust/crates/aes-0.8.4.crate) = b169f7a6d4742236a0a00c541b845991d0ac43e546831af1249753ab4c3aa3a0
@@ -453,5 +453,5 @@ SHA256 (rust/crates/zstd-safe-7.2.3.crate) = f3051792fbdc2e1e143244dc28c60f73d84
 SIZE (rust/crates/zstd-safe-7.2.3.crate) = 28995
 SHA256 (rust/crates/zstd-sys-2.0.14+zstd.1.5.7.crate) = 8fb060d4926e4ac3a3ad15d864e99ceb5f343c6b34f5bd6d81ae6ed417311be5
 SIZE (rust/crates/zstd-sys-2.0.14+zstd.1.5.7.crate) = 764660
-SHA256 (ouch-org-ouch-0.6.0_GH0.tar.gz) = 508f627342e6bcc560e24c2700406b037effbf120510d3d80192cd9acaa588fe
-SIZE (ouch-org-ouch-0.6.0_GH0.tar.gz) = 78063
+SHA256 (ouch-org-ouch-0.6.1_GH0.tar.gz) = e6265071affab228ba7d3ca85f2206029445038b3a3d96036e9bf02b795ad651
+SIZE (ouch-org-ouch-0.6.1_GH0.tar.gz) = 78107
