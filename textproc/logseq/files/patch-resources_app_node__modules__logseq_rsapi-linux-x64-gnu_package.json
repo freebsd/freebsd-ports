@@ -1,0 +1,26 @@
+--- resources/app/node_modules/@logseq/rsapi-linux-x64-gnu/package.json.orig	2025-05-25 10:25:54 UTC
++++ resources/app/node_modules/@logseq/rsapi-linux-x64-gnu/package.json
+@@ -1,19 +1,19 @@
+ {
+-  "name": "@logseq/rsapi-linux-x64-gnu",
++  "name": "@logseq/rsapi-freebsd-x64",
+   "private": false,
+   "publishConfig": {
+     "access": "public"
+   },
+   "version": "0.0.92",
+   "os": [
+-    "linux"
++    "freebsd"
+   ],
+   "cpu": [
+     "x64"
+   ],
+-  "main": "rsapi.linux-x64-gnu.node",
++  "main": "rsapi.freebsd-x64.node",
+   "files": [
+-    "rsapi.linux-x64-gnu.node"
++    "rsapi.freebsd-x64.node"
+   ],
+   "license": "MIT",
+   "engines": {

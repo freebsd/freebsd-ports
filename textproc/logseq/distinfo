@@ -1,0 +1,7 @@
+TIMESTAMP = 1754667404
+SHA256 (Logseq-linux-x64-0.10.13.zip) = 7b9ccfee35a24cc67955439f4e482c3c28683a43e01a3b7730e41c3bbbdfe3cc
+SIZE (Logseq-linux-x64-0.10.13.zip) = 193915507
+SHA256 (logseq/rsapi-0162b98aaec78aa991cdbca2e070816c6acd189a.freebsd-x64.node.zip) = e0883f9e132c2e23138a834ef39d1a2327ad918455c1d5cea7c812932ccb1aff
+SIZE (logseq/rsapi-0162b98aaec78aa991cdbca2e070816c6acd189a.freebsd-x64.node.zip) = 2371329
+SHA256 (logseq/better-sqlite-11.10.0.node.zip) = cd926360c0d4a329583a9ec9af3e6f5c150464fddcd0afad563d185183c988df
+SIZE (logseq/better-sqlite-11.10.0.node.zip) = 1005357
