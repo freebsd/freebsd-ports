@@ -284,6 +284,7 @@ include/thrift/lib/cpp2/dynamic/SerializableRecord.h
 include/thrift/lib/cpp2/dynamic/TypeId.h
 include/thrift/lib/cpp2/dynamic/TypeSystem.h
 include/thrift/lib/cpp2/dynamic/TypeSystemBuilder.h
+include/thrift/lib/cpp2/dynamic/TypeSystemTraits.h
 include/thrift/lib/cpp2/dynamic/detail/Traits.h
 include/thrift/lib/cpp2/folly_dynamic/folly_dynamic.h
 include/thrift/lib/cpp2/folly_dynamic/internal/folly_dynamic-inl-post.h
@@ -472,6 +473,7 @@ include/thrift/lib/cpp2/server/PreprocessResult.h
 include/thrift/lib/cpp2/server/ReactiveToggle.h
 include/thrift/lib/cpp2/server/RequestCompletionCallback.h
 include/thrift/lib/cpp2/server/RequestDebugLog.h
+include/thrift/lib/cpp2/server/RequestExpirationDelegate.h
 include/thrift/lib/cpp2/server/RequestPileBase.h
 include/thrift/lib/cpp2/server/RequestPileInterface.h
 include/thrift/lib/cpp2/server/RequestsRegistry.h
@@ -540,7 +542,7 @@ include/thrift/lib/cpp2/test/gen-cpp2/ProtocolBenchData_visit_union.h
 include/thrift/lib/cpp2/test/gen-cpp2/ProtocolBenchData_visitation.h
 include/thrift/lib/cpp2/test/server/ThriftServerTestUtils.h
 include/thrift/lib/cpp2/test/util/FakeClock.h
-include/thrift/lib/cpp2/test/util/TestInterface.h
+include/thrift/lib/cpp2/test/util/TestHandler.h
 include/thrift/lib/cpp2/test/util/TestServerFactory.h
 include/thrift/lib/cpp2/test/util/TestThriftServerFactory.h
 include/thrift/lib/cpp2/test/util/TrackingTProcessorEventHandler.h
@@ -962,6 +964,7 @@ lib/fb-py-libs/thrift_py_inspect.manifest
 lib/fb-py-libs/thrift_py_inspect/thrift/util/inspect.py
 lib/libasync.so
 lib/libasync.so.1.0.0
+lib/libcommon.so
 lib/libcompiler.so
 lib/libcompiler.so.1.0.0
 lib/libcompiler_ast.so
@@ -975,7 +978,6 @@ lib/librpcmetadata.so.1.0.0
 lib/libruntime.so
 lib/libserverdbginfo.so
 lib/libserverdbginfo.so.1.0.0
-lib/libshared.so
 lib/libthrift-core.so
 lib/libthrift-core.so.1.0.0
 lib/libthriftannotation.so
