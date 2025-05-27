@@ -4006,9 +4006,21 @@
 %%WWWDIR%%/core/lib/Drupal/Core/GeneratedNoLink.php
 %%WWWDIR%%/core/lib/Drupal/Core/GeneratedUrl.php
 %%WWWDIR%%/core/lib/Drupal/Core/Hook/Attribute/Hook.php
+%%WWWDIR%%/core/lib/Drupal/Core/Hook/Attribute/HookAttributeInterface.php
 %%WWWDIR%%/core/lib/Drupal/Core/Hook/Attribute/LegacyHook.php
+%%WWWDIR%%/core/lib/Drupal/Core/Hook/Attribute/LegacyModuleImplementsAlter.php
+%%WWWDIR%%/core/lib/Drupal/Core/Hook/Attribute/RemoveHook.php
+%%WWWDIR%%/core/lib/Drupal/Core/Hook/Attribute/ReorderHook.php
 %%WWWDIR%%/core/lib/Drupal/Core/Hook/Attribute/StopProceduralHookScan.php
 %%WWWDIR%%/core/lib/Drupal/Core/Hook/HookCollectorPass.php
+%%WWWDIR%%/core/lib/Drupal/Core/Hook/Order/Order.php
+%%WWWDIR%%/core/lib/Drupal/Core/Hook/Order/OrderAfter.php
+%%WWWDIR%%/core/lib/Drupal/Core/Hook/Order/OrderBefore.php
+%%WWWDIR%%/core/lib/Drupal/Core/Hook/Order/OrderInterface.php
+%%WWWDIR%%/core/lib/Drupal/Core/Hook/Order/RelativeOrderBase.php
+%%WWWDIR%%/core/lib/Drupal/Core/Hook/OrderOperation/BeforeOrAfter.php
+%%WWWDIR%%/core/lib/Drupal/Core/Hook/OrderOperation/FirstOrLast.php
+%%WWWDIR%%/core/lib/Drupal/Core/Hook/OrderOperation/OrderOperation.php
 %%WWWDIR%%/core/lib/Drupal/Core/Http/ClientFactory.php
 %%WWWDIR%%/core/lib/Drupal/Core/Http/Exception/CacheableAccessDeniedHttpException.php
 %%WWWDIR%%/core/lib/Drupal/Core/Http/Exception/CacheableBadRequestHttpException.php
@@ -6093,6 +6105,7 @@
 %%WWWDIR%%/core/modules/config/tests/config_test/config_test.install
 %%WWWDIR%%/core/modules/config/tests/config_test/config_test.links.action.yml
 %%WWWDIR%%/core/modules/config/tests/config_test/config_test.links.task.yml
+%%WWWDIR%%/core/modules/config/tests/config_test/config_test.permissions.yml
 %%WWWDIR%%/core/modules/config/tests/config_test/config_test.routing.yml
 %%WWWDIR%%/core/modules/config/tests/config_test/src/ConfigActionErrorEntity/DuplicatePluralizedMethodName.php
 %%WWWDIR%%/core/modules/config/tests/config_test/src/ConfigActionErrorEntity/DuplicatePluralizedOtherMethodName.php
@@ -6101,6 +6114,7 @@
 %%WWWDIR%%/core/modules/config/tests/config_test/src/ConfigTestForm.php
 %%WWWDIR%%/core/modules/config/tests/config_test/src/ConfigTestInterface.php
 %%WWWDIR%%/core/modules/config/tests/config_test/src/ConfigTestListBuilder.php
+%%WWWDIR%%/core/modules/config/tests/config_test/src/ConfigTestPermissions.php
 %%WWWDIR%%/core/modules/config/tests/config_test/src/ConfigTestStorage.php
 %%WWWDIR%%/core/modules/config/tests/config_test/src/ConfigValidation.php
 %%WWWDIR%%/core/modules/config/tests/config_test/src/Entity/ConfigQueryTest.php
@@ -9496,6 +9510,7 @@
 %%WWWDIR%%/core/modules/migrate/tests/src/Unit/MigrateTestCase.php
 %%WWWDIR%%/core/modules/migrate/tests/src/Unit/MigrationPluginManagerTest.php
 %%WWWDIR%%/core/modules/migrate/tests/src/Unit/MigrationTest.php
+%%WWWDIR%%/core/modules/migrate/tests/src/Unit/Plugin/NoSourcePluginDecoratorTest.php
 %%WWWDIR%%/core/modules/migrate/tests/src/Unit/Plugin/migrate/destination/CheckRequirementsTest.php
 %%WWWDIR%%/core/modules/migrate/tests/src/Unit/Plugin/migrate/destination/EntityContentBaseTest.php
 %%WWWDIR%%/core/modules/migrate/tests/src/Unit/Plugin/migrate/destination/EntityRevisionTest.php
@@ -10056,6 +10071,8 @@
 %%WWWDIR%%/core/modules/node/tests/modules/node_test_config/sync/node.type.import.yml
 %%WWWDIR%%/core/modules/node/tests/modules/node_test_exception/node_test_exception.info.yml
 %%WWWDIR%%/core/modules/node/tests/modules/node_test_exception/src/Hook/NodeTestExceptionHooks.php
+%%WWWDIR%%/core/modules/node/tests/modules/node_no_default_author/node_no_default_author.info.yml
+%%WWWDIR%%/core/modules/node/tests/modules/node_no_default_author/src/Hook/NodeNoDefaultAuthorHooks.php
 %%WWWDIR%%/core/modules/node/tests/modules/node_test_views/node_test_views.info.yml
 %%WWWDIR%%/core/modules/node/tests/modules/node_test_views/src/Hook/NodeTestViewsViewsHooks.php
 %%WWWDIR%%/core/modules/node/tests/modules/node_test_views/test_views/views.view.test_argument_node_uid_revision.yml
@@ -13860,6 +13877,9 @@
 %%WWWDIR%%/core/modules/user/tests/modules/user_auth_decorator_test/src/UserAuthDecorator.php
 %%WWWDIR%%/core/modules/user/tests/modules/user_auth_decorator_test/user_auth_decorator_test.info.yml
 %%WWWDIR%%/core/modules/user/tests/modules/user_auth_decorator_test/user_auth_decorator_test.services.yml
+%%WWWDIR%%/core/modules/user/tests/modules/user_config_override_test/src/ConfigOverrider.php
+%%WWWDIR%%/core/modules/user/tests/modules/user_config_override_test/user_config_override_test.info.yml
+%%WWWDIR%%/core/modules/user/tests/modules/user_config_override_test/user_config_override_test.services.yml
 %%WWWDIR%%/core/modules/user/tests/modules/user_custom_pass_hash_params_test/user_custom_pass_hash_params_test.info.yml
 %%WWWDIR%%/core/modules/user/tests/modules/user_custom_pass_hash_params_test/user_custom_pass_hash_params_test.services.yml
 %%WWWDIR%%/core/modules/user/tests/modules/user_form_test/src/Hook/UserFormTestHooks.php
@@ -15248,6 +15268,7 @@
 %%WWWDIR%%/core/modules/workspaces/tests/src/Functional/WorkspaceViewsBulkFormTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Functional/WorkspacesUninstallTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/FunctionalJavascript/WorkspacesLayoutBuilderIntegrationTest.php
+%%WWWDIR%%/core/modules/workspaces/tests/src/FunctionalJavascript/WorkspacesMediaLibraryIntegrationTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/EntityReferenceSupportedNewEntitiesConstraintValidatorTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/EntityWorkspaceConflictConstraintValidatorTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceAccessTest.php
