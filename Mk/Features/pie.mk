@@ -1,13 +1,13 @@
 # PIE Support
 #
-# Produce a Position-Independent Executable (PIE) instead of a “normal”
-# fixed‐address ELF.
+# Produce a Position-Independent Executable (PIE) instead of a "normal"
+# fixed-address ELF.
 # A PIE is an executable whose code sections are compiled and linked so that,
 # at runtime, they can be loaded at any base address in memory.
 #
 # Because it can be loaded at unpredictable addresses, PIE enables full Address
-# Space Layout Randomization (ASLR) for your main executable—making certain
-# classes of memory‐corruption exploits much harder.
+# Space Layout Randomization (ASLR) for your main executable-making certain
+# classes of memory-corruption exploits much harder.
 
 .if !defined(_PIE_MK_INCLUDED)
 _PIE_MK_INCLUDED=	yes
