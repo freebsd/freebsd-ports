@@ -1,7 +1,6 @@
 PORTNAME=	gotify-server
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/mfechner/freebsd-net-gotify-server/raw/refs/heads/main/:yarn_cache
 DISTNAME=	server
@@ -15,7 +14,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	yarn${NODEJS_SUFFIX}>=1.10.0:www/yarn${NODEJS_SUFFIX} \
 		
-USES=		go:modules,1.22 nodejs:build
+USES=		go:modules,1.24 nodejs:build
 USE_RC_SUBR=	gotify_server
 GO_MODULE=	github.com/gotify/server/v2
 
@@ -70,9 +69,9 @@ post-install:
 # To update
 # 1. comment DISTFILES
 # 2. Run 'make makesum'
-# 3. Uncomment DITSFILES
-# 4. Run 'make make-yarn-cache'
-# 5. Upload yarn cache
+# 3. Run 'make make-yarn-cache'
+# 4. Upload yarn cache
+# 5. Uncomment DITSFILES
 # 6. Run 'make makesum'
 
 make-yarn-cache: patch
