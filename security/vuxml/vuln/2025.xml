@@ -1,3 +1,39 @@
+  <vuln vid="45eb98d6-3b13-11f0-97f7-b42e991fc52e">
+    <topic>grafana -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><lt>12.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@grafana.com reports:</p>
+	<blockquote cite="https://grafana.com/security/security-advisories/cve-2025-4123/">
+	  <p>A cross-site scripting (XSS) vulnerability exists in Grafana caused
+	by combining a client path traversal and open redirect.  This allows
+	attackers to redirect users to a website that hosts a frontend
+	plugin that will execute arbitrary JavaScript.  This vulnerability
+	does not require editor permissions and if anonymous access is
+	enabled, the XSS will work.  If the Grafana Image Renderer plugin
+	is installed, it is possible to exploit the open redirect to achieve
+	a full read SSRF.
+	
+	The default Content-Security-Policy (CSP) in Grafana will block the
+	XSS though the `connect-src` directive.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4123</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-4123</url>
+    </references>
+    <dates>
+      <discovery>2025-05-22</discovery>
+      <entry>2025-05-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e587b52d-38ac-11f0-b7b6-dcfe074bd614">
     <topic>cpython -- Use-after-free in &quot;unicode_escape&quot; decoder with error handler</topic>
     <affects>
