@@ -597,6 +597,7 @@ sbin/saned
 %%NLS%%share/locale/pt/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sane-backends.mo
 @dir etc/sane.d/dll.d
