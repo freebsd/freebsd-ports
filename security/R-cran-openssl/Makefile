@@ -1,11 +1,11 @@
 PORTNAME=	openssl
-DISTVERSION=	2.3.2
+DISTVERSION=	2.3.3
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Toolkit for Encryption, Signatures and Certificates Based on OpenSSL
-WWW=		https://cran.r-project.org/web/packages/openssl/
+WWW=		https://cran.r-project.org/package=openssl
 
 LICENSE=	MIT
 
