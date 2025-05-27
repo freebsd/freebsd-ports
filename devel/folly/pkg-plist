@@ -858,6 +858,7 @@ include/folly/lang/Thunk.h
 include/folly/lang/ToAscii.h
 include/folly/lang/TypeInfo.h
 include/folly/lang/UncaughtExceptions.h
+include/folly/lang/VectorTraits.h
 include/folly/logging/AsyncFileWriter.h
 include/folly/logging/AsyncLogWriter.h
 include/folly/logging/AutoTimer.h
