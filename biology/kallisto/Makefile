@@ -1,6 +1,7 @@
 PORTNAME=		kallisto
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.51.1
+PORTREVISION=		1
 PORTEPOCH=		1
 CATEGORIES=		biology
 
@@ -42,17 +43,8 @@ LDFLAGS+=		-lhts -lz
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-# Build fails with clang19, but succeeds with gcc13
-# Have not figured out where this sz_link member is even supposed to come from
-# DataStorage.tcc:81:69: error: no member named 'sz_link' in 'DataStorage<Unitig_data_t>'
-.if ${OSVERSION} > 1500000
-USE_GCC=	yes
-.endif
-
 post-install-EXAMPLES-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/kallisto-test ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC}/test && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
