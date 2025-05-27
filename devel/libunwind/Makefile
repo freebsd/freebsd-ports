@@ -28,6 +28,7 @@ CONFIGURE_ARGS_armv7=	ac_cv_search__Unwind_Resume="-lgcc_s -lgcc"
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	ARCH=${ARCH:S|amd64|x86_64|:C|armv.|arm|:S|i386|x86|:C|powerpc64.*|ppc64|:S|powerpc|ppc32|}
@@ -35,6 +36,8 @@ PLIST_SUB=	ARCH=${ARCH:S|amd64|x86_64|:C|armv.|arm|:S|i386|x86|:C|powerpc64.*|pp
 CPE_VENDOR=	libunwind_project
 
 LIBUNWIND_VERSION=	1.8.1
+
+TESTING_UNSAFE=	One test fails rarely due to race condition https://github.com/libunwind/libunwind/issues/715
 
 .include <bsd.port.options.mk>
 
