@@ -1,6 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.5.0
+DISTVERSION=	18.6.1
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -149,7 +149,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		foreign-types-macros-0.2.3 \
 		foreign-types-shared-0.3.1 \
 		form_urlencoded-1.2.1 \
-		fs-err-2.11.0 \
 		fs-err-3.1.0 \
 		futures-0.3.31 \
 		futures-channel-0.3.31 \
@@ -217,7 +216,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		indoc-2.0.6 \
 		inout-0.1.4 \
 		instability-0.3.7 \
-		interim-0.1.2 \
+		interim-0.2.1 \
 		ipnet-2.11.0 \
 		is_terminal_polyfill-1.70.1 \
 		iso8601-0.6.2 \
@@ -237,9 +236,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		litemap-0.7.5 \
 		lock_api-0.4.12 \
 		log-0.4.26 \
-		logos-0.14.4 \
-		logos-codegen-0.14.4 \
-		logos-derive-0.14.4 \
+		logos-0.15.0 \
+		logos-codegen-0.15.0 \
+		logos-derive-0.15.0 \
 		lru-0.12.5 \
 		mach2-0.4.2 \
 		matchers-0.1.0 \
@@ -256,7 +255,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		minijinja-2.9.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.5 \
-		minspan-0.1.2 \
+		minspan-0.1.5 \
 		mio-1.0.3 \
 		multimap-0.10.0 \
 		nix-0.28.0 \
@@ -316,7 +315,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		png-0.17.16 \
 		poly1305-0.8.0 \
 		portable-atomic-1.11.0 \
-		postmark-0.10.2 \
+		postmark-0.11.3 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
 		pretty_assertions-1.4.1 \
@@ -325,10 +324,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		prost-0.13.5 \
 		prost-build-0.13.5 \
 		prost-derive-0.13.5 \
-		prost-reflect-0.14.7 \
+		prost-reflect-0.15.0 \
 		prost-types-0.13.5 \
-		protox-0.7.2 \
-		protox-parse-0.7.0 \
+		protox-0.8.0 \
+		protox-parse-0.8.0 \
 		quanta-0.11.1 \
 		quick-xml-0.37.2 \
 		quinn-0.11.7 \
@@ -451,7 +450,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinystr-0.7.6 \
 		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.44.1 \
+		tokio-1.44.2 \
 		tokio-macros-2.5.0 \
 		tokio-rustls-0.24.1 \
 		tokio-rustls-0.26.2 \
