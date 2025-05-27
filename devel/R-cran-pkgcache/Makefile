@@ -1,11 +1,11 @@
 PORTNAME=	pkgcache
-DISTVERSION=	2.2.3
+DISTVERSION=	2.2.4
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Cache 'CRAN'-Like Metadata and R Packages
-WWW=		https://cran.r-project.org/web/packages/pkgcache/
+WWW=		https://cran.r-project.org/package=pkgcache
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
