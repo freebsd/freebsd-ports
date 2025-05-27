@@ -1,5 +1,5 @@
 PORTNAME=	powerdns
-DISTVERSION=	4.9.4
+DISTVERSION=	4.9.5
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
@@ -122,7 +122,8 @@ ZEROMQ_CONFIGURE_ON=	--enable-remotebackend-zeromq
 
 post-install::
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}/var/run/pdns
-	@${STAGEDIR}${PREFIX}/sbin/pdns_server --module-dir=${STAGEDIR}${PREFIX}/lib/pdns --launch="pipe bind ${MODULES}" --config > ${STAGEDIR}${EXAMPLESDIR}/pdns.conf
+	@${STAGEDIR}${PREFIX}/sbin/pdns_server --module-dir=${STAGEDIR}${PREFIX}/lib/pdns \
+		--launch="pipe bind ${MODULES}" --config > ${STAGEDIR}${EXAMPLESDIR}/pdns.conf
 	@${REINPLACE_CMD} -e 's;${STAGEDIR};;' -i '' ${STAGEDIR}${EXAMPLESDIR}/pdns.conf
 
 .include <bsd.port.mk>
