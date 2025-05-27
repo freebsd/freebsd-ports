@@ -3,7 +3,7 @@
 @@ -1,6 +1,6 @@
  module github.com/AdguardTeam/AdGuardHome
  
--go 1.24.2
+-go 1.24.3
 +go 1.24
  
  require (
