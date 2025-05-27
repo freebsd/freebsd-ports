@@ -1,6 +1,6 @@
 PORTNAME=	tokay
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.7
+DISTVERSION=	0.6.8
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +30,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		cc-1.2.15 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
-		charclass-0.2.0 \
+		charclass-0.3.0 \
 		clap-2.34.0 \
 		clap-4.5.31 \
 		clap_builder-4.5.31 \
