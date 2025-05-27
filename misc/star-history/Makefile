@@ -1,6 +1,5 @@
 PORTNAME=	star-history
-DISTVERSION=	1.0.27
-PORTREVISION=	1
+DISTVERSION=	1.0.31
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,25 +20,24 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		adler2-2.0.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anyhow-1.0.97 \
+		anyhow-1.0.98 \
 		atomic-waker-1.1.2 \
 		autocfg-1.4.0 \
-		backtrace-0.3.74 \
+		backtrace-0.3.75 \
 		base64-0.22.1 \
-		bitflags-2.9.0 \
-		bstr-1.11.3 \
+		bitflags-2.9.1 \
+		bstr-1.12.0 \
 		bumpalo-3.17.0 \
-		bytes-1.10.0 \
-		cc-1.2.16 \
+		bytes-1.10.1 \
+		cc-1.2.24 \
 		cfg-if-1.0.0 \
-		chrono-0.4.40 \
+		chrono-0.4.41 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.7 \
-		dbus-0.9.7 \
 		displaydoc-0.2.5 \
 		encoding_rs-0.8.35 \
 		equivalent-1.0.2 \
-		errno-0.3.10 \
+		errno-0.3.12 \
 		fastrand-2.3.0 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
@@ -51,101 +49,99 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		futures-sink-0.3.31 \
 		futures-task-0.3.31 \
 		futures-util-0.3.31 \
-		getrandom-0.2.15 \
-		getrandom-0.3.1 \
+		getrandom-0.2.16 \
+		getrandom-0.3.3 \
 		gimli-0.31.1 \
-		h2-0.4.8 \
-		hashbrown-0.15.2 \
+		h2-0.4.10 \
+		hashbrown-0.15.3 \
 		home-0.5.11 \
-		http-1.2.0 \
+		http-1.3.1 \
 		http-body-1.0.1 \
-		http-body-util-0.1.2 \
+		http-body-util-0.1.3 \
 		httparse-1.10.1 \
 		hyper-1.6.0 \
-		hyper-rustls-0.27.5 \
+		hyper-rustls-0.27.6 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.10 \
-		iana-time-zone-0.1.61 \
+		hyper-util-0.1.13 \
+		iana-time-zone-0.1.63 \
 		iana-time-zone-haiku-0.1.2 \
-		icu_collections-1.5.0 \
-		icu_locid-1.5.0 \
-		icu_locid_transform-1.5.0 \
-		icu_locid_transform_data-1.5.0 \
-		icu_normalizer-1.5.0 \
-		icu_normalizer_data-1.5.0 \
-		icu_properties-1.5.1 \
-		icu_properties_data-1.5.0 \
-		icu_provider-1.5.0 \
-		icu_provider_macros-1.5.0 \
+		icu_collections-2.0.0 \
+		icu_locale_core-2.0.0 \
+		icu_normalizer-2.0.0 \
+		icu_normalizer_data-2.0.0 \
+		icu_properties-2.0.1 \
+		icu_properties_data-2.0.1 \
+		icu_provider-2.0.0 \
 		idna-1.0.3 \
-		idna_adapter-1.2.0 \
-		indexmap-2.7.1 \
+		idna_adapter-1.2.1 \
+		indexmap-2.9.0 \
 		ipnet-2.11.0 \
 		itoa-1.0.15 \
 		js-sys-0.3.77 \
-		libc-0.2.170 \
-		libdbus-sys-0.2.5 \
-		linux-raw-sys-0.4.15 \
-		litemap-0.7.5 \
-		log-0.4.26 \
+		libc-0.2.172 \
+		linux-raw-sys-0.9.4 \
+		litemap-0.8.0 \
+		log-0.4.27 \
 		memchr-2.7.4 \
 		mime-0.3.17 \
-		miniz_oxide-0.8.5 \
-		mio-1.0.3 \
+		miniz_oxide-0.8.8 \
+		mio-1.0.4 \
 		native-tls-0.2.14 \
 		normpath-1.3.0 \
 		num-traits-0.2.19 \
 		object-0.36.7 \
-		once_cell-1.20.3 \
-		opener-0.7.2 \
-		openssl-0.10.71 \
+		once_cell-1.21.3 \
+		opener-0.8.1 \
+		openssl-0.10.72 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
-		openssl-sys-0.9.106 \
+		openssl-sys-0.9.108 \
 		percent-encoding-2.3.1 \
 		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.32 \
-		proc-macro2-1.0.94 \
-		quote-1.0.39 \
+		potential_utf-0.1.2 \
+		proc-macro2-1.0.95 \
+		quote-1.0.40 \
+		r-efi-5.2.0 \
 		regex-automata-0.4.9 \
-		reqwest-0.12.12 \
-		ring-0.17.11 \
+		reqwest-0.12.15 \
+		ring-0.17.14 \
 		rustc-demangle-0.1.24 \
-		rustix-0.38.44 \
-		rustls-0.23.23 \
+		rustix-1.0.7 \
+		rustls-0.23.27 \
 		rustls-pemfile-2.2.0 \
-		rustls-pki-types-1.11.0 \
-		rustls-webpki-0.102.8 \
-		rustversion-1.0.20 \
+		rustls-pki-types-1.12.0 \
+		rustls-webpki-0.103.3 \
+		rustversion-1.0.21 \
 		ryu-1.0.20 \
 		schannel-0.1.27 \
 		security-framework-2.11.1 \
 		security-framework-sys-2.14.0 \
-		serde-1.0.218 \
-		serde_derive-1.0.218 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
 		serde_json-1.0.140 \
 		serde_urlencoded-0.7.1 \
 		serde_yaml-0.9.34+deprecated \
 		shlex-1.3.0 \
 		slab-0.4.9 \
-		smallvec-1.14.0 \
-		socket2-0.5.8 \
+		smallvec-1.15.0 \
+		socket2-0.5.10 \
 		stable_deref_trait-1.2.0 \
 		subtle-2.6.1 \
-		syn-2.0.99 \
+		syn-2.0.101 \
 		sync_wrapper-1.0.2 \
-		synstructure-0.13.1 \
+		synstructure-0.13.2 \
 		system-configuration-0.6.1 \
 		system-configuration-sys-0.6.0 \
-		tempfile-3.17.1 \
+		tempfile-3.20.0 \
 		thiserror-2.0.12 \
 		thiserror-impl-2.0.12 \
-		tinystr-0.7.6 \
-		tokio-1.43.0 \
+		tinystr-0.8.1 \
+		tokio-1.45.1 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.2 \
-		tokio-util-0.7.13 \
+		tokio-util-0.7.15 \
 		tower-0.5.2 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
@@ -156,12 +152,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unsafe-libyaml-0.2.11 \
 		untrusted-0.9.0 \
 		url-2.5.4 \
-		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		vcpkg-0.2.15 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasi-0.13.3+wasi-0.2.2 \
+		wasi-0.14.2+wasi-0.2.4 \
 		wasm-bindgen-0.2.100 \
 		wasm-bindgen-backend-0.2.100 \
 		wasm-bindgen-futures-0.4.50 \
@@ -169,35 +164,44 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wasm-bindgen-macro-support-0.2.100 \
 		wasm-bindgen-shared-0.2.100 \
 		web-sys-0.3.77 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-core-0.52.0 \
-		windows-link-0.1.0 \
-		windows-registry-0.2.0 \
-		windows-result-0.2.0 \
-		windows-strings-0.1.0 \
+		windows-core-0.61.2 \
+		windows-implement-0.60.0 \
+		windows-interface-0.59.1 \
+		windows-link-0.1.1 \
+		windows-registry-0.4.0 \
+		windows-result-0.3.4 \
+		windows-strings-0.3.1 \
+		windows-strings-0.4.2 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
+		windows-targets-0.53.0 \
 		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_gnullvm-0.53.0 \
 		windows_aarch64_msvc-0.52.6 \
+		windows_aarch64_msvc-0.53.0 \
 		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.0 \
 		windows_i686_gnullvm-0.52.6 \
+		windows_i686_gnullvm-0.53.0 \
 		windows_i686_msvc-0.52.6 \
+		windows_i686_msvc-0.53.0 \
 		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.0 \
 		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.52.6 \
-		wit-bindgen-rt-0.33.0 \
-		write16-1.0.0 \
-		writeable-0.5.5 \
-		yoke-0.7.5 \
-		yoke-derive-0.7.5 \
+		windows_x86_64_msvc-0.53.0 \
+		wit-bindgen-rt-0.39.0 \
+		writeable-0.6.1 \
+		yoke-0.8.0 \
+		yoke-derive-0.8.0 \
 		zerofrom-0.1.6 \
 		zerofrom-derive-0.1.6 \
 		zeroize-1.8.1 \
-		zerovec-0.10.4 \
-		zerovec-derive-0.10.3
+		zerotrie-0.2.2 \
+		zerovec-0.11.2 \
+		zerovec-derive-0.11.1
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
