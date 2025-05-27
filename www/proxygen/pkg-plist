@@ -155,6 +155,8 @@ include/proxygen/lib/http/codec/compress/experimental/simulator/HPACKScheme.h
 include/proxygen/lib/http/codec/compress/experimental/simulator/QMINScheme.h
 include/proxygen/lib/http/codec/compress/experimental/simulator/QPACKScheme.h
 include/proxygen/lib/http/codec/compress/experimental/simulator/SimStreamingCallback.h
+include/proxygen/lib/http/codec/webtransport/WebTransportCapsuleCodec.h
+include/proxygen/lib/http/codec/webtransport/WebTransportFramer.h
 include/proxygen/lib/http/connpool/Endpoint.h
 include/proxygen/lib/http/connpool/ServerIdleSessionController.h
 include/proxygen/lib/http/connpool/SessionHolder.h
@@ -198,6 +200,7 @@ include/proxygen/lib/http/session/ServerPushLifecycle.h
 include/proxygen/lib/http/session/SimpleController.h
 include/proxygen/lib/http/session/TTLBAStats.h
 include/proxygen/lib/http/session/TransactionByteEvents.h
+include/proxygen/lib/http/session/WebTransportFilter.h
 include/proxygen/lib/http/sink/FlowControlInfo.h
 include/proxygen/lib/http/sink/HTTPConnectSink.h
 include/proxygen/lib/http/sink/HTTPSink.h
