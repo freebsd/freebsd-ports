@@ -11,12 +11,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-USE_GITHUB=	yes
-GH_ACCOUNT=	0xERR0R
 USE_RC_SUBR=	blocky
 
-GO_MOD_DIST=	github
-GO_MODULE=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
+GO_MODULE=	github.com/0xERR0R/blocky
 GO_TARGET=	main.go:${PREFIX}/sbin/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "-w -s \
 		-X github.com/0xERR0R/blocky/util.Version=${DISTVERSION} \
