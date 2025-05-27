@@ -39,19 +39,19 @@
     <affects>
       <package>
 	<name>python39</name>
-	<range><lt>3.9.22</lt></range>
+	<range><lt>3.9.22_1</lt></range>
       </package>
       <package>
 	<name>python310</name>
-	<range><lt>3.10.17</lt></range>
+	<range><lt>3.10.17_1</lt></range>
       </package>
       <package>
 	<name>python311</name>
-	<range><lt>3.11.12</lt></range>
+	<range><lt>3.11.12_1</lt></range>
       </package>
       <package>
 	<name>python312</name>
-	<range><lt>3.12.10</lt></range>
+	<range><lt>3.12.10_1</lt></range>
       </package>
     </affects>
     <description>
