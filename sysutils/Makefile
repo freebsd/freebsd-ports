@@ -1124,6 +1124,7 @@
     SUBDIR += rhc
     SUBDIR += rinse
     SUBDIR += rkbin
+    SUBDIR += rldd
     SUBDIR += rmlint
     SUBDIR += rocinante
     SUBDIR += rocr
