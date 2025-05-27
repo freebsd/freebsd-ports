@@ -1,6 +1,5 @@
 PORTNAME=	ibus-anthy
-DISTVERSION=	1.5.16
-PORTREVISION=	2
+DISTVERSION=	1.5.17
 CATEGORIES=	japanese
 MASTER_SITES=	https://github.com/ibus/ibus-anthy/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	ja-
@@ -14,19 +13,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libibus-1.0.so:textproc/ibus
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS+=--with-layout=default
+FLAVORS=	original unicode
+
+original_LIB_DEPENDS=		libanthy.so:japanese/anthy
+original_CONFLICTS_INSTALL=	${PORTNAME}-unicode
+unicode_PKGNAMESUFFIX=		-unicode
+unicode_LIB_DEPENDS=		libanthy-unicode.so:japanese/anthy-unicode
+unicode_CONFLICTS_INSTALL=	${PORTNAME}
+
 USES=		gettext gmake gnome libtool pkgconfig python
 USE_GNOME=	pygobject3
 GLIB_SCHEMAS=	org.freedesktop.ibus.engine.anthy.gschema.xml
 
-FLAVORS=	original unicode
-
-original_CONFLICTS_INSTALL=	${PORTNAME}-unicode
-original_LIB_DEPENDS=		libanthy.so:japanese/anthy
-unicode_CONFLICTS_INSTALL=	${PORTNAME}
-unicode_LIB_DEPENDS=		libanthy-unicode.so:japanese/anthy-unicode
-unicode_PKGNAMESUFFIX=		-unicode
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-layout=default
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
