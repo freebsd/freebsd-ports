@@ -1,0 +1,4 @@
+wait_for2 is an alternate implementation of asyncio.wait_for(). It
+handles several edge cases like simultaneous cancellation of wait
+and completion of future differently and consistently across Python
+versions 3.7+.
