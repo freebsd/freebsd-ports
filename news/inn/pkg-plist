@@ -166,8 +166,8 @@ include/inn/wire.h
 include/inn/xmalloc.h
 include/inn/xwrite.h
 lib/perl/INN/Config.pm
-lib/perl/INN/Utils/Shlock.pm
 lib/perl/INN/ovsqlite_client.pm
+lib/perl/INN/Utils/Shlock.pm
 lib/innreport_inn.pm
 lib/innreport-display.conf
 lib/innshellvars
@@ -188,7 +188,6 @@ lib/libinnstorage.so.%%LIBSTORAGEVER_LONG%%
 @comment --------------------------------------------------------------
 @cwd
 share/man/man1/convdate.1.gz
-share/man/man1/delayer.1.gz
 share/man/man1/fastrm.1.gz
 share/man/man1/gencancel.1.gz
 share/man/man1/getlist.1.gz
@@ -200,10 +199,8 @@ share/man/man1/nntpget.1.gz
 share/man/man1/pgpverify.1.gz
 share/man/man1/pullnews.1.gz
 share/man/man1/rnews.1.gz
-share/man/man1/shlock.1.gz
 share/man/man1/shrinkfile.1.gz
 share/man/man1/simpleftp.1.gz
-share/man/man1/sm.1.gz
 share/man/man3/INN::Config.3pm.gz
 share/man/man3/INN::Utils::Shlock.3pm.gz
 share/man/man3/INN::ovsqlite_client.3pm.gz
@@ -263,6 +260,7 @@ share/man/man8/cnfsstat.8.gz
 share/man/man8/controlchan.8.gz
 share/man/man8/ctlinnd.8.gz
 share/man/man8/cvtbatch.8.gz
+share/man/man8/delayer.8.gz
 share/man/man8/docheckgroups.8.gz
 share/man/man8/domain.8.gz
 share/man/man8/expire.8.gz
@@ -309,6 +307,8 @@ share/man/man8/send-ihave.8.gz
 share/man/man8/send-uucp.8.gz
 share/man/man8/sendinpaths.8.gz
 share/man/man8/sendxbatches.8.gz
+share/man/man8/shlock.8.gz
+share/man/man8/sm.8.gz
 share/man/man8/tally.control.8.gz
 share/man/man8/tdx-util.8.gz
 share/man/man8/tinyleaf.8.gz
