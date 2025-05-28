@@ -1,0 +1,6 @@
+NetworkManager is the standard Linux network configuration tool suite. It
+supports large range of networking setups, from desktop to servers and mobile
+and integrates well with popular desktop environments and server configuration
+management tools.
+
+This port serves as a shim to bypass Linux dependencies for other ports.
