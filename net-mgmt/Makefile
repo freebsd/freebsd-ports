@@ -204,6 +204,7 @@
     SUBDIR += netmagis-www
     SUBDIR += netmask
     SUBDIR += netspoc
+    SUBDIR += networkmanager-shim
     SUBDIR += networkmgr
     SUBDIR += netxms
     SUBDIR += nfdump
