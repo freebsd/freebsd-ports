@@ -1,3 +1,3 @@
-TIMESTAMP = 1748304581
-SHA256 (huggingface_hub-0.32.1.tar.gz) = 770acdae5ad973447074e10a98044306e567ff36012419ae80c051f446156551
-SIZE (huggingface_hub-0.32.1.tar.gz) = 422371
+TIMESTAMP = 1748411892
+SHA256 (huggingface_hub-0.32.2.tar.gz) = 64a288b1eadad6b60bbfd50f0e52fd6cfa2ef77ab13c3e8a834a038ae929de54
+SIZE (huggingface_hub-0.32.2.tar.gz) = 422847
