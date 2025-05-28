@@ -5958,6 +5958,7 @@
     SUBDIR += py-spyder-kernels
     SUBDIR += py-spyder-unittest
     SUBDIR += py-sqids
+    SUBDIR += py-sqlfluff
     SUBDIR += py-squint
     SUBDIR += py-sre-yield
     SUBDIR += py-srsly
