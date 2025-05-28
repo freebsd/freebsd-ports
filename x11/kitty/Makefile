@@ -20,7 +20,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} \
 		simde>=0.7.6:devel/simde \
 		sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
 		urw-base35-fonts>=20200910:x11-fonts/urw-base35-fonts \
-		wayland-protocols>=0:graphics/wayland-protocols
+		wayland-protocols>=0:graphics/wayland-protocols \
+		roboto-fonts-ttf>=2.134:x11-fonts/roboto-fonts-ttf
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libdbus-1.so:devel/dbus \
 		libepoll-shim-interpose.so:devel/libepoll-shim \
@@ -49,7 +50,7 @@ SHEBANG_GLOB=	*.py
 
 GO_MODULE=	github.com/kovidgoyal/kitty
 
-MAKE_ENV=	PYTHONDONTWRITEBYTECODE=1
+MAKE_ENV=	PYTHONDONTWRITEBYTECODE=1 BUILD_DOCS=yes
 TEST_ENV=	PATH="${STAGEDIR}${PREFIX}/bin:${PATH}"
 TEST_TARGET=	test
 
@@ -69,9 +70,7 @@ _STRIP_TARGETS=	kitty/fast_data_types.so kitty/glfw-x11.so \
 
 _EMPTY_DIRS=	kittens/choose kittens/diff kittens/unicode_input kittens kitty
 
-OPTIONS_DEFINE=		DOCS
-DOCS_BUILD_DEPENDS=	roboto-fonts-ttf>=2.134:x11-fonts/roboto-fonts-ttf
-DOCS_MAKE_ENV=		BUILD_DOCS=yes
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
