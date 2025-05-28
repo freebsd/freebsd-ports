@@ -1,6 +1,5 @@
 PORTNAME=	zsync
-PORTVERSION=	0.6.2
-PORTREVISION=	2
+DISTVERSION=	0.6.3
 CATEGORIES=	net
 MASTER_SITES=	http://zsync.moria.org.uk/download/
 
