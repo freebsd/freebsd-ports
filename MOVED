@@ -4417,3 +4417,4 @@ graphics/linux-rl9-sdl2_image|misc/linux-rl9-sdl20-extralibs|2025-05-22|Merged i
 graphics/linux-rl9-sdl2_ttf|misc/linux-rl9-sdl20-extralibs|2025-05-22|Merged into misc/linux-rl9-sdl20-extralibs
 net/linux-rl9-sdl2_net|misc/linux-rl9-sdl20-extralibs|2025-05-22|Merged into misc/linux-rl9-sdl20-extralibs
 graphics/pixen||2025-05-24|Has expired: Unmaintained upstream
+archivers/libcomprex||2025-05-28|Has expired: Unmaintained upstream, laste release in 2003
