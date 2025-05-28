@@ -186,8 +186,7 @@ WRKSRC=		${WRKDIR}/${GO_MODNAME}@${GO_MODVERSION}
 .      endif
 EXTRACT_ONLY?=	${DISTFILES:N*.mod\:*:N*.mod:C/:.*//}
 DIST_SUBDIR=	go/${PKGORIGIN:S,/,_,g}/${DISTNAME}
-FETCH_DEPENDS+=	${GO_CMD}:${GO_PORT} \
-		ca_root_nss>0:security/ca_root_nss
+FETCH_DEPENDS+=	${GO_CMD}:${GO_PORT}
 USES+=		zip
 .    else
 GO_ENV+=	GO_NO_VENDOR_CHECKS=1
