@@ -1,6 +1,3 @@
-cmake/jwt-cpp-config-version.cmake
-cmake/jwt-cpp-config.cmake
-cmake/jwt-cpp-targets.cmake
 include/jwt-cpp/base.h
 include/jwt-cpp/jwt.h
 include/jwt-cpp/traits/boost-json/defaults.h
@@ -12,4 +9,9 @@ include/jwt-cpp/traits/kazuho-picojson/defaults.h
 include/jwt-cpp/traits/kazuho-picojson/traits.h
 include/jwt-cpp/traits/nlohmann-json/defaults.h
 include/jwt-cpp/traits/nlohmann-json/traits.h
+include/jwt-cpp/traits/open-source-parsers-jsoncpp/defaults.h
+include/jwt-cpp/traits/open-source-parsers-jsoncpp/traits.h
 include/picojson/picojson.h
+lib/cmake/jwt-cpp/jwt-cpp-config-version.cmake
+lib/cmake/jwt-cpp/jwt-cpp-config.cmake
+lib/cmake/jwt-cpp/jwt-cpp-targets.cmake
