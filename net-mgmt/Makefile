@@ -129,6 +129,7 @@
     SUBDIR += isic
     SUBDIR += jnettop
     SUBDIR += kapacitor
+    SUBDIR += kf6-networkmanager-qt
     SUBDIR += kismet
     SUBDIR += klg
     SUBDIR += lg
