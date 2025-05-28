@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2025-05-28 11:09:46 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [project]
+-name = "PyMySQL"
++name = "pymysql"
+ description = "Pure Python MySQL Driver"
+ authors = [
+     {name = "Inada Naoki", email = "songofacandy@gmail.com"},
