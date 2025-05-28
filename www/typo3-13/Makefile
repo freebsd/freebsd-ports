@@ -13,14 +13,12 @@ WWW=		https://typo3.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-IGNORE_WITH_PHP=	81
-
 USES=		cpe php:web,flavors shebangfix
 # php openssl extension is required but it's statically linked in default php
 USE_PHP=	ctype dom exif fileinfo filter gd intl mbstring pdo session \
 		simplexml tokenizer xml zip zlib
+IGNORE_WITH_PHP=	81
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_src-${DISTVERSION}
 SHEBANG_GLOB=	*.php *.sh
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -29,10 +27,11 @@ SUB_FILES=	pkg-message
 SUB_LIST+=	PREFIX=${PREFIX} \
 		TYPO3DIR=${TYPO3DIR} \
 		TYPO3WWW=${TYPO3WWW}
+WRKSRC=		${WRKDIR}/${PORTNAME}_src-${DISTVERSION}
 
 PORT_V_MAJOR=	13
 PORT_V_MINOR=	4
-PORT_V_PATCH=	12
+PORT_V_PATCH=	13
 
 TYPO3DIR=	www/${PORTNAME}-${PORT_V_MAJOR}
 
@@ -40,7 +39,6 @@ OPTIONS_DEFINE=		CURL GMP IMAGICK MYSQL POSTGRES SQLITE
 OPTIONS_DEFAULT=	MYSQL
 
 IMAGICK_DESC=	${IMAGEMAGICK_DESC}
-MBSTRING_DESC=	${MULTIBYTE_DESC}
 MYSQL_DESC=	Use MySQL as DBMS
 POSTGRES_DESC=	Use PostgreSQL as DBMS
 SQLITE_DESC=	Use SQLite as DBMS

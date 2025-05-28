@@ -1,5 +1,6 @@
-Once released in October 2023, the long-term support version of TYPO3 13 will receive
-bug fixes until April 2026, and we will provide security updates until October 2027.
+Once released in October 2023, the long-term support version of TYPO3 13 will
+receive bug fixes until April 2026, and we will provide security updates until
+October 2027.
 Frontend rendering presets
 * Content blocks
 * Improved search, redirects and workspaces
