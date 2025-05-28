@@ -1,5 +1,5 @@
 PORTNAME=	node-sqlcipher
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/signalapp/node-sqlcipher/archive/refs/tags/v${DISTVERSION}/:sqlcipher \
 		https://registry.npmjs.org/@esbuild/freebsd-arm64/-/:esbuildarm64 \
@@ -26,7 +26,7 @@ USES=		nodejs:20,build
 
 PLIST_FILES=	lib/node_sqlcipher.node
 
-ESBUILD_VERS=	0.25.3
+ESBUILD_VERS=	0.25.4
 ESBUILD_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 
 MAKE_ENV+=	ESBUILD_BINARY_PATH=${WRKDIR}/esbuild-freebsd-64/package/bin/esbuild
