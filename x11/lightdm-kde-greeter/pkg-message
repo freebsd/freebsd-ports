@@ -1,0 +1,6 @@
+To enable lightdm-kde-greeter as the current lightdm greeter, you can
+create a file at /usr/local/etc/lightdm/lightdm.conf.d/50-myconfig.conf
+with the following:
+
+[Seat:*]
+greeter-session=lightdm-kde-greeter
