@@ -10,15 +10,15 @@
    "dependencies": {
      "@electron/asar": "3.3.1",
      "@formatjs/fast-memoize": "2.2.3",
-@@ -172,6 +169,7 @@
+@@ -173,6 +170,7 @@
      "p-timeout": "4.1.0",
      "pify": "3.0.0",
      "pino": "9.5.0",
-+    "pnpm": "^10.6.3",
++    "pnpm": "^10.11",
      "protobufjs": "7.3.2",
      "proxy-agent": "6.4.0",
      "qrcode-generator": "1.4.4",
-@@ -222,7 +220,6 @@
+@@ -223,7 +221,6 @@
      "@indutny/parallel-prettier": "3.0.0",
      "@indutny/rezip-electron": "2.0.1",
      "@napi-rs/canvas": "0.1.61",
@@ -26,35 +26,26 @@
      "@storybook/addon-a11y": "8.4.4",
      "@storybook/addon-actions": "8.4.4",
      "@storybook/addon-controls": "8.4.4",
-@@ -293,7 +290,7 @@
-     "danger": "12.3.3",
-     "debug": "4.3.7",
-     "electron": "35.1.4",
--    "electron-builder": "26.0.10",
-+    "electron-builder": "26.0.12",
-     "electron-mocha": "13.0.1",
-     "endanger": "7.0.4",
-     "enquirer": "2.4.1",
 @@ -360,7 +357,6 @@
+       "@types/backbone@1.4.22": "patches/@types+backbone+1.4.22.patch",
        "casual@1.6.2": "patches/casual+1.6.2.patch",
        "protobufjs@7.3.2": "patches/protobufjs+7.3.2.patch",
-       "@types/express@4.17.21": "patches/@types+express+4.17.21.patch",
--      "dmg-builder@26.0.10": "patches/dmg-builder@26.0.10.patch",
+-      "@types/express@4.17.21": "patches/@types+express+4.17.21.patch",
        "protobufjs-cli@1.1.1": "patches/protobufjs-cli+1.1.1.patch",
        "@types/fabric@4.5.3": "patches/@types+fabric+4.5.3.patch",
        "qrcode-generator@1.4.4": "patches/qrcode-generator+1.4.4.patch",
-@@ -377,7 +373,9 @@
-       "node-fetch@2.6.7": "patches/node-fetch+2.6.7.patch",
+@@ -378,7 +374,9 @@
        "zod@3.23.8": "patches/zod+3.23.8.patch",
        "@electron/rebuild": "patches/@electron__rebuild.patch",
--      "app-builder-lib": "patches/app-builder-lib.patch"
-+      "app-builder-lib": "patches/app-builder-lib.patch",
+       "app-builder-lib": "patches/app-builder-lib.patch",
+-      "dmg-builder": "patches/dmg-builder.patch"
++      "dmg-builder": "patches/dmg-builder.patch",
 +      "electron-builder": "patches/electron-builder.patch",
 +      "@signalapp/ringrtc": "patches/signalapp-ringrtc.patch"
      },
      "onlyBuiltDependencies": [
        "@indutny/mac-screen-share",
-@@ -390,7 +388,6 @@
+@@ -391,7 +389,6 @@
        "bufferutil",
        "electron",
        "esbuild",
@@ -62,7 +53,7 @@
        "utf-8-validate"
      ],
      "ignoredBuiltDependencies": [
-@@ -401,7 +398,7 @@
+@@ -402,7 +399,7 @@
      ]
    },
    "engines": {
@@ -71,7 +62,7 @@
    },
    "build": {
      "appId": "org.whispersystems.signal-desktop",
-@@ -478,20 +475,6 @@
+@@ -479,20 +476,6 @@
        "asarUnpack": [
          "build/icons/win/icon.ico"
        ]

@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.52.0
-PORTREVISION=	3
+DISTVERSION=	7.54.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://registry.npmjs.org/@esbuild/freebsd-arm64/-/:esbuildarm64 \
@@ -80,12 +79,13 @@ MAKE_ENV+=	ELECTRON_SKIP_BINARY_DOWNLOAD=1
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
-MAKE_ENV+=	ESBUILD_BINARY_PATH=${WRKSRC}/node_modules/.pnpm/@esbuild+freebsd-${ESBUILD_ARCH}@${ESBUILD_VERS}/node_modules/@esbuild/freebsd-${ESBUILD_ARCH}/package/bin/esbuild
+ESBUILD_BINARY_PATH=${WRKSRC}/node_modules/.pnpm/@esbuild+freebsd-${ESBUILD_ARCH}@${ESBUILD_VERS}/node_modules/@esbuild/freebsd-${ESBUILD_ARCH}/package/bin/esbuild
 
 _BUILD_DATE=	$$(date +'%s')
 
 ELECTRON_VER_MAJOR=	34
 ESBUILD_VERS=		0.24.0
+PNPM_VERS=		10.11
 
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 ESBUILD_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
@@ -118,9 +118,9 @@ do-build:
 	${CP} ${FILESDIR}/pnpm-lock.yaml ${WRKSRC}
 
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} npm install --ignore-scripts pnpm@10.6.3
+		${SETENV} ${MAKE_ENV} npm install --ignore-scripts pnpm@${PNPM_VERS}
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers pnpm install --ignore-scripts || ${TRUE}
+		${SETENV} ${MAKE_ENV} ESBUILD_BINARY_PATH=${ESBUILD_BINARY_PATH} npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers pnpm install --ignore-scripts || ${TRUE}
 
 	# Install libsignal_node.so, libringrtc.so and node_sqlcipher.node binaries in node_modules
 	${MKDIR} ${WRKSRC}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-${NODE_ARCH} \
@@ -135,11 +135,18 @@ do-build:
 		${WRKSRC}/node_modules/@signalapp/sqlcipher/prebuilds/freebsd-${NODE_ARCH}
 
 	# don't ask me why
-	${MKDIR} -p ${WRKSRC}/node_modules/.pnpm/@esbuild+freebsd-${ESBUILD_ARCH}@${ESBUILD_VERS}/node_modules/@esbuild/freebsd-${ESBUILD_ARCH}
+	${MKDIR} ${WRKSRC}/node_modules/.pnpm/@esbuild+freebsd-${ESBUILD_ARCH}@${ESBUILD_VERS}/node_modules/@esbuild/freebsd-${ESBUILD_ARCH}
 	${TAR} xf ${DISTDIR}/freebsd-${ESBUILD_ARCH}-${ESBUILD_VERS}.tgz -C ${WRKSRC}/node_modules/.pnpm/@esbuild+freebsd-${ESBUILD_ARCH}@${ESBUILD_VERS}/node_modules/@esbuild/freebsd-${ESBUILD_ARCH}
 
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers pnpm install
+		${SETENV} ${MAKE_ENV} ESBUILD_BINARY_PATH=${ESBUILD_BINARY_PATH} npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers pnpm install
+
+	# found in reproducible-builds/docker-entrypoint.sh
+	cd ${WRKSRC}/sticker-creator && \
+		${SETENV} ${MAKE_ENV} pnpm install
+	cd ${WRKSRC}/sticker-creator && \
+		${SETENV} ${MAKE_ENV} pnpm run build
+
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} pnpm run generate
 
