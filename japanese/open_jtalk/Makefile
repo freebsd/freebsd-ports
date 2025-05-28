@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PREFIX}/include/iconv.h:converters/libiconv \
 		${PREFIX}/lib/libHTSEngine.a:audio/hts_engine-API
 
-USE_GCC=	yes
+USE_CXXSTD=	c++14
 
 HAS_CONFIGURE=	yes
 
