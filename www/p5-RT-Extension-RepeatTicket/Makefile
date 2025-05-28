@@ -24,7 +24,7 @@ NO_ARCH=	yes
 RT_VER=		44
 PLIST_SUB=	RTHOME=share/rt${RT_VER}
 
-PORTSCOUT=	:^1\.
+PORTSCOUT=	limit:^1\.
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|LocalPath/man/man3|LocalPath/share/man/man3|g' ${WRKSRC}/inc/Module/Install/RTx.pm
