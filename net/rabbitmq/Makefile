@@ -1,9 +1,7 @@
 PORTNAME=	rabbitmq
-DISTVERSION=	4.0.7
+DISTVERSION=	4.1.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${DISTVERSION}/
-# https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.12.12/rabbitmq-server-generic-unix-3.12.12.tar.xz
-# https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.12.13/rabbitmq-server_3.12.13.orig.tar.xz
 DISTNAME=	${PORTNAME}-server-generic-unix-${DISTVERSION}
 
 MAINTAINER=	erlang@FreeBSD.org
@@ -14,13 +12,11 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE-MPL-RabbitMQ
 
 RUN_DEPENDS=	erlang-runtime${_ERLANG_VER}>=${_ERLANG_VER}:lang/erlang-runtime${_ERLANG_VER}
-#		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson@${PY_FLAVOR}
 
 USES=		cpe shebangfix tar:xz
 CPE_VENDOR=	pivotal_software
 USE_LOCALE=	en_US.UTF-8
 USE_RC_SUBR=	rabbitmq
-# SHEBANG_FILES=	plugins/rabbitmq_management-*/priv/www/cli/rabbitmqadmin
 
 NO_ARCH=	yes
 NO_BUILD=	yes
