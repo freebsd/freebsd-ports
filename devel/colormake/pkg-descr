@@ -1,1 +1,4 @@
-This is a simple wrapper around "make" to make its output more readable.
+This package contains colormake.pl script which parses the output of
+GNU make to colorize it and make it easier read.  In addition, there
+are two wrapper scripts included, colormake and clmake, which can be
+invoked instead of make(1) with colorized output on-the-fly.
