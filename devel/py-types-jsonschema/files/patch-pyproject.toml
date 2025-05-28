@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-05-22 12:06:21 UTC
+--- pyproject.toml.orig	2025-05-28 03:07:14 UTC
 +++ pyproject.toml
 @@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -8,7 +8,7 @@
  
  [project]
  name = "types-jsonschema"
- version = "4.23.0.20250516"
+ version = "4.24.0.20250528"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
 +license = { text = "Apache-2.0" }
