@@ -72,4 +72,5 @@ At the end you need to run
 You should also remove the cache and tmp and restart:
         rm -r /var/db/openhab/userdata/cache/org.eclipse.osgi /var/db/openhab/userdata/tmp/*
 EOM
+}
 ]
