@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	japanese perl5
 MASTER_SITES=	http://hp1.jonex.ne.jp/%7Enakajima.yasushi/archives/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PDFJ module provides methods to generate Japanese PDF file
 WWW=		http://hp1.jonex.ne.jp/%7Enakajima.yasushi/PDFJ.jp.html
 

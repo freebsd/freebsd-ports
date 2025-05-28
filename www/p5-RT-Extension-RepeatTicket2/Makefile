@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	RT Extension to repeat tickets base on a schedule
 WWW=		https://metacpan.org/release/RT-Extension-RepeatTicket
 

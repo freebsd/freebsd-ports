@@ -6,7 +6,7 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 PKGNAMEPREFIX=	p5-WWW-
 DISTNAME=	IMDb-current
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to query the Internet Movie Database(IMDb)
 
 LICENSE=	GPLv2+

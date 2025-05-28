@@ -6,7 +6,7 @@ MASTER_SITES=	ftp://ftp.it.su.se/pub/users/leifj/ \
 		http://redundancy.redundancy.org/mirror/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl tool for managing Certificate Authorities
 WWW=		http://devel.it.su.se/projects/CSP/
 

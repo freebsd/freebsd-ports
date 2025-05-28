@@ -4,7 +4,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface for the MusicBrainz libdiscid library
 WWW=		https://metacpan.org/release/MusicBrainz-DiscID
 

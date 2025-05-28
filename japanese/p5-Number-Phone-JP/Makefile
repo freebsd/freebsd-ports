@@ -5,7 +5,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TANIGUCHI
 PKGNAMEPREFIX=	ja-p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to validate Japanese phone numbers
 WWW=		https://metacpan.org/release/Number-Phone-JP
 

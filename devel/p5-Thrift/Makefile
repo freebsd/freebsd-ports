@@ -5,7 +5,7 @@ CATEGORIES=	devel perl5
 PKGNAMEPREFIX=	p5-
 DISTFILES=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Thrift
 WWW=		https://thrift.apache.org/
 
