@@ -5612,7 +5612,7 @@
     <affects>
       <package>
 	<name>asterisk18</name>
-	<range><lt>18.26.20</lt></range>
+	<range><lt>18.26.2</lt></range>
       </package>
       <package>
 	<name>asterisk20</name>
