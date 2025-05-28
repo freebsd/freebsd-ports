@@ -1,0 +1,5 @@
+A header only library for creating and validating JSON web tokens in C++.
+
+The objective is to deliver a versatile and universally applicable collection
+of algorithms, classes, and data structures, fostering adaptability and
+seamless integration with other libraries that you may already be employing.

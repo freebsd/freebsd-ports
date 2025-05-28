@@ -1107,6 +1107,7 @@
     SUBDIR += judy
     SUBDIR += jujutsu
     SUBDIR += jwasm
+    SUBDIR += jwt-cpp
     SUBDIR += kBuild
     SUBDIR += kapptemplate
     SUBDIR += kassert
