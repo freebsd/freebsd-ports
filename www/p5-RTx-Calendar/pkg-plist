@@ -1,10 +1,19 @@
 share/man/man3/RTx::Calendar.3.gz
-%%RTHOME%%/plugins/RTx-Calendar/etc/tabs_privileged_callback.patch
+%%RTHOME%%/plugins/RTx-Calendar/etc/RTxCalendar_Config.pm
 %%RTHOME%%/plugins/RTx-Calendar/html/Callbacks/RTx-Calendar/Elements/Tabs/Privileged
+%%RTHOME%%/plugins/RTx-Calendar/html/Elements/Calendar
 %%RTHOME%%/plugins/RTx-Calendar/html/Elements/CalendarEvent
+%%RTHOME%%/plugins/RTx-Calendar/html/Elements/CalendarFooter
+%%RTHOME%%/plugins/RTx-Calendar/html/Elements/CalendarSidebar
+%%RTHOME%%/plugins/RTx-Calendar/html/Elements/CalendarWithSidebar
 %%RTHOME%%/plugins/RTx-Calendar/html/Elements/MyCalendar
+%%RTHOME%%/plugins/RTx-Calendar/html/Helpers/CalendarEventInfo
 %%RTHOME%%/plugins/RTx-Calendar/html/Search/Calendar.html
 %%RTHOME%%/plugins/RTx-Calendar/lib/RTx/Calendar.pm
+%%RTHOME%%/plugins/RTx-Calendar/po/ca.po
+%%RTHOME%%/plugins/RTx-Calendar/po/calendar.pot
+%%RTHOME%%/plugins/RTx-Calendar/po/es.po
+%%RTHOME%%/plugins/RTx-Calendar/po/fr.po
 %%RTHOME%%/plugins/RTx-Calendar/static/css/calendar.css
 %%RTHOME%%/plugins/RTx-Calendar/static/images/created.png
 %%RTHOME%%/plugins/RTx-Calendar/static/images/created_due.png
@@ -15,3 +24,4 @@ share/man/man3/RTx::Calendar.3.gz
 %%RTHOME%%/plugins/RTx-Calendar/static/images/starts.png
 %%RTHOME%%/plugins/RTx-Calendar/static/images/starts_due.png
 %%RTHOME%%/plugins/RTx-Calendar/static/images/updated.png
+%%RTHOME%%/plugins/RTx-Calendar/static/js/calendar.js
