@@ -1,7 +1,7 @@
 PORTNAME=	dotnet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DOTNETVERSION}.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang devel
 MASTER_SITES=	https://github.com/dotnet/dotnet/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/release.json?dummy=/:dotnetmanifest \
 		LOCAL/arrowd/dotnet/:bootstrap
@@ -31,7 +31,7 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 RUN_DEPENDS=	terminfo-db>0:misc/terminfo-db \
 		dotnet:lang/dotnet-host
 
-USES=		autoreconf:build gssapi:mit llvm:noexport,max=17 nodejs pkgconfig \
+USES=		autoreconf:build gssapi:mit llvm:noexport nodejs pkgconfig \
 		python:build,3.9+ shebangfix ssl
 
 USE_GITHUB=	yes
@@ -40,7 +40,8 @@ SHEBANG_FILES=	src/diagnostics/src/Tools/dotnet-trace/*.sh \
 		src/source-build-externals/src/azure-activedirectory-identitymodel-extensions-for-dotnet/updateAssemblyInfo.sh
 
 BINARY_ALIAS=	grep=${LOCALBASE}/bin/ggrep
-DOTNET_ENV=	PYTHON=${PYTHON_CMD}
+DOTNET_ENV=	PYTHON=${PYTHON_CMD} PATH=${PATH}:${LLVM_PREFIX}/bin
+#PATH=${PATH}:${LLVM_PREFIX}/bin
 
 BOOTSTRAP_DOTNETVERSION=			8.0
 BOOTSTRAP_SDKVERSION=				${BOOTSTRAP_DOTNETVERSION}.100
