@@ -1,9 +1,0 @@
-bin/bnc
-bin/bncchk
-bin/bncsetup
-bin/mkpasswd
-etc/bnc.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/example.conf
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/Changelog
-%%PORTDOCS%%%%DOCSDIR%%/README

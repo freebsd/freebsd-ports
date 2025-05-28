@@ -9,7 +9,6 @@
     SUBDIR += bitlbee-facebook
     SUBDIR += bitlbee-mastodon
     SUBDIR += bitlbee-steam
-    SUBDIR += bnc
     SUBDIR += catgirl
     SUBDIR += cgiirc
     SUBDIR += dancer
