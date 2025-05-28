@@ -1,6 +1,6 @@
 PORTNAME=	RyzenAdj
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
+DISTVERSION=	0.17.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	vladislav.movchan@gmail.com
