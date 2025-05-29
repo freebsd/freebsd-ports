@@ -1,6 +1,6 @@
-TIMESTAMP = 1737443934
-SHA256 (akb825-ModularShaderLanguage-v1.8.0_GH0.tar.gz) = 48a1cb97dd88875392204f4dc888891364fd2ec1ab5c1d88c3c08287a5ba26ea
-SIZE (akb825-ModularShaderLanguage-v1.8.0_GH0.tar.gz) = 254637
+TIMESTAMP = 1748534554
+SHA256 (akb825-ModularShaderLanguage-v1.8.1_GH0.tar.gz) = 1a8df648618ea904c06ebf783c79e437986bfd7de5952bdf04f238bc1d7410c5
+SIZE (akb825-ModularShaderLanguage-v1.8.1_GH0.tar.gz) = 254838
 SHA256 (akb825-glslang-ec0d2be_GH0.tar.gz) = 6bf11ed0f043f6266728996a58ad667b4bc59134f1f426a2af5f1c43957004bb
 SIZE (akb825-glslang-ec0d2be_GH0.tar.gz) = 3914932
 SHA256 (KhronosGroup-SPIRV-Cross-5e7db82_GH0.tar.gz) = 8ef0afff52d33512ccf035675637a24fe9568800c8d8b108f9fde0b0f575327d

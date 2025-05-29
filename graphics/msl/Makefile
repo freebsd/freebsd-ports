@@ -1,7 +1,6 @@
 PORTNAME=	msl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
-PORTREVISION=	3
+DISTVERSION=	1.8.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,6 +30,6 @@ GH_TUPLE=	akb825:glslang:ec0d2be:akb825_glslang/Compile/glslang \
 		akb825:SPIRV-Tools:0926045:akb825_SPIRV_Tools/Compile/SPIRV-Tools \
 			KhronosGroup:SPIRV-Headers:2acb319:KhronosGroup_SPIRV_Headers/Compile/SPIRV-Tools/external/spirv-headers
 
-# tests as of 1.8.0: 100% tests passed, 0 tests failed out of 25
+# tests as of 1.8.1: 100% tests passed, 0 tests failed out of 25
 
 .include <bsd.port.mk>
