@@ -401,6 +401,7 @@
     SUBDIR += kdegraphics-thumbnailers
     SUBDIR += kdiagram
     SUBDIR += kdiagram-qt6
+    SUBDIR += kealib
     SUBDIR += kf5-kimageformats
     SUBDIR += kf5-kplotting
     SUBDIR += kf5-kquickcharts

@@ -1,0 +1,8 @@
+KEALib provides an implementation of the GDAL data model. The format supports
+raster attribute tables, image pyramids, meta-data and in-built statistics while
+also handling very large files and compression throughout.
+
+Based on the HDF5 standard, it also provides a base from which other formats can
+be derived and is a good choice for long term data archiving. An independent
+software library (libkea) provides complete access to the KEA image format and a
+GDAL driver allowing KEA images to be used from any GDAL supported software.
