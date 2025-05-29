@@ -1,10 +1,13 @@
---- Makefile.am.orig	2019-10-25 12:41:08 UTC
+--- Makefile.am.orig	2025-05-22 13:26:43 UTC
 +++ Makefile.am
-@@ -154,7 +154,6 @@ docs:
- # These steps are necessary during installation
- install-exec-hook:
- 	mkdir -p $(DESTDIR)${localstatedir}/log/
--	mkdir -p $(DESTDIR)${localstatedir}/lib/${PACKAGE_NAME}
- 	mkdir -p $(DESTDIR)${runstatedir}/${PACKAGE_NAME}
+@@ -176,10 +176,6 @@ install-exec-hook:
  
- EXTRA_DIST  = tools/path_replacer.sh
+ # These steps are necessary during installation. chmod is for reinstallation/upgrade.
+ install-exec-hook:
+-	mkdir -m 750 -p "$(DESTDIR)${localstatedir}/lib/${PACKAGE_NAME}"
+-	chmod 750 "$(DESTDIR)${localstatedir}/lib/${PACKAGE_NAME}"
+-	mkdir -m 750 -p "$(DESTDIR)${localstatedir}/log/${PACKAGE_NAME}"
+-	chmod 750 "$(DESTDIR)${localstatedir}/log/${PACKAGE_NAME}"
+ 	mkdir -m 750 -p "$(DESTDIR)${runstatedir}/${PACKAGE_NAME}"
+ 	chmod 750 "$(DESTDIR)${runstatedir}/${PACKAGE_NAME}"
+ 	mkdir -m 750 -p "$(DESTDIR)${sysconfdir}/${PACKAGE_NAME}"
