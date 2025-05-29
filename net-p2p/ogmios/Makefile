@@ -1,5 +1,5 @@
 PORTNAME=	ogmios
-PORTVERSION=	6.11.2
+PORTVERSION=	6.12.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://input-output-hk.github.io/cardano-haskell-packages/package/:chap
@@ -72,7 +72,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		base-compat-batteries-0.13.1 \
 		base-deriving-via-0.1.0.2:chap \
 		base-orphans-0.9.2 \
-		base16-1.0_2 \
+		base16-1.0_3 \
 		base16-bytestring-1.0.2.0_1 \
 		base58-bytestring-0.1.0 \
 		base64-bytestring-1.2.1.0_1 \
