@@ -1,6 +1,6 @@
 PORTNAME=	cxxopts
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.1
+DISTVERSION=	3.3.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,9 +21,11 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 PLIST_FILES=	include/cxxopts.hpp \
-		lib/cmake/cxxopts/cxxopts-config-version.cmake \
-		lib/cmake/cxxopts/cxxopts-config.cmake \
-		lib/cmake/cxxopts/cxxopts-targets.cmake \
-		libdata/pkgconfig/cxxopts.pc
+		share/cmake/cxxopts/cxxopts-config-version.cmake \
+		share/cmake/cxxopts/cxxopts-config.cmake \
+		share/cmake/cxxopts/cxxopts-targets.cmake \
+		share/pkgconfig/cxxopts.pc
+
+# tests as of 3.3.1: 100% tests passed, 0 tests failed out of 3
 
 .include <bsd.port.mk>
