@@ -1,11 +1,11 @@
---- NeuralRack/makefile.orig	2025-04-24 06:02:50 UTC
+--- NeuralRack/makefile.orig	2025-05-28 06:33:50 UTC
 +++ NeuralRack/makefile
-@@ -2,14 +2,14 @@
+@@ -2,16 +2,16 @@
  	# check on which OS we build
  	UNAME_S := $(shell uname -s)
  	# check which architecture we build on
 -	UNAME_M := $(shell uname -m)
-+	UNAME_M := $(shell uname -m | sed 's/amd64/x86_64/')
++	UNAME_M := $(shell uname -m | sed 's/amd64/x86_64/)
  	# check which architecture we build for
  	TARGET_ARCH = UNKNOWN
  	# check if user is root
@@ -13,22 +13,17 @@
 -	ifeq ($(user),root)
 -	INSTALL_DIR = /usr/lib/lv2
 -	EXE_INSTALL_DIR = /usr/bin
+-	CLAP_INSTAL_DIR = /usr/lib/clap
+-	VST2_INSTAL_DIR = /usr/lib/vst
 +	ifneq ($(DESTDIR),)
 +	INSTALL_DIR = $(PREFIX)/lib/lv2
 +	EXE_INSTALL_DIR = $(PREFIX)/bin
++	CLAP_INSTAL_DIR = $(PREFIX)/lib/clap
++	VST2_INSTAL_DIR = $(PREFIX)/lib/vst
  	else 
  	INSTALL_DIR = ~/.lv2
  	EXE_INSTALL_DIR = ~/bin
-@@ -142,7 +142,7 @@ endif
- 
- 	NAME = NeuralRack
- 	space := $(subst ,, )
--	EXEC_NAME := Neuralrack
-+	EXEC_NAME := NeuralRack
- 	BUNDLE = $(EXEC_NAME).lv2
- 	LIB_DIR := ../libxputty/libxputty/
- 	HEADER_DIR := $(LIB_DIR)include/
-@@ -421,13 +421,12 @@ ifneq ("$(wildcard ../bin/$(EXEC_NAME)$(EXE_EXT))","")
+@@ -484,13 +484,12 @@ ifneq ("$(wildcard ../bin/$(EXEC_NAME)$(EXE_EXT))","")
  	$(QUIET)mkdir -p $(DESTDIR)$(EXE_INSTALL_DIR)/
  	$(QUIET)cp -r ../bin/$(EXEC_NAME)$(EXE_EXT) $(DESTDIR)$(EXE_INSTALL_DIR)/$(EXEC_NAME)$(EXE_EXT)
  

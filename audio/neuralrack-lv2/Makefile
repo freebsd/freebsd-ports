@@ -1,6 +1,6 @@
 PORTNAME=	neuralrack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.6
+DISTVERSION=	0.1.8
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -37,7 +37,7 @@ MAKEFILE=	makefile
 
 CXXFLAGS+=	-I${WRKSRC}/NeuralAudio/deps/RTNeural/modules/Eigen
 
-post-install:
+xpost-install:
 	@${REINPLACE_CMD} -i '' -e 's|Neuralrack|NeuralRack|' ${STAGEDIR}${PREFIX}/lib/lv2/NeuralRack.lv2/*.ttl
 
 .include <bsd.port.mk>
