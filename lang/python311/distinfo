@@ -1,3 +1,5 @@
-TIMESTAMP = 1744937483
+TIMESTAMP = 1748493299
 SHA256 (python/Python-3.11.12.tar.xz) = 849da87af4df137710c1796e276a955f7a85c9f971081067c8f565d15c352a09
 SIZE (python/Python-3.11.12.tar.xz) = 20112232
+SHA256 (python/0c33e5baedf18ebcb04bc41dff7cfc614d5ea5fe.patch) = 2b9857d46cb45cbf0db322a7149f940f8aae8265f66f8ff8f5cd88d2af4015c5
+SIZE (python/0c33e5baedf18ebcb04bc41dff7cfc614d5ea5fe.patch) = 23930
