@@ -10,6 +10,9 @@ WWW=		http://fifengine.net/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+DEPRECATED=	Outdated, unsupported upstream and development has slowed down considerbly for the last years
+EXPIRATION_DATE=2025-06-30
+
 USES=		cmake
 USE_LDCONFIG=	yes
 
