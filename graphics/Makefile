@@ -479,6 +479,7 @@
     SUBDIR += libgphoto2
     SUBDIR += libgxps
     SUBDIR += libheif
+    SUBDIR += libicd
     SUBDIR += libimagequant
     SUBDIR += libimg
     SUBDIR += libiptcdata
