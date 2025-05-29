@@ -37,7 +37,7 @@ RUN_DEPENDS=	p5-DateTime-Format-Strptime>=0:devel/p5-DateTime-Format-Strptime \
 TEST_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-Date-Range>=0:devel/p5-Date-Range \
 		p5-Date-Simple>=0:devel/p5-Date-Simple \
-		p5-DateTime>=0:devel/p5-DateTime \ \
+		p5-DateTime>=0:devel/p5-DateTime \
 		p5-DateTime-Format-ISO8601>=0:devel/p5-DateTime-Format-ISO8601 \
 		p5-Module-CPANTS-Analyse>=0:devel/p5-Module-CPANTS-Analyse \
 		p5-Test-Kwalitee>=0:devel/p5-Test-Kwalitee \
