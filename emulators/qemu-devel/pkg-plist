@@ -140,6 +140,7 @@ share/man/man7/qemu-storage-daemon-qmp-ref.7.gz
 %%DATADIR%%/opensbi-riscv64-generic-fw_dynamic.bin
 %%DATADIR%%/palcode-clipper
 %%DATADIR%%/petalogix-ml605.dtb
+%%DATADIR%%/pnv-pnor.bin
 %%DATADIR%%/pxe-e1000.rom
 %%DATADIR%%/pxe-eepro100.rom
 %%DATADIR%%/pxe-ne2k_pci.rom

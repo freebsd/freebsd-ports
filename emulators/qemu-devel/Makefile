@@ -1,5 +1,5 @@
 PORTNAME=	qemu
-DISTVERSION=	9.1.0.20250228
+DISTVERSION=	9.1.0.20250331
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -23,11 +23,11 @@ USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t localbase:ldflags \
 		ninja perl5 pkgconfig python:build shebangfix tar:xz xorg
 USE_GITLAB=	yes
 GL_ACCOUNT=	qemu-project
-GL_TAGNAME=	6b7521818b26134726b3494cd06f04e30659ce2c
+GL_TAGNAME=	256ba7715b109c080c0c77a3923df9e69736ba17
 GL_TUPLE=	qemu-project:keycodemapdb:f5772a62ec52591ff6870b7e8ef32482371f22c6:keycodemapdb/subprojects/keycodemapdb \
 		qemu-project:dtc:b6910bec11614980a21e46fbccc35934b671bd81:dtc/subprojects/dtc \
 		qemu-project:libvfio-user:0b28d205572c80b568a1003db2c8f37ca333e4d7:libvfio/subprojects/libvfio-user \
-		qemu-project:meson:be6540e6fdcf1ee88939a74521caa3813b039199:meson/meson \
+		qemu-project:meson:19482e4553775d4612f5fcc1c7c124774e9a0f79:meson/meson \
 		qemu-project:berkeley-softfloat-3:b64af41c3276f97f0e181920400ee056b9c88037:berkeleysoftfloat3/subprojects/berkeley-softfloat-3 \
 		qemu-project:berkeley-testfloat-3:e7af9751d9f9fd3b47911f51a5cfd08af256a9ab:berkeleytestfloat3/subprojects/berkeley-testfloat-3
 USE_GNOME=	cairo glib20
@@ -51,9 +51,10 @@ WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 PORTDOCS=	.buildinfo _static/* about/* dbus-dbusindex.html devel/* \
-			docs genindex.html glossary.html index.html interop/* \
-			objects.inv search.html searchindex.js specs/* system/* \
-			tools/* user/*
+		docs genindex.html glossary.html index.html interop/* \
+		objects.inv qapi-qga-index.html qapi-qmp-index.html \
+		qapi-qsd-index.html search.html searchindex.js specs/* system/* \
+		tools/* user/*
 
 OPTIONS_DEFINE=	SAMBA X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CURL VDE \
 		CDROM_DMA USBREDIR X86_TARGETS STATIC_LINK DOCS CAPSTONE
