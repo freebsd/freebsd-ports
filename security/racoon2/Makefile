@@ -11,6 +11,9 @@ WWW=		https://github.com/zoulasc/racoon2
 
 CONFLICTS=	racoon2-legacy
 
+DEPRECATED=	Requested removal by PR/286981
+EXPIRATION_DATE=2025-05-31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	zoulasc
 GH_TAGNAME=	${HASH}
