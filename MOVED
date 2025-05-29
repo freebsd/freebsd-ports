@@ -4419,3 +4419,4 @@ net/linux-rl9-sdl2_net|misc/linux-rl9-sdl20-extralibs|2025-05-22|Merged into mis
 graphics/pixen||2025-05-24|Has expired: Unmaintained upstream
 archivers/libcomprex||2025-05-28|Has expired: Unmaintained upstream, laste release in 2003
 irc/bnc||2025-05-28|Has expired: Unmaintained without upstream distfile and WWW
+lang/perl5.36||2025-05-29|Has expired: Support end three years after .0 release, please upgrade to a more recent version of Perl
