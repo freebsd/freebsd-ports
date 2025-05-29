@@ -8,6 +8,10 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Personal file-sharing service for the GNOME Desktop
 
+BROKEN=		Package 'libnautilus-extension' not found
+DEPRECATED=	Broken build for months
+EXPIRATION_DATE=2025-06-30
+
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 		libnotify.so:devel/libnotify \
