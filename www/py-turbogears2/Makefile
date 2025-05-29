@@ -19,4 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}crank>=0:devel/py-crank@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	distutils autoplist
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
