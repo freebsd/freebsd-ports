@@ -10,8 +10,7 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-USES=		compiler octave
-USE_GCC=	yes
+USES=		octave
 USE_GITHUB=	yes
 GH_ACCOUNT=	pr0m1th3as
 GH_PROJECT=	${OCTAVE_PKGNAME}
