@@ -496,6 +496,7 @@
     SUBDIR += libmypaint
     SUBDIR += libnsbmp
     SUBDIR += libnsgif
+    SUBDIR += libopendrive
     SUBDIR += libopenraw
     SUBDIR += libosmesa
     SUBDIR += libpano13
