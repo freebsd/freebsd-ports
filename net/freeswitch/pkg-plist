@@ -94,6 +94,7 @@ lib/freeswitch/mod/mod_opus.so
 lib/freeswitch/mod/mod_png.so
 lib/freeswitch/mod/mod_rtc.so
 lib/freeswitch/mod/mod_say_en.so
+lib/freeswitch/mod/mod_shout.so
 lib/freeswitch/mod/mod_skinny.so
 lib/freeswitch/mod/mod_sms.so
 lib/freeswitch/mod/mod_sndfile.so
