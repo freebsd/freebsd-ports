@@ -9,6 +9,9 @@ WWW=		https://www.openwrt.org/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Outdated and unsupported upstream
+EXPIRATION_DATE=2025-06-30
+
 USES=		ssl tar:bzip2
 
 MAKEFILE=	${FILESDIR}/Makefile
