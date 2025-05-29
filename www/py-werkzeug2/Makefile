@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=0<4:devel/py-flit-core@${PY_FLA
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markupsafe>=2.1.1:textproc/py-markupsafe@${PY_FLAVOR}
 
 USES=		cpe python
-USE_PYTHON=	concurrent pep517
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
