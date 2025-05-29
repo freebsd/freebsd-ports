@@ -1,6 +1,5 @@
 PORTNAME=	cairo-dock-plugins
-DISTVERSION=	3.5.1
-PORTREVISION=	1
+DISTVERSION=	3.5.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -17,12 +16,11 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libdbusmenu-gtk3.so:devel/libdbusmenu \
 		libgldi.so:deskutils/cairo-dock \
 		libharfbuzz.so:print/harfbuzz \
-		libvte-2.91.so:x11-toolkits/vte3 \
 		libwayland-client.so:graphics/wayland
 RUN_DEPENDS=	wget:ftp/wget
 
-USES=		cmake gettext gl gnome localbase:ldflags pkgconfig python ssl \
-		xorg
+USES=		cmake gettext-tools gl gnome localbase:ldflags pkgconfig python \
+		ssl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cairo-Dock
 GH_PROJECT=	cairo-dock-plug-ins
