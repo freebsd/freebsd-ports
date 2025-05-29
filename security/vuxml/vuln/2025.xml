@@ -1,3 +1,116 @@
+  <vuln vid="c36decbe-3c84-11f0-8d29-b42e991fc52e">
+    <topic>glpi-project -- GLPI multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><lt>10.0.18</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.18">
+	<p>
+	  CVE-2024-11955: A vulnerability was found in GLPI up to
+	  10.0.17. It has been declared as problematic. Affected by
+	  this vulnerability is an unknown functionality of the file
+	  /index.php.
+	  The manipulation of the argument redirect leads to
+	  open redirect. The attack can be launched remotely.
+	  The exploit has been disclosed to the public and
+	  may be used. Upgrading to version 10.0.18 is able to
+	  address this issue.
+	  It is recommended to upgrade the affected component.
+	</p>
+	<p>
+	  CVE-2025-23024: Starting in version 0.72 and prior to
+	  version 10.0.18, an anonymous user can disable all the
+	  active plugins. Version 10.0.18 contains a patch.
+	  As a workaround, one may delete the `install/update.php`
+	  file.
+	</p>
+	<p>
+	  CVE-2025-23046: Prior to version 10.0.18, a low privileged
+	  user can enable debug mode and access sensitive information.
+	  Version 10.0.18 contains a patch.
+	  As a workaround, one may delete the `install/update.php`
+	  file.
+	</p>
+	<p>
+	  CVE-2025-25192: Starting in version 9.5.0 and prior to
+	  version 10.0.18, if a &quot;Mail servers&quot;
+	  authentication provider is configured to use an Oauth
+	  connection provided by the OauthIMAP plugin, anyone can
+	  connect to GLPI using a user name on which an Oauth
+	  authorization has already been established.
+	  Version 10.0.18 contains a patch. As a
+	  workaround, one may disable any &quot;Mail
+	  servers&quot; authentication provider configured to
+	  use an Oauth connection provided by the OauthIMAP
+	  plugin.
+	</p>
+	<p>
+	  CVE-2025-21626: Starting in version 0.71 and prior to
+	  version 10.0.18, an anonymous user can fetch sensitive
+	  information from the `status.php` endpoint.
+	  Version 10.0.18 contains a fix for the issue.
+	  Some workarounds are available. One may delete the
+	  `status.php` file, restrict its access, or
+	  remove any sensitive values from the `name` field of
+	  the active LDAP directories, mail servers authentication
+	  providers and mail receivers.
+	</p>
+	<p>
+	  CVE-2025-21627: In versions prior to 10.0.18, a malicious
+	  link can be crafted to perform a reflected XSS attack on the
+	  search page. If the anonymous ticket creation is enabled,
+	  this attack can be performed by an unauthenticated
+	  user. Version 10.0.18 contains a fix for the issue.
+	</p>
+	<p>
+	  CVE-2025-21619: An administrator user can perfom a SQL
+	  injection through the rules configuration forms.
+	  This vulnerability is fixed in 10.0.18.
+	</p>
+	<p>
+	  CVE-2025-24799: An unauthenticated user can perform a SQL
+	  injection through the inventory endpoint.
+	  This vulnerability is fixed in 10.0.18.
+	</p>
+	<p>
+	  CVE-2025-24801: An authenticated user can upload and force
+	  the execution of *.php files located on the GLPI server.
+	  This vulnerability is fixed in 10.0.18.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-11955</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-11955</url>
+      <cvename>CVE-2025-23024</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-23024</url>
+      <cvename>CVE-2025-23046</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-23046</url>
+      <cvename>CVE-2025-25192</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-25192</url>
+      <cvename>CVE-2025-21626</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-21626</url>
+      <cvename>CVE-2025-21627</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-21627</url>
+      <cvename>CVE-2025-21619</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-21619</url>
+      <cvename>CVE-2025-24799</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-24799</url>
+      <cvename>CVE-2025-24801</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-24801</url>
+    </references>
+    <dates>
+      <discovery>2025-02-25</discovery>
+      <entry>2025-05-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="47ef0ac6-38fc-4b35-850b-c794f04619fe">
     <topic>electron{34,35} -- multiple vulnerabilities</topic>
     <affects>
