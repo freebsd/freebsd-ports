@@ -1037,6 +1037,7 @@
     SUBDIR += py-yaswfp
     SUBDIR += py-zbar-py
     SUBDIR += pywal
+    SUBDIR += qb3
     SUBDIR += qcomicbook
     SUBDIR += qcustomplot
     SUBDIR += qgis

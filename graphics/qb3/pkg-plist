@@ -1,0 +1,7 @@
+bin/cqb3
+cmake/libQB3Config.cmake
+cmake/libQB3ConfigVersion.cmake
+cmake/libQB3Targets-%%CMAKE_BUILD_TYPE%%.cmake
+cmake/libQB3Targets.cmake
+include/QB3.h
+lib/libQB3.so

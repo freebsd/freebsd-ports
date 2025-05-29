@@ -1,0 +1,31 @@
+PORTNAME=	qb3
+PORTVERSION=	1.3.2
+DISTVERSIONPREFIX=	V
+CATEGORIES=	graphics
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Extremely Fast Lossless Image Compression
+WWW=		https://github.com/lucianpls/QB3
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libicd.so:graphics/libicd
+
+USES=		cmake compiler:c++11-lang
+
+CMAKE_OFF=	QB3_DEV
+CMAKE_ON=	BUILD_CQB3 \
+		BUILD_SHARED_LIBS
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	lucianpls
+GH_PROJECT=	QB3
+
+OPTIONS_DEFINE=	AVX2 SSE4
+OPTIONS_DEFAULT=AVX2 SSE4
+
+AVX2_CMAKE_BOOL=	ENABLE_AVX2
+SSE4_CMAKE_BOOL=	ENABLE_SSE4
+
+.include <bsd.port.mk>
