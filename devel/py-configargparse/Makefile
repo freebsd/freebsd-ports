@@ -1,9 +1,8 @@
 PORTNAME=	configargparse
-PORTVERSION=	1.7
+PORTVERSION=	1.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	ConfigArgParse-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Drop-in replacement for argparse
