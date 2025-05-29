@@ -25,8 +25,13 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	XS
+OPTIONS_DEFINE=	RECOMMENDED XS
+RECOMMENDED_DESC=	Recommended dependencies by upstream
 
+RECOMMENDED_BUILD_DEPENDS=	p5-DateTime-Format-ISO8601>=0.15:devel/p5-DateTime-Format-ISO8601 \
+			p5-DateTime>=1.54:devel/p5-DateTime
+RECOMMENDED_RUN_DEPENDS=p5-DateTime-Format-ISO8601>=0.15:devel/p5-DateTime-Format-ISO8601 \
+			p5-DateTime>=1.54:devel/p5-DateTime
 XS_BUILD_DEPENDS=	p5-XML-LibXML>=2.0206,1:textproc/p5-XML-LibXML
 XS_RUN_DEPENDS=		${XS_BUILD_DEPENDS}
 
