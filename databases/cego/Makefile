@@ -1,5 +1,5 @@
 PORTNAME=	cego
-PORTVERSION=	2.52.4
+PORTVERSION=	2.52.6
 
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
@@ -38,8 +38,8 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} ${WRKSRC}/tools/* ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d
-	${REINPLACE_CMD} -e 's/%%USER%%/${USERS}/g' ${WRKSRC}/samples/rc/cego
-	${CP} ${WRKSRC}/samples/rc/cego ${STAGEDIR}${PREFIX}/etc/rc.d/
+	${REINPLACE_CMD} -e 's/%%USER%%/${USERS}/g' ${WRKSRC}/samples/bsd-rc/cego
+	${CP} ${WRKSRC}/samples/bsd-rc/cego ${STAGEDIR}${PREFIX}/etc/rc.d/
 
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcego.so.2.0.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcgwrap.so.2.0.0
