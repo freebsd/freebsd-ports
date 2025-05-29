@@ -1,19 +1,19 @@
 PORTNAME=	yazproxy
-PORTVERSION=	1.3.9
-PORTREVISION=	3
+DISTVERSION=	1.3.13
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.indexdata.dk/pub/yazproxy/
+MASTER_SITES=	https://ftp.indexdata.dk/pub/yazproxy/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Powerful general purpose Z39.50/SRW/SRU proxy
 WWW=		https://www.indexdata.dk/yazproxy/
 
-LIB_DEPENDS=	libyazpp.so:net/yaz++
+LIB_DEPENDS=	libyaz.so:net/yaz \
+		libyazpp.so:net/yaz++
 
-USES=		libtool
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS+=--enable-shared --with-yazpp=${LOCALBASE}/bin
+USES=		gnome libtool
+USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
