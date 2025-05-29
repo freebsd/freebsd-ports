@@ -1,6 +1,5 @@
 PORTNAME=	lttng-ust
-PORTVERSION=	2.13.2
-PORTREVISION=	1
+DISTVERSION=	2.13.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/${PORTNAME}/
 
@@ -8,7 +7,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries to instrument and trace user applications
 WWW=		https://github.com/lttng/lttng-ust
 
-LICENSE=		LGPL21 MIT GPLv2
+LICENSE=		GPLv2 LGPL21 MIT
 LICENSE_COMB=		dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE
 LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
@@ -25,7 +24,6 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	tools/lttng-gen-tp
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 # XXX: build fails if cmake is detected, see PR 253327
 CONFIGURE_ENV=	ac_cv_prog_HAVE_CMAKE=no
 
