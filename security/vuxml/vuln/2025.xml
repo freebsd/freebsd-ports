@@ -33,6 +33,37 @@
     </dates>
   </vuln>
 
+  <vuln vid="34744aab-3bf7-11f0-b81c-001b217e4ee5">
+    <topic>ISC KEA -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>kea</name>
+	<range><lt>2.6.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Internet Systems Consortium, Inc. reports:</p>
+	<blockquote cite="https://kb.isc.org/docs/">
+          <p><ul>
+	  <li>Loading a malicious hook library can lead to local privilege escalation https://kb.isc.org/docs/cve-2025-32801</li>
+	  <li>Insecure handling of file paths allows multiple local attacks https://kb.isc.org/docs/cve-2025-32802</li>
+	  <li>Insecure file permissions can result in confidential information leakage https://kb.isc.org/docs/cve-2025-32803</li>
+          </ul></p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-32801</cvename>
+      <cvename>CVE-2025-32802</cvename>
+      <cvename>CVE-2025-32803</cvename>
+    </references>
+    <dates>
+      <discovery>2025-05-28</discovery>
+      <entry>2025-05-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="45eb98d6-3b13-11f0-97f7-b42e991fc52e">
     <topic>grafana -- XSS vulnerability</topic>
     <affects>
