@@ -65,7 +65,7 @@ you update your ports collection, before attempting any port upgrades.
   Instructions:
   https://github.com/bitcoin/bitcoin/blob/29.x/doc/managing-wallets.md#migrating-legacy-wallets-to-descriptor-wallets
 
-  This release switches to CMake which results in a major refacoring of
+  This release switches to CMake which results in a major refactoring of
   the port and underlying build.  The result seems good, but please
   provide feedback if there are any unexpected changes or problems.
 
