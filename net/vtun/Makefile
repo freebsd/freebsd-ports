@@ -11,6 +11,9 @@ WWW=		https://vtun.sourceforge.net/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Upstream is dead and last release in 2016
+EXPIRATION_DATE=2025-06-30
+
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
 USES=		autoreconf localbase ssl
