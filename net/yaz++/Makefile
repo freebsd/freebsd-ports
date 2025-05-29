@@ -1,9 +1,8 @@
 PORTNAME=	yaz++
-PORTVERSION=	1.6.1
-PORTREVISION=	2
+DISTVERSION=	1.9.0
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.indexdata.dk/pub/yazpp/
-DISTNAME=	yazpp-${PORTVERSION}
+MASTER_SITES=	https://ftp.indexdata.dk/pub/yazpp/
+DISTNAME=	yazpp-${DISTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	C++ toolkit for development of Z39.50v3 clients and servers
@@ -11,11 +10,14 @@ WWW=		https://www.indexdata.dk/yazplusplus/
 
 LIB_DEPENDS=	libyaz.so:net/yaz
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}/bin
-INSTALL_TARGET=	install-strip
-USES=		libtool
+USES=		gnome libtool pathfix pkgconfig
+USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
+
+LDFLAGS+=	-Wl,--as-needed
+
+GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
