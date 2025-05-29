@@ -9,7 +9,8 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PyTorch: Tensors and dynamic neural networks in Python
-WWW=		https://pytorch.org/
+WWW=		https://pytorch.org/ \
+		https://github.com/pytorch/pytorch
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
