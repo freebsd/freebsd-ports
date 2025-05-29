@@ -1,6 +1,7 @@
 PORTNAME=	node
 PORTVERSION=	${NODEJS_PORTVERSION}
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	${PORTVERSION:R:R}
@@ -17,24 +18,28 @@ BROKEN_SSL=	libressl libressl-devel
 BROKEN_SSL_REASON=	Node.js ${PORTVERSION:R:R}.x requires OpenSSL or the BUNDLED_SSL option enabled
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
-BUILD_DEPENDS=	brotli>=1.0.9,1:archivers/brotli \
-		c-ares>=1.17.2:dns/c-ares \
-		libnghttp2>=1.45.1:www/libnghttp2 \
-		libuv>=1.42.0:devel/libuv \
-		objdump:devel/binutils
+BUILD_DEPENDS=	objdump:devel/binutils
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
+		libicui18n.so:devel/icu \
 		libnghttp2.so:www/libnghttp2 \
+		libnghttp3.so:www/libnghttp3 \
+		libngtcp2.so:net/libngtcp2 \
+		libsimdjson.so:devel/simdjson \
 		libuv.so:devel/libuv
 
-USES=		compiler:c++11-lib gmake localbase pkgconfig python:build shebangfix tar:xz
+USES=		compiler:c++11-lang gmake localbase pkgconfig python:build shebangfix tar:xz
 
 CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-brotli \
 		--shared-cares \
 		--shared-libuv \
 		--shared-nghttp2 \
+		--shared-nghttp3 \
+		--shared-ngtcp2 \
+		--shared-simdjson \
 		--shared-zlib \
+		--with-intl=system-icu \
 		--without-npm
 HAS_CONFIGURE=	yes
 MAKE_ENV=	CC.host="${CCACHE_BIN} ${CC}" \
@@ -52,8 +57,8 @@ SHEBANG_FILES=	deps/v8/third_party/inspector_protocol/*.py \
 		tools/*.py \
 		tools/inspector_protocol/*.py
 
-OPTIONS_DEFINE=	BUNDLED_SSL DOCS ICU JIT
-OPTIONS_DEFAULT=ICU JIT
+OPTIONS_DEFINE=	BUNDLED_SSL DOCS JIT
+OPTIONS_DEFAULT=JIT
 OPTIONS_SUB=	yes
 BUNDLED_SSL_DESC=	Use bundled OpenSSL implementation from node.js
 JIT_DESC=		Use Just In Time compiler
@@ -61,9 +66,6 @@ JIT_DESC=		Use Just In Time compiler
 BUNDLED_SSL_CONFIGURE_OFF=	--openssl-use-def-ca-store --shared-openssl
 BUNDLED_SSL_RUN_DEPENDS_OFF=	ca_root_nss>=0:security/ca_root_nss
 BUNDLED_SSL_USES_OFF=	ssl
-ICU_BUILD_DEPENDS=	icu>=69.1:devel/icu
-ICU_CONFIGURE_ON=	--with-intl=system-icu
-ICU_LIB_DEPENDS=	libicui18n.so:devel/icu
 JIT_CONFIGURE_OFF=	--v8-lite-mode
 
 .include "Makefile.version"
@@ -75,6 +77,15 @@ CONFIGURE_ARGS+=--openssl-no-asm
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/tools/v8_gypfiles/v8.gyp
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/deps/brotli/
+	@${RM} -r ${WRKSRC}/deps/cares/
+	@${RM} -r ${WRKSRC}/deps/nghttp2/
+	@${RM} -r ${WRKSRC}/deps/ngtcp2/
+	@${RM} -r ${WRKSRC}/deps/npm/
+	@${RM} -r ${WRKSRC}/deps/simdjson/
+	@${RM} -r ${WRKSRC}/deps/uv/
+	@${RM} -r ${WRKSRC}/deps/zlib/
 
 post-configure:
 	# Post-process Makefile and *.mk files created by node-gyp and remove
