@@ -1,5 +1,5 @@
 PORTNAME=	mkdocstrings-python-legacy
-DISTVERSION=	0.2.6
+DISTVERSION=	0.2.7
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs-material>0:textproc/py-mkdocs-materi
 # a circular dependency (via py-mkdocstrings' PYTHONLEGACY option).  It was
 # therefore # moved to TEST_DEPENDS to at least allow the test suite to run.
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
