@@ -1,7 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	6.0.23
-PORTREVISION=	1
+DISTVERSION=	6.0.24
 CATEGORIES=	databases net
 MASTER_SITES=	https://hg.mozilla.org/mozilla-central/raw-rev/:patches
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
@@ -19,7 +18,7 @@ LICENSE_NAME_SSPLv1=	Server Side Public License Version 1
 LICENSE_FILE_SSPLv1=	${WRKSRC}/LICENSE-Community.txt
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATED=	EOL starting August 2025, see https://www.mongodb.com/legal/support-policy/lifecycles, please use databases/mongodb60
+DEPRECATED=	EOL starting August 2025, see https://www.mongodb.com/legal/support-policy/lifecycles, please use databases/mongodb70
 EXPIRATION_DATE=	2025-10-30
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
