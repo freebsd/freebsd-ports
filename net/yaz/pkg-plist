@@ -37,6 +37,7 @@ include/yaz/json.h
 include/yaz/log.h
 include/yaz/logrpn.h
 include/yaz/malloc_info.h
+include/yaz/marc_sax.h
 include/yaz/marcdisp.h
 include/yaz/match_glob.h
 include/yaz/matchstr.h
@@ -128,15 +129,15 @@ include/yaz/zoom.h
 lib/libyaz.a
 lib/libyaz.so
 lib/libyaz.so.5
-lib/libyaz.so.5.0.0
+lib/libyaz.so.5.1.0
 lib/libyaz_icu.a
 lib/libyaz_icu.so
 lib/libyaz_icu.so.5
-lib/libyaz_icu.so.5.0.0
+lib/libyaz_icu.so.5.1.0
 lib/libyaz_server.a
 lib/libyaz_server.so
 lib/libyaz_server.so.5
-lib/libyaz_server.so.5.0.0
+lib/libyaz_server.so.5.1.0
 libdata/pkgconfig/yaz-icu.pc
 libdata/pkgconfig/yaz-server.pc
 libdata/pkgconfig/yaz.pc
