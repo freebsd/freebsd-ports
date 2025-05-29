@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2025-04-16 21:35:14.357149000 -0600
-+++ CMakeLists.txt	2025-04-16 21:35:44.293883000 -0600
-@@ -40,7 +40,7 @@
+--- CMakeLists.txt.orig	2025-05-28 22:57:42 UTC
++++ CMakeLists.txt
+@@ -40,7 +40,7 @@ set(CMAKE_C_STANDARD 11)
  set(CMAKE_INSTALL_MESSAGE LAZY)
  
  set(CMAKE_C_STANDARD 11)
@@ -9,7 +9,7 @@
  set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME "netdata")
  
  option(USE_CXX_11 "Use C++11 instead of C++14 (should only be used on legacy systems that cannot support C++14, may disable some features)" False)
-@@ -95,7 +95,7 @@
+@@ -95,7 +95,7 @@ set(NETDATA_RUNTIME_PREFIX "${CMAKE_INSTALL_PREFIX}")
  set(OS_WINDOWS     False)
  
  set(NETDATA_RUNTIME_PREFIX "${CMAKE_INSTALL_PREFIX}")
@@ -18,7 +18,7 @@
  
  if("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
          set(OS_MACOS True)
-@@ -399,7 +399,7 @@
+@@ -399,7 +399,7 @@ include(NetdataBacktrace)
  include(NetdataJSONC)
  include(NetdataYAML)
  include(NetdataBacktrace)
@@ -27,7 +27,7 @@
  
  if(ENABLE_LEGACY_EBPF_PROGRAMS)
          include(NetdataEBPFLegacy)
-@@ -424,9 +424,9 @@
+@@ -424,9 +424,9 @@ endif()
          netdata_bundle_sentry()
  endif()
  
@@ -40,7 +40,7 @@
  
  #
  # check include files
-@@ -2986,9 +2986,9 @@
+@@ -3006,9 +3006,9 @@ add_executable(netdata
          "$<$<BOOL:${OS_WINDOWS}>:${NETDATA_RES_FILES}>"
  )
  
@@ -53,7 +53,7 @@
  
  if(OS_WINDOWS)
          add_executable(NetdataClaim ${CLAIM_WINDOWS_FILES} ${NETDATA_CLAIM_RES_FILES})
-@@ -3131,12 +3131,12 @@
+@@ -3152,12 +3152,12 @@ endif()
    string(REGEX REPLACE "/$" "" NETDATA_RUNTIME_PREFIX "${NETDATA_RUNTIME_PREFIX}")
  endif()
  
@@ -72,7 +72,7 @@
  
  # A non-default value is only used when building Debian packages (/var/lib/netdata/www)
  if(NOT DEFINED WEB_DIR)
-@@ -3189,11 +3189,12 @@
+@@ -3210,11 +3210,12 @@ install(TARGETS netdata COMPONENT netdata DESTINATION 
  
  install(TARGETS netdata COMPONENT netdata DESTINATION "${BINDIR}")
  
@@ -90,7 +90,7 @@
  install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata)
  install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata/custom-plugins.d)
  install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata/health.d)
-@@ -3208,11 +3209,11 @@
+@@ -3229,11 +3230,11 @@ set(sbindir_POST "${NETDATA_RUNTIME_PREFIX}/${BINDIR}"
  set(pkglibexecdir_POST "${NETDATA_RUNTIME_PREFIX}/libexec/netdata")
  set(localstatedir_POST "${NETDATA_RUNTIME_PREFIX}/var")
  set(sbindir_POST "${NETDATA_RUNTIME_PREFIX}/${BINDIR}")
@@ -107,7 +107,7 @@
  set(netdata_user_POST "${NETDATA_USER}")
  set(netdata_group_POST "${NETDATA_USER}")
  
-@@ -3730,8 +3731,8 @@
+@@ -3751,8 +3752,8 @@ if(ENABLE_DASHBOARD)
  #
  
  if(ENABLE_DASHBOARD)

@@ -1,6 +1,6 @@
---- packaging/cmake/Modules/NetdataVersion.cmake.orig	2025-01-02 17:07:16 UTC
+--- packaging/cmake/Modules/NetdataVersion.cmake.orig	2025-05-28 22:57:38 UTC
 +++ packaging/cmake/Modules/NetdataVersion.cmake
-@@ -7,22 +7,23 @@ function(netdata_version)
+@@ -5,22 +5,23 @@ function(netdata_version)
  # packaging/version. This version field are used for cmake's project,
  # cpack's packaging, and the agent's functionality.
  function(netdata_version)
