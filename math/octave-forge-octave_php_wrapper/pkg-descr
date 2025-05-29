@@ -1,0 +1,9 @@
+The octave-forge package is the result of The GNU Octave Repository project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is octave_php_wrapper.
+
+ The octave_php_wrapper package creates a PHP wrapper for Octave script, so
+that you can run the Octave script by PHP, like modern Internet service.
