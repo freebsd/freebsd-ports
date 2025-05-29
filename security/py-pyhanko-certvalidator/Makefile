@@ -1,5 +1,5 @@
 PORTNAME=	pyhanko-certvalidator
-PORTVERSION=	0.26.8
+PORTVERSION=	0.27.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	pyhanko_certvalidator-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Validates X.509 certificates and paths
-WWW=		https://github.com/MatthiasValvekens/certvalidator
+WWW=		https://github.com/MatthiasValvekens/pyHanko/tree/master/pkgs/pyhanko-certvalidator \
+		https://github.com/MatthiasValvekens/pyHanko
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

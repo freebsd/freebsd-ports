@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-03-15 15:08:08 UTC
+--- pyproject.toml.orig	2025-05-24 11:55:40 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ requires = [
  [build-system]
@@ -8,3 +8,13 @@
      "wheel"
  ]
  build-backend = "setuptools.build_meta"
+@@ -8,8 +8,7 @@ authors = [{name = "Matthias Valvekens", email = "dev@
+ [project]
+ name = "pyhanko-certvalidator"
+ authors = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ description = "Validates X.509 certificates and paths; forked from wbond/certvalidator"
+ keywords = [
+     "crypto",
