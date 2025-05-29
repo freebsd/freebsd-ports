@@ -198,6 +198,7 @@ include/snort/pub_sub/detection_events.h
 include/snort/pub_sub/domain_fronting.h
 include/snort/pub_sub/dhcp_events.h
 include/snort/pub_sub/dns_events.h
+include/snort/pub_sub/eof_event.h
 include/snort/pub_sub/eve_process_event.h
 include/snort/pub_sub/expect_events.h
 include/snort/pub_sub/external_event_ids.h
