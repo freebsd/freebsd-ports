@@ -1129,6 +1129,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl54110delta.1.gz
 %%MAN1%%/perl54111delta.1.gz
 %%MAN1%%/perl54112delta.1.gz
+%%MAN1%%/perl54113delta.1.gz
 %%MAN1%%/perl5411delta.1.gz
 %%MAN1%%/perl5412delta.1.gz
 %%MAN1%%/perl5413delta.1.gz
@@ -2089,6 +2090,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl54110delta.pod
 %%PRIV_LIB%%/pod/perl54111delta.pod
 %%PRIV_LIB%%/pod/perl54112delta.pod
+%%PRIV_LIB%%/pod/perl54113delta.pod
 %%PRIV_LIB%%/pod/perl5411delta.pod
 %%PRIV_LIB%%/pod/perl5412delta.pod
 %%PRIV_LIB%%/pod/perl5413delta.pod
