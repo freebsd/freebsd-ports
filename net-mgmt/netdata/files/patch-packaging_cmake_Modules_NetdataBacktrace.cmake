@@ -8,7 +8,7 @@
 -        set(libbacktrace_BINARY_DIR "${CMAKE_BINARY_DIR}/libbacktrace-build")
 -        set(libbacktrace_INSTALL_DIR "${CMAKE_BINARY_DIR}/libbacktrace-install")
 -        set(libbacktrace_LIBRARY "${libbacktrace_INSTALL_DIR}/lib/libbacktrace.a")
-+        set(libbacktrace_LIBRARY "/usr/local/lib/libbacktrace.a")
++        set(libbacktrace_LIBRARY "%%LOCALBASE%%/lib/libbacktrace.a")
  
 -        # Clone and build libbacktrace
 -        ExternalProject_Add(

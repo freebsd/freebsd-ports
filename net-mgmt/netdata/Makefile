@@ -129,6 +129,8 @@ pre-patch:
 	    ${WRKSRC}/CMakeLists.txt
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	    ${PATCH_WRKSRC}/packaging/cmake/Modules/NetdataBacktrace.cmake
 	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|g' \
 	    ${PATCH_WRKSRC}/packaging/cmake/Modules/NetdataVersion.cmake
 	@${REINPLACE_CMD} -e '\
