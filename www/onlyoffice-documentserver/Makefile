@@ -1,7 +1,7 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.3.3.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		LOCAL/mikael/onlyoffice/:source2 \
@@ -10,7 +10,7 @@ MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 DISTFILES+=	v8-8.9.255.25_all.tar.gz:source1 \
 		node-v${NODE_VERSION_PKGFETCH}.tar.gz:source3 \
 		optipng-0.7.8.tar.gz:source4 \
-		${PORTNAME}-${DISTVERSION}-npm-cache.tar.gz:source2
+		${PORTNAME}-${DISTVERSION}_${PORTREVISION}-npm-cache.tar.gz:source2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure office and productivity apps
@@ -99,9 +99,9 @@ SUB_LIST=	DS_GROUPNAME=${DS_GROUPNAME} \
 		PREFIX=${PREFIX} \
 		WWWDIR=${WWWDIR}
 
-# node version used with "npm install @yao-pkg/pkg@6.4.0"
+# node version used with "npm install @yao-pkg/pkg@6.5.0"
 # keep in sync with patch-build__tools_scripts_build__server.py and patch-document-server-package_Makefile
-NODE_VERSION_PKGFETCH=	22.14.0
+NODE_VERSION_PKGFETCH=	22.15.1
 
 MAKE_ENV=	BUILD_NUMBER="36" \
 		PKG_CACHE_PATH=${WRKDIR}/.pkg-cache \
@@ -205,7 +205,7 @@ do-build:
 
 	@${MKDIR} ${WRKSRC}/yao-pkg
 	@${CP} ${FILESDIR}/package* ${WRKSRC}/yao-pkg
-	@cd ${WRKSRC}/yao-pkg ; ${SETENV} ${MAKE_ENV} npm install @yao-pkg/pkg@6.4.0
+	@cd ${WRKSRC}/yao-pkg ; ${SETENV} ${MAKE_ENV} npm install @yao-pkg/pkg@6.5.0
 
 	@cd ${WRKSRC} && ${PATCH} -N -s -i ${FILESDIR}/extra-patch-pkg-fetch_lib-es5_build.js || ${TRUE}
 	@cd ${WRKSRC} && ${PATCH} -N -s -i ${FILESDIR}/extra-patch-pkg-fetch_patches_node.v${NODE_VERSION_PKGFETCH}.cpp.patch || ${TRUE}
@@ -264,6 +264,6 @@ create-caches-tarball:
 	${FIND} ${WRKDIR}/.pkg-cache -type f -perm 755 -exec file {} \; | ${EGREP} "ELF|PE32+|Mach-O" | ${AWK} -F ':' '{print $$1}' | ${XARGS} ${RM}
 
 	cd ${WRKDIR} && \
-		${TAR} czf ${PORTNAME}-${DISTVERSION}-npm-cache.tar.gz .npm .pkg-cache
+		${TAR} czf ${PORTNAME}-${DISTVERSION}_${PORTREVISION:}-npm-cache.tar.gz .npm .pkg-cache
 
 .include <bsd.port.post.mk>

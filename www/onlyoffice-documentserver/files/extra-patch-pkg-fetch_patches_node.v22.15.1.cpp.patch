@@ -1,8 +1,8 @@
-https://github.com/yao-pkg/pkg-fetch/raw/refs/tags/v3.5.21/patches/node.v22.14.0.cpp.patch
+https://github.com/yao-pkg/pkg-fetch/raw/refs/tags/v3.5.23/patches/node.v22.15.1.cpp.patch
 + local FreeBSD patches
 
---- yao-pkg/node_modules/@yao-pkg/pkg-fetch/patches/node.v22.14.0.cpp.patch	2025-04-28 21:32:13.877330000 +0000
-+++ yao-pkg/node_modules/@yao-pkg/pkg-fetch/patches/node.v22.14.0.cpp.patch
+--- yao-pkg/node_modules/@yao-pkg/pkg-fetch/patches/node.v22.15.1.cpp.patch	2025-04-28 21:32:13.877330000 +0000
++++ yao-pkg/node_modules/@yao-pkg/pkg-fetch/patches/node.v22.15.1.cpp.patch
 @@ -11,6 +11,15 @@
               }],
             ],
