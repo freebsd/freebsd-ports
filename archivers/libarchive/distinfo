@@ -1,3 +1,5 @@
-TIMESTAMP = 1743375034
-SHA256 (libarchive-3.7.9.tar.xz) = ed8b5732e4cd6e30fae909fb945cad8ff9cb7be5c6cdaa3944ec96e4a200c04c
-SIZE (libarchive-3.7.9.tar.xz) = 5494688
+TIMESTAMP = 1748173017
+SHA256 (libarchive-3.8.0.tar.xz) = 67bfac3798a778143f4b1cadcdb3792b4269486f8e1b70ca5c0ee5841398bfdf
+SIZE (libarchive-3.8.0.tar.xz) = 5950876
+SHA256 (627ba5bbbf80fe25dbf5015ef304a905a2820f17.patch) = 0637ca3339f62b2528ab944ec92f5d5f95131d3f68d10450969ab78e2119b13a
+SIZE (627ba5bbbf80fe25dbf5015ef304a905a2820f17.patch) = 792

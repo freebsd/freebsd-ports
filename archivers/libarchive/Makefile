@@ -1,9 +1,12 @@
 PORTNAME=	libarchive
-DISTVERSION=	3.7.9
+DISTVERSION=	3.8.0
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://libarchive.org/downloads/
+
+PATCH_SITES=	https://github.com/libarchive/libarchive/commit/
+PATCHFILES=	627ba5bbbf80fe25dbf5015ef304a905a2820f17.patch:-p1
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
@@ -18,7 +21,6 @@ USES=		cpe iconv libtool localbase:ldflags pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
