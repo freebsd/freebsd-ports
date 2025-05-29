@@ -1,16 +1,16 @@
 PORTNAME=	protoc-gen-go-grpc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.72.1
+DISTVERSION=	1.72.2
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Go implementaion of gRPC
-WWW=		https://github.com/grpc/grpc-go/blob/master/go.mod
+WWW=		https://github.com/grpc/grpc-go/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23
+USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	grpc
 GH_PROJECT=	grpc-go
