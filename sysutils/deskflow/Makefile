@@ -1,6 +1,6 @@
 PORTNAME=	deskflow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.21.2
+DISTVERSION=	1.22.0
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/deskflow/deskflow/commit/
@@ -43,7 +43,6 @@ post-patch:
 
 do-test:
 	@(cd ${BUILD_WRKSRC} && \
-	${SETENVI} ${WRK_ENV} ${TEST_ENV} ${BUILD_WRKSRC}/bin/unittests && \
-	${SETENVI} ${WRK_ENV} ${TEST_ENV} ${BUILD_WRKSRC}/bin/integtests )
+	${SETENVI} ${WRK_ENV} ${TEST_ENV} ${BUILD_WRKSRC}/bin/legacytests)
 
 .include <bsd.port.mk>
