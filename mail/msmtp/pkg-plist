@@ -13,5 +13,6 @@ bin/msmtp
 %%NLS%%share/locale/sv/LC_MESSAGES/msmtp.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/msmtp.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/msmtp.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/msmtp.mo
 share/man/man1/msmtp.1.gz
 %%MSMTPD%%share/man/man1/msmtpd.1.gz
