@@ -1,5 +1,5 @@
 PORTNAME=	mbedtls
-DISTVERSION=	2.28.9
+DISTVERSION=	2.28.10
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/Mbed-TLS/${PORTNAME}/releases/download/${DISTNAME}/
 PKGNAMESUFFIX=	2
