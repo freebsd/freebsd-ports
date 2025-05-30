@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-loader
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.315
+DISTVERSION=	1.4.316
 CATEGORIES=	graphics devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,11 +19,6 @@ GH_PROJECT=	Vulkan-Loader
 CMAKE_ON=	CMAKE_SKIP_RPATH
 CMAKE_OFF=	BUILD_TESTS
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
-
-.if ${DISTVERSION:E} < 316
-GH_TUPLE+=	KhronosGroup:Vulkan-Headers:${DISTVERSIONFULL}:vkheaders/Vulkan-Headers
-CFLAGS+=	-isystem${WRKSRC_vkheaders}/include -isystem${LOCALBASE}/include
-.endif
 
 OPTIONS_DEFINE=	WAYLAND XCB XLIB
 OPTIONS_DEFAULT=WAYLAND XCB XLIB
