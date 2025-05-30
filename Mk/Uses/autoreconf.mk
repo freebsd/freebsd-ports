@@ -92,7 +92,7 @@ _AUTORECONF=	2.72
 BUILD_DEPENDS+=	autoconf>=${_AUTORECONF}:devel/autoconf
 .  endif
 
-BUILD_DEPENDS+=	automake>=1.17:devel/automake
+BUILD_DEPENDS+=	automake>=1.18.1:devel/automake
 
 .  if defined(libtool_ARGS) && empty(libtool_ARGS:Mbuild)
 BUILD_DEPENDS+=	libtoolize:devel/libtool
