@@ -34,6 +34,7 @@ OPTIONS_DEFINE=	LINEDIT
 USES=		zip
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
+JAVA_VERSION=	8
 
 .include <bsd.port.options.mk>
 
