@@ -1,7 +1,6 @@
 PORTNAME=	mprocs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2
-PORTREVISION=	2
+DISTVERSION=	0.7.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	DtxdF@disroot.org
@@ -19,9 +18,4 @@ CARGO_INSTALL_PATH=	src
 
 PLIST_FILES=	bin/mprocs
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -Ee 's/new\("make"\)/new("gmake")/' ${WRKSRC}/cargo-crates/luajit-src-*/src/lib.rs
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
