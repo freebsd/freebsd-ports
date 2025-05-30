@@ -1,4 +1,4 @@
---- configure.ac.in.orig	2024-08-13 16:12:12 UTC
+--- configure.ac.in.orig	2025-04-29 17:01:16 UTC
 +++ configure.ac.in
 @@ -153,40 +153,8 @@ LIBPCAP=-lpcap
  MAKE=make
@@ -147,29 +147,27 @@
  AC_MSG_CHECKING([PF_RING nBPF])
  NBPF_HOME=${PWD}/../PF_RING/userland/nbpf
  LIBNBPF=${NBPF_HOME}/libnbpf.a
-@@ -540,17 +453,12 @@ AS_VAR_IF(with_hiredis, yes, [
- AS_VAR_IF(with_hiredis, yes, [
-     pkg-config --exists hiredis
-     if test "$?" -ne 1; then
--    HIREDIS_INC="`pkg-config --cflags hiredis` -I/usr/include/hiredis"
--    if test $SYSTEM = "FreeBSD" && $FREEBSD_VERSION != "15"; then
+@@ -544,16 +457,11 @@ AS_VAR_IF(with_hiredis, yes, [
+     else
+       pkg-config --exists hiredis
+       if test "$?" -ne 1; then
+-      HIREDIS_INC="`pkg-config --cflags hiredis` -I/usr/include/hiredis"
+-      if test $SYSTEM = "FreeBSD" && $FREEBSD_VERSION != "15"; then
 -	dnl> Note: on freebsd 15 .a is not installed
 -        HIREDIS_LIB="/usr/local/lib/libhiredis.a"
-+      HIREDIS_INC="`pkg-config --cflags hiredis`"
-+      HIREDIS_LIB="`pkg-config --libs hiredis`"
-     else
--        HIREDIS_LIB="`pkg-config --libs hiredis`"
-+      echo "Please install hiredis package prerequisite"
-+      exit -1
-     fi
--    else
--    echo "Please install hiredis package prerequisite"
--    exit -1
--    fi
+-      else
++        HIREDIS_INC="`pkg-config --cflags hiredis`"
+         HIREDIS_LIB="`pkg-config --libs hiredis`"
+-      fi
+       else
+-      echo "Please install hiredis package prerequisite"
+-      exit -1
++        echo "Please install hiredis package prerequisite"
++        exit -1
+       fi
+    fi
  ])
- 
- if test "${with_nedge+set}" != set; then
-@@ -565,14 +473,14 @@ if test "${with_nedge+set}" != set; then
+@@ -570,14 +478,14 @@ if test "${with_nedge+set}" != set; then
    fi
  
    if test $SYSTEM = "FreeBSD"; then
@@ -186,7 +184,7 @@
    AC_DEFINE_UNQUOTED(HAVE_PF_RING, 1, [Native PF_RING support])
    if test -f "${PF_RING_HOME}/userland/lib/libpfring.a"; then
       echo "${PF_RING_HOME}/userland/libpcap/libpcap.a"
-@@ -592,18 +500,18 @@ if test "${with_nedge+set}" != set; then
+@@ -597,18 +505,18 @@ if test "${with_nedge+set}" != set; then
           CXXFLAGS="${CXXFLAGS} -I/opt/pfring/include"
           echo "Using PF_RING installed in /opt/pfring"
        else
@@ -211,7 +209,7 @@
  	  echo "Please make sure you have installed your PF_RING libraries and try again"
  	  exit 1
          fi
-@@ -784,11 +692,9 @@ else
+@@ -789,11 +697,9 @@ else
    fi
  else
     dnl> FreeBSD
@@ -225,7 +223,7 @@
  fi
  
  AC_CHECK_LIB([expat], [XML_ParserCreate], expat=true)
-@@ -843,7 +749,7 @@ fi
+@@ -848,7 +754,7 @@ fi
    INSTALL_DIR=${ac_default_prefix}
  fi
  
