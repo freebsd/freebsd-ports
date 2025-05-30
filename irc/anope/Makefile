@@ -1,6 +1,6 @@
 PORTNAME=	anope
 DISTVERSION=	2.0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 
 MAINTAINER=	devnull@apt322.org
@@ -38,7 +38,7 @@ NLS_USES=	gettext
 
 OPENSSL_USES=	ssl
 
-PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 REDIS_RUN_DEPENDS=	redis>=0:databases/redis
 
@@ -71,7 +71,7 @@ post-patch-OPENSSL-on:
 	${LN} -s ${WRKSRC}/modules/extra/m_ssl_openssl.cpp ${WRKSRC}/modules/
 
 post-patch-PCRE-on:
-	${LN} -s ${WRKSRC}/modules/extra/m_regex_pcre.cpp ${WRKSRC}/modules/
+	${LN} -s ${WRKSRC}/modules/extra/m_regex_pcre2.cpp ${WRKSRC}/modules/
 
 post-patch-POSIX-on:
 	${LN} -s ${WRKSRC}/modules/extra/m_regex_posix.cpp ${WRKSRC}/modules/

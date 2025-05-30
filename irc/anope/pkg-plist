@@ -121,7 +121,7 @@ anope/lib/modules/m_httpd.so
 %%MYSQL%%anope/lib/modules/m_mysql.so
 anope/lib/modules/m_proxyscan.so
 anope/lib/modules/m_redis.so
-%%PCRE%%anope/lib/modules/m_regex_pcre.so
+%%PCRE%%anope/lib/modules/m_regex_pcre2.so
 %%POSIX%%anope/lib/modules/m_regex_posix.so
 %%TRE%%anope/lib/modules/m_regex_tre.so
 anope/lib/modules/m_rewrite.so
