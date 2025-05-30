@@ -1,5 +1,5 @@
 PORTNAME=	rocksndiamonds
-DISTVERSION=	4.4.0.4
+DISTVERSION=	4.4.0.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/${PORTNAME}/
 EXTRACT_SUFX=	-linux.tar.gz
