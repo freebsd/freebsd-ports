@@ -188,11 +188,11 @@
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Internet Systems Consortium, Inc. reports:</p>
 	<blockquote cite="https://kb.isc.org/docs/">
-          <p><ul>
-	  <li>Loading a malicious hook library can lead to local privilege escalation https://kb.isc.org/docs/cve-2025-32801</li>
-	  <li>Insecure handling of file paths allows multiple local attacks https://kb.isc.org/docs/cve-2025-32802</li>
-	  <li>Insecure file permissions can result in confidential information leakage https://kb.isc.org/docs/cve-2025-32803</li>
-          </ul></p>
+	<ul>
+	    <li>Loading a malicious hook library can lead to local privilege escalation https://kb.isc.org/docs/cve-2025-32801</li>
+	    <li>Insecure handling of file paths allows multiple local attacks https://kb.isc.org/docs/cve-2025-32802</li>
+	    <li>Insecure file permissions can result in confidential information leakage https://kb.isc.org/docs/cve-2025-32803</li>
+	</ul>
 	</blockquote>
 	</body>
     </description>
