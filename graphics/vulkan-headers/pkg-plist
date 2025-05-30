@@ -37,6 +37,7 @@ include/vulkan/vulkan_static_assertions.hpp
 include/vulkan/vulkan_structs.hpp
 include/vulkan/vulkan_to_string.hpp
 include/vulkan/vulkan_vi.h
+include/vulkan/vulkan_video.cppm
 include/vulkan/vulkan_video.hpp
 include/vulkan/vulkan_wayland.h
 include/vulkan/vulkan_win32.h
