@@ -1,3 +1,36 @@
+  <vuln vid="a372abb0-3d3c-11f0-86e7-b42e991fc52e">
+    <topic>ModSecurity -- Possible DoS Vulnerability</topic>
+    <affects>
+      <package>
+	<name>ap24-mod_security</name>
+	<range><lt>2.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/owasp-modsecurity/ModSecurity/pull/3389">
+	  <p>ModSecurity is an open source, cross platform web application
+	firewall (WAF) engine for Apache, IIS and Nginx.  Versions up to
+	and including 2.9.8 are vulnerable to denial of service in one
+	special case (in stable released versions): when the payload&apos;s
+	content type is `application/json`, and there is at least one rule
+	which does a `sanitiseMatchedBytes` action.  A patch is available
+	at pull request 3389 and expected to be part of version 2.9.9.  No
+	known workarounds are available.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-47947</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-47947</url>
+    </references>
+    <dates>
+      <discovery>2025-05-21</discovery>
+      <entry>2025-05-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="67dd7a9e-3cd8-11f0-b601-5404a68ad561">
     <topic>traefik -- Path traversal vulnerability</topic>
     <affects>
