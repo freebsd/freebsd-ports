@@ -1,17 +1,18 @@
 PORTNAME=	dnsjava
-PORTVERSION=	2.1.9
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.1.9
 CATEGORIES=	dns java
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of DNS in Java
-WWW=		http://www.xbill.org/dnsjava/
+WWW=		https://github.com/dnsjava/dnsjava/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		java:ant
 USE_GITHUB=	yes
+JAVA_VERSION=	8
 
 ALL_TARGET=	jar
 NO_ARCH=	yes
@@ -23,11 +24,12 @@ OTHERDOCS=	README.md Changelog
 DOCS_ALL_TARGET=	docs
 
 post-patch:
-	@${REINPLACE_CMD} "s/2\.1\.8/${PORTVERSION}/" ${WRKSRC}/build.xml
+	@${REINPLACE_CMD} "s/2\.1\.8/${DISTVERSION}/" ${WRKSRC}/build.xml
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${DISTVERSION}.jar \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
