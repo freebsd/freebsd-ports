@@ -1,7 +1,6 @@
 PORTNAME=	vtm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.05.21
-DISTVERSIONSUFFIX=	a
+DISTVERSION=	2025.05.28
 CATEGORIES=	sysutils
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -31,7 +30,7 @@ CXXFLAGS+=	-stdlib=libstdc++
 .endif
 
 post-patch:
-	${REINPLACE_CMD} 's/lua-5.4/lua-${LUA_VER}/g' \
+	@${REINPLACE_CMD} 's/lua-5.4/lua-${LUA_VER}/g' \
 		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.post.mk>

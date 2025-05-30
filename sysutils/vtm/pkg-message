@@ -1,0 +1,17 @@
+[
+{ type: upgrade
+  maximum_version: 2025.05.28
+  message: <<EOM
+Upgrades to vtm 2025.05.28 
+==========================
+
+vtm 2025.05.28 contains changes that are made to
+configuration settings which are backward-incompatible
+for previous versions of vtm. The configuration settings
+file has changed significantly due to the introduction
+of Pure XML with dynamic element referencing and templating.
+
+See also: https://github.com/directvt/vtm/releases/tag/v2025.05.27
+EOM
+}
+]
