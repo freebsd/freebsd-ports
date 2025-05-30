@@ -1,3 +1,162 @@
+  <vuln vid="a6e1b7ee-3d7c-11f0-9a55-b42e991fc52e">
+    <topic>Mozilla -- memory corruption</topic>
+    <affects>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.11.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.11.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1924108">
+	  <p>Memory safety bug present in Firefox ESR 128.10, and
+	  Thunderbird 128.10.
+	  This bug showed evidence of memory corruption and we presume
+	  that with enough effort this could have been exploited to run
+	  arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5269</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5269</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-05-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a5b553e5-3d7c-11f0-9a55-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>139.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.11</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.11</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1950136%2C1958121%2C1960499%2C1962634">
+	  <p>Memory safety bugs present in Firefox 138, Thunderbird
+	  138, Firefox ESR 128.10, and Thunderbird 128.10.
+	  Some of these bugs showed evidence of memory corruption and
+	  we presume that with enough effort some of these could have
+	  been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5268</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5268</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-05-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a470ac63-3d7c-11f0-9a55-b42e991fc52e">
+    <topic>Firefox -- unencrypted SNI</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>139.0,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1910298">
+	  <p>In certain cases, SNI could have been sent unencrypted
+	  even when encrypted DNS was enabled.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5270</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5270</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-05-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a3291f81-3d7c-11f0-9a55-b42e991fc52e">
+    <topic>Firefox -- content injection attack</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>139.0,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1920348">
+	  <p>Previewing a response in Devtools ignored CSP headers,
+	  which could have allowed content injection attacks.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5271</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5271</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-05-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a14dbea7-3d7c-11f0-9a55-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>139.0,2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>129.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1726254%2C1742738%2C1960121">
+	  <p>Memory safety bugs present in Firefox 138 and Thunderbird
+	  138. Some of these bugs showed evidence of memory corruption
+	  and we presume that with enough effort some of these could
+	  have been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5272</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5272</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-05-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a372abb0-3d3c-11f0-86e7-b42e991fc52e">
     <topic>ModSecurity -- Possible DoS Vulnerability</topic>
     <affects>
