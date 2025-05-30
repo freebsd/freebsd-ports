@@ -1,7 +1,7 @@
 PORTNAME=	kea
-DISTVERSION=	2.7.7
+DISTVERSION=	2.7.9
 CATEGORIES=	net
-MASTER_SITES=	ISC/kea/${DISTVERSION}
+MASTER_SITES=	ISC/kea/cur/2.7
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	cy@FreeBSD.org
@@ -11,10 +11,13 @@ WWW=		https://kea.isc.org/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	rst2man:textproc/py-docutils
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		liblog4cplus.so:devel/log4cplus
 
-USES=		autoreconf compiler:c++11-lang cpe iconv libtool pathfix ssl
+USES=		autoreconf compiler:c++11-lang cpe iconv libtool pathfix \
+		tar:xz ssl
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${DISTVERSION:C/-.*//}
@@ -56,5 +59,13 @@ PGSQL_VARS=		WANT_PGSQL=client
 
 SHELL_USES=		python
 SHELL_CONFIGURE_ON=	--enable-shell
+
+post-build:
+	cd ${WRKSRC}/doc/sphinx/man; \
+	for i in *.8.rst; do rst2man $$i > $$(basename $$i .rst); done
+
+post-install:
+	@cd ${WRKSRC}/doc/sphinx/man; \
+	cp *.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
