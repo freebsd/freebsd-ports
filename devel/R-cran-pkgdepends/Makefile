@@ -1,11 +1,11 @@
 PORTNAME=	pkgdepends
-DISTVERSION=	0.8.0
+DISTVERSION=	0.9.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Package Dependency Resolution and Downloads
-WWW=		https://cran.r-project.org/web/packages/pkgdepends/
+WWW=		https://cran.r-project.org/package=pkgdepends
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -29,7 +29,10 @@ RUN_DEPENDS=	R-cran-zip>=2.3.0:archivers/R-cran-zip \
 
 USES=		cran:auto-plist
 
+NO_ARCH_IGNORE=	pkgdepends.so
+
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/R/library/pkgdepends/libs/pkgdepends.so
 	@${ECHO_CMD} "@dir ${R_MOD_DIR}/help/figures" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
