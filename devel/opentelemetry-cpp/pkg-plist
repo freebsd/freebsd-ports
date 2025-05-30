@@ -143,6 +143,7 @@ include/opentelemetry/sdk/logs/simple_log_record_processor.h
 include/opentelemetry/sdk/logs/simple_log_record_processor_factory.h
 include/opentelemetry/sdk/metrics/aggregation/aggregation.h
 include/opentelemetry/sdk/metrics/aggregation/aggregation_config.h
+include/opentelemetry/sdk/metrics/aggregation/base2_exponential_histogram_aggregation.h
 include/opentelemetry/sdk/metrics/aggregation/base2_exponential_histogram_indexer.h
 include/opentelemetry/sdk/metrics/aggregation/default_aggregation.h
 include/opentelemetry/sdk/metrics/aggregation/drop_aggregation.h
@@ -241,8 +242,10 @@ include/opentelemetry/sdk_config.h
 include/opentelemetry/semconv/azure_metrics.h
 include/opentelemetry/semconv/cicd_metrics.h
 include/opentelemetry/semconv/client_attributes.h
+include/opentelemetry/semconv/code_attributes.h
 include/opentelemetry/semconv/container_metrics.h
 include/opentelemetry/semconv/cpu_metrics.h
+include/opentelemetry/semconv/db_attributes.h
 include/opentelemetry/semconv/db_metrics.h
 include/opentelemetry/semconv/dns_metrics.h
 include/opentelemetry/semconv/error_attributes.h
@@ -252,6 +255,7 @@ include/opentelemetry/semconv/gen_ai_metrics.h
 include/opentelemetry/semconv/http_attributes.h
 include/opentelemetry/semconv/http_metrics.h
 include/opentelemetry/semconv/hw_metrics.h
+include/opentelemetry/semconv/incubating/app_attributes.h
 include/opentelemetry/semconv/incubating/artifact_attributes.h
 include/opentelemetry/semconv/incubating/aws_attributes.h
 include/opentelemetry/semconv/incubating/az_attributes.h
@@ -268,6 +272,8 @@ include/opentelemetry/semconv/incubating/cloudfoundry_attributes.h
 include/opentelemetry/semconv/incubating/code_attributes.h
 include/opentelemetry/semconv/incubating/container_attributes.h
 include/opentelemetry/semconv/incubating/container_metrics.h
+include/opentelemetry/semconv/incubating/cpython_attributes.h
+include/opentelemetry/semconv/incubating/cpython_metrics.h
 include/opentelemetry/semconv/incubating/cpu_attributes.h
 include/opentelemetry/semconv/incubating/cpu_metrics.h
 include/opentelemetry/semconv/incubating/db_attributes.h
@@ -383,10 +389,19 @@ include/opentelemetry/trace/trace_state.h
 include/opentelemetry/trace/tracer.h
 include/opentelemetry/trace/tracer_provider.h
 include/opentelemetry/version.h
+lib/cmake/opentelemetry-cpp/component-definitions.cmake
+lib/cmake/opentelemetry-cpp/find-package-support-functions.cmake
+lib/cmake/opentelemetry-cpp/opentelemetry-cpp-api-target.cmake
 lib/cmake/opentelemetry-cpp/opentelemetry-cpp-config-version.cmake
 lib/cmake/opentelemetry-cpp/opentelemetry-cpp-config.cmake
-lib/cmake/opentelemetry-cpp/opentelemetry-cpp-target-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/opentelemetry-cpp/opentelemetry-cpp-target.cmake
+lib/cmake/opentelemetry-cpp/opentelemetry-cpp-exporters_in_memory-target-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/opentelemetry-cpp/opentelemetry-cpp-exporters_in_memory-target.cmake
+lib/cmake/opentelemetry-cpp/opentelemetry-cpp-exporters_ostream-target-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/opentelemetry-cpp/opentelemetry-cpp-exporters_ostream-target.cmake
+lib/cmake/opentelemetry-cpp/opentelemetry-cpp-ext_common-target.cmake
+lib/cmake/opentelemetry-cpp/opentelemetry-cpp-sdk-target-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/opentelemetry-cpp/opentelemetry-cpp-sdk-target.cmake
+lib/cmake/opentelemetry-cpp/thirdparty-dependency-definitions.cmake
 lib/libopentelemetry_common.so
 lib/libopentelemetry_exporter_in_memory.so
 lib/libopentelemetry_exporter_in_memory_metric.so
