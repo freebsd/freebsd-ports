@@ -62,17 +62,6 @@ Library selection is handled by libglvnd and/or libmap.conf.
    egl_lib_version = '0.0.0'
    deps_for_egl += dep_glvnd
    files_egl += [g_egldispatchstubs_h, g_egldispatchstubs_c]
---- src/gallium/auxiliary/pipe-loader/meson.build.orig	2023-02-01 23:53:26 UTC
-+++ src/gallium/auxiliary/pipe-loader/meson.build
-@@ -58,7 +58,7 @@ libpipe_loader_dynamic = static_library(
-   c_args : [
-     libpipe_loader_defines,
-     '-DPIPE_SEARCH_DIR="@0@"'.format(
--      join_paths(get_option('prefix'), get_option('libdir'), 'gallium-pipe')
-+      join_paths(get_option('prefix'), get_option('libdir'), 'gallium-pipe' + get_option('egl-lib-suffix'))
-     )
-   ],
-   gnu_symbol_visibility : 'hidden',
 --- src/gallium/targets/dri/meson.build.orig	2024-08-31 18:55:15 UTC
 +++ src/gallium/targets/dri/meson.build
 @@ -29,7 +29,7 @@ libgallium_dri = shared_library(
@@ -84,17 +73,6 @@ Library selection is handled by libglvnd and/or libmap.conf.
    files('dri_target.c'),
    include_directories : [
      inc_include, inc_src, inc_mapi, inc_mesa, inc_gallium, inc_gallium_aux, inc_util, inc_gallium_drivers,
---- src/gallium/targets/pipe-loader/meson.build.orig	2023-02-01 23:53:26 UTC
-+++ src/gallium/targets/pipe-loader/meson.build
-@@ -44,7 +44,7 @@ endif
-   pipe_loader_link_deps += files('pipe.sym')
- endif
- 
--pipe_loader_install_dir = join_paths(get_option('libdir'), 'gallium-pipe')
-+pipe_loader_install_dir = join_paths(get_option('libdir'), 'gallium-pipe' + get_option('egl-lib-suffix'))
- 
- _kmsro_targets = [
-    driver_kmsro, driver_v3d, driver_vc4, driver_freedreno, driver_etnaviv,
 --- src/gbm/backends/dri/meson.build.orig	2024-11-27 22:48:04 UTC
 +++ src/gbm/backends/dri/meson.build
 @@ -9,7 +9,7 @@ shared_library(
