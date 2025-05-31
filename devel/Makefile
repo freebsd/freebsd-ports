@@ -5929,6 +5929,7 @@
     SUBDIR += py-sgmllib3k
     SUBDIR += py-sgqlc
     SUBDIR += py-sh
+    SUBDIR += py-shandy-sqlfmt
     SUBDIR += py-shapely
     SUBDIR += py-shellingham
     SUBDIR += py-shpyx
@@ -5960,7 +5961,6 @@
     SUBDIR += py-spyder-kernels
     SUBDIR += py-spyder-unittest
     SUBDIR += py-sqids
-    SUBDIR += py-sqlfluff
     SUBDIR += py-sqlfmt
     SUBDIR += py-squint
     SUBDIR += py-sre-yield
