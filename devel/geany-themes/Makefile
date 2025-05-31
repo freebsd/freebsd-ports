@@ -1,13 +1,13 @@
 PORTNAME=	geany-themes
 DISTVERSION=	1.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel editors
 
 MAINTAINER=	james.wright@digital-chaos.com
 COMMENT=	Additional color schemes for the Geany IDE
 WWW=		https://www.geany.org/download/themes/
 
-LICENSE=	GPLv2+ BSD PD
+LICENSE=	BSD2CLAUSE GPLv2+ PD
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
