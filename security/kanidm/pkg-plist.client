@@ -1,0 +1,7 @@
+bin/kanidm
+bin/kanidm-unix
+bin/kanidm_ssh_authorizedkeys
+bin/kanidm_ssh_authorizedkeys_direct
+lib/nss_kanidm.so.1
+lib/libpam_kanidm.so
+@dir %%ETCDIR%%

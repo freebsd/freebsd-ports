@@ -800,7 +800,7 @@ opensearch:*:855:
 # free: 856
 # free: 857
 # free: 858
-# free: 859
+kanidm:*:859:
 plocate:*:860:
 rekor:*:861:
 timestamp-authority:*:862:

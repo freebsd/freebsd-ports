@@ -806,7 +806,7 @@ opensearch:*:855:855::0:0:opensearch user:/nonexistent:/usr/sbin/nologin
 # free: 856
 # free: 857
 # free: 858
-# free: 859
+kanidm:*:859:859::0:0:Kanidm user:/nonexistent:/usr/sbin/nologin
 # free: 860
 rekor:*:861:861::0:0:rekor user:/nonexistent:/usr/sbin/nologin
 timestamp-authority:*:862:862::0:0:Timestamp Authority:/nonexistent:/usr/sbin/nologin

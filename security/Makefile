@@ -248,6 +248,7 @@
     SUBDIR += ismtp
     SUBDIR += isnprober
     SUBDIR += john
+    SUBDIR += kanidm
     SUBDIR += kbfsd
     SUBDIR += kc
     SUBDIR += kdbxviewer
