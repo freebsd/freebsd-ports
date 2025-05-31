@@ -1,6 +1,6 @@
---- components/regional_capabilities/regional_capabilities_service.cc.orig	2025-05-05 10:57:53 UTC
+--- components/regional_capabilities/regional_capabilities_service.cc.orig	2025-05-28 14:55:43 UTC
 +++ components/regional_capabilities/regional_capabilities_service.cc
-@@ -216,7 +216,7 @@ std::optional<CountryId> RegionalCapabilitiesService::
+@@ -235,7 +235,7 @@ std::optional<CountryId> RegionalCapabilitiesService::
      return persisted_country_id;
    }
  

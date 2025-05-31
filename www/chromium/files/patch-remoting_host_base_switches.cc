@@ -1,4 +1,4 @@
---- remoting/host/base/switches.cc.orig	2022-04-21 18:48:31 UTC
+--- remoting/host/base/switches.cc.orig	2025-05-28 14:55:43 UTC
 +++ remoting/host/base/switches.cc
 @@ -23,13 +23,13 @@ const char kProcessTypeEvaluateCapability[] = "evaluat
  const char kProcessTypeFileChooser[] = "file_chooser";
@@ -13,6 +13,6 @@
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- const char kEnableUtempter[] = "enable-utempter";
+ const char kEnableWtmpdb[] = "enable-wtmpdb";
  #endif
  

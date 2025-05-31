@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig	2025-05-05 10:57:53 UTC
+--- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig	2025-05-28 14:55:43 UTC
 +++ chrome/browser/extensions/api/settings_private/prefs_util.cc
 @@ -196,7 +196,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
    (*s_allowlist)[autofill::prefs::kAutofillPaymentCardBenefits] =
@@ -18,7 +18,7 @@
    (*s_allowlist)[::prefs::kUseCustomChromeFrame] =
        settings_api::PrefType::kBoolean;
  #endif
-@@ -226,7 +226,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
+@@ -228,7 +228,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
    (*s_allowlist)[::prefs::kCurrentThemeID] = settings_api::PrefType::kString;
    (*s_allowlist)[::prefs::kPinnedActions] = settings_api::PrefType::kList;
    (*s_allowlist)[::prefs::kPolicyThemeColor] = settings_api::PrefType::kNumber;

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_frame_view_layout_linux.cc.orig	2024-09-30 07:45:04 UTC
+--- chrome/browser/ui/views/frame/browser_frame_view_layout_linux.cc.orig	2025-05-28 14:55:43 UTC
 +++ chrome/browser/ui/views/frame/browser_frame_view_layout_linux.cc
-@@ -54,7 +54,7 @@ gfx::Insets BrowserFrameViewLayoutLinux::RestoredFrame
+@@ -55,7 +55,7 @@ gfx::Insets BrowserFrameViewLayoutLinux::RestoredFrame
          OpaqueBrowserFrameViewLayout::RestoredFrameBorderInsets());
    }
  

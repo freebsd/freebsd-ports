@@ -1,6 +1,6 @@
---- net/base/network_change_notifier.cc.orig	2025-04-04 08:52:13 UTC
+--- net/base/network_change_notifier.cc.orig	2025-05-28 14:55:43 UTC
 +++ net/base/network_change_notifier.cc
-@@ -36,7 +36,7 @@
+@@ -38,7 +38,7 @@
  #include "net/base/network_change_notifier_linux.h"
  #elif BUILDFLAG(IS_APPLE)
  #include "net/base/network_change_notifier_apple.h"
@@ -9,7 +9,7 @@
  #include "net/base/network_change_notifier_passive.h"
  #elif BUILDFLAG(IS_FUCHSIA)
  #include "net/base/network_change_notifier_fuchsia.h"
-@@ -323,6 +323,9 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
+@@ -325,6 +325,9 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
  #elif BUILDFLAG(IS_FUCHSIA)
    return std::make_unique<NetworkChangeNotifierFuchsia>(
        /*require_wlan=*/false);

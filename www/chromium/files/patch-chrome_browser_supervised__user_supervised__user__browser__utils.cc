@@ -1,4 +1,4 @@
---- chrome/browser/supervised_user/supervised_user_browser_utils.cc.orig	2025-02-19 07:43:18 UTC
+--- chrome/browser/supervised_user/supervised_user_browser_utils.cc.orig	2025-05-28 14:55:43 UTC
 +++ chrome/browser/supervised_user/supervised_user_browser_utils.cc
 @@ -40,7 +40,7 @@
  #include "chrome/browser/ash/profiles/profile_helper.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/supervised_user/supervised_user_verification_controller_client.h"
  #include "chrome/browser/supervised_user/supervised_user_verification_page_blocked_sites.h"
  #include "chrome/browser/supervised_user/supervised_user_verification_page_youtube.h"
-@@ -165,7 +165,7 @@ void AssertChildStatusOfTheUser(Profile* profile, bool
+@@ -158,7 +158,7 @@ void AssertChildStatusOfTheUser(Profile* profile, bool
  #endif
  }
  
