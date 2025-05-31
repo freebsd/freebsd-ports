@@ -1,5 +1,5 @@
 PORTNAME=	netatalk
-PORTVERSION=	4.2.3
+PORTVERSION=	4.2.4
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/netatalk-${PORTVERSION:S/./-/g}/
 PKGNAMESUFFIX=	4
