@@ -1,3 +1,50 @@
+  <vuln vid="25acd603-3dde-11f0-8cb5-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>137.0.7151.55</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>137.0.7151.55</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/05/stable-channel-update-for-desktop_27.html">
+	 <p>This update includes 11 security fixes:</p>
+	 <ul>
+	    <li>[411573532] High CVE-2025-5063: Use after free in Compositing. Reported by Anonymous on 2025-04-18</li>
+	    <li>[417169470] High CVE-2025-5280: Out of bounds write in V8. Reported by [pwn2car] on 2025-05-12</li>
+	    <li>[40058068] Medium CVE-2025-5064: Inappropriate implementation in Background Fetch API. Reported by Maurice Dauer  on 2021-11-29</li>
+	    <li>[40059071] Medium CVE-2025-5065: Inappropriate implementation in FileSystemAccess API. Reported by NDevTK on 2022-03-11</li>
+	    <li>[356658477] Medium CVE-2025-5066: Inappropriate implementation in Messages. Reported by Mohit Raj (shadow2639)  on 2024-07-31</li>
+	    <li>[417215501] Medium CVE-2025-5281: Inappropriate implementation in BFCache. Reported by Jesper van den Ende (Pelican Party Studios) on 2025-05-12</li>
+	    <li>[419467315] Medium CVE-2025-5283: Use after free in libvpx. Reported by Mozilla on 2025-05-22</li>
+	    <li>[40075024] Low CVE-2025-5067: Inappropriate implementation in Tab Strip. Reported by Khalil Zhani on 2023-10-17</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5063</cvename>
+      <cvename>CVE-2025-5280</cvename>
+      <cvename>CVE-2025-5064</cvename>
+      <cvename>CVE-2025-5065</cvename>
+      <cvename>CVE-2025-5066</cvename>
+      <cvename>CVE-2025-5281</cvename>
+      <cvename>CVE-2025-5283</cvename>
+      <cvename>CVE-2025-5067</cvename>
+      <url>https://chromereleases.googleblog.com/2025/05/stable-channel-update-for-desktop_27.html</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-05-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4864aec7-3d80-11f0-9a55-b42e991fc52e">
     <topic>Chrome -- Heap corruption exploitation</topic>
     <affects>
