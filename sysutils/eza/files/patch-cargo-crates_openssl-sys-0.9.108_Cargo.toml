@@ -1,5 +1,5 @@
---- cargo-crates/openssl-sys-0.9.108/Cargo.toml.orig	1970-01-01 00:00:01 UTC
-+++ cargo-crates/openssl-sys-0.9.108/Cargo.toml
+--- cargo-crates/openssl-sys-0.9.109/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/openssl-sys-0.9.109/Cargo.toml
 @@ -40,7 +40,6 @@ unstable_boringssl = ["bssl-sys"]
  [features]
  aws-lc = ["dep:aws-lc-sys"]
