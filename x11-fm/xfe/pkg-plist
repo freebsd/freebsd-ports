@@ -107,7 +107,10 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/default-theme/bigreplace.png
 %%DATADIR%%/icons/default-theme/bigrestore.png
 %%DATADIR%%/icons/default-theme/bigrun.png
+%%DATADIR%%/icons/default-theme/bigsaveas.png
+%%DATADIR%%/icons/default-theme/bigsavefile.png
 %%DATADIR%%/icons/default-theme/bigsearch.png
+%%DATADIR%%/icons/default-theme/bigserver.png
 %%DATADIR%%/icons/default-theme/bigsocket.png
 %%DATADIR%%/icons/default-theme/bigtrashfull.png
 %%DATADIR%%/icons/default-theme/bigwarning.png
@@ -142,6 +145,12 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/default-theme/dl_32x32.png
 %%DATADIR%%/icons/default-theme/doc_16x16.png
 %%DATADIR%%/icons/default-theme/doc_32x32.png
+%%DATADIR%%/icons/default-theme/dockbottom.png
+%%DATADIR%%/icons/default-theme/dockflip.png
+%%DATADIR%%/icons/default-theme/dockfree.png
+%%DATADIR%%/icons/default-theme/dockleft.png
+%%DATADIR%%/icons/default-theme/dockright.png
+%%DATADIR%%/icons/default-theme/docktop.png
 %%DATADIR%%/icons/default-theme/drw_16x16.png
 %%DATADIR%%/icons/default-theme/drw_32x32.png
 %%DATADIR%%/icons/default-theme/dvi_16x16.png
@@ -170,6 +179,8 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/default-theme/html_32x32.png
 %%DATADIR%%/icons/default-theme/info_16x16.png
 %%DATADIR%%/icons/default-theme/info_32x32.png
+%%DATADIR%%/icons/default-theme/jar_16x16.png
+%%DATADIR%%/icons/default-theme/jar_32x32.png
 %%DATADIR%%/icons/default-theme/java_16x16.png
 %%DATADIR%%/icons/default-theme/java_32x32.png
 %%DATADIR%%/icons/default-theme/jpeg_16x16.png
@@ -185,8 +196,11 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/default-theme/m_32x32.png
 %%DATADIR%%/icons/default-theme/make_16x16.png
 %%DATADIR%%/icons/default-theme/make_32x32.png
+%%DATADIR%%/icons/default-theme/mat_16x16.png
+%%DATADIR%%/icons/default-theme/mat_32x32.png
 %%DATADIR%%/icons/default-theme/midi_16x16.png
 %%DATADIR%%/icons/default-theme/midi_32x32.png
+%%DATADIR%%/icons/default-theme/miniadd.png
 %%DATADIR%%/icons/default-theme/miniaddbook.png
 %%DATADIR%%/icons/default-theme/miniapp.png
 %%DATADIR%%/icons/default-theme/miniarchadd.png
@@ -199,6 +213,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/default-theme/minicdrom.png
 %%DATADIR%%/icons/default-theme/minichardev.png
 %%DATADIR%%/icons/default-theme/minichart.png
+%%DATADIR%%/icons/default-theme/miniclose.png
 %%DATADIR%%/icons/default-theme/miniclosefile.png
 %%DATADIR%%/icons/default-theme/miniclosefilter.png
 %%DATADIR%%/icons/default-theme/minicolltree.png
@@ -262,6 +277,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/default-theme/mininetdriveumt.png
 %%DATADIR%%/icons/default-theme/mininewfile.png
 %%DATADIR%%/icons/default-theme/mininewlink.png
+%%DATADIR%%/icons/default-theme/mininewtab.png
 %%DATADIR%%/icons/default-theme/minionepanel.png
 %%DATADIR%%/icons/default-theme/minipackage.png
 %%DATADIR%%/icons/default-theme/minipaste.png
@@ -274,6 +290,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/default-theme/minireload.png
 %%DATADIR%%/icons/default-theme/miniremovabledevice.png
 %%DATADIR%%/icons/default-theme/miniremovebook.png
+%%DATADIR%%/icons/default-theme/miniremovetab.png
 %%DATADIR%%/icons/default-theme/minirename.png
 %%DATADIR%%/icons/default-theme/minireplace.png
 %%DATADIR%%/icons/default-theme/minirestore.png
@@ -287,6 +304,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/default-theme/minisearchnext.png
 %%DATADIR%%/icons/default-theme/minisearchprev.png
 %%DATADIR%%/icons/default-theme/miniselall.png
+%%DATADIR%%/icons/default-theme/miniserver.png
 %%DATADIR%%/icons/default-theme/minishell.png
 %%DATADIR%%/icons/default-theme/minishowhidden.png
 %%DATADIR%%/icons/default-theme/minishownumbers.png
@@ -367,6 +385,8 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/default-theme/so_32x32.png
 %%DATADIR%%/icons/default-theme/sound_16x16.png
 %%DATADIR%%/icons/default-theme/sound_32x32.png
+%%DATADIR%%/icons/default-theme/sql_16x16.png
+%%DATADIR%%/icons/default-theme/sql_32x32.png
 %%DATADIR%%/icons/default-theme/svg_16x16.png
 %%DATADIR%%/icons/default-theme/svg_32x32.png
 %%DATADIR%%/icons/default-theme/tar_16x16.png
@@ -471,7 +491,10 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/gnome-theme/bigreplace.png
 %%DATADIR%%/icons/gnome-theme/bigrestore.png
 %%DATADIR%%/icons/gnome-theme/bigrun.png
+%%DATADIR%%/icons/gnome-theme/bigsaveas.png
+%%DATADIR%%/icons/gnome-theme/bigsavefile.png
 %%DATADIR%%/icons/gnome-theme/bigsearch.png
+%%DATADIR%%/icons/gnome-theme/bigserver.png
 %%DATADIR%%/icons/gnome-theme/bigsocket.png
 %%DATADIR%%/icons/gnome-theme/bigtrashfull.png
 %%DATADIR%%/icons/gnome-theme/bigwarning.png
@@ -506,6 +529,12 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/gnome-theme/dl_32x32.png
 %%DATADIR%%/icons/gnome-theme/doc_16x16.png
 %%DATADIR%%/icons/gnome-theme/doc_32x32.png
+%%DATADIR%%/icons/gnome-theme/dockbottom.png
+%%DATADIR%%/icons/gnome-theme/dockflip.png
+%%DATADIR%%/icons/gnome-theme/dockfree.png
+%%DATADIR%%/icons/gnome-theme/dockleft.png
+%%DATADIR%%/icons/gnome-theme/dockright.png
+%%DATADIR%%/icons/gnome-theme/docktop.png
 %%DATADIR%%/icons/gnome-theme/drw_16x16.png
 %%DATADIR%%/icons/gnome-theme/drw_32x32.png
 %%DATADIR%%/icons/gnome-theme/dvi_16x16.png
@@ -534,6 +563,8 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/gnome-theme/html_32x32.png
 %%DATADIR%%/icons/gnome-theme/info_16x16.png
 %%DATADIR%%/icons/gnome-theme/info_32x32.png
+%%DATADIR%%/icons/gnome-theme/jar_16x16.png
+%%DATADIR%%/icons/gnome-theme/jar_32x32.png
 %%DATADIR%%/icons/gnome-theme/java_16x16.png
 %%DATADIR%%/icons/gnome-theme/java_32x32.png
 %%DATADIR%%/icons/gnome-theme/jpeg_16x16.png
@@ -549,8 +580,11 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/gnome-theme/m_32x32.png
 %%DATADIR%%/icons/gnome-theme/make_16x16.png
 %%DATADIR%%/icons/gnome-theme/make_32x32.png
+%%DATADIR%%/icons/gnome-theme/mat_16x16.png
+%%DATADIR%%/icons/gnome-theme/mat_32x32.png
 %%DATADIR%%/icons/gnome-theme/midi_16x16.png
 %%DATADIR%%/icons/gnome-theme/midi_32x32.png
+%%DATADIR%%/icons/gnome-theme/miniadd.png
 %%DATADIR%%/icons/gnome-theme/miniaddbook.png
 %%DATADIR%%/icons/gnome-theme/miniapp.png
 %%DATADIR%%/icons/gnome-theme/miniarchadd.png
@@ -563,6 +597,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/gnome-theme/minicdrom.png
 %%DATADIR%%/icons/gnome-theme/minichardev.png
 %%DATADIR%%/icons/gnome-theme/minichart.png
+%%DATADIR%%/icons/gnome-theme/miniclose.png
 %%DATADIR%%/icons/gnome-theme/miniclosefile.png
 %%DATADIR%%/icons/gnome-theme/miniclosefilter.png
 %%DATADIR%%/icons/gnome-theme/minicolltree.png
@@ -626,6 +661,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/gnome-theme/mininetdriveumt.png
 %%DATADIR%%/icons/gnome-theme/mininewfile.png
 %%DATADIR%%/icons/gnome-theme/mininewlink.png
+%%DATADIR%%/icons/gnome-theme/mininewtab.png
 %%DATADIR%%/icons/gnome-theme/minionepanel.png
 %%DATADIR%%/icons/gnome-theme/minipackage.png
 %%DATADIR%%/icons/gnome-theme/minipaste.png
@@ -638,6 +674,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/gnome-theme/minireload.png
 %%DATADIR%%/icons/gnome-theme/miniremovabledevice.png
 %%DATADIR%%/icons/gnome-theme/miniremovebook.png
+%%DATADIR%%/icons/gnome-theme/miniremovetab.png
 %%DATADIR%%/icons/gnome-theme/minirename.png
 %%DATADIR%%/icons/gnome-theme/minireplace.png
 %%DATADIR%%/icons/gnome-theme/minirestore.png
@@ -651,6 +688,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/gnome-theme/minisearchnext.png
 %%DATADIR%%/icons/gnome-theme/minisearchprev.png
 %%DATADIR%%/icons/gnome-theme/miniselall.png
+%%DATADIR%%/icons/gnome-theme/miniserver.png
 %%DATADIR%%/icons/gnome-theme/minishell.png
 %%DATADIR%%/icons/gnome-theme/minishowhidden.png
 %%DATADIR%%/icons/gnome-theme/minishownumbers.png
@@ -731,6 +769,8 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/gnome-theme/so_32x32.png
 %%DATADIR%%/icons/gnome-theme/sound_16x16.png
 %%DATADIR%%/icons/gnome-theme/sound_32x32.png
+%%DATADIR%%/icons/gnome-theme/sql_16x16.png
+%%DATADIR%%/icons/gnome-theme/sql_32x32.png
 %%DATADIR%%/icons/gnome-theme/svg_16x16.png
 %%DATADIR%%/icons/gnome-theme/svg_32x32.png
 %%DATADIR%%/icons/gnome-theme/tar_16x16.png
@@ -835,7 +875,10 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/kde-theme/bigreplace.png
 %%DATADIR%%/icons/kde-theme/bigrestore.png
 %%DATADIR%%/icons/kde-theme/bigrun.png
+%%DATADIR%%/icons/kde-theme/bigsaveas.png
+%%DATADIR%%/icons/kde-theme/bigsavefile.png
 %%DATADIR%%/icons/kde-theme/bigsearch.png
+%%DATADIR%%/icons/kde-theme/bigserver.png
 %%DATADIR%%/icons/kde-theme/bigsocket.png
 %%DATADIR%%/icons/kde-theme/bigtrashfull.png
 %%DATADIR%%/icons/kde-theme/bigwarning.png
@@ -870,6 +913,12 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/kde-theme/dl_32x32.png
 %%DATADIR%%/icons/kde-theme/doc_16x16.png
 %%DATADIR%%/icons/kde-theme/doc_32x32.png
+%%DATADIR%%/icons/kde-theme/dockbottom.png
+%%DATADIR%%/icons/kde-theme/dockflip.png
+%%DATADIR%%/icons/kde-theme/dockfree.png
+%%DATADIR%%/icons/kde-theme/dockleft.png
+%%DATADIR%%/icons/kde-theme/dockright.png
+%%DATADIR%%/icons/kde-theme/docktop.png
 %%DATADIR%%/icons/kde-theme/drw_16x16.png
 %%DATADIR%%/icons/kde-theme/drw_32x32.png
 %%DATADIR%%/icons/kde-theme/dvi_16x16.png
@@ -898,6 +947,8 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/kde-theme/html_32x32.png
 %%DATADIR%%/icons/kde-theme/info_16x16.png
 %%DATADIR%%/icons/kde-theme/info_32x32.png
+%%DATADIR%%/icons/kde-theme/jar_16x16.png
+%%DATADIR%%/icons/kde-theme/jar_32x32.png
 %%DATADIR%%/icons/kde-theme/java_16x16.png
 %%DATADIR%%/icons/kde-theme/java_32x32.png
 %%DATADIR%%/icons/kde-theme/jpeg_16x16.png
@@ -913,8 +964,11 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/kde-theme/m_32x32.png
 %%DATADIR%%/icons/kde-theme/make_16x16.png
 %%DATADIR%%/icons/kde-theme/make_32x32.png
+%%DATADIR%%/icons/kde-theme/mat_16x16.png
+%%DATADIR%%/icons/kde-theme/mat_32x32.png
 %%DATADIR%%/icons/kde-theme/midi_16x16.png
 %%DATADIR%%/icons/kde-theme/midi_32x32.png
+%%DATADIR%%/icons/kde-theme/miniadd.png
 %%DATADIR%%/icons/kde-theme/miniaddbook.png
 %%DATADIR%%/icons/kde-theme/miniapp.png
 %%DATADIR%%/icons/kde-theme/miniarchadd.png
@@ -927,6 +981,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/kde-theme/minicdrom.png
 %%DATADIR%%/icons/kde-theme/minichardev.png
 %%DATADIR%%/icons/kde-theme/minichart.png
+%%DATADIR%%/icons/kde-theme/miniclose.png
 %%DATADIR%%/icons/kde-theme/miniclosefile.png
 %%DATADIR%%/icons/kde-theme/miniclosefilter.png
 %%DATADIR%%/icons/kde-theme/minicolltree.png
@@ -990,6 +1045,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/kde-theme/mininetdriveumt.png
 %%DATADIR%%/icons/kde-theme/mininewfile.png
 %%DATADIR%%/icons/kde-theme/mininewlink.png
+%%DATADIR%%/icons/kde-theme/mininewtab.png
 %%DATADIR%%/icons/kde-theme/minionepanel.png
 %%DATADIR%%/icons/kde-theme/minipackage.png
 %%DATADIR%%/icons/kde-theme/minipaste.png
@@ -1002,6 +1058,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/kde-theme/minireload.png
 %%DATADIR%%/icons/kde-theme/miniremovabledevice.png
 %%DATADIR%%/icons/kde-theme/miniremovebook.png
+%%DATADIR%%/icons/kde-theme/miniremovetab.png
 %%DATADIR%%/icons/kde-theme/minirename.png
 %%DATADIR%%/icons/kde-theme/minireplace.png
 %%DATADIR%%/icons/kde-theme/minirestore.png
@@ -1015,6 +1072,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/kde-theme/minisearchnext.png
 %%DATADIR%%/icons/kde-theme/minisearchprev.png
 %%DATADIR%%/icons/kde-theme/miniselall.png
+%%DATADIR%%/icons/kde-theme/miniserver.png
 %%DATADIR%%/icons/kde-theme/minishell.png
 %%DATADIR%%/icons/kde-theme/minishowhidden.png
 %%DATADIR%%/icons/kde-theme/minishownumbers.png
@@ -1095,6 +1153,8 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/kde-theme/so_32x32.png
 %%DATADIR%%/icons/kde-theme/sound_16x16.png
 %%DATADIR%%/icons/kde-theme/sound_32x32.png
+%%DATADIR%%/icons/kde-theme/sql_16x16.png
+%%DATADIR%%/icons/kde-theme/sql_32x32.png
 %%DATADIR%%/icons/kde-theme/svg_16x16.png
 %%DATADIR%%/icons/kde-theme/svg_32x32.png
 %%DATADIR%%/icons/kde-theme/tar_16x16.png
@@ -1199,7 +1259,10 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/xfce-theme/bigreplace.png
 %%DATADIR%%/icons/xfce-theme/bigrestore.png
 %%DATADIR%%/icons/xfce-theme/bigrun.png
+%%DATADIR%%/icons/xfce-theme/bigsaveas.png
+%%DATADIR%%/icons/xfce-theme/bigsavefile.png
 %%DATADIR%%/icons/xfce-theme/bigsearch.png
+%%DATADIR%%/icons/xfce-theme/bigserver.png
 %%DATADIR%%/icons/xfce-theme/bigsocket.png
 %%DATADIR%%/icons/xfce-theme/bigtrashfull.png
 %%DATADIR%%/icons/xfce-theme/bigwarning.png
@@ -1236,6 +1299,12 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/xfce-theme/dl_32x32.png
 %%DATADIR%%/icons/xfce-theme/doc_16x16.png
 %%DATADIR%%/icons/xfce-theme/doc_32x32.png
+%%DATADIR%%/icons/xfce-theme/dockbottom.png
+%%DATADIR%%/icons/xfce-theme/dockflip.png
+%%DATADIR%%/icons/xfce-theme/dockfree.png
+%%DATADIR%%/icons/xfce-theme/dockleft.png
+%%DATADIR%%/icons/xfce-theme/dockright.png
+%%DATADIR%%/icons/xfce-theme/docktop.png
 %%DATADIR%%/icons/xfce-theme/drw_16x16.png
 %%DATADIR%%/icons/xfce-theme/drw_32x32.png
 %%DATADIR%%/icons/xfce-theme/dvi_16x16.png
@@ -1264,6 +1333,8 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/xfce-theme/html_32x32.png
 %%DATADIR%%/icons/xfce-theme/info_16x16.png
 %%DATADIR%%/icons/xfce-theme/info_32x32.png
+%%DATADIR%%/icons/xfce-theme/jar_16x16.png
+%%DATADIR%%/icons/xfce-theme/jar_32x32.png
 %%DATADIR%%/icons/xfce-theme/java_16x16.png
 %%DATADIR%%/icons/xfce-theme/java_32x32.png
 %%DATADIR%%/icons/xfce-theme/jpeg_16x16.png
@@ -1281,8 +1352,11 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/xfce-theme/m_32x32.png
 %%DATADIR%%/icons/xfce-theme/make_16x16.png
 %%DATADIR%%/icons/xfce-theme/make_32x32.png
+%%DATADIR%%/icons/xfce-theme/mat_16x16.png
+%%DATADIR%%/icons/xfce-theme/mat_32x32.png
 %%DATADIR%%/icons/xfce-theme/midi_16x16.png
 %%DATADIR%%/icons/xfce-theme/midi_32x32.png
+%%DATADIR%%/icons/xfce-theme/miniadd.png
 %%DATADIR%%/icons/xfce-theme/miniaddbook.png
 %%DATADIR%%/icons/xfce-theme/miniapp.png
 %%DATADIR%%/icons/xfce-theme/miniarchadd.png
@@ -1295,6 +1369,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/xfce-theme/minicdrom.png
 %%DATADIR%%/icons/xfce-theme/minichardev.png
 %%DATADIR%%/icons/xfce-theme/minichart.png
+%%DATADIR%%/icons/xfce-theme/miniclose.png
 %%DATADIR%%/icons/xfce-theme/miniclosefile.png
 %%DATADIR%%/icons/xfce-theme/miniclosefilter.png
 %%DATADIR%%/icons/xfce-theme/minicolltree.png
@@ -1358,6 +1433,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/xfce-theme/mininetdriveumt.png
 %%DATADIR%%/icons/xfce-theme/mininewfile.png
 %%DATADIR%%/icons/xfce-theme/mininewlink.png
+%%DATADIR%%/icons/xfce-theme/mininewtab.png
 %%DATADIR%%/icons/xfce-theme/minionepanel.png
 %%DATADIR%%/icons/xfce-theme/minipackage.png
 %%DATADIR%%/icons/xfce-theme/minipaste.png
@@ -1370,6 +1446,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/xfce-theme/minireload.png
 %%DATADIR%%/icons/xfce-theme/miniremovabledevice.png
 %%DATADIR%%/icons/xfce-theme/miniremovebook.png
+%%DATADIR%%/icons/xfce-theme/miniremovetab.png
 %%DATADIR%%/icons/xfce-theme/minirename.png
 %%DATADIR%%/icons/xfce-theme/minireplace.png
 %%DATADIR%%/icons/xfce-theme/minirestore.png
@@ -1383,6 +1460,7 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/xfce-theme/minisearchnext.png
 %%DATADIR%%/icons/xfce-theme/minisearchprev.png
 %%DATADIR%%/icons/xfce-theme/miniselall.png
+%%DATADIR%%/icons/xfce-theme/miniserver.png
 %%DATADIR%%/icons/xfce-theme/minishell.png
 %%DATADIR%%/icons/xfce-theme/minishowhidden.png
 %%DATADIR%%/icons/xfce-theme/minishownumbers.png
@@ -1463,6 +1541,8 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/xfce-theme/so_32x32.png
 %%DATADIR%%/icons/xfce-theme/sound_16x16.png
 %%DATADIR%%/icons/xfce-theme/sound_32x32.png
+%%DATADIR%%/icons/xfce-theme/sql_16x16.png
+%%DATADIR%%/icons/xfce-theme/sql_32x32.png
 %%DATADIR%%/icons/xfce-theme/svg_16x16.png
 %%DATADIR%%/icons/xfce-theme/svg_32x32.png
 %%DATADIR%%/icons/xfce-theme/tar_16x16.png
@@ -1512,20 +1592,4 @@ share/man/man1/xfw.1.gz
 %%DATADIR%%/icons/xfce-theme/zip_32x32.png
 %%DATADIR%%/icons/xfce-theme/zst_16x16.png
 %%DATADIR%%/icons/xfce-theme/zst_32x32.png
-%%DATADIR%%/icons/default-theme/jar_16x16.png
-%%DATADIR%%/icons/default-theme/jar_32x32.png
-%%DATADIR%%/icons/default-theme/mat_16x16.png
-%%DATADIR%%/icons/default-theme/mat_32x32.png
-%%DATADIR%%/icons/gnome-theme/jar_16x16.png
-%%DATADIR%%/icons/gnome-theme/jar_32x32.png
-%%DATADIR%%/icons/gnome-theme/mat_16x16.png
-%%DATADIR%%/icons/gnome-theme/mat_32x32.png
-%%DATADIR%%/icons/kde-theme/jar_16x16.png
-%%DATADIR%%/icons/kde-theme/jar_32x32.png
-%%DATADIR%%/icons/kde-theme/mat_16x16.png
-%%DATADIR%%/icons/kde-theme/mat_32x32.png
-%%DATADIR%%/icons/xfce-theme/jar_16x16.png
-%%DATADIR%%/icons/xfce-theme/jar_32x32.png
-%%DATADIR%%/icons/xfce-theme/mat_16x16.png
-%%DATADIR%%/icons/xfce-theme/mat_32x32.png
 %%DATADIR%%/xferc
