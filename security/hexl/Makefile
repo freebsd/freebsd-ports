@@ -1,6 +1,6 @@
 PORTNAME=	hexl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.5
+DISTVERSION=	1.2.6
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,5 +26,9 @@ CMAKE_TESTING_ON=	HEXL_TESTING
 CMAKE_TESTING_TARGET=	unittest
 
 CXXFLAGS+=	-I${LOCALBASE}/include/cpu_features
+
+# tests as of 1.2.6:
+# [==========] 2138 tests from 21 test suites ran. (1617 ms total)
+# [  PASSED  ] 2138 tests.
 
 .include <bsd.port.mk>
