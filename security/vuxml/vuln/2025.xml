@@ -1,3 +1,92 @@
+  <vuln vid="2926c487-3e53-11f0-95d4-00a098b42aeb">
+    <topic>libxml2 -- Out-of-bounds memory access</topic>
+    <affects>
+      <package>
+	<name>xmlsoft</name>
+	<range><lt>2.14.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://gitlab.gnome.org/GNOME/libxml2/-/issues/889">
+	  <p>In libxml2 before 2.13.8 and 2.14.x before 2.14.2, out-of-bounds
+	memory access can occur in the Python API (Python bindings) because
+	of an incorrect return value.  This occurs in xmlPythonFileRead and
+	xmlPythonFileReadRaw because of a difference between bytes and
+	characters.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-32414</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-32414</url>
+    </references>
+    <dates>
+      <discovery>2025-04-08</discovery>
+      <entry>2025-05-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fdd02be0-3e50-11f0-95d4-00a098b42aeb">
+    <topic>libxml2 -- Stack-based Buffer Overflow</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.13.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://gitlab.gnome.org/GNOME/libxml2/-/issues/847">
+	  <p>libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a stack-based
+	buffer overflow in xmlSnprintfElements in valid.c.  To exploit this,
+	DTD validation must occur for an untrusted document or untrusted
+	DTD.  NOTE: this is similar to CVE-2017-9047.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-24928</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-24928</url>
+    </references>
+    <dates>
+      <discovery>2025-02-18</discovery>
+      <entry>2025-05-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bd2af307-3e50-11f0-95d4-00a098b42aeb">
+    <topic>libxml2 -- Use After Free</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.13.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://gitlab.gnome.org/GNOME/libxml2/-/issues/828">
+	  <p>libxml2 before 2.12.10 and 2.13.x before 2.13.6 has a use-after-free
+	in xmlSchemaIDCFillNodeTables and xmlSchemaBubbleIDCNodeTables in
+	xmlschemas.c.  To exploit this, a crafted XML document must be
+	validated against an XML schema with certain identity constraints,
+	or a crafted XML schema must be used.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-56171</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-56171</url>
+    </references>
+    <dates>
+      <discovery>2025-02-18</discovery>
+      <entry>2025-05-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="25acd603-3dde-11f0-8cb5-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
