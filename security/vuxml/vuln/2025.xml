@@ -2,7 +2,7 @@
     <topic>libxml2 -- Out-of-bounds memory access</topic>
     <affects>
       <package>
-	<name>xmlsoft</name>
+	<name>libxml2</name>
 	<range><lt>2.14.2</lt></range>
       </package>
     </affects>
