@@ -17,6 +17,9 @@ LICENSE_TEXT=	License of this software is declared as 'BSD license' in ZillionCl
 		supposed to be included in the source archive, but it is in fact not included.
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Unmaintained upstream as last release was in 2003
+EXPIRATION_DATE=	2025-06-30
+
 USES=		gnustep
 USE_GNUSTEP=	back build
 
