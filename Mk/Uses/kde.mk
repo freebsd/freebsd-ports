@@ -274,7 +274,7 @@ PLIST_SUB+=		KDE_APPLICATIONS_VERSION="${KDE_APPLICATIONS_VERSION}" \
 _USE_PORTINGAIDS_ALL=	js jsembed kdelibs4support khtml mediaplayer kross
 
 # List of components of the KDE Frameworks distribution.
-# Not ported to FreeBSD: bluez-qt modemmanagerqt networkmanagerqt
+# Not ported to FreeBSD: bluez-qt modemmanagerqt
 _USE_FRAMEWORKS5_ALL=	activities activities-stats apidox archive attica \
 			auth baloo bookmarks breeze-icons calendarcore \
 			codecs completion config configwidgets contacts \
@@ -300,8 +300,8 @@ _USE_FRAMEWORKS6_ALL=	apidox archive attica auth baloo bookmarks \
 			i18n iconthemes idletime itemmodels itemviews \
 			jobwidgets kcmutils kdav kdeclarative kded kdesu \
 			kimageformats kio kirigami2 kquickcharts newstuff \
-			notifications notifyconfig package parts people \
-			plasma-wayland-protocols plotting prison pty purpose \
+			networkmanagerqt notifications notifyconfig package parts \
+			people plasma-wayland-protocols plotting prison pty purpose \
 			qqc2-desktop-style runner service solid sonnet \
 			statusnotifieritem svg syndication \
 			syntaxhighlighting texteditor texttemplate \
@@ -535,6 +535,9 @@ kde-layer-shell-qt_LIB=		libLayerShellQtInterface.so
 
 kde-mediaplayer_PORT=		multimedia/kf${_KDE_VERSION}-kmediaplayer
 kde-mediaplayer_LIB=		libKF${_KDE_VERSION}MediaPlayer.so.5
+
+kde-networkmanagerqt_PORT=	net-mgmt/kf${_KDE_VERSION}-networkmanager-qt
+kde-networkmanagerqt_LIB=	libKF${_KDE_VERSION}NetworkManagerQt.so
 
 kde-newstuff_PORT=		devel/kf${_KDE_VERSION}-knewstuff
 kde-newstuff_LIB=		libKF${_KDE_VERSION}NewStuffCore.so
