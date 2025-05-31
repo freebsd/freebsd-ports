@@ -1,3 +1,5 @@
 TIMESTAMP = 1729707897
 SHA256 (webmproject-libvpx-v1.15.0_GH0.tar.gz) = e935eded7d81631a538bfae703fd1e293aad1c7fd3407ba00440c95105d2011e
 SIZE (webmproject-libvpx-v1.15.0_GH0.tar.gz) = 5629622
+SHA256 (865eaf63a727.patch) = 764775e10883bf5b8a0dc467cd20176853ef23b53a9757c65e85bcca7633d509
+SIZE (865eaf63a727.patch) = 2493
