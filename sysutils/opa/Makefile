@@ -1,7 +1,6 @@
 PORTNAME=	opa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
-PORTREVISION=	1
+DISTVERSION=	1.5.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,65 +10,61 @@ WWW=		https://github.com/open-policy-agent/opa
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:1.24,modules
 
 #GO_MODULE=	github.com/open-policy-agent/opa # this fails, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=266813
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	open-policy-agent
 GH_TUPLE=	\
-		AdaLogics:go-fuzz-headers:ced1acdcaa24:adalogics_go_fuzz_headers/vendor/github.com/AdaLogics/go-fuzz-headers \
 		agnivade:levenshtein:v1.2.1:agnivade_levenshtein/vendor/github.com/agnivade/levenshtein \
-		andreyvit:diff:c7f18ee00883:andreyvit_diff/vendor/github.com/andreyvit/diff \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bytecodealliance:wasmtime-go:v3.0.2:bytecodealliance_wasmtime_go_v3/vendor/github.com/bytecodealliance/wasmtime-go/v3 \
 		cenkalti:backoff:v4.3.0:cenkalti_backoff_v4/vendor/github.com/cenkalti/backoff/v4 \
 		cespare:xxhash:v2.3.0:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
-		containerd:containerd:v1.7.27:containerd_containerd/vendor/github.com/containerd/containerd \
+		containerd:containerd:v2.1.1:containerd_containerd_v2/vendor/github.com/containerd/containerd/v2 \
 		containerd:errdefs:v1.0.0:containerd_errdefs/vendor/github.com/containerd/errdefs \
 		containerd:log:v0.1.0:containerd_log/vendor/github.com/containerd/log \
-		containerd:platforms:v0.2.1:containerd_platforms/vendor/github.com/containerd/platforms \
+		containerd:platforms:v1.0.0-rc.1:containerd_platforms/vendor/github.com/containerd/platforms \
 		cpuguy83:go-md2man:v2.0.6:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
-		dgraph-io:badger:v4.6.0:dgraph_io_badger_v4/vendor/github.com/dgraph-io/badger/v4 \
-		dgraph-io:ristretto:v2.1.0:dgraph_io_ristretto_v2/vendor/github.com/dgraph-io/ristretto/v2 \
+		dgraph-io:badger:v4.7.0:dgraph_io_badger_v4/vendor/github.com/dgraph-io/badger/v4 \
+		dgraph-io:ristretto:v2.2.0:dgraph_io_ristretto_v2/vendor/github.com/dgraph-io/ristretto/v2 \
 		dustin:go-humanize:v1.0.1:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		felixge:httpsnoop:v1.0.4:felixge_httpsnoop/vendor/github.com/felixge/httpsnoop \
 		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
 		foxcpp:go-mockdns:v1.1.0:foxcpp_go_mockdns/vendor/github.com/foxcpp/go-mockdns \
-		fsnotify:fsnotify:v1.8.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		fsnotify:fsnotify:v1.9.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-check:check:10cb98267c6c:go_check_check/vendor/gopkg.in/check.v1 \
 		go-ini:ini:v1.67.0:go_ini_ini/vendor/github.com/go-ini/ini \
 		go-logr:logr:v1.4.2:go_logr_logr/vendor/github.com/go-logr/logr \
 		go-logr:stdr:v1.2.2:go_logr_stdr/vendor/github.com/go-logr/stdr \
+		go-viper:mapstructure:v2.2.1:go_viper_mapstructure_v2/vendor/github.com/go-viper/mapstructure/v2 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
-		golang:exp:921286631fa9:golang_exp/vendor/golang.org/x/exp \
-		golang:mod:v0.18.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.37.0:golang_net/vendor/golang.org/x/net \
+		golang:mod:v0.24.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:v0.39.0:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.4:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:v0.12.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.31.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.23.0:golang_text/vendor/golang.org/x/text \
+		golang:sync:v0.14.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.33.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.24.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.11.0:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.22.0:golang_tools/vendor/golang.org/x/tools \
 		google:flatbuffers:v25.2.10:google_flatbuffers/vendor/github.com/google/flatbuffers \
 		google:go-cmp:v0.7.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:56aae31c358a:google_go_genproto/vendor/google.golang.org/genproto/googleapis/api \
+		google:go-genproto:56aae31c358a:google_go_genproto_1/vendor/google.golang.org/genproto/googleapis/rpc \
 		google:uuid:v1.6.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:mux:v1.8.1:gorilla_mux/vendor/github.com/gorilla/mux \
 		grpc-ecosystem:grpc-gateway:v2.26.1:grpc_ecosystem_grpc_gateway_v2/vendor/github.com/grpc-ecosystem/grpc-gateway/v2 \
-		grpc:grpc-go:v1.71.0:grpc_grpc_go/vendor/google.golang.org/grpc \
-		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
+		grpc:grpc-go:v1.72.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		klauspost:compress:v1.18.0:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.3.1:kr_pretty/vendor/github.com/kr/pretty \
 		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
 		kubernetes-sigs:yaml:v1.4.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
 		kylelemons:godebug:v1.1.0:kylelemons_godebug/vendor/github.com/kylelemons/godebug \
-		magiconair:properties:v1.8.7:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		miekg:dns:v1.1.57:miekg_dns/vendor/github.com/miekg/dns \
-		mitchellh:mapstructure:v1.5.0:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		moby:locker:v1.0.1:moby_locker/vendor/github.com/moby/locker \
 		munnerz:goautoneg:a7dc8b61c822:munnerz_goautoneg/vendor/github.com/munnerz/goautoneg \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
@@ -79,20 +74,18 @@ GH_TUPLE=	\
 		open-telemetry:opentelemetry-proto-go:v1.5.0:open_telemetry_opentelemetry_proto_go/vendor/go.opentelemetry.io/proto/otlp \
 		opencontainers:go-digest:v1.0.0:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
 		opencontainers:image-spec:v1.1.1:opencontainers_image_spec/vendor/github.com/opencontainers/image-spec \
-		oras-project:oras-go:v2.3.1:oras_project_oras_go/vendor/oras.land/oras-go/v2 \
-		pelletier:go-toml:v2.1.0:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
+		oras-project:oras-go:v2.5.0:oras_project_oras_go/vendor/oras.land/oras-go/v2 \
+		pelletier:go-toml:v2.2.4:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
 		peterh:liner:v1.2.2:peterh_liner/vendor/github.com/peterh/liner \
-		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		prometheus:client_golang:v1.21.1:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
-		prometheus:client_model:v0.6.1:prometheus_client_model/vendor/github.com/prometheus/client_model \
+		prometheus:client_golang:v1.22.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_model:v0.6.2:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.62.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.15.1:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		protocolbuffers:protobuf-go:v1.36.5:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.36.6:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rcrowley:go-metrics:10cdbea86bc0:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
 		rogpeppe:go-internal:v1.13.1:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
-		sagikazarmark:locafero:v0.4.0:sagikazarmark_locafero/vendor/github.com/sagikazarmark/locafero \
-		sagikazarmark:slog-shim:v0.1.0:sagikazarmark_slog_shim/vendor/github.com/sagikazarmark/slog-shim \
+		sagikazarmark:locafero:v0.7.0:sagikazarmark_locafero/vendor/github.com/sagikazarmark/locafero \
 		sergi:go-diff:v1.3.1:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		sirupsen:logrus:v1.9.3:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		sourcegraph:conc:v0.3.0:sourcegraph_conc/vendor/github.com/sourcegraph/conc \
