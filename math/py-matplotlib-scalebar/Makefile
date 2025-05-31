@@ -1,5 +1,6 @@
 PORTNAME=	matplotlib-scalebar
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +10,7 @@ MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Artist for matplotlib to display a scale bar
 WWW=		https://github.com/ppinard/matplotlib-scalebar
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVOR} \
