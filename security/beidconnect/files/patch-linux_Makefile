@@ -1,4 +1,4 @@
---- linux/Makefile.orig	2023-11-13 21:45:08 UTC
+--- linux/Makefile.orig	2025-04-28 10:25:57 UTC
 +++ linux/Makefile
 @@ -1,16 +1,19 @@
 +CFLAGS ?= -O2
@@ -6,7 +6,7 @@
  PLDFLAGS = $(shell pkg-config --libs libpcsclite)
  PCFLAGS = $(shell pkg-config --cflags libpcsclite)
 +PREFIX ?= /usr
- beidconnect: asn1.o BEIDCard.o CardFactory.o CardReader.o CertChainRequestHandler.o comm.o hash.o InfoRequestHandler.o log.o main.o native.o ReaderList.o Request.o RequestHandler.o SCard.o SignRequestHandler.o UserCertsRequestHandler.o util.o VersionRequestHandler.o VirtualCard.o VirtualReader.o x509Util.o crypto.o setup.o test.o IDRequestHandler.o
+ beidconnect: debughelper.o asn1.o BEIDCard.o CardFactory.o CardReader.o CertChainRequestHandler.o comm.o hash.o log.o main.o native.o ReaderList.o Request.o RequestHandler.o SCard.o SignRequestHandler.o UserCertsRequestHandler.o util.o VersionRequestHandler.o VirtualCard.o VirtualReader.o x509Util.o crypto.o setup.o test.o IDRequestHandler.o
  	$(CXX) $^ $(PLDFLAGS) $(LDFLAGS) -o $@
  
  %.o: ../common/%.cpp
