@@ -1,5 +1,5 @@
 PORTNAME=	pkgdown
-DISTVERSION=	2.1.2
+DISTVERSION=	2.1.3
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -34,7 +34,7 @@ TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
 		R-cran-gert>0:devel/R-cran-gert \
 		R-cran-htmltools>0:textproc/R-cran-htmltools \
 		R-cran-htmlwidgets>0:www/R-cran-htmlwidgets \
-		R-cran-knitr>=1.5.0:print/R-cran-knitr \
+		R-cran-knitr>=1.50:print/R-cran-knitr \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle \
 		R-cran-magick>0:graphics/R-cran-magick \
 		R-cran-pkgload>=1.0.2:devel/R-cran-pkgload \
