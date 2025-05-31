@@ -1,5 +1,5 @@
 PORTNAME=	vkpeak
-DISTVERSION=	20240505
+DISTVERSION=	20250531
 CATEGORIES=	benchmarks
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,13 +10,13 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
-LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
+RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 
 USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	nihui
-GH_TUPLE=	KhronosGroup:glslang:12.3.1-11-g4420f9b3:nglslang/ncnn/glslang \
-		Tencent:ncnn:20240410-9-gb8fefb97:ncnn/ncnn
+GH_TUPLE=	KhronosGroup:glslang:15.3.0-5-gf3b687b3:nglslang/ncnn/glslang \
+		Tencent:ncnn:20250503-33-gebc041cc:ncnn/ncnn
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
