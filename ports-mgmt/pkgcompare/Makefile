@@ -1,16 +1,14 @@
 PORTNAME=	pkgcompare
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	waitman@waitman.net
 COMMENT=	Alternate to pkg upgrade
 WWW=		https://github.com/waitman/pkg-compare
 
-LICENSE=	PKG-COMPARE
-LICENSE_NAME=	PKG-COMPARE BSD LICENSE
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libpkg.so:${PKG_ORIGIN} \
 		libsqlite3.so:databases/sqlite3
