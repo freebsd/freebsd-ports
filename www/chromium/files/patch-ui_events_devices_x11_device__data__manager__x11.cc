@@ -1,6 +1,6 @@
---- ui/events/devices/x11/device_data_manager_x11.cc.orig	2024-09-30 07:45:04 UTC
+--- ui/events/devices/x11/device_data_manager_x11.cc.orig	2025-05-28 14:55:43 UTC
 +++ ui/events/devices/x11/device_data_manager_x11.cc
-@@ -849,6 +849,7 @@ void DeviceDataManagerX11::SetDisabledKeyboardAllowedK
+@@ -850,6 +850,7 @@ void DeviceDataManagerX11::SetDisabledKeyboardAllowedK
  }
  
  void DeviceDataManagerX11::DisableDevice(x11::Input::DeviceId deviceid) {

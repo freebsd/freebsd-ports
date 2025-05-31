@@ -1,8 +1,8 @@
---- chrome/browser/devtools/features.cc.orig	2025-05-05 10:57:53 UTC
+--- chrome/browser/devtools/features.cc.orig	2025-05-28 14:55:43 UTC
 +++ chrome/browser/devtools/features.cc
-@@ -157,7 +157,7 @@ BASE_FEATURE(kDevToolsAiGeneratedTimelineLabels,
-              "DevToolsAiGeneratedTimelineLabels",
-              base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -164,7 +164,7 @@ BASE_FEATURE(kDevToolsNewPermissionDialog,
+              "DevToolsNewPermissionDialog",
+              base::FEATURE_ENABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

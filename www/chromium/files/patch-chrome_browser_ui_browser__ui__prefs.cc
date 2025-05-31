@@ -1,9 +1,9 @@
---- chrome/browser/ui/browser_ui_prefs.cc.orig	2025-05-05 10:57:53 UTC
+--- chrome/browser/ui/browser_ui_prefs.cc.orig	2025-05-28 14:55:43 UTC
 +++ chrome/browser/ui/browser_ui_prefs.cc
-@@ -72,7 +72,7 @@ void RegisterBrowserPrefs(PrefRegistrySimple* registry
-   registry->RegisterIntegerPref(prefs::kDefaultBrowserDeclinedCount, 0);
-   registry->RegisterTimePref(prefs::kDefaultBrowserFirstShownTime,
-                              base::Time());
+@@ -64,7 +64,7 @@ void RegisterBrowserPrefs(PrefRegistrySimple* registry
+   registry->RegisterTimePref(prefs::kPdfInfoBarLastShown, base::Time());
+   registry->RegisterIntegerPref(prefs::kPdfInfoBarTimesShown, 0);
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    registry->RegisterStringPref(prefs::kEnterpriseCustomLabelForBrowser,

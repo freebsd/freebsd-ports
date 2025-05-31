@@ -1,6 +1,6 @@
---- services/device/BUILD.gn.orig	2025-04-04 08:52:13 UTC
+--- services/device/BUILD.gn.orig	2025-05-28 14:55:43 UTC
 +++ services/device/BUILD.gn
-@@ -13,7 +13,7 @@ if (is_android) {
+@@ -17,7 +17,7 @@ if (is_ios) {
  }
  
  is_serial_enabled_platform =
