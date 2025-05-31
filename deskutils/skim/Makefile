@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.2
+DISTVERSION=	0.18.0
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -23,23 +23,23 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		anstyle-1.0.10 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
-		anstyle-wincon-3.0.7 \
+		anstyle-wincon-3.0.8 \
 		arrayvec-0.7.6 \
 		autocfg-1.4.0 \
 		beef-0.5.2 \
 		bitflags-1.3.2 \
-		bitflags-2.9.0 \
+		bitflags-2.9.1 \
 		bstr-1.12.0 \
 		bumpalo-3.17.0 \
-		cc-1.2.21 \
+		cc-1.2.25 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.41 \
-		clap-4.5.37 \
-		clap_builder-4.5.37 \
-		clap_complete-4.5.48 \
+		clap-4.5.39 \
+		clap_builder-4.5.39 \
+		clap_complete-4.5.51 \
 		clap_complete_fig-4.5.2 \
-		clap_complete_nushell-4.5.5 \
+		clap_complete_nushell-4.5.6 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		clap_mangen-0.2.26 \
@@ -66,12 +66,12 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		env_home-0.1.0 \
 		env_logger-0.11.8 \
 		equivalent-1.0.2 \
-		errno-0.3.11 \
+		errno-0.3.12 \
 		fastrand-2.3.0 \
 		fnv-1.0.7 \
 		fuzzy-matcher-0.3.7 \
 		getrandom-0.2.16 \
-		getrandom-0.3.2 \
+		getrandom-0.3.3 \
 		hashbrown-0.15.3 \
 		heck-0.5.0 \
 		iana-time-zone-0.1.63 \
@@ -79,8 +79,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		ident_case-1.0.1 \
 		indexmap-2.9.0 \
 		is_terminal_polyfill-1.70.1 \
-		jiff-0.2.12 \
-		jiff-static-0.2.12 \
+		jiff-0.2.14 \
+		jiff-static-0.2.14 \
 		js-sys-0.3.77 \
 		lazy_static-1.5.0 \
 		libc-0.2.172 \
@@ -92,6 +92,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
 		once_cell-1.21.3 \
+		once_cell_polyfill-1.70.1 \
 		portable-atomic-1.11.0 \
 		portable-atomic-util-0.2.4 \
 		powerfmt-0.2.0 \
@@ -111,14 +112,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-syntax-0.8.5 \
 		roff-0.2.2 \
 		rustix-1.0.7 \
-		rustversion-1.0.20 \
+		rustversion-1.0.21 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
 		shell-quote-0.7.2 \
 		shlex-1.3.0 \
 		strsim-0.11.1 \
 		syn-2.0.101 \
-		tempfile-3.19.1 \
+		tempfile-3.20.0 \
 		term-0.7.0 \
 		thiserror-1.0.69 \
 		thiserror-impl-1.0.69 \
@@ -142,12 +143,12 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-core-0.61.0 \
+		windows-core-0.61.2 \
 		windows-implement-0.60.0 \
 		windows-interface-0.59.1 \
 		windows-link-0.1.1 \
-		windows-result-0.3.2 \
-		windows-strings-0.4.0 \
+		windows-result-0.3.4 \
+		windows-strings-0.4.2 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.52.6 \
