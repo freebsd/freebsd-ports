@@ -1,4 +1,4 @@
---- electron/spec/api-app-spec.ts.orig	2024-10-09 13:53:06 UTC
+--- electron/spec/api-app-spec.ts.orig	2025-05-27 16:50:03 UTC
 +++ electron/spec/api-app-spec.ts
 @@ -126,11 +126,11 @@ describe('app module', () => {
    });
@@ -56,9 +56,9 @@
  
 -  ifdescribe(process.platform !== 'linux')('accessibilitySupportEnabled property', () => {
 +  ifdescribe(process.platform !== 'linux' && process.platform !== 'freebsd')('accessibilitySupportEnabled property', () => {
-     it('with properties', () => {
-       it('can set accessibility support enabled', () => {
-         expect(app.accessibilitySupportEnabled).to.eql(false);
+     it('is mutable', () => {
+       const values = [false, true, false];
+       const setters: Array<(arg: boolean) => void> = [
 @@ -1178,7 +1178,7 @@ describe('app module', () => {
      });
    });
