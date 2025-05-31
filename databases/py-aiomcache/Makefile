@@ -1,6 +1,6 @@
 PORTNAME=	aiomcache
 DISTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Minimal asyncio memcached client
 WWW=		https://github.com/aio-libs/aiomcache/
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe python
