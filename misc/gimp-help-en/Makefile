@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	gimp/help
 PKGNAMEPREFIX?=	${DOCLANG}-
 PKGNAMESUFFIX=	-html
 
-MAINTAINER?=	liangtai.s16@gmail.com
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	GIMP User Manual in English
 WWW=		https://docs.gimp.org/
 

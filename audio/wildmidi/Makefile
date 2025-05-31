@@ -4,7 +4,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	audio
 
-MAINTAINER=	liangtai.s16@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple software midi player and core softsynth library
 WWW=		https://www.mindwerks.net/projects/wildmidi/
 

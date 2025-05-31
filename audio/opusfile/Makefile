@@ -5,7 +5,7 @@ CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/opus/ \
 		https://ftp.osuosl.org/pub/xiph/releases/opus/
 
-MAINTAINER=	liangtai.s16@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Opus playback library
 WWW=		https://opus-codec.org/
 
