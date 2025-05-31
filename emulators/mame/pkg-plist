@@ -833,8 +833,7 @@ share/man/man1/MAME.1.gz
 %%MAMEDATA%%%%DATADIR%%/hash/altos5.xml
 %%MAMEDATA%%%%DATADIR%%/hash/altos586.xml
 %%MAMEDATA%%%%DATADIR%%/hash/altos8600.xml
-%%MAMEDATA%%%%DATADIR%%/hash/amiga_a1000.xml
-%%MAMEDATA%%%%DATADIR%%/hash/amiga_a3000.xml
+%%MAMEDATA%%%%DATADIR%%/hash/amiga_amix.xml
 %%MAMEDATA%%%%DATADIR%%/hash/amiga_apps.xml
 %%MAMEDATA%%%%DATADIR%%/hash/amiga_cd.xml
 %%MAMEDATA%%%%DATADIR%%/hash/amiga_demos.xml
@@ -1268,6 +1267,7 @@ share/man/man1/MAME.1.gz
 %%MAMEDATA%%%%DATADIR%%/hash/pc88va.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc98.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc98_cd.xml
+%%MAMEDATA%%%%DATADIR%%/hash/pc98_hdd.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pcd_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pce.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pce_tourvision.xml
@@ -1288,6 +1288,7 @@ share/man/man1/MAME.1.gz
 %%MAMEDATA%%%%DATADIR%%/hash/pet_quik.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pet_rom.xml
 %%MAMEDATA%%%%DATADIR%%/hash/phc25_cass.xml
+%%MAMEDATA%%%%DATADIR%%/hash/photo_cd.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pi_storyreader_cart.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pi_storyreader_v2_cart.xml
 %%MAMEDATA%%%%DATADIR%%/hash/picno.xml
