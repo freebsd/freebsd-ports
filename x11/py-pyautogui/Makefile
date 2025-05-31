@@ -1,6 +1,6 @@
 PORTNAME=	pyautogui
 DISTVERSION=	0.9.53
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	lets Python control the mouse and keyboard, and other GUI automation tasks
 WWW=		https://github.com/asweigart/pyautogui/
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-xlib>0:x11-toolkits/py-python-xlib@${PY_FLAVOR} \
