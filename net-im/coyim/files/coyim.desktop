@@ -1,0 +1,24 @@
+# To integrate CoyIM with gnome-do, change the 'Exec' field
+# and then you may place this file in either your
+# ~/.local/share/applications/ directory (you may need
+# to create this) or your /usr/share/applications/ directory.
+# Further details can be found here:
+# https://help.ubuntu.com/community/UnityLaunchersAndDesktopFiles
+
+[Desktop Entry]
+Name=CoyIM
+Comment=Secure Instant Messenger
+# Change the path below to your local installation of coyim
+# and then uncomment the Exec field
+# Exec=/path/to/coyim/executable
+Terminal=false
+Type=Application
+# Optional:
+# To enable the correct CoyIM icon, you can download Coy.icns from:
+# https://github.com/coyim/coyim
+# It is in the directory build/mac-bundle.
+# You may place Coy.icns anywhere, but a better place would be either
+# ~/.local/share/icons/ (if .local is set up) or /usr/share/icons/
+# Then uncomment the below Icon field with the correct path
+# Icon=/path/to/Coy.icns
+Categories=Network;
