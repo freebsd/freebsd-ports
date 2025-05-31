@@ -11,6 +11,9 @@ WWW=		http://gobby.0x539.de
 LICENSE=	LGPL20+ # though COPYING is LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandoned upstream, repo archived Nov 26, 2020
+EXPIRATION_DATE=2025-06-30
+
 LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libgnutls.so:security/gnutls
 
