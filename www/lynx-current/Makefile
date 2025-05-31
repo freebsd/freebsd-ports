@@ -1,5 +1,6 @@
 PORTNAME=	lynx
 PORTVERSION=	2.9.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://invisible-mirror.net/archives/lynx/tarballs/ \
 		https://invisible-island.net/archives/lynx/tarballs/
@@ -52,7 +53,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_USES_OFF=	ssl
 
 IDN_CONFIGURE_ENABLE=	idna
-IDN_LIB_DEPENDS=	libidn.so:dns/libidn
+IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
