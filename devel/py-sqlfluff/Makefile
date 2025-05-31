@@ -1,13 +1,14 @@
 PORTNAME=	sqlfluff
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ume@FreeBSD.org
-COMMENT=	The SQL Linter for Humans
+COMMENT=	SQL Linter for Humans
 WWW=		https://sqlfluff.com/ \
-		https://github.com/sqlfluff/sqlfluff2
+		https://github.com/sqlfluff/sqlfluff
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
