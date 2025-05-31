@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source implementation of the Java Management Extensions (JMX)
 WWW=		https://mx4j.sourceforge.net
 
+DEPRECATED=	Abandoned upstream, no activity since 2010
+EXPIRATION_DATE=2025-06-30
+
 USES=		java
 
 NO_BUILD=	yes
