@@ -4828,6 +4828,7 @@
     SUBDIR += py-doit
     SUBDIR += py-domdf-python-tools
     SUBDIR += py-donut-shellcode
+    SUBDIR += py-dotmap
     SUBDIR += py-dotted
     SUBDIR += py-dotty-dict
     SUBDIR += py-dpcontracts
