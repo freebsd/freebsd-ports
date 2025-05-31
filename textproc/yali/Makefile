@@ -12,7 +12,13 @@ MAINTAINER=	tsparks@appliedops.net
 COMMENT=	YALI: Yet Another LOLCODE Interpreter
 WWW=		https://1.618034.com/yali-yet-another-lolcode-interpreter/index.php
 
-LICENSE=	BSD
+LICENSE=	BSDunclear
+LICENSE_NAME=	Unclear BSD License
+LICENSE_TEXT=	License of this software is declared as 'BSD' in yali.v1.1.pl.txt. \
+		But it is not clear which versions of the BSD license (2, \
+		3 or 4 clause) it is. No further file in the source archive \
+		contains license information.
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-Parse-RecDescent>=0:devel/p5-Parse-RecDescent
