@@ -11,6 +11,9 @@ WWW=		https://developers.yubico.com/yubioath-desktop/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired security/libu2f-host via security/py-yubikey-manager
+EXPIRATION_DATE=2025-09-01
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yubikey-manager>=0.7.0:security/py-yubikey-manager@${PY_FLAVOR} \
 		pyotherside-qt5>0:devel/pyotherside-qt5 \
 		RSA_SecurID_getpasswd:devel/libccid \
