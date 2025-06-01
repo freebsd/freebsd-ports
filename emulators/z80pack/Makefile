@@ -2,7 +2,6 @@ PORTNAME=	z80pack
 DISTVERSION=	1.37
 CATEGORIES=	emulators
 MASTER_SITES=	https://www.autometer.de/unix4fun/z80pack/ftp/
-EXTRACT_SUFX=	tgz
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Complete CP/M-80 emulator
@@ -12,6 +11,8 @@ CONFLICTS_INSTALL=	hextools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		tar:tgz
 
 OPTIONS_DEFINE=	DOCS
 
