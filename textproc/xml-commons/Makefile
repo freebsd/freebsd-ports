@@ -3,8 +3,7 @@ DISTVERSION=	1.4.01
 PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/xerces/${PORTNAME}/binaries
-DISTNAME=	${PORTNAME}-external-${DISTVERSION}
-EXTRACT_SUFX=	-bin.tar.gz
+DISTNAME=	${PORTNAME}-external-${DISTVERSION}-bin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides common XML code for Apache projects
@@ -17,6 +16,8 @@ USES=		java
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-external-${DISTVERSION}
 
 _JARDIR=	${JAVASHAREDIR}/${PORTNAME}
 PLIST_FILES=	${_JARDIR}/xml-apis.jar \
