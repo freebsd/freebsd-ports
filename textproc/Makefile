@@ -70,7 +70,6 @@
     SUBDIR += ast-aspell
     SUBDIR += augeas
     SUBDIR += az-aspell
-    SUBDIR += bar
     SUBDIR += bat
     SUBDIR += bat-extras
     SUBDIR += bbe
