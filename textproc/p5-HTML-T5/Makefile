@@ -1,5 +1,6 @@
 PORTNAME=	HTML-T5
 PORTVERSION=	0.014
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,10 +16,10 @@ BUILD_DEPENDS=	p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib \
 LIB_DEPENDS=	libtidy5.so:www/tidy-html5
 RUN_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
-USES=		localbase perl5
+USES=		localbase:ldflags perl5
 USE_PERL5=	configure
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/HTML-T5/T5.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/HTML/T5/T5.so
 
 .include <bsd.port.mk>
