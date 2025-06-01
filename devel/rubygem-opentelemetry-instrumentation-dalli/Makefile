@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-dalli
-PORTVERSION=	0.27.2
+PORTVERSION=	0.27.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
