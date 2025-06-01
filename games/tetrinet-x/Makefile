@@ -5,11 +5,12 @@ CATEGORIES=	games
 MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/ \
 		ftp://ftp.dementia.nu/tetrinet/servers/tetrix/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gmarco@giovannelli.it
 COMMENT=	Addictive 6 player tetr*s game
 WWW=		https://servers.tetrinet.fr/
+
+USES=		tar:tgz
 
 WRKSRC=		${WRKDIR}/tetrinetx-${PORTVERSION}
 SUB_FILES=	pkg-message

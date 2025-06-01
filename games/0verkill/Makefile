@@ -3,7 +3,6 @@ PORTVERSION=	0.16
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~brain/0verkill/release/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bloody 2D action deathmatch-like game in ASCII art
@@ -12,7 +11,7 @@ WWW=		http://artax.karlin.mff.cuni.cz/~brain/0verkill/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-USES=		cpe
+USES=		cpe tar:tgz
 
 GNU_CONFIGURE=	yes
 

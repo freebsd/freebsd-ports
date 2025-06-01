@@ -5,11 +5,12 @@ CATEGORIES=	devel
 MASTER_SITES=	NL/fortran/ \
 		http://ports.toco-domains.de/
 DISTNAME=	fdfpp
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fortran preprocessor for FORTRAN 77 and Fortran 90 programs
 WWW=		https://netlib.org/fortran/
+
+USES=		tar:tgz
 
 ALL_TARGET=	bsd44
 

@@ -4,13 +4,14 @@ PORTREVISION=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	https://socialsolution.omron.com/software/products/product_text/wnn7/support/modules/wnn7egg/
 DISTNAME=	wnn7-elisp-el-1.02-1
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wnn7 elisp client
 WWW=		https://socialsolution.omron.com/software/products/product_text/wnn7/support/wnn7egg_src.html
 
 LICENSE=	GPLv2
+
+USES=		tar:tgz
 
 NO_BUILD=	yes
 

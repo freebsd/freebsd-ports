@@ -4,7 +4,6 @@ PORTREVISION=	3
 CATEGORIES=	net java
 MASTER_SITES=	SF/${PORTNAME}-java/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	java-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of BEEP core and BEEP mapping for TCP in Java
@@ -12,7 +11,7 @@ WWW=		https://sourceforge.net/projects/beepcore-java/
 
 RUN_DEPENDS=	${JAVALIBDIR}/xercesImpl.jar:textproc/xerces-j
 
-USES=		java
+USES=		java tar:tgz
 
 NO_BUILD=	yes
 

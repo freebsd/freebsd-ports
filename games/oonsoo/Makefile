@@ -4,12 +4,11 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SUNSITE/games/solitaires \
 		http://www4.ncsu.edu/~bwmott/www/oonsoo/distributions/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Solitaire card game for X
 
-USES=		xorg
+USES=		xorg tar:tgz
 USE_XORG=	x11
 PLIST_FILES=	bin/oonsoo
 MAKEFILE=	Makefile.Linux

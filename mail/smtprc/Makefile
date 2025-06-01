@@ -3,11 +3,12 @@ PORTVERSION=	2.0.3
 PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Scanner for open SMTP relays
 WWW=		http://smtprc.sourceforge.net
+
+USES=		tar:tgz
 
 OPTIONS_DEFINE=	DOCS GUI
 

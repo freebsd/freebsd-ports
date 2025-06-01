@@ -3,11 +3,12 @@ PORTVERSION=	6.15
 CATEGORIES=	graphics
 MASTER_SITES=	http://utter.chaos.org.uk/~pdh/software/arc/
 DISTNAME=	ig${PORTVERSION:S,.,,}src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient animated GIF optimiser
 WWW=		http://utter.chaos.org.uk/~pdh/software/intergif.htm
+
+USES=		tar:tgz
 
 WRKSRC=		${WRKDIR}/igsrc
 

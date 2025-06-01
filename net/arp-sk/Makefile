@@ -3,12 +3,13 @@ PORTVERSION=	0.0.16
 PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://sid.rstack.org/arp-sk/files/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool designed to manipulate ARP tables of all kinds of equipment
 
 LIB_DEPENDS=	libnet.so:net/libnet
+
+USES=		tar:tgz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libnet=${LOCALBASE}

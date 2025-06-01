@@ -3,11 +3,12 @@ PORTVERSION=	1.0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.arch.cs.titech.ac.jp/~kise/nq/package/
 DISTNAME=	qn24b-version${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	N-queens benchmark
 WWW=		https://www.arch.cs.titech.ac.jp/~kise/nq/index.htm
+
+USES=		tar:tgz
 
 WRKSRC=		${WRKDIR}/version${PORTVERSION}
 

@@ -2,7 +2,6 @@ PORTNAME=	ve
 PORTVERSION=	1.1
 CATEGORIES=	chinese
 MASTER_SITES=	LOCAL/vanilla
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	NTHU-CS Maple BBS 2.36 BBS-like editor
@@ -11,7 +10,7 @@ WWW=		http://netlab.cse.yzu.edu.tw/~statue/freebsd/zh-tut/ve.html
 LICENSE=	GPLv1 GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		ncurses
+USES=		ncurses tar:tgz
 MAKE_ARGS=	CC="${CC}" LIBS="${LDFLAGS} -lncurses"
 
 PLIST_FILES=	bin/ve \

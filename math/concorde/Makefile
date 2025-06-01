@@ -3,11 +3,12 @@ PORTVERSION=	20031219
 CATEGORIES=	math parallel
 MASTER_SITES=	http://www.tsp.gatech.edu/concorde/downloads/codes/src/
 DISTNAME=	co031219
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Combinatorial Optimization package
 WWW=		http://www.tsp.gatech.edu/concorde.html
+
+USES=		tar:tgz
 
 WRKSRC=		${WRKDIR}/concorde
 

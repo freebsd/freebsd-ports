@@ -2,13 +2,12 @@ PORTNAME=	log4sh
 PORTVERSION=	1.4.2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%201.4.X%20%28stable%29/${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common logging library for Bourne shell scripts
 WWW=		https://sites.google.com/a/forestent.com/projects/log4sh
 
-USES=		cpe
+USES=		cpe tar:tgz
 
 OPTIONS_DEFINE=	DOCS
 

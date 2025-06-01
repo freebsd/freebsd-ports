@@ -5,7 +5,6 @@ CATEGORIES=	japanese education games linux
 MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/${DIST_SUBDIR}/ \
 		http://lrnj.com/
 DISTNAME=	sfa
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -20,7 +19,7 @@ PLIST_SUB=	BINMODE=${BINMODE}
 
 SUB_FILES=	${PORTNAME}.sh
 
-USES=		linux
+USES=		linux tar:tgz
 USE_LINUX=	sdl12-extralibs
 
 WRKSRC=		${WRKDIR}/slimeforest
