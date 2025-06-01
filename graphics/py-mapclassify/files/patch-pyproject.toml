@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-05-28 05:34:17 UTC
++++ pyproject.toml
+@@ -40,7 +40,7 @@ dependencies = [
+     "numpy>=1.26",
+     "pandas>=2.1",
+     "scikit-learn>=1.4",
+-    "scipy>=1.12",
++    "scipy>=1.11",
+ ]
+ 
+ [project.urls]
