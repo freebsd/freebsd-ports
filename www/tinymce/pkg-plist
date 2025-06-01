@@ -5,6 +5,7 @@
 %%WWWDIR%%/js/tinymce/langs/README.md
 %%WWWDIR%%/js/tinymce/license.md
 %%WWWDIR%%/js/tinymce/models/dom/model.min.js
+%%WWWDIR%%/js/tinymce/notices.txt
 %%WWWDIR%%/js/tinymce/plugins/accordion/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/advlist/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/anchor/plugin.min.js
