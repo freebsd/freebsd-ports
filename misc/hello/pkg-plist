@@ -2,6 +2,7 @@ bin/hello
 %%NLS%%share/locale/ast/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/da/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/de/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/el/LC_MESSAGES/hello.mo
