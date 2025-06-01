@@ -138,4 +138,3 @@ bin/ospd-openvas
 %%PYTHON_SITELIBDIR%%/ospd_openvas/preferencehandler.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/vthelper.py
 @dir(gvm,gvm,750) /var/run/ospd
-@dir etc/gvm
