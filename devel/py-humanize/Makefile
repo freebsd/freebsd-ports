@@ -1,6 +1,5 @@
 PORTNAME=	humanize
-PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTVERSION=	4.12.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +10,12 @@ WWW=		https://github.com/python-humanize/humanize
 
 LICENSE=	MIT
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>=1.8.0:devel/py-hatchling@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>=0:devel/py-freezegun@${PY_FLAVOR}
+
+USES=		python:3.9+
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
