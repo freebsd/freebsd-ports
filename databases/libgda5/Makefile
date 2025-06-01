@@ -34,7 +34,9 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--without-oracle \
 		--disable-crypto \
 		--disable-default-binary \
-		--enable-introspection
+		--enable-introspection \
+		--without-bdb \
+		--without-mdb
 
 .include <bsd.port.options.mk>
 
@@ -52,13 +54,6 @@ CONFIGURE_ARGS+=--with-ui
 USE_GNOME+=	cairo gtk30
 .else
 CONFIGURE_ARGS+=--without-ui
-.endif
-
-.if ${LIBGDA5_SLAVE}==bdb
-USES+=			bdb:5
-CONFIGURE_ARGS+=	--with-bdb=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-bdb
 .endif
 
 .if ${LIBGDA5_SLAVE}==ldap
@@ -81,14 +76,6 @@ USES+=			pgsql
 CONFIGURE_ARGS+=	--with-postgres=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-postgres
-.endif
-
-# MDB (MS Access)
-.if ${LIBGDA5_SLAVE}==mdb
-LIB_DEPENDS+=		libmdbsql.so:databases/mdbtools
-CONFIGURE_ARGS+=	--with-mdb=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-mdb
 .endif
 
 .if ${LIBGDA5_SLAVE}==jdbc
