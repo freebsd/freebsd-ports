@@ -1,6 +1,5 @@
 PORTNAME=	oqsprovider
-PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTVERSION=	0.9.0
 CATEGORIES=	security
 PKGNAMEPREFIX=	openssl-
 
@@ -41,6 +40,7 @@ post-install:
 .if ${OPENSSLLIB} == "/usr/lib"
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/ossl-modules
 	${MV} ${STAGEDIR}/usr/lib/ossl-modules/oqsprovider.so ${STAGEDIR}${PREFIX}/lib/ossl-modules
+	echo "@dir /usr/lib/ossl-modules" >> ${TMPPLIST}
 .endif
 	${MKDIR} ${STAGEDIR}${PREFIX}/openssl
 	${INSTALL_DATA} ${WRKDIR}/oqsprovider.cnf ${STAGEDIR}${PREFIX}/openssl/
