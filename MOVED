@@ -4430,3 +4430,4 @@ www/py-dj50-channels|www/py-dj51-channels|2025-06-01|Has expired: Extended suppo
 sysutils/screen49||2025-06-01|Has expired: Multiple CVEs
 www/py-dj50-drf-spectacular|www/py-dj51-drf-spectacular|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj50-djangorestframework|www/py-dj51-djangorestframework|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
+devel/aphpbreakdown||2025-06-01|Has expired: Upstream is gone and last release in 2018

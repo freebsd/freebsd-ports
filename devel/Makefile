@@ -199,7 +199,6 @@
     SUBDIR += apache-log4j2
     SUBDIR += apache-orc
     SUBDIR += apache-rat
-    SUBDIR += aphpbreakdown
     SUBDIR += aphpunit
     SUBDIR += api-linter
     SUBDIR += api-sanity-autotest
