@@ -72,6 +72,7 @@
 %%DATADIR%%/Report/Html/Renderer/Template/method_item.html.dist
 %%DATADIR%%/Report/Html/Renderer/Template/method_item_branch.html.dist
 %%DATADIR%%/Report/Html/Renderer/Template/paths.html.dist
+%%DATADIR%%/Report/OpenClover.php
 %%DATADIR%%/Report/PHP.php
 %%DATADIR%%/Report/Text.php
 %%DATADIR%%/Report/Thresholds.php
