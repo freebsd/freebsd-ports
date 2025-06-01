@@ -4438,3 +4438,4 @@ www/py-dj50-django-auth-ldap|www/py-dj51-django-auth-ldap|2025-06-01|Has expired
 textproc/bar||2025-06-01|Has expired: Obsolete, consider using sysutils/pv
 www/py-dj50-django-tables2|www/py-dj51-django-tables2|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj50-django-choices-field|www/py-dj51-django-choices-field|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj50-django-rich|www/py-dj51-django-rich|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
