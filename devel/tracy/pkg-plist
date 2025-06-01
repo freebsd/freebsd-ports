@@ -41,7 +41,7 @@ include/tracy/tracy/TracyLua.hpp
 include/tracy/tracy/TracyOpenCL.hpp
 include/tracy/tracy/TracyOpenGL.hpp
 include/tracy/tracy/TracyVulkan.hpp
+lib/cmake/Tracy/TracyConfig.cmake
+lib/cmake/Tracy/TracyTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Tracy/TracyTargets.cmake
 lib/libTracyClient.a
-share/Tracy/TracyConfig.cmake
-share/Tracy/TracyTargets-%%CMAKE_BUILD_TYPE%%.cmake
-share/Tracy/TracyTargets.cmake
