@@ -1529,7 +1529,6 @@
     SUBDIR += py-dj50-django-redis
     SUBDIR += py-dj50-django-rich
     SUBDIR += py-dj50-django-tables2
-    SUBDIR += py-dj50-django-taggit
     SUBDIR += py-dj50-django-timezone-field
     SUBDIR += py-dj50-django-tree-queries
     SUBDIR += py-dj50-djangorestframework
