@@ -1530,7 +1530,6 @@
     SUBDIR += py-dj50-django-tables2
     SUBDIR += py-dj50-django-timezone-field
     SUBDIR += py-dj50-django-tree-queries
-    SUBDIR += py-dj50-djangorestframework
     SUBDIR += py-dj50-drf-spectacular-sidecar
     SUBDIR += py-dj51-channels
     SUBDIR += py-dj51-channels-redis
