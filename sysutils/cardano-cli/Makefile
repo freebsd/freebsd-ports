@@ -1,6 +1,6 @@
 PORTNAME=	cardano-cli
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	10.9.0.0
+DISTVERSION=	10.11.0.0
 CATEGORIES=	sysutils net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
@@ -92,7 +92,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		canonical-json-0.6.0.1_1 \
 		capability-0.5.0.1_4 \
 		cardano-addresses-4.0.0_1 \
-		cardano-api-10.16.0.0:chap \
+		cardano-api-10.16.3.0:chap \
 		cardano-binary-1.7.1.0:chap \
 		cardano-crypto-1.3.0 \
 		cardano-crypto-class-2.2.2.0:chap \
@@ -120,7 +120,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		cardano-ledger-shelley-test-1.6.0.0:chap \
 		cardano-lmdb-0.4.0.3:chap \
 		cardano-lmdb-simple-0.8.0.1:chap \
-		cardano-ping-0.8.0.0:chap \
+		cardano-ping-0.8.0.1:chap \
 		cardano-prelude-0.2.1.0:chap \
 		cardano-prelude-test-0.1.0.5:chap \
 		cardano-protocol-tpraos-1.4.0.0:chap \
@@ -177,6 +177,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		dlist-1.0_2 \
 		dns-4.2.0 \
 		dom-lt-0.2.3_1 \
+		dot-0.3 \
 		either-5.0.2_2 \
 		erf-2.0.0.0 \
 		errors-2.3.0_5 \
@@ -278,7 +279,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		network-3.2.7.0 \
 		network-byte-order-0.1.7 \
 		network-control-0.1.6 \
-		network-mux-0.7:chap \
+		network-mux-0.8:chap \
 		network-uri-2.6.4.2_1 \
 		newtype-0.2.2.0_3 \
 		newtype-generics-0.6.2_4 \
@@ -293,15 +294,15 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		optparse-applicative-fork-0.18.1.0:chap \
 		ordered-containers-0.2.4 \
 		os-string-2.0.7 \
-		ouroboros-consensus-0.26.0.1:chap \
-		ouroboros-consensus-cardano-0.25.0.1:chap \
-		ouroboros-consensus-diffusion-0.22.0.1:chap \
-		ouroboros-consensus-protocol-0.12.0.0:chap \
-		ouroboros-network-0.20.1.0:chap \
-		ouroboros-network-api-0.13.0.0:chap \
-		ouroboros-network-framework-0.17.0.0:chap \
+		ouroboros-consensus-0.27.0.0:chap \
+		ouroboros-consensus-cardano-0.25.1.0:chap \
+		ouroboros-consensus-diffusion-0.23.0.0:chap \
+		ouroboros-consensus-protocol-0.12.0.0_1:chap \
+		ouroboros-network-0.21.0.0:chap \
+		ouroboros-network-api-0.14.0.0:chap \
+		ouroboros-network-framework-0.18.0.0:chap \
 		ouroboros-network-mock-0.1.1.2:chap \
-		ouroboros-network-protocols-0.14.0.0:chap \
+		ouroboros-network-protocols-0.14.0.1:chap \
 		ouroboros-network-testing-0.8.1.0:chap \
 		parallel-3.2.2.0_9 \
 		parser-combinators-1.3.0_1 \
