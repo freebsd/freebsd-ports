@@ -1,7 +1,7 @@
 # this port is for future amdgpu kernel support testing.
 
 PORTNAME=	xf86-video-amdgpu
-PORTVERSION=	22.0.0
+DISTVERSION=	22.0.0
 PORTREVISION=	2
 CATEGORIES=	x11-drivers
 
@@ -21,11 +21,9 @@ ONLY_FOR_ARCHS_REASON=	KMS is required and currently only available on x86/arm64
 
 LIB_DEPENDS=	libdrm_amdgpu.so:graphics/libdrm
 
-EXTRACT_SUFX=	.tar.xz
-USES=		gl xorg-cat:driver tar:xz
+USES=		gl tar:xz xorg-cat:driver
 USE_GL=		gbm
 
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--disable-udev
 
 PLIST_FILES=	lib/xorg/modules/drivers/amdgpu_drv.so \
