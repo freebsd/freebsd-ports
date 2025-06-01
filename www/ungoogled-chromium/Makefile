@@ -1,6 +1,5 @@
 PORTNAME=	ungoogled-chromium
-PORTVERSION=	136.0.7103.113
-PORTREVISION=	1
+PORTVERSION=	137.0.7151.55
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 UGVERSION=	${DISTVERSION}-1
@@ -99,8 +98,7 @@ SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper
 MAKE_ARGS=	-C out/${BUILDTYPE}
 ALL_TARGET=	chrome
 
-BINARY_ALIAS=	python3=${PYTHON_CMD} \
-		moc=${PREFIX}/bin/moc-qt5
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 # TODO bz@ : install libwidevinecdm.so (see third_party/widevine/cdm/BUILD.gn)
 #
@@ -112,6 +110,7 @@ GN_ARGS+=	enable_widevine=true \
 		fatal_linker_warnings=false \
 		icu_use_data_file=false \
 		is_clang=true \
+		moc_qt5_path="${QT_TOOLDIR}/moc" \
 		optimize_webui=true \
 		toolkit_views=true \
 		use_allocator_shim=false \
@@ -121,6 +120,7 @@ GN_ARGS+=	enable_widevine=true \
 		use_lld=true \
 		use_partition_alloc=true \
 		use_partition_alloc_as_malloc=false \
+		use_qt5=true \
 		use_sysroot=false \
 		use_system_freetype=false \
 		use_system_harfbuzz=true \

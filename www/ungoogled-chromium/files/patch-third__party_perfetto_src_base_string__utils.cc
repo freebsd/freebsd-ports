@@ -1,9 +1,9 @@
---- third_party/perfetto/src/base/string_utils.cc.orig	2025-02-20 09:59:21 UTC
+--- third_party/perfetto/src/base/string_utils.cc.orig	2025-05-31 17:16:41 UTC
 +++ third_party/perfetto/src/base/string_utils.cc
 @@ -39,7 +39,8 @@ namespace base {
  // Locale-independant as possible version of strtod.
  double StrToD(const char* nptr, char** endptr) {
- #if PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) || \
+ #if PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) ||           \
 -    PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) || \
 +    (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) && \
 +    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \

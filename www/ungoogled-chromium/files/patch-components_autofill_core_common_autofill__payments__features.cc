@@ -1,6 +1,6 @@
---- components/autofill/core/common/autofill_payments_features.cc.orig	2025-05-06 12:23:00 UTC
+--- components/autofill/core/common/autofill_payments_features.cc.orig	2025-05-31 17:16:41 UTC
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -267,7 +267,7 @@ BASE_FEATURE(kAutofillSyncEwalletAccounts,
+@@ -297,7 +297,7 @@ BASE_FEATURE(kAutofillSyncEwalletAccounts,
  #endif  // BUILDFLAG(IS_ANDROID)
  
  bool ShouldShowImprovedUserConsentForCreditCardSave() {

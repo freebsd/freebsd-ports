@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2025-05-06 12:23:00 UTC
+--- BUILD.gn.orig	2025-05-31 17:16:41 UTC
 +++ BUILD.gn
 @@ -71,7 +71,7 @@ declare_args() {
    root_extra_deps = []
@@ -87,7 +87,7 @@
        # Using the default toolchain for this tool, as it's run during tests not
        # during the build. This places a symlink in the root_build_dir for scrips
        # to use.
-@@ -1752,7 +1760,7 @@ group("chromium_builder_perf") {
+@@ -1735,7 +1743,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  

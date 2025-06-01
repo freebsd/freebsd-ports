@@ -1,6 +1,6 @@
---- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig	2025-05-06 12:23:00 UTC
+--- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig	2025-05-31 17:16:41 UTC
 +++ components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h
-@@ -229,7 +229,7 @@ class VIZ_SERVICE_EXPORT RootCompositorFrameSinkImpl
+@@ -234,7 +234,7 @@ class VIZ_SERVICE_EXPORT RootCompositorFrameSinkImpl
    base::TimeDelta preferred_frame_interval_ =
        FrameRateDecider::UnspecifiedFrameInterval();
  

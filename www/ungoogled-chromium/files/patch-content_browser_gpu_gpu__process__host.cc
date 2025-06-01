@@ -1,4 +1,4 @@
---- content/browser/gpu/gpu_process_host.cc.orig	2025-04-15 08:30:07 UTC
+--- content/browser/gpu/gpu_process_host.cc.orig	2025-05-31 17:16:41 UTC
 +++ content/browser/gpu/gpu_process_host.cc
 @@ -275,6 +275,7 @@ static const char* const kSwitchNames[] = {
      switches::kDisableSkiaGraphite,
@@ -8,7 +8,7 @@
      switches::kProfilingAtStart,
      switches::kProfilingFile,
      switches::kProfilingFlush,
-@@ -304,7 +305,7 @@ static const char* const kSwitchNames[] = {
+@@ -303,7 +304,7 @@ static const char* const kSwitchNames[] = {
      switches::kEnableNativeGpuMemoryBuffers,
      switches::kRenderNodeOverride,
  #endif

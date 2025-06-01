@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/util/managed_browser_utils.cc.orig	2025-05-06 12:23:00 UTC
+--- chrome/browser/enterprise/util/managed_browser_utils.cc.orig	2025-05-31 17:16:41 UTC
 +++ chrome/browser/enterprise/util/managed_browser_utils.cc
 @@ -222,7 +222,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
        profile_manager->GetProfileAttributesStorage()
@@ -9,3 +9,12 @@
      SetEnterpriseProfileLabel(profile);
  #endif
      entry->SetUserAcceptedAccountManagement(accepted);
+@@ -341,7 +341,7 @@ bool CanShowEnterpriseProfileUI(Profile* profile) {
+ }
+ 
+ bool CanShowEnterpriseBadgingForNTPFooter(Profile* profile) {
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ 
+   auto* management_service =
+       policy::ManagementServiceFactory::GetForProfile(profile);

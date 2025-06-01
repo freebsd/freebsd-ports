@@ -1,6 +1,6 @@
---- components/signin/public/base/signin_switches.h.orig	2025-05-06 12:23:00 UTC
+--- components/signin/public/base/signin_switches.h.orig	2025-05-31 17:16:41 UTC
 +++ components/signin/public/base/signin_switches.h
-@@ -52,7 +52,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+@@ -55,7 +55,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
  BASE_DECLARE_FEATURE(kUseHostedDomainForManagementCheckOnSignin);
  #endif
  

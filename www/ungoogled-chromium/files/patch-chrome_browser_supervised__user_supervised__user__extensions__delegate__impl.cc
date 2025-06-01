@@ -1,4 +1,4 @@
---- chrome/browser/supervised_user/supervised_user_extensions_delegate_impl.cc.orig	2025-05-06 12:23:00 UTC
+--- chrome/browser/supervised_user/supervised_user_extensions_delegate_impl.cc.orig	2025-05-31 17:16:41 UTC
 +++ chrome/browser/supervised_user/supervised_user_extensions_delegate_impl.cc
 @@ -197,7 +197,7 @@ void SupervisedUserExtensionsDelegateImpl::RequestExte
        return;
@@ -8,4 +8,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    CHECK(contents.value());
    content::WebContents* web_contents = contents.value().get();
-   if (supervised_user::
+   // Always invoke the parent permission dialog.

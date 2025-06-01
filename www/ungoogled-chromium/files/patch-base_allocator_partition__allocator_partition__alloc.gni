@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_alloc.gni.orig	2025-05-06 12:23:00 UTC
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2025-05-31 17:16:41 UTC
 +++ base/allocator/partition_allocator/partition_alloc.gni
-@@ -89,7 +89,7 @@ if (is_nacl) {
+@@ -91,7 +91,7 @@ if (is_nacl) {
  # TODO(crbug.com/329199197): Clean this up when experiments are complete.
  use_large_empty_slot_span_ring = true
  
@@ -9,7 +9,7 @@
                       !is_hwasan && (is_linux || is_android)
  
  declare_args() {
-@@ -345,7 +345,7 @@ declare_args() {
+@@ -350,7 +350,7 @@ declare_args() {
  declare_args() {
    # Shadow metadata is still under development and only supports Linux
    # for now.
@@ -18,7 +18,7 @@
  }
  
  declare_args() {
-@@ -488,7 +488,7 @@ assert(!use_asan_backup_ref_ptr || use_raw_ptr_hookabl
+@@ -493,7 +493,7 @@ assert(!use_asan_backup_ref_ptr || use_raw_ptr_hookabl
  # dependencies that use partition_allocator are compiled in AOSP against a
  # version of glibc that does not include pkeys syscall numbers.
  is_pkeys_available =

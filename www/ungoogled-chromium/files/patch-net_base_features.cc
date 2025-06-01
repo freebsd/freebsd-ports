@@ -1,6 +1,6 @@
---- net/base/features.cc.orig	2025-05-06 12:23:00 UTC
+--- net/base/features.cc.orig	2025-05-31 17:16:41 UTC
 +++ net/base/features.cc
-@@ -28,7 +28,7 @@ BASE_FEATURE(kCapReferrerToOriginOnCrossOrigin,
+@@ -29,7 +29,7 @@ BASE_FEATURE(kCapReferrerToOriginOnCrossOrigin,
  BASE_FEATURE(kAsyncDns,
               "AsyncDns",
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID) || \
@@ -9,16 +9,3 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -550,7 +550,12 @@ BASE_FEATURE(kSpdyHeadersToHttpResponseUseBuilder,
-              "SpdyHeadersToHttpResponseUseBuilder",
-              base::FEATURE_DISABLED_BY_DEFAULT);
- 
-+#if BUILDFLAG(IS_OPENBSD)
-+// No IP_RECVTOS support
-+BASE_FEATURE(kReportEcn, "ReportEcn", base::FEATURE_DISABLED_BY_DEFAULT);
-+#else
- BASE_FEATURE(kReportEcn, "ReportEcn", base::FEATURE_ENABLED_BY_DEFAULT);
-+#endif
- 
- BASE_FEATURE(kUseNewAlpsCodepointHttp2,
-              "UseNewAlpsCodepointHttp2",

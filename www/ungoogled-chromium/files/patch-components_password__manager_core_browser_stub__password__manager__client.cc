@@ -1,4 +1,4 @@
---- components/password_manager/core/browser/stub_password_manager_client.cc.orig	2025-05-06 12:23:00 UTC
+--- components/password_manager/core/browser/stub_password_manager_client.cc.orig	2025-05-31 17:16:41 UTC
 +++ components/password_manager/core/browser/stub_password_manager_client.cc
 @@ -206,7 +206,7 @@ version_info::Channel StubPasswordManagerClient::GetCh
  }
@@ -8,4 +8,4 @@
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  void StubPasswordManagerClient::OpenPasswordDetailsBubble(
      const password_manager::PasswordForm& form) {}
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) ||
+ void StubPasswordManagerClient::MaybeShowSavePasswordPrimingPromo(

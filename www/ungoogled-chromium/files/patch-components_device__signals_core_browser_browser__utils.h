@@ -1,6 +1,6 @@
---- components/device_signals/core/browser/browser_utils.h.orig	2025-05-06 12:23:00 UTC
+--- components/device_signals/core/browser/browser_utils.h.orig	2025-05-31 17:16:41 UTC
 +++ components/device_signals/core/browser/browser_utils.h
-@@ -15,7 +15,7 @@ namespace device_signals {
+@@ -29,7 +29,7 @@ bool GetSiteIsolationEnabled();
  // Returns the hostname of the current machine.
  std::string GetHostName();
  
@@ -9,7 +9,7 @@
  // Returns the hostname of the current machine.
  std::vector<std::string> GetSystemDnsServers();
  
-@@ -23,7 +23,7 @@ std::vector<std::string> GetSystemDnsServers();
+@@ -37,7 +37,7 @@ std::vector<std::string> GetSystemDnsServers();
  SettingValue GetOSFirewall();
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  

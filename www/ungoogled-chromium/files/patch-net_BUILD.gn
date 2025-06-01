@@ -1,6 +1,6 @@
---- net/BUILD.gn.orig	2025-05-06 12:23:00 UTC
+--- net/BUILD.gn.orig	2025-05-31 17:16:41 UTC
 +++ net/BUILD.gn
-@@ -125,7 +125,7 @@ net_configs = [
+@@ -126,7 +126,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
  ]
  
@@ -9,7 +9,7 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1322,6 +1322,19 @@ component("net") {
+@@ -1336,6 +1336,19 @@ component("net") {
      ]
    }
  
@@ -29,7 +29,7 @@
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1485,7 +1498,7 @@ component("net") {
+@@ -1499,7 +1512,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -38,7 +38,7 @@
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2184,7 +2197,7 @@ static_library("test_support") {
+@@ -2209,7 +2222,7 @@ static_library("test_support") {
      ]
    }
  
@@ -47,7 +47,7 @@
      sources += [
        "base/address_tracker_linux_test_util.cc",
        "base/address_tracker_linux_test_util.h",
-@@ -3003,14 +3016,14 @@ target(_test_target_type, "net_unittests") {
+@@ -3032,14 +3045,14 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -64,7 +64,7 @@
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -3106,6 +3119,10 @@ target(_test_target_type, "net_unittests") {
+@@ -3137,6 +3150,10 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -75,7 +75,7 @@
    if (enable_websockets) {
      sources += [
        "server/http_connection_unittest.cc",
-@@ -3172,7 +3189,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3202,7 +3219,7 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -84,7 +84,7 @@
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3311,7 +3328,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3341,7 +3358,7 @@ target(_test_target_type, "net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

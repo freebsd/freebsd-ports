@@ -1,4 +1,4 @@
---- ui/accessibility/ax_tree.cc.orig	2025-05-06 12:23:00 UTC
+--- ui/accessibility/ax_tree.cc.orig	2025-05-31 17:16:41 UTC
 +++ ui/accessibility/ax_tree.cc
 @@ -824,7 +824,7 @@ bool AXTree::ComputeNodeIsIgnoredChanged(
    return old_node_is_ignored != new_node_is_ignored;
@@ -18,7 +18,7 @@
    ClearExtraAnnouncementNodes();
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -2104,7 +2104,7 @@ void AXTree::NotifyNodeAttributesWillChange(
+@@ -2109,7 +2109,7 @@ void AXTree::NotifyNodeAttributesWillChange(
                      new_data);
  }
  
@@ -27,7 +27,7 @@
  void AXTree::ClearExtraAnnouncementNodes() {
    if (!extra_announcement_nodes_) {
      return;
-@@ -2493,7 +2493,7 @@ bool AXTree::CreateNewChildVector(
+@@ -2498,7 +2498,7 @@ bool AXTree::CreateNewChildVector(
      AXTreeUpdateState* update_state) {
    DCHECK(GetTreeUpdateInProgressState());
    bool success = true;

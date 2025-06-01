@@ -1,15 +1,15 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2025-05-06 12:23:00 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2025-05-31 17:16:41 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -313,7 +313,7 @@
+@@ -320,7 +320,7 @@
  #include "chrome/browser/devtools/devtools_window.h"
- #endif  // !BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_DESKTOP_ANDROID)
+ #endif  // BUILDFLAG(ENABLE_DEVTOOLS_FRONTEND)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/ui/webui/whats_new/whats_new_ui.h"
  #endif
  
-@@ -484,11 +484,11 @@
+@@ -491,11 +491,11 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -23,7 +23,7 @@
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #endif
-@@ -516,7 +516,7 @@
+@@ -523,7 +523,7 @@
  #include "chrome/browser/sessions/session_service_log.h"
  #endif
  
@@ -32,7 +32,7 @@
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -1660,7 +1660,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1675,7 +1675,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
    on_device_translation::RegisterLocalStatePrefs(registry);
  #endif  // BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION)
  
@@ -41,7 +41,7 @@
    WhatsNewUI::RegisterLocalStatePrefs(registry);
  #endif
  
-@@ -1814,7 +1814,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1829,7 +1829,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
  #endif  // BUILDFLAG(ENABLE_PDF)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -50,7 +50,7 @@
    registry->RegisterBooleanPref(prefs::kChromeForTestingAllowed, true);
  #endif
  
-@@ -2168,12 +2168,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -2191,12 +2191,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

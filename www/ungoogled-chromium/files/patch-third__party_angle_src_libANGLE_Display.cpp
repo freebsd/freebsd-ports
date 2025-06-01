@@ -1,4 +1,4 @@
---- third_party/angle/src/libANGLE/Display.cpp.orig	2025-05-06 12:23:00 UTC
+--- third_party/angle/src/libANGLE/Display.cpp.orig	2025-05-31 17:16:41 UTC
 +++ third_party/angle/src/libANGLE/Display.cpp
 @@ -58,7 +58,7 @@
  #        include "libANGLE/renderer/gl/wgl/DisplayWGL.h"
@@ -36,7 +36,7 @@
  #        if defined(ANGLE_USE_GBM)
              if (platformType == EGL_PLATFORM_GBM_KHR && rx::IsVulkanGbmDisplayAvailable())
              {
-@@ -2133,7 +2133,7 @@ static ClientExtensions GenerateClientExtensions()
+@@ -2136,7 +2136,7 @@ static ClientExtensions GenerateClientExtensions()
      extensions.platformWaylandEXT = true;
  #endif
  
@@ -45,7 +45,7 @@
      extensions.platformSurfacelessMESA = true;
  #endif
  
-@@ -2180,7 +2180,7 @@ static ClientExtensions GenerateClientExtensions()
+@@ -2183,7 +2183,7 @@ static ClientExtensions GenerateClientExtensions()
      extensions.x11Visual = true;
  #endif
  

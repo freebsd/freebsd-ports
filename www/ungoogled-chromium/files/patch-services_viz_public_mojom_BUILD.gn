@@ -1,6 +1,6 @@
---- services/viz/public/mojom/BUILD.gn.orig	2025-04-15 08:30:07 UTC
+--- services/viz/public/mojom/BUILD.gn.orig	2025-05-31 17:16:41 UTC
 +++ services/viz/public/mojom/BUILD.gn
-@@ -56,7 +56,7 @@ mojom("mojom") {
+@@ -57,7 +57,7 @@ mojom("mojom") {
  
    # Used in thread.mojom
    enabled_features = []
