@@ -1,6 +1,7 @@
 PORTNAME=	onnxruntime
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.21.1
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 DIST_SUBDIR=	${PORTNAME}
 
@@ -27,6 +28,7 @@ GH_TUPLE=	emscripten-core:emsdk:0742117:emsdk/cmake/external/emsdk \
 		onnx:onnx:b8baa8446686496da4cc8fda09f2b6fe65c2a02c:onnx/cmake/external/onnx
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
+CMAKE_ON=	onnxruntime_BUILD_SHARED_LIB
 CMAKE_OFF=	FETCHCONTENT_FULLY_DISCONNECTED \
 		onnxruntime_BUILD_UNIT_TESTS
 CMAKE_ARGS=	-Donnx_SOURCE_DIR=${WRKSRC}/cmake/external/onnx
