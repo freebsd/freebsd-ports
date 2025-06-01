@@ -4446,3 +4446,4 @@ www/py-dj50-django-timezone-field|www/py-dj51-django-timezone-field|2025-06-01|H
 www/py-dj50-django-filter|www/py-dj51-django-filter|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
 devel/awless||2025-06-01|Has expired: Abandoned upstream
 devel/hgreviewboard||2025-06-01|Has expired: Upstream is gone
+www/py-dj50-django-mptt|www/py-dj51-django-mptt|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/

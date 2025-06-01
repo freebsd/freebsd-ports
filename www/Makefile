@@ -1518,7 +1518,6 @@
     SUBDIR += py-dj-database-url
     SUBDIR += py-dj50-django-htmx
     SUBDIR += py-dj50-django-js-asset
-    SUBDIR += py-dj50-django-mptt
     SUBDIR += py-dj50-django-redis
     SUBDIR += py-dj51-channels
     SUBDIR += py-dj51-channels-redis
