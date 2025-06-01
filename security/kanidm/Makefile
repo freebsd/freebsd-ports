@@ -1,6 +1,7 @@
 PORTNAME=	kanidm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	security net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -25,7 +26,7 @@ server_PLIST=	${.CURDIR}/pkg-plist.server
 
 USES=		cargo ssl
 USE_GITHUB=	yes
-.if ${FLAVOR} == client
+.if ${FLAVOR} == server
 USE_RC_SUBR=	kanidm_unixd kanidm_unixd_tasks
 .endif
 
