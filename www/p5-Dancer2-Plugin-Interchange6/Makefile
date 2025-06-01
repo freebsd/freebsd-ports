@@ -11,6 +11,9 @@ WWW=		https://metacpan.org/release/Dancer2-Plugin-Interchange6
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on expired security/p5-Data-Entropy via databases/p5-Interchange6-Schema
+EXPIRATION_DATE=2025-09-01
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Business-OnlinePayment>=3.04:finance/p5-Business-OnlinePayment \
 		p5-Dancer2-Plugin-Auth-Extensible-Provider-DBIC>=0.600:security/p5-Dancer2-Plugin-Auth-Extensible-Provider-DBIC \

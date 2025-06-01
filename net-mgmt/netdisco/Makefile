@@ -12,6 +12,9 @@ WWW=		http://netdisco.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+DEPRECATED=	Depends on expired security/p5-Data-Entropy via security/p5-Dancer-Plugin-Passphrase
+EXPIRATION_DATE=2025-09-01
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Net-SNMP>=6.0.1:net-mgmt/p5-Net-SNMP \

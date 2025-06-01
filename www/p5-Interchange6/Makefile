@@ -12,6 +12,9 @@ WWW=		https://metacpan.org/release/Interchange6
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on expired security/p5-Data-Entropy via databases/p5-Interchange6-Schema
+EXPIRATION_DATE=2025-09-01
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Interchange6-Schema>=0:databases/p5-Interchange6-Schema \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime \

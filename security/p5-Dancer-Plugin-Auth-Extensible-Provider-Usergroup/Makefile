@@ -12,6 +12,9 @@ WWW=		https://metacpan.org/pod/Dancer::Plugin::Auth::Extensible::Provider::Userg
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on expired security/p5-Data-Entropy via security/p5-Dancer-Plugin-Passphrase
+EXPIRATION_DATE=2025-09-01
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Dancer>=1.3118:www/p5-Dancer \
 		p5-Dancer-Plugin-Auth-Extensible>=0:security/p5-Dancer-Plugin-Auth-Extensible \

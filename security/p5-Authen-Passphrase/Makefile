@@ -12,6 +12,9 @@ WWW=		https://metacpan.org/release/Authen-Passphrase
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on expired security/p5-Data-Entropy
+EXPIRATION_DATE=2025-09-01
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Authen-DecHpwd>=0:security/p5-Authen-DecHpwd \
 		p5-Crypt-Blowfish>=0:security/p5-Crypt-Blowfish \

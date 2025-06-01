@@ -14,6 +14,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired security/p5-Data-Entropy
+EXPIRATION_DATE=2025-09-01
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Dancer>=0:www/p5-Dancer \
 		p5-Data-Entropy>=0.005:security/p5-Data-Entropy \
