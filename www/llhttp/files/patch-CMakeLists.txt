@@ -1,3 +1,5 @@
+Reference:	https://github.com/nodejs/llhttp/commit/1f23986da6337a55682dda268457f2dc27f5900f
+
 --- CMakeLists.txt.orig	2025-05-03 17:04:09 UTC
 +++ CMakeLists.txt
 @@ -92,9 +92,7 @@ if(BUILD_STATIC_LIBS)
