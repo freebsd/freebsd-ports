@@ -1,5 +1,5 @@
 PORTNAME=	py3status
-PORTVERSION=	3.61
+PORTVERSION=	3.62
 CATEGORIES=	deskutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://ultrabug.github.io/py3status/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.26.1:devel/py-hatchling@${PY_FLAVOR}
 
 USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
