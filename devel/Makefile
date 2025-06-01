@@ -474,7 +474,6 @@
     SUBDIR += cmake-modules-webos
     SUBDIR += cmakedoc
     SUBDIR += cmph
-    SUBDIR += cmunge
     SUBDIR += coccinelle
     SUBDIR += cocogitto
     SUBDIR += codeblocks
