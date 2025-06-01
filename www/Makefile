@@ -1519,7 +1519,6 @@
     SUBDIR += py-dj50-django-auth-ldap
     SUBDIR += py-dj50-django-choices-field
     SUBDIR += py-dj50-django-cors-headers
-    SUBDIR += py-dj50-django-debug-toolbar
     SUBDIR += py-dj50-django-filter
     SUBDIR += py-dj50-django-htmx
     SUBDIR += py-dj50-django-js-asset
