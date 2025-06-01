@@ -1,5 +1,5 @@
 PORTNAME=	faye-websocket
-PORTVERSION=	0.11.3
+PORTVERSION=	0.12.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/faye/faye-websocket-ruby
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-eventmachine>=0.12.0:devel/rubygem-eventmachine \
-		rubygem-websocket-driver>=0.5.1:www/rubygem-websocket-driver
+		rubygem-websocket-driver>=0.8.0:www/rubygem-websocket-driver
 
 USES=		gem
 
