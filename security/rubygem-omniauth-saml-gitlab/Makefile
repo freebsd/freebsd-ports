@@ -1,5 +1,5 @@
 PORTNAME=	omniauth-saml
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
