@@ -1520,7 +1520,6 @@
     SUBDIR += py-dj50-django-htmx
     SUBDIR += py-dj50-django-js-asset
     SUBDIR += py-dj50-django-mptt
-    SUBDIR += py-dj50-django-prometheus
     SUBDIR += py-dj50-django-redis
     SUBDIR += py-dj50-django-timezone-field
     SUBDIR += py-dj51-channels
