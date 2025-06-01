@@ -13,6 +13,9 @@ WWW=		https://www.elastic.co/products/kibana
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Depends on expired www/*node18
+EXPIRATION_DATE=2025-09-01
+
 BUILD_DEPENDS=	npm-node18>=9.7.2:www/npm-node18
 LIB_DEPENDS=	libre2.so:devel/re2 \
 		libuv.so:devel/libuv
