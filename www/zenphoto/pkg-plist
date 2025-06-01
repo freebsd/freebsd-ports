@@ -387,6 +387,7 @@
 %%WWWDIR%%/zp-core/css/admin-statistics.css
 %%WWWDIR%%/zp-core/css/admin.css
 %%WWWDIR%%/zp-core/css/admintoolbox.css
+%%WWWDIR%%/zp-core/definitions-debug.php
 %%WWWDIR%%/zp-core/deprecated/functions-db.php
 %%WWWDIR%%/zp-core/deprecated/functions-graphics.php
 %%WWWDIR%%/zp-core/deprecated/rsslib.php
