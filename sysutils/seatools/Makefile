@@ -4,7 +4,6 @@ CATEGORIES=		sysutils linux
 MASTER_SITES=		${DOWNLOAD_URL}
 PKGNAMEPREFIX=		linux-
 DISTNAME=		seatools_cli
-EXTRACT_SUFX=		.tar
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Seagate's SeaTools for Linux
@@ -19,7 +18,7 @@ LICENSE_PERMS=	auto-accept
 DOWNLOAD_URL=		http://www.seagate.com/files/www-content/support-content/downloads/seatools/_shared/downloads/seatools_cli.tar
 NO_WRKSUBDIR=		yes
 ONLY_FOR_ARCHS=		i386 amd64
-USES=			linux
+USES=			linux tar
 
 PLIST_FILES=		sbin/st
 PORTDOCS=		sthelp.txt
