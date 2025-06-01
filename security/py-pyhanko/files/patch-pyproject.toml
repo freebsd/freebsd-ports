@@ -1,20 +1,17 @@
---- pyproject.toml.orig	2025-05-24 12:37:13 UTC
+--- pyproject.toml.orig	2025-05-27 21:43:28 UTC
 +++ pyproject.toml
-@@ -1,17 +1,16 @@ requires = [
+@@ -1,14 +1,13 @@
  [build-system]
- requires = [
--    "setuptools>=67.4",
-+    "setuptools>=61",
-     "wheel"
- ]
+-requires = ["setuptools>=80.8.0"]
++requires = ["setuptools>=61"]
  build-backend = "setuptools.build_meta"
  
  [project]
 -name = "pyHanko"
 +name = "pyhanko"
  description = "Tools for stamping and signing PDF files"
- authors = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
- maintainers = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
+ authors = [{ name = "Matthias Valvekens", email = "dev@mvalvekens.be" }]
+ maintainers = [{ name = "Matthias Valvekens", email = "dev@mvalvekens.be" }]
 -license = "MIT"
 -license-files = ["LICENSE", "src/pyhanko/pdf_utils/LICENSE.PyPDF2"]
 +license = {text = "MIT"}
