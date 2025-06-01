@@ -1,2 +1,4 @@
-This package contains the xprop utility, which is for displaying window
-and font properties in an X server.
+The xprop utility is for displaying window and font properties in an X
+server. One window or font is selected using the command line arguments
+or possibly in the case of a window, by clicking on the desired window.
+A list of properties is then given, possibly with formatting information.
