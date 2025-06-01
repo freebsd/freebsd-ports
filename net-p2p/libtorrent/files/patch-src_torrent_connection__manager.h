@@ -1,7 +1,7 @@
---- src/torrent/connection_manager.h.orig	2012-04-20 06:42:32 UTC
+--- src/torrent/connection_manager.h.orig	2025-06-01 13:09:26 UTC
 +++ src/torrent/connection_manager.h
-@@ -42,6 +42,7 @@
- 
+@@ -4,6 +4,7 @@
+ #include <functional>
  #include <list>
  #include <arpa/inet.h>
 +#include <sys/types.h>
