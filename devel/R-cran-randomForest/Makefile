@@ -10,6 +10,8 @@ WWW=		https://cran.r-project.org/web/packages/randomForest/
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+BROKEN_i386=	fails to build
+
 RUN_DEPENDS=	R-cran-RColorBrewer>=1.1_3:graphics/R-cran-RColorBrewer
 
 USES=	cran:auto-plist,compiles
