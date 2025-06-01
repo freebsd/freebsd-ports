@@ -26,4 +26,18 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	CFTIME FITS GRIB2 HDF NETCDF3
+CFTIME_DESC=	Time handling support
+FITS_DESC=	FITS file format support
+GRIB2_DESC=	GRIB2 file format support
+HDF_DESC=	HDF file format support
+NETCDF3_DESC=	netCDF 4 file format support
+
+CFTIME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cftime>=0:devel/py-cftime@${PY_FLAVOR}
+FITS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xarray>=0:devel/py-xarray@${PY_FLAVOR}
+GRIB2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cfgrib>=0:science/py-cfgrib@${PY_FLAVOR}
+HDF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h5py>=0:science/py-h5py@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}xarray>=0:devel/py-xarray@${PY_FLAVOR}
+NETCDF3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0,1:science/py-scipy@${PY_FLAVOR}
+
 .include <bsd.port.mk>
