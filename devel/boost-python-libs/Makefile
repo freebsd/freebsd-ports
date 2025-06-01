@@ -11,9 +11,10 @@ PATCHDIR=	${.CURDIR}/../boost-libs/files
 
 BUILD_DEPENDS=	bjam:devel/boost-jam \
 		${PYNUMPY}
-LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libboost_container.so:devel/boost-libs
 
-USES=		python
+USES=		python:3.9-3.11  # upper bound inherited from math/py-numpy
 USE_PYTHON=	flavors
 
 #LDFLAGS+=	-Wl,--as-needed

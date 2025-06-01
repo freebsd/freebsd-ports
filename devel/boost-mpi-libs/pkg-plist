@@ -1,7 +1,5 @@
 %%PY_DEFAULT_ONLY%%lib/cmake/boost_mpi-%%BOOST_SHARED_LIB_VER%%/boost_mpi-config.cmake
 %%PY_DEFAULT_ONLY%%lib/cmake/boost_mpi-%%BOOST_SHARED_LIB_VER%%/boost_mpi-config-version.cmake
-lib/cmake/boost_mpi-%%BOOST_SHARED_LIB_VER%%/libboost_mpi-variant-shared-py%%PYTHON_VER%%.cmake
-lib/cmake/boost_mpi-%%BOOST_SHARED_LIB_VER%%/libboost_mpi-variant-static-py%%PYTHON_VER%%.cmake
 %%PY_DEFAULT_ONLY%%lib/cmake/boost_mpi_python-%%BOOST_SHARED_LIB_VER%%/boost_mpi_python-config.cmake
 %%PY_DEFAULT_ONLY%%lib/cmake/boost_mpi_python-%%BOOST_SHARED_LIB_VER%%/boost_mpi_python-config-version.cmake
 lib/cmake/boost_mpi_python-%%BOOST_SHARED_LIB_VER%%/libboost_mpi_python-variant-shared-py%%PYTHON_VER%%.cmake

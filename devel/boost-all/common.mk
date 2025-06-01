@@ -9,13 +9,14 @@ CATEGORIES=	devel
 MAINTAINER=	office@FreeBSD.org
 
 MASTER_SITES=	https://archives.boost.io/release/${PORTVERSION}/source/ \
+		https://archives.boost.io/beta/${PORTVERSION:S/.b/.beta/g}/source/ \
 		SF/boost/boost/${PORTVERSION} \
 		SF/boost/boost/${PORTVERSION:S/.b/.beta/g}
 
 USES+=		tar:bzip2
 
 BOOST_MAJOR_VER=1
-BOOST_MINOR_VER=87
+BOOST_MINOR_VER=88
 BOOST_PATCH_VER=0
 BOOST_RC_VER=
 BOOST_SHARED_LIB_VER=${BOOST_MAJOR_VER}.${BOOST_MINOR_VER}.${BOOST_PATCH_VER}
