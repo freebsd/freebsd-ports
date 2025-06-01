@@ -4467,6 +4467,7 @@
     SUBDIR += py-automaton
     SUBDIR += py-autopage
     SUBDIR += py-autoprop
+    SUBDIR += py-avocado-framework
     SUBDIR += py-avro
     SUBDIR += py-awesomeversion
     SUBDIR += py-aws-lambda-builders
