@@ -1,6 +1,5 @@
 PORTNAME=	joblib
-PORTVERSION=	1.3.2
-PORTREVISION=	2
+PORTVERSION=	1.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ TEST_DEPENDS=	${PYNUMPY}
 #TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}threadpoolctl>0:devel/py-threadpoolctl@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
