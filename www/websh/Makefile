@@ -1,9 +1,9 @@
 PORTNAME=	websh
-PORTVERSION=	3.6.0b5
+DISTVERSION=	3.6.0b5
 PORTREVISION=	9
 CATEGORIES=	www tcl
 MASTER_SITES=	https://archive.apache.org/dist/tcl/${PORTNAME}/source/
-EXTRACT_SUFX=	-src.tar.gz
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Embeds a TCL8 interpreter in the Apache server
@@ -25,10 +25,10 @@ CPPFLAGS+=	-Wall -Werror
 .endif
 
 SUB_FILES=	httpd.conf pkgIndex.tcl pkg-message
-SUB_LIST+=	LIBSUF=${LIBSUF} WS_VER=${PORTVERSION}
+SUB_LIST+=	LIBSUF=${LIBSUF} WS_VER=${DISTVERSION}
 SUB_LIST+=	APACHEETCDIR=${APACHEETCDIR} APACHEMODDIR=${APACHEMODDIR}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/unix
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src/unix
 
 PLIST_SUB+=	LIBSUF=${LIBSUF}
 PLIST_SUB+=	NOMINORVERSION=${TCL_VER:C/8.[345]//:C/^..*/"@comment "/}
@@ -37,7 +37,7 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-LIBSUF=		${PORTVERSION:S/.//g}
+LIBSUF=		${DISTVERSION:S/.//g}
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local/websh,${PREFIX},' \
@@ -69,7 +69,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC:H:H}/doc/mod_websh/conf/websh.conf	\
 		${STAGEDIR}${PREFIX}/etc/websh.conf.dist
 	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
-	${INSTALL_LIB} ${WRKSRC}/mod_websh${PORTVERSION}.so \
+	${INSTALL_LIB} ${WRKSRC}/mod_websh${DISTVERSION}.so \
 		${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_websh.so
 	if [ -f ${WRKSRC}/libwebsh${LIBSUF}.so.1.0 ]; then	\
 		${INSTALL_LIB} ${WRKSRC}/libwebsh${LIBSUF}.so.1.0 \
