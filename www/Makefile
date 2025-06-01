@@ -1516,7 +1516,6 @@
     SUBDIR += py-daphne
     SUBDIR += py-dash
     SUBDIR += py-dj-database-url
-    SUBDIR += py-dj50-django-htmx
     SUBDIR += py-dj51-channels
     SUBDIR += py-dj51-channels-redis
     SUBDIR += py-dj51-django-allauth

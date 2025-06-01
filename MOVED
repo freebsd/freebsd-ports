@@ -4451,3 +4451,4 @@ www/py-dj50-django-js-asset|www/py-dj51-django-js-asset|2025-06-01|Has expired: 
 www/py-dj50-django-redis|www/py-dj51-django-redis|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
 devel/eventxx||2025-06-01|Has expired: Upstream is gone, unmaintained for 10+ years in tree
 devel/cmunge||2025-06-01|Has expired: Upstream is gone
+www/py-dj50-django-htmx|www/py-dj51-django-htmx|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
