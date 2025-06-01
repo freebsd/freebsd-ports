@@ -1084,7 +1084,7 @@ lib/cmake/dlib/dlib.cmake
 lib/cmake/dlib/dlibConfig.cmake
 lib/cmake/dlib/dlibConfigVersion.cmake
 lib/libdlib.so
-lib/libdlib.so.19.24.9
+lib/libdlib.so.20.0.0
 libdata/pkgconfig/dlib-1.pc
 @dir include/dlib/all
 @dir include/dlib/cmake_utils/test_for_avx
