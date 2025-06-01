@@ -1523,7 +1523,6 @@
     SUBDIR += py-dj50-django-prometheus
     SUBDIR += py-dj50-django-redis
     SUBDIR += py-dj50-django-timezone-field
-    SUBDIR += py-dj50-django-tree-queries
     SUBDIR += py-dj51-channels
     SUBDIR += py-dj51-channels-redis
     SUBDIR += py-dj51-django-allauth
