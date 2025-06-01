@@ -1,5 +1,5 @@
 PORTNAME=	asdf-standard
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	asdf_standard-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ASDF Standard schemas
-WWW=		https://github.com/asdf-format/asdf-standard
+WWW=		https://www.asdf-format.org/projects/asdf-standard/en/latest/ \
+		https://github.com/asdf-format/asdf-standard
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
