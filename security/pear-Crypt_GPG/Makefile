@@ -1,5 +1,5 @@
 PORTNAME=	Crypt_GPG
-PORTVERSION=	1.6.10
+PORTVERSION=	1.6.11
 CATEGORIES=	security www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
