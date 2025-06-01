@@ -1,5 +1,5 @@
 PORTNAME=	activerecord-trilogy-adapter
-PORTVERSION=	3.1.2
+PORTVERSION=	3.2.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
