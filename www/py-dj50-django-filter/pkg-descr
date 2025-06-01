@@ -1,2 +1,0 @@
-Django-filter is a reusable Django application allowing users to declaratively
-add dynamic QuerySet filtering from URL parameters.
