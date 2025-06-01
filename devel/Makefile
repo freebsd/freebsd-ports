@@ -696,7 +696,6 @@
     SUBDIR += evcxr-jupyter
     SUBDIR += evdev-proto
     SUBDIR += evemu
-    SUBDIR += eventxx
     SUBDIR += exercisix
     SUBDIR += exomizer
     SUBDIR += expected
