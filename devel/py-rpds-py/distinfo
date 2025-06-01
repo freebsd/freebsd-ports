@@ -1,6 +1,6 @@
-TIMESTAMP = 1747715422
-SHA256 (rpds_py-0.25.0.tar.gz) = 4d97661bf5848dd9e5eb7ded480deccf9d32ce2cd500b88a26acbf7bd2864985
-SIZE (rpds_py-0.25.0.tar.gz) = 26822
+TIMESTAMP = 1748495803
+SHA256 (rpds_py-0.25.1.tar.gz) = 8960b6dac09b62dac26e75d7e2c4a22efb835d827a7278c34f72b2b84fa160e3
+SIZE (rpds_py-0.25.1.tar.gz) = 27304
 SHA256 (rust/crates/archery-1.2.1.crate) = eae2ed21cd55021f05707a807a5fc85695dafb98832921f6cfa06db67ca5b869
 SIZE (rust/crates/archery-1.2.1.crate) = 21224
 SHA256 (rust/crates/autocfg-1.4.0.crate) = ace50bade8e6234aa140d9a2f552bbee1db4d353f69b8217bc503490fc1a9f26
