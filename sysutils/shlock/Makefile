@@ -1,5 +1,5 @@
 PORTNAME=	shlock
-PORTVERSION=	2.7.2
+PORTVERSION=	2.7.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ISC/inn
 DISTNAME=	inn-${PORTVERSION}
@@ -16,7 +16,7 @@ CONFIGURE_ENV=	ac_cv_path_PERL="${TRUE}"
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/shlock \
-		share/man/man1/shlock.1.gz
+		share/man/man8/shlock.8.gz
 
 do-build:
 	${DO_MAKE_BUILD} -C ${WRKSRC}/include all
@@ -25,6 +25,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/backends/shlock ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/man/shlock.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/shlock.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
