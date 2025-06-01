@@ -1,17 +1,20 @@
 PORTNAME=	montecarlo_fonts
-PORTVERSION=	1.0
-PORTREVISION=	3
+DISTVERSION=	1.0
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://bok.net/MonteCarlo/downloads/ \
 		http://mirror.4bit.ws/
 DISTNAME=	MonteCarlo-PCF
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monospace font
 WWW=		https://bok.net/MonteCarlo/
 
-USES=		fonts xorg
+# No specific license mentioned in distfiles or website but the font is
+# freely available.
+LICENSE=	NONE
+
+USES=		fonts tar:tgz xorg
 USE_XORG=	x11
 NO_BUILD=	yes
 
