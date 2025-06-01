@@ -1516,7 +1516,6 @@
     SUBDIR += py-daphne
     SUBDIR += py-dash
     SUBDIR += py-dj-database-url
-    SUBDIR += py-dj50-django-cors-headers
     SUBDIR += py-dj50-django-filter
     SUBDIR += py-dj50-django-htmx
     SUBDIR += py-dj50-django-js-asset
