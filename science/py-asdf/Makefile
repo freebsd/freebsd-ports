@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python tools to handle ASDF files
-WWW=		https://asdf.readthedocs.io/en/latest/ \
+WWW=		https://www.asdf-format.org/projects/asdf/en/latest/ \
 		https://github.com/asdf-format/asdf
 
 LICENSE=	BSD3CLAUSE
