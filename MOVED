@@ -4433,3 +4433,4 @@ www/py-dj50-djangorestframework|www/py-dj51-djangorestframework|2025-06-01|Has e
 devel/aphpbreakdown||2025-06-01|Has expired: Upstream is gone and last release in 2018
 www/py-dj50-drf-spectacular-sidecar|www/py-dj51-drf-spectacular-sidecar|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj50-django-debug-toolbar|www/py-dj51-django-debug-toolbar|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
+devel/py-dj50-django-rq|devel/py-dj51-django-rq|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
