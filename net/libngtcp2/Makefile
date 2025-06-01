@@ -1,5 +1,5 @@
 PORTNAME=	ngtcp2
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/ngtcp2/ngtcp2/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	lib
@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-SLAVEDIRS=	net/libngtcp2-gnutls
+SLAVEDIRS=	net/libngtcp2-gnutls net/libngtcp2-wolfssl
 
 post-install:
 	cd ${WRKSRC}/crypto/includes/ngtcp2/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/ngtcp2
