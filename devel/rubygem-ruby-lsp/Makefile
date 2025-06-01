@@ -1,5 +1,5 @@
 PORTNAME=	ruby-lsp
-PORTVERSION=	0.23.20
+PORTVERSION=	0.23.23
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-language_server-protocol>=3.17.0<3.18:devel/rubygem-language_server-protocol \
 		rubygem-prism>=1.2<2.0:textproc/rubygem-prism \
-		rubygem-rbs>=3<4:devel/rubygem-rbs \
+		rubygem-rbs>=3<5:devel/rubygem-rbs \
 		rubygem-sorbet-runtime>=0.5.10782:devel/rubygem-sorbet-runtime
 
 USES=		gem
@@ -22,6 +22,7 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/ruby-lsp \
 		bin/ruby-lsp-check \
-		bin/ruby-lsp-launcher
+		bin/ruby-lsp-launcher \
+		bin/ruby-lsp-test-exec
 
 .include <bsd.port.mk>
