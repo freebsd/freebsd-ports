@@ -1,6 +1,5 @@
 PORTNAME=	bitop
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://bitop.luajit.org/download/ \
 		LOCAL/sunpoet
