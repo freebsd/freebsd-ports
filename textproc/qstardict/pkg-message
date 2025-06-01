@@ -4,7 +4,7 @@
 QStarDict can support for StarDict dictionaries.
 You can install some dictionaries for StarDict(QStarDict):
 
- russian/stardict-dictionaries	English-Russian dictionaries
+ russian/stardict-*		English-Russian dictionaries (if available)
  textproc/stardict-dict-fa_IR	English-Persian dictionary
 EOM
 }
