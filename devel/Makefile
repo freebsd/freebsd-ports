@@ -79,6 +79,7 @@
     SUBDIR += R-cran-hms
     SUBDIR += R-cran-ids
     SUBDIR += R-cran-ini
+    SUBDIR += R-cran-interp
     SUBDIR += R-cran-iterators
     SUBDIR += R-cran-itertools
     SUBDIR += R-cran-kit

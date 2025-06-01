@@ -1,0 +1,7 @@
+Bivariate data interpolation on regular and irregular grids using linear or
+spline methods.
+
+Provides FOSS replacements for ACM-licensed akima and tripack functions with
+backward compatibility. Includes linear interpolation, Akima's irregular grid
+spline interpolation, partial derivative estimators, and triangulation
+algorithms.
