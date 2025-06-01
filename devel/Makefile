@@ -4815,7 +4815,6 @@
     SUBDIR += py-distlib
     SUBDIR += py-distributed
     SUBDIR += py-dj50-django-rq
-    SUBDIR += py-dj50-strawberry-graphql
     SUBDIR += py-dj51-django-rq
     SUBDIR += py-dj51-strawberry-graphql
     SUBDIR += py-django-rq

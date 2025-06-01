@@ -4425,3 +4425,4 @@ net/openbgpd6|net/openbgpd8|2025-05-31|Has expired: Unsupported upstream, consid
 lang/kross-interpreters||2025-05-31|Has expired: Development discontinued, not shipped with the next KDE Gear release
 www/py-dj50-django-taggit|www/py-dj51-django-taggit|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj50-strawberry-graphql-django|www/py-dj51-strawberry-graphql-django|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
+devel/py-dj50-strawberry-graphql|devel/py-dj51-strawberry-graphql|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
