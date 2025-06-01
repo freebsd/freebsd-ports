@@ -1264,7 +1264,6 @@
     SUBDIR += schilyutils
     SUBDIR += screen
     SUBDIR += screen-devel
-    SUBDIR += screen49
     SUBDIR += screen50
     SUBDIR += screenfetch
     SUBDIR += screenie
