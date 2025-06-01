@@ -13,6 +13,9 @@ WWW=		https://www.quba-viewer.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired devel/electron32
+EXPIRATION_DATE=2025-09-01
+
 ONLY_FOR_ARCHS=	amd64 # Will need to be tested on aarch64
 
 .if defined(MAINTAINER_MODE)
