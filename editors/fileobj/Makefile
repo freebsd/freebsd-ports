@@ -1,7 +1,6 @@
 PORTNAME=	fileobj
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.6
-PORTREVISION=	2
+DISTVERSION=	0.8.7
 CATEGORIES=	editors
 
 MAINTAINER=	tkusumi@netbsd.org
@@ -19,6 +18,7 @@ USE_PYTHON=	autoplist concurrent distutils optsuffix
 PLIST_FILES=	share/man/man1/fileobj.1.gz
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/fileobj/_native.cpython-${PYTHON_SUFFIX}.so
 	${INSTALL_MAN} ${WRKSRC}/doc/fileobj.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
 
