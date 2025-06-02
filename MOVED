@@ -4457,3 +4457,4 @@ devel/linux-c7-libgfortran|devel/linux-c7-devtools|2025-06-02|Merged into devel/
 devel/linux-rl9-libgfortran|devel/linux-rl9-devtools|2025-06-02|Merged into devel/linux-rl9-devtools
 textproc/py-textract||2025-06-02|Has expired: Depends on expiring textproc/py-extract-msg
 databases/py-fastapi-users-db-ormar||2025-06-02|Has expired: Depends on expiring www/py-fastapi-users
+www/py-fastapi-users||2025-06-02|Has expired: Depends on expired devel/py-makefun
