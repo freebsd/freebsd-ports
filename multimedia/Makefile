@@ -60,7 +60,6 @@
     SUBDIR += ffmpegthumbnailer
     SUBDIR += ffms2
     SUBDIR += ffnvcodec-headers
-    SUBDIR += ffsubsync
     SUBDIR += filebot
     SUBDIR += flvmeta
     SUBDIR += fswebcam
