@@ -1,5 +1,5 @@
 PORTNAME=	radarr
-DISTVERSION=	5.22.4.9896
+DISTVERSION=	5.25.0.10024
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Radarr/Radarr/releases/download/v${DISTVERSION}/
 DISTNAME=	Radarr.master.${DISTVERSION}.freebsd-core-x64
