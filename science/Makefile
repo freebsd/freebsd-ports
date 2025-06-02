@@ -269,7 +269,6 @@
     SUBDIR += paje
     SUBDIR += paraview
     SUBDIR += parthenon
-    SUBDIR += pastix
     SUBDIR += pcmsolver
     SUBDIR += phonopy
     SUBDIR += plumed
