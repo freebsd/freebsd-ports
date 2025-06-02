@@ -1103,7 +1103,6 @@
     SUBDIR += qt-sudo
     SUBDIR += qtkeychain
     SUBDIR += quantis-kmod
-    SUBDIR += racoon2
     SUBDIR += rage-encryption
     SUBDIR += ratify
     SUBDIR += ratproxy
