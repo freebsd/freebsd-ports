@@ -4472,3 +4472,4 @@ textproc/py-RTFDE||2025-06-02|Has expired: Depends on expired devel/py-oletools
 sysutils/py-upt-cpan||2025-06-02|Has expired: Depends on expired sysutils/py-upt
 sysutils/py-upt-freebsd||2025-06-02|Has expired: Depends on expired sysutils/py-upt
 sysutils/py-upt-rubygems||2025-06-02|Has expired: Depends on expired sysutils/py-upt
+sysutils/py-upt-pypi||2025-06-02|Has expired: Depends on expired sysutils/py-upt
