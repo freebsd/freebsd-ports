@@ -1,6 +1,6 @@
 PORTNAME=	znc
 DISTVERSION=	1.9.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	irc
 MASTER_SITES=	https://znc.in/releases/ \
 		https://znc.in/releases/archive/

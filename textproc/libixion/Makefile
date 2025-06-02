@@ -1,6 +1,6 @@
 PORTNAME=	libixion
 DISTVERSION=	0.19.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	https://kohei.us/files/ixion/src/
 

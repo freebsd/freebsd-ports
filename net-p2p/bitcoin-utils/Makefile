@@ -1,3 +1,4 @@
+PORTREVISION=	1
 PKGNAMESUFFIX=	-utils
 
 COMMENT=	Virtual Peer-to-Peer Currency (CLI and Utilities)

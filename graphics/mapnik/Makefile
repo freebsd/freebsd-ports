@@ -1,7 +1,7 @@
 PORTNAME=	mapnik
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 
 PATCH_SITES=	https://github.com/mapnik/mapnik/commit/

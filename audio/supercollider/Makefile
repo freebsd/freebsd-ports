@@ -1,5 +1,6 @@
 PORTNAME=	supercollider
 DISTVERSION=	3.13.1-g20250219
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ports@nicandneal.net
