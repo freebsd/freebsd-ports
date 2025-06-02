@@ -1,3 +1,73 @@
+  <vuln vid="dc99c67a-3fc9-11f0-a39d-b42e991fc52e">
+    <topic>Gimp -- GIMP FLI File Parsing Out-Of-Bounds Write Remote Code Execution Vulnerability</topic>
+    <affects>
+      <package>
+	<name>gimp</name>
+	<range><lt>3.0.0,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>zdi-disclosures@trendmicro.com reports:</p>
+	<blockquote cite="https://www.zerodayinitiative.com/advisories/ZDI-25-204/">
+	  <p>GIMP FLI File Parsing Out-Of-Bounds Write Remote Code Execution
+	Vulnerability.  This vulnerability allows remote attackers to execute
+	arbitrary code on affected installations of GIMP.  User interaction
+	is required to exploit this vulnerability in that the target must
+	visit a malicious page or open a malicious file.
+	The specific flaw exists within the parsing of FLI files.  The issue
+	results from the lack of proper validation of user-supplied data,
+	which can result in a write past the end of an allocated buffer.
+	An attacker can leverage this vulnerability to execute code in the
+	context of the current process.  Was ZDI-CAN-25100.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-2761</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-2761</url>
+    </references>
+    <dates>
+      <discovery>2025-04-23</discovery>
+      <entry>2025-06-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="da0a4374-3fc9-11f0-a39d-b42e991fc52e">
+    <topic>Gimp -- GIMP XWD File Parsing Integer Overflow Remote Code Execution Vulnerability</topic>
+    <affects>
+      <package>
+	<name>gimp</name>
+	<range><lt>3.0.0,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>zdi-disclosures@trendmicro.com reports:</p>
+	<blockquote cite="https://www.zerodayinitiative.com/advisories/ZDI-25-203/">
+	  <p>GIMP XWD File Parsing Integer Overflow Remote Code Execution
+	Vulnerability.  This vulnerability allows remote attackers to execute
+	arbitrary code on affected installations of GIMP.  User interaction
+	is required to exploit this vulnerability in that the target must
+	visit a malicious page or open a malicious file.
+	The specific flaw exists within the parsing of XWD files.  The issue
+	results from the lack of proper validation of user-supplied data,
+	which can result in an integer overflow before allocating a buffer.
+	An attacker can leverage this vulnerability to execute code in the
+	context of the current process.  Was ZDI-CAN-25082.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-2760</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-2760</url>
+    </references>
+    <dates>
+      <discovery>2025-04-23</discovery>
+      <entry>2025-06-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="533b4470-3f25-11f0-b440-f02f7432cf97">
     <topic>curl -- Multiple vulnerabilities</topic>
     <affects>
