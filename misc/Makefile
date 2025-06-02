@@ -283,7 +283,6 @@
     SUBDIR += mnn
     SUBDIR += molequeue
     SUBDIR += mtx
-    SUBDIR += mxnet
     SUBDIR += najitool
     SUBDIR += navi
     SUBDIR += ncnn
