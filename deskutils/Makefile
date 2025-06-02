@@ -65,7 +65,6 @@
     SUBDIR += fyi
     SUBDIR += ganttproject
     SUBDIR += gcal
-    SUBDIR += gcalcli
     SUBDIR += genius
     SUBDIR += glabels
     SUBDIR += gnome-calendar

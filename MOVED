@@ -4465,3 +4465,4 @@ science/pastix||2025-06-02|Has expired: Depends on expired lang/julia
 science/dvc||2025-06-02|Has expired: Depends on expired math/py-grandalf
 textproc/py-extract-msg||2025-06-02|Has expired: Depends on expiring textproc/py-RTFDE
 devel/py-pcodedmp||2025-06-02|Has expired: Depends on expired devel/py-oletools
+deskutils/gcalcli||2025-06-02|Has expired: Depends on expired security/py-oauth2client
