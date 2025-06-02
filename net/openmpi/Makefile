@@ -1,8 +1,7 @@
 PORTNAME=	openmpi
-DISTVERSION=	5.0.7
-PORTREVISION=	1
+DISTVERSION=	5.0.8
 CATEGORIES=	net parallel
-MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${PORTVERSION:R}/
+MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${DISTVERSION:R}/
 
 MAINTAINER=	laurent.chardon@gmail.com
 COMMENT=	High Performance Message Passing Library
@@ -30,8 +29,8 @@ MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${PKGBASE}
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_PREFIX=	${PREFIX}/${MPIDIR}
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/${MPIDIR}/share
+GNU_CONFIGURE_PREFIX=	${PREFIX}/${MPIDIR}
 CONFIGURE_ARGS+=	--program-prefix= \
 			--with-hwloc=external \
 			--without-ofi \
@@ -87,8 +86,12 @@ SLURM_CONFIGURE_WITH=	slurm
 
 .include <bsd.port.pre.mk>
 
-.if ${FORTRAN_DEFAULT} == gfortran && ${GCC_DEFAULT} >= 10
+.if ${FORTRAN_DEFAULT} == gfortran
 FCFLAGS+=	-fallow-argument-mismatch
+# gfortran doesn't find libgfortran.spec on riscv64
+.if ${ARCH} == "riscv64"
+FCFLAGS+=	-B${LOCALBASE}/lib/gcc${GCC_DEFAULT}
+.endif
 .endif
 
 # Both clang and gcc support half precision on these platforms
