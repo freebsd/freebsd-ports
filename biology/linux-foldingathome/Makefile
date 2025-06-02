@@ -4,7 +4,6 @@ CATEGORIES=	biology linux
 MASTER_SITES=	https://download.foldingathome.org/releases/public/fah-client/debian-10-64bit/release/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	fah-client_${DISTVERSION}-64bit-release
-EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Folding@home Client
@@ -20,7 +19,7 @@ LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell \
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
 
-USES=		linux:rl9
+USES=		linux:rl9 tar:bz2
 USE_LINUX=	systemd-libs
 USE_RC_SUBR=	fahclient
 
