@@ -4460,3 +4460,4 @@ databases/py-fastapi-users-db-ormar||2025-06-02|Has expired: Depends on expiring
 www/py-fastapi-users||2025-06-02|Has expired: Depends on expired devel/py-makefun
 multimedia/ffsubsync||2025-06-02|Has expired: Depends on expired multimedia/py-ffmpeg-python
 biology/checkm||2025-06-02|Has expired: Depends on expired science/py-DendroPy
+net/pichi||2025-06-02|Has expired: Depends on expired security/mbedtls2
