@@ -1,8 +1,8 @@
 PORTNAME=	libnspsl
-PORTVERSION=	0.1.7
+DISTVERSION=	0.1.7
 CATEGORIES=	dns
 MASTER_SITES=	https://download.netsurf-browser.org/libs/releases/
-EXTRACT_SUFX=	-src.tar.gz
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	NetSurf public suffix list handling
@@ -17,6 +17,8 @@ USES=		gmake
 USE_LDCONFIG=	yes
 MAKE_ENV+=	BUILD_CC="${CC}" COMPONENT_TYPE="lib-shared"
 PLIST_SUB+=	VERSION=${PORTVERSION}
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnspsl.so*
