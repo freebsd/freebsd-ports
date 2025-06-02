@@ -9,9 +9,6 @@ WWW=		https://github.com/theforeman/smart_proxy_salt
 
 LICENSE=	GPLv3
 
-DEPRECATED=	Depends on expired net/py-libcloud
-EXPIRATION_DATE=2025-06-01
-
 RUN_DEPENDS=	foreman-proxy>=1.8.0:net/foreman-proxy \
 		${PYTHON_PKGNAMEPREFIX}salt>0:sysutils/py-salt@${PY_FLAVOR} \
 		rubygem-smart_proxy_dynflow>=0.5.0<1:sysutils/rubygem-smart_proxy_dynflow
