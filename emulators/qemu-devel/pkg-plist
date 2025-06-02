@@ -39,10 +39,10 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-xtensa
 %%NO_X86_TARGETS%%bin/qemu-system-xtensaeb
 %%BSDUSER%%bin/qemu-x86_64
-include/qemu-plugin.h
 include/fdt.h
 include/libfdt.h
 include/libfdt_env.h
+include/qemu-plugin.h
 lib/libfdt.a
 libdata/pkgconfig/libfdt.pc
 share/man/man1/qemu.1.gz
@@ -61,7 +61,10 @@ share/man/man7/qemu-storage-daemon-qmp-ref.7.gz
 %%DATADIR%%/bios-256k.bin
 %%DATADIR%%/bios-microvm.bin
 %%DATADIR%%/bios.bin
-%%DATADIR%%/canyonlands.dtb
+%%DATADIR%%/dtb/bamboo.dtb
+%%DATADIR%%/dtb/canyonlands.dtb
+%%DATADIR%%/dtb/petalogix-ml605.dtb
+%%DATADIR%%/dtb/petalogix-s3adsp1800.dtb
 %%DATADIR%%/edk2-aarch64-code.fd
 %%DATADIR%%/edk2-arm-code.fd
 %%DATADIR%%/edk2-arm-vars.fd
@@ -83,14 +86,14 @@ share/man/man7/qemu-storage-daemon-qmp-ref.7.gz
 %%DATADIR%%/efi-rtl8139.rom
 %%DATADIR%%/efi-virtio.rom
 %%DATADIR%%/efi-vmxnet3.rom
-%%DATADIR%%/firmware/50-edk2-i386-secure.json
-%%DATADIR%%/firmware/50-edk2-x86_64-secure.json
 %%DATADIR%%/firmware/60-edk2-aarch64.json
 %%DATADIR%%/firmware/60-edk2-arm.json
 %%DATADIR%%/firmware/60-edk2-i386.json
+%%DATADIR%%/firmware/50-edk2-i386-secure.json
 %%DATADIR%%/firmware/60-edk2-loongarch64.json
 %%DATADIR%%/firmware/60-edk2-riscv64.json
 %%DATADIR%%/firmware/60-edk2-x86_64.json
+%%DATADIR%%/firmware/50-edk2-x86_64-secure.json
 %%DATADIR%%/hppa-firmware.img
 %%DATADIR%%/hppa-firmware64.img
 %%DATADIR%%/keymaps/ar
@@ -139,7 +142,6 @@ share/man/man7/qemu-storage-daemon-qmp-ref.7.gz
 %%DATADIR%%/opensbi-riscv32-generic-fw_dynamic.bin
 %%DATADIR%%/opensbi-riscv64-generic-fw_dynamic.bin
 %%DATADIR%%/palcode-clipper
-%%DATADIR%%/petalogix-ml605.dtb
 %%DATADIR%%/pnv-pnor.bin
 %%DATADIR%%/pxe-e1000.rom
 %%DATADIR%%/pxe-eepro100.rom
@@ -162,8 +164,6 @@ share/man/man7/qemu-storage-daemon-qmp-ref.7.gz
 %%DATADIR%%/vgabios-vmware.bin
 %%DATADIR%%/skiboot.lid
 %%DATADIR%%/trace-events-all
-%%DATADIR%%/petalogix-s3adsp1800.dtb
-%%DATADIR%%/bamboo.dtb
 %%DATADIR%%/kvmvapic.bin
 %%DATADIR%%/u-boot.e500
 %%DATADIR%%/pvh.bin
