@@ -4466,7 +4466,6 @@ textproc/py-extract-msg||2025-06-02|Has expired: Depends on expiring textproc/py
 devel/py-pcodedmp||2025-06-02|Has expired: Depends on expired devel/py-oletools
 deskutils/gcalcli||2025-06-02|Has expired: Depends on expired security/py-oauth2client
 audio/lmms||2025-06-02|Has expired: Depends on expiring audio/carla
-audio/carla||2025-06-02|Has expired: Depends on expired audio/py-pyliblo
 textproc/py-RTFDE||2025-06-02|Has expired: Depends on expired devel/py-oletools
 sysutils/py-upt-cpan||2025-06-02|Has expired: Depends on expired sysutils/py-upt
 sysutils/py-upt-freebsd||2025-06-02|Has expired: Depends on expired sysutils/py-upt

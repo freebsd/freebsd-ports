@@ -73,6 +73,7 @@
     SUBDIR += caps-lv2
     SUBDIR += caps-plugins
     SUBDIR += cardinal
+    SUBDIR += carla
     SUBDIR += cava
     SUBDIR += cd-discid
     SUBDIR += cddb-bundle
