@@ -1,8 +1,3 @@
-usr/lib/.build-id/1b/4ab4b11b7ce0a9b9c74ca861f9ef137af23331
-usr/lib/.build-id/6c/9f0ecbd8d52c1f0bb7cd61332fc8f087cc4127
-usr/lib/.build-id/8a/a4724f18d1230c4f84f021fc4ed0559627f5a5
-usr/lib/.build-id/25/0c4dfdaea3b28d795a81026ed5e45b50b0a4e4
-usr/lib/.build-id/f9/371abf62b4d64bd7220d93aea30eaf7281ce32
 usr/lib64/libnss_myhostname.so.2
 usr/lib64/libnss_resolve.so.2
 usr/lib64/libnss_systemd.so.2

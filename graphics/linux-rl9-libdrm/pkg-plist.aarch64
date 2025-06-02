@@ -1,11 +1,3 @@
-usr/lib/.build-id/32/cf30f4ba15e7ce10d89ce10db65d511e0a1b88
-usr/lib/.build-id/46/a94adc63913fd4a36332cc9bb7acb71f90c50a
-usr/lib/.build-id/63/680da435067952fe15d35a38898ea80275e036
-usr/lib/.build-id/db/d83f5a9b8cb76821d09562db4849a9320edbdc
-usr/lib/.build-id/e2/08302ed762a6a7b78f6aa70b338a4ca76ed6be
-usr/lib/.build-id/e2/a3df22b3c23f028e18104eda7e7331fa0c59f7
-usr/lib/.build-id/f1/bb6cb9d5666108bf50c9fe270c5d5042e3e901
-usr/lib/.build-id/f4/4c37c540020ebfe5575b840091719e7af6d4a6
 usr/lib/udev/rules.d/91-drm-modeset.rules
 usr/lib64/libdrm.so.2
 usr/lib64/libdrm.so.2.4.0

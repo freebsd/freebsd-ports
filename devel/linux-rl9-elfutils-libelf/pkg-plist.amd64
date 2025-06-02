@@ -1,5 +1,3 @@
-usr/lib/.build-id/c5/b2a76d1eb499cc52dfa7a9b7aaf2d93d185f66
-usr/lib/.build-id/d1/b76c7dd2742313694756c048b8b974ef34d39c
 usr/lib/libelf-%%LIBVERSION%%.so
 usr/lib/libelf.so.1
 usr/lib64/libelf-%%LIBVERSION%%.so

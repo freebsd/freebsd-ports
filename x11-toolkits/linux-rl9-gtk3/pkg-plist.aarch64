@@ -1,13 +1,5 @@
 usr/bin/gtk-launch
 usr/bin/gtk-query-immodules-3.0-64
-usr/lib/.build-id/0f/b9e0cac6db197f7d3610e937a52cb7350c6d1e
-usr/lib/.build-id/35/09faba285fd09518bfca6eace1be531dcd02ce
-usr/lib/.build-id/41/45d824de4fac09d0808788721af0e15275f578
-usr/lib/.build-id/66/a1eae6c206bf1a26af2be416e62671b30aff9e
-usr/lib/.build-id/9a/1ef77c68916bd4301d4aca47b5eda207e11b74
-usr/lib/.build-id/c9/63d83f8689ca2b2a1eefb97c7b598abb2f5d8c
-usr/lib/.build-id/cd/e2040aad0568e30ce6f8d3b81f0c6a780936d6
-usr/lib/.build-id/d1/e6816e4278dbcb7c453262e76dcb39c5e0a12a
 usr/lib64/girepository-1.0/Gdk-3.0.typelib
 usr/lib64/girepository-1.0/GdkX11-3.0.typelib
 usr/lib64/girepository-1.0/Gtk-3.0.typelib

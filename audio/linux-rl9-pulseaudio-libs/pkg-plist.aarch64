@@ -1,8 +1,4 @@
 etc/pulse/client.conf
-usr/lib/.build-id/a4/43a0c5d6afa84f226172b26e6a56cdfe9114ff
-usr/lib/.build-id/b3/dd53c475f9b3965b1f7af7947c55cb259e598d
-usr/lib/.build-id/dc/0ebcb951364fa7500ab72d2e85fefa8023b333
-usr/lib/.build-id/e6/bcef1411bec06b0361debef1f7fae20919b3d2
 usr/lib64/libpulse-mainloop-glib.so.0
 usr/lib64/libpulse-mainloop-glib.so.0.0.6
 usr/lib64/libpulse-simple.so.0

@@ -1,7 +1,5 @@
 usr/bin/tclsh
 usr/bin/tclsh8.6
-usr/lib/.build-id/1a/594ad3d6fdab8d817ee004b235d568cbdd90f5
-usr/lib/.build-id/d1/ab7a2cc8a50ae913f8bc3df47fe39722c82c94
 usr/lib64/libtcl8.6.so
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/changes

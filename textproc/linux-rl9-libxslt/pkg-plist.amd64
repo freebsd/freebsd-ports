@@ -1,10 +1,4 @@
 usr/bin/xsltproc
-usr/lib/.build-id/46/8f11721e309e853f46641fff184cbe015cbd2f
-usr/lib/.build-id/7d/19066164a1d8ac47ae9102c988086fe122177e
-usr/lib/.build-id/7d/a35be296e0ea1c54fed5f478a502a476087c48
-usr/lib/.build-id/c0/4948d6638edc8e46034e15398d8445a920e393
-usr/lib/.build-id/e6/229eabc11399a3bd16e959bb06ad5c4728c379
-usr/lib/.build-id/fc/2273893de1a264258a2e4dae36a5590304b8b5
 usr/lib/libexslt.so.0
 usr/lib/libexslt.so.0.8.20
 usr/lib/libxslt.so.1

@@ -1,9 +1,3 @@
-usr/lib/.build-id/00/1230335ca8e51cc94eb2dc233817d38ee29198
-usr/lib/.build-id/06/1a69aae19176fb2361032dc13784a2de639713
-usr/lib/.build-id/4d/e2d982ddb83ec3d76ce201b4369a14a7795d97
-usr/lib/.build-id/75/8cbc5e4144204751cba6c306ed6f4ac7c8b57e
-usr/lib/.build-id/7d/d873d3d2a9b979e3a2739f0efe0856ad0ee7ad
-usr/lib/.build-id/a9/2cf44c7af2f2e5ac7b94098abf84b8745437ba
 usr/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake
 usr/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake
 usr/lib/libQt5Svg.so.5

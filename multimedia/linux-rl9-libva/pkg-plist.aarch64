@@ -1,8 +1,3 @@
-usr/lib/.build-id/3d/708281f779cc55001c66fea7adc66e92059552
-usr/lib/.build-id/95/bd640b03b22ed99d371c0ea0000f54c9b5e6b1
-usr/lib/.build-id/b7/cfb4e3632d7cfd4e61673e7cf1fc38b70cb529
-usr/lib/.build-id/e2/9c996c38b2d0ee5da3241ad409262a68ea024d
-usr/lib/.build-id/e6/65f27985d2dccb5d60b1117f59ba0c8042453d
 usr/lib64/libva-drm.so.2
 usr/lib64/libva-drm.so.%%LIBVERSION%%
 usr/lib64/libva-glx.so.2

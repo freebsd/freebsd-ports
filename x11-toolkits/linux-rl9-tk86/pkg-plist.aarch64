@@ -1,7 +1,5 @@
 usr/bin/wish
 usr/bin/wish8.6
-usr/lib/.build-id/04/d24c7ca4f20bf00dea7bd69c6e9860acdd7ef1
-usr/lib/.build-id/da/59c9e91810a704917afd1ee1fb6afc6bf5cca8
 usr/lib64/libtk8.6.so
 usr/lib64/tk8.6/pkgIndex.tcl
 %%PORTDOCS%%%%DOCSDIR%%/README.md

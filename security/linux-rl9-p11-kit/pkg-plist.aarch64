@@ -1,10 +1,5 @@
 usr/bin/p11-kit
 usr/bin/trust
-usr/lib/.build-id/02/6e51645205ad1f8c7370ed6fe212699b6f6de3
-usr/lib/.build-id/2e/e531f233406aee64fb011d4d571117a8370c96
-usr/lib/.build-id/9a/57c7480c16a10cf0aab992d4680a9b408b691b
-usr/lib/.build-id/bf/2e3c54b2ac835e9264e83a4f2a93f410f04daf
-usr/lib/.build-id/f9/d4401cf883fc82be871590dcb0afb37b19ae33
 usr/lib64/libnssckbi.so
 usr/lib64/libp11-kit.so.0
 usr/lib64/libp11-kit.so.0.3.1

@@ -540,13 +540,6 @@ usr/include/lldb/lldb-private.h
 usr/include/lldb/lldb-public.h
 usr/include/lldb/lldb-types.h
 usr/include/lldb/lldb-versioning.h
-usr/lib/.build-id/49/d742907e96f44e5f3b9fe040792a96db14d710
-usr/lib/.build-id/5d/869a6a18a3e49bdea8db574304bf1286e45b02
-usr/lib/.build-id/5e/17856b69506e9dc9b8d17a6177de1052c9e580
-usr/lib/.build-id/c2/0db3ec69adcc12d015a554d0c3877b4280b0c3
-usr/lib/.build-id/ca/7eaf34eae999eaf23ba45011516571af76192a
-usr/lib/.build-id/d2/fa634f46275a10d2aecf7f5695b1576e757956
-usr/lib/.build-id/d9/542eada455f1948753bb25abb6a6267161aab1
 usr/lib64/liblldb.so
 usr/lib64/liblldb.so.18.1
 usr/lib64/liblldb.so.18.1.8

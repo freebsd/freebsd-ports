@@ -1,6 +1,4 @@
 etc/tcsd.conf
-usr/lib/.build-id/c9/e185c7b4871c5967a6948aa8eeea9a88449dcb
-usr/lib/.build-id/ef/0bd5ef17cc5a7923dc07c129c1e6573838637a
 usr/lib/systemd/system/tcsd.service
 usr/lib64/libtspi.so.1
 usr/lib64/libtspi.so.1.2.0

@@ -1,6 +1,5 @@
 usr/bin/strace
 usr/bin/strace-log-merge
-usr/lib/.build-id/1f/07101ab316ab21a31c076acb7086a675ede1f8
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog-CVS.gz

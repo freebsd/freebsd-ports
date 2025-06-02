@@ -1,5 +1,3 @@
-usr/lib/.build-id/00/1b92fa69903c06e5fdc5d78a68cb1733f0d11b
-usr/lib/.build-id/a0/ff24186efcb60cfc4b4333e533a0fcd37bca3a
 usr/lib/libvulkan.so.1
 usr/lib/libvulkan.so.%%LIBVERSION%%
 usr/lib64/libvulkan.so.1

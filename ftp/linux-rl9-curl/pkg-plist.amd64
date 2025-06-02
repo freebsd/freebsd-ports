@@ -1,7 +1,4 @@
 usr/bin/curl
-usr/lib/.build-id/83/9e67f5b473990a18e1111c87542e46a6a4cb3b
-usr/lib/.build-id/a9/81d6d6a04c4a31e9f12ca47e56149380b58697
-usr/lib/.build-id/c5/b6f4ae5ae3b9b97c3234b1a892e54c442ec7a9
 usr/lib/libcurl.so.4
 usr/lib/libcurl.so.4.7.0
 usr/lib64/libcurl.so.4

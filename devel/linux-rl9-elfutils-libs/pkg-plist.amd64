@@ -1,14 +1,6 @@
 etc/profile.d/debuginfod.csh
 etc/profile.d/debuginfod.sh
 usr/bin/debuginfod-find
-usr/lib/.build-id/02/07c1177ca53edf26c244e09ac0c613c34aeeac
-usr/lib/.build-id/02/2da41fbf38c7d8de9126c517a31582924badd2
-usr/lib/.build-id/22/e3c8995bb6e5d6ac45d1bcda0f9e0ef7fcf82f
-usr/lib/.build-id/8a/156b6746a4e2f3238c0e01a7c26e5060b1a1c7
-usr/lib/.build-id/aa/8845e49446ccaab8e71b070040c90d259569e4
-usr/lib/.build-id/cf/4eaba2a5006ec48405d1bb3a07a2cd25ff62c2
-usr/lib/.build-id/f3/1b39496269409ebadc50bbb98d2417e61d07b6
-usr/lib/.build-id/f9/4956ddd73ad7f505445d20a2b2c6048bcc9f92
 usr/lib/libasm-%%LIBVERSION%%.so
 usr/lib/libasm.so.1
 usr/lib/libdebuginfod-%%LIBVERSION%%.so

@@ -1,7 +1,4 @@
 usr/bin/xsltproc
-usr/lib/.build-id/99/055e62cafca7cc892d8990947109a181d05c8e
-usr/lib/.build-id/ec/bb423f672cbdc4b768c2eabb76649cad655c4d
-usr/lib/.build-id/f1/a88b9f7efb5d3df4c53375b11d7e7b711ae66a
 usr/lib64/libexslt.so.0
 usr/lib64/libexslt.so.0.8.20
 usr/lib64/libxslt.so.1

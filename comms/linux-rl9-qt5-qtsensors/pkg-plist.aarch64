@@ -1,11 +1,3 @@
-usr/lib/.build-id/0f/efc093d22a7e06790836a413896b75e930d25f
-usr/lib/.build-id/b6/e2d296a092e80bb9359d68320cbd753ac8d426
-usr/lib/.build-id/f9/ee7baee9244c2f115cde75b48232f84c6eef7a
-usr/lib/.build-id/db/f35555b97b9876401a2c6fc08b6e22719b5c64
-usr/lib/.build-id/57/8586313f05a68b7a3130dde9eb028d09cd9072
-usr/lib/.build-id/64/7052efe2392afa9b3890c41fbb829659f3c5d1
-usr/lib/.build-id/a2/198d4cfcf13ff0b230172501dc6498cd315544
-usr/lib/.build-id/e3/d37f85c254aab05350410b1c3acf95efe9d8af
 usr/lib64/cmake/Qt5Sensors/Qt5Sensors_IIOSensorProxySensorPlugin.cmake
 usr/lib64/cmake/Qt5Sensors/Qt5Sensors_LinuxSensorPlugin.cmake
 usr/lib64/cmake/Qt5Sensors/Qt5Sensors_QCounterGesturePlugin.cmake

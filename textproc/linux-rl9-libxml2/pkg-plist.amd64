@@ -1,11 +1,5 @@
 usr/bin/xmlcatalog
 usr/bin/xmllint
-usr/lib/.build-id/02/1b93349740d5b859e70988e834fa4a691b1e79
-usr/lib/.build-id/22/4d81487943f22baabe1c99db630e20c2a6bdaf
-usr/lib/.build-id/3a/480db2c81231660892e2d9747bbc4afed47dcc
-usr/lib/.build-id/71/5395f0cb53c8e2ebfd609e2dfdfbe9630f1cd2
-usr/lib/.build-id/7a/52706f142a5edeee6c7b3f2ff7c89d8cef59cd
-usr/lib/.build-id/ad/f120373c064a11d1642be2000b515ea7a41654
 usr/lib/libxml2.so.2
 usr/lib/libxml2.so.2.9.13
 usr/lib64/libxml2.so.2
