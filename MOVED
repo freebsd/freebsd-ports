@@ -4476,3 +4476,4 @@ sysutils/py-upt-pypi||2025-06-02|Has expired: Depends on expired sysutils/py-upt
 devel/py-pytest-cases||2025-06-02|Has expired: Depends on expired devel/py-makefun
 devel/py-decopatch||2025-06-02|Has expired: Depends on expired devel/py-makefun
 graphics/rubygem-ezprint||2025-06-02|Has expired: Depends on expired graphics/rubygem-pdfkit
+databases/datasette||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
