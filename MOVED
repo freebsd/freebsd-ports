@@ -4474,3 +4474,4 @@ sysutils/py-upt-freebsd||2025-06-02|Has expired: Depends on expired sysutils/py-
 sysutils/py-upt-rubygems||2025-06-02|Has expired: Depends on expired sysutils/py-upt
 sysutils/py-upt-pypi||2025-06-02|Has expired: Depends on expired sysutils/py-upt
 devel/py-pytest-cases||2025-06-02|Has expired: Depends on expired devel/py-makefun
+devel/py-decopatch||2025-06-02|Has expired: Depends on expired devel/py-makefun
