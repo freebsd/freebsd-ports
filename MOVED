@@ -4480,3 +4480,4 @@ databases/datasette||2025-06-02|Has expired: Depends on expired devel/py-pytest-
 www/py-pydrive2||2025-06-02|Has expired: Depends on expired security/py-oauth2client
 misc/py-gluoncv||2025-06-02|Has expired: Depends on expiring misc/py-mxnet
 misc/py-gluonnlp||2025-06-02|Has expired: Depends on expiring misc/py-mxnet
+misc/py-mxnet||2025-06-02|Has expired: Depends on expired misc/mxnet

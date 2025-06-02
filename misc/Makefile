@@ -473,7 +473,6 @@
     SUBDIR += py-mmengine
     SUBDIR += py-mmsegmentation
     SUBDIR += py-molequeue
-    SUBDIR += py-mxnet
     SUBDIR += py-natten
     SUBDIR += py-npTDMS
     SUBDIR += py-numcodecs
