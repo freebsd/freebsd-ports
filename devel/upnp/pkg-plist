@@ -27,10 +27,10 @@ include/upnp/upnpconfig.h
 lib/libixml.a
 lib/libixml.so
 lib/libixml.so.11
-lib/libixml.so.11.1.2
+lib/libixml.so.11.1.3
 lib/libupnp.a
 lib/libupnp.so
 lib/libupnp.so.17
-lib/libupnp.so.17.2.0
+lib/libupnp.so.17.2.1
 libdata/pkgconfig/libupnp.pc
 %%PORTDOCS%%%%DOCSDIR%%/UPnP_Programming_Guide.pdf
