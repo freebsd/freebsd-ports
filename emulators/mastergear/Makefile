@@ -1,26 +1,30 @@
 PORTNAME=	mastergear
-PORTVERSION=	2.0
-PORTREVISION=	3
+DISTVERSION=	2.0
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/MG/
 DISTNAME=	MG20-FreeBSD-80x86-bin
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SEGA Master System and Game Gear emulator for X
 WWW=		https://fms.komkon.org/MG/
 
-LIB_DEPENDS=	libc.so.5:misc/compat5x
+# There is no mention of a license in the source code.
+# License has to be acquired from the author.
+LICENSE=NONE
 
-NO_WRKSUBDIR=	yes
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	is an i386 binary
 
-USES=		xorg
+LIB_DEPENDS=	libc.so.5:misc/compat5x
+
+USES=		xorg tar:Z
 USE_XORG=	x11 xext
 
-NO_BUILD=	yes
 STRIP=
+NO_BUILD=	yes
+
+NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	DOCS
 
