@@ -3,7 +3,7 @@ DISTVERSION=	1.4.2
 PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.src.tar.gz
+DISTNAME=	${PORTNAME}-${DISTVERSION}.src
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Vi-like binary file (hex)editor
@@ -13,6 +13,9 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		ncurses
+
 GNU_CONFIGURE=	yes
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 .include <bsd.port.mk>
