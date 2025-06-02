@@ -4486,3 +4486,4 @@ devel/py-makefun||2025-06-02|Has expired: Depends on expired devel/py-pytest-run
 security/mbedtls2||2025-06-02|Has expired: Upstream support ends at the end of 2024
 graphics/rubygem-pdfkit||2025-06-02|Has expired: Depends on expired converters/wkhtmltopdf
 security/racoon2||2025-06-02|Has expired: Requested removal by PR/286981
+converters/wkhtmltopdf||2025-06-02|Has expired: Upstream abandoned the project
