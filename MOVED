@@ -4479,3 +4479,4 @@ graphics/rubygem-ezprint||2025-06-02|Has expired: Depends on expired graphics/ru
 databases/datasette||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
 www/py-pydrive2||2025-06-02|Has expired: Depends on expired security/py-oauth2client
 misc/py-gluoncv||2025-06-02|Has expired: Depends on expiring misc/py-mxnet
+misc/py-gluonnlp||2025-06-02|Has expired: Depends on expiring misc/py-mxnet
