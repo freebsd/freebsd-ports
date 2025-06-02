@@ -106,7 +106,6 @@ _linux_${linux_ARGS}_libdrm=		linux-${linux_ARGS}-libdrm>0:graphics/linux-${linu
 _linux_${linux_ARGS}_libepoxy=		linux-${linux_ARGS}-libepoxy>0:graphics/linux-${linux_ARGS}-libepoxy
 _linux_rl9_libevent=			linux-rl9-libevent>0:devel/linux-rl9-libevent
 _linux_${linux_ARGS}_libgcrypt=		linux-${linux_ARGS}-libgcrypt>0:security/linux-${linux_ARGS}-libgcrypt
-_linux_${linux_ARGS}_libgfortran=	linux-${linux_ARGS}-libgfortran>0:devel/linux-${linux_ARGS}-libgfortran
 _linux_${linux_ARGS}_libglvnd=		linux-${linux_ARGS}-libglvnd>0:graphics/linux-${linux_ARGS}-libglvnd
 _linux_${linux_ARGS}_libgpg-error=	linux-${linux_ARGS}-libgpg-error>0:security/linux-${linux_ARGS}-libgpg-error
 _linux_rl9_libidn2=			linux-${linux_ARGS}-libidn2>0:dns/linux-rl9-libidn2

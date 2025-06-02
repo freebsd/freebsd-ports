@@ -4453,3 +4453,5 @@ devel/eventxx||2025-06-01|Has expired: Upstream is gone, unmaintained for 10+ ye
 devel/cmunge||2025-06-01|Has expired: Upstream is gone
 www/py-dj50-django-htmx|www/py-dj51-django-htmx|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2025, upgrade to the Django 5.1+ version of this port. See https://www.djangoproject.com/download/
 www/py-django50|www/py-django51|2025-06-01|Has expired: Extended support of Django 5.0 ends April 2024, upgrade to a newer version of Django. See https://www.djangoproject.com/download/
+devel/linux-c7-libgfortran|devel/linux-c7-devtools|2025-06-02|Merged into devel/linux-c7-devtools
+devel/linux-rl9-libgfortran|devel/linux-rl9-devtools|2025-06-02|Merged into devel/linux-rl9-devtools
