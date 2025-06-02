@@ -4462,3 +4462,4 @@ multimedia/ffsubsync||2025-06-02|Has expired: Depends on expired multimedia/py-f
 biology/checkm||2025-06-02|Has expired: Depends on expired science/py-DendroPy
 net/pichi||2025-06-02|Has expired: Depends on expired security/mbedtls2
 science/pastix||2025-06-02|Has expired: Depends on expired lang/julia
+science/dvc||2025-06-02|Has expired: Depends on expired math/py-grandalf
