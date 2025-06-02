@@ -1,6 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
+DISTVERSION=	0.16.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -76,9 +76,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.37 \
-		clap_builder-4.5.37 \
-		clap_complete-4.5.48 \
+		clap-4.5.39 \
+		clap_builder-4.5.39 \
+		clap_complete-4.5.52 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		clru-0.6.2 \
@@ -115,7 +115,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		dashmap-5.5.3 \
 		dashmap-6.1.0 \
 		data-encoding-2.8.0 \
-		dbus-0.9.7 \
 		debugid-0.8.0 \
 		deranged-0.4.1 \
 		derive_builder-0.20.2 \
@@ -286,7 +285,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lalry-0.1.0 \
 		lazy_static-1.5.0 \
 		libc-0.2.171 \
-		libdbus-sys-0.2.5 \
 		libflate-2.1.0 \
 		libflate_lz77-2.1.0 \
 		libredox-0.1.3 \
@@ -305,7 +303,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		mark-flaky-tests-macro-1.0.2 \
 		markup5ever-0.12.1 \
 		maybe-async-0.2.10 \
-		mdbook-0.4.48 \
+		mdbook-0.4.51 \
 		memchr-2.7.4 \
 		memmap2-0.5.10 \
 		memmap2-0.9.5 \
@@ -343,7 +341,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		object-0.36.7 \
 		once_cell-1.21.3 \
 		oorandom-11.1.5 \
-		opener-0.7.2 \
+		opener-0.8.1 \
 		option-ext-0.2.0 \
 		outref-0.5.2 \
 		owo-colors-4.2.0 \
@@ -370,14 +368,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pin-project-internal-1.1.10 \
 		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.32 \
 		plotters-0.3.7 \
 		plotters-backend-0.3.7 \
 		plotters-svg-0.3.7 \
 		portable-atomic-1.11.0 \
 		portable-atomic-util-0.2.4 \
 		powerfmt-0.2.0 \
-		pprof-0.14.0 \
+		pprof-0.15.0 \
 		ppv-lite86-0.2.21 \
 		precomputed-hash-0.1.1 \
 		predicates-3.1.3 \
@@ -413,16 +410,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		relative-path-1.9.3 \
+		relative-path-2.0.1 \
 		reqwest-0.11.27 \
 		resolv-conf-0.7.1 \
 		rgb-0.8.50 \
 		ring-0.17.14 \
 		rle-decode-fast-1.0.3 \
 		ropey-1.6.1 \
-		rust-embed-8.7.0 \
-		rust-embed-impl-8.7.0 \
-		rust-embed-utils-8.7.0 \
+		rust-embed-8.7.2 \
+		rust-embed-impl-8.7.2 \
+		rust-embed-utils-8.7.2 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-2.1.1 \
 		rustix-0.38.44 \
@@ -457,8 +454,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		slab-0.4.9 \
 		smallvec-1.15.0 \
 		socket2-0.5.9 \
-		sourcemap-9.2.0 \
+		sourcemap-9.2.1 \
 		spdx-0.10.8 \
+		spin-0.10.0 \
 		stable_deref_trait-1.2.0 \
 		str_indices-0.4.4 \
 		str_stack-0.1.0 \
@@ -481,7 +479,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tap-1.0.1 \
-		tempfile-3.19.1 \
+		tempfile-3.20.0 \
 		tendril-0.4.3 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.2 \
@@ -498,7 +496,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.44.2 \
+		tokio-1.45.1 \
 		tokio-macros-2.5.0 \
 		tokio-rustls-0.24.1 \
 		tokio-tungstenite-0.21.0 \
@@ -539,7 +537,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.16.0 \
+		uuid-1.17.0 \
 		version_check-0.9.5 \
 		vsimd-0.8.0 \
 		wait-timeout-0.2.1 \
