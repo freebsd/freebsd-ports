@@ -4484,3 +4484,4 @@ misc/py-spdx-lookup||2025-06-02|Has expired: Upstream repository has been archiv
 misc/py-spdx||2025-06-02|Has expired: Upstream repository has been archived on Nov 13, 2020
 devel/py-makefun||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
 security/mbedtls2||2025-06-02|Has expired: Upstream support ends at the end of 2024
+graphics/rubygem-pdfkit||2025-06-02|Has expired: Depends on expired converters/wkhtmltopdf

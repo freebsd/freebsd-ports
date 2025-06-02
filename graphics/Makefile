@@ -1116,7 +1116,6 @@
     SUBDIR += rubygem-mini_magick
     SUBDIR += rubygem-mini_magick4
     SUBDIR += rubygem-opengl
-    SUBDIR += rubygem-pdfkit
     SUBDIR += rubygem-png
     SUBDIR += rubygem-railroad
     SUBDIR += rubygem-red-colors
