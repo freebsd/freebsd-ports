@@ -31,7 +31,8 @@ dir_DTD=	share/xml/dtd/vuxml
 .include <bsd.port.pre.mk>
 
 VUXML_FILE?=	${PKGDIR}/vuln.xml
-VUXML_FLAT_FILE?=	${PKGDIR}/vuln-flat.xml
+VUXML_FLAT_NAME=	vuln-flat.xml
+VUXML_FLAT_FILE?=	${PKGDIR}/${VUXML_FLAT_NAME}
 _YEAR!=	date +%Y
 VUXML_CURRENT_FILE?=	${PKGDIR}/vuln/${_YEAR}.xml
 
@@ -57,7 +58,7 @@ do-test:
 	@${CP} -R ${.CURDIR}/vuln.xml ${.CURDIR}/vuln ${WRKDIR}/test
 	@cd ${.CURDIR} && make validate PKGDIR=${WRKDIR}/test
 
-${VUXML_FLAT_FILE}: ${VUXML_FILE} vuln/*.xml
+${VUXML_FLAT_NAME}: ${VUXML_FILE} vuln/*.xml
 	xmllint -noent ${.ALLSRC:[1]} > ${.TARGET}
 
 validate: tidy
