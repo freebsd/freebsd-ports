@@ -1,3 +1,32 @@
+  <vuln vid="533b4470-3f25-11f0-b440-f02f7432cf97">
+    <topic>curl -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><ge>8.5.0</ge><lt>8.14.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>curl security team reports:</p>
+	<blockquote cite="https://curl.se/docs/security.html">
+	  <p>CVE-2025-5025: No QUIC certificate pinning with wolfSSL</p>
+	  <p>CVE-2025-4947: QUIC certificate check skip with wolfSSL</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5025</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5025</url>
+      <cvename>CVE-2025-4947</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-4947</url>
+    </references>
+    <dates>
+      <discovery>2025-05-28</discovery>
+      <entry>2025-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2926c487-3e53-11f0-95d4-00a098b42aeb">
     <topic>libxml2 -- Out-of-bounds memory access</topic>
     <affects>
