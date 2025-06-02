@@ -525,7 +525,6 @@
     SUBDIR += py-sigopt
     SUBDIR += py-soapy_power
     SUBDIR += py-spdx
-    SUBDIR += py-spdx-lookup
     SUBDIR += py-spdx-tools
     SUBDIR += py-spinners
     SUBDIR += py-synced-collections
