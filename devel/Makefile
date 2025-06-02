@@ -5661,7 +5661,6 @@
     SUBDIR += py-pytest-cache
     SUBDIR += py-pytest-canonical-data
     SUBDIR += py-pytest-capturelog
-    SUBDIR += py-pytest-cases
     SUBDIR += py-pytest-checkdocs
     SUBDIR += py-pytest-codspeed
     SUBDIR += py-pytest-console-scripts
