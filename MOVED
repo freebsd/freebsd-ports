@@ -4477,3 +4477,4 @@ devel/py-pytest-cases||2025-06-02|Has expired: Depends on expired devel/py-makef
 devel/py-decopatch||2025-06-02|Has expired: Depends on expired devel/py-makefun
 graphics/rubygem-ezprint||2025-06-02|Has expired: Depends on expired graphics/rubygem-pdfkit
 databases/datasette||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
+www/py-pydrive2||2025-06-02|Has expired: Depends on expired security/py-oauth2client
