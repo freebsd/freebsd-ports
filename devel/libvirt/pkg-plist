@@ -169,6 +169,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/arm_vendors.xml
 %%DATADIR%%/cpu_map/index.xml
 %%DATADIR%%/cpu_map/ppc64_POWER10.xml
+%%DATADIR%%/cpu_map/ppc64_POWER11.xml
 %%DATADIR%%/cpu_map/ppc64_POWER6.xml
 %%DATADIR%%/cpu_map/ppc64_POWER7.xml
 %%DATADIR%%/cpu_map/ppc64_POWER8.xml
@@ -411,6 +412,8 @@ lib/libvirt/connection-driver/libvirt_driver_vbox.so
 %%XEN%%lib/libvirt/connection-driver/libvirt_driver_libxl.so
 lib/libvirt/storage-backend/libvirt_storage_backend_fs.so
 %%ZFS%%lib/libvirt/storage-backend/libvirt_storage_backend_zfs.so
+%%BHYVE%%@dir /var/lib/libvirt/bhyve/nvram
+%%BHYVE%%@dir /var/lib/libvirt/bhyve
 %%QEMU%%@dir /var/cache/libvirt/qemu
 %%QEMU%%@dir /var/lib/libvirt/qemu/channel/target
 %%QEMU%%@dir /var/lib/libvirt/qemu/channel
