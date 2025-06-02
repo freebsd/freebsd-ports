@@ -5224,7 +5224,6 @@
     SUBDIR += py-magic
     SUBDIR += py-magnet2torrent
     SUBDIR += py-mailcap-fix
-    SUBDIR += py-makefun
     SUBDIR += py-manuel
     SUBDIR += py-marisa-trie
     SUBDIR += py-marrow.mailer

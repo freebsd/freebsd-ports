@@ -4482,3 +4482,4 @@ misc/mxnet||2025-06-02|Has expired: Project has been retired by Apache, see http
 sysutils/py-upt||2025-06-02|Has expired: Depends on expired misc/py-spdx-lookup
 misc/py-spdx-lookup||2025-06-02|Has expired: Upstream repository has been archived on Nov 13, 2020
 misc/py-spdx||2025-06-02|Has expired: Upstream repository has been archived on Nov 13, 2020
+devel/py-makefun||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
