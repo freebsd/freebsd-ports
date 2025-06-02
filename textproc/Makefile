@@ -1299,7 +1299,6 @@
     SUBDIR += py-CommonMark
     SUBDIR += py-Morfessor
     SUBDIR += py-QDarkStyle
-    SUBDIR += py-RTFDE
     SUBDIR += py-TatSu
     SUBDIR += py-Tempita
     SUBDIR += py-accessible-pygments
