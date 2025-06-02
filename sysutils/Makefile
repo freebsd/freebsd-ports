@@ -1073,7 +1073,6 @@
     SUBDIR += py-tarsnapper
     SUBDIR += py-tldr
     SUBDIR += py-tmuxp
-    SUBDIR += py-upt
     SUBDIR += py-uptime
     SUBDIR += qchroot
     SUBDIR += qdirstat

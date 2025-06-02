@@ -4479,3 +4479,4 @@ misc/py-gluoncv||2025-06-02|Has expired: Depends on expiring misc/py-mxnet
 misc/py-gluonnlp||2025-06-02|Has expired: Depends on expiring misc/py-mxnet
 misc/py-mxnet||2025-06-02|Has expired: Depends on expired misc/mxnet
 misc/mxnet||2025-06-02|Has expired: Project has been retired by Apache, see https://attic.apache.org/projects/mxnet.html
+sysutils/py-upt||2025-06-02|Has expired: Depends on expired misc/py-spdx-lookup
