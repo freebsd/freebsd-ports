@@ -4,13 +4,12 @@ PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://sites.google.com/site/vwiorate/downloads/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-EXTRACT_SUFX=	.tar
 
 MAINTAINER=	blttll@gmail.com
 COMMENT=	General purpose storage I/O benchmarking tool
 WWW=		http://iorate.org/
 
-USES=		alias bison
+USES=		alias bison tar
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}"
 NO_WRKSUBDIR=	yes
