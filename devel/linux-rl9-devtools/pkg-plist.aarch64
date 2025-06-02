@@ -2293,6 +2293,7 @@ usr/lib/.build-id/d5/1f1d11899f1b0c56d1749b1c8df68fb928214a
 usr/lib/.build-id/d6/02be267207a8ca6d6541930f20b13f3c1a3a12
 usr/lib/.build-id/dc/0ef5245d6243f9dd976301d314baeeb0d740a6
 usr/lib/.build-id/de/1bd7aa2f5fea6e1baffa666a30fb4786a10b83
+usr/lib/.build-id/df/f61c1085b7c6f981ace3dee82d5834eef65cdb
 usr/lib/.build-id/e5/fb2a1d12898c3d19d0e3b98017086af348c336
 usr/lib/.build-id/ea/bbf26e4dc1bda886b8e0f7e7d0c113ebe6d848
 usr/lib/.build-id/ea/e2ec42d04ce034d38ea628fa371561ad17d325
@@ -2400,6 +2401,8 @@ usr/lib64/libctf.so.0
 usr/lib64/libctf.so.0.0.0
 usr/lib64/libdl.a
 usr/lib64/libg.a
+usr/lib64/libgfortran.so.5
+usr/lib64/libgfortran.so.5.0.0
 usr/lib64/libgomp.so.1
 usr/lib64/libgomp.so.1.0.0
 usr/lib64/libiberty.a

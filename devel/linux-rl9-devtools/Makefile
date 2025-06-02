@@ -1,17 +1,17 @@
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	devel
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Linux compilers and base libraries (CentOS ${LINUX_DIST_VER})
+COMMENT=	Linux compilers and base libraries (Rocky Linux ${LINUX_DIST_VER})
 WWW=		https://gcc.gnu.org/
 
 # LICENSE=	Various GNU
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	elfutils-libs libgfortran
+USE_LINUX=	elfutils-libs
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 
@@ -35,6 +35,7 @@ BIN_DISTNAMES=	binutils-${BUVERSION} \
 LIB_DISTNAMES=	binutils-devel-${BUVERSION} \
 		glibc-devel-${GLIBCVERSION} \
 		libatomic-${GCCVERSION} \
+		libgfortran-${GCCVERSION} \
 		libgomp-${GCCVERSION} \
 		libmpc-${LIBMPCVERSION} \
 		libstdc++-devel-${GCCVERSION}

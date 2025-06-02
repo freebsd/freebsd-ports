@@ -2349,6 +2349,7 @@ usr/lib/.build-id/1e/9ccca6bbfa8c6b6b5d71c8da216a0c620a5183.2
 usr/lib/.build-id/1f/fcec891c0f84809429e862078edf3766da5d0e
 usr/lib/.build-id/21/1ab3b8b0f0f60947a970da3f63757752713c18
 usr/lib/.build-id/25/aefbe9da5c832fc95955d328044eb0cd9701e2
+usr/lib/.build-id/27/34e20636b5d2f365a410939a55879d3fff6008
 usr/lib/.build-id/29/57201d6e6ab3e45a4fa978fb928fbc8c66b83e
 usr/lib/.build-id/2b/0f7f6dfd615f8342c185e9b65b51743307801e
 usr/lib/.build-id/2c/8fff97e96c4f3bb44096094e474620957239db
@@ -2389,6 +2390,7 @@ usr/lib/.build-id/62/ae5dc73627a89708e710fd79aa510968a1a935
 usr/lib/.build-id/63/ea7eb290911146d13fdabd146718722d549912
 usr/lib/.build-id/6b/de5e17a791df492c2578acb60c2bf34220c7d5
 usr/lib/.build-id/70/bd42fe8667357fd41c40860be0e5b461143f4b
+usr/lib/.build-id/76/d46dc4b05da9a8a3d7d563922710b751d674e9
 usr/lib/.build-id/7a/da7c1c6bd1174d5a05de026928610af9881863
 usr/lib/.build-id/86/57d7f99088203c9c8b26a13cbdece258f5fe0b
 usr/lib/.build-id/87/d83274fa060ebd2eb4da6fce8b878e3c64f7b0
@@ -2698,6 +2700,8 @@ usr/lib/libctf-nobfd.a
 usr/lib/libctf.a
 usr/lib/libdl.a
 usr/lib/libg.a
+usr/lib/libgfortran.so.5
+usr/lib/libgfortran.so.5.0.0
 usr/lib/libgomp.so.1
 usr/lib/libgomp.so.1.0.0
 usr/lib/libiberty.a
@@ -2745,6 +2749,8 @@ usr/lib64/libctf.so.0
 usr/lib64/libctf.so.0.0.0
 usr/lib64/libdl.a
 usr/lib64/libg.a
+usr/lib64/libgfortran.so.5
+usr/lib64/libgfortran.so.5.0.0
 usr/lib64/libgomp.so.1
 usr/lib64/libgomp.so.1.0.0
 usr/lib64/libiberty.a
