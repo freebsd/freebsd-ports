@@ -10,9 +10,6 @@ WWW=		https://solverstack.gitlabpages.inria.fr/pastix/
 
 LICENSE=	LGPL3
 
-DEPRECATED=	Depends on expired lang/julia
-EXPIRATION_DATE=2025-06-01
-
 BUILD_DEPENDS=	bash:shells/bash	\
 		${PYNUMPY}
 LIB_DEPENDS=	libmetis.so:math/metis	\
