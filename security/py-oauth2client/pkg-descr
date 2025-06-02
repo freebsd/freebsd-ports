@@ -1,3 +1,0 @@
-oauth2client is a Python module for client-side oauth2 authentication. It works
-with Google's oauth2 service by default, and is compatible with any oauth2
-service.
