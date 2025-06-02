@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2019-10-21 08:25:37 UTC
++++ CMakeLists.txt
+@@ -575,13 +575,13 @@ ADD_CUSTOM_TARGET(manpage ALL
+ 
+ # install headers
+ 
+-IF(LMMS_BUILD_LINUX)
++IF(LMMS_BUILD_LINUX OR LMMS_BUILD_FREEBSD OR LMMS_BUILD_OPENBSD)
+ 	INSTALL(FILES ${LMMS_INCLUDES}
+ 		"${CMAKE_BINARY_DIR}/lmmsconfig.h"
+ 		"${CMAKE_BINARY_DIR}/lmmsversion.h"
+ 		"${CMAKE_SOURCE_DIR}/src/gui/embed.cpp"
+ 		DESTINATION "${CMAKE_INSTALL_PREFIX}/include/lmms/")
+-ENDIF(LMMS_BUILD_LINUX)
++ENDIF(LMMS_BUILD_LINUX OR LMMS_BUILD_FREEBSD OR LMMS_BUILD_OPENBSD)
+ 
+ # package ZynAddSubFX into win32 build
+ IF(LMMS_BUILD_WIN32)
