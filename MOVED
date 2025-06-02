@@ -4483,3 +4483,4 @@ sysutils/py-upt||2025-06-02|Has expired: Depends on expired misc/py-spdx-lookup
 misc/py-spdx-lookup||2025-06-02|Has expired: Upstream repository has been archived on Nov 13, 2020
 misc/py-spdx||2025-06-02|Has expired: Upstream repository has been archived on Nov 13, 2020
 devel/py-makefun||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
+security/mbedtls2||2025-06-02|Has expired: Upstream support ends at the end of 2024
