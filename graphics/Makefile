@@ -1099,7 +1099,6 @@
     SUBDIR += rubygem-dragonfly
     SUBDIR += rubygem-emoji
     SUBDIR += rubygem-exifr
-    SUBDIR += rubygem-ezprint
     SUBDIR += rubygem-fastimage
     SUBDIR += rubygem-flamegraph
     SUBDIR += rubygem-gd2
