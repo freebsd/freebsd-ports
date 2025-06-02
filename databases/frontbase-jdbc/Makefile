@@ -1,16 +1,19 @@
 PORTNAME=	frontbase
-PORTVERSION=	2.5.6
+DISTVERSION=	2.5.6
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES+=	http://www.frontbase.com/download/JDBC/
 PKGNAMESUFFIX=	-jdbc
 DISTNAME=	FrontBaseJDBC-${PORTVERSION}
-EXTRACT_SUFX=	.tar
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	The Java JDBC implementation for FrontBase
 WWW=		http://www.frontbase.com/
 
-USES=		java
+# The license is not specified in any file in the distribution.
+LICENSE=	NONE
+
+USES=		java tar
 
 NO_BUILD=	yes
 JARFILE=	frontbasejdbc.jar
