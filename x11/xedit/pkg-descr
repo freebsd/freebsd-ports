@@ -1,1 +1,7 @@
 This package contains xedit, a simple text editor for the X Window System.
+
+Xedit provides a window consisting of the following four areas:
+Commands Section, Message Window, Filename Display, Edit Window.
+
+Message Window displays xedit messages. In addition, this window can be
+also used as a scratch pad.
