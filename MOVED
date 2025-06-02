@@ -4461,7 +4461,6 @@ www/py-fastapi-users||2025-06-02|Has expired: Depends on expired devel/py-makefu
 multimedia/ffsubsync||2025-06-02|Has expired: Depends on expired multimedia/py-ffmpeg-python
 biology/checkm||2025-06-02|Has expired: Depends on expired science/py-DendroPy
 net/pichi||2025-06-02|Has expired: Depends on expired security/mbedtls2
-science/pastix||2025-06-02|Has expired: Depends on expired lang/julia
 science/dvc||2025-06-02|Has expired: Depends on expired math/py-grandalf
 textproc/py-extract-msg||2025-06-02|Has expired: Depends on expiring textproc/py-RTFDE
 devel/py-pcodedmp||2025-06-02|Has expired: Depends on expired devel/py-oletools
