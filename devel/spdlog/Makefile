@@ -1,7 +1,7 @@
 PORTNAME=	spdlog
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.15.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -27,5 +27,9 @@ post-extract:
 
 post-patch:
 	${RM} ${WRKSRC}/include/spdlog/fmt/*.h.orig
+
+post-stage:
+# let consumers know that this package was compiled with SPDLOG_FMT_EXTERNAL=yes
+	${ECHO_CMD} '#define SPDLOG_FMT_EXTERNAL' >> ${WRKSRC}/include/spdlog/tweakme.h
 
 .include <bsd.port.mk>
