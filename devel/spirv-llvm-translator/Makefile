@@ -37,7 +37,7 @@ GH_PROJECT=	SPIRV-LLVM-Translator
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-332-g1c6bb27:headers/projects/SPIRV-Headers
 .elif ${FLAVOR:U} == llvm19
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-411-gaa6cef1:headers/projects/SPIRV-Headers
-.elif ${FLAVOR:U} == llvm20
+.elif ${FLAVOR:U} == llvm20 || !defined(FLAVOR)
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-405-g0e71067:headers/projects/SPIRV-Headers
 .else
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-390-g2b2e05e:headers/projects/SPIRV-Headers
