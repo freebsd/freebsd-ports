@@ -1,11 +1,7 @@
 PORTNAME=	f3d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
-PORTREVISION=	1
+DISTVERSION=	3.1.0
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	af299dfc670160f01886461b5904797f0aa67cb1.patch:-p1 # https://github.com/f3d-app/f3d/pull/1936
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast and minimalist 3D viewer
@@ -15,7 +11,7 @@ WWW=		https://f3d.app/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg4 \
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
 		libfreetype.so:print/freetype2 \
