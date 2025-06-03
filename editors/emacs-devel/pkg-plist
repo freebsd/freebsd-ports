@@ -3772,6 +3772,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/reveal.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/rfn-eshadow.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/rfn-eshadow.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/ring-bell-fns.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/ring-bell-fns.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/rot13.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/rot13.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/rtree.el.gz
