@@ -87,11 +87,11 @@ include/assimp/vector2.inl
 include/assimp/vector3.h
 include/assimp/vector3.inl
 include/assimp/version.h
-lib/cmake/assimp-5.4/assimpConfig.cmake
-lib/cmake/assimp-5.4/assimpConfigVersion.cmake
-lib/cmake/assimp-5.4/assimpTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/assimp-5.4/assimpTargets.cmake
+lib/cmake/assimp-6.0/assimpConfig.cmake
+lib/cmake/assimp-6.0/assimpConfigVersion.cmake
+lib/cmake/assimp-6.0/assimpTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/assimp-6.0/assimpTargets.cmake
 lib/libassimp.so
 lib/libassimp.so.5
-lib/libassimp.so.5.4.3
+lib/libassimp.so.6.0.1
 libdata/pkgconfig/assimp.pc

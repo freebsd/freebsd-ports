@@ -1,6 +1,6 @@
 PORTNAME=	assimp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.4.3
+DISTVERSION=	6.0.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,8 +21,10 @@ CMAKE_ON=		ASSIMP_BUILD_MINIZIP # workaround for https://github.com/assimp/assim
 CMAKE_TESTING_ON=	ASSIMP_BUILD_TESTS
 CMAKE_TESTING_TARGET=	${ALL_TARGET} # hack to avoid target
 
-post-test: # 1 test fails, see https://github.com/assimp/assimp/issues/4751
+post-test:
 	@cd ${BUILD_WRKSRC} && \
 		${BUILD_WRKSRC}/bin/unit
+
+# tests as of 6.0.1: 591 tests from 117 test suites ran. (18189 ms total)
 
 .include <bsd.port.mk>
