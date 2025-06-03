@@ -1,0 +1,14 @@
+The tubes package provides composable flow-control and data processing.
+
+Flow-control is control over the source, destination, and rate of
+data being processed. Tubes implements this in a type-agnostic way,
+meaning that a set of rules for controlling the flow of data can
+control that flow regardless of the type of that data, from raw
+streams of bytes to application-specific messages and back again.
+
+Composable data processing refers to processing that can occur in
+independent units. For example, the conversion of a continuous
+stream of bytes into a discrete sequence of messages can be implemented
+independently from the presentation of or reactions to those messages.
+This allows for similar messages to be relayed in different formats
+and by different protocols, but be processed by the same code.

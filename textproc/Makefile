@@ -1301,6 +1301,7 @@
     SUBDIR += py-QDarkStyle
     SUBDIR += py-TatSu
     SUBDIR += py-Tempita
+    SUBDIR += py-Tubes
     SUBDIR += py-accessible-pygments
     SUBDIR += py-acora
     SUBDIR += py-aeidon
