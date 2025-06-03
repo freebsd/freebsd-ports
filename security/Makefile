@@ -1379,6 +1379,7 @@
     SUBDIR += trivy
     SUBDIR += trousers
     SUBDIR += trufflehog
+    SUBDIR += tscli
     SUBDIR += tthsum
     SUBDIR += u2f-devd
     SUBDIR += uacme

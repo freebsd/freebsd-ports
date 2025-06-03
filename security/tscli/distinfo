@@ -1,0 +1,5 @@
+TIMESTAMP = 1748984412
+SHA256 (go/security_tscli/tscli-v0.0.7/v0.0.7.mod) = 7a2fdc5e3af52d5109a5e92304981f0504d30dc6d8b60ce0f7e77aad321a7cb6
+SIZE (go/security_tscli/tscli-v0.0.7/v0.0.7.mod) = 2490
+SHA256 (go/security_tscli/tscli-v0.0.7/v0.0.7.zip) = 6e2e69078b0c442f70c0bfc048c2c1f4043445031ae183aea95c58bbaa17422d
+SIZE (go/security_tscli/tscli-v0.0.7/v0.0.7.zip) = 90576
