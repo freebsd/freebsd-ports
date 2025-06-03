@@ -1,4 +1,4 @@
 The appres program prints the resources seen by an application (or
 subhierarchy of an application) with the specified class and instance
-names.  It can be used to determine which resources a particular
+names. It can be used to determine which resources a particular
 program will load.
