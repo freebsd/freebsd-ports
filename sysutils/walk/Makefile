@@ -4,7 +4,7 @@ DISTVERSION=	1.13.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Terminal file manager
 WWW=		https://github.com/antonmedv/${PORTNAME}
 

@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python_pptx-${DISTVERSION}
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Generate and manipulate Open XML PowerPoint (.pptx) files
 WWW=		https://github.com/scanny/python-pptx
 

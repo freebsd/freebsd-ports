@@ -4,7 +4,7 @@ DISTVERSION=	3.3.1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Automates infrastructure using Python
 WWW=		https://pyinfra.com/
 

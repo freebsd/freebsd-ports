@@ -1,7 +1,7 @@
 PORTNAME=	pipe-viewer
 PKGNAMEPREFIX=	gtk-
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Application for searching and playing videos from YouTube (gtk)
 
 CONFLICTS_INSTALL=	multimedia/pipe-viewer

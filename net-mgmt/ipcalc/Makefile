@@ -2,7 +2,7 @@ PORTNAME=	ipcalc
 PORTVERSION=	0.51
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	IP Calculator
 WWW=		https://jodies.de/ipcalc
 

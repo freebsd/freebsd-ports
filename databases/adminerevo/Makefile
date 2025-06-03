@@ -6,7 +6,7 @@ DISTNAME=	adminer-${DISTVERSION}
 EXTRACT_SUFX=	.php
 EXTRACT_ONLY=
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Database management in a single PHP file
 WWW=		https://adminerevo.org \
 		https://github.com/${PORTNAME}/${PORTNAME}

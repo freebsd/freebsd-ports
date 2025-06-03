@@ -4,7 +4,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	LWP::UserAgent with simple caching mechanism
 WWW=		https://metacpan.org/dist/LWP-UserAgent-Cached/
 

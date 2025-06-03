@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/mptre/yank/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Yank terminal output to clipboard
 WWW=		https://github.com/mptre/yank/
 

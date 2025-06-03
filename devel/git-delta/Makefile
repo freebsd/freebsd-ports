@@ -4,7 +4,7 @@ PORTREVISION=	5
 CATEGORIES=	devel
 PKGNAMEPREFIX=	git-
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Syntax-highlighting pager for git/diff
 WWW=		https://dandavison.github.io/delta/
 

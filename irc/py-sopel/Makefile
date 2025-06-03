@@ -4,7 +4,7 @@ CATEGORIES=	irc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Easy-to-use and highly extensible IRC Bot framework
 WWW=		https://sopel.chat/
 

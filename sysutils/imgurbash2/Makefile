@@ -2,7 +2,7 @@ PORTNAME=	imgurbash2
 DISTVERSION=	3.3
 CATEGORIES=	sysutils
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Upload or delete images and videos to imgur
 WWW=		https://github.com/ram-on/imgurbash2/
 

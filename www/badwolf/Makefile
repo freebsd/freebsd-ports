@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://hacktivis.me/releases/
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Minimalist and privacy-oriented WebKitGTK browser
 WWW=		https://hacktivis.me/projects/badwolf
 

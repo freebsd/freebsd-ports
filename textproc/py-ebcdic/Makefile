@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Additional EBCDIC codecs
 WWW=		https://github.com/roskakori/CodecMapper
 

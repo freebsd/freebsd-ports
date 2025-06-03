@@ -3,7 +3,7 @@ DISTVERSION=	1.7.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://rdfind.pauldreik.se/
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Utility to find duplicate files based on their content
 WWW=		https://rdfind.pauldreik.se/
 

@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	nicegui_highcharts-${PORTVERSION}
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	NiceGUI extension providing highcharts elements
 WWW=		https://github.com/zauberzeug/nicegui-highcharts
 

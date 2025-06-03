@@ -4,7 +4,7 @@ CATEGORIES=	www
 MASTER_SITES=	https://github.com/erohtar/Dasherr/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}.${DISTVERSION}
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Lightweight dashboard for self-hosted services (and bookmarks)
 WWW=		https://github.com/erohtar/Dasherr/
 

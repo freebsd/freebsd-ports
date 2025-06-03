@@ -3,7 +3,7 @@ DISTVERSION=	g20201213
 PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Fork of lemonbar with support for Xft (fontconfig typefaces)
 WWW=		https://gitlab.com/protesilaos/lemonbar-xft
 

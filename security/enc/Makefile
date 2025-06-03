@@ -3,7 +3,7 @@ DISTVERSION=	1.1.3
 PORTREVISION=	9
 CATEGORIES=	security
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Modern and friendly CLI alternative to GnuPG
 WWW=		https://github.com/life4/enc
 

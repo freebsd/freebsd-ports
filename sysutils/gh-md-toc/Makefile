@@ -2,7 +2,7 @@ PORTNAME=	gh-md-toc
 DISTVERSION=	0.10.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Easy TOC creation for GitHub README.md
 WWW=		https://github.com/ekalinin/github-markdown-toc
 

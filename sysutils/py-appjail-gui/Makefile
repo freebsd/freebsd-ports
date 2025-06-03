@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Graphical User Interface for AppJail
 WWW=		https://github.com/DtxdF/${PORTNAME}
 

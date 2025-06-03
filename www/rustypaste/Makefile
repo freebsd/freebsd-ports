@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16.1
 CATEGORIES=	www
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Minimal file upload/pastebin service
 WWW=		https://blog.orhun.dev/blazingly-fast-file-sharing
 

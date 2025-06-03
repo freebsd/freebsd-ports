@@ -5,7 +5,7 @@ CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Python library to interact with keepass databases
 WWW=		https://pypi.org/project/pykeepass \
 		https://github.com/libkeepass/pykeepass

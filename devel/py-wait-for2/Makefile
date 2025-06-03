@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	wait_for2-${DISTVERSION}
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Handle simultaneous cancellation and future completion
 WWW=		https://pypi.org/project/${PORTNAME} \
 		https://github.com/Traktormaster/${PORTNAME}

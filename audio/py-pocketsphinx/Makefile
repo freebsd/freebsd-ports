@@ -5,7 +5,7 @@ CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Python interface to CMU Sphinxbase and Pocketsphinx libraries
 WWW=	https://github.com/bambocher/pocketsphinx-python
 

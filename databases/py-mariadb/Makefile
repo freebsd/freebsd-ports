@@ -4,7 +4,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Python MariaDB extension
 WWW=		https://github.com/mariadb-corporation/mariadb-connector-python
 

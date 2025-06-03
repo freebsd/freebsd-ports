@@ -5,7 +5,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Generate and change color-schemes on the fly
 WWW=		https://github.com/dylanaraps/pywal
 

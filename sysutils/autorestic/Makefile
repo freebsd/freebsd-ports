@@ -4,7 +4,7 @@ DISTVERSION=	1.8.3
 PORTREVISION=	3
 CATEGORIES=	sysutils
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Config driven, easy backup cli for restic
 WWW=		https://github.com/cupcakearmy/${PORTNAME}
 

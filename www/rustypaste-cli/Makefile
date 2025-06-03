@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.4
 CATEGORIES=	www
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	CLI tool for rustypaste
 WWW=		https://github.com/orhun/rustypaste-cli
 

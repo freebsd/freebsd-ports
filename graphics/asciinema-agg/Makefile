@@ -5,7 +5,7 @@ PORTREVISION=	15
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	asciinema-
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Asciinema gif generator
 WWW=		https://github.com/asciinema/agg
 

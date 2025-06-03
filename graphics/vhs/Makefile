@@ -4,7 +4,7 @@ DISTVERSION=	0.9.0
 PORTREVISION=	3
 CATEGORIES=	graphics
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Your CLI home video recorder
 WWW=		https://github.com/charmbracelet/vhs
 

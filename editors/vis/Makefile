@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9
 CATEGORIES=	editors
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Vi-like editor based on Plan 9's structural regular expressions
 WWW=		https://github.com/martanne/${PORTNAME}
 

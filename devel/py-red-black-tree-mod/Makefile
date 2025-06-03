@@ -5,7 +5,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	DtxdF@disroot.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Flexible python implementation of red black trees
 WWW=		https://stromberg.dnsalias.org/~strombrg/${PORTNAME} \
 		https://pypi.org/project/${PORTNAME}
