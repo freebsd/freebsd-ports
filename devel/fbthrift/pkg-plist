@@ -112,6 +112,7 @@ include/thrift/lib/cpp/Frozen.h
 include/thrift/lib/cpp/Reflection.h
 include/thrift/lib/cpp/RelativePtr.h
 include/thrift/lib/cpp/SerializedMessage.h
+include/thrift/lib/cpp/StreamEventHandler.h
 include/thrift/lib/cpp/TApplicationException.h
 include/thrift/lib/cpp/TLogging.h
 include/thrift/lib/cpp/TProcessor.h
@@ -723,6 +724,8 @@ include/thrift/lib/python/server/event_handler.h
 include/thrift/lib/python/server/flagged/EnableResourcePoolsForPython.h
 include/thrift/lib/python/server/flagged/RcAwareTaskPatch.h
 include/thrift/lib/python/server/flagged/test/EnableResourcePoolsForPythonTest.h
+include/thrift/lib/python/server/interceptor/PythonServerModule.h
+include/thrift/lib/python/server/interceptor/PythonServiceInterceptor.h
 include/thrift/lib/python/server/util.h
 include/thrift/lib/python/test/event_handlers/handler.h
 include/thrift/lib/python/test/interactions/interaction_test.h
