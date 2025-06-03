@@ -1,6 +1,6 @@
 PORTNAME=	elm
 PORTVERSION=	0.19.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/arrowd/:package_list
 DISTFILES=	elm-compiler-bootstrap-${PORTVERSION}${EXTRACT_SUFX}:package_list
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	ghc-9.2.8:lang/ghc92
 
-USES=		cabal
+USES=		cabal nodejs:run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elm
