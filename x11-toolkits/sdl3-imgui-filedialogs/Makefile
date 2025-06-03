@@ -1,6 +1,6 @@
 PORTNAME=	sdl3-imgui-filedialogs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1
+DISTVERSION=	g20250603
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	josephvenable@verizon.net
