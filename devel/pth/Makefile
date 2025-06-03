@@ -9,6 +9,9 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	GNU Portable Threads
 WWW=		https://www.gnu.org/software/pth/
 
+DEPRECATED=	Abandoned, last release in 2006
+EXPIRATION_DATE=2025-07-31
+
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
