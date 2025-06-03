@@ -7,7 +7,6 @@ MAINTAINER=	josephvenable@verizon.net
 COMMENT=	SDL3 ImGui File Dialogs - CLI and Client Library
 WWW=		https://github.com/samuelvenable/SDL3-ImGui-FileDialogs
 
-LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
@@ -28,7 +27,7 @@ USE_XORG=	x11 xau xcb xcursor xdmcp xext xfixes xi xrandr xrender xscrnsaver
 USE_GITHUB=	yes
 GH_ACCOUNT=	samuelvenable
 GH_PROJECT=	SDL3-ImGui-FileDialogs
-GH_TAGNAME=	8d28d3688accaa00cb5bf56919c57cfee134a937
+GH_TAGNAME=	30ae88b562c64b0e20f1ae8e63a8f170926fec8e
 
 do-build:
 	mkdir ${WRKSRC}/_build
@@ -80,8 +79,10 @@ do-build:
 		-lX11 -lc -lpthread -fPIC
 
 do-install:
-	${CP} ${WRKSRC}/_build/filedialogs ${STAGEDIR}${PREFIX}/bin
-	${CP} ${WRKSRC}/_build/libfiledialogs.so ${STAGEDIR}${PREFIX}/lib
+	${CP} ${WRKSRC}/filedialogs/filedialogs ${STAGEDIR}${PREFIX}/bin
 	${CP} ${WRKSRC}/filedialogs/filedialogs.hpp ${STAGEDIR}${PREFIX}/include
+	${CP} ${WRKSRC}/filedialogs/libfiledialogs.so ${STAGEDIR}${PREFIX}/lib
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/licenses/filedialogs-g20250603
+	${CP} ${WRKSRC}/LICENSE ${STAGEDIR}${PREFIX}/share/licenses/filedialogs-g20250603
 
 .include <bsd.port.mk>
