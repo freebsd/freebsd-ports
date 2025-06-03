@@ -1,3 +1,29 @@
+  <vuln vid="0d6094a2-4095-11f0-8c92-00d861a0e66d">
+    <topic>Post-Auth Remote Code Execution found in Roundcube Webmail</topic>
+    <affects>
+      <package>
+	<name>roundcube</name>
+	<range><lt>1.6.11</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Roundcube Webmail reports:</p>
+	<blockquote cite="https://roundcube.net/news/2025/06/01/security-updates-1.6.11-and-1.5.10">
+	  <p>Fix Post-Auth RCE via PHP Object Deserialization reported by firs0v</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-49113</cvename>
+      <url>https://roundcube.net/news/2025/06/01/security-updates-1.6.11-and-1.5.10</url>
+    </references>
+    <dates>
+      <discovery>2025-06-01</discovery>
+      <entry>2025-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dc99c67a-3fc9-11f0-a39d-b42e991fc52e">
     <topic>Gimp -- GIMP FLI File Parsing Out-Of-Bounds Write Remote Code Execution Vulnerability</topic>
     <affects>
