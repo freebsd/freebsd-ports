@@ -1,4 +1,4 @@
---- package.json.orig	2025-04-10 19:28:40 UTC
+--- package.json.orig	2025-05-28 20:17:57 UTC
 +++ package.json
 @@ -100,9 +100,6 @@
      "react-devtools": "react-devtools",
@@ -8,7 +8,7 @@
 -    "fs-xattr": "0.3.0"
 -  },
    "dependencies": {
-     "@electron/asar": "3.3.1",
+     "@electron/asar": "3.4.1",
      "@formatjs/fast-memoize": "2.2.3",
 @@ -173,6 +170,7 @@
      "p-timeout": "4.1.0",
@@ -18,15 +18,15 @@
      "protobufjs": "7.3.2",
      "proxy-agent": "6.4.0",
      "qrcode-generator": "1.4.4",
-@@ -223,7 +221,6 @@
+@@ -220,7 +218,6 @@
      "@indutny/parallel-prettier": "3.0.0",
      "@indutny/rezip-electron": "2.0.1",
      "@napi-rs/canvas": "0.1.61",
--    "@signalapp/mock-server": "11.3.0",
+-    "@signalapp/mock-server": "11.3.1",
      "@storybook/addon-a11y": "8.4.4",
      "@storybook/addon-actions": "8.4.4",
      "@storybook/addon-controls": "8.4.4",
-@@ -360,7 +357,6 @@
+@@ -356,7 +353,6 @@
        "@types/backbone@1.4.22": "patches/@types+backbone+1.4.22.patch",
        "casual@1.6.2": "patches/casual+1.6.2.patch",
        "protobufjs@7.3.2": "patches/protobufjs+7.3.2.patch",
@@ -34,9 +34,9 @@
        "protobufjs-cli@1.1.1": "patches/protobufjs-cli+1.1.1.patch",
        "@types/fabric@4.5.3": "patches/@types+fabric+4.5.3.patch",
        "qrcode-generator@1.4.4": "patches/qrcode-generator+1.4.4.patch",
-@@ -378,7 +374,9 @@
+@@ -372,7 +368,9 @@
+       "node-fetch@2.6.7": "patches/node-fetch+2.6.7.patch",
        "zod@3.23.8": "patches/zod+3.23.8.patch",
-       "@electron/rebuild": "patches/@electron__rebuild.patch",
        "app-builder-lib": "patches/app-builder-lib.patch",
 -      "dmg-builder": "patches/dmg-builder.patch"
 +      "dmg-builder": "patches/dmg-builder.patch",
@@ -45,7 +45,7 @@
      },
      "onlyBuiltDependencies": [
        "@indutny/mac-screen-share",
-@@ -391,7 +389,6 @@
+@@ -385,7 +383,6 @@
        "bufferutil",
        "electron",
        "esbuild",
@@ -53,16 +53,16 @@
        "utf-8-validate"
      ],
      "ignoredBuiltDependencies": [
-@@ -402,7 +399,7 @@
+@@ -396,7 +393,7 @@
      ]
    },
    "engines": {
--    "node": "22.14.0"
+-    "node": "22.15.0"
 +    "node": ""
    },
    "build": {
      "appId": "org.whispersystems.signal-desktop",
-@@ -479,20 +476,6 @@
+@@ -473,20 +470,6 @@
        "asarUnpack": [
          "build/icons/win/icon.ico"
        ]
