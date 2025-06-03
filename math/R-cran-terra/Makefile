@@ -9,8 +9,6 @@ WWW=		https://cran.r-project.org/package=terra
 
 LICENSE=	GPLv3+
 
-BROKEN_i386=	https://github.com/rspatial/terra/issues/1846
-
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libgeos_c.so:graphics/geos \
 		libproj.so:graphics/proj
