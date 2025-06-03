@@ -1,6 +1,6 @@
 PORTNAME=	unifi9
 PORTVERSION=	9.1.120
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax
@@ -17,9 +17,10 @@ WWW=		https://help.ui.com/hc/en-us/categories/200320654-UniFi-Wireless
 
 RUN_DEPENDS=	snappyjava>0:archivers/snappy-java
 
-FLAVORS=	default externaldb
+FLAVORS=	default armv80a externaldb
 FLAVOR?=	${FLAVORS:[1]}
 
+armv80a_PKGNAMESUFFIX=		-armv80a
 externaldb_PKGNAMESUFFIX=	-externaldb
 
 USES=		cpe java
@@ -50,6 +51,9 @@ GROUPS=		unifi
 
 OPTIONS_DEFINE=	EXTERNALDB
 
+.if ${FLAVOR:U} == armv80a
+MONGODB_PKGNAMESUFFIX=	-${FLAVOR}
+.endif
 .if ${FLAVOR:U} == externaldb
 OPTIONS_DEFAULT+=	EXTERNALDB
 .endif
@@ -57,7 +61,7 @@ OPTIONS_DEFAULT+=	EXTERNALDB
 EXTERNALDB_DESC=	Use external MongoDB server
 EXTERNALDB_VARS=	PKGMESSAGE+=${WRKSRC}/pkg-message.extdb \
 			SUB_FILES+=pkg-message.extdb
-EXTERNALDB_VARS_OFF=	RUN_DEPENDS+=mongodb60>0:databases/mongodb60
+EXTERNALDB_VARS_OFF=	RUN_DEPENDS+=mongodb70${MONGODB_PKGNAMESUFFIX}>0:databases/mongodb70@${FLAVOR}
 
 _DIR_LIST=	conf data logs run work
 _JAX_DISTNAME=	javax.activation-api
