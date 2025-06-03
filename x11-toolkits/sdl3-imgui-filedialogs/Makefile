@@ -56,6 +56,28 @@ do-build:
 		`pkg-config --cflags --libs gio-2.0` \
 		`pkg-config --cflags --libs glib-2.0` \
 		-lX11 -lc -lpthread -fPIC
+	cd "${WRKSRC}/filedialogs" && \
+	${CXX} \
+		"ImFileDialog/ImFileDialog.cpp" \
+		"imgui/imgui.cpp" \
+		"imgui/backends/imgui_impl_sdl3.cpp" \
+		"imgui/backends/imgui_impl_sdlgpu3.cpp" \
+		"imgui/backends/imgui_impl_sdlrenderer3.cpp" \
+		"imgui/imgui_draw.cpp" \
+		"imgui/imgui_tables.cpp" \
+		"imgui/imgui_widgets.cpp" \
+		"filesystem.cpp" \
+		"filedialogs.cpp" \
+		"msgbox/imguial_msgbox.cpp" \
+		"main.cpp" \
+		-o "${WRKSRC}/_build/libfiledialogs.so" \
+		-shared -std=c++17 -Wno-format-security -I. -IImFileDialog -Iimgui \
+		-Iimgui/backends -L${WRKSRC}/_build -llunasvg -DIMGUI_USE_WCHAR32 -DIFD_SHARED_LIBRARY \
+		`pkg-config --cflags --libs sdl3 --static` \
+		`pkg-config --cflags --libs gtk+-3.0` \
+		`pkg-config --cflags --libs gio-2.0` \
+		`pkg-config --cflags --libs glib-2.0` \
+		-lX11 -lc -lpthread -fPIC
 
 do-install:
 	${CP} ${WRKSRC}/_build/filedialogs ${STAGEDIR}${PREFIX}/bin
