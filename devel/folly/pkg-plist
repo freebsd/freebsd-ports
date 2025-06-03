@@ -112,6 +112,7 @@ include/folly/Uri.h
 include/folly/Utility.h
 include/folly/Varint.h
 include/folly/VirtualExecutor.h
+include/folly/algorithm/BinaryHeap.h
 include/folly/algorithm/simd/Contains.h
 include/folly/algorithm/simd/FindFixed.h
 include/folly/algorithm/simd/Ignore.h
@@ -859,6 +860,7 @@ include/folly/lang/ToAscii.h
 include/folly/lang/TypeInfo.h
 include/folly/lang/UncaughtExceptions.h
 include/folly/lang/VectorTraits.h
+include/folly/lang/named/Bindings.h
 include/folly/logging/AsyncFileWriter.h
 include/folly/logging/AsyncLogWriter.h
 include/folly/logging/AutoTimer.h
@@ -982,6 +984,7 @@ include/folly/python/executor.h
 include/folly/python/futures.h
 include/folly/python/import.h
 include/folly/python/iobuf.h
+include/folly/random/xoshiro256pp.h
 include/folly/result/gtest_helpers.h
 include/folly/result/result.h
 include/folly/result/try.h
