@@ -1,5 +1,5 @@
 PORTNAME=	lazpaint
-PORTVERSION=	7.2.2
+PORTVERSION=	7.3
 DISTVERSIONPREFIX=	v
 PORTREVISION=	6
 CATEGORIES=	graphics
@@ -21,10 +21,10 @@ USES=		desktop-file-utils dos2unix fpc gnome lazarus:flavors xorg
 USE_XORG=	x11
 DOS2UNIX_REGEX=	.*\.([txt]|pas|lpi|txt)
 USE_GITHUB=	yes
-GH_TAGNAME=	45a7a47
+GH_TAGNAME=	a11930b
 GH_ACCOUNT=	bgrabitmap
-GH_TUPLE=	bgrabitmap:bgracontrols:a94a17f:bgracontrols/bgracontrols \
-		bgrabitmap:bgrabitmap:d2a9b15:bgrabitmap/bgrabitmapnew
+GH_TUPLE=	bgrabitmap:bgracontrols:20dbed8:bgracontrols/bgracontrols \
+		bgrabitmap:bgrabitmap:6ada359:bgrabitmap/bgrabitmapnew
 
 USE_GNOME_gtk2=	cairo
 USE_GNOME+=	${USE_GNOME_${FLAVOR}}
@@ -48,8 +48,10 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lazpaint/release/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps
-	${INSTALL_DATA} ${WRKSRC}/resources/icon/48x48.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png
+.	for RESO in 128 16 24 256 32 48 512 64 96
+		@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${RESO}x${RESO}/apps
+		${INSTALL_DATA} ${WRKSRC}/resources/icon/${RESO}x${RESO}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${RESO}x${RESO}/apps/${PORTNAME}.png
+.	endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/lazpaint/release/bin && ${COPYTREE_SHARE} "i18n models" ${STAGEDIR}${DATADIR}
 
