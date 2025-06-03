@@ -1,0 +1,3 @@
+bin/filedialogs
+include/filedialogs.hpp
+lib/liblunasvg.a
