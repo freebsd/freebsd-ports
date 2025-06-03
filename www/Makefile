@@ -1798,6 +1798,7 @@
     SUBDIR += py-jh2
     SUBDIR += py-jonpy
     SUBDIR += py-kiss-headers
+    SUBDIR += py-klein
     SUBDIR += py-laces
     SUBDIR += py-legacy-cgi
     SUBDIR += py-lektor
