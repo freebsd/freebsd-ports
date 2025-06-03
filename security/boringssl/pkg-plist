@@ -97,6 +97,7 @@ include/openssl/x509.h
 include/openssl/x509_vfy.h
 include/openssl/x509v3.h
 include/openssl/x509v3_errors.h
+include/openssl/xwing.h
 lib/cmake/OpenSSL/OpenSSLConfig.cmake
 lib/cmake/OpenSSL/OpenSSLTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/OpenSSL/OpenSSLTargets.cmake
