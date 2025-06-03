@@ -1,0 +1,4 @@
+eliot is a Python logging system that outputs causal chains of
+actions: actions can spawn other actions, and eventually they either
+succeed or fail. The resulting logs tell you the story of what your
+software did: what happened, and what caused it.

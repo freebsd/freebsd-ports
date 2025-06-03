@@ -4837,6 +4837,7 @@
     SUBDIR += py-editables
     SUBDIR += py-editdistance
     SUBDIR += py-ejson
+    SUBDIR += py-eliot
     SUBDIR += py-enlighten
     SUBDIR += py-entrypoint2
     SUBDIR += py-entrypoints
