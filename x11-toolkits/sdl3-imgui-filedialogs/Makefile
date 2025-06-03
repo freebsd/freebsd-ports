@@ -59,7 +59,7 @@ do-build:
 
 do-install:
 	${CP} ${WRKSRC}/_build/filedialogs ${STAGEDIR}${PREFIX}/bin
-	${CP} ${WRKSRC}/_build/liblunasvg.a ${STAGEDIR}${PREFIX}/lib
+	${CP} ${WRKSRC}/_build/libfiledialogs.so ${STAGEDIR}${PREFIX}/lib
 	${CP} ${WRKSRC}/filedialogs/filedialogs.hpp ${STAGEDIR}${PREFIX}/include
 
 .include <bsd.port.mk>
