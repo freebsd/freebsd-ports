@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2025-02-17 22:00:23 UTC
+--- CMakeLists.txt.orig	2025-05-20 11:17:10 UTC
 +++ CMakeLists.txt
-@@ -1114,7 +1114,7 @@ endif()
+@@ -1101,7 +1101,7 @@ endif()
  endif()
  
  # validating custom.bat/sh for changes
@@ -9,7 +9,7 @@
    file (READ "${INSTALL_DIR}/${INSTALL_DIR_SCRIPT}/custom.${SCRIPT_EXT}" CUSTOM_CONTENT)
    string(FIND "${CUSTOM_CONTENT}" "${ADDITIONAL_CUSTOM_CONTENT}" pos)
    if (pos EQUAL -1)
-@@ -1359,7 +1359,7 @@ install (CODE "string (TOLOWER \"\${CMAKE_INSTALL_CONF
+@@ -1340,7 +1340,7 @@ install (CODE "string (TOLOWER \"\${CMAKE_INSTALL_CONF
  endforeach()
  # install OpenCASCADE config file with compile definitions and C/C++ flags ONLY for current configuration
  install (CODE "string (TOLOWER \"\${CMAKE_INSTALL_CONFIG_NAME}\" CMAKE_INSTALL_CONFIG_NAME_LOWER)")

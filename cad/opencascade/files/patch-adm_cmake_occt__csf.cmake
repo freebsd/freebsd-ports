@@ -1,6 +1,6 @@
---- adm/cmake/occt_csf.cmake.orig	2021-10-30 11:13:37 UTC
+--- adm/cmake/occt_csf.cmake.orig	2025-05-20 11:17:10 UTC
 +++ adm/cmake/occt_csf.cmake
-@@ -142,7 +142,6 @@ else()
+@@ -161,7 +161,6 @@ else()
        set (CSF_OpenGlLibs "GL EGL")
      endif()
      set (CSF_OpenGlesLibs "EGL GLESv2")
