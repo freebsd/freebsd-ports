@@ -1,0 +1,6 @@
+collections_extended is a pure Python module with no dependencies
+providing extra collections. The new collections include bags AKA
+multisets, setlists AKA unique lists or ordered sets, a bijection,
+a RangeMap which is a mapping from ranges to values, and an IndexedDict
+class. There are also frozen (hashable) varieties of bags and
+setlists.

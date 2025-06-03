@@ -4692,6 +4692,7 @@
     SUBDIR += py-cobble
     SUBDIR += py-codegen
     SUBDIR += py-cog
+    SUBDIR += py-collections-extended
     SUBDIR += py-colorama
     SUBDIR += py-colored-traceback
     SUBDIR += py-coloredlogs
