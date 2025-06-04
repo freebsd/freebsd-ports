@@ -28,11 +28,19 @@
   </vuln>
 
   <vuln vid="8c94ae2a-06f5-4383-9a7f-1211cb0dd476">
-    <topic>electron35 -- Out of bounds read and write in V8</topic>
+    <topic>electron{34,35,36} -- Out of bounds read and write in V8</topic>
     <affects>
+      <package>
+	<name>electron34</name>
+	<range><lt>34.5.8</lt></range>
+      </package>
       <package>
 	<name>electron35</name>
 	<range><lt>35.5.1</lt></range>
+      </package>
+      <package>
+	<name>electron36</name>
+	<range><lt>36.4.0</lt></range>
       </package>
     </affects>
     <description>
@@ -53,6 +61,7 @@
     <dates>
       <discovery>2025-06-04</discovery>
       <entry>2025-06-04</entry>
+      <modified>2025-06-04</modified>
     </dates>
   </vuln>
 
