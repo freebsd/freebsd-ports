@@ -11,6 +11,9 @@ WWW=		http://www.ossp.org/pkg/tool/lmtp2nntp/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Obsolete, last release in 2005 and uses legacy Local Mail Transfer Protocol
+EXPIRATION_DATE=2025-07-31
+
 LIB_DEPENDS=	libstr.so:devel/str \
 		libex.so:devel/ossp-ex \
 		libsa.so:net/ossp-sa \
