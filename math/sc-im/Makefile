@@ -1,7 +1,6 @@
 PORTNAME=		sc-im
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.8.4
-PORTREVISION=		1
+DISTVERSION=		0.8.5
 CATEGORIES=		math
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -23,7 +22,7 @@ WRKSRC_SUBDIR=	src
 CFLAGS+=	-DXLSX_EXPORT -DXLS
 LIBS+=		-lxlsreader -lxlsxwriter
 MAKE_ENV+=	LDLIBS="${LIBS}" LUA_PKGNAME=lua-${LUA_VER}
-MAKE_ARGS+=	CC="${CC}" prefix="${PREFIX}" MANDIR="${PREFIX}/share/man/man1"
+MAKE_ARGS+=	CC="${CC}" prefix="${PREFIX}" MANDIR="${PREFIX}/share/man/man1" THEMEDIR="${DATADIR}/themes"
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sc-im

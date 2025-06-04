@@ -5,3 +5,7 @@ share/sc-im/plot_line
 share/sc-im/plot_pie
 share/sc-im/plot_scatter
 share/sc-im/sc-im_help
+%%DATADIR%%/themes/dracula.sc
+%%DATADIR%%/themes/old.sc
+%%DATADIR%%/themes/papercolor-dark.sc
+%%DATADIR%%/themes/prince.persia.sc
