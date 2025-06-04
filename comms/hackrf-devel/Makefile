@@ -10,6 +10,9 @@ WWW=		https://greatscottgadgets.com/hackrf/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Legacy version, consider migrating to comms/hackrf
+EXPIRATION_DATE=2025-07-31
+
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float
 
