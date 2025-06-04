@@ -1,6 +1,7 @@
 bin/annot-tsv
 bin/bgzip
 bin/htsfile
+bin/ref-cache
 bin/tabix
 include/htslib/bgzf.h
 include/htslib/cram.h
@@ -38,6 +39,7 @@ libdata/pkgconfig/htslib.pc
 share/man/man1/annot-tsv.1.gz
 share/man/man1/bgzip.1.gz
 share/man/man1/htsfile.1.gz
+share/man/man1/ref-cache.1.gz
 share/man/man1/tabix.1.gz
 share/man/man5/faidx.5.gz
 share/man/man5/sam.5.gz
