@@ -1,4 +1,4 @@
---- chrome/browser/flag_descriptions.cc.orig	2025-04-22 20:15:27 UTC
+--- chrome/browser/flag_descriptions.cc.orig	2025-05-25 23:46:57 UTC
 +++ chrome/browser/flag_descriptions.cc
 @@ -602,7 +602,7 @@ const char kAutofillEnableAllowlistForBmoCardCategoryB
      "Autofill suggestions on the allowlisted merchant websites.";
@@ -45,7 +45,7 @@
  const char kEnableIwaKeyDistributionComponentName[] =
      "Enable the Iwa Key Distribution component";
  const char kEnableIwaKeyDistributionComponentDescription[] =
-@@ -3430,7 +3430,7 @@ const char kRetainOmniboxOnFocusDescription[] =
+@@ -3435,7 +3435,7 @@ const char kRetainOmniboxOnFocusDescription[] =
      "exhibit a change in behavior.";
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -54,7 +54,7 @@
  const char kRootScrollbarFollowsTheme[] = "Make scrollbar follow theme";
  const char kRootScrollbarFollowsThemeDescription[] =
      "If enabled makes the root scrollbar follow the browser's theme color.";
-@@ -3648,7 +3648,7 @@ const char kDefaultSiteInstanceGroupsDescription[] =
+@@ -3653,7 +3653,7 @@ const char kDefaultSiteInstanceGroupsDescription[] =
      "SiteInstance.";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -63,7 +63,7 @@
  const char kPwaNavigationCapturingName[] = "Desktop PWA Link Capturing";
  const char kPwaNavigationCapturingDescription[] =
      "Enables opening links from Chrome in an installed PWA. Currently under "
-@@ -3863,7 +3863,7 @@ const char kTranslateForceTriggerOnEnglishDescription[
+@@ -3868,7 +3868,7 @@ const char kTranslateForceTriggerOnEnglishDescription[
      "Force the Translate Triggering on English pages experiment to be enabled "
      "with the selected language model active.";
  
@@ -72,7 +72,7 @@
  const char kEnableHistorySyncOptinName[] = "History Sync Opt-in";
  const char kEnableHistorySyncOptinDescription[] =
      "Enables the History Sync Opt-in screen on Desktop platforms. The screen "
-@@ -5451,7 +5451,7 @@ const char kTranslateOpenSettingsDescription[] =
+@@ -5456,7 +5456,7 @@ const char kTranslateOpenSettingsDescription[] =
      "Add an option to the translate bubble menu to open language settings.";
  #endif
  
@@ -81,7 +81,7 @@
  const char kWasmTtsComponentUpdaterEnabledName[] =
      "Enable Wasm TTS Extension Component";
  const char kWasmTtsComponentUpdaterEnabledDescription[] =
-@@ -7459,7 +7459,7 @@ const char kTetheringExperimentalFunctionalityDescript
+@@ -7464,7 +7464,7 @@ const char kTetheringExperimentalFunctionalityDescript
  
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -90,7 +90,7 @@
  const char kGetAllScreensMediaName[] = "GetAllScreensMedia API";
  const char kGetAllScreensMediaDescription[] =
      "When enabled, the getAllScreensMedia API for capturing multiple screens "
-@@ -7688,7 +7688,7 @@ const char kEnableArmHwdrmDescription[] = "Enable HW b
+@@ -7693,7 +7693,7 @@ const char kEnableArmHwdrmDescription[] = "Enable HW b
  
  // Linux -----------------------------------------------------------------------
  
@@ -99,7 +99,7 @@
  const char kOzonePlatformHintChoiceDefault[] = "Default";
  const char kOzonePlatformHintChoiceAuto[] = "Auto";
  const char kOzonePlatformHintChoiceX11[] = "X11";
-@@ -7738,6 +7738,18 @@ const char kWaylandUiScalingDescription[] =
+@@ -7743,6 +7743,18 @@ const char kWaylandUiScalingDescription[] =
      "Enable experimental support for text scaling in the Wayland backend "
      "backed by full UI scaling. Requires #wayland-per-window-scaling to be "
      "enabled too.";
@@ -118,7 +118,7 @@
  #endif  // BUILDFLAG(IS_LINUX)
  
  // Random platform combinations -----------------------------------------------
-@@ -7750,7 +7762,7 @@ const char kZeroCopyVideoCaptureDescription[] =
+@@ -7755,7 +7767,7 @@ const char kZeroCopyVideoCaptureDescription[] =
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -127,7 +127,7 @@
  const char kFollowingFeedSidepanelName[] = "Following feed in the sidepanel";
  const char kFollowingFeedSidepanelDescription[] =
      "Enables the following feed in the sidepanel.";
-@@ -7793,7 +7805,7 @@ const char kGroupPromoPrototypeDescription[] =
+@@ -7798,7 +7810,7 @@ const char kGroupPromoPrototypeDescription[] =
  const char kGroupPromoPrototypeDescription[] =
      "Enables prototype for group promo.";
  
@@ -136,7 +136,7 @@
  const char kEnableNetworkServiceSandboxName[] =
      "Enable the network service sandbox.";
  const char kEnableNetworkServiceSandboxDescription[] =
-@@ -7825,7 +7837,7 @@ const char kWebBluetoothConfirmPairingSupportDescripti
+@@ -7830,7 +7842,7 @@ const char kWebBluetoothConfirmPairingSupportDescripti
      "Bluetooth";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
  
@@ -145,7 +145,7 @@
  #if BUILDFLAG(ENABLE_PRINTING)
  const char kCupsIppPrintingBackendName[] = "CUPS IPP Printing Backend";
  const char kCupsIppPrintingBackendDescription[] =
-@@ -7967,7 +7979,7 @@ const char kElementCaptureDescription[] =
+@@ -7972,7 +7984,7 @@ const char kElementCaptureDescription[] =
      "media track into a track capturing just a specific DOM element.";
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -154,7 +154,7 @@
  const char kUIDebugToolsName[] = "Debugging tools for UI";
  const char kUIDebugToolsDescription[] =
      "Enables additional keyboard shortcuts to help debugging.";
-@@ -8018,7 +8030,7 @@ const char kComposeUpfrontInputModesDescription[] =
+@@ -8023,7 +8035,7 @@ const char kComposeUpfrontInputModesDescription[] =
      "Enables upfront input modes in the Compose dialog";
  #endif  // BUILDFLAG(ENABLE_COMPOSE)
  
@@ -163,7 +163,7 @@
  const char kThirdPartyProfileManagementName[] =
      "Third party profile management";
  const char kThirdPartyProfileManagementDescription[] =
-@@ -8154,7 +8166,7 @@ const char kSupervisedUserBlockInterstitialV3Descripti
+@@ -8159,7 +8171,7 @@ const char kSupervisedUserBlockInterstitialV3Descripti
  const char kSupervisedUserBlockInterstitialV3Description[] =
      "Enables URL filter interstitial V3 for Family Link users.";
  
