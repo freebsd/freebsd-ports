@@ -1,7 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.16
-PORTREVISION=	1
+DISTVERSION=	0.2.17
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
@@ -414,19 +413,19 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		wasm-bindgen-shared-0.2.100 \
 		wasm-bindgen-test-0.3.50 \
 		wasm-bindgen-test-macro-0.3.50 \
-		wayland-backend-0.3.8 \
-		wayland-client-0.31.8 \
+		wayland-backend-0.3.10 \
+		wayland-client-0.31.10 \
 		wayland-csd-frame-0.3.0 \
 		wayland-cursor-0.31.8 \
-		wayland-protocols-0.32.6 \
-		wayland-protocols-plasma-0.3.6 \
+		wayland-protocols-0.32.8 \
+		wayland-protocols-plasma-0.3.8 \
 		wayland-protocols-wlr-0.3.6 \
 		wayland-scanner-0.31.6 \
 		wayland-sys-0.31.6 \
 		web-sys-0.3.77 \
 		web-time-1.1.0 \
 		weezl-0.1.8 \
-		wgpu-25.0.0 \
+		wgpu-25.0.2 \
 		wgpu-core-25.0.1 \
 		wgpu-core-deps-apple-25.0.0 \
 		wgpu-core-deps-emscripten-25.0.0 \
