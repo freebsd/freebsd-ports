@@ -9,6 +9,9 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GObject collection library
 WWW=		https://live.gnome.org/Libgee
 
+DEPRECATED=     Legacy verision, unsupported upstream
+EXPIRATION_DATE=2025-07-31
+
 USES=		cpe gmake gnome libtool pathfix pkgconfig tar:xz
 CPE_VENDOR=	gnome
 USE_GNOME=	glib20 introspection:build
