@@ -11,6 +11,9 @@ WWW=		https://github.com/NuxiNL/arpc
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=2025-07-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyPEG2>=2.15.2:textproc/py-pyPEG2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toposort>=1.5:devel/py-toposort@${PY_FLAVOR}
 LIB_DEPENDS=	libargdata.so:devel/argdata
