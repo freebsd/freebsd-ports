@@ -118,7 +118,6 @@ _linux_rl9_libpsl=			linux-rl9-libpsl>0:dns/linux-rl9-libpsl
 _linux_${linux_ARGS}_librsvg2=		linux-${linux_ARGS}-librsvg2>0:graphics/linux-${linux_ARGS}-librsvg2
 _linux_rl9_libsecret=			linux-rl9-libsecret>0:security/linux-rl9-libsecret
 _linux_${linux_ARGS}_libsigc++20=	linux-${linux_ARGS}-libsigc++20>0:devel/linux-${linux_ARGS}-libsigc++20
-_linux_rl9_libsoup=			linux-rl9-libsoup>0:devel/linux-rl9-libsoup
 _linux_${linux_ARGS}_libsndfile=	linux-${linux_ARGS}-libsndfile>0:audio/linux-${linux_ARGS}-libsndfile
 _linux_rl9_libssh=			linux-rl9-libssh>0:security/linux-rl9-libssh
 _linux_c7_libssh2=			linux-c7-libssh2>0:security/linux-c7-libssh2

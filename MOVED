@@ -4493,3 +4493,4 @@ security/py-oauth2client||2025-06-02|Has expired: Deprecated by upstream. Use se
 math/py-grandalf||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
 multimedia/py-ffmpeg-python||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
 science/py-DendroPy||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
+devel/linux-rl9-libsoup|devel/linux_base-rl9|2025-06-04|Merged into devel/linux_base-rl9
