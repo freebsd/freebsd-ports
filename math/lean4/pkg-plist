@@ -5281,6 +5281,7 @@ share/lean/lean.mk
 %%DATADIR%%/src/lean/lake/tests/precompileLink/FooDep.lean
 %%DATADIR%%/src/lean/lake/tests/precompileLink/FooDepDep.lean
 %%DATADIR%%/src/lean/lake/tests/precompileLink/Indirect.lean
+%%DATADIR%%/src/lean/lake/tests/precompileLink/LakeTest.lean
 %%DATADIR%%/src/lean/lake/tests/precompileLink/lakefile.lean
 %%DATADIR%%/src/lean/lake/tests/precompileLink/orderTest.lean
 %%DATADIR%%/src/lean/lake/tests/query/exe.lean
