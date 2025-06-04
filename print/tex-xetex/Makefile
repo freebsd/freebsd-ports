@@ -1,5 +1,6 @@
 PORTNAME=	xetex
 DISTVERSION=	${TEXLIVE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMEPREFIX=	tex-
@@ -30,9 +31,7 @@ USE_TEX=	kpathsea web2c formats fmtutil dvipdfmx
 USE_XORG=	pixman
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=CC="${CC}" \
-		CXX="${CXX}" \
-		${EXCLUDE_ENGINES:S/^/--disable-/} \
+CONFIGURE_ARGS+=${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--enable-xetex \
 		--with-system-freetype2 \
 		--with-freetype2-includes=${LOCALBASE}/include/freetype2 \
@@ -46,13 +45,13 @@ CONFIGURE_ARGS+=CC="${CC}" \
 		--with-teckit-libdir=${LOCALBASE}/lib \
 		--with-system-zziplib \
 		--with-system-zlib
+CONFIGURE_ENV+=	${MAKE_ENV}
 .for L in cairo gmp kpathsea libpng mpfr pixman ptexenc icu
 CONFIGURE_ARGS+=--with-system-$L \
 		--with-$L-include=${LOCALBASE}/include \
 		--with-$L-libdir=${LOCALBASE}/lib
 .endfor
 
-PIE_UNSAFE=		yes
 MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include/harfbuzz
