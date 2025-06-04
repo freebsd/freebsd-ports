@@ -26,6 +26,7 @@ share/man/man1/samtools-ampliconstats.1.gz
 share/man/man1/samtools-bedcov.1.gz
 share/man/man1/samtools-calmd.1.gz
 share/man/man1/samtools-cat.1.gz
+share/man/man1/samtools-checksum.1.gz
 share/man/man1/samtools-collate.1.gz
 share/man/man1/samtools-consensus.1.gz
 share/man/man1/samtools-coverage.1.gz
