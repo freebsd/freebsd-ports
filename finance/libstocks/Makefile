@@ -8,6 +8,9 @@ MAINTAINER=	ports@virtual-estates.net
 COMMENT=	C library which can be used to fetch stocks quotes
 WWW=		https://libstocks.sourceforge.net/
 
+DEPRECATED=	Abandoned upstream, last release in 2000
+EXPIRATION_DATE=2025-07-31
+
 USE_LDCONFIG=	yes
 REINPLACE_ARGS=	-i ""
 MAKE_ENV=	WITHOUT_PROFILE=yes SRCCONF=/dev/null
