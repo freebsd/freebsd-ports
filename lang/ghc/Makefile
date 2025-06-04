@@ -106,7 +106,6 @@ BUILD_MK=		DYNAMIC_GHC_PROGRAMS=${ENABLE_DYNAMIC} \
 			EXTRA_HSC2HS_OPTS+="-I${LOCALBASE}/include --lflag=-L${LOCALBASE}/lib" \
 			EXTRA_LD_OPTS+="-L${LOCALBASE}/lib" \
 			libraries/terminfo_CONFIGURE_OPTS+="--configure-option=--with-curses-libraries=${NCURSESLIB}" \
-			${SLAVE_BUILD_MK} \
 			V=0
 
 .include <bsd.port.pre.mk>
