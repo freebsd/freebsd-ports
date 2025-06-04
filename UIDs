@@ -328,7 +328,7 @@ walletd:*:378:378::0:0:walletd Daemon:/nonexistent:/usr/sbin/nologin
 renterd:*:379:379::0:0:renterd Daemon:/nonexistent:/usr/sbin/nologin
 spoofdpi:*:380:380::0:0:SpoofDPI Daemon:/nonexistent:/usr/sbin/nologin
 hydroxide:*:381:381::0:0:Hydroxide Daemon:/var/db/hydroxide:/usr/sbin/nologin
-# free: 382
+_tlsrpt:*:382:382::0:0:TLSRPT Daemon:/nonexistent:/usr/sbin/nologin
 # free: 383
 # free: 384
 # free: 385

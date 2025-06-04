@@ -545,6 +545,7 @@
     SUBDIR += py-pyzmail
     SUBDIR += py-rfc6555
     SUBDIR += py-spf-engine
+    SUBDIR += py-tlsrpt-reporter
     SUBDIR += py-validate_email
     SUBDIR += pymsgauth
     SUBDIR += pyzor

@@ -1,0 +1,32 @@
+[tlsrpt_collectd]
+pidfilename = %%RUNDIR%%/tlsrpt-collectd.pid
+storage = sqlite://%%DBDIR%%/tlsrpt-collectd.sqlite
+socketname = %%RUNDIR%%/tlsrpt-collectd.socket
+logfilename = %%LOGDIR%%/tlsrpt-collectd.log
+#daily_rollover_script = /usr/local/bin/example-script.sh
+dump_path_for_invalid_datagram = /tmp/debug-payload
+log_level = debug
+
+[tlsrpt_fetcher]
+storage = sqlite://%%DBDIR%%/tlsrpt-collectd.sqlite
+logfilename = %%LOGDIR%%/tlsrpt-fetcher.log
+log_level = debug
+
+[tlsrpt_reportd]
+organization_name = EXAMPLE.inc
+contact_info = smtp-tls-reporting@example.com
+sender_address = noreply@example.com
+pidfilename = %%RUNDIR%%/tlsrpt-reportd.pid
+dbname = %%DBDIR%%/tlsrpt-reportd.sqlite
+logfilename = %%LOGDIR%%/tlsrpt-reportd.log
+log_level = debug
+http_script = curl --silent --header 'Content-Type: application/tlsrpt+gzip' --data-binary @-
+fetchers = tlsrpt_fetcher.py --config_file %%CFGFILE%%
+interval_main_loop = 10
+max_retries_domainlist = 2
+min_wait_domainlist = 0
+max_wait_domainlist = 1
+max_retries_domaindetails = 2
+min_wait_domaindetails = 0
+max_wait_domaindetails = 1
+spread_out_delivery = 14400

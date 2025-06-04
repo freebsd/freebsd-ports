@@ -1,0 +1,76 @@
+#!/bin/sh
+
+# PROVIDE: tlsrpt_collectd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable tlsrpt_collectd:
+#
+# tlsrpt_collectd_enable="YES"
+#
+# Other rc.conf variables:
+#
+# tlsrpt_collectd_conffile="%%CFGFILE%%"
+#                            -- path to config file
+# tlsrpt_collectd_user="%%USER%%"
+#                            -- user to run tlsrpt_collectd as
+# tlsrpt_collectd_group="%%GROUP%%"
+#                            -- group to run tlsrpt_collectd as
+# tlsrpt_collectd_dbdir="%%DBDIR%%"
+#                            -- location of directory containing
+#                               working database.  Must match
+#                               setting in %%CFGFILE%%
+# tlsrpt_collectd_logdir="%%LOGDIR%%"
+#                            -- location of tlsrpt_collectd logfile
+# tlsrpt_collectd_flags=""
+#                            -- additional flags for tlsrpt_collectd
+
+. /etc/rc.subr
+
+name="tlsrpt_collectd"
+rcvar=tlsrpt_collectd_enable
+
+load_rc_config $name
+
+: ${tlsrpt_collectd_enable:="NO"}
+: ${tlsrpt_collectd_conffile="%%CFGFILE%%"}
+: ${tlsrpt_collectd_user="%%USER%%"}
+: ${tlsrpt_collectd_group="%%GROUP%%"}
+: ${tlsrpt_collectd_dbdir="%%DBDIR%%"}
+: ${tlsrpt_collectd_logdir="%%LOGDIR%%"}
+: ${tlsrpt_collectd_flags=""}
+
+start_precmd=${name}_startprecmd
+start_cmd=${name}_start
+
+command=%%PYTHON_CMD%%
+pidfile=%%RUNDIR%%/tlsrpt-collectd.pid
+
+tlsrpt_collectd_startprecmd()
+{
+    local piddir=$(dirname ${pidfile})
+
+    for d in ${piddir} ${tlsrpt_collectd_dbdir} ${tlsrpt_collectd_logdir}; do
+	mkdir -m 0755 -p ${d}
+	chown -R ${tlsrpt_collectd_user}:${tlsrpt_collectd_group} ${d}
+    done
+}
+
+tlsrpt_collectd_start()
+{
+    case "${tlsrpt_collectd_flags}" in
+	*--config_file\ *)
+	    echo "Warning: \$tlsrpt_collectd_flags includes --config_file" \
+		 "option. Please use \$tlsrpt_collectd_conffile instead."
+	    ;;
+	*)
+	    options="--config_file ${tlsrpt_collectd_conffile} ${tlsrpt_collectd_flags}"
+	    ;;
+    esac
+
+    /usr/sbin/daemon -c -f -u ${tlsrpt_collectd_user} \
+		     tlsrpt-collectd ${options}
+}
+
+run_rc_command "$1"

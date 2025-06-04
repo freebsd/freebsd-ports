@@ -1,0 +1,6 @@
+tlsrpt-reporter is a TLSRPT reporting service for SMTP TLS Reporting
+as defined in RFC 8460. It receives TLSRPT datagrams from a MTA,
+collects them, creates a report in conformance with the TLSRPT
+Reporting Schema and finally delivers the report either via SMTP,
+indirectly by submitting it to a local MTA which ultimately will be
+responsible for delivering the report, or directly via HTTP POST.
