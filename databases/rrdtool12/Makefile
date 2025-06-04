@@ -13,6 +13,10 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libart_lgpl_2.so:graphics/libart_lgpl \
 		libpng.so:graphics/png
 
+BROKEN=		Unfetchable
+DEPRECATED=	Legacy version that's unsupported upstream and unfetchable
+EXPIRATION_DATE=2025-07-31
+
 CONFLICTS_INSTALL=	rrdtool # include/rrd.h
 
 USE_LDCONFIG=	yes
