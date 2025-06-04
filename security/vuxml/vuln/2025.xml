@@ -1,3 +1,32 @@
+  <vuln vid="8c94ae2a-06f5-4383-9a7f-1211cb0dd476">
+    <topic>electron35 -- Out of bounds read and write in V8</topic>
+    <affects>
+      <package>
+	<name>electron35</name>
+	<range><lt>35.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v35.5.1">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2025-5419.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5419</cvename>
+      <url>https://github.com/advisories/GHSA-x828-wp24-7h9m</url>
+    </references>
+    <dates>
+      <discovery>2025-06-04</discovery>
+      <entry>2025-06-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0d6094a2-4095-11f0-8c92-00d861a0e66d">
     <topic>Post-Auth Remote Code Execution found in Roundcube Webmail</topic>
     <affects>
