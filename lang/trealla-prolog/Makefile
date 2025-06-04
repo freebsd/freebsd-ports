@@ -1,6 +1,6 @@
 PORTNAME=	trealla-prolog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.68.20
+DISTVERSION=	2.90.9
 CATEGORIES=	lang
 
 MAINTAINER=	siva@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gmake
 
 BUILD_DEPENDS=	xxd:sysutils/xxd
+TEST_DEPENDS=	bash:shells/bash
 
 PLIST_FILES=	bin/tpl
 
