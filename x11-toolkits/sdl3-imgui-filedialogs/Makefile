@@ -21,7 +21,7 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 USES=		cmake gl gnome pkgconfig sdl xorg
 USE_GL=		gbm egl
 USE_GNOME=	glib20 gtk30
-USE_SDL=	
+USE_SDL=	sdl3
 USE_XORG=	x11 xau xcb xcursor xdmcp xext xfixes xi xrandr xrender xscrnsaver
 
 USE_GITHUB=	yes
