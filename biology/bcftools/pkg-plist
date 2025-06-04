@@ -45,4 +45,6 @@ libexec/bcftools/trio-stats.so
 libexec/bcftools/trio-switch-rate.so
 libexec/bcftools/variant-distance.so
 libexec/bcftools/variantkey-hex.so
+libexec/bcftools/vcf2table.so
+libexec/bcftools/vrfs.so
 share/man/man1/bcftools.1.gz
