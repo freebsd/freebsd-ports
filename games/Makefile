@@ -376,7 +376,6 @@
     SUBDIR += gzdoom
     SUBDIR += hangman
     SUBDIR += hedgewars
-    SUBDIR += hedgewars-server
     SUBDIR += help_hannahs_horse
     SUBDIR += heretic
     SUBDIR += heroes
