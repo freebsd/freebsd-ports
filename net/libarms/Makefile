@@ -12,6 +12,9 @@ WWW=		https://dev.smf.jp/libarms/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Obsolete version and not updated in a decade
+EXPIRATION_DATE=2025-07-31
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		gmake libtool localbase ssl
