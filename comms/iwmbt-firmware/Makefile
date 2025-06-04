@@ -1,5 +1,5 @@
 PORTNAME=	iwmbt-firmware
-DISTVERSION=	20230625
+DISTVERSION=	20250410
 DEB_REVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	DEBIAN/pool/non-free-firmware/f/firmware-nonfree/:main \
