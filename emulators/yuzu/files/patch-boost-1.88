@@ -1,0 +1,24 @@
+src/core/debugger/debugger.cpp:9:10: fatal error: 'boost/process/async_pipe.hpp' file not found
+    9 | #include <boost/process/async_pipe.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- src/core/debugger/debugger.cpp.orig	2024-03-01 07:57:00 UTC
++++ src/core/debugger/debugger.cpp
+@@ -6,7 +6,7 @@
+ #include <thread>
+ 
+ #include <boost/asio.hpp>
+-#include <boost/process/async_pipe.hpp>
++#include <boost/process/v1/async_pipe.hpp>
+ 
+ #include "common/logging/log.h"
+ #include "common/polyfill_thread.h"
+@@ -326,7 +326,7 @@ class DebuggerImpl : public DebuggerBackend { (private
+ 
+     struct ConnectionState {
+         boost::asio::ip::tcp::socket client_socket;
+-        boost::process::async_pipe signal_pipe;
++        boost::process::v1::async_pipe signal_pipe;
+ 
+         SignalInfo info;
+         Kernel::KScopedAutoObject<Kernel::KThread> active_thread;
