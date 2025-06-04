@@ -11,6 +11,9 @@ WWW=		https://github.com/NuxiNL/flower
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=2025-07-31
+
 LIB_DEPENDS=	libarpc.so:devel/arpc \
 		libjsoncpp.so:devel/jsoncpp
 
