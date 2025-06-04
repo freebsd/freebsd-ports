@@ -5,7 +5,7 @@
  }
  
 +#if LIBXML_VERSION >= 21206
-+static void xmlStructuredErrorFunc(void *userData, const xmlError *error)  RT_NOTHROW_DEF
++static void xmlStructuredErrorFunc(void *userData, const xmlError *error)
 +{
 +    NOREF(userData);
 +    NOREF(error);
