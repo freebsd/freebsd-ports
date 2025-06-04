@@ -1,5 +1,5 @@
 PORTNAME=	Astro-SpaceTrack
-PORTVERSION=	0.168
+PORTVERSION=	0.169
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,9 +17,10 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTTP-Date>=0:www/p5-HTTP-Date \
 		p5-HTTP-Message>=6.03:www/p5-HTTP-Message \
 		p5-JSON>=0:converters/p5-JSON \
+		p5-libwww>=0:www/p5-libwww \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
-		p5-URI>=0:net/p5-URI \
-		p5-libwww>=0:www/p5-libwww
+		p5-URI>=0:net/p5-URI
+TEST_DEPENDS=	p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl
 
 USES=		perl5
 USE_PERL5=	configure
