@@ -1,7 +1,6 @@
 PORTNAME=	minikube
-PORTVERSION=	1.35.0
+PORTVERSION=	1.36.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -12,14 +11,14 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 
-USES=		cpe go:1.23,modules
+USES=		cpe go:1.24,modules
 CPE_VENDOR=	kubernetes
 
 GO_MODULE=	github.com/kubernetes/${PORTNAME}
 
 GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-X k8s.io/minikube/pkg/version.version=v${PORTVERSION} \
-		-X k8s.io/minikube/pkg/version.isoVersion=v1.35.0 \
+		-X k8s.io/minikube/pkg/version.isoVersion=v1.36.0 \
 		-X k8s.io/minikube/pkg/version.storageProvisionerVersion=v5 \
 		-X k8s.io/minikube/pkg/version.isoPath=minikube/iso"
 
