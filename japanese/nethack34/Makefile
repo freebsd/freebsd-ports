@@ -1,23 +1,26 @@
 PORTNAME=	nethack
-PORTVERSION=	3.4.3
-PORTREVISION=	8
+DISTVERSION=	3.4.3
+PORTREVISION=	9
 CATEGORIES=	japanese games
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
+DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//g}-src
 
-PATCH_SITES=	OSDN/jnethack
-PATCHFILES=	jnethack-${PORTVERSION}-0.11.diff.gz
+PATCH_SITES=	https://ftp.iij.ad.jp/pub/osdn.jp/jnethack/58545/ \
+		https://ftp.jaist.ac.jp/pub/sourceforge.jp/jnethack/58545/
+PATCHFILES=	jnethack-${DISTVERSION}-0.11.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	CQG00620@nifty.ne.jp
 COMMENT=	Japanized NetHack
-WWW=		https://sourceforge.jp/projects/jnethack/
+WWW=		https://jnethack.github.io/
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+LICENSE=	nethack
+LICENSE_NAME=	NETHACK GENERAL PUBLIC LICENSE
+LICENSE_FILE=	${WRKSRC}/dat/license
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cpe gmake tar:tgz
+USES=		cpe gmake ncurses tar:tgz
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
-PLIST_SUB=	HACKNAME="${HACKNAME}"
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -30,13 +33,17 @@ DOCSDIR=	${PREFIX}/share/doc/${HACKNAME}
 SUB_FILES=	pkg-deinstall
 SUB_LIST=	HACKDIR=${HACKDIR}
 
-OPTIONS_DEFINE=	DOCS SHELL X11
-OPTIONS_DEFAULT=SHELL X11
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
+PLIST_SUB=	HACKNAME="${HACKNAME}"
+
+OPTIONS_DEFINE=		DOCS SHELL X11
+OPTIONS_DEFAULT=	SHELL X11
 
 SHELL_DESC=	Shell support
 
 X11_USES=	xorg
-X11_USE=	XORG=xaw,xpm
+X11_USE=	XORG=ice,sm,x11,xaw,xext,xmu,xpm,xt
 X11_VARS=	GRAPHICS=X11_GRAPHICS
 
 .include <bsd.port.options.mk>
@@ -49,7 +56,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%HACKNAME%%|${HACKNAME}|g' \
 		-e 's|%%HACKDIR%%|${PREFIX}/${HACKDIR}|g' \
 		${WRKSRC}/include/config.h \
-		${WRKSRC}/sys/unix/Makefile.top \
 		${WRKSRC}/sys/unix/Makefile.doc
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
 		${WRKSRC}/win/Qt/qt_win.cpp
