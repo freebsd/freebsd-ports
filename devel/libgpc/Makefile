@@ -9,6 +9,10 @@ MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Generic Polygon Clipper
 WWW=		http://www.cs.man.ac.uk/~toby/alan/software/
 
+BROKEN=		Unfetchable
+DEPRECATED=	No longer distributed by upstream as of August 2020
+EXPIRATION_DATE=2025-07-31
+
 # Converted from NO_CDROM
 LICENSE=	libgpc
 LICENSE_NAME=	libgpc
