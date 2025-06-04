@@ -1,8 +1,8 @@
 PORTNAME=	rawtherapee
-PORTVERSION=	5.11
-PORTREVISION=	1
+PORTVERSION=	5.12
+PORTREVISION=	0
 CATEGORIES=	graphics
-MASTER_SITES=	https://github.com/Beep6581/RawTherapee/releases/download/${PORTVERSION}/ \
+MASTER_SITES=	https://github.com/RawTherapee/RawTherapee/releases/download/${PORTVERSION}/ \
 		https://rawtherapee.com/shared/source/ \
 		LOCAL/mandree/
 
@@ -113,7 +113,7 @@ OPENMP_LDFLAGS=		-lm -lomp
 # up to twice as fast as clang-16.0 compiled code.
 # So we shall stick to a modern GCC for now.
 #
-USE_GCC=	yes # default
+USE_GCC=	yes  # default
 
 .if (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1500000)
 # don't waste everybody's time with Tier-2 and moving targets.

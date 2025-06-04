@@ -16,6 +16,7 @@ share/icons/hicolor/scalable/apps/rawtherapee.svg
 share/man/man1/rawtherapee.1.gz
 share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/camconst.json
+%%DATADIR%%/cammatrices.json
 %%DATADIR%%/dcpprofiles/CANON EOS 250D.dcp
 %%DATADIR%%/dcpprofiles/CANON EOS 800D.dcp
 %%DATADIR%%/dcpprofiles/CANON EOS M50.dcp
@@ -45,6 +46,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Canon EOS R.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS R5.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS R6.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS R8.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS RP.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS-1D Mark III.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS-1D X Mark III.dcp
@@ -135,6 +137,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Panasonic DC-GX9.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DC-S1.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DC-S5.dcp
+%%DATADIR%%/dcpprofiles/PANASONIC DC-S5M2.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DC-TZ91.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-FZ1000.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-FZ150.dcp
@@ -176,6 +179,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/YI TECHNOLOGY M1.dcp
 %%DATADIR%%/dcpprofiles/camera_model_aliases.json
 %%DATADIR%%/dcpprofiles/samsung SM-G930V.dcp
+%%DATADIR%%/dcraw.json
 %%DATADIR%%/iccprofiles/input/Canon EOS 20D.icc
 %%DATADIR%%/iccprofiles/input/Canon EOS 40D.icc
 %%DATADIR%%/iccprofiles/input/Canon EOS 450D.icc
@@ -581,6 +585,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/languages/Serbian (Cyrilic Characters)
 %%DATADIR%%/languages/Slovenian
 %%DATADIR%%/languages/Swedish
+%%DATADIR%%/languages/Ukrainian
 %%DATADIR%%/languages/default
 %%DATADIR%%/options
 %%DATADIR%%/profiles/Auto-Matched Curve - ISO High.pp3
@@ -601,6 +606,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/profiles/Standard Film Curve - ISO Low.pp3
 %%DATADIR%%/profiles/Standard Film Curve - ISO Medium.pp3
 %%DATADIR%%/profiles/Unclipped.pp3
+%%DATADIR%%/rt.json
 %%DATADIR%%/sounds/BatchComplete.wav
 %%DATADIR%%/sounds/Empty.wav
 %%DATADIR%%/sounds/ProcessComplete.wav
