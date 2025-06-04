@@ -1,3 +1,32 @@
+  <vuln vid="5759c6e2-410a-11f0-a945-b42e991fc52e">
+    <topic>Chrome -- Out of bounds read</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>137.0.7151.68</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>chrome-cve-admin@google.com reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2025/06/stable-channel-update-for-desktop.html">
+	  <p>Out of bounds read and write in V8 in Google Chrome prior
+	  to 137.0.7151.68 allowed a remote attacker to potentially
+	  exploit heap corruption via a crafted HTML page.
+	  (Chromium security severity: High)</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5419</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5419</url>
+    </references>
+    <dates>
+      <discovery>2025-06-03</discovery>
+      <entry>2025-06-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8c94ae2a-06f5-4383-9a7f-1211cb0dd476">
     <topic>electron35 -- Out of bounds read and write in V8</topic>
     <affects>
