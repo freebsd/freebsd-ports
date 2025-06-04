@@ -17,6 +17,9 @@ LICENSE_NAME=	SGI
 LICENSE_FILE=	${WRKSRC}/License
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror auto-accept
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=2025-07-31
+
 RUN_DEPENDS=	${JAVALIBDIR}/java40.jar:devel/netscape-java40
 
 USES=		java
