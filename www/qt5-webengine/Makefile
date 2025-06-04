@@ -19,7 +19,7 @@
 
 PORTNAME=	webengine
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -170,5 +170,11 @@ post-build:
 	@${REINPLACE_CMD} -e '/${QT5_VERSION} $${_Qt5${module}_FIND_VERSION_EXACT}/s|${QT5_VERSION}|'"$$(${MAKE} -C ../../devel/qt5-core -VQT5_VERSION)"'|' \
 		${BUILD_WRKSRC}/lib/cmake/Qt5${module}/Qt5${module}Config.cmake
 .endfor
+
+post-install:
+	for lib in ${STAGEDIR}${PREFIX}/${QT_LIBDIR_REL}/*.so.${_QT_VERSION:C/-.*//} ; \
+	do \
+		${BRANDELF} -t FreeBSD $$lib ; \
+	done
 
 .include <bsd.port.post.mk>
