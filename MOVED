@@ -4495,3 +4495,4 @@ multimedia/py-ffmpeg-python||2025-06-02|Has expired: Depends on expired devel/py
 science/py-DendroPy||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
 devel/linux-rl9-libsoup|devel/linux_base-rl9|2025-06-04|Merged into devel/linux_base-rl9
 games/hedgewars-server||2025-06-04|Depends on expired lang/ghc810, does not build with newer GHCs
+lang/ghc810||2025-06-04|Old version, unsupported upstream
