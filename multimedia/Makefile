@@ -355,6 +355,7 @@
     SUBDIR += subtitlecomposer
     SUBDIR += subtitleoffsetmodifier
     SUBDIR += subtools
+    SUBDIR += supersonic
     SUBDIR += svt-av1
     SUBDIR += svt-av1-psy
     SUBDIR += svt-hevc
