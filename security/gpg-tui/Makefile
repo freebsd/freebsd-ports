@@ -1,6 +1,7 @@
 PORTNAME=	gpg-tui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.1
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
@@ -26,7 +27,6 @@ PLIST_FILES=	bin/gpg-tui \
 		bin/gpg-tui-completions \
 		share/man/man1/gpg-tui.1.gz \
 		share/man/man1/gpg-tui.toml.5.gz
-
 
 post-install:
 		${INSTALL_DATA} ${WRKSRC}/man/gpg-tui.1 ${STAGEDIR}${PREFIX}/share/man/man1/

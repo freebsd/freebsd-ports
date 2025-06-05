@@ -1,6 +1,6 @@
 PORTNAME=	nu_plugin_query
 DISTVERSION=	${NUSHELL_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
 MASTER_SITES=	https://crates.io/api/v1/crates/${PORTNAME}/${DISTVERSION}/download?dummy=/:main
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main

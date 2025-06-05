@@ -1,6 +1,6 @@
 PORTNAME=	wayout
 DISTVERSION=	1.1.3
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~shinyzenith/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES

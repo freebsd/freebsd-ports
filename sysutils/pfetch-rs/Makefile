@@ -1,6 +1,7 @@
 PORTNAME=	pfetch-rs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.11.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yonas.yanfa@gmail.com

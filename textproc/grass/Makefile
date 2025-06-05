@@ -1,5 +1,6 @@
 PORTNAME=	grass
 DISTVERSION=	0.13.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	vishwin@FreeBSD.org
