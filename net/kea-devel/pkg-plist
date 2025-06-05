@@ -883,5 +883,7 @@ share/man/man8/keactrl.8.gz
 share/man/man8/perfdhcp.8.gz
 %%SHELL%%@dir %%PYTHON_SITELIBDIR%%/kea/__pycache__
 %%SHELL%%@dir %%PYTHON_SITELIBDIR%%/kea
-@dir /var/db/kea
-@dir /var/run/kea
+@dir(,,0750) %%ETCDIR%%
+@dir(,,0750) /var/db/kea
+@dir(,,0750) /var/log/kea
+@dir(,,0750) /var/run/kea
