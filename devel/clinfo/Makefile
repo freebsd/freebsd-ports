@@ -1,6 +1,5 @@
 PORTNAME=	clinfo
-PORTVERSION=	3.0.23.01.25
-PORTREVISION=	1
+DISTVERSION=	3.0.25.02.14
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
@@ -10,7 +9,7 @@ WWW=		https://github.com/Oblomov/clinfo
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:devel/opencl
+BUILD_DEPENDS=	${LOCALBASE}/include/CL/cl.h:devel/opencl
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
 
 USE_GITHUB=	yes
