@@ -1,6 +1,7 @@
 bin/kontrast
 share/applications/org.kde.kontrast.desktop
 share/icons/hicolor/scalable/apps/org.kde.kontrast.svg
+share/locale/ar/LC_MESSAGES/kontrast.mo
 share/locale/ast/LC_MESSAGES/kontrast.mo
 share/locale/ca/LC_MESSAGES/kontrast.mo
 share/locale/ca@valencia/LC_MESSAGES/kontrast.mo

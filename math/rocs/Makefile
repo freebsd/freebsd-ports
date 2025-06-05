@@ -1,6 +1,5 @@
 PORTNAME=	rocs
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	math education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

@@ -19,6 +19,7 @@ lib/libKOpeningHours.so.%%SHLIB_VER%%
 %%QT_QMLDIR%%/org/kde/kopeninghours/kopeninghoursqmlplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/kopeninghours/libkopeninghoursqmlplugin.so
 %%QT_QMLDIR%%/org/kde/kopeninghours/qmldir
+share/locale/ar/LC_MESSAGES/kopeninghours.mo
 share/locale/ast/LC_MESSAGES/kopeninghours.mo
 share/locale/ca/LC_MESSAGES/kopeninghours.mo
 share/locale/ca@valencia/LC_MESSAGES/kopeninghours.mo
