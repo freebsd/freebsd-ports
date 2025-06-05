@@ -1,6 +1,5 @@
 PORTNAME=	hipercontracer
-DISTVERSION=	2.0.16
-PORTREVISION=	1
+DISTVERSION=	2.0.17
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://www.nntb.no/~dreibh/hipercontracer/download/
 
@@ -41,7 +40,7 @@ OPTIONS_DEFINE=		COLLECTOR DBEAVERTOOLS DBSHELL ICONS IMPMARIADB \
 OPTIONS_DEFAULT=	COLLECTOR DBEAVERTOOLS DBSHELL ICONS IMPMARIADB \
 			IMPMONGO IMPORTER IMPPGSQL NODE QUERYTOOL RESULTSTOOL \
 			RTUNNEL SYNC TRIGGER UDPECHO VIEWERTOOL
-COLLECTOR_DESC=		Build HiPerConTracer Collector Tools"
+COLLECTOR_DESC=		Build HiPerConTracer Collector Tools
 DBEAVERTOOLS_DESC=	Build DBeaver Tools
 DBSHELL_DESC=		Build DBShell
 ICONS_DESC=		Build Icons and Logo Files
@@ -49,10 +48,10 @@ IMPMARIADB_DESC=	Enable MariaDB/MySQL support for HiPerConTracer Importer Tool
 IMPMONGO_DESC=		Enable MongoDB support for HiPerConTracer Importer Tool
 IMPORTER_DESC=		Build HiPerConTracer Importer Tool
 IMPPGSQL_DESC=		Enable PostgreSQL support for HiPerConTracer Importer Tool
-NODE_DESC=		Build HiPerConTracer Node Tools"
+NODE_DESC=		Build HiPerConTracer Node Tools
 QUERYTOOL_DESC=		Build HiPerConTracer Query Tool
 RESULTSTOOL_DESC=	Build HiPerConTracer Results Tool
-RTUNNEL_DESC=		Build HiPerConTracer Reverse Tunnel Tool"
+RTUNNEL_DESC=		Build HiPerConTracer Reverse Tunnel Tool
 SYNC_DESC=		Build HiPerConTracer Synchronisation Tool
 TRIGGER_DESC=		Build HiPerConTracer Trigger Tool
 UDPECHO_DESC=		Build UDP Echo Server
