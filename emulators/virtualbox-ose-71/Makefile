@@ -1,5 +1,5 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	7.1.8
+DISTVERSION=	7.1.10
 PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
@@ -21,7 +21,6 @@ ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	gtar:archivers/gtar \
 		kmk:devel/kBuild \
-		libIDL-config-2:devel/libIDL \
 		yasm:devel/yasm \
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libpng.so:graphics/png \

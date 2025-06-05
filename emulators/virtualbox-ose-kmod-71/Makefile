@@ -1,5 +1,5 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	7.1.8
+DISTVERSION=	7.1.10
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/
 PKGNAMESUFFIX=	-kmod-71
