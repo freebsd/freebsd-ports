@@ -1,3 +1,129 @@
+  <vuln vid="63268efe-4222-11f0-976e-b42e991fc52e">
+    <topic>Mozilla -- clickjacking vulnerability</topic>
+    <affects>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.11.0</lt></range>
+      </package>
+      <package>
+	<name>firefox</name>
+	<range><lt>139.0,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1954137">
+	  <p>A clickjacking vulnerability could have been used to trick a user
+	into leaking saved payment card details to a malicious page.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5267</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5267</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-06-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="61be5684-4222-11f0-976e-b42e991fc52e">
+    <topic>Mozilla -- XS-leak attack</topic>
+    <affects>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.11.0</lt></range>
+      </package>
+      <package>
+	<name>firefox</name>
+	<range><lt>139.0,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1965628">
+	  <p>Script elements loading cross-origin resources generated load and
+	error events which leaked information enabling XS-Leaks attacks.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5266</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5266</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-06-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5ec0b4e5-4222-11f0-976e-b42e991fc52e">
+    <topic>Mozilla -- local code execution</topic>
+    <affects>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>115.24.0</lt></range>
+      </package>
+      <package>
+	<name>firefox</name>
+	<range><lt>139.0,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1950001">
+	  <p>Due to insufficient escaping of the newline character in the Copy
+	as cURL feature, an attacker could trick a user into using this
+	command, potentially leading to local code execution on the user&apos;s
+	system.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5264</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5264</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-06-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5d1e56dc-4222-11f0-976e-b42e991fc52e">
+    <topic>Mozilla -- cross-origin leak attack</topic>
+    <affects>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>115.24.0</lt></range>
+      </package>
+      <package>
+	<name>firefox</name>
+	<range><lt>139.0,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1960745">
+	  <p>Error handling for script execution was incorrectly isolated from
+	web content, which could have allowed cross-origin leak attacks.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5263</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5263</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-06-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5759c6e2-410a-11f0-a945-b42e991fc52e">
     <topic>Chrome -- Out of bounds read</topic>
     <affects>
