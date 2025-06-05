@@ -32,7 +32,6 @@ bin/auto-ostype
 bin/auto-package-installed
 bin/auto-physmem
 bin/auto-pkg-branch
-bin/auto-pkg-latest
 bin/auto-pkgsrc-branch
 bin/auto-pkgsrc-checkout
 bin/auto-pkgsrc-clean
@@ -136,6 +135,7 @@ sbin/auto-nfs-restart
 sbin/auto-nfs-server-setup
 sbin/auto-passwd-user-expiration
 sbin/auto-password-status
+sbin/auto-pkg-latest
 sbin/auto-ports-checkout
 sbin/auto-ports-setup
 sbin/auto-ports-wip-checkout
