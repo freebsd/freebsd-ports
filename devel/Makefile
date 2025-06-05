@@ -6373,6 +6373,7 @@
     SUBDIR += recycle
     SUBDIR += redasm
     SUBDIR += redo
+    SUBDIR += reflection-cpp
     SUBDIR += regexx
     SUBDIR += regexxer
     SUBDIR += remake

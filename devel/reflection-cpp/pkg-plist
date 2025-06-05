@@ -1,0 +1,4 @@
+include/reflection-cpp/reflection.hpp
+lib/cmake/reflection-cpp/reflection-cpp-config-version.cmake
+lib/cmake/reflection-cpp/reflection-cpp-config.cmake
+lib/cmake/reflection-cpp/reflection-cpp-targets.cmake
