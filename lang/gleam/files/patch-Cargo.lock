@@ -1,0 +1,15 @@
+--- Cargo.lock.orig	2025-06-04 06:31:10 UTC
++++ Cargo.lock
+@@ -2969,12 +2969,6 @@ dependencies = [
+ ]
+ 
+ [[package]]
+-name = "static_vcruntime"
+-version = "2.0.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "954e3e877803def9dc46075bf4060147c55cd70db97873077232eae0269dc89b"
+-
+-[[package]]
+ name = "strsim"
+ version = "0.11.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
