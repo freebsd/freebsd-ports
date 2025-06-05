@@ -1,0 +1,14 @@
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cell.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cellarray.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cellreference.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/curve.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flexpath.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/functions.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gdslibrary.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gdswriter.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/labels_rotated.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/maketestgds.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polygonset.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/robustpath.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.gds
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutils.py

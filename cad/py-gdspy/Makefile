@@ -1,13 +1,12 @@
 PORTNAME=	gdspy
-PORTVERSION=	1.6.11
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.6.13
 CATEGORIES=	cad python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Python module for creating GDSII stream files
-WWW=		https://github.com/heitzmann/gdspy
+WWW=		https://github.com/heitzmann/gdspy/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,30 +15,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
 TEST_DEPENDS=	pytest:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	heitzmann
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	EXAMPLES
-EXAMPLES_PLIST_FILES=	\
-	${EXAMPLESDIR}/cell.py \
-	${EXAMPLESDIR}/cellarray.py \
-	${EXAMPLESDIR}/cellreference.py \
-	${EXAMPLESDIR}/curve.py \
-	${EXAMPLESDIR}/flexpath.py \
-	${EXAMPLESDIR}/functions.py \
-	${EXAMPLESDIR}/gdslibrary.py \
-	${EXAMPLESDIR}/gdswriter.py \
-	${EXAMPLESDIR}/polygonset.py \
-	${EXAMPLESDIR}/robustpath.py \
-	${EXAMPLESDIR}/test.gds \
-	${EXAMPLESDIR}/tutils.py \
-	${EXAMPLESDIR}/maketestgds.py
-
-do-test:
-	cd ${WRKSRC} && \
-	    ${SETENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} \
-	    ${LOCALBASE}/bin/pytest
 
 post-install:
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME} && \
@@ -53,5 +33,10 @@ post-install-EXAMPLES-on:
 	cd ${WRKSRC}/tools && \
 	    ${MKDIR} ${STAGEDIR}${EXAMPLESDIR} && \
 	    ${INSTALL_SCRIPT} maketestgds.py ${STAGEDIR}${EXAMPLESDIR}
+
+do-test:
+	cd ${WRKSRC} && \
+	    ${SETENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} \
+	    ${LOCALBASE}/bin/pytest
 
 .include <bsd.port.mk>
