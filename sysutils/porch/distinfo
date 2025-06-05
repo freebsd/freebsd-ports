@@ -1,3 +1,5 @@
-TIMESTAMP = 1738553236
-SHA256 (porch-1.1.tar.gz) = c6a3525b6b060c03d0f051ef08511e2fe6247b74e42f9f3a53cfd62d70be6a56
-SIZE (porch-1.1.tar.gz) = 53979
+TIMESTAMP = 1749093985
+SHA256 (porch-1.2.tar.gz) = 26c485af12c47f5597d4ab516cdae6185a7f8ebed96673bc073e5e4791ddaafa
+SIZE (porch-1.2.tar.gz) = 66325
+SHA256 (f0dbbc88f53bef4.patch) = 9288a834dbe1bbb65d44a4395bf7c79eb7df53cee9a54267889b1ba150e75f59
+SIZE (f0dbbc88f53bef4.patch) = 672

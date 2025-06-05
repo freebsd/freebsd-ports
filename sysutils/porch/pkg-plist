@@ -13,6 +13,7 @@ bin/rporch
 %%LUA_MODSHAREDIR%%/porch/scripter.lua
 %%EXAMPLES%%%%EXAMPLESDIR%%/cat.orch
 %%EXAMPLES%%%%EXAMPLESDIR%%/cat-multi.orch
+%%EXAMPLES%%%%EXAMPLESDIR%%/mailx.orch
 %%EXAMPLES%%%%EXAMPLESDIR%%/nc.orch
 %%MANPAGES%%share/man/man1/porch.1.gz
 %%MANPAGES%%share/man/man1/porchgen.1.gz

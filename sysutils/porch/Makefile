@@ -1,10 +1,12 @@
 PORTNAME=	porch
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.kevans.dev/kevans/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES=	https://git.kevans.dev/kevans/porch/commit/
+# share: examples: actually install the mailx(1) example
+PATCHFILES+=	f0dbbc88f53bef4.patch
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Program orchestration tool scripted with lua
