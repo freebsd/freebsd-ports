@@ -40,4 +40,4 @@ lib/cmake/nng/nng-targets.cmake
 lib/cmake/nng/nng-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/libnng.so
 lib/libnng.so.%%PORTMAJ%%
-lib/libnng.so.1.10.0
+lib/libnng.so.%%PORTVERSION%%.0
