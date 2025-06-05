@@ -1,0 +1,3 @@
+The goal of this library is to bring painless unicode support to C++
+with simple and easy to understand APIs. The API naming conventions
+are chosen to look familiar to those using the C++ standard libary.

@@ -1488,6 +1488,7 @@
     SUBDIR += libuiohook
     SUBDIR += libukcprog
     SUBDIR += libunicode
+    SUBDIR += libunicode-contour
     SUBDIR += libuninum
     SUBDIR += libunistring
     SUBDIR += libunit
