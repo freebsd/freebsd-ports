@@ -1,5 +1,3 @@
-TIMESTAMP = 1742277144
-SHA256 (ktextaddons-1.5.4.tar.xz) = 64b80602e84b25e9164620af3f6341fa865b85e826ab8f5e02061ae24a277b20
-SIZE (ktextaddons-1.5.4.tar.xz) = 471052
-SHA256 (fdbb082aaa0125d60fdf819c9cb95c40bdb98800.patch) = 4e415c0ed5370f07d5b26f0bcd5296ba37ddfb9d8eae82fc6242f15b1f64e466
-SIZE (fdbb082aaa0125d60fdf819c9cb95c40bdb98800.patch) = 888
+TIMESTAMP = 1749155587
+SHA256 (ktextaddons-1.6.0.tar.xz) = d9846505a52f97bda64ead193032bc29573ec31481f473be3c586f5b8321ecdc
+SIZE (ktextaddons-1.6.0.tar.xz) = 782484
