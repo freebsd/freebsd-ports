@@ -336,6 +336,7 @@
     SUBDIR += boost-python-libs
     SUBDIR += boost_build
     SUBDIR += bossa
+    SUBDIR += boxed-cpp
     SUBDIR += boxfort
     SUBDIR += bpython
     SUBDIR += brz

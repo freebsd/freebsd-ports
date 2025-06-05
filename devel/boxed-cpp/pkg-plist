@@ -1,0 +1,4 @@
+include/boxed-cpp/boxed.hpp
+lib/cmake/boxed-cpp/boxed-cpp-config-version.cmake
+lib/cmake/boxed-cpp/boxed-cpp-config.cmake
+lib/cmake/boxed-cpp/boxed-cpp-targets.cmake
