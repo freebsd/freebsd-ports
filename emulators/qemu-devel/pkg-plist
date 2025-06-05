@@ -58,6 +58,7 @@ share/man/man7/qemu-storage-daemon-qmp-ref.7.gz
 @sample etc/qemu-ifdown.sample
 %%DATADIR%%/QEMU,tcx.bin
 %%DATADIR%%/QEMU,cgthree.bin
+%%DATADIR%%/ast27x0_bootrom.bin
 %%DATADIR%%/bios-256k.bin
 %%DATADIR%%/bios-microvm.bin
 %%DATADIR%%/bios.bin
