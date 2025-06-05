@@ -51,6 +51,7 @@
     SUBDIR += clipman
     SUBDIR += compton-conf
     SUBDIR += conlecterm
+    SUBDIR += contour
     SUBDIR += controllermap
     SUBDIR += cool-retro-term
     SUBDIR += coreterminal
