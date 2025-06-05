@@ -1,5 +1,5 @@
-TIMESTAMP = 1747046090
-SHA256 (go/security_timestamp-authority/timestamp-authority-v1.2.7/v1.2.7.mod) = da0bc96c124c843139cd1cd9230cbd0a574307b8c225cb42a18855ca2b47dd84
-SIZE (go/security_timestamp-authority/timestamp-authority-v1.2.7/v1.2.7.mod) = 7936
-SHA256 (go/security_timestamp-authority/timestamp-authority-v1.2.7/v1.2.7.zip) = e489c5c7fd2c4aceee11db18f2beb3e0e64c149cf60f7a709d7e6bc56930b8c3
-SIZE (go/security_timestamp-authority/timestamp-authority-v1.2.7/v1.2.7.zip) = 195580
+TIMESTAMP = 1749129459
+SHA256 (go/security_timestamp-authority/timestamp-authority-v1.2.8/v1.2.8.mod) = 7d4f9a12c60f4fcf4d7c383fd1a142d27013d333af0ed468934e9e5d4043746b
+SIZE (go/security_timestamp-authority/timestamp-authority-v1.2.8/v1.2.8.mod) = 7937
+SHA256 (go/security_timestamp-authority/timestamp-authority-v1.2.8/v1.2.8.zip) = a38ad43bc263abdbf8775c01642292a016ecb5d79c8bcde69aef154bce412f6d
+SIZE (go/security_timestamp-authority/timestamp-authority-v1.2.8/v1.2.8.zip) = 196365

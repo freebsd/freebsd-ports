@@ -1,7 +1,6 @@
 PORTNAME=	timestamp-authority
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.7
-PORTREVISION=	1
+DISTVERSION=	1.2.8
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://sigstore.dev/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24,modules
+USES=		go:modules
 USE_RC_SUBR=	${PORTNAME}
 
 GO_MODULE=	github.com/sigstore/timestamp-authority
