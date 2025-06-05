@@ -1,8 +1,8 @@
 bin/teddycloud
-%%ETCDIR%%/tonieboxes.custom.json
-%%ETCDIR%%/tonieboxes.json
-%%ETCDIR%%/tonies.custom.json
-%%ETCDIR%%/tonies.json
+@sample %%EXAMPLESDIR%%/tonieboxes.custom.json %%ETCDIR%%/tonieboxes.custom.json
+@sample %%EXAMPLESDIR%%/tonieboxes.json %%ETCDIR%%/tonieboxes.json
+@sample %%EXAMPLESDIR%%/tonies.custom.json %%ETCDIR%%/tonies.custom.json
+@sample %%EXAMPLESDIR%%/tonies.json %%ETCDIR%%/tonies.json
 %%DATADIR%%/data/www/404.html
 %%DATADIR%%/data/www/encode_test.html
 %%DATADIR%%/data/www/favicon.ico
