@@ -3,6 +3,7 @@ bin/kweather
 share/applications/org.kde.kweather.desktop
 share/dbus-1/services/org.kde.kweather.service
 share/icons/hicolor/scalable/apps/org.kde.kweather.svg
+share/locale/ar/LC_MESSAGES/kweather.mo
 share/locale/ast/LC_MESSAGES/kweather.mo
 share/locale/az/LC_MESSAGES/kweather.mo
 share/locale/bg/LC_MESSAGES/kweather.mo

@@ -150,6 +150,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/avfilter_rgbashift.xml
 %%DATADIR%%/effects/avfilter_roberts.xml
 %%DATADIR%%/effects/avfilter_sab.xml
+%%DATADIR%%/effects/avfilter_scharr.xml
 %%DATADIR%%/effects/avfilter_scroll.xml
 %%DATADIR%%/effects/avfilter_selectivecolor.xml
 %%DATADIR%%/effects/avfilter_separatefields.xml
@@ -210,9 +211,11 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/frei0r_baltan.xml
 %%DATADIR%%/effects/frei0r_bezier_curves.xml
 %%DATADIR%%/effects/frei0r_bgsubtract0r.xml
+%%DATADIR%%/effects/frei0r_bigsh0t_eq_cap.xml
 %%DATADIR%%/effects/frei0r_bigsh0t_eq_mask.xml
 %%DATADIR%%/effects/frei0r_bigsh0t_eq_to_rect.xml
 %%DATADIR%%/effects/frei0r_bigsh0t_eq_to_stereo.xml
+%%DATADIR%%/effects/frei0r_bigsh0t_eq_wrap.xml
 %%DATADIR%%/effects/frei0r_bigsh0t_hemi_to_eq.xml
 %%DATADIR%%/effects/frei0r_bigsh0t_rect_to_eq.xml
 %%DATADIR%%/effects/frei0r_bigsh0t_stabilize_360.xml
@@ -241,6 +244,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/frei0r_equaliz0r.xml
 %%DATADIR%%/effects/frei0r_facebl0r.xml
 %%DATADIR%%/effects/frei0r_facedetect.xml
+%%DATADIR%%/effects/frei0r_filmgrain.xml
 %%DATADIR%%/effects/frei0r_flippo.xml
 %%DATADIR%%/effects/frei0r_glitch0r.xml
 %%DATADIR%%/effects/frei0r_glow.xml
@@ -257,6 +261,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/frei0r_mask0mate.xml
 %%DATADIR%%/effects/frei0r_medians.xml
 %%DATADIR%%/effects/frei0r_nervous.xml
+%%DATADIR%%/effects/frei0r_normaliz0r.xml
 %%DATADIR%%/effects/frei0r_nosync0r.xml
 %%DATADIR%%/effects/frei0r_pixeliz0r.xml
 %%DATADIR%%/effects/frei0r_pixs0r.xml
@@ -294,6 +299,8 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/gpstext.xml
 %%DATADIR%%/effects/grain.xml
 %%DATADIR%%/effects/greyscale.xml
+%%DATADIR%%/effects/hsl_primaries.xml
+%%DATADIR%%/effects/hsl_range.xml
 %%DATADIR%%/effects/invert.xml
 %%DATADIR%%/effects/ladspa_declipper.xml
 %%DATADIR%%/effects/ladspa_equalizer.xml

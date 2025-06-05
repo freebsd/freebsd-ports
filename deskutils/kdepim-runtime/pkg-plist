@@ -71,10 +71,10 @@ share/akonadi/agents/vcardresource.desktop
 share/akonadi/davgroupware-providers/citadel.desktop
 share/akonadi/davgroupware-providers/davical.desktop
 share/akonadi/davgroupware-providers/egroupware.desktop
+share/akonadi/davgroupware-providers/fastmail.desktop
 share/akonadi/davgroupware-providers/mailbox-org.desktop
 share/akonadi/davgroupware-providers/nextcloud.desktop
 share/akonadi/davgroupware-providers/opengroupware.desktop
-share/akonadi/davgroupware-providers/owncloud-pre5.desktop
 share/akonadi/davgroupware-providers/owncloud-pre9.desktop
 share/akonadi/davgroupware-providers/owncloud.desktop
 share/akonadi/davgroupware-providers/scalix.desktop
@@ -82,6 +82,7 @@ share/akonadi/davgroupware-providers/sogo.desktop
 share/akonadi/davgroupware-providers/yahoo.desktop
 share/akonadi/davgroupware-providers/zarafa.desktop
 share/akonadi/davgroupware-providers/zimbra.desktop
+share/akonadi/davgroupware-providers/zoho.desktop
 share/akonadi/firstrun/birthdaycalendar
 share/akonadi/firstrun/defaultaddressbook
 share/akonadi/firstrun/defaultcalendar

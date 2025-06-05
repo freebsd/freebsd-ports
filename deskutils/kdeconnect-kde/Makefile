@@ -23,9 +23,9 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gettext-tools \
 USE_GL=		gl opengl # GLX
 USE_KDE=	bookmarks colorscheme completion config configwidgets \
 		coreaddons crash dbusaddons doctools guiaddons i18n iconthemes \
-		itemviews jobwidgets kcmutils kio kirigami-addons kirigami2 \
-		notifications package people qqc2-desktop-style service solid \
-		statusnotifieritem widgetsaddons windowsystem \
+		itemmodels itemviews jobwidgets kcmutils kio kirigami-addons \
+		kirigami2 notifications package people qqc2-desktop-style \
+		service solid statusnotifieritem widgetsaddons windowsystem \
 		ecm:build
 USE_QT=		base connectivity declarative multimedia wayland
 USE_XORG=	ice sm x11 xext xtst

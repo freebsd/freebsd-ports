@@ -44,7 +44,6 @@ lib/libshorturlpluginprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/pim6/kmail/mainview/kmail_akonadidatabasetoolplugin.so
 %%QT_PLUGINDIR%%/pim6/kmail/mainview/kmail_antispamplugin.so
 %%QT_PLUGINDIR%%/pim6/kmail/mainview/kmail_antivirusplugin.so
-%%QT_PLUGINDIR%%/pim6/kmail/mainview/kmail_checkfoldersizeaccount.so
 %%QT_PLUGINDIR%%/pim6/kmail/mainview/kmail_expertplugin.so
 %%QT_PLUGINDIR%%/pim6/kmail/plugincheckbeforesend/kmail_automaticaddcontactseditorplugin.so
 %%QT_PLUGINDIR%%/pim6/kmail/plugincheckbeforesend/kmail_checkbeforesendeditorplugin.so

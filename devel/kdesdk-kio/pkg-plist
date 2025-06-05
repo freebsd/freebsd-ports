@@ -1,5 +1,6 @@
 %%QT_PLUGINDIR%%/kf6/kio/perldoc.so
 share/kio_perldoc/pod2html.pl
+share/locale/ar/LC_MESSAGES/kio6_perldoc.mo
 share/locale/bs/LC_MESSAGES/kio6_perldoc.mo
 share/locale/ca/LC_MESSAGES/kio6_perldoc.mo
 share/locale/ca@valencia/LC_MESSAGES/kio6_perldoc.mo
