@@ -1,8 +1,7 @@
 PORTNAME=	balsa
-PORTVERSION=	2.6.4
-PORTREVISION=	2
+PORTVERSION=	2.6.5
 CATEGORIES=	mail gnome
-MASTER_SITES=	http://pawsa.fedorapeople.org/balsa/
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mail reader for the GNOME desktop
@@ -10,52 +9,45 @@ WWW=		https://pawsa.fedorapeople.org/balsa/
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gnome-keyring:security/gnome-keyring \
-		itstool:textproc/itstool \
-		yelp-tools>=0:textproc/yelp-tools
-LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libesmtp.so:mail/libesmtp \
+LIB_DEPENDS=	libesmtp.so:mail/libesmtp \
 		libgmime-3.0.so:mail/gmime30 \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libical.so:devel/libical \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
 		libgnutls.so:security/gnutls \
 		libfribidi.so:converters/fribidi \
-		libsoup-2.4.so:devel/libsoup  \
 		libgpgme.so:security/gpgme \
 		libcanberra.so:audio/libcanberra \
 		libharfbuzz.so:print/harfbuzz \
-		libsecret-1.so:security/libsecret \
-		libenchant-2.so:textproc/enchant2
+		libsoup-3.0.so:devel/libsoup3 \
+		libgcr-base-3.so:security/gcr3 \
+		libwebkit2gtk-4.1.so:www/webkit2-gtk@41 \
+		libsecret-1.so:security/libsecret
 RUN_DEPENDS=	gnome-keyring:security/gnome-keyring
 
-USES=		cpe desktop-file-utils gettext gmake gnome iconv libtool pathfix perl5 \
-		pkgconfig tar:xz
+USES=		cpe desktop-file-utils gettext-runtime gnome iconv localbase meson \
+		pkgconfig sqlite tar:xz
 CPE_VENDOR=	gnome
-USE_GNOME=	cairo gdkpixbuf gnomeprefix intlhack libxslt gtksourceview4
-USE_XORG=	x11
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--with-canberra \
-				--with-gtksourceview
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+USE_GNOME=	glib20 gtk30 gtksourceview4 libxml2
+MESON_ARGS=	-Dsysconfdir=${LOCALBASE}/etc \
+		-Dautocrypt=true \
+		-Dcanberra=true \
+		-Dhtml-widget=webkit2 \
+		-Dgtksourceview=true \
+		-Dgpe=true \
+		-Dwebdav=true \
+		-Dgcr=true
 
-OPTIONS_DEFINE=	LDAP GTKSPELL GTKSV NOTIFY GPG
-OPTIONS_DEFAULT=LDAP GTKSPELL GTKSV NOTIFY
-OPTIONS_SUB=	yes
-GPG_DESC=	GnuPG support
-GTKSPELL_DESC=	Spell checking support
-GTKSV_DESC=	GtkSourceview support
-GPG_LIB_DEPENDS=	libgpgme.so:security/gpgme
-GPG_CONFIGURE_WITH=	gpgme
-GTKSPELL_LIB_DEPENDS=		libgtkspell3-3.so:textproc/gtkspell3
-GTKSPELL_CONFIGURE_WITH=	gtkspell
-GTKSV_USE=		GNOME=gtksourceview3
-GTKSV_CONFIGURE_WITH=	gtksourceview
-LDAP_USES=		ldap
-LDAP_CONFIGURE_WITH=	ldap
-NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
-NOTIFY_CONFIGURE_WITH=	libnotify
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.gnome.org
+GL_ACCOUNT=	GNOME
+
+OPTIONS_DEFINE=	SPELL
+OPTIONS_DEFAULT=SPELL
+
+SPELL_DESC=	Spell checking support
+SPELL_LIB_DEPENDS=	libgspell-1.so:textproc/gspell
+SPELL_MESON_ON=		-Dspell-checker=gspell
+SPELL_LIB_DEPENDS_OFF=	libenchant-2.so:textproc/enchant2
+SPELL_MESON_OFF=	-Dspell-checker=internal
 
 .include <bsd.port.mk>

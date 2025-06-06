@@ -1,3 +1,3 @@
-TIMESTAMP = 1672764797
-SHA256 (balsa-2.6.4.tar.xz) = befa5984511db33d41f2b1ecbfc99e22a15d45d08efe5d737b5174a1a6ac8fc1
-SIZE (balsa-2.6.4.tar.xz) = 3710272
+TIMESTAMP = 1749210204
+SHA256 (gnome/balsa-2.6.5.tar.bz2) = 89796b18d476a6cc3446c6d3d9acc45e5788d744c8479bd401614b2fc87acdad
+SIZE (gnome/balsa-2.6.5.tar.bz2) = 4602383
