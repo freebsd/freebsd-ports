@@ -1,17 +1,9 @@
-Fix detection of several libraries
+Fix minizip detection
 
-1) Use system zlib instead of embedded zlib-ng
-
-2) Fix minizip detection
-
---- CMakeLists.txt.orig	2024-12-01 23:00:52 UTC
+--- CMakeLists.txt.orig	2025-06-05 08:15:10 UTC
 +++ CMakeLists.txt
-@@ -672,10 +672,10 @@ dolphin_find_optional_system_library_pkgconfig(ZSTD li
- 
- dolphin_find_optional_system_library_pkgconfig(ZSTD libzstd>=1.4.0 zstd::zstd Externals/zstd)
- 
--add_subdirectory(Externals/zlib-ng)
-+dolphin_find_optional_system_library_pkgconfig(ZLIB zlib ZLIB::ZLIB Externals/zlib-ng)
+@@ -692,7 +692,7 @@ dolphin_find_optional_system_library_pkgconfig(MINIZIP
+ dolphin_find_optional_system_library_pkgconfig(ZLIB zlib>=1.3.1 ZLIB::ZLIB Externals/zlib-ng)
  
  dolphin_find_optional_system_library_pkgconfig(MINIZIP
 -  "minizip>=4.0.4" minizip::minizip Externals/minizip-ng
