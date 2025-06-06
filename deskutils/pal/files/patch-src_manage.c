@@ -1,5 +1,5 @@
---- manage.c.orig	2008-07-28 16:16:23.000000000 +0000
-+++ manage.c
+--- src/manage.c.orig	2025-06-06 18:09:24 UTC
++++ src/manage.c
 @@ -403,7 +403,7 @@ void pal_manage(void)
      rl_initialize();     /* Initialise readline so we can fiddle stuff */
      rl_already_prompted = 1;

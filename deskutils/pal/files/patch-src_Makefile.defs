@@ -1,0 +1,29 @@
+--- src/Makefile.defs.orig	2025-06-06 18:04:30 UTC
++++ src/Makefile.defs
+@@ -3,13 +3,13 @@
+ 
+ # directory to install to. Depending on your distribution, you might
+ # want to change this to /usr/local
+-prefix = /usr
+-CC      = gcc
++prefix ?= /usr
++CC      ?= gcc
+ 
+ PAL_VERSION = 0.4.3
+ 
+ # used for portage, rpm, ...
+-DESTDIR =
++DESTDIR ?=
+ 
+ # optimizations/warnings
+ OPT     = -O2 -Wall
+@@ -23,6 +23,6 @@ endif
+ DEFS    += -DG_DISABLE_DEPRECATED -DDEBUG
+ endif
+ 
+-CFLAGS   = ${OPT} 
+-CPPFLAGS = ${INCLDIR} ${DEFS}
+-LDFLAGS  = ${LIBDIR} ${LIBS}
++CFLAGS   ?= ${OPT} 
++CPPFLAGS += ${INCLDIR} ${DEFS}
++LDFLAGS  += ${LIBDIR} ${LIBS}

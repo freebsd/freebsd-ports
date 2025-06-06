@@ -1,5 +1,12 @@
 bin/pal
+bin/vcard2pal
+share/locale/de/LC_MESSAGES/pal.mo
+share/locale/es/LC_MESSAGES/pal.mo
+share/locale/pl/LC_MESSAGES/pal.mo
+share/locale/sv/LC_MESSAGES/pal.mo
+share/locale/tr/LC_MESSAGES/pal.mo
 share/man/man1/pal.1.gz
+share/man/man1/vcard2pal.1.gz
 %%DATADIR%%/australia.pal
 %%DATADIR%%/austria.pal
 %%DATADIR%%/birth-death.pal
@@ -9,6 +16,6 @@ share/man/man1/pal.1.gz
 %%DATADIR%%/lotr.pal
 %%DATADIR%%/music.pal
 %%DATADIR%%/pagan.pal
-%%DATADIR%%/pal.conf
 %%DATADIR%%/us.pal
 %%DATADIR%%/world.pal
+%%EXAMPLESDIR%%/pal.conf

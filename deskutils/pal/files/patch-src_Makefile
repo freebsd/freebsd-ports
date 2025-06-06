@@ -1,0 +1,13 @@
+--- src/Makefile.orig	2025-06-06 18:30:59 UTC
++++ src/Makefile
+@@ -87,8 +87,8 @@ install-share:
+ 	@echo " --- Installing global data --- "
+ 	@mkdir -p ${DESTDIR}${prefix}/share/pal;
+ 	install -m 0644 -o root ../share/*.pal ${DESTDIR}${prefix}/share/pal
+-	@mkdir -p ${DESTDIR}/etc;
+-	install -m 0644 -o root ../pal.conf ${DESTDIR}/etc/
++	@mkdir -p ${DESTDIR}${prefix}/share/examples/pal/
++	install -m 0644 -o root ../pal.conf ${DESTDIR}${prefix}/share/examples/pal/
+ 	@echo
+ 
+ # "install" will install the files needed by pal and also check to see

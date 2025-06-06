@@ -1,34 +1,21 @@
 PORTNAME=	pal
-PORTVERSION=	0.4.3
-PORTREVISION=	4
+DISTVERSION=	0.4.3
+PORTREVISION=	5
 CATEGORIES=	deskutils
-MASTER_SITES=	SF/${PORTNAME}cal/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}cal/${PORTNAME}/${DISTVERSION}
 
-MAINTAINER=	h.skuhra@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calendar application
 WWW=		https://palcal.sourceforge.net/
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gettext gmake gnome ncurses pkgconfig readline tar:tgz
 USE_GNOME=	glib20
+
+MAKE_ARGS=	prefix=${PREFIX}
 ALL_TARGET=
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,prefix = /usr,prefix = ${PREFIX},g;s,^CC,#CC,g" \
-		${WRKSRC}/Makefile.defs
-
-post-build:
-	${REINPLACE_CMD} -e "s,VERSION,${PORTVERSION},g" \
-		${WRKDIR}/${PORTNAME}-${PORTVERSION}/pal.1.template
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pal ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/share/*.pal \
-		${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pal.conf \
-		${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/pal.1.template \
-		${STAGEDIR}${PREFIX}/share/man/man1/pal.1
+BINARY_ALIAS=	make=gmake
 
 .include <bsd.port.mk>
