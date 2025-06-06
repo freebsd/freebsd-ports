@@ -1,0 +1,47 @@
+--- Makefile.orig	2011-03-18 13:41:00 UTC
++++ Makefile
+@@ -2,13 +2,11 @@
+ 
+ #DEBUG	= -g -DDEBUG
+ 
+-CC	= gcc
+-PREFIX	= /usr/local
+-BINDIR	= /usr/local/bin
+-MANDIR	= /usr/local/man/man1
++BINDIR	= $(PREFIX)/bin
++MANDIR	= $(PREFIX)/share/man/man1
+ 
+ DEFINES = -DHAVE_CONFIG_H -DCFG_UNIX_API
+-CFLAGS	= -Wall -O3 ${DEBUG} ${DEFINES}
++CFLAGS	+= -Wall ${DEBUG} ${DEFINES}
+ 
+ 
+ OBJS	= main.o rename.o fixtoken.o
+@@ -18,11 +16,10 @@ $(TARGET) : $(OBJS)
+ all: $(TARGET)
+ 
+ $(TARGET) : $(OBJS)
+-	$(CC) $(CFLAGS) -o $@ $^
+-	cp $@ /usr/local/bin
++	$(CC) $(CFLAGS) -o $@ $(OBJS)
+ 
+ static:	$(OBJS)
+-	$(CC) $(CFLAGS) -static -o $@ $^
++	$(CC) $(CFLAGS) -static -o $@ $(OBJS)
+ 
+ .PHONY: clean clean-all install
+ clean:
+@@ -32,10 +29,10 @@ install:
+ 	rm -f config.status config.cache config.h config.log Makefile
+ 
+ install:
+-	install -o root -g root -m 0755 -s $(TARGET) $(BINDIR)
+-	install -o root -g root -m 0644 $(MANPAGE) $(MANDIR)
++	${BSD_INSTALL_PROGRAM} $(TARGET) $(DESTDIR)$(BINDIR)
++	${BSD_INSTALL_MAN} $(MANPAGE) $(DESTDIR)$(MANDIR)
+ 	
+-%.o : %.c
++.c.o:
+ 	$(CC) $(CFLAGS) -c -o $@ $<
+ 
+ 

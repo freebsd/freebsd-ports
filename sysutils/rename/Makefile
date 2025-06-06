@@ -1,33 +1,18 @@
 PORTNAME=	rename
-PORTVERSION=	1.99.2
+DISTVERSION=	1.99.2
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Rename multiple files using regular expressions
 WWW=		https://rename.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PLIST_FILES=	bin/renamex share/man/man1/renamex.1.gz
+PORTSCOUT=	limit:^1\.
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^CC/s|\([[:blank:]]\)\(=\)|\1?\2| ; \
-		 /^PREFIX/s|\([[:blank:]]\)\(=\)|\1?\2| ; \
-		 s|/usr/local/bin|$$(PREFIX)/bin| ; \
-		 s|/usr/local/man|$$(PREFIX)/share/man| ; \
-		 /^CFLAGS/s|\([[:blank:]]\)\(=\)|\1+\2| ; \
-		 s|-O[0-9]|| ; \
-		 s|$$^$$|$$(OBJS)| ; \
-		 /cp/s|^|#| ; \
-		 s|install .* 0755 -s|$${BSD_INSTALL_PROGRAM}| ; \
-		 s|\([[:blank:]]\)\($$(BINDIR)\)|\1$$(DESTDIR)\2| ; \
-		 s|install .* 0644|$${BSD_INSTALL_MAN}| ; \
-		 s|\([[:blank:]]\)\($$(MANDIR)\)|\1$$(DESTDIR)\2| ; \
-		 s|^%.*|.c.o:|' \
-		${WRKSRC}/Makefile
+PLIST_FILES=	bin/renamex share/man/man1/renamex.1.gz
 
 .include <bsd.port.mk>
