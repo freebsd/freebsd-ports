@@ -1,5 +1,5 @@
 PORTNAME=	cpuid2cpuflags
-PORTVERSION=	15
+PORTVERSION=	16
 CATEGORIES=	sysutils
 MASTER_SITES=	${WWW}/releases/download/v${PORTVERSION}/
 
