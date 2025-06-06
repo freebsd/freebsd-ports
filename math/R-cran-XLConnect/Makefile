@@ -1,5 +1,5 @@
 PORTNAME=	XLConnect
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -25,6 +25,9 @@ TEST_DEPENDS=	R-cran-zoo>0:math/R-cran-zoo	\
 		R-cran-ggplot2>0:graphics/R-cran-ggplot2
 
 USES=		cran java
+
+# See PR 272855
+BROKEN=		a recent default JDK is required for a full apache-poi with bouncycastle
 
 DEP_JARS=	commons-codec commons-collections4 commons-compress commons-io	\
 		commons-lang3 commons-math log4j-api poi poi-ooxml poi-ooxml-full\
