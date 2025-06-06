@@ -11,7 +11,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/cmake/boxed-cpp/boxed-cpp-config.cmake:devel/boxed-cpp \
-		${LOCALBASE}/lib/cmake/Catch2/Catch2Config.cmake:devel/catch2 \
 		${LOCALBASE}/lib/cmake/reflection-cpp/reflection-cpp-config.cmake:devel/reflection-cpp \
 		${LOCALBASE}/share/cmake/Microsoft.GSL/Microsoft.GSLConfig.cmake:devel/microsoft-gsl \
 		${LOCALBASE}/lib/cmake/range-v3/range-v3-config.cmake:devel/range-v3
@@ -21,6 +20,7 @@ LIB_DEPENDS=	libunicode.so:devel/libunicode-contour \
 		libharfbuzz.so:print/harfbuzz \
 		libssh2.so:security/libssh2 \
 		libfontconfig.so:x11-fonts/fontconfig
+TEST_DEPENDS=	${LOCALBASE}/lib/cmake/Catch2/Catch2Config.cmake:devel/catch2
 
 USES=		cmake:testing desktop-file-utils gl pkgconfig qt:6 xorg
 
@@ -31,8 +31,8 @@ USE_XORG=	xcb
 USE_GL=		gl opengl
 USE_QT=		5compat base declarative multimedia tools:build
 
-CMAKE_ON=	CONTOUR_TESTING \
-		CONTOUR_INSTALL_TOOLS
+CMAKE_ON=		CONTOUR_INSTALL_TOOLS
+CMAKE_TESTING_ON=	CONTOUR_TESTING
 
 PORTDOCS=	README.md SECURITY.md TODO.md
 
