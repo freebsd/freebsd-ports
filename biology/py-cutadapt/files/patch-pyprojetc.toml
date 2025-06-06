@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-06-06 12:32:50.569385000 +0200
++++ pyproject.toml	2025-06-06 12:33:10.984604000 +0200
+@@ -9,7 +9,7 @@
+ ]
+ description = "Adapter trimming and other preprocessing of high-throughput sequencing reads"
+ readme = "README.rst"
+-license = "MIT"
++license = {text = "MIT"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Console",
