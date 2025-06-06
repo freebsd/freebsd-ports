@@ -1,0 +1,89 @@
+--- CMakeLists.txt.orig	2025-05-20 19:09:59 UTC
++++ CMakeLists.txt
+@@ -46,13 +46,19 @@ ENDIF()
+     ADD_DEFINITIONS(-D_CRT_SECURE_NO_WARNINGS -DWIN32_LEAN_AND_MEAN)
+ ENDIF()
+ 
+-ADD_LIBRARY(hiredis ${hiredis_sources})
+-ADD_LIBRARY(hiredis::hiredis ALIAS hiredis)
+-set(hiredis_export_name hiredis CACHE STRING "Name of the exported target")
+-set_target_properties(hiredis PROPERTIES EXPORT_NAME ${hiredis_export_name})
++# Static lib
++ADD_LIBRARY(hiredis_static STATIC ${hiredis_sources})
++SET_TARGET_PROPERTIES(hiredis_static PROPERTIES OUTPUT_NAME hiredis)
+ 
+-SET_TARGET_PROPERTIES(hiredis
+-    PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS TRUE
++# Shared lib
++ADD_LIBRARY(hiredis_shared SHARED ${hiredis_sources})
++ADD_LIBRARY(hiredis::hiredis ALIAS hiredis_shared)
++set(hiredis_export_name hiredis_shared CACHE STRING "Name of the exported target")
++SET_TARGET_PROPERTIES(hiredis_shared PROPERTIES EXPORT_NAME ${hiredis_export_name})
++
++SET_TARGET_PROPERTIES(hiredis_shared
++    PROPERTIES OUTPUT_NAME hiredis
++    WINDOWS_EXPORT_ALL_SYMBOLS TRUE
+     VERSION "${HIREDIS_SONAME}")
+ IF(MSVC)
+     SET_TARGET_PROPERTIES(hiredis
+@@ -61,12 +67,12 @@ ELSEIF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+ IF(WIN32)
+     TARGET_LINK_LIBRARIES(hiredis PUBLIC ws2_32 crypt32)
+ ELSEIF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+-    TARGET_LINK_LIBRARIES(hiredis PUBLIC m)
++    TARGET_LINK_LIBRARIES(hiredis_shared PUBLIC m)
+ ELSEIF(CMAKE_SYSTEM_NAME MATCHES "SunOS")
+     TARGET_LINK_LIBRARIES(hiredis PUBLIC socket)
+ ENDIF()
+ 
+-TARGET_INCLUDE_DIRECTORIES(hiredis PUBLIC $<INSTALL_INTERFACE:include> $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
++TARGET_INCLUDE_DIRECTORIES(hiredis_shared PUBLIC $<INSTALL_INTERFACE:include> $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
+ 
+ CONFIGURE_FILE(hiredis.pc.in hiredis.pc @ONLY)
+ 
+@@ -96,7 +102,7 @@ include(CPack)
+ 
+ include(CPack)
+ 
+-INSTALL(TARGETS hiredis
++INSTALL(TARGETS hiredis_static hiredis_shared
+     EXPORT hiredis-targets
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+@@ -159,28 +165,31 @@ IF(ENABLE_SSL)
+     FIND_PACKAGE(OpenSSL REQUIRED)
+     SET(hiredis_ssl_sources
+         ssl.c)
+-    ADD_LIBRARY(hiredis_ssl ${hiredis_ssl_sources})
+-    ADD_LIBRARY(hiredis::hiredis_ssl ALIAS hiredis_ssl)
++      ADD_LIBRARY(hiredis_ssl_static STATIC ${hiredis_ssl_sources})
++    ADD_LIBRARY(hiredis_ssl_shared ${hiredis_ssl_sources})
++    ADD_LIBRARY(hiredis::hiredis_ssl ALIAS hiredis_ssl_shared)
+ 
+     IF (APPLE AND BUILD_SHARED_LIBS)
+         SET_PROPERTY(TARGET hiredis_ssl PROPERTY LINK_FLAGS "-Wl,-undefined -Wl,dynamic_lookup")
+     ENDIF()
+ 
+-    SET_TARGET_PROPERTIES(hiredis_ssl
++    SET_TARGET_PROPERTIES(hiredis_ssl_static PROPERTIES OUTPUT_NAME hiredis_ssl)
++    SET_TARGET_PROPERTIES(hiredis_ssl_shared
+         PROPERTIES
++        OUTPUT_NAME hiredis_ssl
+         WINDOWS_EXPORT_ALL_SYMBOLS TRUE
+         VERSION "${HIREDIS_SONAME}")
+     IF(MSVC)
+         SET_TARGET_PROPERTIES(hiredis_ssl
+             PROPERTIES COMPILE_FLAGS /Z7)
+     ENDIF()
+-    TARGET_LINK_LIBRARIES(hiredis_ssl PRIVATE OpenSSL::SSL)
++    TARGET_LINK_LIBRARIES(hiredis_ssl_shared PRIVATE OpenSSL::SSL)
+     IF(WIN32)
+         TARGET_LINK_LIBRARIES(hiredis_ssl PRIVATE hiredis)
+     ENDIF()
+     CONFIGURE_FILE(hiredis_ssl.pc.in hiredis_ssl.pc @ONLY)
+ 
+-    INSTALL(TARGETS hiredis_ssl
++    INSTALL(TARGETS hiredis_ssl_shared hiredis_ssl_static
+         EXPORT hiredis_ssl-targets
+         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}

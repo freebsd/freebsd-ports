@@ -24,8 +24,10 @@ lib/cmake/hiredis/hiredis-targets.cmake
 lib/cmake/hiredis_ssl/hiredis_ssl-config.cmake
 lib/cmake/hiredis_ssl/hiredis_ssl-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/hiredis_ssl/hiredis_ssl-targets.cmake
+lib/libhiredis.a
 lib/libhiredis.so
 lib/libhiredis.so.1.2.1
+lib/libhiredis_ssl.a
 lib/libhiredis_ssl.so
 lib/libhiredis_ssl.so.1.2.1
 libdata/pkgconfig/hiredis.pc
