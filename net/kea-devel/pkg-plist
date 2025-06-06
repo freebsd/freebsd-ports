@@ -885,5 +885,4 @@ share/man/man8/perfdhcp.8.gz
 %%SHELL%%@dir %%PYTHON_SITELIBDIR%%/kea
 @dir(,,0750) %%ETCDIR%%
 @dir(,,0750) /var/db/kea
-@dir(,,0750) /var/log/kea
 @dir(,,0750) /var/run/kea
