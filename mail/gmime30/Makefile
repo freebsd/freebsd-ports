@@ -1,22 +1,19 @@
 PORTNAME=	gmime
-PORTVERSION=	3.2.7
-PORTREVISION=	2
+DISTVERSION=	3.2.15
 CATEGORIES=	mail
-MASTER_SITES=	GNOME
+MASTER_SITES=	https://github.com/jstedfast/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	30
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Library (written in C) for parsing and creating messages using MIME
-WWW=		https://spruce.sourceforge.net/gmime/
+COMMENT=	Library (C/C++) for parsing and creating messages using MIME
+WWW=		https://github.com/jstedfast/gmime
 
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libgpgme.so:security/gpgme \
-		libassuan.so:security/libassuan \
 		libidn2.so:dns/libidn2 \
 		libgpg-error.so:security/libgpg-error
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}30
 USES=		gettext-runtime gmake gnome iconv libtool localbase pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
