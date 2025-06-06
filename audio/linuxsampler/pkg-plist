@@ -10,7 +10,6 @@ include/linuxsampler/common/Mutex.h
 include/linuxsampler/common/SynchronizedConfig.h
 include/linuxsampler/common/Thread.h
 include/linuxsampler/common/global.h
-include/linuxsampler/common/lsatomic.h
 include/linuxsampler/common/optional.h
 include/linuxsampler/drivers/Device.h
 include/linuxsampler/drivers/DeviceParameter.h
@@ -38,8 +37,8 @@ include/linuxsampler/scriptvm/ScriptVMFactory.h
 include/linuxsampler/scriptvm/common.h
 lib/linuxsampler/liblinuxsampler.a
 lib/linuxsampler/liblinuxsampler.so
-lib/linuxsampler/liblinuxsampler.so.7
-lib/linuxsampler/liblinuxsampler.so.7.0.0
+lib/linuxsampler/liblinuxsampler.so.8
+lib/linuxsampler/liblinuxsampler.so.8.0.0
 lib/linuxsampler/plugins/.keep_me
 lib/lv2/linuxsampler.lv2/linuxsampler.a
 lib/lv2/linuxsampler.lv2/linuxsampler.so

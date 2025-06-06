@@ -1,5 +1,5 @@
 PORTNAME=	linuxsampler
-DISTVERSION=	2.3.1
+DISTVERSION=	2.4.0
 CATEGORIES=	audio
 MASTER_SITES=	https://download.linuxsampler.org/packages/
 
@@ -13,18 +13,26 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet ported to this architecture
 
-BUILD_DEPENDS=	lv2>0:audio/lv2
+BUILD_DEPENDS=	lv2>0:audio/lv2 \
+		p5-XML-Parser>0:textproc/p5-XML-Parser
 LIB_DEPENDS=	libgig.so:audio/libgig \
 		libsndfile.so:audio/libsndfile \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		bison:wrapper compiler:c++14-lang gmake libtool localbase pathfix pkgconfig sqlite:3 tar:bzip2
+USES=		bison compiler:c++14-lang gmake libtool localbase pathfix perl5 \
+		pkgconfig sqlite:3 tar:bzip2 shebangfix
 USE_LDCONFIG=	${PREFIX}/lib/linuxsampler
+USE_PERL5=	build
+
+SHEBANG_FILES=	scripts/generate_lscp_shell_reference.pl \
+		scripts/update_lscp_grammar.pl
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	HAVE_UNIX98=1
 CONFIGURE_ARGS=	--disable-arts-driver
+
+MAKE_JOBS_UNSAFE=	yes # https://bugs.linuxsampler.org/cgi-bin/show_bug.cgi?id=322
 
 INSTALL_TARGET=	install-strip
 
