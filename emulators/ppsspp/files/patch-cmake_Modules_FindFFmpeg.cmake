@@ -7,7 +7,7 @@
 -  if(DEFINED ENV{FFMPEG_DIR})
 -    set(FFMPEG_DIR $ENV{FFMPEG_DIR})
 -  endif()
-+  set(FFMPEG_DIR /usr/local/ffmpeg3)
++  set(FFMPEG_DIR %%LOCALBASE%%/ffmpeg3)
  
    if(FFMPEG_DIR)
      list(APPEND INCLUDE_PATHS
@@ -22,15 +22,15 @@
 -      /usr/include/lib${LIBNAME}
 -      /usr/include/ffmpeg/lib${LIBNAME}
 +    list(SET INCLUDE_PATHS
-+      /usr/local/ffmpeg3/include/ffmpeg
-+      /usr/local/ffmpeg3/include/lib${LIBNAME}
++      %%LOCALBASE%%/ffmpeg3/include/ffmpeg
++      %%LOCALBASE%%/ffmpeg3/include/lib${LIBNAME}
      )
  
 -    list(APPEND LIB_PATHS
 -      /usr/local/lib
 -      /usr/lib
 +    list(SET LIB_PATHS
-+      /usr/local/ffmpeg3/lib
++      %%LOCALBASE%%/ffmpeg3/lib
      )
    endif()
  
