@@ -7,6 +7,9 @@ MAINTAINER=	rand@iteris.com
 COMMENT=	Nagios console monitor
 WWW=		http://www.vanheusden.com/nagcon
 
+DEPRECATED=	Obsolete, only supports legacy versions of Nagios
+EXPIRATION_DATE=2025-07-31
+
 LIB_DEPENDS=	libstrfunc.so:devel/libstrfunc
 
 PLIST_FILES=	bin/nagcon
