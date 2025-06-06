@@ -9,6 +9,9 @@ COMMENT=	Standard math functions missing from the FreeBSD libm
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Old. FreeBSD's libm improved since 2012 when this was imported
+EXPIRATION_DATE=	2025-09-01
+
 LIB_DEPENDS=	libmpc.so:math/mpc
 
 USE_LDCONFIG=	yes
