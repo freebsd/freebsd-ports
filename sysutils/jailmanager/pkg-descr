@@ -1,0 +1,7 @@
+JailManager is a shell script for creating, managing,
+updating, and removing jails. It handles initializing the
+underlying FreeBSD system, creating jails, handling initial
+configuration, updates, and starting/stopping jails.
+
+JailManager runs on FreeBSD 13.x and newer. It does
+not require ZFS and works on any BSD filesystem.
