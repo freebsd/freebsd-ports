@@ -139,8 +139,6 @@ include/evolution-data-server/libebackend/e-cache.h
 include/evolution-data-server/libebackend/e-collection-backend-factory.h
 include/evolution-data-server/libebackend/e-collection-backend.h
 include/evolution-data-server/libebackend/e-data-factory.h
-include/evolution-data-server/libebackend/e-db3-utils.h
-include/evolution-data-server/libebackend/e-dbhash.h
 include/evolution-data-server/libebackend/e-dbus-server.h
 include/evolution-data-server/libebackend/e-file-cache.h
 include/evolution-data-server/libebackend/e-oauth2-support.h
@@ -207,7 +205,6 @@ include/evolution-data-server/libecal/e-reminder-watcher.h
 include/evolution-data-server/libecal/e-timezone-cache.h
 include/evolution-data-server/libecal/libecal.h
 include/evolution-data-server/libedata-book/e-book-backend-cache.h
-include/evolution-data-server/libedata-book/e-book-backend-db-cache.h
 include/evolution-data-server/libedata-book/e-book-backend-factory.h
 include/evolution-data-server/libedata-book/e-book-backend-sexp.h
 include/evolution-data-server/libedata-book/e-book-backend-sqlitedb.h
