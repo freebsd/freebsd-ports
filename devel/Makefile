@@ -2769,6 +2769,7 @@
     SUBDIR += p5-Hash-Diff
     SUBDIR += p5-Hash-FieldHash
     SUBDIR += p5-Hash-Flatten
+    SUBDIR += p5-Hash-Merge-Extra
     SUBDIR += p5-Hash-Merge-Simple
     SUBDIR += p5-Hash-MoreUtils
     SUBDIR += p5-Hash-MultiKey
