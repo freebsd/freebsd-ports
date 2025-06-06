@@ -69,15 +69,6 @@ STATIC_MAKE_ARGS=	static=1
 IGNORE=		not supported on anything but FreeBSD
 .endif
 
-# crystal needs pkgconfig to determine SSL variants but these are not
-# present in FreeBSD base. We splice in the correct info based on
-# FreeBSD version and hope it doesn't change during minor releases.
-# See post-patch for the substitutions of these patches.
-.if ${SSL_DEFAULT} == "base" && ${OSREL:R} < 13
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_openssl_lib__crypto.cr \
-		${PATCHDIR}/extra-patch-src_openssl_lib__ssl.cr
-.endif
-
 post-extract:
 	@${RLN} ${WRKDIR}/.build ${WRKSRC}
 	@${RLN} x86_64-freebsd ${WRKSRC}/src/lib_c/aarch64-freebsd

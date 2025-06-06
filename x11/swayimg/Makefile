@@ -32,12 +32,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		${DATADIR}/${PORTNAME}rc \
 		${NULL}
 
-# XXX Drop after FreeBSD 13.4 EOL around 2026-01-31
-# https://cgit.freebsd.org/src/commit/?id=af93fea71038
-.if !exists(/usr/include/sys/timerfd.h)
-LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
-.endif
-
 OPTIONS_DEFINE=	AVIF BASH GIF HEIF JPEG JSON JXL LIBEXIF LIBRSVG2 \
 		OPENEXR PNG RAW SIXEL TIFF WEBP ZSH
 OPTIONS_DEFAULT=AVIF BASH GIF HEIF JPEG JSON JXL LIBEXIF LIBRSVG2 \

@@ -15,10 +15,7 @@ CXXFLAGS+=	-D${MACHINE_ARCH:tu:S/I386/IA32/:S/SPARC64/SPARC/} -DBSD
 CXXFLAGS+=	-Wno-system-headers -Wall -W	\
 	-Wpointer-arith -Wreturn-type	\
 	-Wwrite-strings -Wswitch -Wno-cast-align	\
-	-Wunused-parameter -Werror
-
-.if ${OSVERSION} >= 1304000
-CXXFLAGS+=	-Wno-vla-cxx-extension
-.endif
+	-Wunused-parameter -Werror \
+	-Wno-vla-cxx-extension
 
 .include <bsd.lib.mk>

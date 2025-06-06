@@ -18,14 +18,6 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 USES=		compiler:c11 gnome meson pkgconfig
 USE_GNOME=	cairo pango
 
-# XXX Drop after FreeBSD 13.4 EOL around 2026-01-31
-# https://cgit.freebsd.org/src/commit/?id=af93fea71038
-.if !exists(/usr/include/sys/timerfd.h)
-LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
-CPPFLAGS+=	`pkg-config --cflags epoll-shim`
-LDFLAGS+=	`pkg-config --libs epoll-shim`
-.endif
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/wmenu \
