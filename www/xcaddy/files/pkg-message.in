@@ -1,0 +1,30 @@
+[
+{
+  type: install
+  message: <<INSTALL
+xcaddy is a tool to build custom Caddy web servers with plugins.
+
+SECURITY NOTICE:
+When building and running Caddy servers created with xcaddy, it is strongly
+recommended to run the resulting Caddy binary as an unprivileged user, such as
+www:www, rather than as root.
+
+For secure deployment of Caddy servers built with xcaddy:
+
+- Use security/portacl-rc to enable privileged port binding:
+
+  # pkg install security/portacl-rc
+  # sysrc portacl_users+=www
+  # sysrc portacl_user_www_tcp="http https"
+  # sysrc portacl_user_www_udp="https"
+  # service portacl enable
+  # service portacl start
+
+- Run your custom Caddy binary as www:www instead of root
+
+See https://caddyserver.com/docs/ for Caddy configuration documentation.
+See https://github.com/caddyserver/xcaddy for xcaddy usage instructions.
+
+INSTALL
+}
+]
