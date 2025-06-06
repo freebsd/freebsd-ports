@@ -1,5 +1,5 @@
-TIMESTAMP = 1733900556
-SHA256 (go/net_nats-server/nats-server-v2.10.23/v2.10.23.mod) = 331bfd3027af4ae46819342270a98a4235bb72e977ea225a20045521757db829
-SIZE (go/net_nats-server/nats-server-v2.10.23/v2.10.23.mod) = 391
-SHA256 (go/net_nats-server/nats-server-v2.10.23/v2.10.23.zip) = a12d3cd4acd8f1cabe0acf526c4d60c7b1d172a19206c1e8dba0bbe97b0dac34
-SIZE (go/net_nats-server/nats-server-v2.10.23/v2.10.23.zip) = 2590061
+TIMESTAMP = 1749229299
+SHA256 (go/net_nats-server/nats-server-v2.10.29/v2.10.29.mod) = 8485c70d9e5950947a38791270ed72468199cebf23e78b73037f3b40c441ea70
+SIZE (go/net_nats-server/nats-server-v2.10.29/v2.10.29.mod) = 412
+SHA256 (go/net_nats-server/nats-server-v2.10.29/v2.10.29.zip) = 6ece3e679b8c6f42c6af69de96066a4a0b9ddab6bf28736af2d127e41ca41c9f
+SIZE (go/net_nats-server/nats-server-v2.10.29/v2.10.29.zip) = 2654553
