@@ -1119,7 +1119,6 @@
     SUBDIR += py-spopt
     SUBDIR += py-spot
     SUBDIR += py-spreg
-    SUBDIR += py-spvcm
     SUBDIR += py-squarify
     SUBDIR += py-ssm
     SUBDIR += py-statsmodels
