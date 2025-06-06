@@ -12,6 +12,9 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	m17n-db:devel/m17n-db
 RUN_DEPENDS=	m17n-db:devel/m17n-db
 
+DEPRECATED=	Included in m17n-db-1.8.10 (to be committed)
+EXPIRATION_DATE=2025-06-30	# Or before once devel/m17n-db is upgraded
+
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 M17N_DATADIR=	${PREFIX}/share/m17n
