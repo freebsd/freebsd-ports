@@ -2013,6 +2013,7 @@
     SUBDIR += rsstool
     SUBDIR += rt44
     SUBDIR += rt50
+    SUBDIR += rt60
     SUBDIR += rubygem-ace-rails-ap
     SUBDIR += rubygem-actioncable-gitlab
     SUBDIR += rubygem-actioncable5

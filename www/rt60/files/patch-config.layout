@@ -1,0 +1,19 @@
+--- config.layout.orig	2014-05-06 17:59:04 UTC
++++ config.layout
+@@ -103,14 +103,14 @@
+ </Layout>
+ 
+ <Layout FreeBSD>
+-  prefix:		/usr/local
++  prefix:		%%PREFIX%%
+   exec_prefix:		${prefix}
+   bindir:		${exec_prefix}/bin
+   sbindir:		${exec_prefix}/sbin
+   sysconfdir:		${prefix}/etc+
+   mandir:		${prefix}/man
+   plugindir:		${prefix}/plugins
+-  libdir:		${prefix}/lib+
++  libdir:		%%SITE_PERL%%
+   datadir:		${prefix}/share+
+   htmldir:		${datadir}/html
+   lexdir:		${datadir}/po
