@@ -7,9 +7,6 @@ MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Full featured CLI system information tool
 WWW=		https://github.com/smxi/inxi
 
-DEPRECATED=	Upstream repo archived on Feb 17, 2024
-EXPIRATION_DATE=2025-07-31
-
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
