@@ -1,10 +1,9 @@
 PORTNAME=	python-telegram-bot
-PORTVERSION=	21.6
-PORTREVISION=	1
+PORTVERSION=	21.11
 CATEGORIES=	net-im devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=    ${PORTNAME:S/-/_/g}-${PORTVERSION}
+DISTNAME=	${PORTNAME:S/-/_/g}-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Not just a Python wrapper around the Telegram Bot API
@@ -17,8 +16,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}APScheduler>0:devel/py-apscheduler@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.27.0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR}
 
-NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	pep517 autoplist
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
