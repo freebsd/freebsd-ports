@@ -438,6 +438,11 @@ etc/dbus-1/system.d/xpra.conf
 %%PYTHON_SITELIBDIR%%/xpra/codecs/argb/argb%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/xpra/codecs/argb/encoder.py
 %%PYTHON_SITELIBDIR%%/xpra/codecs/argb/scale.py
+%%PYTHON_SITELIBDIR%%/xpra/codecs/avif/__init__.py
+%%PYTHON_SITELIBDIR%%/xpra/codecs/avif/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/xpra/codecs/avif/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xpra/codecs/avif/decoder%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/xpra/codecs/avif/encoder%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/xpra/codecs/checks.py
 %%PYTHON_SITELIBDIR%%/xpra/codecs/constants.py
 %%PYTHON_SITELIBDIR%%/xpra/codecs/csc_cython/__init__.py
