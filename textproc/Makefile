@@ -665,6 +665,7 @@
     SUBDIR += p5-Makefile-DOM
     SUBDIR += p5-Makefile-Parser
     SUBDIR += p5-Markapl
+    SUBDIR += p5-Markdown-Render
     SUBDIR += p5-Marpa-HTML
     SUBDIR += p5-MathML-Entities
     SUBDIR += p5-Net-Groonga-HTTP
