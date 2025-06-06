@@ -9,6 +9,9 @@ MAINTAINER=	gavin@16degrees.com.au
 COMMENT=	Drop-in replacement for GNU make
 WWW=		https://makepp.sourceforge.net/
 
+DEPRECATED=	Abandonware, last release in 2017
+EXPIRATION_DATE=2025-07-31
+
 LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual
 
