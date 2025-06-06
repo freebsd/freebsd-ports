@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic and extensible framework for serialization
 WWW=		http://www.ossp.org/pkg/lib/xds/
 
+DEPRECATED=     Abandoned upstream, last release in 2005
+EXPIRATION_DATE=2025-07-31
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

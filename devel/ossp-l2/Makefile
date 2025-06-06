@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for a flexible and sophisticated Unix logging facility
 WWW=		http://www.ossp.org/pkg/lib/l2/
 
+DEPRECATED=	Abandoned upstream, last release in 2007
+EXPIRATION_DATE=2025-07-31
+
 USES=		libtool
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

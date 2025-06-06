@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible name to value mapping library for C variables
 WWW=		http://www.ossp.org/pkg/lib/val/
 
+DEPRECATED=     Abandoned upstream, last release in 2005
+EXPIRATION_DATE=2025-07-31
+
 LIB_DEPENDS=	libex.so:devel/ossp-ex
 
 USES=		libtool

@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing arbitrary C/C++-style configuration files
 WWW=		http://www.ossp.org/pkg/lib/cfg/
 
+DEPRECATED=	Abandoned upstream, last release in 2006
+EXPIRATION_DATE=2025-07-31
+
 LIB_DEPENDS=	libex.so:devel/ossp-ex
 
 USES=		libtool

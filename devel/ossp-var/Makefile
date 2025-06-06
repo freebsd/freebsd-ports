@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible, full-featured, and fast variable expansion library
 WWW=		http://www.ossp.org/pkg/lib/var/
 
+DEPRECATED=	Obsolete, last release in 2002
+EXPIRATION_DATE=2025-07-31
+
 USES=		libtool
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

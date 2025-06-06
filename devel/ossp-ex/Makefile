@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small exception handling library for use in C
 WWW=		http://www.ossp.org/pkg/lib/ex/
 
+DEPRECATED=	Abandoned upstream, last release in 2007
+EXPIRATION_DATE=2025-07-31
+
 USES=		libtool
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
