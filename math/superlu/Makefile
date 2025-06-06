@@ -1,10 +1,9 @@
 PORTNAME=	superlu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.3.0
-PORTREVISION=	4
+DISTVERSION=	7.0.1
 CATEGORIES=	math
 
-MAINTAINER=	robert.ayrapetyan@gmail.com
+MAINTAINER=	me@svmhdvn.name
 COMMENT=	Library of routines for performing sparse factorization
 WWW=		https://portal.nersc.gov/project/sparse/superlu/
 
@@ -17,7 +16,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiaoyeli
 
-CMAKE_ON=	USE_XSDK_DEFAULTS
+CMAKE_ON=	USE_XSDK_DEFAULTS BUILD_SHARED_LIBS
 CMAKE_OFF=	enable_tests
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
