@@ -1,6 +1,6 @@
 PORTNAME=	apache-jmeter
 PORTVERSION=	2.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	https://archive.apache.org/dist/jmeter/binaries/
 
@@ -9,9 +9,6 @@ COMMENT=	Functional behaviour load and performance test application
 WWW=		https://jmeter.apache.org/
 
 LICENSE=	APACHE20
-
-DEPRECATED=	Depends on expiring java/jdom
-EXPIRATION_DATE=2025-06-04
 
 # These are JAR-files installed by other ports. The list should keep
 # growing until all Java applications install just their own JARs -- not
@@ -29,12 +26,11 @@ RUN_DEPENDS=	\
 		${JAVALIBDIR}/httpcore.jar:www/httpcore	\
 		${JAVALIBDIR}/httpmime.jar:www/httpclient	\
 		${JAVALIBDIR}/jakarta-oro.jar:java/jakarta-oro	\
-		${JAVALIBDIR}/jdom.jar:java/jdom	\
 		${JAVALIBDIR}/junit.jar:java/junit	\
 		${JAVALIBDIR}/mail.jar:java/javamail	\
 		${JAVALIBDIR}/serializer.jar:textproc/xalan-j	\
 		${JAVALIBDIR}/slf4j-api.jar:devel/slf4j	\
-		${LOCALBASE}/share/slf4j/slf4j-nop.jar:devel/slf4j	\
+		${LOCALBASE}/share/java/slf4j/slf4j-nop.jar:devel/slf4j	\
 		${JAVALIBDIR}/xalan.jar:textproc/xalan-j	\
 		${JAVALIBDIR}/xercesImpl.jar:textproc/xerces-j	\
 		${JAVALIBDIR}/xml-apis.jar:textproc/xerces-j	\

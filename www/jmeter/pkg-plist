@@ -94,6 +94,7 @@ bin/jmeter
 %%DATADIR%%/lib/htmllexer-2.1.jar
 %%DATADIR%%/lib/htmlparser-2.1.jar
 %%DATADIR%%/lib/jcharts-0.7.5.jar
+%%DATADIR%%/lib/jdom-1.1.3.jar
 %%DATADIR%%/lib/jodd-core-3.4.10.jar
 %%DATADIR%%/lib/jodd-lagarto-3.4.10.jar
 %%DATADIR%%/lib/jorphan.jar
