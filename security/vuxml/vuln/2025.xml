@@ -1,3 +1,75 @@
+  <vuln vid="fa1d42c8-42fe-11f0-a9fa-b42e991fc52e">
+    <topic>ModSecurity -- possible DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>ap24-mod_security</name>
+	<range><lt>2.9.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/owasp-modsecurity/ModSecurity/commit/3a54ccea62d3f7151bb08cb78d60c5e90b53ca2e">
+          <p>
+		ModSecurity is an open source, cross platform web
+		application firewall (WAF) engine for Apache, IIS
+		and Nginx. Versions prior to 2.9.10 contain a denial of
+		service vulnerability similar to
+		GHSA-859r-vvv8-rm8r/CVE-2025-47947. The `sanitiseArg`
+		(and `sanitizeArg` - this is the same action but an
+		alias) is vulnerable to adding an excessive number
+		of arguments, thereby leading to denial of service.
+		Version 2.9.10 fixes the issue. As a workaround, avoid
+		using rules that contain the `sanitiseArg` (or
+		`sanitizeArg`) action.
+          </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-48866</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-48866</url>
+    </references>
+    <dates>
+      <discovery>2025-06-02</discovery>
+      <entry>2025-06-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ecea70d2-42fe-11f0-a9fa-b42e991fc52e">
+    <topic>ModSecurity -- possible DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>ap24-mod_security</name>
+	<range><lt>2.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/owasp-modsecurity/ModSecurity/pull/3389">
+	  <p>ModSecurity is an open source, cross platform web
+	  application firewall (WAF) engine for Apache, IIS and Nginx.
+	  Versions up to and including 2.9.8 are vulnerable to denial
+	  of service in one special case (in stable released versions):
+	  when the payload&apos;s content type is `application/json`,
+	  and there is at least one rule which does a
+	  `sanitiseMatchedBytes` action.  A patch is available at
+	  pull request 3389 and expected to be part of version 2.9.9.
+	  No known workarounds are available.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-47947</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-47947</url>
+    </references>
+    <dates>
+      <discovery>2025-05-21</discovery>
+      <entry>2025-06-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="63268efe-4222-11f0-976e-b42e991fc52e">
     <topic>Mozilla -- clickjacking vulnerability</topic>
     <affects>
