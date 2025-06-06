@@ -4499,3 +4499,4 @@ lang/ghc810||2025-06-04|Old version, unsupported upstream
 audio/mp3check||2025-06-06|Has expired: Depends on expired audio/id3tool
 audio/id3tool||2025-06-06|Has expired: Can't read ID3v2 tags which have been around for 20+ years and discontinued in 2005 feature-wise according to readme file
 science/py-pysal||2025-06-06|Has expired: Depends on expired math/py-spvcm
+textproc/xincluder||2025-06-06|Has expired: Depends on expiring java/jdom
