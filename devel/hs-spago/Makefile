@@ -1,5 +1,6 @@
 PORTNAME=	spago
 DISTVERSION=	0.21.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/purescript/purescript-docs-search/releases/download/v0.0.11/docs-search-app.js?dummy=/:dsa11 \
 		https://github.com/purescript/purescript-docs-search/releases/download/v0.0.11/purescript-docs-search?dummy=/:pds11 \
@@ -52,7 +53,7 @@ USE_CABAL=	Diff-0.4.1 \
 		base-orphans-0.8.6 \
 		base16-bytestring-1.0.2.0 \
 		base64-bytestring-1.2.1.0 \
-		basement-0.0.14 \
+		basement-0.0.16 \
 		basic-prelude-0.7.0 \
 		bifunctors-5.5.12 \
 		blaze-builder-0.4.2.2_1 \
