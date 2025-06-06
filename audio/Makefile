@@ -594,6 +594,7 @@
     SUBDIR += pianod2
     SUBDIR += picard
     SUBDIR += picard-plugins
+    SUBDIR += piper-phonemize
     SUBDIR += pipewire-module-xrdp
     SUBDIR += pipewire-spa-oss
     SUBDIR += pithos
