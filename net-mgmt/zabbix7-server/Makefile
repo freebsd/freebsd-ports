@@ -18,9 +18,8 @@ CONFLICTS_INSTALL=	${PORTNAME}[0-9]${PKGNAMESUFFIX} \
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//:S/-$//}
 
-USES=		iconv pkgconfig
-
 .if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
+USES=		iconv pkgconfig
 .if ${ZABBIX_BUILD} != "agent"
 CONFIGURE_ARGS+=	--cache-file=${WRKSRC}/config.cache \
 			--with-libevent=${LOCALBASE} \
