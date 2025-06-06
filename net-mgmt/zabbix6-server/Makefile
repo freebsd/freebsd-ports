@@ -19,6 +19,8 @@ CONFLICTS_INSTALL=	${PORTNAME}[0-9]${PKGNAMESUFFIX} \
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//:S/-$//}
 
+USES=		iconv pkgconfig
+
 .if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
 CONFIGURE_ARGS+=	--cache-file=${WRKSRC}/config.cache \
@@ -26,12 +28,14 @@ CONFIGURE_ARGS+=	--cache-file=${WRKSRC}/config.cache \
 			--with-libxml2
 LIB_DEPENDS+=		libevent.so:devel/libevent
 USE_RC_SUBR=		zabbix_${ZABBIX_BUILD}
+# -server and -proxy depends on libxml2
+.if ${ZABBIX_BUILD} != "java"
+USES+=		gnome
+USE_GNOME=	libxml2
+.endif
 .else
 USE_RC_SUBR=		zabbix_${ZABBIX_BUILD}d
 .endif
-
-USES=		gnome iconv pkgconfig
-USE_GNOME=	libxml2
 
 USERS=		zabbix
 GROUPS=		zabbix
@@ -79,8 +83,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFAULT+=	CURL FPING IPMI IPV6 LIBXML2 MYSQL OPENSSL SNMP SSH UNIXODBC
-OPTIONS_DEFINE=		CURL FPING IPMI IPV6 LDAP LIBXML2 NMAP SNMP SSH UNIXODBC
+OPTIONS_DEFAULT+=	CURL FPING IPMI IPV6 MYSQL OPENSSL SNMP SSH UNIXODBC
+OPTIONS_DEFINE=		CURL FPING IPMI IPV6 LDAP NMAP SNMP SSH UNIXODBC
 OPTIONS_SINGLE+=	DB SSL
 OPTIONS_SINGLE_DB=	MDB5 MDB6 MYSQL MYSQLDV ORACLE PGSQL
 .if ${ZABBIX_BUILD} == "proxy"
@@ -96,7 +100,6 @@ NMAP_DESC=	Build/install nmap for o/s detection
 SNMP_DESC=	Support for SNMP checks
 SSH_DESC=	Support for SSH-based checks
 UNIXODBC_DESC=	Support for database checks via ODBC
-LIBXML2_DESC=	Support for libxml2 (required by monitoring VMware)
 MYSQL_DESC=	MySQL 8.0 database support
 MYSQLDV_DESC=	MYSQL DEFAULT_VERSIONS= (poudriere)
 
