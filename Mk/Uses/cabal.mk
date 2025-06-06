@@ -76,11 +76,6 @@ IGNORE=		USES=cabal: invalid arguments: ${arg}
 IGNORE=		CABAL_PROJECT: invalid value: ${CABAL_PROJECT}
 .  endif
 
-.  if ${ARCH} == i386 && defined(USE_CABAL) && ${USE_CABAL:Mbasement-0.0.1[4-5]}
-# Upstream issue: https://github.com/haskell-foundation/foundation/issues/565
-BROKEN=		${USE_CABAL:Mbasement-0.0.1[4-5]} package doesn't compile on i386
-.  endif
-
 PKGNAMEPREFIX?=	hs-
 
 CABAL_EXECUTABLES?=	${PORTNAME}
