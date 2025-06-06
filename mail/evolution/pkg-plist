@@ -51,7 +51,6 @@ include/evolution/calendar/gui/e-memo-table.h
 include/evolution/calendar/gui/e-month-view.h
 include/evolution/calendar/gui/e-select-names-editable.h
 include/evolution/calendar/gui/e-select-names-renderer.h
-include/evolution/calendar/gui/e-send-options-utils.h
 include/evolution/calendar/gui/e-task-table.h
 include/evolution/calendar/gui/e-timezone-entry.h
 include/evolution/calendar/gui/e-to-do-pane.h
@@ -74,7 +73,6 @@ include/evolution/calendar/gui/ea-week-view-cell.h
 include/evolution/calendar/gui/ea-week-view-main-item.h
 include/evolution/calendar/gui/ea-week-view.h
 include/evolution/calendar/gui/itip-utils.h
-include/evolution/calendar/gui/misc.h
 include/evolution/calendar/gui/print.h
 include/evolution/calendar/gui/tag-calendar.h
 include/evolution/composer/e-composer-actions.h
@@ -166,10 +164,8 @@ include/evolution/e-util/e-destination-store.h
 include/evolution/e-util/e-dialog-utils.h
 include/evolution/e-util/e-dialog-widgets.h
 include/evolution/e-util/e-ellipsized-combo-box-text.h
-include/evolution/e-util/e-emoticon-action.h
 include/evolution/e-util/e-emoticon-chooser-menu.h
 include/evolution/e-util/e-emoticon-chooser.h
-include/evolution/e-util/e-emoticon-tool-button.h
 include/evolution/e-util/e-emoticon.h
 include/evolution/e-util/e-event.h
 include/evolution/e-util/e-file-request.h
@@ -221,7 +217,6 @@ include/evolution/e-util/e-markdown-editor.h
 include/evolution/e-util/e-markdown-utils.h
 include/evolution/e-util/e-marshal.h
 include/evolution/e-util/e-menu-bar.h
-include/evolution/e-util/e-menu-tool-action.h
 include/evolution/e-util/e-menu-tool-button.h
 include/evolution/e-util/e-misc-utils.h
 include/evolution/e-util/e-mktemp.h
@@ -240,7 +235,6 @@ include/evolution/e-util/e-picture-gallery.h
 include/evolution/e-util/e-plugin-ui.h
 include/evolution/e-util/e-plugin.h
 include/evolution/e-util/e-poolv.h
-include/evolution/e-util/e-popup-action.h
 include/evolution/e-util/e-popup-menu.h
 include/evolution/e-util/e-port-entry.h
 include/evolution/e-util/e-preferences-window.h
@@ -252,8 +246,6 @@ include/evolution/e-util/e-proxy-editor.h
 include/evolution/e-util/e-proxy-link-selector.h
 include/evolution/e-util/e-proxy-preferences.h
 include/evolution/e-util/e-proxy-selector.h
-include/evolution/e-util/e-reflow-model.h
-include/evolution/e-util/e-reflow.h
 include/evolution/e-util/e-rule-context.h
 include/evolution/e-util/e-rule-editor.h
 include/evolution/e-util/e-search-bar.h
@@ -262,7 +254,6 @@ include/evolution/e-util/e-selection-model-array.h
 include/evolution/e-util/e-selection-model-simple.h
 include/evolution/e-util/e-selection-model.h
 include/evolution/e-util/e-selection.h
-include/evolution/e-util/e-send-options.h
 include/evolution/e-util/e-simple-async-result.h
 include/evolution/e-util/e-sorter-array.h
 include/evolution/e-util/e-sorter.h
@@ -326,6 +317,13 @@ include/evolution/e-util/e-tree-selection-model.h
 include/evolution/e-util/e-tree-table-adapter.h
 include/evolution/e-util/e-tree-view-frame.h
 include/evolution/e-util/e-tree.h
+include/evolution/e-util/e-ui-action-group.h
+include/evolution/e-util/e-ui-action.h
+include/evolution/e-util/e-ui-customize-dialog.h
+include/evolution/e-util/e-ui-customizer.h
+include/evolution/e-util/e-ui-manager.h
+include/evolution/e-util/e-ui-menu.h
+include/evolution/e-util/e-ui-parser.h
 include/evolution/e-util/e-unicode.h
 include/evolution/e-util/e-url-entry.h
 include/evolution/e-util/e-util-enums.h
@@ -352,13 +350,11 @@ include/evolution/e-util/gal-a11y-e-cell.h
 include/evolution/e-util/gal-a11y-e-table-click-to-add-factory.h
 include/evolution/e-util/gal-a11y-e-table-click-to-add.h
 include/evolution/e-util/gal-a11y-e-table-column-header.h
-include/evolution/e-util/gal-a11y-e-table-factory.h
 include/evolution/e-util/gal-a11y-e-table-item-factory.h
 include/evolution/e-util/gal-a11y-e-table-item.h
 include/evolution/e-util/gal-a11y-e-table.h
 include/evolution/e-util/gal-a11y-e-text-factory.h
 include/evolution/e-util/gal-a11y-e-text.h
-include/evolution/e-util/gal-a11y-e-tree-factory.h
 include/evolution/e-util/gal-a11y-e-tree.h
 include/evolution/e-util/gal-a11y-factory.h
 include/evolution/e-util/gal-a11y-util.h
@@ -411,14 +407,10 @@ include/evolution/libgnomecanvas/gailcanvasgroup.h
 include/evolution/libgnomecanvas/gailcanvasgroupfactory.h
 include/evolution/libgnomecanvas/gailcanvasitem.h
 include/evolution/libgnomecanvas/gailcanvasitemfactory.h
-include/evolution/libgnomecanvas/gailcanvastext.h
-include/evolution/libgnomecanvas/gailcanvastextfactory.h
 include/evolution/libgnomecanvas/gailcanvaswidget.h
 include/evolution/libgnomecanvas/gailcanvaswidgetfactory.h
-include/evolution/libgnomecanvas/gnome-canvas-i18n.h
 include/evolution/libgnomecanvas/gnome-canvas-pixbuf.h
 include/evolution/libgnomecanvas/gnome-canvas-rect.h
-include/evolution/libgnomecanvas/gnome-canvas-text.h
 include/evolution/libgnomecanvas/gnome-canvas-util.h
 include/evolution/libgnomecanvas/gnome-canvas-widget.h
 include/evolution/libgnomecanvas/gnome-canvas.h
@@ -462,7 +454,6 @@ include/evolution/mail/e-mail-folder-sort-order-dialog.h
 include/evolution/mail/e-mail-folder-tweaks.h
 include/evolution/mail/e-mail-free-form-exp.h
 include/evolution/mail/e-mail-junk-options.h
-include/evolution/mail/e-mail-label-action.h
 include/evolution/mail/e-mail-label-dialog.h
 include/evolution/mail/e-mail-label-list-store.h
 include/evolution/mail/e-mail-label-manager.h
@@ -517,7 +508,6 @@ include/evolution/shell/e-shell-backend.h
 include/evolution/shell/e-shell-common.h
 include/evolution/shell/e-shell-content.h
 include/evolution/shell/e-shell-enumtypes.h
-include/evolution/shell/e-shell-headerbar.h
 include/evolution/shell/e-shell-searchbar.h
 include/evolution/shell/e-shell-sidebar.h
 include/evolution/shell/e-shell-switcher.h
@@ -834,7 +824,6 @@ share/applications/org.gnome.Evolution.desktop
 %%DATADIR%%/icons/hicolor/16x16/status/security-high.png
 %%DATADIR%%/icons/hicolor/16x16/status/security-low.png
 %%DATADIR%%/icons/hicolor/16x16/status/security-medium.png
-%%DATADIR%%/icons/hicolor/16x16/status/stock_check-filled.png
 %%DATADIR%%/icons/hicolor/16x16/status/stock_score-high.png
 %%DATADIR%%/icons/hicolor/16x16/status/stock_score-higher.png
 %%DATADIR%%/icons/hicolor/16x16/status/stock_score-highest.png
@@ -1470,6 +1459,7 @@ share/applications/org.gnome.Evolution.desktop
 %%DATADIR%%/icons/hicolor/scalable/apps/evolution-mail-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/evolution-memos-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/evolution-tasks-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/apps/gcr-gnupg.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/im-aim.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/im-icq.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/im-jabber.svg
@@ -1480,6 +1470,7 @@ share/applications/org.gnome.Evolution.desktop
 %%DATADIR%%/icons/hicolor/scalable/emblems/emblem-new.svg
 %%DATADIR%%/icons/hicolor/scalable/status/rss-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/status/rss.svg
+%%DATADIR%%/icons/hicolor/scalable/status/stock_check-filled-symbolic.svg
 %%DATADIR%%/images/confidential-stamp.jpg
 %%DATADIR%%/images/draft-paper.png
 %%DATADIR%%/images/draft-stamp.jpg
@@ -1499,20 +1490,20 @@ share/applications/org.gnome.Evolution.desktop
 %%DATADIR%%/ui/contact-editor.ui
 %%DATADIR%%/ui/contact-list-editor.ui
 %%DATADIR%%/ui/e-calendar-preferences.ui
-%%DATADIR%%/ui/e-html-editor-manager.ui
-%%DATADIR%%/ui/e-send-options.ui
+%%DATADIR%%/ui/e-comp-editor.eui
+%%DATADIR%%/ui/e-html-editor.eui
 %%DATADIR%%/ui/e-table-config.ui
 %%DATADIR%%/ui/e-timezone-dialog.ui
-%%DATADIR%%/ui/evolution-calendars.ui
-%%DATADIR%%/ui/evolution-composer.ui
-%%DATADIR%%/ui/evolution-contacts.ui
-%%DATADIR%%/ui/evolution-mail-reader.ui
-%%DATADIR%%/ui/evolution-mail-viewer.ui
-%%DATADIR%%/ui/evolution-mail.ui
-%%DATADIR%%/ui/evolution-memos.ui
-%%DATADIR%%/ui/evolution-shell.ui
+%%DATADIR%%/ui/evolution-calendars.eui
+%%DATADIR%%/ui/evolution-composer.eui
+%%DATADIR%%/ui/evolution-contacts.eui
+%%DATADIR%%/ui/evolution-mail-reader.eui
+%%DATADIR%%/ui/evolution-mail-viewer.eui
+%%DATADIR%%/ui/evolution-mail.eui
+%%DATADIR%%/ui/evolution-memos.eui
+%%DATADIR%%/ui/evolution-shell.eui
 %%DATADIR%%/ui/evolution-shortcuts.ui
-%%DATADIR%%/ui/evolution-tasks.ui
+%%DATADIR%%/ui/evolution-tasks.eui
 %%DATADIR%%/ui/filter.ui
 %%DATADIR%%/ui/fullname.ui
 %%DATADIR%%/ui/gal-view-instance-save-as-dialog.ui
@@ -1581,6 +1572,7 @@ share/help/C/evolution/calendar-weather.page
 share/help/C/evolution/calendar-webdav.page
 share/help/C/evolution/contacts-add-automatically.page
 share/help/C/evolution/contacts-autocompletion.page
+share/help/C/evolution/contacts-carddav.page
 share/help/C/evolution/contacts-google.page
 share/help/C/evolution/contacts-ldap.page
 share/help/C/evolution/contacts-libreoffice.page
@@ -1633,6 +1625,7 @@ share/help/C/evolution/import-data.page
 share/help/C/evolution/import-single-files.page
 share/help/C/evolution/import-supported-file-formats.page
 share/help/C/evolution/index.page
+share/help/C/evolution/intro-account-types.page
 share/help/C/evolution/intro-first-run.page
 share/help/C/evolution/intro-keyboard-shortcuts.page
 share/help/C/evolution/intro-main-window.page
@@ -1811,6 +1804,7 @@ share/help/ca/evolution/calendar-weather.page
 share/help/ca/evolution/calendar-webdav.page
 share/help/ca/evolution/contacts-add-automatically.page
 share/help/ca/evolution/contacts-autocompletion.page
+share/help/ca/evolution/contacts-carddav.page
 share/help/ca/evolution/contacts-google.page
 share/help/ca/evolution/contacts-ldap.page
 share/help/ca/evolution/contacts-libreoffice.page
@@ -1863,6 +1857,7 @@ share/help/ca/evolution/import-data.page
 share/help/ca/evolution/import-single-files.page
 share/help/ca/evolution/import-supported-file-formats.page
 share/help/ca/evolution/index.page
+share/help/ca/evolution/intro-account-types.page
 share/help/ca/evolution/intro-first-run.page
 share/help/ca/evolution/intro-keyboard-shortcuts.page
 share/help/ca/evolution/intro-main-window.page
@@ -2041,6 +2036,7 @@ share/help/cs/evolution/calendar-weather.page
 share/help/cs/evolution/calendar-webdav.page
 share/help/cs/evolution/contacts-add-automatically.page
 share/help/cs/evolution/contacts-autocompletion.page
+share/help/cs/evolution/contacts-carddav.page
 share/help/cs/evolution/contacts-google.page
 share/help/cs/evolution/contacts-ldap.page
 share/help/cs/evolution/contacts-libreoffice.page
@@ -2093,6 +2089,7 @@ share/help/cs/evolution/import-data.page
 share/help/cs/evolution/import-single-files.page
 share/help/cs/evolution/import-supported-file-formats.page
 share/help/cs/evolution/index.page
+share/help/cs/evolution/intro-account-types.page
 share/help/cs/evolution/intro-first-run.page
 share/help/cs/evolution/intro-keyboard-shortcuts.page
 share/help/cs/evolution/intro-main-window.page
@@ -2271,6 +2268,7 @@ share/help/de/evolution/calendar-weather.page
 share/help/de/evolution/calendar-webdav.page
 share/help/de/evolution/contacts-add-automatically.page
 share/help/de/evolution/contacts-autocompletion.page
+share/help/de/evolution/contacts-carddav.page
 share/help/de/evolution/contacts-google.page
 share/help/de/evolution/contacts-ldap.page
 share/help/de/evolution/contacts-libreoffice.page
@@ -2323,6 +2321,7 @@ share/help/de/evolution/import-data.page
 share/help/de/evolution/import-single-files.page
 share/help/de/evolution/import-supported-file-formats.page
 share/help/de/evolution/index.page
+share/help/de/evolution/intro-account-types.page
 share/help/de/evolution/intro-first-run.page
 share/help/de/evolution/intro-keyboard-shortcuts.page
 share/help/de/evolution/intro-main-window.page
@@ -2501,6 +2500,7 @@ share/help/el/evolution/calendar-weather.page
 share/help/el/evolution/calendar-webdav.page
 share/help/el/evolution/contacts-add-automatically.page
 share/help/el/evolution/contacts-autocompletion.page
+share/help/el/evolution/contacts-carddav.page
 share/help/el/evolution/contacts-google.page
 share/help/el/evolution/contacts-ldap.page
 share/help/el/evolution/contacts-libreoffice.page
@@ -2553,6 +2553,7 @@ share/help/el/evolution/import-data.page
 share/help/el/evolution/import-single-files.page
 share/help/el/evolution/import-supported-file-formats.page
 share/help/el/evolution/index.page
+share/help/el/evolution/intro-account-types.page
 share/help/el/evolution/intro-first-run.page
 share/help/el/evolution/intro-keyboard-shortcuts.page
 share/help/el/evolution/intro-main-window.page
@@ -2731,6 +2732,7 @@ share/help/en_GB/evolution/calendar-weather.page
 share/help/en_GB/evolution/calendar-webdav.page
 share/help/en_GB/evolution/contacts-add-automatically.page
 share/help/en_GB/evolution/contacts-autocompletion.page
+share/help/en_GB/evolution/contacts-carddav.page
 share/help/en_GB/evolution/contacts-google.page
 share/help/en_GB/evolution/contacts-ldap.page
 share/help/en_GB/evolution/contacts-libreoffice.page
@@ -2783,6 +2785,7 @@ share/help/en_GB/evolution/import-data.page
 share/help/en_GB/evolution/import-single-files.page
 share/help/en_GB/evolution/import-supported-file-formats.page
 share/help/en_GB/evolution/index.page
+share/help/en_GB/evolution/intro-account-types.page
 share/help/en_GB/evolution/intro-first-run.page
 share/help/en_GB/evolution/intro-keyboard-shortcuts.page
 share/help/en_GB/evolution/intro-main-window.page
@@ -2961,6 +2964,7 @@ share/help/es/evolution/calendar-weather.page
 share/help/es/evolution/calendar-webdav.page
 share/help/es/evolution/contacts-add-automatically.page
 share/help/es/evolution/contacts-autocompletion.page
+share/help/es/evolution/contacts-carddav.page
 share/help/es/evolution/contacts-google.page
 share/help/es/evolution/contacts-ldap.page
 share/help/es/evolution/contacts-libreoffice.page
@@ -3013,6 +3017,7 @@ share/help/es/evolution/import-data.page
 share/help/es/evolution/import-single-files.page
 share/help/es/evolution/import-supported-file-formats.page
 share/help/es/evolution/index.page
+share/help/es/evolution/intro-account-types.page
 share/help/es/evolution/intro-first-run.page
 share/help/es/evolution/intro-keyboard-shortcuts.page
 share/help/es/evolution/intro-main-window.page
@@ -3191,6 +3196,7 @@ share/help/eu/evolution/calendar-weather.page
 share/help/eu/evolution/calendar-webdav.page
 share/help/eu/evolution/contacts-add-automatically.page
 share/help/eu/evolution/contacts-autocompletion.page
+share/help/eu/evolution/contacts-carddav.page
 share/help/eu/evolution/contacts-google.page
 share/help/eu/evolution/contacts-ldap.page
 share/help/eu/evolution/contacts-libreoffice.page
@@ -3243,6 +3249,7 @@ share/help/eu/evolution/import-data.page
 share/help/eu/evolution/import-single-files.page
 share/help/eu/evolution/import-supported-file-formats.page
 share/help/eu/evolution/index.page
+share/help/eu/evolution/intro-account-types.page
 share/help/eu/evolution/intro-first-run.page
 share/help/eu/evolution/intro-keyboard-shortcuts.page
 share/help/eu/evolution/intro-main-window.page
@@ -3421,6 +3428,7 @@ share/help/fr/evolution/calendar-weather.page
 share/help/fr/evolution/calendar-webdav.page
 share/help/fr/evolution/contacts-add-automatically.page
 share/help/fr/evolution/contacts-autocompletion.page
+share/help/fr/evolution/contacts-carddav.page
 share/help/fr/evolution/contacts-google.page
 share/help/fr/evolution/contacts-ldap.page
 share/help/fr/evolution/contacts-libreoffice.page
@@ -3473,6 +3481,7 @@ share/help/fr/evolution/import-data.page
 share/help/fr/evolution/import-single-files.page
 share/help/fr/evolution/import-supported-file-formats.page
 share/help/fr/evolution/index.page
+share/help/fr/evolution/intro-account-types.page
 share/help/fr/evolution/intro-first-run.page
 share/help/fr/evolution/intro-keyboard-shortcuts.page
 share/help/fr/evolution/intro-main-window.page
@@ -3651,6 +3660,7 @@ share/help/gl/evolution/calendar-weather.page
 share/help/gl/evolution/calendar-webdav.page
 share/help/gl/evolution/contacts-add-automatically.page
 share/help/gl/evolution/contacts-autocompletion.page
+share/help/gl/evolution/contacts-carddav.page
 share/help/gl/evolution/contacts-google.page
 share/help/gl/evolution/contacts-ldap.page
 share/help/gl/evolution/contacts-libreoffice.page
@@ -3703,6 +3713,7 @@ share/help/gl/evolution/import-data.page
 share/help/gl/evolution/import-single-files.page
 share/help/gl/evolution/import-supported-file-formats.page
 share/help/gl/evolution/index.page
+share/help/gl/evolution/intro-account-types.page
 share/help/gl/evolution/intro-first-run.page
 share/help/gl/evolution/intro-keyboard-shortcuts.page
 share/help/gl/evolution/intro-main-window.page
@@ -3881,6 +3892,7 @@ share/help/hu/evolution/calendar-weather.page
 share/help/hu/evolution/calendar-webdav.page
 share/help/hu/evolution/contacts-add-automatically.page
 share/help/hu/evolution/contacts-autocompletion.page
+share/help/hu/evolution/contacts-carddav.page
 share/help/hu/evolution/contacts-google.page
 share/help/hu/evolution/contacts-ldap.page
 share/help/hu/evolution/contacts-libreoffice.page
@@ -3933,6 +3945,7 @@ share/help/hu/evolution/import-data.page
 share/help/hu/evolution/import-single-files.page
 share/help/hu/evolution/import-supported-file-formats.page
 share/help/hu/evolution/index.page
+share/help/hu/evolution/intro-account-types.page
 share/help/hu/evolution/intro-first-run.page
 share/help/hu/evolution/intro-keyboard-shortcuts.page
 share/help/hu/evolution/intro-main-window.page
@@ -4111,6 +4124,7 @@ share/help/id/evolution/calendar-weather.page
 share/help/id/evolution/calendar-webdav.page
 share/help/id/evolution/contacts-add-automatically.page
 share/help/id/evolution/contacts-autocompletion.page
+share/help/id/evolution/contacts-carddav.page
 share/help/id/evolution/contacts-google.page
 share/help/id/evolution/contacts-ldap.page
 share/help/id/evolution/contacts-libreoffice.page
@@ -4163,6 +4177,7 @@ share/help/id/evolution/import-data.page
 share/help/id/evolution/import-single-files.page
 share/help/id/evolution/import-supported-file-formats.page
 share/help/id/evolution/index.page
+share/help/id/evolution/intro-account-types.page
 share/help/id/evolution/intro-first-run.page
 share/help/id/evolution/intro-keyboard-shortcuts.page
 share/help/id/evolution/intro-main-window.page
@@ -4341,6 +4356,7 @@ share/help/mk/evolution/calendar-weather.page
 share/help/mk/evolution/calendar-webdav.page
 share/help/mk/evolution/contacts-add-automatically.page
 share/help/mk/evolution/contacts-autocompletion.page
+share/help/mk/evolution/contacts-carddav.page
 share/help/mk/evolution/contacts-google.page
 share/help/mk/evolution/contacts-ldap.page
 share/help/mk/evolution/contacts-libreoffice.page
@@ -4393,6 +4409,7 @@ share/help/mk/evolution/import-data.page
 share/help/mk/evolution/import-single-files.page
 share/help/mk/evolution/import-supported-file-formats.page
 share/help/mk/evolution/index.page
+share/help/mk/evolution/intro-account-types.page
 share/help/mk/evolution/intro-first-run.page
 share/help/mk/evolution/intro-keyboard-shortcuts.page
 share/help/mk/evolution/intro-main-window.page
@@ -4571,6 +4588,7 @@ share/help/oc/evolution/calendar-weather.page
 share/help/oc/evolution/calendar-webdav.page
 share/help/oc/evolution/contacts-add-automatically.page
 share/help/oc/evolution/contacts-autocompletion.page
+share/help/oc/evolution/contacts-carddav.page
 share/help/oc/evolution/contacts-google.page
 share/help/oc/evolution/contacts-ldap.page
 share/help/oc/evolution/contacts-libreoffice.page
@@ -4623,6 +4641,7 @@ share/help/oc/evolution/import-data.page
 share/help/oc/evolution/import-single-files.page
 share/help/oc/evolution/import-supported-file-formats.page
 share/help/oc/evolution/index.page
+share/help/oc/evolution/intro-account-types.page
 share/help/oc/evolution/intro-first-run.page
 share/help/oc/evolution/intro-keyboard-shortcuts.page
 share/help/oc/evolution/intro-main-window.page
@@ -4801,6 +4820,7 @@ share/help/pt/evolution/calendar-weather.page
 share/help/pt/evolution/calendar-webdav.page
 share/help/pt/evolution/contacts-add-automatically.page
 share/help/pt/evolution/contacts-autocompletion.page
+share/help/pt/evolution/contacts-carddav.page
 share/help/pt/evolution/contacts-google.page
 share/help/pt/evolution/contacts-ldap.page
 share/help/pt/evolution/contacts-libreoffice.page
@@ -4853,6 +4873,7 @@ share/help/pt/evolution/import-data.page
 share/help/pt/evolution/import-single-files.page
 share/help/pt/evolution/import-supported-file-formats.page
 share/help/pt/evolution/index.page
+share/help/pt/evolution/intro-account-types.page
 share/help/pt/evolution/intro-first-run.page
 share/help/pt/evolution/intro-keyboard-shortcuts.page
 share/help/pt/evolution/intro-main-window.page
@@ -5031,6 +5052,7 @@ share/help/pt_BR/evolution/calendar-weather.page
 share/help/pt_BR/evolution/calendar-webdav.page
 share/help/pt_BR/evolution/contacts-add-automatically.page
 share/help/pt_BR/evolution/contacts-autocompletion.page
+share/help/pt_BR/evolution/contacts-carddav.page
 share/help/pt_BR/evolution/contacts-google.page
 share/help/pt_BR/evolution/contacts-ldap.page
 share/help/pt_BR/evolution/contacts-libreoffice.page
@@ -5083,6 +5105,7 @@ share/help/pt_BR/evolution/import-data.page
 share/help/pt_BR/evolution/import-single-files.page
 share/help/pt_BR/evolution/import-supported-file-formats.page
 share/help/pt_BR/evolution/index.page
+share/help/pt_BR/evolution/intro-account-types.page
 share/help/pt_BR/evolution/intro-first-run.page
 share/help/pt_BR/evolution/intro-keyboard-shortcuts.page
 share/help/pt_BR/evolution/intro-main-window.page
@@ -5261,6 +5284,7 @@ share/help/ru/evolution/calendar-weather.page
 share/help/ru/evolution/calendar-webdav.page
 share/help/ru/evolution/contacts-add-automatically.page
 share/help/ru/evolution/contacts-autocompletion.page
+share/help/ru/evolution/contacts-carddav.page
 share/help/ru/evolution/contacts-google.page
 share/help/ru/evolution/contacts-ldap.page
 share/help/ru/evolution/contacts-libreoffice.page
@@ -5313,6 +5337,7 @@ share/help/ru/evolution/import-data.page
 share/help/ru/evolution/import-single-files.page
 share/help/ru/evolution/import-supported-file-formats.page
 share/help/ru/evolution/index.page
+share/help/ru/evolution/intro-account-types.page
 share/help/ru/evolution/intro-first-run.page
 share/help/ru/evolution/intro-keyboard-shortcuts.page
 share/help/ru/evolution/intro-main-window.page
@@ -5491,6 +5516,7 @@ share/help/sl/evolution/calendar-weather.page
 share/help/sl/evolution/calendar-webdav.page
 share/help/sl/evolution/contacts-add-automatically.page
 share/help/sl/evolution/contacts-autocompletion.page
+share/help/sl/evolution/contacts-carddav.page
 share/help/sl/evolution/contacts-google.page
 share/help/sl/evolution/contacts-ldap.page
 share/help/sl/evolution/contacts-libreoffice.page
@@ -5543,6 +5569,7 @@ share/help/sl/evolution/import-data.page
 share/help/sl/evolution/import-single-files.page
 share/help/sl/evolution/import-supported-file-formats.page
 share/help/sl/evolution/index.page
+share/help/sl/evolution/intro-account-types.page
 share/help/sl/evolution/intro-first-run.page
 share/help/sl/evolution/intro-keyboard-shortcuts.page
 share/help/sl/evolution/intro-main-window.page
@@ -5721,6 +5748,7 @@ share/help/sv/evolution/calendar-weather.page
 share/help/sv/evolution/calendar-webdav.page
 share/help/sv/evolution/contacts-add-automatically.page
 share/help/sv/evolution/contacts-autocompletion.page
+share/help/sv/evolution/contacts-carddav.page
 share/help/sv/evolution/contacts-google.page
 share/help/sv/evolution/contacts-ldap.page
 share/help/sv/evolution/contacts-libreoffice.page
@@ -5773,6 +5801,7 @@ share/help/sv/evolution/import-data.page
 share/help/sv/evolution/import-single-files.page
 share/help/sv/evolution/import-supported-file-formats.page
 share/help/sv/evolution/index.page
+share/help/sv/evolution/intro-account-types.page
 share/help/sv/evolution/intro-first-run.page
 share/help/sv/evolution/intro-keyboard-shortcuts.page
 share/help/sv/evolution/intro-main-window.page
@@ -5951,6 +5980,7 @@ share/help/te/evolution/calendar-weather.page
 share/help/te/evolution/calendar-webdav.page
 share/help/te/evolution/contacts-add-automatically.page
 share/help/te/evolution/contacts-autocompletion.page
+share/help/te/evolution/contacts-carddav.page
 share/help/te/evolution/contacts-google.page
 share/help/te/evolution/contacts-ldap.page
 share/help/te/evolution/contacts-libreoffice.page
@@ -6003,6 +6033,7 @@ share/help/te/evolution/import-data.page
 share/help/te/evolution/import-single-files.page
 share/help/te/evolution/import-supported-file-formats.page
 share/help/te/evolution/index.page
+share/help/te/evolution/intro-account-types.page
 share/help/te/evolution/intro-first-run.page
 share/help/te/evolution/intro-keyboard-shortcuts.page
 share/help/te/evolution/intro-main-window.page
@@ -6181,6 +6212,7 @@ share/help/uk/evolution/calendar-weather.page
 share/help/uk/evolution/calendar-webdav.page
 share/help/uk/evolution/contacts-add-automatically.page
 share/help/uk/evolution/contacts-autocompletion.page
+share/help/uk/evolution/contacts-carddav.page
 share/help/uk/evolution/contacts-google.page
 share/help/uk/evolution/contacts-ldap.page
 share/help/uk/evolution/contacts-libreoffice.page
@@ -6233,6 +6265,7 @@ share/help/uk/evolution/import-data.page
 share/help/uk/evolution/import-single-files.page
 share/help/uk/evolution/import-supported-file-formats.page
 share/help/uk/evolution/index.page
+share/help/uk/evolution/intro-account-types.page
 share/help/uk/evolution/intro-first-run.page
 share/help/uk/evolution/intro-keyboard-shortcuts.page
 share/help/uk/evolution/intro-main-window.page
@@ -6411,6 +6444,7 @@ share/help/zh_CN/evolution/calendar-weather.page
 share/help/zh_CN/evolution/calendar-webdav.page
 share/help/zh_CN/evolution/contacts-add-automatically.page
 share/help/zh_CN/evolution/contacts-autocompletion.page
+share/help/zh_CN/evolution/contacts-carddav.page
 share/help/zh_CN/evolution/contacts-google.page
 share/help/zh_CN/evolution/contacts-ldap.page
 share/help/zh_CN/evolution/contacts-libreoffice.page
@@ -6463,6 +6497,7 @@ share/help/zh_CN/evolution/import-data.page
 share/help/zh_CN/evolution/import-single-files.page
 share/help/zh_CN/evolution/import-supported-file-formats.page
 share/help/zh_CN/evolution/index.page
+share/help/zh_CN/evolution/intro-account-types.page
 share/help/zh_CN/evolution/intro-first-run.page
 share/help/zh_CN/evolution/intro-keyboard-shortcuts.page
 share/help/zh_CN/evolution/intro-main-window.page

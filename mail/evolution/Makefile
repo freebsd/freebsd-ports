@@ -1,13 +1,12 @@
 PORTNAME=	evolution
-DISTVERSION=	3.54.3
-PORTREVISION=	2
+DISTVERSION=	3.56.2
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated mail, calendar and address book distributed suite
-WWW=		https://wiki.gnome.org/Apps/Evolution
+WWW=		https://gitlab.gnome.org/GNOME/evolution
 
 LICENSE=	GFDL GPLv2+ LGPL21+ MPL11 OPENLDAP
 LICENSE_COMB=	multi
@@ -17,17 +16,13 @@ LICENSE_PERMS_OPENLDAP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	highlight:textproc/highlight \
 		iso-codes>=0:misc/iso-codes \
-		itstool:textproc/itstool
-LIB_DEPENDS=	libcryptui.so:security/libcryptui \
-		libdbus-1.so:devel/dbus \
+		itstool:textproc/itstool \
+		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libenchant-2.so:textproc/enchant2 \
-		libenchant.so:textproc/enchant \
-		libfribidi.so:converters/fribidi \
-		libgcr-base-3.so:security/gcr3 \
 		libgnome-autoar-gtk-0.so:archivers/gnome-autoar \
 		libgspell-1.so:textproc/gspell \
-		libgtkspell3-3.so:textproc/gtkspell3 \
 		libical.so:devel/libical \
 		libicuuc.so:devel/icu \
 		libnotify.so:devel/libnotify \
@@ -36,17 +31,16 @@ LIB_DEPENDS=	libcryptui.so:security/libcryptui \
 		libp11-kit.so:security/p11-kit \
 		libsecret-1.so:security/libsecret \
 		libsoup-3.0.so:devel/libsoup3 \
-		libwebkit2gtk-4.1.so:www/webkit2-gtk@41
+		libwebkit2gtk-4.1.so:www/webkit2-gtk@41 \
+		libjson-glib-1.0.so:devel/json-glib
 RUN_DEPENDS=	highlight:textproc/highlight \
 		iso-codes>=0:misc/iso-codes
-
-PORTSCOUT=	limitw:1,even
 
 USES=		cmake compiler:c11 cpe desktop-file-utils gettext gnome \
 		iconv:wchar_t libarchive localbase pathfix pkgconfig sqlite \
 		tar:xz xorg
-USE_GNOME=	cairo evolutiondataserver3 glib20 gnomedesktop3 intltool
-GNU_CONFIGURE=	yes
+USE_GNOME=	atk cairo evolutiondataserver3 gdkpixbuf glib20 gnomedesktop3 \
+		gtk30 intltool:build libxml2
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 CPE_VENDOR=	gnome
@@ -94,7 +88,8 @@ YTNEF_LIB_DEPENDS=	libytnef.so:converters/ytnef
 YTNEF_CMAKE_BOOL=	ENABLE_YTNEF
 
 WEATHER_DESC=		Weather calendar backend
-WEATHER_LIB_DEPENDS=	libgweather-3.so:net/libgweather
+WEATHER_LIB_DEPENDS=	libgweather-4.so:net/libgweather4 \
+			libgeocode-glib-2.so:net/geocode-glib2
 WEATHER_CMAKE_BOOL=	ENABLE_WEATHER
 
 SPAMASSASSIN_DESC=		SpamAssassin spam filtering
@@ -126,12 +121,12 @@ MAPS_LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
 			libclutter-1.0.so:graphics/clutter \
 			libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 			libcogl.so:graphics/cogl \
-			libgeocode-glib.so:net/geocode-glib \
-			libjson-glib-1.0.so:devel/json-glib
+			libgeocode-glib-2.so:net/geocode-glib2
 MAPS_USES=		gl xorg
 MAPS_USE=		GL=egl \
 			XORG=xcomposite,xdamage,xext,xfixes,xi,xrandr
 
+MARKDOWN_DESC=		Markdown support
 MARKDOWN_CMAKE_ON=	-DENABLE_MARKDOWN=ON
 MARKDOWN_CMAKE_OFF=	-DENABLE_MARKDOWN=OFF
 MARKDOWN_LIB_DEPENDS=	libcmark.so:textproc/cmark
