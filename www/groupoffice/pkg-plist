@@ -10416,6 +10416,8 @@
 %%WWWDIR%%/views/goui/dist/goui/script/component/CardContainer.d.ts.map
 %%WWWDIR%%/views/goui/dist/goui/script/component/CardMenu.d.ts
 %%WWWDIR%%/views/goui/dist/goui/script/component/CardMenu.d.ts.map
+%%WWWDIR%%/views/goui/dist/goui/script/component/CollapseButton.d.ts
+%%WWWDIR%%/views/goui/dist/goui/script/component/CollapseButton.d.ts.map
 %%WWWDIR%%/views/goui/dist/goui/script/component/Component.d.ts
 %%WWWDIR%%/views/goui/dist/goui/script/component/Component.d.ts.map
 %%WWWDIR%%/views/goui/dist/goui/script/component/DescriptionList.d.ts
@@ -10743,6 +10745,7 @@
 %%WWWDIR%%/views/goui/goui/script/component/Button.ts
 %%WWWDIR%%/views/goui/goui/script/component/CardContainer.ts
 %%WWWDIR%%/views/goui/goui/script/component/CardMenu.ts
+%%WWWDIR%%/views/goui/goui/script/component/CollapseButton.ts
 %%WWWDIR%%/views/goui/goui/script/component/Component.ts
 %%WWWDIR%%/views/goui/goui/script/component/DescriptionList.ts
 %%WWWDIR%%/views/goui/goui/script/component/DraggableComponent.ts
