@@ -1,11 +1,14 @@
 PORTNAME=	m17n-docs
-PORTVERSION=	1.5.5
+PORTVERSION=	1.8.4
 CATEGORIES=	devel textproc
-MASTER_SITES=	http://anthesphoria.net/FreeBSD/ports/distfiles/
+MASTER_SITES=	SAVANNAH/m17n
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	m17n library documentation
 WWW=		https://www.nongnu.org/m17n/
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_BUILD=	yes
 
@@ -23,6 +26,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/man5/* ${STAGEDIR}${PREFIX}/share/man/man5
 	${INSTALL_DATA} ${WRKSRC}/usr/latex/m17n-lib.pdf ${STAGEDIR}${DOCSDIR}/en
 	(cd ${WRKSRC}/usr/ && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}/en/)
+
+do-install-JAPANESE-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ja
 	${INSTALL_DATA} ${WRKSRC}/ja/latex/m17n-lib.pdf ${STAGEDIR}${DOCSDIR}/ja
 	(cd ${WRKSRC}/ja/ && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}/ja/)
