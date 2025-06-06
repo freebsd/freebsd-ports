@@ -10,14 +10,14 @@ WWW=		https://github.com/contour-terminal/reflection-cpp
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/cmake/Catch2/Catch2Config.cmake:devel/catch2
+TEST_DEPENDS=	${LOCALBASE}/lib/cmake/Catch2/Catch2Config.cmake:devel/catch2
 
 USES=		cmake:testing
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	contour-terminal
 
-CMAKE_ON=	REFLECTION_TESTING
+CMAKE_TESTING_ON=	REFLECTION_TESTING
 
 PORTDOCS=	README.md
 
