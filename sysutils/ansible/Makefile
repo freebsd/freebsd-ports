@@ -18,8 +18,7 @@ USES=		ansible:env cpe python:3.10+ shebangfix
 CPE_VENDOR=	redhat
 USE_PYTHON=	autoplist concurrent distutils
 
-SHEBANG_FILES=	ansible_collections/ovirt/ovirt/roles/disaster_recovery/files/ovirt-dr \
-		ansible_collections/ovirt/ovirt/roles/disaster_recovery/files/ovirt-dr
+SHEBANG_FILES=	ansible_collections/ovirt/ovirt/roles/disaster_recovery/files/ovirt-dr
 # It's probably best to leave shebangs in modules untouched as they must be
 # either unversioned or absent.
 # See [1] and [2].
