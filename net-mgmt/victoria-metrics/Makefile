@@ -1,7 +1,6 @@
 PORTNAME?=	victoria-metrics
-PORTVERSION=	1.114.0		# don't forget to update BUILDINFO_TAG
+PORTVERSION=	1.118.0		# don't forget to update BUILDINFO_TAG
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gmake go:1.24,no_targets
 USE_RC_SUBR?=	${PORTNAME}
 MAKE_ENV=	PKG_TAG=v${PORTVERSION} GOOS=${OPSYS:tl} \
-		BUILDINFO_TAG=tags-v${PORTVERSION}-0-ge950846 \
+		BUILDINFO_TAG=tags-v${PORTVERSION}-0-gaa3171c \
 		DATEINFO_TAG=${_GET_DATE:sh}
 ALL_TARGET=	${PORTNAME}-pure
 
@@ -42,8 +41,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${VICTORIA_DATA}
 
 do-install-DOCS-on:
-	@${RM} -r ${INSTALL_WRKSRC}/docs/VictoriaLogs
-	@cd ${INSTALL_WRKSRC}/docs && ${RM} robots.txt vm*
+	@${RM} -r ${INSTALL_WRKSRC}/docs/victorialogs
+	@cd ${INSTALL_WRKSRC}/docs && ${RM} Makefile victoriametrics/vm*
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${MV} ${INSTALL_WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 .endif
