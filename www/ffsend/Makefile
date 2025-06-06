@@ -18,6 +18,9 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE
 LICENSE_PERMS_FUCHSIACPRNG=	dist-mirror dist-sell pkg-mirror pkg-sell \
 				auto-accept
 
+DEPRECATED=	fails to build with rust 1.87.0
+EXPIRATION_DATE=2025-06-30
+
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		xclip:x11/xclip \
 		xsel:x11/xsel-conrad
