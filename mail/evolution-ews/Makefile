@@ -1,32 +1,30 @@
 PORTNAME=	evolution-ews
-DISTVERSION=	3.54.3.0
+DISTVERSION=	3.56.2
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Evolution Microsoft Exchange plugin through Exchange Web Services
-WWW=		https://wiki.gnome.org/Apps/Evolution
+WWW=		https://gitlab.gnome.org/GNOME/evolution-ews
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	evolution>=3.0.0:mail/evolution
-LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup \
-		libfribidi.so:converters/fribidi \
-		libicuuc.so:devel/icu \
+BUILD_DEPENDS=	evolution>0:mail/evolution
+LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libmspack.so:archivers/libmspack \
 		libsecret-1.so:security/libsecret \
 		libnspr4.so:devel/nspr \
 		libnss3.so:security/nss \
 		libical.so:devel/libical \
-		libjson-glib-1.0.so:devel/json-glib
-RUN_DEPENDS=	evolution>=3.0.0:mail/evolution
-
-PORTSCOUT=	limitw:1,even
+		libjson-glib-1.0.so:devel/json-glib \
+		libwebkit2gtk-4.1.so:www/webkit2-gtk@41
+RUN_DEPENDS=	evolution>0:mail/evolution
 
 USES=		compiler:c11 cmake gettext gnome localbase pathfix \
 		pkgconfig sqlite tar:xz
-USE_GNOME=	cairo gdkpixbuf evolutiondataserver3 intltool
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 evolutiondataserver3 \
+		intltool:build
 
 .include <bsd.port.mk>
