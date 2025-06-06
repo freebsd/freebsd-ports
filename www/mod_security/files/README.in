@@ -21,15 +21,19 @@ under it.
 
   pkg install git
   cd %%ETCDIR%%
-  git clone https://github.com/SpiderLabs/owasp-modsecurity-crs
-  cp owasp-modsecurity-crs/modsecurity_crs_10_setup.conf.example \
-    crs.conf
+  git clone https://github.com/coreruleset/coreruleset.git
+  cp coreruleset/crs-setup.conf.example \
+    crs-setup.conf
 
-The CRS has various config options. To change them, edit crs.conf.
+The CRS has various config options. To change them, edit crs-setup.conf.
 
 To activate the CRS base rules, add the following to your httpd.conf:
 
-  Include etc/modsecurity/owasp-modsecurity-crs/base_rules/*.conf
+  IncludeOptional %%ETCDIR%%/coreruleset/crs-setup.conf
+  IncludeOptional %%ETCDIR%%/coreruleset/plugins/*-config.conf
+  IncludeOptional %%ETCDIR%%/coreruleset/plugins/*-before.conf
+  IncludeOptional %%ETCDIR%%/coreruleset/rules/*.conf
+  IncludeOptional %%ETCDIR%%/coreruleset/plugins/*-after.conf
 
 You can also add custom configuration and CRS exceptions here.
 For instance, you might want to disable rules that generate false
@@ -84,6 +88,6 @@ exceptions.
 You probably want to keep the CRS updated from time to time. You can
 do this with Git:
 
-  cd %%ETCDIR%%/owasp-modsecurity-crs
+  cd %%ETCDIR%%/coreruleset
   git pull
   apachectl restart
