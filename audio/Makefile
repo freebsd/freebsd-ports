@@ -284,7 +284,6 @@
     SUBDIR += id3el
     SUBDIR += id3lib
     SUBDIR += id3mtag
-    SUBDIR += id3tool
     SUBDIR += id3v2
     SUBDIR += iir1
     SUBDIR += infamous-plugins-lv2
