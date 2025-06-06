@@ -9,6 +9,9 @@ MAINTAINER=	aryeh.friedman@gmail.com
 COMMENT=	Transaction-based software configuration management system
 WWW=		https://aegis.sourceforge.net/
 
+DEPRECATED=	Abandoned upstream, last release in 2012
+EXPIRATION_DATE=2025-07-31
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
