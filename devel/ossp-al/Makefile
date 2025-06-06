@@ -9,6 +9,9 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Defines an abstract type of buffer that can move data without copying
 WWW=		http://www.ossp.org/pkg/lib/al/
 
+DEPRECATED=	Obsolete and abandoned upstream, last release in 2005
+EXPIRATION_DATE=2024-07-31
+
 LIB_DEPENDS=	libex.so:devel/ossp-ex
 
 USES=		libtool
