@@ -1,92 +1,64 @@
 PORTNAME=	vkquake
-DISTVERSION=	1.32.1
-PORTREVISION=	1
+DISTVERSION=	1.32.2
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Quake 1 port using Vulkan instead of OpenGL, based on QuakeSpasm
+MAINTAINER=	agh@riseup.net
+COMMENT=	Vulkan Quake port based on QuakeSpasm
 WWW=		https://github.com/Novum/vkQuake
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 		vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
-WRKSRC_SUBDIR=	Quake
-
-USES=		desktop-file-utils gmake gnome pkgconfig sdl
-USE_SDL=	sdl2
+USES=		desktop-file-utils meson pkgconfig sdl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Novum
 GH_PROJECT=	vkQuake
+USE_SDL=	sdl2
 
-MAKE_ENV=	prefix=${PREFIX} bindir=${PREFIX}/bin VULKAN_SDK=${LOCALBASE}
-MAKE_ARGS=	HOST_CC="${CC}" CC="${CC}"
-ALL_TARGET=	# empty
-
-.include	"${.CURDIR}/../quake-data/Makefile.include"
+.include "${.CURDIR}/../quake-data/Makefile.include"
 
 CFLAGS+=	-DDATADIR='\"${Q1DIR}\"' -Wno-error=atomic-alignment
 
-OPTIONS_DEFINE=			USERDIRS WAVE FLAC MP3 VORBIS # OPUS
-OPTIONS_RADIO=			MODPLAYER
-OPTIONS_RADIO_MODPLAYER=	MIKMOD XMP MODPLUG
-OPTIONS_DEFAULT=		USERDIRS WAVE FLAC VORBIS MODPLUG # OPUS MODPLUG
+OPTIONS_DEFINE=			DEBUG FLAC OPUS USERDIRS VORBIS WAVE
+OPTIONS_DEFAULT=		FLAC MP3 OPUS USERDIRS VORBIS WAVE
+OPTIONS_RADIO=			MP3LIBRARY
+OPTIONS_RADIO_MP3LIBRARY=	MAD MP3
 
-USERDIRS_DESC=	Enable support for loading game files from user directories (~/.vkquake)
-WAVE_DESC=	Enable support for Wave music
-FLAC_DESC=	Enable support for FLAC music
-MP3_DESC=	Enable support for MP3 music
-VORBIS_DESC=	Enable support for Ogg Vorbis music
-# OPUS_DESC=	Enable support for Opus music
-MIKMOD_DESC=	Enable support for tracker module music using MikMod
-XMP_DESC=	Enable support for tracker module music using XMP
-MODPLUG_DESC=	Enable support for tracker module music using ModPlug
+MP3LIBRARY_DESC=	MP3 audio library
+USERDIRS_DESC=		Support loading game data from user directories (~/.vkquake)
+WAVE_DESC=		Wave audio support
 
-USERDIRS_MAKE_ARGS=	DO_USERDIRS=1
-USERDIRS_MAKE_ARGS_OFF=	DO_USERDIRS=0
-
-WAVE_MAKE_ARGS=		USE_CODEC_WAVE=1
-WAVE_MAKE_ARGS_OFF=	USE_CODEC_WAVE=0
-
-FLAC_MAKE_ARGS=		USE_CODEC_FLAC=1
-FLAC_MAKE_ARGS_OFF=	USE_CODEC_FLAC=0
+DEBUG_MESON_ON=		--buildtype=debug --optimization=0
+DEBUG_MESON_OFF=	--buildtype=plain --optimization=2
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
-
-MP3_MAKE_ARGS=		USE_CODEC_MP3=1 MP3LIB=mpg123
-MP3_MAKE_ARGS_OFF=	USE_CODEC_MP3=0
+FLAC_MESON_ENABLED=	use_codec_flac
+MAD_LIB_DEPENDS=	libmad.so:audio/libmad
+MAD_MESON_ARGS=		-Duse_codec_mp3=enabled
+MAD_MESON_ON=		-Dmp3_lib=mad
 MP3_LIB_DEPENDS=	libmpg123.so:audio/mpg123
-
-VORBIS_MAKE_ARGS=	USE_CODEC_VORBIS=1 VORBISLIB=vorbis
-VORBIS_MAKE_ARGS_OFF=	USE_CODEC_VORBIS=0
-VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
-			libvorbisfile.so:audio/libvorbis \
-			libogg.so:audio/libogg
-
-# XXX: crashes on start
-# OPUS_MAKE_ARGS=		USE_CODEC_OPUS=1
-# OPUS_MAKE_ARGS_OFF=	USE_CODEC_OPUS=0
-# OPUS_LIB_DEPENDS=	libopus.so:audio/opus \
-# 			libopusfile.so:audio/opusfile
-
-MIKMOD_MAKE_ARGS=	USE_CODEC_MIKMOD=1
-MIKMOD_MAKE_ARGS_OFF=	USE_CODEC_MIKMOD=0
-MIKMOD_LIB_DEPENDS=	libmikmod.so:audio/libmikmod
-
-XMP_MAKE_ARGS=		USE_CODEC_XMP=1
-XMP_MAKE_ARGS_OFF=	USE_CODEC_XMP=0
-XMP_LIB_DEPENDS=	libxmp.so:audio/xmp
-
-MODPLUG_MAKE_ARGS=	USE_CODEC_MODPLUG=1
-MODPLUG_MAKE_ARGS_OFF=	USE_CODEC_MODPLUG=0
-MODPLUG_LIB_DEPENDS=	libmodplug.so:audio/libmodplug
+MP3_MESON_ARGS=		-Duse_codec_mp3=enabled
+MP3_MESON_ON=		-Dmp3_lib=mpg123
+OPUS_LIB_DEPENDS=	libopus.so:audio/opus \
+			libopusfile.so:audio/opusfile
+OPUS_MESON_ENABLED=	use_codec_opus
+USERDIRS_MESON_ENABLED=	do_userdirs
+VORBIS_LIB_DEPENDS=	libogg.so:audio/libogg \
+			libvorbis.so:audio/libvorbis \
+			libvorbisfile.so:audio/libvorbis
+VORBIS_MESON_ENABLED=	use_codec_vorbis
+WAVE_MESON_ENABLED=	use_codec_wave
 
 post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${MESON_BUILD_DIR}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${Q1DIR}
-	${INSTALL_DATA} ${WRKSRC}/vkquake.pak ${STAGEDIR}${Q1DIR}
+	${INSTALL_DATA} ${WRKSRC}/Quake/vkquake.pak \
+		${STAGEDIR}${Q1DIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps
 	${INSTALL_DATA} ${FILESDIR}/vkquake.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/vkquake.png
