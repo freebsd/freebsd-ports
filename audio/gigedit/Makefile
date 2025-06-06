@@ -1,5 +1,5 @@
 PORTNAME=	gigedit
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 
