@@ -1,6 +1,6 @@
---- configure.ac.orig	2017-12-08 12:13:45 UTC
+--- configure.ac.orig	2025-02-12 21:16:22 UTC
 +++ configure.ac
-@@ -107,7 +107,7 @@ if test x$with_gui != xno; then
+@@ -105,7 +105,7 @@ dnl Checks if dlopen exists, and if it's in libc or li
  
  dnl Checks if dlopen exists, and if it's in libc or libdl.
  
@@ -9,33 +9,7 @@
  	       AC_DEFINE(HAVE_DLOPEN, 1,
  	       [Define to 1 if you have the function dlopen.]))
  
-@@ -204,21 +204,21 @@ fi
- AC_SUBST(OTF_LD_FLAGS)
- 
- dnl Check for Freetype2 usability.
--AC_CHECK_PROG(HAVE_FREETYPE_CONFIG, freetype-config, yes)
-+AC_CHECK_PROG(HAVE_FREETYPE_CONFIG, pkg-config freetype2, yes)
- if test "x$HAVE_FREETYPE_CONFIG" = "xyes"; then
--  FREETYPE_INC=`freetype-config --cflags`
-+  FREETYPE_INC=`pkg-config freetype2 --cflags`
-   save_CPPFLAGS="$CPPFLAGS"
-   CPPFLAGS="$CPPFLAGS $FREETYPE_INC"
-   AC_CHECK_HEADER(ft2build.h, HAVE_FREETYPE=yes,
-   			      HAVE_FREETYPE=no CPPFLAGS="$save_CPPFLAGS")
-   if test "x$HAVE_FREETYPE" = "xyes" ; then
-     save_LIBS="$LIBS"
--    LIBS="$LIBS `freetype-config --libs`"
-+    LIBS="$LIBS `pkg-config freetype2 --libs`"
-     AC_CHECK_LIB(freetype, FT_Init_FreeType, HAVE_FREETYPE=yes,
-     			   		     HAVE_FREETYPE=no)
-     LIBS="$save_LIBS"
-     if test "x$HAVE_FREETYPE" = "xyes"; then
--      FREETYPE_LD_FLAGS=`freetype-config --libs`
-+      FREETYPE_LD_FLAGS=`pkg-config freetype2 --libs`
-       AC_DEFINE(HAVE_FREETYPE, 1, 
- 		[Define to 1 if you have FreeType library and header file.])
-       M17N_EXT_LIBS="$M17N_EXT_LIBS freetype"
-@@ -344,6 +344,10 @@ LIBS="$save_LIBS"
+@@ -331,6 +331,10 @@ dnl Check for Anthy usability.
  AC_SUBST(XML2_LD_FLAGS)
  
  dnl Check for Anthy usability.
@@ -44,18 +18,17 @@
 +                           [with Anthy library (default is YES)]))
 +if test "x$with_anthy" != "xno"; then
  
- PKG_CHECK_MODULES(ANTHY, anthy, HAVE_ANTHY=yes, HAVE_ANTHY=no)
- if test "x$HAVE_ANTHY" = "xyes"; then
-@@ -353,6 +357,8 @@ if test "x$HAVE_ANTHY" = "xyes"; then
+ ANTHY_CFLAGS=""
+ ANTHY_LIBS=""
+@@ -354,6 +358,7 @@ fi
    ANTHY_LD_FLAGS="$ANTHY_LIBS"
    CONFIG_FLAGS="$CONFIG_FLAGS -DHAVE_ANTHY"
  fi
-+
 +fi
- AC_SUBST(ANTHY_LD_FLAGS)
  
- dnl Check for Ispell usability.
-@@ -367,11 +373,15 @@ dnl Check for Thai word-segmentation library.
+ AC_SUBST(ANTHY_LD_CFLAGS)
+ AC_SUBST(ANTHY_LD_FLAGS)
+@@ -370,6 +375,10 @@ dnl In addition, set THAI_WORDSEG_LD_FLAGS to a proper
  dnl If we have one, define HAVE_THAI_WORDSEG and one of these:
  dnl   HAVE_LIBTHAI, HAVE_WORDCUT, or HAVE_WORDCUT_OLD
  dnl In addition, set THAI_WORDSEG_LD_FLAGS to a proper value.
@@ -66,13 +39,7 @@
  
  PKG_CHECK_MODULES(LIBTHAI, libthai, HAVE_LIBTHAI=yes, HAVE_LIBTHAI=no)
  PKG_CHECK_MODULES(WORDCUT, wordcut, HAVE_WORDCUT=yes, HAVE_WORDCUT=no)
- 
--if test "x$HAVE_LIBTHAI" == "xyes"; then
-+if test "x$HAVE_LIBTHAI" = "xyes"; then
- 
-   AC_DEFINE(HAVE_LIBTHAI, 1, [Define if you have libthai])
-   THAI_WORDSEG_LD_FLAGS="$LIBTHAI_LIBS"
-@@ -426,6 +436,8 @@ fi  
+@@ -429,6 +438,8 @@ if test "x$HAVE_THAI_WORDSEG" = "xyes"; then
  if test "x$HAVE_THAI_WORDSEG" = "xyes"; then
    AC_DEFINE(HAVE_THAI_WORDSEG, 1,
              [Define if you have some Thai word-segmentation library])
