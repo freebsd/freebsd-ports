@@ -384,6 +384,7 @@ lib/gimp/%%ABIVER%%/plug-ins/file-gif-load/file-gif-load
 lib/gimp/%%ABIVER%%/plug-ins/file-gih/file-gih
 lib/gimp/%%ABIVER%%/plug-ins/file-glob/file-glob
 lib/gimp/%%ABIVER%%/plug-ins/file-header/file-header
+%%HEIF%%lib/gimp/%%ABIVER%%/plug-ins/file-heif/file-heif
 lib/gimp/%%ABIVER%%/plug-ins/file-html-table/file-html-table
 lib/gimp/%%ABIVER%%/plug-ins/file-icns/file-icns
 lib/gimp/%%ABIVER%%/plug-ins/file-ico/file-ico
