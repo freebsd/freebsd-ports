@@ -1,5 +1,5 @@
-TIMESTAMP = 1727039566
-SHA256 (go/net_nats-top/nats-top-v0.6.2/v0.6.2.mod) = 06f8f53bb628a154d0a225a3ff31d30b20d8409c1b6a668d4fb0351cb5e32253
-SIZE (go/net_nats-top/nats-top-v0.6.2/v0.6.2.mod) = 762
-SHA256 (go/net_nats-top/nats-top-v0.6.2/v0.6.2.zip) = 893d6de21d915fb4c65ed2d994090609be2fd5b494fc68a8b78cf03e140b794d
-SIZE (go/net_nats-top/nats-top-v0.6.2/v0.6.2.zip) = 27738
+TIMESTAMP = 1749232086
+SHA256 (go/net_nats-top/nats-top-v0.6.3/v0.6.3.mod) = 43b5513f83f2768b6c7d286b12d6f9cc3afa824c9092434fd49655a5d53e8252
+SIZE (go/net_nats-top/nats-top-v0.6.3/v0.6.3.mod) = 668
+SHA256 (go/net_nats-top/nats-top-v0.6.3/v0.6.3.zip) = 6e511f19cc31f5fc4440422388830fd6435cf1571636dd54ba204dd3bc6eea81
+SIZE (go/net_nats-top/nats-top-v0.6.3/v0.6.3.zip) = 26609
