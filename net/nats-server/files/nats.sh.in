@@ -12,6 +12,11 @@
 # nats_group:			Group name to run as. default "nats"
 # nats_options:			Options to pass nats server
 #
+# This script provides the following extra commands:
+# reload:			Reload configuration without restarting
+# logrotate:			Reopen log files
+# ldm:				Log debug and monitoring
+#
 
 . /etc/rc.subr
 
@@ -32,9 +37,10 @@ procname=%%PREFIX%%/bin/nats-server
 command=/usr/sbin/daemon
 command_args="-p ${pidfile} ${procname} ${nats_options}"
 
-extra_commands="logrotate ldm"
+extra_commands="logrotate ldm reload"
 logrotate_cmd="${procname} --signal reopen=${pidfile}"
 ldm_cmd="${procname} --signal ldm=${pidfile}"
+reload_cmd="${procname} --signal reload=${pidfile}"
 
 nats_start_precmd()
 {
