@@ -7,6 +7,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ documentation generator
 WWW=		https://scandoc.sourceforge.net/
 
+DEPRECATED=	Abandoned project, last release in in 2001
+EXPIRATION_DATE=2025-07-31
+
 LICENSE=	ARTPERL10
 LICENSE_FILE=	${WRKSRC}/COPYING
 
