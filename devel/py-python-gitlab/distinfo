@@ -1,3 +1,3 @@
-TIMESTAMP = 1738091819
-SHA256 (python_gitlab-5.6.0.tar.gz) = bc531e8ba3e5641b60409445d4919ace68a2c18cb0ec6d48fbced6616b954166
-SIZE (python_gitlab-5.6.0.tar.gz) = 396148
+TIMESTAMP = 1749044802
+SHA256 (python_gitlab-6.0.0.tar.gz) = 704bf548c258f1cfe2f09b8ece9af1cc8fa6ae828ac6fe6a1cbe957c98431414
+SIZE (python_gitlab-6.0.0.tar.gz) = 397108

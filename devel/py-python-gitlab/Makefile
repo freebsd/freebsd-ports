@@ -1,5 +1,5 @@
 PORTNAME=	python-gitlab
-DISTVERSION=	5.6.0
+DISTVERSION=	6.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +29,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		AUTOCOMPLETE DOCS GRAPHQL YAML
 OPTIONS_DEFAULT=	AUTOCOMPLETE GRAPHQL YAML
+OPTIONS_EXCLUDE=	DOCS
 
 AUTOCOMPLETE_DESC=	Autocompletion via argcomplete
 GRAPHQL_DESC=		GraphQL support
@@ -36,6 +37,7 @@ YAML_DESC=		YAML output
 
 AUTOCOMPLETE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=1.10.0<4:devel/py-argcomplete@${PY_FLAVOR}
 
+DOCS_BROKEN=		Require py-sphinx >= 8: cannot import name '_ConfigRebuild' from 'sphinx.config'
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}myst-parser>0:textproc/py-myst-parser@${PY_FLAVOR} \
