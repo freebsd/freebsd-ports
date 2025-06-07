@@ -1,0 +1,11 @@
+--- src/corelib/io/qfilesystemwatcher.cpp.orig	2025-02-13 17:45:28 UTC
++++ src/corelib/io/qfilesystemwatcher.cpp
+@@ -11,7 +11,7 @@
+ #include <qset.h>
+ #include <qtimer.h>
+ 
+-#if (defined(Q_OS_LINUX) || defined(Q_OS_QNX)) && QT_CONFIG(inotify)
++#if (defined(Q_OS_LINUX) || defined(Q_OS_QNX) || defined(Q_OS_FREEBSD)) && QT_CONFIG(inotify)
+ #define USE_INOTIFY
+ #endif
+ 
