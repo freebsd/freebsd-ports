@@ -1,3 +1,6 @@
 @sample etc/pimd.conf.sample
 sbin/pimd
+sbin/pimctl
 share/man/man8/pimd.8.gz
+share/man/man8/pimctl.8.gz
+share/man/man5/pimd.conf.5.gz

@@ -2,7 +2,7 @@
 #
 # PROVIDE: pimd
 # REQUIRE: netif routing
-# KEYWORD: nojail
+# KEYWORD: nojailvnet
 
 #
 # Add the following to /etc/rc.conf[.local] to enable this service
@@ -17,6 +17,7 @@ rcvar="${name}_enable"
 command="%%PREFIX%%/sbin/${name}"
 required_files="%%PREFIX%%/etc/${name}.conf"
 extra_commands=reload
+required_modules="ip_mroute"
 
 load_rc_config $name
 : ${pimd_enable="NO"}
