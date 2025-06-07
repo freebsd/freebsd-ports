@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure Internet Live Conferencing (SILC) network toolkit
 WWW=		http://www.silcnet.org/
 
+DEPRECATED=	Protocol that never got any traction, last release in 2014
+EXPIRATION_DATE=2025-07-31
+
 CONFLICTS=	silc-client-1.1.* silc-irssi-client-1.1.*
 
 USES=		gmake libtool pathfix perl5 tar:bzip2
