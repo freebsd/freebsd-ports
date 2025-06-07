@@ -30,6 +30,10 @@ FCFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
 		-L${LOCALBASE}/lib/gcc${_GCC_VER}
 CFLAGS_F2018=	-I${LOCALBASE}/include/gcc${_GCC_VER}
+# Only needed on riscv64? See PR 287211
+.    if ${ARCH} == "riscv64"
+FCFLAGS+=  -B${LOCALBASE}/lib/gcc${_GCC_VER}
+.    endif
 .  else
 IGNORE=		USES=fortran: invalid arguments: ${fortran_ARGS}
 .  endif
