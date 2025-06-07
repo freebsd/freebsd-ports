@@ -1,6 +1,7 @@
 Reggae - REGister Globaly Access Everywhere is a package which helps in common
-DevOps tasks. It is an open source package which relays on CBSD to provide lower
-level management for jails and virtual machines.
+DevOps tasks. It is an open source package which relays on CBSD or plain
+FreeBSD base tools to provide lower level management for jails and virtual
+machines.
 
 If you have ever used Vagrant or Docker Compose, Reggae is best described
 as an alternative to those. It enables you easy development inside jail
