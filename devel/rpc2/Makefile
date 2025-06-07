@@ -7,6 +7,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interprocess communication library
 WWW=		http://www.coda.cs.cmu.edu/
 
+DEPRECATED=	Outdated, unsupported upstream and unmaintained for years in tree
+EXPIRATION_DATE=2025-07-31
+
 LICENSE=	LGPL20
 
 LIB_DEPENDS=	liblwp.so:devel/lwp
