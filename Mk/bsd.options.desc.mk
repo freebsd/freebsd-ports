@@ -535,6 +535,7 @@ WEBGL_DESC?=		WebGL 2D/3D graphics rendering support
 WEBKIT_DESC?=		WebKit webpage renderer support
 WEBP_DESC?=		WebP image format support
 WEBSERVER_DESC?=	Build and/or install internal web server
+WEBSOCKET_DESC?=	WebSocket protocol support
 WEBUI_DESC?=		Build and/or install web user interface
 WMA_DESC?=		Windows Media Audio audio format support
 WMF_DESC?=		Windows Metafile image format support
