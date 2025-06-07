@@ -1,15 +1,24 @@
---- build.xml.orig	2020-11-17 15:42:56 UTC
+--- build.xml.orig
 +++ build.xml
-@@ -62,10 +62,10 @@
+@@ -42,7 +42,7 @@
+   <property name="component.title"         value="Bean Introspection Utilities"/>
+ 
+   <!-- The current version number of this component -->
+-  <property name="component.version"       value="1.9.3-SNAPSHOT"/>
++  <property name="component.version"       value="1.11.0"/>
+ 
+   <!-- The base directory for compilation targets -->
+   <property name="build.home"              value="target"/>
+@@ -61,10 +61,10 @@
  
  
    <!-- Compiler source JDK version -->
 -  <property name="compile.source"          value="1.5"/>
-+  <property name="compile.source"          value="1.6"/>
++  <property name="compile.source"          value="1.8"/>
  
    <!-- Compiler target JDK version -->
 -  <property name="compile.target"          value="1.5"/>
-+  <property name="compile.target"          value="1.6"/>
++  <property name="compile.target"          value="1.8"/>
  
    <!-- Should Java compilations set the 'debug' compiler option? -->
    <property name="compile.debug"           value="true"/>

@@ -1,6 +1,5 @@
 PORTNAME=	commons-beanutils
-PORTVERSION=	1.9.4
-PORTREVISION=	1
+PORTVERSION=	1.11.0
 CATEGORIES=	java devel
 MASTER_SITES=	APACHE_COMMONS_SOURCE
 PKGNAMEPREFIX=	apache-
@@ -20,9 +19,10 @@ RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging \
 USES=		dos2unix java:ant,run
 DOS2UNIX_FILES=	build.xml
 
-ALL_TARGET=	dist
 MAKE_ARGS+=	-Dcommons-collections.jar=${JAVALIBDIR}/commons-collections.jar \
 		-Dcommons-logging.jar=${JAVALIBDIR}/commons-logging.jar
+ALL_TARGET=	dist
+
 NO_ARCH=	yes
 
 JARFILE=	${PORTNAME}.jar
@@ -38,9 +38,6 @@ OTHERDOCS=	LICENSE.txt NOTICE.txt RELEASE-NOTES.txt
 PORTDOCS=	${APIDOCS} ${OTHERDOCS}
 .endif
 
-pre-build:
-	@${REINPLACE_CMD} -e 's!1.9.3-SNAPSHOT!${PORTVERSION}!g;' \
-		${WRKSRC}/build.xml
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVALIBDIR}/${JARFILE}
 .if ${PORT_OPTIONS:MDOCS}
