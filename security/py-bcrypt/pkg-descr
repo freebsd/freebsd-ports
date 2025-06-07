@@ -1,1 +1,5 @@
-Modern password hashing for your software and your servers
+Acceptable password hashing.
+
+While bcrypt remains an acceptable choice for password storage, depending on
+your specific use case, you may also want to consider using scrypt (via
+standard library or security/py-cryptography) or argon2id (via security/py-argon2-cffi).
