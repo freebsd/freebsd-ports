@@ -1,6 +1,5 @@
 PORTNAME=	racket
-PORTVERSION=	8.11.1
-PORTREVISION=	1
+PORTVERSION=	8.17
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -28,31 +27,34 @@ LIB_DEPENDS=	libffi.so:devel/libffi \
 
 USES=		cpe gmake iconv libtool localbase tar:tgz
 CPE_VENDOR=	${PORTNAME}-lang
+
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-liblz4 \
 		--enable-pthread \
 		--mandir=${PREFIX}/share/man
-WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
-PATCH_WRKSRC=	${WRKDIR}/racket-${PORTVERSION}
-USE_LDCONFIG=	yes
-REINPLACE_ARGS=	-i ""
+
 CONFLICTS=	racket
 
-OPTIONS_DEFINE=		DOCS
-OPTIONS_DEFAULT=	CS
-OPTIONS_SUB=		yes
+REINPLACE_ARGS=	-i ""
 
+PATCH_WRKSRC=	${WRKDIR}/racket-${PORTVERSION}
+WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
+
+OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE_amd64=	FUTURES JIT
+OPTIONS_DEFINE_i386=	FUTURES JIT
+OPTIONS_DEFAULT=	CS
 OPTIONS_DEFAULT_powerpc=	BC
 OPTIONS_DEFAULT_powerpc64=	BC
 OPTIONS_DEFAULT_powerpc64le=	BC
-OPTIONS_DEFINE_amd64=	FUTURES JIT
-OPTIONS_DEFINE_i386=	FUTURES JIT
+OPTIONS_SINGLE=		BACKEND
+OPTIONS_SINGLE_BACKEND=	BC CS
 OPTIONS_EXCLUDE_powerpc=	CS
 OPTIONS_EXCLUDE_powerpc64=	CS
 OPTIONS_EXCLUDE_powerpc64le=	CS
-
-OPTIONS_SINGLE=		BACKEND
-OPTIONS_SINGLE_BACKEND=	BC CS
+OPTIONS_SUB=		yes
 
 BACKEND_DESC=	Racket Backend
 BC_DESC=	Build ByteCode backend (legacy)
@@ -65,13 +67,13 @@ BC_CONFIGURE_ON=		--enable-bconly \
 				--enable-places
 CS_CONFIGURE_ON=		--enable-csonly \
 				--enable-mach=${CHEZ_MACHTYPE}
-FUTURES_CONFIGURE_ENABLE=	futures
 FUTURES_IMPLIES=		JIT
 FUTURES_PREVENTS=		CS
 FUTURES_PREVENTS_MSG=		CS enables futures by default
-JIT_CONFIGURE_ENABLE=		jit
+FUTURES_CONFIGURE_ENABLE=	futures
 JIT_PREVENTS=			CS
 JIT_PREVENTS_MSG=		CS enables jit by default
+JIT_CONFIGURE_ENABLE=		jit
 
 .include <bsd.port.options.mk>
 
