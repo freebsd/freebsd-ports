@@ -1,5 +1,5 @@
-TIMESTAMP = 1743786919
+TIMESTAMP = 1749270398
 SHA256 (vst-sdk_3.7.4_build-25_2021-12-16.zip) = 49b0e46345af323ab84be9df065653b2a6531745dea6f3ac3fb47915df9f3a81
 SIZE (vst-sdk_3.7.4_build-25_2021-12-16.zip) = 104869292
-SHA256 (rncbc-qtractor-v1.5.4_GH0.tar.gz) = 1281f24b4bd3a8d14d9b1a6382602db4ea74914e43233418ebb693264bb26730
-SIZE (rncbc-qtractor-v1.5.4_GH0.tar.gz) = 1981001
+SHA256 (rncbc-qtractor-v1.5.6_GH0.tar.gz) = 8d11e9da21ac7a953bebbb39e940542b70d44a3263d97e7d24385413eba8db2e
+SIZE (rncbc-qtractor-v1.5.6_GH0.tar.gz) = 1995381
