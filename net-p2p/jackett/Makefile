@@ -1,8 +1,8 @@
 PORTNAME=	jackett
-DISTVERSION=	0.22.1809
+DISTVERSION=	0.22.1997
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Jackett/Jackett/releases/download/
-DISTNAME=	v${PORTVERSION}/Jackett.Binaries.Mono
+DISTNAME=	v${DISTVERSION}/Jackett.Binaries.Mono
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	Torznab proxy implementation of the Newznab API
