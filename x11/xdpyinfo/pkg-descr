@@ -1,2 +1,5 @@
-This package contains xdpyinfo, which is a utility for displaying
-information about an X server.
+Xdpyinfo is a utility for displaying information about an X server. It
+is used to examine the capabilities of a server, the predefined values
+for various parameters used in communicating between clients and the
+server, and the different types of screens and visuals that are
+available.
