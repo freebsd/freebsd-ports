@@ -1,7 +1,6 @@
 PORTNAME=	maeparser
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.2
-PORTREVISION=	1
+DISTVERSION=	1.3.3
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,5 +17,7 @@ USES=		cmake:testing compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	schrodinger
 USE_LDCONFIG=	yes
+
+# 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>
