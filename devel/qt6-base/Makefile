@@ -1,6 +1,6 @@
 PORTNAME=	base
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
 
@@ -94,6 +94,13 @@ PLIST_SUB+=	DTLS=""
 .if ${ARCH} == "armv6" || ${ARCH} == "armv7"
 BUILD_DEPENDS+=	as:devel/binutils
 CMAKE_ARGS+=	-DCMAKE_ASM_FLAGS=-no-integrated-as
+.endif
+
+.if exists(/usr/include/sys/inotify.h)
+PLIST_SUB+=	INOTIFY="" KQUEUE="@comment "
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-inotify
+.else
+PLIST_SUB+=	INOTIFY="@comment " KQUEUE=""
 .endif
 
 post-patch:

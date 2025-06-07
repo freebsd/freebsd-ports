@@ -62,7 +62,8 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystementry_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemiterator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemmetadata_p.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_kqueue_p.h
+%%INOTIFY%%%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_inotify_p.h
+%%KQUEUE%%%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_kqueue_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfilesystemwatcher_polling_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qflatmap_p.h
