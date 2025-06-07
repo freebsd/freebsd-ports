@@ -1,6 +1,5 @@
 PORTNAME=	kakoune
-DISTVERSION=	2024.05.18
-PORTREVISION=	1
+DISTVERSION=	2025.06.03
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/mawww/kakoune/releases/download/v${DISTVERSION}/
 
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/UNLICENSE
 # See https://github.com/mawww/kakoune/issues/2520
 RUN_DEPENDS=	setsid:sysutils/setsid
 
-USES=		compiler:c++20-lang tar:bzip2
+USES=		compiler:c++23-lang tar:bzip2
 DATADIR=	${PREFIX}/share/kak
 DOCSDIR=	${PREFIX}/share/doc/kak
 
