@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: dataplaneapi
+# REQUIRE: LOGIN haproxy
+# KEYWORD: shutdown
+#
+# Configuration settings for Data Plane API in /etc/rc.conf
+#
+# dataplaneapi_enable (bool):    Enable Data Plane API. (default=NO)
+#
+
+. /etc/rc.subr
+
+name="dataplaneapi"
+desc="HAProxy Data Plane API"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${dataplaneapi_enable:="NO"}
+
+pidfile="/var/run/${name}.pid"
+procname="%%LOCALBASE%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-c -p ${pidfile} -t \"${desc}\" ${procname}"
+
+run_rc_command "$1"

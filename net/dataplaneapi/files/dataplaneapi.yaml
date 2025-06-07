@@ -1,0 +1,42 @@
+config_version: 2
+name: haproxy-dataplaneapi
+dataplaneapi:
+  host: 0.0.0.0
+  port: 5555
+  advertised:
+    api_address: ""
+    api_port: 0
+  scheme:
+  - http
+  userlist:
+    userlist: controller
+    userlist_file: ""
+  transaction:
+    transaction_dir: %%PREFIX%%/etc/haproxy/transactions
+    backups_number: 10
+    backups_dir: %%PREFIX%%/etc/haproxy/backups
+    max_open_transactions: 10
+  resources:
+    maps_dir: %%PREFIX%%/etc/haproxy/maps
+    ssl_certs_dir: %%PREFIX%%/etc/haproxy/ssl
+    general_storage_dir: %%PREFIX%%/etc/haproxy/general
+    dataplane_storage_dir: %%PREFIX%%/etc/haproxy/dataplane
+    spoe_dir: %%PREFIX%%/etc/haproxy/spoe
+haproxy:
+  config_file: %%PREFIX%%/etc/haproxy/haproxy.cfg
+  haproxy_bin: /usr/local/sbin/haproxy
+  master_worker_mode: false
+  reload:
+    reload_delay: 5
+    reload_cmd: service haproxy reload
+    restart_cmd: service haproxy restart
+    status_cmd: service haproxy status
+    reload_strategy: custom
+    validate_cmd: service haproxy configtest
+log_targets:
+- log_to: file
+  log_file: /var/log/haproxy-dataplaneapi.log
+  log_level: info
+  log_types:
+  - access
+  - app

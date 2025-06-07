@@ -109,6 +109,7 @@
     SUBDIR += dante
     SUBDIR += daq
     SUBDIR += datapipe
+    SUBDIR += dataplaneapi
     SUBDIR += dbeacon
     SUBDIR += delegate
     SUBDIR += deltachat-rpc-server
