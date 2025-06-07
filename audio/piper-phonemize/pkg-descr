@@ -1,0 +1,5 @@
+Converts text to phonemes for Piper.
+
+Uses eSpeak phonemes with the espeak_TextToPhonemesWithTerminator function.
+This function allows for Piper to preserve punctuation and detect sentence
+boundaries.

@@ -1,0 +1,11 @@
+prefix=%%PREFIX%%
+bindir=${prefix}/bin
+libdir=${prefix}/lib
+includedir=${prefix}/include/piper-phonemize
+
+Name: piper-phonemize
+Description: Piper Phonemization Library
+URL: https://github.com/rhasspy/piper-phonemize
+Version: 2023.11.14-4
+Libs: -L${libdir} -lpiper_phonemize
+Cflags: -I${includedir}
