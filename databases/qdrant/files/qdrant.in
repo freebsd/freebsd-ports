@@ -120,6 +120,7 @@ procname=%%PREFIX%%/bin/qdrant
 command="/usr/sbin/daemon"
 command_args="-f -S -p ${pidfile} \
 	-t qdrant${_profsuffx} \
+	-T qdrant${_profsuffx} \
 	%%PREFIX%%/bin/qdrant --config-path $qdrant_config \
 	$qdrant_args"
 
