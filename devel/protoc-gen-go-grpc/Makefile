@@ -1,7 +1,6 @@
 PORTNAME=	protoc-gen-go-grpc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.72.2
-PORTREVISION=	1
+DISTVERSION=	1.73.0
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -22,7 +21,7 @@ GH_TUPLE=	\
 		google:go-genproto:1a7da9e5054f:google_go_genproto/vendor/google.golang.org/genproto/googleapis/rpc \
 		grpc:grpc-go:v1.70.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		open-telemetry:opentelemetry-go:v1.34.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
-		protocolbuffers:protobuf-go:v1.36.5:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf
+		protocolbuffers:protobuf-go:v1.36.6:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf
 
 GO_TARGET=	./cmd/protoc-gen-go-grpc
 
