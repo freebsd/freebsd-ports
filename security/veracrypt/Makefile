@@ -1,5 +1,5 @@
 PORTNAME=	veracrypt
-PORTVERSION=	1.26.20
+PORTVERSION=	1.26.24
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/v/V/:S/c/C/}%20${PORTVERSION}/Source%20Code
 DISTNAME=	${PORTNAME:S/v/V/:S/c/C/}_${PORTVERSION}_Source
@@ -34,13 +34,15 @@ MAKE_ENV+=	LFLAGS=-Wl,-z,notext
 
 post-patch:
 	${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g' ${WRKSRC}/src/Makefile
-	${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|g' -e \
-				's|Icon=veracrypt|Icon=VeraCrypt-16x16|g' ${WRKSRC}/src/Setup/FreeBSD/veracrypt.desktop
+	${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|g' ${WRKSRC}/src/Setup/FreeBSD/veracrypt.desktop
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/Main/veracrypt ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/src/Setup/FreeBSD/veracrypt.desktop ${STAGEDIR}${PREFIX}/share/applications/
-	cd ${WRKSRC}/src/Resources/Icons && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/pixmaps "-name *\.xpm"
+.	for RESO in 128 16 256 48
+		@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${RESO}x${RESO}/apps
+		${INSTALL_DATA} ${WRKSRC}/src/Resources/Icons/VeraCrypt-${RESO}x${RESO}.xpm ${STAGEDIR}${PREFIX}/share/icons/hicolor/${RESO}x${RESO}/apps/${PORTNAME}.xpm
+.	endfor
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
