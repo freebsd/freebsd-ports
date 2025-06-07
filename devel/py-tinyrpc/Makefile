@@ -26,7 +26,6 @@ GEVENT_DESC=	Gevent support
 HTTPCLIENT_DESC=HTTP client support
 MSGPACK_DESC=	MessagePack support
 RABBITMQ_DESC=	RabbitMQ support
-WEBSOCKET_DESC=	WebSocket support
 WSGI_DESC=	WSGI support
 ZEROMQ_DESC=	ZeroMQ support
 

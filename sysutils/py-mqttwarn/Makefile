@@ -58,7 +58,6 @@ SERIAL_DESC=	Serial port
 SSH_DESC=	ssh plugin
 TWILIO_DESC=	Use Twilio API to send messages
 TWITTER_DESC=	Notifications to Twitter accounts
-WEBSOCKET_DESC=	Websocket
 
 APNS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apns2>=2.0.1:devel/py-apns2@${PY_FLAVOR}
 CELERY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}celery>0:devel/py-celery@${PY_FLAVOR}

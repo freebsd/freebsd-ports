@@ -70,7 +70,6 @@ PYTHON3_DESC=		Execute embedded Python3 scripts
 SCTP_DESC=		SCTP support
 SIPREPO_DESC=		In-memory SIP message storage
 SLACK_DESC=		Connector to Slack channels
-WEBSOCKET_DESC=		WebSocket transport layer
 
 DIALPLAN_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 DIALPLAN_VARS=		EXTRA_MODULES+=dialplan

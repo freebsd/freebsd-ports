@@ -81,7 +81,6 @@ SMB_DESC=	SMB/CIFS support
 SMTP_DESC=	SMTP/SMTPS support
 THREADED_RESOLVER_DESC=	Threaded DNS resolver
 TLS_SRP_DESC=	TLS-SRP (Secure Remote Password) support
-WEBSOCKET_DESC=	WebSocket support
 
 ALTSVC_CONFIGURE_ENABLE=alt-svc
 BROTLI_CONFIGURE_WITH=	brotli
