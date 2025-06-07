@@ -1,6 +1,6 @@
 PORTNAME=	mailslurper
-PORTVERSION=	1.14.2.g20201217
-PORTREVISION=	18
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	1.15.0
 CATEGORIES=	mail
 
 MAINTAINER=	einar@isnic.is
@@ -13,8 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	mailslurper
-GH_TAGNAME=	3231e9f9
 
 GH_TUPLE=	\
 		adampresley:webframework:0c93acb6716f:adampresley_webframework/vendor/github.com/adampresley/webframework \
@@ -24,7 +22,7 @@ GH_TUPLE=	\
 		golang-sql:civil:cb61b32ac6fe:golang_sql_civil/vendor/github.com/golang-sql/civil \
 		golang:crypto:2aa609cf4a9d:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:0de0cce0169b:golang_net/vendor/golang.org/x/net \
-		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:04cbcbbfeed8:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		gorilla:context:v1.1.1:gorilla_context/vendor/github.com/gorilla/context \
 		gorilla:securecookie:v1.1.1:gorilla_securecookie/vendor/github.com/gorilla/securecookie \
