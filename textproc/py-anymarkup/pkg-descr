@@ -1,0 +1,2 @@
+Parse or serialize any markup. Currently supports ini, json, json5, toml, xml
+and yaml.
