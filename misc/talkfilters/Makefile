@@ -1,13 +1,13 @@
 PORTNAME=	talkfilters
-DISTVERSION=	2.3.8
-PORTREVISION=	3
+DISTVERSION=	2.4
 CATEGORIES=	misc
-MASTER_SITES=	http://www.hyperrealm.com/talkfilters/ \
+MASTER_SITES=	https://hyperrealm.github.io/talkfilters/dist/ \
 		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Set of filters to convert English text to various stereotyped dialects
-WWW=		https://www.hyperrealm.com/talkfilters/talkfilters.html
+WWW=		https://hyperrealm.github.io/talkfilters/ \
+		https://github.com/hyperrealm/talkfilters
 
 LICENSE=	GPLv2
 
@@ -19,13 +19,6 @@ CONFLICTS=	chef filters
 SUB_FILES=	pkg-message
 
 INFO=		talkfilters
-
-post-extract:
-	@${ECHO} ${DO_NADA} > ${WRKSRC}/install-sh
-	@${CHMOD} +x ${WRKSRC}/install-sh
-
-post-patch:
-	@${RM} ${WRKSRC}/*.info*
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtalkfilters.so*
