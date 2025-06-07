@@ -1,4 +1,4 @@
---- Makefile.orig	2025-04-16 10:13:35 UTC
+--- Makefile.orig	2025-06-06 00:03:48 UTC
 +++ Makefile
 @@ -7,6 +7,8 @@ LIBRARY_DIRS ?=
  INCLUDE_DIRS ?=
@@ -9,14 +9,15 @@
  SRC := $(wildcard ${DIR_SRC}/*.cpp)
  OBJ := $(patsubst %.cpp,${DIR_OBJ}/%.o,$(notdir ${SRC}))
  
-@@ -15,15 +17,20 @@ CXX ?= g++
+@@ -15,15 +17,21 @@ CXX ?= g++
  BIN_TARGET := ${TARGET}
  
  CXX ?= g++
 -CXXFLAGS := -std=c++11 -pthread -g -O3 -MD -MP -I${DIR_INC} $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir)) ${CXXFLAGS}
 +# Optional flags that the user can override by setting CXXFLAGS in the
-+# env or make argument
-+CXXFLAGS ?= -g -O3
++# env or make argument.  -pthread is a link flag, and serves no purpose
++# in the compile command.  It is handled by -lpthread in LIBS.
++CXXFLAGS ?= -g -O3 -MD -MP
 +# Required flags
 +CXXFLAGS += -std=c++11 -I${DIR_INC} $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir))
  LIBS := -lisal -ldeflate -lpthread
@@ -33,11 +34,13 @@
  
  static:${OBJ}
  	$(CXX) $(OBJ) -o ${BIN_TARGET} $(STATIC_LD_FLAGS)
-@@ -38,8 +45,13 @@ clean:
+@@ -38,8 +46,15 @@ clean:
  	@rm -rf $(DIR_OBJ)
  	@rm -f $(TARGET)
  
-+# Respect DESTDIR for staged installs (used by most package managers)
++# Respect DESTDIR for staged installs (used by most package managers).
++# DESTDIR is empty by default, so this will install directly to BINDIR
++# unless DESTDIR is supplied by the user.
  install:
 -	install $(TARGET) $(BINDIR)/$(TARGET)
 +	install $(TARGET) $(DESTDIR)$(BINDIR)/$(TARGET)
