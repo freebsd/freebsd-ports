@@ -7,6 +7,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient compressor for XML
 WWW=		https://sourceforge.net/projects/xmill/
 
+DEPRECATED=	Outdated and abandoned, last release in 2004
+EXPIRATION_DATE=2025-07-31
+
 USES=		dos2unix zip
 DOS2UNIX_FILES=	${MAKEFILE} XMill/*.cpp
 USE_CXXSTD=	c++14
