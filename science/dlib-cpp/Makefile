@@ -1,6 +1,7 @@
 PORTNAME=	dlib
 DISTVERSIONPREFIX=v
 DISTVERSION=	20.0
+PORTREVISION=	1
 CATEGORIES=	science devel math
 PKGNAMESUFFIX=	-cpp
 
@@ -14,12 +15,14 @@ LICENSE_FILE=	${WRKSRC}/dlib/LICENSE.txt
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libgif.so:graphics/giflib
 
-USES=			cmake compiler:c++11-lang pkgconfig sqlite tar:bzip2 xorg
+USES=			cmake compiler:c++11-lang jpeg pkgconfig sqlite tar:bzip2 xorg
 USE_LDCONFIG=		yes
 USE_XORG=		ice sm x11 xext
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		davisking
+
+EXTRACT_AFTER_ARGS=	--exclude=${PORTNAME}-${DISTVERSION}/dlib/external
 
 CMAKE_ON=		BUILD_SHARED_LIBS
 

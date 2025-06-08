@@ -215,78 +215,6 @@ include/dlib/entropy_encoder_model/entropy_encoder_model_kernel_6.h
 include/dlib/entropy_encoder_model/entropy_encoder_model_kernel_abstract.h
 include/dlib/entropy_encoder_model/entropy_encoder_model_kernel_c.h
 include/dlib/error.h
-include/dlib/external/cblas/cblas.h
-include/dlib/external/cblas/cblas_f77.h
-include/dlib/external/libjpeg/cderror.h
-include/dlib/external/libjpeg/cdjpeg.h
-include/dlib/external/libjpeg/jconfig.h
-include/dlib/external/libjpeg/jdct.h
-include/dlib/external/libjpeg/jerror.h
-include/dlib/external/libjpeg/jinclude.h
-include/dlib/external/libjpeg/jmemsys.h
-include/dlib/external/libjpeg/jmorecfg.h
-include/dlib/external/libjpeg/jpegint.h
-include/dlib/external/libjpeg/jpeglib.h
-include/dlib/external/libjpeg/jversion.h
-include/dlib/external/libjpeg/transupp.h
-include/dlib/external/libpng/png.h
-include/dlib/external/libpng/pngconf.h
-include/dlib/external/libpng/pngdebug.h
-include/dlib/external/libpng/pnginfo.h
-include/dlib/external/libpng/pnglibconf.h
-include/dlib/external/libpng/pngpriv.h
-include/dlib/external/libpng/pngstruct.h
-include/dlib/external/pybind11/include/pybind11/attr.h
-include/dlib/external/pybind11/include/pybind11/buffer_info.h
-include/dlib/external/pybind11/include/pybind11/cast.h
-include/dlib/external/pybind11/include/pybind11/chrono.h
-include/dlib/external/pybind11/include/pybind11/common.h
-include/dlib/external/pybind11/include/pybind11/complex.h
-include/dlib/external/pybind11/include/pybind11/detail/class.h
-include/dlib/external/pybind11/include/pybind11/detail/common.h
-include/dlib/external/pybind11/include/pybind11/detail/descr.h
-include/dlib/external/pybind11/include/pybind11/detail/init.h
-include/dlib/external/pybind11/include/pybind11/detail/internals.h
-include/dlib/external/pybind11/include/pybind11/detail/type_caster_base.h
-include/dlib/external/pybind11/include/pybind11/detail/typeid.h
-include/dlib/external/pybind11/include/pybind11/eigen.h
-include/dlib/external/pybind11/include/pybind11/eigen/common.h
-include/dlib/external/pybind11/include/pybind11/eigen/matrix.h
-include/dlib/external/pybind11/include/pybind11/eigen/tensor.h
-include/dlib/external/pybind11/include/pybind11/embed.h
-include/dlib/external/pybind11/include/pybind11/eval.h
-include/dlib/external/pybind11/include/pybind11/functional.h
-include/dlib/external/pybind11/include/pybind11/gil.h
-include/dlib/external/pybind11/include/pybind11/gil_safe_call_once.h
-include/dlib/external/pybind11/include/pybind11/iostream.h
-include/dlib/external/pybind11/include/pybind11/numpy.h
-include/dlib/external/pybind11/include/pybind11/operators.h
-include/dlib/external/pybind11/include/pybind11/options.h
-include/dlib/external/pybind11/include/pybind11/pybind11.h
-include/dlib/external/pybind11/include/pybind11/pytypes.h
-include/dlib/external/pybind11/include/pybind11/stl.h
-include/dlib/external/pybind11/include/pybind11/stl/filesystem.h
-include/dlib/external/pybind11/include/pybind11/stl_bind.h
-include/dlib/external/pybind11/include/pybind11/type_caster_pyobject_ptr.h
-include/dlib/external/pybind11/include/pybind11/typing.h
-include/dlib/external/pybind11/tools/FindCatch.cmake
-include/dlib/external/pybind11/tools/FindEigen3.cmake
-include/dlib/external/pybind11/tools/FindPythonLibsNew.cmake
-include/dlib/external/pybind11/tools/JoinPaths.cmake
-include/dlib/external/pybind11/tools/pybind11Common.cmake
-include/dlib/external/pybind11/tools/pybind11NewTools.cmake
-include/dlib/external/pybind11/tools/pybind11Tools.cmake
-include/dlib/external/zlib/crc32.h
-include/dlib/external/zlib/deflate.h
-include/dlib/external/zlib/gzguts.h
-include/dlib/external/zlib/inffast.h
-include/dlib/external/zlib/inffixed.h
-include/dlib/external/zlib/inflate.h
-include/dlib/external/zlib/inftrees.h
-include/dlib/external/zlib/trees.h
-include/dlib/external/zlib/zconf.h
-include/dlib/external/zlib/zlib.h
-include/dlib/external/zlib/zutil.h
 include/dlib/fft/fft.h
 include/dlib/fft/fft_size.h
 include/dlib/fft/fft_stl.h
@@ -1096,7 +1024,6 @@ libdata/pkgconfig/dlib-1.pc
 @dir include/dlib/cmake_utils/test_for_libwebp
 @dir include/dlib/cmake_utils/test_for_neon
 @dir include/dlib/cmake_utils/test_for_sse4
-@dir include/dlib/external/libpng/arm
 @dir include/dlib/test/blas_bindings
 @dir include/dlib/test/examples
 @dir include/dlib/test/ffmpeg_data
