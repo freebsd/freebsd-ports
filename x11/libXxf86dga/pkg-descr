@@ -1,1 +1,9 @@
-This package contains the XKB file library.
+The XFree86-DGA extension is an X server extension for allowing client
+programs direct access to the video frame buffer.
+
+XFree86-DGA is not intended as a direct rendering API, but rather, as a
+mechanism to "get the X Server out of the way" so that some other
+direct rendering API can have full access to the hardware.  With this
+in mind, DGA does provide clients some direct access to the hardware
+without requiring a separate rendering API, but this access is limited
+to direct linear framebuffer access.
