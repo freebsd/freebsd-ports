@@ -22,7 +22,8 @@ USE_XORG=		ice sm x11 xext
 USE_GITHUB=		yes
 GH_ACCOUNT=		davisking
 
-EXTRACT_AFTER_ARGS=	--exclude=${PORTNAME}-${DISTVERSION}/dlib/external
+EXTRACT_AFTER_ARGS=	--exclude=${PORTNAME}-${DISTVERSION}/dlib/external \
+			--no-same-owner --no-same-permissions
 
 CMAKE_ON=		BUILD_SHARED_LIBS
 
