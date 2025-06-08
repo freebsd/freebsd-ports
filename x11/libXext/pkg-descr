@@ -1,2 +1,8 @@
+libXext is the historical libX11-based catchall library for the
+X11 extensions without their own libraries.
 
-This package contains the X Extension library.
+libXext provides functions for: Double Buffer Extension (DBE),
+Display Power Management Signaling (DPMS), X11 Nonrectangular Window
+Shape Extension (XShape), shared memory extensions (XShm), TOG-CUP
+(Xcup), X11 Extended Visual Information extension (EVI), X11
+Double-Buffering, Multi-Buffering, and Stereo Extension (Xmbuf).
