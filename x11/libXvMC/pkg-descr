@@ -1,1 +1,3 @@
-This package contains the X Video Extension library.
+X-Video Motion Compensation (XvMC) provides accelerated video
+playback by offloading video decoding to hardware. It is an
+extension of the X video extension for the X Window System.
