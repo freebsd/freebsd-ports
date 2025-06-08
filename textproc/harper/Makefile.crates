@@ -34,8 +34,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.38 \
-		clap_builder-4.5.38 \
+		clap-4.5.39 \
+		clap_builder-4.5.39 \
 		clap_derive-4.5.32 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
@@ -94,7 +94,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		httparse-1.9.5 \
 		hyper-1.6.0 \
 		hyper-rustls-0.27.5 \
-		hyper-util-0.1.11 \
+		hyper-util-0.1.13 \
 		iana-time-zone-0.1.62 \
 		iana-time-zone-haiku-0.1.2 \
 		icu_collections-1.5.0 \
@@ -112,6 +112,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		idna_adapter-1.2.0 \
 		indexmap-2.9.0 \
 		ipnet-2.11.0 \
+		iri-string-0.7.8 \
 		is-docker-0.2.0 \
 		is-macro-0.3.7 \
 		is-wsl-0.4.0 \
@@ -184,13 +185,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		reqwest-0.12.15 \
+		reqwest-0.12.18 \
 		resolve-path-0.1.0 \
 		ring-0.17.9 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-2.1.1 \
 		rustls-0.23.26 \
-		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.11.0 \
 		rustls-webpki-0.103.1 \
 		rustversion-1.0.19 \
@@ -238,6 +238,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.22 \
 		tower-0.5.2 \
+		tower-http-0.6.4 \
 		tower-layer-0.3.3 \
 		tower-lsp-server-0.21.1 \
 		tower-service-0.3.3 \
@@ -306,35 +307,24 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		web-time-1.1.0 \
 		web_atoms-0.1.2 \
 		webpki-roots-0.26.8 \
+		webpki-roots-1.0.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.52.0 \
 		windows-link-0.1.1 \
-		windows-registry-0.4.0 \
-		windows-result-0.3.2 \
-		windows-strings-0.3.1 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.0 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_gnullvm-0.53.0 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_aarch64_msvc-0.53.0 \
 		windows_i686_gnu-0.52.6 \
-		windows_i686_gnu-0.53.0 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_gnullvm-0.53.0 \
 		windows_i686_msvc-0.52.6 \
-		windows_i686_msvc-0.53.0 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnu-0.53.0 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.52.6 \
-		windows_x86_64_msvc-0.53.0 \
 		winnow-0.6.24 \
 		wit-bindgen-rt-0.39.0 \
 		write16-1.0.0 \
