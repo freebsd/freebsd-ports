@@ -10,7 +10,7 @@ LIB_DEPENDS=	liblightdm-gobject-1.so:x11/lightdm
 RUN_DEPENDS=	at-spi2-core>0:accessibility/at-spi2-core
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.GPL3
 
 USES=		cmake compiler:c++11-lang gettext gnome kde:6 pkgconfig qt:6 \
 		tar:xz xorg
