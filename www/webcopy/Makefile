@@ -7,6 +7,9 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Web Mirroring Program
 WWW=		http://www.alumnos.inf.utfsm.cl/~vparada/webcopy.html
 
+DEPRECATED=	Upstream is long gone and project not touched in decades, consider using ftp/wget
+EXPIRATION_DATE=2025-07-31
+
 # Converted from RESTRICTED
 LICENSE=	webcopy
 LICENSE_NAME=	webcopy
