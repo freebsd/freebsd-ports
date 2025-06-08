@@ -1,5 +1,5 @@
 PORTNAME=	ruby-install
-DISTVERSION=	0.9.2
+DISTVERSION=	0.10.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	https://github.com/postmodern/ruby-install/releases/download/v${PORTVERSION}/
 
