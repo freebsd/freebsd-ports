@@ -63,7 +63,7 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		alias cmake compiler:c++17-lang desktop-file-utils eigen:3 fortran gl gnome	\
-		jpeg localbase pkgconfig python qt:6 shebangfix sqlite tar:xz xorg
+		jpeg localbase llvm:min=19 pkgconfig python qt:6 shebangfix sqlite tar:xz xorg
 USE_GL=		glew opengl
 USE_GNOME=	libxml2
 USE_QT=		5compat base svg tools webengine
