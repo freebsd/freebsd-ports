@@ -94,7 +94,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
 		serde_json-1.0.140 \
-		serde_spanned-0.6.8 \
+		serde_spanned-0.6.9 \
 		shell-words-1.1.0 \
 		shellexpand-3.1.1 \
 		signal-hook-registry-1.4.5 \
@@ -113,10 +113,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		thiserror-impl-2.0.12 \
 		tokio-1.45.1 \
 		tokio-macros-2.5.0 \
-		toml-0.8.22 \
-		toml_datetime-0.6.9 \
-		toml_edit-0.22.26 \
-		toml_write-0.1.1 \
+		toml-0.8.23 \
+		toml_datetime-0.6.11 \
+		toml_edit-0.22.27 \
+		toml_write-0.1.2 \
 		unicode-ident-1.0.18 \
 		unicode-linebreak-0.1.5 \
 		unicode-width-0.1.14 \
