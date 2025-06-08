@@ -4,9 +4,9 @@ PORTREVISION=	19
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Improved rich city simulation game for X
-WWW=		http://lincity-ng.berlios.de
+WWW=		https://github.com/lincity-ng/lincity-ng/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
