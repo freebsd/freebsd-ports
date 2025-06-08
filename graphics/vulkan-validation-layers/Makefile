@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-validation-layers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.316
+DISTVERSION=	1.4.317
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
