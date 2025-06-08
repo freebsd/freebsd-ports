@@ -35,9 +35,11 @@ include/tracy/common/tracy_lz4.hpp
 include/tracy/common/tracy_lz4hc.hpp
 include/tracy/tracy/Tracy.hpp
 include/tracy/tracy/TracyC.h
+include/tracy/tracy/TracyCUDA.hpp
 include/tracy/tracy/TracyD3D11.hpp
 include/tracy/tracy/TracyD3D12.hpp
 include/tracy/tracy/TracyLua.hpp
+include/tracy/tracy/TracyMetal.hmm
 include/tracy/tracy/TracyOpenCL.hpp
 include/tracy/tracy/TracyOpenGL.hpp
 include/tracy/tracy/TracyVulkan.hpp
