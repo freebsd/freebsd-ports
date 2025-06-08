@@ -1,2 +1,5 @@
-This package contains xdriinfo, an utility that can be used to query
-configuration information of direct rendering devices.
+X.org DRI information utility.
+The xdriinfo utility prints an XML description of a DRI driver. The
+driver can be specified directly by driver name or indirectly by screen
+number. No X connection is needed if the driver name is explicitly
+specified.
