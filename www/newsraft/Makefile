@@ -1,5 +1,5 @@
 PORTNAME=	newsraft
-DISTVERSION=	0.30
+DISTVERSION=	0.31
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/${PORTNAME}/${PORTNAME}/archive/
 
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libgumbo.so:devel/gumbo
 
-USES=		ncurses pkgconfig sqlite
+USES=		pkgconfig sqlite
 
 MAKEFILE=	makefile
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
