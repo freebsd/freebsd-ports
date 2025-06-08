@@ -185,6 +185,7 @@
     SUBDIR += ffproxy
     SUBDIR += ffsend
     SUBDIR += fgallery
+    SUBDIR += filebrowser
     SUBDIR += filtron
     SUBDIR += firedm
     SUBDIR += firefox
