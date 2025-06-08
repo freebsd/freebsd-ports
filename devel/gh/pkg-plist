@@ -105,6 +105,8 @@
 %%MANPAGES%%share/man/man1/gh-pr-update-branch.1.gz
 %%MANPAGES%%share/man/man1/gh-pr-view.1.gz
 %%MANPAGES%%share/man/man1/gh-pr.1.gz
+%%MANPAGES%%share/man/man1/gh-preview-prompter.1.gz
+%%MANPAGES%%share/man/man1/gh-preview.1.gz
 %%MANPAGES%%share/man/man1/gh-project-close.1.gz
 %%MANPAGES%%share/man/man1/gh-project-copy.1.gz
 %%MANPAGES%%share/man/man1/gh-project-create.1.gz
