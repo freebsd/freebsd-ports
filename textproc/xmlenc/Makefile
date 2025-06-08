@@ -11,6 +11,9 @@ WWW=		https://xmlenc.sourceforge.net/
 USES=		java:ant,run tar:tgz
 JAVA_VERSION=	8
 
+DEPRECATED=	Outdated and obsolete, last release in 2005
+EXPIRATION_DATE=2025-07-31
+
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
