@@ -145,6 +145,7 @@
     SUBDIR += qogir-gtk-themes
     SUBDIR += qogir-icon-themes
     SUBDIR += qt5-style-plugins
+    SUBDIR += qt6gtk2
     SUBDIR += qtcurve
     SUBDIR += qtcurve-gtk2
     SUBDIR += qtcurve-kf5
