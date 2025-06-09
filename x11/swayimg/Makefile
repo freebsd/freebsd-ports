@@ -1,6 +1,6 @@
 PORTNAME=	swayimg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1
+DISTVERSION=	4.2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -61,7 +61,7 @@ JPEG_USES=		jpeg
 JPEG_MESON_ENABLED=	jpeg
 
 JSON_LIB_DEPENDS=	libjson-c.so:devel/json-c
-JSON_MESON_ENABLED=	sway
+JSON_MESON_ENABLED=	compositor
 
 JXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
 JXL_MESON_ENABLED=	jxl
