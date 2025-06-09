@@ -640,6 +640,7 @@ bin/%%GAME%%
 %%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_gastronok.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_mnoleg.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_benadryl_antaeus.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_benadryl_oni.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_Cws_Minotauros.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_denzi_dragon.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_denzi_evil_mage.png
