@@ -1,6 +1,6 @@
 PORTNAME=	task
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.43.3
+DISTVERSION=	3.44.0
 CATEGORIES=	devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -19,7 +19,7 @@ GH_TUPLE=	\
 		Masterminds:semver:v3.3.1:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		Microsoft:go-winio:v0.6.2:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		ProtonMail:go-crypto:v1.1.6:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
-		alecthomas:chroma:v2.16.0:alecthomas_chroma_v2/vendor/github.com/alecthomas/chroma/v2 \
+		alecthomas:chroma:v2.18.0:alecthomas_chroma_v2/vendor/github.com/alecthomas/chroma/v2 \
 		chainguard-dev:git-urls:v1.0.2:chainguard_dev_git_urls/vendor/github.com/chainguard-dev/git-urls \
 		cloudflare:circl:v1.6.1:cloudflare_circl/vendor/github.com/cloudflare/circl \
 		cyphar:filepath-securejoin:v0.4.1:cyphar_filepath_securejoin/vendor/github.com/cyphar/filepath-securejoin \
@@ -40,9 +40,10 @@ GH_TUPLE=	\
 		golang:crypto:v0.37.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:2c02b8208cf8:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:v0.39.0:golang_net/vendor/golang.org/x/net \
-		golang:sync:v0.13.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.32.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.31.0:golang_term/vendor/golang.org/x/term \
+		golang:sync:v0.14.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.33.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.32.0:golang_term/vendor/golang.org/x/term \
+		google:uuid:v1.6.0:google_uuid/vendor/github.com/google/uuid \
 		imdario:mergo:v1.0.0:imdario_mergo/vendor/dario.cat/mergo \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
 		joho:godotenv:v1.5.1:joho_godotenv/vendor/github.com/joho/godotenv \
