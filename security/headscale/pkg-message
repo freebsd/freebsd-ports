@@ -10,4 +10,14 @@ and https://github.com/juanfont/headscale/releases/tag/v0.25.0
 for details.
 EOM
 }
+{
+  type: upgrade
+  maximum_version: "0.25.1"
+  message: <<EOM
+Headscale has breaking changes on Routes, Policy and
+Configration, Authentication flow since 0.25.1, check
+https://github.com/juanfont/headscale/releases/tag/v0.26.0
+for details.
+EOM
+}
 ]

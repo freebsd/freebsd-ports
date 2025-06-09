@@ -1,7 +1,6 @@
 PORTNAME=	headscale
-PORTVERSION=	0.25.1
+PORTVERSION=	0.26.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	security net-vpn
 
 MAINTAINER=	m.muenz@gmail.com
@@ -16,7 +15,7 @@ BROKEN_armv7=	fails to compile: modernc.org/libc
 
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
-USES=		go:1.23,modules
+USES=		go:modules
 USE_RC_SUBR=	headscale
 
 GO_MODULE=	github.com/juanfont/headscale
