@@ -1,6 +1,5 @@
 PORTNAME=	gnome-shell-extension-dashtodock
-PORTVERSION=	65
-PORTREVISION=	2
+PORTVERSION=	84
 DISTVERSIONPREFIX=	extensions.gnome.org-v
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome
@@ -13,7 +12,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gnome-shell>=3.28:x11/gnome-shell \
-		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
+		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas \
+		sassc:textproc/sassc
 RUN_DEPENDS=	gnome-shell>=3.28:x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 
