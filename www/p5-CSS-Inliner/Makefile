@@ -1,10 +1,10 @@
 PORTNAME=	CSS-Inliner
-PORTVERSION=	4003
+PORTVERSION=	4027
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	vivek@khera.org
+MAINTAINER=	einar@isnic.is
 COMMENT=	Library for converting CSS blocks and files to inline styles
 WWW=		https://metacpan.org/release/CSS-Inliner
 
