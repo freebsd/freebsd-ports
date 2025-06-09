@@ -1,6 +1,6 @@
 PORTNAME=	cde
 DISTVERSION=	2.5.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	SF/cdesktopenv/src/
 
@@ -44,7 +44,12 @@ GNU_CONFIGURE_PREFIX=	${DT_PREFIX}
 GNU_CONFIGURE_MANPREFIX=	${DT_PREFIX}/share
 MANDIRS=	${DT_PREFIX}/share/man
 INFODIR=	${DT_PREFIX}/share/info
-CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.6 MAKE="gmake"
+CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.6 MAKE="gmake" \
+		--enable-german \
+		--enable-italian \
+		--enable-french \
+		--enable-spanish \
+		--enable-japanese
 MAKE_ARGS+=	PERL=${PERL} "LOCAL_LDFLAGS=${LDFLAGS}"
 MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	MALLOC_CONF=junk:false
