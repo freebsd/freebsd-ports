@@ -1,0 +1,4 @@
+CARGO_CRATES=	dcf77_utils-1.1.0 \
+		getopt-1.1.7 \
+		msf60_utils-1.1.0 \
+		radio_datetime_utils-1.1.0

@@ -1,0 +1,11 @@
+TIMESTAMP = 1749073004
+SHA256 (radio_datetime_analyzer-1.1.0.tar.gz) = 590f6df204232c37cfde943f1e4718b076e913ec45c6192083adb5e22d93b00f
+SIZE (radio_datetime_analyzer-1.1.0.tar.gz) = 10947
+SHA256 (rust/crates/dcf77_utils-1.1.0.crate) = f5b1ae3c5f0fbb87a9187ca0f1cb665f7444f481f77940131c4737c17bc845e8
+SIZE (rust/crates/dcf77_utils-1.1.0.crate) = 11723
+SHA256 (rust/crates/getopt-1.1.7.crate) = 2a9e40b04867f241a94b98f4649825925553807ae34f07b953a590270f45d9d4
+SIZE (rust/crates/getopt-1.1.7.crate) = 8037
+SHA256 (rust/crates/msf60_utils-1.1.0.crate) = 8aa32aa811b514329ceb1af4ff3d744bb96a5e18af8e188215deefcc1f13c6d6
+SIZE (rust/crates/msf60_utils-1.1.0.crate) = 14545
+SHA256 (rust/crates/radio_datetime_utils-1.1.0.crate) = bbc9a0dfa3cff91f691dbb878c8856d3096686786662858225f8102809a32701
+SIZE (rust/crates/radio_datetime_utils-1.1.0.crate) = 17044

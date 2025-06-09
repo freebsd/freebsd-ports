@@ -1,0 +1,9 @@
+Analyzer for log files of time stations.
+
+The program takes two parameters:
+- the station name of the file to analyze (as argument to the -s option)
+- the name of the file to analyze (as argument to the -f option)
+
+Currently supported stations are DCF77 and MSF.
+
+See the enclosed README.md for more information.
