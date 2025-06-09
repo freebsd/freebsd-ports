@@ -33,7 +33,6 @@
     SUBDIR += budgie-desktop
     SUBDIR += budgie-screensaver
     SUBDIR += cde
-    SUBDIR += cde-25
     SUBDIR += cde-devel
     SUBDIR += chayang
     SUBDIR += cinnamon
