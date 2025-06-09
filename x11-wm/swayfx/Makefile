@@ -1,5 +1,5 @@
 PORTNAME=	sway
-DISTVERSION=	0.5
+DISTVERSION=	0.5.1
 CATEGORIES=	x11-wm wayland
 PKGNAMESUFFIX=	${GH_PROJECT:S/${PORTNAME}//}
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libpcre2-8.so:devel/pcre2 \
 		libdrm.so:graphics/libdrm \
 		libwayland-egl.so:graphics/wayland \
-		libscenefx-0.2.so:x11-toolkits/scenefx02 \
+		libscenefx-0.3.so:x11-toolkits/scenefx03 \
 		libwlroots-0.18.so:x11-toolkits/wlroots018 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
