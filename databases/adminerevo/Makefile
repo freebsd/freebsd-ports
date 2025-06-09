@@ -14,6 +14,9 @@ WWW=		https://adminerevo.org \
 LICENSE=	APACHE20 GPLv3
 LICENSE_COMB=	dual
 
+DEPRECATED=		Abandoned upstream, repo archived Jan 24, 2025
+EXPIRATION_DATE=	2025-09-08
+
 USES=		php
 USE_PHP=	session
 
