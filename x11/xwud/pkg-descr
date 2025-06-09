@@ -1,1 +1,3 @@
-This package contains xwud, an image displayer for the X Window System.
+Xwud is an X Window System image undumping utility. Xwud allows X users
+to display in a window an image saved in a specially formatted dump
+file, such as produced by xwd.
