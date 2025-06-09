@@ -1,4 +1,4 @@
-bin/telegram-desktop
+bin/Telegram
 share/applications/org.telegram.desktop.desktop
 share/dbus-1/services/org.telegram.desktop.service
 share/icons/hicolor/128x128/apps/org.telegram.desktop.png
