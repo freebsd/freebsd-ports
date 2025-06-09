@@ -1,6 +1,5 @@
 PORTNAME=	pg_activity
-PORTVERSION=	3.6.0
-PORTREVISION=	1
+PORTVERSION=	3.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases python
 
@@ -10,6 +9,8 @@ WWW=		https://github.com/dalibo/pg_activity
 
 LICENSE=	PostgreSQL
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.1:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=0:databases/py-psycopg2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}blessed>=0:devel/py-blessed@${PY_FLAVOR} \
@@ -19,14 +20,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=0:databases/py-psycopg2@${PY_FLAVO
 USES=		python
 
 OPTIONS_DEFINE=	DOCS
-
+NO_ARCH=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	dalibo
 
-USE_PYTHON=	autoplist distutils noegginfo concurrent optsuffix
-
-post-patch:
-	${REINPLACE_CMD} -e 's|\/usr\/share|${PREFIX}/share|g' \
-		${WRKSRC}/setup.py
+USE_PYTHON=	autoplist concurrent optsuffix pep517
 
 .include <bsd.port.mk>
