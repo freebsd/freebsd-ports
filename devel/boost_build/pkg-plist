@@ -30,6 +30,7 @@ bin/b2
 %%DATADIR%%/src/tools/builtin.jam
 %%DATADIR%%/src/tools/bzip2.jam
 %%DATADIR%%/src/tools/cast.jam
+%%DATADIR%%/src/tools/cc.jam
 %%DATADIR%%/src/tools/clang-darwin.jam
 %%DATADIR%%/src/tools/clang-linux.jam
 %%DATADIR%%/src/tools/clang-vxworks.jam
@@ -131,6 +132,7 @@ bin/b2
 %%DATADIR%%/src/tools/gfortran.jam
 %%DATADIR%%/src/tools/hp_cxx.jam
 %%DATADIR%%/src/tools/hpfortran.jam
+%%DATADIR%%/src/tools/ibmcxx.jam
 %%DATADIR%%/src/tools/ifort.jam
 %%DATADIR%%/src/tools/intel-darwin.jam
 %%DATADIR%%/src/tools/intel-linux.jam
@@ -195,10 +197,8 @@ bin/b2
 %%DATADIR%%/src/tools/types/sass-type.jam
 %%DATADIR%%/src/tools/types/xml.jam
 %%DATADIR%%/src/tools/unix.jam
-%%DATADIR%%/src/tools/vacpp.jam
 %%DATADIR%%/src/tools/vmsdecc.jam
 %%DATADIR%%/src/tools/whale.jam
-%%DATADIR%%/src/tools/xlcpp.jam
 %%DATADIR%%/src/tools/xlf.jam
 %%DATADIR%%/src/tools/xsltproc-config.jam
 %%DATADIR%%/src/tools/xsltproc.jam
