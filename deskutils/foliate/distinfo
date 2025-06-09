@@ -1,3 +1,5 @@
-TIMESTAMP = 1642309057
-SHA256 (johnfactotum-foliate-2.6.4_GH0.tar.gz) = 4a4381bff6e398f6734e1695da23f1c593ba2a67e463e07021a089ffd0741776
-SIZE (johnfactotum-foliate-2.6.4_GH0.tar.gz) = 4824560
+TIMESTAMP = 1749466630
+SHA256 (johnfactotum-foliate-3.3.0_GH0.tar.gz) = 8ff0e0cae3ddead0bd92bbd2b396d62490336aa52fb5a6c81cf1f07eba3fdc3e
+SIZE (johnfactotum-foliate-3.3.0_GH0.tar.gz) = 7505565
+SHA256 (johnfactotum-foliate-js-052123b_GH0.tar.gz) = 471f2eec4e3df2a16e788f95570a7cd5337fa72300669f83056555aba5809967
+SIZE (johnfactotum-foliate-js-052123b_GH0.tar.gz) = 3626357
