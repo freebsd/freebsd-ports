@@ -1,6 +1,5 @@
 PORTNAME=	minio-client
 PORTVERSION=	${GH_TAGNAME:S/RELEASE.//:S/Z//:S/T/-/:S/-/./g}
-PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	jhixson@FreeBSD.org
@@ -9,14 +8,12 @@ WWW=		https://minio.io/downloads/ #minio-client
 
 LICENSE=	APACHE20
 
-BROKEN_i386=	fails to build
+USES=		go:modules
+GH_TAGNAME=	RELEASE.2025-05-21T01-59-54Z
 
-USES=		go:1.20,modules
-GH_TAGNAME=	RELEASE.2024-01-31T08-59-40Z
+COMMIT_ID=	f71ad84bcf0fd4369691952af5d925347837dcec
 
-COMMIT_ID=	62b12a2770828f9d35ee7c5614d900b95ff6e6ab
-
-GO_MODULE=	github.com/minio/mc@v0.0.0-20240131085940-62b12a277082
+GO_MODULE=	github.com/minio/mc@v0.0.0-20250521015954-f71ad84bcf0f
 
 OPTIONS_DEFINE=	MC
 
