@@ -15,6 +15,10 @@ USE_LINUX=	# empty
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 
+# lib64/gconv/ stuff that is loaded dynamically and has rpath
+NO_SHLIB_REQUIRES_GLOB=	libCNS.so* libGB.so* libISOIR165.so* \
+			libJIS.so* libJISX0213.so* libKSC.so*
+
 .include	"${.CURDIR}/Makefile.version"
 
 BIN_DISTNAMES=	bash-${bash_ver} \
