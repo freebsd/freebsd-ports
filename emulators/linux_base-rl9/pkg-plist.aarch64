@@ -778,6 +778,8 @@ usr/lib64/libtinfo.so.6
 usr/lib64/libtinfo.so.6.2
 usr/lib64/libulockmgr.so.1
 usr/lib64/libulockmgr.so.1.0.1
+usr/lib64/libunistring.so.2
+usr/lib64/libunistring.so.2.1.0
 usr/lib64/libutil.so.1
 usr/lib64/libuuid.so.1
 usr/lib64/libuuid.so.1.3.0
@@ -1056,6 +1058,9 @@ usr/share/doc/libsigsegv/README
 usr/share/doc/libsoup/AUTHORS
 usr/share/doc/libsoup/NEWS
 usr/share/doc/libsoup/README
+usr/share/doc/libunistring/AUTHORS
+usr/share/doc/libunistring/NEWS
+usr/share/doc/libunistring/README
 usr/share/doc/libverto/AUTHORS
 usr/share/doc/libverto/ChangeLog
 usr/share/doc/libverto/NEWS
@@ -1197,6 +1202,8 @@ usr/share/licenses/libsigsegv/COPYING
 usr/share/licenses/libsmartcols/COPYING
 usr/share/licenses/libsmartcols/COPYING.LGPL-2.1-or-later
 usr/share/licenses/libsoup/COPYING
+usr/share/licenses/libunistring/COPYING
+usr/share/licenses/libunistring/COPYING.LIB
 usr/share/licenses/libuuid/COPYING
 usr/share/licenses/libuuid/COPYING.BSD-3-Clause
 usr/share/licenses/libverto/COPYING
