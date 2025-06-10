@@ -1,6 +1,6 @@
 PORTNAME=	rl9
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nf/filesystem-*:C/:[^:]+$//}
@@ -58,6 +58,7 @@ LIB_DISTNAMES=	bzip2-libs-${bzip2_ver} \
 		libacl-${libacl_ver} \
 		libattr-${libattr_ver} \
 		libblkid-${util_ver} \
+		libbrotli-${brotli_ver} \
 		libcap-${libcap_ver}  \
 		libcom_err-${e2fsprogs_ver} \
 		libdatrie-${libdatrie_ver} \

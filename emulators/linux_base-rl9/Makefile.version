@@ -1,5 +1,6 @@
 basesystem_ver=		11-13.el9.0.1
 bash_ver=		5.1.8-9.el9
+brotli_ver=		1.0.9-7.el9_5
 bzip2_ver=		1.0.8-10.el9_5
 coreutils_ver=		8.32-36.el9
 diffutils_ver=		3.7-12.el9
