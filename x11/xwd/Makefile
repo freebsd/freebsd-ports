@@ -1,17 +1,17 @@
 PORTNAME=	xwd
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+DISTVERSION=	1.0.9
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Dump an image of an X window
+WWW=		https://gitlab.freedesktop.org/xorg/app/xwd
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		xorg xorg-cat:app
-USE_XORG=	x11 xkbfile
+USES=		tar:xz xorg xorg-cat:app
+USE_XORG=	x11 xkbfile xorgproto
 
 PLIST_FILES=	bin/xwd share/man/man1/xwd.1.gz
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>
