@@ -73,6 +73,7 @@ LIB_DISTNAMES=	bzip2-libs-${bzip2_ver} \
 		libmount-${util_ver} \
 		libnsl-${glibc_ver} \
 		libproxy-${libproxy_ver} \
+		libpsl-${libpsl_ver} \
 		libselinux-${selinux_ver} \
 		libsepol-${sepol_ver} \
 		libsigsegv-${libsigsegv_ver} \

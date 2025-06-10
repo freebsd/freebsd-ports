@@ -750,6 +750,8 @@ usr/lib64/libpopt.so.0
 usr/lib64/libpopt.so.0.0.1
 usr/lib64/libproxy.so.1
 usr/lib64/libproxy.so.1.0.0
+usr/lib64/libpsl.so.5
+usr/lib64/libpsl.so.5.3.3
 usr/lib64/libpsx.so.2
 usr/lib64/libpsx.so.2.48
 usr/lib64/libpthread.so.0
@@ -1205,6 +1207,7 @@ usr/share/licenses/libmount/COPYING
 usr/share/licenses/libmount/COPYING.LGPL-2.1-or-later
 usr/share/licenses/libproxy/COPYING
 usr/share/licenses/libproxy/Copyright.txt
+usr/share/licenses/libpsl/COPYING
 usr/share/licenses/libselinux/LICENSE
 usr/share/licenses/libsepol/LICENSE
 usr/share/licenses/libsigsegv/COPYING
