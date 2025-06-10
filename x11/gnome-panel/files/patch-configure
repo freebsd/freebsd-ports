@@ -1,0 +1,305 @@
+--- configure.orig	2024-10-06 18:36:02 UTC
++++ configure
+@@ -19498,7 +19498,7 @@ LIBEDATASERVER_REQUIRED=3.5.3
+ LIBGNOME_MENU_REQUIRED=3.7.90
+ LIBECAL_REQUIRED=3.33.2
+ LIBEDATASERVER_REQUIRED=3.5.3
+-LIBSYSTEMD_REQUIRED=230
++LIBCONSOLEKIT_REQUIRED=1.2.0
+ CAIRO_REQUIRED=1.0.0
+ GWEATHER_REQUIRED=3.91.0
+ DCONF_REQUIRED=0.13.4
+@@ -19928,7 +19928,7 @@ pkg_failed=no
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+   x11
+ " >&5
+ printf %s "checking for
+@@ -19936,7 +19936,7 @@ printf %s "checking for
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+   x11
+ ... " >&6; }
+ 
+@@ -19949,7 +19949,7 @@ if test -n "$ACTION_BUTTON_CFLAGS"; then
+   gnome-desktop-3.0 >= \$LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= \$GTK_REQUIRED
+   libgnome-menu-3.0 >= \$LIBGNOME_MENU_REQUIRED
+-  libsystemd >= \$LIBSYSTEMD_REQUIRED
++  libconsolekit >= \$LIBCONSOLEKIT_REQUIRED
+   x11
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+@@ -19957,7 +19957,7 @@ if test -n "$ACTION_BUTTON_CFLAGS"; then
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+   x11
+ ") 2>&5
+   ac_status=$?
+@@ -19968,7 +19968,7 @@ if test -n "$ACTION_BUTTON_CFLAGS"; then
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+   x11
+ " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+@@ -19987,7 +19987,7 @@ if test -n "$ACTION_BUTTON_LIBS"; then
+   gnome-desktop-3.0 >= \$LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= \$GTK_REQUIRED
+   libgnome-menu-3.0 >= \$LIBGNOME_MENU_REQUIRED
+-  libsystemd >= \$LIBSYSTEMD_REQUIRED
++  libconsolekit >= \$LIBCONSOLEKIT_REQUIRED
+   x11
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+@@ -19995,7 +19995,7 @@ if test -n "$ACTION_BUTTON_LIBS"; then
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+   x11
+ ") 2>&5
+   ac_status=$?
+@@ -20006,7 +20006,7 @@ if test -n "$ACTION_BUTTON_LIBS"; then
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+   x11
+ " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+@@ -20034,7 +20034,7 @@ fi
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+   x11
+ " 2>&1`
+         else
+@@ -20043,7 +20043,7 @@ fi
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+   x11
+ " 2>&1`
+         fi
+@@ -20055,7 +20055,7 @@ fi
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+   x11
+ ) were not met:
+ 
+@@ -20191,14 +20191,14 @@ pkg_failed=no
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ " >&5
+ printf %s "checking for
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ ... " >&6; }
+ 
+ if test -n "$LAUNCHER_CFLAGS"; then
+@@ -20210,14 +20210,14 @@ if test -n "$LAUNCHER_CFLAGS"; then
+   gnome-desktop-3.0 >= \$LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= \$GTK_REQUIRED
+   libgnome-menu-3.0 >= \$LIBGNOME_MENU_REQUIRED
+-  libsystemd >= \$LIBSYSTEMD_REQUIRED
++  libconsolekit >= \$LIBCONSOLEKIT_REQUIRED
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ ") 2>&5
+   ac_status=$?
+   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+@@ -20227,7 +20227,7 @@ if test -n "$LAUNCHER_CFLAGS"; then
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+@@ -20245,14 +20245,14 @@ if test -n "$LAUNCHER_LIBS"; then
+   gnome-desktop-3.0 >= \$LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= \$GTK_REQUIRED
+   libgnome-menu-3.0 >= \$LIBGNOME_MENU_REQUIRED
+-  libsystemd >= \$LIBSYSTEMD_REQUIRED
++  libconsolekit >= \$LIBCONSOLEKIT_REQUIRED
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+   gio-unix-2.0 >= $GLIB_REQUIRED
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ ") 2>&5
+   ac_status=$?
+   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+@@ -20262,7 +20262,7 @@ if test -n "$LAUNCHER_LIBS"; then
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+@@ -20289,7 +20289,7 @@ fi
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ " 2>&1`
+         else
+                 LAUNCHER_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "
+@@ -20297,7 +20297,7 @@ fi
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ " 2>&1`
+         fi
+         # Put the nasty error message in config.log where it belongs
+@@ -20308,7 +20308,7 @@ fi
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ ) were not met:
+ 
+ $LAUNCHER_PKG_ERRORS
+@@ -20350,7 +20350,7 @@ pkg_failed=no
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ " >&5
+ printf %s "checking for
+   gdm
+@@ -20358,7 +20358,7 @@ printf %s "checking for
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ ... " >&6; }
+ 
+ if test -n "$MENU_CFLAGS"; then
+@@ -20371,7 +20371,7 @@ if test -n "$MENU_CFLAGS"; then
+   gnome-desktop-3.0 >= \$LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= \$GTK_REQUIRED
+   libgnome-menu-3.0 >= \$LIBGNOME_MENU_REQUIRED
+-  libsystemd >= \$LIBSYSTEMD_REQUIRED
++  libconsolekit >= \$LIBCONSOLEKIT_REQUIRED
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+   gdm
+@@ -20379,7 +20379,7 @@ if test -n "$MENU_CFLAGS"; then
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ ") 2>&5
+   ac_status=$?
+   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+@@ -20390,7 +20390,7 @@ if test -n "$MENU_CFLAGS"; then
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+@@ -20409,7 +20409,7 @@ if test -n "$MENU_LIBS"; then
+   gnome-desktop-3.0 >= \$LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= \$GTK_REQUIRED
+   libgnome-menu-3.0 >= \$LIBGNOME_MENU_REQUIRED
+-  libsystemd >= \$LIBSYSTEMD_REQUIRED
++  libconsolekit >= \$LIBCONSOLEKIT_REQUIRED
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+   gdm
+@@ -20417,7 +20417,7 @@ if test -n "$MENU_LIBS"; then
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ ") 2>&5
+   ac_status=$?
+   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+@@ -20428,7 +20428,7 @@ if test -n "$MENU_LIBS"; then
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ " 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+@@ -20456,7 +20456,7 @@ fi
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ " 2>&1`
+         else
+                 MENU_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "
+@@ -20465,7 +20465,7 @@ fi
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ " 2>&1`
+         fi
+         # Put the nasty error message in config.log where it belongs
+@@ -20477,7 +20477,7 @@ fi
+   gnome-desktop-3.0 >= $LIBGNOME_DESKTOP_REQUIRED
+   gtk+-3.0 >= $GTK_REQUIRED
+   libgnome-menu-3.0 >= $LIBGNOME_MENU_REQUIRED
+-  libsystemd >= $LIBSYSTEMD_REQUIRED
++  libconsolekit >= $LIBCONSOLEKIT_REQUIRED
+ ) were not met:
+ 
+ $MENU_PKG_ERRORS

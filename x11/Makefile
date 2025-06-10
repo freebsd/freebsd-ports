@@ -98,6 +98,7 @@
     SUBDIR += gnome-console
     SUBDIR += gnome-desktop
     SUBDIR += gnome-menus
+    SUBDIR += gnome-panel
     SUBDIR += gnome-pie
     SUBDIR += gnome-session
     SUBDIR += gnome-shell
