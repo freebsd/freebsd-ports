@@ -1,0 +1,7 @@
+bin/kuzu
+include/kuzu.h
+include/kuzu.hpp
+lib/libkuzu.a
+lib/libkuzu.so
+lib/libkuzu.so.0
+lib/libkuzu.so.%%VERSION%%
