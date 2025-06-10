@@ -15,7 +15,8 @@ LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING.LIB
 
 BUILD_DEPENDS=	iso-codes>0:misc/iso-codes \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
-		xkeyboard-config>0:x11/xkeyboard-config
+		xkeyboard-config>0:x11/xkeyboard-config \
+		itstool:textproc/itstool
 LIB_DEPENDS=	libxkbregistry.so:x11/libxkbcommon \
 		libudev.so:devel/libudev-devd \
 		libgudev-1.0.so:devel/libgudev
