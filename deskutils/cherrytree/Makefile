@@ -1,5 +1,6 @@
 PORTNAME=	cherrytree
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://www.giuspen.com/software/ \
 		https://github.com/giuspen/cherrytree/releases/download/v${PORTVERSION}/
