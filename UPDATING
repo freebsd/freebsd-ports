@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20250610:
+  AFFECTS: users of devel/git
+  AUTHOR: michaelo@FreeBSD.org
+
+  The HTMLDOCS option has been renamed to DOCS to match the option name
+  with other ports and the description from Mk/bsd.options.desc.mk.
+
+20250610:
   AFFECTS: users of security/krb5-12{0,1}
   AUTHOR: michaelo@FreeBSD.org
 

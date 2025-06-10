@@ -71,7 +71,7 @@ CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 
 .if ${SUBPORT} == core
 
-OPTIONS_DEFINE=	CONTRIB CURL GITWEB HTMLDOCS ICONV NLS PCRE2 PERL SEND_EMAIL \
+OPTIONS_DEFINE=	CONTRIB CURL DOCS GITWEB ICONV NLS PCRE2 PERL SEND_EMAIL \
 		SUBTREE
 OPTIONS_DEFAULT=CONTRIB CURL GITWEB ICONV PCRE2 PERL SEND_EMAIL SUBTREE
 
@@ -91,7 +91,6 @@ OPTIONS_FILE=		${PORT_DBDIR}/${OPTIONS_NAME}/${FLAVOR}-options
 CONTRIB_DESC=	Install contributed scripts
 CURL_DESC=	Install curl support (provides HTTPS transport)
 GITWEB_DESC=	Install gitweb
-HTMLDOCS_DESC=	Install additional documentation
 PCRE2_DESC=	Use Perl Compatible Regular Expressions (v2)
 SEND_EMAIL_DESC=Enable the git-send-email(1) script
 SUBTREE_DESC=	Install git-subtree
@@ -124,7 +123,7 @@ CURL_RUN_DEPENDS=	curl:ftp/curl
 CURL_LIB_DEPENDS=	libexpat.so:textproc/expat2
 CURL_MAKE_ARGS_OFF=	NO_CURL=1 NO_EXPAT=1
 
-HTMLDOCS_DISTFILES=	${PORTNAME}-htmldocs-${DISTVERSION}${EXTRACT_SUFX}
+DOCS_DISTFILES=	${PORTNAME}-htmldocs-${DISTVERSION}${EXTRACT_SUFX}
 
 SUBTREE_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 			xmlto:textproc/xmlto
@@ -190,7 +189,7 @@ RMMAN1+=	git-cvsimport.1 \
 RMMAN7+=	gitcvs-migration.7
 .endif
 
-post-extract-HTMLDOCS-on:
+post-extract-DOCS-on:
 	@${MKDIR} ${WRKDIR}/htmldocs
 	@cd ${WRKDIR}/htmldocs && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${PORTNAME}-htmldocs-${DISTVERSION}${EXTRACT_SUFX} \
@@ -263,7 +262,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/scalar \
 		${STAGEDIR}${PREFIX}/libexec/git-core/scalar
 
-post-install-HTMLDOCS-on:
+post-install-DOCS-on:
 	# Manually remove the index.html symlink before installing, and then
 	# recreate it after. This is necessary because the distfile is
 	# extracted with --no-same-owner. If the distfile is extracted as a
