@@ -15,6 +15,9 @@ USE_LINUX=	dbuslibs libasyncns libsndfile systemd-libs tcp_wrappers-libs \
 		xorglibs
 USE_LINUX_RPM=	yes
 
+# located by rpath
+NO_SHLIB_REQUIRES_GLOB=	libpulsecommon-*.so* libpulsedsp.so*
+
 LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL} \
 		${PORTNAME}${PKGNAMESUFFIX}-glib2-${DISTVERSIONFULL}
 
