@@ -15,8 +15,6 @@ USE_LINUX=	# empty
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 
-CONFLICTS_INSTALL=	linux-${linux_ARGS}-libsigsegv
-
 .include	"${.CURDIR}/Makefile.version"
 
 BIN_DISTNAMES=	bash-${bash_ver} \
