@@ -4,6 +4,7 @@
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverhttp2protocolhandler_p.h
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverliterals_p.h
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverrequest_p.h
+%%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverrequestfilter_p.h
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverresponder_p.h
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverresponse_p.h
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverrouter_p.h
@@ -11,6 +12,7 @@
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverstream_p.h
 %%QT_INCDIR%%/QtHttpServer/QAbstractHttpServer
 %%QT_INCDIR%%/QtHttpServer/QHttpServer
+%%QT_INCDIR%%/QtHttpServer/QHttpServerConfiguration
 %%QT_INCDIR%%/QtHttpServer/QHttpServerRequest
 %%QT_INCDIR%%/QtHttpServer/QHttpServerResponder
 %%QT_INCDIR%%/QtHttpServer/QHttpServerResponse
@@ -23,6 +25,7 @@
 %%QT_INCDIR%%/QtHttpServer/QtHttpServerVersion
 %%QT_INCDIR%%/QtHttpServer/qabstracthttpserver.h
 %%QT_INCDIR%%/QtHttpServer/qhttpserver.h
+%%QT_INCDIR%%/QtHttpServer/qhttpserverconfiguration.h
 %%QT_INCDIR%%/QtHttpServer/qhttpserverrequest.h
 %%QT_INCDIR%%/QtHttpServer/qhttpserverresponder.h
 %%QT_INCDIR%%/QtHttpServer/qhttpserverresponse.h
@@ -44,6 +47,14 @@ lib/cmake/Qt6HttpServer/Qt6HttpServerTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerTargets.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerVersionlessAliasTargets.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerVersionlessTargets.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateConfig.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateConfigVersion.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateDependencies.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateTargets.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6HttpServer.prl
 %%QT_LIBDIR%%/libQt6HttpServer.so
 %%QT_LIBDIR%%/libQt6HttpServer.so.6

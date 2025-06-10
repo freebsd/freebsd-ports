@@ -42,6 +42,14 @@ lib/cmake/Qt6WebSockets/Qt6WebSocketsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6WebSockets/Qt6WebSocketsTargets.cmake
 lib/cmake/Qt6WebSockets/Qt6WebSocketsVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebSockets/Qt6WebSocketsVersionlessTargets.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateConfig.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateConfigVersion.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateDependencies.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateTargets.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6WebSockets.prl
 %%QT_LIBDIR%%/libQt6WebSockets.so
 %%QT_LIBDIR%%/libQt6WebSockets.so.6

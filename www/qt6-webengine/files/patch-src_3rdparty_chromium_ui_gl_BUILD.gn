@@ -1,23 +1,14 @@
---- src/3rdparty/chromium/ui/gl/BUILD.gn.orig	2024-07-03 01:14:49 UTC
+--- src/3rdparty/chromium/ui/gl/BUILD.gn.orig	2025-02-21 12:29:33 UTC
 +++ src/3rdparty/chromium/ui/gl/BUILD.gn
-@@ -167,8 +167,6 @@ jumbo_component("gl") {
-     defines += [ "GPU_ENABLE_SERVICE_LOGGING" ]
-   }
- 
--  include_dirs = [ "//third_party/mesa_headers" ]
--
-   all_dependent_configs = [ ":gl_config" ]
- 
-   public_configs = [ "//third_party/khronos:khronos_headers" ]
-@@ -186,7 +184,6 @@ jumbo_component("gl") {
-   ]
+@@ -173,7 +173,6 @@ jumbo_component("gl") {
    public_deps = [
+     ":gl_enums",
      "//base",
 -    "//third_party/mesa_headers",
      "//ui/events/platform",
      "//ui/gfx",
      "//ui/gfx/geometry",
-@@ -428,7 +425,6 @@ jumbo_component("gl") {
+@@ -325,7 +324,6 @@ jumbo_component("gl") {
      data_deps += [
        "//third_party/angle:libEGL",
        "//third_party/angle:libGLESv2",
@@ -25,7 +16,7 @@
      ]
      if (enable_swiftshader) {
        data_deps += [
-@@ -646,7 +642,6 @@ test("gl_unittests") {
+@@ -554,7 +552,6 @@ test("gl_unittests") {
  
    data_deps = [
      "//testing/buildbot/filters:gl_unittests_filters",

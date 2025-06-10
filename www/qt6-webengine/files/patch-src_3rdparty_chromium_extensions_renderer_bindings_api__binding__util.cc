@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/extensions/renderer/bindings/api_binding_util.cc.orig	2022-02-28 16:54:41 UTC
+--- src/3rdparty/chromium/extensions/renderer/bindings/api_binding_util.cc.orig	2024-10-22 08:31:56 UTC
 +++ src/3rdparty/chromium/extensions/renderer/bindings/api_binding_util.cc
-@@ -132,7 +132,7 @@ std::string GetPlatformString() {
+@@ -133,7 +133,7 @@ std::string GetPlatformString() {
    return "lacros";
  #elif BUILDFLAG(IS_CHROMEOS_ASH) && !BUILDFLAG(IS_CHROMEOS_LACROS)
    return "chromeos";

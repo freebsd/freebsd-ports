@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/gpu/gpu_memory_buffer_manager_singleton.cc.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/content/browser/gpu/gpu_memory_buffer_manager_singleton.cc.orig	2024-10-22 08:31:56 UTC
 +++ src/3rdparty/chromium/content/browser/gpu/gpu_memory_buffer_manager_singleton.cc
-@@ -54,7 +54,7 @@ scoped_refptr<base::SingleThreadTaskRunner> GetTaskRun
+@@ -46,7 +46,7 @@ scoped_refptr<base::SingleThreadTaskRunner> GetTaskRun
  #endif
  }
  
@@ -9,10 +9,10 @@
  bool IsGpuMemoryBufferNV12Supported() {
    static bool is_computed = false;
    static bool supported = false;
-@@ -117,7 +117,7 @@ void GpuMemoryBufferManagerSingleton::OnGpuExtraInfoUp
-     SetNativeConfigurations(std::move(configs));
-   }
- #endif  // BUILDFLAG(IS_OZONE_X11)
+@@ -98,7 +98,7 @@ GpuMemoryBufferManagerSingleton::GetInstance() {
+ }
+ 
+ void GpuMemoryBufferManagerSingleton::OnGpuExtraInfoUpdate() {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // Dynamic check whether the NV12 format is supported as it may be

@@ -1,3 +1,9 @@
+%%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgabstractanimation_p.h
+%%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvganimate_p.h
+%%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvganimatedproperty_p.h
+%%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvganimator_p.h
+%%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgcssanimation_p.h
+%%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgcsshandler_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgfilter_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgfont_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvggraphics_p.h
@@ -7,6 +13,7 @@
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgstructure_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgstyle_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgtinydocument_p.h
+%%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgutils_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgvisitor_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qtsvgglobal_p.h
 %%QT_INCDIR%%/QtSvg/QSvgGenerator
@@ -51,6 +58,14 @@ lib/cmake/Qt6Svg/Qt6SvgTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Svg/Qt6SvgTargets.cmake
 lib/cmake/Qt6Svg/Qt6SvgVersionlessAliasTargets.cmake
 lib/cmake/Qt6Svg/Qt6SvgVersionlessTargets.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateConfig.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateConfigVersion.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateDependencies.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateTargets.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6SvgPrivate/Qt6SvgPrivateVersionlessTargets.cmake
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsAdditionalTargetInfo.cmake
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsConfig.cmake
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsConfigVersion.cmake
@@ -60,6 +75,14 @@ lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsTargets.cmake
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsVersionlessAliasTargets.cmake
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsVersionlessTargets.cmake
+lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateConfig.cmake
+lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateConfigVersion.cmake
+lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateDependencies.cmake
+lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateTargets.cmake
+lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6Svg.prl
 %%QT_LIBDIR%%/libQt6Svg.so
 %%QT_LIBDIR%%/libQt6Svg.so.6

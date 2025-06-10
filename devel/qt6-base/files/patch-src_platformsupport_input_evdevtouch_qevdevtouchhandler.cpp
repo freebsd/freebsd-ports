@@ -1,13 +1,14 @@
---- src/platformsupport/input/evdevtouch/qevdevtouchhandler.cpp.orig	2024-09-18 16:48:24 UTC
+--- src/platformsupport/input/evdevtouch/qevdevtouchhandler.cpp.orig	2025-02-19 13:05:34 UTC
 +++ src/platformsupport/input/evdevtouch/qevdevtouchhandler.cpp
-@@ -19,9 +19,7 @@
+@@ -19,11 +19,7 @@
  
  #include <mutex>
  
 -#ifdef Q_OS_FREEBSD
 -#include <dev/evdev/input.h>
--#elif defined(Q_OS_VXWORKS)
-+#if defined(Q_OS_VXWORKS)
- #include <qpa/qplatformscreen.h>
- #include <evdevLib.h>
- #define SYN_REPORT      0
+-#else
+ #include <linux/input.h>
+-#endif
+ 
+ #ifndef input_event_sec
+ #define input_event_sec time.tv_sec

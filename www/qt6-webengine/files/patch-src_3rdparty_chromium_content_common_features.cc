@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/content/common/features.cc.orig	2024-07-03 01:14:49 UTC
+--- src/3rdparty/chromium/content/common/features.cc.orig	2025-02-21 12:29:33 UTC
 +++ src/3rdparty/chromium/content/common/features.cc
-@@ -170,7 +170,7 @@ BASE_FEATURE(kEnableBackForwardCacheForOngoingSubframe
-              base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -145,7 +145,7 @@ BASE_FEATURE(kEnableBackForwardCacheForOngoingSubframe
+              base::FEATURE_ENABLED_BY_DEFAULT);
  
  // Enables error reporting for JS errors inside DevTools frontend host
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -9,7 +9,7 @@
  BASE_FEATURE(kEnableDevToolsJsErrorReporting,
               "EnableDevToolsJsErrorReporting",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -258,7 +258,7 @@ BASE_FEATURE(kGroupNIKByJoiningOrigin,
+@@ -301,7 +301,7 @@ BASE_FEATURE(kGroupNIKByJoiningOrigin,
  // process and having browser process handle adjusting thread properties (nice
  // value, c-group, latency sensitivity...) for children which have sandbox
  // restrictions.

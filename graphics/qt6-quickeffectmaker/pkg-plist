@@ -33,6 +33,7 @@
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/ledscreen.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/maskedblur.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/normalmapping.qen
+%%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/rectangularshadow.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/spriteanimation.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/sunburst.qen
 %%QT_QMLDIR%%/QtQuickEffectMaker/defaultnodes/extra/swirl.qen

@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/chrome/browser/ui/webui/management/management_ui.cc.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/chrome/browser/ui/webui/management/management_ui.cc.orig	2024-10-22 08:31:56 UTC
 +++ src/3rdparty/chromium/chrome/browser/ui/webui/management/management_ui.cc
-@@ -98,11 +98,11 @@ content::WebUIDataSource* CreateAndAddManagementUIHtml
-       {kManagementOnFileTransferVisibleData,
+@@ -108,11 +108,11 @@ content::WebUIDataSource* CreateAndAddManagementUIHtml
         IDS_MANAGEMENT_FILE_TRANSFER_VISIBLE_DATA},
+       {kManagementReportFileEvents, IDS_MANAGEMENT_REPORT_FILE_EVENTS},
  #endif  // BUILDFLAG(IS_CHROMEOS)
 -#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

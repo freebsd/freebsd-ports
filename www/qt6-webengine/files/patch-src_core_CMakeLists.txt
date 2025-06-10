@@ -1,11 +1,11 @@
---- src/core/CMakeLists.txt.orig	2024-10-02 15:40:01 UTC
+--- src/core/CMakeLists.txt.orig	2025-03-09 19:36:47 UTC
 +++ src/core/CMakeLists.txt
 @@ -21,7 +21,7 @@ add_subdirectory(tools/qwebengine_convert_dict)
  #   TOOLCHAIN SETUP
  ##
  
--if(LINUX)
-+if(LINUX OR FREEBSD)
+-if(LINUX OR WIN32)
++if(LINUX OR WIN32 OR FREEBSD)
      setup_toolchains()
  endif()
  
@@ -13,21 +13,33 @@
                  accessibility_activation_observer.cpp accessibility_activation_observer.h
          )
  
--        extend_gn_target(${buildGn} CONDITION LINUX OR WIN32
-+        extend_gn_target(${buildGn} CONDITION LINUX OR FREEBSD OR WIN32
-             SOURCES
-                 compositor/content_gpu_client_qt.cpp compositor/content_gpu_client_qt.h
-                 ozone/gl_context_qt.cpp ozone/gl_context_qt.h
-@@ -213,7 +213,7 @@ foreach(arch ${archs})
-                 ozone/gl_surface_wgl_qt.cpp ozone/gl_surface_wgl_qt.h
-         )
- 
 -        extend_gn_target(${buildGn} CONDITION LINUX
 +        extend_gn_target(${buildGn} CONDITION LINUX OR FREEBSD
              SOURCES
                  ozone/gl_ozone_angle_qt.cpp ozone/gl_ozone_angle_qt.h
-                 ozone/gl_ozone_egl_qt.cpp ozone/gl_ozone_egl_qt.h
-@@ -436,7 +436,7 @@ foreach(arch ${archs})
+                 ozone/ozone_util_qt.cpp ozone/ozone_util_qt.h
+@@ -208,17 +208,17 @@ foreach(arch ${archs})
+                 ozone/surface_factory_qt.cpp ozone/surface_factory_qt.h
+         )
+ 
+-        extend_gn_target(${buildGn} CONDITION LINUX AND QT_FEATURE_opengl
++        extend_gn_target(${buildGn} CONDITION (LINUX OR FREEBSD) AND QT_FEATURE_opengl
+             SOURCES
+                 ozone/gl_helper.cpp ozone/gl_helper.h
+         )
+ 
+-        extend_gn_target(${buildGn} CONDITION LINUX AND QT_FEATURE_opengl AND QT_FEATURE_webengine_ozone_x11 AND QT_FEATURE_xcb_glx_plugin
++        extend_gn_target(${buildGn} CONDITION (LINUX OR FREEBSD) AND QT_FEATURE_opengl AND QT_FEATURE_webengine_ozone_x11 AND QT_FEATURE_xcb_glx_plugin
+             SOURCES
+                 ozone/glx_helper.cpp ozone/glx_helper.h
+         )
+ 
+-        extend_gn_target(${buildGn} CONDITION LINUX AND QT_FEATURE_opengl AND QT_FEATURE_egl
++        extend_gn_target(${buildGn} CONDITION (LINUX OR FREEBSD) AND QT_FEATURE_opengl AND QT_FEATURE_egl
+             SOURCES
+                 ozone/egl_helper.cpp ozone/egl_helper.h
+         )
+@@ -438,7 +438,7 @@ foreach(arch ${archs})
              CONDITION QT_FEATURE_webenginedriver
          )
  
@@ -36,16 +48,7 @@
              list(APPEND gnArgArg
                  angle_enable_gl=true
                  use_gtk=false # GTK toolkit bindings
-@@ -445,7 +445,7 @@ foreach(arch ${archs})
-                 use_bundled_fontconfig=false
-                 use_glib=false
-                 use_bluez=false
--                use_udev=true
-+                use_udev=false
-                 is_cfi=false
-                 use_ozone=true
-                 ozone_auto_platforms=false
-@@ -504,6 +504,10 @@ foreach(arch ${archs})
+@@ -505,6 +505,10 @@ foreach(arch ${archs})
              extend_gn_list(gnArgArg
                  ARGS use_pulseaudio
                  CONDITION QT_FEATURE_webengine_system_pulseaudio

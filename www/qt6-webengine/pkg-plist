@@ -11,6 +11,7 @@
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebenginepage_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebenginepermission_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebengineprofile_p.h
+%%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebengineprofilebuilder_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebenginescriptcollection_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebengineurlrequestinfo_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebenginewebauthuxrequest_p.h
@@ -38,6 +39,7 @@
 %%QT_INCDIR%%/QtWebEngineCore/QWebEnginePage
 %%QT_INCDIR%%/QtWebEngineCore/QWebEnginePermission
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineProfile
+%%QT_INCDIR%%/QtWebEngineCore/QWebEngineProfileBuilder
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineQuotaRequest
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineRegisterProtocolHandlerRequest
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineScript
@@ -78,6 +80,7 @@
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginepage.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginepermission.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebengineprofile.h
+%%QT_INCDIR%%/QtWebEngineCore/qwebengineprofilebuilder.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginequotarequest.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebengineregisterprotocolhandlerrequest.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginescript.h
@@ -98,6 +101,8 @@
 %%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebengineforeigntypes_p.h
 %%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebenginenewwindowrequest_p.h
 %%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebengineprofile_p.h
+%%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebengineprofileprototype_p.h
+%%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebengineprofileprototype_p_p.h
 %%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebenginescriptcollection_p.h
 %%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebenginescriptcollection_p_p.h
 %%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebenginesettings_p.h
@@ -171,6 +176,14 @@ lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreVersionlessTargets.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateConfig.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateConfigVersion.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateDependencies.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateTargets.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WebEngineCorePrivate/Qt6WebEngineCorePrivateVersionlessTargets.cmake
 lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsConfig.cmake
 lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsConfigVersion.cmake
@@ -196,6 +209,22 @@ lib/cmake/Qt6WebEngineQuickDelegatesQml/Qt6WebEngineQuickDelegatesQmlTargets-%%C
 lib/cmake/Qt6WebEngineQuickDelegatesQml/Qt6WebEngineQuickDelegatesQmlTargets.cmake
 lib/cmake/Qt6WebEngineQuickDelegatesQml/Qt6WebEngineQuickDelegatesQmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebEngineQuickDelegatesQml/Qt6WebEngineQuickDelegatesQmlVersionlessTargets.cmake
+lib/cmake/Qt6WebEngineQuickDelegatesQmlPrivate/Qt6WebEngineQuickDelegatesQmlPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WebEngineQuickDelegatesQmlPrivate/Qt6WebEngineQuickDelegatesQmlPrivateConfig.cmake
+lib/cmake/Qt6WebEngineQuickDelegatesQmlPrivate/Qt6WebEngineQuickDelegatesQmlPrivateConfigVersion.cmake
+lib/cmake/Qt6WebEngineQuickDelegatesQmlPrivate/Qt6WebEngineQuickDelegatesQmlPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WebEngineQuickDelegatesQmlPrivate/Qt6WebEngineQuickDelegatesQmlPrivateDependencies.cmake
+lib/cmake/Qt6WebEngineQuickDelegatesQmlPrivate/Qt6WebEngineQuickDelegatesQmlPrivateTargets.cmake
+lib/cmake/Qt6WebEngineQuickDelegatesQmlPrivate/Qt6WebEngineQuickDelegatesQmlPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WebEngineQuickDelegatesQmlPrivate/Qt6WebEngineQuickDelegatesQmlPrivateVersionlessTargets.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateConfig.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateConfigVersion.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateDependencies.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateTargets.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WebEngineQuickPrivate/Qt6WebEngineQuickPrivateVersionlessTargets.cmake
 lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsAdditionalTargetInfo.cmake
 lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsConfig.cmake
 lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsConfigVersion.cmake
@@ -205,6 +234,14 @@ lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsTargets-%%CMAKE_BUILD_TYPE%%.cm
 lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsTargets.cmake
 lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsVersionlessTargets.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateConfig.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateConfigVersion.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateDependencies.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateTargets.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6WebEngineCore.prl
 %%QT_LIBDIR%%/libQt6WebEngineCore.so
 %%QT_LIBDIR%%/libQt6WebEngineCore.so.6
@@ -267,7 +304,6 @@ libdata/pkgconfig/Qt6WebEngineWidgets.pc
 %%QT_DATADIR%%/modules/WebEngineQuickDelegatesQml.json
 %%QT_DATADIR%%/modules/WebEngineWidgets.json
 %%QT_DATADIR%%/resources/icudtl.dat
-@dir %%QT_DATADIR%%/resources/locales
 %%QT_DATADIR%%/resources/qtwebengine_devtools_resources.pak
 %%QT_DATADIR%%/resources/qtwebengine_resources.pak
 %%QT_DATADIR%%/resources/qtwebengine_resources_100p.pak
@@ -326,3 +362,4 @@ libdata/pkgconfig/Qt6WebEngineWidgets.pc
 %%QT_L10NDIR%%/qtwebengine_locales/vi.pak
 %%QT_L10NDIR%%/qtwebengine_locales/zh-CN.pak
 %%QT_L10NDIR%%/qtwebengine_locales/zh-TW.pak
+@dir %%QT_DATADIR%%/resources/locales

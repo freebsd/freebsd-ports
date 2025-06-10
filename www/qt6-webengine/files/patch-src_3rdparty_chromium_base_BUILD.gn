@@ -1,15 +1,6 @@
---- src/3rdparty/chromium/base/BUILD.gn.orig	2024-07-03 01:14:49 UTC
+--- src/3rdparty/chromium/base/BUILD.gn.orig	2025-02-21 12:29:33 UTC
 +++ src/3rdparty/chromium/base/BUILD.gn
-@@ -188,7 +188,7 @@ buildflag_header("ios_cronet_buildflags") {
-   flags = [ "CRONET_BUILD=$is_cronet_build" ]
- }
- 
--enable_message_pump_epoll = is_linux || is_chromeos || is_android
-+enable_message_pump_epoll = (is_linux || is_chromeos || is_android) && !is_bsd
- buildflag_header("message_pump_buildflags") {
-   header = "message_pump_buildflags.h"
-   header_dir = "base/message_loop"
-@@ -1125,11 +1125,23 @@ jumbo_component("base") {
+@@ -1107,11 +1107,26 @@ jumbo_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -21,7 +12,10 @@
  
 +  # *BSD needs libkvm
 +  if (is_bsd) {
-+    libs += [ "kvm" ]
++    libs += [
++      "kvm",
++      "epoll-shim",
++    ]
 +  }
 +
 +  if (is_freebsd) {
@@ -34,7 +28,7 @@
    if (use_allocator_shim) {
      if (is_apple) {
        sources += [ "allocator/early_zone_registration_apple.h" ]
-@@ -1149,7 +1161,7 @@ jumbo_component("base") {
+@@ -1131,7 +1146,7 @@ jumbo_component("base") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -43,7 +37,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2100,6 +2112,22 @@ jumbo_component("base") {
+@@ -2116,6 +2131,22 @@ jumbo_component("base") {
      ]
    }
  
@@ -66,7 +60,7 @@
    # iOS
    if (is_ios) {
      sources += [
-@@ -2230,6 +2258,31 @@ jumbo_component("base") {
+@@ -2260,6 +2291,33 @@ jumbo_component("base") {
      }
    }
  
@@ -74,6 +68,8 @@
 +    sources -= [
 +      "files/file_path_watcher_inotify.cc",
 +      "files/scoped_file_linux.cc",
++      "process/set_process_title_linux.cc",
++      "process/set_process_title_linux.h",
 +      "system/sys_info_linux.cc",
 +      "process/process_iterator_linux.cc",
 +      "process/process_linux.cc",
@@ -98,16 +94,16 @@
    if (use_blink) {
      sources += [
        "files/file_path_watcher.cc",
-@@ -2240,7 +2293,7 @@ jumbo_component("base") {
-   }
+@@ -2586,7 +2644,7 @@ buildflag_header("protected_memory_buildflags") {
+   header = "protected_memory_buildflags.h"
+   header_dir = "base/memory"
  
-   if (dep_libevent) {
--    deps += [ "//third_party/libevent" ]
-+    public_deps += [ "//third_party/libevent" ]
-   }
+-  protected_memory_enabled = !is_component_build && is_clang &&
++  protected_memory_enabled = !is_openbsd && !is_component_build && is_clang &&
+                              (is_win || is_linux || is_android || is_mac)
  
-   if (use_libevent) {
-@@ -3005,7 +3058,7 @@ if (is_apple) {
+   flags = [ "PROTECTED_MEMORY_ENABLED=$protected_memory_enabled" ]
+@@ -3069,7 +3127,7 @@ if (is_apple) {
    }
  }
  
@@ -116,24 +112,16 @@
    # This test must compile with -fstack-protector-all
    source_set("stack_canary_linux_unittests") {
      testonly = true
-@@ -3642,14 +3695,14 @@ test("base_unittests") {
+@@ -3731,7 +3789,7 @@ test("base_unittests") {
      ]
    }
  
 -  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_bsd) {
++  if (!is_bsd && (is_linux || is_chromeos)) {
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-       "nix/mime_util_xdg_unittest.cc",
-     ]
- 
--    if (!is_nacl) {
-+    if (!is_nacl && !is_bsd) {
-       deps += [ ":stack_canary_linux_unittests" ]
-     }
-   }
-@@ -3664,7 +3717,7 @@ test("base_unittests") {
+@@ -3758,7 +3816,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
@@ -142,7 +130,7 @@
        sources += [
          "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3675,7 +3728,7 @@ test("base_unittests") {
+@@ -3769,7 +3827,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -151,8 +139,8 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -3938,7 +3991,7 @@ test("base_unittests") {
-     }
+@@ -3956,7 +4014,7 @@ test("base_unittests") {
+     deps += [ ":base_profiler_test_support_library" ]
    }
  
 -  if (is_fuchsia || is_linux || is_chromeos) {

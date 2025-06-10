@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/printing/print_settings.h.orig	2023-10-11 18:22:24 UTC
+--- src/3rdparty/chromium/printing/print_settings.h.orig	2024-09-30 07:45:04 UTC
 +++ src/3rdparty/chromium/printing/print_settings.h
 @@ -25,7 +25,7 @@
  #include "base/values.h"
@@ -18,7 +18,7 @@
  inline constexpr char kLinuxSystemPrintDialogDataPrinter[] = "printer_name";
  inline constexpr char kLinuxSystemPrintDialogDataPrintSettings[] =
      "print_settings";
-@@ -101,7 +101,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
+@@ -101,7 +101,7 @@ class COMPONENT_EXPORT(PRINTING_SETTINGS) PrintSetting
      std::string vendor_id;
    };
  
@@ -27,7 +27,7 @@
    using AdvancedSettings = std::map<std::string, base::Value>;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -276,7 +276,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
+@@ -276,7 +276,7 @@ class COMPONENT_EXPORT(PRINTING_SETTINGS) PrintSetting
      pages_per_sheet_ = pages_per_sheet;
    }
  
@@ -36,7 +36,7 @@
    AdvancedSettings& advanced_settings() { return advanced_settings_; }
    const AdvancedSettings& advanced_settings() const {
      return advanced_settings_;
-@@ -429,7 +429,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
+@@ -429,7 +429,7 @@ class COMPONENT_EXPORT(PRINTING_SETTINGS) PrintSetting
    // Number of pages per sheet.
    int pages_per_sheet_;
  

@@ -39,6 +39,6 @@
 %%PYQT_SIPDIR%%/QtDataVisualization/qvalue3daxis.sip
 %%PYQT_SIPDIR%%/QtDataVisualization/qvalue3daxisformatter.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/QtDataVisualization.abi%%PYTHON_MAJOR_VER%%.so
-%%PYTHON_SITELIBDIR%%/PyQt6_DataVisualization-%%PYQTDATAVIS3D_VERSION%%.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/PyQt6_DataVisualization-%%PYQTDATAVIS3D_VERSION%%.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/PyQt6_DataVisualization-%%PYQTDATAVIS3D_VERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/pyqt6_datavisualization-%%PYQTDATAVIS3D_VERSION%%.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/pyqt6_datavisualization-%%PYQTDATAVIS3D_VERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/pyqt6_datavisualization-%%PYQTDATAVIS3D_VERSION%%.dist-info/RECORD

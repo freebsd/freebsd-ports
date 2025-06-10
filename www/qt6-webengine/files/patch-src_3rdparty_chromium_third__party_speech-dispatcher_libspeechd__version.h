@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/speech-dispatcher/libspeechd_version.h.orig	2023-12-10 06:10:27 UTC
+--- src/3rdparty/chromium/third_party/speech-dispatcher/libspeechd_version.h.orig	2024-04-19 13:02:56 UTC
 +++ src/3rdparty/chromium/third_party/speech-dispatcher/libspeechd_version.h
 @@ -0,0 +1,29 @@
 +/*
@@ -19,7 +19,7 @@
 + * You should have received a copy of the GNU Lesser General Public License
 + * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 + *
-+ * $Id: libspeechd.h,v 1.29 2008-07-30 09:47:00 hanke Exp $
++ * $Id: patch-third_party_speech-dispatcher_libspeechd_version_h,v 1.4 2024/03/22 13:10:56 robert Exp $
 + */
 +
 +#ifndef _LIBSPEECHD_VERSION_H

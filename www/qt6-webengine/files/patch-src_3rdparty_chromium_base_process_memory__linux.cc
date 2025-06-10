@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/process/memory_linux.cc.orig	2024-01-30 07:53:34 UTC
+--- src/3rdparty/chromium/base/process/memory_linux.cc.orig	2024-07-30 11:12:21 UTC
 +++ src/3rdparty/chromium/base/process/memory_linux.cc
 @@ -28,6 +28,7 @@ void __libc_free(void*);
  
@@ -24,7 +24,7 @@
    std::set_new_handler(&ReleaseReservationOrTerminate);
    // If we're using glibc's allocator, the above functions will override
 @@ -51,8 +54,10 @@ void EnableTerminationOnOutOfMemory() {
- #if BUILDFLAG(USE_ALLOCATOR_SHIM)
+ #if PA_BUILDFLAG(USE_ALLOCATOR_SHIM)
    allocator_shim::SetCallNewHandlerOnMallocFailure(true);
  #endif
 +#endif
@@ -34,11 +34,11 @@
  // ScopedAllowBlocking() has private constructor and it can only be used in
  // friend classes/functions. Declaring a class is easier in this situation to
  // avoid adding more dependency to thread_restrictions.h because of the
-@@ -112,6 +117,7 @@ bool AdjustOOMScoreHelper::AdjustOOMScore(ProcessId pr
+@@ -110,6 +115,7 @@ bool AdjustOOMScoreHelper::AdjustOOMScore(ProcessId pr
  bool AdjustOOMScore(ProcessId process, int score) {
    return AdjustOOMScoreHelper::AdjustOOMScore(process, score);
  }
 +#endif
  
  bool UncheckedMalloc(size_t size, void** result) {
- #if BUILDFLAG(USE_ALLOCATOR_SHIM)
+ #if PA_BUILDFLAG(USE_ALLOCATOR_SHIM)

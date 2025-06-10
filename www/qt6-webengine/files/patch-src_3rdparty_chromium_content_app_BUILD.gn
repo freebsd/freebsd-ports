@@ -1,0 +1,15 @@
+--- src/3rdparty/chromium/content/app/BUILD.gn.orig	2025-02-21 12:29:33 UTC
++++ src/3rdparty/chromium/content/app/BUILD.gn
+@@ -97,9 +97,9 @@ source_set("content_main_runner_app") {
+       "//chromeos/startup:constants",
+     ]
+   }
+-  if (build_tflite_with_xnnpack) {
+-    deps += [ "//third_party/cpuinfo" ]
+-  }
++#  if (build_tflite_with_xnnpack) {
++#    deps += [ "//third_party/cpuinfo" ]
++#  }
+ }
+ 
+ source_set("app") {

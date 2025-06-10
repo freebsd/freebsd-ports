@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/process/launch_posix.cc.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/base/process/launch_posix.cc.orig	2024-10-22 08:31:56 UTC
 +++ src/3rdparty/chromium/base/process/launch_posix.cc
-@@ -61,6 +61,9 @@
+@@ -67,6 +67,9 @@
  #error "macOS should use launch_mac.cc"
  #endif
  

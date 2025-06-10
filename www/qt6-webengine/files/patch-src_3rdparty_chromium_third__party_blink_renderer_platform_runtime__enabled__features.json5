@@ -1,24 +1,42 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2024-07-03 01:14:49 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-02-21 12:29:33 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -1944,7 +1944,7 @@
-       base_feature_status: "enabled",
-       copied_from_base_feature_if: "overridden",
-       origin_trial_feature_name: "FullscreenPopupWindows",
+@@ -384,7 +384,7 @@
+       name: "AppTitle",
+       status: "experimental",
+       origin_trial_feature_name: "AppTitle",
 -      origin_trial_os: ["win", "mac", "linux", "chromeos"],
 +      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       base_feature: "WebAppEnableAppTitle",
      },
      {
-       name: "GamepadButtonAxisEvents",
-@@ -2862,7 +2862,7 @@
-       name: "PaymentHandlerMinimalHeaderUX",
-       origin_trial_feature_name: "PaymentHandlerMinimalHeaderUX",
+@@ -1805,7 +1805,7 @@
+       base_feature: "none",
+       public: true,
+       origin_trial_feature_name: "FedCmMultipleIdentityProviders",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
        origin_trial_allows_third_party: true,
+     },
+     {
+@@ -3156,7 +3156,7 @@
+       // Tracking bug for the implementation: https://crbug.com/1462930
+       name: "PermissionElement",
+       origin_trial_feature_name: "PermissionElement",
+-      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
+       status: "experimental",
+       public: true,
+       base_feature_status: "enabled",
+@@ -3302,7 +3302,7 @@
+     {
+       name: "PrivateNetworkAccessPermissionPrompt",
+       origin_trial_feature_name: "PrivateNetworkAccessPermissionPrompt",
 -      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos"],
 +      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
        status: "stable",
-     },
-     {
-@@ -3875,7 +3875,7 @@
+       public: true,
+       base_feature: "none",
+@@ -4313,7 +4313,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -27,7 +45,16 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -4083,12 +4083,12 @@
+@@ -4460,7 +4460,7 @@
+     {
+       name: "WebAppScopeExtensions",
+       origin_trial_feature_name: "WebAppScopeExtensions",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       status: "experimental",
+       base_feature: "none",
+     },
+@@ -4503,7 +4503,7 @@
        status: "experimental",
        base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",
@@ -35,10 +62,4 @@
 +      origin_trial_os: ["win", "mac", "linux", "openbsd", "freebsd"],
      },
      {
-       name: "WebAppWindowControlsOverlay",
-       origin_trial_feature_name: "WebAppWindowControlsOverlay",
--      origin_trial_os: ["win", "mac", "linux", "chromeos"],
-+      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
-       status: "stable",
-       base_feature: "none",
-     },
+       // WebAssembly JS Promise Integration,

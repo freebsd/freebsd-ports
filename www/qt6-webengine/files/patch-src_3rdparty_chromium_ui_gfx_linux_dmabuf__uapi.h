@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/linux/dmabuf_uapi.h.orig	2024-07-03 01:14:49 UTC
+--- src/3rdparty/chromium/ui/gfx/linux/dmabuf_uapi.h.orig	2025-02-21 12:29:33 UTC
 +++ src/3rdparty/chromium/ui/gfx/linux/dmabuf_uapi.h
 @@ -5,12 +5,11 @@
  #ifndef UI_GFX_LINUX_DMABUF_UAPI_H_

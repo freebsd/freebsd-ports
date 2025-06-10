@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/compositor/compositor.cc.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/ui/compositor/compositor.cc.orig	2024-10-22 08:31:56 UTC
 +++ src/3rdparty/chromium/ui/compositor/compositor.cc
-@@ -894,7 +894,7 @@ void Compositor::OnResume() {
+@@ -925,7 +925,7 @@ void Compositor::OnResume() {
      obs.ResetIfActive();
  }
  

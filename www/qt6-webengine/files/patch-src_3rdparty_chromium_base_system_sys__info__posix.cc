@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/system/sys_info_posix.cc.orig	2023-12-10 06:10:27 UTC
+--- src/3rdparty/chromium/base/system/sys_info_posix.cc.orig	2024-10-22 08:31:56 UTC
 +++ src/3rdparty/chromium/base/system/sys_info_posix.cc
 @@ -117,7 +117,7 @@ bool GetDiskSpaceInfo(const base::FilePath& path,
  
@@ -9,7 +9,7 @@
  // static
  int SysInfo::NumberOfProcessors() {
  #if BUILDFLAG(IS_MAC)
-@@ -174,7 +174,7 @@ int SysInfo::NumberOfProcessors() {
+@@ -173,7 +173,7 @@ int SysInfo::NumberOfProcessors() {
  
    return cached_num_cpus;
  }
@@ -18,7 +18,7 @@
  
  // static
  uint64_t SysInfo::AmountOfVirtualMemory() {
-@@ -264,6 +264,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -256,6 +256,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

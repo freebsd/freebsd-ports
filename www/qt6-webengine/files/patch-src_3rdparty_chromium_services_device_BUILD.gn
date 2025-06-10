@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/services/device/BUILD.gn.orig	2023-11-03 10:09:45 UTC
+--- src/3rdparty/chromium/services/device/BUILD.gn.orig	2024-09-30 07:45:04 UTC
 +++ src/3rdparty/chromium/services/device/BUILD.gn
-@@ -13,7 +13,7 @@ if (is_android) {
+@@ -15,7 +15,7 @@ if (is_android) {
  }
  
  is_serial_enabled_platform =

@@ -1,16 +1,33 @@
---- src/3rdparty/chromium/content/browser/BUILD.gn.orig	2024-10-02 15:40:01 UTC
+--- src/3rdparty/chromium/content/browser/BUILD.gn.orig	2025-02-21 12:29:33 UTC
 +++ src/3rdparty/chromium/content/browser/BUILD.gn
-@@ -2463,6 +2463,13 @@ jumbo_source_set("browser") {
-     deps += [ "//media/mojo/mojom/stable:stable_video_decoder" ]
+@@ -2438,6 +2438,14 @@ jumbo_source_set("browser") {
+     ]
    }
  
 +  if (is_bsd) {
-+    sources -= [
-+      "sandbox_ipc_linux.cc",
-+      "sandbox_ipc_linux.h",
++    sources += [
++      "file_system_access/file_path_watcher/file_path_watcher_bsd.cc",
++      "file_system_access/file_path_watcher/file_path_watcher_kqueue.cc",
++      "file_system_access/file_path_watcher/file_path_watcher_kqueue.h",
 +    ]
 +  }
 +
-   if (is_chromeos) {
+   if (is_linux || is_chromeos) {
      sources += [
-       "handwriting/handwriting_recognition_service_impl_cros.cc",
+       "child_process_launcher_helper_linux.cc",
+@@ -2481,6 +2489,15 @@ jumbo_source_set("browser") {
+   if (allow_oop_video_decoder) {
+     sources += [ "media/stable_video_decoder_factory.cc" ]
+     deps += [ "//media/mojo/mojom/stable:stable_video_decoder" ]
++  }
++
++  if (is_bsd) {
++    sources -= [
++      "file_system_access/file_path_watcher/file_path_watcher_inotify.cc",
++      "file_system_access/file_path_watcher/file_path_watcher_inotify.h",
++      "sandbox_ipc_linux.cc",
++      "sandbox_ipc_linux.h",
++    ]
+   }
+ 
+   if (is_chromeos) {

@@ -1,10 +1,13 @@
---- src/3rdparty/chromium/third_party/ffmpeg/configure.orig	2024-01-30 07:53:34 UTC
+--- src/3rdparty/chromium/third_party/ffmpeg/configure.orig	2024-07-30 11:12:21 UTC
 +++ src/3rdparty/chromium/third_party/ffmpeg/configure
-@@ -5615,6 +5615,7 @@ case $target_os in
-         disable symver
-         ;;
-     freebsd)
-+        enable section_data_rel_ro
-         ;;
-     bsd/os)
-         add_extralibs -lpoll -lgnugetopt
+@@ -6818,8 +6818,8 @@ if ! disabled pthreads && ! enabled w32threads && ! en
+         if enabled pthread_np_h; then
+             hdrs="$hdrs pthread_np.h"
+         fi
+-        check_lib pthread_set_name_np "$hdrs" pthread_set_name_np -lpthread
+-        check_lib pthread_setname_np "$hdrs" pthread_setname_np -lpthread
++        check_lib pthread_set_name_np pthread_np.h pthread_set_name_np -lpthread
++        check_lib pthread_setname_np pthread_np.h pthread_setname_np -lpthread
+     fi
+ fi
+ 

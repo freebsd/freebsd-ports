@@ -4,7 +4,7 @@
  // the second one 16. We could technically return something different for
  // malloc() and operator new(), but this would complicate things, and most of
  // our allocations are presumably coming from operator new() anyway.
-+#if defined(__i386__) && defined(OS_FREEBSD)
++#if defined(__i386__) && PA_BUILDFLAG(IS_FREEBSD)
 +constexpr size_t kAlignment = 8;
 +#else
  constexpr size_t kAlignment =

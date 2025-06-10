@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/BUILD.gn.orig	2024-10-02 15:40:01 UTC
+--- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/BUILD.gn.orig	2025-02-21 12:29:33 UTC
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/BUILD.gn
-@@ -856,7 +856,7 @@ if (is_clang_or_gcc || is_msvc || is_mingw) {
-         configs -= [ "//build/config/compiler:enable_arc" ]
+@@ -860,7 +860,7 @@ if (is_clang_or_gcc || is_msvc || is_mingw) {
+         configs -= [ partition_alloc_enable_arc_config ]
        }
      }
 -    if (is_chromeos || is_linux) {

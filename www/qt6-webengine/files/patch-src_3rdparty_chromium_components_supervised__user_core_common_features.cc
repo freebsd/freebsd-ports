@@ -1,56 +1,45 @@
---- src/3rdparty/chromium/components/supervised_user/core/common/features.cc.orig	2024-07-03 01:14:49 UTC
+--- src/3rdparty/chromium/components/supervised_user/core/common/features.cc.orig	2025-02-21 12:29:33 UTC
 +++ src/3rdparty/chromium/components/supervised_user/core/common/features.cc
-@@ -64,7 +64,7 @@ bool IsLocalWebApprovalsEnabled() {
- // particular aspects. If one or more of these sub-feature flags are enabled,
- // then child account detection logic is implicitly enabled.
- #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
--    BUILDFLAG(IS_IOS)
-+    BUILDFLAG(IS_IOS) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kFilterWebsitesForSupervisedUsersOnDesktopAndIOS,
-              "FilterWebsitesForSupervisedUsersOnDesktopAndIOS",
-              base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -74,7 +74,7 @@ BASE_FEATURE(kFilterWebsitesForSupervisedUsersOnDeskto
+@@ -67,7 +67,7 @@ BASE_FEATURE(kUpdatedSupervisedUserExtensionApprovalSt
+              "UpdatedSupervisedUserExtensionApprovalStrings",
               base::FEATURE_DISABLED_BY_DEFAULT);
- #endif
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kSupervisedPrefsControlledBySupervisedStore,
-              "SupervisedPrefsControlledBySupervisedStore",
-              base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -86,7 +86,7 @@ BASE_FEATURE(kSupervisedPrefsControlledBySupervisedSto
- 
- // Whether to display a "Managed by your parent" or similar text for supervised
- // users in various UI surfaces.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kEnableManagedByParentUi,
-              "EnableManagedByParentUi",
-              base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -96,7 +96,7 @@ BASE_FEATURE(kEnableManagedByParentUi,
-              base::FEATURE_DISABLED_BY_DEFAULT);
- #endif
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
  BASE_FEATURE(kEnableExtensionsPermissionsForSupervisedUsersOnDesktop,
               "EnableExtensionsPermissionsForSupervisedUsersOnDesktop",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -115,7 +115,7 @@ bool CanDisplayFirstTimeInterstitialBanner() {
+@@ -82,7 +82,7 @@ bool IsSupervisedUserSkipParentApprovalToInstallExtens
+ #if BUILDFLAG(IS_CHROMEOS)
+   return base::FeatureList::IsEnabled(
+       kEnableSupervisedUserSkipParentApprovalToInstallExtensions);
+-#elif BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
++#elif BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+   bool skipParentApprovalEnabled = base::FeatureList::IsEnabled(
+       kEnableSupervisedUserSkipParentApprovalToInstallExtensions);
+   bool permissionExtensionsForSupervisedUsersEnabled =
+@@ -107,13 +107,13 @@ BASE_FEATURE(kSupervisedUserProfileSigninIPH,
+              "SupervisedUserProfileSigninIPH",
+              base::FEATURE_DISABLED_BY_DEFAULT);
  
- // When enabled non-syncing signed in supervised users will not be signed out of
- // their google account when cookies are cleared
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kClearingCookiesKeepsSupervisedUsersSignedIn,
-              "ClearingCookiesKeepsSupervisedUsersSignedIn",
-              base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -162,7 +162,7 @@ bool IsChildAccountSupervisionEnabled() {
-   return base::FeatureList::IsEnabled(
-              supervised_user::
-                  kFilterWebsitesForSupervisedUsersOnDesktopAndIOS) ||
--#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-          base::FeatureList::IsEnabled(
-              supervised_user::
-                  kEnableExtensionsPermissionsForSupervisedUsersOnDesktop) ||
+ BASE_FEATURE(kShowKiteForSupervisedUsers,
+              "ShowKiteForSupervisedUsers",
+              base::FEATURE_DISABLED_BY_DEFAULT);
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kHideGuestModeForSupervisedUsers,
+              "HideGuestModeForSupervisedUsers",
+              base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -123,7 +123,7 @@ BASE_FEATURE(kForceSafeSearchForUnauthenticatedSupervi
+              "ForceSafeSearchForUnauthenticatedSupervisedUsers",
+              base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kForceSupervisedUserReauthenticationForYouTube,
+              "ForceSupervisedUserReauthenticationForYouTube",
+              base::FEATURE_DISABLED_BY_DEFAULT);

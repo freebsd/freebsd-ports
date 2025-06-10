@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/utility_process_host.h.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/content/browser/utility_process_host.h.orig	2024-05-21 18:07:39 UTC
 +++ src/3rdparty/chromium/content/browser/utility_process_host.h
-@@ -39,7 +39,7 @@ namespace base {
+@@ -33,7 +33,7 @@ namespace base {
  class Thread;
  }  // namespace base
  
@@ -9,12 +9,12 @@
  namespace viz {
  class GpuClient;
  }  // namespace viz
-@@ -225,7 +225,7 @@ class CONTENT_EXPORT UtilityProcessHost
-   std::vector<RunServiceDeprecatedCallback> pending_run_service_callbacks_;
- #endif
+@@ -200,7 +200,7 @@ class CONTENT_EXPORT UtilityProcessHost
+   };
+   LaunchState launch_state_ = LaunchState::kLaunchInProgress;
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
+   bool allowed_gpu_;
    std::unique_ptr<viz::GpuClient, base::OnTaskRunnerDeleter> gpu_client_;
  #endif
- 

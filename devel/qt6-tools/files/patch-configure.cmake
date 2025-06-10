@@ -15,13 +15,25 @@ Call Stack (most recent call first):
 
 Regressed by: https://code.qt.io/cgit/qt/qttools.git/commit/?h=6.6.0&id=ff5c080c2eb9267c43da6fafe953bf50076443c4
 
---- configure.cmake.orig	2023-09-11 09:43:37 UTC
+--- configure.cmake.orig	2025-02-19 09:54:25 UTC
 +++ configure.cmake
-@@ -7,6 +7,7 @@
+@@ -1,6 +1,11 @@
+ # Copyright (C) 2022 The Qt Company Ltd.
+ # SPDX-License-Identifier: BSD-3-Clause
  
- #### Libraries
- 
++#### Libraries
++
 +qt_find_package(WrapZSTD 1.3 PROVIDED_TARGETS WrapZSTD::WrapZSTD MODULE_NAME designer)
- 
- 
++
++
  #### Tests
+ 
+ qt_find_package(WrapLibClang 8 PROVIDED_TARGETS WrapLibClang::WrapLibClang)
+@@ -8,7 +13,6 @@ endif()
+ if(TARGET WrapLibClang::WrapLibClang)
+     set(TEST_libclang "ON" CACHE BOOL "Required libclang version found." FORCE)
+ endif()
+-
+ 
+ 
+ #### Features

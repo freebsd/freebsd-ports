@@ -12,6 +12,7 @@
 %%QT_INCDIR%%/QtBodymovin/%%FULLVER%%/QtBodymovin/private/bmimagelayer_p.h
 %%QT_INCDIR%%/QtBodymovin/%%FULLVER%%/QtBodymovin/private/bmlayer_p.h
 %%QT_INCDIR%%/QtBodymovin/%%FULLVER%%/QtBodymovin/private/bmpathtrimmer_p.h
+%%QT_INCDIR%%/QtBodymovin/%%FULLVER%%/QtBodymovin/private/bmpolystar_p.h
 %%QT_INCDIR%%/QtBodymovin/%%FULLVER%%/QtBodymovin/private/bmproperty_p.h
 %%QT_INCDIR%%/QtBodymovin/%%FULLVER%%/QtBodymovin/private/bmrect_p.h
 %%QT_INCDIR%%/QtBodymovin/%%FULLVER%%/QtBodymovin/private/bmrepeater_p.h

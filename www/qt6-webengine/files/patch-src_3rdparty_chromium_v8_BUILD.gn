@@ -1,21 +1,28 @@
---- src/3rdparty/chromium/v8/BUILD.gn.orig	2024-07-03 01:14:49 UTC
+--- src/3rdparty/chromium/v8/BUILD.gn.orig	2025-02-21 12:29:33 UTC
 +++ src/3rdparty/chromium/v8/BUILD.gn
-@@ -1448,6 +1448,14 @@ config("toolchain") {
-   } else if (target_os == "chromeos") {
-     defines += [ "V8_HAVE_TARGET_OS" ]
-     defines += [ "V8_TARGET_OS_CHROMEOS" ]
-+  } else if (target_os == "openbsd") {
-+    defines += [ "V8_HAVE_TARGET_OS" ]
-+    defines += [ "V8_TARGET_OS_OPENBSD" ]
-+    defines += [ "V8_TARGET_OS_BSD" ]
-+  } else if (target_os == "freebsd") {
-+    defines += [ "V8_HAVE_TARGET_OS" ]
-+    defines += [ "V8_TARGET_OS_FREEBSD" ]
-+    defines += [ "V8_TARGET_OS_BSD" ]
-   }
+@@ -908,6 +908,8 @@ external_v8_defines = [
+   "V8_TARGET_OS_MACOS",
+   "V8_TARGET_OS_WIN",
+   "V8_TARGET_OS_CHROMEOS",
++  "V8_TARGET_OS_OPENBSD",
++  "V8_TARGET_OS_FREEBSD",
+ ]
  
-   # TODO(infra): Support v8_enable_prof on Windows.
-@@ -2414,6 +2422,12 @@ template("run_mksnapshot") {
+ enabled_external_v8_defines = [
+@@ -984,6 +986,12 @@ if (target_os == "android") {
+ } else if (target_os == "chromeos") {
+   enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
+   enabled_external_v8_defines += [ "V8_TARGET_OS_CHROMEOS" ]
++} else if (target_os == "openbsd") {
++  enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
++  enabled_external_v8_defines += [ "V8_TARGET_OS_OPENBSD" ]
++} else if (target_os == "freebsd") {
++  enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
++  enabled_external_v8_defines += [ "V8_TARGET_OS_FREEBSD" ]
+ }
+ 
+ disabled_external_v8_defines = external_v8_defines - enabled_external_v8_defines
+@@ -2538,6 +2546,12 @@ template("run_mksnapshot") {
        if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
          args += [ "--reorder-builtins" ]
        }
@@ -27,8 +34,8 @@
 +      }
      }
  
-     # This is needed to distinguish between generating code for the simulator
-@@ -6423,7 +6437,7 @@ v8_component("v8_libbase") {
+     if (v8_enable_turboshaft_csa) {
+@@ -6704,7 +6718,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -37,7 +44,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -6434,6 +6448,18 @@ v8_component("v8_libbase") {
+@@ -6715,6 +6729,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

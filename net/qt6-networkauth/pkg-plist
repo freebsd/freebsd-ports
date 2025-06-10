@@ -4,6 +4,7 @@
 %%QT_INCDIR%%/QtNetworkAuth/%%FULLVER%%/QtNetworkAuth/private/qoauth1_p.h
 %%QT_INCDIR%%/QtNetworkAuth/%%FULLVER%%/QtNetworkAuth/private/qoauth1signature_p.h
 %%QT_INCDIR%%/QtNetworkAuth/%%FULLVER%%/QtNetworkAuth/private/qoauth2authorizationcodeflow_p.h
+%%QT_INCDIR%%/QtNetworkAuth/%%FULLVER%%/QtNetworkAuth/private/qoauth2deviceauthorizationflow_p.h
 %%QT_INCDIR%%/QtNetworkAuth/%%FULLVER%%/QtNetworkAuth/private/qoauthhttpserverreplyhandler_p.h
 %%QT_INCDIR%%/QtNetworkAuth/%%FULLVER%%/QtNetworkAuth/private/qoauthoobreplyhandler_p.h
 %%QT_INCDIR%%/QtNetworkAuth/%%FULLVER%%/QtNetworkAuth/private/qtnetworkauth-config_p.h
@@ -13,6 +14,7 @@
 %%QT_INCDIR%%/QtNetworkAuth/QOAuth1
 %%QT_INCDIR%%/QtNetworkAuth/QOAuth1Signature
 %%QT_INCDIR%%/QtNetworkAuth/QOAuth2AuthorizationCodeFlow
+%%QT_INCDIR%%/QtNetworkAuth/QOAuth2DeviceAuthorizationFlow
 %%QT_INCDIR%%/QtNetworkAuth/QOAuthHttpServerReplyHandler
 %%QT_INCDIR%%/QtNetworkAuth/QOAuthOobReplyHandler
 %%QT_INCDIR%%/QtNetworkAuth/QOAuthUriSchemeReplyHandler
@@ -25,6 +27,7 @@
 %%QT_INCDIR%%/QtNetworkAuth/qoauth1.h
 %%QT_INCDIR%%/QtNetworkAuth/qoauth1signature.h
 %%QT_INCDIR%%/QtNetworkAuth/qoauth2authorizationcodeflow.h
+%%QT_INCDIR%%/QtNetworkAuth/qoauth2deviceauthorizationflow.h
 %%QT_INCDIR%%/QtNetworkAuth/qoauthglobal.h
 %%QT_INCDIR%%/QtNetworkAuth/qoauthhttpserverreplyhandler.h
 %%QT_INCDIR%%/QtNetworkAuth/qoauthoobreplyhandler.h
@@ -41,6 +44,14 @@ lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthTargets.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthVersionlessAliasTargets.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthVersionlessTargets.cmake
+lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateConfig.cmake
+lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateConfigVersion.cmake
+lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateDependencies.cmake
+lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateTargets.cmake
+lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6NetworkAuthPrivate/Qt6NetworkAuthPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6NetworkAuth.prl
 %%QT_LIBDIR%%/libQt6NetworkAuth.so
 %%QT_LIBDIR%%/libQt6NetworkAuth.so.6

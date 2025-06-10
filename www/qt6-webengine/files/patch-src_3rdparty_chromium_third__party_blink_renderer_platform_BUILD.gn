@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/BUILD.gn.orig	2024-07-03 01:14:49 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/BUILD.gn.orig	2025-02-21 12:29:33 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/BUILD.gn
-@@ -1979,7 +1979,7 @@ jumbo_static_library("test_support") {
+@@ -2059,7 +2059,7 @@ jumbo_static_library("test_support") {
    ]
  
    # fuzzed_data_provider may not work with a custom toolchain.

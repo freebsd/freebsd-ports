@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/third_party/node/node.py.orig	2024-07-03 01:14:49 UTC
+--- src/3rdparty/chromium/third_party/node/node.py.orig	2025-02-21 12:29:33 UTC
 +++ src/3rdparty/chromium/third_party/node/node.py
-@@ -35,6 +35,8 @@ def GetBinaryPath():
+@@ -39,6 +39,8 @@ def GetBinaryPath():
    return os_path.join(os_path.dirname(__file__), *{
-     'Darwin': ('mac', darwin_name, 'bin', 'node'),
+     'Darwin': (darwin_path, darwin_name, 'bin', 'node'),
      'Linux': ('linux', 'node-linux-x64', 'bin', 'node'),
 +    'OpenBSD': ('openbsd', 'node-openbsd', 'bin', 'node'),
 +    'FreeBSD': ('freebsd', 'node-freebsd', 'bin', 'node'),

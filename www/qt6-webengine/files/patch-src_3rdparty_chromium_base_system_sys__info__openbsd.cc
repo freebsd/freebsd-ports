@@ -1,14 +1,6 @@
---- src/3rdparty/chromium/base/system/sys_info_openbsd.cc.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/base/system/sys_info_openbsd.cc.orig	2024-10-22 08:31:56 UTC
 +++ src/3rdparty/chromium/base/system/sys_info_openbsd.cc
-@@ -3,7 +3,6 @@
- // found in the LICENSE file.
- 
- #include "base/system/sys_info.h"
--
- #include <stddef.h>
- #include <stdint.h>
- #include <sys/param.h>
-@@ -12,6 +11,7 @@
+@@ -12,6 +12,7 @@
  
  #include "base/notreached.h"
  #include "base/posix/sysctl.h"
@@ -16,7 +8,7 @@
  
  namespace {
  
-@@ -27,9 +27,14 @@ uint64_t AmountOfMemory(int pages_name) {
+@@ -27,9 +28,14 @@ uint64_t AmountOfMemory(int pages_name) {
  
  namespace base {
  
@@ -32,7 +24,7 @@
    int ncpu;
    size_t size = sizeof(ncpu);
    if (sysctl(mib, std::size(mib), &ncpu, &size, NULL, 0) < 0) {
-@@ -41,10 +46,26 @@ int SysInfo::NumberOfProcessors() {
+@@ -40,10 +46,26 @@ int SysInfo::NumberOfProcessors() {
  
  // static
  uint64_t SysInfo::AmountOfPhysicalMemoryImpl() {
@@ -47,12 +39,12 @@
 +std::string SysInfo::CPUModelName() {
 +  int mib[] = {CTL_HW, HW_MODEL};
 +  size_t len = std::size(cpumodel);
-+
++  
 +  if (cpumodel[0] == '\0') {
 +    if (sysctl(mib, std::size(mib), cpumodel, &len, NULL, 0) < 0)
 +      return std::string();
 +  }
-+
++ 
 +  return std::string(cpumodel, len - 1);
 +}
 +
@@ -60,7 +52,7 @@
  uint64_t SysInfo::AmountOfAvailablePhysicalMemoryImpl() {
    // We should add inactive file-backed memory also but there is no such
    // information from OpenBSD unfortunately.
-@@ -56,16 +77,28 @@ uint64_t SysInfo::MaxSharedMemorySize() {
+@@ -55,15 +77,27 @@ uint64_t SysInfo::MaxSharedMemorySize() {
    int mib[] = {CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX};
    size_t limit;
    size_t size = sizeof(limit);
@@ -69,7 +61,6 @@
 +    goto out;
    if (sysctl(mib, std::size(mib), &limit, &size, NULL, 0) < 0) {
      NOTREACHED();
-     return 0;
    }
 -  return static_cast<uint64_t>(limit);
 +  shmmax = static_cast<uint64_t>(limit);

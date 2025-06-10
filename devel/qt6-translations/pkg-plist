@@ -116,7 +116,6 @@
 %%QT_L10NDIR%%/qt_ja.qm
 %%QT_L10NDIR%%/qt_ka.qm
 %%QT_L10NDIR%%/qt_ko.qm
-%%QT_L10NDIR%%/qt_lg.qm
 %%QT_L10NDIR%%/qt_lt.qm
 %%QT_L10NDIR%%/qt_lv.qm
 %%QT_L10NDIR%%/qt_nl.qm
@@ -151,7 +150,6 @@
 %%QT_L10NDIR%%/qtbase_ja.qm
 %%QT_L10NDIR%%/qtbase_ka.qm
 %%QT_L10NDIR%%/qtbase_ko.qm
-%%QT_L10NDIR%%/qtbase_lg.qm
 %%QT_L10NDIR%%/qtbase_lv.qm
 %%QT_L10NDIR%%/qtbase_nl.qm
 %%QT_L10NDIR%%/qtbase_nn.qm
@@ -260,6 +258,7 @@
 %%QT_L10NDIR%%/qtserialport_ko.qm
 %%QT_L10NDIR%%/qtserialport_pl.qm
 %%QT_L10NDIR%%/qtserialport_ru.qm
+%%QT_L10NDIR%%/qtserialport_tr.qm
 %%QT_L10NDIR%%/qtserialport_uk.qm
 %%QT_L10NDIR%%/qtserialport_zh_CN.qm
 %%QT_L10NDIR%%/qtwebengine_ca.qm
@@ -270,6 +269,7 @@
 %%QT_L10NDIR%%/qtwebengine_ko.qm
 %%QT_L10NDIR%%/qtwebengine_pl.qm
 %%QT_L10NDIR%%/qtwebengine_ru.qm
+%%QT_L10NDIR%%/qtwebengine_tr.qm
 %%QT_L10NDIR%%/qtwebengine_uk.qm
 %%QT_L10NDIR%%/qtwebengine_zh_CN.qm
 %%QT_L10NDIR%%/qtwebsockets_ca.qm
@@ -282,5 +282,6 @@
 %%QT_L10NDIR%%/qtwebsockets_ko.qm
 %%QT_L10NDIR%%/qtwebsockets_pl.qm
 %%QT_L10NDIR%%/qtwebsockets_ru.qm
+%%QT_L10NDIR%%/qtwebsockets_tr.qm
 %%QT_L10NDIR%%/qtwebsockets_uk.qm
 %%QT_L10NDIR%%/qtwebsockets_zh_CN.qm

@@ -3,9 +3,6 @@ bin/pyuic6
 %%PYQT_APIDIR%%/PyQt6.api
 %%PYQT_DESIGNERDIR%%/libpyqt6.so
 %%PYQT_QMLDIR%%/libpyqt6qmlplugin.so
-%%PYTHON_SITELIBDIR%%/PyQt6-%%PYQT_PYQTVERSION%%.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/PyQt6-%%PYQT_PYQTVERSION%%.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/PyQt6-%%PYQT_PYQTVERSION%%.dist-info/RECORD
 %%PYTHON_SITELIBDIR%%/PyQt6/QtBluetooth.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtCore.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtDBus.abi%%PYTHON_MAJOR_VER%%.so
@@ -121,6 +118,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qjsonarray.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qjsondocument.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qjsonobject.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qjsonparseerror.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qjsonvalue.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qlibrary.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qlibraryinfo.sip
@@ -155,6 +153,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_qlist.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_qmap.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_qset.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_std_chrono_duration.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_std_optional.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_std_pair.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_virtual_error_handler.sip
@@ -275,6 +274,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qfontdatabase.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qfontinfo.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qfontmetrics.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qfontvariableaxis.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qgenericmatrix.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qglyphrun.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qguiapplication.sip
@@ -300,6 +300,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpaintengine.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpainter.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpainterpath.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpainterstateguard.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpalette.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpdfoutputintent.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpdfwriter.sip
@@ -925,4 +926,8 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/qtprintsupport.py
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/qtquickwidgets.py
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/qtwebenginewidgets.py
+%%PYTHON_SITELIBDIR%%/pyqt6-%%PYQT_PYQTVERSION%%.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/pyqt6-%%PYQT_PYQTVERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/pyqt6-%%PYQT_PYQTVERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/pyqt6-%%PYQT_PYQTVERSION%%.dist-info/licenses/LICENSE
 %%PYTHON_SITELIBDIR%%/dbus/mainloop/pyqt6.abi%%PYTHON_MAJOR_VER%%.so

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/compiler_specific.h.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/base/compiler_specific.h.orig	2024-10-22 08:31:56 UTC
 +++ src/3rdparty/chromium/base/compiler_specific.h
-@@ -316,7 +316,7 @@
+@@ -257,7 +257,7 @@
  //
  // In some cases it's desirable to remove this, e.g. on hot functions, or if
  // we have purposely changed the reference canary.
@@ -9,3 +9,12 @@
  #if HAS_ATTRIBUTE(__no_stack_protector__)
  #define NO_STACK_PROTECTOR __attribute__((__no_stack_protector__))
  #else
+@@ -388,7 +388,7 @@ inline constexpr bool AnalyzerAssumeTrue(bool arg) {
+ // See https://clang.llvm.org/docs/AttributeReference.html#preserve-most for
+ // more details.
+ #if (defined(ARCH_CPU_ARM64) || defined(ARCH_CPU_X86_64)) && \
+-    !(BUILDFLAG(IS_WIN) && defined(ARCH_CPU_ARM64)) &&       \
++    !((BUILDFLAG(IS_WIN) || BUILDFLAG(IS_OPENBSD)) && defined(ARCH_CPU_ARM64)) &&       \
+     !defined(COMPONENT_BUILD) && defined(__clang__) &&       \
+     __clang_major__ >= 17 && HAS_ATTRIBUTE(preserve_most)
+ #define PRESERVE_MOST __attribute__((preserve_most))

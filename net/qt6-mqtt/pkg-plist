@@ -2,6 +2,7 @@
 %%QT_INCDIR%%/QtMqtt/%%FULLVER%%/QtMqtt/private/qmqttconnection_p.h
 %%QT_INCDIR%%/QtMqtt/%%FULLVER%%/QtMqtt/private/qmqttconnectionproperties_p.h
 %%QT_INCDIR%%/QtMqtt/%%FULLVER%%/QtMqtt/private/qmqttcontrolpacket_p.h
+%%QT_INCDIR%%/QtMqtt/%%FULLVER%%/QtMqtt/private/qmqttglobal_p.h
 %%QT_INCDIR%%/QtMqtt/%%FULLVER%%/QtMqtt/private/qmqttmessage_p.h
 %%QT_INCDIR%%/QtMqtt/%%FULLVER%%/QtMqtt/private/qmqttpublishproperties_p.h
 %%QT_INCDIR%%/QtMqtt/%%FULLVER%%/QtMqtt/private/qmqttsubscription_p.h
@@ -46,6 +47,14 @@ lib/cmake/Qt6Mqtt/Qt6MqttTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Mqtt/Qt6MqttTargets.cmake
 lib/cmake/Qt6Mqtt/Qt6MqttVersionlessAliasTargets.cmake
 lib/cmake/Qt6Mqtt/Qt6MqttVersionlessTargets.cmake
+lib/cmake/Qt6MqttPrivate/Qt6MqttPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6MqttPrivate/Qt6MqttPrivateConfig.cmake
+lib/cmake/Qt6MqttPrivate/Qt6MqttPrivateConfigVersion.cmake
+lib/cmake/Qt6MqttPrivate/Qt6MqttPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6MqttPrivate/Qt6MqttPrivateDependencies.cmake
+lib/cmake/Qt6MqttPrivate/Qt6MqttPrivateTargets.cmake
+lib/cmake/Qt6MqttPrivate/Qt6MqttPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6MqttPrivate/Qt6MqttPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6Mqtt.prl
 %%QT_LIBDIR%%/libQt6Mqtt.so
 %%QT_LIBDIR%%/libQt6Mqtt.so.6

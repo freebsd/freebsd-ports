@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/base/video_frame.h.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/media/base/video_frame.h.orig	2024-10-22 08:31:56 UTC
 +++ src/3rdparty/chromium/media/base/video_frame.h
-@@ -44,7 +44,7 @@
+@@ -50,7 +50,7 @@
  #include "base/apple/scoped_cftyperef.h"
  #endif  // BUILDFLAG(IS_APPLE)
  
@@ -9,7 +9,7 @@
  #include "base/files/scoped_file.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -110,7 +110,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -116,7 +116,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
      STORAGE_UNOWNED_MEMORY = 2,  // External, non owned data pointers.
      STORAGE_OWNED_MEMORY = 3,  // VideoFrame has allocated its own data buffer.
      STORAGE_SHMEM = 4,         // Backed by read-only shared memory.
@@ -18,7 +18,7 @@
      // TODO(mcasas): Consider turning this type into STORAGE_NATIVE
      // based on the idea of using this same enum value for both DMA
      // buffers on Linux and CVPixelBuffers on Mac (which currently use
-@@ -313,7 +313,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -393,7 +393,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
        ReleaseMailboxAndGpuMemoryBufferCB mailbox_holder_and_gmb_release_cb,
        base::TimeDelta timestamp);
  
@@ -27,21 +27,21 @@
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/html/latest/driver-api/dma-buf.html) with a
    // VideoFrame. The frame will take ownership of |dmabuf_fds|, and will
-@@ -593,7 +593,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
-   // mailbox, the caller must wait for the included sync point.
-   const gpu::MailboxHolder& mailbox_holder(size_t texture_index) const;
+@@ -711,7 +711,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+   // wait for the included sync point.
+   scoped_refptr<gpu::ClientSharedImage> shared_image() const;
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    // The number of DmaBufs will be equal or less than the number of planes of
    // the frame. If there are less, this means that the last FD contains the
    // remaining planes. Should be > 0 for STORAGE_DMABUFS.
-@@ -811,7 +811,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
-   // GPU memory buffer, if this frame is STORAGE_GPU_MEMORY_BUFFER.
-   std::unique_ptr<gfx::GpuMemoryBuffer> gpu_memory_buffer_;
+@@ -953,7 +953,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+   // GpuMemoryBuffers. Clients will set this flag while creating a VideoFrame.
+   bool is_mappable_si_enabled_ = false;
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   class DmabufHolder;
  
    // Dmabufs for the frame, used when storage is STORAGE_DMABUFS. Size is either
+   // equal or less than the number of planes of the frame. If it is less, then

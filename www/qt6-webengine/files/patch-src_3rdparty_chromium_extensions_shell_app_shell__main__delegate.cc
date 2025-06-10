@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/extensions/shell/app/shell_main_delegate.cc.orig	2023-11-03 10:09:45 UTC
+--- src/3rdparty/chromium/extensions/shell/app/shell_main_delegate.cc.orig	2024-04-19 13:02:56 UTC
 +++ src/3rdparty/chromium/extensions/shell/app/shell_main_delegate.cc
 @@ -43,7 +43,7 @@
  #if BUILDFLAG(IS_WIN)
@@ -9,8 +9,8 @@
  #include "base/nix/xdg_util.h"
  #elif BUILDFLAG(IS_MAC)
  #include "base/base_paths_mac.h"
-@@ -62,7 +62,7 @@ base::FilePath GetDataPath() {
-     return cmd_line->GetSwitchValuePath(switches::kContentShellDataPath);
+@@ -63,7 +63,7 @@ base::FilePath GetDataPath() {
+   }
  
    base::FilePath data_dir;
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

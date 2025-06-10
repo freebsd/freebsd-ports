@@ -1,20 +1,11 @@
---- src/3rdparty/chromium/chrome/browser/ui/webui/app_home/app_home_page_handler.cc.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/chrome/browser/ui/webui/app_home/app_home_page_handler.cc.orig	2024-09-30 07:45:04 UTC
 +++ src/3rdparty/chromium/chrome/browser/ui/webui/app_home/app_home_page_handler.cc
-@@ -386,7 +386,7 @@ app_home::mojom::AppInfoPtr AppHomePageHandler::Create
+@@ -62,7 +62,7 @@
+ #include "ui/base/window_open_disposition_utils.h"
+ #include "url/gurl.h"
  
-   bool deprecated_app = false;
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_FUCHSIA)
-+    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-   auto* context = extension_system_->extension_service()->GetBrowserContext();
-   deprecated_app =
-       extensions::IsExtensionUnsupportedDeprecatedApp(context, extension->id());
-@@ -450,7 +450,7 @@ void AppHomePageHandler::FillExtensionInfoList(
-     }
+-static_assert(BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX));
++static_assert(BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD));
  
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_FUCHSIA)
-+    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-     auto* context = extension_system_->extension_service()->GetBrowserContext();
-     const bool is_deprecated_app =
-         extensions::IsExtensionUnsupportedDeprecatedApp(context,
+ using content::WebUI;
+ using extensions::Extension;

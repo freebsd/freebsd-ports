@@ -10,6 +10,7 @@ include/shiboken6/pep384ext.h
 include/shiboken6/pep384impl.h
 include/shiboken6/pyobjectholder.h
 include/shiboken6/sbkarrayconverter.h
+include/shiboken6/sbkbindingutils.h
 include/shiboken6/sbkcontainer.h
 include/shiboken6/sbkconverter.h
 include/shiboken6/sbkcppstring.h

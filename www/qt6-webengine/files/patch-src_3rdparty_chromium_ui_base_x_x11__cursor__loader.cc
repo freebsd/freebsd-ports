@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/base/x/x11_cursor_loader.cc.orig	2024-01-30 07:53:34 UTC
+--- src/3rdparty/chromium/ui/base/x/x11_cursor_loader.cc.orig	2024-08-26 12:06:38 UTC
 +++ src/3rdparty/chromium/ui/base/x/x11_cursor_loader.cc
-@@ -31,7 +31,7 @@
+@@ -34,7 +34,7 @@
  #include "ui/gfx/x/connection.h"
  #include "ui/gfx/x/xproto.h"
  
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -137,7 +137,11 @@ std::string CursorPathFromLibXcursor() {
+@@ -59,7 +59,11 @@ std::string CursorPathFromLibXcursor() {
      void operator()(void* ptr) const { dlclose(ptr); }
    };
  
@@ -21,7 +21,7 @@
    if (!lib)
      return "";
  
-@@ -248,7 +252,7 @@ scoped_refptr<base::RefCountedMemory> ReadCursorFile(
+@@ -170,7 +174,7 @@ scoped_refptr<base::RefCountedMemory> ReadCursorFile(
      const std::string& rm_xcursor_theme) {
    constexpr const char kDefaultTheme[] = "default";
    std::string themes[] = {
@@ -30,7 +30,7 @@
      // The toolkit theme has the highest priority.
      LinuxUi::instance() ? LinuxUi::instance()->GetCursorThemeName()
                          : std::string(),
-@@ -440,7 +444,7 @@ uint32_t XCursorLoader::GetPreferredCursorSize() const
+@@ -359,7 +363,7 @@ uint32_t XCursorLoader::GetPreferredCursorSize() const
      return size;
    }
  

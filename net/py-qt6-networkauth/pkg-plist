@@ -7,10 +7,11 @@
 %%PYQT_SIPDIR%%/QtNetworkAuth/qoauth1.sip
 %%PYQT_SIPDIR%%/QtNetworkAuth/qoauth1signature.sip
 %%PYQT_SIPDIR%%/QtNetworkAuth/qoauth2authorizationcodeflow.sip
+%%PYQT_SIPDIR%%/QtNetworkAuth/qoauth2deviceauthorizationflow.sip
 %%PYQT_SIPDIR%%/QtNetworkAuth/qoauthhttpserverreplyhandler.sip
 %%PYQT_SIPDIR%%/QtNetworkAuth/qoauthoobreplyhandler.sip
 %%PYQT_SIPDIR%%/QtNetworkAuth/qoauthurischemereplyhandler.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/QtNetworkAuth.abi%%PYTHON_MAJOR_VER%%.so
-%%PYTHON_SITELIBDIR%%/PyQt6_NetworkAuth-%%PYQTNETWORKAUTH_VERSION%%.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/PyQt6_NetworkAuth-%%PYQTNETWORKAUTH_VERSION%%.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/PyQt6_NetworkAuth-%%PYQTNETWORKAUTH_VERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/pyqt6_networkauth-%%PYQTNETWORKAUTH_VERSION%%.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/pyqt6_networkauth-%%PYQTNETWORKAUTH_VERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/pyqt6_networkauth-%%PYQTNETWORKAUTH_VERSION%%.dist-info/RECORD

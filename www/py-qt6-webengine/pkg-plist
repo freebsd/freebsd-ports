@@ -24,6 +24,7 @@
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginepage.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginepermission.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineprofile.sip
+%%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineprofilebuilder.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginequotarequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineregisterprotocolhandlerrequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginescript.sip
@@ -45,6 +46,6 @@
 %%PYTHON_SITELIBDIR%%/PyQt6/QtWebEngineCore.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtWebEngineQuick.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtWebEngineWidgets.abi%%PYTHON_MAJOR_VER%%.so
-%%PYTHON_SITELIBDIR%%/PyQt6_WebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/PyQt6_WebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/PyQt6_WebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/pyqt6_webengine-%%PYQT_WEBENGINE_VERSION%%.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/pyqt6_webengine-%%PYQT_WEBENGINE_VERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/pyqt6_webengine-%%PYQT_WEBENGINE_VERSION%%.dist-info/RECORD

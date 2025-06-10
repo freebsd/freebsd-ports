@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/profiler/sampling_profiler_thread_token.cc.orig	2023-02-08 09:03:45 UTC
+--- src/3rdparty/chromium/base/profiler/sampling_profiler_thread_token.cc.orig	2024-04-19 13:02:56 UTC
 +++ src/3rdparty/chromium/base/profiler/sampling_profiler_thread_token.cc
 @@ -6,7 +6,7 @@
  
@@ -15,6 +15,6 @@
    return {id, pthread_self()};
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   absl::optional<uintptr_t> maybe_stack_base =
+   std::optional<uintptr_t> maybe_stack_base =
        GetThreadStackBaseAddress(id, pthread_self());
    return {id, maybe_stack_base};

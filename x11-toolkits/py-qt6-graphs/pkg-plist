@@ -36,6 +36,7 @@
 %%PYQT_SIPDIR%%/QtGraphs/qscatterdataitem.sip
 %%PYQT_SIPDIR%%/QtGraphs/qscatterdataproxy.sip
 %%PYQT_SIPDIR%%/QtGraphs/qscatterseries.sip
+%%PYQT_SIPDIR%%/QtGraphs/qspline3dseries.sip
 %%PYQT_SIPDIR%%/QtGraphs/qsplineseries.sip
 %%PYQT_SIPDIR%%/QtGraphs/qsurface3dseries.sip
 %%PYQT_SIPDIR%%/QtGraphs/qsurfacedataitem.sip
@@ -54,6 +55,6 @@
 %%PYQT_SIPDIR%%/QtGraphsWidgets/q3dsurfacewidgetitem.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/QtGraphs.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtGraphsWidgets.abi%%PYTHON_MAJOR_VER%%.so
-%%PYTHON_SITELIBDIR%%/PyQt6_Graphs-%%PYQTGRAPHS_VERSION%%.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/PyQt6_Graphs-%%PYQTGRAPHS_VERSION%%.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/PyQt6_Graphs-%%PYQTGRAPHS_VERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/pyqt6_graphs-%%PYQTGRAPHS_VERSION%%.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/pyqt6_graphs-%%PYQTGRAPHS_VERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/pyqt6_graphs-%%PYQTGRAPHS_VERSION%%.dist-info/RECORD

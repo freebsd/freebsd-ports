@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/ui/gfx/switches.h.orig	2023-07-16 15:47:57 UTC
+--- src/3rdparty/chromium/ui/gfx/switches.h.orig	2024-04-19 13:02:56 UTC
 +++ src/3rdparty/chromium/ui/gfx/switches.h
-@@ -18,7 +18,7 @@ GFX_SWITCHES_EXPORT extern const char kEnableNativeGpu
- GFX_SWITCHES_EXPORT extern const char kForcePrefersReducedMotion[];
+@@ -19,7 +19,7 @@ GFX_SWITCHES_EXPORT extern const char kForcePrefersRed
+ GFX_SWITCHES_EXPORT extern const char kForcePrefersNoReducedMotion[];
  GFX_SWITCHES_EXPORT extern const char kHeadless[];
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

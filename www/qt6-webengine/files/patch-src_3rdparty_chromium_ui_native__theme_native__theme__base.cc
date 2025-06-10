@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/ui/native_theme/native_theme_base.cc.orig	2023-11-03 10:09:45 UTC
+--- src/3rdparty/chromium/ui/native_theme/native_theme_base.cc.orig	2024-09-30 07:45:04 UTC
 +++ src/3rdparty/chromium/ui/native_theme/native_theme_base.cc
-@@ -235,7 +235,7 @@ void NativeThemeBase::Paint(cc::PaintCanvas* canvas,
+@@ -241,7 +241,7 @@ void NativeThemeBase::Paint(cc::PaintCanvas* canvas,
        break;
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)

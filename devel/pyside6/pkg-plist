@@ -71,10 +71,15 @@ include/PySide6/pyside.h
 include/PySide6/pyside6_global.h
 include/PySide6/pyside_numpy.h
 include/PySide6/pyside_p.h
+include/PySide6/pysidecapsulemethod_p.h
 include/PySide6/pysideclassdecorator_p.h
 include/PySide6/pysideclassinfo.h
 include/PySide6/pysideclassinfo_p.h
 include/PySide6/pysidecleanup.h
+include/PySide6/pysidedynamicclass_p.h
+include/PySide6/pysidedynamiccommon_p.h
+include/PySide6/pysidedynamicenum_p.h
+include/PySide6/pysidedynamicpod_p.h
 include/PySide6/pysideinit.h
 include/PySide6/pysidelogging_p.h
 include/PySide6/pysidemacros.h
@@ -102,6 +107,7 @@ include/PySide6/pysideqmltypeinfo_p.h
 include/PySide6/pysideqmluncreatable.h
 include/PySide6/pysideqobject.h
 include/PySide6/pysideqslotobject_p.h
+include/PySide6/pysiderephandler_p.h
 include/PySide6/pysidesignal.h
 include/PySide6/pysidesignal_p.h
 include/PySide6/pysideslot_p.h
@@ -126,6 +132,7 @@ lib/libpyside6.abi%%PYTHON_MAJOR_VER%%.so.%%SHLIB_VERSION%%
 lib/libpyside6qml.abi%%PYTHON_MAJOR_VER%%.so
 lib/libpyside6qml.abi%%PYTHON_MAJOR_VER%%.so.%%SHLIB_VER%%
 lib/libpyside6qml.abi%%PYTHON_MAJOR_VER%%.so.%%SHLIB_VERSION%%
+lib/libpyside6remoteobjects.a
 %%PYTHON_SITELIBDIR%%/PySide6/Qt3DAnimation.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PySide6/Qt3DAnimation.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/Qt3DCore.abi%%PYTHON_MAJOR_VER%%.so
@@ -294,6 +301,7 @@ share/PySide6/glue/qtqml.cpp
 share/PySide6/glue/qtquick.cpp
 share/PySide6/glue/qtquick3d.cpp
 share/PySide6/glue/qtquicktest.cpp
+share/PySide6/glue/qtremoteobjects.cpp
 share/PySide6/glue/qtserialbus.cpp
 share/PySide6/glue/qtsql.cpp
 share/PySide6/glue/qtstatemachine.cpp

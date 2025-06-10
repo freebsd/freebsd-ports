@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/proxy_resolution/proxy_config_service_linux.cc.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/net/proxy_resolution/proxy_config_service_linux.cc.orig	2024-07-30 11:12:21 UTC
 +++ src/3rdparty/chromium/net/proxy_resolution/proxy_config_service_linux.cc
-@@ -6,7 +6,9 @@
+@@ -11,7 +11,9 @@
  
  #include <errno.h>
  #include <limits.h>
@@ -10,15 +10,15 @@
  #include <unistd.h>
  
  #include <map>
-@@ -505,6 +507,7 @@ bool SettingGetterImplGSettings::CheckVersion(
+@@ -510,6 +512,7 @@ bool SettingGetterImplGSettings::CheckVersion(
  }
  #endif  // defined(USE_GIO)
  
 +#if !BUILDFLAG(IS_BSD)
  // Converts |value| from a decimal string to an int. If there was a failure
  // parsing, returns |default_value|.
- int StringToIntOrDefault(base::StringPiece value, int default_value) {
-@@ -1033,6 +1036,7 @@ class SettingGetterImplKDE : public ProxyConfigService
+ int StringToIntOrDefault(std::string_view value, int default_value) {
+@@ -1038,6 +1041,7 @@ class SettingGetterImplKDE : public ProxyConfigService
    // events on.
    scoped_refptr<base::SequencedTaskRunner> file_task_runner_;
  };
@@ -26,7 +26,7 @@
  
  }  // namespace
  
-@@ -1251,9 +1255,11 @@ ProxyConfigServiceLinux::Delegate::Delegate(
+@@ -1256,9 +1260,11 @@ ProxyConfigServiceLinux::Delegate::Delegate(
      case base::nix::DESKTOP_ENVIRONMENT_KDE4:
      case base::nix::DESKTOP_ENVIRONMENT_KDE5:
      case base::nix::DESKTOP_ENVIRONMENT_KDE6:

@@ -1,6 +1,15 @@
---- src/3rdparty/chromium/skia/ext/SkMemory_new_handler.cpp.orig	2023-04-28 17:01:32 UTC
+--- src/3rdparty/chromium/skia/ext/SkMemory_new_handler.cpp.orig	2024-06-17 12:56:06 UTC
 +++ src/3rdparty/chromium/skia/ext/SkMemory_new_handler.cpp
-@@ -86,7 +86,7 @@ static void* malloc_nothrow(size_t size) {
+@@ -19,7 +19,7 @@
+ #include <windows.h>
+ #elif BUILDFLAG(IS_APPLE)
+ #include <malloc/malloc.h>
+-#else
++#elif !BUILDFLAG(IS_BSD)
+ #include <malloc.h>
+ #endif
+ 
+@@ -105,7 +105,7 @@ static void* malloc_nothrow(size_t size, int debug_sen
    // TODO(b.kelemen): we should always use UncheckedMalloc but currently it
    // doesn't work as intended everywhere.
    void* result;

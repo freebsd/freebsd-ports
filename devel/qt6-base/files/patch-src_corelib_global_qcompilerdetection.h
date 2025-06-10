@@ -5,14 +5,14 @@ error: use of the 'nodiscard' attribute is a C++20 extension
 
 https://github.com/llvm/llvm-project/issues/32865
 
---- src/corelib/global/qcompilerdetection.h.orig	2024-11-14 11:02:40 UTC
+--- src/corelib/global/qcompilerdetection.h.orig	2025-05-28 10:22:57 UTC
 +++ src/corelib/global/qcompilerdetection.h
-@@ -959,7 +959,7 @@
+@@ -966,7 +966,7 @@
  #  define Q_REQUIRED_RESULT [[nodiscard]]
  #endif
  
--#if __has_cpp_attribute(nodiscard) >= 201907L /* used for both P1771 and P1301... */
-+#if __has_cpp_attribute(nodiscard) >= 201907L && (!defined(Q_CC_CLANG) || __cplusplus >= 201907L) /* used for both P1771 and P1301... */
+-#if (defined(__cplusplus) && __has_cpp_attribute(nodiscard) >= 201907L /* used for both P1771 and P1301... */) \
++#if (defined(__cplusplus) && __has_cpp_attribute(nodiscard) >= 201907L && (!defined(Q_CC_CLANG) || __cplusplus >= 201907L) /* used for both P1771 and P1301... */) \
+     || (!defined(__cplusplus) && __has_c_attribute(nodiscard) /* N2448 */)
  // [[nodiscard]] constructor (P1771)
  #  ifndef Q_NODISCARD_CTOR
- #    define Q_NODISCARD_CTOR [[nodiscard]]
