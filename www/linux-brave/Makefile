@@ -1,5 +1,6 @@
 PORTNAME=	brave
 PORTVERSION=	${BRAVE_VER}
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}-browser/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-browser-${BRAVE_VER}-${BRAVE_BUILD}${EXTRACT_SUFX_${ARCH}}
@@ -14,7 +15,7 @@ RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 USES=		cpe desktop-file-utils gnome linux:rl9 shared-mime-info shebangfix
 USE_LINUX=	alsalib alsa-plugins-oss alsa-plugins-pulseaudio at-spi2-atk \
 		ca-certificates cairo cups-libs curl dbuslibs dri expat \
-		ffmpeg-libs gnupg gstreamer1-libav gtk3 libxkbcommon libunistring \
+		ffmpeg-libs gnupg gstreamer1-libav gtk3 libxkbcommon \
 		nspr nss p11-kit pango sqlite3 wget xorglibs
 ONLY_FOR_ARCHS=	aarch64 amd64
 

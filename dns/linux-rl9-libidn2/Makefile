@@ -1,7 +1,7 @@
 PORTNAME=	libidn2
 PORTVERSION=	2.3.0
 DISTVERSIONSUFFIX=	-7.el9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,7 +13,6 @@ LICENSE=	GPLv3
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	libunistring
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 

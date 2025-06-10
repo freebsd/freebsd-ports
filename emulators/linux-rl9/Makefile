@@ -1,6 +1,6 @@
 PORTNAME=	linux-rl9
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -20,7 +20,7 @@ USE_LINUX=	alsalib alsa-lib-devel alsa-plugins-oss alsa-plugins-pulseaudio \
 		libgcrypt libglvnd libgpg-error libidn2 libksba libnghttp2 libogg \
 		libpciaccess libpsl librsvg2 libsecret libsigc++20 \
 		libsndfile libssh libstemmer libtasn1 libthai libtheora libtool-ltdl \
-		libtracker-sparql libunistring libusb libv4l libva libvdpau \
+		libtracker-sparql libusb libv4l libva libvdpau \
 		libvorbis libvpx libxkbcommon libxml2 libxslt llvm \
 		lz4 nettle npth nspr nss ocl-icd openal-soft openldap opus orc \
 		p11-kit pango pixman pulseaudio-libs pulseaudio-utils python3 \

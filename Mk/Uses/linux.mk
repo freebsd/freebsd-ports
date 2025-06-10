@@ -126,7 +126,6 @@ _linux_${linux_ARGS}_libthai=		linux-${linux_ARGS}-libthai>0:devel/linux-${linux
 _linux_${linux_ARGS}_libtheora=		linux-${linux_ARGS}-libtheora>0:multimedia/linux-${linux_ARGS}-libtheora
 _linux_${linux_ARGS}_libtool-ltdl=	linux-${linux_ARGS}-libtool-ltdl>0:devel/linux-${linux_ARGS}-libtool-ltdl
 _linux_rl9_libtracker-sparql=		linux-rl9-libtracker-sparql>0:databases/linux-rl9-libtracker-sparql
-_linux_rl9_libunistring=		linux-rl9-libunistring>0:devel/linux-rl9-libunistring
 _linux_${linux_ARGS}_libunwind=		linux-${linux_ARGS}-libunwind>0:devel/linux-${linux_ARGS}-libunwind
 _linux_${linux_ARGS}_libv4l=		linux-${linux_ARGS}-libv4l>0:multimedia/linux-${linux_ARGS}-libv4l
 _linux_rl9_libva=			linux-rl9-libva>0:multimedia/linux-rl9-libva
