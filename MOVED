@@ -4508,3 +4508,4 @@ x11/cde-25|x11/cde|2025-06-09|Replace the cde metaport with cde-25, renaming cde
 x11-toolkits/scenefx02|x11-toolkits/scenefx03|2025-06-09|No consumers in ports
 archivers/linux-rl9-brotli||2025-06-10|Merged into devel/linux_base-rl9
 devel/linux-rl9-libunistring||2025-06-10|Merged into devel/linux_base-rl9
+dns/linux-rl9-libidn2||2025-06-10|Merged into devel/linux_base-rl9
