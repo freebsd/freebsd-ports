@@ -17,6 +17,7 @@
     SUBDIR += akonadi-search
     SUBDIR += alligator
     SUBDIR += aluminum
+    SUBDIR += amqpcat
     SUBDIR += aoe
     SUBDIR += apache-commons-net
     SUBDIR += apinger
