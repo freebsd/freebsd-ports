@@ -1,6 +1,6 @@
---- src/bootstrap/src/core/config/config.rs.orig	2025-04-01 18:22:03 UTC
+--- src/bootstrap/src/core/config/config.rs.orig	2025-06-08 20:17:28 UTC
 +++ src/bootstrap/src/core/config/config.rs
-@@ -3016,9 +3016,9 @@ impl Config {
+@@ -1459,9 +1459,9 @@ impl Config {
                      || source_version.minor == stage0_version.minor + 1)))
          {
              let prev_version = format!("{}.{}.x", source_version.major, source_version.minor - 1);
