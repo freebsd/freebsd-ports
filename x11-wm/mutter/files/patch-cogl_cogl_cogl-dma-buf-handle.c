@@ -1,32 +1,31 @@
-$OpenBSD: patch-cogl_cogl_cogl-dma-buf-handle_c,v 1.2 2021/06/04 10:56:17 ajacoutot Exp $
-
 Index: cogl/cogl/cogl-dma-buf-handle.c
---- cogl/cogl/cogl-dma-buf-handle.c.orig
+--- cogl/cogl/cogl-dma-buf-handle.c.orig	2023-07-06 10:42:04 UTC
 +++ cogl/cogl/cogl-dma-buf-handle.c
-@@ -36,8 +36,10 @@
- 
+@@ -37,7 +37,27 @@
  #include <errno.h>
  #include <gio/gio.h>
+ #include <glib/gstdio.h>
 +#ifdef __linux__
  #include <linux/dma-buf.h>
- #include <sys/ioctl.h>
++#else
++typedef uint64_t __u64;
++
++// From https://github.com/evadot/drm-subtree or https://reviews.freebsd.org/D23085
++struct dma_buf_sync
++{
++  __u64 flags;
++};
++
++#define DMA_BUF_SYNC_READ  (1 << 0)
++#define DMA_BUF_SYNC_WRITE (2 << 0)
++#define DMA_BUF_SYNC_RW    (DMA_BUF_SYNC_READ | DMA_BUF_SYNC_WRITE)
++#define DMA_BUF_SYNC_START (0 << 2)
++#define DMA_BUF_SYNC_END   (1 << 2)
++#define DMA_BUF_SYNC_VALID_FLAGS_MASK \
++    (DMA_BUF_SYNC_RW | DMA_BUF_SYNC_END)
++#define DMA_BUF_BASE       'b'
++#define DMA_BUF_IOCTL_SYNC _IOW(DMA_BUF_BASE, 0, struct dma_buf_sync)
 +#endif
+ #include <sys/ioctl.h>
  #include <sys/mman.h>
  #include <unistd.h>
- 
-@@ -101,6 +103,7 @@ cogl_dma_buf_handle_free (CoglDmaBufHandle *dmabuf_han
-   g_free (dmabuf_handle);
- }
- 
-+#ifdef __linux__
- static gboolean
- sync_read (CoglDmaBufHandle  *dmabuf_handle,
-            uint64_t           start_or_end,
-@@ -147,6 +150,7 @@ cogl_dma_buf_handle_sync_read_end (CoglDmaBufHandle  *
- {
-   return sync_read (dmabuf_handle, DMA_BUF_SYNC_END, error);
- }
-+#endif
- 
- gpointer
- cogl_dma_buf_handle_mmap (CoglDmaBufHandle  *dmabuf_handle,

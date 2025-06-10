@@ -1,5 +1,8 @@
-mutter is a minimal X window manager aimed at nontechnical users and is
-designed  to  integrate well with the GNOME desktop.  mutter lacks some
-features that may be expected by traditional UNIX  or  other  technical
-users;  these users may want to investigate other available window man-
-agers for use with GNOME or standalone.
+Mutter is a Wayland display server and X11 window manager and compositor
+library.
+It implements the compositor side of the Wayland core protocol as well
+as various protocol extensions. It also has functionality related to
+running X11 applications using Xwayland. When used on top of Xorg it acts
+as a X11 window manager and compositing manager. It contains functionality
+related to, among other things, window management, window compositing,
+focus tracking, workspace management, keybindings and monitor configuration.
