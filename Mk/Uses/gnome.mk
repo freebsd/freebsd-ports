@@ -80,7 +80,7 @@ _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 		pygobject3 vte3
 
 # GNOME 40 components
-_USE_GNOME_ALL+=gtk40 libadwaita gtksourceview5
+_USE_GNOME_ALL+=gtk40 libadwaita gtksourceview5 gnomedesktop4
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm glibmm26 gtkmm24 \
@@ -227,6 +227,9 @@ libartlgpl2_LIB_DEPENDS=	libart_lgpl_2.so:graphics/libart_lgpl
 gnomedesktop3_LIB_DEPENDS=	libgnome-desktop-3.so:x11/gnome-desktop
 gnomedesktop3_USE_GNOME_IMPL=	gtk30
 
+gnomedesktop4_LIB_DEPENDS=	libgnome-desktop-4.so:x11/gnome-desktop
+gnomedesktop4_USE_GNOME_IMPL=	gtk40
+
 libwnck3_LIB_DEPENDS=	libwnck-3.so:x11-toolkits/libwnck3
 libwnck3_USE_GNOME_IMPL=gtk30
 
@@ -258,7 +261,7 @@ metacity_LIB_DEPENDS=	libmetacity.so:x11-wm/metacity
 
 gnomecontrolcenter3_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-keybindings.pc:sysutils/gnome-control-center
 gnomecontrolcenter3_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-keybindings.pc:sysutils/gnome-control-center
-gnomecontrolcenter3_USE_GNOME_IMPL=	gnomedesktop3
+gnomecontrolcenter3_USE_GNOME_IMPL=	gnomedesktop4
 
 libgda5_LIB_DEPENDS=	libgda-5.0.so:databases/libgda5
 libgda5_USE_GNOME_IMPL=	glib20 libxslt
