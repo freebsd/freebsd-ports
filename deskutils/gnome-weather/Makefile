@@ -1,27 +1,24 @@
 PORTNAME=	gnome-weather
-PORTVERSION=	42.0
-PORTREVISION=	1
+PORTVERSION=	47.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Weather application for GNOME
-WWW=		https://wiki.gnome.org/Design/Apps/Weather
+WWW=		https://apps.gnome.org/Weather/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.md
+
+PORTSCOUT=	limit:^47\.
 
 LIB_DEPENDS=	libgeoclue-2.so:net/geoclue \
 		libgjs.so:lang/gjs \
-		libgweather-3.so:net/libgweather \
-		libgweather-4.so:net/libgweather4 \
-		libhandy-1.so:x11-toolkits/libhandy
-
-PORTSCOUT=	limitw:1,even
+		libgweather-4.so:net/libgweather4
 
 USES=		gettext gnome localbase meson pkgconfig tar:xz
-USE_GNOME=	gtk40 libadwaita
+USE_GNOME=	glib20 gtk40 introspection:build libadwaita
 USE_LDCONFIG=	yes
 
 GLIB_SCHEMAS=	org.gnome.Weather.gschema.xml
