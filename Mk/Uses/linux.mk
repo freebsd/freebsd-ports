@@ -107,7 +107,6 @@ _linux_rl9_libevent=			linux-rl9-libevent>0:devel/linux-rl9-libevent
 _linux_${linux_ARGS}_libgcrypt=		linux-${linux_ARGS}-libgcrypt>0:security/linux-${linux_ARGS}-libgcrypt
 _linux_${linux_ARGS}_libglvnd=		linux-${linux_ARGS}-libglvnd>0:graphics/linux-${linux_ARGS}-libglvnd
 _linux_${linux_ARGS}_libgpg-error=	linux-${linux_ARGS}-libgpg-error>0:security/linux-${linux_ARGS}-libgpg-error
-_linux_rl9_libidn2=			linux-${linux_ARGS}-libidn2>0:dns/linux-rl9-libidn2
 _linux_rl9_libjxl=			linux-rl9-libjxl>0:graphics/linux-rl9-libjxl
 _linux_rl9_libksba=			linux-rl9-libksba>0:security/linux-rl9-libksba
 _linux_rl9_libnghttp2=			linux-rl9-libnghttp2>0:www/linux-rl9-libnghttp2

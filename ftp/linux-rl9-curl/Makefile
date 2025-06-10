@@ -1,7 +1,7 @@
 PORTNAME=	curl
 DISTVERSION=	7.76.1
 DISTVERSIONSUFFIX=	-31.el9
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	ftp linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 USES=		cpe linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	libidn2 libnghttp2 libpsl libssh nspr nss openldap
+USE_LINUX=	libnghttp2 libpsl libssh nspr nss openldap
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 
