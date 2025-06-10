@@ -421,19 +421,27 @@ diff -Naurp a/source3/modules/vfs_zfsacl.c b/source3/modules/vfs_zfsacl.c
 diff -Naurp a/source3/smbd/open.c b/source3/smbd/open.c
 --- a/source3/smbd/open.c	2024-08-02 07:54:09.637892500 -0400
 +++ b/source3/smbd/open.c	2024-08-05 21:27:26.052148000 -0400
-@@ -1165,47 +1165,52 @@ static NTSTATUS reopen_from_fsp(struct files_struct *d
+@@ -1169,51 +1169,54 @@ static NTSTATUS reopen_from_fsp(struct files_struct *d
+ 				const struct vfs_open_how *how,
  				bool *p_file_created)
  {
- 	NTSTATUS status;
-+	int new_fd;
- 	int old_fd;
+-	NTSTATUS status;
+-	int old_fd;
++       NTSTATUS status;
++       int old_fd;
  
 -	if (fsp->fsp_flags.have_proc_fds &&
 -	    ((old_fd = fsp_get_pathref_fd(fsp)) != -1)) {
-+	old_fd = fsp_get_pathref_fd(fsp);
-+	if (old_fd == -1) {
-+		return NT_STATUS_MORE_PROCESSING_REQUIRED;
-+	}
++       old_fd = fsp_get_pathref_fd(fsp);
++       if (old_fd == -1) {
++         int new_fd;
++         if (sys_open_real_fd_from_pathref_fd(old_fd, &new_fd, how->flags) != 0) {
++               if (fsp->fsp_flags.have_proc_fds) {
++                       struct sys_proc_fd_path_buf buf;
++                       struct smb_filename proc_fname = (struct smb_filename){
++                               .base_name = sys_proc_fd_path(old_fd, &buf),
++                       };
++                       mode_t mode = fsp->fsp_name->st.st_ex_mode;
  
 -		struct sys_proc_fd_path_buf buf;
 -		struct smb_filename proc_fname = (struct smb_filename){
@@ -441,16 +449,15 @@ diff -Naurp a/source3/smbd/open.c b/source3/smbd/open.c
 -		};
 -		mode_t mode = fsp->fsp_name->st.st_ex_mode;
 -		int new_fd;
-+	if (sys_open_real_fd_from_pathref_fd(old_fd, &new_fd, how->flags) != 0) {
-+		if (fsp->fsp_flags.have_proc_fds) {
-+			struct sys_proc_fd_path_buf buf;
-+			struct smb_filename proc_fname = (struct smb_filename){
-+				.base_name = sys_proc_fd_path(old_fd, &buf),
-+			};
-+			mode_t mode = fsp->fsp_name->st.st_ex_mode;
++                       SMB_ASSERT(fsp->fsp_flags.is_pathref);
  
 -		SMB_ASSERT(fsp->fsp_flags.is_pathref);
-+			SMB_ASSERT(fsp->fsp_flags.is_pathref);
++                       if (S_ISLNK(mode)) {
++                               return NT_STATUS_STOPPED_ON_SYMLINK;
++                       }
++                       if (!(S_ISREG(mode) || S_ISDIR(mode))) {
++                               return NT_STATUS_IO_REPARSE_TAG_NOT_HANDLED;
++                       }
  
 -		if (S_ISLNK(mode)) {
 -			return NT_STATUS_STOPPED_ON_SYMLINK;
@@ -458,24 +465,22 @@ diff -Naurp a/source3/smbd/open.c b/source3/smbd/open.c
 -		if (!(S_ISREG(mode) || S_ISDIR(mode))) {
 -			return NT_STATUS_IO_REPARSE_TAG_NOT_HANDLED;
 -		}
-+			if (S_ISLNK(mode)) {
-+				return NT_STATUS_STOPPED_ON_SYMLINK;
-+			}
-+			if (!(S_ISREG(mode) || S_ISDIR(mode))) {
-+				return NT_STATUS_IO_REPARSE_TAG_NOT_HANDLED;
-+			}
++                       new_fd = SMB_VFS_OPENAT(fsp->conn,
++                                               fsp->conn->cwd_fsp,
++                                               &proc_fname,
++                                               fsp,
++                                               how);
++                       if (new_fd == -1) {
++                               status = map_nt_error_from_unix(errno);
++                               fd_close(fsp);
++                               return status;
++                       }
  
 -		fsp->fsp_flags.is_pathref = false;
-+			new_fd = SMB_VFS_OPENAT(fsp->conn,
-+						fsp->conn->cwd_fsp,
-+						&proc_fname,
-+						fsp,
-+						how);
-+			if (new_fd == -1) {
-+				status = map_nt_error_from_unix(errno);
-+				fd_close(fsp);
-+				return status;
-+			}
++                       status = fd_close(fsp);
++                       if (!NT_STATUS_IS_OK(status)) {
++                               return status;
++                       }
  
 -		new_fd = SMB_VFS_OPENAT(fsp->conn,
 -					fsp->conn->cwd_fsp,
@@ -487,22 +492,24 @@ diff -Naurp a/source3/smbd/open.c b/source3/smbd/open.c
 -			fd_close(fsp);
 -			return status;
 -		}
-+			status = fd_close(fsp);
-+			if (!NT_STATUS_IS_OK(status)) {
-+				return status;
-+			}
++                       fsp_set_fd(fsp, new_fd);
++                       fsp->fsp_flags.is_pathref = false;
  
 -		status = fd_close(fsp);
 -		if (!NT_STATUS_IS_OK(status)) {
 -			return status;
 -		}
-+			fsp_set_fd(fsp, new_fd);
-+			fsp->fsp_flags.is_pathref = false;
++                       return NT_STATUS_OK;
++               }
++         }
++       }
  
 -		fsp_set_fd(fsp, new_fd);
 -		return NT_STATUS_OK;
-+			return NT_STATUS_OK;
-+		}
- 	}
- 
- 	/*
+-	}
+-
+-	/*
++       /*
+ 	 * Close the existing pathref fd and set the fsp flag
+ 	 * is_pathref to false so we get a "normal" fd this time.
+ 	 */
