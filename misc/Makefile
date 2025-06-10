@@ -595,6 +595,7 @@
     SUBDIR += seabios
     SUBDIR += sent
     SUBDIR += seq2
+    SUBDIR += sff
     SUBDIR += sfm
     SUBDIR += shared-mime-info
     SUBDIR += shc
