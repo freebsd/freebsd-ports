@@ -1,5 +1,5 @@
 PORTNAME=	easyrpg-player
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.1.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
