@@ -240,6 +240,7 @@ usr/bin/sort
 usr/bin/sotruss
 usr/bin/split
 usr/bin/sprof
+usr/bin/sqlite3
 usr/bin/stat
 usr/bin/stdbuf
 usr/bin/stty
@@ -771,6 +772,8 @@ usr/lib64/libsoup-2.4.so.1
 usr/lib64/libsoup-2.4.so.1.11.0
 usr/lib64/libsoup-gnome-2.4.so.1
 usr/lib64/libsoup-gnome-2.4.so.1.11.0
+usr/lib64/libsqlite3.so.0
+usr/lib64/libsqlite3.so.0.8.6
 usr/lib64/libssl.so.3
 usr/lib64/libssl.so.3.2.2
 usr/lib64/libstdc++.so.6
@@ -1107,6 +1110,7 @@ usr/share/dbus-1/services/org.gtk.GLib.PACRunner.service
 %%PORTDOCS%%usr/share/doc/setserial/rc.serial
 %%PORTDOCS%%usr/share/doc/setup/uidgid
 %%PORTDOCS%%usr/share/doc/slang/NEWS
+%%PORTDOCS%%usr/share/doc/sqlite-libs/README.md
 %%PORTDOCS%%usr/share/doc/util-linux/AUTHORS
 %%PORTDOCS%%usr/share/doc/util-linux/NEWS
 %%PORTDOCS%%usr/share/doc/util-linux/README
@@ -2006,6 +2010,7 @@ usr/share/man/man1/sh.1.gz
 usr/share/man/man1/shift.1.gz
 usr/share/man/man1/shopt.1.gz
 usr/share/man/man1/source.1.gz
+usr/share/man/man1/sqlite3.1.gz
 usr/share/man/man1/su.1.gz
 usr/share/man/man1/suspend.1.gz
 usr/share/man/man1/tabs.1.gz

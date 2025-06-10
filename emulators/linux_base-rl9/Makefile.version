@@ -55,6 +55,7 @@ sepol_ver=		3.6-1.el9
 setserial_ver=		2.17-54.el9
 setup_ver=		2.13.7-10.el9
 slang_ver=		2.3.2-11.el9
+sqlite_ver=		3.34.1-7.el9_3
 util_ver=		2.37.4-20.el9
 which_ver=		2.21-29.el9
 xz_ver=			5.2.5-8.el9_0

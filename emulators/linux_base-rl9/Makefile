@@ -1,6 +1,6 @@
 PORTNAME=	rl9
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nf/filesystem-*:C/:[^:]+$//}
@@ -39,6 +39,7 @@ BIN_DISTNAMES=	bash-${bash_ver} \
 		ncurses-${ncurses_ver} \
 		sed-${sed_ver} \
 		setserial-${setserial_ver} \
+		sqlite-${sqlite_ver} \
 		util-linux-${util_ver} \
 		util-linux-core-${util_ver} \
 		which-${which_ver}
@@ -98,6 +99,7 @@ LIB_DISTNAMES=	bzip2-libs-${bzip2_ver} \
 		popt-${popt_ver} \
 		readline-${readline_ver} \
 		slang-${slang_ver} \
+		sqlite-libs-${sqlite_ver} \
 		xz-libs-${xz_ver} \
 		zlib-${zlib_ver}
 
