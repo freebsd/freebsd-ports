@@ -95,6 +95,7 @@
     SUBDIR += glcapsviewer
     SUBDIR += gmrun
     SUBDIR += gnome
+    SUBDIR += gnome-applets
     SUBDIR += gnome-clipboard-daemon
     SUBDIR += gnome-console
     SUBDIR += gnome-desktop
