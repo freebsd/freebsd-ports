@@ -1,6 +1,7 @@
 PORTNAME=	npth
 PORTVERSION=	1.6
 DISTVERSIONSUFFIX=	-8.el9
+PORTREVISION=	1
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,7 +12,7 @@ LICENSE=	LGPL21+
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	libgcrypt libpsl
+USE_LINUX=	libgcrypt
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 

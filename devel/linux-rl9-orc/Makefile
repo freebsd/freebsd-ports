@@ -1,7 +1,7 @@
 PORTNAME=	orc
 PORTVERSION=	0.4.31
 DISTVERSIONSUFFIX=	-8.el9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_COMB=	multi
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	libgcrypt libpsl
+USE_LINUX=	libgcrypt
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 

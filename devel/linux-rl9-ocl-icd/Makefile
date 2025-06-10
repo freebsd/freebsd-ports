@@ -1,7 +1,7 @@
 PORTNAME=	ocl-icd
 PORTVERSION=	2.2.13
 DISTVERSIONSUFFIX=	-4.el9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	BSD2CLAUSE
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	libgcrypt libpsl
+USE_LINUX=	libgcrypt
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 
