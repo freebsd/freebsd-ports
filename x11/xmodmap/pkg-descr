@@ -1,2 +1,4 @@
-This package contains xmodmap, which is a program for editing and displaying
-the keyboard modifier map and keymap table in X.
+The xmodmap program is used to edit and display the keyboard modifier
+map and keymap table that are used by client applications to convert
+event keycodes into keysyms. It is usually run from the user's session
+startup script to configure the keyboard according to personal tastes.

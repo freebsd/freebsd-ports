@@ -1,3 +1,3 @@
-TIMESTAMP = 1551298200
-SHA256 (xorg/app/xmodmap-1.0.10.tar.bz2) = 473f0941d7439d501bb895ff358832b936ec34c749b9704c37a15e11c318487c
-SIZE (xorg/app/xmodmap-1.0.10.tar.bz2) = 145489
+TIMESTAMP = 1746493907
+SHA256 (xorg/app/xmodmap-1.0.11.tar.xz) = 9a2f8168f7b0bc382828847403902cb6bf175e17658b36189eac87edda877e81
+SIZE (xorg/app/xmodmap-1.0.11.tar.xz) = 139532
