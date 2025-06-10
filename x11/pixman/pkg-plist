@@ -2,5 +2,5 @@ include/pixman-1/pixman-version.h
 include/pixman-1/pixman.h
 lib/libpixman-1.so
 lib/libpixman-1.so.0
-lib/libpixman-1.so.0.46.0
+lib/libpixman-1.so.0.46.2
 libdata/pkgconfig/pixman-1.pc
