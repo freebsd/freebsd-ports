@@ -6,6 +6,7 @@
     SUBDIR += aclip
     SUBDIR += admiral
     SUBDIR += alacritty
+    SUBDIR += alacarte
     SUBDIR += albert
     SUBDIR += alttab
     SUBDIR += aminal
