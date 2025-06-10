@@ -4506,3 +4506,4 @@ math/py-spvcm||2025-06-06|Has expired: Upstream repository has been archived on 
 sysutils/screen50|sysutils/screen|2025-06-09|Replace the screen metaport with screen50, renaming screen50 to screen
 x11/cde-25|x11/cde|2025-06-09|Replace the cde metaport with cde-25, renaming cde-25 to cde
 x11-toolkits/scenefx02|x11-toolkits/scenefx03|2025-06-09|No consumers in ports
+archivers/linux-rl9-brotli||2025-06-10|Merged into devel/linux_base-rl9

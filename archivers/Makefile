@@ -72,7 +72,6 @@
     SUBDIR += libzip
     SUBDIR += libzippp
     SUBDIR += linux-c7-lz4
-    SUBDIR += linux-rl9-brotli
     SUBDIR += linux-rl9-lz4
     SUBDIR += lizard
     SUBDIR += lrzip
