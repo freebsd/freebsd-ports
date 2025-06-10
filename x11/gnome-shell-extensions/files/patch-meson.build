@@ -1,0 +1,10 @@
+--- meson.build.orig	2025-02-04 23:40:33 UTC
++++ meson.build
+@@ -44,7 +44,6 @@ default_extensions += [
+   'light-style',
+   'screenshot-window-sizer',
+   'status-icons',
+-  'system-monitor',
+   'windowsNavigator',
+   'workspace-indicator',
+ ]

@@ -1,36 +1,37 @@
 PORTNAME=	gnome-shell-extensions
-PORTVERSION=	42.3
-PORTREVISION=	3
+PORTVERSION=	47.5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME desktop shell extensions
-WWW=		https://live.gnome.org/GnomeShell
+WWW=		https://apps.gnome.org/Extensions/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	sassc:textproc/sassc
-LIB_DEPENDS=	libgjs.so:lang/gjs
-RUN_DEPENDS=	gnome-shell>=42.0:x11/gnome-shell
+PORTSCOUT=	limit:^47\.
 
-PORTSCOUT=	limitw:1,even
+LIB_DEPENDS=	libgjs.so:lang/gjs
+RUN_DEPENDS=	gnome-shell>=47.0:x11/gnome-shell \
+		libgtop>0:devel/libgtop \
+		gnome-menus>0:x11/gnome-menus
 
 NO_ARCH=	yes
 USES=		gettext gnome meson pkgconfig python tar:xz
-USE_GNOME=	glib20 gnomedesktop3
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-MESON_ARGS=	-Dextension_set=all \
-		-Dclassic_mode=true
+MESON_ARGS=	-Dclassic_mode=true
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
+SUB_FILES=	pkg-message
+SUB_LIST=	EXAMPLESDIR=${EXAMPLESDIR:S|${PORTNAME}|gnome-shell|}
+
 GLIB_SCHEMAS=	00_org.gnome.shell.extensions.classic.gschema.override \
-		org.gnome.shell.extensions.auto-move-windows.gschema.xml \
-		org.gnome.shell.extensions.native-window-placement.gschema.xml \
+		org.gnome.shell.extensions.apps-menu.gschema.xml \
 		org.gnome.shell.extensions.screenshot-window-sizer.gschema.xml \
-		org.gnome.shell.extensions.user-theme.gschema.xml \
-		org.gnome.shell.extensions.window-list.gschema.xml
+		org.gnome.shell.extensions.window-list.gschema.xml \
+		org.gnome.shell.extensions.workspace-indicator.gschema.xml
 
 .include <bsd.port.mk>
