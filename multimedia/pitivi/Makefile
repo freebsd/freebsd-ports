@@ -2,7 +2,7 @@ PORTNAME=	pitivi
 PORTVERSION=	2022.06
 PORTREVISION=	4
 CATEGORIES=	multimedia
-MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Gstreamer based non-linear audio/video editor

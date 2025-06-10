@@ -1,12 +1,12 @@
 PORTNAME=	simple-scan
 PORTVERSION=	46.0
 CATEGORIES=	graphics gnome
-MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Simple scanning utility
-WWW=		https://gitlab.gnome.org/GNOME/simple-scan
+WWW=		https://gitlab.gnome.org/GNOME
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

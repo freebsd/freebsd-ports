@@ -2,7 +2,7 @@ PORTNAME=	gtranslator
 PORTVERSION=	40.0
 PORTREVISION=	5
 CATEGORIES=	devel gnome
-MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
+MASTER_SITES=	GNOME
 
 PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
 PATCHFILES+=	7ac572cc8c8c.patch:-p1 # https://gitlab.gnome.org/GNOME/gtranslator/-/merge_requests/90

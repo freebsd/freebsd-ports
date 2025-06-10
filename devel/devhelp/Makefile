@@ -2,7 +2,7 @@ PORTNAME=	devhelp
 PORTVERSION=	41.2
 PORTREVISION=	4
 CATEGORIES=	devel gnome
-MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/

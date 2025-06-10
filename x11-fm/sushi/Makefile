@@ -2,12 +2,12 @@ PORTNAME=	sushi
 PORTVERSION=	42.0
 PORTREVISION=	5
 CATEGORIES=	x11-fm gnome
-MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Tool similar to Gloobus Preview that provides quick file previews
-WWW=		https://gitlab.gnome.org/GNOME/sushi
+WWW=		https://gitlab.gnome.org/GNOME
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -2,7 +2,7 @@ PORTNAME=	file-roller
 PORTVERSION=	44.5
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
-MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org

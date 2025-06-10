@@ -2,7 +2,7 @@ PORTNAME=	gnome-system-monitor
 PORTVERSION=	42.0
 PORTREVISION=	1
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org

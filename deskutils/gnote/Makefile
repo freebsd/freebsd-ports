@@ -2,7 +2,7 @@ PORTNAME=	gnote
 PORTVERSION=	42.1
 PORTREVISION=	2
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ version of Tomboy, note taking application

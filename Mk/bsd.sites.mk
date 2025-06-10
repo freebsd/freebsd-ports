@@ -580,17 +580,28 @@ WWW?=	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/
 .endif # !defined(IGNORE_MASTER_SITE_GITLAB)
 
 .if !defined(IGNORE_MASTER_SITE_GNOME)
+_version_major=	${DISTVERSION:C|^([0-9]+).*|\1|}
+_version_minor=	${DISTVERSION:C|^([0-9]+)\.([0-9]+).*|\2|}
+
+.  if ${_version_major} >= 10
+_gnome_ver=	${_version_major}
+.  else
+_gnome_ver=	${_version_major}.${_version_minor}
+.  endif
+
+.  if !empty(MASTER_SITES:M*/archive/*)
+_GNOME_PATH=	%SUBDIR%
+.  else
+_GNOME_PATH=	%SUBDIR%/${_gnome_ver}
+.  endif
+
 MASTER_SITE_GNOME+= \
-	https://download.gnome.org/%SUBDIR%/ \
-	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/archive/${PORTVERSION}/ \
-	http://ftp.belnet.be/mirror/ftp.gnome.org/gnomeftp/%SUBDIR%/ \
-	ftp://ftp.belnet.be/mirror/ftp.gnome.org/gnomeftp/%SUBDIR%/ \
-	https://ftp.acc.umu.se/pub/GNOME/%SUBDIR%/ \
-	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
-	https://fr2.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/pub/GNOME/%SUBDIR%/ \
-	ftp://ftp.mirrorservice.org/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
-	ftp://ftp.nara.wide.ad.jp/pub/X11/GNOME/%SUBDIR%/
+	https://download.gnome.org/${_GNOME_PATH}/ \
+	http://ftp.belnet.be/mirror/ftp.gnome.org/gnomeftp/${_GNOME_PATH}/ \
+	https://ftp.acc.umu.se/pub/GNOME/${_GNOME_PATH}/ \
+	https://fr2.rpmfind.net/linux/gnome.org/${_GNOME_PATH}/ \
+	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/archive/${PORTVERSION}/
+
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GIMP)
@@ -1087,7 +1098,7 @@ MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			GIMP:${PORTNAME}/${PORTVERSION:R}/ \
 			GITHUB:${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${GH_TAGNAME}?dummy=/ \
 			GITHUB_CLOUD:${GH_ACCOUNT}/${GH_PROJECT}/ \
-			GNOME:sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
+			GNOME:sources/${DISTNAME:S/-${DISTVERSIONFULL}$//} \
 			GNU:${PORTNAME} \
 			GNUPG:${PORTNAME} \
 			GNU_ALPHA:${PORTNAME} \

@@ -1,7 +1,7 @@
 PORTNAME=	gnome-devel-docs
 PORTVERSION=	40.3
 CATEGORIES=	misc gnome
-MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -1,7 +1,7 @@
 PORTNAME=	xdg-desktop-portal-gnome
 DISTVERSION=	43.1
 CATEGORIES=	x11 gnome
-MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	tagattie@FreeBSD.org

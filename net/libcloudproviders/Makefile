@@ -1,7 +1,7 @@
 PORTNAME=	libcloudproviders
 PORTVERSION=	0.3.6
 CATEGORIES=	net
-MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+.[0-9]+)\..*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
