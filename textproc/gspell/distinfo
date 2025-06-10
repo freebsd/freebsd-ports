@@ -1,3 +1,3 @@
-TIMESTAMP = 1656343105
-SHA256 (gnome/gspell-1.10.0.tar.xz) = 803bb884c0215d3fd22a85d7f30423aff88d9792f05a5199d8a489a2ffaae1da
-SIZE (gnome/gspell-1.10.0.tar.xz) = 432484
+TIMESTAMP = 1733130569
+SHA256 (gnome/gspell-1.14.0.tar.xz) = 64ea1d8e9edc1c25b45a920e80daf67559d1866ffcd7f8432fecfea6d0fe8897
+SIZE (gnome/gspell-1.14.0.tar.xz) = 116624
