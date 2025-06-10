@@ -580,13 +580,15 @@ WWW?=	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/
 .endif # !defined(IGNORE_MASTER_SITE_GITLAB)
 
 .if !defined(IGNORE_MASTER_SITE_GNOME)
+.  if defined(DISTVERSION) && ${DISTVERSION:M[0-9]*}
 _version_major=	${DISTVERSION:C|^([0-9]+).*|\1|}
 _version_minor=	${DISTVERSION:C|^([0-9]+)\.([0-9]+).*|\2|}
 
-.  if ${_version_major} >= 10
+.    if ${_version_major} >= 10
 _gnome_ver=	${_version_major}
-.  else
+.    else
 _gnome_ver=	${_version_major}.${_version_minor}
+.    endif
 .  endif
 
 .  if !empty(MASTER_SITES:M*/archive/*)
