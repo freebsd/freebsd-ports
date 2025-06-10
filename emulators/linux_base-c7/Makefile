@@ -12,6 +12,10 @@ USES=		linux:c7
 USE_LINUX=	# empty
 USE_LINUX_RPM=	yes
 
+# lib64/gconv/ stuff that is loaded dynamically and has rpath
+NO_SHLIB_REQUIRES_GLOB=	libCNS.so* libGB.so* libISOIR165.so* \
+			libJIS.so* libJISX0213.so* libKSC.so*
+
 BIN_DISTNAMES=	bash-4.2.46-35.el7_9 \
 		bzip2-1.0.6-13.el7 \
 		centos-release-7-9.2009.2.el7.centos \
