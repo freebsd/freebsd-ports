@@ -1,19 +1,15 @@
-Index: js/ui/endSessionDialog.js
---- js/ui/endSessionDialog.js.orig
+--- js/ui/endSessionDialog.js.orig	2025-04-13 15:04:25 UTC
 +++ js/ui/endSessionDialog.js
-@@ -234,11 +234,6 @@ class EndSessionDialog extends ModalDialog.ModalDialog
+@@ -233,8 +233,6 @@ class EndSessionDialog extends ModalDialog.ModalDialog
          });
  
          this._loginManager = LoginManager.getLoginManager();
--        this._loginManager.canRebootToBootLoaderMenu(
--            (canRebootToBootLoaderMenu, unusedNeedsAuth) => {
--                this._canRebootToBootLoaderMenu = canRebootToBootLoaderMenu;
--            });
--
+-        this._canRebootToBootLoaderMenu = false;
+-        this._getCanRebootToBootLoaderMenu().catch(logError);
+ 
          this._userManager = AccountsService.UserManager.get_default();
          this._user = this._userManager.get_user(GLib.get_user_name());
-         this._updatesPermission = null;
-@@ -452,24 +447,6 @@ class EndSessionDialog extends ModalDialog.ModalDialog
+@@ -452,24 +450,6 @@ class EndSessionDialog extends ModalDialog.ModalDialog
                  },
                  label,
              });

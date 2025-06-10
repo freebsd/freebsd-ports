@@ -1,0 +1,9 @@
+--- data/00_org.gnome.shell.gschema.override.orig	2023-04-24 08:26:56 UTC
++++ data/00_org.gnome.shell.gschema.override
+@@ -4,3 +4,6 @@ edge-tiling=true
+ dynamic-workspaces=true
+ workspaces-only-on-primary=true
+ focus-change-on-pointer-rest=true
++
++[org.gnome.shell]
++favorite-apps=['org.gnome.Settings.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Music.desktop', 'org.gnome.Nautilus.desktop']

@@ -1,0 +1,74 @@
+#!/bin/sh
+
+# Set $XDG_RUNTIME_DIR
+_user_id=$(id -u)
+if [ -d "/var/run/user/${_user_id}" ]; then
+    XDG_RUNTIME_DIR="/var/run/user/${_user_id}"
+    export XDG_RUNTIME_DIR
+
+    if [ ! -d "/var/run/user/${_user_id}" ]; then
+        mkdir "/var/run/user/${_user_id}/pulse"
+    fi
+fi
+
+# Set environment variables for D-Bus session services
+if command -v dbus-update-activation-environment >/dev/null 2>&1 ; then
+    dbus-update-activation-environment --all
+fi
+
+# Set $XDG_CONFIG_DIRS
+if test "x$XDG_CONFIG_DIRS" = "x" ; then
+    XDG_CONFIG_DIRS="%%PREFIX%%/etc/xdg:/etc/xdg"
+fi
+export XDG_CONFIG_DIRS
+
+# Set $XDG_DATA_DIRS
+if test "x$XDG_DATA_DIRS" = "x" ; then
+    XDG_DATA_DIRS="%%PREFIX%%/share/gnome:%%PREFIX%%/share:/usr/share"
+fi
+export XDG_DATA_DIRS
+
+# $XDG_CONFIG_HOME defines the base directory relative to which user-specific
+# configuration files should be stored. If $XDG_CONFIG_HOME is either not set
+# or empty, a default equal to $HOME/.config should be used.
+if test "x$XDG_CONFIG_HOME" = "x" ; then
+    XDG_CONFIG_HOME=$HOME/.config
+fi
+[ -d "$XDG_CONFIG_HOME" ] || mkdir "$XDG_CONFIG_HOME"
+
+# $XDG_CACHE_HOME defines the base directory relative to which user-specific
+# non-essential data files should be stored. If $XDG_CACHE_HOME is either not
+# set or empty, a default equal to $HOME/.cache should be used.
+if test "x$XDG_CACHE_HOME" = "x" ; then
+    XDG_CACHE_HOME=$HOME/.cache
+fi
+[ -d "$XDG_CACHE_HOME" ] || mkdir "$XDG_CACHE_HOME"
+
+# $XDG_DATA_HOME defines the base directory relative to which user-specific
+# data files should be stored.
+if test "x$XDG_DATA_HOME" = "x" ; then
+    XDG_DATA_HOME=$HOME/.local/share
+fi
+[ -d "$XDG_DATA_HOME" ] || mkdir -p "$XDG_DATA_HOME"
+
+# $XDG_STATE_HOME defines the base directory relative to which user-specific
+# state files should be stored.
+if test "x$XDG_STATE_HOME" = "x" ; then
+    XDG_STATE_HOME=$HOME/.local/state
+fi
+[ -d "$XDG_STATE_HOME" ] || mkdir -p "$XDG_STATE_HOME"
+
+# Unlock gnome-keyring-daemon
+if test -n "$DESKTOP_SESSION" ; then
+    SSH_AUTH_SOCK="/var/run/user/${_user_id}/keyring/ssh"
+
+    # If .xinitrc is used, uncomment the next line
+    #eval $(gnome-keyring-daemon --start --components=pkc11,secrets,ssh)
+    export SSH_AUTH_SOCK
+fi
+
+# Set up XDG user directories (devel/xdg-user-dirs)
+# https://freedesktop.org/wiki/Software/xdg-user-dirs
+if command -v xdg-user-dirs-update >/dev/null 2>&1 ; then
+    xdg-user-dirs-update
+fi
