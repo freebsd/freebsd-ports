@@ -21,10 +21,7 @@ USE_GNOME=	glib20 introspection:build libxslt:build
 
 MESON_ARGS=	-Dbash_completion=disabled
 
-.include <bsd.port.pre.mk>
+# see PR 287429 / https://gitlab.gnome.org/GNOME/libsecret/-/issues/106
+MESON_ARGS+=	-Dc_args="-DHAVE_CMSGCRED"
 
-.if ${COMPILER_TYPE} == clang
-CFLAGS+=	-Wno-incompatible-function-pointer-types
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
