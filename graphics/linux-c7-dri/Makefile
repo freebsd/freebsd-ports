@@ -12,6 +12,9 @@ USE_LDCONFIG=	yes
 USE_LINUX=	elfutils-libelf expat libdrm libglvnd wayland xorglibs
 USE_LINUX_RPM=	yes
 
+# private clang libs
+NO_SHLIB_REQUIRES_GLOB=	libclang*
+
 LIB_DISTNAMES=	freeglut-3.0.0-8.el7 \
 		llvm-private-7.0.1-1.el7 \
 		mesa-dri-drivers-${DISTVERSIONFULL} \
