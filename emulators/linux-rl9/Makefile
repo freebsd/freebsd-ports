@@ -1,6 +1,6 @@
 PORTNAME=	linux-rl9
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	BSD2CLAUSE
 
 USES=		linux:rl9 metaport
 USE_LINUX=	alsalib alsa-lib-devel alsa-plugins-oss alsa-plugins-pulseaudio \
-		at-spi2-atk at-spi2-core atk avahi-libs brotli \
+		at-spi2-atk at-spi2-core atk avahi-libs \
 		ca-certificates cairo cairo-gobject cups-libs curl cyrus-sasl2 \
 		dbuslibs devtools dri elfutils-libelf elfutils-libs expat \
 		ffmpeg-libs flac fontconfig freetype fribidi gdkpixbuf2 gnupg gnutls \

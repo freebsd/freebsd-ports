@@ -63,7 +63,6 @@ _linux_${linux_ARGS}_atk=		linux-${linux_ARGS}-atk>0:accessibility/linux-${linux
 _linux_${linux_ARGS}_avahi-libs=	linux-${linux_ARGS}-avahi-libs>0:net/linux-${linux_ARGS}-avahi-libs
 _linux_c7_base=				linux_base-c7>=7.6.1810_7:emulators/linux_base-c7
 _linux_rl9_base=			linux_base-rl9>=9.2:emulators/linux_base-rl9
-_linux_rl9_brotli=			linux-rl9-brotli>0:archivers/linux-rl9-brotli
 _linux_${linux_ARGS}_ca-certificates=	linux-${linux_ARGS}-ca-certificates>0:security/linux-${linux_ARGS}-ca-certificates
 _linux_${linux_ARGS}_cairo=		linux-${linux_ARGS}-cairo>0:graphics/linux-${linux_ARGS}-cairo
 _linux_${linux_ARGS}_cairo-gobject=	linux-${linux_ARGS}-cairo-gobject>0:graphics/linux-${linux_ARGS}-cairo-gobject
