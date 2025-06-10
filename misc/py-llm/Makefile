@@ -1,5 +1,5 @@
 PORTNAME=	llm
-DISTVERSION=	0.23
+DISTVERSION=	0.26
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +16,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click-default-group>=1.2.3:devel/py-click-default-group@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}condense_json>0:devel/py-condense_json@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openai>=1.0.0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>=1.0:devel/py-pluggy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}puremagic>0:sysutils/py-puremagic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-ulid2>=1<3:textproc/py-python-ulid2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite-migrate>0:databases/py-sqlite-migrate@${PY_FLAVOR} \
