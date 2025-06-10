@@ -1,0 +1,13 @@
+--- lib/meson.build.orig	2024-10-11 09:52:32 UTC
++++ lib/meson.build
+@@ -54,8 +54,8 @@ libmaps_gir_targets = gnome.generate_gir(
+ 		'Shumate-1.0'
+ 	],
+ 	install: true,
+-	install_dir_gir: join_paths(pkgdatadir, 'gir-' + maps_gir_version),
+-	install_dir_typelib: join_paths(pkglibdir, 'girepository-' + maps_gir_version)
++	install_dir_gir: join_paths(datadir, 'gir-' + maps_gir_version),
++	install_dir_typelib: join_paths(libdir, 'girepository-' + maps_gir_version)
+ )
+ 
+ libmaps_gir = libmaps_gir_targets[0]

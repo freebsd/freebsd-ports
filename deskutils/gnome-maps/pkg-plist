@@ -1,11 +1,11 @@
 bin/gnome-maps
-lib/gnome-maps/girepository-1.0/GnomeMaps-1.0.typelib
+lib/girepository-1.0/GnomeMaps-1.0.typelib
 lib/gnome-maps/libgnome-maps.so
 lib/gnome-maps/libgnome-maps.so.0
 lib/gnome-maps/libgnome-maps.so.0.0.0
 share/applications/org.gnome.Maps.desktop
 share/dbus-1/services/org.gnome.Maps.service
-%%DATADIR%%/gir-1.0/GnomeMaps-1.0.gir
+share/gir-1.0/GnomeMaps-1.0.gir
 %%DATADIR%%/icons/hicolor/16x16/apps/anniversary-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/arrow1-right-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/apps/arrow2-top-left-symbolic.svg
