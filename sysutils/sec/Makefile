@@ -1,8 +1,7 @@
 PORTNAME=	sec
-DISTVERSION=	2.9.2
-PORTREVISION=	1
+DISTVERSION=	2.9.3
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/simple-evcorr/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/simple-evcorr/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	ecu@200ok.org
 COMMENT=	Simple event (logs) correlator
@@ -16,18 +15,15 @@ USE_RC_SUBR=	sec
 
 SHEBANG_FILES=	sec
 
+NO_ARCH=	yes
+NO_BUILD=	yes
 SUB_LIST=	PERL=${PERL}
 
-NO_BUILD=	yes
-NO_ARCH=	yes
-
-PORTDOCS=	ChangeLog README
-
 PORTCONTRIB=	convert.pl itostream.c swatch2sec.pl
-
 PLIST_FILES=	bin/sec \
 		share/man/man8/sec.8.gz \
 		${PORTCONTRIB:S|^|share/sec/|}
+PORTDOCS=	ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
 
