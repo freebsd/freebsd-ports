@@ -1,2 +1,0 @@
-Command-line tool for publishing and subscribing to RabbitMQ, including
-support for publish, subscribe, and RabbitMQ-style rpc calls.

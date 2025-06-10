@@ -4512,3 +4512,4 @@ dns/linux-rl9-libidn2|emulators/linux_base-rl9|2025-06-10|Merged into emulators/
 dns/linux-rl9-libpsl|emulators/linux_base-rl9|2025-06-10|Merged into emulators/linux_base-rl9
 databases/linux-rl9-sqlite3|emulators/linux_base-rl9|2025-06-10|Merged into emulators/linux_base-rl9
 x11-fonts/gentium-plus|x11-fonts/gentium|2025-06-10|Renamed to track upstream changes
+net/rabbiteer|net/amqpcat|2025-06-10|No longer maintained, use net/amqpcat instead as a functional replacement
