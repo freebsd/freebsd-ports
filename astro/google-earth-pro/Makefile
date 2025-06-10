@@ -5,7 +5,7 @@
 PORTNAME=	google-earth-pro
 DISTVERSION=	7.3.6.10201
 DISTVERSIONSUFFIX=	-0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/linux/earth/rpm/stable/x86_64/
 DISTFILES_amd64=	${PORTNAME}-stable-${DISTVERSION}${DISTVERSIONSUFFIX}.x86_64.rpm

@@ -1,6 +1,6 @@
 PORTNAME=	chrome
 PORTVERSION=	${CHROME_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www linux
 MASTER_SITES=	https://dl.google.com/linux/chrome/rpm/stable/x86_64/
 DISTNAME=	google-${PORTNAME}-stable-${CHROME_VER}-${CHROME_BUILD}.x86_64
