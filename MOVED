@@ -4495,7 +4495,7 @@ security/py-oauth2client||2025-06-02|Has expired: Deprecated by upstream. Use se
 math/py-grandalf||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
 multimedia/py-ffmpeg-python||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
 science/py-DendroPy||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
-devel/linux-rl9-libsoup||2025-06-04|Merged into devel/linux_base-rl9
+devel/linux-rl9-libsoup|emulators/linux_base-rl9|2025-06-04|Merged into emulators/linux_base-rl9
 games/hedgewars-server||2025-06-04|Depends on expired lang/ghc810, does not build with newer GHCs
 lang/ghc810||2025-06-04|Old version, unsupported upstream
 audio/mp3check||2025-06-06|Has expired: Depends on expired audio/id3tool
@@ -4506,6 +4506,7 @@ math/py-spvcm||2025-06-06|Has expired: Upstream repository has been archived on 
 sysutils/screen50|sysutils/screen|2025-06-09|Replace the screen metaport with screen50, renaming screen50 to screen
 x11/cde-25|x11/cde|2025-06-09|Replace the cde metaport with cde-25, renaming cde-25 to cde
 x11-toolkits/scenefx02|x11-toolkits/scenefx03|2025-06-09|No consumers in ports
-archivers/linux-rl9-brotli||2025-06-10|Merged into devel/linux_base-rl9
-devel/linux-rl9-libunistring||2025-06-10|Merged into devel/linux_base-rl9
-dns/linux-rl9-libidn2||2025-06-10|Merged into devel/linux_base-rl9
+archivers/linux-rl9-brotli|emulators/linux_base-rl9|2025-06-10|Merged into emulators/linux_base-rl9
+devel/linux-rl9-libunistring|emulators/linux_base-rl9|2025-06-10|Merged into emulators/linux_base-rl9
+dns/linux-rl9-libidn2|emulators/linux_base-rl9|2025-06-10|Merged into emulators/linux_base-rl9
+dns/linux-rl9-libpsl|emulators/linux_base-rl9|2025-06-10|Merged into emulators/linux_base-rl9
