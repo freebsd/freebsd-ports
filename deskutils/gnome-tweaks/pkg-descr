@@ -1,1 +1,4 @@
-The gnome-tweak-tool allows to tweak some hidden settings in GTK3/GNOME3.
+GNOME Tweaks allows adjusting advanced configuration settings in GNOME.
+This includes things like the fonts used in user interface elements,
+alternative user interface themes, changes in window management behavior,
+GNOME Shell appearance, etc.
