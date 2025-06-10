@@ -1,9 +1,12 @@
 PORTNAME=	GentiumBasic
 PORTVERSION=	1102
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://software.sil.org/downloads/gentium/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
+
+DEPRECATED=	Superceeded by Gentium-7.000 https://software.sil.org/gentium/download/
+EXPIRATION_DATE=	2025-08-31	
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Gentium Basic and Gentium Book Basic TrueType fonts
