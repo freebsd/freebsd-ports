@@ -1,44 +1,41 @@
 PORTNAME=	evince
-DISTVERSION=	46.3.1
-PORTREVISION=	4
+DISTVERSION=	48.0
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME multi-format document viewer
-WWW=		https://wiki.gnome.org/Apps/Evince
+WWW=		https://gitlab.gnome.org/GNOME/evince
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 FLAVOR?=	full
 FLAVORS=	full lite
 
-BUILD_DEPENDS=	adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
-		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+BUILD_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
+		${PYTHON_PKGNAMEPREFIX}gi-docgen>0:textproc/py-gi-docgen@${PY_FLAVOR} \
 		itstool:textproc/itstool
-LIB_DEPENDS=	libfribidi.so:converters/fribidi \
-		libhandy-1.so:x11-toolkits/libhandy \
+LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy \
 		libpoppler-glib.so:graphics/poppler-glib \
 		libspectre.so:print/libspectre \
-		libtiff.so:graphics/tiff
-RUN_DEPENDS=	adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
-		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
+		libtiff.so:graphics/tiff \
+		libdbus-1.so:devel/dbus
+RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-PORTSCOUT=	limitw:1,even
-
-USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome gstreamer libarchive \
-		localbase:ldflags meson pkgconfig tar:xz xorg
-USE_GNOME=	cairo gdkpixbuf gtk30
+USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome \
+		gstreamer libarchive localbase:ldflags meson pkgconfig \
+		python:build tar:xz xorg
+USE_GNOME=	cairo gdkpixbuf gnomedesktop3 gtk30 introspection:build libxml2
 USE_LDCONFIG=	yes
 USE_XORG=	ice
 CPE_VENDOR=	gnome
 MESON_ARGS=	-Dgtk_doc=false \
+		-Duser_doc=true \
 		-Dpdf=enabled \
 		-Dps=enabled \
-		-Dsystemduserunitdir=no \
-		-Dnautilus=false
+		-Dsystemduserunitdir=no
 
 .if ${FLAVOR} == lite
 MESON_ARGS+=		-Dintrospection=false \
@@ -63,17 +60,17 @@ PLIST_SUB=	VERSION=3.0
 
 OPTIONS_SUB=		yes
 OPTIONS_DEFINE=		COMICS DBUS DJVU DVI KEYRING SPELL XPS
-OPTIONS_DEFAULT=	COMICS DBUS DJVU KEYRING SPELL XPS
+OPTIONS_DEFAULT=	COMICS DBUS KEYRING SPELL XPS
 
 COMICS_DESC=		Comic book archives support
 COMICS_MESON_ENABLED=	comics
 
+DBUS_MESON_TRUE=       dbus
+DBUS_LIB_DEPENDS=      libdbus-1.so:devel/dbus
+
 DJVU_DESC=		DJVU support
 DJVU_LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
 DJVU_MESON_ENABLED=	djvu
-
-DBUS_MESON_TRUE=	dbus
-DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 DVI_DESC=		DVI viewer support
 DVI_USES=		tex
@@ -84,7 +81,7 @@ KEYRING_DESC=		Keyring support
 KEYRING_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 KEYRING_MESON_ENABLED=	keyring
 
-SPELL_DESC=		spell checking support
+SPELL_DESC=		Spell checking support
 SPELL_MESON_ENABLED=	gspell
 SPELL_LIB_DEPENDS=	libgspell-1.so:textproc/gspell
 
