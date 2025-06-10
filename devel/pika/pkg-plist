@@ -31,6 +31,7 @@ include/pika/concurrency/cache_line_data.hpp
 include/pika/concurrency/concurrentqueue.hpp
 include/pika/concurrency/config/defines.hpp
 include/pika/concurrency/deque.hpp
+include/pika/concurrency/deque.hpp.orig
 include/pika/concurrency/detail/contiguous_index_queue.hpp
 include/pika/concurrency/detail/freelist.hpp
 include/pika/concurrency/detail/tagged_ptr_pair.hpp
@@ -75,6 +76,7 @@ include/pika/coroutines/detail/coroutine_stackful_self.hpp
 include/pika/coroutines/detail/coroutine_stackless_self.hpp
 include/pika/coroutines/detail/get_stack_pointer.hpp
 include/pika/coroutines/detail/posix_utility.hpp
+include/pika/coroutines/detail/sigaltstack_sigsegv_handler.hpp
 include/pika/coroutines/detail/swap_context.hpp
 include/pika/coroutines/detail/tss.hpp
 include/pika/coroutines/stackless_coroutine.hpp
@@ -129,6 +131,7 @@ include/pika/execution/algorithms/transfer_when_all.hpp
 include/pika/execution/algorithms/unpack.hpp
 include/pika/execution/algorithms/when_all.hpp
 include/pika/execution/algorithms/when_all_vector.hpp
+include/pika/execution/async_rw_mutex.hpp
 include/pika/execution/config/defines.hpp
 include/pika/execution/scheduler_queries.hpp
 include/pika/execution_base/agent_base.hpp
@@ -329,7 +332,6 @@ include/pika/string_util/from_string.hpp
 include/pika/string_util/split.hpp
 include/pika/string_util/to_string.hpp
 include/pika/string_util/trim.hpp
-include/pika/synchronization/async_rw_mutex.hpp
 include/pika/synchronization/barrier.hpp
 include/pika/synchronization/condition_variable.hpp
 include/pika/synchronization/config/defines.hpp
@@ -529,4 +531,4 @@ lib/cmake/pika/tests/stdexec_sender_receiver_concepts.cpp
 lib/cmake/pika/tests/unistd_h.cpp
 lib/libpika.so
 lib/libpika.so.0
-lib/libpika.so.0.32.0
+lib/libpika.so.0.33.0

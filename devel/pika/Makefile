@@ -1,6 +1,9 @@
 PORTNAME=	pika
-DISTVERSION=	0.32.0
+DISTVERSION=	0.33.0
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	eaa18b94132eefd836a7d408dd8c9f61adc9df8e.patch:-p1 # fix compilation with Boost 1.88.0, https://github.com/pika-org/pika/pull/1428
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for concurrency and parallelism
@@ -36,6 +39,6 @@ post-test: # run the tests according to https://pikacpp.org/usage.html#testing (
 	@cd ${BUILD_WRKSRC} && \
 		${MAKE_CMD} test
 
-# tests as of 0.32.0: 100% tests passed, 0 tests failed out of 530
+# tests as of 0.33.0: 99% tests passed, 1 tests failed out of 530, see https://github.com/pika-org/pika/issues/1437
 
 .include <bsd.port.mk>

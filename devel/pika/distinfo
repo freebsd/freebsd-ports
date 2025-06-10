@@ -1,3 +1,5 @@
-TIMESTAMP = 1738823246
-SHA256 (pika-org-pika-0.32.0_GH0.tar.gz) = 19217e3eecff30a7038f5712b6e161db09f12d7077550e8f66add74b3e524d29
-SIZE (pika-org-pika-0.32.0_GH0.tar.gz) = 1098194
+TIMESTAMP = 1749570798
+SHA256 (pika-org-pika-0.33.0_GH0.tar.gz) = 08db88294e6eaccb80f1c4012e7ba0e197b6354b6fbc3bfdb7734cb9dce6fe08
+SIZE (pika-org-pika-0.33.0_GH0.tar.gz) = 1103633
+SHA256 (eaa18b94132eefd836a7d408dd8c9f61adc9df8e.patch) = 23be060d97d8edefc22d492bb235a0a368ecb7569bb1aa7169a5787135adc54b
+SIZE (eaa18b94132eefd836a7d408dd8c9f61adc9df8e.patch) = 1483
