@@ -1,6 +1,14 @@
---- meson.build.orig	2025-06-10 14:04:30 UTC
+--- meson.build.orig	2024-09-16 09:15:17 UTC
 +++ meson.build
-@@ -93,15 +93,3 @@ endif
+@@ -5,6 +5,7 @@ pkg.generate(
+   name : 'adwaita-icon-theme',
+   description : 'A collection of icons used as the basis for GNOME themes',
+   dataonly : true,
++  install_dir : get_option('prefix') / 'libdata' / 'pkgconfig',
+ )
+ 
+ licenses_dir = get_option('datadir') / 'licenses' / 'adwaita-icon-theme'
+@@ -91,15 +92,3 @@ endif
      endforeach
    endforeach
  endif
