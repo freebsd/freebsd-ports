@@ -1,5 +1,5 @@
 PORTNAME=	gnome-shell-extension-dashtodock
-PORTVERSION=	84
+DISTVERSION=	100
 DISTVERSIONPREFIX=	extensions.gnome.org-v
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome
@@ -11,32 +11,35 @@ WWW=		https://micheleg.github.io/dash-to-dock/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gnome-shell>=3.28:x11/gnome-shell \
-		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas \
-		sassc:textproc/sassc
-RUN_DEPENDS=	gnome-shell>=3.28:x11/gnome-shell \
-		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	sassc>0:textproc/sassc
+RUN_DEPENDS=	gnome-shell>=47.0:x11/gnome-shell \
+		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USES=		gettext gmake gnome localbase pkgconfig
-USE_GNOME=	glib20
+USES=		gettext-tools gmake gnome
+USE_GNOME=	glib20 intltool:build
+
 USE_GITHUB=	yes
-
-GLIB_SCHEMAS=	org.gnome.shell.extensions.dash-to-dock.gschema.xml
-
 GH_ACCOUNT=	micheleg
 GH_PROJECT=	dash-to-dock
 
-PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
+UUID_EXTENSION=	dash-to-dock@micxgx.gmail.com
+
+SUB_FILES=	pkg-message
+SUB_LIST=	UUID=${UUID_EXTENSION}
+
+GLIB_SCHEMAS=	org.gnome.shell.extensions.dash-to-dock.gschema.xml
 
 NO_ARCH=	yes
 
-do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com
-	${INSTALL_DATA} ${WRKSRC}/schemas/org.gnome.shell.extensions.dash-to-dock.gschema.xml \
-		${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . \
-		${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com
-	@${FIND} ${STAGEDIR}${PREFIX} -name \*.po -delete
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/Makefile
+
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/glib-2.0/schemas
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/schemas/*.xml \
+		${STAGEDIR}${PREFIX}/share/glib-2.0/schemas
 
 .include <bsd.port.mk>

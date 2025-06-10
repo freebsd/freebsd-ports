@@ -11,6 +11,8 @@ WWW=		https://github.com/bananenfisch/RecentItems
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Does not support recent gnome-shell
+
 USES=		gnome
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes

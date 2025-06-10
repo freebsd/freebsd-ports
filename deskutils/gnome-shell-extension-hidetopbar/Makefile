@@ -1,40 +1,47 @@
-PORTNAME=	gnome-shell-extension-hidetopbar
-PORTVERSION=	0.0.0.20180511
-PORTREVISION=	2
+PORTNAME=	hidetopbar
+DISTVERSION=	120
 CATEGORIES=	deskutils gnome
+PKGNAMEPREFIX=	gnome-shell-extension-
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Hide the topbar except in overview mode
-WWW=		https://github.com/mlutfy/hidetopbar
+WWW=		https://gitlab.gnome.org/tuxor1337/hidetopbar
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
-		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
-RUN_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
-		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
+RUN_DEPENDS=	gnome-shell>=47.0:x11/gnome-shell \
+		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USES=		gettext gmake gnome pkgconfig
+USES=		gnome
 USE_GNOME=	glib20
-USE_GITHUB=	yes
-GLIB_SCHEMAS=	org.gnome.shell.extensions.hidetopbar.gschema.xml
-
-GH_ACCOUNT=	mlutfy
-GH_PROJECT=	hidetopbar
-GH_TAGNAME=	7977769
-
-PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 
 NO_BUILD=	yes
+NO_ARCH=	yes
+
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.gnome.org
+GL_ACCOUNT=	tuxor1337
+GL_TAGNAME=	e9ececc2
+
+UUID_EXTENSION=	hidetopbar@mathieu.bidon.ca
+
+SUB_FILES=	pkg-message
+SUB_LIST=	UUID=${UUID_EXTENSION}
+
+GLIB_SCHEMAS=	org.gnome.shell.extensions.hidetopbar.gschema.xml
+
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/glib-2.0/schemas
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/locale
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/${UUID_EXTENSION}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca
-	${INSTALL_DATA} ${WRKSRC}/org.gnome.shell.extensions.hidetopbar.gschema.xml \
+	${INSTALL_DATA} ${WRKSRC}/*.js \
+		${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/${UUID_EXTENSION}
+	${INSTALL_DATA} ${WRKSRC}/schemas/*.gschema.xml \
 		${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
-	@${RM} -r ${WRKSRC}/org.gnome.shell.extensions.hidetopbar.gschema.xml
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . \
-		${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/
+	cd ${WRKSRC}/locale/ && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${PREFIX}/share/locale/ "! -name *\.pot"
 
 .include <bsd.port.mk>

@@ -12,6 +12,8 @@ WWW=		https://github.com/sustmi/gnome-shell-extensions-sustmi
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Does not support recent gnome-shell
+
 BUILD_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 RUN_DEPENDS:=	${BUILD_DEPENDS}
