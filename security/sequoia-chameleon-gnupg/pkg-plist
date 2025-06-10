@@ -1,0 +1,14 @@
+bin/gpg-sq
+bin/gpgv-sq
+%%BASH%%share/bash-completion/completions/gpg-sq
+%%BASH%%share/bash-completion/completions/gpgv-sq
+%%ELVISH%%share/elvish/lib/gpg-sq.elv
+%%ELVISH%%share/elvish/lib/gpgv-sq.elv
+%%FISH%%share/fish/completions/gpg-sq.fish
+%%FISH%%share/fish/completions/gpgv-sq.fish
+%%MANPAGES%%share/man/man1/gpg-sq.1.gz
+%%MANPAGES%%share/man/man1/gpgv-sq.1.gz
+%%ZSH%%share/zsh/site-functions/_gpg-sq
+%%ZSH%%share/zsh/site-functions/_gpg-sq.ps1
+%%ZSH%%share/zsh/site-functions/_gpgv-sq
+%%ZSH%%share/zsh/site-functions/_gpgv-sq.ps1
