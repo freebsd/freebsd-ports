@@ -1420,6 +1420,7 @@
     SUBDIR += pecl-solr
     SUBDIR += pecl-yaf
     SUBDIR += pecl-yar
+    SUBDIR += peersuite
     SUBDIR += perlbal
     SUBDIR += persepolis
     SUBDIR += pglogd
