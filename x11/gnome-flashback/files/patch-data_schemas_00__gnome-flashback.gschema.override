@@ -1,0 +1,16 @@
+--- data/schemas/00_gnome-flashback.gschema.override.orig	2023-08-12 06:50:17 UTC
++++ data/schemas/00_gnome-flashback.gschema.override
+@@ -4,5 +4,13 @@ panel-main-menu=['<Alt>F1']
+ [org.gnome.desktop.wm.preferences:GNOME-Flashback]
+ button-layout='appmenu:minimize,maximize,close'
+ 
++[org.gnome.desktop.interface:GNOME-Flashback]
++icon-theme='AdwaitaLegacy'
++
+ [org.gnome.gnome-panel.general:GNOME-Flashback]
+ default-layout='gnome-flashback'
++
++[org.gnome.gnome-flashback:GNOME-Flashback]
++idle-monitor=false
++# Screencast is disabled in x11-wm/mutter → remote_desktop option
++screencast=false

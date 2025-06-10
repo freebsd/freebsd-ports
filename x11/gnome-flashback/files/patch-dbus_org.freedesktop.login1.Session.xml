@@ -1,0 +1,20 @@
+--- dbus/org.freedesktop.login1.Session.xml.orig	2021-11-02 10:13:49 UTC
++++ dbus/org.freedesktop.login1.Session.xml
+@@ -2,14 +2,15 @@
+ <!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+ "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+ <node>
+-  <interface name="org.freedesktop.login1.Session">
++  <interface name="org.freedesktop.ConsoleKit.Session">
+     <annotation name="org.gtk.GDBus.C.Name" value="LoginSessionGen" />
+ 
+-    <property name="Active" type="b" access="read" />
++    <property name="active" type="b" access="read" />
+ 
+     <property name="LockedHint" type="b" access="read" />
+ 
+     <method name="SetLockedHint">
++      <annotation name="org.freedesktop.DBus.GLib.Async" value=""/>
+       <arg direction="in" type="b" />
+     </method>
+ 

@@ -1,0 +1,10 @@
+--- data/Makefile.in.orig	2024-03-23 18:21:43 UTC
++++ data/Makefile.in
+@@ -456,7 +456,6 @@ SUBDIRS = \
+ 	menus \
+ 	schemas \
+ 	sessions \
+-	systemd \
+ 	theme \
+ 	ui \
+ 	xsessions \

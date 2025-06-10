@@ -1,0 +1,26 @@
+--- data/autostart/Makefile.in.orig	2023-08-12 06:58:52 UTC
++++ data/autostart/Makefile.in
+@@ -386,7 +386,6 @@ autostart_DATA = \
+ 	gnome-flashback-clipboard.desktop \
+ 	gnome-flashback-idle-monitor.desktop \
+ 	gnome-flashback-media-keys.desktop \
+-	gnome-flashback-nm-applet.desktop \
+ 	gnome-flashback-polkit.desktop \
+ 	$(NULL)
+ 
+@@ -394,7 +393,6 @@ EXTRA_DIST = \
+ 	gnome-flashback-clipboard.desktop.in.in \
+ 	gnome-flashback-idle-monitor.desktop.in.in \
+ 	gnome-flashback-media-keys.desktop.in.in \
+-	gnome-flashback-nm-applet.desktop.in \
+ 	gnome-flashback-polkit.desktop.in.in \
+ 	$(NULL)
+ 
+@@ -405,7 +403,6 @@ CLEANFILES = \
+ 	gnome-flashback-idle-monitor.desktop \
+ 	gnome-flashback-media-keys.desktop.in \
+ 	gnome-flashback-media-keys.desktop \
+-	gnome-flashback-nm-applet.desktop \
+ 	gnome-flashback-polkit.desktop.in \
+ 	gnome-flashback-polkit.desktop \
+ 	$(NULL)

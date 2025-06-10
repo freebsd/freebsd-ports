@@ -99,6 +99,7 @@
     SUBDIR += gnome-clipboard-daemon
     SUBDIR += gnome-console
     SUBDIR += gnome-desktop
+    SUBDIR += gnome-flashback
     SUBDIR += gnome-menus
     SUBDIR += gnome-panel
     SUBDIR += gnome-pie
