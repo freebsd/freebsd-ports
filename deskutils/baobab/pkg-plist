@@ -5,7 +5,7 @@ share/dbus-1/services/org.gnome.baobab.service
 share/help/C/baobab/index.page
 share/help/C/baobab/introduction.page
 share/help/C/baobab/legal.xml
-share/help/C/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/C/baobab/media/org.gnome.baobab.svg
 share/help/C/baobab/pref-view-chart.page
 share/help/C/baobab/problem-permissions.page
 share/help/C/baobab/problem-slow-scan.page
@@ -18,7 +18,7 @@ share/help/C/baobab/scan-remote.page
 share/help/ca/baobab/index.page
 share/help/ca/baobab/introduction.page
 share/help/ca/baobab/legal.xml
-share/help/ca/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/ca/baobab/media/org.gnome.baobab.svg
 share/help/ca/baobab/pref-view-chart.page
 share/help/ca/baobab/problem-permissions.page
 share/help/ca/baobab/problem-slow-scan.page
@@ -31,7 +31,7 @@ share/help/ca/baobab/scan-remote.page
 share/help/cs/baobab/index.page
 share/help/cs/baobab/introduction.page
 share/help/cs/baobab/legal.xml
-share/help/cs/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/cs/baobab/media/org.gnome.baobab.svg
 share/help/cs/baobab/pref-view-chart.page
 share/help/cs/baobab/problem-permissions.page
 share/help/cs/baobab/problem-slow-scan.page
@@ -44,7 +44,7 @@ share/help/cs/baobab/scan-remote.page
 share/help/da/baobab/index.page
 share/help/da/baobab/introduction.page
 share/help/da/baobab/legal.xml
-share/help/da/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/da/baobab/media/org.gnome.baobab.svg
 share/help/da/baobab/pref-view-chart.page
 share/help/da/baobab/problem-permissions.page
 share/help/da/baobab/problem-slow-scan.page
@@ -57,7 +57,7 @@ share/help/da/baobab/scan-remote.page
 share/help/de/baobab/index.page
 share/help/de/baobab/introduction.page
 share/help/de/baobab/legal.xml
-share/help/de/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/de/baobab/media/org.gnome.baobab.svg
 share/help/de/baobab/pref-view-chart.page
 share/help/de/baobab/problem-permissions.page
 share/help/de/baobab/problem-slow-scan.page
@@ -70,7 +70,7 @@ share/help/de/baobab/scan-remote.page
 share/help/el/baobab/index.page
 share/help/el/baobab/introduction.page
 share/help/el/baobab/legal.xml
-share/help/el/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/el/baobab/media/org.gnome.baobab.svg
 share/help/el/baobab/pref-view-chart.page
 share/help/el/baobab/problem-permissions.page
 share/help/el/baobab/problem-slow-scan.page
@@ -83,7 +83,7 @@ share/help/el/baobab/scan-remote.page
 share/help/es/baobab/index.page
 share/help/es/baobab/introduction.page
 share/help/es/baobab/legal.xml
-share/help/es/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/es/baobab/media/org.gnome.baobab.svg
 share/help/es/baobab/pref-view-chart.page
 share/help/es/baobab/problem-permissions.page
 share/help/es/baobab/problem-slow-scan.page
@@ -96,7 +96,7 @@ share/help/es/baobab/scan-remote.page
 share/help/eu/baobab/index.page
 share/help/eu/baobab/introduction.page
 share/help/eu/baobab/legal.xml
-share/help/eu/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/eu/baobab/media/org.gnome.baobab.svg
 share/help/eu/baobab/pref-view-chart.page
 share/help/eu/baobab/problem-permissions.page
 share/help/eu/baobab/problem-slow-scan.page
@@ -109,7 +109,7 @@ share/help/eu/baobab/scan-remote.page
 share/help/fi/baobab/index.page
 share/help/fi/baobab/introduction.page
 share/help/fi/baobab/legal.xml
-share/help/fi/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/fi/baobab/media/org.gnome.baobab.svg
 share/help/fi/baobab/pref-view-chart.page
 share/help/fi/baobab/problem-permissions.page
 share/help/fi/baobab/problem-slow-scan.page
@@ -122,7 +122,7 @@ share/help/fi/baobab/scan-remote.page
 share/help/fr/baobab/index.page
 share/help/fr/baobab/introduction.page
 share/help/fr/baobab/legal.xml
-share/help/fr/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/fr/baobab/media/org.gnome.baobab.svg
 share/help/fr/baobab/pref-view-chart.page
 share/help/fr/baobab/problem-permissions.page
 share/help/fr/baobab/problem-slow-scan.page
@@ -135,7 +135,7 @@ share/help/fr/baobab/scan-remote.page
 share/help/gl/baobab/index.page
 share/help/gl/baobab/introduction.page
 share/help/gl/baobab/legal.xml
-share/help/gl/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/gl/baobab/media/org.gnome.baobab.svg
 share/help/gl/baobab/pref-view-chart.page
 share/help/gl/baobab/problem-permissions.page
 share/help/gl/baobab/problem-slow-scan.page
@@ -148,7 +148,7 @@ share/help/gl/baobab/scan-remote.page
 share/help/hr/baobab/index.page
 share/help/hr/baobab/introduction.page
 share/help/hr/baobab/legal.xml
-share/help/hr/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/hr/baobab/media/org.gnome.baobab.svg
 share/help/hr/baobab/pref-view-chart.page
 share/help/hr/baobab/problem-permissions.page
 share/help/hr/baobab/problem-slow-scan.page
@@ -161,7 +161,7 @@ share/help/hr/baobab/scan-remote.page
 share/help/hu/baobab/index.page
 share/help/hu/baobab/introduction.page
 share/help/hu/baobab/legal.xml
-share/help/hu/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/hu/baobab/media/org.gnome.baobab.svg
 share/help/hu/baobab/pref-view-chart.page
 share/help/hu/baobab/problem-permissions.page
 share/help/hu/baobab/problem-slow-scan.page
@@ -174,7 +174,7 @@ share/help/hu/baobab/scan-remote.page
 share/help/id/baobab/index.page
 share/help/id/baobab/introduction.page
 share/help/id/baobab/legal.xml
-share/help/id/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/id/baobab/media/org.gnome.baobab.svg
 share/help/id/baobab/pref-view-chart.page
 share/help/id/baobab/problem-permissions.page
 share/help/id/baobab/problem-slow-scan.page
@@ -187,7 +187,7 @@ share/help/id/baobab/scan-remote.page
 share/help/it/baobab/index.page
 share/help/it/baobab/introduction.page
 share/help/it/baobab/legal.xml
-share/help/it/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/it/baobab/media/org.gnome.baobab.svg
 share/help/it/baobab/pref-view-chart.page
 share/help/it/baobab/problem-permissions.page
 share/help/it/baobab/problem-slow-scan.page
@@ -200,7 +200,7 @@ share/help/it/baobab/scan-remote.page
 share/help/ko/baobab/index.page
 share/help/ko/baobab/introduction.page
 share/help/ko/baobab/legal.xml
-share/help/ko/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/ko/baobab/media/org.gnome.baobab.svg
 share/help/ko/baobab/pref-view-chart.page
 share/help/ko/baobab/problem-permissions.page
 share/help/ko/baobab/problem-slow-scan.page
@@ -213,7 +213,7 @@ share/help/ko/baobab/scan-remote.page
 share/help/nl/baobab/index.page
 share/help/nl/baobab/introduction.page
 share/help/nl/baobab/legal.xml
-share/help/nl/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/nl/baobab/media/org.gnome.baobab.svg
 share/help/nl/baobab/pref-view-chart.page
 share/help/nl/baobab/problem-permissions.page
 share/help/nl/baobab/problem-slow-scan.page
@@ -226,7 +226,7 @@ share/help/nl/baobab/scan-remote.page
 share/help/pl/baobab/index.page
 share/help/pl/baobab/introduction.page
 share/help/pl/baobab/legal.xml
-share/help/pl/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/pl/baobab/media/org.gnome.baobab.svg
 share/help/pl/baobab/pref-view-chart.page
 share/help/pl/baobab/problem-permissions.page
 share/help/pl/baobab/problem-slow-scan.page
@@ -239,7 +239,7 @@ share/help/pl/baobab/scan-remote.page
 share/help/pt/baobab/index.page
 share/help/pt/baobab/introduction.page
 share/help/pt/baobab/legal.xml
-share/help/pt/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/pt/baobab/media/org.gnome.baobab.svg
 share/help/pt/baobab/pref-view-chart.page
 share/help/pt/baobab/problem-permissions.page
 share/help/pt/baobab/problem-slow-scan.page
@@ -252,7 +252,7 @@ share/help/pt/baobab/scan-remote.page
 share/help/pt_BR/baobab/index.page
 share/help/pt_BR/baobab/introduction.page
 share/help/pt_BR/baobab/legal.xml
-share/help/pt_BR/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/pt_BR/baobab/media/org.gnome.baobab.svg
 share/help/pt_BR/baobab/pref-view-chart.page
 share/help/pt_BR/baobab/problem-permissions.page
 share/help/pt_BR/baobab/problem-slow-scan.page
@@ -265,7 +265,7 @@ share/help/pt_BR/baobab/scan-remote.page
 share/help/ru/baobab/index.page
 share/help/ru/baobab/introduction.page
 share/help/ru/baobab/legal.xml
-share/help/ru/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/ru/baobab/media/org.gnome.baobab.svg
 share/help/ru/baobab/pref-view-chart.page
 share/help/ru/baobab/problem-permissions.page
 share/help/ru/baobab/problem-slow-scan.page
@@ -278,7 +278,7 @@ share/help/ru/baobab/scan-remote.page
 share/help/sl/baobab/index.page
 share/help/sl/baobab/introduction.page
 share/help/sl/baobab/legal.xml
-share/help/sl/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/sl/baobab/media/org.gnome.baobab.svg
 share/help/sl/baobab/pref-view-chart.page
 share/help/sl/baobab/problem-permissions.page
 share/help/sl/baobab/problem-slow-scan.page
@@ -291,7 +291,7 @@ share/help/sl/baobab/scan-remote.page
 share/help/sv/baobab/index.page
 share/help/sv/baobab/introduction.page
 share/help/sv/baobab/legal.xml
-share/help/sv/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/sv/baobab/media/org.gnome.baobab.svg
 share/help/sv/baobab/pref-view-chart.page
 share/help/sv/baobab/problem-permissions.page
 share/help/sv/baobab/problem-slow-scan.page
@@ -304,7 +304,7 @@ share/help/sv/baobab/scan-remote.page
 share/help/tr/baobab/index.page
 share/help/tr/baobab/introduction.page
 share/help/tr/baobab/legal.xml
-share/help/tr/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/tr/baobab/media/org.gnome.baobab.svg
 share/help/tr/baobab/pref-view-chart.page
 share/help/tr/baobab/problem-permissions.page
 share/help/tr/baobab/problem-slow-scan.page
@@ -317,7 +317,7 @@ share/help/tr/baobab/scan-remote.page
 share/help/uk/baobab/index.page
 share/help/uk/baobab/introduction.page
 share/help/uk/baobab/legal.xml
-share/help/uk/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/uk/baobab/media/org.gnome.baobab.svg
 share/help/uk/baobab/pref-view-chart.page
 share/help/uk/baobab/problem-permissions.page
 share/help/uk/baobab/problem-slow-scan.page
@@ -330,7 +330,7 @@ share/help/uk/baobab/scan-remote.page
 share/help/zh_CN/baobab/index.page
 share/help/zh_CN/baobab/introduction.page
 share/help/zh_CN/baobab/legal.xml
-share/help/zh_CN/baobab/media/hicolor_apps_48x48_baobab.png
+share/help/zh_CN/baobab/media/org.gnome.baobab.svg
 share/help/zh_CN/baobab/pref-view-chart.page
 share/help/zh_CN/baobab/problem-permissions.page
 share/help/zh_CN/baobab/problem-slow-scan.page
@@ -377,6 +377,7 @@ share/locale/et/LC_MESSAGES/baobab.mo
 share/locale/eu/LC_MESSAGES/baobab.mo
 share/locale/fa/LC_MESSAGES/baobab.mo
 share/locale/fi/LC_MESSAGES/baobab.mo
+share/locale/fo/LC_MESSAGES/baobab.mo
 share/locale/fr/LC_MESSAGES/baobab.mo
 share/locale/fur/LC_MESSAGES/baobab.mo
 share/locale/fy/LC_MESSAGES/baobab.mo
@@ -389,10 +390,12 @@ share/locale/hi/LC_MESSAGES/baobab.mo
 share/locale/hr/LC_MESSAGES/baobab.mo
 share/locale/hu/LC_MESSAGES/baobab.mo
 share/locale/id/LC_MESSAGES/baobab.mo
+share/locale/ie/LC_MESSAGES/baobab.mo
 share/locale/is/LC_MESSAGES/baobab.mo
 share/locale/it/LC_MESSAGES/baobab.mo
 share/locale/ja/LC_MESSAGES/baobab.mo
 share/locale/ka/LC_MESSAGES/baobab.mo
+share/locale/kab/LC_MESSAGES/baobab.mo
 share/locale/kk/LC_MESSAGES/baobab.mo
 share/locale/km/LC_MESSAGES/baobab.mo
 share/locale/kn/LC_MESSAGES/baobab.mo

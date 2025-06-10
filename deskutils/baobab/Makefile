@@ -1,25 +1,24 @@
 PORTNAME=	baobab
-PORTVERSION=	43.0
-PORTREVISION=	2
+PORTVERSION=	47.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME graphical directory tree analyzer
-WWW=		https://wiki.gnome.org/Apps/Baobab
+WWW=		https://apps.gnome.org/Baobab/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	limit:^47\.
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy
+LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
 
 USES=		desktop-file-utils gettext gnome meson pkgconfig \
 		python:build tar:xz vala:build
-USE_GNOME=	cairo gtk40 libadwaita
+USE_GNOME=	cairo glib20 gtk40 libadwaita
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
