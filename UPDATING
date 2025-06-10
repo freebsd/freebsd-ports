@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250610:
+  AFFECTS: users of security/krb5-12{0,1}
+  AUTHOR: michaelo@FreeBSD.org
+
+  The KRB5_{PDF,HTML} options have been consolidated into canonical DOCS option
+  to match the name with other ports and the description from Mk/bsd.options.desc.mk.
+
 20250606:
   AFFECTS: users of net-mgmt/unifi9
   AUTHOR: ronald@FreeBSD.org

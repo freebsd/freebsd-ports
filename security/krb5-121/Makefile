@@ -42,13 +42,11 @@ CPE_PRODUCT=		kerberos
 
 FLAVORS=		default ldap
 
-OPTIONS_DEFINE=		EXAMPLES NLS KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP LMDB
-OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML READLINE
+OPTIONS_DEFINE=		EXAMPLES NLS DOCS DNS_FOR_REALM LDAP LMDB
+OPTIONS_DEFAULT=	DOCS READLINE
 OPTIONS_RADIO=		CMD_LINE_EDITING
 OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE LIBEDIT LIBEDIT_BASE
 CMD_LINE_EDITING_DESC=	Command line editing for kadmin and ktutil
-KRB5_PDF_DESC=		Install krb5 PDF documentation
-KRB5_HTML_DESC=		Install krb5 HTML documentation
 DNS_FOR_REALM_DESC=	Enable DNS lookups for Kerberos realm names
 DNS_FOR_REALM_CONFIGURE_ENABLE=	dns-for-realm
 LDAP=			Enable LDAP support
@@ -117,10 +115,8 @@ CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 
 .include <bsd.port.pre.mk>
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/krb5
-# html documentation
-.if ${PORT_OPTIONS:MKRB5_PDF}
 	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}; \
 	pdf_files=`${FIND} doc/pdf ! -type d`; \
 	pdf_dirs=`${FIND} doc/pdf -type d`; \
@@ -134,8 +130,6 @@ post-install:
 	for i in $${pdf_dirs}; do \
 		${ECHO_CMD} @dir share/doc/krb5/$${i} >> ${TMPPLIST}; \
 	done | ${TAIL} -r >> ${TMPPLIST}
-.endif
-.if ${PORT_OPTIONS:MKRB5_HTML}
 	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}; \
 	html_files=`${FIND} doc/html ! -type d | ${GREP} -v /_sources`; \
 	html_dirs=`${FIND} doc/html -type d | ${GREP} -v /_sources`; \
@@ -149,7 +143,6 @@ post-install:
 	for i in $${html_dirs}; do \
 		${ECHO_CMD} @dir share/doc/krb5/$${i} >> ${TMPPLIST}; \
 	done | ${TAIL} -r >> ${TMPPLIST}
-.endif
 	${ECHO_CMD} @dir share/doc/krb5 >> ${TMPPLIST}
 
 post-install-LDAP-on:
