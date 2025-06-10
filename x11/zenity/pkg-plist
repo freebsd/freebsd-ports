@@ -1,6 +1,5 @@
 bin/gdialog
 bin/zenity
-share/man/man1/zenity.1.gz
 share/help/C/zenity/calendar.page
 share/help/C/zenity/color-selection.page
 share/help/C/zenity/entry.page
@@ -829,6 +828,7 @@ share/help/zh_CN/zenity/scale.page
 share/help/zh_CN/zenity/text.page
 share/help/zh_CN/zenity/usage.page
 share/help/zh_CN/zenity/warning.page
+share/locale/ab/LC_MESSAGES/zenity.mo
 share/locale/af/LC_MESSAGES/zenity.mo
 share/locale/am/LC_MESSAGES/zenity.mo
 share/locale/ar/LC_MESSAGES/zenity.mo
@@ -919,6 +919,7 @@ share/locale/xh/LC_MESSAGES/zenity.mo
 share/locale/zh_CN/LC_MESSAGES/zenity.mo
 share/locale/zh_HK/LC_MESSAGES/zenity.mo
 share/locale/zh_TW/LC_MESSAGES/zenity.mo
+share/man/man1/zenity.1.gz
 %%DATADIR%%/zenity-calendar.png
 %%DATADIR%%/zenity-entry.png
 %%DATADIR%%/zenity-file.png
