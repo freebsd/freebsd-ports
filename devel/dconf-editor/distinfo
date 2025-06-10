@@ -1,5 +1,7 @@
-TIMESTAMP = 1617741522
-SHA256 (gnome/dconf-editor-3.38.3.tar.xz) = 571af4c7dad4f049b53e6cd728b79addf08c27ddab6bc57b396d211866ee79e3
-SIZE (gnome/dconf-editor-3.38.3.tar.xz) = 594544
-SHA256 (gnome/56474378568e.patch) = ee0470519b9ac98ede945aba1b25f4ab9ebc5494525d95af5eb5c00f4418fd94
-SIZE (gnome/56474378568e.patch) = 825
+TIMESTAMP = 1740336026
+SHA256 (gnome/dconf-editor-45.0.1.tar.xz) = 1180297678eedae6217cc514a2638c187d2f1d1ef2720cb9079b740c429941dd
+SIZE (gnome/dconf-editor-45.0.1.tar.xz) = 608576
+SHA256 (gnome/baf18373.patch) = f1313f8a907deda0aff0ab5362f39a211f3f2ae87bfe3213c4038dc68822a5ef
+SIZE (gnome/baf18373.patch) = 1143
+SHA256 (gnome/dd8ddbbf.patch) = 8b7a72b23ce41b164008749e113f311201daebf7e44dd3d09e74003b1132a4dc
+SIZE (gnome/dd8ddbbf.patch) = 1071
