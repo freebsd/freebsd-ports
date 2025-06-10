@@ -10,9 +10,6 @@ lib/libmetacity.so
 lib/libmetacity.so.3
 lib/libmetacity.so.%%GTK3_VERSION%%
 libdata/pkgconfig/libmetacity.pc
-share/man/man1/metacity-message.1.gz
-share/man/man1/metacity-theme-viewer.1.gz
-share/man/man1/metacity.1.gz
 share/applications/metacity.desktop
 share/gnome-control-center/keybindings/50-metacity-navigation.xml
 share/gnome-control-center/keybindings/50-metacity-system.xml
@@ -111,3 +108,6 @@ share/locale/yo/LC_MESSAGES/metacity.mo
 share/locale/zh_CN/LC_MESSAGES/metacity.mo
 share/locale/zh_HK/LC_MESSAGES/metacity.mo
 share/locale/zh_TW/LC_MESSAGES/metacity.mo
+share/man/man1/metacity-message.1.gz
+share/man/man1/metacity-theme-viewer.1.gz
+share/man/man1/metacity.1.gz
