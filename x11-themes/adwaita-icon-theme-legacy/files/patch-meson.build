@@ -1,0 +1,10 @@
+--- meson.build.orig	2024-05-17 12:38:21 UTC
++++ meson.build
+@@ -5,6 +5,7 @@ pkg.generate(
+   name : 'adwaita-icon-theme-legacy',
+   description : 'Icon theme that provides fallback icons for old apps relying on global icon themes',
+   dataonly : true,
++  install_dir : get_option('prefix') / 'libdata' / 'pkgconfig',
+ )
+ 
+ licenses_dir = get_option('datadir') / 'licenses' / 'adwaita-icon-theme'

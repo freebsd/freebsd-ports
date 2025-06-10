@@ -4,6 +4,7 @@
     SUBDIR += adapta-backgrounds
     SUBDIR += adapta-gtk-theme
     SUBDIR += adwaita-icon-theme
+    SUBDIR += adwaita-icon-theme-legacy
     SUBDIR += adwaita-qt5
     SUBDIR += adwaita-qt6
     SUBDIR += ant-dracula-theme

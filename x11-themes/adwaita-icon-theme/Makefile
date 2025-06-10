@@ -1,23 +1,20 @@
 PORTNAME=	adwaita-icon-theme
-DISTVERSION=	42.0
+DISTVERSION=	47.0
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R:R}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	GNOME Symbolic Icons
+WWW=		https://gitlab.gnome.org/GNOME/adwaita-icon-theme
 
 LICENSE=	LGPL3 CC-BY-SA-3.0
 LICENSE_COMB=	dual
 
-NO_ARCH=	yes
-USES=		gettext-tools gmake gnome pathfix pkgconfig tar:xz
-USE_GNOME=	intltool gtk-update-icon-cache
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_path_GTK_ENCODE_SYMBOLIC_SVG="false"
+RUN_DEPENDS=	adwaita-icon-theme-legacy>0:x11-themes/adwaita-icon-theme-legacy
 
-post-install:
-	@${RM} -r ${STAGEDIR}${PREFIX}/lib/locale
-	@${RM} -r ${STAGEDIR}${PREFIX}/locale
+NO_ARCH=	yes
+USES=		gnome meson pkgconfig tar:xz
+USE_GNOME=	gtk-update-icon-cache
 
 .include <bsd.port.mk>
