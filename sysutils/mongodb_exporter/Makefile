@@ -1,7 +1,6 @@
 PORTNAME=	mongodb_exporter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.44.0
-PORTREVISION=	1
+DISTVERSION=	0.45.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/percona/mongodb_exporter
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:1.24,modules
 USE_RC_SUBR=	mongodb_exporter
 
 GO_MODULE=	github.com/percona/mongodb_exporter
