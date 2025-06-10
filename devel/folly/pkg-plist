@@ -855,6 +855,7 @@ include/folly/lang/PropagateConst.h
 include/folly/lang/RValueReferenceWrapper.h
 include/folly/lang/SafeAssert.h
 include/folly/lang/StaticConst.h
+include/folly/lang/Switch.h
 include/folly/lang/Thunk.h
 include/folly/lang/ToAscii.h
 include/folly/lang/TypeInfo.h
