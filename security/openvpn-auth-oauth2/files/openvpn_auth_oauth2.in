@@ -32,7 +32,7 @@ eval ": \${${name}_config:=%%ETCDIR%%/openvpn-auth-oauth2.yml}"
 load_rc_config "${name}"
 
 _openvpn_auth_oauth2="%%PREFIX%%/sbin/openvpn-auth-oauth2"
-_common_daemon_args="-Sfc -r -R 5"
+_common_daemon_args="-Sfc -R 5"
 _piddir=/var/run/openvpn-auth-oauth2
 
 # Set PID file
