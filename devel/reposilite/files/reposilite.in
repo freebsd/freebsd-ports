@@ -1,0 +1,64 @@
+#!/bin/sh
+#
+# PROVIDE: reposilite
+# REQUIRE: FILESYSTEMS NETWORKING
+# KEYWORD: shutdown
+#
+# reposilite_enable (bool):
+#   Default value: "NO"
+#   Flag that determines whether reposilite is enabled
+#
+# reposilite_user (string)
+#   Default value: "%%USER%%"
+#   User to run reposilite as
+#
+# reposilite_group (string)
+#   Default value: "%%GROUP%%"
+#   Group to run reposilite as
+#
+# reposilite_config (string)
+#   Default value: "%%ETCDIR%%/configuration.cdn"
+#   Path to the reposilite configuration file
+#
+# reposilite_tinylog_config (string)
+#   Default value: "%%ETCDIR%%/tinylog.properties"
+#   Path to the tinylog configuration file
+#
+# reposilite_java_home (string):
+#   Default value: "%%JAVA_HOME%%"
+#   Java VM directory
+#
+# reposilite_java_opts (string):
+#   Default value: ""
+#   Java VM options
+#
+# reposilite_args (string):
+#   Default value: ""
+#   Arguments passed to reposilite
+#
+
+. /etc/rc.subr
+
+name=reposilite
+rcvar=reposilite_enable
+load_rc_config $name
+
+: ${reposilite_enable:="NO"}
+: ${reposilite_user:="%%USER%%"}
+: ${reposilite_group:="%%GROUP%%"}
+: ${reposilite_config:="%%ETCDIR%%/configuration.cdn"}
+: ${reposilite_tinylog_config:="%%ETCDIR%%/tinylog.properties"}
+: ${reposilite_java_home:="%%JAVA_HOME%%"}
+: ${reposilite_java_opts:=""}
+: ${reposilite_args:=""}
+
+app_pidfile="%%RUNDIR%%/${name}.pid"
+pidfile="%%RUNDIR%%/daemon.pid"
+
+command="/usr/sbin/daemon"
+
+command_args="-f -c -t ${name} -r -R 5 -P ${pidfile} -p ${app_pidfile} -o %%LOGDIR%%/daemon.log ${reposilite_java_home}/bin/java -Dtinylog.configuration=${reposilite_tinylog_config} ${reposilite_java_opts} -jar %%JARFILE%% -wd %%WORKDIR%% -lcm none -lc ${reposilite_config} ${reposilite_args}"
+
+required_files="${reposilite_config}"
+
+run_rc_command "$1"

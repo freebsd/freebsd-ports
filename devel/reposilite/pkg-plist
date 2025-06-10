@@ -1,0 +1,9 @@
+%%JARFILE%%
+@owner %%USER%%
+@group %%GROUP%%
+@sample %%ETCDIR%%/configuration.cdn.sample
+@sample %%ETCDIR%%/tinylog.properties.sample
+@dir(,,755) %%ETCDIR%%
+@dir(,,750) %%RUNDIR%%
+@dir(,,750) %%LOGDIR%%
+@dir(,,750) %%WORKDIR%%
