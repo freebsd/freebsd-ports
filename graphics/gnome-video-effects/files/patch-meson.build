@@ -1,19 +1,11 @@
---- meson.build.orig	2019-08-05 21:13:24 UTC
+--- meson.build.orig	2023-06-13 17:10:45 UTC
 +++ meson.build
-@@ -9,7 +9,7 @@ i18n = import('i18n')
- prefix = get_option('prefix')
- datadir = join_paths(prefix, get_option('datadir'))
- pkgdatadir = join_paths(datadir, meson.project_name())
--pkgconfigdir = join_paths(datadir, 'pkgconfig')
+@@ -10,7 +10,7 @@ prefix = get_option('prefix')
+ datadir_relative = get_option('datadir')
+ datadir = prefix / datadir_relative
+ pkgdatadir = datadir / meson.project_name()
+-pkgconfigdir = datadir / 'pkgconfig'
 +pkgconfigdir = join_paths(prefix, 'libdata/pkgconfig')
  
  subdir('effects')
  subdir('po')
-@@ -23,6 +23,6 @@ conf.set('VERSION', meson.project_version())
- pkg = configure_file(configuration: conf,
-                      input: 'gnome-video-effects.pc.in',
-                      install: true,
--                     install_dir: join_paths(datadir, 'pkgconfig'),
-+                     install_dir: pkgconfigdir,
-                      output: 'gnome-video-effects.pc')
- 
