@@ -1,27 +1,25 @@
 PORTNAME=	gnome-system-monitor
-PORTVERSION=	42.0
-PORTREVISION=	1
+PORTVERSION=	47.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME system monitor program
+WWW=		https://apps.gnome.org/GnomeSystemMonitor/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
-		libhandy-1.so:x11-toolkits/libhandy
+		libgraphene-1.0.so:graphics/graphene
+RUN_DEPENDS=	polkit>0:sysutils/polkit
 
-PORTSCOUT=	limitw:1,even
-
-USES=		alias compiler:c++11-lang gettext gnome localbase meson \
+USES=		alias compiler:c++20-lang gettext gnome localbase meson \
 		pkgconfig tar:xz
-USE_CXXSTD=	c++11
-USE_GNOME=	gtkmm30 librsvg2 libxml2
-USE_GNOME+=	glib20
+USE_CXXSTD=	c++20
+USE_GNOME=	glib20 glibmm26 gtkmm40 libadwaita librsvg2 libxml2
 MESON_ARGS=	-Dsystemd=false
 
 GLIB_SCHEMAS=	org.gnome.gnome-system-monitor.enums.xml \

@@ -1,14 +1,14 @@
---- src/openfiles.cpp.orig	2011-08-30 02:46:08.000000000 +0200
-+++ src/openfiles.cpp	2011-10-08 00:23:38.000000000 +0200
-@@ -71,7 +71,11 @@
-         goto failsafe;
+--- src/openfiles.cpp.orig	2023-09-02 21:02:13 UTC
++++ src/openfiles.cpp
+@@ -79,7 +79,11 @@ friendlier_hostname (const char *addr_str,
+     goto failsafe;
  
-     if (getnameinfo(res->ai_addr, res->ai_addrlen, hostname,
-+#ifdef NI_IDN
-                     sizeof hostname, service, sizeof service, NI_IDN))
+   if (getnameinfo (res->ai_addr, res->ai_addrlen, hostname,
++#ifdef NI_IDM
+                    sizeof hostname, service, sizeof service, NI_IDN))
 +#else
-+                    sizeof hostname, service, sizeof service, 0))
++                   sizeof hostname, service, sizeof service, 0))
 +#endif
-         goto failsafe;
+     goto failsafe;
  
-     if (res) freeaddrinfo(res);
+   if (res)
