@@ -1,32 +1,27 @@
 PORTNAME=	gcr
-PORTVERSION=	4.3.0
+PORTVERSION=	4.4.0.1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome
 
-LICENSE=	LGPL20+
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for bits of crypto UI and parsing
-WWW=		https://live.gnome.org/GnomeKeyring
+WWW=		https://gitlab.gnome.org/GNOME/gcr
 
 BUILD_DEPENDS=	gpg2:security/gnupg
 LIB_DEPENDS=	libsecret-1.so:security/libsecret \
 		libp11-kit.so:security/p11-kit \
 		libgcrypt.so:security/libgcrypt
 
-CONFLICTS=	gnome-keyring-2.[0-9]*
-
-USE_GNOME=	gtk40 intlhack introspection:build
 USES=		gettext gnome meson pkgconfig python:env tar:xz \
 		vala:build
+USE_GNOME=	glib20 gtk40 introspection:build
 USE_LDCONFIG=	yes
 
-MESON_ARGS=	-Dsystemd=disabled
-
-OPTIONS_DEFINE=	DOCS
-
-DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen@${PY_FLAVOR}
-DOCS_MESON_TRUE=	gtk_doc
+MESON_ARGS=	-Dsystemd=disabled \
+		-Dgtk_doc=false
 
 .include <bsd.port.mk>
