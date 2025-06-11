@@ -1,29 +1,29 @@
 PORTNAME=	libgweather
-PORTVERSION=	4.2.0
-PORTREVISION=	3
+PORTVERSION=	4.4.4
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	gnome
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to access online weather information
-WWW=		https://www.gnome.org/
+WWW=		https://gitlab.gnome/GNOME/libgweather
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gi-docgen>0:textproc/py-gi-docgen@${PY_FLAVOR}
 LIB_DEPENDS=	libgeocode-glib-2.so:net/geocode-glib2 \
-		libsoup-3.0.so:devel/libsoup3
-
-PORTSCOUT=	limitw:1,even
+		libsoup-3.0.so:devel/libsoup3 \
+		libjson-glib-1.0.so:devel/json-glib
 
 USES=		gettext gnome localbase meson pkgconfig python:build \
 		shebangfix tar:xz vala:build
-USE_GNOME=	gtk30 libxml2 pygobject3 introspection:build
+USE_GNOME=	glib20 gtk30 libxml2 introspection:build pygobject3
 USE_LDCONFIG=	yes
+SHEBANG_FILES=	build-aux/meson/gen_locations_variant.py
+
+MESON_ARGS=	-Dtests=false
 
 GLIB_SCHEMAS=	org.gnome.GWeather4.enums.xml \
 		org.gnome.GWeather4.gschema.xml
