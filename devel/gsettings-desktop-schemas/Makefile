@@ -1,6 +1,6 @@
 PORTNAME=	gsettings-desktop-schemas
 DISTVERSION=	47.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -11,7 +11,7 @@ COMMENT=	Collection of globally shared GSetting schemas
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	limitw:^47\.
 
 USES=		gettext gnome localbase meson pkgconfig python:build \
 		tar:xz
