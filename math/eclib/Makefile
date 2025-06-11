@@ -1,6 +1,5 @@
 PORTNAME=	eclib
-PORTVERSION=	20250122
-PORTREVISION=	2
+PORTVERSION=	20250530
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -18,14 +17,14 @@ LIB_DEPENDS=	libntl.so:math/ntl		\
 USE_GITHUB=	yes
 GH_ACCOUNT=	JohnCremona
 
-USES=		autoreconf compiler:c++14-lang libtool localbase
+USES=		autoreconf compiler:c++17-lang libtool localbase
 
 OPTIONS_DEFINE=	DOCS
 
 LIBS+=		"-lm"
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USE_CXXSTD=	c++14
+USE_CXXSTD=	c++17
 CONFIGURE_ARGS=	--with-flint=${LOCALBASE} --with-boost=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

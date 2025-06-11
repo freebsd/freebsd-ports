@@ -39,6 +39,7 @@ include/eclib/desc2.h
 include/eclib/descent.h
 include/eclib/divpol.h
 include/eclib/egr.h
+include/eclib/egros.h
 include/eclib/elog.h
 include/eclib/ffmod.h
 include/eclib/fixc6.h
@@ -117,7 +118,7 @@ include/eclib/xsplit_data.h
 lib/libec.a
 lib/libec.so
 lib/libec.so.14
-lib/libec.so.14.0.1
+lib/libec.so.14.1.0
 libdata/pkgconfig/eclib.pc
 %%PORTDOCS%%%%DOCSDIR%%/g0n.txt
 %%PORTDOCS%%%%DOCSDIR%%/howto.txt
