@@ -1,0 +1,26 @@
+--- subprojects/gtk-frdp/src/meson.build.orig	2024-12-23 15:11:01 UTC
++++ subprojects/gtk-frdp/src/meson.build
+@@ -98,8 +98,6 @@ gtk_frdp_gir = gnome.generate_gir(gtk_frdp_lib,
+   link_with: gtk_frdp_lib,
+   includes: ['Gio-2.0', 'Gtk-3.0'],
+   install: true,
+-  install_dir_gir: girdir,
+-  install_dir_typelib: typelibdir,
+   extra_args: [ '--c-include=gtk-frdp.h', '--quiet' ],
+ )
+ 
+@@ -107,7 +105,6 @@ gtk_frdp_vapi = gnome.generate_vapi('gtk-frdp-' + api_
+   sources: gtk_frdp_gir[0],
+   packages: [ 'gio-2.0', 'gtk+-3.0' ],
+   install: true,
+-  install_dir: vapidir,
+   metadata_dirs: [ meson.current_source_dir() ],
+ )
+ 
+@@ -121,5 +118,5 @@ pkg.generate(
+       version: meson.project_version(),
+       subdirs: gtk_frdp_header_subdir,
+      requires: 'glib-2.0',
+-  install_dir: join_paths(libdir, 'pkgconfig')
++  install_dir: get_option('prefix') / 'libdata' / 'pkgconfig'
+ )
