@@ -1,5 +1,3 @@
-TIMESTAMP = 1591951268
-SHA256 (gnome/libgtop-2.40.0.tar.xz) = 78f3274c0c79c434c03655c1b35edf7b95ec0421430897fb1345a98a265ed2d4
-SIZE (gnome/libgtop-2.40.0.tar.xz) = 744316
-SHA256 (gnome/df6393ac0cd7.patch) = c262b98834f07f524959a240dc41ff7711dd6f38920b6ce86299e8bb9dcf79bd
-SIZE (gnome/df6393ac0cd7.patch) = 784
+TIMESTAMP = 1731954188
+SHA256 (gnome/libgtop-2.41.3.tar.xz) = 775676df958e2ea2452f7568f28b2ea581063d312773dd5c0b7624c1b9b2da8c
+SIZE (gnome/libgtop-2.41.3.tar.xz) = 754028
