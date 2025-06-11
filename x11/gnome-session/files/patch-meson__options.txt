@@ -1,0 +1,12 @@
+--- meson_options.txt.orig	2024-03-18 19:30:06 UTC
++++ meson_options.txt
+@@ -1,5 +1,9 @@ option('session_selector', type: 'boolean', value: fal
+ option('deprecation_flags', type: 'boolean', value: false, description: 'use *_DISABLE_DEPRECATED flags')
+ option('session_selector', type: 'boolean', value: false, description: 'enable building a custom session selector dialog')
++option('systemd', type: 'boolean', value: true, description: 'Use systemd')
++option('systemd_session', type: 'combo', choices: ['disable', 'enable', 'default'], value: 'default', description: 'Whether to include systemd session support and use it by default')
++option('systemd_journal', type: 'boolean', value:'true', description: 'Send log to systemd-journal')
+ option('systemduserunitdir', type: 'string', description: 'Directory for systemd user service files')
++option('consolekit', type: 'boolean', value: false, description: 'Use consolekit')
+ option('docbook', type: 'boolean', value: true, description: 'build documentation')
+ option('man', type: 'boolean', value: true, description: 'build documentation (requires xmlto)')

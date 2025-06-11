@@ -1,0 +1,37 @@
+--- doc/man/gnome-session.1.orig	2024-03-18 19:30:06 UTC
++++ doc/man/gnome-session.1
+@@ -43,6 +43,14 @@ Use the applications defined in \fBSESSION.session\fP.
+ Use the applications defined in \fBSESSION.session\fP. If not specified,
+ \fBgnome.session\fP will be used.
+ .TP
++.I "--builtin"
++Use the legacy non-systemd method of managing the user session. This is the
++opposite of the \fI--systemd\fP option.
++.TP
++.I "--systemd"
++Use the systemd method of managing the user session. This is the opposite of
++the \fI--builtin\fP option.
++.TP
+ .I "--failsafe"
+ Run in fail-safe mode. User-specified applications will not be started.
+ .TP
+@@ -82,11 +90,17 @@ The \fB.session\fP files are looked for in
+ \fB$XDG_CONFIG_DIRS/gnome-session/sessions\fP and
+ \fB$XDG_DATA_DIRS/gnome-session/sessions\fP.
+ .SH systemd
+-\fIgnome-session\fP can pass much of the session management over to systemd.
+-In this case, startup components that have \fBX-GNOME-HiddenUnderSystemd=true\fP
++\fIgnome-session\fP can pass much of the session management over to systemd
++(see the \fI--systemd\fP option which may be the default since 3.34). In this
++case, startup components that have \fBX-GNOME-HiddenUnderSystemd=true\fP
+ set in their \fB.desktop\fP file will be ignored by \fIgnome-session\fP. It
+ instead relies on the fact that these components are managed by systemd.
+ .PP
++As of GNOME 3.34 the systemd support is new and the customizing the
++configuration is not yet easily possible. With GNOME 3.34 it may be best to use
++\fI--builtin\fP if session customizations are required. This is due to the way
++that GNOME currently defines the components that will be started on each session
++type.
+ .PP
+ \fBsystemd\fP provides the two special targets \fBgraphical-session.target\fP
+ and \fBgraphical-session-pre.target\fP which are fully functional and should be

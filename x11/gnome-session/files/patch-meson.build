@@ -1,0 +1,73 @@
+--- meson.build.orig	2024-03-18 19:30:06 UTC
++++ meson.build
+@@ -103,19 +103,52 @@ enable_session_selector = get_option('session_selector
+ # Check for session selector GTK+ UI
+ enable_session_selector = get_option('session_selector')
+ 
+-session_bin_deps += dependency('gio-unix-2.0', version: glib_req_version)
++# Check for session tracking backend
++session_tracking = 'null backend'
+ 
+-# Check for systemd
+-systemd_userunitdir = get_option('systemduserunitdir')
+-if systemd_userunitdir == ''
+-  systemd_dep = dependency('systemd', version: '>= 242', required: true)
+-  systemd_userunitdir = systemd_dep.get_variable(pkgconfig: 'systemduserunitdir',
+-                                                 pkgconfig_define: ['prefix', session_prefix])
+-endif
++enable_systemd = get_option('systemd')
++enable_systemd_session = get_option('systemd_session') != 'disable'
++use_systemd_session = get_option('systemd_session') == 'default'
++enable_systemd_journal = get_option('systemd_journal')
++enable_consolekit = get_option('consolekit')
++if enable_systemd or enable_consolekit
++  session_bin_deps += dependency('gio-unix-2.0', version: glib_req_version)
+ 
+-libsystemd_dep = dependency('libsystemd', version: '>= 209', required: true)
+-session_bin_deps += libsystemd_dep
++  # Check for systemd
++  if enable_systemd
++    systemd_userunitdir = get_option('systemduserunitdir')
++    if systemd_userunitdir == ''
++      systemd_dep = dependency('systemd', version: '>= 242', required: true)
++      systemd_userunitdir = systemd_dep.get_variable(pkgconfig: 'systemduserunitdir',
++                                                     pkgconfig_define: ['prefix', session_prefix])
++    endif
+ 
++    libsystemd_dep = dependency('libsystemd', version: '>= 209', required: true)
++    session_bin_deps += libsystemd_dep
++
++    session_tracking = 'systemd'
++  endif
++
++  # Check for ConsoleKit
++  if enable_consolekit
++    systemd_userunitdir = ''
++
++    if enable_systemd
++      session_tracking += ' (with fallback to ConsoleKit)'
++    else
++      session_tracking = 'ConsoleKit'
++    endif
++  endif
++endif
++if enable_systemd_session
++  assert(enable_systemd, 'Systemd support must be enabled when using systemd session management')
++endif
++config_h.set('HAVE_SYSTEMD', enable_systemd)
++config_h.set('ENABLE_SYSTEMD_SESSION', enable_systemd_session)
++config_h.set('ENABLE_SYSTEMD_JOURNAL', enable_systemd_journal)
++config_h.set('HAVE_CONSOLEKIT', enable_consolekit)
++config_h.set10('USE_SYSTEMD_SESSION', use_systemd_session)
++
+ configure_file(
+   output: 'config.h',
+   configuration: config_h
+@@ -151,6 +184,7 @@ summary_options = {
+  'Build manpages': get_option('man'),
+  'Systemd Units Directory': systemd_userunitdir,
+  'Session Selector Enabled': enable_session_selector,
++ 'Session tracking': session_tracking,
+ }
+ 
+ summary_dirs = {

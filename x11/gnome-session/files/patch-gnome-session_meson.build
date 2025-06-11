@@ -1,0 +1,13 @@
+--- gnome-session/meson.build.orig	2024-03-18 19:30:06 UTC
++++ gnome-session/meson.build
+@@ -60,6 +60,10 @@ endforeach
+   )
+ endforeach
+ 
++if enable_consolekit
++  sources += files('gsm-consolekit.c')
++endif
++
+ cflags = [
+   '-DLOCALE_DIR="@0@"'.format(session_localedir),
+   '-DDATA_DIR="@0@"'.format(session_pkgdatadir),
