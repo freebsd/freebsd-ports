@@ -1,0 +1,29 @@
+Revert:
+From da3ae7f0e68d8fab424a260e8f8300a217ccf0ee Mon Sep 17 00:00:00 2001
+From: Kamil Szczęk <kamil@szczek.dev>
+Date: Mon, 30 Sep 2024 11:24:32 +0200
+Subject: [PATCH] udev: Use current tags when looking for preferred primary
+ devices
+
+--- meson.build.orig	2024-11-25 14:05:12 UTC
++++ meson.build
+@@ -42,7 +42,7 @@ udev_req = '>= 228'
+ 
+ # optional version requirements
+ udev_req = '>= 228'
+-gudev_req = '>= 238'
++gudev_req = '>= 232'
+ 
+ # wayland version requirements
+ wayland_server_req = '>= 1.22'
+--- src/backends/native/meta-udev.c.orig	2024-11-25 14:05:12 UTC
++++ src/backends/native/meta-udev.c
+@@ -125,7 +125,7 @@ meta_is_udev_device_preferred_primary (GUdevDevice *de
+ {
+   const char * const *tags;
+ 
+-  tags = g_udev_device_get_current_tags (device);
++  tags = g_udev_device_get_tags (device);
+   if (!tags)
+     return FALSE;
+ 
