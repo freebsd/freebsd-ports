@@ -1,21 +1,5 @@
-Check your environment variable
-
-	OLC_ICD_VENODRDIR
-
-On FreeBSD, this is set to 
-
-	OCL_ICD_VENDORDIR=/usr/local/etc/OpenCL/vendors
-
-The OCL_ICD_VENDORDIR 
-(ICD = Installable Client Driver) holds the platform
-specific driver configuration files (i.e Intel,
-nVidia, AMD, other OpenCL capable devices).
-
-It could be set globally from your system's shell environemt
-setting, for 
-
-csh in /etc/csh.cshrc:
-	setenv OCL_ICD_VENDORDIR  /usr/local/etc/OpenCL/vendors
-
-or for sh/bash/ksh and derivatives, /etc/profile:
-	export OCL_ICD_VENDORDIR=/usr/local/etc/OpenCL/vendors
+[
+{ type: install
+  message: " Set environment variale, i.e. OCL_ICD_VENDORDIR=/usr/local/etc/OpenCL/vendors"
+}
+]
