@@ -57,7 +57,7 @@ ZIP_DESC=	ZIP archive support
 ZIP_RUN_DEPENDS=	zip:archivers/zip
 
 NAUTILUS_DESC=	Nautilus context menu actions
-NAUTILUS_USE=	GNOME=nautilus3
+NAUTILUS_USE=	GNOME=nautilus4
 NAUTILUS_MESON_ENABLED=	nautilus-actions
 
 post-patch:

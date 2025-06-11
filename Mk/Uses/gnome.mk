@@ -76,11 +76,11 @@ _USE_GNOME_ALL+= atk cairo \
 _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 		gnomemenus3 gsound gtk30 gtkhtml4 gtksourceview3 \
 		gtksourceview4 libgda5 \
-		libgda5-ui libgnomekbd libwnck3 metacity nautilus3 \
+		libgda5-ui libgnomekbd libwnck3 metacity \
 		pygobject3 vte3
 
 # GNOME 40 components
-_USE_GNOME_ALL+=gtk40 libadwaita gtksourceview5 gnomedesktop4
+_USE_GNOME_ALL+=gtk40 libadwaita gtksourceview5 gnomedesktop4 nautilus4
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm glibmm26 gtkmm24 \
@@ -254,8 +254,8 @@ librsvg2_RUN_DEPENDS=	librsvg2>=0:graphics/librsvg2
 .  endif
 librsvg2_USE_GNOME_IMPL=cairo gdkpixbuf
 
-nautilus3_LIB_DEPENDS=	libnautilus-extension.so:x11-fm/nautilus
-nautilus3_USE_GNOME_IMPL=gnomedesktop3 libxml2
+nautilus4_LIB_DEPENDS=	libnautilus-extension.so:x11-fm/nautilus
+nautilus4_USE_GNOME_IMPL=glib20
 
 metacity_LIB_DEPENDS=	libmetacity.so:x11-wm/metacity
 

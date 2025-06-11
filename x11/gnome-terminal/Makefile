@@ -39,7 +39,7 @@ OPTIONS_SUB=		yes
 MESON_ARGS=		-Dsearch_provider=true
 
 NAUTILUS_MESON_TRUE=	nautilus_extension
-NAUTILUS_USE=		GNOME=nautilus3
+NAUTILUS_USE=		GNOME=nautilus4
 NAUTILUS_DESC=		Open in terminal extension for nautilus
 
 post-install:

@@ -22,7 +22,7 @@ RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_dnssd>=0:www/mod_dnssd \
 
 USES=		apache gettext gmake gnome libtool pkgconfig tar:xz xorg
 USE_XORG=	sm
-USE_GNOME=	gnomeprefix gtk30 intlhack nautilus3
+USE_GNOME=	gnomeprefix gtk30 intlhack nautilus4
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-modules-path=${LOCALBASE}/${APACHEMODDIR} \
 		--disable-bluetooth
