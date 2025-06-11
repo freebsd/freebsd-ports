@@ -17,16 +17,15 @@ include/libyelp/yelp-types.h
 include/libyelp/yelp-uri-builder.h
 include/libyelp/yelp-uri.h
 include/libyelp/yelp-view.h
-lib/libyelp.a
 lib/libyelp.so
 lib/libyelp.so.0
 lib/libyelp.so.0.0.0
-lib/yelp/web-extensions/libyelpwebextension.a
 lib/yelp/web-extensions/libyelpwebextension.so
 libexec/yelp-groff
 share/applications/yelp.desktop
 share/icons/hicolor/scalable/apps/org.gnome.Yelp.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Yelp-symbolic.svg
+share/locale/ab/LC_MESSAGES/yelp.mo
 share/locale/af/LC_MESSAGES/yelp.mo
 share/locale/am/LC_MESSAGES/yelp.mo
 share/locale/an/LC_MESSAGES/yelp.mo
