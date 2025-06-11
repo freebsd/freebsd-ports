@@ -1,0 +1,12 @@
+include/speech-provider/speech-provider-common.h
+include/speech-provider/speech-provider-dbus-enums.c
+include/speech-provider/speech-provider-dbus-enums.h
+include/speech-provider/speech-provider-stream-reader.h
+include/speech-provider/speech-provider-stream-writer.h
+include/speech-provider/speech-provider-version.h
+include/speech-provider/speech-provider.h
+lib/girepository-1.0/SpeechProvider-1.0.typelib
+lib/libspeech-provider-1.0.so
+libdata/pkgconfig/speech-provider-1.0.pc
+share/gir-1.0/SpeechProvider-1.0.gir
+share/speech-provider/org.freedesktop.Speech.Provider.xml

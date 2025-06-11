@@ -1,0 +1,4 @@
+The speech provider library is designed to provide some utility for
+creating speech providers. Specifically it offers a stream writer that
+can be used to send audio data interleaved with speech progress events
+(word, sentance, ssml mark, etc.).

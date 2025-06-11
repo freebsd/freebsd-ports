@@ -15,6 +15,7 @@
     SUBDIR += kmousetool
     SUBDIR += kmouth
     SUBDIR += libqaccessibilityclient
+    SUBDIR += libspeechprovider
     SUBDIR += linux-c7-at-spi2-atk
     SUBDIR += linux-c7-at-spi2-core
     SUBDIR += linux-c7-atk
