@@ -1,1 +1,2 @@
-GNOME keyboard shared library
+Keyboard management library. It inspects keyboard layout, configuration and
+state

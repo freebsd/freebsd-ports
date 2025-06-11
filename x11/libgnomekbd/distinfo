@@ -1,3 +1,7 @@
-TIMESTAMP = 1656740174
-SHA256 (gnome/libgnomekbd-3.26.1.tar.xz) = f7ca02631576e9b88aee1b1bae37ac1488b80ee7975f20a97f29e761a7172679
-SIZE (gnome/libgnomekbd-3.26.1.tar.xz) = 450636
+TIMESTAMP = 1732382501
+SHA256 (gnome/libgnomekbd-3.28.1.tar.xz) = 22dc59566d73c0065350f5a97340e62ecc7b08c4df19183804bb8be24c8fe870
+SIZE (gnome/libgnomekbd-3.28.1.tar.xz) = 154800
+SHA256 (gnome/2ed57e84.patch) = 98c1dc777abda15d46cad1f3a9ca7496211a0bf2a3db20c2f80110947242d800
+SIZE (gnome/2ed57e84.patch) = 2074
+SHA256 (gnome/7887700a.patch) = 6c7081b45746a27403db63264a2eed64c4ccc2c2d9053924dab294e57910bd90
+SIZE (gnome/7887700a.patch) = 103415

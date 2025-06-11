@@ -8,11 +8,9 @@ include/libgnomekbd/gkbd-keyboard-drawing.h
 include/libgnomekbd/gkbd-status.h
 include/libgnomekbd/gkbd-util.h
 lib/girepository-1.0/Gkbd-3.0.typelib
-lib/libgnomekbd.a
 lib/libgnomekbd.so
 lib/libgnomekbd.so.8
 lib/libgnomekbd.so.8.0.0
-lib/libgnomekbdui.a
 lib/libgnomekbdui.so
 lib/libgnomekbdui.so.8
 lib/libgnomekbdui.so.8.0.0
@@ -21,6 +19,8 @@ libdata/pkgconfig/libgnomekbdui.pc
 share/GConf/gsettings/libgnomekbd.convert
 share/applications/gkbd-keyboard-display.desktop
 share/gir-1.0/Gkbd-3.0.gir
+share/icons/hicolor/scalable/apps/org.gnome.KeyboardLayout.svg
+share/icons/hicolor/symbolic/apps/org.gnome.KeyboardLayout-symbolic.svg
 %%DATADIR%%/icons/kbdled-caps-lock.svg
 %%DATADIR%%/icons/kbdled-num-lock.svg
 %%DATADIR%%/icons/kbdled-scroll-lock.svg
@@ -56,6 +56,7 @@ share/locale/gl/LC_MESSAGES/libgnomekbd.mo
 share/locale/gu/LC_MESSAGES/libgnomekbd.mo
 share/locale/he/LC_MESSAGES/libgnomekbd.mo
 share/locale/hi/LC_MESSAGES/libgnomekbd.mo
+share/locale/hr/LC_MESSAGES/libgnomekbd.mo
 share/locale/hu/LC_MESSAGES/libgnomekbd.mo
 share/locale/id/LC_MESSAGES/libgnomekbd.mo
 share/locale/it/LC_MESSAGES/libgnomekbd.mo
