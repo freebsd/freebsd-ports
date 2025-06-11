@@ -1,37 +1,31 @@
 PORTNAME=	gedit-plugins
-PORTVERSION=	43.1
-PORTREVISION=	6
+PORTVERSION=	48.1
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Plugins for GEdit
-WWW=		https://wiki.gnome.org/Apps/Gedit/PluginsLists
+COMMENT=	Plugins for gedit
+WWW=		https://gitlab.gnome.org/World/gedit/gedit-plugins
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gedit>=0:editors/gedit \
-		itstool:textproc/itstool \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR}
-LIB_DEPENDS=	libpeas-1.0.so:devel/libpeas \
-		libgit2-glib-1.0.so:devel/libgit2-glib \
-		libgucharmap_2_90.so:deskutils/gucharmap
-RUN_DEPENDS=	gedit>=0:editors/gedit \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR}
-
-PORTSCOUT=	limitw:1,even
+BUILD_DEPENDS=	gedit>=48.1:editors/gedit \
+		itstool:textproc/itstool
+LIB_DEPENDS=	libpeas-1.0.so:devel/libpeas1 \
+		libgucharmap_2_90.so:deskutils/gucharmap \
+		libgedit-tepl-6.so:x11-toolkits/tepl6 \
+		libgedit-gtksourceview-300.so:x11-toolkits/libgedit-gtksourceview
+RUN_DEPENDS=	gedit>=48.1:editors/gedit \
+		${PYTHON_PKGNAMEPREFIX}libpeas1>0:devel/py-libpeas1@${PY_FLAVOR}
 
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
-		python shebangfix tar:xz vala:build
-USE_GNOME=	cairo gdkpixbuf gtk30 gtksourceview4 intlhack introspection \
+		python tar:xz
+USE_GNOME=	glib20 gtk30 introspection pygobject3 \
 		vte3
 USE_CSTD=	c11
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
-SHEBANG_FILES=	plugins/synctex/synctex/evince_dbus.py
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 GLIB_SCHEMAS=	org.gnome.gedit.plugins.drawspaces.gschema.xml \

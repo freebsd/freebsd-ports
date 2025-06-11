@@ -1,0 +1,11 @@
+--- gedit/meson.build.orig	2024-12-07 15:39:41 UTC
++++ gedit/meson.build
+@@ -200,8 +200,6 @@ gnome.generate_gir(
+   includes: ['Gtk-3.0', 'GtkSource-300', 'Tepl-6'],
+   link_with: libgedit_shared_lib,
+   install: true,
+-  install_dir_gir: get_option('datadir') / 'gedit/gir-1.0',
+-  install_dir_typelib: get_option('libdir') / 'gedit/girepository-1.0',
+ )
+ 
+ python3.install_sources(
