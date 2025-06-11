@@ -4,6 +4,8 @@ share/dbus-1/services/org.gnome.Console.service
 share/icons/hicolor/scalable/apps/org.gnome.Console.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Console-symbolic.svg
 share/locale/ab/LC_MESSAGES/kgx.mo
+share/locale/ar/LC_MESSAGES/kgx.mo
+share/locale/be/LC_MESSAGES/kgx.mo
 share/locale/bg/LC_MESSAGES/kgx.mo
 share/locale/ca/LC_MESSAGES/kgx.mo
 share/locale/cs/LC_MESSAGES/kgx.mo
@@ -11,6 +13,7 @@ share/locale/da/LC_MESSAGES/kgx.mo
 share/locale/de/LC_MESSAGES/kgx.mo
 share/locale/el/LC_MESSAGES/kgx.mo
 share/locale/en_GB/LC_MESSAGES/kgx.mo
+share/locale/eo/LC_MESSAGES/kgx.mo
 share/locale/es/LC_MESSAGES/kgx.mo
 share/locale/eu/LC_MESSAGES/kgx.mo
 share/locale/fa/LC_MESSAGES/kgx.mo
@@ -19,12 +22,15 @@ share/locale/fr/LC_MESSAGES/kgx.mo
 share/locale/fur/LC_MESSAGES/kgx.mo
 share/locale/gl/LC_MESSAGES/kgx.mo
 share/locale/he/LC_MESSAGES/kgx.mo
+share/locale/hi/LC_MESSAGES/kgx.mo
 share/locale/hr/LC_MESSAGES/kgx.mo
 share/locale/hu/LC_MESSAGES/kgx.mo
 share/locale/id/LC_MESSAGES/kgx.mo
+share/locale/ie/LC_MESSAGES/kgx.mo
 share/locale/it/LC_MESSAGES/kgx.mo
 share/locale/ja/LC_MESSAGES/kgx.mo
 share/locale/ka/LC_MESSAGES/kgx.mo
+share/locale/kab/LC_MESSAGES/kgx.mo
 share/locale/kk/LC_MESSAGES/kgx.mo
 share/locale/ko/LC_MESSAGES/kgx.mo
 share/locale/lt/LC_MESSAGES/kgx.mo
@@ -42,7 +48,9 @@ share/locale/ru/LC_MESSAGES/kgx.mo
 share/locale/sk/LC_MESSAGES/kgx.mo
 share/locale/sl/LC_MESSAGES/kgx.mo
 share/locale/sr/LC_MESSAGES/kgx.mo
+share/locale/sr@latin/LC_MESSAGES/kgx.mo
 share/locale/sv/LC_MESSAGES/kgx.mo
+share/locale/th/LC_MESSAGES/kgx.mo
 share/locale/tr/LC_MESSAGES/kgx.mo
 share/locale/uk/LC_MESSAGES/kgx.mo
 share/locale/vi/LC_MESSAGES/kgx.mo
