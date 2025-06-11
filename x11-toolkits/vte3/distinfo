@@ -1,13 +1,3 @@
-TIMESTAMP = 1736535756
-SHA256 (gnome/vte-0.78.2.tar.xz) = 35d7bcde07356846b4a12881c8e016705b70a9004a9082285eee5834ccc49890
-SIZE (gnome/vte-0.78.2.tar.xz) = 1040104
-SHA256 (gnome/f6095fca4d1b.patch) = 8eeee1a9084e3784258085bc42dcddc525d563fda63e862f8ed31a44c2151f3e
-SIZE (gnome/f6095fca4d1b.patch) = 4029
-SHA256 (gnome/6c2761f51a04.patch) = 1b43e30c3fd5e0b98869f6d3772caa42ff69aae1c87f432e19346f45ee705bea
-SIZE (gnome/6c2761f51a04.patch) = 4853
-SHA256 (gnome/d09330585e64.patch) = 5bafc41523d18f57a0ffec0026c832470b304f6af5c218f6f3b1b2aa33173d8f
-SIZE (gnome/d09330585e64.patch) = 2224
-SHA256 (gnome/b262c4432b80.patch) = bd813359f786ea99d8c063665264ee37b62619e7d00a2da021024543f4c76ae5
-SIZE (gnome/b262c4432b80.patch) = 1122
-SHA256 (gnome/ae2b83c6fc83.patch) = 8ebe34ab8751e2ccf8b56b7b8f2e93308a161a9d5400c6588b8b04d10f1f4f44
-SIZE (gnome/ae2b83c6fc83.patch) = 1612
+TIMESTAMP = 1748616732
+SHA256 (gnome/vte-0.80.2.tar.xz) = b225bebd043633bd491f2ea171374d0f3f9de62dfec07653053bc08c4face46f
+SIZE (gnome/vte-0.80.2.tar.xz) = 585696

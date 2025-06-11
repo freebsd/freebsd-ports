@@ -32,15 +32,14 @@ lib/girepository-1.0/Vte-%%VERSION%%.typelib
 %%GTK4%%lib/libvte-%%VERSION%%-gtk4.so.0
 lib/libvte-%%VERSION%%.so
 lib/libvte-%%VERSION%%.so.0
-lib/libvte-%%VERSION%%.so.0.7800.2
+lib/libvte-%%VERSION%%.so.0.8000.2
 %%GTK4%%libdata/pkgconfig/vte-%%VERSION%%-gtk4.pc
 libdata/pkgconfig/vte-%%VERSION%%.pc
 libexec/vte-urlencode-cwd
+share/applications/org.gnome.Vte.App.Gtk3.desktop
+%%GTK4%%share/applications/org.gnome.Vte.App.Gtk4.desktop
 share/gir-1.0/Vte-%%VERSION%%.gir
 %%GTK4%%share/gir-1.0/Vte-%%VER3%%.gir
-share/glade/catalogs/vte-%%VERSION%%.xml
-share/glade/pixmaps/hicolor/16x16/actions/widget-vte-terminal.png
-share/glade/pixmaps/hicolor/22x22/actions/widget-vte-terminal.png
 share/locale/ab/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/am/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/an/LC_MESSAGES/vte-%%VERSION%%.mo
@@ -144,3 +143,5 @@ share/locale/zh_TW/LC_MESSAGES/vte-%%VERSION%%.mo
 %%GTK4%%share/vala/vapi/vte-%%VERSION%%-gtk4.vapi
 share/vala/vapi/vte-%%VERSION%%.deps
 share/vala/vapi/vte-%%VERSION%%.vapi
+share/xdg-terminals/org.gnome.Vte.App.Gtk3.desktop
+%%GTK4%%share/xdg-terminals/org.gnome.Vte.App.Gtk4.desktop
