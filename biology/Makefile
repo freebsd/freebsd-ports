@@ -195,6 +195,7 @@
     SUBDIR += py-py2bit
     SUBDIR += py-pybigwig
     SUBDIR += py-pyfaidx
+    SUBDIR += py-pydeseq2
     SUBDIR += py-pyrodigal
     SUBDIR += py-pysam
     SUBDIR += py-python-libsbml
