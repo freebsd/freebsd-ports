@@ -981,6 +981,7 @@
     SUBDIR += py-fenics-ufl
     SUBDIR += py-flax
     SUBDIR += py-formulaic
+    SUBDIR += py-formulaic-contrasts
     SUBDIR += py-fpylll
     SUBDIR += py-fraction
     SUBDIR += py-fsph
