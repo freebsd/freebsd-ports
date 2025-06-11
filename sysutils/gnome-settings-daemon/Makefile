@@ -1,20 +1,21 @@
 PORTNAME=	gnome-settings-daemon
-PORTVERSION=	42.2
-PORTREVISION=	9
+PORTVERSION=	47.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	03739474621e.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-settings-daemon/-/merge_requests/300
-
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME settings daemon
-WWW=		https://www.gnome.org/
+WWW=		https://gitlab.gnome.org/GNOME/gnome-settings-daemon
 
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2+ LGPL21+
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+=	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL21+=	${WRKSRC}/COPYING.LIB
 
+PORTSCOUT=	limit:^47\.
+
+BUILD_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libcanberra.so:audio/libcanberra \
 		libcolord.so:graphics/colord \
@@ -29,40 +30,40 @@ LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libnss3.so:security/nss \
 		libpolkit-gobject-1.so:sysutils/polkit \
 		libpulse.so:audio/pulseaudio \
-		libupower-glib.so:sysutils/upower
+		libupower-glib.so:sysutils/upower \
+		libp11-kit.so:security/p11-kit \
+		libgcr-4.so:security/gcr
 
-PORTSCOUT=	limitw:1,even
-
-USE_XORG=	x11 xext xi xtst
-USE_GNOME=	cairo gnomedesktop3 gtk30
+USE_XORG=	x11 xext xfixes xi xtst
+USE_GNOME=	cairo glib20 gnomedesktop3 gtk30
 USES=		gettext gnome localbase:ldflags meson perl5 pkgconfig \
 		python:build tar:xz xorg
 USE_PERL5=	build
-#		-Dnssdb_dir=${LOCALBASE}/share/certs/ca-root-nss.crt
 MESON_ARGS=	-Dalsa=false \
-		-Dcolord=false \
 		-Dcups=true \
 		-Dnetwork_manager=false \
-		-Dnssdb_dir=${LOCALBASE}/share/certs/ \
 		-Drfkill=false \
 		-Dsmartcard=true \
+		-Dusb-protection=false \
 		-Dsystemd=false \
 		-Dwwan=false
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
-# wayland doesn't build yet, undefined symbol
-MESON_ARGS+=	-Dgudev=false \
-		-Dwayland=false
-#WAYLAND_MESON_TRUE=	wayland gudev
-#WAYLAND_LIB_DEPENDS=	libgudev-1.0.so:devel/libgudev \
-#			libwayland-client.so:graphics/wayland
+OPTIONS_DEFINE=	WAYLAND
+OPTIONS_DEFAULT=	WAYLAND
+OPTIONS_SUB=	yes
+
+WAYLAND_MESON_TRUE=	wayland gudev
+WAYLAND_LIB_DEPENDS=	libgudev-1.0.so:devel/libgudev \
+			libwayland-client.so:graphics/wayland
+
+PLIST_SUB=	VERSION=${PORTVERSION:C/^([0-9]+)\..*/\1/}
 
 GLIB_SCHEMAS=	org.gnome.settings-daemon.enums.xml \
 		org.gnome.settings-daemon.peripherals.gschema.xml \
 		org.gnome.settings-daemon.peripherals.wacom.gschema.xml \
 		org.gnome.settings-daemon.plugins.color.gschema.xml \
 		org.gnome.settings-daemon.plugins.gschema.xml \
-		org.gnome.settings-daemon.plugins.housekeeping.gschema.xml \
 		org.gnome.settings-daemon.plugins.media-keys.gschema.xml \
 		org.gnome.settings-daemon.plugins.power.gschema.xml \
 		org.gnome.settings-daemon.plugins.power.gschema.xml.override \

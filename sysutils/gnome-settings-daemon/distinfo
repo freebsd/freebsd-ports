@@ -1,5 +1,3 @@
-TIMESTAMP = 1654141293
-SHA256 (gnome/gnome-settings-daemon-42.2.tar.xz) = 9c449714aa8ec1271c0db5137df3458195943f05ccd0ac8935d93397770bab00
-SIZE (gnome/gnome-settings-daemon-42.2.tar.xz) = 1483864
-SHA256 (gnome/03739474621e.patch) = 885f142e092363362b5716eb6f3d9690db938a31f95ff38f17828649c4271280
-SIZE (gnome/03739474621e.patch) = 1270
+TIMESTAMP = 1743436584
+SHA256 (gnome/gnome-settings-daemon-47.2.tar.xz) = 1eb758862e888f55a0869193087f1cfbcc7a1163654e630099ff4342dd3f6a5a
+SIZE (gnome/gnome-settings-daemon-47.2.tar.xz) = 1480428

@@ -1,0 +1,10 @@
+--- data/meson.build.orig	2022-09-17 21:37:19 UTC
++++ data/meson.build
+@@ -5,7 +5,6 @@ schemas = [
+   'org.gnome.settings-daemon.peripherals.wacom.gschema.xml',
+   'org.gnome.settings-daemon.plugins.gschema.xml',
+   'org.gnome.settings-daemon.plugins.color.gschema.xml',
+-  'org.gnome.settings-daemon.plugins.housekeeping.gschema.xml',
+   'org.gnome.settings-daemon.plugins.media-keys.gschema.xml',
+   'org.gnome.settings-daemon.plugins.power.gschema.xml',
+   'org.gnome.settings-daemon.plugins.sharing.gschema.xml',
