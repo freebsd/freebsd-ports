@@ -490,6 +490,7 @@
     SUBDIR += lgeneral
     SUBDIR += lgogdownloader
     SUBDIR += libgnome-games-support
+    SUBDIR += libgnome-games-support2
     SUBDIR += libkdegames
     SUBDIR += libkmahjongg
     SUBDIR += liblcf
