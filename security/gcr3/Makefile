@@ -1,42 +1,36 @@
 PORTNAME=	gcr
-PORTVERSION=	3.40.0
-PORTREVISION=	3
+PORTVERSION=	3.41.2
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome
 PKGNAMESUFFIX=	3
 
-LICENSE=	LGPL20+
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	b3ca1d02bb01.patch:-p1 # https://gitlab.gnome.org/GNOME/gcr/-/merge_requests/81
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for bits of crypto UI and parsing
-WWW=		https://live.gnome.org/GnomeKeyring
+WWW=		https://gitlab.gnome.org/GNOME/gcr
 
 BUILD_DEPENDS=	gpg2:security/gnupg
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-		libgpg-error.so:security/libgpg-error \
 		libp11-kit.so:security/p11-kit \
-		libgcrypt.so:security/libgcrypt
+		libgcrypt.so:security/libgcrypt \
+		libsecret-1.so:security/libsecret
+RUN_DEPENDS=	gpg2:security/gnupg
 
-CONFLICTS=	gnome-keyring-2.[0-9]*
 PORTSCOUT=	limitw:1,even
 
-USE_GNOME=	cairo gtk30 intlhack introspection:build
-USES=		desktop-file-utils gettext gmake gnome meson pathfix \
-		pkgconfig python shared-mime-info tar:xz vala:build
+USES=		desktop-file-utils gettext gnome meson pkgconfig python \
+		shared-mime-info tar:xz vala:build
+USE_GNOME=	cairo glib20 gdkpixbuf gtk30 introspection:build
+MESON_ARGS=	-Dsystemd=disabled \
+		-Dgtk_doc=false
+# Avoid conflicts with security/gcr -> /usr/local/libexec/gcr-ssh-agent
+MESON_ARGS+=	-Dssh_agent=false
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
-INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.crypto.pgp.gschema.xml
-
-OPTIONS_DEFINE=	DOCS
-
-DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
-DOCS_MESON_TRUE=	gtk_doc
-DOCSDIR=		${PREFIX}/share/gtk-doc/html/
 
 .include <bsd.port.mk>
