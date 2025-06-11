@@ -85,7 +85,7 @@ _USE_GNOME_ALL+=gtk40 libadwaita gtksourceview5 gnomedesktop4 nautilus4
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm cairomm11 gconfmm26 glibmm glibmm26 gtkmm24 \
 		gtkmm30 gtksourceviewmm3 libgdamm5 libxml++26 libsigc++20 \
-		libsigc++30 pangomm
+		libsigc++30 pangomm pangomm24
 
 # glib-mkenums often fails with C locale
 # https://gitlab.gnome.org/GNOME/glib/issues/1430
@@ -148,6 +148,9 @@ libsigc++30_LIB_DEPENDS=	libsigc-3.0.so:devel/libsigc++30
 
 pangomm_LIB_DEPENDS=	libpangomm-1.4.so:x11-toolkits/pangomm
 pangomm_USE_GNOME_IMPL=	pango glibmm cairomm
+
+pangomm24_LIB_DEPENDS=	libpangomm-2.48.so:x11-toolkits/pangomm24
+pangomm24_USE_GNOME_IMPL=	pango glibmm26 cairomm11
 
 gnomemimedata_BUILD_DEPENDS=${LOCALBASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:misc/gnome-mime-data
 gnomemimedata_RUN_DEPENDS=${LOCALBASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:misc/gnome-mime-data

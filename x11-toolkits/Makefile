@@ -167,6 +167,7 @@
     SUBDIR += pango
     SUBDIR += pangolin
     SUBDIR += pangomm
+    SUBDIR += pangomm24
     SUBDIR += pangox-compat
     SUBDIR += plasma6-kdeplasma-addons
     SUBDIR += plib
