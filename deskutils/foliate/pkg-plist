@@ -1,7 +1,6 @@
 bin/foliate
 share/applications/com.github.johnfactotum.Foliate.desktop
 share/com.github.johnfactotum.Foliate/com.github.johnfactotum.Foliate.gresource
-share/glib-2.0/schemas/com.github.johnfactotum.Foliate.gschema.xml
 share/icons/hicolor/scalable/apps/com.github.johnfactotum.Foliate.svg
 share/icons/hicolor/symbolic/apps/com.github.johnfactotum.Foliate-symbolic.svg
 share/locale/ar/LC_MESSAGES/com.github.johnfactotum.Foliate.mo

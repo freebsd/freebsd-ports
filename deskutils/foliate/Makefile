@@ -11,9 +11,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
 		gjs-console:lang/gjs
-LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita
-RUN_DEPENDS=	libwebkit2gtk-4.1.so:www/webkit2-gtk@60 \
-		gjs-console:lang/gjs
+LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
+		libwebkitgtk-6.0.so:www/webkit2-gtk@60
+RUN_DEPENDS=	gjs-console:lang/gjs
 
 USES=		desktop-file-utils gnome localbase meson pkgconfig python shebangfix
 USE_GNOME=	cairo gtk40 introspection
