@@ -1,24 +1,19 @@
 PORTNAME=	gnome-backgrounds
-PORTVERSION=	43
-PORTREVISION=	1
+PORTVERSION=	47.0
 CATEGORIES=	x11-themes graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of backgrounds for GNOME
+WWW=		https://gitlab.gnome.org/GNOME/gnome-backgrounds
 
-LICENSE=	GPLv2
+LICENSE=	CC-BY-SA-3.0
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	limit:^47\.
 
 NO_ARCH=	yes
-USES=		gettext meson tar:xz
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/cinnamon-background-properties
-	@${FIND} ${STAGEDIR}${PREFIX}/share/gnome-background-properties -type f -name '*.xml' \
-		-exec ${RLN} {} ${STAGEDIR}${PREFIX}/share/cinnamon-background-properties \;
+USES=		gettext-runtime meson tar:xz
 
 .include <bsd.port.mk>
