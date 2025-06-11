@@ -1,17 +1,11 @@
---- data/meson.build.orig	2022-10-18 02:27:08 UTC
+--- data/meson.build.orig	2024-05-25 18:46:09 UTC
 +++ data/meson.build
-@@ -15,14 +15,6 @@ configure_file(
-   install_dir: dbus_service_dir,
+@@ -41,7 +41,7 @@ configure_file(
  )
  
--# systemd unit
--configure_file(
--  input: 'xdg-desktop-portal-gnome.service.in',
--  output: 'xdg-desktop-portal-gnome.service',
--  configuration: libexecdir_conf,
--  install_dir: systemduserunitdir,
--)
--
- # Desktop file
- desktop_in = configure_file(
-   input: 'xdg-desktop-portal-gnome.desktop.in.in',
+ # systemd unit
+-if systemduserunitdir != ''
++if systemduserunitdir != 'no'
+   configure_file(
+     input: 'xdg-desktop-portal-gnome.service.in',
+     output: 'xdg-desktop-portal-gnome.service',
