@@ -1,3 +1,3 @@
-TIMESTAMP = 1566062869
-SHA256 (xorg/app/xman-1.1.5.tar.bz2) = 4e3c2c7497e9734a6d3c8e1b6a364612892bb31e9f33076c9fdae7177ab60978
-SIZE (xorg/app/xman-1.1.5.tar.bz2) = 193676
+TIMESTAMP = 1746587331
+SHA256 (xorg/app/xman-1.2.0.tar.xz) = f18db80bd72a0c27cf38b2a7b75485ee48cd22aab10f2ff58de54d83e268b406
+SIZE (xorg/app/xman-1.2.0.tar.xz) = 177156

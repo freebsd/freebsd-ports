@@ -1,2 +1,5 @@
-This package contains xman, a manual page display program for the X
-Window System.
+The xman program is a graphical manual page browser using the Athena
+Widgets (Xaw) toolkit.
+
+The default size of the initial xman window is small so that you can
+leave it running throughout your entire login session.
