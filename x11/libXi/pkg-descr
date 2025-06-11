@@ -1,1 +1,4 @@
-This package contains the X Input extension library.
+libXi is library for the X Input Extension.
+The purpose of this extension is to support the use of additional input
+devices beyond the pointer and keyboard devices defined by the core X
+protocol.
