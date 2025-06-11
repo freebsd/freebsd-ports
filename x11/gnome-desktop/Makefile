@@ -15,8 +15,7 @@ LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING.LIB
 
 BUILD_DEPENDS=	iso-codes>0:misc/iso-codes \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
-		xkeyboard-config>0:x11/xkeyboard-config \
-		itstool:textproc/itstool
+		xkeyboard-config>0:x11/xkeyboard-config
 LIB_DEPENDS=	libxkbregistry.so:x11/libxkbcommon \
 		libudev.so:devel/libudev-devd \
 		libgudev-1.0.so:devel/libgudev
@@ -35,7 +34,7 @@ MESON_ARGS=	-Dudev=enabled \
 		-Dsystemd=disabled \
 		-Dgtk_doc=false \
 		-Ddebug_tools=false \
-		-Ddesktop_docs=true
+		-Ddesktop_docs=false
 CPE_VENDOR=	gnome
 
 .include <bsd.port.mk>
