@@ -1,6 +1,6 @@
 PORTNAME=	gtranslator
 PORTVERSION=	40.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libdazzle-1.0.so:x11-toolkits/libdazzle \
 		libgspell-1.so:textproc/gspell \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libjson-glib-1.0.so:devel/json-glib \
-		libpeas-1.0.so:devel/libpeas
+		libpeas-1.0.so:devel/libpeas1
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		iso-codes>=0:misc/iso-codes
 

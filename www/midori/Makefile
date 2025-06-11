@@ -1,7 +1,7 @@
 PORTNAME=	midori
 PORTVERSION=	9.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libsoup-2.4.so:devel/libsoup \
 		libp11-kit.so:security/p11-kit \
 		libgcr-base-3.so:security/gcr3 \
-		libpeas-1.0.so:devel/libpeas \
+		libpeas-1.0.so:devel/libpeas1 \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss

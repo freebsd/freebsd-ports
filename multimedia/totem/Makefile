@@ -1,6 +1,6 @@
 PORTNAME=	totem
 PORTVERSION=	43.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -18,14 +18,14 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		itstool:textproc/itstool \
 		grilo-plugins>=0:net/grilo-plugins
 LIB_DEPENDS=	libgdata.so:devel/libgdata \
-		libpeas-1.0.so:devel/libpeas \
+		libpeas-1.0.so:devel/libpeas1 \
 		libjson-glib-1.0.so:devel/json-glib \
 		libgrilo-0.3.so:net/grilo \
 		libtotem-plparser.so:multimedia/totem-pl-parser \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libportal-gtk3.so:deskutils/libportal-gtk3
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
-		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}libpeas1>=0:devel/py-libpeas1@${PY_FLAVOR} \
 		gnome-settings-daemon>=2.91.0:sysutils/gnome-settings-daemon \
 		gnome-icon-theme-symbolic>=2.91.0:x11-themes/gnome-icon-theme-symbolic \
 		grilo-plugins>=0:net/grilo-plugins

@@ -1,7 +1,7 @@
 PORTNAME=	astroid
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	mail
 
 MAINTAINER=	mylan.connolly@gmail.com
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libgmime-3.0.so:mail/gmime30 \
 		libgnutls.so:security/gnutls \
 		libpcre2-8.so:devel/pcre2 \
-		libpeas-1.0.so:devel/libpeas \
+		libpeas-1.0.so:devel/libpeas1 \
 		libprotobuf.so:devel/protobuf \
 		libsass.so:textproc/libsass \
 		libsoup-2.4.so:devel/libsoup

@@ -1,6 +1,6 @@
 PORTNAME=	gnome-todo
 PORTVERSION=	41.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
 LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \
 		libgraphene-1.0.so:graphics/graphene \
 		libical.so:devel/libical \
-		libpeas-1.0.so:devel/libpeas \
+		libpeas-1.0.so:devel/libpeas1 \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup
 

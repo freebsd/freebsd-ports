@@ -1,6 +1,6 @@
 PORTNAME=	rhythmbox
 PORTVERSION=	3.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -63,7 +63,7 @@ NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 PYTHON_MESON_ENABLED=	plugins_python
 PYTHON_USES=		python
 PYTHON_USE=		gnome=pygobject3
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR}
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas1>=0:devel/py-libpeas1@${PY_FLAVOR}
 PYTHON_BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 .include <bsd.port.mk>

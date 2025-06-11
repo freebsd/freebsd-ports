@@ -1409,6 +1409,7 @@
     SUBDIR += libpdel
     SUBDIR += libpeak
     SUBDIR += libpeas
+    SUBDIR += libpeas1
     SUBDIR += libpff
     SUBDIR += libphdi
     SUBDIR += libphonenumber
@@ -5182,6 +5183,7 @@
     SUBDIR += py-libevdev
     SUBDIR += py-libioc
     SUBDIR += py-libpeas
+    SUBDIR += py-libpeas1
     SUBDIR += py-libplist
     SUBDIR += py-libtaxii
     SUBDIR += py-libtmux

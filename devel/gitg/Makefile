@@ -1,6 +1,6 @@
 PORTNAME=	gitg
 PORTVERSION=	41
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libgit2.so:devel/libgit2 \
 		libgit2-glib-1.0.so:devel/libgit2-glib \
 		libjson-glib-1.0.so:devel/json-glib \
-		libpeas-1.0.so:devel/libpeas \
+		libpeas-1.0.so:devel/libpeas1 \
 		libgspell-1.so:textproc/gspell \
 		libdazzle-1.0.so:x11-toolkits/libdazzle \
 		libsecret-1.so:security/libsecret

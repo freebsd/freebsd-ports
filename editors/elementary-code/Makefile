@@ -1,6 +1,6 @@
 PORTNAME=	code
 DISTVERSION=	7.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 PKGNAMEPREFIX=	elementary-
 
@@ -18,8 +18,8 @@ LIB_DEPENDS=	libeditorconfig.so:editors/editorconfig-core-c \
 		libgranite.so:x11-toolkits/granite \
 		libgtkspell3-3.so:textproc/gtkspell3 \
 		libhandy-1.so:x11-toolkits/libhandy \
-		libpeas-1.0.so:devel/libpeas \
-		libpeas-gtk-1.0.so:devel/libpeas \
+		libpeas-1.0.so:devel/libpeas1 \
+		libpeas-gtk-1.0.so:devel/libpeas1 \
 		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS=	droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf \
 		pkcheck:sysutils/polkit

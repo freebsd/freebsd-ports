@@ -1,5 +1,6 @@
 PORTNAME=	xviewer
 PORTVERSION=	3.4.8
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 DIST_SUBDIR=	gnome
 
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	itstool:textproc/itstool \
 		${LOCALBASE}/share/aclocal/yelp.m4:textproc/yelp-tools
 LIB_DEPENDS=	libcinnamon-desktop.so:x11/cinnamon-desktop \
 		libxapp.so:x11/xapp \
-		libpeas-1.0.so:devel/libpeas
+		libpeas-1.0.so:devel/libpeas1
 RUN_DEPENDS=	yelp:x11/yelp
 
 USES=		meson compiler:c++11-lang desktop-file-utils gettext-tools \

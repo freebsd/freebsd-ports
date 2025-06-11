@@ -1,6 +1,6 @@
 PORTNAME=	pragha
 PORTVERSION=	1.3.3
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/pragha-music-player/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -11,7 +11,7 @@ WWW=		https://pragha-music-player.github.io/
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libtag.so:audio/taglib \
-	libpeas-1.0.so:devel/libpeas \
+	libpeas-1.0.so:devel/libpeas1 \
 	libnotify.so:devel/libnotify \
 	libkeybinder-3.0.so:x11/keybinder-gtk3 \
 	libsoup-2.4.so:devel/libsoup \

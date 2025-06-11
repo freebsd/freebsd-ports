@@ -1,0 +1,11 @@
+--- meson.build.orig	2023-03-17 18:48:39 UTC
++++ meson.build
+@@ -107,8 +107,6 @@ introspection_dep = dependency('gobject-introspection-
+ gtk_dep = dependency('gtk+-3.0', version: gtk_req, required: false)
+ 
+ gi_docgen_dep = dependency('gi-docgen', version: '>= 2021.7',
+-                           fallback: ['gi-docgen', 'dummy_dep'],
+-                           native: true,
+                            required: get_option('gtk_doc'))
+ gladeui_dep = dependency('gladeui-2.0', required: false)
+ 

@@ -1,6 +1,6 @@
 PORTNAME=	eog-plugins
 DISTVERSION=	44.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgdata.so:devel/libgdata \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libjson-glib-1.0.so:devel/json-glib \
 		libexif.so:graphics/libexif \
-		libpeas-1.0.so:devel/libpeas \
+		libpeas-1.0.so:devel/libpeas1 \
 		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 		libclutter-1.0.so:graphics/clutter \
 		libcogl.so:graphics/cogl \
@@ -37,7 +37,7 @@ OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
 
 PYTHON_MESON_ENABLE=python
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR}
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas1>=0:devel/py-libpeas1@${PY_FLAVOR}
 PYTHON_USES=		python
 PYTHON_VARS=		GLIB_SCHEMAS+="org.gnome.eog.plugins.export-to-folder.gschema.xml \
 				       org.gnome.eog.plugins.fullscreenbg.gschema.xml \
