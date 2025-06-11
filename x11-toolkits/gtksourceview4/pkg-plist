@@ -226,6 +226,7 @@ share/gir-1.0/GtkSource-4.gir
 %%DATADIR%%-4/styles/solarized-light.xml
 %%DATADIR%%-4/styles/styles.rng
 %%DATADIR%%-4/styles/tango.xml
+share/locale/ab/LC_MESSAGES/gtksourceview-4.mo
 share/locale/ar/LC_MESSAGES/gtksourceview-4.mo
 share/locale/as/LC_MESSAGES/gtksourceview-4.mo
 share/locale/ast/LC_MESSAGES/gtksourceview-4.mo
@@ -265,6 +266,7 @@ share/locale/id/LC_MESSAGES/gtksourceview-4.mo
 share/locale/it/LC_MESSAGES/gtksourceview-4.mo
 share/locale/is/LC_MESSAGES/gtksourceview-4.mo
 share/locale/ja/LC_MESSAGES/gtksourceview-4.mo
+share/locale/ka/LC_MESSAGES/gtksourceview-4.mo
 share/locale/kk/LC_MESSAGES/gtksourceview-4.mo
 share/locale/kn/LC_MESSAGES/gtksourceview-4.mo
 share/locale/ko/LC_MESSAGES/gtksourceview-4.mo
