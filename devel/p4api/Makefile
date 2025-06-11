@@ -4,7 +4,7 @@ CATEGORIES=	devel
 # Perforce does not version their distfiles when they patch.
 # This does not play well with FreeBSD's conventions.
 MASTER_SITES=	https://ftp.perforce.com/perforce/${P4VERSION}/bin.tools/p4source${EXTRACT_SUFX}?dummy=/ \
-		https://hesiod.org/distfiles/perforce
+		https://hesiod.org/distfiles/perforce/
 DISTNAME=	p4source-${MINOR}
 
 MAINTAINER=	antonfb@hesiod.org
