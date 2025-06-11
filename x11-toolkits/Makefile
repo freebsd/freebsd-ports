@@ -91,6 +91,7 @@
     SUBDIR += libgedit-gtksourceview
     SUBDIR += libhandy
     SUBDIR += libhandy0
+    SUBDIR += libpanel
     SUBDIR += libshumate
     SUBDIR += libspelling
     SUBDIR += libunique3
