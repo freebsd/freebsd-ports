@@ -1,33 +1,33 @@
 PORTNAME=	gnome-robots
-PORTVERSION=	40.0
-PORTREVISION=	3
+DISTVERSION=	41.2
 CATEGORIES=	games gnome
-MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Gnome robots
-WWW=		https://wiki.gnome.org/Apps/Robots
+COMMENT=	GNOME robots
+WWW=		https://gitlab.gnome.org/GNOME/gnome-robots
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv3+
 
-BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
-		itstool:textproc/itstool
-LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
-		libcanberra.so:audio/libcanberra \
-		libgee-0.8.so:devel/libgee \
-		libgnome-games-support-1.so:games/libgnome-games-support
+BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
 
-PORTSCOUT=	limitw:1,even
+USES=		cargo desktop-file-utils gettext gnome meson pkgconfig tar:bz2
+USE_GNOME=	glib20 gtk40 libadwaita librsvg2 libxml2
 
-USES=		gettext gmake gnome localbase meson pathfix pkgconfig tar:xz \
-		vala:build xorg
-USE_GNOME=	cairo gsound gtk30 intlhack librsvg2 libxml2:build
-USE_XORG=	x11
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.gnome.org
+GL_ACCOUNT=	GNOME
+
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+CARGO_TEST=	no
+
+MAKE_ENV=	${CARGO_ENV}
 
 GLIB_SCHEMAS=	org.gnome.Robots.gschema.xml
 
-LDFLAGS+=	-lm
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gnome-robots
 
 .include <bsd.port.mk>
