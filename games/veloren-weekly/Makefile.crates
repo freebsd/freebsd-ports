@@ -526,7 +526,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		ppv-lite86-0.2.21 \
 		presser-0.3.1 \
 		proc-macro-crate-1.3.1 \
-		proc-macro-crate-3.3.0 \
 		proc-macro-hack-0.5.20+deprecated \
 		proc-macro-nested-0.1.7 \
 		proc-macro2-0.4.30 \
@@ -925,11 +924,11 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		zune-core-0.4.12 \
 		zune-jpeg-0.4.14 \
 		keyboard-keynames@git+https://gitlab.com/Imbris/keyboard-keynames.git?tag=veloren-winit-0.28\#fca4bbdfa51bf054b155a455935b3792975c989d \
-		kira@git+https://github.com/DaforLynx/kira.git?tag=v0.10.6-with-config\#f1516a8d9599834787adae8bebf78e975d1b73e5 \
 		specs,specs-derive@git+https://github.com/amethyst/specs.git?rev=4e2da1df29ee840baa9b936593c45592b7c9ae27\#4e2da1df29ee840baa9b936593c45592b7c9ae27 \
 		egui_wgpu_backend@git+https://github.com/hasenbanck/egui_wgpu_backend.git?rev=34691d4e9149deb9cd0bb8cbb5a56bffebf47588\#34691d4e9149deb9cd0bb8cbb5a56bffebf47588 \
 		auth-common,authc@git+https://gitlab.com/veloren/auth.git?rev=ae0e16783a9f9041951296885f082308e155db79\#ae0e16783a9f9041951296885f082308e155db79 \
 		iced_core,iced_futures,iced_graphics,iced_native,iced_style,iced_winit@git+https://github.com/Imberflur/iced?tag=veloren-winit-0.28\#47243c257c8b8dd6c506b060804cb00b618aa0aa \
 		naga,wgpu,wgpu-core,wgpu-hal,wgpu-types@git+https://github.com/Imberflur/wgpu.git?tag=0.18-with-fixes-for-veloren-v2\#b35d2bbb407eef00beb41f04688f1741f23d3f05 \
 		portpicker@git+https://github.com/xMAC94x/portpicker-rs?rev=df6b37872f3586ac3b21d08b56c8ec7cd92fb172\#df6b37872f3586ac3b21d08b56c8ec7cd92fb172 \
-		conrod_core,conrod_derive,conrod_winit@git+https://gitlab.com/veloren/conrod.git?branch=copypasta_0.7\#c74446362371dc837b8b4b6d6ddcd7693b48d9b6
+		conrod_core,conrod_derive,conrod_winit@git+https://gitlab.com/veloren/conrod.git?branch=copypasta_0.7\#c74446362371dc837b8b4b6d6ddcd7693b48d9b6 \
+		kira@git+https://github.com/DaforLynx/kira.git?tag=v0.10.7-with-config\#83dda1845bbf17cc9066fafc98ec47cd843d3ba2
