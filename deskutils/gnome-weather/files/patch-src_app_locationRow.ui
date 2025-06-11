@@ -1,0 +1,11 @@
+--- src/app/locationRow.ui.orig	2024-03-21 20:24:24 UTC
++++ src/app/locationRow.ui
+@@ -37,7 +37,7 @@
+         <child>
+           <object class="GtkImage" id="currentIcon">
+             <property name="visible">false</property>
+-            <property name="icon-name">emblem-ok-symbolic</property>
++            <property name="icon-name">object-select-symbolic</property>
+           </object>
+         </child>
+       </object>
