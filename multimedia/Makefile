@@ -344,6 +344,7 @@
     SUBDIR += scte35dump
     SUBDIR += shotcut
     SUBDIR += shotcut-qt6
+    SUBDIR += showtime
     SUBDIR += simplescreenrecorder
     SUBDIR += smpeg
     SUBDIR += smpeg2

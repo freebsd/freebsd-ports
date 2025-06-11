@@ -1,0 +1,11 @@
+--- showtime/showtime.in.orig	2025-05-03 15:21:59 UTC
++++ showtime/showtime.in
+@@ -17,7 +17,7 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
+ sys.path.insert(1, pkgdatadir)
+ signal.signal(signal.SIGINT, signal.SIG_DFL)
+ 
+-if system() == "Linux":
++if system() == "Linux" or system() == 'FreeBSD':
+     locale.bindtextdomain("showtime", localedir)
+     locale.textdomain("showtime")
+     gettext.install("showtime", localedir)
