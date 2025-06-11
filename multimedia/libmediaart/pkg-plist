@@ -6,7 +6,7 @@ include/libmediaart-2.0/libmediaart/mediaart.h
 lib/girepository-1.0/MediaArt-2.0.typelib
 lib/libmediaart-2.0.so
 lib/libmediaart-2.0.so.0
-lib/libmediaart-2.0.so.0.906.0
+lib/libmediaart-2.0.so.0.907.0
 libdata/pkgconfig/libmediaart-2.0.pc
 share/gir-1.0/MediaArt-2.0.gir
 share/vala/vapi/libmediaart-2.0.deps
