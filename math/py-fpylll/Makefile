@@ -1,7 +1,7 @@
 PORTNAME=	fpylll
-PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTVERSION=	0.6.4
 CATEGORIES=	math python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -26,8 +26,8 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}
 TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	fplll
+#USE_GITHUB=	yes
+#GH_ACCOUNT=	fplll
 
 USES=		compiler:c++11-lang python
 USE_PYTHON=	cython3 distutils
