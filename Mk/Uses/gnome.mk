@@ -76,7 +76,7 @@ _USE_GNOME_ALL+= atk cairo \
 _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 		gnomemenus3 gsound gtk30 gtkhtml4 gtksourceview3 \
 		gtksourceview4 libgda5 \
-		libgda5-ui libgnomekbd libwnck3 metacity \
+		libgda5-ui libgda6 libgnomekbd libwnck3 metacity \
 		pygobject3 vte3
 
 # GNOME 40 components
@@ -277,6 +277,9 @@ libgda5_USE_GNOME_IMPL=	glib20 libxslt
 
 libgda5-ui_LIB_DEPENDS=	libgda-ui-5.0.so:databases/libgda5-ui
 libgda5-ui_USE_GNOME_IMPL=glib20 libxslt libgda5
+
+libgda6_LIB_DEPENDS=	libgda-6.0.so:databases/libgda6
+libgda6_USE_GNOME_IMPL=	glib20 libxml2
 
 gtksourceview2_LIB_DEPENDS=	libgtksourceview-2.0.so:x11-toolkits/gtksourceview2
 gtksourceview2_USE_GNOME_IMPL=gtk20 libxml2

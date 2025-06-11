@@ -132,6 +132,7 @@
     SUBDIR += libgda5-mysql
     SUBDIR += libgda5-postgresql
     SUBDIR += libgda5-ui
+    SUBDIR += libgda6
     SUBDIR += libgdamm5
     SUBDIR += libhsclient
     SUBDIR += libiodbc
