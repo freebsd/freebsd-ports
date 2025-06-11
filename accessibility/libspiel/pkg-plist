@@ -1,0 +1,16 @@
+bin/spiel
+include/spiel/spiel-dbus-enums.c
+include/spiel/spiel-dbus-enums.h
+include/spiel/spiel-provider.h
+include/spiel/spiel-speaker.h
+include/spiel/spiel-utterance.h
+include/spiel/spiel-version.h
+include/spiel/spiel-voice.h
+include/spiel/spiel-voices-list-model.h
+include/spiel/spiel.h
+lib/girepository-1.0/Spiel-1.0.typelib
+lib/libspiel-1.0.so
+lib/libspiel-1.0.so.1
+lib/libspiel-1.0.so.1.0.4
+libdata/pkgconfig/spiel-1.0.pc
+share/gir-1.0/Spiel-1.0.gir
