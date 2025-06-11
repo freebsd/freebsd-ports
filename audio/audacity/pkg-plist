@@ -389,6 +389,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/48/waveform_colorway_3_1_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/49/export_wav_3_4_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/49/extra_devicemenu.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/4/49/front_page_3_7_3_78_numbered.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/49/glitch_repair_after.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/49/spectrogramview_11.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/4/49/uca202tolaptop.jpg
@@ -450,6 +451,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/57/status_bar_disc_space_remaining.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/58/multi_view_stereo_default_50_50.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/58/splitting_and_joining_stereo_tracks_04.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/5/59/horizontal_scrollbar.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/59/spectraledit_01.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/59/toolstoolbarmulti.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/5a/regular_interval_labels_3_5_0.png
@@ -554,7 +556,6 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/7/74/editmenuclipboundaries_split_01.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/7/74/label_menu_delete_highlighted.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/7/74/mono_track_for_add_new.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/7/75/manage_plugins_dialog_3_5_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/7/75/sltg_edits_15.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/7/75/sltg_stretching_2.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/7/76/audio_stereo_1_8_small.jpg
@@ -720,6 +721,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a3/low_pass_filter_3_5_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a3/splitting_and_joining_stereo_tracks_02.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a4/compressor_parameters_smoothing_waveform_attack_1ms_%%CMAKE_BUILD_TYPE%%_10ms.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a4/effect_menu_3_7_4.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a5/message.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a5/move_cursor_to_selection_end_post.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a5/render_clip_speed.png
@@ -752,6 +754,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/ac/tutorial3labelsinplace.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/ad/compressor_parameters_smoothing_spectrum_lookahead.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/ad/ex2b_before.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/a/ad/manage_plugins_dialog_3_7_4.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/ad/samsongtrackconnections.jpg
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/ad/smartclip_03.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/ad/timeshift.png
@@ -884,7 +887,6 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/c/cb/wahwah_3_5_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/c/cc/labelregionmove1after_w10.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/c/cc/playback_meter_in_use_clipped_signal.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/c/cd/front_page_3_6_0_78_numbered.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/c/cd/importrawdata.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/c/cd/preferences_shortcuts.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/c/cd/toolstoolbarsamples.png
@@ -916,6 +918,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/d/d4/pro_fade_out.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/d/d4/status_bar_disk_space_remaining_for_recording_3_6_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/d/d5/extra_transportmenu.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/d/d5/get_effects_dialog_3_7_3.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/d/d5/loop_button.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/d/d5/savepresetmacdialog.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/d/d6/ex2c_before.png
@@ -959,11 +962,13 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e1/edit_labeled_audio_3_7_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e1/exportmultipleexample02.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e1/sltg_edits_11.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e2/vertical_scrollbar.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e2/waveform_digital.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e3/earbud_by_mic.jpg
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e3/ex1b_before.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e3/exponential_fade_in.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e3/select_region_menu_3_2_3.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e3/sharing_effects_toolbar_3_7_3.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e3/spectraleditnotch02.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e3/warning_save_empty_project.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/e4/clip_pitch_and_speed.png
@@ -1001,7 +1006,6 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/ef/appended_recording_in_beats_and_bars_mode.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/ef/clicky_example_waveform_view_click_labelled_and_zoomed_red_arrows.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/ef/connect_dots_stem_plot_examples.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/e/ef/effect_menu_3_6_2.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/ef/error_for_locked_configuration_files.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/ef/spectrogramview_05a.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/ef/spectrogramview_07.png
@@ -1353,6 +1357,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/man/saving.html
 %%MANUAL%%%%DATADIR%%/help/manual/man/scripting.html
 %%MANUAL%%%%DATADIR%%/help/manual/man/scripting_reference.html
+%%MANUAL%%%%DATADIR%%/help/manual/man/scrollbars.html
 %%MANUAL%%%%DATADIR%%/help/manual/man/scrubbing_and_seeking.html
 %%MANUAL%%%%DATADIR%%/help/manual/man/searching_the_manual.html
 %%MANUAL%%%%DATADIR%%/help/manual/man/select_menu.html

@@ -1,5 +1,5 @@
-TIMESTAMP = 1741926513
-SHA256 (audacity-manual-3.7.3.tar.gz) = 81c3f161cf025104994b79186dd5e985807b6212e0b27b40d03fe4eee3f2cf95
-SIZE (audacity-manual-3.7.3.tar.gz) = 26209190
-SHA256 (audacity-audacity-Audacity-3.7.3_GH0.tar.gz) = f5bfef1db18fab2c6a729da68f66779decc8cb0e2cc16111cd160b5e9f93577a
-SIZE (audacity-audacity-Audacity-3.7.3_GH0.tar.gz) = 61936865
+TIMESTAMP = 1749633114
+SHA256 (audacity-manual-3.7.4.tar.gz) = 7dabdf89b9050d67e850cde5c8aa94858151b344e0953747c6bc1697c4dec504
+SIZE (audacity-manual-3.7.4.tar.gz) = 26569277
+SHA256 (audacity-audacity-Audacity-3.7.4_GH0.tar.gz) = 76d0867bb852bbaa3dff834804b0abf8208a763461187f0ae2a0d5a3ddf31df7
+SIZE (audacity-audacity-Audacity-3.7.4_GH0.tar.gz) = 64004401
