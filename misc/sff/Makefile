@@ -1,5 +1,6 @@
 PORTNAME=	sff
 DISTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	https://codeberg.org/sylphenix/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -10,12 +11,12 @@ WWW=		https://codeberg.org/sylphenix/sff
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		ncurses:port pkgconfig localbase:ldflags
+USES=		ncurses
 USE_CSTD=	c11
 
 MAKE_ARGS=	CC="${CC}" \
-		CFLAGS="${CFLAGS} -I${NCURSESINC}" \
-		LDFLAGS="`pkg-config --libs ncursesw`"
+		CFLAGS="${CFLAGS}" \
+		PREFIX="${PREFIX}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
