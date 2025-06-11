@@ -1,8 +1,8 @@
 PORTNAME=	libspelling
-DISTVERSION=	0.2.1
-PORTREVISION=	1
+DISTVERSION=	0.4.8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Spellcheck library for GTK 4
@@ -11,9 +11,11 @@ WWW=		https://gitlab.gnome.org/GNOME/libspelling
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gnome meson pkgconfig tar:xz vala:build
+USES=		gettext gnome meson pkgconfig tar:xz vala:build
 USE_GNOME=	gtk40 gtksourceview5 introspection:build
 USE_LDCONFIG=	yes
+
+MESON_ARGS=	-Dsysprof=false
 
 OPTIONS_DEFINE=	DOCS ENCHANT
 OPTIONS_DEFAULT=ENCHANT
