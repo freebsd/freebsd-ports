@@ -1,0 +1,11 @@
+--- src/meson.build.orig	2023-09-12 16:17:28 UTC
++++ src/meson.build
+@@ -295,7 +295,7 @@ configure_file(
+   input: gt_name + '-server.service.in',
+   output: gt_name + '-server.service',
+   configuration: server_conf,
+-  install: true,
++  install: false,
+   install_dir: gt_prefix / gt_systemduserdir,
+   install_tag: 'runtime',
+ )
