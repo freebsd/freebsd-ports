@@ -1,0 +1,5 @@
+TIMESTAMP = 1747836303
+SHA256 (go/sysutils_nomad-driver-podman/nomad-driver-podman-v0.6.2/v0.6.2.mod) = df6536358cce84462a94059fa4e06edd5eb56ed1daef337e645d0407eb74bf9e
+SIZE (go/sysutils_nomad-driver-podman/nomad-driver-podman-v0.6.2/v0.6.2.mod) = 8676
+SHA256 (go/sysutils_nomad-driver-podman/nomad-driver-podman-v0.6.2/v0.6.2.zip) = e60c84a8b87ce07fad9882b89f3c13ff0f97bf544345322e8988332ac96bfacf
+SIZE (go/sysutils_nomad-driver-podman/nomad-driver-podman-v0.6.2/v0.6.2.zip) = 153792
