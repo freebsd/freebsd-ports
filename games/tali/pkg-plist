@@ -1,7 +1,4 @@
 bin/tali
-share/man/man6/tali.6.gz
-@preunexec [ -s %D/share/games/gtali.Colors.scores ] || rm -f %D/share/games/gtali.Colors.scores
-@preunexec [ -s %D/share/games/gtali.Regular.scores ] || rm -f %D/share/games/gtali.Regular.scores
 share/applications/org.gnome.Tali.desktop
 share/help/C/tali/figures/mainwindow.png
 share/help/C/tali/figures/preferences.png
@@ -187,6 +184,7 @@ share/locale/xh/LC_MESSAGES/tali.mo
 share/locale/zh_CN/LC_MESSAGES/tali.mo
 share/locale/zh_HK/LC_MESSAGES/tali.mo
 share/locale/zh_TW/LC_MESSAGES/tali.mo
+share/man/man6/tali.6.gz
 share/metainfo/org.gnome.Tali.appdata.xml
 %%DATADIR%%/gnome-dice-1.svg
 %%DATADIR%%/gnome-dice-2.svg
@@ -202,4 +200,3 @@ share/metainfo/org.gnome.Tali.appdata.xml
 %%DATADIR%%/kismet4.svg
 %%DATADIR%%/kismet5.svg
 %%DATADIR%%/kismet6.svg
-@dir share/games
