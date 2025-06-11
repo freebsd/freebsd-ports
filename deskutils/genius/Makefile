@@ -1,6 +1,6 @@
 PORTNAME=	genius
 DISTVERSION=	1.0.27
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME \
 		http://ftp.5z.com/pub/genius/
@@ -12,8 +12,7 @@ WWW=		https://www.jirka.org/genius.html
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libamtk-5.so:x11-toolkits/amtk \
-		libfontconfig.so:x11-fonts/fontconfig \
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgmp.so:math/gmp \
 		libharfbuzz.so:print/harfbuzz \
