@@ -1,10 +1,19 @@
---- panels/meson.build.orig	2022-03-23 04:36:28 UTC
+--- panels/meson.build.orig	2025-04-14 07:07:35 UTC
 +++ panels/meson.build
-@@ -28,7 +28,6 @@ panels = [
+@@ -14,15 +14,13 @@ panels = [
+   'printers',
+   'privacy',
+   'search',
+-  'sharing',
+   'sound',
+   'system',
    'universal-access',
-   'usage',
-   'user-accounts',
 - 'wwan',
  ]
  
  if host_is_linux
+-  panels += ['network']
++  panels += ['network', 'sharing', 'wwan']
+ endif
+ 
+ if host_is_linux_not_s390

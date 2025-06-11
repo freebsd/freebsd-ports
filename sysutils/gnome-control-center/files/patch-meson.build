@@ -1,0 +1,12 @@
+--- meson.build.orig	2025-02-04 21:56:28 UTC
++++ meson.build
+@@ -297,6 +297,9 @@ config_h.set('HAVE_WWAN', host_is_linux,
+              description: 'Define to 1 to build the WWan panel')
+ config_h.set('HAVE_WWAN', host_is_linux,
+              description: 'Define to 1 if WWan is available')
++config_h.set('BUILD_SHARING', host_is_linux,
++             description: 'Define to 1 to build the Sharing panel')
++
+ 
+ if host_is_linux_not_s390
+   # gnome-bluetooth

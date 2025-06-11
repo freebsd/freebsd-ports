@@ -1,8 +1,5 @@
-Fix for Heimdal (versus MIT).
-
-Index: panels/user-accounts/cc-realm-manager.c
---- panels/user-accounts/cc-realm-manager.c.orig
-+++ panels/user-accounts/cc-realm-manager.c
+--- panels/system/users/cc-realm-manager.c.orig	2025-02-04 21:56:28 UTC
++++ panels/system/users/cc-realm-manager.c
 @@ -22,7 +22,7 @@
  
  #include "cc-realm-manager.h"
@@ -12,7 +9,7 @@ Index: panels/user-accounts/cc-realm-manager.c
  
  #include <glib.h>
  #include <glib/gi18n.h>
-@@ -637,8 +637,10 @@ login_perform_kinit (krb5_context k5,
+@@ -646,8 +646,10 @@ login_perform_kinit (krb5_context k5,
          code = krb5_get_init_creds_opt_alloc (k5, &opts);
          g_return_val_if_fail (code == 0, code);
  
