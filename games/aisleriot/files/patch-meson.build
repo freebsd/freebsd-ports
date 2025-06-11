@@ -1,0 +1,31 @@
+--- meson.build.orig	2023-09-17 17:11:49 UTC
++++ meson.build
+@@ -263,11 +263,7 @@ endforeach
+ 
+ # Distribution
+ 
+-distro = run_command(
+-  'bash',
+-  '-c',
+-  'source /etc/os-release && echo $ID || echo unknown; exit 0'
+-).stdout().strip()
++distro = host_machine.system().to_lower()
+ 
+ # Options
+ 
+@@ -280,6 +276,7 @@ theme_kde_base_paths = {
+   'ubuntu':   '/usr/share/kde4/apps/carddecks',
+ }
+ 
++# games/pysolfc-cardsets
+ theme_pysol_base_paths = {
+   'centos':   '/usr/share/PySolFC',
+   'debian':   '/usr/share/games/pysol',
+@@ -287,6 +284,7 @@ theme_pysol_base_paths = {
+   'opensuse': '/usr/share/games/pysol/data',
+   'rhel':     '/usr/share/PySolFC',
+   'ubuntu':   '/usr/share/games/pysol',
++  'freebsd':  '/usr/local/share/PySolFC',
+ }
+ 
+ theme_kde_path = get_option('theme_kde_path')
