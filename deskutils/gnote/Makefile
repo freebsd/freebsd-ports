@@ -1,44 +1,30 @@
 PORTNAME=	gnote
-PORTVERSION=	42.1
-PORTREVISION=	2
+PORTVERSION=	47.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ version of Tomboy, note taking application
-WWW=		https://wiki.gnome.org/Apps/Gnote
+WWW=		https://gitlab.gnome.org/GNOME/gnote
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libenchant.so:textproc/enchant \
-		libgtkspell3-3.so:textproc/gtkspell3 \
-		libsecret-1.so:security/libsecret \
+LIB_DEPENDS=	libsecret-1.so:security/libsecret \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	limit:^47\.
 
-USE_GNOME=	gtkmm30 intltool libxml2 libxslt
-USE_XORG=	x11
-USES=		compiler:c++11-lib desktop-file-utils gettext gnome localbase \
-		meson pathfix pkgconfig python:build tar:xz xorg
+USES=		compiler:c++17-lang desktop-file-utils gettext gnome localbase \
+		meson pkgconfig python:build tar:xz
+USE_GNOME=	glib20 gtkmm40 libadwaita libxml2 libxslt
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 GLIB_SCHEMAS=	org.gnome.gnote.gschema.xml
 
-DOCS=		AUTHORS ChangeLog NEWS README TODO
-
-PLIST_SUB+=	SVER=${PORTVERSION:R} \
-		VERSION=${PORTVERSION}
-
-OPTIONS_DEFINE=	DOCS
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+PLIST_SUB=	VERSION=${PORTVERSION:R}
 
 .include <bsd.port.mk>
