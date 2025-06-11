@@ -1262,6 +1262,7 @@
     SUBDIR += libcutl
     SUBDIR += libcwd
     SUBDIR += libdaemon
+    SUBDIR += libdex
     SUBDIR += libdap
     SUBDIR += libdatadog
     SUBDIR += libdatovka
