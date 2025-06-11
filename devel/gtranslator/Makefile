@@ -1,39 +1,31 @@
 PORTNAME=	gtranslator
-PORTVERSION=	40.0
-PORTREVISION=	7
+DISTVERSION=	47.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	7ac572cc8c8c.patch:-p1 # https://gitlab.gnome.org/GNOME/gtranslator/-/merge_requests/90
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME application for creating GNU gettext translation files
-WWW=		https://gtranslator.sourceforge.net/
+WWW=		https://gitlab.gnome.org/GNOME/gtranslator
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 
-BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
-		iso-codes>=0:misc/iso-codes \
+PORTSCOUT=	limit:^47\.
+
+BUILD_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		itstool:textproc/itstool
-LIB_DEPENDS=	libdazzle-1.0.so:x11-toolkits/libdazzle \
-		libgdl-3.so:x11-toolkits/gdl \
-		libgspell-1.so:textproc/gspell \
-		libhandy-1.so:x11-toolkits/libhandy \
+LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libjson-glib-1.0.so:devel/json-glib \
-		libpeas-1.0.so:devel/libpeas1
-RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
-		iso-codes>=0:misc/iso-codes
+		libgettextpo.so:devel/gettext-tools \
+		libspelling-1.so:x11-toolkits/libspelling
+RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USE_GNOME=	gtk30 gtksourceview4 libgda5 libxml2 introspection:build
-USES=		cpe desktop-file-utils gettext gnome localbase:ldflags meson \
-		pkgconfig python tar:xz
+USES=		cpe desktop-file-utils gettext gnome localbase:ldflags \
+		meson pkgconfig tar:xz
 CPE_VENDOR=	gtranslate
 CPE_PRODUCT=	google_language_translator
-USE_PYTHON=	py3kplist
+USE_GNOME=	cairo glib20 gtk40 gtksourceview5 libadwaita libgda6 libxml2
 USE_LDCONFIG=	yes
-MESON_ARGS=	-Dgtk_doc=false
-INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.Gtranslator.gschema.xml \
 		org.gnome.gtranslator.plugins.translation-memory.gschema.xml
