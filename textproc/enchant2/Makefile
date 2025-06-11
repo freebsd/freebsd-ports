@@ -1,13 +1,12 @@
 PORTNAME=	enchant
-PORTVERSION=	2.2.15
-PORTREVISION=	6
+DISTVERSION=	2.8.2
 CATEGORIES=	textproc gnome
-MASTER_SITES=	https://github.com/AbiWord/enchant/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/rrthomas/${PORTNAME}/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Dictionary/spellchecking framework
-WWW=		https://abiword.github.io/enchant/
+WWW=		https://rrthomas.github.io/enchant/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
@@ -16,7 +15,6 @@ USES=		compiler:c++11-lib gmake gnome libtool localbase pathfix \
 		pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-applespell \
 		--without-voikko
@@ -58,5 +56,9 @@ PLIST_SUB+=	LIBVERSION="${PORTVERSION}"
 post-patch:
 	@${REINPLACE_CMD} -e 's|MKDIRPROG-mkdir|MKDIRPROG-mkdir -p|g' \
 		${WRKSRC}/install-sh
+
+	@${REINPLACE_CMD} -e 's|groff -mandoc|mandoc -mdoc|' \
+		${WRKSRC}/src/Makefile.in \
+		${WRKSRC}/lib/Makefile.in
 
 .include <bsd.port.mk>
