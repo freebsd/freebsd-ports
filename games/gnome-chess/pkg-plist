@@ -1,6 +1,5 @@
 bin/gnome-chess
 %%ETCDIR%%/engines.conf
-share/man/man6/gnome-chess.6.gz
 share/applications/org.gnome.Chess.desktop
 share/dbus-1/services/org.gnome.Chess.service
 share/help/C/gnome-chess/bug-filing.page
@@ -123,6 +122,21 @@ share/help/fr/gnome-chess/rules.page
 share/help/fr/gnome-chess/save-resume.page
 share/help/fr/gnome-chess/timer.page
 share/help/fr/gnome-chess/translate.page
+share/help/hu/gnome-chess/bug-filing.page
+share/help/hu/gnome-chess/change-board-orientation.page
+share/help/hu/gnome-chess/change-look-feel.page
+share/help/hu/gnome-chess/chess-engines.page
+share/help/hu/gnome-chess/develop.page
+share/help/hu/gnome-chess/documentation.page
+share/help/hu/gnome-chess/figures/gnome-chess-40.png
+share/help/hu/gnome-chess/figures/org.gnome.Chess.svg
+share/help/hu/gnome-chess/index.page
+share/help/hu/gnome-chess/license.page
+share/help/hu/gnome-chess/play.page
+share/help/hu/gnome-chess/rules.page
+share/help/hu/gnome-chess/save-resume.page
+share/help/hu/gnome-chess/timer.page
+share/help/hu/gnome-chess/translate.page
 share/help/ko/gnome-chess/bug-filing.page
 share/help/ko/gnome-chess/change-board-orientation.page
 share/help/ko/gnome-chess/change-look-feel.page
@@ -305,4 +319,5 @@ share/locale/xh/LC_MESSAGES/gnome-chess.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-chess.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-chess.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-chess.mo
+share/man/man6/gnome-chess.6.gz
 share/metainfo/org.gnome.Chess.appdata.xml

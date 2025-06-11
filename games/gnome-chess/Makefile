@@ -1,30 +1,22 @@
 PORTNAME=	gnome-chess
-PORTVERSION=	43.0
-PORTREVISION=	2
+PORTVERSION=	47.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Gnome chess
-WWW=		https://wiki.gnome.org/Apps/Chess
+COMMENT=	GNOME chess
+WWW=		https://gitlab.gnome.org/GNOME/gnome-chess
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
-		itstool:textproc/itstool
-LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita
+BUILD_DEPENDS=	itstool:textproc/itstool
+RUN_DEPENDS=	dbus>0:devel/dbus
 
-PORTSCOUT=	limitw:1,even
-
-USES=		desktop-file-utils gettext gl gnome localbase meson pkgconfig \
-		python:build tar:xz vala:build
-USE_GNOME=	cairo gtk40 librsvg2 libxml2:build
-USE_GL=		egl gl
-BINARY_ALIAS=	python3=${PYTHON_VERSION}
-
-LDFLAGS+=	-lm
+USES=		desktop-file-utils gettext gnome localbase meson pkgconfig \
+		tar:xz vala:build
+USE_GNOME=	cairo gtk40 libadwaita librsvg2 libxml2:build
 
 GLIB_SCHEMAS=	org.gnome.Chess.gschema.xml
 
