@@ -76,7 +76,7 @@ _USE_GNOME_ALL+= atk cairo \
 _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 		gnomemenus3 gsound gtk30 gtkhtml4 gtksourceview3 \
 		gtksourceview4 libgda5 \
-		libgda5-ui libgda6 libgnomekbd libwnck3 metacity \
+		libgda5-ui libgda6 libgnomekbd libwnck3 \
 		pygobject3 vte3
 
 # GNOME 40 components
@@ -265,8 +265,6 @@ librsvg2_USE_GNOME_IMPL=cairo gdkpixbuf
 
 nautilus4_LIB_DEPENDS=	libnautilus-extension.so:x11-fm/nautilus
 nautilus4_USE_GNOME_IMPL=glib20
-
-metacity_LIB_DEPENDS=	libmetacity.so:x11-wm/metacity
 
 gnomecontrolcenter3_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-keybindings.pc:sysutils/gnome-control-center
 gnomecontrolcenter3_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-keybindings.pc:sysutils/gnome-control-center

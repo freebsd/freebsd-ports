@@ -399,7 +399,6 @@ proxydeps_suggest_uses() {
 		${pkg} = "textproc/libxml++26" -o \
 		${pkg} = "textproc/libxml2" -o \
 		${pkg} = "textproc/libxslt" -o \
-		${pkg} = "x11-wm/metacity" -o \
 		${pkg} = "x11-toolkits/pango" -o \
 		${pkg} = "x11-toolkits/pangomm" -o \
 		${pkg} = "x11-toolkits/pangox-compat" -o \
