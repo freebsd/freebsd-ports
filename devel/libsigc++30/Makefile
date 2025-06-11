@@ -1,5 +1,5 @@
 PORTNAME=	libsigc++
-PORTVERSION=	3.4.0
+PORTVERSION=	3.6.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	30
@@ -11,7 +11,8 @@ WWW=		https://libsigcplusplus.github.io/libsigcplusplus/index.html
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++17-lang meson tar:xz
+USES=		compiler:c++17-lang gnome meson pkgconfig python:build tar:xz
+USE_GNOME=	libxslt:build
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dbuild-documentation=false \

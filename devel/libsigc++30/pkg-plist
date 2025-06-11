@@ -25,6 +25,7 @@ include/sigc++-%%API_VERSION%%/sigc++/limit_reference.h
 include/sigc++-%%API_VERSION%%/sigc++/member_method_trait.h
 include/sigc++-%%API_VERSION%%/sigc++/reference_wrapper.h
 include/sigc++-%%API_VERSION%%/sigc++/retype_return.h
+include/sigc++-%%API_VERSION%%/sigc++/scoped_connection.h
 include/sigc++-%%API_VERSION%%/sigc++/sigc++.h
 include/sigc++-%%API_VERSION%%/sigc++/signal.h
 include/sigc++-%%API_VERSION%%/sigc++/signal_base.h
