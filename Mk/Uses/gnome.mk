@@ -84,7 +84,7 @@ _USE_GNOME_ALL+=gtk40 libadwaita gtksourceview5 gnomedesktop4 nautilus4
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm cairomm11 gconfmm26 glibmm glibmm26 gtkmm24 \
-		gtkmm30 gtksourceviewmm3 libgdamm5 libxml++26 libsigc++20 \
+		gtkmm30 gtkmm40 gtksourceviewmm3 libgdamm5 libxml++26 libsigc++20 \
 		libsigc++30 pangomm pangomm24
 
 # glib-mkenums often fails with C locale
@@ -135,6 +135,9 @@ gtkmm24_USE_GNOME_IMPL=	glibmm cairomm atkmm pangomm gtk20
 
 gtkmm30_LIB_DEPENDS=	libgtkmm-3.0.so:x11-toolkits/gtkmm30
 gtkmm30_USE_GNOME_IMPL=	atkmm cairomm gdkpixbuf glibmm gtk30 pangomm
+
+gtkmm40_LIB_DEPENDS=	libgtkmm-4.0.so:x11-toolkits/gtkmm40
+gtkmm40_USE_GNOME_IMPL=	cairomm11 gdkpixbuf glibmm26 gtk40 pangomm24
 
 gtksourceviewmm3_LIB_DEPENDS=		libgtksourceviewmm-3.0.so:x11-toolkits/gtksourceviewmm3
 gtksourceviewmm3_USE_GNOME_IMPL=	gtkmm30 gtksourceview3
