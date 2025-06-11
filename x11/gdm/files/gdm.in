@@ -32,9 +32,9 @@ gdm_start()
     fi
     echo "Starting ${name}."
 
-    # we need to remove locking files under $gdm_home/.cache/gnome-shell/
+    # we need to remove locking files under /var/cache/gdm/.cache/gnome-shell/
     # until XDG_RUNTIME_DIR can be set and used
-    rm -fr %%PREFIX%%/etc/gdm/home/.cache/gnome-shell/runtime-state*
+    rm -fr /var/cache/gdm/.cache/gnome-shell/runtime-state*
 
     # make sure there is no pam configuration for gdm service in base system
     if ! checkyesno gdm_preserve_base_pam_conf && [ -f /etc/pam.d/gdm ]; then

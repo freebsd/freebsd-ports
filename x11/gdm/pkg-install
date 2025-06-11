@@ -26,8 +26,6 @@ POST-INSTALL)
 	${MKDIR} -p ${PKG_PREFIX}/etc/gdm/Sessions
 	${MKDIR} -p ${PKG_PREFIX}/etc/dm/Sessions
 
-	${CHOWN} -R ${USER}:${GROUP} ${PKG_PREFIX}/etc/gdm/home
-
 	exit 0
 	;;
 esac

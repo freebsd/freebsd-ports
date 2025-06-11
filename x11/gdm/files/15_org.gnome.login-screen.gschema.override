@@ -1,0 +1,3 @@
+[org.gnome.login-screen]
+enable-fingerprint-authentication=false
+enable-smartcard-authentication=false

@@ -1,4 +1,4 @@
---- daemon/main.c.orig	2022-03-21 18:12:40 UTC
+--- daemon/main.c.orig	2023-03-20 15:42:37 UTC
 +++ daemon/main.c
 @@ -281,6 +281,7 @@ is_debug_set (void)
          return debug;

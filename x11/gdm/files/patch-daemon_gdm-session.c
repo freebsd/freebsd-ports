@@ -1,6 +1,16 @@
---- daemon/gdm-session.c.orig	2022-01-12 14:15:56 UTC
+--- daemon/gdm-session.c.orig	2024-09-16 13:28:26 UTC
 +++ daemon/gdm-session.c
-@@ -116,6 +116,9 @@ struct _GdmSession
+@@ -45,7 +45,9 @@
+ 
+ #include <json-glib/json-glib.h>
+ 
++#ifdef WITH_SYSTEMD
+ #include <systemd/sd-login.h>
++#endif
+ 
+ #include "gdm-session.h"
+ #include "gdm-session-glue.h"
+@@ -120,6 +122,9 @@ struct _GdmSession
  
          /* object lifetime scope */
          char                *session_type;
@@ -10,7 +20,7 @@
          char                *display_name;
          char                *display_hostname;
          char                *display_device;
-@@ -371,7 +374,9 @@ get_system_session_dirs (GdmSession *self,
+@@ -387,7 +392,9 @@ get_system_session_dirs (GdmSession *self,
                  DATADIR "/xsessions/",
          };
  
@@ -19,4 +29,20 @@
 +#endif
  
          search_array = g_array_new (TRUE, TRUE, sizeof (char *));
+ 
+@@ -3386,6 +3393,7 @@ gdm_session_is_frozen (GdmSession *self)
+ gboolean
+ gdm_session_is_frozen (GdmSession *self)
+ {
++#ifdef WITH_SYSTEMD
+         g_autofree char *cgroup = NULL, *path = NULL, *data = NULL;
+         g_auto (GStrv) arr = NULL;
+ 
+@@ -3408,6 +3416,7 @@ gdm_session_is_frozen (GdmSession *self)
+                 if (g_str_equal (arr[i], "frozen"))
+                         return g_str_equal (arr[i + 1], "1");
+         }
++#endif
+         return FALSE;
+ }
  

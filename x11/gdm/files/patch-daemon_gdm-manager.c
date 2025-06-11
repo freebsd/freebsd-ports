@@ -1,38 +1,31 @@
---- daemon/gdm-manager.c.orig	2022-01-12 14:15:56 UTC
+--- daemon/gdm-manager.c.orig	2024-05-29 15:50:27 UTC
 +++ daemon/gdm-manager.c
-@@ -36,7 +36,9 @@
+@@ -36,7 +36,11 @@
  
  #include <act/act-user-manager.h>
  
 +#ifdef WITH_SYSTEMD
  #include <systemd/sd-login.h>
++#elif defined(WITH_CONSOLE_KIT)
++#include <ConsoleKit/sd-login.h>
 +#endif
  
  #include "gdm-common.h"
  
-@@ -61,7 +63,7 @@
- #define GDM_MANAGER_PATH          GDM_DBUS_PATH "/Manager"
- #define GDM_MANAGER_DISPLAYS_PATH GDM_DBUS_PATH "/Displays"
- 
--#define INITIAL_SETUP_USERNAME "gnome-initial-setup"
-+#define INITIAL_SETUP_USERNAME "_gnome-initial-setup"
- #define ALREADY_RAN_INITIAL_SETUP_ON_THIS_BOOT GDM_RUN_DIR "/gdm.ran-initial-setup"
- 
- typedef struct
-@@ -304,6 +306,7 @@ session_unlock (GdmManager *manager,
+@@ -307,6 +311,7 @@ session_unlock (GdmManager *manager,
  
          g_debug ("Unlocking session %s", ssid);
  
 +#if defined(WITH_SYSTEMD)
-         reply = g_dbus_connection_call_sync (manager->priv->connection,
+         reply = g_dbus_connection_call_sync (manager->connection,
                                               "org.freedesktop.login1",
                                               "/org/freedesktop/login1",
-@@ -321,6 +324,25 @@ session_unlock (GdmManager *manager,
+@@ -324,6 +329,25 @@ session_unlock (GdmManager *manager,
                  g_error_free (error);
                  return FALSE;
          }
 +#elif defined(WITH_CONSOLE_KIT)
-+        reply = g_dbus_connection_call_sync (manager->priv->connection,
++        reply = g_dbus_connection_call_sync (manager->connection,
 +                                             CK_NAME,
 +                                             ssid,
 +                                             CK_SESSION_INTERFACE,
@@ -53,7 +46,43 @@
  
          g_variant_unref (reply);
  
-@@ -436,6 +458,7 @@ static char *
+@@ -380,6 +404,7 @@ is_remote_session (GdmManager  *self,
+                    const char  *session_id,
+                    GError     **error)
+ {
++#ifdef WITH_SYSTEMD
+         int ret;
+ 
+         ret = sd_session_is_remote (session_id);
+@@ -393,6 +418,27 @@ is_remote_session (GdmManager  *self,
+         }
+ 
+         return ret != FALSE;
++#elif defined(WITH_CONSOLE_KIT)
++        char *seat = NULL;
++        int ret;
++        gboolean is_remote;
++
++        ret = sd_session_get_seat (session_id, &seat);
++
++        if (ret < 0 && ret != -ENXIO) {
++                g_debug ("GdmManager: Error while retrieving seat for session %s: %s",
++                         session_id, g_strerror (-ret));
++        }
++
++        if (seat != NULL) {
++                is_remote = FALSE;
++                free (seat);
++        } else {
++                is_remote = TRUE;
++        }
++
++        return is_remote;
++#endif
+ }
+ 
+ static char *
+@@ -427,6 +473,7 @@ get_tty_for_session_id (const char  *session_id,
  get_tty_for_session_id (const char  *session_id,
                          GError     **error)
  {
@@ -61,7 +90,7 @@
          int ret;
          char *tty, *out_tty;
  
-@@ -457,6 +480,9 @@ get_tty_for_session_id (const char  *session_id,
+@@ -448,6 +495,9 @@ get_tty_for_session_id (const char  *session_id,
          }
  
          return out_tty;
@@ -71,32 +100,7 @@
  }
  
  static void
-@@ -609,6 +635,7 @@ switch_to_compatible_user_session (GdmManager *manager
- 
-         if (existing_session != NULL) {
-                 ssid_to_activate = gdm_session_get_session_id (existing_session);
-+#ifndef __FreeBSD__
-                 if (seat_id != NULL) {
-                         res = gdm_activate_session_by_id (manager->priv->connection, seat_id, ssid_to_activate);
-                         if (! res) {
-@@ -616,6 +643,7 @@ switch_to_compatible_user_session (GdmManager *manager
-                                 goto out;
-                         }
-                 }
-+#endif
- 
-                 res = session_unlock (manager, ssid_to_activate);
-                 if (!res) {
-@@ -1204,7 +1232,7 @@ display_is_on_seat0 (GdmDisplay *display)
- 
-         g_object_get (G_OBJECT (display), "seat-id", &seat_id, NULL);
- 
--        if (g_strcmp0 (seat_id, "seat0") != 0) {
-+        if (g_strcmp0 (seat_id, SEAT_ID) != 0) {
-             is_on_seat0 = FALSE;
-         }
- 
-@@ -2019,12 +2047,58 @@ on_user_session_died (GdmSession *session,
+@@ -2101,12 +2151,58 @@ on_user_session_died (GdmSession *session,
          remove_user_session (manager, session);
  }
  

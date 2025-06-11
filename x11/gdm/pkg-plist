@@ -1,4 +1,4 @@
-bin/gdm-screenshot
+bin/gdm-config
 bin/gdmflexiserver
 @sample etc/dbus-1/system.d/gdm.conf.sample
 @sample %%ETCDIR%%/Init/Default.sample
@@ -7,7 +7,6 @@ bin/gdmflexiserver
 @sample %%ETCDIR%%/PreSession/Default.sample
 @sample %%ETCDIR%%/Xsession.sample
 @sample %%ETCDIR%%/custom.conf.sample
-@sample %%ETCDIR%%/home/.pulse/client.conf.sample
 @sample %%ETCDIR%%/locale.conf.sample
 @sample etc/pam.d/gdm-autologin.sample
 @sample etc/pam.d/gdm-launch-environment.sample
@@ -21,6 +20,7 @@ lib/libgdm.so
 lib/libgdm.so.1
 lib/libgdm.so.1.0.0
 lib/security/pam_gdm.so
+lib/udev/rules.d/61-gdm.rules
 libdata/pkgconfig/gdm.pc
 libexec/gdm-host-chooser
 libexec/gdm-runtime-config
@@ -59,14 +59,20 @@ share/help/fr/gdm/index.docbook
 share/help/fr/gdm/legal.xml
 share/help/gl/gdm/index.docbook
 share/help/gl/gdm/legal.xml
+share/help/hr/gdm/index.docbook
+share/help/hr/gdm/legal.xml
 share/help/hu/gdm/index.docbook
 share/help/hu/gdm/legal.xml
 share/help/id/gdm/index.docbook
 share/help/id/gdm/legal.xml
 share/help/it/gdm/index.docbook
 share/help/it/gdm/legal.xml
+share/help/ka/gdm/index.docbook
+share/help/ka/gdm/legal.xml
 share/help/ko/gdm/index.docbook
 share/help/ko/gdm/legal.xml
+share/help/nl/gdm/index.docbook
+share/help/nl/gdm/legal.xml
 share/help/oc/gdm/index.docbook
 share/help/oc/gdm/legal.xml
 share/help/pt_BR/gdm/index.docbook
@@ -87,6 +93,7 @@ share/help/uk/gdm/index.docbook
 share/help/uk/gdm/legal.xml
 share/help/zh_CN/gdm/index.docbook
 share/help/zh_CN/gdm/legal.xml
+share/locale/ab/LC_MESSAGES/gdm.mo
 share/locale/af/LC_MESSAGES/gdm.mo
 share/locale/am/LC_MESSAGES/gdm.mo
 share/locale/an/LC_MESSAGES/gdm.mo
@@ -200,15 +207,7 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 @postexec mkdir -p %D/share/xsessions
 @postexec dconf update
 @postunexec dconf update
-@mode 1775
-@dir etc/gdm/home
-@mode
-@dir %%ETCDIR%%/Sessions
-@dir etc/dm
-@dir etc/dm/Sessions
-@dir share/xsessions
-@dir /var/cache/gdm/
+@dir /var/cache/gdm
 @dir /var/run/gdm/greeter
-@dir /var/run/gdm/
-@dir /var/log/gdm/
-@postunexec rm -fr /var/gdm
+@dir /var/run/gdm
+@dir /var/log/gdm

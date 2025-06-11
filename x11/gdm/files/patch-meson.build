@@ -1,51 +1,82 @@
---- meson.build.orig	2022-03-21 18:12:40 UTC
+--- meson.build.orig	2024-09-16 13:28:26 UTC
 +++ meson.build
-@@ -37,8 +37,14 @@ config_h_dir = include_directories('.')
- config_h_dir = include_directories('.')
+@@ -48,9 +48,15 @@ endif
+ endif
  
  # Dependencies
 -udev_dep = dependency('udev')
 -gudev_dep = dependency('gudev-1.0', version: '>= 232')
 +if host_machine.system() == 'linux'
 +  udev_dep = dependency('udev')
-+  gudev_dep = dependency('gudev-1.0', version: '>= 232')
 +else
 +  udev_dep = declare_dependency()
 +  gudev_dep = declare_dependency()
-+  udev_dir = '/usr/local/lib/udev/rules.d'
 +endif
  
- glib_min_version = '2.56.0'
- 
-@@ -89,17 +95,22 @@ else
- else
-   # what to do, what to do, this is wrong, but this just sets the
-   # defaults, perhaps this user is cross compiling or some such
--  x_path = '/usr/bin/X11:/usr/X11R6/bin:/opt/X11R6/bin'
--  x_bin = '/usr/bin/X'
-+  x_path = '/usr/local/bin/X11:/usr/local/bin:/opt/X11R6/bin'
-+  x_bin = '/usr/local/bin/X'
- endif
- xdmcp_dep = cc.find_library('Xdmcp', required: get_option('xdmcp'))
- if xdmcp_dep.found() and get_option('tcp-wrappers')
-   libwrap_dep = cc.find_library('wrap')
++gudev_dep = dependency('gudev-1.0', version: '>= 232', required: false)
++
+ # PAM
+ libpam_dep = cc.find_library('pam')
+ pam_extensions_supported = cc.has_header_symbol(
+@@ -123,23 +129,29 @@ endif
+   have_xdmcp = false
  endif
  # systemd
--systemd_dep = dependency('systemd')
--libsystemd_dep = dependency('libsystemd')
--if meson.version().version_compare('>= 0.53')
+-logind_provider = get_option('logind-provider')
+-systemd_dep = dependency('systemd', required: false)
+-if logind_provider == 'systemd'
+-  libsystemd_dep = dependency('libsystemd')
+-  logind_dep = libsystemd_dep
+-  systemd_multiseat_x = find_program('systemd-multi-seat-x',
+-    required: false,
+-    dirs: [
+-      systemd_dep.get_variable(pkgconfig: 'systemdutildir'),
+-      '/lib/systemd',
+-      '/usr/lib/systemd',
+-    ])
+-  systemd_x_server = systemd_multiseat_x.found()? systemd_multiseat_x.path() : '/lib/systemd/systemd-multi-seat-x'
 +if host_machine.system() == 'linux'
-+  systemd_dep = dependency('systemd')
-+  libsystemd_dep = dependency('libsystemd')
-+else
-+  systemd_dep = declare_dependency()
-+  libsystemd_dep = declare_dependency()
++  logind_provider = get_option('logind-provider')
++  systemd_dep = dependency('systemd', required: false)
++  if logind_provider == 'systemd'
++    libsystemd_dep = dependency('libsystemd')
++    logind_dep = libsystemd_dep
++    systemd_multiseat_x = find_program('systemd-multi-seat-x',
++      required: false,
++      dirs: [
++        systemd_dep.get_variable(pkgconfig: 'systemdutildir'),
++        '/lib/systemd',
++        '/usr/lib/systemd',
++      ])
++    systemd_x_server = systemd_multiseat_x.found()? systemd_multiseat_x.path() : '/lib/systemd/systemd-multi-seat-x'
++  else
++    elogind_dep = dependency('libelogind')
++    logind_dep = elogind_dep
++    systemd_x_server = 'disabled'
++  endif
+ else
+-  elogind_dep = dependency('libelogind')
+-  logind_dep = elogind_dep
+-  systemd_x_server = 'disabled'
++  systemd_dep = dependency('libconsolekit')
++  logind_dep = dependency('libconsolekit')
++  systemd_x_server = '/lib/systemd/systemd-multi-seat-x'
+ endif
+ # Plymouth
+ plymouth_dep = dependency('ply-boot-client', required: get_option('plymouth'))
+@@ -292,7 +304,10 @@ conf.set_quoted('X_PATH', x_path)
+ conf.set('WITH_PLYMOUTH', plymouth_dep.found())
+ conf.set_quoted('X_SERVER', x_bin)
+ conf.set_quoted('X_PATH', x_path)
+-conf.set('HAVE_UDEV', gudev_dep.found())
++# Avoid build failure when libgudev is installed
++if host_machine.system() == 'linux'
++  conf.set('HAVE_UDEV', gudev_dep.found())
 +endif
-+if host_machine.system() == 'linux'
-   systemd_multiseat_x = find_program('systemd-multi-seat-x',
-     required: false,
-     dirs: [
-@@ -257,6 +268,7 @@ conf.set('ENABLE_IPV6', get_option('ipv6'))
+ conf.set('HAVE_UT_UT_HOST', utmp_has_host_field)
+ conf.set('HAVE_UT_UT_PID', utmp_has_pid_field)
+ conf.set('HAVE_UT_UT_ID', utmp_has_id_field)
+@@ -304,6 +319,7 @@ conf.set('ENABLE_IPV6', get_option('ipv6'))
  conf.set('HAVE_UT_UT_TV', utmp_has_tv_field)
  conf.set('HAVE_UT_UT_SYSLEN', utmp_has_syslen_field)
  conf.set('ENABLE_IPV6', get_option('ipv6'))

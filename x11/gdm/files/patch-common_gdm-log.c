@@ -1,4 +1,4 @@
---- common/gdm-log.c.orig	2022-01-12 14:15:56 UTC
+--- common/gdm-log.c.orig	2023-03-20 15:42:37 UTC
 +++ common/gdm-log.c
 @@ -30,7 +30,9 @@
  #include <unistd.h>

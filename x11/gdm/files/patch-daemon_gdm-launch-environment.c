@@ -1,0 +1,21 @@
+--- daemon/gdm-launch-environment.c.orig	2023-09-14 15:27:04 UTC
++++ daemon/gdm-launch-environment.c
+@@ -140,18 +140,12 @@ build_launch_environment (GdmLaunchEnvironment *launch
+                 "GI_TYPELIB_PATH",
+                 "LANG",
+                 "LANGUAGE",
+-                "LC_ADDRESS",
+                 "LC_ALL",
+                 "LC_COLLATE",
+                 "LC_CTYPE",
+-                "LC_IDENTIFICATION",
+-                "LC_MEASUREMENT",
+                 "LC_MESSAGES",
+                 "LC_MONETARY",
+-                "LC_NAME",
+                 "LC_NUMERIC",
+-                "LC_PAPER",
+-                "LC_TELEPHONE",
+                 "LC_TIME",
+                 "LD_LIBRARY_PATH",
+                 "PATH",

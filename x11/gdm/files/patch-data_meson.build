@@ -1,48 +1,97 @@
---- data/meson.build.orig	2022-01-12 14:15:56 UTC
+--- data/meson.build.orig	2024-09-16 13:28:26 UTC
 +++ data/meson.build
-@@ -164,41 +164,43 @@ else
+@@ -13,7 +13,7 @@ foreach file : [ 'Init', 'PreSession', 'PostSession' ]
+   install_data(generated_file,
+     install_dir: gdmconfdir / file,
+     install_mode: 'rwxr-xr-x',
+-    rename: 'Default'
++    rename: 'Default.sample'
+   )
+ endforeach
+ 
+@@ -26,7 +26,7 @@ configure_file(
+ # gdm.conf
+ configure_file(
+   input: 'gdm.conf.in',
+-  output: '@BASENAME@',
++  output: 'gdm.conf.sample',
+   configuration: {
+     'GDM_USERNAME': get_option('user'),
+   },
+@@ -34,10 +34,10 @@ configure_file(
+ )
+ configure_file(
+   input: 'gdm.conf-custom.in',
+-  output: gdm_custom_conf.split('/')[-1],
++  output: 'custom.conf.sample',
+   copy: true,
+   install_mode: 'rw-r--r--',
+-  install_dir: run_command(find_program('dirname'), gdm_custom_conf).stdout().strip(),
++  install_dir: gdmconfdir,
+ )
+ 
+ # GSettings schema
+@@ -163,59 +163,61 @@ endif
    service_config.set('PLYMOUTH_QUIT_SERVICE', '')
  endif
  
--if get_option('systemdsystemunitdir') != ''
--  systemd_systemunitdir = get_option('systemdsystemunitdir')
--else
--  systemd_systemunitdir = systemd_dep.get_pkgconfig_variable('systemdsystemunitdir')
--endif
+-systemdsystemunitdir = get_option('systemdsystemunitdir')
+-if systemdsystemunitdir != 'no'
+-  if get_option('systemdsystemunitdir') != ''
+-    systemd_systemunitdir = get_option('systemdsystemunitdir')
+-  else
+-    assert(systemd_dep.found(), 'systemd required but not found, please provide a valid systemd system unit dir or disable it')
+-    systemd_systemunitdir = systemd_dep.get_variable(pkgconfig: 'systemdsystemunitdir')
 +if host_machine.system() == 'linux'
-+  if get_option('systemdsystemunitdir') != ''
-+    systemd_systemunitdir = get_option('systemdsystemunitdir')
-+  else
-+    systemd_systemunitdir = systemd_dep.get_pkgconfig_variable('systemdsystemunitdir')
-+  endif
- 
--if get_option('systemduserunitdir') != ''
--  systemd_userunitdir = get_option('systemduserunitdir')
--else
--  systemd_userunitdir = systemd_dep.get_pkgconfig_variable('systemduserunitdir',
--                                                           define_variable: ['prefix', get_option('prefix')])
++  systemdsystemunitdir = get_option('systemdsystemunitdir')
++  if systemdsystemunitdir != 'no'
++    if get_option('systemdsystemunitdir') != ''
++      systemd_systemunitdir = get_option('systemdsystemunitdir')
++    else
++      assert(systemd_dep.found(), 'systemd required but not found, please provide a valid systemd system unit dir or disable it')
++      systemd_systemunitdir = systemd_dep.get_variable(pkgconfig: 'systemdsystemunitdir')
++    endif
+   endif
 -endif
-+  if get_option('systemduserunitdir') != ''
-+    systemd_userunitdir = get_option('systemduserunitdir')
-+  else
-+    systemd_userunitdir = systemd_dep.get_pkgconfig_variable('systemduserunitdir',
-+                                                             define_variable: ['prefix', get_option('prefix')])
-+  endif
  
--configure_file(
--  input: 'gdm.service.in',
--  output: '@BASENAME@',
--  configuration: service_config,
--  install_dir: systemd_systemunitdir,
--  format: 'cmake'
--)
-+  configure_file(
-+    input: 'gdm.service.in',
-+    output: '@BASENAME@',
-+    configuration: service_config,
-+    install_dir: systemd_systemunitdir,
-+    format: 'cmake'
-+  )
+-systemduserunitdir = get_option('systemduserunitdir')
+-if systemduserunitdir != 'no'
+-  if get_option('systemduserunitdir') != ''
+-    systemd_userunitdir = get_option('systemduserunitdir')
+-  else
+-    assert(systemd_dep.found(), 'systemd required but not found, please provide a valid systemd user unit dir or disable it')
+-    systemd_userunitdir = systemd_dep.get_variable(pkgconfig: 'systemduserunitdir',
+-                                                   pkgconfig_define: ['prefix', get_option('prefix')])
++  systemduserunitdir = get_option('systemduserunitdir')
++  if systemduserunitdir != 'no'
++    if get_option('systemduserunitdir') != ''
++      systemd_userunitdir = get_option('systemduserunitdir')
++    else
++      assert(systemd_dep.found(), 'systemd required but not found, please provide a valid systemd user unit dir or disable it')
++      systemd_userunitdir = systemd_dep.get_variable(pkgconfig: 'systemduserunitdir',
++                                                     pkgconfig_define: ['prefix', get_option('prefix')])
++    endif
+   endif
+-endif
+ 
+-if systemdsystemunitdir != 'no'
+-  configure_file(
+-    input: 'gdm.service.in',
+-    output: '@BASENAME@',
+-    configuration: service_config,
+-    install_dir: systemd_systemunitdir,
+-    format: 'cmake'
+-  )
+-endif
++  if systemdsystemunitdir != 'no'
++    configure_file(
++      input: 'gdm.service.in',
++      output: '@BASENAME@',
++      configuration: service_config,
++      install_dir: systemd_systemunitdir,
++      format: 'cmake'
++    )
++  endif
  
 -gdm_gnome_session_wanted_targets = []
 -foreach component: gdm_gnome_user_session_wanted_components
@@ -53,25 +102,35 @@
 +    gdm_gnome_session_wanted_targets += 'Wants=@0@.target'.format(component)
 +  endforeach
  
--configure_file(
--  input: 'session.conf.in',
--  output: 'session.conf',
--  configuration: {
--    'requires_component': gdm_gnome_shell_component,
--    'wants_required_components': '\n'.join(gdm_gnome_session_wanted_targets),
--  },
--  install_dir: systemd_userunitdir / 'gnome-session@gnome-login.target.d',
--)
-+  configure_file(
-+    input: 'session.conf.in',
-+    output: 'session.conf',
-+    configuration: {
-+      'requires_component': gdm_gnome_shell_component,
-+      'wants_required_components': '\n'.join(gdm_gnome_session_wanted_targets),
-+    },
-+    install_dir: systemd_userunitdir / 'gnome-session@gnome-login.target.d',
-+  )
-+endif
+-if systemduserunitdir != 'no'
+-  configure_file(
+-    input: 'session.conf.in',
+-    output: 'session.conf',
+-    configuration: {
+-      'requires_component': gdm_gnome_shell_component,
+-      'wants_required_components': '\n'.join(gdm_gnome_session_wanted_targets),
+-    },
+-    install_dir: systemd_userunitdir / 'gnome-session@gnome-login.target.d',
+-  )
++  if systemduserunitdir != 'no'
++    configure_file(
++      input: 'session.conf.in',
++      output: 'session.conf',
++      configuration: {
++        'requires_component': gdm_gnome_shell_component,
++        'wants_required_components': '\n'.join(gdm_gnome_session_wanted_targets),
++      },
++      install_dir: systemd_userunitdir / 'gnome-session@gnome-login.target.d',
++    )
++  endif
+ endif
  
  # XSession
- if get_option('gdm-xsession')
+ if get_option('gdm-xsession') and have_x11_support
+   configure_file(
+     input: 'Xsession.in',
+-    output: '@BASENAME@',
++    output: 'Xsession.sample',
+     configuration: {
+       'libexecdir': gdm_prefix / get_option('libexecdir'),
+       'XSESSION_SHELL': get_option('solaris')? '/bin/ksh' : '/bin/sh',

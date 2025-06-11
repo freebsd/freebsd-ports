@@ -14,7 +14,7 @@ EOM
 To really remove the gdm port, please remove the following
 directories manualy:
 
-/var/cache/gdm /var/gdm /var/log/gdm and /var/run/gdm
+/var/cache/gdm /var/log/gdm and /var/run/gdm
 
 EOM
 }

@@ -1,4 +1,4 @@
---- daemon/gdm-server.c.orig	2022-01-28 21:55:35 UTC
+--- daemon/gdm-server.c.orig	2024-09-16 13:28:26 UTC
 +++ daemon/gdm-server.c
 @@ -43,7 +43,9 @@
  #include <linux/vt.h>
@@ -10,7 +10,7 @@
  
  #ifdef ENABLE_SYSTEMD_JOURNAL
  #include <systemd/sd-journal.h>
-@@ -84,6 +86,9 @@ struct _GdmServer
+@@ -86,6 +88,9 @@ struct _GdmServer
          char    *auth_file;
  
          guint    child_watch_id;
@@ -20,7 +20,7 @@
  
          gboolean is_initial;
  };
-@@ -114,13 +119,60 @@ static void     gdm_server_finalize     (GObject      
+@@ -116,13 +121,60 @@ G_DEFINE_TYPE (GdmServer, gdm_server, G_TYPE_OBJECT)
  
  G_DEFINE_TYPE (GdmServer, gdm_server, G_TYPE_OBJECT)
  
@@ -81,7 +81,7 @@
  static void
  gdm_server_ready (GdmServer *server)
  {
-@@ -133,7 +185,26 @@ gdm_server_ready (GdmServer *server)
+@@ -135,7 +187,26 @@ gdm_server_ready (GdmServer *server)
  
          g_signal_emit (server, signals[READY], 0);
  }
@@ -108,7 +108,7 @@
  static GSList *active_servers;
  static gboolean sigusr1_thread_running;
  static GCond sigusr1_thread_cond;
-@@ -199,6 +270,7 @@ gdm_server_launch_sigusr1_thread_if_needed (void)
+@@ -201,6 +272,7 @@ gdm_server_launch_sigusr1_thread_if_needed (void)
                  g_mutex_unlock (&sigusr1_thread_mutex);
          }
  }
@@ -116,7 +116,7 @@
  
  static void
  gdm_server_init_command (GdmServer *server)
-@@ -307,10 +379,12 @@ gdm_server_resolve_command_line (GdmServer  *server,
+@@ -310,10 +382,12 @@ gdm_server_resolve_command_line (GdmServer  *server,
                  argv[len++] = g_strdup (server->auth_file);
          }
  
@@ -129,7 +129,7 @@
  
          /* If we were compiled with Xserver >= 1.17 we need to specify
           * '-listen tcp' as the X server dosen't listen on tcp sockets
-@@ -656,11 +730,13 @@ server_child_watch (GPid       pid,
+@@ -653,11 +727,13 @@ server_child_watch (GPid       pid,
          g_object_unref (server);
  }
  
