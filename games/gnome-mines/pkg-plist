@@ -1,6 +1,6 @@
 bin/gnome-mines
-share/man/man6/gnome-mines.6.gz
 share/applications/org.gnome.Mines.desktop
+share/dbus-1/services/org.gnome.Mines.service
 %%DATADIR%%/themes/bgcolors/1mines.svg
 %%DATADIR%%/themes/bgcolors/2mines.svg
 %%DATADIR%%/themes/bgcolors/3mines.svg
@@ -268,6 +268,21 @@ share/help/pt_BR/gnome-mines/license.page
 share/help/pt_BR/gnome-mines/new-game.page
 share/help/pt_BR/gnome-mines/rules.page
 share/help/pt_BR/gnome-mines/translate.page
+share/help/ru/gnome-mines/board-size.page
+share/help/ru/gnome-mines/bug-filing.page
+share/help/ru/gnome-mines/develop.page
+share/help/ru/gnome-mines/documentation.page
+share/help/ru/gnome-mines/figures/flag-question.svg
+share/help/ru/gnome-mines/figures/flag.svg
+share/help/ru/gnome-mines/figures/flags.png
+share/help/ru/gnome-mines/figures/org.gnome.Mines.svg
+share/help/ru/gnome-mines/flags.page
+share/help/ru/gnome-mines/high-scores.page
+share/help/ru/gnome-mines/index.page
+share/help/ru/gnome-mines/license.page
+share/help/ru/gnome-mines/new-game.page
+share/help/ru/gnome-mines/rules.page
+share/help/ru/gnome-mines/translate.page
 share/help/sl/gnome-mines/board-size.page
 share/help/sl/gnome-mines/bug-filing.page
 share/help/sl/gnome-mines/develop.page
@@ -315,6 +330,7 @@ share/help/uk/gnome-mines/rules.page
 share/help/uk/gnome-mines/translate.page
 share/icons/hicolor/scalable/apps/org.gnome.Mines.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Mines-symbolic.svg
+share/locale/ab/LC_MESSAGES/gnome-mines.mo
 share/locale/af/LC_MESSAGES/gnome-mines.mo
 share/locale/am/LC_MESSAGES/gnome-mines.mo
 share/locale/an/LC_MESSAGES/gnome-mines.mo
@@ -406,4 +422,5 @@ share/locale/xh/LC_MESSAGES/gnome-mines.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-mines.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-mines.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-mines.mo
-share/metainfo/org.gnome.Mines.appdata.xml
+share/man/man6/gnome-mines.6.gz
+share/metainfo/org.gnome.Mines.metainfo.xml
