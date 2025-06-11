@@ -1,3 +1,5 @@
-TIMESTAMP = 1657940224
-SHA256 (gnome/sushi-42.0.tar.xz) = 45d8db7af45a79784e7a34588d149ea955c8be44bb82a36e896829405b7c8820
-SIZE (gnome/sushi-42.0.tar.xz) = 81668
+TIMESTAMP = 1736092839
+SHA256 (gnome/sushi-46.0.tar.xz) = 96085baaa430ab2142c606aab5c47e2fbb2fd3eb70a352137e65c59a58a0f2c6
+SIZE (gnome/sushi-46.0.tar.xz) = 84316
+SHA256 (gnome/256b41c2.patch) = f05fdb834524bdfa663bf84472108d83f9973fac95263f3780ad35504bff926e
+SIZE (gnome/256b41c2.patch) = 1129
