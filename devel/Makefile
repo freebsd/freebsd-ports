@@ -5332,6 +5332,7 @@
     SUBDIR += py-olefile
     SUBDIR += py-omnijson
     SUBDIR += py-omniorb
+    SUBDIR += py-oncalendar
     SUBDIR += py-onigurumacffi
     SUBDIR += py-opcodes
     SUBDIR += py-openapi-codec
