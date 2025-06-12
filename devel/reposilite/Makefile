@@ -1,4 +1,4 @@
-DISTNAME=				reposilite
+PORTNAME=				reposilite
 DISTVERSION=				3.5.24
 DISTVERSIONSUFFIX=			-all
 CATEGORIES=				devel www java
