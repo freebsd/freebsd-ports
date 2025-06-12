@@ -1,1 +1,7 @@
-This package contains xrdb, a X server resource database utility.
+Xrdb is a command line utility to manage the X server resource database
+for the current session.
+
+Xrdb is used to get or set the contents of the RESOURCE_MANAGER
+property on the root window of screen 0, or the SCREEN_RESOURCES
+property on the root window of any or all screens, or everything
+combined. This program is normally run from the X startup file.
