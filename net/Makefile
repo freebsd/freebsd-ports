@@ -245,13 +245,9 @@
     SUBDIR += hanstunnel
     SUBDIR += haproxy
     SUBDIR += haproxy-devel
-    SUBDIR += haproxy22
     SUBDIR += haproxy24
-    SUBDIR += haproxy25
     SUBDIR += haproxy26
-    SUBDIR += haproxy27
     SUBDIR += haproxy28
-    SUBDIR += haproxy29
     SUBDIR += hblock
     SUBDIR += hexinject
     SUBDIR += hlmaster

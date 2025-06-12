@@ -22,7 +22,7 @@ lua_PKGNAMESUFFIX=		-lua
 wolfssl_CONFLICTS_INSTALL=	haproxy-devel haproxy-lua
 wolfssl_PKGNAMESUFFIX=		-wolfssl
 
-CONFLICTS_INSTALL=	haproxy haproxy17 haproxy18 haproxy20 haproxy22 haproxy23 haproxy24 haproxy25 haproxy26
+CONFLICTS_INSTALL=	haproxy haproxy24 haproxy26 haproxy28
 
 ALL_TARGET=	all admin/halog/halog
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \
