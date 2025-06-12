@@ -1,31 +1,24 @@
 #!/bin/sh
 
-# PROVIDE: smcroute
+# PROVIDE: smcrouted
 # REQUIRE: netif routing
 # KEYWORD: nojail
 
 #
 # Add the following to /etc/rc.conf[.local] to enable this service
 #
-# smcroute_enable="YES"
+# smcrouted_enable="YES"
 #
 
 . /etc/rc.subr
 
-name="smcroute"
+name="smcrouted"
 rcvar="${name}_enable"
 command="%%PREFIX%%/sbin/${name}"
-start_precmd="${name}_precmd"
-
-smcroute_precmd()
-{
-
-	rc_flags="$rc_flags -d"
-}
 
 load_rc_config $name
 
-: ${smcroute_enable="NO"}
-: ${smcroute_flags=""}
+: ${smcrouted_enable="NO"}
+: ${smcrouted_flags=""}
 
 run_rc_command "$1"

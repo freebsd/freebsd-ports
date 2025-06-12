@@ -1,3 +1,7 @@
 sbin/smcroute
+sbin/smcroutectl
+sbin/smcrouted
 @sample etc/smcroute.conf.sample
-share/man/man8/smcroute.8.gz
+share/man/man5/smcroute.conf.5.gz
+share/man/man8/smcroutectl.8.gz
+share/man/man8/smcrouted.8.gz
