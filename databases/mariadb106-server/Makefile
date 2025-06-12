@@ -1,5 +1,5 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.6.21
+PORTVERSION=	10.6.22
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
@@ -167,7 +167,7 @@ ${ENGINE}_CMAKE_OFF=	-DPLUGIN_${ENGINE}=NO
 ${ENGINE}_CMAKE_ON=	-DPLUGIN_${ENGINE}=DYNAMIC
 .endfor
 INNOBASE_VARS_OFF=	disabled_plugins+=INNOBASE
-COLUMNSTORE_BROKEN=	error: __float128 is not supported on this target
+#COLUMNSTORE_BROKEN=	error: __float128 is not supported on this target
 CONNECT_EXTRA_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 CONNECT_EXTRA_USE=		gnome=libxml2
 CONNECT_EXTRA_USES=		gnome
@@ -195,7 +195,6 @@ WSREP_RUN_DEPENDS=	bash:shells/bash \
 			#stunnel:security/stunnel
 WSREP_SHEBANG_FILES=	bin/wsrep_sst_rsync
 ZMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
-ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .for PLUGIN in ${DISABLED_PLUGINS}
 CMAKE_ARGS+=		-DPLUGIN_${PLUGIN}=NO
