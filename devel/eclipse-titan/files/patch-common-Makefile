@@ -1,0 +1,12 @@
+--- common/Makefile.orig	2024-11-14 11:50:43 UTC
++++ common/Makefile
+@@ -27,7 +27,8 @@ include $(TOP)/Makefile.cfg
+ include $(TOP)/Makefile.cfg
+ 
+ # Generating git_version.c according to GIT_COMMIT_ID
+-GIT_HASH=`git describe --always --dirty --match 'NOT A TAG'`
++#GIT_HASH=`git describe --always --dirty --match 'NOT A TAG'`
++GIT_HASH=11.1.0
+ ifeq ($(GIT_COMMIT_ID), no)
+   GIT_HASH=""
+ endif

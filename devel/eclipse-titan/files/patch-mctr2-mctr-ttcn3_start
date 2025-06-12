@@ -1,0 +1,21 @@
+--- mctr2/mctr/ttcn3_start.orig	2024-11-14 11:50:43 UTC
++++ mctr2/mctr/ttcn3_start
+@@ -18,11 +18,15 @@ fi
+ # hide next line from expect \
+ fi
+ 
++# Set the default TTCN3_DIR only if TTCN3_DIR is unset. \
++: ${TTCN3_DIR=%%TTCN3_DIR%%}; \
++case ${TTCN3_DIR} in \
++"") SETENV= ;; \
++*)  SETENV="env TTCN3_DIR=${TTCN3_DIR}" ;; \
++esac
+ 
+-
+-
+ # the next line restarts using expect \
+-exec expect "$0" "$@"
++exec ${SETENV} expect "$0" "$@"
+ 
+ #####################################################
+ ##                                                 ##

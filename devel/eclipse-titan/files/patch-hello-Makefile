@@ -1,0 +1,13 @@
+--- hello/Makefile.orig	2024-11-14 11:50:43 UTC
++++ hello/Makefile
+@@ -37,7 +37,7 @@ else
+ 	cp $(DEMOFILES) $(DEMODIR)
+ 	cd $(DEMODIR) && $(BINDIR)/ttcn3_makefilegen $(MAKEFILEGENFLAGS) $(DEMOFILES) && \
+ 	$(MAKE) CXX='$(CXX)' CXXFLAGS='$(CXXFLAGS)' LDFLAGS='$(LDFLAGS)' -j1 && \
+-	(sleep 5 && echo 'Hello, TTCN-3!') | ttcn3_start -ip "127.0.0.1" MyExample MyExample.cfg && \
+-	logformat -o MyExample_merged.log *.log
+-	cd $(DEMODIR) && make clean
++	(sleep 5 && echo 'Hello, TTCN-3!') | ${TTCN3_DIR}/bin/ttcn3_start -ip "127.0.0.1" MyExample MyExample.cfg && \
++	${TTCN3_DIR}/bin/logformat -o MyExample_merged.log *.log
++	cd $(DEMODIR) && ${MAKE} clean
+ endif
