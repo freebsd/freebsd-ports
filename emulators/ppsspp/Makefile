@@ -1,17 +1,15 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.19
+DISTVERSION?=	1.19.1
 CATEGORIES=	emulators
-# XXX Get from Debian once #697821 lands
-MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
-DISTFILES=	${PORTNAME}.1:manpage
-EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
 
 MAINTAINER=	kreinholz@gmail.com
 COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
 WWW=		https://www.ppsspp.org/
 
-LICENSE=	GPLv2+
+LICENSE=	GPLv2+ BSD3CLAUSE
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 # Bi-endian architectures default to big for some reason
 NOT_FOR_ARCHS=	mips mips64 powerpc powerpc64 powerpcspe
@@ -94,7 +92,7 @@ do-install-LIBRETRO-on:
 	${INSTALL_LIB} ${BUILD_WRKSRC}/lib/${LIBRETRO_PLIST_FILES:T} \
 		${STAGEDIR}${PREFIX}/${LIBRETRO_PLIST_FILES:H}
 .if ${OPTIONS_SLAVE} == LIBRETRO
-.  for d in applications icons man mime ${PORTNAME}
+.  for d in applications icons mime ${PORTNAME}
 	${RM} -r ${STAGEDIR}${PREFIX}/share/${d}
 .  endfor
 .endif
@@ -104,6 +102,5 @@ do-install-QT5-on do-install-SDL-on:
 	${ELFCTL} -e +wxneeded ${STAGEDIR}${PREFIX}/bin/*
 .endif
 	${MV} ${STAGEDIR}${PREFIX}/bin/${EXENAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${_DISTDIR}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
