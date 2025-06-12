@@ -1,91 +1,79 @@
---- main.c.orig	2016-11-04 21:41:21 UTC
+--- main.c.orig	2024-02-02 17:45:34 UTC
 +++ main.c
-@@ -211,7 +211,9 @@ static Bool IsPts = False;
- #undef FIOCLEX
- #undef FIONCLEX
- #define setpgrp2 setpgrp
-+#ifndef USE_POSIX_TERMIOS
- #include <sgtty.h>
-+#endif
- #include <sys/resource.h>
+@@ -143,6 +143,10 @@ static Bool IsPts = False;
+ #define WTMP
  #endif
- #ifdef sco
-@@ -237,7 +239,7 @@ static Bool IsPts = False;
- #define HAS_UTMP_UT_HOST
- #endif
- #else /* } !SYSV { */			/* BSD systems */
--#ifndef linux
-+#if !defined(linux) && !defined(USE_POSIX_TERMIOS)
- #include <sgtty.h>
- #endif
- #include <sys/resource.h>
-@@ -294,7 +296,7 @@ extern Time_t time ();
- #define ttyslot() 1
- #endif /* apollo */
  
--#ifdef SVR4
-+#if defined(SVR4) || (defined(__FreeBSD__) && __FreeBSD_version >= 900007)
- #include <utmpx.h>
- #define setutent setutxent
- #define getutent getutxent
-@@ -320,6 +322,10 @@ extern struct utmp *getutid __((struct utmp *_Id));
- int	Ptyfd;
- #endif /* PUCC_PTYD */
- 
-+#ifdef __FreeBSD__
-+#include <libutil.h>	/* openpty() */
++#if defined(__FreeBSD__)
++#define	USE_SYSV_UTMP
 +#endif
 +
- #ifdef sequent
- #define USE_GET_PSEUDOTTY
- #endif
-@@ -1360,6 +1366,8 @@ char **argv;
- 	d_tio.c_cc[VDISCARD] = CFLUSH;
- 	d_tio.c_cc[VWERASE] = CWERASE;
- 	d_tio.c_cc[VLNEXT] = CLNEXT;
-+	d_tio.c_cc[VMIN] = 1;
-+	d_tio.c_cc[VTIME] = 0;
- #endif /* } */
- #ifdef TIOCSLTC /* { */
-         d_ltc.t_suspc = CSUSP;		/* t_suspc */
-@@ -1408,6 +1416,8 @@ char **argv;
- 	d_tio.c_cc[VQUIT] = CQUIT;		/* '^\'	*/
-     	d_tio.c_cc[VEOF] = CEOF;		/* '^D'	*/
- 	d_tio.c_cc[VEOL] = CEOL;		/* '^@'	*/
-+	d_tio.c_cc[VMIN] = 1;
-+	d_tio.c_cc[VTIME] = 0;
- #ifdef VSWTCH
- 	d_tio.c_cc[VSWTCH] = CSWTCH;            /* usually '^Z' */
- #endif
-@@ -1722,11 +1732,11 @@ char **argv;
- 	        case 'u': case 'U':
- 		    term->flags |= UTF8_KANJI;
- 		    update_utf8mode();
--		    make_unicode_map();
- 		    break;
- 		default:
- 		    break;
- 	    }
-+	    make_unicode_map();
- 	}
- #endif /* KTERM_KANJIMODE */
+ /* from xterm-200 */
+ #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__INTERIX) || defined(__APPLE__)
+ #ifndef USE_POSIX_TERMIOS
+@@ -2374,7 +2378,7 @@ spawn ()
+ #endif	/* sun */
+ 	struct passwd *pw = NULL;
+ #ifdef UTMP
+-#ifdef SVR4
++#if defined(SVR4) || (defined(__FreeBSD__) && __FreeBSD_version >= 900007)
+ 	struct utmpx utmp;
+ #else
+ 	struct utmp utmp;
+@@ -3286,7 +3290,7 @@ spawn ()
  
-@@ -1973,6 +1983,10 @@ char *name;
- get_pty (pty)
-     int *pty;
- {
-+#if 1
-+    int tty;
-+    return (openpty(pty, &tty, ttydev, NULL, NULL));
+ 		/* set up the new entry */
+ 		utmp.ut_type = USER_PROCESS;
+-#ifndef linux
++#if !defined(linux) && !defined(__FreeBSD__)
+ 		utmp.ut_exit.e_exit = 2;
+ #endif
+ 		(void) strncpy(utmp.ut_user,
+@@ -3314,8 +3318,13 @@ spawn ()
+ #endif
+ 		(void) strncpy(utmp.ut_host, buf, sizeof(utmp.ut_host));
+ #endif
++#if defined(__FreeBSD__)
++		(void) strncpy(utmp.ut_user, pw->pw_name, 
++			       sizeof(utmp.ut_user));
 +#else
- #ifdef __osf__
-     int tty;
-     return (openpty(pty, &tty, ttydev, NULL, NULL));
-@@ -2076,6 +2090,7 @@ get_pty (pty)
- #endif /* __sgi or umips else */
- #endif /* USE_GET_PSEUDOTTY else */
- #endif /* ATT else */
-+#endif /* !0 */
- }
+ 		(void) strncpy(utmp.ut_name, pw->pw_name, 
+ 			       sizeof(utmp.ut_name));
++#endif
  
- /*
+ 		utmp.ut_pid = getpid();
+ #ifdef SVR4
+@@ -3323,8 +3332,12 @@ spawn ()
+ 		utmp.ut_xtime = time ((Time_t *) 0);
+ 		utmp.ut_tv.tv_usec = 0;
+ #else
++#if defined(__FreeBSD__)
++		utmp.ut_tv.tv_usec = 0;
++#else
+ 		utmp.ut_time = time ((Time_t *) 0);
+ #endif
++#endif
+ 
+ 		/* write out the entry */
+ 		if (!resource.utmpInhibit)
+@@ -3728,7 +3741,7 @@ Exit(n)
+         int pty = term->screen.respond;  /* file descriptor of pty */
+ #ifdef UTMP
+ #ifdef USE_SYSV_UTMP
+-#ifdef SVR4
++#if defined(SVR4) || (defined(__FreeBSD__) && __FreeBSD_version >= 900007)
+ 	struct utmpx utmp;
+ 	struct utmpx *utptr;
+ #else
+@@ -3774,7 +3787,11 @@ Exit(n)
+ 		    utmp.ut_xtime = time ((Time_t *) 0);
+ 		    utmp.ut_tv.tv_usec = 0;
+ #else
++#if defined(__FreeBSD__)
++		    utmp.ut_tv.tv_usec = 0;
++#else
+ 		    utptr->ut_time = time((Time_t *) 0);
++#endif
+ #endif
+ 		    (void) pututline(utptr);
+ #ifdef WTMP
