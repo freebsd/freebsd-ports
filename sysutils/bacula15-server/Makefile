@@ -1,6 +1,6 @@
 PORTNAME=	bacula
 DISTVERSION=	15.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${DISTVERSION}
 PKGNAMEPREFIX?=	#
@@ -21,7 +21,8 @@ SHEBANG_FILES=	scripts/get_malware_abuse.ch scripts/key-manager.py.in \
 
 CONFLICTS?=	bacula13-server bacula11-server bacula9-server
 
-LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
+LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
+		libzstd.so:archivers/zstd
 
 USERS=		bacula
 GROUPS=		${USERS}
@@ -134,7 +135,7 @@ MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
 .endif
 
 S3_CONFIGURE_ARGS=	--enable-s3
-S3_LIB_DEPENDS=	libs3.so:sysutils/bacula-libs3
+S3_LIB_DEPENDS=		libs3.so:sysutils/bacula-libs3
 
 .include <bsd.port.pre.mk>
 
