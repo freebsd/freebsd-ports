@@ -1,9 +1,10 @@
 PORTNAME=	gambit-c
-PORTVERSION=	4.9.4
+PORTVERSION=	4.9.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang
+
+GAMBIT_VERSION=	409006
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Gambit programming system where the compiler generates portable C code
@@ -16,30 +17,27 @@ USES=		compiler gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	gambit
 GH_PROJECT=	gambit
+USE_LDCONFIG=	${PREFIX}/lib/gambit-c
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=	--enable-single-host \
-		--enable-gcc-opts \
-		--docdir=${DOCSDIR} \
-		--includedir=${PREFIX}/include/gambit-c \
-		--libdir=${PREFIX}/lib/gambit-c \
+CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--enable-compiler-name=gsc-gambit \
-		--enable-interpreter-name=gsi-gambit
+		--enable-gcc-opts \
+		--enable-interpreter-name=gsi-gambit \
+		--enable-single-host \
+		--includedir=${PREFIX}/include/gambit-c \
+		--libdir=${PREFIX}/lib/gambit-c
 MAKEFILE=	makefile
-USE_LDCONFIG=	${PREFIX}/lib/gambit-c
 
 INFO=		gambit
+PLIST_SUB=	GAMBIT_VERSION=${GAMBIT_VERSION}
 
-OPTIONS_DEFINE=	DOCS GCC
-OPTIONS_DEFAULT=GCC
+OPTIONS_DEFINE=		DOCS GCC
+OPTIONS_DEFAULT=	GCC
 
 GCC_DESC=	Build with GCC from ports
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MGCC}
-USE_GCC=	12
-.endif
 
 post-patch:
 .for i in makefile.in gsc/makefile.in gsi/makefile.in lib/makefile.in
