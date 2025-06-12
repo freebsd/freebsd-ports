@@ -1,3 +1,5 @@
-TIMESTAMP = 1555083697
-SHA256 (locustio-0.11.0.tar.gz) = 93404f831114791b0756325c53b08bff73f048eeb69688be657629feaa62b507
-SIZE (locustio-0.11.0.tar.gz) = 229879
+TIMESTAMP = 1749763850
+SHA256 (locust/locust-2.37.10.tar.gz) = 4ae1df1f5155cc7df5aa3eee333c1fa87c1a3ac4815a47f7e62d8cdeadc1fd45
+SIZE (locust/locust-2.37.10.tar.gz) = 2252603
+SHA256 (locust/2.37.10.tar.gz) = 683d072ad675ba9a03cbd70146d1433e40a1eabee4d1d8af45fdf05fe31a42f2
+SIZE (locust/2.37.10.tar.gz) = 5706321
