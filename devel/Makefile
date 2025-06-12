@@ -4739,6 +4739,7 @@
     SUBDIR += py-crc32c
     SUBDIR += py-crcmod
     SUBDIR += py-crick
+    SUBDIR += py-cronsim
     SUBDIR += py-crontab
     SUBDIR += py-crosshair-tool
     SUBDIR += py-cson
