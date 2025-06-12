@@ -1,1 +1,8 @@
-This package contains X render library and server implementations for XFree86.
+The X Rendering Extension introduces digital image composition as the
+foundation of a rendering model within the X Window System. Rendering
+geometric figures is accomplished by client-side tessellation into
+either triangles or trapezoids. Text is drawn by loading glyphs into
+the server and rendering sets of them.
+
+This package contains the client library for connecting to a Xserver
+that supports the Xrender extension.
