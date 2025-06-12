@@ -1,0 +1,82 @@
+#!/bin/sh
+
+# PROVIDE: rtorrent
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="rtorrent"
+rcvar=rtorrent_enable
+
+load_rc_config $name
+
+: ${rtorrent_enable='NO'}
+: ${rtorrent_run_dir="/var/run/${name}"}
+: ${rtorrent_pidfile="${rtorrent_run_dir}/${name}.pid"}
+: ${rtorrent_user='rtorrent'}
+: ${rtorrent_group='rtorrent'}
+: ${rtorrent_args=''}
+: ${rtorrent_bindaddr=''} 	# Bind listening socket and outgoing connections to this network interface address.
+: ${rtorrent_bindport=''}	# Try to open a listening port in the range a up to and including b
+: ${rtorrent_download_dir=''}	# Set the default download directory.
+: ${rtorrent_session_dir="/var/db/${name}"} # Session management will be enabled and the torrent files for all open downloads will be stored in this directory.
+: ${rtorrent_config="%%PREFIX%%/etc/${name}/${name}.conf"} # .rtorrent.rc config file name.
+: ${rtorrent_rpc_bindaddr=''}	# tcp (ip:port) socket for scgi/rpc connect.
+: ${rtorrent_rpc_bindsocket="${rtorrent_run_dir}/${name}-rpc.sock"} # Unix domain socket for scgi/rpc connect.
+
+
+command='/usr/sbin/daemon'
+procname='%%PREFIX%%/bin/rtorrent'
+command_args='-n'
+
+if [ -n "${rtorrent_bindaddr}" ]; then
+	command_args="${command_args} -b ${rtorrent_bindaddr}"
+fi
+if [ -n "${rtorrent_bindport}" ]; then
+	command_args="${command_args} -p ${rtorrent_bindport}"
+fi
+if [ -n "${rtorrent_download_dir}" ]; then
+	command_args="${command_args} -d ${rtorrent_download_dir}"
+fi
+if [ -n "${rtorrent_session_dir}" ]; then
+	command_args="${command_args} -s ${rtorrent_session_dir}"
+fi
+if [ -n "${rtorrent_config}" ]; then
+	command_args="${command_args} -o import=${rtorrent_config}"
+fi
+if [ -n "${rtorrent_rpc_bindsocket}" ]; then
+	command_args="${command_args} -o scgi_local=${rtorrent_rpc_bindsocket}"
+fi
+if [ -n "${rtorrent_rpc_bindaddr}" ]; then
+	command_args="${command_args} -o network.scgi.open_port=${rtorrent_rpc_bindaddr}"
+fi
+command_args="-p ${rtorrent_pidfile} -S -T ${name} ${procname} ${command_args} -o session.path.set=${rtorrent_session_dir} -o system.daemon.set=yes ${rtorrent_args}"
+
+
+pidfile="${rtorrent_pidfile}"
+required_dirs="${rtorrent_download_dir}"
+required_files="${command} ${procname}"
+
+start_precmd="${name}_start_precmd"
+
+rtorrent_start_precmd()
+{
+	# create the file pid, and directory, with correct permissions
+	if [ ! -d ${rtorrent_run_dir} ]; then
+		install -d -o ${rtorrent_user} -g ${rtorrent_group} ${rtorrent_run_dir}
+	fi
+	if [ ! -d ${rtorrent_session_dir} ]; then
+		install -d -o ${rtorrent_user} -g ${rtorrent_group} ${rtorrent_session_dir}
+	fi
+	if [ -n "${rtorrent_session_dir}" ]; then
+		rm -f "${rtorrent_session_dir}/rtorrent.lock"
+	fi
+	if [ -e "${rtorrent_rpc_bindsocket}" ]; then
+		rm -f "${rtorrent_rpc_bindsocket}"
+	fi
+}
+
+
+run_rc_command "$1"
+

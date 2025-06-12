@@ -1,5 +1,6 @@
 PORTNAME=	rtorrent
 DISTVERSION=	0.15.4
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v${DISTVERSION}/
 
@@ -15,17 +16,21 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtorrent.so:net-p2p/libtorrent
 
 USES=		compiler:c++17-lang ncurses pkgconfig
+USE_RC_SUBR=	rtorrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 LDFLAGS+=	-lexecinfo -pthread
 
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	bin/rtorrent
-PORTDOCS=	README
-PORTEXAMPLES=	rtorrent.rc
+USERS=		rtorrent
+GROUPS=		rtorrent
 
-OPTIONS_DEFINE=		DOCS EXAMPLES IPV6
+PLIST_FILES=	bin/rtorrent \
+		"@sample ${ETCDIR}/rtorrent.conf.sample"
+PORTDOCS=	README
+
+OPTIONS_DEFINE=		DOCS IPV6
 OPTIONS_DEFAULT=	TINYXML
 OPTIONS_RADIO=		XML
 OPTIONS_RADIO_XML=	TINYXML XMLRPC
@@ -36,12 +41,13 @@ TINYXML_CONFIGURE_ON=	--with-xmlrpc-tinyxml2
 XMLRPC_LIB_DEPENDS=	libxmlrpc.so:net/xmlrpc-c
 XMLRPC_CONFIGURE_ON=	--with-xmlrpc-c
 
+post-install:
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/rtorrent.rc \
+		${STAGEDIR}${ETCDIR}/rtorrent.conf.sample
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/rtorrent.rc ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>

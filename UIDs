@@ -343,7 +343,7 @@ ldap:*:389:389::0:0:OpenLDAP Server:/nonexistent:/usr/sbin/nologin
 # free: 394
 # free: 395
 # free: 396
-# free: 397
+rtorrent:*:397:397::0:0:rtorrent Daemon User:/nonexistent:/usr/sbin/nologin
 tiarra:*:398:398::0:0:Tiarra IRC Proxy:/nonexistent:/usr/sbin/nologin
 # free: 399
 # free: 400
