@@ -3,7 +3,7 @@ include/ffitarget.h
 lib/libffi.a
 lib/libffi.so
 lib/libffi.so.8
-lib/libffi.so.8.1.4
+lib/libffi.so.8.2.0
 libdata/pkgconfig/libffi.pc
 share/man/man3/ffi.3.gz
 share/man/man3/ffi_call.3.gz
