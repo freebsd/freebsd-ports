@@ -4,7 +4,7 @@ DISTVERSION=	2.5.5
 PORTREVISION=	2
 CATEGORIES=	devel games graphics multimedia
 
-MAINTAINER=	agh@riseup.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada bindings to the Simple and Fast Multimedia Library (SFML)
 WWW=		https://mgrojo.github.io/ASFML/
 

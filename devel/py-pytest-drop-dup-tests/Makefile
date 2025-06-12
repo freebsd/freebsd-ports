@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	agh@riseup.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pytest plugin to drop duplicated tests during collection
 WWW=		https://github.com/nicoddemus/pytest-drop-dup-tests
 

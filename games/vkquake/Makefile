@@ -2,7 +2,7 @@ PORTNAME=	vkquake
 DISTVERSION=	1.32.2
 CATEGORIES=	games
 
-MAINTAINER=	agh@riseup.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vulkan Quake port based on QuakeSpasm
 WWW=		https://github.com/Novum/vkQuake
 

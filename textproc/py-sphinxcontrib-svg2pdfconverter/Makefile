@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:C/-/_/}-${DISTVERSION}
 
-MAINTAINER=	agh@riseup.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sphinx extension for converting SVG to PDF
 WWW=		https://github.com/missinglinkelectronics/sphinxcontrib-svg2pdfconverter
 

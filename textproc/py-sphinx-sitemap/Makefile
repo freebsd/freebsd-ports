@@ -4,7 +4,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	agh@riseup.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sphinx extension for generating sitemaps for HTML
 WWW=		https://github.com/jdillard/sphinx-sitemap
 

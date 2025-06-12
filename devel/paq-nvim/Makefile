@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
 CATEGORIES=	devel editors
 
-MAINTAINER=	agh@riseup.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimal Neovim plugin manager
 WWW=		https://github.com/savq/paq-nvim
 

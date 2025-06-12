@@ -3,7 +3,7 @@ DISTVERSION=	2.2.5
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	agh@riseup.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sphinx extension for Read the Docs overrides
 WWW=		https://pypi.org/project/readthedocs-sphinx-ext
 

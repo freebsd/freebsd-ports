@@ -4,7 +4,7 @@ CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	agh@riseup.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OMEMO Crypto Library
 WWW=		https://dev.gajim.org/gajim/omemo-dr
 

@@ -3,7 +3,7 @@ DISTVERSION=	22.10.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	agh@riseup.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Core framework for developing portable automated build systems
 WWW=		https://github.com/AdaCore/e3-core
 

@@ -3,7 +3,7 @@ DISTVERSION=	21.0
 PORTREVISION=	2
 CATEGORIES=	devel
 
-MAINTAINER=	agh@riseup.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada framework for information systems development
 WWW=		https://github.com/godunko/matreshka
 
