@@ -1,5 +1,5 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.5.28
+PORTVERSION=	10.5.29
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	\
@@ -64,7 +64,7 @@ OPTIONS_DEFINE_aarch64=	WSREP
 OPTIONS_DEFINE_powerpc64le=	WSREP
 OPTIONS_DEFINE_powerpc64=	WSREP
 OPTIONS_DEFINE_riscv64=	WSREP
-OPTIONS_GROUP_COMPRESSION=	LZ4 LZO SNAPPY ZSTD
+OPTIONS_GROUP_COMPRESSION=	LZ4 LZO SNAPPY
 OPTIONS_GROUP_ENGINES=	COLUMNSTORE INNOBASE MROONGA OQGRAPH ROCKSDB S3 SPHINX SPIDER
 OPTIONS_GROUP_GROONGA=	ZMQ MSGPACK
 OPTIONS_EXCLUDE_i386=	ROCKSDB
@@ -84,7 +84,6 @@ SPHINX_DESC=	SphinxSE engine
 SPIDER_DESC=	Partitioning and XA-transactions engine
 WSREP_DESC=	Build wsrep clustering
 ZMQ_DESC=	ZeroMQ support
-ZSTD_DESC+=	Zstandard compression support (RocksDB only)
 .endif
 
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH=${PREFIX} \
@@ -167,7 +166,7 @@ ${ENGINE}_CMAKE_OFF=	-DPLUGIN_${ENGINE}=NO
 ${ENGINE}_CMAKE_ON=	-DPLUGIN_${ENGINE}=DYNAMIC
 .endfor
 INNOBASE_VARS_OFF=	disabled_plugins+=INNOBASE
-COLUMNSTORE_BROKEN=	ColumnStore build failure "'swap<logging::Message>' is missing exception specification"
+#COLUMNSTORE_BROKEN=	ColumnStore build failure "'swap<logging::Message>' is missing exception specification"
 CONNECT_EXTRA_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 CONNECT_EXTRA_USE=		gnome=libxml2
 CONNECT_EXTRA_USES=		gnome
@@ -186,6 +185,7 @@ OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 #ROCKSDB_BROKEN=		RocksDB build failure "incompatible pointer to integer conversion assigning to 'size_t'"
 ROCKSDB_USES=		python
 ROCKSDB_CMAKE_ON=	-DPYTHON_SHEBANG=${PYTHON_CMD}
+ROCKSDB_LIB_DEPENDS=	libzstd.so:archivers/zstd
 SNAPPY_CMAKE_ON=	-DWITH_INNODB_SNAPPY=ON  -DWITH_ROCKSDB_snappy=ON
 SNAPPY_CMAKE_OFF=	-DWITH_INNODB_SNAPPY=OFF -DWITH_ROCKSDB_snappy=OFF
 SNAPPY_LIB_DEPENDS=	libsnappy.so:archivers/snappy
@@ -196,9 +196,6 @@ WSREP_RUN_DEPENDS=	bash:shells/bash \
 			#stunnel:security/stunnel
 WSREP_SHEBANG_FILES=	bin/wsrep_sst_rsync
 ZMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
-ZSTD_CMAKE_ON=		-DWITH_ROCKSDB_zstd=ON
-ZSTD_CMAKE_OFF=		-DWITH_ROCKSDB_zstd=OFF
-ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .for PLUGIN in ${DISABLED_PLUGINS}
 CMAKE_ARGS+=		-DPLUGIN_${PLUGIN}=NO
