@@ -1,0 +1,12 @@
+#!/bin/sh
+
+args=
+for arg in "$@" ; do
+    if [ "${arg#* }" != "${arg}" ] ; then
+       args="${args} '${arg}'"
+    else
+       args="${args} ${arg}"
+    fi
+done
+
+su -m healthchecks -c "%%HOMEDIR%%/manage.py ${args}"

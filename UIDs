@@ -737,7 +737,7 @@ stirlingpdf:*:785:785::0:0:Stirling PDF Daemon:/usr/local/stirlingpdf:/usr/sbin/
 # free: 787
 # free: 788
 # free: 789
-# free: 790
+healthchecks:*:790:790::0:0:Open-source cron and background task monitoring service:/var/db/healthchecks:/usr/sbin/nologin
 # free: 791
 # free: 792
 # free: 793

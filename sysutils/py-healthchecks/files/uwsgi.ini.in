@@ -1,0 +1,35 @@
+[uwsgi]
+strict
+die-on-term
+http-socket = :8000
+harakiri = 10
+buffer-size = 32768
+post-buffering = 16192
+processes = 4
+if-env = UWSGI_PROCESSES
+processes = %(_)
+endif =
+auto-procname
+enable-threads
+threads = 1
+chdir = %%HOMEDIR%%
+module = hc.wsgi:application
+thunder-lock
+disable-write-exception
+
+# workaround for https://github.com/unbit/uwsgi/issues/2299
+max-fd = 10000
+
+# compression
+check-static = static-collected/
+static-gzip-dir = static-collected/CACHE
+
+# Note: manage.py migrate will also run system checks
+hook-pre-app = exec:./manage.py migrate
+# Use "--skip-checks" to avoid running same checks 3 times
+attach-daemon = ./manage.py sendalerts --skip-checks
+attach-daemon = ./manage.py sendreports --loop --skip-checks
+
+if-env = SMTPD_PORT
+attach-daemon = ./manage.py smtpd --port %(_) --skip-checks
+endif =
