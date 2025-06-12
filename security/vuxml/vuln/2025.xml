@@ -1,3 +1,50 @@
+  <vuln vid="ae028662-475e-11f0-9ca4-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.0.0</ge><lt>18.0.2</lt></range>
+	<range><ge>17.11.0</ge><lt>17.11.4</lt></range>
+	<range><ge>2.1.0</ge><lt>17.10.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/06/11/patch-release-gitlab-18-0-2-released/">
+	  <p>HTML injection impacts GitLab CE/EE</p>
+	  <p>Cross-site scripting issue impacts GitLab CE/EE</p>
+	  <p>Missing authorization issue impacts GitLab Ultimate EE</p>
+	  <p>Denial of Service impacts GitLab CE/EE</p>
+	  <p>Denial of Service via unbounded Webhook token names impacts GitLab CE/EE</p>
+	  <p>Denial of Service via unbounded Board Names impacts GitLab CE/EE</p>
+	  <p>Information disclosure issue impacts GitLab CE/EE</p>
+	  <p>Denial of Service (DoS) via uncontrolled HTTP Response Processing impacts GitLab CE/EE</p>
+	  <p>Information disclosure via authorization bypass impacts GitLab CE/EE</p>
+	  <p>Sensitive information disclosure via Group IP restriction bypass</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4278</cvename>
+      <cvename>CVE-2025-2254</cvename>
+      <cvename>CVE-2025-5121</cvename>
+      <cvename>CVE-2025-0673</cvename>
+      <cvename>CVE-2025-1516</cvename>
+      <cvename>CVE-2025-1478</cvename>
+      <cvename>CVE-2024-9512</cvename>
+      <cvename>CVE-2025-5996</cvename>
+      <cvename>CVE-2025-5195</cvename>
+      <cvename>CVE-2025-5982</cvename>
+      <url>https://about.gitlab.com/releases/2025/06/11/patch-release-gitlab-18-0-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-06-11</discovery>
+      <entry>2025-06-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2a220a73-4759-11f0-a44a-6cc21735f730">
     <topic>PostgreSQL JDBC library -- Improper Authentication</topic>
     <affects>
