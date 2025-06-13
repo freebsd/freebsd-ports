@@ -1,5 +1,5 @@
 PORTNAME=	gapminder
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	misc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,10 +11,10 @@ LICENSE=	CC0-1.0
 
 RUN_DEPENDS=	R-cran-tibble>0:devel/R-cran-tibble
 TEST_DEPENDS=	R-cran-dplyr>0:math/R-cran-dplyr \
-		R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
+		R-cran-ggplot2>=3.0.0:graphics/R-cran-ggplot2 \
 		R-cran-knitr>=1.47:print/R-cran-knitr \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
-		R-cran-testthat>0:devel/R-cran-testthat
+		R-cran-testthat>=3.0.0:devel/R-cran-testthat
 
 USES=		cran:auto-plist
 
