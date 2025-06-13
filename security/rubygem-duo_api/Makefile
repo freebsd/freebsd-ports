@@ -1,5 +1,6 @@
 PORTNAME=	duo_api
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +10,7 @@ WWW=		https://github.com/duosecurity/duo_api_ruby
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	rubygem-base64>=0.2.0<0.3:converters/rubygem-base64
+RUN_DEPENDS=	rubygem-base6402>=0.2.0<0.3:converters/rubygem-base6402
 
 USES=		gem
 
