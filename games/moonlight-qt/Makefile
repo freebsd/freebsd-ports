@@ -1,6 +1,6 @@
 PORTNAME=	moonlight
 DISTVERSION=	6.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/moonlight-stream/moonlight-qt/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-qt
@@ -44,6 +44,11 @@ QT5_USES=	qt:5
 QT5_USE=	qt=core,declarative,gui,network,quickcontrols2,svg,widgets,buildtools:build
 QT6_USES=	qt:6
 QT6_USE=	qt=base,declarative,svg
+
+QT6_PATCH_SITES=	https://github.com/moonlight-stream/moonlight-qt/commit/
+# fix errors for qt6.9
+QT6_PATCHFILES+=	75359bb1c483ba9e52bba8c34a662d807e0cc3c4.patch:-p1 \
+			7a769172a1f62e5198584dff9fd924e8a9e431a0.patch:-p1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's@Exec=moonlight.*@Exec=${PORTNAME}${PKGNAMESUFFIX}@' \
