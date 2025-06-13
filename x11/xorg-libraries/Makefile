@@ -1,6 +1,6 @@
 PORTNAME=	xorg-libraries
-PORTVERSION=	7.7
-PORTREVISION=	5
+DISTVERSION=	7.7
+PORTREVISION=	6
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontenc.pc:x11-fonts/libfontenc \
 		${LOCALBASE}/libdata/pkgconfig/xdmcp.pc:x11/libXdmcp \
 		${LOCALBASE}/libdata/pkgconfig/xext.pc:x11/libXext \
 		${LOCALBASE}/libdata/pkgconfig/xfixes.pc:x11/libXfixes \
-		${LOCALBASE}/libdata/pkgconfig/xfont.pc:x11-fonts/libXfont \
+		${LOCALBASE}/libdata/pkgconfig/xfont2.pc:x11-fonts/libXfont2 \
 		${LOCALBASE}/libdata/pkgconfig/xft.pc:x11-fonts/libXft \
 		${LOCALBASE}/libdata/pkgconfig/xi.pc:x11/libXi \
 		${LOCALBASE}/libdata/pkgconfig/xinerama.pc:x11/libXinerama \
