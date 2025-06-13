@@ -18,7 +18,7 @@ LIB_DEPENDS=	libtotem-plparser.so:multimedia/totem-pl-parser \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libsoup-3.0.so:devel/libsoup3 \
-		libpeas-1.0.so:devel/libpeas \
+		libpeas-1.0.so:devel/libpeas1 \
 		libjson-glib-1.0.so:devel/json-glib \
 		libsecret-1.so:security/libsecret \
 		libgudev-1.0.so:devel/libgudev \
