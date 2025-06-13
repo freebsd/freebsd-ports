@@ -3529,6 +3529,7 @@
 %%WWWDIR%%/lib/plugins/config/style.css
 %%WWWDIR%%/lib/plugins/extension/Exception.php
 %%WWWDIR%%/lib/plugins/extension/Extension.php
+%%WWWDIR%%/lib/plugins/extension/ExtensionApiResponse.php
 %%WWWDIR%%/lib/plugins/extension/Gui.php
 %%WWWDIR%%/lib/plugins/extension/GuiAdmin.php
 %%WWWDIR%%/lib/plugins/extension/GuiExtension.php
@@ -3729,6 +3730,7 @@
 %%WWWDIR%%/lib/plugins/extension/lang/zh/intro_templates.txt
 %%WWWDIR%%/lib/plugins/extension/lang/zh/lang.php
 %%WWWDIR%%/lib/plugins/extension/plugin.info.txt
+%%WWWDIR%%/lib/plugins/extension/remote.php
 %%WWWDIR%%/lib/plugins/extension/script.js
 %%WWWDIR%%/lib/plugins/extension/style.less
 %%WWWDIR%%/lib/plugins/index.html
@@ -3740,6 +3742,9 @@
 %%WWWDIR%%/lib/plugins/logviewer/lang/cs/intro.txt
 %%WWWDIR%%/lib/plugins/logviewer/lang/cs/lang.php
 %%WWWDIR%%/lib/plugins/logviewer/lang/cs/nolog.txt
+%%WWWDIR%%/lib/plugins/logviewer/lang/de-informal/intro.txt
+%%WWWDIR%%/lib/plugins/logviewer/lang/de-informal/lang.php
+%%WWWDIR%%/lib/plugins/logviewer/lang/de-informal/nolog.txt
 %%WWWDIR%%/lib/plugins/logviewer/lang/de/intro.txt
 %%WWWDIR%%/lib/plugins/logviewer/lang/de/lang.php
 %%WWWDIR%%/lib/plugins/logviewer/lang/de/nolog.txt
