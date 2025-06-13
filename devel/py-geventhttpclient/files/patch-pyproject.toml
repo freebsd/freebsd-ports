@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-06-11 12:41:36 UTC
++++ pyproject.toml
+@@ -9,7 +9,7 @@ requires-python = ">=3.9"
+ description = "HTTP client library for gevent"
+ readme = "README.md"
+ requires-python = ">=3.9"
+-license = "MIT"
++license = {file = "LICENSE-MIT"}
+ keywords = ["http", "gevent", "client"]
+ authors = [{name = "Antonin Amand", email = "antonin.amand@gmail.com"}]
+ classifiers = [
