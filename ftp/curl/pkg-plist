@@ -98,6 +98,8 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/symbols.pl
 %%PORTDOCS%%%%DOCSDIR%%/mk-ca-bundle.md
 %%PORTDOCS%%%%DOCSDIR%%/options-in-versions
+%%PORTDOCS%%%%DOCSDIR%%/runtests.md
+%%PORTDOCS%%%%DOCSDIR%%/testcurl.md
 %%PORTDOCS%%%%DOCSDIR%%/wcurl.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/10-at-a-time.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.example
