@@ -26,7 +26,6 @@ RUN_DEPENDS=	capnproto1>=1.0.1:devel/capnproto1 \
 
 USES=		cmake compiler:c++17-lang localbase:ldflags pkgconfig ssl
 
-CFLAGS+=	-DSPDLOG_FMT_EXTERNAL=1
 CFLAGS_armv6=	-Wno-c++11-narrowing
 CFLAGS_armv7=	-Wno-c++11-narrowing
 CFLAGS_i386=	-Wno-c++11-narrowing
