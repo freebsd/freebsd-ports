@@ -47,7 +47,7 @@ pre-build:
 		tests/libpeas/plugins/embedded/embedded-resources.h
 
 .if ${LIBPEAS_SLAVE} == python
-LIB_DEPENDS+=	libpeas-1.0.so:devel/libpeas
+LIB_DEPENDS+=	libpeas-1.0.so:devel/libpeas1
 
 USES+=		python
 USE_PYTHON=	flavors
