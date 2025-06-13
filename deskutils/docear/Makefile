@@ -3,8 +3,7 @@ PORTVERSION=	1.2.0
 _suffix=	_stable
 CATEGORIES=	deskutils education java
 MASTER_SITES=	http://docear.org/downloads/${PORTVERSION}${_suffix}/ \
-		SF/docear/1.x/${PORTVERSION}${_suffix} \
-		LOCAL/mandree/${DIST_SUBDIR}/
+		SF/docear/1.x/${PORTVERSION}${_suffix}
 DISTNAME=	docear_linux
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}${_suffix}
 
