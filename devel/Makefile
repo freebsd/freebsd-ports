@@ -1263,7 +1263,6 @@
     SUBDIR += libcutl
     SUBDIR += libcwd
     SUBDIR += libdaemon
-    SUBDIR += libdex
     SUBDIR += libdap
     SUBDIR += libdatadog
     SUBDIR += libdatovka
@@ -1273,6 +1272,7 @@
     SUBDIR += libdbusmenu-qt
     SUBDIR += libddoc
     SUBDIR += libddwaf
+    SUBDIR += libdex
     SUBDIR += libdfui
     SUBDIR += libdill
     SUBDIR += libdisasm

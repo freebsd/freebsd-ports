@@ -5,8 +5,8 @@
     SUBDIR += 9menu
     SUBDIR += aclip
     SUBDIR += admiral
-    SUBDIR += alacritty
     SUBDIR += alacarte
+    SUBDIR += alacritty
     SUBDIR += albert
     SUBDIR += alttab
     SUBDIR += aminal

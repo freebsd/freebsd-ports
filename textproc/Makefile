@@ -1515,8 +1515,8 @@
     SUBDIR += py-pyaml
     SUBDIR += py-pybtex
     SUBDIR += py-pybtex-docutils
-    SUBDIR += py-pycountry
     SUBDIR += py-pycddl
+    SUBDIR += py-pycountry
     SUBDIR += py-pydata-sphinx-theme
     SUBDIR += py-pyexcel
     SUBDIR += py-pyexcel-ezodf
