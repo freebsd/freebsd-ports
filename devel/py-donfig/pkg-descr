@@ -1,0 +1,4 @@
+Donfig is a python library meant to make configuration easier for other python
+packages. Donfig can be configured programmatically, by environment variables,
+or from YAML files in standard locations. The below examples show the basics of
+using donfig.

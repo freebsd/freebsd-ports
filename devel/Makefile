@@ -4825,6 +4825,7 @@
     SUBDIR += py-dogpile.cache
     SUBDIR += py-doit
     SUBDIR += py-domdf-python-tools
+    SUBDIR += py-donfig
     SUBDIR += py-donut-shellcode
     SUBDIR += py-dotmap
     SUBDIR += py-dotted
