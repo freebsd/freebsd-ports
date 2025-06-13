@@ -1053,6 +1053,7 @@
     SUBDIR += py-pandas
     SUBDIR += py-pandas-datareader
     SUBDIR += py-patsy
+    SUBDIR += py-pcodec
     SUBDIR += py-pdal
     SUBDIR += py-permutation
     SUBDIR += py-petsc4py
