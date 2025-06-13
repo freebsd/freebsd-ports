@@ -1,6 +1,6 @@
---- pyproject.toml.orig	2025-05-28 22:00:38 UTC
+--- pyproject.toml.orig	2025-05-29 19:52:15 UTC
 +++ pyproject.toml
-@@ -9,12 +9,12 @@ exclude = ['rencode/*.c']
+@@ -9,7 +9,7 @@ exclude = ['rencode/*.c']
  exclude = ['rencode/*.c']
  
  [tool.poetry.build]
@@ -9,18 +9,3 @@
  
  [tool.poetry.dependencies]
  python = "^3.9"
- cython = ">=3"
--setuptools = "^80.4.0"
-+setuptools = "*"
- 
- [tool.poetry.group.dev.dependencies]
- black = "^21.9b0"
-@@ -23,7 +23,7 @@ pytest = "^8.3.5"
- 
- 
- [tool.poetry.group.build.dependencies]
--setuptools = "^80.9.0"
-+setuptools = "*"
- cython = "^3.1.1"
- poetry-core = "^2.1.3"
- 
