@@ -1,5 +1,6 @@
 PORTNAME=	fluentd
 PORTVERSION=	1.18.0
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://fluentd.org/
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
-	rubygem-base64>=0.2<0.3:converters/rubygem-base64 \
+	rubygem-base6402>=0.2<0.3:converters/rubygem-base6402 \
 	rubygem-bundler>=0:sysutils/rubygem-bundler \
 	rubygem-cool.io>=1.4.5<2.0.0:devel/rubygem-cool.io \
 	rubygem-csv>=3.2:devel/rubygem-csv \
