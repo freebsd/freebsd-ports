@@ -1,10 +1,10 @@
 PORTNAME=	vqcc-gtk
-PORTVERSION=	0.5
+DISTVERSION=	0.5
 PORTREVISION=	11
-CATEGORIES?=	net-im
+CATEGORIES=	net-im
 MASTER_SITES=	SF
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER=	mirror176@hotmail.com
 COMMENT=	LAN chat client compatible with quickChat and Vypress Chat (TM)
 WWW=		https://vqcc-gtk.sourceforge.net/
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 
-USES=		gettext gmake gnome localbase:ldflags pathfix pkgconfig xorg
+USES=		gettext gmake gnome pkgconfig xorg
 USE_GNOME=	gdkpixbufextra gnomeprefix gtk20
 USE_XORG=	ice sm x11 xext xscrnsaver
 GNU_CONFIGURE=	yes
