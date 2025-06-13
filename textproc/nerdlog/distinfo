@@ -1,5 +1,5 @@
-TIMESTAMP = 1747280855
-SHA256 (go/textproc_nerdlog/nerdlog-v1.7.2/v1.7.2.mod) = 84c90da8b68005e016c1cfb86a87ea46ed0dfa374d53dd0128ede3438f89e0ff
-SIZE (go/textproc_nerdlog/nerdlog-v1.7.2/v1.7.2.mod) = 1211
-SHA256 (go/textproc_nerdlog/nerdlog-v1.7.2/v1.7.2.zip) = 51c057284a0153805c6c49bee0f52db8dcc6bcbc6f6e562096df434048786442
-SIZE (go/textproc_nerdlog/nerdlog-v1.7.2/v1.7.2.zip) = 2080263
+TIMESTAMP = 1749828111
+SHA256 (go/textproc_nerdlog/nerdlog-v1.10.0/v1.10.0.mod) = 0c58037f5de021bf8abd2ab2e82ac41d1932270767aeaa05ed08706f77339460
+SIZE (go/textproc_nerdlog/nerdlog-v1.10.0/v1.10.0.mod) = 1160
+SHA256 (go/textproc_nerdlog/nerdlog-v1.10.0/v1.10.0.zip) = 401260acc3c81367e06ef4bcd01f7116bbe3ab1ee346e0b9f92024997f3a49cb
+SIZE (go/textproc_nerdlog/nerdlog-v1.10.0/v1.10.0.zip) = 2256981
