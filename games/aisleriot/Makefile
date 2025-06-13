@@ -11,7 +11,8 @@ WWW=		https://wiki.gnome.org/Apps/Aisleriot
 LICENSE_COMB=	multi
 LICENSE=	GPLv3+ LGPL3+ GFDL
 
-BUILD_DEPENDS=	itstool:textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		bash:shells/bash
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3
 
@@ -24,10 +25,7 @@ USE_XORG=	x11
 
 MESON_ARGS=	-Dtheme_kde=false -Dguile=${GUILE_VER} \
 		-Ddocs=false
-SHEBANG_FILES=	data/icons/meson_updateiconcache.py \
-		data/meson_desktopfile.py \
-		src/lib/meson_compileschemas.py \
-		src/meson_gconf.py
+SHEBANG_GLOB=	*.py
 
 GLIB_SCHEMAS=	org.gnome.Patience.WindowState.gschema.xml
 
