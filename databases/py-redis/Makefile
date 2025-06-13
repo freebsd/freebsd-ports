@@ -1,5 +1,5 @@
 PORTNAME=	redis
-PORTVERSION=	6.1.0
+PORTVERSION=	6.2.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +28,7 @@ HIREDIS_DESC=	High performance response parser
 JWT_DESC=	Authentication token
 OCSP_DESC=	Online Certificate Status Protocol support
 
-HIREDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>=3.0.0:databases/py-hiredis@${PY_FLAVOR}
+HIREDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>=3.2.0:databases/py-hiredis@${PY_FLAVOR}
 JWT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyjwt>=2.9.0:www/py-pyjwt@${PY_FLAVOR}
 OCSP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=20.0.1,1:security/py-openssl@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}requests>=2.31.0:www/py-requests@${PY_FLAVOR}
