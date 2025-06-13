@@ -1,11 +1,12 @@
 PORTNAME=	oauth2
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.12
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby wrapper for the OAuth 2.0 protocol
-WWW=		https://github.com/oauth-xx/oauth2
+WWW=		https://oauth2.galtzo.com/ \
+		https://github.com/oauth-xx/oauth2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
