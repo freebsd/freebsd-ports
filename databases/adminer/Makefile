@@ -1,11 +1,11 @@
 PORTNAME=	adminer
-DISTVERSION=	5.2.1
+DISTVERSION=	5.3.0
 CATEGORIES=	databases www
 MASTER_SITES=	https://github.com/vrana/adminer/releases/download/v${DISTVERSION}/
 EXTRACT_SUFX=	.php
 EXTRACT_ONLY=
 
-MAINTAINER=	uzsolt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured database management tool written in PHP
 WWW=		https://www.adminer.org
 
