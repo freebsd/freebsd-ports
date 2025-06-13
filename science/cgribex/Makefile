@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool
 
-CONFIGURE_ARGS=	--without-grpb_api
 CPPFLAGS+=	-DgFortran
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -27,9 +26,6 @@ JASPER_CONFIGURE_WITH=	jasper=${LOCALBASE}
 JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
 SZIP_CONFIGURE_WITH=	szlib=${LOCALBASE}
 SZIP_LIB_DEPENDS=	libsz.so:science/libaec
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|-Ino/include||g; s|-Lno/lib||g' ${WRKSRC}/Makefile ${WRKSRC}/*/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcgribex.so
