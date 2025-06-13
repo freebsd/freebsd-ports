@@ -56,7 +56,7 @@
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>PostgreSQL JDBC Driver project reports:</p>
-	<blockquote cite="https://jdbc.postgresql.org/changelogs/2025-06-11-42"/>
+	<blockquote cite="https://jdbc.postgresql.org/changelogs/2025-06-11-42">
 	<p>
                 Client Allows Fallback to Insecure Authentication Despite
                 channelBinding=require configuration. Fix channel binding
