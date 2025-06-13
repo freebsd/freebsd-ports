@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-05-16 03:08:05 UTC
+--- pyproject.toml.orig	2025-06-01 03:25:13 UTC
 +++ pyproject.toml
 @@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -8,7 +8,7 @@
  
  [project]
  name = "types-psutil"
- version = "7.0.0.20250516"
+ version = "7.0.0.20250601"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
 +license = { text = "Apache-2.0" }
