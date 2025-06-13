@@ -1,5 +1,5 @@
 PORTNAME=	packwerk
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=	rubygem-activesupport71>=6.0:devel/rubygem-activesupport71 \
 		rubygem-ast>=0:devel/rubygem-ast \
 		rubygem-better_html>=0:devel/rubygem-better_html \
 		rubygem-bundler>=0:sysutils/rubygem-bundler \
-		rubygem-constant_resolver>=0.2.0:devel/rubygem-constant_resolver \
+		rubygem-constant_resolver>=0.3:devel/rubygem-constant_resolver \
 		rubygem-parallel>=0:sysutils/rubygem-parallel \
 		rubygem-parser>=0:devel/rubygem-parser \
 		rubygem-prism>=0.25.0:textproc/rubygem-prism \
