@@ -28,6 +28,6 @@ USE_XORG=	x11
 # Patch sources to force using include files installed by graphics/podofo09
 post-patch:
 	@${REINPLACE_CMD} -e '/^#include/s|podofo/podofo.h|podofo09/podofo.h|' \
-		${WRKSRC}/src/podofoplugin.cpp \
+		${WRKSRC}/src/podofoplugin.cpp
 
 .include <bsd.port.mk>
