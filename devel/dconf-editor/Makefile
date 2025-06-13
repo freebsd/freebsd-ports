@@ -21,7 +21,8 @@ LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy \
 RUN_DEPENDS=	dconf>0:devel/dconf \
 		dbus>0:devel/dbus
 
-USES=		gettext gnome localbase meson pkgconfig tar:xz vala:build
+USES=		desktop-file-utils gettext gnome localbase meson pkgconfig tar:xz \
+		vala:build
 USE_GNOME=	glib20 gtk30 libxml2:build
 USE_LDCONFIG=	yes
 
