@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2025-05-14 16:29:29 UTC
++++ Makefile.in
+@@ -398,7 +398,7 @@ SUBDIRS = man
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = man
+-bin_SCRIPTS = xkeystone
++bin_SCRIPTS =
+ AM_CFLAGS = $(XRANDR_CFLAGS) $(CWARNFLAGS)
+ xrandr_LDADD = $(XRANDR_LIBS)
+ xrandr_SOURCES = \

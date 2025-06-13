@@ -1,2 +1,6 @@
-This package contains xrandr, a primitive command line interface to
-the RandR extension.
+Xrandr is used to set the size, orientation and/or reflection of the
+outputs for a screen. It can also set the screen size.
+
+If invoked without any option, it will dump the state of the outputs,
+showing the existing modes for each of them, with a '+' after the
+preferred modes and a '*' after the current mode.

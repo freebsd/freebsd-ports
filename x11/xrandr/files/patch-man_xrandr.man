@@ -1,0 +1,11 @@
+--- man/xrandr.man.orig	2025-05-14 16:17:35 UTC
++++ man/xrandr.man
+@@ -400,7 +400,7 @@ xrandr --fb 1024x768 --output VGA --transform 1.24,0.1
+ xrandr --fb 1024x768 --output VGA --transform 1.24,0.16,-124,0,1.24,0,0,0.000316,1
+ .RE
+ .SH "SEE ALSO"
+-Xrandr(__libmansuffix__), cvt(__appmansuffix__), xkeystone(__appmansuffix__), xbacklight(__appmansuffix__)
++Xrandr(__libmansuffix__), cvt(__appmansuffix__), xbacklight(__appmansuffix__)
+ .SH AUTHORS
+ Keith Packard,
+ Open Source Technology Center, Intel Corporation.
