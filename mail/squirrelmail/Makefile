@@ -1,5 +1,5 @@
 PORTNAME=	squirrelmail
-DISTVERSION=	20240929
+DISTVERSION=	20250613
 CATEGORIES=	mail www
 MASTER_SITES=	http://snapshots.squirrelmail.org/ \
 		http://freebsd.uzsolt.hu/src/
@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}_0200-SVN.stable
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	uzsolt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webmail system which accesses mail over IMAP
 WWW=		https://www.squirrelmail.org/
 
