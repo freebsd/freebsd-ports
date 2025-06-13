@@ -1,0 +1,27 @@
+Certmonger is primarily concerned with getting you or your system
+enrolled with a certificate authority (CA) and keeping you enrolled.
+
+To do this, the certmonger daemon runs in the background, taking guidance from
+client tools (via a D-Bus API, a command-line tool is provided which uses it).
+
+The daemon:
+
+    can generate key pairs if you don't already have one
+    can use a key pair to generate a certificate signing request
+    can submit the signing request to a CA
+    can wait for the CA to decide whether or not to issue the certificate
+    can store an issued certificate in a specified location
+    can monitor the certificate to see if it's about to expire
+    can warn you or simply log that a certificate is about to expire
+    can attempt to get a new certificate when a certificate is about to expire
+
+The goal is to have certmonger do what you need it to do based on what you've
+told it you need.  If you already have a certificate, it will be happy to just
+check on it periodically and warn you when it's about to expire. If you tell it
+where the private key is, and where the CA is, it can go ahead and try to
+re-enroll if you like.
+
+Keys and certificates can be stored and read in any of these formats:
+
+    PEM-formatted files
+    NSS database (dbm or sql)

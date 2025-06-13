@@ -76,6 +76,7 @@
     SUBDIR += ccsrch
     SUBDIR += certificate_maker
     SUBDIR += certmgr
+    SUBDIR += certmonger
     SUBDIR += certspotter
     SUBDIR += cfssl
     SUBDIR += cfv
