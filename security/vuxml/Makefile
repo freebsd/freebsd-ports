@@ -84,7 +84,7 @@ validate: tidy
 	fi
 	${PYTHON_CMD} ${FILESDIR}/extra-validation.py ${VUXML_FLAT_FILE}
 
-tidy: ${VUXML_FLAT_FILE}
+tidy: ${VUXML_FLAT_NAME}
 	@if [ ! -e ${LOCALBASE}/share/xml/dtd/vuxml/catalog.xml ]; \
 	then \
 		echo "Please install the VuXML port prior to running make validate/tidy."; \
