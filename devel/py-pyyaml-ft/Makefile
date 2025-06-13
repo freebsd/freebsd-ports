@@ -18,7 +18,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
 USES=		localbase python
-USE_PYTHON=	autoplist concurrent cython pep517
+USE_PYTHON=	autoplist concurrent cython pep517 pytest
+
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
