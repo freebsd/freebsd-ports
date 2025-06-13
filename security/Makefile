@@ -993,6 +993,7 @@
     SUBDIR += py-noiseprotocol
     SUBDIR += py-notus-scanner
     SUBDIR += py-ntlm-auth
+    SUBDIR += py-nvdlib
     SUBDIR += py-oauthlib
     SUBDIR += py-omemo-dr
     SUBDIR += py-onlykey
