@@ -1,15 +1,17 @@
 PORTNAME=	xkill
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+DISTVERSION=	1.0.6
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Utility for killing a client by its X resource
+WWW=		https://gitlab.freedesktop.org/xorg/app/xkill
 
-USES=		xorg xorg-cat:app
-USE_XORG=	x11 xmuu
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		tar:xz xorg xorg-cat:app
+USE_XORG=	x11 xmuu xorgproto
 
 PLIST_FILES=	bin/xkill share/man/man1/xkill.1.gz
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>
