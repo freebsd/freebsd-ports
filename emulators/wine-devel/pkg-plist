@@ -503,6 +503,7 @@ include/wine/windows/dxvahd.idl
 include/wine/windows/dyngraph.idl
 include/wine/windows/endpointvolume.h
 include/wine/windows/endpointvolume.idl
+include/wine/windows/errhandlingapi.h
 include/wine/windows/errorrep.h
 include/wine/windows/errors.h
 include/wine/windows/errrec.idl
@@ -1130,6 +1131,8 @@ include/wine/windows/windows.data.xml.dom.h
 include/wine/windows/windows.data.xml.dom.idl
 include/wine/windows/windows.devices.bluetooth.h
 include/wine/windows/windows.devices.bluetooth.idl
+include/wine/windows/windows.devices.bluetooth.rfcomm.h
+include/wine/windows/windows.devices.bluetooth.rfcomm.idl
 include/wine/windows/windows.devices.enumeration.h
 include/wine/windows/windows.devices.enumeration.idl
 include/wine/windows/windows.devices.geolocation.h
@@ -1203,6 +1206,8 @@ include/wine/windows/windows.networking.connectivity.h
 include/wine/windows/windows.networking.connectivity.idl
 include/wine/windows/windows.networking.h
 include/wine/windows/windows.networking.idl
+include/wine/windows/windows.networking.sockets.h
+include/wine/windows/windows.networking.sockets.idl
 include/wine/windows/windows.perception.spatial.h
 include/wine/windows/windows.perception.spatial.idl
 include/wine/windows/windows.perception.spatial.surfaces.h

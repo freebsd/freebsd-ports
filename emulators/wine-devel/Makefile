@@ -1,5 +1,5 @@
 PORTNAME=	wine
-DISTVERSION=	10.9
+DISTVERSION=	10.10
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/10.x/
@@ -43,7 +43,6 @@ CONFIGURE_ARGS+=--verbose \
 		--with-mingw CROSSCC="clang" \
 		--without-netapi \
 		--without-opencl \
-		--without-osmesa \
 		--without-pcap \
 		--without-pcsclite \
 		--with-pthread \
@@ -148,7 +147,7 @@ post-patch:
 	${REINPLACE_CMD} '/Exec/s|wine|wine64|g' ${WRKSRC}/loader/wine.desktop
 
 .else
-EXTRA_PATCHES+=	files/extra-patch-tools-winebuild-res32
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-tools-winebuild-res32
 PLIST_SUB+=		WINE32="" WINE64="@comment " WINEARCH="i386"
 .endif
 

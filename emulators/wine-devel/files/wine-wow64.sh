@@ -23,6 +23,9 @@ HERE
   exit 1
 fi
 
+# Export early so that external libs could be found
+export LD_32_LIBRARY_PATH="${LD_32_LIBRARY_PATH:+$LD_32_LIBRARY_PATH:}$I386_ROOT/$LOCALBASE/lib"
+
 WINE32_VERSION=$(env -u WINELOADERNOEXEC "$I386_ROOT/$PREFIX/bin/wine" --version)
 WINE64_VERSION=$(env -u WINELOADERNOEXEC "${TARGET}64" --version)
 if [ "$WINE32_VERSION" != "$WINE64_VERSION" ]
