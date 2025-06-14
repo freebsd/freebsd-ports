@@ -29,7 +29,7 @@ GH_TAGNAME=	${DRM_KMOD_GH_TAGNAME}
 .include <bsd.port.options.mk>
 
 SUB_FILES=	pkg-message
-SUB_LIST=	OPSYS=${OPSYS} OSREL=${OSREL}
+SUB_LIST=	PORTNAME=${PORTNAME} OPSYS=${OPSYS} OSREL=${OSREL}
 
 .if ${OPSYS} == FreeBSD && !( ${OSVERSION} >= 1500031 )
 IGNORE=		not supported on older than 1500031, no kernel support
