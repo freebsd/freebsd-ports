@@ -13,6 +13,9 @@ LICENSE_NAME=	Subscription license agreement for business and organizations
 LICENSE_TEXT=	See: https://www.jetbrains.com/store/license.html
 LICENSE_PERMS=	no-dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
+DEPRECATED=	Pycharm is now unified product. Please switch to devel/pycharm
+EXPIRATION_DATE=	2025-07-15
+
 ONLY_FOR_ARCH=	amd64
 
 BUILD_DEPENDS=	jna>0:devel/jna

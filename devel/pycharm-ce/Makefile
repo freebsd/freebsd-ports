@@ -11,6 +11,9 @@ WWW=		https://www.jetbrains.com/pycharm/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Pycharm is now unified product. Please switch to devel/pycharm
+EXPIRATION_DATE=	2025-07-15
+
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		jetbrains-pty4j>=0.12.13:devel/jetbrains-pty4j \
