@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.100.3
-PORTREVISION=	1
+DISTVERSION=	1.101.0
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
@@ -51,7 +50,6 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libcups.so:print/cups \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
-		libkrb5.so.3:security/krb5 \
 		libsecret-1.so:security/libsecret \
 		libnss3.so:security/nss \
 		libexpat.so:textproc/expat2 \
@@ -63,14 +61,14 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 TEST_DEPENDS=	electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		bash:shells/bash
 
-USES=		desktop-file-utils gl gmake gnome iconv:wchar_t jpeg \
-		localbase:ldflags nodejs:20,build pkgconfig python:build \
+USES=		desktop-file-utils gl gmake gnome gssapi:mit iconv:wchar_t \
+		jpeg localbase:ldflags nodejs:22,build pkgconfig python:build \
 		shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	258e40fedc6cb8edf399a463ce3a9d32e7e1f6f3
+SOURCE_COMMIT_HASH=	dfaf44141ea9deb3b4096f7cd6d24e00c147a4b1
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -97,9 +95,9 @@ MAKE_ENV+=	PLAYWRIGHT_BROWSERS_PATH=${WRKDIR}/pw-browsers \
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 TEST_ENV=	${MAKE_ENV:C/TMPDIR=.*//}
 
-NODEJS_DIR=	${.CURDIR:H:H}/www/node20
+NODEJS_DIR=	${.CURDIR:H:H}/www/node22
 .include "${NODEJS_DIR}/Makefile.version"
-ELECTRON_DIR=	${.CURDIR:H:H}/devel/electron34
+ELECTRON_DIR=	${.CURDIR:H:H}/devel/electron35
 .include "${ELECTRON_DIR}/Makefile.version"
 
 ELECTRON_DOWNLOAD_URL=	https://github.com/electron/electron/releases/download/v${ELECTRON_VER}

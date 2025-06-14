@@ -211,8 +211,12 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/github-authentication/package.json
 %%DATADIR%%/resources/app/extensions/github-authentication/package.nls.json
 %%DATADIR%%/resources/app/extensions/github/README.md
+%%DATADIR%%/resources/app/extensions/github/dist/430.js
+%%DATADIR%%/resources/app/extensions/github/dist/555.js
+%%DATADIR%%/resources/app/extensions/github/dist/698.js
 %%DATADIR%%/resources/app/extensions/github/dist/extension.js
 %%DATADIR%%/resources/app/extensions/github/dist/extension.js.LICENSE.txt
+%%DATADIR%%/resources/app/extensions/github/extension.webpack.config.cjs
 %%DATADIR%%/resources/app/extensions/github/images/icon.png
 %%DATADIR%%/resources/app/extensions/github/markdown.css
 %%DATADIR%%/resources/app/extensions/github/package.json
@@ -689,6 +693,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/prompt-basics/language-configuration.json
 %%DATADIR%%/resources/app/extensions/prompt-basics/package.json
 %%DATADIR%%/resources/app/extensions/prompt-basics/package.nls.json
+%%DATADIR%%/resources/app/extensions/prompt-basics/snippets/chatmode.code-snippets
 %%DATADIR%%/resources/app/extensions/prompt-basics/snippets/instructions.code-snippets
 %%DATADIR%%/resources/app/extensions/prompt-basics/snippets/prompt.code-snippets
 %%DATADIR%%/resources/app/extensions/prompt-basics/syntaxes/prompt.tmLanguage.json
@@ -1850,8 +1855,8 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/undici/lib/dispatcher/dispatcher.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/dispatcher/env-http-proxy-agent.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/dispatcher/fixed-queue.js
+%%DATADIR%%/resources/app/node_modules/undici/lib/dispatcher/h2c-client.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/dispatcher/pool-base.js
-%%DATADIR%%/resources/app/node_modules/undici/lib/dispatcher/pool-stats.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/dispatcher/pool.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/dispatcher/proxy-agent.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/dispatcher/retry-agent.js
@@ -1874,6 +1879,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/undici/lib/llhttp/llhttp_simd-wasm.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/llhttp/utils.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/mock/mock-agent.js
+%%DATADIR%%/resources/app/node_modules/undici/lib/mock/mock-call-history.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/mock/mock-client.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/mock/mock-errors.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/mock/mock-interceptor.js
@@ -1883,6 +1889,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/undici/lib/mock/pending-interceptors-formatter.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/util/cache.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/util/date.js
+%%DATADIR%%/resources/app/node_modules/undici/lib/util/stats.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/util/timers.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/web/cache/cache.js
 %%DATADIR%%/resources/app/node_modules/undici/lib/web/cache/cachestorage.js
@@ -2039,6 +2046,8 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/main.js
 %%DATADIR%%/resources/app/out/media/code-icon.svg
 %%DATADIR%%/resources/app/out/media/codicon.ttf
+%%DATADIR%%/resources/app/out/media/github.svg
+%%DATADIR%%/resources/app/out/media/google.svg
 %%DATADIR%%/resources/app/out/media/letterpress-dark.svg
 %%DATADIR%%/resources/app/out/media/letterpress-hcDark.svg
 %%DATADIR%%/resources/app/out/media/letterpress-hcLight.svg
@@ -2054,10 +2063,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/base/node/terminateProcess.sh
 %%DATADIR%%/resources/app/out/vs/base/parts/sandbox/electron-sandbox/preload-aux.js
 %%DATADIR%%/resources/app/out/vs/base/parts/sandbox/electron-sandbox/preload.js
-%%DATADIR%%/resources/app/out/vs/code/electron-sandbox/processExplorer/processExplorer.html
-%%DATADIR%%/resources/app/out/vs/code/electron-sandbox/processExplorer/processExplorer.js
-%%DATADIR%%/resources/app/out/vs/code/electron-sandbox/processExplorer/processExplorerMain.css
-%%DATADIR%%/resources/app/out/vs/code/electron-sandbox/processExplorer/processExplorerMain.js
 %%DATADIR%%/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html
 %%DATADIR%%/resources/app/out/vs/code/electron-sandbox/workbench/workbench.js
 %%DATADIR%%/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js
@@ -2070,7 +2075,10 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/editor/common/services/editorWebWorkerMain.js
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/break.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/chatEditModifiedFile.mp3
+%%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/chatUserActionRequired.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/clear.mp3
+%%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/codeActionApplied.mp3
+%%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/codeActionTriggered.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/diffLineDeleted.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/diffLineInserted.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/diffLineModified.mp3
@@ -2126,11 +2134,11 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration.fish
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration.ps1
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/webview/browser/pre/fake.html
-%%DATADIR%%/resources/app/out/vs/workbench/contrib/webview/browser/pre/index-no-csp.html
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/webview/browser/pre/index.html
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/webview/browser/pre/service-worker.js
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/ai-powered-suggestions.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/commandPalette.svg
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/customize-ai.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/dark-hc.png
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/dark.png
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/debug.svg
@@ -2155,7 +2163,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/shortcuts.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/terminal.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/workspaceTrust.svg
-%%DATADIR%%/resources/app/out/vs/workbench/services/extensionManagement/common/media/defaultIcon.png
 %%DATADIR%%/resources/app/out/vs/workbench/services/extensions/worker/webWorkerExtensionHostIframe.html
 %%DATADIR%%/resources/app/out/vs/workbench/services/languageDetection/browser/languageDetectionWebWorkerMain.js
 %%DATADIR%%/resources/app/out/vs/workbench/services/search/worker/localFileSearchMain.js
