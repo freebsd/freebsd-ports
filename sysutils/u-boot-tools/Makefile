@@ -1,5 +1,5 @@
 PORTNAME=	u-boot-tools
-DISTVERSION=	2020.07
+DISTVERSION=	2025.10 # Keep in sync with sysutils/u-boot-master
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/
 DISTNAME=	u-boot-${PORTVERSION}
@@ -10,25 +10,19 @@ WWW=		https://www.denx.de/wiki/U-Boot
 
 LICENSE=	GPLv2
 
-BROKEN_SSL=	libressl
-BROKEN_SSL_REASON_libressl=	not supported by the upstream
+ALL_TARGET=	tools-only_defconfig tools-only
+USES=		bison compiler:c11 gmake pkgconfig python:build tar:bzip2
 
-USES=		bison compiler:c11 gmake python:build ssl tar:bzip2
+BUILD_DEPENDS=	gdate:sysutils/coreutils
+LIB_DEPENDS=	libgnutls.so:security/gnutls
 
-CONFLICTS=	uboot-mkimage
-ALL_TARGET=	tools-only
 MAKE_ARGS=	ARCH=sandbox \
 		CC="${CC}" \
 		HOSTCC="${CC}" \
-		KBUILD_VERBOSE=1 \
-		NOSTDINC_FLAGS="" \
-		HOSTCFLAGS="${CFLAGS} -I${OPENSSLINC}" \
-		HOSTLDFLAGS="${LDFLAGS} -L${OPENSSLLIB}"
+		KBUILD_VERBOSE=1
 
 PLIST_FILES=	bin/mkimage bin/mkenvimage bin/dumpimage bin/fit_info
-
-do-configure:
-	(cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} tools-only_defconfig)
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/dumpimage ${STAGEDIR}${PREFIX}/bin
