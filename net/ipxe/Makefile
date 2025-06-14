@@ -1,5 +1,5 @@
 PORTNAME=	ipxe
-DISTVERSION=	g20250401
+DISTVERSION=	g20260106
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -19,7 +19,7 @@ USES=		gmake perl5 shebangfix
 USE_BINUTILS=	yes
 USE_GCC=	yes:build
 USE_GITHUB=	yes
-GH_TAGNAME=	7e64e9b6703e6dd3
+GH_TAGNAME=	ff6d612e7250b7d791b7451f8787ddf303c30453
 USE_PERL5=	build
 MAKE_ARGS=	AR=${AR} \
 		ARCH=${ARCH:S/amd64/i386/} \
@@ -78,7 +78,7 @@ EFI_PLIST_FILES+=	${DATADIR}/${_target}.efi-${_arch}
 EFI_PLIST_FILES+=	${DATADIR}/ipxe.efi-${_arch}.usb
 .endfor
 
-ISO_BUILD_DEPENDS=	mkisofs:sysutils/cdrtools
+ISO_BUILD_DEPENDS=	xorriso:sysutils/xorriso
 ISO_MAKE_ARGS=		ISOLINUX_BIN="${WRKSRC}/isolinux.bin" \
 			LDLINUX_C32="${LOCALBASE}/share/syslinux/bios/com32/elflink/ldlinux/ldlinux.c32"
 ISO_ALL_TARGET=		bin/ipxe.iso
