@@ -1,6 +1,6 @@
 PORTNAME=	lightdm
 PORTVERSION=	1.32.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/canonical/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 
@@ -64,6 +64,7 @@ VAPI_CONFIGURE_ENABLE=	vala
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
+		${WRKSRC}/data/lightdm.1 \
 		${WRKSRC}/data/lightdm.conf
 
 post-patch-DOCS-off:

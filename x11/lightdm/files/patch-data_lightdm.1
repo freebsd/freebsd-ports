@@ -1,0 +1,19 @@
+--- data/lightdm.1.orig	2025-06-14 17:01:12 UTC
++++ data/lightdm.1
+@@ -45,13 +45,13 @@ Show release version
+ Show release version
+ .SH FILES
+ .TP
+-.B /etc/lightdm/lightdm.conf
++.B %%PREFIX%%/etc/lightdm/lightdm.conf
+ Configuration
+ .TP
+-.B /etc/lightdm/users.conf
++.B %%PREFIX%%/etc/lightdm/users.conf
+ User list configuration (if not using Accounts Service)
+ .TP
+-.B /etc/lightdm/keys.conf
++.B %%PREFIX%%/etc/lightdm/keys.conf
+ XDMCP keys
+ .SH SEE ALSO
+ .BR dm-tool (1)
