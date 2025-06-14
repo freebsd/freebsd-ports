@@ -1,5 +1,5 @@
 PORTNAME=	qownnotes
-PORTVERSION=	25.5.10
+PORTVERSION=	25.6.1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/pbek/QOwnNotes/releases/download/v${PORTVERSION}/
 
@@ -9,19 +9,30 @@ WWW=		https://www.qownnotes.org/
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Depends on expired security/botan2
-EXPIRATION_DATE=2025-06-21
-
-LIB_DEPENDS=	libbotan-2.so:security/botan2
 RUN_DEPENDS=	git:devel/git
 
-USES=		gl gmake pkgconfig qmake qt:5 tar:xz xorg
+USES=		gl pkgconfig tar:xz xorg
 USE_GL=		gl
+USE_XORG=	x11
+
+FLAVORS=	qt5 qt6
+
+.if ${FLAVOR:U} == qt6
+LIB_DEPENDS=	libbotan-3.so:security/botan3
+CMAKE_ON=	BUILD_WITH_SYSTEM_BOTAN QON_QT6_BUILD
+USES+=		cmake qt:6
+USE_QT=		tools:build base declarative svg websockets
+USE_XORG+=	ice sm xext
+PKGNAMESUFFIX=	-${FLAVOR}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/QON_QM_FILES/s,QOwnNotes,${_QT_RELNAME},' \
+		${WRKSRC}/CMakeLists.txt
+.else
+USES+=		gmake qmake qt:5
 USE_QT=		buildtools:build linguisttools:build sql-sqlite3:run \
 		concurrent core declarative gui network printsupport \
 		sql svg websockets widgets x11extras xml
-USE_XORG=	x11
-
-QMAKE_ARGS=	USE_SYSTEM_BOTAN=1
+.endif
 
 .include <bsd.port.mk>
