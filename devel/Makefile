@@ -6279,6 +6279,7 @@
     SUBDIR += pybugz
     SUBDIR += pycanberra
     SUBDIR += pycdc
+    SUBDIR += pycharm
     SUBDIR += pycharm-ce
     SUBDIR += pycharm-pro
     SUBDIR += pycomposefile
