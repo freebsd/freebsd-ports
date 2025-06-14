@@ -724,7 +724,7 @@ proxydeps() {
 
 	# Check whether all files in LIB_DEPENDS are actually linked against
 	for _library in ${WANTED_LIBRARIES} ; do
-		if ! listcontains ${_library} "${dep_lib_files}" ; then
+		if ! listcontains ${_library%%.so*}.so "${dep_lib_files}" ; then
 			warn "you might not need LIB_DEPENDS on ${_library}"
 		fi
 	done
