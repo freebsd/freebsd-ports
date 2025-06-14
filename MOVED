@@ -4511,3 +4511,4 @@ databases/linux-rl9-sqlite3|emulators/linux_base-rl9|2025-06-10|Merged into emul
 x11-fonts/gentium-plus|x11-fonts/gentium|2025-06-10|Renamed to track upstream changes
 net/rabbiteer|net/amqpcat|2025-06-10|No longer maintained, use net/amqpcat instead as a functional replacement
 editors/gnome-latex|editors/enter-tex|2025-06-10|Renamed uspstream
+net/landrop||2025-06-14|Has expired: Unmaintained version and the newer version turned to close source

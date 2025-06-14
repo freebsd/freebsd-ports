@@ -359,7 +359,6 @@
     SUBDIR += l2tpd
     SUBDIR += ladvd
     SUBDIR += lambdamoo
-    SUBDIR += landrop
     SUBDIR += latd
     SUBDIR += lavinmq
     SUBDIR += ldap-stats
