@@ -1,9 +1,6 @@
 PORTNAME=	s3m
-DISTVERSION=	0.13.0
-PORTREVISION=	1
+DISTVERSION=	0.13.1
 CATEGORIES=	net
-MASTER_SITES=	CRATESIO
-DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	nbari@tequila.io
 COMMENT=	CLI for streams of data in S3 buckets
@@ -18,7 +15,6 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo ssl
 USE_GITHUB=	yes
-GH_ACCOUNT=	s3m
 
 PORTSCOUT=	limit:[0-9.]+
 
