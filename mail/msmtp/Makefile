@@ -1,5 +1,6 @@
 PORTNAME=	msmtp
-PORTVERSION=	1.8.32
+DISTVERSION=	1.8.32
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/msmtp/releases/
 
@@ -13,11 +14,12 @@ LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-USES=		cpe gmake makeinfo pkgconfig tar:xz
+USES=		cpe gmake makeinfo pkgconfig shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INFO=		msmtp
 CPE_VENDOR=	marlam
+SHEBANG_FILES=	tests/*.sh
 
 OPTIONS_DEFINE=	DOCS GSASL NLS IDN LIBSECRET MSMTPD MSMTPQ
 OPTIONS_RADIO=	TLS
@@ -42,32 +44,26 @@ MSMTPQ_RUN_DEPENDS=	bash:shells/bash
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
-GNUTLS_CONFIGURE_ON=	--with-tls=gnutls
+GNUTLS_CONFIGURE_WITH=	tls=gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 OPENSSL_USES=		ssl
-OPENSSL_CONFIGURE_ON=	--with-tls=openssl
+OPENSSL_CONFIGURE_WITH=	tls=openssl
 OPENSSL_CONFIGURE_ENV=	libssl_CFLAGS="-I${OPENSSLINC}" \
 			libssl_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
-CERTSFILE=		${LOCALBASE}/share/certs/ca-root-nss.crt
+
+TEST_DEPENDS=		bash:shells/bash
+TEST_TARGET=		check
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGNUTLS} || ${PORT_OPTIONS:MOPENSSL}
-RUN_DEPENDS+=	${CERTSFILE}:security/ca_root_nss
-.else
+.if !${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MOPENSSL}
 CONFIGURE_ARGS+=	--with-tls=no
 .endif
 
-post-extract:
-	@${REINPLACE_CMD} -e 's|/etc/ssl/certs/ca\\-certificates.crt|${CERTSFILE}|' \
-		${WRKSRC}/doc/msmtp.1
-
-.if ${PORT_OPTIONS:MMSMTPQ}
-post-install:
+post-install-MSMTPQ-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/msmtpq/msmtp-queue ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/msmtpq/msmtpq ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/msmtpq/README.msmtpq ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
