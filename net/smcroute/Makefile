@@ -9,7 +9,7 @@ WWW=		https://github.com/troglobit/smcroute/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf cpe
+USES=		autoreconf cpe pkgconfig
 CPE_VENDOR=	troglobit
 USE_RC_SUBR=	smcrouted
 USE_GITHUB=	yes
