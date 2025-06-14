@@ -1,5 +1,6 @@
 PORTNAME=	geary
 PORTVERSION=	46.0
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -25,7 +26,7 @@ LIB_DEPENDS=	libappstream-glib.so:devel/appstream-glib \
 		libicuuc.so:devel/icu \
 		libjson-glib-1.0.so:devel/json-glib \
 		libnotify.so:devel/libnotify \
-		libpeas-gtk-1.0.so:devel/libpeas \
+		libpeas-gtk-1.0.so:devel/libpeas1 \
 		libsecret-1.so:security/libsecret \
 		libsoup-3.0.so:devel/libsoup3 \
 		libstemmer.so:textproc/snowballstemmer \
