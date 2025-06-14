@@ -1,6 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	5.15.3
-PORTREVISION=	1
+DISTVERSION=	5.15.4
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -65,10 +64,11 @@ USE_GNOME=	glib20 glibmm26 introspection
 
 CMAKE_ARGS=	-DTDESKTOP_API_ID=${TELEGRAM_API_ID} -DTDESKTOP_API_HASH=${TELEGRAM_API_HASH} \
 		-DQT_VERSION_MAJOR=6
+# The order of the variables is important here due to complex combination validation 
 CMAKE_ON=	DESKTOP_APP_USE_PACKAGED \
-		DESKTOP_APP_DISABLE_QT_PLUGINS \
 		DESKTOP_APP_DISABLE_CRASH_REPORTS \
 		DESKTOP_APP_DISABLE_JEMALLOC \
+		DESKTOP_APP_DISABLE_QT_PLUGINS \
 		DESKTOP_APP_DISABLE_SCUDO
 
 # Since cmake 3.25.0, BSDs are no longer recognised as Linux (in this port).
