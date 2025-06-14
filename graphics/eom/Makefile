@@ -1,5 +1,6 @@
 PORTNAME=	eom
 DISTVERSION=	1.28.0
+PORTREVISION=	1
 CATEGORIES=	graphics mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
-		libpeas-gtk-1.0.so:devel/libpeas
+		libpeas-gtk-1.0.so:devel/libpeas1
 
 PORTSCOUT=	limitw:1,even
 
