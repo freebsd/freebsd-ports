@@ -2,6 +2,7 @@ bin/kitten
 bin/kitty
 share/applications/kitty-open.desktop
 share/applications/kitty.desktop
+%%PORTDOCS%%%%DOCSDIR%%/_downloads/055e3591463099e42785a872ce39996a/quick_access_terminal.conf
 %%PORTDOCS%%%%DOCSDIR%%/_downloads/433dadebd0bf504f8b008985378086ce/kitty.conf
 %%PORTDOCS%%%%DOCSDIR%%/_downloads/a489ebbb52d84eeb19a12b2fda7debda/diff.conf
 %%PORTDOCS%%%%DOCSDIR%%/_downloads/f0a0de9ec8d9ff4456206db8e0814937/rowcolumn-diacritics.txt
@@ -10,12 +11,14 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/font-fine-tune.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/hints_mode.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/panel.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/quake-hypr.webp
+%%PORTDOCS%%%%DOCSDIR%%/_images/quake-macos.webp
 %%PORTDOCS%%%%DOCSDIR%%/_images/remote_file.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/screenshot.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_actions_1745a1bd.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_binary_478594b0.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_build_e554a463.png
-%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_changelog_28f2229d.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_changelog_bb1bec17.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_clipboard_673291d1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_color-stack_b2e66ffc.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_conf_6d817f14.png
@@ -46,8 +49,9 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_icat_8f870112.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_intro_2aa247aa.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_notify_4b21ed12.png
-%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_panel_acc427d1.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_panel_f0055a23.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_query_terminal_bcf6bdb9.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_quick-access-terminal_cdc578f3.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_remote_file_c5782e6e.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_ssh_d0cb65fa.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_themes_72ee7bcd.png
@@ -58,13 +62,14 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_mapping_aea5afa6.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_marks_66066db1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_misc-protocol_baba0cc2.png
-%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_open_actions_c69b3759.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_open_actions_b5f13270.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_overview_249bd848.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_performance_fb7e6752.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_pipe_168d77ad.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_pointer-shapes_96e448ee.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_press-mentions_84bca3c2.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_protocol-extensions_ea5204ed.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_quake-screenshots_d232c5bb.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_quickstart_9d1a56df.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_rc_protocol_ea1138ef.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_remote-control_7371e6b3.png
@@ -112,6 +117,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_sources/kittens/notify.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/kittens/panel.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/kittens/query_terminal.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/kittens/quick-access-terminal.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/kittens/remote_file.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/kittens/ssh.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/kittens/themes.rst.txt
@@ -130,6 +136,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pointer-shapes.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/press-mentions.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/protocol-extensions.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/quake-screenshots.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/quickstart.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/rc_protocol.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/remote-control.rst.txt
@@ -213,6 +220,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/kittens/notify.html
 %%PORTDOCS%%%%DOCSDIR%%/kittens/panel.html
 %%PORTDOCS%%%%DOCSDIR%%/kittens/query_terminal.html
+%%PORTDOCS%%%%DOCSDIR%%/kittens/quick-access-terminal.html
 %%PORTDOCS%%%%DOCSDIR%%/kittens/remote_file.html
 %%PORTDOCS%%%%DOCSDIR%%/kittens/ssh.html
 %%PORTDOCS%%%%DOCSDIR%%/kittens/themes.html
@@ -232,6 +240,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/pointer-shapes.html
 %%PORTDOCS%%%%DOCSDIR%%/press-mentions.html
 %%PORTDOCS%%%%DOCSDIR%%/protocol-extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/quake-screenshots.html
 %%PORTDOCS%%%%DOCSDIR%%/quickstart.html
 %%PORTDOCS%%%%DOCSDIR%%/rc_protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/remote-control.html
@@ -356,6 +365,14 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kittens/query_terminal/__pycache__/main%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kittens/query_terminal/__pycache__/main%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/kittens/query_terminal/main.py
+%%DATADIR%%/kittens/quick_access_terminal/__init__.py
+%%DATADIR%%/kittens/quick_access_terminal/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/kittens/quick_access_terminal/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%DATADIR%%/kittens/quick_access_terminal/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/kittens/quick_access_terminal/__pycache__/main%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/kittens/quick_access_terminal/__pycache__/main%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%DATADIR%%/kittens/quick_access_terminal/__pycache__/main%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/kittens/quick_access_terminal/main.py
 %%DATADIR%%/kittens/remote_file/__init__.py
 %%DATADIR%%/kittens/remote_file/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kittens/remote_file/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -585,6 +602,9 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/__pycache__/short_uuid%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/__pycache__/short_uuid%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/__pycache__/short_uuid%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/kitty/__pycache__/simple_cli_definitions%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/kitty/__pycache__/simple_cli_definitions%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%DATADIR%%/kitty/__pycache__/simple_cli_definitions%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/kitty/__pycache__/tab_bar%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/__pycache__/tab_bar%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/__pycache__/tab_bar%%PYTHON_EXT_SUFFIX%%.pyc
@@ -597,9 +617,9 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/__pycache__/types%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/__pycache__/types%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/__pycache__/types%%PYTHON_EXT_SUFFIX%%.pyc
-%%DATADIR%%/kitty/__pycache__/typing%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%DATADIR%%/kitty/__pycache__/typing%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-%%DATADIR%%/kitty/__pycache__/typing%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/kitty/__pycache__/typing_compat%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/kitty/__pycache__/typing_compat%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%DATADIR%%/kitty/__pycache__/typing_compat%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/kitty/__pycache__/update_check%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/__pycache__/update_check%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/__pycache__/update_check%%PYTHON_EXT_SUFFIX%%.pyc
@@ -928,6 +948,7 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/shell_integration.py
 %%DATADIR%%/kitty/shm.py
 %%DATADIR%%/kitty/short_uuid.py
+%%DATADIR%%/kitty/simple_cli_definitions.py
 %%DATADIR%%/kitty/tab_bar.py
 %%DATADIR%%/kitty/tabs.py
 %%DATADIR%%/kitty/terminfo.py
@@ -936,7 +957,7 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/trail_fragment.glsl
 %%DATADIR%%/kitty/trail_vertex.glsl
 %%DATADIR%%/kitty/types.py
-%%DATADIR%%/kitty/typing.py
+%%DATADIR%%/kitty/typing_compat.py
 %%DATADIR%%/kitty/update_check.py
 %%DATADIR%%/kitty/utils.py
 %%DATADIR%%/kitty/window.py
