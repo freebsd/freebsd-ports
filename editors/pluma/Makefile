@@ -1,5 +1,6 @@
 PORTNAME=	pluma
 PORTVERSION=	1.28.0
+PORTREVISION=	1
 CATEGORIES=	editors mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
-		libpeas-gtk-1.0.so:devel/libpeas
+		libpeas-gtk-1.0.so:devel/libpeas1
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 
 PORTSCOUT=	limitw:1,even
