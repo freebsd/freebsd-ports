@@ -35,6 +35,6 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtWebEngine/QtWebEngine.toml
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtWebEngineCore/QtWebEngineCore.toml
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtWebEngineWidgets/QtWebEngineWidgets.toml
-%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/pyqtwebengine-%%PYQT_WEBENGINE_VERSION%%.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/pyqtwebengine-%%PYQT_WEBENGINE_VERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/pyqtwebengine-%%PYQT_WEBENGINE_VERSION%%.dist-info/RECORD

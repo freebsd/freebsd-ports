@@ -4,9 +4,6 @@ bin/pyuic5
 %%PYQT_APIDIR%%/PyQt5.api
 %%PYQT_DESIGNERDIR%%/libpyqt5.so
 %%PYQT_QMLDIR%%/libpyqt5qmlplugin.so
-%%PYTHON_SITELIBDIR%%/PyQt5-%%PYQT_PYQTVERSION%%.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/PyQt5-%%PYQT_PYQTVERSION%%.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/PyQt5-%%PYQT_PYQTVERSION%%.dist-info/RECORD
 %%PYTHON_SITELIBDIR%%/PyQt5/Qt.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt5/QtBluetooth.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt5/QtCore.abi%%PYTHON_MAJOR_VER%%.so
@@ -962,3 +959,6 @@ bin/pyuic5
 %%PYTHON_SITELIBDIR%%/PyQt5/uic/widget-plugins/qtwebenginewidgets.py
 %%PYTHON_SITELIBDIR%%/PyQt5/uic/widget-plugins/qtwebkit.py
 %%PYTHON_SITELIBDIR%%/dbus/mainloop/pyqt5.abi%%PYTHON_MAJOR_VER%%.so
+%%PYTHON_SITELIBDIR%%/pyqt5-%%PYQT_PYQTVERSION%%.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/pyqt5-%%PYQT_PYQTVERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/pyqt5-%%PYQT_PYQTVERSION%%.dist-info/RECORD

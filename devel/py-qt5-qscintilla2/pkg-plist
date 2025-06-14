@@ -60,6 +60,6 @@
 %%PYQT_SIPDIR%%/Qsci/qsciscintillabase.sip
 %%PYQT_SIPDIR%%/Qsci/qscistyle.sip
 %%PYQT_SIPDIR%%/Qsci/qscistyledtext.sip
-%%PYTHON_SITELIBDIR%%/QScintilla-%%PYQT_QSCIVERSION%%.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/QScintilla-%%PYQT_QSCIVERSION%%.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/QScintilla-%%PYQT_QSCIVERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/qscintilla-%%PYQT_QSCIVERSION%%.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/qscintilla-%%PYQT_QSCIVERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/qscintilla-%%PYQT_QSCIVERSION%%.dist-info/RECORD

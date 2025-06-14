@@ -40,7 +40,7 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtDataVisualization/qutils.sip
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtDataVisualization/qvalue3daxis.sip
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtDataVisualization/qvalue3daxisformatter.sip
-%%PYTHON_SITELIBDIR%%/PyQtDataVisualization-%%PYQT_DATAVIS3D_VERSION%%.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/PyQtDataVisualization-%%PYQT_DATAVIS3D_VERSION%%.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/PyQtDataVisualization-%%PYQT_DATAVIS3D_VERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/pyqtdatavisualization-%%PYQT_DATAVIS3D_VERSION%%.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/pyqtdatavisualization-%%PYQT_DATAVIS3D_VERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/pyqtdatavisualization-%%PYQT_DATAVIS3D_VERSION%%.dist-info/RECORD
 %%PYQT_APIDIR%%/PyQtDataVisualization.api
