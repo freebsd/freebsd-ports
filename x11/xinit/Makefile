@@ -1,24 +1,16 @@
 PORTNAME=	xinit
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+DISTVERSION=	1.4.4
 PORTEPOCH=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Window System initializer
+WWW=		https://gitlab.freedesktop.org/xorg/app/xinit
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-EXTRACT_SUFX=	.tar.xz
-USES=		xorg xorg-cat:app
-USE_XORG=	x11
-
-post-patch:
-	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|hexdump|/usr/bin/hexdump|' ${WRKSRC}/startx.cpp
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/man/xinit.man
-
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+USES=		tar:xz xorg xorg-cat:app
+USE_XORG=	x11 xorgproto
 
 .include <bsd.port.mk>

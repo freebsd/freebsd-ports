@@ -1,3 +1,3 @@
-TIMESTAMP = 1670268068
-SHA256 (xorg/app/xinit-1.4.2.tar.xz) = b7d8dc8d22ef9f15985a10b606ee4f2aad6828befa437359934647e88d331f23
-SIZE (xorg/app/xinit-1.4.2.tar.xz) = 156728
+TIMESTAMP = 1747680265
+SHA256 (xorg/app/xinit-1.4.4.tar.xz) = 40a47c7a164c7f981ce3787b4b37f7e411fb43231dcde543d70094075dacfef9
+SIZE (xorg/app/xinit-1.4.4.tar.xz) = 162496
