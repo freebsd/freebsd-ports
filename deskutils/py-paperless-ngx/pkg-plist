@@ -240,6 +240,9 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1063_paperlesstask_type_alter_paperlesstask_task_name_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1064_delete_log.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1065_workflowaction_assign_custom_fields_values.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1066_alter_workflowtrigger_schedule_offset_days.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1067_alter_document_created.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1068_alter_document_created.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__init__.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.pyc
@@ -433,6 +436,12 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1064_delete_log%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1065_workflowaction_assign_custom_fields_values%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1065_workflowaction_assign_custom_fields_values%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1066_alter_workflowtrigger_schedule_offset_days%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1066_alter_workflowtrigger_schedule_offset_days%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1067_alter_document_created%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1067_alter_document_created%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1068_alter_document_created%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1068_alter_document_created%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/models.py
@@ -581,6 +590,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_matchables.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_migration_archive_files.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_migration_consumption_templates.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_migration_created.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_migration_custom_field_selects.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_migration_customfields.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_migration_document_pages_count.py
@@ -615,6 +625,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/locale/en_US/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/paperless/locale/es_ES/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/paperless/locale/et_EE/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/paperless/locale/fa_IR/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/paperless/locale/fi_FI/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/paperless/locale/fr_FR/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/paperless/locale/he_IL/LC_MESSAGES/django.po
@@ -708,6 +719,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/0001_initial.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/0002_applicationconfiguration_app_logo_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/0003_alter_applicationconfiguration_max_image_pixels.py
+%%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/0004_applicationconfiguration_barcode_asn_prefix_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__init__.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.pyc
@@ -715,6 +727,8 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/0002_applicationconfiguration_app_logo_and_more%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/0003_alter_applicationconfiguration_max_image_pixels%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/0003_alter_applicationconfiguration_max_image_pixels%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/0004_applicationconfiguration_barcode_asn_prefix_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/0004_applicationconfiguration_barcode_asn_prefix_and_more%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless/migrations/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless/models.py
@@ -731,6 +745,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless/tests/test_remote_user.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless/tests/test_settings.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless/tests/test_signals.py
+%%PYTHON_SITELIBDIR%%/paperless/paperless/tests/test_views.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless/tests/test_websockets.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless/urls.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless/version.py
@@ -942,6 +957,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tesseract/tests/samples/simple-no-dpi.png
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tesseract/tests/samples/simple.bmp
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tesseract/tests/samples/simple.gif
+%%PYTHON_SITELIBDIR%%/paperless/paperless_tesseract/tests/samples/simple.heic
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tesseract/tests/samples/simple.jpg
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tesseract/tests/samples/simple.png
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tesseract/tests/samples/simple.tif

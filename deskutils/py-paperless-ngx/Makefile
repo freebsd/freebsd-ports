@@ -1,6 +1,5 @@
 PORTNAME=	paperless-ngx
-PORTVERSION=	2.15.3
-PORTREVISION=	1
+DISTVERSION=	2.16.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:webui \
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}concurrent-log-handler>=0.9.19:sysutils/py-concurrent-log-handler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateparser>=1.2.1:devel/py-dateparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-channels-redis>=4.2.1:www/py-dj51-channels-redis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj51-django-allauth>=65.7.0_1:www/py-dj51-django-allauth@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj51-django-allauth>=65.9.0:www/py-dj51-django-allauth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-django-auditlog>=3.0.0:www/py-dj51-django-auditlog@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-django-celery-results>=2.6.0:www/py-dj51-django-celery-results@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-django-compression-middleware>=0.5.0:www/py-dj51-django-compression-middleware@${PY_FLAVOR} \
@@ -35,7 +34,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.17.0:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flower>=2.0.1:www/py-flower@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gotenberg-client>=0.10.0:converters/py-gotenberg-client@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}granian>=2.2.5:www/py-granian@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}granian>=2.3.3:www/py-granian@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h2>=4.1.0:www/py-h2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hiredis>=3.0.0:databases/py-hiredis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httptools>=0.6.4:www/py-httptools@${PY_FLAVOR} \
@@ -45,7 +44,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}langdetect>=1.0.9:textproc/py-langdetect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mysqlclient>=2.2.7:databases/py-mysqlclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nltk>=3.8.1:textproc/py-nltk@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ocrmypdf>=16.10.0:textproc/py-ocrmypdf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ocrmypdf>=16.10.1:textproc/py-ocrmypdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pathvalidate>=3.2.3:devel/py-pathvalidate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdf2image>=1.17.0:graphics/py-pdf2image@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdftotext>=3.0.0:textproc/py-pdftotext@${PY_FLAVOR} \
