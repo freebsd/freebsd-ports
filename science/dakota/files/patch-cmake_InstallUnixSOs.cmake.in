@@ -1,0 +1,16 @@
+--- cmake/InstallUnixSOs.cmake.in.orig	2025-05-08 16:25:16 UTC
++++ cmake/InstallUnixSOs.cmake.in
+@@ -4,6 +4,7 @@
+ # NOTE: This script will only work for make install from top of build tree
+ # TODO: Review string quoting conventions and test with spaces in filename
+ 
++if (FALSE)
+ 
+ execute_process(COMMAND chrpath -v
+                 OUTPUT_QUIET
+@@ -78,3 +79,5 @@ endforeach()
+     dakota_install_dll("${dakota_dll}")
+   endif()
+ endforeach()
++
++endif()

@@ -1,6 +1,5 @@
 PORTNAME=	dakota
-DISTVERSION=	6.21.0
-PORTREVISION=	1
+DISTVERSION=	6.22.0
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/snl-dakota/dakota/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-public-src-cli
@@ -68,6 +67,8 @@ FFLAGS+=	-fallow-argument-mismatch
 LDFLAGS+=	-lexecinfo
 
 CONFLICTS_BUILD=	dakota # self: picks up some bundled packages from the pre-installed dakota package and then fails to install them
+
+MAKE_ARGS=	VERBOSE=1
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
