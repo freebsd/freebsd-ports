@@ -63,7 +63,7 @@ PO4A_DESC=	Install translated underlays
 SEARCH_DESC=	Install search backend
 W3M_DESC=	Install w3m CGI wrapper
 
-IMG_USES=		magick:nox11,run,test
+IMG_USES=		magick:run,test
 MULTI_RUN_DEPENDS=	p5-Text-MultiMarkdown>=0:textproc/p5-Text-MultiMarkdown
 PO4A_BUILD_DEPENDS=	po4a>=0.39:textproc/po4a
 PO4A_RUN_DEPENDS=	po4a>=0.39:textproc/po4a
