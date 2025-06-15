@@ -126,18 +126,18 @@
 	<p>PostgreSQL JDBC Driver project reports:</p>
 	<blockquote cite="https://jdbc.postgresql.org/changelogs/2025-06-11-42">
 	<p>
-                Client Allows Fallback to Insecure Authentication Despite
-                channelBinding=require configuration. Fix channel binding
-                required handling to reject non-SASL authentication Previously,
-                when channel binding was set to "require", the driver
-                would silently ignore this requirement for non-SASL
-                authentication methods. This could lead to a false sense of
-                security when channel binding was explicitly requested but not
-                actually enforced. The fix ensures that when channel binding is
-                set to "require", the driver will reject connections that use
-                non-SASL authentication methods or when SASL authentication has
-                not completed properly.
-        </p>
+	Client Allows Fallback to Insecure Authentication Despite
+	channelBinding=require configuration. Fix channel binding
+	required handling to reject non-SASL authentication Previously,
+	when channel binding was set to "require", the driver
+	would silently ignore this requirement for non-SASL
+	authentication methods. This could lead to a false sense of
+	security when channel binding was explicitly requested but not
+	actually enforced. The fix ensures that when channel binding is
+	set to "require", the driver will reject connections that use
+	non-SASL authentication methods or when SASL authentication has
+	not completed properly.
+	</p>
 	</blockquote>
 	</body>
     </description>
@@ -163,7 +163,7 @@
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>security-advisories@github.com reports:</p>
 	<blockquote cite="https://github.com/owasp-modsecurity/ModSecurity/commit/3a54ccea62d3f7151bb08cb78d60c5e90b53ca2e">
-          <p>
+	<p>
 		ModSecurity is an open source, cross platform web
 		application firewall (WAF) engine for Apache, IIS
 		and Nginx. Versions prior to 2.9.10 contain a denial of
@@ -175,7 +175,7 @@
 		Version 2.9.10 fixes the issue. As a workaround, avoid
 		using rules that contain the `sanitiseArg` (or
 		`sanitizeArg`) action.
-          </p>
+	</p>
 	</blockquote>
 	</body>
     </description>
