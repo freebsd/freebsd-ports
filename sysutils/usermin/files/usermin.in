@@ -15,8 +15,11 @@ usermin_enable=${usermin_enable:-"NO"}
 name=usermin
 rcvar=usermin_enable
 
+required_files=%%PREFIX%%/etc/usermin/var-path
+usermin_var_path=`cat %%PREFIX%%/etc/usermin/var-path`
+
 procname=%%PERL%%
-pidfile=/var/log/usermin/miniserv.pid
+pidfile=${usermin_var_path}/miniserv.pid
 required_dirs=%%PREFIX%%/etc/usermin
 command=%%PREFIX%%/etc/usermin/start
 

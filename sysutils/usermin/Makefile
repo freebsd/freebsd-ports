@@ -1,5 +1,5 @@
 PORTNAME=	usermin
-PORTVERSION=	1.861
+PORTVERSION=	2.301
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf
@@ -22,8 +22,8 @@ NO_BUILD=	yes
 USES=		cpe perl5
 CPE_VENDOR=	webmin
 USE_RC_SUBR=	usermin
-SUB_LIST=	PERL=${PERL}
 SUB_FILES=	pkg-message
+SUB_LIST=	PERL=${PERL}
 
 USERMIN_MODULES=
 
