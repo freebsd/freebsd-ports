@@ -1,6 +1,5 @@
 PORTNAME=	webmin
-PORTVERSION=	2.013
-PORTREVISION=	0
+PORTVERSION=	2.401
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf
@@ -21,9 +20,9 @@ RUN_DEPENDS=	p5-Authen-PAM>=0:security/p5-Authen-PAM \
 USES=		cpe perl5 python shebangfix
 USE_PYTHON=	py3kplist
 USE_RC_SUBR=	webmin
-SUB_LIST=	PERL=${PERL}
-SUB_FILES=	pkg-message
 SHEBANG_FILES=	${WRKSRC}/webmin/acme_tiny.py
+SUB_FILES=	pkg-message
+SUB_LIST=	PERL=${PERL}
 
 WEBMIN_MODULES=
 
