@@ -1,6 +1,5 @@
 PORTNAME=	lxmf
-DISTVERSION=	0.5.1
-PORTREVISION=	1
+DISTVERSION=	0.7.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	PYPI
 
@@ -8,7 +7,10 @@ MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Lightweight Extensible Message Format for Reticulum
 WWW=		https://github.com/markqvist/nomadnet
 
-LICENSE=	MIT
+LICENSE=	UNKNOWN
+LICENSE_NAME=	Reticulum License
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	reticulum>0:net-p2p/reticulum
 
