@@ -1,5 +1,6 @@
 PORTNAME=	i3
 DISTVERSION=	4.24
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://i3wm.org/downloads/ \
 		http://i3wm.org/downloads/
@@ -39,5 +40,10 @@ INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	i3-gaps
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
+		${WRKSRC}/man/i3-config-wizard.1 \
+		${WRKSRC}/man/i3.1
 
 .include <bsd.port.mk>
