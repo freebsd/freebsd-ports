@@ -113,7 +113,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-patch-INOTIFY-on:
-	@${REINPLACE_CMD} -e 's|LIBS = @LIBS@|& ${LOCALBASE}/lib/libinotify.a /usr/lib/libpthread.a|' \
+	@${REINPLACE_CMD} -e 's|LIBS = @LIBS@|& -L${LOCALBASE}/lib -linotify -lpthread|' \
 		${WRKSRC}/libs/maildir/Makefile.in \
 		${WRKSRC}/libs/imap/Makefile.in
 
