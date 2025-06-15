@@ -33,7 +33,7 @@ GH_TAGNAME=	c55e05aebb305b4013554ec80298113c50d1c74c
 
 USE_PYTHON=	autoplist distutils
 
-CONFLICTS=	py*-iocage py*-iocage-devel
+CONFLICTS=	py*[0-9]-iocage py*-iocage-devel
 NO_ARCH=	yes
 
 _IOCAGE_LIB_VERSION=	1.10
