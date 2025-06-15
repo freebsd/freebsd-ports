@@ -1,3 +1,44 @@
+  <vuln vid="201cccc1-4a01-11f0-b0f8-b42e991fc52e">
+    <topic>Mozilla -- control access bypass</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>138.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.10</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1917536">
+	  <p>Thunderbird&apos;s update mechanism allowed a medium-integrity user
+	process to interfere with the SYSTEM-level updater by manipulating
+	the file-locking behavior.  By injecting code into the user-privileged
+	process, an attacker could bypass intended access controls, allowing
+	SYSTEM-level file operations on paths controlled by a non-privileged
+	user and enabling privilege escalation.  This vulnerability affects
+	Firefox &lt; 138, Firefox ESR &lt; 128.10, Firefox ESR &lt; 115.23,
+	Thunderbird &lt; 138, and Thunderbird &lt; 128.10.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-2817</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-2817</url>
+    </references>
+    <dates>
+      <discovery>2025-04-29</discovery>
+      <entry>2025-06-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="805ad2e0-49da-11f0-87e8-bcaec55be5e5">
     <topic>webmin -- CGI Command Injection Remote Code Execution</topic>
     <affects>
