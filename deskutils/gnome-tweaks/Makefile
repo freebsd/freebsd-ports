@@ -18,8 +18,8 @@ LIB_DEPENDS=	libgudev-1.0.so:devel/libgudev
 RUN_DEPENDS=	gnome-shell>=47.0:x11/gnome-shell \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USES=		gettext gnome localbase meson pkgconfig python shebangfix \
-		tar:xz
+USES=		desktop-file-utils gettext gnome localbase meson pkgconfig \
+		python shebangfix tar:xz
 USE_GNOME=	glib20 gnomedesktop4 gtk40 introspection libadwaita pygobject3
 GLIB_SCHEMAS=	org.gnome.tweaks.gschema.xml
 SHEBANG_FILES=	gnome-tweaks meson-postinstall.py
