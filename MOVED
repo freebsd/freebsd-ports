@@ -4512,3 +4512,4 @@ x11-fonts/gentium-plus|x11-fonts/gentium|2025-06-10|Renamed to track upstream ch
 net/rabbiteer|net/amqpcat|2025-06-10|No longer maintained, use net/amqpcat instead as a functional replacement
 editors/gnome-latex|editors/enter-tex|2025-06-10|Renamed uspstream
 net/landrop||2025-06-14|Has expired: Unmaintained version and the newer version turned to close source
+lang/frawk||2025-06-15|Abandoned upstream; fails to build; was labeled broken for over a year
