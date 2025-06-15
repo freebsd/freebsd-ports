@@ -12,9 +12,6 @@ WWW=		https://metacpan.org/release/Interchange6-Schema
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-DEPRECATED=	Depends on expired security/p5-Data-Entropy via databases/p5-DBIx-Class-InflateColumn-Authen-Passphrase
-EXPIRATION_DATE=2025-09-01
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBIx-Class>=0:databases/p5-DBIx-Class\
 		p5-DBIx-Class-Schema-Config>=0:databases/p5-DBIx-Class-Schema-Config\
