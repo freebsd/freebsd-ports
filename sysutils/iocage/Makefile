@@ -34,7 +34,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 USE_PYTHON=	autoplist distutils
 
-CONFLICTS=	py*-iocage py*-iocage-devel
+CONFLICTS=	py*[0-9]-iocage py*-iocage-devel
 NO_ARCH=	yes
 
 PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}_lib-${PORTVERSION}-py${PYTHON_VER}.egg-info/PKG-INFO \
