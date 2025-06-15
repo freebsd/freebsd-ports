@@ -1621,6 +1621,7 @@ lib/php/arcanist/support/xhpast/README
 lib/php/arcanist/support/xhpast/ast.hpp
 lib/php/arcanist/support/xhpast/astnode.hpp
 lib/php/arcanist/support/xhpast/bin/xhpast-generate-nodes.php
+lib/php/arcanist/support/xhpast/bin/xhpast-generate-release-cppflags.php
 lib/php/arcanist/support/xhpast/bin/xhpast-generate-version.php
 lib/php/arcanist/support/xhpast/build-xhpast.php
 lib/php/arcanist/support/xhpast/parser.y
