@@ -18,7 +18,8 @@ LIB_DEPENDS=	libgeoclue-2.so:net/geoclue \
 		libgjs.so:lang/gjs \
 		libgweather-4.so:net/libgweather4
 
-USES=		gettext gnome localbase meson pkgconfig tar:xz
+USES=		desktop-file-utils gettext gnome localbase meson pkgconfig \
+		tar:xz
 USE_GNOME=	glib20 gtk40 introspection:build libadwaita
 USE_LDCONFIG=	yes
 
