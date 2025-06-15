@@ -10,6 +10,8 @@ libexec/gogs/conf/auth.d/ldap_bind_dn.conf.example
 libexec/gogs/conf/auth.d/ldap_simple_auth.conf.example
 libexec/gogs/conf/auth.d/pam.conf.example
 libexec/gogs/conf/auth.d/smtp.conf.example
+libexec/gogs/conf/embed.go
+libexec/gogs/conf/embed_test.go
 libexec/gogs/conf/gitignore/Actionscript
 libexec/gogs/conf/gitignore/Ada
 libexec/gogs/conf/gitignore/Agda
@@ -230,10 +232,12 @@ libexec/gogs/conf/locale/locale_it-IT.ini
 libexec/gogs/conf/locale/locale_ja-JP.ini
 libexec/gogs/conf/locale/locale_ko-KR.ini
 libexec/gogs/conf/locale/locale_lv-LV.ini
+libexec/gogs/conf/locale/locale_mn-MN.ini
 libexec/gogs/conf/locale/locale_nl-NL.ini
 libexec/gogs/conf/locale/locale_pl-PL.ini
 libexec/gogs/conf/locale/locale_pt-BR.ini
 libexec/gogs/conf/locale/locale_pt-PT.ini
+libexec/gogs/conf/locale/locale_ro-RO.ini
 libexec/gogs/conf/locale/locale_ru-RU.ini
 libexec/gogs/conf/locale/locale_sk-SK.ini
 libexec/gogs/conf/locale/locale_sr-SP.ini
@@ -283,6 +287,7 @@ libexec/gogs/public/css/themes/default/assets/fonts/outline-icons.ttf
 libexec/gogs/public/css/themes/default/assets/fonts/outline-icons.woff
 libexec/gogs/public/css/themes/default/assets/fonts/outline-icons.woff2
 libexec/gogs/public/css/themes/default/assets/images/flags.png
+libexec/gogs/public/embed.go
 libexec/gogs/public/img/404.png
 libexec/gogs/public/img/500.png
 libexec/gogs/public/img/avatar_default.png
@@ -1174,7 +1179,7 @@ libexec/gogs/public/img/favicon.png
 libexec/gogs/public/img/gogs-hero.png
 libexec/gogs/public/img/slack.png
 libexec/gogs/public/js/gogs.js
-libexec/gogs/public/js/jquery-3.4.1.min.js
+libexec/gogs/public/js/jquery-3.6.0.min.js
 libexec/gogs/public/js/libs/clipboard-2.0.4.min.js
 libexec/gogs/public/js/libs/emojify-1.1.0.min.js
 libexec/gogs/public/js/libs/jquery.are-you-sure.js
@@ -1491,6 +1496,7 @@ libexec/gogs/public/plugins/jquery.minicolors-2.2.3/jquery.minicolors.css
 libexec/gogs/public/plugins/jquery.minicolors-2.2.3/jquery.minicolors.min.js
 libexec/gogs/public/plugins/jquery.minicolors-2.2.3/jquery.minicolors.png
 libexec/gogs/public/plugins/marked-0.8.1/marked.min.js
+libexec/gogs/public/plugins/mermaid-8.14.0/mermaid.min.js
 libexec/gogs/public/plugins/notebookjs-0.4.2/notebook.min.js
 libexec/gogs/public/plugins/pdfjs-1.4.20/LICENSE
 libexec/gogs/public/plugins/pdfjs-1.4.20/build/pdf.js
@@ -1605,6 +1611,7 @@ libexec/gogs/templates/base/alert.tmpl
 libexec/gogs/templates/base/delete_modal_actions.tmpl
 libexec/gogs/templates/base/footer.tmpl
 libexec/gogs/templates/base/head.tmpl
+libexec/gogs/templates/embed.go
 libexec/gogs/templates/explore/navbar.tmpl
 libexec/gogs/templates/explore/organizations.tmpl
 libexec/gogs/templates/explore/page.tmpl

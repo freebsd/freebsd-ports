@@ -1,10 +1,9 @@
 PORTNAME=	gogs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.11
-PORTREVISION=	16
+DISTVERSION=	0.13.2
 CATEGORIES=	devel www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	me@svmhdvn.name
 COMMENT=	Painless self-hosted Git service
 WWW=		https://gogs.io/
 
@@ -56,10 +55,6 @@ post-patch:
 		-e 's|^ROOT_PATH =$$|ROOT_PATH = ${GOGS_LOGDIR}|' \
 		-e 's|^TYPE = postgres$$|DB_TYPE = sqlite3|' \
 		${WRKSRC}/conf/app.ini
-
-pre-build:
-	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} generate internal/assets/templates/templates.go \
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/gogs ${STAGEDIR}${PREFIX}/bin/
