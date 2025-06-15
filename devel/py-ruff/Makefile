@@ -1,6 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.11.11
-PORTREVISION=	1
+DISTVERSION=	0.11.13
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +25,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	astral-sh
 
 CARGO_CRATES=	adler2-2.0.0 \
+		ahash-0.8.12 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.21 \
 		android-tzdata-0.1.1 \
@@ -65,8 +65,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.38 \
-		clap_builder-4.5.38 \
+		clap-4.5.39 \
+		clap_builder-4.5.39 \
 		clap_complete-4.5.50 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.5 \
@@ -181,8 +181,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
-		jiff-0.2.13 \
-		jiff-static-0.2.13 \
+		jiff-0.2.14 \
+		jiff-static-0.2.14 \
 		jiff-tzdb-0.1.4 \
 		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.33 \
@@ -192,8 +192,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
 		libc-0.2.172 \
-		libcst-1.7.0 \
-		libcst_derive-1.7.0 \
+		libcst-1.8.0 \
+		libcst_derive-1.8.0 \
 		libmimalloc-sys-0.1.42 \
 		libredox-0.1.3 \
 		libtest-mimic-0.7.3 \
@@ -380,8 +380,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		utf8-width-0.1.7 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.16.0 \
-		uuid-macro-internal-1.16.0 \
+		uuid-1.17.0 \
+		uuid-macro-internal-1.17.0 \
 		valuable-0.1.1 \
 		version-ranges-0.1.1 \
 		version_check-0.9.5 \
@@ -445,8 +445,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.15+zstd.1.5.7 \
-		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439 \
-		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=4818b15f3b7516555d39f5a41cb75970448bee4c\#4818b15f3b7516555d39f5a41cb75970448bee4c
+		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/carljm/salsa.git?rev=0f6d406f6c309964279baef71588746b8c67b4a3\#0f6d406f6c309964279baef71588746b8c67b4a3 \
+		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
