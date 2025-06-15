@@ -75,6 +75,7 @@
     SUBDIR += autojump
     SUBDIR += automounter
     SUBDIR += autorestic
+    SUBDIR += awslim
     SUBDIR += azure-agent
     SUBDIR += b2sum
     SUBDIR += b3sum

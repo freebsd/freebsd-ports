@@ -1,0 +1,17 @@
+awslim is a CLI utility for AWS services.  This is written in Go and
+generated from the AWS SDK Go v2 service client.  Features include:
+
+ - Improved performance compared to AWS CLI,
+ - All methods of the AWS service client,
+ - JSON and Jsonnet as input format,
+ - JSON as output format (no support of TEXT),
+ - Binding of a file to the input/output data structure of methods,
+ - JMESPath to query the output,
+ - AWS CLI configuration file (~/.aws/config) and the native
+   configuration files (~/.config/awslim/config.(json|jsonnet|yaml|yml)).
+
+Note the following limitations, compared to AWS CLI:
+ - Not fully-compatible with the AWS CLI,
+ - No support of AWS CLI plugins, such as session-manager-plugin,
+ - Different service names, "logs" vs "cloudwatchlogs,"
+   "ce" vs "costexplorer," for example.

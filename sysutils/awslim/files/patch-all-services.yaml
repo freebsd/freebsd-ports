@@ -1,0 +1,18 @@
+--- all-services.yaml.orig	2025-04-11 13:35:01 UTC
++++ all-services.yaml
+@@ -156,7 +156,6 @@ services:
+   freetier:
+   fsx:
+   gamelift:
+-  gameliftstreams:
+   geomaps:
+   geoplaces:
+   georoutes:
+@@ -187,7 +186,6 @@ services:
+   iotfleethub:
+   iotfleetwise:
+   iotjobsdataplane:
+-  iotmanagedintegrations:
+   iotsecuretunneling:
+   iotsitewise:
+   iotthingsgraph:
