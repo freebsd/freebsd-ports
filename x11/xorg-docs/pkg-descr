@@ -1,4 +1,3 @@
-The documentation in this package is from xc/doc in the monolithic
-source tree.  It is expected that most of the documentation included
-here will be converted to a new format and then moved to the appropriate
-package.
+This package provides miscellaneous documentation for the X Window
+System that doesn't better fit into other packages.
+The preferred documentation format for these documents is DocBook XML.
