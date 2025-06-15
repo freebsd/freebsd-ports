@@ -1,5 +1,6 @@
 PORTNAME=	zoneminder
 DISTVERSION=	1.36.35
+PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -11,9 +12,6 @@ COMMENT=	Complete security camera solution, fully web based with image analysis
 WWW=		https://www.zoneminder.com/
 
 LICENSE=	GPLv2
-
-DEPRECATED=	Depends on expired security/p5-Data-Entropy
-EXPIRATION_DATE=2025-09-01
 
 ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		${DBD_MYSQL} \
@@ -38,7 +36,7 @@ RUN_DEPENDS=	${ZM_DEPENDS} \
 		sudo:security/sudo \
 		p5-Device-SerialPort>=0:comms/p5-Device-SerialPort \
 		p5-Crypt-Eksblowfish>=0:security/p5-Crypt-Eksblowfish \
-		p5-Data-Entropy>=0:security/p5-Data-Entropy \
+		p5-Bytes-Random-Secure>=0:security/p5-Bytes-Random-Secure \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
 		zip:archivers/zip
 
