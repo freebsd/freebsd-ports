@@ -39,7 +39,7 @@ GH_TUPLE?=	hrydgard:glslang:8.13.3743-948-g50e0708:glslang/ext/glslang \
 		RetroAchievements:rcheevos:v11.6.0-gef0e22b:rcheevos/ext/rcheevos \
 		Tencent:rapidjson:v1.1.0-415-g73063f5:rapidjson/ext/rapidjson \
 		hrydgard:ppsspp-lua:7648485:lua/ext/lua
-EXCLUDE=	libpng17 libzip zlib
+EXCLUDE=	libzip zlib
 USE_GL=		glew opengl
 CMAKE_ON=	${LIBZIP MINIUPNPC SNAPPY ZSTD:L:S/^/USE_SYSTEM_/} USE_VULKAN_DISPLAY_KHR
 CMAKE_OFF=	USE_DISCORD
