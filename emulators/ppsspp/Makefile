@@ -1,6 +1,6 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.19.1
+DISTVERSION?=	1.19.2
 CATEGORIES=	emulators
 
 MAINTAINER=	kreinholz@gmail.com
