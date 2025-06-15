@@ -195,10 +195,18 @@ lib/php/phorge/externals/figlet/utf8.c
 lib/php/phorge/externals/figlet/utf8.h
 lib/php/phorge/externals/figlet/zipio.c
 lib/php/phorge/externals/figlet/zipio.h
+lib/php/phorge/externals/mimemailparser/Attachment.php
+lib/php/phorge/externals/mimemailparser/Charset.php
+lib/php/phorge/externals/mimemailparser/Contracts/CharsetManager.php
+lib/php/phorge/externals/mimemailparser/Contracts/Middleware.php
+lib/php/phorge/externals/mimemailparser/Exception.php
 lib/php/phorge/externals/mimemailparser/LICENSE
-lib/php/phorge/externals/mimemailparser/MimeMailParser.class.php
-lib/php/phorge/externals/mimemailparser/README
-lib/php/phorge/externals/mimemailparser/attachment.class.php
+lib/php/phorge/externals/mimemailparser/Middleware.php
+lib/php/phorge/externals/mimemailparser/MiddlewareStack.php
+lib/php/phorge/externals/mimemailparser/MimePart.php
+lib/php/phorge/externals/mimemailparser/Parser.php
+lib/php/phorge/externals/mimemailparser/README.md
+lib/php/phorge/externals/mimemailparser/__init.php
 lib/php/phorge/externals/octicons/LICENSE
 lib/php/phorge/externals/octicons/README.md
 lib/php/phorge/externals/pear-figlet/Text/Figlet.php
@@ -1759,6 +1767,8 @@ lib/php/phorge/resources/sql/autopatches/20220525.slowvote.09.status-value.sql
 lib/php/phorge/resources/sql/autopatches/20220525.slowvote.10.status-xactions.sql
 lib/php/phorge/resources/sql/autopatches/20230902.repository.01.rebuild-index.php
 lib/php/phorge/resources/sql/autopatches/20230917.fileattachment.01.delete.sql
+lib/php/phorge/resources/sql/autopatches/20250227.paste.01.mailkey.php
+lib/php/phorge/resources/sql/autopatches/20250227.paste.02.mailkey.sql
 lib/php/phorge/resources/sql/patches/000.project.sql
 lib/php/phorge/resources/sql/patches/0000.legacy.sql
 lib/php/phorge/resources/sql/patches/001.maniphest_projects.sql
@@ -2882,6 +2892,8 @@ lib/php/phorge/src/applications/calendar/import/PhabricatorCalendarICSFileImport
 lib/php/phorge/src/applications/calendar/import/PhabricatorCalendarICSImportEngine.php
 lib/php/phorge/src/applications/calendar/import/PhabricatorCalendarICSURIImportEngine.php
 lib/php/phorge/src/applications/calendar/import/PhabricatorCalendarImportEngine.php
+lib/php/phorge/src/applications/calendar/import/__tests__/CalendarImportTestCase.php
+lib/php/phorge/src/applications/calendar/import/__tests__/events/simple-event-alincoln-guest.ics
 lib/php/phorge/src/applications/calendar/importlog/PhabricatorCalendarImportDefaultLogType.php
 lib/php/phorge/src/applications/calendar/importlog/PhabricatorCalendarImportDeleteLogType.php
 lib/php/phorge/src/applications/calendar/importlog/PhabricatorCalendarImportDuplicateLogType.php
@@ -5248,6 +5260,7 @@ lib/php/phorge/src/applications/maniphest/herald/ManiphestTaskPriorityHeraldFiel
 lib/php/phorge/src/applications/maniphest/herald/ManiphestTaskStatusHeraldAction.php
 lib/php/phorge/src/applications/maniphest/herald/ManiphestTaskStatusHeraldField.php
 lib/php/phorge/src/applications/maniphest/herald/ManiphestTaskTitleHeraldField.php
+lib/php/phorge/src/applications/maniphest/herald/SetSubtypeHeraldAction.php
 lib/php/phorge/src/applications/maniphest/httpparametertype/ManiphestTaskListHTTPParameterType.php
 lib/php/phorge/src/applications/maniphest/httpparametertype/ManiphestTaskPHIDResolver.php
 lib/php/phorge/src/applications/maniphest/lipsum/PhabricatorManiphestTaskTestDataGenerator.php
@@ -5367,6 +5380,9 @@ lib/php/phorge/src/applications/metamta/engine/PhabricatorMailSMSEngine.php
 lib/php/phorge/src/applications/metamta/engineextension/PhabricatorMailPropertiesDestructionEngineExtension.php
 lib/php/phorge/src/applications/metamta/exception/PhabricatorMetaMTAPermanentFailureException.php
 lib/php/phorge/src/applications/metamta/exception/PhabricatorMetaMTAReceivedMailProcessingException.php
+lib/php/phorge/src/applications/metamta/externals/__tests__/PhabricatorExternalMimeMailParserTestCase.php
+lib/php/phorge/src/applications/metamta/externals/__tests__/data/test_accents.headers.txt
+lib/php/phorge/src/applications/metamta/externals/__tests__/data/test_accents.mbox
 lib/php/phorge/src/applications/metamta/future/PhabricatorAWSSESFuture.php
 lib/php/phorge/src/applications/metamta/future/PhabricatorAmazonSNSFuture.php
 lib/php/phorge/src/applications/metamta/future/PhabricatorTwilioFuture.php
@@ -5686,6 +5702,7 @@ lib/php/phorge/src/applications/packages/conduit/PhabricatorPackagesPublisherEdi
 lib/php/phorge/src/applications/packages/conduit/PhabricatorPackagesPublisherSearchConduitAPIMethod.php
 lib/php/phorge/src/applications/packages/conduit/PhabricatorPackagesVersionEditConduitAPIMethod.php
 lib/php/phorge/src/applications/packages/conduit/PhabricatorPackagesVersionSearchConduitAPIMethod.php
+lib/php/phorge/src/applications/packages/controller/PhabricatorPackagesConsoleController.php
 lib/php/phorge/src/applications/packages/controller/PhabricatorPackagesController.php
 lib/php/phorge/src/applications/packages/controller/PhabricatorPackagesPackageController.php
 lib/php/phorge/src/applications/packages/controller/PhabricatorPackagesPackageEditController.php
@@ -6475,6 +6492,8 @@ lib/php/phorge/src/applications/phriction/xaction/PhrictionDocumentTransactionTy
 lib/php/phorge/src/applications/phriction/xaction/PhrictionDocumentVersionTransaction.php
 lib/php/phorge/src/applications/phurl/application/PhabricatorPhurlApplication.php
 lib/php/phorge/src/applications/phurl/capability/PhabricatorPhurlURLCreateCapability.php
+lib/php/phorge/src/applications/phurl/capability/PhabricatorPhurlURLDefaultEditCapability.php
+lib/php/phorge/src/applications/phurl/capability/PhabricatorPhurlURLDefaultViewCapability.php
 lib/php/phorge/src/applications/phurl/conduit/PhabricatorPhurlURLEditConduitAPIMethod.php
 lib/php/phorge/src/applications/phurl/conduit/PhabricatorPhurlURLSearchConduitAPIMethod.php
 lib/php/phorge/src/applications/phurl/controller/PhabricatorPhurlController.php
@@ -7381,10 +7400,12 @@ lib/php/phorge/src/applications/tokens/engineextension/PhabricatorTokenDestructi
 lib/php/phorge/src/applications/tokens/engineextension/PhabricatorTokensCurtainExtension.php
 lib/php/phorge/src/applications/tokens/event/PhabricatorTokenUIEventListener.php
 lib/php/phorge/src/applications/tokens/feed/PhabricatorTokenGivenFeedStory.php
+lib/php/phorge/src/applications/tokens/field/PhabricatorTokenSearchField.php
 lib/php/phorge/src/applications/tokens/interface/PhabricatorTokenReceiverInterface.php
 lib/php/phorge/src/applications/tokens/phid/PhabricatorTokenTokenPHIDType.php
 lib/php/phorge/src/applications/tokens/query/PhabricatorTokenCountQuery.php
 lib/php/phorge/src/applications/tokens/query/PhabricatorTokenGivenQuery.php
+lib/php/phorge/src/applications/tokens/query/PhabricatorTokenGivenSearchEngine.php
 lib/php/phorge/src/applications/tokens/query/PhabricatorTokenQuery.php
 lib/php/phorge/src/applications/tokens/query/PhabricatorTokenReceiverQuery.php
 lib/php/phorge/src/applications/tokens/storage/PhabricatorToken.php
@@ -7392,6 +7413,7 @@ lib/php/phorge/src/applications/tokens/storage/PhabricatorTokenCount.php
 lib/php/phorge/src/applications/tokens/storage/PhabricatorTokenDAO.php
 lib/php/phorge/src/applications/tokens/storage/PhabricatorTokenGiven.php
 lib/php/phorge/src/applications/tokens/storage/PhabricatorTokensToken.php
+lib/php/phorge/src/applications/tokens/typeahead/PhabricatorTokenDatasource.php
 lib/php/phorge/src/applications/transactions/application/PhabricatorTransactionsApplication.php
 lib/php/phorge/src/applications/transactions/bulk/PhabricatorBulkEditGroup.php
 lib/php/phorge/src/applications/transactions/bulk/PhabricatorBulkEngine.php
@@ -7668,6 +7690,7 @@ lib/php/phorge/src/docs/contributor/php_coding_standards.diviner
 lib/php/phorge/src/docs/contributor/rendering_html.diviner
 lib/php/phorge/src/docs/contributor/reproduction_steps.diviner
 lib/php/phorge/src/docs/contributor/running_builtin_php_webserver.diviner
+lib/php/phorge/src/docs/contributor/transaction_editors.diviner
 lib/php/phorge/src/docs/contributor/unit_tests.diviner
 lib/php/phorge/src/docs/contributor/using_edges.diviner
 lib/php/phorge/src/docs/contributor/using_oauthserver.diviner
@@ -8295,7 +8318,6 @@ lib/php/phorge/src/infrastructure/storage/connection/AphrontDatabaseConnection.p
 lib/php/phorge/src/infrastructure/storage/connection/AphrontDatabaseTransactionState.php
 lib/php/phorge/src/infrastructure/storage/connection/AphrontIsolatedDatabaseConnection.php
 lib/php/phorge/src/infrastructure/storage/connection/mysql/AphrontBaseMySQLDatabaseConnection.php
-lib/php/phorge/src/infrastructure/storage/connection/mysql/AphrontMySQLDatabaseConnection.php
 lib/php/phorge/src/infrastructure/storage/connection/mysql/AphrontMySQLiDatabaseConnection.php
 lib/php/phorge/src/infrastructure/storage/exception/AphrontAccessDeniedQueryException.php
 lib/php/phorge/src/infrastructure/storage/exception/AphrontCharacterSetQueryException.php
@@ -8565,7 +8587,6 @@ lib/php/phorge/webroot/rsrc/css/aphront/list-filter-view.css
 lib/php/phorge/webroot/rsrc/css/aphront/multi-column.css
 lib/php/phorge/webroot/rsrc/css/aphront/notification.css
 lib/php/phorge/webroot/rsrc/css/aphront/panel-view.css
-lib/php/phorge/webroot/rsrc/css/aphront/phabricator-nav-view.css
 lib/php/phorge/webroot/rsrc/css/aphront/table-view.css
 lib/php/phorge/webroot/rsrc/css/aphront/tokenizer.css
 lib/php/phorge/webroot/rsrc/css/aphront/tooltip.css
@@ -8766,6 +8787,7 @@ lib/php/phorge/webroot/rsrc/externals/javelin/docs/concepts/behaviors.diviner
 lib/php/phorge/webroot/rsrc/externals/javelin/docs/concepts/event_delegation.diviner
 lib/php/phorge/webroot/rsrc/externals/javelin/docs/concepts/sigils_metadata.diviner
 lib/php/phorge/webroot/rsrc/externals/javelin/docs/javelin.book
+lib/php/phorge/webroot/rsrc/externals/javelin/docs/javelin_intro.diviner
 lib/php/phorge/webroot/rsrc/externals/javelin/docs/onload.js
 lib/php/phorge/webroot/rsrc/externals/javelin/ext/fx/Color.js
 lib/php/phorge/webroot/rsrc/externals/javelin/ext/fx/FX.js
