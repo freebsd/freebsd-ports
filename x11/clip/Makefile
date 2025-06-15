@@ -1,6 +1,6 @@
 PORTNAME=	clip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9
+DISTVERSION=	1.10
 CATEGORIES=	x11
 PKGNAMESUFFIX=	-clipboard-library
 
@@ -11,7 +11,10 @@ WWW=		https://github.com/dacap/clip
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake
+LIB_DEPENDS=	libpng16.so:graphics/png
+
+USES=		cmake:testing localbase:ldflags xorg
+USE_XORG=	xcb
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -19,12 +22,8 @@ GH_ACCOUNT=	dacap
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	CLIP_EXAMPLES CLIP_TESTS
+CMAKE_TESTING_ON=	CLIP_TESTS
 
-PLIST_FILES=	include/clip.h \
-		lib/libclip.so
-
-do-install: # workaround for https://github.com/dacap/clip/issues/77
-	${INSTALL_DATA} ${WRKSRC}/clip.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_LIB} ${BUILD_WRKSRC}/libclip.so ${STAGEDIR}${PREFIX}/lib
+# tests as of 1.10: 0% tests passed, 3 tests failed out of 3, see https://github.com/dacap/clip/issues/87
 
 .include <bsd.port.mk>
