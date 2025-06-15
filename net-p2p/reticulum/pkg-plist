@@ -8,11 +8,13 @@ bin/rnsd
 bin/rnstatus
 bin/rnx
 @sample %%ETCDIR%%/config.sample
+%%PYTHON_SITELIBDIR%%/CRNS/__init__.py
+%%PYTHON_SITELIBDIR%%/CRNS/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/CRNS/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Buffer.py
 %%PYTHON_SITELIBDIR%%/RNS/Channel.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/AES.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/Ed25519.py
-%%PYTHON_SITELIBDIR%%/RNS/Cryptography/Fernet.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/HKDF.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/HMAC.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/Hashes.py
@@ -21,14 +23,13 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/Proxies.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/SHA256.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/SHA512.py
+%%PYTHON_SITELIBDIR%%/RNS/Cryptography/Token.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/X25519.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/__init__.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/AES%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/AES%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/Ed25519%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/Ed25519%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/Fernet%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/Fernet%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/HKDF%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/HKDF%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/HMAC%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -45,6 +46,8 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/SHA256%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/SHA512%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/SHA512%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/Token%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/Token%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/X25519%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/X25519%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -52,12 +55,12 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/__init__.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/__pycache__/aes%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/__pycache__/aes%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/aes.py
-%%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/utils.py
+%%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/__pycache__/aes128%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/__pycache__/aes128%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/__pycache__/aes256%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/__pycache__/aes256%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/aes128.py
+%%PYTHON_SITELIBDIR%%/RNS/Cryptography/aes/aes256.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/pure25519/__init__.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/pure25519/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/pure25519/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -89,6 +92,7 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/Android/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/Android/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/AutoInterface.py
+%%PYTHON_SITELIBDIR%%/RNS/Interfaces/BackboneInterface.py
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/I2PInterface.py
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/Interface.py
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/KISSInterface.py
@@ -104,6 +108,8 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/__pycache__/AX25KISSInterface%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/__pycache__/AutoInterface%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/__pycache__/AutoInterface%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Interfaces/__pycache__/BackboneInterface%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Interfaces/__pycache__/BackboneInterface%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/__pycache__/I2PInterface%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/__pycache__/I2PInterface%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/__pycache__/Interface%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -126,6 +132,12 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/__pycache__/UDPInterface%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Interfaces/util/__init__.py
+%%PYTHON_SITELIBDIR%%/RNS/Interfaces/util/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Interfaces/util/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Interfaces/util/__pycache__/netinfo%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Interfaces/util/__pycache__/netinfo%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Interfaces/util/netinfo.py
 %%PYTHON_SITELIBDIR%%/RNS/Link.py
 %%PYTHON_SITELIBDIR%%/RNS/Packet.py
 %%PYTHON_SITELIBDIR%%/RNS/Resolver.py
@@ -195,8 +207,6 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/vendor/__pycache__/configobj%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/vendor/__pycache__/platformutils%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/vendor/__pycache__/platformutils%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/RNS/vendor/__pycache__/six%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/RNS/vendor/__pycache__/six%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/vendor/__pycache__/umsgpack%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/vendor/__pycache__/umsgpack%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/vendor/configobj.py
@@ -224,30 +234,15 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/vendor/i2plib/sam.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/i2plib/tunnel.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/i2plib/utils.py
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__init__.py
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/_posix%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/_posix%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/_shared%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/_shared%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/_win32%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/_win32%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/niwrapper%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/niwrapper%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/_posix.py
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/_shared.py
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/_win32.py
-%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/niwrapper.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/platformutils.py
-%%PYTHON_SITELIBDIR%%/RNS/vendor/six.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/umsgpack.py
-%%PYTHON_SITELIBDIR%%/rns-0.7.7-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/rns-0.7.7-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/rns-0.7.7-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/rns-0.7.7-py%%PYTHON_VER%%.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/rns-0.7.7-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/rns-0.7.7-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/rns-0.9.6-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/rns-0.9.6-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/rns-0.9.6-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/rns-0.9.6-py%%PYTHON_VER%%.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/rns-0.9.6-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/rns-0.9.6-py%%PYTHON_VER%%.egg-info/top_level.txt
+@dir %%ETCDIR%%/interfaces
 @owner %%USERS%%
 @group %%GROUPS%%
 @dir /var/db/reticulum

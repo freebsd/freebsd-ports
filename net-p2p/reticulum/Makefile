@@ -1,20 +1,23 @@
 PORTNAME=	reticulum
-DISTVERSION=	0.7.7
-PORTREVISION=	1
+DISTVERSION=	0.9.6
 CATEGORIES=	net-p2p
-MASTER_SITES=	PYPI
-DISTNAME=	rns-${DISTVERSION}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Self-configuring, encrypted and resilient mesh networking stack
 WWW=		https://reticulum.network/
 
-LICENSE=	MIT
+LICENSE=	UNKNOWN
+LICENSE_NAME=	Reticulum License
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netifaces>=0:net/py-netifaces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial>0:comms/py-pyserial@${PY_FLAVOR}
 
+WRKSRC=		${WRKDIR}/Reticulum-${PORTVERSION}
 USES=		python
+USE_GITHUB=	yes
+GH_ACCOUNT=	markqvist
 USE_PYTHON=	cryptography distutils
 USE_RC_SUBR=	reticulum
 GROUPS=		_reticulum
@@ -27,7 +30,8 @@ PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 NO_ARCH=	yes
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}/var/db/reticulum ${STAGEDIR}/var/run/reticulum ${STAGEDIR}/var/log/reticulum
+	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${ETCDIR}/interfaces ${STAGEDIR}/var/db/reticulum \
+		${STAGEDIR}/var/run/reticulum ${STAGEDIR}/var/log/reticulum
 	${INSTALL_DATA} ${PATCHDIR}/config.sample ${STAGEDIR}${ETCDIR}/config.sample
 
 .include <bsd.port.mk>
