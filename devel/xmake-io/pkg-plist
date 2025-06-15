@@ -390,6 +390,9 @@ share/xmake/languages/fortran/xmake.lua
 share/xmake/languages/golang/check_main.lua
 share/xmake/languages/golang/load.lua
 share/xmake/languages/golang/xmake.lua
+share/xmake/languages/kotlin/check_main.lua
+share/xmake/languages/kotlin/load.lua
+share/xmake/languages/kotlin/xmake.lua
 share/xmake/languages/msrc/load.lua
 share/xmake/languages/msrc/xmake.lua
 share/xmake/languages/nim/load.lua
@@ -522,6 +525,8 @@ share/xmake/modules/core/tools/ifort/has_flags.lua
 share/xmake/modules/core/tools/ifx.lua
 share/xmake/modules/core/tools/ifx/has_flags.lua
 share/xmake/modules/core/tools/ilinkarm.lua
+share/xmake/modules/core/tools/kotlinc_native.lua
+share/xmake/modules/core/tools/kotlinc_native/has_flags.lua
 share/xmake/modules/core/tools/ld.lua
 share/xmake/modules/core/tools/ld64_lld.lua
 share/xmake/modules/core/tools/ld_lld.lua
@@ -704,7 +709,9 @@ share/xmake/modules/detect/tools/find_ifort.lua
 share/xmake/modules/detect/tools/find_ifx.lua
 share/xmake/modules/detect/tools/find_ilinkarm.lua
 share/xmake/modules/detect/tools/find_iverilog.lua
+share/xmake/modules/detect/tools/find_java.lua
 share/xmake/modules/detect/tools/find_jom.lua
+share/xmake/modules/detect/tools/find_kotlinc_native.lua
 share/xmake/modules/detect/tools/find_ld.lua
 share/xmake/modules/detect/tools/find_ld64_lld.lua
 share/xmake/modules/detect/tools/find_ld_lld.lua
@@ -724,6 +731,7 @@ share/xmake/modules/detect/tools/find_make.lua
 share/xmake/modules/detect/tools/find_meson.lua
 share/xmake/modules/detect/tools/find_metal.lua
 share/xmake/modules/detect/tools/find_metallib.lua
+share/xmake/modules/detect/tools/find_midl.lua
 share/xmake/modules/detect/tools/find_ml.lua
 share/xmake/modules/detect/tools/find_ml64.lua
 share/xmake/modules/detect/tools/find_mold.lua
@@ -793,6 +801,7 @@ share/xmake/modules/detect/tools/find_zig.lua
 share/xmake/modules/detect/tools/find_zig_cc.lua
 share/xmake/modules/detect/tools/find_zig_cxx.lua
 share/xmake/modules/detect/tools/find_zip.lua
+share/xmake/modules/detect/tools/find_zstd.lua
 share/xmake/modules/detect/tools/find_zypper.lua
 share/xmake/modules/devel/debugger/run.lua
 share/xmake/modules/devel/git/apply.lua
@@ -870,6 +879,9 @@ share/xmake/modules/package/manager/find_package.lua
 share/xmake/modules/package/manager/go/find_package.lua
 share/xmake/modules/package/manager/go/install_package.lua
 share/xmake/modules/package/manager/install_package.lua
+share/xmake/modules/package/manager/kotlin-native/configurations.lua
+share/xmake/modules/package/manager/kotlin-native/find_package.lua
+share/xmake/modules/package/manager/kotlin-native/install_package.lua
 share/xmake/modules/package/manager/nimble/find_package.lua
 share/xmake/modules/package/manager/nimble/install_package.lua
 share/xmake/modules/package/manager/nuget/find_package.lua
@@ -990,8 +1002,10 @@ share/xmake/modules/private/check/checkers/api/target/version.lua
 share/xmake/modules/private/check/checkers/api/target/warnings.lua
 share/xmake/modules/private/check/checkers/clang/tidy.lua
 share/xmake/modules/private/check/checkers/cuda/devlink.lua
+share/xmake/modules/private/detect/check_targetname.lua
 share/xmake/modules/private/detect/find_cudatool.lua
 share/xmake/modules/private/detect/find_platform.lua
+share/xmake/modules/private/detect/find_similar_targetnames.lua
 share/xmake/modules/private/diagnosis/dump_buildjobs.lua
 share/xmake/modules/private/diagnosis/dump_targets.lua
 share/xmake/modules/private/service/add_user.lua
@@ -1235,6 +1249,8 @@ share/xmake/rules/go/build/object.lua
 share/xmake/rules/go/env/xmake.lua
 share/xmake/rules/go/xmake.lua
 share/xmake/rules/iverilog/xmake.lua
+share/xmake/rules/kotlin-native/build/target.lua
+share/xmake/rules/kotlin-native/xmake.lua
 share/xmake/rules/lex_yacc/lex/xmake.lua
 share/xmake/rules/lex_yacc/yacc/xmake.lua
 share/xmake/rules/linker/link_scripts/xmake.lua
@@ -1261,6 +1277,7 @@ share/xmake/rules/platform/linux/module/xmake.lua
 share/xmake/rules/platform/wasm/installfiles/xmake.lua
 share/xmake/rules/platform/wasm/preloadfiles/xmake.lua
 share/xmake/rules/platform/windows/def/xmake.lua
+share/xmake/rules/platform/windows/idl/xmake.lua
 share/xmake/rules/platform/windows/manifest/xmake.lua
 share/xmake/rules/platform/xmake.lua
 share/xmake/rules/plugin/compile_commands/xmake.lua
@@ -1564,6 +1581,17 @@ share/xmake/templates/go/static/project/src/test/add.go
 share/xmake/templates/go/static/project/src/test/sub.go
 share/xmake/templates/go/static/project/xmake.lua
 share/xmake/templates/go/static/template.lua
+share/xmake/templates/kotlin/console/project/src/main.kt
+share/xmake/templates/kotlin/console/project/xmake.lua
+share/xmake/templates/kotlin/console/template.lua
+share/xmake/templates/kotlin/shared_library/project/src/foo.kt
+share/xmake/templates/kotlin/shared_library/project/src/main.c
+share/xmake/templates/kotlin/shared_library/project/xmake.lua
+share/xmake/templates/kotlin/shared_library/template.lua
+share/xmake/templates/kotlin/static_library/project/src/foo.kt
+share/xmake/templates/kotlin/static_library/project/src/main.c
+share/xmake/templates/kotlin/static_library/project/xmake.lua
+share/xmake/templates/kotlin/static_library/template.lua
 share/xmake/templates/nim/console/project/src/main.nim
 share/xmake/templates/nim/console/project/xmake.lua
 share/xmake/templates/nim/console/template.lua
@@ -1773,6 +1801,7 @@ share/xmake/toolchains/ifx/check.lua
 share/xmake/toolchains/ifx/load.lua
 share/xmake/toolchains/ifx/xmake.lua
 share/xmake/toolchains/iverilog/xmake.lua
+share/xmake/toolchains/kotlin-native/xmake.lua
 share/xmake/toolchains/ldc/check.lua
 share/xmake/toolchains/ldc/xmake.lua
 share/xmake/toolchains/llvm/check.lua
