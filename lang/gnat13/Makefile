@@ -129,6 +129,7 @@ PLIST_SUB+=	32BITS=""
 .  endif
 .endif
 .if ${ARCH} == aarch64
+EXTRACT_CMD=    ${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 PLIST_SUB+=	ARM="" \
 		NOARM="@comment "
 .else

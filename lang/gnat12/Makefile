@@ -141,6 +141,7 @@ PLIST_SUB+=	AMD64="@comment " \
 		X86=" " \
 		64BIT="@comment "
 .elif ${ARCH} == aarch64
+EXTRACT_CMD=    ${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 PLIST_SUB+=	X86="@comment " \
 		AMD64="@comment " \
 		AARCH64=" " \
