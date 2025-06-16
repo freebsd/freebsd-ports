@@ -1,6 +1,6 @@
 PORTNAME=		ooni-probe-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=		3.25.0
+DISTVERSION=		3.26.0
 CATEGORIES=		net www benchmarks
 
 MAINTAINER=	rene@FreeBSD.org
