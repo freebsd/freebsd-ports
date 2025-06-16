@@ -4555,3 +4555,4 @@ java/jaxen||2025-06-23|Has expired: Outdated, unsupported upstream and unmaintai
 devel/py-atomicwrites||2025-06-23|Has expired: Upstream repository has been archived on Jul 16, 2022. Upstream suggests os.replace and os.rename instead
 devel/py-pytest-runner||2025-06-23|Has expired: pytest-runner depends on deprecated features of setuptools
 x11-toolkits/scenefx03|x11-toolkits/scenefx04|2025-06-24|No consumers in ports
+net/ziina|net/zmate|2025-06-24|Renamed upstream
