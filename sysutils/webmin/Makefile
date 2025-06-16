@@ -1,5 +1,6 @@
 PORTNAME=	webmin
 PORTVERSION=	2.401
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf
@@ -50,8 +51,8 @@ post-patch:
 	@${FIND} ${WRKSRC} \( -name "*.orig" -or -name "*.bak" -or -name "*.pyc" \) -delete
 
 do-build:
-	@${PYTHON_CMD} -mcompileall ${WRKSRC}/ajaxterm/ajaxterm/
-	@${PYTHON_CMD} -O -mcompileall ${WRKSRC}/ajaxterm/ajaxterm/
+	@${PYTHON_CMD} -mcompileall ${WRKSRC}/webmin/acme_tiny.py
+	@${PYTHON_CMD} -O -mcompileall ${WRKSRC}/webmin/acme_tiny.py
 	@${CC} ${CFLAGS} -o ${WRKSRC}/mount/freebsd-mounts-7 ${WRKSRC}/mount/freebsd-mounts-7.c
 	@${STRIP_CMD} ${WRKSRC}/mount/freebsd-mounts-7
 
