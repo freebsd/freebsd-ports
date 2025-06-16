@@ -4514,3 +4514,7 @@ editors/gnome-latex|editors/enter-tex|2025-06-10|Renamed uspstream
 net/landrop||2025-06-14|Has expired: Unmaintained version and the newer version turned to close source
 lang/frawk||2025-06-15|Abandoned upstream; fails to build; was labeled broken for over a year
 science/R-cran-eco||2025-06-16|Has expired: Unsupported upstream
+devel/bugzilla44||2025-06-16|Has expired: Upstream support ended 20250103
+german/bugzilla44||2025-06-16|Removed, localized version of devel/bugzilla44
+japanese/bugzilla44||2025-06-16|Removed, localized version of devel/bugzilla44
+russian/bugzilla44||2025-06-16|Removed, localized version of devel/bugzilla44

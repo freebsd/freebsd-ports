@@ -19,7 +19,6 @@
     SUBDIR += bible_names-fpw
     SUBDIR += boiled-mozc
     SUBDIR += bookview
-    SUBDIR += bugzilla44
     SUBDIR += bugzilla50
     SUBDIR += canna-lib
     SUBDIR += canna-server

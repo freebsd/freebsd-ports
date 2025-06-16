@@ -3,7 +3,6 @@
     SUBDIR += BBBike
     SUBDIR += alt-aspell
     SUBDIR += aspell
-    SUBDIR += bugzilla44
     SUBDIR += dict
     SUBDIR += ding
     SUBDIR += dtaus
