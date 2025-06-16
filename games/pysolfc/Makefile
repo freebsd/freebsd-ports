@@ -1,6 +1,5 @@
 PORTNAME=	pysolfc
-DISTVERSION=	3.2.0
-PORTREVISION=	1
+DISTVERSION=	3.4.0
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/PySolFC/${PYSOLFCDIR} \
 		SF/${PORTNAME}/PySolFC-Cardsets/minimal/:cardsets \
@@ -21,6 +20,8 @@ LICENSE_FILE_GPLv3+ =		${WRKSRC}/COPYING
 LICENSE_DISTFILES_GPLv2+ =	${CARDSETDIST} ${MUSICDIST}
 LICENSE_DISTFILES_GPLv3+ =	${PYSOLFCDIST}
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=18.2.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${PY_FLAVOR} \
@@ -28,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=18.2.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
 USES=		python shebangfix tar:xz
-USE_PYTHON=	distutils noflavors autoplist
+USE_PYTHON=	autoplist noflavors pep517
 SHEBANG_FILES=	data/themes/clearlooks/convert_imgs.sh
 NO_ARCH=	yes
 
@@ -49,7 +50,7 @@ SOUND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${PY_FLAVOR}
 
 PYSOLFCDIR=	PySolFC-${DISTVERSION}
 PYSOLFCDIST=	${PYSOLFCDIR}${EXTRACT_SUFX}
-CARDSETDIR=	PySolFC-Cardsets--Minimal-3.0.0
+CARDSETDIR=	PySolFC-Cardsets--Minimal-3.1.0
 CARDSETDIST=	${CARDSETDIR}.tar.xz
 MUSICDIR=	PySol-Music-4.50
 MUSICDIST=	${MUSICDIR:tl}.tar.xz

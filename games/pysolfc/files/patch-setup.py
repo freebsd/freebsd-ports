@@ -4,7 +4,9 @@
 * Skip locale files if NLS is disabled (otherwise enable it via
   post-patch target).
 
---- setup.py.orig	2024-03-31 16:23:14 UTC
+* Normalize the bdist wheel name to avoid staging errors.
+
+--- setup.py.orig	2024-12-22 21:32:17 UTC
 +++ setup.py
 @@ -14,6 +14,8 @@ def get_data_files(source, destination):
      destination using the data_files keyword of setuptools.setup."""
@@ -24,3 +26,12 @@
  
  if os.name == 'posix':
      for size in os.listdir('data/images/icons'):
+@@ -65,7 +67,7 @@ kw = {
+ '''
+ 
+ kw = {
+-    'name': 'PySolFC',
++    'name': 'pysolfc',
+     'version': VERSION,
+     'url': PACKAGE_URL,
+     'author': 'Skomoroh',
