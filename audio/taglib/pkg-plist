@@ -70,6 +70,9 @@ include/taglib/relativevolumeframe.h
 include/taglib/rifffile.h
 include/taglib/s3mfile.h
 include/taglib/s3mproperties.h
+include/taglib/shortenfile.h
+include/taglib/shortenproperties.h
+include/taglib/shortentag.h
 include/taglib/speexfile.h
 include/taglib/speexproperties.h
 include/taglib/synchronizedlyricsframe.h
@@ -77,6 +80,7 @@ include/taglib/tableofcontentsframe.h
 include/taglib/tag.h
 include/taglib/tag_c.h
 include/taglib/taglib.h
+include/taglib/taglib_config.h
 include/taglib/taglib_export.h
 include/taglib/tbytevector.h
 include/taglib/tbytevectorlist.h
@@ -119,10 +123,10 @@ lib/cmake/taglib/taglib-targets.cmake
 %%STATIC%%lib/libtag.a
 %%NO_STATIC%%lib/libtag.so
 %%NO_STATIC%%lib/libtag.so.2
-%%NO_STATIC%%lib/libtag.so.2.0.2
+%%NO_STATIC%%lib/libtag.so.2.1.0
 %%STATIC%%lib/libtag_c.a
 %%NO_STATIC%%lib/libtag_c.so
 %%NO_STATIC%%lib/libtag_c.so.2
-%%NO_STATIC%%lib/libtag_c.so.2.0.2
+%%NO_STATIC%%lib/libtag_c.so.2.1.0
 libdata/pkgconfig/taglib.pc
 libdata/pkgconfig/taglib_c.pc

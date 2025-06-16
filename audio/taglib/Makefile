@@ -1,5 +1,5 @@
 PORTNAME=	taglib
-DISTVERSION=	2.0.2
+DISTVERSION=	2.1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://taglib.org/releases/
@@ -20,6 +20,7 @@ USES=		cmake:testing compiler:c++17-lang cpe pathfix
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_CXX_VISIBILITY_PRESET=hidden
+CMAKE_OFF=	BUILD_TESTING
 CMAKE_ON=	VISIBILITY_HIDDEN
 
 CMAKE_TESTING_TARGET=	check
