@@ -10,6 +10,9 @@ MAINTAINER=	ports@virtual-estates.net
 COMMENT=	The build utility of the Qt 3 project
 WWW=		http://doc.qt.digia.com/3.3/index.html
 
+DEPRECATED=	Obsolete and unsupported upstream
+EXPIRATION_DATE=2025-07-31
+
 REINPLACE_ARGS=	-i ""
 WRKSRC=		${WRKDIR}/${DISTNAME}/qmake
 MAKEFILE=	${FILESDIR}/Makefile.bsd
