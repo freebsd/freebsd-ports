@@ -1,5 +1,6 @@
 PORTNAME=	thunar-vcs-plugin
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	devel xfce
 MASTER_SITES=	XFCE/thunar-plugins
 DIST_SUBDIR=	xfce4
@@ -11,8 +12,8 @@ WWW=		https://docs.xfce.org/thunar-plugins/thunar-vcs-plugin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 gettext-tools gnome localbase meson pkgconfig \
-		tar:xz xfce
+USES=		compiler:c11 gettext-tools gnome localbase:ldflags meson \
+		pkgconfig tar:xz xfce
 USE_GNOME=	glib20 gtk30
 USE_XFCE=	libexo thunar
 
