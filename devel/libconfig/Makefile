@@ -1,11 +1,11 @@
 PORTNAME=	libconfig
-PORTVERSION=	1.7.3
+DISTVERSION=	1.8.1
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/hyperrealm/${PORTNAME}/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://hyperrealm.github.io/${PORTNAME}/dist/
 
 MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	Simple library for processing structured configuration files
-WWW=		https://www.hyperrealm.com/libconfig/libconfig.html
+WWW=		https://hyperrealm.github.io/libconfig/
 
 LICENSE=	LGPL21
 
@@ -14,6 +14,10 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFLICTS=	wand-libconfig
+
+TEST_TARGET=	check
+
+CONFIGURE_ARGS=	--disable-examples
 
 OPTIONS_DEFINE=	INFO
 OPTIONS_DEFAULT=INFO
