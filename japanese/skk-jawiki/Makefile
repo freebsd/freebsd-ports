@@ -1,5 +1,5 @@
 PORTNAME=	jawiki
-DISTVERSION=	g20240521
+DISTVERSION=	g20250609
 CATEGORIES=	japanese
 PKGNAMEPREFIX?=	ja-skk-
 
@@ -12,10 +12,10 @@ LICENSE=	MIT
 USE_GITHUB=	yes
 GH_ACCOUNT=	tokuhirom
 GH_PROJECT=	jawiki-kana-kanji-dict
-GH_TAGNAME=	d62e22e
+GH_TAGNAME=	2a6cfdf
 NO_ARCH=	yes
 
-.if defined(MECAB)
+.if defined(MECAB)	# japanese/mecab-jawiki
 BUILD_DEPENDS=	${LOCALBASE}/libexec/mecab/mecab-dict-index:japanese/mecab
 
 MECABDIR=	lib/mecab/dic/ipadic
@@ -26,9 +26,9 @@ PLIST_FILES=	${MECABDIR}/${MECABDIC}
 OPTIONS_DEFAULT=	UTF8
 OPTIONS_SINGLE=		CHARSET
 OPTIONS_SINGLE_CHARSET=	EUCJP SHIFTJIS UTF8
-EUCJP_DESC=		Use EUC-JP as dictionary charset.
-SHIFTJIS_DESC=		Use SHIFT-JIS as dictionary charset.
-UTF8_DESC=		Use UTF-8 as dictionary charset.
+EUCJP_DESC=		Use EUC-JP as dictionary charset
+SHIFTJIS_DESC=		Use SHIFT-JIS as dictionary charset
+UTF8_DESC=		Use UTF-8 as dictionary charset
 
 EUCJP_BUILD_DEPENDS=	ja-mecab-ipadic-eucjp>0:japanese/mecab-ipadic-eucjp
 SHIFTJIS_BUILD_DEPENDS=	ja-mecab-ipadic-sjis>0:japanese/mecab-ipadic-sjis
@@ -44,7 +44,7 @@ do-build:
 		-f utf-8 -t ${CSET} ${WRKSRC}/mecab-userdic.csv
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${MECABDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${MECABDIR}
 	${INSTALL_DATA} ${WRKSRC}/${MECABDIC} ${STAGEDIR}${PREFIX}/${MECABDIR}
 .else
 SKKDIR=		share/skk
@@ -96,7 +96,7 @@ do-build:
 .endfor
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${SKKDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SKKDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DICS} ${STAGEDIR}${PREFIX}/${SKKDIR}
 .endif
 
