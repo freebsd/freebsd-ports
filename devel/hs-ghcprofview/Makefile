@@ -1,6 +1,6 @@
 PORTNAME=	ghcprofview
 PORTVERSION=	0.1.0.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -9,9 +9,6 @@ WWW=		https://github.com/portnov/ghcprofview-hs
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_aarch64=	error: incompatible pointer to integer conversion assigning to 'ffi_arg' (aka 'unsigned long') from 'HsPtr' (aka 'void *')
-
-BUILD_DEPENDS=	ghc-9.6.7:lang/ghc96
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
@@ -31,7 +28,7 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		base-orphans-0.9.3 \
 		bifunctors-5.6.2_2 \
 		bitvec-1.1.5.0_3 \
-		blaze-builder-0.4.2.3 \
+		blaze-builder-0.4.3 \
 		blaze-html-0.9.2.0_1 \
 		blaze-markup-0.8.3.0_2 \
 		cabal-doctest-1.0.11 \
@@ -46,13 +43,13 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_2 \
 		generically-0.1.1_4 \
-		ghc-prof-1.4.1.13 \
+		ghc-prof-1.4.1.14 \
 		gi-atk-2.0.28 \
 		gi-cairo-1.0.30 \
 		gi-freetype2-2.0.5 \
 		gi-gdk3-3.0.30 \
 		gi-gdkpixbuf-2.0.32 \
-		gi-gio-2.0.36 \
+		gi-gio-2.0.38 \
 		gi-glib-2.0.30 \
 		gi-gmodule-2.0.6 \
 		gi-gobject-2.0.31 \
@@ -75,7 +72,7 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		mono-traversable-1.0.21.0 \
 		network-3.2.7.0 \
 		network-uri-2.6.4.2_1 \
-		optparse-applicative-0.18.1.0_1 \
+		optparse-applicative-0.19.0.0 \
 		os-string-2.0.7 \
 		pretty-show-1.10 \
 		prettyprinter-1.7.1 \
@@ -83,18 +80,18 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		primitive-0.9.1.0 \
 		random-1.3.1 \
 		regex-base-0.94.0.3 \
-		regex-tdfa-1.3.2.3 \
+		regex-tdfa-1.3.2.4 \
 		resourcet-1.3.0 \
 		safe-0.3.21_1 \
 		scientific-0.3.8.0_2 \
 		semialign-1.3.1_2 \
 		semigroupoids-6.0.1_2 \
 		split-0.2.5 \
-		splitmix-0.1.1 \
+		splitmix-0.1.2 \
 		streaming-commons-0.2.3.0 \
 		strict-0.5.1_1 \
 		tagged-0.8.9 \
-		tasty-1.5.3_1 \
+		tasty-1.5.3_2 \
 		text-iso8601-0.1.1_2 \
 		text-short-0.1.6_3 \
 		th-abstraction-0.7.1.0_1 \
