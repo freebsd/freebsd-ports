@@ -10,8 +10,6 @@ WWW=		https://github.com/selmf/unarr
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_riscv64=		fails to build: Hard-float 'd' ABI can't be used for a target that doesn't support the D instruction set extension
-
 TEST_DEPENDS=	cmocka>0:sysutils/cmocka
 
 USES=		cmake:testing pathfix
