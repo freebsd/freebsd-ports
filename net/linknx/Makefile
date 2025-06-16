@@ -9,6 +9,9 @@ WWW=		https://linknx.sourceforge.net/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Outdated and unsupported upstream
+EXPIRATION_DATE=2025-07-31
+
 BROKEN_armv6=		fails to configure: checking for GNU Pth... Segmentation fault
 BROKEN_armv7=		fails to configure: checking for GNU Pth... Segmentation fault
 BROKEN_mips=		fails to configure: checking for GNU Pth... Segmentation fault
