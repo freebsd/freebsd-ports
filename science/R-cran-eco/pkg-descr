@@ -1,4 +1,0 @@
-eco is a publicly available R package that implements the Bayesian
-and likelihood methods proposed in Imai, Lu, and Strauss (2008) for
-ecological inference in $2 \times 2$ tables as well as the method
-of bounds introduced by Duncan and Davis (1953).
