@@ -1,5 +1,5 @@
 PORTNAME=	librenms
-PORTVERSION=	25.5.0
+PORTVERSION=	25.6.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -32,14 +32,12 @@ USE_RC_SUBR=	librenms
 SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/paragonie/random_compat/build-phar.sh \
 		../${PORTNAME}-vendor-${PORTVERSION}/tecnickcom/tcpdf/tools/tcpdf_addfont.php \
 		../librenms-vendor-${PORTVERSION}/bin/carbon \
-		../librenms-vendor-${PORTVERSION}/bin/doctrine-dbal \
 		../librenms-vendor-${PORTVERSION}/bin/patch-type-declarations \
 		../librenms-vendor-${PORTVERSION}/bin/php-parse \
 		../librenms-vendor-${PORTVERSION}/bin/psysh \
 		../librenms-vendor-${PORTVERSION}/bin/validate-json \
 		../librenms-vendor-${PORTVERSION}/bin/var-dump-server \
 		../librenms-vendor-${PORTVERSION}/bin/yaml-lint \
-		../librenms-vendor-${PORTVERSION}/doctrine/dbal/bin/doctrine-dbal \
 		../librenms-vendor-${PORTVERSION}/justinrainbow/json-schema/bin/validate-json \
 		../librenms-vendor-${PORTVERSION}/nesbot/carbon/bin/carbon \
 		../librenms-vendor-${PORTVERSION}/nikic/php-parser/bin/php-parse \
@@ -54,7 +52,7 @@ SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/paragonie/random_compat/buil
 		irc.php librenms-service.py LibreNMS/command_runner.py \
 		LibreNMS/wrapper.py lnms misc/lnms-completion.bash \
 		misc/smokeping-debian.example misc/smokeping-rhel.example \
-		pbin.sh ping.php poll-billing.php poller-wrapper.py poller.php \
+		ping.php poll-billing.php poller-wrapper.py poller.php \
 		renamehost.php scripts/auth_test.php scripts/bash_lint.sh \
 		scripts/check_requirements.py scripts/collect-port-polling.php \
 		scripts/collect-snmp-data.php scripts/composer_wrapper.php \
@@ -121,14 +119,14 @@ _ROOT_FILES=		addhost.php alerts.php artisan billing-calculate.php \
 			config.php.default config_to_json.php cronic daily.php \
 			delhost.php discovery-wrapper.py discovery.php \
 			dist-pollers.php irc.php librenms-service.py mkdocs.yml \
-			pbin.sh phpunit.xml ping.php poll-billing.php \
+			phpunit.xml ping.php poll-billing.php \
 			poller.php poller-wrapper.py renamehost.php \
 			snmp-scan.py snmptrap.php syslog.php validate.php
 _SCRIPT_FILES=		daily.sh lnms
 # _RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-_RELEASE_TIMESTAMP=	1747410665
+_RELEASE_TIMESTAMP=	1750074912
 _ROOT_DIRS=		LibreNMS app bootstrap config database doc html \
 			includes lang licenses mibs misc resources routes \
 			scripts tests
@@ -145,7 +143,7 @@ _OTHER_DIRS=	database/seeders/config html/plugins html/js/lang \
 		tests/Browser/source tests/Browser/screenshots \
 		vendor/librenms/laravel-vue-i18n-generator/tests/output \
 		vendor/symfony/mime/Resources/bin \
-		vendor/symfony/string/Resources/bin 
+		vendor/symfony/string/Resources/bin
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
