@@ -16,8 +16,9 @@ LICENSE_FILE=	${WRKDIR}/Python-${DISTVERSION}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		compiler:c11 python tar:xz tk:86
+USES=		compiler:c11 python tar:xz tk:86 xorg
 USE_PYTHON=	allflavors autoplist pep517
+USE_XORG=	x11
 
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 WRKSRC_SUBDIR=	Modules

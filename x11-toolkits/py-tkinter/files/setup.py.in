@@ -7,17 +7,18 @@ from setuptools import setup, Extension
 tkversion = "%%TK_VER%%"
 prefix = sysconfig.get_config_var('prefix')
 x11base = sys.prefix or '/usr/X11R6'
-inc_dirs = [prefix + "/include",
+inc_dirs = [sysconfig.get_path('include') + "/internal",
             prefix + "/include/tcl" + tkversion,
             prefix + "/include/tk" + tkversion,
             x11base + "/include"]
-lib_dirs = [prefix + "/lib", x11base + "/lib"]
+lib_dirs = [x11base + "/lib"]
 libs = ["tcl" + tkversion.replace(".", ""),
         "tk" + tkversion.replace(".", ""),
         "X11"]
+macros = [('Py_BUILD_CORE_MODULE', 1), ('WITH_APPINIT', 1)]
 
 setup(ext_modules = [Extension('_tkinter', ['_tkinter.c', 'tkappinit.c'],
-                               define_macros=[('WITH_APPINIT', 1)],
+                               define_macros=macros,
                                include_dirs = inc_dirs,
                                libraries = libs,
                                library_dirs = lib_dirs)]
