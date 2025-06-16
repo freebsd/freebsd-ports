@@ -1,0 +1,12 @@
+bin/piper_phonemize
+include/piper-phonemize/json.hpp
+include/piper-phonemize/phoneme_ids.hpp
+include/piper-phonemize/phonemize.hpp
+include/piper-phonemize/shared.hpp
+include/piper-phonemize/tashkeel.hpp
+include/piper-phonemize/uni_algo.h
+lib/libpiper_phonemize.so
+lib/libpiper_phonemize.so.1
+lib/libpiper_phonemize.so.1.2.0
+libdata/pkgconfig/piper_phonemize.pc
+share/libtashkeel_model.ort
