@@ -1,6 +1,5 @@
 PORTNAME=	packageurl-python
-DISTVERSION=	0.16.0
-PORTREVISION=	1
+DISTVERSION=	0.17.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +12,11 @@ WWW=		https://github.com/package-url/packageurl-python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/mit.LICENSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	autoplist distutils pytest
+USE_PYTHON=	autoplist pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
