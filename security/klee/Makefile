@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 NOT_FOR_ARCHS=	i386 powerpc
 
-BUILD_DEPENDS=	gmake:devel/gmake
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tabulate>0:devel/py-tabulate@${PY_FLAVOR}
 
 USES=		cmake compiler:c++14-lang llvm:min=12,max=16,build,run,noexport localbase \
@@ -22,8 +21,7 @@ SHEBANG_FILES=	tools/klee-stats/klee-stats tools/ktest-tool/ktest-tool tools/kle
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	ENABLE_POSIX_RUNTIME ENABLE_UNIT_TESTS ENABLE_SYSTEM_TESTS
-CMAKE_ARGS=	-DLLVM_CONFIG_BINARY=${LOCALBASE}/bin/${LLVM_CONFIG} \
-		-DMAKE_BINARY=${GMAKE}
+CMAKE_ARGS=	-DLLVM_DIR=${LLVM_PREFIX}/lib/cmake/llvm
 
 OPTIONS_DEFINE=		TCMALLOC
 OPTIONS_DEFAULT=	TCMALLOC Z3 STP
