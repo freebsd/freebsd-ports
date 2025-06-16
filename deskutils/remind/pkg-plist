@@ -592,3 +592,4 @@ share/man/man1/remind.1.gz
 %%DATADIR%%/site/README
 %%DATADIR%%/solar-eclipses.rem
 %%DATADIR%%/sun.rem
+%%DATADIR%%/utils/add-html-anchors.rem
