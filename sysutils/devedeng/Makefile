@@ -1,6 +1,5 @@
 PORTNAME=	devedeng
-DISTVERSION=	4.18.0
-PORTREVISION=	2
+DISTVERSION=	4.21.0
 CATEGORIES=	sysutils multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,12 +21,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR} \
 USES=		python gettext-tools gnome
 USE_GITLAB=	yes
 GL_ACCOUNT=	rastersoft
-GL_TAGNAME=	8cd457b494c1b746633d2490e319c07f6905e1f2
 USE_GNOME=	gtk30 pygobject3:run
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	concurrent distutils autoplist
 
 NO_ARCH=	yes
-PLIST_FILES=	bin/devede_ng
 
 OPTIONS_DEFAULT=	BRASERO MPV
 OPTIONS_MULTI=	PLAYER BURNER
@@ -51,8 +48,5 @@ XFBURN_RUN_DEPENDS=	xfburn:sysutils/xfburn
 
 pre-configure:
 	${REINPLACE_CMD} -e 's,/usr,${PREFIX},' ${WRKSRC}/setup.py
-
-post-install:
-	${LN} -s devede_ng.py ${STAGEDIR}${PREFIX}/bin/devede_ng
 
 .include <bsd.port.mk>
