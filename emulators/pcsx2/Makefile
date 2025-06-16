@@ -1,6 +1,5 @@
 PORTNAME=	pcsx2
-PORTVERSION=	2.3.9
-PORTREVISION=	2
+PORTVERSION=	2.3.212
 DISTVERSIONPREFIX=	v
 CATEGORIES=	emulators
 
@@ -42,7 +41,7 @@ USE_GITHUB=	yes
 GH_PROJECT=	pcsx2
 
 USE_GL=		egl
-USE_SDL=	sdl2
+USE_SDL=	sdl3
 USE_XORG=	ice x11 xcb xext xpm xrandr xrender
 USE_QT=		base tools
 ELF_FEATURES=	+wxneeded:bin/pcsx2-qt
@@ -58,17 +57,13 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-no-march-minimum-req
 .endif
 
 # See: cmake/BuildParameters.cmake
-# XXX Vulkan support needs libshaderc_shared.so:graphics/shaderc but
-# Pcsx2 embeds its own -patched/incompatible- version
-# (see: .github/workflows/scripts/common/shaderc-changes.patch) so we just
-# disable it for now.
+# XXX Vulkan comes from 3rdparty/
 CMAKE_ARGS+=	\
 		-DCMAKE_REQUIRED_INCLUDES:STRING=${LOCALBASE}/include/ \
 		-DPCSX2_RESOURCES_PATH:STRING=${DATADIR}/resources \
 		-DUSE_VTUNE:BOOL=OFF \
 		-DWAYLAND_API=OFF \
-		-DENABLE_TESTS:BOOL=OFF \
-		-DUSE_VULKAN:BOOL=OFF
+		-DENABLE_TESTS:BOOL=OFF
 
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	Debugger.pdf GameIndex.pdf
