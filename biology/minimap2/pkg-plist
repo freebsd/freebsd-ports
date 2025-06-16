@@ -8,3 +8,6 @@ share/man/man1/minimap2.1.gz
 %%DATADIR%%/test/q2.fa
 %%DATADIR%%/test/t-inv.fa
 %%DATADIR%%/test/t2.fa
+%%DATADIR%%/test/x3s-aln.txt
+%%DATADIR%%/test/x3s-qry.fa
+%%DATADIR%%/test/x3s-ref.fa
