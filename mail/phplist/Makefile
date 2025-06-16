@@ -1,6 +1,5 @@
 PORTNAME=	phplist
-DISTVERSION=	3.6.15
-PORTREVISION=	1
+DISTVERSION=	3.6.16
 CATEGORIES=	mail www
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -37,6 +36,14 @@ post-extract:
 #
 do-install:
 	@${FIND} ${WRKSRC}/public_html/ -type f -regex '.*[^!-~].*' -delete
+	@${FIND} ${WRKSRC}/public_html/ -type f -name '*.md' -delete
+	@${FIND} ${WRKSRC}/public_html/ -type f -name '.doctrine-project.json' -delete
+	@${FIND} ${WRKSRC}/public_html/ -type f -name '.editorconfig' -delete
+	@${FIND} ${WRKSRC}/public_html/ -type f -name '.gitkeep' -delete
+	@${FIND} ${WRKSRC}/public_html/ -type f -name '.travis.yml' -delete
+	@${FIND} ${WRKSRC}/public_html/ -type f -name 'composer.json' -delete
+	@${FIND} ${WRKSRC}/public_html/ -type f -name 'composer.lock' -delete
+	@${FIND} ${WRKSRC}/public_html/ -type f -regex '.*/.github/.*' -delete
 	@${FIND} ${WRKSRC}/public_html/ -type l -delete
 	@${FIND} ${WRKSRC}/public_html/ -type d -empty -delete
 	${MKDIR} ${STAGEDIR}${WWWDIR}/
