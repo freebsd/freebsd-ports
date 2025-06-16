@@ -1,6 +1,5 @@
 PORTNAME=	xen-guest-tools
-PORTVERSION=	4.16.1
-PORTREVISION=	2
+PORTVERSION=	4.20.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloads.xenproject.org/release/xen/${PORTVERSION}/
 DISTNAME=	xen-${PORTVERSION}
@@ -31,6 +30,7 @@ CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD} PYTHON_PATH=${PYTHON_CMD}
 CONFIGURE_ENV+=	APPEND_LIB="${LOCALBASE}/lib"
 CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	IASL="/usr/sbin/iasl"
 MAKE_ENV+=	clang=y
 MAKE_ENV+=	CC="${CC}"
 MAKE_ENV+=	CFLAGS="${CFLAGS}"
@@ -65,8 +65,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/misc/xen-detect \
-		${WRKSRC}/tools/xenstore/xenstore \
-		${WRKSRC}/tools/xenstore/xenstore-control \
+		${WRKSRC}/tools/xs-clients/xenstore \
+		${WRKSRC}/tools/xs-clients/xenstore-control \
 		${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_LIB} ${WRKSRC}/tools/libs/store/libxenstore.so.4.0 \
 		${WRKSRC}/tools/libs/toolcore/libxentoolcore.so.1.0 \

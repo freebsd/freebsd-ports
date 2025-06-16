@@ -1,0 +1,13 @@
+--- tools/Makefile.orig	2025-03-31 16:57:40 UTC
++++ tools/Makefile
+@@ -53,6 +53,10 @@ endif
+ export CROSS_BIN_PATH # exported for cross-install.sh
+ endif
+ 
++ifeq ($(FREEBSD_PORT),y)
++SUBDIRS-y := libs xs-clients misc
++endif
++
+ .PHONY: build all
+ build all: subdirs-all
+ 
