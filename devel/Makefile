@@ -622,6 +622,7 @@
     SUBDIR += doctest
     SUBDIR += doctorj
     SUBDIR += dolphin-plugins
+    SUBDIR += dorst
     SUBDIR += dotconf
     SUBDIR += double-conversion
     SUBDIR += doxygen
