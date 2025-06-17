@@ -1,0 +1,24 @@
+@sample %%ETCDIR%%/acme.conf.sample
+@sample %%ETCDIR%%/domains.conf.sample
+%%ETCDIR%%/hooks/example-hook
+etc/periodic/daily/900.lfacme
+sbin/lfacme
+%%DATADIR%%/challenge/dns
+%%DATADIR%%/challenge/http
+%%DATADIR%%/challenge/kerberos
+%%DATADIR%%/challenge/ualpn
+%%DATADIR%%/command/cert.sh
+%%DATADIR%%/command/renew.sh
+%%DATADIR%%/command/setup.sh
+%%DATADIR%%/dnsutils.sh
+%%DATADIR%%/init.sh
+share/man/man5/acme.conf.5.gz
+share/man/man5/domains.conf.5.gz
+share/man/man7/lfacme-dns.7.gz
+share/man/man7/lfacme-http.7.gz
+share/man/man7/lfacme-kerberos.7.gz
+share/man/man7/lfacme-ualpn.7.gz
+share/man/man8/lfacme-cert.8.gz
+share/man/man8/lfacme-renew.8.gz
+share/man/man8/lfacme-setup.8.gz
+share/man/man8/lfacme.8.gz

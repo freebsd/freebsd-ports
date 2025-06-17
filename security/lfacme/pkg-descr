@@ -1,0 +1,6 @@
+lfacme is a simple ACME client based on uacme.  It allows TLS certificates
+to be issued and renewed using an ACME-based certificate provider, such as
+Let's Encrypt.
+
+lfacme includes support for HTTP- and DNS-based ACME domain validation,
+including Kerberos-authenticated Dynamic DNS updates.

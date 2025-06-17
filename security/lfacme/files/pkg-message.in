@@ -1,0 +1,17 @@
+[
+{ type: install
+	message: <<EOM
+Sample configuration files have been installed in %%PREFIX%%/etc/lfacme.
+Edit these as required, then run "lfacme setup" to create an ACME account.
+Run "lfacme renew" to issue certificates.
+
+To enable the daily periodic script to renew certificates, set:
+
+	daily_lfacme_enable=YES
+
+in /etc/periodic.conf.
+
+Refer to lfacme(8) for further documentation.
+EOM
+}
+]
