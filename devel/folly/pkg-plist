@@ -608,6 +608,7 @@ include/folly/external/fast-crc32/neon_eor3_crc32c_v8s2x4_s3.h
 include/folly/external/fast-crc32/sse_crc32c_v8s3x3.h
 include/folly/external/nvidia/detail/RangeSve2.h
 include/folly/external/nvidia/hash/detail/Crc32cCombineDetail.h
+include/folly/external/rapidhash/rapidhash.h
 include/folly/fibers/AddTasks-inl.h
 include/folly/fibers/AddTasks.h
 include/folly/fibers/AtomicBatchDispatcher-inl.h
@@ -703,6 +704,7 @@ include/folly/hash/MurmurHash.h
 include/folly/hash/SpookyHashV1.h
 include/folly/hash/SpookyHashV2.h
 include/folly/hash/detail/ChecksumDetail.h
+include/folly/hash/rapidhash.h
 include/folly/hash/traits.h
 include/folly/init/Init.h
 include/folly/init/Phase.h
