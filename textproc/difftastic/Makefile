@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.63.0
-PORTREVISION=	3
+DISTVERSION=	0.64.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -65,18 +64,15 @@ CARGO_CRATES=	ahash-0.8.11 \
 		is-terminal-0.4.12 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
-		itertools-0.11.0 \
 		itoa-1.0.10 \
 		lazy_static-1.4.0 \
 		libc-0.2.169 \
 		libm-0.2.8 \
-		libmimalloc-sys-0.1.24 \
 		line-numbers-0.3.0 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.11 \
 		log-0.4.21 \
 		memchr-2.7.1 \
-		mimalloc-0.1.28 \
 		minimal-lexical-0.2.1 \
 		mio-1.0.3 \
 		nom-7.1.3 \
@@ -124,6 +120,8 @@ CARGO_CRATES=	ahash-0.8.11 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.1 \
 		termtree-0.4.1 \
+		tikv-jemalloc-sys-0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
+		tikv-jemallocator-0.6.0 \
 		tree-sitter-0.24.5 \
 		tree-sitter-bash-0.23.3 \
 		tree-sitter-c-0.23.4 \
@@ -131,6 +129,8 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tree-sitter-cpp-0.23.4 \
 		tree-sitter-css-0.23.1 \
 		tree-sitter-elixir-0.3.4 \
+		tree-sitter-erlang-0.13.0 \
+		tree-sitter-fsharp-0.1.0 \
 		tree-sitter-go-0.23.4 \
 		tree-sitter-haskell-0.23.1 \
 		tree-sitter-html-0.23.2 \
@@ -144,13 +144,16 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tree-sitter-nix-0.0.2 \
 		tree-sitter-objc-3.0.2 \
 		tree-sitter-ocaml-0.23.2 \
+		tree-sitter-pascal-0.10.0 \
 		tree-sitter-php-0.23.11 \
 		tree-sitter-python-0.23.5 \
 		tree-sitter-ruby-0.23.1 \
 		tree-sitter-rust-0.23.2 \
 		tree-sitter-scala-0.23.3 \
+		tree-sitter-swift-0.7.0 \
 		tree-sitter-toml-ng-0.7.0 \
 		tree-sitter-typescript-0.23.2 \
+		tree-sitter-verilog-1.0.3 \
 		tree-sitter-xml-0.7.0 \
 		tree-sitter-yaml-0.7.0 \
 		tree_magic_mini-3.1.6 \
