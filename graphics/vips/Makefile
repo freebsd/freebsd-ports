@@ -1,6 +1,5 @@
 PORTNAME=	vips
-PORTVERSION=	8.16.1
-PORTREVISION=	1
+PORTVERSION=	8.17.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
@@ -17,16 +16,16 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++11-lang cpe gettext-tools gnome localbase meson pkgconfig python shebangfix tar:xz
+USES=		compiler:c++11-lang cpe gettext-tools gnome localbase meson pkgconfig python tar:xz
 USE_GNOME=	glib20
 
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 MESON_ARGS=	--default-library=both \
 		-Danalyze=true \
 		-Dcplusplus=true \
+		-Dcpp-docs=false \
 		-Ddeprecated=true \
-		-Ddoxygen=false \
 		-Dexamples=true \
-		-Dintrospection=disabled \
 		-Dmodules=disabled \
 		-Dnifti=disabled \
 		-Dnsgif=true \
@@ -47,8 +46,6 @@ nox11_PKGNAMESUFFIX=	-nox11
 
 CONFLICTS_INSTALL=	vips vips-nox11
 
-SHEBANG_FILES=	tools/vipsprofile
-
 OPTIONS_DEFINE=	CFITSIO DOCS FFTW FONTCONFIG GIF HEIF IMAGEQUANT JPEG JXL LCMS2 LIBARCHIVE LIBEXIF LIBRSVG2 MATIO OPENEXR PANGO PNG POPPLER SPNG TIFF WEBP
 OPTIONS_RADIO=	MAGICK SIMD
 OPTIONS_RADIO_MAGICK=	IMAGEMAGICK GRAPHICSMAGICK
@@ -65,8 +62,10 @@ SPNG_DESC=	Simple PNG support
 
 CFITSIO_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
 CFITSIO_MESON_ENABLED=	cfitsio
-DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
-DOCS_MESON_TRUE=	gtk_doc
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gi-docgen>=0:textproc/py-gi-docgen@${PY_FLAVOR}
+DOCS_MESON_ENABLED=	introspection
+DOCS_MESON_TRUE=	docs
+DOCS_USE=		GNOME=introspection:build
 FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
 FFTW_MESON_ENABLED=	fftw
 FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
