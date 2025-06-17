@@ -15,7 +15,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		arrayvec-0.7.6 \
 		async-scoped-0.7.1 \
 		async-trait-0.1.88 \
-		atomic-waker-1.1.2 \
 		autocfg-1.4.0 \
 		backtrace-0.3.75 \
 		base64-0.22.1 \
@@ -69,7 +68,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		dtor-0.0.6 \
 		dtor-proc-macro-0.0.5 \
 		either-1.15.0 \
-		encoding_rs-0.8.35 \
 		equator-0.4.2 \
 		equator-macro-0.4.2 \
 		equivalent-1.0.2 \
@@ -95,7 +93,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		getrandom-0.2.16 \
 		getrandom-0.3.3 \
 		gimli-0.31.1 \
-		h2-0.4.10 \
 		half-2.6.0 \
 		hashbrown-0.15.3 \
 		heapify-0.2.0 \
@@ -278,8 +275,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		sync_wrapper-1.0.2 \
 		synchronoise-1.0.1 \
 		synstructure-0.13.2 \
-		system-configuration-0.6.1 \
-		system-configuration-sys-0.6.0 \
 		target-lexicon-0.12.16 \
 		tempfile-3.20.0 \
 		termtree-0.5.1 \
