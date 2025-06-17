@@ -1,12 +1,12 @@
-A library for manipulating well-formed Roman numerals.
+roman-numerals is a library for manipulating well-formed Roman numerals.
 
 Integers between 1 and 3,999 (inclusive) are supported. Numbers beyond this
 range will return an OutOfRangeError.
 
-The classical system of roman numerals requires that the same character may
-not appear more than thrice consecutively, meaning that 'MMMCMXCIX' (3,999)
-is the largest well-formed Roman numeral. The smallest is 'I' (1), as there
-is no symbol for zero in Roman numerals.
+The classical system of roman numerals requires that the same character may not
+appear more than thrice consecutively, meaning that 'MMMCMXCIX' (3,999) is the
+largest well-formed Roman numeral. The smallest is 'I' (1), as there is no
+symbol for zero in Roman numerals.
 
 Both upper- and lower-case formatting of roman numerals are supported, and
 likewise for parsing strings, although the entire string must be of the same
