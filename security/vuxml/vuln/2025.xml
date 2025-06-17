@@ -1,3 +1,73 @@
+  <vuln vid="e3d6d485-c93c-4ada-90b3-09f1c454fb8a">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>137.0.7151.103</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>137.0.7151.103</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/06/stable-channel-update-for-desktop_10.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[$8000][420150619] High CVE-2025-5958: Use after free in Media. Reported by Huang Xilin of Ant Group Light-Year Security Lab on 2025-05-25</li>
+	    <li>[NA][422313191] High CVE-2025-5959: Type Confusion in V8. Reported by Seunghyun Lee as part of TyphoonPWN 2025 on 2025-06-04</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5958</cvename>
+      <cvename>CVE-2025-5959</cvename>
+      <url>https://chromereleases.googleblog.com/2025/06/stable-channel-update-for-desktop_10.html</url>
+    </references>
+    <dates>
+      <discovery>2025-06-10</discovery>
+      <entry>2025-06-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4323e86c-2422-4fd7-8c8f-ec71c81ea7dd">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>137.0.7151.68</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>137.0.7151.68</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/06/stable-channel-update-for-desktop.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[420636529] High CVE-2025-5419: Out of bounds read and write in V8. Reported by Clement Lecigne and Benoît Sevens of Google Threat Analysis Group on 2025-05-27. This issue was mitigated on 2025-05-28 by a configuration change pushed out to Stable across all Chrome platforms.</li>
+	    <li>[409059706] Medium CVE-2025-5068: Use after free in Blink. Reported by Walkman on 2025-04-07</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5419</cvename>
+      <cvename>CVE-2025-5068</cvename>
+      <url>https://chromereleases.googleblog.com/2025/06/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2025-06-02</discovery>
+      <entry>2025-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="201cccc1-4a01-11f0-b0f8-b42e991fc52e">
     <topic>Mozilla -- control access bypass</topic>
     <affects>
