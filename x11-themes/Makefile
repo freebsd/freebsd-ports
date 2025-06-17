@@ -133,6 +133,7 @@
     SUBDIR += openbox-arc-theme
     SUBDIR += oxygen-icons
     SUBDIR += papirus-icon-theme
+    SUBDIR += plasma6-aurorae
     SUBDIR += plasma6-breeze
     SUBDIR += plasma6-breeze-gtk
     SUBDIR += plasma6-kde-gtk-config

@@ -18,11 +18,15 @@ lib/libexec/kinfocenter-opengl-helper
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_opencl.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_pci.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_samba.so
+%%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_sensors.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_usb.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_vulkan.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_wayland.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_xserver.so
-%%QT_QMLDIR%%/org/kde/kinfocenter/private/CommandOutputKCM.qml
+%%QT_QMLDIR%%/org/kde/kinfocenter/private/KInfoCenterInternal.qmltypes
+%%QT_QMLDIR%%/org/kde/kinfocenter/private/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/kinfocenter/private/libKInfoCenterInternalplugin.so
+%%QT_QMLDIR%%/org/kde/kinfocenter/private/qml/CommandOutputKCM.qml
 %%QT_QMLDIR%%/org/kde/kinfocenter/private/qmldir
 share/applications/kcm_about-distro.desktop
 share/applications/org.kde.kinfocenter.desktop

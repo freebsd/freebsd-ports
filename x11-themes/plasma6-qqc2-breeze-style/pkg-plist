@@ -83,6 +83,7 @@ lib/cmake/QQC2BreezeStyle/QQC2BreezeStyleTargets.cmake
 %%QT_QMLDIR%%/org/kde/breeze/impl/SliderHandle.qml
 %%QT_QMLDIR%%/org/kde/breeze/impl/SmallBoxShadow.qml
 %%QT_QMLDIR%%/org/kde/breeze/impl/SpinBoxIndicator.qml
+%%QT_QMLDIR%%/org/kde/breeze/impl/StandardRectangle.qml
 %%QT_QMLDIR%%/org/kde/breeze/impl/SwitchIndicator.qml
 %%QT_QMLDIR%%/org/kde/breeze/impl/TextEditBackground.qml
 %%QT_QMLDIR%%/org/kde/breeze/impl/Theme.qml

@@ -38,7 +38,6 @@ lib/libPlasmaSystemMonitorTable.so
 %%QT_QMLDIR%%/org/kde/ksysguard/table/libPlasmaSystemMonitorTableplugin.so
 %%QT_QMLDIR%%/org/kde/ksysguard/table/qmldir
 share/applications/org.kde.plasma-systemmonitor.desktop
-share/config.kcfg/systemmonitor.kcfg
 share/kconf_update/plasma-systemmonitor-replace-vmpss.py
 share/kconf_update/plasma-systemmonitor.upd
 share/kglobalaccel/org.kde.plasma-systemmonitor.desktop
@@ -202,6 +201,8 @@ share/locale/zh_TW/LC_MESSAGES/plasma-systemmonitor.mo
 share/metainfo/org.kde.plasma-systemmonitor.metainfo.xml
 %%DATADIR%%/applications.page
 %%DATADIR%%/history.page
+%%DATADIR%%/old-history.page
+%%DATADIR%%/old-overview.page
 %%DATADIR%%/overview.page
 %%DATADIR%%/processes.page
 share/plasma/kinfocenter/externalmodules/kcm_external_plasma-systemmonitor.desktop

@@ -4518,3 +4518,4 @@ devel/bugzilla44||2025-06-16|Has expired: Upstream support ended 20250103
 german/bugzilla44||2025-06-16|Removed, localized version of devel/bugzilla44
 japanese/bugzilla44||2025-06-16|Removed, localized version of devel/bugzilla44
 russian/bugzilla44||2025-06-16|Removed, localized version of devel/bugzilla44
+sysutils/plasma6-drkonqi||2025-06-17|Removed, requires Systemd

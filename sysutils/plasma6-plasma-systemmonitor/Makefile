@@ -9,7 +9,8 @@ USES=		cmake gettext gl kde:6 python:run qt:6 shebangfix tar:xz xorg
 USE_KDE=	attica config coreaddons dbusaddons globalaccel i18n \
 		itemmodels kio kirigami-addons libksysguard newstuff package \
 		service windowsystem \
-		ecm:build
+		ecm:build \
+		ksystemstats:run
 USE_QT=		base declarative
 USE_XORG=	x11
 USE_GL=		gl opengl

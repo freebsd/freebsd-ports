@@ -1,6 +1,7 @@
 lib/libplasma-volume.so.6
 lib/libplasma-volume.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kf6/kded/audioshortcutsservice.so
+%%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.volume.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_pulseaudio.so
 %%QT_QMLDIR%%/org/kde/plasma/private/volume/PulseObjectFilterModel.qml
 %%QT_QMLDIR%%/org/kde/plasma/private/volume/kde-qmlmodule.version
@@ -143,14 +144,4 @@ share/locale/zh_CN/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
-share/metainfo/org.kde.plasma.volume.appdata.xml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/config/main.xml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/DeviceListItem.qml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/HorizontalStackView.qml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/ListItemBase.qml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/SmallToolButton.qml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/StreamListItem.qml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/VolumeSlider.qml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.plasma.volume/metadata.json
 share/qlogging-categories6/plasmapa.categories

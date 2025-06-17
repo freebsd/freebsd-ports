@@ -42,10 +42,18 @@ USE_KDE=	activities activities-stats archive attica auth baloo \
 		statusnotifieritem svg syntaxhighlighting texteditor \
 		textwidgets unitconversion userfeedback wallet wayland \
 		widgetsaddons windowsystem xmlgui \
-		ecm:build plasma-wayland-protocols:build
-USE_QT=		5compat base declarative svg wayland
+		ecm:build plasma-wayland-protocols:build \
+		kwin-x11:run
+USE_QT=		5compat base declarative location svg wayland
 USE_XORG=	ice sm x11 xau xcb xcursor xext xfixes xft xi xrender xtst
 SHEBANG_FILES=	components/calendar/kconf_update/migrate-calendar-to-plugin-id.py.in
+
+CMAKE_ON=	PLASMA_X11_DEFAULT_SESSION
+
+OPTIONS_DEFINE=	GTK
+
+GTK_DESC=		Global menu bar support for GTK applications
+GTK_RUN_DEPENDS=	appmenu-gtk-module>0:x11/gtk-app-menu
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \

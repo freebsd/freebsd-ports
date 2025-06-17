@@ -1,5 +1,4 @@
 bin/configure-printer
-bin/kde-add-printer
 bin/kde-print-queue
 lib/libkcupslib.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kf6/kded/printmanager.so
@@ -11,7 +10,6 @@ lib/libkcupslib.so.%%KDE_PLASMA_VERSION%%
 share/applications/kcm_printer_manager.desktop
 share/applications/org.kde.ConfigurePrinter.desktop
 share/applications/org.kde.PrintQueue.desktop
-share/applications/org.kde.kde-add-printer.desktop
 share/knotifications6/printmanager.notifyrc
 share/locale/ar/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
