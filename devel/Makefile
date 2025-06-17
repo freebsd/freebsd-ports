@@ -241,7 +241,6 @@
     SUBDIR += aros-sdk
     SUBDIR += arpc
     SUBDIR += art
-    SUBDIR += artifactory
     SUBDIR += asfml
     SUBDIR += asl
     SUBDIR += asmjit
