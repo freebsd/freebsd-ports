@@ -1,6 +1,6 @@
 PORTNAME=	openlibm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.6
+DISTVERSION=	0.8.7
 CATEGORIES=	math
 
 MAINTAINER=	laurent.chardon@gmail.com
@@ -18,10 +18,11 @@ BROKEN_armv6=	fails to compile: a parameter list without types is only allowed i
 BROKEN_armv7=	fails to compile: a parameter list without types is only allowed in a function definition
 
 USES=		cmake
-USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	JuliaMath
+
+USE_LDCONFIG=	yes
 
 do-test:
 	(cd ${WRKSRC}/test && ${SETENVI} ${CC} test-double.c -o test-double \
