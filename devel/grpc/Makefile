@@ -1,5 +1,5 @@
 PORTNAME=	grpc
-PORTVERSION=	1.72.0
+PORTVERSION=	1.73.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -57,10 +57,10 @@ CONFLICTS_INSTALL=	grpc[0-9][0-9][0-9]
 
 USE_GITHUB=	yes
 GH_TUPLE=	envoyproxy:data-plane-api:d9c5e84:envoyproxy_data_plane_api/third_party/envoy-api \
-		googleapis:googleapis:261895f:googleapis_googleapis/third_party/googleapis \
+		googleapis:googleapis:c618909:googleapis_googleapis/third_party/googleapis \
 		census-instrumentation:opencensus-proto:1664cc9:census_instrumentation_opencensus_proto/third_party/opencensus-proto \
 		bufbuild:protoc-gen-validate:v1.2.1:bufbuild_protoc_gen_validate/third_party/protoc-gen-validate \
-		cncf:xds:ae57f3c:cncf_xds/third_party/xds
+		cncf:xds:2ac532f:cncf_xds/third_party/xds
 
 # Clean up bundled libraries
 .if !defined(MAINTAINER_MODE)
