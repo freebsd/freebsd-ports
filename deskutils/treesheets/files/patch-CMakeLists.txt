@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2025-03-31 21:49:25 UTC
+--- CMakeLists.txt.orig	2025-06-14 21:33:28 UTC
 +++ CMakeLists.txt
-@@ -24,7 +24,7 @@ string(TIMESTAMP TimeStamp "%y%m%d.%H%M" UTC)
+@@ -4,7 +4,7 @@ string(TIMESTAMP TimeStamp "%y%m%d.%H%M" UTC)
  
  string(TIMESTAMP TimeStamp "%y%m%d.%H%M" UTC)
  
@@ -9,9 +9,9 @@
      DESCRIPTION "A free-form hierarchical data organizer"
      HOMEPAGE_URL "https://github.com/aardappel/treesheets"
      VERSION ${TimeStamp})
-@@ -180,11 +180,11 @@ endif()
+@@ -174,11 +174,11 @@ target_link_libraries(TreeSheets PRIVATE ${TREESHEETS_
  
- ########## TREESHEETS INSTALLATION SETTINGS ###############
+ ## Platform specific installation paths
  
 -if(LINUX)
 +if(LINUX OR BSD)
@@ -23,7 +23,7 @@
      include(GNUInstallDirs)
  
      set(TREESHEETS_BINDIR ${CMAKE_INSTALL_BINDIR})
-@@ -215,7 +215,7 @@ install(FILES TS/readme.html DESTINATION ${TREESHEETS_
+@@ -211,7 +211,7 @@ install(FILES TS/readme.html DESTINATION ${TREESHEETS_
  install(TARGETS TreeSheets DESTINATION ${TREESHEETS_BINDIR})
  install(DIRECTORY TS/docs DESTINATION ${TREESHEETS_DOCDIR})
  install(FILES TS/readme.html DESTINATION ${TREESHEETS_DOCDIR})
