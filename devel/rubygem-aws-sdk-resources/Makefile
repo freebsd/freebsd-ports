@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.227.0
+PORTVERSION=	3.228.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
