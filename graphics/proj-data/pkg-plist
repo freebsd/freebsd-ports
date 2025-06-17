@@ -93,6 +93,9 @@
 %%DATADIR%%/de_lgvl_saarland_SeTa2016.tif
 %%DATADIR%%/de_tlbg_thueringen_NTv2gridTH.tif
 %%DATADIR%%/de_tlbg_thueringen_README.txt
+%%DATADIR%%/dk_kds_README.txt
+%%DATADIR%%/dk_kds_dvr90_evrf2019.tif
+%%DATADIR%%/dk_kds_dvr90_evrf2019_mean_tide.tif
 %%DATADIR%%/dk_sdfe_DK_bornholm.pol
 %%DATADIR%%/dk_sdfe_DK_bridges.pol
 %%DATADIR%%/dk_sdfe_DK_general.pol
@@ -201,7 +204,9 @@
 %%DATADIR%%/is_lmi_README.txt
 %%DATADIR%%/jp_gsi_README.txt
 %%DATADIR%%/jp_gsi_gsigeo2011.tif
+%%DATADIR%%/jp_gsi_jpgeo2024.tif
 %%DATADIR%%/lv_lgia_README.txt
+%%DATADIR%%/lv_lgia_lks92to2020.tif
 %%DATADIR%%/lv_lgia_lv14.tif
 %%DATADIR%%/mx_inegi_README.txt
 %%DATADIR%%/mx_inegi_ggm10.tif
@@ -213,7 +218,9 @@
 %%DATADIR%%/nc_dittt_gr3dnc03a.tif
 %%DATADIR%%/nc_dittt_gr3dncI08.tif
 %%DATADIR%%/nl_nsgi_README.txt
+%%DATADIR%%/nl_nsgi_bongeo2004.tif
 %%DATADIR%%/nl_nsgi_nlgeo2018.tif
+%%DATADIR%%/nl_nsgi_nllat2018.tif
 %%DATADIR%%/nl_nsgi_rdcorr2018.tif
 %%DATADIR%%/nl_nsgi_rdtrans2018.tif
 %%DATADIR%%/no_kv_CD_above_Ell_ETRS89_v2021a.tif
