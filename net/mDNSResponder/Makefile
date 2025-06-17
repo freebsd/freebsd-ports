@@ -1,7 +1,8 @@
 PORTNAME=	mDNSResponder
-PORTVERSION=	2559.80.8
+PORTVERSION=	2600.120.12
 CATEGORIES?=	net dns
-MASTER_SITES=	https://opensource.apple.com/tarballs/mDNSResponder/
+MASTER_SITES=	https://opensource.apple.com/tarballs/mDNSResponder/ \
+		https://github.com/apple-oss-distributions/mDNSResponder/archive/
 
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT?=	Bonjour (zero-configuration networking) by Apple

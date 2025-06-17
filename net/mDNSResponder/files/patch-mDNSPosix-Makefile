@@ -1,6 +1,6 @@
---- mDNSPosix/Makefile.orig	2023-01-24 00:43:17 UTC
+--- mDNSPosix/Makefile.orig	2025-05-20 00:39:28 UTC
 +++ mDNSPosix/Makefile
-@@ -53,8 +53,8 @@ else ifeq ($(SYSTEM), Linux)
+@@ -53,8 +53,8 @@ endif
    os=linux
  endif
  
@@ -11,7 +11,7 @@
  FLEX = flex
  ST = strip
  LD = ld
-@@ -135,9 +135,9 @@ else
+@@ -135,9 +135,9 @@ ifeq ($(os),freebsd)
  
  ifeq ($(os),freebsd)
  # If not already defined, set LOCALBASE to /usr/local
@@ -42,7 +42,7 @@
  
  # If directories /etc/init.d/rc*.d exist, then we install into that (Suse)
  ifeq ($(wildcard /etc/init.d/rc2.d/), /etc/init.d/rc2.d/)
-@@ -235,7 +236,7 @@ MDNSCFLAGS = $(CFLAGS) $(CFLAGS_COMMON) $(CFLAGS_OS) $
+@@ -235,7 +236,7 @@ all: setup Daemon libdns_sd Clients SAClient SARespond
  
  all: setup Daemon libdns_sd Clients SAClient SAResponder SAProxyResponder NetMonitor $(OPTIONALTARG)
  
@@ -51,7 +51,7 @@
  
  # 'setup' sets up the build directory structure the way we want
  setup:
-@@ -276,13 +277,13 @@ libdns_sd: setup $(BUILDDIR)/libdns_sd.$(LDSUFFIX)
+@@ -276,7 +277,7 @@ $(BUILDDIR)/libdns_sd.$(LDSUFFIX): $(CLIENTLIBOBJS)
  CLIENTLIBOBJS = $(OBJDIR)/dnssd_clientlib.c.so.o $(OBJDIR)/dnssd_clientstub.c.so.o $(OBJDIR)/dnssd_ipc.c.so.o $(OBJDIR)/dnssd_errstring.c.so.o
  
  $(BUILDDIR)/libdns_sd.$(LDSUFFIX): $(CLIENTLIBOBJS)
@@ -59,16 +59,8 @@
 +	$(CC) $(SOOPTS) $(LINKOPTS) -Wl,-soname=libdns_sd.$(LDSUFFIX).$(LIBVERS) -o $@ $+
  	$(STRIP) $@
  
--Clients: setup libdns_sd ../Clients/build/dns-sd
-+Clients: setup ../Clients/build/dns-sd
- 	@echo "Clients done"
- 
--../Clients/build/dns-sd: ../Clients/dns-sd.c
-+../Clients/build/dns-sd: setup libdns_sd ../Clients/dns-sd.c
- 	$(MAKE) -C ../Clients DEBUG=$(DEBUG) SUPMAKE_CFLAGS="$(MDNSCFLAGS)"
- 
- # nss_mdns target builds the Name Service Switch module
-@@ -290,7 +291,7 @@ nss_mdns: setup $(BUILDDIR)/$(NSSLIBFILE)
+ Clients: setup ../Clients/build/dns-sd
+@@ -290,7 +291,7 @@ $(BUILDDIR)/$(NSSLIBFILE): $(CLIENTLIBOBJS) $(OBJDIR)/
  	@echo "Name Service Switch module done"
  
  $(BUILDDIR)/$(NSSLIBFILE): $(CLIENTLIBOBJS) $(OBJDIR)/nss_mdns.c.so.o
@@ -103,7 +95,7 @@
  	cp $< $@
  	chmod 444 $@
  
-@@ -500,6 +499,8 @@ $(OBJDIR)/NetMonitor.c.o:            $(COREDIR)/mDNS.c
+@@ -500,6 +499,8 @@ $(BUILDDIR)/dnsextd:                 $(DNSEXTDOBJ) $(O
  
  $(BUILDDIR)/dnsextd:                 $(DNSEXTDOBJ) $(OBJDIR)/dnsextd.c.threadsafe.o
  	$(CC) $+ -o $@ $(LINKOPTS) $(LINKOPTS_PTHREAD)
