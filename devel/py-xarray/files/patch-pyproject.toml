@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-06-10 16:49:13 UTC
++++ pyproject.toml
+@@ -14,7 +14,7 @@ dynamic = ["version"]
+ ]
+ description = "N-D labeled arrays and datasets in Python"
+ dynamic = ["version"]
+-license = "Apache-2.0"
++license = { text = "Apache-2.0" }
+ name = "xarray"
+ readme = "README.md"
+ requires-python = ">=3.10"
