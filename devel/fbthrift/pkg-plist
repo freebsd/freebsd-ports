@@ -721,9 +721,7 @@ include/thrift/lib/python/flags.h
 include/thrift/lib/python/server/PythonAsyncProcessor.h
 include/thrift/lib/python/server/PythonAsyncProcessorFactory.h
 include/thrift/lib/python/server/event_handler.h
-include/thrift/lib/python/server/flagged/EnableResourcePoolsForPython.h
 include/thrift/lib/python/server/flagged/RcAwareTaskPatch.h
-include/thrift/lib/python/server/flagged/test/EnableResourcePoolsForPythonTest.h
 include/thrift/lib/python/server/interceptor/PythonServerModule.h
 include/thrift/lib/python/server/interceptor/PythonServiceInterceptor.h
 include/thrift/lib/python/server/util.h
