@@ -1,3 +1,3 @@
-TIMESTAMP = 1695588818
-SHA256 (flake8_simplify-0.21.0.tar.gz) = c95ff1dcc1de5949af47e0087cbf1164445881131b15bcd7a71252670f492f4d
-SIZE (flake8_simplify-0.21.0.tar.gz) = 34055
+TIMESTAMP = 1749813044
+SHA256 (flake8_simplify-0.22.0.tar.gz) = 526421594d5815cf786a637c2a705223956f7e34872b6bb9f66c5ce3e28caaf9
+SIZE (flake8_simplify-0.22.0.tar.gz) = 34100
