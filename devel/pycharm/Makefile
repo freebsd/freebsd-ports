@@ -39,13 +39,9 @@ DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}
 # - non-native binaries
 # - the bundled native Pty4J support libraries, they are replaced by java/jetbrains-pty4j
 # - bundled linux-only JRE
-EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/*fsnotifier* \
-			--exclude ${DISTNAME}/bin/*.so \
-			--exclude ${DISTNAME}/bin/repair \
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/fsnotifier \
 			--exclude ${DISTNAME}/bin/restarter \
 			--exclude ${DISTNAME}/bin/pycharm \
-			--exclude ${DISTNAME}/lib/*.so \
-			--exclude ${DISTNAME}/plugins/*.so \
 			--exclude ${DISTNAME}/plugins/cwm-plugin/quiche-native \
 			--exclude ${DISTNAME}/plugins/python-ce/helpers/pydev/pydevd_attach_to_process \
 			--exclude ${DISTNAME}/lib/pty4j \
