@@ -1,3 +1,34 @@
+  <vuln vid="b704d4b8-4b87-11f0-9605-b42e991fc52e">
+    <topic>Firefox -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>139.0.4,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1970095">
+	  <p>CVE-2025-49709: Certain canvas operations could have lead
+	  to memory corruption.</p>
+	  <p>CVE-2025-49710: An integer overflow was present in
+	  `OrderedHashTable` used by the JavaScript engine.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-49709</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-49709</url>
+      <cvename>CVE-2025-49710</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-49710</url>
+    </references>
+    <dates>
+      <discovery>2025-06-11</discovery>
+      <entry>2025-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e3d6d485-c93c-4ada-90b3-09f1c454fb8a">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
