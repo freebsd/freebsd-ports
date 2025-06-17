@@ -1,5 +1,6 @@
 PORTNAME=	gnome-shell
 PORTVERSION=	47.7
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -46,7 +47,7 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	src/gnome-shell-test-tool.in \
 		src/data-to-c.py
 # These libs are found via rpath mechanism
-NO_SHLIB_REQUIRES_GLOB=	libmutter-clutter-* libmutter-cogl-*
+NO_SHLIB_REQUIRES_GLOB=	libmutter-clutter-* libmutter-cogl-* libmutter-mtk-*
 
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_DEFAULT=	EXAMPLES
