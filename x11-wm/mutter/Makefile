@@ -1,6 +1,6 @@
 PORTNAME=	mutter
 PORTVERSION=	47.8.1
-PORTREvISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -48,7 +48,7 @@ USE_GL=		egl gbm
 USE_GNOME=	atk cairo gdkpixbuf gnomedesktop4 gtk40 introspection:build
 USE_XORG=	ice pixman sm x11 xcb xcomposite xcursor xdamage xext \
 		xfixes xi xinerama xrandr xrender xtst
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/mutter-15
 CFLAGS+=	-Wno-unknown-warning-option -Wno-format-nonliteral
 CPPFLAGS+=	-fno-omit-frame-pointer
 MESON_ARGS=	-Dlibdisplay_info=enabled \
