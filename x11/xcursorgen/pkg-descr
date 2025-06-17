@@ -1,2 +1,5 @@
-This package contains xcursorgen, a program for creating an X cursor file
-from a collection of PNG images.
+Xcursorgen prepares X11 cursor sets for use with libXcursor.
+Xcursorgen reads the configuration file to find the list of cursor
+images along with their hotspot and nominal size information.
+Xcursorgen converts all of the images to Xcursor format and writes them
+to the output file.
