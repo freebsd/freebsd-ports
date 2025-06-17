@@ -1,7 +1,6 @@
 PORTNAME=	openmodelica
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.25.0
-PORTREVISION=	1
+DISTVERSION=	1.25.1
 CATEGORIES=	science cad java
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
@@ -70,6 +69,7 @@ CMAKE_ARGS=	-DCMAKE_MAKE_PROGRAM=gmake \
 		-DPython_EXECUTABLE=${PYTHON_CMD}
 
 CMAKE_ARGS+=	-DOM_USE_CCACHE:BOOL=${CCACHE_ENABLED:S/yes/ON/:S/no/OFF/} # if refuses to build w/out ccache by default
+#CMAKE_ARGS+=	-DOM_QT_MAJOR_VERSION=6 # broken, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=287596
 CMAKE_ON=	OM_OMEDIT_ENABLE_QTWEBENGINE
 
 LDFLAGS+=	-lexecinfo -lintl -pthread
