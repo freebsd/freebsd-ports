@@ -1,5 +1,5 @@
 PORTNAME=	duckdb
-DISTVERSION=	1.2.2
+DISTVERSION=	1.3.1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>0:filesystems/py-fsspec@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	distutils autoplist pytest
 
-MAKE_ENV=	OVERRIDE_GIT_DESCRIBE=v${DISTVERSION}-g00000000-0
+MAKE_ENV=	OVERRIDE_GIT_DESCRIBE=v${DISTVERSION}-g00000000
 TEST_WRKSRC=	${WRKDIR} # tests fail when run from the build directory due to a name collision with duckdb directory
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} # 2 tests fail, see https://github.com/duckdb/duckdb/issues/5642
 
