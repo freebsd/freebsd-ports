@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-05-28 14:55:43 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-06-17 06:32:04 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
 @@ -484,7 +484,7 @@
        name: "AppTitle",
@@ -54,7 +54,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -4993,7 +4993,7 @@
+@@ -4997,7 +4997,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
@@ -63,7 +63,7 @@
        status: "experimental",
        base_feature: "none",
      },
-@@ -5261,7 +5261,7 @@
+@@ -5265,7 +5265,7 @@
      {
        name: "WebIdentityDigitalCredentials",
        origin_trial_feature_name: "WebIdentityDigitalCredentials",

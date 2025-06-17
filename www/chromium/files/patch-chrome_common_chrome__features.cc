@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.cc.orig	2025-05-28 14:55:43 UTC
+--- chrome/common/chrome_features.cc.orig	2025-06-17 06:32:04 UTC
 +++ chrome/common/chrome_features.cc
 @@ -81,7 +81,7 @@ BASE_FEATURE(kUseAdHocSigningForWebAppShims,
  #endif  // BUILDFLAG(IS_MAC)
@@ -28,7 +28,7 @@
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
 @@ -264,7 +264,7 @@ BASE_FEATURE(kDisplayEdgeToEdgeFullscreen,
-              base::FEATURE_ENABLED_BY_DEFAULT);
+              base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
