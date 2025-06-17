@@ -1,5 +1,5 @@
 PORTNAME=	peersuite
-DISTVERSION=	0.0.3
+DISTVERSION=	0.0.4
 CATEGORIES=	www
 
 MAINTAINER=	dtxdf@FreeBSD.org
@@ -19,6 +19,7 @@ SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	${CP} ${WRKSRC}/*.js ${WRKSRC}/*.html ${WRKSRC}/*.png ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC}/src && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} "-name *\.js -or -name *\.html -or -name *\.css"
+	@${INSTALL_DATA} ${WRKSRC}/peerspace.png ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

@@ -3,8 +3,8 @@
 %%WWWDIR%%/kanban.js
 %%WWWDIR%%/main.js
 %%WWWDIR%%/media.js
-%%WWWDIR%%/peer.png
 %%WWWDIR%%/peerspace.png
 %%WWWDIR%%/share.js
+%%WWWDIR%%/style.css
 %%WWWDIR%%/trystero-torrent.min.js
 %%WWWDIR%%/whiteboard.js
