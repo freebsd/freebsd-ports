@@ -15,7 +15,7 @@ RUN_DEPENDS=	gpg-agent:security/gnupg
 TEST_DEPENDS=	sq:security/sequoia-sq \
 		gpg2:security/gnupg
 
-USES=	cargo sqlite ssl
+USES=	cargo llvm sqlite ssl
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	sequoia-pgp
