@@ -1,5 +1,5 @@
 PORTNAME=	aws-eventstream
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
