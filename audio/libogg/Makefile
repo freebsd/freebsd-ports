@@ -1,5 +1,5 @@
 PORTNAME=	libogg
-DISTVERSION=	1.3.5
+DISTVERSION=	1.3.6
 PORTEPOCH=	4
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/ogg/ \
