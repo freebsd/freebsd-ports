@@ -1,5 +1,5 @@
 PORTNAME=	pysolfc-cardsets
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	games
 MASTER_SITES=	SF/pysolfc/PySolFC-Cardsets/PySolFC-Cardsets-${PORTVERSION}/ \
 		https://slackware.uk/~urchlay/src/:bk
@@ -29,12 +29,6 @@ post-extract:
     oxymoron players-trumps-10x10 simple-ishido simple-ishido-xl standard \
     the-card-players-9x9 tuxedo uni-mahjongg victoria-falls-5x5 vienna-2k
 	@${RM} -r ${WRKSRC}/cardset-${set}
-.endfor
-# Garbage-collect temporary cache files created by image viewers
-.for set in gdkcard-bonded fine-art-tarot konqi-modern nicu-small \
-    warwick xpat2-nox-large
-	@${RM} -r ${WRKSRC}/cardset-${set}/.thumbnails \
-		  ${WRKSRC}/cardset-${set}/.xvpics
 .endfor
 
 do-install:
