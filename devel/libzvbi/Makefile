@@ -12,9 +12,8 @@ LICENSE=	GPLv2+
 LIB_DEPENDS+=	libpng.so:graphics/png \
 		libunicode.so:devel/libunicode
 
-USES=		iconv libtool localbase pathfix tar:bzip2 autoreconf gettext
+USES=		iconv libtool localbase pathfix tar:bzip2 autoreconf gettext autoreconf
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoheader autoconf automake aclocal
 CONFIGURE_ARGS=	--without-doxygen
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
