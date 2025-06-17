@@ -1,5 +1,6 @@
 PORTNAME=	public_suffix
 PORTVERSION=	6.0.2
+PORTREVISION=	1
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
