@@ -1,3 +1,3 @@
-TIMESTAMP = 1747715396
-SHA256 (opentelemetry_proto-1.33.1.tar.gz) = 9627b0a5c90753bf3920c398908307063e4458b287bb890e5c1d6fa11ad50b68
-SIZE (opentelemetry_proto-1.33.1.tar.gz) = 34363
+TIMESTAMP = 1749813064
+SHA256 (opentelemetry_proto-1.34.0.tar.gz) = 73e40509b692630a47192888424f7e0b8fb19d9ecf2f04e6f708170cd3346dfe
+SIZE (opentelemetry_proto-1.34.0.tar.gz) = 34343
