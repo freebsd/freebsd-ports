@@ -1,5 +1,5 @@
-TIMESTAMP = 1697295741
-SHA256 (dfr-plugins-freebsd-v0.5_GH0.tar.gz) = ae97b270a350a291e96a57a964df84cf7a3d82311e3a8b0476f1e0e95b9bbb7f
-SIZE (dfr-plugins-freebsd-v0.5_GH0.tar.gz) = 4198686
+TIMESTAMP = 1750257927
+SHA256 (dfr-plugins-freebsd-v0.6_GH0.tar.gz) = ff18035ea945776d1c10d0ad2e712c476c03d1b1a1c2b1e8ee4b2c8d5d361dec
+SIZE (dfr-plugins-freebsd-v0.6_GH0.tar.gz) = 4198697
 SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
 SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
