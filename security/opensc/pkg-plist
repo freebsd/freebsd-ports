@@ -11,7 +11,7 @@ bin/netkey-tool
 bin/openpgp-tool
 bin/opensc-asn1
 bin/opensc-explorer
-bin/opensc-notify
+%%NOTIFY%%bin/opensc-notify
 bin/opensc-tool
 bin/piv-tool
 bin/pkcs11-register
@@ -35,7 +35,7 @@ etc/bash_completion.d/npa-tool
 etc/bash_completion.d/opensc-asn1
 etc/bash_completion.d/openpgp-tool
 etc/bash_completion.d/opensc-explorer
-etc/bash_completion.d/opensc-notify
+%%NOTIFY%%etc/bash_completion.d/opensc-notify
 etc/bash_completion.d/opensc-tool
 etc/bash_completion.d/piv-tool
 etc/bash_completion.d/pkcs11-register
@@ -60,7 +60,7 @@ lib/pkcs11/onepin-opensc-pkcs11.so
 lib/pkcs11/opensc-pkcs11.so
 lib/pkcs11/pkcs11-spy.so
 libdata/pkgconfig/opensc-pkcs11.pc
-share/applications/org.opensc.notify.desktop
+%%NOTIFY%%share/applications/org.opensc.notify.desktop
 %%DATADIR%%/asepcos.profile
 %%DATADIR%%/authentic.profile
 %%DATADIR%%/cardos.profile
@@ -102,7 +102,7 @@ share/applications/org.opensc.notify.desktop
 %%MANPAGES%%share/man/man1/openpgp-tool.1.gz
 %%MANPAGES%%share/man/man1/opensc-asn1.1.gz
 %%MANPAGES%%share/man/man1/opensc-explorer.1.gz
-%%MANPAGES%%share/man/man1/opensc-notify.1.gz
+%%NOTIFY%%%%MANPAGES%%share/man/man1/opensc-notify.1.gz
 %%MANPAGES%%share/man/man1/opensc-tool.1.gz
 %%MANPAGES%%share/man/man1/piv-tool.1.gz
 %%MANPAGES%%share/man/man1/pkcs11-register.1.gz
