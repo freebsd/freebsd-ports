@@ -1,5 +1,5 @@
 PORTNAME=	Google-SAML-Response
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,10 +20,11 @@ RUN_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:security/p5-Crypt-OpenSSL-Bignum \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-TimeDate>=0:devel/p5-TimeDate \
 		p5-XML-CanonicalizeXML>=0:textproc/p5-XML-CanonicalizeXML
-TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Test-Most>=0:devel/p5-Test-Most
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 
 MAKE_JOBS_UNSAFE=	yes
 
