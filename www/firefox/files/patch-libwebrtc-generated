@@ -1,8 +1,7 @@
-commit 48d36a84fea34e509b18e2772c21699d24e8a1a7
+commit f65492631f8fa8714d72d09ba3fa5edf3b08bac3
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
-Date:   Wed May 14 20:58:36 2025 +0000
 
-    regenerate FreeBSD libwebrtc patch for gecko 139
+    regenerate FreeBSD libwebrtc patch for gecko 140
 
 diff --git third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build
 index a29aef4b45e5..c193c4232adf 100644
@@ -60623,10 +60622,10 @@ index a467463de4d3..3c0d102a3516 100644
 -
  Library("desktop_capture_differ_sse2_gn")
 diff --git third_party/libwebrtc/modules/desktop_capture/desktop_capture_gn/moz.build third_party/libwebrtc/modules/desktop_capture/desktop_capture_gn/moz.build
-index d297254b8692..6ac10d4662d8 100644
+index bd438bdda18a..b7c18f5bd2df 100644
 --- third_party/libwebrtc/modules/desktop_capture/desktop_capture_gn/moz.build
 +++ third_party/libwebrtc/modules/desktop_capture/desktop_capture_gn/moz.build
-@@ -25,11 +25,20 @@ DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
+@@ -26,11 +26,20 @@ DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
  DEFINES["PROTOBUF_ENABLE_DEBUG_LOGGING_MAY_LEAK_PII"] = "0"
  DEFINES["RTC_DAV1D_IN_INTERNAL_DECODER_FACTORY"] = True
  DEFINES["RTC_ENABLE_VP9"] = True
@@ -60647,7 +60646,7 @@ index d297254b8692..6ac10d4662d8 100644
  
  FINAL_LIBRARY = "xul"
  
-@@ -81,186 +90,13 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -82,186 +91,13 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -60835,7 +60834,7 @@ index d297254b8692..6ac10d4662d8 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -268,7 +104,8 @@ if CONFIG["TARGET_CPU"] == "arm":
+@@ -269,7 +105,8 @@ if CONFIG["TARGET_CPU"] == "arm":
      ]
  
      SOURCES += [
@@ -60845,7 +60844,7 @@ index d297254b8692..6ac10d4662d8 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -278,36 +115,9 @@ if CONFIG["TARGET_CPU"] == "arm":
+@@ -279,36 +116,9 @@ if CONFIG["TARGET_CPU"] == "arm":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -60885,7 +60884,7 @@ index d297254b8692..6ac10d4662d8 100644
      ]
  
  if CONFIG["TARGET_CPU"] == "mips32":
-@@ -315,7 +125,6 @@ if CONFIG["TARGET_CPU"] == "mips32":
+@@ -316,7 +126,6 @@ if CONFIG["TARGET_CPU"] == "mips32":
      DEFINES["MIPS32_LE"] = True
      DEFINES["MIPS_FPU_LE"] = True
      DEFINES["WEBRTC_USE_PIPEWIRE"] = True
@@ -60893,7 +60892,7 @@ index d297254b8692..6ac10d4662d8 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -323,7 +132,8 @@ if CONFIG["TARGET_CPU"] == "mips32":
+@@ -324,7 +133,8 @@ if CONFIG["TARGET_CPU"] == "mips32":
      ]
  
      SOURCES += [
@@ -60903,7 +60902,7 @@ index d297254b8692..6ac10d4662d8 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -333,13 +143,14 @@ if CONFIG["TARGET_CPU"] == "mips32":
+@@ -334,13 +144,14 @@ if CONFIG["TARGET_CPU"] == "mips32":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -60920,7 +60919,7 @@ index d297254b8692..6ac10d4662d8 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -347,7 +158,8 @@ if CONFIG["TARGET_CPU"] == "mips64":
+@@ -348,7 +159,8 @@ if CONFIG["TARGET_CPU"] == "mips64":
      ]
  
      SOURCES += [
@@ -60930,7 +60929,7 @@ index d297254b8692..6ac10d4662d8 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -357,121 +169,19 @@ if CONFIG["TARGET_CPU"] == "mips64":
+@@ -358,121 +170,19 @@ if CONFIG["TARGET_CPU"] == "mips64":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -61056,7 +61055,7 @@ index d297254b8692..6ac10d4662d8 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -479,7 +189,8 @@ if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "x86":
+@@ -480,7 +190,8 @@ if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "x86":
      ]
  
      SOURCES += [
@@ -61066,7 +61065,7 @@ index d297254b8692..6ac10d4662d8 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -489,13 +200,15 @@ if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "x86":
+@@ -490,13 +201,15 @@ if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "x86":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -61085,7 +61084,7 @@ index d297254b8692..6ac10d4662d8 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -503,7 +216,8 @@ if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "x86_64":
+@@ -504,7 +217,8 @@ if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "x86_64":
      ]
  
      SOURCES += [
@@ -61095,7 +61094,7 @@ index d297254b8692..6ac10d4662d8 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -513,10 +227,12 @@ if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "x86_64":
+@@ -514,10 +228,12 @@ if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "x86_64":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -61110,7 +61109,7 @@ index d297254b8692..6ac10d4662d8 100644
  
      DEFINES["USE_X11"] = "1"
      DEFINES["WEBRTC_USE_X11"] = True
-@@ -544,144 +260,61 @@ if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGE
+@@ -545,144 +261,61 @@ if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGE
          "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_window_property.cc"
      ]
  
@@ -62569,10 +62568,10 @@ index 5c92e55d39bc..9009b4168a4a 100644
  
  Library("pacing_gn")
 diff --git third_party/libwebrtc/modules/portal/portal_gn/moz.build third_party/libwebrtc/modules/portal/portal_gn/moz.build
-index aaaaf5b9fd13..edee670f2d8b 100644
+index ee6619253f99..a10c69da5e79 100644
 --- third_party/libwebrtc/modules/portal/portal_gn/moz.build
 +++ third_party/libwebrtc/modules/portal/portal_gn/moz.build
-@@ -25,21 +25,17 @@ DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
+@@ -26,21 +26,17 @@ DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
  DEFINES["PROTOBUF_ENABLE_DEBUG_LOGGING_MAY_LEAK_PII"] = "0"
  DEFINES["RTC_DAV1D_IN_INTERNAL_DECODER_FACTORY"] = True
  DEFINES["RTC_ENABLE_VP9"] = True
@@ -62595,7 +62594,7 @@ index aaaaf5b9fd13..edee670f2d8b 100644
  DEFINES["_LARGEFILE64_SOURCE"] = True
  DEFINES["_LARGEFILE_SOURCE"] = True
  DEFINES["__STDC_CONSTANT_MACROS"] = True
-@@ -81,16 +77,6 @@ if CONFIG["TARGET_CPU"] == "aarch64":
+@@ -82,16 +78,6 @@ if CONFIG["TARGET_CPU"] == "aarch64":
      DEFINES["WEBRTC_ARCH_ARM64"] = True
      DEFINES["WEBRTC_HAS_NEON"] = True
  
@@ -62612,7 +62611,7 @@ index aaaaf5b9fd13..edee670f2d8b 100644
  if CONFIG["TARGET_CPU"] == "mips32":
  
      DEFINES["MIPS32_LE"] = True
-@@ -108,7 +94,7 @@ if CONFIG["TARGET_CPU"] == "x86_64":
+@@ -109,7 +95,7 @@ if CONFIG["TARGET_CPU"] == "x86_64":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
  
