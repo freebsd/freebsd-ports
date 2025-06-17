@@ -1,5 +1,5 @@
 PORTNAME=	gnupg
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
