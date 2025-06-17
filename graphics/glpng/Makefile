@@ -1,24 +1,21 @@
 PORTNAME=	glpng
-PORTVERSION=	1.46
-PORTREVISION=	2
+PORTVERSION=	1.47
 CATEGORIES=	graphics
-MASTER_SITES=	http://repo.or.cz/glpng.git/snapshot/ \
-		https://mirror.amdmi3.ru/distfiles/${DIST_SUBDIR}/
-DISTNAME=	1079563a36edfe10a5f5d79ad38fe465425b989e
+MASTER_SITES=	https://repo.or.cz/glpng.git/snapshot/
+DISTNAME=	2266ea17d0df15619e6c6e21611aa7a34f5f6833
 DIST_SUBDIR=	glpng
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library to easily load PNG files as an OpenGL textures
-WWW=		http://www.wyatt100.freeserve.co.uk/download.htm
+WWW=		https://repo.or.cz/glpng.git
 
 LICENSE=	ZLIB
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-WRKSRC=		${WRKDIR}/glpng-1079563
-
 USES=		cmake cpe gl zip
 USE_GL=		gl
+WRKSRC=		${WRKDIR}/glpng-${DISTNAME:C/^(.......).*/\1/}
 
 OPTIONS_DEFINE=	DOCS
 
