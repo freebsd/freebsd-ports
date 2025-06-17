@@ -1,39 +1,31 @@
 PORTNAME=	gnome-user-share
-PORTVERSION=	3.14.0
-PORTREVISION=	8
+PORTVERSION=	47.2
 CATEGORIES=	www deskutils gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Personal file-sharing service for the GNOME Desktop
 
-BROKEN=		Package 'libnautilus-extension' not found
-DEPRECATED=	Broken build for months
-EXPIRATION_DATE=2025-06-30
+LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
-		libnotify.so:devel/libnotify \
-		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
-		libunique-1.0.so:x11-toolkits/unique
 RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_dnssd>=0:www/mod_dnssd \
 		console-kit-daemon:sysutils/consolekit2
 
-USES=		apache gettext gmake gnome libtool pkgconfig tar:xz xorg
-USE_XORG=	sm
-USE_GNOME=	gnomeprefix gtk30 intlhack nautilus4
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-modules-path=${LOCALBASE}/${APACHEMODDIR} \
-		--disable-bluetooth
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-INSTALL_TARGET=	install-strip
+USES=		apache gettext gnome meson pkgconfig tar:xz
+USE_GNOME=	glib20
+MESON_ARGS=	-Dmodules_path=${LOCALBASE}/${APACHEMODDIR} \
+		-Dsystemduserunitdir=${PREFIX}/lib/systemd/user
 
 GLIB_SCHEMAS=	org.gnome.desktop.file-sharing.gschema.xml
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/httpd/modules|${LOCALBASE}/${APACHEMODDIR}|g' \
-		${WRKSRC}/data/dav_user_*.conf
+	@${REINPLACE_CMD} -e '/socket/s,PF_INET,AF_INET,' \
+		${WRKSRC}/src/http.c
+	@${REINPLACE_CMD} -e '/AuthGroupFile/s,/usr,${PREFIX},' \
+		${WRKSRC}/data/dav_user_2.4.conf
+
+post-install:
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
 
 .include <bsd.port.mk>
