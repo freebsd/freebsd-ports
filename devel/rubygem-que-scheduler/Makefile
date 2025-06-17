@@ -1,5 +1,5 @@
 PORTNAME=	que-scheduler
-PORTVERSION=	5.1.1
+PORTVERSION=	6.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-activesupport70>=6.0:devel/rubygem-activesupport70 \
 		rubygem-fugit>=1.11.1<2:devel/rubygem-fugit \
 		rubygem-hashie>=3<6:devel/rubygem-hashie \
-		rubygem-que>=0.14<3.0.0:devel/rubygem-que
+		rubygem-que>=2.0<3.0:devel/rubygem-que
 
 USES=		gem
 
