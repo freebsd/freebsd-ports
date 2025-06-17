@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2025-02-19 09:24:17 UTC
+--- CMakeLists.txt.orig	2025-06-12 09:06:01 UTC
 +++ CMakeLists.txt
-@@ -83,12 +83,16 @@ find_package(LayerShellQt REQUIRED)
+@@ -87,12 +87,16 @@ find_package(LayerShellQt REQUIRED)
  find_package(Wayland REQUIRED COMPONENTS Client)
  find_package(PlasmaWaylandProtocols REQUIRED)
  find_package(LayerShellQt REQUIRED)
@@ -19,7 +19,7 @@
  )
  
  # optional components
---- src/CMakeLists.txt.orig	2025-02-19 09:24:17 UTC
+--- src/CMakeLists.txt.orig	2025-06-12 09:06:01 UTC
 +++ src/CMakeLists.txt
 @@ -19,6 +19,10 @@ qt_add_qml_module(spectacle URI ${SPECTACLE_QML_URI} D
  add_executable(spectacle)
@@ -31,16 +31,16 @@
 +
  target_sources(spectacle PRIVATE
      ${SPECTACLE_SRCS}
-     Main.cpp
-@@ -61,7 +65,6 @@ target_sources(spectacle PRIVATE
+     CaptureModeModel.cpp
+@@ -60,7 +64,6 @@ target_sources(spectacle PRIVATE
      Platforms/PlatformNull.cpp
-     Platforms/ImagePlatformKWin.cpp
+     Platforms/screencasting.cpp
      Platforms/VideoPlatform.cpp
 -    Platforms/VideoPlatformWayland.cpp
-     Platforms/screencasting.cpp
- )
- 
-@@ -102,6 +105,10 @@ target_include_directories(spectacle PUBLIC ${OpenCV_I
+     RecordingModeModel.cpp
+     ScreenShotEffect.cpp
+     ShortcutActions.cpp
+@@ -106,6 +109,10 @@ target_include_directories(spectacle PUBLIC ${OpenCV_I
  
  target_include_directories(spectacle PUBLIC ${OpenCV_INCLUDE_DIRS})
  
@@ -51,7 +51,7 @@
  target_link_libraries(spectacle PRIVATE
      Qt::Concurrent
      Qt::DBus
-@@ -127,7 +134,6 @@ target_link_libraries(spectacle PRIVATE
+@@ -131,7 +138,6 @@ target_link_libraries(spectacle PRIVATE
      KF6::StatusNotifierItem
      KF6::PrisonScanner
      KF6::Crash
@@ -59,7 +59,7 @@
      Wayland::Client
      LayerShellQt::Interface
      ${OpenCV_LIBRARIES}
---- src/Config.h.in.orig	2025-02-19 09:24:17 UTC
+--- src/Config.h.in.orig	2025-06-12 09:06:01 UTC
 +++ src/Config.h.in
 @@ -7,6 +7,9 @@
  /* Define to 1 if we have Purpose */
@@ -71,7 +71,7 @@
  /* Set the Spectacle version from CMake */
  #cmakedefine SPECTACLE_VERSION "@SPECTACLE_VERSION@"
  
---- src/Platforms/PlatformLoader.cpp.orig	2025-02-19 09:24:17 UTC
+--- src/Platforms/PlatformLoader.cpp.orig	2025-06-12 09:06:01 UTC
 +++ src/Platforms/PlatformLoader.cpp
 @@ -11,7 +11,9 @@
  
