@@ -1,5 +1,5 @@
 PORTNAME=	gramps
-DISTVERSION=	6.0.1
+DISTVERSION=	6.0.2
 CATEGORIES=	science gnome python
 MASTER_SITES=	PYPI
 
