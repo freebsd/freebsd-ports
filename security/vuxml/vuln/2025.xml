@@ -1,3 +1,103 @@
+  <vuln vid="6548cb01-4c33-11f0-8a97-6c3be5272acd">
+    <topic>Grafana -- DingDing contact points exposed in Grafana Alerting</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><lt>10.4.19+security-01</lt></range>
+	<range><ge>11.0.0</ge><lt>11.2.10+security-01</lt></range>
+	<range><ge>11.3.0</ge><lt>11.3.7+security-01</lt></range>
+	<range><ge>11.4.0</ge><lt>11.4.5+security-01</lt></range>
+	<range><ge>11.5.0</ge><lt>11.5.5+security-01</lt></range>
+	<range><ge>11.6.0</ge><lt>11.6.2+security-01</lt></range>
+	<range><ge>12.0.0</ge><lt>12.0.1+security-01</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2025/06/13/grafana-security-update-medium-severity-security-release-for-cve-2025-3415/">
+	  <p>An incident occurred where the DingDing alerting integration URL
+	  was inadvertently exposed to viewers due to a setting oversight,
+	  which we learned about through a <a href="https://grafana.com/blog/2023/05/04/introducing-the-grafana-labs-bug-bounty-program/">bug bounty report</a>.</p>
+	  <p>The CVSS 3.0 score for this vulnerability is 4.3 (Medium).</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3415</cvename>
+      <url>https://grafana.com/blog/2025/06/13/grafana-security-update-medium-severity-security-release-for-cve-2025-3415/</url>
+    </references>
+    <dates>
+      <discovery>2025-04-05</discovery>
+      <entry>2025-06-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ee046f5d-37a8-11f0-baaa-6c3be5272acd">
+    <topic>Grafana -- User deletion issue</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>5.4.0</ge><lt>10.4.18+security-01</lt></range>
+	<range><ge>11.0.0</ge><lt>11.2.9+security-01</lt></range>
+	<range><ge>11.3.0</ge><lt>11.3.6+security-01</lt></range>
+	<range><ge>11.4.0</ge><lt>11.4.4+security-01</lt></range>
+	<range><ge>11.5.0</ge><lt>11.5.4+security-01</lt></range>
+	<range><ge>11.6.0</ge><lt>11.6.1+security-01</lt></range>
+	<range><ge>12.0.0</ge><lt>12.0.0+security-01</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2025/05/23/grafana-security-release-medium-and-high-severity-security-fixes-for-cve-2025-4123-and-cve-2025-3580/">
+	  <p>On April 15, we discovered a vulnerability that stems from the user
+	  deletion logic associated with organization administrators.
+	  An organization admin could remove any user from the specific
+	  organization they manage. Additionally, they have the power to delete
+	  users entirely from the system if they have no other org membership.
+	  This leads to two situations:</p>
+	  <ol>
+	    <li>They can delete a server admin if the organization
+	    the Organization Admin manages is the server admin’s final
+	    organizational membership.</li>
+	    <li>They can delete any user (regardless of whether they are a server
+	    admin or not) if that user currently belongs to no organizations.</li>
+	  </ol>
+	  <p>These two situations allow an organization manager to disrupt
+	  instance-wide activity by continually deleting server administrators
+	  if there is only one organization or if the server administrators are
+	  not part of any organization.</p>
+	  <p>The CVSS score for this vulnerability is 5.5 Medium.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3580</cvename>
+      <url>https://grafana.com/blog/2025/05/23/grafana-security-release-medium-and-high-severity-security-fixes-for-cve-2025-4123-and-cve-2025-3580/</url>
+    </references>
+    <dates>
+      <discovery>2025-04-15</discovery>
+      <entry>2025-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b704d4b8-4b87-11f0-9605-b42e991fc52e">
     <topic>Firefox -- Multiple vulnerabilities</topic>
     <affects>
@@ -1225,7 +1325,21 @@
     <affects>
       <package>
 	<name>grafana</name>
-	<range><lt>12.0.1</lt></range>
+	<range><ge>8.0.0</ge><lt>10.4.18+security-01</lt></range>
+	<range><ge>11.0.0</ge><lt>11.2.9+security-01</lt></range>
+	<range><ge>11.3.0</ge><lt>11.3.6+security-01</lt></range>
+	<range><ge>11.4.0</ge><lt>11.4.4+security-01</lt></range>
+	<range><ge>11.5.0</ge><lt>11.5.4+security-01</lt></range>
+	<range><ge>11.6.0</ge><lt>11.6.1+security-01</lt></range>
+	<range><ge>12.0.0</ge><lt>12.0.0+security-01</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge></range>
       </package>
     </affects>
     <description>
@@ -1251,7 +1365,7 @@
       <url>https://nvd.nist.gov/vuln/detail/CVE-2025-4123</url>
     </references>
     <dates>
-      <discovery>2025-05-22</discovery>
+      <discovery>2025-04-26</discovery>
       <entry>2025-05-27</entry>
     </dates>
   </vuln>
