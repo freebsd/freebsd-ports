@@ -34,6 +34,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/modules.d/bimi.conf
 %%ETCDIR%%/modules.d/chartable.conf
 %%ETCDIR%%/modules.d/clickhouse.conf
+%%ETCDIR%%/modules.d/contextal.conf
 %%ETCDIR%%/modules.d/dcc.conf
 %%ETCDIR%%/modules.d/dkim.conf
 %%ETCDIR%%/modules.d/dkim_signing.conf
@@ -274,6 +275,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/plugins/bimi.lua
 %%DATADIR%%/plugins/clickhouse.lua
 %%DATADIR%%/plugins/clustering.lua
+%%DATADIR%%/plugins/contextal.lua
 %%DATADIR%%/plugins/dcc.lua
 %%DATADIR%%/plugins/dkim_signing.lua
 %%DATADIR%%/plugins/dmarc.lua
