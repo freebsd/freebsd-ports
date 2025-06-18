@@ -175,6 +175,8 @@
     SUBDIR += mariadb106-server
     SUBDIR += mariadb114-client
     SUBDIR += mariadb114-server
+    SUBDIR += mariadb118-client
+    SUBDIR += mariadb118-server
     SUBDIR += mdbtools
     SUBDIR += mdbx
     SUBDIR += mdcached

@@ -1,0 +1,41 @@
+From 056494a7e62373f284d0779f75de90c2dea20794 Mon Sep 17 00:00:00 2001
+From: Florian Smeets <flo@FreeBSD.org>
+Date: Mon, 9 Jun 2025 15:51:00 +0200
+Subject: [PATCH] Fix bootstrapping Galera nodes on FreeBSD 15.0
+
+Commit https://github.com/MariaDB/server/commit/606c867e7fec4507bd1225f9abf2d0aa664b6ab6
+broke bootstrapping nodes on FreeBSD 15.0 with mariadb-backup.
+We should not need LD_LIBRARY_PATH trickery on FreeBSD, so skip setting
+it same as on Darwin. Alternatively putting /lib before /usr/lib also
+fixes it.
+
+WSREP_SST: [INFO] Preparing the backup at /var/db/mysql/.sst (20250608 14:44:04.000)
+WSREP_SST: [INFO] Evaluating /usr/local/bin/mariadb-backup --prepare --log-bin='/var/db/mysql-logs/mysql-bin' --use-memory=12G --target-dir='/var/db/mysql/.sst' --datadir='/var/db/mysql/.sst' --mysqld-args '--basedir=/usr/local' '--plugin-dir=/usr/local/lib/mysql/plugin' '--wsrep_provider=/usr/local/lib/libgalera_smm.so' '--wsrep_on=ON' '--wsrep_provider=/usr/local/lib/libgalera_smm.so' '--wsrep_on=ON' '--log-error=/var/db/mysql/db4.nexxtmobile.de.err' '--pid-file=/var/run/mysql/mysqld.pid' '--wsrep_start_position=00000000-0000-0000-0000-000000000000:-1,0-0-0' > '/var/db/mysql/mariabackup.prepare.log' 2>&1 (20250608 14:44:04.000)
+WSREP_SST: [ERROR] Cleanup after exit with status: 1 (20250608 14:44:04.000)
+
+With the following error in /var/db/mysql/mariabackup.prepare.log:
+ld-elf.so.1: /usr/local/bin/mariadb-backup: Undefined symbol "_ZNSt3__117bad_function_callD1Ev"
+
+I did not look for the root cause in FreeBSD 15.0 that changed this
+behaviour. Calling mariadb-backup directly from the shell works fine on
+FreeBSD 14.x and 15.x when LD_LIBRARY_PATH is not set (when using
+FreeBSD packages or installing from FreeBSD ports). Setting
+LD_LIBRARY_PATH manually like the script does, breaks mariadb-backup
+with the "Undefined symbol" error on FreeBSD 15.0 but not on 14.x.
+---
+ scripts/wsrep_sst_common.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/scripts/wsrep_sst_common.sh b/scripts/wsrep_sst_common.sh
+index 38aa18d5f6967..edde8328effe9 100644
+--- scripts/wsrep_sst_common.sh.orig
++++ scripts/wsrep_sst_common.sh
+@@ -25,7 +25,7 @@ OS="$(uname)"
+ 
+ # Setting the paths for some utilities on CentOS
+ export PATH="${PATH:+$PATH:}/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+-if [ "$OS" != 'Darwin' ]; then
++if [ "$OS" != 'Darwin' ] && [ "$OS" != 'FreeBSD' ]; then
+     export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}/usr/local/lib:/usr/lib:/lib:/opt/lib"
+ fi
+ 
