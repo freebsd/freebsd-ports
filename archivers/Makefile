@@ -242,6 +242,7 @@
     SUBDIR += rubygem-minitar0
     SUBDIR += rubygem-ruby-xz
     SUBDIR += rubygem-rubyzip
+    SUBDIR += rubygem-rubyzip-gitlab
     SUBDIR += rubygem-rubyzip13
     SUBDIR += rubygem-rubyzip2
     SUBDIR += rubygem-snappy

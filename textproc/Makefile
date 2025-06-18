@@ -1848,6 +1848,7 @@
     SUBDIR += rubygem-ezamar
     SUBDIR += rubygem-fast_xs
     SUBDIR += rubygem-fog-xml
+    SUBDIR += rubygem-fog-xml-gitlab
     SUBDIR += rubygem-gemoji
     SUBDIR += rubygem-gemoji3
     SUBDIR += rubygem-gepub
@@ -1864,6 +1865,7 @@
     SUBDIR += rubygem-heredoc_unindent
     SUBDIR += rubygem-hikidoc
     SUBDIR += rubygem-html-pipeline
+    SUBDIR += rubygem-html-pipeline-gitlab
     SUBDIR += rubygem-html-proofer
     SUBDIR += rubygem-html2text
     SUBDIR += rubygem-htmlentities

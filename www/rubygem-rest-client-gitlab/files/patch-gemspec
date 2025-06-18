@@ -1,0 +1,11 @@
+--- rest-client.gemspec.orig	2024-02-21 16:41:11 UTC
++++ rest-client.gemspec
+@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
+   s.add_development_dependency(%q<pry-doc>.freeze, ["~> 0".freeze])
+   s.add_development_dependency(%q<rdoc>.freeze, [">= 2.4.2".freeze, "< 6.0".freeze])
+   s.add_development_dependency(%q<rubocop>.freeze, ["~> 0.49".freeze])
+-  s.add_runtime_dependency(%q<http-accept>.freeze, [">= 1.7.0".freeze, "< 2.0".freeze])
++  s.add_runtime_dependency(%q<http-accept>.freeze, [">= 1.7.0".freeze])
+   s.add_runtime_dependency(%q<http-cookie>.freeze, [">= 1.0.2".freeze, "< 2.0".freeze])
+   s.add_runtime_dependency(%q<mime-types>.freeze, [">= 1.16".freeze, "< 4.0".freeze])
+   s.add_runtime_dependency(%q<netrc>.freeze, ["~> 0.8".freeze])
