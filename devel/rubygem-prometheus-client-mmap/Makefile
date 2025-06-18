@@ -1,6 +1,5 @@
 PORTNAME=	prometheus-client-mmap
-PORTVERSION=	1.2.9
-PORTREVISION=	2
+PORTVERSION=	1.2.10
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -34,6 +33,11 @@ GEM_ENV+=	MAKE=gmake
 # Is reported upstream: https://gitlab.com/gitlab-org/ruby/gems/prometheus-client-mmap/-/issues/60
 post-extract:
 	${CHMOD} -R o-w ${WRKSRC}
+
+# The project has a Cargo.lock which is a symlink to main folder, cleanup this symlink
+post-stage:
+	${RM} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/ext/fast_mmaped_file_rs/Cargo.lock
+	${FIND} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/ext -type d -empty -delete 2> /dev/null || ${TRUE}
 
 .include <bsd.port.options.mk>
 
