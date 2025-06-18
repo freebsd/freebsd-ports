@@ -1,0 +1,5 @@
+Extension to ActiveRecord::Base for validating hostnames and domain names.
+
+Features:
+- Adds validation for hostnames to ActiveModel
+- Supports i18n for the error messages

@@ -220,6 +220,7 @@
     SUBDIR += rubygem-simpleidn
     SUBDIR += rubygem-simpleidn02
     SUBDIR += rubygem-validates_hostname
+    SUBDIR += rubygem-validates_hostname-gitlab
     SUBDIR += rubygem-zonefile
     SUBDIR += samba-nsupdate
     SUBDIR += scavenge

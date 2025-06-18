@@ -584,6 +584,7 @@
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
     SUBDIR += rubygem-mime-types-data
+    SUBDIR += rubygem-mime-types-gitlab
     SUBDIR += rubygem-mimemagic
     SUBDIR += rubygem-octicons
     SUBDIR += rubygem-rabbit

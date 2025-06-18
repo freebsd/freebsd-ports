@@ -2045,6 +2045,7 @@
     SUBDIR += rubygem-cable_ready
     SUBDIR += rubygem-cal-heatmap-rails
     SUBDIR += rubygem-carrierwave
+    SUBDIR += rubygem-carrierwave-gitlab
     SUBDIR += rubygem-carrierwave1
     SUBDIR += rubygem-cgi
     SUBDIR += rubygem-cgi_multipart_eof_fix
@@ -2065,6 +2066,7 @@
     SUBDIR += rubygem-d3_rails
     SUBDIR += rubygem-davclient
     SUBDIR += rubygem-deckar01-task_list
+    SUBDIR += rubygem-deckar01-task_list-gitlab
     SUBDIR += rubygem-domainatrix
     SUBDIR += rubygem-dropzonejs-rails
     SUBDIR += rubygem-em-http-request
@@ -2353,6 +2355,7 @@
     SUBDIR += rubygem-responders-rails71
     SUBDIR += rubygem-responders-rails72
     SUBDIR += rubygem-rest-client
+    SUBDIR += rubygem-rest-client-gitlab
     SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rfeedfinder
     SUBDIR += rubygem-rinku
