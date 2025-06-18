@@ -113,7 +113,7 @@ find_expired()
 		for port in $(make -C ${PORTSDIR}/${category} -V SUBDIR); do
 			DATE="$(make -C ${PORTSDIR}/${category}/${port} -V EXPIRATION_DATE)"
 			# shellcheck disable=SC2039
-			if [ -n "${DATE}" ] && [ ! "${DATE}" \> "$${TODAY}" ] ; then
+			if [ -n "${DATE}" ] && [ ! "${DATE}" \> "${TODAY}" ] ; then
 				if [ "$1" = 1 ] ; then
 					echo -n "${DATE} ${category}/${port}: "
 					make -C ${PORTSDIR}/${category}/${port} -V DEPRECATED
