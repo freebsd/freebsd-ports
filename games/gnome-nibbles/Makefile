@@ -17,7 +17,8 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgnome-games-support-2.so:games/libgnome-games-support2
 RUN_DEPENDS=	dbus>0:devel/dbus
 
-USES=		gettext gnome meson pkgconfig tar:xz vala:build
+USES=		desktop-file-utils gettext gnome meson pkgconfig tar:xz \
+		vala:build
 USE_GNOME=	gsound glib20 gtk40 libadwaita librsvg2 pango
 
 GLIB_SCHEMAS=	org.gnome.Nibbles.gschema.xml
