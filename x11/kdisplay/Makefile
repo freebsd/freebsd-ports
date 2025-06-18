@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	6.2.0
 CATEGORIES=	x11
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	App and daemon for display managing
 WWW=		https://github.com/winft/kdisplay
 
