@@ -6,6 +6,8 @@ libexec/resolvconf/libc.d/mdnsd
 libexec/resolvconf/named
 libexec/resolvconf/pdns_recursor
 libexec/resolvconf/pdnsd
+libexec/resolvconf/resolvectl
+libexec/resolvconf/systemd-resolved
 libexec/resolvconf/unbound
 sbin/resolvconf
 share/man/man5/resolvconf.conf.5.gz
