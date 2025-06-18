@@ -1,6 +1,5 @@
 PORTNAME=	strawberry
-DISTVERSION=	1.2.10
-PORTREVISION=	2
+DISTVERSION=	1.2.11
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/
 
