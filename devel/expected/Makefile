@@ -1,6 +1,7 @@
 PORTNAME=	expected
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	devel science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,6 +29,11 @@ PLIST_FILES=	include/tl/expected.hpp \
 		share/cmake/tl-expected/tl-expected-targets.cmake
 
 NO_ARCH=	yes
+
+post-install: # workaround for https://github.com/TartanLlama/expected/issues/173
+	@${REINPLACE_CMD} -i '' \
+		-e 's/1\.0\.0/${PORTVERSION}/' \
+		${STAGEDIR}${PREFIX}/share/cmake/tl-expected/tl-expected-config-version.cmake
 
 # tests as of 1.1.0: 100% tests passed, 0 tests failed out of 1
 
