@@ -9,7 +9,7 @@ PATCHFILES+=	325e41b02b58.patch:-p1 # https://github.com/winft/como/pull/22
 PATCHFILES+=	d250e3a81b91.patch:-p1 # https://github.com/winft/como/pull/22
 PATCHFILES+=	7ad1bc1d9b7b.patch:-p1 # https://github.com/winft/como/pull/31
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Compositor Modules for Wayland and X11
 WWW=		https://github.com/winft/como
 
