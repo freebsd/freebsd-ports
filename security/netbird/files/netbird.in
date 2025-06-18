@@ -4,15 +4,39 @@
 # REQUIRE: SERVERS
 # KEYWORD: shutdown
 #
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# netbird_enable (bool):	Set it to YES to run netbird on startup.
+#				Default: NO
+# netbird_config (path):	Path to the netbird configuration file.
+#				Default: /var/db/netbird/config.json
+# netbird_socket (path):	Path to the Unix-domain socket for daemon communication.
+#				Default: /var/run/netbird.sock
+# netbird_loglevel (str):	Set to 'panic', 'fatal', 'error', 'warn', 'info', 'debug' or 'trace'.
+#				Default: 'info'
+# netbird_logfile (path):	Path to the client log file.
+#				Default: /var/log/netbird/client.log
+# netbird_env (str):		Extra environment variables for the daemon, in KEY=VALUE format.
+#				Default: 'IS_DAEMON=1'
+#
 
 . /etc/rc.subr
 
 name="netbird"
-netbird_env="IS_DAEMON=1"
+rcvar="${name}_enable"
+
+load_rc_config "$name"
+
+: ${netbird_enable:="NO"}
+: ${netbird_config:="/var/db/netbird/config.json"}
+: ${netbird_socket:="/var/run/netbird.sock"}
+: ${netbird_loglevel:="info"}
+: ${netbird_logfile:="/var/log/netbird/client.log"}
+: ${netbird_env:="IS_DAEMON=1"}
+
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 daemon_args="-P ${pidfile} -r -t \"${name}: daemon\""
-command_args="${daemon_args} /usr/local/bin/netbird service run --config /var/db/netbird/config.json --log-level info --daemon-addr unix:///var/run/netbird.sock --log-file /var/log/netbird/client.log"
+command_args="${daemon_args} %%PREFIX%%/bin/netbird service run --config ${netbird_config} --log-level ${netbird_loglevel} --daemon-addr unix://${netbird_socket} --log-file ${netbird_logfile}"
 
 run_rc_command "$1"
-
