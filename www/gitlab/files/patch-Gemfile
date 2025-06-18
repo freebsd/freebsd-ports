@@ -1,6 +1,6 @@
---- Gemfile.orig	2025-05-14 17:45:50 UTC
+--- Gemfile.orig	2025-06-18 04:18:20 UTC
 +++ Gemfile
-@@ -160,8 +160,8 @@ gem 'rack-cors', '~> 2.0.1', require: 'rack/cors', fea
+@@ -164,8 +164,8 @@ gem 'rack-cors', '~> 2.0.1', require: 'rack/cors', fea
  gem 'rack-cors', '~> 2.0.1', require: 'rack/cors', feature_category: :shared
  
  # GraphQL API
@@ -11,7 +11,7 @@
  gem 'apollo_upload_server', '~> 2.1.6', feature_category: :api
  
  # Cells
-@@ -216,7 +216,7 @@ gem 'google-cloud-storage', '~> 1.45.0', feature_categ
+@@ -220,7 +220,7 @@ gem 'google-cloud-storage', '~> 1.45.0', feature_categ
  gem 'google-apis-storage_v1', '~> 0.29', feature_category: :shared
  gem 'google-cloud-storage', '~> 1.45.0', feature_category: :shared
  # We need >= 0.11.1 because that's when match_glob support is added to list_objects
@@ -20,7 +20,7 @@
  gem 'google-apis-compute_v1', '~> 0.57.0', feature_category: :shared
  gem 'google-apis-container_v1', '~> 0.43.0', feature_category: :shared
  gem 'google-apis-container_v1beta1', '~> 0.43.0', feature_category: :shared
-@@ -227,7 +227,7 @@ gem 'google-apis-androidpublisher_v3', '~> 0.34.0', fe
+@@ -231,7 +231,7 @@ gem 'google-apis-androidpublisher_v3', '~> 0.34.0', fe
  gem 'google-apis-sqladmin_v1beta4', '~> 0.41.0', feature_category: :shared
  gem 'google-apis-androidpublisher_v3', '~> 0.34.0', feature_category: :shared
  
@@ -29,16 +29,7 @@
  gem 'google-cloud-artifact_registry-v1', '~> 0.11.0', feature_category: :shared
  gem 'google-cloud-compute-v1', '~> 2.6.0', feature_category: :shared
  
-@@ -283,7 +283,7 @@ group :puma do
- gem 'rack-timeout', '~> 0.7.0', require: 'rack/timeout/base', feature_category: :shared
- 
- group :puma do
--  gem 'puma', '= 6.5.0', require: false, feature_category: :shared
-+  gem 'puma', '~> 6.5', require: false, feature_category: :shared
-   gem 'sd_notify', '~> 0.1.0', require: false, feature_category: :shared
- end
- 
-@@ -291,7 +291,7 @@ gem 'state_machines-activerecord', '~> 0.8.0', feature
+@@ -295,7 +295,7 @@ gem 'state_machines-activerecord', '~> 0.8.0', feature
  gem 'state_machines-activerecord', '~> 0.8.0', feature_category: :shared
  
  # Background jobs
@@ -47,7 +38,7 @@
  gem 'sidekiq-cron', '~> 1.12.0', feature_category: :scalability
  gem 'gitlab-sidekiq-fetcher',
    path: 'vendor/gems/sidekiq-reliable-fetch',
-@@ -471,143 +471,15 @@ gem 'warning', '~> 1.5.0', feature_category: :shared
+@@ -472,143 +472,15 @@ gem 'warning', '~> 1.5.0', feature_category: :shared
  
  gem 'warning', '~> 1.5.0', feature_category: :shared
  
@@ -84,7 +75,7 @@
 -
 -group :development, :test do
 -  gem 'deprecation_toolkit', '~> 2.2.3', require: false, feature_category: :shared
--  gem 'bullet', '~> 7.2.0', feature_category: :shared
+-  gem 'bullet', '~> 8.0.0', feature_category: :shared
 -  gem 'parser', '= 3.3.8.0', feature_category: :shared
 -  gem 'pry-byebug', feature_category: :shared
 -  gem 'pry-rails', '~> 0.3.9', feature_category: :shared
@@ -93,7 +84,7 @@
 -  gem 'awesome_print', require: false, feature_category: :shared
 -
 -  gem 'database_cleaner-active_record', '~> 2.2.0', feature_category: :database
--  gem 'rspec-rails', '~> 7.0.0', feature_category: :shared
+-  gem 'rspec-rails', '~> 7.1.0', feature_category: :shared
 -  gem 'factory_bot_rails', '~> 6.4.3', feature_category: :tooling
 -
 -  # Prevent occasions where minitest is not bundled in packaged versions of ruby (see #3826)
@@ -113,7 +104,7 @@
 -  gem 'influxdb-client', '~> 3.1', require: false, feature_category: :tooling
 -
 -  gem 'knapsack', '~> 4.0.0', feature_category: :tooling
--  gem 'gitlab-crystalball', '~> 0.7.2', require: false, feature_category: :tooling
+-  gem 'gitlab-crystalball', '~> 1.1.0', require: false, feature_category: :tooling
 -  gem 'test_file_finder', '~> 0.3.1', feature_category: :tooling
 -
 -  gem 'simple_po_parser', '~> 1.1.6', require: false, feature_category: :shared
@@ -191,27 +182,16 @@
  gem 'octokit', '~> 9.0', feature_category: :importers
  # Needed by octokit: https://github.com/octokit/octokit.rb/pull/1688
  gem 'faraday-multipart', '~> 1.0', feature_category: :importers
-@@ -642,16 +514,16 @@ gem 'spamcheck', '~> 1.3.0', feature_category: :inside
- gem 'spamcheck', '~> 1.3.0', feature_category: :insider_threat
- 
- # Gitaly GRPC protocol definitions
--gem 'gitaly', '~> 17.8.0', feature_category: :gitaly
-+gem 'gitaly', '~> 17.8', feature_category: :gitaly
+@@ -646,7 +518,7 @@ gem 'gitaly', '~> 18.1.0.pre.rc1', feature_category: :
+ gem 'gitaly', '~> 18.1.0.pre.rc1', feature_category: :gitaly
  
  # KAS GRPC protocol definitions
 -gem 'gitlab-kas-grpc', '~> 17.11.0', feature_category: :deployment_management
-+gem 'gitlab-kas-grpc', '~> 18.0', feature_category: :deployment_management
++gem 'gitlab-kas-grpc', '~> 18.1.0', feature_category: :deployment_management
  
- # Lock the version before issues below are resolved:
- # https://gitlab.com/gitlab-org/gitlab/-/issues/473169#note_2028352939
- # Or we can upgrade to a more recent version as long as we can confirm
- # that it doesn't have the same issues.
--gem 'grpc', '= 1.63.0', feature_category: :shared
-+gem 'grpc', '~> 1.63', feature_category: :shared
+ gem 'grpc', '~> 1.72.0', feature_category: :shared
  
- gem 'google-protobuf', '~> 3.25', '>= 3.25.3', feature_category: :shared
- 
-@@ -672,7 +544,7 @@ gem 'gitlab-net-dns', '~> 0.12.0', feature_category: :
+@@ -669,7 +541,7 @@ gem 'gitlab-net-dns', '~> 0.12.0', feature_category: :
  gem 'gitlab-net-dns', '~> 0.12.0', feature_category: :shared
  
  # Countries list
@@ -220,7 +200,7 @@
  
  gem 'retriable', '~> 3.1.2', feature_category: :shared
  
-@@ -753,10 +625,15 @@ gem 'duo_api', '~> 1.3', feature_category: :system_acc
+@@ -750,10 +622,15 @@ gem 'duo_api', '~> 1.3', feature_category: :system_acc
  
  gem 'duo_api', '~> 1.3', feature_category: :system_access
  
@@ -236,4 +216,4 @@
 -gem "i18n_data", "~> 0.13.1", feature_category: :system_access
 +gem "i18n_data", "~> 0.13", feature_category: :system_access
  
- gem "gitlab-cloud-connector", "~> 1.11", require: 'gitlab/cloud_connector', feature_category: :cloud_connector
+ gem "gitlab-cloud-connector", "~> 1.14", require: 'gitlab/cloud_connector', feature_category: :cloud_connector
