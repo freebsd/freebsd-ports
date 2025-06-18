@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
-		rubygem-logger>=0:devel/rubygem-logger \
+		rubygem-logger-gitlab>=0:devel/rubygem-logger-gitlab \
 		rubygem-rb_sys>=0.9.109<0.10:lang/rubygem-rb_sys
 
 USES=		cargo gem gmake llvm:build

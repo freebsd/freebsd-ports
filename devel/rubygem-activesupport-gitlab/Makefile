@@ -19,7 +19,7 @@ RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-connection_pool>=2.2.5:net/rubygem-connection_pool \
 		rubygem-drb>=0:devel/rubygem-drb \
 		rubygem-i18n>=1.6,2<2,2:devel/rubygem-i18n \
-		rubygem-logger>=1.4.2:devel/rubygem-logger \
+		rubygem-logger-gitlab>=1.4.2:devel/rubygem-logger-gitlab \
 		rubygem-minitest>=5.1:devel/rubygem-minitest \
 		rubygem-mutex_m>=0:devel/rubygem-mutex_m \
 		rubygem-securerandom>=0.3:security/rubygem-securerandom \
