@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=--without-localdirs \
 .include <bsd.port.options.mk>
 
 .if defined(SSL_DEFAULT) && ${SSL_DEFAULT} == libressl
-BROKEN=	error: OpenSSL-1.1.1 is the minimum supported version. LibreSSLis not supported
+BROKEN=	error: OpenSSL-1.1.1 is the minimum supported version. LibreSSL is not supported
 .endif
 
 .if exists(/usr/lib/libibverbs.a)
