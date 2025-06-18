@@ -1,5 +1,6 @@
 PORTNAME=	gitlab
 PORTVERSION=	4.20.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/NARKOZ/gitlab
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-httparty>=0.20<1:www/rubygem-httparty \
+RUN_DEPENDS=	rubygem-httparty-gitlab>=0.20<1:www/rubygem-httparty-gitlab \
 		rubygem-terminal-table>=1.5.1:textproc/rubygem-terminal-table
 
 USES=		gem
