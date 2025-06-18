@@ -147,7 +147,10 @@ check_dep_core()
 	deps=$(grep -E "${pkgname}" ${INDEX} |grep -vE "^(${rmpkgs})" || :)
 	if [ -n "${deps}" ] ; then
 		log "${catport}: some port(s) depend on ${pkgname}:"
-		echo "${deps}" >&2
+		# Skip dependencies in on-screen listing to avoid excessively
+		# long lines. Note that WWW should be field 13 according to
+		# Mk/bsd.port.mk:4492
+		echo "${deps}" | cut -d \| -f -7,10 >&2
 		err=1
 	fi
 
