@@ -1,5 +1,6 @@
 PORTNAME=	openid_connect
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/nov/openid_connect
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activemodel70>=0:databases/rubygem-activemodel70 \
+RUN_DEPENDS=	rubygem-activemodel-gitlab>=0:databases/rubygem-activemodel-gitlab \
 		rubygem-attr_required>=1.0.0:devel/rubygem-attr_required \
 		rubygem-email_validator>=0:mail/rubygem-email_validator \
 		rubygem-faraday-gitlab>=2.0<3:www/rubygem-faraday-gitlab \
