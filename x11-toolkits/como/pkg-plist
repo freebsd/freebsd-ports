@@ -717,8 +717,8 @@ lib/libcomo-xwayland.so.%%VERSION%%
 %%QT_PLUGINDIR%%/kwin/effects/plugins/windowview.so
 %%QT_PLUGINDIR%%/kwin/effects/plugins/wobblywindows.so
 %%QT_PLUGINDIR%%/kwin/effects/plugins/zoom.so
-%%QT_PLUGINDIR%%/org.kde.kdecoration2.kcm/kcm_auroraedecoration.so
-%%QT_PLUGINDIR%%/org.kde.kdecoration2/org.kde.kwin.aurorae.so
+%%QT_PLUGINDIR%%/org.kde.kdecoration3.kcm/kcm_auroraedecoration.so
+%%QT_PLUGINDIR%%/org.kde.kdecoration3/org.kde.kwin.aurorae.so
 %%QT_PLUGINDIR%%/platforms/ComoQpaPlugin.so
 %%QT_QMLDIR%%/org/kde/kwin/decoration/AppMenuButton.qml
 %%QT_QMLDIR%%/org/kde/kwin/decoration/ButtonGroup.qml
