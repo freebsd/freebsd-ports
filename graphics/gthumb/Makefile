@@ -1,17 +1,19 @@
 PORTNAME=	gthumb
 PORTVERSION=	3.12.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Image viewer and browser for the GNOME environment
-WWW=		https://wiki.gnome.org/Apps/gthumb/
+WWW=		https://gitlab.gnome.org/GNOME/gthumb
 
 LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
-		itstool:textproc/itstool
+		itstool:textproc/itstool \
+		appstreamcli:devel/appstream
 LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 		libcogl.so:graphics/cogl \
 		libgstreamer-1.0.so:multimedia/gstreamer1 \
@@ -33,7 +35,6 @@ USE_XORG=	x11 xcomposite xdamage xext xfixes xrandr xi
 MESON_ARGS=	-Dlibrsvg=true \
 		-Dlibchamplain=false
 CPE_VENDOR=	gnome
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 SHEBANG_FILES=	*.py data/gschemas/*.py gthumb/*.py po/*.py
@@ -66,9 +67,9 @@ GLIB_SCHEMAS=	org.gnome.gthumb.change-date.gschema.xml \
 		org.gnome.gthumb.catalogs.gschema.xml \
 		org.gnome.gthumb.terminal.gschema.xml
 
-OPTIONS_DEFINE=		BRASERO CLUTTER EXIV2 GSTREAMER JXL RAW SECRET \
+OPTIONS_DEFINE=		BRASERO CLUTTER EXIV2 GSTREAMER HEIF JXL RAW SECRET \
 			WEBP WEBSERVICES YELP
-OPTIONS_DEFAULT=	BRASERO CLUTTER EXIV2 GSTREAMER JXL RAW SECRET \
+OPTIONS_DEFAULT=	BRASERO CLUTTER EXIV2 GSTREAMER HEIF JXL RAW SECRET \
 			WEBP WEBSERVICES YELP
 OPTIONS_SUB=		yes
 
@@ -82,6 +83,8 @@ EXIV2_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 EXIV2_MESON_TRUE=	exiv2
 GSTREAMER_USES=		gstreamer
 GSTREAMER_MESON_TRUE=	gstreamer
+HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
+HEIF_MESON_TRUE=	libheif
 JXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
 JXL_MESON_TRUE=		libjxl
 RAW_DESC=		Raw image support via libraw
