@@ -273,7 +273,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-spamcheck>=1.3.3<1.4:net/rubygem-spamcheck \
 	rubygem-gitaly>=17.8.4:net/rubygem-gitaly \
 	rubygem-gitlab-kas-grpc>=${GITLAB_KAS_GRPC_VERSION}:net/rubygem-gitlab-kas-grpc \
-	rubygem-grpc>=1.63.0<2:net/rubygem-grpc \
+	rubygem-grpc-gitlab>=1.63.0<2:net/rubygem-grpc-gitlab \
 	rubygem-google-protobuf3>=3.25.6<4:devel/rubygem-google-protobuf3 \
 	rubygem-toml-rb>=2.2.0<3:www/rubygem-toml-rb \
 	rubygem-flipper-gitlab>=0.28.0<0.29:devel/rubygem-flipper-gitlab \
