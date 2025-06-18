@@ -9,7 +9,7 @@ WWW=		https://gitlab.com/gitlab-org/gitaly
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-grpc>=1.0<2.0:net/rubygem-grpc
+RUN_DEPENDS=	rubygem-grpc-gitlab>=1.0<2.0:net/rubygem-grpc-gitlab
 
 USES=		cpe gem
 
