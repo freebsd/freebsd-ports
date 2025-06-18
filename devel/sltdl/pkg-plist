@@ -3,5 +3,5 @@ include/sltdl/sltdl_api.h
 lib/libsltdl.a
 lib/libsltdl.so
 lib/libsltdl.so.0
-lib/libsltdl.so.0.5.0
+lib/libsltdl.so.0.5.1
 libdata/pkgconfig/sltdl.pc

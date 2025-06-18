@@ -1,5 +1,5 @@
 PORTNAME=	sltdl
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	devel
 MASTER_SITES=	http://dl.midipix.org/${PORTNAME}/
 
