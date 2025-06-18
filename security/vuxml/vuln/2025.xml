@@ -1,3 +1,29 @@
+  <vuln vid="fc2d2fb8-4c83-11f0-8deb-f8f21e52f724">
+    <topic>Navidrome -- SQL Injection via role parameter</topic>
+    <affects>
+      <package>
+	<name>navidrome</name>
+	<range><gt>0.55.0</gt><lt>0.56.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Deluan reports:</p>
+	<blockquote cite="https://github.com/navidrome/navidrome/security/advisories/GHSA-5wgp-vjxm-3x2r">
+	  <p>This vulnerability arises due to improper input validation on the role parameter within the API endpoint /api/artist. Attackers can exploit this flaw to inject arbitrary SQL queries, potentially gaining unauthorized access to the backend database and compromising sensitive user information.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-48949</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-48949</url>
+    </references>
+    <dates>
+      <discovery>2025-05-29</discovery>
+      <entry>2025-06-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6548cb01-4c33-11f0-8a97-6c3be5272acd">
     <topic>Grafana -- DingDing contact points exposed in Grafana Alerting</topic>
     <affects>
