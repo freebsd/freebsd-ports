@@ -1,5 +1,5 @@
 PORTNAME=	discord
-DISTVERSION=	0.0.97
+DISTVERSION=	0.0.98
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net-im
@@ -22,8 +22,8 @@ RUN_DEPENDS=	pulseaudio:audio/pulseaudio
 
 USES=		linux:rl9
 USE_LINUX=	alsa-plugins-oss alsa-plugins-pulseaudio alsalib at-spi2-atk \
-		atk ca-certificates cups-libs dbuslibs devtools gtk3 imageformats-libs \
-		libdrm libva nspr nss opus
+		atk ca-certificates cups-libs dbuslibs devtools gtk3 \
+		imageformats-libs libdrm libva nspr nss opus
 
 DATADIR=	${PREFIX}/share/${PKGBASE}
 
