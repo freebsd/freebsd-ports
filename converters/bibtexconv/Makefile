@@ -1,5 +1,5 @@
 PORTNAME=	bibtexconv
-DISTVERSION=	2.0.2
+DISTVERSION=	2.0.3
 CATEGORIES=	converters
 MASTER_SITES=	https://www.nntb.no/~dreibh/bibtexconv/download/
 
@@ -11,6 +11,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
+RUN_DEPENDS=	pdfinfo:graphics/poppler-utils \
+		zip:archivers/zip
 
 USES=		bison cmake python:3.9+ shebangfix ssl tar:xz
 
