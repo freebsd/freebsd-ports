@@ -1,5 +1,6 @@
 PORTNAME=	sprockets-rails
 PORTVERSION=	3.5.2
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails-gitlab
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-actionpack-gitlab>=5.2:www/rubygem-actionpack-gitlab \
 		rubygem-activesupport-gitlab>=5.2:devel/rubygem-activesupport-gitlab \
-		rubygem-sprockets>=3.0.0:devel/rubygem-sprockets
+		rubygem-sprockets-gitlab>=3.0.0:devel/rubygem-sprockets-gitlab
 
 USES=		gem
 
