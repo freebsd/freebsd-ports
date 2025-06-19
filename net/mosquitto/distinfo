@@ -1,3 +1,3 @@
-TIMESTAMP = 1734507485
-SHA256 (mosquitto-2.0.20.tar.gz) = ebd07d89d2a446a7f74100ad51272e4a8bf300b61634a7812e19f068f2759de8
-SIZE (mosquitto-2.0.20.tar.gz) = 799972
+TIMESTAMP = 1749062322
+SHA256 (mosquitto-2.0.21.tar.gz) = 7ad5e84caeb8d2bb6ed0c04614b2a7042def961af82d87f688ba33db857b899d
+SIZE (mosquitto-2.0.21.tar.gz) = 804168
