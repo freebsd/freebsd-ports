@@ -463,12 +463,12 @@ IGNORE=	uses unknown USES=python arguments: ${_PYTHON_ARGS}
 .  endif
 
 # Pattern to convert python versions (X.Y or X.YY) to comparable format X.YY
-_VC=		C/^([1-9]\.)([0-9])$$/\10\2/:S/t$///
+_VC=		C/^([1-9]\.)([0-9])$$/\10\2/
 
 .undef _PYTHON_VERSION_NONSUPPORTED
-.  if !empty(_PYTHON_VERSION_MINIMUM) && (${_PYTHON_VERSION:${_VC}} < ${_PYTHON_VERSION_MINIMUM:${_VC}})
+.  if !empty(_PYTHON_VERSION_MINIMUM) && (${_PYTHON_VERSION:${_VC}:S/t$//} < ${_PYTHON_VERSION_MINIMUM:${_VC}:S/t$//})
 _PYTHON_VERSION_NONSUPPORTED=	${_PYTHON_VERSION_MINIMUM} at least
-.  elif !empty(_PYTHON_VERSION_MAXIMUM) && (${_PYTHON_VERSION:${_VC}} > ${_PYTHON_VERSION_MAXIMUM:${_VC}})
+.  elif !empty(_PYTHON_VERSION_MAXIMUM) && (${_PYTHON_VERSION:${_VC}:S/t$//} > ${_PYTHON_VERSION_MAXIMUM:${_VC}:S/t$//})
 _PYTHON_VERSION_NONSUPPORTED=	${_PYTHON_VERSION_MAXIMUM} at most
 .  endif
 
@@ -479,9 +479,9 @@ _PYTHON_VERSION_NONSUPPORTED=	${_PYTHON_VERSION_MAXIMUM} at most
 __VER=		${ver}
 .      if !defined(_PYTHON_VERSION) && \
 	!(!empty(_PYTHON_VERSION_MINIMUM) && ( \
-		${__VER:${_VC}} < ${_PYTHON_VERSION_MINIMUM:${_VC}})) && \
+		${__VER:${_VC}:S/t$//} < ${_PYTHON_VERSION_MINIMUM:${_VC}:S/t$//})) && \
 	!(!empty(_PYTHON_VERSION_MAXIMUM) && ( \
-		${__VER:${_VC}} > ${_PYTHON_VERSION_MAXIMUM:${_VC}}))
+		${__VER:${_VC}:S/t$//} > ${_PYTHON_VERSION_MAXIMUM:${_VC}:S/t$//}))
 _PYTHON_VERSION=	${ver}
 .      endif
 .    endfor
@@ -496,9 +496,9 @@ IGNORE=		needs an unsupported version of Python
 .    for ver in ${PYTHON_DEFAULT} ${PYTHON2_DEFAULT} ${_PYTHON_VERSIONS}
 __VER=		${ver}
 .      if !(!empty(_PYTHON_VERSION_MINIMUM) && ( \
-		${__VER:${_VC}} < ${_PYTHON_VERSION_MINIMUM:${_VC}})) && \
+		${__VER:${_VC}:S/t$//} < ${_PYTHON_VERSION_MINIMUM:${_VC}:S/t$//})) && \
 	!(!empty(_PYTHON_VERSION_MAXIMUM) && ( \
-		${__VER:${_VC}} > ${_PYTHON_VERSION_MAXIMUM:${_VC}}))
+		${__VER:${_VC}:S/t$//} > ${_PYTHON_VERSION_MAXIMUM:${_VC}:S/t$//}))
 .        if empty(_VALID_PYTHON_VERSIONS:M${ver})
 _VALID_PYTHON_VERSIONS+=	${ver}
 .        endif
