@@ -242,7 +242,7 @@ lib/libtogl.a
 %%PYTHON_SITELIBDIR%%/netgen/webgui.py
 %%PYTHON_SITELIBDIR%%/netgen_mesher-py3.egg-info
 %%PYTHON_SITELIBDIR%%/pyngcore/__init__.py
-%%PYTHON_SITELIBDIR%%/pyngcore/pyngcore%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/pyngcore/pyngcore%%PYTHON_TAG%%.so
 %%DATADIR%%/boundarycondition.geo
 %%DATADIR%%/boxcyl.geo
 %%DATADIR%%/circle_on_cube.geo

@@ -40,13 +40,13 @@ CONFIGURE_ENV=	PYTHON_INCLUDEDIR="${PYTHON_INCLUDEDIR}" \
 
 PORTSCOUT=	limit:^1.* # 2.x is WIP and we don't accept it before qBittorrent does
 
-PLIST_FILES+=	${PYTHON_SITELIBDIR}/${PYDISTUTILS_PKGNAME}/__init__${PYTHON_EXT_SUFFIX}.so \
+PLIST_FILES+=	${PYTHON_SITELIBDIR}/${PYDISTUTILS_PKGNAME}/__init__${PYTHON_TAG}.so \
 		${PYTHON_SITELIBDIR}/libtorrent-_${DISTVERSION}_-py${PYTHON_VER}.egg-info/PKG-INFO \
 		${PYTHON_SITELIBDIR}/libtorrent-_${DISTVERSION}_-py${PYTHON_VER}.egg-info/SOURCES.txt \
 		${PYTHON_SITELIBDIR}/libtorrent-_${DISTVERSION}_-py${PYTHON_VER}.egg-info/dependency_links.txt \
 		${PYTHON_SITELIBDIR}/libtorrent-_${DISTVERSION}_-py${PYTHON_VER}.egg-info/top_level.txt
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PYDISTUTILS_PKGNAME}/__init__${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PYDISTUTILS_PKGNAME}/__init__${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

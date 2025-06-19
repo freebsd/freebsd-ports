@@ -18,8 +18,8 @@ USES=		python
 USE_PYTHON=	flavors
 
 PLIST_FILES=	${PYTHON_SITELIBDIR}/chromium_compact_language_detector-2.0-py${PYTHON_VER}.egg-info \
-		${PYTHON_SITELIBDIR}/cld2${PYTHON_EXT_SUFFIX}.so \
-		${PYTHON_SITELIBDIR}/cld2full${PYTHON_EXT_SUFFIX}.so
+		${PYTHON_SITELIBDIR}/cld2${PYTHON_TAG}.so \
+		${PYTHON_SITELIBDIR}/cld2full${PYTHON_TAG}.so
 
 post-patch:
 	${REINPLACE_CMD} -e "s#\.\./cld2#${LOCALBASE}/include/cld#" ${WRKSRC}/setup.py ${WRKSRC}/setup_full.py

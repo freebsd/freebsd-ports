@@ -20,6 +20,6 @@ USE_PYTHON=	distutils autoplist pytest
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/deap/tools/_hypervolume/hv${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/deap/tools/_hypervolume/hv${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

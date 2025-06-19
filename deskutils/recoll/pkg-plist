@@ -6,7 +6,7 @@ bin/xadump
 %%PYTHON_SITELIBDIR%%/Recoll-%%VERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/Recoll-%%VERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/Recoll-%%VERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
-%%PYTHON_SITELIBDIR%%/recoll/_recoll%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/recoll/_recoll%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/recoll/__init__.py
 %%PYTHON_SITELIBDIR%%/recoll/__init__.pyc
 %%PYTHON_SITELIBDIR%%/recoll/__pycache__/rclextract.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -21,10 +21,10 @@ bin/xadump
 %%CHM%%%%PYTHON_SITELIBDIR%%/recollchm/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%CHM%%%%PYTHON_SITELIBDIR%%/recollchm/__pycache__/chm.cpython-%%PYTHON_SUFFIX%%.pyc
 %%CHM%%%%PYTHON_SITELIBDIR%%/recollchm/__pycache__/chmlib.cpython-%%PYTHON_SUFFIX%%.pyc
-%%CHM%%%%PYTHON_SITELIBDIR%%/recollchm/_chmlib%%PYTHON_EXT_SUFFIX%%.so
+%%CHM%%%%PYTHON_SITELIBDIR%%/recollchm/_chmlib%%PYTHON_TAG%%.so
 %%CHM%%%%PYTHON_SITELIBDIR%%/recollchm/chm.py
 %%CHM%%%%PYTHON_SITELIBDIR%%/recollchm/chmlib.py
-%%CHM%%%%PYTHON_SITELIBDIR%%/recollchm/extra%%PYTHON_EXT_SUFFIX%%.so
+%%CHM%%%%PYTHON_SITELIBDIR%%/recollchm/extra%%PYTHON_TAG%%.so
 %%CHM%%%%PYTHON_SITELIBDIR%%/recollchm-0.8.4.1+git-py%%PYTHON_VER%%.egg-info/PKG-INFO
 %%CHM%%%%PYTHON_SITELIBDIR%%/recollchm-0.8.4.1+git-py%%PYTHON_VER%%.egg-info/SOURCES.txt
 %%CHM%%%%PYTHON_SITELIBDIR%%/recollchm-0.8.4.1+git-py%%PYTHON_VER%%.egg-info/dependency_links.txt

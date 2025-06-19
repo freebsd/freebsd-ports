@@ -31,7 +31,7 @@ CONFLICTS_BUILD=	${PYTHON_PKGNAMEPREFIX}-tensorflow
 
 post-install:
 	@${STRIP_CMD} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/fsph/_fsph${PYTHON_EXT_SUFFIX}.so
-		#${STAGEDIR}${PYTHON_SITELIBDIR}/fsph/_tf_ops${PYTHON_EXT_SUFFIX}.so
+		${STAGEDIR}${PYTHON_SITELIBDIR}/fsph/_fsph${PYTHON_TAG}.so
+		#${STAGEDIR}${PYTHON_SITELIBDIR}/fsph/_tf_ops${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

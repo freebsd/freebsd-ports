@@ -27,5 +27,5 @@
 %%PYTHON_SITELIBDIR%%/gemmi/examples/sub_ccd.py
 %%PYTHON_SITELIBDIR%%/gemmi/examples/to_rdkit.py
 %%PYTHON_SITELIBDIR%%/gemmi/examples/weight.py
-%%PYTHON_SITELIBDIR%%/gemmi/gemmi_ext%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/gemmi/gemmi_ext%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/gemmi/py.typed

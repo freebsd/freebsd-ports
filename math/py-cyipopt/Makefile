@@ -27,6 +27,6 @@ GH_ACCOUNT=	matthias-k
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/ipopt_wrapper${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/ipopt_wrapper${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

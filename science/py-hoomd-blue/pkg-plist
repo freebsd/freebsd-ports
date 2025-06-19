@@ -6,7 +6,7 @@ lib/cmake/hoomd/hoomd-macros.cmake
 lib/cmake/hoomd/hoomd-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/__init__.py
-%%PYTHON_SITELIBDIR%%/hoomd/_hoomd%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/hoomd/_hoomd%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/hoomd/box.py
 %%PYTHON_SITELIBDIR%%/hoomd/communicator.py
 %%PYTHON_SITELIBDIR%%/hoomd/conftest.py
@@ -37,7 +37,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/filter/tags.py
 %%PYTHON_SITELIBDIR%%/hoomd/filter/type_.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/__init__.py
-%%PYTHON_SITELIBDIR%%/hoomd/hpmc/_hpmc%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/_hpmc%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/compute.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/external/__init__.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/external/external.py
@@ -690,7 +690,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/libquickhull.so
 %%PYTHON_SITELIBDIR%%/hoomd/logging.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/__init__.py
-%%PYTHON_SITELIBDIR%%/hoomd/md/_md%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/hoomd/md/_md%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/hoomd/md/alchemy/__init__.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/alchemy/methods.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/alchemy/pair.py
@@ -781,7 +781,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/update.py
 %%PYTHON_SITELIBDIR%%/hoomd/mesh.py
 %%PYTHON_SITELIBDIR%%/hoomd/mpcd/__init__.py
-%%PYTHON_SITELIBDIR%%/hoomd/mpcd/_mpcd%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/hoomd/mpcd/_mpcd%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/hoomd/mpcd/collide.py
 %%PYTHON_SITELIBDIR%%/hoomd/mpcd/fill.py
 %%PYTHON_SITELIBDIR%%/hoomd/mpcd/force.py

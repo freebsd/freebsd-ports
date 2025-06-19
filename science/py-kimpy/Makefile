@@ -20,6 +20,6 @@ USES=		compiler:c++20-lang pkgconfig python
 USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://github.com/openkim/kimpy/issues/16
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/kimpy/*${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/kimpy/*${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

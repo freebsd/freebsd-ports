@@ -22,6 +22,6 @@ USE_PYTHON=	pep517 autoplist pytest # tests are broken, see https://github.com/r
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/utils_find_1st/find_1st${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/utils_find_1st/find_1st${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

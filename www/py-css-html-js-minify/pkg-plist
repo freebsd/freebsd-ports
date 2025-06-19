@@ -1,11 +1,11 @@
 bin/css-html-js-minify
 %%PYTHON_SITELIBDIR%%/css_html_js_minify/__init__.py
-%%PYTHON_SITELIBDIR%%/css_html_js_minify/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-%%PYTHON_SITELIBDIR%%/css_html_js_minify/__pycache__/css_minifier%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-%%PYTHON_SITELIBDIR%%/css_html_js_minify/__pycache__/html_minifier%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-%%PYTHON_SITELIBDIR%%/css_html_js_minify/__pycache__/js_minifier%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-%%PYTHON_SITELIBDIR%%/css_html_js_minify/__pycache__/minify%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-%%PYTHON_SITELIBDIR%%/css_html_js_minify/__pycache__/variables%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/css_html_js_minify/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/css_html_js_minify/__pycache__/css_minifier%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/css_html_js_minify/__pycache__/html_minifier%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/css_html_js_minify/__pycache__/js_minifier%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/css_html_js_minify/__pycache__/minify%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/css_html_js_minify/__pycache__/variables%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_SITELIBDIR%%/css_html_js_minify/css_minifier.py
 %%PYTHON_SITELIBDIR%%/css_html_js_minify/html_minifier.py
 %%PYTHON_SITELIBDIR%%/css_html_js_minify/js_minifier.py

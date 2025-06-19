@@ -55,7 +55,7 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${PYTHON_LIBDIR}/lib-dynload/
 	${INSTALL_DATA} ${WRKSRC}/traceTemplate.html ${STAGEDIR}${DATADIR}/
-	${INSTALL_LIB} ${WRKSRC}/xed${PYTHON_EXT_SUFFIX}.so ${STAGEDIR}${PYTHON_LIBDIR}/lib-dynload/
+	${INSTALL_LIB} ${WRKSRC}/xed${PYTHON_TAG}.so ${STAGEDIR}${PYTHON_LIBDIR}/lib-dynload/
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} '__pycache__ instrData microArchConfigs.py x64_lib.py' ${STAGEDIR}${PYTHON_LIBDIR})
 	${INSTALL_SCRIPT} ${WRKSRC}/uiCA.py ${STAGEDIR}${PREFIX}/bin/uiCA
 

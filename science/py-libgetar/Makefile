@@ -26,7 +26,7 @@ GH_ACCOUNT=	glotzerlab
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gtar/_gtar${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gtar/_gtar${PYTHON_TAG}.so
 
 do-test:
 	@cd ${WRKSRC}/test && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m unittest discover

@@ -43,6 +43,6 @@ do-install:
 	# install
 	cd ${BUILD_WRKSRC} && ${SETENV} ${BUILD_ENV} ${PYTHON_CMD} waf install --only-python --prefix ${PREFIX} --destdir ${STAGEDIR}
 	# strip
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/essentia/_essentia${PYTHON_EXT_SUFFIX}.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/essentia/_essentia${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

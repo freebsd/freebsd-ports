@@ -14,7 +14,7 @@ lib/libgnuradio-osmosdr.so
 lib/libgnuradio-osmosdr.so.0.2.0
 lib/libgnuradio-osmosdr.so.0.2.0.0
 %%PYTHON_SITELIBDIR%%/osmosdr/__init__.py
-%%PYTHON_SITELIBDIR%%/osmosdr/osmosdr_python%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/osmosdr/osmosdr_python%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/osmosdr/osmocom_siggen_base.py
 libdata/pkgconfig/gnuradio-osmosdr.pc
 share/gnuradio/grc/blocks/osmosdr_sink.block.yml

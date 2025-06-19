@@ -21,6 +21,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	coleifer
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/sqlcipher3/_sqlite3${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/sqlcipher3/_sqlite3${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

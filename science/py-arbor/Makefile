@@ -39,7 +39,7 @@ post-patch:
 	@${ECHO} ${DISTVERSION} > ${WRKSRC}/VERSION
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/arbor/_arbor${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/arbor/_arbor${PYTHON_TAG}.so
 
 do-test: # some tests fail with 'make'-related errors
 	@cd ${BUILD_WRKSRC} && \

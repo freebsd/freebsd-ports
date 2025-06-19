@@ -22,7 +22,7 @@ TEST_WRKSRC=	${WRKSRC}/test
 
 post-install:
 	@${STRIP_CMD} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/rpack/_core${PYTHON_EXT_SUFFIX}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/rpack/_rpack${PYTHON_EXT_SUFFIX}.so
+		${STAGEDIR}${PYTHON_SITELIBDIR}/rpack/_core${PYTHON_TAG}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/rpack/_rpack${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

@@ -76,8 +76,8 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/bezier.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/category.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/category.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/cbook%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/cbook%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/cbook%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/cbook%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/cm.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/cm.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/collections.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -156,8 +156,8 @@
 %%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/ticker.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/transforms.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/transforms.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/typing%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/typing%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/typing%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/typing%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/units.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/units.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/matplotlib/__pycache__/widgets.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc

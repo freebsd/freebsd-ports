@@ -18,7 +18,7 @@ USES+=		localbase
 USE_PYTHON=	distutils
 
 HSPLVER=	1.7
-PLIST_FILES=	${PYTHON_SITELIBDIR}/hunspell${PYTHON_EXT_SUFFIX}.so
+PLIST_FILES=	${PYTHON_SITELIBDIR}/hunspell${PYTHON_TAG}.so
 
 pre-configure:
 	${REINPLACE_CMD} -e "s|/usr/include|${LOCALBASE}/include|"	\

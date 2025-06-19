@@ -45,7 +45,7 @@ post-install-PYTHON-on:
 	@${FIND} ${STAGEDIR} -name "*.pyc" -delete
 	@${FIND} ${STAGEDIR} -name __pycache__ -delete
 	# strip binary
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/chemicalfun/PyChemicalFun${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/chemicalfun/PyChemicalFun${PYTHON_TAG}.so
 
 post-test:
 	@${ECHO} "==> run C++ tests"

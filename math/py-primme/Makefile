@@ -32,6 +32,6 @@ TEST_TARGET=	test
 BINARY_ALIAS=	python2=${PYTHON_CMD}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/primme${PYTHON_EXT_SUFFIX}.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/primme${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

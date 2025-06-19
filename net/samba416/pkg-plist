@@ -413,8 +413,8 @@ share/man/man8/winbindd.8.gz
 @comment Use bundled libraries
 %%SAMBA4_BUNDLED_CMOCKA%%%%SAMBA4_LIBDIR%%/private/libcmocka-samba4.so
 %%SAMBA4_BUNDLED_LDB%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_ldb_text.py
-%%SAMBA4_BUNDLED_LDB%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/ldb%%PYTHON_EXT_SUFFIX%%.so
-%%SAMBA4_BUNDLED_LDB%%%%PYTHON3%%%%SAMBA4_LIBDIR%%/private/libpyldb-util%%PYTHON_EXT_SUFFIX%%-samba4.so
+%%SAMBA4_BUNDLED_LDB%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/ldb%%PYTHON_TAG%%.so
+%%SAMBA4_BUNDLED_LDB%%%%PYTHON3%%%%SAMBA4_LIBDIR%%/private/libpyldb-util%%PYTHON_TAG%%-samba4.so
 %%SAMBA4_BUNDLED_LDB%%bin/samba-ldbdump
 %%SAMBA4_BUNDLED_LDB%%bin/samba-ldbadd
 %%SAMBA4_BUNDLED_LDB%%bin/samba-ldbdel
@@ -448,17 +448,17 @@ share/man/man8/winbindd.8.gz
 %%SAMBA4_BUNDLED_TDB%%share/man/man8/samba-tdbdump.8.gz
 %%SAMBA4_BUNDLED_TDB%%share/man/man8/samba-tdbrestore.8.gz
 %%SAMBA4_BUNDLED_TDB%%share/man/man8/samba-tdbtool.8.gz
-%%SAMBA4_BUNDLED_TALLOC%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/talloc%%PYTHON_EXT_SUFFIX%%.so
-%%SAMBA4_BUNDLED_TALLOC%%%%PYTHON3%%%%SAMBA4_LIBDIR%%/private/libpytalloc-util%%PYTHON_EXT_SUFFIX%%-samba4.so
+%%SAMBA4_BUNDLED_TALLOC%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/talloc%%PYTHON_TAG%%.so
+%%SAMBA4_BUNDLED_TALLOC%%%%PYTHON3%%%%SAMBA4_LIBDIR%%/private/libpytalloc-util%%PYTHON_TAG%%-samba4.so
 %%SAMBA4_BUNDLED_TALLOC%%%%SAMBA4_LIBDIR%%/private/libtalloc-samba4.so
 %%SAMBA4_BUNDLED_TALLOC%%share/man/man3/talloc.3.gz
 %%SAMBA4_BUNDLED_TDB%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_tdb_text.py
-%%SAMBA4_BUNDLED_TDB%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/tdb%%PYTHON_EXT_SUFFIX%%.so
+%%SAMBA4_BUNDLED_TDB%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/tdb%%PYTHON_TAG%%.so
 %%SAMBA4_BUNDLED_TDB%%bin/samba-tdbbackup
 %%SAMBA4_BUNDLED_TDB%%bin/samba-tdbdump
 %%SAMBA4_BUNDLED_TDB%%bin/samba-tdbrestore
 %%SAMBA4_BUNDLED_TDB%%bin/samba-tdbtool
 %%SAMBA4_BUNDLED_TDB%%%%SAMBA4_LIBDIR%%/private/libtdb-samba4.so
-%%SAMBA4_BUNDLED_TEVENT%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_tevent%%PYTHON_EXT_SUFFIX%%.so
+%%SAMBA4_BUNDLED_TEVENT%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_tevent%%PYTHON_TAG%%.so
 %%SAMBA4_BUNDLED_TEVENT%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/tevent.py
 %%SAMBA4_BUNDLED_TEVENT%%%%SAMBA4_LIBDIR%%/private/libtevent-samba4.so

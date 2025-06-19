@@ -26,7 +26,7 @@ OPTIONS_SUB=	yes
 
 PHP_CONFIGURE_WITH=	php
 PHP_USES=		php:build
-PYTHON_CONFIGURE_WITH=	python python-libext=${PYTHON_EXT_SUFFIX}.so
+PYTHON_CONFIGURE_WITH=	python python-libext=${PYTHON_TAG}.so
 PYTHON_USES=		python
 RUBY_CONFIGURE_WITH=	ruby
 RUBY_USES=		ruby

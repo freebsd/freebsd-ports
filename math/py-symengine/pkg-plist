@@ -3,7 +3,7 @@
 %%PYTHON_SITELIBDIR%%/symengine/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/symengine/lib/pywrapper.h
 %%PYTHON_SITELIBDIR%%/symengine/lib/symengine.pxd
-%%PYTHON_SITELIBDIR%%/symengine/lib/symengine_wrapper%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/symengine/lib/symengine_wrapper%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/symengine/lib/symengine_wrapper.pxd
 %%PYTHON_SITELIBDIR%%/symengine/printing.py
 %%PYTHON_SITELIBDIR%%/symengine/sympy_compat.py

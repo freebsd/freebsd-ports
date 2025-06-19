@@ -22,6 +22,6 @@ USES=		compiler:c++17-lang python
 USE_PYTHON=	distutils autoplist
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/clingcon/_clingcon${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/clingcon/_clingcon${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

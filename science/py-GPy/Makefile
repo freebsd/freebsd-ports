@@ -31,8 +31,8 @@ POST_PLIST=	fix-plist
 
 post-install:
 	@${STRIP_CMD} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/GPy/*/*${PYTHON_EXT_SUFFIX}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/GPy/*/*/*${PYTHON_EXT_SUFFIX}.so
+		${STAGEDIR}${PYTHON_SITELIBDIR}/GPy/*/*${PYTHON_TAG}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/GPy/*/*/*${PYTHON_TAG}.so
 
 fix-plist: # workaroud for /usr/ports/science/py-GPy/work-py311/.PLIST.mktmp
 	@${REINPLACE_CMD} -e "s|.*__pycache__/mpi_test__.*$$||" ${TMPPLIST}

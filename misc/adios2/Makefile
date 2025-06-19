@@ -58,6 +58,6 @@ PORTDOCS=	*
 # several tests fail, see https://github.com/ornladios/ADIOS2/issues/3286
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/adios2/bindings/adios2_bindings${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/adios2/bindings/adios2_bindings${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

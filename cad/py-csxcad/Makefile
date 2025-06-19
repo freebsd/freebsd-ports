@@ -30,7 +30,7 @@ post-patch:
 
 post-install:
 .for name in CSPrimitives CSProperties CSRectGrid CSTransform CSXCAD ParameterObjects Utilities
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/CSXCAD/${name}${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/CSXCAD/${name}${PYTHON_TAG}.so
 .endfor
 
 .include <bsd.port.mk>

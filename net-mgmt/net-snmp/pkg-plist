@@ -610,7 +610,7 @@ share/man/man8/snmptrapd.8.gz
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/__pycache__/client.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/__pycache__/client.cpython-%%PYTHON_SUFFIX%%.pyc
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/client.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/client_intf%%PYTHON_EXT_SUFFIX%%.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/client_intf%%PYTHON_TAG%%.so
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/__init__.py
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/netsnmp/tests/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc

@@ -24,7 +24,7 @@ WRKSRC_SUBDIR=	python
 TEST_WRKSRC=	${WRKSRC}/../tests/python
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-PLIST_FILES=	${PYTHON_SITELIBDIR}/zfpy${PYTHON_EXT_SUFFIX}.so
+PLIST_FILES=	${PYTHON_SITELIBDIR}/zfpy${PYTHON_TAG}.so
 
 # tests fail to run, see https://github.com/LLNL/zfp/issues/251
 

@@ -361,7 +361,7 @@ lib/libadios2_perfstubs.so.2.10.2
 %%PYTHON_SITELIBDIR%%/adios2/adios.py
 %%PYTHON_SITELIBDIR%%/adios2/attribute.py
 %%PYTHON_SITELIBDIR%%/adios2/bindings/__init__.py
-%%PYTHON_SITELIBDIR%%/adios2/bindings/adios2_bindings%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/adios2/bindings/adios2_bindings%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/adios2/bp4dbg/__init__.py
 %%PYTHON_SITELIBDIR%%/adios2/bp4dbg/data.py
 %%PYTHON_SITELIBDIR%%/adios2/bp4dbg/idxtable.py

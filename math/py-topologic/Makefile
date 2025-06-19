@@ -27,13 +27,13 @@ CXXFLAGS+=	-I${LOCALBASE}/include/OpenCASCADE \
 		-I${LOCALBASE}/include/TopologicCore
 LDFLAGS+=	-L${LOCALBASE}/lib/TopologicCore
 
-PLIST_FILES=	${PYTHON_SITELIBDIR}/topologic_core${PYTHON_EXT_SUFFIX}.so
+PLIST_FILES=	${PYTHON_SITELIBDIR}/topologic_core${PYTHON_TAG}.so
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 do-install: # workaround for https://github.com/wassimj/Topologic/issues/34
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-	${INSTALL_LIB} ${BUILD_WRKSRC}/topologic_core${PYTHON_EXT_SUFFIX}.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${INSTALL_LIB} ${BUILD_WRKSRC}/topologic_core${PYTHON_TAG}.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 do-test:
 .for tst in topologictest01 topologictest02

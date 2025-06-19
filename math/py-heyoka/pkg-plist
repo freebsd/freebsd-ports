@@ -23,6 +23,6 @@
 %%PYTHON_SITELIBDIR%%/heyoka/_test_vsop2013.py
 %%PYTHON_SITELIBDIR%%/heyoka/_version.py
 %%PYTHON_SITELIBDIR%%/heyoka/callback/__init__.py
-%%PYTHON_SITELIBDIR%%/heyoka/core%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/heyoka/core%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/heyoka/model/__init__.py
 %%PYTHON_SITELIBDIR%%/heyoka/test.py

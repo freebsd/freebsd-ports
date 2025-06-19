@@ -1,6 +1,6 @@
 %%PYTHON_SITELIBDIR%%/fresnel/__init__.py
-%%PYTHON_SITELIBDIR%%/fresnel/_common%%PYTHON_EXT_SUFFIX%%.so
-%%PYTHON_SITELIBDIR%%/fresnel/_cpu%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/fresnel/_common%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/fresnel/_cpu%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/fresnel/camera.py
 %%PYTHON_SITELIBDIR%%/fresnel/color.py
 %%PYTHON_SITELIBDIR%%/fresnel/conftest.py

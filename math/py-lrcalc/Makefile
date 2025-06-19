@@ -21,6 +21,6 @@ USE_PYTHON=	cython distutils
 LDFLAGS+=	-s
 .endif
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/lrcalc%%PYTHON_EXT_SUFFIX%%.so
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/lrcalc%%PYTHON_TAG%%.so
 
 .include <bsd.port.mk>

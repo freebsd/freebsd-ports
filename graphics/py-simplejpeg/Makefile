@@ -25,7 +25,7 @@ post-extract: # force cythonization because pre-cythonized _jpeg.c fails to comp
 	@${RM} ${WRKSRC}/simplejpeg/_jpeg.c
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/simplejpeg/_jpeg${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/simplejpeg/_jpeg${PYTHON_TAG}.so
 
 # tests as of 1.8.0: 61 passed in 10.57s
 

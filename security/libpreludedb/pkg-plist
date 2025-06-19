@@ -47,8 +47,8 @@ share/aclocal/libpreludedb.m4
 %%PORTDOCS%%share/gtk-doc/html/libpreludedb/style.css
 %%PORTDOCS%%share/gtk-doc/html/libpreludedb/up.png
 %%PORTDOCS%%share/gtk-doc/html/libpreludedb/up-insensitive.png
-%%PYTHON_SITELIBDIR%%/__pycache__/preludedb%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/_preludedb%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/__pycache__/preludedb%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/_preludedb%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/preludedb-5.2.0-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/preludedb.py
 %%DATADIR%%/classic/mysql-update-14-1.sql

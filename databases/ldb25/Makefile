@@ -95,12 +95,12 @@ CONFIGURE_ARGS+=	--disable-python
 .else
 USES+=			gettext-runtime python
 
-PLIST_FILES+=	${PKGCONFIGDIR}/pyldb-util${PYTHON_EXT_SUFFIX}.pc \
+PLIST_FILES+=	${PKGCONFIGDIR}/pyldb-util${PYTHON_TAG}.pc \
 		${PYTHON_SITELIBDIR}/_ldb_text.py \
-		${PYTHON_SITELIBDIR}/ldb${PYTHON_EXT_SUFFIX}.so \
+		${PYTHON_SITELIBDIR}/ldb${PYTHON_TAG}.so \
 		include/pyldb.h \
-		lib/libpyldb-util${PYTHON_EXT_SUFFIX}.so \
-		lib/libpyldb-util${PYTHON_EXT_SUFFIX}.so.2
+		lib/libpyldb-util${PYTHON_TAG}.so \
+		lib/libpyldb-util${PYTHON_TAG}.so.2
 .endif
 
 # No fancy color error messages
@@ -142,8 +142,8 @@ post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/${lib}
 .endfor
 .if ${PORT_OPTIONS:MPYTHON3} && !defined(NO_PYTHON)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util${PYTHON_EXT_SUFFIX}.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb${PYTHON_EXT_SUFFIX}.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util${PYTHON_TAG}.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb${PYTHON_TAG}.so
 .endif
 
 .include <bsd.port.post.mk>

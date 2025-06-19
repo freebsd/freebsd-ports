@@ -28,8 +28,8 @@ USE_PYTHON=	autoplist cython3 cython3_run pep517
 
 post-install:
 	@${STRIP_CMD} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/qutip/*/*${PYTHON_EXT_SUFFIX}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/qutip/*/*/*${PYTHON_EXT_SUFFIX}.so
+		${STAGEDIR}${PYTHON_SITELIBDIR}/qutip/*/*${PYTHON_TAG}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/qutip/*/*/*${PYTHON_TAG}.so
 
 do-test: # 3 tests fail, see https://github.com/qutip/qutip/issues/2190
 	@${ECHO} "==> Running tests. Please note that tests require X11 display access."

@@ -54,7 +54,7 @@ lib/cmake/vpl/VPLConfigVersion.cmake
 lib/libvpl.so
 lib/libvpl.so.2
 lib/libvpl.so.2.7
-%%PYTHON%%%%PYTHON_LIBDIR%%/pyvpl%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%%%PYTHON_LIBDIR%%/pyvpl%%PYTHON_TAG%%.so
 lib/vpl/libvpl_wayland.so
 libdata/pkgconfig/vpl.pc
 %%DATADIR%%/examples/content/cars_320x240.h265

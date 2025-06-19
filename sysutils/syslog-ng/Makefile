@@ -157,20 +157,20 @@ PYTHON_CONFIGURE_OFF=		--disable-python
 PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
 		etc/python/README.md \
 		lib/syslog-ng/python/requirements.txt \
-		lib/syslog-ng/python/syslogng/__pycache__/confgen%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/confgen%%PYTHON_TAG%%.pyc \
 		lib/syslog-ng/python/syslogng/confgen.py \
 		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/PKG-INFO \
 		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt \
 		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt \
 		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/top_level.txt \
-		lib/syslog-ng/python/syslogng/__pycache__/dest%%PYTHON_EXT_SUFFIX%%.pyc \
-		lib/syslog-ng/python/syslogng/__pycache__/logger%%PYTHON_EXT_SUFFIX%%.pyc \
-		lib/syslog-ng/python/syslogng/__pycache__/message%%PYTHON_EXT_SUFFIX%%.pyc \
-		lib/syslog-ng/python/syslogng/__pycache__/parser%%PYTHON_EXT_SUFFIX%%.pyc \
-		lib/syslog-ng/python/syslogng/__pycache__/persist%%PYTHON_EXT_SUFFIX%%.pyc \
-		lib/syslog-ng/python/syslogng/__pycache__/source%%PYTHON_EXT_SUFFIX%%.pyc \
-		lib/syslog-ng/python/syslogng/__pycache__/template%%PYTHON_EXT_SUFFIX%%.pyc \
-                lib/syslog-ng/python/syslogng/__pycache__/reloc%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/dest%%PYTHON_TAG%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/logger%%PYTHON_TAG%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/message%%PYTHON_TAG%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/parser%%PYTHON_TAG%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/persist%%PYTHON_TAG%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/source%%PYTHON_TAG%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/template%%PYTHON_TAG%%.pyc \
+                lib/syslog-ng/python/syslogng/__pycache__/reloc%%PYTHON_TAG%%.pyc \
 		lib/syslog-ng/python/syslogng/dest.py \
 		lib/syslog-ng/python/syslogng/logger.py \
 		lib/syslog-ng/python/syslogng/message.py \
@@ -225,20 +225,20 @@ PYTHON_MOD_CONFIGURE_ON=	--enable-python-modules
 PYTHON_MOD_CONFIGURE_OFF=	--disable-python-modules
 PYTHON_MOD_PLIST_FILES=		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/requires.txt \
 		lib/syslog-ng/python/syslogng/modules/kubernetes/__init__.py \
-		lib/syslog-ng/python/syslogng/modules/kubernetes/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/modules/kubernetes/__pycache__/__init__%%PYTHON_TAG%%.pyc \
 		lib/syslog-ng/python/syslogng/modules/kubernetes/scl/kubernetes.conf \
 		lib/syslog-ng/python/syslogng/modules/example/__init__.py \
-		lib/syslog-ng/python/syslogng/modules/example/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/modules/example/__pycache__/__init__%%PYTHON_TAG%%.pyc \
 		lib/syslog-ng/python/syslogng/modules/example/scl/example.conf \
 		lib/syslog-ng/python/syslogng/modules/hypr/__init__.py \
-		lib/syslog-ng/python/syslogng/modules/hypr/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/modules/hypr/__pycache__/__init__%%PYTHON_TAG%%.pyc \
 		lib/syslog-ng/python/syslogng/modules/hypr/scl/hypr.conf \
                 lib/syslog-ng/python/syslogng/modules/s3/__init__.py \
-                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc \
-                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/compressable_file_buffer%%PYTHON_EXT_SUFFIX%%.pyc \
-                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_destination%%PYTHON_EXT_SUFFIX%%.pyc \
-                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_object_buffer%%PYTHON_EXT_SUFFIX%%.pyc \
-                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_session_handler%%PYTHON_EXT_SUFFIX%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/__init__%%PYTHON_TAG%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/compressable_file_buffer%%PYTHON_TAG%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_destination%%PYTHON_TAG%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_object_buffer%%PYTHON_TAG%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_session_handler%%PYTHON_TAG%%.pyc \
                 lib/syslog-ng/python/syslogng/modules/s3/s3_object_buffer.py \
                 lib/syslog-ng/python/syslogng/modules/s3/s3_session_handler.py \
                 lib/syslog-ng/python/syslogng/modules/s3/compressable_file_buffer.py \

@@ -21,6 +21,6 @@
 %%PYTHON_SITELIBDIR%%/pygmo/_s_policy_test.py
 %%PYTHON_SITELIBDIR%%/pygmo/_topology_test.py
 %%PYTHON_SITELIBDIR%%/pygmo/_version.py
-%%PYTHON_SITELIBDIR%%/pygmo/core%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/pygmo/core%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/pygmo/plotting/__init__.py
 %%PYTHON_SITELIBDIR%%/pygmo/test.py

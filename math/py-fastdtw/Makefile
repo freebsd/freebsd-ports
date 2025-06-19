@@ -26,6 +26,6 @@ GH_ACCOUNT=	slaypni
 USE_PYTHON=	distutils cython autoplist pytest # tests fail: https://github.com/slaypni/fastdtw/issues/23
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/fastdtw/_fastdtw${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/fastdtw/_fastdtw${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

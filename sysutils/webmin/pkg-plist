@@ -22089,8 +22089,8 @@ lib/webmin/webmin-pam
 lib/webmin/webmin-search-lib.pl
 lib/webmin/webmin-systemd
 lib/webmin/webmin/CHANGELOG
-lib/webmin/webmin/__pycache__/acme_tiny%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-lib/webmin/webmin/__pycache__/acme_tiny%%PYTHON_EXT_SUFFIX%%.pyc
+lib/webmin/webmin/__pycache__/acme_tiny%%PYTHON_TAG%%.opt-1.pyc
+lib/webmin/webmin/__pycache__/acme_tiny%%PYTHON_TAG%%.pyc
 lib/webmin/webmin/acme_tiny.py
 lib/webmin/webmin/adminupgrade
 lib/webmin/webmin/backup_config.pl

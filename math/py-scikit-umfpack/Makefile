@@ -39,6 +39,6 @@ post-patch:
 		${WRKSRC}/scikits/umfpack/meson.build
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/scikits/umfpack/__umfpack${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/scikits/umfpack/__umfpack${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

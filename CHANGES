@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20250619:
+AUTHOR: python@FreeBSD.org
+
+  PYTHON_EXT_SUFFIX has been renamed to PYTHON_TAG due to semantic
+  ambiguity between existing ports usage and PEP 3147 and PEP 3149's
+  specifications. Especially with Python 3.13's free-threaded mode,
+  the tags between bytecode and compiled extension modules do not
+  necessarily match. See python.mk for details.
+
 20250307:
 AUTHOR: python@FreeBSD.org
 

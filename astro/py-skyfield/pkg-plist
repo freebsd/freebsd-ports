@@ -194,8 +194,8 @@
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_io_parsing.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_io.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_io.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_jpllib%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_jpllib%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_jpllib%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_jpllib%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_keplerlib.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_keplerlib.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/skyfield/tests/__pycache__/test_magnitudes_raw.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc

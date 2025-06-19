@@ -10,7 +10,7 @@ lib/libpwquality.so.1.0.2
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality-1.4.5-py%%PYTHON_VER%%.egg-info/SOURCES.txt
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality-1.4.5-py%%PYTHON_VER%%.egg-info/dependency_links.txt
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality-1.4.5-py%%PYTHON_VER%%.egg-info/top_level.txt
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality%%PYTHON_TAG%%.so
 libdata/pkgconfig/pwquality.pc
 share/man/man1/pwmake.1.gz
 share/man/man1/pwscore.1.gz

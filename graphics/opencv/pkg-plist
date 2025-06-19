@@ -847,7 +847,7 @@ lib/libopencv_xphoto.so.411
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/plot/__init__.pyi
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/ppf_match_3d/__init__.pyi
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/py.typed
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/python-%%PYTHON_VER%%/cv2%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/python-%%PYTHON_VER%%/cv2%%PYTHON_TAG%%.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/quality/__init__.pyi
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/rapid/__init__.pyi
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/reg/__init__.pyi

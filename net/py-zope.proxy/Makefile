@@ -19,6 +19,6 @@ USES=		python
 USE_PYTHON=	autoplist pep517
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/zope/proxy/_zope_proxy_proxy${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/zope/proxy/_zope_proxy_proxy${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

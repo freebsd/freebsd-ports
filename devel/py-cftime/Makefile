@@ -23,6 +23,6 @@ USE_PYTHON=	autoplist cython distutils pytest
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cftime/_cftime${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cftime/_cftime${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

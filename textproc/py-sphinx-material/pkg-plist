@@ -1,8 +1,8 @@
 %%PYTHON_SITELIBDIR%%/sphinx_material/__init__.py
-%%PYTHON_SITELIBDIR%%/sphinx_material/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/sphinx_material/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/sphinx_material/__pycache__/_version%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/sphinx_material/__pycache__/_version%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/sphinx_material/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/sphinx_material/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/sphinx_material/__pycache__/_version%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/sphinx_material/__pycache__/_version%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/sphinx_material/_version.py
 %%PYTHON_SITELIBDIR%%/sphinx_material/sphinx_material/comments.html
 %%PYTHON_SITELIBDIR%%/sphinx_material/sphinx_material/globaltoc.html

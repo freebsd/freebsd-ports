@@ -27,6 +27,6 @@ USE_PYTHON=	autoplist cython3 pep517 pytest # pytest crashes on some tests, and 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/vispy/visuals/text/_sdf_cpu${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/vispy/visuals/text/_sdf_cpu${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

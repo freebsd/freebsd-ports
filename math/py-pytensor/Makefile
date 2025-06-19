@@ -30,7 +30,7 @@ USES=		python
 USE_PYTHON=	pep517 cython autoplist pytest # tests fail to run, see https://github.com/pymc-devs/pytensor/issues/355
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pytensor/scan/scan_perform${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pytensor/scan/scan_perform${PYTHON_TAG}.so
 
 # BUG: installs the file /usr/local/lib/python3.9/site-packages/bin/__init__.py, see https://github.com/pymc-devs/pytensor/issues/356
 

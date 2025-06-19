@@ -81,7 +81,7 @@ lib/libbareosfind.so.%%LIB_VERSION%%
 lib/libbareoslmdb.so
 lib/libbareoslmdb.so.24
 lib/libbareoslmdb.so.%%LIB_VERSION%%
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosfd%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosfd%%PYTHON_TAG%%.so
 share/man/man1/bareos-tray-monitor.1.gz
 share/man/man1/bconsole.1.gz
 share/man/man1/bsmtp.1.gz

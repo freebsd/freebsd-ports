@@ -21,6 +21,6 @@ USE_PYTHON=	pep517 cython concurrent autoplist pytest
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/cchardet/_cchardet${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/cchardet/_cchardet${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

@@ -147,7 +147,7 @@
 %%PYTHON_SITELIBDIR%%/guppy/heapy/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/guppy/heapy/__pycache__/pbhelp.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/guppy/heapy/__pycache__/pbhelp.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/guppy/heapy/heapyc%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/guppy/heapy/heapyc%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/guppy/heapy/pbhelp.py
 %%PYTHON_SITELIBDIR%%/guppy/heapy/test/__init__.py
 %%PYTHON_SITELIBDIR%%/guppy/heapy/test/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -208,5 +208,5 @@
 %%PYTHON_SITELIBDIR%%/guppy/sets/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/guppy/sets/__pycache__/test.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/guppy/sets/__pycache__/test.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/guppy/sets/setsc%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/guppy/sets/setsc%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/guppy/sets/test.py

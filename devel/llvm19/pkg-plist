@@ -146,7 +146,7 @@ bin/sancov%%LLVM_SUFFIX%%
 %%PYCLANG%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/clang/__init__.py
 %%PYCLANG%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/clang/cindex.py
 %%LLDB%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/lldb/__init__.py
-%%LLDB%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/lldb/_lldb%%PYTHON_EXT_SUFFIX%%%%PYTHON_ABIVER%%.so
+%%LLDB%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/lldb/_lldb%%PYTHON_TAG%%%%PYTHON_ABIVER%%.so
 %%LLDB%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/lldb/embedded_interpreter.py
 %%LLDB%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/lldb/formatters/Logger.py
 %%LLDB%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/lldb/formatters/__init__.py

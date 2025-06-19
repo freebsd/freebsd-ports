@@ -56,6 +56,6 @@ USE_PYTHON=	autoplist concurrent cryptography_test cython distutils pytest # 5 t
 
 post-install:
 	# strip binaries
-	@${FIND} ${STAGEDIR}${PREFIX} -name "*${PYTHON_EXT_SUFFIX}.so" | ${XARGS} ${STRIP_CMD}
+	@${FIND} ${STAGEDIR}${PREFIX} -name "*${PYTHON_TAG}.so" | ${XARGS} ${STRIP_CMD}
 
 .include <bsd.port.mk>

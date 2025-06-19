@@ -148,7 +148,7 @@ include/psi4/psifiles.h
 include/psi4/pybind11.h
 include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/__init__.py
-%%PYTHON_SITELIBDIR%%/psi4/core%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/psi4/core%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/psi4/driver/__init__.py
 %%PYTHON_SITELIBDIR%%/psi4/driver/aliases.py
 %%PYTHON_SITELIBDIR%%/psi4/driver/constants.py

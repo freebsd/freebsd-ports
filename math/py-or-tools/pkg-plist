@@ -27,9 +27,9 @@
 %%PYTHON_SITELIBDIR%%/ortools/graph/__init__.py
 %%PYTHON_SITELIBDIR%%/ortools/graph/flow_problem_pb2.py
 %%PYTHON_SITELIBDIR%%/ortools/graph/python/__init__.py
-%%PYTHON_SITELIBDIR%%/ortools/graph/python/linear_sum_assignment%%PYTHON_EXT_SUFFIX%%.so
-%%PYTHON_SITELIBDIR%%/ortools/graph/python/max_flow%%PYTHON_EXT_SUFFIX%%.so
-%%PYTHON_SITELIBDIR%%/ortools/graph/python/min_cost_flow%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/ortools/graph/python/linear_sum_assignment%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/ortools/graph/python/max_flow%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/ortools/graph/python/min_cost_flow%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/ortools/init/__init__.py
 %%PYTHON_SITELIBDIR%%/ortools/init/_pywrapinit.so
 %%PYTHON_SITELIBDIR%%/ortools/init/pywrapinit.py
@@ -41,7 +41,7 @@
 %%PYTHON_SITELIBDIR%%/ortools/linear_solver/python/__init__.py
 %%PYTHON_SITELIBDIR%%/ortools/linear_solver/python/model_builder.py
 %%PYTHON_SITELIBDIR%%/ortools/linear_solver/python/model_builder_helper.py
-%%PYTHON_SITELIBDIR%%/ortools/linear_solver/python/pywrap_model_builder_helper%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/ortools/linear_solver/python/pywrap_model_builder_helper%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/ortools/linear_solver/pywraplp.py
 %%PYTHON_SITELIBDIR%%/ortools/packing/__init__.py
 %%PYTHON_SITELIBDIR%%/ortools/packing/multiple_dimensions_bin_packing_pb2.py
@@ -50,7 +50,7 @@
 %%PYTHON_SITELIBDIR%%/ortools/packing/vector_bin_packing_pb2.pyi
 %%PYTHON_SITELIBDIR%%/ortools/pdlp/__init__.py
 %%PYTHON_SITELIBDIR%%/ortools/pdlp/python/__init__.py
-%%PYTHON_SITELIBDIR%%/ortools/pdlp/python/pywrap_pdlp%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/ortools/pdlp/python/pywrap_pdlp%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/ortools/pdlp/solve_log_pb2.py
 %%PYTHON_SITELIBDIR%%/ortools/pdlp/solve_log_pb2.pyi
 %%PYTHON_SITELIBDIR%%/ortools/pdlp/solvers_pb2.py
@@ -67,7 +67,7 @@
 %%PYTHON_SITELIBDIR%%/ortools/sat/python/__init__.py
 %%PYTHON_SITELIBDIR%%/ortools/sat/python/cp_model.py
 %%PYTHON_SITELIBDIR%%/ortools/sat/python/cp_model_helper.py
-%%PYTHON_SITELIBDIR%%/ortools/sat/python/swig_helper%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/ortools/sat/python/swig_helper%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/ortools/sat/sat_parameters_pb2.py
 %%PYTHON_SITELIBDIR%%/ortools/sat/sat_parameters_pb2.pyi
 %%PYTHON_SITELIBDIR%%/ortools/scheduling/__init__.py
@@ -82,4 +82,4 @@
 %%PYTHON_SITELIBDIR%%/ortools/util/__init__.py
 %%PYTHON_SITELIBDIR%%/ortools/util/optional_boolean_pb2.py
 %%PYTHON_SITELIBDIR%%/ortools/util/python/__init__.py
-%%PYTHON_SITELIBDIR%%/ortools/util/python/sorted_interval_list%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/ortools/util/python/sorted_interval_list%%PYTHON_TAG%%.so

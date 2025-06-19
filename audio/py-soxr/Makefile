@@ -29,7 +29,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 xpost-install:
 	# strip binary
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/soxr/cysoxr${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/soxr/cysoxr${PYTHON_TAG}.so
 	# correct version as a workaround for https://github.com/dofuuz/python-soxr/issues/21
 	@${REINPLACE_CMD} -i '' -e 's|^version |__version__ |' ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/soxr/_version.py
 

@@ -67,12 +67,12 @@ MANPAGES_CONFIGURE_ENV_OFF=	XSLTPROC="false"
 PYTHON3_USES=		gettext-runtime python
 PYTHON3_USES_OFF=	python:build,test
 PYTHON3_CONFIGURE_OFF=	--disable-python
-PYTHON3_PLIST_FILES=	${PKGCONFIGDIR}/pyldb-util${PYTHON_EXT_SUFFIX}.pc \
+PYTHON3_PLIST_FILES=	${PKGCONFIGDIR}/pyldb-util${PYTHON_TAG}.pc \
 			${PYTHON_SITELIBDIR}/_ldb_text.py \
-			${PYTHON_SITELIBDIR}/ldb${PYTHON_EXT_SUFFIX}.so \
+			${PYTHON_SITELIBDIR}/ldb${PYTHON_TAG}.so \
 			include/pyldb.h \
-			lib/libpyldb-util${PYTHON_EXT_SUFFIX}.so \
-			lib/libpyldb-util${PYTHON_EXT_SUFFIX}.so.2
+			lib/libpyldb-util${PYTHON_TAG}.so \
+			lib/libpyldb-util${PYTHON_TAG}.so.2
 
 # No fancy color error messages
 _CFLAGS_clang=	-fno-color-diagnostics
@@ -137,7 +137,7 @@ post-install:
 .endfor
 
 post-install-PYTHON3-on:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util${PYTHON_EXT_SUFFIX}.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb${PYTHON_EXT_SUFFIX}.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util${PYTHON_TAG}.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

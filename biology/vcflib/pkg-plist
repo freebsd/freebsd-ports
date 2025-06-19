@@ -159,7 +159,7 @@ include/vcflib/var.hpp
 include/vcflib/vcf-c-api.h
 include/vcflib/vcf-wfa.h
 lib/libvcflib.a
-lib/pyvcflib%%PYTHON_EXT_SUFFIX%%.so
+lib/pyvcflib%%PYTHON_TAG%%.so
 share/man/man1/abba-baba.1.gz
 share/man/man1/bFst.1.gz
 share/man/man1/dumpContigsFromHeader.1.gz

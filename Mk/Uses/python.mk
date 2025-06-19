@@ -237,6 +237,19 @@
 #
 # PYTHON_BASESUFFIX	- PYTHON_SUFFIX without the threaded ABI flag.
 #
+# PYTHON_TAG		- Defined by PEP 3147, magic tag containing
+#			  implementation name and shorthand version,
+#			  primarily for bytecode files. Includes
+#			  preceding dot, e.g. .cpython-312,
+#			  .cpython-313, ...
+#
+# PYTHON_SOABI		- Defined by PEP 3149, tag containing
+#			  implementation name, shorthand version
+#			  and ABI tags, primarily for compiled
+#			  extension modules. Includes preceding
+#			  dot, e.g. .cpython-313, .cpython-313t,
+#			  .cpython-313td, ...
+#
 # PYTHON_MAJOR_VER	- The major release version of the chosen Python
 #			  interpreter, e.g. 2, 3, ...
 #
@@ -580,9 +593,11 @@ PYTHON_ABIVER!=		${PYTHON_CMD}-config --abiflags
 .  endif
 
 .  if ${PYTHON_REL} >= 30807
-PYTHON_EXT_SUFFIX=	.cpython-${PYTHON_BASESUFFIX}
+PYTHON_TAG=	.cpython-${PYTHON_BASESUFFIX}
+PYTHON_SOABI=	.cpython-${PYTHON_SUFFIX}
 .  else
-PYTHON_EXT_SUFFIX=	# empty
+PYTHON_TAG=	# empty
+PYTHON_SOABI=	# empty
 .  endif
 
 .  if ${PYTHON_MAJOR_VER} < 3
@@ -902,7 +917,8 @@ SUB_LIST+=	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR} \
 		PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR} \
 		PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYTHON_BASESUFFIX=${PYTHON_BASESUFFIX} \
-		PYTHON_EXT_SUFFIX=${PYTHON_EXT_SUFFIX} \
+		PYTHON_TAG=${PYTHON_TAG} \
+		PYTHON_SOABI=${PYTHON_SOABI} \
 		PYTHON_VER=${PYTHON_VER} \
 		PYTHON_BASEVER=${PYTHON_BASEVER} \
 		PYTHON_VERSION=${PYTHON_VERSION}
@@ -916,7 +932,8 @@ PLIST_SUB+=	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 		PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} \
 		PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYTHON_BASESUFFIX=${PYTHON_BASESUFFIX} \
-		PYTHON_EXT_SUFFIX=${PYTHON_EXT_SUFFIX} \
+		PYTHON_TAG=${PYTHON_TAG} \
+		PYTHON_SOABI=${PYTHON_SOABI} \
 		PYTHON_VER=${PYTHON_VER} \
 		PYTHON_BASEVER=${PYTHON_BASEVER} \
 		PYTHON_VERSION=${PYTHON_VERSION}

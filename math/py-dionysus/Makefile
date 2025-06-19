@@ -24,7 +24,7 @@ TEST_WRKSRC=	${WRKSRC}/tests
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 PLIST_FILES=	${PYTHON_SITELIBDIR}/dionysus/__init__.py \
-		${PYTHON_SITELIBDIR}/dionysus/_dionysus${PYTHON_EXT_SUFFIX}.so \
+		${PYTHON_SITELIBDIR}/dionysus/_dionysus${PYTHON_TAG}.so \
 		${PYTHON_SITELIBDIR}/dionysus/_version.py \
 		${PYTHON_SITELIBDIR}/dionysus/plot.py
 

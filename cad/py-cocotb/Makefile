@@ -41,7 +41,7 @@ VERILATOR_RUN_DEPENDS=	verilator:cad/verilator
 
 post-install:
 	@${STRIP_CMD} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/cocotb/simulator${PYTHON_EXT_SUFFIX}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/cocotb/simulator${PYTHON_TAG}.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/cocotb/libs/lib*.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/cocotb/libs/libcocotbvpi_icarus.vpl
 

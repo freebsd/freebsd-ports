@@ -399,7 +399,7 @@
 %%YCMDDIR%%/third_party/generic_server/tsconfig.json
 %%YCMDDIR%%/third_party/tern_runtime/package.json
 %%YCMDDIR%%/third_party/tsserver/package.json
-%%YCMDDIR%%/ycm_core%%PYTHON_EXT_SUFFIX%%.so
+%%YCMDDIR%%/ycm_core%%PYTHON_TAG%%.so
 %%YCMDDIR%%/ycmd/__init__.py
 %%YCMDDIR%%/ycmd/__main__.py
 %%YCMDDIR%%/ycmd/completers/__init__.py

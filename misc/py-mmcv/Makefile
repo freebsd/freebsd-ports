@@ -29,6 +29,6 @@ USES=		compiler:c++17-lang localbase python
 USE_PYTHON=	distutils cython autoplist # pytest: many test dependencies are missing
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/mmcv/_ext${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/mmcv/_ext${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

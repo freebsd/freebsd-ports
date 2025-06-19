@@ -21,7 +21,7 @@ USES=		python
 USE_PYTHON=	pep517 autoplist
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/libsqnomad${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/libsqnomad${PYTHON_TAG}.so
 
 # there are a lot of errors during build stemming from the numpy code, for example:
 # cc: error: unknown argument: '-mavx5124fmaps'

@@ -27,7 +27,7 @@ SUB_LIST+=	DISTVERSION=${DISTVERSION} \
 		TK_VER=${TK_VER}
 SUB_FILES=	pyproject.toml \
 		setup.py
-PLIST_FILES=	${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;}/lib-dynload/_tkinter${PYTHON_EXT_SUFFIX}.so
+PLIST_FILES=	${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;}/lib-dynload/_tkinter${PYTHON_TAG}.so
 
 PORTSCOUT=	ignore:1
 
@@ -36,10 +36,10 @@ pre-configure:
 	@${MV} ${WRKDIR}/setup.py ${WRKSRC}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_tkinter${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_tkinter${PYTHON_TAG}.so
 	# lib-dynload is the expected location
 	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_LIBDIR}/lib-dynload
-	@(cd ${STAGEDIR}${PYTHONPREFIX_LIBDIR}/lib-dynload && ${LN} -s ../site-packages/_tkinter${PYTHON_EXT_SUFFIX}.so)
+	@(cd ${STAGEDIR}${PYTHONPREFIX_LIBDIR}/lib-dynload && ${LN} -s ../site-packages/_tkinter${PYTHON_TAG}.so)
 
 do-test:
 	@${PYTHON_CMD} -c 'import tkinter' # minimal smoke test

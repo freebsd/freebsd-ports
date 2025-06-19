@@ -6,7 +6,7 @@ include/tdb.h
 lib/libtdb.so
 lib/libtdb.so.1
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_tdb_text.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/tdb%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/tdb%%PYTHON_TAG%%.so
 libdata/pkgconfig/tdb.pc
 %%MANPAGES%%share/man/man8/tdbbackup.8.gz
 %%MANPAGES%%share/man/man8/tdbdump.8.gz

@@ -186,7 +186,7 @@
 %%PYTHON_SITELIBDIR%%/IcePatch2/__init__.py
 %%PYTHON_SITELIBDIR%%/IcePatch2/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IcePatch2/__init__.pyo
-%%PYTHON_SITELIBDIR%%/IcePy%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/IcePy%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/IceStorm/IceStorm_ice.py
 %%PYTHON_SITELIBDIR%%/IceStorm/IceStorm_ice.pyc
 %%PYTHON_SITELIBDIR%%/IceStorm/IceStorm_ice.pyo

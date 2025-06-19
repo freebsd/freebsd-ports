@@ -201,7 +201,7 @@ lib/libuhd.so.4.8.0
 %%PYTHON_SITELIBDIR%%/uhd/dsp/__init__.py
 %%PYTHON_SITELIBDIR%%/uhd/dsp/signals.py
 %%PYTHON_SITELIBDIR%%/uhd/filters.py
-%%PYTHON_SITELIBDIR%%/uhd/libpyuhd%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/uhd/libpyuhd%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/uhd/property_tree.py
 %%PYTHON_SITELIBDIR%%/uhd/rfnoc.py
 %%PYTHON_SITELIBDIR%%/uhd/rfnoc_utils/__init__.py

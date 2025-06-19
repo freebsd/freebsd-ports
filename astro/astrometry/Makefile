@@ -81,7 +81,7 @@ post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/${file} ${STAGEDIR}${PREFIX}/bin/astrometry-${file}
 .endfor
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libastrometry.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/astrometry/solver/_solver${PYTHON_EXT_SUFFIX}.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/astrometry/solver/_solver${PYTHON_TAG}.so
 	@${REINPLACE_CMD} -i '' \
 		-e 's|${STAGEDIR}/usr/local/data|${DATADIR}|' \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.cfg

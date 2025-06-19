@@ -27,8 +27,8 @@ TEST_WRKSRC=	${WRKSRC}/tests
 post-install:
 	# strip binaries
 	@${STRIP_CMD} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/preprocessing/cyfix_variables${PYTHON_EXT_SUFFIX}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/preprocessing/presolve/cypresolve${PYTHON_EXT_SUFFIX}.so
+		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/preprocessing/cyfix_variables${PYTHON_TAG}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/preprocessing/presolve/cypresolve${PYTHON_TAG}.so
 	# remove conflicting __init__.py, see https://github.com/dwavesystems/dwave-preprocessing/issues/45
 	@${RM} -r \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/__init__.py \

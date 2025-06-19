@@ -48,4 +48,4 @@ lib/cmake/nanogui/nanoguiTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/nanogui/nanoguiTargets.cmake
 lib/libnanogui.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/nanogui/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/nanogui/nanogui_ext%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/nanogui/nanogui_ext%%PYTHON_TAG%%.so

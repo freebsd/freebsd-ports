@@ -26,8 +26,8 @@ post-install:
 	# strip binaries
 	@${STRIP_CMD} \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/libdwave-optimization.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/model${PYTHON_EXT_SUFFIX}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/symbols${PYTHON_EXT_SUFFIX}.so
+		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/model${PYTHON_TAG}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/symbols${PYTHON_TAG}.so
 	# remove conflicting __init__.py, see https://github.com/dwavesystems/dwave-system/issues/462
 	@${RM} -r \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/__init__.py \

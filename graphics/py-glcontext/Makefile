@@ -26,7 +26,7 @@ TEST_WRKSRC=	${WRKSRC}/tests
 
 post-install:
 	@${STRIP_CMD} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/glcontext/x11${PYTHON_EXT_SUFFIX}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/glcontext/egl${PYTHON_EXT_SUFFIX}.so
+		${STAGEDIR}${PYTHON_SITELIBDIR}/glcontext/x11${PYTHON_TAG}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/glcontext/egl${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

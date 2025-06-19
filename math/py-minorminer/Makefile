@@ -34,9 +34,9 @@ TEST_WRKSRC=	${WRKSRC}/tests
 
 post-install:
 	@${STRIP_CMD} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/minorminer/_extern/rpack/_core${PYTHON_EXT_SUFFIX}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/minorminer/_minorminer${PYTHON_EXT_SUFFIX}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/minorminer/busclique${PYTHON_EXT_SUFFIX}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/minorminer/subgraph${PYTHON_EXT_SUFFIX}.so
+		${STAGEDIR}${PYTHON_SITELIBDIR}/minorminer/_extern/rpack/_core${PYTHON_TAG}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/minorminer/_minorminer${PYTHON_TAG}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/minorminer/busclique${PYTHON_TAG}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/minorminer/subgraph${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

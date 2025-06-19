@@ -1,10 +1,10 @@
 libexec/ibus-engine-array
 libexec/ibus-setup-array
 %%DATADIR%%/icons/ibus-array.png
-%%DATADIR%%/setup/__pycache__/config%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%DATADIR%%/setup/__pycache__/config%%PYTHON_EXT_SUFFIX%%.pyc
-%%DATADIR%%/setup/__pycache__/main%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%DATADIR%%/setup/__pycache__/main%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/setup/__pycache__/config%%PYTHON_TAG%%.opt-1.pyc
+%%DATADIR%%/setup/__pycache__/config%%PYTHON_TAG%%.pyc
+%%DATADIR%%/setup/__pycache__/main%%PYTHON_TAG%%.opt-1.pyc
+%%DATADIR%%/setup/__pycache__/main%%PYTHON_TAG%%.pyc
 %%DATADIR%%/setup/config.py
 %%DATADIR%%/setup/main.py
 %%DATADIR%%/tables/array.db

@@ -20,7 +20,7 @@ lib/librrd.so.8.3.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10-py%%PYTHON_VER%%.egg-info/SOURCES.txt
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10-py%%PYTHON_VER%%.egg-info/dependency_links.txt
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10-py%%PYTHON_VER%%.egg-info/top_level.txt
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool%%PYTHON_TAG%%.so
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/RRD.so
 libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%share/man/man1/bin_dec_hex.1.gz

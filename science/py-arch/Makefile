@@ -30,7 +30,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/arch/bootstrap/_samplers${PYTHON_EXT_SUFFIX}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/arch/univariate/recursions${PYTHON_EXT_SUFFIX}.so
+		${STAGEDIR}${PYTHON_SITELIBDIR}/arch/bootstrap/_samplers${PYTHON_TAG}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/arch/univariate/recursions${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

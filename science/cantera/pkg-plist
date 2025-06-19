@@ -626,7 +626,7 @@ lib/libcantera_shared.so.3.1.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/Cantera-3.1.0.dist-info/top_level.txt
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cantera/__init__.pxd
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cantera/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/cantera/_cantera%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/cantera/_cantera%%PYTHON_TAG%%.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cantera/_onedim.pxd
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cantera/_utils.pxd
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cantera/ck2yaml.py

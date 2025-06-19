@@ -75,5 +75,5 @@ lib/libThermoFun.so
 %%PYTHON_SITELIBDIR%%/thermofun-0.5.0.dist-info/WHEEL
 %%PYTHON_SITELIBDIR%%/thermofun-0.5.0.dist-info/direct_url.json
 %%PYTHON_SITELIBDIR%%/thermofun-0.5.0.dist-info/top_level.txt
-%%PYTHON_SITELIBDIR%%/thermofun/PyThermoFun%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/thermofun/PyThermoFun%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/thermofun/__init__.py

@@ -37,7 +37,7 @@ post-install:
 		${RM} -r samplers; \
 	)
 	# strip binaries
-	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/samplers -name "*${PYTHON_EXT_SUFFIX}.so" | ${XARGS} ${STRIP_CMD}
+	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/samplers -name "*${PYTHON_TAG}.so" | ${XARGS} ${STRIP_CMD}
 	# remove conflicting __init__.py, see https://github.com/dwavesystems/dwave-system/issues/462
 	@${RM} -r \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/__init__.py \

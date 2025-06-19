@@ -31,6 +31,6 @@ PEP517_BUILD_CONFIG_SETTING=	-C--build-dir=build \
 				-C--verbose
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/popplerqt5${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/popplerqt5${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

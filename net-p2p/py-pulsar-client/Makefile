@@ -34,7 +34,7 @@ pre-build: # build lib_pulse.so using cmake/gmake
 		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GMAKE}
 
 post-install: # strip binary
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pulsar${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pulsar${PYTHON_TAG}.so
 
 # tests: many tests fail with Pulsar error: TimeOut, Connection refused because Pulsar needs to be running
 # tests: 107 failed, 52 passed, 1 warning in 2947.08s (0:49:07)

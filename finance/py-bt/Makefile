@@ -25,7 +25,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pmorissette
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/bt/core${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/bt/core${PYTHON_TAG}.so
 
 # tests as of 1.1.2: 157 passed, 1 warning in 24.95s
 

@@ -40,6 +40,6 @@ MAKE_ENV+=	DISABLE_NUMCODECS_SSE2=yes DISABLE_NUMCODECS_AVX2=yes
 .endif
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/numcodecs/*${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/numcodecs/*${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

@@ -23,6 +23,6 @@ GH_ACCOUNT=	pikvm
 WRKSRC_SUBDIR=	python
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ustreamer${PYTHON_EXT_SUFFIX}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ustreamer${PYTHON_TAG}.so
 
 .include <bsd.port.mk>

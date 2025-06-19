@@ -17,7 +17,7 @@ bin/lsdistcc
 %%PUMP%%%%PYTHON_SITELIBDIR%%/include_server/cache_basics.py
 %%PUMP%%%%PYTHON_SITELIBDIR%%/include_server/compiler_defaults.py
 %%PUMP%%%%PYTHON_SITELIBDIR%%/include_server/compress_files.py
-%%PUMP%%%%PYTHON_SITELIBDIR%%/include_server/distcc_pump_c_extensions%%PYTHON_EXT_SUFFIX%%.so
+%%PUMP%%%%PYTHON_SITELIBDIR%%/include_server/distcc_pump_c_extensions%%PYTHON_TAG%%.so
 %%PUMP%%%%PYTHON_SITELIBDIR%%/include_server/include_analyzer.py
 %%PUMP%%%%PYTHON_SITELIBDIR%%/include_server/include_analyzer_memoizing_node.py
 %%PUMP%%%%PYTHON_SITELIBDIR%%/include_server/include_analyzer_memoizing_node_test.py

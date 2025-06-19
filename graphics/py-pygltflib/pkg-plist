@@ -1,9 +1,9 @@
 %%PYTHON_SITELIBDIR%%/pygltflib/__init__.py
-%%PYTHON_SITELIBDIR%%/pygltflib/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/pygltflib/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/pygltflib/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/pygltflib/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/pygltflib/__pycache__/validator%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/pygltflib/__pycache__/validator%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/pygltflib/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/pygltflib/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/pygltflib/__pycache__/utils%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/pygltflib/__pycache__/utils%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/pygltflib/__pycache__/validator%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/pygltflib/__pycache__/validator%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/pygltflib/utils.py
 %%PYTHON_SITELIBDIR%%/pygltflib/validator.py
