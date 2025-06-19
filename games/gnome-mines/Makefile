@@ -12,11 +12,11 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libgnome-games-support-2.so:games/libgnome-games-support2 \
-		libgee-0.8.so:devel/libgee
+LIB_DEPENDS=	libgnome-games-support-2.so:games/libgnome-games-support2
 
-USES=		gettext gnome localbase meson pkgconfig tar:xz vala:build
-USE_GNOME=	glib20 gtk40 libadwaita librsvg2
+USES=		desktop-file-utils gettext gnome localbase meson pkgconfig \
+		tar:xz vala:build
+USE_GNOME=	glib20 gtk40 libadwaita
 
 GLIB_SCHEMAS=	org.gnome.Mines.gschema.xml
 
