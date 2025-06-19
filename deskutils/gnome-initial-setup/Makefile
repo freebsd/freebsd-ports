@@ -36,6 +36,6 @@ MESON_ARGS=	-Dibus=disabled \
 		-Dparental_controls=disabled \
 		-Dsystemd=false
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	limit:^47\.
 
 .include <bsd.port.mk>
