@@ -13,6 +13,8 @@ WWW=		https://github.com/gotify/server
 
 LICENSE=	MIT
 
+BROKEN_i386=	Build does not succeed (timeout in poudriere)
+
 BUILD_DEPENDS=	yarn${NODEJS_SUFFIX}>=1.10.0:www/yarn${NODEJS_SUFFIX} \
 		
 USES=		go:modules,1.24 nodejs:build
