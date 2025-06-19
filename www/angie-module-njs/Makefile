@@ -1,5 +1,5 @@
 PORTNAME=	angie-module-njs
-GH_TUPLE=	nginx:njs:0.8.9:module
+GH_TUPLE=	nginx:njs:0.9.0:module
 
 COMMENT=	Angie NJS dynamic module
 
