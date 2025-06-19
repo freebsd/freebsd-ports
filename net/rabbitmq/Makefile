@@ -1,10 +1,11 @@
 PORTNAME=	rabbitmq
-DISTVERSION=	4.1.0
+DISTVERSION=	4.1.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-server-generic-unix-${DISTVERSION}
 
-MAINTAINER=	erlang@FreeBSD.org
+MAINTAINER=	vvd@FreeBSD.org
+# Co-maintainer: fsbruva@yahoo.com
 COMMENT=	Erlang implementation of AMQP
 WWW=		https://www.rabbitmq.com/
 
