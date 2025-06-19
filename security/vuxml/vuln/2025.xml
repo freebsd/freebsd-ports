@@ -1,3 +1,38 @@
+  <vuln vid="333b4663-4cde-11f0-8cb5-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>137.0.7151.119</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>137.0.7151.119</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/06/stable-channel-update-for-desktop_17.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[420697404] High CVE-2025-6191: Integer overflow in V8. Reported by Shaheen Fazim on 2025-05-27</li>
+	    <li>[421471016] High CVE-2025-6192: Use after free in Profiler. Reported by Chaoyuan Peng (@ret2happy) on 2025-05-31</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6191</cvename>
+      <cvename>CVE-2025-6192</cvename>
+      <url>https://chromereleases.googleblog.com/2025/06/stable-channel-update-for-desktop_17.html</url>
+    </references>
+    <dates>
+      <discovery>2025-06-17</discovery>
+      <entry>2025-06-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc2d2fb8-4c83-11f0-8deb-f8f21e52f724">
     <topic>Navidrome -- SQL Injection via role parameter</topic>
     <affects>
