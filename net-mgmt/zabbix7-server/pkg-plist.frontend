@@ -803,6 +803,7 @@
 %%WWWDIR%%/include/classes/api/services/CHistory.php
 %%WWWDIR%%/include/classes/api/services/CHost.php
 %%WWWDIR%%/include/classes/api/services/CHostBase.php
+%%WWWDIR%%/include/classes/api/services/CHostDashboard.php
 %%WWWDIR%%/include/classes/api/services/CHostGeneral.php
 %%WWWDIR%%/include/classes/api/services/CHostGroup.php
 %%WWWDIR%%/include/classes/api/services/CHostInterface.php
