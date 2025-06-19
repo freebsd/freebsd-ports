@@ -1,5 +1,5 @@
 PORTNAME=	angie-module-headers-more
-GH_TUPLE=	openresty:headers-more-nginx-module:v0.37:module
+GH_TUPLE=	openresty:headers-more-nginx-module:v0.38:module
 
 COMMENT=	Angie headers-more dynamic module
 
