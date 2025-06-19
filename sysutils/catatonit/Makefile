@@ -1,11 +1,10 @@
 PORTNAME=	catatonit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.7
-PORTREVISION=	2
+DISTVERSION=	0.2.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
-COMMENT=	A signal-forwarding process manager for containers
+COMMENT=	Signal-forwarding process manager for containers
 WWW=		https://github.com/openSUSE/catatonit
 
 LICENSE=	GPLv3+
@@ -13,10 +12,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf libtool
 USE_GITHUB=	yes
-GH_ACCOUNT=	dfr
-GH_TAGNAME=	74113d7
+GH_ACCOUNT=	openSUSE
 
 GNU_CONFIGURE=	yes
+
+PLIST_FILES=	bin/catatonit \
+		libexec/podman/catatonit
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/podman
