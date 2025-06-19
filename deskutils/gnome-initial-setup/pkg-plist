@@ -2,8 +2,9 @@ etc/xdg/autostart/gnome-initial-setup-copy-worker.desktop
 etc/xdg/autostart/gnome-initial-setup-first-login.desktop
 libexec/gnome-initial-setup
 libexec/gnome-initial-setup-copy-worker
-libexec/gnome-initial-setup-goa-helper
+%%DATADIR%%/initial-setup-dconf-defaults
 share/applications/gnome-initial-setup.desktop
+share/dconf/profile/gnome-initial-setup
 share/gnome-session/sessions/gnome-initial-setup.session
 share/gnome-shell/modes/initial-setup.json
 share/locale/ab/LC_MESSAGES/gnome-initial-setup.mo
@@ -41,10 +42,12 @@ share/locale/hr/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/hu/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/ia/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/id/LC_MESSAGES/gnome-initial-setup.mo
+share/locale/ie/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/is/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/it/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/ja/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/ka/LC_MESSAGES/gnome-initial-setup.mo
+share/locale/kab/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/kk/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/kn/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/ko/LC_MESSAGES/gnome-initial-setup.mo
