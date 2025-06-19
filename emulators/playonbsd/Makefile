@@ -1,6 +1,6 @@
 PORTNAME=	playonbsd
 PORTVERSION=	4.2.10
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	emulators games
 
 MAINTAINER=	Clockwork6400@protonmail.com

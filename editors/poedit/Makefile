@@ -1,6 +1,6 @@
 PORTNAME=	poedit
 DISTVERSION=	3.4.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/vslavik/${PORTNAME}/releases/download/v${DISTVERSION}-oss/
 
