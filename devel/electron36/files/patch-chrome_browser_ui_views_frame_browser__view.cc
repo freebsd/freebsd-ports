@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_view.cc.orig	2025-04-22 20:15:27 UTC
+--- chrome/browser/ui/views/frame/browser_view.cc.orig	2025-06-09 18:58:16 UTC
 +++ chrome/browser/ui/views/frame/browser_view.cc
-@@ -2581,7 +2581,7 @@ void BrowserView::TabDraggingStatusChanged(bool is_dra
+@@ -2584,7 +2584,7 @@ void BrowserView::TabDraggingStatusChanged(bool is_dra
  }
  
  void BrowserView::TabDraggingStatusChanged(bool is_dragging) {
@@ -9,7 +9,7 @@
    GetContentsWebView()->SetFastResize(is_dragging);
    if (multi_contents_view_) {
      multi_contents_view_->GetInactiveContentsView()->SetFastResize(is_dragging);
-@@ -5825,7 +5825,7 @@ void BrowserView::MaybeShowSupervisedUserProfileSignIn
+@@ -5828,7 +5828,7 @@ void BrowserView::MaybeShowSupervisedUserProfileSignIn
  }
  
  void BrowserView::MaybeShowSupervisedUserProfileSignInIPH() {
