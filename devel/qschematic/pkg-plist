@@ -9,6 +9,7 @@ include/qschematic/commands/rectitem_resize.hpp
 include/qschematic/commands/rectitem_rotate.hpp
 include/qschematic/commands/wirenet_rename.hpp
 include/qschematic/commands/wirepoint_move.hpp
+include/qschematic/items/bezierwire.hpp
 include/qschematic/items/connector.hpp
 include/qschematic/items/item.hpp
 include/qschematic/items/itemfactory.hpp
@@ -17,7 +18,6 @@ include/qschematic/items/itemmimedata.hpp
 include/qschematic/items/label.hpp
 include/qschematic/items/node.hpp
 include/qschematic/items/rectitem.hpp
-include/qschematic/items/splinewire.hpp
 include/qschematic/items/widget.hpp
 include/qschematic/items/wire.hpp
 include/qschematic/items/wirenet.hpp
