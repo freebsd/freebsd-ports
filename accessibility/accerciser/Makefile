@@ -19,9 +19,9 @@ RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		gettext gnome localbase:ldflags meson pkgconfig python \
-		shebangfix tar:xz
-USE_GNOME=	atk gdkpixbuf glib20 gtk30 libwnck3 pygobject3
+USES=		desktop-file-utils gettext gnome localbase:ldflags meson \
+		pkgconfig python shebangfix tar:xz
+USE_GNOME=	atk gdkpixbuf glib20 gtk30 pygobject3
 SHEBANG_FILES=	plugins/ipython_view.py
 USE_PYTHON=	py3kplist
 BINARY_ALIAS=	python3=${PYTHON_CMD}
