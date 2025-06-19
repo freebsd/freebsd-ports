@@ -1,5 +1,5 @@
-TIMESTAMP = 1739414655
-SHA256 (go/graphics_vhs/vhs-v0.9.0/v0.9.0.mod) = d4fcee68f3136d8950b5ef4f91dadc15ab3bd98df21123f4089a8ee2bd144104
-SIZE (go/graphics_vhs/vhs-v0.9.0/v0.9.0.mod) = 2961
-SHA256 (go/graphics_vhs/vhs-v0.9.0/v0.9.0.zip) = 988a5589b1d9461b87f5f6f54be47a890fc0e74c4f9bafef87317948d4bfbae0
-SIZE (go/graphics_vhs/vhs-v0.9.0/v0.9.0.zip) = 213150
+TIMESTAMP = 1750315587
+SHA256 (go/graphics_vhs/vhs-v0.10.0/v0.10.0.mod) = 16aba18b78ef0c467431c45af4460aa611c40263953732b0b41c043233b715ed
+SIZE (go/graphics_vhs/vhs-v0.10.0/v0.10.0.mod) = 3244
+SHA256 (go/graphics_vhs/vhs-v0.10.0/v0.10.0.zip) = a5a5ebd738e5deb127454221076a1f8575e4747c9bb2e0ae7d521a7e5325d202
+SIZE (go/graphics_vhs/vhs-v0.10.0/v0.10.0.zip) = 214438
