@@ -14,10 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libgit2-glib-1.0.so:devel/libgit2-glib \
 		libgit2.so:devel/libgit2 \
-		libgspell-1.so:textproc/gspell \
 		libjson-glib-1.0.so:devel/json-glib \
 		libjsonrpc-glib-1.0.so:devel/jsonrpc-glib \
-		libpeas-1.0.so:devel/libpeas \
+		libpeas-2.so:devel/libpeas \
 		libportal.so:deskutils/libportal \
 		libportal-gtk4.so:deskutils/libportal-gtk4 \
 		libtemplate_glib-1.0.so:devel/template-glib \
@@ -31,7 +30,7 @@ PORTSCOUT=	limit:^47\.
 
 USES=		compiler:c++11-lang desktop-file-utils gettext gnome \
 		localbase:lfdlags meson pkgconfig python:build shebangfix \
-		tar:xz vala:lib
+		tar:xz
 USE_GNOME=	glib20 gtk40 gtksourceview5 introspection libadwaita \
 		libxml2 vte3
 SHEBANG_FILES=	${WRKSRC}/build-aux/meson/post_install.py
