@@ -1,7 +1,13 @@
+@preexec test -e %%LOGDIR%% || install -d -m 755 -o root -g wheel %%LOGDIR%%
+@preexec test -e %%DBDIR%%/state || install -d -m 755 -o %%WWWOWN%% -g %%WWWGRP%% %%DBDIR%%/state
+
+@postunexec test -d %%DBDIR%%/state && rmdir %%DBDIR%%/state 2>/dev/null || :
+@postunexec test -d %%LOGDIR%% && rmdir %%LOGDIR%% 2>/dev/null || :
+
 @dir %%ETCDIR%%/http.d
 @dir %%ETCDIR%%/stream.d
 @dir %%CACHEDIR%%
-@dir %%LOGDIR%%
+@dir %%DBDIR%%
 @dir %%MODDIR%%
 
 %%ETCDIR%%/modules
