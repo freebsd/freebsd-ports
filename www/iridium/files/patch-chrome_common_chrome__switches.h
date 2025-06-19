@@ -1,4 +1,4 @@
---- chrome/common/chrome_switches.h.orig	2025-05-07 06:48:23 UTC
+--- chrome/common/chrome_switches.h.orig	2025-06-19 07:37:57 UTC
 +++ chrome/common/chrome_switches.h
 @@ -273,7 +273,7 @@ extern const char kAllowNaClSocketAPI[];
  #endif
@@ -9,7 +9,7 @@
  extern const char kEnableNewAppMenuIcon[];
  extern const char kGuest[];
  extern const char kForceNtpMobilePromo[];
-@@ -290,7 +290,7 @@ extern const char kGlicDev[];
+@@ -291,7 +291,7 @@ extern const char kGlicDev[];
  extern const char kGlicHostLogging[];
  #endif
  

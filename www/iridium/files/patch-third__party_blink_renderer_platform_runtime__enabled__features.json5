@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-05-15 16:06:59 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-06-19 07:37:57 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -434,7 +434,7 @@
+@@ -484,7 +484,7 @@
        name: "AppTitle",
        status: "experimental",
        origin_trial_feature_name: "AppTitle",
@@ -9,7 +9,7 @@
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1698,7 +1698,7 @@
+@@ -1777,7 +1777,7 @@
        name: "DocumentIsolationPolicy",
        status: "experimental",
        origin_trial_feature_name: "DocumentIsolationPolicy",
@@ -18,7 +18,7 @@
        base_feature: "none",
      },
      {
-@@ -1943,7 +1943,7 @@
+@@ -2017,7 +2017,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -27,7 +27,7 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3331,7 +3331,7 @@
+@@ -3434,7 +3434,7 @@
        // Tracking bug for the implementation: https://crbug.com/1462930
        name: "PermissionElement",
        origin_trial_feature_name: "PermissionElement",
@@ -36,7 +36,7 @@
        status: "experimental",
        public: true,
        base_feature_status: "enabled",
-@@ -3475,7 +3475,7 @@
+@@ -3592,7 +3592,7 @@
      {
        name: "PrivateNetworkAccessPermissionPrompt",
        origin_trial_feature_name: "PrivateNetworkAccessPermissionPrompt",
@@ -45,7 +45,7 @@
        status: "stable",
        public: true,
        base_feature: "none",
-@@ -4635,7 +4635,7 @@
+@@ -4811,7 +4811,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -54,7 +54,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -4810,7 +4810,7 @@
+@@ -4997,7 +4997,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
@@ -63,7 +63,7 @@
        status: "experimental",
        base_feature: "none",
      },
-@@ -5085,7 +5085,7 @@
+@@ -5265,7 +5265,7 @@
      {
        name: "WebIdentityDigitalCredentials",
        origin_trial_feature_name: "WebIdentityDigitalCredentials",

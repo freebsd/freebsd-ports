@@ -1,4 +1,4 @@
---- chrome/app/chrome_main_delegate.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/app/chrome_main_delegate.cc.orig	2025-06-19 07:37:57 UTC
 +++ chrome/app/chrome_main_delegate.cc
 @@ -147,7 +147,7 @@
  #include "components/webui/about/credit_utils.h"
@@ -75,7 +75,7 @@
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -667,7 +667,7 @@ void RecordMainStartupMetrics(const StartupTimestamps&
+@@ -669,7 +669,7 @@ void RecordMainStartupMetrics(const StartupTimestamps&
  #endif
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
@@ -84,7 +84,7 @@
    // Record the startup process creation time on supported platforms. On Android
    // this is recorded in ChromeMainDelegateAndroid.
    startup_metric_utils::GetCommon().RecordStartupProcessCreationTime(
-@@ -826,7 +826,7 @@ std::optional<int> ChromeMainDelegate::PostEarlyInitia
+@@ -828,7 +828,7 @@ std::optional<int> ChromeMainDelegate::PostEarlyInitia
  #if BUILDFLAG(IS_OZONE)
    // Initialize Ozone platform and add required feature flags as per platform's
    // properties.

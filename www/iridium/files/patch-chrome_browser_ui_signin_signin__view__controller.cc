@@ -1,6 +1,6 @@
---- chrome/browser/ui/signin/signin_view_controller.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/ui/signin/signin_view_controller.cc.orig	2025-06-19 07:37:57 UTC
 +++ chrome/browser/ui/signin/signin_view_controller.cc
-@@ -443,7 +443,7 @@ void SigninViewController::ShowModalSyncConfirmationDi
+@@ -444,7 +444,7 @@ void SigninViewController::ShowModalSyncConfirmationDi
  void SigninViewController::ShowModalManagedUserNoticeDialog(
      std::unique_ptr<signin::EnterpriseProfileCreationDialogParams>
          create_param) {

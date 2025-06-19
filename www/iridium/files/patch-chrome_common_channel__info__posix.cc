@@ -1,6 +1,6 @@
---- chrome/common/channel_info_posix.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/common/channel_info_posix.cc.orig	2025-06-19 07:37:57 UTC
 +++ chrome/common/channel_info_posix.cc
-@@ -94,7 +94,7 @@ std::string GetChannelSuffixForDataDir() {
+@@ -95,7 +95,7 @@ std::string GetChannelSuffixForDataDir() {
    }
  }
  
@@ -9,7 +9,7 @@
  std::string GetChannelSuffixForExtraFlagsEnvVarName() {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
    const auto channel_state = GetChannelImpl();
-@@ -120,7 +120,7 @@ std::string GetChannelSuffixForExtraFlagsEnvVarName() 
+@@ -121,7 +121,7 @@ std::string GetChannelSuffixForExtraFlagsEnvVarName() 
  }
  #endif  // BUILDFLAG(IS_LINUX)
  

@@ -1,6 +1,6 @@
---- components/enterprise/connectors/core/realtime_reporting_client_base.cc.orig	2025-05-07 06:48:23 UTC
+--- components/enterprise/connectors/core/realtime_reporting_client_base.cc.orig	2025-06-19 07:37:57 UTC
 +++ components/enterprise/connectors/core/realtime_reporting_client_base.cc
-@@ -190,7 +190,7 @@ void RealtimeReportingClientBase::ReportEvent(
+@@ -191,7 +191,7 @@ void RealtimeReportingClientBase::ReportEvent(
      event.mutable_time()->set_nanos((timestamp_millis % 1000) * 1000000);
    }
  
@@ -9,7 +9,7 @@
    MaybeCollectDeviceSignalsAndReportEvent(std::move(event), client, settings);
  #else
    // Regardless of collecting device signals or not, upload the security event
-@@ -239,7 +239,7 @@ void RealtimeReportingClientBase::ReportEventWithTimes
+@@ -240,7 +240,7 @@ void RealtimeReportingClientBase::ReportEventWithTimes
    if (include_profile_user_name) {
      event.Set(kKeyProfileUserName, GetProfileUserName());
    }

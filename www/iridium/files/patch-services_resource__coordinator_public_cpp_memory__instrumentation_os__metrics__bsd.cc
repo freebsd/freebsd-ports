@@ -1,6 +1,6 @@
---- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_bsd.cc.orig	2025-05-07 06:48:23 UTC
+--- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_bsd.cc.orig	2025-06-19 07:37:57 UTC
 +++ services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_bsd.cc
-@@ -0,0 +1,58 @@
+@@ -0,0 +1,59 @@
 +// Copyright 2022 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -26,6 +26,7 @@
 +
 +// static
 +bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
++                                 const MemDumpFlagSet& flags,
 +                                 mojom::RawOSMemDump* dump) {
 +  base::Process process = pid == base::kNullProcessId
 +                              ? base::Process::Current()

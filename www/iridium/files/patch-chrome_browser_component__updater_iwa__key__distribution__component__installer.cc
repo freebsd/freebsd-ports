@@ -1,6 +1,6 @@
---- chrome/browser/component_updater/iwa_key_distribution_component_installer.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/component_updater/iwa_key_distribution_component_installer.cc.orig	2025-06-19 07:37:57 UTC
 +++ chrome/browser/component_updater/iwa_key_distribution_component_installer.cc
-@@ -64,7 +64,7 @@ component_updater::OnDemandUpdater::Priority GetOnDema
+@@ -77,7 +77,7 @@ bool IsOnDemandUpdateSupported() {
  
  namespace component_updater {
  
@@ -9,7 +9,7 @@
  BASE_FEATURE(kIwaKeyDistributionComponent,
               "IwaKeyDistributionComponent",
  #if BUILDFLAG(IS_CHROMEOS)
-@@ -89,7 +89,7 @@ bool IwaKeyDistributionComponentInstallerPolicy::IsSup
+@@ -102,7 +102,7 @@ bool IwaKeyDistributionComponentInstallerPolicy::IsSup
    // the main IWA feature.
  #if BUILDFLAG(IS_WIN)
    return base::FeatureList::IsEnabled(features::kIsolatedWebApps);

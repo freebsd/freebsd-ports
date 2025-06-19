@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc.orig	2025-06-19 07:37:57 UTC
 +++ chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc
 @@ -190,7 +190,7 @@ bool IsWindowDragUsingSystemDragDropAllowed() {
  
@@ -27,7 +27,7 @@
      // EndMoveLoop is going to snap the window back to its original location.
      // Hide it so users don't see this. Hiding a window in Linux aura causes
      // it to lose capture so skip it.
-@@ -1914,7 +1914,7 @@ void TabDragController::CompleteDrag() {
+@@ -1922,7 +1922,7 @@ void TabDragController::CompleteDrag() {
      }
  
      // If source window was maximized - maximize the new window as well.
@@ -36,7 +36,7 @@
      // Keeping maximized state breaks snap to Grid on Windows when dragging
      // tabs from maximized windows. TODO:(crbug.com/727051) Explore doing this
      // for other desktop OS's. kMaximizedStateRetainedOnTabDrag in
-@@ -2331,7 +2331,7 @@ TabDragController::Liveness TabDragController::GetLoca
+@@ -2339,7 +2339,7 @@ TabDragController::Liveness TabDragController::GetLoca
      }
    }
  

@@ -1,4 +1,4 @@
---- printing/print_settings.cc.orig	2025-05-07 06:48:23 UTC
+--- printing/print_settings.cc.orig	2025-06-19 07:37:57 UTC
 +++ printing/print_settings.cc
 @@ -319,7 +319,7 @@ PrintSettings& PrintSettings::operator=(const PrintSet
  #endif
@@ -11,7 +11,7 @@
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 @@ -349,7 +349,7 @@ bool PrintSettings::operator==(const PrintSettings& ot
  #endif
-                   is_modifiable_, requested_custom_margins_in_points_,
+                   is_modifiable_, requested_custom_margins_in_microns_,
                    pages_per_sheet_
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
@@ -20,7 +20,7 @@
  #endif
 @@ -373,7 +373,7 @@ bool PrintSettings::operator==(const PrintSettings& ot
                    other.is_modifiable_,
-                   other.requested_custom_margins_in_points_,
+                   other.requested_custom_margins_in_microns_,
                    other.pages_per_sheet_
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

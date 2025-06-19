@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2025-06-19 07:37:57 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -135,7 +135,7 @@ SystemNetworkContextManager* g_system_network_context_
  // received a failed launch for a sandboxed network service.
@@ -118,7 +118,7 @@
    registry->RegisterBooleanPref(prefs::kReceivedHttpAuthNegotiateHeader, false);
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -741,7 +741,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
+@@ -739,7 +739,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
    OnNewHttpAuthDynamicParams(http_auth_dynamic_params);
    network_service->ConfigureHttpAuthPrefs(std::move(http_auth_dynamic_params));
  
@@ -127,7 +127,7 @@
    gssapi_library_loader_observer_.Install(network_service);
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -960,7 +960,7 @@ bool SystemNetworkContextManager::IsNetworkSandboxEnab
+@@ -957,7 +957,7 @@ bool SystemNetworkContextManager::IsNetworkSandboxEnab
        break;
    }
  

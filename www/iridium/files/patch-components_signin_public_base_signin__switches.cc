@@ -1,6 +1,6 @@
---- components/signin/public/base/signin_switches.cc.orig	2025-05-07 06:48:23 UTC
+--- components/signin/public/base/signin_switches.cc.orig	2025-06-19 07:37:57 UTC
 +++ components/signin/public/base/signin_switches.cc
-@@ -55,7 +55,7 @@ BASE_FEATURE(kUseHostedDomainForManagementCheckOnSigni
+@@ -62,7 +62,7 @@ BASE_FEATURE(kUseHostedDomainForManagementCheckOnSigni
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

@@ -1,4 +1,4 @@
---- base/memory/platform_shared_memory_region.h.orig	2025-05-07 06:48:23 UTC
+--- base/memory/platform_shared_memory_region.h.orig	2025-06-19 07:37:57 UTC
 +++ base/memory/platform_shared_memory_region.h
 @@ -18,7 +18,7 @@
  #include "base/unguessable_token.h"
@@ -27,3 +27,12 @@
                                             ,
                                             bool executable = false
  #endif
+@@ -236,7 +236,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
+ #if BUILDFLAG(IS_FUCHSIA)
+     kNotVmo,
+ #endif
+-#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+     kFcntlFailed,
+     kReadOnlyFdNotReadOnly,
+     kUnexpectedReadOnlyFd,

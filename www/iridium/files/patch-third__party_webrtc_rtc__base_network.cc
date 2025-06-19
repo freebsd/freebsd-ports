@@ -1,6 +1,6 @@
---- third_party/webrtc/rtc_base/network.cc.orig	2025-05-07 06:48:23 UTC
+--- third_party/webrtc/rtc_base/network.cc.orig	2025-06-19 07:37:57 UTC
 +++ third_party/webrtc/rtc_base/network.cc
-@@ -314,7 +314,12 @@ webrtc::AdapterType GetAdapterTypeFromName(absl::strin
+@@ -316,7 +316,12 @@ AdapterType GetAdapterTypeFromName(absl::string_view n
    }
  #endif
  

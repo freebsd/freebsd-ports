@@ -1,6 +1,6 @@
---- media/video/fake_gpu_memory_buffer.cc.orig	2025-05-07 06:48:23 UTC
+--- media/video/fake_gpu_memory_buffer.cc.orig	2025-06-19 07:37:57 UTC
 +++ media/video/fake_gpu_memory_buffer.cc
-@@ -14,7 +14,7 @@
+@@ -15,7 +15,7 @@
  #include "media/base/format_utils.h"
  #include "media/base/video_frame.h"
  
@@ -9,7 +9,7 @@
  #include <fcntl.h>
  #include <sys/stat.h>
  #include <sys/types.h>
-@@ -29,7 +29,7 @@ namespace media {
+@@ -30,7 +30,7 @@ namespace media {
  
  namespace {
  
@@ -18,7 +18,7 @@
  base::ScopedFD GetDummyFD() {
    base::ScopedFD fd(open("/dev/zero", O_RDWR));
    DCHECK(fd.is_valid());
-@@ -73,7 +73,7 @@ static base::AtomicSequenceNumber buffer_id_generator;
+@@ -74,7 +74,7 @@ static base::AtomicSequenceNumber buffer_id_generator;
  
  }  // namespace
  

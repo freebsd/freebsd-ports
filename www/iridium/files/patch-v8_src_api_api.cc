@@ -1,15 +1,15 @@
---- v8/src/api/api.cc.orig	2025-05-07 06:48:23 UTC
+--- v8/src/api/api.cc.orig	2025-06-19 07:37:57 UTC
 +++ v8/src/api/api.cc
-@@ -153,7 +153,7 @@
- #include "src/wasm/wasm-serialization.h"
- #endif  // V8_ENABLE_WEBASSEMBLY
+@@ -158,7 +158,7 @@
+ #include "src/objects/intl-objects.h"
+ #endif  // V8_INTL_SUPPORT
  
 -#if V8_OS_LINUX || V8_OS_DARWIN || V8_OS_FREEBSD
 +#if V8_OS_LINUX || V8_OS_DARWIN || V8_OS_FREEBSD || V8_OS_OPENBSD
  #include <signal.h>
  #include <unistd.h>
  
-@@ -6483,7 +6483,7 @@ bool v8::V8::Initialize(const int build_config) {
+@@ -6472,7 +6472,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  

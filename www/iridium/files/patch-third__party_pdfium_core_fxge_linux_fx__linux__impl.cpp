@@ -1,4 +1,4 @@
---- third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp.orig	2025-05-07 06:48:23 UTC
+--- third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp.orig	2025-06-19 07:37:57 UTC
 +++ third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp
 @@ -20,7 +20,7 @@
  #include "core/fxge/fx_font.h"
@@ -9,7 +9,7 @@
  #error "Included on the wrong platform"
  #endif
  
-@@ -173,9 +173,8 @@ class CLinuxPlatform : public CFX_GEModule::PlatformIf
+@@ -180,9 +180,8 @@ class CLinuxPlatform : public CFX_GEModule::PlatformIf
    std::unique_ptr<SystemFontInfoIface> CreateDefaultSystemFontInfo() override {
      auto pInfo = std::make_unique<CFX_LinuxFontInfo>();
      if (!pInfo->ParseFontCfg(CFX_GEModule::Get()->GetUserFontPaths())) {

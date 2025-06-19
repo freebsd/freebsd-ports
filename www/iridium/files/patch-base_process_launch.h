@@ -1,6 +1,6 @@
---- base/process/launch.h.orig	2025-05-07 06:48:23 UTC
+--- base/process/launch.h.orig	2025-06-19 07:37:57 UTC
 +++ base/process/launch.h
-@@ -241,7 +241,7 @@ struct BASE_EXPORT LaunchOptions {
+@@ -245,7 +245,7 @@ struct BASE_EXPORT LaunchOptions {
    bool clear_environment = false;
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_POSIX) || BUILDFLAG(IS_FUCHSIA)
  

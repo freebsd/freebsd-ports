@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_field_trials.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/chrome_browser_field_trials.cc.orig	2025-06-19 07:37:57 UTC
 +++ chrome/browser/chrome_browser_field_trials.cc
-@@ -37,7 +37,7 @@
+@@ -38,7 +38,7 @@
  #include "chromeos/ash/services/multidevice_setup/public/cpp/first_run_field_trial.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/nix/xdg_util.h"
  #include "ui/base/ui_base_features.h"
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -117,7 +117,7 @@ void ChromeBrowserFieldTrials::RegisterSyntheticTrials
+@@ -118,7 +118,7 @@ void ChromeBrowserFieldTrials::RegisterSyntheticTrials
  #endif  // BUILDFLAG(IS_ANDROID)
  }
  

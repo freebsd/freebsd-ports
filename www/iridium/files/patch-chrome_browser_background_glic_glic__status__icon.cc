@@ -1,4 +1,4 @@
---- chrome/browser/background/glic/glic_status_icon.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/background/glic/glic_status_icon.cc.orig	2025-06-19 07:37:57 UTC
 +++ chrome/browser/background/glic/glic_status_icon.cc
 @@ -86,7 +86,7 @@ GlicStatusIcon::GlicStatusIcon(GlicController* control
    if (!status_icon_) {
@@ -25,14 +25,14 @@
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    if (context_menu_) {
-     context_menu_->SetCommandIdVisible(IDC_GLIC_STATUS_ICON_MENU_EXIT,
-                                        BrowserList::GetInstance()->empty());
-@@ -272,7 +272,7 @@ std::unique_ptr<StatusIconMenuModel> GlicStatusIcon::C
-   menu->AddItem(
-       IDC_GLIC_STATUS_ICON_MENU_REMOVE_ICON,
-       l10n_util::GetStringUTF16(IDS_GLIC_STATUS_ICON_MENU_REMOVE_ICON));
+     const bool is_visible = BrowserList::GetInstance()->empty();
+     const std::optional<size_t> index =
+@@ -284,7 +284,7 @@ std::unique_ptr<StatusIconMenuModel> GlicStatusIcon::C
+   menu->AddItem(IDC_GLIC_STATUS_ICON_MENU_SETTINGS,
+                 l10n_util::GetStringUTF16(IDS_GLIC_STATUS_ICON_MENU_SETTINGS));
+ 
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   menu->AddSeparator(ui::NORMAL_SEPARATOR);
    menu->AddItem(IDC_GLIC_STATUS_ICON_MENU_EXIT,
                  l10n_util::GetStringUTF16(IDS_GLIC_STATUS_ICON_MENU_EXIT));
- #endif

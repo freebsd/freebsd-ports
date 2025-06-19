@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2025-06-19 07:37:57 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 @@ -118,16 +118,16 @@
  #endif
@@ -20,7 +20,7 @@
  #include "chrome/browser/ui/webui/whats_new/whats_new_ui.h"
  #endif
  
-@@ -408,7 +408,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
+@@ -411,7 +411,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
      return NewTabPageUI::GetFaviconResourceBytes(scale_factor);
    }
  
@@ -29,7 +29,7 @@
    if (page_url.host_piece() == chrome::kChromeUIWhatsNewHost) {
      return WhatsNewUI::GetFaviconResourceBytes(scale_factor);
    }
-@@ -442,7 +442,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
+@@ -450,7 +450,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
    }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

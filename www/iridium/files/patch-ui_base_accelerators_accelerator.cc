@@ -1,11 +1,11 @@
---- ui/base/accelerators/accelerator.cc.orig	2025-05-07 06:48:23 UTC
+--- ui/base/accelerators/accelerator.cc.orig	2025-06-19 07:37:57 UTC
 +++ ui/base/accelerators/accelerator.cc
-@@ -336,7 +336,7 @@ std::u16string Accelerator::ApplyLongFormModifiers(
-     result = ApplyModifierToAcceleratorString(result, IDS_APP_SEARCH_KEY);
+@@ -331,7 +331,7 @@ std::vector<std::u16string> Accelerator::GetLongFormMo
+     modifiers.push_back(l10n_util::GetStringUTF16(IDS_APP_SEARCH_KEY));
  #elif BUILDFLAG(IS_WIN)
-     result = ApplyModifierToAcceleratorString(result, IDS_APP_WINDOWS_KEY);
+     modifiers.push_back(l10n_util::GetStringUTF16(IDS_APP_WINDOWS_KEY));
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-     result = ApplyModifierToAcceleratorString(result, IDS_APP_SUPER_KEY);
+     modifiers.push_back(l10n_util::GetStringUTF16(IDS_APP_SUPER_KEY));
  #else
      NOTREACHED();

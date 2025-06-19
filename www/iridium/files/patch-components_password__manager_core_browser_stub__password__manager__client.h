@@ -1,4 +1,4 @@
---- components/password_manager/core/browser/stub_password_manager_client.h.orig	2025-05-07 06:48:23 UTC
+--- components/password_manager/core/browser/stub_password_manager_client.h.orig	2025-06-19 07:37:57 UTC
 +++ components/password_manager/core/browser/stub_password_manager_client.h
 @@ -77,7 +77,7 @@ class StubPasswordManagerClient : public PasswordManag
    MockPasswordFeatureManager* GetPasswordFeatureManager();
@@ -8,4 +8,4 @@
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    void OpenPasswordDetailsBubble(
        const password_manager::PasswordForm& form) override;
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) ||
+   void MaybeShowSavePasswordPrimingPromo(const GURL& current_url) override;

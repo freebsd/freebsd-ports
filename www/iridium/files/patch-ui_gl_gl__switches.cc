@@ -1,4 +1,4 @@
---- ui/gl/gl_switches.cc.orig	2025-05-07 06:48:23 UTC
+--- ui/gl/gl_switches.cc.orig	2025-06-19 07:37:57 UTC
 +++ ui/gl/gl_switches.cc
 @@ -13,7 +13,7 @@
  #include "base/android/build_info.h"
@@ -18,7 +18,7 @@
    angle::SystemInfo system_info;
    {
      GPU_STARTUP_TRACE_EVENT("angle::GetSystemInfoVulkan");
-@@ -372,7 +372,7 @@ bool IsDefaultANGLEVulkan() {
+@@ -388,7 +388,7 @@ bool IsDefaultANGLEVulkan() {
    }
  #endif  // BUILDFLAG(IS_ANDROID)
  

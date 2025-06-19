@@ -1,4 +1,4 @@
---- printing/mojom/printing_context_mojom_traits.cc.orig	2025-05-07 06:48:23 UTC
+--- printing/mojom/printing_context_mojom_traits.cc.orig	2025-06-19 07:37:57 UTC
 +++ printing/mojom/printing_context_mojom_traits.cc
 @@ -19,7 +19,7 @@
  #include "base/numerics/safe_conversions.h"
@@ -9,7 +9,7 @@
  #include "mojo/public/mojom/base/values.mojom.h"
  #endif
  
-@@ -161,7 +161,7 @@ bool StructTraits<
+@@ -162,7 +162,7 @@ bool StructTraits<
    }
  
    out->set_pages_per_sheet(data.pages_per_sheet());
@@ -18,7 +18,7 @@
    DCHECK(out->advanced_settings().empty());
    if (!data.ReadAdvancedSettings(&out->advanced_settings()))
      return false;
-@@ -238,7 +238,7 @@ bool StructTraits<
+@@ -239,7 +239,7 @@ bool StructTraits<
      if (system_print_dialog_data.size() != dictionary_entries) {
        return false;
      }

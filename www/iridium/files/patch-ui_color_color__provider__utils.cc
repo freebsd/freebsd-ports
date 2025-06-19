@@ -1,6 +1,6 @@
---- ui/color/color_provider_utils.cc.orig	2025-05-07 06:48:23 UTC
+--- ui/color/color_provider_utils.cc.orig	2025-06-19 07:37:57 UTC
 +++ ui/color/color_provider_utils.cc
-@@ -191,7 +191,7 @@ std::string_view SystemThemeName(ui::SystemTheme syste
+@@ -194,7 +194,7 @@ std::string_view SystemThemeName(ui::SystemTheme syste
    switch (system_theme) {
      case ui::SystemTheme::kDefault:
        return "kDefault";

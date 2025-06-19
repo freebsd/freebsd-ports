@@ -1,4 +1,4 @@
---- components/embedder_support/user_agent_utils.cc.orig	2025-05-07 06:48:23 UTC
+--- components/embedder_support/user_agent_utils.cc.orig	2025-06-19 07:37:57 UTC
 +++ components/embedder_support/user_agent_utils.cc
 @@ -318,7 +318,7 @@ std::string GetUserAgentPlatform() {
    return "";
@@ -28,7 +28,16 @@
  #else
    return std::string(version_info::GetOSType());
  #endif
-@@ -813,6 +816,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
+@@ -660,7 +663,7 @@ blink::UserAgentMetadata GetUserAgentMetadata(const Pr
+       base::StringPrintf("%d.%d.%d", major, minor, bugfix);
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // TODO(crbug.com/40245146): Remove this Blink feature
+   if (base::FeatureList::IsEnabled(
+           blink::features::kReduceUserAgentDataLinuxPlatformVersion)) {
+@@ -821,6 +824,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
                        "Android %s", os_version.c_str()
  #elif BUILDFLAG(IS_FUCHSIA)
                        "Fuchsia"
