@@ -1,6 +1,6 @@
-TIMESTAMP = 1737668800
-SHA256 (angie-1.8.1.tar.gz) = db30b69045cf9a40f144911814414d9e1b4d4370f6693d008f4017dcb4370b4c
-SIZE (angie-1.8.1.tar.gz) = 1672621
+TIMESTAMP = 1749050000
+SHA256 (angie-1.9.1.tar.gz) = af11cc06dfebe7c17832375b348a8d786af052cefce5ffafaaa898484e18ce36
+SIZE (angie-1.9.1.tar.gz) = 1723240
 SHA256 (kjdev-nginx-auth-jwt-0.9.0_GH0.tar.gz) = d7c72634261a053afaacc2cb762eccf9ce4c462ca738ad0c4809eb964ddf3c0c
 SIZE (kjdev-nginx-auth-jwt-0.9.0_GH0.tar.gz) = 75474
 SHA256 (stnoonan-spnego-http-auth-nginx-module-v1.1.2_GH0.tar.gz) = 72b4dfe3e3cee4feaa698c5710ec1590f85bfbe4cd50e8e8d1700c210c82150a

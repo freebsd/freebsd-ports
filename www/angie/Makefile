@@ -1,118 +1,115 @@
-PORTNAME?=		angie
-DISTVERSION=		1.8.1
-CATEGORIES+=		www
-MASTER_SITES+=		https://download.angie.software/files/:angie
-DISTNAME=		angie-${DISTVERSIONFULL}
-DISTFILES+=		${DISTNAME}${EXTRACT_SUFX}:angie
+PORTNAME?=	angie
+DISTVERSION=	1.9.1
+CATEGORIES+=	www
+MASTER_SITES+=	https://download.angie.software/files/:angie
+DISTNAME=	angie-${DISTVERSIONFULL}
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}:angie
 
-MAINTAINER?=		oleg@mamontov.net
-COMMENT?=		Efficient, powerful and scalable reverse proxy and web server
-WWW?=			https://angie.software/en/
+MAINTAINER?=	oleg@mamontov.net
+COMMENT?=	Efficient, powerful and scalable reverse proxy and web server
+WWW?=		https://angie.software/en/
 
-LICENSE?=		BSD2CLAUSE
-.if ${PORTNAME} == angie
-LICENSE_FILE=		${WRKSRC}/LICENSE
-.else
-LICENSE_FILE?=		${WRKSRC_module}/LICENSE
-.endif
+LICENSE?=	BSD2CLAUSE
 
 .if ${PORTNAME} == angie
-LIB_DEPENDS=		libpcre2-8.so:devel/pcre2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+USE_RC_SUBR=	angie
+ALL_TARGET=	build
+SUB_FILES=	angie.conf.sample \
+		default.conf.sample \
+		example.conf.sample \
+		pkg-message
 .else
-BUILD_DEPENDS+=		pcre2>=0:devel/pcre2
-RUN_DEPENDS+=		angie==${PKGVERSION}:www/angie
+LICENSE_FILE?=	${WRKSRC_module}/LICENSE
+BUILD_DEPENDS+=	pcre2>=0:devel/pcre2
+RUN_DEPENDS+=	angie==${PKGVERSION}:www/angie
+ALL_TARGET?=	modules
+CONFIGURE_ADD?=	--add-dynamic-module=${WRKSRC_module}
 .endif
 
-USES+=			localbase:ldflags ssl
-USE_GITHUB=		nodefault
+USES+=		localbase:ldflags ssl
+USE_GITHUB=	nodefault
 
-HAS_CONFIGURE?=		yes
-
-.if ${PORTNAME} == angie
-ALL_TARGET=		build
-SUB_FILES=		angie.conf.sample \
-			default.conf.sample \
-			example.conf.sample \
-			pkg-message
-USE_RC_SUBR=		angie
-.else
-ALL_TARGET?=		modules
-CONFIGURE_ADD?=		--add-dynamic-module=${WRKSRC_module}
-.endif
-
-# modules always have their own assets
-PATCHDIR?=		${.CURDIR}/files
-FILESDIR?=		${.CURDIR}/files
-SCRIPTDIR?=		${.CURDIR}/scripts
-PKGDIR?=		${.CURDIR}
+HAS_CONFIGURE?=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/angie \
+		--conf-path=${PREFIX}/etc/angie/angie.conf \
+		--error-log-path=${LOGDIR}/error.log \
+		--http-log-path=${LOGDIR}/access.log \
+		--lock-path=${RUNDIR}/angie.lock \
+		--modules-path=${MODDIR} \
+		--pid-path=${RUNDIR}/angie.pid \
+		--sbin-path=${PREFIX}/sbin/angie \
+		--http-client-body-temp-path=${CACHEDIR}/client_temp \
+		--http-fastcgi-temp-path=${CACHEDIR}/fastcgi_temp \
+		--http-proxy-temp-path=${CACHEDIR}/proxy_temp \
+		--http-scgi-temp-path=${CACHEDIR}/scgi_temp \
+		--http-uwsgi-temp-path=${CACHEDIR}/uwsgi_temp \
+		--user=${WWWOWN} \
+		--group=${WWWGRP} \
+		--with-file-aio \
+		--with-http_addition_module \
+		--with-http_auth_request_module \
+		--with-http_dav_module \
+		--with-http_flv_module \
+		--with-http_gunzip_module \
+		--with-http_gzip_static_module \
+		--with-http_mp4_module \
+		--with-http_random_index_module \
+		--with-http_realip_module \
+		--with-http_secure_link_module \
+		--with-http_slice_module \
+		--with-http_ssl_module \
+		--with-http_stub_status_module \
+		--with-http_sub_module \
+		--with-http_v2_module \
+		--with-http_v3_module \
+		--with-mail \
+		--with-mail_ssl_module \
+		--with-stream \
+		--with-stream_realip_module \
+		--with-stream_ssl_module \
+		--with-stream_ssl_preread_module \
+		--with-threads \
+		--with-cc-opt="${CFLAGS}" \
+		--with-ld-opt="${LDFLAGS}" \
+		${CONFIGURE_ADD}
 
 # angie-specific variables
-CACHEDIR=		/var/cache/angie
-LOGDIR=			/var/log/angie
-MODDIR=			${PREFIX}/libexec/angie
-RUNDIR=			/var/run
-WRKSRC_DEBUG=		${WRKSRC}-debug
+CACHEDIR=	/var/cache/angie
+DBDIR=		/var/db/angie
+ETCDIR=		${PREFIX}/etc/angie
+LOGDIR=		/var/log/angie
+MODDIR=		${PREFIX}/libexec/angie
+RUNDIR=		/var/run
+WRKSRC_DEBUG=	${WRKSRC}-debug
+# modules always have their own assets
+FILESDIR?=	${.CURDIR}/files
+PATCHDIR?=	${.CURDIR}/files
+PKGDIR?=	${.CURDIR}
+SCRIPTDIR?=	${.CURDIR}/scripts
 
-PLIST_SUB+=		CACHEDIR=${CACHEDIR} \
-			LOGDIR=${LOGDIR} \
-			MODDIR=${MODDIR} \
-			RUNDIR=${RUNDIR}
+SUB_FILES?=	pkg-message
+SUB_LIST+=	CACHEDIR=${CACHEDIR} \
+		DBDIR=${DBDIR} \
+		ETCDIR=${ETCDIR} \
+		LOGDIR=${LOGDIR} \
+		MODDIR=${MODDIR} \
+		RUNDIR=${RUNDIR} \
+		WWWGRP=${WWWGRP} \
+		WWWOWN=${WWWOWN}
 
-SUB_LIST+=		CACHEDIR=${CACHEDIR} \
-			LOGDIR=${LOGDIR} \
-			MODDIR=${MODDIR} \
-			RUNDIR=${RUNDIR} \
-			WWWOWN=${WWWOWN}
-
-SUB_FILES?=		pkg-message
-
-OPTIONS_SUB=		yes
-
-CONFIGURE_ARGS=		--prefix=${PREFIX}/etc/angie \
-			--conf-path=${PREFIX}/etc/angie/angie.conf \
-			--error-log-path=${LOGDIR}/error.log \
-			--http-log-path=${LOGDIR}/access.log \
-			--lock-path=${RUNDIR}/angie.lock \
-			--modules-path=${MODDIR} \
-			--pid-path=${RUNDIR}/angie.pid \
-			--sbin-path=${PREFIX}/sbin/angie \
-			--http-client-body-temp-path=${CACHEDIR}/client_temp \
-			--http-fastcgi-temp-path=${CACHEDIR}/fastcgi_temp \
-			--http-proxy-temp-path=${CACHEDIR}/proxy_temp \
-			--http-scgi-temp-path=${CACHEDIR}/scgi_temp \
-			--http-uwsgi-temp-path=${CACHEDIR}/uwsgi_temp \
-			--user=${WWWOWN} \
-			--group=${WWWGRP} \
-			--with-file-aio \
-			--with-http_addition_module \
-			--with-http_auth_request_module \
-			--with-http_dav_module \
-			--with-http_flv_module \
-			--with-http_gunzip_module \
-			--with-http_gzip_static_module \
-			--with-http_mp4_module \
-			--with-http_random_index_module \
-			--with-http_realip_module \
-			--with-http_secure_link_module \
-			--with-http_slice_module \
-			--with-http_ssl_module \
-			--with-http_stub_status_module \
-			--with-http_sub_module \
-			--with-http_v2_module \
-			--with-http_v3_module \
-			--with-mail \
-			--with-mail_ssl_module \
-			--with-stream \
-			--with-stream_realip_module \
-			--with-stream_ssl_module \
-			--with-stream_ssl_preread_module \
-			--with-threads \
-			--with-cc-opt="${CFLAGS}" \
-			--with-ld-opt="${LDFLAGS}" \
-			${CONFIGURE_ADD}
+PLIST_SUB+=	CACHEDIR=${CACHEDIR} \
+		DBDIR=${DBDIR} \
+		LOGDIR=${LOGDIR} \
+		MODDIR=${MODDIR} \
+		RUNDIR=${RUNDIR} \
+		WWWGRP=${WWWGRP} \
+		WWWOWN=${WWWOWN}
 
 OPTIONS_DEFINE?=	DEBUG
 OPTIONS_DEFAULT?=	DEBUG
+OPTIONS_SUB=		yes
 DEBUG_DESC?=		Include debug version
 
 .include <bsd.port.options.mk>
@@ -124,17 +121,17 @@ post-configure-DEBUG-on:
 	@(cd ${WRKSRC_DEBUG} && \
 	    ${SET_LATE_CONFIGURE_ARGS} \
 	    if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
-	        CFLAGS="${CFLAGS} -g" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-	        LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" \
-	        INSTALL="/usr/bin/install -c" \
-	        INSTALL_DATA="${INSTALL_DATA}" \
-	        INSTALL_LIB="${INSTALL_LIB}" \
-	        INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-	        INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-	        ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS} --with-debug; then \
-	        ${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
-	        (${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT_80} ; \
-	        ${FALSE}; \
+		CFLAGS="${CFLAGS} -g" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" \
+		INSTALL="/usr/bin/install -c" \
+		INSTALL_DATA="${INSTALL_DATA}" \
+		INSTALL_LIB="${INSTALL_LIB}" \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+		${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS} --with-debug; then \
+		${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
+		(${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT_80} ; \
+		${FALSE}; \
 	    fi \
 	)
 
@@ -144,10 +141,10 @@ post-build-DEBUG-on:
 .if ${PORTNAME} == angie
 do-install:
 	${MKDIR} ${STAGEDIR}${CACHEDIR}
+	${MKDIR} ${STAGEDIR}${DBDIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${ETCDIR}/http.d
 	${MKDIR} ${STAGEDIR}${ETCDIR}/stream.d
-	${MKDIR} ${STAGEDIR}${LOGDIR}
 	${MKDIR} ${STAGEDIR}${MODDIR}
 	${MKDIR} ${STAGEDIR}${WWWDIR}/html
 
