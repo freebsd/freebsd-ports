@@ -10,8 +10,7 @@ WWW=		https://pawsa.fedorapeople.org/balsa/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libesmtp.so:mail/libesmtp \
-		libgmime-3.0.so:mail/gmime30 \
+LIB_DEPENDS=	libgmime-3.0.so:mail/gmime30 \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libical.so:devel/libical \
 		libgnutls.so:security/gnutls \
@@ -25,8 +24,8 @@ LIB_DEPENDS=	libesmtp.so:mail/libesmtp \
 		libsecret-1.so:security/libsecret
 RUN_DEPENDS=	gnome-keyring:security/gnome-keyring
 
-USES=		cpe desktop-file-utils gettext-runtime gnome iconv localbase meson \
-		pkgconfig sqlite tar:xz
+USES=		cpe desktop-file-utils gettext-runtime gettext-tools gnome iconv \
+		localbase meson pkgconfig sqlite tar:xz
 CPE_VENDOR=	gnome
 USE_GNOME=	glib20 gtk30 gtksourceview4 libxml2
 MESON_ARGS=	-Dsysconfdir=${LOCALBASE}/etc \
