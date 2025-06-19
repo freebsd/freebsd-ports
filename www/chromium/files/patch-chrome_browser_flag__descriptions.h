@@ -1,4 +1,4 @@
---- chrome/browser/flag_descriptions.h.orig	2025-05-28 14:55:43 UTC
+--- chrome/browser/flag_descriptions.h.orig	2025-06-19 07:31:53 UTC
 +++ chrome/browser/flag_descriptions.h
 @@ -383,7 +383,7 @@ extern const char
      kAutofillEnableAllowlistForBmoCardCategoryBenefitsDescription[];
@@ -72,7 +72,7 @@
  extern const char kEnableHistorySyncOptinName[];
  extern const char kEnableHistorySyncOptinDescription[];
  
-@@ -3313,7 +3313,7 @@ extern const char kTranslateOpenSettingsName[];
+@@ -3318,7 +3318,7 @@ extern const char kTranslateOpenSettingsName[];
  extern const char kTranslateOpenSettingsDescription[];
  #endif
  
@@ -81,7 +81,7 @@
  extern const char kWasmTtsComponentUpdaterEnabledName[];
  extern const char kWasmTtsComponentUpdaterEnabledDescription[];
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
-@@ -4519,7 +4519,7 @@ extern const char kTetheringExperimentalFunctionalityD
+@@ -4524,7 +4524,7 @@ extern const char kTetheringExperimentalFunctionalityD
  
  #endif  // #if BUILDFLAG(IS_CHROMEOS)
  
@@ -90,7 +90,7 @@
  extern const char kGetAllScreensMediaName[];
  extern const char kGetAllScreensMediaDescription[];
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
-@@ -4654,7 +4654,7 @@ extern const char kEnableArmHwdrmDescription[];
+@@ -4659,7 +4659,7 @@ extern const char kEnableArmHwdrmDescription[];
  
  // Linux ---------------------------------------------------------------------
  
@@ -99,7 +99,7 @@
  extern const char kOzonePlatformHintChoiceDefault[];
  extern const char kOzonePlatformHintChoiceAuto[];
  extern const char kOzonePlatformHintChoiceX11[];
-@@ -4685,6 +4685,9 @@ extern const char kWaylandTextInputV3Description[];
+@@ -4690,6 +4690,9 @@ extern const char kWaylandTextInputV3Description[];
  
  extern const char kWaylandUiScalingName[];
  extern const char kWaylandUiScalingDescription[];
@@ -109,7 +109,7 @@
  #endif  // BUILDFLAG(IS_LINUX)
  
  // Random platform combinations -----------------------------------------------
-@@ -4704,7 +4707,7 @@ extern const char kWebBluetoothConfirmPairingSupportNa
+@@ -4709,7 +4712,7 @@ extern const char kWebBluetoothConfirmPairingSupportNa
  extern const char kWebBluetoothConfirmPairingSupportDescription[];
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
  
@@ -118,7 +118,7 @@
  #if BUILDFLAG(ENABLE_PRINTING)
  extern const char kCupsIppPrintingBackendName[];
  extern const char kCupsIppPrintingBackendDescription[];
-@@ -4717,7 +4720,7 @@ extern const char kScreenlockReauthCardDescription[];
+@@ -4722,7 +4725,7 @@ extern const char kScreenlockReauthCardDescription[];
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -127,7 +127,7 @@
  extern const char kFollowingFeedSidepanelName[];
  extern const char kFollowingFeedSidepanelDescription[];
  
-@@ -4734,7 +4737,7 @@ extern const char kTaskManagerDesktopRefreshName[];
+@@ -4739,7 +4742,7 @@ extern const char kTaskManagerDesktopRefreshName[];
  extern const char kTaskManagerDesktopRefreshDescription[];
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -136,7 +136,7 @@
  extern const char kEnableNetworkServiceSandboxName[];
  extern const char kEnableNetworkServiceSandboxDescription[];
  
-@@ -4826,7 +4829,7 @@ extern const char kElementCaptureName[];
+@@ -4831,7 +4834,7 @@ extern const char kElementCaptureName[];
  extern const char kElementCaptureDescription[];
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -145,7 +145,7 @@
  extern const char kUIDebugToolsName[];
  extern const char kUIDebugToolsDescription[];
  #endif
-@@ -4865,7 +4868,7 @@ extern const char kComposeUpfrontInputModesName[];
+@@ -4870,7 +4873,7 @@ extern const char kComposeUpfrontInputModesName[];
  extern const char kComposeUpfrontInputModesDescription[];
  #endif  // BUILDFLAG(ENABLE_COMPOSE)
  
@@ -154,7 +154,7 @@
  extern const char kThirdPartyProfileManagementName[];
  extern const char kThirdPartyProfileManagementDescription[];
  
-@@ -4948,7 +4951,7 @@ extern const char kEnablePolicyPromotionBannerDescript
+@@ -4953,7 +4956,7 @@ extern const char kEnablePolicyPromotionBannerDescript
  extern const char kSupervisedUserBlockInterstitialV3Name[];
  extern const char kSupervisedUserBlockInterstitialV3Description[];
  
