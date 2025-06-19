@@ -1,5 +1,5 @@
 PORTNAME=	angie-module-jwt
-GH_TUPLE=	max-lt:nginx-jwt-module:v3.4.2:module
+GH_TUPLE=	max-lt:nginx-jwt-module:v3.4.3:module
 
 COMMENT=	Angie JWT dynamic module
 
