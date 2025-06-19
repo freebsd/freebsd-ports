@@ -1,7 +1,6 @@
 PORTNAME=	wx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.6
-PORTREVISION=	1
+DISTVERSION=	3.2.8.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://github.com/wxWidgets/wxWidgets/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	${_SHORT_WX_VER}-${FLAVOR}
@@ -65,7 +64,7 @@ CONFIGURE_ARGS=	--disable-epollloop \
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no \
 		X11BASE="${LOCALBASE}"
 
-_SOVER=		0.3.0
+_SOVER=		0.4.1
 PLIST_SUB+=	GTKVER=${FLAVOR} SOVER=${_SOVER}
 
 OPTIONS_DEFINE=		GSTREAMER MSPACK NLS

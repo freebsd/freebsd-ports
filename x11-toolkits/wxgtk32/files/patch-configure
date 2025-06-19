@@ -1,6 +1,6 @@
---- configure.orig	2021-04-12 22:23:58 UTC
+--- configure.orig	2025-05-25 17:15:56 UTC
 +++ configure
-@@ -3969,7 +3969,7 @@ case "${host}" in
+@@ -4011,7 +4011,7 @@ case "${host}" in
  
      DEFAULT_DEFAULT_wxUSE_GTK=1
    ;;
@@ -9,7 +9,7 @@
      USE_BSD=1
      USE_FREEBSD=1
      $as_echo "#define __FREEBSD__ 1" >>confdefs.h
-@@ -20997,6 +20997,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+@@ -25327,6 +25327,7 @@ SEARCH_INCLUDE="\
  
  
  SEARCH_INCLUDE="\
@@ -17,7 +17,7 @@
      /usr/local/include        \
      /usr/local/X11/include    \
      /usr/local/include/X11    \
-@@ -32061,9 +32062,6 @@ $as_echo "$as_me: WARNING: BeOS threads are not yet su
+@@ -36748,9 +36749,6 @@ $as_echo "$as_me: WARNING: BeOS threads are not yet su
                                          THREAD_OPTS="-pthreads $THREAD_OPTS"
                  fi
                  ;;
@@ -27,7 +27,7 @@
            *-*-darwin* | *-*-cygwin* )
                                                  THREAD_OPTS=""
                  ;;
-@@ -32839,10 +32837,10 @@ if test "x$ac_cv_func_gmtime_r" = xyes; then :
+@@ -37530,10 +37528,10 @@ fi
     $as_echo "#define HAVE_GMTIME_R 1" >>confdefs.h
  
  fi
@@ -39,7 +39,7 @@
      ac_ext=c
  ac_cpp='$CPP $CPPFLAGS'
  ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
-@@ -39638,6 +39636,7 @@ fi
+@@ -44526,6 +44524,7 @@ fi
        ;;
  
        powerpc-apple-macos* | \
@@ -47,7 +47,7 @@
        *-*-freebsd* | *-*-openbsd* | *-*-haiku* | *-*-netbsd* | *-*-gnu* | *-*-k*bsd*-gnu | \
        *-*-mirbsd* | \
        *-*-sunos4* | \
-@@ -39679,6 +39678,7 @@ fi
+@@ -44567,6 +44566,7 @@ fi
  
      case "${BAKEFILE_HOST}" in
        *-*-linux* | *-*-freebsd* | *-*-openbsd* | *-*-haiku* | *-*-netbsd* | \
