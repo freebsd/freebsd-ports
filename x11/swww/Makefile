@@ -1,7 +1,7 @@
 PORTNAME=	swww
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.5
-PORTREVISION=	6
+DISTVERSION=	0.10.3
+PORTREVISION=	0
 CATEGORIES=	x11
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -11,10 +11,12 @@ WWW=		https://github.com/LGFae/swww
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	scdoc:textproc/scdoc
+BUILD_DEPENDS=	scdoc:textproc/scdoc \
+		wayland-protocols>=1.44:graphics/wayland-protocols \
+		wayland>=1.23.1:graphics/wayland
 LIB_DEPENDS+=	liblz4.so:archivers/liblz4
 
-USES=		cargo shebangfix
+USES=		cargo pkgconfig shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	LGFae
 
@@ -23,6 +25,8 @@ SHEBANG_FILES=	example_scripts/*.sh
 OPTIONS_DEFINE=	EXAMPLES
 
 EXAMPLES_RUN_DEPENDS=	bash:shells/bash
+
+CARGO_INSTALL_PATH=	client daemon
 
 post-build:
 	${WRKSRC}/doc/gen.sh

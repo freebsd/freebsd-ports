@@ -3,12 +3,12 @@ bin/swww-daemon
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/swww_init_according_to_time_of_day.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/swww_randomize.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/swww_randomize_multi.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/swww_scheduler.sh
 share/man/man1/swww-clear-cache.1.gz
 share/man/man1/swww-clear.1.gz
 share/man/man1/swww-daemon.1.gz
 share/man/man1/swww-img.1.gz
-share/man/man1/swww-init.1.gz
 share/man/man1/swww-kill.1.gz
 share/man/man1/swww-query.1.gz
 share/man/man1/swww-restore.1.gz
