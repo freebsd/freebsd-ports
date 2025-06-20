@@ -5,9 +5,6 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	01ccae2ccb64.patch:-p1 # https://gitlab.gnome.org/GNOME/bijiben/-/merge_requests/158
-
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Note editor designed to remain simple to use
 WWW=		https://wiki.gnome.org/Apps/Bijiben
