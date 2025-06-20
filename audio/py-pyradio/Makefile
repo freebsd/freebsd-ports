@@ -1,5 +1,5 @@
 PORTNAME=	pyradio
-DISTVERSION=	0.9.3.11.9
+DISTVERSION=	0.9.3.11.15
 PORTREVISION=	0
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,8 +36,8 @@ USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
-PLIST_FILES=	share/applications/${PORTNAME}.desktop \
-		share/pixmaps/${PORTNAME}.png
+PLIST_FILES=	${ICON_DIR}/${PORTNAME}.png \
+		share/applications/${PORTNAME}.desktop
 PORTDOCS=	*
 
 OPTIONS_DEFINE=			DOCS METADATA
@@ -61,21 +61,27 @@ MPLAYER_RUN_DEPENDS+=	mplayer:multimedia/mplayer
 MPV_RUN_DEPENDS+=	mpv:multimedia/mpv
 VLC_RUN_DEPENDS+=	vlc:multimedia/vlc
 
+ICON_DIR=	share/icons/hicolor/512x512/apps
+
 post-patch:
-	@${SED} -i.bak -e 's/\(distro =\) None/\1 ${OPSYS}/' \
+	@${REINPLACE_CDM} -e 's/\(distro =\) None/\1 ${OPSYS}/' \
 	-e 's/\(enable_notifications =\) -1/\1 0/' \
 	-e 's/\(remove_station_icons  =\) True/\1 False/' \
 	-e 's/\(xdg_compliant =\) False/\1 True/' \
 	 	${WRKSRC}/pyradio/config
+	@${REINPLACE_CMD} -e 's/\(license = \)"MIT"/\1{file = "LICENSE"}/1' \
+		-e '/^license-files = /d' \
+		${WRKSRC}/pyproject.toml
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/devel/${PORTNAME}.desktop \
 		${STAGEDIR}${DESKTOPDIR}/${PORTNAME}.desktop
+	${MKDIR} ${STAGEDIR}${PREFIX}/${ICON_DIR}
 	${INSTALL_DATA} ${WRKSRC}/devel/${PORTNAME}.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+		${STAGEDIR}${PREFIX}/${ICON_DIR}/${PORTNAME}.png
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/pyradio*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}/
 
