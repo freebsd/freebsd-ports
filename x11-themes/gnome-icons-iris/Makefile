@@ -6,7 +6,7 @@ PORTNAME=	iris
 PORTVERSION=	20050420
 PORTREVISION=	2
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	GNOME/teams/art.gnome.org/themes/icon
+MASTER_SITES=	https://download.gnome.org/teams/art.gnome.org/themes/icon/
 DISTNAME=	ICON-Iris
 
 MAINTAINER=	ports@FreeBSD.org
