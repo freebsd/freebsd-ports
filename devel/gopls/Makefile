@@ -1,7 +1,6 @@
 PORTNAME=	gopls
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.1
-PORTREVISION=	1
+DISTVERSION=	0.19.1
 CATEGORIES=	devel
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://pkg.go.dev/golang.org/x/tools/gopls
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:1.24,modules
 GO_MODULE=	golang.org/x/tools/gopls
 
 OPTIONS_DEFINE=	DOCS

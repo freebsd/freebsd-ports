@@ -12,6 +12,7 @@ bin/gopls
 %%PORTDOCS%%%%DOCSDIR%%/doc/design/integrating.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/emacs.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/features/README.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/features/assembly.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/features/completion.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/features/diagnostics.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/features/modfiles.md
@@ -20,8 +21,6 @@ bin/gopls
 %%PORTDOCS%%%%DOCSDIR%%/doc/features/templates.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/features/transformation.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/features/web.md
-%%PORTDOCS%%%%DOCSDIR%%/doc/generate/generate.go
-%%PORTDOCS%%%%DOCSDIR%%/doc/generate/generate_test.go
 %%PORTDOCS%%%%DOCSDIR%%/doc/helix.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/inlayHints.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/inline-after.png
@@ -31,6 +30,7 @@ bin/gopls
 %%PORTDOCS%%%%DOCSDIR%%/doc/release/v0.16.0.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/release/v0.17.0.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/release/v0.18.0.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/release/v0.19.0.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/releases.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/semantictokens.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/settings.md
