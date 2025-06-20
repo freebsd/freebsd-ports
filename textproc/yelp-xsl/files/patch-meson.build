@@ -1,0 +1,18 @@
+--- meson.build.orig	2025-06-12 16:51:49 UTC
++++ meson.build
+@@ -13,7 +13,7 @@ datadir = join_paths(prefix, get_option('datadir'))
+ 
+ datadir = join_paths(prefix, get_option('datadir'))
+ 
+-pkgconfigdir = join_paths(datadir, 'pkgconfig')
++pkgconfigdir = join_paths(prefix, 'libdata', 'pkgconfig')
+ pkgdir = join_paths(datadir, package_name)
+ pkgxsltdir = join_paths(pkgdir, 'xslt')
+ pkgjsdir = join_paths(pkgdir, 'js')
+@@ -89,4 +89,4 @@ summary = [
+   '------',
+ ]
+ 
+-message('\n'.join(summary))
+\ No newline at end of file
++message('\n'.join(summary))

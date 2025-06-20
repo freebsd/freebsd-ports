@@ -328,6 +328,35 @@
     </dates>
   </vuln>
 
+  <vuln vid="9449f018-84a3-490d-959f-38c05fbc77a7">
+    <topic>Yelp -- arbitrary file read</topic>
+    <affects>
+      <package>
+	<name>yelp-xsl</name>
+	<range><lt>42.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secalert@redhat.com reports:</p>
+	<blockquote cite="https://access.redhat.com/errata/RHSA-2025:4450">
+	  <p>A flaw was found in Yelp.  The Gnome user help application allows
+	the help document to execute arbitrary scripts.  This vulnerability
+	allows malicious users to input help documents, which may exfiltrate
+	user files to an external environment.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3155</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-3155</url>
+    </references>
+    <dates>
+      <discovery>2025-04-03</discovery>
+      <entry>2025-06-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ae028662-475e-11f0-9ca4-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
