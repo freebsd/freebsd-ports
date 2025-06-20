@@ -1,6 +1,9 @@
+Allow using mac_priority(4) to avoid stutter during high load:
 - Emulate SCHED_RESET_ON_FORK via pthread_atfork
 - Switch to pthread_setschedparam as Linux sched_setscheduler
   operates on threads contrary to POSIX
+
+Similar to picom, sway, hyprland. Also plasma6-kwin but not fixed yet.
 
 --- como/base/wayland/app_singleton.h.orig	2024-02-27 13:02:31 UTC
 +++ como/base/wayland/app_singleton.h
