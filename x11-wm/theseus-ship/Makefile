@@ -1,8 +1,8 @@
 PORTNAME=	theseus-ship
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.2.0
-PORTREVISION=	2
-CATEGORIES=	x11-wm # wayland: https://github.com/winft/theseus-ship/issues/9
+PORTREVISION=	3
+CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	01030427325c.patch:-p1 # https://github.com/winft/theseus-ship/pull/17
