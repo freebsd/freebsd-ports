@@ -1,0 +1,9 @@
+This is the "official" Rust-based tldr client. It is very fast, like tealdeer
+(sysutils/tealdeer) but is even more configurable. Where tealdeer gives you
+lots of control over colors, tlrc gives you control over formatting, symbols,
+and more.
+
+If you don't care about configurability and just want a fast tldr client, this
+or tealdeer are both great choices. The most official of all the official
+clients is the node-based one, but it's not available in the ports tree and is
+orders of magnitude slower than the Rust options.
