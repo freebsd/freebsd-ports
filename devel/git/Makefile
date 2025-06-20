@@ -1,5 +1,5 @@
 PORTNAME=	git
-DISTVERSION=	2.49.0
+DISTVERSION=	2.50.0
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -59,7 +59,6 @@ SHEBANG_FILES=	Documentation/*.perl \
 		contrib/*/*.pl \
 		contrib/*/*/*.perl \
 		contrib/*/*/*.pl \
-		contrib/buildsystems/generate \
 		contrib/contacts/git-contacts \
 		contrib/fast-import/import-zips.py \
 		contrib/hooks/update-paranoid \

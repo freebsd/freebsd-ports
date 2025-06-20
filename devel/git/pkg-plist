@@ -65,6 +65,7 @@ libexec/git-core/git-diagnose
 libexec/git-core/git-diff
 libexec/git-core/git-diff-files
 libexec/git-core/git-diff-index
+libexec/git-core/git-diff-pairs
 libexec/git-core/git-diff-tree
 libexec/git-core/git-difftool
 libexec/git-core/git-difftool--helper
@@ -217,6 +218,7 @@ libexec/git-core/mergetools/vscode
 libexec/git-core/mergetools/winmerge
 libexec/git-core/mergetools/xxdiff
 libexec/git-core/scalar
+share/bash-completion/completions/git
 share/man/man1/git-add.1.gz
 share/man/man1/git-am.1.gz
 share/man/man1/git-annotate.1.gz
@@ -255,6 +257,7 @@ share/man/man1/git-describe.1.gz
 share/man/man1/git-diagnose.1.gz
 share/man/man1/git-diff-files.1.gz
 share/man/man1/git-diff-index.1.gz
+share/man/man1/git-diff-pairs.1.gz
 share/man/man1/git-diff-tree.1.gz
 share/man/man1/git-diff.1.gz
 share/man/man1/git-difftool.1.gz
@@ -409,6 +412,7 @@ share/man/man7/gittutorial-2.7.gz
 share/man/man7/gittutorial.7.gz
 share/man/man7/gitworkflows.7.gz
 %%DOCS%%%%DOCSDIR%%/BreakingChanges.adoc
+%%DOCS%%%%DOCSDIR%%/BreakingChanges.html
 %%DOCS%%%%DOCSDIR%%/DecisionMaking.adoc
 %%DOCS%%%%DOCSDIR%%/DecisionMaking.html
 %%DOCS%%%%DOCSDIR%%/MyFirstContribution.adoc
@@ -904,6 +908,7 @@ share/man/man7/gitworkflows.7.gz
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.48.0.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.48.1.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.49.0.adoc
+%%DOCS%%%%DOCSDIR%%/RelNotes/2.50.0.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.5.0.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.5.1.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.5.2.adoc
@@ -1054,6 +1059,8 @@ share/man/man7/gitworkflows.7.gz
 %%DOCS%%%%DOCSDIR%%/git-diff-files.html
 %%DOCS%%%%DOCSDIR%%/git-diff-index.adoc
 %%DOCS%%%%DOCSDIR%%/git-diff-index.html
+%%DOCS%%%%DOCSDIR%%/git-diff-pairs.adoc
+%%DOCS%%%%DOCSDIR%%/git-diff-pairs.html
 %%DOCS%%%%DOCSDIR%%/git-diff-tree.adoc
 %%DOCS%%%%DOCSDIR%%/git-diff-tree.html
 %%DOCS%%%%DOCSDIR%%/git-diff.adoc
@@ -1501,14 +1508,7 @@ share/emacs/site-lisp/git/git.el
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%CONTRIB%%share/git-core/contrib/README
 %%CONTRIB%%share/git-core/contrib/buildsystems/CMakeLists.txt
-%%CONTRIB%%share/git-core/contrib/buildsystems/Generators.pm
-%%CONTRIB%%share/git-core/contrib/buildsystems/Generators/QMake.pm
-%%CONTRIB%%share/git-core/contrib/buildsystems/Generators/Vcproj.pm
-%%CONTRIB%%share/git-core/contrib/buildsystems/Generators/Vcxproj.pm
-%%CONTRIB%%share/git-core/contrib/buildsystems/engine.pl
-%%CONTRIB%%share/git-core/contrib/buildsystems/generate
 %%CONTRIB%%share/git-core/contrib/buildsystems/git-version.in
-%%CONTRIB%%share/git-core/contrib/buildsystems/parse.pl
 %%CONTRIB%%share/git-core/contrib/coccinelle/README
 %%CONTRIB%%share/git-core/contrib/coccinelle/array.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/commit.cocci
@@ -1686,6 +1686,7 @@ share/git-core/templates/info/exclude
 %%NLS%%share/locale/el/LC_MESSAGES/git.mo
 %%NLS%%share/locale/es/LC_MESSAGES/git.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/git.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/git.mo
 %%NLS%%share/locale/id/LC_MESSAGES/git.mo
 %%NLS%%share/locale/is/LC_MESSAGES/git.mo
 %%NLS%%share/locale/it/LC_MESSAGES/git.mo

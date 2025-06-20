@@ -1,11 +1,12 @@
---- Makefile.orig	2025-01-10 17:43:46 UTC
+--- Makefile.orig	2025-06-16 05:42:57 UTC
 +++ Makefile
-@@ -613,16 +613,16 @@ mandir = $(prefix)/share/man
+@@ -614,17 +614,17 @@ mandir = $(prefix)/share/man
  prefix = $(HOME)
  bindir = $(prefix)/bin
  mandir = $(prefix)/share/man
 -infodir = $(prefix)/share/info
 +infodir = $(prefix)/info
+ bash_completion_dir = $(prefix)/share/bash-completion/completions
  gitexecdir = libexec/git-core
  mergetoolsdir = $(gitexecdir)/mergetools
  sharedir = $(prefix)/share
@@ -21,7 +22,7 @@
  ETC_GITCONFIG = $(sysconfdir)/gitconfig
  ETC_GITATTRIBUTES = $(sysconfdir)/gitattributes
  lib = lib
-@@ -647,8 +647,8 @@ INSTALL = install
+@@ -649,8 +649,8 @@ INSTALL = install
  TAR = tar
  FIND = find
  INSTALL = install
@@ -32,7 +33,7 @@
  XGETTEXT = xgettext
  MSGCAT = msgcat
  MSGFMT = msgfmt
-@@ -1696,9 +1696,9 @@ ifndef NO_OPENSSL
+@@ -1723,9 +1723,9 @@ ifndef NO_OPENSSL
  
  ifndef NO_OPENSSL
  	OPENSSL_LIBSSL = -lssl
@@ -45,7 +46,7 @@
          else
  		OPENSSL_LINK =
          endif
-@@ -2627,7 +2627,7 @@ else # NO_PERL
+@@ -2672,7 +2672,7 @@ else # NO_PERL
  	chmod +x $@+ && \
  	mv $@+ $@
  else # NO_PERL
@@ -54,7 +55,7 @@
  	$(QUIET_GEN) \
  	sed -e '1s|#!.*/sh|#!$(SHELL_PATH_SQ)|' \
  	    -e 's|@REASON@|NO_PERL=$(NO_PERL)|g' \
-@@ -3489,7 +3489,7 @@ install: all
+@@ -3540,7 +3540,7 @@ install: all
  	$(INSTALL) $(SCRIPTS) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
  	$(INSTALL) -m 644 $(SCRIPT_LIB) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
  	$(INSTALL) $(INSTALL_STRIP) $(install_bindir_xprograms) '$(DESTDIR_SQ)$(bindir_SQ)'

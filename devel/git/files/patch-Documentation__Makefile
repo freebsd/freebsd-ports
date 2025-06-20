@@ -1,6 +1,6 @@
---- Documentation/Makefile.orig	2025-03-14 16:40:00 UTC
+--- Documentation/Makefile.orig	2025-06-16 05:42:57 UTC
 +++ Documentation/Makefile
-@@ -143,11 +143,11 @@ DOC_MAN7 = $(patsubst %.adoc,%.7,$(filter $(MAN_FILTER
+@@ -144,11 +144,11 @@ DOC_MAN7 = $(patsubst %.adoc,%.7,$(filter $(MAN_FILTER
  DOC_MAN5 = $(patsubst %.adoc,%.5,$(filter $(MAN_FILTER),$(MAN5_TXT)))
  DOC_MAN7 = $(patsubst %.adoc,%.7,$(filter $(MAN_FILTER),$(MAN7_TXT)))
  
@@ -15,7 +15,7 @@
  mandir ?= $(prefix)/share/man
  man1dir = $(mandir)/man1
  man5dir = $(mandir)/man5
-@@ -245,7 +245,7 @@ endif
+@@ -246,7 +246,7 @@ endif
  ASCIIDOC_EXTRA += -a 'git-default-editor=$(DEFAULT_EDITOR_SQ)'
  endif
  
