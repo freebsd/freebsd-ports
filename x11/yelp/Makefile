@@ -1,7 +1,7 @@
 PORTNAME=	yelp
-DISTVERSION=	42.2
+DISTVERSION=	42.3
 CATEGORIES=	x11 gnome
-MASTER_SITES=	GNOME
+#MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -12,7 +12,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
-		yelp-xsl>=0:textproc/yelp-xsl
+		yelp-xsl>=0:textproc/yelp-xsl \
+		bash:shells/bash
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
 		libhandy-1.so:x11-toolkits/libhandy \
@@ -21,16 +22,18 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libwebkit2gtk-4.1.so:www/webkit2-gtk@41
 RUN_DEPENDS=	yelp-xsl>=0:textproc/yelp-xsl
 
-USES=		compiler:c11 desktop-file-utils gettext gmake gnome libtool \
-		pathfix pkgconfig sqlite tar:xz xorg
+USES=		compiler:c11 desktop-file-utils gettext gnome meson \
+		pkgconfig shebangfix sqlite tar:bzip2 xorg
 USE_GNOME=	cairo gdkpixbuf gtk30 libxml2 libxslt
+USE_XORG=	ice x11
+SHEBANG_FILES=	data/domains/gen_yelp_xml.sh \
+		src/link-gnome-help.sh
 GLIB_SCHEMAS=	org.gnome.yelp.gschema.xml
 USE_LDCONFIG=	yes
-USE_XORG=	ice x11
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static
-INSTALL_TARGET=	install-strip
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.gnome.org
+GL_ACCOUNT=	GNOME
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LIBEXECDIR%%|${PREFIX}/libexec|g' \

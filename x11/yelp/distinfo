@@ -1,3 +1,3 @@
-TIMESTAMP = 1685378703
-SHA256 (gnome/yelp-42.2.tar.xz) = a2c5fd0787a9089c722cc66bd0f85cdf7088d870e7b6cc85799f8e5bff9eac4b
-SIZE (gnome/yelp-42.2.tar.xz) = 1506136
+TIMESTAMP = 1749912123
+SHA256 (gnome/yelp-42.3.tar.bz2) = cc487a93b6bb9cd5883603ca5db6340449b417dbb429f3be37231f05d7fe514b
+SIZE (gnome/yelp-42.3.tar.bz2) = 1355746
