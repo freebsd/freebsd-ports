@@ -98,6 +98,7 @@ include/dns/transport.h
 include/dns/tsig.h
 include/dns/ttl.h
 include/dns/types.h
+include/dns/unreachcache.h
 include/dns/update.h
 include/dns/validator.h
 include/dns/view.h
@@ -234,15 +235,15 @@ include/ns/update.h
 include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
-lib/libdns-9.21.8.so
+lib/libdns-9.21.9.so
 lib/libdns.so
-lib/libisc-9.21.8.so
+lib/libisc-9.21.9.so
 lib/libisc.so
-lib/libisccc-9.21.8.so
+lib/libisccc-9.21.9.so
 lib/libisccc.so
-lib/libisccfg-9.21.8.so
+lib/libisccfg-9.21.9.so
 lib/libisccfg.so
-lib/libns-9.21.8.so
+lib/libns-9.21.9.so
 lib/libns.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
