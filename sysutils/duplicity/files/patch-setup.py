@@ -1,6 +1,6 @@
---- setup.py.orig	2024-02-06 08:04:58 UTC
+--- setup.py.orig	2025-06-19 16:01:57 UTC
 +++ setup.py
-@@ -99,18 +99,6 @@ def get_data_files():
+@@ -113,18 +113,6 @@ def get_data_files():
                  "man/duplicity.1",
              ],
          ),

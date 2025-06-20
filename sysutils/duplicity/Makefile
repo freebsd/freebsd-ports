@@ -1,6 +1,5 @@
 PORTNAME=	duplicity
-DISTVERSION=	3.0.4
-PORTREVISION=	1
+DISTVERSION=	3.0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	PYPI
 
@@ -11,9 +10,7 @@ WWW=		https://duplicity.gitlab.io/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pipx>0:devel/py-pipx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	librsync.so:net/librsync
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0:devel/py-fasteners@${PY_FLAVOR} \
@@ -23,23 +20,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0:devel/py-fasteners@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>0:devel/py-black@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-pycodestyle>0:devel/py-pytest-pycodestyle@${PY_FLAVOR} \
-		gtar>0:archivers/gtar \
-		par2cmdline>0:archivers/par2cmdline \
-		pylint${PYTHON_PKGNAMESUFFIX}>0:devel/pylint@${PY_FLAVOR}
 
 USES=		cpe localbase python shebangfix
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
-USE_PYTHON=	autoplist noflavors pep517 pytest
+USE_PYTHON=	autoplist noflavors pep517
 
-PYTEST_IGNORED_TESTS=	test_code.py #https://lists.nongnu.org/archive/html/duplicity-talk/2025-02/msg00007.html
+SHEBANG_FILES=	duplicity/__main__.py
 
-SHEBANG_FILES=	duplicity/__main__.py testing/overrides/bin/*
-
-PORTDOCS=	AUTHORS.md README-LOG.md README-REPO.md README-TESTING.md \
-		README.md
+PORTDOCS=	AUTHORS.md README-LOG.md README-REPO.md README.md
 
 OPTIONS_DEFINE=		B2 DOCS DROPBOX FTP FTPS GDOCS NLS S3
 OPTIONS_DEFAULT=	B2 DROPBOX GNUPG2 S3
@@ -74,9 +63,5 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-
-pre-test:
-	@${REINPLACE_CMD} -e 's,python3,${PYTHON_CMD:T},' \
-		${WRKSRC}/testing/functional/__init__.py
 
 .include <bsd.port.mk>
