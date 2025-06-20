@@ -1,7 +1,7 @@
 PORTNAME=	goldendict-ng
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.05.0
-PORTREVISION=	1
+DISTVERSION=	25.06.0
+DISTVERSIONSUFFIX=	-Release.8a87a79b
 CATEGORIES=	textproc
 
 MAINTAINER=	mew14930xvi@inbox.lv
@@ -25,7 +25,6 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:6 \
 		xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiaoyifang
-GH_TAGNAME=	2a2b0e16
 USE_GL=		opengl
 USE_QT=		5compat base declarative multimedia positioning svg webchannel \
 		webengine tools:build
