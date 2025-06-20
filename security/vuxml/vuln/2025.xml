@@ -1,3 +1,78 @@
+  <vuln vid="6c6c1507-4da5-11f0-afcc-f02f7432cf97">
+    <topic>clamav -- ClamAV UDF File Parsing Out-Of-Bounds Read Information Disclosure Vulnerability</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><ge>1.2.0,1</ge><lt>1.4.3,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cisco reports:</p>
+	<blockquote cite="https://blog.clamav.net/2025/06/clamav-143-and-109-security-patch.html">
+	  <p>A vulnerability in Universal Disk Format (UDF) processing of ClamAV
+	could allow an unauthenticated, remote attacker to cause a denial
+	of service (DoS) condition on an affected device.
+
+	This vulnerability is due to a memory overread during UDF file
+	scanning.  An attacker could exploit this vulnerability by submitting
+	a crafted file containing UDF content to be scanned by ClamAV on
+	an affected device.  A successful exploit could allow the attacker
+	to terminate the ClamAV scanning process, resulting in a DoS condition
+	on the affected software.  For a description of this vulnerability,
+	see the .</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-20234</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-20234</url>
+    </references>
+    <dates>
+      <discovery>2025-06-18</discovery>
+      <entry>2025-06-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3dcc0812-4da5-11f0-afcc-f02f7432cf97">
+    <topic>clamav -- ClamAV PDF Scanning Buffer Overflow Vulnerability</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>1.4.3,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cisco reports:</p>
+	<blockquote cite="https://blog.clamav.net/2025/06/clamav-143-and-109-security-patch.html">
+	  <p>A vulnerability in the PDF scanning processes of ClamAV could allow
+	an unauthenticated, remote attacker to cause a buffer overflow
+	condition, cause a denial of service (DoS) condition, or execute
+	arbitrary code on an affected device.
+
+	This vulnerability exists because memory buffers are allocated
+	incorrectly when PDF files are processed.  An attacker could exploit
+	this vulnerability by submitting a crafted PDF file to be scanned
+	by ClamAV on an affected device.  A successful exploit could allow
+	the attacker to trigger a buffer overflow, likely resulting in the
+	termination of the ClamAV scanning process and a DoS condition on
+	the affected software.  Although unproven, there is also a possibility
+	that an attacker could leverage the buffer overflow to execute
+	arbitrary code with the privileges of the ClamAV process.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-20260</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-20260</url>
+    </references>
+    <dates>
+      <discovery>2025-06-18</discovery>
+      <entry>2025-06-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="333b4663-4cde-11f0-8cb5-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
