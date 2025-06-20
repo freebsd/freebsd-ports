@@ -1,12 +1,7 @@
 PORTNAME=	squid
-DISTVERSION=	6.12
-PORTREVISION=	1
+DISTVERSION=	6.13
 CATEGORIES=	www
-MASTER_SITES=	http://www2.pl.squid-cache.org/Versions/v6/ \
-		http://www1.il.squid-cache.org/Versions/v6/ \
-		http://www2.gr.squid-cache.org/Versions/v6/ \
-		http://ca2.squid-cache.org/Versions/v6/ \
-		https://www.squid-cache.org/Versions/v6/
+MASTER_SITES=	https://github.com/${PORTNAME}-cache/${PORTNAME}/releases/download/${PORTNAME:tu}_${DISTVERSION:S|.|_|g}/
 
 PATCH_SITES=	http://www2.pl.squid-cache.org/%SUBDIR%/ \
 		http://www1.il.squid-cache.org/%SUBDIR%/ \
@@ -17,7 +12,8 @@ PATCH_SITE_SUBDIR=	Versions/v6/changesets
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	HTTP Caching Proxy
-WWW=		https://www.squid-cache.org/
+WWW=		https://www.squid-cache.org/ \
+		https://github.com/squid-cache/squid/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -209,9 +205,11 @@ WCCP_CONFIGURE_ENABLE=		wccp
 MYDOCS=		QUICKSTART README RELEASENOTES.html doc/debug-sections.txt
 
 change_files=	ChangeLog errors/Makefile.am errors/Makefile.in \
-		src/auth/basic/SMB_LM/README.html src/Makefile.am \
-		src/Makefile.in src/cf_gen.cc src/squid.8.in \
-		test-suite/Makefile.in tools/Makefile.am tools/Makefile.in
+		src/auth/basic/SMB_LM/README.html \
+		src/Makefile.am src/Makefile.in \
+		src/cf_gen.cc src/squid.8.in \
+		test-suite/Makefile.in test-suite/Makefile.am \
+		tools/Makefile.am tools/Makefile.in
 
 .include <bsd.port.options.mk>
 
@@ -223,6 +221,7 @@ EXTERNAL_ACL+=	file_userip unix_group delayer
 # POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
 .if ${PORT_OPTIONS:MAUTH_NIS} && !defined(NO_NIS) && !defined(WITHOUT_NIS)
 BASIC_AUTH+=	NIS
+CPPFLAGS+=	-DBOOL_DEFINED
 .endif
 
 # POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:

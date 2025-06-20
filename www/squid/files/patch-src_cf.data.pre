@@ -1,6 +1,6 @@
---- src/cf.data.pre.orig	2024-03-04 05:45:51 UTC
+--- src/cf.data.pre.orig	2025-01-31 08:52:43 UTC
 +++ src/cf.data.pre
-@@ -5526,6 +5526,10 @@ DEFAULT: @DEFAULT_PID_FILE@
+@@ -5552,6 +5552,10 @@ DOC_START
  LOC: Config.pidFilename
  DOC_START
  	A filename to write the process-id to.  To disable, enter "none".
