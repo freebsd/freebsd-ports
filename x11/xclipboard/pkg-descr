@@ -1,1 +1,8 @@
-This package contains xclipboard, an X clipboard client.
+The xclipboard program is used to collect and display text selections
+that are sent to the CLIPBOARD by other clients. It is typically used
+to save CLIPBOARD selections for later use. It stores each CLIPBOARD
+selection as a separate string, each of which can be selected. Each
+time CLIPBOARD is asserted by another application, xclipboard transfers
+the contents of that selection to a new buffer and displays it in the
+text window. Buffers are never automatically deleted, so you'll want to
+use the delete button to get rid of useless items.
