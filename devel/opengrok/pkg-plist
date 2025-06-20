@@ -95,6 +95,7 @@
 %%T%%/webapps/opengrok/WEB-INF/lib/chronicle-wire-2.27ea0.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/classgraph-4.8.173.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/classmate-1.5.1.jar
+%%T%%/webapps/opengrok/WEB-INF/lib/commons-codec-1.18.0.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/commons-compress-1.26.0.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/commons-io-2.14.0.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/commons-lang3-3.13.0.jar
@@ -163,8 +164,8 @@
 %%T%%/webapps/opengrok/WEB-INF/lib/micrometer-registry-statsd-1.14.1.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/modelmapper-3.1.1.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/mxparser-1.2.2.jar
-%%T%%/webapps/opengrok/WEB-INF/lib/opengrok-1.13.30.jar
-%%T%%/webapps/opengrok/WEB-INF/lib/org.eclipse.jgit-6.6.1.202309021850-r.jar
+%%T%%/webapps/opengrok/WEB-INF/lib/opengrok-1.14.1.jar
+%%T%%/webapps/opengrok/WEB-INF/lib/org.eclipse.jgit-7.2.1.202505142326-r.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/org.suigeneris.jrcs.diff-0.4.2.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/org.suigeneris.jrcs.rcs-0.4.2.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/osgi-resource-locator-1.0.3.jar
@@ -178,7 +179,7 @@
 %%T%%/webapps/opengrok/WEB-INF/lib/slf4j-api-2.0.13.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/slf4j-nop-1.7.30.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/snakeyaml-2.2.jar
-%%T%%/webapps/opengrok/WEB-INF/lib/suggester-1.13.30.jar
+%%T%%/webapps/opengrok/WEB-INF/lib/suggester-1.14.1.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/tablesorter-2.31.3.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/txw2-3.0.2.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/versioncompare-1.5.0.jar
