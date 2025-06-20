@@ -19,6 +19,7 @@ command="%%PREFIX%%/sbin/shibboleth-idp.sh"
 command_args="start"
 extra_commands="idpstatus initupgrade"
 start_precmd="shibboleth_idp_start_precmd"
+idpstatus_cmd="shibboleth_idp_status"
 initupgrade_cmd="shibboleth_idp_initupgrade"
 
 # set defaults
@@ -87,6 +88,10 @@ shibboleth_idp_initupgrade() {
     fi
     %%DATADIR%%/bin/install.sh --propertyFile %%WWWDIR%%/install.properties --propertyFiles %%WWWDIR%%/credentials/secrets.properties
     /usr/bin/sed -i'.bak' -e "s|idp.scope = example.org|idp.scope=${shibboleth_idp_scope}|g" %%WWWDIR%%/conf/idp.properties
+}
+
+shibboleth_idp_status() {
+    /usr/bin/fetch -qo - http://127.0.0.1:8080/idp/status
 }
 
 run_rc_command "$1"

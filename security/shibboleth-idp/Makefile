@@ -1,6 +1,5 @@
 PORTNAME=	shibboleth
-PORTVERSION=	5.1.3
-PORTREVISION=	1
+PORTVERSION=	5.1.4
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/identity-provider/${PORTVERSION}/ \
 		http://shibboleth.net/downloads/identity-provider/latest5/${PORTVERSION}/ \
@@ -31,6 +30,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 LOGBACKVER=	1.5.6
+SHIBVER=	9.1.4
 SHIBUSER=	shibd
 SHIBGROUP=	shibd
 LOGDIR=		/var/log/${PORTNAME}
@@ -43,7 +43,7 @@ SUB_FILES=	shibboleth jetty-pid.xml
 SUB_LIST+=	SHIBUSER=${SHIBUSER} SHIBGROUP=${SHIBGROUP} \
 		RUNDIR=${RUNDIR} LOGDIR=${LOGDIR}
 PLIST_SUB+=	SHIBUSER=${SHIBUSER} SHIBGROUP=${SHIBGROUP} \
-		RUNDIR=${RUNDIR} LOGDIR=${LOGDIR} \
+		RUNDIR=${RUNDIR} LOGDIR=${LOGDIR} SHIBVER=${SHIBVER} \
 		LOGBACKVER=${LOGBACKVER} PORTVERSION=${PORTVERSION}
 
 do-install:
