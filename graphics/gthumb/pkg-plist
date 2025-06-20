@@ -193,7 +193,7 @@ lib/gthumb/extensions/selections.extension
 lib/gthumb/extensions/slideshow.extension
 lib/gthumb/extensions/terminal.extension
 lib/gthumb/extensions/webalbums.extension
-libexec/gthumb/video-thumbnailer
+%%GSTREAMER%%libexec/gthumb/video-thumbnailer
 libdata/pkgconfig/gthumb.pc
 share/man/man1/gthumb.1.gz
 share/aclocal/gthumb.m4
