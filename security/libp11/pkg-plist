@@ -2,8 +2,8 @@ include/libp11.h
 include/p11_err.h
 lib/engines/libpkcs11.so
 lib/engines/pkcs11.so
-lib/ossl-modules/libpkcs11.so
-lib/ossl-modules/pkcs11prov.so
+%%PROVIDERS%%lib/ossl-modules/libpkcs11.so
+%%PROVIDERS%%lib/ossl-modules/pkcs11prov.so
 lib/libp11.a
 lib/libp11.so
 lib/libp11.so.3

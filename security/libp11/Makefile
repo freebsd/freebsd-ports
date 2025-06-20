@@ -1,5 +1,6 @@
 PORTNAME=	libp11
 PORTVERSION=	0.4.14
+PORTREVIION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	security devel
 
@@ -38,6 +39,15 @@ CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-enginesdir=${PREFIX}/lib/engines \
 		--with-modulesdir=${PREFIX}/lib/ossl-modules \
 		--enable-static-engine
+
+.include <bsd.port.options.mk>
+
+.if ${SSL_DEFAULT} == "base" && ${OPSYS} == FreeBSD && ${OSREL:R} < 14
+PLIST_SUB+=		PROVIDERS="@comment "
+.else
+PLIST_SUB+=		PROVIDERS=""
+.endif
+
 
 INSTALL_TARGET=	install-strip
 
