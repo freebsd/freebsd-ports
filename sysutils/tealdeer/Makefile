@@ -17,6 +17,8 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	dbrgn
 
+CONFLICTS_INSTALL=	tldr
+
 PLIST_FILES=	bin/tldr
 
 PORTDOCS=	CHANGELOG.md README.md

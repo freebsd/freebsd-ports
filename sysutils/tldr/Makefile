@@ -15,6 +15,8 @@ USE_GITHUB=	yes
 GH_PROJECT=	tlrc
 GH_ACCOUNT=	tldr-pages
 
+CONFLICTS_INSTALL=	tealdeer
+
 PLIST_FILES=	bin/tldr \
 		share/man/man1/tldr.1.gz \
 		share/bash-completion/completions/tldr \
