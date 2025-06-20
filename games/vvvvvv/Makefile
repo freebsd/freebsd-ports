@@ -1,6 +1,5 @@
 PORTNAME=	VVVVVV
-DISTVERSION=	2.4.2
-PORTREVISION=	2
+DISTVERSION=	2.4.3
 CATEGORIES=	games
 .if ${FLAVOR:U} == makeandplay
 # The data file may only be distributed if the MAKEANDPLAY define is set.
@@ -43,7 +42,7 @@ GH_ACCOUNT=	TerryCavanagh
 # physfs is unbundled, but the code still needs extras/physfsrwops.c, which is not
 # compiled into libphysfs.so
 GH_TUPLE=	lvandeve:lodepng:18964554bc769255401942e0e6dfd09f2fab2093:lodepng/../third_party/lodepng \
-		Tehreer:SheenBidi:v2.7:SheenBidi/../third_party/SheenBidi \
+		Tehreer:SheenBidi:v2.9.0:SheenBidi/../third_party/SheenBidi \
 		Mashpoe:c-hashmap:dedf70e0a769bc52a17a36da840d96770fc26d12:chashmap/../third_party/c-hashmap \
 		icculus:physfs:bfa7997c671957eb0a340ff1cf3c634e6269904a:physfs/../third_party/physfs
 USE_SDL=	sdl2

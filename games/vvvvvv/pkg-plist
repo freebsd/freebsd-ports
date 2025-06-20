@@ -108,6 +108,16 @@
 %%DATADIR%%/lang/es_AR/roomnames_special.xml
 %%DATADIR%%/lang/es_AR/strings.xml
 %%DATADIR%%/lang/es_AR/strings_plural.xml
+%%DATADIR%%/lang/fa/cutscenes.xml
+%%DATADIR%%/lang/fa/graphics/flipsprites.png
+%%DATADIR%%/lang/fa/graphics/sprites.png
+%%DATADIR%%/lang/fa/graphics/spritesmask.xml
+%%DATADIR%%/lang/fa/meta.xml
+%%DATADIR%%/lang/fa/numbers.xml
+%%DATADIR%%/lang/fa/roomnames.xml
+%%DATADIR%%/lang/fa/roomnames_special.xml
+%%DATADIR%%/lang/fa/strings.xml
+%%DATADIR%%/lang/fa/strings_plural.xml
 %%DATADIR%%/lang/fr/cutscenes.xml
 %%DATADIR%%/lang/fr/graphics/flipsprites.png
 %%DATADIR%%/lang/fr/graphics/sprites.png
