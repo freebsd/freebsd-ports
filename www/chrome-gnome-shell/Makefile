@@ -2,7 +2,7 @@ PORTNAME=	chrome-gnome-shell
 DISTVERSION=	10.1
 PORTREVISION=	3
 CATEGORIES=	www gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	https://download.gnome.org/sources/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	daniel@shafer.cc
 COMMENT=	GNOME Shell integration for Chrome
