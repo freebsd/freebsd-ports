@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250620:
+  AFFECTS: users of x11/swww
+  AUTHOR: nivit@FreeBSD.org
+
+  Starting from version 0.10 the command swww init, previously deprecated, has
+  been properly deleted. The correct way of initializing the daemon is calling
+  swww-daemon directly.
+
 20250613:
   AFFECTS: users of devel/py-gql, games/DDNet, net/mosquitto
   AUTHOR: michaelo@FreeBSD.org
