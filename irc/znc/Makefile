@@ -1,6 +1,5 @@
 PORTNAME=	znc
-DISTVERSION=	1.9.1
-PORTREVISION=	6
+DISTVERSION=	1.10.0
 CATEGORIES=	irc
 MASTER_SITES=	https://znc.in/releases/ \
 		https://znc.in/releases/archive/
@@ -13,11 +12,18 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	swig>=4.0.1:devel/swig
-LIB_DEPENDS=	libicuuc.so:devel/icu
+LIB_DEPENDS=	libcctz.so:devel/cctz \
+		libicuuc.so:devel/icu
 
 USES=		compiler:c++17-lang cpe cmake:run iconv pathfix \
 		perl5 pkgconfig:both python ssl
 USE_PERL5=	build
+
+EXTRACT_AFTER_ARGS=	--exclude ${PORTNAME}-${DISTVERSION}/third_party/cctz \
+			--exclude ${PORTNAME}-${DISTVERSION}/third_party/googletest \
+			--exclude ${PORTNAME}-${DISTVERSION}/third_party/gtest-parallel \
+			--no-same-owner --no-same-permissions
+
 USE_RC_SUBR=	znc
 
 USERS=		znc
@@ -31,6 +37,7 @@ CMAKE_ON=	WANT_ICU \
 		WANT_OPENSSL \
 		WANT_PYTHON \
 		WANT_SWIG
+CMAKE_OFF=	WANT_ARGON
 CMAKE_ARGS=	-DOPENSSL_ROOT_DIR=${OPENSSLBASE} \
 		-DWANT_PYTHON_VERSION:STRING=python-${PYTHON_VER}
 
@@ -62,9 +69,7 @@ post-patch:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 post-install-NLS-off:
 	@${RM} -r ${STAGEDIR}${DATADIR}/translations
