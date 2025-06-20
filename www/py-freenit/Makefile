@@ -1,5 +1,5 @@
 PORTNAME=	freenit
-DISTVERSION=	0.3.14
+DISTVERSION=	0.3.15
 CATEGORIES=	www devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,11 +31,13 @@ TEST_ENV=	PYTHONPATH=${WRKSRC}/src
 NO_ARCH=	yes
 SUB_LIST=	PYTHON_VER=${PYTHON_VER}
 
-OPTIONS_DEFINE=		ORMAR
-OPTIONS_DEFAULT=	ORMAR
+OPTIONS_DEFINE=		LDAP SQL
+OPTIONS_DEFAULT=	SQL
 
-ORMAR_DESC=		Support for SQL databases using Ormar
-ORMAR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}alembic>=0:databases/py-alembic@${PY_FLAVOR} \
+LDAP_DESC=		Support for OpenLDAP using Beanie
+SQL_DESC=		Support for SQL databases using Ormar
+LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bonsai>=0:net/py-bonsai@${PY_FLAVOR}
+SQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}alembic>=0:databases/py-alembic@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ormar>0:databases/py-ormar@${PY_FLAVOR}
 
 .include <bsd.port.mk>
