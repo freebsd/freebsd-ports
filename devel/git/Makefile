@@ -71,7 +71,7 @@ CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 .if ${SUBPORT} == core
 
 OPTIONS_DEFINE=	CONTRIB CURL DOCS GITWEB ICONV NLS PCRE2 PERL SEND_EMAIL \
-		SUBTREE
+		SUBTREE SYSINFO
 OPTIONS_DEFAULT=CONTRIB CURL GITWEB ICONV PCRE2 PERL SEND_EMAIL SUBTREE
 
 . if ${FLAVOR:U} == lite
@@ -93,6 +93,7 @@ GITWEB_DESC=	Install gitweb
 PCRE2_DESC=	Use Perl Compatible Regular Expressions (v2)
 SEND_EMAIL_DESC=Enable the git-send-email(1) script
 SUBTREE_DESC=	Install git-subtree
+SYSINFO_DESC=	Use libsysinfo
 
 NLS_USES=		gettext
 NLS_MAKE_ARGS_OFF=	NO_GETTEXT=yes
@@ -104,7 +105,6 @@ PERL_RUN_DEPENDS=	p5-Error>=0:lang/p5-Error
 PERL_MAKE_ARGS_OFF=	NO_PERL=1
 
 GITWEB_IMPLIES=		PERL
-GITWEB_RUN_DEPENDS=	p5-CGI>=0:www/p5-CGI
 GITWEB_MAKE_ARGS_OFF=	NO_GITWEB=1
 
 PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
@@ -126,6 +126,10 @@ DOCS_DISTFILES=	${PORTNAME}-htmldocs-${DISTVERSION}${EXTRACT_SUFX}
 
 SUBTREE_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 			xmlto:textproc/xmlto
+
+SYSINFO_LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
+SYSINFO_CONFIGURE_ON=	--with-libsysinfo
+SYSINFO_LDFLAGS=	-lsysinfo
 
 .else
 

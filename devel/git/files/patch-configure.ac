@@ -1,9 +1,9 @@
 # Specify 'allow-without' to allow --without-perl to be used
 # TODO: Upstream
 
---- configure.ac.orig	2018-04-02 17:44:04 UTC
+--- configure.ac.orig	2025-06-16 05:42:57 UTC
 +++ configure.ac
-@@ -414,7 +414,7 @@ GIT_PARSE_WITH_SET_MAKE_VAR(editor, DEFAULT_EDITOR,
+@@ -396,7 +396,7 @@ GIT_ARG_SET_PATH(shell)
  GIT_ARG_SET_PATH(shell)
  #
  # Define PERL_PATH to provide path to Perl.
@@ -12,3 +12,20 @@
  #
  # Define PYTHON_PATH to provide path to Python.
  GIT_ARG_SET_PATH(python, allow-without)
+@@ -1070,6 +1070,8 @@ GIT_CONF_SUBST([CHARSET_LIB])
+ #
+ # Define HAVE_SYSINFO=YesPlease if sysinfo is available.
+ #
++AC_ARG_WITH(libsysinfo,
++AS_HELP_STRING([--with-libsysinfo],[support libsysinfo (default is NO)]),
+ AC_DEFUN([HAVE_SYSINFO_SRC], [
+ AC_LANG_PROGRAM([[
+ #include <stdint.h>
+@@ -1091,6 +1093,7 @@ AC_COMPILE_IFELSE([HAVE_SYSINFO_SRC],
+ 	HAVE_SYSINFO=YesPlease],
+ 	[AC_MSG_RESULT([no])
+ 	HAVE_SYSINFO=])
++)
+ GIT_CONF_SUBST([HAVE_SYSINFO])
+ 
+ #
