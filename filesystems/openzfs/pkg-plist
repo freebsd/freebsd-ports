@@ -63,6 +63,8 @@ include/libspl/rpc/xdr.h
 include/libspl/statcommon.h
 include/libspl/stdlib.h
 include/libspl/string.h
+include/libspl/sys/abd_impl_os.h
+include/libspl/sys/abd_os.h
 include/libspl/sys/acl.h
 include/libspl/sys/acl_impl.h
 include/libspl/sys/asm_linkage.h
@@ -284,8 +286,6 @@ include/libzfs/zfs_fletcher.h
 include/libzfs/zfs_namecheck.h
 include/libzfs/zfs_prop.h
 include/libzfs/zfs_valstr.h
-include/libzpool/abd_impl_os.h
-include/libzpool/abd_os.h
 lib/libnvpair.a
 lib/libnvpair.so
 lib/libnvpair.so.3
@@ -790,6 +790,8 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.divide_by_zero.err
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.divide_by_zero.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.divide_by_zero.zcp
+%%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.encryption.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.encryption.zcp
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.exists.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.exists.zcp
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/lua_core/tst.integer_illegal.ksh
@@ -1434,6 +1436,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_get/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_get/vdev_get.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_get/vdev_get_001_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_get/vdev_get_all.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_get/zpool_get.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_get/zpool_get_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_get/zpool_get_002_pos.ksh
@@ -1952,6 +1955,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_spare_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_spare_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_spare_ashift.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_spare_double.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_spare_multiple.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/auto_spare_shared.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fault/cleanup.ksh
@@ -2514,6 +2518,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_holds.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_hole_birth.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_invalid.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_leak_keymaps.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_mixed_raw.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_partial_dataset.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_raw_ashift.ksh
@@ -2603,6 +2608,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/suid_write_to_suid.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/suid_write_to_suid_sgid.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/suid/suid_write_zil_replay.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/syncfs/syncfs_suspend.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/trim/autotrim_config.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/trim/autotrim_integrity.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/trim/autotrim_trim_integrity.ksh
