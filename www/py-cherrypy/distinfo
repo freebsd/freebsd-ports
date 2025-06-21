@@ -1,3 +1,3 @@
-TIMESTAMP = 1686603836
-SHA256 (CherryPy-18.8.0.tar.gz) = 9b48cfba8a2f16d5b6419cc657e6d51db005ba35c5e3824e4728bb03bbc7ef9b
-SIZE (CherryPy-18.8.0.tar.gz) = 622679
+TIMESTAMP = 1750497658
+SHA256 (cherrypy-18.10.0.tar.gz) = 6c70e78ee11300e8b21c0767c542ae6b102a49cac5cfd4e3e313d7bb907c5891
+SIZE (cherrypy-18.10.0.tar.gz) = 633708
