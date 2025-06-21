@@ -2,18 +2,13 @@ PORTNAME=	jade
 PORTVERSION=	1.2.1
 PORTREVISION=	11
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/ \
-		http://dist.bsdlab.org/
+MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
 
-#PATCH_SITES=	http://ftp.debian.org/debian/pool/main/j/jade/
-PATCH_SITES=	http://dist.bsdlab.org/
-PATCHFILES=	jade_1.2.1-35.diff.gz
+PATCH_SITES=	https://old-releases.ubuntu.com/ubuntu/pool/main/j/jade/
+PATCHFILES=	jade_1.2.1-47.1.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-DEPRECATED=		Upstream has disappeared
-EXPIRATION_DATE=	2024-10-30
-
-MAINTAINER=	cy@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
 WWW=		http://www.jclark.com/jade/
 

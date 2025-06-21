@@ -1,4 +1,5 @@
+TIMESTAMP = 908257416
 SHA256 (jade-1.2.1.tar.gz) = 84e2f8a2a87aab44f86a46b71405d4f919b219e4c73e03a83ab6c746a674b187
 SIZE (jade-1.2.1.tar.gz) = 1092062
-SHA256 (jade_1.2.1-35.diff.gz) = c6cc35f8a23e88736bc4870caaa70a4cb83fd954885ddcb4f1df8acefff0801d
-SIZE (jade_1.2.1-35.diff.gz) = 226237
+SHA256 (jade_1.2.1-47.1.diff.gz) = 396ff61e83bb74f52ec743b96245f621d98d9ecf2ac9d0181007f06367b2a334
+SIZE (jade_1.2.1-47.1.diff.gz) = 376672
