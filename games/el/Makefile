@@ -8,6 +8,8 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eternal Lands is a free 3D MMORPG
 WWW=		https://www.eternal-lands.com/
 
+BROKEN=		Fails to build, error: implicit instantiation of undefined template 'std::char_traits<unsigned char>'
+
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
