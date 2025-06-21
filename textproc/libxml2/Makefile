@@ -1,5 +1,5 @@
 PORTNAME=	libxml2
-DISTVERSION=	2.14.4
+DISTVERSION=	2.11.9
 PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	GNOME
@@ -18,28 +18,32 @@ USE_LDCONFIG=	yes
 # Don't build with Python support unless requested
 CMAKE_${LIBXML2_SLAVE:DON:UOFF}=LIBXML2_WITH_PYTHON
 
+# Many symbols in the linker version script libxml2.syms are only defined when
+# --with-xptr-locs is enabled at configure time. Suppress errors with lld >= 17
+# due to these undefined symbols.
+LDFLAGS+=	-Wl,--undefined-version
+
 CMAKE_TESTING_ON=	LIBXML2_WITH_TESTS
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_SYSCONFDIR=share
 CMAKE_OFF+=	LIBXML2_WITH_TESTS
-CMAKE_ON+=	LIBXML2_WITH_HTTP \
-		LIBXML2_WITH_LZMA \
-		LIBXML2_WITH_ZLIB
 
 PLIST_SUB+=	LIBVERSION=${DISTVERSION}
 
-OPTIONS_DEFINE=	DOCS ICU READLINE THREAD_ALLOC
+OPTIONS_DEFINE=	DOCS ICU MEM_DEBUG READLINE THREAD_ALLOC
 OPTIONS_DEFAULT=	READLINE
 OPTIONS_SUB=		yes
 
+MEM_DEBUG_DESC=		Memory debugging (DEVELOPERS ONLY!)
 READLINE_DESC=		History for xmllint
 THREAD_ALLOC_DESC=	Per-thread memory (DEVELOPERS ONLY!)
 
-ICU_LIB_DEPENDS=		libicuuc.so:devel/icu
+ICU_LIB_DEPENDS=		libicudata.so:devel/icu
 ICU_CMAKE_BOOL=			LIBXML2_WITH_ICU
+MEM_DEBUG_CONFIGURE_WITH=	LIBXML2_WITH_MEM_DEBUG
 READLINE_LIB_DEPENDS=		libreadline.so:devel/readline
-READLINE_CMAKE_BOOL=		HAVE_LIBHISTORY \
-				HAVE_LIBREADLINE
+READLINE_CMAKE_OFF=		-DHAVE_LIBHISTORY=false \
+				-DHAVE_LIBREADLINE=false
 THREAD_ALLOC_CMAKE_BOOL=	LIBXML2_WITH_THREAD_ALLOC
 
 post-patch:
@@ -47,7 +51,6 @@ post-patch:
 		's|/etc/xml/catalog|${LOCALBASE}/share/xml/catalog|g; \
 		 s|/etc/sgml/catalog|${LOCALBASE}/share/sgml/catalog|g' \
 		${WRKSRC}/doc/xmllint.1
-	@${RM} ${WRKSRC}/doc/xmllint.1.bak
 
 post-install:
 .if defined(LIBXML2_SLAVE)
