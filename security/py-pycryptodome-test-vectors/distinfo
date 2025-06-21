@@ -1,3 +1,3 @@
-TIMESTAMP = 1729970234
-SHA256 (pycryptodome-test-vectors-1.0.20.zip) = fc7ff17f2632017b2b98f00e7c3e749cfada95ed69cba01fa62951cd4baab9f9
-SIZE (pycryptodome-test-vectors-1.0.20.zip) = 12591386
+TIMESTAMP = 1750415673
+SHA256 (pycryptodome_test_vectors-1.0.22.tar.gz) = d68efef6df0ebb9dd384f3a98387c2d7151d8d98e83611a74d434e7b5d0a76a5
+SIZE (pycryptodome_test_vectors-1.0.22.tar.gz) = 15000681
