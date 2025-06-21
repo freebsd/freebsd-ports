@@ -9,9 +9,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The QtiPlot Handbook
 WWW=		http://soft.proindependent.com/qtiplot.html
 
-DEPRECATED=	Depends on expired textproc-docbook-utils
-EXPIRATION_DATE=2025-06-21
-
 BUILD_DEPENDS=	docbook2html:textproc/docbook-utils \
 		docbook-xml>0:textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:textproc/docbook-xsl \

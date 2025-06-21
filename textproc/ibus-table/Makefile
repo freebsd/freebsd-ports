@@ -9,9 +9,6 @@ WWW=		https://github.com/kaio/ibus-table
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Depends on expired textproc/docbook-utils
-EXPIRATION_DATE=2025-06-21
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		docbook2man:textproc/docbook-utils \
 		docbook-sgml>0:textproc/docbook-sgml

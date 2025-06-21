@@ -11,9 +11,6 @@ WWW=		https://www.einval.com/~steve/software/jigdo/
 
 LICENSE_FILE=	${WRKDIR}/README
 
-DEPRECATED=	Depends on expired textproc-docbook-utils
-EXPIRATION_DATE=2025-06-21
-
 BUILD_DEPENDS=	brename>0:sysutils/brename \
 		docbook-utils>0:textproc/docbook-utils \
 		sgmlformat>0:textproc/sgmlformat

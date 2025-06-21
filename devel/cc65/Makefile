@@ -59,11 +59,4 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MINFO}
-DEPRECATED=	Depends on expired textproc/linuxdoc-tools
-EXPIRATION_DATE=2025-06-21
-.endif
-
 .include <bsd.port.mk>

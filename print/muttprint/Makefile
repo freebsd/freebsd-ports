@@ -10,9 +10,6 @@ WWW=		https://muttprint.sourceforge.net/
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Depends on expired textproc-docbook-utils
-EXPIRATION_DATE=2025-06-21
-
 BUILD_DEPENDS=	docbook2pdf:textproc/docbook-utils \
 		docbook-sgml>0:textproc/docbook-sgml
 RUN_DEPENDS=	psnup:print/psutils \
