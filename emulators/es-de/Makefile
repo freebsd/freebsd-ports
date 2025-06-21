@@ -54,7 +54,7 @@ DEINIT_DESC=	Deinit frontend on emulator launch
 
 DEINIT_CMAKE_BOOL=	DEINIT_ON_LAUNCH
 
-NLS_USES=		gettext
+NLS_USES=		gettext-runtime gettext-tools
 NLS_CMAKE_BOOL=		COMPILE_LOCALIZATIONS
 
 post-install:
