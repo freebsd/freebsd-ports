@@ -1,0 +1,46 @@
+From cf52139b4170be13b51b62da11c208dc66e6eff0 Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Fri, 20 Jun 2025 22:22:03 +0200
+Subject: [PATCH] xmllint: Fix --xinclude --path
+
+Use resource loader for XInclude. Regressed with f96dca9c.
+---
+ xmllint.c | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
+
+diff --git a/xmllint.c b/xmllint.c
+index 4ffc31ef0..ab2f2ebc7 100644
+--- xmllint.c
++++ xmllint.c
+@@ -2181,13 +2181,27 @@ parseAndPrintFile(xmllintState *lint, const char *filename) {
+ 
+ #ifdef LIBXML_XINCLUDE_ENABLED
+     if (lint->xinclude) {
++        xmlXIncludeCtxt *xinc;
++        int res;
++
+ 	if ((lint->timing) && (lint->repeat == 1)) {
+ 	    startTimer(lint);
+ 	}
+-	if (xmlXIncludeProcessFlags(doc, lint->options) < 0) {
++
++        xinc = xmlXIncludeNewContext(doc);
++        if (xinc == NULL) {
++            lint->progresult = XMLLINT_ERR_MEM;
++            goto done;
++        }
++        xmlXIncludeSetResourceLoader(xinc, xmllintResourceLoader, lint);
++        xmlXIncludeSetFlags(xinc, lint->options);
++        res = xmlXIncludeProcessNode(xinc, (xmlNode *) doc);
++        xmlXIncludeFreeContext(xinc);
++        if (res < 0) {
+ 	    lint->progresult = XMLLINT_ERR_UNCLASS;
+             goto done;
+         }
++
+ 	if ((lint->timing) && (lint->repeat == 1)) {
+ 	    endTimer(lint, "Xinclude processing");
+ 	}
+-- 
+GitLab
+
