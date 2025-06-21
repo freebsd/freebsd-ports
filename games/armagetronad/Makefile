@@ -12,6 +12,8 @@ WWW=		http://www.armagetronad.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build with libxml2 2.14, error: indirection requires pointer operand ('std::nullptr_t' invalid)
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libpng.so:graphics/png
 
