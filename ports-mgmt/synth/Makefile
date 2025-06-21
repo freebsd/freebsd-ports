@@ -42,7 +42,7 @@ post-extract:
 do-build:
 	(cd ${WRKSRC}/synthexec && ${SETENV} ${MAKE_ENV} \
 		gcc synthexec.c -o ../build/synthexec)
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gprbuild -P default
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gprbuild -P default )
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
