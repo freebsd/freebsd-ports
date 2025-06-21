@@ -9,6 +9,8 @@ WWW=		https://www.linphone.org/technical-corner/liblinphone.html
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		Fails to build with libxml2 2.14, error: type 'union (unnamed union at /usr/local/include/libxml2/libxml/encoding.h:170:5)' does not provide a call operator
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbcmatroska2.a:multimedia/bcmatroska2 \
 		${LOCALBASE}/lib/libbctoolbox.a:net/bctoolbox \
 		${LOCALBASE}/lib/libbcunit.a:devel/bcunit \
