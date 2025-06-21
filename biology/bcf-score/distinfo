@@ -1,5 +1,5 @@
-TIMESTAMP = 1727475307
+TIMESTAMP = 1750428714
 SHA256 (score_1.20-20240505.tar.gz) = c2ac510f0a48e3d2e61d1a9e219e030b1268cdcf3bf987217bbd16740d962d41
 SIZE (score_1.20-20240505.tar.gz) = 96852
-SHA256 (samtools-bcftools-1.20-1.21_GH0.tar.gz) = 7484695c5d833fb1a89c2b886ec302db0514ba3c8e5ef7397b9302fa8bd37f8d
-SIZE (samtools-bcftools-1.20-1.21_GH0.tar.gz) = 3665160
+SHA256 (samtools-bcftools-1.20-1.22_GH0.tar.gz) = 1608e547daf7bd5ab7d52dea57019f57da3fdfb29bc26dece1e8d01a999a9a2d
+SIZE (samtools-bcftools-1.20-1.22_GH0.tar.gz) = 3751342
