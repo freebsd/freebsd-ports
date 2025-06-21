@@ -1,6 +1,6 @@
 PORTNAME=	librepcb
 DISTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	cad
 MASTER_SITES=	https://download.librepcb.org/releases/${DISTVERSION}/
