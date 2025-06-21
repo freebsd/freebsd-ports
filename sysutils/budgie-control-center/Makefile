@@ -10,6 +10,8 @@ WWW=		https://github.com/BuddiesOfBudgie/budgie-control-center
 
 LICENSE=	GPLv2+
 
+BROKEN=		Fails to build, error: too few arguments to function call, expected 6, have 5
+
 BUILD_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy \
