@@ -1,7 +1,6 @@
 PORTNAME=	fastest_pkg
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	ports-mgmt python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,13 +10,15 @@ WWW=		https://github.com/ehaupt/fastest_pkg
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycurl>0:ftp/py-pycurl@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	ehaupt
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
