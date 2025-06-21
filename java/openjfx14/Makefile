@@ -23,6 +23,8 @@ WWW=		https://openjdk.java.net/projects/openjfx/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build with libxml2 2.13+, error: no matching constructor for initialization of 'XMLDocumentParserScope'
+
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	zip:archivers/zip \
