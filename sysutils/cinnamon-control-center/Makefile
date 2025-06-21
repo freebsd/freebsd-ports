@@ -11,6 +11,8 @@ WWW=		https://github.com/linuxmint/cinnamon-control-center
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		error: too few arguments to function call, expected 6, have 5
+
 BUILD_DEPENDS=	cinnamon-settings-daemon>=1.0.0:sysutils/cinnamon-settings-daemon \
 		iso-codes>0:misc/iso-codes
 LIB_DEPENDS=	libcinnamon-desktop.so:x11/cinnamon-desktop \
