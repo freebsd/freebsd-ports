@@ -1,2 +1,4 @@
-This package contains xgc, which is a program that demonstrates various
-features of the X graphics primitives.
+The xgc program demonstrates various features of the X11 core protocol
+graphics primitives. In X, most of the details about the graphics to be
+generated are stored in a resource called a graphics context (GC). The
+xgc program provides a user interface for setting various GC components.
