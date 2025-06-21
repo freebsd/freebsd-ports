@@ -1,6 +1,5 @@
 PORTNAME=	anki
-DISTVERSION=	25.02.6
-PORTREVISION=	1
+DISTVERSION=	25.02.7
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:yarncache
@@ -85,7 +84,7 @@ MPV_RUN_DEPENDS=	mpv:multimedia/mpv
 # Should contain the most recent commit that reflects ${DISTVERSION} and must
 # be exactly 8 digits otherwise the check for newer versions won't work as
 # expected.
-_MY_BUILDHASH=	6381f184
+_MY_BUILDHASH=	98253c81
 # Remove ${CARGO_BUILD_TARGET} from ${CARGO_ENV} to avoid problems with
 # hardcoded paths as the "runner" build system expects its components
 # in ${WRKSRC}/out/rust/debug
