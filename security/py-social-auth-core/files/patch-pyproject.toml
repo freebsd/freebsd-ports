@@ -1,0 +1,23 @@
+* Relax version requirements for py-setuptools and enable build for
+  older versions of it
+
+--- pyproject.toml.orig	2025-04-28 07:23:27 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=78.0.2"]
++requires = ["setuptools>=63.1.0"]
+ 
+ [dependency-groups]
+ dev = [
+@@ -49,8 +49,7 @@ keywords = ["oauth", "openid", "saml", "social auth"]
+ ]
+ description = "Python social authentication made simple."
+ keywords = ["oauth", "openid", "saml", "social auth"]
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = { text="BSD-3-Clause" }
+ name = "social-auth-core"
+ readme = "README.md"
+ requires-python = ">=3.9"
