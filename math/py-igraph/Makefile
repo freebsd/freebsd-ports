@@ -12,6 +12,8 @@ WWW=		https://igraph.org/python/
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to build with libxml2 2.13+, error: incompatible function pointer types passing 'void (*)(void *, xmlErrorPtr)' (aka 'void (*)(void *, struct _xmlError *)') to parameter of type 'xmlStructuredErrorFunc' (aka 'void (*)(void *, const struct _xmlError *)')
+
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${LOCALBASE}/bin/flex:textproc/flex
 LIB_DEPENDS=	libigraph.so:math/igraph \
