@@ -13,9 +13,6 @@ LICENSE_NAME_LinuxdocTools=	The linuxdoc-tools license
 LICENSE_FILE_LinuxdocTools=	${WRKSRC}/COPYING
 LICENSE_PERMS_LinuxdocTools=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATED=	Depends on expired textproc/jade
-EXPIRATION_DATE=2025-03-31
-
 BUILD_DEPENDS=	gawk:lang/gawk \
 		nsgmls:textproc/jade \
 		sgmlsasp:textproc/sgmls
@@ -27,7 +24,6 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	agmartin
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gmake groff:both perl5 tar:bzip2
 CONFIGURE_ARGS=	--with-installed-sgmlsasp
 

@@ -8,9 +8,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates various output formats from DocBook SGML documents
 WWW=		https://www.sourceware.org/docbook-tools/
 
-DEPRECATED=	Depends on expired textproc/jade
-EXPIRATION_DATE=2025-03-31
-
 BUILD_DEPENDS+=	docbook-sgml>0:textproc/docbook-sgml \
 		dsssl-docbook-modular>0:textproc/dsssl-docbook-modular \
 		nsgmls:textproc/jade
@@ -26,7 +23,6 @@ USE_PERL5=	run
 USE_TEX=	jadetex
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 MAKE_ARGS+=	docdir="${DOCSDIR}" htmldir="${DOCSDIR}/html"
 NO_ARCH=	yes
 SHEBANG_FILES=	bin/sgmldiff.in

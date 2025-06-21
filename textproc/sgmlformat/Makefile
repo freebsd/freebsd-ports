@@ -25,8 +25,6 @@ WITH_OPENJADE=	yes
 RUN_DEPENDS=	openjade>0:textproc/openjade
 .else
 RUN_DEPENDS=	nsgmls:textproc/jade
-DEPRECATED=	Depends on expired textproc/jade
-EXPIRATION_DATE=2025-03-31
 .endif
 RUN_DEPENDS+=	linuxdoc>0:textproc/linuxdoc \
 		docbook-sgml>0:textproc/docbook-sgml \
