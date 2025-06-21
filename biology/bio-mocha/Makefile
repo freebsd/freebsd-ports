@@ -1,5 +1,6 @@
 PORTNAME=	bio-mocha
 DISTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	https://software.broadinstitute.org/software/mocha/
 # Get this right, or ports will download bcftools in it's place via tuple
@@ -11,7 +12,7 @@ WWW=		https://software.broadinstitute.org/software/mocha/
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	bash:shells/bash htslib>=1.21:biology/htslib
+BUILD_DEPENDS=	bash:shells/bash htslib>=1.22:biology/htslib
 LIB_DEPENDS=	libhts.so:biology/htslib
 RUN_DEPENDS=	bcftools>=${PORTVERSION}:biology/bcftools
 
@@ -21,7 +22,7 @@ USE_PERL5=	test
 
 GH_ACCOUNT=	samtools
 GH_PROJECT=	bcftools
-GH_TAGNAME=	1.21
+GH_TAGNAME=	1.22
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	misc/* test/test.pl
 
