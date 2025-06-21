@@ -952,8 +952,13 @@
     <topic>libxml2 -- Out-of-bounds memory access</topic>
     <affects>
       <package>
-	<name>libxml2</name>
-	<range><lt>2.14.2</lt></range>
+	<name>py39-libxml2</name>
+	<name>py310-libxml2</name>
+	<name>py311-libxml2</name>
+	<name>py312-libxml2</name>
+	<range><lt>2.11.9_3</lt></range>
+	<range><ge>2.12.0</ge><lt>2.13.8</lt></range>
+	<range><ge>2.14.0</ge><lt>2.14.2</lt></range>
       </package>
     </affects>
     <description>
@@ -983,7 +988,9 @@
     <affects>
       <package>
 	<name>libxml2</name>
-	<range><lt>2.13.6</lt></range>
+	<range><lt>2.11.9_1</lt></range>
+	<range><ge>2.12.0</ge><lt>2.12.10</lt></range>
+	<range><ge>2.13.0</ge><lt>2.13.6</lt></range>
       </package>
     </affects>
     <description>
@@ -1012,7 +1019,9 @@
     <affects>
       <package>
 	<name>libxml2</name>
-	<range><lt>2.13.6</lt></range>
+	<range><lt>2.11.9_1</lt></range>
+	<range><ge>2.12.0</ge><lt>2.12.10</lt></range>
+	<range><ge>2.13.0</ge><lt>2.13.6</lt></range>
       </package>
     </affects>
     <description>
