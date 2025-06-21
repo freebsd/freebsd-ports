@@ -1,7 +1,7 @@
 PORTNAME=	yelp
 DISTVERSION=	42.3
 CATEGORIES=	x11 gnome
-#MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -23,17 +23,13 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 RUN_DEPENDS=	yelp-xsl>=0:textproc/yelp-xsl
 
 USES=		compiler:c11 desktop-file-utils gettext gnome meson \
-		pkgconfig shebangfix sqlite tar:bzip2 xorg
+		pkgconfig shebangfix sqlite tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf gtk30 libxml2 libxslt
 USE_XORG=	ice x11
 SHEBANG_FILES=	data/domains/gen_yelp_xml.sh \
 		src/link-gnome-help.sh
 GLIB_SCHEMAS=	org.gnome.yelp.gschema.xml
 USE_LDCONFIG=	yes
-
-USE_GITLAB=	yes
-GL_SITE=	https://gitlab.gnome.org
-GL_ACCOUNT=	GNOME
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LIBEXECDIR%%|${PREFIX}/libexec|g' \
