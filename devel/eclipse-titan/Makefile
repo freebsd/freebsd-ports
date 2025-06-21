@@ -9,6 +9,8 @@ WWW=		https://projects.eclipse.org/projects/tools.titan
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build, /bin/sh: perl: not found
+
 BUILD_DEPENDS=	bash:shells/bash \
 		expect:lang/expect \
 		xmllint:textproc/libxml2 \
