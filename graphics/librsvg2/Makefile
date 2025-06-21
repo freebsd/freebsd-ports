@@ -13,6 +13,8 @@ WWW=		https://live.gnome.org/LibRsvg
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
+BROKEN=		Fails to build with libxml2 2.13+, error: unknown type name 'xmlParserCtxtPtr'
+
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png \
