@@ -14,6 +14,7 @@ bin/mpicxx
 %%HYDRA%%bin/mpirun
 bin/mpivars
 bin/parkill
+@sample etc/mpixxx_opts.conf.sample
 include/mpi.h
 %%FORTRAN%%include/mpi.mod
 %%FORTRAN%%include/mpi_base.mod
@@ -40,18 +41,18 @@ include/mpiof.h
 lib/libmpi.a
 lib/libmpi.so
 lib/libmpi.so.12
-lib/libmpi.so.12.5.0
+lib/libmpi.so.12.5.1
 lib/libmpich.so
 lib/libmpichcxx.so
 %%FORTRAN%%lib/libmpichf90.so
 lib/libmpicxx.a
 lib/libmpicxx.so
 lib/libmpicxx.so.12
-lib/libmpicxx.so.12.5.0
+lib/libmpicxx.so.12.5.1
 %%FORTRAN%%lib/libmpifort.a
 %%FORTRAN%%lib/libmpifort.so
 %%FORTRAN%%lib/libmpifort.so.12
-%%FORTRAN%%lib/libmpifort.so.12.5.0
+%%FORTRAN%%lib/libmpifort.so.12.5.1
 lib/libmpl.so
 lib/libopa.so
 libdata/pkgconfig/mpich.pc
