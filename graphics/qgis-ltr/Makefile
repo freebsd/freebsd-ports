@@ -12,6 +12,8 @@ WWW=		https://qgis.org/en/site/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
+BROKEN=		Fails to build, sip-build: class 'QgsTopologicalMesh::Changes' has not been defined
+
 BUILD_DEPENDS=	gpsbabel>=1.7.0:astro/gpsbabel \
 		opencl>=0:devel/opencl \
 		${PY_SETUPTOOLS} \
