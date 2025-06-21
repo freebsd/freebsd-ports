@@ -1,0 +1,16 @@
+Description: unesc fails to handle &quot; and &apos; correctly because it thinks they are too long.
+Author: Norbert Kiesel <nk@iname.com>
+Bug: https://bugs.debian.org/837122
+Last-Update: 2016-09-08
+
+--- src/xml_escape.c
++++ src/xml_escape.c
+@@ -222,7 +222,7 @@
+                 semicolon_off++;
+             }
+             entity_len = semicolon_off - i;
+-            if (entity_len < MAX_ENTITY_NAME) {
++            if (entity_len <= MAX_ENTITY_NAME) {
+                 memcpy(entity, &str[i], entity_len);
+                 entity[entity_len] = '\0';
+                 if (str[semicolon_off] == ';') {

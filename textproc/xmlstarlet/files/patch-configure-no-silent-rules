@@ -1,0 +1,16 @@
+Description: Don't hide the real compiler flags to allow automatic checks for
+             missing (hardening) flags via blhc. It avoids buildd log scanner
+             tag W-compiler-flags-hidden.
+Author: Mònica Ramírez Arceda <monica@debian.org>
+Last-Update: 2013-07-14
+
+--- configure.ac
++++ configure.ac
+@@ -6,7 +6,6 @@
+ AC_REVISION(AC_PACKAGE_VERSION)
+ 
+ AM_INIT_AUTOMAKE([1.11 foreign -Wall subdir-objects no-define std-options parallel-tests color-tests])
+-AM_SILENT_RULES([yes])
+ AM_MAINTAINER_MODE
+ 
+ [LIBXML_REQUIRED_VERSION=2.6.27]
