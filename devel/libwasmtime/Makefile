@@ -1,7 +1,6 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	33.0.0
+PORTVERSION=	34.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
@@ -47,7 +46,6 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		arbtest-0.3.1 \
 		arrayvec-0.7.6 \
 		async-trait-0.1.71 \
-		auditable-serde-0.8.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.74 \
 		base64-0.22.1 \
@@ -78,7 +76,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		cargo-platform-0.1.2 \
 		cargo_metadata-0.19.2 \
 		cast-0.3.0 \
-		cc-1.2.19 \
+		cc-1.2.22 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		ciborium-0.2.0 \
@@ -156,7 +154,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		generic-array-0.14.5 \
 		getrandom-0.2.15 \
 		getrandom-0.3.1 \
-		gimli-0.31.0 \
+		gimli-0.31.1 \
 		glob-0.3.1 \
 		gzip-header-1.0.0 \
 		h2-0.4.4 \
@@ -324,9 +322,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		smallvec-1.13.2 \
 		socket2-0.5.7 \
 		souper-ir-2.1.0 \
-		spdx-0.10.1 \
 		spin-0.9.8 \
-		sptr-0.3.2 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		string-interner-0.19.0 \
@@ -362,7 +358,6 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		toml-0.8.10 \
 		toml_datetime-0.6.5 \
 		toml_edit-0.22.4 \
-		topological-sort-0.2.2 \
 		torch-sys-0.17.0 \
 		tracing-0.1.37 \
 		tracing-attributes-0.1.26 \
@@ -399,23 +394,24 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		wasm-bindgen-macro-0.2.97 \
 		wasm-bindgen-macro-support-0.2.97 \
 		wasm-bindgen-shared-0.2.97 \
-		wasm-encoder-0.227.1 \
-		wasm-encoder-0.229.0 \
-		wasm-metadata-0.227.0 \
-		wasm-metadata-0.229.0 \
-		wasm-mutate-0.229.0 \
-		wasm-smith-0.229.0 \
-		wasm-wave-0.229.0 \
+		wasm-encoder-0.230.0 \
+		wasm-encoder-0.233.0 \
+		wasm-metadata-0.230.0 \
+		wasm-metadata-0.233.0 \
+		wasm-mutate-0.233.0 \
+		wasm-smith-0.233.0 \
+		wasm-wave-0.233.0 \
 		wasmi-0.43.1 \
 		wasmi_collections-0.43.1 \
 		wasmi_core-0.43.1 \
 		wasmi_ir-0.43.1 \
 		wasmparser-0.227.1 \
-		wasmparser-0.229.0 \
-		wasmprinter-0.229.0 \
+		wasmparser-0.230.0 \
+		wasmparser-0.233.0 \
+		wasmprinter-0.233.0 \
 		wast-35.0.2 \
-		wast-229.0.0 \
-		wat-1.229.0 \
+		wast-233.0.0 \
+		wat-1.233.0 \
 		web-sys-0.3.57 \
 		webpki-roots-0.26.1 \
 		which-6.0.3 \
@@ -441,17 +437,17 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		winnow-0.5.39 \
 		winsafe-0.0.19 \
 		winx-0.36.3 \
-		wit-bindgen-0.41.0 \
-		wit-bindgen-core-0.41.0 \
+		wit-bindgen-0.42.1 \
+		wit-bindgen-core-0.42.1 \
 		wit-bindgen-rt-0.33.0 \
 		wit-bindgen-rt-0.37.0 \
-		wit-bindgen-rt-0.41.0 \
-		wit-bindgen-rust-0.41.0 \
-		wit-bindgen-rust-macro-0.41.0 \
-		wit-component-0.227.0 \
-		wit-component-0.229.0 \
-		wit-parser-0.227.0 \
-		wit-parser-0.229.0 \
+		wit-bindgen-rt-0.42.1 \
+		wit-bindgen-rust-0.42.1 \
+		wit-bindgen-rust-macro-0.42.1 \
+		wit-component-0.230.0 \
+		wit-component-0.233.0 \
+		wit-parser-0.230.0 \
+		wit-parser-0.233.0 \
 		witx-0.9.1 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
@@ -470,7 +466,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		zstd-safe-7.0.0 \
 		zstd-sys-2.0.9+zstd.1.5.5
 
-GH_TUPLE=	WebAssembly:testsuite:596a817:testsuite/tests/spec_testsuite \
+GH_TUPLE=	WebAssembly:testsuite:970d36b:testsuite/tests/spec_testsuite \
 		WebAssembly:wasi-testsuite:2fec29e:wasi_testsuite/tests/wasi_testsuite/wasi-common \
 		WebAssembly:wasi-threads:e1893c0:wasi_threads/tests/wasi_testsuite/wasi-threads
 
