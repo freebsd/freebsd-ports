@@ -1,7 +1,6 @@
 PORTNAME=	gitea
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.23.8
-PORTREVISION=	1
+DISTVERSION=	1.24.2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/go-gitea/gitea/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/ \
 		https://dl.gitea.io/gitea/${DISTVERSION}/
@@ -68,13 +67,14 @@ do-install:
 	# Go binary is statically linked and cannot be stripped, so use
 	# INSTALL_SCRIPT.
 	${INSTALL_SCRIPT} ${WRKSRC}/gitea ${STAGEDIR}${PREFIX}/sbin
-	@${MKDIR} ${STAGEDIR}${ETCDIR}/conf
+	${MKDIR} ${STAGEDIR}${ETCDIR}/conf \
+		 ${STAGEDIR}${DATADIR} \
+		 ${STAGEDIR}/var/db/gitea \
+		 ${STAGEDIR}/var/db/gitea/data \
+		 ${STAGEDIR}/var/db/gitea/gitea-repositories \
+		 ${STAGEDIR}/var/log/gitea
 	${INSTALL_DATA} ${WRKDIR}/app.ini.sample ${STAGEDIR}${ETCDIR}/conf/app.ini.sample
 	${INSTALL_DATA} ${WRKSRC}/custom/conf/app.example.ini ${STAGEDIR}${ETCDIR}/conf/app.ini.defaults
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}/var/db/gitea
-	${MKDIR} ${STAGEDIR}/var/db/gitea/gitea-repositories
-	${MKDIR} ${STAGEDIR}/var/log/gitea
 
 do-install-BINDATA-off:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "options public templates" ${STAGEDIR}${DATADIR}
