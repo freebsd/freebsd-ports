@@ -11,6 +11,8 @@ WWW=		https://www.manyfish.co.uk/sitecopy/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build with neon 0.32+, configure: incompatible neon library version 0.34.0: wanted 0.24 25 26 27 28 29 30 31 32
+
 LIB_DEPENDS=	libneon.so:www/neon
 
 USES=		gmake gnome localbase
