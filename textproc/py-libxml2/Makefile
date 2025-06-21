@@ -5,8 +5,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 COMMENT=	Python interface for XML parser library for GNOME
 MASTERDIR=	${.CURDIR}/../libxml2
 
-DEPRECATED=	Python bindings are planned to be deprecated upstream, consider migrating to another project such as lxml
-
 USES+=		gnome python shebangfix
 USE_GNOME=	libxml2
 USE_PYTHON=	flavors
