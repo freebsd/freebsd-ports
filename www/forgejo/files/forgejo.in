@@ -52,7 +52,8 @@ forgejo_start() {
 
 forgejo_prestart() {
 	if checkyesno forgejo_configcheck_enable; then
-		if su -m ${forgejo_user} -c "%%PREFIX%%/sbin/${name} doctor check >/dev/null"; then
+		if su -m ${forgejo_user} -c "FORGEJO_CUSTOM=${forgejo_custom} \
+			%%PREFIX%%/sbin/${name} doctor check >/dev/null"; then
 		else
 			echo "cannot start ${name} because of configuration errors. Run" >&2
 			echo "    su -m git -c '${name} doctor check'" >&2

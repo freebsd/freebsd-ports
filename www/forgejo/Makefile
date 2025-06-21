@@ -1,7 +1,6 @@
 PORTNAME=	forgejo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	11.0.1
-PORTREVISION=	1
+DISTVERSION=	11.0.2
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/forgejo/forgejo/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	forgejo-src-${DISTVERSION}
@@ -56,8 +55,8 @@ DAEMONARGS=	-f
 SUB_LIST+=	DAEMONARGS="${DAEMONARGS}"
 
 SSP_UNSAFE=	true
-LDFLAGS+=	"'-X "code.gitea.io/gitea/modules/setting.CustomPath=${PREFIX}/etc/forgejo"'"
-LDFLAGS+=	"'-X "code.gitea.io/gitea/modules/setting.AppWorkPath=${PREFIX}/share/forgejo"'"
+LDFLAGS+=	"'-X "forgejo.org/modules/setting.CustomPath=${PREFIX}/etc/forgejo"'" \
+		"'-X "forgejo.org/modules/setting.AppWorkPath=${PREFIX}/share/forgejo"'"
 MAKE_ARGS=	GOPATH=${WRKDIR} \
 		TAGS="${GO_TAGS}" \
 		GOFLAGS="-buildvcs=false"

@@ -11,8 +11,9 @@
 # choosing, INTERNAL_TOKEN is a 64-byte random number in BASE64 encoding,
 # JWT_SECRET is a 32-byte random number in BASE64 encoding.
 #
-# You can generate the token using for example:
-#   openssl rand -base64 64
+# You can generate appropriate values using:
+#   gitea generate secret [INTERNAL_TOKEN|JWT_SECRET|LFS_JWT_SECRET|SECRET_KEY]
+# and then copy that output to the appropriate place in this file.
 #
 # You can let Forgejo add these to the config for you; you need to make
 # app.ini writeable by the git user.
