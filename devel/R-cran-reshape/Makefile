@@ -1,6 +1,5 @@
 PORTNAME=	reshape
-PORTVERSION=	0.8.9
-PORTREVISION=	1
+PORTVERSION=	0.8.10
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,10 +9,8 @@ WWW=		http://had.co.nz/reshape/
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-plyr>0:devel/R-cran-plyr
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-plyr>0:devel/R-cran-plyr
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
