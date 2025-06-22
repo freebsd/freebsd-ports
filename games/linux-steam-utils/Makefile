@@ -1,5 +1,5 @@
 PORTNAME=	steam-utils
-DISTVERSION=	20250521
+DISTVERSION=	20250615
 CATEGORIES=	games linux
 PKGNAMEPREFIX=	linux-
 
@@ -36,5 +36,6 @@ post-install:
 	${LN} -s ../steam-utils/bin/steam         ${STAGEDIR}${PREFIX}/bin/steam
 	${LN} -s ../steam-utils/bin/lsu-bootstrap ${STAGEDIR}${PREFIX}/bin/steam-install # deprecated since 2024-03-23
 	${LN} -s ../steam-utils/bin/lsu-wine-env  ${STAGEDIR}${PREFIX}/bin/lsu-wine-env
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/steam-utils/bin/lsu-freebsd-to-linux-env
 
 .include <bsd.port.mk>

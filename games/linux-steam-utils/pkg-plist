@@ -4,7 +4,7 @@ bin/steam-install
 steam-utils/bin/.dpkgs.rb
 steam-utils/bin/.utils.rb
 steam-utils/bin/lsu-bootstrap
-steam-utils/bin/lsu-freebsd-to-linux-env.sh
+steam-utils/bin/lsu-freebsd-to-linux-env
 steam-utils/bin/lsu-kill
 steam-utils/bin/lsu-mount-runtime
 steam-utils/bin/lsu-patch-steam
@@ -41,7 +41,7 @@ steam-utils/lxbin/lsof.rb
 steam-utils/lxbin/lspci
 steam-utils/lxbin/lsu-bwrap-stub
 steam-utils/lxbin/lsu-bwrap-stub.rb
-steam-utils/lxbin/lsu-linux-to-freebsd-env.sh
+steam-utils/lxbin/lsu-linux-to-freebsd-env
 steam-utils/lxbin/lsu-webhelper-chroot
 steam-utils/lxbin/lsu-webhelper-chroot.rb
 steam-utils/lxbin/tar
