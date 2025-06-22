@@ -1,6 +1,6 @@
 PORTNAME=	lxqt-powermanagement
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	LXQT
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	upower:sysutils/upower
 
-USES=		cmake compiler:c++17-lang gettext-runtime kde:6 lxqt:2 qt:6 \
+USES=		cmake compiler:c++20-lang gettext-runtime kde:6 lxqt:2 qt:6 \
 		localbase:ldflags perl5 pkgconfig tar:xz gnome xorg
 USE_PERL5=	build
 USE_QT=		base:run tools:build svg

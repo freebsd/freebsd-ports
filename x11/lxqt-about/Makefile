@@ -1,6 +1,6 @@
 PORTNAME=	lxqt-about
 PORTVERSION= 	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 DIST_SUBDIR=	lxqt
 
@@ -11,7 +11,7 @@ WWW=		https://lxqt-project.org
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++17-lang kde:6 lxqt:2 perl5 pkgconfig tar:xz qt:6 gnome xorg
+USES=		cmake compiler:c++20-lang kde:6 lxqt:2 perl5 pkgconfig tar:xz qt:6 gnome xorg
 USE_PERL5=	build
 USE_QT=		base:run tools:build svg
 USE_XORG=	x11

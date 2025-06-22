@@ -1,5 +1,6 @@
 PORTNAME=	qterminal
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	LXQT
 
@@ -12,7 +13,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libqtermwidget6.so:x11-toolkits/qtermwidget
 RUN_DEPENDS=	liberation-fonts-ttf>=2.00:x11-fonts/liberation-fonts-ttf
 
-USES=		cmake compiler:c++17-lang gettext-runtime kde:6 \
+USES=		cmake compiler:c++20-lang gettext-runtime kde:6 \
 		localbase:ldflags lxqt:2 perl5 pkgconfig qt:6 tar:xz xorg
 CMAKE_OFF=	BUILD_TESTS
 USE_PERL5=	build

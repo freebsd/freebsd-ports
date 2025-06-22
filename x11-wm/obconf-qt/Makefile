@@ -1,5 +1,6 @@
 PORTNAME=	obconf-qt
 PORTVERSION=	0.16.5
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	LXQT/${PORTNAME}
 
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libobt.so:x11-wm/openbox \
 		libImlib2.so:graphics/imlib2 \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		cmake compiler:c++17-lang gettext-runtime localbase qt:6 \
+USES=		cmake compiler:c++20-lang gettext-runtime localbase qt:6 \
 		gnome lxqt:2 perl5 pkgconfig tar:xz xorg
 
 USE_PERL5=	build

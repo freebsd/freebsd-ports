@@ -5,7 +5,6 @@ share/cmake/lxqt2-build-tools/find-modules/FindFontconfig.cmake
 share/cmake/lxqt2-build-tools/find-modules/FindGLIB.cmake
 share/cmake/lxqt2-build-tools/find-modules/FindMenuCache.cmake
 share/cmake/lxqt2-build-tools/find-modules/FindUDev.cmake
-share/cmake/lxqt2-build-tools/find-modules/FindXCB.cmake
 share/cmake/lxqt2-build-tools/find-modules/FindXKBCommon.cmake
 share/cmake/lxqt2-build-tools/find-modules/FindXTerm.cmake
 share/cmake/lxqt2-build-tools/find-modules/FindXdgEmail.cmake

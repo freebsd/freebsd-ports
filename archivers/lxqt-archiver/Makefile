@@ -1,6 +1,6 @@
 PORTNAME=	lxqt-archiver
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	LXQT
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfm-qt6.so:x11/libfm-qt6 \
 		libexif.so:graphics/libexif
 RUN_DEPENDS=	gtar:archivers/gtar
 
-USES=		cmake compiler:c++17-lang desktop-file-utils lxqt:2 perl5 \
+USES=		cmake compiler:c++20-lang desktop-file-utils lxqt:2 perl5 \
 		pkgconfig tar:xz gnome qt:6 xorg
 
 USE_GNOME=	glib20

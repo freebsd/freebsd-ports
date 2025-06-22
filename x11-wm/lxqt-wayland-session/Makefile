@@ -1,6 +1,6 @@
 PORTNAME=	lxqt-wayland-session
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	LXQT
 
@@ -14,8 +14,8 @@ BUILD_DEPENDS=	xdg-user-dirs-update:devel/xdg-user-dirs \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 RUN_DEPENDS=	lxqt-session>=${PORTVERSION}:x11-wm/lxqt-session
 
-USES=		cmake gl localbase:ldflags perl5 pkgconfig lxqt:2 \
-		tar:xz xorg
+USES=		cmake compiler:c++20-lang gl localbase:ldflags perl5 pkgconfig \
+		lxqt:2 tar:xz xorg
 USE_GL=		gl
 USE_PERL5=	build
 USE_XORG=	ice sm xcb xext

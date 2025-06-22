@@ -13,8 +13,8 @@ LICENSE=	LGPL21+
 BUILD_DEPENDS=	xdg-user-dirs-update:devel/xdg-user-dirs \
 		qtxdg-mat:sysutils/qtxdg-tools
 
-USES=		cmake kde:6 localbase:ldflags perl5 pkgconfig lxqt:2 qt:6 \
-		tar:xz xorg gnome
+USES=		cmake compiler:c++20-lang kde:6 localbase:ldflags perl5 pkgconfig \
+		lxqt:2 qt:6 tar:xz xorg gnome
 USE_QT=		tools:build base:run svg
 USE_KDE=	layer-shell-qt windowsystem
 USE_PERL5=	build

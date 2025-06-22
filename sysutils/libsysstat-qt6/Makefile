@@ -1,6 +1,6 @@
 PORTNAME=	libsysstat
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-qt6
 
@@ -11,7 +11,7 @@ WWW=		https://lxqt-project.org
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++17-lang lxqt:2 pkgconfig tar:xz qt:6
+USES=		cmake compiler:c++20-lang lxqt:2 pkgconfig tar:xz qt:6
 USE_QT=		base:run tools:build
 USE_LDCONFIG=	yes
 USE_LXQT=	buildtools2

@@ -1,6 +1,6 @@
 PORTNAME=	lxqt-openssh-askpass
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	LXQT
 
@@ -10,7 +10,7 @@ WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
 
-USES=		cmake compiler:c++17-lang gettext-runtime lxqt:2 perl5 \
+USES=		cmake compiler:c++20-lang gettext-runtime lxqt:2 perl5 \
 		pkgconfig qt:6 tar:xz
 USE_LXQT=	buildtools2 lxqt
 USE_PERL5=	build

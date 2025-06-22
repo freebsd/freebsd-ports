@@ -1,6 +1,6 @@
 PORTNAME=	lxqt-policykit
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	LXQT
 
@@ -13,7 +13,7 @@ LICENSE=	LGPL21+
 LIB_DEPENDS=	libpolkit-qt6-agent-1.so:sysutils/polkit-qt-1@qt6 \
 		libpolkit-agent-1.so:sysutils/polkit
 
-USES=		cmake compiler:c++17-lang gnome gettext-runtime lxqt:2 \
+USES=		cmake compiler:c++20-lang gnome gettext-runtime lxqt:2 \
 		qt:6 perl5 localbase:ldflags pkgconfig tar:xz xorg
 
 USE_PERL5=	build

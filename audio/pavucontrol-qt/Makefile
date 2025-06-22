@@ -1,5 +1,6 @@
 PORTNAME=	pavucontrol-qt
 PORTVERSION= 	2.2.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	LXQT/${PORTNAME}
 
@@ -11,7 +12,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
-USES=		cmake compiler:c++17-lang gettext-runtime localbase:ldflags \
+USES=		cmake compiler:c++20-lang gettext-runtime localbase:ldflags \
 		lxqt:2 qt:6 perl5 pkgconfig tar:xz gnome
 USE_PERL5=	build
 USE_QT=		base:run tools:build

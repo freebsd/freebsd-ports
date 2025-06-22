@@ -1,6 +1,6 @@
 PORTNAME=	lxqt-config
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 DIST_SUBDIR=	lxqt
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	lxqt-menu-data>=2.0.0:x11/lxqt-menu-data
 
 LIB_DEPENDS=	libudev.so:devel/libudev-devd
 
-USES=		cmake compiler:c++17-lang kde:6 localbase:ldflags lxqt:2 \
+USES=		cmake compiler:c++20-lang kde:6 localbase:ldflags lxqt:2 \
 		qt:6 perl5 pkgconfig tar:xz xorg gnome
 USE_QT=		base:run tools:build svg
 USE_KDE=	libkscreen windowsystem

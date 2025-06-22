@@ -1,6 +1,6 @@
 PORTNAME=	lxqt-qt6plugin
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	LXQT
 
@@ -13,7 +13,7 @@ LICENSE=	LGPL21+
 LIB_DEPENDS=	libdbusmenu-lxqt.so:devel/libdbusmenu-lxqt \
 		libexif.so:graphics/libexif
 
-USES=		cmake compiler:c++17-lang gnome kde:6 lxqt:2 pkgconfig tar:xz \
+USES=		cmake compiler:c++20-lang gnome kde:6 lxqt:2 pkgconfig tar:xz \
 		qt:6 gettext-runtime xorg
 
 USE_XORG=	xcb
