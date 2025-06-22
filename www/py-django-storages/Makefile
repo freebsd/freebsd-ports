@@ -1,8 +1,9 @@
 PORTNAME=	django-storages
-PORTVERSION=	1.14.4
+PORTVERSION=	1.14.6
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	django_storages-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Generic storages for Django
@@ -18,6 +19,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=3.2:www/py-django42@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=	yes
 
