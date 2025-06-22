@@ -469,6 +469,7 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/Offset/off404.pm
 %%SITE_PERL%%/Date/Manip/Offset/off405.pm
 %%SITE_PERL%%/Date/Manip/Offset/off406.pm
+%%SITE_PERL%%/Date/Manip/Offset/off407.pm
 %%SITE_PERL%%/Date/Manip/Problems.pod
 %%SITE_PERL%%/Date/Manip/Recur.pm
 %%SITE_PERL%%/Date/Manip/Recur.pod
@@ -520,6 +521,7 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/amciud00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amcord00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amcost00.pm
+%%SITE_PERL%%/Date/Manip/TZ/amcoyh00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amcuia00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amdanm00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amdaws00.pm
