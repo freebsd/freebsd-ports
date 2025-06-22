@@ -81,7 +81,7 @@ OVERRIDECACHE_DESC=	Use the override-cache patch
 QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 START_LATE_DESC=	Start BIND late in the boot process (see help)
 STATS_DESC=		Statistics channels
-STATS_JSON_DESC=	Enable XML statistics channel
+STATS_JSON_DESC=	Enable JSON statistics channel
 STATS_XML_DESC=		Enable XML statistics channel
 TCP_FASTOPEN_DESC=	RFC 7413 support
 
