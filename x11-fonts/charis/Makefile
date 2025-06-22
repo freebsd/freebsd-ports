@@ -1,5 +1,5 @@
-PORTNAME=	CharisSIL
-PORTVERSION=	6.200
+PORTNAME=	Charis
+PORTVERSION=	7.000
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://software.sil.org/downloads/r/charis/
 
@@ -15,7 +15,8 @@ MEDIA_ID=	${DISTNAME}${EXTRACT_SUFX}
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-.for type in Bold BoldItalic Italic Regular
+.for type in Bold BoldItalic Italic Medium MediumItalic Regular SemiBold \
+	SemiBoldItalic
 PLIST_FILES+=	${FONTSDIR}/${PORTNAME}-${type}.ttf
 .endfor
 
