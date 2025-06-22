@@ -1,6 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.40.7
-PORTREVISION=	1
+DISTVERSION=	3.40.8
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
@@ -11,8 +10,6 @@ WWW=		https://qgis.org/en/site/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
-
-BROKEN=		Fails to build, sip-build: class 'QgsTopologicalMesh::Changes' has not been defined
 
 BUILD_DEPENDS=	gpsbabel>=1.7.0:astro/gpsbabel \
 		opencl>=0:devel/opencl \
@@ -141,9 +138,6 @@ CMAKE_ON=	USE_OPENCL WITH_3D WITH_ASTYLE WITH_BINDINGS WITH_COPC \
 		WITH_CUSTOM_WIDGETS WITH_DRACO WITH_EPT WITH_INTERNAL_LAZPERF \
 		WITH_POSTGRESQL WITH_QTWEBENGINE
 CMAKE_OFF=	ENABLE_TESTS USE_CCACHE WITH_INTERNAL_MDAL WITH_QTWEBKIT WITH_QWTPOLAR
-
-# math/pdal fails in pdal_wrench() with "undefined reference to symbol 'pthread_create@@FBSD_1.0'"
-#CXXFLAGS+=	-pthread
 
 CONFLICTS_INSTALL=	qgis
 
