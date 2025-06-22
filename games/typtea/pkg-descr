@@ -1,0 +1,10 @@
+Minimal terminal-based typing speed test with
+support for dozens of programming languages.
+
+Features:
+- Terminal-based typing with WPM and accuracy tracking
+- Multi-language support including English and 30+ programming languages
+- Infinite word generation with smooth 3-line scrolling display
+- Minimalist TUI built with Bubble Tea and Lipgloss
+- Embedded language data for easy distribution
+- Accurate metrics following standard typing test calculations
