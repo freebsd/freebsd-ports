@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+Pocket ID is installed
+
+1) Configure it in %%PREFIX%%/etc/pocket-id.env
+
+2) Enable it with
+
+     sysrc pocket_id_enable=YES
+
+3) Start it with
+
+     service pocket-id start
+EOM
+}
+]

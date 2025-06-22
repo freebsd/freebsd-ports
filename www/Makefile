@@ -1453,6 +1453,7 @@
     SUBDIR += plasma6-plasma-browser-integration
     SUBDIR += pmwiki
     SUBDIR += pnews
+    SUBDIR += pocket-id
     SUBDIR += podcastamatic
     SUBDIR += pomerium
     SUBDIR += pound

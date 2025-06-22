@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: pocket_id
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for pocket-id in /etc/rc.conf
+#
+# pocket_id_enable (bool):     Enable pocket-id. (Default=NO)
+# pocket_id_env_file (str):    Path containing the environment variables
+#                              to be used by pocket-id. (Default: /usr/local/etc/pocket-id.env)
+# pocket_id_logfile (str):     Log file used to store the pocket-id's output. (Default: /var/log/pocket-id.log)
+# pocket_id_pidfile (str):     File used by pocket-id to store the process ID. (Default: /var/run/pocket-id.pid)
+# pocket_id_runas (str):       User to run pocket-id as. (Default: %%USER%%)
+
+. /etc/rc.subr
+
+name="pocket_id"
+desc="OIDC provider that allows users to authenticate with their passkeys"
+rcvar="pocket_id_enable"
+
+load_rc_config $name
+
+: ${pocket_id_enable:="NO"}
+: ${pocket_id_env_file:="/usr/local/etc/pocket-id.env"}
+: ${pocket_id_logfile:="/var/log/pocket-id.log"}
+: ${pocket_id_pidfile:="/var/run/pocket-id.pid"}
+: ${pocket_id_runas:="%%USER%%"}
+
+pocket_id_chdir="/var/db/pocket-id"
+pidfile="${pocket_id_pidfile}"
+procname="/usr/local/bin/pocket-id"
+command="/usr/sbin/daemon"
+command_args="-o '${pocket_id_logfile}' -p '${pidfile}' -u '${pocket_id_runas}' -t '${desc}' -- '${procname}'"
+
+run_rc_command "$1"
