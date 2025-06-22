@@ -48,7 +48,7 @@
 .ds doc-str-Lb-libstdthreads C11 Threads Library (libstdthreads, \-lstdthreads)
 .
 .\" Default .Os value
-.ds doc-default-operating-system FreeBSD\~14.1
+.ds doc-default-operating-system FreeBSD\~14.3
 .
 .\" FreeBSD releases not found in doc-common
 .ds doc-operating-system-FreeBSD-2.2.0  2.2.0
@@ -91,11 +91,20 @@
 .ds doc-operating-system-FreeBSD-14.4   14.4
 .ds doc-operating-system-FreeBSD-14.5   14.5
 .ds doc-operating-system-FreeBSD-14.6   14.6
+.ds doc-operating-system-FreeBSD-15     15
 .ds doc-operating-system-FreeBSD-15.0   15.0
 .ds doc-operating-system-FreeBSD-15.1   15.1
 .ds doc-operating-system-FreeBSD-15.2   15.2
 .ds doc-operating-system-FreeBSD-15.3   15.3
+.ds doc-operating-system-FreeBSD-15.4   15.4
+.ds doc-operating-system-FreeBSD-15.5   15.5
+.ds doc-operating-system-FreeBSD-16     16
 .ds doc-operating-system-FreeBSD-16.0   16.0
+.ds doc-operating-system-FreeBSD-16.1   16.1
+.ds doc-operating-system-FreeBSD-16.2   16.2
+.ds doc-operating-system-FreeBSD-16.3   16.3
+.ds doc-operating-system-FreeBSD-17     17
+.ds doc-operating-system-FreeBSD-17.0   17.0
 .
 .\" Definitions for other *BSDs not (yet) in doc-common
 .ds doc-operating-system-NetBSD-7       7
