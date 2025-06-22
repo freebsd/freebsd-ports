@@ -1,7 +1,6 @@
 PORTNAME=	hyprgraphics
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.3
-PORTREVISION=	2
+DISTVERSION=	0.1.4
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libhyprutils.so:devel/hyprutils \
 		libjxl.so:graphics/libjxl \
-		libspng.so:graphics/libspng \
+		libpng.so:graphics/png \
 		libwebp.so:graphics/webp
 
 USES=		cmake:testing compiler:c++11-lib gnome jpeg pkgconfig xorg
