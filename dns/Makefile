@@ -228,6 +228,7 @@
     SUBDIR += scavenge
     SUBDIR += sleuth
     SUBDIR += subfinder
+    SUBDIR += tldx
     SUBDIR += totd
     SUBDIR += udns
     SUBDIR += unbound
