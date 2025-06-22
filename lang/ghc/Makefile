@@ -179,19 +179,9 @@ DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${EXTRACT_SUFX}:boot
 DISTFILES+=		hadrian-${GHC_VERSION}-boot.tar.gz:boot
 .endif
 
-.if ${ARCH} == aarch64 || ${ARCH:Marmv*}
-# ghc-8.10.x on arm requires devel/llvm10
-# CONFIGURE_TARGET must to be the same as the llvm triple
+.if ${ARCH} == aarch64
 CONFIGURE_TARGET=	${ARCH}-unknown-freebsd${"${ARCH:Maarch64}" != "":?:-gnueabihf}
 CONFIGURE_ARGS+=	--host=${CONFIGURE_TARGET}
-BUILD_DEPENDS+=		llc${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-RUN_DEPENDS+=		llc${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-
-# When GHC being compiled and GHC used for bootstrapping support different
-# LLVM versions, we have to pull in both. Luckily, this is relatively rare.
-.  if ${BOOT_LLVM_VERSION} != ${LLVM_VERSION}
-BUILD_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
-.  endif
 .endif
 
 post-patch:
