@@ -159,7 +159,7 @@ PLIST_SUB+=	EXTENSIONSDIR="@comment "
 PLIST_FILES+=	lib/libnvidia-wayland-client.so.${DISTVERSION}
 .endif
 
-CONFLICTS_INSTALL+=	nvidia-driver nvidia-driver-*
+CONFLICTS_INSTALL+=	nvidia-driver*
 .if ${PORTNAME} != nvidia-secondary-driver
 CONFLICTS_INSTALL+=	nvidia-secondary-driver
 .endif

@@ -9,13 +9,18 @@ DISTVERSION?=   ${NVIDIA_DISTVERSION}
 PORTREVISION?=	0
 DISTFILES=		NVIDIA-FreeBSD-${ARCH_SUFX}-${NVIDIA_DISTVERSION}${EXTRACT_SUFX}:nvidia \
 				freebsd-drm-kmod-${DRM_KMOD_GH_TAGNAME}_GH0.tar.gz:drm
+# Choose proper distinfo file using PKGNAMESUFFIX for slave ports.
+# Kept for switching to centralized distinfo with suffixes.
+.ifdef PKGNAMESUFFIX
+DISTINFO_FILE=	${.CURDIR}/distinfo
+.endif
 
 ONLY_FOR_ARCHS=	amd64
 USES=		kmod uidfix tar:xz
 
 SUB_FILES=	20-nvidia-drm-outputclass.conf
 
-RUN_DEPENDS+=	${KMODDIR}/nvidia.ko:x11/nvidia-driver
+RUN_DEPENDS+=	${KMODDIR}/nvidia.ko:x11/nvidia-driver${PKGNAMESUFFIX}
 
 .include "${.CURDIR}/../../x11/nvidia-driver/Makefile.version"
 .include "${.CURDIR}/../../x11/nvidia-driver/Makefile.common"
