@@ -8,7 +8,7 @@ DISTFILES=	authelia-${DISTVERSIONFULL}-public_html${EXTRACT_SUFX}:public_html # 
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Single sign-on multi-factor portal for web apps
-WWW=		https://www.authelia.com/docs/
+WWW=		https://www.authelia.com/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
