@@ -477,6 +477,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-worksheet.svg
 %%DATADIR%%/demos/simulation/rectifier/diode.mod
 %%DATADIR%%/demos/simulation/rectifier/rectifier.kicad_pro
 %%DATADIR%%/demos/simulation/rectifier/rectifier.kicad_sch
+%%DATADIR%%/demos/simulation/rectifier/rectifier.wbk
 %%DATADIR%%/demos/simulation/rectifier/rectifier_schlib.kicad_sym
 %%DATADIR%%/demos/simulation/rectifier/sym-lib-table
 %%DATADIR%%/demos/simulation/sallen_key/ad8051.lib

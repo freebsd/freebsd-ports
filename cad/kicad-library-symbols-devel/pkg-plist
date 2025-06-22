@@ -149,6 +149,7 @@
 %%DATADIR%%/symbols/MCU_Texas.kicad_sym
 %%DATADIR%%/symbols/MCU_Texas_MSP430.kicad_sym
 %%DATADIR%%/symbols/MCU_Texas_SimpleLink.kicad_sym
+%%DATADIR%%/symbols/MCU_Trident.kicad_sym
 %%DATADIR%%/symbols/MCU_WCH_CH32V0.kicad_sym
 %%DATADIR%%/symbols/MCU_WCH_CH32V2.kicad_sym
 %%DATADIR%%/symbols/MCU_WCH_CH32V3.kicad_sym
