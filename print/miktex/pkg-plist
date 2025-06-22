@@ -133,7 +133,7 @@ bin/miktex-weave
 bin/miktex-xetex
 bin/miktex-xml2pmx
 bin/miktexsetup
-bin/mpc
+bin/mpc-miktex
 bin/mpm
 bin/mthelp
 bin/padout

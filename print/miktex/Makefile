@@ -100,5 +100,6 @@ post-patch:
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/share/miktex-texmf/miktex/config/*.log
+	${MV} ${STAGEDIR}${PREFIX}/bin/mpc ${STAGEDIR}${PREFIX}/bin/mpc-miktex
 
 .include <bsd.port.mk>
