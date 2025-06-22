@@ -1,5 +1,6 @@
 PORTNAME=	pacman
 DISTVERSION=	7.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://gitlab.archlinux.org/${PORTNAME}/${PORTNAME}/-/releases/v${DISTVERSION}/downloads/
 
@@ -40,8 +41,8 @@ PLIST_SUB=	PACMAN_ROOT="${PACMAN_ROOT:C,^${PREFIX}/,,}"
 PORTEXAMPLES=	*
 PKGMESSAGE=	${PKGDIR}/pkg-message-${FLAVOR:U}
 
-OPTIONS_DEFINE=	CURL DOCS GPGME EXAMPLES NLS
-OPTIONS_DEFAULT=CURL DOCS GPGME
+OPTIONS_DEFINE=	CURL EXAMPLES GPGME MANPAGES NLS
+OPTIONS_DEFAULT=CURL GPGME MANPAGES
 OPTIONS_EXCLUDE=NLS # XXX: meson cannot find ngettext(3) despite gettext-runtime
 OPTIONS_SUB=	yes
 
@@ -49,8 +50,8 @@ CURL_DESC=	Use libcurl fetcher instead of external curl/wget
 CURL_MESON_ENABLED=	curl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
-DOCS_MESON_ENABLED=	doc
-DOCS_BUILD_DEPENDS=	a2x:textproc/asciidoc
+MANPAGES_MESON_ENABLED=	doc
+MANPAGES_BUILD_DEPENDS=	a2x:textproc/asciidoc
 
 GPGME_DESC=	Use GPGME for PGP signature verification
 GPGME_MESON_ENABLED=	gpgme
