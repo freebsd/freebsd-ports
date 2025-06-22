@@ -4815,6 +4815,8 @@
     SUBDIR += py-distributed
     SUBDIR += py-dj51-django-rq
     SUBDIR += py-dj51-strawberry-graphql
+    SUBDIR += py-dj52-django-rq
+    SUBDIR += py-dj52-strawberry-graphql
     SUBDIR += py-django-rq
     SUBDIR += py-dm-tree
     SUBDIR += py-docformatter

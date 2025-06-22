@@ -1,0 +1,3 @@
+This package offers extensions for using Django with htmx, a library that
+allows one to access modern browser features directly from HTML, rather than
+using JavaScript (see https://htmx.org/).
