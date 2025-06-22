@@ -1,3 +1,40 @@
+  <vuln vid="03ba1cdd-4faf-11f0-af06-00a098b42aeb">
+    <topic>cisco -- OpenH264 Decoding Functions Heap Overflow Vulnerability</topic>
+    <affects>
+      <package>
+	<name>openh264</name>
+	<range><lt>2.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cisco reports:</p>
+	<blockquote cite="https://github.com/cisco/openh264/releases/tag/2.5.1">
+	  <p>A vulnerability in the decoding functions
+	of OpenH264 codec library could allow a remote, unauthenticated
+	attacker to trigger a heap overflow.  This vulnerability is due to
+	a race condition between a Sequence Parameter Set (SPS) memory
+	allocation and a subsequent non Instantaneous Decoder Refresh
+	(non-IDR) Network Abstraction Layer (NAL) unit memory usage.  An
+	attacker could exploit this vulnerability by crafting a malicious
+	bitstream and tricking a victim user into processing an arbitrary
+	video containing the malicious bistream.  An exploit could allow
+	the attacker to cause an unexpected crash in the victim's user
+	decoding client and, possibly, perform arbitrary commands on the
+	victim's host by abusing the heap overflow.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-27091</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-27091</url>
+    </references>
+    <dates>
+      <discovery>2025-02-20</discovery>
+      <entry>2025-06-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6c6c1507-4da5-11f0-afcc-f02f7432cf97">
     <topic>clamav -- ClamAV UDF File Parsing Out-Of-Bounds Read Information Disclosure Vulnerability</topic>
     <affects>
