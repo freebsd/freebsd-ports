@@ -195,4 +195,8 @@ share/locale/vi/LC_MESSAGES/gnome-color-manager.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-color-manager.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-color-manager.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-color-manager.mo
+share/man/man1/gcm-import.1.gz
+share/man/man1/gcm-inspect.1.gz
+share/man/man1/gcm-picker.1.gz
+share/man/man1/gcm-viewer.1.gz
 share/metainfo/org.gnome.ColorProfileViewer.appdata.xml
