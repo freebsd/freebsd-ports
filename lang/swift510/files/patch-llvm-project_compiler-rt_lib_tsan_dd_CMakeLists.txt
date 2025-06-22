@@ -1,0 +1,11 @@
+--- llvm-project/compiler-rt/lib/tsan/dd/CMakeLists.txt.orig	2024-05-24 18:46:43 UTC
++++ llvm-project/compiler-rt/lib/tsan/dd/CMakeLists.txt
+@@ -23,7 +23,7 @@ set_target_properties(dd PROPERTIES FOLDER "Compiler-R
+ set_target_properties(dd PROPERTIES FOLDER "Compiler-RT Misc")
+ 
+ # Deadlock detector is currently supported on 64-bit Linux only.
+-if(CAN_TARGET_x86_64 AND UNIX AND NOT APPLE AND NOT ANDROID)
++if(FALSE)
+   set(arch "x86_64")
+   add_compiler_rt_runtime(clang_rt.dd
+     STATIC

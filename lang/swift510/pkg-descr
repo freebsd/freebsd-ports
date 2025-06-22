@@ -1,0 +1,10 @@
+The Swift programming language -- a modern programming language with
+many great features.
+
+This port includes:
+ * the Swift compiler
+ * the Swift standard library
+ * various tools
+ * the Foundation framework
+ * the Swift Package Manager (SwiftPM)
+ * the run-time support that you need for running compiled programs

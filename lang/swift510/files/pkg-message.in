@@ -1,0 +1,2 @@
+The Swift compiler is installed in %%SWIFT_INSTALL_PREFIX%%/bin
+You may want to add that directory to your shell's PATH.

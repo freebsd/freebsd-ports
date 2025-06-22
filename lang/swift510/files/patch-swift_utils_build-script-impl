@@ -1,0 +1,61 @@
+--- swift/utils/build-script-impl.orig	2024-06-06 04:26:30 UTC
++++ swift/utils/build-script-impl
+@@ -23,6 +23,8 @@ umask 0022
+ 
+ umask 0022
+ 
++python3=python3
++
+ # Declare the set of known settings along with each one's description
+ #
+ # If you add a user-settable variable, add it to this list.
+@@ -345,7 +347,7 @@ function quoted_print() {
+ }
+ 
+ function quoted_print() {
+-    python3 -c 'import shlex; import sys; print(" ".join(shlex.quote(arg) for arg in sys.argv[1:]))' "$@"
++    ${python3} -c 'import shlex; import sys; print(" ".join(shlex.quote(arg) for arg in sys.argv[1:]))' "$@"
+ }
+ 
+ function toupper() {
+@@ -461,7 +463,7 @@ function verify_host_is_supported() {
+ function verify_host_is_supported() {
+     local host="$1"
+     case ${host} in
+-      freebsd-arm64             \
++      freebsd-aarch64           \
+       | freebsd-x86_64          \
+       | openbsd-amd64           \
+       | cygwin-x86_64           \
+@@ -2353,7 +2355,7 @@ for host in "${ALL_HOSTS[@]}"; do
+                       XCTEST_BUILD_ARGS="--release"
+                   fi
+ 
+-                  call python3 "${XCTEST_SOURCE_DIR}"/build_script.py \
++                  call ${python3} "${XCTEST_SOURCE_DIR}"/build_script.py \
+                       --swiftc="${SWIFTC_BIN}" \
+                       --build-dir="${XCTEST_BUILD_DIR}" \
+                       --foundation-build-dir="${FOUNDATION_BUILD_DIR}" \
+@@ -2848,7 +2850,7 @@ for host in "${ALL_HOSTS[@]}"; do
+                   echo "--- Running tests for ${product} ---"
+                   FOUNDATION_BUILD_DIR=$(build_directory ${host} foundation)
+                   XCTEST_BUILD_DIR=$(build_directory ${host} xctest)
+-                  call python3 "${XCTEST_SOURCE_DIR}"/build_script.py test \
++                  call ${python3} "${XCTEST_SOURCE_DIR}"/build_script.py test \
+                       --swiftc="${SWIFTC_BIN}" \
+                       --lit="${LLVM_SOURCE_DIR}/utils/lit/lit.py" \
+                       --foundation-build-dir="${FOUNDATION_BUILD_DIR}" \
+@@ -3418,11 +3420,11 @@ function build_and_test_installable_package() {
+             with_pushd "${PKG_TESTS_SANDBOX_PARENT}" \
+                 call tar xzf "${package_for_host}"
+ 
+-            if python3 -c "import psutil" ; then
++            if ${python3} -c "import psutil" ; then
+               TIMEOUT_ARGS=--timeout=600 # 10 minutes
+             fi
+             with_pushd "${PKG_TESTS_SOURCE_DIR}" \
+-                call python3 "${LIT_EXECUTABLE_PATH}" . ${LLVM_LIT_ARGS} --param package-path="${PKG_TESTS_SANDBOX}" --param test-exec-root="${PKG_TESTS_TEMPS}" --param llvm-bin-dir="${LLVM_BIN_DIR}" ${TIMEOUT_ARGS}
++                call ${python3} "${LIT_EXECUTABLE_PATH}" . ${LLVM_LIT_ARGS} --param package-path="${PKG_TESTS_SANDBOX}" --param test-exec-root="${PKG_TESTS_TEMPS}" --param llvm-bin-dir="${LLVM_BIN_DIR}" ${TIMEOUT_ARGS}
+         fi
+     fi
+ }

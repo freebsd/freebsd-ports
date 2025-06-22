@@ -1,0 +1,11 @@
+--- swift/stdlib/public/Platform/glibc.modulemap.gyb.orig	2024-06-06 04:26:30 UTC
++++ swift/stdlib/public/Platform/glibc.modulemap.gyb
+@@ -19,7 +19,7 @@ module SwiftGlibc [system] {
+ /// It's not named just Glibc so that it doesn't conflict in the event of a
+ /// future official glibc modulemap.
+ module SwiftGlibc [system] {
+-% if CMAKE_SDK in ["LINUX", "ANDROID", "OPENBSD"]:
++% if CMAKE_SDK in ["LINUX", "ANDROID", "FREEBSD", "OPENBSD"]:
+       link "m"
+ % end
+ % if CMAKE_SDK in ["LINUX", "FREEBSD", "OPENBSD", "CYGWIN"]:
