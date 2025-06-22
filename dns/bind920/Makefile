@@ -36,8 +36,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2 \
 		liburcu.so:sysutils/liburcu \
-		libuv.so:devel/libuv \
-		libxml2.so:textproc/libxml2
+		libuv.so:devel/libuv
 
 .if !defined(BIND_TOOLS_SLAVE)
 RUN_DEPENDS=	bind-tools>0:dns/bind-tools
@@ -51,7 +50,6 @@ CPE_VERSION=	${DISTVERSION:C/-.*//}
 .if ${DISTVERSION:M*-*}
 CPE_UPDATE=	${DISTVERSION:C/.*-//:tl}
 .endif
-USE_GNOME=	libxml2
 
 .if !defined(BIND_TOOLS_SLAVE)
 USE_RC_SUBR=	named
@@ -62,7 +60,6 @@ GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-dnsrps \
 		--localstatedir=/var \
 		--sysconfdir=${ETCDIR} \
-		--with-libxml2 \
 		--with-openssl=${OPENSSLBASE} \
 		--with-readline=libedit
 
@@ -87,16 +84,20 @@ EXTRA_PATCHES=		${PATCHDIR}/extrapatch-no-bind-tools
 PORTDOCS=	*
 .endif # BIND_TOOLS_SLAVE
 
-OPTIONS_DEFINE=		DNSTAP DOCS FIXED_RRSET GEOIP IDN JSON LARGE_FILE LMDB \
+OPTIONS_DEFINE=		DNSTAP DOCS FIXED_RRSET GEOIP IDN LARGE_FILE LMDB \
 			OVERRIDECACHE QUERYTRACE START_LATE TCP_FASTOPEN
-OPTIONS_DEFAULT=	DNSTAP GSSAPI_NONE IDN JSON LMDB TCP_FASTOPEN
+OPTIONS_DEFAULT=	DNSTAP GSSAPI_NONE IDN LMDB STATS_JSON STATS_XML \
+			TCP_FASTOPEN
+
+OPTIONS_GROUP=		STATS
+OPTIONS_GROUP_STATS=	STATS_JSON STATS_XML
 
 OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 
 .if defined(BIND_TOOLS_SLAVE)
 OPTIONS_EXCLUDE=	DOCS GEOIP LMDB OVERRIDECACHE QUERYTRACE START_LATE \
-			TCP_FASTOPEN
+			STATS_JSON STATS_XML TCP_FASTOPEN
 .endif # BIND_TOOLS_SLAVE
 
 OPTIONS_SUB=	yes
@@ -112,6 +113,9 @@ LMDB_DESC=		Use LMDB for zone management
 OVERRIDECACHE_DESC=	Use the override-cache patch
 QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 START_LATE_DESC=	Start BIND late in the boot process (see help)
+STATS_DESC=		Statistics channels
+STATS_JSON_DESC=	Enable XML statistics channel
+STATS_XML_DESC=		Enable XML statistics channel
 TCP_FASTOPEN_DESC=	RFC 7413 support
 
 DNSTAP_LIB_DEPENDS=		libfstrm.so:devel/fstrm \
@@ -149,10 +153,6 @@ IDN_CONFIGURE_ON=	${ICONV_CONFIGURE_BASE} \
 			--with-libidn2=${LOCALBASE}
 IDN_CONFIGURE_OFF=	--without-libidn2
 
-JSON_LIB_DEPENDS=	libjson-c.so:devel/json-c
-JSON_CONFIGURE_WITH=	json-c
-JSON_LDFLAGS=		-L${LOCALBASE}/lib -ljson-c
-
 LARGE_FILE_CONFIGURE_ENABLE=	largefile
 
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
@@ -166,6 +166,13 @@ START_LATE_SUB_LIST=		NAMED_BEFORE="LOGIN" \
 				NAMED_REQUIRE="SERVERS cleanvar"
 START_LATE_SUB_LIST_OFF=	NAMED_BEFORE="SERVERS" \
 				NAMED_REQUIRE="NETWORKING ldconfig syslogd"
+
+STATS_JSON_LIB_DEPENDS=		libjson-c.so:devel/json-c
+STATS_JSON_CONFIGURE_WITH=	json-c
+STATS_JSON_LDFLAGS=		-L${LOCALBASE}/lib -ljson-c
+
+STATS_XML_USE=			GNOME=libxml2
+STATS_XML_CONFIGURE_WITH=	libxml2
 
 TCP_FASTOPEN_CONFIGURE_ENABLE=	tcp-fastopen
 
