@@ -1,6 +1,7 @@
 PORTNAME=	microsoft-edit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://github.com/microsoft/edit
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+USES=		cargo desktop-file-utils
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 GH_PROJECT=	edit
