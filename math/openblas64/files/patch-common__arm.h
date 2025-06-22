@@ -1,6 +1,6 @@
---- common_arm.h.orig	2023-04-01 20:18:01 UTC
+--- common_arm.h.orig	2025-06-19 09:45:39 UTC
 +++ common_arm.h
-@@ -95,6 +95,17 @@ static inline int blas_quickdivide(blasint x, blasint 
+@@ -93,6 +93,17 @@ static inline int blas_quickdivide(blasint x, blasint 
  
  #endif
  
