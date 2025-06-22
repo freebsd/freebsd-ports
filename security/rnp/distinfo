@@ -1,5 +1,5 @@
-TIMESTAMP = 1740573395
-SHA256 (rnpgp-rnp-v0.17.1_GH0.tar.gz) = ec486bb2c25abb0ddbd95973fd135e3922ea68b4e6919c7c18d992078baaf50c
-SIZE (rnpgp-rnp-v0.17.1_GH0.tar.gz) = 3515288
+TIMESTAMP = 1750584656
+SHA256 (rnpgp-rnp-v0.18.0_GH0.tar.gz) = 5c8f0bdd5770f5680cc83a76f4569a067f107b8b3eec76577faa227135c7c18e
+SIZE (rnpgp-rnp-v0.18.0_GH0.tar.gz) = 4292768
 SHA256 (rnpgp-sexpp-c641a2f_GH0.tar.gz) = 43d4abdb0c131305ed11ce202d128717336782159b741931494ee8f99cf43cf4
 SIZE (rnpgp-sexpp-c641a2f_GH0.tar.gz) = 71645

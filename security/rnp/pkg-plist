@@ -3,6 +3,7 @@ bin/rnpkeys
 include/rnp/rnp.h
 include/rnp/rnp_err.h
 include/rnp/rnp_export.h
+include/rnp/rnp_ver.h
 lib/cmake/rnp/rnp-config-version.cmake
 lib/cmake/rnp/rnp-config.cmake
 lib/cmake/rnp/rnp-targets-%%CMAKE_BUILD_TYPE%%.cmake
