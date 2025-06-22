@@ -1,2 +1,3 @@
-SHA256 (xorg/app/showfont-1.0.5.tar.bz2) = e9735c1c530b8a52edfab7415cc0fd7f8d2889095114f4cb689a27476461ac89
-SIZE (xorg/app/showfont-1.0.5.tar.bz2) = 125618
+TIMESTAMP = 1748278052
+SHA256 (xorg/app/showfont-1.0.7.tar.xz) = 8f725d641c12ef07746d16c892240823eccd045444a1ea182eddf229cc178fe7
+SIZE (xorg/app/showfont-1.0.7.tar.xz) = 125460
