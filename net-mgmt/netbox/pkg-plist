@@ -30,6 +30,8 @@
 %%DATADIR%%/circuits/forms/filtersets.py
 %%DATADIR%%/circuits/forms/model_forms.py
 %%DATADIR%%/circuits/graphql/__init__.py
+%%DATADIR%%/circuits/graphql/enums.py
+%%DATADIR%%/circuits/graphql/filter_mixins.py
 %%DATADIR%%/circuits/graphql/filters.py
 %%DATADIR%%/circuits/graphql/schema.py
 %%DATADIR%%/circuits/graphql/types.py
@@ -46,6 +48,7 @@
 %%DATADIR%%/circuits/migrations/0049_natural_ordering.py
 %%DATADIR%%/circuits/migrations/0050_virtual_circuits.py
 %%DATADIR%%/circuits/migrations/0051_virtualcircuit_group_assignment.py
+%%DATADIR%%/circuits/migrations/0052_extend_circuit_abs_distance_upper_limit.py
 %%DATADIR%%/circuits/migrations/__init__.py
 %%DATADIR%%/circuits/models/__init__.py
 %%DATADIR%%/circuits/models/base.py
@@ -62,6 +65,7 @@
 %%DATADIR%%/circuits/tests/__init__.py
 %%DATADIR%%/circuits/tests/test_api.py
 %%DATADIR%%/circuits/tests/test_filtersets.py
+%%DATADIR%%/circuits/tests/test_tables.py
 %%DATADIR%%/circuits/tests/test_views.py
 %%DATADIR%%/circuits/urls.py
 %%DATADIR%%/circuits/views.py
@@ -77,6 +81,7 @@
 %%DATADIR%%/core/api/urls.py
 %%DATADIR%%/core/api/views.py
 %%DATADIR%%/core/apps.py
+%%DATADIR%%/core/checks.py
 %%DATADIR%%/core/choices.py
 %%DATADIR%%/core/constants.py
 %%DATADIR%%/core/data_backends.py
@@ -90,6 +95,7 @@
 %%DATADIR%%/core/forms/mixins.py
 %%DATADIR%%/core/forms/model_forms.py
 %%DATADIR%%/core/graphql/__init__.py
+%%DATADIR%%/core/graphql/filter_mixins.py
 %%DATADIR%%/core/graphql/filters.py
 %%DATADIR%%/core/graphql/mixins.py
 %%DATADIR%%/core/graphql/schema.py
@@ -110,6 +116,8 @@
 %%DATADIR%%/core/migrations/0011_move_objectchange.py
 %%DATADIR%%/core/migrations/0012_job_object_type_optional.py
 %%DATADIR%%/core/migrations/0013_job_data_encoder.py
+%%DATADIR%%/core/migrations/0014_datasource_sync_interval.py
+%%DATADIR%%/core/migrations/0015_remove_redundant_indexes.py
 %%DATADIR%%/core/migrations/__init__.py
 %%DATADIR%%/core/models/__init__.py
 %%DATADIR%%/core/models/change_logging.py
@@ -182,6 +190,8 @@
 %%DATADIR%%/dcim/forms/object_create.py
 %%DATADIR%%/dcim/forms/object_import.py
 %%DATADIR%%/dcim/graphql/__init__.py
+%%DATADIR%%/dcim/graphql/enums.py
+%%DATADIR%%/dcim/graphql/filter_mixins.py
 %%DATADIR%%/dcim/graphql/filters.py
 %%DATADIR%%/dcim/graphql/gfk_mixins.py
 %%DATADIR%%/dcim/graphql/mixins.py
@@ -216,13 +226,28 @@
 %%DATADIR%%/dcim/migrations/0198_natural_ordering.py
 %%DATADIR%%/dcim/migrations/0199_macaddress.py
 %%DATADIR%%/dcim/migrations/0200_populate_mac_addresses.py
+%%DATADIR%%/dcim/migrations/0201_add_power_outlet_status.py
+%%DATADIR%%/dcim/migrations/0202_location_comments_region_comments_sitegroup_comments.py
+%%DATADIR%%/dcim/migrations/0203_add_rack_outer_height.py
+%%DATADIR%%/dcim/migrations/0203_device_role_nested.py
+%%DATADIR%%/dcim/migrations/0204_device_role_rebuild.py
+%%DATADIR%%/dcim/migrations/0205_moduletypeprofile.py
+%%DATADIR%%/dcim/migrations/0206_load_module_type_profiles.py
+%%DATADIR%%/dcim/migrations/0207_remove_redundant_indexes.py
 %%DATADIR%%/dcim/migrations/__init__.py
+%%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/cpu.json
+%%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/fan.json
+%%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/gpu.json
+%%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/hard_disk.json
+%%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/memory.json
+%%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/power_supply.json
 %%DATADIR%%/dcim/models/__init__.py
 %%DATADIR%%/dcim/models/cables.py
 %%DATADIR%%/dcim/models/device_component_templates.py
 %%DATADIR%%/dcim/models/device_components.py
 %%DATADIR%%/dcim/models/devices.py
 %%DATADIR%%/dcim/models/mixins.py
+%%DATADIR%%/dcim/models/modules.py
 %%DATADIR%%/dcim/models/power.py
 %%DATADIR%%/dcim/models/racks.py
 %%DATADIR%%/dcim/models/sites.py
@@ -408,6 +433,7 @@
 %%DATADIR%%/docs/models/dcim/modulebay.md
 %%DATADIR%%/docs/models/dcim/modulebaytemplate.md
 %%DATADIR%%/docs/models/dcim/moduletype.md
+%%DATADIR%%/docs/models/dcim/moduletypeprofile.md
 %%DATADIR%%/docs/models/dcim/platform.md
 %%DATADIR%%/docs/models/dcim/powerfeed.md
 %%DATADIR%%/docs/models/dcim/poweroutlet.md
@@ -427,7 +453,6 @@
 %%DATADIR%%/docs/models/dcim/virtualchassis.md
 %%DATADIR%%/docs/models/dcim/virtualdevicecontext.md
 %%DATADIR%%/docs/models/extras/bookmark.md
-%%DATADIR%%/docs/models/extras/branch.md
 %%DATADIR%%/docs/models/extras/configcontext.md
 %%DATADIR%%/docs/models/extras/configtemplate.md
 %%DATADIR%%/docs/models/extras/customfield.md
@@ -440,8 +465,8 @@
 %%DATADIR%%/docs/models/extras/notification.md
 %%DATADIR%%/docs/models/extras/notificationgroup.md
 %%DATADIR%%/docs/models/extras/savedfilter.md
-%%DATADIR%%/docs/models/extras/stagedchange.md
 %%DATADIR%%/docs/models/extras/subscription.md
+%%DATADIR%%/docs/models/extras/tableconfig.md
 %%DATADIR%%/docs/models/extras/tag.md
 %%DATADIR%%/docs/models/extras/webhook.md
 %%DATADIR%%/docs/models/ipam/aggregate.md
@@ -502,7 +527,6 @@
 %%DATADIR%%/docs/plugins/development/navigation.md
 %%DATADIR%%/docs/plugins/development/rest-api.md
 %%DATADIR%%/docs/plugins/development/search.md
-%%DATADIR%%/docs/plugins/development/staged-changes.md
 %%DATADIR%%/docs/plugins/development/tables.md
 %%DATADIR%%/docs/plugins/development/templates.md
 %%DATADIR%%/docs/plugins/development/views.md
@@ -536,6 +560,7 @@
 %%DATADIR%%/docs/release-notes/version-4.0.md
 %%DATADIR%%/docs/release-notes/version-4.1.md
 %%DATADIR%%/docs/release-notes/version-4.2.md
+%%DATADIR%%/docs/release-notes/version-4.3.md
 %%DATADIR%%/extras/__init__.py
 %%DATADIR%%/extras/api/__init__.py
 %%DATADIR%%/extras/api/customfields.py
@@ -556,6 +581,7 @@
 %%DATADIR%%/extras/api/serializers_/objecttypes.py
 %%DATADIR%%/extras/api/serializers_/savedfilters.py
 %%DATADIR%%/extras/api/serializers_/scripts.py
+%%DATADIR%%/extras/api/serializers_/tableconfigs.py
 %%DATADIR%%/extras/api/serializers_/tags.py
 %%DATADIR%%/extras/api/urls.py
 %%DATADIR%%/extras/api/views.py
@@ -584,6 +610,8 @@
 %%DATADIR%%/extras/forms/reports.py
 %%DATADIR%%/extras/forms/scripts.py
 %%DATADIR%%/extras/graphql/__init__.py
+%%DATADIR%%/extras/graphql/enums.py
+%%DATADIR%%/extras/graphql/filter_mixins.py
 %%DATADIR%%/extras/graphql/filters.py
 %%DATADIR%%/extras/graphql/mixins.py
 %%DATADIR%%/extras/graphql/schema.py
@@ -626,6 +654,11 @@
 %%DATADIR%%/extras/migrations/0121_customfield_related_object_filter.py
 %%DATADIR%%/extras/migrations/0122_charfield_null_choices.py
 %%DATADIR%%/extras/migrations/0123_journalentry_kind_default.py
+%%DATADIR%%/extras/migrations/0124_remove_staging.py
+%%DATADIR%%/extras/migrations/0125_alter_tag_options_tag_weight.py
+%%DATADIR%%/extras/migrations/0126_exporttemplate_file_name.py
+%%DATADIR%%/extras/migrations/0127_configtemplate_as_attachment_and_more.py
+%%DATADIR%%/extras/migrations/0128_tableconfig.py
 %%DATADIR%%/extras/migrations/__init__.py
 %%DATADIR%%/extras/models/__init__.py
 %%DATADIR%%/extras/models/configs.py
@@ -636,13 +669,13 @@
 %%DATADIR%%/extras/models/notifications.py
 %%DATADIR%%/extras/models/scripts.py
 %%DATADIR%%/extras/models/search.py
-%%DATADIR%%/extras/models/staging.py
 %%DATADIR%%/extras/models/tags.py
 %%DATADIR%%/extras/querysets.py
 %%DATADIR%%/extras/reports.py
 %%DATADIR%%/extras/scripts.py
 %%DATADIR%%/extras/search.py
 %%DATADIR%%/extras/signals.py
+%%DATADIR%%/extras/storage.py
 %%DATADIR%%/extras/tables/__init__.py
 %%DATADIR%%/extras/tables/columns.py
 %%DATADIR%%/extras/tables/tables.py
@@ -663,6 +696,7 @@
 %%DATADIR%%/extras/tests/test_models.py
 %%DATADIR%%/extras/tests/test_scripts.py
 %%DATADIR%%/extras/tests/test_tags.py
+%%DATADIR%%/extras/tests/test_utils.py
 %%DATADIR%%/extras/tests/test_views.py
 %%DATADIR%%/extras/urls.py
 %%DATADIR%%/extras/utils.py
@@ -698,6 +732,8 @@
 %%DATADIR%%/ipam/forms/filtersets.py
 %%DATADIR%%/ipam/forms/model_forms.py
 %%DATADIR%%/ipam/graphql/__init__.py
+%%DATADIR%%/ipam/graphql/enums.py
+%%DATADIR%%/ipam/graphql/filter_mixins.py
 %%DATADIR%%/ipam/graphql/filters.py
 %%DATADIR%%/ipam/graphql/mixins.py
 %%DATADIR%%/ipam/graphql/schema.py
@@ -720,6 +756,11 @@
 %%DATADIR%%/ipam/migrations/0074_vlantranslationpolicy_vlantranslationrule.py
 %%DATADIR%%/ipam/migrations/0075_vlan_qinq.py
 %%DATADIR%%/ipam/migrations/0076_natural_ordering.py
+%%DATADIR%%/ipam/migrations/0077_vlangroup_tenant.py
+%%DATADIR%%/ipam/migrations/0078_iprange_mark_utilized.py
+%%DATADIR%%/ipam/migrations/0079_add_service_fhrp_group_parent_gfk.py
+%%DATADIR%%/ipam/migrations/0080_populate_service_parent.py
+%%DATADIR%%/ipam/migrations/0081_remove_service_device_virtual_machine_add_parent_gfk_index.py
 %%DATADIR%%/ipam/migrations/__init__.py
 %%DATADIR%%/ipam/models/__init__.py
 %%DATADIR%%/ipam/models/asns.py
@@ -792,6 +833,8 @@
 %%DATADIR%%/netbox/forms/base.py
 %%DATADIR%%/netbox/forms/mixins.py
 %%DATADIR%%/netbox/graphql/__init__.py
+%%DATADIR%%/netbox/graphql/enums.py
+%%DATADIR%%/netbox/graphql/filter_lookups.py
 %%DATADIR%%/netbox/graphql/filter_mixins.py
 %%DATADIR%%/netbox/graphql/scalars.py
 %%DATADIR%%/netbox/graphql/schema.py
@@ -818,7 +861,6 @@
 %%DATADIR%%/netbox/search/utils.py
 %%DATADIR%%/netbox/settings.py
 %%DATADIR%%/netbox/signals.py
-%%DATADIR%%/netbox/staging.py
 %%DATADIR%%/netbox/tables/__init__.py
 %%DATADIR%%/netbox/tables/columns.py
 %%DATADIR%%/netbox/tables/tables.py
@@ -854,7 +896,6 @@
 %%DATADIR%%/netbox/tests/test_plugins.py
 %%DATADIR%%/netbox/tests/test_registry.py
 %%DATADIR%%/netbox/tests/test_search.py
-%%DATADIR%%/netbox/tests/test_staging.py
 %%DATADIR%%/netbox/tests/test_tables.py
 %%DATADIR%%/netbox/tests/test_views.py
 %%DATADIR%%/netbox/urls.py
@@ -1145,6 +1186,7 @@
 %%DATADIR%%/templates/dcim/modulebay.html
 %%DATADIR%%/templates/dcim/moduletype.html
 %%DATADIR%%/templates/dcim/moduletype/component_templates.html
+%%DATADIR%%/templates/dcim/moduletypeprofile.html
 %%DATADIR%%/templates/dcim/platform.html
 %%DATADIR%%/templates/dcim/powerfeed.html
 %%DATADIR%%/templates/dcim/poweroutlet.html
@@ -1225,6 +1267,8 @@
 %%DATADIR%%/templates/extras/script/source.html
 %%DATADIR%%/templates/extras/script_list.html
 %%DATADIR%%/templates/extras/script_result.html
+%%DATADIR%%/templates/extras/tableconfig.html
+%%DATADIR%%/templates/extras/tableconfig_edit.html
 %%DATADIR%%/templates/extras/tag.html
 %%DATADIR%%/templates/extras/templatetags/log_level.html
 %%DATADIR%%/templates/extras/webhook.html
@@ -1322,6 +1366,7 @@
 %%DATADIR%%/templates/tenancy/tenant.html
 %%DATADIR%%/templates/tenancy/tenantgroup.html
 %%DATADIR%%/templates/users/group.html
+%%DATADIR%%/templates/users/inc/user_activity.html
 %%DATADIR%%/templates/users/objectpermission.html
 %%DATADIR%%/templates/users/token.html
 %%DATADIR%%/templates/users/token_edit.html
@@ -1373,6 +1418,8 @@
 %%DATADIR%%/tenancy/forms/forms.py
 %%DATADIR%%/tenancy/forms/model_forms.py
 %%DATADIR%%/tenancy/graphql/__init__.py
+%%DATADIR%%/tenancy/graphql/enums.py
+%%DATADIR%%/tenancy/graphql/filter_mixins.py
 %%DATADIR%%/tenancy/graphql/filters.py
 %%DATADIR%%/tenancy/graphql/mixins.py
 %%DATADIR%%/tenancy/graphql/schema.py
@@ -1385,6 +1432,9 @@
 %%DATADIR%%/tenancy/migrations/0015_contactassignment_rename_content_type.py
 %%DATADIR%%/tenancy/migrations/0016_charfield_null_choices.py
 %%DATADIR%%/tenancy/migrations/0017_natural_ordering.py
+%%DATADIR%%/tenancy/migrations/0018_contact_groups.py
+%%DATADIR%%/tenancy/migrations/0019_contactgroup_comments_tenantgroup_comments.py
+%%DATADIR%%/tenancy/migrations/0020_remove_contactgroupmembership.py
 %%DATADIR%%/tenancy/migrations/__init__.py
 %%DATADIR%%/tenancy/models/__init__.py
 %%DATADIR%%/tenancy/models/contacts.py
@@ -1513,6 +1563,7 @@
 %%DATADIR%%/utilities/htmx.py
 %%DATADIR%%/utilities/jinja2.py
 %%DATADIR%%/utilities/json.py
+%%DATADIR%%/utilities/jsonschema.py
 %%DATADIR%%/utilities/management/__init__.py
 %%DATADIR%%/utilities/management/commands/__init__.py
 %%DATADIR%%/utilities/management/commands/calculate_cached_counts.py
@@ -1524,6 +1575,7 @@
 %%DATADIR%%/utilities/paginator.py
 %%DATADIR%%/utilities/password_validation.py
 %%DATADIR%%/utilities/permissions.py
+%%DATADIR%%/utilities/proxy.py
 %%DATADIR%%/utilities/query.py
 %%DATADIR%%/utilities/query_functions.py
 %%DATADIR%%/utilities/querydict.py
@@ -1626,6 +1678,8 @@
 %%DATADIR%%/virtualization/forms/model_forms.py
 %%DATADIR%%/virtualization/forms/object_create.py
 %%DATADIR%%/virtualization/graphql/__init__.py
+%%DATADIR%%/virtualization/graphql/enums.py
+%%DATADIR%%/virtualization/graphql/filter_mixins.py
 %%DATADIR%%/virtualization/graphql/filters.py
 %%DATADIR%%/virtualization/graphql/schema.py
 %%DATADIR%%/virtualization/graphql/types.py
@@ -1679,6 +1733,7 @@
 %%DATADIR%%/vpn/forms/filtersets.py
 %%DATADIR%%/vpn/forms/model_forms.py
 %%DATADIR%%/vpn/graphql/__init__.py
+%%DATADIR%%/vpn/graphql/enums.py
 %%DATADIR%%/vpn/graphql/filters.py
 %%DATADIR%%/vpn/graphql/schema.py
 %%DATADIR%%/vpn/graphql/types.py
@@ -1689,6 +1744,8 @@
 %%DATADIR%%/vpn/migrations/0005_rename_indexes.py
 %%DATADIR%%/vpn/migrations/0006_charfield_null_choices.py
 %%DATADIR%%/vpn/migrations/0007_natural_ordering.py
+%%DATADIR%%/vpn/migrations/0008_add_l2vpn_status.py
+%%DATADIR%%/vpn/migrations/0009_remove_redundant_indexes.py
 %%DATADIR%%/vpn/migrations/__init__.py
 %%DATADIR%%/vpn/models/__init__.py
 %%DATADIR%%/vpn/models/crypto.py
@@ -1703,6 +1760,7 @@
 %%DATADIR%%/vpn/tests/test_api.py
 %%DATADIR%%/vpn/tests/test_filtersets.py
 %%DATADIR%%/vpn/tests/test_models.py
+%%DATADIR%%/vpn/tests/test_tables.py
 %%DATADIR%%/vpn/tests/test_views.py
 %%DATADIR%%/vpn/urls.py
 %%DATADIR%%/vpn/views.py
@@ -1725,6 +1783,8 @@
 %%DATADIR%%/wireless/forms/filtersets.py
 %%DATADIR%%/wireless/forms/model_forms.py
 %%DATADIR%%/wireless/graphql/__init__.py
+%%DATADIR%%/wireless/graphql/enums.py
+%%DATADIR%%/wireless/graphql/filter_mixins.py
 %%DATADIR%%/wireless/graphql/filters.py
 %%DATADIR%%/wireless/graphql/schema.py
 %%DATADIR%%/wireless/graphql/types.py
@@ -1734,6 +1794,8 @@
 %%DATADIR%%/wireless/migrations/0011_wirelesslan__location_wirelesslan__region_and_more.py
 %%DATADIR%%/wireless/migrations/0012_alter_wirelesslan__location_and_more.py
 %%DATADIR%%/wireless/migrations/0013_natural_ordering.py
+%%DATADIR%%/wireless/migrations/0014_wirelesslangroup_comments.py
+%%DATADIR%%/wireless/migrations/0015_extend_wireless_link_abs_distance_upper_limit.py
 %%DATADIR%%/wireless/migrations/__init__.py
 %%DATADIR%%/wireless/models.py
 %%DATADIR%%/wireless/search.py
