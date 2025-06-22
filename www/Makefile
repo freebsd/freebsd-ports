@@ -2522,6 +2522,7 @@
     SUBDIR += tidy
     SUBDIR += tidy-html5
     SUBDIR += tikiwiki
+    SUBDIR += tinyauth
     SUBDIR += tinymce
     SUBDIR += tinyproxy
     SUBDIR += tivoka

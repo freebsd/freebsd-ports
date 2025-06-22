@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+Tinyauth is installed
+
+1) Configure it in %%PREFIX%%/etc/tinyauth.env
+
+2) Enable it with
+
+     sysrc tinyauth_enable=YES
+
+3) Start it with
+
+     service tinyauth start
+EOM
+}
+]

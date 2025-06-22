@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: tinyauth
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for tinyauth in /etc/rc.conf
+#
+# tinyauth_enable (bool):         Enable tinyauth. (Default=NO)
+# tinyauth_env_file (str):        Path containing the environment variables
+#                                 to be used by tinyauth. (Default: %%PREFIX%%/etc/tinyauth.env)
+# tinyauth_logfile (str):         Log file used to store the tinyauth's output. (Default: /var/log/tinyauth.log)
+# tinyauth_pidfile (str):         File used by tinyauth to store the process ID. (Default: /var/run/tinyauth.pid)
+# tinyauth_runas (str):           User to run tinyauth as. (Default: %%USER%%)
+
+. /etc/rc.subr
+
+name="tinyauth"
+desc="Simplest way to protect your apps with a login screen"
+rcvar="tinyauth_enable"
+
+load_rc_config $name
+
+: ${tinyauth_enable:="NO"}
+: ${tinyauth_env_file:="%%PREFIX%%/etc/tinyauth.env"}
+: ${tinyauth_logfile:="/var/log/tinyauth.log"}
+: ${tinyauth_pidfile:="/var/run/tinyauth.pid"}
+: ${tinyauth_runas:="%%USER%%"}
+
+pidfile="${tinyauth_pidfile}"
+procname="%%LOCALBASE%%/bin/tinyauth"
+command="/usr/sbin/daemon"
+command_args="-o '${tinyauth_logfile}' -p '${pidfile}' -u '${tinyauth_runas}' -t '${desc}' -- '${procname}'"
+
+run_rc_command "$1"
