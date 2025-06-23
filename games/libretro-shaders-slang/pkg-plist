@@ -1679,6 +1679,7 @@
 %%DATADIR%%/crt/metacrt.slangp
 %%DATADIR%%/crt/newpixie-crt.slangp
 %%DATADIR%%/crt/newpixie-mini.slangp
+%%DATADIR%%/crt/phosphor-persistence.slangp
 %%DATADIR%%/crt/phosphorlut.slangp
 %%DATADIR%%/crt/ray_traced_curvature.slangp
 %%DATADIR%%/crt/ray_traced_curvature_append.slangp
@@ -1994,12 +1995,16 @@
 %%DATADIR%%/crt/shaders/hyllian/crt-hyllian-pass0.slang
 %%DATADIR%%/crt/shaders/hyllian/crt-hyllian-pass1.slang
 %%DATADIR%%/crt/shaders/hyllian/crt-hyllian-sinc-pass0.slang
+%%DATADIR%%/crt/shaders/hyllian/support/LUT/Sony_Wega_29FA310_no_gamma-v2.png
+%%DATADIR%%/crt/shaders/hyllian/support/LUT/Sony_Wega_29FA310_no_gamma.png
+%%DATADIR%%/crt/shaders/hyllian/support/LUT/TrinitronP22_D75.png
 %%DATADIR%%/crt/shaders/hyllian/support/LUT/some-grade.png
 %%DATADIR%%/crt/shaders/hyllian/support/delinearize.slang
 %%DATADIR%%/crt/shaders/hyllian/support/glow/blur-glow-mask-geom.slang
 %%DATADIR%%/crt/shaders/hyllian/support/glow/blur_horiz.slang
 %%DATADIR%%/crt/shaders/hyllian/support/glow/threshold.slang
 %%DATADIR%%/crt/shaders/hyllian/support/linearize.slang
+%%DATADIR%%/crt/shaders/hyllian/support/multiLUT-linear-fast.slang
 %%DATADIR%%/crt/shaders/hyllian/support/multiLUT-linear.slang
 %%DATADIR%%/crt/shaders/hyllian/support/multiLUT-modified.slang
 %%DATADIR%%/crt/shaders/hyllian/support/ntsc/shaders/ntsc-adaptive-lite/ntsc-lite-pass1.slang
@@ -2048,6 +2053,9 @@
 %%DATADIR%%/crt/shaders/newpixie/blur_vert.slang
 %%DATADIR%%/crt/shaders/newpixie/crtframe.png
 %%DATADIR%%/crt/shaders/newpixie/newpixie-crt.slang
+%%DATADIR%%/crt/shaders/phosphor-persistence/passthrough.slang
+%%DATADIR%%/crt/shaders/phosphor-persistence/phosphor-apply.slang
+%%DATADIR%%/crt/shaders/phosphor-persistence/phosphor-update.slang
 %%DATADIR%%/crt/shaders/phosphorlut/luts/aperture-grille.png
 %%DATADIR%%/crt/shaders/phosphorlut/luts/shadowmask.png
 %%DATADIR%%/crt/shaders/phosphorlut/luts/slotmask.png
@@ -2221,6 +2229,7 @@
 %%DATADIR%%/downsample/shaders/mixed-res/cheap-sharpen-tweaked.slang
 %%DATADIR%%/downsample/shaders/mixed-res/coder.slang
 %%DATADIR%%/downsample/shaders/mixed-res/hires-tagger.slang
+%%DATADIR%%/downsample/shaders/mixed-res/multiLUT-linear-fast.slang
 %%DATADIR%%/downsample/shaders/mixed-res/multiLUT-modified.slang
 %%DATADIR%%/downsample/shaders/mixed-res/output.slang
 %%DATADIR%%/downsample/shaders/mixed-res/support/fxaa-plus-alpha.slang
