@@ -1,5 +1,0 @@
-This project contains 22 Enhanced Inscript keyboard layouts for Indic languages.
-These are m17n keyboard layouts and are based on the draft released by CDAC.
-
-Remark: this data should be upstreamed to a future version of m17n-db; once this
-will be done, this port will be removed.

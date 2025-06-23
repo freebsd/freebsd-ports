@@ -4520,3 +4520,4 @@ japanese/bugzilla44||2025-06-16|Removed, localized version of devel/bugzilla44
 russian/bugzilla44||2025-06-16|Removed, localized version of devel/bugzilla44
 sysutils/plasma6-drkonqi||2025-06-17|Removed, requires Systemd
 devel/artifactory||2025-06-17|Has expired: Outdated with known vulnerabilities and marked as forbidden in 2023
+devel/m17n-inscript2||2025-06-23|Now included in devel/m17n-db
