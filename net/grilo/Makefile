@@ -1,5 +1,6 @@
 PORTNAME=	grilo
 PORTVERSION=	0.3.19
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -13,11 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libtotem-plparser.so:multimedia/totem-pl-parser
 
-USES=		cpe gettext gnome localbase meson pathfix pkgconfig \
+USES=		cpe gettext-tools gnome localbase meson pathfix pkgconfig \
 		python:build tar:xz vala:build
 CPE_VENDOR=	gnome
 USE_LDCONFIG=	yes
-USE_GNOME=	glib20 introspection:build
+# libxml2 is not really needed at all, see:
+ https://gitlab.gnome.org/GNOME/grilo/-/merge_requests/109
+USE_GNOME=	glib20 introspection:build libxml2:build
 BINARY_ALIAS=	python=${PYTHON_VERSION}
 
 MESON_ARGS=	-Denable-gtk-doc=false -Dsoup3=true
