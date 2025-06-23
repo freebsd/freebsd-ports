@@ -1,5 +1,5 @@
 PORTNAME=	textualeffects
-DISTVERSION=	0.1.3
+DISTVERSION=	0.1.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.25.0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}terminaltexteffects>=0.11.0:devel/py-terminaltexteffects@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}terminaltexteffects>=0.12.0:devel/py-terminaltexteffects@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
