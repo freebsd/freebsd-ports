@@ -1,4 +1,4 @@
-TIMESTAMP = 1747058932
+TIMESTAMP = 1750689210
 SHA256 (rust/crates/ab_glyph-0.2.29.crate) = ec3672c180e71eeaaac3a541fbbc5f5ad4def8b747c595ad30d674e43049f7b0
 SIZE (rust/crates/ab_glyph-0.2.29.crate) = 20011
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.8.crate) = c71b1793ee61086797f5c80b6efa2b8ffa6d5dd703f118545808a7f2e27f7046
@@ -613,8 +613,8 @@ SHA256 (rust/crates/imgref-1.11.0.crate) = d0263a3d970d5c054ed9312c0057b4f3bde9c
 SIZE (rust/crates/imgref-1.11.0.crate) = 65943
 SHA256 (rust/crates/indexmap-1.9.3.crate) = bd070e393353796e801d209ad339e89596eb4c8d430d18ede6a1cced8fafbd99
 SIZE (rust/crates/indexmap-1.9.3.crate) = 54653
-SHA256 (rust/crates/indexmap-2.7.0.crate) = 62f822373a4fe84d4bb149bf54e584a7f4abec90e072ed49cda0edea5b95471f
-SIZE (rust/crates/indexmap-2.7.0.crate) = 85335
+SHA256 (rust/crates/indexmap-2.9.0.crate) = cea70ddb795996207ad57735b50c5982d8844f38ba9ee5f1aedcfb708a2aa11e
+SIZE (rust/crates/indexmap-2.9.0.crate) = 91214
 SHA256 (rust/crates/inotify-0.10.2.crate) = fdd168d97690d0b8c412d6b6c10360277f4d7ee495c5d0d5d5fe0854923255cc
 SIZE (rust/crates/inotify-0.10.2.crate) = 26200
 SHA256 (rust/crates/inotify-sys-0.1.5.crate) = e05c02b5e89bff3b946cedeca278abc628fe811e604f027c45a8aa3cf793d0eb
@@ -1713,5 +1713,5 @@ SHA256 (rust-dark-light-dark-light-8e1f745f91e1e805fa772a83e4744afe95d70aa1_GH0.
 SIZE (rust-dark-light-dark-light-8e1f745f91e1e805fa772a83e4744afe95d70aa1_GH0.tar.gz) = 5285
 SHA256 (iced-rs-iced-aa633f6832c93d81fc829bcd351b369f0aada282_GH0.tar.gz) = e9a6ed7e95da32980d4f64578a1de9bc50646ecb3c5112c46752b5fb387a4c53
 SIZE (iced-rs-iced-aa633f6832c93d81fc829bcd351b369f0aada282_GH0.tar.gz) = 5224300
-SHA256 (squidowl-halloy-2025.5_GH0.tar.gz) = ee348b830db85fcea09616a45271551fa7a382513184170a84ef9dc8b720a88d
-SIZE (squidowl-halloy-2025.5_GH0.tar.gz) = 15703732
+SHA256 (squidowl-halloy-2025.6_GH0.tar.gz) = aedab3b6919d2fa43577b7a5e91a22eb9fced3ad8b31222770c42dc6088295ce
+SIZE (squidowl-halloy-2025.6_GH0.tar.gz) = 16011879

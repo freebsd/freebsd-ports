@@ -305,7 +305,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		image-webp-0.2.1 \
 		imgref-1.11.0 \
 		indexmap-1.9.3 \
-		indexmap-2.7.0 \
+		indexmap-2.9.0 \
 		inotify-0.10.2 \
 		inotify-sys-0.1.5 \
 		inout-0.1.3 \
