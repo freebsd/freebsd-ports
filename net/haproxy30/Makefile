@@ -19,9 +19,9 @@ USE_RC_SUBR=	haproxy
 
 default_CONFLICTS_INSTALL=	haproxy-lua haproxy-wolfssl
 lua_CONFLICTS_INSTALL=		haproxy-devel haproxy-wolfssl
-lua_PKGNAMESUFFIX=		30-lua
+lua_PKGNAMESUFFIX:=		30-lua
 wolfssl_CONFLICTS_INSTALL=	haproxy-devel haproxy-lua
-wolfssl_PKGNAMESUFFIX=		-wolfssl
+wolfssl_PKGNAMESUFFIX=		30-wolfssl
 
 CONFLICTS_INSTALL=	haproxy haproxy24 haproxy26 haproxy28
 
