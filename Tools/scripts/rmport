@@ -147,11 +147,14 @@ check_dep_core()
 	deps=$(grep -E "${pkgname}" ${INDEX} |grep -vE "^(${rmpkgs})" || :)
 	# Try to avoid false positives from INDEX when a port has just been
 	# removed but INDEX has not yet been updated.
+	# XXX this needs more work, we must look for the dependencies of catport in MOVED
 	in_MOVED=0
-	MOVED_line="$(grep "${catport}" MOVED)"
-	if [ -n "${MOVED_line}" ] && [ "${TODAY}" = "$(echo "${MOVED_line}" | cut -d \| -f 3)" ] ; then
-		in_MOVED=1
-	fi
+	#MOVED_line="$(grep "${catport}" "${PORTSDIR}/MOVED")"
+	#if [ -z "${MOVED_line}" ] ; then
+	#	in_MOVED=2 # dependent port not found
+	#elif [ "${TODAY}" = "$(echo "${MOVED_line}" | cut -d \| -f 3)" ] ; then
+	#	in_MOVED=1 # dependent port just removed
+	#fi
 	if [ -n "${deps}" ] && [ ${in_MOVED} -eq 0 ] ; then
 		log "${catport}: some port(s) depend on ${pkgname}:"
 		# Skip dependencies in on-screen listing to avoid excessively
