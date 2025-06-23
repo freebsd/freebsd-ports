@@ -60,6 +60,7 @@
     SUBDIR += matterbridge
     SUBDIR += matterhorn
     SUBDIR += matterircd
+    SUBDIR += mautrix-whatsapp
     SUBDIR += mbpurple
     SUBDIR += mcabber
     SUBDIR += meanwhile

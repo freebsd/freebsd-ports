@@ -319,7 +319,7 @@ neo4j:*:369:369::0:0:neo4j Database Daemon:/nonexistent:/usr/sbin/nologin
 _wsdd:*:370:370::0:0:Web Service Discovery Daemon:/nonexistent:/usr/sbin/nologin
 reposilite:*:371:371::0:0:Reposilite user:/nonexistent:/usr/sbin/nologin
 beam:*:372:372::0:0:Erlang BEAM VM user:/nonexistent:/usr/sbin/nologin
-# free: 373
+mautrix-whatsapp:*:373:373::0:0:Mautrix-Whatsapp Daemon:/nonexistent:/usr/sbin/nologin
 # free: 374
 # free: 375
 # free: 376

@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# PROVIDE: mautrix_whatsapp
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# mautrix_whatsapp_enable (bool):	Set to NO by default.
+#					Set it to YES to enable mautrix_whatsapp.
+# mautrix_whatsapp_config (path):	Set to %%ETCDIR%%/config.yaml
+#					by default.
+# mautrix_whatsapp_logfile (path):	Set to /var/log/mautrix-whatsapp/mautrix-whatsapp.log
+#					by default.
+# mautrix_whatsapp_user (user):		Set user to run mautrix-whatsapp.
+#					Default is "mautrix-whatsapp".
+# mautrix_whatsapp_group (group):	Set group to run mautrix-whatsapp.
+#					Default is "mautrix-whatsapp".
+
+. /etc/rc.subr
+
+desc="Matrix-WhatsApp puppeting bridge"
+name=mautrix_whatsapp
+rcvar=mautrix_whatsapp_enable
+
+load_rc_config $name
+
+: ${mautrix_whatsapp_enable:=NO}
+: ${mautrix_whatsapp_config=%%ETCDIR%%/config.yaml}
+: ${mautrix_whatsapp_logfile=/var/log/mautrix-whatsapp/mautrix-whatsapp.log}
+: ${mautrix_whatsapp_user=mautrix-whatsapp}
+: ${mautrix_whatsapp_group=mautrix-whatsapp}
+
+command=/usr/sbin/daemon
+procname=/usr/local/bin/mautrix-whatsapp
+pidfile=/var/run/${name}.pid
+
+command_args="-cf -p ${pidfile} -o ${mautrix_whatsapp_logfile} -H ${procname} -c ${mautrix_whatsapp_config}"
+
+start_precmd=mautrix_whatsapp_startprecmd
+
+mautrix_whatsapp_startprecmd()
+{
+	if [ ! -e ${pidfile} ]; then
+		install -o ${mautrix_whatsapp_user} -g ${mautrix_whatsapp_group} /dev/null ${pidfile}
+	fi
+
+	if [ ! -e ${mautrix_whatsapp_logfile} ]; then
+		install -o ${mautrix_whatsapp_user} -g ${mautrix_whatsapp_group} /dev/null ${mautrix_whatsapp_logfile}
+	fi
+}
+
+run_rc_command "$1"

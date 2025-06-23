@@ -1,0 +1,3 @@
+bin/mautrix-whatsapp
+@dir(mautrix-whatsapp,mautrix-whatsapp) %%ETCDIR%%
+@dir(mautrix-whatsapp,mautrix-whatsapp) /var/log/mautrix-whatsapp
