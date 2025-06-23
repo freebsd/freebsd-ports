@@ -1,0 +1,10 @@
+--- cargo-crates/neon-1.1.1/Cargo.toml.orig	2025-06-20 16:24:28.786063000 +0200
++++ cargo-crates/neon-1.1.1/Cargo.toml	2025-06-20 15:29:20.492364000 +0200
+@@ -109,6 +109,7 @@ version = "0.3.33"
+ 
+ [dependencies.linkme]
+ version = "0.3.33"
++features = ["used_linker"]
+ 
+ [dependencies.neon-macros]
+ version = "=1.1.1"

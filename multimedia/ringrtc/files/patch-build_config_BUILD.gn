@@ -1,6 +1,6 @@
 --- src/webrtc/src/build/config/BUILD.gn.orig	2023-08-17 07:33:31 UTC
 +++ src/webrtc/src/build/config/BUILD.gn
-@@ -214,6 +214,10 @@ config("default_libs") {
+@@ -215,6 +215,10 @@ config("default_libs") {
      # Targets should choose to explicitly link frameworks they require. Since
      # linking can have run-time side effects, nothing should be listed here.
      libs = []

@@ -1,6 +1,6 @@
 --- src/webrtc/src/build/toolchain/gcc_toolchain.gni.orig	2022-02-16 12:34:12 UTC
 +++ src/webrtc/src/build/toolchain/gcc_toolchain.gni
-@@ -53,6 +53,13 @@ if (enable_resource_allowlist_generation) {
+@@ -56,6 +56,13 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
  }
  
@@ -14,8 +14,8 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -825,22 +832,12 @@ template("gcc_toolchain") {
- # use_gold too.
+@@ -896,22 +903,12 @@ template("gcc_toolchain") {
+ # actually just be doing a native compile.
  template("clang_toolchain") {
    gcc_toolchain(target_name) {
 -    _path = "$clang_base_path/bin"
@@ -36,9 +36,9 @@
 -    readelf = "${prefix}/llvm-readelf"
 -    ar = "${prefix}/llvm-ar"
 -    nm = "${prefix}/llvm-nm"
-+    readelf = "llvm-readelf"
++    readelf = "readelf"
 +    ar = "llvm-ar"
 +    nm = "llvm-nm"
  
-     forward_variables_from(invoker,
-                            [
+     forward_variables_from(invoker, "*", [ "toolchain_args" ])
+ 
