@@ -12,4 +12,6 @@ USE_KDE=	colorscheme config configwidgets coreaddons globalaccel \
 		ecm:build
 USE_QT=		base
 
+CMAKE_OFF=	BUILD_PYTHON_BINDINGS
+
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ USES=		cmake gl kde:6 pkgconfig qt:6 tar:xz xorg
 USE_GL=		gl opengl
 USE_KDE=	ecm:build \
 		plasma-wayland-protocols:build
-USE_QT=		base wayland
+USE_QT=		base wayland tools:build
 USE_XORG=	ice sm x11 xcb xext
 
 .include <bsd.port.mk>

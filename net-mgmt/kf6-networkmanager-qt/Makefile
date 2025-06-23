@@ -1,6 +1,5 @@
 PORTNAME=	networkmanager-qt
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net-mgmt kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

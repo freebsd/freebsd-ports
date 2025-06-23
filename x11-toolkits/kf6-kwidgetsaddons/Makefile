@@ -10,4 +10,6 @@ USE_GL=		gl opengl
 USE_KDE=	ecm:build
 USE_QT=		base tools
 
+CMAKE_OFF=	BUILD_PYTHON_BINDINGS
+
 .include <bsd.port.mk>

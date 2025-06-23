@@ -12,4 +12,6 @@ USE_KDE=	windowsystem \
 USE_QT=		base
 USE_XORG=	x11
 
+CMAKE_OFF=	BUILD_PYTHON_BINDINGS
+
 .include <bsd.port.mk>

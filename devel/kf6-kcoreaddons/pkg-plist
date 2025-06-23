@@ -32,6 +32,7 @@ include/KF6/KCoreAddons/KSharedDataCache
 include/KF6/KCoreAddons/KShell
 include/KF6/KCoreAddons/KSignalHandler
 include/KF6/KCoreAddons/KStringHandler
+include/KF6/KCoreAddons/KSystemClockSkewNotifier
 include/KF6/KCoreAddons/KTextToHTML
 include/KF6/KCoreAddons/KUrlMimeData
 include/KF6/KCoreAddons/KUser
@@ -68,6 +69,7 @@ include/KF6/KCoreAddons/kshareddatacache.h
 include/KF6/KCoreAddons/kshell.h
 include/KF6/KCoreAddons/ksignalhandler.h
 include/KF6/KCoreAddons/kstringhandler.h
+include/KF6/KCoreAddons/ksystemclockskewnotifier.h
 include/KF6/KCoreAddons/ktexttohtml.h
 include/KF6/KCoreAddons/kurlmimedata.h
 include/KF6/KCoreAddons/kuser.h

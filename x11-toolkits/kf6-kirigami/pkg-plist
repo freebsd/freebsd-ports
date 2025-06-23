@@ -41,6 +41,9 @@ lib/libKirigamiLayoutsPrivate.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKirigamiPlatform.so
 lib/libKirigamiPlatform.so.6
 lib/libKirigamiPlatform.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libKirigamiPolyfill.so
+lib/libKirigamiPolyfill.so.6
+lib/libKirigamiPolyfill.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKirigamiPrimitives.so
 lib/libKirigamiPrimitives.so.6
 lib/libKirigamiPrimitives.so.%%KDE_FRAMEWORKS_VERSION%%
@@ -154,6 +157,10 @@ lib/libKirigamiPrivate.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami/private/globaltoolbar/ToolBarPageHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami/private/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/kirigami/private/libKirigamiPrivateplugin.so
+%%QT_QMLDIR%%/org/kde/kirigami/private/polyfill/KirigamiPolyfill.qmltypes
+%%QT_QMLDIR%%/org/kde/kirigami/private/polyfill/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/kirigami/private/polyfill/libKirigamiPolyfillplugin.so
+%%QT_QMLDIR%%/org/kde/kirigami/private/polyfill/qmldir
 %%QT_QMLDIR%%/org/kde/kirigami/private/qmldir
 %%QT_QMLDIR%%/org/kde/kirigami/qmldir
 %%QT_QMLDIR%%/org/kde/kirigami/styles/Material/InlineMessage.qml

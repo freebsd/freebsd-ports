@@ -1,3 +1,5 @@
+lib/cmake/KF6ImageFormats/KF6ImageFormatsConfig.cmake
+lib/cmake/KF6ImageFormats/KF6ImageFormatsConfigVersion.cmake
 %%QT_PLUGINDIR%%/imageformats/kimg_ani.so
 %%AVIF%%%%QT_PLUGINDIR%%/imageformats/kimg_avif.so
 %%QT_PLUGINDIR%%/imageformats/kimg_dds.so

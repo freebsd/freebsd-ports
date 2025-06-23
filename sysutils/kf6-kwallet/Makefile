@@ -20,5 +20,4 @@ USE_KDE=	colorscheme config coreaddons crash dbusaddons i18n \
 USE_QT=		base
 USE_XORG=	x11
 
-KDE_FRAMEWORKS_VERSION=	6.14.1
 .include <bsd.port.mk>
