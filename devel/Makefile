@@ -4451,7 +4451,6 @@
     SUBDIR += py-async_timeout
     SUBDIR += py-asynctest
     SUBDIR += py-atomiclong
-    SUBDIR += py-atomicwrites
     SUBDIR += py-atpublic
     SUBDIR += py-attr
     SUBDIR += py-attrdict
