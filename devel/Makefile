@@ -5747,7 +5747,6 @@
     SUBDIR += py-pytest-xprocess
     SUBDIR += py-pytest4
     SUBDIR += py-pytest4-cache
-    SUBDIR += py-pytest4-flakes
     SUBDIR += py-python-application
     SUBDIR += py-python-bugzilla
     SUBDIR += py-python-dateutil
