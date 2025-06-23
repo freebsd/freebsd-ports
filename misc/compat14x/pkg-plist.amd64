@@ -1,2 +1,2 @@
 lib/compat/libmd.so.6
-lib32/compat/libmd.so.6
+%%COMPAT32%%lib32/compat/libmd.so.6
