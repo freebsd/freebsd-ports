@@ -1,6 +1,0 @@
-This plugin produces coverage reports. It supports centralised testing and
-distributed testing in both load and each modes. It also supports coverage of
-subprocesses.
-
-All features offered by the coverage package should be available, either through
-pytest-cov or through coverage's config file.
