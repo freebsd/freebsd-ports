@@ -1,6 +1,6 @@
 PORTNAME=	spirv-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.2.rc1 # please always bump all dependencies when updated because at least graphics/shaderc links in static libraries
+DISTVERSION=	2025.3.rc1 # please always bump all dependencies when updated because at least graphics/shaderc links in static libraries
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ SHEBANG_FILES=	tools/lesspipe/spirv-lesspipe.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	SPIRV-Tools
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-411-gaa6cef1:headers/external/spirv-headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-430-g2a611a9:headers/external/spirv-headers
 
 CMAKE_ON=	SPIRV_SKIP_TESTS
 
