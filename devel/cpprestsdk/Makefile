@@ -1,27 +1,26 @@
 PORTNAME=	cpprestsdk
 PORTVERSION=	2.10.19
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sigsegv@radiotube.org
 COMMENT=	Microsoft C++ REST SDK
 WWW=		https://github.com/Microsoft/cpprestsdk
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../license.txt
 
-BROKEN=		fails to build with Boost>=1.87
-
 BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		cmake compiler:c++11-lang pkgconfig ssl
+USES=		cmake:testing compiler:c++11-lang pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Microsoft
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_SAMPLES BUILD_TESTS WERROR
+CMAKE_TESTING_ON=	BUILD_TESTS
 
 WRKSRC_SUBDIR=	Release
 
