@@ -1,9 +1,0 @@
-Orange Bioinformatics extends Orange, a data mining software package, with
-common functionality for bioinformatics. The provided functionality can be
-accessed as a Python library or through a visual programming interface (Orange
-Canvas). The latter is also suitable for non-programmers.
-
-Orange Bioinformatics provides access to publicly available data, like GEO data
-sets, GO and KEGG. All features can be combined with powerful visualization,
-network exploration and data mining techniques from the Orange data mining
-framework.
