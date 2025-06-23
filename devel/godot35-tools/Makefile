@@ -4,7 +4,7 @@ COMMENT=	Game integrated development environment
 
 BROKEN=		Fails to build, error: no member named 'u' in 'QuadraticBezierCurve<V>'
 DEPRECATED=	Fails to build and legacy, consider migrating to devel/godot-tools
-EXPIRATION_DATE=2024-07-31
+EXPIRATION_DATE=2025-07-31
 
 OPTIONS_EXCLUDE=	#
 OPTIONS_SLAVE=	TOOLS
