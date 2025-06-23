@@ -8238,7 +8238,6 @@
     SUBDIR += splint
     SUBDIR += spr
     SUBDIR += spread-sheet-widget
-    SUBDIR += spyder
     SUBDIR += srecord
     SUBDIR += sse2neon
     SUBDIR += st
