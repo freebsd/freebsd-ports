@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Keymap manager for wlroots-based compositors
 WWW=		https://github.com/MaxVerevkin/wlr-which-key
 
@@ -14,8 +14,9 @@ LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
 USES=		cargo gnome
 USE_GITHUB=	yes
-USE_GNOME=	cairo pango
 GH_ACCOUNT=	MaxVerevkin
+USE_GNOME=	cairo pango
+
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
