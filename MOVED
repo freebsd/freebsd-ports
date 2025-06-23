@@ -4544,3 +4544,4 @@ devel/py-pytest4-cache||2025-06-23|Has expired: Depends on expiring devel/py-pyt
 devel/py-pytest4||2025-06-23|Has expired: Depends on expired devel/py-atomicwrites
 math/py-fastdtw||2025-06-23|Has expired: Depends on expired devel/py-pytest-runner
 devel/spyder||2025-06-23|Has expired: Depends on expired devel/py-atomicwrites
+misc/orange3||2025-06-23|Has expired: Depends on expiring devel/py-orange-canvas-core

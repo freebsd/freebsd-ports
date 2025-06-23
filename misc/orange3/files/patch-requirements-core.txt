@@ -1,8 +1,0 @@
---- requirements-core.txt.orig	2021-03-13 22:01:25 UTC
-+++ requirements-core.txt
-@@ -23,4 +23,4 @@ baycomp>=1.0.2
- pandas>=1.0.0
- pyyaml
- openpyxl
--httpx>=0.14.0,<0.17
-+httpx>=0.14.0
