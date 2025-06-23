@@ -1,5 +1,0 @@
-Regarding TLS connections to IRC servers, settings can be customized globally or
-per server. This is done using policy txt files, examples can be found in
-%%PREFIX%%/share/examples/biboumi/.
-
-ca_file (in biboumi.cfg) should be set to %%PREFIX%%/share/certs/ca-root-nss.crt

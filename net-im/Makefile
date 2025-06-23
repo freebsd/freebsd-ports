@@ -1,7 +1,6 @@
     COMMENT = Instant messaging
 
     SUBDIR += beebeep
-    SUBDIR += biboumi
     SUBDIR += coccinella
     SUBDIR += concord
     SUBDIR += conduit

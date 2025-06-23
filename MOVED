@@ -4548,3 +4548,4 @@ misc/orange3||2025-06-23|Has expired: Depends on expiring devel/py-orange-canvas
 devel/py-orange-widget-base||2025-06-23|Has expired: Depends on expiring devel/py-orange-canvas-core
 devel/py-orange-canvas-core||2025-06-23|Has expired: Depends on expired misc/py-dictdiffer
 misc/py-dictdiffer||2025-06-23|Has expired: Depends on expired devel/py-pytest-runner
+net-im/biboumi||2025-06-23|Has expired: Depends on expired security/botan2
