@@ -313,7 +313,6 @@
     SUBDIR += bingrep
     SUBDIR += binutils
     SUBDIR += bison
-    SUBDIR += bit
     SUBDIR += bitkeeper
     SUBDIR += bitsery
     SUBDIR += blame
