@@ -46,9 +46,6 @@ include/libmolsketch/constants.h
 include/libmolsketch/coordinatedelegate.h
 include/libmolsketch/coordinatemodel.h
 include/libmolsketch/coordinatetableview.h
-include/libmolsketch/core/coreatom.h
-include/libmolsketch/core/corebond.h
-include/libmolsketch/core/coremolecule.h
 include/libmolsketch/debuggable.h
 include/libmolsketch/electronsystem.h
 include/libmolsketch/element.h
@@ -92,6 +89,11 @@ include/libmolsketch/stringify.h
 include/libmolsketch/sumformula.h
 include/libmolsketch/textitem.h
 include/libmolsketch/xmlobjectinterface.h
+include/libmskcore/coreatom.h
+include/libmskcore/corebond.h
+include/libmskcore/coremolecule.h
+include/libmskcore/position.h
+lib/molsketch/libmolsketch.so
 lib/molsketch/libmskcore.so
 lib/molsketch/libobabeliface.so
 share/applications/molsketch.desktop
