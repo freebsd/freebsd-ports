@@ -49,7 +49,6 @@
     SUBDIR += javahelp
     SUBDIR += javamail
     SUBDIR += javavmwrapper
-    SUBDIR += jaxen
     SUBDIR += jcalendar
     SUBDIR += jcckit
     SUBDIR += jcommon

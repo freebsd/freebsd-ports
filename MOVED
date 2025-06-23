@@ -4551,3 +4551,4 @@ misc/py-dictdiffer||2025-06-23|Has expired: Depends on expired devel/py-pytest-r
 net-im/biboumi||2025-06-23|Has expired: Depends on expired security/botan2
 sysutils/daggy||2025-06-23|Has expired: Depends on expired security/botan2
 java/jdom||2025-06-23|Has expired: Depends on exired java/jaxen
+java/jaxen||2025-06-23|Has expired: Outdated, unsupported upstream and unmaintained in tree for years

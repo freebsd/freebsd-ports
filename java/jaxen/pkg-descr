@@ -1,6 +1,0 @@
-The Jaxen project is a Java XPath Engine. jaxen is a universal object model
-walker, capable of evaluating XPath expressions across multiple models.
-Currently supported are dom4j and JDOM .
-
-Jaxen provides a single point for XPath expression evaluation, regardless of
-the target object model, whether its dom4j, JDOM, DOM, JavaBeans, or whatnot.
