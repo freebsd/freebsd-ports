@@ -1,6 +1,0 @@
-This pytest plugin takes a page from the rest of Python, where you don't
-have to explicitly note public module/class members, but only need to
-hint as to which ones are private.
-
-By default, all files and objects pytest is told to scan will be considered
-tests; to mark something as not-a-test, simply prefix it with an underscore.
