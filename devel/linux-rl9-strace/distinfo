@@ -1,7 +1,7 @@
-TIMESTAMP = 1706860420
-SHA256 (rocky/s/strace-5.18-2.el9.aarch64.rpm) = 09f70a66adcea1e3778ccf07f41d8dfedb365c1dfa2b5eb50810d39f07525507
-SIZE (rocky/s/strace-5.18-2.el9.aarch64.rpm) = 1368782
-SHA256 (rocky/s/strace-5.18-2.el9.x86_64.rpm) = f189da0f9d11a954f2e2828f50580fd8a1c72a9d086d984523734b6e230177d1
-SIZE (rocky/s/strace-5.18-2.el9.x86_64.rpm) = 1428127
-SHA256 (rocky/s/strace-5.18-2.el9.src.rpm) = 5e461fe9b700d4825a9a16b551d408bdbb838b71bea152143e3009d2c5944803
-SIZE (rocky/s/strace-5.18-2.el9.src.rpm) = 2342957
+TIMESTAMP = 1750640836
+SHA256 (rocky/s/strace-6.12-1.el9.aarch64.rpm) = fd121702060e101505e6cec78f182c0477bacb257bbfe9b23721d9028d30fc59
+SIZE (rocky/s/strace-6.12-1.el9.aarch64.rpm) = 1490213
+SHA256 (rocky/s/strace-6.12-1.el9.x86_64.rpm) = d8742200d9c2bfb4c77eebd4783f163af7b5a6c7809353d3268890f209c08507
+SIZE (rocky/s/strace-6.12-1.el9.x86_64.rpm) = 1568070
+SHA256 (rocky/s/strace-6.12-1.el9.src.rpm) = 8ec35a115005836b9ba3278481ac9a185a4c255c0665c5115d82a182ed14c007
+SIZE (rocky/s/strace-6.12-1.el9.src.rpm) = 2650546

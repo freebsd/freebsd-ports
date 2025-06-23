@@ -758,7 +758,7 @@ usr/lib/libverto.so.1.0.0
 usr/lib/libz.so.1
 usr/lib/libz.so.1.2.11
 usr/lib/libzstd.so.1
-usr/lib/libzstd.so.1.5.1
+usr/lib/libzstd.so.1.5.5
 usr/lib/locale/C.utf8/LC_ADDRESS
 usr/lib/locale/C.utf8/LC_COLLATE
 usr/lib/locale/C.utf8/LC_CTYPE
@@ -1266,7 +1266,7 @@ usr/lib64/libverto.so.1.0.0
 usr/lib64/libz.so.1
 usr/lib64/libz.so.1.2.11
 usr/lib64/libzstd.so.1
-usr/lib64/libzstd.so.1.5.1
+usr/lib64/libzstd.so.1.5.5
 usr/lib64/ossl-modules/fips.so
 usr/lib64/ossl-modules/legacy.so
 usr/lib64/security/pam_cap.so

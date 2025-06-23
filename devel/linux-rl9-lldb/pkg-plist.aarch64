@@ -5,6 +5,8 @@ usr/bin/lldb-instr
 usr/bin/lldb-server
 usr/include/lldb/API/LLDB.h
 usr/include/lldb/API/SBAddress.h
+usr/include/lldb/API/SBAddressRange.h
+usr/include/lldb/API/SBAddressRangeList.h
 usr/include/lldb/API/SBAttachInfo.h
 usr/include/lldb/API/SBBlock.h
 usr/include/lldb/API/SBBreakpoint.h
@@ -35,6 +37,7 @@ usr/include/lldb/API/SBHostOS.h
 usr/include/lldb/API/SBInstruction.h
 usr/include/lldb/API/SBInstructionList.h
 usr/include/lldb/API/SBLanguageRuntime.h
+usr/include/lldb/API/SBLanguages.h
 usr/include/lldb/API/SBLaunchInfo.h
 usr/include/lldb/API/SBLineEntry.h
 usr/include/lldb/API/SBListener.h
@@ -49,9 +52,11 @@ usr/include/lldb/API/SBProcessInfoList.h
 usr/include/lldb/API/SBQueue.h
 usr/include/lldb/API/SBQueueItem.h
 usr/include/lldb/API/SBReproducer.h
+usr/include/lldb/API/SBSaveCoreOptions.h
 usr/include/lldb/API/SBScriptObject.h
 usr/include/lldb/API/SBSection.h
 usr/include/lldb/API/SBSourceManager.h
+usr/include/lldb/API/SBStatisticsOptions.h
 usr/include/lldb/API/SBStream.h
 usr/include/lldb/API/SBStringList.h
 usr/include/lldb/API/SBStructuredData.h
@@ -101,12 +106,13 @@ usr/include/lldb/Breakpoint/StoppointCallbackContext.h
 usr/include/lldb/Breakpoint/StoppointHitCounter.h
 usr/include/lldb/Breakpoint/StoppointSite.h
 usr/include/lldb/Breakpoint/Watchpoint.h
+usr/include/lldb/Breakpoint/WatchpointAlgorithms.h
 usr/include/lldb/Breakpoint/WatchpointList.h
 usr/include/lldb/Breakpoint/WatchpointOptions.h
 usr/include/lldb/Breakpoint/WatchpointResource.h
-usr/include/lldb/Breakpoint/WatchpointResourceList.h
 usr/include/lldb/Core/Address.h
 usr/include/lldb/Core/AddressRange.h
+usr/include/lldb/Core/AddressRangeListImpl.h
 usr/include/lldb/Core/AddressResolver.h
 usr/include/lldb/Core/AddressResolverFileLine.h
 usr/include/lldb/Core/Architecture.h
@@ -201,6 +207,7 @@ usr/include/lldb/Expression/ObjectFileJIT.h
 usr/include/lldb/Expression/REPL.h
 usr/include/lldb/Expression/UserExpression.h
 usr/include/lldb/Expression/UtilityFunction.h
+usr/include/lldb/Host/Alarm.h
 usr/include/lldb/Host/Config.h
 usr/include/lldb/Host/ConnectionFileDescriptor.h
 usr/include/lldb/Host/Debug.h
@@ -300,6 +307,7 @@ usr/include/lldb/Interpreter/Interfaces/ScriptedInterface.h
 usr/include/lldb/Interpreter/Interfaces/ScriptedPlatformInterface.h
 usr/include/lldb/Interpreter/Interfaces/ScriptedProcessInterface.h
 usr/include/lldb/Interpreter/Interfaces/ScriptedThreadInterface.h
+usr/include/lldb/Interpreter/Interfaces/ScriptedThreadPlanInterface.h
 usr/include/lldb/Interpreter/OptionArgParser.h
 usr/include/lldb/Interpreter/OptionGroupArchitecture.h
 usr/include/lldb/Interpreter/OptionGroupBoolean.h
@@ -360,12 +368,14 @@ usr/include/lldb/Symbol/LocateSymbolFile.h
 usr/include/lldb/Symbol/ObjectContainer.h
 usr/include/lldb/Symbol/ObjectFile.h
 usr/include/lldb/Symbol/PostfixExpression.h
+usr/include/lldb/Symbol/SaveCoreOptions.h
 usr/include/lldb/Symbol/SourceModule.h
 usr/include/lldb/Symbol/Symbol.h
 usr/include/lldb/Symbol/SymbolContext.h
 usr/include/lldb/Symbol/SymbolContextScope.h
 usr/include/lldb/Symbol/SymbolFile.h
 usr/include/lldb/Symbol/SymbolFileOnDemand.h
+usr/include/lldb/Symbol/SymbolLocation.h
 usr/include/lldb/Symbol/SymbolLocator.h
 usr/include/lldb/Symbol/SymbolVendor.h
 usr/include/lldb/Symbol/Symtab.h
@@ -458,6 +468,7 @@ usr/include/lldb/Target/UnixSignals.h
 usr/include/lldb/Target/Unwind.h
 usr/include/lldb/Target/UnwindAssembly.h
 usr/include/lldb/Target/UnwindLLDB.h
+usr/include/lldb/Target/VerboseTrapFrameRecognizer.h
 usr/include/lldb/Utility/AddressableBits.h
 usr/include/lldb/Utility/AnsiTerminal.h
 usr/include/lldb/Utility/AppleUuidCompatibility.h
@@ -478,6 +489,7 @@ usr/include/lldb/Utility/DataExtractor.h
 usr/include/lldb/Utility/Diagnostics.h
 usr/include/lldb/Utility/Endian.h
 usr/include/lldb/Utility/Environment.h
+usr/include/lldb/Utility/ErrorMessages.h
 usr/include/lldb/Utility/Event.h
 usr/include/lldb/Utility/FileSpec.h
 usr/include/lldb/Utility/FileSpecList.h
@@ -543,6 +555,10 @@ usr/include/lldb/lldb-versioning.h
 usr/lib64/liblldb.so
 usr/lib64/liblldb.so.18.1
 usr/lib64/liblldb.so.18.1.8
+usr/lib64/liblldb.so.19.1
+usr/lib64/liblldb.so.19.1.7
 usr/lib64/liblldbIntelFeatures.so
-usr/lib64/liblldbIntelFeatures.so.18.1
+usr/lib64/liblldbIntelFeatures.so.19.1
+usr/share/man/man1/lldb-server.1.gz
+usr/share/man/man1/lldb.1.gz
 usr/share/licenses/lldb/LICENSE.TXT

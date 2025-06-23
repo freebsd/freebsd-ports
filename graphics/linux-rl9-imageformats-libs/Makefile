@@ -30,7 +30,7 @@ LIB_DISTNAMES=	jasper${PKGNAMESUFFIX}-2.0.28-3.el9 \
 		libpng-1.6.37-12.el9 \
 		libtiff-4.4.0-13.el9 \
 		libwebp-1.2.0-8.el9 \
-		openjpeg2-2.4.0-7.el9
+		openjpeg2-2.4.0-8.el9
 
 SRC_DISTFILES=	jasper-2.0.28-3.el9${SRC_SUFX}:SOURCE \
 		jbigkit-2.1-23.el9${SRC_SUFX}:SOURCE \
@@ -39,7 +39,7 @@ SRC_DISTFILES=	jasper-2.0.28-3.el9${SRC_SUFX}:SOURCE \
 		libpng-1.6.37-12.el9${SRC_SUFX}:SOURCE \
 		libtiff-4.4.0-13.el9${SRC_SUFX}:SOURCE \
 		libwebp-1.2.0-8.el9${SRC_SUFX}:SOURCE \
-		openjpeg2-2.4.0-7.el9${SRC_SUFX}:SOURCE
+		openjpeg2-2.4.0-8.el9${SRC_SUFX}:SOURCE
 
 OPTIONS_DEFINE=	DOCS
 

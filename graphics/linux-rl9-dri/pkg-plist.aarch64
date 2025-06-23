@@ -15,6 +15,7 @@ usr/lib64/dri/kgsl_dri.so
 usr/lib64/dri/kirin_dri.so
 usr/lib64/dri/kms_swrast_dri.so
 usr/lib64/dri/komeda_dri.so
+usr/lib64/dri/libdril_dri.so
 usr/lib64/dri/mali-dp_dri.so
 usr/lib64/dri/mcde_dri.so
 usr/lib64/dri/mediatek_dri.so
@@ -39,9 +40,10 @@ usr/lib64/dri/sti_dri.so
 usr/lib64/dri/stm_dri.so
 usr/lib64/dri/sun4i-drm_dri.so
 usr/lib64/dri/swrast_dri.so
-usr/lib64/dri/tegra_dri.so
 usr/lib64/dri/udl_dri.so
 usr/lib64/dri/virtio_gpu_dri.so
+usr/lib64/dri/vkms_dri.so
+usr/lib64/dri/vmwgfx_dri.so
 usr/lib64/dri/zink_dri.so
 usr/lib64/dri/zynqmp-dpsub_dri.so
 usr/lib64/libEGL_mesa.so.0
@@ -51,6 +53,7 @@ usr/lib64/libGLU.so.1.3.1
 usr/lib64/libGLX_mesa.so.0
 usr/lib64/libGLX_mesa.so.0.0.0
 usr/lib64/libGLX_system.so.0
+usr/lib64/libgallium-24.2.8.so
 usr/lib64/libgbm.so.1
 usr/lib64/libgbm.so.1.0.0
 usr/lib64/libglapi.so.0

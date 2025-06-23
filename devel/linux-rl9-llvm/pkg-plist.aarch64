@@ -13,7 +13,7 @@ usr/bin/llvm-bitcode-strip
 usr/bin/llvm-c-test
 usr/bin/llvm-cat
 usr/bin/llvm-cfi-verify
-usr/bin/llvm-config-18-64
+usr/bin/llvm-config-19-64
 usr/bin/llvm-config-64
 usr/bin/llvm-cov
 usr/bin/llvm-cvtres
@@ -77,6 +77,7 @@ usr/bin/llvm-windres
 usr/bin/llvm-xray
 usr/bin/obj2yaml
 usr/bin/opt
+usr/bin/reduce-chunk-list
 usr/bin/sancov
 usr/bin/sanstats
 usr/bin/split-file
@@ -137,6 +138,7 @@ usr/include/llvm/ADT/DenseMapInfoVariant.h
 usr/include/llvm/ADT/DenseSet.h
 usr/include/llvm/ADT/DepthFirstIterator.h
 usr/include/llvm/ADT/DirectedGraph.h
+usr/include/llvm/ADT/DynamicAPInt.h
 usr/include/llvm/ADT/EnumeratedArray.h
 usr/include/llvm/ADT/EpochTracker.h
 usr/include/llvm/ADT/EquivalenceClasses.h
@@ -179,6 +181,7 @@ usr/include/llvm/ADT/ScopedHashTable.h
 usr/include/llvm/ADT/Sequence.h
 usr/include/llvm/ADT/SetOperations.h
 usr/include/llvm/ADT/SetVector.h
+usr/include/llvm/ADT/SlowDynamicAPInt.h
 usr/include/llvm/ADT/SmallBitVector.h
 usr/include/llvm/ADT/SmallPtrSet.h
 usr/include/llvm/ADT/SmallSet.h
@@ -251,6 +254,8 @@ usr/include/llvm/Analysis/DominanceFrontier.h
 usr/include/llvm/Analysis/DominanceFrontierImpl.h
 usr/include/llvm/Analysis/EHUtils.h
 usr/include/llvm/Analysis/FunctionPropertiesAnalysis.h
+usr/include/llvm/Analysis/GenericDomTreeUpdater.h
+usr/include/llvm/Analysis/GenericDomTreeUpdaterImpl.h
 usr/include/llvm/Analysis/GlobalsModRef.h
 usr/include/llvm/Analysis/GuardUtils.h
 usr/include/llvm/Analysis/HeatUtils.h
@@ -269,9 +274,6 @@ usr/include/llvm/Analysis/InstSimplifyFolder.h
 usr/include/llvm/Analysis/InstructionPrecedenceTracking.h
 usr/include/llvm/Analysis/InstructionSimplify.h
 usr/include/llvm/Analysis/InteractiveModelRunner.h
-usr/include/llvm/Analysis/Interval.h
-usr/include/llvm/Analysis/IntervalIterator.h
-usr/include/llvm/Analysis/IntervalPartition.h
 usr/include/llvm/Analysis/IteratedDominanceFrontier.h
 usr/include/llvm/Analysis/LazyBlockFrequencyInfo.h
 usr/include/llvm/Analysis/LazyBranchProbabilityInfo.h
@@ -356,6 +358,7 @@ usr/include/llvm/Analysis/WithCache.h
 usr/include/llvm/AsmParser/LLLexer.h
 usr/include/llvm/AsmParser/LLParser.h
 usr/include/llvm/AsmParser/LLToken.h
+usr/include/llvm/AsmParser/NumberedValues.h
 usr/include/llvm/AsmParser/Parser.h
 usr/include/llvm/AsmParser/SlotMapping.h
 usr/include/llvm/BinaryFormat/AMDGPUMetadataVerifier.h
@@ -422,6 +425,7 @@ usr/include/llvm/CodeGen/AntiDepBreaker.h
 usr/include/llvm/CodeGen/AsmPrinter.h
 usr/include/llvm/CodeGen/AsmPrinterHandler.h
 usr/include/llvm/CodeGen/AssignmentTrackingAnalysis.h
+usr/include/llvm/CodeGen/AtomicExpand.h
 usr/include/llvm/CodeGen/AtomicExpandUtils.h
 usr/include/llvm/CodeGen/BasicBlockSectionUtils.h
 usr/include/llvm/CodeGen/BasicBlockSectionsProfileReader.h
@@ -433,7 +437,6 @@ usr/include/llvm/CodeGen/CalcSpillWeights.h
 usr/include/llvm/CodeGen/CallBrPrepare.h
 usr/include/llvm/CodeGen/CallingConvLower.h
 usr/include/llvm/CodeGen/CodeGenCommonISel.h
-usr/include/llvm/CodeGen/CodeGenPassBuilder.h
 usr/include/llvm/CodeGen/CodeGenPrepare.h
 usr/include/llvm/CodeGen/CommandFlags.h
 usr/include/llvm/CodeGen/ComplexDeinterleavingPass.h
@@ -443,6 +446,7 @@ usr/include/llvm/CodeGen/DFAPacketizer.h
 usr/include/llvm/CodeGen/DIE.h
 usr/include/llvm/CodeGen/DIEValue.def
 usr/include/llvm/CodeGen/DbgEntityHistoryCalculator.h
+usr/include/llvm/CodeGen/DeadMachineInstructionElim.h
 usr/include/llvm/CodeGen/DebugHandlerBase.h
 usr/include/llvm/CodeGen/DetectDeadLanes.h
 usr/include/llvm/CodeGen/DwarfEHPrepare.h
@@ -456,6 +460,7 @@ usr/include/llvm/CodeGen/ExpandReductions.h
 usr/include/llvm/CodeGen/ExpandVectorPredication.h
 usr/include/llvm/CodeGen/FastISel.h
 usr/include/llvm/CodeGen/FaultMaps.h
+usr/include/llvm/CodeGen/FinalizeISel.h
 usr/include/llvm/CodeGen/FunctionLoweringInfo.h
 usr/include/llvm/CodeGen/GCMetadata.h
 usr/include/llvm/CodeGen/GCMetadataPrinter.h
@@ -502,6 +507,7 @@ usr/include/llvm/CodeGen/LazyMachineBlockFrequencyInfo.h
 usr/include/llvm/CodeGen/LexicalScopes.h
 usr/include/llvm/CodeGen/LinkAllAsmWriterComponents.h
 usr/include/llvm/CodeGen/LinkAllCodegenComponents.h
+usr/include/llvm/CodeGen/LiveDebugVariables.h
 usr/include/llvm/CodeGen/LiveInterval.h
 usr/include/llvm/CodeGen/LiveIntervalCalc.h
 usr/include/llvm/CodeGen/LiveIntervalUnion.h
@@ -513,8 +519,8 @@ usr/include/llvm/CodeGen/LiveRegMatrix.h
 usr/include/llvm/CodeGen/LiveRegUnits.h
 usr/include/llvm/CodeGen/LiveStacks.h
 usr/include/llvm/CodeGen/LiveVariables.h
+usr/include/llvm/CodeGen/LocalStackSlotAllocation.h
 usr/include/llvm/CodeGen/LoopTraversal.h
-usr/include/llvm/CodeGen/LowLevelType.h
 usr/include/llvm/CodeGen/LowLevelTypeUtils.h
 usr/include/llvm/CodeGen/LowerEmuTLS.h
 usr/include/llvm/CodeGen/MBFIWrapper.h
@@ -532,11 +538,14 @@ usr/include/llvm/CodeGen/MachineBranchProbabilityInfo.h
 usr/include/llvm/CodeGen/MachineCFGPrinter.h
 usr/include/llvm/CodeGen/MachineCombinerPattern.h
 usr/include/llvm/CodeGen/MachineConstantPool.h
+usr/include/llvm/CodeGen/MachineConvergenceVerifier.h
 usr/include/llvm/CodeGen/MachineCycleAnalysis.h
+usr/include/llvm/CodeGen/MachineDomTreeUpdater.h
 usr/include/llvm/CodeGen/MachineDominanceFrontier.h
 usr/include/llvm/CodeGen/MachineDominators.h
 usr/include/llvm/CodeGen/MachineFrameInfo.h
 usr/include/llvm/CodeGen/MachineFunction.h
+usr/include/llvm/CodeGen/MachineFunctionAnalysis.h
 usr/include/llvm/CodeGen/MachineFunctionPass.h
 usr/include/llvm/CodeGen/MachineInstr.h
 usr/include/llvm/CodeGen/MachineInstrBuilder.h
@@ -553,7 +562,6 @@ usr/include/llvm/CodeGen/MachineOperand.h
 usr/include/llvm/CodeGen/MachineOptimizationRemarkEmitter.h
 usr/include/llvm/CodeGen/MachineOutliner.h
 usr/include/llvm/CodeGen/MachinePassManager.h
-usr/include/llvm/CodeGen/MachinePassRegistry.def
 usr/include/llvm/CodeGen/MachinePassRegistry.h
 usr/include/llvm/CodeGen/MachinePipeliner.h
 usr/include/llvm/CodeGen/MachinePostDominators.h
@@ -566,7 +574,7 @@ usr/include/llvm/CodeGen/MachineSizeOpts.h
 usr/include/llvm/CodeGen/MachineStableHash.h
 usr/include/llvm/CodeGen/MachineTraceMetrics.h
 usr/include/llvm/CodeGen/MachineUniformityAnalysis.h
-usr/include/llvm/CodeGen/MachineValueType.h
+usr/include/llvm/CodeGen/MachineVerifier.h
 usr/include/llvm/CodeGen/MacroFusion.h
 usr/include/llvm/CodeGen/ModuloSchedule.h
 usr/include/llvm/CodeGen/MultiHazardRecognizer.h
@@ -577,7 +585,7 @@ usr/include/llvm/CodeGen/PBQP/Math.h
 usr/include/llvm/CodeGen/PBQP/ReductionRules.h
 usr/include/llvm/CodeGen/PBQP/Solution.h
 usr/include/llvm/CodeGen/PBQPRAConstraint.h
-usr/include/llvm/CodeGen/ParallelCG.h
+usr/include/llvm/CodeGen/PHIElimination.h
 usr/include/llvm/CodeGen/Passes.h
 usr/include/llvm/CodeGen/PreISelIntrinsicLowering.h
 usr/include/llvm/CodeGen/PseudoSourceValue.h
@@ -587,6 +595,7 @@ usr/include/llvm/CodeGen/RDFLiveness.h
 usr/include/llvm/CodeGen/RDFRegisters.h
 usr/include/llvm/CodeGen/ReachingDefAnalysis.h
 usr/include/llvm/CodeGen/RegAllocCommon.h
+usr/include/llvm/CodeGen/RegAllocFast.h
 usr/include/llvm/CodeGen/RegAllocPBQP.h
 usr/include/llvm/CodeGen/RegAllocRegistry.h
 usr/include/llvm/CodeGen/Register.h
@@ -598,8 +607,9 @@ usr/include/llvm/CodeGen/RegisterScavenging.h
 usr/include/llvm/CodeGen/RegisterUsageInfo.h
 usr/include/llvm/CodeGen/ReplaceWithVeclib.h
 usr/include/llvm/CodeGen/ResourcePriorityQueue.h
-usr/include/llvm/CodeGen/RuntimeLibcalls.h
+usr/include/llvm/CodeGen/RuntimeLibcallUtil.h
 usr/include/llvm/CodeGen/SDNodeProperties.td
+usr/include/llvm/CodeGen/SDPatternMatch.h
 usr/include/llvm/CodeGen/SafeStack.h
 usr/include/llvm/CodeGen/ScheduleDAG.h
 usr/include/llvm/CodeGen/ScheduleDAGInstrs.h
@@ -634,6 +644,7 @@ usr/include/llvm/CodeGen/TargetRegisterInfo.h
 usr/include/llvm/CodeGen/TargetSchedule.h
 usr/include/llvm/CodeGen/TargetSubtargetInfo.h
 usr/include/llvm/CodeGen/TileShapeInfo.h
+usr/include/llvm/CodeGen/TwoAddressInstructionPass.h
 usr/include/llvm/CodeGen/TypePromotion.h
 usr/include/llvm/CodeGen/UnreachableBlockElim.h
 usr/include/llvm/CodeGen/VLIWMachineScheduler.h
@@ -644,6 +655,11 @@ usr/include/llvm/CodeGen/WasmEHFuncInfo.h
 usr/include/llvm/CodeGen/WasmEHPrepare.h
 usr/include/llvm/CodeGen/WinEHFuncInfo.h
 usr/include/llvm/CodeGen/WinEHPrepare.h
+usr/include/llvm/CodeGen/WindowScheduler.h
+usr/include/llvm/CodeGenData/OutlinedHashTree.h
+usr/include/llvm/CodeGenData/OutlinedHashTreeRecord.h
+usr/include/llvm/CodeGenTypes/LowLevelType.h
+usr/include/llvm/CodeGenTypes/MachineValueType.h
 usr/include/llvm/Config/AsmParsers.def
 usr/include/llvm/Config/AsmPrinters.def
 usr/include/llvm/Config/Disassemblers.def
@@ -777,6 +793,7 @@ usr/include/llvm/DebugInfo/GSYM/LineEntry.h
 usr/include/llvm/DebugInfo/GSYM/LineTable.h
 usr/include/llvm/DebugInfo/GSYM/LookupResult.h
 usr/include/llvm/DebugInfo/GSYM/ObjectFileTransformer.h
+usr/include/llvm/DebugInfo/GSYM/OutputAggregator.h
 usr/include/llvm/DebugInfo/GSYM/StringTable.h
 usr/include/llvm/DebugInfo/LogicalView/Core/LVCompare.h
 usr/include/llvm/DebugInfo/LogicalView/Core/LVElement.h
@@ -796,7 +813,7 @@ usr/include/llvm/DebugInfo/LogicalView/LVReaderHandler.h
 usr/include/llvm/DebugInfo/LogicalView/Readers/LVBinaryReader.h
 usr/include/llvm/DebugInfo/LogicalView/Readers/LVCodeViewReader.h
 usr/include/llvm/DebugInfo/LogicalView/Readers/LVCodeViewVisitor.h
-usr/include/llvm/DebugInfo/LogicalView/Readers/LVELFReader.h
+usr/include/llvm/DebugInfo/LogicalView/Readers/LVDWARFReader.h
 usr/include/llvm/DebugInfo/MSF/IMSFFile.h
 usr/include/llvm/DebugInfo/MSF/MSFBuilder.h
 usr/include/llvm/DebugInfo/MSF/MSFCommon.h
@@ -991,6 +1008,7 @@ usr/include/llvm/ExecutionEngine/Orc/Debugging/DebugInfoSupport.h
 usr/include/llvm/ExecutionEngine/Orc/Debugging/DebuggerSupport.h
 usr/include/llvm/ExecutionEngine/Orc/Debugging/DebuggerSupportPlugin.h
 usr/include/llvm/ExecutionEngine/Orc/Debugging/PerfSupportPlugin.h
+usr/include/llvm/ExecutionEngine/Orc/Debugging/VTuneSupportPlugin.h
 usr/include/llvm/ExecutionEngine/Orc/ELFNixPlatform.h
 usr/include/llvm/ExecutionEngine/Orc/EPCDebugObjectRegistrar.h
 usr/include/llvm/ExecutionEngine/Orc/EPCDynamicLibrarySearchGenerator.h
@@ -1020,6 +1038,7 @@ usr/include/llvm/ExecutionEngine/Orc/ObjectLinkingLayer.h
 usr/include/llvm/ExecutionEngine/Orc/ObjectTransformLayer.h
 usr/include/llvm/ExecutionEngine/Orc/OrcABISupport.h
 usr/include/llvm/ExecutionEngine/Orc/RTDyldObjectLinkingLayer.h
+usr/include/llvm/ExecutionEngine/Orc/SectCreate.h
 usr/include/llvm/ExecutionEngine/Orc/Shared/AllocationActions.h
 usr/include/llvm/ExecutionEngine/Orc/Shared/ExecutorAddress.h
 usr/include/llvm/ExecutionEngine/Orc/Shared/ExecutorSymbolDef.h
@@ -1031,6 +1050,7 @@ usr/include/llvm/ExecutionEngine/Orc/Shared/PerfSharedStructs.h
 usr/include/llvm/ExecutionEngine/Orc/Shared/SimplePackedSerialization.h
 usr/include/llvm/ExecutionEngine/Orc/Shared/SimpleRemoteEPCUtils.h
 usr/include/llvm/ExecutionEngine/Orc/Shared/TargetProcessControlTypes.h
+usr/include/llvm/ExecutionEngine/Orc/Shared/VTuneSharedStructs.h
 usr/include/llvm/ExecutionEngine/Orc/Shared/WrapperFunctionUtils.h
 usr/include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h
 usr/include/llvm/ExecutionEngine/Orc/SpeculateAnalyses.h
@@ -1040,6 +1060,7 @@ usr/include/llvm/ExecutionEngine/Orc/TargetProcess/ExecutorBootstrapService.h
 usr/include/llvm/ExecutionEngine/Orc/TargetProcess/ExecutorSharedMemoryMapperService.h
 usr/include/llvm/ExecutionEngine/Orc/TargetProcess/JITLoaderGDB.h
 usr/include/llvm/ExecutionEngine/Orc/TargetProcess/JITLoaderPerf.h
+usr/include/llvm/ExecutionEngine/Orc/TargetProcess/JITLoaderVTune.h
 usr/include/llvm/ExecutionEngine/Orc/TargetProcess/RegisterEHFrames.h
 usr/include/llvm/ExecutionEngine/Orc/TargetProcess/SimpleExecutorDylibManager.h
 usr/include/llvm/ExecutionEngine/Orc/TargetProcess/SimpleExecutorMemoryManager.h
@@ -1061,6 +1082,10 @@ usr/include/llvm/Frontend/Offloading/Utility.h
 usr/include/llvm/Frontend/OpenACC/ACC.h.inc
 usr/include/llvm/Frontend/OpenACC/ACC.inc
 usr/include/llvm/Frontend/OpenACC/ACC.td
+usr/include/llvm/Frontend/OpenMP/ClauseT.h
+usr/include/llvm/Frontend/OpenMP/ConstructCompositionT.h
+usr/include/llvm/Frontend/OpenMP/ConstructDecompositionT.h
+usr/include/llvm/Frontend/OpenMP/OMP.h
 usr/include/llvm/Frontend/OpenMP/OMP.h.inc
 usr/include/llvm/Frontend/OpenMP/OMP.inc
 usr/include/llvm/Frontend/OpenMP/OMP.td
@@ -1078,6 +1103,7 @@ usr/include/llvm/FuzzMutate/Operations.h
 usr/include/llvm/FuzzMutate/Random.h
 usr/include/llvm/FuzzMutate/RandomIRBuilder.h
 usr/include/llvm/IR/AbstractCallSite.h
+usr/include/llvm/IR/Analysis.h
 usr/include/llvm/IR/Argument.h
 usr/include/llvm/IR/AssemblyAnnotationWriter.h
 usr/include/llvm/IR/Assumptions.h
@@ -1095,12 +1121,14 @@ usr/include/llvm/IR/Constant.h
 usr/include/llvm/IR/ConstantFold.h
 usr/include/llvm/IR/ConstantFolder.h
 usr/include/llvm/IR/ConstantRange.h
+usr/include/llvm/IR/ConstantRangeList.h
 usr/include/llvm/IR/Constants.h
 usr/include/llvm/IR/ConstrainedOps.def
 usr/include/llvm/IR/ConvergenceVerifier.h
 usr/include/llvm/IR/CycleInfo.h
 usr/include/llvm/IR/DIBuilder.h
 usr/include/llvm/IR/DataLayout.h
+usr/include/llvm/IR/DbgVariableFragmentInfo.h
 usr/include/llvm/IR/DebugInfo.h
 usr/include/llvm/IR/DebugInfoFlags.def
 usr/include/llvm/IR/DebugInfoMetadata.h
@@ -1119,6 +1147,7 @@ usr/include/llvm/IR/FixedMetadataKinds.def
 usr/include/llvm/IR/FixedPointBuilder.h
 usr/include/llvm/IR/Function.h
 usr/include/llvm/IR/GCStrategy.h
+usr/include/llvm/IR/GEPNoWrapFlags.h
 usr/include/llvm/IR/GVMaterializer.h
 usr/include/llvm/IR/GenericConvergenceVerifierImpl.h
 usr/include/llvm/IR/GetElementPtrTypeIterator.h
@@ -1190,6 +1219,7 @@ usr/include/llvm/IR/LegacyPassNameParser.h
 usr/include/llvm/IR/MDBuilder.h
 usr/include/llvm/IR/Mangler.h
 usr/include/llvm/IR/MatrixBuilder.h
+usr/include/llvm/IR/MemoryModelRelaxationAnnotations.h
 usr/include/llvm/IR/Metadata.def
 usr/include/llvm/IR/Metadata.h
 usr/include/llvm/IR/Module.h
@@ -1213,6 +1243,7 @@ usr/include/llvm/IR/ProfileSummary.h
 usr/include/llvm/IR/PseudoProbe.h
 usr/include/llvm/IR/ReplaceConstant.h
 usr/include/llvm/IR/RuntimeLibcalls.def
+usr/include/llvm/IR/RuntimeLibcalls.h
 usr/include/llvm/IR/SSAContext.h
 usr/include/llvm/IR/SafepointIRVerifier.h
 usr/include/llvm/IR/Statepoint.h
@@ -1264,7 +1295,6 @@ usr/include/llvm/MC/MCAsmInfoELF.h
 usr/include/llvm/MC/MCAsmInfoGOFF.h
 usr/include/llvm/MC/MCAsmInfoWasm.h
 usr/include/llvm/MC/MCAsmInfoXCOFF.h
-usr/include/llvm/MC/MCAsmLayout.h
 usr/include/llvm/MC/MCAsmMacro.h
 usr/include/llvm/MC/MCAssembler.h
 usr/include/llvm/MC/MCCodeEmitter.h
@@ -1279,6 +1309,7 @@ usr/include/llvm/MC/MCDisassembler/MCExternalSymbolizer.h
 usr/include/llvm/MC/MCDisassembler/MCRelocationInfo.h
 usr/include/llvm/MC/MCDisassembler/MCSymbolizer.h
 usr/include/llvm/MC/MCDwarf.h
+usr/include/llvm/MC/MCELFExtras.h
 usr/include/llvm/MC/MCELFObjectWriter.h
 usr/include/llvm/MC/MCELFStreamer.h
 usr/include/llvm/MC/MCExpr.h
@@ -1330,6 +1361,7 @@ usr/include/llvm/MC/MCSymbolCOFF.h
 usr/include/llvm/MC/MCSymbolELF.h
 usr/include/llvm/MC/MCSymbolGOFF.h
 usr/include/llvm/MC/MCSymbolMachO.h
+usr/include/llvm/MC/MCSymbolTableEntry.h
 usr/include/llvm/MC/MCSymbolWasm.h
 usr/include/llvm/MC/MCSymbolXCOFF.h
 usr/include/llvm/MC/MCTargetOptions.h
@@ -1452,13 +1484,18 @@ usr/include/llvm/PassAnalysisSupport.h
 usr/include/llvm/PassInfo.h
 usr/include/llvm/PassRegistry.h
 usr/include/llvm/PassSupport.h
+usr/include/llvm/Passes/CodeGenPassBuilder.h
+usr/include/llvm/Passes/MachinePassRegistry.def
 usr/include/llvm/Passes/OptimizationLevel.h
 usr/include/llvm/Passes/PassBuilder.h
 usr/include/llvm/Passes/PassPlugin.h
 usr/include/llvm/Passes/StandardInstrumentations.h
+usr/include/llvm/Passes/TargetPassRegistry.inc
 usr/include/llvm/ProfileData/Coverage/CoverageMapping.h
 usr/include/llvm/ProfileData/Coverage/CoverageMappingReader.h
 usr/include/llvm/ProfileData/Coverage/CoverageMappingWriter.h
+usr/include/llvm/ProfileData/Coverage/MCDCTypes.h
+usr/include/llvm/ProfileData/CtxInstrContextNode.h
 usr/include/llvm/ProfileData/FunctionId.h
 usr/include/llvm/ProfileData/GCOV.h
 usr/include/llvm/ProfileData/HashKeyMap.h
@@ -1471,6 +1508,9 @@ usr/include/llvm/ProfileData/ItaniumManglingCanonicalizer.h
 usr/include/llvm/ProfileData/MIBEntryDef.inc
 usr/include/llvm/ProfileData/MemProf.h
 usr/include/llvm/ProfileData/MemProfData.inc
+usr/include/llvm/ProfileData/MemProfReader.h
+usr/include/llvm/ProfileData/PGOCtxProfReader.h
+usr/include/llvm/ProfileData/PGOCtxProfWriter.h
 usr/include/llvm/ProfileData/ProfileCommon.h
 usr/include/llvm/ProfileData/RawMemProfReader.h
 usr/include/llvm/ProfileData/SampleProf.h
@@ -1489,6 +1529,10 @@ usr/include/llvm/Remarks/RemarkSerializer.h
 usr/include/llvm/Remarks/RemarkStreamer.h
 usr/include/llvm/Remarks/RemarkStringTable.h
 usr/include/llvm/Remarks/YAMLRemarkSerializer.h
+usr/include/llvm/SandboxIR/SandboxIR.h
+usr/include/llvm/SandboxIR/SandboxIRValues.def
+usr/include/llvm/SandboxIR/Tracker.h
+usr/include/llvm/SandboxIR/Use.h
 usr/include/llvm/Support/AMDGPUAddrSpace.h
 usr/include/llvm/Support/AMDGPUMetadata.h
 usr/include/llvm/Support/AMDHSAKernelDescriptor.h
@@ -1543,7 +1587,7 @@ usr/include/llvm/Support/ConvertUTF.h
 usr/include/llvm/Support/CrashRecoveryContext.h
 usr/include/llvm/Support/DJB.h
 usr/include/llvm/Support/DOTGraphTraits.h
-usr/include/llvm/Support/DXILOperationCommon.h
+usr/include/llvm/Support/DXILABI.h
 usr/include/llvm/Support/DataExtractor.h
 usr/include/llvm/Support/DataTypes.h
 usr/include/llvm/Support/Debug.h
@@ -1562,6 +1606,7 @@ usr/include/llvm/Support/Error.h
 usr/include/llvm/Support/ErrorHandling.h
 usr/include/llvm/Support/ErrorOr.h
 usr/include/llvm/Support/ExitCodes.h
+usr/include/llvm/Support/ExponentialBackoff.h
 usr/include/llvm/Support/ExtensibleRTTI.h
 usr/include/llvm/Support/Extension.def
 usr/include/llvm/Support/FileCollector.h
@@ -1584,6 +1629,8 @@ usr/include/llvm/Support/GenericLoopInfoImpl.h
 usr/include/llvm/Support/GlobPattern.h
 usr/include/llvm/Support/GraphWriter.h
 usr/include/llvm/Support/HashBuilder.h
+usr/include/llvm/Support/HexagonAttributeParser.h
+usr/include/llvm/Support/HexagonAttributes.h
 usr/include/llvm/Support/InitLLVM.h
 usr/include/llvm/Support/InstructionCost.h
 usr/include/llvm/Support/JSON.h
@@ -1594,6 +1641,7 @@ usr/include/llvm/Support/LLVMDriver.h
 usr/include/llvm/Support/LineIterator.h
 usr/include/llvm/Support/Locale.h
 usr/include/llvm/Support/LockFileManager.h
+usr/include/llvm/Support/LogicalResult.h
 usr/include/llvm/Support/MD5.h
 usr/include/llvm/Support/MSP430AttributeParser.h
 usr/include/llvm/Support/MSP430Attributes.h
@@ -1622,7 +1670,7 @@ usr/include/llvm/Support/Process.h
 usr/include/llvm/Support/Program.h
 usr/include/llvm/Support/RISCVAttributeParser.h
 usr/include/llvm/Support/RISCVAttributes.h
-usr/include/llvm/Support/RISCVISAInfo.h
+usr/include/llvm/Support/RISCVISAUtils.h
 usr/include/llvm/Support/RWMutex.h
 usr/include/llvm/Support/RandomNumberGenerator.h
 usr/include/llvm/Support/Recycler.h
@@ -1639,6 +1687,7 @@ usr/include/llvm/Support/ScaledNumber.h
 usr/include/llvm/Support/ScopedPrinter.h
 usr/include/llvm/Support/Signals.h
 usr/include/llvm/Support/Signposts.h
+usr/include/llvm/Support/SipHash.h
 usr/include/llvm/Support/SmallVectorMemoryBuffer.h
 usr/include/llvm/Support/Solaris/sys/regset.h
 usr/include/llvm/Support/SourceMgr.h
@@ -1677,6 +1726,7 @@ usr/include/llvm/Support/X86FoldTablesUtils.h
 usr/include/llvm/Support/YAMLParser.h
 usr/include/llvm/Support/YAMLTraits.h
 usr/include/llvm/Support/circular_raw_ostream.h
+usr/include/llvm/Support/float128.h
 usr/include/llvm/Support/raw_os_ostream.h
 usr/include/llvm/Support/raw_ostream.h
 usr/include/llvm/Support/raw_sha1_ostream.h
@@ -1709,19 +1759,25 @@ usr/include/llvm/Target/TargetIntrinsicInfo.h
 usr/include/llvm/Target/TargetItinerary.td
 usr/include/llvm/Target/TargetLoweringObjectFile.h
 usr/include/llvm/Target/TargetMachine.h
+usr/include/llvm/Target/TargetMacroFusion.td
 usr/include/llvm/Target/TargetOptions.h
 usr/include/llvm/Target/TargetPfmCounters.td
 usr/include/llvm/Target/TargetSchedule.td
 usr/include/llvm/Target/TargetSelectionDAG.td
+usr/include/llvm/TargetParser/AArch64CPUFeatures.inc
 usr/include/llvm/TargetParser/AArch64TargetParser.h
+usr/include/llvm/TargetParser/AArch64TargetParserDef.inc
 usr/include/llvm/TargetParser/ARMTargetParser.def
 usr/include/llvm/TargetParser/ARMTargetParser.h
 usr/include/llvm/TargetParser/ARMTargetParserCommon.h
+usr/include/llvm/TargetParser/ARMTargetParserDef.inc
 usr/include/llvm/TargetParser/CSKYTargetParser.def
 usr/include/llvm/TargetParser/CSKYTargetParser.h
 usr/include/llvm/TargetParser/Host.h
 usr/include/llvm/TargetParser/LoongArchTargetParser.def
 usr/include/llvm/TargetParser/LoongArchTargetParser.h
+usr/include/llvm/TargetParser/PPCTargetParser.def
+usr/include/llvm/TargetParser/RISCVISAInfo.h
 usr/include/llvm/TargetParser/RISCVTargetParser.h
 usr/include/llvm/TargetParser/RISCVTargetParserDef.inc
 usr/include/llvm/TargetParser/SubtargetFeature.h
@@ -1738,6 +1794,7 @@ usr/include/llvm/TextAPI/Architecture.def
 usr/include/llvm/TextAPI/Architecture.h
 usr/include/llvm/TextAPI/ArchitectureSet.h
 usr/include/llvm/TextAPI/DylibReader.h
+usr/include/llvm/TextAPI/FileTypes.h
 usr/include/llvm/TextAPI/InterfaceFile.h
 usr/include/llvm/TextAPI/PackedVersion.h
 usr/include/llvm/TextAPI/Platform.h
@@ -1773,6 +1830,7 @@ usr/include/llvm/Transforms/IPO/CrossDSOCFI.h
 usr/include/llvm/Transforms/IPO/DeadArgumentElimination.h
 usr/include/llvm/Transforms/IPO/ElimAvailExtern.h
 usr/include/llvm/Transforms/IPO/EmbedBitcodePass.h
+usr/include/llvm/Transforms/IPO/ExpandVariadics.h
 usr/include/llvm/Transforms/IPO/ExtractGV.h
 usr/include/llvm/Transforms/IPO/ForceFunctionAttrs.h
 usr/include/llvm/Transforms/IPO/FunctionAttrs.h
@@ -1797,6 +1855,7 @@ usr/include/llvm/Transforms/IPO/ProfiledCallGraph.h
 usr/include/llvm/Transforms/IPO/SCCP.h
 usr/include/llvm/Transforms/IPO/SampleContextTracker.h
 usr/include/llvm/Transforms/IPO/SampleProfile.h
+usr/include/llvm/Transforms/IPO/SampleProfileMatcher.h
 usr/include/llvm/Transforms/IPO/SampleProfileProbe.h
 usr/include/llvm/Transforms/IPO/StripDeadPrototypes.h
 usr/include/llvm/Transforms/IPO/StripSymbols.h
@@ -1820,8 +1879,12 @@ usr/include/llvm/Transforms/Instrumentation/HWAddressSanitizer.h
 usr/include/llvm/Transforms/Instrumentation/InstrOrderFile.h
 usr/include/llvm/Transforms/Instrumentation/InstrProfiling.h
 usr/include/llvm/Transforms/Instrumentation/KCFI.h
+usr/include/llvm/Transforms/Instrumentation/LowerAllowCheckPass.h
 usr/include/llvm/Transforms/Instrumentation/MemProfiler.h
 usr/include/llvm/Transforms/Instrumentation/MemorySanitizer.h
+usr/include/llvm/Transforms/Instrumentation/NumericalStabilitySanitizer.h
+usr/include/llvm/Transforms/Instrumentation/PGOCtxProfLowering.h
+usr/include/llvm/Transforms/Instrumentation/PGOForceFunctionAttrs.h
 usr/include/llvm/Transforms/Instrumentation/PGOInstrumentation.h
 usr/include/llvm/Transforms/Instrumentation/PoisonChecking.h
 usr/include/llvm/Transforms/Instrumentation/SanitizerBinaryMetadata.h
@@ -1853,6 +1916,7 @@ usr/include/llvm/Transforms/Scalar/InductiveRangeCheckElimination.h
 usr/include/llvm/Transforms/Scalar/InferAddressSpaces.h
 usr/include/llvm/Transforms/Scalar/InferAlignment.h
 usr/include/llvm/Transforms/Scalar/InstSimplifyPass.h
+usr/include/llvm/Transforms/Scalar/JumpTableToSwitch.h
 usr/include/llvm/Transforms/Scalar/JumpThreading.h
 usr/include/llvm/Transforms/Scalar/LICM.h
 usr/include/llvm/Transforms/Scalar/LoopAccessAnalysisPrinter.h
@@ -1868,7 +1932,6 @@ usr/include/llvm/Transforms/Scalar/LoopInterchange.h
 usr/include/llvm/Transforms/Scalar/LoopLoadElimination.h
 usr/include/llvm/Transforms/Scalar/LoopPassManager.h
 usr/include/llvm/Transforms/Scalar/LoopPredication.h
-usr/include/llvm/Transforms/Scalar/LoopReroll.h
 usr/include/llvm/Transforms/Scalar/LoopRotation.h
 usr/include/llvm/Transforms/Scalar/LoopSimplifyCFG.h
 usr/include/llvm/Transforms/Scalar/LoopSink.h
@@ -1926,6 +1989,7 @@ usr/include/llvm/Transforms/Utils/CodeLayout.h
 usr/include/llvm/Transforms/Utils/CodeMoverUtils.h
 usr/include/llvm/Transforms/Utils/CountVisits.h
 usr/include/llvm/Transforms/Utils/CtorUtils.h
+usr/include/llvm/Transforms/Utils/DXILResource.h
 usr/include/llvm/Transforms/Utils/DXILUpgrade.h
 usr/include/llvm/Transforms/Utils/Debugify.h
 usr/include/llvm/Transforms/Utils/EntryExitInstrumenter.h
@@ -1991,6 +2055,7 @@ usr/include/llvm/Transforms/Utils/UnrollLoop.h
 usr/include/llvm/Transforms/Utils/VNCoercion.h
 usr/include/llvm/Transforms/Utils/ValueMapper.h
 usr/include/llvm/Transforms/Vectorize/LoadStoreVectorizer.h
+usr/include/llvm/Transforms/Vectorize/LoopIdiomVectorize.h
 usr/include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h
 usr/include/llvm/Transforms/Vectorize/LoopVectorize.h
 usr/include/llvm/Transforms/Vectorize/SLPVectorizer.h
@@ -2034,7 +2099,6 @@ usr/lib64/cmake/llvm/FindLibEdit.cmake
 usr/lib64/cmake/llvm/FindLibpfm.cmake
 usr/lib64/cmake/llvm/FindOCaml.cmake
 usr/lib64/cmake/llvm/FindSphinx.cmake
-usr/lib64/cmake/llvm/FindTerminfo.cmake
 usr/lib64/cmake/llvm/FindZ3.cmake
 usr/lib64/cmake/llvm/Findzstd.cmake
 usr/lib64/cmake/llvm/GenerateVersionFromVCS.cmake
@@ -2059,9 +2123,10 @@ usr/lib64/cmake/llvm/TensorFlowCompile.cmake
 usr/lib64/cmake/llvm/UseLibtool.cmake
 usr/lib64/cmake/llvm/VersionFromVCS.cmake
 usr/lib64/cmake/llvm/llvm-driver-template.cpp.in
-usr/lib64/libLLVM-18.so
+usr/lib64/libLLVM-19.so
 usr/lib64/libLLVM.so
 usr/lib64/libLLVM.so.18.1
+usr/lib64/libLLVM.so.19.1
 usr/lib64/libLLVMAArch64AsmParser.a
 usr/lib64/libLLVMAArch64CodeGen.a
 usr/lib64/libLLVMAArch64Desc.a
@@ -2097,6 +2162,7 @@ usr/lib64/libLLVMBitstreamReader.a
 usr/lib64/libLLVMCFGuard.a
 usr/lib64/libLLVMCFIVerify.a
 usr/lib64/libLLVMCodeGen.a
+usr/lib64/libLLVMCodeGenData.a
 usr/lib64/libLLVMCodeGenTypes.a
 usr/lib64/libLLVMCore.a
 usr/lib64/libLLVMCoroutines.a
@@ -2162,6 +2228,7 @@ usr/lib64/libLLVMObjCARCOpts.a
 usr/lib64/libLLVMObjCopy.a
 usr/lib64/libLLVMObject.a
 usr/lib64/libLLVMObjectYAML.a
+usr/lib64/libLLVMOptDriver.a
 usr/lib64/libLLVMOption.a
 usr/lib64/libLLVMOrcDebugging.a
 usr/lib64/libLLVMOrcJIT.a
@@ -2177,6 +2244,7 @@ usr/lib64/libLLVMPowerPCInfo.a
 usr/lib64/libLLVMProfileData.a
 usr/lib64/libLLVMRemarks.a
 usr/lib64/libLLVMRuntimeDyld.a
+usr/lib64/libLLVMSandboxIR.a
 usr/lib64/libLLVMScalarOpts.a
 usr/lib64/libLLVMSelectionDAG.a
 usr/lib64/libLLVMSupport.a
@@ -2187,8 +2255,8 @@ usr/lib64/libLLVMSystemZDesc.a
 usr/lib64/libLLVMSystemZDisassembler.a
 usr/lib64/libLLVMSystemZInfo.a
 usr/lib64/libLLVMTableGen.a
+usr/lib64/libLLVMTableGenBasic.a
 usr/lib64/libLLVMTableGenCommon.a
-usr/lib64/libLLVMTableGenGlobalISel.a
 usr/lib64/libLLVMTarget.a
 usr/lib64/libLLVMTargetParser.a
 usr/lib64/libLLVMTextAPI.a
@@ -2212,9 +2280,9 @@ usr/lib64/libLLVMX86TargetMCA.a
 usr/lib64/libLLVMXRay.a
 usr/lib64/libLLVMipo.a
 usr/lib64/libLTO.so
-usr/lib64/libLTO.so.18.1
+usr/lib64/libLTO.so.19.1
 usr/lib64/libRemarks.so
-usr/lib64/libRemarks.so.18.1
+usr/lib64/libRemarks.so.19.1
 usr/share/licenses/llvm-devel/LICENSE.TXT
 usr/share/licenses/llvm-libs/LICENSE.TXT
 usr/share/licenses/llvm-static/LICENSE.TXT

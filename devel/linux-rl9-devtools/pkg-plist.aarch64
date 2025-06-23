@@ -162,6 +162,8 @@ usr/include/bits/getopt_posix.h
 usr/include/bits/hwcap.h
 usr/include/bits/in.h
 usr/include/bits/indirect-return.h
+usr/include/bits/inet-fortified-decl.h
+usr/include/bits/inet-fortified.h
 usr/include/bits/initspin.h
 usr/include/bits/inotify.h
 usr/include/bits/ioctl-types.h
@@ -1171,6 +1173,7 @@ usr/include/drm/msm_drm.h
 usr/include/drm/nouveau_drm.h
 usr/include/drm/omap_drm.h
 usr/include/drm/panfrost_drm.h
+usr/include/drm/panthor_drm.h
 usr/include/drm/pvr_drm.h
 usr/include/drm/qaic_accel.h
 usr/include/drm/qxl_drm.h
@@ -1504,6 +1507,7 @@ usr/include/linux/llc.h
 usr/include/linux/loadpin.h
 usr/include/linux/loop.h
 usr/include/linux/lp.h
+usr/include/linux/lsm.h
 usr/include/linux/lwtunnel.h
 usr/include/linux/magic.h
 usr/include/linux/major.h
@@ -1514,6 +1518,7 @@ usr/include/linux/mdio.h
 usr/include/linux/media-bus-format.h
 usr/include/linux/media.h
 usr/include/linux/mei.h
+usr/include/linux/mei_uuid.h
 usr/include/linux/membarrier.h
 usr/include/linux/memfd.h
 usr/include/linux/mempolicy.h
@@ -1707,8 +1712,8 @@ usr/include/linux/nfsacl.h
 usr/include/linux/nfsd/cld.h
 usr/include/linux/nfsd/debug.h
 usr/include/linux/nfsd/export.h
-usr/include/linux/nfsd_netlink.h
 usr/include/linux/nfsd/stats.h
+usr/include/linux/nfsd_netlink.h
 usr/include/linux/nilfs2_api.h
 usr/include/linux/nilfs2_ondisk.h
 usr/include/linux/nitro_enclaves.h
@@ -1750,11 +1755,11 @@ usr/include/linux/ppp-comp.h
 usr/include/linux/ppp-ioctl.h
 usr/include/linux/ppp_defs.h
 usr/include/linux/pps.h
-usr/include/linux/psp-dbc.h
 usr/include/linux/pr.h
 usr/include/linux/prctl.h
 usr/include/linux/psample.h
 usr/include/linux/psci.h
+usr/include/linux/psp-dbc.h
 usr/include/linux/psp-sev.h
 usr/include/linux/ptp_clock.h
 usr/include/linux/ptrace.h
@@ -1882,6 +1887,7 @@ usr/include/linux/tipc_netlink.h
 usr/include/linux/tipc_sockets_diag.h
 usr/include/linux/tls.h
 usr/include/linux/toshiba.h
+usr/include/linux/tps6594_pfsm.h
 usr/include/linux/tty.h
 usr/include/linux/tty_flags.h
 usr/include/linux/types.h

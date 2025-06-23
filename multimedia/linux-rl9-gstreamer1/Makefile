@@ -1,7 +1,6 @@
 PORTNAME=	gstreamer1
-PORTVERSION=	1.22.1
-DISTVERSIONSUFFIX=	-2.el9
-PORTREVISION=	3
+PORTVERSION=	1.22.12
+DISTVERSIONSUFFIX=	-3.el9
 CATEGORIES=	multimedia linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -17,11 +16,11 @@ USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 
 LIB_DISTNAMES=	${PORTNAME}-${DISTVERSIONFULL} \
-		${PORTNAME}-plugins-base-${DISTVERSION}-3.el9_5 \
-		${PORTNAME}-plugins-bad-free-${DISTVERSION}-4.el9 \
-		${PORTNAME}-plugins-good-${DISTVERSION}-3.el9_5 \
-		${PORTNAME}-plugins-good-gtk-${DISTVERSION}-3.el9_5 \
-		${PORTNAME}-plugins-ugly-free-${DISTVERSION}-1.el9
+		${PORTNAME}-plugins-base-${DISTVERSION}-4.el9 \
+		${PORTNAME}-plugins-bad-free-${DISTVERSION}-4.el9_6 \
+		${PORTNAME}-plugins-good-${DISTVERSION}-4.el9 \
+		${PORTNAME}-plugins-good-gtk-${DISTVERSION}-4.el9 \
+		${PORTNAME}-plugins-ugly-free-${DISTVERSION}-3.el9
 
 SRC_DISTFILES=	gstreamer1-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE
 
@@ -32,5 +31,6 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
+PLIST_SUB+=	LIBVERSION=0.2212.0
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 PORTNAME=	linux-rl9
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	11
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org

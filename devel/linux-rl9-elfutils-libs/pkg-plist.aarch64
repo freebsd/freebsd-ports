@@ -1,5 +1,7 @@
 etc/profile.d/debuginfod.csh
 etc/profile.d/debuginfod.sh
+etc/debuginfod/elfutils.certpath
+etc/debuginfod/elfutils.urls
 usr/bin/debuginfod-find
 usr/lib64/libasm-%%LIBVERSION%%.so
 usr/lib64/libasm.so.1
@@ -7,6 +9,7 @@ usr/lib64/libdebuginfod-%%LIBVERSION%%.so
 usr/lib64/libdebuginfod.so.1
 usr/lib64/libdw-%%LIBVERSION%%.so
 usr/lib64/libdw.so.1
+usr/share/fish/vendor_conf.d/debuginfod.fish
 usr/share/licenses/elfutils-libs/COPYING-GPLV2
 usr/share/licenses/elfutils-libs/COPYING-LGPLV3
 usr/share/man/man1/debuginfod-find.1.gz
