@@ -1,9 +1,9 @@
 PORTNAME=	icewm
-PORTVERSION=	3.7.5
+PORTVERSION=	3.8.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Window manager designed for speed and usability
 WWW=		https://ice-wm.org/
 

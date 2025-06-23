@@ -615,6 +615,7 @@ bin/icewmhint
 %%NLS%%share/locale/ru/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/icewm.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/icewm.mo
