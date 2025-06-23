@@ -1,3 +1,0 @@
-Todoman is a simple, standards-based, cli todo (aka: task) manager.
-Todos are stored into icalendar files, which means you can sync them
-via CalDAV using, for example, vdirsyncer.

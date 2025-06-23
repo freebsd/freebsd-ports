@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-The config file format changed from version 3 to 4.
-
-See https://github.com/pimutils/todoman/blob/v4.0.0/CHANGELOG.rst
-EOM
-}
-]

@@ -4534,3 +4534,4 @@ misc/py-orange3-educational||2025-06-23|Has expired: Depends on expiring misc/or
 misc/py-orange3-associate||2025-06-23|Has expired: Depends on expiring misc/orange3
 misc/py-orange3-network||2025-06-23|Has expired: Depends on expiring misc/orange3
 www/onionshare||2025-06-23|Has expired: Depends on expired devel/py-atomicwrites
+deskutils/py-todoman||2025-06-23|Has expired: Depends on expired devel/py-atomicwrites

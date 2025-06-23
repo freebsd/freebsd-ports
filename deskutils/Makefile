@@ -238,7 +238,6 @@
     SUBDIR += py-send2trash
     SUBDIR += py-taskw
     SUBDIR += py-term-background
-    SUBDIR += py-todoman
     SUBDIR += py-trash-cli
     SUBDIR += py-vdirsyncer
     SUBDIR += py-vobject
