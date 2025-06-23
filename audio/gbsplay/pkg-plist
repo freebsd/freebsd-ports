@@ -6,6 +6,7 @@ bin/gbsplay
 share/man/man1/gbsinfo.1.gz
 share/man/man1/gbsplay.1.gz
 share/man/man5/gbsplayrc.5.gz
+share/man/man1/gbs2gb.1.gz
 share/applications/gbsplay.desktop
 share/applications/mimeinfo.cache
 %%PORTDOCS%%%%DOCSDIR%%/README.md

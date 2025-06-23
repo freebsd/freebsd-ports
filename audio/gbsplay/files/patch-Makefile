@@ -1,6 +1,6 @@
---- Makefile.orig	2025-03-15 19:44:33 UTC
+--- Makefile.orig	2025-06-13 21:28:26 UTC
 +++ Makefile
-@@ -69,7 +69,7 @@ contribdir  := $(docdir)/contrib
+@@ -70,7 +70,7 @@ contribdir  := $(docdir)/contrib
  man3dir     := $(mandir)/man3
  man5dir     := $(mandir)/man5
  contribdir  := $(docdir)/contrib
@@ -9,12 +9,12 @@
  
  DISTDIR := gbsplay-$(VERSION)
  
-@@ -86,7 +86,7 @@ export Q VERBOSE CC HOSTCC BUILDCC GBSCFLAGS GBSLDFLAG
+@@ -87,7 +87,7 @@ export Q VERBOSE CC HOSTCC BUILDCC GBSCFLAGS GBSLDFLAG
  
  export Q VERBOSE CC HOSTCC BUILDCC GBSCFLAGS GBSLDFLAGS
  
 -docs               := README.md HISTORY COPYRIGHT LICENCE
 +docs               := README.md
- docs-dist          := INSTALL.md CODINGSTYLE gbsformat.txt
+ docs-dist          := INSTALL.md CODINGSTYLE gbsformat.txt PACKAGING.md
  contribs           := contrib/gbs2ogg.sh contrib/gbsplay.bashcompletion contrib/gbsplay.zshcompletion
  examples           := examples/nightmode.gbs examples/gbsplayrc_sample
