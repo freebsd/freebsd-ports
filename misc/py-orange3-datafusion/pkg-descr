@@ -1,4 +1,0 @@
-This is a data fusion add-on for Orange3. Add-on wraps scikit-fusion, a Python
-library for data fusion, and implements a set of widgets for loading of the
-data, definition of data fusion schema, collective matrix factorization and
-exploration of latent factors.

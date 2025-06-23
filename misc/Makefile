@@ -486,7 +486,6 @@
     SUBDIR += py-openvdb
     SUBDIR += py-optuna
     SUBDIR += py-orange3-associate
-    SUBDIR += py-orange3-datafusion
     SUBDIR += py-orange3-educational
     SUBDIR += py-orange3-network
     SUBDIR += py-orange3-timeseries
