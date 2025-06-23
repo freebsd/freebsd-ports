@@ -134,6 +134,7 @@ sbin/sudo_sendlog
 %%NLS%%share/locale/uk/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/yue/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/sudo.mo
