@@ -5962,7 +5962,6 @@
     SUBDIR += py-speaklater
     SUBDIR += py-speg
     SUBDIR += py-spyder-kernels
-    SUBDIR += py-spyder-unittest
     SUBDIR += py-sqids
     SUBDIR += py-sqlfluff
     SUBDIR += py-squint

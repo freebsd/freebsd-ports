@@ -1,6 +1,0 @@
-Spyder-unittest is a plugin that integrates popular unit test frameworks with
-Spyder, allowing you to run test suites and view the results in the IDE.
-
-The plugin supports the unittest module in the Python standard library as well
-as the pytest and nose testing frameworks. Support for pytest is most complete
-at the moment.
