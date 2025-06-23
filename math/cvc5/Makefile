@@ -19,10 +19,9 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR}
-LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
-		libcadical.so:math/cadical
+LIB_DEPENDS=	libcadical.so:math/cadical
 
-USES=		cmake:testing ncurses compiler:c++17-lang java:build \
+USES=		cmake:testing ncurses compiler:c++17-lang \
 		localbase:ldflags pkgconfig python:build
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
