@@ -12,6 +12,9 @@ CONFLICTS=	caldera4
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired www/npm-node18
+EXPIRATION_DATE=2025-09-01
+
 BUILD_DEPENDS=	npm-node18>0:www/npm-node18
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp-jinja2>0:www/py-aiohttp-jinja2@${PY_FLAVOR} \

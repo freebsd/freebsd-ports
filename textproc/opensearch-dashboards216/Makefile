@@ -13,6 +13,9 @@ WWW=		https://opensearch.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Depends on expired www/npm-node18
+EXPIRATION_DATE=2025-09-01
+
 CONFLICTS?=	opensearch-dashboards opensearch-dashboards210 opensearch-dashboards213
 
 BUILD_DEPENDS=	npm-node18>0:www/npm-node18

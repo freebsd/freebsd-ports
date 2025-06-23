@@ -10,6 +10,9 @@ WWW=		https://nim-lang.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
+DEPRECATED=	Depends on expired www/npm-node18
+EXPIRATION_DATE=2025-09-01
+
 LIB_DEPENDS=	libpcre.so:devel/pcre
 TEST_DEPENDS=	node18>=0:www/node
 

@@ -12,6 +12,9 @@ WWW=		https://wazuh.com/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on expiring textproc/opensearch-dashboards219
+EXPIRATION_DATE=2025-09-01
+
 RUN_DEPENDS=	${LOCALBASE}/lib/opensearch/bin/opensearch:textproc/opensearch219
 
 NO_BUILD=	yes

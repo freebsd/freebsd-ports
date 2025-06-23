@@ -10,6 +10,9 @@ WWW=		https://github.com/nim-lang/nimble
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+DEPRECATED=	Depends on expiring lang/nim
+EXPIRATION_DATE=2025-09-01
+
 BUILD_DEPENDS=	${LOCALBASE}/nim/bin/nim:lang/nim
 RUN_DEPENDS=	${LOCALBASE}/nim/bin/nim:lang/nim
 

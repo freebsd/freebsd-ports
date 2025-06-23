@@ -14,6 +14,9 @@ WWW=		https://github.com/wazuh/wazuh-dashboard-plugins
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on expiring textproc/opensearch-dashboards219
+EXPIRATION_DATE=2025-09-01
+
 RUN_DEPENDS=	${LOCALBASE}/www/opensearch-dashboards/bin/opensearch-dashboards:textproc/opensearch-dashboards219
 
 NO_BUILD=	yes

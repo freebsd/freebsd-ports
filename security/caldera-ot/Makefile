@@ -10,6 +10,9 @@ WWW=		https://github.com/mitre/caldera-ot
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expiring security/caldera
+EXPIRATION_DATE=2025-09-01
+
 BUILD_DEPENDS=	bacnet-stack>0:devel/bacnet-stack \
 		cmake:devel/cmake-core \
 		nuitka:devel/nuitka \
