@@ -488,7 +488,6 @@
     SUBDIR += py-orange3-associate
     SUBDIR += py-orange3-educational
     SUBDIR += py-orange3-network
-    SUBDIR += py-orange3-timeseries
     SUBDIR += py-oterm
     SUBDIR += py-palettable
     SUBDIR += py-papermill

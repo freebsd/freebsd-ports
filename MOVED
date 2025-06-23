@@ -4529,3 +4529,4 @@ biology/py-orange3-single-cell||2025-06-23|Has expired: Depends on expired math/
 biology/py-orange3-bioinformatics||2025-06-23|Has expired: Depends on expiring misc/orange3
 textproc/py-orange3-text||2025-06-23|Has expired: Depends on expiring misc/orange3
 misc/py-orange3-datafusion||2025-06-23|Has expired: Depends on expiring misc/orange3
+misc/py-orange3-timeseries||2025-06-23|Has expired: Depends on expiring misc/orange3
