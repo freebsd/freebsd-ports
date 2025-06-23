@@ -1,7 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Khal needs LANG to be set to a UTF-8 locale (e.g. en_US.UTF-8) to run.
-EOM
-}
-]
