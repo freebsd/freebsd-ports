@@ -1,8 +1,0 @@
-OnionShare is an open source tool that lets you securely and anonymously
-share a file of any size over the Tor network. It works by starting a web
-server that is accessible as a Tor onion (hidden) service, and generating
-an unguessable URL to access and download the files.
-
-It doesn't require setting up a server on the Internet somewhere,
-on a Virtual Private Server (VPS), or using a third party file-sharing
-service. It simply shares files you want over the Tor network.
