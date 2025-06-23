@@ -16,6 +16,9 @@ USES=	gmake
 ALL_TARGET=	all
 PORTDOCS=	*
 
+DEPRECATED=	ELF binary for BIOS boot has been broken for a long while
+EXPIRATION_DATE=2025-07-31
+
 USE_GCC=	yes:build
 
 # Please provide absolute path below (cannot be root)
