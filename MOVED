@@ -4523,3 +4523,4 @@ devel/artifactory||2025-06-17|Has expired: Outdated with known vulnerabilities a
 devel/m17n-inscript2||2025-06-23|Now included in devel/m17n-db
 devel/py-pytest4-cov||2025-06-23|Has expired: Depends on expiring devel/py-pytest4
 devel/py-spyder-unittest||2025-06-23|Has expired: Depends on expiring devel/spyder
+comms/py-pynitrokey||2025-06-23|Has expired: Depends on expiring comms/py-spsdk
