@@ -1,7 +1,0 @@
-Orange3 Text extends Orange3, a data mining software package, with common
-functionality for text mining. It provides access to publicly available data,
-like NY Times, Twitter, Wikipedia and PubMed. Furthermore, it provides tools
-for preprocessing, constructing vector spaces (like bag-of-words, topic
-modeling, and similarity hashing) and visualizations like word cloud end geo
-map. All features can be combined with powerful data mining techniques from
-the Orange data mining framework.
