@@ -1,6 +1,6 @@
-TIMESTAMP = 1741207484
-SHA256 (mitre-caldera-ot-5.2.0-4e8079f9d1764becc9f80edd900fb761d446168f_GH0.tar.gz) = 35e82a1cb08c1f88724f9c80836ecf5498c065ecce35533f0e85f9ee56d6ddcb
-SIZE (mitre-caldera-ot-5.2.0-4e8079f9d1764becc9f80edd900fb761d446168f_GH0.tar.gz) = 539795
+TIMESTAMP = 1750719398
+SHA256 (mitre-caldera-ot-5.3.0-4e8079f9d1764becc9f80edd900fb761d446168f_GH0.tar.gz) = 35e82a1cb08c1f88724f9c80836ecf5498c065ecce35533f0e85f9ee56d6ddcb
+SIZE (mitre-caldera-ot-5.3.0-4e8079f9d1764becc9f80edd900fb761d446168f_GH0.tar.gz) = 539795
 SHA256 (mitre-bacnet-f01044e_GH0.tar.gz) = 72cab1031cfe8788dc735945b18f295b27136e27622eefa0f7ae28e27643eaf9
 SIZE (mitre-bacnet-f01044e_GH0.tar.gz) = 3674254
 SHA256 (mitre-dnp3-50c5144_GH0.tar.gz) = 7d087ecd6ad1d84b35ad0cddf3ce7a92a5b6be27693f9e198571dd547494dd0e

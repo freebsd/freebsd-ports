@@ -1,6 +1,5 @@
 PORTNAME=	caldera-ot
-DISTVERSION=	5.2.0
-PORTREVISION=	3
+DISTVERSION=	5.3.0
 CATEGORIES=	security python
 
 MAINTAINER=	acm@FreeBSD.org
@@ -10,14 +9,12 @@ WWW=		https://github.com/mitre/caldera-ot
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expiring security/caldera
-EXPIRATION_DATE=2025-09-01
-
 BUILD_DEPENDS=	bacnet-stack>0:devel/bacnet-stack \
 		cmake:devel/cmake-core \
 		nuitka:devel/nuitka \
 		argtable3>0:devel/argtable3 \
 		libiec61850>0:devel/libiec61850 \
+		patchelf>0:sysutils/patchelf \
 		${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymodbus>0:comms/py-pymodbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial>0:comms/py-pyserial@${PY_FLAVOR} \
@@ -28,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial>0:comms/py-pyserial@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pnio-dcp>0:devel/py-pnio-dcp@${PY_FLAVOR} \
-		caldera>=5.2.0:security/caldera
+		caldera>=5.3.0:security/caldera
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mitre
