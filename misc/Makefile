@@ -485,7 +485,6 @@
     SUBDIR += py-openpaperwork-gtk
     SUBDIR += py-openvdb
     SUBDIR += py-optuna
-    SUBDIR += py-orange3-network
     SUBDIR += py-oterm
     SUBDIR += py-palettable
     SUBDIR += py-papermill
