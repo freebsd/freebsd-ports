@@ -56,7 +56,6 @@
     SUBDIR += jd-gui
     SUBDIR += jdk11-doc
     SUBDIR += jdk8-doc
-    SUBDIR += jdom
     SUBDIR += jflex
     SUBDIR += jfreechart
     SUBDIR += jgraph

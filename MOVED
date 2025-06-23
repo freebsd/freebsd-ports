@@ -4550,3 +4550,4 @@ devel/py-orange-canvas-core||2025-06-23|Has expired: Depends on expired misc/py-
 misc/py-dictdiffer||2025-06-23|Has expired: Depends on expired devel/py-pytest-runner
 net-im/biboumi||2025-06-23|Has expired: Depends on expired security/botan2
 sysutils/daggy||2025-06-23|Has expired: Depends on expired security/botan2
+java/jdom||2025-06-23|Has expired: Depends on exired java/jaxen
