@@ -56,7 +56,7 @@ include/vips/video.h
 include/vips/vips.h
 include/vips/vips7compat.h
 include/vips/vips8
-lib/girepository-1.0/Vips-8.0.typelib
+%%PORTDOCS%%lib/girepository-1.0/Vips-8.0.typelib
 lib/libvips-cpp.a
 lib/libvips-cpp.so
 lib/libvips-cpp.so.42
@@ -1469,7 +1469,7 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/vfunc.TargetCustom.seek.html
 %%PORTDOCS%%%%DOCSDIR%%/vfunc.TargetCustom.write.html
 %%PORTDOCS%%%%DOCSDIR%%/vips.toml
-share/gir-1.0/Vips-8.0.gir
+%%PORTDOCS%%share/gir-1.0/Vips-8.0.gir
 share/locale/de/LC_MESSAGES/vips%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/vips%%VERSION%%.mo
 share/man/man1/vips.1.gz
