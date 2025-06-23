@@ -1,5 +1,5 @@
 PORTNAME=	bacnet-stack
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-apps
 
@@ -10,12 +10,13 @@ WWW=		https://github.com/bacnet-stack/bacnet-stack
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license/readme.txt
 
+LIB_DEPENDS=	libdispatch.so:devel/libdispatch
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake compiler:c++11-lang shebangfix
+USES=		gmake compiler:c++11-lang localbase:ldflags shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	bacnet-stack
-GH_TAGNAME=	8a0a01c
+GH_TAGNAME=	c111154
 
 LDFLAGS=	-lm
 
