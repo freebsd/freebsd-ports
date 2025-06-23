@@ -1,6 +1,5 @@
 PORTNAME=	lxqt-panel
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	LXQT
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libdbusmenu-lxqt.so:devel/libdbusmenu-lxqt \
 BUILD_DEPENDS=	lxqt-menu-data>=2.0.0:x11/lxqt-menu-data
 RUN_DEPENDS= 	lxqt-menu-data>=2.0.0:x11/lxqt-menu-data
 
-USES=		cmake compiler:c++20-lang gettext-runtime kde:6 qt:6 gnome \
+USES=		cmake compiler:c++17-lang gettext-runtime kde:6 qt:6 gnome \
 		lxqt:2 localbase:ldflags perl5 pkgconfig tar:xz xorg
 USE_PERL5=	build
 USE_QT=		base:run tools:build svg

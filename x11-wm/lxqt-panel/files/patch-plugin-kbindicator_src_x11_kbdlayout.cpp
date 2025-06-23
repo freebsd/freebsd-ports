@@ -1,6 +1,6 @@
---- plugin-kbindicator/src/x11/kbdlayout.cpp.orig	2020-04-24 02:39:01 UTC
+--- plugin-kbindicator/src/x11/kbdlayout.cpp.orig	2025-06-22 20:12:06 UTC
 +++ plugin-kbindicator/src/x11/kbdlayout.cpp
-@@ -245,10 +245,10 @@ class X11Kbd: public QAbstractNativeEventFilter (priva
+@@ -244,10 +244,10 @@ class X11Kbd: public QAbstractNativeEventFilter (priva
          static LangInfo def{QStringLiteral("Unknown"), QStringLiteral("??"), QStringLiteral("None")};
          static QHash<QString, LangInfo> names;
          if (names.empty()){

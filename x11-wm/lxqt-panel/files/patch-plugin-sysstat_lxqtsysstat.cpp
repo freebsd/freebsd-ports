@@ -1,6 +1,6 @@
---- plugin-sysstat/lxqtsysstat.cpp.orig	2021-05-02 21:18:35 UTC
+--- plugin-sysstat/lxqtsysstat.cpp.orig	2025-06-22 20:12:06 UTC
 +++ plugin-sysstat/lxqtsysstat.cpp
-@@ -386,10 +386,11 @@ void LXQtSysStatContent::clearLine()
+@@ -395,10 +395,11 @@ void LXQtSysStatContent::cpuLoadFrequencyUpdate(float 
  
  void LXQtSysStatContent::cpuLoadFrequencyUpdate(float user, float nice, float system, float other, float frequencyRate, uint)
  {
