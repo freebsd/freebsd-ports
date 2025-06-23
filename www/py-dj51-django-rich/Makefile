@@ -1,9 +1,9 @@
 PORTNAME=	django-rich
-PORTVERSION=	1.14.0
+DISTVERSION=	2.0.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj51-
-DISTNAME=	django_rich-${PORTVERSION}
+DISTNAME=	django_rich-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Extensions for using Rich with Django
