@@ -9,6 +9,10 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME application for managing encryption keys (PGP, SSH)
 WWW=		https://gitlab.gnome.org/GNOME/libcryptui
 
+DEPRECATED=	abandoned project
+EXPIRATION_DATE=2025-06-30
+BROKEN=		does not build with gpgme 2.x
+
 BUILD_DEPENDS=	seahorse>=3.0.0:security/seahorse \
 		gpg:security/gnupg
 LIB_DEPENDS=	libgpgme.so:security/gpgme \
