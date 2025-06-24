@@ -1,5 +1,6 @@
 PORTNAME=	caldera-ot
 DISTVERSION=	5.3.0
+PORTREVISION=	1
 CATEGORIES=	security python
 
 MAINTAINER=	acm@FreeBSD.org
@@ -8,6 +9,8 @@ WWW=		https://github.com/mitre/caldera-ot
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 BUILD_DEPENDS=	bacnet-stack>0:devel/bacnet-stack \
 		cmake:devel/cmake-core \
