@@ -1,17 +1,15 @@
---- porttime/ptlinux.c.orig	2024-04-01 19:43:35.367808000 +0200
-+++ porttime/ptlinux.c	2024-04-01 19:43:57.157503000 +0200
-@@ -29,9 +29,8 @@
+--- porttime/ptlinux.c.orig	2025-06-24 04:57:11 UTC
++++ porttime/ptlinux.c
+@@ -29,7 +29,7 @@ CHANGE LOG
  #include <unistd.h>
  #include <sys/types.h>
  #include "porttime.h"
 -#include "time.h"
 +#include <time.h>
  #include "sys/resource.h"
--#include "sys/timeb.h"
  #include "pthread.h"
  
- #define TRUE 1
-@@ -80,7 +79,7 @@
+@@ -83,7 +83,7 @@ PtError Pt_Start(int resolution, PtCallback *callback,
  {
      if (time_started_flag) return ptNoError;
      /* need this set before process runs: */
@@ -19,8 +17,8 @@
 +    clock_gettime(CLOCK_MONOTONIC_FAST, &time_offset);
      if (callback) {
          int res;
-         pt_callback_parameters *parms = (pt_callback_parameters *) 
-@@ -123,7 +122,7 @@
+         pt_callback_parameters *parms = (pt_callback_parameters *)
+@@ -126,7 +126,7 @@ PtTimestamp Pt_Time(void)
  {
      long seconds, ms;
      struct timespec now;
