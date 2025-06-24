@@ -8,7 +8,7 @@
 # epmd_enable="YES"
 #
 # Configure optional flags with:
-# epmd_flags="-address 127.0.0.1"
+# epmd_opts="-address 127.0.0.1"
 
 . /etc/rc.subr
 
@@ -18,10 +18,24 @@ rcvar=epmd_enable
 load_rc_config ${name}
 
 : ${epmd_enable="NO"}
-: ${epmd_flags:-""}
+: ${epmd_opts:-""}
+: ${epmd_user="beam"}
 
-procname=%%PREFIX%%/bin/epmd
-start_cmd="%%PREFIX%%/bin/epmd -daemon ${epmd_flags}"
-stop_cmd="%%PREFIX%%/bin/epmd -kill >/dev/null"
+procname="daemon"
+pidfile="/var/run/epmd/epmd.pid"
+command="/usr/sbin/daemon"
+command_args="-f -r -P ${pidfile} %%PREFIX%%/bin/epmd ${epmd_opts}"
+command_user="${epmd_user}"
+
+start_precmd="epmd_precmd"
+
+epmd_precmd()
+{
+	if [ ! -d "/var/run/epmd" ]; then
+		install -d -o ${epmd_user} -g ${epmd_user} /var/run/epmd
+	fi
+	# Ensure beam user can write pidfile
+	install -m 644 -g ${epmd_user} -o ${epmd_user} /dev/null ${pidfile}
+}
 
 run_rc_command "$1"
