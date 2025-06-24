@@ -1,17 +1,22 @@
 PORTNAME=	libcabinet
-PORTVERSION=	0.30
-PORTREVISION=	2
+DISTVERSION=	0.31
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
+MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDForge.com
 COMMENT=	Portable library and utility to use Microsoft cabinet files (.cab)
+WWW=		https://codeberg.org/BSDforge/libcabinet
+
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		uidfix
 USE_LDCONFIG=	yes
 SRCFILE=	${WRKSRC}/listcab.cpp
 PROGFILE=	${SRCFILE:S/.cpp$//}
-MAKE_ENV=	WITHOUT_PROFILE=yes SRCCONF=/dev/null
+MAKE_ENV=	SRCCONF=/dev/null \
+		WITHOUT_PROFILE=yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-build:
 	${CXX} ${CXXFLAGS} -o ${PROGFILE} ${SRCFILE} -L${WRKSRC} -lcabinet -lz
