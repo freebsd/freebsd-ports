@@ -1,6 +1,7 @@
 PORTNAME=	rigsofrods-pagedgeometry
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0.20240708
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	monwarez@mailoo.org
