@@ -1,5 +1,6 @@
 PORTNAME=	mame
 DISTVERSION=	0.277
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
