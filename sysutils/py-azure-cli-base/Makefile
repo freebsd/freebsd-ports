@@ -12,7 +12,7 @@ LICENSE=	MIT
 NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	flavors py3kplist
+USE_PYTHON=	flavors
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/azure/cli/command_modules
