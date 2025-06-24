@@ -1,5 +1,5 @@
 PORTNAME=	rust
-PORTVERSION?=	1.87.0
+PORTVERSION?=	1.88.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -71,8 +71,8 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
 # See WRKSRC/src/stage0 for the date and version values
-BOOTSTRAPS_DATE?=		2025-04-03
-RUST_BOOTSTRAP_VERSION?=	1.86.0
+BOOTSTRAPS_DATE?=		2025-05-15
+RUST_BOOTSTRAP_VERSION?=	1.87.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
