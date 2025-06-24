@@ -1,6 +1,5 @@
 PORTNAME=	uritemplate
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	4.2.0
 CATEGORIES=	net
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +10,11 @@ WWW=		https://github.com/python-hyper/uritemplate
 
 LICENSE=	APACHE20
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0.45.1:devel/py-wheel@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
