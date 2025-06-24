@@ -11,7 +11,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gnome python tar:xz xorg-cat:proto
 USE_GNOME=	libxml2:build
-USE_PYTHON=	py3kplist
 NO_ARCH=	yes
 MAKE_ARGS=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
