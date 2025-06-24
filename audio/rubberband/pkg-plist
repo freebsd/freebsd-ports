@@ -1,13 +1,14 @@
 bin/rubberband
 bin/rubberband-r3
+include/rubberband/RubberBandLiveShifter.h
 include/rubberband/RubberBandStretcher.h
 include/rubberband/rubberband-c.h
 lib/ladspa/ladspa-rubberband.cat
 lib/ladspa/ladspa-rubberband.so
 lib/librubberband.a
 lib/librubberband.so
-lib/librubberband.so.2
-lib/librubberband.so.2.3.0
+lib/librubberband.so.3
+lib/librubberband.so.3.0.0
 lib/lv2/rubberband.lv2/lv2-rubberband.so
 lib/lv2/rubberband.lv2/lv2-rubberband.ttl
 lib/lv2/rubberband.lv2/manifest.ttl
