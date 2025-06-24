@@ -1,5 +1,5 @@
-TIMESTAMP = 1750234297
-SHA256 (go/net-mgmt_telegraf/telegraf-v1.35.0/v1.35.0.mod) = d811494f299ad89d9bd330fcdd188b4d2f3c838fdc9a588358bdc3f8705a5b8a
-SIZE (go/net-mgmt_telegraf/telegraf-v1.35.0/v1.35.0.mod) = 28846
-SHA256 (go/net-mgmt_telegraf/telegraf-v1.35.0/v1.35.0.zip) = 54b5e5eb09a49ce3298955d12be07149d4480b517bb99e824ea6828caa0fc571
-SIZE (go/net-mgmt_telegraf/telegraf-v1.35.0/v1.35.0.zip) = 7360563
+TIMESTAMP = 1750752171
+SHA256 (go/net-mgmt_telegraf/telegraf-v1.35.1/v1.35.1.mod) = 2f8a4ccb8070783d1bc82e342d93c13e3b9096bd0accde059782fb75d75b56d0
+SIZE (go/net-mgmt_telegraf/telegraf-v1.35.1/v1.35.1.mod) = 28847
+SHA256 (go/net-mgmt_telegraf/telegraf-v1.35.1/v1.35.1.zip) = 504bffd829d03a5f9e25a794d68902ad6fd40976fd0a7463fb936a36e9880004
+SIZE (go/net-mgmt_telegraf/telegraf-v1.35.1/v1.35.1.zip) = 7361138
