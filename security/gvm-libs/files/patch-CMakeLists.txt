@@ -1,33 +1,33 @@
---- CMakeLists.txt.orig	2022-07-18 08:40:56 UTC
+--- CMakeLists.txt.orig	2025-05-26 10:04:15 UTC
 +++ CMakeLists.txt
-@@ -136,7 +136,7 @@ if (SYSCONF_INSTALL_DIR)
- endif (SYSCONF_INSTALL_DIR)
+@@ -116,7 +116,7 @@ if(NOT SYSCONFDIR)
+ endif(SYSCONF_INSTALL_DIR)
  
- if (NOT SYSCONFDIR)
--  set (SYSCONFDIR "/etc")
-+  set (SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/etc")
- endif (NOT SYSCONFDIR)
+ if(NOT SYSCONFDIR)
+-  set(SYSCONFDIR "/etc")
++  set(SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/etc")
+ endif(NOT SYSCONFDIR)
  
- if (NOT EXEC_PREFIX)
-@@ -176,7 +176,7 @@ if (NOT DATADIR)
- endif (NOT DATADIR)
+ if(NOT EXEC_PREFIX)
+@@ -156,7 +156,7 @@ if(NOT GVM_RUN_DIR)
+ endif(NOT DATADIR)
  
- if (NOT GVM_RUN_DIR)
--  set (GVM_RUN_DIR  "/run/gvm")
-+  set (GVM_RUN_DIR  "${LOCALSTATEDIR}/run/gvm")
- endif (NOT GVM_RUN_DIR)
+ if(NOT GVM_RUN_DIR)
+-  set(GVM_RUN_DIR "/run/gvm")
++  set(GVM_RUN_DIR "${LOCALSTATEDIR}/run/gvm")
+ endif(NOT GVM_RUN_DIR)
  
- if (NOT GVM_SYSCONF_DIR)
-@@ -185,7 +185,7 @@ endif (NOT GVM_SYSCONF_DIR)
+ if(NOT GVM_SYSCONF_DIR)
+@@ -164,7 +164,7 @@ if(NOT REDIS_SOCKET_PATH)
+ endif(NOT GVM_SYSCONF_DIR)
  
+ if(NOT REDIS_SOCKET_PATH)
+-  set(REDIS_SOCKET_PATH "/run/redis/redis.sock")
++  set(REDIS_SOCKET_PATH "${LOCALSTATEDIR}/run/redis/redis.sock")
+ endif()
  
- if (NOT REDIS_SOCKET_PATH)
--  set (REDIS_SOCKET_PATH "/run/redis/redis.sock")
-+  set (REDIS_SOCKET_PATH "${LOCALSTATEDIR}/run/redis/redis.sock")
- endif ()
- 
- add_definitions (-DREDIS_SOCKET_PATH="${REDIS_SOCKET_PATH}")
-@@ -208,7 +208,6 @@ set (
+ add_definitions(-DREDIS_SOCKET_PATH="${REDIS_SOCKET_PATH}")
+@@ -196,7 +196,6 @@ set(
      -std=c11 \
      -Wall \
      -Wextra \

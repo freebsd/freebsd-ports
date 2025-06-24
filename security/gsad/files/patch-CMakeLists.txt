@@ -1,49 +1,53 @@
---- CMakeLists.txt	2022-07-21 02:09:24.000000000 -0500
-+++ CMakeLists.txt	2022-07-31 22:27:14.895003000 -0500
-@@ -51,7 +51,7 @@
- endif (CLANG_FORMAT)
+--- CMakeLists.txt.orig	2025-05-08 09:22:24 UTC
++++ CMakeLists.txt
+@@ -71,7 +71,7 @@ if(NOT SYSCONFDIR)
+ endif(CLANG_FORMAT)
  
- if (NOT SYSCONFDIR)
--  set (SYSCONFDIR "/etc")
-+  set (SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/etc")
- endif (NOT SYSCONFDIR)
+ if(NOT SYSCONFDIR)
+-  set(SYSCONFDIR "/etc")
++  set(SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/etc")
+ endif(NOT SYSCONFDIR)
  
- if (NOT EXEC_PREFIX)
-@@ -86,7 +86,7 @@
- set (GSAD_CONFIG_DIR "${SYSCONFDIR}/gvm/")
+ if(NOT EXEC_PREFIX)
+@@ -106,7 +106,7 @@ if(NOT GSAD_RUN_DIR)
+ set(GSAD_CONFIG_DIR "${SYSCONFDIR}/gvm/")
  
- if (NOT GSAD_RUN_DIR)
--  set (GSAD_RUN_DIR  "/run/gsad")
-+  set (GSAD_RUN_DIR  "${LOCALSTATEDIR}/run/gsad")
- endif (NOT GSAD_RUN_DIR)
+ if(NOT GSAD_RUN_DIR)
+-  set(GSAD_RUN_DIR "/run/gsad")
++  set(GSAD_RUN_DIR "${LOCALSTATEDIR}/run/gsad")
+ endif(NOT GSAD_RUN_DIR)
  
- if (NOT GSAD_PID_PATH)
-@@ -94,7 +94,7 @@
- endif (NOT GSAD_PID_PATH)
+ if(NOT GSAD_PID_PATH)
+@@ -114,7 +114,7 @@ if(NOT GVMD_RUN_DIR)
+ endif(NOT GSAD_PID_PATH)
  
- if (NOT GVMD_RUN_DIR)
--  set (GVMD_RUN_DIR  "/run/gvmd")
-+  set (GVMD_RUN_DIR  "${LOCALSTATEDIR}/run/gvmd")
- endif (NOT GVMD_RUN_DIR)
+ if(NOT GVMD_RUN_DIR)
+-  set(GVMD_RUN_DIR "/run/gvmd")
++  set(GVMD_RUN_DIR "${LOCALSTATEDIR}/run/gvmd")
+ endif(NOT GVMD_RUN_DIR)
  
+ if(NOT GVM_STATE_DIR)
+@@ -149,17 +149,17 @@ endif(NOT GVM_CA_CERTIFICATE)
+   set(GVM_CA_CERTIFICATE "${GVM_CA_CERTIFICATE}")
+ endif(NOT GVM_CA_CERTIFICATE)
  
-@@ -130,15 +130,15 @@
- endif (NOT GVM_CA_CERTIFICATE)
- 
- 
--configure_file (src/gsad_log_conf.cmake_in src/gsad_log.conf)
-+# configure_file (src/gsad_log_conf.cmake_in src/gsad_log.conf)
+-configure_file(src/gsad_log_conf.cmake_in src/gsad_log.conf)
++# configure_file(src/gsad_log_conf.cmake_in src/gsad_log.conf)
  
  ## Install
  
--install (FILES ${CMAKE_CURRENT_BINARY_DIR}/src/gsad_log.conf
--         DESTINATION ${GSAD_CONFIG_DIR})
-+# install (FILES ${CMAKE_CURRENT_BINARY_DIR}/src/gsad_log.conf
-+#         DESTINATION ${GSAD_CONFIG_DIR})
+-install(
+-  FILES ${CMAKE_CURRENT_BINARY_DIR}/src/gsad_log.conf
+-  DESTINATION ${GSAD_CONFIG_DIR}
+-)
++#install(
++#  FILES ${CMAKE_CURRENT_BINARY_DIR}/src/gsad_log.conf
++#  DESTINATION ${GSAD_CONFIG_DIR}
++#)
  
- add_subdirectory (src)
--add_subdirectory (config)
-+#add_subdirectory (config)
+ add_subdirectory(src)
+-add_subdirectory(config)
++#add_subdirectory(config)
  
- add_subdirectory (doc)
+ add_subdirectory(doc)
  

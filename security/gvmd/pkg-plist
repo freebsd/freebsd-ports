@@ -2,8 +2,8 @@ bin/gvm-manage-certs
 @sample etc/gvm/gvmd_log.conf.sample
 @sample etc/gvm/pwpolicy.conf.sample
 lib/libgvm-pg-server.so
-lib/libgvm-pg-server.so.25
-lib/libgvm-pg-server.so.25.2.1
+lib/libgvm-pg-server.so.26
+lib/libgvm-pg-server.so.26.0.0
 sbin/gvmd
 share/doc/gvm/example-gvm-manage-certs.conf
 share/doc/gvm/html/gmp.html

@@ -72,11 +72,11 @@ bin/ospd-openvas
 %%PYTHON_SITELIBDIR%%/ospd/vts.py
 %%PYTHON_SITELIBDIR%%/ospd/xml.py
 %%PYTHON_SITELIBDIR%%/ospd/xmlvt.py
-%%PYTHON_SITELIBDIR%%/ospd_openvas-22.8.2.dist-info/COPYING
-%%PYTHON_SITELIBDIR%%/ospd_openvas-22.8.2.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/ospd_openvas-22.8.2.dist-info/RECORD
-%%PYTHON_SITELIBDIR%%/ospd_openvas-22.8.2.dist-info/WHEEL
-%%PYTHON_SITELIBDIR%%/ospd_openvas-22.8.2.dist-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/ospd_openvas-22.9.0.dist-info/COPYING
+%%PYTHON_SITELIBDIR%%/ospd_openvas-22.9.0.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/ospd_openvas-22.9.0.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/ospd_openvas-22.9.0.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/ospd_openvas-22.9.0.dist-info/entry_points.txt
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__init__.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/__init__%%PYTHON_TAG%%.pyc

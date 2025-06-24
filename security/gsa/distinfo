@@ -1,7 +1,7 @@
-TIMESTAMP = 1744689575
-SHA256 (gsa-cache-aarch64-24.6.1.tar.gz) = a4f5e06fb5af4fb1566da5e5434feaef2f575ea2209fc992de5451cdcdb897dd
-SIZE (gsa-cache-aarch64-24.6.1.tar.gz) = 52814465
-SHA256 (gsa-cache-amd64-24.6.1.tar.gz) = 14bf51f75c1790165dbdada7bdcac72bd687522655a70d29f752d98384bc54ec
-SIZE (gsa-cache-amd64-24.6.1.tar.gz) = 53323141
-SHA256 (greenbone-gsa-v24.6.1_GH0.tar.gz) = ed3007d7503b1b582d6f4b8d88215cc05c0e91e9e5faaf49d02576c482b37ce7
-SIZE (greenbone-gsa-v24.6.1_GH0.tar.gz) = 3718084
+TIMESTAMP = 1750730229
+SHA256 (gsa-cache-aarch64-25.0.0.tar.gz) = 73d2a799e3e91d933a6070a68a700160fdd09d0f7cf1dbb7e5a612dbfa72f564
+SIZE (gsa-cache-aarch64-25.0.0.tar.gz) = 49641157
+SHA256 (gsa-cache-amd64-25.0.0.tar.gz) = 030b10dec16f5cddf4c91e3a38a4af2bcca411aad54e7be6ff5e29805e21eb12
+SIZE (gsa-cache-amd64-25.0.0.tar.gz) = 50160790
+SHA256 (greenbone-gsa-v25.0.0_GH0.tar.gz) = f177c1c0d5e66ea9bb93a6c898c5175b0f85a91baae416a95d8e6f3a102ba46c
+SIZE (greenbone-gsa-v25.0.0_GH0.tar.gz) = 3729977

@@ -1,28 +1,27 @@
---- src/CMakeLists.txt	2025-04-08 00:29:30.000000000 -0700
-+++ src/CMakeLists.txt	2025-04-14 18:23:00.165064000 -0700
-@@ -39,7 +39,9 @@
- endif (OPENVASD)
- pkg_check_modules (GNUTLS REQUIRED gnutls>=3.2.15)
- pkg_check_modules (GLIB REQUIRED glib-2.0>=2.42)
+--- src/CMakeLists.txt.orig	2025-05-13 13:02:11 UTC
++++ src/CMakeLists.txt
+@@ -39,7 +39,9 @@ pkg_check_modules(GLIB REQUIRED glib-2.0>=2.42)
+ endif(OPENVASD)
+ pkg_check_modules(GNUTLS REQUIRED gnutls>=3.2.15)
+ pkg_check_modules(GLIB REQUIRED glib-2.0>=2.42)
 +if (NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
- pkg_check_modules (LIBBSD REQUIRED libbsd)
+ pkg_check_modules(LIBBSD REQUIRED libbsd)
 +endif()
- pkg_check_modules (LIBICAL REQUIRED libical>=1.00)
- pkg_check_modules (GPGME REQUIRED gpgme)
+ pkg_check_modules(LIBICAL REQUIRED libical>=1.00)
+ pkg_check_modules(GPGME REQUIRED gpgme)
  
-@@ -338,7 +340,7 @@
-                        ${GNUTLS_LDFLAGS} ${GPGME_LDFLAGS} ${CMAKE_THREAD_LIBS_INIT} ${LINKER_HARDENING_FLAGS} ${LINKER_DEBUG_FLAGS}
-                        ${PostgreSQL_LIBRARIES} ${LIBBSD_LDFLAGS} ${CJSON_LDFLAGS} ${GLIB_LDFLAGS} ${GTHREAD_LDFLAGS}
-                        ${LIBGVM_BASE_LDFLAGS} ${LIBGVM_UTIL_LDFLAGS} ${LIBGVM_OSP_LDFLAGS} ${LIBGVM_OPENVASD_LDFLAGS}
--                       ${LIBGVM_GMP_LDFLAGS} ${LIBGVM_HTTP_LDFLAGS} ${LIBICAL_LDFLAGS} ${LINKER_HARDENING_FLAGS} ${OPT_THEIA_TGT})
-+                       ${LIBGVM_GMP_LDFLAGS} ${LIBGVM_HTTP_LDFLAGS} ${LIBICAL_LDFLAGS} ${LINKER_HARDENING_FLAGS} ${OPT_THEIA_TGT} -lexecinfo)
- target_link_libraries (manage-test cgreen m
-                        ${GNUTLS_LDFLAGS} ${GPGME_LDFLAGS} ${CMAKE_THREAD_LIBS_INIT} ${LINKER_HARDENING_FLAGS} ${LINKER_DEBUG_FLAGS}
-                        ${PostgreSQL_LIBRARIES} ${LIBBSD_LDFLAGS} ${CJSON_LDFLAGS} ${GLIB_LDFLAGS} ${GTHREAD_LDFLAGS}
-@@ -555,5 +557,7 @@
-                    COMMAND ctags ${C_FILES})
- add_custom_target (tags COMMENT "Building tags files...")
- add_dependencies (tags etags ctags)
+@@ -358,6 +360,7 @@ target_link_libraries(
+   ${LIBICAL_LDFLAGS}
+   ${LINKER_HARDENING_FLAGS}
+   ${OPT_THEIA_TGT}
++  -lexecinfo
+ )
+ target_link_libraries(
+   manage-test
+@@ -692,5 +695,7 @@ add_dependencies(tags etags ctags)
+ add_custom_target(ctags COMMENT "Building tags..." COMMAND ctags ${C_FILES})
+ add_custom_target(tags COMMENT "Building tags files...")
+ add_dependencies(tags etags ctags)
 +
 +file(RENAME "pwpolicy.conf" "pwpolicy.conf.sample")
  
