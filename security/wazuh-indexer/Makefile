@@ -1,5 +1,6 @@
 PORTNAME=	wazuh
 PORTVERSION=	4.12.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/${PORTNAME}/
 PKGNAMESUFFIX=	-indexer
@@ -11,9 +12,6 @@ COMMENT=	A highly scalable, full-text search and analytics engine
 WWW=		https://wazuh.com/
 
 LICENSE=	GPLv2
-
-DEPRECATED=	Depends on expiring textproc/opensearch-dashboards219
-EXPIRATION_DATE=2025-09-01
 
 RUN_DEPENDS=	${LOCALBASE}/lib/opensearch/bin/opensearch:textproc/opensearch219
 

@@ -1,6 +1,7 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.12.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/${PORTNAME}/
 PKGNAMESUFFIX=  -dashboard
@@ -13,9 +14,6 @@ COMMENT=	Web user interface for data visualization and analysis
 WWW=		https://github.com/wazuh/wazuh-dashboard-plugins
 
 LICENSE=	GPLv2
-
-DEPRECATED=	Depends on expiring textproc/opensearch-dashboards219
-EXPIRATION_DATE=2025-09-01
 
 RUN_DEPENDS=	${LOCALBASE}/www/opensearch-dashboards/bin/opensearch-dashboards:textproc/opensearch-dashboards219
 
