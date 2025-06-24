@@ -1,5 +1,5 @@
 PORTNAME=	sway
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.2
 CATEGORIES=	x11-wm wayland
 PKGNAMESUFFIX=	${GH_PROJECT:S/${PORTNAME}//}
 
@@ -18,8 +18,8 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libpcre2-8.so:devel/pcre2 \
 		libdrm.so:graphics/libdrm \
 		libwayland-egl.so:graphics/wayland \
-		libscenefx-0.3.so:x11-toolkits/scenefx03 \
-		libwlroots-0.18.so:x11-toolkits/wlroots018 \
+		libscenefx-0.4.so:x11-toolkits/scenefx04 \
+		libwlroots-0.19.so:x11-toolkits/wlroots019 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
@@ -61,5 +61,10 @@ post-patch:
 	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
+.if exists(${.CURDIR}/files/patch-common_stringop.c)
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=275328
+	@${REINPLACE_CMD} -e 's/_POSIX_C_SOURCE=200809L/_XOPEN_SOURCE=700/' \
+		${WRKSRC}/meson.build
+.endif
 
 .include <bsd.port.mk>
