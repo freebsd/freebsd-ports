@@ -1,0 +1,9 @@
+A set of tools for working with DNSSEC, using BearSSL for cryptography.
+
+- dnskey: generate DNSKEY records from private keys
+- ds: generate DS records for parent zones
+- nsec: generate NSEC records for zones
+- rrsig: sign records in zones, generating RRSIG records
+- tlsa: generate DANE TLSA records for certificates
+
+See also https://mforney.org/blog/2020-05-21-securing-your-zone-with-dnssec-and-dane.html

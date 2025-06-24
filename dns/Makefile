@@ -42,6 +42,7 @@
     SUBDIR += dnsproxy
     SUBDIR += dnsrecon
     SUBDIR += dnsreflector
+    SUBDIR += dnssec-rr
     SUBDIR += dnstable
     SUBDIR += dnstable-convert
     SUBDIR += dnstop
