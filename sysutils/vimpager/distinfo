@@ -1,3 +1,5 @@
-TIMESTAMP = 1748713928
-SHA256 (rkitover-vimpager-2.06.20250412-842f746_GH0.tar.gz) = 935c6e80e3c66fba31ba6f1d7fb2f3f471599f21848c1b6b5063ccd7dd5374c5
-SIZE (rkitover-vimpager-2.06.20250412-842f746_GH0.tar.gz) = 164299
+TIMESTAMP = 1750325570
+SHA256 (vimpager/man.tar.gz) = 9aad1e1dd3546ce64626627f4684fdef04f0ca9d40a4815d84e6ef8ceacc6cdf
+SIZE (vimpager/man.tar.gz) = 2769
+SHA256 (vimpager/rkitover-vimpager-2.06.20250412-842f746_GH0.tar.gz) = 935c6e80e3c66fba31ba6f1d7fb2f3f471599f21848c1b6b5063ccd7dd5374c5
+SIZE (vimpager/rkitover-vimpager-2.06.20250412-842f746_GH0.tar.gz) = 164299

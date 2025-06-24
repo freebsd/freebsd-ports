@@ -1,16 +1,16 @@
 bin/vimcat
 bin/vimpager
-%%ETCDIR%%rc
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog_vimcat.yml
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog_vimpager.yml
-%%PORTDOCS%%%%DOCSDIR%%/DOC_AUTHORS.yml
-%%PORTDOCS%%%%DOCSDIR%%/TODO.yml
-%%PORTDOCS%%%%DOCSDIR%%/copyright
-%%PORTDOCS%%%%DOCSDIR%%/html/vimcat.html
-%%PORTDOCS%%%%DOCSDIR%%/html/vimpager.html
-%%PORTDOCS%%%%DOCSDIR%%/uganda.txt
-%%PORTDOCS%%%%DOCSDIR%%/vimcat.md
-%%PORTDOCS%%%%DOCSDIR%%/vimpager.md
+@sample etc/vimpagerrc.sample
+%%DOCS%%%%DOCSDIR%%/ChangeLog_vimcat.yml
+%%DOCS%%%%DOCSDIR%%/ChangeLog_vimpager.yml
+%%DOCS%%%%DOCSDIR%%/DOC_AUTHORS.yml
+%%DOCS%%%%DOCSDIR%%/TODO.yml
+%%DOCS%%%%DOCSDIR%%/copyright
+%%DOCS%%%%DOCSDIR%%/html/vimcat.html
+%%DOCS%%%%DOCSDIR%%/html/vimpager.html
+%%DOCS%%%%DOCSDIR%%/uganda.txt
+%%DOCS%%%%DOCSDIR%%/vimcat.md
+%%DOCS%%%%DOCSDIR%%/vimpager.md
 share/man/man1/vimcat.1.gz
 share/man/man1/vimpager.1.gz
 %%DATADIR%%/autoload/AnsiEsc.vim
