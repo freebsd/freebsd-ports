@@ -1,24 +1,17 @@
---- lz4jsoncat.c	2019-12-29 00:44:09.000000000 -0500
-+++ lz4jsoncat.c	2023-08-22 01:48:00.646059000 -0400
-@@ -1,3 +1,3 @@
--/* 
-+/*
-  * Dump mozilla style lz4json files.
-  *
-@@ -30,15 +30,19 @@
+--- lz4jsoncat.c.orig	2025-06-24 19:59:38 UTC
++++ lz4jsoncat.c
+@@ -29,7 +29,9 @@
+ #include <stdlib.h>
  #include <stdint.h>
  #ifndef __APPLE__
+-#include <endian.h>
 +#	if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFlyBSD__)
 +#include <sys/endian.h>
-+#	else
- #include <endian.h>
-+#	endif
++#endif
  #else
  #define htole32(x) x /* assume apple targets are little endian */
  #endif
- 
--#include "lz4.h"
-+#include <lz4.h>
+@@ -38,8 +40,8 @@ int main(int ac, char **av)
  
  int main(int ac, char **av)
  {
@@ -28,21 +21,27 @@
 +		int fd = open(*++av, O_RDONLY);
  		if (fd < 0) {
  			perror(*av);
-@@ -56,5 +60,5 @@
+ 			continue;
+@@ -55,7 +57,7 @@ int main(int ac, char **av)
+ 		}
  
  		char *map = mmap(NULL, st.st_size, PROT_READ, MAP_SHARED, fd, 0);
 -		if (map == (char *)-1) {
 +		if (map == MAP_FAILED) {
  			perror(*av);
  			exit(1);
-@@ -64,5 +68,5 @@
+ 		}
+@@ -63,7 +65,7 @@ int main(int ac, char **av)
+ 			fprintf(stderr, "%s: not a mozLZ4a file\n", *av);
  			exit(1);
  		}
 -		size_t outsz = htole32(*(uint32_t *) (map + 8));
 +		ssize_t outsz = htole32(*(uint32_t *) (map + 8));
  		char *out = malloc(outsz);
  		if (!out) {
-@@ -88,5 +92,2 @@
+ 			fprintf(stderr, "Cannot allocate memory\n");
+@@ -87,6 +89,3 @@ int main(int ac, char **av)
+ 	}
  	return 0;
  }
 -
