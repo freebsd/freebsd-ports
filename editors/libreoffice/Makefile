@@ -61,7 +61,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libpagemaker-0.0.so:print/libpagemaker \
 		libassuan.so:security/libassuan \
 		libgpgme.so:security/gpgme \
-		libgpgmepp.so:security/gpgme-cpp \
+		libgpgmepp.so:security/gpgmepp \
 		libargon2.so:security/libargon2 \
 		libgpg-error.so:security/libgpg-error \
 		libnss3.so:security/nss \

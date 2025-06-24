@@ -9,8 +9,8 @@ WWW=		https://www.kde.org/
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
-		libgpgmepp.so:security/gpgme-cpp \
-		libqgpgmeqt6.so:security/gpgme-qt@qt6
+		libgpgmepp.so:security/gpgmepp \
+		libqgpgmeqt6.so:security/qgpgme@qt6
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl kde:6 \
 		qt:6 shared-mime-info tar:xz

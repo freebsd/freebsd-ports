@@ -40,7 +40,7 @@ CALENDAR_DESC=		iCalendar exporter
 CALENDAR_LIB_DEPENDS=	libical.so:devel/libical
 CALENDAR_CMAKE_BOOL=	ENABLE_LIBICAL
 
-GNUPG_LIB_DEPENDS=	libgpgmepp.so:security/gpgme-cpp
+GNUPG_LIB_DEPENDS=	libgpgmepp.so:security/gpgmepp
 GNUPG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Gpgmepp \
 			CMAKE_DISABLE_FIND_PACKAGE_KF5Gpgmepp
 

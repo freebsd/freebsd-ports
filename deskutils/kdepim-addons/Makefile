@@ -13,8 +13,8 @@ RUN_DEPENDS=	markdown:textproc/discount
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
-		libgpgmepp.so:security/gpgme-cpp \
-		libqgpgme.so:security/gpgme-qt@qt5
+		libgpgmepp.so:security/gpgmepp \
+		libqgpgme.so:security/qgpgme@qt5
 
 USES=		cmake compiler:c++11-lib gettext kde:6 pkgconfig qt:6 tar:xz \
 		xorg

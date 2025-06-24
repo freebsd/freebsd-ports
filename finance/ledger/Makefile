@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	GNUPG PYTHON
 OPTIONS_SUB=	yes
 
 GNUPG_LIB_DEPENDS=	libgpgme.so:security/gpgme \
-			libgpgmepp.so:security/gpgme-cpp
+			libgpgmepp.so:security/gpgmepp
 GNUPG_CMAKE_BOOL=	USE_GPGME
 
 PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boost-libs>0:devel/boost-python-libs@${PY_FLAVOR}

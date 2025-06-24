@@ -1,3 +1,7 @@
-TIMESTAMP = 1749036885
+TIMESTAMP = 1750435664
 SHA256 (KDE/release-service/25.04.2/kget-25.04.2.tar.xz) = c6c9d107bdffbc2d19855f298c5634a341a82d6ca3e1b430ce608c7c10d580c1
 SIZE (KDE/release-service/25.04.2/kget-25.04.2.tar.xz) = 4853484
+SHA256 (KDE/release-service/25.04.2/6254c0cefa17fe82f44842bc21f5e5c241f66aec.patch) = 76dc24ccdc5c62024165aa00967480bc0640714bca00b86bf634b4b375cdb610
+SIZE (KDE/release-service/25.04.2/6254c0cefa17fe82f44842bc21f5e5c241f66aec.patch) = 1221
+SHA256 (KDE/release-service/25.04.2/a9aa30e58ca3281285a3ba64d1da6c22fe0ab31a.patch) = 186b2bc25e6fbfe5eb86c8b0c13a518539f94232726dc262cfbc81479149fa74
+SIZE (KDE/release-service/25.04.2/a9aa30e58ca3281285a3ba64d1da6c22fe0ab31a.patch) = 1483

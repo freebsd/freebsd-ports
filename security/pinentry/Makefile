@@ -36,7 +36,7 @@ NCURSES_RUN_DEPENDS=	${PINENTRY_NCURSES}:security/pinentry-curses
 EFL_DESC=	EFL frontend
 PINENTRY_EFL=	pinentry-efl
 # Due to a dependency loop that exists between security/pinentry-efl,
-# devel/elf, graphics/poppler, security/gpgme-cpp, security/gpgme,
+# devel/elf, graphics/poppler, security/gpgmepp, security/gpgme,
 # security/gnupg and security/pinentry, the user must install
 # pinentry-efl manually. See pkg-message.dep-loop for more details.
 #EFL_RUN_DEPENDS=	${PINENTRY_EFL}:security/pinentry-efl

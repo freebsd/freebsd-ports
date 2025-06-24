@@ -19,7 +19,6 @@ include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/QGpgME/EncryptJob
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/QGpgME/ExportJob
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/QGpgME/FileListDataProvider
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/QGpgME/GpgCardJob
-include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/QGpgME/HierarchicalKeyListJob
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/QGpgME/ImportFromKeyserverJob
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/QGpgME/ImportJob
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/QGpgME/Job
@@ -69,7 +68,6 @@ include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/encryptjob.h
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/exportjob.h
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/filelistdataprovider.h
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/gpgcardjob.h
-include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/hierarchicalkeylistjob.h
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/importfromkeyserverjob.h
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/importjob.h
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/job.h
@@ -100,8 +98,12 @@ include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/wkdlookupjob.h
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/wkdlookupresult.h
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/wkdrefreshjob.h
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/wkspublishjob.h
+lib/cmake/QGpgme%%QGPGME_CMAKE_SUFFIX%%/FindGpgme.cmake
+lib/cmake/QGpgme%%QGPGME_CMAKE_SUFFIX%%/FindLibGpgError.cmake
 lib/cmake/QGpgme%%QGPGME_CMAKE_SUFFIX%%/QGpgme%%QGPGME_CMAKE_SUFFIX%%Config.cmake
 lib/cmake/QGpgme%%QGPGME_CMAKE_SUFFIX%%/QGpgme%%QGPGME_CMAKE_SUFFIX%%ConfigVersion.cmake
+lib/cmake/QGpgme%%QGPGME_CMAKE_SUFFIX%%/QGpgme%%QGPGME_CMAKE_SUFFIX%%Targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/QGpgme%%QGPGME_CMAKE_SUFFIX%%/QGpgme%%QGPGME_CMAKE_SUFFIX%%Targets.cmake
 lib/libqgpgme%%QGPGME_LIB_SUFFIX%%.so
 lib/libqgpgme%%QGPGME_LIB_SUFFIX%%.so.15
-lib/libqgpgme%%QGPGME_LIB_SUFFIX%%.so.15.6.2
+lib/libqgpgme%%QGPGME_LIB_SUFFIX%%.so.15.7.0

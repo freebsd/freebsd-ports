@@ -1,6 +1,5 @@
 PORTNAME=	gpgme
-PORTVERSION=	1.24.2
-PORTREVISION?=	0
+PORTVERSION=	2.0.0
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
 
@@ -16,16 +15,13 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 
 USES=		compiler:c11 cpe gmake libtool localbase:ldflags pathfix tar:bzip2
 USE_LDCONFIG=	yes
+CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--enable-languages="cl"
 CFLAGS+=	-Wno-suggest-override -Wno-unknown-warning-option
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-
-CPE_VENDOR=	gnu
-
-.if !defined(_GPGME_BINDING)
-CONFIGURE_ARGS+=--enable-languages="cl"
 
 INFO=		gpgme
 PORTDOCS=	AUTHORS INSTALL NEWS README
@@ -49,92 +45,10 @@ TEST_PREVENTS_MSG=	TEST option is mainly designed for use with the GNUPG2 option
 
 UISERVER_DESC=			GnuPG UI server support
 UISERVER_CONFIGURE_ENABLE=	fd-passing
-.else
-LIB_DEPENDS+=	libgpgme.so:security/gpgme
-BUILD_WRKSRC=	${WRKSRC}/lang/${_GPGME_BINDING}
-INSTALL_WRKSRC=	${WRKSRC}/lang/${_GPGME_BINDING}
-TEST_WRKSRC=	${WRKSRC}/lang/${_GPGME_BINDING}/tests
-
-.  if ${_GPGME_BINDING} == "cpp"
-USES+=		compiler:c++11-lang
-CONFIGURE_ARGS+=--enable-languages="cpp"
-NO_TEST=	yes
-.  else
-OPTIONS_DEFINE+=	TEST
-.  endif
-
-.  if ${_GPGME_BINDING} == "qt"
-LIB_DEPENDS+=	libgpgmepp.so:security/gpgme-cpp
-
-FLAVORS=		qt5 qt6
-FLAVOR?=		${FLAVORS:[1]}
-qt5_PKGNAMESUFFIX=	-qt5
-qt6_PKGNAMESUFFIX=	-qt6
-
-.    if ${FLAVOR:U} == "qt5"
-USES+=		compiler:c++11-lang pkgconfig qt:5
-USE_QT=		core \
-		buildtools:build
-TEST_USE=	QT=testlib:build
-PLIST_SUB=	QGPGME_CMAKE_SUFFIX="" \
-		QGPGME_INCLUDE_SUFFIX="${FLAVOR}" \
-		QGPGME_LIB_SUFFIX=""
-.    else
-USES+=		compiler:c++17-lang pkgconfig qt:6
-USE_CXXSTD=	c++17
-USE_QT=		base
-PLIST_SUB=	QGPGME_CMAKE_SUFFIX="Qt${FLAVOR:S|qt||}" \
-		QGPGME_INCLUDE_SUFFIX="${FLAVOR}" \
-		QGPGME_LIB_SUFFIX="${FLAVOR}"
-.    endif
-
-CONFIGURE_ARGS+=--enable-languages="cpp ${FLAVOR}"
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-
-OPTIONS_DEFINE+=	DOXYGEN
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
-			dot:graphics/graphviz
-.  endif
-
-.  if ${_GPGME_BINDING} == "python"
-BUILD_DEPENDS+=	swig:devel/swig \
-		${PY_SETUPTOOLS}
-USES+=		python:3.9+
-USE_PYTHON=	flavors
-CONFIGURE_ARGS+=--enable-languages="python"
-CONFIGURE_ENV+=	BSD_PYTHON="${PYTHON_CMD}" \
-		BSD_PYTHON_VERSION="${PYTHON_VER}" \
-		SWIG="${LOCALBASE}/bin/swig"
-PLIST_SUB+=	VERSION=${PORTVERSION}
-.  endif
-.endif
-
-.include <bsd.port.pre.mk>
 
 post-patch:
-.if ${COMPILER_TYPE} == "clang"
-	@${REINPLACE_CMD} -e 's|mno-direct-extern-access|fno-direct-access-external-data|g' \
-		${WRKSRC}/configure
-.endif
-.if defined(_GPGME_BINDING)
-	@${FIND} ${BUILD_WRKSRC} -name "Makefile.in" -type f | ${XARGS} \
-	${REINPLACE_CMD} -e 's|../../../src/libgpgme.la|-lgpgme|g'
-.  if ${_GPGME_BINDING} == "qt"
-	@${FIND} ${BUILD_WRKSRC} -name "Makefile.in" -type f | ${XARGS} \
-	${REINPLACE_CMD} -e 's|../../cpp/src/libgpgmepp.la|-lgpgmepp|g'
-.  endif
-.endif
 	@${REINPLACE_CMD} -e 's|^clfilesdir.*|clfilesdir=$$\(libdir\)/common-lisp/gpgme|g' \
 		${WRKSRC}/lang/cl/Makefile.in
-
-post-patch-DOXYGEN-off:
-	@${REINPLACE_CMD} -e '/SUBDIRS/s|doc||' \
-		${WRKSRC}/lang/qt/Makefile.in
-
-post-patch-TEST-off:
-	@${REINPLACE_CMD} -e '/SUBDIRS/s|tests||' \
-		${WRKSRC}/lang/python/Makefile.in \
-		${WRKSRC}/lang/qt/Makefile.in
 
 # The gnupg programs will create sockets for the tests in a temporary directory
 # under /var/run/user/${UID} if it exists. Otherwise, they will try to create
@@ -165,17 +79,8 @@ pre-test: pre-build-TEST-on
 
 post-test: post-build-TEST-on
 
-.if !defined(_GPGME_BINDING)
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
-post-install-DOXYGEN-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-	cd ${WRKSRC}/lang/qt/doc/generated/html && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/html
-	@${FIND} -P ${STAGEDIR}${DOCSDIR} -type f 2>/dev/null | \
-		${SED} -ne 's|^${STAGEDIR}${PREFIX}/||p' >> ${TMPPLIST}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

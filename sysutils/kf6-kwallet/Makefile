@@ -9,7 +9,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgcrypt.so:security/libgcrypt \
 		libsecret-1.so:security/libsecret \
 		libgpgme.so:security/gpgme \
-		libgpgmepp.so:security/gpgme-cpp \
+		libgpgmepp.so:security/gpgmepp \
 		libqca-qt6.so:devel/qca@qt6
 
 USES=		cmake gettext-tools gl kde:6 pkgconfig qt:6 tar:xz xorg
