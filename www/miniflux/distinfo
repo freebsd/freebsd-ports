@@ -1,5 +1,5 @@
-TIMESTAMP = 1748337301
-SHA256 (go/www_miniflux/miniflux-v2-2.2.9_GH0/go.mod) = be1d1c8678fa839211c7b306c39146a7bd6475276c051eb6091db29e29893179
-SIZE (go/www_miniflux/miniflux-v2-2.2.9_GH0/go.mod) = 1529
-SHA256 (go/www_miniflux/miniflux-v2-2.2.9_GH0/miniflux-v2-2.2.9_GH0.tar.gz) = 7735912fbb232fd588f16528ead4b3a7e5bd02688827120316ba5c60f5fc0bcd
-SIZE (go/www_miniflux/miniflux-v2-2.2.9_GH0/miniflux-v2-2.2.9_GH0.tar.gz) = 823133
+TIMESTAMP = 1750749975
+SHA256 (go/www_miniflux/miniflux-v2-2.2.10_GH0/go.mod) = 0d545fcf2e12aa37d744743c80ff85afeae8954e0deb983ac74a68d0de286f58
+SIZE (go/www_miniflux/miniflux-v2-2.2.10_GH0/go.mod) = 1529
+SHA256 (go/www_miniflux/miniflux-v2-2.2.10_GH0/miniflux-v2-2.2.10_GH0.tar.gz) = a216b93a32d14a7a6ca48fd7f5e86b8a4e8c58b1bf5d83fc4d3aacaaaf4e6a48
+SIZE (go/www_miniflux/miniflux-v2-2.2.10_GH0/miniflux-v2-2.2.10_GH0.tar.gz) = 835514
