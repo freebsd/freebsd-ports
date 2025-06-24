@@ -1,2 +1,2 @@
 bin/ipcalc
-%%DOCS%%share/man/man1/ipcalc.1.gz
+%%MANPAGES%%share/man/man1/ipcalc.1.gz
