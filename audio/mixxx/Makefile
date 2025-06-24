@@ -1,10 +1,6 @@
 PORTNAME=	mixxx
-DISTVERSION=	2.5.0
-PORTREVISION=	5
+DISTVERSION=	2.5.2
 CATEGORIES=	audio
-
-PATCH_SITES=	https://github.com/mixxxdj/mixxx/commit/
-PATCHFILES+=	355eb9ce880349ff94759f731bb7ae747bf6677c.patch:-p1 # Fix build with Qt >= 6.9.0
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	DJ mixing application

@@ -21,6 +21,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/American-Audio-RADIUS-2000-scripts.js
 %%DATADIR%%/controllers/American-Audio-VMS2-scripts.js
 %%DATADIR%%/controllers/American-Audio-VMS4-scripts.js
+%%DATADIR%%/controllers/Arturia-KeyLab-Mk1-scripts.js
+%%DATADIR%%/controllers/ArturiaKeyLab.midi.xml
 %%DATADIR%%/controllers/Behringer BCD2000.midi.xml
 %%DATADIR%%/controllers/Behringer BCD3000 Advanced.midi.xml
 %%DATADIR%%/controllers/Behringer BCD3000.midi.xml
@@ -40,7 +42,9 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/Behringer-DDM4000-scripts.js
 %%DATADIR%%/controllers/Behringer-Extension-scripts.js
 %%DATADIR%%/controllers/CueColorsReference.svg
+%%DATADIR%%/controllers/DJ TechTools MIDI Fighter Spectra.midi.xml
 %%DATADIR%%/controllers/DJ TechTools MIDI Fighter Twister.midi.xml
+%%DATADIR%%/controllers/DJ TechTools-MIDI Fighter Spectra-scripts.js
 %%DATADIR%%/controllers/DJ TechTools-MIDI Fighter Twister-scripts.js
 %%DATADIR%%/controllers/DJ-Tech CDJ-101.midi.xml
 %%DATADIR%%/controllers/DJ-Tech DJM-101.midi.xml
@@ -116,14 +120,18 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/Hercules-DJControl-Compact-scripts.js
 %%DATADIR%%/controllers/Hercules-DJControl-Inpulse-200-script.js
 %%DATADIR%%/controllers/Hercules-DJControl-Inpulse-300-script.js
+%%DATADIR%%/controllers/Hercules-DJControl-Inpulse-500-script.js
 %%DATADIR%%/controllers/Hercules-DJControl-MIX-scripts.js
 %%DATADIR%%/controllers/Hercules-DJControl-Starlight-scripts.js
 %%DATADIR%%/controllers/Hercules-P32-scripts.js
 %%DATADIR%%/controllers/Hercules-mp3e2-compat.js
 %%DATADIR%%/controllers/Hercules_DJControl_Inpulse_200.midi.xml
 %%DATADIR%%/controllers/Hercules_DJControl_Inpulse_300.midi.xml
+%%DATADIR%%/controllers/Hercules_DJControl_Inpulse_500.midi.xml
 %%DATADIR%%/controllers/Hercules_DJControl_Jogvision-scripts.js
 %%DATADIR%%/controllers/Hercules_DJControl_Jogvision.midi.xml
+%%DATADIR%%/controllers/Icon-iControls-scripts.js
+%%DATADIR%%/controllers/Icon-iControls.midi.xml
 %%DATADIR%%/controllers/Intech TEK2.midi.xml
 %%DATADIR%%/controllers/Intech TEK2.scripts.js
 %%DATADIR%%/controllers/Ion Discover DJ.midi.xml
@@ -142,6 +150,10 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/Korg-nanoKONTROL-2-scripts.js
 %%DATADIR%%/controllers/Korg-nanoPAD2-scripts.js
 %%DATADIR%%/controllers/M-Audio_Xsession_pro.midi.xml
+%%DATADIR%%/controllers/MVave-SMC-Mixer-scripts.js
+%%DATADIR%%/controllers/MVave-SMC-Mixer.midi.xml
+%%DATADIR%%/controllers/MVave-SMK-25-II-scripts.js
+%%DATADIR%%/controllers/MVave-SMK-25-II.midi.xml
 %%DATADIR%%/controllers/Midi-Keyboard.midi.xml
 %%DATADIR%%/controllers/MidiTech-MidiControl.midi.xml
 %%DATADIR%%/controllers/Midi_for_light-scripts.js
@@ -169,10 +181,12 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/Numark DJ2Go.midi.xml
 %%DATADIR%%/controllers/Numark MIXTRACK.midi.xml
 %%DATADIR%%/controllers/Numark Mixtrack 2.midi.xml
+%%DATADIR%%/controllers/Numark Mixtrack Platinum FX.midi.xml
 %%DATADIR%%/controllers/Numark Mixtrack Platinum.midi.xml
 %%DATADIR%%/controllers/Numark Mixtrack Pro FX.midi.xml
 %%DATADIR%%/controllers/Numark Mixtrack Pro.midi.xml
 %%DATADIR%%/controllers/Numark N4.midi.xml
+%%DATADIR%%/controllers/Numark NS6II.midi.xml
 %%DATADIR%%/controllers/Numark NS7.midi.xml
 %%DATADIR%%/controllers/Numark Omni Control.midi.xml
 %%DATADIR%%/controllers/Numark Total Control.midi.xml
@@ -183,10 +197,12 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/Numark-Mixtrack-2-scripts.js
 %%DATADIR%%/controllers/Numark-Mixtrack-3-scripts.js
 %%DATADIR%%/controllers/Numark-Mixtrack-3.midi.xml
+%%DATADIR%%/controllers/Numark-Mixtrack-Platinum-FX-scripts.js
 %%DATADIR%%/controllers/Numark-Mixtrack-Platinum-scripts.js
 %%DATADIR%%/controllers/Numark-Mixtrack-Pro-FX-scripts.js
 %%DATADIR%%/controllers/Numark-Mixtrack-Pro-scripts.js
 %%DATADIR%%/controllers/Numark-N4-scripts.js
+%%DATADIR%%/controllers/Numark-NS6II-scripts.js
 %%DATADIR%%/controllers/Numark-NS7-scripts.js
 %%DATADIR%%/controllers/Numark-Omni-Control-scripts.js
 %%DATADIR%%/controllers/Numark-Party-Mix.midi.xml
@@ -230,6 +246,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/Reloop Terminal Mix 2-4.midi.xml
 %%DATADIR%%/controllers/Reloop-Beatmix-2-4-scripts.js
 %%DATADIR%%/controllers/Reloop-Beatpad-scripts.js
+%%DATADIR%%/controllers/Reloop-Digital-Jockey-2-IE.midi.xml
+%%DATADIR%%/controllers/Reloop-Digital-Jockey-2-IE.scripts.js
 %%DATADIR%%/controllers/Reloop-Digital-Jockey2-Controller-scripts.js
 %%DATADIR%%/controllers/Reloop-Jockey-3-ME-scripts.js
 %%DATADIR%%/controllers/Reloop-Mixage.midi.xml
@@ -543,6 +561,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Deere/icon/ic_library_preview_pause.svg
 %%DATADIR%%/skins/Deere/icon/ic_library_preview_play.svg
 %%DATADIR%%/skins/Deere/icon/ic_loop_48px.svg
+%%DATADIR%%/skins/Deere/icon/ic_loop_anchor_end.svg
+%%DATADIR%%/skins/Deere/icon/ic_loop_anchor_start.svg
 %%DATADIR%%/skins/Deere/icon/ic_loop_in_48px.svg
 %%DATADIR%%/skins/Deere/icon/ic_loop_move_backward_48px.svg
 %%DATADIR%%/skins/Deere/icon/ic_loop_move_forward_48px.svg
@@ -1748,6 +1768,10 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Shade/btn/btn_lib_spinbox_down_white.svg
 %%DATADIR%%/skins/Shade/btn/btn_lib_spinbox_up_white.svg
 %%DATADIR%%/skins/Shade/btn/btn_load.png
+%%DATADIR%%/skins/Shade/btn/btn_loop_anchor_end.png
+%%DATADIR%%/skins/Shade/btn/btn_loop_anchor_end_overdown.png
+%%DATADIR%%/skins/Shade/btn/btn_loop_anchor_start.png
+%%DATADIR%%/skins/Shade/btn/btn_loop_anchor_start_overdown.png
 %%DATADIR%%/skins/Shade/btn/btn_loop_in.png
 %%DATADIR%%/skins/Shade/btn/btn_loop_in_down.png
 %%DATADIR%%/skins/Shade/btn/btn_loop_in_over.png
@@ -2378,6 +2402,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Tango/buttons/btn_lib_spinbox_down_white.svg
 %%DATADIR%%/skins/Tango/buttons/btn_lib_spinbox_up_white.svg
 %%DATADIR%%/skins/Tango/buttons/btn_loop.svg
+%%DATADIR%%/skins/Tango/buttons/btn_loop_anchor_end.svg
+%%DATADIR%%/skins/Tango/buttons/btn_loop_anchor_start.svg
 %%DATADIR%%/skins/Tango/buttons/btn_loop_beatjump_off.svg
 %%DATADIR%%/skins/Tango/buttons/btn_loop_beatjump_on.svg
 %%DATADIR%%/skins/Tango/buttons/btn_loop_beatjump_on_black.svg
