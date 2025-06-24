@@ -1,5 +1,5 @@
-TIMESTAMP = 1721069126
-SHA256 (go/net-mgmt_promxy/promxy-v0.0.87/v0.0.87.mod) = 84aba0bd9ef1697e4c42d7e6ddaa265da835196c1933bc0faeb94eb86d24a972
-SIZE (go/net-mgmt_promxy/promxy-v0.0.87/v0.0.87.mod) = 8435
-SHA256 (go/net-mgmt_promxy/promxy-v0.0.87/v0.0.87.zip) = f52c5f2a20a6689623fd71eac63f63b4d79ec4ec32c11ff7c592cf79a9e1c570
-SIZE (go/net-mgmt_promxy/promxy-v0.0.87/v0.0.87.zip) = 227227
+TIMESTAMP = 1750775948
+SHA256 (go/net-mgmt_promxy/promxy-v0.0.93/v0.0.93.mod) = 60ccdc82d122e910e201ebb80f780d58bca58031f0d6cc33cb9c7948e1d7cac1
+SIZE (go/net-mgmt_promxy/promxy-v0.0.93/v0.0.93.mod) = 8803
+SHA256 (go/net-mgmt_promxy/promxy-v0.0.93/v0.0.93.zip) = 2b01ea64676812a44794d00690c50d050688f9b6170c61c46b86241225f0e819
+SIZE (go/net-mgmt_promxy/promxy-v0.0.93/v0.0.93.zip) = 221439

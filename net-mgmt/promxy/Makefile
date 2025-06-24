@@ -1,7 +1,6 @@
 PORTNAME=	promxy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.87
-PORTREVISION=	5
+DISTVERSION=	0.0.93
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	timp87@gmail.com
@@ -11,7 +10,7 @@ WWW=		https://github.com/jacksontj/promxy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.24,modules
 USE_RC_SUBR=	promxy
 GO_MODULE=	github.com/jacksontj/promxy
 GO_TARGET=	./cmd/promxy
