@@ -4572,6 +4572,6 @@
 %%DATADIR%%/shared/Microsoft.NETCore.App/%%FULL_DOTNETVERSION%%/netstandard.dll
 %%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.common.itemtemplates.%%SDKVERSION%%.nupkg
 %%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.common.projecttemplates.%%DOTNETVERSION%%.%%SDKVERSION%%.nupkg
-%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.test.projecttemplates.%%DOTNETVERSION%%.1.1.0-rtm.25168.1.nupkg
+%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.test.projecttemplates.%%DOTNETVERSION%%.1.1.0-rtm.25262.1.nupkg
 %%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.web.itemtemplates.%%DOTNETVERSION%%.%%FULL_DOTNETVERSION%%.nupkg
 %%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.web.projecttemplates.%%DOTNETVERSION%%.%%FULL_DOTNETVERSION%%.nupkg
