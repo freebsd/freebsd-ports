@@ -1,4 +1,5 @@
 PORTNAME=	pgp
+PORTREVISION=	1
 
 COMMENT=	PGP plugins for Claws Mail
 WWW=		https://www.claws-mail.org/plugin.php?plugin=gpg

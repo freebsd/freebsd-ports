@@ -1,5 +1,6 @@
 PORTNAME=	gmime
 DISTVERSION=	3.2.15
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/jstedfast/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	30

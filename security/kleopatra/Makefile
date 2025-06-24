@@ -1,5 +1,6 @@
 PORTNAME=	kleopatra
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	security kde kde-applications
 
 PATCH_SITES=	https://invent.kde.org/pim/kleopatra/-/commit/
