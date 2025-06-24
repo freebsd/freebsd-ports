@@ -1,10 +1,9 @@
 PORTNAME=	ogre3d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.6
-PORTREVISION=	14
+DISTVERSION=	14.3.4
 CATEGORIES=	graphics devel
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Scene-oriented, flexible 3D engine written in C++
 WWW=		https://www.ogre3d.org/
 
@@ -13,10 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libzzip.so:devel/zziplib \
 		libfreetype.so:print/freetype2
+#		libimgui.so:x11-toolkits/imgui
 
 CONFLICTS=	ogre3d19
 
-USES=		cmake compiler:c++11-lib pkgconfig sdl xorg
+USES=		cmake compiler:c++14-lang pkgconfig sdl xorg
 USE_LDCONFIG=	yes
 USE_SDL=	sdl2
 USE_XORG=	x11 xaw xext xrandr xt
@@ -27,13 +27,20 @@ GH_PROJECT=	ogre
 
 PORTDOCS=	*
 
+CMAKE_ARGS+=	OGRE_MEDIA_PATH="share/OGRE/Media"
 CMAKE_ON=	OGRE_CONFIG_ENABLE_ZIP
-CMAKE_OFF=	OGRE_INSTALL_SAMPLES_SOURCE
+CMAKE_OFF=	OGRE_INSTALL_SAMPLES_SOURCE \
+		OGRE_BUILD_COMPONENT_OVERLAY_IMGUI
 
-OPTIONS_DEFINE=		CSHARP DOCS FREEIMAGE JAVA OPENEXR OPENGL PROFILE \
+OPTIONS_DEFINE=		BULLET CSHARP DOCS FREEIMAGE JAVA OPENEXR OPENGL PROFILE \
 			PYTHON
 OPTIONS_DEFAULT=	FREEIMAGE OPENGL
 OPTIONS_SUB=		yes
+
+BULLET_DESC=		Build Bullet bindings
+BULLET_CMAKE_BOOL=	OGRE_BUILD_COMPONENT_BULLET
+BULLET_IMPLIES=		PYTHON
+BULLET_LIB_DEPENDS=	libBulletCollision.so:devel/bullet@double
 
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOCS_CMAKE_BOOL=	OGRE_INSTALL_DOCS
@@ -70,6 +77,7 @@ PYTHON_BUILD_DEPENDS=	swig:devel/swig
 PYTHON_USES=		python
 
 CXXFLAGS+=		-DNDEBUG -I${LOCALBASE}/include -I${LOCALBASE}/include/Imath
+PLIST_SUB+=		LIBVERSION=${PORTVERSION:R}
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
