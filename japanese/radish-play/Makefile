@@ -1,6 +1,6 @@
 PORTNAME=	radish-play
 DISTVERSION=	g20250621
-CATEGORIES=	japanese
+CATEGORIES=	japanese audio
 
 MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Japanese Internet radio player
@@ -24,8 +24,8 @@ PLIST_FILES=	bin/${PORTNAME}
 OPTIONS_DEFAULT=	MPV
 OPTIONS_SINGLE=		PLAYER
 OPTIONS_SINGLE_PLAYER=	FFPLAY MPV
-FFPLAY_DESC=		use ffplay (via ffmpeg, implies the SDL option)
-MPV_DESC=		use mpv as media player
+FFPLAY_DESC=		Use ffplay (via ffmpeg, implies the SDL option)
+MPV_DESC=		Use mpv as media player
 
 FFPLAY_RUN_DEPENDS=	ffplay:multimedia/ffmpeg
 FFPLAY_EXTRA_PATCHES=	${PATCHDIR}/ffplay-patch-radish-play.sh
