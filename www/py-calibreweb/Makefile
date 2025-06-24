@@ -1,6 +1,6 @@
 PORTNAME=	calibreweb
 PORTVERSION=	0.6.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -99,7 +99,7 @@ GDRIVE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${PY_FLAVOR
 			${PYTHON_PKGNAMEPREFIX}uritemplate>=0:net/py-uritemplate@${PY_FLAVOR}
 GMAIL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-python-client>=0:www/py-google-api-python-client@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}google-auth-oauthlib>=0:security/py-google-auth-oauthlib@${PY_FLAVOR}
-GREADS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Goodreads>=0:devel/py-goodreads@${PY_FLAVOR} \
+GREADS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}goodreads>=0:devel/py-goodreads@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}Levenshtein>=0:devel/py-Levenshtein@${PY_FLAVOR}
 IMAGICK6_NOX11_USES=	magick:6,run,nox11
 IMAGICK6_X11_USES=	magick:6,run
