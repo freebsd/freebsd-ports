@@ -1,10 +1,15 @@
 %%WWWDIR%%/document.js
 %%WWWDIR%%/index.html
 %%WWWDIR%%/kanban.js
+%%WWWDIR%%/main-styles.css
 %%WWWDIR%%/main.js
 %%WWWDIR%%/media.js
 %%WWWDIR%%/peerspace.png
 %%WWWDIR%%/share.js
-%%WWWDIR%%/style.css
+%%WWWDIR%%/themes/dark.css
+%%WWWDIR%%/themes/example.css
+%%WWWDIR%%/themes/light.css
+%%WWWDIR%%/themes/material.css
+%%WWWDIR%%/themes/themes.json
 %%WWWDIR%%/trystero-torrent.min.js
 %%WWWDIR%%/whiteboard.js
