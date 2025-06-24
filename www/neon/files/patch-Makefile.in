@@ -1,20 +1,11 @@
 --- Makefile.in.orig	2022-02-27 07:23:39 UTC
 +++ Makefile.in
-@@ -89,7 +89,7 @@ subdirs:
- 
- # Regenerating the docs requires xmlto to be installed, this target is
- # executed when release tarballs are generated.
--docs: docs-man docs-html
-+#docs: docs-man docs-html
- 
- docs-man:
- 	rm -rf doc/man; mkdir -p doc/man
 @@ -148,7 +148,7 @@ install-memleak:
  	@echo "ERROR: purposes only; this copy of neon must not be installed."
  	@false
  
 -install-yes: install-lib install-headers install-config install-docs install-nls
-+install-yes: install-lib install-headers install-config install-nls
++install-yes: install-lib install-headers install-config install-html install-man install-nls
  
  # libtool does all the necessary magic here
  install-lib: subdirs

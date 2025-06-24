@@ -1,6 +1,6 @@
 PORTNAME=	neon
 DISTVERSION=	0.34.0
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://notroj.github.io/neon/
 
@@ -20,23 +20,17 @@ LDFLAGS=	-Wl,--undefined-version
 CONFIGURE_ARGS=	--enable-shared --disable-static
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-OPTIONS_DEFINE=		DOCS GSSAPI NLS PROXY
-OPTIONS_DEFAULT=	EXPAT GSSAPI OPENSSL
+OPTIONS_DEFINE=		DOCS GSSAPI MANPAGES NLS PROXY
+OPTIONS_DEFAULT=	EXPAT GSSAPI MANPAGES OPENSSL
 
 OPTIONS_RADIO=		SSL
 OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
 OPTIONS_SINGLE=		XML
 OPTIONS_SINGLE_XML=	EXPAT LIBXML2
 
-DOCS_DESC=		Build and/or install documentation (including manpages)
 LIBXML2_DESC=		libxml2 XML parser support
 PROXY_DESC=		libproxy support
 XML_DESC=		XML parser library
-
-DOCS_BUILD_DEPENDS=	xmlto:textproc/xmlto \
-			docbook-xml>0:textproc/docbook-xml
-
-DOCS_EXTRA_PATCHES_OFF=	${FILESDIR}/extrapatch-docs
 
 EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
 EXPAT_CONFIGURE_WITH=	expat
@@ -65,6 +59,12 @@ DOCSDIR=		${PREFIX}/share/doc/neon
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-@NEON_VERSION@$$||' ${WRKSRC}/Makefile.in
+
+post-patch-DOCS-off:
+	${REINPLACE_CMD} -e '152s|install-docs ||' ${WRKSRC}/Makefile.in
+
+post-patch-MANPAGES-off:
+	${REINPLACE_CMD} -e '152s|install-man ||' ${WRKSRC}/Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libneon.so.27.*
