@@ -36,7 +36,6 @@ USES=		compiler:c11 cpe gettext gnome iconv:wchar_t localbase:ldflags \
 		meson perl5 pkgconfig python tar:xz ${${FLAVOR}_USES}
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USE_PYTHON=	py3kplist
 TRIGGERS=	gio-modules glib-schemas
 MESON_ARGS=	-Db_lundef=false \
 		-Ddefault_library=both \
