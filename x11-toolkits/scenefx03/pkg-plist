@@ -1,9 +1,0 @@
-include/scenefx%%SUFFIX%%/scenefx/render/fx_renderer/fx_effect_framebuffers.h
-include/scenefx%%SUFFIX%%/scenefx/render/fx_renderer/fx_renderer.h
-include/scenefx%%SUFFIX%%/scenefx/render/pass.h
-include/scenefx%%SUFFIX%%/scenefx/types/fx/blur_data.h
-include/scenefx%%SUFFIX%%/scenefx/types/fx/clipped_region.h
-include/scenefx%%SUFFIX%%/scenefx/types/fx/corner_location.h
-include/scenefx%%SUFFIX%%/scenefx/types/wlr_scene.h
-lib/libscenefx%%SUFFIX%%.so
-libdata/pkgconfig/scenefx%%SUFFIX%%.pc

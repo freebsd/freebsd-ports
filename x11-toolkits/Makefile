@@ -239,7 +239,6 @@
     SUBDIR += rubygem-uh
     SUBDIR += rubygem-vte3
     SUBDIR += rubygem-vte4
-    SUBDIR += scenefx03
     SUBDIR += scenefx04
     SUBDIR += scintilla
     SUBDIR += sdl2_pango
