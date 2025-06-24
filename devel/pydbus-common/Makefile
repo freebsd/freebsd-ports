@@ -66,7 +66,7 @@ LIB_DEPENDS+=	libdbus-glib-1.so:devel/dbus-glib
 RUN_DEPENDS+=	pydbus-common>=0:devel/pydbus-common
 USE_LDCONFIG=	yes
 USES+=		python
-USE_PYTHON=	flavors py3kplist
+USE_PYTHON=	flavors
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/include/dbus-1.0 \
