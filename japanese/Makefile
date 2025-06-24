@@ -233,6 +233,7 @@
     SUBDIR += qkc
     SUBDIR += qolibri
     SUBDIR += quit
+    SUBDIR += radish-play
     SUBDIR += roget-fpw
     SUBDIR += rogue_s
     SUBDIR += ruby-romkan
