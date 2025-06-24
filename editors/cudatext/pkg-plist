@@ -2,8 +2,6 @@ bin/cudatext
 share/applications/cudatext.desktop
 %%DATADIR%%/data/autocomplete/Bash script.acp
 %%DATADIR%%/data/autocomplete/Batch files.acp
-%%DATADIR%%/data/autocomplete/C++.acp
-%%DATADIR%%/data/autocomplete/C.acp
 %%DATADIR%%/data/autocompletespec/css_colors.ini
 %%DATADIR%%/data/autocompletespec/css_list.ini
 %%DATADIR%%/data/autocompletespec/css_sel.ini
@@ -200,7 +198,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/filetypeicons/vscode_16x16/icon_server.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/icons.json
 %%DATADIR%%/data/lang/history.txt
-%%DATADIR%%/data/lang/ru_RU.ini
 %%DATADIR%%/data/lang/translation template.ini
 %%DATADIR%%/data/lexlib/Assembly.cuda-lexmap
 %%DATADIR%%/data/lexlib/Assembly.lcf
@@ -208,10 +205,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/lexlib/Bash script.lcf
 %%DATADIR%%/data/lexlib/Batch files.cuda-lexmap
 %%DATADIR%%/data/lexlib/Batch files.lcf
-%%DATADIR%%/data/lexlib/C++.cuda-lexmap
-%%DATADIR%%/data/lexlib/C++.lcf
-%%DATADIR%%/data/lexlib/C.cuda-lexmap
-%%DATADIR%%/data/lexlib/C.lcf
 %%DATADIR%%/data/lexlib/CSS.cuda-lexmap
 %%DATADIR%%/data/lexlib/CSS.lcf
 %%DATADIR%%/data/lexlib/HTML style.cuda-lexmap
@@ -714,8 +707,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/settings_default/default.json
 %%DATADIR%%/settings_default/lexer Assembly.json
 %%DATADIR%%/settings_default/lexer Bash script.json
-%%DATADIR%%/settings_default/lexer C++.json
-%%DATADIR%%/settings_default/lexer C.json
 %%DATADIR%%/settings_default/lexer CSS.json
 %%DATADIR%%/settings_default/lexer JSON.json
 %%DATADIR%%/settings_default/lexer JavaScript.json
