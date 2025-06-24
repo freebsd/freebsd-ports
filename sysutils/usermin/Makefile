@@ -1,5 +1,5 @@
 PORTNAME=	usermin
-PORTVERSION=	2.301
+PORTVERSION=	2.302
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf
@@ -17,11 +17,11 @@ RUN_DEPENDS=	p5-Authen-PAM>=0:security/p5-Authen-PAM \
 		p5-IO-Tty>=0:devel/p5-IO-Tty \
 		p5-Net-SSLeay>=0:security/p5-Net-SSLeay
 
-NO_ARCH=	yes
-NO_BUILD=	yes
 USES=		cpe perl5
 CPE_VENDOR=	webmin
 USE_RC_SUBR=	usermin
+NO_ARCH=	yes
+NO_BUILD=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PERL=${PERL}
 
