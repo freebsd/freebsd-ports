@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# PROVIDE: shiori
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for shiori in /etc/rc.conf
+#
+# shiori_enable (bool):    Enable shiori. (default=NO)
+# shiori_log (str):        Log output. (default=/var/log/shiori.log)
+# shiori_runas (str):      User to run shiori as. (default=%%USER%%)
+#
+
+. /etc/rc.subr
+
+name="shiori"
+desc="Simple bookmark manager built with Go"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${shiori_enable:="NO"}
+: ${shiori_log:="/var/log/shiori.log"}
+: ${shiori_runas:="%%USER%%"}
+: ${shiori_datadir:="%%HOMEDIR%%"}
+
+pidfile="/var/run/${name}.pid"
+procname="%%LOCALBASE%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-c -u '${shiori_runas}' -p '${pidfile}' -t '${desc}' -o '${shiori_log}' '${procname}' server --storage-directory '${shiori_datadir}' ${shiori_args}"
+
+run_rc_command "$1"
