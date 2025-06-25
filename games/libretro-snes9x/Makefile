@@ -1,9 +1,9 @@
 PORTNAME=	libretro-snes9x
-DISTVERSION=	0.20231013
+DISTVERSION=	0.20241022
 PORTEPOCH=	1
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tilde@ultros.pro
 COMMENT=	Snes9x - Portable Super Nintendo emulator
 WWW=		https://github.com/libretro/snes9x
 
@@ -14,16 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		compiler:c++11-lib gmake
-USE_LDCONFIG=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	snes9x
-GH_TAGNAME=	ec4ebfc8f3819a9522fcb8e53eed985090017b1b
-
-PLIST_FILES=	lib/libretro/snes9x_libretro.so
+GH_TAGNAME=	49f484569ff2aec7ff08e7598a97d6c9e6eae72d
+USE_LDCONFIG=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/libretro
+
+PLIST_FILES=	lib/libretro/snes9x_libretro.so
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
