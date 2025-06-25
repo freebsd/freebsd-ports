@@ -3,11 +3,11 @@ PORTVERSION=	1.0.1
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.mhgames.org/files/formido/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D kill-em all with 3D rendered graphics
-WWW=		http://www.mhgames.org/oldies/formido/
+WWW=		https://www.mhgames.org/oldies/formido/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL_license.txt

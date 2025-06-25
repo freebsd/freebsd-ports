@@ -3,7 +3,7 @@ PORTVERSION=	1.5.8
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://bitbucket.org/karlb/bumprace/get/ \
-		http://mirror.amdmi3.ru/distfiles/${DIST_SUBDIR}/
+		https://mirror.amdmi3.ru/distfiles/${DIST_SUBDIR}/
 DISTNAME=	${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 

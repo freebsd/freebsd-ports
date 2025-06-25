@@ -4,7 +4,8 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Transportation simulator
-WWW=		https://www.simutrans.com/
+WWW=		https://www.simutrans.com/ \
+		https://github.com/aburch/simutrans/
 
 LICENSE=	ART10 MIT
 LICENSE_COMB=	multi

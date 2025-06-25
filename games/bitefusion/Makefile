@@ -3,7 +3,7 @@ PORTVERSION=	1.0.2
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.junoplay.com/files/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Snake game with 8 levels

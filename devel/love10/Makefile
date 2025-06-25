@@ -3,7 +3,7 @@ PORTVERSION=	0.10.2
 PORTREVISION=	5
 CATEGORIES=	devel games
 MASTER_SITES=	https://bitbucket.org/rude/love/downloads/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	10
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-src
 

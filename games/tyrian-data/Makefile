@@ -1,14 +1,13 @@
 PORTNAME=	tyrian-data
 PORTVERSION=	21
 CATEGORIES=	games
-MASTER_SITES=	http://www.camanis.net/tyrian/ \
-		http://sites.google.com/a/camanis.net/opentyrian/tyrian/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://www.camanis.net/tyrian/ \
+		https://mirror.amdmi3.ru/distfiles/
 DISTNAME=	tyrian${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Data files for opentyrian
-WWW=		https://bitbucket.org/opentyrian/opentyrian/wiki/Home
+WWW=		https://github.com/opentyrian/opentyrian
 
 # From opentyrian FAQ:
 # "Tyrian was, however, released as freeware (under no specific

@@ -3,7 +3,7 @@ PORTVERSION=	1.4.1528
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://braingames.jorito.net/goonies/downloads/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}.src_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org

@@ -3,7 +3,7 @@ PORTVERSION=	0.93.1
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/TecnoballZ/download/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Brick breaker (Arkanoid-like game)

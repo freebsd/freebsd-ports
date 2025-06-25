@@ -4,7 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Extended ncurses version of "Renshu-cho gyoretsu"
-WWW=		https://saahriktu.org/games.html \
+WWW=		https://saahriktu.ru/games.html \
 		https://github.com/Penguinum/xtgyoretsu-forked
 
 LICENSE=	GPLv3

@@ -1,7 +1,7 @@
 PORTNAME=	numlockx
 PORTVERSION=	1.2
 CATEGORIES=	x11
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
+MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/ \
 		LOCAL/ehaupt
 
 MAINTAINER=	amdmi3@FreeBSD.org

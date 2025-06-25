@@ -4,7 +4,7 @@ PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	http://games.sajthelper.com/ \
 		LOCAL/ehaupt \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 DISTNAME=	SolarConquest
 
 MAINTAINER=	amdmi3@FreeBSD.org

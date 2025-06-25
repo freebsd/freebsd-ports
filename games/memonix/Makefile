@@ -3,7 +3,7 @@ PORTVERSION=	1.6.070713
 PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://www.viewizard.com/download/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 DISTNAME=	MemonixSourceCode_${PORTVERSION:S/./_/g:S/_/./}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} memx16.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

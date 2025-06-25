@@ -2,7 +2,7 @@ PORTNAME=	osm2mp
 PORTVERSION=	r475
 PORTREVISION=	2
 CATEGORIES=	converters geography
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OpenStreetMap data into Polish map format (MP) converter

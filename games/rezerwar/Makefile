@@ -3,7 +3,7 @@ PORTVERSION=	0.4.2
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://tamentis.com/projects/rezerwar/files/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game involving organizing blocks with pipes

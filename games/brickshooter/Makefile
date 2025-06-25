@@ -3,7 +3,7 @@ PORTVERSION=	0.04
 PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://bilious.homelinux.org/~paxed/brickshooter/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Push blocks on to the playing field, match block colors to remove them

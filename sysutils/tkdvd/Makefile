@@ -3,7 +3,7 @@ PORTVERSION=	4.0.9
 PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://regis.damongeot.free.fr/tkdvd/dl/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GUI to dvd+rw-tools and cdrecord

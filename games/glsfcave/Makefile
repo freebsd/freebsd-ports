@@ -3,7 +3,7 @@ PORTVERSION=	1.0
 PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://user.ecc.u-tokyo.ac.jp/~g650192/glsfcave/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Control a ribbon to avoid hitting walls

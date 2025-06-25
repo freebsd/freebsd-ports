@@ -2,7 +2,7 @@ PORTNAME=	numptyphysics
 DISTVERSION=	0.3.r20090104
 PORTREVISION=	11
 CATEGORIES=	games
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Drawing physics-based puzzle game

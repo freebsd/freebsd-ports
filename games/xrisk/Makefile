@@ -3,7 +3,7 @@ PORTVERSION=	2.15
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://my.pages.de/pub/comp/unix/games/xrisk/old/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game for X11, much like the popular board game

@@ -3,7 +3,7 @@ PORTVERSION=	0.93
 PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://offload2.icculus.org:9090/~jcspray/GNUDoku/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free program for creating and solving Su Doku puzzles

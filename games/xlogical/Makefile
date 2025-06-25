@@ -2,7 +2,7 @@ PORTNAME=	xlogical
 DISTVERSION=	1.0-8
 CATEGORIES=	games
 MASTER_SITES=	https://changeling.ixionstudios.com/xlogical/downloads/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	aaron@baugher.biz
 COMMENT=	Remake of the classic puzzle game Logical

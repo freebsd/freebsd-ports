@@ -3,7 +3,7 @@ PORTVERSION=	2.0
 PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://games.flowix.com/files/einstein/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org

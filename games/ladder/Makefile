@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.srv.net/~kth/ \
 		ftp://ftp.42.org/pub/unix/games/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org

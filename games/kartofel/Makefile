@@ -3,7 +3,7 @@ PORTVERSION=	1.2
 PORTREVISION=	17
 CATEGORIES=	games
 MASTER_SITES=	http://kartofel.jfedor.org/downloads/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Connect the dots in order without crossing over yourself

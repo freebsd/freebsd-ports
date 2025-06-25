@@ -3,7 +3,7 @@ PORTVERSION=	0.1h
 PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SUNSITE/system/filesystems \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tries to recover lost partition tables and file systems

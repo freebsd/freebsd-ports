@@ -3,7 +3,7 @@ PORTVERSION=	0.8.2
 PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/torrent/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Score points without letting the tiles touch the top of the board

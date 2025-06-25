@@ -2,7 +2,7 @@ PORTNAME=	railroad-rampage
 PORTVERSION=	1.2
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 DISTNAME=	RailroadRampage_${PORTVERSION}_Linux
 
 MAINTAINER=	amdmi3@FreeBSD.org

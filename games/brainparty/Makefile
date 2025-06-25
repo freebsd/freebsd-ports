@@ -3,7 +3,7 @@ PORTVERSION=	0.61
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	https://launchpad.net/brainparty/trunk/${PORTVERSION}/+download/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org

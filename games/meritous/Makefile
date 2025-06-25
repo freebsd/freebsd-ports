@@ -4,7 +4,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Action-adventure dungeon crawl game
-WWW=		http://www.asceai.net/meritous/
+WWW=		https://www.asceai.net/meritous/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

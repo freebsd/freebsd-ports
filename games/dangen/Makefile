@@ -3,7 +3,7 @@ PORTVERSION=	0.5
 PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.interq.or.jp/libra/oohara/dangen/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Shoot'em up game where accurate shooting matters

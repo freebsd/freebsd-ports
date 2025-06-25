@@ -1,7 +1,7 @@
 PORTNAME=	exifprobe
 DISTVERSION=	2.0.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Probes JPEG or TIFF images and reports contents and structure

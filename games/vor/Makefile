@@ -2,7 +2,7 @@ PORTNAME=	vor
 PORTVERSION=	0.5.8
 CATEGORIES=	games
 MASTER_SITES=	https://jasonwoof.com/downloads/vor/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Dodge the rocks until you die

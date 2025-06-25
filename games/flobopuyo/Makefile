@@ -3,7 +3,7 @@ PORTVERSION=	0.20
 PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	http://www.ios-software.com/flobopuyo/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Clone of the famous PuyoPuyo

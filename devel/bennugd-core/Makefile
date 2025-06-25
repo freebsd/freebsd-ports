@@ -2,7 +2,7 @@ PORTNAME=	core
 PORTVERSION=	svn20130912
 PORTREVISION=	1
 CATEGORIES=	devel games
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 PKGNAMEPREFIX=	bennugd-
 DISTNAME=	bennugd-${PORTVERSION}
 
