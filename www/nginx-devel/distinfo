@@ -1,6 +1,6 @@
-TIMESTAMP = 1748378886
-SHA256 (nginx-1.28.0.tar.gz) = c6b5c6b086c0df9d3ca3ff5e084c1d0ef909e6038279c71c1c3e985f576ff76a
-SIZE (nginx-1.28.0.tar.gz) = 1280111
+TIMESTAMP = 1750864974
+SHA256 (nginx-1.29.0.tar.gz) = 109754dfe8e5169a7a0cf0db6718e7da2db495753308f933f161e525a579a664
+SIZE (nginx-1.29.0.tar.gz) = 1284291
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
 SIZE (nginx_mogilefs_module-1.0.4.tar.gz) = 11208
 SHA256 (osokin-ngx_http_redis-0.4.0_GH0.tar.gz) = e5b699243035575cb8ffcd26fc3a8287bcd11ff414e30fd0a52c96729fd22d0d
