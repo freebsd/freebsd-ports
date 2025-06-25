@@ -1,7 +1,6 @@
 PORTNAME=	vuls
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.32.0
-PORTREVISION=	2
+DISTVERSION=	0.33.1
 CATEGORIES=	security
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -24,6 +23,9 @@ SUB_LIST=	PORTNAME=${PORTNAME} USERS=${USERS} GROUPS=${GROUPS}
 
 USERS=		vuls
 GROUPS=		vuls
+
+NOT_FOR_ARCHS=			i386
+NOT_FOR_ARCHS_REASON_i386=	https://gitlab.com/cznic/libc/-/issues/45
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%ETCDIR%%,${ETCDIR},' \
