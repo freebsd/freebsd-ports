@@ -1,8 +1,7 @@
 PORTNAME=	lhasa
 DISTVERSION=	0.4.0
 CATEGORIES=	archivers
-MASTER_SITES=	https://soulsphere.org/projects/lhasa/ \
-		http://suyai.innolan.net/
+MASTER_SITES=	https://github.com/fragglet/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	cs@innolan.dk
 COMMENT=	Command line tool and library for parsing LHA archives
