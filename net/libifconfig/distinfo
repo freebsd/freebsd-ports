@@ -1,0 +1,17 @@
+TIMESTAMP = 1750761670
+SHA256 (libifconfig-13.3_0.tar.gz) = 7ccd7fab4f6a57d13638c82f3f848d1c08541f85f38d22d99f79125a39ac1982
+SIZE (libifconfig-13.3_0.tar.gz) = 22471
+SHA256 (libifconfig-13.4_0.tar.gz) = 33e092463f08b459cebb5b0e2238fca379409c91ad6793e3fbcc1b034cd1ade7
+SIZE (libifconfig-13.4_0.tar.gz) = 22470
+SHA256 (libifconfig-13.5_0.tar.gz) = b2bf5bd107ab75663736df3b918eed999a916fd0ed253ef7546c7633642ad934
+SIZE (libifconfig-13.5_0.tar.gz) = 22474
+SHA256 (libifconfig-14.0_0.tar.gz) = 8d2a5a9f6254479dc5f8175132bdd169699db2b36e5349ad21f9c791ab96689b
+SIZE (libifconfig-14.0_0.tar.gz) = 23706
+SHA256 (libifconfig-14.1_0.tar.gz) = c2d59622c9a9649afef8e30eb9fb825aa8cd3ec71c12160ed9f7a01c95dcabdb
+SIZE (libifconfig-14.1_0.tar.gz) = 23708
+SHA256 (libifconfig-14.2_0.tar.gz) = fbab01cf067a7c75d14adb7a5b682ab7718e0d0c2fcf03324f4e9157880c5afd
+SIZE (libifconfig-14.2_0.tar.gz) = 23709
+SHA256 (libifconfig-14.3_0.tar.gz) = 04069eacdf7ec216fad6769ab5fdc2d7e781cbb8e09f3d4356691984880f5fc7
+SIZE (libifconfig-14.3_0.tar.gz) = 23709
+SHA256 (libifconfig-b670c9bafc0e.tar.gz) = 87740e514a9c993ca4b7e1ed250df62aab766e60fd27e56e7b38dded4e835232
+SIZE (libifconfig-b670c9bafc0e.tar.gz) = 23854

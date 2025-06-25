@@ -1,0 +1,4 @@
+Ports version of the base system ifconfig(8) library, libifconfig.
+
+libifconfig is a C library that provides programmatic access to most of the
+functionality offered by ifconfig(8).
