@@ -225,8 +225,8 @@ lib/ecl-%%VERSION%%/serve-event.fas
 %%SOCKETS%%lib/ecl-%%VERSION%%/sockets.fas
 lib/libecl.so
 lib/libecl.so.%%VERSION%%
-lib/libecl.so.23
-lib/libecl.so.23.9
+lib/libecl.so.24
+lib/libecl.so.24.5
 share/man/man1/ecl-config.1.gz
 share/man/man1/ecl.1.gz
 @dir include/ecl/gc
