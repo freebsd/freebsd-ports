@@ -1,16 +1,16 @@
-PORTNAME=		go-yq
+PORTNAME=	go-yq
 DISTVERSIONPREFIX=	v
-DISTVERSION=		4.44.2
-PORTREVISION=	3
-CATEGORIES=		textproc
+DISTVERSION=	4.45.4
+CATEGORIES=	textproc
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	Portable commandline YAML processor written in go
 WWW=		https://github.com/mikefarah/yq
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.21,modules
+USES=		go:1.24,modules
 GO_MODULE=	github.com/mikefarah/yq/v4
 GO_TARGET=	.:yq
 
