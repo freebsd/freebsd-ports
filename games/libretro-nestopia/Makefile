@@ -1,24 +1,23 @@
 PORTNAME=	libretro-nestopia
-DISTVERSION=	0.20230528
+DISTVERSION=	0.20250424
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tilde@ultros.pro
 COMMENT=	NEStopia emulator for libretro
 WWW=		https://github.com/libretro/nestopia
 
 LICENSE=	GPLv2
 
 USES=		compiler:c++11-lib gmake
-USE_LDCONFIG=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	nestopia
-GH_TAGNAME=	3dcbec4682e079312d6943e1357487645ec608c7
-
-PLIST_FILES=	lib/libretro/nestopia_libretro.so
+GH_TAGNAME=	d2eefab298b0b9152d2934d6f0227b6803c877b3
+USE_LDCONFIG=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/libretro
+
+PLIST_FILES=	lib/libretro/nestopia_libretro.so
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
