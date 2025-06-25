@@ -1,12 +1,12 @@
-TIMESTAMP = 1748354421
-SHA256 (src-firefox-tor-browser-128.11.0esr-14.5-1-build3.tar.xz) = 349e0bdc52b6b150732a0483e1a1d66e47e608b2d77697112d2285751f476f53
-SIZE (src-firefox-tor-browser-128.11.0esr-14.5-1-build3.tar.xz) = 611118336
+TIMESTAMP = 1750789506
+SHA256 (src-firefox-tor-browser-128.12.0esr-14.5-1-build1.tar.xz) = d79e2760287bb86cddf99da0e73e0dd2fe54eb301958f58404deb475e61a47f8
+SIZE (src-firefox-tor-browser-128.12.0esr-14.5-1-build1.tar.xz) = 611154864
 SHA256 (manual_215922.zip) = b5ed703f54d52e9f197320f3698e936d585a3fed23cc4f9fbf59edce2869f885
 SIZE (manual_215922.zip) = 28305786
 SHA256 (fonts-3--4348e1.tar.zst) = 7fbbecece6de777f196982f6eb567970a6d8e7ac2bf5b1ad6b90e1ea36374032
 SIZE (fonts-3--4348e1.tar.zst) = 27441580
-SHA256 (noscript-13.0.6.xpi) = 85066ef24c44cc839b2d6bbe4d3d08652c8e09f06515e1b86ee72ba26c406989
-SIZE (noscript-13.0.6.xpi) = 992587
+SHA256 (noscript-13.0.8.xpi) = 9d978cfe083cb9cce120b5ee41e8933d752d7ab4680bf517c5ec4b29c4cfd2dc
+SIZE (noscript-13.0.8.xpi) = 993143
 SHA256 (tpo-translation-90dbac96420394aa35ce29385814742ac4942b26_GL0.tar.gz) = dd720795ebd4a335e522fc48956e81b1ba62580aae33d99997ecdaf6866a3537
 SIZE (tpo-translation-90dbac96420394aa35ce29385814742ac4942b26_GL0.tar.gz) = 793166
 SHA256 (tpo-translation-9cbc3b3d25d2c5c77f1b6b3172ba6bcad2563939_GL0.tar.gz) = 033bd5bb2e4e2f852d3a711c4e652a389f32974fe0304a969f518680d849a32c
