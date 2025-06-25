@@ -10,8 +10,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast compression utility
 WWW=		http://www.compressconsult.com/szip/
 
-NO_WRKSUBDIR=	yes
+LICENSE=	SZ
+LICENSE_NAME=	Szip License
+LICENSE_FILE=	${WRKSRC}/readme.txt
+LICENSE_PERMS=	auto-accept
+
 MAKEFILE=	makefile
+
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*.txt
