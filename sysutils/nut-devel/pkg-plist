@@ -85,6 +85,7 @@ lib/libnutscan.so.4.0.0
 %%SERIAL%%libexec/nut/dummy-ups
 %%SERIAL%%libexec/nut/etapro
 %%SERIAL%%libexec/nut/everups
+%%USB%%libexec/nut/failover
 %%SERIAL%%libexec/nut/gamatronic
 %%SERIAL%%libexec/nut/genericups
 %%SERIAL%%libexec/nut/isbmex
@@ -106,6 +107,7 @@ lib/libnutscan.so.4.0.0
 %%SERIAL%%libexec/nut/powercom
 %%PDU%%libexec/nut/powerman-pdu
 %%SERIAL%%libexec/nut/powerpanel
+%%USB%%libexec/nut/powervar_cx_usb
 %%SERIAL%%libexec/nut/rhino
 %%USB%%libexec/nut/richcomm_usb
 %%SERIAL%%libexec/nut/safenet
@@ -219,12 +221,12 @@ lib/libnutscan.so.4.0.0
 %%MANPAGES%%share/man/man5/upsd.users.5.gz
 %%MANPAGES%%share/man/man5/upsmon.conf.5.gz
 %%MANPAGES%%share/man/man5/upssched.conf.5.gz
+%%MANPAGES%%share/man/man7/nut.7.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/al175.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/apcupsd-ups.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/blazer_ser.8.gz
 %%MANPAGES%%%%USB%%share/man/man8/blazer_usb.8.gz
 %%MANPAGES%%%%NEON%%share/man/man8/netxml-ups.8.gz
-%%MANPAGES%%share/man/man8/nut-driver-enumerator.8.gz
 %%MANPAGES%%share/man/man8/nut-recorder.8.gz
 %%MANPAGES%%share/man/man8/nut-scanner.8.gz
 %%MANPAGES%%share/man/man8/nutconf.8.gz
@@ -232,6 +234,7 @@ lib/libnutscan.so.4.0.0
 %%MANPAGES%%%%USB%%share/man/man8/nutdrv_qx.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/nutdrv_siemens_sitop.8.gz
 %%MANPAGES%%share/man/man8/nutupsdrv.8.gz
+%%MANPAGES%%%%USB%%share/man/man8/powervar_cx_usb.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/riello_ser.8.gz
 %%MANPAGES%%%%USB%%share/man/man8/riello_usb.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/sms_ser.8.gz
@@ -245,7 +248,6 @@ lib/libnutscan.so.4.0.0
 %%MANPAGES%%share/man/man8/upscmd.8.gz
 %%MANPAGES%%share/man/man8/upsd.8.gz
 %%MANPAGES%%share/man/man8/upsdrvctl.8.gz
-%%MANPAGES%%share/man/man8/upsdrvsvcctl.8.gz
 %%MANPAGES%%share/man/man8/upslog.8.gz
 %%MANPAGES%%share/man/man8/upsmon.8.gz
 %%MANPAGES%%share/man/man8/upsrw.8.gz
@@ -304,7 +306,6 @@ lib/libnutscan.so.4.0.0
 %%MANPAGES%%%%IPMIPSU%%share/man/man8/nut-ipmipsu.8.gz
 %%MANPAGES%%%%PDU%%share/man/man8/powerman-pdu.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/ve-direct.8.gz
-
 sbin/upsd
 sbin/upsdrvctl
 sbin/upsmon
