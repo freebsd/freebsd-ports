@@ -1,0 +1,8 @@
+--- picojson-config.cmake.in.orig	2025-06-03 19:41:13 UTC
++++ picojson-config.cmake.in
+@@ -0,0 +1,5 @@
++@PACKAGE_INIT@
++
++include("${CMAKE_CURRENT_LIST_DIR}/picojson-targets.cmake")
++
++check_required_components(picojson)

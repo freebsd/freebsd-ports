@@ -1,4 +1,8 @@
 include/picojson.h
+lib/cmake/picojson/picojson-config-version.cmake
+lib/cmake/picojson/picojson-config.cmake
+lib/cmake/picojson/picojson-targets.cmake
+libdata/pkgconfig/picojson.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/github-issues.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iostream.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/streaming.cc

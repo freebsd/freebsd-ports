@@ -1,0 +1,10 @@
+--- picojson.pc.in.orig	2025-06-03 19:41:23 UTC
++++ picojson.pc.in
+@@ -0,0 +1,7 @@
++prefix=@prefix@
++includedir=@includedir@
++
++Name: picojson
++Description: Tiny JSON parser / serializer for C++
++Version: @version@
++Cflags: -I${includedir}
