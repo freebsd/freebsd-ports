@@ -282,6 +282,7 @@
     SUBDIR += lasso
     SUBDIR += lastpass-cli
     SUBDIR += lego
+    SUBDIR += lfacme
     SUBDIR += libaegis
     SUBDIR += libargon2
     SUBDIR += libassuan

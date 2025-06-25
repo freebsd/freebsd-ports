@@ -311,6 +311,7 @@
     SUBDIR += pnp
     SUBDIR += pnp-icinga2
     SUBDIR += portmon
+    SUBDIR += prometheus-bird-exporter
     SUBDIR += prometheus-collectd-exporter
     SUBDIR += prometheus1
     SUBDIR += prometheus2
