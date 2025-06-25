@@ -1487,6 +1487,7 @@
     SUBDIR += py-beaker
     SUBDIR += py-beautifulsoup
     SUBDIR += py-betamax
+    SUBDIR += py-binarycookies
     SUBDIR += py-biscuits
     SUBDIR += py-bjoern
     SUBDIR += py-bleach

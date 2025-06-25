@@ -1,0 +1,6 @@
+Python library and command-line tool for reading and writing binary
+cookies files used by Apple's Safari web browser on macOS and iOS.
+
+The `bcparser' program supports three output types: JSON (default),
+ASCII (line-by-line text format), and Netscape legacy `cookies.txt'
+format used by popular tools such as curl, wget, yt-dlp, and others.
