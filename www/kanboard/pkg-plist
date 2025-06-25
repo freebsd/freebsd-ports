@@ -1,5 +1,6 @@
 %%WWWDIR%%/.devcontainer/devcontainer.json
 %%WWWDIR%%/.htaccess
+%%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/ChangeLog
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/app/.htaccess
@@ -524,6 +525,7 @@
 %%WWWDIR%%/app/Model/ActionParameterModel.php
 %%WWWDIR%%/app/Model/AvatarFileModel.php
 %%WWWDIR%%/app/Model/BoardModel.php
+%%WWWDIR%%/app/Model/CaptchaModel.php
 %%WWWDIR%%/app/Model/CategoryModel.php
 %%WWWDIR%%/app/Model/ColorModel.php
 %%WWWDIR%%/app/Model/ColumnModel.php
@@ -1071,9 +1073,13 @@
 %%WWWDIR%%/custom-hooks/post-checkout
 %%WWWDIR%%/data/.htaccess
 %%WWWDIR%%/data/web.config
+%%WWWDIR%%/docker-compose.mysql.yml
+%%WWWDIR%%/docker-compose.postgres.yml
+%%WWWDIR%%/docker-compose.sqlite.yml
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/index.php
 %%WWWDIR%%/jsonrpc.php
+%%WWWDIR%%/healthcheck.php
 %%WWWDIR%%/libs/Captcha/CaptchaBuilder.php
 %%WWWDIR%%/libs/Captcha/CaptchaBuilderInterface.php
 %%WWWDIR%%/libs/Captcha/Font/captcha0.ttf
