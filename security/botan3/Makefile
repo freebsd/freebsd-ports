@@ -1,5 +1,5 @@
 PORTNAME=	botan
-DISTVERSION=	3.7.1
+DISTVERSION=	3.8.1
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	${_BOTANMAJOR}
@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/asio.hpp:devel/boost-libs
 
-USES=		compiler:c++20-lang cpe gmake llvm shebangfix tar:xz # llvm fixes build failure, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=279136
+USES=		compiler:c++20-lang cpe gmake shebangfix tar:xz
+
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 
@@ -37,7 +38,7 @@ LDFLAGS+=		-pthread
 
 DOCSDIR=	${LOCALBASE}/share/doc/${PORTNAME}-${PORTVERSION}
 
-_SOABIVER=	7
+_SOABIVER=	8
 _BOTANMAJOR=	${DISTVERSION:S/./ /g:[1]}
 _SHLIBVER=	${DISTVERSION:S/./ /g:[2]}
 _SHLIBVERPATCH=	${DISTVERSION:S/./ /g:[3]}
@@ -47,9 +48,11 @@ PLIST_SUB=	SHLIBVER=${_SHLIBVER} \
 		BOTANMAJOR=${_BOTANMAJOR}
 PORTDOCS=	*
 
-OPTIONS_DEFINE=			DOCS MANPAGES PYTHON SQLITE3
+OPTIONS_DEFINE=			DOCS LLVM_FROM_PORTS MANPAGES PYTHON SQLITE3
 OPTIONS_DEFAULT=		MANPAGES
 OPTIONS_SUB=			yes
+
+LLVM_FROM_PORTS_DESC=		Use LLVM from ports to build
 
 MANPAGES_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}furo>=2022.6.21:textproc/py-furo@${PY_FLAVOR}
@@ -65,6 +68,15 @@ SQLITE3_CONFIGURE_WITH=	sqlite3
 
 .include <bsd.port.options.mk>
 
+# llvm from ports fixes build failure, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=279136
+.if ${OPSYS} == FreeBSD && \
+	((${OSVERSION} >= 1500000) || \
+	${PORT_OPTIONS:MLLVM_FROM_PORTS})
+USES+=	llvm
+USES:=	${USES:Ncompiler\:*} # XXX avoid warnings
+CHOSEN_COMPILER_TYPE=	clang
+.endif
+
 .if ${ARCH} == aarch64
 CONFIGURE_ARGS+=	--cc-abi="-march=armv8-a+crypto"
 .elif ${ARCH:Mpowerpc64*}
@@ -72,12 +84,6 @@ CONFIGURE_ARGS+=	--cpu="ppc64"
 .if !defined(MACHINE_CPU) || (defined(MACHINE_CPU) && !${MACHINE_ABI:Mvsx2})
 CONFIGURE_ARGS+=	--disable-powercrypto
 .endif
-.endif
-
-.if ${ARCH} == i386 || ${ARCH} == amd64
-PLIST_SUB+=	HAS_RDRAND_RNG=""
-.else
-PLIST_SUB+=	HAS_RDRAND_RNG="@comment "
 .endif
 
 .if ${ARCH} == i386 || ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
