@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-04-10 21:43:33 UTC
++++ pyproject.toml
+@@ -6,7 +6,7 @@ authors = [
+ authors = [
+   {name = "khal contributors", email = "khal@lostpackets.de"},
+ ]
+-license = {file = "LICENSE"}
++license = { file = "doc/source/license.rst" }
+ classifiers = [
+   "Development Status :: 4 - Beta",
+   "Environment :: Console :: Curses",
+@@ -67,7 +67,7 @@ ikhal = "khal.cli:main_ikhal"
+ ikhal = "khal.cli:main_ikhal"
+ 
+ [build-system]
+-requires = ["setuptools>=64", "setuptools_scm>=8"]
++requires = ["setuptools>=63", "setuptools_scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools.packages]
