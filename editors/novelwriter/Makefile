@@ -1,6 +1,6 @@
 PORTNAME=	novelwriter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.3
+DISTVERSION=	2.7.2
 CATEGORIES=	editors python
 MASTER_SITES=	PYPI
 
@@ -18,9 +18,9 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python pyqt:5
-USE_PYQT=	pyqt5
-USE_PYTHON=	pep517 concurrent autoplist
+USES=		python pyqt:6
+USE_PYQT=	pyqt6
+USE_PYTHON=	pep517 autoplist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vkbo
