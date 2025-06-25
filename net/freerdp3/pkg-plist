@@ -58,6 +58,7 @@ include/freerdp%%MAJORVERSION%%/freerdp/client/printer.h
 include/freerdp%%MAJORVERSION%%/freerdp/client/rail.h
 include/freerdp%%MAJORVERSION%%/freerdp/client/rdpei.h
 include/freerdp%%MAJORVERSION%%/freerdp/client/rdpgfx.h
+include/freerdp%%MAJORVERSION%%/freerdp/client/rdpdr.h
 include/freerdp%%MAJORVERSION%%/freerdp/client/rdpsnd.h
 include/freerdp%%MAJORVERSION%%/freerdp/client/remdesk.h
 include/freerdp%%MAJORVERSION%%/freerdp/client/sshagent.h
@@ -160,6 +161,7 @@ include/freerdp%%MAJORVERSION%%/freerdp/settings_types.h
 include/freerdp%%MAJORVERSION%%/freerdp/settings_types_private.h
 include/freerdp%%MAJORVERSION%%/freerdp/svc.h
 include/freerdp%%MAJORVERSION%%/freerdp/streamdump.h
+include/freerdp%%MAJORVERSION%%/freerdp/timer.h
 include/freerdp%%MAJORVERSION%%/freerdp/transport_io.h
 include/freerdp%%MAJORVERSION%%/freerdp/types.h
 include/freerdp%%MAJORVERSION%%/freerdp/update.h

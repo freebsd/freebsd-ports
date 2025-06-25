@@ -1,15 +1,24 @@
 PORTNAME=	freerdp
-DISTVERSION=	3.15.0
-PORTREVISION=	1
+DISTVERSION=	3.16.0
 CATEGORIES=	net comms
-MASTER_SITES=	https://pub.freerdp.com/releases/ \
-		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
+MASTER_SITES+=	https://pub.freerdp.com/releases/:freerdp \
+		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/:freerdp
 PKGNAMESUFFIX=	3
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}:freerdp
 
 PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
-# Fix realm usage for Heimdal: https://bugs.freebsd.org/286816
-PATCHFILES+=	8c2be5fd53501c129042ec8205ca2ff1bae90cda.patch:-p1
-PATCHFILES+=	374707d4fa609e5434f2166b5c11df655f6ff952.patch:-p1
+PATCHFILES=	281b9245966f019a8aa0271a73acd8da8104baa9.patch:-p1 \
+		6f03b25f8ec9320d10b3f3163543f8b6dd9ebc0c.patch:-p1 \
+		5d32afcdd0b780d95b77c6005d1b79482884cd46.patch:-p1 \
+		40c988e2da289e83081421942685a1a248f46603.patch:-p1 \
+		8e38600298310bc74271fd99aca74c2d5a2d071c.patch:-p1 \
+		4dc6091fde72a25dadcfed1f76c455cc9c3bf093.patch:-p1 \
+		bee5edeb315336102f738a26a9bcff5b4d9ff03c.patch:-p1 \
+		59bfe47ef7c0fa596edad0716aaf28782d9e857a.patch:-p1 \
+		419ad81aa78d31394c8e8b8452b40ef842f48730.patch:-p1 \
+		a86e3dc53c5cf4ba6879a4571b0610dddd224fbf.patch:-p1 \
+		daeec1f98d69516fe52276608a750de3b3146d4e.patch:-p1 \
+		efd89c035481088c5b352222fbeb0bfc69ac75fe.patch:-p1
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
@@ -26,6 +35,8 @@ USES=		alias cmake compiler:c++11-lib cpe desktop-file-utils \
 BROKEN_SSL=	libressl-devel
 BROKEN_SSL_REASON_libressl-devel=	fails to compile: no member named 'alert_dispatch' in 'struct ssl3_state_st'
 
+USE_GITHUB=	nodefault
+GH_TUPLE=	akallabeth:webview:2a0a130:webview/../.build/_deps/webview-src
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xext
 
@@ -48,28 +59,27 @@ PLIST_SUB+=	MAJORVERSION="${DISTVERSION:R:R}"
 OPTIONS_DEFINE=			ALSA BROKENFOCUS CUPS FAAC FAAD FDKAAC FFMPEG \
 				GSM ICU JPEG LAME MANPAGES OPENH264 OPUS PCSC \
 				PKCS11 PULSEAUDIO RDPECAM SDL2 SDL3 SOXR \
-				URIPARSER WAYLAND X11
+				URIPARSER WAYLAND WEBVIEW X11
 OPTIONS_DEFINE_aarch64=		SIMD
 OPTIONS_DEFINE_amd64=		SIMD
 OPTIONS_DEFINE_armv7=		SIMD
 OPTIONS_DEFINE_i386=		SIMD
 OPTIONS_DEFAULT=		AAD CUPS FFMPEG GSSAPI_HEIMDAL ICU JSON_C \
 				KEYBOARD_LAYOUT MANPAGES RDPECAM SDL2 SDL3 \
-				SWSCALE TIMEZONE_FILE WAYLAND WEBKIT X11
+				SWSCALE TIMEZONE_FILE WAYLAND WEBVIEW X11
 OPTIONS_DEFAULT_aarch64=	SIMD
 OPTIONS_DEFAULT_amd64=		SIMD
 OPTIONS_DEFAULT_armv7=		SIMD
 OPTIONS_GROUP=			CLIPBOARD_IMAGE REQUIRE_JSON
 OPTIONS_GROUP_CLIPBOARD_IMAGE=	JPEG_CB PNG WEBP
 OPTIONS_GROUP_REQUIRE_JSON=	AAD KEYBOARD_LAYOUT TIMEZONE_FILE
-OPTIONS_RADIO=			GSSAPI JSON SCALE WEBVIEW
+OPTIONS_RADIO=			GSSAPI JSON SCALE
 OPTIONS_RADIO_GSSAPI=		GSSAPI_HEIMDAL GSSAPI_MIT
 OPTIONS_RADIO_JSON=		CJSON JSON_C
 OPTIONS_RADIO_SCALE=		CAIRO SWSCALE
-OPTIONS_RADIO_WEBVIEW=		WEBENGINE WEBKIT
 OPTIONS_SUB=			yes
 
-AAD_DESC=		Compile with support for Azure AD authentication (require SDL)
+AAD_DESC=		Compile with support for Azure AD authentication (require SDL and WEBVIEW)
 BROKENFOCUS_DESC=	Work around focus bug in some WMs (PR \#254908)
 CAIRO_DESC=		Use CAIRO image library for screen resizing
 CJSON_DESC=		${JSON_DESC} via cJSON
@@ -91,7 +101,7 @@ WAYLAND_DESC=		Build FreeRDP Wayland client
 WEBVIEW_DESC=		Build with WebView support for AAD login popup browser
 X11_DESC=		Build FreeRDP X11 client
 
-AAD_IMPLIES=		SDL3
+AAD_IMPLIES=		SDL3 WEBVIEW
 AAD_CMAKE_BOOL=		WITH_AAD
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -175,6 +185,7 @@ RDPECAM_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l \
 			libv4lconvert.so:multimedia/libv4l
 RDPECAM_CMAKE_BOOL=	CHANNEL_RDPECAM_CLIENT
 
+SDL2_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 SDL2_USES=		sdl
 SDL2_USE=		sdl=sdl2,ttf2,image2
 SDL2_CMAKE_BOOL=	WITH_CLIENT_SDL2 WITH_SDL_IMAGE_DIALOGS
@@ -207,21 +218,16 @@ WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 WAYLAND_RUN_DEPENDS=	wayland-scanner:graphics/wayland
 WAYLAND_CMAKE_BOOL=	WITH_WAYLAND
 
-_WEBENGINE_USES=	qt:5
-WEBENGINE_USE_QT=	core declarative gui location network printsupport \
-			webchannel webengine widgets buildtools:build qmake:build
-WEBENGINE_CMAKE_BOOL=	WITH_WEBVIEW_QT
-WEBENGINE_CMAKE_ON=	-DWITH_WEBVIEW:BOOL=ON
-
-_WEBKIT_LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
-			libharfbuzz.so:print/harfbuzz \
-			libwebkit2gtk-4.1.so:www/webkit2-gtk@41
-_WEBKIT_USES=		gettext gnome
-WEBKIT_USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 pango
-WEBKIT_CMAKE_ON=	-DWITH_WEBVIEW:BOOL=ON
-
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_CMAKE_BOOL=	WINPR_UTILS_IMAGE_WEBP
+
+WEBVIEW_LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
+			libharfbuzz.so:print/harfbuzz \
+			libwebkitgtk-6.0.so:www/webkit2-gtk@60 \
+			libgraphene-1.0.so:graphics/graphene
+WEBVIEW_USES=		gnome
+WEBVIEW_USE=		gnome=cairo,gdkpixbuf,glib20,gtk40,pango
+WEBVIEW_CMAKE_BOOL=	WITH_WEBVIEW
 
 X11_USE=		xorg=xcursor,xfixes,xi,xinerama,xkbfile,xorgproto,xrandr,xrender,xv
 X11_CMAKE_ON=		-DWITH_X11:BOOL=ON -DWITH_XCURSOR:BOOL=ON \
@@ -233,21 +239,6 @@ X11_CMAKE_ON=		-DWITH_X11:BOOL=ON -DWITH_XCURSOR:BOOL=ON \
 X11_CMAKE_OFF=		-DWITH_X11:BOOL=OFF -DWITH_XKBFILE:BOOL=OFF
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAAD}
-.  if ${PORT_OPTIONS:MWEBENGINE}
-USES+=		${_WEBENGINE_USES}
-USE_QT+=	${WEBENGINE_USE_QT}
-.  elif ${PORT_OPTIONS:MWEBKIT}
-LIB_DEPENDS+=	${_WEBKIT_LIB_DEPENDS}
-USES+=		${_WEBKIT_USES}
-USE_GNOME+=	${WEBKIT_USE_GNOME}
-.  else
-CMAKE_OFF+=	WITH_WEBVIEW
-.  endif
-.else
-CMAKE_OFF+=	WITH_WEBVIEW
-.endif
 
 .if ${PORT_OPTIONS:MGSSAPI_HEIMDAL} || ${PORT_OPTIONS:MGSSAPI_MIT}
 CMAKE_ON+=	WITH_KRB5
