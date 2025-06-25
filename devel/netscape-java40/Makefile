@@ -13,6 +13,9 @@ LICENSE_NAME=	Netscape
 LICENSE_FILE=	${WRKSRC}/License
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror auto-accept
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=2025-07-31
+
 USES=	java
 
 NO_BUILD=	yes
