@@ -1,5 +1,5 @@
 PORTNAME=	gevent
-PORTVERSION=	24.2.1
+PORTVERSION=	25.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,15 +16,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	c-ares>=1.15.0:dns/c-ares \
 		libev>=4.31:devel/libev \
 		libuv>=1.34.0:devel/libuv \
-		${PYTHON_PKGNAMEPREFIX}cffi>=1.12.3:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}greenlet>=3.0.3:devel/py-greenlet@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cffi>=1.17.1:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}greenlet>=3.2.2:devel/py-greenlet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=40.8.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libev.so:devel/libev \
 		libuv.so:devel/libuv
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.12.3:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}greenlet>=3.0.3:devel/py-greenlet@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.17.1:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}greenlet>=3.2.2:devel/py-greenlet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.event>=0:devel/py-zope.event@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
@@ -40,6 +40,7 @@ TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/deps \
 			--no-same-owner --no-same-permissions
 .else
+post-patch:
 	@${RM} -r ${WRKSRC}/deps/
 .endif
 
