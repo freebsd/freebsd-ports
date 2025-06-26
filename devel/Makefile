@@ -4818,6 +4818,7 @@
     SUBDIR += py-django-rq
     SUBDIR += py-dm-tree
     SUBDIR += py-docformatter
+    SUBDIR += py-dockerfile-parse
     SUBDIR += py-dockerpty
     SUBDIR += py-docopt
     SUBDIR += py-doctest-ignore-unicode
