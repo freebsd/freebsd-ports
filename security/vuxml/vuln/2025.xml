@@ -1,3 +1,162 @@
+  <vuln vid="5e64770c-52aa-11f0-b522-b42e991fc52e">
+    <topic>MongoDB -- Running certain aggregation operations with the SBE engine may lead to unexpected behavior</topic>
+    <affects>
+      <package>
+	<name>mongodb60</name>
+	<range><lt>6.0.21</lt></range>
+      </package>
+      <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.17</lt></range>
+      </package>
+      <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cna@mongodb.com reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-106746">
+	  <p>An authenticated user may trigger a use after free that may result
+	in MongoDB Server crash and other unexpected behavior, even if the
+	user does not have authorization to shut down a server.  The crash
+	is triggered on affected versions by issuing an aggregation framework
+	operation using a specific combination of rarely-used aggregation
+	pipeline expressions.  This issue affects MongoDB Server v6.0 version
+	prior to 6.0.21, MongoDB Server v7.0 version prior to 7.0.17 and
+	MongoDB Server v8.0 version prior to 8.0.4 when the SBE engine is
+	enabled.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6706</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6706</url>
+    </references>
+    <dates>
+      <discovery>2025-06-26</discovery>
+      <entry>2025-06-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5cd2bd2b-52aa-11f0-b522-b42e991fc52e">
+    <topic>MongoDB -- Race condition in privilege cache invalidation cycle</topic>
+    <affects>
+      <package>
+	<name>mongodb50</name>
+	<range><lt>5.0.31</lt></range>
+      </package>
+      <package>
+	<name>mongodb60</name>
+	<range><lt>6.0.24</lt></range>
+      </package>
+      <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.21</lt></range>
+      </package>
+      <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2025-6707">
+	  <p>Under certain conditions, an authenticated user request
+	    may execute with stale privileges following an intentional
+	    change by an authorized administrator.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6707</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6707</url>
+    </references>
+    <dates>
+      <discovery>2025-06-26</discovery>
+      <entry>2025-06-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5b87eef6-52aa-11f0-b522-b42e991fc52e">
+    <topic>MongoDB -- Pre-Authentication Denial of Service Vulnerability in MongoDB Server&apos;s OIDC Authentication</topic>
+    <affects>
+      <package>
+	<name>mongodb60</name>
+	<range><lt>6.0.21</lt></range>
+      </package>
+      <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.17</lt></range>
+      </package>
+      <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2025-6709">
+	  <p>The MongoDB Server is susceptible to a denial of service
+	    vulnerability due to improper handling of specific date
+	    values in JSON input when using OIDC authentication.
+	    This can be reproduced using the mongo shell to send a
+	    malicious JSON payload leading to an invariant failure
+	    and server crash. </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6709</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6709</url>
+    </references>
+    <dates>
+      <discovery>2025-06-26</discovery>
+      <entry>2025-06-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="59ed4b19-52aa-11f0-b522-b42e991fc52e">
+    <topic>MongoDB -- Pre-authentication Denial of Service Stack Overflow Vulnerability in JSON Parsing via Excessive Recursion in MongoDB</topic>
+    <affects>
+      <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.17</lt></range>
+      </package>
+      <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cna@mongodb.com reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-106749">
+	  <p>MongoDB Server may be susceptible to stack overflow due to JSON
+	parsing mechanism, where specifically crafted JSON inputs may induce
+	unwarranted levels of recursion, resulting in excessive stack space
+	consumption.  Such inputs can lead to a stack overflow that causes
+	the server to crash which could occur pre-authorisation.  This issue
+	affects MongoDB Server v7.0 versions prior to 7.0.17 and MongoDB
+	Server v8.0 versions prior to 8.0.5.
+	The same issue affects MongoDB Server v6.0 versions prior to 6.0.21,
+	but an attacker can only induce denial of service after authenticating.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6710</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6710</url>
+    </references>
+    <dates>
+      <discovery>2025-06-26</discovery>
+      <entry>2025-06-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e26608ff-5266-11f0-b522-b42e991fc52e">
     <topic>kanboard -- Password Reset Poisoning via Host Header Injection</topic>
     <affects>
