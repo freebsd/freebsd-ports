@@ -8,7 +8,7 @@ https://github.com/openssl/openssl/commit/65787e2dc219685c30539c6f60eb6b64b890bf
  # define BROKEN_CLANG_ATOMICS
  #endif
  
-+#if defined(__FreeBSD__) && (defined(__i386__) || (defined(__powerpc) && defined(__ILP32__)))
++#if defined(__FreeBSD__) && (defined(__i386__) || (defined(__powerpc__) && defined(__ILP32__)))
 +#define BROKEN_CLANG_ATOMICS
 +#endif
 +
