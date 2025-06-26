@@ -1,0 +1,37 @@
+- Allow setting cf_time (reproducible builds)
+- ?
+- ?
+
+--- Configure.orig	2025-06-24 16:19:16 UTC
++++ Configure
+@@ -3917,7 +3917,10 @@ esac
+ . ./posthint.sh
+ 
+ : who configured the system
+-cf_time=`LC_ALL=C; LANGUAGE=C; export LC_ALL; export LANGUAGE; $date 2>&1`
++case "$cf_time" in
++"")
++	cf_time=`LC_ALL=C; LANGUAGE=C; export LC_ALL; export LANGUAGE; $date 2>&1` ;;
++esac
+ case "$cf_by" in
+ "")
+ 	cf_by=`(logname) 2>/dev/null`
+@@ -5045,7 +5048,7 @@ do
+ : Now check and see which directories actually exist, avoiding duplicates
+ for xxx in $dlist
+ do
+-    if $test -d $xxx; then
++    if $test -d $xxx || [ $xxx = $prefix/lib ]; then
+ 		case " $libpth " in
+ 		*" $xxx "*) ;;
+ 		*) libpth="$libpth $xxx";;
+@@ -9599,8 +9602,7 @@ case "$sitescript" in
+ 
+ : determine where add-on public executable scripts go
+ case "$sitescript" in
+-'')	dflt=$siteprefix/script
+-	$test -d $dflt || dflt=$sitebin ;;
++'')	dflt=$sitebin ;;
+ *)  dflt="$sitescript" ;;
+ esac
+ fn=d~+
