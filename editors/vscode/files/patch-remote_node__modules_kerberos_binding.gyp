@@ -1,4 +1,4 @@
---- remote/node_modules/kerberos/binding.gyp.orig	2025-06-12 22:38:39 UTC
+--- remote/node_modules/kerberos/binding.gyp.orig	2025-06-26 20:01:28 UTC
 +++ remote/node_modules/kerberos/binding.gyp
 @@ -54,14 +54,14 @@
              ]
@@ -17,7 +17,7 @@
            'link_settings': {
              'libraries': [
                '-lkrb5',
-@@ -78,7 +78,7 @@
+@@ -78,11 +78,21 @@
              }]
            ]
          }],
@@ -26,3 +26,17 @@
            'defines': ['KERBEROS_USE_RTLD=1'],
            'link_settings': {
              'libraries': [
+               '-ldl',
++            ]
++          },
++        }],
++        ['OS=="freebsd"', {
++          'include_dirs+': [
++            '<!(pkg-config krb5 --cflags-only-I | sed -E "s/(-I *|-isystem *)//g")',
++          ],
++          'link_settings': {
++            'library_dirs': [
++              '<!(pkg-config krb5 --libs-only-L | sed -e "s/-L//g")',
+             ]
+           },
+         }],

@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.101.1
-PORTREVISION=	1
+DISTVERSION=	1.101.2
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
@@ -69,7 +68,7 @@ USES=		desktop-file-utils gl gmake gnome gssapi:mit iconv:wchar_t \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	18e3a1ec544e6907be1e944a94c496e302073435
+SOURCE_COMMIT_HASH=	2901c5ac6db8a986a5666c3af51ff804d05af0d4
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
