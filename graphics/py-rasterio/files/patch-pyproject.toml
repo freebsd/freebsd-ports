@@ -9,7 +9,7 @@
 -    "cython~=3.0.2",
 -    "numpy>=2.0.0,<3.0; python_version >= '3.9'",
 -    "oldest-supported-numpy; python_version < '3.9'"
-+    "cython",
++    "cython>=3.0.2",
 +    "numpy",
  ]
  
