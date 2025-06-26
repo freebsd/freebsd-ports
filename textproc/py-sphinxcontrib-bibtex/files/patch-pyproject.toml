@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-06-17 06:41:26 UTC
++++ pyproject.toml
+@@ -5,7 +5,7 @@ version = "2.6.4"
+ [project]
+ name = "sphinxcontrib-bibtex"
+ version = "2.6.4"
+-license = "BSD-2-Clause"
++license = { text = "BSD-2-Clause" }
+ description = "Sphinx extension for BibTeX style citations."
+ readme = "README.rst"
+ requires-python = ">=3.9"
