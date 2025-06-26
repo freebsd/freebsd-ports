@@ -1,3 +1,40 @@
+  <vuln vid="d45dabd9-5232-11f0-9ca4-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.1.0</ge><lt>18.1.1</lt></range>
+	<range><ge>18.0.0</ge><lt>18.0.3</lt></range>
+	<range><ge>16.10.0</ge><lt>17.11.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/06/25/patch-release-gitlab-18-1-1-released/">
+	  <p>Denial of Service impacts GitLab CE/EE</p>
+	  <p>Missing Authentication issue impacts GitLab CE/EE</p>
+	  <p>Improper access control issue impacts GitLab CE/EE</p>
+	  <p>Elevation of Privilege impacts GitLab CE/EE</p>
+	  <p>Improper access control issue impacts GitLab EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3279</cvename>
+      <cvename>CVE-2025-1754</cvename>
+      <cvename>CVE-2025-5315</cvename>
+      <cvename>CVE-2025-2938</cvename>
+      <cvename>CVE-2025-5846</cvename>
+      <url>https://about.gitlab.com/releases/2025/06/25/patch-release-gitlab-18-1-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-06-25</discovery>
+      <entry>2025-06-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="03ba1cdd-4faf-11f0-af06-00a098b42aeb">
     <topic>cisco -- OpenH264 Decoding Functions Heap Overflow Vulnerability</topic>
     <affects>
