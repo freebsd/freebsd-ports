@@ -14,4 +14,6 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Support \
 		Horde_Translation
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
