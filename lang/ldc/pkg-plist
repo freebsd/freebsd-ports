@@ -52,6 +52,8 @@ include/d/core/internal/elf/io.d
 include/d/core/internal/entrypoint.d
 include/d/core/internal/execinfo.d
 include/d/core/internal/gc/bits.d
+include/d/core/internal/gc/blkcache.d
+include/d/core/internal/gc/blockmeta.d
 include/d/core/internal/gc/impl/conservative/gc.d
 include/d/core/internal/gc/impl/manual/gc.d
 include/d/core/internal/gc/impl/proto/gc.d
@@ -352,6 +354,7 @@ include/d/core/sys/windows/aclapi.d
 include/d/core/sys/windows/aclui.d
 include/d/core/sys/windows/basetsd.d
 include/d/core/sys/windows/basetyps.d
+include/d/core/sys/windows/bcrypt.d
 include/d/core/sys/windows/cderr.d
 include/d/core/sys/windows/cguid.d
 include/d/core/sys/windows/com.d
@@ -516,7 +519,8 @@ include/d/core/sys/windows/winver.d
 include/d/core/sys/windows/wtsapi32.d
 include/d/core/sys/windows/wtypes.d
 include/d/core/thread/context.d
-include/d/core/thread/fiber.d
+include/d/core/thread/fiber/base.d
+include/d/core/thread/fiber/package.d
 include/d/core/thread/osthread.d
 include/d/core/thread/package.d
 include/d/core/thread/threadbase.d
@@ -526,6 +530,9 @@ include/d/core/time.d
 include/d/core/vararg.d
 include/d/core/volatile.d
 include/d/etc/c/curl.d
+include/d/etc/c/odbc/odbc32.d
+include/d/etc/c/odbc/odbc64.d
+include/d/etc/c/odbc/package.d
 include/d/etc/c/odbc/sql.d
 include/d/etc/c/odbc/sqlext.d
 include/d/etc/c/odbc/sqltypes.d
@@ -538,6 +545,7 @@ include/d/importc.h
 include/d/ldc/asan.d
 include/d/ldc/attributes.d
 include/d/ldc/dcompute.d
+include/d/ldc/dynamic_compile.d
 include/d/ldc/eh_msvc.d
 include/d/ldc/gccbuiltins_aarch64.di
 include/d/ldc/gccbuiltins_amdgcn.di
@@ -661,6 +669,7 @@ include/d/std/internal/unicode_grapheme.d
 include/d/std/internal/unicode_norm.d
 include/d/std/internal/unicode_tables.d
 include/d/std/internal/windows/advapi32.d
+include/d/std/internal/windows/bcrypt.d
 include/d/std/json.d
 include/d/std/logger/core.d
 include/d/std/logger/filelogger.d
@@ -723,22 +732,26 @@ include/d/std/zip.d
 include/d/std/zlib.d
 lib/ldc_rt.dso.o
 lib/libdruntime-ldc-debug-shared.so
-lib/libdruntime-ldc-debug-shared.so.110
-lib/libdruntime-ldc-debug-shared.so.110.0
+lib/libdruntime-ldc-debug-shared.so.111
+lib/libdruntime-ldc-debug-shared.so.111.0
 lib/libdruntime-ldc-debug.a
 lib/libdruntime-ldc-lto.a
 lib/libdruntime-ldc-shared.so
-lib/libdruntime-ldc-shared.so.110
-lib/libdruntime-ldc-shared.so.110.0
+lib/libdruntime-ldc-shared.so.111
+lib/libdruntime-ldc-shared.so.111.0
 lib/libdruntime-ldc.a
+lib/libldc-jit-rt.a
+lib/libldc-jit.so
+lib/libldc-jit.so.111
+lib/libldc-jit.so.111.0
 lib/libphobos2-ldc-debug-shared.so
-lib/libphobos2-ldc-debug-shared.so.110
-lib/libphobos2-ldc-debug-shared.so.110.0
+lib/libphobos2-ldc-debug-shared.so.111
+lib/libphobos2-ldc-debug-shared.so.111.0
 lib/libphobos2-ldc-debug.a
 lib/libphobos2-ldc-lto.a
 lib/libphobos2-ldc-shared.so
-lib/libphobos2-ldc-shared.so.110
-lib/libphobos2-ldc-shared.so.110.0
+lib/libphobos2-ldc-shared.so.111
+lib/libphobos2-ldc-shared.so.111.0
 lib/libphobos2-ldc.a
 @dir include/d/etc/c/zlib/doc
 @dir include/d/etc/c/zlib/test
