@@ -18,4 +18,3 @@ share/man/man1/h2load.1.gz
 share/man/man1/nghttp.1.gz
 share/man/man1/nghttpd.1.gz
 share/man/man1/nghttpx.1.gz
-%%DATADIR%%/fetch-ocsp-response
