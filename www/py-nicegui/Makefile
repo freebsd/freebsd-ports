@@ -1,5 +1,5 @@
 PORTNAME=	nicegui
-DISTVERSION=	2.18.0
+DISTVERSION=	2.20.0
 CATEGORIES=	www graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,7 +35,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiofiles>=0:devel/py-aiofiles@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvicorn>=0:www/py-uvicorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vbuild>=0:textproc/py-vbuild@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wait-for2>=0:devel/py-wait-for2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}watchfiles>=0:devel/py-watchfiles@${PY_FLAVOR}
 
 USES=		python shebangfix
