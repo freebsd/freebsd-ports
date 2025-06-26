@@ -3,8 +3,8 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		async-trait-0.1.88 \
 		autocfg-1.4.0 \
 		bitflags-2.9.1 \
-		bumpalo-3.17.0 \
-		cfg-if-1.0.0 \
+		bumpalo-3.18.1 \
+		cfg-if-1.0.1 \
 		concurrent-queue-2.5.0 \
 		crossbeam-utils-0.8.21 \
 		dashmap-6.1.0 \
@@ -18,37 +18,37 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		itoa-1.0.15 \
 		js-sys-0.3.77 \
 		libc-0.2.172 \
-		lock_api-0.4.12 \
+		lock_api-0.4.13 \
 		log-0.4.27 \
-		memchr-2.7.4 \
+		memchr-2.7.5 \
 		memoffset-0.9.1 \
 		once_cell-1.21.3 \
 		parking-2.2.1 \
-		parking_lot_core-0.9.10 \
+		parking_lot_core-0.9.11 \
 		pin-project-lite-0.2.16 \
-		portable-atomic-1.11.0 \
+		portable-atomic-1.11.1 \
 		proc-macro2-1.0.95 \
-		pyo3-0.25.0 \
-		pyo3-build-config-0.25.0 \
-		pyo3-ffi-0.25.0 \
-		pyo3-macros-0.25.0 \
-		pyo3-macros-backend-0.25.0 \
+		pyo3-0.25.1 \
+		pyo3-build-config-0.25.1 \
+		pyo3-ffi-0.25.1 \
+		pyo3-macros-0.25.1 \
+		pyo3-macros-backend-0.25.1 \
 		quote-1.0.40 \
-		redox_syscall-0.5.12 \
+		redox_syscall-0.5.13 \
 		ryu-1.0.20 \
 		scopeguard-1.2.0 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
 		serde_json-1.0.140 \
 		smallstr-0.3.0 \
-		smallvec-1.15.0 \
-		syn-2.0.101 \
+		smallvec-1.15.1 \
+		syn-2.0.103 \
 		target-lexicon-0.13.2 \
 		thiserror-2.0.12 \
 		thiserror-impl-2.0.12 \
 		unicode-ident-1.0.18 \
 		unindent-0.2.4 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.100 \
 		wasm-bindgen-backend-0.2.100 \
 		wasm-bindgen-macro-0.2.100 \
