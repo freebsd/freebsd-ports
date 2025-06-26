@@ -1,0 +1,6 @@
+Provides (roughly) the same functionality as Net_DNS, but using modern PHP
+objects, exceptions for error handling, better sockets support.
+
+This release is (in most cases) 2x - 10x faster than Net_DNS, as well as
+includes more RR's (including DNSSEC RR's), and improved sockets and streams
+support.
