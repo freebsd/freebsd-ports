@@ -1,0 +1,5 @@
+pytest-relaxed provides 'relaxed' test discovery for pytest.
+
+It is the spiritual successor to spec, but is built for pytest instead of
+nosetests, and rethinks some aspects of the design (such as increased ability to
+opt-in to various behaviors.)
