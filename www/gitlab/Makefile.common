@@ -1,4 +1,4 @@
-GITLAB_VERSION=		18.1.0
+GITLAB_VERSION=		18.1.1
 GITLAB_PORTREVISION=	0
 
 # Git version gitaly should use (from gitlab mirror)
