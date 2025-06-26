@@ -1,0 +1,101 @@
+Obtained from:	https://gitlab.com/petsc/petsc/-/commit/87b0c9e1f4d83439f081eddd06cf19f419b1e4f9
+
+--- conf/cyautodoc.py.orig	2025-01-29 22:17:46 UTC
++++ conf/cyautodoc.py
+@@ -24,8 +24,9 @@ class ExpressionWriter(BaseExpressionWriter):
+             self.visit(node.index)
+         self.put(']')
+ 
+-    def visit_UnicodeNode(self, node):
+-        self.emit_string(node, '')
++    if hasattr(BaseExpressionWriter, 'emit_string'):
++        def visit_UnicodeNode(self, node):
++            self.emit_string(node, '')
+ 
+ 
+ class AnnotationWriter(ExpressionWriter, BaseAnnotationWriter):
+--- src/petsc4py/PETSc/petscdm.pxi.orig	2025-01-29 22:17:46 UTC
++++ src/petsc4py/PETSc/petscdm.pxi
+@@ -236,9 +236,12 @@ cdef inline PetscInt asBoundary(object boundary,
+                                 PetscDMBoundaryType *_z) except -1:
+     cdef PetscInt dim = 0
+     cdef object x=None, y=None, z=None
++    # Use `type(0)` instead of `int` to workaround
++    # Cython 3.1 failing to interpret `int` as a type
++    cdef type pyint = type(0)
+     if boundary is None or \
+        isinstance(boundary, str) or \
+-       isinstance(boundary, int):
++       isinstance(boundary, pyint):
+         _x[0] = _y[0] = _z[0] = asBoundaryType(boundary)
+     else:
+         _x[0] = _y[0] = _z[0] = DM_BOUNDARY_NONE
+--- src/petsc4py/PETSc/petscis.pxi.orig	2025-01-29 22:17:46 UTC
++++ src/petsc4py/PETSc/petscis.pxi
+@@ -181,28 +181,6 @@ cdef class _IS_buffer:
+     def __exit__(self, *exc):
+         return self.exit()
+ 
+-    # buffer interface (legacy)
+-
+-    cdef Py_ssize_t getbuffer(self, void **p) except -1:
+-        cdef PetscInt n = 0
+-        if p != NULL:
+-            self.acquire()
+-            p[0] = <void*>self.data
+-            n = self.size
+-        elif self.iset != NULL:
+-            CHKERR(ISGetLocalSize(self.iset, &n))
+-        return <Py_ssize_t>(<size_t>n*sizeof(PetscInt))
+-
+-    def __getsegcount__(self, Py_ssize_t *lenp):
+-        if lenp != NULL:
+-            lenp[0] = self.getbuffer(NULL)
+-        return 1
+-
+-    def __getreadbuffer__(self, Py_ssize_t idx, void **p):
+-        if idx != 0: raise SystemError(
+-            "accessing non-existent buffer segment")
+-        return self.getbuffer(p)
+-
+     # NumPy array interface (legacy)
+ 
+     property __array_interface__:
+--- src/petsc4py/PETSc/petscvec.pxi.orig	2025-01-29 22:17:46 UTC
++++ src/petsc4py/PETSc/petscvec.pxi
+@@ -573,35 +573,6 @@ cdef class _Vec_buffer:
+     def __exit__(self, *exc):
+         return self.exit()
+ 
+-    # buffer interface (legacy)
+-
+-    cdef Py_ssize_t getbuffer(self, void **p) except -1:
+-        cdef PetscInt n = 0
+-        if p != NULL:
+-            self.acquire()
+-            p[0] = <void*>self.data
+-            n = self.size
+-        elif self.vec != NULL:
+-            CHKERR(VecGetLocalSize(self.vec, &n))
+-        return <Py_ssize_t>(<size_t>n*sizeof(PetscScalar))
+-
+-    def __getsegcount__(self, Py_ssize_t *lenp):
+-        if lenp != NULL:
+-            lenp[0] = self.getbuffer(NULL)
+-        return 1
+-
+-    def __getreadbuffer__(self, Py_ssize_t idx, void **p):
+-        if idx != 0: raise SystemError(
+-            "accessing non-existent buffer segment")
+-        return self.getbuffer(p)
+-
+-    def __getwritebuffer__(self, Py_ssize_t idx, void **p):
+-        if idx != 0: raise SystemError(
+-            "accessing non-existent buffer segment")
+-        if self.readonly: raise TypeError(
+-            "Object is not writable.")
+-        return self.getbuffer(p)
+-
+     # NumPy array interface (legacy)
+ 
+     property __array_interface__:
