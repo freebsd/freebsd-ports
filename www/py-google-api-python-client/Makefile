@@ -1,5 +1,5 @@
 PORTNAME=	google-api-python-client
-DISTVERSION=	2.173.0
+DISTVERSION=	2.174.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,8 +24,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.31.5:www/py-google-api-c
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0.19.0:www/py-httplib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parameterized>=0.8.1:devel/py-parameterized@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uritemplate>=3.0.1:net/py-uritemplate@${PY_FLAVOR}
-# We don't want to use Pytest plugins, for example devel/py-ruff, if available in the system
-TEST_ENV=	PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 
 USES=		pytest python
 USE_PYTHON=	autoplist distutils pytest
@@ -34,6 +32,9 @@ USE_PYTHON=	autoplist distutils pytest
 PYTEST_IGNORED_TESTS=	test_universe_env_var_configured_with_mtls \
 			test_client_options_universe_configured_with_mtls \
 			test_tests_should_be_run_with_strict_positional_enforcement
+
+# We don't want to use Pytest plugins, for example devel/py-ruff, if available in the system
+TEST_ENV=	PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 
 NO_ARCH=	yes
 
