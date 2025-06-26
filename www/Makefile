@@ -1563,6 +1563,7 @@
     SUBDIR += py-dj52-django-redis
     SUBDIR += py-dj52-django-rich
     SUBDIR += py-dj52-django-storages
+    SUBDIR += py-dj52-django-stubs-ext
     SUBDIR += py-dj52-django-tables2
     SUBDIR += py-dj52-django-taggit
     SUBDIR += py-dj52-django-timezone-field
