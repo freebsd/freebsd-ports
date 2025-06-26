@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-semantic-conventions
-PORTVERSION=	0.55b0
+PORTVERSION=	0.55b1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.34.0<1.34.0_99:devel/py-opentelemetry-api@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.34.${PORTVERSION:C|.*b||}<1.34.${PORTVERSION:C|.*b||}_99:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.5.0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python
