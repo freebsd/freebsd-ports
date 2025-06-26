@@ -14,6 +14,8 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Stream \
 		Horde_Util
 
+NO_ARCH=	yes
+
 OPTIONS_DEFAULT=	IMAP MBSTRING SASL
 OPTIONS_DEFINE=		IMAP MBSTRING SASL
 IMAP_DESC=	Require PHP imap extension
