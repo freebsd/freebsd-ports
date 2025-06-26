@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# PROVIDE: ntfy
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for ntfy in /etc/rc.conf
+#
+# ntfy_enable (bool):    Enable ntfy. (default=NO)
+# ntfy_log (str):        Log output. (default=/var/log/ntfy.log)
+# ntfy_runas (str):      User to run ntfy as. (default=www)
+#
+
+. /etc/rc.subr
+
+name="ntfy"
+desc="Send push notifications to your phone or desktop using PUT/POST"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${ntfy_enable:="NO"}
+: ${ntfy_log:="/var/log/ntfy.log"}
+: ${ntfy_runas:="www"}
+: ${ntfy_args="--listen-http :8080"}
+
+pidfile="/var/run/${name}.pid"
+procname="%%LOCALBASE%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-c -u '${ntfy_runas}' -p '${pidfile}' -t '${desc}' -o '${ntfy_log}' '${procname}' serve ${ntfy_args}"
+
+run_rc_command "$1"

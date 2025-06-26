@@ -21,6 +21,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dschep
 USE_PYTHON=	distutils noflavors autoplist
 
+CONFLICTS_INSTALL=	sysutils/go-ntfy
+
 NO_ARCH=	yes
 
 post-patch:
