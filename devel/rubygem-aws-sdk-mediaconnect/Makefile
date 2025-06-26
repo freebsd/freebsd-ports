@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-mediaconnect
-PORTVERSION=	1.81.0
+PORTVERSION=	1.82.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
