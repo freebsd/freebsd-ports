@@ -11,4 +11,6 @@ USE_PHP=	dom
 
 USE_HORDE_RUN=	Horde_Exception
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
