@@ -140,7 +140,7 @@ lib/dunecontrol/dune-common/dune.module
 lib/dunemodules.lib
 lib/libdunecommon.so
 libdata/pkgconfig/dune-common.pc
-%%DOCS%%share/man/man1/dunecontrol.1.gz
+%%MANPAGES%%share/man/man1/dunecontrol.1.gz
 share/bash-completion/completions/dunecontrol
 %%DATADIR%%/config.h.cmake
 %%DOCS%%%%DATADIR%%/doc/doxygen/Doxystyle

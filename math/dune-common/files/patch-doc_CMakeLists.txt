@@ -1,0 +1,12 @@
+--- doc/CMakeLists.txt.orig	2025-06-26 07:51:35 UTC
++++ doc/CMakeLists.txt
+@@ -1,5 +1,9 @@
++if (FREEBSD_INSTALL_DOCS)
+ add_subdirectory("doxygen")
+ add_subdirectory("buildsystem")
+ add_subdirectory("comm")
++endif()
++if (FREEBSD_INSTALL_MANPAGES)
+ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dunecontrol.1
+   DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
++endif()
