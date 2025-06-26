@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2025-03-26 21:47:52 UTC
+--- pyproject.toml.orig	2024-09-13 23:33:55 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
 -requires = ["setuptools>=67.8", "cython~=3.0.2"]
-+requires = ["setuptools", "cython~=3.0.2"]
++requires = ["setuptools", "cython>=3.0.2"]
  build-backend = "setuptools.build_meta"
  
  [project]
