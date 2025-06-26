@@ -1,5 +1,5 @@
---- cargo-crates/libgit2-sys-0.18.1+1.9.0/Cargo.toml.orig	1970-01-01 00:00:01 UTC
-+++ cargo-crates/libgit2-sys-0.18.1+1.9.0/Cargo.toml
+--- cargo-crates/libgit2-sys-0.18.2+1.9.1/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/libgit2-sys-0.18.2+1.9.1/Cargo.toml
 @@ -40,7 +40,6 @@ vendored = []
  https = ["openssl-sys"]
  ssh = ["libssh2-sys"]
