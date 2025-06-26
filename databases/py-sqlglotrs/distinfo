@@ -1,6 +1,6 @@
-TIMESTAMP = 1749813032
-SHA256 (sqlglotrs-0.5.0.tar.gz) = f89edc06e8bb95064f1ce96eb1dedc70c589e21a2ece106a7eb9dc9ca9620127
-SIZE (sqlglotrs-0.5.0.tar.gz) = 15390
+TIMESTAMP = 1750188054
+SHA256 (sqlglotrs-0.6.1.tar.gz) = f638a7a544698ade8b0c992c8c67feae17bd5c2c760114ab164bd0b7dc8911e1
+SIZE (sqlglotrs-0.6.1.tar.gz) = 15420
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
 SIZE (rust/crates/aho-corasick-1.1.3.crate) = 183311
 SHA256 (rust/crates/anes-0.1.6.crate) = 4b46cbb362ab8752921c97e041f5e366ee6297bd428a31275b9fcf1e380f7299
