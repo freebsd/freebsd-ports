@@ -5,6 +5,7 @@ include/cpr/async_wrapper.h
 include/cpr/auth.h
 include/cpr/bearer.h
 include/cpr/body.h
+include/cpr/body_view.h
 include/cpr/buffer.h
 include/cpr/callback.h
 include/cpr/cert_info.h
@@ -37,6 +38,7 @@ include/cpr/redirect.h
 include/cpr/reserve_size.h
 include/cpr/resolve.h
 include/cpr/response.h
+include/cpr/secure_string.h
 include/cpr/session.h
 include/cpr/singleton.h
 include/cpr/ssl_ctx.h
@@ -54,5 +56,4 @@ lib/cmake/cpr/cprTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cpr/cprTargets.cmake
 lib/libcpr.so
 lib/libcpr.so.1
-lib/libcpr.so.1.11.1
-@comment lib/libcpr.so.%%PORTVERSION%%
+lib/libcpr.so.%%PORTVERSION%%
