@@ -9,4 +9,6 @@ WWW=		https://pear.horde.org
 USES=		horde php cpe
 USE_PHP=	dom
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
