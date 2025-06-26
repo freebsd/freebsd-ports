@@ -12,6 +12,8 @@ WWW=		https://github.com/pola-rs/polars
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		error: implicit autoref creates a reference to the dereference of a raw pointer
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.3.2:devel/py-maturin@${PY_FLAVOR} \
 		rust-nightly>0:lang/rust-nightly
 LIB_DEPENDS=	libzstd.so:archivers/zstd
