@@ -3,7 +3,7 @@ DISTVERSION=	35.0.0
 PORTREVISION=	6
 CATEGORIES=	sysutils
 
-MAINTAINER=	dutra@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal JSON viewer
 WWW=		https://github.com/antonmedv/fx
 
