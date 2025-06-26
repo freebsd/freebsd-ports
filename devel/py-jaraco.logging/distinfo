@@ -1,3 +1,3 @@
-TIMESTAMP = 1703495809
-SHA256 (jaraco.logging-3.3.0.tar.gz) = f4a7cfbacb86a834c2886c01a3b52bc4cde2728c1d9717c49d4dce1d6248f07b
-SIZE (jaraco.logging-3.3.0.tar.gz) = 9082
+TIMESTAMP = 1750188072
+SHA256 (jaraco_logging-3.4.0.tar.gz) = e7d6dc8368477ce69eb1d6ed851d805896a1ca942ce3fd1773580311b0b775fb
+SIZE (jaraco_logging-3.4.0.tar.gz) = 10368
