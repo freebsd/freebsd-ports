@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-transcribeservice
-PORTVERSION=	1.120.0
+PORTVERSION=	1.121.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
