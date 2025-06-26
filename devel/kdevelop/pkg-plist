@@ -577,7 +577,7 @@ share/icons/hicolor/16x16/apps/github-private.png
 share/icons/hicolor/16x16/apps/github-repo.png
 share/icons/hicolor/16x16/apps/kdevelop.png
 share/icons/hicolor/16x16/apps/kdevgh.png
-share/icons/hicolor/16x16/apps/subversion.png
+@comment share/icons/hicolor/16x16/apps/subversion.png
 share/icons/hicolor/22x22/actions/breakpoint.png
 share/icons/hicolor/256x256/apps/kdevelop.png
 share/icons/hicolor/32x32/actions/breakpoint.png
