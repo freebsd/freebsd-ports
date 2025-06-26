@@ -1,5 +1,5 @@
 PORTNAME=	afm
-PORTVERSION=	0.2.2
+PORTVERSION=	1.0.0
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
@@ -9,8 +9,8 @@ WWW=		https://github.com/halfbyte/afm
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
-
 USES=		gem
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
