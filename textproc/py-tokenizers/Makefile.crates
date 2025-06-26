@@ -1,120 +1,125 @@
-CARGO_CRATES=	aho-corasick-1.1.3 \
+CARGO_CRATES=	ahash-0.8.12 \
+		aho-corasick-1.1.3 \
 		anstream-0.6.18 \
 		anstyle-1.0.10 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
-		anstyle-wincon-3.0.6 \
+		anstyle-wincon-3.0.8 \
 		autocfg-1.4.0 \
 		base64-0.13.1 \
-		bitflags-1.3.2 \
-		bitflags-2.6.0 \
-		bumpalo-3.16.0 \
-		byteorder-1.5.0 \
-		cc-1.2.6 \
+		bitflags-2.9.1 \
+		bumpalo-3.17.0 \
+		castaway-0.2.3 \
+		cc-1.2.24 \
 		cfg-if-1.0.0 \
 		colorchoice-1.0.3 \
-		console-0.15.10 \
+		compact_str-0.9.0 \
+		console-0.15.11 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
-		darling-0.20.10 \
-		darling_core-0.20.10 \
-		darling_macro-0.20.10 \
+		darling-0.20.11 \
+		darling_core-0.20.11 \
+		darling_macro-0.20.11 \
+		dary_heap-0.3.7 \
 		derive_builder-0.20.2 \
 		derive_builder_core-0.20.2 \
 		derive_builder_macro-0.20.2 \
-		either-1.13.0 \
+		either-1.15.0 \
 		encode_unicode-1.0.0 \
 		env_filter-0.1.3 \
-		env_logger-0.11.6 \
-		errno-0.3.10 \
+		env_logger-0.11.8 \
+		errno-0.3.12 \
 		esaxx-rs-0.1.10 \
 		fastrand-2.3.0 \
 		fnv-1.0.7 \
-		getrandom-0.2.15 \
+		getrandom-0.3.3 \
 		heck-0.5.0 \
-		humantime-2.1.0 \
 		ident_case-1.0.1 \
-		indicatif-0.17.9 \
-		indoc-2.0.5 \
+		indicatif-0.17.11 \
+		indoc-2.0.6 \
 		is_terminal_polyfill-1.70.1 \
-		itertools-0.11.0 \
-		itertools-0.12.1 \
-		itertools-0.13.0 \
-		itoa-1.0.14 \
-		js-sys-0.3.76 \
-		lazy_static-1.5.0 \
-		libc-0.2.169 \
-		linux-raw-sys-0.4.14 \
-		log-0.4.22 \
+		itertools-0.14.0 \
+		itoa-1.0.15 \
+		jiff-0.2.14 \
+		jiff-static-0.2.14 \
+		js-sys-0.3.77 \
+		libc-0.2.172 \
+		linux-raw-sys-0.9.4 \
+		log-0.4.27 \
 		macro_rules_attribute-0.2.0 \
 		macro_rules_attribute-proc_macro-0.2.0 \
-		matrixmultiply-0.3.9 \
+		matrixmultiply-0.3.10 \
 		memchr-2.7.4 \
 		memoffset-0.9.1 \
 		minimal-lexical-0.2.1 \
-		monostate-0.1.13 \
-		monostate-impl-0.1.13 \
+		monostate-0.1.14 \
+		monostate-impl-0.1.14 \
 		ndarray-0.16.1 \
 		nom-7.1.3 \
 		num-complex-0.4.6 \
 		num-integer-0.1.46 \
 		num-traits-0.2.19 \
 		number_prefix-0.4.0 \
-		numpy-0.23.0 \
-		once_cell-1.20.2 \
-		onig-6.4.0 \
-		onig_sys-69.8.1 \
+		numpy-0.25.0 \
+		once_cell-1.21.3 \
+		once_cell_polyfill-1.70.1 \
+		onig-6.5.1 \
+		onig_sys-69.9.1 \
 		paste-1.0.15 \
-		pkg-config-0.3.31 \
-		portable-atomic-1.10.0 \
+		pkg-config-0.3.32 \
+		portable-atomic-1.11.0 \
 		portable-atomic-util-0.2.4 \
-		ppv-lite86-0.2.20 \
-		proc-macro2-1.0.92 \
-		pyo3-0.23.5 \
-		pyo3-build-config-0.23.5 \
-		pyo3-ffi-0.23.5 \
-		pyo3-macros-0.23.5 \
-		pyo3-macros-backend-0.23.5 \
-		quote-1.0.38 \
-		rand-0.8.5 \
-		rand_chacha-0.3.1 \
-		rand_core-0.6.4 \
+		ppv-lite86-0.2.21 \
+		proc-macro2-1.0.95 \
+		pyo3-0.25.1 \
+		pyo3-build-config-0.25.1 \
+		pyo3-ffi-0.25.1 \
+		pyo3-macros-0.25.1 \
+		pyo3-macros-backend-0.25.1 \
+		quote-1.0.40 \
+		r-efi-5.2.0 \
+		rand-0.9.1 \
+		rand_chacha-0.9.0 \
+		rand_core-0.9.3 \
 		rawpointer-0.2.1 \
 		rayon-1.10.0 \
-		rayon-cond-0.3.0 \
+		rayon-cond-0.4.0 \
 		rayon-core-1.12.1 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		rustc-hash-2.1.0 \
-		rustix-0.38.42 \
-		ryu-1.0.18 \
-		serde-1.0.217 \
-		serde_derive-1.0.217 \
-		serde_json-1.0.134 \
+		rustc-hash-2.1.1 \
+		rustix-1.0.7 \
+		rustversion-1.0.21 \
+		ryu-1.0.20 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
+		serde_json-1.0.140 \
 		shlex-1.3.0 \
-		smallvec-1.13.2 \
+		smallvec-1.15.0 \
 		spm_precompiled-0.1.4 \
+		static_assertions-1.1.0 \
 		strsim-0.11.1 \
-		syn-2.0.93 \
-		target-lexicon-0.12.16 \
-		tempfile-3.14.0 \
-		thiserror-2.0.9 \
-		thiserror-impl-2.0.9 \
-		unicode-ident-1.0.14 \
+		syn-2.0.101 \
+		target-lexicon-0.13.2 \
+		tempfile-3.20.0 \
+		thiserror-2.0.12 \
+		thiserror-impl-2.0.12 \
+		unicode-ident-1.0.18 \
 		unicode-normalization-alignments-0.1.12 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.2.0 \
 		unicode_categories-0.1.1 \
-		unindent-0.2.3 \
+		unindent-0.2.4 \
 		utf8parse-0.2.2 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.99 \
-		wasm-bindgen-backend-0.2.99 \
-		wasm-bindgen-macro-0.2.99 \
-		wasm-bindgen-macro-support-0.2.99 \
-		wasm-bindgen-shared-0.2.99 \
+		version_check-0.9.5 \
+		wasi-0.14.2+wasi-0.2.4 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
 		web-time-1.1.0 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
@@ -126,5 +131,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		zerocopy-0.7.35 \
-		zerocopy-derive-0.7.35
+		wit-bindgen-rt-0.39.0 \
+		zerocopy-0.8.25 \
+		zerocopy-derive-0.8.25
