@@ -1,0 +1,37 @@
+--- meson.build.orig	2025-06-20 09:28:47.000000000 -0700
++++ meson.build	2025-07-09 21:04:32.714884000 -0700
+@@ -59,7 +59,7 @@
+ # Meson is annoying with its opinionated alteration of certain paths based on whether prefix is default or not.
+ # So we revert what it does.
+ if PREFIX == '/usr/local'
+-    LOCALSTATEDIR = 'var'    # Otherwise, it would have been 'var/local'.
++    LOCALSTATEDIR = '/var'    # Otherwise, it would have been 'var/local'.
+ endif
+ 
+ DATABASE_SCRIPTS_DIR = TOP_BUILD_DIR / 'src/share/database/scripts'
+@@ -69,10 +69,10 @@
+ KEA_ADMIN_INSTALLED = PREFIX / SBINDIR / 'kea-admin'
+ KEA_LFC_BUILT = TOP_BUILD_DIR / 'src/bin/lfc/kea-lfc'
+ KEA_LFC_INSTALLED = PREFIX / SBINDIR / 'kea-lfc'
+-LOCALSTATEDIR_INSTALLED = PREFIX / LOCALSTATEDIR
++LOCALSTATEDIR_INSTALLED = LOCALSTATEDIR
+ LIBDIR_INSTALLED = PREFIX / LIBDIR
+ LOGDIR = LOCALSTATEDIR / 'log/kea'
+-LOGDIR_INSTALLED = PREFIX / LOGDIR
++LOGDIR_INSTALLED = LOGDIR
+ if RUNSTATEDIR == ''
+     RUNSTATEDIR = LOCALSTATEDIR / 'run/kea'
+ else
+@@ -88,9 +88,9 @@
+ # So we revert what it does.
+ if PREFIX == '/usr/local'
+     SYSCONFDIR_INSTALLED = '/usr/local/etc'
+-    LOGDIR_INSTALLED = '/usr/local/var/log/kea'
+-    RUNSTATEDIR_INSTALLED = '/usr/local/var/run/kea'
+-    SHAREDSTATEDIR_INSTALLED = '/usr/local/var/lib/kea'
++    LOGDIR_INSTALLED = '/var/log/kea'
++    RUNSTATEDIR_INSTALLED = '/var/run/kea'
++    SHAREDSTATEDIR_INSTALLED = '/var/lib/kea'
+ endif
+ 
+ #### Build Options
