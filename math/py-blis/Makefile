@@ -1,5 +1,6 @@
 PORTNAME=	blis
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
 		https://github.com/explosion/cython-blis/releases/download/release-v${PORTVERSION}/
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.19.3,1<3.0.0,1:math/py-numpy@${PY
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.19.0,1<3.0.0,1:math/py-numpy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent cython pep517
+USE_PYTHON=	autoplist concurrent cython3 pep517
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
