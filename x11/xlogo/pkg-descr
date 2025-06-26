@@ -1,1 +1,3 @@
-This package contains xlogo, which displays the X Window System logo.
+The xlogo program simply displays the X Window System logo, without
+the use of any turtles.
+Xlogo accepts all of the standard X Toolkit command line options.
