@@ -3,9 +3,10 @@ DISTVERSION=	35.0.0
 PORTREVISION=	6
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Terminal JSON viewer
-WWW=		https://github.com/antonmedv/fx
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Terminal JSON viewer and processor
+WWW=		https://fx.wtf/ \
+		https://github.com/antonmedv/fx
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
