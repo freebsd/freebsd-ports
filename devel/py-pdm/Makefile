@@ -1,5 +1,5 @@
 PORTNAME=	pdm
-PORTVERSION=	2.24.2
+PORTVERSION=	2.25.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,9 +24,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.20<1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}id>=1.5.0:devel/py-id@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}installer>=0.7<0.8:devel/py-installer@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msgpack>=1.0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=20.9:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pbs-installer>=2024.4.18:devel/py-pbs-installer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pbs-installer>=2025.6.6:devel/py-pbs-installer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproject-hooks>=0:devel/py-pyproject-hooks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=0.15:www/py-python-dotenv@${PY_FLAVOR} \
@@ -43,15 +42,17 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	COOKIECUTTER COPIER KEYRING
-OPTIONS_DEFAULT=KEYRING
+OPTIONS_DEFINE=	COOKIECUTTER COPIER KEYRING MSGPACK
+OPTIONS_DEFAULT=KEYRING MSGPACK
 COOKIECUTTER_DESC=	Use cookiecutter to generate project
 COPIER_DESC=		Use copier to generate project
 KEYRING_DESC=		Use keyring to save credentials
+MSGPACK_DESC=		Use msgpack to process serializer
 
 COOKIECUTTER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cookiecutter>=0:devel/py-cookiecutter@${PY_FLAVOR} \
 COPIER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}copier>=8.0.0:devel/py-copier@${PY_FLAVOR} \
 KEYRING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyring>=0,1:security/py-keyring@${PY_FLAVOR} \
+MSGPACK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0:devel/py-msgpack@${PY_FLAVOR} \
 
 .include <bsd.port.pre.mk>
 
