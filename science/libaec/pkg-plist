@@ -1,11 +1,13 @@
-cmake/libaec-config-version.cmake
-cmake/libaec-config.cmake
 include/libaec.h
 include/szlib.h
+lib/cmake/libaec/libaec-config-version.cmake
+lib/cmake/libaec/libaec-config.cmake
+lib/cmake/libaec/libaec-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libaec/libaec-targets.cmake
 lib/libaec.a
 lib/libaec.so
 lib/libaec.so.0
-lib/libaec.so.0.1.3
+lib/libaec.so.0.1.4
 lib/libsz.a
 lib/libsz.so
 lib/libsz.so.2

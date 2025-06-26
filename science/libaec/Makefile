@@ -1,5 +1,5 @@
 PORTNAME=	libaec
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/MathisRosenhauer/libaec/releases/download/v${PORTVERSION}/
 
@@ -13,7 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cmake:testing
 
-CMAKE_OFF=	AEC_FUZZING BUILD_TESTING
+CMAKE_OFF=	AEC_FUZZING \
+		BUILD_TESTING
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		BUILD_STATIC_LIBS \
+		libaec_INCLUDE_PACKAGING
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
