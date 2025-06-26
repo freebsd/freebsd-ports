@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2024-06-20 17:09:56 UTC
+--- pyproject.toml.orig	2025-06-19 14:14:08 UTC
 +++ pyproject.toml
 @@ -2,7 +2,7 @@ requires = [
  requires = [
@@ -9,3 +9,12 @@
  ]
  build-backend = "setuptools.build_meta"
  
+@@ -15,7 +15,7 @@ maintainers = [{ name = "Blosc Development Team", emai
+ readme = "README.rst"
+ authors = [{name = "David M. Cooke, Francesc Alted, and others", email = "blosc@blosc.org"}]
+ maintainers = [{ name = "Blosc Development Team", email = "blosc@blosc.org"}]
+-license = "MIT"
++license = {text = "MIT"}
+ classifiers = [
+     "Development Status :: 6 - Mature",
+     "Intended Audience :: Developers",
