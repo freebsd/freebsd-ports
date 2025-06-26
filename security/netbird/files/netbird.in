@@ -16,8 +16,8 @@
 #				Default: 'info'
 # netbird_logfile (path):	Path to the client log file.
 #				Default: /var/log/netbird/client.log
-# netbird_env (str):		Extra environment variables for the daemon, in KEY=VALUE format.
-#				Default: 'IS_DAEMON=1'
+# netbird_tun_dev (str):	Name of the TUN device used by Netbird for its VPN tunnel.
+#				Default: wt0
 #
 
 . /etc/rc.subr
@@ -32,11 +32,33 @@ load_rc_config "$name"
 : ${netbird_socket:="/var/run/netbird.sock"}
 : ${netbird_loglevel:="info"}
 : ${netbird_logfile:="/var/log/netbird/client.log"}
-: ${netbird_env:="IS_DAEMON=1"}
+: ${netbird_tun_dev:="wt0"}
 
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 daemon_args="-P ${pidfile} -r -t \"${name}: daemon\""
 command_args="${daemon_args} %%PREFIX%%/bin/netbird service run --config ${netbird_config} --log-level ${netbird_loglevel} --daemon-addr unix://${netbird_socket} --log-file ${netbird_logfile}"
+start_precmd="${name}_start_precmd"
+stop_postcmd="${name}_stop_postcmd"
+
+netbird_start_precmd() {
+    logger -s -t netbird "Starting ${name}."
+    # Check for orphaned netbird tunnel interface
+    # And if it exists, then destroy it
+    if /sbin/ifconfig ${netbird_tun_dev} >/dev/null 2>&1; then
+        if ! /sbin/ifconfig ${netbird_tun_dev} | fgrep -qw PID; then
+            logger -s -t netbird "Found orphaned tunnel interface ${netbird_tun_dev}, destroying"
+            /sbin/ifconfig ${netbird_tun_dev} destroy
+        fi
+    fi
+}
+
+netbird_stop_postcmd() {
+    if /sbin/ifconfig ${netbird_tun_dev} >/dev/null 2>&1; then
+        logger -s -t netbird "Destroying tunnel interface ${netbird_tun_dev}"
+        /sbin/ifconfig ${netbird_tun_dev} destroy || \
+            logger -s -t netbird "Failed to destroy interface ${netbird_tun_dev}"
+    fi
+}
 
 run_rc_command "$1"
