@@ -8,4 +8,6 @@ WWW=		https://pear.horde.org
 
 USES=	horde cpe
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
