@@ -1,6 +1,6 @@
 PORTNAME=	gamescope
 DISTVERSION=	3.13.8
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
