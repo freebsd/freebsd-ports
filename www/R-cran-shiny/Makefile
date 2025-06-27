@@ -1,5 +1,5 @@
 PORTNAME=	shiny
-PORTVERSION=	1.10.0
+PORTVERSION=	1.11.0
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	R-cran-bslib>=0.6.0:www/R-cran-bslib \
 		R-cran-cachem>=1.1.0:databases/R-cran-cachem \
+		R-cran-cli>0:devel/R-cran-cli \
 		R-cran-commonmark>=1.7:textproc/R-cran-commonmark \
-		R-cran-crayon>0:devel/R-cran-crayon \
 		R-cran-fastmap>=1.1.1:databases/R-cran-fastmap \
 		R-cran-fontawesome>=0.4.0:devel/R-cran-fontawesome \
 		R-cran-glue>=1.3.2:devel/R-cran-glue \
