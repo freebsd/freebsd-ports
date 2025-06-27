@@ -31,11 +31,11 @@ libdata/pkgconfig/ktoblzcheck.pc
 %%DOXYGEN%%%%DOCSDIR%%/api/classIbanCheck.html
 %%DOXYGEN%%%%DOCSDIR%%/api/classes.html
 %%DOXYGEN%%%%DOCSDIR%%/api/closed.png
-%%DOXYGEN%%%%DOCSDIR%%/api/dir_027acad13201f25411f30b3a77f2b006.html
 %%DOXYGEN%%%%DOCSDIR%%/api/dir_5a44bfe66872ebd87256b63344bc501a.html
-%%DOXYGEN%%%%DOCSDIR%%/api/dir_63c478c42e36c4f05959c97623df5ccd.html
 %%DOXYGEN%%%%DOCSDIR%%/api/dir_8f1ddfcaba34d370f217a025e0bf2872.html
-%%DOXYGEN%%%%DOCSDIR%%/api/dir_b6310677cdb1a308af776abddf4b17ae.html
+%%DOXYGEN%%%%DOCSDIR%%/api/dir_b595697878e38297fca870e1c306251b.html
+%%DOXYGEN%%%%DOCSDIR%%/api/dir_d3cb94c4c25e21114b6ed199847bcaf5.html
+%%DOXYGEN%%%%DOCSDIR%%/api/dir_f36729f1e90a4f37b93d8ff044e485fe.html
 %%DOXYGEN%%%%DOCSDIR%%/api/doc.png
 %%DOXYGEN%%%%DOCSDIR%%/api/docd.png
 %%DOXYGEN%%%%DOCSDIR%%/api/doxygen.css
@@ -59,8 +59,8 @@ libdata/pkgconfig/ktoblzcheck.pc
 %%DOXYGEN%%%%DOCSDIR%%/api/iban_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/api/index.html
 %%DOXYGEN%%%%DOCSDIR%%/api/jquery.js
-%%DOXYGEN%%%%DOCSDIR%%/api/ktoblzcheck-1_857_2src_2include_2ktoblzcheck__export_8h.html
-%%DOXYGEN%%%%DOCSDIR%%/api/ktoblzcheck-1_857_2src_2include_2ktoblzcheck__export_8h_source.html
+%%DOXYGEN%%%%DOCSDIR%%/api/ktoblzcheck-1_859_2src_2include_2ktoblzcheck__export_8h.html
+%%DOXYGEN%%%%DOCSDIR%%/api/ktoblzcheck-1_859_2src_2include_2ktoblzcheck__export_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/api/ktoblzcheck_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/api/ktoblzcheck_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/api/menu.js
@@ -84,9 +84,5 @@ libdata/pkgconfig/ktoblzcheck.pc
 %%DOXYGEN%%%%DOCSDIR%%/api/tab_s.png
 %%DOXYGEN%%%%DOCSDIR%%/api/tab_sd.png
 %%DOXYGEN%%%%DOCSDIR%%/api/tabs.css
-%%DATADIR%%/bankdata.ch.db
-%%DATADIR%%/bankdata.de.db
-%%DATADIR%%/bankdata.nl.db
-%%DATADIR%%/ibandata.txt
 share/man/man1/ibanchk.1.gz
 share/man/man1/ktoblzcheck.1.gz

@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250627:
+  AFFECTS: users of finance/ktoblzcheck
+  AUTHOR: jhale@FreeBSD.org
+
+  The bank data databases have been moved to finance/ktoblzcheck-data.
+  It may be necessary to remove ktoblzcheck < 1.59 before upgrading to
+  avoid conflicts.
+
+  pkg delete -f ktoblzcheck
+
 20250622:
   AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org

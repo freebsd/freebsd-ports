@@ -1,0 +1,17 @@
+Set VALID_END_DATE via the port Makefile. This would otherwise only be set
+if the CMake argument ENABLE_BANKDATA_DOWNLOAD is true, but we cannot download
+files during the build process. This value needs to be defined as the last day
+the bank data is valid in %d.%m.%Y format to enable the custom commands/targets
+that build that databases.
+
+--- src/CMakeLists.txt.orig	2025-05-15 11:18:20 UTC
++++ src/CMakeLists.txt
+@@ -40,7 +40,7 @@ message(STATUS "Using bank data db ${BANKDATA_TEST_DBP
+ message(STATUS "Using bank data db ${BANKDATA_CH_DBPATH}")
+ message(STATUS "Using bank data db ${BANKDATA_TEST_DBPATH}")
+ 
+-set(VALID_END_DATE "")
++set(VALID_END_DATE "%%BANKDATA_END_DATE%%")
+ 
+ if(ENABLE_BANKDATA_DOWNLOAD)
+     extract_date(

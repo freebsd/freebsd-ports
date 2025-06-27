@@ -44,6 +44,7 @@
     SUBDIR += kmymoney
     SUBDIR += kraft
     SUBDIR += ktoblzcheck
+    SUBDIR += ktoblzcheck-data
     SUBDIR += ledger
     SUBDIR += ledgersmb12
     SUBDIR += libbtc
