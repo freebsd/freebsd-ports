@@ -1,6 +1,6 @@
---- electron/shell/browser/native_window.cc.orig	2025-05-27 20:59:13 UTC
+--- electron/shell/browser/native_window.cc.orig	2025-06-25 20:51:20 UTC
 +++ electron/shell/browser/native_window.cc
-@@ -188,7 +188,7 @@ void NativeWindow::InitFromOptions(const gin_helper::D
+@@ -180,7 +180,7 @@ void NativeWindow::InitFromOptions(const gin_helper::D
    } else {
      SetSizeConstraints(size_constraints);
    }
