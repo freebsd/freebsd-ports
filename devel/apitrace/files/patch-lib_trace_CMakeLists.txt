@@ -1,6 +1,6 @@
---- lib/trace/CMakeLists.txt.orig	2024-05-30 18:10:10 UTC
+--- lib/trace/CMakeLists.txt.orig	2025-06-26 12:43:44 UTC
 +++ lib/trace/CMakeLists.txt
-@@ -27,6 +27,8 @@ add_convenience_library (common
+@@ -27,13 +27,15 @@ add_convenience_library (common
      trace_ostream_zlib.cpp
  )
  
@@ -9,3 +9,11 @@
  target_link_libraries (common
      guids
      highlight
+     os
+-    Snappy::snappy
+     ZLIB::ZLIB
+     PkgConfig::BROTLIDEC
++    ${Snappy_LIBRARIES}
+ )
+ 
+ if (BUILD_TESTING)

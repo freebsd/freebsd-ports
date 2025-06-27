@@ -1,6 +1,6 @@
---- thirdparty/CMakeLists.txt.orig	2024-05-30 18:10:10 UTC
+--- thirdparty/CMakeLists.txt.orig	2025-06-26 12:43:44 UTC
 +++ thirdparty/CMakeLists.txt
-@@ -16,54 +16,69 @@ endfunction ()
+@@ -16,56 +16,70 @@ endfunction ()
      include (${ARGV})
  endfunction ()
  
@@ -84,15 +84,21 @@
 +#    include_with_scope (libbacktrace.cmake)
 +#endif ()
  
- # We use non-standard C++ flags, so we can't just use GTest's CMakeLists.txt
--if (NOT GTEST_FOUND)
--    message (STATUS "Using bundled GTest")
--    include_with_scope (gtest.cmake)
+-if (BUILD_TESTING)
+-    # We use non-standard C++ flags, so we can't just use GTest's CMakeLists.txt
+-    if (NOT GTEST_FOUND)
+-        message (STATUS "Using bundled GTest")
+-        include_with_scope (gtest.cmake)
+-    endif ()
 -endif ()
-+#if (NOT GTEST_FOUND)
-+#    message (STATUS "Using bundled GTest")
-+#    include_with_scope (gtest.cmake)
++#if (BUILD_TESTING)
++#    # We use non-standard C++ flags, so we can't just use GTest's CMakeLists.txt
++#    if (NOT GTEST_FOUND)
++#        message (STATUS "Using bundled GTest")
++#        include_with_scope (gtest.cmake)
++#    endif ()
 +#endif ()
++
 +find_path(Snappy_INCLUDE_DIR NAMES snappy.h
 +  PATHS ${Snappy_ROOT_DIR} ${Snappy_ROOT_DIR}/include /usr/local/include)
 +
@@ -105,8 +111,6 @@
 +if(SNAPPY_FOUND)
 +  message(STATUS "Found Snappy (include: ${Snappy_INCLUDE_DIR}, library: ${Snappy_LIBRARIES})")
 +  mark_as_advanced(Snappy_INCLUDE_DIR Snappy_LIBRARIES)
-+  find_package(Snappy REQUIRED)
-+  target_link_libraries(Snappy::snappy)
 +endif()
  
  if (MSVC)

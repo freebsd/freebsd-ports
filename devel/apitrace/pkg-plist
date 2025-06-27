@@ -2,8 +2,8 @@ bin/apitrace
 bin/eglretrace
 bin/glretrace
 bin/gltrim
-%%QT5%%bin/qapitrace
-%%QT5%%lib/apitrace/scripts/apitrace.PIXExp
+bin/qapitrace
+lib/apitrace/scripts/apitrace.PIXExp
 lib/apitrace/scripts/convert.py
 lib/apitrace/scripts/highlight.py
 lib/apitrace/scripts/jsondiff.py
@@ -22,4 +22,3 @@ share/applications/qapitrace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.markdown
 %%PORTDOCS%%%%DOCSDIR%%/README.markdown
 %%PORTDOCS%%%%DOCSDIR%%/USAGE.markdown
-
