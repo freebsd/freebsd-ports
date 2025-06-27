@@ -1,7 +1,11 @@
 PORTNAME=	libproxy
 DISTVERSION=	0.5.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	08069f7925649907198277364c7e268797fcf734.patch:-p1 \
+		0420c502ba6364dd9f5ce2f390a34a3af42be0b8.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library that provides automatic proxy configuration management
@@ -23,8 +27,6 @@ MESON_ARGS=	-Dtests=true \
 		-Dintrospection=true \
 		-Drelease=true
 USE_LDCONFIG=	yes
-# https://github.com/libproxy/libproxy/issues/320
-LLD_UNSAFE=	yes
 
 OPTIONS_DEFINE=	CURL DOCS VAPI
 OPTIONS_GROUP=	CONFIG PACRUNNER
