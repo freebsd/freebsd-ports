@@ -1,0 +1,26 @@
+--- pyproject.toml.orig	2025-04-14 15:18:22 UTC
++++ pyproject.toml
+@@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+ 
+-requires = [ "setuptools>=77.0" ]
++requires = [ "setuptools>=63.1.0" ]
+ 
+ [project]
+ name = "fake-useragent"
+ version = "2.2.0"
+-license = "Apache-2.0"
+ description = "Up-to-date simple useragent faker with real world database"
+ readme.content-type = "text/markdown"
+ readme.file = "README.md"
+@@ -46,6 +45,9 @@ urls.Homepage = "https://github.com/fake-useragent/fak
+ 
+ dependencies = [ "importlib-resources>=6; python_version<'3.10'" ]
+ urls.Homepage = "https://github.com/fake-useragent/fake-useragent"
++
++[project.license]
++text = "Apache-2.0"
+ 
+ [tool.setuptools]
+ zip-safe = false
