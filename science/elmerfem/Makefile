@@ -9,7 +9,7 @@ PATCHFILES=	48e9430c.patch:-p1 # https://github.com/ElmerCSC/elmerfem/pull/294
 
 MAINTAINER=	henrik@gulbra.net
 COMMENT=	Multiphysical simulation software
-WWW=		https://www.csc.fi/web/elmer
+WWW=		https://www.elmerfem.org/blog/
 
 LICENSE=	GPLv2
 
