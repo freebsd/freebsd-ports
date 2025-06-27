@@ -1,5 +1,5 @@
 include/discid/discid.h
 lib/libdiscid.so
 lib/libdiscid.so.0
-lib/libdiscid.so.0.6.4
+lib/libdiscid.so.0.6.5
 libdata/pkgconfig/libdiscid.pc
