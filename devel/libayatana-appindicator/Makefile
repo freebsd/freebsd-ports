@@ -1,6 +1,5 @@
 PORTNAME=	libayatana-appindicator
-PORTVERSION=	0.5.93
-PORTREVISION=	1
+PORTVERSION=	0.5.94
 CATEGORIES=	devel
 
 MAINTAINER=	jgh@FreeBSD.org
@@ -13,7 +12,6 @@ LIB_DEPENDS=	libayatana-ido3-0.4.so:devel/ayatana-ido \
 		libayatana-indicator3.so:devel/libayatana-indicator \
 		libdbusmenu-glib.so:devel/libdbusmenu \
 		libharfbuzz.so:print/harfbuzz
-BUILD_DEPENDS=	lcov>=0:devel/lcov
 
 USES=		cmake gnome localbase:ldflags pkgconfig pathfix
 
