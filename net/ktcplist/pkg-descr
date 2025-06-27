@@ -1,0 +1,2 @@
+ktcplist is a tool to list established TCP connections that are using kernel
+offload for Transport Layer Security (TLS). This utility is specific to FreeBSD.
