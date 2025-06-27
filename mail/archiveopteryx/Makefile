@@ -14,7 +14,6 @@ BUILD_DEPENDS=	jam:devel/jam
 
 USES=		compiler perl5 ssl tar:bzip2
 USE_PERL5=	build
-WITH_PGSQL=	client
 
 CONFLICTS_INSTALL=	archiveopteryx-devel # bin/aox bin/aoxdeliver bin/aoxexport bin/aoximport
 
