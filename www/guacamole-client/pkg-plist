@@ -3,14 +3,17 @@
 %%ETCDIR%%/guacamole.properties.sample
 %%ETCDIR%%/logback.xml.sample
 %%ETCDIR%%/user-mapping.xml.sample
+%%DATADIR%%/guacamole-auth-ban.tar.gz
 %%DATADIR%%/guacamole-auth-duo.tar.gz
 %%DATADIR%%/guacamole-auth-header.tar.gz
 %%DATADIR%%/guacamole-auth-jdbc.tar.gz
 %%DATADIR%%/guacamole-auth-json.tar.gz
 %%DATADIR%%/guacamole-auth-ldap.tar.gz
 %%DATADIR%%/guacamole-auth-quickconnect.tar.gz
+%%DATADIR%%/guacamole-auth-restrict.tar.gz
 %%DATADIR%%/guacamole-auth-sso.tar.gz
 %%DATADIR%%/guacamole-auth-totp.tar.gz
+%%DATADIR%%/guacamole-display-statistics.tar.gz
 %%DATADIR%%/guacamole-history-recording-storage.tar.gz
 %%DATADIR%%/guacamole-vault.tar.gz
 %%DATADIR%%/guacamole.war

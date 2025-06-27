@@ -1,9 +1,10 @@
 PORTNAME=	guacamole-client
-DISTVERSION=	1.5.5
+DISTVERSION=	1.6.0
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	guacamole/${DISTVERSIONFULL}/binary
 DISTFILES=	guacamole-${DISTVERSIONFULL}.war \
+		guacamole-auth-ban-${DISTVERSIONFULL}${EXTRACT_SUFX} \
 		guacamole-auth-duo-${DISTVERSIONFULL}${EXTRACT_SUFX} \
 		guacamole-auth-header-${DISTVERSIONFULL}${EXTRACT_SUFX} \
 		guacamole-auth-jdbc-${DISTVERSIONFULL}${EXTRACT_SUFX} \
@@ -11,7 +12,9 @@ DISTFILES=	guacamole-${DISTVERSIONFULL}.war \
 		guacamole-auth-ldap-${DISTVERSIONFULL}${EXTRACT_SUFX} \
 		guacamole-auth-quickconnect-${DISTVERSIONFULL}${EXTRACT_SUFX} \
 		guacamole-auth-sso-${DISTVERSIONFULL}${EXTRACT_SUFX} \
+		guacamole-auth-restrict-${DISTVERSIONFULL}${EXTRACT_SUFX} \
 		guacamole-auth-totp-${DISTVERSIONFULL}${EXTRACT_SUFX} \
+		guacamole-display-statistics-${DISTVERSIONFULL}${EXTRACT_SUFX} \
 		guacamole-history-recording-storage-${DISTVERSIONFULL}${EXTRACT_SUFX} \
 		guacamole-vault-${DISTVERSIONFULL}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}

@@ -4,6 +4,7 @@
 include/guacamole/argv-constants.h
 include/guacamole/argv-fntypes.h
 include/guacamole/argv.h
+include/guacamole/assert.h
 include/guacamole/audio-fntypes.h
 include/guacamole/audio-types.h
 include/guacamole/audio.h
@@ -11,9 +12,17 @@ include/guacamole/client-constants.h
 include/guacamole/client-fntypes.h
 include/guacamole/client-types.h
 include/guacamole/client.h
+include/guacamole/display-constants.h
+include/guacamole/display-types.h
+include/guacamole/display.h
 include/guacamole/error-types.h
 include/guacamole/error.h
+include/guacamole/fifo-constants.h
+include/guacamole/fifo-types.h
+include/guacamole/fifo.h
 include/guacamole/fips.h
+include/guacamole/flag-types.h
+include/guacamole/flag.h
 include/guacamole/hash.h
 include/guacamole/layer-types.h
 include/guacamole/layer.h
@@ -32,6 +41,8 @@ include/guacamole/protocol-constants.h
 include/guacamole/protocol-types.h
 include/guacamole/protocol.h
 include/guacamole/recording.h
+include/guacamole/rect-types.h
+include/guacamole/rect.h
 include/guacamole/rwlock.h
 include/guacamole/socket-constants.h
 include/guacamole/socket-fntypes.h
@@ -41,6 +52,7 @@ include/guacamole/socket.h
 include/guacamole/stream-types.h
 include/guacamole/stream.h
 include/guacamole/string.h
+include/guacamole/tcp.h
 %%TERMINAL%%include/guacamole/terminal/terminal.h
 include/guacamole/timestamp-types.h
 include/guacamole/timestamp.h
@@ -69,17 +81,17 @@ include/guacamole/wol.h
 %%VNC%%lib/libguac-client-vnc.so
 %%VNC%%lib/libguac-client-vnc.so.0
 %%VNC%%lib/libguac-client-vnc.so.0.0.0
-lib/libguac.a
-lib/libguac.so
-lib/libguac.so.24
-lib/libguac.so.24.0.0
 %%TERMINAL%%lib/libguac-terminal.a
 %%TERMINAL%%lib/libguac-terminal.so
-%%TERMINAL%%lib/libguac-terminal.so.0
-%%TERMINAL%%lib/libguac-terminal.so.0.1.0
+%%TERMINAL%%lib/libguac-terminal.so.2
+%%TERMINAL%%lib/libguac-terminal.so.2.0.0
+lib/libguac.a
+lib/libguac.so
+lib/libguac.so.25
+lib/libguac.so.25.0.0
+sbin/guacd
 %%GUACENC%%share/man/man1/guacenc.1.gz
 %%GUACLOG%%share/man/man1/guaclog.1.gz
 share/man/man5/guacd.conf.5.gz
 share/man/man8/guacd.8.gz
-sbin/guacd
 @dir(%%GUACD_USER%%,%%GUACD_GROUP%%,) %%GUACD_HOME%%
