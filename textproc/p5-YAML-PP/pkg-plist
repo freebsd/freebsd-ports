@@ -20,6 +20,7 @@ bin/yamlpp-parse-emit
 %%SITE_PERL%%/YAML/PP/Representer.pm
 %%SITE_PERL%%/YAML/PP/Schema.pm
 %%SITE_PERL%%/YAML/PP/Schema/Binary.pm
+%%SITE_PERL%%/YAML/PP/Schema/Catchall.pm
 %%SITE_PERL%%/YAML/PP/Schema/Core.pm
 %%SITE_PERL%%/YAML/PP/Schema/Failsafe.pm
 %%SITE_PERL%%/YAML/PP/Schema/Include.pm
@@ -40,6 +41,7 @@ bin/yamlpp-parse-emit
 %%PERL5_MAN3%%/YAML::PP::Perl.3.gz
 %%PERL5_MAN3%%/YAML::PP::Schema.3.gz
 %%PERL5_MAN3%%/YAML::PP::Schema::Binary.3.gz
+%%PERL5_MAN3%%/YAML::PP::Schema::Catchall.3.gz
 %%PERL5_MAN3%%/YAML::PP::Schema::Core.3.gz
 %%PERL5_MAN3%%/YAML::PP::Schema::Failsafe.3.gz
 %%PERL5_MAN3%%/YAML::PP::Schema::Include.3.gz
