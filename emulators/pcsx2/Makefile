@@ -1,5 +1,5 @@
 PORTNAME=	pcsx2
-PORTVERSION=	2.3.212
+PORTVERSION=	2.3.439
 DISTVERSIONPREFIX=	v
 CATEGORIES=	emulators
 
@@ -12,6 +12,7 @@ LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=	amd64
 
+BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 # Notes on dependencies (see cmake/SearchForStuff.cmake):
 # - glad comes from 3rdparty/ (conflicts with libglvnd)
 # - fmt, rapidyaml, soundtouch, zydis, libzip
@@ -21,18 +22,22 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		liblz4.so:archivers/liblz4 \
 		libwebp.so:graphics/webp \
 		libfreetype.so:print/freetype2 \
-		libdbus-1.so:devel/dbus \
+		libplutovg.so:graphics/plutovg \
+		libplutosvg.so:graphics/plutosvg \
+		libshaderc_shared.so:graphics/shaderc \
+		libcurl.so:ftp/curl \
 		libavcodec.so:multimedia/ffmpeg \
 		libavformat.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
 		libswresample.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg \
-		libshaderc_shared.so:graphics/shaderc \
-		libcurl.so:ftp/curl \
+		libbacktrace.so:devel/libbacktrace \
+		libdbus-1.so:devel/dbus \
 		libpulse.so:audio/pulseaudio \
 		libjack.so:audio/jack \
 		libsndio.so:audio/sndio \
-		libbacktrace.so:devel/libbacktrace
+		libkddockwidgets-qt6.so:x11-toolkits/kddockwidgets \
+		libsysinfo.so:devel/libsysinfo
 
 USES=		cmake compiler:c++20-lang \
 		desktop-file-utils elfctl gl jpeg pkgconfig qt:6 sdl xorg
@@ -41,9 +46,9 @@ USE_GITHUB=	yes
 GH_PROJECT=	pcsx2
 
 USE_GL=		egl
-USE_SDL=	sdl3
-USE_XORG=	ice x11 xcb xext xpm xrandr xrender
-USE_QT=		base tools
+USE_SDL=	sdl3 ttf3
+USE_XORG=	ice x11 xcb xext xi xpm xrandr xrender
+USE_QT=		base declarative tools
 ELF_FEATURES=	+wxneeded:bin/pcsx2-qt
 
 # SSE 4.1 instructions are a hard requirement, if CPUTYPE is defined
@@ -60,6 +65,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-no-march-minimum-req
 # XXX Vulkan comes from 3rdparty/
 CMAKE_ARGS+=	\
 		-DCMAKE_REQUIRED_INCLUDES:STRING=${LOCALBASE}/include/ \
+		-DCMAKE_LOCALBASE:STRING=${LOCALBASE} \
 		-DPCSX2_RESOURCES_PATH:STRING=${DATADIR}/resources \
 		-DUSE_VTUNE:BOOL=OFF \
 		-DWAYLAND_API=OFF \
