@@ -1,5 +1,5 @@
 PORTNAME=	vulkan-caps-viewer
-DISTVERSION=	4.01
+DISTVERSION=	4.02
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 USE_QT=		qmake:build buildtools:build core gui network widgets
 GH_ACCOUNT=	SaschaWillems
 GH_PROJECT=	VulkanCapsViewer
-GH_TUPLE=	KhronosGroup:Vulkan-Headers:v1.4.313:vkheaders/Vulkan-Headers
+GH_TUPLE=	KhronosGroup:Vulkan-Headers:v1.4.320:vkheaders/Vulkan-Headers
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (GL, wayland)
 PLIST_FILES=	bin/vulkanCapsViewer \
 		share/applications/vulkanCapsViewer.desktop \
