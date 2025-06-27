@@ -33,8 +33,8 @@ SUB_FILES=	pkg-install pkg-deinstall
 # Fallback MPM after switching from static to modular MPM
 SUB_LIST+=	MPMF="000_mpm_prefork_fallback.conf"
 
-USERS=		www
-GROUPS=		www
+USERS?=		${WWWOWN}
+GROUPS?=	${WWWGRP}
 
 .include "${.CURDIR}/Makefile.options"
 .include "${.CURDIR}/Makefile.options.desc"
