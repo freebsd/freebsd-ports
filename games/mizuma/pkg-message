@@ -10,6 +10,8 @@ The following commandline tasks are currently available:
 Mizuma Install $APPNAME
 Mizuma Launch $APPNAME
 Mizuma Uninstall $APPNAME
+Mizuma Kill $APPNAME
+Mizuma Winetricks $APPNAME
 Mizuma List Library
 Mizuma List Installed
 

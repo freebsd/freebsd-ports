@@ -1,7 +1,4 @@
-Mizutamari is A Wine front-end. Written in Bash with a GUI provided by Zentiy.
+Mizutamari is A Wine front-end. Written in Bash with a GUI provided by YAD.
 
 A predefined library is used to manage the Windows applications.
 Providing/applying the required fixes and workarounds.
-
-Note: In order to avoid conflicts with the KDE environment,
-you need to build this port with the MESA_DEMOS option instead.
