@@ -1,7 +1,7 @@
 PORTNAME=	InsightToolkit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.3.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science biology
 MASTER_SITES=	https://github.com/InsightSoftwareConsortium/ITK/releases/download/v${DISTVERSION}/:data
 DISTFILES=	InsightData-${DISTVERSION}.tar.gz:data

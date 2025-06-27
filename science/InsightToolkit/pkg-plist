@@ -148,12 +148,10 @@ include/ITK-%%ITK_VER%%/ITKTransformExport.h
 include/ITK-%%ITK_VER%%/ITKVTKExport.h
 include/ITK-%%ITK_VER%%/ITKVideoCoreExport.h
 include/ITK-%%ITK_VER%%/ITKVideoIOExport.h
-include/ITK-%%ITK_VER%%/ITKVtkGlueExport.h
 include/ITK-%%ITK_VER%%/ITKWatershedsExport.h
 include/ITK-%%ITK_VER%%/MinimalPathExtractionExport.h
 include/ITK-%%ITK_VER%%/MontageExport.h
 include/ITK-%%ITK_VER%%/NrrdIO.h
-include/ITK-%%ITK_VER%%/QuickView.h
 include/ITK-%%ITK_VER%%/RTKExport.h
 include/ITK-%%ITK_VER%%/SimpleITKFiltersExport.h
 include/ITK-%%ITK_VER%%/VNLIterativeSparseSolverTraits.h
@@ -413,8 +411,6 @@ include/ITK-%%ITK_VER%%/itkBinaryThinningImageFilter.h
 include/ITK-%%ITK_VER%%/itkBinaryThinningImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkBinaryThinningImageFilter3D.h
 include/ITK-%%ITK_VER%%/itkBinaryThinningImageFilter3D.hxx
-include/ITK-%%ITK_VER%%/itkBinaryThresholdFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkBinaryThresholdFeatureGenerator.hxx
 include/ITK-%%ITK_VER%%/itkBinaryThresholdImageFilter.h
 include/ITK-%%ITK_VER%%/itkBinaryThresholdImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkBinaryThresholdImageFunction.h
@@ -477,14 +473,6 @@ include/ITK-%%ITK_VER%%/itkCSVNumericObjectFileWriter.hxx
 include/ITK-%%ITK_VER%%/itkCacheableScalarFunction.h
 include/ITK-%%ITK_VER%%/itkCannyEdgeDetectionImageFilter.h
 include/ITK-%%ITK_VER%%/itkCannyEdgeDetectionImageFilter.hxx
-include/ITK-%%ITK_VER%%/itkCannyEdgeDetectionRecursiveGaussianImageFilter.h
-include/ITK-%%ITK_VER%%/itkCannyEdgeDetectionRecursiveGaussianImageFilter.hxx
-include/ITK-%%ITK_VER%%/itkCannyEdgesDistanceAdvectionFieldFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkCannyEdgesDistanceAdvectionFieldFeatureGenerator.hxx
-include/ITK-%%ITK_VER%%/itkCannyEdgesDistanceFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkCannyEdgesDistanceFeatureGenerator.hxx
-include/ITK-%%ITK_VER%%/itkCannyEdgesFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkCannyEdgesFeatureGenerator.hxx
 include/ITK-%%ITK_VER%%/itkCannySegmentationLevelSetFunction.h
 include/ITK-%%ITK_VER%%/itkCannySegmentationLevelSetFunction.hxx
 include/ITK-%%ITK_VER%%/itkCannySegmentationLevelSetImageFilter.h
@@ -579,8 +567,6 @@ include/ITK-%%ITK_VER%%/itkConceptChecking.h
 include/ITK-%%ITK_VER%%/itkConditionalConstIterator.h
 include/ITK-%%ITK_VER%%/itkConfidenceConnectedImageFilter.h
 include/ITK-%%ITK_VER%%/itkConfidenceConnectedImageFilter.hxx
-include/ITK-%%ITK_VER%%/itkConfidenceConnectedSegmentationModule.h
-include/ITK-%%ITK_VER%%/itkConfidenceConnectedSegmentationModule.hxx
 include/ITK-%%ITK_VER%%/itkConfigure.h
 include/ITK-%%ITK_VER%%/itkConformalFlatteningMeshFilter.h
 include/ITK-%%ITK_VER%%/itkConformalFlatteningMeshFilter.hxx
@@ -599,8 +585,6 @@ include/ITK-%%ITK_VER%%/itkConnectedRegionsMeshFilter.h
 include/ITK-%%ITK_VER%%/itkConnectedRegionsMeshFilter.hxx
 include/ITK-%%ITK_VER%%/itkConnectedThresholdImageFilter.h
 include/ITK-%%ITK_VER%%/itkConnectedThresholdImageFilter.hxx
-include/ITK-%%ITK_VER%%/itkConnectedThresholdSegmentationModule.h
-include/ITK-%%ITK_VER%%/itkConnectedThresholdSegmentationModule.hxx
 include/ITK-%%ITK_VER%%/itkConstNeighborhoodIterator.h
 include/ITK-%%ITK_VER%%/itkConstNeighborhoodIterator.hxx
 include/ITK-%%ITK_VER%%/itkConstNeighborhoodIteratorWithOnlyIndex.h
@@ -765,9 +749,6 @@ include/ITK-%%ITK_VER%%/itkDescoteauxEigenToMeasureImageFilter.h
 include/ITK-%%ITK_VER%%/itkDescoteauxEigenToMeasureImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkDescoteauxEigenToMeasureParameterEstimationFilter.h
 include/ITK-%%ITK_VER%%/itkDescoteauxEigenToMeasureParameterEstimationFilter.hxx
-include/ITK-%%ITK_VER%%/itkDescoteauxSheetnessFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkDescoteauxSheetnessFeatureGenerator.hxx
-include/ITK-%%ITK_VER%%/itkDescoteauxSheetnessImageFilter.h
 include/ITK-%%ITK_VER%%/itkDiffeomorphicDemonsRegistrationFilter.h
 include/ITK-%%ITK_VER%%/itkDiffeomorphicDemonsRegistrationFilter.hxx
 include/ITK-%%ITK_VER%%/itkDifferenceOfGaussiansGradientImageFilter.h
@@ -927,10 +908,6 @@ include/ITK-%%ITK_VER%%/itkFastChamferDistanceImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkFastGrowCut.h
 include/ITK-%%ITK_VER%%/itkFastGrowCut.hxx
 include/ITK-%%ITK_VER%%/itkFastIncrementalBinaryDilateImageFilter.h
-include/ITK-%%ITK_VER%%/itkFastMarchingAndGeodesicActiveContourLevelSetSegmentationModule.h
-include/ITK-%%ITK_VER%%/itkFastMarchingAndGeodesicActiveContourLevelSetSegmentationModule.hxx
-include/ITK-%%ITK_VER%%/itkFastMarchingAndShapeDetectionLevelSetSegmentationModule.h
-include/ITK-%%ITK_VER%%/itkFastMarchingAndShapeDetectionLevelSetSegmentationModule.hxx
 include/ITK-%%ITK_VER%%/itkFastMarchingBase.h
 include/ITK-%%ITK_VER%%/itkFastMarchingBase.hxx
 include/ITK-%%ITK_VER%%/itkFastMarchingExtensionImageFilter.h
@@ -947,8 +924,6 @@ include/ITK-%%ITK_VER%%/itkFastMarchingNumberOfElementsStoppingCriterion.h
 include/ITK-%%ITK_VER%%/itkFastMarchingQuadEdgeMeshFilterBase.h
 include/ITK-%%ITK_VER%%/itkFastMarchingQuadEdgeMeshFilterBase.hxx
 include/ITK-%%ITK_VER%%/itkFastMarchingReachedTargetNodesStoppingCriterion.h
-include/ITK-%%ITK_VER%%/itkFastMarchingSegmentationModule.h
-include/ITK-%%ITK_VER%%/itkFastMarchingSegmentationModule.hxx
 include/ITK-%%ITK_VER%%/itkFastMarchingStoppingCriterionBase.h
 include/ITK-%%ITK_VER%%/itkFastMarchingThresholdStoppingCriterion.h
 include/ITK-%%ITK_VER%%/itkFastMarchingTraits.h
@@ -960,10 +935,6 @@ include/ITK-%%ITK_VER%%/itkFastSymmetricForcesDemonsRegistrationFilter.h
 include/ITK-%%ITK_VER%%/itkFastSymmetricForcesDemonsRegistrationFilter.hxx
 include/ITK-%%ITK_VER%%/itkFastSymmetricForcesDemonsRegistrationFunction.h
 include/ITK-%%ITK_VER%%/itkFastSymmetricForcesDemonsRegistrationFunction.hxx
-include/ITK-%%ITK_VER%%/itkFeatureAggregator.h
-include/ITK-%%ITK_VER%%/itkFeatureAggregator.hxx
-include/ITK-%%ITK_VER%%/itkFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkFeatureGenerator.hxx
 include/ITK-%%ITK_VER%%/itkFileListVideoIO.h
 include/ITK-%%ITK_VER%%/itkFileListVideoIOFactory.h
 include/ITK-%%ITK_VER%%/itkFileOutputWindow.h
@@ -1012,9 +983,6 @@ include/ITK-%%ITK_VER%%/itkFrameAverageVideoFilter.h
 include/ITK-%%ITK_VER%%/itkFrameAverageVideoFilter.hxx
 include/ITK-%%ITK_VER%%/itkFrameDifferenceVideoFilter.h
 include/ITK-%%ITK_VER%%/itkFrameDifferenceVideoFilter.hxx
-include/ITK-%%ITK_VER%%/itkFrangiTubularnessFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkFrangiTubularnessFeatureGenerator.hxx
-include/ITK-%%ITK_VER%%/itkFrangiTubularnessImageFilter.h
 include/ITK-%%ITK_VER%%/itkFreeSurferAsciiMeshIO.h
 include/ITK-%%ITK_VER%%/itkFreeSurferAsciiMeshIOFactory.h
 include/ITK-%%ITK_VER%%/itkFreeSurferBinaryMeshIO.h
@@ -1144,8 +1112,6 @@ include/ITK-%%ITK_VER%%/itkGeodesicActiveContourLevelSetFunction.h
 include/ITK-%%ITK_VER%%/itkGeodesicActiveContourLevelSetFunction.hxx
 include/ITK-%%ITK_VER%%/itkGeodesicActiveContourLevelSetImageFilter.h
 include/ITK-%%ITK_VER%%/itkGeodesicActiveContourLevelSetImageFilter.hxx
-include/ITK-%%ITK_VER%%/itkGeodesicActiveContourLevelSetSegmentationModule.h
-include/ITK-%%ITK_VER%%/itkGeodesicActiveContourLevelSetSegmentationModule.hxx
 include/ITK-%%ITK_VER%%/itkGeodesicActiveContourShapePriorLevelSetFunction.h
 include/ITK-%%ITK_VER%%/itkGeodesicActiveContourShapePriorLevelSetFunction.hxx
 include/ITK-%%ITK_VER%%/itkGeodesicActiveContourShapePriorLevelSetImageFilter.h
@@ -1179,8 +1145,6 @@ include/ITK-%%ITK_VER%%/itkGradientMagnitudeImageFilter.h
 include/ITK-%%ITK_VER%%/itkGradientMagnitudeImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkGradientMagnitudeRecursiveGaussianImageFilter.h
 include/ITK-%%ITK_VER%%/itkGradientMagnitudeRecursiveGaussianImageFilter.hxx
-include/ITK-%%ITK_VER%%/itkGradientMagnitudeSigmoidFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkGradientMagnitudeSigmoidFeatureGenerator.hxx
 include/ITK-%%ITK_VER%%/itkGradientNDAnisotropicDiffusionFunction.h
 include/ITK-%%ITK_VER%%/itkGradientNDAnisotropicDiffusionFunction.hxx
 include/ITK-%%ITK_VER%%/itkGradientRecursiveGaussianImageFilter.h
@@ -1207,8 +1171,6 @@ include/ITK-%%ITK_VER%%/itkGrayscaleGeodesicErodeImageFilter.h
 include/ITK-%%ITK_VER%%/itkGrayscaleGeodesicErodeImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkGrayscaleGrindPeakImageFilter.h
 include/ITK-%%ITK_VER%%/itkGrayscaleGrindPeakImageFilter.hxx
-include/ITK-%%ITK_VER%%/itkGrayscaleImageSegmentationVolumeEstimator.h
-include/ITK-%%ITK_VER%%/itkGrayscaleImageSegmentationVolumeEstimator.hxx
 include/ITK-%%ITK_VER%%/itkGrayscaleMorphologicalClosingImageFilter.h
 include/ITK-%%ITK_VER%%/itkGrayscaleMorphologicalClosingImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkGrayscaleMorphologicalOpeningImageFilter.h
@@ -1466,8 +1428,6 @@ include/ITK-%%ITK_VER%%/itkImageToSpatialObjectMetric.h
 include/ITK-%%ITK_VER%%/itkImageToSpatialObjectMetric.hxx
 include/ITK-%%ITK_VER%%/itkImageToSpatialObjectRegistrationMethod.h
 include/ITK-%%ITK_VER%%/itkImageToSpatialObjectRegistrationMethod.hxx
-include/ITK-%%ITK_VER%%/itkImageToVTKImageFilter.h
-include/ITK-%%ITK_VER%%/itkImageToVTKImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkImageToVideoFilter.h
 include/ITK-%%ITK_VER%%/itkImageToVideoFilter.hxx
 include/ITK-%%ITK_VER%%/itkImageVectorOptimizerParametersHelper.h
@@ -1532,10 +1492,6 @@ include/ITK-%%ITK_VER%%/itkIsolatedWatershedImageFilter.h
 include/ITK-%%ITK_VER%%/itkIsolatedWatershedImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkIsotropicFourthOrderLevelSetImageFilter.h
 include/ITK-%%ITK_VER%%/itkIsotropicFourthOrderLevelSetImageFilter.hxx
-include/ITK-%%ITK_VER%%/itkIsotropicResampler.h
-include/ITK-%%ITK_VER%%/itkIsotropicResampler.hxx
-include/ITK-%%ITK_VER%%/itkIsotropicResamplerImageFilter.h
-include/ITK-%%ITK_VER%%/itkIsotropicResamplerImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkIterateNeighborhoodOptimizer.h
 include/ITK-%%ITK_VER%%/itkIterationReporter.h
 include/ITK-%%ITK_VER%%/itkIterativeDeconvolutionImageFilter.h
@@ -1686,8 +1642,6 @@ include/ITK-%%ITK_VER%%/itkLandmarkDisplacementFieldSource.h
 include/ITK-%%ITK_VER%%/itkLandmarkDisplacementFieldSource.hxx
 include/ITK-%%ITK_VER%%/itkLandmarkSpatialObject.h
 include/ITK-%%ITK_VER%%/itkLandmarkSpatialObject.hxx
-include/ITK-%%ITK_VER%%/itkLandmarksReader.h
-include/ITK-%%ITK_VER%%/itkLandmarksReader.hxx
 include/ITK-%%ITK_VER%%/itkLandweberDeconvolutionImageFilter.h
 include/ITK-%%ITK_VER%%/itkLandweberDeconvolutionImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkLaplacianDeformationQuadEdgeMeshFilter.h
@@ -1708,10 +1662,6 @@ include/ITK-%%ITK_VER%%/itkLaplacianSegmentationLevelSetImageFilter.h
 include/ITK-%%ITK_VER%%/itkLaplacianSegmentationLevelSetImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkLaplacianSharpeningImageFilter.h
 include/ITK-%%ITK_VER%%/itkLaplacianSharpeningImageFilter.hxx
-include/ITK-%%ITK_VER%%/itkLesionSegmentationImageFilter8.h
-include/ITK-%%ITK_VER%%/itkLesionSegmentationImageFilter8.hxx
-include/ITK-%%ITK_VER%%/itkLesionSegmentationMethod.h
-include/ITK-%%ITK_VER%%/itkLesionSegmentationMethod.hxx
 include/ITK-%%ITK_VER%%/itkLevelSet.h
 include/ITK-%%ITK_VER%%/itkLevelSetBase.h
 include/ITK-%%ITK_VER%%/itkLevelSetBase.hxx
@@ -1807,7 +1757,6 @@ include/ITK-%%ITK_VER%%/itkLinearInterpolateImageFunction.h
 include/ITK-%%ITK_VER%%/itkLinearInterpolateImageFunction.hxx
 include/ITK-%%ITK_VER%%/itkListSample.h
 include/ITK-%%ITK_VER%%/itkListSample.hxx
-include/ITK-%%ITK_VER%%/itkLocalStructureImageFilter.h
 include/ITK-%%ITK_VER%%/itkLog10ImageAdaptor.h
 include/ITK-%%ITK_VER%%/itkLog10ImageFilter.h
 include/ITK-%%ITK_VER%%/itkLogGaborFreqImageSource.h
@@ -1822,8 +1771,6 @@ include/ITK-%%ITK_VER%%/itkLoggerOutput.h
 include/ITK-%%ITK_VER%%/itkLoggerThreadWrapper.h
 include/ITK-%%ITK_VER%%/itkLoggerThreadWrapper.hxx
 include/ITK-%%ITK_VER%%/itkLogicOpsFunctors.h
-include/ITK-%%ITK_VER%%/itkLungWallFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkLungWallFeatureGenerator.hxx
 include/ITK-%%ITK_VER%%/itkMINCImageIO.h
 include/ITK-%%ITK_VER%%/itkMINCImageIOFactory.h
 include/ITK-%%ITK_VER%%/itkMINCTransformAdapter.h
@@ -1896,8 +1843,6 @@ include/ITK-%%ITK_VER%%/itkMaximumDecisionRule.h
 include/ITK-%%ITK_VER%%/itkMaximumEntropyThresholdCalculator.h
 include/ITK-%%ITK_VER%%/itkMaximumEntropyThresholdCalculator.hxx
 include/ITK-%%ITK_VER%%/itkMaximumEntropyThresholdImageFilter.h
-include/ITK-%%ITK_VER%%/itkMaximumFeatureAggregator.h
-include/ITK-%%ITK_VER%%/itkMaximumFeatureAggregator.hxx
 include/ITK-%%ITK_VER%%/itkMaximumImageFilter.h
 include/ITK-%%ITK_VER%%/itkMaximumProjectionImageFilter.h
 include/ITK-%%ITK_VER%%/itkMaximumRatioDecisionRule.h
@@ -2015,8 +1960,6 @@ include/ITK-%%ITK_VER%%/itkMinMaxCurvatureFlowImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkMiniPipelineSeparableImageFilter.h
 include/ITK-%%ITK_VER%%/itkMiniPipelineSeparableImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkMinimumDecisionRule.h
-include/ITK-%%ITK_VER%%/itkMinimumFeatureAggregator.h
-include/ITK-%%ITK_VER%%/itkMinimumFeatureAggregator.hxx
 include/ITK-%%ITK_VER%%/itkMinimumImageFilter.h
 include/ITK-%%ITK_VER%%/itkMinimumMaximumImageCalculator.h
 include/ITK-%%ITK_VER%%/itkMinimumMaximumImageCalculator.hxx
@@ -2039,10 +1982,6 @@ include/ITK-%%ITK_VER%%/itkMorphologicalDistanceTransformImageFilter.h
 include/ITK-%%ITK_VER%%/itkMorphologicalDistanceTransformImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkMorphologicalGradientImageFilter.h
 include/ITK-%%ITK_VER%%/itkMorphologicalGradientImageFilter.hxx
-include/ITK-%%ITK_VER%%/itkMorphologicalOpeningFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkMorphologicalOpeningFeatureGenerator.hxx
-include/ITK-%%ITK_VER%%/itkMorphologicalOpenningFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkMorphologicalOpenningFeatureGenerator.hxx
 include/ITK-%%ITK_VER%%/itkMorphologicalSharpeningImageFilter.h
 include/ITK-%%ITK_VER%%/itkMorphologicalSharpeningImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkMorphologicalSignedDistanceTransformImageFilter.h
@@ -2529,16 +2468,12 @@ include/ITK-%%ITK_VER%%/itkRegionBasedLevelSetFunction.hxx
 include/ITK-%%ITK_VER%%/itkRegionBasedLevelSetFunctionData.h
 include/ITK-%%ITK_VER%%/itkRegionBasedLevelSetFunctionData.hxx
 include/ITK-%%ITK_VER%%/itkRegionBasedLevelSetFunctionSharedData.h
-include/ITK-%%ITK_VER%%/itkRegionCompetitionImageFilter.h
-include/ITK-%%ITK_VER%%/itkRegionCompetitionImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkRegionConstrainedSubsampler.h
 include/ITK-%%ITK_VER%%/itkRegionConstrainedSubsampler.hxx
 include/ITK-%%ITK_VER%%/itkRegionFromReferenceLabelMapFilter.h
 include/ITK-%%ITK_VER%%/itkRegionFromReferenceLabelMapFilter.hxx
 include/ITK-%%ITK_VER%%/itkRegionGrowImageFilter.h
 include/ITK-%%ITK_VER%%/itkRegionGrowImageFilter.hxx
-include/ITK-%%ITK_VER%%/itkRegionGrowingSegmentationModule.h
-include/ITK-%%ITK_VER%%/itkRegionGrowingSegmentationModule.hxx
 include/ITK-%%ITK_VER%%/itkRegionOfInterestImageFilter.h
 include/ITK-%%ITK_VER%%/itkRegionOfInterestImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkRegionalMaximaImageFilter.h
@@ -2619,12 +2554,6 @@ include/ITK-%%ITK_VER%%/itkSampleToHistogramFilter.h
 include/ITK-%%ITK_VER%%/itkSampleToHistogramFilter.hxx
 include/ITK-%%ITK_VER%%/itkSampleToSubsampleFilter.h
 include/ITK-%%ITK_VER%%/itkSampleToSubsampleFilter.hxx
-include/ITK-%%ITK_VER%%/itkSatoLocalStructureFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkSatoLocalStructureFeatureGenerator.hxx
-include/ITK-%%ITK_VER%%/itkSatoVesselnessFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkSatoVesselnessFeatureGenerator.hxx
-include/ITK-%%ITK_VER%%/itkSatoVesselnessSigmoidFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkSatoVesselnessSigmoidFeatureGenerator.hxx
 include/ITK-%%ITK_VER%%/itkScalableAffineTransform.h
 include/ITK-%%ITK_VER%%/itkScalableAffineTransform.hxx
 include/ITK-%%ITK_VER%%/itkScalarAnisotropicDiffusionFunction.h
@@ -2677,11 +2606,7 @@ include/ITK-%%ITK_VER%%/itkSegmentationLevelSetFunction.h
 include/ITK-%%ITK_VER%%/itkSegmentationLevelSetFunction.hxx
 include/ITK-%%ITK_VER%%/itkSegmentationLevelSetImageFilter.h
 include/ITK-%%ITK_VER%%/itkSegmentationLevelSetImageFilter.hxx
-include/ITK-%%ITK_VER%%/itkSegmentationModule.h
-include/ITK-%%ITK_VER%%/itkSegmentationModule.hxx
 include/ITK-%%ITK_VER%%/itkSegmentationRegion.h
-include/ITK-%%ITK_VER%%/itkSegmentationVolumeEstimator.h
-include/ITK-%%ITK_VER%%/itkSegmentationVolumeEstimator.hxx
 include/ITK-%%ITK_VER%%/itkShanbhagThresholdCalculator.h
 include/ITK-%%ITK_VER%%/itkShanbhagThresholdCalculator.hxx
 include/ITK-%%ITK_VER%%/itkShanbhagThresholdImageFilter.h
@@ -2689,8 +2614,6 @@ include/ITK-%%ITK_VER%%/itkShapeDetectionLevelSetFunction.h
 include/ITK-%%ITK_VER%%/itkShapeDetectionLevelSetFunction.hxx
 include/ITK-%%ITK_VER%%/itkShapeDetectionLevelSetImageFilter.h
 include/ITK-%%ITK_VER%%/itkShapeDetectionLevelSetImageFilter.hxx
-include/ITK-%%ITK_VER%%/itkShapeDetectionLevelSetSegmentationModule.h
-include/ITK-%%ITK_VER%%/itkShapeDetectionLevelSetSegmentationModule.hxx
 include/ITK-%%ITK_VER%%/itkShapeKeepNObjectsLabelMapFilter.h
 include/ITK-%%ITK_VER%%/itkShapeKeepNObjectsLabelMapFilter.hxx
 include/ITK-%%ITK_VER%%/itkShapeLabelMapFilter.h
@@ -2741,8 +2664,6 @@ include/ITK-%%ITK_VER%%/itkSiddonJacobsRayCastInterpolateImageFunction.h
 include/ITK-%%ITK_VER%%/itkSiddonJacobsRayCastInterpolateImageFunction.hxx
 include/ITK-%%ITK_VER%%/itkSiemensVisionImageIO.h
 include/ITK-%%ITK_VER%%/itkSiemensVisionImageIOFactory.h
-include/ITK-%%ITK_VER%%/itkSigmoidFeatureGenerator.h
-include/ITK-%%ITK_VER%%/itkSigmoidFeatureGenerator.hxx
 include/ITK-%%ITK_VER%%/itkSigmoidImageFilter.h
 include/ITK-%%ITK_VER%%/itkSignedDanielssonDistanceMapImageFilter.h
 include/ITK-%%ITK_VER%%/itkSignedDanielssonDistanceMapImageFilter.hxx
@@ -2775,8 +2696,6 @@ include/ITK-%%ITK_VER%%/itkSinRegularizedHeavisideStepFunction.h
 include/ITK-%%ITK_VER%%/itkSinRegularizedHeavisideStepFunction.hxx
 include/ITK-%%ITK_VER%%/itkSingleImageCostFunction.h
 include/ITK-%%ITK_VER%%/itkSingleImageCostFunction.hxx
-include/ITK-%%ITK_VER%%/itkSinglePhaseLevelSetSegmentationModule.h
-include/ITK-%%ITK_VER%%/itkSinglePhaseLevelSetSegmentationModule.hxx
 include/ITK-%%ITK_VER%%/itkSingleValuedCostFunction.h
 include/ITK-%%ITK_VER%%/itkSingleValuedCostFunctionv4.h
 include/ITK-%%ITK_VER%%/itkSingleValuedNonLinearOptimizer.h
@@ -3105,8 +3024,6 @@ include/ITK-%%ITK_VER%%/itkVTKImageIO.h
 include/ITK-%%ITK_VER%%/itkVTKImageIOFactory.h
 include/ITK-%%ITK_VER%%/itkVTKImageImport.h
 include/ITK-%%ITK_VER%%/itkVTKImageImport.hxx
-include/ITK-%%ITK_VER%%/itkVTKImageToImageFilter.h
-include/ITK-%%ITK_VER%%/itkVTKImageToImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkVTKPolyDataMeshIO.h
 include/ITK-%%ITK_VER%%/itkVTKPolyDataMeshIOFactory.h
 include/ITK-%%ITK_VER%%/itkVTKPolyDataReader.h
@@ -3227,8 +3144,6 @@ include/ITK-%%ITK_VER%%/itkVersorTransform.hxx
 include/ITK-%%ITK_VER%%/itkVersorTransformOptimizer.h
 include/ITK-%%ITK_VER%%/itkVertexCell.h
 include/ITK-%%ITK_VER%%/itkVertexCell.hxx
-include/ITK-%%ITK_VER%%/itkVesselEnhancingDiffusion3DImageFilter.h
-include/ITK-%%ITK_VER%%/itkVesselEnhancingDiffusion3DImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkVideoFileReader.h
 include/ITK-%%ITK_VER%%/itkVideoFileReader.hxx
 include/ITK-%%ITK_VER%%/itkVideoFileWriter.h
@@ -3241,8 +3156,6 @@ include/ITK-%%ITK_VER%%/itkVideoStream.h
 include/ITK-%%ITK_VER%%/itkVideoStream.hxx
 include/ITK-%%ITK_VER%%/itkVideoToVideoFilter.h
 include/ITK-%%ITK_VER%%/itkVideoToVideoFilter.hxx
-include/ITK-%%ITK_VER%%/itkViewImage.h
-include/ITK-%%ITK_VER%%/itkViewImage.hxx
 include/ITK-%%ITK_VER%%/itkVnlComplexToComplex1DFFTImageFilter.h
 include/ITK-%%ITK_VER%%/itkVnlComplexToComplex1DFFTImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkVnlComplexToComplexFFTImageFilter.h
@@ -3276,8 +3189,6 @@ include/ITK-%%ITK_VER%%/itkVoronoiSegmentationImageFilterBase.h
 include/ITK-%%ITK_VER%%/itkVoronoiSegmentationImageFilterBase.hxx
 include/ITK-%%ITK_VER%%/itkVoronoiSegmentationRGBImageFilter.h
 include/ITK-%%ITK_VER%%/itkVoronoiSegmentationRGBImageFilter.hxx
-include/ITK-%%ITK_VER%%/itkVotingBinaryHoleFillFloodingImageFilter.h
-include/ITK-%%ITK_VER%%/itkVotingBinaryHoleFillFloodingImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkVotingBinaryHoleFillingImageFilter.h
 include/ITK-%%ITK_VER%%/itkVotingBinaryHoleFillingImageFilter.hxx
 include/ITK-%%ITK_VER%%/itkVotingBinaryImageFilter.h
@@ -3321,8 +3232,6 @@ include/ITK-%%ITK_VER%%/itkWeightedCovarianceSampleFilter.h
 include/ITK-%%ITK_VER%%/itkWeightedCovarianceSampleFilter.hxx
 include/ITK-%%ITK_VER%%/itkWeightedMeanSampleFilter.h
 include/ITK-%%ITK_VER%%/itkWeightedMeanSampleFilter.hxx
-include/ITK-%%ITK_VER%%/itkWeightedSumFeatureAggregator.h
-include/ITK-%%ITK_VER%%/itkWeightedSumFeatureAggregator.hxx
 include/ITK-%%ITK_VER%%/itkWhitakerSparseLevelSetImage.h
 include/ITK-%%ITK_VER%%/itkWhitakerSparseLevelSetImage.hxx
 include/ITK-%%ITK_VER%%/itkWhiteTopHatImageFilter.h
@@ -3855,7 +3764,6 @@ include/ITK-%%ITK_VER%%/rtkZengBackProjectionImageFilter.hxx
 include/ITK-%%ITK_VER%%/rtkZengForwardProjectionImageFilter.h
 include/ITK-%%ITK_VER%%/rtkZengForwardProjectionImageFilter.hxx
 include/ITK-%%ITK_VER%%/stub.h
-include/ITK-%%ITK_VER%%/vtkCaptureScreen.h
 include/ITK-%%ITK_VER%%/znzlib.h
 include/RTK/lpsolve/lp_Hash.h
 include/RTK/lpsolve/lp_MDO.h
@@ -4045,11 +3953,9 @@ lib/cmake/ITK-%%ITK_VER%%/Modules/ITKVideoCore.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKVideoFiltering.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKVideoIO.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKVoronoi.cmake
-lib/cmake/ITK-%%ITK_VER%%/Modules/ITKVtkGlue.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKWatersheds.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/ITKZLIB.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/LabelErodeDilate.cmake
-lib/cmake/ITK-%%ITK_VER%%/Modules/LesionSizingToolkit.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/MeshNoise.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/MeshToPolyData.cmake
 lib/cmake/ITK-%%ITK_VER%%/Modules/MinimalPathExtraction.cmake
@@ -4231,8 +4137,6 @@ lib/libITKVideoCore-%%ITK_VER%%.so
 lib/libITKVideoCore-%%ITK_VER%%.so.1
 lib/libITKVideoIO-%%ITK_VER%%.so
 lib/libITKVideoIO-%%ITK_VER%%.so.1
-lib/libITKVtkGlue-%%ITK_VER%%.so
-lib/libITKVtkGlue-%%ITK_VER%%.so.1
 lib/libITKWatersheds-%%ITK_VER%%.so
 lib/libITKWatersheds-%%ITK_VER%%.so.1
 lib/libITKgiftiio-%%ITK_VER%%.so

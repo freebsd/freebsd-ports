@@ -13,6 +13,8 @@ WWW=		https://www.elmerfem.org/blog/
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build with vtk-9.5.0, see https://github.com/ElmerCSC/elmerfem/issues/677
+
 LIB_DEPENDS=	libblas.so:math/blas \
 		libhdf5.so:science/hdf5 \
 		libmetis.so:math/metis \

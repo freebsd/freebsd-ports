@@ -1,8 +1,17 @@
 https://github.com/lagadic/visp/issues/423
 
---- CMakeLists.txt.orig	2021-03-05 01:09:20 UTC
+--- CMakeLists.txt.orig	2023-09-22 05:39:36 UTC
 +++ CMakeLists.txt
-@@ -230,7 +230,7 @@ else() # UNIX
+@@ -124,6 +124,8 @@ project(VISP C CXX)
+ 
+ project(VISP C CXX)
+ 
++find_package(VTK REQUIRED) # workaround for https://gitlab.kitware.com/vtk/vtk/-/issues/19716
++
+ list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
+ 
+ include(cmake/VISPUtils.cmake)
+@@ -244,7 +246,7 @@ else() # UNIX
      vp_update(VISP_LIB_INSTALL_PATH       "${CMAKE_INSTALL_LIBDIR}")
    endif()
    vp_update(VISP_BIN_INSTALL_PATH         "${CMAKE_INSTALL_BINDIR}")

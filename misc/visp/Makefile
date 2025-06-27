@@ -1,12 +1,13 @@
 PORTNAME=	visp
 DISTVERSION=	3.6.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	misc
 MASTER_SITES=	https://visp-doc.inria.fr/download/releases/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modular library for visual tracking and visual servoing
-WWW=		https://visp.inria.fr/
+WWW=		https://visp.inria.fr/ \
+		https://github.com/lagadic/visp
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -37,6 +38,8 @@ USE_LDCONFIG=	yes
 
 CMAKE_OFF=	WITH_QBDEVICE BUILD_EXAMPLES BUILD_TUTORIALS BUILD_TESTS BUILD_DEMOS
 
+CXXFLAGS+=	-I${LOCALBASE}/include/vtk-${VTK_VER} # https://github.com/lagadic/visp/issues/1707
+
 OPTIONS_DEFINE=		COIN OGRE PCL ZBAR
 OPTIONS_DEFAULT=	COIN OGRE PCL ZBAR
 
@@ -51,10 +54,11 @@ OGRE_LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d19
 PCL_DESC=		Include Point Cloud Library support
 PCL_CMAKE_BOOL=		USE_PCL
 PCL_LIB_DEPENDS=	libpcl_common.so:graphics/pcl-pointclouds \
-			libvtkCommonCore-9.2.so:math/vtk9 # vtk9 is incurred by pcl-pointclouds
+			libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R} # vtk9 is incurred by pcl-pointclouds
 
 ZBAR_DESC=		Use ZBAR to read bar codes and QR codes
 ZBAR_CMAKE_BOOL=	USE_ZBAR
 ZBAR_LIB_DEPENDS=	libzbar.so:graphics/zbar
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

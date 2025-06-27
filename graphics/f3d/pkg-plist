@@ -1,5 +1,4 @@
 bin/f3d
-include/f3d/F3DUtils.h
 include/f3d/camera.h
 include/f3d/context.h
 include/f3d/engine.h
@@ -14,10 +13,6 @@ include/f3d/reader.h
 include/f3d/scene.h
 include/f3d/types.h
 include/f3d/utils.h
-include/f3d/vtkF3DFaceVaryingPointDispatcher.h
-include/f3d/vtkF3DGLTFImporter.h
-include/f3d/vtkF3DImporter.h
-include/f3d/vtkextModule.h
 include/f3d/window.h
 lib/cmake/f3d/application-config.cmake
 lib/cmake/f3d/f3dConfig.cmake
@@ -28,20 +23,10 @@ lib/cmake/f3d/f3dLibraryTargets.cmake
 lib/cmake/f3d/f3dTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/f3d/f3dTargets.cmake
 lib/cmake/f3d/library-config.cmake
-lib/cmake/f3d_vtkext/f3d_vtkext-targets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/f3d_vtkext/f3d_vtkext-targets.cmake
-lib/cmake/f3d_vtkext/f3d_vtkext-vtk-module-properties.cmake
 lib/libf3d.so
 lib/libf3d.so.3
 lib/libf3d.so.3.1
 lib/libvtkext.so
-%%ALEMBIC%%lib/libvtkextAlembic.a
-%%ASSIMP%%lib/libvtkextAssimp.a
-%%DRACO%%lib/libvtkextDraco.a
-lib/libvtkextNative.a
-%%OCCT%%lib/libvtkextOCCT.a
-lib/libvtkextPrivate.a
-lib/vtk/hierarchy/f3d_vtkext/vtkext-hierarchy.txt
 %%ALEMBIC%%share/applications/f3d-plugin-alembic.desktop
 %%ASSIMP%%share/applications/f3d-plugin-assimp.desktop
 %%DRACO%%share/applications/f3d-plugin-draco.desktop
