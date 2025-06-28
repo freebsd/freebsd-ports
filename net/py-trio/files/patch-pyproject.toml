@@ -1,9 +1,18 @@
---- pyproject.toml.orig	2023-12-14 02:37:27 UTC
+--- pyproject.toml.orig	2025-04-21 00:47:33 UTC
 +++ pyproject.toml
-@@ -1,5 +1,5 @@
+@@ -1,14 +1,11 @@
  [build-system]
--requires = ["setuptools >= 64"]
+-# setuptools v77 adds PEP 639 support
+-requires = ["setuptools >= 77"]
 +requires = ["setuptools >= 63"]
  build-backend = "setuptools.build_meta"
  
  [project]
+ name = "trio"
+ description = "A friendly Python library for async concurrency and I/O"
+ authors = [{name = "Nathaniel J. Smith", email = "njs@pobox.com"}]
+-license = "MIT OR Apache-2.0"
+-license-files = ["LICENSE*"]
+ keywords = [
+     "async",
+     "io",
