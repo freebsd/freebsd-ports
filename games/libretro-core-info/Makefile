@@ -1,9 +1,9 @@
 PORTNAME=	libretro-core-info
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.19.0
+DISTVERSION=	1.21.1
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tilde@ultros.pro
 COMMENT=	Metadata about libretro cores
 WWW=		https://github.com/libretro/libretro-core-info
 
@@ -14,5 +14,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 .include <bsd.port.mk>
