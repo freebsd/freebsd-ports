@@ -1,6 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.19
+DISTVERSION=	0.2.20
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
@@ -338,6 +338,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		signal-hook-0.3.18 \
 		signal-hook-registry-1.4.5 \
 		simd-adler32-0.3.7 \
+		simdutf8-0.1.5 \
 		skrifa-0.31.3 \
 		slab-0.4.10 \
 		slotmap-1.0.7 \
