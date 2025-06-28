@@ -40,6 +40,8 @@ bin/nats-server
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/authorization_1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/authorization_2.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/basic.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/reload/defaultsentinel_1.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/reload/defaultsentinel_2.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/file_rotate.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/file_rotate1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/invalid.conf
