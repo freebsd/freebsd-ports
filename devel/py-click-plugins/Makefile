@@ -1,13 +1,14 @@
 PORTNAME=	click-plugins
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Click extension to register CLI commands via setuptools
-WWW=		https://pypi.org/project/click-plugins/
+WWW=		https://pypi.org/project/click-plugins/ \
+		https://github.com/click-contrib/click-plugins
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
