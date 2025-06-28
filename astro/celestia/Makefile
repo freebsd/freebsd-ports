@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-${CELESTIA_UI}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Scriptable space flight simulator for X11
-WWW=		https://celestia.space
+WWW=		https://celestiaproject.space/
 
 LICENSE=	GPLv2
 
