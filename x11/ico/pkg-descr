@@ -1,2 +1,5 @@
-This package contains ico, an appliction used for displaying wire-framed
-rotating polyhedrons.
+Ico is a simple animation program that may be used for testing various
+X11 operations and extensions. It displays a wire-frame rotating
+polyhedron, with hidden lines removed, or a solid-fill polyhedron with
+hidden faces removed. There are a number of different polyhedra
+available.
