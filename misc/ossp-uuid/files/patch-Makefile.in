@@ -1,4 +1,4 @@
-### This Patch is to fix conflicts with misc/e2fsprogs-libuuid ###
+### This Patch is to fix conflicts with misc/libuuid ###
 --- Makefile.in.orig	2016-02-07 14:59:23 UTC
 +++ Makefile.in
 @@ -74,7 +74,7 @@ CXX_OBJS    = uuid++.lo $(LIB_OBJS)

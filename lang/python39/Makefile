@@ -106,7 +106,7 @@ PLIST_SUB+=	NO_NIS=""
 .endif
 
 post-patch:
-# disable the detection of includes and library from e2fsprogs-libuuid,
+# disable the detection of includes and library from libuuid,
 # which introduces hidden dependency and breaks build
 	@${REINPLACE_CMD} -e 's|uuid/uuid.h|ignore_&|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/find_library_file/ s|uuid|ignore_&|' ${WRKSRC}/setup.py

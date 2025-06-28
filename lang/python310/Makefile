@@ -107,7 +107,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/libressl
 .endif
 
 post-patch:
-# disable the detection of includes and library from e2fsprogs-libuuid,
+# disable the detection of includes and library from libuuid,
 # which introduces hidden dependency and breaks build
 	@${REINPLACE_CMD} -e 's|uuid/uuid.h|ignore_&|' ${WRKSRC}/configure
 
