@@ -1198,6 +1198,7 @@
     SUBDIR += rubygem-mothra
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
+    SUBDIR += rubygem-openfact
     SUBDIR += rubygem-parallel
     SUBDIR += rubygem-puppet_forge
     SUBDIR += rubygem-puppetfile-resolver

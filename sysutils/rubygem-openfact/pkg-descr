@@ -1,0 +1,5 @@
+A cross-platform Ruby library for retrieving facts from operating systems.
+Supports multiple resolution mechanisms, any of which can be restricted to
+working only on certain operating systems or environments. Facter is
+especially useful for retrieving things like operating system names, IP
+addresses, MAC addresses, and SSH keys.
