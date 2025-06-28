@@ -14,7 +14,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		cmake-core>=3.19.6:devel/cmake-core
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libicuuc.so:devel/icu \
-		libuuid.so:misc/e2fsprogs-libuuid \
+		libuuid.so:misc/libuuid \
 		libxml2.so:textproc/libxml2 \
 		libzstd.so:archivers/zstd
 
