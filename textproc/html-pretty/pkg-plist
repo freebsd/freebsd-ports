@@ -1,5 +1,4 @@
 bin/html-pretty
-share/man/man1/html-pretty.1.gz
 %%DATADIR%%/catalog
 %%DATADIR%%/cougar.sty
 %%DATADIR%%/dtd.sty
@@ -8,3 +7,4 @@ share/man/man1/html-pretty.1.gz
 %%DATADIR%%/html-32.sty
 %%DATADIR%%/html-40.sty
 %%DATADIR%%/html-all.sty
+share/man/man1/html-pretty.1.gz
