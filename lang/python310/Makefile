@@ -107,6 +107,10 @@ EXTRA_PATCHES+=	${PATCHDIR}/libressl
 .endif
 
 post-patch:
+# disable the detection of includes and library from e2fsprogs-libuuid,
+# which introduces hidden dependency and breaks build
+	@${REINPLACE_CMD} -e 's|uuid/uuid.h|ignore_&|' ${WRKSRC}/configure
+
 # disable detection of multiarch as it breaks with clang >= 13, which adds a
 # major.minor version number in -print-multiarch output, confusing Python
 	@${REINPLACE_CMD} -e 's|^\( *MULTIARCH=\).*--print-multiarch.*|\1|' ${WRKSRC}/configure
