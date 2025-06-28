@@ -114,6 +114,7 @@
     SUBDIR += colmap
     SUBDIR += colord
     SUBDIR += colord-gtk
+    SUBDIR += colord-kde
     SUBDIR += compupic
     SUBDIR += converseen
     SUBDIR += corrupter
