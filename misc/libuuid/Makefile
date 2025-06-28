@@ -4,7 +4,7 @@ DISTVERSION=	2.41
 CATEGORIES=	misc
 
 MAINTAINER=	arrowd@FreeBSD.org
-COMMENT=	Library that generates and parses 128-bit Universally Unique IDs (UUIDs)
+COMMENT=	Library to generate or parse 128-bit Universally Unique IDs (UUIDs)
 WWW=		https://github.com/util-linux/util-linux
 
 LICENSE=	BSD3CLAUSE
@@ -17,15 +17,16 @@ GH_ACCOUNT=	util-linux
 GH_PROJECT=	util-linux
 
 USE_LDCONFIG=	yes
-OPTIONS_SUB=	yes
 # disable all Meson features because the project has gazillion of them and we only need one
 MESON_ARGS=	--auto-features=disabled \
-		-Ddefault_library=both \
-		-Dbuild-libuuid=enabled \
 		-Dallow-32bit-time=true \
+		-Dbuild-libuuid=enabled \
+		-Ddefault_library=both \
 		-Dprogram-tests=false
 
 OPTIONS_DEFINE=		MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=		yes
 MANPAGES_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
 
 .include <bsd.port.mk>

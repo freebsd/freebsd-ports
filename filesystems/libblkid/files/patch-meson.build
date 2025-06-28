@@ -57,3 +57,11 @@
  if not is_disabler(exe)
    exes += exe
    manadocs += wdctl_manadocs
+@@ -4026,7 +4005,6 @@ run_target(
+   depends : exes)
+ 
+ 
+-manadocs += lib_tcolors_manadocs
+ if build_libblkid
+   manadocs += lib_blkid_manadocs + lib_smartcols_manadocs
+ endif

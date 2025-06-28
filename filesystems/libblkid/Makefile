@@ -17,16 +17,17 @@ GH_ACCOUNT=	util-linux
 GH_PROJECT=	util-linux
 
 USE_LDCONFIG=	yes
-OPTIONS_SUB=	yes
 # disable all Meson features because the project has gazillion of them and we only need few
 MESON_ARGS=	--auto-features=disabled \
-		-Db_lundef=false \
-		-Dprogram-tests=false \
 		-Dallow-32bit-time=true \
+		-Db_lundef=false \
 		-Dbuild-libblkid=enabled \
-		-Dbuild-libsmartcols=enabled # dependency of libblkid
+		-Dbuild-libsmartcols=enabled \
+		-Dprogram-tests=false # dependency of libblkid
 
 OPTIONS_DEFINE=		MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=		yes
 MANPAGES_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
 
 .include <bsd.port.mk>

@@ -23,7 +23,6 @@ sbin/wipefs
 %%MANPAGES%%share/man/man1/renice.1.gz
 %%MANPAGES%%share/man/man3/libblkid.3.gz
 %%MANPAGES%%share/man/man5/scols-filter.5.gz
-%%MANPAGES%%share/man/man5/terminal-colors.d.5.gz
 %%MANPAGES%%share/man/man8/blkid.8.gz
 %%MANPAGES%%share/man/man8/readprofile.8.gz
 %%MANPAGES%%share/man/man8/wipefs.8.gz
