@@ -11,7 +11,7 @@ LICENSE=	LGPL3
 
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:devel/py-dbus@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}libxml2>=2.7.8:textproc/py-libxml2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}libxml2-python>=2.7.8:textproc/libxml2-python@${PY_FLAVOR} \
 		vte3>=0:x11-toolkits/vte3 \
 		${PYTHON_PKGNAMEPREFIX}ipaddr>=0:devel/py-ipaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libvirt>=0:devel/py-libvirt@${PY_FLAVOR} \

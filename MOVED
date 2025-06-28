@@ -4558,3 +4558,4 @@ security/py-gpgme|security/py-gpg|2025-06-24|Gpgme Python bindings have been spl
 security/gpgme-cpp|security/gpgmepp|2025-06-24|Gpgme C++ bindings have been split into a separate project
 security/gpgme-qt@qt5|security/qgpgme@qt5|2025-06-24|Gpgme Qt5 bindings have been split into a separate project
 security/gpgme-qt@qt6|security/qgpgme@qt6|2025-06-24|Gpgme Qt6 bindings have been split into a separate project
+textproc/py-libxml2|textproc/libxml2-python|2025-06-28|Use correct Python package name

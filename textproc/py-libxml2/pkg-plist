@@ -1,7 +1,0 @@
-%%PYTHON_SITELIBDIR%%/__pycache__/drv_libxml2%%PYTHON_TAG%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/__pycache__/drv_libxml2%%PYTHON_TAG%%.pyc
-%%PYTHON_SITELIBDIR%%/__pycache__/libxml2%%PYTHON_TAG%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/__pycache__/libxml2%%PYTHON_TAG%%.pyc
-%%PYTHON_SITELIBDIR%%/drv_libxml2.py
-%%PYTHON_SITELIBDIR%%/libxml2.py
-%%PYTHON_SITELIBDIR%%/libxml2mod.so

@@ -423,6 +423,7 @@
     SUBDIR += libxml++26
     SUBDIR += libxml++30
     SUBDIR += libxml2
+    SUBDIR += libxml2-python
     SUBDIR += libxmlb
     SUBDIR += libxmlbird
     SUBDIR += libxode
@@ -1427,7 +1428,6 @@
     SUBDIR += py-language-data
     SUBDIR += py-laserhammer
     SUBDIR += py-latexcodec
-    SUBDIR += py-libxml2
     SUBDIR += py-license-expression
     SUBDIR += py-line-protocol-parser
     SUBDIR += py-linkify-it-py
