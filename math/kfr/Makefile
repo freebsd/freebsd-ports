@@ -1,5 +1,5 @@
 PORTNAME=	kfr
-DISTVERSION=	6.1.1
+DISTVERSION=	6.2.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,6 +44,6 @@ post-test: # see https://github.com/kfrlib/kfr/issues/164
 	@cd ${BUILD_WRKSRC} && \
 		${BUILD_WRKSRC}/bin/all_tests
 
-# tests as of 6.1.1: [--SUCCESS--] 199/199 tests 2810450/2810450 checks
+# tests as of 6.2.0: [--SUCCESS--] 199/199 tests 2810450/2810450 checks
 
 .include <bsd.port.mk>
