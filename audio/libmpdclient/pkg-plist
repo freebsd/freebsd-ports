@@ -10,6 +10,7 @@ include/mpd/database.h
 include/mpd/directory.h
 include/mpd/entity.h
 include/mpd/error.h
+include/mpd/feature.h
 include/mpd/fingerprint.h
 include/mpd/idle.h
 include/mpd/list.h
