@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2025-06-20 20:47:42 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=80.8.0"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,8 +7,7 @@ maintainers = [{name = "Matthias Valvekens", email = "
+ description = "CLI tools for stamping and signing PDF files"
+ authors = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
+ maintainers = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ keywords = [
+     "signature",
+     "pdf",
