@@ -1,10 +1,10 @@
 PORTNAME=	noto
-PORTVERSION=	2.047
+PORTVERSION=	2.048
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/googlefonts/noto-emoji/raw/v${PORTVERSION}/fonts/
 PKGNAMESUFFIX=	-emoji
 DISTFILES=	NotoColorEmoji.ttf
-DIST_SUBDIR=	Noto
+DIST_SUBDIR=	Noto/Emoji/${PORTVERSION}
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	sunpoet@FreeBSD.org
