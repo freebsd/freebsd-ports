@@ -1,5 +1,5 @@
 PORTNAME=	cloc
-PORTVERSION=	2.04
+PORTVERSION=	2.06
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/AlDanial/cloc/releases/download/v${PORTVERSION}/
 
