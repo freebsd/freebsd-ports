@@ -89,12 +89,16 @@ bin/thisroot.sh
 %%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/amxintrin.h
 %%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/arm64intr.h
 %%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/arm_acle.h
+%%ONLY_INSTALLED_ON_AARCH64%%%%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/arm_bf16.h
 %%ONLY_INSTALLED_ON_AARCH64%%%%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/arm_cde.h
 %%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/arm_cmse.h
+%%ONLY_INSTALLED_ON_AARCH64%%%%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/arm_fp16.h
 %%ONLY_INSTALLED_ON_AARCH64%%%%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/arm_mve.h
 %%ONLY_INSTALLED_ON_AARCH64%%%%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/arm_neon.h
 %%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/arm_neon_sve_bridge.h
+%%ONLY_INSTALLED_ON_AARCH64%%%%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/arm_sme.h
 %%ONLY_INSTALLED_ON_AARCH64%%%%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/arm_sve.h
+%%ONLY_INSTALLED_ON_AARCH64%%%%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/arm_vector_types.h
 %%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/armintr.h
 %%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/avx2intrin.h
 %%ETCDIR%%/cling/lib/clang/%%ROOT_CLANG_VER%%/include/avx512bf16intrin.h
