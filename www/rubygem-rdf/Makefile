@@ -1,5 +1,5 @@
 PORTNAME=	rdf
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
 RUN_DEPENDS=	rubygem-bcp47_spec>=0.2<1:devel/rubygem-bcp47_spec \
 		rubygem-bigdecimal>=3.1.5<4:math/rubygem-bigdecimal \
-		rubygem-link_header>=0.0.8<1:www/rubygem-link_header
+		rubygem-link_header>=0.0.8<1:www/rubygem-link_header \
+		rubygem-logger>=1.5<2:devel/rubygem-logger \
+		rubygem-ostruct>=0.6<1:devel/rubygem-ostruct
 
 USES=		gem
 
