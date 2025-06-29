@@ -1,5 +1,5 @@
 PORTNAME=	faust
-DISTVERSION=	2.77.3
+DISTVERSION=	2.79.3
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org

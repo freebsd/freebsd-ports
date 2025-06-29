@@ -34,6 +34,7 @@ bin/faust2firefox
 bin/faust2gen
 bin/faust2graph
 bin/faust2graphviewer
+bin/faust2hothouse
 bin/faust2ios
 bin/faust2jack
 bin/faust2jackconsole
@@ -184,7 +185,6 @@ include/faust/gui/CInterface.h
 include/faust/gui/ControlSequenceUI.h
 include/faust/gui/ControlUI.h
 include/faust/gui/DaisyControlUI.h
-include/faust/gui/DaisyPatchInitControlUI.h
 include/faust/gui/DecoratorUI.h
 include/faust/gui/Esp32ControlUI.h
 include/faust/gui/Esp32Reader.h
@@ -193,6 +193,7 @@ include/faust/gui/FUI.h
 include/faust/gui/GTKUI.h
 include/faust/gui/GUI.h
 include/faust/gui/HTTPDControler.h
+include/faust/gui/HothouseControlUI.h
 include/faust/gui/JSONControl.h
 include/faust/gui/JSONUI.h
 include/faust/gui/JSONUIDecoder.h
@@ -276,7 +277,7 @@ lib/ios-libsndfile.a
 lib/libOSCFaust.a
 lib/libfaust.so
 lib/libfaust.so.2
-lib/libfaust.so.2.77.3
+lib/libfaust.so.2.79.3
 %%HIGHLIGHT%%share/apps/katepart/syntax/faust.xml
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.cpp
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.h
@@ -436,6 +437,7 @@ lib/libfaust.so.2.77.3
 %%DATADIR%%/daisy/Makefile
 %%DATADIR%%/daisy/README.md
 %%DATADIR%%/daisy/ex_faust.cpp
+%%DATADIR%%/daisy/faust_sdram_converter.py
 %%DATADIR%%/delays.lib
 %%DATADIR%%/demos.lib
 %%DATADIR%%/dplug.d
@@ -490,6 +492,9 @@ lib/libfaust.so.2.77.3
 %%DATADIR%%/filters.lib
 %%DATADIR%%/gen-json.cpp
 %%DATADIR%%/hoa.lib
+%%DATADIR%%/hothouse/Makefile
+%%DATADIR%%/hothouse/README.md
+%%DATADIR%%/hothouse/ex_faust.cpp
 %%DATADIR%%/iOS/Default-568h@2x.png
 %%DATADIR%%/iOS/Default-Landscape@2x~ipad.png
 %%DATADIR%%/iOS/Default-Landscape~ipad.png
@@ -699,6 +704,10 @@ lib/libfaust.so.2.77.3
 %%DATADIR%%/max-msp/faustgen-wrapper.maxpat
 %%DATADIR%%/max-msp/max-msp.cpp
 %%DATADIR%%/max-msp/max-msp64.cpp
+%%DATADIR%%/max-msp/mc-faustgen-wrapper-poly.maxpat
+%%DATADIR%%/max-msp/mc-faustgen-wrapper.maxpat
+%%DATADIR%%/max-msp/mc-wrapper-poly.maxpat
+%%DATADIR%%/max-msp/mc-wrapper.maxpat
 %%DATADIR%%/max-msp/py2max/.gitignore
 %%DATADIR%%/max-msp/py2max/CHANGELOG.md
 %%DATADIR%%/max-msp/py2max/LICENSE
