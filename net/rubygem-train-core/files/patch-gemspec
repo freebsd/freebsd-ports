@@ -1,0 +1,11 @@
+--- train-core.gemspec.orig	2025-06-27 04:32:49 UTC
++++ train-core.gemspec
+@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.5".freeze])
+-  s.add_runtime_dependency(%q<ffi>.freeze, ["~> 1.16.0".freeze])
++  s.add_runtime_dependency(%q<ffi>.freeze, [">= 1.16.0".freeze])
+   s.add_runtime_dependency(%q<json>.freeze, [">= 1.8".freeze, "< 3.0".freeze])
+   s.add_runtime_dependency(%q<mixlib-shellout>.freeze, [">= 2.0".freeze, "< 4.0".freeze])
+   s.add_runtime_dependency(%q<net-scp>.freeze, [">= 1.2".freeze, "< 5.0".freeze])
