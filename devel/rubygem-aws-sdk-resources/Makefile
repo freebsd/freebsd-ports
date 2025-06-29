@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.229.0
+PORTVERSION=	3.232.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +14,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-account>=1<2:devel/rubygem-aws-sdk-account \
 		rubygem-aws-sdk-acm>=1<2:devel/rubygem-aws-sdk-acm \
 		rubygem-aws-sdk-acmpca>=1<2:devel/rubygem-aws-sdk-acmpca \
+		rubygem-aws-sdk-aiops>=1<2:devel/rubygem-aws-sdk-aiops \
 		rubygem-aws-sdk-amplify>=1<2:devel/rubygem-aws-sdk-amplify \
 		rubygem-aws-sdk-amplifybackend>=1<2:devel/rubygem-aws-sdk-amplifybackend \
 		rubygem-aws-sdk-amplifyuibuilder>=1<2:devel/rubygem-aws-sdk-amplifyuibuilder \
@@ -271,6 +272,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-migrationhuborchestrator>=1<2:devel/rubygem-aws-sdk-migrationhuborchestrator \
 		rubygem-aws-sdk-migrationhubrefactorspaces>=1<2:devel/rubygem-aws-sdk-migrationhubrefactorspaces \
 		rubygem-aws-sdk-migrationhubstrategyrecommendations>=1<2:devel/rubygem-aws-sdk-migrationhubstrategyrecommendations \
+		rubygem-aws-sdk-mpa>=1<2:devel/rubygem-aws-sdk-mpa \
 		rubygem-aws-sdk-mq>=1<2:devel/rubygem-aws-sdk-mq \
 		rubygem-aws-sdk-mturk>=1<2:devel/rubygem-aws-sdk-mturk \
 		rubygem-aws-sdk-mwaa>=1<2:devel/rubygem-aws-sdk-mwaa \
@@ -410,6 +412,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-workmail>=1<2:devel/rubygem-aws-sdk-workmail \
 		rubygem-aws-sdk-workmailmessageflow>=1<2:devel/rubygem-aws-sdk-workmailmessageflow \
 		rubygem-aws-sdk-workspaces>=1<2:devel/rubygem-aws-sdk-workspaces \
+		rubygem-aws-sdk-workspacesinstances>=1<2:devel/rubygem-aws-sdk-workspacesinstances \
 		rubygem-aws-sdk-workspacesthinclient>=1<2:devel/rubygem-aws-sdk-workspacesthinclient \
 		rubygem-aws-sdk-workspacesweb>=1<2:devel/rubygem-aws-sdk-workspacesweb \
 		rubygem-aws-sdk-xray>=1<2:devel/rubygem-aws-sdk-xray
