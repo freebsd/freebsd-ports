@@ -1,3 +1,3 @@
-A Sphinx extension to generate multi-version, and multi-language HTML sitemaps
-for generated documentation. py-sphinx-sitemap is compliant with the
-Sitemaps.org XML schema for declaring and generating HTML sitemaps.
+Sphinx Sitemap Generator Extension is a Sphinx extension to generate
+multiversion and multilanguage sitemaps.org compliant sitemaps for the HTML
+version of your Sphinx documentation.
