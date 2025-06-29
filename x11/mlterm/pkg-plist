@@ -46,8 +46,10 @@ lib/mlterm/libzmodem.so
 %%FRIBIDI%%lib/mlterm/libctl_bidi.so
 lib/mlterm/libctl_iscii.a
 lib/mlterm/libctl_iscii.so
-%%FCITX%%lib/mlterm/libim-fcitx.a
-%%FCITX%%lib/mlterm/libim-fcitx.so
+%%FCITX4%%lib/mlterm/libim-fcitx.a
+%%FCITX4%%lib/mlterm/libim-fcitx.so
+%%FCITX5%%lib/mlterm/libim-fcitx.a
+%%FCITX5%%lib/mlterm/libim-fcitx.so
 %%IBUS%%lib/mlterm/libim-ibus.a
 %%IBUS%%lib/mlterm/libim-ibus.so
 lib/mlterm/libim-kbd.a

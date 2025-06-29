@@ -1,5 +1,6 @@
 PORTNAME=	mlterm
 PORTVERSION=	3.9.4
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -30,10 +31,14 @@ MAKE_JOBS_UNSAFE=	yes
 
 GH_ACCOUNT=	arakiken
 
-OPTIONS_DEFINE=	CAIRO DOCS FCITX FRIBIDI IBUS M17NLIB REGIS SCIM SIXEL UIM
+OPTIONS_DEFINE=	CAIRO DOCS FRIBIDI IBUS M17NLIB REGIS SCIM SIXEL UIM
 OPTIONS_SUB=	yes
+OPTIONS_RADIO=	FCITX
+OPTIONS_RADIO_FCITX=	FCITX4 FCITX5
 CAIRO_DESC=	Use Cairo for type engine
 FCITX_DESC=	Fcitx support
+FCITX4_DESC=	Fcitx4 support
+FCITX5_DESC=	Fcitx5 support
 FRIBIDI_DESC=	Use Fribidi for BiDi rendering
 IBUS_DESC=	IBUS support
 M17NLIB_DESC=	m17n library support
@@ -42,8 +47,10 @@ SCIM_DESC=	SCIM support
 SIXEL_DESC=	Sixel graphics support
 UIM_DESC=	uim support
 
-FCITX_CONFIGURE_ENABLE=	fcitx
-FCITX_LIB_DEPENDS=	libfcitx-gclient.so:chinese/fcitx
+FCITX4_CONFIGURE_ON=	--enable-fcitx
+FCITX4_LIB_DEPENDS=	libfcitx-gclient.so:chinese/fcitx
+FCITX5_CONFIGURE_ON=	--enable-fcitx
+FCITX5_LIB_DEPENDS=	libFcitx5GClient.so:textproc/fcitx5-gtk
 
 FRIBIDI_CONFIGURE_ENABLE=	fribidi
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
