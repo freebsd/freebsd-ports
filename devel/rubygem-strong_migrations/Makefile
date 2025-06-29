@@ -1,5 +1,5 @@
 PORTNAME=	strong_migrations
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/ankane/strong_migrations
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activerecord80>=7:databases/rubygem-activerecord80
+RUN_DEPENDS=	rubygem-activerecord80>=7.1:databases/rubygem-activerecord80
 
 USES=		gem
 
