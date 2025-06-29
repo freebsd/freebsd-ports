@@ -1,6 +1,7 @@
 PORTNAME=	xcaddy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	www
 DIST_SUBDIR=	xcaddy
 
@@ -19,5 +20,9 @@ GO_TARGET=	./cmd/xcaddy
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/${PORTNAME}
+
+post-patch:
+	${REINPLACE_CMD} 's,return "go",return "${GO_CMD}",g' \
+		${WRKSRC}/internal/utils/environment.go
 
 .include <bsd.port.mk>
