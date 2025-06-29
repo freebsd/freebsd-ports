@@ -1,5 +1,6 @@
 PORTNAME=	portconfig
 DISTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	alfix86@gmail.com

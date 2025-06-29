@@ -1,5 +1,6 @@
 PORTNAME=	sysctltui
 DISTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
