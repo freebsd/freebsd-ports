@@ -1,5 +1,5 @@
 PORTNAME=	blosc2
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://www.blosc.org/python-blosc2/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	c-blosc2>=2.17.1:archivers/c-blosc2 \
+BUILD_DEPENDS=	c-blosc2>=2.17.2:archivers/c-blosc2 \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0:devel/py-scikit-build-core@${PY_FLAVOR}
 LIB_DEPENDS=	libblosc2.so:archivers/c-blosc2
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
 USES=		cmake:indirect pkgconfig python:3.10+
-USE_PYTHON=	autoplist concurrent cython pep517
+USE_PYTHON=	autoplist concurrent cython3 pep517
 
 MAKE_ENV=	USE_SYSTEM_BLOSC2=1
 
