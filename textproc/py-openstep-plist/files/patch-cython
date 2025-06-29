@@ -1,0 +1,10 @@
+--- src/openstep_plist/writer.pyx.orig	2025-01-30 18:15:19 UTC
++++ src/openstep_plist/writer.pyx
+@@ -17,6 +17,7 @@ from libc.stdint cimport uint16_t
+ from cpython.mem cimport PyMem_Free
+ from libcpp.vector cimport vector
+ from libc.stdint cimport uint16_t
++from ctypes import c_long as long
+ cimport cython
+ 
+ from .util cimport (
