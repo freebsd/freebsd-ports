@@ -19,6 +19,7 @@ USES=		compiler:c++17-lang gmake localbase:ldflags pathfix pkgconfig
 
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" SED_INPLACE="${SED} -i ''" prefix=${PREFIX}
 PATHFIX_MAKEFILEIN=	Makefile
+TEST_TARGET=	test
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 
