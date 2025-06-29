@@ -1,12 +1,25 @@
 PORTNAME=	django-stubs-ext
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj${DJANGO_VERSION}-
+PORTVERSION=	5.2.0
+CATEGORIES=	www python
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj52-
+DISTNAME=	django_stubs_ext-${PORTVERSION}
 
 MAINTAINER=	dtxdf@FreeBSD.org
+COMMENT=	Monkey-patching and extensions for django-stubs
+WWW=		https://github.com/typeddjango/django-stubs
 
-CONFLICTS_INSTALL=	www/py-django-stubs-ext
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-MASTERDIR=	${.CURDIR}/../py-django-stubs-ext
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=0:www/py-django52@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 
-DJANGO_VERSION=	52
+USES=		python:3.10+
+USE_PYTHON=	autoplist concurrent pep517
 
-.include "${MASTERDIR}/Makefile"
+NO_ARCH=	yes
+
+.include <bsd.port.mk>
