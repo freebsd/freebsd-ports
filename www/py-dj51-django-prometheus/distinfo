@@ -1,3 +1,3 @@
-TIMESTAMP = 1683262385
-SHA256 (django-prometheus-2.3.1.tar.gz) = f9c8b6c780c9419ea01043c63a437d79db2c33353451347894408184ad9c3e1e
-SIZE (django-prometheus-2.3.1.tar.gz) = 24718
+TIMESTAMP = 1751183595
+SHA256 (django_prometheus-2.4.1.tar.gz) = 073628243d2a6de6a8a8c20e5b512872dfb85d66e1b60b28bcf1eca0155dad95
+SIZE (django_prometheus-2.4.1.tar.gz) = 24464
