@@ -1,5 +1,5 @@
 PORTNAME=	faraday-httpclient
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
