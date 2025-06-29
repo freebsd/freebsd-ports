@@ -1,9 +1,0 @@
---- doc/CMakeLists.txt.orig 2021-01-11 09:02:46 UTC
-+++ doc/CMakeLists.txt
-@@ -15,6 +15,3 @@
-                COMMENT "Generating API documentation with Doxygen"
-                SOURCES Doxyfile.in)
- endif(DOXYGEN_FOUND)
--
--ADD_SUBDIRECTORY(bash-completion)
--
