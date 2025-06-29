@@ -1,6 +1,6 @@
-TIMESTAMP = 1748831204
-SHA256 (pcodec-0.3.4.tar.gz) = 3364fa600cc6b3dd9e169f06a91860ffb80218acf5ff84046c2ebda2dd79645e
-SIZE (pcodec-0.3.4.tar.gz) = 126966
+TIMESTAMP = 1750954216
+SHA256 (pcodec-0.3.5.tar.gz) = d0242d3cabfd82cbd3d4d1f83a71aba92273a49972a372f39ca3eb20db12861d
+SIZE (pcodec-0.3.5.tar.gz) = 129855
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
