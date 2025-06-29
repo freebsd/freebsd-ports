@@ -7,14 +7,14 @@ cp xxx/Cargo.toml xxx/Cargo.toml.1
 make configure
 diff -dup xxx/Cargo.toml.1 xxx/Cargo.toml
 
---- Cargo.toml.orig	2024-08-07 22:07:24 UTC
+--- Cargo.toml.orig	2025-06-26 20:06:31 UTC
 +++ Cargo.toml
 @@ -38,7 +38,7 @@ flate2            = { version = "1.0" }
  crossbeam-channel = { version = "0.5.12" }
  directories       = { version = "4.0.1" }
  flate2            = { version = "1.0" }
--git2              = { version = "0.19.0", features = ["vendored-openssl"] }
-+git2              = { version = "0.19.0" }
+-git2              = { version = "0.20.0", features = ["vendored-openssl"] }
++git2              = { version = "0.20.0" }
  globset           = { version = "0.4.14" }
  hashbrown         = { version = "0.14.5", features = ["serde"] }
  im                = { version = "15.0.0", features = ["serde"] }

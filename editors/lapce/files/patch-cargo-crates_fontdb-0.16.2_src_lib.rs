@@ -1,4 +1,4 @@
---- cargo-crates/fontdb-0.16.2/src/lib.rs.orig	2006-07-24 01:21:28 UTC
+--- cargo-crates/fontdb-0.16.2/src/lib.rs.orig	2025-06-28 19:11:51 UTC
 +++ cargo-crates/fontdb-0.16.2/src/lib.rs
 @@ -404,7 +404,7 @@ impl Database {
              #[cfg(not(feature = "fontconfig"))]
