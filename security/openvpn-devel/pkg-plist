@@ -5,6 +5,5 @@ lib/openvpn/plugins/openvpn-plugin-down-root.so
 share/man/man5/openvpn-examples.5.gz
 share/man/man8/openvpn.8.gz
 sbin/openvpn
-libexec/openvpn-client.down
-libexec/openvpn-client.up
 sbin/openvpn-client
+libexec/openvpn/dns-updown

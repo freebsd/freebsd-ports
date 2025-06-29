@@ -4,8 +4,8 @@ using an encrypted tunnel over the internet. It can operate over UDP or TCP,
 can use SSL or a pre-shared secret to authenticate peers, and in SSL mode, one
 server can handle many clients.
 
-This development port is updated frequently and is likely NOT STABLE.  This is
-an untested tar of the source tree.  We attempt to omit inoperable states, but
-there is a good chance this program will not run.
+This development port is updated frequently and is much less well tested
+than the formal releases, and functionality and APIs may change without
+warning.
 
-DO NOT USE IN PRODUCTION WITHOUT CAUTION
+DO NOT USE IN PRODUCTION WITHOUT PRIOR TESTING FOR YOUR USE CASE.

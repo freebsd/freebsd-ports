@@ -1,5 +1,5 @@
 PORTNAME=	openvpn
-DISTVERSION=	g20250402
+DISTVERSION=	g20250629
 PORTREVISION=	0  # leave in even if 0 to avoid accidental PORTEPOCH bumps
 PORTEPOCH=	1
 CATEGORIES=	security net net-vpn
@@ -21,7 +21,7 @@ LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 USES=		autoreconf cpe libtool pkgconfig python:build shebangfix tar:xz
 IGNORE_SSL=	libressl libressl-devel
 USE_GITLAB=	yes
-GL_TAGNAME=	b75849ba36433331227ff66430ea06423fab8148
+GL_TAGNAME=	df4863aa0e43544ea82ab9d98966a03a95c62334
 USE_RC_SUBR=	openvpn
 
 SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl \
@@ -137,8 +137,6 @@ post-build:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-auth-pam.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-down-root.so
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/pull-resolv-conf/client.up ${STAGEDIR}${PREFIX}/libexec/openvpn-client.up
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/pull-resolv-conf/client.down ${STAGEDIR}${PREFIX}/libexec/openvpn-client.down
 	${INSTALL_SCRIPT} ${WRKDIR}/openvpn-client ${STAGEDIR}${PREFIX}/sbin/openvpn-client
 	${MKDIR} ${STAGEDIR}${PREFIX}/include
 
