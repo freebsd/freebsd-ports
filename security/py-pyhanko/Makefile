@@ -1,5 +1,5 @@
 PORTNAME=	pyhanko
-PORTVERSION=	0.29.0
+PORTVERSION=	0.29.1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI \
 		https://github.com/MatthiasValvekens/pyHanko/releases/download/v${PORTVERSION}/
@@ -37,13 +37,13 @@ OPENTYPE_DESC=	OpenType/TrueType support
 PKGCS11_DESC=	PKGCS\#11 support
 XMP_DESC=	XMP (Extensible Metadata Platform) support
 
-ASYNC_HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.9.0<3.12:www/py-aiohttp@${PY_FLAVOR}
+ASYNC_HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.9<3.13:www/py-aiohttp@${PY_FLAVOR}
 ETSI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xsdata>=24.4<26.0:devel/py-xsdata@${PY_FLAVOR}
 IMAGE_SUPPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=7.2.0:graphics/py-pillow@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}python-barcode>=0.15.1<0.15.1_99:graphics/py-python-barcode@${PY_FLAVOR}
 OPENTYPE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.33.3:print/py-fonttools@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}uharfbuzz>=0.25.0<0.51.0:print/py-uharfbuzz@${PY_FLAVOR}
-PKGCS11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-pkcs11>=0.7.0<0.8:security/py-python-pkcs11@${PY_FLAVOR}
+PKGCS11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-pkcs11>=0.8.0<0.9:security/py-python-pkcs11@${PY_FLAVOR}
 XMP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>=0.7.1<0.8:devel/py-defusedxml@${PY_FLAVOR}
 
 .include <bsd.port.mk>

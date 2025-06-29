@@ -1,5 +1,4 @@
-The lack of open-source CLI tooling to handle digitally signing and stamping PDF
-files was bothering me, so I went ahead and rolled my own.
+pyhanko is a library for working with signatures in PDF documents.
 
-Note: The working title of this project (and former name of the repository on
-GitHub) was pdf-stamp, which might still linger in some references.
+pyHanko's CLI is no longer bundled together with the library. This functionality
+is now distributed separately as pyhanko-cli.
