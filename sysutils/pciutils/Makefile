@@ -1,5 +1,5 @@
 PORTNAME=	pciutils
-PORTVERSION=	3.13.0
+PORTVERSION=	3.14.0
 CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/software/utils/pciutils
 
