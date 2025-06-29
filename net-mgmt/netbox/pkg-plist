@@ -659,6 +659,7 @@
 %%DATADIR%%/extras/migrations/0126_exporttemplate_file_name.py
 %%DATADIR%%/extras/migrations/0127_configtemplate_as_attachment_and_more.py
 %%DATADIR%%/extras/migrations/0128_tableconfig.py
+%%DATADIR%%/extras/migrations/0129_fix_script_paths.py
 %%DATADIR%%/extras/migrations/__init__.py
 %%DATADIR%%/extras/models/__init__.py
 %%DATADIR%%/extras/models/configs.py
@@ -843,6 +844,7 @@
 %%DATADIR%%/netbox/jobs.py
 %%DATADIR%%/netbox/middleware.py
 %%DATADIR%%/netbox/models/__init__.py
+%%DATADIR%%/netbox/models/deletion.py
 %%DATADIR%%/netbox/models/features.py
 %%DATADIR%%/netbox/models/mixins.py
 %%DATADIR%%/netbox/navigation/__init__.py
