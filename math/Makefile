@@ -1082,6 +1082,7 @@
     SUBDIR += py-pyprobables
     SUBDIR += py-pyreadr
     SUBDIR += py-pyreadstat
+    SUBDIR += py-pyrfr
     SUBDIR += py-pyrr
     SUBDIR += py-pysmt
     SUBDIR += py-pysym
