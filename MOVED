@@ -4561,3 +4561,4 @@ security/gpgme-qt@qt6|security/qgpgme@qt6|2025-06-24|Gpgme Qt6 bindings have bee
 textproc/py-libxml2|textproc/libxml2-python|2025-06-28|Use correct Python package name
 audio/carla||2025-06-29|Remove expired port. Depends on expired audio/py-pyliblo
 audio/lmms||2025-06-29|Remove expired port. Depends on expiring audio/carla
+audio/py-pyliblo||2025-06-29|Remove expired port. Upstream is inactive for over 9 years
