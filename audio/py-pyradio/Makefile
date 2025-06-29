@@ -64,7 +64,7 @@ VLC_RUN_DEPENDS+=	vlc:multimedia/vlc
 ICON_DIR=	share/icons/hicolor/512x512/apps
 
 post-patch:
-	@${REINPLACE_CDM} -e 's/\(distro =\) None/\1 ${OPSYS}/' \
+	@${REINPLACE_CMD} -e 's/\(distro =\) None/\1 ${OPSYS}/' \
 	-e 's/\(enable_notifications =\) -1/\1 0/' \
 	-e 's/\(remove_station_icons  =\) True/\1 False/' \
 	-e 's/\(xdg_compliant =\) False/\1 True/' \
