@@ -1,5 +1,5 @@
 PORTNAME=	train
-PORTVERSION=	3.12.13
+PORTVERSION=	3.13.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/inspec/train
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport71>=6.0.3.1<7.2.0:devel/rubygem-activesupport71 \
+RUN_DEPENDS=	rubygem-activesupport72>=7.2.2.1<8:devel/rubygem-activesupport72 \
 		rubygem-azure_graph_rbac>=0.16<1:devel/rubygem-azure_graph_rbac \
 		rubygem-azure_mgmt_key_vault>=0.17<1:devel/rubygem-azure_mgmt_key_vault \
 		rubygem-azure_mgmt_resources>=0.15<1:devel/rubygem-azure_mgmt_resources \
@@ -26,8 +26,9 @@ RUN_DEPENDS=	rubygem-activesupport71>=6.0.3.1<7.2.0:devel/rubygem-activesupport7
 		rubygem-google-apis-storage_v1>=0.30.0<1:devel/rubygem-google-apis-storage_v1 \
 		rubygem-googleauth>=0.16.2<2:security/rubygem-googleauth \
 		rubygem-inifile>=3.0<4:textproc/rubygem-inifile \
+		rubygem-ostruct>=0.1.0<1:devel/rubygem-ostruct \
 		rubygem-train-core>=${PORTVERSION}<${PORTVERSION}_99:net/rubygem-train-core \
-		rubygem-train-winrm>=0.2.19<0.3:net/rubygem-train-winrm
+		rubygem-train-winrm>=0.3.0<0.4:net/rubygem-train-winrm
 
 USES=		gem
 
