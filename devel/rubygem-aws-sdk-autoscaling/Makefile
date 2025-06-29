@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-autoscaling
-PORTVERSION=	1.137.0
+PORTVERSION=	1.138.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
