@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-efs
-PORTVERSION=	1.95.0
+PORTVERSION=	1.96.0
 CATEGORIES=	devel filesystems rubygems
 MASTER_SITES=	RG
 
