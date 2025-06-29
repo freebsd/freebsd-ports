@@ -1,5 +1,5 @@
 PORTNAME=	faraday-retry
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
