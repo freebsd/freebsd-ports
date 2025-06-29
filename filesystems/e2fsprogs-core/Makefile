@@ -1,6 +1,6 @@
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.47.2
-PORTREVISION?=	1	# NOTE: when bumping PORTREVISION, also bump ../e2fsprogs/Makefile!
+PORTREVISION?=	2	# NOTE: when bumping PORTREVISION, also bump ../e2fsprogs/Makefile!
 CATEGORIES?=	filesystems sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 

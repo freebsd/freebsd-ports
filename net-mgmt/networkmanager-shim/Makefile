@@ -1,5 +1,6 @@
 PORTNAME=	networkmanager-shim
 DISTVERSION=	1.52.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	kde@FreeBSD.org
