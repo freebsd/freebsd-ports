@@ -1,6 +1,6 @@
 PORTNAME=	websocketpp
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	sigsegv@radiotube.org
@@ -11,7 +11,7 @@ LICENSE=	MIT BSD3CLAUSE ZLIB
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-TEST_DEPENDS=	boost-libs>0:devel/boost-libs
+RUN_DEPENDS=	boost-libs>0:devel/boost-libs
 
 USES=		cmake:insource,testing cpe
 CPE_VENDOR=	zaphoyd
