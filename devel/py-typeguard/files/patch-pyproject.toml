@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-06-04 21:46:31 UTC
+--- pyproject.toml.orig	2025-06-18 09:55:35 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ requires = [
  [build-system]
@@ -8,3 +8,12 @@
      "setuptools_scm[toml] >= 6.4"
  ]
  build-backend = "setuptools.build_meta"
+@@ -10,7 +10,7 @@ authors = [{name = "Alex Grönholm", email = "alex.gro
+ description = "Run-time type checker for Python"
+ readme = "README.rst"
+ authors = [{name = "Alex Grönholm", email = "alex.gronholm@nextday.fi"}]
+-license = "MIT"
++license = {text = "MIT"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",
