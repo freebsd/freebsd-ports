@@ -1,5 +1,5 @@
-Sphinx SVG to PDF Converter Extension:
+This extension converts SVG images to PDF in case the builder does not support
+SVG images natively (e.g. LaTeX).
 
-This extension converts SVG images to PDF in case the builder does
-not support SVG images natively (e.g. LaTeX). libRSVG is used
-internally.
+Internally, either Inkscape, rsvg-convert from libRSVG or CairoSVG as
+progressively more lightweight alternatives are used to convert images.

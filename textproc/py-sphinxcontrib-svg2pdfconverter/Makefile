@@ -1,40 +1,36 @@
 PORTNAME=	sphinxcontrib-svg2pdfconverter
-DISTVERSION=	1.2.3
+PORTVERSION=	1.3.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:C/-/_/}-${DISTVERSION}
+DISTNAME=	sphinxcontrib_svg2pdfconverter-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Sphinx extension for converting SVG to PDF
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Sphinx SVG to PDF converter extension
 WWW=		https://github.com/missinglinkelectronics/sphinxcontrib-svg2pdfconverter
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.6.3,1:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		python
-USE_GNOME=	librsvg2
-USE_PYTHON=	autoplist concurrent flavors pep517
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFAULT=	CAIROSVG
-OPTIONS_GROUP=		RENDERER
-OPTIONS_GROUP_RENDERER=	CAIROSVG INKSCAPE RSVG
+OPTIONS_GROUP=	CONVERTER
+OPTIONS_GROUP_CONVERTER=CAIROSVG INKSCAPE LIBRSVG
+OPTIONS_DEFAULT=CAIROSVG
+CAIROSVG_DESC=	Use CairoSVG to convert
+INKSCAPE_DESC=	Use inkscape to convert
+LIBRSVG_DESC=	Use rsvg-convert to convert
 
-CAIROSVG_DESC=	Python Cairo SVG
-INKSCAPE_DESC=	Inkscape
-RENDERER_DESC=	SVG to PDF runtime renderer
-RSVG_DESC=	Rust librsvg2 (graphics/librsvg2)
-
-CAIROSVG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairosvg>0:graphics/py-cairosvg@${PY_FLAVOR}
-INKSCAPE_RUN_DEPENDS=	inkscape>0:graphics/inkscape
-RSVG_USES=		gnome
-RSVG_USE=		GNOME=librsvg2
+CAIROSVG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairosvg>=1.0:graphics/py-cairosvg@${PY_FLAVOR}
+INKSCAPE_RUN_DEPENDS=	inkscape:graphics/inkscape
+LIBRSVG_USE=		GNOME=librsvg2
+LIBRSVG_USES=		gnome
 
 .include <bsd.port.mk>
