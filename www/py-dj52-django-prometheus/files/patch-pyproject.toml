@@ -1,11 +1,11 @@
 Relax version requirements of py-setuptools.
 
---- pyproject.toml.orig	2024-10-06 12:58:05 UTC
+--- pyproject.toml.orig	2025-06-18 18:06:03 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
--requires = [ "setuptools >= 67.7.2", "wheel >= 0.40.0"]
-+requires = [ "setuptools", "wheel >= 0.40.0"]
+-requires = ["setuptools >= 67.7.2, < 72.0.0", "wheel >= 0.40.0"]
++requires = ["setuptools", "wheel >= 0.40.0"]
  build-backend = "setuptools.build_meta"
  
  [tool.pytest.ini_options]
