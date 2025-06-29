@@ -28,6 +28,8 @@ OPTIONS_SUB=		yes
 DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
 DOCS_CONFIGURE_ON=	-Dgtk_doc=true
 
+PORTSCOUT=	limitw:1,even
+
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/vala/vapi
 
