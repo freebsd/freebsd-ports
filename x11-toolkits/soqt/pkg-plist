@@ -22,12 +22,12 @@ include/Inventor/Qt/viewers/SoQtPlaneViewer.h
 include/Inventor/Qt/viewers/SoQtViewer.h
 include/Inventor/Qt/widgets/SoQtPopupMenu.h
 include/Inventor/Qt/widgets/SoQtThumbWheel.h
-lib/cmake/SoQt-1.6.3/soqt-config-version.cmake
-lib/cmake/SoQt-1.6.3/soqt-config.cmake
-lib/cmake/SoQt-1.6.3/soqt-export-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/SoQt-1.6.3/soqt-export.cmake
+lib/cmake/SoQt-%%DISTVERSION%%/soqt-config-version.cmake
+lib/cmake/SoQt-%%DISTVERSION%%/soqt-config.cmake
+lib/cmake/SoQt-%%DISTVERSION%%/soqt-export-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SoQt-%%DISTVERSION%%/soqt-export.cmake
 lib/libSoQt.so
-lib/libSoQt.so.20.6.3
+lib/libSoQt.so.20.6.4
 lib/libSoQt.so.20
 libdata/pkgconfig/SoQt.pc
 %%DATADIR%%/materials/artdeco/artdeco.h
