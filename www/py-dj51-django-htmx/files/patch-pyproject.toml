@@ -1,0 +1,24 @@
+* Relax version requirements for py-setuptools and enable build for
+  older versions of it
+
+--- pyproject.toml.orig	2025-06-22 10:34:17 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
+ build-backend = "setuptools.build_meta"
+ requires = [
+-  "setuptools>=77",
++  "setuptools",
+ ]
+ 
+ [project]
+@@ -12,8 +12,7 @@ keywords = [
+ keywords = [
+   "Django",
+ ]
+-license = "MIT"
+-license-files = [ "LICENSE" ]
++license = { text="MIT" }
+ authors = [
+   { name = "Adam Johnson", email = "me@adamj.eu" },
+ ]
