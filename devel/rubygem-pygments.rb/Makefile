@@ -1,5 +1,5 @@
 PORTNAME=	pygments.rb
-PORTVERSION=	3.0.0
+PORTVERSION=	4.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,6 @@ NO_ARCH=	yes
 
 SHEBANG_FILES=	vendor/pygments-main/bin/pygmentize \
 		lib/pygments/mentos.py
-python_OLD_CMD=	/usr/bin/python3.11
+python_OLD_CMD=	/usr/bin/python3.*
 
 .include <bsd.port.mk>
