@@ -1,11 +1,11 @@
---- configure.ac.orig	2021-03-11 15:59:57 UTC
+--- configure.ac.orig	2025-06-23 11:48:40 UTC
 +++ configure.ac
-@@ -112,7 +112,7 @@ AC_HEADER_RESOLV
- AC_HEADER_TIME
+@@ -114,7 +114,7 @@ AC_CHECK_HEADERS([sys/ioctl.h sys/param.h sys/socket.h
+ AC_HEADER_RESOLV
  AC_CHECK_HEADERS([arpa/inet.h fcntl.h netdb.h netinet/in.h stdlib.h string.h])
  AC_CHECK_HEADERS([sys/ioctl.h sys/param.h sys/socket.h sys/time.h unistd.h])
 -AC_CHECK_HEADERS([ldns/ldns.h arpa/nameser_compat.h cbor.h cbor/cbor.h])
 +AC_CHECK_HEADERS([ldns/ldns.h arpa/nameser_compat.h cbor.h tinycbor/cbor.h])
- AC_CHECK_HEADERS([sys/time.h])
- AC_CHECK_HEADERS([zlib.h])
  AC_CHECK_HEADERS([openssl/conf.h openssl/evp.h openssl/err.h])
+ AC_CHECK_HEADERS([cryptopANT.h])
+ AC_CHECK_HEADERS([endian.h sys/endian.h machine/endian.h])

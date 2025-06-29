@@ -1,5 +1,5 @@
 PORTNAME=	dnscap
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4.0
 PORTEPOCH=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/dnscap/ \
@@ -13,7 +13,9 @@ WWW=		https://www.dns-oarc.net/tools/dnscap \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libldns.so:dns/ldns
+LIB_DEPENDS=	libldns.so:dns/ldns \
+		liblz4.so:archivers/liblz4 \
+		libzstd.so:archivers/zstd
 
 USES=		autoreconf libtool localbase pkgconfig ssl
 

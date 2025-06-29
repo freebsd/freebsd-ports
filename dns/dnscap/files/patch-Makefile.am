@@ -1,10 +1,10 @@
---- Makefile.am.orig	2020-04-23 08:19:36 UTC
+--- Makefile.am.orig	2025-06-11 07:37:41 UTC
 +++ Makefile.am
 @@ -6,7 +6,7 @@ SUBDIRS = src plugins
  
  SUBDIRS = src plugins
  
--dist_doc_DATA = README.md LICENSE CONTRIBUTORS
+-dist_doc_DATA = README.md LICENSE CONTRIBUTORS CHANGES
 +dist_doc_DATA =
  
  EXTRA_DIST = isc m4 .clang-format fmt.sh
