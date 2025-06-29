@@ -4,9 +4,10 @@ bin/interop-decode
 bin/interop-encode
 include/lsqpack.h
 include/lsxpack_header.h
-lib/cmake/ls-qpack/ls-qpack-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ls-qpack/ls-qpack-config.cmake
+lib/cmake/ls-qpack/ls-qpack-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ls-qpack/ls-qpack-targets.cmake
 lib/libls-qpack.so
 lib/libls-qpack.so.2
-lib/libls-qpack.so.2.5.3
+lib/libls-qpack.so.%%PORTVERSION%%
 libdata/pkgconfig/lsqpack.pc
