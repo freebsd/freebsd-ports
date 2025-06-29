@@ -1,5 +1,5 @@
 PORTNAME=	libcst
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +29,10 @@ CARGO_INSTALL=	no
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}libcst03
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
 
 .if ${PYTHON_REL} < 31300
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyyaml>=5.2:devel/py-pyyaml@${PY_FLAVOR}
