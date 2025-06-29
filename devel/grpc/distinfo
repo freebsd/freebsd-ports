@@ -1,10 +1,10 @@
-TIMESTAMP = 1750022913
-SHA256 (grpc-grpc-v1.73.0_GH0.tar.gz) = 00865dbc3d7689fd9c5c7d0a10822a4eae175ca692870433b64106abcb1294a0
-SIZE (grpc-grpc-v1.73.0_GH0.tar.gz) = 14873144
+TIMESTAMP = 1750954110
+SHA256 (grpc-grpc-v1.73.1_GH0.tar.gz) = e11fd9b963c617de53d08a84f41359164b123f2e8e4180644706688fc9de43d9
+SIZE (grpc-grpc-v1.73.1_GH0.tar.gz) = 14876868
 SHA256 (envoyproxy-data-plane-api-d9c5e84_GH0.tar.gz) = a0dafcab777be81d1303119e5b8648daf17a03ee749dcd411e9dfb9d9266d7b9
 SIZE (envoyproxy-data-plane-api-d9c5e84_GH0.tar.gz) = 709200
-SHA256 (googleapis-googleapis-c618909_GH0.tar.gz) = 78f05480ebe8c753149b0eec8734a939fc51a96a6904cd88ac06eff546f16653
-SIZE (googleapis-googleapis-c618909_GH0.tar.gz) = 11004189
+SHA256 (googleapis-googleapis-4667a43_GH0.tar.gz) = 0a6cea8f0a04a37a6f2b3c898b3f2dfc60aa45913221505af37efa169c423d1e
+SIZE (googleapis-googleapis-4667a43_GH0.tar.gz) = 11058066
 SHA256 (census-instrumentation-opencensus-proto-1664cc9_GH0.tar.gz) = eb1768edf91e5cef93491b3b2f057f5c309663b9716b30bb4d48bcffd6dd5722
 SIZE (census-instrumentation-opencensus-proto-1664cc9_GH0.tar.gz) = 163613
 SHA256 (bufbuild-protoc-gen-validate-v1.2.1_GH0.tar.gz) = e4718352754df1393b8792b631338aa8562f390e8160783e365454bc11d96328
