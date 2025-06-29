@@ -1,3 +1,3 @@
-TIMESTAMP = 1703613175
-SHA256 (azure-keyvault-keys-4.9.0b3.tar.gz) = aa8b1ec9fe96a81106f2f3dcd61175ecae3a01693c05af15f4a45e77894e946a
-SIZE (azure-keyvault-keys-4.9.0b3.tar.gz) = 208992
+TIMESTAMP = 1750954226
+SHA256 (azure_keyvault_keys-4.11.0.tar.gz) = f257b1917a2c3a88983e3f5675a6419449eb262318888d5b51e1cb3bed79779a
+SIZE (azure_keyvault_keys-4.11.0.tar.gz) = 241309
