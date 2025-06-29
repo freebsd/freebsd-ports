@@ -111,11 +111,11 @@
 %%WWWDIR%%/js/pastemeta.jsonld
 %%WWWDIR%%/js/prettify.js
 %%WWWDIR%%/js/privatebin.js
-%%WWWDIR%%/js/purify-3.2.4.js
+%%WWWDIR%%/js/purify-3.2.6.js
 %%WWWDIR%%/js/rawinflate-0.3.js
 %%WWWDIR%%/js/showdown-2.1.0.js
 %%WWWDIR%%/js/types.jsonld
-%%WWWDIR%%/js/zlib-1.3.1.js
+%%WWWDIR%%/js/zlib-1.3.1-1.js
 %%WWWDIR%%/js/zlib-1.3.1.wasm
 %%WWWDIR%%/lib/.htaccess
 %%WWWDIR%%/lib/Configuration.php
@@ -138,6 +138,7 @@
 %%WWWDIR%%/lib/Persistence/ServerSalt.php
 %%WWWDIR%%/lib/Persistence/TrafficLimiter.php
 %%WWWDIR%%/lib/Request.php
+%%WWWDIR%%/lib/TemplateSwitcher.php
 %%WWWDIR%%/lib/View.php
 %%WWWDIR%%/lib/Vizhash16x16.php
 %%WWWDIR%%/lib/YourlsProxy.php
@@ -213,9 +214,6 @@
 %%WWWDIR%%/vendor/mlocati/ip-lib/src/Service/BinaryMath.php
 %%WWWDIR%%/vendor/mlocati/ip-lib/src/Service/RangesFromBoundaryCalculator.php
 %%WWWDIR%%/vendor/mlocati/ip-lib/src/Service/UnsignedIntegerMath.php
-%%WWWDIR%%/vendor/symfony/polyfill-ctype/Ctype.php
-%%WWWDIR%%/vendor/symfony/polyfill-ctype/bootstrap.php
-%%WWWDIR%%/vendor/symfony/polyfill-ctype/bootstrap80.php
 %%WWWDIR%%/vendor/symfony/polyfill-php80/Php80.php
 %%WWWDIR%%/vendor/symfony/polyfill-php80/PhpToken.php
 %%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs/Attribute.php
