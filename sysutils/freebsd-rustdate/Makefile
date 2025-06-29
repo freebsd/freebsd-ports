@@ -1,6 +1,5 @@
 PORTNAME=	freebsd-rustdate
-DISTVERSION=	1.3.0
-PORTREVISION=	1
+DISTVERSION=	1.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://rustdate.over-yonder.net/dl/ \
 		https://distfiles.over-yonder.net/freebsd-rustdate/
