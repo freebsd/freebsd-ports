@@ -32,11 +32,13 @@
 %%SITE_PERL%%/Specio/Library/Structured/Map.pm
 %%SITE_PERL%%/Specio/Library/Structured/Tuple.pm
 %%SITE_PERL%%/Specio/OO.pm
+%%SITE_PERL%%/Specio/PP.pm
 %%SITE_PERL%%/Specio/PartialDump.pm
 %%SITE_PERL%%/Specio/Registry.pm
 %%SITE_PERL%%/Specio/Role/Inlinable.pm
 %%SITE_PERL%%/Specio/Subs.pm
 %%SITE_PERL%%/Specio/TypeChecks.pm
+%%SITE_PERL%%/Specio/XS.pm
 %%SITE_PERL%%/Test/Specio.pm
 %%PERL5_MAN3%%/Specio.3.gz
 %%PERL5_MAN3%%/Specio::Coercion.3.gz
