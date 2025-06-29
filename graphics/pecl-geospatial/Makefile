@@ -1,5 +1,5 @@
 PORTNAME=	geospatial
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
