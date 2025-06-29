@@ -25,8 +25,6 @@ CONFIGURE_ARGS=	--with-anthy-utf8
 CONFIGURE_ARGS+=	--with-gtk3 --enable-dict
 .endif
 
-CONFLICTS_INSTALL=	ja-uim-anthy
-
 UIM_SLAVE=	yes
 
 do-build:

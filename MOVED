@@ -4562,3 +4562,12 @@ textproc/py-libxml2|textproc/libxml2-python|2025-06-28|Use correct Python packag
 audio/carla||2025-06-29|Remove expired port. Depends on expired audio/py-pyliblo
 audio/lmms||2025-06-29|Remove expired port. Depends on expiring audio/carla
 audio/py-pyliblo||2025-06-29|Remove expired port. Upstream is inactive for over 9 years
+japanese/anthy|japanese/anthy-unicode|2025-06-29|Has expired: Use japanese/anthy-unicode instead
+japanese/kasumi|japanese/kasumi-unicode|2025-06-29|Has expired: Use japanese/kasumi-unicode instead
+japanese/uim-anthy|japanese/uim-anthy-unicode|2025-06-29|Has expired: Use japanese/uim-anthy-unicode instead
+japanese/fcitx-anthy@original|japanese/fcitx-anthy|2025-06-29|Has unflavorized: japanese/anthy was removed and only japanese/anthy-unicode is supported
+japanese/fcitx-anthy@unicode|japanese/fcitx-anthy|2025-06-29|Has unflavorized: japanese/anthy was removed and only japanese/anthy-unicode is supported
+japanese/fcitx5-anthy@original|japanese/fcitx5-anthy|2025-06-29|Has unflavorized: japanese/anthy was removed and only japanese/anthy-unicode is supported
+japanese/fcitx5-anthy@unicode|japanese/fcitx5-anthy|2025-06-29|Has unflavorized: japanese/anthy was removed and only japanese/anthy-unicode is supported
+japanese/ibus-anthy@original|japanese/ibus-anthy|2025-06-29|Has unflavorized: japanese/anthy was removed and only japanese/anthy-unicode is supported
+japanese/ibus-anthy@unicode|japanese/ibus-anthy|2025-06-29|Has unflavorized: japanese/anthy was removed and only japanese/anthy-unicode is supported

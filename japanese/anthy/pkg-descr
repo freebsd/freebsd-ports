@@ -1,6 +1,0 @@
-Anthy is a Japanese input method working on X11 and emacs.
-It converts Hiragana text to Kana Kanji mixed text.
-
-Supplemental 2ch BBS terms dictionary which is installed by WITH_2CHDIC knob
-is developed by Omaemona 2ch/Linux (DQN) Project.
-(http://omaemona.sourceforge.net/packages/Zisyo/)

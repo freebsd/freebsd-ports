@@ -5,6 +5,31 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250629:
+  AFFECTS: users of japanese/anthy
+  AUTHOR: nobutaka@FreeBSD.org
+
+  japanese/anthy has been removed. Please use japanese/anthy-unicode as the
+  replacement.
+
+  japanese/anthy and japanese/anthy-unicode use different user dictionary
+  file location.
+
+  japanese/anthy: ~/.anthy/private_words_default
+  japanese/anthy-unicode: ~/.config/anthy/private_words_default
+
+  You can migrate your user dictionary for japanese/anthy with
+  anthy-dic-tool-unicode.
+
+  anthy-dic-tool-unicode --migrate
+
+  If you use the japanese-anthy or japanese-anthy-uim input method on Emacs,
+  please change them in your Emacs init file such as ~/.emacs.el and ~/.emacs
+  as follows:
+
+  japanese-anthy -> japanese-anthy-unicode
+  japanese-anthy-uim -> japanese-anthy-utf8-uim
+
 20250627:
   AFFECTS: users of finance/ktoblzcheck
   AUTHOR: jhale@FreeBSD.org

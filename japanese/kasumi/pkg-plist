@@ -1,6 +1,0 @@
-bin/kasumi
-share/man/man1/kasumi.1.gz
-%%NLS%%share/locale/ja/LC_MESSAGES/kasumi.mo
-%%NLS%%share/locale/it/LC_MESSAGES/kasumi.mo
-share/applications/kasumi.desktop
-share/pixmaps/kasumi.png

@@ -19,8 +19,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-CONFLICTS_INSTALL=	ja-anthy
-
 ELISPDIR=	share/emacs/site-lisp/anthy-unicode
 PLIST_SUB=	ELISPDIR=${ELISPDIR}
 

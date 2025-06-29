@@ -13,7 +13,6 @@
     SUBDIR += ajaxzip2-data
     SUBDIR += alias-fonts
     SUBDIR += another-htmllint
-    SUBDIR += anthy
     SUBDIR += anthy-unicode
     SUBDIR += aobook
     SUBDIR += bible_names-fpw
@@ -142,7 +141,6 @@
     SUBDIR += jls
     SUBDIR += jvim3
     SUBDIR += kakasi
-    SUBDIR += kasumi
     SUBDIR += kasumi-unicode
     SUBDIR += kbanner
     SUBDIR += kcc
@@ -280,7 +278,6 @@
     SUBDIR += timidity++-slang
     SUBDIR += today
     SUBDIR += tomoe
-    SUBDIR += uim-anthy
     SUBDIR += uim-anthy-unicode
     SUBDIR += uim-mozc
     SUBDIR += uim-tomoe-gtk
