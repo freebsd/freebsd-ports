@@ -1,6 +1,6 @@
 PORTNAME=	wolfssl
 PORTVERSION=	5.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.wolfssl.com/ \
 		LOCAL/fox
@@ -41,6 +41,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-context-extra-user-data
 TEST_TARGET=	check
 CFLAGS+=	-DWOLFSSL_ALT_NAMES -DWOLFSSL_GETRANDOM=1
+CFLAGS_i386+=	-DWOLFSSL_SHA224
 
 OPTIONS_DEFINE=	DEBUG DOCS
 
