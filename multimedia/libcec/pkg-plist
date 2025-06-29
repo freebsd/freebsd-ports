@@ -9,6 +9,7 @@ include/libcec/ceccloader.h
 include/libcec/cecloader.h
 include/libcec/cectypes.h
 include/libcec/version.h
+lib/libcec.a
 lib/libcec.so
 lib/libcec.so.7
 lib/libcec.so.%%PORTVERSION%%
