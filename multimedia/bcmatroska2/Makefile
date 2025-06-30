@@ -1,5 +1,5 @@
 PORTNAME=	bcmatroska2
-DISTVERSION=	5.4.2
+DISTVERSION=	5.4.24
 CATEGORIES=	multimedia
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -16,13 +16,5 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
 USE_LDCONFIG=	yes
-
-CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE}
-
-#.include <bsd.port.pre.mk>
-
-#.if ${COMPILER_TYPE} == clang
-#CFLAGS+=	-Wno-error=incompatible-function-pointer-types
-#.endif
 
 .include <bsd.port.mk>
