@@ -1,6 +1,7 @@
 PORTNAME=	websh
 DISTVERSION=	3.6.0b5
 PORTREVISION=	9
+PORTEPOCH=	1
 CATEGORIES=	www tcl
 MASTER_SITES=	https://archive.apache.org/dist/tcl/${PORTNAME}/source/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
