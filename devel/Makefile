@@ -5332,6 +5332,7 @@
     SUBDIR += py-opentelemetry-instrumentation-flask
     SUBDIR += py-opentelemetry-instrumentation-psycopg2
     SUBDIR += py-opentelemetry-instrumentation-requests
+    SUBDIR += py-opentelemetry-instrumentation-urllib
     SUBDIR += py-opentelemetry-proto
     SUBDIR += py-opentelemetry-sdk
     SUBDIR += py-opentelemetry-semantic-conventions
