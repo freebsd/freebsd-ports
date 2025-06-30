@@ -4702,7 +4702,6 @@
     SUBDIR += py-convertdate
     SUBDIR += py-cookiecutter
     SUBDIR += py-copier
-    SUBDIR += py-coreschema
     SUBDIR += py-country
     SUBDIR += py-cov-core
     SUBDIR += py-covdefaults

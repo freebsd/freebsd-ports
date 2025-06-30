@@ -4621,3 +4621,4 @@ filesystems/e2fsprogs-libblkid||2025-06-30|Use filesystems/libblkid (from util-l
 graphics/rigsofrods-pagedgeometry|graphics/pagedgeometry|2025-06-30|Switch to the upstream version
 net/net6||2025-06-30|Has expired: Abandoned upstream, repo archived Nov 26, 2020
 devel/py-coreapi|devel/py-openapi-core|2025-06-30|Has expired: Upstream archived the repository. Please use devel/py-openapi-core instead
+devel/py-coreschema|devel/py-openapi-schema-validator|2025-06-30|Has expired: Upstream archived the repository. Please use devel/py-openapi-schema-validator instead
