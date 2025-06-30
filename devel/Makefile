@@ -4451,6 +4451,7 @@
     SUBDIR += py-azure-appconfiguration
     SUBDIR += py-azure-batch
     SUBDIR += py-azure-core
+    SUBDIR += py-azure-core-tracing-opentelemetry
     SUBDIR += py-azure-cosmos
     SUBDIR += py-azure-data-tables
     SUBDIR += py-azure-datalake-store

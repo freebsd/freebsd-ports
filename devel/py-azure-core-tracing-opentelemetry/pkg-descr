@@ -1,0 +1,10 @@
+You can enable distributed tracing in Azure client libraries by configuring the
+OpenTelemetry SDK. OpenTelemetry is a popular open-source observability
+framework for generating, capturing, and collecting telemetry data for
+cloud-native software.
+
+There are two key concepts related to tracing: span and trace. A span represents
+a single operation in a trace. A span can represent an HTTP request, a remote
+procedure call (RPC), a database query, or even the path that your code takes. A
+trace is a tree of spans showing the path of work through a system. You can
+distinguish a trace on its own by a unique 16-byte sequence called a TraceID.
