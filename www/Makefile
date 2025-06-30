@@ -488,7 +488,6 @@
     SUBDIR += node18
     SUBDIR += node20
     SUBDIR += node22
-    SUBDIR += node23
     SUBDIR += node24
     SUBDIR += nostromo
     SUBDIR += novnc
