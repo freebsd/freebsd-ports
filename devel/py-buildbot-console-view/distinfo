@@ -1,3 +1,3 @@
-TIMESTAMP = 1728972398
-SHA256 (buildbot_console_view-3.11.9.tar.gz) = deb76c577c9a757c6a4c0f97745768d06c5e6f44dbe05de9e2121783a2809101
-SIZE (buildbot_console_view-3.11.9.tar.gz) = 19042
+TIMESTAMP = 1751284115
+SHA256 (buildbot_console_view-4.3.0.tar.gz) = 540eb1a890630f85e641a6d337c33e3cbbdfac6ec7ab6a28c4286dcf68c04fc0
+SIZE (buildbot_console_view-4.3.0.tar.gz) = 22361
