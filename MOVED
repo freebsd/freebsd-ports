@@ -4627,3 +4627,4 @@ net-mgmt/zabbix5-server||2025-06-30|Has expired: Upstream EOL reaches on 2025-05
 www/node23|www/node24|2025-06-30|Remove expired port. Node.js 23.* will reach its EoL on 2024-06-01. Use Node.js 24.* (www/node24) instead
 www/npm-node23|www/npm-node24|2025-06-30|Remove expired port
 net/p5-Net-SPDY||2025-06-30|Remove obsoleted port. SPDY is an obsoleted protocol
+www/p5-HTTP-Tiny-SPDY||2025-06-30|Remove obsoleted port. SPDY is an obsoleted protocol

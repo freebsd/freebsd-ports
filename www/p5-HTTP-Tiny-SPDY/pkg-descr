@@ -1,3 +1,0 @@
-HTTP::Tiny::SPDY is a subclass of HTTP::Tiny with added support for the SPDY
-protocol. It is intended to be fully compatible with HTTP::Tiny so that it can
-be used as a drop-in replacement for it.
