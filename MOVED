@@ -4612,3 +4612,4 @@ lang/spl||2025-06-30|Has expired: dead upstream
 devel/glrparser||2025-06-30|Has expired: Unfetchable, unmaintained and upstream is gone
 devel/kyra||2025-06-30|Has expired: Abandonware, last release in 2006 and depdends on deprecated libraries
 devel/libmimedir||2025-06-30|Has expired: Last release in 2008, no consumers in tree and unmaintained for years
+devel/py-openapi-codec|devel/py-openapi-core|2025-06-30|Has expired: Upstream archived the repository. Please use devel/py-openapi-core instead
