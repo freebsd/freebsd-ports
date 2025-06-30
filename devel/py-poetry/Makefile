@@ -1,5 +1,6 @@
 PORTNAME=	poetry
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-poetry/poetry/releases/download/${PORTVERSION}/
@@ -21,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>=1.2.1<2.0.0:devel/py-build@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}fastjsonschema>=2.18.0<3.0.0:devel/py-fastjsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}findpython>=0.6.2<0.7.0:devel/py-findpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}installer>=0.7.0<0.8.0:devel/py-installer@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}keyring>=23.9.0,1<26.0.0,1:security/py-keyring@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}keyring>=25.1.0,1<26.0.0,1:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=24.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbs-installer>=2025.1.6<2026.0.0:devel/py-pbs-installer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pkginfo>=1.12<2.0:sysutils/py-pkginfo@${PY_FLAVOR} \
