@@ -4585,3 +4585,4 @@ math/libsharp2||2025-06-30|Has expired: Deprecated upstream in 2021, upstream re
 devel/glui||2025-06-30|Has expired: Abandoned upstream, outdated, last release in 2015 and upstream activity in 2019
 databases/gnats4||2025-06-30|Has expired: Abandoned upstream, last release in 2015 and last activity about 9 years ago
 databases/gnatsweb4||2025-06-30|Has expired: Abandoned upstream, last release in 2015 and no active development in the last 10 years
+security/libcryptui||2025-06-30|Has expired: abandoned project

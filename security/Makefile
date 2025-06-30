@@ -287,7 +287,6 @@
     SUBDIR += libargon2
     SUBDIR += libassuan
     SUBDIR += libcaes
-    SUBDIR += libcryptui
     SUBDIR += libdecaf
     SUBDIR += libecc
     SUBDIR += libfcrypto
