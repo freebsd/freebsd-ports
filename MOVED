@@ -4605,3 +4605,4 @@ devel/cgilib||2025-06-30|Has expired: Last upstream release in 2009, last upstre
 security/sectok||2025-06-30|Has expired: Last upstream release in 2003 and no longer maintained
 security/libsectok||2025-06-30|Has expired: Last upstream release in 2003 and no longer maintained
 devel/libdnsres||2025-06-30|Has expired: No consumers in tree, last release in 2005 by upstream
+devel/libaura||2025-06-30|Has expired: Abandonware, upstream is gone and last release in 2005

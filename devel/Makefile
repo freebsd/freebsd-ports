@@ -1214,7 +1214,6 @@
     SUBDIR += libastylej
     SUBDIR += libastylej-arduino
     SUBDIR += libatomic_ops
-    SUBDIR += libaura
     SUBDIR += libavl
     SUBDIR += libayatana-appindicator
     SUBDIR += libayatana-indicator
