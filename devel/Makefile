@@ -1049,7 +1049,6 @@
     SUBDIR += influx-pkg-config
     SUBDIR += inifiled
     SUBDIR += inih
-    SUBDIR += inilib
     SUBDIR += inilike
     SUBDIR += iniparser
     SUBDIR += initutil

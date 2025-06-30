@@ -4573,3 +4573,4 @@ japanese/ibus-anthy@original|japanese/ibus-anthy|2025-06-29|Has unflavorized: ja
 japanese/ibus-anthy@unicode|japanese/ibus-anthy|2025-06-29|Has unflavorized: japanese/anthy was removed and only japanese/anthy-unicode is supported
 net/vtun||2025-06-30|Has expired: Upstream is dead and last release in 2016
 java/mx4j||2025-06-30|Has expired: Abandoned upstream, no activity since 2010
+devel/inilib||2025-06-30|Has expired: Abandonware, last update upstream in 2005
