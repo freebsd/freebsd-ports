@@ -28,6 +28,8 @@ To use your mobile device as a webcam wirelessly.
 	6. Enter your device's WiFi IP address and port number correctly
 	   then start the webcam using the start button.
 
+NOTE: You need to enable USB debugging in your mobile device
+      from Developer Options first.
 To use your mobile device as a wired USB webcam.
 	1. Install DroidCam to your mobile device from Play Store.
 	2. Open the DroidCam app and give required permissions.
