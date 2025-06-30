@@ -4585,8 +4585,8 @@
     SUBDIR += py-buildbot-pkg
     SUBDIR += py-buildbot-react-console-view
     SUBDIR += py-buildbot-waterfall-view
-    SUBDIR += py-buildbot-wsgi-dashboards
     SUBDIR += py-buildbot-worker
+    SUBDIR += py-buildbot-wsgi-dashboards
     SUBDIR += py-buildbot-www
     SUBDIR += py-bullet3
     SUBDIR += py-bump2version
