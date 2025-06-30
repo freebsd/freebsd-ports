@@ -5062,7 +5062,6 @@
     SUBDIR += py-iterable-io
     SUBDIR += py-iteration-utilities
     SUBDIR += py-itertree
-    SUBDIR += py-itypes
     SUBDIR += py-janus
     SUBDIR += py-jaraco.classes
     SUBDIR += py-jaraco.collections

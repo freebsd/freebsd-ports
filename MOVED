@@ -4622,3 +4622,4 @@ graphics/rigsofrods-pagedgeometry|graphics/pagedgeometry|2025-06-30|Switch to th
 net/net6||2025-06-30|Has expired: Abandoned upstream, repo archived Nov 26, 2020
 devel/py-coreapi|devel/py-openapi-core|2025-06-30|Has expired: Upstream archived the repository. Please use devel/py-openapi-core instead
 devel/py-coreschema|devel/py-openapi-schema-validator|2025-06-30|Has expired: Upstream archived the repository. Please use devel/py-openapi-schema-validator instead
+devel/py-itypes||2025-06-30|Has expired: Upstream archived repository and suggest using devel/py-pyrsistent instead
