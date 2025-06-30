@@ -95,7 +95,7 @@ procname="%%PYTHON_CMD%%"
 					;;
 				esac
 				echo "===> ${name} profile: ${profile}"
-				if $0 $1 ${profile}; then
+				if /usr/sbin/service buildbot-worker $1 ${profile}; then
 					success="${profile} ${success:-}"
 				else
 					failed="${profile} (${retcode}) ${failed:-}"
@@ -114,17 +114,17 @@ buildbot_worker_prestart()
         echo "su -m ${buildbot_worker_user} -c \"exec ${command} create-worker ${buildbot_worker_basedir} <MASTER HOST> <MASTER USER> <MASTER_PASS>\""
         exit 1
     fi
-	rc_flags="start ${buildbot_worker_basedir} ${rc_flags}"
+	rc_flags="start ${rc_flags} ${buildbot_worker_basedir}"
 }
 
 buildbot_worker_prestop()
 {
-	rc_flags="stop ${buildbot_worker_basedir} ${rc_flags}"
+	rc_flags="stop ${rc_flags} ${buildbot_worker_basedir}"
 }
 
 buildbot_worker_reload()
 {
-	rc_flags="${buildbot_worker_basedir} ${rc_flags}"
+	rc_flags="${rc_flags} ${buildbot_worker_basedir}"
 	${command} sighup ${rc_flags}
 }
 
