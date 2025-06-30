@@ -1,3 +1,0 @@
-net6 is a library which eases the development of network-based applications
-as it provides a TCP protocol abstraction for C++. It is portable to both
-the Windows and Unix-like platforms.

@@ -4619,3 +4619,4 @@ devel/bogofilter-bdb||2025-06-30|Has expired: The Berkeley DB interface is obsol
 misc/e2fsprogs-libuuid||2025-06-30|Use misc/libuuid (from util-linux) instead
 filesystems/e2fsprogs-libblkid||2025-06-30|Use filesystems/libblkid (from util-linux) instead
 graphics/rigsofrods-pagedgeometry|graphics/pagedgeometry|2025-06-30|Switch to the upstream version
+net/net6||2025-06-30|Has expired: Abandoned upstream, repo archived Nov 26, 2020
