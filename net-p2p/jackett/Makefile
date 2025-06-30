@@ -1,6 +1,6 @@
 PORTNAME=	jackett
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.2084
+DISTVERSION=	0.22.2125
 CATEGORIES=	net-p2p
 
 MAINTAINER=	tremere@cainites.net
@@ -12,11 +12,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	dotnet>=9.0.6:lang/dotnet
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
-		libgssapi_krb5.so.2:security/krb5 \
 		libinotify.so:devel/libinotify \
 		libunwind.so:devel/libunwind
-RUN_DEPENDS=	dotnet:lang/dotnet-host
+RUN_DEPENDS=	dotnet:lang/dotnet-host \
+		icu>0:devel/icu
 
+USES=		gssapi:mit
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jackett
 GH_PROJECT=	Jackett
@@ -47,7 +48,6 @@ do-build:
 		-r freebsd.${_OSVERSION_MAJOR}-${DOTNET_ARCH} --sc -p:PublishReadyToRun=false -o bin/publish
 
 do-install:
-	cd ${WRKSRC}/src/bin/publish && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}
-	${CP} -r  ${STAGEDIR}/${DATADIR}
+	${CP} -r ${WRKSRC}/src/bin/publish ${STAGEDIR}/${DATADIR}
 
 .include <bsd.port.mk>

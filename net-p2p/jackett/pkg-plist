@@ -54,6 +54,7 @@
 %%DATADIR%%/Definitions/0daykiev.yml
 %%DATADIR%%/Definitions/0magnet.yml
 %%DATADIR%%/Definitions/1337x.yml
+%%DATADIR%%/Definitions/13city.yml
 %%DATADIR%%/Definitions/1ptbar.yml
 %%DATADIR%%/Definitions/3changtrai.yml
 %%DATADIR%%/Definitions/3dtorrents.yml
@@ -179,7 +180,6 @@
 %%DATADIR%%/Definitions/empornium.yml
 %%DATADIR%%/Definitions/empornium2fa.yml
 %%DATADIR%%/Definitions/emuwarez.yml
-%%DATADIR%%/Definitions/eniahd.yml
 %%DATADIR%%/Definitions/esharenet.yml
 %%DATADIR%%/Definitions/estone.yml
 %%DATADIR%%/Definitions/ex-torrenty.yml
@@ -346,7 +346,6 @@
 %%DATADIR%%/Definitions/newstudiol.yml
 %%DATADIR%%/Definitions/nicept.yml
 %%DATADIR%%/Definitions/nipponsei.yml
-%%DATADIR%%/Definitions/nirvana.yml
 %%DATADIR%%/Definitions/noname-club.yml
 %%DATADIR%%/Definitions/noname-clubl.yml
 %%DATADIR%%/Definitions/nordicquality.yml
