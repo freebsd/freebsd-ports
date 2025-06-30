@@ -1,4 +1,0 @@
-The x86info utility displays information about each of the x86 CPUs found in
-the system.  Cache information, flags, registers, frequency, processor name,
-family, and model are all displayed.  It works with all Intel, AMD, Centaur,
-Cyrix, VIA processors.
