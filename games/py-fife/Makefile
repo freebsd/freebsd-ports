@@ -71,4 +71,10 @@ post-patch:
 		${WRKSRC}/engine/core/loaders/native/map/objectloader.cpp \
 		${WRKSRC}/engine/core/gui/fifechan/fifechanmanager.cpp
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MFIFECHAN}
+DEPRECATED=	Depends on expired devel/fifechan
+.endif
+
 .include <bsd.port.mk>
