@@ -4575,3 +4575,4 @@ net/vtun||2025-06-30|Has expired: Upstream is dead and last release in 2016
 java/mx4j||2025-06-30|Has expired: Abandoned upstream, no activity since 2010
 devel/inilib||2025-06-30|Has expired: Abandonware, last update upstream in 2005
 textproc/py-jtextfsm|textproc/py-textfsm|2025-06-30|Has expired: Upstream inactive for 9+ years and the port is now obsolete. Please use textproc/py-textfsm instead
+net-mgmt/unifi8|net-mgmt/unifi9|2025-06-30|Has expired: No longer supported by upstream
