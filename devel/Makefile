@@ -1238,7 +1238,6 @@
     SUBDIR += libcircllhist
     SUBDIR += libcjson
     SUBDIR += libclc
-    SUBDIR += libcli
     SUBDIR += libconcurrent
     SUBDIR += libconfig
     SUBDIR += libconfuse
