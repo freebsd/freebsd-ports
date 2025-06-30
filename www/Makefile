@@ -2673,7 +2673,6 @@
     SUBDIR += yarn-node18
     SUBDIR += yarn-node20
     SUBDIR += yarn-node22
-    SUBDIR += yarn-node23
     SUBDIR += yarn-node24
     SUBDIR += yarr
     SUBDIR += yaws

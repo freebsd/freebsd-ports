@@ -4628,3 +4628,4 @@ www/node23|www/node24|2025-06-30|Remove expired port. Node.js 23.* will reach it
 www/npm-node23|www/npm-node24|2025-06-30|Remove expired port
 net/p5-Net-SPDY||2025-06-30|Remove obsoleted port. SPDY is an obsoleted protocol
 www/p5-HTTP-Tiny-SPDY||2025-06-30|Remove obsoleted port. SPDY is an obsoleted protocol
+www/yarn-node23|www/yarn-node24|2025-06-30|Remove expired port
