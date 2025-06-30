@@ -403,7 +403,6 @@
     SUBDIR += cflow2vcg
     SUBDIR += cfr
     SUBDIR += cgdb
-    SUBDIR += cgilib
     SUBDIR += cgit
     SUBDIR += cgprof
     SUBDIR += charva

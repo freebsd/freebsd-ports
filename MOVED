@@ -4601,3 +4601,4 @@ devel/obby||2025-06-30|Has expired: Abandoned upstream, repo archived Nov 26, 20
 filesystems/vzvol||2025-06-30|Has expired: Abandoned upstream, no activity in 5+ years and multiple unresolved issue reports upstream
 devel/ireport||2025-06-30|Has expired: Outdated, unsupported upstream and unmaintained for years in tree
 www/ffsend||2025-06-30|Has expired: fails to build with rust 1.87.0
+devel/cgilib||2025-06-30|Has expired: Last upstream release in 2009, last upstream activity in 2017 and no consumers in tree
