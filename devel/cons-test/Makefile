@@ -8,11 +8,14 @@ MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 		http://www.baldmt.com/cons/stable/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Test bed for `Cons' development
+COMMENT=	Test bed for 'Cons' development
 WWW=		http://www.dsmit.com/cons/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Depends on expired devel/cons
+EXPIRATION_DATE=2025-09-30
 
 RUN_DEPENDS=	${LOCALBASE}/bin/cons:devel/cons
 
