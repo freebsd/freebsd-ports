@@ -15,6 +15,15 @@
      exit
  fi
  
+@@ -172,7 +172,7 @@ echo -n ".... Testing anthy    :  "
+ fi
+ 
+ echo -n ".... Testing anthy    :  "
+-USE_ANTHY=`pkg-config --libs anthy`
++USE_ANTHY=`pkg-config --libs anthy-unicode`
+ if [ $? != 0 ]; then
+   USE_ANTHY=N
+   echo "Not found. It's ok if you don't want anthy support."
 @@ -232,7 +232,7 @@ QT4_IM='N'
  
  

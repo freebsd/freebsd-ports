@@ -43,7 +43,7 @@ OPTIONS_DEFAULT=NLS
 ANTHY_DESC=	Kana-Kanji conversion support via Anthy
 THAI_DESC=	Thai language support via libThai
 
-ANTHY_LIB_DEPENDS=	libanthy.so:japanese/anthy
+ANTHY_LIB_DEPENDS=	libanthy-unicode.so:japanese/anthy-unicode
 ANTHY_CONFIGURE_OFF=	--without-anthy
 
 ISPELL_BUILD_DEPENDS=	ispell:textproc/aspell-ispell

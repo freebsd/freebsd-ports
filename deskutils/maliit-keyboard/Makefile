@@ -1,5 +1,6 @@
 PORTNAME=	keyboard
 DISTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 PKGNAMEPREFIX=	maliit-
 
@@ -30,7 +31,7 @@ ANTHY_DESC=		Japanese language support
 CHEWING_DESC=		Chinese language support via chewing
 PINYIN_DESC=		Chinese language support via pinyin
 
-ANTHY_LIB_DEPENDS=	libanthy.so:japanese/anthy
+ANTHY_LIB_DEPENDS=	libanthy-unicode.so:japanese/anthy-unicode
 ANTHY_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Anthy
 CHEWING_LIB_DEPENDS=	libchewing.so:chinese/libchewing
 CHEWING_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Chewing

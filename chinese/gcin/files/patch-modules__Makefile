@@ -1,5 +1,23 @@
 --- modules/Makefile.orig	2013-10-05 03:31:52 UTC
 +++ modules/Makefile
+@@ -6,7 +6,7 @@ GCIN_MODULE+=anthy-module.so
+ 
+ ifeq ($(USE_ANTHY),Y)
+ GCIN_MODULE+=anthy-module.so
+-CFLAGS+=-DGCIN_MODULE=1
++CFLAGS+=-DGCIN_MODULE=1 $(ANTHY_CFLAGS)
+ endif
+ 
+ ifeq ($(USE_CHEWING),Y)
+@@ -19,7 +19,7 @@ anthy-module.so: $(anthy_module_so)
+ 
+ anthy_module_so = anthy.pico
+ anthy-module.so: $(anthy_module_so)
+-	$(CCLD) $(SO_FLAGS) -o $@ $(anthy_module_so) $(LDFLAGS) -lanthy
++	$(CCLD) $(SO_FLAGS) -o $@ $(anthy_module_so) $(LDFLAGS) -lanthy-unicode
+ 
+ intcode_module_so = intcode.pico win-int.pico
+ intcode-module.so: $(intcode_module_so)
 @@ -38,4 +38,4 @@ clean:
  .depend:
  	$(CCX) $(CFLAGS) -MM *.cpp > $@

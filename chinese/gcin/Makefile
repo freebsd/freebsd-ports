@@ -1,6 +1,6 @@
 PORTNAME=	gcin
 PORTVERSION=	2.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://hyperrate.com/gcin-source/
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.xz
@@ -26,9 +26,10 @@ OPTIONS_DEFINE=	ANTHY
 OPTIONS_SUB=	yes
 ANTHY_DESC=	Japanese anthy IM module
 
-ANTHY_BUILD_DEPENDS=	${LOCALBASE}/include/anthy/anthy.h:japanese/anthy
-ANTHY_LIB_DEPENDS=	libanthy.so:japanese/anthy
+ANTHY_BUILD_DEPENDS=	${LOCALBASE}/include/anthy-unicode-1.0/anthy/anthy.h:japanese/anthy-unicode
+ANTHY_LIB_DEPENDS=	libanthy-unicode.so:japanese/anthy-unicode
 ANTHY_CONFIGURE_OFF=	--use_anthy=N
+ANTHY_MAKE_ENV=		ANTHY_CFLAGS=-I${LOCALBASE}/include/anthy-unicode-1.0
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,&,,; 1 s,##!/bin/bash,#!/bin/sh,; \
