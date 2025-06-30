@@ -1,6 +1,3 @@
-xinput 1.x by Frederic Lepied
-
-xinput is an  utility  I have built  to  configure and test my  XInput
-devices.    The functionalities aren't    complete  but  they fill  my
-needs. If you have  some ideas or needs  for improvement, feel free to
-contact me.  Any feedback welcome.
+Xinput is a utility to configure and test XInput devices. It wasn't
+originally designed to be the primary tool for doing this but it's
+still pretty much the only program out there for doing it. :-)

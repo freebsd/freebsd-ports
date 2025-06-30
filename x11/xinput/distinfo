@@ -1,3 +1,3 @@
-TIMESTAMP = 1566062732
-SHA256 (xorg/app/xinput-1.6.3.tar.bz2) = 35a281dd3b9b22ea85e39869bb7670ba78955d5fec17c6ef7165d61e5aeb66ed
-SIZE (xorg/app/xinput-1.6.3.tar.bz2) = 162556
+TIMESTAMP = 1750178984
+SHA256 (xorg/app/xinput-1.6.4.tar.xz) = ad04d00d656884d133110eeddc34e9c69e626ebebbbab04dc95791c2907057c8
+SIZE (xorg/app/xinput-1.6.4.tar.xz) = 153160
