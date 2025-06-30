@@ -1,5 +1,5 @@
 PORTNAME=	state_machines
-PORTVERSION=	0.20.0
+PORTVERSION=	0.30.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
