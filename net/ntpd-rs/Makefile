@@ -1,7 +1,6 @@
 PORTNAME=	ntpd-rs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
-PORTREVISION=	2
+DISTVERSION=	1.6.0
 CATEGORIES=	net
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -25,7 +24,7 @@ GH_ACCOUNT=	pendulum-project
 
 USE_RC_SUBR=	ntp_daemon
 
-BINFILES=	ntp-ctl ntp-daemon ntp-metrics-exporter nts-pool-ke
+BINFILES=	ntp-ctl ntp-daemon ntp-metrics-exporter
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%ETCDIR%%|${ETCDIR}|' \

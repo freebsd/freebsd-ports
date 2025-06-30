@@ -1,6 +1,5 @@
 bin/ntp-ctl
 bin/ntp-daemon
 bin/ntp-metrics-exporter
-bin/nts-pool-ke
 @sample %%ETCDIR%%/ntp.server.toml.sample
 @sample %%ETCDIR%%/ntp.toml.sample
