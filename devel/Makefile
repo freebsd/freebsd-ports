@@ -6502,7 +6502,6 @@
     SUBDIR += rubygem-aws-sdk-acm
     SUBDIR += rubygem-aws-sdk-acmpca
     SUBDIR += rubygem-aws-sdk-aiops
-    SUBDIR += rubygem-aws-sdk-alexaforbusiness
     SUBDIR += rubygem-aws-sdk-amplify
     SUBDIR += rubygem-aws-sdk-amplifybackend
     SUBDIR += rubygem-aws-sdk-amplifyuibuilder
