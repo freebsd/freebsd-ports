@@ -1,3 +1,0 @@
-libobby is a library which provides synced document buffers. It supports
-multiple documents in one session and is portable to both Windows and
-Unix-like platforms.
