@@ -1,13 +1,13 @@
 PORTNAME=	toot
-DISTVERSION=	0.48.0
+DISTVERSION=	0.48.1
 CATEGORIES=	net-im python
-MASTER_SITES=	PYPI \
-		https://github.com/ihabunek/toot/releases/download/${DISTVERSION}/
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nxjoseph@protonmail.com
 COMMENT=	Interact with the Mastodon social network from the command line
-WWW=		https://github.com/ihabunek/toot
+WWW=		https://github.com/ihabunek/toot \
+		https://pypi.org/project/toot
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -47,7 +47,11 @@ IMAGES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=9.5.0:graphics/py-pillow@${PY
 			${PYTHON_PKGNAMEPREFIX}term-image>=0.7.2:graphics/py-term-image@${PY_FLAVOR}
 RICHTEXT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urwidgets>=0.2<0.3:devel/py-urwidgets@${PY_FLAVOR}
 
-PORTSCOUT=		skipv:0.48.1
+post-patch:
+	${REINPLACE_CMD} -e 's,{__version__},${DISTVERSION},g' \
+		${WRKSRC}/toot/cli/diag.py
+	${REINPLACE_CMD} -e '174s,__version__,"${DISTVERSION}",g' \
+		${WRKSRC}/toot/cli/__init__.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/toot \
