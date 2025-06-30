@@ -183,7 +183,6 @@
     SUBDIR += fcgiwrap
     SUBDIR += feroxbuster
     SUBDIR += ffproxy
-    SUBDIR += ffsend
     SUBDIR += fgallery
     SUBDIR += filebrowser
     SUBDIR += filtron
