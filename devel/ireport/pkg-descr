@@ -1,7 +1,0 @@
-iReport is a powerful, intuitive and easy to use visual report builder/designer
-for JasperReports written in 100% pure java. This tool allows users to visually
-edit complex reports with charts, images, subreports,... iReport is integrated
-with JFreeChart, one of the most diffused OpenSource chart library for java.
-
-The data to print can be retrieved through several ways including multiple JDBC
-connections, TableModels, JavaBeans, XML, etc.

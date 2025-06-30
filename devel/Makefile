@@ -1051,7 +1051,6 @@
     SUBDIR += intervaltree
     SUBDIR += ioncube
     SUBDIR += ipython
-    SUBDIR += ireport
     SUBDIR += isa-l
     SUBDIR += isa-l_crypto
     SUBDIR += iscd-commons

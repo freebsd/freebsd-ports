@@ -4599,3 +4599,4 @@ devel/gvp||2025-06-30|Has expired: Unmaintained upstream and no longer works as 
 net-mgmt/zabbix5-proxy||2025-06-30|Has expired: Upstream EOL reaches on 2025-05-31
 devel/obby||2025-06-30|Has expired: Abandoned upstream, repo archived Nov 26, 2020
 filesystems/vzvol||2025-06-30|Has expired: Abandoned upstream, no activity in 5+ years and multiple unresolved issue reports upstream
+devel/ireport||2025-06-30|Has expired: Outdated, unsupported upstream and unmaintained for years in tree
