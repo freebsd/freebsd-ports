@@ -4638,3 +4638,4 @@ devel/rubygem-aws-sdk-iotroborunner||2025-06-30|Remove obsoleted port
 devel/rubygem-aws-sdk-lambdapreview||2025-06-30|Remove obsoleted port
 devel/rubygem-aws-sdk-mobile||2025-06-30|Remove obsoleted port
 devel/rubygem-aws-sdk-nimblestudio||2025-06-30|Remove obsoleted port
+devel/rubygem-aws-sdk-privatenetworks||2025-06-30|Remove obsoleted port
