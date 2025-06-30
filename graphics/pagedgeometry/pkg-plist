@@ -11,5 +11,9 @@ include/PagedGeometry/TreeLoader2D.h
 include/PagedGeometry/TreeLoader3D.h
 include/PagedGeometry/WindBatchPage.h
 include/PagedGeometry/WindBatchedGeometry.h
+lib/cmake/PagedGeometry/PagedGeometryConfig.cmake
+lib/cmake/PagedGeometry/PagedGeometryConfigVersion.cmake
+lib/cmake/PagedGeometry/PagedGeometryTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/PagedGeometry/PagedGeometryTargets.cmake
 lib/libPagedGeometry.a
 libdata/pkgconfig/PagedGeometry.pc
