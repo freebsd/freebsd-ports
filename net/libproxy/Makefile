@@ -1,11 +1,6 @@
 PORTNAME=	libproxy
-DISTVERSION=	0.5.9
-PORTREVISION=	2
+DISTVERSION=	0.5.10
 CATEGORIES=	net devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	08069f7925649907198277364c7e268797fcf734.patch:-p1 \
-		0420c502ba6364dd9f5ce2f390a34a3af42be0b8.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library that provides automatic proxy configuration management

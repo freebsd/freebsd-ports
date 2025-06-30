@@ -2,7 +2,7 @@ bin/proxy
 include/libproxy/proxy.h
 lib/girepository-1.0/Libproxy-1.0.typelib
 lib/libproxy.so
-lib/libproxy.so.0.5.9
+lib/libproxy.so.0.5.10
 lib/libproxy.so.1
 lib/libproxy/libpxbackend-1.0.so
 libdata/pkgconfig/libproxy-1.0.pc
