@@ -2,11 +2,11 @@ ld: error: undefined symbol: pthread_create
 >>> referenced by idle.c
 >>>               examples/idle.p/idle.c.o:(main)
 
---- examples/meson.build.orig	2023-10-28 09:42:21 UTC
+--- examples/meson.build.orig	2025-06-30 06:54:56 UTC
 +++ examples/meson.build
-@@ -27,5 +27,5 @@ executable('idle',
- 
- executable('idle',
+@@ -24,5 +24,5 @@ executable(
+ executable(
+   'idle',
    sources: ['idle.c', client_protos_headers, protos_sources],
 -  dependencies: [glib, wayland_client],
 +  dependencies: [glib, wayland_client, dependency('threads')],

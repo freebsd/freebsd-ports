@@ -1,6 +1,6 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.46.0
+DISTVERSION=	0.48.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libudev.so:devel/libudev-devd \
 		libwayland-server.so:graphics/wayland \
-		libwlroots-0.18.so:x11-toolkits/wlroots018 \
+		libwlroots-0.19.so:x11-toolkits/wlroots019 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	${LOCALBASE}/share/glib-2.0/schemas/org.gnome.mutter.gschema.xml:x11-wm/mutter
@@ -27,9 +27,12 @@ USE_GNOME=	cairo gnomedesktop3
 USE_XORG=	pixman xcb
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
-GL_TUPLE=	World/Phosh:gmobile:v0.2.0:gmobile/subprojects/gmobile
+GL_TUPLE=	World/Phosh:gmobile:v0.2.0:gmobile/subprojects/gmobile \
+		GNOME:gvdb:4758f6f:gvdb/subprojects/gvdb
 MESON_ARGS=	-Dembed-wlroots=disabled
 PLIST_FILES=	bin/${PORTNAME} \
+		bin/${PORTNAME}-outputs-states \
+		share/man/man1/${PORTNAME}-outputs-states.1.gz \
 		share/man/man5/${PORTNAME}.ini.5.gz \
 		share/applications/mobi.phosh.Phoc.desktop \
 		share/icons/hicolor/symbolic/apps/mobi.phosh.Phoc.svg

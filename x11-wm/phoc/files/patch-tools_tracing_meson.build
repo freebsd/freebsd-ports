@@ -1,0 +1,12 @@
+Error: Orphaned: %%DATADIR%%/systemtap/activation.stp
+Error: Orphaned: %%DATADIR%%/systemtap/direct-scanout.stp
+Error: Orphaned: %%DATADIR%%/systemtap/render-loop.stp
+
+--- tools/tracing/meson.build.orig	2025-06-30 06:54:56 UTC
++++ tools/tracing/meson.build
+@@ -1,3 +1,5 @@ stp_scripts = ['activation.stp', 'direct-scanout.stp',
+ stp_scripts = ['activation.stp', 'direct-scanout.stp', 'render-loop.stp']
+ 
++if not get_option('dtrace').disabled()
+ install_data(stp_scripts, install_dir: pkgdatadir / 'systemtap')
++endif
