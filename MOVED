@@ -4586,3 +4586,4 @@ devel/glui||2025-06-30|Has expired: Abandoned upstream, outdated, last release i
 databases/gnats4||2025-06-30|Has expired: Abandoned upstream, last release in 2015 and last activity about 9 years ago
 databases/gnatsweb4||2025-06-30|Has expired: Abandoned upstream, last release in 2015 and no active development in the last 10 years
 security/libcryptui||2025-06-30|Has expired: abandoned project
+devel/ksql||2025-06-30|Has expired: Last activity upstream 7 years ago, unmaintained in tree for several years and no consumers

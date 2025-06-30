@@ -1186,7 +1186,6 @@
     SUBDIR += kopeninghours
     SUBDIR += kpublictransport
     SUBDIR += kronosnet
-    SUBDIR += ksql
     SUBDIR += ktextaddons
     SUBDIR += kyra
     SUBDIR += kyua

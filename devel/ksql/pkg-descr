@@ -1,6 +1,0 @@
-Ksql is a "lazy man's" wrapper for the SQLite C API.  It is written to
-make sure sloppy programming won't cause your SQLite database to be
-inconsistent (transactions and statements open on exit and certain
-signals).  Specifically, it exits on any database errors; and upon
-exit (or signal), cleans up open statements, transactions, and
-databases.
