@@ -1,9 +1,0 @@
-@sample etc/vtund.conf.sample
-sbin/vtund
-share/man/man5/vtund.conf.5.gz
-share/man/man8/vtund.8.gz
-share/man/man8/vtun.8.gz
-share/man/man1/vtun.1.gz
-@dir /var/log/vtund
-@dir /var/lock/vtund
-@dir /var/lock

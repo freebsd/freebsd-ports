@@ -4571,3 +4571,4 @@ japanese/fcitx5-anthy@original|japanese/fcitx5-anthy|2025-06-29|Has unflavorized
 japanese/fcitx5-anthy@unicode|japanese/fcitx5-anthy|2025-06-29|Has unflavorized: japanese/anthy was removed and only japanese/anthy-unicode is supported
 japanese/ibus-anthy@original|japanese/ibus-anthy|2025-06-29|Has unflavorized: japanese/anthy was removed and only japanese/anthy-unicode is supported
 japanese/ibus-anthy@unicode|japanese/ibus-anthy|2025-06-29|Has unflavorized: japanese/anthy was removed and only japanese/anthy-unicode is supported
+net/vtun||2025-06-30|Has expired: Upstream is dead and last release in 2016
