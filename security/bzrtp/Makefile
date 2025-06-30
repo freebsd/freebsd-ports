@@ -1,5 +1,5 @@
 PORTNAME=	bzrtp
-DISTVERSION=	5.4.2
+DISTVERSION=	5.4.24
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -20,8 +20,7 @@ GL_ACCOUNT=	public
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
-		-DENABLE_STRICT=NO
+CMAKE_ARGS=	-DENABLE_STRICT=NO
 
 post-patch:
 	@${REINPLACE_CMD} 's/<alloca\.h>/<stdlib.h>/' ${WRKSRC}/src/zidCache.c
