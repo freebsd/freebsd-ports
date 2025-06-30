@@ -4587,3 +4587,4 @@ databases/gnats4||2025-06-30|Has expired: Abandoned upstream, last release in 20
 databases/gnatsweb4||2025-06-30|Has expired: Abandoned upstream, last release in 2015 and no active development in the last 10 years
 security/libcryptui||2025-06-30|Has expired: abandoned project
 devel/ksql||2025-06-30|Has expired: Last activity upstream 7 years ago, unmaintained in tree for several years and no consumers
+emulators/qemu8|emulators/qemu|2025-06-30|Has expired: No value in maintaining older QEMU versions on FreeBSD
