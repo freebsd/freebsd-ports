@@ -1,2 +1,0 @@
-Library for efficient spherical harmonic transforms at arbitrary spins,
-supporting CPU vectorization, OpenMP and MPI.
