@@ -26,10 +26,10 @@ load_rc_config $name
 : ${jackett_group:="jackett"}
 : ${jackett_data_dir:="%%PREFIX%%/jackett"}
 
-pidfile="${jackett_data_dir}/jackett.pid"
-procname="%%PREFIX%%/bin/mono"
+pidfile="${jackett_data_dir}/${name}_daemon.pid"
+pidfile_child="${jackett_data_dir}/${name}_child.pid"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} ${procname} %%DATADIR%%/JackettConsole.exe -d ${jackett_data_dir}"
+command_args="-f -p ${pidfile_child} -P ${pidfile} %%DATADIR%%/jackett -d ${jackett_data_dir}"
 start_precmd=jackett_precmd
 
 jackett_precmd()
