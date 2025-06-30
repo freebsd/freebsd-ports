@@ -4608,3 +4608,4 @@ devel/libdnsres||2025-06-30|Has expired: No consumers in tree, last release in 2
 devel/libaura||2025-06-30|Has expired: Abandonware, upstream is gone and last release in 2005
 net-mgmt/zabbix5-java||2025-06-30|Has expired: Upstream EOL reaches on 2025-05-31
 devel/libcli||2025-06-30|Has expired: Outdated and unmaintained in tree for years
+lang/spl||2025-06-30|Has expired: dead upstream
