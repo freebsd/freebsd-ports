@@ -17,6 +17,8 @@ BUILD_DEPENDS=	ldc2:lang/ldc
 USES=		gmake zip
 WRKSRC=		${WRKDIR}
 MAKEFILE=	GNUmakefile
+# avoid building demos
+ALL_TARGET=	libs shared-libs
 
 SSP_UNSAFE=	ldc2 does not support -fstack-protector-strong
 

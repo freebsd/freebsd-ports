@@ -1,5 +1,5 @@
 PORTNAME=	ldc
-PORTVERSION=	1.40.0
+PORTVERSION=	1.41.0
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ldc-developers/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -15,14 +15,10 @@ LICENSE=	BSD3CLAUSE
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	The bootstrap compiler is provided only for x86_64
 
-BUILD_DEPENDS=	${LOCALBASE}/llvm15/lib/libLLVM-15.so:devel/llvm15 # required for bootstrap
+BUILD_DEPENDS=	${LOCALBASE}/llvm19/lib/libLLVM-19.so:devel/llvm19 # required for bootstrap
 LIB_DEPENDS=	libconfig.so:devel/libconfig
 
-USES=		llvm:lib,run,min=15,max=19 ninja cmake:insource pkgconfig
-
-#USE_GITHUB=	yes
-#GH_ACCOUNT=	ldc-developers
-#GH_PROJECT=	ldc
+USES=		llvm:lib,run,min=15,max=20 ninja cmake:insource pkgconfig
 
 USE_LDCONFIG=	yes
 

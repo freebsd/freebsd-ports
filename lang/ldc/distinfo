@@ -1,5 +1,5 @@
-TIMESTAMP = 1735995517
-SHA256 (ldc-1.40.0-src.tar.gz) = 80a3ddd7b7292818cdf6c130e55f1246a19b5fce96139a49b45ccf4e2be99e5f
-SIZE (ldc-1.40.0-src.tar.gz) = 8672131
-SHA256 (ldc2-1.40.0-freebsd-x86_64.tar.xz) = 7ca16f1c27c824d084d0fb6eb5e93d40a672fd832c5ca0c53c3d2f26f4656d9f
-SIZE (ldc2-1.40.0-freebsd-x86_64.tar.xz) = 18384884
+TIMESTAMP = 1750934100
+SHA256 (ldc-1.41.0-src.tar.gz) = af52818b60706106fb8bca2024685c54eddce929edccae718ad9fbcf689f222f
+SIZE (ldc-1.41.0-src.tar.gz) = 8935404
+SHA256 (ldc2-1.41.0-freebsd-x86_64.tar.xz) = 3078a937bc60fefa8747b169bfe187552cf0044cdc55808530614b3a0d214884
+SIZE (ldc2-1.41.0-freebsd-x86_64.tar.xz) = 18823372
