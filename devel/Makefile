@@ -938,7 +938,6 @@
     SUBDIR += got
     SUBDIR += gpds
     SUBDIR += gperf
-    SUBDIR += gpm
     SUBDIR += gprbuild
     SUBDIR += gputils
     SUBDIR += gradle

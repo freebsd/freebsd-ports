@@ -4591,3 +4591,4 @@ emulators/qemu8|emulators/qemu|2025-06-30|Has expired: No value in maintaining o
 devel/electron33||2025-06-30|Has expired: EOLed upstream, switch to newer version
 devel/exercisix||2025-06-30|Has expired: Abandonware, upstream is gone and last release 10+ years ago
 devel/dfuife-curses||2025-06-30|Has expired: Depends on deprecated port devel/libaura
+devel/gpm||2025-06-30|Has expired: Unmaintained upstream and no longer works as intended
