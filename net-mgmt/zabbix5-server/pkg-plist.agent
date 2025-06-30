@@ -1,9 +1,0 @@
-bin/zabbix_get
-bin/zabbix_sender
-share/man/man1/zabbix_get.1.gz
-share/man/man1/zabbix_sender.1.gz
-share/man/man8/zabbix_%%ZABBIX_BUILD%%d.8.gz
-sbin/zabbix_agentd
-@sample %%ETCDIR%%/zabbix_agentd.conf.sample
-@dir %%ETCDIR%%/zabbix_agentd.conf.d
-@dir lib/modules
