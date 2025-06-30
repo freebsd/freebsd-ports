@@ -146,6 +146,7 @@ bin/sancov%%LLVM_SUFFIX%%
 %%LIT%%llvm%%LLVM_SUFFIX%%/bin/lit
 %%LIT%%bin/llvm-lit%%LLVM_SUFFIX%%
 %%LIT%%llvm%%LLVM_SUFFIX%%/bin/llvm-lit
+%%LLDB%%llvm%%LLVM_SUFFIX%%/%%LUA_MODLIBDIR%%/lldb.so
 %%PYCLANG%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/clang/__init__.py
 %%PYCLANG%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/clang/cindex.py
 %%LLDB%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/lldb/__init__.py
@@ -7427,7 +7428,6 @@ llvm%%LLVM_SUFFIX%%/lib/libRemarks.so.%%LLVM_MAJOR_MINOR%%
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libscanbuild/resources/selectable.js
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libscanbuild/resources/sorttable.js
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libscanbuild/shell.py
-%%LLDB%%llvm%%LLVM_SUFFIX%%/lib/lua/5.3/lldb.so
 %%MLIR%%llvm%%LLVM_SUFFIX%%/lib/objects-Release/obj.MLIRCAPIAMDGPU/AMDGPU.cpp.o
 %%MLIR%%llvm%%LLVM_SUFFIX%%/lib/objects-Release/obj.MLIRCAPIArith/Arith.cpp.o
 %%MLIR%%llvm%%LLVM_SUFFIX%%/lib/objects-Release/obj.MLIRCAPIAsync/Async.cpp.o
