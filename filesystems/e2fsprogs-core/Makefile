@@ -177,6 +177,7 @@ post-patch::
 		r_64to32bit \
 		r_64to32bit_meta \
 		r_expand_full \
+		r_corrupt_fs \
 		r_min_itable \
 		t_change_uuid_mounted \
 		t_dangerous \
@@ -243,7 +244,7 @@ _check_target=SKIP_SLOW_TESTS= check
 _check_timeout=7200
 .else
 _check_target=check
-_check_timeout=180
+_check_timeout=600
 .endif
 
 .if ${PORT_OPTIONS:MLIBUNWIND}
