@@ -1,6 +1,6 @@
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
-U_BOOT_SLAVE_PORTREVISION_2024.07=1
+U_BOOT_SLAVE_PORTREVISION_2025.04=1
 
 MODEL=		starfive-visionfive2
 BOARD_CONFIG=	starfive_visionfive2_defconfig

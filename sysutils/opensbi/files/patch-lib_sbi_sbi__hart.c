@@ -1,6 +1,6 @@
---- lib/sbi/sbi_hart.c.orig	2023-12-27 03:02:58.000000000 -0400
-+++ lib/sbi/sbi_hart.c	2024-01-11 14:10:09.723340000 -0400
-@@ -523,6 +523,16 @@
+--- lib/sbi/sbi_hart.c.orig	2025-06-30 03:07:30 UTC
++++ lib/sbi/sbi_hart.c
+@@ -567,6 +567,16 @@ int sbi_hart_pmp_configure(struct sbi_scratch *scratch
  	if (!pmp_count)
  		return 0;
  
