@@ -10,6 +10,9 @@ WWW=		https://github.com/cheusov/libmaa
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
+DEPRECATED=	Depends on expiring devel/mk-configure
+EXPIRATION_DATE=2025-09-30
+
 BUILD_DEPENDS=	mk-configure>=0.29.1:devel/mk-configure
 
 CFLAGS+=	-fPIC

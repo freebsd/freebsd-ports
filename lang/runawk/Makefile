@@ -10,6 +10,9 @@ WWW=		https://sourceforge.net/projects/runawk/
 
 LICENSE=	MIT
 
+DEPRECATED=	Depends on expiring devel/mk-configure
+EXPIRATION_DATE=2025-09-30
+
 BUILD_DEPENDS=	mk-configure>=0.26.0:devel/mk-configure
 
 USES=		localbase

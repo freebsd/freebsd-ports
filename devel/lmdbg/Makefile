@@ -11,6 +11,9 @@ WWW=		https://sourceforge.net/projects/lmdbg/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
+DEPRECATED=	Depends on expiring devel/mk-configure
+EXPIRATION_DATE=2025-09-30
+
 BUILD_DEPENDS=	mk-configure>=0.24:devel/mk-configure
 LIB_DEPENDS=	libJudy.so:devel/judy
 RUN_DEPENDS=	runawk:lang/runawk \

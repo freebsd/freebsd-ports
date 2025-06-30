@@ -10,6 +10,9 @@ WWW=		https://sourceforge.net/projects/mk-configure/
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Depends on expired devel/bmake and devel/bmkdep
+EXPIRATION_DATE=2025-09-30
+
 BUILD_DEPENDS=	${BMAKE}:devel/bmake
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		bmkdep:devel/bmkdep

@@ -9,6 +9,9 @@ WWW=		http://hastmon.googlecode.com/
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Depends on expiring devel/mk-configure
+EXPIRATION_DATE=2025-09-30
+
 BUILD_DEPENDS=	mk-configure>=0.20:devel/mk-configure
 
 USE_GITHUB=	yes
