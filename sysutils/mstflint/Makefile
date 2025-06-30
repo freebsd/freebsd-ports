@@ -32,7 +32,7 @@ ADAB_LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 FWMANAGER_CONFIGURE_ON=	--enable-fw-mgr
 FWMANAGER_LIB_DEPENDS=	libcurl.so:ftp/curl \
-			libxml2.so.2:textproc/libxml2
+			libxml2.so:textproc/libxml2
 
 post-patch:
 	@${ECHO} '#define TOOLS_GIT_SHA "N/A"' >  ${WRKSRC}/common/gitversion.h
