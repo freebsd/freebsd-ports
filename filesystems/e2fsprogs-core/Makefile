@@ -148,6 +148,7 @@ post-extract: # the symlink RELEASE-NOTES is stale in v1.47.1 and v1.47.2 tarbal
 	${RLN} ${WRKSRC}/doc/RelNotes/v1.47.2.txt ${WRKSRC}/RELEASE-NOTES
 
 post-patch::
+	${TOUCH} ${WRKSRC}/tests/r_corrupt_fs/is_slow_test
 .if !empty(DISTFILES)
 	@${REINPLACE_CMD} -e 's/<malloc\.h>/<stdlib.h>/' ${WRKSRC}/*/*.c
 	@${REINPLACE_CMD} -e 's,/etc/blkid.tab,${ETCDIR}/blkid.tab,' ${WRKSRC}/misc/blkid* ${WRKSRC}/lib/blkid/blkidP.h
@@ -175,7 +176,6 @@ post-patch::
 		r_64to32bit \
 		r_64to32bit_meta \
 		r_expand_full \
-		r_corrupt_fs \
 		r_min_itable \
 		t_change_uuid_mounted \
 		t_dangerous \
