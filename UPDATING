@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250630:
+  AFFECTS: users of mail/bogofilter-bdb
+  AUTHOR: mandree@FreeBSD.org
+
+  The mail/bogofilter-bdb port has expired and will be removed.
+  
+  1. BEFORE uninstallation or changing to a different mail/bogofilter*
+  variant, please use bogoutil to export all user data bases (wordlist.db)
+  to text files, bogoutil has a -d option for that.
+  2. ONLY THEN install a different variant. The base port (bogofilter)
+  uses LMDB, the -kc variant uses KyotoCabinet and -sqlite uses SQLite3
+  for their database backends.
+  3. THEN re-import the word list for each user with bogoutil -l.
+
 20250629:
   AFFECTS: users of japanese/anthy
   AUTHOR: nobutaka@FreeBSD.org
