@@ -35,7 +35,7 @@ procname="%%PYTHON_CMD%%"
 buildbot_check()
 {
 	echo "Checking BuildBot config"
-	rc_flags="${buildbot_basedir} ${rc_flags}"
+	rc_flags="${rc_flags} ${buildbot_basedir}"
 	${command} checkconfig ${rc_flags}
 }
 
@@ -47,17 +47,17 @@ buildbot_prestart()
     if [ ! -f "${buildbot_basedir}/master.cfg" ]; then
         install -o ${buildbot_user} -g ${buildbot_user} -m 750 ${buildbot_basedir}/master.cfg.sample ${buildbot_basedir}/master.cfg
     fi
-	rc_flags="start ${buildbot_basedir} ${rc_flags}"
+	rc_flags="start ${rc_flags} ${buildbot_basedir}"
 }
 
 buildbot_prestop()
 {
-	rc_flags="stop ${buildbot_basedir} ${rc_flags}"
+	rc_flags="stop ${rc_flags} ${buildbot_basedir}"
 }
 
 buildbot_reload()
 {
-	rc_flags="${buildbot_basedir} ${rc_flags}"
+	rc_flags="${rc_flags} ${buildbot_basedir}"
 	${command} sighup ${rc_flags}
 }
 
