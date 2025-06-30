@@ -1,6 +1,6 @@
 PORTNAME=	libcompizconfig
 PORTVERSION=	0.8.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://BSDforge.com/projects/source/x11-wm/libcompizconfig/
 

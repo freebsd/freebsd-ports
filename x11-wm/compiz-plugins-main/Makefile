@@ -1,6 +1,6 @@
 PORTNAME=	compiz-plugins-main
 PORTVERSION=	0.8.8
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://BSDforge.com/projects/source/x11-wm/compiz-plugins-main/
 

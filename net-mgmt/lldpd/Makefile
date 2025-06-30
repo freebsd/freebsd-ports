@@ -1,5 +1,6 @@
 PORTNAME=	lldpd
 DISTVERSION=	1.0.19
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		http://media.luffy.cx/files/${PORTNAME}/

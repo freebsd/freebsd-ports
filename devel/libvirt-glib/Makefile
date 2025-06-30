@@ -1,5 +1,6 @@
 PORTNAME=	libvirt-glib
 PORTVERSION=	5.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://download.libvirt.org/glib/
 

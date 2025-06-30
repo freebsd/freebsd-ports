@@ -1,6 +1,7 @@
 PORTNAME=	extension-manager
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 PKGNAMEPREFIX=	gnome-shell-
 

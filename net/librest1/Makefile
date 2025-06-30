@@ -1,6 +1,6 @@
 PORTNAME=	librest
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net devel gnome
 PKGNAMESUFFIX=	1
 MASTER_SITES=	https://gitlab.gnome.org/GNOME/librest/-/archive/${PORTVERSION}/

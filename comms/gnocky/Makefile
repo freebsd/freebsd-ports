@@ -1,6 +1,6 @@
 PORTNAME=	gnocky
 PORTVERSION=	0.0.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnocky/
 

@@ -1,5 +1,6 @@
 PORTNAME=	kdoctools
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 COMMENT=	Create documentation from DocBook

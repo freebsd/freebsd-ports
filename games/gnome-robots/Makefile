@@ -1,5 +1,6 @@
 PORTNAME=	gnome-robots
 DISTVERSION=	41.2
+PORTREVISION=	1
 CATEGORIES=	games gnome
 DIST_SUBDIR=	gnome
 

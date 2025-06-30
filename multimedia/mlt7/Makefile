@@ -1,6 +1,6 @@
 PORTNAME=	${_MLT_PORTNAME}
 DISTVERSION=	${_MLT_VERSION}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	multimedia
 MASTER_SITES=	https://github.com/mltframework/mlt/releases/download/v${DISTVERSION}/
 DISTFILES=	mlt-${DISTVERSION}${EXTRACT_SUFX}

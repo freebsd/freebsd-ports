@@ -1,6 +1,6 @@
 PORTNAME=	virt-viewer
 PORTVERSION=	11.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://releases.pagure.org/${PORTNAME}/
 

@@ -1,6 +1,6 @@
 PORTNAME=	compiz-plugins-extra
 PORTVERSION=	0.8.8
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 

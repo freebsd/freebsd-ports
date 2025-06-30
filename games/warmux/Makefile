@@ -1,6 +1,6 @@
 PORTNAME=	warmux
 DISTVERSION=	11.04.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.nluug.nl/ibiblio/distributions/slitaz/sources/packages-cooking/w/ \
 		http://mirror.clarkson.edu/slitaz/sources/packages/w/ \

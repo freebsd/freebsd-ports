@@ -1,6 +1,6 @@
 PORTNAME=	microdc2
 PORTVERSION=	0.15.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://vault.101011010.xyz/distfiles/ ${WWW:S,/h,if_&,} LOCAL/danfe
 

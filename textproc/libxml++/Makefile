@@ -1,6 +1,6 @@
 PORTNAME=	libxml++
 DISTVERSION=	5.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME \
 		https://github.com/libxmlplusplus/libxmlplusplus/releases/download/${DISTVERSION}/

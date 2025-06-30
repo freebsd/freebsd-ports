@@ -1,6 +1,7 @@
 PORTNAME=	pgbackrest
 DISTVERSIONPREFIX=	release/
 DISTVERSION=	2.55.1
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	schoutm@gmail.com

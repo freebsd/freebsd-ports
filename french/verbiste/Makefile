@@ -1,5 +1,6 @@
 PORTNAME=	verbiste
 PORTVERSION=	0.1.49
+PORTREVISION=	1
 CATEGORIES=	french education textproc
 MASTER_SITES=	http://sarrazip.com/dev/
 

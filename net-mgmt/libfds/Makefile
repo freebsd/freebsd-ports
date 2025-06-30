@@ -1,6 +1,7 @@
 PORTNAME=		libfds
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=		net-mgmt
 
 MAINTAINER=	zarychtam@plan-b.pwste.edu.pl

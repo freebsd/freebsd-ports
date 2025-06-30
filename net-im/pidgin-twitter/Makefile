@@ -1,6 +1,6 @@
 PORTNAME=	pidgin-twitter
 PORTVERSION=	0.9.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.honeyplanet.jp/
 

@@ -1,5 +1,6 @@
 PORTNAME=	xmlsec1
 DISTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/lsh123/xmlsec/releases/download/xmlsec_${DISTVERSION:S,.,_,g}/ \
 		https://www.aleksey.com/xmlsec/download/

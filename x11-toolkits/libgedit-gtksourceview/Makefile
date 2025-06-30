@@ -1,5 +1,6 @@
 PORTNAME=	libgedit-gtksourceview
 DISTVERSION=	299.5.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 DIST_SUBDIR=	gnome
 

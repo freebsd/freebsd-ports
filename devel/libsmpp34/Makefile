@@ -1,6 +1,6 @@
 PORTNAME=	libsmpp34
 PORTVERSION=	1.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://chaosophia.net/downloads/osmocom/${PORTNAME}/
 

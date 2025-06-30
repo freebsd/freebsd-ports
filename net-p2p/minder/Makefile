@@ -1,6 +1,6 @@
 PORTNAME=	minder
 PORTVERSION=	2.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.alhem.net/project/minder/
 

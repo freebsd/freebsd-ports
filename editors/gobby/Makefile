@@ -1,5 +1,6 @@
 PORTNAME=	gobby
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/
 

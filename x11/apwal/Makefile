@@ -1,6 +1,6 @@
 PORTNAME=	apwal
 PORTVERSION=	0.4.5
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	x11
 MASTER_SITES=	http://apwal.free.fr/download/
 

@@ -1,6 +1,6 @@
 PORTNAME=	libxkbcommon
 DISTVERSION=	1.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/xkbcommon/libxkbcommon/commit/

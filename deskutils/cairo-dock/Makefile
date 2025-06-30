@@ -1,5 +1,6 @@
 PORTNAME=	cairo-dock
 DISTVERSION=	3.5.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	nxjoseph@protonmail.com

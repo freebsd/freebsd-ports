@@ -1,6 +1,6 @@
 PORTNAME=	hotkeys
 PORTVERSION=	0.5.7.1
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	misc
 MASTER_SITES=	https://BSDforge.com/projects/source/misc/hotkeys/${PORTVERSION}/
 DISTNAME=	hotkeys_${PORTVERSION}

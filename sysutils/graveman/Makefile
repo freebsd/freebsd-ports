@@ -1,6 +1,6 @@
 PORTNAME=	graveman
 DISTVERSION=	0.3.12-5
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	sysutils
 MASTER_SITES=	http://graveman.tuxfamily.org/sources/
 

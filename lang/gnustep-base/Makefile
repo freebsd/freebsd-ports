@@ -1,6 +1,6 @@
 PORTNAME=	gnustep-base
 DISTVERSION=	1.29.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	https://github.com/gnustep/libs-base/releases/download/base-${DISTVERSION:S,.,_,g}/
 

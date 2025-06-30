@@ -1,6 +1,6 @@
 PORTNAME=	catapult
 PORTVERSION=	18.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/openMSX/openMSX/releases/download/RELEASE_${PORTVERSION:S/./_/g}/
 DISTNAME=	openmsx-${PORTNAME}-${PORTVERSION}

@@ -1,7 +1,7 @@
 PORTNAME=	libpki
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 
 PATCH_SITES=	https://github.com/openca/libpki/commit/

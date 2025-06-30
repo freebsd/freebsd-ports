@@ -1,5 +1,6 @@
 PORTNAME=	kamailio
 DISTVERSION=	6.0.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${DISTVERSION}_src

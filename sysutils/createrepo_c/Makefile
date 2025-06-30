@@ -1,5 +1,6 @@
 PORTNAME=	createrepo_c
 DISTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ktk@netlabs.org

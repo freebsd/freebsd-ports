@@ -1,5 +1,6 @@
 PORTNAME=	yazproxy
 DISTVERSION=	1.3.13
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://ftp.indexdata.dk/pub/yazproxy/
 

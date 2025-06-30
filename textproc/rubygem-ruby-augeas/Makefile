@@ -1,5 +1,6 @@
 PORTNAME=	ruby-augeas
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

@@ -1,6 +1,6 @@
 PORTNAME=	qemu-powernv
 PORTVERSION=	3.0.50
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	http://people.freebsd.org/~kbowling/distfiles/
 

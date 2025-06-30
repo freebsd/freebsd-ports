@@ -8,7 +8,7 @@ PORTREVISION=	0
 .else
 # XXX: correct version
 # dns/bind920 here
-PORTREVISION=	0
+PORTREVISION=	1
 .endif
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${DISTVERSION}

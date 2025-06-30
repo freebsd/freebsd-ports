@@ -1,5 +1,6 @@
 PORTNAME=	aqbanking
 PORTVERSION=	6.6.0
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/531/
 

@@ -1,5 +1,5 @@
 PORTVERSION=		2.1.7
-PORTREVISION=		3
+PORTREVISION=		4
 PKGNAMESUFFIX=		2
 
 WWW=		https://www.clusterlabs.org/pacemaker/

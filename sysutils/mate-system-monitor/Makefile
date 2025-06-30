@@ -1,5 +1,6 @@
 PORTNAME=	mate-system-monitor
 PORTVERSION=	1.28.1
+PORTREVISION=	1
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate

@@ -1,5 +1,6 @@
 PORTNAME=	sqliteodbc
 PORTVERSION=	0.99991
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.ch-werner.de/sqliteodbc/
 

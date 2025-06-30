@@ -1,5 +1,6 @@
 PORTNAME=	certmonger
 DISTVERSION=	0.79.20
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://pagure.io/certmonger/archive/${DISTVERSION}/
 

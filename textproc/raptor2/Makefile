@@ -1,6 +1,6 @@
 PORTNAME=	raptor2
 DISTVERSION=	2.0.16
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.librdf.org/source/
 

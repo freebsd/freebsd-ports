@@ -1,7 +1,7 @@
 PORTNAME=	oregano
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.84.43
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	cad
 MASTER_SITES=	https://waf.io/:new_waf # for Python-3.11 compatibility
 DISTFILES=	waf-2.1.1:new_waf
