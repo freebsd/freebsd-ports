@@ -1,0 +1,2 @@
+OpenTelemetry Flask Tracing builds on the OpenTelemetry WSGI middleware to track
+web requests in Flask applications.

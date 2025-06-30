@@ -5329,6 +5329,7 @@
     SUBDIR += py-opentelemetry-instrumentation-dbapi
     SUBDIR += py-opentelemetry-instrumentation-django
     SUBDIR += py-opentelemetry-instrumentation-fastapi
+    SUBDIR += py-opentelemetry-instrumentation-flask
     SUBDIR += py-opentelemetry-proto
     SUBDIR += py-opentelemetry-sdk
     SUBDIR += py-opentelemetry-semantic-conventions
