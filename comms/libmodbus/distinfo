@@ -1,3 +1,3 @@
-TIMESTAMP = 1654519527
-SHA256 (libmodbus-3.1.7.tar.gz) = 7dfe958431d0570b271e1a5b329b76a658e89c614cf119eb5aadb725c87f8fbd
-SIZE (libmodbus-3.1.7.tar.gz) = 490162
+TIMESTAMP = 1751271066
+SHA256 (stephane-libmodbus-v3.1.8_GH0.tar.gz) = 4cabc5dc01b2faab853474c5d9db6386d04f37a476f843e239bff25480310adb
+SIZE (stephane-libmodbus-v3.1.8_GH0.tar.gz) = 201697
