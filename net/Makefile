@@ -798,7 +798,6 @@
     SUBDIR += p5-Net-SMS-Mollie
     SUBDIR += p5-Net-SMS-PChome
     SUBDIR += p5-Net-SNPP
-    SUBDIR += p5-Net-SPDY
     SUBDIR += p5-Net-SSH
     SUBDIR += p5-Net-SSH-Expect
     SUBDIR += p5-Net-SSH-Mechanize
