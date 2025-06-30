@@ -1,9 +1,0 @@
---- device/bluetooth/cast_bluetooth.gni.orig	2022-08-31 12:19:35 UTC
-+++ device/bluetooth/cast_bluetooth.gni
-@@ -2,5 +2,5 @@ import("//build/config/features.gni")
- 
- declare_args() {
-   force_cast_bluetooth = false
--  use_bluez = (is_linux && !is_castos && use_dbus) || is_chromeos
-+  use_bluez = use_dbus && !is_bsd
- }
