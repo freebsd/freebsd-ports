@@ -1,5 +1,0 @@
-LibFlatArray acts as a highly efficient multi-dimensional array of
-arbitrary objects (array of structs, AoS), but really uses a struct of
-arrays (SoA) memory layout. It's great for writing vectorized code and
-its lightning-fast iterators give you access to neighboring elements
-with zero address generation overhead.

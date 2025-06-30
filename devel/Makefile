@@ -1293,7 +1293,6 @@
     SUBDIR += libffi33
     SUBDIR += libfirm
     SUBDIR += libfixposix
-    SUBDIR += libflatarray
     SUBDIR += libfmt
     SUBDIR += libfort
     SUBDIR += libfortuna
