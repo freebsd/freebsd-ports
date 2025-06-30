@@ -4625,3 +4625,4 @@ devel/py-coreschema|devel/py-openapi-schema-validator|2025-06-30|Has expired: Up
 devel/py-itypes||2025-06-30|Has expired: Upstream archived repository and suggest using devel/py-pyrsistent instead
 net-mgmt/zabbix5-server||2025-06-30|Has expired: Upstream EOL reaches on 2025-05-31
 www/node23|www/node24|2025-06-30|Remove expired port. Node.js 23.* will reach its EoL on 2024-06-01. Use Node.js 24.* (www/node24) instead
+www/npm-node23|www/npm-node24|2025-06-30|Remove expired port
