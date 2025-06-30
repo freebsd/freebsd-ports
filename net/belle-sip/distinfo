@@ -1,5 +1,5 @@
-TIMESTAMP = 1743022710
-SHA256 (belle-sip-5.4.2.tar.bz2) = a8d74d193a3ac71c338c69b4047e91e59c1af9eb9640a2882aee4be8a6c5a889
-SIZE (belle-sip-5.4.2.tar.bz2) = 655526
+TIMESTAMP = 1751281123
+SHA256 (belle-sip-5.4.24.tar.bz2) = e3ed494c7d555f09681da7a555206acf47292a49a9320c9bbf4539fec9c8df7c
+SIZE (belle-sip-5.4.24.tar.bz2) = 655335
 SHA256 (external-cpp-httplib-a2ed0d11c134b6c23da275103b5183b423cea8a8_GL0.tar.gz) = 9b4db463ede003979bd5ea9ec97c7b80e06b1d6da3f05ce39c43670c6807a0f0
 SIZE (external-cpp-httplib-a2ed0d11c134b6c23da275103b5183b423cea8a8_GL0.tar.gz) = 1153181
