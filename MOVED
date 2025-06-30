@@ -4609,3 +4609,4 @@ devel/libaura||2025-06-30|Has expired: Abandonware, upstream is gone and last re
 net-mgmt/zabbix5-java||2025-06-30|Has expired: Upstream EOL reaches on 2025-05-31
 devel/libcli||2025-06-30|Has expired: Outdated and unmaintained in tree for years
 lang/spl||2025-06-30|Has expired: dead upstream
+devel/glrparser||2025-06-30|Has expired: Unfetchable, unmaintained and upstream is gone

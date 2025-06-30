@@ -1,4 +1,0 @@
-The goal of The glrParser Project is to create generally usable programmers
-tool for syntactical analysis of wide ambiguous grammars which works with the
-GLR(0) algorithm. GLR is well known algorithm published by Marasu Tomita in
-1985. It is based on generalization of the LR analysis.

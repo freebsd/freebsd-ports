@@ -1,8 +1,0 @@
-include/glr/glrException.h
-include/glr/glrGrammar.h
-include/glr/glrGuard.h
-include/glr/glrNode.h
-include/glr/glrParser.h
-include/glr/glrStack.h
-include/glr/glrState.h
-include/glr/glrSymbolTable.h
