@@ -1,2 +1,2 @@
-A Python library for accessing the Twitter.com API.
+A Python library for accessing the X API.
 Supports OAuth, covers the entire API, and streaming API.
