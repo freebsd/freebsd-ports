@@ -1,4 +1,4 @@
-TIMESTAMP = 1748689008
+TIMESTAMP = 1751283798
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -925,5 +925,5 @@ SHA256 (signalapp-curve25519-dalek-signal-curve25519-4.1.3_GH0.tar.gz) = 8dd338d
 SIZE (signalapp-curve25519-dalek-signal-curve25519-4.1.3_GH0.tar.gz) = 808022
 SHA256 (signalapp-libsignal-v0.56.1_GH0.tar.gz) = 765b32f463669e4590d253ee82d524805ba42b156af1d058b30e1dc38607f039
 SIZE (signalapp-libsignal-v0.56.1_GH0.tar.gz) = 1656542
-SHA256 (flare-0.16.1.tar.bz2) = 102b390f0158129f23b7ac429059c6dc73ce923b441aa5ceb9f4f74b638743e0
-SIZE (flare-0.16.1.tar.bz2) = 467009
+SHA256 (flare-0.16.3.tar.bz2) = aaadae892863ad3c980109dab6b0c3e4ec050a58f2bee1e2d277cc9a108e18c2
+SIZE (flare-0.16.3.tar.bz2) = 471563

@@ -1,2 +1,16 @@
-Flare is an unofficial app for Signal. It is still in development
-and doesn't include all the features that the official Signal apps do.
+Flare is an unofficial Electron-Free Signal app written in Rust
+which makes it more lightweight and faster to obtain on your own.
+It is still in development and doesn't include all the features
+that the official Signal app do.
+
+Even though things like linked credentials, contact and group
+details and message contens are encrypted, it's still not
+guaranteed for the security of your data. This application
+will probably worsen the security compared to official
+Signal app. Use this application with care when handling
+sensitive data.
+
+Not encrypted:
+* Number of contacts and groups
+* Number of messages in a chat
+* Message timestamps
