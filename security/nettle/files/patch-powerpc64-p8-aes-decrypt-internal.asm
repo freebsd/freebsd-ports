@@ -1,4 +1,4 @@
---- powerpc64/p8/aes-decrypt-internal.asm.orig	2024-06-16 15:27:54 UTC
+--- powerpc64/p8/aes-decrypt-internal.asm.orig	2025-06-26 18:29:03 UTC
 +++ powerpc64/p8/aes-decrypt-internal.asm
 @@ -64,7 +64,7 @@ PROLOGUE(_nettle_aes_decrypt)
  

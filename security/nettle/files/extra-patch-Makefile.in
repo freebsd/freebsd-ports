@@ -1,6 +1,6 @@
---- Makefile.in.orig	2023-06-01 18:40:35 UTC
+--- Makefile.in.orig	2025-06-26 18:29:02 UTC
 +++ Makefile.in
-@@ -19,7 +19,7 @@ OPT_NETTLE_SOURCES = @OPT_NETTLE_SOURCES@
+@@ -19,7 +19,7 @@ FAT_TEST_LIST = @FAT_TEST_LIST@
  
  FAT_TEST_LIST = @FAT_TEST_LIST@
  

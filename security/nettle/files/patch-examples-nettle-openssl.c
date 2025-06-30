@@ -1,6 +1,6 @@
---- examples/nettle-openssl.c.orig	2021-03-21 08:32:25 UTC
+--- examples/nettle-openssl.c.orig	2025-06-26 18:29:03 UTC
 +++ examples/nettle-openssl.c
-@@ -374,6 +374,7 @@ openssl_hash_update(void *p,
+@@ -291,6 +291,7 @@ openssl_hash_update(void *p,
    EVP_DigestUpdate(ctx->evp, src, length);
  }
  
@@ -8,7 +8,7 @@
  #define OPENSSL_HASH(NAME, name)					\
  static void								\
  openssl_##name##_init(void *p)						\
-@@ -404,6 +405,38 @@ nettle_openssl_##name = {						\
+@@ -321,6 +322,38 @@ nettle_openssl_##name = {						\
    openssl_hash_update,							\
    openssl_##name##_digest						\
  };
@@ -46,4 +46,4 @@
 +#endif
  
  OPENSSL_HASH(MD5, md5)
- OPENSSL_HASH(SHA, sha1)
+ OPENSSL_HASH(SHA1, sha1)

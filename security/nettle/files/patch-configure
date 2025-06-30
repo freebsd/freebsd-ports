@@ -1,6 +1,6 @@
---- configure.orig	2023-06-01 18:40:35 UTC
+--- configure.orig	2025-06-26 18:29:02 UTC
 +++ configure
-@@ -6638,7 +6638,7 @@ $as_echo "$as_me: WARNING: Cross compiling for linux. 
+@@ -7532,7 +7532,7 @@ printf "%s\n" "$as_me: WARNING: Cross compiling for li
        # and 64-bit in lib. Don't know about "kfreebsd", does
        # it follow the Linux fhs conventions?
        *:freebsd*:32)

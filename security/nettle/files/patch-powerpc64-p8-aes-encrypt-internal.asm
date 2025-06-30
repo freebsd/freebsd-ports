@@ -1,6 +1,6 @@
---- powerpc64/p8/aes-encrypt-internal.asm.orig	2022-06-02 17:57:16 UTC
+--- powerpc64/p8/aes-encrypt-internal.asm.orig	2025-06-26 18:29:03 UTC
 +++ powerpc64/p8/aes-encrypt-internal.asm
-@@ -63,7 +63,7 @@ define(`S7', `v9')
+@@ -64,7 +64,7 @@ PROLOGUE(_nettle_aes_encrypt)
  
  define(`FUNC_ALIGN', `5')
  PROLOGUE(_nettle_aes_encrypt)
@@ -9,7 +9,7 @@
  
   subi ROUNDS,ROUNDS,1
   srdi LENGTH,LENGTH,4
-@@ -328,6 +328,6 @@ EPILOGUE(_nettle_aes_encrypt)
+@@ -269,6 +269,6 @@ EPILOGUE(_nettle_aes_encrypt)
  
   .data
   .align 4
