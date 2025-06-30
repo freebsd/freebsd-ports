@@ -6585,7 +6585,6 @@
     SUBDIR += rubygem-aws-sdk-codegurureviewer
     SUBDIR += rubygem-aws-sdk-codegurusecurity
     SUBDIR += rubygem-aws-sdk-codepipeline
-    SUBDIR += rubygem-aws-sdk-codestar
     SUBDIR += rubygem-aws-sdk-codestarconnections
     SUBDIR += rubygem-aws-sdk-codestarnotifications
     SUBDIR += rubygem-aws-sdk-cognitoidentity
