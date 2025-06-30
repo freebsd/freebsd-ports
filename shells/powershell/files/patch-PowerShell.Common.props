@@ -11,8 +11,8 @@
 -      <Output TaskParameter="ConsoleOutput" PropertyName="PowerShellVersion" />
 -    </Exec>
 +    <PropertyGroup>
-+      <PowerShellVersion>7.5.0</PowerShellVersion>
-+      <ReleaseTag>7.5.0</ReleaseTag>
++      <PowerShellVersion>7.5.2</PowerShellVersion>
++      <ReleaseTag>7.5.2</ReleaseTag>
 +    </PropertyGroup>
  
      <PropertyGroup Condition = "'$(ReleaseTag)' != ''">
