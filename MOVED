@@ -4614,3 +4614,4 @@ devel/kyra||2025-06-30|Has expired: Abandonware, last release in 2006 and depden
 devel/libmimedir||2025-06-30|Has expired: Last release in 2008, no consumers in tree and unmaintained for years
 devel/py-openapi-codec|devel/py-openapi-core|2025-06-30|Has expired: Upstream archived the repository. Please use devel/py-openapi-core instead
 devel/linenoise-ng||2025-06-30|Has expired: Upstream repo archived Oct 28, 2020
+mail/bogofilter-bdb||2025-06-30|Has expired: The Berkeley DB database interface is obsolescent
