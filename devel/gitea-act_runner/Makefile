@@ -1,7 +1,6 @@
 PORTNAME=	act_runner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.11
-PORTREVISION=	7
+DISTVERSION=	0.2.12
 CATEGORIES=	devel
 PKGNAMEPREFIX=	gitea-
 
@@ -12,7 +11,7 @@ WWW=		https://gitea.com/gitea/act_runner
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	go:1.23,modules
+USES=	go:modules
 USE_RC_SUBR=	${PORTNAME}
 
 GO_MODULE=	gitea.com/gitea/act_runner
