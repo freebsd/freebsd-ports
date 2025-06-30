@@ -1,3 +1,3 @@
-TIMESTAMP = 1696432970
-SHA256 (django-redis-5.4.0.tar.gz) = 6a02abaa34b0fea8bf9b707d2c363ab6adc7409950b2db93602e6cb292818c42
-SIZE (django-redis-5.4.0.tar.gz) = 52567
+TIMESTAMP = 1751208160
+SHA256 (django_redis-6.0.0.tar.gz) = 2d9cb12a20424a4c4dde082c6122f486628bae2d9c2bee4c0126a4de7fda00dd
+SIZE (django_redis-6.0.0.tar.gz) = 56904
