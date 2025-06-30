@@ -5319,6 +5319,7 @@
     SUBDIR += py-opendht
     SUBDIR += py-openstacksdk
     SUBDIR += py-opentelemetry-api
+    SUBDIR += py-opentelemetry-distro
     SUBDIR += py-opentelemetry-exporter-otlp
     SUBDIR += py-opentelemetry-exporter-otlp-proto-common
     SUBDIR += py-opentelemetry-exporter-otlp-proto-grpc
