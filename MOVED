@@ -4577,3 +4577,4 @@ devel/inilib||2025-06-30|Has expired: Abandonware, last update upstream in 2005
 textproc/py-jtextfsm|textproc/py-textfsm|2025-06-30|Has expired: Upstream inactive for 9+ years and the port is now obsolete. Please use textproc/py-textfsm instead
 net-mgmt/unifi8|net-mgmt/unifi9|2025-06-30|Has expired: No longer supported by upstream
 devel/openwince-include||2025-06-30|Has expired: Abandoned, last release in 2005 and no consumers in tree
+net/zillion||2025-06-30|Has expired: Unmaintained upstream as last release was in 2003

@@ -1715,7 +1715,6 @@
     SUBDIR += zapret
     SUBDIR += zebra-server
     SUBDIR += zerotier
-    SUBDIR += zillion
     SUBDIR += zmap
     SUBDIR += zmate
     SUBDIR += zsync
