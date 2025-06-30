@@ -1,3 +1,31 @@
+  <vuln vid="6b1b8989-55b0-11f0-ac64-589cfc10a551">
+    <topic>podman -- TLS connection used to pull VM images was not validated</topic>
+    <affects>
+      <package>
+	<name>podman</name>
+	<range><lt>5.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RedHat, Inc. reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2025-6032">
+	  <p>A flaw was found in Podman.  The podman machine init command fails to verify the TLS
+	  certificate when downloading the VM images from an OCI registry.  This issue results
+	  in a Man In The Middle attack.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6032</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6032</url>
+    </references>
+    <dates>
+      <discovery>2025-06-30</discovery>
+      <entry>2025-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5e64770c-52aa-11f0-b522-b42e991fc52e">
     <topic>MongoDB -- Running certain aggregation operations with the SBE engine may lead to unexpected behavior</topic>
     <affects>
