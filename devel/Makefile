@@ -1850,7 +1850,6 @@
     SUBDIR += openocd
     SUBDIR += opentelemetry-cpp
     SUBDIR += opentelemetry-proto
-    SUBDIR += openwince-include
     SUBDIR += orc
     SUBDIR += orcania
     SUBDIR += osc
