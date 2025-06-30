@@ -1,6 +1,6 @@
---- Makefile.orig	2024-09-23 21:18:05 UTC
+--- Makefile.orig	2025-06-26 16:14:20 UTC
 +++ Makefile
-@@ -47,13 +47,11 @@ $(PROG): $(OBJS)
+@@ -59,13 +59,11 @@ $(PROG): $(OBJS)
  all: $(PROG)
  
  $(PROG): $(OBJS)
@@ -10,9 +10,9 @@
  
  .SUFFIXES: .c .o
  .c.o:
--	@echo compile $<
+-	@echo Compiling $<
 -	@$(CC) $(CFLAGS) -c $< -o $@
 +	$(CC) $(CFLAGS) -c $< -o $@
  
  clean:
- 	@echo cleaning...
+ 	@echo Cleaning...
