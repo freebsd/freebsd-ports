@@ -4593,3 +4593,4 @@ devel/exercisix||2025-06-30|Has expired: Abandonware, upstream is gone and last 
 devel/dfuife-curses||2025-06-30|Has expired: Depends on deprecated port devel/libaura
 devel/gpm||2025-06-30|Has expired: Unmaintained upstream and no longer works as intended
 devel/libdfui||2025-06-30|Has expired: Depends on deprecated port devel/libaura
+devel/firmware-utils||2025-06-30|Has expired: Outdated and unsupported upstream
