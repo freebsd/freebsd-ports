@@ -4606,3 +4606,4 @@ security/sectok||2025-06-30|Has expired: Last upstream release in 2003 and no lo
 security/libsectok||2025-06-30|Has expired: Last upstream release in 2003 and no longer maintained
 devel/libdnsres||2025-06-30|Has expired: No consumers in tree, last release in 2005 by upstream
 devel/libaura||2025-06-30|Has expired: Abandonware, upstream is gone and last release in 2005
+net-mgmt/zabbix5-java||2025-06-30|Has expired: Upstream EOL reaches on 2025-05-31
