@@ -94,7 +94,11 @@ post-patch:
 
 do-build:
 	@${MKDIR} ${early_stage_dir}
-	@${SH} ${FILESDIR}/start-build.sh ${WRKSRC} ${early_stage_dir} ${swift_install_prefix} ${WRKDIR}/clang-module-cache
+	${SETENV} \
+		CCACHE_WRAPPER_PATH=${CCACHE_WRAPPER_PATH} \
+		MAKE_JOBS_NUMBER=${MAKE_JOBS_NUMBER} \
+		${SH} -x ${FILESDIR}/start-build.sh ${WRKSRC} ${early_stage_dir} \
+			${swift_install_prefix} ${WRKDIR}/clang-module-cache
 
 do-install:
 	@${FIND} ${early_stage_dir}${swift_install_prefix}/bin -type f -not -name '*.py' -not -name '*.sh' -not -name '*.txt' -exec ${STRIP_CMD} '{}' ';' ; \

@@ -12,8 +12,9 @@ cd ${swift_project_dir}/swift &&
 utils/build-script --bootstrapping bootstrapping \
 --release \
 --assertions \
---host-cc /usr/bin/clang \
---host-cxx /usr/bin/clang++ \
+${MAKE_JOBS_NUMBER+--jobs} ${MAKE_JOBS_NUMBER} \
+--host-cc ${CCACHE_WRAPPER_PATH:-/usr/bin}/clang \
+--host-cxx ${CCACHE_WRAPPER_PATH:-/usr/bin}/clang++ \
 --llvm-targets-to-build 'AArch64;X86' \
 --skip-early-swift-driver \
 --skip-early-swiftsyntax \
