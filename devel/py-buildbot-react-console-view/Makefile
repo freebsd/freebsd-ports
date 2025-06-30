@@ -1,6 +1,5 @@
 PORTNAME=	buildbot-react-console-view
-DISTVERSION=	3.11.9
-PORTREVISION=	1
+DISTVERSION=	4.0.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +10,9 @@ COMMENT=	Buildbot Console View plugin (react)
 WWW=		https://buildbot.net
 
 LICENSE=	GPLv2
+
+DEPRECATED=No longer required by Buildbot 4.X
+EXPIRATION_DATE=	2025-09-30
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}buildbot-pkg>=${PORTVERSION}:devel/py-buildbot-pkg@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}buildbot-pkg>=${PORTVERSION}:devel/py-buildbot-pkg@${PY_FLAVOR}
