@@ -6765,7 +6765,6 @@
     SUBDIR += rubygem-aws-sdk-migrationhuborchestrator
     SUBDIR += rubygem-aws-sdk-migrationhubrefactorspaces
     SUBDIR += rubygem-aws-sdk-migrationhubstrategyrecommendations
-    SUBDIR += rubygem-aws-sdk-mobile
     SUBDIR += rubygem-aws-sdk-mpa
     SUBDIR += rubygem-aws-sdk-mq
     SUBDIR += rubygem-aws-sdk-mturk
