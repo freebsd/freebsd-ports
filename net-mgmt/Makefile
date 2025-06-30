@@ -420,7 +420,6 @@
     SUBDIR += xymon-server
     SUBDIR += yaf
     SUBDIR += zabbix5-java
-    SUBDIR += zabbix5-proxy
     SUBDIR += zabbix5-server
     SUBDIR += zabbix6-agent
     SUBDIR += zabbix6-frontend
