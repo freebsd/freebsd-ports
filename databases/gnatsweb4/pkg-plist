@@ -1,4 +1,0 @@
-@sample %%ETCDIR%%/gnatsweb-site.pl.sample
-%%CGI_DIR%%/gnatsweb.pl
-%%CGI_DIR%%/gnatsweb-site.pl
-%%CGI_DIR%%/gnatsweb.html

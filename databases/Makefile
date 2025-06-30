@@ -81,7 +81,6 @@
     SUBDIR += geoserver-mysql-plugin
     SUBDIR += gigabase
     SUBDIR += gmdb2
-    SUBDIR += gnatsweb4
     SUBDIR += go-carbon
     SUBDIR += go-pgweb
     SUBDIR += gobang
