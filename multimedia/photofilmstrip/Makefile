@@ -5,7 +5,7 @@ CATEGORIES=	multimedia python
 MASTER_SITES=	https://github.com/PhotoFilmStrip/PFS/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates movies out of your pictures
 WWW=		https://www.photofilmstrip.org/
 
