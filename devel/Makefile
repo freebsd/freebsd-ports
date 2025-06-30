@@ -1208,7 +1208,6 @@
     SUBDIR += lfcxml
     SUBDIR += libCello
     SUBDIR += libIDL
-    SUBDIR += libPropList
     SUBDIR += libabigail
     SUBDIR += libac
     SUBDIR += libada

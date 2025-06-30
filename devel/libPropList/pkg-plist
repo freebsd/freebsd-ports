@@ -1,5 +1,0 @@
-include/proplist.h
-lib/libPropList.a
-lib/libPropList.so
-lib/libPropList.so.0
-lib/libPropList.so.0.2.2

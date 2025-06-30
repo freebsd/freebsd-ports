@@ -4578,3 +4578,4 @@ textproc/py-jtextfsm|textproc/py-textfsm|2025-06-30|Has expired: Upstream inacti
 net-mgmt/unifi8|net-mgmt/unifi9|2025-06-30|Has expired: No longer supported by upstream
 devel/openwince-include||2025-06-30|Has expired: Abandoned, last release in 2005 and no consumers in tree
 net/zillion||2025-06-30|Has expired: Unmaintained upstream as last release was in 2003
+devel/libPropList||2025-06-30|Has expired: Deprecated and unsupported upstream
