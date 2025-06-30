@@ -1,5 +1,5 @@
-TIMESTAMP = 1744288752
-SHA256 (go/sysutils_diffoci/diffoci-v0.1.6/v0.1.6.mod) = 3894a70fce2bca9f15dca57455c5d307f47dc631947e8db1e76f4d170ef43dd8
-SIZE (go/sysutils_diffoci/diffoci-v0.1.6/v0.1.6.mod) = 3192
-SHA256 (go/sysutils_diffoci/diffoci-v0.1.6/v0.1.6.zip) = b24bb29b90ba32fa30ed1af6891766604b3ead6e4020a2aa612551bd6477a27e
-SIZE (go/sysutils_diffoci/diffoci-v0.1.6/v0.1.6.zip) = 55447
+TIMESTAMP = 1751208140
+SHA256 (go/sysutils_diffoci/diffoci-v0.1.7/v0.1.7.mod) = 043011739d7f703b1e237d91f5841ee1239007762b8717182dec3be4da32e604
+SIZE (go/sysutils_diffoci/diffoci-v0.1.7/v0.1.7.mod) = 3192
+SHA256 (go/sysutils_diffoci/diffoci-v0.1.7/v0.1.7.zip) = 3f88a52dda41b524efe2add3334358cfd1cafc7b63634d555f7cecf5d2fc37de
+SIZE (go/sysutils_diffoci/diffoci-v0.1.7/v0.1.7.zip) = 55698
