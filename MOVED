@@ -4582,3 +4582,4 @@ devel/libPropList||2025-06-30|Has expired: Deprecated and unsupported upstream
 net-mgmt/zabbix5-agent||2025-06-30|Has expired: Upstream EOL reaches on 2025-05-31
 sysutils/x86info||2025-06-30|Has expired: Abandoned upstream, fails to identify anything remotely new according to upstream issue reports
 math/libsharp2||2025-06-30|Has expired: Deprecated upstream in 2021, upstream recommends migrating to ducc0
+devel/glui||2025-06-30|Has expired: Abandoned upstream, outdated, last release in 2015 and upstream activity in 2019

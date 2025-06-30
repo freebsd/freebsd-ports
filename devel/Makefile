@@ -898,7 +898,6 @@
     SUBDIR += global
     SUBDIR += glog
     SUBDIR += glrparser
-    SUBDIR += glui
     SUBDIR += gmake
     SUBDIR += gn
     SUBDIR += gnome-builder

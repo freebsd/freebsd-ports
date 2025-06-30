@@ -1,5 +1,0 @@
-GLUI is a GLUT-based C++ user interface library which provides
-controls such as buttons, check boxes, radio buttons, and spinners
-to OpenGL applications.  It is window-system independent, relying
-on GLUT to handle all system-dependent issues, such as window and
-mouse management.
