@@ -1,6 +1,5 @@
 PORTNAME=	keyring
-PORTVERSION=	23.9.3
-PORTREVISION=	3
+PORTVERSION=	25.6.0
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
@@ -13,7 +12,10 @@ WWW=		https://github.com/jaraco/keyring
 LICENSE=	PSFL
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=1.15.0:devel/py-setuptools-scm@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jaraco.classes>=0:devel/py-jaraco.classes@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jaraco.classes>=0:devel/py-jaraco.classes@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jaraco.context>=0:devel/py-jaraco.context@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jaraco.functools>=0:devel/py-jaraco.functools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
 
 USES=		cpe python
 CPE_VENDOR=	python
