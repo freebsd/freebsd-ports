@@ -4979,6 +4979,7 @@
     SUBDIR += py-gs_api_client
     SUBDIR += py-guppy3
     SUBDIR += py-gyp
+    SUBDIR += py-gyp-next
     SUBDIR += py-hacking
     SUBDIR += py-hammett
     SUBDIR += py-hash_ring
