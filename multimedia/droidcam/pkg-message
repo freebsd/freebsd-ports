@@ -1,14 +1,45 @@
 [
 { type: install
   message: <<EOM
-Connect your phone with USB then follow these steps but
-"-d", "-N" and "-S" parameters may be different for you.
-To learn them, just run webcamd as root and without parameters.
-Don't forget to Change $USER and $GROUP according to your normal user.
+DroidCam requires webcamd which depend on `cuse` module to work properly.
+	NOTE: use either sudo or became root for steps right below.
+	- To enable it permanently on every boot:
+	# sysrc kld_list+=cuse
 	# kldload cuse
-	# webcamd -d ugen0.2 -N Xiaomi-Redmi-Note-12 -S 1234567 \
-	  -M 0 -v 0 -B -U $USER -G $GROUP -c v4l2loopback
-Now, you can run the program and use it.
+	- To enable it only for current session:
+	# kldload cuse
+
+NOTE: use either sudo or became root for steps right below.
+	    replace $USER with your normal user's name and $GROUP
+	    with your normal user's group to own the /dev/videoX device.
+To start webcamd service to use your mobile device as a webcam wirelessly.
+	# webcamd -B -U $USER -G $GROUP -c v4l2loopback
+To start webcamd service to use your mobile device as a wired USB webcam.
+	NOTE: The flags -d, -N, -S and -M will be different for you, replace accordingly.
+	      You can learn these by just running `webcamd` with sudo or root, it will guide you.
+	# webcamd -B -d ugen0.4 -N Xiaomi-Redmi-Note-12 -S 1234567 -M 0 -B -U $USER -G $GROUP -c v4l2loopback
+
+To use your mobile device as a webcam wirelessly.
+	1. Install DroidCam to your mobile device from Play Store.
+	2. Open the DroidCam app and give required permissions.
+	3. Keep the information shown on the app.
+	4. Launch DroidCam GUI on your PC.
+	5. Be sure that you have selected WiFi/LAN mode.
+	6. Enter your device's WiFi IP address and port number correctly
+	   then start the webcam using the start button.
+
+To use your mobile device as a wired USB webcam.
+	1. Install DroidCam to your mobile device from Play Store.
+	2. Open the DroidCam app and give required permissions.
+	3. Keep the information shown on the app.
+	4. Launch DroidCam GUI on your PC.
+	5. Be sure that you have selected USB (Android/IOS) mode.
+	6. Enter your device's port number correctly
+	   then start the webcam using the start button.
+	NOTE: If you get the error: No devices detected, run these commands below
+	      either with sudo or as root.
+	# adb kill-server (may fail, keep going)
+	# adb start server (this may require you to accept a question on your mobile device's screen)
 EOM
 }
 ]
