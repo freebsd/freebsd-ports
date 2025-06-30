@@ -1,4 +1,4 @@
-TIMESTAMP = 1749695021
+TIMESTAMP = 1751273631
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -1307,5 +1307,5 @@ SHA256 (Firstyear-libnss-rs-763da4beaadc1e475b89ed876de31a5e393f6d30_GH0.tar.gz)
 SIZE (Firstyear-libnss-rs-763da4beaadc1e475b89ed876de31a5e393f6d30_GH0.tar.gz) = 12094
 SHA256 (Firstyear-compact-jwt-b3d2b5700cfe567d384c81df35d25537fbf7f110_GH0.tar.gz) = f9308a607e2ad1755c67452f52acd1d7c0f3d30d40f15551d3e7ad3bacc4a3da
 SIZE (Firstyear-compact-jwt-b3d2b5700cfe567d384c81df35d25537fbf7f110_GH0.tar.gz) = 62309
-SHA256 (kanidm-kanidm-v1.6.0_GH0.tar.gz) = ece0c090eecddbda54c12d1e50e72daca5c9348bc199c7cb1c0f25935b5c786b
-SIZE (kanidm-kanidm-v1.6.0_GH0.tar.gz) = 8648803
+SHA256 (kanidm-kanidm-v1.6.1_GH0.tar.gz) = 89e993c3b81720122385b82f47f04fff2acbfd5540af25b507a8cab713a70e86
+SIZE (kanidm-kanidm-v1.6.1_GH0.tar.gz) = 8649026
