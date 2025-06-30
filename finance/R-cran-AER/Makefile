@@ -10,6 +10,9 @@ WWW=		https://cran.r-project.org/web/packages/AER/
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on expiring math/R-cran-car
+EXPIRATION_DATE=2025-09-30
+
 RUN_DEPENDS=	R-cran-car>=2.0.19:math/R-cran-car \
 		R-cran-lmtest>=0:finance/R-cran-lmtest \
 		R-cran-Formula>=0.2.0:math/R-cran-Formula \

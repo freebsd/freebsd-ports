@@ -10,6 +10,9 @@ WWW=		https://rkward.kde.org/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on expiring math/R-cran-car
+EXPIRATION_DATE=2025-09-30
+
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libR.so:math/R	\
 		libcups.so:print/cups	\
