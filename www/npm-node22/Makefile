@@ -1,5 +1,5 @@
 PORTNAME=	npm
-PORTVERSION=	10.9.2
+PORTVERSION=	10.9.3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 PKGNAMESUFFIX=	${NODEJS_SUFFIX}
@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	${NODEJS_SUFFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Node package manager
 WWW=		https://www.npmjs.com/package/npm \
-		https://docs.npmjs.com/cli/v10 \
+		https://docs.npmjs.com/ \
 		https://github.com/npm/cli
 
 LICENSE=	ART20
