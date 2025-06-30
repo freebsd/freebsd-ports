@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.232.0
+PORTVERSION=	3.233.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -217,6 +217,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-kendra>=1<2:devel/rubygem-aws-sdk-kendra \
 		rubygem-aws-sdk-kendraranking>=1<2:devel/rubygem-aws-sdk-kendraranking \
 		rubygem-aws-sdk-keyspaces>=1<2:devel/rubygem-aws-sdk-keyspaces \
+		rubygem-aws-sdk-keyspacesstreams>=1<2:devel/rubygem-aws-sdk-keyspacesstreams \
 		rubygem-aws-sdk-kinesis>=1<2:devel/rubygem-aws-sdk-kinesis \
 		rubygem-aws-sdk-kinesisanalytics>=1<2:devel/rubygem-aws-sdk-kinesisanalytics \
 		rubygem-aws-sdk-kinesisanalyticsv2>=1<2:devel/rubygem-aws-sdk-kinesisanalyticsv2 \
