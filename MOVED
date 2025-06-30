@@ -4635,3 +4635,4 @@ devel/rubygem-aws-sdk-codestar||2025-06-30|Remove obsoleted port
 devel/rubygem-aws-sdk-gamesparks||2025-06-30|Remove obsoleted port
 devel/rubygem-aws-sdk-honeycode||2025-06-30|Remove obsoleted port
 devel/rubygem-aws-sdk-iotroborunner||2025-06-30|Remove obsoleted port
+devel/rubygem-aws-sdk-lambdapreview||2025-06-30|Remove obsoleted port
