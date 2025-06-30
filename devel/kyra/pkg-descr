@@ -1,8 +1,0 @@
-Kyra is a simple, fully featured Sprite engine written in C++.
-The Kyra engine is suited to 2D, isometric, and quasi-3D games.
-It is built on top of SDL for cross platform use. It supports
-tiles, sprites, and user drawn surfaces. It has full support
-for alpha blending, scaling, color transformation, pixel
-perfect collision detection, OpenGL acceleration, and mouse
-testing. It comes with tools to define sprites and import
-images into the system.
