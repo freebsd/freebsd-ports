@@ -1,0 +1,3 @@
+OpenTelemetry Database API instrumentation provides the trace integration with
+Database API. It supports libraries that follow the Python Database API
+Specification v2.0.
