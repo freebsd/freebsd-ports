@@ -961,7 +961,6 @@
     SUBDIR += guile-lib
     SUBDIR += gum
     SUBDIR += gumbo
-    SUBDIR += gvp
     SUBDIR += gwenhywfar
     SUBDIR += gwenhywfar-fox16
     SUBDIR += gwenhywfar-gtk2
