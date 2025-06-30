@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-keyspaces
-PORTVERSION=	1.41.0
+PORTVERSION=	1.42.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
