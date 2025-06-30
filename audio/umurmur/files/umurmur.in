@@ -30,6 +30,6 @@ load_rc_config $name
 
 # Set some defaults
 : ${umurmur_enable="NO"}
-: ${umurmur_user="umurmur"}
+: ${umurmur_user="%%USER%%"}
 
 run_rc_command "$1"

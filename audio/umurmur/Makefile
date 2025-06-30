@@ -1,7 +1,7 @@
 PORTNAME=	umurmur
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -18,6 +18,14 @@ USES=		cmake ssl
 USE_GITHUB=	yes
 USE_RC_SUBR=	umurmur
 
+USERS=	${PORTNAME}
+GROUPS=	${PORTNAME}
+
+PLIST_SUB=	USER=${USERS} \
+		GROUP=${GROUPS}
+
+SUB_LIST=	USER=${USERS}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/conf.c
 	@${REINPLACE_CMD} \
@@ -27,5 +35,6 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/umurmur
 	${INSTALL_DATA} ${WRKSRC}/umurmur.conf.example ${STAGEDIR}${PREFIX}/etc/umurmur/umurmur.conf.sample
+	${MKDIR} ${STAGEDIR}/var/run/umurmur
 
 .include <bsd.port.mk>

@@ -799,7 +799,7 @@ ebusd:*:854:
 opensearch:*:855:
 # free: 856
 # free: 857
-# free: 858
+umurmur:*:858:
 kanidm:*:859:
 plocate:*:860:
 rekor:*:861:

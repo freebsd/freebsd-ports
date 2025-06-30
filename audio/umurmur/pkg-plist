@@ -1,2 +1,3 @@
 @sample etc/umurmur/umurmur.conf.sample
 bin/umurmurd
+@dir(%%USER%%,%%GROUP%%,750) /var/run/umurmur
