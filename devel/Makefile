@@ -5334,6 +5334,7 @@
     SUBDIR += py-opentelemetry-instrumentation-requests
     SUBDIR += py-opentelemetry-instrumentation-urllib
     SUBDIR += py-opentelemetry-instrumentation-urllib3
+    SUBDIR += py-opentelemetry-instrumentation-wsgi
     SUBDIR += py-opentelemetry-proto
     SUBDIR += py-opentelemetry-sdk
     SUBDIR += py-opentelemetry-semantic-conventions
