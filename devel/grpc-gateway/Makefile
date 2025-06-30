@@ -1,6 +1,6 @@
 PORTNAME=	grpc-gateway
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.26.3
+DISTVERSION=	2.27.0
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/grpc-ecosystem/grpc-gateway/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/grpc-ecosystem/grpc-gateway/v2
 GO_TARGET=	./protoc-gen-grpc-gateway \
