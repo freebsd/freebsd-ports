@@ -75,7 +75,6 @@
     SUBDIR += linux-oracle-jre18
     SUBDIR += linux-oracle-serverjre10
     SUBDIR += mmake
-    SUBDIR += mx4j
     SUBDIR += netbeans
     SUBDIR += netrexx
     SUBDIR += netty
