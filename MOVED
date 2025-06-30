@@ -4630,3 +4630,4 @@ net/p5-Net-SPDY||2025-06-30|Remove obsoleted port. SPDY is an obsoleted protocol
 www/p5-HTTP-Tiny-SPDY||2025-06-30|Remove obsoleted port. SPDY is an obsoleted protocol
 www/yarn-node23|www/yarn-node24|2025-06-30|Remove expired port
 devel/rubygem-aws-sdk-alexaforbusiness||2025-06-30|Remove obsoleted port
+devel/rubygem-aws-sdk-backupstorage||2025-06-30|Remove obsoleted port
