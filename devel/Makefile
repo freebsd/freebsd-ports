@@ -5325,6 +5325,7 @@
     SUBDIR += py-opentelemetry-exporter-otlp-proto-grpc
     SUBDIR += py-opentelemetry-exporter-otlp-proto-http
     SUBDIR += py-opentelemetry-instrumentation
+    SUBDIR += py-opentelemetry-instrumentation-asgi
     SUBDIR += py-opentelemetry-proto
     SUBDIR += py-opentelemetry-sdk
     SUBDIR += py-opentelemetry-semantic-conventions
