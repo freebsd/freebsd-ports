@@ -604,7 +604,6 @@
     SUBDIR += dev86
     SUBDIR += devhelp
     SUBDIR += devtodo
-    SUBDIR += dfuife-curses
     SUBDIR += dia2code
     SUBDIR += dill
     SUBDIR += ding-libs

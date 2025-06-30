@@ -1,3 +1,0 @@
-DFUI curses frontend.  Allows a DFUI backend (such as a system
-installer) to communicate with the user with an addressable text
-screen-oriented ('curses') user interface.
