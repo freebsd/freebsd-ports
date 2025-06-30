@@ -25,7 +25,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		clap_derive-4.5.18 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
-		comrak-0.38.0 \
+		comrak-0.39.1 \
 		crc32fast-1.4.2 \
 		darling-0.20.10 \
 		darling_core-0.20.10 \
@@ -74,8 +74,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		proc-macro2-1.0.92 \
 		quick-xml-0.32.0 \
 		quote-1.0.38 \
-		rb-sys-0.9.111 \
-		rb-sys-build-0.9.111 \
+		rb-sys-0.9.114 \
+		rb-sys-build-0.9.114 \
 		rb-sys-env-0.1.2 \
 		rctree-0.6.0 \
 		regex-1.11.1 \
