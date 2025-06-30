@@ -1,4 +1,0 @@
-DFUI is a user interface abstraction in the form of a protocol by
-which application logic (such as a system installer) in the backend
-can talk to a concrete user interface (such as curses or GTK) in
-the frontend.

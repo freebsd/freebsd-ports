@@ -1264,7 +1264,6 @@
     SUBDIR += libddoc
     SUBDIR += libddwaf
     SUBDIR += libdex
-    SUBDIR += libdfui
     SUBDIR += libdill
     SUBDIR += libdisasm
     SUBDIR += libdisorder
