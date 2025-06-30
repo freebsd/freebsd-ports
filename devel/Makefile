@@ -694,7 +694,6 @@
     SUBDIR += evcxr-jupyter
     SUBDIR += evdev-proto
     SUBDIR += evemu
-    SUBDIR += exercisix
     SUBDIR += exomizer
     SUBDIR += expected
     SUBDIR += f77flow

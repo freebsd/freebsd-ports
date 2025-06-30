@@ -1,4 +1,0 @@
-Exercisix is a lightweight unit-test framework for C++, designed for
-test-aided development. Framework provides test discovery, textual
-description as primary test identifier, terse test tools syntax,
-emacs-friendly error message format, easy build without linking.
