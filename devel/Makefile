@@ -6714,6 +6714,7 @@
     SUBDIR += rubygem-aws-sdk-kendra
     SUBDIR += rubygem-aws-sdk-kendraranking
     SUBDIR += rubygem-aws-sdk-keyspaces
+    SUBDIR += rubygem-aws-sdk-keyspacesstreams
     SUBDIR += rubygem-aws-sdk-kinesis
     SUBDIR += rubygem-aws-sdk-kinesisanalytics
     SUBDIR += rubygem-aws-sdk-kinesisanalyticsv2
