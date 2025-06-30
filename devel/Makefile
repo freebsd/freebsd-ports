@@ -6905,7 +6905,6 @@
     SUBDIR += rubygem-aws-sdk-wafv2
     SUBDIR += rubygem-aws-sdk-wellarchitected
     SUBDIR += rubygem-aws-sdk-workdocs
-    SUBDIR += rubygem-aws-sdk-worklink
     SUBDIR += rubygem-aws-sdk-workmail
     SUBDIR += rubygem-aws-sdk-workmailmessageflow
     SUBDIR += rubygem-aws-sdk-workspaces
