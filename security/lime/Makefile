@@ -1,5 +1,5 @@
 PORTNAME=	lime
-DISTVERSION=	5.4.2
+DISTVERSION=	5.4.24
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -20,8 +20,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
 
-CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
-		-DENABLE_STRICT=NO \
+CMAKE_ARGS=	-DENABLE_STRICT=NO \
 		-DENABLE_UNIT_TESTS=NO
 
 .include <bsd.port.mk>
