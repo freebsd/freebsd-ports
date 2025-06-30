@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2025-06-12 15:29:53 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=78.0"]
++requires = ["setuptools>=61.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,8 +7,7 @@ readme = "README.md"
+ dynamic = ["version"]
+ description = "A Django content management system."
+ readme = "README.md"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = {text = "BSD-3-Clause"}
+ authors = [
+   { name = "Wagtail core team + contributors", email = "hello@wagtail.org" },
+ ]
