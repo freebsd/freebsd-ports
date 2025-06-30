@@ -1359,7 +1359,6 @@
     SUBDIR += libmba
     SUBDIR += libmcfp
     SUBDIR += libmill
-    SUBDIR += libmimedir
     SUBDIR += libmowgli
     SUBDIR += libmowgli2
     SUBDIR += libmpcbdm

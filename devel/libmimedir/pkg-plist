@@ -1,5 +1,0 @@
-include/libmimedir.h
-lib/libmimedir.a
-lib/libmimedir.so
-lib/libmimedir.so.0
-lib/libmimedir.so.0.0.0

@@ -4611,3 +4611,4 @@ devel/libcli||2025-06-30|Has expired: Outdated and unmaintained in tree for year
 lang/spl||2025-06-30|Has expired: dead upstream
 devel/glrparser||2025-06-30|Has expired: Unfetchable, unmaintained and upstream is gone
 devel/kyra||2025-06-30|Has expired: Abandonware, last release in 2006 and depdends on deprecated libraries
+devel/libmimedir||2025-06-30|Has expired: Last release in 2008, no consumers in tree and unmaintained for years
