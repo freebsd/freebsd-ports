@@ -20,4 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mikepultz
 GH_PROJECT=	netdns2
 
+PORTSCOUT=	limit:^1\.
+
 .include <bsd.port.mk>
