@@ -17,6 +17,7 @@ LICENSE=	GPLv2
 USES+=		bdb:5+
 DEPRECATED=	The Berkeley DB database interface is obsolescent.
 EXPIRATION_DATE=2025-06-30
+IGNORE=		This port has expired. Once its infrastructure will have moved out the base port (LMDB), it will be removed
 .endif
 
 OPTIONS_DEFINE=		GSL UNICODE DOCS
