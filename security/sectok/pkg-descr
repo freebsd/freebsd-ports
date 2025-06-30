@@ -1,3 +1,0 @@
-This is the sectok tool from citi.umich.edu. Originally targeted
-for OpenBSD. This is a quick port of the basic application; it relies
-upon the libsectok library for ISO 7816 Smart Card device communication.
