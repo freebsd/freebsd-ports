@@ -1,6 +1,0 @@
-include/dnsres.h
-lib/libdnsres.a
-lib/libdnsres.so
-lib/libdnsres.so.0
-lib/libdnsres.so.0.0.1
-share/man/man3/dnsres.3.gz

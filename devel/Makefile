@@ -1266,7 +1266,6 @@
     SUBDIR += libdispatch
     SUBDIR += libdistance
     SUBDIR += libdlmalloc
-    SUBDIR += libdnsres
     SUBDIR += libdombey
     SUBDIR += libdparse
     SUBDIR += libds
