@@ -79,10 +79,17 @@ PYTHON_USES=		python
 CXXFLAGS+=		-DNDEBUG -I${LOCALBASE}/include -I${LOCALBASE}/include/Imath
 PLIST_SUB+=		LIBVERSION=${PORTVERSION:R}
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e '\
 		s,defined(__x86_64__),& || defined(__amd64__),' \
 		${WRKSRC}/OgreMain/include/OgrePlatform.h
+.if ${ARCH:Naarch64:Namd64}
+	@${REINPLACE_CMD} -e '\
+		/check_cxx_compiler_flag(-msse OGRE_GCC_HAS_SSE)/d' \
+		${WRKSRC}/CMakeLists.txt
+.endif
 
 post-patch-PYTHON-on:
 	@${REINPLACE_CMD} -e 's/\(Python_ADDITIONAL_VERSIONS\) [0-9\.]*/\$1 ${PYTHON_VER}/' \
