@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2025.05.28
 CATEGORIES=	sysutils
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-based desktop environment for your terminal
 WWW=		https://github.com/directvt/vtm
 

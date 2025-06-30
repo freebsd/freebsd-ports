@@ -5,7 +5,7 @@ CATEGORIES=	comms python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ctypes bindings to comms/hidapi
 WWW=		https://github.com/apmorton/pyhidapi
 
