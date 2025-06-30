@@ -4603,3 +4603,4 @@ devel/ireport||2025-06-30|Has expired: Outdated, unsupported upstream and unmain
 www/ffsend||2025-06-30|Has expired: fails to build with rust 1.87.0
 devel/cgilib||2025-06-30|Has expired: Last upstream release in 2009, last upstream activity in 2017 and no consumers in tree
 security/sectok||2025-06-30|Has expired: Last upstream release in 2003 and no longer maintained
+security/libsectok||2025-06-30|Has expired: Last upstream release in 2003 and no longer maintained

@@ -323,7 +323,6 @@
     SUBDIR += libscep
     SUBDIR += libscrypt
     SUBDIR += libsecret
-    SUBDIR += libsectok
     SUBDIR += libsodium
     SUBDIR += libssh
     SUBDIR += libssh2

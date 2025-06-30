@@ -1,3 +1,0 @@
-This is the libsectok library from citi.umich.edu. Originally targeted
-for OpenBSD. This is a quick port of the library itself; it contains an
-API for working with ISO 7816 Smart Card devices.
