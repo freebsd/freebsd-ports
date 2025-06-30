@@ -1,6 +1,6 @@
 PORTNAME=			${SAMBA4_BASENAME}420
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			9
+PORTREVISION=			10
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -47,7 +47,6 @@ EXTRA_PATCHES=			\
 				${PATCHDIR}/0028-Fix-rl_completion_func_t.patch:-p1 \
 				${PATCHDIR}/0028-s3-lib-system-add-FreeBSD-proc_fd_pattern.patch \
 				${PATCHDIR}/0100-Fix-pathref-handling-for-FreeBSD-13plus_samba42x.patch:-p1 \
-				${PATCHDIR}/0101-FreeBSD-add-fdescfs-paths-workaround.patch:-p1 \
 				${PATCHDIR}/0102-FreeBSD-vfs_freebsd-fix-sys_proc_fd_path-args.patch:-p1
 
 SAMBA4_BASENAME=		samba

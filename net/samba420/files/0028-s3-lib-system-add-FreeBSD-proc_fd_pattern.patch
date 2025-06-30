@@ -1,14 +1,24 @@
---- source3/lib/system.c.orig	2024-02-02 10:33:51.188489400 +0100
-+++ source3/lib/system.c	2025-01-22 17:39:58.625028000 +0100
-@@ -1047,22 +1047,108 @@
+From 584c69e77abb537a7345222648a397a9963c01b7 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Sat, 15 Oct 2022 04:02:43 +0200
+Subject: [PATCH 28/28] s3:lib:system - add FreeBSD proc_fd_pattern
+
+Add support for FreeBSD equivalent of /proc/self/fd through a special
+fdescfs mount with option "nodup". This filesystem should be mounted
+either to the private $PIDDIR/fd/ directory or to /dev/fd in order to
+provide security and performance characteristics similar to Linux.
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+Adapted for Samba 4.20 by: Andrea venturoli <ml@netfence.it>
+---
+--- source3/lib/system.c.orig	2025-06-27 15:05:05 UTC
++++ source3/lib/system.c
+@@ -1047,6 +1047,68 @@ int sys_get_number_of_cores(void)
  }
  #endif
  
--bool sys_have_proc_fds(void)
 +static bool freebsd_fdesc_check(const char *pattern)
- {
--	static bool checked = false;
--	static bool have_proc_fds = false;
++{
 +	char fdesc_path[PATH_MAX];
 +	int fd, fd2;
 +
@@ -49,26 +59,6 @@
 +	return true;
 +}
 +
-+static char* linux_pattern(char *buf, size_t bufsize)
-+{
-+	char proc_fd_path[PATH_MAX];
-+	const char *pattern = "/proc/self/fd/%lu";
- 	struct stat sb;
--	int ret;
- 
--	if (checked) {
--		return have_proc_fds;
-+	snprintf(proc_fd_path, sizeof(proc_fd_path), pattern, 0);
-+	if(stat(proc_fd_path, &sb) == 0) {
-+		snprintf(buf, bufsize, "%s", pattern);
-+		return buf;
- 	}
-+	return NULL;
-+}
- 
--	ret = stat("/proc/self/fd/0", &sb);
--	have_proc_fds = (ret == 0);
--	checked = true;
 +static char* freebsd_pattern(char *buf, size_t bufsize) {
 +	const char** base;
 +	const char* base_dir[] = {
@@ -76,8 +66,7 @@
 +		"/dev",
 +		NULL
 +	};
- 
--	return have_proc_fds;
++
 +	for(base = &base_dir[0]; *base != NULL; base++) {
 +		snprintf(buf, bufsize, "%s/fd/%%lu", *base);
 +		if(freebsd_fdesc_check(buf)) {
@@ -87,35 +76,46 @@
 +	return NULL;
 +}
 +
-+static char* (*proc_fd_patterns[])(char *, size_t) = {
-+	linux_pattern,
-+	freebsd_pattern,
-+	NULL
-+};
-+ 
 +static char proc_fd_pattern_buf[PATH_MAX];
 +static const char *proc_fd_pattern = NULL;
-+ 
-+bool sys_have_proc_fds(void)
-+{
-+	static bool checked = false;
-+	static bool have_proc_fds = false;
-+	char* (**pattern_func)(char *, size_t) = NULL;
-+ 
-+ 	if (checked) {
-+ 		return have_proc_fds;
-+ 	}
-+ 
-+	for (pattern_func = &proc_fd_patterns[0]; *pattern_func != NULL; pattern_func++) {
-+		if((*pattern_func)(proc_fd_pattern_buf, sizeof(proc_fd_pattern_buf)) != NULL) {
-+			have_proc_fds = true;
-+			proc_fd_pattern = proc_fd_pattern_buf;
-+			break;
-+ 		}
-+ 	}
 +
-+ 	checked = true;
-+ 	return have_proc_fds;
- }
+ bool sys_have_proc_fds(void)
+ {
+ 	static bool checked = false;
+@@ -1058,8 +1078,12 @@ bool sys_have_proc_fds(void)
+ 		return have_proc_fds;
+ 	}
+ 
+-	ret = stat("/proc/self/fd/0", &sb);
+-	have_proc_fds = (ret == 0);
++	if (freebsd_pattern(proc_fd_pattern_buf, sizeof(proc_fd_pattern_buf)) != NULL) {
++                have_proc_fds = true;
++		proc_fd_pattern = proc_fd_pattern_buf;
++	} else
++                have_proc_fds = false;
++
+ 	checked = true;
+ 
+ 	return have_proc_fds;
+@@ -1067,10 +1091,18 @@ char *sys_proc_fd_path(int fd, struct sys_proc_fd_path
  
  char *sys_proc_fd_path(int fd, struct sys_proc_fd_path_buf *buf)
+ {
++	 bool have_proc_fds = sys_have_proc_fds();
++        SMB_ASSERT(have_proc_fds);
++#if defined(__clang__)
++#pragma clang diagnostic push
++#pragma clang diagnostic ignored "-Wformat-nonliteral"
++#endif
+ 	int written =
+-		snprintf(buf->buf, sizeof(buf->buf), "/proc/self/fd/%d", fd);
+-
+-	SMB_ASSERT(sys_have_proc_fds() && (written >= 0));
++		snprintf(buf->buf, sizeof(buf->buf), proc_fd_pattern, fd);
++#if defined(__clang__)
++#pragma clang diagnostic pop
++#endif
++	SMB_ASSERT(written >= 0);
+ 
+ 	return buf->buf;
+ }
