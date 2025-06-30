@@ -3,7 +3,7 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		async-trait-0.1.88 \
 		autocfg-1.5.0 \
 		bitflags-2.9.1 \
-		bumpalo-3.18.1 \
+		bumpalo-3.19.0 \
 		cfg-if-1.0.1 \
 		concurrent-queue-2.5.0 \
 		crossbeam-utils-0.8.21 \
@@ -42,7 +42,7 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		serde_json-1.0.140 \
 		smallstr-0.3.0 \
 		smallvec-1.15.1 \
-		syn-2.0.103 \
+		syn-2.0.104 \
 		target-lexicon-0.13.2 \
 		thiserror-2.0.12 \
 		thiserror-impl-2.0.12 \
