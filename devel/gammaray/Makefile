@@ -46,10 +46,11 @@ QT_VERSION=${QT5_VERSION:C/\./_/:C/\..*//}
 .else
 USES+=		gl kde:6 qt:6
 USE_GL=		gl
-USE_QT+=	base positioning shadertools
+USE_QT+=	base positioning shadertools tools:build
 QT_VERSION=${QT6_VERSION:C/\./_/:C/\..*//}
 .endif
 
+CMAKE_ARGS+=	QT_VERSION_MAJOR=${_QT_VER}
 CMAKE_ON=	STACK_DETAILS_DWARF
 CMAKE_OFF=	STACK_DETAILS_AUTO_DETECT
 
