@@ -4642,3 +4642,4 @@ devel/rubygem-aws-sdk-privatenetworks||2025-06-30|Remove obsoleted port
 devel/rubygem-aws-sdk-ssooidc||2025-06-30|Remove obsoleted port
 devel/rubygem-aws-sdk-worklink||2025-06-30|Remove obsoleted port
 lang/linux-dotnet11-sdk||2025-07-01|Removed: Depends on expired lang/linux-dotnet11-runtime, MASTER_SITES gone
+lang/linux-dotnet10-runtime||2025-07-01|Has expired: Ancient version, no practical use

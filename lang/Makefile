@@ -178,7 +178,6 @@
     SUBDIR += linux-dotnet-cli
     SUBDIR += linux-dotnet-runtime
     SUBDIR += linux-dotnet-sdk
-    SUBDIR += linux-dotnet10-runtime
     SUBDIR += linux-dotnet11-runtime
     SUBDIR += linux-j
     SUBDIR += linux-rl9-python3
