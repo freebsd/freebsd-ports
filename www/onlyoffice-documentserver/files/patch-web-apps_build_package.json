@@ -1,5 +1,14 @@
---- web-apps/build/package.json.orig	2025-02-24 09:04:41 UTC
+--- web-apps/build/package.json.orig	2025-06-18 20:13:18 UTC
 +++ web-apps/build/package.json
+@@ -29,6 +29,8 @@
+     "iconv-lite": "^0.6.3",
+     "less-plugin-clean-css": "1.5.1",
+     "lodash": "^4.17.21",
++    "optipng-bin": "^5.1.0",
++    "patch-package": "^8.0.0",
+     "terser": "^5.20.0",
+     "vinyl-fs": "^4.0.0"
+   },
 @@ -44,8 +46,9 @@
      }
    },

@@ -1,0 +1,1014 @@
+https://github.com/yao-pkg/pkg-fetch/raw/refs/tags/v3.5.23/patches/node.v20.19.1.cpp.patch
++ local FreeBSD patches
+
+--- yao-pkg/node_modules/@yao-pkg/pkg-fetch/patches/node.v20.19.1.cpp.patch
++++ yao-pkg/node_modules/@yao-pkg/pkg-fetch/patches/node.v20.19.1.cpp.patch
+@@ -11,6 +11,24 @@ index d3c17d47bc..7970af6ea4 100644
+              }],
+            ],
+          },
++@@ -426,7 +426,7 @@
++                 'ldflags': [ '-m32' ],
++               }],
++               [ 'host_arch=="ppc64" and OS not in "aix os400"', {
++-                'cflags': [ '-m64', '-mminimal-toc' ],
+++                'cflags': [ '-m64' ],
++                 'ldflags': [ '-m64' ],
++               }],
++               [ 'host_arch=="s390x" and OS=="linux"', {
++@@ -450,7 +450,7 @@
++                 'ldflags': [ '-m32' ],
++               }],
++               [ 'target_arch=="ppc64" and OS not in "aix os400"', {
++-                'cflags': [ '-m64', '-mminimal-toc' ],
+++                'cflags': [ '-m64' ],
++                 'ldflags': [ '-m64' ],
++               }],
++               [ 'target_arch=="s390x" and OS=="linux"', {
+ diff --git node/deps/ngtcp2/nghttp3/lib/nghttp3_ringbuf.c node/deps/ngtcp2/nghttp3/lib/nghttp3_ringbuf.c
+ index 5e7775f1a5..eeebf67796 100644
+ --- node/deps/ngtcp2/nghttp3/lib/nghttp3_ringbuf.c
+@@ -600,3 +618,375 @@ index 2655b9e694..1d951571c7 100644
+              'cflags_cc!': [ '-fno-rtti' ],
+            }],
+            [ 'OS == "mac" or OS == "ios"', {
++--- node/Makefile.orig	2025-05-14 12:22:41 UTC
+++++ node/Makefile
++@@ -171,8 +171,7 @@ out/Makefile: config.gypi common.gypi node.gyp \
++ 	$(warning '$@' target is a noop)
++ 
++ out/Makefile: config.gypi common.gypi node.gyp \
++-	deps/uv/uv.gyp deps/llhttp/llhttp.gyp deps/zlib/zlib.gyp \
++-	deps/simdutf/simdutf.gyp deps/ada/ada.gyp \
+++	deps/*/*.gyp \
++ 	tools/v8_gypfiles/toolchain.gypi tools/v8_gypfiles/features.gypi \
++ 	tools/v8_gypfiles/inspector.gypi tools/v8_gypfiles/v8.gyp
++ 	$(PYTHON) tools/gyp_node.py -f make
++--- node/deps/openssl/config/archs/linux-elf/no-asm/openssl-cl.gypi.orig	2023-05-16 06:58:19 UTC
+++++ node/deps/openssl/config/archs/linux-elf/no-asm/openssl-cl.gypi
++@@ -13,7 +13,7 @@
++       '-Wall -O3 -fomit-frame-pointer',
++     ],
++     'openssl_ex_libs_linux-elf': [
++-      '-ldl -pthread',
+++      '-pthread',
++     ],
++     'openssl_cli_srcs_linux-elf': [
++       'openssl/apps/lib/cmp_mock_srv.c',
++--- node/deps/openssl/config/archs/linux-elf/no-asm/openssl.gypi.orig	2023-05-16 06:58:19 UTC
+++++ node/deps/openssl/config/archs/linux-elf/no-asm/openssl.gypi
++@@ -977,7 +977,7 @@
++       '-Wall -O3 -fomit-frame-pointer',
++     ],
++     'openssl_ex_libs_linux-elf': [
++-      '-ldl -pthread',
+++      '-pthread',
++     ],
++   },
++   'include_dirs': [
++--- node/deps/openssl/openssl-cl_no_asm.gypi.orig	2023-11-22 10:13:54 UTC
+++++ node/deps/openssl/openssl-cl_no_asm.gypi
++@@ -1,4 +1,5 @@
++ {
+++  'defines': ['OPENSSL_NO_ASM'],
++   'conditions': [
++     ['target_arch=="ppc64" and OS in ("aix", "os400")', {
++       'includes': ['config/archs/aix64-gcc-as/no-asm/openssl-cl.gypi'],
++@@ -45,7 +46,7 @@
++       'includes': ['config/archs/linux64-loongarch64/no-asm/openssl-cl.gypi'],
++     }, {
++       # Other architectures don't use assembly
++-      'includes': ['config/archs/linux-x86_64/no-asm/openssl-cl.gypi'],
+++      'includes': ['config/archs/linux-elf/no-asm/openssl-cl.gypi'],
++     }],
++   ],
++ }
++--- node/deps/openssl/openssl_no_asm.gypi.orig	2023-05-16 06:58:20 UTC
+++++ node/deps/openssl/openssl_no_asm.gypi
++@@ -44,7 +44,7 @@
++       'includes': ['config/archs/linux64-riscv64/no-asm/openssl.gypi'],
++     }, {
++       # Other architectures don't use assembly
++-      'includes': ['config/archs/linux-x86_64/no-asm/openssl.gypi'],
+++      'includes': ['config/archs/linux-elf/no-asm/openssl.gypi'],
++     }],
++   ],
++ }
++--- node/deps/v8/src/base/macros.h.orig	2021-04-12 21:00:33.000000000 +0000
+++++ node/deps/v8/src/base/macros.h	2025-06-20 09:42:18.838769000 +0000
++@@ -203,7 +203,8 @@
++ // base::is_trivially_copyable will differ for these cases.
++ template <typename T>
++ struct is_trivially_copyable {
++-#if V8_CC_MSVC
+++#if V8_CC_MSVC || (__GNUC__ == 12 && __GNUC_MINOR__ <= 2) || \
+++    (defined(__clang__) && __clang_major__ <= 17)
++   // Unfortunately, MSVC 2015 is broken in that std::is_trivially_copyable can
++   // be false even though it should be true according to the standard.
++   // (status at 2018-02-26, observed on the msvc waterfall bot).
++--- node/deps/v8/src/base/platform/platform-freebsd.cc.orig	2023-05-16 06:58:20 UTC
+++++ node/deps/v8/src/base/platform/platform-freebsd.cc
++@@ -82,8 +82,8 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
++             lib_name = std::string(path);
++           }
++           result.push_back(SharedLibraryAddress(
++-              lib_name, reinterpret_cast<uintptr_t>(map->kve_start),
++-              reinterpret_cast<uintptr_t>(map->kve_end)));
+++              lib_name, static_cast<uintptr_t>(map->kve_start),
+++              static_cast<uintptr_t>(map->kve_end)));
++         }
++ 
++         start += ssize;
++--- node/deps/v8/src/codegen/arm/cpu-arm.cc.orig	2023-05-16 06:58:20 UTC
+++++ node/deps/v8/src/codegen/arm/cpu-arm.cc
++@@ -2,12 +2,15 @@
++ // Use of this source code is governed by a BSD-style license that can be
++ // found in the LICENSE file.
++ 
+++#include "include/v8config.h"
+++
++ // CPU specific code for arm independent of OS goes here.
++ #ifdef __arm__
++ #ifdef __QNXNTO__
++ #include <sys/mman.h>  // for cache flushing.
++ #undef MAP_TYPE
++ #elif V8_OS_FREEBSD
+++#include <sys/cdefs.h>
++ #include <machine/sysarch.h>  // for cache flushing
++ #include <sys/types.h>
++ #elif V8_OS_STARBOARD
++--- node/deps/v8/src/codegen/ppc/constants-ppc.h.orig	2023-05-16 06:58:20 UTC
+++++ node/deps/v8/src/codegen/ppc/constants-ppc.h
++@@ -36,7 +36,7 @@
++ #endif
++ 
++ #if !(V8_HOST_ARCH_PPC || V8_HOST_ARCH_PPC64) || !V8_TARGET_ARCH_PPC64 || \
++-    V8_TARGET_LITTLE_ENDIAN || (defined(_CALL_ELF) && _CALL_ELF == 2)
+++    (defined(_CALL_ELF) && _CALL_ELF == 2)
++ #define ABI_RETURNS_OBJECT_PAIRS_IN_REGS 1
++ #else
++ #define ABI_RETURNS_OBJECT_PAIRS_IN_REGS 0
++@@ -44,7 +44,7 @@
++ 
++ #if !(V8_HOST_ARCH_PPC || V8_HOST_ARCH_PPC64) || \
++     (V8_TARGET_ARCH_PPC64 &&                     \
++-     (V8_TARGET_LITTLE_ENDIAN || (defined(_CALL_ELF) && _CALL_ELF == 2)))
+++     (defined(_CALL_ELF) && _CALL_ELF == 2))
++ #define ABI_CALL_VIA_IP 1
++ #else
++ #define ABI_CALL_VIA_IP 0
++--- node/deps/v8/src/libsampler/sampler.cc.orig	2023-05-16 06:58:20 UTC
+++++ node/deps/v8/src/libsampler/sampler.cc
++@@ -511,6 +511,10 @@ void SignalHandler::FillRegisterState(void* context, R
++   state->pc = reinterpret_cast<void*>(mcontext.__gregs[_REG_PC]);
++   state->sp = reinterpret_cast<void*>(mcontext.__gregs[_REG_SP]);
++   state->fp = reinterpret_cast<void*>(mcontext.__gregs[_REG_FP]);
+++#elif V8_TARGET_ARCH_PPC64
+++  state->pc = reinterpret_cast<void*>(mcontext.mc_srr0);
+++  state->sp = reinterpret_cast<void*>(mcontext.mc_frame[1]);
+++  state->fp = reinterpret_cast<void*>(mcontext.mc_frame[31]);
++ #endif  // V8_HOST_ARCH_*
++ #elif V8_OS_NETBSD
++ #if V8_HOST_ARCH_IA32
++Obtained from:	https://chromium.googlesource.com/v8/v8.git/+/182d9c05e78b1ddb1cb8242cd3628a7855a0336f
++
++commit 182d9c05e78b1ddb1cb8242cd3628a7855a0336f
++Author: Andrey Kosyakov <caseq@chromium.org>
++Date:   2023-08-17T13:50:11-07:00
++
++    Define UChar as char16_t
++    
++    We used to have UChar defined as uint16_t which does not go along
++    with STL these days if you try to have an std::basic_string<> of it,
++    as there are no standard std::char_traits<> specialization for uint16_t.
++    
++    This switches UChar to char16_t where practical, introducing a few
++    compatibility shims to keep CL size small, as (1) this would likely
++    have to be back-ported and (2) crdtp extensively uses uint16_t for
++    wide chars.
++    
++    Bug: b:296390693
++    Change-Id: I66a32d8f0050915225b187de56896c26dd76163d
++    Reviewed-on: https://chromium-review.googlesource.com/c/v8/v8/+/4789966
++    Reviewed-by: Jaroslav Sevcik <jarin@chromium.org>
++    Commit-Queue: Jaroslav Sevcik <jarin@chromium.org>
++    Auto-Submit: Andrey Kosyakov <caseq@chromium.org>
++    Cr-Commit-Position: refs/heads/main@{#89559}
++
++diff --git node/deps/v8/src/inspector/string-16.cc node/deps/v8/src/inspector/string-16.cc
++index a8b786a8166..6df9963e970 100644
++--- node/deps/v8/src/inspector/string-16.cc
+++++ node/deps/v8/src/inspector/string-16.cc
++@@ -27,7 +27,7 @@ bool isSpaceOrNewLine(UChar c) {
++   return isASCII(c) && c <= ' ' && (c == ' ' || (c <= 0xD && c >= 0x9));
++ }
++ 
++-int64_t charactersToInteger(const UChar* characters, size_t length,
+++int64_t charactersToInteger(const uint16_t* characters, size_t length,
++                             bool* ok = nullptr) {
++   std::vector<char> buffer;
++   buffer.reserve(length + 1);
++@@ -50,6 +50,8 @@ int64_t charactersToInteger(const UChar* characters, size_t length,
++ 
++ String16::String16(const UChar* characters, size_t size)
++     : m_impl(characters, size) {}
+++String16::String16(const uint16_t* characters, size_t size)
+++    : m_impl(reinterpret_cast<const UChar*>(characters), size) {}
++ 
++ String16::String16(const UChar* characters) : m_impl(characters) {}
++ 
++@@ -241,6 +243,10 @@ String16 String16::fromUTF16LE(const UChar* stringStart, size_t length) {
++ #endif  // V8_TARGET_BIG_ENDIAN
++ }
++ 
+++String16 String16::fromUTF16LE(const uint16_t* stringStart, size_t length) {
+++  return fromUTF16LE(reinterpret_cast<const UChar*>(stringStart), length);
+++}
+++
++ std::string String16::utf8() const {
++   return UTF16ToUTF8(m_impl.data(), m_impl.size());
++ }
++diff --git node/deps/v8/src/inspector/string-16.h node/deps/v8/src/inspector/string-16.h
++index 1678ffb2e1e..d9f6c466ab1 100644
++--- node/deps/v8/src/inspector/string-16.h
+++++ node/deps/v8/src/inspector/string-16.h
++@@ -6,6 +6,7 @@
++ #define V8_INSPECTOR_STRING_16_H_
++ 
++ #include <stdint.h>
+++#include <uchar.h>
++ 
++ #include <cctype>
++ #include <climits>
++@@ -18,7 +19,7 @@
++ 
++ namespace v8_inspector {
++ 
++-using UChar = uint16_t;
+++using UChar = char16_t;
++ 
++ class String16 {
++  public:
++@@ -28,6 +29,7 @@ class String16 {
++   String16(const String16&) V8_NOEXCEPT = default;
++   String16(String16&&) V8_NOEXCEPT = default;
++   String16(const UChar* characters, size_t size);
+++  String16(const uint16_t* characters, size_t size);
++   V8_EXPORT String16(const UChar* characters);
++   V8_EXPORT String16(const char* characters);
++   String16(const char* characters, size_t size);
++@@ -49,7 +51,9 @@ class String16 {
++   int toInteger(bool* ok = nullptr) const;
++   std::pair<size_t, size_t> getTrimmedOffsetAndLength() const;
++   String16 stripWhiteSpace() const;
++-  const UChar* characters16() const { return m_impl.c_str(); }
+++  const uint16_t* characters16() const {
+++    return reinterpret_cast<const uint16_t*>(m_impl.c_str());
+++  }
++   size_t length() const { return m_impl.length(); }
++   bool isEmpty() const { return !m_impl.length(); }
++   UChar operator[](size_t index) const { return m_impl[index]; }
++@@ -79,6 +83,8 @@ class String16 {
++   // On Big endian architectures, byte order needs to be flipped.
++   V8_EXPORT static String16 fromUTF16LE(const UChar* stringStart,
++                                         size_t length);
+++  V8_EXPORT static String16 fromUTF16LE(const uint16_t* stringStart,
+++                                        size_t length);
++ 
++   std::size_t hash() const {
++     if (!hash_code) {
++diff --git node/deps/v8/src/inspector/v8-string-conversions.cc node/deps/v8/src/inspector/v8-string-conversions.cc
++index 0c75e66b972..8cf19be816c 100644
++--- node/deps/v8/src/inspector/v8-string-conversions.cc
+++++ node/deps/v8/src/inspector/v8-string-conversions.cc
++@@ -12,7 +12,7 @@
++ 
++ namespace v8_inspector {
++ namespace {
++-using UChar = uint16_t;
+++using UChar = char16_t;
++ using UChar32 = uint32_t;
++ 
++ bool isASCII(UChar c) { return !(c & ~0x7F); }
++@@ -386,7 +386,7 @@ std::string UTF16ToUTF8(const UChar* stringStart, size_t length) {
++ 
++ std::basic_string<UChar> UTF8ToUTF16(const char* stringStart, size_t length) {
++   if (!stringStart || !length) return std::basic_string<UChar>();
++-  std::vector<uint16_t> buffer(length);
+++  std::vector<UChar> buffer(length);
++   UChar* bufferStart = buffer.data();
++ 
++   UChar* bufferCurrent = bufferStart;
++@@ -395,7 +395,7 @@ std::basic_string<UChar> UTF8ToUTF16(const char* stringStart, size_t length) {
++                          reinterpret_cast<const char*>(stringStart + length),
++                          &bufferCurrent, bufferCurrent + buffer.size(), nullptr,
++                          true) != conversionOK)
++-    return std::basic_string<uint16_t>();
+++    return std::basic_string<UChar>();
++   size_t utf16Length = bufferCurrent - bufferStart;
++   return std::basic_string<UChar>(bufferStart, bufferStart + utf16Length);
++ }
++diff --git node/deps/v8/src/inspector/v8-string-conversions.h node/deps/v8/src/inspector/v8-string-conversions.h
++index eb33c6816a5..1126255dac2 100644
++--- node/deps/v8/src/inspector/v8-string-conversions.h
+++++ node/deps/v8/src/inspector/v8-string-conversions.h
++@@ -5,14 +5,16 @@
++ #ifndef V8_INSPECTOR_V8_STRING_CONVERSIONS_H_
++ #define V8_INSPECTOR_V8_STRING_CONVERSIONS_H_
++ 
+++#include <uchar.h>
+++
++ #include <cstdint>
++ #include <string>
++ 
++ // Conversion routines between UT8 and UTF16, used by string-16.{h,cc}. You may
++ // want to use string-16.h directly rather than these.
++ namespace v8_inspector {
++-std::basic_string<uint16_t> UTF8ToUTF16(const char* stringStart, size_t length);
++-std::string UTF16ToUTF8(const uint16_t* stringStart, size_t length);
+++std::basic_string<char16_t> UTF8ToUTF16(const char* stringStart, size_t length);
+++std::string UTF16ToUTF8(const char16_t* stringStart, size_t length);
++ }  // namespace v8_inspector
++ 
++ #endif  // V8_INSPECTOR_V8_STRING_CONVERSIONS_H_
++diff --git node/deps/v8/third_party/inspector_protocol/crdtp/test_platform_v8.cc node/deps/v8/third_party/inspector_protocol/crdtp/test_platform_v8.cc
++index c9d89eaa42f..1a46d781b89 100644
++--- node/deps/v8/third_party/inspector_protocol/crdtp/test_platform_v8.cc
+++++ node/deps/v8/third_party/inspector_protocol/crdtp/test_platform_v8.cc
++@@ -11,13 +11,16 @@
++ namespace v8_crdtp {
++ 
++ std::string UTF16ToUTF8(span<uint16_t> in) {
++-  return v8_inspector::UTF16ToUTF8(in.data(), in.size());
+++  return v8_inspector::UTF16ToUTF8(reinterpret_cast<const char16_t*>(in.data()),
+++                                   in.size());
++ }
++ 
++ std::vector<uint16_t> UTF8ToUTF16(span<uint8_t> in) {
++-  std::basic_string<uint16_t> utf16 = v8_inspector::UTF8ToUTF16(
+++  std::basic_string<char16_t> utf16 = v8_inspector::UTF8ToUTF16(
++       reinterpret_cast<const char*>(in.data()), in.size());
++-  return std::vector<uint16_t>(utf16.begin(), utf16.end());
+++  return std::vector<uint16_t>(
+++      reinterpret_cast<const uint16_t*>(utf16.data()),
+++      reinterpret_cast<const uint16_t*>(utf16.data()) + utf16.size());
++ }
++ 
++ }  // namespace v8_crdtp
++--- node/node.gypi.orig	2023-05-16 06:58:21 UTC
+++++ node/node.gypi
++@@ -349,6 +349,9 @@
++     [ 'node_use_openssl=="true"', {
++       'defines': [ 'HAVE_OPENSSL=1' ],
++       'conditions': [
+++        ['openssl_no_asm==1', {
+++          'defines': [ 'OPENSSL_NO_ASM' ],
+++        }],
++         [ 'node_shared_openssl=="false"', {
++           'defines': [ 'OPENSSL_API_COMPAT=0x10100000L', ],
++           'dependencies': [
++--- node/src/crypto/crypto_util.cc.orig	2023-05-16 06:58:21 UTC
+++++ node/src/crypto/crypto_util.cc
++@@ -205,10 +205,12 @@ void InitCryptoOnce() {
++   // No-op with OPENSSL_NO_COMP builds of OpenSSL.
++   sk_SSL_COMP_zero(SSL_COMP_get_compression_methods());
++ 
+++#if OPENSSL_VERSION_MAJOR < 3
++ #ifndef OPENSSL_NO_ENGINE
++   ERR_load_ENGINE_strings();
++   ENGINE_load_builtin_engines();
++ #endif  // !OPENSSL_NO_ENGINE
+++#endif
++ }
++ 
++ void GetFipsCrypto(const FunctionCallbackInfo<Value>& args) {
++--- node/src/cares_wrap.h.orig	2023-05-16 06:58:21 UTC
+++++ node/src/cares_wrap.h
++@@ -23,7 +23,7 @@
++ # include <netdb.h>
++ #endif  // __POSIX__
++ 
++-# include <ares_nameser.h>
+++# include <arpa/nameser.h>
++ 
++ namespace node {
++ namespace cares_wrap {
++--- node/tools/v8_gypfiles/v8.gyp.orig	2023-05-16 06:58:22 UTC
+++++ node/tools/v8_gypfiles/v8.gyp
++@@ -1091,7 +1091,7 @@
++         }],
++         # Platforms that don't have Compare-And-Swap (CAS) support need to link atomic library
++         # to implement atomic memory access
++-        ['v8_current_cpu in ["mips64", "mips64el", "ppc", "arm", "riscv64", "loong64"]', {
+++        ['v8_current_cpu in ["mips64", "mips64el", "ppc", "riscv64", "loong64"]', {
++           'link_settings': {
++             'libraries': ['-latomic', ],
++           },
+diff --git a/node_modules/@yao-pkg/pkg-fetch/patches/node.v20.19.1.cpp.patch.orig b/node_modules/@yao-pkg/pkg-fetch/patches/node.v20.19.1.cpp.patch.orig
+new file mode 100644
+index 0000000..6b9de6d
+--- /dev/null
++++ b/node_modules/@yao-pkg/pkg-fetch/patches/node.v20.19.1.cpp.patch.orig
+@@ -0,0 +1,602 @@
++diff --git node/common.gypi node/common.gypi
++index d3c17d47bc..7970af6ea4 100644
++--- node/common.gypi
+++++ node/common.gypi
++@@ -184,7 +184,7 @@
++             ['clang==1', {
++               'lto': ' -flto ', # Clang
++             }, {
++-              'lto': ' -flto=4 -fuse-linker-plugin -ffat-lto-objects ', # GCC
+++              'lto': ' -flto=4 -ffat-lto-objects ', # GCC
++             }],
++           ],
++         },
++diff --git node/deps/ngtcp2/nghttp3/lib/nghttp3_ringbuf.c node/deps/ngtcp2/nghttp3/lib/nghttp3_ringbuf.c
++index 5e7775f1a5..eeebf67796 100644
++--- node/deps/ngtcp2/nghttp3/lib/nghttp3_ringbuf.c
+++++ node/deps/ngtcp2/nghttp3/lib/nghttp3_ringbuf.c
++@@ -33,16 +33,6 @@
++ 
++ #include "nghttp3_macro.h"
++ 
++-#if defined(_MSC_VER) && !defined(__clang__) && (defined(_M_ARM) || defined(_M_ARM64))
++-unsigned int __popcnt(unsigned int x) {
++-  unsigned int c = 0;
++-  for (; x; ++c) {
++-    x &= x - 1;
++-  }
++-  return c;
++-}
++-#endif
++-
++ int nghttp3_ringbuf_init(nghttp3_ringbuf *rb, size_t nmemb, size_t size,
++                          const nghttp3_mem *mem) {
++   if (nmemb) {
++diff --git node/deps/ngtcp2/ngtcp2/lib/ngtcp2_ringbuf.c node/deps/ngtcp2/ngtcp2/lib/ngtcp2_ringbuf.c
++index 74e488bce7..36ca05e80e 100644
++--- node/deps/ngtcp2/ngtcp2/lib/ngtcp2_ringbuf.c
+++++ node/deps/ngtcp2/ngtcp2/lib/ngtcp2_ringbuf.c
++@@ -31,16 +31,6 @@
++ 
++ #include "ngtcp2_macro.h"
++ 
++-#if defined(_MSC_VER) && !defined(__clang__) && (defined(_M_ARM) || defined(_M_ARM64))
++-unsigned int __popcnt(unsigned int x) {
++-  unsigned int c = 0;
++-  for (; x; ++c) {
++-    x &= x - 1;
++-  }
++-  return c;
++-}
++-#endif
++-
++ int ngtcp2_ringbuf_init(ngtcp2_ringbuf *rb, size_t nmemb, size_t size,
++                         const ngtcp2_mem *mem) {
++   uint8_t *buf = ngtcp2_mem_malloc(mem, nmemb * size);
++diff --git node/deps/v8/include/v8-initialization.h node/deps/v8/include/v8-initialization.h
++index d3e35d6ec5..6e9bbe3849 100644
++--- node/deps/v8/include/v8-initialization.h
+++++ node/deps/v8/include/v8-initialization.h
++@@ -89,6 +89,10 @@ class V8_EXPORT V8 {
++   static void SetFlagsFromCommandLine(int* argc, char** argv,
++                                       bool remove_flags);
++ 
+++  static void EnableCompilationForSourcelessUse();
+++  static void DisableCompilationForSourcelessUse();
+++  static void FixSourcelessScript(Isolate* v8_isolate, Local<UnboundScript> script);
+++
++   /** Get the version string. */
++   static const char* GetVersion();
++ 
++diff --git node/deps/v8/src/api/api.cc node/deps/v8/src/api/api.cc
++index a06394e6c1..154b7a82a8 100644
++--- node/deps/v8/src/api/api.cc
+++++ node/deps/v8/src/api/api.cc
++@@ -806,6 +806,28 @@ void V8::SetFlagsFromCommandLine(int* argc, char** argv, bool remove_flags) {
++                                        HelpOptions(HelpOptions::kDontExit));
++ }
++ 
+++bool save_lazy;
+++bool save_predictable;
+++
+++void V8::EnableCompilationForSourcelessUse() {
+++  save_lazy = i::v8_flags.lazy;
+++  i::v8_flags.lazy = false;
+++  save_predictable = i::v8_flags.predictable;
+++  i::v8_flags.predictable = true;
+++}
+++
+++void V8::DisableCompilationForSourcelessUse() {
+++  i::v8_flags.lazy = save_lazy;
+++  i::v8_flags.predictable = save_predictable;
+++}
+++
+++void V8::FixSourcelessScript(Isolate* v8_isolate, Local<UnboundScript> unbound_script) {
+++  auto isolate = reinterpret_cast<i::Isolate*>(v8_isolate);
+++  auto function_info = i::Handle<i::SharedFunctionInfo>::cast(Utils::OpenHandle(*unbound_script));
+++  i::Handle<i::Script> script(i::Script::cast(function_info->script()), isolate);
+++  script->set_source(i::ReadOnlyRoots(isolate).undefined_value());
+++}
+++
++ RegisteredExtension* RegisteredExtension::first_extension_ = nullptr;
++ 
++ RegisteredExtension::RegisteredExtension(std::unique_ptr<Extension> extension)
++diff --git node/deps/v8/src/codegen/compiler.cc node/deps/v8/src/codegen/compiler.cc
++index 31c5acceeb..56cad8671f 100644
++--- node/deps/v8/src/codegen/compiler.cc
+++++ node/deps/v8/src/codegen/compiler.cc
++@@ -3475,7 +3475,7 @@ MaybeHandle<SharedFunctionInfo> GetSharedFunctionInfoForScriptImpl(
++     maybe_script = lookup_result.script();
++     maybe_result = lookup_result.toplevel_sfi();
++     is_compiled_scope = lookup_result.is_compiled_scope();
++-    if (!maybe_result.is_null()) {
+++    if (!maybe_result.is_null() && source->length()) {
++       compile_timer.set_hit_isolate_cache();
++     } else if (can_consume_code_cache) {
++       compile_timer.set_consuming_code_cache();
++diff --git node/deps/v8/src/objects/js-function.cc node/deps/v8/src/objects/js-function.cc
++index 94f7a672a7..57bb3fc7f1 100644
++--- node/deps/v8/src/objects/js-function.cc
+++++ node/deps/v8/src/objects/js-function.cc
++@@ -1280,6 +1280,9 @@ Handle<String> JSFunction::ToString(Handle<JSFunction> function) {
++     Handle<Object> maybe_class_positions = JSReceiver::GetDataProperty(
++         isolate, function, isolate->factory()->class_positions_symbol());
++     if (maybe_class_positions->IsClassPositions()) {
+++      if (String::cast(Script::cast(shared_info->script()).source()).IsUndefined(isolate)) {
+++        return isolate->factory()->NewStringFromAsciiChecked("class {}");
+++      }
++       ClassPositions class_positions =
++           ClassPositions::cast(*maybe_class_positions);
++       int start_position = class_positions.start();
++diff --git node/deps/v8/src/objects/shared-function-info-inl.h node/deps/v8/src/objects/shared-function-info-inl.h
++index 5621b15d98..722e1d18cb 100644
++--- node/deps/v8/src/objects/shared-function-info-inl.h
+++++ node/deps/v8/src/objects/shared-function-info-inl.h
++@@ -635,6 +635,14 @@ bool SharedFunctionInfo::ShouldFlushCode(
++   }
++   if (!data.IsBytecodeArray()) return false;
++ 
+++  Object script_obj = script();
+++  if (!script_obj.IsUndefined()) {
+++    Script script = Script::cast(script_obj);
+++    if (script.source().IsUndefined()) {
+++      return false;
+++    }
+++  }
+++
++   if (IsStressFlushingEnabled(code_flush_mode)) return true;
++ 
++   BytecodeArray bytecode = BytecodeArray::cast(data);
++diff --git node/deps/v8/src/parsing/parsing.cc node/deps/v8/src/parsing/parsing.cc
++index 8c55a6fb6e..70bf82a57d 100644
++--- node/deps/v8/src/parsing/parsing.cc
+++++ node/deps/v8/src/parsing/parsing.cc
++@@ -42,6 +42,7 @@ bool ParseProgram(ParseInfo* info, Handle<Script> script,
++                   Isolate* isolate, ReportStatisticsMode mode) {
++   DCHECK(info->flags().is_toplevel());
++   DCHECK_NULL(info->literal());
+++  if (String::cast(script->source()).IsUndefined(isolate)) return false;
++ 
++   VMState<PARSER> state(isolate);
++ 
++@@ -75,6 +76,7 @@ bool ParseFunction(ParseInfo* info, Handle<SharedFunctionInfo> shared_info,
++ 
++   // Create a character stream for the parser.
++   Handle<Script> script(Script::cast(shared_info->script()), isolate);
+++  if (String::cast(script->source()).IsUndefined(isolate)) return false;
++   Handle<String> source(String::cast(script->source()), isolate);
++   std::unique_ptr<Utf16CharacterStream> stream(
++       ScannerStream::For(isolate, source, shared_info->StartPosition(),
++diff --git node/deps/v8/src/snapshot/code-serializer.cc node/deps/v8/src/snapshot/code-serializer.cc
++index c83e8e4581..8cb451e147 100644
++--- node/deps/v8/src/snapshot/code-serializer.cc
+++++ node/deps/v8/src/snapshot/code-serializer.cc
++@@ -659,10 +659,6 @@ SerializedCodeSanityCheckResult SerializedCodeData::SanityCheck(
++ 
++ SerializedCodeSanityCheckResult SerializedCodeData::SanityCheckJustSource(
++     uint32_t expected_source_hash) const {
++-  uint32_t source_hash = GetHeaderValue(kSourceHashOffset);
++-  if (source_hash != expected_source_hash) {
++-    return SerializedCodeSanityCheckResult::kSourceMismatch;
++-  }
++   return SerializedCodeSanityCheckResult::kSuccess;
++ }
++ 
++@@ -679,10 +675,6 @@ SerializedCodeSanityCheckResult SerializedCodeData::SanityCheckWithoutSource()
++   if (version_hash != Version::Hash()) {
++     return SerializedCodeSanityCheckResult::kVersionMismatch;
++   }
++-  uint32_t flags_hash = GetHeaderValue(kFlagHashOffset);
++-  if (flags_hash != FlagList::Hash()) {
++-    return SerializedCodeSanityCheckResult::kFlagsMismatch;
++-  }
++   uint32_t payload_length = GetHeaderValue(kPayloadLengthOffset);
++   uint32_t max_payload_length = this->size_ - kHeaderSize;
++   if (payload_length > max_payload_length) {
++diff --git node/lib/child_process.js node/lib/child_process.js
++index cc81cb373d..e06da1048a 100644
++--- node/lib/child_process.js
+++++ node/lib/child_process.js
++@@ -169,7 +169,7 @@ function fork(modulePath, args = [], options) {
++     throw new ERR_CHILD_PROCESS_IPC_REQUIRED('options.stdio');
++   }
++ 
++-  return spawn(options.execPath, args, options);
+++  return module.exports.spawn(options.execPath, args, options);
++ }
++ 
++ function _forkChild(fd, serializationMode) {
++diff --git node/lib/internal/bootstrap/pkg.js node/lib/internal/bootstrap/pkg.js
++new file mode 100644
++index 0000000000..a697294fdf
++--- /dev/null
+++++ node/lib/internal/bootstrap/pkg.js
++@@ -0,0 +1,49 @@
+++'use strict';
+++
+++const {
+++  prepareWorkerThreadExecution,
+++  prepareMainThreadExecution
+++} = require('internal/process/pre_execution');
+++
+++if (internalBinding('worker').isMainThread) {
+++  prepareMainThreadExecution(true);
+++} else {
+++  prepareWorkerThreadExecution();
+++}
+++
+++(function () {
+++  var __require__ = require;
+++  var fs = __require__('fs');
+++  var vm = __require__('vm');
+++  function readPrelude (fd) {
+++    var PAYLOAD_POSITION = '// PAYLOAD_POSITION //' | 0;
+++    var PAYLOAD_SIZE = '// PAYLOAD_SIZE //' | 0;
+++    var PRELUDE_POSITION = '// PRELUDE_POSITION //' | 0;
+++    var PRELUDE_SIZE = '// PRELUDE_SIZE //' | 0;
+++    if (!PRELUDE_POSITION) {
+++      // no prelude - remove entrypoint from argv[1]
+++      process.argv.splice(1, 1);
+++      return { undoPatch: true };
+++    }
+++    var prelude = Buffer.alloc(PRELUDE_SIZE);
+++    var read = fs.readSync(fd, prelude, 0, PRELUDE_SIZE, PRELUDE_POSITION);
+++    if (read !== PRELUDE_SIZE) {
+++      console.error('Pkg: Error reading from file.');
+++      process.exit(1);
+++    }
+++    var s = new vm.Script(prelude, { filename: 'pkg/prelude/bootstrap.js' });
+++    var fn = s.runInThisContext();
+++    return fn(process, __require__,
+++      console, fd, PAYLOAD_POSITION, PAYLOAD_SIZE);
+++  }
+++  (function () {
+++    var fd = fs.openSync(process.execPath, 'r');
+++    var result = readPrelude(fd);
+++    if (result && result.undoPatch) {
+++      var bindingFs = process.binding('fs');
+++      fs.internalModuleStat = bindingFs.internalModuleStat;
+++      fs.internalModuleReadJSON = bindingFs.internalModuleReadJSON;
+++      fs.closeSync(fd);
+++    }
+++  }());
+++}());
++diff --git node/lib/internal/modules/cjs/loader.js node/lib/internal/modules/cjs/loader.js
++index ebccdb2825..178299c752 100644
++--- node/lib/internal/modules/cjs/loader.js
+++++ node/lib/internal/modules/cjs/loader.js
++@@ -141,7 +141,7 @@ const {
++ const assert = require('internal/assert');
++ const fs = require('fs');
++ const path = require('path');
++-const { internalModuleStat } = internalBinding('fs');
+++const internalModuleStat = function (f) { return require('fs').internalModuleStat(f); }
++ const { safeGetenv } = internalBinding('credentials');
++ const {
++   privateSymbols: {
++diff --git node/lib/internal/modules/package_json_reader.js node/lib/internal/modules/package_json_reader.js
++index 88c079d10d..a7eaca0574 100644
++--- node/lib/internal/modules/package_json_reader.js
+++++ node/lib/internal/modules/package_json_reader.js
++@@ -12,7 +12,7 @@ const {
++ const {
++   ERR_INVALID_PACKAGE_CONFIG,
++ } = require('internal/errors').codes;
++-const { internalModuleReadJSON } = internalBinding('fs');
+++const internalModuleReadJSON = function (f) { return require('fs').internalModuleReadJSON(f); }
++ const { resolve, sep, toNamespacedPath } = require('path');
++ const permission = require('internal/process/permission');
++ const { kEmptyObject } = require('internal/util');
++diff --git node/lib/internal/process/pre_execution.js node/lib/internal/process/pre_execution.js
++index 0bbabb80c2..5dd097b69e 100644
++--- node/lib/internal/process/pre_execution.js
+++++ node/lib/internal/process/pre_execution.js
++@@ -50,7 +50,11 @@ const {
++   },
++ } = require('internal/v8/startup_snapshot');
++ 
+++let _alreadyPrepared = false;
+++
++ function prepareMainThreadExecution(expandArgv1 = false, initializeModules = true) {
+++  if (_alreadyPrepared === true) return;
+++  _alreadyPrepared = true;
++   return prepareExecution({
++     expandArgv1,
++     initializeModules,
++@@ -243,7 +247,12 @@ function patchProcessObject(expandArgv1) {
++   let mainEntry;
++   // If requested, update process.argv[1] to replace whatever the user provided with the resolved absolute file path of
++   // the entry point.
++-  if (expandArgv1 && process.argv[1] && process.argv[1][0] !== '-') {
+++  if (
+++    expandArgv1 &&
+++    process.argv[1] &&
+++    process.argv[1][0] !== '-' &&
+++    process.argv[1] !== 'PKG_DUMMY_ENTRYPOINT'
+++  ) {
++     // Expand process.argv[1] into a full path.
++     const path = require('path');
++     try {
++@@ -739,6 +748,7 @@ function loadPreloadModules() {
++   // For user code, we preload modules if `-r` is passed
++   const preloadModules = getOptionValue('--require');
++   if (preloadModules && preloadModules.length > 0) {
+++    assert(false, '--require is not supported');
++     const {
++       Module: {
++         _preloadModules,
++diff --git node/lib/vm.js node/lib/vm.js
++index a12e932d8d..931a996330 100644
++--- node/lib/vm.js
+++++ node/lib/vm.js
++@@ -98,6 +98,7 @@ class Script extends ContextifyScript {
++       produceCachedData = false,
++       importModuleDynamically,
++       [kParsingContext]: parsingContext,
+++      sourceless = false,
++     } = options;
++ 
++     validateString(filename, 'options.filename');
++@@ -121,7 +122,8 @@ class Script extends ContextifyScript {
++             cachedData,
++             produceCachedData,
++             parsingContext,
++-            hostDefinedOptionId);
+++            hostDefinedOptionId,
+++            sourceless);
++     } catch (e) {
++       throw e; /* node-do-not-add-exception-line */
++     }
++diff --git node/src/inspector_agent.cc node/src/inspector_agent.cc
++index bb39a0cb42..5fa6cb65cc 100644
++--- node/src/inspector_agent.cc
+++++ node/src/inspector_agent.cc
++@@ -766,11 +766,6 @@ bool Agent::Start(const std::string& path,
++                               StartIoThreadAsyncCallback));
++     uv_unref(reinterpret_cast<uv_handle_t*>(&start_io_thread_async));
++     start_io_thread_async.data = this;
++-    if (parent_env_->should_start_debug_signal_handler()) {
++-      // Ignore failure, SIGUSR1 won't work, but that should not block node
++-      // start.
++-      StartDebugSignalHandler();
++-    }
++ 
++     parent_env_->AddCleanupHook([](void* data) {
++       Environment* env = static_cast<Environment*>(data);
++diff --git node/src/node.cc node/src/node.cc
++index 4ad2c8b804..ab6174fab6 100644
++--- node/src/node.cc
+++++ node/src/node.cc
++@@ -389,6 +389,8 @@ MaybeLocal<Value> StartExecution(Environment* env, StartExecutionCallback cb) {
++     return env->RunSnapshotDeserializeMain();
++   }
++ 
+++  StartExecution(env, "internal/bootstrap/pkg");
+++
++   if (env->worker_context() != nullptr) {
++     return StartExecution(env, "internal/main/worker_thread");
++   }
++@@ -613,14 +615,6 @@ static void PlatformInit(ProcessInitializationFlags::Flags flags) {
++   }
++ 
++   if (!(flags & ProcessInitializationFlags::kNoDefaultSignalHandling)) {
++-#if HAVE_INSPECTOR
++-    sigset_t sigmask;
++-    sigemptyset(&sigmask);
++-    sigaddset(&sigmask, SIGUSR1);
++-    const int err = pthread_sigmask(SIG_SETMASK, &sigmask, nullptr);
++-    CHECK_EQ(err, 0);
++-#endif  // HAVE_INSPECTOR
++-
++     ResetSignalHandlers();
++   }
++ 
++diff --git node/src/node_contextify.cc node/src/node_contextify.cc
++index 7f82bca746..62705f04c5 100644
++--- node/src/node_contextify.cc
+++++ node/src/node_contextify.cc
++@@ -79,6 +79,7 @@ using v8::String;
++ using v8::Symbol;
++ using v8::Uint32;
++ using v8::UnboundScript;
+++using v8::V8;
++ using v8::Value;
++ using v8::WeakCallbackInfo;
++ 
++@@ -817,13 +818,14 @@ void ContextifyScript::New(const FunctionCallbackInfo<Value>& args) {
++   Local<ArrayBufferView> cached_data_buf;
++   bool produce_cached_data = false;
++   Local<Context> parsing_context = context;
+++  bool sourceless = false;
++ 
++   Local<Symbol> id_symbol;
++   if (argc > 2) {
++     // new ContextifyScript(code, filename, lineOffset, columnOffset,
++     //                      cachedData, produceCachedData, parsingContext,
++-    //                      hostDefinedOptionId)
++-    CHECK_EQ(argc, 8);
+++    //                      hostDefinedOptionId, sourceless)
+++    CHECK_GE(argc, 8);
++     CHECK(args[2]->IsNumber());
++     line_offset = args[2].As<Int32>()->Value();
++     CHECK(args[3]->IsNumber());
++@@ -844,6 +846,10 @@ void ContextifyScript::New(const FunctionCallbackInfo<Value>& args) {
++     }
++     CHECK(args[7]->IsSymbol());
++     id_symbol = args[7].As<Symbol>();
+++    if (argc > 8) {
+++      CHECK(args[8]->IsBoolean());
+++      sourceless = args[8]->IsTrue();
+++    }
++   }
++ 
++   ContextifyScript* contextify_script =
++@@ -892,6 +898,10 @@ void ContextifyScript::New(const FunctionCallbackInfo<Value>& args) {
++   ShouldNotAbortOnUncaughtScope no_abort_scope(env);
++   Context::Scope scope(parsing_context);
++ 
+++  if (sourceless && produce_cached_data) {
+++    V8::EnableCompilationForSourcelessUse();
+++  }
+++
++   MaybeLocal<UnboundScript> maybe_v8_script =
++       ScriptCompiler::CompileUnboundScript(isolate, &source, compile_options);
++ 
++@@ -906,6 +916,11 @@ void ContextifyScript::New(const FunctionCallbackInfo<Value>& args) {
++     return;
++   }
++ 
+++  if (sourceless && compile_options == ScriptCompiler::kConsumeCodeCache) {
+++    if (!source.GetCachedData()->rejected) {
+++      V8::FixSourcelessScript(env->isolate(), v8_script);
+++    }
+++  }
++   contextify_script->script_.Reset(isolate, v8_script);
++   contextify_script->script_.SetWeak();
++   contextify_script->object()->SetInternalFieldForNodeCore(kUnboundScriptSlot,
++@@ -939,6 +954,10 @@ void ContextifyScript::New(const FunctionCallbackInfo<Value>& args) {
++           .IsNothing())
++     return;
++ 
+++  if (sourceless && produce_cached_data) {
+++    V8::DisableCompilationForSourcelessUse();
+++  }
+++
++   TRACE_EVENT_END0(TRACING_CATEGORY_NODE2(vm, script), "ContextifyScript::New");
++ }
++ 
++diff --git node/src/node_main.cc node/src/node_main.cc
++index f66099a557..4048f6bd93 100644
++--- node/src/node_main.cc
+++++ node/src/node_main.cc
++@@ -22,6 +22,8 @@
++ #include "node.h"
++ #include <cstdio>
++ 
+++int reorder(int argc, char** argv);
+++
++ #ifdef _WIN32
++ #include <windows.h>
++ #include <VersionHelpers.h>
++@@ -88,12 +90,95 @@ int wmain(int argc, wchar_t* wargv[]) {
++   }
++   argv[argc] = nullptr;
++   // Now that conversion is done, we can finally start.
++-  return node::Start(argc, argv);
+++  return reorder(argc, argv);
++ }
++ #else
++ // UNIX
++ 
++ int main(int argc, char* argv[]) {
+++  return reorder(argc, argv);
+++}
+++#endif
+++
+++#include <string.h>
+++
+++int strlen2 (char* s) {
+++  int len = 0;
+++  while (*s) {
+++    len += 1;
+++    s += 1;
+++  }
+++  return len;
+++}
+++
+++bool should_set_dummy() {
+++#ifdef _WIN32
+++  #define MAX_ENV_LENGTH 32767
+++  wchar_t execpath_env[MAX_ENV_LENGTH];
+++  DWORD result = GetEnvironmentVariableW(L"PKG_EXECPATH", execpath_env, MAX_ENV_LENGTH);
+++  if (result == 0 && GetLastError() != ERROR_SUCCESS) return true;
+++  return wcscmp(execpath_env, L"PKG_INVOKE_NODEJS") != 0;
+++#else
+++  const char* execpath_env = getenv("PKG_EXECPATH");
+++  if (!execpath_env) return true;
+++  return strcmp(execpath_env, "PKG_INVOKE_NODEJS") != 0;
+++#endif
+++}
+++
+++// for uv_setup_args
+++int adjacent(int argc, char** argv) {
+++  size_t size = 0;
+++  for (int i = 0; i < argc; i++) {
+++    size += strlen(argv[i]) + 1;
+++  }
+++  char* args = new char[size];
+++  size_t pos = 0;
+++  for (int i = 0; i < argc; i++) {
+++    memcpy(&args[pos], argv[i], strlen(argv[i]) + 1);
+++    argv[i] = &args[pos];
+++    pos += strlen(argv[i]) + 1;
+++  }
++   return node::Start(argc, argv);
++ }
+++
+++volatile char* BAKERY = (volatile char*) "\0// BAKERY // BAKERY " \
+++  "// BAKERY // BAKERY // BAKERY // BAKERY // BAKERY // BAKERY " \
+++  "// BAKERY // BAKERY // BAKERY // BAKERY // BAKERY // BAKERY " \
+++  "// BAKERY // BAKERY // BAKERY // BAKERY // BAKERY // BAKERY ";
+++
+++#ifdef __clang__
+++__attribute__((optnone))
+++#elif defined(__GNUC__)
+++__attribute__((optimize(0)))
++ #endif
+++
+++int load_baked(char** nargv) {
+++  int c = 1;
+++
+++  char* bakery = (char*) BAKERY;
+++  while (true) {
+++    size_t width = strlen2(bakery);
+++    if (width == 0) break;
+++    nargv[c++] = bakery;
+++    bakery += width + 1;
+++  }
+++
+++  return c;
+++}
+++
+++int reorder(int argc, char** argv) {
+++  char** nargv = new char*[argc + 64];
+++
+++  nargv[0] = argv[0];
+++  int c = load_baked(nargv);
+++
+++  if (should_set_dummy()) {
+++    nargv[c++] = (char*) "PKG_DUMMY_ENTRYPOINT";
+++  }
+++
+++  for (int i = 1; i < argc; i++) {
+++    nargv[c++] = argv[i];
+++  }
+++
+++  return adjacent(c, nargv);
+++}
++diff --git node/src/node_options.cc node/src/node_options.cc
++index 9d5accc3eb..8e3c304a13 100644
++--- node/src/node_options.cc
+++++ node/src/node_options.cc
++@@ -316,6 +316,7 @@ void Parse(
++ // TODO(addaleax): Make that unnecessary.
++ 
++ DebugOptionsParser::DebugOptionsParser() {
+++  return;
++ #ifndef DISABLE_SINGLE_EXECUTABLE_APPLICATION
++   if (sea::IsSingleExecutable()) return;
++ #endif
++diff --git node/tools/icu/icu-generic.gyp node/tools/icu/icu-generic.gyp
++index 2655b9e694..1d951571c7 100644
++--- node/tools/icu/icu-generic.gyp
+++++ node/tools/icu/icu-generic.gyp
++@@ -52,7 +52,7 @@
++         'conditions': [
++           [ 'os_posix == 1 and OS != "mac" and OS != "ios"', {
++             'cflags': [ '-Wno-deprecated-declarations', '-Wno-strict-aliasing' ],
++-            'cflags_cc': [ '-frtti' ],
+++            'cflags_cc': [ '-frtti', '-fno-lto' ],
++             'cflags_cc!': [ '-fno-rtti' ],
++           }],
++           [ 'OS == "mac" or OS == "ios"', {
