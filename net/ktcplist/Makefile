@@ -1,5 +1,6 @@
 PORTNAME=	ktcplist
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	net sysutils
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -12,8 +13,12 @@ USES=		cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kostikbel
-GH_TAGNAME=	dd671deafd14cb6b9319b4bedb5837915d140088
+GH_TAGNAME=	18077c4df543d23ced0c08a6a8329e43c184ac75
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/man/man1/ktcplist.1.gz
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/ktcplist.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>
