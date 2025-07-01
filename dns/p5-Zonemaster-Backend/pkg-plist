@@ -48,9 +48,6 @@ etc/rc.d/zm_testagent
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/patch/patch_postgresql_db_zonemaster_backend_ver_8.0.0.pl
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/patch/patch_sqlite_db_zonemaster_backend_ver_8.0.0.pl
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/tmpfiles.conf
-%%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/travis_mysql_backend_config.ini
-%%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/travis_postgresql_backend_config.ini
-%%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/travis_sqlite_backend_config.ini
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/zm-rpcapi.lsb
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/zm-rpcapi.service
 %%SITE_PERL%%/auto/share/dist/Zonemaster-Backend/zm-testagent.lsb
