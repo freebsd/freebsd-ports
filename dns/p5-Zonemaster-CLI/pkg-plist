@@ -1,5 +1,6 @@
 bin/zonemaster-cli
 %%SITE_PERL%%/Zonemaster/CLI.pm
+%%SITE_PERL%%/Zonemaster/CLI/TestCaseSet.pm
 %%SITE_PERL%%/auto/share/dist/Zonemaster-CLI/GNUmakefile
 %%SITE_PERL%%/auto/share/dist/Zonemaster-CLI/locale/da/LC_MESSAGES/Zonemaster-CLI.mo
 %%SITE_PERL%%/auto/share/dist/Zonemaster-CLI/locale/es/LC_MESSAGES/Zonemaster-CLI.mo
@@ -10,3 +11,4 @@ bin/zonemaster-cli
 %%SITE_PERL%%/auto/share/dist/Zonemaster-CLI/locale/sv/LC_MESSAGES/Zonemaster-CLI.mo
 %%PERL5_MAN1%%/zonemaster-cli.1.gz
 %%PERL5_MAN3%%/Zonemaster::CLI.3.gz
+%%PERL5_MAN3%%/Zonemaster::CLI::TestCaseSet.3.gz
