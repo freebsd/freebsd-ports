@@ -1,7 +1,6 @@
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v
-DISTVERSION=		6.4.27
-PORTREVISION=		1
+DISTVERSION=		6.4.37
 CATEGORIES=		audio science
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE=	GPLv3+
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libharfbuzz.so:print/harfbuzz
 # These are recommended but I can't tell the difference
-RUN_DEPENDS=	CharisSIL>=0:x11-fonts/charis \
+RUN_DEPENDS=	Charis>=0:x11-fonts/charis \
 		DoulosSIL>=0:x11-fonts/doulos
 
 USES=		compiler:c++17-lang gnome iconv pkgconfig xorg
