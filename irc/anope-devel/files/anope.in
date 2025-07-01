@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: anope
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable anope:
+# anope_enable=YES
+#
+
+. /etc/rc.subr
+
+name=anope
+rcvar=anope_enable
+
+load_rc_config $name
+
+: ${anope_enable:=NO}
+: ${anope_user:=nobody}
+
+command=%%PREFIX%%/anope/bin/anope
+pidfile=%%PREFIX%%/anope/data/anope.pid
+extra_commands=reload
+
+run_rc_command "$1"
+
