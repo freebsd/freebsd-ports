@@ -1,38 +1,18 @@
---- server/package.json.orig	2024-01-30 12:30:03.000000000 +0100
-+++ server/package.json	2024-03-01 10:57:21.937036000 +0100
-@@ -9,7 +9,7 @@
-         "expand": true,
-         "src": [
-           "./**/sources/*.js",
--          "./Common/package.json",
-+          "./Common/*.json",
-           "./DocService/package.json",
-           "./DocService/public/healthcheck.docx",
-           "./FileConverter/package.json",
-@@ -34,6 +34,7 @@
-     "mkdir": {
-       "server": {
-         "options": {
-+          "mode": "0755",
-           "create": [
-             "./build/server"
-           ]
-@@ -54,9 +55,10 @@
-     "./build/server/Metrics"
-   ],
+--- server/package.json.orig	2025-06-16 18:22:18 UTC
++++ server/package.json
+@@ -4,6 +4,8 @@
+   "homepage": "https://www.onlyoffice.com",
+   "private": true,
    "dependencies": {
--    "grunt": "1.5.3",
 +    "grunt": "^1.6.1",
-     "grunt-banner": "0.6.0",
-     "grunt-check-dependencies": "1.0.0",
 +    "grunt-cli": "^1.5.0",
-     "grunt-contrib-clean": "2.0.0",
-     "grunt-contrib-copy": "1.0.0",
-     "grunt-mkdir": "1.1.0",
-@@ -78,10 +80,10 @@
-     "integration tests with server instance": "cd ./DocService && jest integration/withServerInstance --inject-globals=false --config=../tests/jest.config.js",
+     "license-downloader": "1.0.8",
+     "license-report": "6.5.0",
+     "npm-run-all": "4.1.5"
+@@ -25,10 +25,10 @@
      "integration database tests": "cd ./DocService && jest integration/databaseTests --inject-globals=false --config=../tests/jest.config.js",
      "tests": "cd ./DocService && jest --inject-globals=false --config=../tests/jest.config.js",
+     "tests:dev": "cd ./DocService && jest --inject-globals=false --config=../tests/jest.config.js --watch",
 -    "install:Common": "npm ci --prefix ./Common",
 -    "install:DocService": "npm ci --prefix ./DocService",
 -    "install:FileConverter": "npm ci --prefix ./FileConverter",

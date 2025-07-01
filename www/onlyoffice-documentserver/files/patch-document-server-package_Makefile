@@ -26,7 +26,7 @@
 +                DS_FILES := /var/db/$(DS_PREFIX)
 +                DS_EXAMLE := %%LOCALBASE%%/www/$(DS_PREFIX)-example
 +                DEV_NULL := /dev/null
-+                PKG_TARGET := node22
++                PKG_TARGET := node20
 +        endif
  	ifeq ($(UNAME_S),Linux)
  		PLATFORM := linux

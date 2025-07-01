@@ -1,6 +1,6 @@
---- build_tools/scripts/core_common/make_common.py.orig	2021-11-16 07:07:24 UTC
+--- build_tools/scripts/core_common/make_common.py.orig	2025-06-11 12:56:35 UTC
 +++ build_tools/scripts/core_common/make_common.py
-@@ -8,20 +8,20 @@ import glob
+@@ -8,21 +8,21 @@ import config
  import base
  import glob
  
@@ -17,6 +17,7 @@
  import v8
  import html2
  import iwork
+ import md
 -import hunspell
 +#import hunspell
  import glew
@@ -28,7 +29,7 @@
  import libvlc
  
  def check_android_ndk_macos_arm(dir):
-@@ -37,18 +37,18 @@ def make():
+@@ -38,19 +38,19 @@ def make():
        if base.is_dir(toolchain):
          check_android_ndk_macos_arm(toolchain + "/prebuilt")
  
@@ -43,6 +44,7 @@
    v8.make()
    html2.make()
    iwork.make(False)
+   md.make()
 -  hunspell.make(False)
 -  harfbuzz.make()
 +#  hunspell.make(False)
