@@ -32,7 +32,7 @@ lib/girepository-1.0/Vte-%%VERSION%%.typelib
 %%GTK4%%lib/libvte-%%VERSION%%-gtk4.so.0
 lib/libvte-%%VERSION%%.so
 lib/libvte-%%VERSION%%.so.0
-lib/libvte-%%VERSION%%.so.0.8000.2
+lib/libvte-%%VERSION%%.so.0.8000.3
 %%GTK4%%libdata/pkgconfig/vte-%%VERSION%%-gtk4.pc
 libdata/pkgconfig/vte-%%VERSION%%.pc
 libexec/vte-urlencode-cwd
@@ -132,6 +132,7 @@ share/locale/th/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/tr/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/ug/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/vte-%%VERSION%%.mo
+share/locale/uz/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/uz@cyrillic/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/vte-%%VERSION%%.mo
 share/locale/wa/LC_MESSAGES/vte-%%VERSION%%.mo
