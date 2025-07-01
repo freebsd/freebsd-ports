@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2022-11-14 15:03:45 UTC
++++ CMakeLists.txt
+@@ -13,8 +13,8 @@ include(GNUInstallDirs)
+ 
+ include(GNUInstallDirs)
+ 
+-find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
+-find_package(Qt${QT_VERSION_MAJOR} 5.6.0 COMPONENTS Core REQUIRED)
++find_package(QT NAMES Qt6 COMPONENTS Core REQUIRED)
++find_package(Qt${QT_VERSION_MAJOR} 6.0 COMPONENTS Core REQUIRED)
+ 
+ option(BUILD_SHARED_LIBS "Build in shared lib mode" ON)
+ option( BUILD_TEMPLATES "Build the Cutelee template library" TRUE )
