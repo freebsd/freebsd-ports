@@ -504,6 +504,7 @@ include/wine/windows/dyngraph.idl
 include/wine/windows/endpointvolume.h
 include/wine/windows/endpointvolume.idl
 include/wine/windows/errhandlingapi.h
+include/wine/windows/errlup.idl
 include/wine/windows/errorrep.h
 include/wine/windows/errors.h
 include/wine/windows/errrec.idl
@@ -1129,6 +1130,8 @@ include/wine/windows/windows.data.json.h
 include/wine/windows/windows.data.json.idl
 include/wine/windows/windows.data.xml.dom.h
 include/wine/windows/windows.data.xml.dom.idl
+include/wine/windows/windows.devices.bluetooth.genericattributeprofile.h
+include/wine/windows/windows.devices.bluetooth.genericattributeprofile.idl
 include/wine/windows/windows.devices.bluetooth.h
 include/wine/windows/windows.devices.bluetooth.idl
 include/wine/windows/windows.devices.bluetooth.rfcomm.h
