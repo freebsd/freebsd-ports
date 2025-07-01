@@ -50,7 +50,7 @@ cc_toolchain(
 )
 cc_toolchain_config(
     name = "local_freebsd",
-    cpu = "k8",
+    cpu = "freebsd",
 )
 
 toolchain(

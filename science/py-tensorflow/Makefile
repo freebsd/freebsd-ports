@@ -1,11 +1,13 @@
 PORTNAME=	tensorflow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.1
-PORTREVISION=	21
+DISTVERSION=	2.13.1
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	ba7501696cc.patch:-p1 667cf3ed2d7.patch:-p1
 
 MAINTAINER=	amzo1337@gmail.com
 COMMENT=	Computation using data flow graphs for scalable machine learning
@@ -14,61 +16,56 @@ WWW=		https://www.tensorflow.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=	variable has incomplete type 'StateSaver'
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}grpcio-tools>=1.22.0:devel/py-grpcio-tools@${PY_FLAVOR} \
 		bash:shells/bash \
-		cython:lang/cython \
-		swig:devel/swig \
 		bazel:devel/bazel5 \
-		git:devel/git
+		cython:lang/cython \
+		git:devel/git \
+		patchelf:sysutils/patchelf \
+		swig:devel/swig
 LIB_DEPENDS=	libnsync.so:devel/nsync \
 		libgpr.so:devel/grpc \
 		libpng.so:graphics/png \
 		libsnappy.so:archivers/snappy \
-		liblmdb.so:databases/lmdb \
+		libabsl_base.so:devel/abseil \
 		libsqlite3.so:databases/sqlite3 \
 		libicuio.so:devel/icu \
 		libjsoncpp.so:devel/jsoncpp \
-		libpcre.so:devel/pcre \
-		libnsync.so:devel/nsync \
 		libprotobuf.so:devel/protobuf \
-		libprotobuf-c.so:devel/protobuf-c \
-		libre2.so:devel/re2 \
 		libgif.so:graphics/giflib \
 		libcurl.so:ftp/curl \
-		libflatbuffers.so:devel/flatbuffers \
 		libdouble-conversion.so:devel/double-conversion
 RUN_DEPENDS=	pybind11>=2.6.2:devel/pybind11 \
-		${PYTHON_PKGNAMEPREFIX}absl-py>=1.0.0:devel/py-absl-py \
-		${PYTHON_PKGNAMEPREFIX}astunparse>=1.6.3:devel/py-astunparse@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.3.0:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}absl-py>=1.0.0:devel/py-absl-py@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}astunparse>=1.6.0:devel/py-astunparse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flatbuffers>=23.1.21:devel/py-flatbuffers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gast>=0.2.1:devel/py-gast@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}google-pasta>=0.1.1:devel/py-google-pasta@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h5py>=2.9.0:science/py-h5py@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}flatbuffers>=2.0:devel/py-flatbuffers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gast>=0.5.3:devel/py-gast@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.20.0:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}google-pasta>=0.1.7:devel/py-google-pasta@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}protobuf>=3.7.1:devel/py-protobuf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}termcolor>=1.1.0:devel/py-termcolor@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}grpcio>=1.22.0:devel/py-grpcio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}keras-preprocessing>=1.1.1:math/py-keras-preprocessing@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wrapt>=1.14.1:devel/py-wrapt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0.30.0:devel/py-wheel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}opt-einsum>=3.3.0:math/py-opt-einsum@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.22.0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opt-einsum>=2.3.2:math/py-opt-einsum@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=21.3:devel/py-packaging@${PY_FLAVOR} \
-		pybind11>=2.6.2:devel/pybind11
+		${PYTHON_PKGNAMEPREFIX}requests>=2.21.0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}protobuf>=3.20.3:devel/py-protobuf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.12.0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}termcolor>=1.1.0:devel/py-termcolor@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.6:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wrapt>=1.11.0:devel/py-wrapt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}grpcio>=1.24.3:devel/py-grpcio@${PY_FLAVOR}
 
-USES=		jpeg llvm:16 python shebangfix ssl
-USE_CXXSTD=     c++17
+USES=		jpeg perl5 python shebangfix ssl
+USE_CXXSTD=	c++17
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+USE_PERL5=	build
 USE_PYTHON=	distutils
 
 SHEBANG_GLOB=	*.py
 
-BAZEL_BOOT=	--output_user_root=${WRKDIR}/bazel_out
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 PLIST_SUB=	TF_PORT_VERSION=${PORTVERSION}
 
@@ -95,13 +92,17 @@ XLA_VARS_OFF=			XLA_OPT="0"
 
 .include "Makefile.MASTER_SITES"
 
+BAZEL_BOOT=	--output_user_root=${WRKDIR}/bazel_out
+.if !defined(WITH_DEBUG)
+# For the reason why the linker is used for the strip, see PR 280234.
+BAZEL_LINKOPT=	--linkopt=-Wl,--strip-all
+.endif
+
 post-patch:
 	# Set up a local repository with our pre-downloaded packages
 	# This prevents bazel downloading the files without modifying
 	# the bzl files.
-	@${MKDIR} ${WRKDIR}/bazel-cache
 	@${MKDIR} ${WRKDIR}/bazel-dist
-	@${MKDIR} ${WRKDIR}/.bin
 
 .for file in ${DISTFILES:C/\:(.*)//}
 	@${ECHO} "Moving ${file} to ${WRKDIR}/bazel-dist"
@@ -112,24 +113,8 @@ post-patch:
 	@${CP} -R ${PATCHDIR}/bazel/* \
 		${WRKSRC}/third_party/
 
-	@${LN} -s ${PYTHON_CMD} ${WRKDIR}/.bin/python3
-
-	@cd ${WRKSRC} && \
-		${REINPLACE_CMD} "s#--batch#${BAZEL_BOOT}\', \'--batch#" \
-		configure.py
-
-	${REINPLACE_CMD} "s#%%PYTHON%%#${PYTHON_VERSION}#" ${WRKSRC}/configure \
-		${WRKSRC}/third_party/freebsd_python_fix.patch \
-		${WRKSRC}/tensorflow/compiler/mlir/quantization/tensorflow/BUILD
-
 	@${REINPLACE_CMD} "s#%%BAZEL_DIR%%#${WRKDIR}#" ${WRKDIR}/bazelrc
 	@${REINPLACE_CMD} "s#%%BAZEL_DIST%%#${WRKDIR}#" ${WRKDIR}/bazelrc
-	@${REINPLACE_CMD} "s#%%MLIR_LLVM_PATCH%%#/${WRKSRC}/bazel/bazel_llvm-raw_utils_bazel_configure.bzl#" \
-		${WRKSRC}/tensorflow/compiler/mlir/hlo/WORKSPACE
-
-	# use system pybind11, but use sed to fix includes, too many to maintain with patches
-	@${FIND} ${WRKSRC} -type f -name '*.cc' | ${XARGS} ${REINPLACE_CMD} "s#include\/pybind11#pybind11#"
-
 
 	# copy the toolchain over
 	@${CP} -R ${PATCHDIR}/freebsd \
@@ -137,21 +122,10 @@ post-patch:
 
 	@${REINPLACE_CMD} "s#%%PATH%%#${PATH}#" ${WRKDIR}/bazelrc
 
-	@${REINPLACE_CMD} "s#%%PYTHON%%#${PYTHON_CMD}#" ${WRKSRC}/.bazelrc
-
-	@${REINPLACE_CMD} \
-		-e "s#%%LOCALBASE%%#${LOCALBASE}#" \
-		-e "s#%%LLVM_PREFIX%%#${LLVM_PREFIX}#g" \
-		-e "s#%%LLVM_VERSION%%#${LLVM_VERSION}#g" \
+	@${REINPLACE_CMD} -e "s#%%LOCALBASE%%#${LOCALBASE}#" \
 		${WRKDIR}/bazelrc \
-		${WRKSRC}/third_party/absl/system.absl.strings.BUILD \
 		${WRKSRC}/freebsd/cc_toolchain_config.bzl \
-		${WRKSRC}/.bazelrc \
-		${WRKSRC}/tensorflow/tools/proto_text/BUILD \
-		${WRKSRC}/tensorflow/BUILD \
-		${WRKSRC}/tensorflow/core/BUILD \
-		${WRKSRC}/third_party/systemlibs/protobuf.BUILD
-
+		${WRKSRC}/.bazelrc
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} \
@@ -175,14 +149,14 @@ do-configure:
 		PREFIX="${LOCALBASE}" \
 		TF_SYSTEM_LIBS="absl_py astor_archive astunparse_archive boringssl com_github_googlecloudplatform_google_cloud_cpp com_github_grpc_grpc \
 				com_google_absl com_google_protobuf curl cython dill_archive double_conversion functools32_archive gast_archive \
-				gif hwloc icu jsoncpp_git libjpeg_turbo lmdb nasm nsync opt_einsum_archive org_sqlite pasta png pybind11 six_archive snappy \
+				gif hwloc icu jsoncpp_git libjpeg_turbo nasm nsync opt_einsum_archive org_sqlite pasta png pybind11 six_archive snappy \
 				tblib_archive termcolor_archive typing_extensions_archive wrapt zlib" \
 		./configure
 
 do-build:
 	@cd ${WRKSRC} && \
 		bazel --bazelrc="${WRKDIR}/bazelrc" ${BAZEL_BOOT} build --jobs ${TF_JOBS_NUMBER} ${BAZEL_COPT} --host_copt="-I${LOCALBASE}/include" \
-		--host_linkopt="-L${LOCALBASE}/lib -lexecinfo" --linkopt="-L${LOCALBASE}/lib -lexecinfo" --copt="-I${LOCALBASE}/include" \
+		--host_linkopt="-L${LOCALBASE}/lib -lexecinfo" ${BAZEL_LINKOPT} --copt="-I${LOCALBASE}/include" \
 		--verbose_failures -s \
 		--distdir=${WRKDIR}/bazel-dist \
 		//tensorflow:libtensorflow_framework.so \
@@ -190,7 +164,6 @@ do-build:
 		//tensorflow:libtensorflow_cc.so \
 		//tensorflow:install_headers \
 		//tensorflow/tools/pip_package:build_pip_package
-
 
 	@cd ${WRKSRC} && ${SETENV} TMPDIR=${WRKDIR} \
 		bazel-bin/tensorflow/tools/pip_package/build_pip_package \
@@ -224,10 +197,8 @@ do-install:
 	@${FIND} ${WRKSRC}/bazel-bin/tensorflow/ -depth 1 -name "*.so*" | ${XARGS} -I{} \
 		${INSTALL_LIB} {} ${STAGEDIR}/${LOCALBASE}/lib/
 
-	@${FIND} ${STAGEDIR}/${LOCALBASE}/lib -name "*.so*" | ${XARGS} ${STRIP_CMD}
-
 post-install: # autoplist: thousands of files, all under ${PYTHON_SITELIBDIR}
 	@cd ${STAGEDIR}${PREFIX} && \
-		${FIND} ${PYTHON_SITELIBDIR:C|^${LOCALBASE}/||} -type f -or -type l | grep -v "egg-info/" >> ${TMPPLIST}
+		${FIND} ${PYTHON_SITELIBDIR:C|^${LOCALBASE}/||} -type f -or -type l | ${GREP} -v "egg-info/" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

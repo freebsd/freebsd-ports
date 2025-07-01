@@ -1,0 +1,23 @@
+--- tensorflow/python/framework/BUILD.orig	2023-09-12 16:46:28 UTC
++++ tensorflow/python/framework/BUILD
+@@ -421,11 +421,11 @@ py_library(
+         "//tensorflow/core:protos_all_py",
+         "//tensorflow/core/function/trace_type",
+         "//tensorflow/python:pywrap_tensorflow",
+-        "//tensorflow/python/lib/core:_pywrap_bfloat16",
+         "//tensorflow/python/lib/core:_pywrap_custom_casts",
+         "//tensorflow/python/lib/core:_pywrap_float8",
+         "//tensorflow/python/types:doc_typealias",
+         "//tensorflow/python/util:tf_export",
++        "//tensorflow/tsl/python/lib/core:pywrap_bfloat16",
+     ],
+ )
+ 
+@@ -942,6 +942,7 @@ tf_python_pybind_extension(
+         "//tensorflow/python/util:function_parameter_canonicalizer_hdrs",
+         "//third_party/python_runtime:headers",  # buildcleaner: keep
+         "@com_google_absl//absl/container:flat_hash_map",
++        "@com_google_absl//absl/strings",
+         "@pybind11",
+     ],
+ )

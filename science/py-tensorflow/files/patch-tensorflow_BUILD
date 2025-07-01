@@ -1,31 +1,12 @@
---- tensorflow/BUILD.orig	2022-05-23 00:28:22.000000000 +0200
-+++ tensorflow/BUILD	2023-03-30 17:47:04.211287000 +0200
-@@ -938,8 +938,11 @@
+--- tensorflow/BUILD.orig	2023-09-12 16:46:28 UTC
++++ tensorflow/BUILD
+@@ -1290,7 +1290,8 @@ tf_cc_shared_library(
          ],
          "//tensorflow:windows": [],
-         "//tensorflow:freebsd": [
-+            "-Wl,--unresolved-symbols=ignore-all",
-+            "-Wl,--undefined-version",
-             "-Wl,--version-script,$(location //tensorflow:tf_framework_version_script.lds)",
-             "-lexecinfo",
-+            "-L/usr/local/lib",
-         ],
          "//conditions:default": [
-             "-Wl,--version-script,$(location //tensorflow:tf_framework_version_script.lds)",
-@@ -1021,7 +1024,7 @@
-         # copybara:uncomment_end
-         "//conditions:default": [
-             "-z defs",
--            "-Wl,--version-script,$(location //tensorflow/c:version_script.lds)",
-+            "-L/lib,-L/usr/lib,--unresolved-symbols=ignore-all,-Wl,--undefined-version,-Wl,--version-script,$(location //tensorflow/c:version_script.lds)",
-         ],
-     }),
-     per_os_targets = True,
-@@ -1054,6 +1057,7 @@
-         "//tensorflow:windows": [],
-         "//conditions:default": [
-             "-z defs",
-+            "-Wl,--undefined-version",
+-            "-z defs",
++            "-Wl,-z,defs",
++            "-lnsync_cpp",
              "-Wl,--version-script,$(location //tensorflow:tf_version_script.lds)",
          ],
      }),

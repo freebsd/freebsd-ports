@@ -226,17 +226,17 @@ def _impl(ctx):
     else:
         features = [supports_dynamic_linker_feature, supports_pic_feature]
     if (is_bsd):
-        cxx_builtin_include_directories = ["%%LLVM_PREFIX%%/lib/clang/%%LLVM_VERSION%%.0.0", "%%LLVM_PREFIX%%/lib/clang/%%LLVM_VERSION%%/include", "/usr/include/c++/v1", "/usr/local/include", "/usr/include"]
+        cxx_builtin_include_directories = ["/usr/lib/clang", "/usr/include/c++/v1", "/usr/local/include", "/usr/include"]
     else:
         cxx_builtin_include_directories = []
     if is_bsd:
         tool_paths = [
             tool_path(name = "ar", path = "/usr/bin/ar"),
-            tool_path(name = "cpp", path = "%%LLVM_PREFIX%%/bin/clang-cpp"),
+            tool_path(name = "cpp", path = "/usr/bin/cpp"),
             tool_path(name = "dwp", path = "/usr/bin/dwp"),
-            tool_path(name = "gcc", path = "%%LLVM_PREFIX%%/bin/clang-%%LLVM_VERSION%%"),
+            tool_path(name = "gcc", path = "/usr/bin/clang"),
             tool_path(name = "gcov", path = "/usr/bin/gcov"),
-            tool_path(name = "ld", path = "%%LLVM_PREFIX%%/bin/ld"),
+            tool_path(name = "ld", path = "/usr/bin/ld"),
             tool_path(name = "nm", path = "/usr/bin/nm"),
             tool_path(name = "objcopy", path = "/usr/bin/objcopy"),
             tool_path(name = "objdump", path = "/usr/bin/objdump"),

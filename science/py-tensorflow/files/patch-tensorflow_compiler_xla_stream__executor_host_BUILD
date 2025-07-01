@@ -1,0 +1,10 @@
+--- tensorflow/compiler/xla/stream_executor/host/BUILD.orig	2023-09-12 16:46:28 UTC
++++ tensorflow/compiler/xla/stream_executor/host/BUILD
+@@ -95,6 +95,7 @@ cc_library(
+     hdrs = [
+         "host_gpu_executor.h",
+     ],
++    linkopts = ["-labsl_tracing_internal"],
+     deps = [
+         ":host_platform_id",
+         ":host_stream",
