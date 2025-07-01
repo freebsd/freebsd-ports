@@ -2505,6 +2505,7 @@
     SUBDIR += surf
     SUBDIR += swiggle
     SUBDIR += sws
+    SUBDIR += tailwindcss3
     SUBDIR += tcexam
     SUBDIR += tclhttpd
     SUBDIR += tclwebtest
