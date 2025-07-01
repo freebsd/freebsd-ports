@@ -3,6 +3,7 @@ bin/cutelystd4-qt6
 include/cutelyst4-qt6/Cutelyst/Action
 include/cutelyst4-qt6/Cutelyst/ActionChain
 include/cutelyst4-qt6/Cutelyst/Application
+include/cutelyst4-qt6/Cutelyst/AppSettings
 include/cutelyst4-qt6/Cutelyst/Component
 include/cutelyst4-qt6/Cutelyst/ComponentFactory
 include/cutelyst4-qt6/Cutelyst/Context
@@ -97,8 +98,8 @@ include/cutelyst4-qt6/Cutelyst/Plugins/View/json_export.h
 include/cutelyst4-qt6/Cutelyst/Plugins/authentication_export.h
 include/cutelyst4-qt6/Cutelyst/Plugins/csrfprotection.h
 include/cutelyst4-qt6/Cutelyst/Plugins/csrfprotection_export.h
-include/cutelyst4-qt6/Cutelyst/Plugins/cutelyst_plugin_staticcompressed_export.h
 include/cutelyst4-qt6/Cutelyst/Plugins/session_export.h
+include/cutelyst4-qt6/Cutelyst/Plugins/staticcompressed_export.h
 include/cutelyst4-qt6/Cutelyst/Plugins/staticsimple.h
 include/cutelyst4-qt6/Cutelyst/Plugins/staticsimple_export.h
 include/cutelyst4-qt6/Cutelyst/Plugins/statusmessage.h
@@ -115,6 +116,7 @@ include/cutelyst4-qt6/Cutelyst/View
 include/cutelyst4-qt6/Cutelyst/action.h
 include/cutelyst4-qt6/Cutelyst/actionchain.h
 include/cutelyst4-qt6/Cutelyst/application.h
+include/cutelyst4-qt6/Cutelyst/appsettings.h
 include/cutelyst4-qt6/Cutelyst/async.h
 include/cutelyst4-qt6/Cutelyst/component.h
 include/cutelyst4-qt6/Cutelyst/componentfactory.h
