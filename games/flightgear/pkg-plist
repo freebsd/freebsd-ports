@@ -6,11 +6,11 @@ bin/fgcom
 bin/fgelev
 bin/fgfs
 bin/fgjs
-bin/fgpanel
 bin/fgtraffic
 bin/fgviewer
 bin/js_demo
 bin/metar
+bin/nasal
 bin/yasim
 bin/yasim-proptest
 share/man/it/man1/GPSsmooth.1.gz
@@ -21,7 +21,6 @@ share/man/it/man1/fgcom.1.gz
 share/man/it/man1/fgelev.1.gz
 share/man/it/man1/fgfs.1.gz
 share/man/it/man1/fgjs.1.gz
-share/man/it/man1/fgpanel.1.gz
 share/man/it/man1/fgviewer.1.gz
 share/man/it/man1/js_demo.1.gz
 share/man/it/man1/metar.1.gz
@@ -34,7 +33,6 @@ share/man/man1/fgcom.1.gz
 share/man/man1/fgelev.1.gz
 share/man/man1/fgfs.1.gz
 share/man/man1/fgjs.1.gz
-share/man/man1/fgpanel.1.gz
 share/man/man1/fgviewer.1.gz
 share/man/man1/js_demo.1.gz
 share/man/man1/metar.1.gz

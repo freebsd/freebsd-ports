@@ -1,13 +1,6 @@
 PORTNAME=	flightgear
-PORTVERSION=	2020.3.19
-PORTREVISION=	7
+PORTVERSION=	2024.1.1
 CATEGORIES=	games
-MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
-
-# Fix for CVE-2025-0781
-# See: https://gitlab.com/frougon/flightgear-flightgear/-/commits/2020.3.6-minimal-fix-for-CVE-2025-0781
-PATCH_SITES=	https://gitlab.com/frougon/flightgear-${PORTNAME}/-/commit/
-PATCHFILES+=	cf99dc921aadab502ff90a1dd943d8bbb897de91.patch:-p1
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	FlightGear flight simulator
@@ -34,8 +27,13 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
 		${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
 # Disable ninja, see https://sourceforge.net/p/flightgear/codetickets/2118/
-USES=		alias cmake:noninja compiler:c++11-lang cpe dos2unix gl jpeg \
+USES=		alias cmake:noninja compiler:c++17-lang cpe dos2unix gl jpeg \
 		openal:al,alut sqlite tar:bzip2 xorg
+
+USE_GITLAB=	yes
+GL_ACCOUNT=	flightgear
+GL_TAGNAME=	v${PORTVERSION}
+
 USE_XORG=	ice sm x11 xext xft xi xinerama xmu xt
 USE_GL=		gl glew glu glut
 

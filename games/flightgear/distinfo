@@ -1,5 +1,3 @@
-TIMESTAMP = 1738150411
-SHA256 (flightgear-2020.3.19.tar.bz2) = 167d08de9cc0f72218b379b23cd7e56c7f6ee18d7d559512da51a3bd67f38e6e
-SIZE (flightgear-2020.3.19.tar.bz2) = 8935152
-SHA256 (cf99dc921aadab502ff90a1dd943d8bbb897de91.patch) = c3cf18bec3510b870bcdb8cb3a833c58f63d33aa9d071d11ac893f90d6e2fe60
-SIZE (cf99dc921aadab502ff90a1dd943d8bbb897de91.patch) = 2178
+TIMESTAMP = 1751317021
+SHA256 (flightgear-v2024.1.1.tar.bz2) = a3b1fea7064caa18964828e79cc1ec663f6aabf0fb5eb4f7f7fb82635fc8a937
+SIZE (flightgear-v2024.1.1.tar.bz2) = 9463832
