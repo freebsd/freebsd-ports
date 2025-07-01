@@ -434,5 +434,10 @@
     SUBDIR += zabbix72-java
     SUBDIR += zabbix72-proxy
     SUBDIR += zabbix72-server
+    SUBDIR += zabbix74-agent
+    SUBDIR += zabbix74-frontend
+    SUBDIR += zabbix74-java
+    SUBDIR += zabbix74-proxy
+    SUBDIR += zabbix74-server
 
 .include <bsd.port.subdir.mk>
