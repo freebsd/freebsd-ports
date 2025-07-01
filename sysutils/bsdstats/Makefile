@@ -10,6 +10,8 @@ WWW=		https://www.bsdstats.org/
 
 LICENSE=	BSD4CLAUSE
 
+BROKEN=		mastersite gives PHP fatal error as of 20250701
+
 NO_BUILD=	yes
 USE_RC_SUBR=	bsdstats
 SUB_FILES=	300.statistics bsdstats-send pkg-message
