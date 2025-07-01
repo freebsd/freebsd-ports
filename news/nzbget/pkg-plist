@@ -5,6 +5,7 @@ bin/nzbget
 %%DATADIR%%/nzbget.conf
 %%DATADIR%%/webui/config.js
 %%DATADIR%%/webui/dark-theme.css
+%%DATADIR%%/webui/datetime.js
 %%DATADIR%%/webui/downloads.js
 %%DATADIR%%/webui/edit.js
 %%DATADIR%%/webui/fasttable.js
@@ -35,6 +36,7 @@ bin/nzbget
 %%DATADIR%%/webui/lib/raphael.min.js
 %%DATADIR%%/webui/light-theme.css
 %%DATADIR%%/webui/messages.js
+%%DATADIR%%/webui/statistics.js
 %%DATADIR%%/webui/status.js
 %%DATADIR%%/webui/style.css
 %%DATADIR%%/webui/system-info.js
