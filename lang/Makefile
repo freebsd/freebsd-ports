@@ -175,7 +175,6 @@
     SUBDIR += librep
     SUBDIR += libstdc++_stldoc_4.2.2
     SUBDIR += linux-c7-tcl85
-    SUBDIR += linux-dotnet-cli
     SUBDIR += linux-j
     SUBDIR += linux-rl9-python3
     SUBDIR += linux-rl9-tcl86
