@@ -1,1 +1,11 @@
-This package contains xvidtune, a video mode tuner for the X Window System.
+Xvidtune is a client interface to the X server video mode extension
+(XFree86-VidModeExtension). It can show current video mode, switch the
+video mode and interactively adjust current video mode.
+
+When given one of the non-toolkit options, xvidtune provides a command
+line interface to either print or switch the video mode.
+
+Without any options (or with only toolkit options) it presents the user
+with various buttons and sliders that can be used to interactively
+adjust existing video modes. It will also print the settings in a
+format suitable for inclusion in an xorg.conf file.
