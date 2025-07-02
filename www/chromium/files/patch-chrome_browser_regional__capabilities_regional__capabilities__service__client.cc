@@ -1,6 +1,6 @@
---- chrome/browser/regional_capabilities/regional_capabilities_service_client.cc.orig	2025-05-05 10:57:53 UTC
+--- chrome/browser/regional_capabilities/regional_capabilities_service_client.cc.orig	2025-07-02 06:08:04 UTC
 +++ chrome/browser/regional_capabilities/regional_capabilities_service_client.cc
-@@ -107,7 +107,7 @@ void RegionalCapabilitiesServiceClient::FetchCountryId
+@@ -133,7 +133,7 @@ void RegionalCapabilitiesServiceClient::FetchCountryId
        base::android::AttachCurrentThread(),
        reinterpret_cast<intptr_t>(heap_callback.release()));
  }

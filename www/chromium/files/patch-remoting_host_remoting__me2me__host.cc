@@ -1,6 +1,6 @@
---- remoting/host/remoting_me2me_host.cc.orig	2025-05-28 14:55:43 UTC
+--- remoting/host/remoting_me2me_host.cc.orig	2025-07-02 06:08:04 UTC
 +++ remoting/host/remoting_me2me_host.cc
-@@ -140,7 +140,7 @@
+@@ -139,7 +139,7 @@
  #include "remoting/host/mac/permission_utils.h"
  #endif  // BUILDFLAG(IS_APPLE)
  
@@ -9,7 +9,7 @@
  #if defined(REMOTING_USE_X11)
  #include <gtk/gtk.h>
  
-@@ -150,7 +150,7 @@
+@@ -149,7 +149,7 @@
  #endif  // defined(REMOTING_USE_X11)
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
@@ -18,15 +18,15 @@
  #include "base/linux_util.h"
  #include "remoting/host/linux/audio_capturer_linux.h"
  #include "remoting/host/linux/certificate_watcher.h"
-@@ -165,7 +165,7 @@
+@@ -164,7 +164,7 @@
  #include "remoting/host/pairing_registry_delegate_win.h"
  #endif  // BUILDFLAG(IS_WIN)
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "remoting/base/crash/crash_reporting_crashpad.h"
  #include "remoting/host/host_wtmpdb_logger.h"
  #endif  // BUILDFLAG(IS_LINUX)
- 
 @@ -198,7 +198,7 @@ const char kApplicationName[] = "chromoting";
  const char kStdinConfigPath[] = "-";
  #endif  // !defined(REMOTING_MULTI_PROCESS)
@@ -126,7 +126,16 @@
  #if defined(REMOTING_USE_X11)
    // Initialize Xlib for multi-threaded use, allowing non-Chromium code to
    // use X11 safely (such as the WebRTC capturer, GTK ...)
-@@ -2172,7 +2172,7 @@ int HostProcessMain() {
+@@ -2154,7 +2154,7 @@ int HostProcessMain() {
+     return kInitializationFailed;
+   }
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // Log and cleanup the crash database. We do this after a short delay so that
+   // the crash database has a chance to be updated properly if we just got
+   // relaunched after a crash.
+@@ -2174,7 +2174,7 @@ int HostProcessMain() {
    std::unique_ptr<net::NetworkChangeNotifier> network_change_notifier(
        net::NetworkChangeNotifier::CreateIfNeeded());
  

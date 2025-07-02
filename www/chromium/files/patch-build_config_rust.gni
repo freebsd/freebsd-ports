@@ -1,13 +1,15 @@
---- build/config/rust.gni.orig	2025-05-28 14:55:43 UTC
+--- build/config/rust.gni.orig	2025-07-02 06:08:04 UTC
 +++ build/config/rust.gni
-@@ -361,6 +361,10 @@ if (is_linux || is_chromeos) {
+@@ -373,7 +373,11 @@ if (is_linux || is_chromeos) {
    }
  }
  
+-if (toolchain_has_rust) {
 +if (is_bsd) {
 +  rust_abi_target = string_replace(rust_abi_target, "linux-gnu", current_os)
 +}
 +
- assert(!toolchain_has_rust || rust_abi_target != "")
++if (toolchain_has_rust && !is_bsd) {
+   assert(rust_abi_target != "")
  
- # This variable is passed to the Rust libstd build.
+   _known_rust_target_triples_filepath = "//build/rust/known-target-triples.txt"

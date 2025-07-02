@@ -1,6 +1,6 @@
---- media/gpu/chromeos/platform_video_frame_utils.cc.orig	2025-04-04 08:52:13 UTC
+--- media/gpu/chromeos/platform_video_frame_utils.cc.orig	2025-07-02 06:08:04 UTC
 +++ media/gpu/chromeos/platform_video_frame_utils.cc
-@@ -68,7 +68,7 @@ static std::unique_ptr<ui::GbmDevice> CreateGbmDevice(
+@@ -69,7 +69,7 @@ static std::unique_ptr<ui::GbmDevice> CreateGbmDevice(
      const base::FilePath dev_path(FILE_PATH_LITERAL(
          base::StrCat({drm_node_file_prefix, base::NumberToString(i)})));
  
@@ -9,7 +9,7 @@
      const bool is_render_node = base::Contains(drm_node_file_prefix, "render");
  
      // TODO(b/313513760): don't guard base::File::FLAG_WRITE behind
-@@ -193,7 +193,7 @@ class GbmDeviceWrapper {
+@@ -190,7 +190,7 @@ class GbmDeviceWrapper {
        const base::FilePath dev_path(
            base::CommandLine::ForCurrentProcess()->GetSwitchValuePath(
                switches::kRenderNodeOverride));

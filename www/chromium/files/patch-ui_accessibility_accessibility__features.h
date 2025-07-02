@@ -1,6 +1,6 @@
---- ui/accessibility/accessibility_features.h.orig	2025-05-28 14:55:43 UTC
+--- ui/accessibility/accessibility_features.h.orig	2025-07-02 06:08:04 UTC
 +++ ui/accessibility/accessibility_features.h
-@@ -322,7 +322,7 @@ AX_BASE_EXPORT BASE_DECLARE_FEATURE(kBlockRootWindowAc
+@@ -347,7 +347,7 @@ AX_BASE_EXPORT BASE_DECLARE_FEATURE(kBlockRootWindowAc
  AX_BASE_EXPORT bool IsBlockRootWindowAccessibleNameChangeEventEnabled();
  #endif  // BUILDFLAG(IS_MAC)
  

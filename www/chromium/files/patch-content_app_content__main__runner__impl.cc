@@ -1,4 +1,4 @@
---- content/app/content_main_runner_impl.cc.orig	2025-05-28 14:55:43 UTC
+--- content/app/content_main_runner_impl.cc.orig	2025-07-02 06:08:04 UTC
 +++ content/app/content_main_runner_impl.cc
 @@ -148,18 +148,20 @@
  #include "content/browser/posix_file_descriptor_info_impl.h"
@@ -71,7 +71,7 @@
  
  #if BUILDFLAG(ENABLE_PPAPI)
    // Ensure access to the Pepper plugins before the sandbox is turned on.
-@@ -752,7 +768,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
+@@ -763,7 +779,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
      unregister_thread_closure = base::HangWatcher::RegisterThread(
          base::HangWatcher::ThreadType::kMainThread);
      bool start_hang_watcher_now;
@@ -80,7 +80,7 @@
      // On Linux/ChromeOS, the HangWatcher can't start until after the sandbox is
      // initialized, because the sandbox can't be started with multiple threads.
      // TODO(mpdenton): start the HangWatcher after the sandbox is initialized.
-@@ -865,11 +881,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -876,11 +892,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
                   base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -94,7 +94,7 @@
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -1050,10 +1065,22 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1073,10 +1088,22 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
        process_type == switches::kZygoteProcess) {
      PreSandboxInit();
    }
@@ -117,7 +117,7 @@
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE)
-@@ -1150,6 +1177,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
+@@ -1176,6 +1203,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
    content_main_params_.reset();
  
    RegisterMainThreadFactories();

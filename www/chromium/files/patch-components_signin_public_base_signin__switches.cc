@@ -1,6 +1,6 @@
---- components/signin/public/base/signin_switches.cc.orig	2025-05-28 14:55:43 UTC
+--- components/signin/public/base/signin_switches.cc.orig	2025-07-02 06:08:04 UTC
 +++ components/signin/public/base/signin_switches.cc
-@@ -62,7 +62,7 @@ BASE_FEATURE(kUseHostedDomainForManagementCheckOnSigni
+@@ -64,7 +64,7 @@ BASE_FEATURE(kFullscreenSignInPromoUseDate,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

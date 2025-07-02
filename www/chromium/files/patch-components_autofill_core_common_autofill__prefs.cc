@@ -1,6 +1,6 @@
---- components/autofill/core/common/autofill_prefs.cc.orig	2025-05-28 14:55:43 UTC
+--- components/autofill/core/common/autofill_prefs.cc.orig	2025-07-02 06:08:04 UTC
 +++ components/autofill/core/common/autofill_prefs.cc
-@@ -99,7 +99,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -101,7 +101,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
    registry->RegisterBooleanPref(
        kAutofillBnplEnabled, true,
        user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
-@@ -278,7 +278,7 @@ bool IsFacilitatedPaymentsEwalletEnabled(const PrefSer
+@@ -280,7 +280,7 @@ bool IsFacilitatedPaymentsEwalletEnabled(const PrefSer
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
  void SetAutofillBnplEnabled(PrefService* prefs, bool value) {
    prefs->SetBoolean(kAutofillBnplEnabled, value);
  }
-@@ -287,7 +287,7 @@ void SetAutofillBnplEnabled(PrefService* prefs, bool v
+@@ -289,7 +289,7 @@ void SetAutofillBnplEnabled(PrefService* prefs, bool v
  
  bool IsAutofillBnplEnabled(const PrefService* prefs) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
    return prefs->GetBoolean(kAutofillBnplEnabled);
  #else
    return false;
-@@ -296,7 +296,7 @@ bool IsAutofillBnplEnabled(const PrefService* prefs) {
+@@ -298,7 +298,7 @@ bool IsAutofillBnplEnabled(const PrefService* prefs) {
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

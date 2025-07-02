@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_root.cc.orig	2025-05-28 14:55:43 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_root.cc.orig	2025-07-02 06:08:04 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_root.cc
 @@ -45,7 +45,7 @@
  #include "wow64apiset.h"
@@ -18,7 +18,7 @@
    // When fork() is called, only the current thread continues to execute in the
    // child process. If the lock is held, but *not* by this thread when fork() is
    // called, we have a deadlock.
-@@ -1118,7 +1118,7 @@ void PartitionRoot::Init(PartitionOptions opts) {
+@@ -1110,7 +1110,7 @@ void PartitionRoot::Init(PartitionOptions opts) {
      // apple OSes.
      PA_CHECK((internal::SystemPageSize() == (size_t{1} << 12)) ||
               (internal::SystemPageSize() == (size_t{1} << 14)));

@@ -1,4 +1,4 @@
---- media/base/media_switches.cc.orig	2025-05-28 14:55:43 UTC
+--- media/base/media_switches.cc.orig	2025-07-02 06:08:04 UTC
 +++ media/base/media_switches.cc
 @@ -19,7 +19,7 @@
  #include "ui/gl/gl_features.h"
@@ -94,7 +94,7 @@
  // Enable H264 temporal layer encoding with V4L2 HW encoder on ChromeOS.
  BASE_FEATURE(kV4L2H264TemporalLayerHWEncoding,
               "V4L2H264TemporalLayerHWEncoding",
-@@ -1340,7 +1362,7 @@ BASE_FEATURE(kUseOutOfProcessVideoDecoding,
+@@ -1355,7 +1377,7 @@ BASE_FEATURE(kUseOutOfProcessVideoDecoding,
  );
  #endif  // BUILDFLAG(ALLOW_OOP_VIDEO_DECODER)
  
@@ -103,7 +103,7 @@
  // Spawn utility processes to perform hardware encode acceleration instead of
  // using the GPU process.
  BASE_FEATURE(kUseOutOfProcessVideoEncoding,
-@@ -1422,7 +1444,7 @@ BASE_FEATURE(kRecordWebAudioEngagement,
+@@ -1437,7 +1459,7 @@ BASE_FEATURE(kRecordWebAudioEngagement,
               "RecordWebAudioEngagement",
               base::FEATURE_ENABLED_BY_DEFAULT);
  

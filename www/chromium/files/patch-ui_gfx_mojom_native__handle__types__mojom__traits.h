@@ -1,4 +1,4 @@
---- ui/gfx/mojom/native_handle_types_mojom_traits.h.orig	2025-03-05 08:14:56 UTC
+--- ui/gfx/mojom/native_handle_types_mojom_traits.h.orig	2025-07-02 06:08:04 UTC
 +++ ui/gfx/mojom/native_handle_types_mojom_traits.h
 @@ -18,7 +18,7 @@
  #include "ui/gfx/gpu_memory_buffer.h"
@@ -42,4 +42,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_OZONE) || BUILDFLAG(IS_BSD)
    static gfx::NativePixmapHandle& native_pixmap_handle(
        gfx::GpuMemoryBufferHandle& handle) {
-     return handle.native_pixmap_handle;
+     return handle.native_pixmap_handle_;

@@ -1,6 +1,6 @@
---- gpu/command_buffer/tests/gl_gpu_memory_buffer_unittest.cc.orig	2025-05-28 14:55:43 UTC
+--- gpu/command_buffer/tests/gl_gpu_memory_buffer_unittest.cc.orig	2025-07-02 06:08:04 UTC
 +++ gpu/command_buffer/tests/gl_gpu_memory_buffer_unittest.cc
-@@ -33,7 +33,7 @@
+@@ -29,7 +29,7 @@
  #include "ui/gfx/half_float.h"
  #include "ui/gl/test/gl_test_support.h"
  
@@ -9,7 +9,7 @@
  #include "gpu/ipc/common/gpu_memory_buffer_impl_native_pixmap.h"
  #include "ui/gfx/linux/client_native_pixmap_factory_dmabuf.h"
  #endif
-@@ -76,7 +76,7 @@ class GpuMemoryBufferTest : public testing::TestWithPa
+@@ -72,7 +72,7 @@ class GpuMemoryBufferTest : public testing::TestWithPa
    GLManager gl_;
  };
  

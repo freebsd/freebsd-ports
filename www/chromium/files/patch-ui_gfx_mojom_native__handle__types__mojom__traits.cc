@@ -1,4 +1,4 @@
---- ui/gfx/mojom/native_handle_types_mojom_traits.cc.orig	2025-05-05 10:57:53 UTC
+--- ui/gfx/mojom/native_handle_types_mojom_traits.cc.orig	2025-07-02 06:08:04 UTC
 +++ ui/gfx/mojom/native_handle_types_mojom_traits.cc
 @@ -14,7 +14,7 @@
  #include "ui/gfx/mac/io_surface.h"
@@ -58,4 +58,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_OZONE) || BUILDFLAG(IS_BSD)
      case Tag::kNativePixmapHandle:
        handle->type = gfx::NATIVE_PIXMAP;
-       return data.ReadNativePixmapHandle(&handle->native_pixmap_handle);
+       return data.ReadNativePixmapHandle(&handle->native_pixmap_handle_);

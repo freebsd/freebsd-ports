@@ -1,4 +1,4 @@
---- ui/ozone/platform/headless/vulkan_implementation_headless.cc.orig	2025-01-15 09:18:26 UTC
+--- ui/ozone/platform/headless/vulkan_implementation_headless.cc.orig	2025-07-02 06:08:04 UTC
 +++ ui/ozone/platform/headless/vulkan_implementation_headless.cc
 @@ -116,7 +116,7 @@ VulkanImplementationHeadless::ExportVkFenceToGpuFence(
  
@@ -24,6 +24,6 @@
    auto tiling = VK_IMAGE_TILING_OPTIMAL;
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   if (gmb_handle.native_pixmap_handle.modifier !=
+   if (gmb_handle.native_pixmap_handle().modifier !=
        gfx::NativePixmapHandle::kNoModifier) {
      tiling = VK_IMAGE_TILING_DRM_FORMAT_MODIFIER_EXT;

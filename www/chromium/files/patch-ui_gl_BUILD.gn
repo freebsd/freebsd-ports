@@ -1,22 +1,6 @@
---- ui/gl/BUILD.gn.orig	2025-05-05 10:57:53 UTC
+--- ui/gl/BUILD.gn.orig	2025-07-02 06:08:04 UTC
 +++ ui/gl/BUILD.gn
-@@ -174,7 +174,6 @@ component("gl") {
-   public_deps = [
-     ":gl_enums",
-     "//base",
--    "//third_party/mesa_headers",
-     "//ui/events/platform",
-     "//ui/gfx",
-     "//ui/gfx/geometry",
-@@ -328,7 +327,6 @@ component("gl") {
-     data_deps += [
-       "//third_party/angle:libEGL",
-       "//third_party/angle:libGLESv2",
--      "//third_party/mesa_headers",
-     ]
-     if (enable_swiftshader) {
-       data_deps += [
-@@ -554,7 +552,6 @@ test("gl_unittests") {
+@@ -569,7 +569,6 @@ test("gl_unittests") {
  
    data_deps = [
      "//testing/buildbot/filters:gl_unittests_filters",

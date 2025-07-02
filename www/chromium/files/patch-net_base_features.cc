@@ -1,6 +1,6 @@
---- net/base/features.cc.orig	2025-05-28 14:55:43 UTC
+--- net/base/features.cc.orig	2025-07-02 06:08:04 UTC
 +++ net/base/features.cc
-@@ -27,7 +27,7 @@ BASE_FEATURE(kCapReferrerToOriginOnCrossOrigin,
+@@ -31,7 +31,7 @@ BASE_FEATURE(kCapReferrerToOriginOnCrossOrigin,
  BASE_FEATURE(kAsyncDns,
               "AsyncDns",
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID) || \

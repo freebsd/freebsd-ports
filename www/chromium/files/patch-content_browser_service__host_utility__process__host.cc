@@ -1,4 +1,4 @@
---- content/browser/service_host/utility_process_host.cc.orig	2025-05-05 10:57:53 UTC
+--- content/browser/service_host/utility_process_host.cc.orig	2025-07-02 06:08:04 UTC
 +++ content/browser/service_host/utility_process_host.cc
 @@ -68,7 +68,7 @@
  #include "content/browser/v8_snapshot_files.h"
@@ -18,21 +18,21 @@
  base::ScopedFD PassNetworkContextParentDirs(
      std::vector<base::FilePath> network_context_parent_dirs) {
    base::Pickle pickle;
-@@ -427,7 +427,7 @@ bool UtilityProcessHost::StartProcess() {
-     file_data_->files_to_preload.merge(GetV8SnapshotFilesToPreload(*cmd_line));
+@@ -491,7 +491,7 @@ bool UtilityProcessHost::StartProcess() {
+       GetV8SnapshotFilesToPreload(*cmd_line));
  #endif  // BUILDFLAG(IS_POSIX)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-     // The network service should have access to the parent directories
-     // necessary for its usage.
-     if (sandbox_type_ == sandbox::mojom::Sandbox::kNetwork) {
-@@ -444,7 +444,7 @@ bool UtilityProcessHost::StartProcess() {
-     if (metrics_name_ == video_capture::mojom::VideoCaptureService::Name_) {
-       bool pass_gpu_buffer_flag =
-           switches::IsVideoCaptureUseGpuMemoryBufferEnabled();
+   // The network service should have access to the parent directories
+   // necessary for its usage.
+   if (options_.sandbox_type_ == sandbox::mojom::Sandbox::kNetwork) {
+@@ -509,7 +509,7 @@ bool UtilityProcessHost::StartProcess() {
+       video_capture::mojom::VideoCaptureService::Name_) {
+     bool pass_gpu_buffer_flag =
+         switches::IsVideoCaptureUseGpuMemoryBufferEnabled();
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       // Check if NV12 GPU memory buffer supported at the same time.
-       pass_gpu_buffer_flag =
-           pass_gpu_buffer_flag &&
+     // Check if NV12 GPU memory buffer supported at the same time.
+     pass_gpu_buffer_flag =
+         pass_gpu_buffer_flag &&

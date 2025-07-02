@@ -1,6 +1,6 @@
---- services/device/usb/usb_service.cc.orig	2024-08-26 12:06:38 UTC
+--- services/device/usb/usb_service.cc.orig	2025-07-02 06:08:04 UTC
 +++ services/device/usb/usb_service.cc
-@@ -21,12 +21,16 @@
+@@ -20,12 +20,16 @@
  
  #if BUILDFLAG(IS_ANDROID)
  #include "services/device/usb/usb_service_android.h"
@@ -18,7 +18,7 @@
  #endif
  
  namespace device {
-@@ -49,11 +53,13 @@ constexpr base::TaskTraits UsbService::kBlockingTaskTr
+@@ -48,11 +52,13 @@ constexpr base::TaskTraits UsbService::kBlockingTaskTr
  std::unique_ptr<UsbService> UsbService::Create() {
  #if BUILDFLAG(IS_ANDROID)
    return base::WrapUnique(new UsbServiceAndroid());

@@ -1,6 +1,6 @@
---- ui/accessibility/ax_tree.h.orig	2025-05-05 10:57:53 UTC
+--- ui/accessibility/ax_tree.h.orig	2025-07-02 06:08:04 UTC
 +++ ui/accessibility/ax_tree.h
-@@ -62,7 +62,7 @@ enum class AXTreeUnserializeError {
+@@ -63,7 +63,7 @@ enum class AXTreeUnserializeError {
  };
  // LINT.ThenChange(/tools/metrics/histograms/metadata/accessibility/enums.xml:AccessibilityTreeUnserializeError)
  
@@ -9,7 +9,7 @@
  // To support AriaNotify on older versions of ATK, we need to use the ATK
  // signal "Text::text-insert". This signal requires a node that is a
  // text type, and it needs to have aria-live properties set in order for
-@@ -287,7 +287,7 @@ class AX_EXPORT AXTree {
+@@ -288,7 +288,7 @@ class AX_EXPORT AXTree {
  
    void NotifyChildTreeConnectionChanged(AXNode* node, AXTree* child_tree);
  
@@ -18,7 +18,7 @@
    void ClearExtraAnnouncementNodes();
    void CreateExtraAnnouncementNodes();
    ExtraAnnouncementNodes* extra_announcement_nodes() const {
-@@ -544,7 +544,7 @@ class AX_EXPORT AXTree {
+@@ -550,7 +550,7 @@ class AX_EXPORT AXTree {
  
    std::unique_ptr<AXEvent> event_data_;
  

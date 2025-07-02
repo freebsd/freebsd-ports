@@ -1,6 +1,6 @@
---- components/commerce/core/commerce_feature_list.cc.orig	2025-05-05 10:57:53 UTC
+--- components/commerce/core/commerce_feature_list.cc.orig	2025-07-02 06:08:04 UTC
 +++ components/commerce/core/commerce_feature_list.cc
-@@ -156,7 +156,8 @@ BASE_FEATURE(kPriceInsights,
+@@ -157,7 +157,8 @@ BASE_FEATURE(kPriceInsights,
               "PriceInsights",
               base::FEATURE_DISABLED_BY_DEFAULT);
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -10,7 +10,7 @@
  BASE_FEATURE(kPriceInsightsRegionLaunched,
               "PriceInsightsRegionLaunched",
               base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -227,7 +228,7 @@ BASE_FEATURE(kEnableDiscountInfoApi,
+@@ -230,7 +231,7 @@ BASE_FEATURE(kEnableDiscountInfoApi,
  const char kDiscountOnShoppyPageParam[] = "discount-on-shoppy-page";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -19,7 +19,7 @@
  const base::FeatureParam<bool> kDiscountOnShoppyPage{
      &kEnableDiscountInfoApi, kDiscountOnShoppyPageParam, true};
  #else
-@@ -236,7 +237,7 @@ const base::FeatureParam<bool> kDiscountOnShoppyPage{
+@@ -239,7 +240,7 @@ const base::FeatureParam<bool> kDiscountOnShoppyPage{
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -28,7 +28,7 @@
  BASE_FEATURE(kEnableDiscountInfoApiRegionLaunched,
               "EnableDiscountInfoApiRegionLaunched",
               base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -251,7 +252,7 @@ const char kMerchantWideBehaviorParam[] = "merchant-wi
+@@ -254,7 +255,7 @@ const char kMerchantWideBehaviorParam[] = "merchant-wi
  const char kNonMerchantWideBehaviorParam[] = "non-merchant-wide-behavior";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

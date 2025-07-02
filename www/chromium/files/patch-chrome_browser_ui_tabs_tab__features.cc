@@ -1,6 +1,6 @@
---- chrome/browser/ui/tabs/tab_features.cc.orig	2025-05-28 14:55:43 UTC
+--- chrome/browser/ui/tabs/tab_features.cc.orig	2025-07-02 06:08:04 UTC
 +++ chrome/browser/ui/tabs/tab_features.cc
-@@ -311,7 +311,7 @@ void TabFeatures::Init(TabInterface& tab, Profile* pro
+@@ -340,7 +340,7 @@ void TabFeatures::Init(TabInterface& tab, Profile* pro
    task_manager::WebContentsTags::CreateForTabContents(tab.GetContents());
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

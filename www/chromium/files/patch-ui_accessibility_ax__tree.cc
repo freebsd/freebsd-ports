@@ -1,6 +1,6 @@
---- ui/accessibility/ax_tree.cc.orig	2025-05-28 14:55:43 UTC
+--- ui/accessibility/ax_tree.cc.orig	2025-07-02 06:08:04 UTC
 +++ ui/accessibility/ax_tree.cc
-@@ -824,7 +824,7 @@ bool AXTree::ComputeNodeIsIgnoredChanged(
+@@ -867,7 +867,7 @@ bool AXTree::ComputeNodeIsIgnoredChanged(
    return old_node_is_ignored != new_node_is_ignored;
  }
  
@@ -9,7 +9,7 @@
  ExtraAnnouncementNodes::ExtraAnnouncementNodes(AXNode* root) {
    assertive_node_ = CreateNode("assertive", root);
    polite_node_ = CreateNode("polite", root);
-@@ -917,7 +917,7 @@ AXNode* AXTree::GetFromId(AXNodeID id) const {
+@@ -960,7 +960,7 @@ AXNode* AXTree::GetFromId(AXNodeID id) const {
  
  void AXTree::Destroy() {
    base::ElapsedThreadTimer timer;
@@ -18,7 +18,7 @@
    ClearExtraAnnouncementNodes();
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -2109,7 +2109,7 @@ void AXTree::NotifyNodeAttributesWillChange(
+@@ -2181,7 +2181,7 @@ void AXTree::NotifyNodeAttributesWillChange(
                      new_data);
  }
  
@@ -27,7 +27,7 @@
  void AXTree::ClearExtraAnnouncementNodes() {
    if (!extra_announcement_nodes_) {
      return;
-@@ -2498,7 +2498,7 @@ bool AXTree::CreateNewChildVector(
+@@ -2570,7 +2570,7 @@ bool AXTree::CreateNewChildVector(
      AXTreeUpdateState* update_state) {
    DCHECK(GetTreeUpdateInProgressState());
    bool success = true;

@@ -1,6 +1,6 @@
---- ui/accessibility/ax_node.cc.orig	2025-05-05 10:57:53 UTC
+--- ui/accessibility/ax_node.cc.orig	2025-07-02 06:08:04 UTC
 +++ ui/accessibility/ax_node.cc
-@@ -1553,7 +1553,7 @@ AXNode::GetExtraMacNodes() const {
+@@ -1555,7 +1555,7 @@ AXNode::GetExtraMacNodes() const {
    return &table_info->extra_mac_nodes;
  }
  
@@ -9,7 +9,7 @@
  AXNode* AXNode::GetExtraAnnouncementNode(
      ax::mojom::AriaNotificationPriority priority_property) const {
    if (!tree_->extra_announcement_nodes()) {
-@@ -1581,7 +1581,7 @@ bool AXNode::IsGenerated() const {
+@@ -1583,7 +1583,7 @@ bool AXNode::IsGenerated() const {
        GetRole() == ax::mojom::Role::kColumn ||
        GetRole() == ax::mojom::Role::kTableHeaderContainer;
    DCHECK_EQ(is_generated_node, is_extra_mac_node_role);

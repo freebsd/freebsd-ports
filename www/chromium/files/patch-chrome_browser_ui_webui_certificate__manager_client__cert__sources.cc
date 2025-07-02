@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/certificate_manager/client_cert_sources.cc.orig	2025-05-05 10:57:53 UTC
+--- chrome/browser/ui/webui/certificate_manager/client_cert_sources.cc.orig	2025-07-02 06:08:04 UTC
 +++ chrome/browser/ui/webui/certificate_manager/client_cert_sources.cc
 @@ -54,7 +54,7 @@
  #include "net/ssl/client_cert_store_mac.h"
@@ -54,7 +54,7 @@
  std::unique_ptr<CertificateManagerPageHandler::CertSource>
  CreateProvisionedClientCertSource(Profile* profile) {
    return std::make_unique<ClientCertSource>(
-@@ -1156,7 +1156,7 @@ bool ClientCertManagementAccessControls::IsChangeAllow
+@@ -1157,7 +1157,7 @@ bool ClientCertManagementAccessControls::IsChangeAllow
  
    return client_cert_policy_ == ClientCertificateManagementPermission::kAll;
  }

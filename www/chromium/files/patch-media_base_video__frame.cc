@@ -1,4 +1,4 @@
---- media/base/video_frame.cc.orig	2025-05-28 14:55:43 UTC
+--- media/base/video_frame.cc.orig	2025-07-02 06:08:04 UTC
 +++ media/base/video_frame.cc
 @@ -92,7 +92,7 @@ std::string VideoFrame::StorageTypeToString(
        return "OWNED_MEMORY";
@@ -18,7 +18,7 @@
        // This is not strictly needed but makes explicit that, at VideoFrame
        // level, DmaBufs are not mappable from userspace.
        storage_type != VideoFrame::STORAGE_DMABUFS &&
-@@ -420,7 +420,7 @@ VideoFrame::CreateFrameForGpuMemoryBufferOrMappableSII
+@@ -417,7 +417,7 @@ VideoFrame::CreateFrameForGpuMemoryBufferOrMappableSII
          plane_size.width() * VideoFrame::BytesPerElement(*format, plane);
    }
    uint64_t modifier = gfx::NativePixmapHandle::kNoModifier;
@@ -27,7 +27,7 @@
    bool is_native_buffer =
        gpu_memory_buffer
            ? (gpu_memory_buffer->GetType() != gfx::SHARED_MEMORY_BUFFER)
-@@ -890,7 +890,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
+@@ -889,7 +889,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
    return frame;
  }
  
@@ -36,7 +36,7 @@
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      const VideoFrameLayout& layout,
-@@ -1577,7 +1577,7 @@ scoped_refptr<gpu::ClientSharedImage> VideoFrame::shar
+@@ -1573,7 +1573,7 @@ scoped_refptr<gpu::ClientSharedImage> VideoFrame::shar
    return wrapped_frame_ ? wrapped_frame_->shared_image() : shared_image_;
  }
  

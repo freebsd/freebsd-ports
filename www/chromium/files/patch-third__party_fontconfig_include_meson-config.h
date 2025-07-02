@@ -1,24 +1,15 @@
---- third_party/fontconfig/include/config.h.orig	2024-03-22 08:19:40 UTC
-+++ third_party/fontconfig/include/config.h
-@@ -13,7 +13,7 @@
+--- third_party/fontconfig/include/meson-config.h.orig	2025-07-02 06:08:04 UTC
++++ third_party/fontconfig/include/meson-config.h
+@@ -17,7 +17,7 @@
  
  #define FC_CACHEDIR "/var/cache/fontconfig"
  
 -#define FC_DEFAULT_FONTS "\t<dir>/usr/share/fonts</dir>\n\t<dir>/usr/local/share/fonts</dir>\n"
-+#define FC_DEFAULT_FONTS "\t<dir>/usr/X11R6/lib/X11/fonts</dir>"
++#define FC_DEFAULT_FONTS "\t<dir>/usr/X11R6/lib/X11/fonts</dir>\n"
  
  #define FC_FONTPATH ""
  
-@@ -66,7 +66,7 @@
- 
- #define HAVE_MMAP 1
- 
--#define HAVE_POSIX_FADVISE 1
-+#define HAVE_POSIX_FADVISE 0
- 
- #define HAVE_PTHREAD 1
- 
-@@ -74,10 +74,13 @@
+@@ -92,10 +92,13 @@
  
  #define HAVE_RANDOM 1
  
@@ -33,7 +24,7 @@
  #define HAVE_READLINK 1
  
  #define HAVE_STDATOMIC_PRIMITIVES 1
-@@ -92,11 +95,11 @@
+@@ -122,7 +125,7 @@
  
  #define HAVE_SYS_PARAM_H 1
  
@@ -42,8 +33,12 @@
  
  #define HAVE_SYS_STATVFS_H 1
  
+@@ -130,7 +133,7 @@
+ 
+ #define HAVE_SYS_TYPES_H 1
+ 
 -#define HAVE_SYS_VFS_H 1
 +/* #undef HAVE_SYS_VFS_H */
  
- #define HAVE_UNISTD_H 1
+ #define HAVE_TIME_H 1
  

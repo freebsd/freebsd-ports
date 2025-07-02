@@ -1,6 +1,6 @@
---- chrome/common/chrome_switches.cc.orig	2025-05-28 14:55:43 UTC
+--- chrome/common/chrome_switches.cc.orig	2025-07-02 06:08:04 UTC
 +++ chrome/common/chrome_switches.cc
-@@ -884,7 +884,7 @@ const char kAllowNaClSocketAPI[] = "allow-nacl-socket-
+@@ -892,7 +892,7 @@ const char kAllowNaClSocketAPI[] = "allow-nacl-socket-
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -9,7 +9,7 @@
  const char kEnableNewAppMenuIcon[] = "enable-new-app-menu-icon";
  
  // Causes the browser to launch directly in guest mode.
-@@ -913,7 +913,7 @@ const char kGlicDev[] = "glic-dev";
+@@ -921,7 +921,7 @@ const char kGlicDev[] = "glic-dev";
  const char kGlicHostLogging[] = "glic-host-logging";
  #endif
  
