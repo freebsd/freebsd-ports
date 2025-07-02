@@ -1,2 +1,4 @@
-This package contains xmag, a screen magnifying application for the
-X Window System.
+Xmag is a utility to display a magnified snapshot of a portion of an
+X11 screen. If no explicit region is specified, a square with the
+pointer in the upper left corner is displayed indicating the area to be
+enlarged.
