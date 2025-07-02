@@ -1,4 +1,4 @@
-#
+#!/bin/sh
 
 # PROVIDE: ympd
 # REQUIRE: DAEMON NETWORKING musicpd
