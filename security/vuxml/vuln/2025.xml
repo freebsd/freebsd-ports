@@ -1,3 +1,73 @@
+  <vuln vid="5c777f88-40ff-4e1e-884b-ad63dfb9bb15">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>138.0.7204.96</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>138.0.7204.96</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/06/stable-channel-update-for-desktop_30.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[427663123] High CVE-2025-6554: Type Confusion in V8.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6554</cvename>
+      <url>https://chromereleases.googleblog.com/2025/06/stable-channel-update-for-desktop_30.html</url>
+    </references>
+    <dates>
+      <discovery>2025-06-30</discovery>
+      <entry>2025-07-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9c91e1f8-f255-4b57-babe-2e385558f1dc">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>138.0.7204.49</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>138.0.7204.49</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/06/stable-channel-update-for-desktop_24.html">
+	 <p>This update includes 11 security fixes:</p>
+	 <ul>
+	    <li>[407328533] Medium CVE-2025-6555: Use after free in Animation. Reported by Lyra Rebane (rebane2001) on 2025-03-30</li>
+	    <li>[40062462] Low CVE-2025-6556: Insufficient policy enforcement in Loader. Reported by Shaheen Fazim on 2023-01-02</li>
+	    <li>[406631048] Low CVE-2025-6557: Insufficient data validation in DevTools. Reported by Ameen Basha M K on 2025-03-27</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6555</cvename>
+      <cvename>CVE-2025-6556</cvename>
+      <cvename>CVE-2025-6557</cvename>
+      <url>https://chromereleases.googleblog.com/2025/06/stable-channel-update-for-desktop_24.html</url>
+    </references>
+    <dates>
+      <discovery>2025-06-24</discovery>
+      <entry>2025-07-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24f4b495-56a1-11f0-9621-93abbef07693">
     <topic>sudo -- privilege escalation vulnerability through host and chroot options</topic>
     <affects>
