@@ -2,9 +2,7 @@ lib/grilo-0.3/libgrlbookmarks.so
 lib/grilo-0.3/libgrlchromaprint.so
 %%DMAP%%lib/grilo-0.3/libgrldaap.so
 %%DMAP%%lib/grilo-0.3/libgrldpap.so
-lib/grilo-0.3/libgrldleyna.so
 lib/grilo-0.3/libgrlfilesystem.so
-lib/grilo-0.3/libgrlflickr.so
 lib/grilo-0.3/libgrlfreebox.so
 lib/grilo-0.3/libgrlgravatar.so
 lib/grilo-0.3/libgrllocalmetadata.so
@@ -12,7 +10,6 @@ lib/grilo-0.3/libgrlmagnatune.so
 lib/grilo-0.3/libgrlmetadatastore.so
 lib/grilo-0.3/libgrlopticalmedia.so
 lib/grilo-0.3/libgrlpodcasts.so
-lib/grilo-0.3/libgrlraitv.so
 lib/grilo-0.3/libgrlshoutcast.so
 lib/grilo-0.3/libgrlthetvdb.so
 lib/grilo-0.3/libgrltmdb.so
@@ -39,6 +36,9 @@ share/help/es/grilo-plugins/legal.xml
 share/help/eu/examples/example-tmdb.c
 share/help/eu/grilo-plugins/grilo-plugins.xml
 share/help/eu/grilo-plugins/legal.xml
+share/help/fr/examples/example-tmdb.c
+share/help/fr/grilo-plugins/grilo-plugins.xml
+share/help/fr/grilo-plugins/legal.xml
 share/help/gl/examples/example-tmdb.c
 share/help/gl/grilo-plugins/grilo-plugins.xml
 share/help/gl/grilo-plugins/legal.xml
@@ -54,6 +54,9 @@ share/help/pl/grilo-plugins/legal.xml
 share/help/pt_BR/examples/example-tmdb.c
 share/help/pt_BR/grilo-plugins/grilo-plugins.xml
 share/help/pt_BR/grilo-plugins/legal.xml
+share/help/ru/examples/example-tmdb.c
+share/help/ru/grilo-plugins/grilo-plugins.xml
+share/help/ru/grilo-plugins/legal.xml
 share/help/sv/examples/example-tmdb.c
 share/help/sv/grilo-plugins/grilo-plugins.xml
 share/help/sv/grilo-plugins/legal.xml
@@ -75,17 +78,20 @@ share/locale/en_GB/LC_MESSAGES/grilo-plugins.mo
 share/locale/eo/LC_MESSAGES/grilo-plugins.mo
 share/locale/es/LC_MESSAGES/grilo-plugins.mo
 share/locale/eu/LC_MESSAGES/grilo-plugins.mo
+share/locale/fa/LC_MESSAGES/grilo-plugins.mo
 share/locale/fi/LC_MESSAGES/grilo-plugins.mo
 share/locale/fr/LC_MESSAGES/grilo-plugins.mo
 share/locale/fur/LC_MESSAGES/grilo-plugins.mo
 share/locale/gl/LC_MESSAGES/grilo-plugins.mo
 share/locale/he/LC_MESSAGES/grilo-plugins.mo
+share/locale/hi/LC_MESSAGES/grilo-plugins.mo
 share/locale/hr/LC_MESSAGES/grilo-plugins.mo
 share/locale/hu/LC_MESSAGES/grilo-plugins.mo
 share/locale/id/LC_MESSAGES/grilo-plugins.mo
 share/locale/it/LC_MESSAGES/grilo-plugins.mo
 share/locale/ja/LC_MESSAGES/grilo-plugins.mo
 share/locale/ka/LC_MESSAGES/grilo-plugins.mo
+share/locale/kab/LC_MESSAGES/grilo-plugins.mo
 share/locale/ko/LC_MESSAGES/grilo-plugins.mo
 share/locale/lt/LC_MESSAGES/grilo-plugins.mo
 share/locale/lv/LC_MESSAGES/grilo-plugins.mo
@@ -106,6 +112,7 @@ share/locale/sl/LC_MESSAGES/grilo-plugins.mo
 share/locale/sr/LC_MESSAGES/grilo-plugins.mo
 share/locale/sr@latin/LC_MESSAGES/grilo-plugins.mo
 share/locale/sv/LC_MESSAGES/grilo-plugins.mo
+share/locale/th/LC_MESSAGES/grilo-plugins.mo
 share/locale/tr/LC_MESSAGES/grilo-plugins.mo
 share/locale/uk/LC_MESSAGES/grilo-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/grilo-plugins.mo
