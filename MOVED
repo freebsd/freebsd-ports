@@ -4617,7 +4617,7 @@ devel/linenoise-ng||2025-06-30|Has expired: Upstream repo archived Oct 28, 2020
 devel/libflatarray||2025-06-30|Has expired: Last activity from upstream 5 years ago and last release in 2016
 devel/bogofilter-bdb||2025-06-30|Has expired: The Berkeley DB interface is obsolete. Read UPDATING and use one of the other devel/bogofilter* ports instead
 misc/e2fsprogs-libuuid|misc/libuuid|2025-06-30|Replaced by util-linux based libuuid
-filesystems/e2fsprogs-libblkid||2025-06-30|Replaced by util-linux based libblkid
+filesystems/e2fsprogs-libblkid|filesystems/libblkid|2025-06-30|Replaced by util-linux based libblkid
 graphics/rigsofrods-pagedgeometry|graphics/pagedgeometry|2025-06-30|Switch to the upstream version
 net/net6||2025-06-30|Has expired: Abandoned upstream, repo archived Nov 26, 2020
 devel/py-coreapi|devel/py-openapi-core|2025-06-30|Has expired: Upstream archived the repository. Please use devel/py-openapi-core instead
