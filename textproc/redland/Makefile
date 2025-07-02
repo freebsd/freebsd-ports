@@ -4,7 +4,7 @@ PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	High-level interface for RDF
 WWW=		https://librdf.org
 

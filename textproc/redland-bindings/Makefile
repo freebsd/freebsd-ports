@@ -4,7 +4,7 @@ PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Language bindings for the Redland package
 WWW=		https://librdf.org/bindings/
 
