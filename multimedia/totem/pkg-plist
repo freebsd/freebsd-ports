@@ -8,8 +8,6 @@ lib/girepository-1.0/Totem-1.0.typelib
 lib/libtotem.so
 lib/libtotem.so.0
 lib/libtotem.so.0.0.0
-lib/totem/plugins/apple-trailers/apple-trailers.plugin
-lib/totem/plugins/apple-trailers/libapple-trailers.so
 lib/totem/plugins/autoload-subtitles/autoload-subtitles.plugin
 lib/totem/plugins/autoload-subtitles/libautoload-subtitles.so
 lib/totem/plugins/im-status/libtotem-im-status.so
@@ -41,8 +39,6 @@ lib/totem/plugins/skipto/libskipto.so
 lib/totem/plugins/skipto/skipto.plugin
 lib/totem/plugins/variable-rate/libvariable-rate.so
 lib/totem/plugins/variable-rate/variable-rate.plugin
-lib/totem/plugins/vimeo/libvimeo.so
-lib/totem/plugins/vimeo/vimeo.plugin
 libdata/pkgconfig/totem.pc
 libexec/totem-gallery-thumbnailer
 share/GConf/gsettings/opensubtitles.convert
@@ -974,6 +970,7 @@ share/locale/th/LC_MESSAGES/totem.mo
 share/locale/tr/LC_MESSAGES/totem.mo
 share/locale/ug/LC_MESSAGES/totem.mo
 share/locale/uk/LC_MESSAGES/totem.mo
+share/locale/uz/LC_MESSAGES/totem.mo
 share/locale/vi/LC_MESSAGES/totem.mo
 share/locale/wa/LC_MESSAGES/totem.mo
 share/locale/xh/LC_MESSAGES/totem.mo
