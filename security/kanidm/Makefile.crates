@@ -651,4 +651,4 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zxcvbn-3.1.0 \
 		sshkeys@git+https://github.com/Firstyear/rust-sshkeys.git?rev=3a081cbf7480628223bcb96fc8aaa8c19109d007\#3a081cbf7480628223bcb96fc8aaa8c19109d007 \
 		libnss@git+https://github.com/Firstyear/libnss-rs.git?branch=20250207-freebsd\#763da4beaadc1e475b89ed876de31a5e393f6d30 \
-		compact_jwt@git+https://github.com/Firstyear/compact-jwt.git?rev=b3d2b5700cfe567d384c81df35d25537fbf7f110\#b3d2b5700cfe567d384c81df35d25537fbf7f110
+		compact_jwt@git+https://github.com/Firstyear/compact-jwt.git?rev=043976842773dd035fe394261347edeb644e3091\#043976842773dd035fe394261347edeb644e3091
