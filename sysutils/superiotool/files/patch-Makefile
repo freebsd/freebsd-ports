@@ -1,6 +1,6 @@
---- Makefile.orig	2022-10-16 20:14:31 UTC
-+++ Makefile
-@@ -8,7 +8,7 @@ PREFIX  ?= /usr/local
+--- Makefile.orig	2022-10-16 23:14:31.000000000 +0300
++++ Makefile	2025-07-02 10:37:44.757402000 +0300
+@@ -8,7 +8,7 @@
  
  # Set the superiotool version string to the output of 'git describe'.
  
@@ -9,3 +9,12 @@
  
  CFLAGS += -O2 -Wall -Wstrict-prototypes -Wundef -Wstrict-aliasing \
           -Werror-implicit-function-declaration -ansi -pedantic $(VERSION)
+@@ -23,7 +23,7 @@
+ endif
+ ifeq ($(OS_ARCH), FreeBSD)
+ CFLAGS = -O2 -Wall -Werror -Wstrict-prototypes -Wundef -Wstrict-aliasing \
+-         -Werror-implicit-function-declaration -ansi $(VERSION) \
++         -Werror-implicit-function-declaration -Wno-comment -ansi $(VERSION) \
+          -I/usr/local/include
+ LDFLAGS += -L/usr/local/lib
+ LIBS = -lz
