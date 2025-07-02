@@ -141,3 +141,5 @@ SHA256 (openresty-xss-nginx-module-de2d87a_GH0.tar.gz) = f830c9300d751046e2592c7
 SIZE (openresty-xss-nginx-module-de2d87a_GH0.tar.gz) = 12779
 SHA256 (tokers-zstd-nginx-module-f4ba115_GH0.tar.gz) = 20045e8ac80e2cc9fd3659573153cb1f22d98a653a10fe939a4be0e90160826a
 SIZE (tokers-zstd-nginx-module-f4ba115_GH0.tar.gz) = 55848
+SHA256 (2b3b002499d92b063b0f9ba20e99c850e36b7e8b.patch) = ba6ba093f2d68b7e67d4cc7f28e0e9099bb5252d3722fd143895971c15eabe54
+SIZE (2b3b002499d92b063b0f9ba20e99c850e36b7e8b.patch) = 1132
