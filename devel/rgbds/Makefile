@@ -1,7 +1,8 @@
 PORTNAME=	rgbds
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.3
 CATEGORIES=	devel games
 MASTER_SITES=	https://github.com/gbdev/rgbds/releases/download/v${DISTVERSION}/
+DISTNAME=	${PORTNAME}-source
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Free assembler/linker for the Game Boy and Game Boy Color
