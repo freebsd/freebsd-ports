@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-PORTVERSION=	3.0.16
+PORTVERSION=	3.0.17
 PORTEPOCH=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/openssl/openssl/releases/download/${DISTNAME}/
