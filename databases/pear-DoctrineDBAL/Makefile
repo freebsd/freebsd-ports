@@ -10,6 +10,9 @@ WWW=		https://www.doctrine-project.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream no longer serves through PEAR channel and has been moved to Composer
+EXPIRATION_DATE=	2025-08-03
+
 RUN_DEPENDS=	${PEARDIR}/Doctrine/Common/Version.php:databases/pear-DoctrineCommon@${PHP_FLAVOR} \
 		${PEARDIR}/Symfony/Component/Console/Application.php:devel/pear-Symfony_Component_Console@${PHP_FLAVOR}
 
