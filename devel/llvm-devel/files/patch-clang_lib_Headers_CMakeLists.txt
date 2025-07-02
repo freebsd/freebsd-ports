@@ -1,6 +1,6 @@
 --- clang/lib/Headers/CMakeLists.txt.orig
 +++ clang/lib/Headers/CMakeLists.txt
-@@ -6,36 +6,9 @@
+@@ -6,37 +6,9 @@
    float.h
    inttypes.h
    iso646.h
@@ -16,6 +16,7 @@
 -  __stdarg_va_list.h
 -  stdatomic.h
 -  stdbool.h
+-  stdcountof.h
 -  stdckdint.h
 -  stddef.h
 -  __stddef_header_macro.h

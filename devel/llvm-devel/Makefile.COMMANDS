@@ -38,7 +38,6 @@ LLVM_COMMANDS=	\
 		llvm-ml \
 		llvm-ml64 \
 		llvm-modextract \
-		llvm-mt \
 		llvm-nm \
 		llvm-objcopy \
 		llvm-objdump \
@@ -91,6 +90,7 @@ CLANG_COMMANDS=	\
 		hmaptool \
 		intercept-build \
 		nvptx-arch \
+		offload-arch \
 		scan-build \
 		scan-build-py \
 		scan-view

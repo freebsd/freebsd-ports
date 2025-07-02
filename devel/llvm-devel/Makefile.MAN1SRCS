@@ -49,6 +49,7 @@ LLVM_MAN1SRCS= \
 	llvm-strip.1 \
 	llvm-symbolizer.1 \
 	llvm-tblgen.1 \
+	llvm-test-mustache-spec.1 \
 	llvm-tli-checker.1 \
 	mlir-tblgen.1 \
 	opt.1 \
@@ -61,6 +62,9 @@ CLANG_MAN1SRCS= \
 
 EXTRAS_MAN1SRCS= \
 	extraclangtools.1
+
+FLANG_MAN1SRCS= \
+	flang.1
 
 LIT_MAN1SRCS= \
 	lit.1 \
