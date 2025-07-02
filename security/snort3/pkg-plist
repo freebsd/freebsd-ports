@@ -39,7 +39,6 @@ include/snort/flow/flow_key.h
 include/snort/flow/flow_stash.h
 include/snort/flow/ha.h
 include/snort/flow/session.h
-include/snort/flow/stash_item.h
 include/snort/flow/stream_flow.h
 include/snort/framework/api_options.h
 include/snort/framework/base_api.h
