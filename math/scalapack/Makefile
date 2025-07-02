@@ -1,5 +1,6 @@
 PORTNAME=	scalapack
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -60,7 +61,7 @@ FFLAGS+=	${FPIC}
 LDFLAGS+=	${MPI_LIBS}
 SVERSION=	${PORTVERSION:R:R}
 
-.if ${GCC_DEFAULT} >= 10
+.if ${FORTRAN_DEFAULT} == gfortran && ${GCC_DEFAULT} >= 10
 # workaround for Rank mismatch between actual argument at (1) and actual argument at (2) (scalar and rank-1)
 FFLAGS+=	-fallow-argument-mismatch
 .endif
