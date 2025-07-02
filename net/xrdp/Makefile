@@ -1,8 +1,8 @@
 PORTNAME=	xrdp
-DISTVERSION=	0.10.3
+DISTVERSION=	0.10.4
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/neutribolabs/${PORTNAME}/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/neutrinolabs/${PORTNAME}/releases/download/v${DISTVERSION}/
 DIST_SUBDIR?=	${PORTNAME}
 
 PATCH_SITES=	https://github.com/neutrinolabs/${PORTNAME}/commit/
