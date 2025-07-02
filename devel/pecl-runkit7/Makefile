@@ -9,6 +9,6 @@ WWW=		https://github.com/runkit7/runkit7
 LICENSE=	PHP301
 
 USES=		compiler:c11 php:pecl
-IGNORE_WITH_PHP=	83 84
+IGNORE_WITH_PHP=	83 84 85
 
 .include <bsd.port.mk>

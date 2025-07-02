@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:pecl,zend tar:tgz
 
-IGNORE_WITH_PHP=	84
+IGNORE_WITH_PHP=	84 85
 
 CONFIGURE_ARGS=	--enable-xdebug
 

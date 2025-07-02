@@ -13,6 +13,7 @@ NOT_FOR_ARCHS=	i386 powerpc
 NOT_FOR_ARCHS_REASON=	upstream drop 32 bits support
 
 USES=		compiler:c11 localbase:ldflags php:build,pecl pkgconfig ssl
+IGNORE_WITH_PHP=	85
 
 CONFIGURE_ARGS+=	--enable-mysqlnd
 

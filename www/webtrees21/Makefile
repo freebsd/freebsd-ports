@@ -11,7 +11,7 @@ WWW=		https://webtrees.net/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/${PORTNAME}/LICENSE.md
 
-IGNORE_WITH_PHP=	83 84
+IGNORE_WITH_PHP=	83 84 85
 USES=		cpe php shebangfix zip
 # php pcre extension is required but it's statically linked in default php
 USE_PHP=	calendar curl dom filter gd iconv pdo_mysql session xml
