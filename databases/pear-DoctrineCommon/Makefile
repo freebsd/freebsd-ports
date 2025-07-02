@@ -10,6 +10,9 @@ WWW=		https://www.doctrine-project.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream no longer serves through PEAR channel and has been moved to Composer
+EXPIRATION_DATE=	2025-08-04
+
 USES=		pear
 PEAR_CHANNEL=	doctrine
 NO_ARCH=	yes
