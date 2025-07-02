@@ -23,81 +23,9 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
    |                |      help: a similar name exists in the module: `event`
    |                no `epoll` in `sys`
 
---- Cargo.lock.orig	2025-06-11 22:40:37 UTC
+--- Cargo.lock.orig	2025-07-02 22:31:56 UTC
 +++ Cargo.lock
-@@ -518,7 +518,7 @@ dependencies = [
-  "bitflags 2.9.0",
-  "cexpr",
-  "clang-sys",
-- "itertools 0.10.5",
-+ "itertools 0.13.0",
-  "proc-macro2 1.0.95",
-  "quote 1.0.40",
-  "regex",
-@@ -734,7 +734,7 @@ dependencies = [
-  "cap-primitives",
-  "cap-std",
-  "io-lifetimes",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
- ]
- 
- [[package]]
-@@ -763,7 +763,7 @@ dependencies = [
-  "maybe-owned",
-  "rustix 1.0.7",
-  "rustix-linux-procfs",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
-  "winx",
- ]
- 
-@@ -1650,7 +1650,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "e16e44ab292b1dddfdaf7be62cfd8877df52f2f3fde5858d95bab606be259f20"
- dependencies = [
-  "bitflags 2.9.0",
-- "libloading 0.7.4",
-+ "libloading 0.8.6",
-  "winapi",
- ]
- 
-@@ -1876,7 +1876,7 @@ version = "0.5.2"
- source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "330c60081dcc4c72131f8eb70510f1ac07223e5d4163db481a04a0befcffa412"
- dependencies = [
-- "libloading 0.7.4",
-+ "libloading 0.8.6",
- ]
- 
- [[package]]
-@@ -2100,7 +2100,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "976dd42dc7e85965fe702eb8164f21f450704bdde31faefd6471dba214cb594e"
- dependencies = [
-  "libc",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
- ]
- 
- [[package]]
-@@ -2194,7 +2194,7 @@ checksum = "0ce92ff622d6dadf7349484f42c93271a0d49b7cc4d466a936405bacbe10aa78"
- dependencies = [
-  "cfg-if 1.0.0",
-  "rustix 1.0.7",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
- ]
- 
- [[package]]
-@@ -2407,7 +2407,7 @@ checksum = "94e7099f6313ecacbe1256e8ff9d617b75d1bcb16a6fddef94866d225a01a14a"
- dependencies = [
-  "io-lifetimes",
-  "rustix 1.0.7",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
- ]
- 
- [[package]]
-@@ -2622,9 +2622,9 @@ dependencies = [
+@@ -2628,9 +2628,9 @@ dependencies = [
  
  [[package]]
  name = "gilrs"
@@ -109,7 +37,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "fnv",
   "gilrs-core",
-@@ -2636,24 +2636,23 @@ dependencies = [
+@@ -2642,24 +2642,23 @@ dependencies = [
  
  [[package]]
  name = "gilrs-core"
@@ -139,13 +67,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  ]
  
  [[package]]
-@@ -3534,14 +3533,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "2285ddfe3054097ef4b2fe909ef8c3bcd1ea52a8f0d274416caebeef39f04a65"
- dependencies = [
-  "io-lifetimes",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
- ]
+@@ -3546,9 +3545,9 @@ dependencies = [
  
  [[package]]
  name = "io-kit-sys"
@@ -157,25 +79,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "core-foundation-sys",
   "mach2",
-@@ -3588,7 +3587,7 @@ checksum = "e04d7f318608d35d4b61ddd75cbdaee86b023ebe2bd5a66ee0915f0bf93095a9"
- dependencies = [
-  "hermit-abi 0.5.0",
-  "libc",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
- ]
- 
- [[package]]
-@@ -3852,7 +3851,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "fc2f4eb4bc735547cfed7c0a4922cbd04a4655978c09b54f1f7b228750664c34"
- dependencies = [
-  "cfg-if 1.0.0",
-- "windows-targets 0.48.5",
-+ "windows-targets 0.52.6",
- ]
- 
- [[package]]
-@@ -4364,6 +4363,17 @@ dependencies = [
+@@ -4381,6 +4380,17 @@ dependencies = [
   "memoffset 0.6.5",
  ]
  
@@ -193,97 +97,16 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  [[package]]
  name = "nix"
  version = "0.29.0"
-@@ -5594,7 +5604,7 @@ dependencies = [
-  "once_cell",
-  "socket2",
-  "tracing",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
- ]
- 
- [[package]]
-@@ -6082,7 +6092,7 @@ dependencies = [
-  "errno",
-  "libc",
-  "linux-raw-sys 0.4.15",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
- ]
- 
- [[package]]
-@@ -6095,7 +6105,7 @@ dependencies = [
-  "errno",
-  "libc",
-  "linux-raw-sys 0.9.4",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
- ]
- 
- [[package]]
-@@ -6170,7 +6180,7 @@ dependencies = [
-  "security-framework",
-  "security-framework-sys",
-  "webpki-root-certs",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
- ]
- 
- [[package]]
-@@ -6829,7 +6839,7 @@ dependencies = [
-  "cfg-if 1.0.0",
-  "libc",
-  "psm",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
- ]
- 
- [[package]]
-@@ -7047,7 +7057,7 @@ dependencies = [
-  "fd-lock",
-  "io-lifetimes",
-  "rustix 0.38.44",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
-  "winx",
- ]
- 
-@@ -7090,7 +7100,7 @@ dependencies = [
-  "getrandom 0.3.2",
-  "once_cell",
-  "rustix 1.0.7",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
- ]
- 
- [[package]]
-@@ -7494,7 +7504,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "69fff37da548239c3bf9e64a12193d261e8b22b660991c6fd2df057c168f435f"
- dependencies = [
-  "cc",
-- "windows-targets 0.48.5",
-+ "windows-targets 0.52.6",
- ]
- 
- [[package]]
-@@ -9124,7 +9134,7 @@ dependencies = [
-  "js-sys",
-  "khronos-egl",
-  "libc",
-- "libloading 0.7.4",
-+ "libloading 0.8.6",
-  "log",
-  "metal",
-  "naga",
-@@ -9247,7 +9257,7 @@ version = "0.1.9"
+@@ -7578,7 +7588,7 @@ version = "1.6.3"
  source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "cf221c93e13a30d793f7645a0e7762c55d169dbb0a49671918a2319d289b10bb"
+ checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
  dependencies = [
-- "windows-sys 0.48.0",
-+ "windows-sys 0.59.0",
+- "cfg-if 1.0.0",
++ "cfg-if 0.1.10",
+  "rand 0.8.5",
+  "static_assertions",
  ]
- 
- [[package]]
-@@ -9336,28 +9346,6 @@ dependencies = [
+@@ -9363,28 +9373,6 @@ dependencies = [
   "windows-targets 0.52.6",
  ]
  
@@ -312,7 +135,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  [[package]]
  name = "windows-core"
  version = "0.51.1"
-@@ -9403,16 +9391,6 @@ dependencies = [
+@@ -9430,16 +9418,6 @@ dependencies = [
   "windows-strings 0.4.0",
  ]
  
@@ -329,7 +152,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  [[package]]
  name = "windows-implement"
  version = "0.58.0"
-@@ -9463,16 +9441,6 @@ version = "0.1.1"
+@@ -9490,16 +9468,6 @@ version = "0.1.1"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "76840935b766e1b0a05c0066835fb9ec80071d4c09a16f6bd5f7e655e3c14c38"
  
@@ -346,15 +169,6 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  [[package]]
  name = "windows-result"
  version = "0.1.2"
-@@ -9829,7 +9797,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "3f3fd376f71958b862e7afb20cfe5a22830e1963462f3a17f49d82a6c1d1f42d"
- dependencies = [
-  "bitflags 2.9.0",
-- "windows-sys 0.52.0",
-+ "windows-sys 0.59.0",
- ]
- 
- [[package]]
 --- cargo-crates/gilrs-0.10.2/examples/ev.rs.orig	1970-01-01 00:00:00 UTC
 +++ cargo-crates/gilrs-0.10.2/examples/ev.rs
 @@ -9,6 +9,8 @@ use std::process;
