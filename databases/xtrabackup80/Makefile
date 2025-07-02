@@ -1,7 +1,7 @@
 PORTNAME=	xtrabackup80
 PORTVERSION=	8.0.35
 DISTVERSIONSUFFIX=	-30
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	databases
 MASTER_SITES=	https://downloads.percona.com/downloads/Percona-XtraBackup-8.0/Percona-XtraBackup-8.0.35-30/source/tarball/:percona \
 		SF/boost/boost/${BOOST_VERSION}:boost
