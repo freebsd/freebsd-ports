@@ -2,15 +2,10 @@ bin/enchant-2
 bin/enchant-lsmod-2
 include/enchant-2/enchant++.h
 include/enchant-2/enchant.h
-%%ASPELL%%lib/enchant-2/enchant_aspell.a
 %%ASPELL%%lib/enchant-2/enchant_aspell.so
-%%HSPELL%%lib/enchant-2/enchant_hspell.a
 %%HSPELL%%lib/enchant-2/enchant_hspell.so
-%%HUNSPELL%%lib/enchant-2/enchant_hunspell.a
 %%HUNSPELL%%lib/enchant-2/enchant_hunspell.so
-%%NUSPELL%%lib/enchant-2/enchant_nuspell.a
 %%NUSPELL%%lib/enchant-2/enchant_nuspell.so
-%%ZEMBEREK%%lib/enchant-2/enchant_zemberek.a
 %%ZEMBEREK%%lib/enchant-2/enchant_zemberek.so
 lib/libenchant-2.a
 lib/libenchant-2.so

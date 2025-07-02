@@ -1,5 +1,5 @@
 PORTNAME=	enchant
-DISTVERSION=	2.8.2
+DISTVERSION=	2.8.10
 CATEGORIES=	textproc gnome
 MASTER_SITES=	https://github.com/rrthomas/${PORTNAME}/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	2
@@ -54,9 +54,6 @@ ZEMBEREK_CONFIGURE_WITH=	zemberek
 PLIST_SUB+=	LIBVERSION="${PORTVERSION}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|MKDIRPROG-mkdir|MKDIRPROG-mkdir -p|g' \
-		${WRKSRC}/install-sh
-
 	@${REINPLACE_CMD} -e 's|groff -mandoc|mandoc -mdoc|' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/lib/Makefile.in
