@@ -1,5 +1,5 @@
 PORTNAME=	ibus-table-chinese
-PORTVERSION=	1.8.12
+PORTVERSION=	1.8.13
 CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org
