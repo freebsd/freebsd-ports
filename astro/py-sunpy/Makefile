@@ -1,6 +1,5 @@
 PORTNAME=	sunpy
-DISTVERSION=	6.1.1
-PORTREVISION=	1
+DISTVERSION=	7.0.0
 CATEGORIES=	astro
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,9 +22,11 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parfive>=0:ftp/py-parfive@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=0:databases/py-sqlalchemy14@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.32.0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fsspec>=2023.6.0:filesystems/py-fsspec@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
