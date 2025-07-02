@@ -1,0 +1,27 @@
+--- configure.ac.orig	2024-09-10 16:10:06 UTC
++++ configure.ac
+@@ -55,6 +55,7 @@ AH_BOTTOM([
+ 
+ #include <string.h>
+ 
++#include <ext/php_config.h>
+ #endif /* PHP_CONFIG_H */
+ ])
+ 
+@@ -249,7 +250,6 @@ AS_VAR_APPEND([CPPFLAGS], [" -D_GNU_SOURCE"])
+ dnl require extensions to C and POSIX.
+ AS_VAR_APPEND([CPPFLAGS], [" -D_GNU_SOURCE"])
+ 
+-PTHREADS_CHECK
+ PHP_HELP_SEPARATOR([SAPI modules:])
+ PHP_SHLIB_SUFFIX_NAMES
+ PHP_BUILD_PROGRAM
+@@ -1368,7 +1368,7 @@ EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=$(eval echo "$PHP_CO
+ EXPANDED_DATADIR=$datadir
+ EXPANDED_PHP_CONFIG_FILE_PATH=$(eval echo "$PHP_CONFIG_FILE_PATH")
+ EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=$(eval echo "$PHP_CONFIG_FILE_SCAN_DIR")
+-INCLUDE_PATH=.:$EXPANDED_PEAR_INSTALLDIR
++INCLUDE_PATH=.:${prefix}/share/pear
+ 
+ exec_prefix=$old_exec_prefix
+ libdir=$old_libdir

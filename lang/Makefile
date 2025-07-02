@@ -278,6 +278,8 @@
     SUBDIR += php83-extensions
     SUBDIR += php84
     SUBDIR += php84-extensions
+    SUBDIR += php85
+    SUBDIR += php85-extensions
     SUBDIR += picoc
     SUBDIR += picolisp
     SUBDIR += pkl

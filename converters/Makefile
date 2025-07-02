@@ -147,6 +147,8 @@
     SUBDIR += php83-mbstring
     SUBDIR += php84-iconv
     SUBDIR += php84-mbstring
+    SUBDIR += php85-iconv
+    SUBDIR += php85-mbstring
     SUBDIR += psiconv
     SUBDIR += py-bencode.py
     SUBDIR += py-bencoder

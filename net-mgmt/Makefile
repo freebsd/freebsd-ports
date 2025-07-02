@@ -303,6 +303,7 @@
     SUBDIR += php82-snmp
     SUBDIR += php83-snmp
     SUBDIR += php84-snmp
+    SUBDIR += php85-snmp
     SUBDIR += phpfpm_exporter
     SUBDIR += phpipam
     SUBDIR += ping_exporter

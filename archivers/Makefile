@@ -175,6 +175,10 @@
     SUBDIR += php84-phar
     SUBDIR += php84-zip
     SUBDIR += php84-zlib
+    SUBDIR += php85-bz2
+    SUBDIR += php85-phar
+    SUBDIR += php85-zip
+    SUBDIR += php85-zlib
     SUBDIR += pigz
     SUBDIR += pixz
     SUBDIR += plakar
