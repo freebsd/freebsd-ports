@@ -11,7 +11,8 @@ WWW=		https://www.openssl.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-#EXPIRATION_DATE=	2025-03-14
+DEPRECECATED=		End-of-Life, will be removed when new vulnerabilities are reported or at end of quarter. Upgrade to security/openssl35 latest LTS.
+EXPIRATION_DATE=	2025-03-14
 
 CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3[2345] openssl*-quictls
 
