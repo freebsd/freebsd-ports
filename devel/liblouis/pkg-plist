@@ -182,6 +182,12 @@
 %%DATADIR%%/tables/gu.tbl
 %%DATADIR%%/tables/haw-us-g1.ctb
 %%DATADIR%%/tables/hbo.utb
+ %%DATADIR%%/tables/hbo-cantillated-rules.uti
+%%DATADIR%%/tables/hbo-cantillated.utb
+%%DATADIR%%/tables/hbo-common-rules.uti
+%%DATADIR%%/tables/hbo-ihbc-rules.uti
+%%DATADIR%%/tables/hbo-slim-rules.uti
+%%DATADIR%%/tables/hbo-slim.utb
 %%DATADIR%%/tables/he-IL-comp8.utb
 %%DATADIR%%/tables/he-IL.utb
 %%DATADIR%%/tables/he-common-consonants.uti
@@ -266,10 +272,9 @@
 %%DATADIR%%/tables/lo-g1.utb
 %%DATADIR%%/tables/loweredDigits6Dots.uti
 %%DATADIR%%/tables/loweredDigits8Dots.uti
-%%DATADIR%%/tables/lt-6dot.tbl
 %%DATADIR%%/tables/lt-6dot.utb
+%%DATADIR%%/tables/lt-8dot.utb
 %%DATADIR%%/tables/lt.ctb
-%%DATADIR%%/tables/lt.tbl
 %%DATADIR%%/tables/lv.tbl
 %%DATADIR%%/tables/malayalam.cti
 %%DATADIR%%/tables/mao-nz-g1.ctb
@@ -307,6 +312,7 @@
 %%DATADIR%%/tables/no-no-braillo-047-01.dis
 %%DATADIR%%/tables/no-no-chardefs6.uti
 %%DATADIR%%/tables/no-no-comp8.ctb
+%%DATADIR%%/tables/no-no-cyrillic6dot.uti
 %%DATADIR%%/tables/no-no.dis
 %%DATADIR%%/tables/no-no-g0.utb
 %%DATADIR%%/tables/no-no-g1.ctb
@@ -334,12 +340,13 @@
 %%DATADIR%%/tables/pt-pt-g2.ctb
 %%DATADIR%%/tables/pt.tbl
 %%DATADIR%%/tables/pu-in-g1.utb
+%%DATADIR%%/tables/quotation-marks.uti
 %%DATADIR%%/tables/ro.ctb
 %%DATADIR%%/tables/ro.tbl
+%%DATADIR%%/tables/ru-comp6.utb
+%%DATADIR%%/tables/ru-comp8.utb
 %%DATADIR%%/tables/ro-g0.utb
 %%DATADIR%%/tables/ru-brf.dis
-%%DATADIR%%/tables/ru-compbrl.ctb
-%%DATADIR%%/tables/ru.ctb
 %%DATADIR%%/tables/ru-letters.dis
 %%DATADIR%%/tables/ru-litbrl.ctb
 %%DATADIR%%/tables/ru-litbrl-detailed.utb
@@ -392,6 +399,8 @@
 %%DATADIR%%/tables/th-comp8-backward.utb
 %%DATADIR%%/tables/th-g0.utb
 %%DATADIR%%/tables/th-g1.utb
+%%DATADIR%%/tables/th-g1.uti
+%%DATADIR%%/tables/th-g2.ctb
 %%DATADIR%%/tables/tr.ctb
 %%DATADIR%%/tables/tr-g1.ctb
 %%DATADIR%%/tables/tr-g2.ctb
@@ -463,7 +472,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.20
-lib/liblouis.so.20.0.21
+lib/liblouis.so.20.0.22
 share/man/man1/lou_allround.1.gz
 share/man/man1/lou_checkhyphens.1.gz
 share/man/man1/lou_checktable.1.gz
