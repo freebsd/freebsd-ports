@@ -1191,6 +1191,7 @@ share/locale/pa/LC_MESSAGES/kcmkwincompositing_x11.mo
 share/locale/pa/LC_MESSAGES/kcmkwinscreenedges_x11.mo
 share/locale/pa/LC_MESSAGES/kcmkwm_x11.mo
 share/locale/pa/LC_MESSAGES/kwin_x11.mo
+share/locale/pl/LC_MESSAGES/kcm_animations_x11.mo
 share/locale/pl/LC_MESSAGES/kcm_kwin_effects_x11.mo
 share/locale/pl/LC_MESSAGES/kcm_kwin_scripts_x11.mo
 share/locale/pl/LC_MESSAGES/kcm_kwin_virtualdesktops_x11.mo
@@ -1236,6 +1237,7 @@ share/locale/ro/LC_MESSAGES/kcmkwincompositing_x11.mo
 share/locale/ro/LC_MESSAGES/kcmkwinscreenedges_x11.mo
 share/locale/ro/LC_MESSAGES/kcmkwm_x11.mo
 share/locale/ro/LC_MESSAGES/kwin_x11.mo
+share/locale/ru/LC_MESSAGES/kcm_animations_x11.mo
 share/locale/ru/LC_MESSAGES/kcm_kwin_effects_x11.mo
 share/locale/ru/LC_MESSAGES/kcm_kwin_scripts_x11.mo
 share/locale/ru/LC_MESSAGES/kcm_kwin_virtualdesktops_x11.mo
