@@ -1,6 +1,5 @@
 PORTNAME=	gnome-terminal
-DISTVERSION=	3.54.5
-PORTREVISION=	2
+DISTVERSION=	3.56.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -9,20 +8,21 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Terminal component for the GNOME Desktop
 WWW=		https://gitlab.gnome.org/GNOME/gnome-terminal
 
-LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GFDL GPLv3+
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
+LICENSE_FILE_GFDL=	${WRKSRC}/COPYING.GFDL
 
 BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		itstool:textproc/itstool
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
-		libhandy-1.so:x11-toolkits/libhandy \
+LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy \
 		libuuid.so:misc/libuuid
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USES=		cpe gettext gnome localbase meson pkgconfig python \
+USES=		cpe gettext-tools gnome localbase meson pkgconfig python \
 		tar:xz vala:build xorg
-USE_GNOME=	cairo dconf gdkpixbuf gtk30 vte3 libxslt:build
+USE_GNOME=	cairo gtk30 vte3 libxslt:build
 USE_XORG=	x11
 CPE_VENDOR=	gnome
 
