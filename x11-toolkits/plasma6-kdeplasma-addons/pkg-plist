@@ -1502,6 +1502,7 @@ share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/ru/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/ru/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/ru/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_katesessions.mo
