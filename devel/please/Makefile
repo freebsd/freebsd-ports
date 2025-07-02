@@ -1,6 +1,6 @@
 PORTNAME=	please
 DISTVERSIONPREFIX=	v
-DISTVERSION=	17.17.0
+DISTVERSION=	17.18.0
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/thought-machine/please/${DISTVERSIONFULL}/
 DISTFILES=	go.mod
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		git:devel/git \
 		protoc:devel/protobuf
 
-USES=		go:1.23,modules
+USES=		go:modules
 GO_MODULE=	github.com/thought-machine/please
 GO_TARGET=	src/please.go:please \
 		tools/build_langserver/langserver_main.go:build_langserver \
