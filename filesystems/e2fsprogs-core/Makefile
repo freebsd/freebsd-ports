@@ -1,6 +1,6 @@
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.47.2
-PORTREVISION?=	2	# NOTE: when bumping PORTREVISION, also bump ../e2fsprogs/Makefile!
+PORTREVISION?=	3	# NOTE: when bumping PORTREVISION, also bump ../e2fsprogs/Makefile!
 CATEGORIES?=	filesystems sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -37,11 +37,11 @@ CONFIGURE_ARGS?=--disable-fsck \
 		--with-root-prefix='${PREFIX}' \
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib -Wl,--rpath -Wl,${LOCALBASE}/lib/e2fsprogs'
 CONFIGURE_ENV?=	LIBS='-Wl,--as-needed ${LIBS} -lexecinfo -lelf'
-CPPFLAGS+=	${_FUSEFS_CFLAGS} -I${WRKSRC}/lib -I${LOCALBASE}/include
-CFLAGS+=	-Wno-unused-command-line-argument # -D_FILE_OFFSET_BITS=64 # the latter for fuse-libs
 MAKE_ARGS+=	pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
 
+CPPFLAGS+=	${_FUSEFS_CFLAGS} -I${WRKSRC}/lib -I${LOCALBASE}/include
+CFLAGS+=	-Wno-unused-command-line-argument # -D_FILE_OFFSET_BITS=64 # the latter for fuse-libs
 PIE_UNSAFE=	yes
 
 PORTSCOUT=	ignore:1	# cannot handle the version in the directory
@@ -51,43 +51,44 @@ CPPFLAGS+=	-D__GNUC_PREREQ\(a,b\)=1
 
 INSTALL_TARGET=		install install-libs
 
-OPTIONS_DEFINE=		DOCS NLS FUSEFS PARALLELTESTS SLOWTESTS BASHTESTS LIBUNWIND
+PORTDOCS=	NOTICE README RELEASE-NOTES SUBMITTING-PATCHES
+
+OPTIONS_DEFINE=		DOCS NLS BASHTESTS FUSEFS PARALLELTESTS SLOWTESTS LIBUNWIND
+OPTIONS_DEFAULT=		FUSEFS ALLTESTS
+OPTIONS_SINGLE=			SELFTEST
+OPTIONS_SINGLE_SELFTEST=	NOTESTS SMALLTESTS ALLTESTS
 OPTIONS_EXCLUDE+=	EXAMPLES
 OPTIONS_SUB=		yes
 
-OPTIONS_SINGLE=			SELFTEST
-OPTIONS_SINGLE_SELFTEST=	NOTESTS SMALLTESTS ALLTESTS
-OPTIONS_DEFAULT=		SMALLTESTS
-FUSEFS_DESC=	Build user-land ext2/3/4 FUSE module (slow!)
-SELFTEST_DESC=	Choose which set of self-tests to run
-NOTESTS_DESC=	Do not run any self-tests (Tier-1, DISCOURAGED)
-SMALLTESTS_DESC=Run tests that need <500 MB disk space (DEFAULT)
 ALLTESTS_DESC=	Run most self-tests (needs more RAM/disk space)
-PARALLELTESTS_DESC=	Parallelize self-tests (needs more disk space)
-SLOWTESTS_DESC=	Enable slow tests that are skipped by default
 BASHTESTS_DESC=	Enable tests that require the GNU bash shell
+FUSEFS_DESC=	Build user-land ext2/3/4 FUSE module (slow!)
 LIBUNWIND_DESC=	Backtrace with libunwind (do set WITH_DEBUG_PORTS+=${PKGORIGIN}!)
-
-FUSEFS_CONFIGURE_ENABLE=	fuse2fs
-FUSEFS_USES=		fuse:3
-# we can't use FUSEFS_CFLAGS, see below for workaround
-FUSEFS_LIBS=		-Wl,--as-needed -lfuse3 -lpthread
-FUSEFS_LDFLAGS=		-L${LOCALBASE}/lib
-
-NLS_USES=		gettext iconv:build
+NOTESTS_DESC=	Do not run any self-tests (Tier-1, DISCOURAGED)
+PARALLELTESTS_DESC=	Parallelize self-tests (needs more disk space)
+SELFTEST_DESC=	Choose which set of self-tests to run
+SLOWTESTS_DESC=	Enable slow tests that are skipped by default
+SMALLTESTS_DESC=Run tests that need <500 MB disk space (DEFAULT)
 
 BASHTESTS_BUILD_DEPENDS=	${BASH_CMD}:shells/bash
 BASH_CMD=	${LOCALBASE}/bin/bash
+
+FUSEFS_USES=		fuse:3
+FUSEFS_CONFIGURE_ENABLE=	fuse2fs
+# we can't use FUSEFS_CFLAGS, see below for workaround
+FUSEFS_LDFLAGS=		-L${LOCALBASE}/lib
+FUSEFS_LIBS=		-Wl,--as-needed -lfuse3 -lpthread
 
 LIB_DEPENDS+=	libblkid.so:filesystems/libblkid \
 		libuuid.so:misc/libuuid
 
 LIBUNWIND_LIB_DEPENDS=	libunwind.so:devel/libunwind
-LIBUNWIND_LIBS+=	-L${LOCALBASE}/lib -lunwind
 LIBUNWIND_LDFLAGS+=	-rdynamic
+LIBUNWIND_LIBS+=	-L${LOCALBASE}/lib -lunwind
 LIBUNWIND_EXTRA_PATCHES=${FILESDIR}/extrapatch-e2fsck_sigcatcher.c
 
-PORTDOCS=	NOTICE README RELEASE-NOTES SUBMITTING-PATCHES
+NLS_USES=		gettext iconv:build
+
 .endif
 
 # even under DEVELOPER, no REINPLACE_CMD warnings desired
