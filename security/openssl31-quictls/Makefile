@@ -10,10 +10,13 @@ MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	QUIC capable fork of OpenSSL
 WWW=		https://www.github.com/quictls/openssl
 
+DEPRECATED=		End-of-Life, please switch to security/quictls or OpenSSL 3.5
+EXPIRATION_DATE=	2025-03-14
+
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3* openssl-quictls
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3* openssl-quictls openssl33-quictls
 
 BROKEN_i386=	ld: error: undefined symbol: __atomic_is_lock_free
 
