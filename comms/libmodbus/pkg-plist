@@ -8,6 +8,8 @@ lib/libmodbus.so.5.1.0
 libdata/pkgconfig/libmodbus.pc
 %%MANPAGES%%share/man/man3/modbus_close.3.gz
 %%MANPAGES%%share/man/man3/modbus_connect.3.gz
+%%MANPAGES%%share/man/man3/modbus_disable_quirks.3.gz
+%%MANPAGES%%share/man/man3/modbus_enable_quirks.3.gz
 %%MANPAGES%%share/man/man3/modbus_flush.3.gz
 %%MANPAGES%%share/man/man3/modbus_free.3.gz
 %%MANPAGES%%share/man/man3/modbus_get_byte_from_bits.3.gz
@@ -72,6 +74,5 @@ libdata/pkgconfig/libmodbus.pc
 %%MANPAGES%%share/man/man3/modbus_write_registers.3.gz
 %%MANPAGES%%share/man/man7/libmodbus.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/MIGRATION
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
