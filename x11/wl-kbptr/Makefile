@@ -1,6 +1,6 @@
 PORTNAME=	wl-kbptr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
+DISTVERSION=	0.4.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,7 +24,8 @@ USES=		compiler:c11 gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo
 GH_ACCOUNT=	moverest
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/applications/${PORTNAME}.desktop
 
 OPTIONS_DEFINE=	OPENCV
 OPTIONS_SLAVE=	${${FLAVOR}_OPTIONS_SLAVE}
