@@ -1,3 +1,52 @@
+  <vuln vid="d607b12c-5821-11f0-ab92-f02f7497ecda">
+    <topic>php -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php81</name>
+	<range><lt>8.1.33</lt></range>
+      </package>
+      <package>
+	<name>php82</name>
+	<range><lt>8.2.29</lt></range>
+      </package>
+      <package>
+	<name>php83</name>
+	<range><lt>8.3.23</lt></range>
+      </package>
+      <package>
+	<name>php84</name>
+	<range><lt>8.4.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>php.net reports:</p>
+    <blockquote cite="https://www.php.net/ChangeLog-8.php">
+    <ul>
+      <li>
+      CVE-2025-1735: pgsql extension does not check for errors during escaping
+      </li>
+      <li>
+      CVE-2025-6491: NULL Pointer Dereference in PHP SOAP Extension via Large XML Namespace Prefix
+      </li>
+      <li>
+      CVE-2025-1220: Null byte termination in hostnames
+      </li>
+    </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-1735</cvename>
+      <cvename>CVE-2025-6491</cvename>
+      <cvename>CVE-2025-1220</cvename>
+    </references>
+    <dates>
+      <discovery>2025-02-27</discovery>
+      <entry>2025-07-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bab7386a-582f-11f0-97d0-b42e991fc52e">
     <topic>Mozilla -- exploitable crash</topic>
     <affects>
