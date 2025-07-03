@@ -1,0 +1,20 @@
+Obtained from:	https://cgit.FreeBSD.org/ports/commit/?id=f08b67611f0b19c0ee8d9053ee4d22e09b03f2b1
+
+--- cargo-crates/aws-lc-sys-0.27.0/aws-lc/crypto/fipsmodule/cpucap/cpu_ppc64le.c.orig	2024-07-03 21:50:24 UTC
++++ cargo-crates/aws-lc-sys-0.27.0/aws-lc/crypto/fipsmodule/cpucap/cpu_ppc64le.c
+@@ -69,10 +69,15 @@ void OPENSSL_cpuid_setup(void) {
+ 
+ void OPENSSL_cpuid_setup(void) {
+ #if defined(AT_HWCAP2)
++#if defined(__linux__)
+   OPENSSL_ppc64le_hwcap2 = getauxval(AT_HWCAP2);
++#elif defined(__FreeBSD__)
++  elf_aux_info(AT_HWCAP2, &OPENSSL_ppc64le_hwcap2, sizeof(OPENSSL_ppc64le_hwcap2));
++#endif
+ #else
+   OPENSSL_ppc64le_hwcap2 = 0;
+ #endif
++
+   OPENSSL_cpucap_initialized = 1;
+ 
+   // OPENSSL_ppccap is a 64-bit hex string which may start with "0x".
