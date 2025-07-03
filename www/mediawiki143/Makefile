@@ -1,7 +1,8 @@
 PORTNAME=	mediawiki
-PORTVERSION=	1.43.1
+PORTVERSION=	1.43.3
 CATEGORIES=	www
-MASTER_SITES=	https://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
+MASTER_SITES=	https://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/ \
+		LOCAL/wen
 PKGNAMESUFFIX=	143${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	wen@FreeBSD.org
