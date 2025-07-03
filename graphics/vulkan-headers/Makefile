@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.320
 CATEGORIES=	graphics
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Headers for the Vulkan graphics API
 WWW=		https://github.com/KhronosGroup/Vulkan-Headers
 
