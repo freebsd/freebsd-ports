@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2025.3
 CATEGORIES=	graphics devel
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GLSL/HLSL to SPIR-V shader compiler
 WWW=		https://github.com/google/shaderc
 
