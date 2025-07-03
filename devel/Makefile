@@ -596,6 +596,7 @@
     SUBDIR += deheader
     SUBDIR += delta
     SUBDIR += delve
+    SUBDIR += demumble
     SUBDIR += deployer
     SUBDIR += derelict-sdl2
     SUBDIR += derelict-util
