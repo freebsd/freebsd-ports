@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-datatypes
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.4
 PORTEPOCH=	1
 CATEGORIES=	math
 
@@ -12,8 +12,6 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
 USES=		octave
-# \
-#		compiler:nestedfct # A way to get g++ which understands -fconcepts.
 USE_GITHUB=	yes
 GH_ACCOUNT=	pr0m1th3as
 GH_PROJECT=	datatypes
