@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.319
 CATEGORIES=	graphics
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Validation layers for the Vulkan graphics API
 WWW=		https://github.com/KhronosGroup/Vulkan-ValidationLayers
 
