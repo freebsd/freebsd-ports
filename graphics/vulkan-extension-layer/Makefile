@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.313
 CATEGORIES=	graphics
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Layer providing Vulkan features when native support is unavailable
 WWW=		https://github.com/KhronosGroup/Vulkan-ExtensionLayer
 
