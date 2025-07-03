@@ -1,3 +1,3 @@
-TIMESTAMP = 1701813827
-SHA256 (haproxy-cli-0.6.1.tar.gz) = 869f8e5c21db8db9a43cc50020d50e4697d2a9141669bc161289e0163d412319
-SIZE (haproxy-cli-0.6.1.tar.gz) = 22513
+TIMESTAMP = 1751461903
+SHA256 (haproxy_cli-0.7.2.tar.gz) = c5610bbc46e457a091e26122b1dd62bacad22dc3f70ce6043e5a4fe4abebdd04
+SIZE (haproxy_cli-0.7.2.tar.gz) = 31242
