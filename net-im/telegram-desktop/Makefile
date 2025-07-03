@@ -1,6 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	5.15.4
-PORTREVISION=	1
+DISTVERSION=	5.16.1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -68,9 +67,7 @@ CMAKE_ARGS=	-DTDESKTOP_API_ID=${TELEGRAM_API_ID} -DTDESKTOP_API_HASH=${TELEGRAM_
 # The order of the variables is important here due to complex combination validation 
 CMAKE_ON=	DESKTOP_APP_USE_PACKAGED \
 		DESKTOP_APP_DISABLE_CRASH_REPORTS \
-		DESKTOP_APP_DISABLE_JEMALLOC \
-		DESKTOP_APP_DISABLE_QT_PLUGINS \
-		DESKTOP_APP_DISABLE_SCUDO
+		DESKTOP_APP_DISABLE_QT_PLUGINS
 
 # Since cmake 3.25.0, BSDs are no longer recognised as Linux (in this port).
 CMAKE_ARGS+=	-DLINUX=true
@@ -94,14 +91,11 @@ SYSTEM_FONTS_DESC=	Use system fonts instead of bundled patched ones
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-ALSA_CMAKE_BOOL_OFF=	LIBTGVOIP_DISABLE_ALSA
-PULSEAUDIO_CMAKE_BOOL_OFF=	LIBTGVOIP_DISABLE_PULSEAUDIO
 SYSTEM_FONTS_CMAKE_BOOL_OFF=	DESKTOP_APP_USE_PACKAGED_FONTS
-WAYLAND_CMAKE_BOOL_OFF=	DESKTOP_APP_DISABLE_WAYLAND_INTEGRATION
 WAYLAND_USE=		qt=wayland
 X11_CMAKE_BOOL_OFF=	DESKTOP_APP_DISABLE_X11_INTEGRATION
 X11_USES=		xorg
-X11_USE=		xorg=x11,xcb,xcomposite,xdamage,xext,xfixes,xrandr,xrender,xtst
+X11_USE=		xorg=x11,xcb,xcomposite,xdamage,xext,xfixes,xrandr,xtst
 X11_LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms \
 			libxkbcommon.so:x11/libxkbcommon
 
