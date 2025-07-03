@@ -182,7 +182,7 @@
 %%DATADIR%%/tables/gu.tbl
 %%DATADIR%%/tables/haw-us-g1.ctb
 %%DATADIR%%/tables/hbo.utb
- %%DATADIR%%/tables/hbo-cantillated-rules.uti
+%%DATADIR%%/tables/hbo-cantillated-rules.uti
 %%DATADIR%%/tables/hbo-cantillated.utb
 %%DATADIR%%/tables/hbo-common-rules.uti
 %%DATADIR%%/tables/hbo-ihbc-rules.uti
