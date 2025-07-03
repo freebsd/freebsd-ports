@@ -10,6 +10,8 @@ WWW=		https://github.com/waycrate/xdg-desktop-portal-luminous
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		https://github.com/waycrate/xdg-desktop-portal-luminous/issues/86
+
 LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	xdg-desktop-portal>0:deskutils/xdg-desktop-portal \
