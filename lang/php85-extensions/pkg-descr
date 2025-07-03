@@ -1,4 +1,4 @@
-This is a "meta-port" to install the extensions for PHP 8.0
+This is a "meta-port" to install the extensions for PHP 8.5
 
 Defaults to:
 ctype, dom, filter, iconv, json, opcache, pdo, pdo_sqlite, phar, posix,
