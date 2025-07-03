@@ -1,7 +1,6 @@
 #!/bin/sh
 
 set -eu
-set -o pipefail
 
 # the 3 implementations of readelf we can use have different output, but they all have a similarity
 # for the .gnu.version_d section they all have the symbol version in last element of their output
