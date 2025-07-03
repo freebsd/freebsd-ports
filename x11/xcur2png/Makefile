@@ -2,7 +2,7 @@ PORTNAME=	xcur2png
 DISTVERSION=	0.7.1
 CATEGORIES=	x11
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert X cursors to PNG images
 WWW=		https://github.com/eworm-de/xcur2png
 
