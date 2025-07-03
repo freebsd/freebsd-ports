@@ -4,7 +4,7 @@ DISTVERSION=	0.8.0
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very light linux rendering backend library
 WWW=		https://github.com/hyprwm/aquamarine
 
