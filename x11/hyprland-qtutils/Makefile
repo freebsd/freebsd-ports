@@ -4,7 +4,7 @@ DISTVERSION=	0.1.4
 PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hyprland QT/qml utility apps
 WWW=		https://github.com/hyprwm/hyprland-qtutils
 
