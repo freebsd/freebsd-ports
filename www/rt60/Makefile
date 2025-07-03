@@ -1,10 +1,11 @@
 PORTNAME=	rt
 DISTVERSION=	6.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	60
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	einar@isnic.is
 COMMENT=	Industrial-grade ticketing system written in Perl
 WWW=		https://www.bestpractical.com/rt/
 
