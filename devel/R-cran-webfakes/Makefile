@@ -1,5 +1,5 @@
 PORTNAME=	webfakes
-DISTVERSION=	1.3.2
+DISTVERSION=	1.4.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -25,6 +25,8 @@ TEST_DEPENDS=	R-cran-brotli>0:archivers/R-cran-brotli \
 		R-cran-xml2>0:textproc/R-cran-xml2 \
 		R-cran-zip>=2.3.0:archivers/R-cran-zip
 
-USES=		cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles shebangfix
+
+SHEBANG_FILES=	inst/cert/localhost/generate.sh
 
 .include <bsd.port.mk>
