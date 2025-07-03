@@ -1,14 +1,5 @@
 --- app/main.ts.orig	2023-10-19 19:29:53 UTC
 +++ app/main.ts
-@@ -211,7 +211,7 @@ const DISABLE_GPU =
- };
- 
- const DISABLE_GPU =
--  OS.isLinux() && !process.argv.some(arg => arg === '--enable-gpu');
-+  (OS.isLinux() || OS.isFreeBSD()) && !process.argv.some(arg => arg === '--enable-gpu');
- 
- const DISABLE_IPV6 = process.argv.some(arg => arg === '--disable-ipv6');
- const FORCE_ENABLE_CRASH_REPORTS = process.argv.some(
 @@ -628,7 +628,7 @@ if (OS.isWindows()) {
  
  if (OS.isWindows()) {

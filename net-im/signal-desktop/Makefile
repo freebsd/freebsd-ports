@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.58.0
-PORTREVISION=	3
+DISTVERSION=	7.60.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://registry.npmjs.org/@esbuild/freebsd-arm64/-/:esbuildarm64 \

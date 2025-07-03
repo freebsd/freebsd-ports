@@ -108,6 +108,8 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-%%NODE_ARCH%%/@signalapp+libsignal-client.node
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/@signalapp/ringrtc/build/freebsd/libringrtc-%%NODE_ARCH%%.node
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/@signalapp/sqlcipher/prebuilds/freebsd-%%SHARP_ARCH%%/node_sqlcipher.node
+%%DATADIR%%/resources/org.signalapp.enable-backups.policy
+%%DATADIR%%/resources/org.signalapp.view-aep.policy
 @(,,755) %%DATADIR%%/signal-desktop
 %%DATADIR%%/snapshot_blob.bin
 %%DATADIR%%/v8_context_snapshot.bin
