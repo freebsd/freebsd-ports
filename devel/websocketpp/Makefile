@@ -1,6 +1,6 @@
 PORTNAME=	websocketpp
 PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	sigsegv@radiotube.org
