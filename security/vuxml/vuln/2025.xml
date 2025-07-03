@@ -1,3 +1,38 @@
+  <vuln vid="bab7386a-582f-11f0-97d0-b42e991fc52e">
+    <topic>Mozilla -- exploitable crash</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>140.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>115.25.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>140.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1966423">
+	  <p>A use-after-free in FontFaceSet resulted in a potentially
+	  exploitable crash.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6424</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6424</url>
+    </references>
+    <dates>
+      <discovery>2025-06-24</discovery>
+      <entry>2025-07-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5c777f88-40ff-4e1e-884b-ad63dfb9bb15">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
