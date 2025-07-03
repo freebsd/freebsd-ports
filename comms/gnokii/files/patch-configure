@@ -93,15 +93,6 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -17521,7 +17507,7 @@ fi
- $as_echo "$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" >&6; }
- if test "x$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" = xyes; then :
-    XPM_CFLAGS="$XINCL"
--                  XPM_LIBS="$XLIBS -lXpm -lX11"
-+                  XPM_LIBS="$XLIBS -lXpm -lX11 -lroken -lcrypt"
- 
- $as_echo "#define XPM 1" >>confdefs.h
- 
 @@ -17556,7 +17542,7 @@ $as_echo "$as_me: WARNING: Disabling xgn
     fi
  fi

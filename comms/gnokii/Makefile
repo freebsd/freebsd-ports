@@ -1,6 +1,6 @@
 PORTNAME=	gnokii
 PORTVERSION=	0.6.31
-PORTREVISION=	15
+PORTREVISION=	16
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
