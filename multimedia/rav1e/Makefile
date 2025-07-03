@@ -4,7 +4,7 @@ DISTVERSION=	0.8.1
 PORTREVISION?=	0
 CATEGORIES=	multimedia
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and safe AV1 encoder
 WWW=		https://github.com/xiph/rav1e
 
