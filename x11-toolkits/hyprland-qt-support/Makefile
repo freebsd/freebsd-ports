@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
 CATEGORIES=	x11-toolkits
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QML style provider for hypr* Qt apps
 WWW=		https://github.com/hyprwm/hyprland-qt-support
 
