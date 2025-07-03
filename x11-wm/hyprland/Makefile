@@ -4,7 +4,7 @@ DISTVERSION=	0.48.1
 PORTREVISION=	3
 CATEGORIES=	x11-wm wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
 WWW=		https://hyprland.org/
 
