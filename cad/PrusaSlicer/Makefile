@@ -1,7 +1,7 @@
 PORTNAME=	PrusaSlicer
 DISTVERSIONPREFIX=version_
 DISTVERSION=	2.9.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 DIST_SUBDIR=	PrusaSlicer
 
@@ -11,8 +11,6 @@ WWW=		https://www.prusa3d.com/prusaslicer/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-#BROKEN=		fails to build with Boost>=1.87
 
 BUILD_DEPENDS=	cereal>=1.3.0.10:devel/cereal \
 		cgal>=5.0.2:math/cgal \
@@ -44,9 +42,9 @@ LIB_DEPENDS+=	libbgcode_convert.so:cad/libbgcode \
 		libavcodec.so:multimedia/ffmpeg4 \
 		libharfbuzz.so:print/harfbuzz \
 		libwayland-egl.so:graphics/wayland \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
-		libsoup-2.4.so:devel/libsoup \
-		libjavascriptcoregtk-4.0.so:www/webkit2-gtk@40 \
+		libwebkit2gtk-4.1.so:www/webkit2-gtk@41 \
+		libsoup-3.0.so:devel/libsoup3 \
+		libjavascriptcoregtk-4.1.so:www/webkit2-gtk@41 \
 		libz3.so:math/z3
 
 USES=		cmake cpe desktop-file-utils eigen:3 gettext gl gnome iconv \
