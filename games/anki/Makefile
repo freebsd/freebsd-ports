@@ -1,5 +1,6 @@
 PORTNAME=	anki
 DISTVERSION=	25.02.7
+PORTREVISION=	1
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:yarncache

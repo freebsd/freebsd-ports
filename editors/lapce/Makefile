@@ -1,6 +1,7 @@
 PORTNAME=	lapce
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.3 # Cargo.lock patched: `make patch cargo-crates`
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org

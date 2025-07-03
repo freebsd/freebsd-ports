@@ -1,5 +1,6 @@
 PORTNAME=	radicle
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://distfiles.pirateparty.in/ashish/:sources \
 		LOCAL/ashish:sources

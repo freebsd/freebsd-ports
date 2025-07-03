@@ -1,7 +1,7 @@
 PORTNAME=	sonic
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.9
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc
 MASTER_SITES+=	https://clrd.ninjal.ac.jp/unidic_archive/cwj/2.1.2/:unidic
 DISTFILES+=	unidic-mecab-2.1.2_src.zip:unidic # check cargo-crates/lindera-unidic-XXX/build.rs

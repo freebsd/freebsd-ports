@@ -1,6 +1,7 @@
 PORTNAME=	xdg-desktop-portal-luminous
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.11
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	ports@FreeBSD.org

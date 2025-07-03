@@ -1,5 +1,6 @@
 PORTNAME=	bustle
 DISTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 
 MAINTAINER=	tagattie@FreeBSD.org

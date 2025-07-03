@@ -1,5 +1,6 @@
 PORTNAME=	feluda
 DISTVERSION=	1.8.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	nxjoseph@protonmail.com
