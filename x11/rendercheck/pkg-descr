@@ -1,2 +1,12 @@
-This package contains rendercheck, a simple tool I wrote to test some render
-extension conformance.
+Rendercheck is a program to test a Render extension implementation
+against separate calculations of expected output.
+
+Tests currently include:
+- Destination coordinates correctness
+- Source coordinates correctness
+- Transformed (FilterNearest) source coordinates correctness.
+- Composite with and without mask (with/without component alpha),
+  with 1x1 repeating Pictures and 10x10 Pictures.
+- Linear gradients
+- Repeating sources/masks at POT and non-POT sizes
+- Some regression tests for bugs from freedesktop.org bugzilla.

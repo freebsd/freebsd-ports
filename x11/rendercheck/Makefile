@@ -1,16 +1,17 @@
 PORTNAME=	rendercheck
-PORTVERSION=	1.5
-PORTREVISION=	1
+DISTVERSION=	1.6
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Small program for testing basic Render extension conformance
-WWW=		https://www.freedesktop.org/wiki/Software/xapps/
+WWW=		https://gitlab.freedesktop.org/xorg/test/rendercheck
 
-USES=		xorg xorg-cat:app
-USE_XORG=	xrender
+LICENSE=	GPLv2+ MIT
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USES=		tar:xz xorg xorg-cat:test,meson
+USE_XORG=	x11 xext xorgproto xrender
 
 PLIST_FILES=	bin/rendercheck share/man/man1/rendercheck.1.gz
 
