@@ -31,7 +31,7 @@
  
  case "$target_cpu" in
 -	alpha* | i?86 )
-+	alpha* | i?86 | ia64* | amd64* | aarch64 | arm* | x86_64*)
++	alpha* | i?86 | ia64* | amd64* | aarch64 | arm* | x86_64* | riscv*)
  		ac_cv_cpu_endian_ness="little"
  		;;
  		
