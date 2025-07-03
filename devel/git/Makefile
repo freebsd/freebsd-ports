@@ -1,5 +1,6 @@
 PORTNAME=	git
 DISTVERSION=	2.50.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -71,7 +72,7 @@ CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 .if ${SUBPORT} == core
 
 OPTIONS_DEFINE=	CONTRIB CURL DOCS GITWEB ICONV NLS PCRE2 PERL SEND_EMAIL \
-		SUBTREE SYSINFO
+		SUBTREE
 OPTIONS_DEFAULT=CONTRIB CURL GITWEB ICONV PCRE2 PERL SEND_EMAIL SUBTREE
 
 . if ${FLAVOR:U} == lite
@@ -93,7 +94,6 @@ GITWEB_DESC=	Install gitweb
 PCRE2_DESC=	Use Perl Compatible Regular Expressions (v2)
 SEND_EMAIL_DESC=Enable the git-send-email(1) script
 SUBTREE_DESC=	Install git-subtree
-SYSINFO_DESC=	Use libsysinfo
 
 NLS_USES=		gettext
 NLS_MAKE_ARGS_OFF=	NO_GETTEXT=yes
@@ -126,10 +126,6 @@ DOCS_DISTFILES=	${PORTNAME}-htmldocs-${DISTVERSION}${EXTRACT_SUFX}
 
 SUBTREE_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 			xmlto:textproc/xmlto
-
-SYSINFO_LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
-SYSINFO_CONFIGURE_ON=	--with-libsysinfo
-SYSINFO_LDFLAGS=	-lsysinfo
 
 .else
 
