@@ -1,6 +1,5 @@
 PORTNAME=	kget
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 PATCH_SITES=	https://invent.kde.org/network/kget/-/commit/

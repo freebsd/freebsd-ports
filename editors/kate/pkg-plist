@@ -646,6 +646,7 @@ share/locale/he/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/he/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/he/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/he/LC_MESSAGES/katefiletree.mo
+share/locale/he/LC_MESSAGES/kategdbplugin.mo
 share/locale/he/LC_MESSAGES/kategitblameplugin.mo
 share/locale/he/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/he/LC_MESSAGES/katekonsoleplugin.mo

@@ -1,3 +1,3 @@
-TIMESTAMP = 1749036252
-SHA256 (KDE/release-service/25.04.2/libkcddb-25.04.2.tar.xz) = f14258a71ce360fba948d8dc54eb6ed167d16d31f80c83bd27e6bdb79ca790d3
-SIZE (KDE/release-service/25.04.2/libkcddb-25.04.2.tar.xz) = 450184
+TIMESTAMP = 1751381210
+SHA256 (KDE/release-service/25.04.3/libkcddb-25.04.3.tar.xz) = 6dde624998ff702b85aa6ec58a160136469f625932e183ddb1845e5adb669acb
+SIZE (KDE/release-service/25.04.3/libkcddb-25.04.3.tar.xz) = 450212
