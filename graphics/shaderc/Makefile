@@ -4,7 +4,7 @@ DISTVERSION=	2025.2
 PORTREVISION=	1
 CATEGORIES=	graphics devel
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GLSL/HLSL to SPIR-V shader compiler
 WWW=		https://github.com/google/shaderc
 
