@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.12
 CATEGORIES=	x11
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hyprland cursor format, library and utilities
 WWW=		https://github.com/hyprwm/hyprcursor
 
