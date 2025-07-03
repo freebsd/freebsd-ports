@@ -4,7 +4,7 @@ DISTVERSION=	0.2.0
 PORTREVISION=	2
 CATEGORIES=	accessibility wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blue light filter on Hyprland
 WWW=		https://github.com/hyprwm/hyprsunset
 
