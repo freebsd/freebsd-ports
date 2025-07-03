@@ -1203,14 +1203,6 @@ _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 .      if !defined(_PKG_VERSION)
 _PKG_VERSION!=	${PKG_BIN} -v
 .      endif
-# XXX hack for smooth transition towards pkg 1.17
-_PKG_BEFORE_PKGEXT!= ${PKG_BIN} version -t ${_PKG_VERSION:C/-.*//g} 1.17.0
-.      if ${_PKG_BEFORE_PKGEXT} == "<"
-_PKG_TRANSITIONING_TO_NEW_EXT=	yes
-_EXPORTED_VARS+=	_PKG_TRANSITIONING_TO_NEW_EXT
-WARNING+=	"It is strongly recommended to upgrade to a newer version of pkg first"
-.      endif
-# XXX End of hack
 _PKG_STATUS!=	${PKG_VERSION} -t ${_PKG_VERSION:C/-.*//g} ${MINIMAL_PKG_VERSION}
 .      if ${_PKG_STATUS} == "<"
 IGNORE=		pkg(8) must be version ${MINIMAL_PKG_VERSION} or greater, but you have ${_PKG_VERSION}. You must upgrade the ${PKG_ORIGIN} port first
@@ -2208,20 +2200,11 @@ TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 _PLIST?=	${WRKDIR}/.PLIST
 
 # backward compatibility for users
-.    if defined(_PKG_TRANSITIONING_TO_NEW_EXT)
-.      if defined(PKG_NOCOMPRESS)
-PKG_SUFX?=	.tar
-.      else
-PKG_SUFX?=	.txz
-.      endif
-PKG_COMPRESSION_FORMAT?=	${PKG_SUFX:S/.//}
-.    else
-.      if defined(PKG_SUFX)
+.    if defined(PKG_SUFX)
 PKG_COMPRESSION_FORMAT?=	${PKG_SUFX:S/.//}
 WARNING+= "PKG_SUFX is defined, it should be replaced with PKG_COMPRESSION_FORMAT"
-.      endif
-PKG_SUFX=	.pkg
 .    endif
+PKG_SUFX=	.pkg
 .    if defined(PKG_NOCOMPRESS)
 PKG_COMPRESSION_FORMAT?=	tar
 .    else
@@ -3456,18 +3439,6 @@ _EXTRA_PACKAGE_TARGET_DEP+=	${PKGLATESTFILE}
 ${PKGLATESTFILE}: ${PKGFILE} ${PKGLATESTREPOSITORY}
 	${INSTALL} -l rs ${PKGFILE} ${PKGLATESTFILE}
 
-.        if !defined(_PKG_TRANSITIONING_TO_NEW_EXT) && ${PKG_COMPRESSION_FORMAT} == txz
-_EXTRA_PACKAGE_TARGET_DEP+=	${PKGOLDLATESTFILE} ${PKGOLDSIGFILE}
-
-${PKGOLDLATESTFILE}: ${PKGFILE} ${PKGLATESTREPOSITORY}
-	${INSTALL} -l rs ${PKGFILE} ${PKGOLDLATESTFILE}
-
-# Temporary workaround to be deleted once every supported version of FreeBSD
-# have a bootstrap which handles the pkg extension.
-
-${PKGOLDSIGFILE}: ${PKGLATESTREPOSITORY}
-	${INSTALL} -l rs pkg.pkg.sig ${PKGOLDSIGFILE}
-.        endif
 .      endif
 
 .    endif
