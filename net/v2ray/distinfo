@@ -1,5 +1,5 @@
-TIMESTAMP = 1744931376
-SHA256 (go/net_v2ray/v2fly-v2ray-core-v5.30.0_GH0/go.mod) = 796753e0435d7c6a543376baa3108fb8f5cebe27ea7f58f45b9ccaf40d57399f
-SIZE (go/net_v2ray/v2fly-v2ray-core-v5.30.0_GH0/go.mod) = 4300
-SHA256 (go/net_v2ray/v2fly-v2ray-core-v5.30.0_GH0/v2fly-v2ray-core-v5.30.0_GH0.tar.gz) = 8b10fc864289cb73e328d07b6d25b5e064d95e13fc5621ad4b5deb10137482b2
-SIZE (go/net_v2ray/v2fly-v2ray-core-v5.30.0_GH0/v2fly-v2ray-core-v5.30.0_GH0.tar.gz) = 1127235
+TIMESTAMP = 1751663392
+SHA256 (go/net_v2ray/v2fly-v2ray-core-v5.35.0_GH0/go.mod) = b862d4b218d2eeebed1c76f7c5632ac86fd734d2c811305bd1058ded8dfc49e6
+SIZE (go/net_v2ray/v2fly-v2ray-core-v5.35.0_GH0/go.mod) = 4298
+SHA256 (go/net_v2ray/v2fly-v2ray-core-v5.35.0_GH0/v2fly-v2ray-core-v5.35.0_GH0.tar.gz) = caf1e4a8bbed61748ae21c88bf6d158a9921513b8fa69fc0d7265ef371e1205e
+SIZE (go/net_v2ray/v2fly-v2ray-core-v5.35.0_GH0/v2fly-v2ray-core-v5.35.0_GH0.tar.gz) = 1126530
