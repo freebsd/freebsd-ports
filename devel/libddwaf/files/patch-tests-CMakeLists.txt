@@ -1,0 +1,11 @@
+--- tests/CMakeLists.txt.orig	2025-05-28 14:15:10 UTC
++++ tests/CMakeLists.txt
+@@ -14,7 +14,7 @@ endif()
+     target_compile_definitions(waf_test PRIVATE LIBDDWAF_VECTORIZED_TRANSFORMERS)
+ endif()
+ 
+-set(LIBDDWAF_TEST_LIBRARIES lib_gtest lib_gmock libddwaf_objects lib_yamlcpp lib_rapidjson)
++set(LIBDDWAF_TEST_LIBRARIES lib_gtest lib_gmock libddwaf_objects lib_yamlcpp)
+ if(NOT MSVC AND LIBDDWAF_TEST_COVERAGE)
+     target_compile_options(waf_test PRIVATE -ggdb --coverage)
+     list(APPEND LIBDDWAF_TEST_LIBRARIES gcov)

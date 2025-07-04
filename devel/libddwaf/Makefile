@@ -1,5 +1,5 @@
 PORTNAME=	libddwaf
-PORTVERSION=	1.24.1
+PORTVERSION=	1.25.1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -11,6 +11,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.Apache
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE.BSD3
 
+BUILD_DEPENDS=	rapidjson>=0:devel/rapidjson
 LIB_DEPENDS=	libac.so:devel/libac \
 		libinjection.so:devel/libinjection \
 		libre2.so:devel/re2 \
