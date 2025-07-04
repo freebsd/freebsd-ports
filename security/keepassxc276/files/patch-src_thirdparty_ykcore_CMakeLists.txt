@@ -1,0 +1,11 @@
+--- src/thirdparty/ykcore/CMakeLists.txt.orig	2022-03-21 22:47:20 UTC
++++ src/thirdparty/ykcore/CMakeLists.txt
+@@ -27,7 +27,7 @@ elseif(UNIX AND NOT APPLE)
+ elseif(UNIX AND NOT APPLE)
+     target_sources(ykcore PRIVATE ykcore_libusb-1.0.c)
+ 
+-    find_library(LIBUSB_LIBRARY NAMES usb-1.0)
++    find_library(LIBUSB_LIBRARY NAMES usb-1.0 usb)
+     find_path(LIBUSB_INCLUDE_DIR NAMES libusb.h PATH_SUFFIXES "libusb-1.0" "libusb")
+     if(NOT LIBUSB_LIBRARY OR NOT LIBUSB_INCLUDE_DIR)
+         message(FATAL_ERROR "libusb-1.0 dev package required, but not found")

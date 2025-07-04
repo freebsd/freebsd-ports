@@ -255,6 +255,7 @@
     SUBDIR += keepass
     SUBDIR += keepass-plugin-keepassrpc
     SUBDIR += keepassxc
+    SUBDIR += keepassxc276
     SUBDIR += keybase
     SUBDIR += keychain
     SUBDIR += keyprint
