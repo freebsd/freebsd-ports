@@ -10,7 +10,8 @@ WWW=		https://github.com/dfir-iris/docx-generator
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docxcompose>0:textproc/py-docxcompose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docxtpl>0:textproc/py-docxtpl@${PY_FLAVOR} \
