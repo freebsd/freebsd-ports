@@ -1,5 +1,6 @@
 PORTNAME=	liboqs
 DISTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,7 +32,7 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == amd64 || ${ARCH} == aarch64 || ${ARCH} == risc64
+.if ${ARCH} == amd64 || ${ARCH} == aarch64 || ${ARCH} == risc64 || ${ARCH} == powerpc64le
 PLIST_SUB+=	KEM_BIKE="" # BIKE algorithm is limited by architecture in .CMake/alg_support.cmake
 .else
 PLIST_SUB+=	KEM_BIKE="@comment "
