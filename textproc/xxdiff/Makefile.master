@@ -1,0 +1,10 @@
+PORTVERSION=	g20250320
+PORTEPOCH=	1
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	blais
+GH_TAGNAME=	a5593c1c675fb79d0ec2b6e353abba1fb0179aa7
+
+DESCR=		${.CURDIR}/pkg-descr
+
+.include <bsd.port.mk>
