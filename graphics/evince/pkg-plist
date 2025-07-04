@@ -69,10 +69,10 @@ lib/girepository-1.0/EvinceDocument-%%VERSION%%.typelib
 lib/girepository-1.0/EvinceView-%%VERSION%%.typelib
 lib/libevdocument3.so
 lib/libevdocument3.so.4
-lib/libevdocument3.so.%%GTK4_VERSION%%
+lib/libevdocument3.so.4.0.0
 lib/libevview3.so
 lib/libevview3.so.3
-lib/libevview3.so.%%GTK3_VERSION%%
+lib/libevview3.so.3.0.0
 libdata/pkgconfig/evince-document-%%VERSION%%.pc
 libdata/pkgconfig/evince-view-%%VERSION%%.pc
 %%DBUS%%libexec/evinced
