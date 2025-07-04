@@ -57,6 +57,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/Server/Morbo/Backend/Poll.pm
 %%SITE_PERL%%/Mojo/Server/PSGI.pm
 %%SITE_PERL%%/Mojo/Server/Prefork.pm
+%%SITE_PERL%%/Mojo/SSE.pm
 %%SITE_PERL%%/Mojo/Template.pm
 %%SITE_PERL%%/Mojo/Transaction.pm
 %%SITE_PERL%%/Mojo/Transaction/HTTP.pm
@@ -201,6 +202,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::Server::Morbo::Backend::Poll.3.gz
 %%PERL5_MAN3%%/Mojo::Server::PSGI.3.gz
 %%PERL5_MAN3%%/Mojo::Server::Prefork.3.gz
+%%PERL5_MAN3%%/Mojo::SSE.3.gz
 %%PERL5_MAN3%%/Mojo::Template.3.gz
 %%PERL5_MAN3%%/Mojo::Transaction.3.gz
 %%PERL5_MAN3%%/Mojo::Transaction::HTTP.3.gz
