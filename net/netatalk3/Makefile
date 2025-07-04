@@ -12,6 +12,9 @@ WWW=		https://netatalk.io/
 
 LICENSE=	GPLv2
 
+DEPRECATED=     End of support; use net/netatalk4 instead
+EXPIRATION_DATE=2025-10-04
+
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libevent.so:devel/libevent
 
