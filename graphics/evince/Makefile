@@ -1,6 +1,6 @@
 PORTNAME=	evince
 DISTVERSION=	48.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -21,14 +21,13 @@ BUILD_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy \
 		libpoppler-glib.so:graphics/poppler-glib \
 		libspectre.so:print/libspectre \
-		libtiff.so:graphics/tiff \
-		libdbus-1.so:devel/dbus
+		libtiff.so:graphics/tiff
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
 USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome \
 		gstreamer libarchive localbase:ldflags meson pkgconfig \
 		python:build tar:xz xorg
-USE_GNOME=	cairo gdkpixbuf gnomedesktop3 gtk30 introspection:build libxml2
+USE_GNOME=	cairo gdkpixbuf gtk30 libxml2
 USE_LDCONFIG=	yes
 USE_XORG=	ice
 CPE_VENDOR=	gnome
@@ -43,7 +42,6 @@ MESON_ARGS+=		-Dintrospection=false \
 			-Dpreviewer=false \
 			-Dthumbnail_cache=disabled \
 			-Dthumbnailer=false
-USE_GNOME+=		libxml2
 OPTIONS_EXCLUDE=	DBUS
 PLIST=			${.CURDIR}/pkg-plist-lite
 PKGNAMESUFFIX=		-lite
@@ -66,8 +64,8 @@ OPTIONS_DEFAULT=	COMICS DBUS KEYRING SPELL XPS
 COMICS_DESC=		Comic book archives support
 COMICS_MESON_ENABLED=	comics
 
-DBUS_MESON_TRUE=       dbus
-DBUS_LIB_DEPENDS=      libdbus-1.so:devel/dbus
+DBUS_MESON_TRUE=	dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 DJVU_DESC=		DJVU support
 DJVU_LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
