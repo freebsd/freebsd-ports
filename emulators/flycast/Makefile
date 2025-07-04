@@ -20,9 +20,10 @@ LIB_DEPENDS=	libchdr.so:devel/libchdr \
 USES=		cmake compiler:c++20-lang pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	flyinghead
+GH_TUPLE=	vinniefalco:LuaBridge:5d21e35633a1f87ed08af115b07d3386096f792b:LuaBridge/core/deps/luabridge \
+		GPUOpen-LibrariesAndSDKs:VulkanMemoryAllocator:6eb62e1515072827db992c2befd80b71b2d04329:VulkanMemoryAllocator/core/deps/VulkanMemoryAllocator \
+		RetroAchievements:rcheevos:563230b1c249774b4852c944dc7cdcb952c9e8e8:rcheevos/core/deps/rcheevos
 USE_SDL=	sdl2
-
-.include "${.CURDIR}/Makefile.tuples"
 
 CMAKE_ON=	USE_HOST_LIBCHDR
 
@@ -62,16 +63,5 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-
-# For maintainer (do not forget to clean up Makefile.tuples afterwards to
-# remove useless submodules)
-Makefile.tuples::
-	${RM} -f ${.CURDIR}/Makefile.tuples
-	${RM} -rf ${WRKDIR}/.maintainer.checkout
-	${MKDIR} ${WRKDIR}/.maintainer.checkout
-	(cd ${WRKDIR}/.maintainer.checkout && \
-		git clone --recursive --branch=${DISTVERSIONPREFIX}${DISTVERSION} \
-		https://github.com/${GH_ACCOUNT}/${PORTNAME} . && \
-		${SH} ${FILESDIR}/gen_gh_tuple.sh > ${.CURDIR}/Makefile.tuples)
 
 .include <bsd.port.mk>
