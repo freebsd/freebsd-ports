@@ -2,11 +2,14 @@ PORTNAME=	keepassxc
 DISTVERSION=	2.7.6
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/
+PKGNAMESUFFIX=	276
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	KeePass Cross-platform Community Edition
 WWW=		https://keepassxc.org
+
+CONFLICTS=	keepassxc-[1-9]*
 
 LICENSE=	APACHE20 BSD3CLAUSE CC0-1.0 GPLv2 GPLv3 LGPL21 LGPL3 MIT \
 		NOKIA-LGPL-EXCEPTION
