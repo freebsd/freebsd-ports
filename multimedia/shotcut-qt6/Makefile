@@ -1,5 +1,5 @@
 PORTNAME=	shotcut
-DISTVERSION=	25.03.29
+DISTVERSION=	25.05.11
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/mltframework/${PORTNAME}/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-qt6
@@ -29,6 +29,9 @@ USE_XORG=	x11
 CXXFLAGS+=	-DSHOTCUT_NOUPGRADE
 
 CONFLICTS=	shotcut
+
+EXTRACT_AFTER_ARGS=	--include src/${PORTNAME} \
+			--no-same-owner --no-same-permissions
 
 WRKSRC=		${WRKDIR}/src
 WRKSRC_SUBDIR=	${PORTNAME}

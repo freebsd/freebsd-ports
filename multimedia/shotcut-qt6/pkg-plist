@@ -418,6 +418,8 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/stabilize/icon.webp
 %%DATADIR%%/qml/filters/stabilize/meta.qml
 %%DATADIR%%/qml/filters/stabilize/ui.qml
+%%DATADIR%%/qml/filters/strobe/meta.qml
+%%DATADIR%%/qml/filters/strobe/ui.qml
 %%DATADIR%%/qml/filters/subtitle/icon.webp
 %%DATADIR%%/qml/filters/subtitle/meta.qml
 %%DATADIR%%/qml/filters/subtitle/ui.qml
