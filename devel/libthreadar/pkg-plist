@@ -16,6 +16,6 @@ include/libthreadar/tools.hpp
 lib/libthreadar.a
 lib/libthreadar.so
 lib/libthreadar.so.1000
-lib/libthreadar.so.1000.5.2
+lib/libthreadar.so.1000.%%SOLIB_MINOR%%
 libdata/pkgconfig/libthreadar.pc
 %%DATADIR%%/README
