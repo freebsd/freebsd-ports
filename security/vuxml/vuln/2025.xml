@@ -1,3 +1,146 @@
+  <vuln vid="a55d2120-58cf-11f0-b4ad-b42e991fc52e">
+    <topic>firefox -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>140.0,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1941377%2C1960948%2C1966187%2C1966505%2C1970764">
+	<p>An attacker was able to bypass the `connect-src`
+	  directive of a Content Security Policy by manipulating
+	  subdocuments.  This would have also hidden the connections
+	  from the Network tab in Devtools.</p>
+	<p>When Multi-Account Containers was enabled, DNS requests
+	could have bypassed a SOCKS proxy when the domain name was
+	invalid or the SOCKS proxy was not responding.</p>
+	<p>If a user visited a webpage with an invalid TLS
+	certificate, and granted an exception, the webpage was able to
+	provide a WebAuthn challenge that the user would be prompted
+	to complete.  This is in violation of the WebAuthN spec which
+	requires &quot;a secure transport established without
+	errors&quot;.</p>
+	<p>The exception page for the HTTPS-Only feature, displayed
+	when a website is opened via HTTP, lacked an anti-clickjacking
+	delay, potentially allowing an attacker to trick a user into
+	granting an exception and loading a webpage over HTTP.</p>
+	<p>If a user saved a response from the Network tab in Devtools
+	using the Save As context menu option, that file may not have
+	been saved with the `.download` file extension.
+	This could have led to the user inadvertently running a
+	malicious executable.</p>
+	<p>Memory safety bugs present in Firefox 139 and Thunderbird
+	139. Some of these bugs showed evidence of memory corruption
+	and we presume that with enough effort some of these could
+	have been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6427</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6427</url>
+      <cvename>CVE-2025-6432</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6432</url>
+      <cvename>CVE-2025-6433</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6433</url>
+      <cvename>CVE-2025-6434</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6434</url>
+      <cvename>CVE-2025-6435</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6435</url>
+      <cvename>CVE-2025-6436</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6436</url>
+    </references>
+    <dates>
+      <discovery>2025-06-24</discovery>
+      <entry>2025-07-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9bad6f79-58cf-11f0-b4ad-b42e991fc52e">
+    <topic>firefox -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>128.12.0,2</lt></range>
+	<range><lt>140.0,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1971140">
+	<p>Firefox could have incorrectly parsed a URL and rewritten
+	it to the youtube.com domain when parsing the URL specified
+	in an `embed` tag. This could have bypassed website security
+	checks that restricted which domains users were allowed to
+	embed.</p>
+	<p>When a file download is specified via the
+	`Content-Disposition` header, that directive would be ignored
+	if the file was included via a `&amp;lt;embed&amp;gt;` or
+	`&amp;lt;object&amp;gt;` tag, potentially making a website
+	vulnerable to a cross-site scripting attack.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6429</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6429</url>
+      <cvename>CVE-2025-6430</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6430</url>
+    </references>
+    <dates>
+      <discovery>2025-06-24</discovery>
+      <entry>2025-07-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9320590b-58cf-11f0-b4ad-b42e991fc52e">
+    <topic>Mozilla -- persistent UUID that identifies browser</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>140.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>115.25.0</lt></range>
+	<range><lt>128.12</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>140.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.12</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1717672">
+	  <p>An attacker who enumerated resources from the WebCompat extension
+	could have obtained a persistent UUID that identified the browser,
+	and persisted between containers and normal/private browsing mode,
+	but not profiles.  This vulnerability affects Firefox &lt; 140,
+	Firefox ESR &lt; 115.25, Firefox ESR &lt; 128.12, Thunderbird &lt;
+	140, and Thunderbird &lt; 128.12.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6425</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6425</url>
+    </references>
+    <dates>
+      <discovery>2025-06-24</discovery>
+      <entry>2025-07-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d607b12c-5821-11f0-ab92-f02f7497ecda">
     <topic>php -- Multiple vulnerabilities</topic>
     <affects>
