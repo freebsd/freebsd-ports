@@ -72,7 +72,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		icu_provider-2.0.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.1 \
-		indexmap-2.9.0 \
+		indexmap-2.10.0 \
 		is-terminal-0.4.16 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
@@ -107,10 +107,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		partition-identity-0.3.0 \
 		path-clean-1.0.1 \
 		percent-encoding-2.3.1 \
-		phf-0.11.3 \
-		phf_generator-0.11.3 \
-		phf_macros-0.11.3 \
-		phf_shared-0.11.3 \
+		phf-0.12.1 \
+		phf_generator-0.12.1 \
+		phf_macros-0.12.1 \
+		phf_shared-0.12.1 \
 		pkg-config-0.3.32 \
 		plist-1.7.2 \
 		plotters-0.3.7 \
@@ -123,8 +123,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		quick-xml-0.37.5 \
 		quote-1.0.40 \
 		r-efi-5.3.0 \
-		rand-0.8.5 \
-		rand_core-0.6.4 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.1.57 \
