@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-To use VA-API apps like Firefox make sure DRM and CUDA are enabled e.g.,
+To use VA-API in apps like Firefox make sure DRM and CUDA are enabled e.g.,
 
    # pkg install nvidia-drm-kmod linux-nvidia-libs libc6-shim libva-utils
    # sysrc kld_list+=nvidia-drm
