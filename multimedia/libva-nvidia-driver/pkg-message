@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+To use VA-API apps like Firefox make sure DRM and CUDA are enabled e.g.,
+
+   # pkg install nvidia-drm-kmod libc6-shim libva-utils
+   # sysrc kld_list+=nvidia-drm
+   # service kld restart
+   $ test -e /dev/dri/renderD* || bsddialog --title Error --msgbox "nvidia-drm-kmod failed" 0 0
+   $ nv-sglrun vainfo
+   $ nv-sglrun firefox
+
+Note, legacy nvidia-driver series like 470 or older are not supported
+by nvidia-drm-kmod required by this package. Consider using
+libva-vdpau-driver instead.
+EOM
+}
+]
