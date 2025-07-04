@@ -1,5 +1,5 @@
 PORTNAME=	libdex
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -12,6 +12,7 @@ LICENSE=	LGPL21
 
 USES=		gnome meson pkgconfig tar:xz vala:build
 USE_GNOME=	glib20 introspection:build
+USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dexamples=false \
 		-Dtests=false
