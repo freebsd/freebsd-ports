@@ -1,5 +1,5 @@
 PORTNAME=	ncdu
-PORTVERSION=	2.7
+PORTVERSION=	2.8.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://dev.yorhel.nl/download/
 PKGNAMESUFFIX=	2
@@ -12,7 +12,7 @@ WWW=		https://dev.yorhel.nl/ncdu \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSES/MIT.txt
 
-BUILD_DEPENDS=	zig>=0.12<0.14:lang/zig
+BUILD_DEPENDS=	zig>=0.14:lang/zig
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		ncurses pkgconfig
