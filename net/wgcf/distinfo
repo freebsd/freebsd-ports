@@ -1,5 +1,5 @@
-TIMESTAMP = 1745177916
-SHA256 (go/net_wgcf/wgcf-v2.2.26/v2.2.26.mod) = f0b04dce43290a7e3fc1a926f6577ad865600a566d13c4dbc0bc9383b9c34d78
-SIZE (go/net_wgcf/wgcf-v2.2.26/v2.2.26.mod) = 1637
-SHA256 (go/net_wgcf/wgcf-v2.2.26/v2.2.26.zip) = add2f392546450cb3d7b2cee8b4aa68cacc456308274673b61f6917539b7ded8
-SIZE (go/net_wgcf/wgcf-v2.2.26/v2.2.26.zip) = 141025
+TIMESTAMP = 1751375035
+SHA256 (go/net_wgcf/wgcf-v2.2.27/v2.2.27.mod) = 782efb9c7decceb89a96d6e63d1a4319c305bbfca708d7d8d69b6de3cd020ebe
+SIZE (go/net_wgcf/wgcf-v2.2.27/v2.2.27.mod) = 1737
+SHA256 (go/net_wgcf/wgcf-v2.2.27/v2.2.27.zip) = 0b2a6d1589f1d26fd18b49902459ac196782fa5a1fb978e065f6cb7ddf2ff2b5
+SIZE (go/net_wgcf/wgcf-v2.2.27/v2.2.27.zip) = 141175
