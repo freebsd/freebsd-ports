@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: homebox
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for homebox in /etc/rc.conf
+#
+# homebox_enable (bool):        Enable homebox.
+# homebox_log (str):            Log output.
+# homebox_runas (str):          User to run homebox as.
+# homebox_args (str):           Arguments used by homebox.
+#
+
+. /etc/rc.subr
+
+name="homebox"
+desc="Inventory and organization system built for the Home User"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${homebox_enable:="NO"}
+: ${homebox_log:="/var/log/homebox.log"}
+: ${homebox_runas:="%%USER%%"}
+: ${homebox_args="--mode production --storage-conn-string file:///var/db/homebox/ --database-sqlite-path '/var/db/homebox/homebox.db?_pragma=busy_timeout=999&_pragma=journal_mode=WAL&_fk=1&_time_format=sqlite'"}
+
+pidfile="/var/run/${name}.pid"
+procname="/usr/local/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-c -u '${homebox_runas}' -p '${pidfile}' -t '${desc}' -o '${homebox_log}' '${procname}' ${homebox_args}"
+
+run_rc_command "$1"
