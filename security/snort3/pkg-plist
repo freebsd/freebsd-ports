@@ -86,6 +86,7 @@ include/snort/helpers/infractions.h
 include/snort/helpers/json_stream.h
 include/snort/helpers/literal_search.h
 include/snort/helpers/memcap_allocator.h
+include/snort/helpers/ring2.h
 include/snort/helpers/scratch_allocator.h
 include/snort/helpers/sigsafe.h
 include/snort/helpers/utf.h
