@@ -1,5 +1,5 @@
 PORTNAME=	jsonrpc-glib
-PORTVERSION=	3.44.1
+PORTVERSION=	3.44.2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -14,5 +14,6 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 
 USES=		compiler:c11 gnome meson pkgconfig tar:xz vala:build
 USE_GNOME=	glib20 introspection:build
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
