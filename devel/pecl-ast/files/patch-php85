@@ -1,0 +1,50 @@
+Reference:	https://github.com/nikic/php-ast/pull/252
+		https://github.com/php/php-src/commit/e421a44ac6ba1474d72df46b3331753671bbfe76
+		https://github.com/php/php-src/commit/ca49a7bec2a0a8d77bfa4b6d375ca0ffa4edc5ee
+
+--- ast_data.c.orig	2024-08-10 18:39:35 UTC
++++ ast_data.c
+@@ -42,8 +42,10 @@ const zend_ast_kind ast_kinds[] = {
+ 	ZEND_AST_EMPTY,
+ 	ZEND_AST_ISSET,
+ 	ZEND_AST_SHELL_EXEC,
++#if PHP_VERSION_ID < 80500
+ 	ZEND_AST_CLONE,
+ 	ZEND_AST_EXIT,
++#endif
+ 	ZEND_AST_PRINT,
+ 	ZEND_AST_INCLUDE_OR_EVAL,
+ 	ZEND_AST_UNARY_OP,
+@@ -158,8 +160,10 @@ const char *ast_kind_to_name(zend_ast_kind kind) {
+ 		case ZEND_AST_EMPTY: return "AST_EMPTY";
+ 		case ZEND_AST_ISSET: return "AST_ISSET";
+ 		case ZEND_AST_SHELL_EXEC: return "AST_SHELL_EXEC";
++#if PHP_VERSION_ID < 80500
+ 		case ZEND_AST_CLONE: return "AST_CLONE";
+ 		case ZEND_AST_EXIT: return "AST_EXIT";
++#endif
+ 		case ZEND_AST_PRINT: return "AST_PRINT";
+ 		case ZEND_AST_INCLUDE_OR_EVAL: return "AST_INCLUDE_OR_EVAL";
+ 		case ZEND_AST_UNARY_OP: return "AST_UNARY_OP";
+@@ -278,8 +282,10 @@ zend_string *ast_kind_child_name(zend_ast_kind kind, u
+ 		case ZEND_AST_CAST:
+ 		case ZEND_AST_EMPTY:
+ 		case ZEND_AST_SHELL_EXEC:
++#if PHP_VERSION_ID < 80500
+ 		case ZEND_AST_CLONE:
+ 		case ZEND_AST_EXIT:
++#endif
+ 		case ZEND_AST_PRINT:
+ 		case ZEND_AST_INCLUDE_OR_EVAL:
+ 		case ZEND_AST_UNARY_OP:
+@@ -618,8 +624,10 @@ void ast_register_kind_constants(INIT_FUNC_ARGS) {
+ 	REGISTER_NS_LONG_CONSTANT("ast", "AST_EMPTY", ZEND_AST_EMPTY, CONST_CS | CONST_PERSISTENT);
+ 	REGISTER_NS_LONG_CONSTANT("ast", "AST_ISSET", ZEND_AST_ISSET, CONST_CS | CONST_PERSISTENT);
+ 	REGISTER_NS_LONG_CONSTANT("ast", "AST_SHELL_EXEC", ZEND_AST_SHELL_EXEC, CONST_CS | CONST_PERSISTENT);
++#if PHP_VERSION_ID < 80500
+ 	REGISTER_NS_LONG_CONSTANT("ast", "AST_CLONE", ZEND_AST_CLONE, CONST_CS | CONST_PERSISTENT);
+ 	REGISTER_NS_LONG_CONSTANT("ast", "AST_EXIT", ZEND_AST_EXIT, CONST_CS | CONST_PERSISTENT);
++#endif
+ 	REGISTER_NS_LONG_CONSTANT("ast", "AST_PRINT", ZEND_AST_PRINT, CONST_CS | CONST_PERSISTENT);
+ 	REGISTER_NS_LONG_CONSTANT("ast", "AST_INCLUDE_OR_EVAL", ZEND_AST_INCLUDE_OR_EVAL, CONST_CS | CONST_PERSISTENT);
+ 	REGISTER_NS_LONG_CONSTANT("ast", "AST_UNARY_OP", ZEND_AST_UNARY_OP, CONST_CS | CONST_PERSISTENT);
