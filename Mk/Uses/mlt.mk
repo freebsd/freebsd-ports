@@ -37,7 +37,7 @@ _MLT_NODEPEND=	yes
 .  endif
 
 # Library dependencies
-_MLT7_VERSION=	7.30.0
+_MLT7_VERSION=	7.32.0
 _MLT7_PORTNAME=	mlt7
 _MLT7_LIB=	libmlt-7.so
 _MLT7_MELT=	${LOCALBASE}/bin/melt-7
