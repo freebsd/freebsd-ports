@@ -1,6 +1,5 @@
 PORTNAME=	gnome-control-center
-PORTVERSION=	47.6
-PORTREVISION=	1
+PORTVERSION=	47.7
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -11,8 +10,6 @@ WWW=		https://apps.gnome.org/Settings/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-PORTSCOUT=	limit:^47\.
 
 BUILD_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
@@ -47,7 +44,6 @@ USES=		compiler:c++11-lib gettext gnome localbase:ldflags meson \
 USE_GNOME=	cairo gdkpixbufextra gnomedesktop4 glib20 gtk40 gsound \
 		libadwaita libxml2
 USE_XORG=	x11 xi
-USE_LDCONFIG=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 MESON_ARGS=	-Dlocation-services=disabled \
@@ -62,6 +58,8 @@ OPTIONS_DEFINE=		WAYLAND
 OPTIONS_DEFAULT=	WAYLAND
 
 WAYLAND_MESON_TRUE=	wayland
+
+PORTSCOUT=	limit:^47\.
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
