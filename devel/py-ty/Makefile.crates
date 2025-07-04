@@ -13,12 +13,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		anstyle-svg-0.1.7 \
 		anstyle-wincon-3.0.7 \
 		anyhow-1.0.98 \
+		approx-0.5.1 \
 		arc-swap-1.7.1 \
 		argfile-0.2.1 \
 		arrayvec-0.7.6 \
 		assert_fs-1.1.3 \
+		attribute-derive-0.10.3 \
+		attribute-derive-macro-0.10.3 \
 		autocfg-1.4.0 \
 		base64-0.13.1 \
+		bincode-1.3.3 \
 		bincode-2.0.1 \
 		bincode_derive-2.0.1 \
 		bitflags-1.3.2 \
@@ -46,13 +50,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		clap_complete_nushell-4.5.5 \
 		clap_derive-4.5.40 \
 		clap_lex-0.7.4 \
-		clearscreen-4.0.1 \
-		codspeed-2.10.1 \
-		codspeed-criterion-compat-2.10.1 \
-		codspeed-criterion-compat-walltime-2.10.1 \
-		codspeed-divan-compat-2.10.1 \
-		codspeed-divan-compat-macros-2.10.1 \
-		codspeed-divan-compat-walltime-2.10.1 \
+		clearscreen-4.0.2 \
+		codspeed-3.0.2 \
+		codspeed-criterion-compat-3.0.2 \
+		codspeed-criterion-compat-walltime-3.0.2 \
+		codspeed-divan-compat-3.0.2 \
+		codspeed-divan-compat-macros-3.0.2 \
+		codspeed-divan-compat-walltime-3.0.2 \
+		collection_literals-1.0.1 \
 		colorchoice-1.0.3 \
 		colored-2.2.0 \
 		colored-3.0.0 \
@@ -81,6 +86,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		darling_macro-0.20.11 \
 		dashmap-5.5.3 \
 		dashmap-6.1.0 \
+		derive-where-1.5.0 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
 		digest-0.10.7 \
@@ -112,6 +118,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		fs-err-2.11.0 \
 		fsevent-sys-4.1.0 \
 		generic-array-0.14.7 \
+		get-size-derive2-0.5.1 \
+		get-size2-0.5.1 \
 		getopts-0.2.21 \
 		getrandom-0.2.16 \
 		getrandom-0.3.3 \
@@ -142,13 +150,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		ignore-0.4.23 \
 		imara-diff-0.1.8 \
 		imperative-1.0.6 \
-		indexmap-2.9.0 \
+		indexmap-2.10.0 \
 		indicatif-0.17.11 \
 		indoc-2.0.6 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
 		insta-1.43.1 \
 		insta-cmd-0.6.0 \
+		interpolator-0.5.0 \
 		intrusive-collections-0.9.7 \
 		is-docker-0.2.0 \
 		is-macro-0.3.7 \
@@ -177,9 +186,11 @@ CARGO_CRATES=	adler2-2.0.0 \
 		libtest-mimic-0.7.3 \
 		linux-raw-sys-0.9.4 \
 		litemap-0.8.0 \
-		lock_api-0.4.12 \
+		lock_api-0.4.13 \
 		log-0.4.27 \
 		lsp-server-0.7.8 \
+		manyhow-0.11.4 \
+		manyhow-macros-0.11.4 \
 		markdown-1.0.0 \
 		matchers-0.1.0 \
 		matches-0.1.10 \
@@ -206,10 +217,11 @@ CARGO_CRATES=	adler2-2.0.0 \
 		once_cell-1.21.3 \
 		oorandom-11.1.5 \
 		option-ext-0.2.0 \
-		ordermap-0.5.7 \
+		ordermap-0.5.8 \
 		os_pipe-1.2.1 \
 		os_str_bytes-7.1.0 \
 		overload-0.1.1 \
+		papaya-0.2.3 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		paste-1.0.15 \
@@ -242,6 +254,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		predicates-tree-1.0.12 \
 		pretty_assertions-1.4.1 \
 		proc-macro-crate-3.3.0 \
+		proc-macro-utils-0.10.0 \
 		proc-macro2-1.0.95 \
 		pyproject-toml-0.13.5 \
 		quick-junit-0.5.1 \
@@ -249,6 +262,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		quickcheck-1.0.3 \
 		quickcheck_macros-1.1.0 \
 		quote-1.0.40 \
+		quote-use-0.8.4 \
+		quote-use-macros-0.8.4 \
 		r-efi-5.2.0 \
 		rand-0.8.5 \
 		rand-0.9.1 \
@@ -279,6 +294,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		schemars_derive-0.8.22 \
 		scopeguard-1.2.0 \
 		seahash-4.1.0 \
+		seize-0.5.0 \
 		serde-1.0.219 \
 		serde-wasm-bindgen-0.6.5 \
 		serde_derive-1.0.219 \
@@ -300,6 +316,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		snapbox-macros-0.3.10 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
+		statrs-0.18.0 \
 		strip-ansi-escapes-0.2.1 \
 		strsim-0.11.1 \
 		strum-0.27.1 \
@@ -385,7 +402,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		wasm-bindgen-test-macro-0.3.50 \
 		web-sys-0.3.77 \
 		web-time-1.1.0 \
-		which-7.0.3 \
+		which-8.0.0 \
 		wild-2.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -426,5 +443,5 @@ CARGO_CRATES=	adler2-2.0.0 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.15+zstd.1.5.7 \
-		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=09627e450566f894956710a3fd923dc80462ae6d\#09627e450566f894956710a3fd923dc80462ae6d \
+		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa?rev=fc00eba89e5dcaa5edba51c41aa5f309b5cb126b\#fc00eba89e5dcaa5edba51c41aa5f309b5cb126b \
 		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439
