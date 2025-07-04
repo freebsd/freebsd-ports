@@ -1,19 +1,9 @@
-Remove bash-ism from configure script.
 Disable udev/systemd detection for *BSD as the catch-all assumes a Linux
 system. A configuration file for devd(8) is provided by this port instead.
 
---- configure.ac.orig	2020-06-09 02:57:16 UTC
+--- configure.ac.orig	2025-02-01 20:07:39 UTC
 +++ configure.ac
-@@ -36,7 +36,7 @@ if test "x$have_limd" = "xyes"; then
-     AC_SUBST(libimobiledevice_CFLAGS)
-     AC_SUBST(libimobiledevice_LIBS)
-     CACHED_CFLAGS="$CFLAGS"
--    CFLAGS+=" $libimobiledevice_CFLAGS"
-+    CFLAGS="$CFLAGS $libimobiledevice_CFLAGS"
-     AC_CACHE_CHECK(for enum idevice_connection_type, ac_cv_enum_idevice_connection_type,
-       AC_TRY_COMPILE([
-         #include <libimobiledevice/libimobiledevice.h>
-@@ -125,7 +125,7 @@ case ${host_os} in
+@@ -126,7 +126,7 @@ case ${host_os} in
      AC_SUBST(WINDRES)
      activation_method="manual"
      ;;
