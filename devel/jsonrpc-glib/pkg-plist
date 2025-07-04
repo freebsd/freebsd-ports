@@ -10,7 +10,7 @@ include/jsonrpc-glib-1.0/jsonrpc-version.h
 lib/girepository-1.0/Jsonrpc-1.0.typelib
 lib/libjsonrpc-glib-1.0.so
 lib/libjsonrpc-glib-1.0.so.1
-lib/libjsonrpc-glib-1.0.so.1.4400.1
+lib/libjsonrpc-glib-1.0.so.1.4400.2
 libdata/pkgconfig/jsonrpc-glib-1.0.pc
 share/gir-1.0/Jsonrpc-1.0.gir
 share/vala/vapi/jsonrpc-glib-1.0.deps
