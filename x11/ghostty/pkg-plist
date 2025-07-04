@@ -1,0 +1,473 @@
+bin/ghostty
+@comment lib/systemd/user/app-com.mitchellh.ghostty.service
+share/applications/com.mitchellh.ghostty.desktop
+share/bash-completion/completions/ghostty.bash
+share/bat/syntaxes/ghostty.sublime-syntax
+share/dbus-1/services/com.mitchellh.ghostty.service
+share/fish/vendor_completions.d/ghostty.fish
+%%PORTDOCS%%%%DATADIR%%/doc/ghostty.1.html
+%%PORTDOCS%%%%DATADIR%%/doc/ghostty.1.md
+%%PORTDOCS%%%%DATADIR%%/doc/ghostty.5.html
+%%PORTDOCS%%%%DATADIR%%/doc/ghostty.5.md
+%%DATADIR%%/shell-integration/bash/bash-preexec.sh
+%%DATADIR%%/shell-integration/bash/ghostty.bash
+%%DATADIR%%/shell-integration/elvish/lib/ghostty-integration.elv
+%%DATADIR%%/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish
+%%DATADIR%%/shell-integration/zsh/.zshenv
+%%DATADIR%%/shell-integration/zsh/ghostty-integration
+%%DATADIR%%/terminfo/g/ghostty
+%%DATADIR%%/terminfo/x/xterm-ghostty
+%%DATADIR%%/themes/0x96f
+%%DATADIR%%/themes/12-bit Rainbow
+%%DATADIR%%/themes/3024 Day
+%%DATADIR%%/themes/3024 Night
+%%DATADIR%%/themes/Aardvark Blue
+%%DATADIR%%/themes/Abernathy
+%%DATADIR%%/themes/Adventure
+%%DATADIR%%/themes/Adventure Time
+%%DATADIR%%/themes/Adwaita
+%%DATADIR%%/themes/Adwaita Dark
+%%DATADIR%%/themes/Afterglow
+%%DATADIR%%/themes/Alabaster
+%%DATADIR%%/themes/Alien Blood
+%%DATADIR%%/themes/Andromeda
+%%DATADIR%%/themes/Apple Classic
+%%DATADIR%%/themes/Apple System Colors
+%%DATADIR%%/themes/Apple System Colors Light
+%%DATADIR%%/themes/Arcoiris
+%%DATADIR%%/themes/Ardoise
+%%DATADIR%%/themes/Argonaut
+%%DATADIR%%/themes/Arthur
+%%DATADIR%%/themes/Atelier Sulphurpool
+%%DATADIR%%/themes/Atom
+%%DATADIR%%/themes/Atom One Dark
+%%DATADIR%%/themes/Atom One Light
+%%DATADIR%%/themes/Aura
+%%DATADIR%%/themes/Aurora
+%%DATADIR%%/themes/Ayu
+%%DATADIR%%/themes/Ayu Light
+%%DATADIR%%/themes/Ayu Mirage
+%%DATADIR%%/themes/Banana Blueberry
+%%DATADIR%%/themes/Batman
+%%DATADIR%%/themes/Belafonte Day
+%%DATADIR%%/themes/Belafonte Night
+%%DATADIR%%/themes/Birds Of Paradise
+%%DATADIR%%/themes/Black Metal
+%%DATADIR%%/themes/Black Metal (Bathory)
+%%DATADIR%%/themes/Black Metal (Burzum)
+%%DATADIR%%/themes/Black Metal (Dark Funeral)
+%%DATADIR%%/themes/Black Metal (Gorgoroth)
+%%DATADIR%%/themes/Black Metal (Immortal)
+%%DATADIR%%/themes/Black Metal (Khold)
+%%DATADIR%%/themes/Black Metal (Marduk)
+%%DATADIR%%/themes/Black Metal (Mayhem)
+%%DATADIR%%/themes/Black Metal (Nile)
+%%DATADIR%%/themes/Black Metal (Venom)
+%%DATADIR%%/themes/Blazer
+%%DATADIR%%/themes/Blue Berry Pie
+%%DATADIR%%/themes/Blue Dolphin
+%%DATADIR%%/themes/Blue Matrix
+%%DATADIR%%/themes/Bluloco Dark
+%%DATADIR%%/themes/Bluloco Light
+%%DATADIR%%/themes/Borland
+%%DATADIR%%/themes/Box
+%%DATADIR%%/themes/Breadog
+%%DATADIR%%/themes/Breeze
+%%DATADIR%%/themes/Bright Lights
+%%DATADIR%%/themes/Broadcast
+%%DATADIR%%/themes/Brogrammer
+%%DATADIR%%/themes/Builtin Dark
+%%DATADIR%%/themes/Builtin Light
+%%DATADIR%%/themes/Builtin Pastel Dark
+%%DATADIR%%/themes/Builtin Solarized Dark
+%%DATADIR%%/themes/Builtin Solarized Light
+%%DATADIR%%/themes/Builtin Tango Dark
+%%DATADIR%%/themes/Builtin Tango Light
+%%DATADIR%%/themes/C64
+%%DATADIR%%/themes/CGA
+%%DATADIR%%/themes/CLRS
+%%DATADIR%%/themes/Calamity
+%%DATADIR%%/themes/Catppuccin Frappe
+%%DATADIR%%/themes/Catppuccin Latte
+%%DATADIR%%/themes/Catppuccin Macchiato
+%%DATADIR%%/themes/Catppuccin Mocha
+%%DATADIR%%/themes/Chalk
+%%DATADIR%%/themes/Chalkboard
+%%DATADIR%%/themes/Challenger Deep
+%%DATADIR%%/themes/Chester
+%%DATADIR%%/themes/Ciapre
+%%DATADIR%%/themes/Citruszest
+%%DATADIR%%/themes/Cobalt Neon
+%%DATADIR%%/themes/Cobalt Next
+%%DATADIR%%/themes/Cobalt Next Dark
+%%DATADIR%%/themes/Cobalt Next Minimal
+%%DATADIR%%/themes/Cobalt2
+%%DATADIR%%/themes/Coffee Theme
+%%DATADIR%%/themes/Crayon Pony Fish
+%%DATADIR%%/themes/Cursor Dark
+%%DATADIR%%/themes/Cutie Pro
+%%DATADIR%%/themes/Cyberdyne
+%%DATADIR%%/themes/Cyberpunk
+%%DATADIR%%/themes/Cyberpunk Scarlet Protocol
+%%DATADIR%%/themes/Dark Modern
+%%DATADIR%%/themes/Dark Pastel
+%%DATADIR%%/themes/Dark+
+%%DATADIR%%/themes/Darkermatrix
+%%DATADIR%%/themes/Darkmatrix
+%%DATADIR%%/themes/Darkside
+%%DATADIR%%/themes/Dayfox
+%%DATADIR%%/themes/Deep
+%%DATADIR%%/themes/Desert
+%%DATADIR%%/themes/Detuned
+%%DATADIR%%/themes/Dimidium
+%%DATADIR%%/themes/Dimmed Monokai
+%%DATADIR%%/themes/Django
+%%DATADIR%%/themes/Django Reborn Again
+%%DATADIR%%/themes/Django Smooth
+%%DATADIR%%/themes/Doom One
+%%DATADIR%%/themes/Doom Peacock
+%%DATADIR%%/themes/Dot Gov
+%%DATADIR%%/themes/Dracula
+%%DATADIR%%/themes/Dracula+
+%%DATADIR%%/themes/Duckbones
+%%DATADIR%%/themes/Duotone Dark
+%%DATADIR%%/themes/ENCOM
+%%DATADIR%%/themes/Earthsong
+%%DATADIR%%/themes/Electron Highlighter
+%%DATADIR%%/themes/Elegant
+%%DATADIR%%/themes/Elemental
+%%DATADIR%%/themes/Elementary
+%%DATADIR%%/themes/Embark
+%%DATADIR%%/themes/Embers Dark
+%%DATADIR%%/themes/Espresso
+%%DATADIR%%/themes/Espresso Libre
+%%DATADIR%%/themes/Everblush
+%%DATADIR%%/themes/Everforest Dark   Hard
+%%DATADIR%%/themes/Everforest Light   Med
+%%DATADIR%%/themes/Fahrenheit
+%%DATADIR%%/themes/Fairyfloss
+%%DATADIR%%/themes/Farmhouse Dark
+%%DATADIR%%/themes/Farmhouse Light
+%%DATADIR%%/themes/Fideloper
+%%DATADIR%%/themes/Firefly Traditional
+%%DATADIR%%/themes/Firefox Dev
+%%DATADIR%%/themes/Firewatch
+%%DATADIR%%/themes/Fish Tank
+%%DATADIR%%/themes/Flat
+%%DATADIR%%/themes/Flatland
+%%DATADIR%%/themes/Flexoki Dark
+%%DATADIR%%/themes/Flexoki Light
+%%DATADIR%%/themes/Floraverse
+%%DATADIR%%/themes/Forest Blue
+%%DATADIR%%/themes/Framer
+%%DATADIR%%/themes/Front End Delight
+%%DATADIR%%/themes/Fun Forrest
+%%DATADIR%%/themes/Galaxy
+%%DATADIR%%/themes/Galizur
+%%DATADIR%%/themes/Ghostty Default Style Dark
+%%DATADIR%%/themes/GitHub
+%%DATADIR%%/themes/GitHub Dark
+%%DATADIR%%/themes/GitHub Dark Colorblind
+%%DATADIR%%/themes/GitHub Dark Default
+%%DATADIR%%/themes/GitHub Dark Dimmed
+%%DATADIR%%/themes/GitHub Dark High Contrast
+%%DATADIR%%/themes/GitHub Light Colorblind
+%%DATADIR%%/themes/GitHub Light Default
+%%DATADIR%%/themes/GitHub Light High Contrast
+%%DATADIR%%/themes/GitLab Dark
+%%DATADIR%%/themes/GitLab Dark Grey
+%%DATADIR%%/themes/GitLab Light
+%%DATADIR%%/themes/Glacier
+%%DATADIR%%/themes/Grape
+%%DATADIR%%/themes/Grass
+%%DATADIR%%/themes/Grey Green
+%%DATADIR%%/themes/Gruber Darker
+%%DATADIR%%/themes/Gruvbox Dark
+%%DATADIR%%/themes/Gruvbox Dark Hard
+%%DATADIR%%/themes/Gruvbox Light
+%%DATADIR%%/themes/Gruvbox Light Hard
+%%DATADIR%%/themes/Gruvbox Material
+%%DATADIR%%/themes/Guezwhoz
+%%DATADIR%%/themes/HaX0R Blue
+%%DATADIR%%/themes/HaX0R Gr33N
+%%DATADIR%%/themes/HaX0R R3D
+%%DATADIR%%/themes/Hacktober
+%%DATADIR%%/themes/Hardcore
+%%DATADIR%%/themes/Harper
+%%DATADIR%%/themes/Havn Daggry
+%%DATADIR%%/themes/Havn Skumring
+%%DATADIR%%/themes/Heeler
+%%DATADIR%%/themes/Highway
+%%DATADIR%%/themes/Hipster Green
+%%DATADIR%%/themes/Hivacruz
+%%DATADIR%%/themes/Homebrew
+%%DATADIR%%/themes/Hopscotch
+%%DATADIR%%/themes/Hopscotch.256
+%%DATADIR%%/themes/Horizon
+%%DATADIR%%/themes/Horizon Bright
+%%DATADIR%%/themes/Hurtado
+%%DATADIR%%/themes/Hybrid
+%%DATADIR%%/themes/IBM 5153 CGA
+%%DATADIR%%/themes/IBM 5153 CGA (Black)
+%%DATADIR%%/themes/IC Green PPL
+%%DATADIR%%/themes/IC Orange PPL
+%%DATADIR%%/themes/IR Black
+%%DATADIR%%/themes/IRIX Console
+%%DATADIR%%/themes/IRIX Terminal
+%%DATADIR%%/themes/Iceberg Dark
+%%DATADIR%%/themes/Iceberg Light
+%%DATADIR%%/themes/Idea
+%%DATADIR%%/themes/Idle Toes
+%%DATADIR%%/themes/Jackie Brown
+%%DATADIR%%/themes/Japanesque
+%%DATADIR%%/themes/Jellybeans
+%%DATADIR%%/themes/JetBrains Darcula
+%%DATADIR%%/themes/Jubi
+%%DATADIR%%/themes/Kanagawa Dragon
+%%DATADIR%%/themes/Kanagawa Wave
+%%DATADIR%%/themes/Kanagawabones
+%%DATADIR%%/themes/Kibble
+%%DATADIR%%/themes/Kitty Default
+%%DATADIR%%/themes/Kitty Low Contrast
+%%DATADIR%%/themes/Kolorit
+%%DATADIR%%/themes/Konsolas
+%%DATADIR%%/themes/Kurokula
+%%DATADIR%%/themes/Lab Fox
+%%DATADIR%%/themes/Laser
+%%DATADIR%%/themes/Later This Evening
+%%DATADIR%%/themes/Lavandula
+%%DATADIR%%/themes/Light Owl
+%%DATADIR%%/themes/Liquid Carbon
+%%DATADIR%%/themes/Liquid Carbon Transparent
+%%DATADIR%%/themes/Liquid Carbon Transparent Inverse
+%%DATADIR%%/themes/Lovelace
+%%DATADIR%%/themes/Man Page
+%%DATADIR%%/themes/Mariana
+%%DATADIR%%/themes/Material
+%%DATADIR%%/themes/Material Dark
+%%DATADIR%%/themes/Material Darker
+%%DATADIR%%/themes/Material Design Colors
+%%DATADIR%%/themes/Material Ocean
+%%DATADIR%%/themes/Mathias
+%%DATADIR%%/themes/Matrix
+%%DATADIR%%/themes/Medallion
+%%DATADIR%%/themes/Melange Dark
+%%DATADIR%%/themes/Melange Light
+%%DATADIR%%/themes/Mellifluous
+%%DATADIR%%/themes/Mellow
+%%DATADIR%%/themes/Miasma
+%%DATADIR%%/themes/Midnight In Mojave
+%%DATADIR%%/themes/Mirage
+%%DATADIR%%/themes/Misterioso
+%%DATADIR%%/themes/Molokai
+%%DATADIR%%/themes/Mona Lisa
+%%DATADIR%%/themes/Monokai Classic
+%%DATADIR%%/themes/Monokai Pro
+%%DATADIR%%/themes/Monokai Pro Light
+%%DATADIR%%/themes/Monokai Pro Light Sun
+%%DATADIR%%/themes/Monokai Pro Machine
+%%DATADIR%%/themes/Monokai Pro Octagon
+%%DATADIR%%/themes/Monokai Pro Ristretto
+%%DATADIR%%/themes/Monokai Pro Spectrum
+%%DATADIR%%/themes/Monokai Remastered
+%%DATADIR%%/themes/Monokai Soda
+%%DATADIR%%/themes/Monokai Vivid
+%%DATADIR%%/themes/Moonfly
+%%DATADIR%%/themes/N0Tch2K
+%%DATADIR%%/themes/Neobones Dark
+%%DATADIR%%/themes/Neobones Light
+%%DATADIR%%/themes/Neon
+%%DATADIR%%/themes/Neopolitan
+%%DATADIR%%/themes/Neutron
+%%DATADIR%%/themes/Night Lion V1
+%%DATADIR%%/themes/Night Lion V2
+%%DATADIR%%/themes/Night Owl
+%%DATADIR%%/themes/Night Owlish Light
+%%DATADIR%%/themes/Nightfox
+%%DATADIR%%/themes/Niji
+%%DATADIR%%/themes/Nocturnal Winter
+%%DATADIR%%/themes/Nord
+%%DATADIR%%/themes/Nord Light
+%%DATADIR%%/themes/Nord Wave
+%%DATADIR%%/themes/Novel
+%%DATADIR%%/themes/Nvim Dark
+%%DATADIR%%/themes/Nvim Light
+%%DATADIR%%/themes/Obsidian
+%%DATADIR%%/themes/Ocean
+%%DATADIR%%/themes/Oceanic Material
+%%DATADIR%%/themes/Oceanic Next
+%%DATADIR%%/themes/Ollie
+%%DATADIR%%/themes/One Double Dark
+%%DATADIR%%/themes/One Double Light
+%%DATADIR%%/themes/One Half Dark
+%%DATADIR%%/themes/One Half Light
+%%DATADIR%%/themes/Operator Mono Dark
+%%DATADIR%%/themes/Overnight Slumber
+%%DATADIR%%/themes/Oxocarbon
+%%DATADIR%%/themes/Pale Night Hc
+%%DATADIR%%/themes/Pandora
+%%DATADIR%%/themes/Paraiso Dark
+%%DATADIR%%/themes/Paul Millr
+%%DATADIR%%/themes/Pencil Dark
+%%DATADIR%%/themes/Pencil Light
+%%DATADIR%%/themes/Peppermint
+%%DATADIR%%/themes/Phala Green Dark
+%%DATADIR%%/themes/Piatto Light
+%%DATADIR%%/themes/Pnevma
+%%DATADIR%%/themes/Popping And Locking
+%%DATADIR%%/themes/Powershell
+%%DATADIR%%/themes/Primary
+%%DATADIR%%/themes/Pro
+%%DATADIR%%/themes/Pro Light
+%%DATADIR%%/themes/Purple Rain
+%%DATADIR%%/themes/Purplepeter
+%%DATADIR%%/themes/Rapture
+%%DATADIR%%/themes/Raycast Dark
+%%DATADIR%%/themes/Raycast Light
+%%DATADIR%%/themes/Rebecca
+%%DATADIR%%/themes/Red Alert
+%%DATADIR%%/themes/Red Planet
+%%DATADIR%%/themes/Red Sands
+%%DATADIR%%/themes/Relaxed
+%%DATADIR%%/themes/Retro
+%%DATADIR%%/themes/Retro Legends
+%%DATADIR%%/themes/Rippedcasts
+%%DATADIR%%/themes/Rose Pine
+%%DATADIR%%/themes/Rose Pine Dawn
+%%DATADIR%%/themes/Rose Pine Moon
+%%DATADIR%%/themes/Rouge 2
+%%DATADIR%%/themes/Royal
+%%DATADIR%%/themes/Ryuuko
+%%DATADIR%%/themes/Sakura
+%%DATADIR%%/themes/Scarlet Protocol
+%%DATADIR%%/themes/Sea Shells
+%%DATADIR%%/themes/Seafoam Pastel
+%%DATADIR%%/themes/Selenized Dark
+%%DATADIR%%/themes/Selenized Light
+%%DATADIR%%/themes/Seoulbones Dark
+%%DATADIR%%/themes/Seoulbones Light
+%%DATADIR%%/themes/Seti
+%%DATADIR%%/themes/Shades Of Purple
+%%DATADIR%%/themes/Shaman
+%%DATADIR%%/themes/Slate
+%%DATADIR%%/themes/Sleepy Hollow
+%%DATADIR%%/themes/Smyck
+%%DATADIR%%/themes/Snazzy
+%%DATADIR%%/themes/Snazzy Soft
+%%DATADIR%%/themes/Soft Server
+%%DATADIR%%/themes/Solarized Darcula
+%%DATADIR%%/themes/Solarized Dark Higher Contrast
+%%DATADIR%%/themes/Solarized Dark Patched
+%%DATADIR%%/themes/Solarized Osaka Night
+%%DATADIR%%/themes/Sonokai
+%%DATADIR%%/themes/Spacedust
+%%DATADIR%%/themes/Spacegray
+%%DATADIR%%/themes/Spacegray Bright
+%%DATADIR%%/themes/Spacegray Eighties
+%%DATADIR%%/themes/Spacegray Eighties Dull
+%%DATADIR%%/themes/Spiderman
+%%DATADIR%%/themes/Spring
+%%DATADIR%%/themes/Square
+%%DATADIR%%/themes/Squirrelsong Dark
+%%DATADIR%%/themes/Srcery
+%%DATADIR%%/themes/Starlight
+%%DATADIR%%/themes/Sublette
+%%DATADIR%%/themes/Subliminal
+%%DATADIR%%/themes/Sugarplum
+%%DATADIR%%/themes/Sundried
+%%DATADIR%%/themes/Symfonic
+%%DATADIR%%/themes/Synthwave
+%%DATADIR%%/themes/Synthwave Alpha
+%%DATADIR%%/themes/Synthwave Everything
+%%DATADIR%%/themes/Tango Adapted
+%%DATADIR%%/themes/Tango Half Adapted
+%%DATADIR%%/themes/Tearout
+%%DATADIR%%/themes/Teerb
+%%DATADIR%%/themes/Terafox
+%%DATADIR%%/themes/Terminal Basic
+%%DATADIR%%/themes/Terminal Basic Dark
+%%DATADIR%%/themes/Thayer Bright
+%%DATADIR%%/themes/The Hulk
+%%DATADIR%%/themes/Tinacious Design Dark
+%%DATADIR%%/themes/Tinacious Design Light
+%%DATADIR%%/themes/TokyoNight
+%%DATADIR%%/themes/TokyoNight Day
+%%DATADIR%%/themes/TokyoNight Moon
+%%DATADIR%%/themes/TokyoNight Night
+%%DATADIR%%/themes/TokyoNight Storm
+%%DATADIR%%/themes/Tomorrow
+%%DATADIR%%/themes/Tomorrow Night
+%%DATADIR%%/themes/Tomorrow Night Blue
+%%DATADIR%%/themes/Tomorrow Night Bright
+%%DATADIR%%/themes/Tomorrow Night Burns
+%%DATADIR%%/themes/Tomorrow Night Eighties
+%%DATADIR%%/themes/Toy Chest
+%%DATADIR%%/themes/Treehouse
+%%DATADIR%%/themes/Twilight
+%%DATADIR%%/themes/Ubuntu
+%%DATADIR%%/themes/Ultra Dark
+%%DATADIR%%/themes/Ultra Violent
+%%DATADIR%%/themes/Under The Sea
+%%DATADIR%%/themes/Unikitty
+%%DATADIR%%/themes/Urple
+%%DATADIR%%/themes/Vague
+%%DATADIR%%/themes/Vaughn
+%%DATADIR%%/themes/Vercel
+%%DATADIR%%/themes/Vesper
+%%DATADIR%%/themes/Vibrant Ink
+%%DATADIR%%/themes/Vimbones
+%%DATADIR%%/themes/Violet Dark
+%%DATADIR%%/themes/Violet Light
+%%DATADIR%%/themes/Violite
+%%DATADIR%%/themes/Warm Neon
+%%DATADIR%%/themes/Wez
+%%DATADIR%%/themes/Whimsy
+%%DATADIR%%/themes/Wild Cherry
+%%DATADIR%%/themes/Wilmersdorf
+%%DATADIR%%/themes/Wombat
+%%DATADIR%%/themes/Wryan
+%%DATADIR%%/themes/Xcode Dark
+%%DATADIR%%/themes/Xcode Dark hc
+%%DATADIR%%/themes/Xcode Light
+%%DATADIR%%/themes/Xcode Light hc
+%%DATADIR%%/themes/Xcode WWDC
+%%DATADIR%%/themes/Zenbones
+%%DATADIR%%/themes/Zenbones Dark
+%%DATADIR%%/themes/Zenbones Light
+%%DATADIR%%/themes/Zenburn
+%%DATADIR%%/themes/Zenburned
+%%DATADIR%%/themes/Zenwritten Dark
+%%DATADIR%%/themes/Zenwritten Light
+%%DATADIR%%/themes/iTerm2 Dark Background
+%%DATADIR%%/themes/iTerm2 Default
+%%DATADIR%%/themes/iTerm2 Light Background
+%%DATADIR%%/themes/iTerm2 Pastel Dark Background
+%%DATADIR%%/themes/iTerm2 Smoooooth
+%%DATADIR%%/themes/iTerm2 Solarized Dark
+%%DATADIR%%/themes/iTerm2 Solarized Light
+%%DATADIR%%/themes/iTerm2 Tango Dark
+%%DATADIR%%/themes/iTerm2 Tango Light
+share/icons/hicolor/1024x1024/apps/com.mitchellh.ghostty.png
+share/icons/hicolor/128x128/apps/com.mitchellh.ghostty.png
+share/icons/hicolor/128x128@2/apps/com.mitchellh.ghostty.png
+share/icons/hicolor/16x16/apps/com.mitchellh.ghostty.png
+share/icons/hicolor/16x16@2/apps/com.mitchellh.ghostty.png
+share/icons/hicolor/256x256/apps/com.mitchellh.ghostty.png
+share/icons/hicolor/256x256@2/apps/com.mitchellh.ghostty.png
+share/icons/hicolor/32x32/apps/com.mitchellh.ghostty.png
+share/icons/hicolor/32x32@2/apps/com.mitchellh.ghostty.png
+share/icons/hicolor/512x512/apps/com.mitchellh.ghostty.png
+share/kio/servicemenus/com.mitchellh.ghostty.desktop
+%%PORTDOCS%%share/man/man1/ghostty.1.gz
+%%PORTDOCS%%share/man/man5/ghostty.5.gz
+share/metainfo/com.mitchellh.ghostty.metainfo.xml
+share/nautilus-python/extensions/ghostty.py
+share/nvim/site/compiler/ghostty.vim
+share/nvim/site/ftdetect/ghostty.vim
+share/nvim/site/ftplugin/ghostty.vim
+share/nvim/site/syntax/ghostty.vim
+share/vim/vimfiles/compiler/ghostty.vim
+share/vim/vimfiles/ftdetect/ghostty.vim
+share/vim/vimfiles/ftplugin/ghostty.vim
+share/vim/vimfiles/syntax/ghostty.vim
+share/zsh/site-functions/_ghostty

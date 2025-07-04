@@ -93,6 +93,7 @@
     SUBDIR += fuzzel
     SUBDIR += gbsddialog
     SUBDIR += gdm
+    SUBDIR += ghostty
     SUBDIR += glcapsviewer
     SUBDIR += gmrun
     SUBDIR += gnome
