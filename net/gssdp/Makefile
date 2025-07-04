@@ -1,5 +1,5 @@
 PORTNAME=	gssdp
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -19,7 +19,10 @@ USES=		gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 
 MESON_ARGS=	--default-library=both -Dexamples=false -Dgtk_doc=false -Dintrospection=true -Dmanpages=false
+USE_CSTD=	c11
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	PATCH_VERSION=${PORTVERSION:E}
 
 CONFLICTS_INSTALL=	gssdp14
 

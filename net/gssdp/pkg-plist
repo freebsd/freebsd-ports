@@ -9,7 +9,7 @@ lib/girepository-1.0/GSSDP-1.6.typelib
 lib/libgssdp-1.6.a
 lib/libgssdp-1.6.so
 lib/libgssdp-1.6.so.0
-lib/libgssdp-1.6.so.0.106.3
+lib/libgssdp-1.6.so.0.106.%%PATCH_VERSION%%
 libdata/pkgconfig/gssdp-1.6.pc
 share/gir-1.0/GSSDP-1.6.gir
 %%VAPI%%share/vala/vapi/gssdp-1.6.deps
