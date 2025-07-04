@@ -1,6 +1,5 @@
 PORTNAME=	colmap
-DISTVERSION=	3.11.1
-PORTREVISION=	2
+DISTVERSION=	3.12.1
 CATEGORIES=	graphics
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -18,22 +17,22 @@ LICENSE_FILE_SIFTGPU=	${WRKSRC}/src/thirdparty/SiftGPU/LICENSE
 LICENSE_PERMS_SIFTGPU=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libPoseLib.so:graphics/poselib \
-		libboost_filesystem.so:devel/boost-libs \
+		libboost_program_options.so:devel/boost-libs \
 		libceres.so:math/ceres-solver \
-		libflann.so:math/flann \
+		libcurl.so:ftp/curl \
+		libfaiss.so:math/faiss \
 		libfreeimage.so:graphics/freeimage \
 		libglog.so:devel/glog \
-		liblz4.so:archivers/liblz4 \
 		libmetis.so:math/metis
 TEST_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtest.pc:devel/googletest
 
 USES=		cmake:testing compiler:${OPENMP}c++11-lib desktop-file-utils eigen:3 gl \
-		localbase python:env qt:5 sqlite
+		localbase python:env qt:5 sqlite ssl
 USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 USE_GL=		gl glew
 USE_QT=		core gui widgets buildtools:build opengl:build qmake:build
-CMAKE_OFF=	BOOST_STATIC CUDA_ENABLED FETCH_POSELIB
+CMAKE_OFF=	BOOST_STATIC CUDA_ENABLED FETCH_FAISS FETCH_POSELIB
 CMAKE_TESTING_ON=	TESTS_ENABLED
 
 LDFLAGS+=	-Wl,--as-needed # gflags, glu, xi, xmu
