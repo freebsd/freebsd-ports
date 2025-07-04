@@ -22,7 +22,7 @@ lib/girepository-1.0/GUPnPAV-1.0.typelib
 lib/libgupnp-av-1.0.a
 lib/libgupnp-av-1.0.so
 lib/libgupnp-av-1.0.so.3
-lib/libgupnp-av-1.0.so.3.14.4
+lib/libgupnp-av-1.0.so.3.14.%%PATCH_VERSION%%
 libdata/pkgconfig/gupnp-av-1.0.pc
 share/gir-1.0/GUPnPAV-1.0.gir
 %%DATADIR%%/av.xsd
