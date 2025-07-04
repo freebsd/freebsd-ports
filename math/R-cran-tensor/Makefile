@@ -1,10 +1,9 @@
 PORTNAME=	tensor
-DISTVERSION=	1.5
-PORTREVISION=	1
+DISTVERSION=	1.5.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	atanubiswas484@gmail.com
 COMMENT=	Tensor product of arrays
 WWW=		https://CRAN.R-project.org/package=tensor
 
