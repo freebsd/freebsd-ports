@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-ydoc
-PORTVERSION=	3.0.5
+PORTVERSION=	3.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter-server/jupyter_ydoc/releases/download/v${PORTVERSION}/
