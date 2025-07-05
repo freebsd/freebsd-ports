@@ -1,5 +1,5 @@
 PORTNAME=	mtools
-PORTVERSION=	4.0.48
+PORTVERSION=	4.0.49
 CATEGORIES=	filesystems emulators
 MASTER_SITES=	GNU
 
