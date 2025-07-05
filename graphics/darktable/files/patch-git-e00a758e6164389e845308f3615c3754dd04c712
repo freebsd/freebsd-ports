@@ -1,0 +1,27 @@
+From e00a758e6164389e845308f3615c3754dd04c712 Mon Sep 17 00:00:00 2001
+From: Mario Zimmermann <mail@zisoft.de>
+Date: Fri, 27 Jun 2025 20:05:23 +0200
+Subject: [PATCH] fix screen dpi setting has no effect
+
+---
+ src/gui/gtk.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/gui/gtk.c b/src/gui/gtk.c
+index a620dcb42332..d62411e9d6ef 100644
+--- src/gui/gtk.c
++++ b/src/gui/gtk.c
+@@ -1630,10 +1630,10 @@ double dt_get_screen_resolution(GtkWidget *widget)
+       screen_dpi = 96.0;
+       strncpy(opt_str, "(default value)", sizeof(opt_str));
+     }
+-    gdk_screen_set_resolution(gtk_widget_get_screen(widget), screen_dpi);
+-    dt_print(DT_DEBUG_CONTROL, "[screen resolution] setting the screen resolution to %f dpi %s",
+-             screen_dpi, opt_str);
+   }
++  gdk_screen_set_resolution(gtk_widget_get_screen(widget), screen_dpi);
++  dt_print(DT_DEBUG_CONTROL, "[screen resolution] setting the screen resolution to %f dpi %s",
++            screen_dpi, opt_str);
+   return screen_dpi;
+ }
+ 

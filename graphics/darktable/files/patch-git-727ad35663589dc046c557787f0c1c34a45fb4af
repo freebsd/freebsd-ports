@@ -1,0 +1,23 @@
+From 727ad35663589dc046c557787f0c1c34a45fb4af Mon Sep 17 00:00:00 2001
+From: Hanno Schwalm <hanno@schwalm-bremen.de>
+Date: Sun, 29 Jun 2025 06:07:42 +0200
+Subject: [PATCH] Fix non-raw OpenCL rastermask codepath
+
+Using the correct OpenCL interpolator
+---
+ src/iop/rasterfile.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/iop/rasterfile.c b/src/iop/rasterfile.c
+index 9f774b3c86cb..4e582861be70 100644
+--- src/iop/rasterfile.c
++++ b/src/iop/rasterfile.c
+@@ -378,7 +378,7 @@ int process_cl(dt_iop_module_t *self,
+   if(visual) return err;
+ 
+   if(roi_out->scale != roi_in->scale && ch == 4)
+-    err = dt_iop_clip_and_zoom_roi_cl(devid, dev_out, dev_in, roi_out, roi_in);
++    err = dt_iop_clip_and_zoom_cl(devid, dev_out, dev_in, roi_out, roi_in);
+   else
+   {
+     size_t iorigin[] = { roi_out->x, roi_out->y, 0 };

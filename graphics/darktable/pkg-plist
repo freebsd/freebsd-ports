@@ -90,6 +90,7 @@ lib/darktable/plugins/liboverexposed.so
 lib/darktable/plugins/liboverlay.so
 lib/darktable/plugins/libprimaries.so
 lib/darktable/plugins/libprofile_gamma.so
+lib/darktable/plugins/librasterfile.so
 lib/darktable/plugins/librawdenoise.so
 lib/darktable/plugins/librawoverexposed.so
 lib/darktable/plugins/librawprepare.so
@@ -236,7 +237,6 @@ share/applications/org.darktable.darktable.desktop
 %%DATADIR%%/lua/darktable/debug.lua
 %%DATADIR%%/luarc
 %%DATADIR%%/noiseprofiles.json
-%%DATADIR%%/pixmaps/clock.svg
 %%DATADIR%%/pixmaps/darktable.svg
 %%DATADIR%%/pixmaps/dt_logo_128x128.png
 %%DATADIR%%/pixmaps/dt_text.svg
@@ -900,6 +900,30 @@ share/applications/org.darktable.darktable.desktop
 %%DATADIR%%/styles/darktable_Sony_ZV-1.dtstyle
 %%DATADIR%%/styles/darktable_Sony_ZV-E1.dtstyle
 %%DATADIR%%/styles/darktable_Sony_ZV-E10.dtstyle
+%%DATADIR%%/styles/examples_colors_autumn.dtstyle
+%%DATADIR%%/styles/examples_colors_blue LED lighting fix (strong).dtstyle
+%%DATADIR%%/styles/examples_colors_blue LED lighting fix.dtstyle
+%%DATADIR%%/styles/examples_colors_extreme saturation.dtstyle
+%%DATADIR%%/styles/examples_colors_faded.dtstyle
+%%DATADIR%%/styles/examples_colors_pastels.dtstyle
+%%DATADIR%%/styles/examples_colors_sepia.dtstyle
+%%DATADIR%%/styles/examples_contrast and sharpness_dehaze (strong, luminance only).dtstyle
+%%DATADIR%%/styles/examples_contrast and sharpness_extreme local contrast.dtstyle
+%%DATADIR%%/styles/examples_contrast and sharpness_sharpen finest details.dtstyle
+%%DATADIR%%/styles/examples_effects_4-up on US Letter paper.dtstyle
+%%DATADIR%%/styles/examples_effects_day for night.dtstyle
+%%DATADIR%%/styles/examples_effects_day for twilight.dtstyle
+%%DATADIR%%/styles/examples_effects_fog.dtstyle
+%%DATADIR%%/styles/examples_effects_motion blur.dtstyle
+%%DATADIR%%/styles/examples_effects_red-eye reduction.dtstyle
+%%DATADIR%%/styles/examples_spot color_blue.dtstyle
+%%DATADIR%%/styles/examples_spot color_cyan.dtstyle
+%%DATADIR%%/styles/examples_spot color_green.dtstyle
+%%DATADIR%%/styles/examples_spot color_magenta.dtstyle
+%%DATADIR%%/styles/examples_spot color_orange.dtstyle
+%%DATADIR%%/styles/examples_spot color_purple.dtstyle
+%%DATADIR%%/styles/examples_spot color_red.dtstyle
+%%DATADIR%%/styles/examples_spot color_yellow.dtstyle
 %%DATADIR%%/themes/darktable-elegant-dark.css
 %%DATADIR%%/themes/darktable-elegant-darker.css
 %%DATADIR%%/themes/darktable-elegant-grey.css
@@ -946,12 +970,12 @@ share/icons/hicolor/scalable/apps/darktable.svg
 %%NLS%%share/locale/fi/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/it/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/darktable.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/darktable.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/darktable.mo

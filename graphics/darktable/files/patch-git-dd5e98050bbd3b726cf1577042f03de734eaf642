@@ -1,0 +1,23 @@
+From dd5e98050bbd3b726cf1577042f03de734eaf642 Mon Sep 17 00:00:00 2001
+From: Pascal Obry <pascal@obry.net>
+Date: Tue, 17 Jun 2025 17:34:51 +0200
+Subject: [PATCH] snapshots: Ensure the entry fill all the widget while
+ editing.
+
+---
+ src/libs/snapshots.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/libs/snapshots.c b/src/libs/snapshots.c
+index bf0909f757e7..9c2fd0c23c76 100644
+--- src/libs/snapshots.c
++++ b/src/libs/snapshots.c
+@@ -558,7 +558,7 @@ static void _init_snapshot_entry(dt_lib_module_t *self, dt_lib_snapshot_t *s)
+   gtk_widget_set_halign(s->name, GTK_ALIGN_START);
+ 
+   s->entry = gtk_entry_new();
+-  gtk_widget_set_halign(s->entry, GTK_ALIGN_START);
++  gtk_widget_set_halign(s->entry, GTK_ALIGN_FILL);
+   g_signal_connect(G_OBJECT(s->entry), "activate",
+                    G_CALLBACK(_entry_activated_callback), self);
+ 

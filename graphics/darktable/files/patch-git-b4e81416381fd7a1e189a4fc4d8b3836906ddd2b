@@ -1,0 +1,154 @@
+From b4e81416381fd7a1e189a4fc4d8b3836906ddd2b Mon Sep 17 00:00:00 2001
+From: Pascal Obry <pascal@obry.net>
+Date: Tue, 17 Jun 2025 17:35:04 +0200
+Subject: [PATCH] Fix memory leak when using dt_util_localize_segmented_name.
+
+---
+ src/common/history.c    |  8 +++++---
+ src/common/presets.c    | 14 +++++++-------
+ src/common/presets.h    |  8 ++++----
+ src/develop/imageop.c   |  6 +++++-
+ src/gui/styles_dialog.c | 12 +++++++-----
+ 5 files changed, 28 insertions(+), 20 deletions(-)
+
+diff --git a/src/common/history.c b/src/common/history.c
+index 94b370c140f7..3fa458999ed7 100644
+--- src/common/history.c
++++ b/src/common/history.c
+@@ -1,6 +1,6 @@
+ /*
+     This file is part of darktable,
+-    Copyright (C) 2010-2024 darktable developers.
++    Copyright (C) 2010-2025 darktable developers.
+ 
+     darktable is free software: you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+@@ -1023,13 +1023,15 @@ char *dt_history_get_name_label(const char *name,
+   }
+   else
+   {
+-    const char *l_label = hand_edited
+-      ? label
++    char *l_label = hand_edited
++      ? g_strdup (label)
+       : dt_util_localize_segmented_name(label, FALSE);
+ 
+     result = markup
+       ? g_markup_printf_escaped("%s • <small>%s</small>", name, l_label)
+       : g_markup_printf_escaped("%s • %s", name, l_label);
++
++    g_free(l_label);
+   }
+ 
+   return result;
+diff --git a/src/common/presets.c b/src/common/presets.c
+index a22dc8935c56..50fab77749dc 100644
+--- src/common/presets.c
++++ b/src/common/presets.c
+@@ -428,7 +428,7 @@ char *dt_presets_get_module_label(const char *module_name,
+     const char *name = (const char *)sqlite3_column_text(stmt, 0);
+     const char *multi_name = (const char *)sqlite3_column_text(stmt, 1);
+     if(multi_name && (strlen(multi_name) == 0 || multi_name[0] != ' '))
+-      result = g_strdup(dt_presets_get_multi_name(name, multi_name, FALSE));
++      result = dt_presets_get_multi_name(name, multi_name, FALSE);
+   }
+   g_free(query);
+   sqlite3_finalize(stmt);
+@@ -436,9 +436,9 @@ char *dt_presets_get_module_label(const char *module_name,
+   return result;
+ }
+ 
+-const char *dt_presets_get_multi_name(const char *name,
+-                                      const char *multi_name,
+-                                      const gboolean localize)
++char *dt_presets_get_multi_name(const char *name,
++                                const char *multi_name,
++                                const gboolean localize)
+ {
+   const gboolean auto_module = dt_conf_get_bool("darkroom/ui/auto_module_name_update");
+ 
+@@ -446,10 +446,10 @@ const char *dt_presets_get_multi_name(const char *name,
+   // in non auto-update mode : use only the multi_name if defined
+   if(auto_module)
+     return strlen(multi_name) > 0
+-      ? multi_name
+-      : (localize ? dt_util_localize_segmented_name(name, FALSE) : name);
++      ? g_strdup(multi_name)
++      : (localize ? dt_util_localize_segmented_name(name, FALSE) : g_strdup(name));
+   else
+-    return strlen(multi_name) > 0 ? multi_name : "";
++    return g_strdup(strlen(multi_name) > 0 ? multi_name : "");
+ }
+ 
+ // clang-format off
+diff --git a/src/common/presets.h b/src/common/presets.h
+index b493b543b1db..fe4c65fc3960 100644
+--- src/common/presets.h
++++ b/src/common/presets.h
+@@ -1,6 +1,6 @@
+ /*
+     This file is part of darktable,
+-    Copyright (C) 2019-2023 darktable developers.
++    Copyright (C) 2019-2025 darktable developers.
+ 
+     darktable is free software: you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+@@ -42,9 +42,9 @@ char *dt_presets_get_module_label(const char *module_name,
+    and the recorded preset's multi_name. This depends on the preference
+    darkroom/ui/auto_module_name_update
+ */
+-const char *dt_presets_get_multi_name(const char *name,
+-                                      const char *multi_name,
+-                                      const gboolean localize);
++char *dt_presets_get_multi_name(const char *name,
++                                const char *multi_name,
++                                const gboolean localize);
+ 
+ /** get currently active preset name for the module */
+ gchar *dt_get_active_preset_name(dt_iop_module_t *module, gboolean *writeprotect);
+diff --git a/src/develop/imageop.c b/src/develop/imageop.c
+index b2886b8d274e..13386fb6286b 100644
+--- src/develop/imageop.c
++++ b/src/develop/imageop.c
+@@ -1198,7 +1198,11 @@ static void _iop_panel_name(dt_iop_module_t *module)
+       if(module->multi_name_hand_edited)
+         new_label = g_strdup_printf("• %s", module->multi_name);
+       else
+-        new_label = g_strdup_printf("• %s", dt_util_localize_segmented_name(module->multi_name, FALSE));
++      {
++        char *loc = dt_util_localize_segmented_name(module->multi_name, FALSE);
++        new_label = g_strdup_printf("• %s", loc);
++        g_free(loc);
++      }
+       gtk_widget_set_name(GTK_WIDGET(iname), "iop-module-name");
+     }
+   }
+diff --git a/src/gui/styles_dialog.c b/src/gui/styles_dialog.c
+index c4fc24704e9f..75474de98793 100644
+--- src/gui/styles_dialog.c
++++ b/src/gui/styles_dialog.c
+@@ -1,6 +1,6 @@
+ /*
+     This file is part of darktable,
+-    Copyright (C) 2010-2024 darktable developers.
++    Copyright (C) 2010-2025 darktable developers.
+ 
+     darktable is free software: you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+@@ -1003,10 +1003,12 @@ GtkWidget *dt_gui_style_content_dialog(char *name, const dt_imgid_t imgid)
+ 
+     if(i->multi_name && strlen(i->multi_name) > 0)
+     {
+-      snprintf(mn, sizeof(mn), "(%s)",
+-               i->multi_name_hand_edited
+-               ? i->multi_name
+-               : dt_util_localize_segmented_name(i->multi_name, TRUE));
++      char *mname = i->multi_name_hand_edited
++        ? g_strdup(i->multi_name)
++        : dt_util_localize_segmented_name(i->multi_name, TRUE);
++
++      snprintf(mn, sizeof(mn), "(%s)", mname);
++      g_free(mname);
+     }
+     else
+     {
