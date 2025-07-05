@@ -11,6 +11,8 @@ WWW=		https://pocket-id.org
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_i386=	cannot use int64(off) (value of type int64) as int32 value in assignment
+
 USES=		go:modules
 USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}
