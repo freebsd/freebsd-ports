@@ -10,8 +10,6 @@ WWW=		https://rawstudio.org/
 
 LICENSE=	GPLv2+
 
-BROKEN=		Fails to build with libxml2 2.13+, error: use of undeclared identifier 'xmlDocPtr'
-
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		liblcms.so:graphics/lcms \

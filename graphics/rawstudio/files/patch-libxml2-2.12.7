@@ -58,6 +58,26 @@
  #include <libxml/xmlwriter.h>
  #include "rs-utils.h"
  
+--- plugins/output-facebook/rs-facebook-client.c
++++ plugins/output-facebook/rs-facebook-client.c
+@@ -19,6 +19,7 @@
+ 
+ #include <curl/curl.h>
+ #include <libxml/encoding.h>
++#include <libxml/tree.h>
+ #include <gtk/gtk.h>
+ #include <glib.h>
+ #include <glib/gstdio.h>
+--- plugins/output-picasa/rs-picasa-client.c
++++ plugins/output-picasa/rs-picasa-client.c
+@@ -10,6 +10,7 @@
+ #include <glib.h>
+ #include <gtk/gtk.h>
+ #include <libxml/encoding.h>
++#include <libxml/tree.h>
+ #include <string.h>
+ #include <curl/curl.h>
+ #include "rs-picasa-client.h"
 --- src/rs-batch.c
 +++ src/rs-batch.c
 @@ -23,6 +23,7 @@
