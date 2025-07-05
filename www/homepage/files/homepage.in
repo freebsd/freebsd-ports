@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: homepage
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for Home Page in /etc/rc.conf
+#
+# homepage_enable (bool):        Enable Home Page.
+# homepage_log (str):            Log output.
+# homepage_runas (str):          User to run Home Page as.
+#
+
+. /etc/rc.subr
+
+name="homepage"
+desc="Highly customizable homepage with service API integrations"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${homepage_enable:="NO"}
+: ${homepage_env_file:="%%PREFIX%%/etc/homepage.env"}
+: ${homepage_log:="/var/log/homepage.log"}
+: ${homepage_runas:="%%USER%%"}
+
+homepage_chdir="%%HOMEDIR%%"
+pidfile="/var/run/${name}.pid"
+procname="%%LOCALBASE%%/bin/node"
+command="/usr/sbin/daemon"
+command_args="-u '${homepage_runas}' -p '${pidfile}' -t '${desc}' -o '${homepage_log}' '${procname}' server.js"
+
+run_rc_command "$1"
