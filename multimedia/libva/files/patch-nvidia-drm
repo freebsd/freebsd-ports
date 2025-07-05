@@ -1,0 +1,12 @@
+- Avoid conflict between libva-nvidia-driver and libva-vdpau-driver
+
+--- va/drm/va_drm_utils.c.orig	2024-06-20 06:49:27 UTC
++++ va/drm/va_drm_utils.c
+@@ -65,7 +65,6 @@ VA_DRM_GetDriverNames(VADriverContextP ctx, char **dri
+         { "radeon",     { "r600", "radeonsi" } }, // Mesa Gallium
+         { "amdgpu",     { "radeonsi"         } }, // Mesa Gallium
+         { "WSL",        { "d3d12"            } }, // Mesa Gallium
+-        { "nvidia-drm", { "nvidia"           } }, // Unofficial NVIDIA
+     };
+ 
+     const struct drm_state * const drm_state = ctx->drm_state;
