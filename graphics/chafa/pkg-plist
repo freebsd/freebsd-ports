@@ -17,7 +17,7 @@ lib/chafa/include/chafaconfig.h
 lib/libchafa.a
 lib/libchafa.so
 lib/libchafa.so.0
-lib/libchafa.so.0.10.1
+lib/libchafa.so.0.10.2
 libdata/pkgconfig/chafa.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/chafa/api-index-deprecated.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chafa/api-index-full.html
