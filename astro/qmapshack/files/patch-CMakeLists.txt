@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-07-20 14:13:59 UTC
+--- CMakeLists.txt.orig	2025-07-04 12:38:57 UTC
 +++ CMakeLists.txt
-@@ -47,6 +47,7 @@ include(TranslateDesktop)
+@@ -46,6 +46,7 @@ include(DefineInstallationPaths)
  include(DefineCMakeDefaults)
  include(DefineCompilerFlags)
  include(DefineInstallationPaths)
@@ -8,9 +8,9 @@
  include(CPackConfig.cmake)
  include(ConfigureChecks.cmake)
  
-@@ -185,7 +186,10 @@ find_package(Qt5WebEngineWidgets    REQUIRED)
- find_package(Qt5Qml                 REQUIRED)
- find_package(Qt5Help                REQUIRED)
+@@ -192,7 +193,10 @@ find_package(GDAL                   REQUIRED)
+ find_package(Qt6Qml                 REQUIRED)
+ find_package(Qt6Help                REQUIRED)
  find_package(GDAL                   REQUIRED)
 -find_package(PROJ                   REQUIRED)
 +find_package(PROJ)
@@ -19,4 +19,4 @@
 +endif()
  find_package(JPEG                   REQUIRED)
  find_package(ROUTINO                REQUIRED)
- find_package(QuaZip-Qt5             REQUIRED)
+ find_package(QuaZip-Qt6             REQUIRED)

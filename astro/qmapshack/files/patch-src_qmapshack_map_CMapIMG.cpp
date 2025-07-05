@@ -1,10 +1,10 @@
---- src/qmapshack/map/CMapIMG.cpp.orig	2021-05-24 09:18:08 UTC
+--- src/qmapshack/map/CMapIMG.cpp.orig	2025-07-04 12:38:57 UTC
 +++ src/qmapshack/map/CMapIMG.cpp
-@@ -34,6 +34,7 @@
+@@ -20,6 +20,7 @@
  
  #include <QPainterPath>
  #include <QtWidgets>
 +#include <QPainterPath>
  
- #undef DEBUG_SHOW_SECT_DESC
- #undef DEBUG_SHOW_TRE_DATA
+ #include "CMainWindow.h"
+ #include "canvas/CCanvas.h"

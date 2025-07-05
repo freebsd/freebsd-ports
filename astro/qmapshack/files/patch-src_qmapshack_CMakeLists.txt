@@ -1,7 +1,7 @@
---- src/qmapshack/CMakeLists.txt.orig	2023-07-20 14:13:59 UTC
+--- src/qmapshack/CMakeLists.txt.orig	2025-07-04 12:38:57 UTC
 +++ src/qmapshack/CMakeLists.txt
-@@ -993,7 +993,7 @@ target_link_libraries(${APPLICATION_NAME}
-     Qt5::Help
+@@ -977,7 +977,7 @@ target_link_libraries(${APPLICATION_NAME}
+     Qt6::Core5Compat
      ${DBUS_LIB}
      ${GDAL_LIBRARIES}
 -    ${PROJ_LIBRARIES}

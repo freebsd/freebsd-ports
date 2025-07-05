@@ -1,8 +1,8 @@
---- src/qmt_map2jnx/CMakeLists.txt.orig	2021-05-24 09:18:08 UTC
+--- src/qmt_map2jnx/CMakeLists.txt.orig	2025-07-04 12:38:57 UTC
 +++ src/qmt_map2jnx/CMakeLists.txt
 @@ -53,7 +53,7 @@ TARGET_LINK_LIBRARIES(${APPLICATION_NAME}
-     Qt5::Core
-     Qt5::Gui
+     Qt6::Core
+     Qt6::Gui
      ${GDAL_LIBRARIES}
 -    ${PROJ_LIBRARIES}
 +    ${PROJ_LDFLAGS} ${PROJ_LIBRARIES}

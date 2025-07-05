@@ -1,8 +1,8 @@
---- src/qmt_rgb2pct/CMakeLists.txt.orig	2021-05-24 09:18:08 UTC
+--- src/qmt_rgb2pct/CMakeLists.txt.orig	2025-07-04 12:38:57 UTC
 +++ src/qmt_rgb2pct/CMakeLists.txt
-@@ -92,7 +92,7 @@ target_compile_definitions(${APPLICATION_NAME} PUBLIC
+@@ -100,7 +100,7 @@ target_link_libraries(${APPLICATION_NAME}
  target_link_libraries(${APPLICATION_NAME}
-     Qt5::Core
+     Qt6::Core
      ${GDAL_LIBRARIES}
 -    ${PROJ_LIBRARIES}
 +    ${PROJ_LDFLAGS} ${PROJ_LIBRARIES}
