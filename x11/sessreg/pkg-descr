@@ -1,2 +1,3 @@
-This package contains sessreg, which is a simple program for managing
-utmp/wtmp entries for xdm sessions.
+Sessreg is a simple program for managing utmpx/wtmpx entries for X
+sessions. It was originally written for use with xdm, but may also be
+used with other display managers such as gdm or kdm.
