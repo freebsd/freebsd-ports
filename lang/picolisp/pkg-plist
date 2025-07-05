@@ -92,6 +92,7 @@ lib/picolisp/lib/pilog.l
 lib/picolisp/lib/plio.js
 lib/picolisp/lib/replica.l
 lib/picolisp/lib/role.l
+lib/picolisp/lib/select.l
 lib/picolisp/lib/simul.l
 lib/picolisp/lib/sq.l
 lib/picolisp/lib/svg.l
@@ -99,11 +100,12 @@ lib/picolisp/lib/sysdefs
 lib/picolisp/lib/term.l
 lib/picolisp/lib/test.l
 lib/picolisp/lib/too.l
+lib/picolisp/lib/ulimit.l
 lib/picolisp/lib/user.l
 lib/picolisp/lib/vip.l
 lib/picolisp/lib/vip/draw.l
-lib/picolisp/lib/vip/load.l
 lib/picolisp/lib/vip/html.l
+lib/picolisp/lib/vip/load.l
 lib/picolisp/lib/xhtml.l
 lib/picolisp/lib/xhtml/area
 lib/picolisp/lib/xhtml/field
