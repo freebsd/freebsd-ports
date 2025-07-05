@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+If you're running imaginary as a part of Nextcloud installation -
+configure it using:
+
+  # sysrc imaginary_flags="-return-size -max-allowed-resolution 222.2"
+
+Then add this to your Nextcloud's config.php:
+
+  'enabledPreviewProviders' => [
+      'OC\Preview\MP3',
+      'OC\Preview\TXT',
+      'OC\Preview\MarkDown',
+      'OC\Preview\OpenDocument',
+      'OC\Preview\Krita',
+      'OC\Preview\Imaginary',
+  ],
+  'preview_imaginary_url' => 'http://<url of imaginary>:<port>',
+
+EOM
+}
+]
