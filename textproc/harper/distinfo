@@ -1,4 +1,4 @@
-TIMESTAMP = 1751400865
+TIMESTAMP = 1751736299
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -725,5 +725,5 @@ SHA256 (rust/crates/zerovec-0.11.2.crate) = 4a05eb080e015ba39cc9e23bbe5e7fb04d5f
 SIZE (rust/crates/zerovec-0.11.2.crate) = 124500
 SHA256 (rust/crates/zerovec-derive-0.11.1.crate) = 5b96237efa0c878c64bd89c436f661be4e46b2f3eff1ebb976f7ef2321d2f58f
 SIZE (rust/crates/zerovec-derive-0.11.1.crate) = 21294
-SHA256 (Automattic-harper-v0.47.0_GH0.tar.gz) = ff07e01a838e335aa0b72da0d36942e1fe319624df401ae7550fbb40bcc0726c
-SIZE (Automattic-harper-v0.47.0_GH0.tar.gz) = 4119251
+SHA256 (Automattic-harper-v0.48.0_GH0.tar.gz) = ce194eac289245857fb94380f7c6ccffc4e859456ef863169210f5c18e26b6ad
+SIZE (Automattic-harper-v0.48.0_GH0.tar.gz) = 4131600
