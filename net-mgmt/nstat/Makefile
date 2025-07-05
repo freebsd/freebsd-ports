@@ -1,6 +1,5 @@
 PORTNAME=	nstat
-DISTVERSION=	g20230601
-PORTREVISION=	1
+DISTVERSION=	g20250705
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 
@@ -17,7 +16,7 @@ RUN_DEPENDS_amd64=	pcm-memory:sysutils/intel-pcm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gallatin
-GH_TAGNAME=	8d9a10a
+GH_TAGNAME=	bccbdfd
 
 PLIST_FILES=	bin/nstat \
 		share/man/man1/nstat.1.gz
