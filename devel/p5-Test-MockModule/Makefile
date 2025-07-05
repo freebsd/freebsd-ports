@@ -1,5 +1,5 @@
 PORTNAME=	Test-MockModule
-PORTVERSION=	0.179.0
+PORTVERSION=	0.180.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -15,7 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-SUPER>=1.20:devel/p5-SUPER
-TEST_DEPENDS=	p5-Test-Warnings>=0:devel/p5-Test-Warnings
+TEST_DEPENDS=	p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage \
+		p5-Test-Pod>=0:devel/p5-Test-Pod \
+		p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
 USES=		perl5
 USE_PERL5=	modbuild
