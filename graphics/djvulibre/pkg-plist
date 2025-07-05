@@ -21,7 +21,7 @@ include/libdjvu/ddjvuapi.h
 include/libdjvu/miniexp.h
 lib/libdjvulibre.so
 lib/libdjvulibre.so.21
-lib/libdjvulibre.so.21.7.0
+lib/libdjvulibre.so.21.8.0
 libdata/pkgconfig/ddjvuapi.pc
 %%ANY2DJVU%%share/man/man1/any2djvu.1.gz
 share/man/man1/bzz.1.gz
