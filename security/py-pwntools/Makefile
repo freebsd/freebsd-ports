@@ -1,6 +1,6 @@
 PORTNAME=	pwntools
 DISTVERSION=	4.14.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,6 +36,8 @@ USES=		cpe python
 CPE_VENDOR=	pwntools_project
 USE_PYTHON=	autoplist concurrent distutils
 
+.include <bsd.port.pre.mk>
+
 PYDISTUTILS_INSTALLARGS+=	--only-use-pwn-command
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
