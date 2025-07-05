@@ -7,6 +7,8 @@ To use VA-API in apps like Firefox make sure DRM and CUDA are enabled e.g.,
    # sysrc kld_list+=nvidia-drm
    # service kld restart
    $ test -e /dev/dri/renderD* || bsddialog --title Error --msgbox "nvidia-drm-kmod failed" 0 0
+   $ test -n "$WAYLAND_DISPLAY" || export LIBVA_DRIVER_NAME=nvidia-drm
+   $ test -n "$WAYLAND_DISPLAY" || setenv LIBVA_DRIVER_NAME nvidia-drm
    $ nv-sglrun vainfo
    $ nv-sglrun firefox
 
