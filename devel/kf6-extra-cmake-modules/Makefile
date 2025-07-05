@@ -1,5 +1,6 @@
 PORTNAME=	extra-cmake-modules
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 COMMENT=	Extra modules and scripts for CMake
@@ -39,5 +40,9 @@ MANPAGES_BUILD_DEPENDS=	${SPHINX_DEP}
 MANPAGES_CMAKE_BOOL=	BUILD_MAN_DOCS
 
 TESTING_UNSAFE=		requires reuse-tool port
+
+.if exists(/usr/include/sys/inotify.h)
+EXTRA_PATCHES+=		${FILESDIR}/extrapatch-inotify
+.endif
 
 .include <bsd.port.mk>

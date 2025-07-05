@@ -1,0 +1,11 @@
+--- find-modules/FindInotify.cmake.orig	2025-06-13 09:31:41 UTC
++++ find-modules/FindInotify.cmake
+@@ -33,7 +33,7 @@ if(Inotify_INCLUDE_DIRS)
+ if(Inotify_INCLUDE_DIRS)
+ # On Linux and SunOS, there is no library to link against, on the BSDs there is.
+ # On the BSD's, inotify is implemented through a library, libinotify.
+-    if(CMAKE_SYSTEM_NAME MATCHES "Linux" OR CMAKE_SYSTEM_NAME MATCHES "SunOS")
++    if(CMAKE_SYSTEM_NAME MATCHES "Linux" OR CMAKE_SYSTEM_NAME MATCHES "SunOS" OR CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+         set(Inotify_FOUND TRUE)
+         set(Inotify_LIBRARIES "")
+         set(Inotify_INCLUDE_DIRS "")
