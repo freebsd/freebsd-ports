@@ -1,5 +1,5 @@
 PORTNAME=	nautilus
-PORTVERSION=	47.4
+PORTVERSION=	47.5
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -10,8 +10,6 @@ WWW=		https://apps.gnome.org/Nautilus/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-PORTSCOUT=	limit:^47\.
 
 LIB_DEPENDS=	libgexiv2.so:graphics/gexiv2 \
 		libgnome-autoar-0.so:archivers/gnome-autoar \
@@ -28,6 +26,9 @@ USES=		compiler:c11 cpe desktop-file-utils gettext gnome gstreamer \
 USE_GNOME=	cairo glib20 gdkpixbuf gnomedesktop4 gtk40 libadwaita
 USE_LDCONFIG=	yes
 USE_XORG=	x11
+
+PORTSCOUT=	limit:^47\.
+
 MESON_ARGS=	-Dpackagekit=false \
 		-Dselinux=false \
 		-Dtests=none
