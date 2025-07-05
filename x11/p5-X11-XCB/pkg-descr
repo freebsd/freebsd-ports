@@ -1,2 +1,2 @@
-The modul bindings wrap libxcb, a C library to speak with X11. It
-provides an object oriented interface to the libxcb methods using Mouse.
+Perl bindings around libxcb, a C library for X11 interaction. It provides
+an object oriented interface to the libxcb methods.
