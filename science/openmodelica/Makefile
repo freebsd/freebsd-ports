@@ -18,7 +18,7 @@ LICENSE_NAME=	Public license for OpenModelica
 LICENSE_TEXT=	See https://github.com/OpenModelica/OpenModelica/blob/master/OSMC-License.txt
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
-BROKEN_aarch64=	compilation fails: gcc13 doesn't install libquadmath.so, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=285692
+BROKEN_aarch64=	compilation fails: OpenModelica expects libquadmath.so, which does not exist on aarch64 (PR 285692)
 BROKEN_armv7=	link fails: ld: cannot find -lquadmath: No such file or directory
 BROKEN_i386=	compilation fails: /wrkdirs/usr/ports/science/openmodelica/work/OpenModelica-1.20.0/OMCompiler/3rdParty/libffi/src/x86/sysv.S:841:1: error: changed section flags for .eh_frame, expected: 0x2
 
