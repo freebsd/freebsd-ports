@@ -34,6 +34,7 @@ lib/tcl%%TCL_VER%%/encoding/cp1255.enc
 lib/tcl%%TCL_VER%%/encoding/cp1256.enc
 lib/tcl%%TCL_VER%%/encoding/cp1257.enc
 lib/tcl%%TCL_VER%%/encoding/cp1258.enc
+lib/tcl%%TCL_VER%%/encoding/cp165.enc
 lib/tcl%%TCL_VER%%/encoding/cp437.enc
 lib/tcl%%TCL_VER%%/encoding/cp737.enc
 lib/tcl%%TCL_VER%%/encoding/cp775.enc
@@ -322,6 +323,7 @@ libdata/pkgconfig/tcl%%PKGNAMESUFFIX%%.pc
 %%TCLMAN%%share/man/man3/Tcl_ClassSetMetadata.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_ClearChannelHandlers.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_Close.tcl%%PKGNAMESUFFIX%%.3.gz
+%%TCLMAN%%share/man/man3/Tcl_CloseEx.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_CommandComplete.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_CommandTraceInfo.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_Concat.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -581,6 +583,7 @@ libdata/pkgconfig/tcl%%PKGNAMESUFFIX%%.pc
 %%TCLMAN%%share/man/man3/Tcl_Gets.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_GetServiceMode.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_GetSizeFromStat.tcl%%PKGNAMESUFFIX%%.3.gz
+%%TCLMAN%%share/man/man3/Tcl_GetSizeIntFromObj.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_GetsObj.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_GetStackedChannel.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_GetStartupScript.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -668,6 +671,7 @@ libdata/pkgconfig/tcl%%PKGNAMESUFFIX%%.pc
 %%TCLMAN%%share/man/man3/Tcl_MethodIsPrivate.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_MethodIsPublic.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_MethodIsType.tcl%%PKGNAMESUFFIX%%.3.gz
+%%TCLMAN%%share/man/man3/Tcl_MethodIsType2.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_MethodName.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_MutexFinalize.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_MutexLock.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -678,10 +682,12 @@ libdata/pkgconfig/tcl%%PKGNAMESUFFIX%%.pc
 %%TCLMAN%%share/man/man3/Tcl_NewDictObj.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_NewDoubleObj.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_NewInstanceMethod.tcl%%PKGNAMESUFFIX%%.3.gz
+%%TCLMAN%%share/man/man3/Tcl_NewInstanceMethod2.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_NewIntObj.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_NewListObj.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_NewLongObj.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_NewMethod.tcl%%PKGNAMESUFFIX%%.3.gz
+%%TCLMAN%%share/man/man3/Tcl_NewMethod2.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_NewObj.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_NewObjectInstance.tcl%%PKGNAMESUFFIX%%.3.gz
 %%TCLMAN%%share/man/man3/Tcl_NewStringObj.tcl%%PKGNAMESUFFIX%%.3.gz
@@ -947,6 +953,7 @@ libdata/pkgconfig/tcl%%PKGNAMESUFFIX%%.pc
 %%TCLMAN%%share/man/mann/bgerror.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/binary.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/break.tcl%%PKGNAMESUFFIX%%.n.gz
+%%TCLMAN%%share/man/mann/buildinfo.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/callback.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/catch.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/cd.tcl%%PKGNAMESUFFIX%%.n.gz
@@ -1213,6 +1220,7 @@ libdata/pkgconfig/tcl%%PKGNAMESUFFIX%%.pc
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Coral_Harbour
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Cordoba
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Costa_Rica
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Coyhaique
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Creston
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Cuiaba
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Curacao
