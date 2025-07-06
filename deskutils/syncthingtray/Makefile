@@ -1,6 +1,6 @@
 PORTNAME=	syncthingtray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.8
+DISTVERSION=	1.7.10
 CATEGORIES=	deskutils
 
 MAINTAINER=	dsh@bamus.cz
@@ -24,11 +24,11 @@ USES=		cmake:insource iconv perl5 xorg
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	Martchus
 GH_TUPLE:=	${GH_ACCOUNT}:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:${PORTNAME}/../${PORTNAME} \
-		${GH_ACCOUNT}:cpp-utilities:v5.28.1:cpputilities/../c++utilities \
-		${GH_ACCOUNT}:qtutilities:v6.15.0:qtutilities/../qtutilities \
+		${GH_ACCOUNT}:cpp-utilities:v5.29.0:cpputilities/../c++utilities \
+		${GH_ACCOUNT}:qtutilities:v6.17.0:qtutilities/../qtutilities \
 		${GH_ACCOUNT}:qtforkawesome:v0.3.1:qtforkawesome/../qtforkawesome \
 		ForkAwesome:Fork-Awesome:4fef70f:ForkAwesome/../forkawesome \
-		${GH_ACCOUNT}:subdirs:9fc3290:subdirs/../subdirs
+		${GH_ACCOUNT}:subdirs:53b30dd:subdirs/../subdirs
 
 USE_PERL5=	build
 USE_QT=		declarative svg
@@ -42,14 +42,14 @@ CMAKE_SOURCE_PATH=	${WRKDIR}/subdirs/syncthingtray
 
 .if ${FLAVOR} == qt5
 USES+=		qt:5
-USE_QT+=	concurrent core dbus gui network qdbus quickcontrols2:build \
-		widgets x11extras:build buildtools:build linguist:build \
-		qmake:build testlib:build
+USE_QT+=	concurrent core dbus gui location network qdbus \
+		quickcontrols2:build widgets x11extras:build buildtools:build \
+		linguist:build qmake:build testlib:build
 .else
 CMAKE_ARGS+=	-DQT_PACKAGE_PREFIX:STRING=Qt6 -DKF_PACKAGE_PREFIX:STRING=KF6
 USES+=		gl qt:6
 USE_GL=		opengl
-USE_QT+=	base tools:build
+USE_QT+=	base positioning tools:build
 .endif
 
 CONFLICTS_INSTALL=	${PORTNAME} ${PORTNAME}-*
