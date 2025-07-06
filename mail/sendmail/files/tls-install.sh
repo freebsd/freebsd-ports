@@ -77,7 +77,7 @@ sed 's/^X//' << 'END-of-files/tls.m4'
 X# links:
 X# http://www.sendmail.org/~gshapiro/
 X# http://www.sendmail.org/~ca/email/starttls.html
-X# http://www.ofb.net/~jheiss/sendmail/tlsandrelay.shtml
+X# https://aput.net/~jheiss/sendmail/tlsandrelay.shtml
 X#
 X# You may need to add this to your sendmail.mc file:
 X
