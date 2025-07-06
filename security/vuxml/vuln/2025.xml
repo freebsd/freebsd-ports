@@ -1,3 +1,34 @@
+  <vuln vid="7642ba72-5abf-11f0-87ba-002590c1f29c">
+    <topic>FreeBSD -- Use-after-free in multi-threaded xz decoder</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.2</ge><lt>14.2_4</lt></range>
+	<range><ge>13.5</ge><lt>13.5_2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>A worker thread could free its input buffer after decoding,
+	while the main thread might still be writing to it.  This leads to
+	an use-after-free condition on heap memory.</p>
+	<h1>Impact:</h1>
+	<p>An attacker may use specifically crafted .xz file to cause
+	multi-threaded xz decoder to crash, or potentially run arbitrary
+	code under the credential the decoder was executed.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-31115</cvename>
+      <freebsdsa>SA-25:06.xz</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2025-07-02</discovery>
+      <entry>2025-07-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="69bfe2a4-5a39-11f0-8792-4ccc6adda413">
     <topic>gstreamer1-plugins-bad -- stack buffer overflow in H.266 video parser</topic>
     <affects>
