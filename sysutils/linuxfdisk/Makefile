@@ -10,6 +10,9 @@ DISTNAME=	util-linux-${PORTVERSION}
 MAINTAINER=	netch@netch.kiev.ua
 COMMENT=	Fdisk, a partition tables manipulator, from util-linux
 
+DEPRECATED=	This port is way out of date, use devel/util-linux instead
+EXPIRATION_DATE=2025-09-30
+
 LICENSE=	GPLv2+
 
 BROKEN_aarch64=	fails to build: error unknown architecture
