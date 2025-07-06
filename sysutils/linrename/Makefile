@@ -1,20 +1,19 @@
 PORTNAME=	linrename
 PORTVERSION=	2.25.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
-#MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${PORTVERSION}
-MASTER_SITES=	http://ftp.ntu.edu.tw/ftp/linux/%SUBDIR%/ \
-		http://ftp.sunet.se/pub/Linux/kernel.org/linux/%SUBDIR%/ \
-		http://kernel.org/pub/linux/%SUBDIR%/
-MASTER_SITE_SUBDIR=	utils/util-linux/v${PORTVERSION:R}
+MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${PORTVERSION:R}
 DISTNAME=	util-linux-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rename multiple files using substitution
 WWW=		http://freecode.com/projects/util-linux/
 
-BUILD_WRKSRC=	${WRKSRC}/misc-utils
-INSTALL_WRKSRC=	${WRKSRC}/misc-utils
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	FreeBSD port unmaintained, use misc/mmv instead
+EXPIRATION_DATE=2025-09-30
 
 USES=		tar:xz
 
@@ -24,6 +23,9 @@ CPPFLAGS+=	-I../include \
 		-DHAVE_PROGRAM_INVOCATION_SHORT_NAME \
 		-Dprogram_invocation_short_name=\"${PROGNAME}\" \
 		-DPACKAGE_STRING=\"util-linux\ ${PORTVERSION}\"
+
+BUILD_WRKSRC=	${WRKSRC}/misc-utils
+INSTALL_WRKSRC=	${WRKSRC}/misc-utils
 
 PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
