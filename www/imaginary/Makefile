@@ -9,7 +9,7 @@ WWW=		https://github.com/h2non/imaginary
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gettext-runtime gnome go:modules
+USES=		gettext-runtime gnome go:modules pkgconfig
 USE_RC_SUBR=	${PORTNAME}
 USE_GNOME=	glib20
 

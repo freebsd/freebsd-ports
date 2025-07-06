@@ -281,6 +281,7 @@
     SUBDIR += igal2
     SUBDIR += ikiwiki
     SUBDIR += ilias
+    SUBDIR += imaginary
     SUBDIR += iridium
     SUBDIR += janus
     SUBDIR += jericho-html
