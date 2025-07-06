@@ -5,7 +5,7 @@ CATEGORIES=	cad
 
 PATCH_SITES=	https://github.com/alexxy/netgen/commit/
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Automatic 3D tetrahedral mesh generator
 WWW=		https://ngsolve.org/ \
 		https://github.com/NGSolve/ngsolve/

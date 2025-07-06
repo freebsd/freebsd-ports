@@ -4,7 +4,7 @@ CATEGORIES=	audio elisp
 MASTER_SITES=	https://elpa.gnu.org/packages/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	GNU/Emacs Multimedia System
 WWW=		https://www.gnu.org/software/emms/ \
 		https://elpa.gnu.org/packages/emms.html \

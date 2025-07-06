@@ -4,7 +4,7 @@ DISTVERSION=	1.8.6
 PORTREVISION=	1
 CATEGORIES=	security net-p2p
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	F2F Anonymous network based on the QB-problem & GP/12 protocol stack
 WWW=		https://github.com/number571/hidden-lake/
 

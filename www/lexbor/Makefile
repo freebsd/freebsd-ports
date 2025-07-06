@@ -4,7 +4,7 @@ DISTVERSION=	2.4.0
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Modular web engine (HTML/CSS parser, renderer, ...)
 WWW=		https://lexbor.com/ \
 		https://github.com/lexbor/lexbor/

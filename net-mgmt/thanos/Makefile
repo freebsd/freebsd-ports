@@ -4,7 +4,7 @@ DISTVERSION=	0.38.0
 PORTREVISION=	3
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Highly available Prometheus setup with long term storage capabilities
 WWW=		https://thanos.io/ \
 		https://github.com/thanos-io/thanos/
