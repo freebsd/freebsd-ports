@@ -1,5 +1,5 @@
 PORTNAME=	gnome-shell-extensions
-PORTVERSION=	47.5
+PORTVERSION=	47.6
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -11,17 +11,17 @@ WWW=		https://apps.gnome.org/Extensions/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTSCOUT=	limit:^47\.
-
 LIB_DEPENDS=	libgjs.so:lang/gjs
 RUN_DEPENDS=	gnome-shell>=47.0:x11/gnome-shell \
 		libgtop>0:devel/libgtop \
 		gnome-menus>0:x11/gnome-menus
 
 NO_ARCH=	yes
-USES=		gettext gnome meson pkgconfig python tar:xz
+USES=		gettext-tools gnome meson pkgconfig python tar:xz
 USE_GNOME=	glib20
-USE_LDCONFIG=	yes
+
+PORTSCOUT=	limit:^47\.
+
 MESON_ARGS=	-Dclassic_mode=true
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
