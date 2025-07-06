@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer parse and demuliplex a Smooth Streaming manifest into audio/video streams plugin

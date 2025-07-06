@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer ttml subtitle plugin

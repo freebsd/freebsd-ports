@@ -1,6 +1,5 @@
 PORTNAME=	gstreamer1-editing-services
 PORTVERSION=	${_GST_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer-editing-services/
 DISTNAME=	gst-editing-services-${PORTVERSION}

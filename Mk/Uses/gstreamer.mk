@@ -48,7 +48,7 @@ _GST_VER=	${_GST_VER_DEFAULT}
 # - multimedia/gstreamer1-rtsp-server
 # - multimedia/gstreamer1-vaapi
 # - multimedia/py-gstreamer1
-_GST1_VERSION=		1.26.2
+_GST1_VERSION=		1.26.3
 _GST1_LIB_VER=		1.0
 _GST1_SOVERSION=	0.${_GST1_VERSION:R:E}${${_GST1_VERSION:E} > 9:?:0}${_GST1_VERSION:E}.0
 
