@@ -86,6 +86,18 @@ _local:=	${_A}
 .      if ${SSL_DEFAULT} != base
 IGNORE=	You are using OpenSSL from ports and have selected GSSAPI from base, please select another GSSAPI value
 .      endif
+.      if exists(/usr/libexec/krb5kdc)
+         # Base has MIT KRB5 installed
+KRB5_HOME?=	/usr
+GSSAPIBASEDIR=	${KRB5_HOME}
+GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib
+GSSAPIINCDIR=	${GSSAPIBASEDIR}/include
+_HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5/krb5.h
+GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
+GSSAPILIBS=	-lkrb5 -lgssapi -lgssapi_krb5
+GSSAPILDFLAGS=
+.      else
+         # Base has Heimdal KRB5 installed
 HEIMDAL_HOME=	/usr
 GSSAPIBASEDIR=	${HEIMDAL_HOME}
 GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib
@@ -94,7 +106,9 @@ _HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5.h
 GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
 GSSAPILIBS=	-lkrb5 -lgssapi -lgssapi_krb5
 GSSAPILDFLAGS=
+.      endif
 .    elif ${_local} == "heimdal"
+	# Heimdal port selected
 HEIMDAL_HOME?=	${LOCALBASE}
 GSSAPIBASEDIR=	${HEIMDAL_HOME}
 GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib/heimdal
@@ -111,6 +125,7 @@ GSSAPILIBS=	-lkrb5 -lgssapi
 GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
 _RPATH=		${GSSAPILIBDIR}
 .    elif ${_local} == "mit"
+	# MIT KRB5 port selected
 KRB5_HOME?=	${LOCALBASE}
 GSSAPIBASEDIR=	${KRB5_HOME}
 GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib
