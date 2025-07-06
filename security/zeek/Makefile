@@ -131,7 +131,7 @@ LBL_HF_RUN_DEPENDS=		${LOCALBASE}/bin/hf:sysutils/lbl-hf
 PERFTOOLS_BUILD_DEPENDS=	${LOCALBASE}/include/gperftools/tcmalloc.h:devel/google-perftools \
 				${LOCALBASE}/bin/pprof:devel/pprof
 PERFTOOLS_CMAKE_BOOL=		ENABLE_PERFTOOLS
-PERFTOOLS_RUN_DEPENDS=		${LOCALBASE}/include/gperftools/tcmalloc.h:devel/google-perftools \
+PERFTOOLS_RUN_DEPENDS=		${LOCALBASE}/lib/libtcmalloc.so.4:devel/google-perftools \
 				${LOCALBASE}/bin/pprof:devel/pprof
 SPICY_CMAKE_OFF=		-DDISABLE_SPICY=ON
 ZEEKCTL_BUILD_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash \
