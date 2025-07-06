@@ -10,6 +10,7 @@
     SUBDIR += bash-completion-freebsd
     SUBDIR += bash-completion-zfs
     SUBDIR += bash-static
+    SUBDIR += bash53
     SUBDIR += bashc
     SUBDIR += bicon
     SUBDIR += bosh
