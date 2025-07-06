@@ -32,7 +32,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libyaml-cpp.so:devel/yaml-cpp \
 		libzstd.so:archivers/zstd
 
-USES=		compiler:c++17-lang cpe python:build scons shebangfix
+USES=		compiler:c++17-lang cpe llvm:max=18,build python:build scons shebangfix
 USE_RC_SUBR=	mongod
 
 USE_GITHUB=	yes
@@ -68,7 +68,8 @@ MAKE_ARGS=	--cxx-std=17 \
 		MONGO_VERSION=${DISTVERSION} \
 		VERBOSE=on
 
-CFLAGS+=	-DBOOST_NO_CXX98_FUNCTION_BASE
+CFLAGS+=	-DBOOST_NO_CXX98_FUNCTION_BASE \
+		-Wno-deprecated-builtins
 
 CONFLICTS_INSTALL=	mongodb[0-9][0-9] # etc/mongodb.conf.sample
 
@@ -89,12 +90,6 @@ SASL_MAKE_ARGS=		--use-sasl-client
 
 SSL_USES=	ssl
 SSL_MAKE_ARGS=	--ssl
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && (${OSREL:R} >= 15 && ${OSVERSION} >= 1500026)
-USES+=		llvm:max=18,build
-.endif
 
 .include <bsd.port.pre.mk>
 
