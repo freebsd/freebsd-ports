@@ -1,6 +1,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		37
 PORTVERSION=		5.2.${PATCHLEVEL:S/^0//g}
+PORTREVISION=		1
 CATEGORIES=		shells
 MASTER_SITES=		GNU
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -55,9 +56,9 @@ PORTS_READLINE_USES=	readline
 PORTS_READLINE_CONFIGURE_WITH=	installed-readline
 
 .if empty(PKGNAMESUFFIX)
-CONFLICTS+=	bash-static bash52-static
+CONFLICTS+=	bash-static bash53-static
 .else
-CONFLICTS+=	bash bash52
+CONFLICTS+=	bash bash53
 .endif
 CONFLICTS+=	bashc
 
