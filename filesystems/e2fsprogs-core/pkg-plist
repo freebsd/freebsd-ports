@@ -59,7 +59,6 @@ share/man/man8/e2image.8.gz
 share/man/man8/e2label.8.gz
 share/man/man8/e2mmpstatus.8.gz
 share/man/man8/e2undo.8.gz
-share/man/man8/findfs.8.gz
 share/man/man8/mke2fs.8.gz
 share/man/man8/mklost+found.8.gz
 share/man/man8/resize2fs.8.gz
@@ -82,7 +81,6 @@ sbin/e2image
 sbin/e2label
 sbin/e2mmpstatus
 sbin/e2undo
-sbin/findfs
 sbin/fsck.ext2
 sbin/fsck.ext3
 sbin/fsck.ext4
