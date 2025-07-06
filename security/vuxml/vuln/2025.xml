@@ -1,3 +1,31 @@
+  <vuln vid="69bfe2a4-5a39-11f0-8792-4ccc6adda413">
+    <topic>gstreamer1-plugins-bad -- stack buffer overflow in H.266 video parser</topic>
+    <affects>
+      <package>
+	<name>gstreamer1-plugins-bad</name>
+	<range><lt>1.26.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GStreamer Security Center reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/sa-2025-0007.html">
+	  <p>It is possible for a malicious third party to trigger a buffer overflow that can
+	   result in a crash of the application and possibly also allow code execution through
+	   stack manipulation.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6663</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2025-0007.html</url>
+    </references>
+    <dates>
+      <discovery>2025-06-26</discovery>
+      <entry>2025-07-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a55d2120-58cf-11f0-b4ad-b42e991fc52e">
     <topic>firefox -- multiple vulnerabilities</topic>
     <affects>
