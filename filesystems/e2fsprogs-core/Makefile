@@ -1,6 +1,6 @@
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.47.2
-PORTREVISION?=	3	# NOTE: when bumping PORTREVISION, also bump ../e2fsprogs/Makefile!
+PORTREVISION?=	4	# NOTE: when bumping PORTREVISION, also bump ../e2fsprogs/Makefile!
 CATEGORIES?=	filesystems sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -317,6 +317,7 @@ post-install:
 .endif
 	# remove or relocate files installed by other ports already, or shadowing system files:
 	${MV} ${STAGEDIR}${PREFIX}/bin/compile_et ${STAGEDIR}${PREFIX}/bin/e2fsprogs-compile_et
+	${RM} ${STAGEDIR}${PREFIX}/sbin/findfs
 	${MV} ${STAGEDIR}${PREFIX}/share/man/man1/compile_et.1 ${STAGEDIR}${PREFIX}/share/man/man1/e2fsprogs-compile_et.1
 	${MKDIR} ${STAGEDIR}${DATADIR}/et/
 	${MV} ${STAGEDIR}${PREFIX}/share/et/* ${STAGEDIR}${DATADIR}/et/
@@ -325,6 +326,7 @@ post-install:
 	${MV} -f ${STAGEDIR}${PREFIX}/share/man/man3/com_err.3 \
 		 ${STAGEDIR}${PREFIX}/share/man/man3/e2fsprogs-com_err.3
 	${RM} ${STAGEDIR}${PREFIX}/share/man/man3/libblkid.3
+	${RM} ${STAGEDIR}${PREFIX}/share/man/man8/findfs.8
 
 #
 # the next line closes .if ${MASTERDIR} == ${.CURDIR}
