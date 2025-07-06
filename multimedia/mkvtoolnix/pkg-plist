@@ -33,6 +33,11 @@ bin/mkvpropedit
 %%MANTRANS%%share/man/fr/man1/mkvmerge.1.gz
 %%MANTRANS%%share/man/fr/man1/mkvpropedit.1.gz
 %%MANTRANS%%%%GUI%%share/man/fr/man1/mkvtoolnix-gui.1.gz
+%%MANTRANS%%share/man/hu/man1/mkvextract.1.gz
+%%MANTRANS%%share/man/hu/man1/mkvinfo.1.gz
+%%MANTRANS%%share/man/hu/man1/mkvmerge.1.gz
+%%MANTRANS%%share/man/hu/man1/mkvpropedit.1.gz
+%%MANTRANS%%%%GUI%%share/man/hu/man1/mkvtoolnix-gui.1.gz
 %%MANTRANS%%share/man/it/man1/mkvextract.1.gz
 %%MANTRANS%%share/man/it/man1/mkvinfo.1.gz
 %%MANTRANS%%share/man/it/man1/mkvmerge.1.gz
@@ -137,6 +142,7 @@ share/man/man1/mkvpropedit.1.gz
 %%NLS%%share/locale/es/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mkvtoolnix.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/it/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/mkvtoolnix.mo
