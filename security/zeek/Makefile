@@ -1,5 +1,6 @@
 PORTNAME=	zeek
 DISTVERSION=	7.0.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://download.zeek.org/
 
@@ -127,9 +128,11 @@ IPSUMDUMP_BUILD_DEPENDS=	ipsumdump:net/ipsumdump
 IPSUMDUMP_RUN_DEPENDS=		ipsumdump:net/ipsumdump
 LBL_CF_RUN_DEPENDS=		${LOCALBASE}/bin/cf:sysutils/lbl-cf
 LBL_HF_RUN_DEPENDS=		${LOCALBASE}/bin/hf:sysutils/lbl-hf
-PERFTOOLS_BUILD_DEPENDS=	${LOCALBASE}/bin/perftools-pprof:devel/google-perftools
+PERFTOOLS_BUILD_DEPENDS=	${LOCALBASE}/include/gperftools/tcmalloc.h:devel/google-perftools \
+				${LOCALBASE}/bin/pprof:devel/pprof
 PERFTOOLS_CMAKE_BOOL=		ENABLE_PERFTOOLS
-PERFTOOLS_RUN_DEPENDS=		${LOCALBASE}/bin/perftools-pprof:devel/google-perftools
+PERFTOOLS_RUN_DEPENDS=		${LOCALBASE}/include/gperftools/tcmalloc.h:devel/google-perftools \
+				${LOCALBASE}/bin/pprof:devel/pprof
 SPICY_CMAKE_OFF=		-DDISABLE_SPICY=ON
 ZEEKCTL_BUILD_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash \
 				${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
