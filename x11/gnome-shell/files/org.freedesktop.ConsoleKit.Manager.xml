@@ -13,8 +13,7 @@
       <arg type="s" direction="in"/>
       <arg type="h" direction="out"/>
     </method>
-    <method name="GetSessionForCookie">
-      <arg type="s" direction="in"/>
+    <method name="GetCurrentSession">
       <arg type="o" direction="out"/>
     </method>
     <method name="ListSessions">
