@@ -24,7 +24,6 @@
 	#putenv('TTRSS_SINGLE_USER_MODE=true');
 
 	#putenv('TTRSS_SELF_URL_PATH=');
-	#putenv('TTRSS_DB_TYPE=');
 	#putenv('TTRSS_DB_HOST=');
 	#putenv('TTRSS_DB_USER=');
 	#putenv('TTRSS_DB_NAME=');

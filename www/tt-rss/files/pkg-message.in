@@ -3,13 +3,6 @@
   message: <<EOM
 Tiny Tiny RSS is now installed, but it requires some additional setup.
 
-Install your corresponding php database drivers:
-
-       msyql: mysqli pdo_mysql
-              pkg install %%MYSQL_DEPS%%
-  postgresql: pgsql pdo_pgsql
-              pkg install %%PGSQL_DEPS%%
-
 You now need to create a database, a database user, configure the
 web server, and configure tt-rss.  Sample apache24 configs located
 at %%DATADIR%%/httpd-tt-rss.conf.

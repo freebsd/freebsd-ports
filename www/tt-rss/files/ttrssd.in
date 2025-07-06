@@ -36,35 +36,4 @@ command_args="-rR 10 -H -u %%WWWOWN%% \
 		'$initdb_php --update-schema=force-yes; \
 			$phpupd;'"
 
-stop_cmd="${name}_stop"
-
-# daemon doesn't process signals if it lacks a child process.
-# See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=277959
-ttrssd_stop() {
-	local pid_daemon
-	local pid_child
-	local signal="TERM"
-
-	pid_daemon=$(check_pidfile ${pidfile} ${command})
-	pid_child=$(check_pidfile ${cpidfile} ${phpcli})
-
-	if [ -n "$pid_daemon" ]; then
-		echo "Stopping ${name}."
-
-		if [ -z "${pid_child}" ]; then
-		    signal="INT"
-		fi
-
-		kill -"$signal" "${pid_daemon}"
-
-		wait_for_pids "${pid_daemon}" "${pid_child}"
-	else
-	    if [ -n "$pid_child" ]; then
-		echo "${name} not running? (check ${cpidfile})."
-	    else
-		echo "${name} not running? (check ${pidfile})."
-	    fi
-	fi
-}
-
 run_rc_command "$1"
