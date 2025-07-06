@@ -32,10 +32,7 @@ MAKEFILE=	makefile
 INFO=		gambit
 PLIST_SUB=	GAMBIT_VERSION=${GAMBIT_VERSION}
 
-OPTIONS_DEFINE=		DOCS GCC
-OPTIONS_DEFAULT=	GCC
-
-GCC_DESC=	Build with GCC from ports
+OPTIONS_DEFINE=		DOCS
 
 .include <bsd.port.pre.mk>
 
