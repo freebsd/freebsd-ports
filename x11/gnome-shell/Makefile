@@ -1,6 +1,5 @@
 PORTNAME=	gnome-shell
-PORTVERSION=	47.7
-PORTREVISION=	1
+PORTVERSION=	47.8
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -12,19 +11,14 @@ WWW=		https://gitlab.gnome.org/GNOME/gnome-shell
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 
-PORTSCOUT=	limit:^47\.
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR} \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		sassc:textproc/sassc
 
-LIB_DEPENDS=	libdrm.so:graphics/libdrm \
-		libgcr-4.so:security/gcr \
+LIB_DEPENDS=	libgcr-4.so:security/gcr \
 		libgjs.so:lang/gjs \
-		libgnome-autoar-0.so:archivers/gnome-autoar \
 		libgraphene-1.0.so:graphics/graphene \
 		libical.so:devel/libical \
-		libicuuc.so:devel/icu \
 		libjson-glib-1.0.so:devel/json-glib \
 		libmutter-15.so:x11-wm/mutter \
 		libp11-kit.so:security/p11-kit \
@@ -36,14 +30,16 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 RUN_DEPENDS=	gdm:x11/gdm \
 		tecla:x11/tecla
 
-USES=		compiler:c11 cpe gettext gnome gstreamer localbase \
+USES=		compiler:c11 cpe gettext-tools gnome gstreamer localbase \
 		meson pathfix pkgconfig python:build shebangfix tar:xz xorg
 CPE_VENDOR=	gnome
 USE_GNOME=	atk evolutiondataserver3 gdkpixbuf glib20 \
 		gnomedesktop4 gnomecontrolcenter3 gtk40 introspection \
 		libxml2 libxslt:build
 USE_XORG=	x11 xfixes
-USE_LDCONFIG=	yes
+
+PORTSCOUT=	limit:^47\.
+
 SHEBANG_FILES=	src/gnome-shell-test-tool.in \
 		src/data-to-c.py
 # These libs are found via rpath mechanism
