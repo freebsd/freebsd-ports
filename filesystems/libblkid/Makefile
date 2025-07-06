@@ -1,6 +1,7 @@
 PORTNAME=	libblkid
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.41.1
+PORTREVISION=	1
 CATEGORIES=	filesystems
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -22,7 +23,7 @@ MESON_ARGS=	--auto-features=disabled \
 		-Dallow-32bit-time=true \
 		-Db_lundef=false \
 		-Dbuild-libblkid=enabled \
-		-Dbuild-libsmartcols=enabled \
+		-Dbuild-libsmartcols=disabled \
 		-Dprogram-tests=false # dependency of libblkid
 
 OPTIONS_DEFINE=		MANPAGES

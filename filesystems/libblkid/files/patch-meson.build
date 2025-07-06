@@ -1,4 +1,4 @@
---- meson.build.orig	2025-03-18 12:50:51 UTC
+--- meson.build.orig	2025-06-24 07:55:28 UTC
 +++ meson.build
 @@ -861,7 +861,7 @@ conf.set('HAVE_DECL_VMADDR_CID_LOCAL', have ? 1 : fals
                              prefix : '#include <sys/socket.h>')
@@ -9,7 +9,7 @@
                            have_tiocglcktrmios and
                            have_sock_cloexec and
                            have_sock_nonblock and
-@@ -1870,14 +1870,7 @@ endif
+@@ -1868,14 +1868,7 @@ endif
    bashcompletions += ['zramctl']
  endif
  
@@ -25,7 +25,7 @@
  if not is_disabler(exe)
    exes += exe
    manadocs += prlimit_manadocs
-@@ -1993,15 +1986,7 @@ endif
+@@ -1991,15 +1984,7 @@ endif
    bashcompletions += ['swapoff']
  endif
  
@@ -42,7 +42,7 @@
  if not is_disabler(exe)
    exes += exe
    manadocs += lscpu_manadocs
-@@ -2023,13 +2008,7 @@ endif
+@@ -2021,13 +2006,7 @@ endif
    bashcompletions += ['chcpu']
  endif
  
@@ -57,11 +57,11 @@
  if not is_disabler(exe)
    exes += exe
    manadocs += wdctl_manadocs
-@@ -4026,7 +4005,6 @@ run_target(
+@@ -4024,7 +4003,6 @@ run_target(
    depends : exes)
  
  
 -manadocs += lib_tcolors_manadocs
  if build_libblkid
-   manadocs += lib_blkid_manadocs + lib_smartcols_manadocs
+   manadocs += lib_blkid_manadocs
  endif
