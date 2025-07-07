@@ -1,7 +1,6 @@
 PORTNAME=	openmw
 DISTVERSIONPREFIX=	openmw-
-DISTVERSION=	0.48.0
-PORTREVISION=	9
+DISTVERSION=	0.49.0
 CATEGORIES=	games
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -22,14 +21,17 @@ LIB_DEPENDS=	libavcodec.so.60:multimedia/ffmpeg \
 		libicui18n.so:devel/icu \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl luajit openal \
+USES=		cmake compiler:c++20-lang desktop-file-utils gl luajit openal \
 		pkgconfig qt:5 sdl sqlite xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMW
 USE_GL=		gl
-USE_QT=		core gui network opengl printsupport widgets buildtools:build \
-		qmake:build
+USE_QT=		core gui linguisttools network opengl printsupport svg widgets \
+		buildtools:build qmake:build
+#USE_QT=		base imageformats multimedia svg tools:build
 USE_SDL=	sdl2
+USE_CXXSTD=	c++20
+#USE_GCC=	yes
 
 CMAKE_ARGS=	-DDESIRED_QT_VERSION=5 \
 		-DOPENMW_USE_SYSTEM_BULLET=ON \
