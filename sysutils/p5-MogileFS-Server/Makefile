@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	trociny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MogileFS (distributed filesystem) server
 WWW=		https://metacpan.org/release/MogileFS-Server
 

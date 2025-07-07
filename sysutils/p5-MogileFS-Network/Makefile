@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HACHI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	trociny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network awareness and extensions for p5-MogileFS-Server
 WWW=		https://metacpan.org/release/MogileFS-Network
 

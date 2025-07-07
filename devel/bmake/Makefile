@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://ftp.netbsd.org/pub/NetBSD/misc/sjg/
 
-MAINTAINER=	trociny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable version of NetBSD 'make' utility
 WWW=		https://www.crufty.net/help/sjg/bmake.html
 

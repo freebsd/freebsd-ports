@@ -3,7 +3,7 @@ PORTVERSION=	0.4.13
 CATEGORIES=	databases
 MASTER_SITES=	RG
 
-MAINTAINER=	trociny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LeoFS-Manager client library for Ruby
 WWW=		https://leo-project.net/
 

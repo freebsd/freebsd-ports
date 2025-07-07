@@ -3,7 +3,7 @@ PORTVERSION=	0.3.3
 PORTREVISION=	2
 CATEGORIES=	sysutils
 
-MAINTAINER=	trociny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to display device statistics
 WWW=		http://devstat.googlecode.com/
 

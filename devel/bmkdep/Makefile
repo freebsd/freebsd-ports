@@ -3,7 +3,7 @@ PORTVERSION=	20140112
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	trociny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Construct Makefile dependency list
 WWW=		https://netbsd.org
 

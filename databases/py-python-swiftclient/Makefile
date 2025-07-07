@@ -5,7 +5,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	trociny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python client library for OpenStack Object Storage (Swift)
 WWW=		https://launchpad.net/python-swiftclient
 

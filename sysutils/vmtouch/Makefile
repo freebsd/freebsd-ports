@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	trociny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual Memory Toucher
 WWW=		https://hoytech.com/vmtouch/
 

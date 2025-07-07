@@ -3,7 +3,7 @@ PORTVERSION=	0.3.4
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	trociny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cluster monitoring daemon
 WWW=		http://hastmon.googlecode.com/
 

@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	trociny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly scalable, fault-tolerant distributed file system
 WWW=		https://leo-project.net/
 
