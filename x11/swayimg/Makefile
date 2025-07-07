@@ -18,7 +18,7 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libxkbcommon.so:x11/libxkbcommon
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		meson pkgconfig
+USES=		dekstop-file-utils meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	artemsen
 MESON_ARGS=	-Dversion="${DISTVERSIONFULL}"
