@@ -1,0 +1,14 @@
+Drogon is a C++17/20 based HTTP application framework. Drogon can be used to
+easily build various types of web application server programs using C++.
+
+Drogon supports:
+* Non-blocking I/O network lib based on kqueue
+* HTTP 1.0/1.1
+* Cookies and sessions
+* HTTPS
+* WebSockets
+* JSON/REST
+* Compression: brotli, gzip
+* HTTP Pipelining
+* Asynchronous reading/writing to MySQL/Redis
+* and more!
