@@ -1,6 +1,6 @@
 PORTNAME=	nzbget
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.1
+DISTVERSION=	25.2
 CATEGORIES=	news
 
 MAINTAINER=	a13xlevy@pm.me
@@ -8,6 +8,7 @@ COMMENT=	Binary newsreader supporting NZB files
 WWW=		https://nzbget.net/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_json.so:devel/boost-libs
 RUN_DEPENDS=	7-zip>0:archivers/7-zip \
