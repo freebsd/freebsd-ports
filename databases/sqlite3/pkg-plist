@@ -6,7 +6,7 @@
 %%NO_TEA%%%%STATIC%%lib/libsqlite3.a
 %%NO_TEA%%lib/libsqlite3.so
 %%NO_TEA%%lib/libsqlite3.so.0
-%%NO_TEA%%lib/libsqlite3.so.0.8.6
+%%NO_TEA%%lib/libsqlite3.so.%%DISTVERSION%%
 %%NO_TEA%%libdata/pkgconfig/sqlite3.pc
 %%NO_TEA%%share/man/man1/sqlite3.1.gz
 %%TCL%%share/man/mann/sqlite3.%%TCLSUF%%.n.gz
