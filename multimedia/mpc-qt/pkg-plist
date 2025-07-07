@@ -1,3 +1,4 @@
 bin/mpc-qt
-share/applications/io.github.mpc-qt.mpc-qt.desktop
+share/applications/io.github.mpc_qt.mpc-qt.desktop
 share/icons/hicolor/scalable/apps/mpc-qt.svg
+share/metainfo/io.github.mpc_qt.mpc-qt.appdata.xml

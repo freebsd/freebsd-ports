@@ -1,0 +1,15 @@
+error: "Boost.Stacktrace requires `_Unwind_Backtrace` function. Define `_GNU_SOURCE` macro or `BOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED` if _Unw
+ind_Backtrace is available without `_GNU_SOURCE`."
+
+https://github.com/mpc-qt/mpc-qt/issues/476
+
+--- CMakeLists.txt.orig	2025-07-07 09:09:34 UTC
++++ CMakeLists.txt
+@@ -6,6 +6,7 @@ add_compile_options(-Wall -Wextra -O2)
+ set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ add_compile_options(-Wall -Wextra -O2)
++add_compile_definitions(_GNU_SOURCE)
+ 
+ set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # For clangd
+ 
