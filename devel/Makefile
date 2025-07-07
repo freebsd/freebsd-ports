@@ -5581,6 +5581,7 @@
     SUBDIR += py-pydash
     SUBDIR += py-pydbus
     SUBDIR += py-pydecor
+    SUBDIR += py-pydemumble
     SUBDIR += py-pydenticon
     SUBDIR += py-pydevd
     SUBDIR += py-pydispatcher
