@@ -1,1 +1,5 @@
-This package contains x11perf, an X11 server performance test program.
+The X11perf is a standard X11 tool for measuring how many times per
+Second a given X11 request can be made. It also includes the Xmark
+script to calculate how many millions of times faster your GPU is than
+the graphics on a 1989 SPARCstation 1 workstation, if you need more
+meaningless numbers in your life.
