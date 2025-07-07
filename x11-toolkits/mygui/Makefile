@@ -1,9 +1,10 @@
 PORTNAME=	mygui
 DISTVERSIONPREFIX=	MyGUI
 DISTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits graphics devel
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT?=	Fast, simple and flexible GUI system for games and 3D applications
 WWW=		http://mygui.info/ \
 		https://github.com/MyGUI/mygui
@@ -23,6 +24,7 @@ INSTALL_WRKSRC=	${WRKSRC}/${MYGUI_SUBDIR}
 USES+=		cmake:insource compiler:c++11-lib pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	MyGUI
+CMAKE_ON=	MYGUI_DONT_USE_OBSOLETE
 CMAKE_OFF=	MYGUI_BUILD_DEMOS MYGUI_BUILD_TOOLS MYGUI_BUILD_DOCS
 USE_LDCONFIG=	yes
 
