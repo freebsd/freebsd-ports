@@ -4326,6 +4326,7 @@
     SUBDIR += premake4
     SUBDIR += premake5
     SUBDIR += projectcenter
+    SUBDIR += prometheus-cpp
     SUBDIR += protobuf
     SUBDIR += protobuf-c
     SUBDIR += protobuf-go
