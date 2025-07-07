@@ -1,5 +1,5 @@
 PORTNAME=	dbvis
-DISTVERSION=	25.2
+DISTVERSION=	25.2.1
 CATEGORIES=	java databases
 MASTER_SITES=	https://www.dbvis.com/product_download/${PORTNAME}-${DISTVERSION}/media/ \
 		https://storage.googleapis.com/${PORTNAME}-download/product_download/${PORTNAME}-${DISTVERSION}/media/
@@ -27,7 +27,7 @@ PLIST_FILES=	bin/dbvis
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s ../share/dbvis/dbvis dbvis
-	${CHMOD} a+x ${STAGEDIR}${DATADIR}/dbvis
+	${CHMOD} a+x ${STAGEDIR}${DATADIR}/dbvis ${STAGEDIR}${DATADIR}/dbvis*.sh
 
 post-install:
 	${FIND} ${STAGEDIR}${DATADIR} -not -type d \
