@@ -412,7 +412,7 @@ USE_CABAL=	Diff-0.5_1 \
 		streaming-bytestring-0.3.3 \
 		streaming-commons-0.2.2.6_1 \
 		strict-0.5.1_1 \
-		strict-checked-vars-0.2.0.0_3:chap \
+		strict-checked-vars-0.2.0.0_1:chap \
 		strict-list-0.1.7.5 \
 		strict-mvar-1.5.0.0_1 \
 		strict-sop-core-0.1.2.0:chap \
@@ -463,7 +463,7 @@ USE_CABAL=	Diff-0.5_1 \
 		tree-diff-0.3.1_1 \
 		typed-process-0.2.12.0 \
 		typed-protocols-0.1.1.0_3:chap \
-		typed-protocols-cborg-0.1.0.4_3:chap \
+		typed-protocols-cborg-0.1.0.4_1:chap \
 		typed-protocols-examples-0.2.0.2:chap \
 		unagi-chan-0.4.1.4 \
 		unbounded-delays-0.1.1.1 \
