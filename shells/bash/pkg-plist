@@ -34,6 +34,7 @@ bin/bashbug
 %%NO_STATIC%%include/bash/include/ocache.h
 %%NO_STATIC%%include/bash/include/posixdir.h
 %%NO_STATIC%%include/bash/include/posixjmp.h
+%%NO_STATIC%%include/bash/include/posixselect.h
 %%NO_STATIC%%include/bash/include/posixstat.h
 %%NO_STATIC%%include/bash/include/posixtime.h
 %%NO_STATIC%%include/bash/include/posixwait.h
@@ -43,8 +44,10 @@ bin/bashbug
 %%NO_STATIC%%include/bash/include/stat-time.h
 %%NO_STATIC%%include/bash/include/stdc.h
 %%NO_STATIC%%include/bash/include/systimes.h
+%%NO_STATIC%%include/bash/include/timer.h
 %%NO_STATIC%%include/bash/include/typemax.h
 %%NO_STATIC%%include/bash/include/unionwait.h
+%%NO_STATIC%%include/bash/include/unlocked-io.h
 %%NO_STATIC%%include/bash/jobs.h
 %%NO_STATIC%%include/bash/make_cmd.h
 %%NO_STATIC%%include/bash/pathnames.h
@@ -64,15 +67,18 @@ bin/bashbug
 %%NO_STATIC%%lib/bash/Makefile.sample
 %%NO_STATIC%%lib/bash/accept
 %%NO_STATIC%%lib/bash/basename
+%%NO_STATIC%%lib/bash/chmod
 %%NO_STATIC%%lib/bash/csv
 %%NO_STATIC%%lib/bash/cut
 %%NO_STATIC%%lib/bash/dirname
 %%NO_STATIC%%lib/bash/dsv
 %%NO_STATIC%%lib/bash/fdflags
 %%NO_STATIC%%lib/bash/finfo
+%%NO_STATIC%%lib/bash/fltexpr
 %%NO_STATIC%%lib/bash/getconf
 %%NO_STATIC%%lib/bash/head
 %%NO_STATIC%%lib/bash/id
+%%NO_STATIC%%lib/bash/kv
 %%NO_STATIC%%lib/bash/ln
 %%NO_STATIC%%lib/bash/loadables.h
 %%NO_STATIC%%lib/bash/logname
@@ -92,6 +98,7 @@ bin/bashbug
 %%NO_STATIC%%lib/bash/sleep
 %%NO_STATIC%%lib/bash/stat
 %%NO_STATIC%%lib/bash/strftime
+%%NO_STATIC%%lib/bash/strptime
 %%NO_STATIC%%lib/bash/sync
 %%NO_STATIC%%lib/bash/tee
 %%NO_STATIC%%lib/bash/truefalse
@@ -123,6 +130,7 @@ share/man/man1/bashbug.1.gz
 %%NLS%%share/locale/id/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/it/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/bash.mo
@@ -134,6 +142,7 @@ share/man/man1/bashbug.1.gz
 %%NLS%%share/locale/ru/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/bash.mo

@@ -1,63 +1,25 @@
---- doc/bash.1.orig	2022-09-19 15:36:55 UTC
+--- doc/bash.1.orig	2025-04-30 13:04:32 UTC
 +++ doc/bash.1
-@@ -31,9 +31,9 @@
- .\" .ll \\n(LLu
- .\" .in \\n()Ru+\\n(INu+\\n()Iu
- .\" .ti \\n(INu
--.\" .ie !\\n()Iu+\\n()Ru-\w\\*(]Xu-3p \{\\*(]X
-+.\" .ie !\\n()Iu+\\n()Ru-\w\\*(]Xu-3p \{\\*(]X
- .\" .br\}
--.\" .el \\*(]X\h|\\n()Iu+\\n()Ru\c
-+.\" .el \\*(]X\h|\\n()Iu+\\n()Ru\c
- .\" .}f
- .\" ..
- .\"
-@@ -204,7 +204,7 @@ library to read command lines when the shell is intera
- .TP
- .B \-\-noprofile
- Do not read either the system-wide startup file
--.FN /etc/profile
-+.FN %%LOCALBASE%%/etc/profile
- or any of the personal initialization files
- .IR ~/.bash_profile ,
- .IR ~/.bash_login ,
-@@ -316,7 +316,7 @@ When
- .B bash
- is invoked as an interactive login shell, or as a non-interactive shell
- with the \fB\-\-login\fP option, it first reads and
--executes commands from the file \fI/etc/profile\fP, if that
-+executes commands from the file \fI%%LOCALBASE%%/etc/profile\fP, if that
- file exists.
- After reading that file, it looks for \fI~/.bash_profile\fP,
- \fI~/.bash_login\fP, and \fI~/.profile\fP, in that order, and reads
-@@ -373,7 +373,7 @@ while conforming to the POSIX standard as well.
- When invoked as an interactive login shell, or a non-interactive
- shell with the \fB\-\-login\fP option, it first attempts to
- read and execute commands from
--.I /etc/profile
-+.I %%LOCALBASE%%/etc/profile
- and
- .IR ~/.profile ,
- in that order.
-@@ -2561,7 +2561,7 @@ The value of this parameter is expanded (see
- .SM
- .B PROMPTING
- below) and used as the primary prompt string.  The default value is
--``\fB\es\-\ev\e$ \fP''.
-+``\fB\eu\@\eh\e$ \fP''.
- .TP
- .B PS2
- The value of this parameter is expanded as with
-@@ -11661,10 +11661,10 @@ http://tiswww.case.edu/~chet/bash/POSIX -- a descripti
- .SH FILES
- .PD 0
- .TP
--.FN /bin/bash
-+.FN %%PREFIX%%/bin/bash
- The \fBbash\fP executable
- .TP
--.FN /etc/profile
-+.FN %%LOCALBASE%%/etc/profile
- The systemwide initialization file, executed for login shells
- .TP
- .FN ~/.bash_profile
+@@ -6632,7 +6632,7 @@ If that file  does not exist or cannot be read, \fBrea
+ If that variable is unset, the default is
+ .FN \*~/.inputrc .
+ If that file  does not exist or cannot be read, \fBreadline\fP looks for
+-.FN /etc/inputrc .
++.FN /usr/local/usr/local/etc/inputrc .
+ When a program that uses the \fBreadline\fP library starts up,
+ \fBreadline\fP reads the initialization file
+ and sets the key bindings and variables found there,
+@@ -7398,11 +7398,11 @@ For example, the following directive would read
+ This directive takes a single filename as an argument and reads commands
+ and key bindings from that file.
+ For example, the following directive would read
+-.FN /etc/inputrc :
++.FN /usr/local/usr/local/etc/inputrc :
+ .PP
+ .RS
+ .nf
+-\fB$include\fP \^ \fI/etc/inputrc\fP
++\fB$include\fP \^ \fI/usr/local/usr/local/etc/inputrc\fP
+ .fi
+ .RE
+ .SS Searching
