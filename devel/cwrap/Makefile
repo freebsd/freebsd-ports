@@ -2,7 +2,7 @@ PORTNAME=		cwrap
 PORTVERSION=		1.1.0
 CATEGORIES=		devel
 
-MAINTAINER=		timur@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Testing your full software stack on a single machine
 WWW=		https://cwrap.org/
 

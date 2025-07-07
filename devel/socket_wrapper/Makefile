@@ -3,7 +3,7 @@ PORTVERSION=		1.4.2
 CATEGORIES=		devel
 MASTER_SITES=		SAMBA/cwrap
 
-MAINTAINER=		timur@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Library passing all socket communications through unix sockets
 WWW=			https://cwrap.org/socket_wrapper.html
 

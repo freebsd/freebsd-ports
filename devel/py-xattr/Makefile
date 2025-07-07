@@ -5,7 +5,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	timur@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python wrapper for extended filesystem attributes
 WWW=		https://github.com/xattr/xattr
 

@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/freenas/libsunacl/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	timur@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper providing SunOS NFSv4 ACL API
 
 LICENSE=	BSD2CLAUSE

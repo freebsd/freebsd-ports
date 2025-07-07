@@ -4,7 +4,7 @@ PORTREVISION=		3
 CATEGORIES=		devel
 MASTER_SITES=		SAMBA/cwrap
 
-MAINTAINER=		timur@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Preloadable wrapper to test PAM applications and PAM Modules
 WWW=		https://cwrap.org/pam_wrapper.html
 

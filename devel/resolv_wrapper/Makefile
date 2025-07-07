@@ -3,7 +3,7 @@ PORTVERSION=		1.1.8
 CATEGORIES=		devel
 MASTER_SITES=		SAMBA/cwrap
 
-MAINTAINER=		timur@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Wrapper for dns name resolving or dns faking
 WWW=			https://cwrap.org/resolv_wrapper.html
 

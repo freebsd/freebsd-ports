@@ -4,7 +4,7 @@ PORTREVISION=		3
 CATEGORIES=		devel
 MASTER_SITES=		SAMBA/cwrap
 
-MAINTAINER=		timur@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Wrapper for the user, group and hosts NSS API
 WWW=		https://cwrap.org/nss_wrapper.html
 

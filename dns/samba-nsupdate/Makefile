@@ -6,7 +6,7 @@ MASTER_SITES=		ISC/bind9/${ISCVERSION}
 PKGNAMEPREFIX=		samba-
 DISTNAME=		bind-${ISCVERSION}
 
-MAINTAINER=		timur@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		nsupdate utility with the GSS-TSIG support
 WWW=		https://www.isc.org/software/bind
 
