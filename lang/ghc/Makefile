@@ -24,9 +24,7 @@ USES=			autoreconf compiler:c11 gmake \
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 CONFIGURE_ENV=		ALEX=/usr/bin/true HAPPY=/usr/bin/true
-INSTALL_TARGET=		install-strip
 USE_LOCALE=		en_US.UTF-8
-USE_PERL5=		build
 NO_CCACHE=		yes
 OPTIONS_SUB=		yes
 SHEBANG_FILES=		${BOOT_SCRIPT}
@@ -96,25 +94,9 @@ BASE_PACKAGES?=		Cabal-3.10.3.0 array-0.5.8.0 base-4.19.2.0 binary-0.8.9.1 \
 PLIST_SUB+=	${pkg:C/-([0-9.])+//:tu}_VERSION=${pkg:C/^([^\.]*-)+//}
 .endfor
 
-BUILD_MK=		DYNAMIC_GHC_PROGRAMS=${ENABLE_DYNAMIC} \
-			BUILD_PROF_LIBS=${ENABLE_PROFILE} \
-			HADDOCK_DOCS=YES \
-			BUILD_SPHINX_HTML=${ENABLE_DOCS} \
-			BUILD_SPHINX_PDF=NO \
-			SRC_HC_OPTS+="-I${NCURSESINC} -L${NCURSESLIB} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
-			SRC_CC_OPTS+="${CFLAGS}" \
-			EXTRA_HSC2HS_OPTS+="-I${LOCALBASE}/include --lflag=-L${LOCALBASE}/lib" \
-			EXTRA_LD_OPTS+="-L${LOCALBASE}/lib" \
-			libraries/terminfo_CONFIGURE_OPTS+="--configure-option=--with-curses-libraries=${NCURSESLIB}" \
-			V=0
-
 .include <bsd.port.pre.mk>
 
-.if ${GHC_VERSION:C/\..*//g} >= 9 && ${GHC_VERSION:C/[^\.]*\.//:C/\..*//g} >= 4
-BOOT_SCRIPT=	./boot.source
-.else
-BOOT_SCRIPT=	./boot
-.endif
+BOOT_SCRIPT?=	./boot.source
 
 .if ${SLAVE_PORT} != "yes"
 PORTDOCS=		*
@@ -134,7 +116,6 @@ HADRIAN_CMD=		${WRKSRC}/hadrian/bootstrap/_build/bin/hadrian ${HADRIAN_DOCS_ARG}
 DO_MAKE_BUILD=		${SETENVI} ${WRK_ENV} ${HADRIAN_CMD} ${_MAKE_JOBS} --flavour=ports
 ALL_TARGET=		binary-dist-dir
 INSTALL_WRKSRC=		${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${CONFIGURE_TARGET}
-INSTALL_TARGET=		install
 PLIST?=			${.CURDIR}/pkg-plist.hadrian
 
 .if (empty(PORT_OPTIONS:MDYNAMIC) || empty(PORT_OPTIONS:MPROFILE))
@@ -143,15 +124,11 @@ IGNORE=			Building with Hadrian requires both DYNAMIC and PROFILE for now
 
 GHC_ARCH=		${ARCH:S/amd64/x86_64/:C/armv.*/arm/}
 CONFIGURE_TARGET=	${GHC_ARCH}-portbld-${OPSYS:tl}
-BOOT_DIR=		${WRKDIR}/ghc-${BOOT_GHC_VERSION}-boot
+BOOT_DIR=		${WRKDIR}/ghc-${BOOT_GHC_VERSION}-${CONFIGURE_TARGET}
 BOOT_INSTALL_DIR=	${WRKDIR}/ghc-boot-install
 BOOT_GHC=		${BOOT_INSTALL_DIR}/bin/ghc-${BOOT_GHC_VERSION}
 
 PLIST_SUB+=		GHC_ARCH=${GHC_ARCH}
-
-.if ${BOOT_GHC_VERSION:C/\..*//g} >= 9
-BOOT_DIR=		${WRKDIR}/ghc-${BOOT_GHC_VERSION}-${CONFIGURE_TARGET}
-.endif
 
 .if empty(PORT_OPTIONS:MBOOT)
 DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${EXTRACT_SUFX}:boot
@@ -167,11 +144,6 @@ CONFIGURE_ARGS+=	--host=${CONFIGURE_TARGET}
 .endif
 
 post-patch:
-#	Generate the build.mk file
-	${RM} -f ${WRKSRC}/mk/build.mk
-.for line in ${BUILD_MK}
-	${ECHO_CMD} ${line} >> ${WRKSRC}/mk/build.mk
-.endfor
 	${SED} -e 's|%%DYNAMIC%%|${HADRIAN_SETTING_DYNAMIC}|' \
 		-e 's|%%PROFILE%%|${HADRIAN_SETTING_PROFILE}|' \
 		${PATCHDIR}/UserSettings.hs > ${WRKSRC}/hadrian/src/UserSettings.hs
@@ -197,8 +169,6 @@ post-install:
 # These includes are duplicated in lib/ghc-X.Y.Z/lib/<triple>/rts-X.Y.Z/include
 	${RM} -r ${STAGEDIR}${PREFIX}/include/*
 	${FIND} ${STAGEDIR}${DOCSDIR} -name .buildinfo -delete
-# For some reason, INSTALL_TARGET=install-strip doesn't cause libraries to be stripped
-# Run strip on them manually
 	${FIND} ${STAGEDIR}${PREFIX}/lib/ghc-${GHC_VERSION} -type f -perm +111 -exec ${STRIP_CMD} {} +
 	${FIND} ${STAGEDIR}${PREFIX}/lib/ghc-${GHC_VERSION} -name '*.so' -exec ${STRIP_CMD} {} +
 	${RM} ${STAGEDIR}${PREFIX}/bin/haddock
