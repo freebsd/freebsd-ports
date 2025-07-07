@@ -161,7 +161,6 @@ share/man/man8/clamd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/print.html
 %%PORTDOCS%%%%DOCSDIR%%/html/searcher.js
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
-%%PORTDOCS%%%%DOCSDIR%%/html/searchindex.json
 %%PORTDOCS%%%%DOCSDIR%%/html/sitemap.xml
 %%PORTDOCS%%%%DOCSDIR%%/html/theme-dawn.js
 %%PORTDOCS%%%%DOCSDIR%%/html/theme-tomorrow_night.js
