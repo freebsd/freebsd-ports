@@ -1,5 +1,5 @@
 PORTNAME=	dsbmd
-PORTVERSION=	1.11.4
+PORTVERSION=	1.12
 CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	mk@nic-nac-project.org
@@ -10,12 +10,10 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:tgz
-
-USE_RC_SUBR=	dsbmd
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	mrclksr
 GH_PROJECT=	DSBMD
+USE_RC_SUBR=	dsbmd
 
 PLIST_FILES=	"@sample etc/dsbmd.conf.sample" \
 		libexec/dsbmd
