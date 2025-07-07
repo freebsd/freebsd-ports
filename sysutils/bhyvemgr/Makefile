@@ -1,6 +1,6 @@
 PORTNAME=	bhyvemgr
 DISTVERSIONPREFIX=	v
-PORTVERSION=	1.5.3
+PORTVERSION=	1.6.0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -29,6 +29,9 @@ FREERDP3_RUN_DEPENDS=	freerdp3>0:net/freerdp3
 
 .if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1500000)
 ONLY_FOR_ARCHS=	aarch64 amd64
+.endif
+
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1403000)
 RUN_DEPENDS+=	swtpm>0:sysutils/swtpm
 .endif
 
