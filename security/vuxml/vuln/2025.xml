@@ -1,3 +1,136 @@
+  <vuln vid="7b3e7f71-5b30-11f0-b507-000c295725e4">
+    <topic>redis,valkey -- DoS Vulnerability due to bad connection error handling</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><ge>8.0.0</ge><lt>8.0.3</lt></range>
+      </package>
+      <package>
+	<name>redis74</name>
+	<range><ge>7.4.0</ge><lt>7.4.5</lt></range>
+      </package>
+      <package>
+	<name>redis72</name>
+	<range><ge>7.2.0</ge><lt>7.2.10</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+	<range><ge>6.2.0</ge><lt>6.2.19</lt></range>
+      </package>
+      <package>
+	<name>valkey</name>
+	<range><lt>8.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>@julienperriercornet reports:</p>
+	<blockquote cite="https://github.com/redis/redis/security/advisories/GHSA-4q32-c38c-pwgq">
+	  <p>
+	     An unauthenticated connection can cause repeated IP
+	     protocol errors, leading to client starvation and,
+	     ultimately, a denial of service.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-48367</cvename>
+      <url>https://github.com/redis/redis/security/advisories/GHSA-4q32-c38c-pwgq</url>
+    </references>
+    <dates>
+      <discovery>2025-07-06</discovery>
+      <entry>2025-07-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f11d0a69-5b2d-11f0-b507-000c295725e4">
+    <topic>redis,valkey -- Out of bounds write in hyperloglog commands leads to RCE</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><ge>8.0.0</ge><lt>8.0.3</lt></range>
+      </package>
+      <package>
+	<name>redis74</name>
+	<range><ge>7.4.0</ge><lt>7.4.5</lt></range>
+      </package>
+      <package>
+	<name>redis72</name>
+	<range><ge>7.2.0</ge><lt>7.2.10</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+	<range><ge>6.2.0</ge><lt>6.2.19</lt></range>
+      </package>
+      <package>
+	<name>valkey</name>
+	<range><lt>8.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Seunghyun Lee reports:</p>
+	<blockquote cite="https://github.com/redis/redis/security/advisories/GHSA-rp2m-q4j6-gr43">
+	  <p>
+	    An authenticated user may use a specially crafted string
+	    to trigger a stack/heap out of bounds write on hyperloglog
+	    operations, potentially leading to remote code execution.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-32023</cvename>
+      <url>https://github.com/redis/redis/security/advisories/GHSA-rp2m-q4j6-gr43</url>
+    </references>
+    <dates>
+      <discovery>2025-07-06</discovery>
+      <entry>2025-07-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4ea9cbc3-5b28-11f0-b507-000c295725e4">
+    <topic>redis,valkey -- {redis,valkey}-check-aof may lead to stack overflow and potential RCE</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><ge>8.0.0</ge><lt>8.0.2</lt></range>
+      </package>
+      <package>
+	<name>redis74</name>
+	<range><ge>7.4.0</ge><lt>7.4.4</lt></range>
+      </package>
+      <package>
+	<name>redis72</name>
+	<range><ge>7.2.0</ge><lt>7.2.9</lt></range>
+      </package>
+      <package>
+	<name>valkey</name>
+	<range><lt>8.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simcha Kosman &amp; CyberArk Labs reports:</p>
+	<blockquote cite="https://github.com/redis/redis/security/advisories/GHSA-5453-q98w-cmvm">
+	  <p>A user can run the {redis,valkeyu}-check-aof cli and pass
+	  a long file path to trigger a stack buffer overflow, which
+	  may potentially lead to remote code execution.</p>
+	  <p></p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-27151</cvename>
+      <url>https://github.com/redis/redis/security/advisories/GHSA-5453-q98w-cmvm</url>
+    </references>
+    <dates>
+      <discovery>2025-05-28</discovery>
+      <entry>2025-07-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7642ba72-5abf-11f0-87ba-002590c1f29c">
     <topic>FreeBSD -- Use-after-free in multi-threaded xz decoder</topic>
     <affects>
