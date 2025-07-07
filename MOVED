@@ -4648,3 +4648,4 @@ lang/linux-dotnet-sdk||2025-07-01|Removed: Depends on expired lang/linux-dotnet-
 lang/linux-dotnet-runtime||2025-07-01|Has expired: Ancient version, no practical use
 lang/linux-dotnet-cli||2025-07-01|Removed, depends on removed lang/linux-dotnet-runtime
 math/manifold||2025-07-06|Removed, planned to update BRL-CAD, but currently blocked
+shells/bash53||2025-07-07|Removed in favour of updating shells/bash
