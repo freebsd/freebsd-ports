@@ -1,6 +1,5 @@
 PORTNAME=	sqlite3
-DISTVERSION=	3.46.1
-PORTREVISION=	1
+DISTVERSION=	3.50.2
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${_YEAR}/ https://www2.sqlite.org/${_YEAR}/ https://www3.sqlite.org/${_YEAR}/
@@ -31,11 +30,13 @@ icu_PKGNAMESUFFIX=	-${FLAVOR}	# databases/p5-DBD-SQLite with ICU support
 tcl_PKGNAMESUFFIX=	-${FLAVOR}	# lang/tcl* support
 .endif
 
-USES=	libtool pathfix zip
+USES=	libtool ncurses pathfix zip
 USE_LDCONFIG=	yes
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--linemacros --soname=${DISTVERSION} OPTIONS='${_OPTIONS}'
+# [The Chronicles of SONAME](https://sqlite.org/src/forumpost/5a3b44f510df8ded)
+# [Set features OPTIONS for autosetup configurator](https://msteveb.github.io/autosetup/)
 
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET+=	sqldiff
@@ -66,7 +67,7 @@ SUB_LIST+=	TEA="@comment " NO_TEA=""
 PLIST_SUB+=	TEA="@comment " NO_TEA=""
 .endif
 
-PLIST_SUB+=	TCLVER=tcl${TCL_VER} TCLSUF=tcl${TCL_VER:S/.//g}
+PLIST_SUB+=	TCLVER=tcl${TCL_VER} TCLSUF=tcl${TCL_VER:S/.//g} DISTVERSION=${DISTVERSION}
 
 # Compilation Options For SQLite https://www.sqlite.org/compile.html
 OPTIONS_DEFINE=		EXAMPLES STRIP TCL THREADS
@@ -116,7 +117,7 @@ DBPAGE_DESC=		Enable DBPAGE Virtual Table # https://sqlite.org/compile.html#enab
 DBSTAT_DESC=		Enable DBSTAT Virtual Table # https://www.sqlite.org/dbstat.html
 DIRECT_READ_DESC=	File is read directly from disk # https://sqlite.org/compile.html#direct_overflow_read
 DQS_DESC=		Double-quoted String Literals # https://www.sqlite.org/compile.html#dqs
-EXTENSION_DESC=		Allow loadable extensions
+EXTENSION_DESC=		Enable loadable extensions
 FTS3_TOKEN_DESC=	Enable two-args version fts3_tokenizer # https://www.sqlite.org/compile.html#enable_fts3_tokenizer, https://www.sqlite.org/fts3.html#f3tknzr
 FTS4_DESC=		Enable FTS3/4 (Full Text Search) module # https://www.sqlite.org/fts3.html, https://www.sqlite.org/compile.html#enable_fts3_parenthesis
 FTS5_DESC=		Enable version 5 full-text search engine # https://www.sqlite.org/fts5.html
@@ -164,18 +165,17 @@ DQS_CPPFLAGS=	-DSQLITE_DQS=3
 DQS_CPPFLAGS_OFF=	-DSQLITE_DQS=0
 EXTENSION_CONFIGURE_ENABLE=	load-extension
 FTS3_TOKEN_CPPFLAGS=	-DSQLITE_ENABLE_FTS3_TOKENIZER=1
-FTS4_CONFIGURE_ENABLE=	fts3 fts4
+FTS4_CONFIGURE_ON=	--fts3 --fts4
 FTS4_CPPFLAGS=	-DSQLITE_ENABLE_FTS3_PARENTHESIS=1
-FTS5_CONFIGURE_ENABLE=	fts5
-FTS5_LIBS=	-lm
+FTS5_CONFIGURE_ON=	--fts5
+FTS5_VARS=	_OPTIONS+=-lm
 GEOPOLY_IMPLIES=	RTREE
-GEOPOLY_CONFIGURE_ENABLE=	geopoly
+GEOPOLY_CONFIGURE_ON=	--geopoly
 ICU_BUILD_DEPENDS=	${LOCALBASE}/bin/icu-config:devel/icu
 ICU_LIB_DEPENDS=	libicudata.so:devel/icu
-ICU_CPPFLAGS=	`${LOCALBASE}/bin/icu-config --cppflags` -DSQLITE_ENABLE_ICU=1
-ICU_LIBS=	`${LOCALBASE}/bin/icu-config --ldflags`
+ICU_CONFIGURE_ON=	--with-icu-config=${LOCALBASE}/bin/icu-config --icu-collations
 LIBEDIT_USES=	libedit
-LIBEDIT_CONFIGURE_ENABLE=	editline
+LIBEDIT_CONFIGURE_ON=	--editline
 LIKENOTBLOB_CPPFLAGS=	-DSQLITE_LIKE_DOESNT_MATCH_BLOBS=1
 MEMMAN_CPPFLAGS=	-DSQLITE_ENABLE_MEMORY_MANAGEMENT=1
 METADATA_CPPFLAGS=	-DSQLITE_ENABLE_COLUMN_METADATA=1
@@ -185,40 +185,40 @@ OFFSET_CPPFLAGS=	-DSQLITE_ENABLE_OFFSET_SQL_FUNC=1
 RBU_CPPFLAGS=	-DSQLITE_ENABLE_RBU=1
 READLINE_USES=	readline
 READLINE_CONFIGURE_ENABLE=	readline
-RTREE_CONFIGURE_ENABLE=	rtree
+RTREE_CONFIGURE_ON=	--rtree
 RTREE_INT_CPPFLAGS=	-DSQLITE_RTREE_INT_ONLY=1
 SECURE_DELETE_CPPFLAGS=	-DSQLITE_SECURE_DELETE=1
-SESSION_CONFIGURE_ENABLE=	session
+SESSION_CONFIGURE_ON=	--session
 SORT_REF_CPPFLAGS=	-DSQLITE_ENABLE_SORTER_REFERENCES=1
 SOUNDEX_CPPFLAGS=	-DSQLITE_SOUNDEX=1
 STAT3_CPPFLAGS=	-DSQLITE_ENABLE_STAT3=1
 STAT4_CPPFLAGS=	-DSQLITE_ENABLE_STAT4=1
+STATIC_CONFIGURE_OFF=	--dynlink-tools
 STATIC_CONFIGURE_ENABLE=	static
-STMT_CPPFLAGS=	-DSQLITE_ENABLE_STMT_SCANSTATUS=1
+STMT_CONFIGURE_ON=	--scanstatus
 TCL_USES=	tcl
 TCL_USES_OFF=	tcl:build
-TCL_CONFIGURE_ENABLE=	tcl
-TCL_CONFIGURE_WITH=	tcl=${TCL_LIBDIR}
+TCL_CONFIGURE_OFF=	--disable-tcl
 TCL_CONFIGURE_ENV=	ac_cv_prog_TCLSH_CMD=${TCLSH}
 TCL_ALL_TARGET+=	sqlite3_analyzer
-THREADS_CONFIGURE_ENABLE=	threadsafe
-THREADS_LIBS=	-lpthread
+THREADS_CONFIGURE_OFF=	--disable-threadsafe
+THREADS_VARS=	_OPTIONS+=-lpthread
 TRUSTED_SCHEMA_CPPFLAGS=	-DSQLITE_TRUSTED_SCHEMA=0
-TS0_CONFIGURE_ON=	--enable-tempstore=never
-TS1_CONFIGURE_ON=	--enable-tempstore=no
-TS2_CONFIGURE_ON=	--enable-tempstore=yes
-TS3_CONFIGURE_ON=	--enable-tempstore=always
+TS0_CONFIGURE_ON=	--with-tempstore=never
+TS1_CONFIGURE_ON=	--with-tempstore=no
+TS2_CONFIGURE_ON=	--with-tempstore=yes
+TS3_CONFIGURE_ON=	--with-tempstore=always
 UNICODE61_CPPFLAGS_OFF=	-DSQLITE_DISABLE_FTS3_UNICODE=1
 UNKNOWN_SQL_CPPFLAGS=	-DSQLITE_ENABLE_UNKNOWN_SQL_FUNCTION=1
 UNLOCK_NOTIFY_CPPFLAGS=	-DSQLITE_ENABLE_UNLOCK_NOTIFY=1
-UPDATE_LIMIT_CONFIGURE_ENABLE=	update-limit
+UPDATE_LIMIT_CONFIGURE_ON=	--update-limit
 URI_CPPFLAGS=	-DSQLITE_USE_URI=1
 URI_AUTHORITY_CPPFLAGS=	-DSQLITE_ALLOW_URI_AUTHORITY=1
 
 .include <bsd.port.options.mk>
 
 # _YEAR=	${%Y:L:gmtime} - do not work with the version from the previous year
-_YEAR=	2024
+_YEAR=	2025
 
 # Recommended options
 # https://sqlite.org/compile.html#strict_subtype
@@ -246,12 +246,16 @@ CPPFLAGS+=	-DHAVE_FCHOWN=1 \
 		-DHAVE_READLINK=1 \
 		-DSQLITE_OS_UNIX=1
 
+.if ${PORT_OPTIONS:MTCL}
+LIB_DEPENDS+=	libtommath.so:math/libtommath
+.endif
+
 # For compare with checksum from of the site. Now, this is a NIST SHA3-256 hash. sha256 not suitable for compare.
 # But the creation of a new target does not justify the emergence of dependence on the perl5.
 # sha3sum maybe installed with p5-Digest-SHA3 port.
 # EXTRACT_DEPENDS=p5-Digest-SHA3:security/p5-Digest-SHA3; USES=perl5; USE_PERL5=extract;
 # @${PERL} -MDigest::SHA3 -le 'print Digest::SHA3->new(sha_256_hex)->add(<>)->hexdigest' < ${DISTDIR}/${ALLFILES}
-pre-extract:
+post-fetch:
 	@${WHICH} sha3sum > /dev/null && for entry in ${ALLFILES}; do ${ECHO_MSG} -n "=> "; sha3sum -a 256 --tag "${DISTDIR}/$${entry}"; done || ${TRUE}
 
 post-configure:
@@ -264,6 +268,7 @@ post-configure:
 	@${ECHO_MSG} "===> TCLSH=${TCLSH}"
 	@${ECHO_MSG} "===> TCL_INCLUDEDIR=${TCL_INCLUDEDIR}"
 	@${ECHO_MSG} "===> TCL_LIBDIR=${TCL_LIBDIR}"
+	@${ECHO_MSG} "===> OPTIONS=${_OPTIONS}"
 
 post-install:
 .if !defined(TEA)
@@ -272,7 +277,7 @@ post-install:
 	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${PREFIX}/bin/${PORTNAME}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so"
 	${INSTALL_PROGRAM} "${WRKSRC}/sqldiff" "${STAGEDIR}${PREFIX}/bin"
 .else
-	${RM} "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0.8.6" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.a"
+	${RM} "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.${DISTVERSION}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.a"
 .endif
 
 post-install-STRIP-on:
