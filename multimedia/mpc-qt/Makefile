@@ -20,6 +20,10 @@ USE_GL=		opengl
 USE_QT=		base svg tools:build
 CMAKE_ARGS=	-DMPCQT_VERSION="${DISTVERSION}"
 
+PLIST_FILES=	bin/${PORTNAME} \
+		share/applications/io.github.mpc_qt.mpc-qt.desktop \
+		share/icons/hicolor/scalable/apps/mpc-qt.svg \
+		share/metainfo/io.github.mpc_qt.mpc-qt.appdata.xml
 PORTDOCS=	ipc.md
 
 OPTIONS_DEFINE=	DOCS

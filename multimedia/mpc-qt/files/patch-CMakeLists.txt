@@ -1,15 +1,26 @@
-error: "Boost.Stacktrace requires `_Unwind_Backtrace` function. Define `_GNU_SOURCE` macro or `BOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED` if _Unw
-ind_Backtrace is available without `_GNU_SOURCE`."
+From d696d489378a347dd7e297ad488270ec036a3ad8 Mon Sep 17 00:00:00 2001
+From: Thomas Bertels <3265870+tbertels@users.noreply.github.com>
+Date: Mon, 7 Jul 2025 13:11:57 +0200
+Subject: [PATCH] cmakelists: Don't check for _GNU_SOURCE on FreeBSD
 
-https://github.com/mpc-qt/mpc-qt/issues/476
+Boost.Stacktrace requires _Unwind_Backtrace(), which FreeBSD support
+without requiring _GNU_SOURCE to be set.
 
---- CMakeLists.txt.orig	2025-07-07 09:09:34 UTC
+We can't use target_compile_definitions because Qt doesn't (yet?)
+support setting the target early without using qt_add_executable (which
+require setting sources).
+
+Fixes #476.
+--- CMakeLists.txt.orig	2025-07-05 12:21:26 UTC
 +++ CMakeLists.txt
-@@ -6,6 +6,7 @@ add_compile_options(-Wall -Wextra -O2)
- set(CMAKE_CXX_STANDARD 17)
+@@ -7,6 +7,10 @@ add_compile_options(-Wall -Wextra -O2)
  set(CMAKE_CXX_STANDARD_REQUIRED ON)
  add_compile_options(-Wall -Wextra -O2)
-+add_compile_definitions(_GNU_SOURCE)
  
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++    add_compile_definitions(BOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED)
++endif()
++
  set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # For clangd
  
+ set(CMAKE_INCLUDE_CURRENT_DIR ON)
