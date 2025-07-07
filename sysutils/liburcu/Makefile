@@ -1,5 +1,5 @@
 PORTNAME=	liburcu
-DISTVERSION=	0.15.0
+DISTVERSION=	0.15.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://lttng.org/files/urcu/
 DISTNAME=	userspace-rcu-${DISTVERSION}
