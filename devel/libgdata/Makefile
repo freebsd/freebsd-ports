@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GLib-based implementation of the GData protocol
 WWW=		https://live.gnome.org/libgdata
 

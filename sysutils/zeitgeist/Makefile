@@ -5,7 +5,7 @@ DISTVERSION=	1.0.4
 PORTREVISION=	2
 CATEGORIES=	sysutils
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Event logging framework
 WWW=		https://wiki.gnome.org/Projects/Zeitgeist
 

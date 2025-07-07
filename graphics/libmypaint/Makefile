@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/mypaint/libmypaint/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brush library from the MyPaint project
 WWW=		http://mypaint.org/
 

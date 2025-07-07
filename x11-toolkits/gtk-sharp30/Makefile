@@ -5,7 +5,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	30
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK and GNOME interfaces for the .NET runtime
 WWW=		https://www.mono-project.com/Gtk
 

@@ -3,7 +3,7 @@ DISTVERSION=	2024.10.16
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of useful GNU Autoconf macros
 WWW=		https://savannah.gnu.org/projects/autoconf-archive
 

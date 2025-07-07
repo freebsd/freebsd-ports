@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://files.itstool.org/itstool/
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make XML documents translatable through po files
 WWW=		https://itstool.org/
 

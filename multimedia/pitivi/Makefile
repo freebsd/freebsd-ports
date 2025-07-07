@@ -4,7 +4,7 @@ PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	GNOME
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gstreamer based non-linear audio/video editor
 WWW=		https://www.pitivi.org
 

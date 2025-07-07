@@ -4,7 +4,7 @@ PORTREVISION=	9
 CATEGORIES=	devel textproc gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive tool for performing search and replace operations
 WWW=		https://regexxer.sourceforge.net/
 

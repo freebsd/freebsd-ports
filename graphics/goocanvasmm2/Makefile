@@ -5,7 +5,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ bindings for the goocanvas widget for GTK
 WWW=		https://sourceforge.net/projects/goocanvas/
 

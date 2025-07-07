@@ -5,7 +5,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://rainbow-runner.nl/freebsd/ \
 		LOCAL/kwm
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for playing SPC (SNES audio) files
 
 BUILD_DEPENDS=	nasm:devel/nasm

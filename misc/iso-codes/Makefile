@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.18.0
 CATEGORIES=	misc
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lists of the country, language, and currency iso names
 WWW=		https://salsa.debian.org/iso-codes-team/iso-codes
 

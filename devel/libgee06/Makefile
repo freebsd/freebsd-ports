@@ -5,7 +5,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	06
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GObject collection library
 WWW=		https://live.gnome.org/Libgee
 

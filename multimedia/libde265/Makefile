@@ -3,7 +3,7 @@ DISTVERSION=	1.0.12
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/strukturag/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source h.265 video codec
 WWW=		https://www.libde265.org
 
