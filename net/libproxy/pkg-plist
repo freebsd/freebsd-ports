@@ -40,7 +40,6 @@ libdata/pkgconfig/libproxy-1.0.pc
 %%DOCS%%%%DOCSDIR%%-1.0/applications.html
 %%DOCS%%%%DOCSDIR%%-1.0/architecture.html
 %%DOCS%%%%DOCSDIR%%-1.0/build-steps.html
-%%DOCS%%%%DOCSDIR%%-1.0/classes_hierarchy.html
 %%DOCS%%%%DOCSDIR%%-1.0/configuration-logic.html
 %%DOCS%%%%DOCSDIR%%-1.0/ctor.ProxyFactory.new.html
 %%DOCS%%%%DOCSDIR%%-1.0/fonts.css

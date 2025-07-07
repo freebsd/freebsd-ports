@@ -769,7 +769,6 @@ libdata/pkgconfig/pangoot.pc
 %%DOCS%%share/doc/PangoCairo/SourceCodePro-Regular.ttf.woff
 %%DOCS%%share/doc/PangoCairo/SourceCodePro-Semibold.ttf.woff
 %%DOCS%%share/doc/PangoCairo/callback.ShapeRendererFunc.html
-%%DOCS%%share/doc/PangoCairo/classes_hierarchy.html
 %%DOCS%%share/doc/PangoCairo/fonts.css
 %%DOCS%%share/doc/PangoCairo/func.context_get_font_options.html
 %%DOCS%%share/doc/PangoCairo/func.context_get_resolution.html

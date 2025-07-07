@@ -277,7 +277,6 @@ libdata/pkgconfig/gdk-pixbuf-2.0.pc
 %%DOCS%%share/doc/gdk-pixdata/SourceCodePro-It.ttf.woff
 %%DOCS%%share/doc/gdk-pixdata/SourceCodePro-Regular.ttf.woff
 %%DOCS%%share/doc/gdk-pixdata/SourceCodePro-Semibold.ttf.woff
-%%DOCS%%share/doc/gdk-pixdata/classes_hierarchy.html
 %%DOCS%%share/doc/gdk-pixdata/const.PIXBUF_MAGIC_NUMBER.html
 %%DOCS%%share/doc/gdk-pixdata/const.PIXDATA_HEADER_LENGTH.html
 %%DOCS%%share/doc/gdk-pixdata/flags.PixdataDumpType.html

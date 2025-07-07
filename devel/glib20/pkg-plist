@@ -4377,7 +4377,6 @@ share/bash-completion/completions/gsettings
 %%PORTDOCS%%%%DOCSDIR%%-2.0/callback.VoidFunc.html
 %%PORTDOCS%%%%DOCSDIR%%-2.0/character-set.html
 %%PORTDOCS%%%%DOCSDIR%%-2.0/checked-math.html
-%%PORTDOCS%%%%DOCSDIR%%-2.0/classes_hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%-2.0/compiling.html
 %%PORTDOCS%%%%DOCSDIR%%-2.0/const.ALLOCATOR_LIST.html
 %%PORTDOCS%%%%DOCSDIR%%-2.0/const.ALLOCATOR_NODE.html
@@ -6809,7 +6808,6 @@ share/bash-completion/completions/gsettings
 %%PORTDOCS%%%%DOCSDIR%%-unix-2.0/SourceCodePro-Regular.ttf.woff
 %%PORTDOCS%%%%DOCSDIR%%-unix-2.0/SourceCodePro-Semibold.ttf.woff
 %%PORTDOCS%%%%DOCSDIR%%-unix-2.0/callback.FDSourceFunc.html
-%%PORTDOCS%%%%DOCSDIR%%-unix-2.0/classes_hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%-unix-2.0/enum.PipeEnd.html
 %%PORTDOCS%%%%DOCSDIR%%-unix-2.0/fonts.css
 %%PORTDOCS%%%%DOCSDIR%%-unix-2.0/func.closefrom.html
@@ -6876,7 +6874,6 @@ share/bash-completion/completions/gsettings
 %%PORTDOCS%%share/doc/gmodule-2.0/SourceCodePro-Semibold.ttf.woff
 %%PORTDOCS%%share/doc/gmodule-2.0/callback.ModuleCheckInit.html
 %%PORTDOCS%%share/doc/gmodule-2.0/callback.ModuleUnload.html
-%%PORTDOCS%%share/doc/gmodule-2.0/classes_hierarchy.html
 %%PORTDOCS%%share/doc/gmodule-2.0/const.MODULE_IMPL_AR.html
 %%PORTDOCS%%share/doc/gmodule-2.0/const.MODULE_IMPL_DL.html
 %%PORTDOCS%%share/doc/gmodule-2.0/const.MODULE_IMPL_NONE.html
