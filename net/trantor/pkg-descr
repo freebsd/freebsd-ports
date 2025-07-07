@@ -1,0 +1,10 @@
+A non-blocking I/O cross-platform TCP network library, using C++14.
+Drawing on the design of Muduo Library
+
+Featured highlights:
+* Non-blocking I/O
+* cross-platform
+* Thread pool
+* Lock free design
+* Support SSL
+* Server and Client
