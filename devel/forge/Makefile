@@ -1,6 +1,6 @@
 PORTNAME=	forge
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.5.3
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -11,23 +11,23 @@ WWW=		https://github.com/magit/forge
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=2.2.1:databases/closql@${EMACS_FLAVOR} \
-		compat.el${EMACS_PKGNAMESUFFIX}>=30.0.2.0:misc/compat.el@${EMACS_FLAVOR} \
-		emacsql${EMACS_PKGNAMESUFFIX}>=4.3.0:databases/emacsql@${EMACS_FLAVOR} \
-		ghub${EMACS_PKGNAMESUFFIX}>=4.3.0:devel/ghub@${EMACS_FLAVOR} \
-		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.2:devel/llama.el@${EMACS_FLAVOR} \
-		magit${EMACS_PKGNAMESUFFIX}>=4.3.2:devel/magit@${EMACS_FLAVOR} \
-		markdown-mode.el${EMACS_PKGNAMESUFFIX}>=2.6:textproc/markdown-mode.el@${EMACS_FLAVOR} \
-		transient${EMACS_PKGNAMESUFFIX}>=0.8.7:devel/transient@${EMACS_FLAVOR} \
+BUILD_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=2.2.2:databases/closql@${EMACS_FLAVOR} \
+		compat.el${EMACS_PKGNAMESUFFIX}>=30.1.0.0:misc/compat.el@${EMACS_FLAVOR} \
+		emacsql${EMACS_PKGNAMESUFFIX}>=4.3.1:databases/emacsql@${EMACS_FLAVOR} \
+		ghub${EMACS_PKGNAMESUFFIX}>=4.3.2:devel/ghub@${EMACS_FLAVOR} \
+		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.3:devel/llama.el@${EMACS_FLAVOR} \
+		magit${EMACS_PKGNAMESUFFIX}>=4.3.6:devel/magit@${EMACS_FLAVOR} \
+		markdown-mode.el${EMACS_PKGNAMESUFFIX}>=2.7:textproc/markdown-mode.el@${EMACS_FLAVOR} \
+		transient${EMACS_PKGNAMESUFFIX}>=0.9.0:devel/transient@${EMACS_FLAVOR} \
 		yaml.el${EMACS_PKGNAMESUFFIX}>=1.2.0:textproc/yaml.el@${EMACS_FLAVOR}
-RUN_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=2.2.1:databases/closql@${EMACS_FLAVOR} \
-		compat.el${EMACS_PKGNAMESUFFIX}>=30.0.2.0:misc/compat.el@${EMACS_FLAVOR} \
-		emacsql${EMACS_PKGNAMESUFFIX}>=4.3.0:databases/emacsql@${EMACS_FLAVOR} \
-		ghub${EMACS_PKGNAMESUFFIX}>=4.3.0:devel/ghub@${EMACS_FLAVOR} \
-		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.2:devel/llama.el@${EMACS_FLAVOR} \
-		magit${EMACS_PKGNAMESUFFIX}>=4.3.2:devel/magit@${EMACS_FLAVOR} \
-		markdown-mode.el${EMACS_PKGNAMESUFFIX}>=2.6:textproc/markdown-mode.el@${EMACS_FLAVOR} \
-		transient${EMACS_PKGNAMESUFFIX}>=0.8.7:devel/transient@${EMACS_FLAVOR} \
+RUN_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=2.2.2:databases/closql@${EMACS_FLAVOR} \
+		compat.el${EMACS_PKGNAMESUFFIX}>=30.1.0.0:misc/compat.el@${EMACS_FLAVOR} \
+		emacsql${EMACS_PKGNAMESUFFIX}>=4.3.1:databases/emacsql@${EMACS_FLAVOR} \
+		ghub${EMACS_PKGNAMESUFFIX}>=4.3.2:devel/ghub@${EMACS_FLAVOR} \
+		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.3:devel/llama.el@${EMACS_FLAVOR} \
+		magit${EMACS_PKGNAMESUFFIX}>=4.3.6:devel/magit@${EMACS_FLAVOR} \
+		markdown-mode.el${EMACS_PKGNAMESUFFIX}>=2.7:textproc/markdown-mode.el@${EMACS_FLAVOR} \
+		transient${EMACS_PKGNAMESUFFIX}>=0.9.0:devel/transient@${EMACS_FLAVOR} \
 		yaml.el${EMACS_PKGNAMESUFFIX}>=1.2.0:textproc/yaml.el@${EMACS_FLAVOR}
 
 USES=		emacs gmake makeinfo
