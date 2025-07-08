@@ -1,6 +1,6 @@
 PORTNAME=	ghub
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.1
+DISTVERSION=	4.3.2
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -12,10 +12,10 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.1.0.0:misc/compat.el@${EMACS_FLAVOR} \
-		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.2:devel/llama.el@${EMACS_FLAVOR} \
+		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.3:devel/llama.el@${EMACS_FLAVOR} \
 		treepy.el${EMACS_PKGNAMESUFFIX}>=0.1.2:devel/treepy.el@${EMACS_FLAVOR}
 RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.1.0.0:misc/compat.el@${EMACS_FLAVOR} \
-		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.2:devel/llama.el@${EMACS_FLAVOR} \
+		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.3:devel/llama.el@${EMACS_FLAVOR} \
 		treepy.el${EMACS_PKGNAMESUFFIX}>=0.1.2:devel/treepy.el@${EMACS_FLAVOR}
 
 USES=		emacs gmake makeinfo
