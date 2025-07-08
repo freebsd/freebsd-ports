@@ -4651,3 +4651,4 @@ math/manifold||2025-07-06|Removed, planned to update BRL-CAD, but currently bloc
 shells/bash53||2025-07-07|Removed in favour of updating shells/bash
 devel/etcd31||2025-07-08|Has expired: EOLed upstream, switch to a newer version
 devel/etcd32||2025-07-08|Has expired: EOLed upstream, switch to a newer version
+devel/etcd33||2025-07-08|Has expired: EOLed upstream, switch to a newer version
