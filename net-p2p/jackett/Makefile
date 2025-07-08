@@ -15,7 +15,7 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libinotify.so:devel/libinotify \
 		libunwind.so:devel/libunwind
 RUN_DEPENDS=	dotnet:lang/dotnet-host \
-		icu>0:devel/icu
+		${LOCALBASE}/lib/libicuuc.so:devel/icu
 
 USES=		gssapi:mit
 USE_GITHUB=	yes
@@ -48,6 +48,7 @@ do-build:
 		-r freebsd.${_OSVERSION_MAJOR}-${DOTNET_ARCH} --sc -p:PublishReadyToRun=false -o bin/publish
 
 do-install:
-	${CP} -r ${WRKSRC}/src/bin/publish ${STAGEDIR}/${DATADIR}
+	cd ${WRKSRC}/src/bin/publish && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR} "! -name jackett"
+	${INSTALL_PROGRAM} ${WRKSRC}/src/bin/publish/jackett ${STAGEDIR}/${DATADIR}
 
 .include <bsd.port.mk>
