@@ -1,3 +1,174 @@
+  <vuln vid="7b4ffa5b-5bc5-11f0-834f-b42e991fc52e">
+    <topic>MongoDB -- Certain Queries with Duplicate _id Fields May Cause MongoDB Server to Crash</topic>
+    <affects>
+      <package>
+	<name>mongodb80</name>
+	<range><lt>8.1.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cna@mongodb.com reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-102693">
+	  <p>An authorized user can issue queries with duplicate _id
+	  fields, that leads to unexpected behavior in MongoDB Server,
+	  which may result to crash. This issue can only be triggered
+	  by authorized users and cause Denial of Service.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-7259</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-7259</url>
+    </references>
+    <dates>
+      <discovery>2025-07-07</discovery>
+      <entry>2025-07-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="79251dc8-5bc5-11f0-834f-b42e991fc52e">
+    <topic>MongoDB -- Incorrect Handling of incomplete data may prevent mongoS from Accepting New Connections</topic>
+    <affects>
+      <package>
+	<name>mongodb60</name>
+	<range><lt>6.0.23</lt></range>
+      </package>
+      <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.20</lt></range>
+      </package>
+      <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cna@mongodb.com reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-106753">
+	 <p>MongoDB Server&apos;s mongos component can become
+	unresponsive to new connections due to incorrect handling of
+	incomplete data. This affects MongoDB when configured with
+	load balancer support.
+	Required Configuration:
+	This affects MongoDB sharded clusters when configured with load
+	balancer support for mongos using HAProxy on specified ports.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6714</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6714</url>
+    </references>
+    <dates>
+      <discovery>2025-07-07</discovery>
+      <entry>2025-07-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="77dc1fc4-5bc5-11f0-834f-b42e991fc52e">
+    <topic>MongoDB -- may be susceptible to privilege escalation due to $mergeCursors stage</topic>
+    <affects>
+      <package>
+	<name>mongodb60</name>
+	<range><lt>6.0.22</lt></range>
+      </package>
+      <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.20</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cna@mongodb.com reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-106752">
+	  <p>An unauthorized user may leverage a specially crafted
+	  aggregation pipeline to access data without proper
+	  authorization due to improper handling of the $mergeCursors
+	  stage in MongoDB Server. This may lead to access to data
+	  without further authorisation.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6713</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6713</url>
+    </references>
+    <dates>
+      <discovery>2025-07-07</discovery>
+      <entry>2025-07-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="764204eb-5bc5-11f0-834f-b42e991fc52e">
+    <topic>MongoDB -- may be susceptible to DoS due to Accumulated Memory Allocation</topic>
+    <affects>
+      <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cna@mongodb.com reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-106751">
+	  <p>MongoDB Server may be susceptible to disruption caused by
+	  high memory usage, potentially leading to server crash. This
+	  condition is linked to inefficiencies in memory management
+	  related to internal operations. In scenarios where certain
+	  internal processes persist longer than anticipated, memory
+	  consumption can increase, potentially impacting server
+	  stability and availability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6712</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6712</url>
+    </references>
+    <dates>
+      <discovery>2025-07-07</discovery>
+      <entry>2025-07-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="72ddee1f-5bc5-11f0-834f-b42e991fc52e">
+    <topic>MongoDB -- Incomplete Redaction of Sensitive Information in MongoDB Server Logs</topic>
+    <affects>
+      <package>
+	<name>mongodb60</name>
+	<range><lt>6.0.21</lt></range>
+      </package>
+      <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.18</lt></range>
+      </package>
+      <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cna@mongodb.com reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-98720">
+	  <p>An issue has been identified in MongoDB Server where
+	  unredacted queries may inadvertently appear in server logs
+	  when certain error conditions are encountered.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6711</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6711</url>
+    </references>
+    <dates>
+      <discovery>2025-07-07</discovery>
+      <entry>2025-07-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c0f3f54c-5bc4-11f0-834f-b42e991fc52e">
     <topic>ModSecurity -- empty XML tag causes segmentation fault</topic>
     <affects>
