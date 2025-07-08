@@ -23,7 +23,7 @@ USE_GNOME=	glib20 gtk30 intltool:build introspection:build libxml2 \
 		libxslt
 SHEBANG_FILES=	providers/raw_spec.py
 # Or use patch from https://gitlab.gnome.org/GNOME/libgda/-/merge_requests/208
-CFLAGS=		-Wno-deprecated-non-prototype
+CFLAGS+=	-Wno-deprecated-non-prototype -Wno-error=deprecated-declarations
 
 MESON_ARGS=	-Dui=false \
 		-Dhelp=false \
