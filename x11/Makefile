@@ -461,6 +461,7 @@
     SUBDIR += wayidle
     SUBDIR += wayland-logout
     SUBDIR += waylock
+    SUBDIR += wayst
     SUBDIR += wayout
     SUBDIR += wbar
     SUBDIR += wcm
