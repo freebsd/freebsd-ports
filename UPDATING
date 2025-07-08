@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250708:
+  AFFECTS: users of shells/bash
+  AUTHOR: michaelo@FreeBSD.org
+
+  The SYSBASHRC option is now enabled by default. For those who use bash
+  interactively the system-wide RC file shall be sourced automatically
+  giving the user the same experience as invoking it as a login shell.
+
 20250630:
   AFFECTS: users of mail/bogofilter-bdb
   AUTHOR: mandree@FreeBSD.org
