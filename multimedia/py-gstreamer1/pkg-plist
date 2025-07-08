@@ -1,6 +1,7 @@
 lib/gstreamer-1.0/libgstpython.so
 %%PYTHON_SITELIBDIR%%/gi/overrides/Gst.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/GstAnalytics.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/GstApp.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/GstAudio.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/GstPbutils.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/GstVideo.py
@@ -8,6 +9,8 @@ lib/gstreamer-1.0/libgstpython.so
 %%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Gst%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GstAnalytics%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GstAnalytics%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GstApp%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GstApp%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GstAudio%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GstAudio%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GstPbutils%%PYTHON_TAG%%.opt-1.pyc
