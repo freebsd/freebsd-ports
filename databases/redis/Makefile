@@ -23,6 +23,8 @@ MAKE_ENV=	OPTIMIZATION= \
 		V=yo
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
+PIE_UNSAFE=	ld: error: relocation R_X86_64_32 cannot be used against local \
+		symbol; recompile with -fPIC
 
 CONFLICTS_INSTALL=	redis-devel redis62 redis72 redis74
 
