@@ -1,3 +1,36 @@
+  <vuln vid="c0f3f54c-5bc4-11f0-834f-b42e991fc52e">
+    <topic>ModSecurity -- empty XML tag causes segmentation fault</topic>
+    <affects>
+      <package>
+	<name>ap24-mod_security</name>
+	<range><lt>2.9.11</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/owasp-modsecurity/ModSecurity/commit/ecd7b9736836eee391d25f35d5bd06a3ce35a45d">
+	  <p>ModSecurity is an open source, cross platform web application
+	firewall (WAF) engine for Apache, IIS and Nginx.  In versions 2.9.8
+	to before 2.9.11, an empty XML tag can cause a segmentation fault.
+	If SecParseXmlIntoArgs is set to On or OnlyArgs, and the request
+	type is application/xml, and at least one XML tag is empty (eg
+	&lt;foo&gt;&lt;/foo&gt;), then a segmentation fault occurs.  This
+	issue has been patched in version 2.9.11.  A workaround involves
+	setting SecParseXmlIntoArgs to Off.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-52891</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-52891</url>
+    </references>
+    <dates>
+      <discovery>2025-07-02</discovery>
+      <entry>2025-07-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7b3e7f71-5b30-11f0-b507-000c295725e4">
     <topic>redis,valkey -- DoS Vulnerability due to bad connection error handling</topic>
     <affects>
