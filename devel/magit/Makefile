@@ -1,6 +1,6 @@
 PORTNAME=	magit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.5
+DISTVERSION=	4.3.8
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -13,14 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.1.0.0:misc/compat.el@${EMACS_FLAVOR} \
 		git:devel/git \
-		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.2:devel/llama.el@${EMACS_FLAVOR} \
-		transient${EMACS_PKGNAMESUFFIX}>=0.8.8:devel/transient@${EMACS_FLAVOR} \
-		with-editor${EMACS_PKGNAMESUFFIX}>=3.4.3:editors/with-editor@${EMACS_FLAVOR}
+		llama.el${EMACS_PKGNAMESUFFIX}>=1.0.0:devel/llama.el@${EMACS_FLAVOR} \
+		transient${EMACS_PKGNAMESUFFIX}>=0.9.3:devel/transient@${EMACS_FLAVOR} \
+		with-editor${EMACS_PKGNAMESUFFIX}>=3.4.4:editors/with-editor@${EMACS_FLAVOR}
 RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.1.0.0:misc/compat.el@${EMACS_FLAVOR} \
 		git:devel/git \
-		llama.el${EMACS_PKGNAMESUFFIX}>=0.6.2:devel/llama.el@${EMACS_FLAVOR} \
-		transient${EMACS_PKGNAMESUFFIX}>=0.8.8:devel/transient@${EMACS_FLAVOR} \
-		with-editor${EMACS_PKGNAMESUFFIX}>=3.4.3:editors/with-editor@${EMACS_FLAVOR}
+		llama.el${EMACS_PKGNAMESUFFIX}>=1.0.0:devel/llama.el@${EMACS_FLAVOR} \
+		transient${EMACS_PKGNAMESUFFIX}>=0.9.3:devel/transient@${EMACS_FLAVOR} \
+		with-editor${EMACS_PKGNAMESUFFIX}>=3.4.4:editors/with-editor@${EMACS_FLAVOR}
 
 USES=		emacs gmake makeinfo
 USE_GITHUB=	yes
