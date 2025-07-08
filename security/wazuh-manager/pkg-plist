@@ -3155,9 +3155,9 @@
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib-dynload/xxlimited_35%%PYTHON_TAG%%.so
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib-dynload/zlib%%PYTHON_TAG%%.so
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-/var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/Grammar%%PYTHON_VER%%.12.final.0.pickle
+/var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/Grammar%%PYTHON_VER%%.13.final.0.pickle
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-/var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar%%PYTHON_VER%%.12.final.0.pickle
+/var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar%%PYTHON_VER%%.13.final.0.pickle
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/__init__.py
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/__main__.py
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc

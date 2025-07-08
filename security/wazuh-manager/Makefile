@@ -1,7 +1,7 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/40/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
@@ -51,7 +51,7 @@ EXTERNAL_DISTFILES=	audit-userspace.tar.gz:wazuh_sources \
 			bzip2.tar.gz:wazuh_sources \
 			cJSON.tar.gz:wazuh_sources \
 			cpp-httplib.tar.gz:wazuh_sources \
-			cpython-3.11.12.tar.gz:wazuh_cache \
+			cpython-3.11.13.tar.gz:wazuh_cache \
 			curl.tar.gz:wazuh_sources \
 			flatbuffers.tar.gz:wazuh_sources \
 			googletest.tar.gz:wazuh_sources \
@@ -165,12 +165,12 @@ IGNORE=		FreeBSD ${OSVERSION} ${ARCH} is not supported
 .endif
 
 .if ${ARCH} == "aarch64"
-FBSD14_PATCH_LEVEL=     _p3
+FBSD14_PATCH_LEVEL=     #
 .endif
 
 .if ${ARCH} != "aarch64"
-FBSD13_PATCH_LEVEL=	_p1
-FBSD14_PATCH_LEVEL=	_p1
+FBSD13_PATCH_LEVEL=	#
+FBSD14_PATCH_LEVEL=	#
 .endif
 
 .if ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
@@ -179,7 +179,7 @@ FBSD_MAJOR_VERSION=13
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd13-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .elif ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
-FBSD_VERSION_BASE=freebsd_14_2_release${FBSD14_PATCH_LEVEL}
+FBSD_VERSION_BASE=freebsd_14_3_release${FBSD14_PATCH_LEVEL}
 FBSD_MAJOR_VERSION=14
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd14-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
