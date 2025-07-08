@@ -1,6 +1,6 @@
---- platform/linuxbsd/detect.py.orig	2025-02-19 15:17:58.330499000 +0100
-+++ platform/linuxbsd/detect.py	2025-02-19 15:20:19.837955000 +0100
-@@ -370,7 +370,7 @@
+--- platform/linuxbsd/detect.py.orig	2025-03-25 23:11:16 UTC
++++ platform/linuxbsd/detect.py
+@@ -373,7 +373,7 @@ def configure(env: "SConsEnvironment"):
      else:
          env.Append(CPPDEFINES=["XKB_ENABLED"])
  
