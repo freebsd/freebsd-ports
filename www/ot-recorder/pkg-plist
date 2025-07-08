@@ -292,7 +292,6 @@ sbin/ot-recorder
 %%WWWDIR%%/utils/network.js
 %%WWWDIR%%/views/jane.json.sample
 %%WWWDIR%%/views/leafletmap.html
-%%WWWDIR%%/views/vmap.html
 @dir %%WWWDIR%%/last
 @dir %%WWWDIR%%/map
 @dir %%WWWDIR%%/static/leaflet/images
