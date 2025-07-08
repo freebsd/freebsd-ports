@@ -129,6 +129,8 @@ share/man/man1/smew.1.gz
 %%EMACS_VERSION_SITE_LISPDIR%%/mew/mew-nntp.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/mew/mew-nntp2.el
 %%EMACS_VERSION_SITE_LISPDIR%%/mew/mew-nntp2.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/mew/mew-oauth2.el
+%%EMACS_VERSION_SITE_LISPDIR%%/mew/mew-oauth2.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/mew/mew-passwd.el
 %%EMACS_VERSION_SITE_LISPDIR%%/mew/mew-passwd.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/mew/mew-pgp.el
