@@ -48,11 +48,11 @@ MANPAGES_PLIST_FILES=	share/man/man1/certbot.1.gz \
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.6:devel/py-importlib-metadata@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=8.6.1:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/certbot/compat/misc.py ${WRKSRC}/certbot/_internal/tests/cli_test.py
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/src/certbot/compat/misc.py ${WRKSRC}/src/certbot/_internal/tests/cli_test.py
 
 post-build-MANPAGES-on:
 	# Avoid gmake / ${DO_MAKE_BUILD} -C ${WRKSRC}/docs man

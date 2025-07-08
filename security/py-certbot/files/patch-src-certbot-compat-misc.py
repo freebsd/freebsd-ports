@@ -4,8 +4,8 @@
 # https://github.com/certbot/certbot/pull/7056
 # TODO: Upstream
 
---- certbot/compat/misc.py.orig	2023-04-04 15:06:41 UTC
-+++ certbot/compat/misc.py
+--- src/certbot/compat/misc.py.orig	2023-04-04 15:06:41 UTC
++++ src/certbot/compat/misc.py
 @@ -100,6 +100,11 @@ LINUX_DEFAULT_FOLDERS = {
      'work': '/var/lib/letsencrypt',
      'logs': '/var/log/letsencrypt',

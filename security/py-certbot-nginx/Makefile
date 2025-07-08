@@ -29,7 +29,7 @@ USE_PYTHON=	autoplist concurrent pep517
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/certbot_nginx/_internal/constants.py
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/src/certbot_nginx/_internal/constants.py
 
 .include "${.CURDIR}/../py-acme/version.mk"
 .include <bsd.port.mk>
