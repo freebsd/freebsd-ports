@@ -73,7 +73,7 @@ lib/libblis.so.4.0.0
 %%DATADIR%%/config/steamroller/make_defs.mk
 %%DATADIR%%/config/thunderx2/bli_kernel_defs_thunderx2.h
 %%DATADIR%%/config/thunderx2/make_defs.mk
-%%DATADIR%%/config/%%ARCH%%/make_defs.mk
+%%DATADIR%%/config/x86_64/make_defs.mk
 %%DATADIR%%/config/zen/bli_kernel_defs_zen.h
 %%DATADIR%%/config/zen/make_defs.mk
 %%DATADIR%%/config/zen2/bli_kernel_defs_zen2.h
