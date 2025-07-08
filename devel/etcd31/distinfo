@@ -1,7 +1,0 @@
-TIMESTAMP = 1677694209
-SHA256 (coreos-etcd-v3.1.20_GH0.tar.gz) = 0ad1c8af21620f53487c0c3b7cfd17309b1e9de82ad05b906722061e7470091a
-SIZE (coreos-etcd-v3.1.20_GH0.tar.gz) = 2641073
-SHA256 (coreos-bbolt-v1.3.7_GH0.tar.gz) = a99c0371bd041a3ca45bd314428976f3f13408ea53dbf2f8aa74b0288889acb2
-SIZE (coreos-bbolt-v1.3.7_GH0.tar.gz) = 116699
-SHA256 (golang-sys-v0.5.0_GH0.tar.gz) = 810c8f1b7704674971ab6b2b614aba20a5a1765018fd2c639f528dbbcbf88b1f
-SIZE (golang-sys-v0.5.0_GH0.tar.gz) = 1429723
