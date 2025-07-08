@@ -1,9 +1,9 @@
 PORTNAME=		sogo
-PORTVERSION=		5.12.1
+PORTVERSION=		5.12.2
 CATEGORIES=		www gnustep
 MASTER_SITES=		https://packages.sogo.nu/sources/
-DISTNAME=		SOGo-${PORTVERSION}
 PKGNAMESUFFIX=		-${FLAVOR}
+DISTNAME=		SOGo-${PORTVERSION}
 
 MAINTAINER=		acm@FreeBSD.org
 COMMENT=		Groupware server with a focus on scalability and open standards
@@ -12,7 +12,7 @@ WWW=			https://sogo.nu/
 LICENSE=		GPLv2
 
 FLAVORS=		mysql mysqlactivesync pgsql pgsqlactivesync
-FLAVOR?=		${FLAVORS[1]}
+FLAVOR?=		${FLAVORS:[1]}
 
 LIB_DEPENDS=		libmemcached.so:databases/libmemcached \
 			libcurl.so:ftp/curl \
@@ -33,10 +33,10 @@ SHEBANG_FILES=		${WRKSRC}/SoObjects/SOGo/gen-saml2-exceptions.py
 
 CONFIGURE_ARGS+=	--disable-debug --disable-strip
 
-mysql_CONFLICTS_INSTALL=        sogo2 ${PORTNAME}-pgsql ${PORTNAME}-pgsqlactivesync
-pgsql_CONFLICTS_INSTALL=        sogo2 ${PORTNAME}-mysql ${PORTNAME}-mysqlactivesync
-mysqlactivesync_CONFLICTS_INSTALL=sogo2 ${PORTNAME}-pgsql ${PORTNAME}-pgsqlactivesync
-pgsqlactivesync_CONFLICTS_INSTALL=sogo2 ${PORTNAME}-mysql ${PORTNAME}-mysqlactivesync
+mysql_CONFLICTS_INSTALL=        sogo2 ${PORTNAME}-pgsql ${PORTNAME}-pgsqlactivesync ${PORTNAME}-mysqlactivesync
+pgsql_CONFLICTS_INSTALL=        sogo2 ${PORTNAME}-mysql ${PORTNAME}-mysqlactivesync ${PORTNAME}-pgsqlactivesync
+mysqlactivesync_CONFLICTS_INSTALL=sogo2 ${PORTNAME}-mysql ${PORTNAME}-pgsql ${PORTNAME}-pgsqlactivesync
+pgsqlactivesync_CONFLICTS_INSTALL=sogo2 ${PORTNAME}-mysql ${PORTNAME}-pgsql ${PORTNAME}-mysqlactivesync
 
 OPTIONS_DEFAULT=	MEMCACHED MFA SAML2
 OPTIONS_DEFINE=		ACTIVESYNC MEMCACHED MFA SAML2

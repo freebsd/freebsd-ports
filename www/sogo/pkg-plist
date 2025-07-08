@@ -760,6 +760,10 @@ GNUstep/Local/Library/OCSTypeModels/contact.ocs
 %%ACTIVESYNC%%GNUstep/Local/Library/SOGo/ActiveSync.SOGo/Resources/Info-gnustep.plist
 %%ACTIVESYNC%%GNUstep/Local/Library/SOGo/ActiveSync.SOGo/Resources/product.plist
 %%ACTIVESYNC%%GNUstep/Local/Library/SOGo/ActiveSync.SOGo/stamp.make
+GNUstep/Local/Library/SOGo/API.SOGo/API
+GNUstep/Local/Library/SOGo/API.SOGo/Resources/Info-gnustep.plist
+GNUstep/Local/Library/SOGo/API.SOGo/Resources/product.plist
+GNUstep/Local/Library/SOGo/API.SOGo/stamp.make
 GNUstep/Local/Library/SOGo/AdministrationUI.SOGo/AdministrationUI
 GNUstep/Local/Library/SOGo/AdministrationUI.SOGo/Resources/Arabic.lproj/Localizable.strings
 GNUstep/Local/Library/SOGo/AdministrationUI.SOGo/Resources/Basque.lproj/Localizable.strings
