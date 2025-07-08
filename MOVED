@@ -4650,3 +4650,4 @@ lang/linux-dotnet-cli||2025-07-01|Removed, depends on removed lang/linux-dotnet-
 math/manifold||2025-07-06|Removed, planned to update BRL-CAD, but currently blocked
 shells/bash53||2025-07-07|Removed in favour of updating shells/bash
 devel/etcd31||2025-07-08|Has expired: EOLed upstream, switch to a newer version
+devel/etcd32||2025-07-08|Has expired: EOLed upstream, switch to a newer version
