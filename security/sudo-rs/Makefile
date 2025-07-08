@@ -1,7 +1,6 @@
 PORTNAME=	sudo-rs
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	marc@trifectatech.org
@@ -13,8 +12,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-BUILD_DEPENDS=	pandoc:${PORTSDIR}/textproc/hs-pandoc
-
 FLAVORS=		default coexist
 FLAVOR?=		${FLAVORS:[1]}
 coexist_PKGNAMESUFFIX=	-coexist
@@ -24,11 +21,10 @@ USES=		cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trifectatechfoundation
-GH_TAGNAME=	main
 
 CARGO_CRATES=	diff-0.1.13 \
 		glob-0.3.2 \
-		libc-0.2.172 \
+		libc-0.2.174 \
 		log-0.4.27 \
 		pretty_assertions-1.4.1 \
 		yansi-1.0.1
@@ -52,17 +48,11 @@ PORTDOCS=	CHANGELOG.md CONTRIBUTING.md COPYRIGHT LICENSE-* README.md \
 
 OPTIONS_DEFINE=	DOCS
 
-post-build:
-.for man in sudo.8 visudo.8 sudoers.5
-	@${MKDIR} ${WRKDIR}/docs/man
-	pandoc -s -t man ${WRKSRC}/docs/man/${man}.md -o ${WRKDIR}/docs/man/${man}
-.endfor
-
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/visudo ${STAGEDIR}${PREFIX}/sbin/visudo${RS_SUFFIX}
-	${INSTALL_MAN} ${WRKDIR}/docs/man/sudo.8 ${STAGEDIR}${PREFIX}/share/man/man8/sudo${RS_SUFFIX}.8
-	${INSTALL_MAN} ${WRKDIR}/docs/man/visudo.8 ${STAGEDIR}${PREFIX}/share/man/man8/visudo${RS_SUFFIX}.8
-	${INSTALL_MAN} ${WRKDIR}/docs/man/sudoers.5 ${STAGEDIR}${PREFIX}/share/man/man5/sudoers${RS_SUFFIX}.5
+	${INSTALL_MAN} ${WRKSRC}/docs/man/sudo.8.man ${STAGEDIR}${PREFIX}/share/man/man8/sudo${RS_SUFFIX}.8
+	${INSTALL_MAN} ${WRKSRC}/docs/man/visudo.8.man ${STAGEDIR}${PREFIX}/share/man/man8/visudo${RS_SUFFIX}.8
+	${INSTALL_MAN} ${WRKSRC}/docs/man/sudoers.5.man ${STAGEDIR}${PREFIX}/share/man/man5/sudoers${RS_SUFFIX}.5
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/sudoers.d
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/pam.d
 	${MKDIR} ${STAGEDIR}/var/run/sudo
