@@ -1,6 +1,6 @@
 PORTNAME=	closql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.1
+DISTVERSION=	2.2.2
 DISTVERSIONSUFFIX=
 CATEGORIES=	databases elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
@@ -16,9 +16,9 @@ DEPRECATED=	Use databases/closql instead
 EXPIRATION_DATE=	2025-08-31
 
 BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.0.0:misc/compat.el@${EMACS_FLAVOR} \
-		emacsql-devel${EMACS_PKGNAMESUFFIX}>=4.2.0:databases/emacsql-devel@${EMACS_FLAVOR}
+		emacsql-devel${EMACS_PKGNAMESUFFIX}>=4.3.1:databases/emacsql-devel@${EMACS_FLAVOR}
 RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.0.0:misc/compat.el@${EMACS_FLAVOR} \
-		emacsql-devel${EMACS_PKGNAMESUFFIX}>=4.2.0:databases/emacsql-devel@${EMACS_FLAVOR}
+		emacsql-devel${EMACS_PKGNAMESUFFIX}>=4.3.1:databases/emacsql-devel@${EMACS_FLAVOR}
 
 USES=		emacs gmake
 USE_GITHUB=	yes
