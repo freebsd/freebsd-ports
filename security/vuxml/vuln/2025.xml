@@ -1,32 +1,3 @@
-  <vuln vid="7b4ffa5b-5bc5-11f0-834f-b42e991fc52e">
-    <topic>MongoDB -- Certain Queries with Duplicate _id Fields May Cause MongoDB Server to Crash</topic>
-    <affects>
-      <package>
-	<name>mongodb80</name>
-	<range><lt>8.1.0</lt></range>
-      </package>
-    </affects>
-    <description>
-	<body xmlns="http://www.w3.org/1999/xhtml">
-	<p>cna@mongodb.com reports:</p>
-	<blockquote cite="https://jira.mongodb.org/browse/SERVER-102693">
-	  <p>An authorized user can issue queries with duplicate _id
-	  fields, that leads to unexpected behavior in MongoDB Server,
-	  which may result to crash. This issue can only be triggered
-	  by authorized users and cause Denial of Service.</p>
-	</blockquote>
-	</body>
-    </description>
-    <references>
-      <cvename>CVE-2025-7259</cvename>
-      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-7259</url>
-    </references>
-    <dates>
-      <discovery>2025-07-07</discovery>
-      <entry>2025-07-08</entry>
-    </dates>
-  </vuln>
-
   <vuln vid="79251dc8-5bc5-11f0-834f-b42e991fc52e">
     <topic>MongoDB -- Incorrect Handling of incomplete data may prevent mongoS from Accepting New Connections</topic>
     <affects>
