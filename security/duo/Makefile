@@ -1,5 +1,5 @@
 PORTNAME=	duo
-PORTVERSION=	2.0.4
+PORTVERSION=	2.1.0
 CATEGORIES=	security
 MASTER_SITES=	https://dl.duosecurity.com/ \
 		ZI
@@ -26,6 +26,8 @@ OPTIONS_DEFINE=	DOCS SUID
 OPTIONS_SUB=	yes
 
 post-patch:
+	${REINPLACE_CMD} -e 's|ASN1_STRING_data|ASN1_STRING_get0_data|g' \
+		${WRKSRC}/lib/https.c
 	${REINPLACE_CMD} -e 's| /etc| ${PREFIX}/etc|g' \
 		${WRKSRC}/pam_duo/pam_duo.8 \
 		${WRKSRC}/login_duo/login_duo.8
