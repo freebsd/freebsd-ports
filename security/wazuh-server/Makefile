@@ -1,5 +1,6 @@
 PORTNAME=	wazuh
 PORTVERSION=	4.12.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/${PORTNAME}/:config_samples \
 		https://packages.wazuh.com/4.x/filebeat/:wazuh_module \

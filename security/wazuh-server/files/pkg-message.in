@@ -18,7 +18,7 @@ Wazuh server components were installed
 3) Copy %%PREFIX%%/etc/wazuh-server/filebeat.yml to %%PREFIX%%/etc/beats/
    directory
 
-4) Copy %%PREFIX%%/etc/wazuh-server/logstash.yml and %%PREFIX%%/etc/wazuh-server/wazuh-template.json
+4) Copy %%PREFIX%%/etc/wazuh-server/logstash.conf and %%PREFIX%%/etc/wazuh-server/wazuh-template.json
    files to %%PREFIX%%/etc/logstash/ directory
 
 5) You can use my own version of wazuh certificates generator for generate
