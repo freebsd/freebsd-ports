@@ -1,5 +1,6 @@
 PORTNAME=	moodle
 PORTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	www education
 MASTER_SITES=	https://packaging.moodle.org/stable500/ \
 		LOCAL/wen
@@ -26,7 +27,6 @@ OPTIONS_SINGLE_BACKEND=	MYSQL PGSQL
 OPTIONS_DEFINE=		LDAP
 OPTIONS_DEFAULT=	MYSQL
 
-MYSQL_USES=	mysql
 MYSQL_USE=	php=mysqli
 PGSQL_USE=	php=pgsql
 LDAP_USE=	php=ldap
