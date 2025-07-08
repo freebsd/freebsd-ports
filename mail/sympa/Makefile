@@ -1,5 +1,6 @@
 PORTNAME=	sympa
 DISTVERSION=	6.2.76
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-med.fr

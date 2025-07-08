@@ -1,0 +1,48 @@
+https://github.com/sympa-community/sympa/issues/1966
+
+https://github.com/sympa-community/sympa/commit/088fff6ba62e229939c0213c7f44b4086d38709c
+
+--- src/sbin/archived.pl.in.orig	2025-02-03 22:52:23 UTC
++++ src/sbin/archived.pl.in
+@@ -29,7 +29,7 @@ use English qw(-no_match_vars);
+ use strict;
+ use warnings;
+ use English qw(-no_match_vars);
+-use Getopt::Long;
++use Getopt::Long qw( :config no_ignore_case );
+ use Pod::Usage;
+ use POSIX qw();
+ 
+--- src/sbin/bounced.pl.in.orig	2025-02-03 22:52:23 UTC
++++ src/sbin/bounced.pl.in
+@@ -35,7 +35,7 @@ use English qw(-no_match_vars);
+ use strict;
+ use warnings;
+ use English qw(-no_match_vars);
+-use Getopt::Long;
++use Getopt::Long qw( :config no_ignore_case );
+ use Pod::Usage;
+ use POSIX qw();
+ 
+--- src/sbin/bulk.pl.in.orig	2025-02-03 22:52:23 UTC
++++ src/sbin/bulk.pl.in
+@@ -30,7 +30,7 @@ use English qw(-no_match_vars);
+ use strict;
+ use warnings;
+ use English qw(-no_match_vars);
+-use Getopt::Long;
++use Getopt::Long qw( :config no_ignore_case );
+ use Pod::Usage;
+ use POSIX qw();
+ 
+--- src/sbin/task_manager.pl.in.orig	2025-02-03 22:52:23 UTC
++++ src/sbin/task_manager.pl.in
+@@ -30,7 +30,7 @@ use English qw(-no_match_vars);
+ use strict;
+ use warnings;
+ use English qw(-no_match_vars);
+-use Getopt::Long;
++use Getopt::Long qw( :config no_ignore_case );
+ use Pod::Usage;
+ use POSIX qw();
+ 
