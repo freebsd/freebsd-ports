@@ -7,7 +7,7 @@ lib/engines/pkcs11.so
 lib/libp11.a
 lib/libp11.so
 lib/libp11.so.3
-lib/libp11.so.3.7.0
+lib/libp11.so.3.7.2
 lib/libpkcs11.a
 lib/libpkcs11.so
 lib/libpkcs11.so.0
