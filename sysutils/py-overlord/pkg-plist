@@ -4,6 +4,7 @@ libexec/overlord/safe-exc.sh
 libexec/overlord/vm-install-from-appjail-image.sh
 libexec/overlord/vm-install-from-components.sh
 libexec/overlord/vm-start.sh
+libexec/overlord/create.py
 share/man/man1/overlord.1.gz
 share/man/man5/overlord-spec.5.gz
 %%DATADIR%%/overlord.ini
