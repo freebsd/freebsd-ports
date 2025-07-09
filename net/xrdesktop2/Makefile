@@ -1,6 +1,6 @@
 PORTNAME=	xrdesktop2
 PORTVERSION=	2.00
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	https://BSDforge.com/projects/source/net/xrdesktop2/
 
