@@ -1,5 +1,6 @@
 PORTNAME=	purple-googlechat
 DISTVERSION=	g20231026
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org
