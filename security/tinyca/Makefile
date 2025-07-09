@@ -1,6 +1,6 @@
 PORTNAME=	tinyca
 PORTVERSION=	0.7.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security net
 MASTER_SITES=	http://opsec.eu/src/${PORTNAME}/
 

@@ -1,6 +1,6 @@
 PORTNAME=	clawsker
 DISTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.claws-mail.org/tools/
 
