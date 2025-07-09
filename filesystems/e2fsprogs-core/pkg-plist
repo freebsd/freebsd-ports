@@ -108,6 +108,7 @@ sbin/tune2fs
 %%NLS%%share/locale/hu/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/id/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/it/LC_MESSAGES/e2fsprogs.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/e2fsprogs.mo
