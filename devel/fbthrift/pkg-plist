@@ -268,6 +268,7 @@ include/thrift/lib/cpp2/async/metadata/CursorBasedRequestRpcMetadataAdapter.h
 include/thrift/lib/cpp2/async/metadata/RequestRpcMetadataAdapter.h
 include/thrift/lib/cpp2/async/metadata/RequestRpcMetadataFacade.h
 include/thrift/lib/cpp2/async/metadata/TCompactRequestRpcMetadataAdapter.h
+include/thrift/lib/cpp2/async/processor/AsyncProcessor.h
 include/thrift/lib/cpp2/async/tests/util/TestSinkService.h
 include/thrift/lib/cpp2/async/tests/util/TestStreamService.h
 include/thrift/lib/cpp2/async/tests/util/Util.h
@@ -405,6 +406,7 @@ include/thrift/lib/cpp2/protocol/TableBasedSerializerImpl.h
 include/thrift/lib/cpp2/protocol/Traits.h
 include/thrift/lib/cpp2/protocol/VirtualProtocol.h
 include/thrift/lib/cpp2/protocol/detail/CursorBasedSerialization.h
+include/thrift/lib/cpp2/protocol/detail/DynamicCursorSerializer.h
 include/thrift/lib/cpp2/protocol/detail/FieldMask.h
 include/thrift/lib/cpp2/protocol/detail/FieldMaskUtil.h
 include/thrift/lib/cpp2/protocol/detail/Object.h
@@ -448,7 +450,6 @@ include/thrift/lib/cpp2/server/AdaptiveConcurrency.h
 include/thrift/lib/cpp2/server/CPUConcurrencyController.h
 include/thrift/lib/cpp2/server/ConcurrencyControllerBase.h
 include/thrift/lib/cpp2/server/ConcurrencyControllerInterface.h
-include/thrift/lib/cpp2/server/ConcurrencyControllerInterfaceUnsafeAPI.h
 include/thrift/lib/cpp2/server/ControlServerInterface.h
 include/thrift/lib/cpp2/server/Cpp2ConnContext.h
 include/thrift/lib/cpp2/server/Cpp2Connection.h
