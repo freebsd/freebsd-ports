@@ -1,0 +1,20 @@
+--- meson.build.orig	2025-05-17 22:51:03 UTC
++++ meson.build
+@@ -1208,7 +1208,7 @@ if have_lua
+ if have_lua
+   have_lua_lgi = false
+ 
+-  foreach lua_bin : [ 'luajit', 'lua5.1', 'lua-5.1', 'lua' ]
++  foreach lua_bin : [ 'luajit', 'lua51', 'lua-5.1', 'lua' ]
+     lua = find_program(lua_bin, required: false)
+ 
+     if lua.found() and meson.can_run_host_binaries()
+@@ -1247,7 +1247,7 @@ if have_lua
+       if is_supported_lua
+         have_lua_lgi = run_command(lua, '-e',
+                                    '''
+-                                   local lgi = require 'lgi'
++                                   local lgi = require("lgi")
+                                    ''',
+                                    check: false).returncode() == 0
+       endif

@@ -264,6 +264,7 @@ lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/goat-exercise-c
 lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/goat-exercise-c.c
 lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/goat-exercise-gjs.js
 lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/goat-exercise-py3.py
+%%LUASCRIPTS%%lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/goat-exercise-lua.lua
 %%VALA%%lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/goat-exercise-vala
 %%VALA%%lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/goat-exercise-vala.vala
 lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/locale/ar/LC_MESSAGES/org.gimp.extension.goat-exercises.mo
@@ -335,6 +336,7 @@ lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/locale/zh_HK/LC
 lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/locale/zh_TW/LC_MESSAGES/org.gimp.extension.goat-exercises.mo
 lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/org.gimp.extension.goat-exercises.metainfo.xml
 lib/gimp/%%ABIVER%%/interpreters/default.interp
+%%LUASCRIPTS%%lib/gimp/%%ABIVER%%/interpreters/lua.interp
 lib/gimp/%%ABIVER%%/modules/libcolor-selector-cmyk.so
 lib/gimp/%%ABIVER%%/modules/libcolor-selector-water.so
 lib/gimp/%%ABIVER%%/modules/libcolor-selector-wheel.so
@@ -5106,7 +5108,7 @@ libexec/gimp-debug-tool-%%ABIVER%%
 %%DATADIR%%/%%ABIVER%%/icons/hicolor/scalable/actions/switch-off-symbolic.svg
 %%DATADIR%%/%%ABIVER%%/icons/hicolor/scalable/actions/switch-on-symbolic.svg
 %%DATADIR%%/%%ABIVER%%/icons/hicolor/scalable/status/software-update-available-symbolic.svg
-%%DATADIR%%/%%ABIVER%%/images/gimp-devel-logo.png
+%%PORTDOCS%%%%DATADIR%%/%%ABIVER%%/images/gimp-devel-logo.png
 %%DATADIR%%/%%ABIVER%%/images/gimp-logo.png
 %%DATADIR%%/%%ABIVER%%/images/gimp-splash.png
 %%DATADIR%%/%%ABIVER%%/menus/app-menu.ui
