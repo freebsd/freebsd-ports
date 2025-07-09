@@ -1,6 +1,6 @@
 PORTNAME=	snort
 PORTVERSION=	2.9.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	https://snort.org/downloads/snort/ \
 		https://snort.org/downloads/archive/snort/

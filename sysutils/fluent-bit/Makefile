@@ -1,6 +1,7 @@
 PORTNAME=	fluent-bit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.3
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -27,7 +28,7 @@ OPTIONS_DEFINE=		LUA_FILTER PGSQL SSL
 OPTIONS_DEFAULT=	LUA_FILTER PGSQL SSL
 LUA_FILTER_DESC=	Support for modifying incoming records using Lua scripts
 
-LUA_FILTER_USES=	luajit:luajit-devel pkgconfig
+LUA_FILTER_USES=	luajit:luajit pkgconfig
 LUA_FILTER_CMAKE_ON=	-DFLB_FILTER_LUA=On \
 			-DFLB_LUAJIT=On \
 			-DFLB_PREFER_SYSTEM_LIB_LUAJIT=On

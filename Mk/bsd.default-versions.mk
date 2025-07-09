@@ -98,11 +98,7 @@ LLVM_DEFAULT?=		19
 # Possible values: 5.1, 5.2, 5.3, 5.4
 LUA_DEFAULT?=		5.4
 # Possible values: luajit, luajit-devel, luajit-openresty
-.  if ${ARCH:Mpowerpc64*}
-LUAJIT_DEFAULT?=	luajit-openresty
-.  else
-LUAJIT_DEFAULT?=	luajit-devel
-.  endif
+LUAJIT_DEFAULT?=	luajit
 # Possible values: 5.10, 5.20, 6.8
 MONO_DEFAULT?=		5.20
 # Possible values: 8.0, 8.4, 9.1, 10.5m, 10.6m, 10.11m, 11.4m

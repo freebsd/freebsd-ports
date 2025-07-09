@@ -1,6 +1,6 @@
 PORTNAME=	obs-studio
 DISTVERSION=	31.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

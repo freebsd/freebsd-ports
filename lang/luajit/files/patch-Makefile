@@ -1,6 +1,6 @@
---- Makefile.orig	2017-05-01 14:11:00.000000000 -0400
-+++ Makefile	2017-05-03 11:14:26.850889000 -0400
-@@ -24,7 +24,7 @@
+--- Makefile.orig	2025-05-28 19:14:47 UTC
++++ Makefile
+@@ -30,7 +30,7 @@ VERSION= $(MMVERSION).$(RELVER)
  # Change the installation path as needed. This automatically adjusts
  # the paths in src/luaconf.h, too. Note: PREFIX must be an absolute path!
  #
@@ -9,15 +9,15 @@
  export MULTILIB= lib
  ##############################################################################
  
-@@ -33,6 +33,7 @@
- INSTALL_LIB=   $(DPREFIX)/$(MULTILIB)
- INSTALL_SHARE= $(DPREFIX)/share
- INSTALL_INC=   $(DPREFIX)/include/luajit-$(MAJVER).$(MINVER)
+@@ -41,6 +41,7 @@ INSTALL_INC=   $(INSTALL_DEFINC)
+ INSTALL_SHARE= $(DESTDIR)$(INSTALL_SHARE_)
+ INSTALL_DEFINC= $(DPREFIX)/include/luajit-$(MMVERSION)
+ INSTALL_INC=   $(INSTALL_DEFINC)
 +INSTALL_LIBD=  $(DPREFIX)/libdata
  
- INSTALL_LJLIBD= $(INSTALL_SHARE)/luajit-$(VERSION)
- INSTALL_JITLIB= $(INSTALL_LJLIBD)/jit
-@@ -40,8 +41,7 @@
+ export INSTALL_LJLIBD= $(INSTALL_SHARE_)/luajit-$(MMVERSION)
+ INSTALL_JITLIB= $(DESTDIR)$(INSTALL_LJLIBD)/jit
+@@ -48,8 +49,7 @@ INSTALL_CMOD= $(INSTALL_CMODD)/$(ABIVER)
  INSTALL_LMOD= $(INSTALL_LMODD)/$(ABIVER)
  INSTALL_CMODD= $(INSTALL_LIB)/lua
  INSTALL_CMOD= $(INSTALL_CMODD)/$(ABIVER)
@@ -27,7 +27,7 @@
  
  INSTALL_TNAME= luajit-$(VERSION)
  INSTALL_TSYMNAME= luajit
-@@ -62,8 +62,8 @@
+@@ -70,8 +70,8 @@ INSTALL_PC= $(INSTALL_PKGCONFIG)/$(INSTALL_PCNAME)
  INSTALL_TSYM= $(INSTALL_BIN)/$(INSTALL_TSYMNAME)
  INSTALL_PC= $(INSTALL_PKGCONFIG)/$(INSTALL_PCNAME)
  
@@ -35,21 +35,21 @@
 -  $(INSTALL_PKGCONFIG) $(INSTALL_JITLIB) $(INSTALL_LMOD) $(INSTALL_CMOD)
 +INSTALL_DIRS= $(INSTALL_INC) \
 +  $(INSTALL_PKGCONFIG) $(INSTALL_JITLIB)
- UNINSTALL_DIRS= $(INSTALL_JITLIB) $(INSTALL_LJLIBD) $(INSTALL_INC) \
+ UNINSTALL_DIRS= $(INSTALL_JITLIB) $(DESTDIR)$(INSTALL_LJLIBD) $(INSTALL_INC) \
    $(INSTALL_LMOD) $(INSTALL_LMODD) $(INSTALL_CMOD) $(INSTALL_CMODD)
  
-@@ -118,10 +118,8 @@
- 	$(RM) $(INSTALL_TSYM) $(INSTALL_DYN) $(INSTALL_SHORT1) $(INSTALL_SHORT2)
+@@ -135,10 +135,8 @@ install: $(INSTALL_DEP)
+ 	$(RM) $(INSTALL_DYN) $(INSTALL_SHORT1) $(INSTALL_SHORT2)
  	cd src && test -f $(FILE_SO) && \
  	  $(INSTALL_X) $(FILE_SO) $(INSTALL_DYN) && \
--	  $(LDCONFIG) $(INSTALL_LIB) && \
+-	  ( $(LDCONFIG) $(INSTALL_LIB) || : ) && \
  	  $(SYMLINK) $(INSTALL_SONAME) $(INSTALL_SHORT1) && \
  	  $(SYMLINK) $(INSTALL_SONAME) $(INSTALL_SHORT2) || :
 -	cd etc && $(INSTALL_F) $(FILE_MAN) $(INSTALL_MAN)
  	cd etc && $(SED_PC) $(FILE_PC) > $(FILE_PC).tmp && \
  	  $(INSTALL_F) $(FILE_PC).tmp $(INSTALL_PC) && \
  	  $(RM) $(FILE_PC).tmp
-@@ -139,7 +137,6 @@
+@@ -156,7 +154,6 @@ uninstall:
  	for file in $(FILES_INC); do \
  	  $(UNINSTALL) $(INSTALL_INC)/$$file; \
  	  done

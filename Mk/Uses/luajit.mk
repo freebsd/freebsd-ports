@@ -7,7 +7,7 @@
 #   LUAJIT_VER:    The selected luajit version
 #   LUAJIT_INCDIR: The path to luajit's header files
 #   LUAJIT_LUAVER: Which luajit spec version is selected
-#                  (2.0 for luajit, else 2.1)
+#                  (always 2.1)
 
 .if !defined(_INCLUDE_USES_LUAJIT_MK)
 _INCLUDE_USES_LUAJIT_MK=yes
@@ -28,11 +28,7 @@ IGNORE=	Invalid luajit default version ${LUAJIT_DEFAULT}: valid versions are ${V
 IGNORE=	Invalid luajit version ${LUAJIT_VER}: valid versions are ${VALID_LUAJIT_VER}
 .endif
 
-.if ${LUAJIT_VER} == luajit
-LUAJIT_LUAVER=	2.0
-.else
 LUAJIT_LUAVER=	2.1
-.endif
 
 LIB_DEPENDS+=	libluajit-5.1.so:lang/${LUAJIT_VER}
 LUAJIT_INCDIR=	${LOCALBASE}/include/luajit-${LUAJIT_LUAVER}

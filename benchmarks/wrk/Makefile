@@ -1,6 +1,6 @@
 PORTNAME=	wrk
 PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -26,7 +26,7 @@ USE_CSTD=	c99
 LLD_UNSAFE=	yes
 .if ${FLAVOR} == luajit
 CFLAGS+=	-I${LOCALBASE}/include/luajit-2.1
-LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-devel
+LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 .else
 CFLAGS+=	-I${LOCALBASE}/include/luajit-2.1
 LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty

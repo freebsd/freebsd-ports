@@ -1,6 +1,7 @@
 PORTNAME=	xmake-io
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9.9
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	pericycle.cc@gmail.com

@@ -1,5 +1,6 @@
 PORTNAME=	dnsjit
 DISTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	dns net
 MASTER_SITES=	https://www.dns-oarc.net/files/${PORTNAME}/
 

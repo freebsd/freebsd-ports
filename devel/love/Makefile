@@ -1,5 +1,6 @@
 PORTNAME=	love
 PORTVERSION=	11.5
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	https://github.com/love2d/love/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-src

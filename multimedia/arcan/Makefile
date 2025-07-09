@@ -1,5 +1,6 @@
 PORTNAME=	arcan
 DISTVERSION=	0.7.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	hoanga@gmail.com	
