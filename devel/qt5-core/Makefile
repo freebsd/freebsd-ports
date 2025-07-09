@@ -1,5 +1,6 @@
 PORTNAME=	core
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -25,7 +26,7 @@ CONFIGURE_ARGS=	-no-accessibility -no-gif -no-libpng -no-libjpeg \
 		-no-egl -no-evdev \
 		-no-fontconfig -no-freetype -no-gtk -no-harfbuzz \
 		-no-libudev -no-xcb -no-xcb-xlib \
-		-no-xkbcommon -no-libinput
+		-no-xkbcommon -no-libinput -no-inotify
 
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
