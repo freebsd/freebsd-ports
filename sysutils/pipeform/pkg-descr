@@ -1,0 +1,4 @@
+pipeform is a terminal user interface (TUI) for displaying Terraform runtime
+progress. It provides an interactive visual representation of Terraform
+operations such as plan, apply, and refresh, making it easier to monitor
+the progress of infrastructure changes in real-time.

@@ -947,6 +947,7 @@
     SUBDIR += pick
     SUBDIR += pidof
     SUBDIR += pies
+    SUBDIR += pipeform
     SUBDIR += pipemeter
     SUBDIR += plasma-pass
     SUBDIR += plasma5-libksysguard
