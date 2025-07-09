@@ -1,9 +1,0 @@
---- etc/luajit.pc.orig	2019-06-26 21:12:49 UTC
-+++ etc/luajit.pc
-@@ -21,5 +21,5 @@ URL: http://luajit.org
- Version: ${version}
- Requires:
- Libs: -L${libdir} -l${libname}
--Libs.private: -Wl,-E -lm -ldl
-+Libs.private: -Wl,-E -lm
- Cflags: -I${includedir}
