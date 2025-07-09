@@ -1,6 +1,7 @@
 PORTNAME=	libomemo-c
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libprotobuf-c.so:devel/protobuf-c
 USES=		meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	dino
-MESON_ARGS=     -Dtests=false
+MESON_ARGS=	-Dtests=false
 
 PLIST_SUB=	SHLIB_VER=${DISTVERSION}
 

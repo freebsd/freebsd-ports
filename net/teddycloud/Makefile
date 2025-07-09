@@ -1,7 +1,7 @@
 PORTNAME=	teddycloud
 DISTVERSIONPREFIX=	tc_v
 DISTVERSION=	0.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 # Get the latest commit hashes here: https://github.com/toniebox-reverse-engineering/tonies-json/commits/release/
 # NOTE: remove the existing tonies.json and tonieboxes.json from DISTDIR before you do a `make makesum`
