@@ -1,0 +1,14 @@
+sq is a command-line tool that provides jq-style access to structured data
+sources including SQL databases and document formats like CSV, Excel, and JSON.
+
+Key features:
+
+- Query multiple database types (PostgreSQL, MySQL, SQLite, SQL Server, etc.)
+- Cross-source joins between different databases and file formats
+- Multiple output formats (JSON, CSV, Excel, HTML, XML, Markdown)
+- Database inspection and schema comparison
+- SQL execution with syntax highlighting
+- Data import/export between sources
+
+sq simplifies working with structured data by providing a unified interface
+for querying and transforming data across various sources.

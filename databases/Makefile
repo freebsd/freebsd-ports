@@ -1076,6 +1076,7 @@
     SUBDIR += spatialite-tools
     SUBDIR += spatialite_gui
     SUBDIR += speedtables
+    SUBDIR += sq
     SUBDIR += sql-workbench
     SUBDIR += sqlcached
     SUBDIR += sqlcipher
