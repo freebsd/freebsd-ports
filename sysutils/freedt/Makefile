@@ -1,15 +1,17 @@
 PORTNAME=	freedt
-PORTVERSION=	23
+PORTVERSION=	24
 CATEGORIES=	sysutils
 MASTER_SITES=	http://offog.org/files/ \
 		http://ftp.i-scream.org/pub/offog.org/files/
 
 MAINTAINER=	tdb@FreeBSD.org
-COMMENT=	Experimental reimplementation of Dan Bernstein's daemontools
+COMMENT=	Reimplementation of Dan Bernstein's daemontools
 WWW=		https://offog.org/code/freedt.html
 
-CONFLICTS=	daemontools daemontools-encore ucspi-tcp # bin/argv0 bin/envdir bin/envuidgid
+LICENSE=	ISCL
 
 GNU_CONFIGURE=	yes
+
+CONFLICTS=	daemontools daemontools-encore ucspi-tcp # bin/argv0 bin/envdir bin/envuidgid
 
 .include <bsd.port.mk>

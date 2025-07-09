@@ -1,18 +1,10 @@
-A reimplementation of Dan Bernstein's daemontools under the GNU GPL,
-sharing no code with the original implementation.
+freedt is a service supervision framework for POSIX operating
+systems. Most of the tools are independent reimplementations of Dan
+Bernstein's daemontools.
 
-It currently includes feature-equivalent replacements for argv0, envdir,
-envuidgid, setlock, setuidgid, softlimit, supervise, svc, svok, svscan,
-svstat and recordio.  It also includes dumblog (a simple multilog
-replacement), mkservice (a script for automatically creating service
-directories), anonidentd (an anonimising identd implementation) and
-ratelimit (a bandwidth-limiting filter along the lines of recordio). All
-the tools include usage messages; for instance, do "ratelimit -h" for a
-brief rundown of the options.
-
-Please note that this package is *not* a drop-in replacement for
-daemontools; the internal state files in service directories are
-different, and the error messages (and a few of the options) aren't
-quite the same. It's also still somewhat experimental, so I'd recommend
-sticking with daemontools on production systems until there's a stable
-release of freedt.
+It currently includes feature-equivalent replacements for argv0,
+envdir, envuidgid, setlock, setuidgid, softlimit, supervise, svc,
+svok, svscan, svstat and recordio. It also includes anonidentd (an
+dummy identd implementation), dumblog (a simple multilog replacement),
+mkservice (a tool to create service directories), and ratelimit (a
+bandwidth-limiting filter along the lines of recordio).
