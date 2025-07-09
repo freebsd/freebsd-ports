@@ -270,6 +270,7 @@
     SUBDIR += mate-user-guide
     SUBDIR += mbuffer
     SUBDIR += mc
+    SUBDIR += mcp-probe
     SUBDIR += mdp
     SUBDIR += meshoptimizer
     SUBDIR += metalink-checker
