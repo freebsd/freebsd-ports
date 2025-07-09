@@ -218,6 +218,7 @@ include/proxygen/lib/http/structuredheaders/StructuredHeadersConstants.h
 include/proxygen/lib/http/structuredheaders/StructuredHeadersDecoder.h
 include/proxygen/lib/http/structuredheaders/StructuredHeadersEncoder.h
 include/proxygen/lib/http/structuredheaders/StructuredHeadersUtilities.h
+include/proxygen/lib/http/webtransport/HTTPWebTransport.h
 include/proxygen/lib/http/webtransport/WebTransport.h
 include/proxygen/lib/http/webtransport/test/FakeSharedWebTransport.h
 include/proxygen/lib/pools/generators/FileServerListGenerator.h
