@@ -1,6 +1,6 @@
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.47.2
-PORTREVISION?=	4	# NOTE: when bumping PORTREVISION, also bump ../e2fsprogs/Makefile!
+PORTVERSION=	1.47.3
+PORTREVISION?=	0	# NOTE: when bumping PORTREVISION, also bump ../e2fsprogs/Makefile!
 CATEGORIES?=	filesystems sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -14,9 +14,9 @@ LICENSE_FILE?=	${WRKSRC}/NOTICE
 .endif
 LICENSE_DISTFILES_GPLv2+ =	${DISTNAME}${EXTRACT_SUFX}
 
-USES=		cpe gmake makeinfo pkgconfig tar:xz
+USES=		compiler:c11 cpe gmake makeinfo pkgconfig tar:xz
 CPE_VENDOR=	e2fsprogs_project
-USE_CSTD=	gnu99
+USE_CSTD=	gnu11
 # this seems a bit redundant to the --rpath below, but
 # the latter should be more robust in case someone needs
 # to deal with the file systems from a system not yet fully booted.
@@ -41,8 +41,7 @@ MAKE_ARGS+=	pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
 
 CPPFLAGS+=	${_FUSEFS_CFLAGS} -I${WRKSRC}/lib -I${LOCALBASE}/include
-CFLAGS+=	-Wno-unused-command-line-argument # -D_FILE_OFFSET_BITS=64 # the latter for fuse-libs
-PIE_UNSAFE=	yes
+CFLAGS+=	-Wno-unused-command-line-argument
 
 PORTSCOUT=	ignore:1	# cannot handle the version in the directory
 
@@ -68,13 +67,13 @@ NOTESTS_DESC=	Do not run any self-tests (Tier-1, DISCOURAGED)
 PARALLELTESTS_DESC=	Parallelize self-tests (needs more disk space)
 SELFTEST_DESC=	Choose which set of self-tests to run
 SLOWTESTS_DESC=	Enable slow tests that are skipped by default
-SMALLTESTS_DESC=Run tests that need <500 MB disk space (DEFAULT)
+SMALLTESTS_DESC=Run tests that need <500 MB disk space
 
 BASHTESTS_BUILD_DEPENDS=	${BASH_CMD}:shells/bash
 BASH_CMD=	${LOCALBASE}/bin/bash
 
 FUSEFS_USES=		fuse:3
-FUSEFS_CONFIGURE_ENABLE=	fuse2fs
+FUSEFS_CONFIGURE_ENABLE=fuse2fs
 # we can't use FUSEFS_CFLAGS, see below for workaround
 FUSEFS_LDFLAGS=		-L${LOCALBASE}/lib
 FUSEFS_LIBS=		-Wl,--as-needed -lfuse3 -lpthread
@@ -116,13 +115,6 @@ _FUSEFS_CFLAGS=	-I${LOCALBASE}/include/fuse3
 _FUSEFS_CFLAGS=
 .endif
 
-. if ! empty(ARCH:Mpowerpc*)
-# Fix powerpc64/powerpc SIGSEGV,
-# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=231570 (ppc64)
-# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=242798 (ppc32 - untested)
-USES+=		compiler:c11
-. endif
-
 .if empty(PORT_OPTIONS:MNOTESTS) && ${MASTERDIR} == ${.CURDIR}
 USES+=		perl5
 USE_PERL5=	build
@@ -144,9 +136,6 @@ libintl=
 .if ${MASTERDIR} == ${.CURDIR} && (${ARCH} == "aarch64" || ${ARCH} == "riscv64")
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-no-sbrk
 .endif
-
-post-extract: # the symlink RELEASE-NOTES is stale in v1.47.1 and v1.47.2 tarballs, fix:
-	${RLN} ${WRKSRC}/doc/RelNotes/v1.47.2.txt ${WRKSRC}/RELEASE-NOTES
 
 post-patch::
 	${TOUCH} ${WRKSRC}/tests/r_corrupt_fs/is_slow_test
@@ -239,7 +228,7 @@ _checkaddargs+=TMPDIR=${WRKDIR}/tmp
 .endif
 
 .if ${PORT_OPTIONS:MSLOWTESTS}
-_check_target=SKIP_SLOW_TESTS= check
+_check_target=fullcheck
 _check_timeout=7200
 .else
 _check_target=check
