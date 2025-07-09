@@ -224,6 +224,7 @@ include/folly/container/Merge.h
 include/folly/container/RegexMatchCache.h
 include/folly/container/Reserve.h
 include/folly/container/SparseByteSet.h
+include/folly/container/StdBitset.h
 include/folly/container/View.h
 include/folly/container/WeightedEvictingCacheMap.h
 include/folly/container/detail/BitIteratorDetail.h
@@ -311,6 +312,7 @@ include/folly/coro/detail/Helpers.h
 include/folly/coro/detail/InlineTask.h
 include/folly/coro/detail/Malloc.h
 include/folly/coro/detail/ManualLifetime.h
+include/folly/coro/detail/PickTaskWrapper.h
 include/folly/coro/detail/Traits.h
 include/folly/coro/safe/AsyncClosure-fwd.h
 include/folly/coro/safe/AsyncClosure.h
@@ -855,6 +857,7 @@ include/folly/lang/Ordering.h
 include/folly/lang/Pretty.h
 include/folly/lang/PropagateConst.h
 include/folly/lang/RValueReferenceWrapper.h
+include/folly/lang/SafeAlias-fwd.h
 include/folly/lang/SafeAssert.h
 include/folly/lang/StaticConst.h
 include/folly/lang/Switch.h
