@@ -1,6 +1,6 @@
 PORTNAME=	jackett
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.2125
+DISTVERSION=	0.22.2140
 CATEGORIES=	net-p2p
 
 MAINTAINER=	tremere@cainites.net
@@ -14,10 +14,10 @@ BUILD_DEPENDS=	dotnet>=9.0.6:lang/dotnet
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libinotify.so:devel/libinotify \
 		libunwind.so:devel/libunwind
-RUN_DEPENDS=	dotnet:lang/dotnet-host \
-		${LOCALBASE}/lib/libicuuc.so:devel/icu
+RUN_DEPENDS=	${LOCALBASE}/lib/libicuuc.so:devel/icu \
+		dotnet:lang/dotnet-host
 
-USES=		gssapi:mit
+USES=		gssapi:mit ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jackett
 GH_PROJECT=	Jackett
