@@ -1,5 +1,6 @@
 PORTNAME=	luajit
 DISTVERSION=	2.1.0.20250528
+PORTREVISION=	1
 CATEGORIES=	lang
 DISTNAME=	LuaJIT-${DISTVERSION}
 
@@ -15,7 +16,7 @@ IGNORE_riscv64=		fails to compile: lj_arch.h:73:2: No support for this architect
 
 USES=		compiler cpe gmake
 
-CONFLICTS_INSTALL=	luajit-devel luajit-openresty
+CONFLICTS_INSTALL=	luajit-openresty
 
 USE_LDCONFIG=	yes
 MAKE_ARGS=	CC=${CC} CCOPT= CCOPT_x86= Q=
