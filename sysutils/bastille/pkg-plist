@@ -20,6 +20,7 @@ etc/rc.d/bastille
 %%DATADIR%%/jcp.sh
 %%DATADIR%%/limits.sh
 %%DATADIR%%/list.sh
+%%DATADIR%%/migrate.sh
 %%DATADIR%%/mount.sh
 %%DATADIR%%/network.sh
 %%DATADIR%%/pkg.sh

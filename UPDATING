@@ -5,6 +5,31 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250709:
+  AFFECTS: users of sysutils/bastille
+  AUTHOR: jdhurtado@orbiware.com
+
+  Potentially breaking changes since 1.0.20250714
+
+  Network: Bastille now handles all epairs dynamically, allowing both -V and -B
+  VNET jails to coexist. Previous versions only supported one type per system.
+  New naming scheme for network interfaces is e0a_jailname (host side) and
+  e0b_jailname (jail side). Additional interfaces: e1a_jailname, e1b_jailname, etc
+  (incrementing numbers). Long jail names are truncated with xx placeholder due to
+  interface name limitations
+
+  Required action after update:
+  Restart all jails (preferably one at a time) to trigger automatic conversion.
+  Bastille will auto-convert jail.conf and rc.conf files when jails are stopped.
+  Manual intervention required: If you previously used the network sub-command to
+  add interfaces, manually edit jail.conf and rc.conf files to update epair names
+  (increment numbers for additional interfaces).
+
+  Auto-conversion handles most cases, please report bugs if issues occur during the
+  transition.
+
+  Full release annoucement: https://github.com/BastilleBSD/bastille/releases/tag/1.0.20250714
+
 20250708:
   AFFECTS: users of shells/bash
   AUTHOR: michaelo@FreeBSD.org
