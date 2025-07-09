@@ -1,6 +1,7 @@
 PORTNAME=	mailslurper
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	1.15.0
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	einar@isnic.is

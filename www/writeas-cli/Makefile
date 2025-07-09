@@ -1,7 +1,7 @@
 PORTNAME=	writeas-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0-wf
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	www textproc
 MASTER_SITES=	https://code.as/core/socks/archive/v1.0.0.tar.gz?dummy=/:core_socks
 DISTFILES=	core-socks-v1.0.0.tar.gz:core_socks

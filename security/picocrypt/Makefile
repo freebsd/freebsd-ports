@@ -1,6 +1,6 @@
 PORTNAME=	picocrypt
 DISTVERSION=	1.48 # Missing modules.txt, generate one with `go mod vendor` and place it in ${FILESDIR}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
