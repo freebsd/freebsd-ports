@@ -1,0 +1,9 @@
+TIMESTAMP = 1752025682
+SHA256 (charlesrocket-xtxf-0.11.3_GH0.tar.gz) = 6b9a01ec932a20d9fe941f3c8013166968d94a8a28c9c50c2fb22c7f133e112c
+SIZE (charlesrocket-xtxf-0.11.3_GH0.tar.gz) = 17050
+SHA256 (termbox-termbox2-9c9281a_GH0.tar.gz) = 4781a10e1f8dedc52ed1c93f1c306ec97acf81654135efd125e779c99bceab77
+SIZE (termbox-termbox2-9c9281a_GH0.tar.gz) = 81538
+SHA256 (00JCIV00-cova-4c56696_GH0.tar.gz) = de1bc17b6d68f3beaf440841d7d52199059ab250950a37c00a49af2a0059d1e0
+SIZE (00JCIV00-cova-4c56696_GH0.tar.gz) = 6132977
+SHA256 (charlesrocket-ghext-0.7.2_GH0.tar.gz) = 3a9a6fe581ea4b9c6bf851f11bcd51f872a0ab4416dc9728fffcee6a4debfd17
+SIZE (charlesrocket-ghext-0.7.2_GH0.tar.gz) = 8538
