@@ -110,6 +110,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		idna-1.0.3 \
 		idna_adapter-1.2.1 \
 		indexmap-2.10.0 \
+		io-uring-0.7.8 \
 		ipnet-2.11.0 \
 		iri-string-0.7.8 \
 		is-docker-0.2.0 \
@@ -128,7 +129,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		litemap-0.8.0 \
 		lock_api-0.4.13 \
 		log-0.4.27 \
-		lru-0.15.0 \
+		lru-0.16.0 \
 		lru-slab-0.1.2 \
 		lsp-types-0.97.0 \
 		mac-0.1.1 \
@@ -189,7 +190,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		reqwest-0.12.20 \
+		reqwest-0.12.22 \
 		resolve-path-0.1.0 \
 		ring-0.17.14 \
 		rs-conllu-0.3.0 \
@@ -237,7 +238,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.45.1 \
+		tokio-1.46.1 \
 		tokio-macros-2.5.0 \
 		tokio-rustls-0.26.2 \
 		tokio-util-0.7.15 \
@@ -260,6 +261,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tree-sitter-bash-0.25.0 \
 		tree-sitter-c-0.24.1 \
 		tree-sitter-c-sharp-0.23.1 \
+		tree-sitter-clojure-0.1.0 \
 		tree-sitter-cmake-0.7.1 \
 		tree-sitter-cpp-0.23.4 \
 		tree-sitter-go-0.23.4 \
