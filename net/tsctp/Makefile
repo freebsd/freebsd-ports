@@ -1,5 +1,5 @@
 PORTNAME=	tsctp
-DISTVERSION=	0.8.1
+DISTVERSION=	0.8.2
 CATEGORIES=	net
 MASTER_SITES=	https://www.nntb.no/~dreibh/tsctp/download/
 
