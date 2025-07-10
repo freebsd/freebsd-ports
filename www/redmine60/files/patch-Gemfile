@@ -1,4 +1,4 @@
---- Gemfile.orig	2025-03-10 23:30:05 UTC
+--- Gemfile.orig	2025-07-07 21:05:05 UTC
 +++ Gemfile
 @@ -6,22 +6,22 @@ gem "actionpack-xml_parser"
  gem 'rouge', '~> 4.5'
@@ -11,7 +11,7 @@
 -gem 'nokogiri', '~> 1.18.3'
 +gem 'nokogiri', '>= 1.18.3'
  gem 'i18n', '~> 1.14.1'
- gem 'rbpdf', '~> 1.21.3'
+ gem 'rbpdf', '~> 1.21.4'
  gem 'addressable'
  gem 'rubyzip', '~> 2.3.0'
  gem 'propshaft', '~> 1.1.0'
@@ -20,11 +20,11 @@
  
  #  Ruby Standard Gems
 -gem 'csv', '~> 3.2.8'
--gem 'net-imap', '~> 0.4.8'
+-gem 'net-imap', '~> 0.4.20'
 -gem 'net-pop', '~> 0.1.2'
 -gem 'net-smtp', '~> 0.4.0'
 +gem 'csv', '>= 3.2.8'
-+gem 'net-imap', '>= 0.4.8'
++gem 'net-imap', '>= 0.4.20'
 +gem 'net-pop', '>= 0.1.2'
 +gem 'net-smtp', '>= 0.4.0'
  
@@ -59,15 +59,17 @@
  end
  
  # Include database gems for the adapters found in the database
-@@ -110,10 +110,9 @@ group :test do
+@@ -110,11 +110,10 @@ group :test do
    gem "capybara", ">= 3.39"
    gem 'selenium-webdriver', '>= 4.11.0'
    # RuboCop
 -  gem 'rubocop', '~> 1.68.0', require: false
+-  gem 'rubocop-ast', '~> 1.40.0', require: false
 -  gem 'rubocop-performance', '~> 1.22.0', require: false
 -  gem 'rubocop-rails', '~> 2.27.0', require: false
 -  gem 'bundle-audit', require: false
 +  gem 'rubocop', '>= 1.68.0', require: false
++  gem 'rubocop-ast', '>= 1.40.0', require: false
 +  gem 'rubocop-performance', '>= 1.22.0', require: false
 +  gem 'rubocop-rails', '>= 2.27.0', require: false
  end
