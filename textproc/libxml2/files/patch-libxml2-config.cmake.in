@@ -1,0 +1,10 @@
+--- libxml2-config.cmake.in.orig	2025-07-10 08:31:10 UTC
++++ libxml2-config.cmake.in
+@@ -119,6 +119,7 @@ if(NOT LIBXML2_SHARED)
+         if(LIBXML2_WITH_HTTP)
+             list(APPEND LIBXML2_LIBRARIES ws2_32)
+             list(APPEND LIBXML2_INTERFACE_LINK_LIBRARIES "\$<LINK_ONLY:ws2_32>")
++        endif()
+     endif()
+ endif()
+ 
