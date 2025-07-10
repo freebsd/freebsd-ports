@@ -6,7 +6,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	XStatic-CKEditor-${DISTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CKEditor 3.6.4 (XStatic packaging standard)
 WWW=		https://ckeditor.com
 
