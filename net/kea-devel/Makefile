@@ -1,5 +1,6 @@
 PORTNAME=	kea
 DISTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/cur/3.0
 PKGNAMESUFFIX=	-devel
@@ -37,7 +38,8 @@ OPTIONS_DEFINE=	DOCS MYSQL PGSQL
 OPTIONS_SUB=	yes
 
 MESON_ARGS=	--auto-features=disabled \
-		-Dnetconf=disabled
+		-Dnetconf=disabled \
+		-Drunstatedir=/var/run
 		
 MYSQL_USES=		mysql
 MYSQL_MESON_ENABLED=	mysql
