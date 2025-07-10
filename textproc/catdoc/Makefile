@@ -5,7 +5,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.wagner.pp.ru/pub/catdoc/ \
 		https://mirror.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MS Word/Excel converter to plain ASCII or TeX. TK viewer included
 WWW=		https://www.wagner.pp.ru/~vitus/software/catdoc/
 
