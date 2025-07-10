@@ -58,6 +58,7 @@ GVBAM_USE=		GNOME=gtkmm24,pangox-compat
 GVBAM_CMAKE_BOOL=	ENABLE_GTK
 LINK_LIB_DEPENDS=	libsfml-system.so:devel/sfml
 LINK_CMAKE_BOOL=	ENABLE_LINK
+LINK_BROKEN=		Does not build
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_RUN_DEPENDS=	lircd:comms/lirc
 LIRC_CMAKE_BOOL=	ENABLE_LIRC
