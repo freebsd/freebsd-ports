@@ -31,6 +31,7 @@
     SUBDIR += amphetadesk
     SUBDIR += analog
     SUBDIR += angie
+    SUBDIR += angie-console-light
     SUBDIR += angie-module-auth-jwt
     SUBDIR += angie-module-auth-spnego
     SUBDIR += angie-module-brotli

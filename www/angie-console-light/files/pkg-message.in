@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+For configuration details follow the documentation at
+https://en.angie.software/angie/docs/configuration/monitoring/
+
+Minimal configuration:
+---
+location /console/ {
+	allow 127.0.0.1;
+	deny all;
+
+	auto_redirect on;
+
+	alias %%WWWDIR%%/html/;
+	index index.html;
+
+	location /console/api/ {
+		api /status/;
+	}
+}
+---
+EOM
+}
+]
