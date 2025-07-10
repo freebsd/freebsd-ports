@@ -1,0 +1,3 @@
+Jinjanator is a CLI tool to render Jinja2 templates. It is a fork of j2cli,
+which itself was a fork of jinja2-cli, both of which are no longer actively
+maintained.
