@@ -1,7 +1,6 @@
 PORTNAME=	ares
 DISTVERSIONPREFIX=	v
-DISTVERSION=	144
-PORTREVISION=	1
+DISTVERSION=	145
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
@@ -21,9 +20,9 @@ USE_GNOME=	gtk30
 USE_XORG=	x11 xext xrandr xrender
 
 CMAKE_ARGS=	-DARES_CORES="${_CORES:S/ /;/gW}" \
-		-DARES_VERSION_OVERRIDE=${DISTVERSIONFULL} \
 		-DENABLE_CCACHE=${CCACHE_ENABLED}
-CMAKE_ON=	ARES_SKIP_DEPS \
+CMAKE_ON=	ARES_BUILD_OFFICIAL \
+		ARES_SKIP_DEPS \
 		ARES_UNITY_CORES
 CMAKE_OFF=	ARES_BUILD_LOCAL \
 		ARES_BUNDLE_SHADERS \
@@ -62,7 +61,7 @@ GBA_DESC=		Game Boy Advance
 GB_DESC=		Game Boy / Game Boy Color
 HOTKEYS_DESC=		Inofficial hotkeys locking patch
 LIBRASHADER_DESC=	Slang-shader support via librashader
-LIBRETRO_DESC=		Install slang-shaders from libretro
+LIBRETRO_DESC=		Install slang-shaders from libretro (implies ${LIBRETRO_IMPLIES})
 MD_DESC=		Sega Mega Drive / Genesis
 MSX_DESC=		Microsoft MSX
 MS_DESC=		Sega Master System / Mark III
@@ -155,6 +154,8 @@ SG_VARS=			_CORES+=sg
 
 SPEC_VARS=			_CORES+=spec
 
+# https://github.com/ares-emulator/ares/issues/2090
+TOOLS_IMPLIES=			GBA MD NG SFC
 TOOLS_CMAKE_BOOL=		ARES_BUILD_OPTIONAL_TARGETS
 
 UDEV_LIB_DEPENDS=		libudev.so:devel/libudev-devd
