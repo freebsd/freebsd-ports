@@ -1,3 +1,38 @@
+  <vuln vid="20823cc0-5d45-11f0-966e-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.1.0</ge><lt>18.1.2</lt></range>
+	<range><ge>18.0.0</ge><lt>18.0.4</lt></range>
+	<range><ge>13.3.0</ge><lt>17.11.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/07/09/patch-release-gitlab-18-1-2-released/">
+	  <p>Cross-site scripting issue impacts GitLab CE/EE</p>
+	  <p>Improper authorization issue impacts GitLab CE/EE</p>
+	  <p>Improper authorization issue impacts GitLab EE</p>
+	  <p>Improper authorization issue impacts GitLab EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6948</cvename>
+      <cvename>CVE-2025-3396</cvename>
+      <cvename>CVE-2025-4972</cvename>
+      <cvename>CVE-2025-6168</cvename>
+      <url>https://about.gitlab.com/releases/2025/07/09/patch-release-gitlab-18-1-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-07-09</discovery>
+      <entry>2025-07-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2a4472ed-5c0d-11f0-b991-291fce777db8">
     <topic>git -- multiple vulnerabilities</topic>
     <affects>
