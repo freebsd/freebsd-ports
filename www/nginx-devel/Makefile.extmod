@@ -236,7 +236,7 @@ NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 NAXSI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-naxsi-libinjection__sqli_c \
 			${PATCHDIR}/extra-patch-naxsi_config
 
-NJS_GH_TUPLE=		nginx:njs:0.9.0:njs
+NJS_GH_TUPLE=		nginx:njs:0.9.1:njs
 NJS_CONFIGURE_ON=	--with-cc-opt="-I ${LOCALBASE}/include/quickjs"
 NJS_LIB_DEPENDS=	libquickjs.so:lang/quickjs \
 			libxml2.so:textproc/libxml2 \
