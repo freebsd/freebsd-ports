@@ -1,6 +1,6 @@
 PORTNAME=	duckdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,15 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake:testing compiler:c++11-lang ssl
 USE_GITHUB=	yes
 GH_TUPLE=	\
-		duckdb:duckdb-delta:6d626173e9efa6615c25eb08d979d1372100d5db:excel/extension/delta \
-		duckdb:duckdb-encodings:dc3c206e237b517abcdd95ebe40d02dcd0f71084:excel/extension/encodings \
-		duckdb:duckdb-excel:7e97933214d0c7de2315668ec68589ae85651afb:excel/extension/excel \
+		duckdb:duckdb-delta:6d626173e9efa6615c25eb08d979d1372100d5db:delta/extension/delta \
+		duckdb:duckdb-encodings:dc3c206e237b517abcdd95ebe40d02dcd0f71084:encodings/extension/encodings \
+		duckdb:duckdb-excel:cf00672f2d16685d9aefcca48c6a04d8c37d7015:excel/extension/excel \
 		duckdb:duckdb-fts:3aa6a180b9c101d78070f5f7214c27552bb091c8:fts/extension/fts \
-		duckdb:duckdb-httpfs:39779f89b16d0a35f04d3cfaf868e6366a2102f0:httpfs/extension/httpfs \
+		duckdb:duckdb-httpfs:af7bcaf40c775016838fef4823666bd18b89b36b:httpfs/extension/httpfs \
 		duckdb:duckdb-inet:eb2455703ca0665e69b9fd20fd1d8816c547cb49:inet/extension/inet \
-		duckdb:duckdb-spatial:95ed129e22bf9b14f64c8d0bd8fd55f9ca0a9e61:spatial/extension/spatial \
+		duckdb:duckdb-spatial:d1ffa8c21fe1f90064956a119491e6d6d993192a:spatial/extension/spatial \
 		duckdb:duckdb-sqlite:ed38d770e0bbf1d5a6660ec1887cc5abef65be15:sqlite/extension/sqlite_scanner \
-		duckdb:duckdb-sqlsmith:06e8da8a95710c996fcd62f385962ccd36a363f6:sqlsmith/extension/sqlsmith \
+		duckdb:duckdb-sqlsmith:3b1ad2bd7234c1143b4a819517873f4b465168d2:sqlsmith/extension/sqlsmith \
 		duckdb:duckdb-vss:ccfa7c9c1f1f540fa7f433a93d32bed772aa44f4:vss/extension/vss
 # the list of out-of-tree extensions is here: .github/config/out_of_tree_extensions.cmake
 
@@ -74,6 +74,6 @@ post-extract: # remove the jemalloc extension directory just in case
 post-test: # run tests
 	@cd ${TEST_WRKSRC} && test/unittest
 
-# tests as of 1.3.1: All tests passed (50 skipped tests, 375234 assertions in 3785 test cases)
+# tests as of 1.3.2: All tests passed (50 skipped tests, 385129 assertions in 3789 test cases)
 
 .include <bsd.port.mk>
