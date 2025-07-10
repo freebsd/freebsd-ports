@@ -42,7 +42,6 @@ include/ggml-cann.h
 include/ggml-cpp.h
 include/ggml-cpu.h
 include/ggml-cuda.h
-include/ggml-kompute.h
 include/ggml-metal.h
 include/ggml-opt.h
 include/ggml-rpc.h
