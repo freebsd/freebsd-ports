@@ -9,6 +9,9 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D top-viewed motorcycle racing game
 WWW=		https://motogt.sourceforge.net/
 
+DEPRECATED=	Depends on obsolete devel/sfml1
+EXPIRATION_DATE=2025-09-10
+
 LICENSE=	GPLv2 CC-BY-SA-3.0
 LICENSE_COMB=	multi
 LICENSE_FILE_CC-BY-SA-3.0=	${WRKSRC}/doc/cc-by-sa.txt

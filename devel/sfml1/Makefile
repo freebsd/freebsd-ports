@@ -10,6 +10,10 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple and Fast Multimedia Library
 WWW=		https://www.sfml-dev.org/
 
+BROKEN=		Does not build
+DEPRECATED=	Broken obsolete version
+EXPIRATION_DATE=2025-09-10
+
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.txt
 
