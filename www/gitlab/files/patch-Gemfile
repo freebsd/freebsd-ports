@@ -1,4 +1,4 @@
---- Gemfile.orig	2025-06-18 04:18:20 UTC
+--- Gemfile.orig	2025-07-09 01:48:55 UTC
 +++ Gemfile
 @@ -164,8 +164,8 @@ gem 'rack-cors', '~> 2.0.1', require: 'rack/cors', fea
  gem 'rack-cors', '~> 2.0.1', require: 'rack/cors', feature_category: :shared
@@ -182,16 +182,21 @@
  gem 'octokit', '~> 9.0', feature_category: :importers
  # Needed by octokit: https://github.com/octokit/octokit.rb/pull/1688
  gem 'faraday-multipart', '~> 1.0', feature_category: :importers
-@@ -646,7 +518,7 @@ gem 'gitaly', '~> 18.1.0.pre.rc1', feature_category: :
+@@ -646,11 +518,11 @@ gem 'gitaly', '~> 18.1.0.pre.rc1', feature_category: :
  gem 'gitaly', '~> 18.1.0.pre.rc1', feature_category: :gitaly
  
  # KAS GRPC protocol definitions
 -gem 'gitlab-kas-grpc', '~> 17.11.0', feature_category: :deployment_management
 +gem 'gitlab-kas-grpc', '~> 18.1.0', feature_category: :deployment_management
  
- gem 'grpc', '~> 1.72.0', feature_category: :shared
+ # Lock until 1.74.0 is available
+ # https://gitlab.com/gitlab-com/gl-infra/production/-/issues/20067
+-gem 'grpc', '= 1.63.0', feature_category: :shared
++gem 'grpc', '~> 1.63', feature_category: :shared
  
-@@ -669,7 +541,7 @@ gem 'gitlab-net-dns', '~> 0.12.0', feature_category: :
+ gem 'google-protobuf', '~> 3.25', '>= 3.25.3', feature_category: :shared
+ 
+@@ -671,7 +543,7 @@ gem 'gitlab-net-dns', '~> 0.12.0', feature_category: :
  gem 'gitlab-net-dns', '~> 0.12.0', feature_category: :shared
  
  # Countries list
@@ -200,7 +205,7 @@
  
  gem 'retriable', '~> 3.1.2', feature_category: :shared
  
-@@ -750,10 +622,15 @@ gem 'duo_api', '~> 1.3', feature_category: :system_acc
+@@ -752,10 +624,15 @@ gem 'duo_api', '~> 1.3', feature_category: :system_acc
  
  gem 'duo_api', '~> 1.3', feature_category: :system_access
  
