@@ -1,7 +1,6 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.4
-PORTREVISION=	1
+DISTVERSION=	2.3.7
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -554,7 +553,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		subtle-2.6.1 \
 		surrealcs-0.4.4 \
 		surrealcs-kernel-0.4.4 \
-		surrealdb-tikv-client-0.3.0-surreal.1 \
+		surrealdb-tikv-client-0.3.0-surreal.3 \
 		surrealkv-0.9.1 \
 		surrealml-core-0.1.3 \
 		symbolic-common-12.14.1 \
@@ -616,6 +615,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tracing-core-0.1.33 \
 		tracing-log-0.2.0 \
 		tracing-opentelemetry-0.25.0 \
+		tracing-serde-0.2.0 \
 		tracing-subscriber-0.3.19 \
 		trice-0.4.0 \
 		try-lock-0.2.5 \
