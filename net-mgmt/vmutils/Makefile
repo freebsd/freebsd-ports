@@ -19,7 +19,7 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/docs/victoriametrics/vm* ${STAGEDIR}${DOCSDIR}
+	${CP} -a ${INSTALL_WRKSRC}/docs/victoriametrics/vm* ${STAGEDIR}${DOCSDIR}
 
 MASTERDIR=	${.CURDIR}/../victoria-metrics
 
