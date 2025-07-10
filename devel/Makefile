@@ -867,6 +867,7 @@
     SUBDIR += gitea-act_runner
     SUBDIR += gitg
     SUBDIR += github-backup-utils
+    SUBDIR += gitid
     SUBDIR += gitinspector
     SUBDIR += gitlab-runner
     SUBDIR += gitlab-shell

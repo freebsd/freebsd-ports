@@ -1,0 +1,4 @@
+gitid is a terminal-based tool that helps developers manage multiple Git
+identities easily through an interactive interface. It allows you to switch
+between different Git configurations, add new identities, and delete unwanted
+ones, all from the command line using an intuitive keyboard-driven interface.
