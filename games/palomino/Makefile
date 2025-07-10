@@ -16,6 +16,9 @@ WWW=		https://www.palomino3d.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE_GNU_GPL_2.txt
 
+DEPRECATED=	Obsolete and abandoneed, last release in 2013, not playable
+EXPIRATION_DATE=2025-09-10
+
 LIB_DEPENDS=	libosg.so:graphics/osg34
 
 USES=		alias compiler:c++11-lang cmake:insource,noninja gl lua:51 tar:xz
