@@ -1,5 +1,6 @@
 PORTNAME=	sqlite3
 DISTVERSION=	3.50.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${_YEAR}/ https://www2.sqlite.org/${_YEAR}/ https://www3.sqlite.org/${_YEAR}/
@@ -34,7 +35,7 @@ USES=	libtool ncurses pathfix zip
 USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--linemacros --soname=${DISTVERSION} OPTIONS='${_OPTIONS}'
+CONFIGURE_ARGS+=	--linemacros --soname=legacy OPTIONS='${_OPTIONS}'
 # [The Chronicles of SONAME](https://sqlite.org/src/forumpost/5a3b44f510df8ded)
 # [Set features OPTIONS for autosetup configurator](https://msteveb.github.io/autosetup/)
 
@@ -174,6 +175,7 @@ GEOPOLY_CONFIGURE_ON=	--geopoly
 ICU_BUILD_DEPENDS=	${LOCALBASE}/bin/icu-config:devel/icu
 ICU_LIB_DEPENDS=	libicudata.so:devel/icu
 ICU_CONFIGURE_ON=	--with-icu-config=${LOCALBASE}/bin/icu-config --icu-collations
+ICU_CPPFLAGS=		`${LOCALBASE}/bin/icu-config --cppflags`
 LIBEDIT_USES=	libedit
 LIBEDIT_CONFIGURE_ON=	--editline
 LIKENOTBLOB_CPPFLAGS=	-DSQLITE_LIKE_DOESNT_MATCH_BLOBS=1
