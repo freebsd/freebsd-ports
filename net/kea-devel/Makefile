@@ -1,6 +1,6 @@
 PORTNAME=	kea
 DISTVERSION=	3.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/cur/3.0
 PKGNAMESUFFIX=	-devel
@@ -58,7 +58,7 @@ post-build:
 
 post-install:
 	@mkdir -p ${STAGEDIR}${PREFIX}/etc/kea ${STAGEDIR}/var/db/kea \
-	${STAGEDIR}/var/lib/kea ${STAGEDIR}/var/run/kea
+	${STAGEDIR}/var/log/kea ${STAGEDIR}/var/run/kea
 	@rm -rf ${STAGEDIR}${PREFIX}/var
 	@cd ${WRKSRC}/doc/sphinx/man; \
 	cp *.8 ${STAGEDIR}${PREFIX}/share/man/man8

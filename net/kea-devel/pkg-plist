@@ -860,8 +860,6 @@ share/man/man8/kea-shell.8.gz
 share/man/man8/keactrl.8.gz
 share/man/man8/perfdhcp.8.gz
 @dir(,,0750) %%ETCDIR%%
-@dir(,,0755) /var/lib
 @dir(,,0750) /var/db/kea
-@dir(,,0750) /var/lib/kea
 @dir(,,0750) /var/log/kea
 @dir(,,0750) /var/run/kea
