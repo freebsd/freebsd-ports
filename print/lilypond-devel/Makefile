@@ -1,6 +1,5 @@
 PORTNAME=	lilypond
-DISTVERSION=	2.25.23
-PORTREVISION=	1
+DISTVERSION=	2.25.26
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 PKGNAMESUFFIX=	-devel
