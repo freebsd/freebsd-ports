@@ -1,0 +1,8 @@
+[
+{ type: upgrade
+  maximum_version: "3.0.0"
+  message: <<EOM
+Please visit https://kb.isc.org/docs/things-to-be-aware-of-when-upgrading-to-kea-300 for upgrade instructions.
+EOM
+}
+]
