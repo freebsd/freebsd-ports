@@ -1331,6 +1331,7 @@
     SUBDIR += sshguard
     SUBDIR += sshpass
     SUBDIR += ssl-admin
+    SUBDIR += ssl-checker
     SUBDIR += ssllabs-scan
     SUBDIR += sslproxy
     SUBDIR += sslscan
