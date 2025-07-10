@@ -1,0 +1,11 @@
+hexowl is a lightweight and flexible programmer's calculator with user variables
+and functions support. It provides a terminal-based interface for performing
+arithmetic, bitwise, and boolean operations across decimal, hexadecimal, and
+binary number systems.
+
+Features:
+
+- Support for decimal, hexadecimal, and binary numbers
+- Arithmetic, bitwise, and boolean operations
+- User-defined variables and functions
+- No external dependencies
