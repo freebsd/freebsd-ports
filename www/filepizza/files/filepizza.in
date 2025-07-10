@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: filepizza
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for Filepizza in /etc/rc.conf
+#
+# filepizza_enable (bool):        Enable Filepizza.
+# filepizza_log (str):            Log output.
+# filepizza_runas (str):          User to run Filepizza as.
+#
+
+. /etc/rc.subr
+
+name="filepizza"
+desc="Peer-to-peer file transfers in your browser"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${filepizza_enable:="NO"}
+: ${filepizza_env_file:="%%PREFIX%%/etc/filepizza.env"}
+: ${filepizza_log:="/var/log/filepizza.log"}
+: ${filepizza_runas:="%%USER%%"}
+
+filepizza_chdir="%%HOMEDIR%%"
+pidfile="/var/run/${name}.pid"
+procname="%%LOCALBASE%%/bin/node"
+command="/usr/sbin/daemon"
+command_args="-u '${filepizza_runas}' -p '${pidfile}' -t '${desc}' -o '${filepizza_log}' '${procname}' server.js"
+
+run_rc_command "$1"

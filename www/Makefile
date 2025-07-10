@@ -187,6 +187,7 @@
     SUBDIR += ffproxy
     SUBDIR += fgallery
     SUBDIR += filebrowser
+    SUBDIR += filepizza
     SUBDIR += filtron
     SUBDIR += firedm
     SUBDIR += firefox
