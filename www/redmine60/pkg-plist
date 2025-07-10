@@ -87,6 +87,7 @@
 %%WWWDIR%%/app/assets/images/help.png
 %%WWWDIR%%/app/assets/images/history.png
 %%WWWDIR%%/app/assets/images/hourglass.png
+%%WWWDIR%%/app/assets/images/hourglass-empty.svg
 %%WWWDIR%%/app/assets/images/icons.svg
 %%WWWDIR%%/app/assets/images/jstoolbar/bold.svg
 %%WWWDIR%%/app/assets/images/jstoolbar/bt_bq.png
