@@ -1,6 +1,5 @@
 PORTNAME=	ktcplist
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+DISTVERSION=	1.0.1
 CATEGORIES=	net sysutils
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -13,7 +12,7 @@ USES=		cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kostikbel
-GH_TAGNAME=	18077c4df543d23ced0c08a6a8329e43c184ac75
+GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/ktcplist.1.gz
