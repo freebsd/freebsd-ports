@@ -1,11 +1,7 @@
 PORTNAME=	verilator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.036
-PORTREVISION=	1
+DISTVERSION=	5.038
 CATEGORIES=	cad
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	d94ed785888614cd53379b9faf58dfbde8f06b6f.patch:-p1 # https://github.com/verilator/verilator/pull/6028
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Synthesizable Verilog to C++ compiler
