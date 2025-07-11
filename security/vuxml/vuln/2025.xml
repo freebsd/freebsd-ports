@@ -1,3 +1,43 @@
+  <vuln vid="342f2a0a-5e9b-11f0-8baa-8447094a420f">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.64</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://httpd.apache.org/security/vulnerabilities_24.html">
+	  <p>moderate: Apache HTTP Server: HTTP response splitting (CVE-2024-42516)</p>
+	  <p>low: Apache HTTP Server: SSRF with mod_headers setting Content-Type header (CVE-2024-43204)</p>
+	  <p>moderate: Apache HTTP Server: SSRF on Windows due to UNC paths (CVE-2024-43394)</p>
+	  <p>low: Apache HTTP Server: mod_ssl error log variable escaping (CVE-2024-47252)</p>
+	  <p>moderate: Apache HTTP Server: mod_ssl access control bypass with session resumption (CVE-2025-23048)</p>
+	  <p>low: Apache HTTP Server: mod_proxy_http2 denial of service (CVE-2025-49630)</p>
+	  <p>moderate: Apache HTTP Server: mod_ssl TLS upgrade attack (CVE-2025-49812)</p>
+	  <p>moderate: Apache HTTP Server: HTTP/2 DoS by Memory Increase (CVE-2025-53020)</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-42516</cvename>
+      <cvename>CVE-2024-43204</cvename>
+      <cvename>CVE-2024-43394</cvename>
+      <cvename>CVE-2024-47252</cvename>
+      <cvename>CVE-2025-23048</cvename>
+      <cvename>CVE-2025-49630</cvename>
+      <cvename>CVE-2025-49812</cvename>
+      <cvename>CVE-2025-53020</cvename>
+      <url>https://httpd.apache.org/security/vulnerabilities_24.html</url>
+    </references>
+    <dates>
+      <discovery>2025-07-10</discovery>
+      <entry>2025-07-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ef87346f-5dd0-11f0-beb2-ac5afc632ba3">
     <topic>Apache Tomcat -- Multiple Vulnerabilities</topic>
     <affects>
