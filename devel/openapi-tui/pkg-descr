@@ -1,0 +1,10 @@
+openapi-tui is a terminal UI application that allows you to list, browse,
+and run APIs defined with OpenAPI v3.0 and v3.1 specifications.
+
+Features:
+
+- Browse OpenAPI specifications in a terminal interface
+- Explore API endpoints and operations
+- Send requests and view responses
+- Support for multiple servers
+- Works with both local and remote API specifications
