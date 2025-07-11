@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-pubsub-v1
-PORTVERSION=	1.10.0
+PORTVERSION=	1.11.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
