@@ -1,27 +1,18 @@
---- package.json.orig	2024-10-28 16:25:21 UTC
+--- package.json.orig	2025-07-02 13:57:45 UTC
 +++ package.json
-@@ -33,7 +33,7 @@
-     "start-browser": "npm run start --workspace @mongosh/browser-repl",
-     "start": "npm run start-cli",
-     "precompile-exec": "npm run compile-cli",
--    "compile-exec": "npm run evergreen-release compile",
-+    "compile-exec": "SEGMENT_API_KEY=dummy npm run evergreen-release compile",
-     "compile-all": "npm run compile-compass && npm run compile-exec",
-     "evergreen-release": "cd packages/build && npm run evergreen-release --",
-     "release": "cd packages/build && npm run release --",
-@@ -66,7 +66,6 @@
+@@ -69,7 +69,6 @@
      "postcreate-static-analysis-report": "mongodb-sbom-tools sarif-to-markdown --sarif=.sbom/codeql.sarif.json --md=.sbom/codeql.md",
      "where": "monorepo-where",
      "reformat": "npm run reformat --workspaces --if-present",
 -    "prepare": "husky",
      "precommit": "precommit",
-     "preinstall": "node scripts/sort-workspaces.js"
-   },
-@@ -108,7 +107,6 @@
+     "preinstall": "node scripts/sort-workspaces.js",
+     "bump-auxiliary": "npm run bump-auxiliary --workspace @mongosh/build",
+@@ -114,7 +113,6 @@
      "duplexpair": "^1.0.2",
      "find-up": "^5.0.0",
      "glob": "^10.3.12",
 -    "husky": "^9.0.11",
      "mocha": "^10.2.0",
-     "mongodb": "^6.9.0",
-     "mongodb-runner": "^5.7.0",
+     "mongodb": "^6.16.0",
+     "mongodb-runner": "^5.7.1",

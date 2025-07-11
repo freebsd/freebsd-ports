@@ -7,9 +7,9 @@
 -        'link_settings': { 'libraries': ['-lmongocrypt'] }
 +        'include_dirs': [
 +          '/usr/include',
-+          '/usr/local/include'
++          '%%LOCALBASE%%/include'
 +        ],
-+        'link_settings': { 'libraries': ['-L/usr/local/lib -lmongocrypt'] }
++        'link_settings': { 'libraries': ['-L%%LOCALBASE%%/lib -lmongocrypt'] }
        }],
        ['libmongocrypt_link_type=="static"', {
          'conditions': [
