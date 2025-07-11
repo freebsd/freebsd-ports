@@ -1,9 +1,10 @@
 PORTNAME=	orc
 DISTVERSION=	0.4.41
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://gstreamer.freedesktop.org/data/src/${PORTNAME}/
+MASTER_SITES=	https://gstreamer.freedesktop.org/data/src/orc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library and toolset to operate arrays of data
 WWW=		https://gstreamer.freedesktop.org/projects/orc.html
 
@@ -12,9 +13,17 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		meson pkgconfig tar:xz
+
+MESON_ARGS=	--default-library=both \
+		-Dbenchmarks=auto \
+		-Dexamples=auto \
+		-Dorc-target=all \
+		-Dorc-test=auto \
+		-Dtests=auto \
+		-Dtools=auto
 USE_LDCONFIG=	yes
 
-PLIST_SUB+=	LIBMINORVER=${DISTVERSION:E}
+PLIST_SUB=	LIBMINORVER=${PORTVERSION:E}
 
 OPTIONS_DEFINE=	DOCS
 

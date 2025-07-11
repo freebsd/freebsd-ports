@@ -1,9 +1,6 @@
-Orc - The Oil Runtime Compiler
+Orc is the successor to Liboil - The Library of Optimized Inner Loops.
 
-Orc is a library and set of tools for compiling and executing
-very simple programs that operate on arrays of data.  The "language"
-is a generic assembly language that represents many of the features
-available in SIMD architectures, including saturated addition and
-subtraction, and many arithmetic operations.
-
-(OIL stands for Optimized Inner Loops)
+Orc is a library and set of tools for compiling and executing very simple
+programs that operate on arrays of data. The "language" is a generic assembly
+language that represents many of the features available in SIMD architectures,
+including saturated addition and subtraction, and many arithmetic operations.
