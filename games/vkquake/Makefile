@@ -1,9 +1,8 @@
 PORTNAME=	vkquake
-DISTVERSION=	1.32.2
-PORTREVISION=	1
+DISTVERSION=	1.32.3.1
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	seafork@disroot.org
 COMMENT=	Vulkan Quake port based on QuakeSpasm
 WWW=		https://github.com/Novum/vkQuake
 
@@ -39,10 +38,10 @@ DEBUG_MESON_OFF=	--buildtype=plain --optimization=2
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_MESON_ENABLED=	use_codec_flac
 MAD_LIB_DEPENDS=	libmad.so:audio/libmad
-MAD_MESON_ARGS=		-Duse_codec_mp3=enabled
+MAD_MESON_ENABLED=	use_codec_mp3
 MAD_MESON_ON=		-Dmp3_lib=mad
 MP3_LIB_DEPENDS=	libmpg123.so:audio/mpg123
-MP3_MESON_ARGS=		-Duse_codec_mp3=enabled
+MP3_MESON_ENABLED=	use_codec_mp3
 MP3_MESON_ON=		-Dmp3_lib=mpg123
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus \
 			libopusfile.so:audio/opusfile
