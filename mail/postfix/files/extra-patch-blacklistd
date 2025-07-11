@@ -1,4 +1,70 @@
---- src/smtpd/Makefile.in.orig	2024-02-29 20:13:17 UTC
+--- src/postscreen/Makefile.in.orig	2024-03-09 21:34:49 UTC
++++ src/postscreen/Makefile.in
+@@ -3,13 +3,13 @@ SRCS	= postscreen.c postscreen_dict.c postscreen_dnsbl
+ 	postscreen_early.c postscreen_smtpd.c postscreen_misc.c \
+ 	postscreen_state.c postscreen_tests.c postscreen_send.c \
+ 	postscreen_starttls.c postscreen_expand.c postscreen_endpt.c \
+-	postscreen_haproxy.c
++	postscreen_haproxy.c pfilter.c
+ OBJS	= postscreen.o postscreen_dict.o postscreen_dnsbl.o \
+ 	postscreen_early.o postscreen_smtpd.o postscreen_misc.o \
+ 	postscreen_state.o postscreen_tests.o postscreen_send.o \
+ 	postscreen_starttls.o postscreen_expand.o postscreen_endpt.o \
+-	postscreen_haproxy.o
+-HDRS	= 
++	postscreen_haproxy.o pfilter.o
++HDRS	= pfilter.h
+ TESTSRC	=
+ DEFS	= -I. -I$(INC_DIR) -D$(SYSTYPE)
+ CFLAGS	= $(DEBUG) $(OPT) $(DEFS)
+--- src/postscreen/pfilter.c.orig	2025-07-11 20:30:00 UTC
++++ src/postscreen/pfilter.c
+@@ -0,0 +1,19 @@
++#include "pfilter.h"
++#include <stdio.h>	/* for NULL */
++#include <blacklist.h>
++
++static struct blacklist *blstate;
++
++void
++pfilter_notify(int a, int fd)
++{
++	if (blstate == NULL)
++		blstate = blacklist_open();
++	if (blstate == NULL)
++		return;
++	(void)blacklist_r(blstate, a, fd, "postscreen");
++	if (a == 0) {
++		blacklist_close(blstate);
++		blstate = NULL;
++	}
++}
+--- src/postscreen/pfilter.h.orig	2025-07-11 20:30:00 UTC
++++ src/postscreen/pfilter.h
+@@ -0,0 +1 @@
++void pfilter_notify(int, int);
+--- src/postscreen/postscreen_early.c.orig	2021-02-18 18:55:31 UTC
++++ src/postscreen/postscreen_early.c
+@@ -52,6 +52,7 @@
+ /* Application-specific. */
+ 
+ #include <postscreen.h>
++#include "pfilter.h" /* for blacklistd(8) */
+ 
+ static char *psc_teaser_greeting;
+ static VSTRING *psc_escape_buf;
+@@ -183,6 +184,10 @@ static void psc_early_event(int event, void *context)
+ 		msg_info("DNSBL rank %d for [%s]:%s",
+ 			 state->dnsbl_score, PSC_CLIENT_ADDR_PORT(state));
+ 		PSC_FAIL_SESSION_STATE(state, PSC_STATE_FLAG_DNSBL_FAIL);
++
++		/* notify blacklistd of DNSBL rank violation */
++		pfilter_notify(1, vstream_fileno(state->smtp_client_stream));
++
+ 		switch (psc_dnsbl_action) {
+ 		case PSC_ACT_DROP:
+ 		    state->dnsbl_reply = vstring_sprintf(vstring_alloc(100),
+--- src/smtpd/Makefile.in.orig	2025-01-09 22:06:10 UTC
 +++ src/smtpd/Makefile.in
 @@ -2,14 +2,14 @@ SRCS	= smtpd.c smtpd_token.c smtpd_check.c smtpd_chat.
  SRCS	= smtpd.c smtpd_token.c smtpd_check.c smtpd_chat.c smtpd_state.c \
@@ -18,7 +84,7 @@
  TESTSRC	= smtpd_token_test.c
  DEFS	= -I. -I$(INC_DIR) -D$(SYSTYPE)
  CFLAGS	= $(DEBUG) $(OPT) $(DEFS)
---- src/smtpd/pfilter.c.orig	2024-03-21 21:45:18 UTC
+--- src/smtpd/pfilter.c.orig	2025-07-11 20:30:00 UTC
 +++ src/smtpd/pfilter.c
 @@ -0,0 +1,19 @@
 +#include "pfilter.h"
@@ -40,10 +106,38 @@
 +		blstate = NULL;
 +	}
 +}
---- src/smtpd/pfilter.h.orig	2024-03-21 21:45:18 UTC
+--- src/smtpd/pfilter.h.orig	2025-07-11 20:30:00 UTC
 +++ src/smtpd/pfilter.h
 @@ -0,0 +1 @@
 +void pfilter_notify(int, int);
+--- src/smtpd/smtpd_check.c.orig	2025-07-11 20:34:19 UTC
++++ src/smtpd/smtpd_check.c
+@@ -1767,6 +1767,7 @@ static int reject_unauth_destination(SMTPD_STATE *stat
+     /*
+      * Reject relaying to sites that are not listed in relay_domains.
+      */
++    pfilter_notify(1, vstream_fileno(state->client));
+     return (smtpd_check_reject(state, MAIL_ERROR_POLICY,
+ 			       reply_code, reply_dsn,
+ 			       "<%s>: Relay access denied",
+--- src/smtpd/smtpd_milter.c.orig	2025-07-11 20:33:21 UTC
++++ src/smtpd/smtpd_milter.c
+@@ -193,6 +193,7 @@ const char *smtpd_milter_eval(const char *name, void *
+ 	    return ("");
+ 	if (state->milter_reject_text) {
+ 	    /* 554 5.7.1 <user@example.com>: Relay access denied */
++	    pfilter_notify(1, vstream_fileno(state->client));
+ 	    vstring_strcpy(state->expand_buf, state->milter_reject_text + 4);
+ 	    cp = split_at(STR(state->expand_buf), ' ');
+ 	    return (cp ? split_at(cp, ' ') : cp);
+@@ -210,6 +211,7 @@ const char *smtpd_milter_eval(const char *name, void *
+ 	    return (0);
+ 	if (state->milter_reject_text) {
+ 	    /* 554 5.7.1 <user@example.com>: Relay access denied */
++	    pfilter_notify(1, vstream_fileno(state->client));
+ 	    vstring_strcpy(state->expand_buf, state->milter_reject_text + 4);
+ 	    (void) split_at(STR(state->expand_buf), ' ');
+ 	    return (STR(state->expand_buf));
 --- src/smtpd/smtpd_sasl_glue.c.orig	2023-11-12 21:41:13 UTC
 +++ src/smtpd/smtpd_sasl_glue.c
 @@ -153,6 +153,7 @@
@@ -67,69 +161,3 @@
      /* RFC 4954 Section 6. */
      smtpd_chat_reply(state, "235 2.7.0 Authentication successful");
      if ((sasl_username = xsasl_server_get_username(state->sasl_server)) == 0)
---- src/postscreen/Makefile.in.orig	2025-01-29 08:50:15.761070000 +0100
-+++ src/postscreen/Makefile.in	2025-01-29 08:52:29.611925000 +0100
-@@ -3,13 +3,13 @@
- 	postscreen_early.c postscreen_smtpd.c postscreen_misc.c \
- 	postscreen_state.c postscreen_tests.c postscreen_send.c \
- 	postscreen_starttls.c postscreen_expand.c postscreen_endpt.c \
--	postscreen_haproxy.c
-+	postscreen_haproxy.c pfilter.c
- OBJS	= postscreen.o postscreen_dict.o postscreen_dnsbl.o \
- 	postscreen_early.o postscreen_smtpd.o postscreen_misc.o \
- 	postscreen_state.o postscreen_tests.o postscreen_send.o \
- 	postscreen_starttls.o postscreen_expand.o postscreen_endpt.o \
--	postscreen_haproxy.o
--HDRS	= 
-+	postscreen_haproxy.o pfilter.o
-+HDRS	= pfilter.h
- TESTSRC	=
- DEFS	= -I. -I$(INC_DIR) -D$(SYSTYPE)
- CFLAGS	= $(DEBUG) $(OPT) $(DEFS)
---- src/postscreen/pfilter.c.orig	2025-01-29 08:56:39.949695000 +0100
-+++ src/postscreen/pfilter.c	2025-01-29 08:59:16.979565000 +0100
-@@ -0,0 +1,19 @@
-+#include "pfilter.h"
-+#include <stdio.h>	/* for NULL */
-+#include <blacklist.h>
-+
-+static struct blacklist *blstate;
-+
-+void
-+pfilter_notify(int a, int fd)
-+{
-+	if (blstate == NULL)
-+		blstate = blacklist_open();
-+	if (blstate == NULL)
-+		return;
-+	(void)blacklist_r(blstate, a, fd, "postscreen");
-+	if (a == 0) {
-+		blacklist_close(blstate);
-+		blstate = NULL;
-+	}
-+}
---- src/postscreen/pfilter.h.orig	2025-01-29 08:56:49.984170000 +0100
-+++ src/postscreen/pfilter.h	2025-01-29 08:59:47.270172000 +0100
-@@ -0,0 +1 @@
-+void pfilter_notify(int, int);
---- src/postscreen/postscreen_early.c.orig	2025-01-29 08:45:04.847798000 +0100
-+++ src/postscreen/postscreen_early.c	2025-01-29 10:18:34.349408000 +0100
-@@ -52,6 +52,7 @@
- /* Application-specific. */
- 
- #include <postscreen.h>
-+#include "pfilter.h" /* for blacklistd(8) */
- 
- static char *psc_teaser_greeting;
- static VSTRING *psc_escape_buf;
-@@ -183,6 +184,10 @@
- 		msg_info("DNSBL rank %d for [%s]:%s",
- 			 state->dnsbl_score, PSC_CLIENT_ADDR_PORT(state));
- 		PSC_FAIL_SESSION_STATE(state, PSC_STATE_FLAG_DNSBL_FAIL);
-+
-+		/* notify blacklistd of DNSBL rank violation */
-+		pfilter_notify(1, vstream_fileno(state->smtp_client_stream));
-+
- 		switch (psc_dnsbl_action) {
- 		case PSC_ACT_DROP:
- 		    state->dnsbl_reply = vstring_sprintf(vstring_alloc(100),
