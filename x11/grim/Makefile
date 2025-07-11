@@ -3,11 +3,10 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
 PORTREVISION=	2
 CATEGORIES=	x11 wayland
-MASTER_SITES=	https://git.sr.ht/~emersion/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Grab images from a Wayland compositor
-WWW=		https://sr.ht/~emersion/grim/
+WWW=		https://gitlab.freedesktop.org/emersion/grim
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,8 +16,11 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libwayland-client.so:graphics/wayland
 
 USES=		compiler:c11 gnome meson pkgconfig xorg
+USE_GITLAB=	yes
 USE_GNOME=	cairo
 USE_XORG=	pixman
+GL_SITE=	https://gitlab.freedesktop.org
+GL_ACCOUNT=	emersion
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	JPEG MANPAGES
