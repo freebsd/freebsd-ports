@@ -1,5 +1,5 @@
 PORTNAME=	purrr
-DISTVERSION=	1.0.4
+DISTVERSION=	1.1.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -18,7 +18,7 @@ CRAN_DEPENDS=	R-cran-cli>=3.6.1:devel/R-cran-cli \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
-		R-cran-dplyr>0:math/R-cran-dplyr \
+		R-cran-dplyr>=0.7.8:math/R-cran-dplyr \
 		R-cran-httr>0:www/R-cran-httr \
 		R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-lubridate>0:devel/R-cran-lubridate \
