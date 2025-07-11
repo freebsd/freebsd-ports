@@ -1,17 +1,19 @@
---- scripts/nodejs-patches/002-workaround-node-bug-52229.orig	2024-05-16 08:32:21 UTC
+--- scripts/nodejs-patches/002-workaround-node-bug-52229.orig	2025-07-02 13:57:45 UTC
 +++ scripts/nodejs-patches/002-workaround-node-bug-52229
-@@ -2,13 +2,12 @@ diff --git a/common.gypi b/common.gypi
- index efcd8da84815..fe11453f09b5 100644
+@@ -2,7 +2,7 @@ diff --git a/common.gypi b/common.gypi
+ index 888b8b94ca1a..375956862d2d 100644
  --- a/common.gypi
  +++ b/common.gypi
--@@ -268,6 +268,9 @@
-+@@ -268,6 +268,8 @@
-      # Defines these mostly for node-gyp to pickup.
-      'defines': [
+-@@ -270,7 +270,10 @@
++@@ -270,7 +270,9 @@
         '_GLIBCXX_USE_CXX11_ABI=1',
+        # This help forks when building Node.js on a 32-bit arch as
+        # libuv is always compiled with _FILE_OFFSET_BITS=64
+@@ -10,7 +10,6 @@ index 888b8b94ca1a..375956862d2d 100644
+ +      '_FILE_OFFSET_BITS=64',
  +      # Work around https://github.com/nodejs/node/issues/52229
  +      "NODE_API_EXPERIMENTAL_NOGC_ENV_OPT_OUT=1",
 -+      "NAPI_EXPERIMENTAL=1",
       ],
- 
+  
       # Forcibly disable -Werror.  We support a wide range of compilers, it's

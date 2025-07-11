@@ -15,7 +15,7 @@
 -        ['(OS=="mac" or OS=="linux") and (kerberos_use_rtld!="true")', {
 +        ['(OS=="mac" or OS=="linux" or OS=="freebsd") and (kerberos_use_rtld!="true")', {
 +          'include_dirs': [
-+            '/usr/local/include'
++            '%%LOCALBASE%%/include'
 +          ],
            'link_settings': {
              'libraries': [
