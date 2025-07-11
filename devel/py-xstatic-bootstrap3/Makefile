@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	3
 DISTNAME=	XStatic-Bootstrap-${DISTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bootstrap 3.1.1 (XStatic packaging standard)
 WWW=		https://getbootstrap.com/
 
@@ -17,9 +17,5 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
-
-#post-patch:
-#	@${REINPLACE_CMD} -e "s|xs.PACKAGE_NAME|'xstatic-bootstrap'|g" \
-#		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
