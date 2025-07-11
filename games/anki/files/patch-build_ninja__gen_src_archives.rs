@@ -12,18 +12,17 @@ Since the latter is already bypassed by setting the environment variables
 other parts of the code for now.
 
 It probably makes sense to have a generic variable (e.g. "Self::FreeBSD")
-for all FreeBSD architectures that is used in conjunction with NO_BUNDLE,
-NO_VENV, OFFLINE_BUILD and OFFLINE_YARNCACHE to allow building on FreeBSD
-(and preferably other BSDs) persistently.
+for all FreeBSD architectures that is used in conjunction with OFFLINE_BUILD
+to allow building on FreeBSD (and preferably other BSDs) persistently.
 
---- build/ninja_gen/src/archives.rs.orig	2023-03-31 02:32:25 UTC
+--- build/ninja_gen/src/archives.rs.orig	2025-06-13 08:38:15 UTC
 +++ build/ninja_gen/src/archives.rs
-@@ -39,6 +39,8 @@ impl Platform {
-             let os = std::env::consts::OS;
-             let arch = std::env::consts::ARCH;
-             match (os, arch) {
-+                ("freebsd", "x86_64") => Self::LinuxX64,
-+                ("freebsd", "aarch64") => Self::LinuxArm,
-                 ("linux", "x86_64") => Self::LinuxX64,
-                 ("linux", "aarch64") => Self::LinuxArm,
-                 ("macos", "x86_64") => Self::MacX64,
+@@ -34,6 +34,8 @@ impl Platform {
+         let os = std::env::consts::OS;
+         let arch = std::env::consts::ARCH;
+         match (os, arch) {
++            ("freebsd", "x86_64") => Self::LinuxX64,
++            ("freebsd", "aarch64") => Self::LinuxArm,
+             ("linux", "x86_64") => Self::LinuxX64,
+             ("linux", "aarch64") => Self::LinuxArm,
+             ("macos", "x86_64") => Self::MacX64,

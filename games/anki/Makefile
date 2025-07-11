@@ -1,6 +1,5 @@
 PORTNAME=	anki
-DISTVERSION=	25.02.7
-PORTREVISION=	1
+DISTVERSION=	25.07.2
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:yarncache
@@ -18,9 +17,12 @@ NOT_FOR_ARCHS_REASON=	the provided build system written in Rust (= runner) accep
 
 BUILD_DEPENDS=	protoc:devel/protobuf \
 		rsync:net/rsync \
+		uv:devel/uv \
 		yarn:www/yarn \
 		${PYTHON_PKGNAMEPREFIX}black>0:devel/py-black@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy-protobuf>=1.21:devel/py-mypy-protobuf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruff>0:devel/py-ruff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 RUN_DEPENDS=	lame:audio/lame \
@@ -37,6 +39,7 @@ RUN_DEPENDS=	lame:audio/lame \
 		${PYTHON_PKGNAMEPREFIX}flask>0:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Cors>0:www/py-flask-cors@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=4.21:devel/py-protobuf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}waitress>=2.0.0:www/py-waitress@${PY_FLAVOR}
 
 # USES=ssl is required for the compilation of the Rust code
@@ -45,8 +48,8 @@ USES=		cargo desktop-file-utils ninja nodejs:build pyqt:6 python \
 USE_GITHUB=	yes
 GH_ACCOUNT=	ankitects
 # Translation files
-GH_TUPLE=	ankitects:anki-core-i18n:62d3e1e:ftlrslib \
-		ankitects:anki-desktop-ftl:e5dc0c3:ftlextra
+GH_TUPLE=	ankitects:anki-core-i18n:a921649:ftlrslib \
+		ankitects:anki-desktop-ftl:a1134ab:ftlextra
 
 USE_PYQT=	pyqt6 sip:build webengine
 
@@ -63,6 +66,10 @@ CARGO_TARGET_DIR=	${WRKSRC}/out/rust
 MAKE_ENV+=	NODE_BINARY=${LOCALBASE}/bin/node \
 		OFFLINE_BUILD=1 \
 		PROTOC_BINARY=${LOCALBASE}/bin/protoc \
+		PYTHON_BINARY=${PYTHON_CMD} \
+		UV_BINARY=${LOCALBASE}/bin/uv \
+		UV_NO_BUILD_ISOLATION=1 \
+		UV_OFFLINE=1 \
 		YARN_BINARY=${LOCALBASE}/bin/yarn \
 		YARN_CACHE_FOLDER=${_MY_YARNCACHE} \
 		out=${WRKSRC}/out
@@ -85,7 +92,7 @@ MPV_RUN_DEPENDS=	mpv:multimedia/mpv
 # Should contain the most recent commit that reflects ${DISTVERSION} and must
 # be exactly 8 digits otherwise the check for newer versions won't work as
 # expected.
-_MY_BUILDHASH=	98253c81
+_MY_BUILDHASH=	3adcf05c
 # Remove ${CARGO_BUILD_TARGET} from ${CARGO_ENV} to avoid problems with
 # hardcoded paths as the "runner" build system expects its components
 # in ${WRKSRC}/out/rust/debug
@@ -120,7 +127,7 @@ pre-configure:
 #    which then processes the following steps:
 #    * build remaining components of "runner" (= ninja_gen, configure, etc.)
 #    * generate the ninja file and run ninja afterwards
-#    * create the Python wheel files in ${WRKSRC}/out/wheels
+#    * create the Python wheel files (via "uv") in ${WRKSRC}/out/wheels
 pre-build:
 	${ECHO_CMD} -e "${_MY_BUILDHASH}" >> ${WRKSRC}/out/buildhash
 	${ECHO_MSG} "===> Building runner build framework"
@@ -128,7 +135,7 @@ pre-build:
 		${CARGO} build --package runner --release --verbose --verbose
 do-build:
 	${ECHO_MSG} "===> Executing runner build framework"
-	cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} ${_MY_CARGO_ENV} \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${_MY_CARGO_ENV} \
 		${WRKSRC}/out/rust/release/runner build wheels
 
 post-build:
@@ -150,7 +157,7 @@ do-install:
 		&& ${COPYTREE_SHARE} _aqt ${STAGEDIR}${DATADIR} "! -name .gitignore" \
 		&& ${COPYTREE_SHARE} anki ${STAGEDIR}${DATADIR} "! -name .gitignore" \
 		&& ${COPYTREE_SHARE} aqt ${STAGEDIR}${DATADIR} "! -name .gitignore"
-	cd ${WRKSRC}/qt/bundle/lin \
+	cd ${WRKSRC}/qt/launcher/lin \
 		&& ${INSTALL_DATA} anki.xpm anki.png ${STAGEDIR}${PREFIX}/share/pixmaps \
 		&& ${INSTALL_DATA} anki.desktop ${STAGEDIR}${PREFIX}/share/applications \
 		&& ${INSTALL_MAN} anki.1 ${STAGEDIR}${PREFIX}/share/man/man1
