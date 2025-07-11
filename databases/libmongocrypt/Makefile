@@ -1,5 +1,5 @@
 PORTNAME=	libmongocrypt
-DISTVERSION=	1.11.0
+DISTVERSION=	1.14.1
 CATEGORIES=	databases
 
 MAINTAINER=	hiroo.ono+freebsd@gmail.com
@@ -16,6 +16,8 @@ USES=		cmake python:build ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
+
+USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBUILD_VERSION=${DISTVERSION} \
 		-DMONGOCRYPT_MONGOC_DIR="USE-SYSTEM"
