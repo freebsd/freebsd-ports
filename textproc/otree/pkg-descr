@@ -1,0 +1,4 @@
+otree is a command line tool to view objects (JSON/YAML/TOML) in a
+terminal-based tree widget. It provides an interactive TUI interface
+for exploring complex nested configuration files, particularly useful
+for viewing Kubernetes YAML files and other structured data formats.
