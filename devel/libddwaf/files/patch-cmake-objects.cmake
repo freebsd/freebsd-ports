@@ -1,6 +1,6 @@
---- cmake/objects.cmake.orig	2024-05-08 08:20:47 UTC
+--- cmake/objects.cmake.orig	2025-07-02 10:21:03 UTC
 +++ cmake/objects.cmake
-@@ -68,31 +68,6 @@ set(LIBDDWAF_SOURCE
+@@ -90,30 +90,6 @@ set(LIBDDWAF_SOURCE
      ${libddwaf_SOURCE_DIR}/src/libcxx-compat/monotonic_buffer_resource.cpp
      ${libddwaf_SOURCE_DIR}/src/vendor/fmt/format.cc
      ${libddwaf_SOURCE_DIR}/src/vendor/radixlib/radixlib.c
@@ -23,7 +23,6 @@
 -    ${libddwaf_SOURCE_DIR}/src/vendor/re2/re2.cc
 -    ${libddwaf_SOURCE_DIR}/src/vendor/re2/regexp.cc
 -    ${libddwaf_SOURCE_DIR}/src/vendor/re2/simplify.cc
--    ${libddwaf_SOURCE_DIR}/src/vendor/re2/stringpiece.cc
 -    ${libddwaf_SOURCE_DIR}/src/vendor/re2/tostring.cc
 -    ${libddwaf_SOURCE_DIR}/src/vendor/re2/unicode_casefold.cc
 -    ${libddwaf_SOURCE_DIR}/src/vendor/re2/unicode_groups.cc
@@ -32,7 +31,7 @@
  )
  
  set(LIBDDWAF_PUBLIC_INCLUDES ${libddwaf_SOURCE_DIR}/include)
-@@ -100,12 +75,25 @@ set(LIBDDWAF_PRIVATE_INCLUDES
+@@ -121,12 +97,29 @@ set(LIBDDWAF_PRIVATE_INCLUDES
  set(LIBDDWAF_PRIVATE_INCLUDES
      ${libddwaf_SOURCE_DIR}/src
      ${libddwaf_SOURCE_DIR}/src/vendor
@@ -46,6 +45,10 @@
 +find_library(LIBAC ac)
 +if (LIBAC)
 +    list(APPEND LIBDDWAF_INTERFACE_LIBRARIES ac)
++endif()
++find_library(LIBFMT fmt)
++if (LIBFMT)
++    list(APPEND LIBDDWAF_INTERFACE_LIBRARIES fmt)
 +endif()
 +find_library(LIBINJECTION injection)
 +if (LIBINJECTION)
