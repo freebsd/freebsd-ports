@@ -1,7 +1,6 @@
 PORTNAME=	cargo-mutants
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.0.1
-PORTREVISION=	4
+DISTVERSION=	25.2.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +23,6 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		ansi_term-0.12.1 \
 		anstream-0.6.18 \
 		anstyle-0.3.5 \
 		anstyle-1.0.10 \
@@ -62,13 +60,13 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		console-0.15.0 \
 		core-foundation-sys-0.8.7 \
 		cp_r-0.5.2 \
-		crossbeam-channel-0.5.14 \
+		crossbeam-channel-0.5.15 \
 		crossbeam-utils-0.8.21 \
-		ctor-0.1.26 \
 		ctrlc-3.2.1 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
 		doc-comment-0.3.3 \
+		dyn-clone-1.0.19 \
 		either-1.13.0 \
 		encode_unicode-0.3.6 \
 		env_filter-0.1.3 \
@@ -130,7 +128,6 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		num_cpus-1.16.0 \
 		nutmeg-0.1.4 \
 		once_cell-1.20.3 \
-		output_vt100-0.1.3 \
 		overload-0.1.1 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
@@ -141,8 +138,8 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		predicates-3.0.0 \
 		predicates-core-1.0.9 \
 		predicates-tree-1.0.12 \
-		pretty_assertions-1.0.0 \
-		proc-macro2-1.0.74 \
+		pretty_assertions-1.4.1 \
+		proc-macro2-1.0.95 \
 		quick-error-1.2.3 \
 		quote-1.0.35 \
 		rand-0.3.23 \
@@ -153,6 +150,8 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		redox_syscall-0.3.5 \
 		redox_syscall-0.4.1 \
 		redox_syscall-0.5.8 \
+		ref-cast-1.0.24 \
+		ref-cast-impl-1.0.24 \
 		regex-1.10.0 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.9 \
@@ -164,10 +163,13 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		rusty-fork-0.3.0 \
 		ryu-1.0.19 \
 		same-file-1.0.6 \
+		schemars-0.9.0 \
+		schemars_derive-0.9.0 \
 		scopeguard-1.2.0 \
 		semver-1.0.25 \
 		serde-1.0.209 \
 		serde_derive-1.0.209 \
+		serde_derive_internals-0.29.1 \
 		serde_json-1.0.128 \
 		serde_spanned-0.6.8 \
 		serde_yaml-0.8.26 \
@@ -179,8 +181,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		strsim-0.11.1 \
 		strum-0.26.0 \
 		strum_macros-0.26.4 \
-		syn-1.0.109 \
-		syn-2.0.46 \
+		syn-2.0.104 \
 		target-lexicon-0.12.16 \
 		target-spec-3.2.2 \
 		tempfile-3.8.0 \
@@ -245,7 +246,8 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.5.40 \
 		yaml-rust-0.4.5 \
-		yansi-0.5.1
+		yansi-0.5.1 \
+		yansi-1.0.1
 
 PLIST_FILES=	bin/${PORTNAME}
 
