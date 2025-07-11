@@ -1,6 +1,6 @@
 PORTNAME=	bsd-plotutils
 DISTVERSION=	1.4.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	toranktto@gmail.com
