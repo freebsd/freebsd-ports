@@ -1,5 +1,5 @@
 PORTNAME=	webauthn
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
