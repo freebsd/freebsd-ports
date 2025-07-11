@@ -1,1 +1,6 @@
-Shared code across various Vulkan repositories.
+Vulkan-Utility-Libraries provides shared utility code for Vulkan SDK developers.
+It includes standardized layer settings and header-only utilities like dispatch
+table setup, format helpers, Vulkan struct handling, and enum-to-string helpers.
+
+This repository improves code reuse and reduces maintenance overhead across
+multiple Vulkan-related projects.
