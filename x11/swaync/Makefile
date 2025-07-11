@@ -1,6 +1,6 @@
 PORTNAME=	swaync
 DISTVERSIONPREFIX=	v
-PORTVERSION=	0.11.0
+PORTVERSION=	0.12.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,17 +10,19 @@ WWW=		https://github.com/ErikReider/SwayNotificationCenter
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	sassc:textproc/sassc
+BUILD_DEPENDS=	blueprint-compiler:devel/blueprint-compiler \
+		sassc:textproc/sassc
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libgee-0.8.so:devel/libgee \
-		libgranite.so:x11-toolkits/granite \
-		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
-		libhandy-1.so:x11-toolkits/libhandy
+		libgraphene-1.0.so:graphics/graphene \
+		libwayland-client.so:graphics/wayland \
+		libgranite-7.so:x11-toolkits/granite7 \
+		libgtk4-layer-shell.so:x11-toolkits/gtk4-layer-shell
 
 USES=		compiler:c11 gnome meson pkgconfig \
 		python:build shebangfix vala:build
 USE_GITHUB=	yes
-USE_GNOME=	cairo gdkpixbuf gtk30 introspection:build
+USE_GNOME=	cairo gdkpixbuf gtk40 libadwaita
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayNotificationCenter
 SHEBANG_FILES=	build-aux/meson/postinstall.py
