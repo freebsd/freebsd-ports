@@ -1,6 +1,6 @@
-This is a python client for the Swift API. There's a Python API (the
-``swiftclient`` module), and a command-line script (``swift``).
+This is a python client for the Swift API. There's a Python API (the swiftclient
+module), and a command-line script (swift).
 
-This code is based on the original client previously included with
-OpenStack's swift -- a highly available, distributed, eventually
-consistent object/blob store.
+This code is based on the original client previously included with OpenStack's
+Swift. The python-swiftclient is licensed under the Apache License like the rest
+of OpenStack.
