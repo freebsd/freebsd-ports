@@ -1,12 +1,12 @@
---- CMakeLists.txt.orig	2022-06-10 10:09:05 UTC
+--- CMakeLists.txt.orig	2025-05-21 11:53:16 UTC
 +++ CMakeLists.txt
-@@ -394,6 +394,9 @@ find_package(Hwloc)
-       set(ENABLE_HWLOC ON CACHE BOOL "Hwloc" FORCE)
+@@ -466,6 +466,9 @@ endfunction()
    endif()
+ endfunction()
  
 +include(CheckIncludeFiles)
-+check_include_files("sys/types.h;sys/sysctl.h" HAVE_SYSCTL_H)
++check_include_files("sys/sysctl.h" HAVE_SYSCTL_H)
 +
  
- include(sanitizers)
- 
+ function(rename_if_different SRC DST EXEC)
+   if(EXISTS "${DST}")

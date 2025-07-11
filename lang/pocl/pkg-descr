@@ -1,28 +1,6 @@
-[
-{	type: install
-	message: <<EOM
 Portable OpenCL (pocl)
 ----------------------
 
 Portable OpenCL (>= 3.0) aims to be an efficient open source
 (MIT-licensed) implementation of the OpenCL 2.X standard with
 adaptions of OpenCL 3.0.
-
-In addition to producing an easily portable open source OpenCL
-implementation, another major goal of the project is improving
-performance portability of OpenCL programs with compiler
-optimizations, reducing the need for target-dependent manual
-optimizations. At the core of pocl is a set of LLVM passes
-used to statically parallelize multiple work-items with the kernel
-compiler, even in the presence of work-group barriers. This enables
-parallelization of the fine-grained static concurrency in the work
-groups in multiple ways (SIMD, VLIW, superscalar,...).
-
-The code base is modularized to allow easy adding of new "device drivers"
-in the host-device layer. A generic multithreaded "target driver" is
-included. It allows running OpenCL applications on a host that supports
-the pthread library with multithreading at the work group granularity.
-
-EOM
-}
-]

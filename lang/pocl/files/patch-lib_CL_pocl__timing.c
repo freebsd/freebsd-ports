@@ -1,6 +1,6 @@
---- lib/CL/pocl_timing.c.orig	2022-06-10 10:09:05 UTC
+--- lib/CL/pocl_timing.c.orig	2025-05-21 11:53:16 UTC
 +++ lib/CL/pocl_timing.c
-@@ -69,8 +69,8 @@ uint64_t pocl_gettimemono_ns() {
+@@ -74,8 +74,8 @@ uint64_t pocl_gettimemono_ns() {
    struct timespec timespec;
  # ifdef CLOCK_MONOTONIC_RAW /* Linux */
    clock_gettime(CLOCK_MONOTONIC_RAW, &timespec);

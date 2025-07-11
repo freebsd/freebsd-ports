@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+#
+
+# PROVIDE: pocld
+# REQUIRE: NETWORKING sysctl
+# KEYWORD: shutdown
+#
+# To enable this service, place
+# pocld_enable="YES"
+# in /etc/rc.conf[.local]
+
+. /etc/rc.subr
+
+name="pocld"
+rcvar=pocld_enable
+
+# read settings, set defaults
+load_rc_config ${name}
+
+: ${pocld_enable:="NO"}
+#: ${pocld_args:="-a localhost -p 6060"}
+
+command="/usr/local/bin/${name}"
+pidfile="/var/run/${name}.pid"
+extra_commands="reload"
+
+run_rc_command "$1"

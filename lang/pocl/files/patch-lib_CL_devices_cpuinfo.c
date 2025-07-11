@@ -1,10 +1,10 @@
---- lib/CL/devices/cpuinfo.c.orig	2022-06-10 10:09:05 UTC
+--- lib/CL/devices/cpuinfo.c.orig	2025-05-21 11:53:16 UTC
 +++ lib/CL/devices/cpuinfo.c
 @@ -34,6 +34,12 @@
  #include "config.h"
  #include "cpuinfo.h"
  
-+#ifdef HAVE_SYSCTL_H
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
 +#  include <sys/types.h>
 +#  include <sys/sysctl.h>
 +#endif
@@ -76,8 +76,8 @@
   * Detects the number of parallel hardware threads supported by
   * the CPU by parsing the cpuinfo.
 @@ -235,6 +281,19 @@ pocl_cpuinfo_detect_compute_unit_count()
-     } 
-   return -1;  
+     }
+   return -1;
  }
 +#else
 +/**
@@ -103,9 +103,9 @@
    /* default vendor and vendor_id, in case it cannot be found by other means */
    device->vendor = cpuvendor_default;
    if (device->vendor_id == 0)
-@@ -404,7 +464,26 @@ pocl_cpuinfo_get_cpu_name_and_vendor(cl_device_id devi
-   char *new_name = (char*)malloc (len);
-   snprintf (new_name, len, "%s-%s", device->short_name, start);
+@@ -408,7 +468,26 @@ pocl_cpuinfo_get_cpu_name_and_vendor(cl_device_id devi
+   snprintf (new_name, len, "%s-%s-%s", device->short_name,
+             (device->llvm_cpu ? device->llvm_cpu : ""), start);
    device->long_name = new_name;
 +#elif defined(HAVE_SYSCTL_H)
 +  int mib[2];
@@ -130,7 +130,7 @@
    /* If the vendor_id field is still empty, we should get the PCI ID associated
     * with the CPU vendor (if there is one), to be ready for the (currently
     * provisional) OpenCL 3.0 specification that has finally clarified the
-@@ -415,13 +494,23 @@ pocl_cpuinfo_get_cpu_name_and_vendor(cl_device_id devi
+@@ -419,13 +498,23 @@ pocl_cpuinfo_get_cpu_name_and_vendor(cl_device_id devi
     */
    if (!device->vendor_id)
      {
