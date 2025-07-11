@@ -1,7 +1,10 @@
 PORTNAME=	ares
 DISTVERSIONPREFIX=	v
 DISTVERSION=	145
+PORTREVISION=	1
 CATEGORIES=	emulators
+MASTER_SITES=	https://github.com/${PORTNAME}-emulator/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
+DISTNAME=	${PORTNAME}-source
 
 MAINTAINER=	bsdcode@disroot.org
 COMMENT=	Multi-system emulator
@@ -13,8 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	librashader>0:devel/librashader
 
 USES=		cmake compiler:c++17-lang gl gnome pkgconfig xorg
-USE_GITHUB=	yes
-GH_ACCOUNT=	ares-emulator
 USE_GL=		opengl
 USE_GNOME=	gtk30
 USE_XORG=	x11 xext xrandr xrender
@@ -30,6 +31,8 @@ CMAKE_OFF=	ARES_BUILD_LOCAL \
 
 EXTRACT_AFTER_ARGS=	--exclude thirdparty/librashader \
 			--no-same-owner --no-same-permissions
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 OPTIONS_DEFINE=			CHD SDL TOOLS
 OPTIONS_DEFAULT=		A26 ALSA AO CHD CV FC GB GBA LIBRASHADER \
