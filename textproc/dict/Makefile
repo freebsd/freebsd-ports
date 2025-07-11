@@ -12,9 +12,6 @@ WWW=		https://www.dict.org/ \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Depends on expiring devel/libmaa
-EXPIRATION_DATE=2025-09-30
-
 LIB_DEPENDS=	libmaa.so:devel/libmaa
 
 USES=		bison gmake libtool:build localbase

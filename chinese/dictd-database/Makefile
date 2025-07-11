@@ -10,9 +10,6 @@ COMMENT=	Chinese <-> English dictd words database
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Depends on expiring net/dictd
-EXPIRATION_DATE=2025-09-30
-
 RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:net/dictd
 
 NO_BUILD=	yes

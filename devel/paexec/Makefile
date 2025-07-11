@@ -10,9 +10,6 @@ WWW=		https://sourceforge.net/projects/paexec/
 
 LICENSE=	MIT
 
-DEPRECATED=	Depends on expiring devel/mk-configure
-EXPIRATION_DATE=2025-09-30
-
 BUILD_DEPENDS=	mkcmake:devel/mk-configure \
 		runawk:lang/runawk
 LIB_DEPENDS=	libmaa.so:devel/libmaa

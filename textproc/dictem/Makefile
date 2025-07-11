@@ -11,9 +11,6 @@ WWW=		https://sourceforge.net/projects/dictem/
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Depends on expiring textproc/dict
-EXPIRATION_DATE=2025-09-30
-
 RUN_DEPENDS=	${LOCALBASE}/bin/dict:textproc/dict
 
 USES=		emacs
