@@ -1,5 +1,5 @@
 PORTNAME=	angie-module-set-misc
-GH_TUPLE=	vision5:ngx_devel_kit:v0.3.3:ndk
+GH_TUPLE=	vision5:ngx_devel_kit:v0.3.4:ndk
 GH_TUPLE+=	openresty:set-misc-nginx-module:v0.33:module
 
 COMMENT=	Angie set-misc dynamic module
