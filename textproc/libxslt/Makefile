@@ -12,6 +12,9 @@ WWW=		https://gitlab.gnome.org/GNOME/libxslt/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/Copyright
 
+DEPRECATED=	unmaintained with multiple unfixed security vulnerabilities
+EXPIRATION_DATE=2025-09-12
+
 # See note in textproc/libxml2 for why this port uses autotools
 USES=		cpe gmake gnome libtool localbase:ldflags pathfix pkgconfig tar:xz
 CPE_VENDOR=	xmlsoft

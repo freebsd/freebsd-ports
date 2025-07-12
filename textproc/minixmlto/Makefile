@@ -9,6 +9,9 @@ WWW=		https://github.com/bapt/minixmlto
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=     Depends on vulnerable unmaintained libxslt
+EXPIRATION_DATE=2025-09-12
+
 RUN_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 		xsltproc:textproc/libxslt \
 		html2text:textproc/html2text \

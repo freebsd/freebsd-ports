@@ -1,3 +1,110 @@
+  <vuln vid="b0a3466f-5efc-11f0-ae84-99047d0a6bcc">
+    <topic>libxslt -- unmaintained, with multiple unfixed vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libxslt</name>
+	<range><lt>2</lt></range> <!-- adjust should libxslt ever be fixed -->
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alan Coopersmith reports:</p>
+	<blockquote cite="https://www.openwall.com/lists/oss-security/2025/07/11/2">
+	  <p>On 6/16/25 15:12, Alan Coopersmith wrote:</p>
+	  <p><em>
+	    BTW, users of libxml2 may also be using its sibling project, libxslt,
+	    which currently has no active maintainer, but has three unfixed security issues
+	    reported against it according to
+	    <a href="https://gitlab.gnome.org/Teams/Releng/security/-/wikis/2025#libxml2-and-libxslt">
+		https://gitlab.gnome.org/Teams/Releng/security/-/wikis/2025#libxml2-and-libxslt</a>
+	  </em></p>
+	  <p>2 of the 3 have now been disclosed:</p>
+	  <p>(CVE-2025-7424) libxslt: Type confusion in xmlNode.psvi between stylesheet and source nodes<br />
+	    <a href="https://gitlab.gnome.org/GNOME/libxslt/-/issues/139">https://gitlab.gnome.org/GNOME/libxslt/-/issues/139</a>
+	    <a href="https://project-zero.issues.chromium.org/issues/409761909">https://project-zero.issues.chromium.org/issues/409761909</a></p>
+	  <p>(CVE-2025-7425) libxslt: heap-use-after-free in xmlFreeID caused by `atype` corruption<br />
+	    <a href="https://gitlab.gnome.org/GNOME/libxslt/-/issues/140">https://gitlab.gnome.org/GNOME/libxslt/-/issues/140</a><br /><a href="https://project-zero.issues.chromium.org/issues/410569369">https://project-zero.issues.chromium.org/issues/410569369</a></p>
+	  <p>Engineers from Apple &amp; Google have proposed patches in the GNOME gitlab issues,
+	  but neither has had a fix applied to the git repo since there is currently no
+	    maintainer for libxslt.</p>
+	</blockquote>
+	<p>Note that a fourth vulnerability was reported on June 18, 2025, which remains undisclosed to date (GNOME libxslt issue 148, link below), see
+	  <a href="https://gitlab.gnome.org/Teams/Releng/security/-/wikis/2025#libxml2-and-libxslt">
+	    https://gitlab.gnome.org/Teams/Releng/security/-/wikis/2025#libxml2-and-libxslt</a>
+	</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-7424</cvename>
+      <cvename>CVE-2025-7425</cvename>
+      <url>https://gitlab.gnome.org/Teams/Releng/security/-/wikis/2025#libxml2-and-libxslt</url>
+      <url>https://gitlab.gnome.org/GNOME/libxslt/-/issues/139</url>
+      <url>https://gitlab.gnome.org/GNOME/libxslt/-/issues/140</url>
+      <url>https://gitlab.gnome.org/GNOME/libxslt/-/issues/144</url>
+      <url>https://gitlab.gnome.org/GNOME/libxslt/-/issues/148</url>
+      <url>https://gitlab.gnome.org/GNOME/libxslt/-/commit/923903c59d668af42e3144bc623c9190a0f65988</url>
+    </references>
+    <dates>
+      <discovery>2025-04-10</discovery>
+      <entry>2025-07-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="abbc8912-5efa-11f0-ae84-99047d0a6bcc">
+    <topic>libxml2 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>3.0</lt></range> <!-- needs update once fixed version appears -->
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alan Coopersmith reports:</p>
+	<blockquote cite="https://www.openwall.com/lists/oss-security/2025/06/16/6">
+	  <p>As discussed in
+	    <a href="https://gitlab.gnome.org/GNOME/libxml2/-/issues/913">https://gitlab.gnome.org/GNOME/libxml2/-/issues/913</a> the
+	  security policy of libxml2 has been changed to disclose vulnerabilities
+	  before fixes are available so that people other than the maintainer can
+	    contribute to fixing security issues in this library.</p>
+	  <p>As part of this, the following 5 CVE's have been disclosed recently:</p>
+	  <p>(CVE-2025-49794) Heap use after free (UAF) leads to Denial of service (DoS)
+	    <a href="https://gitlab.gnome.org/GNOME/libxml2/-/issues/931">https://gitlab.gnome.org/GNOME/libxml2/-/issues/931</a> [...]</p>
+	  <p>(CVE-2025-49795) Null pointer dereference leads to Denial of service (DoS)
+	    <a href="https://gitlab.gnome.org/GNOME/libxml2/-/issues/932">https://gitlab.gnome.org/GNOME/libxml2/-/issues/932</a> [...]</p>
+	  <p>(CVE-2025-49796) Type confusion leads to Denial of service (DoS)
+	    <a href="https://gitlab.gnome.org/GNOME/libxml2/-/issues/933">https://gitlab.gnome.org/GNOME/libxml2/-/issues/933</a> [...]</p>
+	  <p>For all three of the above, note that upstream is considering removing Schematron support completely, as discussed in
+	    <a href="https://gitlab.gnome.org/GNOME/libxml2/-/issues/935">https://gitlab.gnome.org/GNOME/libxml2/-/issues/935</a>.</p>
+	  <p>(CVE-2025-6021) Integer Overflow Leading to Buffer Overflow in xmlBuildQName()
+	    <a href="https://gitlab.gnome.org/GNOME/libxml2/-/issues/926">https://gitlab.gnome.org/GNOME/libxml2/-/issues/926</a> [...]</p>
+	  <p>(CVE-2025-6170) Stack-based Buffer Overflow in xmllint Shell
+	    <a href="https://gitlab.gnome.org/GNOME/libxml2/-/issues/941">https://gitlab.gnome.org/GNOME/libxml2/-/issues/941</a> [...]</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6021</cvename>
+      <cvename>CVE-2025-6170</cvename>
+      <cvename>CVE-2025-49794</cvename>
+      <cvename>CVE-2025-49795</cvename>
+      <cvename>CVE-2025-49795</cvename>
+      <url>https://www.openwall.com/lists/oss-security/2025/06/16/6</url>
+      <url>https://gitlab.gnome.org/Teams/Releng/security/-/wikis/2025#libxml2-and-libxslt</url>
+      <url>https://gitlab.gnome.org/GNOME/libxml2/-/issues/913</url>
+      <url>https://gitlab.gnome.org/GNOME/libxml2/-/issues/931</url>
+      <url>https://gitlab.gnome.org/GNOME/libxml2/-/issues/932</url>
+      <url>https://gitlab.gnome.org/GNOME/libxml2/-/issues/933</url>
+      <url>https://gitlab.gnome.org/GNOME/libxml2/-/issues/935</url>
+      <url>https://gitlab.gnome.org/GNOME/libxml2/-/issues/926</url>
+      <url>https://gitlab.gnome.org/GNOME/libxml2/-/issues/941</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-07-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="61d74f80-5e9e-11f0-8baa-8447094a420f">
     <topic>mod_http2 -- Multiple vulnerabilities</topic>
     <affects>

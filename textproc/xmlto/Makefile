@@ -17,6 +17,9 @@ WWW=		https://pagure.io/xmlto/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on vulnerable unmaintained libxslt
+EXPIRATION_DATE=2025-09-12
+
 BUILD_DEPENDS=	${BASH_CMD}:shells/bash \
 		${GETOPT_CMD}:misc/getopt \
 		xmllint:textproc/libxml2 \
@@ -27,7 +30,18 @@ BUILD_DEPENDS=	${BASH_CMD}:shells/bash \
 		docbook-xml>0:textproc/docbook-xml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USES=		tar:bzip2
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+CONFIGURE_ARGS=	BASH=${BASH_CMD} GETOPT=${GETOPT_CMD} PDFXMLTEX=${PDFXMLTEX_CMD}
+MAKE_ENV+=	HOME=/dev/null
+
 SUB_FILES=	pkg-message
+
+PORTDOCS=	AUTHORS ChangeLog NEWS THANKS
+# these documentation files do not convey information useful for
+# the FreeBSD port at this time, or are provided by the ports framework:
+# PORTDOCS+=	COPYING FAQ README
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_GROUP=		BACKEND
@@ -37,21 +51,12 @@ DBLATEX_DESC=		Add dependency on DBlatex (DB for DocBook)
 FOP_DESC=		Add dependency on FOP (requires Java)
 PASSIVETEX_DESC=	Add dependency on XMLTeX/PassiveTeX
 
-USES=		tar:bzip2
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	BASH=${BASH_CMD} GETOPT=${GETOPT_CMD} PDFXMLTEX=${PDFXMLTEX_CMD}
-MAKE_ENV+=	HOME=/dev/null
-
 BASH_CMD=	${LOCALBASE}/bin/bash
 GETOPT_CMD=	${LOCALBASE}/bin/getopt
-XSL_DIR=	${LOCALBASE}/share/xsl/docbook
 PDFXMLTEX_CMD=	${LOCALBASE}/bin/pdftex
-
-PORTDOCS=	AUTHORS ChangeLog NEWS THANKS
-# these documentation files do not convey information useful for
-# the FreeBSD port at this time, or are provided by the ports framework:
-# PORTDOCS+=	COPYING FAQ README
+.ifnmake portclippy
+XSL_DIR=	${LOCALBASE}/share/xsl/docbook
+.endif
 
 .include <bsd.port.pre.mk>
 
