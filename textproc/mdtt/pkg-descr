@@ -1,0 +1,10 @@
+mdtt is a terminal-based markdown table editor that makes editing markdown
+tables easier with a slick TUI (Terminal User Interface) and vim-style
+keybindings.
+
+Features:
+
+- Terminal-based interface for editing markdown tables
+- Vim-style keybindings for navigation and editing
+- Easy table creation and modification
+- Lightweight and fast

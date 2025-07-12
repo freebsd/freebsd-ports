@@ -473,6 +473,7 @@
     SUBDIR += mdbook-linkcheck
     SUBDIR += mdbook-mermaid
     SUBDIR += mdq
+    SUBDIR += mdtt
     SUBDIR += meilisearch
     SUBDIR += meld
     SUBDIR += metauml
