@@ -1,6 +1,6 @@
 PORTNAME=	dtrace-toolkit
 PORTVERSION=	1.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -9,6 +9,8 @@ WWW=		https://github.com/opendtrace/toolkit
 
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/Docs/cddl1.txt
+
+RUN_DEPENDS=	ksh93:shells/ksh
 
 USES=		perl5 python ruby shebangfix
 USE_GITHUB=	yes
