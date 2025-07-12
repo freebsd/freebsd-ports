@@ -11,8 +11,6 @@ WWW=		https://github.com/uNetworking/uSockets
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_riscv64=		fails to build: Hard-float 'd' ABI can't be used for a target that doesn't support the D instruction set extension
-
 USES=		compiler:c++17-lang ssl
 USE_LDCONFIG=	yes
 
