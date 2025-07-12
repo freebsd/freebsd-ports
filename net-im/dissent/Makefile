@@ -4,7 +4,7 @@ DISTVERSION=	0.0.34
 PORTREVISION=	4
 CATEGORIES=	net-im
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny native Discord app
 WWW=		https://github.com/diamondburned/dissent
 
