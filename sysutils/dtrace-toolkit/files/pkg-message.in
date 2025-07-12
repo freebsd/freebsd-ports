@@ -1,23 +1,24 @@
 [
 { type: install
   message: <<EOM
-Many of the DTraceToolkit scripts do not work on FreeBSD at the moment,
-usually because:
-- They are using Solaris-specific features
-- They use probes which are not supported yet on FreeBSD
-
-Some popular scripts are installed at:
+Some of the DTrace Toolkit scripts are installed at:
 
     %%PREFIX%%/bin
+
+Their manual pages are installed into the standard manual page directories
+as defined in hier(7).
 
 The rest of the scripts and other toolkit files can be found in:
 
     %%DATADIR%%
 
-To view the manual pages in the "1m" manual section,
-the section has to be specified explicitly, e.g.:
+The DTrace Toolkit documents those programs in a manual section "1m".
+Use the -S flag to access this non-standard section:
 
-    man -s 1m fddist
+    man -S 1m fddist
+
+Note that some of the DTrace Toolkit scripts have not been ported
+to the currently supported FreeBSD versions yet.
 EOM
 }
 ]
