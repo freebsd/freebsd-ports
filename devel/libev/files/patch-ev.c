@@ -1,6 +1,15 @@
---- ev.c.orig	2015-12-20 21:12:53 UTC
+--- ev.c.orig	2020-03-18 12:27:32 UTC
 +++ ev.c
-@@ -2736,7 +2736,7 @@ ev_recommended_backends (void) EV_THROW
+@@ -507,7 +507,7 @@
+ #endif
+ 
+ #if EV_USE_INOTIFY
+-# include <sys/statfs.h>
++# include <sys/mount.h>
+ # include <sys/inotify.h>
+ /* some very old inotify.h headers don't have IN_DONT_FOLLOW */
+ # ifndef IN_DONT_FOLLOW
+@@ -3149,7 +3149,7 @@ ev_recommended_backends (void) EV_NOEXCEPT
  {
    unsigned int flags = ev_supported_backends ();
  

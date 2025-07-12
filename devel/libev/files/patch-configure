@@ -1,6 +1,6 @@
---- configure.orig	2015-12-20 21:12:45 UTC
+--- configure.orig	2020-03-18 12:27:26 UTC
 +++ configure
-@@ -3879,14 +3879,6 @@ else
+@@ -3954,14 +3954,6 @@ fi
  fi
  
  

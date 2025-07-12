@@ -1,6 +1,6 @@
---- Makefile.in.orig	2015-12-20 21:12:45 UTC
+--- Makefile.in.orig	2020-03-18 12:27:30 UTC
 +++ Makefile.in
-@@ -343,7 +343,7 @@ EXTRA_DIST = LICENSE Changes libev.m4 au
+@@ -357,7 +357,7 @@ man_MANS = ev.3
  	     ev.3 ev.pod Symbols.ev Symbols.event
  
  man_MANS = ev.3
