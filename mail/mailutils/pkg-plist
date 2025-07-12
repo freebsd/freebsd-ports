@@ -349,6 +349,7 @@ share/aclocal/mailutils.m4
 %%NLS%%share/locale/fi/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/id/LC_MESSAGES/mailutils.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/mailutils.mo
