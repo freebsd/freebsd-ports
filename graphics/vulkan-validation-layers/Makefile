@@ -1,10 +1,9 @@
 PORTNAME=	vulkan-validation-layers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.320
-PORTREVISION=	1
+DISTVERSION=	1.4.321
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	atanubis484@gmail.com
 COMMENT=	Validation layers for the Vulkan graphics API
 WWW=		https://github.com/KhronosGroup/Vulkan-ValidationLayers
 
@@ -20,20 +19,25 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ValidationLayers
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-430-g2a611a9:headers/SPIRV-Headers
+USE_LDCONFIG=	yes
 CMAKE_OFF=	BUILD_TESTS
 
-OPTIONS_DEFINE=	WAYLAND XCB XLIB
-OPTIONS_DEFAULT=WAYLAND XCB XLIB
+PLIST_FILES=	lib/libVkLayer_khronos_validation.so \
+		share/vulkan/explicit_layer.d/VkLayer_khronos_validation.json
+
+OPTIONS_DEFINE=		WAYLAND XCB XLIB
+OPTIONS_DEFAULT=	WAYLAND XCB XLIB
+
+XCB_DESC=		${X11_DESC} via libxcb
+XLIB_DESC=		${X11_DESC} via libX11
 
 WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
 WAYLAND_CMAKE_BOOL=	BUILD_WSI_WAYLAND_SUPPORT
 
-XCB_DESC=		${X11_DESC} via libxcb
 XCB_USES=		xorg
 XCB_USE=		XORG=xcb
 XCB_CMAKE_BOOL=		BUILD_WSI_XCB_SUPPORT
 
-XLIB_DESC=		${X11_DESC} via libX11
 XLIB_USES=		xorg
 XLIB_USE=		XORG=x11,xrandr
 XLIB_CMAKE_BOOL=	BUILD_WSI_XLIB_SUPPORT
