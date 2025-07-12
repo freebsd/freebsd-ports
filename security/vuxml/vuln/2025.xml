@@ -5,6 +5,14 @@
 	<name>libxslt</name>
 	<range><lt>2</lt></range> <!-- adjust should libxslt ever be fixed -->
       </package>
+      <package>
+	<name>linux-c7-libxslt</name>
+	<range><lt>2</lt></range> <!-- adjust should libxslt ever be fixed -->
+      </package>
+      <package>
+	<name>linux-rl9-libxslt</name>
+	<range><lt>2</lt></range> <!-- adjust should libxslt ever be fixed -->
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -55,6 +63,14 @@
     <affects>
       <package>
 	<name>libxml2</name>
+	<range><lt>3.0</lt></range> <!-- needs update once fixed version appears -->
+      </package>
+      <package>
+	<name>linux-c7-libxml2</name>
+	<range><lt>3.0</lt></range> <!-- needs update once fixed version appears -->
+      </package>
+      <package>
+	<name>linux-rl9-libxml2</name>
 	<range><lt>3.0</lt></range> <!-- needs update once fixed version appears -->
       </package>
     </affects>
