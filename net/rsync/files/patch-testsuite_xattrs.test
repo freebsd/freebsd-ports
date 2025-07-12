@@ -1,0 +1,67 @@
+--- a/testsuite/xattrs.test.orig	2022-10-20 16:09:26.000000000 +0000
++++ b/testsuite/xattrs.test	2025-06-29 07:49:45.880992000 +0000
+@@ -10,7 +10,14 @@
+ 
+ $RSYNC -VV | grep '"xattrs": true' >/dev/null || test_skipped "Rsync is configured without xattr support"
+ 
++CYGWIN=0
++
+ case "$HOST_OS" in
++cygwin*)
++    CYGWIN=1
++esac
++
++case "$HOST_OS" in
+ darwin*)
+     xset() {
+ 	xnam="$1"
+@@ -80,6 +87,9 @@
+ echo deep >"$fromdir/foo/file3"
+ echo normal >"$fromdir/file4"
+ echo deeper >"$fromdir/foo/bar/file5"
++if [ $CYGWIN -eq 0 ]; then
++    echo longxattrname >"$fromdir/file7"
++fi
+ 
+ makepath "$chkdir/foo"
+ echo wow >"$chkdir/file1"
+@@ -87,6 +97,10 @@
+ 
+ dirs='foo foo/bar'
+ files='file0 file1 file2 foo/file3 file4 foo/bar/file5'
++if [ $CYGWIN -eq 0 ]
++then
++        files="$files file7"
++fi
+ 
+ uid_gid=`"$TOOLDIR/tls" "$fromdir/foo" | sed 's/^.* \([0-9][0-9]*\)\.\([0-9][0-9]*\) .*/\1:\2/'`
+ 
+@@ -125,6 +139,16 @@
+ xset user.foo 'old foo' "$chkdir/foo/file3"
+ xset $RUSR.equal 'this long attribute should remain the same and not need to be transferred' "$chkdir/foo/file3"
+ 
++if [ $CYGWIN -eq 0 ] ; then
++# Generate xattr names
++SEQ=`seq 1 200`
++xset user."`printf -- 'A%0.s' $SEQ`" 'first xattr' file7
++xset user."`printf -- 'B%0.s' $SEQ`" 'second xattr' file7
++xset user."`printf -- 'C%0.s' $SEQ`" 'third xattr' file7
++xset user."`printf -- 'D%0.s' $SEQ`" 'another xattr' file7
++xset user."`printf -- 'E%0.s' $SEQ`" 'final xattr' file7
++fi
++
+ case $0 in
+ *hlink*)
+     ln foo/bar/file5 foo/bar/file6 || test_skipped "Can't create hardlink"
+@@ -234,6 +258,11 @@
+ 
+ cd "$todir"
+ xls file1 file2 | diff $diffopt "$scratchdir/xattrs.txt" -
++
++cd "$fromdir"
++rm -rf "$todir"
++mkfifo fifo1
++checktee "$RSYNC -avX --specials  $XFILT $dashH --super . '$chkdir/'" "$fromdir" "$chkdir"
+ 
+ # The script would have aborted on error, so getting here means we've won.
+ exit 0
