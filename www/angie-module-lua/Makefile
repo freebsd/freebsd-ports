@@ -1,7 +1,7 @@
 PORTNAME=	angie-module-lua
 GH_TUPLE=	openresty:lua-nginx-module:v0.10.28:lua
 GH_TUPLE+=	openresty:stream-lua-nginx-module:v0.0.16:lua_stream
-GH_TUPLE+=	vision5:ngx_devel_kit:v0.3.3:ndk
+GH_TUPLE+=	vision5:ngx_devel_kit:v0.3.4:ndk
 
 COMMENT=	Angie Lua dynamic module
 
