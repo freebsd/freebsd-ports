@@ -1,5 +1,5 @@
 PORTNAME=	angie-module-ndk
-GH_TUPLE=	vision5:ngx_devel_kit:v0.3.3:module
+GH_TUPLE=	vision5:ngx_devel_kit:v0.3.4:module
 
 COMMENT=	Angie NDK dynamic module
 
