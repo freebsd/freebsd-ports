@@ -1,5 +1,5 @@
 PORTNAME?=	angie
-DISTVERSION=	1.9.1
+DISTVERSION=	1.10.0
 CATEGORIES+=	www
 MASTER_SITES+=	https://download.angie.software/files/:angie
 DISTNAME=	angie-${DISTVERSIONFULL}
@@ -32,8 +32,8 @@ USES+=		localbase:ldflags ssl
 USE_GITHUB=	nodefault
 
 HAS_CONFIGURE?=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/angie \
-		--conf-path=${PREFIX}/etc/angie/angie.conf \
+CONFIGURE_ARGS=	--prefix=${ETCDIR} \
+		--conf-path=${ETCDIR}/angie.conf \
 		--error-log-path=${LOGDIR}/error.log \
 		--http-log-path=${LOGDIR}/access.log \
 		--lock-path=${RUNDIR}/angie.lock \
@@ -112,6 +112,14 @@ OPTIONS_DEFAULT?=	DEBUG
 OPTIONS_SUB=		yes
 DEBUG_DESC?=		Include debug version
 
+.if ${PORTNAME} == angie
+OPTIONS_DEFINE+=	ACME
+OPTIONS_DEFAULT+=	ACME
+ACME_DESC=		ACME client module
+ACME_CONFIGURE_ON=	--with-http_acme_module \
+			--http-acme-client-path=${ETCDIR}/acme-client
+.endif
+
 .include <bsd.port.options.mk>
 
 post-patch-DEBUG-on:
@@ -140,13 +148,16 @@ post-build-DEBUG-on:
 
 .if ${PORTNAME} == angie
 do-install:
-	${MKDIR} ${STAGEDIR}${CACHEDIR}
-	${MKDIR} ${STAGEDIR}${DBDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${ETCDIR}/http.d
-	${MKDIR} ${STAGEDIR}${ETCDIR}/stream.d
-	${MKDIR} ${STAGEDIR}${MODDIR}
-	${MKDIR} ${STAGEDIR}${WWWDIR}/html
+	${MKDIR} ${STAGEDIR}${CACHEDIR} \
+		 ${STAGEDIR}${DBDIR} \
+		 ${STAGEDIR}${DOCSDIR} \
+		 ${STAGEDIR}${ETCDIR}/http.d \
+		 ${STAGEDIR}${ETCDIR}/stream.d \
+		 ${STAGEDIR}${MODDIR} \
+		 ${STAGEDIR}${WWWDIR}/html
+.  if ${PORT_OPTIONS:MACME}
+	${MKDIR} ${STAGEDIR}${ETCDIR}/acme-client
+.  endif
 
 	${RLN} ${STAGEDIR}${MODDIR} ${STAGEDIR}${ETCDIR}/modules
 
@@ -156,13 +167,13 @@ do-install:
 	${LN} -fs angie-nodebug ${STAGEDIR}${PREFIX}/sbin/angie
 
 	${INSTALL_MAN} ${WRKSRC}/objs/angie.8 ${STAGEDIR}${PREFIX}/share/man/man8
-.for i in CHANGES CHANGES.ru
+.  for i in CHANGES CHANGES.ru
 	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+.  endfor
 
-.for i in fastcgi.conf fastcgi_params mime.types scgi_params uwsgi_params
+.  for i in fastcgi.conf fastcgi_params mime.types scgi_params uwsgi_params
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${STAGEDIR}${ETCDIR}/${i}.sample
-.endfor
+.  endfor
 	${INSTALL_DATA} ${WRKSRC}/conf/prometheus_all.conf \
 	    ${STAGEDIR}${ETCDIR}/prometheus_all.conf.sample
 
@@ -172,13 +183,13 @@ do-install:
 	    ${STAGEDIR}${ETCDIR}/http.d
 	${INSTALL_DATA} ${WRKDIR}/example.conf.sample \
 	    ${STAGEDIR}${ETCDIR}/stream.d
-.for i in 50x.html index.html
+.  for i in 50x.html index.html
 	${INSTALL_DATA} ${WRKSRC}/html/${i} ${STAGEDIR}${WWWDIR}/html/${i}
-.endfor
+.  endfor
 
 do-install-DEBUG-on:
 	${INSTALL} ${COPY} -m ${BINMODE} ${WRKSRC_DEBUG}/objs/angie \
 	    ${STAGEDIR}${PREFIX}/sbin/angie-debug
-.endif
+.endif # ${PORTNAME} == angie
 
 .include <bsd.port.mk>

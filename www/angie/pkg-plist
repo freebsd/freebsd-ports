@@ -9,6 +9,7 @@
 @dir %%CACHEDIR%%
 @dir %%DBDIR%%
 @dir %%MODDIR%%
+%%ACME%%@dir %%ETCDIR%%/acme-client
 
 %%ETCDIR%%/modules
 
