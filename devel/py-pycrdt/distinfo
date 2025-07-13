@@ -1,6 +1,6 @@
-TIMESTAMP = 1751208164
-SHA256 (pycrdt-0.12.23.tar.gz) = bd906aea92eb093cd4134f44d1335046e5ebd689877669a275147657ae4e9ae3
-SIZE (pycrdt-0.12.23.tar.gz) = 76594
+TIMESTAMP = 1752266122
+SHA256 (pycrdt-0.12.25.tar.gz) = b671565064b67e94b80b294467f70cc584781a6246c72206e451eeb05429e847
+SIZE (pycrdt-0.12.25.tar.gz) = 76689
 SHA256 (rust/crates/arc-swap-1.7.1.crate) = 69f7f8c3906b62b754cd5326047894316021dcfe5a194c8ea52bdd94934a3457
 SIZE (rust/crates/arc-swap-1.7.1.crate) = 68512
 SHA256 (rust/crates/async-lock-3.4.0.crate) = ff6e472cdea888a4bd64f342f09b3f50e1886d32afe8df3d663c01140b811b18
@@ -131,5 +131,5 @@ SHA256 (rust/crates/windows_x86_64_gnullvm-0.52.6.crate) = 24d5b23dc417412679681
 SIZE (rust/crates/windows_x86_64_gnullvm-0.52.6.crate) = 435707
 SHA256 (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec
 SIZE (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 832564
-SHA256 (rust/crates/yrs-0.23.5.crate) = 197c2b4b298f35c3ba4d549884ac872a961112095b29f173ab45e3d5cf609018
-SIZE (rust/crates/yrs-0.23.5.crate) = 265011
+SHA256 (rust/crates/yrs-0.24.0.crate) = f904a99678a852d7cbc6958c94087f739c10cfb19642635951219c525a5fdb89
+SIZE (rust/crates/yrs-0.24.0.crate) = 266544
