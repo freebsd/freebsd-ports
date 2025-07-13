@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-deadline
-PORTVERSION=	1.28.0
+PORTVERSION=	1.29.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
