@@ -205,6 +205,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/github-authentication/dist/extension.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/github-authentication/images/icon.png
 %%DATADIR%%/resources/app/extensions/github-authentication/media/auth.css
+%%DATADIR%%/resources/app/extensions/github-authentication/media/code-icon.svg
 %%DATADIR%%/resources/app/extensions/github-authentication/media/favicon.ico
 %%DATADIR%%/resources/app/extensions/github-authentication/media/icon.png
 %%DATADIR%%/resources/app/extensions/github-authentication/media/index.html
@@ -693,9 +694,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/prompt-basics/language-configuration.json
 %%DATADIR%%/resources/app/extensions/prompt-basics/package.json
 %%DATADIR%%/resources/app/extensions/prompt-basics/package.nls.json
-%%DATADIR%%/resources/app/extensions/prompt-basics/snippets/chatmode.code-snippets
-%%DATADIR%%/resources/app/extensions/prompt-basics/snippets/instructions.code-snippets
-%%DATADIR%%/resources/app/extensions/prompt-basics/snippets/prompt.code-snippets
 %%DATADIR%%/resources/app/extensions/prompt-basics/syntaxes/prompt.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/pug/language-configuration.json
 %%DATADIR%%/resources/app/extensions/pug/package.json
@@ -1230,6 +1228,9 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/buffer/LICENSE
 %%DATADIR%%/resources/app/node_modules/buffer/index.js
 %%DATADIR%%/resources/app/node_modules/buffer/package.json
+%%DATADIR%%/resources/app/node_modules/bundle-name/index.js
+%%DATADIR%%/resources/app/node_modules/bundle-name/license
+%%DATADIR%%/resources/app/node_modules/bundle-name/package.json
 %%DATADIR%%/resources/app/node_modules/chownr/LICENSE
 %%DATADIR%%/resources/app/node_modules/chownr/chownr.js
 %%DATADIR%%/resources/app/node_modules/chownr/package.json
@@ -1282,6 +1283,13 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/deep-extend/index.js
 %%DATADIR%%/resources/app/node_modules/deep-extend/lib/deep-extend.js
 %%DATADIR%%/resources/app/node_modules/deep-extend/package.json
+%%DATADIR%%/resources/app/node_modules/default-browser-id/index.js
+%%DATADIR%%/resources/app/node_modules/default-browser-id/license
+%%DATADIR%%/resources/app/node_modules/default-browser-id/package.json
+%%DATADIR%%/resources/app/node_modules/default-browser/index.js
+%%DATADIR%%/resources/app/node_modules/default-browser/license
+%%DATADIR%%/resources/app/node_modules/default-browser/package.json
+%%DATADIR%%/resources/app/node_modules/default-browser/windows.js
 %%DATADIR%%/resources/app/node_modules/define-lazy-prop/index.js
 %%DATADIR%%/resources/app/node_modules/define-lazy-prop/license
 %%DATADIR%%/resources/app/node_modules/define-lazy-prop/package.json
@@ -1454,6 +1462,10 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/is-glob/LICENSE
 %%DATADIR%%/resources/app/node_modules/is-glob/index.js
 %%DATADIR%%/resources/app/node_modules/is-glob/package.json
+%%DATADIR%%/resources/app/node_modules/is-inside-container/cli.js
+%%DATADIR%%/resources/app/node_modules/is-inside-container/index.js
+%%DATADIR%%/resources/app/node_modules/is-inside-container/license
+%%DATADIR%%/resources/app/node_modules/is-inside-container/package.json
 %%DATADIR%%/resources/app/node_modules/is-number/LICENSE
 %%DATADIR%%/resources/app/node_modules/is-number/index.js
 %%DATADIR%%/resources/app/node_modules/is-number/package.json
@@ -1683,6 +1695,9 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/readable-stream/package.json
 %%DATADIR%%/resources/app/node_modules/readable-stream/readable-browser.js
 %%DATADIR%%/resources/app/node_modules/readable-stream/readable.js
+%%DATADIR%%/resources/app/node_modules/run-applescript/index.js
+%%DATADIR%%/resources/app/node_modules/run-applescript/license
+%%DATADIR%%/resources/app/node_modules/run-applescript/package.json
 %%DATADIR%%/resources/app/node_modules/safe-buffer/LICENSE
 %%DATADIR%%/resources/app/node_modules/safe-buffer/index.js
 %%DATADIR%%/resources/app/node_modules/safe-buffer/package.json
@@ -2047,6 +2062,8 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/media/code-icon.svg
 %%DATADIR%%/resources/app/out/media/codicon.ttf
 %%DATADIR%%/resources/app/out/media/github.svg
+%%DATADIR%%/resources/app/out/media/google-mono-dark.svg
+%%DATADIR%%/resources/app/out/media/google-mono-light.svg
 %%DATADIR%%/resources/app/out/media/google.svg
 %%DATADIR%%/resources/app/out/media/letterpress-dark.svg
 %%DATADIR%%/resources/app/out/media/letterpress-hcDark.svg
@@ -2061,10 +2078,10 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/base/node/cpuUsage.sh
 %%DATADIR%%/resources/app/out/vs/base/node/ps.sh
 %%DATADIR%%/resources/app/out/vs/base/node/terminateProcess.sh
-%%DATADIR%%/resources/app/out/vs/base/parts/sandbox/electron-sandbox/preload-aux.js
-%%DATADIR%%/resources/app/out/vs/base/parts/sandbox/electron-sandbox/preload.js
-%%DATADIR%%/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html
-%%DATADIR%%/resources/app/out/vs/code/electron-sandbox/workbench/workbench.js
+%%DATADIR%%/resources/app/out/vs/base/parts/sandbox/electron-browser/preload-aux.js
+%%DATADIR%%/resources/app/out/vs/base/parts/sandbox/electron-browser/preload.js
+%%DATADIR%%/resources/app/out/vs/code/electron-browser/workbench/workbench.html
+%%DATADIR%%/resources/app/out/vs/code/electron-browser/workbench/workbench.js
 %%DATADIR%%/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js
 %%DATADIR%%/resources/app/out/vs/code/node/cliProcessMain.js
 %%DATADIR%%/resources/app/out/vs/editor/common/languages/highlights/css.scm
@@ -2105,7 +2122,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/voiceRecordingStopped.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/warning.mp3
 %%DATADIR%%/resources/app/out/vs/platform/files/node/watcher/watcherMain.js
-%%DATADIR%%/resources/app/out/vs/platform/profiling/electron-sandbox/profileAnalysisWorkerMain.js
+%%DATADIR%%/resources/app/out/vs/platform/profiling/electron-browser/profileAnalysisWorkerMain.js
 %%DATADIR%%/resources/app/out/vs/platform/terminal/node/ptyHostMain.js
 %%DATADIR%%/resources/app/out/vs/workbench/api/node/extensionHostProcess.js
 %%DATADIR%%/resources/app/out/vs/workbench/api/worker/extensionHostWorkerMain.js
