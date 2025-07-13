@@ -3,11 +3,12 @@ include/cinnamon-desktop/libcinnamon-desktop/gnome-bg-crossfade.h
 include/cinnamon-desktop/libcinnamon-desktop/gnome-bg.h
 include/cinnamon-desktop/libcinnamon-desktop/gnome-desktop-thumbnail.h
 include/cinnamon-desktop/libcinnamon-desktop/gnome-desktop-utils.h
-include/cinnamon-desktop/libcinnamon-desktop/gnome-installer.h
+include/cinnamon-desktop/libcinnamon-desktop/gnome-idle-monitor.h
 include/cinnamon-desktop/libcinnamon-desktop/gnome-pnp-ids.h
 include/cinnamon-desktop/libcinnamon-desktop/gnome-rr-config.h
 include/cinnamon-desktop/libcinnamon-desktop/gnome-rr-labeler.h
 include/cinnamon-desktop/libcinnamon-desktop/gnome-rr.h
+include/cinnamon-desktop/libcinnamon-desktop/gnome-systemd.h
 include/cinnamon-desktop/libcinnamon-desktop/gnome-wall-clock.h
 include/cinnamon-desktop/libcinnamon-desktop/gnome-xkb-info.h
 include/cinnamon-desktop/libcvc/gvc-channel-map.h
