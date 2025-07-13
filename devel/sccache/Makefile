@@ -1,7 +1,6 @@
 PORTNAME=	sccache
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2
-PORTREVISION=	6
+DISTVERSION=	0.10.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -27,20 +26,14 @@ OPTIONS_DEFAULT=	DOCS
 
 PLIST_FILES=	bin/sccache \
 		bin/sccache-dist
-PORTDOCS=	README.md docs/Architecture.md docs/Azure.md docs/Caching.md \
-		docs/Configuration.md docs/Distributed.md \
-		docs/DistributedFreeBSD.md docs/DistributedQuickstart.md \
-		docs/GHA.md docs/Gcs.md docs/Jenkins.md docs/Local.md \
-		docs/Memcached.md docs/Redis.md docs/Releasing.md \
-		docs/ResponseFiles.md docs/Rust.md docs/S3.md docs/Webdav.md
+PORTDOCS=	*
 SUB_FILES=	pkg-message
 
 CARGO_FEATURES=	dist-client,dist-server
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/docs
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/${f}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
