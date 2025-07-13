@@ -1,0 +1,13 @@
+--- docs/reference/cinnamon/meson.build.orig	2025-02-09 15:54:24 UTC
++++ docs/reference/cinnamon/meson.build
+@@ -11,6 +11,10 @@ endif
+     ignore += 'cinnamon-recorder.h'
+ endif
+ 
++if not have_networkmanager
++    ignore += 'cinnamon-network-agent.h'
++endif
++
+ gnome.gtkdoc(
+     'cinnamon',
+     mode: 'xml',

@@ -1,6 +1,5 @@
 PORTNAME=	cinnamon
-PORTVERSION=	5.4.9
-PORTREVISION=	8
+DISTVERSION=	6.4.10
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -13,15 +12,17 @@ WWW=		https://github.com/linuxmint/cinnamon
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/EGL/eglmesaext.h:graphics/mesa-dri
+BUILD_DEPENDS=	${LOCALBASE}/include/EGL/eglmesaext.h:graphics/mesa-dri \
+		${PYTHON_PKGNAMEPREFIX}libsass>0:www/py-libsass@${PY_FLAVOR}
 LIB_DEPENDS=	libcjs.so:lang/cjs \
 		libmuffin.so:x11-wm/muffin \
 		libcinnamon-menu-3.so:x11/cinnamon-menus \
 		libdbus-1.so:devel/dbus \
 		libpolkit-agent-1.so:sysutils/polkit \
 		libatk-bridge-2.0.so:accessibility/at-spi2-core \
-		libsoup-2.4.so:devel/libsoup \
-		libxapp.so:x11/xapp
+		libxapp.so:x11/xapp \
+		libgcr-base-3.so:security/gcr3 \
+		libcinnamon-desktop.so:x11/cinnamon-desktop
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		gnome-themes-extra>3.0.0:x11-themes/gnome-themes-extra \
 		caribou>0:accessibility/caribou \
@@ -45,9 +46,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		${LOCALBASE}/lib/girepository-1.0/GSound-1.0.typelib:audio/gsound \
 		gnome-backgrounds>0:x11-themes/gnome-backgrounds \
 		metacity:x11-wm/metacity \
-		tint2:x11/tint
+		tint2:x11/tint \
+		lspci:sysutils/pciutils \
+		${LOCALBASE}/libexec/polkit-gnome-authentication-agent-1:sysutils/polkit-gnome \
+		${LOCALBASE}/libexec/cups-pk-helper-mechanism:print/cups-pk-helper \
+		${PYTHON_PKGNAMEPREFIX}tinycss2>0:textproc/py-tinycss2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR} \
+		xdg-open:devel/xdg-utils \
+		xdg-user-dirs-gtk>0:x11/xdg-user-dirs-gtk \
+		inxi:sysutils/inxi \
+		wget:ftp/wget
 
-USES=		compiler:c11 cpe gettext-runtime gettext-tools:run gl gnome gstreamer \
+USES=		compiler:c11 cpe gettext-runtime gettext-tools:run gl gnome \
 		meson perl5 pkgconfig python shebangfix xorg
 CPE_VENDOR=	linuxmint
 USE_GNOME=	cairo gdkpixbuf glib20 gtk30 intltool introspection libxml2 pygobject3
@@ -59,21 +69,28 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 
 SHEBANG_GLOB=	*.py
-SHEBANG_FILES=	files/* src/data-to-c.pl
+SHEBANG_FILES=	files/* src/data-to-c.pl data/theme/parse-sass.sh
 
 USE_LDCONFIG=	yes
+# These libs are found via rpath mechanism
+NO_SHLIB_REQUIRES_GLOB=	libmuffin-clutter-* libmuffin-cogl-*
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 MESON_ARGS=	-Ddisable_networkmanager=true
 
 GLIB_SCHEMAS=	org.cinnamon.gschema.xml
 
-OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_EXCLUDE=	DOCS
+OPTIONS_DEFINE=	DOCS NLS WAYLAND RECORDER
+OPTIONS_DEFAULT=	RECORDER
 OPTIONS_SUB=	yes
+
+RECORDER_DESC=	Build the cinnamon recorder into source
 
 DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
 DOCS_MESON_TRUE=	docs
+WAYLAND_MESON_TRUE=	wayland
+RECORDER_MESON_TRUE=	build_recorder
+RECORDER_USES=	gstreamer
 
 NLS_RUN_DEPENDS=	cinnamon-translations>0:misc/cinnamon-translations
 
@@ -94,14 +111,42 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -e "s|/usr/lib|${PREFIX}/lib|g"
 
 	@${FIND} ${WRKSRC} -name \* -type f | ${XARGS} ${EGREP} -l "/usr/bin" | \
-		${XARGS} ${REINPLACE_CMD} -e "s|/usr/bin|${PREFIX}/bin|g"
+		${XARGS} ${REINPLACE_CMD} -e '\x/usr/bin/passwdx!s|/usr/bin|${PREFIX}/bin|g'
 
+	@${REINPLACE_CMD} -e "/prefixes = /s|'/usr'|'${PREFIX}'|" \
+		${WRKSRC}/files/usr/bin/xlet-about-dialog
+
+	# Stop loading network-manager applet by default
+	@${REINPLACE_CMD} -e "s|, 'panel1:right:7:network@cinnamon.org'||" \
+		${WRKSRC}/data/org.cinnamon.gschema.xml
+
+	# Fix build with no network-manager
 	@${REINPLACE_CMD} -e '/cs-bluetooth/d; /cs-network/d' \
 		${WRKSRC}/files/usr/share/cinnamon/cinnamon-settings/cinnamon-settings.py
+
+	@${REINPLACE_CMD} -e 's/nm-applet;//' \
+		${WRKSRC}/meson.build
+
+	@${REINPLACE_CMD} -e '/imports.ui.networkAgent/d' \
+		${WRKSRC}/js/ui/main.js
+	# End of Fix build with no network-manager
+
+	# Fix symlink installation
+	@${REINPLACE_CMD} -e "s|DESTDIR|MESON_INSTALL_DESTDIR_PREFIX|" \
+		${WRKSRC}/install-scripts/add_symlink.py
 
 	# Some python files use #! /usr/bin/python (note the space between the bang and the python interpreter
 	@${FIND} ${WRKSRC} -name \* -type f | ${XARGS} ${EGREP} -l "#!.*\/usr\/bin\/python" | \
 		${XARGS} ${REINPLACE_CMD} -e "s|#!.*python.*|#!/usr/bin/env python|g"
+
+	# Fix applets that try to exec just python3
+	@${REINPLACE_CMD} -e "/'python3[' ]/s|python3|${PYTHON_CMD}|" \
+		${WRKSRC}/files/usr/share/cinnamon/applets/printers@cinnamon.org/applet.js \
+		${WRKSRC}/files/usr/share/cinnamon/applets/grouped-window-list@cinnamon.org/menus.js
+
+	# Fix system lp(1) overlapping with cups' lp(1)
+	@${REINPLACE_CMD} -e "/'lp'/s|lp|${PREFIX}/bin/lp|" \
+		${WRKSRC}/files/usr/share/cinnamon/applets/printers@cinnamon.org/applet.js
 
 	# gtk-doc builds erroneous documentation files otherwise
 	@${FIND} ${WRKSRC} -name '*.orig' -type f -delete
