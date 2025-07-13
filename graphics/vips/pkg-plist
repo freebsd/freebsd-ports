@@ -60,11 +60,11 @@ include/vips/vips8
 lib/libvips-cpp.a
 lib/libvips-cpp.so
 lib/libvips-cpp.so.42
-lib/libvips-cpp.so.42.19.0
+lib/libvips-cpp.so.42.19.1
 lib/libvips.a
 lib/libvips.so
 lib/libvips.so.42
-lib/libvips.so.42.19.0
+lib/libvips.so.42.19.1
 libdata/pkgconfig/vips-cpp.pc
 libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/Combine.png
