@@ -1,5 +1,5 @@
 PORTNAME=	cyclonedx-python-lib
-PORTVERSION=	10.3.0
+PORTVERSION=	10.4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/CycloneDX/cyclonedx-python-lib/releases/download/v${PORTVERSION}/
@@ -29,9 +29,17 @@ JSON_VALIDATION_DESC=	JSON validation
 VALIDATION_DESC=	JSON and XML validation
 XML_VALIDATION_DESC=	XML validation
 
-JSON_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18<5:devel/py-jsonschema@${PY_FLAVOR}
+JSON_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18<5:devel/py-jsonschema@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}referencing>=0.28.4:devel/py-referencing@${PY_FLAVOR}
 VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18<5:devel/py-jsonschema@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}lxml>=4<7:devel/py-lxml@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}lxml>=4<7:devel/py-lxml@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}referencing>=0.28.4:devel/py-referencing@${PY_FLAVOR}
 XML_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4<7:devel/py-lxml@${PY_FLAVOR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31300
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.6<5:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
