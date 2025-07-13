@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -29,7 +29,7 @@ dependencies = [
+     "trove-classifiers (>=2022.5.19)",
+     "virtualenv (>=20.26.6,<21.0.0)",
+     "xattr (>=1.0.0,<2.0.0) ; sys_platform == 'darwin'",
+-    "findpython (>=0.6.2,<0.7.0)",
++    "findpython (>=0.6.2)",
+     "pbs-installer[download,install] (>=2025.1.6,<2026.0.0)",
+ ]
+ authors = [

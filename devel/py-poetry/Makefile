@@ -1,6 +1,6 @@
 PORTNAME=	poetry
 PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-poetry/poetry/releases/download/${PORTVERSION}/
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>=1.2.1<2.0.0:devel/py-build@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}cleo>=2.1.0<3.0.0:devel/py-cleo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dulwich>=0.22.6<0.23.0:devel/py-dulwich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastjsonschema>=2.18.0<3.0.0:devel/py-fastjsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}findpython>=0.6.2<0.7.0:devel/py-findpython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}findpython>=0.6.2:devel/py-findpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}installer>=0.7.0<0.8.0:devel/py-installer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keyring>=25.1.0,1<26.0.0,1:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=24.0:devel/py-packaging@${PY_FLAVOR} \
