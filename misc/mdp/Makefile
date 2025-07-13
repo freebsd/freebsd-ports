@@ -1,6 +1,5 @@
 PORTNAME=	mdp
-PORTVERSION=	1.0.15
-PORTREVISION=	1
+PORTVERSION=	1.0.18
 CATEGORIES=	misc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,13 +11,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake ncurses
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	visit1985
-
 MAKE_ARGS=	LDLIBS="${NCURSESLIBS}"
 
 PLIST_FILES=	bin/mdp \
 		share/man/man1/mdp.1.gz
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	visit1985
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mdp ${STAGEDIR}${PREFIX}/bin
