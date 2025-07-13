@@ -1,16 +1,7 @@
-Use the more lightweight py-poetry-core instead py-poetry and relax version requirements.
+Relax some version requirements.
 
---- pyproject.toml.orig	2024-12-09 21:51:07 UTC
+--- pyproject.toml.orig	2025-06-26 19:00:25 UTC
 +++ pyproject.toml
-@@ -1,6 +1,6 @@
- [build-system]
--requires = ["poetry>=1.6.1"]
--build-backend = "poetry.masonry.api"
-+requires = ["poetry-core>=1.6.1"]
-+build-backend = "poetry.core.masonry.api"
- 
- [tool.poetry]
- name = "netmiko"
 @@ -23,7 +23,7 @@ scp = ">=0.13.6"
  python = ">=3.9,<4.0"
  paramiko = ">=2.9.5"
