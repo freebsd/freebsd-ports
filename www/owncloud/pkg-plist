@@ -217,6 +217,7 @@
 %%WWWDIR%%/apps/configreport/lib/Http/ReportResponse.php
 %%WWWDIR%%/apps/configreport/lib/PHPInfo.php
 %%WWWDIR%%/apps/configreport/lib/ReportDataCollector.php
+%%WWWDIR%%/apps/configreport/lib/Storage.php
 %%WWWDIR%%/apps/configreport/lib/Telemetry/BackgroundJob.php
 %%WWWDIR%%/apps/configreport/lib/Telemetry/Monitor.php
 %%WWWDIR%%/apps/configreport/lib/Telemetry/Scheduler.php
@@ -257,6 +258,7 @@
 %%WWWDIR%%/apps/configreport/vendor/ramsey/collection/README.md
 %%WWWDIR%%/apps/configreport/vendor/ramsey/collection/SECURITY.md
 %%WWWDIR%%/apps/configreport/vendor/ramsey/collection/composer.json
+%%WWWDIR%%/apps/configreport/vendor/ramsey/collection/conventional-commits.json
 %%WWWDIR%%/apps/configreport/vendor/ramsey/collection/src/AbstractArray.php
 %%WWWDIR%%/apps/configreport/vendor/ramsey/collection/src/AbstractCollection.php
 %%WWWDIR%%/apps/configreport/vendor/ramsey/collection/src/AbstractSet.php
