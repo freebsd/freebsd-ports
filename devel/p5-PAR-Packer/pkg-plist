@@ -11,6 +11,7 @@ bin/tkpp
 %%SITE_PERL%%/PAR/Filter/PatchContent.pm
 %%SITE_PERL%%/PAR/Filter/PodStrip.pm
 %%SITE_PERL%%/PAR/Packer.pm
+%%SITE_PERL%%/PAR/Packer/Troubleshooting.pod
 %%SITE_PERL%%/PAR/StrippedPARL/Base.pm
 %%SITE_PERL%%/PAR/StrippedPARL/Dynamic.pm
 %%SITE_PERL%%/PAR/StrippedPARL/Static.pm
@@ -27,5 +28,6 @@ bin/tkpp
 %%PERL5_MAN3%%/PAR::Filter::PatchContent.3.gz
 %%PERL5_MAN3%%/PAR::Filter::PodStrip.3.gz
 %%PERL5_MAN3%%/PAR::Packer.3.gz
+%%PERL5_MAN3%%/PAR::Packer::Troubleshooting.3.gz
 %%PERL5_MAN3%%/PAR::StrippedPARL::Base.3.gz
 %%PERL5_MAN3%%/pp.3.gz
