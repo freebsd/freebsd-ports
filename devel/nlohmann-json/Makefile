@@ -1,8 +1,13 @@
 PORTNAME=	json
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.12.0
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	nlohmann-
+
+# https://github.com/nlohmann/json/pull/4736 fix for missing char8_t support
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	34868f90149de02432ea758a29227a6ad74f098c.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	JSON library for Modern C++
