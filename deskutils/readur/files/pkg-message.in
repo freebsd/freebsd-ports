@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+Readur is installed
+
+1) Configure it in %%PREFIX%%/etc/readur.env
+
+2) Enable it with
+
+     sysrc readur_enable=YES
+
+3) Start it with
+
+     service readur start
+EOM
+}
+]

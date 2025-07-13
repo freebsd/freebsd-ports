@@ -1,0 +1,10 @@
+bin/readur
+%%WWWDIR%%/favicon.ico
+%%WWWDIR%%/readur-64.png
+%%WWWDIR%%/readur-32.png
+%%WWWDIR%%/readur.png
+%%WWWDIR%%/index.html
+@dir %%WWWDIR%%/assets
+%%WWWDIR%%/assets/index-hLouS2YV.js
+%%WWWDIR%%/assets/index-C5nToalm.css
+@dir(%%USER%%,%%GROUP%%,0700) %%HOMEDIR%%

@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: readur
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for readur in /etc/rc.conf
+#
+# readur_enable (bool):     Enable readur. (Default=NO)
+# readur_env_file (str):    Path containing the environment variables
+#                           to be used by readur. (Default: %%PREFIX%%/etc/readur.env)
+# readur_logfile (str):     Log file used to store the readur's output. (Default: /var/log/readur.log)
+# readur_pidfile (str):     File used by readur to store the process ID. (Default: /var/run/readur.pid)
+# readur_runas (str):       User to run readur as. (Default: %%USER%%)
+
+. /etc/rc.subr
+
+name="readur"
+desc="Quick, painless, intuitive OCR platform"
+rcvar="readur_enable"
+
+load_rc_config $name
+
+: ${readur_enable:="NO"}
+: ${readur_env_file:="%%PREFIX%%/etc/readur.env"}
+: ${readur_logfile:="/var/log/readur.log"}
+: ${readur_pidfile:="/var/run/readur.pid"}
+: ${readur_runas:="%%USER%%"}
+
+readur_chdir="/var/db/readur"
+pidfile="${readur_pidfile}"
+procname="%%LOCALBASE%%/bin/readur"
+command="/usr/sbin/daemon"
+command_args="-o '${readur_logfile}' -p '${pidfile}' -u '${readur_runas}' -t '${desc}' -- '${procname}'"
+
+run_rc_command "$1"
