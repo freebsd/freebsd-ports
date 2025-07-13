@@ -5,7 +5,7 @@
  Comment=Update common folders names to match current locale
  Terminal=false
 -OnlyShowIn=GNOME;LXDE;Unity;
-+OnlyShowIn=GNOME;LXDE;XFCE;MATE;Cinnamon;Pantheon;
++OnlyShowIn=GNOME;LXDE;XFCE;MATE;X-Cinnamon;Pantheon;
  NoDisplay=true
  Type=Application
  StartupNotify=false
