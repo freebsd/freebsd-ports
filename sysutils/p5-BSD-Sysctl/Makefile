@@ -20,4 +20,10 @@ GH_ACCOUNT=	glebius
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/blib/arch/auto/BSD/Sysctl/Sysctl.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 504200
+EXTRA_PATCHES=	${PATCHDIR}/extrapatch-Makefile.PL
+.endif
+
+.include <bsd.port.post.mk>
