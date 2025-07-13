@@ -1,5 +1,5 @@
 PORTNAME=	cinnamon-menus
-PORTVERSION=	5.4.0
+DISTVERSION=	6.4.0
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -18,7 +18,11 @@ USE_GNOME=	glib20 introspection:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-
 USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=		DOCS
+
+DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
+DOCS_MESON_TRUE=	enable_docs
 
 .include <bsd.port.mk>
