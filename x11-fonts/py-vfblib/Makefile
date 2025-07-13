@@ -1,5 +1,5 @@
 PORTNAME=	vfblib
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +15,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=6.2:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.45.1:print/py-fonttools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}orjson>=3.10.13<4:devel/py-orjson@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.8.0:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}orjson>=3.10.15<4:devel/py-orjson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.14.1:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ufolib2>=0.16.0:print/py-ufolib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ufonormalizer>=0.6.1:x11-fonts/py-ufonormalizer@${PY_FLAVOR}
 
