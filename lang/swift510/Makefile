@@ -1,6 +1,6 @@
 PORTNAME=	swift510
 DISTVERSION=	5.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 DIST_SUBDIR=	${PORTNAME}
 
@@ -95,7 +95,9 @@ post-patch:
 do-build:
 	@${MKDIR} ${early_stage_dir}
 	${SETENV} \
-		CCACHE_WRAPPER_PATH=${CCACHE_WRAPPER_PATH} \
+		CCACHE_ENABLED=${CCACHE_ENABLED} \
+		CCACHE_BIN=${CCACHE_BIN} \
+		CCACHE_DIR=${CCACHE_DIR} \
 		MAKE_JOBS_NUMBER=${MAKE_JOBS_NUMBER} \
 		${SH} -x ${FILESDIR}/start-build.sh ${WRKSRC} ${early_stage_dir} \
 			${swift_install_prefix} ${WRKDIR}/clang-module-cache
@@ -107,7 +109,6 @@ do-install:
 	${COPYTREE_BIN} .${swift_install_prefix}/bin ${STAGEDIR} ; \
 	for subdir in include lib local share; do \
 		${COPYTREE_SHARE} .${swift_install_prefix}/$${subdir} ${STAGEDIR} ; \
-	done ; \
-	${RM} ${STAGEDIR}/var/run/libuuid/*
+	done
 
 .include <bsd.port.post.mk>
