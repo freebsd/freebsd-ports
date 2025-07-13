@@ -12,6 +12,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:net/dictd
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
