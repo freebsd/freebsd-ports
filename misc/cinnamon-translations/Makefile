@@ -1,5 +1,5 @@
 PORTNAME=	cinnamon-translations
-PORTVERSION=	5.4.2
+DISTVERSION=	6.4.2
 CATEGORIES=	misc x11 gnome
 DIST_SUBDIR=	gnome
 

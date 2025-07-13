@@ -80,6 +80,9 @@ share/locale/br/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/br/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/br/LC_MESSAGES/cinnamon-session.mo
 share/locale/br/LC_MESSAGES/cinnamon-settings-daemon.mo
+share/locale/br/LC_MESSAGES/cinnamon.mo
+share/locale/br/LC_MESSAGES/nemo-extensions.mo
+share/locale/br/LC_MESSAGES/nemo.mo
 share/locale/bs/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/bs/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/bs/LC_MESSAGES/cinnamon-session.mo
@@ -100,6 +103,7 @@ share/locale/ca@valencia/LC_MESSAGES/cinnamon-settings-daemon.mo
 share/locale/ca@valencia/LC_MESSAGES/cinnamon.mo
 share/locale/ca@valencia/LC_MESSAGES/nemo-extensions.mo
 share/locale/ca@valencia/LC_MESSAGES/nemo.mo
+share/locale/ckb/LC_MESSAGES/cinnamon.mo
 share/locale/crh/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/crh/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/crh/LC_MESSAGES/cinnamon-session.mo
@@ -157,8 +161,8 @@ share/locale/en_AU/LC_MESSAGES/cinnamon.mo
 share/locale/en_AU/LC_MESSAGES/nemo.mo
 share/locale/en_CA/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/en_CA/LC_MESSAGES/cinnamon-screensaver.mo
-share/locale/en_CA/LC_MESSAGES/cinnamon-settings-daemon.mo
 share/locale/en_CA/LC_MESSAGES/cinnamon-session.mo
+share/locale/en_CA/LC_MESSAGES/cinnamon-settings-daemon.mo
 share/locale/en_CA/LC_MESSAGES/cinnamon.mo
 share/locale/en_CA/LC_MESSAGES/nemo.mo
 share/locale/en_GB/LC_MESSAGES/cinnamon-control-center.mo
@@ -205,6 +209,7 @@ share/locale/fa/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/fa/LC_MESSAGES/cinnamon-session.mo
 share/locale/fa/LC_MESSAGES/cinnamon-settings-daemon.mo
 share/locale/fa/LC_MESSAGES/cinnamon.mo
+share/locale/fa/LC_MESSAGES/nemo-extensions.mo
 share/locale/fa/LC_MESSAGES/nemo.mo
 share/locale/fi/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/fi/LC_MESSAGES/cinnamon-screensaver.mo
@@ -220,6 +225,7 @@ share/locale/fil/LC_MESSAGES/nemo.mo
 share/locale/fo/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/fo/LC_MESSAGES/cinnamon-settings-daemon.mo
 share/locale/fo/LC_MESSAGES/cinnamon.mo
+share/locale/fo/LC_MESSAGES/nemo.mo
 share/locale/fr/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/fr/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/fr/LC_MESSAGES/cinnamon-session.mo
@@ -448,6 +454,11 @@ share/locale/mn/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/mn/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/mn/LC_MESSAGES/cinnamon-session.mo
 share/locale/mn/LC_MESSAGES/cinnamon-settings-daemon.mo
+share/locale/mnw/LC_MESSAGES/cinnamon.mo
+share/locale/mo/LC_MESSAGES/cinnamon-screensaver.mo
+share/locale/mo/LC_MESSAGES/cinnamon-session.mo
+share/locale/mo/LC_MESSAGES/cinnamon.mo
+share/locale/mo/LC_MESSAGES/nemo-extensions.mo
 share/locale/mo/LC_MESSAGES/nemo.mo
 share/locale/mr/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/mr/LC_MESSAGES/cinnamon-screensaver.mo
@@ -552,6 +563,12 @@ share/locale/pt_BR/LC_MESSAGES/cinnamon-settings-daemon.mo
 share/locale/pt_BR/LC_MESSAGES/cinnamon.mo
 share/locale/pt_BR/LC_MESSAGES/nemo-extensions.mo
 share/locale/pt_BR/LC_MESSAGES/nemo.mo
+share/locale/qu/LC_MESSAGES/cinnamon-control-center.mo
+share/locale/qu/LC_MESSAGES/cinnamon-screensaver.mo
+share/locale/qu/LC_MESSAGES/cinnamon-session.mo
+share/locale/qu/LC_MESSAGES/cinnamon-settings-daemon.mo
+share/locale/qu/LC_MESSAGES/cinnamon.mo
+share/locale/qu/LC_MESSAGES/nemo.mo
 share/locale/ro/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/ro/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/ro/LC_MESSAGES/cinnamon-session.mo
@@ -566,7 +583,12 @@ share/locale/ru/LC_MESSAGES/cinnamon-settings-daemon.mo
 share/locale/ru/LC_MESSAGES/cinnamon.mo
 share/locale/ru/LC_MESSAGES/nemo-extensions.mo
 share/locale/ru/LC_MESSAGES/nemo.mo
+share/locale/rue/LC_MESSAGES/cinnamon-control-center.mo
+share/locale/rue/LC_MESSAGES/cinnamon-screensaver.mo
+share/locale/rue/LC_MESSAGES/cinnamon-session.mo
+share/locale/rue/LC_MESSAGES/cinnamon-settings-daemon.mo
 share/locale/rue/LC_MESSAGES/cinnamon.mo
+share/locale/rue/LC_MESSAGES/nemo.mo
 share/locale/rw/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/rw/LC_MESSAGES/cinnamon-session.mo
 share/locale/rw/LC_MESSAGES/cinnamon-settings-daemon.mo
@@ -604,6 +626,9 @@ share/locale/sl/LC_MESSAGES/cinnamon-settings-daemon.mo
 share/locale/sl/LC_MESSAGES/cinnamon.mo
 share/locale/sl/LC_MESSAGES/nemo-extensions.mo
 share/locale/sl/LC_MESSAGES/nemo.mo
+share/locale/so/LC_MESSAGES/cinnamon-control-center.mo
+share/locale/so/LC_MESSAGES/cinnamon-screensaver.mo
+share/locale/so/LC_MESSAGES/cinnamon-session.mo
 share/locale/so/LC_MESSAGES/cinnamon.mo
 share/locale/so/LC_MESSAGES/nemo.mo
 share/locale/sq/LC_MESSAGES/cinnamon-control-center.mo
@@ -637,6 +662,9 @@ share/locale/sv/LC_MESSAGES/nemo-extensions.mo
 share/locale/sv/LC_MESSAGES/nemo.mo
 share/locale/sw/LC_MESSAGES/cinnamon.mo
 share/locale/sw/LC_MESSAGES/nemo.mo
+share/locale/szl/LC_MESSAGES/cinnamon-control-center.mo
+share/locale/szl/LC_MESSAGES/cinnamon-screensaver.mo
+share/locale/szl/LC_MESSAGES/cinnamon-session.mo
 share/locale/szl/LC_MESSAGES/cinnamon.mo
 share/locale/szl/LC_MESSAGES/nemo.mo
 share/locale/ta/LC_MESSAGES/cinnamon-control-center.mo
@@ -665,7 +693,9 @@ share/locale/th/LC_MESSAGES/cinnamon-settings-daemon.mo
 share/locale/th/LC_MESSAGES/cinnamon.mo
 share/locale/th/LC_MESSAGES/nemo-extensions.mo
 share/locale/th/LC_MESSAGES/nemo.mo
+share/locale/ti/LC_MESSAGES/cinnamon.mo
 share/locale/tk/LC_MESSAGES/cinnamon-session.mo
+share/locale/tk/LC_MESSAGES/cinnamon.mo
 share/locale/tl/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/tl/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/tl/LC_MESSAGES/cinnamon-session.mo
@@ -687,6 +717,7 @@ share/locale/tt/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/tt/LC_MESSAGES/cinnamon-session.mo
 share/locale/tt/LC_MESSAGES/cinnamon-settings-daemon.mo
 share/locale/tt/LC_MESSAGES/cinnamon.mo
+share/locale/tt/LC_MESSAGES/nemo.mo
 share/locale/ug/LC_MESSAGES/cinnamon-control-center.mo
 share/locale/ug/LC_MESSAGES/cinnamon-screensaver.mo
 share/locale/ug/LC_MESSAGES/cinnamon-session.mo
