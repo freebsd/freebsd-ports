@@ -15,6 +15,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/dict:textproc/dict
 
 USES=		emacs
 
+NO_ARCH=	yes
+
 SRC_EL=		dictem.el dictem-lingvo-dsl.el dictem-elisp.el
 
 .for f in ${SRC_EL}
