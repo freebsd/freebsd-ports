@@ -1,5 +1,5 @@
 PORTNAME=	noto
-PORTVERSION=	2.003
+PORTVERSION=	3.000
 CATEGORIES=	x11-fonts
 #MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSerifBengali-v${PORTVERSION}/fonts/ \
 #		https://github.com/notofonts/notofonts.github.io/raw/NotoSerifBengali-v${PORTVERSION}/fonts/NotoSerifBengali/hinted/ttf/:fonts
