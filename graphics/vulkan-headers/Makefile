@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-headers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.321
+DISTVERSION=	1.4.322
 CATEGORIES=	graphics
 
 MAINTAINER=	atanubiswas484@gmail.com
