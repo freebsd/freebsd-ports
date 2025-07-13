@@ -1,14 +1,10 @@
 PORTNAME=	cjs
-PORTVERSION=	5.4.1
-PORTREVISION=	2
+DISTVERSION=	6.4.0
 CATEGORIES=	lang gnome
 DIST_SUBDIR=	gnome
 
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/gjs/-/commit/
-PATCHFILES=	f93880c356108cfdbc8f9ebe318d18f256d7128d.patch:-p1 # https://gitlab.gnome.org/GNOME/gjs/-/issues/514
-
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	JavaScript bindings based on gobject-introspection
+COMMENT=	Cinnamon Javascript interpreter
 WWW=		https://github.com/linuxmint/cjs
 
 LICENSE=		MIT LGPL20+
@@ -17,14 +13,14 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSES/MIT.txt
 LICENSE_FILE_LGPL20+ =	${WRKSRC}/LICENSES/LGPL-2.0-or-later.txt
 
 LIB_DEPENDS=	libffi.so:devel/libffi \
-		libmozjs-78.so:lang/spidermonkey78
+		libmozjs-115.so:lang/spidermonkey115
 
-USES=		compiler:c++17-lang gettext gnome localbase meson pkgconfig \
-		python:build readline shebangfix xorg
-USE_GNOME=	cairo gdkpixbuf gtk30 introspection
+USES=		compiler:c++17-lang gnome meson pkgconfig \
+		python:build shebangfix xorg
+USE_GNOME=	cairo glib20 introspection
 USE_XORG=	x11 xext
-MESON_ARGS=	-Dinstalled_tests=false \
-		-Dprofiler=disabled
+MESON_ARGS=	-Dprofiler=disabled
+
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -34,8 +30,15 @@ SHEBANG_GLOB=	*.py
 
 PORTSCOUT=	limit:^[0-9.]+$$	# ignore master.mint* tags
 
-post-patch:
-	${REINPLACE_CMD} -e 's|--warn-error||g' \
-		${WRKSRC}/meson.build
+OPTIONS_DEFINE=		READLINE TEST
+OPTIONS_DEFAULT=	READLINE
+
+READLINE_MESON_ENABLED=	readline
+READLINE_USES=		readline
+
+TEST_BUILD_DEPENDS=	dbus-run-session:devel/dbus \
+			gtk3>0:x11-toolkits/gtk30 \
+			gtk4>0:x11-toolkits/gtk40
+TEST_MESON_FALSE=	skip_dbus_tests skip_gtk_tests
 
 .include <bsd.port.mk>
