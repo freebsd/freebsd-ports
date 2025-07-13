@@ -1,6 +1,6 @@
 PORTNAME=	geany-themes
 DISTVERSION=	1.24
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel editors
 
 MAINTAINER=	james.wright@digital-chaos.com
@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	geany
+
+CONFLICTS_INSTALL=	geany
 
 NO_ARCH=	yes
 NO_BUILD=	yes
