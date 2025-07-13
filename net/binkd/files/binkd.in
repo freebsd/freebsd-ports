@@ -12,7 +12,7 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 binkd_enable=${binkd_enable:-"NO"}
-binkd_config=${binkd_config:-"%%PREFIX%%/etc/binkd.cfg"}
+binkd_config=${binkd_config:-"%%PREFIX%%/etc/binkd.conf"}
 binkd_flags=${binkd_flags:-"-D"}
 binkd_user=${binkd_user:-"fido"}
 binkd_pidfile=${binkd_pidfile:-"/var/run/binkd/binkd.pid"}

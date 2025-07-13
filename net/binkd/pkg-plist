@@ -1,6 +1,14 @@
-@sample etc/binkd.conf-dist etc/binkd.conf
+@sample etc/binkd.conf.sample
 sbin/binkd
 sbin/binkd-1.1a-115
 share/man/man8/binkd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/binkdfaq-en.txt
 %%PORTDOCS%%%%DOCSDIR%%/binkdfaq-ru.txt
+%%PORTDOCS%%%%DOCSDIR%%/binkd.conf-dist
+@(fido,fido,644) /var/log/binkd.log
+@dir(fido,fido,755) /var/run/binkd
+@dir(fido,fido,755) /var/spool/binkd
+@dir(fido,fido,755) /var/spool/binkd/outbound
+@dir(fido,fido,755) /var/spool/binkd/inbound-secure
+@dir(fido,fido,755) /var/spool/binkd/inbound-unsecure
+@dir(fido,fido,755) /var/spool/binkd/inbound-temp
