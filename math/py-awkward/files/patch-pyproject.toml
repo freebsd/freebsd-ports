@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-07-03 22:14:18 UTC
++++ pyproject.toml
+@@ -9,8 +9,7 @@ description = "Manipulate JSON-like data with NumPy-li
+ name = "awkward"
+ version = "2.8.5"
+ description = "Manipulate JSON-like data with NumPy-like idioms."
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = { text = "BSD-3-Clause" }
+ requires-python = ">=3.9"
+ authors = [
+     { name = "Jim Pivarski", email = "jpivarski@gmail.com" },
