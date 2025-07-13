@@ -449,6 +449,7 @@ libexec/samba/samba-dcerpcd
 %%MANPAGES%%%%SAMBA4_BUNDLED_LDB%%share/man/man1/samba-ldbmodify.1.gz
 %%MANPAGES%%%%SAMBA4_BUNDLED_LDB%%share/man/man1/samba-ldbrename.1.gz
 %%MANPAGES%%%%SAMBA4_BUNDLED_LDB%%share/man/man1/samba-ldbsearch.1.gz
+%%MANPAGES%%%%SAMBA4_BUNDLED_TALLOC%%share/man/man3/samba-talloc.3.gz
 %%MANPAGES%%%%SAMBA4_BUNDLED_TDB%%share/man/man8/samba-tdbbackup.8.gz
 %%MANPAGES%%%%SAMBA4_BUNDLED_TDB%%share/man/man8/samba-tdbdump.8.gz
 %%MANPAGES%%%%SAMBA4_BUNDLED_TDB%%share/man/man8/samba-tdbrestore.8.gz
@@ -456,7 +457,6 @@ libexec/samba/samba-dcerpcd
 %%SAMBA4_BUNDLED_TALLOC%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/talloc%%PYTHON_TAG%%.so
 %%SAMBA4_BUNDLED_TALLOC%%%%PYTHON3%%%%SAMBA4_LIBDIR%%/private/libpytalloc-util%%PYTHON_TAG%%-private-samba.so
 %%SAMBA4_BUNDLED_TALLOC%%%%SAMBA4_LIBDIR%%/private/libtalloc-private-samba.so
-%%SAMBA4_BUNDLED_TALLOC%%share/man/man3/samba-talloc.3.gz
 %%SAMBA4_BUNDLED_TDB%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_tdb_text.py
 %%SAMBA4_BUNDLED_TDB%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/tdb%%PYTHON_TAG%%.so
 %%SAMBA4_BUNDLED_TDB%%bin/tdbbackup
