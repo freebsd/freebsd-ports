@@ -1,5 +1,5 @@
 PORTNAME=	solid_queue
-PORTVERSION=	1.1.5
+PORTVERSION=	1.2.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
