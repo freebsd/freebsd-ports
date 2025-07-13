@@ -1,5 +1,5 @@
 PORTNAME=	Rex
-PORTVERSION=	1.16.0
+PORTVERSION=	1.16.1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FERKI
@@ -39,7 +39,7 @@ TEST_DEPENDS=	p5-String-Escape>=0:textproc/p5-String-Escape \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Output>=0:devel/p5-Test-Output \
 		p5-Test-UseAllModules>=0.15:devel/p5-Test-UseAllModules \
-		p5-Test-Warnings>=0:devel/p5-Test-Warnings
+		p5-Test-Warnings>=0.033:devel/p5-Test-Warnings
 
 USES=		perl5
 USE_PERL5=	configure
