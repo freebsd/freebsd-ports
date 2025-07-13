@@ -1,3 +1,3 @@
-TIMESTAMP = 1731679154
-SHA256 (cython_lint-0.16.6.tar.gz) = 829046988d3986443c47183e7ea567a6893d78dfb135144670ffff67d58deb9e
-SIZE (cython_lint-0.16.6.tar.gz) = 26523
+TIMESTAMP = 1752266002
+SHA256 (cython_lint-0.16.7.tar.gz) = dea72b81fd7635733080c67f1c8258cff498a4ef5664e010f894585a7290d6ad
+SIZE (cython_lint-0.16.7.tar.gz) = 26567
