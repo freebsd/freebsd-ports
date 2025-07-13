@@ -19,7 +19,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ValidationLayers
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-430-g2a611a9:headers/SPIRV-Headers
-USE_LDCONFIG=	yes
 CMAKE_OFF=	BUILD_TESTS
 
 PLIST_FILES=	lib/libVkLayer_khronos_validation.so \
