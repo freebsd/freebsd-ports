@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-06-04 03:10:23 UTC
+--- pyproject.toml.orig	2025-07-10 03:15:44 UTC
 +++ pyproject.toml
 @@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -8,7 +8,7 @@
  
  [project]
  name = "types-docutils"
- version = "0.21.0.20250604"
+ version = "0.21.0.20250710"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
 +license = { text = "Apache-2.0" }
