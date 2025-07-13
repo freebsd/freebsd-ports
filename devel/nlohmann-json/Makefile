@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	nlohmann-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	JSON library for Modern C++
-WWW=		https://nlohmann.github.io/json/
+WWW=		https://nlohmann.github.io/json/ \
+		https://github.com/nlohmann/json
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.MIT
