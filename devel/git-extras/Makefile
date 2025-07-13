@@ -1,5 +1,5 @@
 PORTNAME=	git-extras
-DISTVERSION=	7.3.0
+DISTVERSION=	7.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	igoro@FreeBSD.org

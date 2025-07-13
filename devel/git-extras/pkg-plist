@@ -11,6 +11,7 @@ bin/git-clear
 bin/git-clear-soft
 bin/git-coauthor
 bin/git-commits-since
+bin/git-continue
 bin/git-contrib
 bin/git-count
 bin/git-cp
@@ -72,7 +73,9 @@ bin/git-sync
 bin/git-touch
 bin/git-undo
 bin/git-unlock
+bin/git-unwip
 bin/git-utimes
+bin/git-wip
 etc/bash_completion.d/git-extras
 share/man/man1/git-abort.1.gz
 share/man/man1/git-alias.1.gz
@@ -87,6 +90,7 @@ share/man/man1/git-clear-soft.1.gz
 share/man/man1/git-clear.1.gz
 share/man/man1/git-coauthor.1.gz
 share/man/man1/git-commits-since.1.gz
+share/man/man1/git-continue.1.gz
 share/man/man1/git-contrib.1.gz
 share/man/man1/git-count.1.gz
 share/man/man1/git-cp.1.gz
@@ -147,4 +151,6 @@ share/man/man1/git-sync.1.gz
 share/man/man1/git-touch.1.gz
 share/man/man1/git-undo.1.gz
 share/man/man1/git-unlock.1.gz
+share/man/man1/git-unwip.1.gz
 share/man/man1/git-utimes.1.gz
+share/man/man1/git-wip.1.gz
