@@ -1,4 +1,5 @@
 bin/vkquake
-%%Q1DIR%%/vkquake.pak
 share/applications/vkquake.desktop
 share/icons/hicolor/256x256/apps/vkquake.png
+share/icons/hicolor/512x512/apps/vkquake.png
+%%Q1DIR%%/vkquake.pak
