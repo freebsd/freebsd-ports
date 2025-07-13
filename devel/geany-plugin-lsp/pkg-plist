@@ -1,0 +1,7 @@
+lib/geany/lsp.so
+%%DATADIR%%/lsp/lsp.conf
+%%DOCSDIR%%/lsp/AUTHORS
+%%DOCSDIR%%/lsp/COPYING
+%%DOCSDIR%%/lsp/ChangeLog
+%%DOCSDIR%%/lsp/NEWS
+%%DOCSDIR%%/lsp/README

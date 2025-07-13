@@ -1,4 +1,4 @@
-GEANY_VER=		2.0
+GEANY_VER=		2.1
 
 GEANY_PLUGINS=		addons \
 			autoclose \
@@ -17,6 +17,7 @@ GEANY_PLUGINS=		addons \
 			latex \
 			lineoperations \
 			lipsum \
+			lsp \
 			lua \
 			macro \
 			markdown \
@@ -58,6 +59,7 @@ insertnum_DESC=		replace selection with integer numbers
 latex_DESC=		LaTeX support
 lineoperations_DESC=	Simple line functions that can be applied to an open file
 lipsum_DESC=		Lorem Ipsum generator
+lsp_DESC=		Language Server Protocol support
 lua_DESC=		Lua scripting
 macro_DESC=		user defined macros
 markdown_DESC=		real-time preview of rendered Markdown

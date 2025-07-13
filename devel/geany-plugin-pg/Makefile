@@ -1,6 +1,5 @@
 PORTNAME=	geany-plugin-pg
 PORTVERSION=	${GEANY_VER}
-PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	madpilot@FreeBSD.org

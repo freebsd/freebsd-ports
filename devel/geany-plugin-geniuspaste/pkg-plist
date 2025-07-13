@@ -1,6 +1,7 @@
 lib/geany/geniuspaste.so
 %%DATADIR%%/geniuspaste/pastebins/codepad.org.conf
-%%DATADIR%%/geniuspaste/pastebins/dpaste.de.conf
+%%DATADIR%%/geniuspaste/pastebins/dpaste.com.conf
+%%DATADIR%%/geniuspaste/pastebins/dpaste.org.conf
 %%DATADIR%%/geniuspaste/pastebins/fpaste.org.conf
 %%DATADIR%%/geniuspaste/pastebins/paste.debian.net.conf
 %%DATADIR%%/geniuspaste/pastebins/pastebin.geany.org.conf
