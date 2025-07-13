@@ -1,20 +1,20 @@
 PORTNAME=	mk-configure
-PORTVERSION=	0.38.2
-PORTREVISION=	2
+PORTVERSION=	0.40.0
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/mk-configure/mk-configure/mk-configure-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight, easy to use replacement for GNU autotools
-WWW=		https://sourceforge.net/projects/mk-configure/
+WWW=		https://sourceforge.net/projects/mk-configure/ \
+		https://github.com/cheusov/mk-configure
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
+INSTALL_TARGET=	installdirs install install-doc
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man
 MAKE_JOBS_UNSAFE=	yes
 NO_ARCH=	yes
-
-MAKE_ARGS=	MANDIR=${PREFIX}/share/man
-INSTALL_TARGET=	installdirs install install-doc
 
 PORTDATA=	*
 PORTEXAMPLES=	*

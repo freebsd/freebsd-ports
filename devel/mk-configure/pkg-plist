@@ -12,6 +12,13 @@ bin/mkc_which
 bin/mkcmake
 libexec/mk-configure/mkc_check_common.sh
 libexec/mk-configure/mkc_get_deps
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/NOTES
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 share/man/man1/mkc_check_compiler.1.gz
 share/man/man1/mkc_check_custom.1.gz
 share/man/man1/mkc_check_decl.1.gz
@@ -25,10 +32,3 @@ share/man/man1/mkc_install.1.gz
 share/man/man1/mkc_which.1.gz
 share/man/man1/mkcmake.1.gz
 share/man/man7/mk-configure.7.gz
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/NOTES
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/TODO
