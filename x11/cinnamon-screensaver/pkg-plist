@@ -2,13 +2,10 @@ bin/cinnamon-screensaver
 bin/cinnamon-screensaver-command
 bin/cinnamon-unlock-desktop
 etc/pam.d/cinnamon-screensaver
-lib/girepository-1.0/CScreensaver-1.0.typelib
-lib/libcscreensaver.so
-lib/libcscreensaver.so.0
-lib/libcscreensaver.so.0.0.0
-libdata/pkgconfig/cscreensaver.pc
-@(,,4555) libexec/cinnamon-screensaver-pam-helper
-libexec/cs-backup-locker
+libexec/cinnamon-screensaver/girepository-1.0/CScreensaver-1.0.typelib
+libexec/cinnamon-screensaver/libcscreensaver.so
+@(,,4555) libexec/cinnamon-screensaver/cinnamon-screensaver-pam-helper
+libexec/cinnamon-screensaver/cs-backup-locker
 %%DATADIR%%/__init__.py
 %%DATADIR%%/albumArt.py
 %%DATADIR%%/audioPanel.py
@@ -28,6 +25,7 @@ libexec/cs-backup-locker
 %%DATADIR%%/dbusdepot/loginInterface.py
 %%DATADIR%%/dbusdepot/logindClient.py
 %%DATADIR%%/dbusdepot/mediaPlayerWatcher.py
+%%DATADIR%%/dbusdepot/muffinClient.py
 %%DATADIR%%/dbusdepot/nameBlocker.py
 %%DATADIR%%/dbusdepot/sessionClient.py
 %%DATADIR%%/dbusdepot/uPowerClient.py
@@ -66,5 +64,7 @@ share/gir-1.0/CScreensaver-1.0.gir
 share/icons/hicolor/scalable/actions/screensaver-switch-users-symbolic.svg
 share/icons/hicolor/scalable/actions/screensaver-unlock-symbolic.svg
 share/icons/hicolor/scalable/apps/csr-backup-locker-icon.svg
+share/icons/hicolor/scalable/status/cinnamon-screensaver-view-conceal.svg
+share/icons/hicolor/scalable/status/cinnamon-screensaver-view-reveal.svg
 share/icons/hicolor/scalable/status/screensaver-blank.svg
 share/icons/hicolor/scalable/status/screensaver-notification-symbolic.svg
