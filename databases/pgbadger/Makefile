@@ -1,6 +1,6 @@
 PORTNAME=	pgbadger
 PORTVERSION=	13.1
-DISTVERSIONPREFIX=v
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -11,10 +11,11 @@ LICENSE=	PostgreSQL
 
 BUILD_DEPENDS=	gsed:textproc/gsed
 
+USES=		gmake perl5
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	darold
 
-USES=		gmake perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes

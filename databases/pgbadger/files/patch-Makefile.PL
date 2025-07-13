@@ -1,6 +1,6 @@
---- Makefile.PL.orig	2018-09-13 11:03:46.086169000 +0200
-+++ Makefile.PL	2018-09-13 11:03:58.018702000 +0200
-@@ -45,13 +45,13 @@
+--- Makefile.PL.orig	2025-03-16 11:52:30 UTC
++++ Makefile.PL
+@@ -55,13 +55,13 @@ doc/synopsis.pod: Makefile pgbadger
  	echo "=head1 SYNOPSIS" > $@
  	./pgbadger --help >> $@
  	echo "=head1 DESCRIPTION" >> $@
