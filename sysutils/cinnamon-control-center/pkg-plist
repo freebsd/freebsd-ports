@@ -4,7 +4,6 @@ include/cinnamon-control-center-1/libcinnamon-control-center/cc-panel.h
 include/cinnamon-control-center-1/libcinnamon-control-center/cc-shell.h
 %%COLORD%%lib/cinnamon-control-center-1/panels/libcolor.so
 lib/cinnamon-control-center-1/panels/libdisplay.so
-%%ONLINEACCOUNTS%%lib/cinnamon-control-center-1/panels/libonline-accounts.so
 lib/cinnamon-control-center-1/panels/libregion.so
 %%WACOM%%lib/cinnamon-control-center-1/panels/libwacom-properties.so
 lib/libcinnamon-control-center.so
@@ -16,7 +15,6 @@ share/applications/cinnamon-display-panel.desktop
 %%WACOM%%share/applications/cinnamon-wacom-panel.desktop
 %%COLORD%%%%DATADIR%%/panels/cinnamon-color-panel.desktop
 %%DATADIR%%/panels/cinnamon-display-panel.desktop
-%%ONLINEACCOUNTS%%%%DATADIR%%/panels/cinnamon-online-accounts.desktop
 %%DATADIR%%/panels/cinnamon-region-panel.desktop
 %%WACOM%%%%DATADIR%%/panels/cinnamon-wacom-panel.desktop
 %%DATADIR%%/ui/cinnamon-region-panel-layout-chooser.ui
@@ -24,25 +22,17 @@ share/applications/cinnamon-display-panel.desktop
 %%DATADIR%%/ui/cinnamon-region-panel.ui
 %%COLORD%%%%DATADIR%%/ui/color.ui
 %%DATADIR%%/ui/language-chooser.ui
-%%ONLINEACCOUNTS%%%%DATADIR%%/ui/online-accounts.ui
 %%DATADIR%%/ui/shell.ui
 %%COLORD%%share/icons/hicolor/16x16/apps/cinnamon-preferences-color.png
 share/icons/hicolor/16x16/apps/cinnamon-preferences-desktop-display.png
-%%ONLINEACCOUNTS%%share/icons/hicolor/16x16/apps/cs-online-accounts.png
 %%COLORD%%share/icons/hicolor/22x22/apps/cinnamon-preferences-color.png
 share/icons/hicolor/22x22/apps/cinnamon-preferences-desktop-display.png
-%%ONLINEACCOUNTS%%share/icons/hicolor/22x22/apps/cs-online-accounts.png
 %%COLORD%%share/icons/hicolor/24x24/apps/cinnamon-preferences-color.png
 share/icons/hicolor/24x24/apps/cinnamon-preferences-desktop-display.png
-%%ONLINEACCOUNTS%%share/icons/hicolor/24x24/apps/cs-online-accounts.png
 %%COLORD%%share/icons/hicolor/256x256/apps/cinnamon-preferences-color.png
-%%ONLINEACCOUNTS%%share/icons/hicolor/256x256/apps/cs-online-accounts.png
 %%COLORD%%share/icons/hicolor/32x32/apps/cinnamon-preferences-color.png
 share/icons/hicolor/32x32/apps/cinnamon-preferences-desktop-display.png
-%%ONLINEACCOUNTS%%share/icons/hicolor/32x32/apps/cs-online-accounts.png
 %%COLORD%%share/icons/hicolor/48x48/apps/cinnamon-preferences-color.png
-%%ONLINEACCOUNTS%%share/icons/hicolor/48x48/apps/cs-online-accounts.png
-%%ONLINEACCOUNTS%%@dir share/icons/hicolor/64x64/apps
 %%COLORD%%share/icons/hicolor/64x64/apps/cinnamon-preferences-color.png
 %%COLORD%%share/icons/hicolor/scalable/apps/cinnamon-preferences-color.svg
 share/icons/hicolor/scalable/apps/cinnamon-preferences-desktop-display.svg
