@@ -9,6 +9,7 @@ WWW=		https://sourceforge.net/projects/pipestatus/
 
 LICENSE=	PD
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
