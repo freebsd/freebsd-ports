@@ -15,6 +15,7 @@ bin/table_reader_bench
 bin/trace_analyzer
 bin/write_stress
 include/rocksdb/advanced_cache.h
+include/rocksdb/advanced_compression.h
 include/rocksdb/advanced_iterator.h
 include/rocksdb/advanced_options.h
 include/rocksdb/attribute_groups.h
