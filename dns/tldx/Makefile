@@ -1,6 +1,6 @@
 PORTNAME=	tldx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.4
+DISTVERSION=	1.2.5
 CATEGORIES=	dns
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -10,7 +10,7 @@ WWW=		https://github.com/brandonyoungdev/tldx
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/brandonyoungdev/tldx
 GO_BUILDFLAGS+=	-ldflags="-s -w -X github.com/brandonyoungdev/tldx/cmd.Version=${DISTVERSIONFULL}"

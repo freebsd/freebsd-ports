@@ -1,5 +1,5 @@
-TIMESTAMP = 1750623987
-SHA256 (go/dns_tldx/tldx-v1.2.4/v1.2.4.mod) = d7cf1cc97c791779e7a4ba19bd81f7225f5728678db5b5febec8c89fb85003ee
-SIZE (go/dns_tldx/tldx-v1.2.4/v1.2.4.mod) = 1377
-SHA256 (go/dns_tldx/tldx-v1.2.4/v1.2.4.zip) = 2cacc5a744b414e660fd74d374a2a0c6b04784eed24bf1398428e1968faa942a
-SIZE (go/dns_tldx/tldx-v1.2.4/v1.2.4.zip) = 6350620
+TIMESTAMP = 1752260549
+SHA256 (go/dns_tldx/tldx-v1.2.5/v1.2.5.mod) = 7071a3e2fad4857a203bc9de4cc1ef89cc94f98ab86fd7f41257c31c3a5a94f7
+SIZE (go/dns_tldx/tldx-v1.2.5/v1.2.5.mod) = 1547
+SHA256 (go/dns_tldx/tldx-v1.2.5/v1.2.5.zip) = 4bdcc0696b1cd410bba173853f36659849e9125fa41e42981b2325df6704ba31
+SIZE (go/dns_tldx/tldx-v1.2.5/v1.2.5.zip) = 6356103
