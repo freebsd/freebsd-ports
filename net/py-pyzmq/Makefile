@@ -1,6 +1,6 @@
 PORTNAME=	pyzmq
-DISTVERSION=	25.0.2
-PORTREVISION=	2
+DISTVERSION=	27.0.0
+PORTREVISION=	0
 CATEGORIES=	net devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,16 +9,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for ZeroMQ
 WWW=		https://github.com/zeromq/pyzmq
 
-LICENSE=			BSD3CLAUSE LGPL3
-LICENSE_COMB=			multi
-LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE.BSD
-LICENSE_FILE_LGPL3=		${WRKSRC}/LICENSE.LESSER
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
+BUILD_DEPENDS=	cmake:devel/cmake-core \
+                ninja:devel/ninja \
+		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0.1.5:devel/py-scikit-build-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 LIB_DEPENDS=	libzmq.so:net/libzmq4
 
 USES=		python
-USE_PYTHON=	distutils autoplist cython pytest # 3 tests fail, see https://github.com/zeromq/pyzmq/issues/1802
+USE_PYTHON=	autoplist cython3 pep517 pytest
 
 PYDISTUTILS_CONFIGUREARGS=	--zmq=${LOCALBASE}
 
@@ -28,6 +29,5 @@ do-test:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/zmq/backend/cython/*.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/zmq/devices/*.so
 
 .include <bsd.port.mk>
