@@ -377,7 +377,7 @@ lib/gimp/%%ABIVER%%/plug-ins/file-dicom/file-dicom
 lib/gimp/%%ABIVER%%/plug-ins/file-exr/file-exr
 lib/gimp/%%ABIVER%%/plug-ins/file-farbfeld/file-farbfeld
 lib/gimp/%%ABIVER%%/plug-ins/file-faxg3/file-faxg3
-lib/gimp/%%ABIVER%%/plug-ins/file-fits/file-fits
+%%CFITSIO%%lib/gimp/%%ABIVER%%/plug-ins/file-fits/file-fits
 lib/gimp/%%ABIVER%%/plug-ins/file-fli/file-fli
 lib/gimp/%%ABIVER%%/plug-ins/file-gbr/file-gbr
 lib/gimp/%%ABIVER%%/plug-ins/file-gegl/file-gegl
