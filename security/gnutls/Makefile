@@ -1,7 +1,10 @@
 PORTNAME=	gnutls
-DISTVERSION=	3.8.9
+DISTVERSION=	3.8.10
 CATEGORIES=	security net
-MASTER_SITES=	GNUPG/${PORTNAME}/v${DISTVERSION:C/(\.[^.]*).*/\1/}
+MASTER_SITES=	GNUPG/${PORTNAME}/v${DISTVERSION:C/(\.[^.]*).*/\1/} \
+		https://gitlab.com/gnutls/gnutls/-/raw/${DISTVERSION}/tests/:test
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ktls_utils.h:test
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
@@ -12,10 +15,12 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LESSERv2
 
-LIB_DEPENDS=	libgmp.so:math/gmp \
+LIB_DEPENDS=	libbrotlienc.so:archivers/brotli \
+		libgmp.so:math/gmp \
 		libnettle.so:security/nettle \
 		libtasn1.so:security/libtasn1 \
-		libunistring.so:devel/libunistring
+		libunistring.so:devel/libunistring \
+		libzstd.so:archivers/zstd
 
 USES=		compiler:c11 cpe gmake iconv libtool localbase makeinfo \
 		pkgconfig tar:xz
@@ -28,11 +33,11 @@ CONFIGURE_ARGS=	--disable-rpath \
 		--enable-openssl-compatibility \
 		--with-default-trust-store-dir=/etc/ssl/certs \
 		--with-system-priority-file=${PREFIX}/etc/gnutls/config \
-		--without-brotli \
+		--with-brotli \
 		--without-included-libtasn1 \
 		--without-tpm \
 		--without-tpm2 \
-		--without-zstd
+		--with-zstd
 
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
 INSTALL_TARGET=	install-strip
@@ -73,6 +78,7 @@ P11KIT_CONFIGURE_WITH=	p11-kit
 SRP_CONFIGURE_ENABLE=	srp-authentication
 
 post-patch:
+	@${CP} -p ${DISTDIR}/ktls_utils.h ${WRKSRC}/tests/
 	@${RM} ${WRKSRC}/doc/*.info*
 	@${REINPLACE_CMD} 's,/usr/share,${PREFIX}/share,' \
 		${WRKSRC}/doc/manpages/*.[13]
