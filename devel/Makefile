@@ -4684,7 +4684,7 @@
     SUBDIR += py-cmdtest
     SUBDIR += py-cobble
     SUBDIR += py-codegen
-    SUBDIR += py-cog
+    SUBDIR += py-cogapp
     SUBDIR += py-collections-extended
     SUBDIR += py-colorama
     SUBDIR += py-colored-traceback

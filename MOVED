@@ -4653,3 +4653,4 @@ devel/etcd31||2025-07-08|Has expired: EOLed upstream, switch to a newer version
 devel/etcd32||2025-07-08|Has expired: EOLed upstream, switch to a newer version
 devel/etcd33||2025-07-08|Has expired: EOLed upstream, switch to a newer version
 lang/luajit-devel|lang/luajit|2025-07-08|Removed, use lang/luajit instead
+devel/py-cog|devel/py-cogapp|2025-07-14|Renamed to match upstream PyPI package name
