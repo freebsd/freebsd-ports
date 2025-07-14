@@ -1,3 +1,46 @@
+  <vuln vid="c3e1df74-5e73-11f0-95e5-74563cf9e4e9">
+    <topic>GnuTLS -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<range><lt>3.8.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Daiki Ueno  reports:</p>
+	<blockquote cite="https://lists.gnupg.org/pipermail/gnutls-help/2025-July/004883.html">
+	  <ul>
+	    <li>libgnutls: Fix heap read buffer overrun in parsing X.509 SCTS timestamps
+	      Spotted by oss-fuzz and reported by OpenAI Security Research Team,
+	      and fix developed by Andrew Hamilton. [GNUTLS-SA-2025-07-07-1,
+	      CVSS: medium] [CVE-2025-32989]</li>
+	    <li>libgnutls: Fix double-free upon error when exporting otherName in SAN
+	      Reported by OpenAI Security Research Team. [GNUTLS-SA-2025-07-07-2,
+	      CVSS: low] [CVE-2025-32988]</li>
+	    <li>certtool: Fix 1-byte write buffer overrun when parsing template
+	      Reported by David Aitel. [GNUTLS-SA-2025-07-07-3,
+	      CVSS: low] [CVE-2025-32990]</li>
+	    <li>libgnutls: Fix NULL pointer dereference when 2nd Client Hello omits PSK
+	      Reported by Stefan Bühler. [GNUTLS-SA-2025-07-07-4, CVSS: medium]
+	      [CVE-2025-6395]</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-32989</cvename>
+      <cvename>CVE-2025-32988</cvename>
+      <cvename>CVE-2025-32990</cvename>
+      <cvename>CVE-2025-6395</cvename>
+      <url>https://lists.gnupg.org/pipermail/gnutls-help/2025-July/004883.html</url>
+    </references>
+    <dates>
+      <discovery>2025-07-09</discovery>
+      <entry>2025-07-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b0a3466f-5efc-11f0-ae84-99047d0a6bcc">
     <topic>libxslt -- unmaintained, with multiple unfixed vulnerabilities</topic>
     <affects>
