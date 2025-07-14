@@ -75,7 +75,7 @@ lib/girepository-1.0/Atk-1.0.typelib
 %%NO_ATKONLY%%lib/gtk-2.0/modules/libatk-bridge.so
 lib/libatk-1.0.so
 lib/libatk-1.0.so.0
-lib/libatk-1.0.so.0.25611.1
+lib/libatk-1.0.so.0.25612.1
 %%NO_ATKONLY%%lib/libatk-bridge-2.0.so
 %%NO_ATKONLY%%lib/libatk-bridge-2.0.so.0
 %%NO_ATKONLY%%lib/libatk-bridge-2.0.so.0.0.0
