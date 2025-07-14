@@ -97,6 +97,7 @@
 %%DATADIR%%/Definitions/best-torrents.yml
 %%DATADIR%%/Definitions/bestcore.yml
 %%DATADIR%%/Definitions/bibliotik.yml
+%%DATADIR%%/Definitions/bigcore.yml
 %%DATADIR%%/Definitions/bigfangroup.yml
 %%DATADIR%%/Definitions/bitbazis.yml
 %%DATADIR%%/Definitions/bitded.yml
@@ -203,7 +204,6 @@
 %%DATADIR%%/Definitions/fluxzone.yml
 %%DATADIR%%/Definitions/freefarm.yml
 %%DATADIR%%/Definitions/frozenlayer.yml
-%%DATADIR%%/Definitions/fsm.yml
 %%DATADIR%%/Definitions/funkytorrents.yml
 %%DATADIR%%/Definitions/futuretorrent.yml
 %%DATADIR%%/Definitions/fuzer.yml
@@ -241,7 +241,6 @@
 %%DATADIR%%/Definitions/hdroute.yml
 %%DATADIR%%/Definitions/hdsky.yml
 %%DATADIR%%/Definitions/hdspace.yml
-%%DATADIR%%/Definitions/hdt-lafenice.yml
 %%DATADIR%%/Definitions/hdtime.yml
 %%DATADIR%%/Definitions/hdtorrents.yml
 %%DATADIR%%/Definitions/hdtorrentsit.yml
@@ -254,7 +253,6 @@
 %%DATADIR%%/Definitions/helltorrents.yml
 %%DATADIR%%/Definitions/hhanclub.yml
 %%DATADIR%%/Definitions/hhd-api.yml
-%%DATADIR%%/Definitions/homeporntorrents.yml
 %%DATADIR%%/Definitions/houseofdevil.yml
 %%DATADIR%%/Definitions/hqmusic.yml
 %%DATADIR%%/Definitions/hudbt.yml
@@ -417,7 +415,6 @@
 %%DATADIR%%/Definitions/rainbowtracker.yml
 %%DATADIR%%/Definitions/rapidzona.yml
 %%DATADIR%%/Definitions/rastastugan-api.yml
-%%DATADIR%%/Definitions/redleaves.yml
 %%DATADIR%%/Definitions/redstartorrent.yml
 %%DATADIR%%/Definitions/reelflix-api.yml
 %%DATADIR%%/Definitions/rgfootball.yml
@@ -433,7 +430,6 @@
 %%DATADIR%%/Definitions/rutor.yml
 %%DATADIR%%/Definitions/rutracker-ru.yml
 %%DATADIR%%/Definitions/samaritano.yml
-%%DATADIR%%/Definitions/satclubbing.yml
 %%DATADIR%%/Definitions/scenerush.yml
 %%DATADIR%%/Definitions/seedfile.yml
 %%DATADIR%%/Definitions/seedpool-api.yml
@@ -445,6 +441,7 @@
 %%DATADIR%%/Definitions/sharewood-api.yml
 %%DATADIR%%/Definitions/showrss.yml
 %%DATADIR%%/Definitions/siambit.yml
+%%DATADIR%%/Definitions/skidrowrepack.yml
 %%DATADIR%%/Definitions/sktorrent-org.yml
 %%DATADIR%%/Definitions/sktorrent.yml
 %%DATADIR%%/Definitions/snowpt.yml
@@ -551,7 +548,6 @@
 %%DATADIR%%/Definitions/wintersakura.yml
 %%DATADIR%%/Definitions/world-of-tomorrow.yml
 %%DATADIR%%/Definitions/x-ite.me.yml
-%%DATADIR%%/Definitions/xider-torrent.yml
 %%DATADIR%%/Definitions/xthor-api.yml
 %%DATADIR%%/Definitions/xtorrenty.yml
 %%DATADIR%%/Definitions/xtremebytes.yml
