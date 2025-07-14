@@ -29,12 +29,19 @@ JARFILES1=	saxon-he-${PORTVERSION}.jar \
 JARFILES2=	jline-2.14.6.jar \
 		xmlresolver-${_XMLRESOLVER_VER}.jar \
 		xmlresolver-${_XMLRESOLVER_VER}-data.jar
-PLIST_FILES=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
+PLIST_FILES=	${JARFILES:S,^,%%JAVAJARDIR%%/,} ${SCRIPTFILES}
+
+SUB_FILES=	saxon.sh
+SUB_LIST=	SAXON_JARS="${JARFILES:S,^,${JAVAJARDIR}/,}"
+SCRIPTFILES=	bin/saxon bin/saxon-xquery
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${JARFILES1:S,^,${WRKSRC}/,} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${JARFILES2:S,^,${WRKSRC}/lib/,} ${STAGEDIR}${JAVAJARDIR}
+.for scriptfile in ${SCRIPTFILES}
+	${INSTALL_SCRIPT} ${WRKDIR}/saxon.sh ${STAGEDIR}${PREFIX}/${scriptfile}
+.endfor
 
 post-stage:
 # smoke test so we're sure we can load all required classes
