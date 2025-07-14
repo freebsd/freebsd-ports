@@ -1,3 +1,29 @@
+  <vuln vid="aeac223e-60e1-11f0-8baa-8447094a420f">
+    <topic>liboqs -- Secret-dependent branching in HQC</topic>
+    <affects>
+      <package>
+	<name>liboqs</name>
+	<range><lt>0.14.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenQuantumSafe project reports:</p>
+	<blockquote cite="https://github.com/open-quantum-safe/liboqs/security/advisories/GHSA-qq3m-rq9v-jfgm">
+	  <p>Secret-dependent branching in HQC reference implementation when compiled with Clang 17-20 for optimizations above -O0</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-52473</cvename>
+      <url>https://github.com/open-quantum-safe/liboqs/security/advisories/GHSA-qq3m-rq9v-jfgm</url>
+    </references>
+    <dates>
+      <discovery>2025-07-10</discovery>
+      <entry>2025-07-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c3e1df74-5e73-11f0-95e5-74563cf9e4e9">
     <topic>GnuTLS -- multiple vulnerabilities</topic>
     <affects>
