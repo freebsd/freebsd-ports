@@ -1,7 +1,6 @@
 PORTNAME=	diesel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.11
-PORTREVISION=	1
+DISTVERSION=	2.2.12
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
 
@@ -38,15 +37,15 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		bitflags-2.9.1 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
-		bumpalo-3.18.1 \
+		bumpalo-3.19.0 \
 		byteorder-1.5.0 \
-		cc-1.2.27 \
+		cc-1.2.29 \
 		cfg-if-1.0.1 \
 		chrono-0.4.41 \
-		clap-4.5.40 \
-		clap_builder-4.5.40 \
-		clap_complete-4.5.54 \
-		clap_derive-4.5.40 \
+		clap-4.5.41 \
+		clap_builder-4.5.41 \
+		clap_complete-4.5.55 \
+		clap_derive-4.5.41 \
 		clap_lex-0.7.5 \
 		cmake-0.1.54 \
 		colorchoice-1.0.4 \
@@ -66,7 +65,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		encode_unicode-1.0.0 \
 		env_logger-0.8.4 \
 		equivalent-1.0.2 \
-		errno-0.3.12 \
+		errno-0.3.13 \
 		fastrand-2.3.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
@@ -87,7 +86,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		ident_case-1.0.1 \
 		idna-1.0.3 \
 		idna_adapter-1.2.1 \
-		indexmap-2.9.0 \
+		indexmap-2.10.0 \
 		insta-1.43.1 \
 		ipnet-2.11.0 \
 		ipnetwork-0.21.1 \
@@ -97,7 +96,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		lazy_static-1.5.0 \
 		libc-0.2.174 \
 		libm-0.2.15 \
-		libsqlite3-sys-0.33.0 \
+		libsqlite3-sys-0.35.0 \
 		link-cplusplus-1.0.10 \
 		linux-raw-sys-0.9.4 \
 		litemap-0.8.0 \
@@ -115,7 +114,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		num-traits-0.2.19 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.1 \
-		openssl-src-300.5.0+3.5.0 \
+		openssl-src-300.5.1+3.5.1 \
 		openssl-sys-0.9.109 \
 		overload-0.1.1 \
 		parking_lot-0.12.4 \
@@ -153,7 +152,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		serde_derive-1.0.219 \
 		serde_json-1.0.140 \
 		serde_regex-1.1.0 \
-		serde_spanned-0.6.9 \
+		serde_spanned-1.0.0 \
 		sharded-slab-0.1.7 \
 		shlex-1.3.0 \
 		similar-2.7.0 \
@@ -161,20 +160,20 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
-		syn-2.0.103 \
+		syn-2.0.104 \
 		synstructure-0.13.2 \
 		tempfile-3.20.0 \
-		thiserror-1.0.69 \
-		thiserror-impl-1.0.69 \
+		thiserror-2.0.12 \
+		thiserror-impl-2.0.12 \
 		thread_local-1.1.9 \
 		time-0.3.41 \
 		time-core-0.1.4 \
 		time-macros-0.2.22 \
 		tinystr-0.8.1 \
-		toml-0.8.23 \
-		toml_datetime-0.6.11 \
-		toml_edit-0.22.27 \
-		toml_write-0.1.2 \
+		toml-0.9.2 \
+		toml_datetime-0.7.0 \
+		toml_parser-1.0.1 \
+		toml_writer-1.0.2 \
 		tracing-0.1.41 \
 		tracing-attributes-0.1.30 \
 		tracing-core-0.1.34 \
@@ -207,16 +206,26 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows-strings-0.4.2 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
 		windows-targets-0.52.6 \
+		windows-targets-0.53.2 \
 		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_gnullvm-0.53.0 \
 		windows_aarch64_msvc-0.52.6 \
+		windows_aarch64_msvc-0.53.0 \
 		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.0 \
 		windows_i686_gnullvm-0.52.6 \
+		windows_i686_gnullvm-0.53.0 \
 		windows_i686_msvc-0.52.6 \
+		windows_i686_msvc-0.53.0 \
 		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.0 \
 		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.7.11 \
+		windows_x86_64_msvc-0.53.0 \
+		winnow-0.7.12 \
 		wit-bindgen-rt-0.39.0 \
 		writeable-0.6.1 \
 		yoke-0.8.0 \
