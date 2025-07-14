@@ -1,6 +1,6 @@
 PORTNAME=	gismo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.01.0
+DISTVERSION=	25.07.0
 CATEGORIES=	math # geometry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,6 +32,6 @@ CMAKE_ARGS+=	-DTARGET_ARCHITECTURE="arm1176jzf-s"
 CMAKE_ARGS+=	-DTARGET_ARCHITECTURE="cortex-a7"
 .endif
 
-# tests as of 25.01.0: 99% tests passed, 1 tests failed out of 86, see https://github.com/gismo/gismo/issues/466
+# tests as of 25.07.0: 99% tests passed, 1 tests failed out of 90, see https://github.com/gismo/gismo/issues/466
 
 .include <bsd.port.post.mk>
