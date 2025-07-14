@@ -1,0 +1,29 @@
+--- Makefile.orig	2025-07-14 17:23:25 UTC
++++ Makefile
+@@ -270,7 +270,7 @@ $(PKGCONFNAME): $(PKGCONF_TEMPLATE)
+ 	@echo "Generating $@ for pkgconfig..."
+ 	sed \
+ 		-e 's|@CMAKE_INSTALL_PREFIX@|$(PREFIX)|g' \
+-		-e 's|@CMAKE_INSTALL_LIBDIR@|$(INSTALL_LIBRARY_PATH)|g' \
++		-e 's|@CMAKE_INSTALL_LIBDIR@|$(PREFIX)/$(LIBRARY_PATH)|g' \
+ 		-e 's|@PROJECT_VERSION@|$(LIBVALKEY_SONAME)|g' \
+ 		$< > $@
+ 
+@@ -278,7 +278,7 @@ $(TLS_PKGCONFNAME): $(TLS_PKGCONF_TEMPLATE)
+ 	@echo "Generating $@ for pkgconfig..."
+ 	sed \
+ 		-e 's|@CMAKE_INSTALL_PREFIX@|$(PREFIX)|g' \
+-		-e 's|@CMAKE_INSTALL_LIBDIR@|$(INSTALL_LIBRARY_PATH)|g' \
++		-e 's|@CMAKE_INSTALL_LIBDIR@|$(PREFIX)/$(LIBRARY_PATH)|g' \
+ 		-e 's|@PROJECT_VERSION@|$(LIBVALKEY_SONAME)|g' \
+ 		$< > $@
+ 
+@@ -286,7 +286,7 @@ $(RDMA_PKGCONFNAME): $(RDMA_PKGCONF_TEMPLATE)
+ 	@echo "Generating $@ for pkgconfig..."
+ 	sed \
+ 		-e 's|@CMAKE_INSTALL_PREFIX@|$(PREFIX)|g' \
+-		-e 's|@CMAKE_INSTALL_LIBDIR@|$(INSTALL_LIBRARY_PATH)|g' \
++		-e 's|@CMAKE_INSTALL_LIBDIR@|$(PREFIX)/$(LIBRARY_PATH)|g' \
+ 		-e 's|@PROJECT_VERSION@|$(LIBVALKEY_SONAME)|g' \
+ 		$< > $@
+ 
