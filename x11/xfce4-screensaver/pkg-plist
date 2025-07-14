@@ -6,7 +6,6 @@ bin/xfce4-screensaver-preferences
 etc/xdg/autostart/xfce4-screensaver.desktop
 etc/xdg/menus/xfce4-screensavers.menu
 libexec/xfce4-screensaver-dialog
-libexec/xfce4-screensaver-gl-helper
 libexec/xfce4-screensaver/floaters
 libexec/xfce4-screensaver/popsquares
 libexec/xfce4-screensaver/slideshow
@@ -60,6 +59,7 @@ share/icons/hicolor/scalable/apps/org.xfce.ScreenSaver.svg
 %%NLS%%share/locale/pl/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-screensaver.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/xfce4-screensaver.mo
