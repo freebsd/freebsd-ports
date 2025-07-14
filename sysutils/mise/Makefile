@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.7.4
+DISTVERSION=	2025.7.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,6 +46,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		anyhow-1.0.98 \
 		arbitrary-1.4.1 \
 		arc-swap-1.7.1 \
+		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
 		assert-json-diff-2.0.2 \
 		async-backtrace-0.2.7 \
@@ -65,6 +66,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bit-set-0.6.0 \
 		bit-vec-0.7.0 \
 		bitflags-2.9.1 \
+		blake3-1.8.2 \
 		block-buffer-0.10.4 \
 		bstr-1.12.0 \
 		built-0.8.0 \
@@ -353,8 +355,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		logos-derive-0.12.1 \
 		loom-0.5.6 \
 		lru-slab-0.1.2 \
-		lua-src-547.0.0 \
-		luajit-src-210.5.12+a4f56a4 \
+		lua-src-548.1.1 \
+		luajit-src-210.6.1+f9140a6 \
 		lzma-rs-0.3.0 \
 		lzma-rust-0.1.7 \
 		lzma-sys-0.1.20 \
@@ -370,9 +372,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		minisign-verify-0.2.4 \
 		miniz_oxide-0.8.9 \
 		mio-1.0.4 \
-		mlua-0.10.5 \
-		mlua-sys-0.6.8 \
-		mlua_derive-0.10.1 \
+		mlua-0.11.0-beta.3 \
+		mlua-sys-0.8.1 \
+		mlua_derive-0.11.0-beta.2 \
 		mockito-1.7.0 \
 		native-tls-0.2.14 \
 		nix-0.30.1 \
@@ -629,7 +631,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		version_check-0.9.5 \
 		versions-6.3.2 \
 		versions-7.0.0 \
-		vfox-1.0.5 \
 		vte-0.14.1 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
