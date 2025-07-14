@@ -306,6 +306,7 @@ share/obs/obs-plugins/image-source/locale/ru-RU.ini
 share/obs/obs-plugins/image-source/locale/si-LK.ini
 share/obs/obs-plugins/image-source/locale/sk-SK.ini
 share/obs/obs-plugins/image-source/locale/sl-SI.ini
+share/obs/obs-plugins/image-source/locale/sq-AL.ini
 share/obs/obs-plugins/image-source/locale/sr-CS.ini
 share/obs/obs-plugins/image-source/locale/sr-SP.ini
 share/obs/obs-plugins/image-source/locale/sv-SE.ini
@@ -435,6 +436,7 @@ share/obs/obs-plugins/linux-capture/locale/ru-RU.ini
 share/obs/obs-plugins/linux-capture/locale/si-LK.ini
 share/obs/obs-plugins/linux-capture/locale/sk-SK.ini
 share/obs/obs-plugins/linux-capture/locale/sl-SI.ini
+share/obs/obs-plugins/linux-capture/locale/sq-AL.ini
 share/obs/obs-plugins/linux-capture/locale/sr-CS.ini
 share/obs/obs-plugins/linux-capture/locale/sr-SP.ini
 share/obs/obs-plugins/linux-capture/locale/sv-SE.ini
@@ -511,7 +513,6 @@ share/obs/obs-plugins/linux-capture/locale/zh-TW.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/vi-VN.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/zh-CN.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/zh-TW.ini
-%%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/.gitkeep
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/af-ZA.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/ar-SA.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/be-BY.ini
@@ -678,6 +679,7 @@ share/obs/obs-plugins/linux-v4l2/locale/ru-RU.ini
 share/obs/obs-plugins/linux-v4l2/locale/si-LK.ini
 share/obs/obs-plugins/linux-v4l2/locale/sk-SK.ini
 share/obs/obs-plugins/linux-v4l2/locale/sl-SI.ini
+share/obs/obs-plugins/linux-v4l2/locale/sq-AL.ini
 share/obs/obs-plugins/linux-v4l2/locale/sr-CS.ini
 share/obs/obs-plugins/linux-v4l2/locale/sr-SP.ini
 share/obs/obs-plugins/linux-v4l2/locale/sv-SE.ini
@@ -961,6 +963,7 @@ share/obs/obs-plugins/obs-transitions/locale/ru-RU.ini
 share/obs/obs-plugins/obs-transitions/locale/si-LK.ini
 share/obs/obs-plugins/obs-transitions/locale/sk-SK.ini
 share/obs/obs-plugins/obs-transitions/locale/sl-SI.ini
+share/obs/obs-plugins/obs-transitions/locale/sq-AL.ini
 share/obs/obs-plugins/obs-transitions/locale/sr-CS.ini
 share/obs/obs-plugins/obs-transitions/locale/sr-SP.ini
 share/obs/obs-plugins/obs-transitions/locale/sv-SE.ini
@@ -1090,11 +1093,13 @@ share/obs/obs-plugins/obs-websocket/locale/id-ID.ini
 share/obs/obs-plugins/obs-websocket/locale/it-IT.ini
 share/obs/obs-plugins/obs-websocket/locale/ja-JP.ini
 share/obs/obs-plugins/obs-websocket/locale/ka-GE.ini
+share/obs/obs-plugins/obs-websocket/locale/kaa.ini
 share/obs/obs-plugins/obs-websocket/locale/kmr-TR.ini
 share/obs/obs-plugins/obs-websocket/locale/ko-KR.ini
 share/obs/obs-plugins/obs-websocket/locale/ms-MY.ini
 share/obs/obs-plugins/obs-websocket/locale/nb-NO.ini
 share/obs/obs-plugins/obs-websocket/locale/nl-NL.ini
+share/obs/obs-plugins/obs-websocket/locale/nn-NO.ini
 share/obs/obs-plugins/obs-websocket/locale/pl-PL.ini
 share/obs/obs-plugins/obs-websocket/locale/pt-BR.ini
 share/obs/obs-plugins/obs-websocket/locale/pt-PT.ini
@@ -1103,7 +1108,10 @@ share/obs/obs-plugins/obs-websocket/locale/ru-RU.ini
 share/obs/obs-plugins/obs-websocket/locale/si-LK.ini
 share/obs/obs-plugins/obs-websocket/locale/sk-SK.ini
 share/obs/obs-plugins/obs-websocket/locale/sl-SI.ini
+share/obs/obs-plugins/obs-websocket/locale/sq-AL.ini
+share/obs/obs-plugins/obs-websocket/locale/sr-SP.ini
 share/obs/obs-plugins/obs-websocket/locale/sv-SE.ini
+share/obs/obs-plugins/obs-websocket/locale/th-TH.ini
 share/obs/obs-plugins/obs-websocket/locale/tr-TR.ini
 share/obs/obs-plugins/obs-websocket/locale/tt-RU.ini
 share/obs/obs-plugins/obs-websocket/locale/ug-CN.ini
@@ -1162,6 +1170,7 @@ share/obs/obs-plugins/obs-x264/locale/ru-RU.ini
 share/obs/obs-plugins/obs-x264/locale/si-LK.ini
 share/obs/obs-plugins/obs-x264/locale/sk-SK.ini
 share/obs/obs-plugins/obs-x264/locale/sl-SI.ini
+share/obs/obs-plugins/obs-x264/locale/sq-AL.ini
 share/obs/obs-plugins/obs-x264/locale/sr-CS.ini
 share/obs/obs-plugins/obs-x264/locale/sr-SP.ini
 share/obs/obs-plugins/obs-x264/locale/sv-SE.ini
@@ -1222,6 +1231,7 @@ share/obs/obs-plugins/oss-audio/locale/ru-RU.ini
 share/obs/obs-plugins/oss-audio/locale/si-LK.ini
 share/obs/obs-plugins/oss-audio/locale/sk-SK.ini
 share/obs/obs-plugins/oss-audio/locale/sl-SI.ini
+share/obs/obs-plugins/oss-audio/locale/sq-AL.ini
 share/obs/obs-plugins/oss-audio/locale/sv-SE.ini
 share/obs/obs-plugins/oss-audio/locale/ta-IN.ini
 share/obs/obs-plugins/oss-audio/locale/th-TH.ini
@@ -1282,6 +1292,7 @@ share/obs/obs-plugins/rtmp-services/locale/ru-RU.ini
 share/obs/obs-plugins/rtmp-services/locale/si-LK.ini
 share/obs/obs-plugins/rtmp-services/locale/sk-SK.ini
 share/obs/obs-plugins/rtmp-services/locale/sl-SI.ini
+share/obs/obs-plugins/rtmp-services/locale/sq-AL.ini
 share/obs/obs-plugins/rtmp-services/locale/sr-CS.ini
 share/obs/obs-plugins/rtmp-services/locale/sr-SP.ini
 share/obs/obs-plugins/rtmp-services/locale/sv-SE.ini
@@ -1345,6 +1356,7 @@ share/obs/obs-plugins/rtmp-services/services.json
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/si-LK.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/sk-SK.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/sl-SI.ini
+%%SNDIO%%share/obs/obs-plugins/sndio/locale/sq-AL.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/sr-SP.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/sv-SE.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/szl-PL.ini
@@ -1469,6 +1481,7 @@ share/obs/obs-plugins/text-freetype2/text_default.effect
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/si-LK.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/sk-SK.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/sl-SI.ini
+%%VLC%%share/obs/obs-plugins/vlc-video/locale/sq-AL.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/sr-CS.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/sr-SP.ini
 %%VLC%%share/obs/obs-plugins/vlc-video/locale/sv-SE.ini
@@ -1563,6 +1576,7 @@ share/obs/obs-studio/locale/ur-PK.ini
 share/obs/obs-studio/locale/vi-VN.ini
 share/obs/obs-studio/locale/zh-CN.ini
 share/obs/obs-studio/locale/zh-TW.ini
+share/obs/obs-studio/striped_line.effect
 share/obs/obs-studio/themes/Acri/bot_hook.png
 share/obs/obs-studio/themes/Acri/bot_hook2.png
 share/obs/obs-studio/themes/Acri/checkbox_checked.png
