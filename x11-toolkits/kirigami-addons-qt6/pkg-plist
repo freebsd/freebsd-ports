@@ -41,8 +41,10 @@ lib/libKirigamiAddonsStatefulApp.so.6
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/dateandtime/private/DatePicker.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/dateandtime/private/DatePickerDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/dateandtime/qmldir
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/delegates/CheckDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/delegates/DefaultContentItem.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/delegates/IndicatorItemDelegate.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/delegates/RadioDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/delegates/RoundedItemDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/delegates/RoundedTreeDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/delegates/SubtitleContentItem.qml
@@ -65,6 +67,8 @@ lib/libKirigamiAddonsStatefulApp.so.6
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormDateTimeDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormDelegateBackground.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormDelegateSeparator.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormFileDelegate.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormFolderDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormGridContainer.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/FormIconDelegate.qml
