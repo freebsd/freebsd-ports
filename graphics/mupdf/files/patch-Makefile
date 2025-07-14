@@ -1,26 +1,11 @@
-$OpenBSD: patch-Makefile,v 1.12 2016/12/12 10:54:39 sthen Exp $
---- Makefile.orig	2022-10-30 12:16:03 UTC
+--- Makefile.orig	2025-07-13 20:35:02 UTC
 +++ Makefile
-@@ -257,17 +257,19 @@ $(THIRD_GLUT_LIB) : $(THIRD_GLUT_OBJ)
- $(THREAD_LIB) : $(THREAD_OBJ)
- $(PKCS7_LIB) : $(PKCS7_OBJ)
- else
--MUPDF_LIB = $(OUT)/libmupdf.a
-+MUPDF_LIB = $(OUT)/libmupdf.so.$(SOVERSION)
-+THIRD_LIB = $(OUT)/libmupdf-third.so.$(SOVERSION)
- LIBS_TO_INSTALL_IN_LIB = $(MUPDF_LIB) $(THIRD_LIB)
--THIRD_LIB = $(OUT)/libmupdf-third.a
- ifneq ($(USE_SYSTEM_GLUT),yes)
- THIRD_GLUT_LIB = $(OUT)/libmupdf-glut.a
- endif
- THREAD_LIB = $(OUT)/libmupdf-threads.a
- PKCS7_LIB = $(OUT)/libmupdf-pkcs7.a
+@@ -116,7 +116,7 @@ $(OUT)/generated/%.o : generated/%.c
+ 	$(CC_CMD) $(LIB_CFLAGS) $(WARNING_CFLAGS) $(THIRD_CFLAGS) $(THREADING_CFLAGS)
  
--$(MUPDF_LIB) : $(MUPDF_OBJ)
-+$(MUPDF_LIB) : $(MUPDF_OBJ) $(THIRD_LIB)
-+	$(LINK_CMD) -shared -Wl,-soname -Wl,libmupdf.so.$(SOVERSION)
- $(THIRD_LIB) : $(THIRD_OBJ)
-+	$(LINK_CMD) -shared -Wl,-soname -Wl,libmupdf-third.so.$(SOVERSION)
- $(THIRD_GLUT_LIB) : $(THIRD_GLUT_OBJ)
- $(THREAD_LIB) : $(THREAD_OBJ)
- $(PKCS7_LIB) : $(PKCS7_OBJ)
+ $(OUT)/generated/%.o : generated/%.c
+-	$(CC_CMD) $(WARNING_CFLAGS) $(LIB_CFLAGS) -O0
++	$(CC_CMD) $(WARNING_CFLAGS) $(LIB_CFLAGS)
+ 
+ $(OUT)/platform/x11/%.o : platform/x11/%.c
+ 	$(CC_CMD) $(WARNING_CFLAGS) $(X11_CFLAGS)

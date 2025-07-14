@@ -1,9 +1,57 @@
---- Makerules.orig	2023-11-24 18:10:54 UTC
+--- Makerules.orig	2025-05-19 15:38:05 UTC
 +++ Makerules
-@@ -331,3 +331,43 @@ ifeq "$(OS)" "ios"
+@@ -131,28 +131,28 @@ else ifeq ($(build),release)
+   CFLAGS += -pipe -g
+   LDFLAGS += -g
+ else ifeq ($(build),release)
+-  CFLAGS += -pipe -O2 -DNDEBUG
++  CFLAGS +=  -DNDEBUG
+   LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
+ else ifeq ($(build),small)
+   CFLAGS += -pipe -Os -DNDEBUG
+   LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
+ else ifeq ($(build),valgrind)
+-  CFLAGS += -pipe -O2 -DNDEBUG -DPACIFY_VALGRIND
++  CFLAGS +=  -DNDEBUG -DPACIFY_VALGRIND
+   LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
+ else ifeq ($(build),sanitize)
+   CFLAGS += -pipe -g $(SANITIZE_FLAGS)
+   LDFLAGS += -g $(SANITIZE_FLAGS)
+ else ifeq ($(build),sanitize-release)
+-  CFLAGS += -pipe -O2 -DNDEBUG $(SANITIZE_FLAGS)
++  CFLAGS +=  -DNDEBUG $(SANITIZE_FLAGS)
+   LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s $(SANITIZE_FLAGS)
+ else ifeq ($(build),profile)
+-  CFLAGS += -pipe -O2 -DNDEBUG -pg
++  CFLAGS +=  -DNDEBUG -pg
+   LDFLAGS += -pg
+ else ifeq ($(build),coverage)
+   CFLAGS += -pipe -g -pg -fprofile-arcs -ftest-coverage
+   LIBS += -lgcov
+ else ifeq ($(build),native)
+-  CFLAGS += -pipe -O2 -DNDEBUG -march=native
++  CFLAGS +=  -DNDEBUG -march=native
+   LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
+ else ifeq ($(build),memento)
+   CFLAGS += -pipe -g -DMEMENTO -DMEMENTO_MUPDF_HACKS
+@@ -162,11 +162,11 @@ else ifeq ($(build),memento)
+     ifeq ($(OS),OpenBSD)
+       LIBS += -L /usr/local/lib -l execinfo
+     else
+-      LIBS += -ldl
++      LIBS += 
+     endif
+   endif
+ else ifeq ($(build),gperf)
+-  CFLAGS += -pipe -O2 -DNDEBUG -DGPERF
++  CFLAGS +=  -DNDEBUG -DGPERF
+   LIBS += -lprofiler
+ else
+   $(error unknown build setting: '$(build)')
+@@ -201,6 +201,46 @@ ifeq ($(OS),Darwin)
    LD = xcrun ld
    RANLIB = xcrun ranlib
- endif
+ 
 +
 +
 +# added from FreeBSD ports
@@ -44,3 +92,15 @@
 +USE_SYSTEM_ZLIB := yes
 +SYS_ZLIB_CFLAGS := $(shell pkg-config --cflags zlib)
 +SYS_ZLIB_LIBS := $(shell pkg-config --libs zlib)
+   ifneq ($(ARCHFLAGS),)
+     $(warning "MacOS with ARCHFLAGS set. Assuming we are building for arm64, and setting HAVE_LIBCRYPTO to no.")
+     HAVE_LIBCRYPTO := no
+@@ -220,7 +260,7 @@ else
+     HAVE_OBJCOPY := yes
+   endif
+ 
+-  ifeq ($(OS),OpenBSD)
++  ifeq ($(OS),FreeBSD)
+     LDFLAGS += -pthread
+   endif
+ 

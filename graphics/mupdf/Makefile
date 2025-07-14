@@ -1,5 +1,5 @@
 PORTNAME=	mupdf
-DISTVERSION=	1.25.6
+DISTVERSION=	1.26.3
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -12,34 +12,41 @@ WWW=		https://www.mupdf.com/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
+BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils
+LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
+		libbrotlienc.so:archivers/brotli \
+		libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
+		libgumbo.so:devel/gumbo \
 		libharfbuzz.so:print/harfbuzz \
 		libjbig2dec.so:graphics/jbig2dec \
 		libopenjp2.so:graphics/openjpeg
 
-USES=		compiler:c++11-lang cpe gl gmake jpeg pkgconfig xorg
+USES=		compiler:c++20-lang cpe gl gmake jpeg pkgconfig ssl xorg
 CPE_VENDOR=	artifex
 USE_GL=		gl glut
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xcursor xext xinerama xrandr
 
-MAKE_ARGS=	build=release \
+_VERSION_MINOR=	${DISTVERSION:E}
+_VERSION_MAJOR=	${DISTVERSION:R:E}
+MAKE_ARGS=	AR=${LOCALBASE}/bin/ar \
+		build=release \
 		mandir=${PREFIX}/share/man \
 		prefix=${PREFIX} \
-		SOVERSION=${DISTVERSION} \
+		shared=yes \
+		USE_SYSTEM_LIBS=yes \
 		verbose=yes \
-		XCFLAGS+="-I${WRKSRC}/include/mupdf -fPIC" \
-		XLIBS+="-L${LOCALBASE}/lib -L${WRKSRC}/build/release"
+		XCFLAGS="${CFLAGS} -I${WRKSRC}/include/mupdf -fPIC" \
+		XLIB_LDFLAGS="-Wl,-soname,libmupdf.so.${_VERSION_MAJOR}" \
+		XLIBS="-L${LOCALBASE}/lib -L${WRKSRC}/build/release ${LDFLAGS}"
 ALL_TARGET=	all extra-libs
-
-# pkg-config to avoid the conflict with openjpeg15
-CFLAGS+=	`pkg-config --cflags libopenjp2`
-LDFLAGS+=	`pkg-config --libs libjpeg libopenjp2` -ljbig2dec
+INSTALL_TARGET=	install install-extra-apps
 
 BINARY_ALIAS=	bash=/bin/sh
 
-PLIST_SUB=	SOVERSION=${PORTVERSION}
+PLIST_SUB=	VERSION_MAJOR=${_VERSION_MAJOR} \
+		VERSION_MINOR=${_VERSION_MINOR}
 
 OPTIONS_DEFINE=		DOCS JS SCROLL
 OPTIONS_DEFAULT=	SCROLL
@@ -52,18 +59,8 @@ JS_MAKE_ARGS=		V8_PRESENT=1 \
 			V8LIBS=-lv8
 SCROLL_EXTRA_PATCHES=	${FILESDIR}/scroll_hack-platform__x11__pdfapp.c
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/-pipe -O2//' -e 's/-ldl//' ${WRKSRC}/Makerules
-
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/mupdf-x11 \
 		${STAGEDIR}${PREFIX}/bin/mupdf
-	${INSTALL_PROGRAM} \
-		${WRKSRC}/build/release/muraster \
-		${STAGEDIR}${PREFIX}/bin
-	${LN} -s libmupdf.so.${PORTVERSION} \
-		${STAGEDIR}${PREFIX}/lib/libmupdf.so
-	${LN} -s libmupdf-third.so.${PORTVERSION} \
-		${STAGEDIR}${PREFIX}/lib/libmupdf-third.so
 
 .include <bsd.port.mk>
