@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if [ "$2" = POST-DEINSTALL ]; then
+	CERTCTL_ARGS="-D ${PKG_ROOTDIR}"
+	certctl ${CERTCTL_ARGS} rehash
+fi

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$2" = POST-INSTALL ]; then
+	CERTCTL_ARGS="-D ${PKG_ROOTDIR}"
+	if [ -n "${PKG_METALOG}" ]; then
+		CERTCTL_ARGS="${CERTCTL_ARGS} -U -M ${PKG_METALOG}"
+	fi
+	certctl ${CERTCTL_ARGS} rehash
+
+	[ ! -e %%LOCALBASE%%/bin/cert-sync ] || \
+	    %%LOCALBASE%%/bin/cert-sync --quiet %%PREFIX%%/share/certs/ca-root-nss.crt
+fi
