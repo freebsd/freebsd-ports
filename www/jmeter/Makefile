@@ -1,5 +1,6 @@
 PORTNAME=	apache-jmeter
 DISTVERSION=	5.6.3
+PORTREVISION=	1
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	https://archive.apache.org/dist/jmeter/binaries/
 
@@ -58,7 +59,7 @@ RUN_DEPENDS=	\
 		${JAVALIBDIR}/log4j-slf4j-impl.jar:devel/apache-log4j2 \
 		${JAVALIBDIR}/mail.jar:java/javamail \
 		${_JAVADIR}/rhino/rhino.jar:lang/rhino \
-		${JAVALIBDIR}/saxon-he-12.6.jar:textproc/saxon-he \
+		saxon-he>=12:textproc/saxon-he \
 		${JAVALIBDIR}/serializer.jar:textproc/xalan-j \
 		${_JAVADIR}/slf4j/slf4j-api.jar:devel/slf4j \
 		${JAVALIBDIR}/xalan.jar:textproc/xalan-j \
