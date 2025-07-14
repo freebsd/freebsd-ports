@@ -1,5 +1,5 @@
 PORTNAME=	httr2
-DISTVERSION=	1.1.2
+DISTVERSION=	1.2.0
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	R-cran-cli>=3.0.0:devel/R-cran-cli \
-		R-cran-curl>=6.2.1:ftp/R-cran-curl \
+		R-cran-curl>=6.4.0:ftp/R-cran-curl \
 		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
@@ -34,7 +34,7 @@ TEST_DEPENDS=	R-cran-askpass>0:security/R-cran-askpass \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-testthat>=3.1.8:devel/R-cran-testthat \
 		R-cran-tibble>0:devel/R-cran-tibble \
-		R-cran-webfakes>0:devel/R-cran-webfakes \
+		R-cran-webfakes>=1.4.0:devel/R-cran-webfakes \
 		R-cran-xml2>0:textproc/R-cran-xml2
 
 USES=		cran:auto-plist
