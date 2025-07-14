@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-# Wrapper to enforce usable Java versions
-#
-export JAVA_VERSION=%%JAVA_VERSION%%
-exec "%%DATADIR%%/bin/pycharm.sh" "$@"
