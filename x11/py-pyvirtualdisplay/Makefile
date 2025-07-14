@@ -13,7 +13,7 @@ WWW=		https://github.com/ponty/pyvirtualdisplay
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cogapp>=2.3:devel/py-cog@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cogapp>=2.3:devel/py-cogapp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}easyprocess>0:devel/py-easyprocess@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paver>0:devel/py-paver@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyscreenshot>0:x11/py-pyscreenshot@${PY_FLAVOR} \

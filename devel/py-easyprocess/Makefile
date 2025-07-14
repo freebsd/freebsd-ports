@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paver>0:devel/py-paver@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cogapp>=2.3:devel/py-cog@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cogapp>=2.3:devel/py-cogapp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 
 NO_ARCH=	YES
