@@ -1,6 +1,6 @@
 PORTNAME=	scilab
 DISTVERSION=	6.1.1
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	math cad java
 MASTER_SITES=	https://www.scilab.org/download/${DISTVERSION}/
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -13,8 +13,6 @@ LICENSE=	GPLv2 BSD3CLAUSE
 LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/COPYING-BSD
-
-BROKEN=		Fails to build, configure: error: Could not find or use the Java package/jar saxon used by Saxon XSLT Processor (looking for package com.icl.saxon.Loader)
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
@@ -86,7 +84,7 @@ _GUI_DEPENDS+=	${JAVALIBDIR}/commons-beanutils.jar:java/apache-commons-beanutils
 		${LOCALBASE}/bin/splint:devel/splint
 # Documentation building:
 _GUI_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/javahelp/javahelp.xsl:textproc/docbook-xsl \
-		${JAVALIBDIR}/saxon-he-12.6.jar:textproc/saxon-he \
+		saxon-he>=12.8:textproc/saxon-he \
 		${_JAVADIR}/xml-commons/xml-apis-ext.jar:textproc/xml-commons \
 		xsltproc:textproc/libxslt
 # Other gui deps:
@@ -148,6 +146,7 @@ FFLAGS+=	-fallow-argument-mismatch
 post-patch:
 	@${REINPLACE_CMD} 's,/usr/local,${LOCALBASE},' ${WRKSRC}/etc/librarypath.xml
 	@${REINPLACE_CMD} -e 's, gfortran, ${FC},' ${WRKSRC}/modules/dynamic_link/src/scripts/configure
+	@${REINPLACE_CMD} -e 's,valgrind,X_X_NONEXIST_X_X,' ${WRKSRC}/configure
 .if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's|std::filesystem|std::__fs::filesystem|g' \
 		${WRKSRC}/modules/fileio/src/cpp/fullpath.cpp \
