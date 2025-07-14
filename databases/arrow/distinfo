@@ -1,5 +1,5 @@
-TIMESTAMP = 1740274410
-SHA256 (apache-arrow-19.0.1.tar.gz) = acb76266e8b0c2fbb7eb15d542fbb462a73b3fd1e32b80fad6c2fafd95a51160
-SIZE (apache-arrow-19.0.1.tar.gz) = 17849505
+TIMESTAMP = 1749498304
+SHA256 (apache-arrow-20.0.0.tar.gz) = 89efbbf852f5a1f79e9c99ab4c217e2eb7f991837c005cba2d4a2fbd35fad212
+SIZE (apache-arrow-20.0.0.tar.gz) = 17862661
 SHA256 (release-1.6.6.tar.gz) = 9a92b3eaad1d8b88a18cee41058feb34eb43d919df363e0b74a0b857724e4ba0
 SIZE (release-1.6.6.tar.gz) = 13939853
