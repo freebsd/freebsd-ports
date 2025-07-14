@@ -1,5 +1,5 @@
 PORTNAME=	pycharm
-DISTVERSION=	2025.1.2
+DISTVERSION=	2025.1.3.1
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/
 DIST_SUBDIR=	jetbrains
@@ -31,7 +31,7 @@ SHEBANG_FILES=	plugins/python-ce/helpers/pycodestyle.py \
 
 ONLY_FOR_ARCH=	amd64
 CPE_VENDOR=	jetbrains
-JAVA_VERSION=	17+
+JAVA_VERSION=	21+
 
 DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}
 
