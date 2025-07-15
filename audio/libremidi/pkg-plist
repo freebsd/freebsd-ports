@@ -58,6 +58,12 @@ include/libremidi/backends/jack/midi_in.hpp
 include/libremidi/backends/jack/midi_out.hpp
 include/libremidi/backends/jack/observer.hpp
 include/libremidi/backends/jack/shared_handler.hpp
+include/libremidi/backends/jack_ump.hpp
+include/libremidi/backends/jack_ump/config.hpp
+include/libremidi/backends/jack_ump/midi_in.hpp
+include/libremidi/backends/jack_ump/midi_out.hpp
+include/libremidi/backends/jack_ump/observer.hpp
+include/libremidi/backends/jack_ump/shared_handler.hpp
 include/libremidi/backends/keyboard.hpp
 include/libremidi/backends/keyboard/config.hpp
 include/libremidi/backends/keyboard/midi_in.hpp
@@ -81,6 +87,11 @@ include/libremidi/backends/pipewire/midi_in.hpp
 include/libremidi/backends/pipewire/midi_out.hpp
 include/libremidi/backends/pipewire/observer.hpp
 include/libremidi/backends/pipewire/shared_handler.hpp
+include/libremidi/backends/pipewire_ump.hpp
+include/libremidi/backends/pipewire_ump/config.hpp
+include/libremidi/backends/pipewire_ump/midi_in.hpp
+include/libremidi/backends/pipewire_ump/midi_out.hpp
+include/libremidi/backends/pipewire_ump/observer.hpp
 include/libremidi/backends/winmidi.hpp
 include/libremidi/backends/winmidi/config.hpp
 include/libremidi/backends/winmidi/helpers.hpp
@@ -134,6 +145,7 @@ include/libremidi/reader.hpp
 include/libremidi/shared_context.hpp
 include/libremidi/system_error2.hpp
 include/libremidi/ump.hpp
+include/libremidi/ump_events.hpp
 include/libremidi/writer.cpp
 include/libremidi/writer.hpp
 lib/cmake/libremidi/libremidi-config-version.cmake
@@ -141,4 +153,4 @@ lib/cmake/libremidi/libremidi-config.cmake
 lib/cmake/libremidi/libremidi-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libremidi/libremidi-targets.cmake
 lib/liblibremidi.so
-lib/liblibremidi.so.4.5.0
+lib/liblibremidi.so.5.3.1

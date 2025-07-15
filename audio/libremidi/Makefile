@@ -1,6 +1,6 @@
 PORTNAME=	libremidi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.0
+DISTVERSION=	5.3.1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,6 +40,6 @@ JACK_LIB_DEPENDS=	libjack.so:audio/jack
 
 # This library can also be used as a header-only library
 
-# tests as of 5.0.0: 71% tests passed, 2 tests failed out of 7, see https://github.com/celtera/libremidi/issues/144
+# tests as of 5.3.1: 71% tests passed, 2 tests failed out of 7, see https://github.com/celtera/libremidi/issues/144
 
 .include <bsd.port.mk>
