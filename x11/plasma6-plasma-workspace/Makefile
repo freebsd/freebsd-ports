@@ -47,7 +47,8 @@ USE_QT=		5compat base declarative location svg wayland
 USE_XORG=	ice sm x11 xau xcb xcursor xext xfixes xft xi xrender xtst
 SHEBANG_FILES=	components/calendar/kconf_update/migrate-calendar-to-plugin-id.py.in
 
-CMAKE_ON=	PLASMA_X11_DEFAULT_SESSION
+CMAKE_ON=	PLASMA_X11_DEFAULT_SESSION \
+		CMAKE_DISABLE_FIND_PACKAGE_KF6NetworkManagerQt
 
 OPTIONS_DEFINE=	GTK
 

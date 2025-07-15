@@ -13,4 +13,6 @@ USE_KDE=	colorscheme completion config configwidgets coreaddons i18n \
 		ecm:build
 USE_QT=		base declarative
 
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_KF6NetworkManagerQt
+
 .include <bsd.port.mk>

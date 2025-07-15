@@ -239,6 +239,7 @@ include/kwin/wayland/subcompositor.h
 include/kwin/wayland/surface.h
 include/kwin/wayland/tablet_v2.h
 include/kwin/wayland/tearingcontrol_v1.h
+include/kwin/wayland/textinput.h
 include/kwin/wayland/textinput_v1.h
 include/kwin/wayland/textinput_v2.h
 include/kwin/wayland/textinput_v3.h
