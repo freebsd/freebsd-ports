@@ -1,5 +1,6 @@
 PORTNAME=	cinnamon-settings-daemon
 DISTVERSION=	6.4.3
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 DIST_SUBDIR=	gnome
 
@@ -22,7 +23,8 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libupower-glib.so:sysutils/upower \
 		libpulse.so:audio/pulseaudio \
 		libnotify.so:devel/libnotify
-RUN_DEPENDS=	cinnamon-session:x11/cinnamon-session
+RUN_DEPENDS=	cinnamon-session:x11/cinnamon-session \
+		gnome-screenshot:deskutils/gnome-screenshot
 
 USES=		compiler:c11 gettext-runtime gnome meson pkgconfig \
 		python:build shebangfix xorg
