@@ -132,15 +132,15 @@
     <affects>
       <package>
 	<name>libxml2</name>
-	<range><lt>3.0</lt></range> <!-- needs update once fixed version appears -->
+	<range><lt>2.14.5</lt></range>
       </package>
       <package>
 	<name>linux-c7-libxml2</name>
-	<range><lt>3.0</lt></range> <!-- needs update once fixed version appears -->
+	<range><lt>2.14.5</lt></range> <!-- needs update once fixed version appears -->
       </package>
       <package>
 	<name>linux-rl9-libxml2</name>
-	<range><lt>3.0</lt></range> <!-- needs update once fixed version appears -->
+	<range><lt>2.14.5</lt></range> <!-- needs update once fixed version appears -->
       </package>
     </affects>
     <description>
@@ -187,6 +187,7 @@
     <dates>
       <discovery>2025-05-27</discovery>
       <entry>2025-07-12</entry>
+      <modified>2025-07-15</modified>
     </dates>
   </vuln>
 
