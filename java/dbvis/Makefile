@@ -1,5 +1,5 @@
 PORTNAME=	dbvis
-DISTVERSION=	25.2.1
+DISTVERSION=	25.2.2
 CATEGORIES=	java databases
 MASTER_SITES=	https://www.dbvis.com/product_download/${PORTNAME}-${DISTVERSION}/media/ \
 		https://storage.googleapis.com/${PORTNAME}-download/product_download/${PORTNAME}-${DISTVERSION}/media/
