@@ -1,6 +1,6 @@
 PORTNAME=	recoll
 PORTVERSION=	1.33.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	deskutils
 MASTER_SITES=	${WWW}
 
@@ -19,8 +19,8 @@ RUN_DEPENDS=	antiword:textproc/antiword \
 		unrtf:textproc/unrtf \
 		wpd2html:textproc/libwpd010
 
-USES=		bison compiler:c++11-lang gmake gnome iconv libtool localbase \
-		pkgconfig python shebangfix
+USES=		bison compiler:c++11-lang fam gmake gnome iconv libtool \
+		localbase pkgconfig python shebangfix
 USE_GNOME=	libxslt
 USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
