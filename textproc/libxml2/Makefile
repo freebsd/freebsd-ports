@@ -1,14 +1,9 @@
 PORTNAME?=	libxml2
-DISTVERSION=	2.14.4
-PORTREVISION?=	1
+DISTVERSION=	2.14.5
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	GNOME
 DISTNAME=	libxml2-${DISTVERSION}
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/libxml2/-/commit/
-PATCHFILES=	cf52139b4170be13b51b62da11c208dc66e6eff0.patch:-p1 \
-		356542324fa439de544b5e419b91ae68d42c306c.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	XML parser library for GNOME
