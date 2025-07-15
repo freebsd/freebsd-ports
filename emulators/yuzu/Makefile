@@ -136,7 +136,7 @@ WEBENGINE_CMAKE_BOOL=	YUZU_USE_QT_WEB_ENGINE
 WEBENGINE_IMPLIES=	GUI
 
 post-extract:
-	@${CP} ${DISTFILES:M*\:gamedb:C/\:.*//:S,^,${_DISTDIR},} \
+	@${CP} ${DISTFILES:M*\:gamedb:C/\:.*//:S,^,${DISTDIR}/,} \
 		${WRKSRC}/dist/compatibility_list/
 
 post-patch:
