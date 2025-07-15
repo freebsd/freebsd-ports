@@ -49,7 +49,7 @@ pre-install:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${DISTFILES:M*\:icon:C/:.*//:S,^,${_DISTDIR},} \
+	${INSTALL_DATA} ${DISTFILES:M*\:icon:C/:.*//:S,^,${DISTDIR}/,} \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 	(cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	${INSTALL_DATA} -p ${WRKDIR}/*.utf ${STAGEDIR}${DATADIR}
