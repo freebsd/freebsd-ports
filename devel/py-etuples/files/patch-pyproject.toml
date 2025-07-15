@@ -1,0 +1,17 @@
+--- pyproject.toml.orig	2025-07-14 18:47:57 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=80.0.0", "setuptools-scm"]
++requires = ["setuptools", "setuptools-scm"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -13,7 +13,6 @@ requires-python = ">=3.9"
+ ]
+ readme = "README.md"
+ requires-python = ">=3.9"
+-license = "Apache-2.0"
+ classifiers = [
+     "Development Status :: 4 - Beta",
+     "Intended Audience :: Science/Research",
