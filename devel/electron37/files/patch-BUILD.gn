@@ -1,0 +1,98 @@
+--- BUILD.gn.orig	2025-06-30 07:04:30 UTC
++++ BUILD.gn
+@@ -71,7 +71,7 @@ declare_args() {
+   root_extra_deps = []
+ }
+ 
+-if (is_official_build) {
++if (is_official_build && !is_bsd) {
+   # An official (maximally optimized!) component (optimized for build times)
+   # build doesn't make sense and usually doesn't work.
+   assert(!is_component_build)
+@@ -103,7 +103,6 @@ group("gn_all") {
+       "//codelabs",
+       "//components:components_unittests",
+       "//components/gwp_asan:gwp_asan_unittests",
+-      "//infra/orchestrator:orchestrator_all",
+       "//net:net_unittests",
+       "//sandbox:sandbox_unittests",
+       "//services:services_unittests",
+@@ -448,7 +447,7 @@ group("gn_all") {
+       }
+     }
+ 
+-    if (is_linux || is_chromeos || is_android) {
++    if ((is_linux && !is_bsd) || is_chromeos || is_android) {
+       deps += [
+         "//third_party/breakpad:breakpad_unittests",
+         "//third_party/breakpad:core-2-minidump",
+@@ -635,6 +634,15 @@ group("gn_all") {
+       }
+     }
+ 
++    if (is_bsd) {
++      deps -= [
++        "//third_party/breakpad:dump_syms($host_system_allocator_toolchain)",
++        "//third_party/breakpad:microdump_stackwalk($host_system_allocator_toolchain)",
++        "//third_party/breakpad:minidump_dump($host_system_allocator_toolchain)",
++        "//third_party/breakpad:minidump_stackwalk($host_system_allocator_toolchain)",
++      ]
++    }
++
+     if (is_mac) {
+       deps += [
+         "//third_party/breakpad:dump_syms($host_system_allocator_toolchain)",
+@@ -683,7 +691,7 @@ group("gn_all") {
+       }
+     }
+ 
+-    if (!is_fuchsia) {
++    if (!is_fuchsia && !is_bsd) {
+       # The official builders use this binary from the default toolchain's
+       # output directory after building in order to upload the symbols of that
+       # binary. They build the binary like `ninja symupload` which requires the
+@@ -718,7 +726,7 @@ group("gn_all") {
+       ]
+     }
+ 
+-    if (is_mac || is_win || is_android || is_linux || is_chromeos) {
++    if (!is_bsd && (is_mac || is_win || is_android || is_linux || is_chromeos)) {
+       deps += [
+         "//third_party/crashpad/crashpad:crashpad_tests",
+         "//third_party/crashpad/crashpad/handler:crashpad_handler",
+@@ -1127,7 +1135,7 @@ if (use_blink && !is_cronet_build) {
+       "//third_party/blink/public:all_blink",
+     ]
+ 
+-    if (!is_chromeos && !is_ios && !is_fuchsia && !is_android && !is_castos) {
++    if (!is_chromeos && !is_ios && !is_fuchsia && !is_android && !is_castos && !is_bsd) {
+       deps += [
+         ":chrome_wpt_tests",
+         ":headless_shell_wpt",
+@@ -1274,7 +1282,7 @@ if (use_blink && !is_cronet_build) {
+       data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
+     }
+ 
+-    if (!is_win && !is_android) {
++    if (!is_win && !is_android && !is_bsd) {
+       # Using the default toolchain for this tool, as it's run during tests not
+       # during the build. This places a symlink in the root_build_dir for scrips
+       # to use.
+@@ -1288,7 +1296,7 @@ if (use_blink && !is_cronet_build) {
+       data_deps += [ "//third_party/breakpad:dump_syms" ]
+     }
+ 
+-    if (is_linux || is_chromeos) {
++    if ((is_linux && !is_bsd) || is_chromeos) {
+       # Using the default toolchain for this tool, as it's run during tests not
+       # during the build. This places a symlink in the root_build_dir for scrips
+       # to use.
+@@ -1742,7 +1750,7 @@ group("chromium_builder_perf") {
+       data_deps += [ "//chrome/test:performance_browser_tests" ]
+     }
+ 
+-    if (!is_win) {
++    if (!is_win && !is_bsd) {
+       data_deps += [ "//third_party/breakpad:minidump_stackwalk($host_system_allocator_toolchain)" ]
+     }
+   }

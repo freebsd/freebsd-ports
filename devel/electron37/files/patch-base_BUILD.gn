@@ -1,0 +1,151 @@
+--- base/BUILD.gn.orig	2025-07-04 05:17:06 UTC
++++ base/BUILD.gn
+@@ -1108,11 +1108,27 @@ component("base") {
+   # Needed for <atomic> if using newer C++ library than sysroot, except if
+   # building inside the cros_sdk environment - use host_toolchain as a
+   # more robust check for this.
+-  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos)) &&
++  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos && !is_bsd)) &&
+       host_toolchain != "//build/toolchain/cros:host") {
+     libs += [ "atomic" ]
+   }
+ 
++  # *BSD needs libkvm
++  if (is_bsd) {
++    libs += [
++      "kvm",
++      "epoll-shim",
++    ]
++  }
++
++  if (is_freebsd) {
++    libs += [
++      "execinfo",
++      "util",
++      "z",
++    ]
++  }
++
+   if (use_allocator_shim) {
+     if (is_apple) {
+       sources += [ "allocator/early_zone_registration_apple.h" ]
+@@ -1132,7 +1148,7 @@ component("base") {
+ 
+   # Allow more direct string conversions on platforms with native utf8
+   # strings
+-  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia) {
++  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia || is_bsd) {
+     defines += [ "SYSTEM_NATIVE_UTF8" ]
+   }
+ 
+@@ -2173,6 +2189,22 @@ component("base") {
+     ]
+   }
+ 
++  if (is_openbsd) {
++    sources += [
++      "process/process_handle_openbsd.cc",
++      "process/process_iterator_openbsd.cc",
++      "process/process_metrics_openbsd.cc",
++      "system/sys_info_openbsd.cc",
++    ]
++  } else if (is_freebsd) {
++    sources += [
++      "process/process_handle_freebsd.cc",
++      "process/process_iterator_freebsd.cc",
++      "process/process_metrics_freebsd.cc",
++      "system/sys_info_freebsd.cc",
++    ]
++  }
++
+   # iOS
+   if (is_ios) {
+     sources += [
+@@ -2341,6 +2373,33 @@ component("base") {
+     }
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "files/file_path_watcher_inotify.cc",
++      "files/scoped_file_linux.cc",
++      "process/set_process_title_linux.cc",
++      "process/set_process_title_linux.h",
++      "system/sys_info_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_linux.cc",
++      "process/process_metrics_linux.cc",
++      "process/process_handle_linux.cc",
++      "profiler/stack_copier_signal.cc",
++      "profiler/stack_copier_signal.h",
++      "profiler/thread_delegate_posix.cc",
++      "profiler/thread_delegate_posix.h",
++      "threading/platform_thread_linux.cc",
++      "stack_canary_linux.cc",
++      "stack_canary_linux.h",
++    ]
++    sources += [
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
++      "files/file_path_watcher_bsd.cc",
++      "threading/platform_thread_bsd.cc",
++    ]
++  }
++
+   if (use_blink) {
+     sources += [
+       "files/file_path_watcher.cc",
+@@ -2736,7 +2795,7 @@ buildflag_header("protected_memory_buildflags") {
+   header = "protected_memory_buildflags.h"
+   header_dir = "base/memory"
+ 
+-  protected_memory_enabled = !is_component_build && is_clang &&
++  protected_memory_enabled = !is_openbsd && !is_component_build && is_clang &&
+                              (is_win || is_linux || is_android || is_mac)
+ 
+   flags = [ "PROTECTED_MEMORY_ENABLED=$protected_memory_enabled" ]
+@@ -3243,7 +3302,7 @@ if (is_apple) {
+   }
+ }
+ 
+-if (!is_nacl && (is_linux || is_chromeos)) {
++if (!is_nacl && !is_bsd && (is_linux || is_chromeos)) {
+   # This test must compile with -fstack-protector-all
+   source_set("stack_canary_linux_unittests") {
+     testonly = true
+@@ -3932,7 +3991,7 @@ test("base_unittests") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if (!is_bsd && (is_linux || is_chromeos)) {
+     sources += [
+       "debug/proc_maps_linux_unittest.cc",
+       "files/scoped_file_linux_unittest.cc",
+@@ -3960,7 +4019,7 @@ test("base_unittests") {
+       "posix/file_descriptor_shuffle_unittest.cc",
+       "posix/unix_domain_socket_unittest.cc",
+     ]
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
+       sources += [
+         "profiler/stack_base_address_posix_unittest.cc",
+         "profiler/stack_copier_signal_unittest.cc",
+@@ -3971,7 +4030,7 @@ test("base_unittests") {
+ 
+   # Allow more direct string conversions on platforms with native utf8
+   # strings
+-  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia) {
++  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia || is_bsd) {
+     defines += [ "SYSTEM_NATIVE_UTF8" ]
+   }
+ 
+@@ -4159,7 +4218,7 @@ test("base_unittests") {
+     deps += [ ":base_profiler_test_support_library" ]
+   }
+ 
+-  if (is_fuchsia || is_linux || is_chromeos) {
++  if ((is_fuchsia || is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "debug/elf_reader_unittest.cc",
+       "debug/test_elf_image_builder.cc",

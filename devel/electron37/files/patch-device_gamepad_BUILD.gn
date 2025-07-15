@@ -1,0 +1,11 @@
+--- device/gamepad/BUILD.gn.orig	2025-04-22 20:15:27 UTC
++++ device/gamepad/BUILD.gn
+@@ -98,7 +98,7 @@ component("gamepad") {
+       "hid_writer_linux.cc",
+       "hid_writer_linux.h",
+     ]
+-    if (use_udev) {
++    if (use_udev && !is_bsd) {
+       sources += [
+         "gamepad_device_linux.cc",
+         "gamepad_device_linux.h",

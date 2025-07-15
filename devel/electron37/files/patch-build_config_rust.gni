@@ -1,0 +1,15 @@
+--- build/config/rust.gni.orig	2025-06-30 07:04:30 UTC
++++ build/config/rust.gni
+@@ -373,7 +373,11 @@ if (is_linux || is_chromeos) {
+   }
+ }
+ 
+-if (toolchain_has_rust) {
++if (is_bsd) {
++  rust_abi_target = string_replace(rust_abi_target, "linux-gnu", current_os)
++}
++
++if (toolchain_has_rust && !is_bsd) {
+   assert(rust_abi_target != "")
+ 
+   _known_rust_target_triples_filepath = "//build/rust/known-target-triples.txt"

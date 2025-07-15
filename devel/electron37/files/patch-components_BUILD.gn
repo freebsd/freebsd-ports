@@ -1,0 +1,28 @@
+--- components/BUILD.gn.orig	2025-06-30 07:04:30 UTC
++++ components/BUILD.gn
+@@ -211,7 +211,6 @@ test("components_unittests") {
+     "//components/content_settings/core/browser:unit_tests",
+     "//components/content_settings/core/common:unit_tests",
+     "//components/country_codes:unit_tests",
+-    "//components/crash/core/common:unit_tests",
+     "//components/cross_device/logging:unit_tests",
+     "//components/crx_file:unit_tests",
+     "//components/data_sharing:unit_tests",
+@@ -616,7 +615,7 @@ test("components_unittests") {
+       deps += [ "//components/cast:unit_tests" ]
+     }
+ 
+-    if (!is_fuchsia) {  #!iOS and!Fuchsia
++    if (!is_fuchsia && !is_bsd) {  #!iOS and!Fuchsia
+       deps += [
+         "//components/crash/content/browser:unit_tests",
+         "//components/crash/core/app:unit_tests",
+@@ -780,7 +779,7 @@ test("components_unittests") {
+     deps += [ "//components/constrained_window:unit_tests" ]
+   }
+ 
+-  if (is_win || is_linux || is_chromeos || is_mac) {
++  if (is_win || (is_linux && !is_bsd) || is_chromeos || is_mac) {
+     deps += [ "//components/stability_report:unit_tests" ]
+   }
+ 

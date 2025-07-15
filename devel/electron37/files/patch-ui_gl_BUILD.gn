@@ -1,0 +1,10 @@
+--- ui/gl/BUILD.gn.orig	2025-06-30 07:04:30 UTC
++++ ui/gl/BUILD.gn
+@@ -569,7 +569,6 @@ test("gl_unittests") {
+ 
+   data_deps = [
+     "//testing/buildbot/filters:gl_unittests_filters",
+-    "//third_party/mesa_headers",
+   ]
+ 
+   if (is_win) {

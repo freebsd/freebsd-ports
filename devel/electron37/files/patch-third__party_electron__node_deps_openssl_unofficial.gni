@@ -1,0 +1,11 @@
+--- third_party/electron_node/deps/openssl/unofficial.gni.orig	2025-02-10 16:22:55 UTC
++++ third_party/electron_node/deps/openssl/unofficial.gni
+@@ -71,7 +71,7 @@ template("openssl_gn_build") {
+     }
+     if (is_win) {
+       libs = [ "crypt32.lib" ]
+-    } else if (is_linux) {
++    } else if (is_linux && !is_bsd) {
+       libs = [ "atomic" ]
+     }
+ 
