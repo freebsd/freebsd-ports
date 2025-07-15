@@ -1,6 +1,5 @@
 PORTNAME=	fzy
-DISTVERSION=	1.0
-PORTREVISION=	1
+DISTVERSION=	1.1
 CATEGORIES=	textproc
 
 MAINTAINER=	o.hushchenkov@gmail.com
@@ -16,16 +15,15 @@ GH_ACCOUNT=	jhawthorn
 
 PLIST_FILES=	bin/fzy share/man/man1/fzy.1.gz
 
+TEST_TARGET=	test
+
 OPTIONS_DEFINE=		TMUX DVTM
 OPTIONS_DEFAULT=	TMUX
-TMUX_DESC=	Install fzy-tmux
-DVTM_DESC=	Install fzy-dvtm
+TMUX_DESC=	Install fzy-tmux script (requires tmux)
+DVTM_DESC=	Install fzy-dvtm script (requires dvtm)
 
 TMUX_PLIST_FILES=	bin/fzy-tmux
 DVTM_PLIST_FILES=	bin/fzy-dvtm
-
-post-extract:
-	${CP} ${WRKSRC}/src/config.def.h ${WRKSRC}/config.h
 
 post-patch:
 	@${REINPLACE_CMD} \
