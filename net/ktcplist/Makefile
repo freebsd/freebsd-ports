@@ -1,5 +1,5 @@
 PORTNAME=	ktcplist
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	net sysutils
 
 MAINTAINER=	arrowd@FreeBSD.org
