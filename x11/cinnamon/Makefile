@@ -1,6 +1,6 @@
 PORTNAME=	cinnamon
 DISTVERSION=	6.4.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -93,6 +93,7 @@ DOCS_MESON_TRUE=	docs
 WAYLAND_MESON_TRUE=	wayland
 RECORDER_MESON_TRUE=	build_recorder
 RECORDER_USES=	gstreamer
+RECORDER_USE=	GSTREAMER=vpx
 
 NLS_RUN_DEPENDS=	cinnamon-translations>0:misc/cinnamon-translations
 
