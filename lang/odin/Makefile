@@ -1,6 +1,6 @@
 PORTNAME=	odin
 DISTVERSIONPREFIX=	dev-
-DISTVERSION=	2025-03
+DISTVERSION=	2025-07
 CATEGORIES=	lang devel
 PKGNAMESUFFIX=	-lang
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_armv7=	compilation fails:  use of undeclared identifier 'LLVMInitializeWebAssemblyTargetInfo'
 BROKEN_i386=	compilation fails:  use of undeclared identifier 'LLVMInitializeAArch64TargetInfo', see https://github.com/odin-lang/Odin/issues/4875
 
-USES=		gmake llvm:19,lib python:test
+USES=		gmake llvm:20,lib python:test
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	odin-lang
