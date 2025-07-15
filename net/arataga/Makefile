@@ -1,7 +1,7 @@
 PORTNAME=	arataga
 PORTVERSION=	0.5.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	SF/sobjectizer/oess/oess-2:oess
 DISTFILES=	oess-2.2.3-full.tar.bz2:oess
