@@ -63,7 +63,7 @@ lib/baresip/modules/vumeter.so
 %%X11%%lib/baresip/modules/x11.so
 lib/libbaresip.so
 lib/libbaresip.so.20
-lib/libbaresip.so.20.23.0
+lib/libbaresip.so.20.24.0
 libdata/pkgconfig/libbaresip.pc
 share/applications/com.github.baresip.desktop
 %%DATADIR%%/autoanswer.wav
