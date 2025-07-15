@@ -267,18 +267,15 @@
     <affects>
       <package>
 	<name>tomcat110</name>
-	<range><gt>11.0.0</gt></range>
-	<range><lt>11.0.9</lt></range>
+	<range><ge>11.0.0</ge><lt>11.0.9</lt></range>
       </package>
       <package>
 	<name>tomcat101</name>
-	<range><gt>10.1.0</gt></range>
-	<range><lt>10.1.43</lt></range>
+	<range><ge>10.1.0</ge><lt>10.1.43</lt></range>
       </package>
       <package>
 	<name>tomcat9</name>
-	<range><gt>9.0.0</gt></range>
-	<range><lt>9.0.107</lt></range>
+	<range><ge>9.0.0</ge><lt>9.0.107</lt></range>
       </package>
     </affects>
     <description>
@@ -311,6 +308,7 @@
     <dates>
       <discovery>2025-07-10</discovery>
       <entry>2025-07-10</entry>
+      <modified>2025-07-15</modified>
     </dates>
   </vuln>
 
