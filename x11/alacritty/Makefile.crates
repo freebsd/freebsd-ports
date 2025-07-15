@@ -75,10 +75,10 @@ CARGO_CRATES=	adler2-2.0.0 \
 		gethostname-0.4.3 \
 		getrandom-0.2.15 \
 		gl_generator-0.14.0 \
-		glutin-0.32.1 \
-		glutin_egl_sys-0.7.0 \
-		glutin_glx_sys-0.6.0 \
-		glutin_wgl_sys-0.6.0 \
+		glutin-0.32.2 \
+		glutin_egl_sys-0.7.1 \
+		glutin_glx_sys-0.6.1 \
+		glutin_wgl_sys-0.6.1 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		hermit-abi-0.4.0 \
@@ -256,7 +256,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winit-0.30.8 \
+		winit-0.30.9 \
 		winnow-0.6.20 \
 		winreg-0.52.0 \
 		wio-0.2.2 \
