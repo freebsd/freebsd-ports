@@ -1,5 +1,5 @@
 PORTNAME=	asio
-DISTVERSION=	1.30.2
+DISTVERSION=	1.34.2
 CATEGORIES=	net devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}%20(Stable)/
 
@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 USES=		tar:bz2
 
 GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS=	--with-noarch-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 NO_BUILD=	yes
 NO_ARCH=	yes
