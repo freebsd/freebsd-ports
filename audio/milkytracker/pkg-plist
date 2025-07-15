@@ -1,4 +1,5 @@
 bin/milkytracker
+bin/milkycli
 share/applications/milkytracker.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Authors.txt
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.html

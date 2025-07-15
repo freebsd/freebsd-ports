@@ -1,11 +1,12 @@
 PORTNAME=	milkytracker
-PORTVERSION=	1.05.01
+PORTVERSION=	1.06
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Music creation tool inspired by Fast Tracker 2
-WWW=		https://milkytracker.titandemo.org/
+WWW=		https://milkytracker.titandemo.org/ \
+		https://github.com/milkytracker/MilkyTracker
 
 LICENSE=	BSD3CLAUSE GPLv3+
 LICENSE_COMB=	multi
@@ -22,6 +23,8 @@ GH_PROJECT=	MilkyTracker
 USE_SDL=	sdl2
 
 ICONS=		carton.ico carton.png
+
+CXXFLAGS+=	-Wno-c++11-narrowing
 
 # ci pipeline creates transient tags
 PORTSCOUT=	ignore:1

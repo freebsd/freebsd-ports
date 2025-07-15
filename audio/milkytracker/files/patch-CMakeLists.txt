@@ -1,20 +1,11 @@
---- CMakeLists.txt.orig	2020-12-09 22:58:14 UTC
+--- CMakeLists.txt.orig	2025-06-18 20:53:16 UTC
 +++ CMakeLists.txt
-@@ -23,7 +23,7 @@ cmake_minimum_required(VERSION 3.10)
- project(MilkyTracker)
- 
- # Set C++ standard to C++98
--set(CMAKE_CXX_STANDARD 98)
-+set(CMAKE_CXX_STANDARD 17)
- set(CMAKE_CXX_EXTENSIONS OFF)
- 
- # Enable IDE solution folders
-@@ -196,7 +196,7 @@ if(UNIX)
+@@ -187,7 +187,7 @@ if(UNIX)
        find_package(ZZIPLIB)
      endif()
  
 -    if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+    if(${ENABLE_RTMIDI})
++    if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD")
          find_package(ALSA)
          find_package(JACK)
  
