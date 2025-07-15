@@ -1,5 +1,6 @@
 PORTNAME=	cinnamon-screensaver
 DISTVERSION=	6.4.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -20,7 +21,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/pam_gnome_keyring.so:security/gnome-keyring \
 		${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xapp>0:x11/py-python-xapp@${PY_FLAVOR} \
-		${LOCALBASE}/libexec/unix-selfauth-helper:security/unix-selfauth-helper
+		${LOCALBASE}/libexec/unix-selfauth-helper:security/unix-selfauth-helper \
+		pidof:sysutils/pidof
 
 USES=		gnome meson pkgconfig python shebangfix xorg localbase:ldflags
 
