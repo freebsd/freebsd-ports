@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-glfm-markdown
-PORTVERSION=	0.0.31
-PORTREVISION=	2
+PORTVERSION=	0.0.32
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
