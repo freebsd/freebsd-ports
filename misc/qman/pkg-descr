@@ -1,0 +1,10 @@
+Unix manual pages are lovely. They are concise, well-written,
+complete, and downright useful. However, the standard way of accessing
+them from the command-line hasn't changed since the early days.
+
+Qman aims to change that. It's a modern, full-featured manual page
+viewer featuring hyperlinks, web browser like navigation, a table of
+contents for each page, incremental search, on-line help, and more. It
+also strives to be fast and tiny, so that it can be used
+everywhere. For this reason, it's been written in plain C and has only
+minimal dependencies.
