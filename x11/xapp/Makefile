@@ -1,5 +1,6 @@
 PORTNAME=	xapp
 DISTVERSION=	2.8.9
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -52,5 +53,9 @@ VAPI_IMPLIES=		INTROSPECTION
 
 XFCE_DESC=		Install xfce specific items
 XFCE_MESON_TRUE=	xfce
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|g' \
+		${WRKSRC}/scripts/upload-system-info
 
 .include <bsd.port.mk>
