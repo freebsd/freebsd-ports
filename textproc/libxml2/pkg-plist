@@ -51,7 +51,7 @@ lib/cmake/libxml2/libxml2-config.cmake
 %%STATIC%%lib/libxml2.a
 lib/libxml2.so
 lib/libxml2.so.16
-lib/libxml2.so.16.0.4
+lib/libxml2.so.16.0.5
 libdata/pkgconfig/libxml-2.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/devhelp/general.html
 %%PORTDOCS%%%%DOCSDIR%%/devhelp/home.png
