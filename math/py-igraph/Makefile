@@ -1,6 +1,5 @@
 PORTNAME=	igraph
-DISTVERSION=	0.10.6
-PORTREVISION=	6
+DISTVERSION=	0.11.9
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +10,6 @@ COMMENT=	High performance graph data structures and algorithms
 WWW=		https://igraph.org/python/
 
 LICENSE=	GPLv2
-
-BROKEN=		Fails to build with libxml2 2.13+, error: incompatible function pointer types passing 'void (*)(void *, xmlErrorPtr)' (aka 'void (*)(void *, struct _xmlError *)') to parameter of type 'xmlStructuredErrorFunc' (aka 'void (*)(void *, const struct _xmlError *)')
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${LOCALBASE}/bin/flex:textproc/flex
