@@ -1,3 +1,4 @@
+etc/xdg/autostart/polkit-gnome.desktop
 libexec/polkit-gnome-authentication-agent-1
 share/locale/ar/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/be/LC_MESSAGES/polkit-gnome-1.mo
