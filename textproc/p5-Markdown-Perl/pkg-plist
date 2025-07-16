@@ -1,0 +1,10 @@
+bin/pmarkdown
+%%SITE_PERL%%/App/pmarkdown.pm
+%%SITE_PERL%%/Markdown/Perl.pm
+%%SITE_PERL%%/Markdown/Perl/BlockParser.pm
+%%SITE_PERL%%/Markdown/Perl/HTML.pm
+%%SITE_PERL%%/Markdown/Perl/InlineTree.pm
+%%SITE_PERL%%/Markdown/Perl/Inlines.pm
+%%SITE_PERL%%/Markdown/Perl/Options.pm
+%%SITE_PERL%%/Markdown/Perl/Util.pm
+%%PERL5_MAN1%%/pmarkdown.1.gz
