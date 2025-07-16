@@ -1,35 +1,34 @@
 CARGO_CRATES=	addr2line-0.24.2 \
-		adler2-2.0.0 \
+		adler2-2.0.1 \
 		aho-corasick-1.1.3 \
-		anstream-0.6.18 \
-		anstyle-1.0.10 \
-		anstyle-parse-0.2.6 \
-		anstyle-query-1.1.2 \
-		anstyle-wincon-3.0.7 \
+		anstream-0.6.19 \
+		anstyle-1.0.11 \
+		anstyle-parse-0.2.7 \
+		anstyle-query-1.1.3 \
+		anstyle-wincon-3.0.9 \
 		arbitrary-1.4.1 \
 		array-init-2.1.0 \
 		backtrace-0.3.74 \
 		bit-vec-0.8.0 \
-		bitflags-2.9.0 \
+		bitflags-2.9.1 \
 		block-buffer-0.10.4 \
-		bstr-1.11.3 \
+		bstr-1.12.0 \
 		byteorder-1.5.0 \
 		bzip2-0.5.2 \
 		bzip2-sys-0.1.13+1.0.8 \
-		cc-1.2.17 \
-		cfg-if-1.0.0 \
-		clap-4.5.34 \
-		clap_builder-4.5.34 \
-		clap_derive-4.5.32 \
-		clap_lex-0.7.4 \
-		colorchoice-1.0.3 \
-		concat_const-0.1.3 \
+		cc-1.2.29 \
+		cfg-if-1.0.1 \
+		clap-4.5.41 \
+		clap_builder-4.5.41 \
+		clap_derive-4.5.41 \
+		clap_lex-0.7.5 \
+		colorchoice-1.0.4 \
+		concat_const-0.2.0 \
 		cpufeatures-0.2.17 \
-		crc32fast-1.4.2 \
-		crossbeam-utils-0.8.21 \
+		crc32fast-1.5.0 \
 		crypto-common-0.1.6 \
 		cstr-0.2.12 \
-		curl-sys-0.4.80+curl-8.12.1 \
+		curl-sys-0.4.82+curl-8.14.1 \
 		derive_arbitrary-1.4.1 \
 		derive_more-2.0.1 \
 		derive_more-impl-2.0.1 \
@@ -37,18 +36,18 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		displaydoc-0.2.5 \
 		either-1.15.0 \
 		equivalent-1.0.2 \
-		errno-0.3.10 \
+		errno-0.3.12 \
 		fastrand-2.3.0 \
 		filetime-0.2.25 \
-		flate2-1.1.0 \
+		flate2-1.1.2 \
 		form_urlencoded-1.2.1 \
 		generic-array-0.14.7 \
-		getrandom-0.3.2 \
-		getset-0.1.5 \
+		getrandom-0.3.3 \
+		getset-0.1.6 \
 		gimli-0.31.1 \
 		git-version-0.3.9 \
 		git-version-macro-0.3.9 \
-		hashbrown-0.15.2 \
+		hashbrown-0.15.4 \
 		heck-0.5.0 \
 		hex-0.4.3 \
 		hex-literal-0.4.1 \
@@ -64,25 +63,26 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		icu_provider_macros-1.5.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
-		indexmap-2.8.0 \
+		indexmap-2.10.0 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.14.0 \
-		jobserver-0.1.32 \
-		libc-0.2.171 \
-		libredox-0.1.3 \
+		jobserver-0.1.33 \
+		libc-0.2.174 \
+		libredox-0.1.4 \
 		libz-sys-1.1.22 \
-		linux-raw-sys-0.9.3 \
+		linux-raw-sys-0.9.4 \
 		litemap-0.7.4 \
 		log-0.4.27 \
 		lru-0.13.0 \
 		lzma-sys-0.1.20 \
 		make-cmd-0.1.0 \
-		memchr-2.7.4 \
-		miniz_oxide-0.8.5 \
-		mio-1.0.3 \
+		memchr-2.7.5 \
+		miniz_oxide-0.8.9 \
+		mio-1.0.4 \
 		object-0.36.7 \
-		once_cell-1.21.1 \
-		openssl-sys-0.9.106 \
+		once_cell-1.21.3 \
+		once_cell_polyfill-1.70.1 \
+		openssl-sys-0.9.109 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
 		percent-encoding-2.3.1 \
@@ -90,35 +90,35 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ppv-lite86-0.2.21 \
 		proc-macro-error-attr2-2.0.0 \
 		proc-macro-error2-2.0.1 \
-		proc-macro2-1.0.94 \
+		proc-macro2-1.0.95 \
 		quote-1.0.40 \
-		r-efi-5.2.0 \
-		rand-0.9.0 \
+		r-efi-5.3.0 \
+		rand-0.9.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.9.3 \
-		redox_syscall-0.5.10 \
+		redox_syscall-0.5.13 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		rustc-demangle-0.1.24 \
+		rustc-demangle-0.1.25 \
 		rustflags-0.1.7 \
-		rustix-1.0.3 \
-		rustversion-1.0.20 \
+		rustix-1.0.8 \
+		rustversion-1.0.21 \
 		semver-1.0.26 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
 		sha1-0.10.6 \
-		shared_child-1.0.1 \
+		shared_child-1.0.2 \
 		shlex-1.3.0 \
-		smallvec-1.14.0 \
+		smallvec-1.15.1 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
-		syn-2.0.100 \
-		synstructure-0.13.1 \
+		syn-2.0.104 \
+		synstructure-0.13.2 \
 		tar-0.4.44 \
 		target-2.1.0 \
 		tee-0.1.0 \
-		tempfile-3.19.1 \
+		tempfile-3.20.0 \
 		tinystr-0.7.6 \
 		typenum-1.18.0 \
 		unicode-ident-1.0.18 \
@@ -129,9 +129,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasi-0.14.2+wasi-0.2.4 \
-		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.52.6 \
@@ -145,17 +144,17 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wit-bindgen-rt-0.39.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
-		xattr-1.5.0 \
+		xattr-1.5.1 \
 		xz2-0.1.7 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
-		zerocopy-0.8.24 \
-		zerocopy-derive-0.8.24 \
+		zerocopy-0.8.26 \
+		zerocopy-derive-0.8.26 \
 		zerofrom-0.1.5 \
 		zerofrom-derive-0.1.5 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
-		zip-2.5.0 \
+		zip-4.3.0 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.15+zstd.1.5.7
