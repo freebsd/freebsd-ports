@@ -233,6 +233,7 @@
     SUBDIR += gh-grep
     SUBDIR += git-chglog
     SUBDIR += gitlab-elasticsearch-indexer
+    SUBDIR += gitlab-zoekt-indexer
     SUBDIR += gl-aspell
     SUBDIR += gladtex
     SUBDIR += gnugrep
