@@ -1697,8 +1697,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eldoc.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eldoc.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/elint.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/elint.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/elp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/elp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/ert-font-lock.el.gz
@@ -3121,6 +3119,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/echistory.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eieio-compat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eieio-compat.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/elint.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/elint.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eudcb-ph.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eudcb-ph.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gs.el.gz
