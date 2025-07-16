@@ -1,0 +1,11 @@
+--- es-app/CMakeLists.txt.orig	2025-07-15 16:46:41 UTC
++++ es-app/CMakeLists.txt
+@@ -147,7 +147,7 @@ else()
+ else()
+     include_directories(${COMMON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/src)
+     add_executable(es-de ${ES_SOURCES} ${ES_HEADERS})
+-    target_link_libraries(es-de ${COMMON_LIBRARIES} ${CMAKE_DL_LIBS} es-core lunasvg::lunasvg)
++    target_link_libraries(es-de ${COMMON_LIBRARIES} ${CMAKE_DL_LIBS} es-core)
+     set_target_properties(es-de PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE)
+ endif()
+ 
