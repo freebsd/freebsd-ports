@@ -1,9 +1,9 @@
 PORTNAME=	9menu
-PORTVERSION=	1.10
 DISTVERSIONPREFIX=	${PORTNAME}-release-
+DISTVERSION=	1.11
 CATEGORIES=	x11 plan9
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	seafork@disroot.org
 COMMENT=	Simple menu patterned after Plan9
 WWW=		https://github.com/arnoldrobbins/9menu
 
@@ -26,7 +26,9 @@ PLIST_FILES=	bin/9menu \
 		share/man/man1/9menu.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/9menu.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/9menu.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
