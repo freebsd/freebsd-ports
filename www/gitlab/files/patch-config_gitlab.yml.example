@@ -1,6 +1,6 @@
---- config/gitlab.yml.example.orig	2025-06-18 04:18:20 UTC
+--- config/gitlab.yml.example.orig	2025-07-16 11:39:10 UTC
 +++ config/gitlab.yml.example
-@@ -493,7 +493,7 @@ production: &base
+@@ -498,7 +498,7 @@ production: &base
    ## GitLab Pages
    pages:
      enabled: false
@@ -9,7 +9,7 @@
      # The location where pages are stored (default: shared/pages).
      # path: shared/pages
  
-@@ -1238,13 +1238,13 @@ production: &base
+@@ -1243,13 +1243,13 @@ production: &base
    repositories:
      storages: # You must have at least a `default` storage path.
        default:
@@ -25,7 +25,7 @@
      # archive_permissions: 0640 # Permissions for the resulting backup.tar file (default: 0600)
      # keep_time: 604800   # default: 0 (forever) (in seconds)
      # pg_schema: public     # default: nil, it means that all schemas will be backed up
-@@ -1279,12 +1279,12 @@ production: &base
+@@ -1284,12 +1284,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -41,7 +41,7 @@
  
      # Git over HTTP
      upload_pack: true
-@@ -1299,7 +1299,7 @@ production: &base
+@@ -1304,7 +1304,7 @@ production: &base
    workhorse:
      # File that contains the secret key for verifying access for gitlab-workhorse.
      # Default is '.gitlab_workhorse_secret' relative to Rails.root (i.e. root of the GitLab app).
@@ -50,7 +50,7 @@
  
    cell:
      # enabled: false
-@@ -1317,7 +1317,7 @@ production: &base
+@@ -1322,7 +1322,7 @@ production: &base
      # enabled: true
      # File that contains the secret key for verifying access for gitlab-kas.
      # Default is '.gitlab_kas_secret' relative to Rails.root (i.e. root of the GitLab app).
@@ -59,7 +59,7 @@
  
      # The URL to the external KAS API (used by the Kubernetes agents)
      # external_url: wss://kas.example.com
-@@ -1344,13 +1344,13 @@ production: &base
+@@ -1349,13 +1349,13 @@ production: &base
  
    ## GitLab Elasticsearch settings
    elasticsearch:
@@ -75,7 +75,7 @@
  
    ## Webpack settings
    # If enabled, this will tell rails to serve frontend assets from the webpack-dev-server running
-@@ -1371,18 +1371,18 @@ production: &base
+@@ -1376,18 +1376,18 @@ production: &base
  
      # Sidekiq exporter is a dedicated Prometheus metrics server optionally running alongside Sidekiq.
      sidekiq_exporter:
@@ -101,7 +101,7 @@
  
      # Web exporter is a dedicated Prometheus metrics server optionally running alongside Puma.
      web_exporter:
-@@ -1609,13 +1609,13 @@ test:
+@@ -1614,13 +1614,13 @@ test:
          gitaly_address: unix:tmp/tests/gitaly/praefect.socket
  
    gitaly:

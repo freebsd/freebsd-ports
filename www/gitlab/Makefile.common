@@ -1,10 +1,10 @@
-GITLAB_VERSION=		18.1.2
+GITLAB_VERSION=		18.2.0
 GITLAB_PORTREVISION=	0
 
 # Git version gitaly should use (from gitlab mirror)
 # Find current tag from Makefile and .gitlab-ci.yaml
 # and from https://gitlab.com/gitlab-org/git/-/tags
-GITLAB_GIT_VERSION=	2.49.0
+GITLAB_GIT_VERSION=	2.50.0
 # return something like x.yy
 GITLAB_GIT_VERSION_SHORT=	${GITLAB_GIT_VERSION:C/^([0-9]*\.[0-9]*)\..*/\1/}
 
