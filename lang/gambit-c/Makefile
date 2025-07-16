@@ -1,10 +1,8 @@
 PORTNAME=	gambit-c
-PORTVERSION=	4.9.6
 DISTVERSIONPREFIX=	v
+DISTVERSION=	4.9.7
 PORTEPOCH=	1
 CATEGORIES=	lang
-
-GAMBIT_VERSION=	409006
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Gambit programming system where the compiler generates portable C code
@@ -30,9 +28,11 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 MAKEFILE=	makefile
 
 INFO=		gambit
+
+GAMBIT_VERSION=	409007
 PLIST_SUB=	GAMBIT_VERSION=${GAMBIT_VERSION}
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
