@@ -5,6 +5,8 @@ share/applications/fnott.desktop
 share/dbus-1/services/fnott.service
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+share/fish/vendor_completions.d/fnott.fish
+share/fish/vendor_completions.d/fnottctl.fish
 %%PORTDOCS%%share/man/man1/fnott.1.gz
 %%PORTDOCS%%share/man/man1/fnottctl.1.gz
 %%PORTDOCS%%share/man/man5/fnott.ini.5.gz
