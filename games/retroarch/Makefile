@@ -1,7 +1,6 @@
 PORTNAME=	RetroArch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19.1
-PORTREVISION=	2
+DISTVERSION=	1.21.0
 CATEGORIES=	games emulators
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -18,7 +17,8 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfribidi.so:converters/fribidi \
 		libxkbcommon.so:x11/libxkbcommon
-RUN_DEPENDS=	retroarch-assets<=0:games/retroarch-assets
+RUN_DEPENDS=	retroarch-assets>0:games/retroarch-assets \
+		libretro-core-info>0:games/libretro-core-info
 
 USES=		compiler:c++11-lib cpe gmake pkgconfig python shebangfix ssl
 CPE_VENDOR=	libretro
@@ -70,8 +70,8 @@ OPENGL_CONFIGURE_ENABLE=	opengl
 OSS_CONFIGURE_ENABLE=		oss
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
-QT_USES=			qt:5
-QT_USE=				QT=concurrent,core,gui,network,widgets
+QT_USES=			qt:6
+QT_USE=				QT=base
 QT_CONFIGURE_ENABLE=		qt
 SDL_USES=			sdl
 SDL_USE=			image2 \
@@ -94,7 +94,7 @@ WAYLAND_BUILD_DEPENDS=		${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 WAYLAND_LIB_DEPENDS=		libwayland-egl.so:graphics/wayland
 WAYLAND_CONFIGURE_ENABLE=	wayland
 X11_USES=			xorg
-X11_USE=			XORG=x11,xcb,xext,xinerama,xrandr,xv,xxf86vm
+X11_USE=			XORG=x11,xcb,xext,xi,xinerama,xrandr,xscrnsaver,xv,xxf86vm
 X11_CONFIGURE_ENABLE=		x11
 
 post-install:
@@ -109,5 +109,7 @@ post-install:
 		-e 's|# joypad_autoconfig_dir =|joypad_autoconfig_dir = "${PREFIX}/share/retroarch/autoconfig"|' \
 		-e 's|# menu_show_core_updater = true|menu_show_core_updater = false|' \
 		${STAGEDIR}${PREFIX}/etc/retroarch.cfg
+	@${RM} ${STAGEDIR}${PREFIX}/etc/retroarch.cfg.bak
+	@${MV} ${STAGEDIR}${PREFIX}/etc/retroarch.cfg ${STAGEDIR}${PREFIX}/etc/retroarch.cfg.sample
 
 .include <bsd.port.mk>
