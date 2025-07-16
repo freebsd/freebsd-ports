@@ -7240,6 +7240,7 @@
     SUBDIR += rubygem-docile
     SUBDIR += rubygem-docopt
     SUBDIR += rubygem-drb
+    SUBDIR += rubygem-drb-gitlab
     SUBDIR += rubygem-dry-cli
     SUBDIR += rubygem-dry-configurable
     SUBDIR += rubygem-dry-container
