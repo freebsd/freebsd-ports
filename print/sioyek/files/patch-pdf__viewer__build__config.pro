@@ -38,7 +38,7 @@
          DEFINES += NON_PORTABLE
          DEFINES += LINUX_STANDARD_PATHS
 -        LIBS += -ldl -lmupdf -lmupdf-third -lgumbo -lharfbuzz -lfreetype -ljbig2dec -ljpeg -lmujs -lopenjp2 -lz
-+        LIBS += -ldl -lmupdf -lmupdf-third -lharfbuzz -lfreetype -ljbig2dec -ljpeg -lmujs -lopenjp2 -lz -lsqlite3 -lsynctex
++        LIBS += -ldl -lmupdf -lharfbuzz -lfreetype -ljbig2dec -ljpeg -lmujs -lopenjp2 -lz -lsqlite3 -lsynctex
      }
  
      isEmpty(PREFIX){
