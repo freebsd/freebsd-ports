@@ -439,7 +439,6 @@ include/php/ext/standard/html.h
 include/php/ext/standard/html_tables.h
 include/php/ext/standard/info.h
 include/php/ext/standard/md5.h
-include/php/ext/standard/pack.h
 include/php/ext/standard/pageinfo.h
 include/php/ext/standard/password_arginfo.h
 include/php/ext/standard/php_array.h
@@ -480,6 +479,7 @@ include/php/ext/standard/winver.h
 include/php/ext/uri/php_lexbor.h
 include/php/ext/uri/php_uri.h
 include/php/ext/uri/php_uri_common.h
+include/php/ext/uri/php_uriparser.h
 @touch include/php/ext/php_config.h
 @rmempty include/php/ext/php_config.h
 include/php/main/SAPI.h

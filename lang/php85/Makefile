@@ -1,5 +1,5 @@
 PORTNAME=	php85
-DISTVERSION=	8.5.0alpha1
+DISTVERSION=	8.5.0alpha2
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	LOCAL/bofh/lang/${PORTNAME}
@@ -106,7 +106,7 @@ WARNING+=	"!!! Consider switching to php-fpm and mod_proxy_fcgi as per Apache ht
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:NOASLR}
+.if ${PORT_OPTIONS:MNOASLR}
 .if ${PORT_OPTIONS:MCLI}
 ELF_FEATURES+=+noaslr:sapi/cli/php
 .endif
