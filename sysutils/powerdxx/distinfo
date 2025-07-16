@@ -1,5 +1,7 @@
-TIMESTAMP = 1592926171
+TIMESTAMP = 1752660532
 SHA256 (lonkamikaze-powerdxx-0.4.4_GH0.tar.gz) = 4c5bf5cd1453f369bfa46294c1413c9e5f9547b3ae7e7d8ff2d01e15badc60a9
 SIZE (lonkamikaze-powerdxx-0.4.4_GH0.tar.gz) = 155426
 SHA256 (lonkamikaze-powerdxx-c555acd_GH0.tar.gz) = 6377bb2036d5bf67d53f0e1b8344cf6db187fdf28d2be73052941d119f49b5a6
 SIZE (lonkamikaze-powerdxx-c555acd_GH0.tar.gz) = 1489357
+SHA256 (026a0c4a922f5a4aa289959940e7b9eea18a7663.patch) = ad0e9765294fb09cc893ef2088c614256e833f025ffbe15358eafa1f17550686
+SIZE (026a0c4a922f5a4aa289959940e7b9eea18a7663.patch) = 704
