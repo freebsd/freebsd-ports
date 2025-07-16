@@ -1,7 +1,6 @@
 PORTNAME=	expected
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	devel science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,6 +34,6 @@ post-install: # workaround for https://github.com/TartanLlama/expected/issues/17
 		-e 's/1\.0\.0/${PORTVERSION}/' \
 		${STAGEDIR}${PREFIX}/share/cmake/tl-expected/tl-expected-config-version.cmake
 
-# tests as of 1.1.0: 100% tests passed, 0 tests failed out of 1
+# tests as of 1.2.0: 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>
