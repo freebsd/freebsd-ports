@@ -1,6 +1,6 @@
 PORTNAME=	libucl
 DISTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc devel
 
 # implicit-approval+: bapt dvl
@@ -23,6 +23,8 @@ GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
+
+CPPFLAGS=		-I../uthash
 
 CONFLICTS_INSTALL=	ucl
 
