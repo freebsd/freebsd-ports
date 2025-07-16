@@ -1,7 +1,7 @@
 PORTNAME=	gitlab-pages
 PORTVERSION=	${GITLAB_VERSION}
-PORTREVISION=	${GITLAB_PORTREVISION} # modify it in www/gitlab/Makefile.common
 DISTVERSIONPREFIX=	v
+PORTREVISION=	${GITLAB_PORTREVISION} # modify it in www/gitlab/Makefile.common
 CATEGORIES=	www
 MASTER_SITES+=	https://gitlab.com/gitlab-org/gitlab-pages/-/raw/v${DISTVERSION}/
 DISTFILES+=	go.mod

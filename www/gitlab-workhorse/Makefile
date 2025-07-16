@@ -1,7 +1,7 @@
 PORTNAME=	gitlab-workhorse
 PORTVERSION=	${GITLAB_VERSION}
-PORTREVISION=	${GITLAB_PORTREVISION} # modify it in www/gitlab/Makefile.common
 DISTVERSIONPREFIX=	v
+PORTREVISION=	${GITLAB_PORTREVISION} # modify it in www/gitlab/Makefile.common
 CATEGORIES=	www
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -19,11 +19,11 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 GO_MOD_DIST=	gitlab
+GO_MODULE=	gitlab.com/gitlab-org/gitlab/workhorse
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 MAKE_ENV+=	${GO_ENV}
 WRKSRC_SUBDIR=	workhorse
 # found in work/gitlab-foss*/workhorse/go.mod
-GO_MODULE=	gitlab.com/gitlab-org/gitlab/workhorse
 
 PLIST_FILES=	bin/gitlab-resize-image \
 		bin/gitlab-workhorse \

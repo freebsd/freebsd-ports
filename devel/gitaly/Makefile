@@ -25,9 +25,9 @@ CPE_VENDOR=	gitlab
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
+GL_TUPLE=	gitlab-org:git:v${GITLAB_GIT_VERSION}:_build/_build/deps/git-v${GITLAB_GIT_VERSION_SHORT}
 GO_MOD_DIST=	gitlab
 GO_MODULE=	gitlab.com/gitlab-org/gitaly/v18
-GL_TUPLE=	gitlab-org:git:v${GITLAB_GIT_VERSION}:_build/_build/deps/git-v${GITLAB_GIT_VERSION_SHORT}
 
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 # make sure to pass go build options into make process
