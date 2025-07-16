@@ -60,6 +60,7 @@ include/ruby-%%RUBY_VER%%/ruby/internal/attr/nodiscard.h
 include/ruby-%%RUBY_VER%%/ruby/internal/attr/noexcept.h
 include/ruby-%%RUBY_VER%%/ruby/internal/attr/noinline.h
 include/ruby-%%RUBY_VER%%/ruby/internal/attr/nonnull.h
+include/ruby-%%RUBY_VER%%/ruby/internal/attr/nonstring.h
 include/ruby-%%RUBY_VER%%/ruby/internal/attr/noreturn.h
 include/ruby-%%RUBY_VER%%/ruby/internal/attr/packed_struct.h
 include/ruby-%%RUBY_VER%%/ruby/internal/attr/pure.h
@@ -537,10 +538,8 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rdoc/generator/ri.rb
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/_footer.rhtml
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/_head.rhtml
-%%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/_sidebar_VCS_info.rhtml
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/_sidebar_classes.rhtml
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/_sidebar_extends.rhtml
-%%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/_sidebar_in_files.rhtml
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/_sidebar_includes.rhtml
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/_sidebar_installed.rhtml
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/_sidebar_methods.rhtml
@@ -864,7 +863,6 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/security/signer.rb
 %%RUBY_LIBDIR%%/rubygems/security/trust_dir.rb
 %%RUBY_LIBDIR%%/rubygems/security_option.rb
-%%RUBY_LIBDIR%%/rubygems/shellwords.rb
 %%RUBY_LIBDIR%%/rubygems/source.rb
 %%RUBY_LIBDIR%%/rubygems/source/git.rb
 %%RUBY_LIBDIR%%/rubygems/source/installed.rb
@@ -3754,6 +3752,8 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/Builder/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/Builder/ruby-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/Builder/run-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/Builder/shelljoin-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/Builder/shellsplit-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/DylibNotFoundError/cdesc-DylibNotFoundError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/DylibNotFoundError/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/LinkFlagConverter/cdesc-LinkFlagConverter.ri
@@ -13389,7 +13389,6 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/documented%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/done_documenting%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/done_documenting-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/each_parent-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/file-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/file_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/force_documentation%3d-i.ri
@@ -13403,7 +13402,6 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/options-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/parent-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/parent_file_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/parent_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/received_nodoc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/record_location-i.ri
@@ -13414,7 +13412,6 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/store-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/suppress-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/suppressed%3f-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/RDoc/CodeObject/viewer-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Comment/cdesc-Comment.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Comment/document-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Comment/empty%3f-i.ri
@@ -13495,16 +13492,21 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/MarkupReference/dummy_singleton_method-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/MarkupReference/method-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/MarkupReference/yields_directive-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/apply_default_exclude-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/autolink_excluded_words-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/canonical_root-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/cdesc-Options.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/charset-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/check_files-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/check_generator-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/class_module_path_prefix-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/coverage_report-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/default_title%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/dry_run-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/embed_mixins-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/encoding-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/exclude-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/file_path_prefix-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/files-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/finish-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Options/finish_page_dir-i.ri
@@ -13629,6 +13631,7 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/PrismRuby/visibility-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/PrismRuby/visible_tokens_from_location-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/PrismRuby/with_container-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/PrismRuby/with_in_proc_block-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/RD/cdesc-RD.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/RD/scan-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/RipperStateLex/InnerStateLex/cdesc-InnerStateLex.ri
@@ -13654,7 +13657,9 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/Ruby/parse_attr_accessor-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/Ruby/parse_call_parameters-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/Ruby/parse_class-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/Ruby/parse_class_regular-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/Ruby/parse_comment-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/Ruby/parse_comment_ghost-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/Ruby/parse_comment_tomdoc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/Ruby/parse_constant-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Parser/Ruby/parse_constant_visibility-i.ri
@@ -13745,7 +13750,6 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/RDoc/remove_unparseable-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/RDoc/setup_output_dir-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/RDoc/stats-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/RDoc/RDoc/store%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/RDoc/store-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/RDoc/update_output_dir-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/RI/Error/cdesc-Error.ri
@@ -13773,8 +13777,12 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/RubygemsHook/generate_rdoc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/RubygemsHook/generate_ri-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/RubygemsHook/generation_hook-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/RubygemsHook/load_rdoc-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/RubygemsHook/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/RubygemsHook/rdoc_installed%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/RubygemsHook/rdoc_version-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/RubygemsHook/remove-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/RubygemsHook/ri_installed%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Servlet/asset-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Servlet/asset_dirs-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Servlet/cdesc-Servlet.ri
@@ -13874,10 +13882,10 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/module_names-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/modules_hash-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/options-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/page-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/page_file-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/path-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/rdoc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/remove_nodoc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/resolve_c_superclasses-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/save-i.ri
@@ -16435,7 +16443,6 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/contributing/page-testing_ruby_md.ri
 %%RDOC%%%%RUBY_RIDIR%%/date/page-calendars_rdoc.ri
 %%RDOC%%%%RUBY_RIDIR%%/fatal/cdesc-fatal.ri
-%%RDOC%%%%RUBY_RIDIR%%/lib/page-mkmf_rb_orig.ri
 %%RDOC%%%%RUBY_RIDIR%%/optparse/page-argument_converters_rdoc.ri
 %%RDOC%%%%RUBY_RIDIR%%/optparse/page-creates_option_rdoc.ri
 %%RDOC%%%%RUBY_RIDIR%%/optparse/page-option_params_rdoc.ri
