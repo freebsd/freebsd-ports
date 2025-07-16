@@ -1,17 +1,23 @@
 PORTNAME=	dlint
-PORTVERSION=	1.4.1
+DISTVERSION=	1.4.3
 CATEGORIES=	dns
-MASTER_SITES=	https://BSDforge.com/projects/source/dns/dlint/
+MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	portmaster@BSDforge.com
-COMMENT=	Lint for DNS zones (Domain Name Server zone verification utility)
-WWW=		https://BSDforge.com/projects/dns/dlint
+COMMENT=	Lint for DNS zones -- a Domain Name Server zone verification utility
+WWW=		https://codeberg.org/BSDforge/${PORTNAME}/
 
-USES=		shebangfix tar:xz
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	dig:dns/bind-tools
+
+USES=		perl5 shebangfix
+SHEBANG_FILES=	digparse
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-SHEBANG_FILES=	digparse
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
