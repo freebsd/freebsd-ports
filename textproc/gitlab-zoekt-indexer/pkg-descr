@@ -1,0 +1,3 @@
+A fast, precise code search solution that integrates Zoekt with GitLab.
+This project provides the infrastructure for indexing and searching code
+across GitLab repositories with high performance and accuracy.
