@@ -1,5 +1,5 @@
 PORTNAME=	rbtrace
-PORTVERSION=	0.4.14
+PORTVERSION=	0.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,9 +16,10 @@ RUN_DEPENDS=	rubygem-ffi>=1.0.6:devel/rubygem-ffi \
 
 USES=		gem
 
+CONFIGURE_ARGS=	--with-cflags=-Wno-incompatible-function-pointer-types
+
 PIE_UNSAFE=	yes
 
-CONFIGURE_ARGS=	--with-cflags=-Wno-incompatible-function-pointer-types
 
 PLIST_FILES=	bin/rbtrace
 
