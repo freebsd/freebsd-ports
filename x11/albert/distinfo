@@ -1,9 +1,3 @@
-TIMESTAMP = 1675610602
-SHA256 (albertlauncher-albert-v0.20.5_GH0.tar.gz) = 391d3b3b96936717d42d540d177a5d034cc08da31c76bb40cbf979bd3d06ba72
-SIZE (albertlauncher-albert-v0.20.5_GH0.tar.gz) = 137505
-SHA256 (albertlauncher-plugins-5a4611e31b41ab3ae638252116c72e2a7050a2cc_GH0.tar.gz) = 1b0737829abc6e59d5c8e58fa710da55041bc5b6c49b0bab5b94c61692c2a0f6
-SIZE (albertlauncher-plugins-5a4611e31b41ab3ae638252116c72e2a7050a2cc_GH0.tar.gz) = 793118
-SHA256 (albertlauncher-python-6f734c7586c3889796846618fc9d8edb1a1ea386_GH0.tar.gz) = 467194240da1fa6f1a4bb6c103700073bb882a68e9b871655d1a61103ac6d7d5
-SIZE (albertlauncher-python-6f734c7586c3889796846618fc9d8edb1a1ea386_GH0.tar.gz) = 1157795
-SHA256 (skycoder42-QHotkey-34330d6ff5d2ca111c376f6d7da66be9d1817430_GH0.tar.gz) = 0e8cb92db8ae05a01b50593ebcc97ef8761aff45351db1d67e14971a8d69fdd0
-SIZE (skycoder42-QHotkey-34330d6ff5d2ca111c376f6d7da66be9d1817430_GH0.tar.gz) = 53154
+TIMESTAMP = 1752429188
+SHA256 (albert/v0.30.1.tar.gz) = d49310c48addacffe335f4b112bc7ca0eb6abdf6f409dc9f98ecc93dc6ff1ee2
+SIZE (albert/v0.30.1.tar.gz) = 1566557
