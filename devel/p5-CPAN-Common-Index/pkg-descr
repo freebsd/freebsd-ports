@@ -1,0 +1,7 @@
+This module provides a common library for working with a variety of CPAN
+index services. It is intentionally minimalist, trying to use as few
+non-core modules as possible.
+
+The "CPAN::Common::Index" module is an abstract base class that defines
+a common API. Individual backends deliver the API for a particular
+index.

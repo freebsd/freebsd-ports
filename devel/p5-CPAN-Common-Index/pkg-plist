@@ -1,0 +1,10 @@
+%%SITE_PERL%%/CPAN/Common/Index.pm
+%%SITE_PERL%%/CPAN/Common/Index/LocalPackage.pm
+%%SITE_PERL%%/CPAN/Common/Index/MetaDB.pm
+%%SITE_PERL%%/CPAN/Common/Index/Mirror.pm
+%%SITE_PERL%%/CPAN/Common/Index/Mux/Ordered.pm
+%%PERL5_MAN3%%/CPAN::Common::Index.3.gz
+%%PERL5_MAN3%%/CPAN::Common::Index::LocalPackage.3.gz
+%%PERL5_MAN3%%/CPAN::Common::Index::MetaDB.3.gz
+%%PERL5_MAN3%%/CPAN::Common::Index::Mirror.3.gz
+%%PERL5_MAN3%%/CPAN::Common::Index::Mux::Ordered.3.gz
