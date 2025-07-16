@@ -1995,6 +1995,7 @@
     SUBDIR += p5-CLI-Osprey
     SUBDIR += p5-CPAN-Changes
     SUBDIR += p5-CPAN-Checksums
+    SUBDIR += p5-CPAN-Common-Index
     SUBDIR += p5-CPAN-DistnameInfo
     SUBDIR += p5-CPAN-Inject
     SUBDIR += p5-CPAN-Meta
@@ -3628,6 +3629,7 @@
     SUBDIR += p5-Test-CPAN-Meta
     SUBDIR += p5-Test-CPAN-Meta-YAML
     SUBDIR += p5-Test-CheckDeps
+    SUBDIR += p5-Test-CPANfile
     SUBDIR += p5-Test-CheckManifest
     SUBDIR += p5-Test-Class
     SUBDIR += p5-Test-Class-Most
