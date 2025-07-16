@@ -1,7 +1,6 @@
 PORTNAME=	tscli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.12
-PORTREVISION=	1
+DISTVERSION=	0.0.13
 CATEGORIES=	security
 
 MAINTAINER=	dtxdf@FreeBSD.org
@@ -14,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 GO_MODULE=	github.com/jaxxstorm/tscli
 GO_TARGET=	./cmd/tscli:tscli
+GO_BUILDFLAGS=	-ldflags "\
+			-X 'github.com/jaxxstorm/tscli/pkg/version.Version=${DISTVERSIONPREFIX}${DISTVERSION}'"
 
 PLIST_FILES=	bin/tscli
 
