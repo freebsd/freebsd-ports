@@ -1,7 +1,7 @@
 PORTNAME=	awslim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	nork@FreeBSD.org
@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 FLAVORS=	default compact
-FLAVOR?=	${FLAVORS:[1]}
 
 compact_PKGNAMESUFFIX=	-compact
 
@@ -49,4 +48,12 @@ post-extract:
 pre-build:
 	cd ${GO_WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} GOMAXPROCS=${MAKE_JOBS_NUMBER} GOPROXY=off ${GO_CMD} generate ${GO_BUILDFLAGS} ./cmd/awslim-gen .
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != i386
+FLAVOR?=	${FLAVORS:[1]}
+.else
+FLAVOR?=	${FLAVORS:[2]}
+.endif
+
+.include <bsd.port.post.mk>
