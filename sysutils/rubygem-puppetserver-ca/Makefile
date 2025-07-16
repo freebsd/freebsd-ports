@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
 
+CONFLICTS_INSTALL=	rubygem-openvoxserver-ca
+
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/puppetserver-ca
