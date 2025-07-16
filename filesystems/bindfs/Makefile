@@ -1,6 +1,5 @@
 PORTNAME=	bindfs
-DISTVERSION=	1.17.7
-PORTREVISION=	2
+DISTVERSION=	1.18.1
 CATEGORIES=	filesystems
 MASTER_SITES=	https://bindfs.org/downloads/
 PKGNAMEPREFIX=	fusefs-
@@ -14,9 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		fuse:3 localbase:ldflags pkgconfig
 GNU_CONFIGURE=	yes
-
-CONFIGURE_ENV+=	fuse3_LIBS="-L${LOCALBASE}/lib -lfuse3"
 CONFIGURE_ARGS=	--with-fuse3
+CONFIGURE_ENV+=	fuse3_LIBS="-L${LOCALBASE}/lib -lfuse3"
 
 PLIST_FILES=	bin/bindfs \
 		share/man/man1/bindfs.1.gz
