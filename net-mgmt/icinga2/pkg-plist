@@ -38,9 +38,9 @@ etc/bash_completion.d/icinga2
 @sample %%ETCDIR%%/zones.conf.sample
 %%ETCDIR%%/zones.d/README
 %%MYSQL%%lib/icinga2/libmysql_shim.so
-%%MYSQL%%lib/icinga2/libmysql_shim.so.2.14.6
+%%MYSQL%%lib/icinga2/libmysql_shim.so.2.15.0
 %%PGSQL%%lib/icinga2/libpgsql_shim.so
-%%PGSQL%%lib/icinga2/libpgsql_shim.so.2.14.6
+%%PGSQL%%lib/icinga2/libpgsql_shim.so.2.15.0
 lib/icinga2/sbin/icinga2
 libexec/nagios/check_nscp_api
 sbin/icinga2
