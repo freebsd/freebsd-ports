@@ -22,8 +22,4 @@ USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
-PYDISTUTILS_CONFIGUREARGS=	--skip-npm
-PYDISTUTILS_BUILDARGS=		--skip-npm
-PYDISTUTILS_INSTALLARGS=	--skip-npm
-
 .include <bsd.port.mk>
