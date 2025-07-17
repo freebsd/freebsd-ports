@@ -1,1 +1,9 @@
 Extremely small and simple HTTP GET/HEAD-only web server for static content.
+The goal of this project is to do one thing and do it well, namely serving
+static web directories and doing that right. Most other solutions either are too
+complex (CGI support, dependencies on external libraries, ...) or lack features
+you expect (TLS, virtual hosts, partial content, not modified since, ...). quark
+tries to find a midway and just restrict itself to being static while still
+offering functions you only find in more bloated solutions and being as secure
+as possible (chroot, privilege dropping, strict parsers, no malloc at runtime,
+pledge, unveil, ...).

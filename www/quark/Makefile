@@ -1,16 +1,17 @@
 PORTNAME=	quark
-DISTVERSION=	g20210222
+DISTVERSION=	20220816
 CATEGORIES=	www
-MASTER_SITES=	LOCAL/tobik
+MASTER_SITES=	https://freebsd.uzsolt.hu/src/
 PKGNAMESUFFIX=	-server
-DISTNAME=	quark-68b4f733b2755762e43df90f73db5a6ec8d14104
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Small and simple HTTP GET/HEAD-only web server for static content
 WWW=		https://tools.suckless.org/quark/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	quark
 
