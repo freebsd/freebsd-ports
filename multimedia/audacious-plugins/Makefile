@@ -1,6 +1,5 @@
 PORTNAME=	audacious-plugins
-DISTVERSION=	4.4.2
-PORTREVISION=	4
+DISTVERSION=	4.5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -11,24 +10,17 @@ WWW=		https://audacious-media-player.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-		libdbus-glib-1.so:devel/dbus-glib \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
-
 FLAVORS=	qt6 qt5 gtk2 gtk3
 FLAVOR?=	${FLAVORS:[1]}
 
 gtk2_PKGNAMESUFFIX=	-gtk2
 gtk2_BUILD_DEPENDS=	audacious:multimedia/audacious@gtk2
-gtk2_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 gtk2_RUN_DEPENDS=	audacious:multimedia/audacious@gtk2
 gtk2_CONFLICTS_INSTALL=	audacious-plugins audacious-plugins-gtk3 \
 			audacious-plugins-qt6
 
 gtk3_PKGNAMESUFFIX=	-gtk3
 gtk3_BUILD_DEPENDS=	audacious:multimedia/audacious@gtk3
-gtk3_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 gtk3_RUN_DEPENDS=	audacious:multimedia/audacious@gtk3
 gtk3_CONFLICTS_INSTALL=	audacious-plugins audacious-plugins-gtk2 \
 			audacious-plugins-qt6
@@ -46,7 +38,7 @@ qt6_CONFLICTS_INSTALL=	audacious-plugins audacious-plugins-gtk2 \
 
 USES=		compiler:c++11-lib gettext-tools gmake gnome iconv localbase \
 		meson pkgconfig tar:bzip2 xorg
-USE_GNOME=	gdkpixbuf glib20 libxml2
+USE_GNOME=	glib20 libxml2
 USE_XORG=	x11
 
 CONFIGURE_ENV=	LIBRARY_PATH="${LOCALBASE}/lib"
@@ -61,7 +53,7 @@ MESON_ARGS+=	-Dgtk2=false \
 		-Dqt5=true \
 		-Dqt=true
 USES+=		qt:5
-USE_QT=		core gui multimedia network svg widgets x11extras
+USE_QT=		core gui multimedia widgets x11extras
 PLIST_SUB=	GTK="@comment " \
 		QT5="" \
 		QT=""
@@ -71,7 +63,7 @@ MESON_ARGS+=	-Dgtk2=false \
 		-Dqt5=false \
 		-Dqt=true
 USES+=		qt:6
-USE_QT=		base multimedia svg
+USE_QT=		base multimedia
 PLIST_SUB=	GTK="@comment " \
 		QT5="@comment " \
 		QT=""
@@ -167,8 +159,7 @@ FILEWRITER_MESON_TRUE=	filewriter
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_MESON_TRUE=	flac
 
-JACK_LIB_DEPENDS=	libjack.so:audio/jack \
-			libsamplerate.so:audio/libsamplerate
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_MESON_TRUE=	jack
 
 LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
@@ -176,7 +167,8 @@ LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_MESON_TRUE=	lirc
 
-MODPLUG_LIB_DEPENDS=	libmodplug.so:audio/libmodplug
+MODPLUG_LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
+			libmpg123.so:audio/mpg123
 MODPLUG_MESON_TRUE=	modplug
 
 MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
@@ -190,6 +182,7 @@ NEON_MESON_TRUE=	neon
 NLS_USES=		gettext-runtime
 
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
+NOTIFY_USE=		GNOME=gdkpixbuf
 NOTIFY_MESON_TRUE=	notify
 
 OPENGL_USES=		gl
@@ -202,8 +195,7 @@ OPENGL_MESON_TRUE=	gl-spectrum
 OPENMPT_LIB_DEPENDS=	libopenmpt.so:audio/libopenmpt
 OPENMPT_MESON_TRUE=	openmpt
 
-OPUS_LIB_DEPENDS=	libopus.so:audio/opus \
-			libopusfile.so:audio/opusfile
+OPUS_LIB_DEPENDS=	libopusfile.so:audio/opusfile
 OPUS_MESON_TRUE=	opus
 
 OSS_MESON_TRUE=		oss
@@ -211,7 +203,7 @@ OSS_MESON_TRUE=		oss
 PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
 PIPEWIRE_MESON_TRUE=	pipewire
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse-mainloop-glib.so:audio/pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_MESON_TRUE=	pulse
 
 SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
@@ -221,7 +213,7 @@ SCROBBLER_LIB_DEPENDS=	libcurl.so:ftp/curl
 SCROBBLER_MESON_TRUE=	scrobbler2
 
 SDL_USES=		sdl
-SDL_USE=		SDL=sdl2
+SDL_USE=		SDL=sdl3
 SDL_MESON_TRUE=		sdlout
 
 SID_LIB_DEPENDS=	libsidplayfp.so:audio/libsidplayfp
