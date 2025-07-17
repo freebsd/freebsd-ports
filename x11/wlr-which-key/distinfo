@@ -1,4 +1,4 @@
-TIMESTAMP = 1750316909
+TIMESTAMP = 1751726920
 SHA256 (rust/crates/anstyle-1.0.11.crate) = 862ed96ca487e809f1c8e5a8447f6ee2cf102f846893800b20cebdf541fc6bbd
 SIZE (rust/crates/anstyle-1.0.11.crate) = 15880
 SHA256 (rust/crates/anyhow-1.0.98.crate) = e16d2d3311acee920a9eb8d33b8cbc1787ce4a264e85f964c2404b969bdcd487
@@ -157,5 +157,5 @@ SHA256 (rust/crates/xkbcommon-0.8.0.crate) = 8d66ca9352cbd4eecbbc40871d8a11b4ac8
 SIZE (rust/crates/xkbcommon-0.8.0.crate) = 59098
 SHA256 (rust/crates/xkeysym-0.2.1.crate) = b9cc00251562a284751c9973bace760d86c0276c471b4be569fe6b068ee97a56
 SIZE (rust/crates/xkeysym-0.2.1.crate) = 103129
-SHA256 (MaxVerevkin-wlr-which-key-v1.2.0_GH0.tar.gz) = 13d5724d0085f8d540c9bf982b15d7b1b1fb313be8395be6e7c9bc82f62e400c
-SIZE (MaxVerevkin-wlr-which-key-v1.2.0_GH0.tar.gz) = 29897
+SHA256 (MaxVerevkin-wlr-which-key-v1.3.0_GH0.tar.gz) = 50fc06f60e67dc678ffe7bb167d662910d98085e185d2030c09ebd5793bf2794
+SIZE (MaxVerevkin-wlr-which-key-v1.3.0_GH0.tar.gz) = 31022
