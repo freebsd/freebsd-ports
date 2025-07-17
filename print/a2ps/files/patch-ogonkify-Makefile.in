@@ -1,9 +1,9 @@
---- ogonkify/Makefile.in.orig	2023-03-07 18:11:32 UTC
+--- ogonkify/Makefile.in.orig	2025-07-11 07:54:27 UTC
 +++ ogonkify/Makefile.in
-@@ -89,7 +89,7 @@ am__make_running_with_option = \
-   test $$has_opt = yes
- am__make_dryrun = (target_option=n; $(am__make_running_with_option))
+@@ -91,7 +91,7 @@ am__rm_rf = rm -rf $(am__rm_f_notfound)
  am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
+ am__rm_f = rm -f $(am__rm_f_notfound)
+ am__rm_rf = rm -rf $(am__rm_f_notfound)
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)/a2ps/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
