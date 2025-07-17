@@ -1,0 +1,5 @@
+LangSmith helps your team debug, evaluate, and monitor your language models
+and intelligent agents. It works with any LLM Application, including a native
+integration with the LangChain Python and LangChain JS open source libraries.
+LangSmith is developed and maintained by LangChain, the company behind the
+LangChain framework.
