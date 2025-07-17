@@ -1,7 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	7.0.21
-PORTREVISION=	2
+DISTVERSION=	7.0.22
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -45,7 +44,7 @@ USES+=		gmake pkgconfig
 CPE_PRODUCT=	mongodb
 
 # mozjs tag comes from ${WRKSRC}/src/third_party/mozjs/get-sources.sh
-MOZJS_TAG=	98c8be22bec7bb650156e0d389b425322d8c323c
+MOZJS_TAG=	5acd3be6c9563ad3e7ca6182285c69a38de47bab
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb mongodb-forks:mozjs
