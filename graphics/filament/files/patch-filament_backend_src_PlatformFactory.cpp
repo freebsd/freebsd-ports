@@ -1,6 +1,6 @@
---- filament/backend/src/PlatformFactory.cpp.orig	2025-03-31 22:23:27 UTC
+--- filament/backend/src/PlatformFactory.cpp.orig	2025-07-14 23:11:31 UTC
 +++ filament/backend/src/PlatformFactory.cpp
-@@ -41,7 +41,7 @@
+@@ -42,7 +42,7 @@
              #include <backend/platforms/PlatformCocoaGL.h>
          #endif
      #endif
@@ -9,7 +9,7 @@
      #if defined(FILAMENT_SUPPORTS_X11)
          #if defined(FILAMENT_SUPPORTS_OPENGL) && !defined(FILAMENT_USE_EXTERNAL_GLES3)
              #include "backend/platforms/PlatformGLX.h"
-@@ -151,7 +151,7 @@ Platform* PlatformFactory::create(Backend* backend) no
+@@ -152,7 +152,7 @@ Platform* PlatformFactory::create(Backend* backend) no
              #else
                  return new PlatformCocoaGL();
              #endif
