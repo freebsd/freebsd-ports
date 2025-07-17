@@ -9,6 +9,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.7 \
 		anyhow-1.0.98 \
+		approx-0.5.1 \
 		arbitrary-1.4.1 \
 		arcstr-1.2.0 \
 		arrayref-0.3.9 \
@@ -17,7 +18,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		assert_cmd-2.0.17 \
 		assert_fs-1.1.3 \
 		astral-tokio-tar-0.5.2 \
-		async-channel-2.3.1 \
+		async-channel-2.5.0 \
 		async-compression-0.4.18 \
 		async-trait-0.1.88 \
 		async_http_range_reader-0.9.1 \
@@ -31,12 +32,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		backtrace-0.3.74 \
 		base64-0.21.7 \
 		base64-0.22.1 \
+		bincode-1.3.3 \
 		bisection-0.1.0 \
 		bitflags-1.3.2 \
 		bitflags-2.9.1 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
-		boxcar-0.2.12 \
+		boxcar-0.2.13 \
 		bstr-1.11.3 \
 		bumpalo-3.17.0 \
 		bytecheck-0.8.1 \
@@ -49,7 +51,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bzip2-0.5.0 \
 		bzip2-sys-0.1.11+1.0.8 \
 		camino-1.1.9 \
-		cargo-util-0.2.20 \
+		cargo-util-0.2.21 \
 		cast-0.3.0 \
 		cc-1.2.11 \
 		cfg-if-1.0.0 \
@@ -58,22 +60,23 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.39 \
-		clap_builder-4.5.39 \
+		clap-4.5.41 \
+		clap_builder-4.5.41 \
 		clap_complete-4.5.44 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.5 \
-		clap_derive-4.5.32 \
+		clap_derive-4.5.41 \
 		clap_lex-0.7.4 \
-		codspeed-2.10.1 \
-		codspeed-criterion-compat-2.10.1 \
-		codspeed-criterion-compat-walltime-2.10.1 \
+		codspeed-3.0.3 \
+		codspeed-criterion-compat-3.0.3 \
+		codspeed-criterion-compat-walltime-3.0.3 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.3 \
 		colored-2.2.0 \
 		concurrent-queue-2.5.0 \
 		configparser-3.1.0 \
 		console-0.15.11 \
+		console-0.16.0 \
 		core-foundation-0.10.0 \
 		core-foundation-sys-0.8.7 \
 		cpufeatures-0.2.17 \
@@ -116,7 +119,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		errno-0.3.10 \
 		etcetera-0.10.0 \
 		event-listener-5.4.0 \
-		event-listener-strategy-0.5.3 \
+		event-listener-strategy-0.5.4 \
 		fastrand-2.3.0 \
 		fdeflate-0.3.7 \
 		filetime-0.2.25 \
@@ -171,7 +174,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		httpdate-1.0.3 \
 		hyper-1.6.0 \
 		hyper-rustls-0.27.5 \
-		hyper-util-0.1.12 \
+		hyper-util-0.1.15 \
 		icu_collections-1.5.0 \
 		icu_locid-1.5.0 \
 		icu_locid_transform-1.5.0 \
@@ -187,12 +190,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ignore-0.4.23 \
 		image-0.25.5 \
 		imagesize-0.11.0 \
-		indexmap-2.9.0 \
-		indicatif-0.17.11 \
+		indexmap-2.10.0 \
+		indicatif-0.18.0 \
 		indoc-2.0.6 \
 		insta-1.43.1 \
-		instant-0.1.13 \
+		io-uring-0.7.8 \
 		ipnet-2.11.0 \
+		iri-string-0.7.8 \
 		is-terminal-0.4.15 \
 		is_ci-1.2.0 \
 		is_terminal_polyfill-1.70.1 \
@@ -200,8 +204,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.14 \
-		jiff-0.2.14 \
-		jiff-static-0.2.14 \
+		jiff-0.2.15 \
+		jiff-static-0.2.15 \
 		jiff-tzdb-0.1.4 \
 		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.32 \
@@ -227,7 +231,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		markdown-1.0.0 \
 		matchers-0.1.0 \
 		md-5-0.10.6 \
-		memchr-2.7.4 \
+		memchr-2.7.5 \
 		memmap2-0.5.10 \
 		memmap2-0.9.5 \
 		miette-7.6.0 \
@@ -248,7 +252,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		nu-ansi-term-0.50.1 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
-		number_prefix-0.4.0 \
 		object-0.36.7 \
 		once_cell-1.21.3 \
 		oorandom-11.1.4 \
@@ -256,11 +259,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		option-ext-0.2.0 \
 		os_str_bytes-6.6.1 \
 		overload-0.1.1 \
-		owo-colors-4.2.1 \
+		owo-colors-4.2.2 \
 		parking-2.2.1 \
-		parking_lot-0.11.2 \
 		parking_lot-0.12.3 \
-		parking_lot_core-0.8.6 \
 		parking_lot_core-0.9.10 \
 		paste-1.0.15 \
 		path-slash-0.2.1 \
@@ -305,7 +306,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		rctree-0.5.0 \
-		redox_syscall-0.2.16 \
 		redox_syscall-0.5.8 \
 		redox_users-0.4.6 \
 		ref-cast-1.0.24 \
@@ -317,9 +317,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.5 \
 		rend-0.5.2 \
-		reqwest-0.12.15 \
-		reqwest-middleware-0.4.2 \
-		reqwest-retry-0.7.0 \
+		reqwest-0.12.22 \
 		resvg-0.29.0 \
 		retry-policies-0.4.0 \
 		rgb-0.8.50 \
@@ -338,7 +336,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustix-1.0.7 \
 		rustls-0.23.22 \
 		rustls-native-certs-0.8.1 \
-		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.11.0 \
 		rustls-webpki-0.102.8 \
 		rustversion-1.0.19 \
@@ -346,8 +343,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ryu-1.0.19 \
 		same-file-1.0.6 \
 		schannel-0.1.27 \
-		schemars-0.8.22 \
-		schemars_derive-0.8.22 \
+		schemars-1.0.4 \
+		schemars_derive-1.0.4 \
 		scopeguard-1.2.0 \
 		scroll-0.13.0 \
 		scroll_derive-0.13.0 \
@@ -361,7 +358,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde_derive-1.0.219 \
 		serde_derive_internals-0.29.1 \
 		serde_json-1.0.140 \
-		serde_spanned-0.6.8 \
+		serde_spanned-0.6.9 \
 		serde_urlencoded-0.7.1 \
 		serde_yaml-0.9.34+deprecated \
 		sha2-0.10.9 \
@@ -376,11 +373,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		simplecss-0.2.2 \
 		siphasher-0.3.11 \
 		slab-0.4.9 \
-		smallvec-1.15.0 \
+		smallvec-1.15.1 \
 		smawk-0.3.2 \
 		socket2-0.5.9 \
-		spdx-0.10.8 \
+		spdx-0.10.9 \
 		stable_deref_trait-1.2.0 \
+		statrs-0.18.0 \
 		strict-num-0.1.1 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
@@ -391,7 +389,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		svgfilters-0.4.0 \
 		svgtypes-0.9.0 \
 		svgtypes-0.10.0 \
-		syn-2.0.101 \
+		syn-2.0.104 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.1 \
 		sys-info-0.9.1 \
@@ -405,8 +403,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
-		test-log-0.2.17 \
-		test-log-macros-0.2.17 \
+		test-log-0.2.18 \
+		test-log-macros-0.2.18 \
 		textwrap-0.16.2 \
 		thiserror-1.0.69 \
 		thiserror-2.0.12 \
@@ -421,17 +419,17 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.8.1 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.45.1 \
+		tokio-1.46.1 \
 		tokio-macros-2.5.0 \
 		tokio-rustls-0.26.1 \
-		tokio-socks-0.5.2 \
 		tokio-stream-0.1.17 \
 		tokio-util-0.7.15 \
-		toml-0.8.22 \
-		toml_datetime-0.6.9 \
-		toml_edit-0.22.26 \
-		toml_write-0.1.1 \
+		toml-0.8.23 \
+		toml_datetime-0.6.11 \
+		toml_edit-0.22.27 \
+		toml_write-0.1.2 \
 		tower-0.5.2 \
+		tower-http-0.6.6 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
 		tracing-0.1.41 \
@@ -460,7 +458,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unicode-script-0.5.7 \
 		unicode-vo-0.1.0 \
 		unicode-width-0.1.14 \
-		unicode-width-0.2.0 \
+		unicode-width-0.2.1 \
+		unit-prefix-0.5.1 \
 		unsafe-libyaml-0.2.11 \
 		unscanny-0.1.0 \
 		untrusted-0.9.0 \
@@ -487,12 +486,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wasm-bindgen-macro-support-0.2.100 \
 		wasm-bindgen-shared-0.2.100 \
 		wasm-streams-0.4.2 \
-		wasm-timer-0.2.5 \
+		wasmtimer-0.4.1 \
 		web-sys-0.3.77 \
 		web-time-1.1.0 \
 		webpki-roots-0.26.8 \
+		webpki-roots-1.0.1 \
 		weezl-0.1.8 \
-		which-7.0.3 \
+		which-8.0.0 \
 		whoami-1.6.0 \
 		widestring-1.1.0 \
 		winapi-0.3.9 \
@@ -512,20 +512,20 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows-implement-0.60.0 \
 		windows-interface-0.57.0 \
 		windows-interface-0.59.1 \
-		windows-link-0.1.1 \
+		windows-link-0.1.3 \
 		windows-numerics-0.2.0 \
-		windows-registry-0.4.0 \
-		windows-registry-0.5.2 \
+		windows-registry-0.5.3 \
 		windows-result-0.1.2 \
 		windows-result-0.3.4 \
 		windows-strings-0.3.1 \
-		windows-strings-0.4.1 \
+		windows-strings-0.4.2 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.0 \
+		windows-targets-0.53.2 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_gnullvm-0.53.0 \
@@ -549,9 +549,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
-		winnow-0.7.7 \
+		winnow-0.7.11 \
 		winsafe-0.0.19 \
-		wiremock-0.6.3 \
+		wiremock-0.6.4 \
 		wit-bindgen-rt-0.33.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
@@ -575,5 +575,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zstd-safe-7.2.1 \
 		zstd-sys-2.0.13+zstd.1.5.6 \
 		pubgrub,version-ranges@git+https://github.com/astral-sh/pubgrub?rev=06ec5a5f59ffaeb6cf5079c6cb184467da06c9db\#06ec5a5f59ffaeb6cf5079c6cb184467da06c9db \
-		async_zip@git+https://github.com/charliermarsh/rs-async-zip?rev=c909fda63fcafe4af496a07bfda28a5aae97e58d\#c909fda63fcafe4af496a07bfda28a5aae97e58d \
-		tl@git+https://github.com/astral-sh/tl.git?rev=6e25b2ee2513d75385101a8ff9f591ef51f314ec\#6e25b2ee2513d75385101a8ff9f591ef51f314ec
+		tl@git+https://github.com/astral-sh/tl.git?rev=6e25b2ee2513d75385101a8ff9f591ef51f314ec\#6e25b2ee2513d75385101a8ff9f591ef51f314ec \
+		async_zip@git+https://github.com/astral-sh/rs-async-zip?rev=c909fda63fcafe4af496a07bfda28a5aae97e58d\#c909fda63fcafe4af496a07bfda28a5aae97e58d \
+		reqwest-middleware,reqwest-retry@git+https://github.com/astral-sh/reqwest-middleware?rev=ad8b9d332d1773fde8b4cd008486de5973e0a3f8\#ad8b9d332d1773fde8b4cd008486de5973e0a3f8
