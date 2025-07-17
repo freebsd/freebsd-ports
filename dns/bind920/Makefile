@@ -1,14 +1,14 @@
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
-DISTVERSION=	9.20.10
+DISTVERSION=	9.20.11
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
-PORTREVISION=	1
+PORTREVISION=	0
 .else
 # XXX: correct version
 # dns/bind920 here
-PORTREVISION=	2
+PORTREVISION=	0
 .endif
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${DISTVERSION}
