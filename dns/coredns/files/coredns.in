@@ -30,10 +30,11 @@ load_rc_config $name
 : ${coredns_listen_port:="53"}
 
 pidfile="/var/run/${name}.pid"
+logfile="/var/log/${name}.log"
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/${name}"
 coredns_args="-conf ${coredns_config} -dns.port ${coredns_listen_port}"
-command_args="-S -m 3 -s "info" -l "daemon" -p ${pidfile} /usr/bin/env ${procname} ${coredns_args}"
+command_args="-o ${logfile} -m 3 -s "info" -l "daemon" -p ${pidfile} /usr/bin/env ${procname} ${coredns_args}"
 
 coredns_precmd()
 {
