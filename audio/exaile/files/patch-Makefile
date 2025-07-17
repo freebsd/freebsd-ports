@@ -1,6 +1,6 @@
---- Makefile.orig	2018-02-09 15:54:09 UTC
+--- Makefile.orig	2025-05-23 22:15:49 UTC
 +++ Makefile
-@@ -23,6 +23,7 @@ EXAILELIBDIR   = $(DESTDIR)$(LIBINSTALLDIR)/exaile
+@@ -29,6 +29,7 @@ EXAILEMANDIR   = $(DESTDIR)$(MANPREFIX)/man
  EXAILESHAREDIR = $(DESTDIR)$(DATADIR)/exaile
  EXAILECONFDIR  = $(DESTDIR)$(XDGCONFDIR)/exaile
  EXAILEMANDIR   = $(DESTDIR)$(MANPREFIX)/man
@@ -8,7 +8,16 @@
  
  .PHONY: all all_no_locale builddir compile make-install-dirs uninstall \
  	install install_no_locale install-target locale install-locale \
-@@ -206,7 +207,7 @@ po/messages.pot: pot
+@@ -182,7 +183,7 @@ install-target: make-install-dirs
+ 	install -p -m 644 data/ui/preferences/widgets/*.ui $(EXAILESHAREDIR)/data/ui/preferences/widgets
+ 	install -p -m 644 data/ui/widgets/*.ui $(EXAILESHAREDIR)/data/ui/widgets
+ 	-install -p -m 644 build/exaile.desktop $(DESTDIR)$(DATADIR)/applications/
+-	-install -p -m 644 build/exaile.appdata.xml $(DESTDIR)$(DATADIR)/metainfo/
++	-install -p -m 644 build/org.exaile.exaile.appdata.xml $(DESTDIR)$(DATADIR)/metainfo/
+ 	-install -p -m 644 build/exaile.1.gz $(EXAILEMANDIR)/man1/
+ 	-install -p -m 644 build/exaile.bash-completion $(DESTDIR)$(BASHCOMPDIR)/exaile
+ 	-install -p -m 644 build/exaile.fish-completion $(DESTDIR)$(FISHCOMPDIR)/exaile.fish
+@@ -243,7 +244,7 @@ pot:
  #   dash (Debian's /bin/sh) doesn't support it and exits immediately, so we test it in a subshell.
  # The "export LC_ALL=C" disables any locale-dependent sort behavior.
  pot:
@@ -17,3 +26,15 @@
  	  export LC_ALL=C && cd po && \
  	  { find ../xl ../xlgui -name "*.py" | sort && \
  	    find ../data/ui -name "*.ui" | sort && \
+@@ -301,9 +302,9 @@ desktop_files: builddir
+ desktop_files: builddir
+ 	echo $(LINGUAS) > po/LINGUAS
+ 	msgfmt --desktop --template=data/exaile.desktop.in -d po -o build/exaile.desktop
+-	msgfmt --xml --template=data/exaile.appdata.xml.in -d po -o build/exaile.appdata.xml
++	msgfmt --xml --template=data/exaile.appdata.xml.in -d po -o build/org.exaile.exaile.appdata.xml
+ 	rm po/LINGUAS
+ 
+ desktop_files_no_locale: builddir
+ 	cp data/exaile.desktop.in build/exaile.desktop
+-	cp data/exaile.appdata.xml.in build/exaile.appdata.xml
++	cp data/exaile.appdata.xml.in build/org.exaile.exaile.appdata.xml

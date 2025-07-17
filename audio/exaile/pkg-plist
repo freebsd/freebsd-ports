@@ -127,7 +127,7 @@ lib/exaile/xlgui/widgets/queue.py
 lib/exaile/xlgui/widgets/rating.py
 lib/exaile/xlgui/widgets/smart_playlist_editor.py
 share/man/man1/exaile.1.gz
-share/metainfo/exaile.appdata.xml
+share/metainfo/org.exaile.exaile.appdata.xml
 share/applications/exaile.desktop
 share/dbus-1/services/org.exaile.Exaile.service
 share/exaile/data/images/128x128/exaile.png
