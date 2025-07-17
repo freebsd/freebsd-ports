@@ -14,6 +14,7 @@ lib/rehex/binary-template/lulpeg/lulpeg.lua
 lib/rehex/binary-template/parser.lua
 lib/rehex/binary-template/plugin.lua
 lib/rehex/binary-template/preprocessor.lua
+lib/rehex/binary-template/stable_sort.lua
 lib/rehex/binary-template/templates/riff.bt
 lib/rehex/exe/bitops52.lua
 lib/rehex/exe/class.lua
