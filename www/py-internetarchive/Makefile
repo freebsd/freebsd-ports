@@ -1,6 +1,6 @@
 PORTNAME=	internetarchive
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.3.1
+DISTVERSION=	5.4.1
 CATEGORIES=	www python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,6 +34,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} PATH=${ST
 
 NO_ARCH=	yes
 
-# tests as of 5.3.1: 15 failed, 131 passed in 65.72s (0:01:05)
+# tests as of 5.4.1: 10 failed, 147 passed, 1 warning in 80.14s (0:01:20)
 
 .include <bsd.port.mk>
