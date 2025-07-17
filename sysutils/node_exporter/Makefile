@@ -1,7 +1,6 @@
 PORTNAME=	node_exporter
-DISTVERSIONPREFIX=v
-DISTVERSION=	1.8.2
-PORTREVISION=	5
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.9.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dor.bsd@xm0.uk
@@ -19,12 +18,12 @@ GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}"
 
 OPTIONS_DEFINE=	DOCS
 
-BUILD_USER?=	${USER}
-LD_FLAG_STRING=	-s \
-		${LD_FLAG_X_PREFIX}.Version=${PORTVERSION} \
-		${LD_FLAG_X_PREFIX}.Revision=${PORTREVISION} \
-		${LD_FLAG_X_PREFIX}.Branch=release-${PORTVERSION:R} \
-		${LD_FLAG_X_PREFIX}.BuildUser=${BUILD_USER}
+BUILD_USER?=		${USER}
+LD_FLAG_STRING=		-s \
+			${LD_FLAG_X_PREFIX}.Version=${DISTVERSION} \
+			${LD_FLAG_X_PREFIX}.Revision=${DISTREVISION} \
+			${LD_FLAG_X_PREFIX}.Branch=release-${DISTVERSION:R} \
+			${LD_FLAG_X_PREFIX}.BuildUser=${BUILD_USER}
 LD_FLAG_X_PREFIX=	-X github.com/prometheus/common/version
 
 post-install-DOCS-on:
