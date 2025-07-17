@@ -1,0 +1,11 @@
+--- prg/chkerr.sd7.orig	2025-07-15 18:54:10 UTC
++++ prg/chkerr.sd7
+@@ -48,7 +48,7 @@ const func boolean: checkError (in string: testProgram
+     var parseError: error is parseError.value;
+   begin
+     block
+-      aProgram := parseStri(testProgram);
++      aProgram := parseStri(testProgram, parseOptions.value, [] ("../lib"));
+     exception
+       catch MEMORY_ERROR: noop;
+     end block;
