@@ -24,6 +24,7 @@ include/saga/saga_gdi/3d_view.h
 include/saga/saga_gdi/3d_view_tools.h
 include/saga/saga_gdi/map_dc.h
 include/saga/saga_gdi/saga_gdi.h
+include/saga/saga_gdi/sgdi_classify.h
 include/saga/saga_gdi/sgdi_controls.h
 include/saga/saga_gdi/sgdi_core.h
 include/saga/saga_gdi/sgdi_diagram.h
