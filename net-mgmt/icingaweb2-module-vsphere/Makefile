@@ -14,6 +14,7 @@ RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.11.4:net-mgmt/icingaweb2@${PHP_FL
 
 USES=		php:web,flavors
 USE_PHP=	posix soap
+IGNORE_WITH_PHP=81
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga

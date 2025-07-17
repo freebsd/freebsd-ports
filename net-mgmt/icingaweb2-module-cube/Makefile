@@ -20,6 +20,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 USES=		php:web,flavors
+IGNORE_WITH_PHP=81
 
 WWWDIR?=	${PREFIX}/www/icingaweb2/modules/${PORTNAME:C/^.*-//}
 

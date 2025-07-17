@@ -16,6 +16,7 @@ RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.12.1:net-mgmt/icingaweb2@${PHP_FL
 		icingaweb2-module-reporting${PHP_PKGNAMESUFFIX}>=0.10.0:net-mgmt/icingaweb2-module-reporting@${PHP_FLAVOR}
 
 USES=		php:web,flavors
+IGNORE_WITH_PHP=81
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
