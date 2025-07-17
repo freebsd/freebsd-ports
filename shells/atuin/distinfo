@@ -1,4 +1,4 @@
-TIMESTAMP = 1748367527
+TIMESTAMP = 1752727297
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -1111,5 +1111,5 @@ SHA256 (rust/crates/zerovec-0.10.4.crate) = aa2b893d79df23bfb12d5461018d408ea19d
 SIZE (rust/crates/zerovec-0.10.4.crate) = 126398
 SHA256 (rust/crates/zerovec-derive-0.10.3.crate) = 6eafa6dfb17584ea3e2bd6e76e0cc15ad7af12b09abdd1ca55961bed9b1063c6
 SIZE (rust/crates/zerovec-derive-0.10.3.crate) = 19438
-SHA256 (ellie-atuin-v18.6.1_GH0.tar.gz) = aba26698471ef7ad2757416d01fcc327d3bd800c58cc3fcae638e625524e1b40
-SIZE (ellie-atuin-v18.6.1_GH0.tar.gz) = 666475
+SHA256 (ellie-atuin-v18.7.1_GH0.tar.gz) = 8a3e9e80390a996688590e27c245d5ad5dccfc2a1aedd53bd1e50e24a776e8d0
+SIZE (ellie-atuin-v18.7.1_GH0.tar.gz) = 671392
