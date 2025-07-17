@@ -22,6 +22,7 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/interface.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/internetspeed.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/lang.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/macosmenu.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/misc.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/newsunpack.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/newswrapper.py
@@ -29,7 +30,6 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/nzbparser.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/nzbqueue.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/nzbstuff.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/osxmenu.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/panic.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/par2file.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/postproc.py
@@ -123,9 +123,9 @@ bin/SABnzbd.py
 %%DATADIR%%/icons/sabnzbd16_32.ico
 %%DATADIR%%/icons/sabnzbd16_32green.ico
 %%DATADIR%%/icons/sabnzbd16_32paused.ico
-%%DATADIR%%/icons/sabnzbd_osx_clicked.tiff
-%%DATADIR%%/icons/sabnzbd_osx_idle.tiff
-%%DATADIR%%/icons/sabnzbd_osx_pause.tiff
+%%DATADIR%%/icons/sabnzbd_macos_clicked.tiff
+%%DATADIR%%/icons/sabnzbd_macos_idle.tiff
+%%DATADIR%%/icons/sabnzbd_macos_pause.tiff
 %%DATADIR%%/interfaces/Config/README.txt
 %%DATADIR%%/interfaces/Config/templates/_inc_footer_uc.tmpl
 %%DATADIR%%/interfaces/Config/templates/_inc_header_uc.tmpl
