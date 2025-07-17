@@ -51,7 +51,33 @@
  		if (LogLevel >= 9)	\
  			sm_syslog(LOG_WARNING, e->e_id,	\
  				  "AUTH failure (%s): %s (%d) %s%s%.*s, relay=%.100s",	\
-@@ -2116,6 +2130,9 @@ smtp(nullserver, d_flags, e)
+@@ -2065,6 +2079,13 @@ smtp(nullserver, d_flags, e)
+ 			  case CMDEHLO:
+ 			  case CMDNOOP:
+ 			  case CMDRSET:
++				if (lognullconnection)
++				{
++					 int fd = sm_io_getinfo(InChannel, SM_IO_WHAT_FD, NULL);
++					 BLACKLIST_NOTIFY(BLACKLIST_AUTH_FAIL, fd, nullserver);
++				}
++				/* FALLTHROUGH */
++
+ 			  case CMDERROR:
+ 				/* process normally */
+ 				break;
+@@ -2092,6 +2113,11 @@ smtp(nullserver, d_flags, e)
+ #endif /* MAXBADCOMMANDS > 0 */
+ 				if (nullserver != NULL)
+ 				{
++					if (lognullconnection)
++					{
++						 int fd = sm_io_getinfo(InChannel, SM_IO_WHAT_FD, NULL);
++						 BLACKLIST_NOTIFY(BLACKLIST_AUTH_FAIL, fd, nullserver);
++					}
+ 					if (ISSMTPREPLY(nullserver))
+ 					{
+ 						/* Can't use ("%s", ...) due to usrerr() requirements */
+@@ -2116,6 +2142,9 @@ smtp(nullserver, d_flags, e)
  			DELAY_CONN("AUTH");
  			if (!sasl_ok || n_mechs <= 0)
  			{
@@ -61,7 +87,7 @@
  				message("503 5.3.3 AUTH not available");
  				break;
  			}
-@@ -3841,10 +3858,17 @@ smtp(nullserver, d_flags, e)
+@@ -3841,10 +3870,17 @@ smtp(nullserver, d_flags, e)
  				**  timeouts for the same connection.
  				*/
  
@@ -79,7 +105,7 @@
  			if (tTd(93, 100))
  			{
  				/* return to handle next connection */
-@@ -3926,7 +3950,10 @@ smtp(nullserver, d_flags, e)
+@@ -3926,7 +3962,10 @@ smtp(nullserver, d_flags, e)
  #if MAXBADCOMMANDS > 0
  			if (++n_badcmds > MAXBADCOMMANDS)
  			{
@@ -90,7 +116,7 @@
  				message("421 4.7.0 %s Too many bad commands; closing connection",
  					MyHostName);
  
-@@ -3980,6 +4007,9 @@ smtp(nullserver, d_flags, e)
+@@ -3980,6 +4019,9 @@ smtp(nullserver, d_flags, e)
  		}
  #if SASL
  		}
