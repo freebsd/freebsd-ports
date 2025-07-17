@@ -1,5 +1,5 @@
-TIMESTAMP = 1723572142
-SHA256 (go/sysutils_node_exporter/node_exporter-v1.8.2/v1.8.2.mod) = 91f7fe315a7ead673c5db46f635f8c735eb32710c9670318ef9302af1d173d61
-SIZE (go/sysutils_node_exporter/node_exporter-v1.8.2/v1.8.2.mod) = 2349
-SHA256 (go/sysutils_node_exporter/node_exporter-v1.8.2/v1.8.2.zip) = 6fe8a1b4cfc150f4a00f14ba63aeb429f4190acf753265f6b1cc8810f0919748
-SIZE (go/sysutils_node_exporter/node_exporter-v1.8.2/v1.8.2.zip) = 540187
+TIMESTAMP = 1751801119
+SHA256 (go/sysutils_node_exporter/node_exporter-v1.9.1/v1.9.1.mod) = 76f6df81377fbf6cd9059e0052b9205e4ab6c247e7ee4e7b3c3578738c9bc05d
+SIZE (go/sysutils_node_exporter/node_exporter-v1.9.1/v1.9.1.mod) = 2664
+SHA256 (go/sysutils_node_exporter/node_exporter-v1.9.1/v1.9.1.zip) = 9395544e223dbe09e88e5b5c946003a259ae65cae61a9bbafc3967fa06f6417a
+SIZE (go/sysutils_node_exporter/node_exporter-v1.9.1/v1.9.1.zip) = 589141
