@@ -1,9 +1,10 @@
 PORTNAME=	hyprwayland-scanner
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Hyprland implementation of wayland-scanner
 WWW=		https://github.com/hyprwm/hyprwayland-scanner
 

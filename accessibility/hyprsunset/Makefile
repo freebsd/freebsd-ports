@@ -1,10 +1,10 @@
 PORTNAME=	hyprsunset
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	accessibility wayland
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Blue light filter on Hyprland
 WWW=		https://github.com/hyprwm/hyprsunset
 

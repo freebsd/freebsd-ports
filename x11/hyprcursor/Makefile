@@ -1,9 +1,10 @@
 PORTNAME=	hyprcursor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.12
+PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Hyprland cursor format, library and utilities
 WWW=		https://github.com/hyprwm/hyprcursor
 

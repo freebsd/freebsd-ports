@@ -1,9 +1,10 @@
 PORTNAME=	hyprgraphics
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Hyprland graphics / resource utilities
 WWW=		https://github.com/hyprwm/hyprgraphics
 

@@ -1,10 +1,10 @@
 PORTNAME=	aquamarine
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Very light linux rendering backend library
 WWW=		https://github.com/hyprwm/aquamarine
 
