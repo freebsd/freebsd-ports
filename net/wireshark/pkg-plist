@@ -682,10 +682,10 @@ bin/tshark
 %%DEVELOPMENT%%lib/cmake/wireshark/WiresharkTargets.cmake
 lib/libwireshark.so
 lib/libwireshark.so.18
-lib/libwireshark.so.18.0.7
+lib/libwireshark.so.18.0.8
 lib/libwiretap.so
 lib/libwiretap.so.15
-lib/libwiretap.so.15.0.7
+lib/libwiretap.so.15.0.8
 lib/libwsutil.so
 lib/libwsutil.so.16
 lib/libwsutil.so.16.0.0
