@@ -1,10 +1,10 @@
 PORTNAME=	hyprland-qtutils
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Hyprland QT/qml utility apps
 WWW=		https://github.com/hyprwm/hyprland-qtutils
 

@@ -1,9 +1,10 @@
 PORTNAME=	hyprlock
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Hyprland's GPU-accelerated screen locking utility #'
 WWW=		https://github.com/hyprwm/hyprlock
 

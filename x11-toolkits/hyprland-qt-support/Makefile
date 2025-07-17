@@ -1,9 +1,10 @@
 PORTNAME=	hyprland-qt-support
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	QML style provider for hypr* Qt apps
 WWW=		https://github.com/hyprwm/hyprland-qt-support
 

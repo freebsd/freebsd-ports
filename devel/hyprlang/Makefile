@@ -1,9 +1,10 @@
 PORTNAME=	hyprlang
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Library to parse hypr config files
 WWW=		https://hyprland.org/hyprlang
 

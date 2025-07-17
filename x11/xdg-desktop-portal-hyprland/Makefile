@@ -1,10 +1,10 @@
 PORTNAME=	xdg-desktop-portal-hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	xdg-desktop-portal backend for hyprland
 WWW=		https://github.com/hyprwm/xdg-desktop-portal-hyprland
 
