@@ -4489,7 +4489,6 @@ converters/wkhtmltopdf||2025-06-02|Has expired: Upstream abandoned the project
 devel/py-oletools||2025-06-02|Has expired: Depends on expired textproc/py-colorclass
 textproc/py-colorclass||2025-06-02|Has expired: Upstream repository has been archived on Jul 10, 2024
 security/py-oauth2client||2025-06-02|Has expired: Deprecated by upstream. Use security/py-google-auth or security/py-oauthlib instead. See https://google-auth.readthedocs.io/en/latest/oauth2client-deprecation.html for details
-math/py-grandalf||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
 multimedia/py-ffmpeg-python||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
 science/py-DendroPy||2025-06-02|Has expired: Depends on expired devel/py-pytest-runner
 devel/linux-rl9-libsoup|emulators/linux_base-rl9|2025-06-04|Merged into emulators/linux_base-rl9
