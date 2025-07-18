@@ -1619,6 +1619,7 @@
     SUBDIR += lua-lpeg
     SUBDIR += lua-luacheck
     SUBDIR += lua-luarocks
+    SUBDIR += lua-luastatic
     SUBDIR += lua-lunit
     SUBDIR += lua-lunitx
     SUBDIR += lua-mode
