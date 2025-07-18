@@ -45,7 +45,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		konst_kernel-0.3.4 \
 		libc-0.2.155 \
 		linux-raw-sys-0.4.12 \
-		log-0.4.21 \
+		log-0.4.27 \
 		mdconfig-0.2.0 \
 		memchr-2.5.0 \
 		nix-0.28.0 \
