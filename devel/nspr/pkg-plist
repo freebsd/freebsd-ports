@@ -68,7 +68,6 @@ include/nspr/prtpool.h
 include/nspr/prtrace.h
 include/nspr/prtypes.h
 include/nspr/prvrsion.h
-include/nspr/prwin.h
 @(,,444) lib/libnspr4.a
 @(,,444) lib/libnspr4.so
 @(,,444) lib/libplc4.a
