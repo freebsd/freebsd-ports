@@ -1,6 +1,6 @@
 PORTNAME=	kinfocenter
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,6 +9,7 @@ COMMENT=	View information about your computer's hardware
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 RUN_DEPENDS=	clinfo:devel/clinfo \
 		glxinfo:graphics/mesa-demos \
+		hwdata>0:misc/hwdata \
 		lsblk:sysutils/lsblk \
 		lscpu:sysutils/lscpu \
 		pipewire:multimedia/pipewire \
@@ -30,6 +31,9 @@ USE_QT=		base declarative
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
 RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
 .endif
+
+post-patch:
+	 ${REINPLACE_CMD} '/usb.ids/s,/usr,${LOCALBASE},' ${WRKSRC}/kcms/usbview/usbdb.cpp
 
 # install freebsd-logo and distrorc
 post-install:
