@@ -1,6 +1,5 @@
 PORTNAME=	waterfox
-DISTVERSION=	6.5.9
-PORTREVISION=	2
+DISTVERSION=	6.6.0-beta-2
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -12,8 +11,8 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.108:security/nss \
-		icu>=73.1,1:devel/icu \
+		nss>=3.112:security/nss \
+		icu>=76.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=10.1.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
@@ -22,7 +21,6 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		libvpx>=1.15.0:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
-		autoconf2.13:devel/autoconf2.13 \
 		nasm:devel/nasm \
 		yasm:devel/yasm \
 		zip:archivers/zip \
@@ -33,29 +31,26 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 USE_GECKO=	gecko
 USE_GITHUB=	yes
 GH_ACCOUNT=	BrowserWorks
-GH_PROJECT=	Waterfox
-GH_TUPLE=	BrowserWorks:l10n:3046738:l10n/waterfox/browser/locales
+GH_TUPLE=	BrowserWorks:l10n:39f141a:l10n/waterfox/browser/locales
 USE_MOZILLA=	-sqlite
-
 # work around bindgen not finding ICU, e.g.
 # dist/include/mozilla/intl/ICU4CGlue.h:8:10: fatal error: 'unicode/uenum.h' file not found, err: true
-CONFIGURE_ENV+=		BINDGEN_CFLAGS="-I${LOCALBASE}/include" \
-			MOZ_REQUIRE_SIGNING=""
+CONFIGURE_ENV+=	BINDGEN_CFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+=	MOZ_REQUIRE_SIGNING=""
 
-CFLAGS_powerpc64=	-DHWY_COMPILE_ONLY_SCALAR
-CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
-
-BINARY_ALIAS+=		python3=${PYTHON_CMD}
+FIREFOX_ICON=		${MOZILLA}.png
+FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 
 MOZILLA_CAP=	${MOZILLA:C/^(.).*/\1/:tu}${MOZILLA:C/^.//}
 
-MOZ_EXPORT+=	MOZ_TELEMETRY_REPORTING="" \
+MOZ_EXPORT=	MOZ_TELEMETRY_REPORTING="" \
 		MOZILLA_OFFICIAL="1" \
 		MOZ_OFFICIAL_BRANDING="1" \
 		MOZ_APP_DISPLAYNAME="${MOZILLA_CAP}" \
 		MOZ_APP_NAME="${MOZILLA}"
 
-MOZ_OPTIONS+=	--enable-application=browser \
+MOZ_OPTIONS=	--enable-application=browser \
+		--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot \
 		--allow-addon-sideload \
 		--disable-crashreporter \
 		--disable-debug \
@@ -68,33 +63,36 @@ MOZ_OPTIONS+=	--enable-application=browser \
 		--with-app-name=${MOZILLA} \
 		--with-unsigned-addon-scopes=app,system \
 		--enable-bootstrap \
-		--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot \
 		MOZ_CRASHREPORTER=0 \
 		MOZ_DATA_REPORTING=0
-
-FIREFOX_ICON=		${MOZILLA}.png
-FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
-FIREFOX_DESKTOP=	${MOZSRC}/taskcluster/docker/firefox-snap/firefox.desktop
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == i386
+BUILD_DEPENDS+=	node${NODEJS_VERSION}>=24:www/node${NODEJS_VERSION}
+USES+=		nodejs:24,build,env
+.  if ${MACHINE_CPU:Msse2}
+# is not enabled on i386 by default
+# Fix for error: always_inline function '_mm_setzero_si64' requires target feature 'sse2'
+CFLAGS_i386+=	-msse2
+.  endif
+.endif
+
 .if ${ARCH} == amd64
 MOZ_OPTIONS+=	--enable-rust-simd
 .endif
 
+post-extract:
+	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON:R}|;s|@MOZILLA@|${MOZILLA}|' \
+		<${FILESDIR}/waterfox.desktop.in >${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop
 post-patch:
-	@${REINPLACE_CMD} -e 's/%u/%U/' -e '/X-MultipleArgs/d' \
-		-e 's/firefox/${MOZILLA}/' \
-		-e 's/Firefox/${MOZILLA_CAP}/' \
-		-e '/^Icon/s/=.*/=${FIREFOX_ICON:R}/' \
-		${FIREFOX_DESKTOP}
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/browser/app/nsBrowserApp.cpp
 
 post-install:
-	${INSTALL_DATA} ${FIREFOX_DESKTOP} ${STAGEDIR}${PREFIX}/share/applications/${MOZILLA}.desktop
+	${INSTALL_DATA} ${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 	${LN} -sf ${FIREFOX_ICON_SRC} ${STAGEDIR}${PREFIX}/share/pixmaps/${FIREFOX_ICON}
 
