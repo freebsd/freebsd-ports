@@ -1,4 +1,4 @@
-TIMESTAMP = 1752702598
+TIMESTAMP = 1752856962
 SHA256 (07035a248943575444aa0b893ffe306e1444c0ab.tar.gz) = a59074fff56ce73fd8c2b2e5609977b6ce22c6aa2b41452f5732339c1b7186a4
 SIZE (07035a248943575444aa0b893ffe306e1444c0ab.tar.gz) = 92672
 SHA256 (6748694be32f11e7ec6b5faeb1b48ca6156d4e06.tar.gz) = 3550ddcbc7c7aefc021a9e810cc0515e3ac4087ae8166d9cf712d16596afabfb
@@ -627,8 +627,8 @@ SHA256 (rust/crates/zerovec-derive-0.10.3.crate) = 6eafa6dfb17584ea3e2bd6e76e0cc
 SIZE (rust/crates/zerovec-derive-0.10.3.crate) = 19438
 SHA256 (rust/crates/zlib-rs-0.5.0.crate) = 868b928d7949e09af2f6086dfc1e01936064cc7a819253bce650d4e2a2d63ba8
 SIZE (rust/crates/zlib-rs-0.5.0.crate) = 191547
-SHA256 (helix-editor-helix-25.07_GH0.tar.gz) = ebeaefc984aea45b0ebcc3e2e7399edf3a156ace06f80c8837a0675aabeef643
-SIZE (helix-editor-helix-25.07_GH0.tar.gz) = 2484213
+SHA256 (helix-editor-helix-25.07.1_GH0.tar.gz) = 27c8bc3eba46bc7bab1e3629c6b28ff94882eeff17366b3ea69cd8ceffba7541
+SIZE (helix-editor-helix-25.07.1_GH0.tar.gz) = 2484601
 SHA256 (briot-tree-sitter-ada-ba0894ef_GH0.tar.gz) = ebd0b791ea0681daa0bdb3bdefa71b81b2d62fb8b7582bca28bd1d1c177e8c77
 SIZE (briot-tree-sitter-ada-ba0894ef_GH0.tar.gz) = 197465
 SHA256 (adl-lang-tree-sitter-adl-2787d04b_GH0.tar.gz) = 79ae5cc687f0f75e9a14e6821c6419e3f915e9f09db6580eac8364bc26339178
