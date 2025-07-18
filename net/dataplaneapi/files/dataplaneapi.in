@@ -19,6 +19,7 @@ load_rc_config $name
 
 : ${dataplaneapi_enable:="NO"}
 
+dataplaneapi_env="AUTOMEMLIMIT_EXPERIMENT=system"
 pidfile="/var/run/${name}.pid"
 procname="%%LOCALBASE%%/bin/${name}"
 command="/usr/sbin/daemon"
