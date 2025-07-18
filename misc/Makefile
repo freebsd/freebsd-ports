@@ -457,6 +457,7 @@
     SUBDIR += py-jiwer
     SUBDIR += py-kartograph
     SUBDIR += py-langchain-core
+    SUBDIR += py-langchain-tests
     SUBDIR += py-langsmith
     SUBDIR += py-laspy
     SUBDIR += py-lazrs
