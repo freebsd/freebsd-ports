@@ -1,5 +1,5 @@
---- _lzbench/util.h.orig	2025-02-11 19:23:29 UTC
-+++ _lzbench/util.h
+--- bench/util.h.orig	2025-07-17 16:16:38 UTC
++++ bench/util.h
 @@ -99,7 +99,7 @@ extern "C" {
  #    define SET_HIGH_PRIORITY /* disabled */
  #  endif
