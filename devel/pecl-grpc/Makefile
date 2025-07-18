@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_mips=	fails to compile: fatal error: sys/auxv.h file not found
 BROKEN_mips64=	fails to compile: fatal error: sys/auxv.h file not found
+IGNORE_WITH_PHP=	85
 
 USES=		compiler:c++11-lang php:pecl
 
