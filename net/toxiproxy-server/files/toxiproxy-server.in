@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# PROVIDE: toxiproxy_server
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for Toxiproxy in /etc/rc.conf
+#
+# toxiproxy_server_enable (bool):        Enable Toxiproxy.
+# toxiproxy_server_log (str):            Log output.
+# toxiproxy_server_runas (str):          User to run Toxiproxy as.
+# toxiproxy_server_config (str):         Toxiproxy configuration file.
+# toxiproxy_server_args (str):           Arguments used by Toxiproxy.
+#
+
+. /etc/rc.subr
+
+name="toxiproxy_server"
+desc="TCP proxy to simulate network and system conditions"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${toxiproxy_server_enable:="NO"}
+: ${toxiproxy_server_config:="%%PREFIX%%/etc/toxiproxy.json"}
+: ${toxiproxy_server_log:="/var/log/toxiproxy-server.log"}
+: ${toxiproxy_server_runas:="nobody"}
+
+pidfile="/var/run/${name}.pid"
+procname="%%LOCALBASE%%/bin/toxiproxy-server"
+command="/usr/sbin/daemon"
+command_args="-u '${toxiproxy_server_runas}' -p '${pidfile}' -t '${desc}' -o '${toxiproxy_server_log}' '${procname}' -config '${toxiproxy_server_config}' ${toxiproxy_server_args}"
+
+run_rc_command "$1"
