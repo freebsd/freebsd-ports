@@ -1,0 +1,10 @@
+--- Makefile.orig	2025-07-18 07:05:10 UTC
++++ Makefile
+@@ -12,6 +12,7 @@ main.o: main.c arg.h config.h server.h sock.h util.h c
+ data.o: data.c config.h data.h http.h server.h util.h config.mk
+ http.o: http.c config.h http.h server.h util.h config.mk
+ main.o: main.c arg.h config.h server.h sock.h util.h config.mk
++queue.o: queue.c config.h queue.h util.h
+ server.o: server.c config.h connection.h http.h queue.h server.h util.h config.mk
+ sock.o: sock.c config.h sock.h util.h config.mk
+ util.o: util.c config.h util.h config.mk

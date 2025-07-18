@@ -1,5 +1,6 @@
 PORTNAME=	quark
 DISTVERSION=	20220816
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://freebsd.uzsolt.hu/src/
 PKGNAMESUFFIX=	-server
@@ -10,8 +11,6 @@ WWW=		https://tools.suckless.org/quark/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	quark
 
