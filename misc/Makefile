@@ -456,6 +456,7 @@
     SUBDIR += py-ipyfastscape
     SUBDIR += py-jiwer
     SUBDIR += py-kartograph
+    SUBDIR += py-langchain-core
     SUBDIR += py-langsmith
     SUBDIR += py-laspy
     SUBDIR += py-lazrs
