@@ -1,8 +1,7 @@
 # note: If someone has a fix for a particular ARCH please feel free
 #       to commit it.  I (ler) don't have access to all the ARCH's
 PORTNAME=	lsof
-DISTVERSION=	4.99.4
-PORTREVISION=	2
+DISTVERSION=	4.99.5
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 
@@ -15,12 +14,12 @@ LICENSE_NAME=	lsof
 LICENSE_FILE=	${FILESDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
+
 USES=		compiler cpe shebangfix
 CPE_VENDOR=	lsof_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	lsof-org
-
-BUILD_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash
 
 SHEBANG_FILES=	scripts/*.pl
 
@@ -28,14 +27,21 @@ HAS_CONFIGURE=	yes
 
 CFLAGS_powerpcspe=	-DBOOKE
 
+OPTIONS_DEFINE=	NOSOCKSECURITY SECURITY
 OPTIONS_DEFINE_powerpc64=	AIM BOOKE
+OPTIONS_DEFAULT=
 OPTIONS_DEFAULT_powerpc64=	AIM
 
-AIM_DESC=	Set for AIM hardware
-BOOKE_DESC=	Set for BOOKE hardware
+AIM_DESC=		Set for AIM hardware
+BOOKE_DESC=		Set for BOOKE hardware
+NOSOCKSECURITY_DESC=	Non-root users can only list their own files except sockets (Implies SECURITY)
+SECURITY_DESC=		Non-root users can only list their own files
 
-AIM_CFLAGS=	-DAIM
-BOOKE_CFLAGS=	-DBOOKE
+AIM_CFLAGS=		-DAIM
+BOOKE_CFLAGS=		-DBOOKE
+NOSOCKSECURITY_IMPLIES=	SECURITY
+NOSOCKSECURITY_CFLAGS=	-DHASNOSOCKSECURITY
+SECURITY_CFLAGS=	-DHASSECURITY
 
 .include <bsd.port.pre.mk>
 
