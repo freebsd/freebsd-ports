@@ -1,5 +1,5 @@
-TIMESTAMP = 1750243893
-SHA256 (go/security_crowdsec/crowdsec-v1.6.9/v1.6.9.mod) = 75ab181433766799f3b54e5e9bb6634c8075e310ec3192a8ae31492ad54f1376
-SIZE (go/security_crowdsec/crowdsec-v1.6.9/v1.6.9.mod) = 10924
-SHA256 (go/security_crowdsec/crowdsec-v1.6.9/v1.6.9.zip) = 3f65b6dc339357172eb2b130ad8c4a1842557d317e05730227abf4f703da5d01
-SIZE (go/security_crowdsec/crowdsec-v1.6.9/v1.6.9.zip) = 1767818
+TIMESTAMP = 1752763731
+SHA256 (go/security_crowdsec/crowdsec-v1.6.10/v1.6.10.mod) = e02f57949b178e642aebe6d7d751494c9b9d8d3b3c6cdad66cf1db17ae1d584a
+SIZE (go/security_crowdsec/crowdsec-v1.6.10/v1.6.10.mod) = 10836
+SHA256 (go/security_crowdsec/crowdsec-v1.6.10/v1.6.10.zip) = 67b2de6ea0adacfdd9f673464f9e5dd6b71aa6d71c11c06073130507badc4c27
+SIZE (go/security_crowdsec/crowdsec-v1.6.10/v1.6.10.zip) = 1779682
