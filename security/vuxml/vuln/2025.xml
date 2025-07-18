@@ -1,3 +1,40 @@
+  <vuln vid="e27ee4fc-cdc9-45a1-8242-09898cdbdc91">
+    <topic>unbound -- Cache poisoning via the ECS-enabled Rebirthday Attack</topic>
+    <affects>
+      <package>
+	<name>unbound</name>
+	<range><gt>1.6.1</gt><lt>1.23.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>sep@nlnetlabs.nl reports:</p>
+	<blockquote cite="https://nlnetlabs.nl/downloads/unbound/CVE-2025-5994.txt">
+	  <p>A multi-vendor cache poisoning vulnerability named &apos;Rebirthday
+	Attack&apos; has been discovered in caching resolvers that support
+	EDNS Client Subnet (ECS).  Unbound is also vulnerable when compiled
+	with ECS support, i.e., &apos;--enable-subnet&apos;, AND configured
+	to send ECS information along with queries to upstream name servers,
+	i.e., at least one of the &apos;send-client-subnet&apos;,
+	&apos;client-subnet-zone&apos; or &apos;client-subnet-always-forward&apos;
+	options is used.  Resolvers supporting ECS need to segregate outgoing
+	queries to accommodate for different outgoing ECS information.  This
+	re-opens up resolvers to a birthday paradox attack (Rebirthday
+	Attack) that tries to match the DNS transaction ID in order to cache
+	non-ECS poisonous replies.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5994</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-5994</url>
+    </references>
+    <dates>
+      <discovery>2025-07-16</discovery>
+      <entry>2025-07-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aeac223e-60e1-11f0-8baa-8447094a420f">
     <topic>liboqs -- Secret-dependent branching in HQC</topic>
     <affects>
