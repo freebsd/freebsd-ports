@@ -568,6 +568,7 @@
     SUBDIR += olsrd
     SUBDIR += omnitty
     SUBDIR += onedrive
+    SUBDIR += onedrivegui
     SUBDIR += onenetd
     SUBDIR += onioncat
     SUBDIR += onionprobe

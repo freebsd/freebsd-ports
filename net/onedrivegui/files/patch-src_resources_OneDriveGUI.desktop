@@ -1,0 +1,18 @@
+--- src/resources/OneDriveGUI.desktop.orig	2025-06-16 11:23:57 UTC
++++ src/resources/OneDriveGUI.desktop
+@@ -1,8 +1,10 @@ Name=OneDriveGUI
+ [Desktop Entry]
+ Name=OneDriveGUI
++GenericName=OneDrive Client for FreeBSD
+ StartupNotify=true
+-Exec=/usr/bin/python3 /home/bob/host_share/Python/OneDriveGUI/src/OneDriveGUI.py
++Exec=onedrivegui
+ Terminal=false
+-Path=/home/bob/host_share/Python/OneDriveGUI/src/resources/images
+-Icon=/home/bob/host_share/Python/OneDriveGUI/src/resources/images/icons8-clouds-48.png
+-Type=Application
+\ No newline at end of file
++Icon=onedrivegui
++Categories=Network;
++Type=Application
++
