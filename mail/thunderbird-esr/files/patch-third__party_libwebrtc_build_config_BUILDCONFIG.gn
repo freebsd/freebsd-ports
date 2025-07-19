@@ -1,30 +1,17 @@
-commit 6e6860b4ecb7cea4ecbc07f45f491c562d1a83e7
+commit 79334dba3e5be4a7bb17a22b2fde70933991d6f4
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
     enable pipewire on bsd
 
-diff --git third_party/libwebrtc/BUILD.gn third_party/libwebrtc/BUILD.gn
-index 85ead4162f..7dc64543dc 100644
---- third_party/libwebrtc/BUILD.gn
-+++ third_party/libwebrtc/BUILD.gn
-@@ -107,7 +107,7 @@ if (!build_with_chromium && !build_with_mozilla) {
-           "tools_webrtc/perf:webrtc_dashboard_upload",
-         ]
-       }
--      if ((is_linux || is_chromeos) && rtc_use_pipewire) {
-+      if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
-         deps += [ "modules/desktop_capture:shared_screencast_stream_test" ]
-       }
-     }
-diff --git third_party/libwebrtc/build/config/BUILDCONFIG.gn third_party/libwebrtc/build/config/BUILDCONFIG.gn
-index 571ae5f0d6..863d428fc6 100644
---- third_party/libwebrtc/build/config/BUILDCONFIG.gn
-+++ third_party/libwebrtc/build/config/BUILDCONFIG.gn
+diff --git third_party/chromium/build/config/BUILDCONFIG.gn third_party/chromium/build/config/BUILDCONFIG.gn
+index 889bdb9235..1566833175 100644
+--- third_party/chromium/build/config/BUILDCONFIG.gn
++++ third_party/chromium/build/config/BUILDCONFIG.gn
 @@ -132,6 +132,7 @@ declare_args() {
  
    # Set to true when compiling with the Clang compiler.
    is_clang = current_os != "linux" || current_os == "openbsd" ||
-+              current_os == "freebsd" ||
++              current_os != "freebsd" ||
               (current_cpu != "s390x" && current_cpu != "s390" &&
                current_cpu != "ppc64" && current_cpu != "ppc" &&
                current_cpu != "mips" && current_cpu != "mips64" &&
@@ -35,17 +22,17 @@ index 571ae5f0d6..863d428fc6 100644
 -  if (host_os == "linux" || host_os == "openbsd") {
 +  if (host_os == "linux" || host_os == "openbsd" || host_os == "freebsd") {
      if (target_os != "linux") {
-       host_toolchain = "//build/toolchain/linux:clang_$host_cpu"
+       host_toolchain = "//chromium/build/toolchain/linux:clang_$host_cpu"
      } else if (is_clang) {
 @@ -222,7 +223,7 @@ if (target_os == "android") {
    assert(host_os == "linux" || host_os == "mac",
           "Android builds are only supported on Linux and Mac hosts.")
-   _default_toolchain = "//build/toolchain/android:android_clang_$target_cpu"
+   _default_toolchain = "//chromium/build/toolchain/android:android_clang_$target_cpu"
 -} else if (target_os == "chromeos" || target_os == "linux" || target_os == "openbsd") {
 +} else if (target_os == "chromeos" || target_os == "linux" || target_os == "openbsd" || target_os == "freebsd") {
    # See comments in build/toolchain/cros/BUILD.gn about board compiles.
    if (is_clang) {
-     _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
+     _default_toolchain = "//chromium/build/toolchain/linux:clang_$target_cpu"
 @@ -288,7 +289,7 @@ is_chromeos = current_os == "chromeos"
  is_fuchsia = current_os == "fuchsia"
  is_ios = current_os == "ios"
@@ -55,11 +42,24 @@ index 571ae5f0d6..863d428fc6 100644
  is_mac = current_os == "mac"
  is_nacl = current_os == "nacl"
  is_win = current_os == "win" || current_os == "winuwp"
+diff --git third_party/libwebrtc/BUILD.gn third_party/libwebrtc/BUILD.gn
+index 14c47ef2be..31a86a41c0 100644
+--- third_party/libwebrtc/BUILD.gn
++++ third_party/libwebrtc/BUILD.gn
+@@ -110,7 +110,7 @@ if (!build_with_chromium && !build_with_mozilla) {
+           "tools_webrtc/perf:webrtc_dashboard_upload",
+         ]
+       }
+-      if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++      if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+         deps += [ "modules/desktop_capture:shared_screencast_stream_test" ]
+       }
+     }
 diff --git third_party/libwebrtc/modules/desktop_capture/BUILD.gn third_party/libwebrtc/modules/desktop_capture/BUILD.gn
-index 0634e0e9c4..d5deba7ee7 100644
+index 2f99e3f75f..7dc6c36aab 100644
 --- third_party/libwebrtc/modules/desktop_capture/BUILD.gn
 +++ third_party/libwebrtc/modules/desktop_capture/BUILD.gn
-@@ -75,7 +75,7 @@ if (rtc_include_tests) {
+@@ -74,7 +74,7 @@ if (rtc_include_tests) {
          "window_finder_unittest.cc",
        ]
  
@@ -68,7 +68,7 @@ index 0634e0e9c4..d5deba7ee7 100644
          configs += [ "../portal:gio" ]
        }
  
-@@ -87,7 +87,7 @@ if (rtc_include_tests) {
+@@ -86,7 +86,7 @@ if (rtc_include_tests) {
      }
    }
  
@@ -77,7 +77,7 @@ index 0634e0e9c4..d5deba7ee7 100644
      rtc_test("shared_screencast_stream_test") {
        testonly = true
  
-@@ -146,7 +146,7 @@ if (rtc_include_tests) {
+@@ -145,7 +145,7 @@ if (rtc_include_tests) {
        "test_utils_unittest.cc",
      ]
  
@@ -86,16 +86,7 @@ index 0634e0e9c4..d5deba7ee7 100644
        configs += [ "../portal:gio" ]
      }
  
-@@ -255,7 +255,7 @@ if (rtc_include_tests) {
-       "mock_desktop_capturer_callback.h",
-     ]
- 
--    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
-+    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
-       configs += [ "../portal:gio" ]
-     }
- 
-@@ -268,7 +268,7 @@ if (rtc_include_tests) {
+@@ -267,7 +267,7 @@ if (rtc_include_tests) {
  }
  
  # TODO(bugs.webrtc.org/14187): remove when all users are gone
@@ -104,7 +95,7 @@ index 0634e0e9c4..d5deba7ee7 100644
    config("pipewire_config") {
      configs = [ "../portal:pipewire_config" ]
    }
-@@ -326,7 +326,7 @@ rtc_library("desktop_capture") {
+@@ -329,7 +329,7 @@ rtc_library("desktop_capture") {
      "window_finder.cc",
      "window_finder.h",
    ]
@@ -114,10 +105,10 @@ index 0634e0e9c4..d5deba7ee7 100644
    }
    if (is_mac) {
 diff --git third_party/libwebrtc/modules/portal/BUILD.gn third_party/libwebrtc/modules/portal/BUILD.gn
-index d7768b2323..3593a69592 100644
+index 6828388b31..7e1857d861 100644
 --- third_party/libwebrtc/modules/portal/BUILD.gn
 +++ third_party/libwebrtc/modules/portal/BUILD.gn
-@@ -10,7 +10,7 @@ import("//build/config/linux/pkg_config.gni")
+@@ -10,7 +10,7 @@ import("//chromium/build/config/linux/pkg_config.gni")
  import("//tools/generate_stubs/rules.gni")
  import("../../webrtc.gni")
  
@@ -127,10 +118,10 @@ index d7768b2323..3593a69592 100644
    pkg_config("gio") {
      packages = [
 diff --git third_party/libwebrtc/webrtc.gni third_party/libwebrtc/webrtc.gni
-index e1273475b9..9bdbd7ec5e 100644
+index 7155b1db72..22ed06166a 100644
 --- third_party/libwebrtc/webrtc.gni
 +++ third_party/libwebrtc/webrtc.gni
-@@ -157,7 +157,7 @@ declare_args() {
+@@ -151,7 +151,7 @@ declare_args() {
    # By default it's only enabled on desktop Linux (excludes ChromeOS) and
    # only when using the sysroot as PipeWire is not available in older and
    # supported Ubuntu and Debian distributions.
