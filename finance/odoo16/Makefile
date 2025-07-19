@@ -1,6 +1,5 @@
 PORTNAME=	odoo
-PORTVERSION=	16.0.20250108
-PORTREVISION=	2
+PORTVERSION=	16.0.20250719
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	16
@@ -12,7 +11,7 @@ WWW=		https://www.odoo.com
 LICENSE=	LGPL3
 
 USE_GITHUB=	yes
-GH_TAGNAME=	f4c41aa2836cd937cd476e50dcd494fc8549476a
+GH_TAGNAME=	f50391ee61af8d986154af948c194fef8067f975
 
 LIB_DEPENDS=	libxslt.so:textproc/libxslt \
 		libevent.so:devel/libevent \
@@ -56,6 +55,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>0:print/py-reportlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}secure-cookie>0:www/py-secure-cookie@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stdnum>0:devel/py-stdnum@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vatnumber>=0:finance/py-vatnumber@${PY_FLAVOR} \
@@ -83,7 +83,7 @@ GROUPS=		${USERS}
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
 
-CONFLICTS=	odoo odoo14 odoo15 odoo17
+CONFLICTS=	odoo odoo17
 
 ETCDIR=		${PREFIX}/etc/odoo
 
@@ -91,7 +91,19 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|(index !== |(index == |g' \
 		${WRKSRC}/odoo/addons/web/static/src/legacy/js/libs/content-disposition.js \
 		${WRKSRC}/odoo/addons/web/static/src/core/network/download.js
-	@${RM} ${WRKSRC}/odoo/release.py.orig 
+
+	@${RM} ${WRKSRC}/odoo/release.py.orig \
+		${WRKSRC}/odoo/__init__.py.orig \
+		${WRKSRC}/odoo/addons/account/models/ir_actions_report.py.orig \
+		${WRKSRC}/odoo/addons/account/tests/test_ir_actions_report.py.orig \
+		${WRKSRC}/odoo/addons/account_edi/models/account_edi_format.py.orig \
+		${WRKSRC}/odoo/addons/base/models/ir_actions_report.py.orig \
+		${WRKSRC}/odoo/addons/snailmail/models/snailmail_letter.py.orig \
+		${WRKSRC}/odoo/addons/website_slides/models/slide_slide.py.orig \
+		${WRKSRC}/odoo/addons/website_event/controllers/main.py.orig \
+		${WRKSRC}/odoo/addons/website/models/website.py \
+		${WRKSRC}/odoo/http.py.orig \
+		${WRKSRC}/odoo/tools/pdf.py.orig
 
 post-extract:
 	@cd ${WRKSRC}/addons/ && ${MV} * ${WRKSRC}/odoo/addons/
