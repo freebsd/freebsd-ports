@@ -553,6 +553,7 @@
     SUBDIR += py-xformers
     SUBDIR += py-xgboost
     SUBDIR += pyobd
+    SUBDIR += python-langgraph-checkpoint
     SUBDIR += pytorch
     SUBDIR += qbrew
     SUBDIR += qlas
