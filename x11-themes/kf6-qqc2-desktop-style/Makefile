@@ -1,6 +1,5 @@
 PORTNAME=	qqc2-desktop-style
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-frameworks
 
 COMMENT=	Style for Qt Quick Controls 2
