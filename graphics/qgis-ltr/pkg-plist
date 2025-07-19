@@ -1339,6 +1339,7 @@ include/qgis/qgsprocessingfeedback.h
 include/qgis/qgsprocessingfieldmapwidgetwrapper.h
 include/qgis/qgsprocessinggui.h
 include/qgis/qgsprocessingguiregistry.h
+include/qgis/qgsprocessingguiutils.h
 include/qgis/qgsprocessinghelpeditorwidget.h
 include/qgis/qgsprocessinghistoryprovider.h
 include/qgis/qgsprocessinghistorywidget.h
