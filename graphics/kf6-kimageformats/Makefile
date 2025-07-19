@@ -1,5 +1,6 @@
 PORTNAME=	kimageformats
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-frameworks
 
 COMMENT=	Plugins to allow QImage to support extra file formats
