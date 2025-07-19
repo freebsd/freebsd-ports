@@ -92,8 +92,4 @@ pre-everything::
 	@${ECHO_MSG} "Warning: qTox won't build if the option NaCl was selected for Tox!"
 	@${ECHO_MSG}
 
-xpre-configure:
-	@${REINPLACE_CMD} '/Comment/s,=.*,=${COMMENT},' \
-		${WRKSRC}/io.github.qtox.qTox.desktop
-
 .include <bsd.port.post.mk>
