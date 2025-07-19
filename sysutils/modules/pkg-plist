@@ -17,6 +17,7 @@ Modules/%%MODULES_VERSION%%/init/lisp
 Modules/%%MODULES_VERSION%%/init/perl.pm
 Modules/%%MODULES_VERSION%%/init/profile.csh
 Modules/%%MODULES_VERSION%%/init/profile.sh
+Modules/%%MODULES_VERSION%%/init/pwsh.ps1
 Modules/%%MODULES_VERSION%%/init/python.py
 Modules/%%MODULES_VERSION%%/init/r.R
 Modules/%%MODULES_VERSION%%/init/ruby.rb
