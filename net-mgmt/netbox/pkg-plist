@@ -234,8 +234,10 @@
 %%DATADIR%%/dcim/migrations/0205_moduletypeprofile.py
 %%DATADIR%%/dcim/migrations/0206_load_module_type_profiles.py
 %%DATADIR%%/dcim/migrations/0207_remove_redundant_indexes.py
+%%DATADIR%%/dcim/migrations/0208_devicerole_uniqueness.py
 %%DATADIR%%/dcim/migrations/__init__.py
 %%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/cpu.json
+%%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/expansion_card.json
 %%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/fan.json
 %%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/gpu.json
 %%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/hard_disk.json
@@ -1068,6 +1070,7 @@
 %%DATADIR%%/project-static/styles/custom/_markdown.scss
 %%DATADIR%%/project-static/styles/custom/_misc.scss
 %%DATADIR%%/project-static/styles/custom/_notifications.scss
+%%DATADIR%%/project-static/styles/custom/racks.scss
 %%DATADIR%%/project-static/styles/external.scss
 %%DATADIR%%/project-static/styles/netbox.scss
 %%DATADIR%%/project-static/styles/overrides/_bootstrap.scss
