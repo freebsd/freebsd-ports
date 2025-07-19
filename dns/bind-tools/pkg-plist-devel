@@ -14,19 +14,23 @@ bin/dnssec-verify
 %%DNSTAP%%bin/dnstap-read
 bin/host
 bin/mdig
-bin/named-rrchecker
 bin/nsec3hash
 bin/nslookup
 bin/nsupdate
-lib/bind-tools/libdns-9.21.9.so
+lib/bind-tools/libdns.so.9.21.10
+lib/bind-tools/libdns.so.9.21
 lib/bind-tools/libdns.so
-lib/bind-tools/libisc-9.21.9.so
+lib/bind-tools/libisc.so.9.21.10
+lib/bind-tools/libisc.so.9.21
 lib/bind-tools/libisc.so
-lib/bind-tools/libisccc-9.21.9.so
+lib/bind-tools/libisccc.so.9.21.10
+lib/bind-tools/libisccc.so.9.21
 lib/bind-tools/libisccc.so
-lib/bind-tools/libisccfg-9.21.9.so
+lib/bind-tools/libisccfg.so.9.21.10
+lib/bind-tools/libisccfg.so.9.21
 lib/bind-tools/libisccfg.so
-lib/bind-tools/libns-9.21.9.so
+lib/bind-tools/libns.so.9.21.10
+lib/bind-tools/libns.so.9.21
 lib/bind-tools/libns.so
 share/man/man1/arpaname.1.gz
 share/man/man1/delv.1.gz
@@ -48,7 +52,7 @@ share/man/man1/mdig.1.gz
 @comment share/man/man1/named-checkzone.1.gz
 @comment share/man/man1/named-compilezone.1.gz
 @comment share/man/man1/named-journalprint.1.gz
-share/man/man1/named-rrchecker.1.gz
+@comment share/man/man1/named-rrchecker.1.gz
 share/man/man1/nsec3hash.1.gz
 share/man/man1/nslookup.1.gz
 share/man/man1/nsupdate.1.gz

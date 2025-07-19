@@ -1,0 +1,8 @@
+--- meson_options.txt.orig	2025-07-19 11:32:37 UTC
++++ meson_options.txt
+@@ -188,3 +188,5 @@ option(
+     value: 'disabled',
+     description: 'enable the memory leak detection in external libraries (libxml2, libuv, OpenSSL)',
+ )
++
++option('bind-tools', type: 'feature', value: 'disabled', description: 'build tools only')
