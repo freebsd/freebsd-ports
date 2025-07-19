@@ -1,0 +1,2 @@
+langchain-google-genai is an integration package connecting Google's genai
+package and LangChain.
