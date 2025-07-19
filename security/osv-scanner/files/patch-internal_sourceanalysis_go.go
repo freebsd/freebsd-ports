@@ -5,7 +5,7 @@
  
  func goAnalysis(pkgs []models.PackageVulns, source models.SourceInfo) {
 -	cmd := exec.Command("go", "version")
-+	cmd := exec.Command("go124", "version")
++	cmd := exec.Command("go%%GO_SUFFIX%%", "version")
  	_, err := cmd.Output()
  	if err != nil {
  		slog.Info("Skipping call analysis on Go code since Go is not installed.")
