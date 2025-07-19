@@ -1,5 +1,6 @@
 PORTNAME=	krusader
 DISTVERSION=	2.9.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 
@@ -21,5 +22,9 @@ USE_KDE=	archive bookmarks codecs completion config coreaddons \
 		ecm:build
 USE_QT=		5compat base
 USE_XORG=	x11
+
+post-patch:
+# Prefer unzip from ports to the base bsdunzip.
+	${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/plugins/krarc/krarc.cpp
 
 .include <bsd.port.mk>
