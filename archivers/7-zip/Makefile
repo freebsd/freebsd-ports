@@ -1,5 +1,5 @@
 PORTNAME=	7-zip
-DISTVERSION=	24.09
+DISTVERSION=	25.00
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.7-zip.org/a/
 DISTNAME=	7z${DISTVERSION:S/.//}-src
