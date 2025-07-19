@@ -1,0 +1,125 @@
+--- meson.build.orig	2025-07-04 09:34:56 UTC
++++ meson.build
+@@ -69,6 +69,8 @@ zlib_opt = get_option('zlib')
+ tracing_opt = get_option('tracing')
+ zlib_opt = get_option('zlib')
+ 
++bind_tools = get_option('bind-tools').enabled()
++
+ if meson.version().version_compare('>=1.1.0')
+     build_options = meson.build_options()
+     if build_options == ''
+@@ -956,9 +958,15 @@ isc_srcconf = isc_srcset.apply(config, strict: false)
+ 
+ isc_srcconf = isc_srcset.apply(config, strict: false)
+ 
++project_version = meson.project_version()
++soversion_parts = project_version.split('.')  # ['1', '2', '3']
++soversion = '@0@.@1@'.format(soversion_parts[0], soversion_parts[1])
++
+ libisc = library(
+     'isc',
+     isc_srcconf.sources(),
++    version: project_version,
++    soversion: soversion,
+     objects: isc_probe_objects,
+     install: true,
+     install_rpath: libdir,
+@@ -986,6 +994,8 @@ libdns = library(
+ libdns = library(
+     'dns',
+     dns_srcconf.sources(),
++    version: project_version,
++    soversion: soversion,
+     include_directories: dns_inc,
+     install: true,
+     install_rpath: libdir,
+@@ -1020,6 +1030,8 @@ libns = library(
+ libns = library(
+     'ns',
+     ns_srcconf.sources(),
++    version: project_version,
++    soversion: soversion,
+     objects: ns_probe_objects,
+     install: true,
+     install_rpath: libdir,
+@@ -1046,6 +1058,8 @@ libisccc = library(
+ libisccc = library(
+     'isccc',
+     isccc_srcconf.sources(),
++    version: project_version,
++    soversion: soversion,
+     implicit_include_directories: false,
+     include_directories: isccc_inc,
+     install: true,
+@@ -1067,6 +1081,8 @@ libisccfg = library(
+ libisccfg = library(
+     'isccfg',
+     isccfg_srcconf.sources(),
++    version: project_version,
++    soversion: soversion,
+     implicit_include_directories: false,
+     include_directories: isccfg_inc,
+     install: true,
+@@ -1087,6 +1103,7 @@ named_srcconf = named_srcset.apply(config, strict: fal
+ 
+ named_srcconf = named_srcset.apply(config, strict: false)
+ 
++if bind_tools
+ executable(
+     'arpaname',
+     arpaname_src,
+@@ -1315,7 +1332,9 @@ executable(
+         libisc_dep,
+     ],
+ )
++endif
+ 
++if not bind_tools
+ executable(
+     'named-checkconf',
+     named_checkconf_src,
+@@ -1438,7 +1457,9 @@ executable(
+         named_srcconf.dependencies(),
+     ],
+ )
++endif
+ 
++if bind_tools
+ executable(
+     'nsec3hash',
+     nsec3hash_src,
+@@ -1486,7 +1507,9 @@ executable(
+         edit_dep,
+     ],
+ )
++endif
+ 
++if not bind_tools
+ executable(
+     'rndc-confgen',
+     rndc_confgen_src,
+@@ -1572,6 +1595,7 @@ shared_library(
+         libns_dep,
+     ],
+ )
++endif
+ 
+ subdir('doc')
+ subdir('tests')
+@@ -1632,7 +1656,6 @@ alias_target('doc-misc', doc_misc_targets)
+ 
+ alias_target('doc-misc', doc_misc_targets)
+ 
+-if doc_opt.allowed()
+     man_srcconf = man_srcset.apply(config, strict: false)
+     foreach man : man_srcconf.sources()
+         man_pages += configure_file(
+@@ -1647,6 +1670,7 @@ if doc_opt.allowed()
+ 
+     install_man(man_pages)
+ 
++if doc_opt.allowed()
+     if sphinx_build.found()
+         meson.add_dist_script(
+             'util' / 'meson-dist-package.sh',

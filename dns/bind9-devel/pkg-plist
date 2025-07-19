@@ -2,7 +2,9 @@ bin/named-checkconf
 bin/named-checkzone
 bin/named-compilezone
 bin/named-journalprint
+bin/named-makejournal
 %%LMDB%%bin/named-nzd2nzf
+bin/named-rrchecker
 @sample etc/mtree/BIND.chroot.dist.sample
 @sample etc/mtree/BIND.chroot.local.dist.sample
 @sample %%ETCDIR%%/named.conf.sample
@@ -37,8 +39,6 @@ include/dns/dyndb.h
 include/dns/ecs.h
 include/dns/ede.h
 include/dns/edns.h
-include/dns/enumclass.h
-include/dns/enumtype.h
 include/dns/fixedname.h
 include/dns/forward.h
 include/dns/geoip.h
@@ -74,7 +74,6 @@ include/dns/rdatalist.h
 include/dns/rdataset.h
 include/dns/rdatasetiter.h
 include/dns/rdataslab.h
-include/dns/rdatastruct.h
 include/dns/rdatatype.h
 include/dns/remote.h
 include/dns/request.h
@@ -235,15 +234,20 @@ include/ns/update.h
 include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
-lib/libdns-9.21.9.so
+lib/libdns.so.9.21.10
+lib/libdns.so.9.21
 lib/libdns.so
-lib/libisc-9.21.9.so
+lib/libisc.so.9.21.10
+lib/libisc.so.9.21
 lib/libisc.so
-lib/libisccc-9.21.9.so
+lib/libisccc.so.9.21.10
+lib/libisccc.so.9.21
 lib/libisccc.so
-lib/libisccfg-9.21.9.so
+lib/libisccfg.so.9.21.10
+lib/libisccfg.so.9.21
 lib/libisccfg.so
-lib/libns-9.21.9.so
+lib/libns.so.9.21.10
+lib/libns.so.9.21
 lib/libns.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
