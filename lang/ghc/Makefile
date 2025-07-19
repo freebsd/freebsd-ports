@@ -116,7 +116,6 @@ HADRIAN_CMD=		${WRKSRC}/hadrian/bootstrap/_build/bin/hadrian ${HADRIAN_DOCS_ARG}
 DO_MAKE_BUILD=		${SETENVI} ${WRK_ENV} ${HADRIAN_CMD} ${_MAKE_JOBS} --flavour=ports
 ALL_TARGET=		binary-dist-dir
 INSTALL_WRKSRC=		${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${CONFIGURE_TARGET}
-PLIST?=			${.CURDIR}/pkg-plist.hadrian
 
 .if (empty(PORT_OPTIONS:MDYNAMIC) || empty(PORT_OPTIONS:MPROFILE))
 IGNORE=			Building with Hadrian requires both DYNAMIC and PROFILE for now
