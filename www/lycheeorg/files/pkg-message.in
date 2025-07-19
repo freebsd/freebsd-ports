@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+Lychee is installed
+
+1) Configure it in '%%WWWDIR%%/.env'.
+
+2) An NGINX configuration file is included in '%%EXAMPLESDIR%%', however,
+   this assumes a running 'php-fpm' service.
+EOM
+}
+]
