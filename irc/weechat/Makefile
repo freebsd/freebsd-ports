@@ -1,5 +1,5 @@
 PORTNAME=	weechat
-PORTVERSION=	4.6.3
+PORTVERSION=	4.7.0
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -77,8 +77,6 @@ post-patch:
 	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/$f
 .  endfor
 .endif
-	@${REINPLACE_CMD} 's|python${PYTHON_MAJOR_VER}|python-${PYTHON_VER}|' \
-		${WRKSRC}/cmake/FindPython.cmake
 
 post-patch-ICON-off:
 	@${REINPLACE_CMD} -e '/^# icon$$/,/^$$/d' ${WRKSRC}/CMakeLists.txt
