@@ -444,6 +444,7 @@
     SUBDIR += py-fleep
     SUBDIR += py-fuzzy
     SUBDIR += py-gguf
+    SUBDIR += py-google-ai-generativelanguage
     SUBDIR += py-gpiozero
     SUBDIR += py-halo
     SUBDIR += py-hf-xet
