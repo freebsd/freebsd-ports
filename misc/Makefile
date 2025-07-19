@@ -460,6 +460,7 @@
     SUBDIR += py-langchain
     SUBDIR += py-langchain-core
     SUBDIR += py-langchain-google-genai
+    SUBDIR += py-langchain-openai
     SUBDIR += py-langchain-tests
     SUBDIR += py-langchain-text-splitters
     SUBDIR += py-langgraph-sdk
