@@ -462,6 +462,7 @@
     SUBDIR += py-langchain-google-genai
     SUBDIR += py-langchain-tests
     SUBDIR += py-langchain-text-splitters
+    SUBDIR += py-langgraph-sdk
     SUBDIR += py-langsmith
     SUBDIR += py-laspy
     SUBDIR += py-lazrs
