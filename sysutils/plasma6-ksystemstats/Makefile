@@ -13,4 +13,6 @@ USE_KDE=	coreaddons dbusaddons i18n kio libksysguard solid \
 		ecm:build
 USE_QT=		base
 
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_KF6NetworkManagerQt
+
 .include <bsd.port.mk>
