@@ -1,5 +1,6 @@
 PORTNAME=	networkx
 DISTVERSION=	3.5
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
@@ -47,7 +48,7 @@ GRAPHVIZ_DESC=	Additional graph layout and rendering algorithms
 GRAPHVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.2:graphics/py-pygraphviz@${PY_FLAVOR}
 
 LXML_DESC=	Binding for the libxml2 and libxslt libraries
-LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
+LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml5>=0:devel/py-lxml5@${PY_FLAVOR}
 
 PANDAS_DESC=	Data analysis
 PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.3:math/py-pandas@${PY_FLAVOR}
