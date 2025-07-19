@@ -48,14 +48,13 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf2.13:devel/autoconf2.13 \
 		nasm:devel/nasm \
-		node${NODEJS_VERSION}>=24:www/node${NODEJS_VERSION} \
 		yasm:devel/yasm
 RUN_DEPENDS=	tor:security/tor \
 		obfs4proxy:security/obfs4proxy-tor \
 		snowflake-client:security/snowflake-tor
 
-USES=		compiler:c++11-lib libtool localbase:ldflags nodejs:24,build,env \
-		perl5 pkgconfig python shebangfix tar:xz
+USES=		compiler:c++11-lib libtool localbase:ldflags perl5 pkgconfig \
+		python shebangfix tar:xz
 USE_GECKO=	gecko
 USE_GITHUB=	nodefault
 TAG_L10N=	fcd0300e8478d1ec4d1c097a073ddb8e1e0351e3
@@ -67,8 +66,8 @@ LOCALES=	af ar az be bg bs ca cs da de el es-ES et fa fi fr ga-IE gu-IN \
 		nb-NO nl nn-NO pa-IN pl pt-BR pt-PT ro ru sk sl sq sr sv-SE ta \
 		te th tl tr uk ur vi zh-CN zh-TW
 
-CONFIGURE_ENV+=	BINDGEN_CFLAGS="-I${LOCALBASE}/include" \
-		MOZ_CHROME_MULTILOCALE="${LOCALES}"
+CONFIGURE_ENV+=	BINDGEN_CFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+=	MOZ_CHROME_MULTILOCALE="${LOCALES}"
 
 MAKE_ENV+=	LOCALES="${LOCALES}"
 
@@ -80,7 +79,7 @@ SUB_FILES=	fonts.conf tor-browser.desktop torrc-defaults
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 
-MOZ_EXPORT+=	MOZ_TELEMETRY_REPORTING="" \
+MOZ_EXPORT=	MOZ_TELEMETRY_REPORTING="" \
 		MOZILLA_OFFICIAL="1" \
 		MOZ_OFFICIAL_BRANDING="1" \
 		MOZ_APP_DISPLAYNAME="Tor Browser" \
@@ -106,10 +105,14 @@ MOZ_OPTIONS=	--with-base-browser-version=${DISTVERSION} \
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386 && ${MACHINE_CPU:Msse2}
+.if ${ARCH} == i386
+BUILD_DEPENDS+=	node${NODEJS_VERSION}>=24:www/node${NODEJS_VERSION}
+USES+=		nodejs:24,build,env
+.  if ${MACHINE_CPU:Msse2}
 # is not enabled on i386 by default
 # Fix for error: always_inline function '_mm_setzero_si64' requires target feature 'sse2'
 CFLAGS_i386+=	-msse2
+.  endif
 .endif
 
 .if ${ARCH} == amd64
@@ -148,11 +151,11 @@ post-configure:
 		${WRKDIR}/.mozbuild/l10n-central/${i}/toolkit/toolkit/global/
 	${CP} ${WRKDIR}/translation-${TAG_TOR}/${i}/tor-browser.ftl \
 		${WRKDIR}/.mozbuild/l10n-central/${i}/toolkit/toolkit/global/
-	${MKDIR} ${WRKDIR}/.mozbuild/l10n-central/${i}/browser/branding/tb-release
+	${MKDIR} ${WRKDIR}/.mozbuild/l10n-central/${i}/browser/branding/tb-release \
+		 ${WRKSRC}/toolkit/torbutton/chrome/locale/${i}
 	${CP} ${WRKDIR}/translation-${TAG_TOR}/${i}/brand.properties \
 	      ${WRKDIR}/translation-${TAG_TOR}/${i}/branding/brand.ftl \
 		${WRKDIR}/.mozbuild/l10n-central/${i}/browser/branding/tb-release
-	${MKDIR} ${WRKSRC}/toolkit/torbutton/chrome/locale/${i}/
 . for j in onionLocation.properties settings.properties torConnect.properties \
 	torlauncher.properties
 	${CP} ${WRKDIR}/translation-${TAG_TOR}/${i}/${j} \
@@ -168,18 +171,17 @@ post-build:
 		${WRKSRC}/mach package-multi-locale --locales ${LOCALES}
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR} \
+		 ${STAGEDIR}${PREFIX}/lib/tor-browser/fontconfig \
+		 ${STAGEDIR}${PREFIX}/lib/tor-browser/fonts \
+		 ${STAGEDIR}${PREFIX}/lib/tor-browser/distribution/extensions
 	${INSTALL_DATA} ${WRKDIR}/torrc-defaults \
 		${STAGEDIR}${DATADIR}/torrc-defaults
-	${INSTALL_DATA} ${WRKDIR}/tor-browser.desktop \
-		${STAGEDIR}${PREFIX}/share/applications/tor-browser.desktop
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/tor-browser/fontconfig
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/tor-browser/fonts
+	${INSTALL_DATA} ${WRKDIR}/tor-browser.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKDIR}/fonts.conf \
 		${STAGEDIR}${PREFIX}/lib/tor-browser/fontconfig/fonts.conf
 	(cd ${WRKDIR}/fonts && \
 		${COPYTREE_SHARE} "*.otf *.ttf" ${STAGEDIR}${PREFIX}/lib/tor-browser/fonts)
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/tor-browser/distribution/extensions
 	${INSTALL_DATA} ${DISTDIR}/${NOSCRIPT} \
 		"${STAGEDIR}${PREFIX}/lib/tor-browser/distribution/extensions/{73a6fe31-595d-460b-a920-fcc0f8843232}.xpi"
 
