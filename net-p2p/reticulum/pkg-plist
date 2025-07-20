@@ -236,12 +236,12 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/vendor/i2plib/utils.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/platformutils.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/umsgpack.py
-%%PYTHON_SITELIBDIR%%/rns-0.9.6-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/rns-0.9.6-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/rns-0.9.6-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/rns-0.9.6-py%%PYTHON_VER%%.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/rns-0.9.6-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/rns-0.9.6-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/rns-1.0.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/rns-1.0.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/rns-1.0.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/rns-1.0.0-py%%PYTHON_VER%%.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/rns-1.0.0-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/rns-1.0.0-py%%PYTHON_VER%%.egg-info/top_level.txt
 @dir %%ETCDIR%%/interfaces
 @owner %%USERS%%
 @group %%GROUPS%%
