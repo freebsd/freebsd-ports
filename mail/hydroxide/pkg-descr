@@ -1,4 +1,6 @@
-A third-party, open-source ProtonMail bridge. Hydroxide supports CardDAV,
-IMAP and SMTP. hydroxide is a server that translates standard protocols
-(SMTP, IMAP, CardDAV) into ProtonMail API requests. It allows you to use
-your preferred e-mail client and git-send-email with ProtonMail.
+Hydroxide is a free, third-party and open-source ProtonMail bridge for using
+with any email client of your choice. Hydroxide is a server meant to be run
+in the background, supporting IMAP and SMTP that translates standard protocols
+(SMTP, IMAP, CardDAV) into ProtonMail API requests. Hydroxide stores each of
+your account credentials in a json file located in /var/db/hydroxide by default
+as encrypted form, then uses .db files per account for other purposes.
