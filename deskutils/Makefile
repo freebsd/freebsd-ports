@@ -239,6 +239,7 @@
     SUBDIR += py-term-background
     SUBDIR += py-trash-cli
     SUBDIR += py-vdirsyncer
+    SUBDIR += py-vit
     SUBDIR += py-vobject
     SUBDIR += py-vorta
     SUBDIR += qlipper
