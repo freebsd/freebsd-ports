@@ -1,6 +1,6 @@
 PORTNAME=	premake
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.0-beta6
+DISTVERSION=	5.0.0-beta7
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/premake/premake-core/releases/download/${DISTVERSIONFULL}/
 PKGNAMESUFFIX=	5
@@ -22,6 +22,8 @@ MAKEFILE=	Bootstrap.mak
 MAKE_ARGS=	CC="${CC}" \
 		CXX="${CXX}"
 ALL_TARGET=	bsd
+
+WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	bin/premake5
 
