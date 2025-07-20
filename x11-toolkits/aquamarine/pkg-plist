@@ -15,6 +15,6 @@ include/aquamarine/input/Input.hpp
 include/aquamarine/misc/Attachment.hpp
 include/aquamarine/output/Output.hpp
 lib/libaquamarine.so
-lib/libaquamarine.so.7
-lib/libaquamarine.so.%%VERSION%%
+lib/libaquamarine.so.%%SOVERSION_MAJOR%%
+lib/libaquamarine.so.%%SOVERSION_FULL%%
 libdata/pkgconfig/aquamarine.pc

@@ -1,7 +1,6 @@
 PORTNAME=	aquamarine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
-PORTREVISION=	4
+DISTVERSION=	0.9.2
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -25,11 +24,16 @@ LIB_DEPENDS=	libhyprutils.so:devel/hyprutils \
 RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
 
 USES=		cmake:testing compiler:c++11-lib gl pathfix pkgconfig xorg
+
 USE_GITHUB=	yes
-USE_GL=		egl gbm glesv2
-USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
-PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
+
+USE_GL=		egl gbm glesv2
+USE_LDCONFIG=	yes
+USE_XORG=	pixman
+
+PLIST_SUB=	SOVERSION_MAJOR=8 \
+		SOVERSION_FULL=${DISTVERSION:C/-.*//}
 
 # XXX Drop after FreeBSD 13.5 EOL around 2026-04-30
 # https://cgit.freebsd.org/src/commit/?id=af93fea71038
