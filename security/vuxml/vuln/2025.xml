@@ -1,3 +1,33 @@
+  <vuln vid="605a9d1e-6521-11f0-beb2-ac5afc632ba3">
+    <topic>libwasmtime -- host panic with fd_renumber WASIp1 function</topic>
+    <affects>
+      <package>
+	<name>libwasmtime</name>
+	<range><ge>24.0.0</ge><lt>24.0.4</lt></range>
+	<range><ge>33.0.0</ge><lt>33.0.2</lt></range>
+	<range><ge>34.0.0</ge><lt>34.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>WasmTime development team reports:</p>
+	<blockquote cite="https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-fm79-3f68-h2fc">
+	  <p>A bug in Wasmtime's implementation of the WASIp1 set of import
+	  functions can lead to a WebAssembly guest inducing a panic in the
+	  host (embedder).</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-53901</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-53901</url>
+    </references>
+    <dates>
+      <discovery>2025-07-18</discovery>
+      <entry>2025-07-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e27ee4fc-cdc9-45a1-8242-09898cdbdc91">
     <topic>unbound -- Cache poisoning via the ECS-enabled Rebirthday Attack</topic>
     <affects>
