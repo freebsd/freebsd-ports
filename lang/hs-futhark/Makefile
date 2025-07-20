@@ -1,6 +1,6 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.30
+DISTVERSION=	0.25.32
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,24 +14,28 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cabal
 
 USE_CABAL=	Diff-1.0.2 \
-		ListLike-4.7.8.2 \
-		OneTuple-0.4.2_1 \
-		QuickCheck-2.15.0.1_1 \
+		Glob-0.10.2_3 \
+		ListLike-4.7.8.3 \
+		OneTuple-0.4.2 \
+		Only-0.1_2 \
+		QuickCheck-2.16.0.0 \
 		StateVar-1.2.2 \
 		adjunctions-4.4.3 \
-		aeson-2.2.3.0_3 \
-		alex-3.5.2.0 \
+		aeson-2.2.3.0_4 \
+		alex-3.5.3.0 \
 		ansi-terminal-1.1.2 \
 		ansi-terminal-types-1.1 \
 		assoc-1.1.1_1 \
 		async-2.2.5_3 \
 		attoparsec-0.14.4_6 \
 		base-compat-0.14.1 \
+		base-compat-batteries-0.14.1 \
 		base-orphans-0.9.3 \
 		base16-bytestring-1.0.2.0_1 \
 		bifunctors-5.6.2_2 \
+		binary-orphans-1.0.5_1 \
 		bitvec-1.1.5.0_3 \
-		blaze-builder-0.4.2.3 \
+		blaze-builder-0.4.3 \
 		blaze-html-0.9.2.0_1 \
 		blaze-markup-0.8.3.0_2 \
 		bmp-1.2.6.4 \
@@ -39,16 +43,20 @@ USE_CABAL=	Diff-1.0.2 \
 		bytestring-to-vector-0.3.0.1 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
+		cassava-0.5.4.0_1 \
 		character-ps-0.1 \
 		clock-0.8.4 \
 		cmark-gfm-0.2.6_1 \
 		co-log-core-0.3.2.5 \
+		code-page-0.2.1 \
 		colour-2.3.6 \
 		comonad-5.0.9_1 \
 		constraints-0.14.2_1 \
 		contravariant-1.5.5 \
+		criterion-1.6.4.0_1 \
+		criterion-measurement-0.2.3.0 \
 		cryptohash-md5-0.11.101.0_6 \
-		data-default-0.8.0.0 \
+		data-default-0.8.0.1 \
 		data-default-class-0.2.0.0 \
 		data-fix-0.3.4_1 \
 		dense-linear-algebra-0.1.0.0 \
@@ -65,16 +73,16 @@ USE_CABAL=	Diff-1.0.2 \
 		file-embed-0.0.16.0 \
 		fmlist-0.9.4 \
 		free-5.2_7 \
-		futhark-data-1.1.1.0 \
+		futhark-data-1.1.2.0 \
 		futhark-manifest-1.5.0.0 \
 		futhark-server-1.2.3.0 \
-		generic-arbitrary-1.0.1_1 \
+		generic-arbitrary-1.0.1.2 \
 		generic-deriving-1.14.6_1 \
 		generic-lens-2.2.2.0_1 \
 		generic-lens-core-2.2.1.0_2 \
 		generically-0.1.1_4 \
 		githash-0.1.7.0 \
-		half-0.3.2 \
+		half-0.3.3 \
 		happy-2.1.5 \
 		happy-lib-2.1.5 \
 		hashable-1.5.0.0_1 \
@@ -87,37 +95,39 @@ USE_CABAL=	Diff-1.0.2 \
 		integer-conversion-0.1.1_1 \
 		integer-logarithms-1.0.4 \
 		invariant-0.6.4_1 \
-		kan-extensions-5.2.6_1 \
+		js-chart-2.9.4.1 \
+		kan-extensions-5.2.7 \
 		language-c-quote-0.13.0.2 \
-		lens-5.3.4 \
+		lens-5.3.5 \
 		lens-aeson-1.2.3_2 \
-		lsp-2.7.0.1 \
+		lsp-2.7.0.1_1 \
 		lsp-types-2.3.0.1 \
 		mainland-pretty-0.7.1.1 \
 		math-functions-0.3.4.4 \
 		megaparsec-9.7.0 \
-		mod-0.2.0.1 \
+		microstache-1.0.3_1 \
+		mod-0.2.0.1_1 \
 		mwc-random-0.15.2.0 \
 		neat-interpolation-0.5.1.4 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
-		optparse-applicative-0.18.1.0_1 \
-		os-string-2.0.7 \
+		optparse-applicative-0.19.0.0 \
+		os-string-2.0.7_1 \
 		parallel-3.2.2.0_9 \
 		parser-combinators-1.3.0_1 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.9.0.0_2 \
+		primitive-0.9.1.0 \
 		process-extras-0.7.4_1 \
-		profunctors-5.6.2_3 \
-		quickcheck-instances-0.3.32_1 \
-		random-1.2.1.3 \
+		profunctors-5.6.3 \
+		quickcheck-instances-0.3.33_1 \
+		random-1.3.1 \
 		reflection-2.1.9_1 \
 		regex-1.1.0.2 \
 		regex-base-0.94.0.3 \
 		regex-pcre-builtin-0.95.2.3.8.44_6 \
-		regex-tdfa-1.3.2.3 \
+		regex-tdfa-1.3.2.4 \
 		row-types-1.0.1.2_1 \
 		safe-0.3.21_1 \
 		safe-exceptions-0.1.7.4_1 \
@@ -128,13 +138,15 @@ USE_CABAL=	Diff-1.0.2 \
 		semirings-0.7 \
 		some-1.0.6_2 \
 		sorted-list-0.2.3.1 \
-		splitmix-0.1.1 \
+		splitmix-0.1.3.1 \
 		srcloc-0.6.0.1 \
 		statistics-0.16.3.0 \
 		strict-0.5.1_1 \
 		syb-0.7.2.4 \
 		tagged-0.8.9 \
-		tasty-1.5.3_1 \
+		tasty-1.5.3_2 \
+		tasty-hunit-0.10.2 \
+		tasty-quickcheck-0.11.1_3 \
 		temporary-1.3 \
 		terminal-size-0.3.4_1 \
 		text-iso8601-0.1.1_2 \
@@ -151,7 +163,7 @@ USE_CABAL=	Diff-1.0.2 \
 		time-locale-compat-0.1.1.5 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
-		unliftio-0.2.25.0 \
+		unliftio-0.2.25.1 \
 		unliftio-core-0.2.1.0_4 \
 		unordered-containers-0.2.20_4 \
 		utf8-string-1.0.2 \
