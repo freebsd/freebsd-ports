@@ -1,5 +1,5 @@
 PORTNAME=	gcompris-qt
-DISTVERSION=	25.0.12
+DISTVERSION=	25.1.1
 CATEGORIES=	games education kde
 MASTER_SITES=	https://gcompris.net/download/qt/src/
 
