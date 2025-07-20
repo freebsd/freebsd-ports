@@ -1,6 +1,6 @@
-TIMESTAMP = 1752874207
-SHA256 (grpc-grpc-go-v1.74.0_GH0.tar.gz) = 123e8756ca1f237f2d120396c17e3c803cf801e4d7977d04a8796e70630ab10a
-SIZE (grpc-grpc-go-v1.74.0_GH0.tar.gz) = 2440131
+TIMESTAMP = 1752969978
+SHA256 (grpc-grpc-go-v1.74.1_GH0.tar.gz) = a2c5e5a7030ec36061638bf4abb8b1955e17882bfb721ffcd4422d57ad34d838
+SIZE (grpc-grpc-go-v1.74.1_GH0.tar.gz) = 2440132
 SHA256 (golang-net-v0.35.0_GH0.tar.gz) = 6a09895ea551a07f69fb17d8be418cdb96cc3b6338888deb1d7b0b22ed00021e
 SIZE (golang-net-v0.35.0_GH0.tar.gz) = 1500897
 SHA256 (golang-sys-v0.30.0_GH0.tar.gz) = 3e54dfe262f4f09341622679101c0f10935028cc945f78a97f898b2416edb1f0
