@@ -1,8 +1,12 @@
 [
 { type: install
   message: <<EOM
-To generate the snmp.yml configuration file for snmp_exporter,
-edit %%ETCDIR%%/generator.yml and add relevant MIBs, then run
+Upstream's default configuration file has been installed as
+%%ETCDIR%%/snmp.yml.
+This configuration is suitable for most situations.
+
+To generate a custom configuration, use the configuration generator:
+edit %%ETCDIR%%/generator.yml as required, then run
 
     snmp_exporter_generator generate
 
