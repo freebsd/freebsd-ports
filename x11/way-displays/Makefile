@@ -17,7 +17,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libinput.so:x11/libinput
 TEST_DEPENDS=	cmocka>0:sysutils/cmocka
 
-USES=		compiler:c11 gmake localbase pkgconfig
+USES=		compiler:c11 gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	alex-courtis
 MAKEFILE=	GNUmakefile
