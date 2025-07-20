@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mauroeldritch@gmail.com
 COMMENT=	File and block device wiping utility
 WWW=		https://wipe.sourceforge.net/
 

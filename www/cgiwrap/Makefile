@@ -3,7 +3,7 @@ PORTVERSION=	4.1
 CATEGORIES=	www security
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mauroeldritch@gmail.com
 COMMENT=	Securely execute Web CGI scripts
 WWW=		https://cgiwrap.unixtools.org/
 

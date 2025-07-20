@@ -5,7 +5,7 @@ CATEGORIES=	security net
 MASTER_SITES=	http://monkey.org/~dugsong/fragroute/ \
 		PACKETSTORM/UNIX/security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mauroeldritch@gmail.com
 COMMENT=	Tool for intercepting, modifying, and rewriting egress traffic
 WWW=		https://www.monkey.org/~dugsong/fragroute/
 

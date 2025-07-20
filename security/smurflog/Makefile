@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	PACKETSTORM/UNIX/loggers
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mauroeldritch@gmail.com
 COMMENT=	Program to assist logging of smurf attacks
 
 USE_CSTD=	gnu89
