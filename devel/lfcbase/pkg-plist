@@ -27,6 +27,7 @@ include/lfcbase/NetHandler.h
 include/lfcbase/OutStream.h
 include/lfcbase/Pager.h
 include/lfcbase/Process.h
+include/lfcbase/Replacer.h
 include/lfcbase/Semaphore.h
 include/lfcbase/SetT.h
 include/lfcbase/SharedMemory.h

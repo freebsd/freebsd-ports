@@ -119,6 +119,7 @@ include/cego/CegoQueryCache.h
 include/cego/CegoQueryException.h
 include/cego/CegoQueryHelper.h
 include/cego/CegoRecoveryManager.h
+include/cego/CegoReplacer.h
 include/cego/CegoReturnVar.h
 include/cego/CegoSelect.h
 include/cego/CegoSerial.h
