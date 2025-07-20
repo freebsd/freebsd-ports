@@ -17,7 +17,7 @@ Odoo 16 ERP was installed
 3) Add odoo_enable="YES" to /etc/rc.conf. Also, can add the following lines:
 
    odoo_database="postgresql_odoo_database_name" # This is odoodb by default
-   odoo_datadir="/path/to/odoo/datadir" # This is /var/db/odoo by defualt
+   odoo_datadir="/path/to/odoo/datadir" # This is /var/lib/odoo by defualt
 
 4) Odoo database host, user and password must be defined at %%ETCDIR%%/odoo.conf
 
