@@ -3628,8 +3628,8 @@
     SUBDIR += p5-Test-Bits
     SUBDIR += p5-Test-CPAN-Meta
     SUBDIR += p5-Test-CPAN-Meta-YAML
-    SUBDIR += p5-Test-CheckDeps
     SUBDIR += p5-Test-CPANfile
+    SUBDIR += p5-Test-CheckDeps
     SUBDIR += p5-Test-CheckManifest
     SUBDIR += p5-Test-Class
     SUBDIR += p5-Test-Class-Most
@@ -4839,6 +4839,7 @@
     SUBDIR += py-editables
     SUBDIR += py-editdistance
     SUBDIR += py-ejson
+    SUBDIR += py-electrum-ecc
     SUBDIR += py-eliot
     SUBDIR += py-enlighten
     SUBDIR += py-entrypoint2
