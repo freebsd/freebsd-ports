@@ -1,12 +1,7 @@
 PORTNAME=	hpx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.0
-PORTREVISION=	5
+DISTVERSION=	1.11.0-20250715
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	03d01dc18987d9f080a4ff43dea7ac95ffdfa208.diff:-p1 # backport of https://github.com/STEllAR-GROUP/hpx/pull/6499
-PATCHFILES+=	d3bb5b140cf82fa582c2549873b1ee36f41ab855.diff:-p1 # backport of https://github.com/STEllAR-GROUP/hpx/pull/6503
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ Standard Library for Parallelism and Concurrency
@@ -30,6 +25,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	STEllAR-GROUP
+GH_TAGNAME=	2114d4a # contains the fix for the asio-related build failure
 
 SHEBANG_FILES=	cmake/templates/hpxrun.py.in cmake/templates/hpxcxx.in
 SHEBANG_GLOB=	*.py

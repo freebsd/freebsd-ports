@@ -67,7 +67,6 @@ include/hpx/agas_base/server/primary_namespace.hpp
 include/hpx/agas_base/server/symbol_namespace.hpp
 include/hpx/agas_base/symbol_namespace.hpp
 include/hpx/algorithm.hpp
-include/hpx/algorithm.hpp.in
 include/hpx/algorithms.hpp
 include/hpx/algorithms/config/defines.hpp
 include/hpx/algorithms/traits/is_pair.hpp
@@ -120,7 +119,6 @@ include/hpx/async_colocated/register_post_colocated.hpp
 include/hpx/async_colocated/server/destroy_component.hpp
 include/hpx/async_combinators/config/defines.hpp
 include/hpx/async_combinators/detail/throw_if_exceptional.hpp
-include/hpx/async_combinators/future_wait.hpp
 include/hpx/async_combinators/split_future.hpp
 include/hpx/async_combinators/wait_all.hpp
 include/hpx/async_combinators/wait_any.hpp
@@ -194,7 +192,6 @@ include/hpx/async_local/post.hpp
 include/hpx/async_local/sync.hpp
 include/hpx/async_local/sync_fwd.hpp
 include/hpx/barrier.hpp
-include/hpx/barrier.hpp.in
 include/hpx/basic_execution.hpp
 include/hpx/basic_execution/agent_base.hpp
 include/hpx/basic_execution/agent_ref.hpp
@@ -206,6 +203,7 @@ include/hpx/batch_environments.hpp
 include/hpx/batch_environments/alps_environment.hpp
 include/hpx/batch_environments/batch_environment.hpp
 include/hpx/batch_environments/config/defines.hpp
+include/hpx/batch_environments/flux_environment.hpp
 include/hpx/batch_environments/pbs_environment.hpp
 include/hpx/batch_environments/pjm_environment.hpp
 include/hpx/batch_environments/slurm_environment.hpp
@@ -223,7 +221,6 @@ include/hpx/cache/statistics/local_full_statistics.hpp
 include/hpx/cache/statistics/local_statistics.hpp
 include/hpx/cache/statistics/no_statistics.hpp
 include/hpx/channel.hpp
-include/hpx/channel.hpp.in
 include/hpx/checkpoint.hpp
 include/hpx/checkpoint/checkpoint.hpp
 include/hpx/checkpoint/config/defines.hpp
@@ -296,6 +293,7 @@ include/hpx/components/containers/partitioned_vector/partitioned_vector_predef.h
 include/hpx/components/containers/partitioned_vector/partitioned_vector_segmented_iterator.hpp
 include/hpx/components/containers/partitioned_vector/partitioned_vector_view.hpp
 include/hpx/components/containers/partitioned_vector/partitioned_vector_view_iterator.hpp
+include/hpx/components/containers/partitioned_vector/serialization/partitioned_vector.hpp
 include/hpx/components/containers/unordered/partition_unordered_map_component.hpp
 include/hpx/components/containers/unordered/unordered_map.hpp
 include/hpx/components/containers/unordered/unordered_map_segmented_iterator.hpp
@@ -428,7 +426,6 @@ include/hpx/components_base/traits/is_component.hpp
 include/hpx/components_base/traits/managed_component_policies.hpp
 include/hpx/components_fwd.hpp
 include/hpx/compute.hpp
-include/hpx/compute.hpp.in
 include/hpx/compute/config/defines.hpp
 include/hpx/compute/detail/new.hpp
 include/hpx/compute/detail/target_distribution_policy.hpp
@@ -578,6 +575,7 @@ include/hpx/distribution_policies/colocating_distribution_policy.hpp
 include/hpx/distribution_policies/config/defines.hpp
 include/hpx/distribution_policies/container_distribution_policy.hpp
 include/hpx/distribution_policies/default_distribution_policy.hpp
+include/hpx/distribution_policies/explicit_container_distribution_policy.hpp
 include/hpx/distribution_policies/target_distribution_policy.hpp
 include/hpx/distribution_policies/unwrapping_result_policy.hpp
 include/hpx/error.hpp
@@ -716,6 +714,7 @@ include/hpx/execution_base/operation_state.hpp
 include/hpx/execution_base/receiver.hpp
 include/hpx/execution_base/resource_base.hpp
 include/hpx/execution_base/sender.hpp
+include/hpx/execution_base/stdexec_forward.hpp
 include/hpx/execution_base/this_thread.hpp
 include/hpx/execution_base/traits/coroutine_traits.hpp
 include/hpx/execution_base/traits/is_executor.hpp
@@ -756,6 +755,7 @@ include/hpx/executors/thread_pool_scheduler.hpp
 include/hpx/executors/thread_pool_scheduler_bulk.hpp
 include/hpx/executors_distributed/config/defines.hpp
 include/hpx/executors_distributed/distribution_policy_executor.hpp
+include/hpx/experimental/run_on_all.hpp
 include/hpx/experimental/scope.hpp
 include/hpx/experimental/task_group.hpp
 include/hpx/filesystem.hpp
@@ -793,10 +793,12 @@ include/hpx/functional/mem_fn.hpp
 include/hpx/functional/move_only_function.hpp
 include/hpx/functional/one_shot.hpp
 include/hpx/functional/protect.hpp
+include/hpx/functional/reference_wrapper.hpp
 include/hpx/functional/result_of.hpp
 include/hpx/functional/serialization/detail/serializable_basic_function.hpp
 include/hpx/functional/serialization/detail/vtable/serializable_function_vtable.hpp
 include/hpx/functional/serialization/detail/vtable/serializable_vtable.hpp
+include/hpx/functional/serialization/reference_wrapper.hpp
 include/hpx/functional/serialization/serializable_function.hpp
 include/hpx/functional/serialization/serializable_move_only_function.hpp
 include/hpx/functional/tag_invoke.hpp
@@ -809,7 +811,6 @@ include/hpx/functional/traits/is_callable.hpp
 include/hpx/functional/traits/is_invocable.hpp
 include/hpx/functional/traits/is_placeholder.hpp
 include/hpx/future.hpp
-include/hpx/future.hpp.in
 include/hpx/futures/config/defines.hpp
 include/hpx/futures/detail/execute_thread.hpp
 include/hpx/futures/detail/future_data.hpp
@@ -955,7 +956,6 @@ include/hpx/include_local/config/defines.hpp
 include/hpx/ini/config/defines.hpp
 include/hpx/ini/ini.hpp
 include/hpx/init.hpp
-include/hpx/init.hpp.in
 include/hpx/init_runtime/config/defines.hpp
 include/hpx/init_runtime/detail/init_logging.hpp
 include/hpx/init_runtime/detail/run_or_start.hpp
@@ -987,7 +987,6 @@ include/hpx/iterator_support/zip_iterator.hpp
 include/hpx/itt_notify/config/defines.hpp
 include/hpx/itt_notify/thread_name.hpp
 include/hpx/latch.hpp
-include/hpx/latch.hpp.in
 include/hpx/lcos/async.hpp
 include/hpx/lcos/async_callback.hpp
 include/hpx/lcos/async_callback_fwd.hpp
@@ -1004,7 +1003,6 @@ include/hpx/lcos/channel.hpp
 include/hpx/lcos/dataflow.hpp
 include/hpx/lcos/fold.hpp
 include/hpx/lcos/future.hpp
-include/hpx/lcos/future_wait.hpp
 include/hpx/lcos/gather.hpp
 include/hpx/lcos/latch.hpp
 include/hpx/lcos/local/and_gate.hpp
@@ -1112,6 +1110,7 @@ include/hpx/logging/level.hpp
 include/hpx/logging/logging.hpp
 include/hpx/logging/manipulator.hpp
 include/hpx/logging/message.hpp
+include/hpx/manage_runtime.hpp
 include/hpx/memory.hpp
 include/hpx/memory/config/defines.hpp
 include/hpx/memory/detail/sp_convertible.hpp
@@ -1245,6 +1244,7 @@ include/hpx/parallel/algorithms/detail/adjacent_difference.hpp
 include/hpx/parallel/algorithms/detail/adjacent_find.hpp
 include/hpx/parallel/algorithms/detail/advance_and_get_distance.hpp
 include/hpx/parallel/algorithms/detail/advance_to_sentinel.hpp
+include/hpx/parallel/algorithms/detail/contains.hpp
 include/hpx/parallel/algorithms/detail/dispatch.hpp
 include/hpx/parallel/algorithms/detail/distance.hpp
 include/hpx/parallel/algorithms/detail/equal.hpp
@@ -1258,7 +1258,9 @@ include/hpx/parallel/algorithms/detail/mismatch.hpp
 include/hpx/parallel/algorithms/detail/parallel_stable_sort.hpp
 include/hpx/parallel/algorithms/detail/pivot.hpp
 include/hpx/parallel/algorithms/detail/reduce.hpp
+include/hpx/parallel/algorithms/detail/reduce_deterministic.hpp
 include/hpx/parallel/algorithms/detail/replace.hpp
+include/hpx/parallel/algorithms/detail/rfa.hpp
 include/hpx/parallel/algorithms/detail/rotate.hpp
 include/hpx/parallel/algorithms/detail/sample_sort.hpp
 include/hpx/parallel/algorithms/detail/search.hpp
@@ -1275,6 +1277,14 @@ include/hpx/parallel/algorithms/for_each.hpp
 include/hpx/parallel/algorithms/for_loop.hpp
 include/hpx/parallel/algorithms/for_loop_induction.hpp
 include/hpx/parallel/algorithms/for_loop_reduction.hpp
+include/hpx/parallel/algorithms/for_loop_reduction_base.hpp
+include/hpx/parallel/algorithms/for_loop_reduction_bit_and.hpp
+include/hpx/parallel/algorithms/for_loop_reduction_bit_or.hpp
+include/hpx/parallel/algorithms/for_loop_reduction_bit_xor.hpp
+include/hpx/parallel/algorithms/for_loop_reduction_max.hpp
+include/hpx/parallel/algorithms/for_loop_reduction_min.hpp
+include/hpx/parallel/algorithms/for_loop_reduction_multiplies.hpp
+include/hpx/parallel/algorithms/for_loop_reduction_plus.hpp
 include/hpx/parallel/algorithms/generate.hpp
 include/hpx/parallel/algorithms/includes.hpp
 include/hpx/parallel/algorithms/inclusive_scan.hpp
@@ -1293,6 +1303,7 @@ include/hpx/parallel/algorithms/partial_sort_copy.hpp
 include/hpx/parallel/algorithms/partition.hpp
 include/hpx/parallel/algorithms/reduce.hpp
 include/hpx/parallel/algorithms/reduce_by_key.hpp
+include/hpx/parallel/algorithms/reduce_deterministic.hpp
 include/hpx/parallel/algorithms/remove.hpp
 include/hpx/parallel/algorithms/remove_copy.hpp
 include/hpx/parallel/algorithms/replace.hpp
@@ -1326,6 +1337,7 @@ include/hpx/parallel/container_algorithms.hpp
 include/hpx/parallel/container_algorithms/adjacent_difference.hpp
 include/hpx/parallel/container_algorithms/adjacent_find.hpp
 include/hpx/parallel/container_algorithms/all_any_none.hpp
+include/hpx/parallel/container_algorithms/contains.hpp
 include/hpx/parallel/container_algorithms/copy.hpp
 include/hpx/parallel/container_algorithms/count.hpp
 include/hpx/parallel/container_algorithms/destroy.hpp
@@ -1428,6 +1440,7 @@ include/hpx/parallel/executors/timed_execution_fwd.hpp
 include/hpx/parallel/executors/timed_executors.hpp
 include/hpx/parallel/memory.hpp
 include/hpx/parallel/numeric.hpp
+include/hpx/parallel/run_on_all.hpp
 include/hpx/parallel/segmented_algorithm.hpp
 include/hpx/parallel/segmented_algorithms/adjacent_difference.hpp
 include/hpx/parallel/segmented_algorithms/adjacent_find.hpp
@@ -1676,7 +1689,6 @@ include/hpx/resource_partitioner/detail/partitioner.hpp
 include/hpx/resource_partitioner/partitioner.hpp
 include/hpx/resource_partitioner/partitioner_fwd.hpp
 include/hpx/runtime.hpp
-include/hpx/runtime.hpp.in
 include/hpx/runtime/actions/action_priority.hpp
 include/hpx/runtime/actions/action_support.hpp
 include/hpx/runtime/actions/base_action.hpp
@@ -1846,7 +1858,6 @@ include/hpx/runtime/serialization/multi_array.hpp
 include/hpx/runtime/serialization/optional.hpp
 include/hpx/runtime/serialization/output_archive.hpp
 include/hpx/runtime/serialization/output_container.hpp
-include/hpx/runtime/serialization/partitioned_vector.hpp
 include/hpx/runtime/serialization/serialization_chunk.hpp
 include/hpx/runtime/serialization/serialization_fwd.hpp
 include/hpx/runtime/serialization/serialize.hpp
@@ -2252,6 +2263,7 @@ include/hpx/traits/serialization_access_data.hpp
 include/hpx/traits/supports_streaming_with_any.hpp
 include/hpx/tuple.hpp
 include/hpx/type_support.hpp
+include/hpx/type_support/aligned_storage.hpp
 include/hpx/type_support/assert_owns_lock.hpp
 include/hpx/type_support/bit_cast.hpp
 include/hpx/type_support/config/defines.hpp
@@ -2455,6 +2467,7 @@ lib/cmake/HPX/FindRDMA_CM.cmake
 lib/cmake/HPX/FindRdmacm.cmake
 lib/cmake/HPX/FindSnappy.cmake
 lib/cmake/HPX/FindSphinx.cmake
+lib/cmake/HPX/FindStdexec.cmake
 lib/cmake/HPX/FindTBB.cmake
 lib/cmake/HPX/FindTBBmalloc.cmake
 lib/cmake/HPX/FindTCMalloc.cmake
@@ -2490,6 +2503,7 @@ lib/cmake/HPX/HPX_CompilerFlagsTargets.cmake
 lib/cmake/HPX/HPX_CreateSymbolicLink.cmake
 lib/cmake/HPX/HPX_Documentation.cmake
 lib/cmake/HPX/HPX_ExportTargets.cmake
+lib/cmake/HPX/HPX_FindHwloc.cmake
 lib/cmake/HPX/HPX_ForceOutOfTreeBuild.cmake
 lib/cmake/HPX/HPX_ForwardCacheVariables.cmake
 lib/cmake/HPX/HPX_GenerateDependencyReport.cmake
@@ -2524,9 +2538,11 @@ lib/cmake/HPX/HPX_SetupHwloc.cmake
 lib/cmake/HPX/HPX_SetupLCI.cmake
 lib/cmake/HPX/HPX_SetupLibCDS.cmake
 lib/cmake/HPX/HPX_SetupMPI.cmake
+lib/cmake/HPX/HPX_SetupNanobench.cmake
 lib/cmake/HPX/HPX_SetupPapi.cmake
 lib/cmake/HPX/HPX_SetupSVE.cmake
 lib/cmake/HPX/HPX_SetupSYCL.cmake
+lib/cmake/HPX/HPX_SetupStdexec.cmake
 lib/cmake/HPX/HPX_SetupTarget.cmake
 lib/cmake/HPX/HPX_SetupThreads.cmake
 lib/cmake/HPX/HPX_SetupValgrind.cmake
@@ -2544,6 +2560,7 @@ lib/cmake/HPX/installed_hpx.cmake
 lib/cmake/HPX/scripts/create_symbolic_link_directory.bat
 lib/cmake/HPX/scripts/create_symbolic_link_file.bat
 lib/cmake/HPX/tests/builtin_forward_move.cpp
+lib/cmake/HPX/tests/builtin_frame_address.cpp
 lib/cmake/HPX/tests/c11_aligned_alloc.cpp
 lib/cmake/HPX/tests/cpuid.cpp
 lib/cmake/HPX/tests/cxx11_atomic_init_flag.cpp
@@ -2577,8 +2594,10 @@ lib/cmake/HPX/tests/cxx20_std_default_sentinel.cpp
 lib/cmake/HPX/tests/cxx20_std_disable_sized_sentinel_for.cpp
 lib/cmake/HPX/tests/cxx20_std_endian.cpp
 lib/cmake/HPX/tests/cxx20_std_execution_policies.cpp
+lib/cmake/HPX/tests/cxx20_std_identity.cpp
 lib/cmake/HPX/tests/cxx20_std_ranges_iter_swap.cpp
 lib/cmake/HPX/tests/cxx20_trivial_virtual_destructor.cpp
+lib/cmake/HPX/tests/cxx23_deprecated_std_aligned_storage.cpp
 lib/cmake/HPX/tests/cxx23_std_generator.cpp
 lib/cmake/HPX/tests/cxx26_experimental_scope.cpp
 lib/cmake/HPX/tests/cxx_lambda_capture_decltype.cpp
@@ -2595,11 +2614,11 @@ lib/cmake/HPX/toolchains/CrayKNLStatic.cmake
 lib/cmake/HPX/toolchains/CrayStatic.cmake
 lib/cmake/HPX/toolchains/XeonPhi.cmake
 lib/hpx/libhpx_parcel_coalescing.so
-lib/hpx/libhpx_parcel_coalescing.so.1
-lib/hpx/libhpx_parcel_coalescing.so.1.10.0
+lib/hpx/libhpx_parcel_coalescing.so.2
+lib/hpx/libhpx_parcel_coalescing.so.2.0.0
 lib/libhpx.so
-lib/libhpx.so.1
-lib/libhpx.so.1.10.0
+lib/libhpx.so.2
+lib/libhpx.so.2.0.0
 lib/libhpx_actions.a
 lib/libhpx_actions_base.a
 lib/libhpx_affinity.a
@@ -2622,8 +2641,8 @@ lib/libhpx_collectives.a
 lib/libhpx_command_line_handling.a
 lib/libhpx_command_line_handling_local.a
 lib/libhpx_component_storage.so
-lib/libhpx_component_storage.so.1
-lib/libhpx_component_storage.so.1.10.0
+lib/libhpx_component_storage.so.2
+lib/libhpx_component_storage.so.2.0.0
 lib/libhpx_components.a
 lib/libhpx_components_base.a
 lib/libhpx_compute.a
@@ -2656,8 +2675,8 @@ lib/libhpx_init_runtime.a
 lib/libhpx_init_runtime_local.a
 lib/libhpx_io_service.a
 lib/libhpx_iostreams.so
-lib/libhpx_iostreams.so.1
-lib/libhpx_iostreams.so.1.10.0
+lib/libhpx_iostreams.so.2
+lib/libhpx_iostreams.so.2.0.0
 lib/libhpx_iterator_support.a
 lib/libhpx_itt_notify.a
 lib/libhpx_lcos_distributed.a
@@ -2673,16 +2692,16 @@ lib/libhpx_parcelports.a
 lib/libhpx_parcelset.a
 lib/libhpx_parcelset_base.a
 lib/libhpx_partitioned_vector.so
-lib/libhpx_partitioned_vector.so.1
-lib/libhpx_partitioned_vector.so.1.10.0
+lib/libhpx_partitioned_vector.so.2
+lib/libhpx_partitioned_vector.so.2.0.0
 lib/libhpx_performance_counters.a
 lib/libhpx_plugin.a
 lib/libhpx_plugin_factories.a
 lib/libhpx_prefix.a
 lib/libhpx_preprocessor.a
 lib/libhpx_process.so
-lib/libhpx_process.so.1
-lib/libhpx_process.so.1.10.0
+lib/libhpx_process.so.2
+lib/libhpx_process.so.2.0.0
 lib/libhpx_program_options.a
 lib/libhpx_properties.a
 lib/libhpx_resiliency.a
@@ -2712,8 +2731,8 @@ lib/libhpx_timing.a
 lib/libhpx_topology.a
 lib/libhpx_type_support.a
 lib/libhpx_unordered.so
-lib/libhpx_unordered.so.1
-lib/libhpx_unordered.so.1.10.0
+lib/libhpx_unordered.so.2
+lib/libhpx_unordered.so.2.0.0
 lib/libhpx_util.a
 lib/libhpx_version.a
 lib/libhpx_wrap.a
