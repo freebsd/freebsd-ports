@@ -43,12 +43,12 @@ CARGO_CRATES=	adler2-2.0.0 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.40 \
-		clap_builder-4.5.40 \
+		clap-4.5.41 \
+		clap_builder-4.5.41 \
 		clap_complete-4.5.50 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.5 \
-		clap_derive-4.5.40 \
+		clap_derive-4.5.41 \
 		clap_lex-0.7.4 \
 		clearscreen-4.0.2 \
 		codspeed-3.0.2 \
@@ -85,7 +85,6 @@ CARGO_CRATES=	adler2-2.0.0 \
 		darling-0.20.11 \
 		darling_core-0.20.11 \
 		darling_macro-0.20.11 \
-		dashmap-5.5.3 \
 		dashmap-6.1.0 \
 		derive-where-1.5.0 \
 		diff-0.1.13 \
@@ -119,8 +118,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		fs-err-2.11.0 \
 		fsevent-sys-4.1.0 \
 		generic-array-0.14.7 \
-		get-size-derive2-0.5.1 \
-		get-size2-0.5.1 \
+		get-size-derive2-0.5.2 \
+		get-size2-0.5.2 \
 		getopts-0.2.21 \
 		getrandom-0.2.16 \
 		getrandom-0.3.3 \
@@ -283,7 +282,6 @@ CARGO_CRATES=	adler2-2.0.0 \
 		regex-syntax-0.8.5 \
 		ron-0.7.1 \
 		rust-stemmers-1.2.0 \
-		rustc-hash-1.1.0 \
 		rustc-hash-2.1.1 \
 		rustc-stable-hash-0.1.2 \
 		rustix-1.0.7 \
@@ -302,6 +300,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		serde_json-1.0.140 \
 		serde_repr-0.1.20 \
 		serde_spanned-0.6.9 \
+		serde_spanned-1.0.0 \
 		serde_test-1.0.177 \
 		serde_with-3.14.0 \
 		serde_with_macros-3.14.0 \
@@ -345,9 +344,12 @@ CARGO_CRATES=	adler2-2.0.0 \
 		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.8.23 \
+		toml-0.9.2 \
 		toml_datetime-0.6.11 \
+		toml_datetime-0.7.0 \
 		toml_edit-0.22.27 \
-		toml_write-0.1.2 \
+		toml_parser-1.0.1 \
+		toml_writer-1.0.2 \
 		tracing-0.1.41 \
 		tracing-attributes-0.1.28 \
 		tracing-core-0.1.34 \
