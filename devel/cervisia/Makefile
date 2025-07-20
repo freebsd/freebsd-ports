@@ -5,6 +5,9 @@ CATEGORIES=	devel kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	CVS Frontend for KDE
 
+DEPRECATED=	Abandoned and excluded from future KDE Gear releases
+EXPIRATION_DATE=	2025-08-31
+
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
 		qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
