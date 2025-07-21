@@ -6,7 +6,7 @@ include/gtkhex-4/hex-document.h
 lib/girepository-1.0/Hex-4.typelib
 lib/libgtkhex-4.so
 lib/libgtkhex-4.so.1
-lib/libgtkhex-4.so.1.8.0
+lib/libgtkhex-4.so.1.8.1
 libdata/pkgconfig/gtkhex-4.pc
 share/applications/org.gnome.GHex.desktop
 share/gir-1.0/Hex-4.gir
