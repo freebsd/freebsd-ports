@@ -1,6 +1,6 @@
 PORTNAME=			${SAMBA4_BASENAME}420
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			7
+PORTREVISION=			8
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -367,6 +367,12 @@ FAM_CONFIGURE_WITH=		fam
 GPGME_CONFIGURE_WITH=		gpgme
 GPGME_LIB_DEPENDS=		libgpgme.so:security/gpgme
 GPGME_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gpg>=2.0.0:security/py-gpg@${PY_FLAVOR}
+
+.if exists(/usr/libexec/krb5kdc)
+GSSAPI_BUILTIN_USES=		gssapi
+GSSAPI_MIT_CONFIGURE_ON=	--with-system-mitkrb5 ${GSSAPIBASEDIR} \
+				--with-system-mitkdc=${GSSAPIBASEDIR}/libexec/krb5kdc
+.endif
 
 GSSAPI_BUILTIN_BUILD_DEPENDS=	p5-JSON>=4.0:converters/p5-JSON
 
