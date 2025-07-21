@@ -170,6 +170,7 @@
     SUBDIR += dtdparse
     SUBDIR += duncan
     SUBDIR += dwdiff
+    SUBDIR += dyff
     SUBDIR += easydiff
     SUBDIR += ebook-tools
     SUBDIR += el-aspell

@@ -1,0 +1,7 @@
+TIMESTAMP = 1753103362
+SHA256 (go/textproc_dyff/homeport-dyff-v1.10.1_GH0/v1.10.1.mod) = 5554574a88a01de1d0c522ea4738e6023f438809ac41361c9f8acb78560f7edf
+SIZE (go/textproc_dyff/homeport-dyff-v1.10.1_GH0/v1.10.1.mod) = 2031
+SHA256 (go/textproc_dyff/homeport-dyff-v1.10.1_GH0/v1.10.1.zip) = 113c45396586956a0102cc5f01f44a94cd3c0660c4fbd119b027e69abbb5eb73
+SIZE (go/textproc_dyff/homeport-dyff-v1.10.1_GH0/v1.10.1.zip) = 1320571
+SHA256 (go/textproc_dyff/homeport-dyff-v1.10.1_GH0/homeport-dyff-v1.10.1_GH0.tar.gz) = 8f20ba3580fbb45957211efdf5ac4fc60dd339a2f798db0ecf521c930fdb0be0
+SIZE (go/textproc_dyff/homeport-dyff-v1.10.1_GH0/homeport-dyff-v1.10.1_GH0.tar.gz) = 1217573

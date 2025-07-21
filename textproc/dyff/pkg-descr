@@ -1,0 +1,9 @@
+dyff is a diff tool for YAML files (and occasionally JSON), designed to
+show only meaningful differences in a human-readable format. It is
+inspired by the way BOSH v1 displayed configuration changes, using
+syntax styles from Spruce and go-patch to locate differences within the
+document structure.
+
+dyff supports comparing local or remote files, integrates with kubectl
+and Git for improved YAML diffing workflows, and includes utilities to
+restructure, pretty-print, and convert between YAML and JSON.
