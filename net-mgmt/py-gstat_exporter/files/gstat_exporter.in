@@ -8,6 +8,8 @@
 #
 # gstat_exporter_enable (bool):   Set to "NO" by default.
 #                                 Set it to "YES" to enable gstat_exporter_enable.
+# gstat_exporter_args (string):   Set to "" by default.
+#                                 Set additional command line arguments
 
 . /etc/rc.subr
 
@@ -22,6 +24,6 @@ load_rc_config ${name}
 pidfile="/var/run/${name}.pid"
 command_interpreter=%%PYTHON_CMD%%
 command=%%PREFIX%%/bin/${name}.py
-start_cmd="/usr/sbin/daemon -f -p ${pidfile} $command_interpreter $command"
+start_cmd="/usr/sbin/daemon -f -p ${pidfile} $command_interpreter $command ${gstat_exporter_args}"
 
 run_rc_command "$1"

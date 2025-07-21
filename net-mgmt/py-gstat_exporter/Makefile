@@ -1,5 +1,6 @@
 PORTNAME=	gstat_exporter
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	PYPI
@@ -17,8 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}prometheus-client>=0.7.1:net-mgmt/py-prometh
 USES=		python
 USE_RC_SUBR=	gstat_exporter
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
