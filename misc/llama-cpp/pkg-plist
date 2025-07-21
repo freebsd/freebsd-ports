@@ -5,6 +5,7 @@ bin/convert_hf_to_gguf.py
 %%EXAMPLES%%bin/llama-cli
 %%EXAMPLES%%bin/llama-convert-llama2c-to-ggml
 %%EXAMPLES%%bin/llama-cvector-generator
+%%EXAMPLES%%bin/llama-diffusion-cli
 %%EXAMPLES%%bin/llama-embedding
 %%EXAMPLES%%bin/llama-eval-callback
 %%EXAMPLES%%bin/llama-export-lora
@@ -48,6 +49,7 @@ include/ggml-rpc.h
 include/ggml-sycl.h
 include/ggml-vulkan.h
 include/ggml.h
+include/ggml-webgpu.h
 include/gguf.h
 include/llama-cpp.h
 include/llama.h
