@@ -1,7 +1,6 @@
 PORTNAME=	spglib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
-PORTREVISION=	1
+DISTVERSION=	2.6.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,10 +18,12 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@$
 		${PYNUMPY} \
 		${PY_SETUPTOOLS}
 LIB_DEPENDS=	libsymspg.so:science/spglib
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.9.0:devel/py-typing-extensions@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-benchmark>0:devel/py-pytest-benchmark@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # tests fail to run, see https://github.com/spglib/spglib/issues/192
+USE_PYTHON=	pep517 autoplist pytest
 USE_GITHUB=	yes
 
 CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
@@ -31,5 +32,7 @@ MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION=${DISTVERSION}
 
 TEST_WRKSRC=	${WRKSRC}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# tests as of 2.6.0: 3024 passed in 149.52s (0:02:29)
 
 .include <bsd.port.mk>

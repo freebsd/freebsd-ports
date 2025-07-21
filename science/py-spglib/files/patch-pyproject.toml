@@ -1,21 +1,21 @@
 - removal of license-files is a workaround for https://github.com/spglib/spglib/issues/560
 
---- pyproject.toml.orig	2024-07-11 08:36:56 UTC
+--- pyproject.toml.orig	2025-03-06 12:33:46 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@
  [build-system]
  # Numpy build and runtime dependencies are linked to ABI compatibility
  # A new wheel rebuild is needed when changing these
--requires = ["scikit-build-core", "numpy~=2.0"]
-+requires = ["scikit-build-core", "numpy"]
+-requires = ["scikit-build-core>=0.11", "numpy~=2.0"]
++requires = ["scikit-build-core>=0.11", "numpy"]
  build-backend = "scikit_build_core.build"
  
  [project]
-@@ -9,7 +9,6 @@ license = { text = "BSD-3-Clause" }
+@@ -9,7 +9,6 @@ license = "BSD-3-Clause"
  requires-python = ">=3.9"
  description = "This is the spglib module."
- license = { text = "BSD-3-Clause" }
--license-files = { paths = ["COPYING"] }
+ license = "BSD-3-Clause"
+-license-files = ["COPYING"]
  readme = "python/README.rst"
  dynamic = ["version"]
  dependencies = [
