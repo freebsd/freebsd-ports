@@ -5,7 +5,8 @@ CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	YAML templating tool that works on YAML structure instead of text
-WWW=		https://carvel.dev/ytt/
+WWW=		https://carvel.dev/ytt/ \
+		https://github.com/carvel-dev/ytt
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
