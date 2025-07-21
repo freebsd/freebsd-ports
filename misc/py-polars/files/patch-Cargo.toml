@@ -1,6 +1,6 @@
---- Cargo.toml.orig	2025-04-30 19:44:53 UTC
+--- Cargo.toml.orig	2025-07-21 02:27:07 UTC
 +++ Cargo.toml
-@@ -17,14 +17,6 @@ mimalloc = { version = "0.1", default-features = false
+@@ -17,12 +17,7 @@ mimalloc = { version = "0.1", default-features = false
  [target.'cfg(all(any(not(target_family = "unix"), target_os = "emscripten", allocator = "mimalloc"), not(allocator = "default")))'.dependencies]
  mimalloc = { version = "0.1", default-features = false }
  
@@ -8,19 +8,8 @@
 -[target.'cfg(all(target_family = "unix", not(target_os = "macos"), not(target_os = "emscripten"), not(allocator = "mimalloc"), not(allocator = "default")))'.dependencies]
 -tikv-jemallocator = { version = "0.6.0", features = ["disable_initial_exec_tls", "background_threads"] }
 -
--[target.'cfg(all(target_family = "unix", target_os = "macos", not(allocator = "mimalloc"), not(allocator = "default")))'.dependencies]
+ [target.'cfg(all(target_family = "unix", target_os = "macos", not(allocator = "mimalloc"), not(allocator = "default")))'.dependencies]
 -tikv-jemallocator = { version = "0.6.0", features = ["disable_initial_exec_tls"] }
--either = { workspace = true }
--
- [features]
- # Features used in this crate
- ffi_plugin = ["polars-python/ffi_plugin"]
-@@ -111,3 +103,8 @@ default = ["all", "nightly"]
- ]
+ either = { workspace = true }
  
- default = ["all", "nightly"]
-+
-+[profile.release]
-+opt-level = 2
-+debug = false
-+strip = "symbols"
+ [features]
