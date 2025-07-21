@@ -1,3 +1,3 @@
-TIMESTAMP = 1738132002
-SHA256 (apache-pulsar-client-python-v3.6.0_GH0.tar.gz) = b2dc186cd3ac2d80f24f12b2f4d731f4b464248e8ce34ff0579526df2403784e
-SIZE (apache-pulsar-client-python-v3.6.0_GH0.tar.gz) = 101643
+TIMESTAMP = 1753077317
+SHA256 (apache-pulsar-client-python-v3.8.0_GH0.tar.gz) = e82e1a5ae51b260cc33491bc1771e89d74b0459bb39cf0a3fc4df6c29c7184ae
+SIZE (apache-pulsar-client-python-v3.8.0_GH0.tar.gz) = 107415
