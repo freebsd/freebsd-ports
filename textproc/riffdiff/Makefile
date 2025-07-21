@@ -1,6 +1,5 @@
 PORTNAME=	riffdiff
-DISTVERSION=	3.3.10
-PORTREVISION=	2
+DISTVERSION=	3.4.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,21 +39,32 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		colorchoice-1.0.0 \
 		ctor-0.1.16 \
 		difference-2.0.0 \
+		displaydoc-0.2.5 \
 		either-1.6.1 \
 		errno-0.3.5 \
 		fastrand-1.9.0 \
+		form_urlencoded-1.2.1 \
 		gimli-0.23.0 \
 		git-version-0.3.4 \
 		git-version-macro-0.3.4 \
 		heck-0.5.0 \
 		hermit-abi-0.1.19 \
+		icu_collections-2.0.0 \
+		icu_locale_core-2.0.0 \
+		icu_normalizer-2.0.0 \
+		icu_normalizer_data-2.0.0 \
+		icu_properties-2.0.1 \
+		icu_properties_data-2.0.1 \
+		icu_provider-2.0.0 \
+		idna-1.0.3 \
+		idna_adapter-1.2.1 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.6 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.1 \
-		lazy_static-1.4.0 \
 		libc-0.2.140 \
 		linux-raw-sys-0.1.4 \
+		litemap-0.8.0 \
 		log-0.4.21 \
 		memchr-2.5.0 \
 		miniz_oxide-0.4.3 \
@@ -62,6 +72,8 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		object-0.22.0 \
 		once_cell-1.20.2 \
 		output_vt100-0.1.2 \
+		percent-encoding-2.3.1 \
+		potential_utf-0.1.2 \
 		pretty_assertions-0.6.1 \
 		proc-macro-hack-0.5.19 \
 		proc-macro2-1.0.93 \
@@ -72,14 +84,22 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		rustc-demangle-0.1.18 \
 		rustix-0.36.16 \
 		rustversion-1.0.18 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
 		similar-2.6.0 \
+		smallvec-1.15.1 \
+		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
 		syn-1.0.48 \
 		syn-2.0.30 \
+		synstructure-0.13.2 \
 		tempfile-3.4.0 \
 		threadpool-1.8.1 \
+		tinystr-0.8.1 \
 		unicode-ident-1.0.11 \
 		unicode-xid-0.2.1 \
+		url-2.5.4 \
+		utf8_iter-1.0.4 \
 		utf8parse-0.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -112,7 +132,15 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.42.1 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.6
+		windows_x86_64_msvc-0.52.6 \
+		writeable-0.6.1 \
+		yoke-0.8.0 \
+		yoke-derive-0.8.0 \
+		zerofrom-0.1.6 \
+		zerofrom-derive-0.1.6 \
+		zerotrie-0.2.2 \
+		zerovec-0.11.2 \
+		zerovec-derive-0.11.1
 
 PLIST_FILES=	bin/riff
 
