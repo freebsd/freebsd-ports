@@ -7127,6 +7127,7 @@
     SUBDIR += rubygem-cf-uaa-lib
     SUBDIR += rubygem-cheffish
     SUBDIR += rubygem-childprocess
+    SUBDIR += rubygem-childprocess-gitlab
     SUBDIR += rubygem-chronic
     SUBDIR += rubygem-chronic_duration
     SUBDIR += rubygem-claide
@@ -7278,6 +7279,7 @@
     SUBDIR += rubygem-excon
     SUBDIR += rubygem-excon-gitlab
     SUBDIR += rubygem-excon0
+    SUBDIR += rubygem-excon1-gitlab
     SUBDIR += rubygem-execjs
     SUBDIR += rubygem-extlib
     SUBDIR += rubygem-extpp
