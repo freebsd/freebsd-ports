@@ -146,4 +146,5 @@ share/metainfo/com.ylsoftware.qmmp.metainfo.xml
 %%DATADIR%%/images/app_icon.png
 %%DATADIR%%/images/empty_cover.png
 %%DATADIR%%/scripts/kwin.sh
+%%DATADIR%%/scripts/kwin6.sh
 share/solid/actions/qmmp-opencda.desktop
