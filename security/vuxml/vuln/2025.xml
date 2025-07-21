@@ -1612,7 +1612,7 @@
     <affects>
       <package>
 	<name>openh264</name>
-	<range><lt>2.5.1</lt></range>
+	<range><lt>2.5.1,2</lt></range>
       </package>
     </affects>
     <description>
