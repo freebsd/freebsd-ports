@@ -1,10 +1,10 @@
 PORTNAME=	osg
 PORTVERSION=	3.6.5
 DISTVERSIONPREFIX=	OpenSceneGraph-
-PORTREVISION=	78
+PORTREVISION=	79
 CATEGORIES=	graphics
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
 WWW=		https://www.openscenegraph.org/
 
@@ -16,19 +16,19 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	openscenegraph
-GH_PROJECT=	OpenSceneGraph
-
-CONFLICTS_INSTALL=osg34
-
 USES=		alias cmake compiler:c11 jpeg gl pkgconfig xorg
 USE_GL=		gl
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	openscenegraph
+GH_PROJECT=	OpenSceneGraph
+
 CFLAGS+=	-I${LOCALBASE}/include/Imath -DInt64=uint64_t
+
+CONFLICTS_INSTALL=osg34
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
 		OSG_SHLIBVER=161 \
@@ -38,7 +38,7 @@ PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
 OPTIONS_DEFINE=	CURL FFMPEG FREETYPE GDAL GIF GSTREAMER GTA \
 		JASPER LIBLAS LUA NVTT OPENEXR PDF SDL ASIO \
 		SVG VNC XRANDR XINERAMA FONTCONFIG DCMTK COLLADA
-OPTIONS_DEFAULT=FFMPEG FREETYPE GIF XRANDR XINERAMA FONTCONFIG
+OPTIONS_DEFAULT=COLLADA FFMPEG FREETYPE GIF XRANDR XINERAMA FONTCONFIG
 OPTIONS_SUB=		yes
 
 ASIO_DESC=		ASIO support (resthttp plugin)
@@ -55,7 +55,7 @@ COLLADA_DESC=		COLLADA (dae) format support
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_VARS=		FORCE_REQUIRE+=CURL
 CURL_VARS_OFF=		FORCE_IGNORE+=CURL
-FFMPEG_LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_VARS=		FORCE_REQUIRE+=FFmpeg
 FFMPEG_VARS_OFF=	FORCE_IGNORE+=FFmpeg
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
