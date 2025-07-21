@@ -6,7 +6,8 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CSG and XTP: libraries for atomistic simulations
-WWW=		https://github.com/votca/votca
+WWW=		https://www.votca.org/ \
+		https://github.com/votca/votca
 
 LICENSE=	APACHE20
 
