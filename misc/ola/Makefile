@@ -4,14 +4,16 @@ PORTREVISION=	10
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/OpenLightingProject/ola/releases/download/${DISTVERSION}/
 
+PATCH_SITES=	https://github.com/OpenLightingProject/${PORTNAME}/commit/
+PATCHFILES+=	321731ce73be4ea79adb2174591ce94695d3e85b.patch:-p1
+PATCHFILES+=	4006f2129f0a6061d59fe5892a2a17c53699a31a.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Lighting Architecture: framework for lighting control information
 WWW=		https://www.openlighting.org/ola/ \
 		https://github.com/OpenLightingProject/ola
 
 LICENSE=	GPLv2+
-
-BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/OpenLightingProject/ola/issues/1982
 
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
 		libftdi1.so:devel/libftdi1 \
