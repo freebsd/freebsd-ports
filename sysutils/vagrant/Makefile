@@ -1,7 +1,6 @@
 PORTNAME=	vagrant
-PORTVERSION=	2.3.7
+PORTVERSION=	2.4.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com
@@ -79,10 +78,6 @@ REMOVE_TARGETS=	.envrc .runner.sh .vimrc .yardopts flake.lock flake.nix Gemfile 
 REMOVE_TARGETS_EXT=	gem_make.out mkmf.log
 
 .include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 3.3
-BROKEN=	ruby 3.3 and later is not supported
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' \

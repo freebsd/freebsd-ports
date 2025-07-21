@@ -1,5 +1,6 @@
 bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/CHANGELOG.md
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/.copywrite.hcl
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/LICENSE
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/README.md
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/RELEASE.md
@@ -18,9 +19,12 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/contrib/zsh/generate_zsh_completion.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/keys/README.md
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/keys/vagrant
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/keys/vagrant.key.ed25519
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/keys/vagrant.key.rsa
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/keys/vagrant.pub
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/keys/vagrant.pub.ed25519
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/keys/vagrant.pub.rsa
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant_ssl.so
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/action.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/action/builder.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/action/builtin/box_add.rb
@@ -174,6 +178,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/util/uploader.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/util/which.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/util/windows_path.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/vagrant_ssl.so
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/vagrantfile.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/version.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/README.md
@@ -1045,6 +1050,9 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/suse/network_dhcp.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/suse/network_static.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/suse/network_static6.erb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/license/license.html.tmpl
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/license/license.rtf.tmpl
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/license/license.tmpl
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/locales/comm_winrm.yml
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/locales/command_ps.yml
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/locales/command_rdp.yml
@@ -1076,8 +1084,11 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/host/remote.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/machine/remote.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/machine_index/remote.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/patches/builder/mkmf.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/patches/fake_ftp.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/patches/log4r.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/patches/net-ssh.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/patches/rubygems.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/plugin/remote.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/plugin/remote/command.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/plugin/remote/communicator.rb
@@ -1217,7 +1228,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alma/plugin.rb
 %%GEMS_DIR%%/cache/vagrant-%%PORTVERSION%%.gem
 %%GEMS_DIR%%/extensions/%%BUILD_TARGET%%/%%RUBY_VER%%/vagrant-%%PORTVERSION%%/gem.build_complete
-%%GEMS_DIR%%/extensions/%%BUILD_TARGET%%/%%RUBY_VER%%/vagrant-%%PORTVERSION%%/vagrant_ssl.so
+%%GEMS_DIR%%/extensions/%%BUILD_TARGET%%/%%RUBY_VER%%/vagrant-%%PORTVERSION%%/vagrant/vagrant_ssl.so
 %%GEMS_DIR%%/specifications/vagrant-%%PORTVERSION%%.gemspec
 %%DATADIR%%/embedded/rgloader/loader.rb
 @dir %%GEMS_DIR%%/extensions
