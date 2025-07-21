@@ -1,6 +1,7 @@
 _VER=	${PORTVERSION:C/\..*//g}.${PORTVERSION:C/[^\.]*\.//:C/\..*//g}
 
 makedist:
+	${RM} /tmp/compat-libs
 .for lib in ${COMPAT_LIBS}
 	${ECHO_CMD} ${lib} >> /tmp/compat-libs
 .endfor

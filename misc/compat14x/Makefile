@@ -1,6 +1,5 @@
 PORTNAME=	compat14x
-PORTVERSION=	14.2.1402000.20250430
-PORTREVISION=	1
+PORTVERSION=	14.2.1402000.20250721
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/arrowd
 PKGNAMESUFFIX=	-${ARCH}
@@ -19,12 +18,34 @@ TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
 USE_LDCONFIG=	${TARGET_DIR}
 
+COMPAT_LIBS=	libasn1.so.11 \
+		libcom_err.so.5 \
+		libgssapi_krb5.so.10 \
+		libgssapi_ntlm.so.10 \
+		libgssapi_spnego.so.10 \
+		libhdb.so.11 \
+		libheimbase.so.11 \
+		libheimntlm.so.11 \
+		libhx509.so.11 \
+		libkadm5clnt.so.11 \
+		libkadm5srv.so.11 \
+		libkafs5.so.11 \
+		libkdc.so.11 \
+		libkrb5.so.11 \
+		libmd.so.6 \
+		libprivateheimipcc.so.11 \
+		libprivateheimipcs.so.11 \
+		libroken.so.11 \
+		libwind.so.11
+
 OPTIONS_DEFINE=	COMPAT32
 OPTIONS_DEFAULT=COMPAT32
 OPTIONS_EXCLUDE_aarch64=COMPAT32
 OPTIONS_EXCLUDE_i386=COMPAT32
 COMPAT32_DESC=	Install 32-bit compat libraries
 OPTIONS_SUB=	yes
+
+.include "${.CURDIR}/../compat4x/Makefile.makedist"
 
 .include <bsd.port.pre.mk>
 
