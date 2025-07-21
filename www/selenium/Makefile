@@ -1,5 +1,5 @@
 PORTNAME=	selenium
-DISTVERSION=	4.32.0
+DISTVERSION=	4.34.0
 CATEGORIES=	www devel java
 MASTER_SITES=	https://github.com/SeleniumHQ/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 DISTNAME=	selenium-server-${DISTVERSION}
