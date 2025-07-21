@@ -145,5 +145,6 @@ share/metainfo/com.ylsoftware.qmmp%%BIN_SUFFX%%.metainfo.xml
 %%DATADIR%%%%BIN_SUFFX%%/images/app_icon.png
 %%DATADIR%%%%BIN_SUFFX%%/images/empty_cover.png
 %%DATADIR%%%%BIN_SUFFX%%/scripts/kwin.sh
+%%DATADIR%%%%BIN_SUFFX%%/scripts/kwin6.sh
 share/solid/actions/qmmp-opencda%%BIN_SUFFX%%.desktop
 @comment Insert PLIST.doc here
