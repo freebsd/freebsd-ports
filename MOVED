@@ -4655,3 +4655,4 @@ lang/luajit-devel|lang/luajit|2025-07-08|Removed, use lang/luajit instead
 devel/py-cog|devel/py-cogapp|2025-07-14|Renamed to match upstream PyPI package name
 devel/pycharm-ce|devel/pycharm|2025-07-14|Has expired: Pycharm is now unified product. Please switch to devel/pycharm
 devel/pycharm-pro|devel/pycharm|2025-07-14|Has expired: Pycharm is now unified product. Please switch to devel/pycharm
+textproc/hq|textproc/html-query|2025-07-21|Project was renamed
