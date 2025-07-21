@@ -608,8 +608,8 @@ MASTER_SITE_GNOME+= \
 
 .if !defined(IGNORE_MASTER_SITE_GIMP)
 MASTER_SITE_GIMP+= \
-	http://gimp.mirrors.hoobly.com/pub/%SUBDIR%/ \
-	http://gimp.afri.cc/pub/%SUBDIR%/ \
+	https://ftp.gwdg.de/pub/misc/grafik/%SUBDIR%/ \
+	https://www.mirrorservice.org/sites/ftp.gimp.org/pub/%SUBDIR%/ \
 	https://download.gimp.org/pub/%SUBDIR%/
 .endif
 
