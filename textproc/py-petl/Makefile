@@ -1,5 +1,6 @@
 PORTNAME=	petl
 PORTVERSION=	1.7.17
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -53,7 +54,7 @@ SMB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}smbprotocol>=1.0.1:net/py-smbprotocol@${
 XLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlrd>=2.0.1:textproc/py-xlrd@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}xlwt>=1.3.0:textproc/py-xlwt@${PY_FLAVOR}
 XLSX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl>=2.6.2:textproc/py-openpyxl@${PY_FLAVOR}
-XPATH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.4.0:devel/py-lxml@${PY_FLAVOR}
+XPATH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml5>=4.4.0:devel/py-lxml5@${PY_FLAVOR}
 WHOOSH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}whoosh>=0:textproc/py-whoosh@${PY_FLAVOR}
 
 .include <bsd.port.mk>

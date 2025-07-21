@@ -1,5 +1,6 @@
 PORTNAME=	html5lib-modern
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +30,6 @@ LXML_DESC=	Tree building/walking via lxml
 
 CHARDET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=2.2.1,1:textproc/py-chardet@${PY_FLAVOR}
 GENSHI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.7.1:textproc/py-genshi@${PY_FLAVOR}
-LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=3.4.0:devel/py-lxml@${PY_FLAVOR}
+LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml5>=3.4.0:devel/py-lxml5@${PY_FLAVOR}
 
 .include <bsd.port.mk>

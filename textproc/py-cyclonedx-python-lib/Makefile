@@ -1,5 +1,6 @@
 PORTNAME=	cyclonedx-python-lib
 PORTVERSION=	10.4.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/CycloneDX/cyclonedx-python-lib/releases/download/v${PORTVERSION}/
@@ -32,9 +33,9 @@ XML_VALIDATION_DESC=	XML validation
 JSON_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18<5:devel/py-jsonschema@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}referencing>=0.28.4:devel/py-referencing@${PY_FLAVOR}
 VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18<5:devel/py-jsonschema@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}lxml>=4<7:devel/py-lxml@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}lxml5>=4<7:devel/py-lxml5@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}referencing>=0.28.4:devel/py-referencing@${PY_FLAVOR}
-XML_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4<7:devel/py-lxml@${PY_FLAVOR}
+XML_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml5>=4<7:devel/py-lxml5@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 

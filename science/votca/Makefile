@@ -1,7 +1,7 @@
 PORTNAME=	votca
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2025
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ BROKEN_i386=	undefined reference to `__atomic_load'
 PY_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}ase>0:science/py-ase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml5>0:devel/py-lxml5@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xmltodict>0:devel/py-xmltodict@${PY_FLAVOR} \
 		rdkit>0:science/rdkit
 BUILD_DEPENDS=	bash:shells/bash \

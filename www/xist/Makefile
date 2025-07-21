@@ -1,6 +1,6 @@
 PORTNAME=	xist
 PORTVERSION=	5.34
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		http://ftp.livinglogic.de/xist/
@@ -14,7 +14,7 @@ WWW=		http://www.livinglogic.de/Python/xist/
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cssutils>=1.0,1:www/py-cssutils@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml>=3.4:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml5>=3.4:devel/py-lxml5@${PY_FLAVOR} \
 		${PY_PILLOW}
 
 USES=		python tar:bzip2

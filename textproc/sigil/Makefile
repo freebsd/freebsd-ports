@@ -1,5 +1,6 @@
 PORTNAME=	sigil
 DISTVERSION=	2.5.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	jonc@chen.org.nz
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 LIB_DEPENDS=	libpcre2-16.so:devel/pcre2 \
 		libhunspell-1.7.so:textproc/hunspell
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>=0.15.0:devel/py-dulwich@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}lxml5>0:devel/py-lxml5@${PY_FLAVOR}
 
 USES=		cmake cpe desktop-file-utils gl localbase:ldflags \
 		minizip pkgconfig python qt:6 shebangfix
