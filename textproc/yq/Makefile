@@ -5,7 +5,8 @@ MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Command-line YAML and XML processor, jq wrapper for YAML/XML documents
-WWW=		https://kislyuk.github.io/yq/
+WWW=		https://kislyuk.github.io/yq/ \
+		https://github.com/kislyuk/yq
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
