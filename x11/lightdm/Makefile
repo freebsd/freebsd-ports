@@ -63,7 +63,7 @@ VAPI_USE=		GNOME=introspection:build
 VAPI_CONFIGURE_ENABLE=	vala
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
+	@${REINPLACE_CMD} -i "" -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/data/lightdm.1 \
 		${WRKSRC}/data/lightdm.conf
 
