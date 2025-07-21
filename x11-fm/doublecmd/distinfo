@@ -1,11 +1,5 @@
-TIMESTAMP = 1745258949
-SHA256 (doublecmd-doublecmd-v1.1.24_GH0.tar.gz) = 507d60055642b2cb89bccc4838b67bc9e4127003335c83bda1d9b3733c67d502
-SIZE (doublecmd-doublecmd-v1.1.24_GH0.tar.gz) = 9493483
-SHA256 (doublecmd-doublecmd.github.io-v1.1.24_GH0.tar.gz) = 847f84d7cfbf128a6126585e12d77f81e25574d269a7a1e4779c25e6d7d8cbc1
-SIZE (doublecmd-doublecmd.github.io-v1.1.24_GH0.tar.gz) = 8014377
-SHA256 (11f8742da2464570b588865fffe6090107a7f543.patch) = 789767b9a578ae5b98275bf7e740adcb3a3c57ad295c715fe00b6708efd81651
-SIZE (11f8742da2464570b588865fffe6090107a7f543.patch) = 3002
-SHA256 (e38813f8d5a1c0ea9696a9b8c4f5580b17681627.patch) = 4962452c6dc28ae1236e6b4579359a61636201b573b8749b70a44f0658003b46
-SIZE (e38813f8d5a1c0ea9696a9b8c4f5580b17681627.patch) = 5257
-SHA256 (68d1c6e4e1dc0dd16755ee6209bf21bdf95c7690.patch) = 451dc8718c99a0f370afd1484581ca4d26c11f1aed011390551666c05b86b9b3
-SIZE (68d1c6e4e1dc0dd16755ee6209bf21bdf95c7690.patch) = 9140
+TIMESTAMP = 1749541859
+SHA256 (doublecmd-doublecmd-v1.1.26_GH0.tar.gz) = cb16d73b9f130f2df15f032bf791ecb9b89301cc78ef8b88e265134d2ad2c1ae
+SIZE (doublecmd-doublecmd-v1.1.26_GH0.tar.gz) = 9535946
+SHA256 (doublecmd-doublecmd.github.io-v1.1.26_GH0.tar.gz) = c6e176bc4c8f0e9cefd42d15088533e7850eb53719e946c5b3c8980a7391bf23
+SIZE (doublecmd-doublecmd.github.io-v1.1.26_GH0.tar.gz) = 8015248
