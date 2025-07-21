@@ -1,6 +1,6 @@
 PORTNAME=	cargo-mutants
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.2.1
+DISTVERSION=	25.2.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,25 +19,22 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	sourcefrog
 
-CARGO_CRATES=	aho-corasick-0.7.20 \
-		aho-corasick-1.1.3 \
+CARGO_CRATES=	aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.18 \
-		anstyle-0.3.5 \
 		anstyle-1.0.10 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.7 \
 		anyhow-1.0.86 \
-		assert_cmd-2.0.0 \
+		assert_cmd-2.0.17 \
 		assert_matches-1.5.0 \
 		atty-0.2.14 \
 		autocfg-1.4.0 \
 		bitflags-1.3.2 \
 		bitflags-2.8.0 \
 		borsh-1.5.5 \
-		bstr-0.2.17 \
 		bstr-1.11.3 \
 		bumpalo-3.17.0 \
 		bytecount-0.6.8 \
@@ -61,8 +58,11 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		core-foundation-sys-0.8.7 \
 		cp_r-0.5.2 \
 		crossbeam-channel-0.5.15 \
+		crossbeam-deque-0.8.6 \
+		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
-		ctrlc-3.2.1 \
+		ctrlc-3.4.7 \
+		deranged-0.4.0 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
 		doc-comment-0.3.3 \
@@ -75,11 +75,11 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		errno-0.3.10 \
 		fastrand-2.0.0 \
 		filetime-0.2.25 \
-		float-cmp-0.9.0 \
+		float-cmp-0.10.0 \
 		fnv-1.0.7 \
 		fs2-0.4.0 \
 		fuchsia-cprng-0.1.1 \
-		globset-0.4.10 \
+		globset-0.4.16 \
 		guppy-workspace-hack-0.1.0 \
 		hashbrown-0.12.3 \
 		hashbrown-0.15.2 \
@@ -89,22 +89,20 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		humantime-2.1.0 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
-		ignore-0.4.20 \
+		ignore-0.4.23 \
 		indexmap-1.9.3 \
 		indexmap-2.7.1 \
 		indoc-2.0.0 \
 		insta-1.12.0 \
 		io-lifetimes-1.0.11 \
 		is_terminal_polyfill-1.70.1 \
-		itertools-0.10.5 \
 		itertools-0.13.0 \
-		itoa-0.4.8 \
 		itoa-1.0.14 \
 		jobserver-0.1.0 \
 		js-sys-0.3.77 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.169 \
+		libc-0.2.174 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.3.8 \
@@ -113,17 +111,16 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		log-0.4.25 \
 		matchers-0.1.0 \
 		memchr-2.7.4 \
-		memoffset-0.6.5 \
 		minimal-lexical-0.2.1 \
 		mutants-0.0.3 \
 		nextest-metadata-0.12.1 \
 		nextest-workspace-hack-0.1.0 \
-		nix-0.23.2 \
-		nix-0.29.0 \
+		nix-0.30.1 \
 		nom-7.1.3 \
 		nom_locate-4.2.0 \
 		normalize-line-endings-0.3.0 \
 		nu-ansi-term-0.46.0 \
+		num-conv-0.1.0 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
 		nutmeg-0.1.4 \
@@ -134,8 +131,8 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		patch-0.7.0 \
 		path-slash-0.2.0 \
 		pin-project-lite-0.2.16 \
-		predicates-2.1.5 \
-		predicates-3.0.0 \
+		powerfmt-0.2.0 \
+		predicates-3.1.3 \
 		predicates-core-1.0.9 \
 		predicates-tree-1.0.12 \
 		pretty_assertions-1.4.1 \
@@ -194,16 +191,18 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		thiserror-1.0.65 \
 		thiserror-impl-1.0.65 \
 		thread_local-1.1.8 \
-		time-0.3.0 \
+		time-0.3.41 \
+		time-core-0.1.4 \
+		time-macros-0.2.22 \
 		toml-0.8.0 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.20.7 \
-		tracing-0.1.40 \
-		tracing-appender-0.2.0 \
+		tracing-0.1.41 \
+		tracing-appender-0.2.3 \
 		tracing-attributes-0.1.28 \
 		tracing-core-0.1.33 \
 		tracing-log-0.2.0 \
-		tracing-subscriber-0.3.18 \
+		tracing-subscriber-0.3.19 \
 		unicode-ident-1.0.16 \
 		unicode-width-0.1.14 \
 		utf8parse-0.2.2 \
