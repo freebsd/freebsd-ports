@@ -1,6 +1,5 @@
 PORTNAME=	quantities
-DISTVERSION=	0.16.1
-PORTREVISION=	1
+DISTVERSION=	0.16.2
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +20,6 @@ TEST_WRKSRC=	${WRKSRC}/quantities/tests
 
 NO_ARCH=	yes
 
-# tests: 173 passed, 3 xfailed in 33.50s
+# tests as of 0.16.2: 175 passed, 3 xfailed in 30.81s
 
 .include <bsd.port.mk>
