@@ -316,6 +316,7 @@ include/Wt/WPopupMenuItem.h
 include/Wt/WPopupWidget.h
 include/Wt/WProgressBar.h
 include/Wt/WPushButton.h
+include/Wt/WQrCode.h
 include/Wt/WRadioButton.h
 include/Wt/WRandom.h
 include/Wt/WRasterImage.h
@@ -395,6 +396,7 @@ include/Wt/cpp17/any/README.md
 include/Wt/cpp17/any/any.hpp
 include/Wt/cpp20/date.hpp
 include/Wt/cpp20/tz.hpp
+include/thirdparty/qrcodegen/QrCode.hpp
 lib/cmake/wt/wt-config-version.cmake
 lib/cmake/wt/wt-config.cmake
 %%DBO%%lib/cmake/wt/wt-target-dbo-%%CMAKE_BUILD_TYPE%%.cmake
