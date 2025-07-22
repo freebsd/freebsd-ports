@@ -445,7 +445,6 @@ include/folly/executors/thread_factory/ThreadFactory.h
 include/folly/experimental/EventCount.h
 include/folly/experimental/FlatCombiningPriorityQueue.h
 include/folly/experimental/FunctionScheduler.h
-include/folly/experimental/TestUtil.h
 include/folly/experimental/ThreadedRepeatingFunctionRunner.h
 include/folly/experimental/channels/Channel-fwd.h
 include/folly/experimental/channels/Channel-inl.h
