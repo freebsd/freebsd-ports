@@ -202,6 +202,8 @@ include/snort/pub_sub/eof_event.h
 include/snort/pub_sub/eve_process_event.h
 include/snort/pub_sub/expect_events.h
 include/snort/pub_sub/external_event_ids.h
+include/snort/pub_sub/file_events.h
+include/snort/pub_sub/file_events_ids.h
 include/snort/pub_sub/finalize_packet_event.h
 include/snort/pub_sub/ftp_events.h
 include/snort/pub_sub/http_body_event.h
