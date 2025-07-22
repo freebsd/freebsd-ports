@@ -1,10 +1,10 @@
 PORTNAME=	nwg-launchers
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	GTK-based launchers: application grid, button bar, dmenu for sway and other window managers
 WWW=		https://github.com/nwg-piotr/nwg-launchers
 
