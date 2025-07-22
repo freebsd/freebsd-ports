@@ -1,6 +1,6 @@
---- Makefile.orig	2024-07-27 21:40:48 UTC
-+++ Makefile
-@@ -94,6 +94,7 @@ ifdef CONFIG_CLANG
+--- Makefile.orig	2025-07-12 12:03:32.908750000 -0400
++++ Makefile	2025-07-12 12:08:54.639258000 -0400
+@@ -98,6 +98,7 @@
    HOST_CC=clang
    CC=$(CROSS_PREFIX)clang
    CFLAGS+=-g -Wall -MMD -MF $(OBJDIR)/$(@F).d
@@ -8,9 +8,9 @@
    CFLAGS += -Wextra
    CFLAGS += -Wno-sign-compare
    CFLAGS += -Wno-missing-field-initializers
-@@ -207,9 +208,9 @@ endif
- ifdef CONFIG_M32
- PROGS+=qjs32 qjs32_s
+@@ -212,9 +213,9 @@
+ QJSC_CC=$(CC)
+ QJSC=./qjsc$(EXE)
  endif
 -PROGS+=libquickjs.a
 +PROGS+=libquickjs.so
@@ -20,7 +20,7 @@
  endif
  
  # examples
-@@ -298,12 +299,12 @@ endif
+@@ -296,12 +297,12 @@
  LTOEXT=
  endif
  
@@ -37,10 +37,10 @@
  endif # CONFIG_LTO
  
  libquickjs.fuzz.a: $(patsubst %.o, %.fuzz.o, $(QJS_LIB_OBJS))
-@@ -384,10 +385,14 @@ install: all
+@@ -368,10 +369,14 @@
+ 	mkdir -p "$(DESTDIR)$(PREFIX)/bin"
  	$(STRIP) qjs$(EXE) qjsc$(EXE)
  	install -m755 qjs$(EXE) qjsc$(EXE) "$(DESTDIR)$(PREFIX)/bin"
- 	ln -sf qjs$(EXE) "$(DESTDIR)$(PREFIX)/bin/qjscalc$(EXE)"
 -	mkdir -p "$(DESTDIR)$(PREFIX)/lib/quickjs"
 -	install -m644 libquickjs.a "$(DESTDIR)$(PREFIX)/lib/quickjs"
 +	mkdir -p "$(DESTDIR)$(PREFIX)/lib"
@@ -55,8 +55,8 @@
  endif
  	mkdir -p "$(DESTDIR)$(PREFIX)/include/quickjs"
  	install -m644 quickjs.h quickjs-libc.h "$(DESTDIR)$(PREFIX)/include/quickjs"
-@@ -417,7 +422,7 @@ HELLO_MODULE_OPTS=-fno-string-normalize -fno-map -fno-
- HELLO_MODULE_OPTS=-fno-string-normalize -fno-map -fno-promise -fno-typedarray \
+@@ -396,7 +401,7 @@
+ HELLO_MODULE_OPTS=-fno-string-normalize -fno-map -fno-typedarray \
             -fno-typedarray -fno-regexp -fno-json -fno-eval -fno-proxy \
             -fno-date -m
 -examples/hello_module: $(QJSC) libquickjs$(LTOEXT).a $(HELLO_MODULE_SRCS)
@@ -64,7 +64,7 @@
  	$(QJSC) $(HELLO_MODULE_OPTS) -o $@ $(HELLO_MODULE_SRCS)
  
  # use of an external C module (static compilation)
-@@ -425,7 +430,7 @@ test_fib.c: $(QJSC) examples/test_fib.js
+@@ -404,7 +409,7 @@
  test_fib.c: $(QJSC) examples/test_fib.js
  	$(QJSC) -e -M examples/fib.so,fib -m -o $@ examples/test_fib.js
  
