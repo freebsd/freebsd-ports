@@ -3178,6 +3178,7 @@
     SUBDIR += p5-MouseX-Types
     SUBDIR += p5-MouseX-Types-Path-Class
     SUBDIR += p5-Multiplex-CMD
+    SUBDIR += p5-Mutex
     SUBDIR += p5-NEXT
     SUBDIR += p5-Net-DBus
     SUBDIR += p5-No-Worries

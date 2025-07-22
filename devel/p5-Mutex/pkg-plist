@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Mutex.pm
+%%SITE_PERL%%/Mutex/Channel.pm
+%%SITE_PERL%%/Mutex/Flock.pm
+%%SITE_PERL%%/Mutex/Util.pm
+%%PERL5_MAN3%%/Mutex.3.gz
+%%PERL5_MAN3%%/Mutex::Channel.3.gz
+%%PERL5_MAN3%%/Mutex::Flock.3.gz
+%%PERL5_MAN3%%/Mutex::Util.3.gz
