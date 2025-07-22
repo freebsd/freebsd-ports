@@ -74,6 +74,7 @@ include/quic/common/events/QuicEventBase.h
 include/quic/common/events/QuicTimer.h
 include/quic/common/testutil/MockAsyncUDPSocket.h
 include/quic/common/third-party/enum.h
+include/quic/common/third-party/expected.hpp
 include/quic/common/third-party/optional.h
 include/quic/common/third-party/optional_flag_manipulator_fwd.h
 include/quic/common/udpsocket/FollyQuicAsyncUDPSocket.h
