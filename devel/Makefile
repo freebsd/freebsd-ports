@@ -3539,6 +3539,7 @@
     SUBDIR += p5-Symbol-Get
     SUBDIR += p5-Symbol-Global-Name
     SUBDIR += p5-Symbol-Util
+    SUBDIR += p5-Syntax-Keyword-Defer
     SUBDIR += p5-Syntax-Keyword-Dynamically
     SUBDIR += p5-Syntax-Keyword-Gather
     SUBDIR += p5-Syntax-Keyword-Junction

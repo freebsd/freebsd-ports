@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Syntax/Keyword/Defer.pm
+%%SITE_ARCH%%/auto/Syntax/Keyword/Defer/Defer.so
+%%PERL5_MAN3%%/Syntax::Keyword::Defer.3.gz
