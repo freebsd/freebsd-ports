@@ -1,3 +1,32 @@
+  <vuln vid="80411ba2-6729-11f0-a5cb-8c164580114f">
+    <topic>7-Zip -- Multi-byte write heap buffer overflow in NCompress::NRar5::CDecoder</topic>
+    <affects>
+      <package>
+	<name>7-zip</name>
+	<range><lt>25.00</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://securitylab.github.com/advisories/GHSL-2025-058_7-Zip/">
+	  <p>7-Zip is a file archiver with a high compression ratio.  Zeroes
+	written outside heap buffer in RAR5 handler may lead to memory
+	corruption and denial of service in versions of 7-Zip prior to
+	25.0.0.  Version 25.0.0 contains a fix for the issue.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-53816</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-53816</url>
+    </references>
+    <dates>
+      <discovery>2025-07-17</discovery>
+      <entry>2025-07-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="605a9d1e-6521-11f0-beb2-ac5afc632ba3">
     <topic>libwasmtime -- host panic with fd_renumber WASIp1 function</topic>
     <affects>
