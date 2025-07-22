@@ -23,7 +23,7 @@ MAKE_ARGS=	CC="${CC}" \
 		CXX="${CXX}"
 ALL_TARGET=	bsd
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/premake5
 
