@@ -1,10 +1,10 @@
 PORTNAME=	nwg-dock-hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	GTK3-based dock for Hyprland
 WWW=		https://github.com/nwg-piotr/nwg-dock-hyprland
 

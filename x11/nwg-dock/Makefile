@@ -1,10 +1,10 @@
 PORTNAME=	nwg-dock
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	GTK3-based dock for sway
 WWW=		https://github.com/nwg-piotr/nwg-dock
 

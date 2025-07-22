@@ -1,10 +1,10 @@
 PORTNAME=	nwg-look
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	GTK settings editor adapted to work in the wlroots environment
 WWW=		https://github.com/nwg-piotr/nwg-look
 
