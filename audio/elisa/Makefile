@@ -1,6 +1,6 @@
 PORTNAME=	elisa
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -34,6 +34,6 @@ VLC_LIB_DEPENDS=	libvlc.so:multimedia/vlc
 
 GSTREAMER_DESC=		Play audio via QtMultimedia/GStreamer
 GSTREAMER_USES=		gstreamer
-GSTREAMER_USE=		GSTREAMER=libav,soup
+GSTREAMER_USE=		GSTREAMER=hls,libav,soup
 
 .include <bsd.port.mk>
