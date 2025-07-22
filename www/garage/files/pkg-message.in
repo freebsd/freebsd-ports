@@ -1,5 +1,13 @@
 [
 { type: upgrade
+  maximum_version: "1.2.0"
+  message: <<EOM
+  Garage now supports logging to syslog. To log to syslog, please specify in rc.conf(5):
+
+     garage_log_file=syslog
+EOM
+}
+{ type: upgrade
   maximum_version: "0.9"
   message: <<EOM
   To upgrade from 0.8.x to 0.9.0, please refer to the upgrade instructions at:
