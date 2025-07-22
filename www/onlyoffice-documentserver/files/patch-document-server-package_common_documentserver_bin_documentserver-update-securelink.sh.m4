@@ -46,7 +46,8 @@
 +LOCAL_CONF=%%LOCALBASE%%/etc/M4_DS_PREFIX/local.json
 +JSON="%%LOCALBASE%%/www/M4_DS_PREFIX/npm/json -q -f ${LOCAL_CONF}"
  
- SECURE_LINK_SECRET=${SECURE_LINK_SECRET:-$(tr -dc A-Za-z0-9 </dev/urandom | head -c 20)}
+-SECURE_LINK_SECRET=${SECURE_LINK_SECRET:-$(tr -dc A-Za-z0-9 </dev/urandom | head -c 20)}
++SECURE_LINK_SECRET=${SECURE_LINK_SECRET:-$(pwgen -s 20)}
  
 -sed "s,\(set \+\$secure_link_secret\).*,\1 "${SECURE_LINK_SECRET}";," -i ${NGINX_CONF}
 -${JSON} -I -e 'this.storage={fs: {secretString: "'${SECURE_LINK_SECRET}'" }}' && chown ds:ds $LOCAL_CONF

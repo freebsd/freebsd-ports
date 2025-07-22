@@ -5,7 +5,7 @@
    old_cur_dir = os.getcwd()
  
 -  print("[fetch]: html")
-+  print("[path & build]: html")
++  print("[patch & build]: html")
  
    base_dir = base.get_script_dir() + "/../../core/Common/3dParty/html"
    

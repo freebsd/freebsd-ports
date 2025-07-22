@@ -1,6 +1,6 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.0.2.16
+DISTVERSION=	9.0.3.31
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		https://nodejs.org/dist/v${NODE_VERSION_PKGFETCH}/:source3 \
@@ -66,7 +66,7 @@ GH_TUPLE=	ONLYOFFICE:core:v${DISTVERSION}:core/core \
 		hunspell:hyphen:73dd296:hunspell_hyphen/core/Common/3dParty/hyphen/hyphen \
 		mity:md4c:481fbfb:mity_md4c/core/Common/3dParty/md/md4c \
 		fsbruva:onlyoffice-DS-pkg-cache:v${NODE_VERSION_PKGFETCH}:pkg_cache/ \
-		fsbruva:onlyoffice-DS-npm-cache:v${DISTVERSION}-20250701:npm_cache/
+		fsbruva:onlyoffice-DS-npm-cache:v${DISTVERSION}-20250721:npm_cache/
 
 OPTIONS_SINGLE=		DB
 OPTIONS_SINGLE_DB=	MYSQL PGSQL
@@ -99,11 +99,11 @@ SUB_LIST=	DS_GROUPNAME=${DS_GROUPNAME} \
 		PREFIX=${PREFIX} \
 		WWWDIR=${WWWDIR}
 
-# node version used with "npm install @yao-pkg/pkg@6.5.1"
+# node version used with "npm install @yao-pkg/pkg@6.6.0"
 # keep in sync with patch-build__tools_scripts_build__server.py and patch-document-server-package_Makefile
-NODE_VERSION_PKGFETCH=	20.19.1
+NODE_VERSION_PKGFETCH=	20.19.4
 
-MAKE_ENV=	BUILD_NUMBER="36" \
+MAKE_ENV=	BUILD_NUMBER="31" \
 		PKG_CACHE_PATH=${WRKDIR}/.pkg-cache \
 		PRODUCT_VERSION=${DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/} \
 		BUILD_NUMBER=${DISTVERSION:C/^[0-9]+\.[0-9]+\.[0-9]+\.([0-9]+)/\1/}
@@ -117,7 +117,7 @@ DOS2UNIX_FILES=	document-server-package/common/documentserver/nginx/includes/htt
 CONFLICTS_BUILD=devel/googletest
 
 .include <bsd.port.pre.mk>
-.if ${ARCH} == aarch64
+.if ${ARCH} == aarch64 || ${ARCH} == armv7
 BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 BINARY_ALIAS+=	cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
 		cc=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \
@@ -207,7 +207,7 @@ do-build:
 
 	@${MKDIR} ${WRKSRC}/yao-pkg
 	@${CP} ${FILESDIR}/package* ${WRKSRC}/yao-pkg
-	@cd ${WRKSRC}/yao-pkg ; ${SETENV} ${MAKE_ENV} npm install @yao-pkg/pkg@6.5.1
+	@cd ${WRKSRC}/yao-pkg ; ${SETENV} ${MAKE_ENV} npm install @yao-pkg/pkg@6.6.0
 
 	@cd ${WRKSRC} && ${PATCH} -N -s -i ${FILESDIR}/extra-patch-pkg-fetch_lib-es5_build.js || ${TRUE}
 	@cd ${WRKSRC} && ${PATCH} -N -s -i ${FILESDIR}/extra-patch-pkg-fetch_patches_node.v${NODE_VERSION_PKGFETCH}.cpp.patch || ${TRUE}
@@ -266,7 +266,7 @@ create-caches-tarball:
 	${FIND} ${WRKDIR}/.pkg-cache -type f -perm 755 -exec file {} \; | ${EGREP} "ELF|PE32+|Mach-O" | ${AWK} -F ':' '{print $$1}' | ${XARGS} ${RM}
 	${FIND} ${WRKDIR}/.pkg-cache -type f -perm 644 -exec file {} \; | ${EGREP} -v "${NODE_VERSION_PKGFETCH}" | ${EGREP} "built-v|node-v" | ${EGREP} "tar.gz|sha256sum" | ${AWK} -F ':' '{print $$1}' | ${XARGS} ${RM}
 
-	cd ${WRKDIR} && \
-		${TAR} czf ${PORTNAME}-${DISTVERSION}_`date +%Y%m%d`-npm-cache.tar.gz .npm .pkg-cache
+#	cd ${WRKDIR} && \
+#		${TAR} czf ${PORTNAME}-${DISTVERSION}_`date +%Y%m%d`-npm-cache.tar.gz .npm .pkg-cache
 
 .include <bsd.port.post.mk>

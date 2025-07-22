@@ -14,9 +14,10 @@
    # fix gumbo
    base.replaceInFile(base_directory + "/gumbo-parser/src/tag.c", "isspace(*c)", "isspace((unsigned char)*c)")
  
- if not base.is_dir("katana-parser"):
+-if not base.is_dir("katana-parser"):
 -  base.cmd("git", ["clone", "https://github.com/jasenhuang/katana-parser.git"])
 -  base.cmd_in_dir("katana-parser", "git", ["checkout", "be6df458d4540eee375c513958dcb862a391cdd1"])
++if base.is_dir("katana-parser"):
 +#  base.cmd("git", ["clone", "https://github.com/jasenhuang/katana-parser.git"])
 +#  base.cmd_in_dir("katana-parser", "git", ["checkout", "be6df458d4540eee375c513958dcb862a391cdd1"])
  
