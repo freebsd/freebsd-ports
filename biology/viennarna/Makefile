@@ -15,6 +15,7 @@ LICENSE_NAME=	Vienna RNA License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
+BROKEN_FreeBSD_13=	compilation fails with clang-19: see https://github.com/ViennaRNA/ViennaRNA/issues/253
 BROKEN_FreeBSD_15=	compilation fails with clang-19: see https://github.com/ViennaRNA/ViennaRNA/issues/253
 
 BUILD_DEPENDS=	bash:shells/bash \
