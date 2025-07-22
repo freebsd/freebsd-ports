@@ -19,6 +19,8 @@ LICENSE_FILE_LGPL3=		${WRKSRC}/image_LICENSE_OOo.txt
 LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE_YORICK.txt
 LICENSE_FILE_APACHE11=		${WRKSRC}/LICENSE_COLORBREWER.txt
 
+BROKEN_i386=	stage fails: Building TVTK classes... Fatal Python error: Illegal instruction
+
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PY_SPHINX} \
 		sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
