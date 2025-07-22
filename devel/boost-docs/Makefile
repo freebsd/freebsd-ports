@@ -20,7 +20,7 @@ SHEBANG_GLOB=	*.py
 
 PORTDOCS=	*
 
-.include "${.CURDIR}/../boost-all/common.mk"
+.include "${.CURDIR:H}/boost-all/common.mk"
 
 do-install:
 # Documentation & examples

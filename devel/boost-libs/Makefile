@@ -1,5 +1,5 @@
 PORTNAME=	boost-libs
-PORTREVISION?=	1
+PORTREVISION?=	2
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 WWW=		https://www.boost.org/
@@ -31,24 +31,36 @@ LIB_DEPENDS+=	libzstd.so:archivers/zstd
 # -RELEASE built with WITH_LLVM_ASSERTIONS set, then he can't build
 # this port successfully on such system. So provide LLVM_FROM_PORTS
 # option as a last resort for him.
-OPTIONS_DEFINE=		DEBUG LLVM_FROM_PORTS OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=		DEBUG GIL_EXT LLVM_FROM_PORTS OPTIMIZED_CFLAGS ZSTD
 OPTIONS_MULTI=		LOCALE
 OPTIONS_MULTI_LOCALE=	ICONV ICU
-OPTIONS_DEFAULT=	ICONV ICU
+OPTIONS_DEFAULT=	ICONV ICU ZSTD
+GIL_EXT_DESC=		Extra file-formats for Generic Image Library component
 ICONV_DESC=		Boost.Locale with iconv encoding support
 ICU_DESC=		Boost.Regex/Locale with ICU unicode support
 LLVM_FROM_PORTS_DESC=	Use LLVM from ports to build
 
+GIL_EXT_LIB_DEPENDS=	libpng.so:graphics/png	\
+			libraw.so:graphics/libraw \
+			libtiff.so:graphics/tiff
+GIL_EXT_USES=		localbase:ldflags jpeg
+GIL_EXT_MAKE_ARGS_OFF=	-sBOOST_GIL_ENABLE_EXT_IO=0
+
 ICONV_USES=		iconv
 ICONV_MAKE_ARGS=	-sICONV_PATH=${ICONV_PREFIX}
 ICONV_MAKE_ARGS_OFF=	boost.locale.iconv=off
+
 ICU_LIB_DEPENDS=	libicuuc.so:devel/icu
 ICU_MAKE_ARGS=		-sICU_PATH=${LOCALBASE}
 ICU_MAKE_ARGS_OFF=	boost.locale.icu=off
 
-.include "${.CURDIR}/../boost-all/common.mk"
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+ZSTD_USES=		localbase:ldflags
+ZSTD_MAKE_ARGS_OFF=	-sNO_ZSTD=1
 
-.include "${.CURDIR}/../boost-all/compiled.mk"
+.include "${.CURDIR:H}/boost-all/common.mk"
+
+.include "${.CURDIR:H}/boost-all/compiled.mk"
 
 MAKE_ARGS+=	--without-python
 MAKE_ARGS+=	--without-mpi
@@ -60,7 +72,6 @@ ALL_TARGET=	stage
 MAKE_ARGS+=	-sZSTD_PATH=${LOCALBASE}
 MAKE_ARGS+=	-sZSTD_LIBRARY_PATH=${LOCALBASE}/lib
 MAKE_ARGS+=	-sZSTD_INCLUDE=${LOCALBASE}/include
-
 
 .include <bsd.port.options.mk>
 
@@ -90,6 +101,10 @@ do-install:
 		${REINPLACE_CMD} -i '' -e 's,${STAGEDIR},,' {} +
 # For some reasons BJAM forget about the links
 	@cd ${WRKSRC}/stage/ && ${FIND} lib -type l | ${PAX} -rw -p p ${STAGEDIR}${PREFIX}
+
+do-test:
+	${LN} -s ${STAGEDIR}${PREFIX}/include ${WRKSRC}/libs/predef
+	cd ${WRKSRC}/status && bjam ${MAKE_ARGS:NDESTDIR=*}
 
 # display pkg-message
 post-install:

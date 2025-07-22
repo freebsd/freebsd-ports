@@ -7,23 +7,23 @@ WWW=		https://www.boost.org/
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
-PATCHDIR=	${.CURDIR}/../boost-libs/files
+PATCHDIR=	${.CURDIR:H}/boost-libs/files
 
 BUILD_DEPENDS=	bjam:devel/boost-jam \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.26:math/py-numpy@${PY_FLAVOR}
+		${PYNUMPY}
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libboost_container.so:devel/boost-libs
 
-USES=		python
+USES=		python:3.9-3.11  # upper bound inherited from math/py-numpy
 USE_PYTHON=	flavors
 
 #LDFLAGS+=	-Wl,--as-needed
 
 OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS
 
-.include "${.CURDIR}/../boost-all/common.mk"
+.include "${.CURDIR:H}/boost-all/common.mk"
 
-.include "${.CURDIR}/../boost-all/compiled.mk"
+.include "${.CURDIR:H}/boost-all/compiled.mk"
 
 MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_VERSION="${PYTHON_VERSION}"\
