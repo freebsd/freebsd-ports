@@ -32,6 +32,7 @@
     SUBDIR += arprelease
     SUBDIR += arrowdl
     SUBDIR += asio
+    SUBDIR += asio130
     SUBDIR += asterisk-chan_sccp
     SUBDIR += asterisk-g72x
     SUBDIR += asterisk18
