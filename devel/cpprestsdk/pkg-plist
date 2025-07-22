@@ -4,6 +4,7 @@ include/cpprest/base_uri.h
 include/cpprest/containerstream.h
 include/cpprest/details/SafeInt3.hpp
 include/cpprest/details/basic_types.h
+include/cpprest/details/char_traits.h
 include/cpprest/details/cpprest_compat.h
 include/cpprest/details/fileio.h
 include/cpprest/details/http_constants.dat
