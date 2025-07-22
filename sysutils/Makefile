@@ -848,6 +848,7 @@
     SUBDIR += p5-MogileFS-Utils
     SUBDIR += p5-Monitor-Simple
     SUBDIR += p5-OpenTelemetry
+    SUBDIR += p5-OpenTelemetry-Exporter-OTLP
     SUBDIR += p5-POSIX-Run-Capture
     SUBDIR += p5-Plugtools
     SUBDIR += p5-Plugtools-Plugins-HomeOU
