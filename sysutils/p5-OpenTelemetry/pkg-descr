@@ -1,0 +1,10 @@
+The OpenTelemetry distribution is the Perl implementation of OpenTelemetry.
+This module provides an entrypoint and exposes exposes an interface to get
+and set components that need to be globally available.
+
+The OpenTelemetry standard keeps a strict separation between an API layer
+that implements an interface that is backend-agnostic, and an SDK layer
+that can be connected to the API to do the actual work.
+
+$logger_provider = OpenTelemetry->logger_provider;
+OpenTelemetry->logger_provider = $new_logger_provider;
