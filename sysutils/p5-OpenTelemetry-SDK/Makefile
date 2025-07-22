@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Feature-Compat-Try>0:devel/p5-Feature-Compat-Try \
 		p5-Metrics-Any>0:devel/p5-Metrics-Any \
 		p5-Mutex>0:devel/p5-Mutex \
 		p5-Object-Pad>=0.74:devel/p5-Object-Pad \
-		p5-OpenTelemetry-Exporter-OTLP.0:sysutils/p5-OpenTelemetry-Exporter-OTLP \
+		p5-OpenTelemetry-Exporter-OTLP>0:sysutils/p5-OpenTelemetry-Exporter-OTLP \
 		p5-OpenTelemetry>=0.030:sysutils/p5-OpenTelemetry
 
 NO_ARCH=	yes
