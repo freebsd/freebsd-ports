@@ -1,5 +1,5 @@
 PORTNAME=	virtualenv
-PORTVERSION=	20.31.2
+PORTVERSION=	20.32.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -48,7 +48,6 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BINARY_ALIAS=	towncrier=towncrier-${PYTHON_VER}
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click-default-group>=1.2.4:devel/py-click-default-group@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}filelock>=3.12.2:sysutils/py-filelock@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}furo>=2023.7.26:textproc/py-furo@${PY_FLAVOR} \
@@ -58,6 +57,7 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click-default-group>=1.2.4:devel/py-c
 			${PYTHON_PKGNAMEPREFIX}sphinx>=5.3.0:textproc/py-sphinx@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-towncrier>=0.3.2a0:textproc/py-sphinxcontrib-towncrier@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}towncrier>=22.12.0:textproc/py-towncrier@${PY_FLAVOR}
+DOCS_BINARY_ALIAS=	towncrier=towncrier-${PYTHON_VER}
 DOCS_PLIST_FILES=	share/man/man1/virtualenv.1.gz
 DOCS_PORTDOCS=		* .buildinfo
 
