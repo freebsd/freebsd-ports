@@ -12,6 +12,8 @@ WWW=		https://tabby.tabbyml.com/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		smartstring crate fails to compile https://github.com/bodil/smartstring/issues/54, also see https://github.com/graphql-rust/juniper/issues/1340
+
 BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libllama.so:misc/llama-cpp \
