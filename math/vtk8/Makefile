@@ -12,6 +12,7 @@ WWW=		https://www.vtk.org
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_FreeBSD_13=	complation fails: error: no member named 'derived' in 'Transpose<TranspositionsBase<type-parameter-0-0>>'
 BROKEN_FreeBSD_15=	complation fails: error: no member named 'derived' in 'Transpose<TranspositionsBase<type-parameter-0-0>>'
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
