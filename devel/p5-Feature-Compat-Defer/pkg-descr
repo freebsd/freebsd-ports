@@ -1,0 +1,13 @@
+This module provides a new syntax keyword, defer, in a forward-compatible way.
+
+The latest perl development source provides a defer block syntax, under the
+defer named feature. If all goes well, this will become available at
+development version 5.35.4, and included in the 5.36 release. On such perls,
+this module simply enables that feature.
+
+       defer {
+          STATEMENTS...
+       }
+
+The defer keyword introduces a block which runs its code body at the time that
+its immediately surrounding code block finishes.
