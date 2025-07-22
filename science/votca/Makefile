@@ -12,7 +12,6 @@ WWW=		https://www.votca.org/ \
 LICENSE=	APACHE20
 
 BROKEN_i386=		undefined reference to `__atomic_load' # '
-BROKEN_FreeBSD_13=	compilation fails: error: no member named 'bool_isnan' in namespace 'std::__math'; did you mean simply 'bool_isnan'?
 
 PY_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}ase>0:science/py-ase@${PY_FLAVOR} \
