@@ -4,7 +4,7 @@ MAKE_CMD?=	bjam
 MAKEFILE=	#
 MAKE_FLAGS=	#
 ALL_TARGET=	stage
-#USES+=		compiler:c++17-lang
+USES+=		compiler:c++17-lang
 USE_CXXSTD=	gnu++17
 
 LDFLAGS+=	-Wl,--as-needed
@@ -49,9 +49,8 @@ MAKE_ARGS+=	pch=off
 	((${OSVERSION} >= 1500000 && ${OSVERSION} < 1500017) || \
 	${PORT_OPTIONS:MLLVM_FROM_PORTS})
 USES+=	llvm:build
+USES:=	${USES:Ncompiler\:*} # XXX avoid warnings
 CHOSEN_COMPILER_TYPE=	clang
-.else
-USES+=	compiler:c++17-lang
 .endif
 
 post-patch:

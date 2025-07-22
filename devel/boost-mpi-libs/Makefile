@@ -8,7 +8,7 @@ WWW=		https://www.boost.org/
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
-PATCHDIR=	${.CURDIR}/../boost-libs/files
+PATCHDIR=	${.CURDIR:H}/boost-libs/files
 
 BUILD_DEPENDS=	bjam:devel/boost-jam \
 		${PYNUMPY}
@@ -39,9 +39,9 @@ OPTIONS_EXCLUDE_powerpc=OPENMPI
 MPICH_USES=	mpi:mpich
 OPENMPI_USES=	mpi:openmpi
 
-.include "${.CURDIR}/../boost-all/common.mk"
+.include "${.CURDIR:H}/boost-all/common.mk"
 
-.include "${.CURDIR}/../boost-all/compiled.mk"
+.include "${.CURDIR:H}/boost-all/compiled.mk"
 
 MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_VERSION="${PYTHON_VERSION}"\
