@@ -8,6 +8,7 @@ share/applications/fheroes2.desktop
 %%DATADIR%%/files/data/resurrection.h2d
 %%DATADIR%%/maps/7_deserts_English.fh2m
 %%DATADIR%%/maps/7_deserts_French.fh2m
+%%DATADIR%%/maps/Good,_Bad,_Magne.fh2m
 %%DATADIR%%/maps/Eruption_English.fh2m
 %%DATADIR%%/maps/Eruption_French.fh2m
 share/icons/hicolor/128x128/apps/fheroes2.png
