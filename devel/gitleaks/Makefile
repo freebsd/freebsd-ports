@@ -1,22 +1,23 @@
 PORTNAME=	gitleaks
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.24.0
-PORTREVISION=	3
+DISTVERSION=	8.28.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for detecting hardcoded secrets in git repositories
-WWW=		https://github.com/zricethezav/gitleaks
+WWW=		https://github.com/gitleaks/gitleaks
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:modules
 USE_GITHUB=	nodefault
 GH_TUPLE=	golang:sys:v0.6.0:sys
 
 GO_MODULE=	github.com/zricethezav/gitleaks/v8
 GO_TARGET=	.
+GO_BUILDFLAGS=	-ldflags="-X github.com/zricethezav/gitleaks/v8/cmd.Version=${DISTVERSION}"
+
 PLIST_FILES=	bin/${PORTNAME}
 
 pre-patch:
