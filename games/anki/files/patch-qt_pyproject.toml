@@ -1,15 +1,15 @@
 Relax version requirements for several PyQt6 components.
 
---- qt/pyproject.toml.orig	2025-07-05 14:16:12 UTC
+--- qt/pyproject.toml.orig	2025-07-18 17:56:16 UTC
 +++ qt/pyproject.toml
-@@ -45,11 +45,11 @@ qt = [
+@@ -38,11 +38,11 @@ qt = [
    "pyqt6_sip==13.10.2",
  ]
  qt = [
--  "pyqt6==6.8.0",
--  "pyqt6-qt6==6.8.1",
+-  "pyqt6==6.9.1",
+-  "pyqt6-qt6==6.9.1",
 -  "pyqt6-webengine==6.8.0",
--  "pyqt6-webengine-qt6==6.8.1",
+-  "pyqt6-webengine-qt6==6.8.2",
 -  "pyqt6_sip==13.10.2",
 +  "pyqt6",
 +  "pyqt6-qt6",
@@ -17,5 +17,5 @@ Relax version requirements for several PyQt6 components.
 +  "pyqt6-webengine-qt6",
 +  "pyqt6_sip",
  ]
- 
- [tool.uv]
+ qt68 = [
+   "pyqt6==6.8.0",
