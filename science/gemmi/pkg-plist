@@ -23,6 +23,7 @@ include/gemmi/crd.hpp
 include/gemmi/ddl.hpp
 include/gemmi/dencalc.hpp
 include/gemmi/dirwalk.hpp
+include/gemmi/dssp.hpp
 include/gemmi/ecalc.hpp
 include/gemmi/eig3.hpp
 include/gemmi/elem.hpp
