@@ -206,7 +206,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde-1.0.219 \
 		serde-wasm-bindgen-0.6.5 \
 		serde_derive-1.0.219 \
-		serde_json-1.0.140 \
+		serde_json-1.0.141 \
 		serde_repr-0.1.20 \
 		serde_spanned-0.6.9 \
 		serde_urlencoded-0.7.1 \
@@ -221,8 +221,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		string_cache-0.8.9 \
 		string_cache_codegen-0.5.4 \
 		strsim-0.11.1 \
-		strum-0.27.1 \
-		strum_macros-0.27.1 \
+		strum-0.27.2 \
+		strum_macros-0.27.2 \
 		subtle-2.6.1 \
 		syn-2.0.104 \
 		sync_wrapper-1.0.2 \
@@ -272,7 +272,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tree-sitter-kotlin-ng-1.1.0 \
 		tree-sitter-language-0.1.5 \
 		tree-sitter-lua-0.2.0 \
-		tree-sitter-nix-0.0.2 \
+		tree-sitter-nix-0.3.0 \
 		tree-sitter-php-0.23.11 \
 		tree-sitter-python-0.23.6 \
 		tree-sitter-ruby-0.23.1 \
