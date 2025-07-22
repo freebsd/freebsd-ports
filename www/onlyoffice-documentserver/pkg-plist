@@ -1156,7 +1156,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/sdkjs/pdf/src/annotations/stamps/ja-JA.json
 %%WWWDIR%%/documentserver/sdkjs/pdf/src/annotations/stamps/pt-BR.json
 %%WWWDIR%%/documentserver/sdkjs/pdf/src/annotations/stamps/ru-RU.json
-%%WWWDIR%%/documentserver/sdkjs/pdf/src/annotations/stamps/zh-ZH.json
+%%WWWDIR%%/documentserver/sdkjs/pdf/src/annotations/stamps/zh-CN.json
 %%WWWDIR%%/documentserver/sdkjs/pdf/src/engine/cmap.bin
 %%WWWDIR%%/documentserver/sdkjs/pdf/src/engine/drawingfile.js
 %%WWWDIR%%/documentserver/sdkjs/pdf/src/engine/drawingfile.wasm
