@@ -34,7 +34,6 @@ include/fb303/detail/QuantileStatMap.h
 include/fb303/detail/QuantileStatWrappers-inl.h
 include/fb303/detail/QuantileStatWrappers.h
 include/fb303/detail/RegexUtil.h
-@dir include/fb303/thrift/clients
 include/fb303/thrift/gen-cpp2/BaseService.h
 include/fb303/thrift/gen-cpp2/BaseService.tcc
 include/fb303/thrift/gen-cpp2/BaseServiceAsyncClient.h
@@ -44,8 +43,12 @@ include/fb303/thrift/gen-cpp2/fb303_core_metadata.h
 include/fb303/thrift/gen-cpp2/fb303_core_types.h
 include/fb303/thrift/gen-cpp2/fb303_core_types.tcc
 include/fb303/thrift/gen-cpp2/fb303_core_types_custom_protocol.h
-@dir include/fb303/thrift/mocks
-@dir include/fb303/thrift/services
+@dir include/fb303/thrift/rust/clients
+@dir include/fb303/thrift/rust/gen_safe_patch/clients
+@dir include/fb303/thrift/rust/gen_safe_patch/mocks
+@dir include/fb303/thrift/rust/gen_safe_patch/services
+@dir include/fb303/thrift/rust/mocks
+@dir include/fb303/thrift/rust/services
 include/thrift-files/fb303/thrift/fb303_core.thrift
 lib/cmake/fb303/fb303-config.cmake
 lib/cmake/fb303/fb303-targets-%%CMAKE_BUILD_TYPE%%.cmake
