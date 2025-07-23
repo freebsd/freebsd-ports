@@ -22,7 +22,7 @@ LIB_DEPENDS=	libclutter-glx-1.0.so:graphics/clutter \
 		libdbus-1.so:devel/dbus
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}atspi>=2.1.91:accessibility/py-atspi@${PY_FLAVOR}
 
-USES=		autoreconf:2.69 gettext gl gmake gnome libtool localbase pathfix \
+USES=		autoreconf:2.69 gettext gl gmake gnome libtool localbase \
 		pkgconfig python shebangfix vala:build xorg
 
 USE_GITLAB=	yes

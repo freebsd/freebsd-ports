@@ -14,7 +14,7 @@ BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libdotconf.so:devel/dotconf \
 		libsndfile.so:audio/libsndfile
 
-USES=		gettext gmake gnome libtool localbase makeinfo pathfix \
+USES=		gettext gmake gnome libtool localbase makeinfo \
 		pkgconfig
 USE_GNOME=	glib20 intltool
 USE_LDCONFIG=	yes
