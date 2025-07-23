@@ -3600,10 +3600,6 @@ install-ldconfig-file:
 fixup-lib-pkgconfig:
 	@if [ -d ${STAGEDIR}${PREFIX}/lib/pkgconfig ]; then \
 		if [ -z "$$(${FIND} ${STAGEDIR}${PREFIX}/lib/pkgconfig -maxdepth 0 -empty)" ]; then \
-			if [ -n "${DEVELOPER:Dyes}" ]; then \
-				${ECHO_MSG} "===>   File(s) found in lib/pkgconfig while correct path is libdata/pkgconfig"; \
-				${ECHO_MSG} "       Applying fix but consider using USES= pathfix or adjust install path"; \
-			fi; \
 			${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig; \
 			${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/* ${STAGEDIR}${PREFIX}/libdata/pkgconfig; \
 		fi; \
