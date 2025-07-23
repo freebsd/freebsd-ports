@@ -1,5 +1,4 @@
 bin/tsclient
-libdata/bonobo/servers/GNOME_TSClientApplet.server
 libexec/tsclient-applet
 share/man/man1/tsclient.1.gz
 share/application-registry/tsclient.applications
