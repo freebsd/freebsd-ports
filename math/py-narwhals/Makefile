@@ -1,5 +1,5 @@
 PORTNAME=	narwhals
-PORTVERSION=	1.46.0
+PORTVERSION=	1.47.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
 		https://github.com/narwhals-dev/narwhals/releases/download/v${PORTVERSION}/
@@ -34,7 +34,7 @@ DUCKDB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}duckdb>=1.0:databases/py-duckdb@${PY_
 PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.1.3,1:math/py-pandas@${PY_FLAVOR}
 MODIN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}modin>=0:math/py-modin@${PY_FLAVOR}
 POLARS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}polars>=0.20.4:misc/py-polars@${PY_FLAVOR}
-PYARROW_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyarrow>=11.0.0:databases/py-pyarrow@${PY_FLAVOR}
+PYARROW_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyarrow>=13.0.0:databases/py-pyarrow@${PY_FLAVOR}
 SQLFRAME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlframe>=3.22.0:databases/py-sqlframe@${PY_FLAVOR}
 
 .include <bsd.port.mk>
