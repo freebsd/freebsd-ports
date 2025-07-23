@@ -92,7 +92,11 @@ SETENV?=	/usr/bin/env
 FETCHINDEX?=	${SETENV} ${FETCH_ENV} fetch -am -o
 
 .if !defined(INDEX_JOBS)
+.  if defined(.MAKE.JOBS)
+INDEX_JOBS=	${.MAKE.JOBS}
+.  else
 INDEX_JOBS!=	${SYSCTL} -n kern.smp.cpus
+.  endif
 .endif
 
 .if !defined(INDEX_VERBOSE)
