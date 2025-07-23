@@ -8088,6 +8088,7 @@
     SUBDIR += rubygem-tzinfo1
     SUBDIR += rubygem-uber
     SUBDIR += rubygem-un
+    SUBDIR += rubygem-undercover
     SUBDIR += rubygem-unicode
     SUBDIR += rubygem-unicode-display_width
     SUBDIR += rubygem-unicode-display_width2
