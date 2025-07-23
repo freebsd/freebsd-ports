@@ -11,7 +11,7 @@ WWW=		https://github.com/libinotify-kqueue/libinotify-kqueue
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		libtool
+USES=		libtool pathfix
 
 CONFIGURE_ARGS=	--enable-skip-subfiles=fusefs,smbfs
 GNU_CONFIGURE=	yes
