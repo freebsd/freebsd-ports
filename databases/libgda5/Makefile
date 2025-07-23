@@ -24,7 +24,7 @@ BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup \
 
-USES+=		gettext gmake gnome libtool localbase pathfix pkgconfig
+USES+=		gettext gmake gnome libtool localbase pkgconfig
 USE_GNOME=	glib20 libxslt intlhack introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

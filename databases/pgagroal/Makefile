@@ -15,7 +15,7 @@ BUILD_DEPENDS=	rst2man:textproc/py-docutils
 LIB_DEPENDS=	libcjson.so:devel/libcjson \
 		libev.so:devel/libev
 
-USES=		cmake pathfix ssl
+USES=		cmake ssl
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	pgagroal
 

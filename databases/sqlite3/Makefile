@@ -31,7 +31,7 @@ icu_PKGNAMESUFFIX=	-${FLAVOR}	# databases/p5-DBD-SQLite with ICU support
 tcl_PKGNAMESUFFIX=	-${FLAVOR}	# lang/tcl* support
 .endif
 
-USES=	libtool ncurses pathfix zip
+USES=	libtool ncurses zip
 USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes

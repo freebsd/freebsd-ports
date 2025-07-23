@@ -15,7 +15,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent
 TEST_DEPENDS=	memcached:databases/memcached \
 		onetbb>=0:devel/onetbb
 
-USES=		bison compiler:c++11-lang pathfix pkgconfig ssl
+USES=		bison compiler:c++11-lang pkgconfig ssl
 
 CMAKE_OFF=	BUILD_DOCSONLY \
 		BUILD_DOCS_MANGZ \

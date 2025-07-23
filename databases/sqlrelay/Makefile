@@ -15,7 +15,7 @@ LIB_DEPENDS=	librudiments.so:devel/rudiments \
 		libcurl.so:ftp/curl \
 		libiconv.so:converters/libiconv
 
-USES=		gmake iconv libedit libtool pathfix python readline ssl
+USES=		gmake iconv libedit libtool python readline ssl
 
 PATHFIX_MAKEFILEIN=	Makefile
 CPPFLAGS+=	-I${LOCALBASE}/include

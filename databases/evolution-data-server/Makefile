@@ -29,7 +29,7 @@ LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libgraphene-1.0.so:graphics/graphene
 
 USES=		cmake cpe desktop-file-utils gettext \
-		gnome gperf iconv:wchar_t localbase pathfix pkgconfig \
+		gnome gperf iconv:wchar_t localbase pkgconfig \
 		python:build sqlite tar:xz xorg
 USE_CXXSTD=	gnu++17
 USE_GNOME=	glib20 gtk30 gtk40 introspection:build libxml2

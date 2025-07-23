@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgeos_c.so:graphics/geos \
 		librttopo.so:devel/librttopo
 
 GNU_CONFIGURE=	yes
-USES=		gmake gnome iconv libtool pathfix minizip pkgconfig sqlite
+USES=		gmake gnome iconv libtool minizip pkgconfig sqlite
 USE_GNOME=	libxml2
 
 CFLAGS+=	-I${WRKSRC}/src/headers -I${LOCALBASE}/include

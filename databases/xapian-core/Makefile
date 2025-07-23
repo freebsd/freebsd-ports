@@ -12,7 +12,7 @@ WWW=		https://xapian.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang libtool pathfix tar:xz
+USES=		compiler:c++11-lang libtool tar:xz
 
 CONFIGURE_ARGS=	ac_cv_func_snprintf=snprintf
 GNU_CONFIGURE=	yes

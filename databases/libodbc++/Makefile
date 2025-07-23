@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
-USES=		gmake libtool ncurses pathfix pkgconfig readline tar:bzip2
+USES=		gmake libtool ncurses pkgconfig readline tar:bzip2
 USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 

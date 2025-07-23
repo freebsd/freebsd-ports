@@ -10,7 +10,7 @@ WWW=		https://github.com/redis/hiredis
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake cpe pathfix ssl
+USES=		cmake cpe ssl
 CPE_VENDOR=	redislabs
 
 USE_GITHUB=	yes

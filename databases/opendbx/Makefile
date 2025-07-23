@@ -10,7 +10,7 @@ WWW=		http://www.linuxnetworks.de/opendbx/
 
 LICENSE=	LGPL21
 
-USES=		gmake libtool pathfix readline
+USES=		gmake libtool readline
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${WRKSRC}/lib -L${LOCALBASE}/lib

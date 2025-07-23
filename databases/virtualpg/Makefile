@@ -12,7 +12,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_MPL11=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv pathfix pkgconfig libtool pgsql sqlite
+USES=		gmake iconv pkgconfig libtool pgsql sqlite
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${WRKSRC}/src/headers -I${LOCALBASE}/include

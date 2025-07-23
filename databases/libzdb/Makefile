@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_i386=	fails to build
 BROKEN_powerpc=	fails to build
 
-USES=		compiler:c++20-lang gmake libtool localbase pathfix
+USES=		compiler:c++20-lang gmake libtool localbase
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

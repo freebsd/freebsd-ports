@@ -9,7 +9,7 @@ COMMENT=	SQL database engine in a C library
 WWW=		https://www.sqlite.org/
 
 GNU_CONFIGURE=	yes
-USES=		cpe gmake libtool pathfix pkgconfig readline
+USES=		cpe gmake libtool pkgconfig readline
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--with-hints=freebsd.hints
