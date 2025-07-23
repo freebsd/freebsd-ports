@@ -1,5 +1,6 @@
 PORTNAME=	jupyter-events
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +30,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}fqdn>=0:www/py-fqdn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpointer>=1.13:devel/py-jsonpointer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rfc3339-validator>=0:devel/py-rfc3339-validator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rfc3986-validator>=0.1.0:devel/py-rfc3986-validator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rfc3987-syntax>=1.1.0:www/py-rfc3987-syntax@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uri-template>=0:net/py-uri-template@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webcolors>=24.6.0:graphics/py-webcolors@${PY_FLAVOR}
 
