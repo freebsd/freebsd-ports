@@ -33,7 +33,6 @@ GNEE_DESKTOP_ENTRIES=	"Gnee" "" "${PORTNAME}.png" \
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$${libdir}/gnome-panel|$${prefix}/libexec|g ; \
-		 s|$${libdir}/bonobo/|$${prefix}/libdata/bonobo/|g ; \
 		 s|"CCC"|""|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|@PIXMAP_DIR@|pixmap|g ; \
