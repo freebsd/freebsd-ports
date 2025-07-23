@@ -1,4 +1,8 @@
 libexec/cabal/share/koka/%%VER%%/kklib/CMakeLists.txt
+libexec/cabal/%%DATADIR%%/%%VER%%/kklib/include/kklib/lazy.h
+libexec/cabal/%%DATADIR%%/%%VER%%/kklib/src/lazy.c
+libexec/cabal/%%DATADIR%%/%%VER%%/lib/std/core/lazy.kk
+libexec/cabal/%%DATADIR%%/%%VER%%/lib/std/core/maybe2.kk
 libexec/cabal/share/koka/%%VER%%/kklib/ide/vs2019/kklib-test-effbayes.vcxproj
 libexec/cabal/share/koka/%%VER%%/kklib/ide/vs2019/kklib-test-effbayes.vcxproj.filters
 libexec/cabal/share/koka/%%VER%%/kklib/ide/vs2019/kklib-test-effbayes.vcxproj.user
