@@ -1,5 +1,16 @@
---- chef.gemspec.orig	2025-04-11 20:59:53 UTC
+--- chef.gemspec.orig	2025-07-23 04:51:07 UTC
 +++ chef.gemspec
+@@ -24,8 +24,8 @@ Gem::Specification.new do |s|
+ 
+   s.add_runtime_dependency(%q<chef-config>.freeze, ["= 18.7.10".freeze])
+   s.add_runtime_dependency(%q<chef-utils>.freeze, ["= 18.7.10".freeze])
+-  s.add_runtime_dependency(%q<train-core>.freeze, ["~> 3.10".freeze, "<= 3.12.13".freeze])
+-  s.add_runtime_dependency(%q<train-winrm>.freeze, ["~> 0.2.17".freeze])
++  s.add_runtime_dependency(%q<train-core>.freeze, ["~> 3.10".freeze])
++  s.add_runtime_dependency(%q<train-winrm>.freeze, [">= 0.2.17".freeze])
+   s.add_runtime_dependency(%q<train-rest>.freeze, [">= 0.4.1".freeze])
+   s.add_runtime_dependency(%q<license-acceptance>.freeze, [">= 1.0.5".freeze, "< 3".freeze])
+   s.add_runtime_dependency(%q<mixlib-cli>.freeze, [">= 2.1.1".freeze, "< 3.0".freeze])
 @@ -35,12 +35,12 @@ Gem::Specification.new do |s|
    s.add_runtime_dependency(%q<mixlib-archive>.freeze, [">= 0.4".freeze, "< 2.0".freeze])
    s.add_runtime_dependency(%q<ohai>.freeze, ["~> 18.0".freeze])
