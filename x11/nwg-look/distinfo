@@ -1,9 +1,5 @@
-TIMESTAMP = 1741481426
-SHA256 (nwg-piotr-nwg-look-v1.0.3_GH0.tar.gz) = bab42b80ae6d5ce4ac11ed563e71c4f54608d1e97272001dd6494bd92d471177
-SIZE (nwg-piotr-nwg-look-v1.0.3_GH0.tar.gz) = 25289
-SHA256 (golang-sys-v0.29.0_GH0.tar.gz) = 7bac3e0a686a05d0e86ca110917b45f60553d6c146dba8a4cdafb911486428e7
-SIZE (golang-sys-v0.29.0_GH0.tar.gz) = 1519988
-SHA256 (gotk3-gotk3-ff349ae13f56_GH0.tar.gz) = e37085985248c69a8b429e37eb2ebee31a2b0f6bbd8310dc154050985fcc6b04
-SIZE (gotk3-gotk3-ff349ae13f56_GH0.tar.gz) = 279122
-SHA256 (sirupsen-logrus-v1.9.3_GH0.tar.gz) = cfa48a647a28c1f12fb6a9b672bc4d88b6407ff05aedcf23ce939d342646acce
-SIZE (sirupsen-logrus-v1.9.3_GH0.tar.gz) = 50320
+TIMESTAMP = 1753256472
+SHA256 (go/x11_nwg-look/nwg-look-v1.0.6/v1.0.6.mod) = 81fea2d19c3bf51a77752d8b1252949420a6e8fbe284fd83bf6755cd6c823662
+SIZE (go/x11_nwg-look/nwg-look-v1.0.6/v1.0.6.mod) = 223
+SHA256 (go/x11_nwg-look/nwg-look-v1.0.6/v1.0.6.zip) = 2d952459da1fdd3abfe2461026b72b8e2d18dca2ae6a6c1c6bcf20c02cbeda84
+SIZE (go/x11_nwg-look/nwg-look-v1.0.6/v1.0.6.zip) = 32411
