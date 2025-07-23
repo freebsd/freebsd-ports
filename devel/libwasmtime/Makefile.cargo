@@ -65,6 +65,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		colorchoice-1.0.0 \
 		console-0.15.8 \
 		constant_time_eq-0.1.5 \
+		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
 		cpp_demangle-0.4.3 \
 		cpufeatures-0.2.7 \
@@ -108,6 +109,8 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		flate2-1.1.0 \
 		fnv-1.0.7 \
 		foldhash-0.1.3 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
 		fs-set-times-0.20.1 \
 		fslock-0.2.1 \
@@ -206,6 +209,8 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		miniz_oxide-0.8.5 \
 		mio-1.0.3 \
 		multi-stash-0.2.0 \
+		mutatis-0.3.2 \
+		native-tls-0.2.14 \
 		ndarray-0.15.6 \
 		nom-7.1.3 \
 		nu-ansi-term-0.46.0 \
@@ -221,9 +226,13 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		ocaml-sys-0.22.3 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
-		openvino-0.8.0 \
-		openvino-finder-0.8.0 \
-		openvino-sys-0.8.0 \
+		openssl-0.10.73 \
+		openssl-macros-0.1.1 \
+		openssl-probe-0.1.6 \
+		openssl-sys-0.9.109 \
+		openvino-0.9.0 \
+		openvino-finder-0.9.0 \
+		openvino-sys-0.9.0 \
 		ort-2.0.0-rc.2 \
 		ort-sys-2.0.0-rc.2 \
 		overload-0.1.1 \
@@ -240,7 +249,6 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		prettyplease-0.2.31 \
 		proc-macro2-1.0.92 \
 		proptest-1.0.0 \
-		psm-0.1.18 \
 		quick-error-1.2.3 \
 		quick-error-2.0.1 \
 		quote-1.0.36 \
@@ -277,6 +285,9 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		ryu-1.0.9 \
 		safetensors-0.3.3 \
 		same-file-1.0.6 \
+		schannel-0.1.27 \
+		security-framework-2.11.1 \
+		security-framework-sys-2.14.0 \
 		semver-1.0.17 \
 		serde-1.0.215 \
 		serde_derive-1.0.215 \
@@ -324,6 +335,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		tinytemplate-1.2.1 \
 		tokio-1.44.2 \
 		tokio-macros-2.5.0 \
+		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.25.0 \
 		tokio-util-0.7.4 \
 		toml-0.8.10 \
@@ -352,6 +364,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		uuid-1.0.0 \
 		v8-134.5.0 \
 		valuable-0.1.0 \
+		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.3 \
@@ -365,24 +378,21 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		wasm-bindgen-macro-0.2.97 \
 		wasm-bindgen-macro-support-0.2.97 \
 		wasm-bindgen-shared-0.2.97 \
-		wasm-encoder-0.230.0 \
-		wasm-encoder-0.233.0 \
-		wasm-metadata-0.230.0 \
-		wasm-metadata-0.233.0 \
-		wasm-mutate-0.233.0 \
-		wasm-smith-0.233.0 \
-		wasm-wave-0.233.0 \
+		wasm-encoder-0.235.0 \
+		wasm-metadata-0.235.0 \
+		wasm-mutate-0.235.0 \
+		wasm-smith-0.235.0 \
+		wasm-wave-0.235.0 \
 		wasmi-0.43.1 \
 		wasmi_collections-0.43.1 \
 		wasmi_core-0.43.1 \
 		wasmi_ir-0.43.1 \
 		wasmparser-0.227.1 \
-		wasmparser-0.230.0 \
-		wasmparser-0.233.0 \
-		wasmprinter-0.233.0 \
+		wasmparser-0.235.0 \
+		wasmprinter-0.235.0 \
 		wast-35.0.2 \
-		wast-233.0.0 \
-		wat-1.233.0 \
+		wast-235.0.0 \
+		wat-1.235.0 \
 		web-sys-0.3.57 \
 		webpki-roots-0.26.1 \
 		which-6.0.3 \
@@ -408,17 +418,15 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		winnow-0.5.39 \
 		winsafe-0.0.19 \
 		winx-0.36.3 \
-		wit-bindgen-0.42.1 \
-		wit-bindgen-core-0.42.1 \
+		wit-bindgen-0.43.0 \
+		wit-bindgen-core-0.43.0 \
 		wit-bindgen-rt-0.33.0 \
 		wit-bindgen-rt-0.37.0 \
-		wit-bindgen-rt-0.42.1 \
-		wit-bindgen-rust-0.42.1 \
-		wit-bindgen-rust-macro-0.42.1 \
-		wit-component-0.230.0 \
-		wit-component-0.233.0 \
-		wit-parser-0.230.0 \
-		wit-parser-0.233.0 \
+		wit-bindgen-rt-0.43.0 \
+		wit-bindgen-rust-0.43.0 \
+		wit-bindgen-rust-macro-0.43.0 \
+		wit-component-0.235.0 \
+		wit-parser-0.235.0 \
 		witx-0.9.1 \
 		write16-1.0.0 \
 		writeable-0.5.5 \

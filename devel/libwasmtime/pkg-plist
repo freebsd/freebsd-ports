@@ -54,6 +54,7 @@ include/wasmtime/types/val.hh
 include/wasmtime/val.h
 include/wasmtime/val.hh
 include/wasmtime/wasi.hh
+include/wasmtime/wasip2.h
 include/wasmtime/wat.h
 include/wasmtime/wat.hh
 lib/libwasmtime.a
