@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils \
-		gmake gnome libtool localbase pathfix pkgconfig
+		gmake gnome libtool localbase pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo gtk20
 USE_LDCONFIG=	yes

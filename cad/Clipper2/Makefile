@@ -12,7 +12,7 @@ WWW=		https://github.com/AngusJohnson/Clipper2
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/../License.txt
 
-USES=	cmake compiler:c++17-lang dos2unix pathfix zip
+USES=	cmake compiler:c++17-lang dos2unix zip
 
 WRKSRC_SUBDIR=	CPP
 NO_WRKSUBDIR=	yes

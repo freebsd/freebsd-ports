@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	guile:lang/guile
 
-USES=		gmake pathfix libtool makeinfo perl5 pkgconfig
+USES=		gmake libtool makeinfo perl5 pkgconfig
 # Bug 219297: GCC 6 changed its default from -std=gnu++98 to -std=gnu++14, and
 # this port's code is not compatible with C++11. Since the project looks
 # abandoned upstream, it makes more sense to just continue building with an

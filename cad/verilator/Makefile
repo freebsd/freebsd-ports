@@ -21,7 +21,7 @@ LIB_DEPENDS=	libsystemc.so:devel/systemc # systemc is only added to share/verila
 RUN_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils \
 		gmake:devel/gmake # verilator runs gmake for the --hierarchical option when the 'gmake' method is chosen
 
-USES=		bison compiler:c++17-lang gmake localbase:ldflags pathfix perl5 python:build,run,test shebangfix tar:tgz
+USES=		bison compiler:c++17-lang gmake localbase:ldflags perl5 python:build,run,test shebangfix tar:tgz
 USE_CXXSTD=	c++17 # needs to match that of devel/systemc to avoid mismatches like https://github.com/verilator/verilator/issues/4499
 USE_GITHUB=	yes
 

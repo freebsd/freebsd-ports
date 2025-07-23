@@ -27,7 +27,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 
 USES=		desktop-file-utils gettext-tools gnome groff:build \
 		guile:2.2,3.0,conflicts iconv:wchar_t libtool localbase \
-		makeinfo pathfix perl5 pkgconfig shared-mime-info shebangfix \
+		makeinfo perl5 pkgconfig shared-mime-info shebangfix \
 		xorg
 USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
