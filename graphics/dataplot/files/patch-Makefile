@@ -1,4 +1,4 @@
---- Makefile.orig	2021-07-13 20:35:55 UTC
+--- Makefile.orig	2024-08-06 18:20:40 UTC
 +++ Makefile
 @@ -1,5 +1,5 @@
 -FC = gfortran
@@ -7,8 +7,8 @@
 +CC = %%CC%%
  
  # FEATURES to enable during compilation
- # all: READLINE NCURSES GD TIFF VPX CAIRO X11 GKS OPENGL PLOT XCLIP
-@@ -12,11 +12,12 @@ PREFIX = $(DESTDIR)/usr/local
+ # all: READLINE NCURSES GD TIFF VPX CAIRO X11 GKS OPENGL PLOT XCLIP CYGWIN MACOSX TCL DISABLE_SYSTEM_COMMAND STACK_SIZE DEBUG
+@@ -13,12 +13,13 @@ BINDIR = $(PREFIX)/bin
  BINDIR = $(PREFIX)/bin
  
  # where to find additional dataplot files (help, menus, etc).
@@ -16,15 +16,25 @@
 +DPLIBDIR=$(DESTDIR)%%DATADIR%%
  
  #FFLAGS += -O2 -DLINUX -fdefault-real-8 -fdefault-double-8 -fmax-stack-var-size=1000000 -Wall
+ #FFLAGS += -O2 -g -DLINUX -fdefault-real-8 -fdefault-double-8 -Wall
 -FFLAGS += -O2 -DLINUX -fdefault-real-8 -fdefault-double-8 -Wall
 -CFLAGS += -O2
-+FFLAGS += %%FFLAGS%%
++FFLAGS += %%FFLAGS%% -DLINUX
 +CFLAGS += %%CFLAGS%% -I%%LOCALBASE%%/include
 +LDFLAGS += -L%%LOCALBASE%%/lib
  
  # special flags for dp1
  DP1FLAGS = -DDDOUBLE -DINTEGER32 -DHAVE_ISNAN -DHAVE_EXECUTE_COMMAND_LINE -DDPLIBDIR=\'$(DPLIBDIR)\'
-@@ -129,7 +130,7 @@ clean:
+@@ -79,7 +80,7 @@ CFLAGS += -DHAVE_X11
+ LDFLAGS += -lcairo
+ FFLAGS4 += -DHAVE_CAIRO
+ CFLAGS += -DHAVE_X11
+-#CFLAGS += -I/usr/include/cairo
++CFLAGS += -I%%LOCALBASE%%/include/freetype2
+ endif
+ 
+ ifneq (,$(findstring PLOT,$(FEATURES)))
+@@ -170,7 +171,7 @@ install: dataplot xdataplot
  install: dataplot xdataplot
  	@echo installing binary to $(BINDIR)
  	-[ ! -d $(BINDIR) ] && mkdir -vp $(BINDIR) ||:
