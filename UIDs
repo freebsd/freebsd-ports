@@ -785,7 +785,7 @@ pocket-id:*:834:834::0:0:OIDC provider that allows users to authenticate with th
 filebrowser:*:835:835::0:0:Web File Browser:/var/db/filebrowser:/usr/sbin/nologin
 tinyauth:*:836:836::0:0:Simplest way to protect your apps with a login screen:/nonexistent:/usr/sbin/nologin
 homebox:*:837:837::0:0:Inventory and organization system built for the Home User:/var/db/homebox:/usr/sbin/nologin
-readur:*:838:838::0:0:Intuitive OCR platform:/var/db/readur:/usr/sbin/nologin
+# free: 838
 shiori:*:839:839::0:0:Simple bookmark manager built with Go:/var/db/shiori:/usr/sbin/nologin
 netdisco:*:840:840::0:0:netdisco daemon:/usr/local/etc/netdisco:/bin/sh
 tcpcryptd:*:841:841::0:0:tcpcrypt daemon:/nonexistent:/usr/sbin/nologin
