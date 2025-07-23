@@ -1,5 +1,5 @@
 PORTNAME=	Object-Pad
-PORTVERSION=	0.80.8
+PORTVERSION=	0.82.1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,10 +11,11 @@ WWW=		https://metacpan.org/dist/Object-Pad
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-XS-Parse-Keyword>=0.39:devel/p5-XS-Parse-Keyword \
-		p5-XS-Parse-Sublike>=0.15:devel/p5-XS-Parse-Sublike
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-XS-Parse-Keyword>=0.48:devel/p5-XS-Parse-Keyword \
+		p5-XS-Parse-Sublike>=0.35:devel/p5-XS-Parse-Sublike
 TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5

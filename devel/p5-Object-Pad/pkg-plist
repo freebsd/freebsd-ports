@@ -1,14 +1,16 @@
 %%SITE_ARCH%%/Object/Pad.pm
 %%SITE_ARCH%%/Object/Pad/ExtensionBuilder.pm
-%%SITE_ARCH%%/Object/Pad/ExtensionBuilder_data.pm
+%%SITE_ARCH%%/Object/Pad/Guide/MigratingFromClassicalPerl.pod
 %%SITE_ARCH%%/Object/Pad/MOP/Class.pm
 %%SITE_ARCH%%/Object/Pad/MOP/Field.pm
 %%SITE_ARCH%%/Object/Pad/MOP/FieldAttr.pm
 %%SITE_ARCH%%/Object/Pad/MOP/Method.pm
 %%SITE_ARCH%%/Object/Pad/MetaFunctions.pm
 %%SITE_ARCH%%/auto/Object/Pad/Pad.so
+%%SITE_ARCH%%/auto/share/module/Object-Pad/include/object_pad.h
 %%PERL5_MAN3%%/Object::Pad.3.gz
 %%PERL5_MAN3%%/Object::Pad::ExtensionBuilder.3.gz
+%%PERL5_MAN3%%/Object::Pad::Guide::MigratingFromClassicalPerl.3.gz
 %%PERL5_MAN3%%/Object::Pad::MOP::Class.3.gz
 %%PERL5_MAN3%%/Object::Pad::MOP::Field.3.gz
 %%PERL5_MAN3%%/Object::Pad::MOP::FieldAttr.3.gz
