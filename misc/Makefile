@@ -618,6 +618,8 @@
     SUBDIR += snakemake
     SUBDIR += soapysdr
     SUBDIR += solarized
+    SUBDIR += spacenavd-devel
+    SUBDIR += spnavcfg-devel
     SUBDIR += sshbuddy
     SUBDIR += sssnips
     SUBDIR += star-history
