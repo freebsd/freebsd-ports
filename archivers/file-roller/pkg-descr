@@ -11,7 +11,4 @@ The supported file types are:
 * Rar archives (.rar)
 * Single files compressed with gzip, bzip, bzip2, compress, lzop
 
-File Roller also has a document viewer based on bonobo that lets you view files
-of any type for which you have a viewer.
-
 Former WinZip users may find this program useful.  It serves the same purpose.
