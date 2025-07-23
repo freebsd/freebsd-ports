@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libz-ng.so:archivers/zlib-ng \
 		libzstd.so:archivers/zstd
 
-USES=		cmake:testing iconv pathfix pkgconfig ssl
+USES=		cmake:testing iconv pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	zlib-ng
 USE_LDCONFIG=	yes

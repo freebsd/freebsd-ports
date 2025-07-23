@@ -12,7 +12,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/3rdparty/libsais-LICENSE
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSE
 
-USES=		cmake cpe pathfix tar:xz
+USES=		cmake cpe tar:xz
 CPE_VENDOR=	bzip3_project
 USE_LDCONFIG=	yes
 

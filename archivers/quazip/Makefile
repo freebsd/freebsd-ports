@@ -15,7 +15,7 @@ FLAVORS=	qt5 qt6
 FLAVOR?=	qt5
 
 USES=		cmake:testing compiler:c++${"${FLAVOR:Mqt6}" != "":?17:14}-lang \
-		cpe pathfix qt:${FLAVOR:S/qt//}
+		cpe qt:${FLAVOR:S/qt//}
 CPE_VENDOR=	quazip_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	stachenov

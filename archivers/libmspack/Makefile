@@ -11,7 +11,7 @@ WWW=		https://www.cabextract.org.uk/libmspack/ \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-USES=		cpe libtool pathfix
+USES=		cpe libtool
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

@@ -10,7 +10,7 @@ WWW=		http://lclevy.free.fr/adflib/unadf.html
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf cpe libtool pathfix pkgconfig
+USES=		autoreconf cpe libtool pkgconfig
 CPE_VENDOR=	unadf_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	adflib

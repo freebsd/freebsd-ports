@@ -10,7 +10,7 @@ WWW=		https://www.winimage.com/zLibDll/minizip.html
 
 LICENSE=	ZLIB
 
-USES=		autoreconf cpe libtool pathfix tar:xz
+USES=		autoreconf cpe libtool tar:xz
 CPE_VENDOR=	minizip_project
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

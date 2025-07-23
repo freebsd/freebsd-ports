@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd
 
-USES=		cmake:testing pathfix
+USES=		cmake:testing
 
 CMAKE_OFF=	BUILD_LITE \
 		DEACTIVATE_AVX2 \

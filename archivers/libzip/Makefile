@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		cmake cpe pathfix ssl tar:xz
+USES=		cmake cpe ssl tar:xz
 CPE_VENDOR=	nih
 USE_LDCONFIG=	yes
 

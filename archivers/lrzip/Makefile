@@ -18,7 +18,7 @@ CONFIGURE_ENV+=	ac_cv_prog_ASM_PROG='no '
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		alias cpe libtool pathfix perl5 shebangfix tar:xz
+USES=		alias cpe libtool perl5 shebangfix tar:xz
 SHEBANG_FILES=	${WRKSRC}/lrztar
 USE_PERL5=	build
 USE_LDCONFIG=	yes

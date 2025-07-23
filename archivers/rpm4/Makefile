@@ -27,7 +27,7 @@ FLAVORS=		default noopenmp
 FLAVOR?=		${FLAVORS:[1]}
 noopenmp_PKGNAMESUFFIX=	4-noopenmp
 
-USES=		alias cpe gmake iconv libarchive libtool lua pathfix pkgconfig \
+USES=		alias cpe gmake iconv libarchive libtool lua pkgconfig \
 		readline shebangfix sqlite tar:bzip2
 USE_LDCONFIG=	yes
 

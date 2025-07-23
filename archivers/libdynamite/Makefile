@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USES=		libtool pathfix
+USES=		libtool
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
