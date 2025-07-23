@@ -12,7 +12,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-USES=		cmake:testing compiler:c++17-lang pathfix python:build,test
+USES=		cmake:testing compiler:c++17-lang python:build,test
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 

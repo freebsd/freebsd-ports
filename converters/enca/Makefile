@@ -15,7 +15,7 @@ BUILD_DEPENDS=	umap:converters/p5-Unicode-Map8
 LIB_DEPENDS=	librecode.so:converters/recode
 RUN_DEPENDS=	umap:converters/p5-Unicode-Map8
 
-USES=		gmake iconv libtool localbase pathfix pkgconfig tar:xz
+USES=		gmake iconv libtool localbase pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
