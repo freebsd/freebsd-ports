@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang gmake pathfix pkgconfig
+USES=		compiler:c++11-lang gmake pkgconfig
 USE_LDCONFIG=	yes
 
 post-install:

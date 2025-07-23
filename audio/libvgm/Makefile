@@ -7,7 +7,7 @@ MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	More modular rewrite of most components from VGMPlay
 WWW=		https://github.com/ValleyBell/libvgm
 
-USES=		cmake compiler:c++14-lang iconv pathfix
+USES=		cmake compiler:c++14-lang iconv
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

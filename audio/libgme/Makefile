@@ -11,7 +11,7 @@ WWW=		https://github.com/libgme/game-music-emu
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		cmake compiler:c++11-lang dos2unix pathfix
+USES=		cmake compiler:c++11-lang dos2unix
 DOS2UNIX_FILES=	${PORTDOCS}
 
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_SDL2

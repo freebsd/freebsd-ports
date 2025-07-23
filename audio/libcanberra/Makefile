@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LGPL
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libltdl.so:devel/libltdl
 
-USES=		gmake gnome localbase libtool pathfix pkgconfig tar:xz
+USES=		gmake gnome localbase libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-lynx --disable-tdb --disable-alsa --disable-udev

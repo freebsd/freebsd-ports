@@ -13,7 +13,7 @@ LICENSE=	LGPL20
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libneon.so:www/neon
 
-USES=		compiler:c11 cmake:insource pathfix
+USES=		compiler:c11 cmake:insource
 USE_CSTD=	c99
 USE_CXXSTD=	c++98
 USE_LDCONFIG=	yes

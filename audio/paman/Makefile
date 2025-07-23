@@ -12,7 +12,7 @@ LIB_DEPENDS=	libglademm-2.4.so:devel/libglademm24 \
 		libpulse.so:audio/pulseaudio
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang gmake pathfix pkgconfig
+USES=		compiler:c++11-lang gmake pkgconfig
 USE_CXXSTD=	c++11
 
 CONFIGURE_ARGS=	--disable-lynx

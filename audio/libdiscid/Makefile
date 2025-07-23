@@ -12,7 +12,7 @@ WWW=		https://musicbrainz.org/doc/libdiscid
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake pathfix
+USES=		cmake
 USE_LDCONFIG=	yes
 
 # Full test requires an audio CD to be in the drive

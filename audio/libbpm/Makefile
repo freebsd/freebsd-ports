@@ -11,7 +11,7 @@ WWW=		https://www.hep.ucl.ac.uk/~bino/libbpm/
 GNU_CONFIGURE=	yes
 
 USE_LDCONFIG=	yes
-USES=		pathfix pkgconfig libtool
+USES=		pkgconfig libtool
 
 post-patch:
 	${SED} -i '' 's/\(-release .*\)/\1 -version-info 0/' ${WRKSRC}/Makefile.in ${WRKSRC}/*/Makefile.in

@@ -10,7 +10,7 @@ WWW=		https://sourceforge.net/projects/opencore-amr/
 LICENSE=	APACHE20
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

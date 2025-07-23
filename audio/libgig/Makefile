@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libuuid.so:misc/libuuid
 
-USES=		compiler:c++11-lib gmake cpe libtool localbase pathfix pkgconfig tar:bzip2
+USES=		compiler:c++11-lib gmake cpe libtool localbase pkgconfig tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/libgig
 
 CPE_VENDOR=	linuxsampler

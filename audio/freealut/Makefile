@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	No longer actively developed, consider migrating to another library
 
-USES=		cmake localbase:ldflags openal pathfix
+USES=		cmake localbase:ldflags openal
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

@@ -13,7 +13,7 @@ LICENSE_NAME_ISO=	ISO/IEC14496
 LICENSE_FILE_ISO=	${WRKSRC}/README
 LICENSE_PERMS_ISO=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		autoreconf compiler:c11 gmake libtool pathfix
+USES=		autoreconf compiler:c11 gmake libtool
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

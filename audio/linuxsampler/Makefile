@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgig.so:audio/libgig \
 		libsndfile.so:audio/libsndfile \
 		libuuid.so:misc/libuuid
 
-USES=		bison compiler:c++14-lang gmake libtool localbase pathfix perl5 \
+USES=		bison compiler:c++14-lang gmake libtool localbase perl5 \
 		pkgconfig sqlite:3 tar:bzip2 shebangfix
 USE_LDCONFIG=	${PREFIX}/lib/linuxsampler
 USE_PERL5=	build

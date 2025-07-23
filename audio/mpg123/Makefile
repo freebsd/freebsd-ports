@@ -10,7 +10,7 @@ WWW=		https://www.mpg123.de/
 
 LICENSE=	LGPL21
 
-USES=		cpe tar:bzip2 libtool localbase pathfix
+USES=		cpe tar:bzip2 libtool localbase
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

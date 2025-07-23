@@ -10,7 +10,7 @@ WWW=		https://opus-codec.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe gmake libtool pathfix
+USES=		cpe gmake libtool
 CPE_VENDOR=	opus-codec
 USE_LDCONFIG=	yes
 

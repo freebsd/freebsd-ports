@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	node:www/node
 
-USES=		cmake cpe pathfix
+USES=		cmake cpe
 CPE_VENDOR=	symonics
 USE_GITHUB=	yes
 GH_ACCOUNT=	hoene

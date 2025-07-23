@@ -24,7 +24,7 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libck-connector.so:sysutils/consolekit2
 
 USES=		compiler:c11 cpe gettext-tools gmake gnome iconv localbase:ldflags \
-		meson pathfix pkgconfig python:run shebangfix ssl tar:xz
+		meson pkgconfig python:run shebangfix ssl tar:xz
 
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes

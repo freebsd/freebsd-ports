@@ -18,7 +18,7 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
 
 LIB_DEPENDS=	libogg.so:audio/libogg
 
-USES=		compiler:c11 cpe iconv libtool pathfix pkgconfig tar:xz
+USES=		compiler:c11 cpe iconv libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	flac_project

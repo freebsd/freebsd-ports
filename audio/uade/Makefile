@@ -16,7 +16,7 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libbencodetools.so:devel/bencodetools \
 		libzakalwe.so:devel/libzakalwe
 
-USES=		gmake localbase:ldflags pathfix pkgconfig python:build \
+USES=		gmake localbase:ldflags pkgconfig python:build \
 		shebangfix tar:bzip2
 
 SHEBANG_FILES=	configure write_audio/generate_amiga_oscilloscope_view

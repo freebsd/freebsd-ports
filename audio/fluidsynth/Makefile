@@ -10,7 +10,7 @@ WWW=		https://www.fluidsynth.org/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake cpe gnome pathfix pkgconfig
+USES=		cmake cpe gnome pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

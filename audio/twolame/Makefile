@@ -14,7 +14,7 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg
 
-USES=		gmake pathfix pkgconfig libtool
+USES=		gmake pkgconfig libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

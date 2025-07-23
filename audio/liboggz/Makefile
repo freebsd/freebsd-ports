@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libogg.so:audio/libogg
 
-USES=		libtool pathfix pkgconfig
+USES=		libtool pkgconfig
 
 CONFIGURE_ARGS=	--program-transform-name="" --with-ogg=${LOCALBASE}
 CONFIGURE_ENV=	DOCBOOKTOMAN=false HAVE_DOCBOOK2HTML=false HAVE_DOXYGEN=false HAVE_DOXYGEN=false

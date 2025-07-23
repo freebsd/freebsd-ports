@@ -15,7 +15,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac
 
 CONFLICTS=	osalp-0.7.*
 
-USES=		cpe pathfix pkgconfig tar:xz libtool
+USES=		cpe pkgconfig tar:xz libtool
 USE_CXXSTD=	c++14
 CPE_PRODUCT=	audiofile
 USE_LDCONFIG=	yes

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libmpg123.so:audio/mpg123 \
 		libvorbis.so:audio/libvorbis
 
-USES=		compiler:c++17-lang cpe gmake libtool pathfix pkgconfig
+USES=		compiler:c++17-lang cpe gmake libtool pkgconfig
 CPE_VENDOR=	openmpt
 USE_LDCONFIG=	yes
 

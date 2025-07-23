@@ -11,7 +11,7 @@ WWW=		https://www.libsdl.org/projects/SDL_mixer/index.html
 
 LICENSE=	ZLIB
 
-USES=		gmake libtool pathfix pkgconfig sdl
+USES=		gmake libtool pkgconfig sdl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

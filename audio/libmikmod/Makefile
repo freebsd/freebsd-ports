@@ -9,7 +9,7 @@ WWW=		https://mikmod.sourceforge.net/
 
 LICENSE=	LGPL21
 
-USES=		cmake cpe pathfix
+USES=		cmake cpe
 CPE_VENDOR=	raphael_assenat
 USE_LDCONFIG=	yes
 

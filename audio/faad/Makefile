@@ -10,7 +10,7 @@ WWW=		https://github.com/knik0/faad2
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake cpe pathfix
+USES=		cmake cpe
 CPE_VENDOR=	audiocoding
 CPE_PRODUCT=	freeware_advanced_audio_decoder_2
 USE_LDCONFIG=	yes

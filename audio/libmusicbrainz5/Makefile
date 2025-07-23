@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	libneon.so:www/neon
 
-USES=		cmake compiler:c++11-lang gnome iconv:build pathfix pkgconfig
+USES=		cmake compiler:c++11-lang gnome iconv:build pkgconfig
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

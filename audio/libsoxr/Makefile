@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 LICENSE_FILE_FFTPAK=	${FILESDIR}/FFTPAK_license.txt
 LICENSE_PERMS_FFTPAK=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cmake pathfix pkgconfig tar:xz
+USES=		cmake pkgconfig tar:xz
 
 USE_LDCONFIG=	yes
 

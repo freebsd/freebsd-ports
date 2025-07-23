@@ -16,7 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
 		libid3.so:audio/id3lib
 
-USES=		compiler:c++11-lang gmake gnome libtool localbase pathfix \
+USES=		compiler:c++11-lang gmake gnome libtool localbase \
 		pkgconfig xorg
 USE_GNOME=	cairo gdkpixbuf gtk20
 USE_XORG=	ice sm x11 xext

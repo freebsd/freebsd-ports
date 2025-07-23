@@ -11,7 +11,7 @@ WWW=		https://gmpc.wikia.com/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gnome libtool pathfix pkgconfig
+USES=		gnome libtool pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

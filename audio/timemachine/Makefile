@@ -16,7 +16,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 
 OPTIONS_DEFINE=	LASH
 
-USES=		gmake gnome pathfix pkgconfig
+USES=		gmake gnome pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lm

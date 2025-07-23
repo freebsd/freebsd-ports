@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		autoreconf:2.69 cpe dos2unix gmake libtool localbase:ldflags \
-		pathfix pkgconfig tar:tgz
+		pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 CPE_VENDOR=	portaudio_project
 

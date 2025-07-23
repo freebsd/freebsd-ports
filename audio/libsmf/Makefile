@@ -11,7 +11,7 @@ WWW=		https://github.com/nilsgey/libsmf
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gnome libtool pathfix pkgconfig readline
+USES=		gnome libtool pkgconfig readline
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

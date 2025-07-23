@@ -16,7 +16,7 @@ LICENSE_FILE_MPL11=	${WRKSRC}/COPYING.MPL
 BUILD_DEPENDS=	utf8cpp>0:devel/utf8cpp
 TEST_DEPENDS=	cppunit-config:devel/cppunit
 
-USES=		cmake:testing compiler:c++17-lang cpe pathfix
+USES=		cmake:testing compiler:c++17-lang cpe
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_CXX_VISIBILITY_PRESET=hidden

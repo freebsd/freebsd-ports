@@ -14,7 +14,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
-USES=		cmake compiler:c++11-lib pathfix
+USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	acoustid
 GH_TAGNAME=	aa67c95

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libuuid.so:misc/libuuid
 
-USES=		gmake gnome libtool pathfix pkgconfig
+USES=		gmake gnome libtool pkgconfig
 USE_GNOME=	gtk20 libxml2 gdkpixbuf cairo
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa-midi

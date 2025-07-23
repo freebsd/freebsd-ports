@@ -17,7 +17,7 @@ BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 		txt2man:textproc/txt2man
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		autoreconf gettext gmake gnome makeinfo pathfix pkgconfig \
+USES=		autoreconf gettext gmake gnome makeinfo pkgconfig \
 		python shebangfix
 USE_GNOME=	pygobject3
 

@@ -20,7 +20,7 @@ LIB_DEPENDS=	libdssialsacompat.so:audio/libdssialsacompat \
 RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 		${LOCALBASE}/include/alsa/seq_event.h:audio/alsa-lib
 
-USES=		gmake pathfix pkgconfig localbase libtool xorg
+USES=		gmake pkgconfig localbase libtool xorg
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes

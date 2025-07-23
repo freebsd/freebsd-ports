@@ -9,7 +9,7 @@ WWW=		https://wiki.gnome.org/Projects/GSound
 
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 
-USES=		gnome meson pathfix pkgconfig tar:xz vala:build
+USES=		gnome meson pkgconfig tar:xz vala:build
 USE_GNOME=	glib20 introspection:build
 
 .include <bsd.port.mk>
