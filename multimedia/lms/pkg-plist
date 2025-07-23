@@ -2,6 +2,8 @@ bin/lms
 bin/lms-metadata
 @sample etc/lms.conf.sample
 etc/pam.d/lms
+%%DATADIR%%/approot/admin-db.xml
+%%DATADIR%%/approot/admin-debugtools.xml
 %%DATADIR%%/approot/admin-initwizard.xml
 %%DATADIR%%/approot/admin-medialibraries.xml
 %%DATADIR%%/approot/admin-medialibrary.xml
