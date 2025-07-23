@@ -4332,6 +4332,7 @@
     SUBDIR += pprof
     SUBDIR += premake4
     SUBDIR += premake5
+    SUBDIR += priv_wrapper
     SUBDIR += projectcenter
     SUBDIR += prometheus-cpp
     SUBDIR += protobuf

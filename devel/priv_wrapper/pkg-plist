@@ -1,0 +1,7 @@
+lib/cmake/priv_wrapper/priv_wrapper-config-version.cmake
+lib/cmake/priv_wrapper/priv_wrapper-config.cmake
+lib/libpriv_wrapper.so
+lib/libpriv_wrapper.so.0
+lib/libpriv_wrapper.so.0.0.2
+libdata/pkgconfig/priv_wrapper.pc
+share/man/man1/priv_wrapper.1.gz
