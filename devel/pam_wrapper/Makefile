@@ -1,25 +1,23 @@
-PORTNAME=		pam_wrapper
-PORTVERSION=		1.0.6
-PORTREVISION=		3
-CATEGORIES=		devel
-MASTER_SITES=		SAMBA/cwrap
+PORTNAME=	pam_wrapper
+PORTVERSION=	1.0.6
+PORTREVISION=	3
+CATEGORIES=	devel
+MASTER_SITES=	SAMBA/cwrap
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Preloadable wrapper to test PAM applications and PAM Modules
-WWW=		https://cwrap.org/pam_wrapper.html
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Tool to test PAM applications and PAM modules
+WWW=		https://cwrap.org/nss_wrapper.html \
+		https://git.samba.org/?p=pam_wrapper.git
 
-LICENSE=		GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-EXTRA_PATCHES=		${PATCHDIR}/python-detection.patch:-p1
+TEST_DEPENDS=	cmocka>=1.1.1:sysutils/cmocka
 
-USES=			cmake python
-USE_LDCONFIG=		yes
+USES=		cmake:testing pathfix python
 
-OPTIONS_DEFINE=		TEST
-OPTIONS_DEFAULT=	TEST
-
-TEST_TEST_TARGET=	test
-TEST_CMAKE_BOOL=	UNIT_TESTING
-TEST_BUILD_DEPENDS=	cmocka>=1.1.1:sysutils/cmocka
+CMAKE_OFF=	UNIT_TESTING
+CMAKE_TESTING_ON=	UNIT_TESTING
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
