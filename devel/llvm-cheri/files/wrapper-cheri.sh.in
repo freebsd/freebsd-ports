@@ -144,7 +144,8 @@ if [ $CHERIBSD_VERSION -gt 0 ]; then
 			tls_flags=
 			vararg_flags=
 			codeptr_flags=
-			capreloc_flags=
+			capreloc_cflags=
+			capreloc_ldflags=
 			if [ "$CHERIBSD_VERSION" -le 20220314 ]; then
 				tls_flags="-femulated-tls"
 			elif [ "$CHERIBSD_VERSION" -le 20220828 ]; then
@@ -155,7 +156,8 @@ if [ $CHERIBSD_VERSION -gt 0 ]; then
 				vararg_flags="-Xclang -morello-vararg=new -Xclang -morello-bounded-memargs"
 			fi
 			if [ "$CHERIBSD_VERSION" -ge 20250127 ]; then
-				capreloc_flags="-Wl,--local-caprelocs=elf"
+				capreloc_cflags="-Wl,--local-caprelocs=elf"
+				capreloc_ldflags="--local-caprelocs=elf"
 			fi
 			if [ "$CHERIBSD_VERSION" -gt 20250127 ]; then
 				codeptr_flags=-cheri-codeptr-relocs
@@ -164,8 +166,8 @@ if [ $CHERIBSD_VERSION -gt 0 ]; then
 			# consume -Xclang arguments which can lead to unused
 			# argument warnings so we supress them with
 			# --start/end-no-unused-arguments.
-			arch_cflags="-march=morello -mabi=purecap --start-no-unused-arguments $tls_flags $vararg_flags $capreloc_flags $codeptr_flags --end-no-unused-arguments"
-			arch_ldflags="$capreloc_flags $codeptr_flags"
+			arch_cflags="-march=morello -mabi=purecap --start-no-unused-arguments $tls_flags $vararg_flags $capreloc_cflags $codeptr_flags --end-no-unused-arguments"
+			arch_ldflags="$capreloc_ldflags $codeptr_flags"
 			arch_objdump_flags="--mattr=+morello"
 		else
 			vararg_flags=
