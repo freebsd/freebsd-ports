@@ -1,0 +1,11 @@
+--- php_memcached.c.orig	2024-10-17 17:34:21 UTC
++++ php_memcached.c
+@@ -3961,7 +3961,7 @@ zend_class_entry *php_memc_get_exception_base(int root
+ 		}
+ 	}
+ 
+-	return zend_exception_get_default();
++	return zend_ce_exception;
+ }
+ 
+ 
