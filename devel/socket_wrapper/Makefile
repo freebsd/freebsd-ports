@@ -1,23 +1,24 @@
-PORTNAME=		socket_wrapper
-PORTVERSION=		1.4.2
-CATEGORIES=		devel
-MASTER_SITES=		SAMBA/cwrap
+PORTNAME=	socket_wrapper
+PORTVERSION=	1.4.2
+CATEGORIES=	devel
+MASTER_SITES=	SAMBA/cwrap
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Library passing all socket communications through unix sockets
-WWW=			https://cwrap.org/socket_wrapper.html
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Library passing all socket communications through unix sockets
+WWW=		https://cwrap.org/socket_wrapper.html \
+		https://git.samba.org/?p=socket_wrapper.git
 
-LICENSE=		GPLv3
-LICENSE_FILE=		${WRKSRC}/LICENSE
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=			cmake pathfix
-USE_LDCONFIG=		yes
+TEST_DEPENDS=	cmocka>=1.1.6:sysutils/cmocka
 
-OPTIONS_DEFINE=		TEST
+USES=		cmake:testing pathfix
 
-TEST_BUILD_DEPENDS=	cmocka>=1.1.5:sysutils/cmocka
-TEST_USES=		localbase:ldflags pkgconfig
-TEST_CMAKE_BOOL=	UNIT_TESTING
-TEST_TEST_TARGET=	test
+CMAKE_OFF=	HELGRIND_TESTING \
+		PICKY_DEVELOPER \
+		UNIT_TESTING
+CMAKE_TESTING_ON=	UNIT_TESTING
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
