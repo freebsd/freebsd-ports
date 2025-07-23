@@ -1,0 +1,23 @@
+--- src/cxx_supportlib/vendor-modified/libev/ev.c.orig	2025-07-13 19:43:52 UTC
++++ src/cxx_supportlib/vendor-modified/libev/ev.c
+@@ -421,6 +421,11 @@
+ 
+ #if EV_USE_INOTIFY
+ # include <sys/statfs.h>
++# ifdef __FreeBSD__
++#  include <sys/mount.h>
++# else
++#  include <sys/statfs.h>
++# endif
+ # include <sys/inotify.h>
+ /* some very old inotify.h headers don't have IN_DONT_FOLLOW */
+ # ifndef IN_DONT_FOLLOW
+@@ -2753,7 +2758,7 @@ ev_recommended_backends (void) EV_THROW
+ {
+   unsigned int flags = ev_supported_backends ();
+ 
+-#ifndef __NetBSD__
++#if !defined(__NetBSD__) && !defined(__FreeBSD__)
+   /* kqueue is borked on everything but netbsd apparently */
+   /* it usually doesn't work correctly on anything but sockets and pipes */
+   flags &= ~EVBACKEND_KQUEUE;
