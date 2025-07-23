@@ -40,8 +40,7 @@ MASTER_SITE_PORTS_JP+= \
 
 .if !defined(IGNORE_MASTER_SITE_AFTERSTEP)
 MASTER_SITE_AFTERSTEP+= \
-	ftp://ftp.afterstep.org/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/X11/AfterStep/%SUBDIR%/
+	ftp://ftp.afterstep.org/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_APACHE)
@@ -51,7 +50,6 @@ MASTER_SITE_APACHE+= \
 	https://mirror.its.dal.ca/apache/%SUBDIR%/ \
 	http://mirror.cogentco.com/pub/apache/%SUBDIR%/ \
 	http://mirror.navercorp.com/apache/%SUBDIR%/ \
-	http://ftp.kddi-research.jp/infosystems/apache/%SUBDIR%/ \
 	http://miroir.univ-lorraine.fr/apache/%SUBDIR%/
 .endif
 
@@ -612,7 +610,6 @@ MASTER_SITE_GNU+= \
 	https://www.nic.funet.fi/pub/gnu/gnu/%SUBDIR%/ \
 	http://mirror.navercorp.com/gnu/%SUBDIR%/ \
 	http://ftp.halifax.rwth-aachen.de/gnu/%SUBDIR%/ \
-	http://ftp.kddilabs.jp/GNU/gnu/%SUBDIR%/ \
 	ftp://mirrors.rit.edu/gnu/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/gnu/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.gnu.org/gnu/%SUBDIR%/ \
@@ -803,7 +800,6 @@ MASTER_SITE_PERL_CPAN_BY+= \
 	https://cpan.metacpan.org/modules/by-module/%SUBDIRPLUS%/ \
 	https://www.cpan.org/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.cpan.org/pub/CPAN/%CPANSORT%/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/lang/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
 	http://ftp.jaist.ac.jp/pub/CPAN/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/cpan.perl.org/CPAN/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
@@ -962,7 +958,6 @@ MASTER_SITE_SUNSITE+= \
 .if !defined(IGNORE_MASTER_SITE_TCLTK)
 MASTER_SITE_TCLTK+= \
 	ftp://ftp.tcl.tk/pub/tcl/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/lang/tcl/ftp.scriptics.com/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.tcl.tk/pub/tcl/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/tcl/tcl/%SUBDIR%/
 .endif
