@@ -1,4 +1,4 @@
-TIMESTAMP = 1751028696
+TIMESTAMP = 1752665084
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -335,5 +335,5 @@ SHA256 (rust/crates/zerocopy-derive-0.8.26.crate) = 9ecf5b4cc5364572d7f4c329661b
 SIZE (rust/crates/zerocopy-derive-0.8.26.crate) = 88080
 SHA256 (rust/crates/zeroize-1.8.1.crate) = ced3678a2879b30306d323f4542626697a464a97c0a07c9aebf7ebca65cd4dde
 SIZE (rust/crates/zeroize-1.8.1.crate) = 20029
-SHA256 (pendulum-project-ntpd-rs-v1.6.0_GH0.tar.gz) = 7d7fc946c8683b6411c9e93a355d8e20b1640e17f58dc33c1eb3414854c0cf1e
-SIZE (pendulum-project-ntpd-rs-v1.6.0_GH0.tar.gz) = 1434096
+SHA256 (pendulum-project-ntpd-rs-v1.6.1_GH0.tar.gz) = 71d5ca4078124fc00b57f565dd3a77bc6152f9dc8787f3018cc204a8e4e6b9c5
+SIZE (pendulum-project-ntpd-rs-v1.6.1_GH0.tar.gz) = 1434202
