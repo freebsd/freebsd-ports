@@ -2,7 +2,6 @@ PORTNAME=	Test-CPANfile
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:ISHIGAKI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	root@dc365.ru
@@ -19,7 +18,7 @@ RUN_DEPENDS=	p5-CPAN-Common-Index>=0:devel/p5-CPAN-Common-Index \
 		p5-Perl-PrereqScanner-NotQuiteLite>=0.9913:devel/p5-Perl-PrereqScanner-NotQuiteLite \
 		p5-Test-UseAllModules>=0.17:devel/p5-Test-UseAllModules
 
-USES=		localbase perl5
+USES=		perl5
 USE_PERL5=	configure test
 
 NO_ARCH=	yes
