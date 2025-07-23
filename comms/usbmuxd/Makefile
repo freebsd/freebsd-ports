@@ -18,7 +18,7 @@ LIB_DEPENDS=	libplist-2.0.so:devel/libplist \
 		libimobiledevice-1.0.so:comms/libimobiledevice \
 		libimobiledevice-glue-1.0.so:comms/libimobiledevice-glue
 
-USES=		autoreconf cpe libtool localbase pathfix pkgconfig
+USES=		autoreconf cpe libtool localbase pkgconfig
 CPE_VENDOR=	nikias_bassen
 
 USE_GITHUB=	yes

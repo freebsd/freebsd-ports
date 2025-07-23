@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 GROUPS=		${PORTNAME}
-USES=		gettext gmake gnome iconv libtool localbase pathfix pkgconfig \
+USES=		gettext gmake gnome iconv libtool localbase pkgconfig \
 		readline shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89

@@ -26,7 +26,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 #CONFIGURE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 
-USES+=		gmake libtool ncurses pathfix pkgconfig autoreconf
+USES+=		gmake libtool ncurses pkgconfig autoreconf
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu99
 WRKSRC=		${WRKDIR}/unixcw-${PORTVERSION}

@@ -10,7 +10,7 @@ WWW=		https://sdr.osmocom.org/trac/wiki/rtl-sdr
 
 LICENSE=	GPLv2
 
-USES=		autoreconf pkgconfig libtool pathfix tar:tgz
+USES=		autoreconf pkgconfig libtool tar:tgz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	steve-m

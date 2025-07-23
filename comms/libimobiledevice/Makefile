@@ -12,7 +12,7 @@ WWW=		https://www.libimobiledevice.org
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-USES+=		autoreconf cpe libtool localbase:ldflags pathfix pkgconfig ssl
+USES+=		autoreconf cpe libtool localbase:ldflags pkgconfig ssl
 USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
