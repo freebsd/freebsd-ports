@@ -1,0 +1,11 @@
+--- php_zookeeper_exceptions.c.orig	2025-01-02 06:11:14 UTC
++++ php_zookeeper_exceptions.c
+@@ -39,7 +39,7 @@ void php_zk_register_exceptions()
+ 	zend_class_entry ce;
+ 
+ 	INIT_CLASS_ENTRY(ce, "ZookeeperException", NULL);
+-	zk_base_exception = zend_register_internal_class_ex(&ce, zend_exception_get_default());
++	zk_base_exception = zend_register_internal_class_ex(&ce, zend_ce_exception);
+ 
+ 	INIT_CLASS_ENTRY(ce, "ZookeeperOperationTimeoutException", NULL);
+ 	zk_optimeout_exception = zend_register_internal_class_ex(&ce, zk_base_exception);
