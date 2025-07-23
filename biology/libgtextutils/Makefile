@@ -8,7 +8,7 @@ WWW=		https://github.com/agordon/libgtextutils
 
 LICENSE=	AGPLv3
 
-USES=		autoreconf libtool pathfix pkgconfig
+USES=		autoreconf libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
