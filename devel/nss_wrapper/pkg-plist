@@ -1,0 +1,8 @@
+bin/nss_wrapper.pl
+lib/cmake/nss_wrapper/nss_wrapper-config-version.cmake
+lib/cmake/nss_wrapper/nss_wrapper-config.cmake
+lib/libnss_wrapper.so
+lib/libnss_wrapper.so.0
+lib/libnss_wrapper.so.0.2.3
+libdata/pkgconfig/nss_wrapper.pc
+share/man/man1/nss_wrapper.1.gz

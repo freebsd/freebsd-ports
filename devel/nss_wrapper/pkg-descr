@@ -1,15 +1,13 @@
-There are projects which provide daemons needing to be able to create, modify
-and delete Unix users. Or just switch user ids to interact with the system e.g.
-a user space file server. To be able to test that you need the privilege to
-modify the passwd and groups file. With nss_wrapper it is possible to define
-your own passwd and groups file which will be used by software to act correctly
-while under test.
+There are projects that need to be able to create, modify, and delete Unix
+users. Others just switch user IDs to interact with the system on behalf of
+another user (e.g. a user space file server). To be able to test applications
+like these, you need to grant privileges to modify the passwd and group files.
+With nss_wrapper it is possible to define your own passwd and group files to be
+used the software while it is under test. The nss_wrapper also allows you to
+create a hosts file to set up name resolution for the addresses you use with
+socket_wrapper.
 
-If you have a client and server under test they normally use functions to
-resolve network names to addresses (dns) or vice versa. The nss_wrappers allow
-you to create a hosts file to setup name resolution for the addresses you use
-with socket_wrapper.
-
+Features:
 - Provides information for user and group accounts.
 - Network name resolution using a hosts file.
 - Loading and testing of NSS modules.
