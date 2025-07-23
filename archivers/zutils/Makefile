@@ -1,5 +1,5 @@
 PORTNAME=	zutils
-PORTVERSION=	1.13
+PORTVERSION=	1.15
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/zutils
 
@@ -9,7 +9,7 @@ WWW=		https://www.nongnu.org/zutils/zutils.html
 
 LICENSE=	GPLv2
 
-USES=		cpe tar:lz
+USES=		cpe tar:lz gmake
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
