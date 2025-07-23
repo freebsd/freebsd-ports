@@ -13,6 +13,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Host is no longer resolvable using multiple different resolver
+EXPIRATION_DATE=	2025-08-23
 
 CONFLICTS_INSTALL=	gnotime-2.[0-3]* gnotime-2.4.0* gnotime-2.4.1 gnotime-2.4.1_[12]*
 
@@ -21,7 +22,7 @@ CONFIGURE_ARGS=	--disable-doxygen --disable-gdasql --disable-sqlite
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USES=		gmake gnome libtool pathfix pkgconfig
+USES=		gmake gnome libtool pkgconfig
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
