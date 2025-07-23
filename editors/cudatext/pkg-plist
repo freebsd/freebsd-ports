@@ -199,8 +199,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/filetypeicons/vscode_16x16/icons.json
 %%DATADIR%%/data/lang/history.txt
 %%DATADIR%%/data/lang/translation template.ini
-%%DATADIR%%/data/lexlib/Assembly.cuda-lexmap
-%%DATADIR%%/data/lexlib/Assembly.lcf
 %%DATADIR%%/data/lexlib/Bash script.cuda-lexmap
 %%DATADIR%%/data/lexlib/Bash script.lcf
 %%DATADIR%%/data/lexlib/Batch files.cuda-lexmap
