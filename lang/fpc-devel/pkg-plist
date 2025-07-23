@@ -93,6 +93,7 @@ lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-async.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-base.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-css.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-db.fpm
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-ebnf.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-extra.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-fpcunit.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-fpterm.fpm
@@ -114,6 +115,7 @@ lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-sdo.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-sound.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-stl.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-web.fpm
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-wit.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-xml.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fcl-yaml.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fftw.fpm
@@ -203,9 +205,9 @@ lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/utils-lexyacc.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/utils-pas2js.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/utmp.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/vcl-compat.fpm
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/wasm-job.fpm
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/wasmedge.fpm
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/wasmtime.fpm
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/wasm-job.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/webidl.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/x11.fpm
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/xforms.fpm
@@ -234,6 +236,7 @@ lib/fpc/%%PORTVERSION%%/msg/errorr.msg
 lib/fpc/%%PORTVERSION%%/msg/errorru.msg
 lib/fpc/%%PORTVERSION%%/msg/errortr.msg
 lib/fpc/%%PORTVERSION%%/msg/errorues.msg
+lib/fpc/%%PORTVERSION%%/msg/errorzh.msg
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/ppc386
 %%FPC_AARCH64%%lib/fpc/%%PORTVERSION%%/ppca64
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/ppcx64
@@ -672,6 +675,14 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/sqltypes.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/xmldatapacketreader.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/xmldatapacketreader.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/xmldatapacketreader.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-ebnf/ebnf.parser.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-ebnf/ebnf.parser.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-ebnf/ebnf.parser.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-ebnf/ebnf.scanner.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-ebnf/ebnf.scanner.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-ebnf/ebnf.scanner.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-ebnf/ebnf.tree.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-ebnf/ebnf.tree.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-extra/daemonapp.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-extra/daemonapp.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-extra/daemonapp.rsj
@@ -1533,6 +1544,14 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/webutil.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/wsupgrader.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/wsupgrader.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/wsupgrader.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-wit/wit.model.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-wit/wit.model.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-wit/wit.parser.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-wit/wit.parser.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-wit/wit.parser.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-wit/wit.scanner.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-wit/wit.scanner.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-wit/wit.scanner.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/dom.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/dom.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-xml/dom_html.o
@@ -1997,8 +2016,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcgraph.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcgraph.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcmouse.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ptcmouse.ppu
-%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/sdlgraph.o
-%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/sdlgraph.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gst/gst.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gst/gst.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/atk.o
@@ -2643,6 +2660,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-unicode/graphemebreakproperty.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-unicode/graphemebreakproperty.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-unicode/unicodeducet.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-unicode/unicodeducet.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-unicode/utf8utils.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-unicode/utf8utils.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/baseunix.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/baseunix.ppu
@@ -2871,8 +2890,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_net.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_net.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_ttf.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_ttf.ppu
-%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdlutils.o
-%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdlutils.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/smpeg.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/smpeg.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlite.o
@@ -2920,8 +2937,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/pwd.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/users.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/users.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/users/users.rsj
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utils-pas2js/dirwatch.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utils-pas2js/dirwatch.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utils-pas2js/dirw.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utils-pas2js/dirw.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utils-pas2js/httpcompiler.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utils-pas2js/httpcompiler.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utmp/utmp.o
@@ -3163,6 +3180,7 @@ lib/libpas2jslib.so
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-db/examples/toolsunit.pas
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-extra/examples/showver.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-hash/examples/demosha256.pp
+%%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-hash/examples/sha256performancetest.pas
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-image/examples/createbarcode.lpr
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-image/examples/drawing.pp
 %%EXAMPLESDIR%%-%%PORTVERSION%%/fcl-image/examples/imgconv.pp
