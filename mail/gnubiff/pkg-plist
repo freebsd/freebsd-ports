@@ -33,5 +33,5 @@ share/gnubiff/tux-sleep(64x64).png
 share/gnubiff/tux-sleep.png
 share/man/man1/gnubiff.1.gz
 share/pixmaps/gnubiff.png
-@dir %%BONOBODIR%%/servers
+@comment @dir lib/bonobo/servers
 @comment @dir share/gnome-2.0/ui
