@@ -1,0 +1,10 @@
+--- chef-licensing.gemspec.orig	2025-07-15 09:54:51 UTC
++++ chef-licensing.gemspec
+@@ -28,6 +28,6 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<faraday-http-cache>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<activesupport>.freeze, ["~> 7.2".freeze, ">= 7.2.2.1".freeze])
+   s.add_runtime_dependency(%q<tty-spinner>.freeze, ["~> 0.9.3".freeze])
+-  s.add_runtime_dependency(%q<ostruct>.freeze, ["~> 0.1.0".freeze])
++  s.add_runtime_dependency(%q<ostruct>.freeze, ["~> 0.1".freeze])
+ end
+ 
