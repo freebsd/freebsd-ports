@@ -1,3 +1,32 @@
+  <vuln vid="0f5bcba2-67fb-11f0-9ee5-b42e991fc52e">
+    <topic>sqlite -- Integer Truncation on SQLite</topic>
+    <affects>
+      <package>
+	<name>sqlite3</name>
+	<range><lt>3.50.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve-coordination@google.com reports:</p>
+	<blockquote cite="https://www.sqlite.org/src/info/5508b56fd24016c13981ec280ecdd833007c9d8dd595edb295b984c2b487b5c8">
+	  <p>There exists a vulnerability in SQLite versions before
+	  3.50.2 where the number of aggregate terms could exceed the
+	  number of columns available. This could lead to a memory
+	  corruption issue.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6965</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6965</url>
+    </references>
+    <dates>
+      <discovery>2025-07-15</discovery>
+      <entry>2025-07-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="80411ba2-6729-11f0-a5cb-8c164580114f">
     <topic>7-Zip -- Multi-byte write heap buffer overflow in NCompress::NRar5::CDecoder</topic>
     <affects>
