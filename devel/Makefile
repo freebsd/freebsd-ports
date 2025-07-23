@@ -272,6 +272,7 @@
     SUBDIR += avro
     SUBDIR += avro-c
     SUBDIR += avro-cpp
+    SUBDIR += awesome-cli
     SUBDIR += aws-c-common
     SUBDIR += aws-c-compression
     SUBDIR += aws-c-event-stream

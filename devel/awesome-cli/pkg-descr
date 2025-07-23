@@ -1,0 +1,12 @@
+Awesome CLI is a simple but polished command-line interface for
+exploring Awesome lists — curated collections of tools, libraries, and
+resources hosted on GitHub.
+
+The tool allows you to interactively browse categorized lists, discover
+new projects, or even jump to a random entry for inspiration. It fetches
+data from project-awesome.org and presents it in a terminal-friendly
+format, making developer-focused exploration fast and intuitive.
+
+Whether you're hunting for your next favorite library or just exploring
+what's out there, Awesome CLI brings the universe of Awesome lists
+straight to your terminal.
