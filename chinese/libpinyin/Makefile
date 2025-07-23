@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
 
 USES=		compiler:c++11-lang gmake gnome libtool localbase:ldflags \
-		pathfix pkgconfig
+		pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	scim>=1.2.0:textproc/scim
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake iconv libtool:keepla localbase:ldflags pathfix pkgconfig
+USES=		gmake iconv libtool:keepla localbase:ldflags pkgconfig
 USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes

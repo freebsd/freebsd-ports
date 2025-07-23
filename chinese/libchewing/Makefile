@@ -11,7 +11,7 @@ WWW=		https://chewing.im/ \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:testing localbase:ldflags pathfix pkgconfig sqlite tar:zst
+USES=		cmake:testing localbase:ldflags pkgconfig sqlite tar:zst
 
 CMAKE_OFF=	BUILD_INFO \
 		BUILD_TESTING \
