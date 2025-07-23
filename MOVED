@@ -4656,3 +4656,4 @@ devel/py-cog|devel/py-cogapp|2025-07-14|Renamed to match upstream PyPI package n
 devel/pycharm-ce|devel/pycharm|2025-07-14|Has expired: Pycharm is now unified product. Please switch to devel/pycharm
 devel/pycharm-pro|devel/pycharm|2025-07-14|Has expired: Pycharm is now unified product. Please switch to devel/pycharm
 textproc/hq|textproc/html-query|2025-07-21|Project was renamed
+misc/python-langgraph-checkpoint|misc/py-langgraph-checkpoint|2025-07-22|Rename to a proper name
