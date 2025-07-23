@@ -1,4 +1,4 @@
-libdata/pkgconfig/xcb-proto.pc
+share/pkgconfig/xcb-proto.pc
 %%DATADIR%%/bigreq.xml
 %%DATADIR%%/composite.xml
 %%DATADIR%%/damage.xml

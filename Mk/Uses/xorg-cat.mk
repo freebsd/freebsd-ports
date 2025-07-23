@@ -14,8 +14,6 @@
 # 		* font     don't install .pc file
 # 		* lib      various dependencies, install .pc file, needs
 # 		           pathfix
-# 		* proto    install .pc file, needs pathfix, most only needed at
-# 		           build time.
 # 		* util     no particular notes
 #
 # 		These categories has to match upstream categories.  Don't invent
@@ -34,7 +32,7 @@
 .if !defined(_INCLUDE_USES_XORG_CAT_MK)
 _INCLUDE_USES_XORG_CAT_MK=yes
 
-_XORG_CATEGORIES=	app data doc driver font lib proto util
+_XORG_CATEGORIES=	app data doc driver font lib util
 _XORG_BUILDSYSTEMS=	autotools meson
 
 _XORG_CAT=		# empty
@@ -157,9 +155,6 @@ libtool_ARGS?=	# empty
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=--enable-malloc0returnsnull
 .    endif
-
-.  elif ${_XORG_CAT} == proto
-.include "${USESDIR}/pathfix.mk"
 
 .  endif # ${_XORG_CAT} == <category>
 
