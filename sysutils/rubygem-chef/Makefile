@@ -1,5 +1,6 @@
 PORTNAME=	chef
 PORTVERSION=	18.7.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -37,7 +38,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-plist>=3.2<4:devel/rubygem-plist \
 		rubygem-proxifier2>=1.1<2:net/rubygem-proxifier2 \
 		rubygem-syslog-logger>=1.6<2:sysutils/rubygem-syslog-logger \
-		rubygem-train-core>=3.10<3.12.13_99:net/rubygem-train-core \
+		rubygem-train-core>=3.10:net/rubygem-train-core \
 		rubygem-train-rest>=0.4.1:net/rubygem-train-rest \
 		rubygem-train-winrm>=0.2.17:net/rubygem-train-winrm \
 		rubygem-unf_ext>=0.0.8.2:textproc/rubygem-unf_ext \
