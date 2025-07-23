@@ -1,31 +1,23 @@
-PORTNAME=		uid_wrapper
-PORTVERSION=		1.2.4
-PORTREVISION=		1
-CATEGORIES=		devel
-MASTER_SITES=		SAMBA/cwrap
+PORTNAME=	uid_wrapper
+PORTVERSION=	1.2.4
+PORTREVISION=	1
+CATEGORIES=	devel
+MASTER_SITES=	SAMBA/cwrap
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Wrapper to fake privilege separation
-WWW=		https://cwrap.org/uid_wrapper.html
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Testing tool to fake privilege separation
+WWW=		https://cwrap.org/uid_wrapper.html \
+		https://git.samba.org/?p=uid_wrapper.git
 
-LICENSE=		GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=			cmake
-USE_LDCONFIG=		yes
+TEST_DEPENDS=	cmocka>=1.1.1:sysutils/cmocka
 
-OPTIONS_DEFINE=		TEST
-OPTIONS_DEFAULT=	TEST
+USES=		cmake pathfix
 
-TEST_TEST_TARGET=	test
-TEST_CMAKE_BOOL=	UNIT_TESTING
-TEST_BUILD_DEPENDS=	cmocka>=1.1.1:sysutils/cmocka
-
-PLIST_FILES=		libdata/pkgconfig/uid_wrapper.pc \
-			lib/cmake/uid_wrapper/uid_wrapper-config-version.cmake \
-			lib/cmake/uid_wrapper/uid_wrapper-config.cmake \
-			lib/libuid_wrapper.so.0.0.6 \
-			lib/libuid_wrapper.so.0 \
-			lib/libuid_wrapper.so \
-			share/man/man1/uid_wrapper.1.gz
+CMAKE_OFF=	UNIT_TESTING
+CMAKE_TESTING_ON=	UNIT_TESTING
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

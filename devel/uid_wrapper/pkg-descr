@@ -1,15 +1,13 @@
+Some projects, such as a file server, need privilege separation to be able to
+switch to the user who owns the files and do file operations on their behalf.
+uid_wrapper convincingly lies to the application, letting it believe it is
+operating as root and even switching between UIDs and GIDs as needed. You can
+start any application making it believe it is running as root.
+
+Features:
 - Allows uid switching as a normal user.
-
 - Start any application making it believe it is running as root.
-
-- Support for user/group changing in the local thread using the syscalls
-  (like glibc).
-
-- More precisely this library intercepts seteuid and related calls, and
-  simulates them in a manner similar to the nss_wrapper and socket_wrapper
-  libraries.
-
-Some projects like a file server need privilege separation to be able to switch
-to the connection user and do file operations. uid_wrapper convincingly lies to
-the application letting it believe it is operating as root and even switching
-between UIDs and GIDs as needed.
+- Support for user/group changing in the local thread using the syscalls (like
+  glibc).
+- uid_wrapper intercepts seteuid(2) and related calls and simulates them in a
+  way transparent to the application
