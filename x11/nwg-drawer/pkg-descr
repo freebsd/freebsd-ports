@@ -1,7 +1,7 @@
-nwg-drawer displays the application grid. The search entry
-allows to look for installed applications, and for files in XDG user
-directories. The grid view may also be filtered by categories.
+Nwg-drawer is an application launcher. It's being developed with sway
+and Hyprland in mind, but should also work with other wlroots-based
+Wayland compositors.
 
-nwg-drawer is a golang replacement to nwggrid from nwg-launchers.
-It's being developed with sway in mind, but should also work with
-other wlroots-based Wayland compositors.
+The "nwg-drawer" command displays the application grid. The search
+entry allows to look for installed applications, and for files in XDG
+user directories. The grid view may also be filtered by categories.
