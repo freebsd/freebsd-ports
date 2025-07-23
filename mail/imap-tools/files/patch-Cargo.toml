@@ -1,0 +1,13 @@
+Remove upstream's profile.release so we can have our own
+
+--- Cargo.toml.orig	2025-07-23 15:20:49 UTC
++++ Cargo.toml
+@@ -158,8 +158,3 @@ inherits = "dev"
+ [profile.dev-rustls]
+ inherits = "dev"
+ 
+-[profile.release]
+-opt-level = "z"
+-lto = true
+-codegen-units = 1
+-panic = "abort"
