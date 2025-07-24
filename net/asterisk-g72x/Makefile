@@ -23,7 +23,7 @@ USES=		autoreconf compiler:c11 libtool tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-asterisk160 --with-bcg729
 
-CONFLICTS_INSTALL=	asterisk[0-9][0-9]-g72x
+CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:C|(.+)|\1-${PORTNAME}|}
 
 PLIST_FILES=	lib/asterisk/modules/codec_g729.so
 
