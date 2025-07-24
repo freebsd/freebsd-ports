@@ -26,7 +26,7 @@ GH_TAGNAME=	a3ed85151a1c875471568a959dce1bb35cca109b
 
 INSTALL_TARGET=	install samples
 
-CONFLICTS_INSTALL=	asterisk[0-9][0-9]-flite # etc/asterisk/flite.conf.sample
+CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:C|(.+)|\1-${PORTNAME}|} # etc/asterisk/flite.conf.sample
 
 .include <bsd.port.pre.mk>
 
