@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-05-16 08:49:23 UTC
++++ pyproject.toml
+@@ -8,7 +8,7 @@ requires-python = ">=3.10"
+ description = "A wrapper around NumPy and other array libraries to make them compatible with the Array API standard"
+ readme = "README.md"
+ requires-python = ">=3.10"
+-license = "MIT"
++license = {text = "MIT"}
+ authors = [{name = "Consortium for Python Data API Standards"}]
+ classifiers = [
+     "Operating System :: OS Independent",
