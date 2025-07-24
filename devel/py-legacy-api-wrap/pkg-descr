@@ -1,0 +1,2 @@
+Legacy API Wrapper defines a decorator to wrap legacy APIs. The primary use case
+is APIs defined before keyword-only parameters existed.
