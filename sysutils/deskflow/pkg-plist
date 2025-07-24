@@ -13,6 +13,10 @@ share/metainfo/org.deskflow.deskflow.metainfo.xml
 %%PORTDOCS%%%%DOCSDIR%%/html/bc_sd.png
 %%PORTDOCS%%%%DOCSDIR%%/html/bdwn.png
 %%PORTDOCS%%%%DOCSDIR%%/html/closed.png
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_83f32da3f269998cf58197fe4dbd314a.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_83f32da3f269998cf58197fe4dbd314a_dep.map
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_83f32da3f269998cf58197fe4dbd314a_dep.md5
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_83f32da3f269998cf58197fe4dbd314a_dep.png
 %%PORTDOCS%%%%DOCSDIR%%/html/dir_e68e8157741866f444e17edd764ebbae.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doc.png
 %%PORTDOCS%%%%DOCSDIR%%/html/docd.png
@@ -26,7 +30,7 @@ share/metainfo/org.deskflow.deskflow.metainfo.xml
 %%PORTDOCS%%%%DOCSDIR%%/html/graph_legend.png
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/jquery.js
-%%PORTDOCS%%%%DOCSDIR%%/html/md_doc_configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/html/md_doc_user_configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/html/menu.js
 %%PORTDOCS%%%%DOCSDIR%%/html/menudata.js
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_f.png
