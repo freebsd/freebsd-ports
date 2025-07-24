@@ -1,5 +1,5 @@
 PORTNAME=	opam
-DISTVERSION=	2.3.0
+DISTVERSION=	2.4.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ocaml/opam/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	ocaml-
@@ -13,8 +13,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	curl:ftp/curl \
-		gmake:devel/gmake \
-		gpatch:devel/patch
+		gmake:devel/gmake
 
 USES=		gmake
 
