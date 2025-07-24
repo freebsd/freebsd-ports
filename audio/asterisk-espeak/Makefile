@@ -27,7 +27,7 @@ GH_PROJECT=	Asterisk-eSpeak
 
 INSTALL_TARGET=	install samples
 
-CONFLICTS_INSTALL=	asterisk[0-9][0-9]-espeak # etc/asterisk/espeak.conf.sample
+CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:C|(.+)|\1-${PORTNAME}|} # etc/asterisk/espeak.conf.sample
 
 .include <bsd.port.pre.mk>
 
