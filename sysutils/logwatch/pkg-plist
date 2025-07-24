@@ -1,7 +1,7 @@
+@dir /var/cache/logwatch
 @dir etc/logwatch/html
 @dir etc/logwatch/logfiles
 @dir etc/logwatch/services
-@dir var/logwatch
 %%ETCDIR%%/defaults/html/footer.html
 %%ETCDIR%%/defaults/html/header.html
 %%ETCDIR%%/defaults/ignore.conf
