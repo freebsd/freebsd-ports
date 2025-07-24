@@ -1,10 +1,10 @@
---- Makefile.orig	2016-09-12 20:39:22 UTC
+--- Makefile.orig	2023-07-01 23:18:21 UTC
 +++ Makefile
-@@ -7,30 +7,16 @@
+@@ -6,31 +6,17 @@
+ # the GNU General Public License Version 2. See the COPYING file
  # at the top of the source tree.
  
- INSTALL:=install
--ASTLIBDIR:=$(shell awk '/moddir/{print $$3}' /etc/asterisk/asterisk.conf)
+-ASTLIBDIR:=$(shell awk '/moddir/{print $$3}' /etc/asterisk/asterisk.conf 2> /dev/null)
 -ifeq ($(strip $(ASTLIBDIR)),)
 -	MODULES_DIR:=$(INSTALL_PREFIX)/usr/lib/asterisk/modules
 -else
@@ -16,9 +16,10 @@
  SAMPLENAME:=flite.conf.sample
 -CONFNAME:=$(basename $(SAMPLENAME))
  
--CC=gcc
--OPTIMIZE=-O2
--DEBUG=-g
+ INSTALL:=install
+-CC:=gcc
+-OPTIMIZE:=-O2
+-DEBUG:=-g
 +CC?=gcc
  
 -LIBS+=-lflite_cmu_us_kal -lflite_cmu_us_kal16 -lflite_cmu_us_awb -lflite_cmu_us_rms -lflite_cmu_us_slt -lflite_usenglish -lflite_cmulex -lflite
@@ -34,8 +35,8 @@
 -	@echo " +-------------------------------------------+"
  
  app_flite.o: app_flite.c
- 	$(CC) $(CFLAGS) $(DEBUG) $(OPTIMIZE) -c -o app_flite.o app_flite.c
-@@ -44,20 +30,7 @@ clean:
+ 	$(CC) $(CFLAGS) $(DEBUG) $(OPTIMIZE) -c -o $@ $*.c
+@@ -44,20 +29,7 @@ install: all
  install: all
  	$(INSTALL) -m 755 -d $(DESTDIR)$(MODULES_DIR)
  	$(INSTALL) -m 755 app_flite.so $(DESTDIR)$(MODULES_DIR)
