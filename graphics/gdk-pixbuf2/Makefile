@@ -1,10 +1,13 @@
 PORTNAME=	gdk-pixbuf
 PORTVERSION=	2.42.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
 DIST_SUBDIR=	gnome
+
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/commit/
+PATCHFILES=	4af78023ce7d3b5e3cec422a59bb4f48fa4f5886.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Graphic library for GTK
