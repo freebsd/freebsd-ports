@@ -4,7 +4,7 @@ DISTVERSION=	0.4.5
 CATEGORIES=	finance
 
 MAINTAINER=	tonyhawk2100@gmail.com
-COMMENT= CLI based checkbook ledger
+COMMENT=	CLI based checkbook ledger
 WWW=	https://github.com/bryceac/rcheckbook
 
 LICENSE=	MIT
