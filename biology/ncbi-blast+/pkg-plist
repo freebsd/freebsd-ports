@@ -14,7 +14,6 @@ bin/datatool
 bin/deltablast
 bin/dustmasker
 bin/gc_cli
-bin/gene_info_reader
 bin/get_species_taxids.sh
 bin/legacy_blast.pl
 bin/lmdbxx_sample
@@ -267,6 +266,7 @@ include/ncbi-tools++/cgi/cgiapp_cached.hpp
 include/ncbi-tools++/cgi/cgictx.hpp
 include/ncbi-tools++/cgi/error_codes.hpp
 include/ncbi-tools++/cgi/fcgiapp_mt.hpp
+include/ncbi-tools++/cgi/fcgiapp_st.hpp
 include/ncbi-tools++/cgi/impl/cgi_entry_reader.hpp
 include/ncbi-tools++/cgi/ncbicgi.hpp
 include/ncbi-tools++/cgi/ncbicgir.hpp
@@ -287,6 +287,7 @@ include/ncbi-tools++/common/ncbi_export.h
 include/ncbi-tools++/common/ncbi_package_ver.h
 include/ncbi-tools++/common/ncbi_pch_impl.hpp
 include/ncbi-tools++/common/ncbi_revision.h
+include/ncbi-tools++/common/ncbi_sample_api.hpp
 include/ncbi-tools++/common/ncbi_sanitizers.h
 include/ncbi-tools++/common/ncbi_sc_version.h
 include/ncbi-tools++/common/ncbi_skew_guard.h
@@ -305,6 +306,7 @@ include/ncbi-tools++/connect/ext/ncbi_dblb_svcmapper.hpp
 include/ncbi-tools++/connect/ext/ncbi_ifconf.h
 include/ncbi-tools++/connect/ext/ncbi_localnet.h
 include/ncbi-tools++/connect/impl/connect_misc.hpp
+include/ncbi-tools++/connect/impl/ncbi_servicep.h
 include/ncbi-tools++/connect/impl/ncbi_uv_nghttp2.hpp
 include/ncbi-tools++/connect/impl/server_connection.hpp
 include/ncbi-tools++/connect/impl/thread_pool_for_server.hpp
@@ -346,6 +348,7 @@ include/ncbi-tools++/connect/ncbi_service.h
 include/ncbi-tools++/connect/ncbi_service.hpp
 include/ncbi-tools++/connect/ncbi_service_connector.h
 include/ncbi-tools++/connect/ncbi_service_cxx.hpp
+include/ncbi-tools++/connect/ncbi_sftp.hpp
 include/ncbi-tools++/connect/ncbi_socket.h
 include/ncbi-tools++/connect/ncbi_socket.hpp
 include/ncbi-tools++/connect/ncbi_socket_connector.h
@@ -425,6 +428,7 @@ include/ncbi-tools++/corelib/impl/ncbi_param_impl.hpp
 include/ncbi-tools++/corelib/impl/ncbi_toolkit_impl.hpp
 include/ncbi-tools++/corelib/impl/ncbierror_impl.hpp
 include/ncbi-tools++/corelib/impl/rwstreambuf.hpp
+include/ncbi-tools++/corelib/impl/std_backport.hpp
 include/ncbi-tools++/corelib/impl/stringutf8_deprecated.hpp
 include/ncbi-tools++/corelib/impl/stringutf8_deprecated.inl
 include/ncbi-tools++/corelib/interprocess_lock.hpp
@@ -452,6 +456,7 @@ include/ncbi-tools++/corelib/ncbi_signal.hpp
 include/ncbi-tools++/corelib/ncbi_stack.hpp
 include/ncbi-tools++/corelib/ncbi_strings.h
 include/ncbi-tools++/corelib/ncbi_system.hpp
+include/ncbi-tools++/corelib/ncbi_test.hpp
 include/ncbi-tools++/corelib/ncbi_toolkit.hpp
 include/ncbi-tools++/corelib/ncbi_tree.hpp
 include/ncbi-tools++/corelib/ncbi_url.hpp
@@ -494,6 +499,7 @@ include/ncbi-tools++/corelib/ncbiutil.hpp
 include/ncbi-tools++/corelib/obj_pool.hpp
 include/ncbi-tools++/corelib/obj_store.hpp
 include/ncbi-tools++/corelib/perf_log.hpp
+include/ncbi-tools++/corelib/phone_home_policy.hpp
 include/ncbi-tools++/corelib/plugin_manager.hpp
 include/ncbi-tools++/corelib/plugin_manager_impl.hpp
 include/ncbi-tools++/corelib/plugin_manager_store.hpp
@@ -1901,23 +1907,6 @@ include/ncbi-tools++/objects/mim/mim__.hpp
 include/ncbi-tools++/objects/misc/error_codes.hpp
 include/ncbi-tools++/objects/misc/sequence_macros.hpp
 include/ncbi-tools++/objects/misc/sequence_util_macros.hpp
-include/ncbi-tools++/objects/mla/.gitignore
-include/ncbi-tools++/objects/mla/Error_val.hpp
-include/ncbi-tools++/objects/mla/Error_val_.hpp
-include/ncbi-tools++/objects/mla/Mla_back.hpp
-include/ncbi-tools++/objects/mla/Mla_back_.hpp
-include/ncbi-tools++/objects/mla/Mla_request.hpp
-include/ncbi-tools++/objects/mla/Mla_request_.hpp
-include/ncbi-tools++/objects/mla/NCBI_MedArchive_module.hpp
-include/ncbi-tools++/objects/mla/Title_msg.hpp
-include/ncbi-tools++/objects/mla/Title_msg_.hpp
-include/ncbi-tools++/objects/mla/Title_msg_list.hpp
-include/ncbi-tools++/objects/mla/Title_msg_list_.hpp
-include/ncbi-tools++/objects/mla/Title_type.hpp
-include/ncbi-tools++/objects/mla/Title_type_.hpp
-include/ncbi-tools++/objects/mla/mla__.hpp
-include/ncbi-tools++/objects/mla/mla_client.hpp
-include/ncbi-tools++/objects/mla/mla_client_.hpp
 include/ncbi-tools++/objects/mmdb1/.gitignore
 include/ncbi-tools++/objects/mmdb1/Atom.hpp
 include/ncbi-tools++/objects/mmdb1/Atom_.hpp
@@ -3339,6 +3328,7 @@ include/ncbi-tools++/objmgr/impl/bioseq_edit_commands.hpp
 include/ncbi-tools++/objmgr/impl/bioseq_info.hpp
 include/ncbi-tools++/objmgr/impl/bioseq_set_edit_commands.hpp
 include/ncbi-tools++/objmgr/impl/bioseq_set_info.hpp
+include/ncbi-tools++/objmgr/impl/bioseq_sort.hpp
 include/ncbi-tools++/objmgr/impl/data_source.hpp
 include/ncbi-tools++/objmgr/impl/edit_commands_impl.hpp
 include/ncbi-tools++/objmgr/impl/handle_range.hpp
@@ -3483,11 +3473,7 @@ include/ncbi-tools++/objtools/blast/blastdb_format/blastdb_seqid.hpp
 include/ncbi-tools++/objtools/blast/blastdb_format/invalid_data_exception.hpp
 include/ncbi-tools++/objtools/blast/blastdb_format/seq_formatter.hpp
 include/ncbi-tools++/objtools/blast/blastdb_format/seq_writer.hpp
-include/ncbi-tools++/objtools/blast/gene_info_reader/file_utils.hpp
-include/ncbi-tools++/objtools/blast/gene_info_reader/gene_info.hpp
-include/ncbi-tools++/objtools/blast/gene_info_reader/gene_info_reader.hpp
 include/ncbi-tools++/objtools/blast/seqdb_reader/column_reader.hpp
-include/ncbi-tools++/objtools/blast/seqdb_reader/impl/lmdb++.h
 include/ncbi-tools++/objtools/blast/seqdb_reader/impl/seqdb_lmdb.hpp
 include/ncbi-tools++/objtools/blast/seqdb_reader/impl/seqdbatlas.hpp
 include/ncbi-tools++/objtools/blast/seqdb_reader/impl/seqdbcol.hpp
@@ -3551,7 +3537,13 @@ include/ncbi-tools++/objtools/data_loaders/genbank/impl/incr_time.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/impl/info_cache.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/impl/processor.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/impl/processors.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/psg_blob_processor.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/psg_cache.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/psg_cdd.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/psg_evloop.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/impl/psg_loader_impl.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/psg_processor.hpp
+include/ncbi-tools++/objtools/data_loaders/genbank/impl/psg_processors.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/impl/reader_id1_base.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/impl/reader_id2_base.hpp
 include/ncbi-tools++/objtools/data_loaders/genbank/impl/reader_service.hpp
@@ -4513,6 +4505,7 @@ include/ncbi-tools++/objtools/readers/aln_reader.hpp
 include/ncbi-tools++/objtools/readers/alnread.hpp
 include/ncbi-tools++/objtools/readers/bed_reader.hpp
 include/ncbi-tools++/objtools/readers/cigar.hpp
+include/ncbi-tools++/objtools/readers/co_generator.hpp
 include/ncbi-tools++/objtools/readers/error_container.hpp
 include/ncbi-tools++/objtools/readers/fasta.hpp
 include/ncbi-tools++/objtools/readers/fasta_exception.hpp
@@ -4687,6 +4680,7 @@ include/ncbi-tools++/sra/readers/bam/bgzf.hpp
 include/ncbi-tools++/sra/readers/bam/cache_with_lock.hpp
 include/ncbi-tools++/sra/readers/bam/vdbfile.hpp
 include/ncbi-tools++/sra/readers/ncbi_traces_path.hpp
+include/ncbi-tools++/sra/readers/ncbi_traces_path.hpp.bak
 include/ncbi-tools++/sra/readers/sra/csraread.hpp
 include/ncbi-tools++/sra/readers/sra/exception.hpp
 include/ncbi-tools++/sra/readers/sra/graphread.hpp
@@ -4784,6 +4778,10 @@ include/ncbi-tools++/util/compress/zlib.hpp
 include/ncbi-tools++/util/compress/zlib/zconf.h
 include/ncbi-tools++/util/compress/zlib/zlib.h
 include/ncbi-tools++/util/compress/zlib/zutil.h
+include/ncbi-tools++/util/compress/zlib_cloudflare.hpp
+include/ncbi-tools++/util/compress/zlib_cloudflare/zconf_cf.h
+include/ncbi-tools++/util/compress/zlib_cloudflare/zlib_cf.h
+include/ncbi-tools++/util/compress/zlib_cloudflare/zutil_cf.h
 include/ncbi-tools++/util/compress/zstd.hpp
 include/ncbi-tools++/util/creaders/alnread.h
 include/ncbi-tools++/util/creaders/creaders_export.h
@@ -4801,15 +4799,13 @@ include/ncbi-tools++/util/histogram_binning.hpp
 include/ncbi-tools++/util/icanceled.hpp
 include/ncbi-tools++/util/id_mux.hpp
 include/ncbi-tools++/util/impl/compile_time_bits.hpp
-include/ncbi-tools++/util/impl/const_tuple.hpp
-include/ncbi-tools++/util/impl/ct_bitset_cxx14.hpp
 include/ncbi-tools++/util/impl/ct_bitset_cxx17.hpp
 include/ncbi-tools++/util/impl/ct_crc32.hpp
-include/ncbi-tools++/util/impl/ct_string_cxx14.hpp
 include/ncbi-tools++/util/impl/ct_string_cxx17.hpp
 include/ncbi-tools++/util/impl/ctsort_cxx14.hpp
 include/ncbi-tools++/util/impl/floating_point_comparison.hpp
 include/ncbi-tools++/util/impl/generated_fsm.hpp
+include/ncbi-tools++/util/incr_time.hpp
 include/ncbi-tools++/util/itransaction.hpp
 include/ncbi-tools++/util/itree.hpp
 include/ncbi-tools++/util/itree.inl
@@ -4826,6 +4822,7 @@ include/ncbi-tools++/util/math/matrix.hpp
 include/ncbi-tools++/util/math/miscmath.h
 include/ncbi-tools++/util/math/promote.hpp
 include/ncbi-tools++/util/md5.hpp
+include/ncbi-tools++/util/memory_streambuf.hpp
 include/ncbi-tools++/util/message_queue.hpp
 include/ncbi-tools++/util/miscmath.h
 include/ncbi-tools++/util/multi_writer.hpp
@@ -4847,10 +4844,8 @@ include/ncbi-tools++/util/regexp.hpp
 include/ncbi-tools++/util/regexp/ctre/LICENSE
 include/ncbi-tools++/util/regexp/ctre/ctre-unicode.hpp
 include/ncbi-tools++/util/regexp/ctre/ctre.hpp
-include/ncbi-tools++/util/regexp/pcre.h
-include/ncbi-tools++/util/regexp/pcrecpp.h
-include/ncbi-tools++/util/regexp/pcrecpparg.h
-include/ncbi-tools++/util/regexp/pcreposix.h
+include/ncbi-tools++/util/regexp/pcre2.h
+include/ncbi-tools++/util/regexp/pcre2posix.h
 include/ncbi-tools++/util/request_control.hpp
 include/ncbi-tools++/util/resize_iter.hpp
 include/ncbi-tools++/util/resource_pool.hpp
@@ -4984,8 +4979,6 @@ lib/ncbi-tools++/libgbseq-static.a
 lib/ncbi-tools++/libgbseq.a
 lib/ncbi-tools++/libgencoll_client-static.a
 lib/ncbi-tools++/libgencoll_client.a
-lib/ncbi-tools++/libgene_info-static.a
-lib/ncbi-tools++/libgene_info.a
 lib/ncbi-tools++/libgeneral-static.a
 lib/ncbi-tools++/libgeneral.a
 lib/ncbi-tools++/libgenesbyloc-static.a
@@ -5020,10 +5013,6 @@ lib/ncbi-tools++/libmedline-static.a
 lib/ncbi-tools++/libmedline.a
 lib/ncbi-tools++/libmim-static.a
 lib/ncbi-tools++/libmim.a
-lib/ncbi-tools++/libmla-static.a
-lib/ncbi-tools++/libmla.a
-lib/ncbi-tools++/libmlacli-static.a
-lib/ncbi-tools++/libmlacli.a
 lib/ncbi-tools++/libmmdb-static.a
 lib/ncbi-tools++/libmmdb.a
 lib/ncbi-tools++/libncbi_xblobstorage_netcache-static.a
@@ -5206,3 +5195,5 @@ lib/ncbi-tools++/libxxconnect.a
 lib/ncbi-tools++/libxxconnect2-dll.so
 lib/ncbi-tools++/libxxconnect2-static.a
 lib/ncbi-tools++/libxxconnect2.a
+lib/ncbi-tools++/libzcf-static.a
+lib/ncbi-tools++/libzcf.a
