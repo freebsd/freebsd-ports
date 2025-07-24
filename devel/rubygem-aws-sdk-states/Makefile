@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-states
-PORTVERSION=	1.90.0
+PORTVERSION=	1.92.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
