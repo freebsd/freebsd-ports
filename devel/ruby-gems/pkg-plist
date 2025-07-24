@@ -160,8 +160,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/specification_policy.rb
 %%RUBY_SITELIBDIR%%/rubygems/specification_record.rb
-%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA.pem
-%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA_R3.pem
+%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.org/GlobalSign.pem
 %%RUBY_SITELIBDIR%%/rubygems/stub_specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/target_rbconfig.rb
 %%RUBY_SITELIBDIR%%/rubygems/text.rb
