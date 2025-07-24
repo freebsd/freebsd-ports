@@ -1,5 +1,5 @@
-TIMESTAMP = 1744947331
-SHA256 (go/security_naabu/naabu-v2.3.4/v2.3.4.mod) = 37477fafd0b3b04592d1c7104ddf9dfafe87d579bb2cc3dcab93621b9549b283
-SIZE (go/security_naabu/naabu-v2.3.4/v2.3.4.mod) = 6288
-SHA256 (go/security_naabu/naabu-v2.3.4/v2.3.4.zip) = 534e0e1318f8a4fb7fee5db3b3d2f6537145beb4037958d6df4a68e69de6ee0d
-SIZE (go/security_naabu/naabu-v2.3.4/v2.3.4.zip) = 506886
+TIMESTAMP = 1753248989
+SHA256 (go/security_naabu/naabu-v2.3.5/v2.3.5.mod) = c6ea2b8c6fa1e166e02d9a074514b9a77c1bf2914f52e4ba411726a9c798349b
+SIZE (go/security_naabu/naabu-v2.3.5/v2.3.5.mod) = 6743
+SHA256 (go/security_naabu/naabu-v2.3.5/v2.3.5.zip) = 77c0c9136c85afc93a3d16811d76e491b23a3be2e077847c80d6e2258b2dfa87
+SIZE (go/security_naabu/naabu-v2.3.5/v2.3.5.zip) = 527140
