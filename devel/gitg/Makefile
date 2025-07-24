@@ -27,7 +27,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 desktop-file-utils gettext gnome localbase \
-		meson pathfix pkgconfig python:build tar:xz vala:build
+		meson pkgconfig python:build tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf gtk30 gtksourceview4 intltool introspection
 
 USE_LDCONFIG=	yes
