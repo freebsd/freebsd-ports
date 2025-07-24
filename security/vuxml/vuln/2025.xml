@@ -1,3 +1,36 @@
+  <vuln vid="b3948bf3-685e-11f0-bff5-6805ca2fa271">
+    <topic>powerdns-recursor -- cache pollution</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>5.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://blog.powerdns.com/powerdns-security-advisory-2025-04">
+	  <p>An attacker spoofing answers to ECS enabled requests
+	  sent out by the Recursor has a chance of success higher
+	  than non-ECS enabled queries.	The updated version include
+	  various mitigations against spoofing attempts of ECS enabled
+	  queries by chaining ECS enabled requests and enforcing
+	  stricter validation of the received answers. The most strict
+	  mitigation done when the new setting outgoing.edns_subnet_harden
+	  (old style name edns-subnet-harden) is enabled.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-30192</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-30192</url>
+   </references>
+    <dates>
+      <discovery>2025-07-21</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5683b3a7-683d-11f0-966e-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
