@@ -1,0 +1,2 @@
+bin/rcheckbook
+/var/db/rcheckbook/register.db
