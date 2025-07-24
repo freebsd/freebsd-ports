@@ -1,5 +1,6 @@
 PORTNAME=	plasma-pa
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	audio kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,7 +9,8 @@ COMMENT=	Plasma applet for audio volume management using PulseAudio
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libpulse.so:audio/pulseaudio \
 		libKF6PulseAudioQt.so:audio/pulseaudio-qt
-RUN_DEPENDS=	${LOCALBASE}/share/sounds/freedesktop/index.theme:audio/freedesktop-sound-theme
+RUN_DEPENDS=	${LOCALBASE}/share/sounds/freedesktop/index.theme:audio/freedesktop-sound-theme \
+		libcanberra-pulse>0:audio/libcanberra-pulse
 
 USES=		cmake compiler:c++17-lang gettext gl gnome kde:6 pkgconfig \
 		qt:6 tar:xz
