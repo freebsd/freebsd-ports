@@ -1,5 +1,5 @@
 PORTNAME=	Future-IO
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Future>=0:devel/p5-Future \
 		p5-Struct-Dumb>=0:devel/p5-Struct-Dumb
 TEST_DEPENDS=	p5-Test-ExpectAndCheck>=0.06:devel/p5-Test-ExpectAndCheck \
-		p5-Test-Future-IO-Impl>=0:devel/p5-Test-Future-IO-Impl \
+		p5-Test-Future-IO-Impl>=0.15:devel/p5-Test-Future-IO-Impl \
 		p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
