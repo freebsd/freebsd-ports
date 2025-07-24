@@ -28,7 +28,8 @@ LICENSE_FILE=	${WRKSRC}/docs/license.rst
 
 COMPONENT=	${PORTNAME:tl:C/^lib//:C/mesa-//}
 
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 .if ${COMPONENT} != clover
 .if ${PORT_OPTIONS:MX11}
 USES+=	xorg
