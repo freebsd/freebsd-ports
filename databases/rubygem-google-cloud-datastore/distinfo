@@ -1,3 +1,3 @@
-TIMESTAMP = 1742070492
-SHA256 (rubygem/google-cloud-datastore-2.11.0.gem) = 53d0b7cc4a1d52b9e9e55506499531c56221e63890c5bc976015beb530097f32
-SIZE (rubygem/google-cloud-datastore-2.11.0.gem) = 52224
+TIMESTAMP = 1753265804
+SHA256 (rubygem/google-cloud-datastore-2.12.0.gem) = cb6eb9f43df0e34f8c659923fee92b887a8bdfe01802acbf627118eeb8e8dee0
+SIZE (rubygem/google-cloud-datastore-2.12.0.gem) = 53760
