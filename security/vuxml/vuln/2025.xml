@@ -1,3 +1,42 @@
+  <vuln vid="5683b3a7-683d-11f0-966e-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.2.0</ge><lt>18.2.1</lt></range>
+	<range><ge>18.1.0</ge><lt>18.1.3</lt></range>
+	<range><ge>15.0.0</ge><lt>18.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/07/23/patch-release-gitlab-18-2-1-released/">
+	  <p>Cross-site scripting issue impacts Kubernetes Proxy in GitLab CE/EE</p>
+	  <p>Cross-site scripting issue impacts Kubernetes Proxy in GitLab CE/EE using CDNs</p>
+	  <p>Exposure of Sensitive Information to an Unauthorized Actor issue impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue impacts GitLab EE</p>
+	  <p>Exposure of Sensitive Information to an Unauthorized Actor issue impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4700</cvename>
+      <cvename>CVE-2025-4439</cvename>
+      <cvename>CVE-2025-7001</cvename>
+      <cvename>CVE-2025-4976</cvename>
+      <cvename>CVE-2025-0765</cvename>
+      <cvename>CVE-2025-1299</cvename>
+      <url>https://about.gitlab.com/releases/2025/07/23/patch-release-gitlab-18-2-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-07-23</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0f5bcba2-67fb-11f0-9ee5-b42e991fc52e">
     <topic>sqlite -- Integer Truncation on SQLite</topic>
     <affects>
