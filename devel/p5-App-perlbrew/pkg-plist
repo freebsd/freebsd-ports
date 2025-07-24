@@ -1,5 +1,6 @@
 bin/perlbrew
 %%SITE_PERL%%/App/Perlbrew/HTTP.pm
+%%SITE_PERL%%/App/Perlbrew/Patchperl.pm
 %%SITE_PERL%%/App/Perlbrew/Path.pm
 %%SITE_PERL%%/App/Perlbrew/Path/Installation.pm
 %%SITE_PERL%%/App/Perlbrew/Path/Installations.pm
