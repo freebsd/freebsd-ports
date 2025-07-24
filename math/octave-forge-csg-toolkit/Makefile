@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-csg-toolkit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.2
+DISTVERSION=	1.4.3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -17,8 +17,6 @@ USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	pr0m1th3as
 GH_PROJECT=	${OCTAVE_PKGNAME}
-
-CXXFLAGS+=	-stdlib=libstdc++
 
 OCTAVE_SRC=		${GH_PROJECT}-${DISTVERSION}
 
