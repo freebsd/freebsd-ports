@@ -1,9 +1,8 @@
 PORTNAME=	tor-browser
-DISTVERSION=	14.5.4
-PORTREVISION=	1
+DISTVERSION=	14.5.5
 CATEGORIES=	www net security wayland
-TAG_BASE=	90dbac96420394aa35ce29385814742ac4942b26
-TAG_TOR=	9cbc3b3d25d2c5c77f1b6b3172ba6bcad2563939
+TAG_BASE=	8600afeb12fdae895c37618e1386c1a1ac2f5308
+TAG_TOR=	9fe8a13ee4c69f91cd545dc3c575ca8f4851d58e
 MASTER_SITES=	TOR \
 		LOCAL/vvd \
 		https://build-sources.tbb.torproject.org/:source1 \
@@ -18,7 +17,7 @@ MASTER_SITES=	TOR \
 		LOCAL/vvd:source5
 MASTER_SITE_SUBDIR=	torbrowser/${DISTVERSION}/:DEFAULT \
 			download/releases/:source3
-DISTNAME=	src-firefox-tor-browser-128.12.0esr-14.5-1-build1
+DISTNAME=	src-firefox-tor-browser-128.13.0esr-14.5-1-build2
 MANUAL=		manual_215922.zip
 NOSCRIPT=	noscript-13.0.8.xpi
 DISTFILES=	${DISTNAME}.tar.xz \
