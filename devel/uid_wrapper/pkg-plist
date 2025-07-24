@@ -2,6 +2,6 @@ lib/cmake/uid_wrapper/uid_wrapper-config-version.cmake
 lib/cmake/uid_wrapper/uid_wrapper-config.cmake
 lib/libuid_wrapper.so
 lib/libuid_wrapper.so.0
-lib/libuid_wrapper.so.0.0.6
+lib/libuid_wrapper.so.0.2.1
 libdata/pkgconfig/uid_wrapper.pc
 share/man/man1/uid_wrapper.1.gz
