@@ -188,7 +188,7 @@ lib/libCatch2.so
 lib/libCatch2.so.3.8.1
 lib/libCatch2Main.so
 lib/libCatch2Main.so.3.8.1
-libdata/pkgconfig/catch2-with-main.pc
-libdata/pkgconfig/catch2.pc
+share/pkgconfig/catch2-with-main.pc
+share/pkgconfig/catch2.pc
 share/Catch2/gdbinit
 share/Catch2/lldbinit

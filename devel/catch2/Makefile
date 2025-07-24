@@ -1,6 +1,7 @@
 PORTNAME=	catch2 # 2.x series is under devel/catch, the project is called catch2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.8.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://github.com/catchorg/Catch2
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake:testing compiler:c++14-lang pathfix python:build,test
+USES=		cmake:testing compiler:c++14-lang python:build,test
 USE_GITHUB=	yes
 GH_ACCOUNT=	catchorg
 GH_PROJECT=	Catch2
