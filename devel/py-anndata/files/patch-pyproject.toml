@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -39,13 +39,13 @@ dependencies = [
+     "pandas >=2.1.0, !=2.1.2",
+     "numpy>=1.26",
+     # https://github.com/scverse/anndata/issues/1434
+-    "scipy >=1.12",
++    "scipy >=1.11",
+     "h5py>=3.8",
+     "natsort",
+     "packaging>=24.2",
+     "array_api_compat>=1.7.1",
+     "legacy-api-wrap",
+-    "zarr >=2.18.7, !=3.0.*",
++    "zarr >=2.18.4, !=3.0.*",
+ ]
+ dynamic = [ "version" ]
+ 
