@@ -1,5 +1,6 @@
 PORTNAME=	catch
 PORTVERSION=	2.13.10
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/catchorg/Catch2
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake compiler:c++14-lang pathfix python:build
+USES=		cmake compiler:c++14-lang python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	catchorg
