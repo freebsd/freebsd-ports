@@ -8,6 +8,7 @@ COMMENT=	Espeak dialplan application for Asterisk
 WWW=		https://zaf.github.io/Asterisk-eSpeak/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libespeak-ng.so:audio/espeak-ng \
 		libsamplerate.so:audio/libsamplerate
