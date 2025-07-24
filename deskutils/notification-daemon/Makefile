@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libdbus-1.so:devel/dbus
 
-USES=		gettext gmake gnome localbase pathfix pkgconfig tar:xz xorg
+USES=		gettext gmake gnome localbase pkgconfig tar:xz xorg
 USE_GNOME=	cairo gnomeprefix gtk30
 USE_XORG=	x11
 GNU_CONFIGURE=	yes

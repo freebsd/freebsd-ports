@@ -20,7 +20,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 PORTSCOUT=	limitw:1,even
 
 USES=		autoreconf compiler:c11 gettext gmake gnome libtool \
-		localbase mate pathfix pkgconfig tar:xz gstreamer
+		localbase mate pkgconfig tar:xz gstreamer
 USE_MATE=	caja desktop
 USE_GNOME=	cairo gdkpixbuf gtk30 intltool
 USE_LDCONFIG=	yes

@@ -21,7 +21,7 @@ LIB_DEPENDS=	libqof.so:databases/qof \
 		libharfbuzz.so:print/harfbuzz \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
 
-USES=		autoreconf desktop-file-utils gettext gmake gnome libtool pathfix pkgconfig xorg
+USES=		autoreconf desktop-file-utils gettext gmake gnome libtool pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	GnoTime
 GH_PROJECT=	gnotime

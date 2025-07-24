@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome libtool localbase mate pathfix \
+USES=		gettext gmake gnome libtool localbase mate \
 		pkgconfig tar:xz xorg
 USE_MATE=	panel
 USE_XORG=	ice sm x11 xext
