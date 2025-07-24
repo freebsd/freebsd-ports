@@ -1,3 +1,33 @@
+  <vuln vid="3d4393b2-68a5-11f0-b2b4-589cfc10832a">
+    <topic>gdk-pixbuf2 -- a heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>gdk-pixbuf2</name>
+	<range><lt>2.42.12_2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://www.cve.org/CVERecord?id=CVE-2025-7345">
+	  <p>A flaw exists in gdk-pixbuf within the gdk_pixbuf__jpeg_image_load_increment
+	function (io-jpeg.c) and in glib’s g_base64_encode_step (glib/gbase64.c).
+	When processing maliciously crafted JPEG images, a heap buffer overflow can occur
+	during Base64 encoding, allowing out-of-bounds reads from heap memory, potentially
+	causing application crashes or arbitrary code execution.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-7345</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2025-7345</url>
+    </references>
+    <dates>
+      <discovery>2025-07-24</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b3948bf3-685e-11f0-bff5-6805ca2fa271">
     <topic>powerdns-recursor -- cache pollution</topic>
     <affects>
