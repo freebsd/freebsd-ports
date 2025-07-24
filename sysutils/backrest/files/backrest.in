@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: backrest
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for backrest in /etc/rc.conf
+#
+# backrest_enable (bool):     Enable backrest. (Default=NO)
+# backrest_env_file (str):    Path containing the environment variables
+#                             to be used by backrest. (Default: %%ETCDIR%%/config.env)
+# backrest_logfile (str):     Log file used to store the backrest's output. (Default: /var/log/backrest.log)
+# backrest_pidfile (str):     File used by backrest to store the process ID. (Default: /var/run/backrest.pid)
+# backrest_runas (str):       User to run backrest as. (Default: %%USER%%)
+
+. /etc/rc.subr
+
+name="backrest"
+desc="Web UI and orchestrator for restic backup"
+rcvar="backrest_enable"
+
+load_rc_config $name
+
+: ${backrest_enable:="NO"}
+: ${backrest_env_file:="%%ETCDIR%%/config.env"}
+: ${backrest_logfile:="/var/log/backrest.log"}
+: ${backrest_pidfile:="/var/run/backrest.pid"}
+: ${backrest_runas:="%%USER%%"}
+
+pidfile="${backrest_pidfile}"
+procname="%%LOCALBASE%%/bin/backrest"
+command="/usr/sbin/daemon"
+command_args="-o '${backrest_logfile}' -p '${pidfile}' -u '${backrest_runas}' -t '${desc}' -- '${procname}'"
+
+run_rc_command "$1"
