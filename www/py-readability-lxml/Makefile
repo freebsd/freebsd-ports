@@ -1,9 +1,9 @@
 PORTNAME=	readability-lxml
-PORTVERSION=	0.8.1
-PORTREVISION=	2
+DISTVERSION=	0.8.4.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S|-|_|}-${DISTVERSION}
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	Fast HTML to text parser (article readability tool)
