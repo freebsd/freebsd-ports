@@ -61,6 +61,7 @@ include/ruby-%%RUBY_VER%%/ruby/internal/attr/nodiscard.h
 include/ruby-%%RUBY_VER%%/ruby/internal/attr/noexcept.h
 include/ruby-%%RUBY_VER%%/ruby/internal/attr/noinline.h
 include/ruby-%%RUBY_VER%%/ruby/internal/attr/nonnull.h
+include/ruby-%%RUBY_VER%%/ruby/internal/attr/nonstring.h
 include/ruby-%%RUBY_VER%%/ruby/internal/attr/noreturn.h
 include/ruby-%%RUBY_VER%%/ruby/internal/attr/pure.h
 include/ruby-%%RUBY_VER%%/ruby/internal/attr/restrict.h
