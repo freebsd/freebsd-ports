@@ -6,7 +6,7 @@ DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	A collection of tools to manipulate IMAP mailboxes
-WWW=		https://gitlab.com/mat813/imap-tools
+WWW=		https://gitlab.com/mat813/imap-tools-rs
 
 LICENSE=	MIT
 
