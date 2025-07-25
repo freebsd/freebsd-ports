@@ -3,7 +3,7 @@ DISTVERSION=	2.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	joe@thrallingpenguin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for converting XML to Hash syntax
 WWW=		https://github.com/savonrb/nori
 

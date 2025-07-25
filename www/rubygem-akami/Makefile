@@ -3,7 +3,7 @@ PORTVERSION=	1.3.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	joe@thrallingpenguin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for building web service security
 WWW=		https://github.com/savonrb/akami
 

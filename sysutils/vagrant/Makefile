@@ -3,7 +3,7 @@ PORTVERSION=	2.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils rubygems devel
 
-MAINTAINER=	joe@thrallingpenguin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vagrant Virtual Machine Manager
 WWW=		https://www.vagrantup.com/
 

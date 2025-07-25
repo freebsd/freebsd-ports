@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://mosquitto.org/files/source/
 
-MAINTAINER=	joe@thrallingpenguin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source MQTT broker
 WWW=		https://mosquitto.org/
 

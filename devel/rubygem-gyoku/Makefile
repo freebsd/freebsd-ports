@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	joe@thrallingpenguin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for translating Ruby hashes to XML
 WWW=		https://github.com/savonrb/gyoku
 
