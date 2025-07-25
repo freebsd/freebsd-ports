@@ -5,7 +5,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dan@langille.org
+MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	OS level virtualization monitoring extend
 WWW=		https://github.com/VVelox/OSLV-Monitor
 
