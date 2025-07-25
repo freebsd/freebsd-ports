@@ -165,6 +165,7 @@
     SUBDIR += mantis
     SUBDIR += mariadb-connector-c
     SUBDIR += mariadb-connector-odbc
+    SUBDIR += mariadb-java-client
     SUBDIR += mariadb1011-client
     SUBDIR += mariadb1011-server
     SUBDIR += mariadb105-client
