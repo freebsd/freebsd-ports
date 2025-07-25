@@ -14,7 +14,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lang gnome localbase:ldflags meson pkgconfig \
 		python:build tar:xz
-USE_GNOME=	atk glibmm26 libsigc++20
+USE_GNOME=	atk glibmm libsigc++20
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
