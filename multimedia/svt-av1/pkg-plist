@@ -1,4 +1,5 @@
 bin/SvtAv1EncApp
+include/svt-av1/EbConfigMacros.h
 include/svt-av1/EbDebugMacros.h
 include/svt-av1/EbSvtAv1.h
 include/svt-av1/EbSvtAv1Enc.h
