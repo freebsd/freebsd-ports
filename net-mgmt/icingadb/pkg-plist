@@ -1,12 +1,16 @@
 bin/%%PORTNAME%%
 @sample(root,wheel,0640) etc/%%PORTNAME%%/config.yml.sample
-%%EXAMPLESDIR%%/schema/pgsql/upgrades/optional/1.2-0-history.sql
+%%EXAMPLESDIR%%/schema/mysql/schema.sql
+%%EXAMPLESDIR%%/schema/mysql/upgrades/1.0.0-rc2.sql
+%%EXAMPLESDIR%%/schema/mysql/upgrades/1.0.0.sql
+%%EXAMPLESDIR%%/schema/mysql/upgrades/1.1.1.sql
+%%EXAMPLESDIR%%/schema/mysql/upgrades/1.2.0.sql
+%%EXAMPLESDIR%%/schema/mysql/upgrades/1.2.1.sql
+%%EXAMPLESDIR%%/schema/mysql/upgrades/1.4.0.sql
+%%EXAMPLESDIR%%/schema/mysql/upgrades/optional/1.2.0-history.sql
+%%EXAMPLESDIR%%/schema/pgsql/schema.sql
 %%EXAMPLESDIR%%/schema/pgsql/upgrades/1.1.1.sql
 %%EXAMPLESDIR%%/schema/pgsql/upgrades/1.2.0.sql
-%%EXAMPLESDIR%%/schema/pgsql/schema.sql
-%%EXAMPLESDIR%%/schema/mysql/schema.sql
-%%EXAMPLESDIR%%/schema/mysql/upgrades/optional/1.2.0-history.sql
-%%EXAMPLESDIR%%/schema/mysql/upgrades/1.1.1.sql
-%%EXAMPLESDIR%%/schema/mysql/upgrades/1.0.0.sql
-%%EXAMPLESDIR%%/schema/mysql/upgrades/1.0.0-rc2.sql
-%%EXAMPLESDIR%%/schema/mysql/upgrades/1.2.0.sql
+%%EXAMPLESDIR%%/schema/pgsql/upgrades/1.2.1.sql
+%%EXAMPLESDIR%%/schema/pgsql/upgrades/1.4.0.sql
+%%EXAMPLESDIR%%/schema/pgsql/upgrades/optional/1.2-0-history.sql

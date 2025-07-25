@@ -1,6 +1,5 @@
 PORTNAME=	cyclonedx-python-lib
-PORTVERSION=	10.4.1
-PORTREVISION=	1
+PORTVERSION=	10.5.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/CycloneDX/cyclonedx-python-lib/releases/download/v${PORTVERSION}/
@@ -28,13 +27,21 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	JSON_VALIDATION VALIDATION XML_VALIDATION
 JSON_VALIDATION_DESC=	JSON validation
 VALIDATION_DESC=	JSON and XML validation
+VALIDATION_IMPLIES=	JSON_VALIDATION XML_VALIDATION
 XML_VALIDATION_DESC=	XML validation
 
-JSON_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18<5:devel/py-jsonschema@${PY_FLAVOR} \
+JSON_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.25<5:devel/py-jsonschema@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}referencing>=0.28.4:devel/py-referencing@${PY_FLAVOR}
-VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18<5:devel/py-jsonschema@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}lxml5>=4<7:devel/py-lxml5@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}referencing>=0.28.4:devel/py-referencing@${PY_FLAVOR}
+# jsonschema[format-nongpl]
+JSON_VALIDATION_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}fqdn>=0:www/py-fqdn@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}idna>=0:dns/py-idna@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}isoduration>=0:devel/py-isoduration@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}jsonpointer>=1.13:devel/py-jsonpointer@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}rfc3339-validator>=0:devel/py-rfc3339-validator@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}rfc3986-validator>=0.1.0:devel/py-rfc3986-validator@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}rfc3987-syntax>=1.1.0:www/py-rfc3987-syntax@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}uri-template>=0:net/py-uri-template@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}webcolors>=24.6.0:graphics/py-webcolors@${PY_FLAVOR}
 XML_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml5>=4<7:devel/py-lxml5@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>

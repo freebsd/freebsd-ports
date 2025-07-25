@@ -23,7 +23,7 @@ LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz \
+USES=		gettext gmake gnome libtool localbase pkgconfig tar:xz \
 		xorg
 USE_XORG=	x11
 USE_GNOME=	cairo glib20 gtk30 intlhack librsvg2 libwnck3

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz \
 		libmpfr.so:math/mpfr
 
-USES=		desktop-file-utils gmake gnome libtool pathfix pkgconfig \
+USES=		desktop-file-utils gmake gnome libtool pkgconfig \
 		readline shared-mime-info tar:xz xorg
 USE_GNOME=	cairo gnomeprefix gdkpixbuf gtksourceview4 intltool vte3
 USE_XORG=	x11 xext

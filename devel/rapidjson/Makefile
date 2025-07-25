@@ -1,7 +1,7 @@
 PORTNAME=	rapidjson
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0-709
-DISTVERSIONSUFFIX=	-g06d58b9e
+DISTVERSION=	1.1.0-763
+DISTVERSIONSUFFIX=	-g24b5e7a8
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,5 +50,7 @@ post-patch:
 
 post-install:
 	@${RM} -r ${STAGEDIR}${EXAMPLESDIR}/CMake*
+
+# Tests fail to compile: implicit instantiation of undefined template 'std::char_traits<unsigned int>', see https://github.com/Tencent/rapidjson/issues/2349
 
 .include <bsd.port.mk>

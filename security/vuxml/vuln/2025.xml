@@ -1,3 +1,793 @@
+  <vuln vid="67c6461f-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1933572%2C1971116">
+	  <p>Memory safety bugs present in Firefox 140 and
+	  Thunderbird 140. Some of these bugs showed evidence of
+	  memory corruption and we presume that with enough effort
+	  some of these could have been exploited to run arbitrary
+	  code.</p>
+	  <p>Focus incorrectly truncated URLs towards the beginning instead of
+	    around the origin.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8044</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8044</url>
+      <cvename>CVE-2025-8043</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8043</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="62f1a68f-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1975058%2C1975058%2C1975998%2C1975998">
+	  <p>Memory safety bugs present in Firefox ESR 140.0,
+	  Thunderbird ESR 140.0, Firefox 140 and Thunderbird 140.
+	  Some of these bugs showed evidence of memory corruption and
+	  we presume that with enough effort some of these could have
+	  been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8040</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8040</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6088905c-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- Persisted search terms in the URL bar</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1970997">
+	  <p>In some cases search terms persisted in the URL bar even after
+	navigating away from the search page.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8039</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8039</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5d91def0-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- Ignored paths while checking navigations</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1808979">
+	  <p>Thunderbird ignored paths when checking the validity of
+	  navigations in a frame.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8038</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8038</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5abc2187-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- cookie shadowing</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1964767">
+	  <p>Setting a nameless cookie with an equals sign in the
+	  value shadowed other cookies. Even if the nameless cookie
+	  was set over HTTP and the shadowed cookie included the
+	  `Secure` attribute.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8037</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8037</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="58027367-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- CORS circumvention</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1960834">
+	  <p>Thunderbird cached CORS preflight responses across IP
+	  address changes. This allowed circumventing CORS with DNS
+	  rebinding.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8036</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8036</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="55096bd3-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.13</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.13</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1975961%2C1975961%2C1975961">
+	  <p>Memory safety bugs present in Firefox ESR 128.12,
+	  Thunderbird ESR 128.12, Firefox ESR 140.0, Thunderbird ESR
+	  140.0, Firefox 140 and Thunderbird 140. Some of these bugs
+	  showed evidence of memory corruption and we presume that
+	  with enough effort some of these could have been exploited
+	  to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8035</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8035</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4faa01cb-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.13</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>115.26</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.13</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1970422%2C1970422%2C1970422%2C1970422">
+	  <p>Memory safety bugs present in Firefox ESR 115.25, Firefox
+	  ESR 128.12, Thunderbird ESR 128.12, Firefox ESR 140.0,
+	  Thunderbird ESR 140.0, Firefox 140 and Thunderbird 140. Some
+	  of these bugs showed evidence of memory corruption and we
+	  presume that with enough effort some of these could have
+	  been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8034</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8034</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4d03efe7-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- nullptr dereference</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.13</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>115.26</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.13</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1973990">
+	  <p>The JavaScript engine did not handle closed generators
+	  correctly and it was possible to resume them leading to a
+	  nullptr deref.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8033</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8033</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4a357f4b-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- XSLT document CSP bypass</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.13</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.13</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1974407">
+	  <p>XSLT document loading did not correctly propagate the
+	  source document which bypassed its CSP.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8032</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8032</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="477e9eb3-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- HTTP Basic Authentication credentials leak</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.13</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1971719">
+	  <p>The `username:password` part was not correctly stripped
+	  from URLs in CSP reports potentially leaking HTTP Basic
+	  Authentication credentials.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8031</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8031</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="44b3048b-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- Insufficient input escaping</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.13</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.13</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1968414">
+	  <p>Insufficient escaping in the Copy as cURL feature could
+	  potentially be used to trick a user into executing
+	  unexpected code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8030</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8030</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="419bcf99-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- 'javascript:' URLs execution</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.13</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.13</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1928021">
+	  <p>Thunderbird executed `javascript:` URLs when used in
+	  `object` and `embed` tags.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8029</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8029</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3e9406a7-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- Incorrect computation of branch address</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.13</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>115.26</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.13</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1971581">
+	  <p>On arm64, a WASM `br_table` instruction with a lot of
+	  entries could lead to the label being too far from the
+	  instruction causing truncation and incorrect computation of
+	  the branch address.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8028</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8028</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3c234220-685e-11f0-a12d-b42e991fc52e">
+    <topic>Mozilla -- IonMonkey-JIT bad stack write</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>141.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.13</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>115.26</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>141.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird-esr</name>
+	<range><lt>140.1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.13</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1968423">
+	  <p>On 64-bit platforms IonMonkey-JIT only wrote 32 bits of
+	  the 64-bit return value space on the stack. Baseline-JIT,
+	  however, read the entire 64 bits.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8027</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8027</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3d4393b2-68a5-11f0-b2b4-589cfc10832a">
+    <topic>gdk-pixbuf2 -- a heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>gdk-pixbuf2</name>
+	<range><lt>2.42.12_2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://www.cve.org/CVERecord?id=CVE-2025-7345">
+	  <p>A flaw exists in gdk-pixbuf within the gdk_pixbuf__jpeg_image_load_increment
+	function (io-jpeg.c) and in glib’s g_base64_encode_step (glib/gbase64.c).
+	When processing maliciously crafted JPEG images, a heap buffer overflow can occur
+	during Base64 encoding, allowing out-of-bounds reads from heap memory, potentially
+	causing application crashes or arbitrary code execution.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-7345</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2025-7345</url>
+    </references>
+    <dates>
+      <discovery>2025-07-24</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b3948bf3-685e-11f0-bff5-6805ca2fa271">
+    <topic>powerdns-recursor -- cache pollution</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>5.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://blog.powerdns.com/powerdns-security-advisory-2025-04">
+	  <p>An attacker spoofing answers to ECS enabled requests
+	  sent out by the Recursor has a chance of success higher
+	  than non-ECS enabled queries.	The updated version include
+	  various mitigations against spoofing attempts of ECS enabled
+	  queries by chaining ECS enabled requests and enforcing
+	  stricter validation of the received answers. The most strict
+	  mitigation done when the new setting outgoing.edns_subnet_harden
+	  (old style name edns-subnet-harden) is enabled.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-30192</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-30192</url>
+   </references>
+    <dates>
+      <discovery>2025-07-21</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5683b3a7-683d-11f0-966e-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.2.0</ge><lt>18.2.1</lt></range>
+	<range><ge>18.1.0</ge><lt>18.1.3</lt></range>
+	<range><ge>15.0.0</ge><lt>18.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/07/23/patch-release-gitlab-18-2-1-released/">
+	  <p>Cross-site scripting issue impacts Kubernetes Proxy in GitLab CE/EE</p>
+	  <p>Cross-site scripting issue impacts Kubernetes Proxy in GitLab CE/EE using CDNs</p>
+	  <p>Exposure of Sensitive Information to an Unauthorized Actor issue impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue impacts GitLab EE</p>
+	  <p>Exposure of Sensitive Information to an Unauthorized Actor issue impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4700</cvename>
+      <cvename>CVE-2025-4439</cvename>
+      <cvename>CVE-2025-7001</cvename>
+      <cvename>CVE-2025-4976</cvename>
+      <cvename>CVE-2025-0765</cvename>
+      <cvename>CVE-2025-1299</cvename>
+      <url>https://about.gitlab.com/releases/2025/07/23/patch-release-gitlab-18-2-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-07-23</discovery>
+      <entry>2025-07-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0f5bcba2-67fb-11f0-9ee5-b42e991fc52e">
     <topic>sqlite -- Integer Truncation on SQLite</topic>
     <affects>

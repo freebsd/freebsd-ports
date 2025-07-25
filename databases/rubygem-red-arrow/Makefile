@@ -12,8 +12,7 @@ WWW=		https://arrow.apache.org/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	arrow>=${PORTVERSION:R}<${PORTVERSION:R}.99_99:databases/arrow \
-		arrow-glib>=${PORTVERSION:R}<${PORTVERSION:R}.99_99:databases/arrow-glib
+BUILD_DEPENDS=	arrow-glib>=${PORTVERSION:R}:databases/arrow-glib
 LIB_DEPENDS=	libarrow.so:databases/arrow \
 		libarrow-glib.so:databases/arrow-glib
 RUN_DEPENDS=	rubygem-bigdecimal>=3.1.0:math/rubygem-bigdecimal \

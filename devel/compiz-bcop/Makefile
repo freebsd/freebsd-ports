@@ -1,6 +1,6 @@
 PORTNAME=	compiz-bcop
 PORTVERSION=	0.8.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/ \
 		https://BSDforge.com/projects/source/devel/compiz-bcop/
@@ -14,7 +14,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash \
 
 GNU_CONFIGURE=	yes
 
-USES=		gnome pathfix pkgconfig tar:bzip2
+USES=		gnome pkgconfig tar:bzip2
 USE_GNOME=	libxslt
 
 post-patch:

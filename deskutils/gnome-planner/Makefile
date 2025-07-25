@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \
 		libsoup-2.4.so:devel/libsoup \
 		libgda-5.0.so:databases/libgda5
 
-USES=	desktop-file-utils gettext pathfix \
+USES=	desktop-file-utils gettext \
 		shared-mime-info tar:xz meson pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnomeui libgnomeprintui \
 		libgsf

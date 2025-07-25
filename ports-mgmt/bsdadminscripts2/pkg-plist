@@ -24,6 +24,7 @@ sbin/pkg_version
 %%DATADIR%%/compat.sh
 %%DATADIR%%/distviper.sh
 %%DATADIR%%/interrupt.mk
+%%DATADIR%%/ldd_filter.awk
 %%DATADIR%%/loaderupdate.sh
 %%DATADIR%%/lst.sh
 %%DATADIR%%/makeplist.sh

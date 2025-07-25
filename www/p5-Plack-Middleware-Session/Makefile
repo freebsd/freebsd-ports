@@ -1,5 +1,5 @@
 PORTNAME=	Plack-Middleware-Session
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ WWW=		https://metacpan.org/release/Plack-Middleware-Session
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Cookie-Baker>=0.12:www/p5-Cookie-Baker \

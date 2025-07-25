@@ -5011,6 +5011,7 @@
     SUBDIR += py-hash_ring
     SUBDIR += py-hatch
     SUBDIR += py-hatch-autorun
+    SUBDIR += py-hatch-docstring-description
     SUBDIR += py-hatch-fancy-pypi-readme
     SUBDIR += py-hatch-jupyter-builder
     SUBDIR += py-hatch-mypyc
@@ -5186,6 +5187,7 @@
     SUBDIR += py-lazy
     SUBDIR += py-lazy-object-proxy
     SUBDIR += py-lazy_loader
+    SUBDIR += py-legacy-api-wrap
     SUBDIR += py-libcst
     SUBDIR += py-libcst03
     SUBDIR += py-libevdev
@@ -6569,6 +6571,8 @@
     SUBDIR += rubygem-aws-sdk-bcmpricingcalculator
     SUBDIR += rubygem-aws-sdk-bedrock
     SUBDIR += rubygem-aws-sdk-bedrockagent
+    SUBDIR += rubygem-aws-sdk-bedrockagentcore
+    SUBDIR += rubygem-aws-sdk-bedrockagentcorecontrol
     SUBDIR += rubygem-aws-sdk-bedrockagentruntime
     SUBDIR += rubygem-aws-sdk-bedrockdataautomation
     SUBDIR += rubygem-aws-sdk-bedrockdataautomationruntime
@@ -6873,6 +6877,7 @@
     SUBDIR += rubygem-aws-sdk-s3control
     SUBDIR += rubygem-aws-sdk-s3outposts
     SUBDIR += rubygem-aws-sdk-s3tables
+    SUBDIR += rubygem-aws-sdk-s3vectors
     SUBDIR += rubygem-aws-sdk-sagemaker
     SUBDIR += rubygem-aws-sdk-sagemakeredgemanager
     SUBDIR += rubygem-aws-sdk-sagemakerfeaturestoreruntime

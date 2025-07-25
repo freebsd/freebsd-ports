@@ -34,7 +34,6 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
-# we can't use pathfix with USES=autoreconf
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
 INSTALL_TARGET=	install-strip

@@ -1,7 +1,7 @@
---- electron/spec/api-web-frame-main-spec.ts.orig	2024-12-05 00:03:13 UTC
+--- electron/spec/api-web-frame-main-spec.ts.orig	2025-07-22 07:50:49 UTC
 +++ electron/spec/api-web-frame-main-spec.ts
-@@ -315,7 +315,7 @@ describe('webFrameMain module', () => {
-     });
+@@ -316,7 +316,7 @@ describe('webFrameMain module', () => {
+     afterEach(closeAllWindows);
  
      // TODO(jkleinsc) fix this flaky test on linux
 -    ifit(process.platform !== 'linux')('throws upon accessing properties when disposed', async () => {

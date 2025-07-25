@@ -5,7 +5,7 @@ lib/cmake/socket_wrapper/socket_wrapper_noop-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/socket_wrapper/socket_wrapper_noop-config.cmake
 lib/libsocket_wrapper.so
 lib/libsocket_wrapper.so.0
-lib/libsocket_wrapper.so.0.4.1
+lib/libsocket_wrapper.so.0.5.0
 lib/libsocket_wrapper_noop.so
 lib/libsocket_wrapper_noop.so.0
 lib/libsocket_wrapper_noop.so.0.0.1

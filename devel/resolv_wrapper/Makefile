@@ -1,5 +1,6 @@
 PORTNAME=	resolv_wrapper
 PORTVERSION=	1.1.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SAMBA/cwrap
 
@@ -11,12 +12,13 @@ WWW=		https://cwrap.org/resolv_wrapper.html \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libsocket_wrapper.so:devel/socket_wrapper
-TEST_DEPENDS=	cmocka>=1.1.5:sysutils/cmocka
+TEST_DEPENDS=	cmocka>=1.1.0:sysutils/cmocka \
+		socket_wrapper>=0:devel/socket_wrapper
 
 USES=		cmake:testing pathfix
 
-CMAKE_OFF=	UNIT_TESTING
+CMAKE_OFF=	PICKY_DEVELOPER \
+		UNIT_TESTING
 CMAKE_TESTING_ON=	UNIT_TESTING
 USE_LDCONFIG=	yes
 

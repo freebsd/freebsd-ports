@@ -86,6 +86,7 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/internals/NEW-PROTOCOL.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/PORTING.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/README.md
+%%PORTDOCS%%%%DOCSDIR%%/internals/SCORECARD.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/SPLAY.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/STRPARSE.md
 %%PORTDOCS%%%%DOCSDIR%%/internals/TLS-SESSIONS.md
@@ -120,6 +121,7 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evhiperfifo.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/externalsocket.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fileupload.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftp-delete.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftp-wildcard.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpget.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpgetinfo.c

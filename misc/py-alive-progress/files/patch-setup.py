@@ -1,11 +1,11 @@
---- setup.py.orig	2024-10-26 04:20:04 UTC
+--- setup.py.orig	2025-07-19 21:36:46 UTC
 +++ setup.py
 @@ -57,7 +57,6 @@ setup(
-              'multi-threaded REPL alive animated visual feedback simple live efficient monitor '
-              'stats elapsed time throughput'.split(),
+              ' stats elapsed time throughput'.split(),
      packages=find_packages(exclude=['tests*']),
+     package_data={'alive_progress': ['py.typed']},
 -    data_files=[('', ['LICENSE'])],
      python_requires='>=3.9, <4',
--    install_requires=['about_time==4.2.1', 'grapheme==0.6.0'],
-+    install_requires=['about_time==4.2.1', 'graphemeu'],
+-    install_requires=['about_time==4.2.1', 'graphemeu==0.7.2'],
++    install_requires=['about_time>=4.2.1', 'graphemeu>=0.7.2'],
  )

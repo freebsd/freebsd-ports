@@ -1,0 +1,20 @@
+[
+{
+  type: upgrade
+  message: <<EOM
+
+Important changes in logwatch-7.13:
+
+ - temporary data is now stored in /var/cache/logwatch
+   (you can remove /usr/local/var/logwatch, now)
+
+ - ability to deal with FBSD's <facility.severity> patterns in logfiles, if activated
+
+ - improvement of the dovecot script and conf files 
+   (allow granular detail options like the ones for postfix script)
+
+ - postfix script detects modified 3.10+ log entries, now
+
+EOM
+}
+]

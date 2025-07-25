@@ -1,5 +1,5 @@
 PORTNAME=	socket_wrapper
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.0
 CATEGORIES=	devel
 MASTER_SITES=	SAMBA/cwrap
 
@@ -11,9 +11,9 @@ WWW=		https://cwrap.org/socket_wrapper.html \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	cmocka>=1.1.6:sysutils/cmocka
+TEST_DEPENDS=	cmocka>=1.1.0:sysutils/cmocka
 
-USES=		cmake:testing pathfix
+USES=		cmake:testing localbase pathfix
 
 CMAKE_OFF=	HELGRIND_TESTING \
 		PICKY_DEVELOPER \

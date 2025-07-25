@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-datasync
-PORTVERSION=	1.105.0
+PORTVERSION=	1.106.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

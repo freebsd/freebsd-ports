@@ -7,7 +7,7 @@
 #
 # WITH_STACK_AUTOINIT		Enable for all ports.
 # WITH_STACK_AUTOINIT_PORTS	Enable for specified category/port-name
-# STACK_AUTOINIT_TYPE		Valid options: zero (default), pattern, unitialized
+# STACK_AUTOINIT_TYPE		Valid options: zero (default), pattern, uninitialized
 #
 
 .if !defined(_STACK_AUTOINIT_MK_INCLUDED)

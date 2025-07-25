@@ -1,11 +1,13 @@
 PORTNAME=	augeas
 DISTVERSION=	1.14.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/hercules-team/augeas/releases/download/release-${DISTVERSION}/
 
-PATCH_SITES=	https://github.com/hercules-team/augeas/commit/
+PATCH_SITES=	https://github.com/hercules-team/augeas/commit/ \
+		https://github.com/hercules-team/augeas/pull/
 PATCHFILES+=	7b26cbb74ed634d886ed842e3d5495361d8fd9b1.patch:-p1 # https://github.com/hercules-team/augeas/pull/792
+PATCHFILES+=	863.patch:-p1 # https://github.com/hercules-team/augeas/pull/863
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Configuration editing tool

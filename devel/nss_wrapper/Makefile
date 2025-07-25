@@ -1,6 +1,5 @@
 PORTNAME=	nss_wrapper
-PORTVERSION=	1.1.3
-PORTREVISION=	3
+PORTVERSION=	1.1.16
 CATEGORIES=	devel
 MASTER_SITES=	SAMBA/cwrap
 
@@ -10,9 +9,10 @@ WWW=		https://cwrap.org/nss_wrapper.html \
 		https://git.samba.org/?p=nss_wrapper.git
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	cmocka>=1.1.1:sysutils/cmocka
+TEST_DEPENDS=	cmocka>=1.1.0:sysutils/cmocka \
+		uid_wrapper>=0:devel/uid_wrapper
 
 USES=		cmake:testing pathfix perl5 shebangfix
 USE_PERL5=	run

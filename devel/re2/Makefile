@@ -1,5 +1,5 @@
 PORTNAME=	re2
-PORTVERSION=	20250626b
+PORTVERSION=	20250722
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/google/re2/releases/download/${PORTVERSION:C|(....)(..)(..)|\1-\2-\3|}/
 DISTNAME=	re2-${PORTVERSION:C|(....)(..)(..)|\1-\2-\3|}

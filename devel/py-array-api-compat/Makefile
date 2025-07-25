@@ -1,5 +1,5 @@
 PORTNAME=	array-api-compat
-PORTVERSION=	1.9
+PORTVERSION=	1.12.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/data-apis/array-api-compat/releases/download/${PORTVERSION}/
@@ -15,6 +15,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
@@ -26,8 +27,8 @@ OPTIONS_DEFINE=	DASK NUMPY SPARSE
 DASK_DESC=	Dask array support
 SPARSE_DESC=	Sparse array support
 
-DASK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dask>=0:devel/py-dask@${PY_FLAVOR}
-NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
+DASK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dask>=2024.9.0:devel/py-dask@${PY_FLAVOR}
+NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.22,1:math/py-numpy@${PY_FLAVOR}
 SPARSE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sparse>=0.15.1:devel/py-sparse@${PY_FLAVOR}
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/bin/mate-desktop-item-edit:x11/mate-panel
 
-USES=		gettext-tools gmake gnome localbase mate pathfix pkgconfig \
+USES=		gettext-tools gmake gnome localbase mate pkgconfig \
 		python tar:xz
 USE_GNOME=	gtk30 intltool pygobject3
 USE_MATE=	menus

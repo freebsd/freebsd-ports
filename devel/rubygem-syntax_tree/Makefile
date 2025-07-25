@@ -1,5 +1,5 @@
 PORTNAME=	syntax_tree
-PORTVERSION=	6.2.0
+PORTVERSION=	6.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

@@ -1,6 +1,5 @@
 PORTNAME=	uid_wrapper
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	devel
 MASTER_SITES=	SAMBA/cwrap
 
@@ -10,13 +9,14 @@ WWW=		https://cwrap.org/uid_wrapper.html \
 		https://git.samba.org/?p=uid_wrapper.git
 
 LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	cmocka>=1.1.1:sysutils/cmocka
+TEST_DEPENDS=	cmocka>=1.1.0:sysutils/cmocka
 
-USES=		cmake pathfix
+USES=		cmake:testing localbase pathfix
 
-CMAKE_OFF=	UNIT_TESTING
+CMAKE_OFF=	PICKY_DEVELOPER \
+		UNIT_TESTING
 CMAKE_TESTING_ON=	UNIT_TESTING
 USE_LDCONFIG=	yes
 

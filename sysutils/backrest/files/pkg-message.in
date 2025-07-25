@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+By default, Backrest runs as '%%USER%%', which can be problematic if you want
+to restore files in a directory where that user does not have write permissions.
+You can change the user that Backrest runs as using 'backrest_runas' in your
+'rc.conf(5)' file or create a directory and chown(8)s into it. The latter is
+the recommended method.
+EOM
+}
+]

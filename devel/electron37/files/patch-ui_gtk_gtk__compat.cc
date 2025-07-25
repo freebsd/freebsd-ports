@@ -1,6 +1,6 @@
---- ui/gtk/gtk_compat.cc.orig	2025-07-04 05:17:07 UTC
+--- ui/gtk/gtk_compat.cc.orig	2025-07-24 02:17:12 UTC
 +++ ui/gtk/gtk_compat.cc
-@@ -65,22 +65,38 @@ void* GetLibGio() {
+@@ -64,22 +64,38 @@ void* GetLibGio() {
  }
  
  void* GetLibGio() {
@@ -39,7 +39,7 @@
    return libgtk4;
  }
  
-@@ -165,7 +181,11 @@ void* GetLibGdkPixbuf() {
+@@ -161,7 +177,11 @@ void* GetLibGdkPixbuf() {
  }  // namespace
  
  void* GetLibGdkPixbuf() {
