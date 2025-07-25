@@ -1,8 +1,8 @@
 PORTNAME=	storcli
-DISTVERSION=	7.3006
+DISTVERSION=	7.3404
 CATEGORIES=	sysutils
-MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_nvme_12g_p31/
-DISTNAME=	STORCLI_SAS3.5_P31
+MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_nvme_12g_p35/
+DISTNAME=	STORCLI_SAS3.5_P35
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	SAS MegaRAID FreeBSD StorCLI
