@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2024-12-18 09:43:22.511844000 +0200
-+++ src/CMakeLists.txt	2024-12-18 09:45:34.368783000 +0200
-@@ -194,7 +194,7 @@
+--- src/CMakeLists.txt.orig	2025-07-11 21:32:27 UTC
++++ src/CMakeLists.txt
+@@ -200,7 +200,7 @@ if (WITH_WEBSOCKETS)
  
  if (WITH_WEBSOCKETS)
  	if (STATIC_WEBSOCKETS)

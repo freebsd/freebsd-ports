@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2020-12-28 11:28:48 UTC
+--- CMakeLists.txt.orig	2025-07-11 21:32:27 UTC
 +++ CMakeLists.txt
-@@ -14,6 +14,9 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cma
+@@ -13,6 +13,9 @@ add_definitions (-DCMAKE -DVERSION=\"${VERSION}\")
  
  add_definitions (-DCMAKE -DVERSION=\"${VERSION}\")
  

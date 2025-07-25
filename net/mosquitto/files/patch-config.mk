@@ -1,6 +1,6 @@
---- config.mk.orig	2020-12-28 13:24:40 UTC
+--- config.mk.orig	2025-07-11 21:32:27 UTC
 +++ config.mk
-@@ -329,7 +329,7 @@ ifeq ($(WITH_WEBSOCKETS),static)
+@@ -347,7 +347,7 @@ INSTALL?=install
  endif
  
  INSTALL?=install
