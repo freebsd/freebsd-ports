@@ -101,6 +101,7 @@
 @sample %%ETCDIR%%/unistim.conf.sample
 @sample %%ETCDIR%%/users.conf.sample
 @sample %%ETCDIR%%/voicemail.conf.sample
+@sample %%ETCDIR%%/websocket_client.conf.sample
 @sample %%ETCDIR%%/xmpp.conf.sample
 include/asterisk.h
 include/asterisk/_private.h
@@ -329,6 +330,7 @@ include/asterisk/utils.h
 include/asterisk/uuid.h
 include/asterisk/vector.h
 include/asterisk/version.h
+include/asterisk/websocket_client.h
 include/asterisk/xml.h
 include/asterisk/xmldoc.h
 include/asterisk/xmpp.h
