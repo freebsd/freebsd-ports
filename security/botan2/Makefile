@@ -9,7 +9,8 @@ DISTNAME=	Botan-${PORTVERSION}
 PATCH_SITES+=	https://github.com/randombit/botan/commit/
 PATCHFILES+=	37fec38ff97604f964122cd2d33f5d503f319b10.patch:-p1 \
 		698c383b050591ae1a239c9e6d4ebe05532d2eee.patch:-p1 \
-		0fed26215b52a3d30122deb528f6b4deb824eae7.patch:-p1
+		0fed26215b52a3d30122deb528f6b4deb824eae7.patch:-p1 \
+		1eb0d14a7c110207479f40c8369faacc73d945c8.patch:-p1
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Portable, easy to use and efficient C++ crypto library
@@ -109,6 +110,8 @@ PLIST_SUB+=	HAS_PROCESSOR_RNG="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|^optimization_flags .*|optimization_flags "${CXXFLAGS}"|' \
 		${WRKSRC}/src/build-data/cc/clang.txt
+	@${REINPLACE_CMD} -e 's|boost_system|boost_filesystem|' \
+		${WRKSRC}/src/lib/utils/boost/info.txt
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/botan ${STAGEDIR}${PREFIX}/lib/libbotan-2.so.${_SOABIVER}.${_SHLIBVER}.${_SHLIBVERPATCH}
