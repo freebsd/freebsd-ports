@@ -1,3 +1,68 @@
+  <vuln vid="eed1a411-699b-11f0-91fe-000c295725e4">
+    <topic>rubygem-resolv -- Possible denial of service</topic>
+    <affects>
+      <package>
+	<name>rubygem-resolv</name>
+	<range><lt>0.6.2</lt></range>
+      </package>
+      <package>
+	<name>ruby</name>
+	<range><ge>3.2.0.p1,1</ge><lt>3.2.9,1</lt></range>
+	<range><ge>3.3.0.p1,1</ge><lt>3.3.9,1</lt></range>
+	<range><ge>3.4.0.p1,1</ge><lt>3.4.5,1</lt></range>
+	<range><ge>3.5.0.p1,1</ge><lt>3.5.0.p2,1</lt></range>
+      </package>
+      <package>
+	<name>ruby32</name>
+	<range><lt>3.2.9,1</lt></range>
+      </package>
+      <package>
+	<name>ruby33</name>
+	<range><lt>3.3.9,1</lt></range>
+      </package>
+      <package>
+	<name>ruby34</name>
+	<range><lt>3.4.5,1</lt></range>
+      </package>
+      <package>
+	<name>ruby35</name>
+	<range><lt>3.5.0.p2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Manu reports:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2025/07/08/dos-resolv-cve-2025-24294/">
+	  <p>
+	    The vulnerability is caused by an insufficient check on
+	    the length of a decompressed domain name within a DNS
+	    packet.
+	  </p>
+	  <p>
+	    An attacker can craft a malicious DNS packet containing a
+	    highly compressed domain name. When the resolv library
+	    parses such a packet, the name decompression process
+	    consumes a large amount of CPU resources, as the library
+	    does not limit the resulting length of the name.
+	  </p>
+	  <p>
+	    This resource consumption can cause the application thread
+	    to become unresponsive, resulting in a Denial of Service
+	    condition.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-24294</cvename>
+      <url>https://www.ruby-lang.org/en/news/2025/07/08/dos-resolv-cve-2025-24294/</url>
+    </references>
+    <dates>
+      <discovery>2025-07-08</discovery>
+      <entry>2025-07-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="67c6461f-685e-11f0-a12d-b42e991fc52e">
     <topic>Mozilla -- Multiple vulnerabilities</topic>
     <affects>
