@@ -1,5 +1,6 @@
 PORTNAME=	layer-shell-qt
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 COMMENT=	Qt component to allow applications to make use of the Wayland wl-layer-shell protocol
