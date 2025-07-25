@@ -1,5 +1,5 @@
-CARGO_CRATES=	ahash-0.7.8 \
-		ahash-0.8.11 \
+CARGO_CRATES=	ahash-0.7.0 \
+		ahash-0.8.12 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.21 \
 		anstream-0.6.18 \
@@ -10,15 +10,16 @@ CARGO_CRATES=	ahash-0.7.8 \
 		approx-0.5.1 \
 		ariadne-0.3.0 \
 		autocfg-1.4.0 \
+		bincode-1.3.3 \
 		bitfield-struct-0.9.5 \
 		bitflags-1.3.2 \
 		bitflags-2.9.0 \
 		block-buffer-0.10.4 \
 		boolenum-0.1.0 \
-		bytemuck-1.22.0 \
+		bytemuck-1.23.0 \
 		bytemuck_derive-1.8.1 \
 		byteorder-1.5.0 \
-		cbindgen-0.28.0 \
+		cbindgen-0.29.0 \
 		cfg-if-1.0.0 \
 		clap-4.5.31 \
 		clap_builder-4.5.31 \
@@ -66,19 +67,20 @@ CARGO_CRATES=	ahash-0.7.8 \
 		getrandom-0.2.15 \
 		getrandom-0.3.1 \
 		half-2.4.1 \
+		hash32-0.3.1 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
-		heck-0.4.1 \
+		heapless-0.8.0 \
 		heck-0.5.0 \
-		hermit-abi-0.4.0 \
-		indexmap-2.7.1 \
+		hermit-abi-0.5.1 \
+		indexmap-2.9.0 \
 		indoc-2.0.6 \
-		is-terminal-0.4.15 \
+		is-terminal-0.4.16 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
 		itertools-0.11.0 \
-		itertools-0.13.0 \
+		itertools-0.14.0 \
 		itoa-1.0.15 \
 		lazy_static-1.5.0 \
 		libc-0.2.170 \
@@ -90,6 +92,7 @@ CARGO_CRATES=	ahash-0.7.8 \
 		matrixmultiply-0.3.9 \
 		memchr-2.7.4 \
 		memoffset-0.9.1 \
+		minimal-lexical-0.2.1 \
 		nalgebra-0.33.2 \
 		nalgebra-macros-0.2.2 \
 		nano-gemm-0.1.2 \
@@ -101,43 +104,44 @@ CARGO_CRATES=	ahash-0.7.8 \
 		nano-gemm-f64-0.1.0 \
 		ndarray-0.16.1 \
 		ndarray-einsum-0.8.0 \
-		npyz-0.8.3 \
+		nom-7.1.3 \
+		nom-unicode-0.3.0 \
+		npyz-0.8.4 \
 		num-bigint-0.4.6 \
 		num-complex-0.4.6 \
 		num-integer-0.1.46 \
 		num-rational-0.4.2 \
 		num-traits-0.2.19 \
-		numpy-0.23.0 \
-		once_cell-1.20.3 \
+		numpy-0.25.0 \
+		once_cell-1.21.3 \
 		oq3_lexer-0.7.0 \
 		oq3_parser-0.7.0 \
 		oq3_semantics-0.7.0 \
 		oq3_source_file-0.7.0 \
 		oq3_syntax-0.7.0 \
 		paste-1.0.15 \
-		pest-2.7.15 \
-		pest_derive-2.7.15 \
-		pest_generator-2.7.15 \
-		pest_meta-2.7.15 \
+		pest-2.8.0 \
+		pest_derive-2.8.0 \
+		pest_generator-2.8.0 \
+		pest_meta-2.8.0 \
 		petgraph-0.6.5 \
 		petgraph-0.7.1 \
 		portable-atomic-1.11.0 \
 		portable-atomic-util-0.2.4 \
-		ppv-lite86-0.2.20 \
+		ppv-lite86-0.2.21 \
 		priority-queue-2.1.2 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.94 \
 		pulp-0.18.22 \
-		pulp-0.21.4 \
+		pulp-0.21.5 \
 		pulp-macro-0.1.1 \
 		py_literal-0.4.0 \
-		pyo3-0.23.5 \
-		pyo3-build-config-0.23.5 \
-		pyo3-build-config-0.24.0 \
-		pyo3-ffi-0.23.5 \
-		pyo3-macros-0.23.5 \
-		pyo3-macros-backend-0.23.5 \
+		pyo3-0.25.0 \
+		pyo3-build-config-0.25.0 \
+		pyo3-ffi-0.25.0 \
+		pyo3-macros-0.25.0 \
+		pyo3-macros-backend-0.25.0 \
 		quote-1.0.39 \
 		ra_ap_limit-0.0.188 \
 		rand-0.8.5 \
@@ -160,9 +164,10 @@ CARGO_CRATES=	ahash-0.7.8 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
 		rowan-0.15.15 \
+		rstar-0.12.2 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.1 \
-		rustiq-core-0.0.10 \
+		rustiq-core-0.0.11 \
 		rustix-0.38.44 \
 		rustversion-1.0.20 \
 		rustworkx-core-0.16.0 \
@@ -170,14 +175,15 @@ CARGO_CRATES=	ahash-0.7.8 \
 		safe_arch-0.7.4 \
 		same-file-1.0.6 \
 		seq-macro-0.3.6 \
-		serde-1.0.218 \
-		serde_derive-1.0.218 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
 		serde_json-1.0.140 \
 		serde_spanned-0.6.8 \
 		sha2-0.10.8 \
 		simba-0.9.0 \
-		smallvec-1.14.0 \
+		smallvec-1.15.0 \
 		smol_str-0.2.2 \
+		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
 		syn-2.0.99 \
@@ -202,6 +208,7 @@ CARGO_CRATES=	ahash-0.7.8 \
 		unicode-xid-0.2.6 \
 		unindent-0.2.4 \
 		utf8parse-0.2.2 \
+		uuid-1.17.0 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
@@ -232,7 +239,5 @@ CARGO_CRATES=	ahash-0.7.8 \
 		xshell-0.2.7 \
 		xshell-macros-0.2.7 \
 		yansi-0.5.1 \
-		zerocopy-0.7.35 \
-		zerocopy-0.8.21 \
-		zerocopy-derive-0.7.35 \
-		zerocopy-derive-0.8.21
+		zerocopy-0.8.25 \
+		zerocopy-derive-0.8.25
