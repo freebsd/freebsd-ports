@@ -9,6 +9,8 @@
 %%EMACS_SITE_LISPDIR%%/emms/emms-compat.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-cue.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-cue.elc
+%%EMACS_SITE_LISPDIR%%/emms/emms-filters.el
+%%EMACS_SITE_LISPDIR%%/emms/emms-filters.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-history.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-history.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-i18n.el
@@ -78,7 +80,6 @@
 %%EMACS_SITE_LISPDIR%%/emms/emms-mpris.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-mpris.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-pkg.el
-%%EMACS_SITE_LISPDIR%%/emms/emms-pkg.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-player-mpd.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-player-mpd.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-player-mpg321-remote.el
@@ -101,6 +102,8 @@
 %%EMACS_SITE_LISPDIR%%/emms/emms-playlist-mode.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-playlist-sort.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-playlist-sort.elc
+%%EMACS_SITE_LISPDIR%%/emms/emms-radio-browser.el
+%%EMACS_SITE_LISPDIR%%/emms/emms-radio-browser.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-score.el
 %%EMACS_SITE_LISPDIR%%/emms/emms-score.elc
 %%EMACS_SITE_LISPDIR%%/emms/emms-setup.el
