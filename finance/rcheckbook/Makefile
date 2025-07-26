@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bryceac
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/target/release/rcheckbook ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKDIR}/target/release/rcheckbook ${STAGEDIR}${PREFIX}/bin/
 	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
 	${INSETT_DATA} ${WRKSRC}/register.db ${STAGEDIR}/var/db/${PORTNAME}/
 
