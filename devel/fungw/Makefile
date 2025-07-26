@@ -44,4 +44,10 @@ TCL_USES=		tcl
 post-install:
 	[ '${STRIP}' = -s ] && ${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfungw*.so.?
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 504200
+BROKEN=	does not compile
+.endif
+
+.include <bsd.port.post.mk>
