@@ -1,2 +1,2 @@
-PLIST_FILES=	bin/rcheckbook
-				/var/db/rcheckbook/register.db
+PLIST_FILES=	bin/rcheckbook \
+/var/db/rcheckbook/register.db
