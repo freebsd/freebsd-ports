@@ -20,4 +20,8 @@ RUN_DEPENDS=	p5-JSON>=2.0:converters/p5-JSON \
 USES=		perl5
 USE_PERL5=	configure
 
+# Remove old, broken, bundled Scalar::Util
+post-extract:
+	${RM} -rf ${WRKSRC}/inc/Scalar
+
 .include <bsd.port.mk>
