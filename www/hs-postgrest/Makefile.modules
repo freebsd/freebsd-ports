@@ -1,12 +1,12 @@
-USE_CABAL=	HTTP-4000.4.1_5 \
+USE_CABAL=	HTTP-4000.4.1_6 \
 		HUnit-1.6.2.0 \
 		OneTuple-0.4.2_1 \
 		Only-0.1_2 \
 		QuickCheck-2.15.0.1_1 \
 		Ranged-sets-0.4.0_2 \
 		StateVar-1.2.2 \
-		adjunctions-4.4.3 \
-		aeson-2.2.3.0_3 \
+		adjunctions-4.4.2_2 \
+		aeson-2.2.3.0_4 \
 		aeson-pretty-0.8.10 \
 		ansi-terminal-1.1.2 \
 		ansi-terminal-types-1.1 \
@@ -31,8 +31,8 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		bitvec-1.1.5.0_3 \
 		bsb-http-chunked-0.0.0.4_4 \
 		byteorder-1.0.4 \
-		bytestring-strict-builder-0.4.5.8 \
-		bytestring-tree-builder-0.2.7.13 \
+		bytestring-strict-builder-0.4.5.7 \
+		bytestring-tree-builder-0.2.7.12 \
 		cabal-doctest-1.0.11 \
 		cache-0.1.3.0_1 \
 		call-stack-0.4.0 \
@@ -40,7 +40,7 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		cassava-0.5.3.2_1 \
 		cereal-0.5.8.3 \
 		character-ps-0.1 \
-		charset-0.3.12 \
+		charset-0.3.11 \
 		clock-0.8.4 \
 		cmdargs-0.10.22 \
 		colour-2.3.6 \
@@ -51,7 +51,7 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		cookie-0.4.6 \
 		cryptohash-md5-0.11.101.0_6 \
 		cryptohash-sha1-0.11.101.0_6 \
-		crypton-1.0.4 \
+		crypton-1.0.1 \
 		crypton-x509-1.7.7 \
 		data-bword-0.1.0.2 \
 		data-checked-0.3 \
@@ -67,11 +67,11 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		data-sketches-0.3.1.0 \
 		data-sketches-core-0.1.0.0 \
 		data-textual-0.3.0.3 \
-		deferred-folds-0.9.18.7 \
+		deferred-folds-0.9.18.6 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_2 \
 		easy-file-0.2.5 \
-		either-5.0.2_2 \
+		either-5.0.2_3 \
 		entropy-0.4.1.11 \
 		extra-1.8 \
 		fast-logger-3.2.4 \
@@ -99,20 +99,20 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		indexed-profunctors-0.1.1.1 \
 		indexed-traversable-0.1.4_1 \
 		indexed-traversable-instances-0.1.2_1 \
-		insert-ordered-containers-0.2.7 \
+		insert-ordered-containers-0.2.6 \
 		integer-conversion-0.1.1_1 \
 		integer-logarithms-1.0.4 \
 		invariant-0.6.4_1 \
 		iproute-1.7.15 \
-		isomorphism-class-0.3.1.2 \
+		isomorphism-class-0.3 \
 		jose-jwt-0.10.0 \
 		kan-extensions-5.2.6_1 \
 		keys-3.12.4_1 \
-		lawful-conversions-0.1.6.1 \
+		lawful-conversions-0.1.6 \
 		lens-5.2.3_5 \
 		lens-aeson-1.2.3_2 \
 		math-functions-0.3.4.4 \
-		megaparsec-9.7.0 \
+		megaparsec-9.6.1 \
 		memory-0.18.0_1 \
 		mtl-compat-0.2.2 \
 		mwc-random-0.15.2.0 \
@@ -129,7 +129,7 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		optics-extra-0.4.2.1_4 \
 		optics-th-0.4.1_9 \
 		optparse-applicative-0.18.1.0_1 \
-		os-string-2.0.7 \
+		os-string-2.0.7_1 \
 		parallel-3.2.2.0_9 \
 		parser-combinators-1.3.0_1 \
 		parsers-0.12.12_1 \
@@ -140,19 +140,19 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		postgresql-libpq-configure-0.10.0.1 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.9.1.0 \
+		primitive-0.9.0.0_2 \
 		profunctors-5.6.2_3 \
 		prometheus-client-1.1.1 \
 		protolude-0.3.4 \
 		psqueues-0.2.8.1 \
-		ptr-0.16.8.7 \
+		ptr-0.16.8.6 \
 		quickcheck-instances-0.3.32_1 \
-		random-1.3.1 \
+		random-1.2.1.3 \
 		rebase-1.21.2 \
-		recv-0.1.1 \
+		recv-0.1.0 \
 		reflection-2.1.9_1 \
-		regex-base-0.94.0.3 \
-		regex-tdfa-1.3.2.4 \
+		regex-base-0.94.0.2_4 \
+		regex-tdfa-1.3.2.2_3 \
 		rerebase-1.21.2 \
 		resourcet-1.3.0 \
 		retry-0.9.3.1 \
@@ -168,13 +168,13 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		splitmix-0.1.1 \
 		streaming-commons-0.2.3.0 \
 		strict-0.5.1_1 \
-		strict-list-0.1.7.6 \
-		swagger2-2.8.10 \
+		strict-list-0.1.7.5 \
+		swagger2-2.8.9 \
 		tagged-0.8.9 \
-		tasty-1.5.3_1 \
-		template-haskell-compat-v0208-0.1.9.5 \
-		text-builder-0.6.10 \
-		text-builder-dev-0.3.10 \
+		tasty-1.5.3_2 \
+		template-haskell-compat-v0208-0.1.9.4 \
+		text-builder-0.6.7.2 \
+		text-builder-dev-0.3.9 \
 		text-iso8601-0.1.1_2 \
 		text-latin1-0.3.1 \
 		text-metrics-0.3.3 \
@@ -189,9 +189,9 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		type-hint-0.1 \
-		unix-compat-0.7.4 \
+		unix-compat-0.7.3_1 \
 		unix-time-0.4.16 \
-		unliftio-0.2.25.1 \
+		unliftio-0.2.25.0 \
 		unliftio-core-0.2.1.0_4 \
 		unordered-containers-0.2.20_4 \
 		utf8-string-1.0.2 \
@@ -199,7 +199,7 @@ USE_CABAL=	HTTP-4000.4.1_5 \
 		uuid-types-1.0.6_3 \
 		vault-0.3.1.5_10 \
 		vector-0.13.2.0_1 \
-		vector-algorithms-0.9.1.0 \
+		vector-algorithms-0.9.0.3 \
 		vector-instances-3.4.2 \
 		vector-stream-0.1.0.1_3 \
 		void-0.7.3 \
