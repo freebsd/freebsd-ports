@@ -4658,3 +4658,4 @@ devel/pycharm-pro|devel/pycharm|2025-07-14|Has expired: Pycharm is now unified p
 textproc/hq|textproc/html-query|2025-07-21|Project was renamed
 misc/python-langgraph-checkpoint|misc/py-langgraph-checkpoint|2025-07-22|Rename to a proper name
 databases/libgdamm5||2025-07-24|No release for a year, depends libgda5 which is not supported anymore upstream
+deskutils/kuserfeedback||2025-07-26|Remove Qt5 port, all consumers have been ported to KF6/Qt6
