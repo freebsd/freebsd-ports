@@ -1,6 +1,6 @@
 PORTNAME=	stack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.1
+DISTVERSION=	3.7.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -10,10 +10,10 @@ WWW=		https://www.haskellstack.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
-		gmake:devel/gmake \
-		${LOCALBASE}/lib/compat/libffi.so.6:devel/libffi321 \
-		${LOCALBASE}/lib/compat/libffi.so.7:devel/libffi33
+RUN_DEPENDS=	${LOCALBASE}/lib/compat/libffi.so.6:devel/libffi321 \
+		${LOCALBASE}/lib/compat/libffi.so.7:devel/libffi33 \
+		ca_root_nss>0:security/ca_root_nss \
+		gmake:devel/gmake
 
 USES=		cabal gmake iconv:wchar_t perl5 pkgconfig
 USE_GITHUB=	yes
@@ -22,9 +22,9 @@ USE_PERL5=	run
 
 USE_CABAL=	Glob-0.10.2_3 \
 		OneTuple-0.4.2_1 \
-		QuickCheck-2.15.0.1_1 \
+		QuickCheck-2.14.3 \
 		StateVar-1.2.2 \
-		aeson-2.2.3.0_3 \
+		aeson-2.2.3.0_4 \
 		aeson-warning-parser-0.1.1 \
 		annotated-wl-pprint-0.7.0_1 \
 		ansi-terminal-1.1.2 \
@@ -35,7 +35,6 @@ USE_CABAL=	Glob-0.10.2_3 \
 		asn1-types-0.3.4 \
 		assoc-1.1.1_1 \
 		async-2.2.5_3 \
-		atomic-counter-0.1.2.3 \
 		attoparsec-0.14.4_6 \
 		attoparsec-aeson-2.2.2.0 \
 		auto-update-0.2.6 \
@@ -45,14 +44,14 @@ USE_CABAL=	Glob-0.10.2_3 \
 		basement-0.0.16 \
 		bifunctors-5.6.2_2 \
 		bitvec-1.1.5.0_3 \
-		blaze-builder-0.4.2.3 \
+		blaze-builder-0.4.3 \
 		blaze-html-0.9.2.0_1 \
 		blaze-markup-0.8.3.0_2 \
 		byteorder-1.0.4 \
 		casa-client-0.0.2 \
 		casa-types-0.0.2 \
 		case-insensitive-1.2.1.0 \
-		cborg-0.2.10.0_2 \
+		cborg-0.2.10.0_3 \
 		cereal-0.5.8.3 \
 		character-ps-0.1 \
 		clock-0.8.4 \
@@ -73,37 +72,36 @@ USE_CABAL=	Glob-0.10.2_3 \
 		crypton-x509-store-1.6.10 \
 		crypton-x509-system-1.6.7 \
 		crypton-x509-validation-1.6.14 \
-		data-default-0.8.0.1 \
-		data-default-class-0.2.0.0 \
+		data-default-0.7.1.3 \
+		data-default-class-0.1.2.2 \
+		data-default-instances-containers-0.1.0.3 \
+		data-default-instances-dlist-0.0.1.2 \
+		data-default-instances-old-locale-0.0.1.2 \
 		data-fix-0.3.4_1 \
 		digest-0.0.2.1 \
-		directory-ospath-streaming-0.2.2 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_2 \
 		easy-file-0.2.5 \
-		ech-config-0.0.1 \
 		echo-0.1.4 \
 		ed25519-0.0.5.0_9 \
-		extra-1.8 \
+		extra-1.7.16_1 \
 		fast-logger-3.2.5 \
 		file-embed-0.0.16.0 \
-		file-io-0.1.5 \
 		filelock-0.1.1.7 \
-		fsnotify-0.4.2.0 \
+		fsnotify-0.4.3.0 \
 		generic-deriving-1.14.6_1 \
 		generically-0.1.1_4 \
 		githash-0.1.7.0 \
-		hackage-security-0.6.2.6_5 \
-		half-0.3.2 \
-		happy-2.1.5 \
-		happy-lib-2.1.5 \
-		hashable-1.5.0.0_1 \
+		hackage-security-0.6.3.0 \
+		half-0.3.2_1 \
+		happy-2.1.6 \
+		happy-lib-2.1.6 \
+		hashable-1.4.7.0 \
 		haskell-src-exts-1.23.1 \
 		haskell-src-meta-0.8.15 \
 		hi-file-parser-0.1.7.0 \
 		hourglass-0.2.12_1 \
 		hpack-0.38.1 \
-		hpke-0.0.0 \
 		hsc2hs-0.68.10_4 \
 		http-api-data-0.6.2 \
 		http-client-0.7.19 \
@@ -121,11 +119,10 @@ USE_CABAL=	Glob-0.10.2_3 \
 		libyaml-clib-0.2.5 \
 		lift-type-0.1.2.0 \
 		lifted-base-0.2.3.12 \
-		lukko-0.1.2_1 \
-		megaparsec-9.7.0 \
+		megaparsec-9.6.1 \
 		memory-0.18.0_1 \
-		microlens-0.4.14.0 \
-		microlens-mtl-0.2.1.0 \
+		microlens-0.4.13.1_1 \
+		microlens-mtl-0.2.0.3_1 \
 		microlens-th-0.4.3.17 \
 		mime-types-0.1.2.0 \
 		monad-control-1.0.3.1 \
@@ -133,31 +130,31 @@ USE_CABAL=	Glob-0.10.2_3 \
 		monad-loops-0.4.3 \
 		mono-traversable-1.0.21.0 \
 		mtl-compat-0.2.2 \
-		mustache-2.4.2 \
+		mustache-2.4.3.1 \
 		neat-interpolation-0.5.1.4 \
 		network-3.2.7.0 \
-		network-byte-order-0.1.7 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
-		open-browser-0.4.0.0 \
+		open-browser-0.2.1.1 \
 		optparse-applicative-0.18.1.0_1 \
 		optparse-simple-0.1.1.4 \
-		os-string-2.0.7 \
+		os-string-2.0.7_1 \
 		pantry-0.10.1 \
 		parser-combinators-1.3.0_1 \
-		path-0.9.6_1 \
+		path-0.9.5 \
 		path-io-1.8.2 \
 		path-pieces-0.2.1_1 \
 		pem-0.2.4 \
-		persistent-2.14.6.3_1 \
+		persistent-2.17.0.0 \
 		persistent-sqlite-2.13.3.0 \
 		persistent-template-2.12.0.0 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
 		primitive-0.9.1.0 \
 		project-template-0.2.1.0 \
-		random-1.3.1 \
+		random-1.2.1.3 \
+		replace-megaparsec-1.5.0.1 \
 		resource-pool-0.4.0.0 \
 		resourcet-1.3.0 \
 		retry-0.9.3.1 \
@@ -169,7 +166,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		scientific-0.3.8.0_2 \
 		semialign-1.3.1_2 \
 		semigroupoids-6.0.1_2 \
-		serialise-0.2.6.1_4 \
+		serialise-0.2.6.1_5 \
 		silently-1.2.5.4 \
 		socks-0.6.1 \
 		split-0.2.5 \
@@ -178,12 +175,12 @@ USE_CABAL=	Glob-0.10.2_3 \
 		stm-chans-3.0.0.9 \
 		streaming-commons-0.2.3.0 \
 		strict-0.5.1_1 \
-		string-interpolate-0.3.4.0_2 \
+		string-interpolate-0.3.4.0_3 \
 		syb-0.7.2.4 \
-		tagged-0.8.9 \
-		tar-0.6.4.0_1 \
+		tagged-0.8.8_1 \
+		tar-0.6.3.0_1 \
 		tar-conduit-0.4.1 \
-		tasty-1.5.3_1 \
+		tasty-1.5.3_2 \
 		temporary-1.3 \
 		text-conversions-0.3.1.1 \
 		text-iso8601-0.1.1_2 \
@@ -197,8 +194,8 @@ USE_CABAL=	Glob-0.10.2_3 \
 		th-orphans-0.13.16 \
 		th-reify-many-0.1.10 \
 		these-1.2.1_2 \
-		time-compat-1.9.8 \
-		tls-2.1.9 \
+		time-compat-1.9.7_2 \
+		tls-2.1.8 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		typed-process-0.2.13.0 \
