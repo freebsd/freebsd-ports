@@ -1,6 +1,6 @@
 PORTNAME=	ncrystal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.0
+DISTVERSION=	4.2.6
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -32,7 +32,7 @@ post-install:
 	# strip binary
 	#@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/NCrystal/ncrystal_pyinst_data/lib/libNCrystal.so
 
-do-test: # the third test fails for an unknown reason
+do-test:
 	@cd ${TEST_WRKSRC} && \
 		${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m NCrystal.test all
 
