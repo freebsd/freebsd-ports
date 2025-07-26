@@ -3,7 +3,9 @@ bin/indi_aaf2_focus
 bin/indi_aagsolo_weather
 bin/indi_activefocuser_focus
 bin/indi_alluna_tcs2
+bin/indi_alpaca_ccd
 bin/indi_alpaca_dome
+bin/indi_alpaca_server
 bin/indi_alto
 bin/indi_arduinost4
 bin/indi_astrolink4
@@ -13,6 +15,7 @@ bin/indi_astromechfoc
 bin/indi_astrometry
 bin/indi_astrotrac_telescope
 bin/indi_baader_dome
+bin/indi_camelot_rotator
 bin/indi_celestron_gps
 bin/indi_celestron_sct_focus
 bin/indi_cheapodc
@@ -38,6 +41,7 @@ bin/indi_falcon_rotator
 bin/indi_falconv2_rotator
 bin/indi_fcusb_focus
 bin/indi_flipflat
+bin/indi_gemini_flatpanel
 bin/indi_gemini_focus
 bin/indi_getprop
 bin/indi_giotto
@@ -63,6 +67,7 @@ bin/indi_lx200_OpenAstroTech
 bin/indi_lx200_TeenAstro
 bin/indi_lx200_pegasus_nyx101
 bin/indi_lx200am5
+bin/indi_lx200ap_legacy
 bin/indi_lx200ap_v2
 bin/indi_lx200autostar
 bin/indi_lx200basic
@@ -106,6 +111,7 @@ bin/indi_pegasus_uch
 bin/indi_pegasus_upb
 bin/indi_pegasusindigo_wheel
 bin/indi_perfectstar_focus
+bin/indi_pinefeat_cef_focus
 bin/indi_planewave_deltat
 bin/indi_planewave_telescope
 bin/indi_pmc8_telescope
@@ -161,23 +167,28 @@ bin/indi_terrans_powerboxgo_v2
 bin/indi_terrans_powerboxpro_v2
 bin/indi_trutech_wheel
 bin/indi_universalror_dome
+bin/indi_ups_safety
 bin/indi_uranus_weather
 bin/indi_usbdewpoint
 bin/indi_usbfocusv3_focus
 bin/indi_v4l2_ccd
 bin/indi_vantage_weather
 bin/indi_wanderer_cover
+bin/indi_wanderer_dew_terminator
+bin/indi_wanderer_eclipse
 bin/indi_wanderer_lite_rotator
 bin/indi_wanderer_rotator_lite_v2
 bin/indi_wanderer_rotator_mini
 bin/indi_wandererbox_plus_v3
 bin/indi_wandererbox_pro_v3
 bin/indi_wanderercover_v4_ec
+bin/indi_wanderercover_v4_pro_ec
 bin/indi_watchdog
 bin/indi_watcher_weather
 bin/indi_wavesharemodbus_relay
 bin/indi_weather_safety_alpaca
 bin/indi_weather_safety_proxy
+bin/indi_weatherflow_weather
 bin/indi_xagyl_wheel
 bin/indiserver
 bin/shelyak_usis
@@ -201,6 +212,7 @@ include/libindi/alignment/TelescopeDirectionVectorSupportFunctions.h
 include/libindi/base64.h
 include/libindi/baseclient.h
 include/libindi/basedevice.h
+include/libindi/connectionplugins/connectioni2c.h
 include/libindi/connectionplugins/connectioninterface.h
 include/libindi/connectionplugins/connectionserial.h
 include/libindi/connectionplugins/connectiontcp.h
@@ -238,6 +250,8 @@ include/libindi/indifocuserinterface.h
 include/libindi/indigps.h
 include/libindi/indigpsinterface.h
 include/libindi/indiguiderinterface.h
+include/libindi/indiimu.h
+include/libindi/indiimuinterface.h
 include/libindi/indiinputinterface.h
 include/libindi/indijson.hpp
 include/libindi/indilightboxinterface.h
