@@ -50,8 +50,10 @@ include/mysqlx/version_info.h
 include/mysqlx/xapi.h
 include/mysqlx/xdevapi.h
 %%JDBC%%lib/libmysqlcppconn.so
-%%JDBC%%lib/libmysqlcppconn.so.9
-%%JDBC%%lib/libmysqlcppconn.so.9.%%PORTVERSION%%
-lib/libmysqlcppconn8.so
-lib/libmysqlcppconn8.so.2
-lib/libmysqlcppconn8.so.2.%%PORTVERSION%%
+%%JDBC%%lib/libmysqlcppconn.so.10
+%%JDBC%%lib/libmysqlcppconn.so.10.%%PORTVERSION%%
+lib/cmake/mysql-concpp-config-version.cmake
+lib/cmake/mysql-concpp-config.cmake
+lib/libmysqlcppconnx.so
+lib/libmysqlcppconnx.so.2
+lib/libmysqlcppconnx.so.2.%%PORTVERSION%%
