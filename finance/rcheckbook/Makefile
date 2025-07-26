@@ -15,9 +15,13 @@ USES=	cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	bryceac
 
+PLIST_FILES=	bin/rcheckbook \
+				/var/db/rcheckbook/register.db
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/target/release/rcheckbook ${STAGEDIR}${PREFIX}/bin/
 	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/register.db ${STAGEDIR}/var/db/${PORTNAME}/
 
 .include <bsd.port.mk>
+
