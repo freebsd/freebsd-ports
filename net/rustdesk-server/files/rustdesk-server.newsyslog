@@ -3,5 +3,5 @@
 # see newsyslog.conf(5) for details
 #
 # logfilename               [owner:group]      mode  count  size  when  flags
-/var/log/rustdesk-hbbr.log  rustdesk:rustdesk  640   5      100   *     JC
-/var/log/rustdesk-hbbs.log  rustdesk:rustdesk  640   5      100   *     JC
+/var/log/rustdesk-hbbr.log  rustdesk:rustdesk  660   5      1000  *     JC
+/var/log/rustdesk-hbbs.log  rustdesk:rustdesk  660   5      1000  *     JC
