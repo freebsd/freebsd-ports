@@ -19886,7 +19886,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/34/5.6.table
 %%DATADIR%%/definitions/grib2/tables/34/5.7.table
 %%DATADIR%%/definitions/grib2/tables/34/6.0.table
-%%DATADIR%%/definitions/grib2/tables/35/%%PERL_VER%%.table
+%%DATADIR%%/definitions/grib2/tables/35/5.40.table
 %%DATADIR%%/definitions/grib2/tables/35/0.0.table
 %%DATADIR%%/definitions/grib2/tables/35/1.0.table
 %%DATADIR%%/definitions/grib2/tables/35/1.1.table
