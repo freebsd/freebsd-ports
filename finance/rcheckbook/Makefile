@@ -17,7 +17,7 @@ GH_ACCOUNT=	bryceac
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/target/release/rcheckbook ${STAGEDIR}${PREFIX}/bin/
-#	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
-	${INSETT_DATA} ${WRKSRC}/register.db ${STAGEDIR}/var/db/${PORTNAME}/
+	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/register.db ${STAGEDIR}/var/db/${PORTNAME}/
 
 .include <bsd.port.mk>
