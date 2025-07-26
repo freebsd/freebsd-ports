@@ -623,6 +623,7 @@
     SUBDIR += sshbuddy
     SUBDIR += sssnips
     SUBDIR += star-history
+    SUBDIR += stormy
     SUBDIR += susv2
     SUBDIR += susv3
     SUBDIR += susv4

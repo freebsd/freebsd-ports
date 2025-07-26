@@ -1,0 +1,12 @@
+Stormy is a minimal, customizable, and neofetch-like weather CLI.
+
+Features:
+o Multiple weather providers: OpenMeteo (default, no API key required)
+  and OpenWeatherMap
+o Current weather conditions with ASCII art representation
+o Temperature, wind, humidity, and precipitation information
+o Customizable units (metric, imperial, standard)
+o Local configuration file
+o Color support for terminals
+o Compact display mode
+o Works out of the box with OpenMeteo
