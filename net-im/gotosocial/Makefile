@@ -6,7 +6,7 @@ CATEGORIES=	net-im
 MASTER_SITES?=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/v${DISTVERSION}/:web
 DISTFILES?=	${PORTNAME}_${DISTVERSION}_web-assets.tar.gz:web
 
-MAINTAINER=	freebsd@igalic.co
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Golang fediverse server
 WWW=		https://docs.gotosocial.org/en/latest/
 
