@@ -3,12 +3,14 @@ share/applications/app.drey.Dialect.desktop
 share/dbus-1/services/app.drey.Dialect.SearchProvider.service
 %%DATADIR%%/dialect.gresource
 %%DATADIR%%/dialect/__init__.py
+%%DATADIR%%/dialect/asyncio.py
 %%DATADIR%%/dialect/define.py
 %%DATADIR%%/dialect/languages.py
 %%DATADIR%%/dialect/main.py
 %%DATADIR%%/dialect/preferences.py
 %%DATADIR%%/dialect/providers/__init__.py
 %%DATADIR%%/dialect/providers/base.py
+%%DATADIR%%/dialect/providers/errors.py
 %%DATADIR%%/dialect/providers/local.py
 %%DATADIR%%/dialect/providers/modules/bing.py
 %%DATADIR%%/dialect/providers/modules/deepl.py
@@ -68,6 +70,8 @@ share/locale/eo/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/eo/LC_MESSAGES/dialect.mo
 share/locale/es/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/es/LC_MESSAGES/dialect.mo
+share/locale/et/LC_MESSAGES/dialect-cldr-langs.mo
+share/locale/et/LC_MESSAGES/dialect.mo
 share/locale/eu/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/eu/LC_MESSAGES/dialect.mo
 share/locale/fa/LC_MESSAGES/dialect-cldr-langs.mo
@@ -80,6 +84,8 @@ share/locale/fur/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/fur/LC_MESSAGES/dialect.mo
 share/locale/fy/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/fy/LC_MESSAGES/dialect.mo
+share/locale/ga/LC_MESSAGES/dialect-cldr-langs.mo
+share/locale/ga/LC_MESSAGES/dialect.mo
 share/locale/gl/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/gl/LC_MESSAGES/dialect.mo
 share/locale/he/LC_MESSAGES/dialect-cldr-langs.mo
@@ -90,6 +96,8 @@ share/locale/hr/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/hr/LC_MESSAGES/dialect.mo
 share/locale/hu/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/hu/LC_MESSAGES/dialect.mo
+share/locale/ia/LC_MESSAGES/dialect-cldr-langs.mo
+share/locale/ia/LC_MESSAGES/dialect.mo
 share/locale/id/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/id/LC_MESSAGES/dialect.mo
 share/locale/it/LC_MESSAGES/dialect-cldr-langs.mo
@@ -126,6 +134,8 @@ share/locale/ro/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/ro/LC_MESSAGES/dialect.mo
 share/locale/ru/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/ru/LC_MESSAGES/dialect.mo
+share/locale/sc/LC_MESSAGES/dialect-cldr-langs.mo
+share/locale/sc/LC_MESSAGES/dialect.mo
 share/locale/si/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/si/LC_MESSAGES/dialect.mo
 share/locale/sk/LC_MESSAGES/dialect-cldr-langs.mo
@@ -136,6 +146,8 @@ share/locale/sv/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/sv/LC_MESSAGES/dialect.mo
 share/locale/ta/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/ta/LC_MESSAGES/dialect.mo
+share/locale/te_IN/LC_MESSAGES/dialect-cldr-langs.mo
+share/locale/te_IN/LC_MESSAGES/dialect.mo
 share/locale/tr/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/tr/LC_MESSAGES/dialect.mo
 share/locale/uk/LC_MESSAGES/dialect-cldr-langs.mo
