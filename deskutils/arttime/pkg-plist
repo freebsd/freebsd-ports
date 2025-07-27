@@ -60,6 +60,7 @@ bin/arttime
 %%DATADIR%%/textart/bowling
 %%DATADIR%%/textart/boyskateboard
 %%DATADIR%%/textart/braille
+%%DATADIR%%/textart/bridge
 %%DATADIR%%/textart/buddha
 %%DATADIR%%/textart/buddha2
 %%DATADIR%%/textart/buddha5
@@ -305,6 +306,7 @@ bin/arttime
 %%DATADIR%%/textart/passport
 %%DATADIR%%/textart/pattern
 %%DATADIR%%/textart/pattern2
+%%DATADIR%%/textart/pattern3
 %%DATADIR%%/textart/peacock
 %%DATADIR%%/textart/peacock2
 %%DATADIR%%/textart/pharoah
@@ -327,6 +329,7 @@ bin/arttime
 %%DATADIR%%/textart/poem_surfing
 %%DATADIR%%/textart/pointsettias
 %%DATADIR%%/textart/pointsettias2
+%%DATADIR%%/textart/police
 %%DATADIR%%/textart/pomodoro
 %%DATADIR%%/textart/prayer
 %%DATADIR%%/textart/pride50
