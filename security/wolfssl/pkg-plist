@@ -121,6 +121,7 @@ include/wolfssl/wolfcrypt/misc.h
 include/wolfssl/wolfcrypt/mlkem.h
 include/wolfssl/wolfcrypt/mpi_class.h
 include/wolfssl/wolfcrypt/mpi_superclass.h
+include/wolfssl/wolfcrypt/oid_sum.h
 include/wolfssl/wolfcrypt/pkcs12.h
 include/wolfssl/wolfcrypt/pkcs7.h
 include/wolfssl/wolfcrypt/poly1305.h
@@ -157,8 +158,8 @@ include/wolfssl/wolfcrypt/xmss.h
 include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
-lib/libwolfssl.so.43
-lib/libwolfssl.so.43.1.0
+lib/libwolfssl.so.44
+lib/libwolfssl.so.44.0.0
 libdata/pkgconfig/wolfssl.pc
 %%PORTDOCS%%%%DOCSDIR%%/QUIC.md
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
