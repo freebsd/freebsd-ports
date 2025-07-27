@@ -1,3 +1,42 @@
+  <vuln vid="c37f29ba-6ae3-11f0-b4bf-ecf4bbefc954">
+    <topic>viewvc -- Arbitrary server filesystem content</topic>
+    <affects>
+      <package>
+	<name>viewvc</name>
+	<range><ge>1.1.0</ge><le>1.1.30</le></range>
+      </package>
+      <package>
+	<name>viewvc</name>
+	<range><ge>1.2.0</ge><le>1.2.3</le></range>
+      </package>
+      <package>
+	<name>viewvc-devel</name>
+	<range><lt>1.3.0.20250316_1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cmpilatoreports:</p>
+	<blockquote cite="https://github.com/viewvc/viewvc/security/advisories/GHSA-rv3m-76rj-q397">
+	  <p>
+	    The ViewVC standalone web server (standalone.py) is a script provided in the ViewVC
+	    distribution for the purposes of quickly testing a ViewVC configuration. This script
+	    can in particular configurations expose the contents of the host server's filesystem
+	    though a directory traversal-style attack.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-54141</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-54141</url>
+    </references>
+    <dates>
+      <discovery>2025-07-22</discovery>
+      <entry>2025-07-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eed1a411-699b-11f0-91fe-000c295725e4">
     <topic>rubygem-resolv -- Possible denial of service</topic>
     <affects>
