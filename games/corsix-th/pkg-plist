@@ -124,6 +124,7 @@ share/metainfo/com.corsixth.corsixth.metainfo.xml
 %%DATADIR%%/Lua/dialogs/resizables/folder_settings.lua
 %%DATADIR%%/Lua/dialogs/resizables/hotkey_assign.lua
 %%DATADIR%%/Lua/dialogs/resizables/lua_console.lua
+%%DATADIR%%/Lua/dialogs/resizables/machine_menu.lua
 %%DATADIR%%/Lua/dialogs/resizables/main_menu.lua
 %%DATADIR%%/Lua/dialogs/resizables/map_editor.lua
 %%DATADIR%%/Lua/dialogs/resizables/menu_list_dialog.lua
@@ -241,6 +242,7 @@ share/metainfo/com.corsixth.corsixth.metainfo.xml
 %%DATADIR%%/Lua/languages/hungarian.lua
 %%DATADIR%%/Lua/languages/iberic_portuguese.lua
 %%DATADIR%%/Lua/languages/italian.lua
+%%DATADIR%%/Lua/languages/japanese.lua
 %%DATADIR%%/Lua/languages/korean.lua
 %%DATADIR%%/Lua/languages/norwegian.lua
 %%DATADIR%%/Lua/languages/original_strings.lua
@@ -340,7 +342,6 @@ share/metainfo/com.corsixth.corsixth.metainfo.xml
 %%DATADIR%%/Lua/rooms/ultrascan.lua
 %%DATADIR%%/Lua/rooms/ward.lua
 %%DATADIR%%/Lua/rooms/x_ray_room.lua
-%%DATADIR%%/Lua/run_debugger.lua
 %%DATADIR%%/Lua/sprite_viewer.lua
 %%DATADIR%%/Lua/staff_profile.lua
 %%DATADIR%%/Lua/strict.lua

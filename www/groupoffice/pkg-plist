@@ -868,6 +868,7 @@
 %%WWWDIR%%/go/modules/business/business/views/goui/package-lock.json
 %%WWWDIR%%/go/modules/business/business/views/goui/package.json
 %%WWWDIR%%/go/modules/business/business/views/goui/script/ActivityCombo.ts
+%%WWWDIR%%/modules/files/FilesModule.php
 %%WWWDIR%%/go/modules/business/business/views/goui/script/ActivityTable.ts
 %%WWWDIR%%/go/modules/business/business/views/goui/script/BusinessCombo.ts
 %%WWWDIR%%/go/modules/business/business/views/goui/script/BusinessTable.ts
@@ -3497,7 +3498,6 @@
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/resources/linkedin.png
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/resources/tiktok.png
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/resources/twitter.png
-%%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/src/_addressbook.scss
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/src/style.scss
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/style.css
 %%WWWDIR%%/go/modules/community/apikeys/Module.php
@@ -3921,8 +3921,8 @@
 %%WWWDIR%%/go/modules/community/comments/views/extjs3/themes/default/style.css
 %%WWWDIR%%/go/modules/community/davclient/Module.php
 %%WWWDIR%%/go/modules/community/davclient/controller/DavAccount.php
-%%WWWDIR%%/go/modules/community/davclient/icon.png
 %%WWWDIR%%/go/modules/community/davclient/cron/RefreshDav.php
+%%WWWDIR%%/go/modules/community/davclient/icon.png
 %%WWWDIR%%/go/modules/community/davclient/install/install.sql
 %%WWWDIR%%/go/modules/community/davclient/install/updates.php
 %%WWWDIR%%/go/modules/community/davclient/language/de.php
@@ -4109,28 +4109,6 @@
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/pl.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/pt_br.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/pt_pt.php
-%%WWWDIR%%/go/modules/community/goui/Module.php
-%%WWWDIR%%/go/modules/community/goui/README.md
-%%WWWDIR%%/go/modules/community/goui/install/install.sql
-%%WWWDIR%%/go/modules/community/goui/install/uninstall.sql
-%%WWWDIR%%/go/modules/community/goui/language/de.php
-%%WWWDIR%%/go/modules/community/goui/language/en.php
-%%WWWDIR%%/go/modules/community/goui/language/nl.php
-%%WWWDIR%%/go/modules/community/goui/views/goui/dist/Index.js
-%%WWWDIR%%/go/modules/community/goui/views/goui/dist/style.css
-%%WWWDIR%%/go/modules/community/goui/views/goui/node_modules/.package-lock.json
-%%WWWDIR%%/go/modules/community/goui/views/goui/package-lock.json
-%%WWWDIR%%/go/modules/community/goui/views/goui/package.json
-%%WWWDIR%%/go/modules/community/goui/views/goui/script/Index.ts
-%%WWWDIR%%/go/modules/community/goui/views/goui/script/Main.ts
-%%WWWDIR%%/go/modules/community/goui/views/goui/script/NoteBookCombo.ts
-%%WWWDIR%%/go/modules/community/goui/views/goui/script/NoteBookDialog.ts
-%%WWWDIR%%/go/modules/community/goui/views/goui/script/NoteBookGrid.ts
-%%WWWDIR%%/go/modules/community/goui/views/goui/script/NoteDetail.ts
-%%WWWDIR%%/go/modules/community/goui/views/goui/script/NoteDialog.ts
-%%WWWDIR%%/go/modules/community/goui/views/goui/script/NoteGrid.ts
-%%WWWDIR%%/go/modules/community/goui/views/goui/style/style.scss
-%%WWWDIR%%/go/modules/community/goui/views/goui/tsconfig.json
 %%WWWDIR%%/go/modules/community/history/Module.php
 %%WWWDIR%%/go/modules/community/history/controller/LogEntry.php
 %%WWWDIR%%/go/modules/community/history/icon.png
@@ -5091,7 +5069,6 @@
 %%WWWDIR%%/modules/calendar/install/updatescripts/3_preset_category_acls.php
 %%WWWDIR%%/modules/calendar/install/updatescripts/4_nl_koningsdag.php
 %%WWWDIR%%/modules/calendar/install/updatescripts/5_revert_rrule_shifting.php
-%%WWWDIR%%/modules/calendar/language/sl.php
 %%WWWDIR%%/modules/carddav/CarddavModule.php
 %%WWWDIR%%/modules/carddav/addressbook.php
 %%WWWDIR%%/modules/carddav/install/updates.inc.php
@@ -5371,9 +5348,9 @@
 %%WWWDIR%%/modules/files/FilePropertiesDialog.js
 %%WWWDIR%%/modules/files/FilesDetailPanel.js
 %%WWWDIR%%/modules/files/FilesGrid.js
-%%WWWDIR%%/modules/files/FilesModule.php
 %%WWWDIR%%/modules/files/FolderPanel.js
 %%WWWDIR%%/modules/files/FolderPropertiesDialog.js
+%%WWWDIR%%/modules/gota/index.html
 %%WWWDIR%%/modules/files/FolderbrowserTabPanel.js
 %%WWWDIR%%/modules/files/ImageViewer.js
 %%WWWDIR%%/modules/files/NewFolderDialog.js
@@ -5549,14 +5526,13 @@
 %%WWWDIR%%/modules/filesearch/themes/Default/style.css
 %%WWWDIR%%/modules/filesearch/xsl/docxtohtml.xsl
 %%WWWDIR%%/modules/filesearch/xsl/odttohtml.xsl
-%%WWWDIR%%/modules/freebusypermissions/language/sl.php
 %%WWWDIR%%/modules/gota/GotaModule.php
 %%WWWDIR%%/modules/gota/README.TXT
 %%WWWDIR%%/modules/gota/controller/FileController.php
 %%WWWDIR%%/modules/gota/filehandler/Gota.php
 %%WWWDIR%%/modules/gota/gota.jar
-%%WWWDIR%%/modules/gota/index.html
 %%WWWDIR%%/modules/gota/javalang.txt
+%%WWWDIR%%/modules/projects2/language/sv.php
 %%WWWDIR%%/modules/gota/language/cs.php
 %%WWWDIR%%/modules/gota/language/de.php
 %%WWWDIR%%/modules/gota/language/en.php
@@ -5607,7 +5583,6 @@
 %%WWWDIR%%/modules/hoursapproval2/views/Extjs3/DisapproveDialog.js
 %%WWWDIR%%/modules/hoursapproval2/views/Extjs3/MainPanel.js
 %%WWWDIR%%/modules/hoursapproval2/views/Extjs3/WeekGrid.js
-%%WWWDIR%%/modules/jitsimeet/language/sl.php
 %%WWWDIR%%/modules/leavedays/LeavedaysModule.php
 %%WWWDIR%%/modules/leavedays/controller/LeavedayController.php
 %%WWWDIR%%/modules/leavedays/controller/ReportController.php
@@ -5906,10 +5881,10 @@
 %%WWWDIR%%/modules/projects2/language/ro.php
 %%WWWDIR%%/modules/projects2/language/ru.php
 %%WWWDIR%%/modules/projects2/language/sl.php
-%%WWWDIR%%/modules/projects2/language/sv.php
 %%WWWDIR%%/modules/projects2/language/th.php
-%%WWWDIR%%/modules/projects2/model/DefaultResource.php
 %%WWWDIR%%/modules/projects2/model/Expense.php
+%%WWWDIR%%/modules/projects2/model/DefaultResource.php
+%%WWWDIR%%/modules/site/widget/plupload/assets/js/i18n/fi.js
 %%WWWDIR%%/modules/projects2/model/ExpenseBudget.php
 %%WWWDIR%%/modules/projects2/model/GroupedExpenseBudget.php
 %%WWWDIR%%/modules/projects2/model/Income.php
@@ -6233,9 +6208,9 @@
 %%WWWDIR%%/modules/site/widget/plupload/assets/js/i18n/es.js
 %%WWWDIR%%/modules/site/widget/plupload/assets/js/i18n/et.js
 %%WWWDIR%%/modules/site/widget/plupload/assets/js/i18n/fa.js
-%%WWWDIR%%/modules/site/widget/plupload/assets/js/i18n/fi.js
-%%WWWDIR%%/modules/site/widget/plupload/assets/js/i18n/fr-ca.js
 %%WWWDIR%%/modules/site/widget/plupload/assets/js/i18n/fr.js
+%%WWWDIR%%/modules/site/widget/plupload/assets/js/i18n/fr-ca.js
+%%WWWDIR%%/modules/workflow/themes/Extjs/images/workflow.png
 %%WWWDIR%%/modules/site/widget/plupload/assets/js/i18n/hr.js
 %%WWWDIR%%/modules/site/widget/plupload/assets/js/i18n/hu.js
 %%WWWDIR%%/modules/site/widget/plupload/assets/js/i18n/it.js
@@ -6647,7 +6622,7 @@
 %%WWWDIR%%/modules/workflow/model/Trigger.php
 %%WWWDIR%%/modules/workflow/themes/Default/images/workflow.png
 %%WWWDIR%%/modules/workflow/themes/Default/style.css
-%%WWWDIR%%/modules/workflow/themes/Extjs/images/workflow.png
+%%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/Text.php
 %%WWWDIR%%/modules/workflow/themes/Extjs/style.css
 %%WWWDIR%%/modules/workflow/views/Extjs3/FolderPanel.js
 %%WWWDIR%%/modules/workflow/views/Extjs3/MainPanel.js
@@ -6932,7 +6907,7 @@
 %%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/Payment.php
 %%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/Person.php
 %%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/PhoneNumber.php
-%%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/Text.php
+%%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/hr_HR/Person.php
 %%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/UserAgent.php
 %%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/Uuid.php
 %%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/ar_EG/Address.php
@@ -7126,7 +7101,7 @@
 %%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/hr_HR/Address.php
 %%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/hr_HR/Company.php
 %%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/hr_HR/Payment.php
-%%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/hr_HR/Person.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/CHANGELOG.md
 %%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/hr_HR/PhoneNumber.php
 %%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/hu_HU/Address.php
 %%WWWDIR%%/vendor/fakerphp/faker/src/Faker/Provider/hu_HU/Company.php
@@ -7373,7 +7348,7 @@
 %%WWWDIR%%/vendor/firebase/php-jwt/src/JWTExceptionWithPayloadInterface.php
 %%WWWDIR%%/vendor/firebase/php-jwt/src/Key.php
 %%WWWDIR%%/vendor/firebase/php-jwt/src/SignatureInvalidException.php
-%%WWWDIR%%/vendor/guzzlehttp/guzzle/CHANGELOG.md
+%%WWWDIR%%/vendor/guzzlehttp/promises/src/Utils.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/LICENSE
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/README.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/UPGRADING.md
@@ -7438,7 +7413,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/RejectionException.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/TaskQueue.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/TaskQueueInterface.php
-%%WWWDIR%%/vendor/guzzlehttp/promises/src/Utils.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Grant/Exception/InvalidGrantException.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/psr7/LICENSE
 %%WWWDIR%%/vendor/guzzlehttp/psr7/README.md
@@ -7654,8 +7629,8 @@
 %%WWWDIR%%/vendor/league/oauth2-client/src/Grant/AbstractGrant.php
 %%WWWDIR%%/vendor/league/oauth2-client/src/Grant/AuthorizationCode.php
 %%WWWDIR%%/vendor/league/oauth2-client/src/Grant/ClientCredentials.php
-%%WWWDIR%%/vendor/league/oauth2-client/src/Grant/Exception/InvalidGrantException.php
 %%WWWDIR%%/vendor/league/oauth2-client/src/Grant/GrantFactory.php
+%%WWWDIR%%/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Curves/prime239v2.php
 %%WWWDIR%%/vendor/league/oauth2-client/src/Grant/Password.php
 %%WWWDIR%%/vendor/league/oauth2-client/src/Grant/RefreshToken.php
 %%WWWDIR%%/vendor/league/oauth2-client/src/OptionProvider/HttpBasicAuthOptionProvider.php
@@ -8098,11 +8073,11 @@
 %%WWWDIR%%/vendor/paragonie/random_compat/other/build_phar.php
 %%WWWDIR%%/vendor/paragonie/random_compat/psalm-autoload.php
 %%WWWDIR%%/vendor/paragonie/random_compat/psalm.xml
-%%WWWDIR%%/vendor/phpmailer/phpmailer/.editorconfig
 %%WWWDIR%%/vendor/phpmailer/phpmailer/COMMITMENT
 %%WWWDIR%%/vendor/phpmailer/phpmailer/LICENSE
 %%WWWDIR%%/vendor/phpmailer/phpmailer/README.md
 %%WWWDIR%%/vendor/phpmailer/phpmailer/SECURITY.md
+%%WWWDIR%%/vendor/phpmailer/phpmailer/SMTPUTF8.md
 %%WWWDIR%%/vendor/phpmailer/phpmailer/VERSION
 %%WWWDIR%%/vendor/phpmailer/phpmailer/composer.json
 %%WWWDIR%%/vendor/phpmailer/phpmailer/get_oauth_token.php
@@ -8178,6 +8153,8 @@
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/ArrayEnabled.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/BinaryComparison.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Calculation.php
+%%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/CalculationBase.php
+%%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/CalculationLocale.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Category.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Database/DAverage.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Database/DCount.php
@@ -8263,6 +8240,7 @@
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Financial/TreasuryBill.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/FormulaParser.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/FormulaToken.php
+%%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/FunctionArray.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Functions.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Information/ErrorValue.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Information/ExcelError.php
@@ -8658,6 +8636,7 @@
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/SheetView.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/Table.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/Table/Column.php
+%%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/Table/TableDxfsStyle.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/Table/TableStyle.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/Validations.php
 %%WWWDIR%%/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/Worksheet.php
@@ -8815,7 +8794,6 @@
 %%WWWDIR%%/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Curves/prime192v2.php
 %%WWWDIR%%/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Curves/prime192v3.php
 %%WWWDIR%%/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Curves/prime239v1.php
-%%WWWDIR%%/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Curves/prime239v2.php
 %%WWWDIR%%/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Curves/prime239v3.php
 %%WWWDIR%%/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Curves/prime256v1.php
 %%WWWDIR%%/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Curves/secp112r1.php
@@ -9888,8 +9866,6 @@
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_autoconfig.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_barcodes_1d.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_barcodes_2d.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_import.php
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_parser.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tools/.htaccess
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tools/convert_fonts_examples.txt
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
@@ -10132,25 +10108,7 @@
 %%WWWDIR%%/views/Extjs3/language.php
 %%WWWDIR%%/views/Extjs3/modulescripts.php
 %%WWWDIR%%/views/Extjs3/script.php
-%%WWWDIR%%/views/Extjs3/themes/Compact/Layout.php
-%%WWWDIR%%/views/Extjs3/themes/Compact/fonts/icons.woff2
 %%WWWDIR%%/views/Extjs3/themes/Compact/htmleditor.css
-%%WWWDIR%%/views/Extjs3/themes/Compact/img/dark_light.png
-%%WWWDIR%%/views/Extjs3/themes/Compact/img/favicon/apple-touch-icon.png
-%%WWWDIR%%/views/Extjs3/themes/Compact/img/favicon/favicon-16x16.png
-%%WWWDIR%%/views/Extjs3/themes/Compact/img/favicon/favicon-32x32.png
-%%WWWDIR%%/views/Extjs3/themes/Compact/img/favicon/favicon.png
-%%WWWDIR%%/views/Extjs3/themes/Compact/img/favicon/icon.png
-%%WWWDIR%%/views/Extjs3/themes/Compact/img/favicon/site.webmanifest
-%%WWWDIR%%/views/Extjs3/themes/Compact/pageFooter.php
-%%WWWDIR%%/views/Extjs3/themes/Compact/pageHeader.php
-%%WWWDIR%%/views/Extjs3/themes/Compact/src/_adapter.scss
-%%WWWDIR%%/views/Extjs3/themes/Compact/src/_config.scss
-%%WWWDIR%%/views/Extjs3/themes/Compact/src/_overrides.scss
-%%WWWDIR%%/views/Extjs3/themes/Compact/src/_theme.scss
-%%WWWDIR%%/views/Extjs3/themes/Compact/src/_typography.scss
-%%WWWDIR%%/views/Extjs3/themes/Compact/src/htmleditor.scss
-%%WWWDIR%%/views/Extjs3/themes/Compact/src/style.scss
 %%WWWDIR%%/views/Extjs3/themes/Compact/style.css
 %%WWWDIR%%/views/Extjs3/themes/Paper/Layout.php
 %%WWWDIR%%/views/Extjs3/themes/Paper/flags/LICENSE
@@ -10320,6 +10278,7 @@
 %%WWWDIR%%/views/Extjs3/themes/Paper/sounds/message-new-email.mp3
 %%WWWDIR%%/views/Extjs3/themes/Paper/sounds/message-new-email.ogg
 %%WWWDIR%%/views/Extjs3/themes/Paper/src/_base.scss
+%%WWWDIR%%/views/Extjs3/themes/Paper/src/_compact.scss
 %%WWWDIR%%/views/Extjs3/themes/Paper/src/_compat.scss
 %%WWWDIR%%/views/Extjs3/themes/Paper/src/_config.scss
 %%WWWDIR%%/views/Extjs3/themes/Paper/src/_ext-base.scss
@@ -10442,6 +10401,8 @@
 %%WWWDIR%%/views/goui/dist/goui/script/component/Sortable.d.ts.map
 %%WWWDIR%%/views/goui/dist/goui/script/component/Splitter.d.ts
 %%WWWDIR%%/views/goui/dist/goui/script/component/Splitter.d.ts.map
+%%WWWDIR%%/views/goui/dist/goui/script/component/ToolTip.d.ts
+%%WWWDIR%%/views/goui/dist/goui/script/component/ToolTip.d.ts.map
 %%WWWDIR%%/views/goui/dist/goui/script/component/Toolbar.d.ts
 %%WWWDIR%%/views/goui/dist/goui/script/component/Toolbar.d.ts.map
 %%WWWDIR%%/views/goui/dist/goui/script/component/Window.d.ts
@@ -10470,6 +10431,8 @@
 %%WWWDIR%%/views/goui/dist/goui/script/component/form/DateField.d.ts.map
 %%WWWDIR%%/views/goui/dist/goui/script/component/form/DateRangeField.d.ts
 %%WWWDIR%%/views/goui/dist/goui/script/component/form/DateRangeField.d.ts.map
+%%WWWDIR%%/views/goui/dist/goui/script/component/form/DateTimeField.d.ts
+%%WWWDIR%%/views/goui/dist/goui/script/component/form/DateTimeField.d.ts.map
 %%WWWDIR%%/views/goui/dist/goui/script/component/form/DisplayField.d.ts
 %%WWWDIR%%/views/goui/dist/goui/script/component/form/DisplayField.d.ts.map
 %%WWWDIR%%/views/goui/dist/goui/script/component/form/DurationField.d.ts
@@ -10591,8 +10554,12 @@
 %%WWWDIR%%/views/goui/dist/goui/style/goui.css.map
 %%WWWDIR%%/views/goui/dist/goui/style/lato.css
 %%WWWDIR%%/views/goui/dist/goui/style/lato.css.map
+%%WWWDIR%%/views/goui/dist/groupoffice-core/script/CustomFields.d.ts
+%%WWWDIR%%/views/goui/dist/groupoffice-core/script/CustomFields.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/Entities.d.ts
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/Entities.d.ts.map
+%%WWWDIR%%/views/goui/dist/groupoffice-core/script/LangLoader.d.ts
+%%WWWDIR%%/views/goui/dist/groupoffice-core/script/LangLoader.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/Modules.d.ts
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/Modules.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/Router.d.ts
@@ -10635,8 +10602,12 @@
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/MainThreeColumnPanel.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/PrincipalCombo.d.ts
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/PrincipalCombo.d.ts.map
+%%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/form/HtmlFieldMentionPlugin.d.ts
+%%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/form/HtmlFieldMentionPlugin.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/form/RecurrenceField.d.ts
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/form/RecurrenceField.d.ts.map
+%%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/form/index.d.ts
+%%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/form/index.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/index.d.ts
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/index.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/components/picker/RecurrencePicker.d.ts
@@ -10652,8 +10623,6 @@
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/jmap/JmapDataSource.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/jmap/index.d.ts
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/jmap/index.d.ts.map
-%%WWWDIR%%/views/goui/dist/groupoffice-core/script/LangLoader.d.ts
-%%WWWDIR%%/views/goui/dist/groupoffice-core/script/LangLoader.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/model/Link.d.ts
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/model/Link.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/permissions/SharePanel.d.ts
@@ -10662,8 +10631,6 @@
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/permissions/index.d.ts.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/util/Recurrence.d.ts
 %%WWWDIR%%/views/goui/dist/groupoffice-core/script/util/Recurrence.d.ts.map
-%%WWWDIR%%/views/goui/dist/groupoffice-core/style/groupoffice-compact.css
-%%WWWDIR%%/views/goui/dist/groupoffice-core/style/groupoffice-compact.css.map
 %%WWWDIR%%/views/goui/dist/groupoffice-core/style/groupoffice.css
 %%WWWDIR%%/views/goui/dist/groupoffice-core/style/groupoffice.css.map
 %%WWWDIR%%/views/goui/esbuild-module.mjs
@@ -10758,6 +10725,7 @@
 %%WWWDIR%%/views/goui/goui/script/component/SearchButton.ts
 %%WWWDIR%%/views/goui/goui/script/component/Sortable.ts
 %%WWWDIR%%/views/goui/goui/script/component/Splitter.ts
+%%WWWDIR%%/views/goui/goui/script/component/ToolTip.ts
 %%WWWDIR%%/views/goui/goui/script/component/Toolbar.ts
 %%WWWDIR%%/views/goui/goui/script/component/Window.ts
 %%WWWDIR%%/views/goui/goui/script/component/form/ArrayField.ts
@@ -10772,6 +10740,7 @@
 %%WWWDIR%%/views/goui/goui/script/component/form/DataSourceForm.ts
 %%WWWDIR%%/views/goui/goui/script/component/form/DateField.ts
 %%WWWDIR%%/views/goui/goui/script/component/form/DateRangeField.ts
+%%WWWDIR%%/views/goui/goui/script/component/form/DateTimeField.ts
 %%WWWDIR%%/views/goui/goui/script/component/form/DisplayField.ts
 %%WWWDIR%%/views/goui/goui/script/component/form/DurationField.ts
 %%WWWDIR%%/views/goui/goui/script/component/form/Field.ts
@@ -10854,6 +10823,8 @@
 %%WWWDIR%%/views/goui/goui/style/lato.scss
 %%WWWDIR%%/views/goui/goui/tests/Router.ts
 %%WWWDIR%%/views/goui/goui/tests/lib/component/Component.ts
+%%WWWDIR%%/views/goui/goui/tests/lib/component/Observable.ts
+%%WWWDIR%%/views/goui/goui/tests/lib/component/form/TextField.ts
 %%WWWDIR%%/views/goui/goui/tests/lib/util/BrowserStorage.ts
 %%WWWDIR%%/views/goui/goui/tests/lib/util/Collection.ts
 %%WWWDIR%%/views/goui/goui/tests/lib/util/DateInterval.ts
@@ -10935,6 +10906,10 @@
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/CardMenu.d.ts.map
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/CardMenu.js
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/CardMenu.js.map
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/CollapseButton.d.ts
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/CollapseButton.d.ts.map
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/CollapseButton.js
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/CollapseButton.js.map
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Component.d.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Component.d.ts.map
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Component.js
@@ -10959,6 +10934,10 @@
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Observable.d.ts.map
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Observable.js
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Observable.js.map
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/OverlayToolbarButton.d.ts
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/OverlayToolbarButton.d.ts.map
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/OverlayToolbarButton.js
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/OverlayToolbarButton.js.map
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Paginator.d.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Paginator.d.ts.map
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Paginator.js
@@ -10979,6 +10958,10 @@
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Splitter.d.ts.map
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Splitter.js
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Splitter.js.map
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/ToolTip.d.ts
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/ToolTip.d.ts.map
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/ToolTip.js
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/ToolTip.js.map
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Toolbar.d.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Toolbar.d.ts.map
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/dist/component/Toolbar.js
@@ -11338,17 +11321,20 @@
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/Button.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/CardContainer.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/CardMenu.ts
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/CollapseButton.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/Component.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/DescriptionList.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/DraggableComponent.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/List.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/MaterialIcon.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/Observable.ts
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/OverlayToolbarButton.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/Paginator.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/Root.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/SearchButton.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/Sortable.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/Splitter.ts
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/ToolTip.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/Toolbar.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/Window.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/@intermesh/goui/script/component/form/ArrayField.ts
@@ -11472,10 +11458,12 @@
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/chart.js.map
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/chart.umd.js
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/chart.umd.js.map
-%%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/chunks/helpers.segment.cjs
-%%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/chunks/helpers.segment.cjs.map
-%%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/chunks/helpers.segment.js
-%%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/chunks/helpers.segment.js.map
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/chart.umd.min.js
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/chart.umd.min.js.map
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/chunks/helpers.dataset.cjs
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/chunks/helpers.dataset.cjs.map
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/chunks/helpers.dataset.js
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/chunks/helpers.dataset.js.map
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/controllers/controller.bar.d.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/controllers/controller.bubble.d.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/controllers/controller.doughnut.d.ts
@@ -11522,6 +11510,7 @@
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/helpers/helpers.config.types.d.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/helpers/helpers.core.d.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/helpers/helpers.curve.d.ts
+%%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/helpers/helpers.dataset.d.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/helpers/helpers.dom.d.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/helpers/helpers.easing.d.ts
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/chart.js/dist/helpers/helpers.extras.d.ts
@@ -11646,6 +11635,7 @@
 %%WWWDIR%%/views/goui/groupoffice-core/node_modules/ical.js/package.json
 %%WWWDIR%%/views/goui/groupoffice-core/package-lock.json
 %%WWWDIR%%/views/goui/groupoffice-core/package.json
+%%WWWDIR%%/views/goui/groupoffice-core/script/CustomFields.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/Entities.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/LangLoader.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/Modules.ts
@@ -11669,7 +11659,9 @@
 %%WWWDIR%%/views/goui/groupoffice-core/script/components/LinkBrowserButton.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/components/MainThreeColumnPanel.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/components/PrincipalCombo.ts
+%%WWWDIR%%/views/goui/groupoffice-core/script/components/form/HtmlFieldMentionPlugin.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/components/form/RecurrenceField.ts
+%%WWWDIR%%/views/goui/groupoffice-core/script/components/form/index.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/components/index.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/components/picker/RecurrencePicker.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/index.ts
@@ -11681,9 +11673,9 @@
 %%WWWDIR%%/views/goui/groupoffice-core/script/permissions/SharePanel.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/permissions/index.ts
 %%WWWDIR%%/views/goui/groupoffice-core/script/util/Recurrence.ts
+%%WWWDIR%%/views/goui/groupoffice-core/style/_compact.scss
 %%WWWDIR%%/views/goui/groupoffice-core/style/_general.scss
 %%WWWDIR%%/views/goui/groupoffice-core/style/_theme.scss
-%%WWWDIR%%/views/goui/groupoffice-core/style/groupoffice-compact.scss
 %%WWWDIR%%/views/goui/groupoffice-core/style/groupoffice.scss
 %%WWWDIR%%/views/goui/groupoffice-core/tsconfig.json
 %%WWWDIR%%/views/goui/node_modules/.package-lock.json
@@ -11711,9 +11703,6 @@
 @dir %%WWWDIR%%/go/modules/community/davclient/views/goui/node_modules/.bin
 @dir %%WWWDIR%%/go/modules/community/davclient/views/goui/node_modules/@esbuild
 @dir %%WWWDIR%%/go/modules/community/davclient/views/goui/node_modules/@parcel
-@dir %%WWWDIR%%/go/modules/community/goui/views/goui/node_modules/.bin
-@dir %%WWWDIR%%/go/modules/community/goui/views/goui/node_modules/@esbuild
-@dir %%WWWDIR%%/go/modules/community/goui/views/goui/node_modules/@parcel
 @dir %%WWWDIR%%/go/modules/community/maildomains/views/goui/node_modules/.bin
 @dir %%WWWDIR%%/go/modules/community/maildomains/views/goui/node_modules/@esbuild
 @dir %%WWWDIR%%/go/modules/community/maildomains/views/goui/node_modules/@parcel

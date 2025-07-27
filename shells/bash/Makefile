@@ -1,21 +1,16 @@
-# Please keep the commented variables for now, as we will need them once
-# the first patchset is released
-
 PORTNAME=		bash
-#PATCHLEVEL=		0
-#PORTVERSION=		5.3.${PATCHLEVEL:S/^0//g}
-PORTVERSION=		5.3
-PORTREVISION=		1
+PATCHLEVEL=		3
+PORTVERSION=		5.3.${PATCHLEVEL:S/^0//g}
 CATEGORIES=		shells
 MASTER_SITES=		GNU
-#DISTNAME=		${PORTNAME}-${PORTVERSION:R}
+DISTNAME=		${PORTNAME}-${PORTVERSION:R}
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
-#PATCH_SITES=		GNU/${PORTNAME}/${DISTNAME}-patches/
-#PATCHFILES!=		/usr/bin/jot -s " " -w \
-#			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
-#			${PATCHLEVEL} 1 ${PATCHLEVEL}
+PATCH_SITES=		GNU/${PORTNAME}/${DISTNAME}-patches/
+PATCHFILES!=		/usr/bin/jot -s " " -w \
+			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
+			${PATCHLEVEL} 1 ${PATCHLEVEL}
 
 MAINTAINER=		ehaupt@FreeBSD.org
 COMMENT=		GNU Project's Bourne Again SHell
@@ -55,6 +50,7 @@ NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 # Needs readline 8.3
+# See: 288208, 288207
 #PORTS_READLINE_BUILD_DEPENDS=	readline>=8.2:devel/readline
 #PORTS_READLINE_USES=	readline
 #PORTS_READLINE_CONFIGURE_WITH=	installed-readline

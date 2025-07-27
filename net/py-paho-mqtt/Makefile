@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	paho_mqtt-${DISTVERSION}
 
-MAINTAINER=	joe@thrallingpenguin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MQTT version 3.1/3.1.1 client class
 WWW=		https://www.eclipse.org/paho/
 

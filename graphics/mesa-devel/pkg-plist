@@ -26,6 +26,7 @@ lib/libEGL_mesa%%SUFFIX%%.so.0.0.0
 %%OPENCL%%lib/libRusticlOpenCL.so
 %%OPENCL%%lib/libRusticlOpenCL.so.1
 %%OPENCL%%lib/libRusticlOpenCL.so.1.0.0
+%%VKLAYERS%%lib/libVkLayer_MESA_anti_lag.so
 %%VKLAYERS%%lib/libVkLayer_MESA_device_select.so
 %%VKLAYERS%%lib/libVkLayer_MESA_overlay.so
 %%VKLAYERS%%lib/libVkLayer_MESA_screenshot.so
@@ -56,4 +57,5 @@ share/drirc.d/00-mesa%%SUFFIX%%-defaults.conf
 %%anv%%%%NO_COINST%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
 %%hasvk%%share/vulkan/icd.d/intel_hasvk_icd.%%ARCH%%.json
 %%radv%%%%NO_COINST%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
+%%VKLAYERS%%share/vulkan/implicit_layer.d/VkLayer_MESA_anti_lag.json
 %%VKLAYERS%%share/vulkan/implicit_layer.d/VkLayer_MESA_device_select.json

@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.7.21
+DISTVERSION=	2025.7.27
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -80,7 +80,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bzip2-sys-0.1.13+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.2.29 \
+		cc-1.2.30 \
 		cfg-if-1.0.1 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
@@ -129,7 +129,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ctor-0.4.2 \
 		ctor-proc-macro-0.0.5 \
 		ctr-0.9.2 \
-		curve25519-dalek-4.2.0 \
+		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
 		darling-0.20.11 \
 		darling_core-0.20.11 \
@@ -176,7 +176,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		eyre-0.6.12 \
 		faster-hex-0.10.0 \
 		fastrand-2.3.0 \
-		fiat-crypto-0.3.0 \
+		fiat-crypto-0.2.9 \
 		filetime-0.2.25 \
 		filetime_creation-0.2.0 \
 		find-crate-0.6.3 \
@@ -289,7 +289,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		hyper-1.6.0 \
 		hyper-rustls-0.27.7 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.15 \
+		hyper-util-0.1.16 \
 		i18n-config-0.4.8 \
 		i18n-embed-0.15.4 \
 		i18n-embed-fl-0.9.4 \
@@ -321,7 +321,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		intl-memoizer-0.5.3 \
 		intl_pluralrules-7.0.2 \
 		io-close-0.3.7 \
-		io-uring-0.7.8 \
+		io-uring-0.7.9 \
 		io_tee-0.1.1 \
 		ipnet-2.11.0 \
 		iri-string-0.7.8 \
@@ -345,7 +345,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		libbz2-rs-sys-0.2.1 \
 		libc-0.2.174 \
 		libm-0.2.15 \
-		libredox-0.1.4 \
+		libredox-0.1.6 \
 		libz-rs-sys-0.5.1 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.9.4 \
@@ -452,12 +452,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		quote-1.0.40 \
 		r-efi-5.3.0 \
 		rand-0.8.5 \
-		rand-0.9.1 \
+		rand-0.9.2 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
 		rand_core-0.9.3 \
-		redox_syscall-0.5.13 \
+		redox_syscall-0.5.15 \
 		redox_users-0.5.0 \
 		ref-cast-1.0.24 \
 		ref-cast-impl-1.0.24 \
@@ -497,7 +497,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
 		scrypt-0.11.0 \
-		sdd-3.0.9 \
+		sdd-3.0.10 \
 		secrecy-0.10.3 \
 		security-framework-2.11.1 \
 		security-framework-3.2.0 \
@@ -511,7 +511,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde-value-0.7.0 \
 		serde_derive-1.0.219 \
 		serde_ignored-0.1.12 \
-		serde_json-1.0.140 \
+		serde_json-1.0.141 \
 		serde_regex-1.1.0 \
 		serde_spanned-0.6.9 \
 		serde_urlencoded-0.7.1 \
@@ -541,12 +541,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		slug-0.1.6 \
 		smallvec-1.15.1 \
 		socket2-0.5.10 \
+		socket2-0.6.0 \
 		spki-0.7.3 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
-		strum-0.27.1 \
-		strum_macros-0.27.1 \
+		strum-0.27.2 \
+		strum_macros-0.27.2 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
 		syn-2.0.104 \
@@ -647,7 +648,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wasm-bindgen-shared-0.2.100 \
 		web-sys-0.3.77 \
 		web-time-1.1.0 \
-		webpki-roots-1.0.1 \
+		webpki-roots-1.0.2 \
 		which-7.0.3 \
 		which-8.0.0 \
 		widestring-1.2.0 \

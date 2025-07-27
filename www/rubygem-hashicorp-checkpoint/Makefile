@@ -3,7 +3,7 @@ PORTVERSION=	0.1.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	joe@thrallingpenguin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internal HashiCorp service to check version information
 WWW=		https://rubygems.org/gems/hashicorp-checkpoint
 

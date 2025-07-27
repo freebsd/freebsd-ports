@@ -70,4 +70,10 @@ post-install:
 	${INSTALL_LIB} ${PARI_WRKSRC}/build/libpari-gmp.so.2.3.5 ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Pari
 	${LN} -s libpari-gmp.so.2.3.5 ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Pari/libpari-gmp.so.2
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 504200
+BROKEN=	fails to build
+.endif
+
+.include <bsd.port.post.mk>

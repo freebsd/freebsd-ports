@@ -1,8 +1,9 @@
 include/iv.h
 include/iv_avl.h
-include/iv_event.h
 include/iv_event_raw.h
+include/iv_event.h
 include/iv_fd_pump.h
+%%INOTIFY%%include/iv_inotify.h
 include/iv_list.h
 include/iv_popen.h
 include/iv_signal.h
@@ -50,6 +51,7 @@ share/man/man3/iv_fd_unregister.3.gz
 share/man/man3/iv_init.3.gz
 share/man/man3/iv_inited.3.gz
 share/man/man3/iv_invalidate_now.3.gz
+%%INOTIFY%%share/man/man3/iv_inotify.3.gz
 share/man/man3/iv_main.3.gz
 share/man/man3/iv_popen.3.gz
 share/man/man3/iv_popen_request_close.3.gz

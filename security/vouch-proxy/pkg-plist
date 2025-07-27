@@ -2,6 +2,7 @@ bin/vouch-proxy
 %%ETCDIR%%/config.yml_example
 %%ETCDIR%%/config.yml_example_adfs
 %%ETCDIR%%/config.yml_example_azure
+%%ETCDIR%%/config.yml_example_discord
 %%ETCDIR%%/config.yml_example_gitea
 %%ETCDIR%%/config.yml_example_github
 %%ETCDIR%%/config.yml_example_github_enterprise
@@ -9,8 +10,10 @@ bin/vouch-proxy
 %%ETCDIR%%/config.yml_example_google
 %%ETCDIR%%/config.yml_example_homeassistant
 %%ETCDIR%%/config.yml_example_indieauth
+%%ETCDIR%%/config.yml_example_keycloak
 %%ETCDIR%%/config.yml_example_nextcloud
 %%ETCDIR%%/config.yml_example_oidc
+%%ETCDIR%%/config.yml_example_pocket-id
 %%ETCDIR%%/config.yml_example_scopes_and_claims
 %%ETCDIR%%/config.yml_example_secureauth
 %%ETCDIR%%/config.yml_example_slack

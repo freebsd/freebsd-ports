@@ -131,7 +131,6 @@
     SUBDIR += libgda5-postgresql
     SUBDIR += libgda5-ui
     SUBDIR += libgda6
-    SUBDIR += libgdamm5
     SUBDIR += libhsclient
     SUBDIR += libiodbc
     SUBDIR += libmemcache
@@ -166,6 +165,7 @@
     SUBDIR += mantis
     SUBDIR += mariadb-connector-c
     SUBDIR += mariadb-connector-odbc
+    SUBDIR += mariadb-java-client
     SUBDIR += mariadb1011-client
     SUBDIR += mariadb1011-server
     SUBDIR += mariadb105-client

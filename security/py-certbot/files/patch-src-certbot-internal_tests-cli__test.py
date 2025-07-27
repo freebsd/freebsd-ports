@@ -1,5 +1,5 @@
---- certbot/_internal/tests/cli_test.py.orig	2023-04-04 15:06:41 UTC
-+++ certbot/_internal/tests/cli_test.py
+--- src/certbot/_internal/tests/cli_test.py.orig	2023-04-04 15:06:41 UTC
++++ src/certbot/_internal/tests/cli_test.py
 @@ -1,6 +1,7 @@
  """Tests for certbot._internal.cli."""
  import argparse

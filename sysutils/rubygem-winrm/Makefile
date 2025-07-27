@@ -3,7 +3,7 @@ DISTVERSION=	2.3.9
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	joe@thrallingpenguin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for Windows Remote Management
 WWW=		https://github.com/WinRb/WinRM
 

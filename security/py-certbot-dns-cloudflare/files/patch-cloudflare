@@ -1,5 +1,5 @@
---- certbot_dns_cloudflare/_internal/dns_cloudflare.py.orig	2025-02-11 19:57:38 UTC
-+++ certbot_dns_cloudflare/_internal/dns_cloudflare.py
+--- src/certbot_dns_cloudflare/_internal/dns_cloudflare.py.orig	2025-02-11 19:57:38 UTC
++++ src/certbot_dns_cloudflare/_internal/dns_cloudflare.py
 @@ -100,12 +100,12 @@ class _CloudflareClient:
              # We can't use named arguments in this case, as it would break compatibility with
              # the Cloudflare library since version 2.10.1, as the `token` argument was used for

@@ -24,4 +24,10 @@ CONFIGURE_ARGS=	</dev/null
 post-patch:
 	@${REINPLACE_CMD} -e 's|($$maj, $$min, $$sub)|&; &|' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 504200
+EXTRA_PATCHES=	${PATCHDIR}/extrapatch-Makefile.PL
+.endif
+
+.include <bsd.port.post.mk>

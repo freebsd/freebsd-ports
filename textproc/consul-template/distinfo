@@ -1,5 +1,5 @@
-TIMESTAMP = 1749699690
-SHA256 (go/textproc_consul-template/consul-template-v0.41.0/v0.41.0.mod) = e4351293c487af6efbb1a98483c82cfeefb84b16f0bf9ac57ba6a1066fa34644
-SIZE (go/textproc_consul-template/consul-template-v0.41.0/v0.41.0.mod) = 2867
-SHA256 (go/textproc_consul-template/consul-template-v0.41.0/v0.41.0.zip) = 679d2ac310d639ce2b3f20b29677afb499d9560481a744f10f15bd7ca9bfa981
-SIZE (go/textproc_consul-template/consul-template-v0.41.0/v0.41.0.zip) = 414786
+TIMESTAMP = 1753445756
+SHA256 (go/textproc_consul-template/consul-template-v0.41.1/v0.41.1.mod) = b9d3a7fe8df26285edcca98f51cef75036e1f0356d7164569385f39f2181a514
+SIZE (go/textproc_consul-template/consul-template-v0.41.1/v0.41.1.mod) = 2830
+SHA256 (go/textproc_consul-template/consul-template-v0.41.1/v0.41.1.zip) = 00336b72333495cbea48a21bfed09f1d7401c4cfa572ce7af6a35faac20efbe4
+SIZE (go/textproc_consul-template/consul-template-v0.41.1/v0.41.1.zip) = 414316

@@ -1,5 +1,5 @@
 PORTNAME=	social-auth-core
-DISTVERSION=	4.6.1
+DISTVERSION=	4.7.0
 CATEGORIES=	security www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,7 +39,7 @@ GOOGLE-ONETAP_DESC=	Google One Tap support
 PING_DESC=		Ping Identity support
 SAML_DESC?=	SAML Support
 
-GOOGLE-ONETAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=2.39.0<3:security/py-google-auth@${PY_FLAVOR}
+GOOGLE-ONETAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=2.40.0<3:security/py-google-auth@${PY_FLAVOR}
 PING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-jose>=3.4.0<4:security/py-python-jose@${PY_FLAVOR}
 SAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python3-saml>=1.5.0:security/py-python3-saml@${PY_FLAVOR}
 

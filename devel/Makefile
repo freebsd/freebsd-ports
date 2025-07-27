@@ -1619,6 +1619,7 @@
     SUBDIR += lua-lpeg
     SUBDIR += lua-luacheck
     SUBDIR += lua-luarocks
+    SUBDIR += lua-luastatic
     SUBDIR += lua-lunit
     SUBDIR += lua-lunitx
     SUBDIR += lua-mode
@@ -6155,6 +6156,7 @@
     SUBDIR += py-user_agents
     SUBDIR += py-userpath
     SUBDIR += py-usort
+    SUBDIR += py-uv-dynamic-versioning
     SUBDIR += py-uvloop
     SUBDIR += py-validate-pyproject
     SUBDIR += py-validate-pyproject-schema-store

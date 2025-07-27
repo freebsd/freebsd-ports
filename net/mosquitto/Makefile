@@ -1,19 +1,18 @@
 PORTNAME=	mosquitto
-DISTVERSION=	2.0.21
-PORTREVISION=	1
+DISTVERSION=	2.0.22
 CATEGORIES=	net
 MASTER_SITES=	https://mosquitto.org/files/source/
 
-MAINTAINER=	joe@thrallingpenguin.com
+MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Open source MQTT broker
 WWW=		https://mosquitto.org/
 
 LICENSE=	EPL
 
-BUILD_DEPENDS=	xsltproc:textproc/libxslt \
-		docbook-xsl>0:textproc/docbook-xsl
-LIB_DEPENDS=	libuuid.so:misc/libuuid \
-		libcjson.so:devel/libcjson
+BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
+		xsltproc:textproc/libxslt
+LIB_DEPENDS=	libcjson.so:devel/libcjson \
+		libuuid.so:misc/libuuid
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		cmake cpe ssl
@@ -26,8 +25,8 @@ USERS=		nobody
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
-OPTIONS_DEFINE=	CARES WEBSOCKET
-OPTIONS_DEFAULT=CARES WEBSOCKET
+OPTIONS_DEFINE=		CARES WEBSOCKET
+OPTIONS_DEFAULT=	CARES WEBSOCKET
 
 CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 CARES_CMAKE_ON=		-DWITH_SRV:BOOL=ON

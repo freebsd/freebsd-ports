@@ -9,6 +9,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for gconf2 API library
 WWW=		http://gtkmm.sourceforge.net/
 
+DEPRECATED=	Gconf has been replaced with gsettings
+EXPIRATION_DATE=	2025-08-24
+
 LIB_DEPENDS=	libglibmm-2.4.so:devel/glibmm
 
 USES=		compiler:c++11-lang gmake gnome libtool pathfix \

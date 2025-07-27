@@ -1,5 +1,5 @@
 PORTNAME=	minisatip
-PORTVERSION=	1.3.52
+PORTVERSION=	2.0.4
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	multimedia
@@ -25,10 +25,6 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	minisatip
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} 's|/usr/share/minisatip|${DATADIR}|' \
-		${WRKSRC}/src/minisatip.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/minisatip ${STAGEDIR}${PREFIX}/sbin

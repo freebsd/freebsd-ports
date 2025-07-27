@@ -1,0 +1,17 @@
+Patch from https://github.com/Perl/perl5/issues/22353#issuecomment-2198256977
+
+--- typemap.orig	2010-10-29 18:42:23 UTC
++++ typemap
+@@ -37,9 +37,9 @@ T_WATCHER
+ 
+ T_WATCHER
+ 	if (!(SvROK ($arg) && SvOBJECT (SvRV ($arg))
+-              && (SvSTASH (SvRV ($arg)) == stash_" . ($type =~ /ev_(\S+)/, "$1") . "
+-                  || sv_derived_from ($arg, \"EV::" . ($type =~ /ev_(\S+)/, ucfirst "$1") . "\"))))
+-          croak (\"object is not of type EV::" . ($type =~ /ev_(\S+)/, ucfirst "$1") . "\");
++              && (SvSTASH (SvRV ($arg)) == stash_${ ($type =~ /ev_(\S+)/, \"$1") }
++                  || sv_derived_from ($arg, \"EV::${ ($type =~ /ev_(\S+)/, \ucfirst "$1") }\"))))
++          croak (\"object is not of type EV::${ ($type =~ /ev_(\S+)/, \ucfirst "$1") }\");
+ 	$var = ($type)SvPVX (SvRV ($arg));
+ 
+ OUTPUT

@@ -1,9 +1,10 @@
 PORTNAME=	vagrant
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils rubygems devel
 
-MAINTAINER=	joe@thrallingpenguin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vagrant Virtual Machine Manager
 WWW=		https://www.vagrantup.com/
 
@@ -16,17 +17,17 @@ BUILD_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		curl:ftp/curl \
 		rubygem-bcrypt_pbkdf>=1.1:security/rubygem-bcrypt_pbkdf \
-		rubygem-childprocess>=5.0:devel/rubygem-childprocess \
+		rubygem-childprocess-gitlab>=5.0:devel/rubygem-childprocess-gitlab \
 		rubygem-ed25519>=1.3.0:security/rubygem-ed25519 \
 		rubygem-erubi>=0:www/rubygem-erubi \
 		rubygem-googleapis-common-protos-types>=1.3.0:devel/rubygem-googleapis-common-protos-types \
-		rubygem-grpc>=1.48.0:net/rubygem-grpc \
+		rubygem-grpc-gitlab>=1.48.0:net/rubygem-grpc-gitlab \
 		rubygem-hashicorp-checkpoint>=0.1.5<0.2:www/rubygem-hashicorp-checkpoint \
 		rubygem-i18n>=1.12,2:devel/rubygem-i18n \
 		rubygem-ipaddr>=1.2.4:net/rubygem-ipaddr \
 		rubygem-listen>=3.7:devel/rubygem-listen \
 		rubygem-log4r>=1.1.9<1.1.11:sysutils/rubygem-log4r \
-		rubygem-mime-types>=3.3:misc/rubygem-mime-types \
+		rubygem-mime-types-gitlab>=3.3:misc/rubygem-mime-types-gitlab \
 		rubygem-net-ftp>=0.2:ftp/rubygem-net-ftp \
 		rubygem-net-scp>=4.0.0:security/rubygem-net-scp \
 		rubygem-net-sftp>=4.0:security/rubygem-net-sftp \
@@ -34,8 +35,8 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		rubygem-rb-kqueue>=0.2.0:devel/rubygem-rb-kqueue \
 		rubygem-rexml>=3.2:textproc/rubygem-rexml \
 		rubygem-rgl>=0.5.10:devel/rubygem-rgl \
-		rubygem-rubyzip>=2.3.2:archivers/rubygem-rubyzip \
-		rubygem-vagrant_cloud>=3.1.1:sysutils/rubygem-vagrant_cloud \
+		rubygem-rubyzip-gitlab>=2.3.2:archivers/rubygem-rubyzip-gitlab \
+		rubygem-vagrant_cloud-gitlab>=3.1.1:sysutils/rubygem-vagrant_cloud-gitlab \
 		rubygem-wdm>=0.1.1:devel/rubygem-wdm \
 		rubygem-winrm-elevated>=1.2.3<2:sysutils/rubygem-winrm-elevated \
 		rubygem-winrm-fs>=1.3.5<2:filesystems/rubygem-winrm-fs \

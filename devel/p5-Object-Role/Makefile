@@ -19,4 +19,8 @@ RUN_DEPENDS=	p5-Sub-Name>=0:devel/p5-Sub-Name
 USES=		perl5
 USE_PERL5=	configure
 
+# Remove old, broken, bundled Scalar::Util
+post-extract:
+	${RM} -rf ${WRKSRC}/inc/Scalar
+
 .include <bsd.port.mk>

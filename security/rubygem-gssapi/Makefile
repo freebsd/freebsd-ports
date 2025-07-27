@@ -3,7 +3,7 @@ PORTVERSION=	1.3.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	joe@thrallingpenguin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby FFI Library wrapper for GSSAPI
 WWW=		https://github.com/zenchild/gssapi
 
