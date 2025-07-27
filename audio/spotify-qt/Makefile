@@ -1,5 +1,5 @@
 PORTNAME=	spotify-qt
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
@@ -16,7 +16,7 @@ USES=		cmake compiler:c++11-lang qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	kraxarn
 USE_QT=		base svg
-USE_GL=		opengl
+USE_GL=		gl opengl
 
 PLIST_FILES=	bin/spotify-qt \
 		share/applications/spotify-qt.desktop \
