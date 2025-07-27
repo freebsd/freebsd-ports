@@ -1,5 +1,5 @@
 PORTNAME=	bbmap
-DISTVERSION=	39.15
+DISTVERSION=	39.33
 CATEGORIES=	biology java
 MASTER_SITES=	SF/bbmap/
 DISTNAME=	BBMap_${PORTVERSION}
@@ -14,8 +14,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 RUN_DEPENDS=	bash:shells/bash \
-		pigz:archivers/pigz \
-		pbzip2:archivers/pbzip2
+		pbzip2:archivers/pbzip2 \
+		pigz:archivers/pigz
 
 USES=		java shebangfix
 
