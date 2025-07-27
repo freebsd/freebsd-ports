@@ -1,15 +1,15 @@
---- deps/Makefile.orig	2023-06-29 16:32:01 UTC
+--- deps/Makefile.orig	2025-05-28 09:43:59 UTC
 +++ deps/Makefile
-@@ -83,7 +83,7 @@ LUA_LDFLAGS+= $(LDFLAGS)
+@@ -110,7 +110,7 @@ else
  ifeq ($(LUA_DEBUG),yes)
  	LUA_CFLAGS+= -O0 -g -DLUA_USE_APICHECK
  else
 -	LUA_CFLAGS+= -O2 
 +	LUA_CFLAGS+=
  endif
- # lua's Makefile defines AR="ar rcu", which is unusual, and makes it more
- # challenging to cross-compile lua (and redis).  These defines make it easier
-@@ -106,7 +106,7 @@ endif
+ ifeq ($(LUA_COVERAGE),yes)
+ 	LUA_CFLAGS += -fprofile-arcs -ftest-coverage
+@@ -138,7 +138,7 @@ jemalloc: .make-prerequisites
  
  jemalloc: .make-prerequisites
  	@printf '%b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)$@$(ENDCOLOR)
