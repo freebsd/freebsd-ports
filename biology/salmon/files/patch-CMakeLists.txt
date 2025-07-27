@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2023-07-21 14:03:31 UTC
+--- CMakeLists.txt.orig	2025-07-26 11:52:41 UTC
 +++ CMakeLists.txt
 @@ -310,14 +310,16 @@ endif()
  #  Grab pufferfish source --- DURING CONFIGURE TIME!
  #
  ####
 -if(NOT FETCHED_PUFFERFISH)
-+
++# if(NOT FETCHED_PUFFERFISH)
 +# Fetched by GH_TUPLE in FreeBSD port
 +# if(NOT FETCHED_PUFFERFISH)
    exec_program(${CMAKE_CURRENT_SOURCE_DIR}/scripts/fetchPufferfish.sh RETURN_VALUE FETCH_PF_SCRIPT_RET)
@@ -19,11 +19,12 @@
  
  ##
  # Super-secret override
-@@ -364,7 +366,10 @@ if(NOT Iconv_IS_BUILT_IN)
+@@ -364,7 +366,11 @@ endif()
    set(ICONV_LIB Iconv::Iconv)
  endif()
  
 -find_package(LibLZMA)
++# find_package(LibLZMA)
 +# lzma is in FreeBSD base
 +# find_package(LibLZMA)
 +set(LIBLZMA_FOUND TRUE)
@@ -31,29 +32,35 @@
  if(NOT LIBLZMA_FOUND)
    message("Will attempt to fetch and build liblzma")
    message("=======================================")
-@@ -381,8 +386,8 @@ externalproject_add(liblzma
+@@ -381,8 +387,11 @@ externalproject_add(liblzma
    INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/install
    BUILD_IN_SOURCE TRUE
    CONFIGURE_COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/external/xz-5.2.2/configure --prefix=<INSTALL_DIR> CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER} CFLAGS=${EXTRA_CMAKE_INCLUDE_FLAGS} CPPFLAGS=${EXTRA_CMAKE_INCLUDE_FLAGS} LDFLAGS=${EXTRA_CMAKE_LIBRARY_FLAGS}
 -  BUILD_COMMAND make ${QUIET_MAKE}
 -  INSTALL_COMMAND make ${QUIET_MAKE} install
++#  BUILD_COMMAND make ${QUIET_MAKE}
++#  INSTALL_COMMAND make ${QUIET_MAKE} install
++# FreeBSD make is bsdmake
 +  BUILD_COMMAND gmake ${QUIET_MAKE}
 +  INSTALL_COMMAND gmake ${QUIET_MAKE} install
  )
  
  # Tell cmake that the external project generated a library so we can
-@@ -411,8 +416,8 @@ externalproject_add(libbz2
+@@ -411,8 +420,11 @@ externalproject_add(libbz2
    INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/install
    BUILD_IN_SOURCE TRUE
    CONFIGURE_COMMAND ""
 -  BUILD_COMMAND make ${QUIET_MAKE} CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
 -  INSTALL_COMMAND make ${QUIET_MAKE} install PREFIX=<INSTALL_DIR>
++#  BUILD_COMMAND make ${QUIET_MAKE} CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
++#  INSTALL_COMMAND make ${QUIET_MAKE} install PREFIX=<INSTALL_DIR>
++# FreeBSD make is bsdmake
 +  BUILD_COMMAND gmake ${QUIET_MAKE} CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
 +  INSTALL_COMMAND gmake ${QUIET_MAKE} install PREFIX=<INSTALL_DIR>
  )
  # Tell cmake that the external project generated a library so we can
  # add dependencies here instead of later
-@@ -609,9 +614,11 @@ if (NOT CEREAL_FOUND)
+@@ -577,9 +589,11 @@ endif()
  endif()
  
  ## Try and find TBB first
@@ -68,53 +75,78 @@
  
  if (${TBB_FOUND})
    if (${TBB_VERSION} VERSION_GREATER_EQUAL 2021.4)
-@@ -791,22 +798,16 @@ endif()
+@@ -761,25 +775,28 @@ if (NOT LIBSTADENIO_FOUND)
  if (NOT LIBSTADENIO_FOUND)
    message("Build system will compile Staden IOLib")
    message("==================================================================")
 +  # stadenio is downloaded by GH_TUPLE in FreeBSD port
    externalproject_add(libstadenio
 -    DOWNLOAD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external
--    DOWNLOAD_COMMAND curl -k -L https://github.com/jkbonfield/io_lib/releases/download/io_lib-1-14-15/io_lib-1.14.15.tar.gz -o staden-io_lib-v1.14.15.tar.gz &&
--      ${SHASUM} 20814c4365e1e2fe6630fb11d0df370dec4c5688af3871de7f1cb0129671401e staden-io_lib-v1.14.15.tar.gz &&
--      mkdir -p staden-io_lib-1.14.15 &&
--      tar -xzf staden-io_lib-v1.14.15.tar.gz --strip-components=1 -C staden-io_lib-1.14.15 &&
+-    DOWNLOAD_COMMAND curl -k -L https://github.com/jkbonfield/io_lib/releases/download/io_lib-1-15-0/io_lib-1.15.0.tar.gz -o staden-io_lib-v1.15.0.tar.gz &&
+-      ${SHASUM} ad343dac7c77086db1b54585c5887b26eda6430d1639d111dd3304c3b749494f staden-io_lib-v1.15.0.tar.gz &&
+-      mkdir -p staden-io_lib-1.15.0 &&
+-      tar -xzf staden-io_lib-v1.15.0.tar.gz --strip-components=1 -C staden-io_lib-1.15.0 &&
 -      rm -fr staden-io_lib &&
--      mv -f staden-io_lib-1.14.15 staden-io_lib
+-      mv -f staden-io_lib-1.15.0 staden-io_lib &&
+-      curl -k -L https://github.com/samtools/htscodecs/releases/download/v1.6.0/htscodecs-1.6.0.tar.gz -o htscodecs-1.6.0.tar.gz &&
+-      mkdir -p htscodecs-1.6.0 &&
+-      tar -xzf htscodecs-1.6.0.tar.gz --strip-components=1 -C htscodecs-1.6.0 &&
+-      rm -fr staden-io_lib/htscodecs &&
+-      mv -f htscodecs-1.6.0 staden-io_lib/htscodecs
++    # DOWNLOAD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external
++    # DOWNLOAD_COMMAND curl -k -L https://github.com/jkbonfield/io_lib/releases/download/io_lib-1-15-0/io_lib-1.15.0.tar.gz -o staden-io_lib-v1.15.0.tar.gz &&
++      # ${SHASUM} ad343dac7c77086db1b54585c5887b26eda6430d1639d111dd3304c3b749494f staden-io_lib-v1.15.0.tar.gz &&
++      # mkdir -p staden-io_lib-1.15.0 &&
++      # tar -xzf staden-io_lib-v1.15.0.tar.gz --strip-components=1 -C staden-io_lib-1.15.0 &&
++      # rm -fr staden-io_lib &&
++      # mv -f staden-io_lib-1.15.0 staden-io_lib &&
++      # curl -k -L https://github.com/samtools/htscodecs/releases/download/v1.6.0/htscodecs-1.6.0.tar.gz -o htscodecs-1.6.0.tar.gz &&
++      # mkdir -p htscodecs-1.6.0 &&
++      # tar -xzf htscodecs-1.6.0.tar.gz --strip-components=1 -C htscodecs-1.6.0 &&
++      # rm -fr staden-io_lib/htscodecs &&
++      # mv -f htscodecs-1.6.0 staden-io_lib/htscodecs
      SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/staden-io_lib
      INSTALL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/install
      CONFIGURE_COMMAND ./configure --enable-shared=no --without-libcurl --prefix=<INSTALL_DIR> LDFLAGS=${LIBSTADEN_LDFLAGS} CFLAGS=${LIBSTADEN_CFLAGS} CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
 -    BUILD_COMMAND make ${QUIET_MAKE} CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER} CFLAGS+=${STADEN_INC} CFLAGS+=${STADEN_LIB} LDFLAGS+=${EXTRA_CMAKE_LIBRARY_FLAGS} CFLAGS+=${EXTRA_CMAKE_INCLUDE_FLAGS} CFLAGS+=${LZFLAG} CFLAGS+=${SCHAR_FLAG}
++    # FreeBSD make is bsdmake
 +    BUILD_COMMAND gmake ${QUIET_MAKE} CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER} CFLAGS+=${STADEN_INC} CFLAGS+=${STADEN_LIB} LDFLAGS+=${EXTRA_CMAKE_LIBRARY_FLAGS} CFLAGS+=${EXTRA_CMAKE_INCLUDE_FLAGS} CFLAGS+=${LZFLAG} CFLAGS+=${SCHAR_FLAG}
- 
- 
      BUILD_IN_SOURCE 1
 -    INSTALL_COMMAND make install
++    # FreeBSD make is bsdmake
 +    INSTALL_COMMAND gmake install
    )
    if(NOT LIBLZMA_FOUND)
    	ExternalProject_Add_StepDependencies(libstadenio build liblzma)
-@@ -820,23 +821,9 @@ if (ASAN_BUILD)
+@@ -793,23 +810,26 @@ else()
    set(FAST_MALLOC_LIB "")
    set(HAVE_FAST_MALLOC TRUE)
  else()
 -  set(FAST_MALLOC_LIB "")
 -  set(HAVE_FAST_MALLOC FALSE)
--
--  # See if we have Jemalloc
++  # set(FAST_MALLOC_LIB "")
++  # set(HAVE_FAST_MALLOC FALSE)
+ 
+   # See if we have Jemalloc
 -  find_package(Jemalloc)
 -  if(Jemalloc_FOUND)
--    ##
--    # Don't be so stringent about the version yet
--    ##
--    #if (NOT (${JEMALLOC_VERSION} VERSION_LESS 5.2.1))
++  # find_package(Jemalloc)
++  # if(Jemalloc_FOUND)
+     ##
+     # Don't be so stringent about the version yet
+     ##
+     #if (NOT (${JEMALLOC_VERSION} VERSION_LESS 5.2.1))
 -      message("Found Jemalloc library --- using this memory allocator")
 -      set(FAST_MALLOC_LIB ${JEMALLOC_LIBRARIES})
 -      set(HAVE_FAST_MALLOC TRUE)
--    #else()
--    #  message("Fond Jemalloc version ${JEMALLOC_VERSION}, but require >= 5.2.1. Downloading newer version")
--    #endif()
++      # message("Found Jemalloc library --- using this memory allocator")
++      # set(FAST_MALLOC_LIB ${JEMALLOC_LIBRARIES})
++      # set(HAVE_FAST_MALLOC TRUE)
+     #else()
+     #  message("Fond Jemalloc version ${JEMALLOC_VERSION}, but require >= 5.2.1. Downloading newer version")
+     #endif()
 -  endif()
++  # endif()
 +  # jemalloc is default on FreeBSD
 +  set(FAST_MALLOC_LIB "/usr/lib/libc.so")
 +  set(HAVE_FAST_MALLOC TRUE)
