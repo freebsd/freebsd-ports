@@ -23,10 +23,11 @@ share/dbus-1/interfaces/org.freedesktop.UPower.xml
 share/dbus-1/system.d/org.freedesktop.UPower.conf
 share/dbus-1/system-services/org.freedesktop.UPower.service
 share/gir-1.0/UPowerGlib-1.0.gir
-share/locale/fr/LC_MESSAGES/upower.mo
-share/locale/it/LC_MESSAGES/upower.mo
-share/locale/pl/LC_MESSAGES/upower.mo
-share/locale/sv/LC_MESSAGES/upower.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/upower.mo
+%%NLS%%share/locale/it/LC_MESSAGES/upower.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/upower.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/upower.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/upower.mo
 share/polkit-1/actions/org.freedesktop.upower.policy
 @dir /var/lib/upower
 @dir /var/lib/
