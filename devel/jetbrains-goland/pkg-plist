@@ -20,7 +20,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-GO-251.26094.127
+%%DATADIR%%/lib/build-marker-GO-251.27812.54
 %%DATADIR%%/lib/ext/platform-main.jar
 %%DATADIR%%/lib/external-system-rt.jar
 %%DATADIR%%/lib/externalProcess-rt.jar
@@ -58,6 +58,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/modules/intellij.platform.clouds.jar
 %%DATADIR%%/lib/modules/intellij.platform.collaborationTools.jar
 %%DATADIR%%/lib/modules/intellij.platform.compose.jar
+%%DATADIR%%/lib/modules/intellij.platform.compose.markdown.jar
 %%DATADIR%%/lib/modules/intellij.platform.coverage.agent.jar
 %%DATADIR%%/lib/modules/intellij.platform.coverage.jar
 %%DATADIR%%/lib/modules/intellij.platform.dap.jar
@@ -82,6 +83,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.extensions.gfmAlerts.jar
 %%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.extensions.gfmStrikethrough.jar
 %%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.extensions.gfmTables.jar
+%%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.extensions.images.jar
 %%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.ideLafBridgeStyling.jar
 %%DATADIR%%/lib/modules/intellij.platform.jewel.ui.jar
 %%DATADIR%%/lib/modules/intellij.platform.kernel.backend.jar
@@ -197,6 +199,7 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.rider.cpp.completion.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.rider.csharp.completion.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.ruby.completion.jar
+%%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.rust.completion.jar
 %%DATADIR%%/plugins/fullLine/promo/Aqua/AIEnterprise.png
 %%DATADIR%%/plugins/fullLine/promo/Aqua/CloudCompletion.png
 %%DATADIR%%/plugins/fullLine/promo/Aqua/CloudCompletion_dark.png
@@ -383,8 +386,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/go-plugin/license/golang-license.txt
 %%DATADIR%%/plugins/go-plugin/license/gopher-license.txt
 %%DATADIR%%/plugins/go-plugin/license/re2j-license.txt
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-3b128438d3f6-4b567d62c776.ijx
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-3b128438d3f6-4b567d62c776.txt
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-3b128438d3f6-07d2d2d66b1e.ijx
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-3b128438d3f6-07d2d2d66b1e.txt
 %%DATADIR%%/plugins/go-sharedIndexes-bundled/lib/go-sharedIndexes-bundled.jar
 %%DATADIR%%/plugins/go-template/lib/go-template.jar
 %%DATADIR%%/plugins/grazie/lib/grazie.jar
@@ -446,9 +449,11 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-b26f3e71634d.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-b26f3e71634d.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-09060db00ec0.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-09060db00ec0.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/!HowToUpdateBundledTypeScript.md
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_tsserver.js
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_typingsInstaller.js
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/diagnosticMessages.json
@@ -474,6 +479,7 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2016.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2016.full.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2016.intl.d.ts
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2017.arraybuffer.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2017.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2017.date.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2017.full.d.ts
@@ -526,6 +532,15 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2023.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2023.full.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2023.intl.d.ts
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2024.arraybuffer.d.ts
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2024.collection.d.ts
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2024.d.ts
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2024.full.d.ts
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2024.object.d.ts
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2024.promise.d.ts
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2024.regexp.d.ts
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2024.sharedmemory.d.ts
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es2024.string.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es5.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es6.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.esnext.array.d.ts
