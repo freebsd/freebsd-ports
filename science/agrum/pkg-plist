@@ -180,6 +180,7 @@ include/agrum/BN/learning/localSearchWithTabuList_tpl.h
 include/agrum/BN/learning/paramUtils/DAG2BNLearner.h
 include/agrum/BN/learning/paramUtils/DAG2BNLearner_inl.h
 include/agrum/BN/learning/paramUtils/DAG2BNLearner_tpl.h
+include/agrum/BN/learning/paramUtils/EMApproximationScheme.h
 include/agrum/BN/learning/paramUtils/paramEstimator.h
 include/agrum/BN/learning/paramUtils/paramEstimatorML.h
 include/agrum/BN/learning/paramUtils/paramEstimatorML_inl.h
