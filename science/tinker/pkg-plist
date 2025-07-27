@@ -64,6 +64,8 @@ bin/xyzint
 bin/xyzmol2
 bin/xyzpdb
 %%DATADIR%%/params/0README
+%%DATADIR%%/params/amber14sb.prm
+%%DATADIR%%/params/amber19sb.prm
 %%DATADIR%%/params/amber94.prm
 %%DATADIR%%/params/amber96.prm
 %%DATADIR%%/params/amber98.prm
@@ -82,7 +84,8 @@ bin/xyzpdb
 %%DATADIR%%/params/basic.prm
 %%DATADIR%%/params/charmm19.prm
 %%DATADIR%%/params/charmm22.prm
-%%DATADIR%%/params/charmm22cmap.prm
+%%DATADIR%%/params/charmm27.prm
+%%DATADIR%%/params/charmm36.prm
 %%DATADIR%%/params/dang.prm
 %%DATADIR%%/params/hippo19.prm
 %%DATADIR%%/params/hoch.prm
@@ -90,8 +93,9 @@ bin/xyzpdb
 %%DATADIR%%/params/mm2.prm
 %%DATADIR%%/params/mm3.prm
 %%DATADIR%%/params/mm3pro.prm
-%%DATADIR%%/params/mmff.prm
-%%DATADIR%%/params/oplsaa.prm
+%%DATADIR%%/params/mmff94.prm
+%%DATADIR%%/params/mmff94s.prm
+%%DATADIR%%/params/oplsaa08.prm
 %%DATADIR%%/params/oplsaal.prm
 %%DATADIR%%/params/oplsua.prm
 %%DATADIR%%/params/smoothaa.prm
@@ -206,6 +210,10 @@ bin/xyzpdb
 %%DATADIR%%/test/polyala.key
 %%DATADIR%%/test/polyala.log
 %%DATADIR%%/test/polyala.run
+%%DATADIR%%/test/pyridine.dat
+%%DATADIR%%/test/pyridine.log
+%%DATADIR%%/test/pyridine.run
+%%DATADIR%%/test/pyridine.xyz
 %%DATADIR%%/test/salt.cell
 %%DATADIR%%/test/salt.key
 %%DATADIR%%/test/salt.log
