@@ -19,6 +19,7 @@ include/oqs/sig_dilithium.h
 include/oqs/sig_falcon.h
 include/oqs/sig_mayo.h
 include/oqs/sig_ml_dsa.h
+include/oqs/sig_snova.h
 include/oqs/sig_sphincs.h
 include/oqs/sig_stfl.h
 include/oqs/sig_uov.h
@@ -27,6 +28,6 @@ lib/cmake/liboqs/liboqsConfigVersion.cmake
 lib/cmake/liboqs/liboqsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/liboqs/liboqsTargets.cmake
 lib/liboqs.so
-lib/liboqs.so.0.13.0
-lib/liboqs.so.7
+lib/liboqs.so.0.14.0
+lib/liboqs.so.8
 libdata/pkgconfig/liboqs.pc
