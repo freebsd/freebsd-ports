@@ -1,21 +1,19 @@
---- Makefile.orig	2012-11-26 22:52:36.000000000 -0800
-+++ Makefile	2012-12-04 11:58:37.000000000 -0800
-@@ -26,7 +26,7 @@
+--- Makefile.orig	2024-02-14 19:40:27 UTC
++++ Makefile
+@@ -28,10 +28,10 @@
+ #DEVICE = X11
  #DEVICE = Linux
  #DEVICE = OSS
- #DEVICE = ALSA
--DEVICE = PA
-+#DEVICE = PA
+-DEVICE = ALSA
++#DEVICE = ALSA
+ #DEVICE = PA
  
- VERSION=2.5
+-VERSION=$(shell sed -n <NEWS '/^[0-9]/s/:.*//p' | head -1)
++VERSION = 2.6
  
-@@ -37,16 +37,16 @@
- 	qso.d/*.[ch] qso.d/Makefile
- 
- default: all
--	make testmorse
-+	${MAKE} testmorse
- 
+ MANPAGES = morse.1 QSO.1 
+ DOCS = README NEWS COPYING TODO morse.xml $(MANPAGES)
+@@ -44,11 +44,11 @@ morse:
  all: morse QSO morse.1 QSO.1
  
  morse:
@@ -29,10 +27,10 @@
  	ln qso.d/QSO ./QSO
  
  #
-@@ -67,8 +67,8 @@
+@@ -69,8 +69,8 @@ clean:
  
  clean:
- 	rm -f morse QSO *.1 *.html SHIPPER.*
+ 	rm -f morse QSO *.1 *.html
 -	cd morse.d; make clean
 -	cd qso.d; make clean
 +	${MAKE} -C morse.d clean
@@ -40,9 +38,3 @@
  
  pristine: clean
  	rm -f $(MANPAGES) morse.html
-@@ -93,4 +93,4 @@
- 
- 
- release: morse-$(VERSION).tar.gz morse.html
--	shipper -u -m -t; make clean
-+	shipper -u -m -t; ${MAKE} clean
