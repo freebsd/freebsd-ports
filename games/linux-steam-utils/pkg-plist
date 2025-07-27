@@ -45,6 +45,7 @@ steam-utils/lxbin/lsu-linux-to-freebsd-env
 steam-utils/lxbin/lsu-webhelper-chroot
 steam-utils/lxbin/lsu-webhelper-chroot.rb
 steam-utils/lxbin/tar
+steam-utils/lxbin/xdg-open
 steam-utils/lxbin/xdg-user-dir
 steam-utils/lxbin/xrandr
 steam-utils/lxbin/zenity
