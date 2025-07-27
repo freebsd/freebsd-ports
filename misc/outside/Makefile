@@ -1,6 +1,6 @@
 PORTNAME=	outside
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
+DISTVERSION=	0.5.0
 CATEGORIES=	misc
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -44,13 +44,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		byteorder-1.5.0 \
 		bytes-1.10.1 \
 		castaway-0.1.2 \
-		castaway-0.2.3 \
-		cc-1.2.28 \
+		castaway-0.2.4 \
+		cc-1.2.30 \
 		cfg-if-1.0.1 \
 		chrono-0.4.41 \
-		clap-4.5.40 \
-		clap_builder-4.5.40 \
-		clap_derive-4.5.40 \
+		clap-4.5.41 \
+		clap_builder-4.5.41 \
+		clap_derive-4.5.41 \
 		clap_lex-0.7.5 \
 		cli-settings-derive-0.3.2 \
 		colorchoice-1.0.4 \
@@ -76,8 +76,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		encoding_rs-0.8.35 \
 		enum-map-2.7.3 \
 		enum-map-derive-0.17.0 \
-		enumset-1.1.6 \
-		enumset_derive-0.11.0 \
+		enumset-1.1.7 \
+		enumset_derive-0.12.0 \
 		equivalent-1.0.2 \
 		errno-0.3.13 \
 		event-listener-2.5.3 \
@@ -117,7 +117,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lazy_static-1.5.0 \
 		libc-0.2.174 \
 		libnghttp2-sys-0.1.11+1.64.0 \
-		libredox-0.1.4 \
+		libredox-0.1.6 \
 		libz-sys-1.1.22 \
 		linux-raw-sys-0.4.15 \
 		litemap-0.8.0 \
@@ -160,21 +160,21 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		proc-macro2-1.0.95 \
 		quote-1.0.40 \
 		r-efi-5.3.0 \
-		redox_syscall-0.5.13 \
+		redox_syscall-0.5.15 \
 		redox_users-0.4.6 \
 		rustc-demangle-0.1.25 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
 		rustversion-1.0.21 \
 		ryu-1.0.20 \
-		savefile-0.18.6 \
-		savefile-derive-0.18.6 \
+		savefile-0.19.0 \
+		savefile-derive-0.19.0 \
 		schannel-0.1.27 \
 		scopeguard-1.2.0 \
 		semver-1.0.26 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
-		serde_json-1.0.140 \
+		serde_json-1.0.141 \
 		serde_with-3.14.0 \
 		serde_with_macros-3.14.0 \
 		serde_yaml-0.9.34+deprecated \
@@ -192,6 +192,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		strsim-0.11.1 \
 		syn-2.0.104 \
 		synstructure-0.13.2 \
+		termsize-0.1.9 \
 		thiserror-1.0.69 \
 		thiserror-impl-1.0.69 \
 		time-0.3.41 \
