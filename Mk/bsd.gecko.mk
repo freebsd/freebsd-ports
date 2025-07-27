@@ -61,7 +61,7 @@ MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
 USES+=		compiler:c++17-lang cpe elfctl gl gmake gnome iconv \
-			llvm:min=17,noexport localbase nodejs:24,build,env\
+			llvm:min=17,noexport localbase nodejs:24,build,env \
 			pkgconfig python:build desktop-file-utils
 CPE_VENDOR?=mozilla
 USE_GL=		gl
