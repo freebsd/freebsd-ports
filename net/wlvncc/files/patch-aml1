@@ -1,0 +1,77 @@
+https://github.com/any1/wlvncc/commit/9599559cfdd5
+https://github.com/any1/wlvncc/commit/860232f34a77
+
+--- meson.build.orig	2025-07-07 13:54:48 UTC
++++ meson.build
+@@ -50,12 +50,13 @@ libz = dependency('zlib', required: false)
+ lzo = dependency('lzo2', required: false)
+ libz = dependency('zlib', required: false)
+ 
+-aml_project = subproject('aml', required: false,
++aml_version = ['>=1.0.0', '<2.0.0']
++aml_project = subproject('aml', required: false, version: aml_version,
+ 		default_options: ['default_library=static'])
+ if aml_project.found()
+ 	aml = aml_project.get_variable('aml_dep')
+ else
+-	aml = dependency('aml')
++	aml = dependency('aml1', version: aml_version)
+ endif
+ 
+ inc = include_directories('include', 'src/encodings')
+--- src/main.c.orig	2025-07-07 13:54:48 UTC
++++ src/main.c
+@@ -335,7 +335,7 @@ static const struct zwp_linux_dmabuf_feedback_v1_liste
+ 	.tranche_flags = noop,
+ };
+ 
+-void on_wayland_event(void* obj)
++void on_wayland_event(struct aml_handler* handler)
+ {
+ 	int rc = wl_display_prepare_read(wl_display);
+ 	assert(rc == 0);
+@@ -366,7 +366,7 @@ static int init_wayland_event_handler(void)
+ 	return rc;
+ }
+ 
+-static void on_signal(void* obj)
++static void on_signal(struct aml_signal* signal)
+ {
+ 	do_run = false;
+ }
+@@ -887,9 +887,9 @@ void on_vnc_client_update_fb(struct vnc_client* client
+ 	window_swap(window);
+ }
+ 
+-void on_vnc_client_event(void* obj)
++void on_vnc_client_event(struct aml_handler* handler)
+ {
+-	struct vnc_client* client = aml_get_userdata(obj);
++	struct vnc_client* client = aml_get_userdata(handler);
+ 	if (vnc_client_process(client) < 0)
+ 		do_run = false;
+ }
+@@ -1011,9 +1011,9 @@ failure:
+ 	return -1;
+ }
+ 
+-static void on_canary_tick(void* obj)
++static void on_canary_tick(struct aml_ticker* ticker)
+ {
+-	(void)obj;
++	(void)ticker;
+ 
+ 	uint64_t t = gettime_us();
+ 	int64_t dt = t - last_canary_tick;
+@@ -1149,11 +1149,6 @@ int main(int argc, char* argv[])
+ 	int port = 5900;
+ 	if (n_args >= 2)
+ 		port = atoi(argv[optind + 1]);
+-
+-	if (aml_unstable_abi_version != AML_UNSTABLE_API) {
+-		fprintf(stderr, "libaml is incompatible with current build of wlvncc!\n");
+-		abort();
+-	}
+ 
+ 	struct aml* aml = aml_new();
+ 	if (!aml)
