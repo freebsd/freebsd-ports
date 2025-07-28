@@ -1,6 +1,6 @@
 --- package.json.orig	1979-11-29 23:00:00 UTC
 +++ package.json
-@@ -34,9 +34,9 @@
+@@ -35,9 +35,9 @@
      "@types/bootstrap": "^5.2.7",
      "@types/tinycon": "^0.6.3",
      "@vue/compiler-sfc": "^3.2.37",
