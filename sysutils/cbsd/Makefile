@@ -1,5 +1,5 @@
 PORTNAME=	cbsd
-DISTVERSION=	14.3.0
+DISTVERSION=	14.3.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	fbsd-ports@convectix.com
