@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250728:
+  AFFECTS: users of www/privatebin
+  AUTHOR: dvl@FreeBSD.org
+
+  This release changes configuration defaults including switching the template
+  and removing legacy features.
+
+  See details at https://github.com/PrivateBin/PrivateBin/releases/tag/2.0.0
+
+
 20250720:
   AFFECTS: users of www/phpmyfaq
   AUTHOR: flo@FreeBSD.org

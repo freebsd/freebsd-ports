@@ -21,8 +21,8 @@
 %%WWWDIR%%/css/bootstrap/fonts/glyphicons-halflings-regular.woff
 %%WWWDIR%%/css/bootstrap/fonts/glyphicons-halflings-regular.woff2
 %%WWWDIR%%/css/bootstrap/privatebin.css
-%%WWWDIR%%/css/bootstrap5/bootstrap-5.3.3.css
-%%WWWDIR%%/css/bootstrap5/bootstrap.rtl-5.3.3.css
+%%WWWDIR%%/css/bootstrap5/bootstrap-5.3.7.css
+%%WWWDIR%%/css/bootstrap5/bootstrap.rtl-5.3.7.css
 %%WWWDIR%%/css/bootstrap5/privatebin.css
 %%WWWDIR%%/css/common.css
 %%WWWDIR%%/css/noscript.css
@@ -31,7 +31,6 @@
 %%WWWDIR%%/css/prettify/prettify.css
 %%WWWDIR%%/css/prettify/sons-of-obsidian.css
 %%WWWDIR%%/css/prettify/sunburst.css
-%%WWWDIR%%/css/privatebin.css
 %%WWWDIR%%/i18n/ar.json
 %%WWWDIR%%/i18n/bg.json
 %%WWWDIR%%/i18n/ca.json
@@ -95,15 +94,14 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/index.php.bak
 %%WWWDIR%%/index.php.orig
-%%WWWDIR%%/js/base-x-4.0.0.js
-%%WWWDIR%%/js/base64-1.7.js
+%%WWWDIR%%/js/base-x-5.0.1.js
 %%WWWDIR%%/js/bootstrap-3.4.1.js
-%%WWWDIR%%/js/bootstrap-5.3.3.js
+%%WWWDIR%%/js/bootstrap-5.3.7.js
 %%WWWDIR%%/js/comment.jsonld
 %%WWWDIR%%/js/commentmeta.jsonld
 %%WWWDIR%%/js/dark-mode-switch.js
 %%WWWDIR%%/js/jquery-3.7.1.js
-%%WWWDIR%%/js/kjua-0.9.0.js
+%%WWWDIR%%/js/kjua-0.10.0.js
 %%WWWDIR%%/js/legacy.js
 %%WWWDIR%%/js/package-lock.json
 %%WWWDIR%%/js/package.json
@@ -112,7 +110,6 @@
 %%WWWDIR%%/js/prettify.js
 %%WWWDIR%%/js/privatebin.js
 %%WWWDIR%%/js/purify-3.2.6.js
-%%WWWDIR%%/js/rawinflate-0.3.js
 %%WWWDIR%%/js/showdown-2.1.0.js
 %%WWWDIR%%/js/types.jsonld
 %%WWWDIR%%/js/zlib-1.3.1-1.js
@@ -147,7 +144,6 @@
 %%WWWDIR%%/tpl/.htaccess
 %%WWWDIR%%/tpl/bootstrap.php
 %%WWWDIR%%/tpl/bootstrap5.php
-%%WWWDIR%%/tpl/page.php
 %%WWWDIR%%/tpl/yourlsproxy.php
 %%WWWDIR%%/vendor/.htaccess
 %%WWWDIR%%/vendor/autoload.php
@@ -196,7 +192,6 @@
 %%WWWDIR%%/vendor/jdenticon/jdenticon/src/Shapes/Shape.php
 %%WWWDIR%%/vendor/jdenticon/jdenticon/src/Shapes/ShapeCategory.php
 %%WWWDIR%%/vendor/jdenticon/jdenticon/src/Shapes/ShapeDefinitions.php
-%%WWWDIR%%/vendor/jdenticon/jdenticon/src/Shapes/ShapePosition.php
 %%WWWDIR%%/vendor/mlocati/ip-lib/ip-lib.php
 %%WWWDIR%%/vendor/mlocati/ip-lib/src/Address/AddressInterface.php
 %%WWWDIR%%/vendor/mlocati/ip-lib/src/Address/AssignedRange.php
