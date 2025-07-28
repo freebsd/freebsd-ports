@@ -1,6 +1,6 @@
 PORTNAME=	svt-av1-hdr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.2
+DISTVERSION=	3.1.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,7 +20,6 @@ USES=		cmake compiler:c11
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	juliobbv-p
-GH_TUPLE=	1480c1:cpuinfo:e649baa:cpuinfo/third_party/cpuinfo
 CMAKE_ON=	ENABLE_NASM
 CMAKE_OFF=	NATIVE
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
