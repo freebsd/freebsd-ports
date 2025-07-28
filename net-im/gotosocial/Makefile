@@ -5,7 +5,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	https://codeberg.org/superseriousbusiness/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTFILES=	${PORTNAME}-${DISTVERSION}-source-code.tar.gz ${PORTNAME}_${DISTVERSION}_web-assets.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tilde@ultros.pro
 COMMENT=	Golang fediverse server
 WWW=		https://docs.gotosocial.org/en/latest/
 
