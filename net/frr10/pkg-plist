@@ -41,6 +41,7 @@ include/frr/frrstr.h
 include/frr/graph.h
 include/frr/hash.h
 include/frr/hook.h
+include/frr/host_nb.h
 include/frr/iana_afi.h
 include/frr/id_alloc.h
 include/frr/if.h
@@ -64,13 +65,11 @@ include/frr/log.h
 include/frr/log_vty.h
 include/frr/md5.h
 include/frr/memory.h
-include/frr/mgmt.pb-c.h
 include/frr/mgmt_be_client.h
 include/frr/mgmt_defines.h
 include/frr/mgmt_fe_client.h
 include/frr/mgmt_msg.h
 include/frr/mgmt_msg_native.h
-include/frr/mgmt_pb.h
 include/frr/mlag.h
 include/frr/module.h
 include/frr/monotime.h
@@ -176,6 +175,10 @@ lib/libmgmt_be_nb.a
 lib/libmgmt_be_nb.so
 lib/libmgmt_be_nb.so.0
 lib/libmgmt_be_nb.so.0.0.0
+lib/libmlag_pb.a
+lib/libmlag_pb.so
+lib/libmlag_pb.so.0
+lib/libmlag_pb.so.0.0.0
 %%SNMP%%lib/frr/modules/bgpd_bmp.so
 %%RPKI%%lib/frr/modules/bgpd_rpki.so
 %%SNMP%%lib/frr/modules/bgpd_snmp.so
@@ -237,6 +240,7 @@ share/yang/frr-deviations-bgp-datacenter.yang
 share/yang/frr-deviations-ietf-key-chain.yang
 share/yang/frr-eigrpd.yang
 share/yang/frr-filter.yang
+share/yang/frr-host.yang
 share/yang/frr-if-rmap.yang
 share/yang/frr-interface.yang
 share/yang/frr-isisd.yang
@@ -262,4 +266,5 @@ share/yang/ietf-netconf-acm.yang
 share/yang/ietf-netconf-with-defaults.yang
 share/yang/ietf-netconf.yang
 share/yang/ietf-routing-types.yang
+share/yang/ietf-srv6-types.yang
 @dir(frr,frr,755) /var/run/frr
