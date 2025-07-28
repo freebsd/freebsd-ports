@@ -1,6 +1,7 @@
 PORTNAME=	trakit
-DISTVERSION=	0.2.2
+DISTVERSION=	0.2.4
 CATEGORIES=	multimedia python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -19,11 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unidecode>=1.3.6:converters/py-unidecode@${PY_FLAVOR}
 
 USES=		python
-USE_GITHUB=	yes
-GH_ACCOUNT=	ratoaq2
 USE_PYTHON=	autoplist pep517 pytest
-
-TESTING_UNSAFE=	https://github.com/ratoaq2/trakit/issues/127
 
 NO_ARCH=	yes
 
