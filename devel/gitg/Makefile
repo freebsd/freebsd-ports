@@ -21,7 +21,9 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libpeas-1.0.so:devel/libpeas1 \
 		libgspell-1.so:textproc/gspell \
 		libdazzle-1.0.so:x11-toolkits/libdazzle \
-		libsecret-1.so:security/libsecret
+		libsecret-1.so:security/libsecret \
+		libgpgme.so:security/gpgme \
+		libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 PORTSCOUT=	limitw:1,even
