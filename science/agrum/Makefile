@@ -58,8 +58,10 @@ PYTHON_RUN_DEPENDS=	${PYNUMPY} \
 
 BINARY_ALIAS=	gcc=${CC} g++=${CXX} # only for tests, see https://gitlab.com/agrumery/aGrUM/-/issues/100
 
-do-test: # tests fail to compile, see https://gitlab.com/agrumery/aGrUM/-/issues/148
+do-test:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ./act test release agrum -t all
+
+# tests as of 2.2.0: Failed 0 of 1483 tests
 
 .include <bsd.port.mk>
