@@ -1,7 +1,7 @@
 PORTNAME=	workrave
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.50
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/rcaelers/workrave/releases/download/v${DISTVERSION:S/./_/g}/
 
@@ -10,7 +10,7 @@ COMMENT=	RSI prevention tool (${FLAVOR} flavor)
 WWW=		https://www.workrave.org/
 
 LICENSE=	GPLv3+
-LICENSE_FILE=	COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgdome.so:textproc/gdome2 \
 		libharfbuzz.so:print/harfbuzz
@@ -34,7 +34,7 @@ PLIST_FILES=	lib/xfce4/panel/plugins/libworkrave-plugin.a \
 		share/xfce4/panel/plugins/workrave-xfce-applet.desktop
 .endif
 USE_CXXSTD=	c++11
-USE_GNOME=	gdkpixbuf gtkmm30 intlhack intltool introspection:build
+USE_GNOME=	gdkpixbuf gtkmm30 intlhack intltool introspection:build libxml2
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xext xmu xorgproto xscrnsaver xtst
 
