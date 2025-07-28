@@ -1,11 +1,37 @@
---- cmake/CompilerConfiguration.cmake.orig	2024-09-04 05:25:49 UTC
+--- cmake/CompilerConfiguration.cmake.orig	2025-07-23 08:02:03 UTC
 +++ cmake/CompilerConfiguration.cmake
-@@ -35,7 +35,7 @@ add_compile_options(
- # https://github.com/cp2k/dbcsr/issues/261 eventually check compiler version
- # (similar to -h system_alloc)
+@@ -53,9 +53,9 @@ add_compile_options(
+ 
+ # Release
  add_compile_options(
--  "$<$<COMPILE_LANG_AND_ID:Fortran,GNU>:-mtune=native;-ffree-line-length-512;-ffree-form;-std=f2008;-fimplicit-none;-Werror=aliasing;-Werror=ampersand;-Werror=c-binding-type;-Werror=conversion;-Werror=intrinsic-shadow;-Werror=intrinsics-std;-Werror=line-truncation;-Werror=tabs;-Werror=target-lifetime;-Werror=underflow;-Werror=unused-but-set-variable;-Werror=unused-variable>"
-+  "$<$<COMPILE_LANG_AND_ID:Fortran,GNU>:-ffree-line-length-512;-ffree-form;-std=f2008;-fimplicit-none;-Werror=aliasing;-Werror=ampersand;-Werror=c-binding-type;-Werror=conversion;-Werror=intrinsic-shadow;-Werror=intrinsics-std;-Werror=line-truncation;-Werror=tabs;-Werror=target-lifetime;-Werror=underflow;-Werror=unused-but-set-variable;-Werror=unused-variable>"
-   "$<$<AND:$<COMPILE_LANG_AND_ID:Fortran,GNU>,$<VERSION_GREATER_EQUAL:${CMAKE_Fortran_COMPILER_VERSION},11>>:-fallow-argument-mismatch>"
-   "$<$<COMPILE_LANG_AND_ID:Fortran,Intel>:-free -stand=f18 -fpp -heap-arrays>"
-   "$<$<COMPILE_LANG_AND_ID:Fortran,PGI>:-Mfreeform -Mextend -Mallocatable=03>"
+-  "$<$<AND:$<CONFIG:RELEASE>,$<COMPILE_LANG_AND_ID:Fortran,GNU>>:-O3;-march=native;-mtune=native;-funroll-loops>"
+-  "$<$<AND:$<CONFIG:RELEASE>,$<COMPILE_LANG_AND_ID:CXX,GNU>>:-O3;-march=native;-mtune=native;-funroll-loops>"
+-  "$<$<AND:$<CONFIG:RELEASE>,$<COMPILE_LANG_AND_ID:C,GNU>>:-O3;-march=native;-mtune=native;-funroll-loops>"
++  "$<$<AND:$<CONFIG:RELEASE>,$<COMPILE_LANG_AND_ID:Fortran,GNU>>:-O3;-funroll-loops>"
++  "$<$<AND:$<CONFIG:RELEASE>,$<COMPILE_LANG_AND_ID:CXX,GNU>>:-O3;-funroll-loops>"
++  "$<$<AND:$<CONFIG:RELEASE>,$<COMPILE_LANG_AND_ID:C,GNU>>:-O3;-funroll-loops>"
+ )
+ 
+ # Generic
+@@ -67,9 +67,9 @@ add_compile_options(
+ 
+ # Debug
+ add_compile_options(
+-  "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:Fortran,GNU>>:-O1;-march=native;-mtune=native>"
+-  "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:CXX,GNU>>:-O1;-march=native;-mtune=native>"
+-  "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:C,GNU>>:-O1;-march=native;-mtune=native>"
++  "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:Fortran,GNU>>:-O1>"
++  "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:CXX,GNU>>:-O1>"
++  "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:C,GNU>>:-O1>"
+ )
+ add_compile_options(
+   "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:Fortran,GNU>>:-fsanitize=leak;-Werror=realloc-lhs>"
+@@ -100,7 +100,7 @@ add_compile_options(
+ 
+ # Address Sanitizer
+ add_compile_options(
+-  "$<$<CONFIG:ASAN>:-fsanitize=address;-no-pie;-O3;-march=native;-mtune=native;-funroll-loops>"
++  "$<$<CONFIG:ASAN>:-fsanitize=address;-no-pie;-O3;-funroll-loops>"
+ )
+ add_link_options("$<$<CONFIG:ASAN>:-fsanitize=address>")
+ 

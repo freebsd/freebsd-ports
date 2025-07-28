@@ -1,6 +1,7 @@
 %%DATADIR%%/ALL_BASIS_SETS
 %%DATADIR%%/ALL_POTENTIALS
 %%DATADIR%%/AcPP1_POTENTIALS
+%%DATADIR%%/AcPP2_POTENTIALS
 %%DATADIR%%/Allegro/gra-water-deployed-neq060sp.pth
 %%DATADIR%%/Allegro/si-deployed-neq060dp.pth
 %%DATADIR%%/BASIS_ADMM
@@ -12,6 +13,7 @@
 %%DATADIR%%/BASIS_MINIX
 %%DATADIR%%/BASIS_MOLOPT
 %%DATADIR%%/BASIS_MOLOPT_AcPP1
+%%DATADIR%%/BASIS_MOLOPT_AcPP2
 %%DATADIR%%/BASIS_MOLOPT_LnPP1
 %%DATADIR%%/BASIS_MOLOPT_LnPP2
 %%DATADIR%%/BASIS_MOLOPT_PSI
@@ -139,7 +141,7 @@
 %%DATADIR%%/DFTB/scc/zns.spl
 %%DATADIR%%/DFTB/scc/znzn.spl
 %%DATADIR%%/DFTB/uff_table
-%%DATADIR%%/DeePMD/W.pb
+%%DATADIR%%/DeePMD/water_dpa2.pth
 %%DATADIR%%/ECP_POTENTIALS
 %%DATADIR%%/ECP_POTENTIALS_pob-TZVP-rev2
 %%DATADIR%%/EMSL_BASIS_SETS
@@ -185,6 +187,17 @@
 %%DATADIR%%/NNP/bulkH2O-jcp2020-cnnp/nnp-8/scaling.data
 %%DATADIR%%/NNP/bulkH2O-jcp2020-cnnp/nnp-8/weights.001.data
 %%DATADIR%%/NNP/bulkH2O-jcp2020-cnnp/nnp-8/weights.008.data
+%%DATADIR%%/NNP/protH2OHelium-interaction-nnp/input.nn
+%%DATADIR%%/NNP/protH2OHelium-interaction-nnp/readme.md
+%%DATADIR%%/NNP/protH2OHelium-interaction-nnp/scaling.data
+%%DATADIR%%/NNP/protH2OHelium-interaction-nnp/weights.001.data
+%%DATADIR%%/NNP/protH2OHelium-interaction-nnp/weights.002.data
+%%DATADIR%%/NNP/protH2OHelium-interaction-nnp/weights.008.data
+%%DATADIR%%/NNP/protH2Ocluster-jctc2020-nnp/input.nn
+%%DATADIR%%/NNP/protH2Ocluster-jctc2020-nnp/readme.md
+%%DATADIR%%/NNP/protH2Ocluster-jctc2020-nnp/scaling.data
+%%DATADIR%%/NNP/protH2Ocluster-jctc2020-nnp/weights.001.data
+%%DATADIR%%/NNP/protH2Ocluster-jctc2020-nnp/weights.008.data
 %%DATADIR%%/NequIP/water-deployed-neq060dp.pth
 %%DATADIR%%/NequIP/water-deployed-neq060sp.pth
 %%DATADIR%%/POTENTIAL
