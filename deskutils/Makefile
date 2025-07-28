@@ -229,6 +229,7 @@
     SUBDIR += py-calendar_cli
     SUBDIR += py-i3-gnome-pomodoro
     SUBDIR += py-khal
+    SUBDIR += py-khard
     SUBDIR += py-paperless
     SUBDIR += py-paperless-ngx
     SUBDIR += py-py3status

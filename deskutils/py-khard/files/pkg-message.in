@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Copy the example configuration from
+%%PREFIX%%/share/examples/khard/khard.conf.example to
+$XDG_CONFIG_HOME/khard/khard.conf
+EOM
+}
+]

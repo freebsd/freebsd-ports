@@ -4534,7 +4534,6 @@ misc/py-orange3-associate||2025-06-23|Has expired: Depends on expiring misc/oran
 misc/py-orange3-network||2025-06-23|Has expired: Depends on expiring misc/orange3
 www/onionshare||2025-06-23|Has expired: Depends on expired devel/py-atomicwrites
 deskutils/py-todoman||2025-06-23|Has expired: Depends on expired devel/py-atomicwrites
-deskutils/py-khard||2025-06-23|Has expired: Depends on expired devel/py-atomicwrites
 devel/py-pytest4-flakes||2025-06-23|Has expired: Depends on expiring devel/py-pytest4
 devel/py-pytest-pep8||2025-06-23|Has expired: Depends on expiring devel/py-pytest4
 devel/py-pytest4-cache||2025-06-23|Has expired: Depends on expiring devel/py-pytest4
