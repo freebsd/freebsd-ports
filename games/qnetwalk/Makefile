@@ -1,6 +1,6 @@
 PORTNAME=	qnetwalk
 PORTVERSION=	1.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -10,22 +10,18 @@ WWW=		https://github.com/AMDmi3/qnetwalk
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake compiler:c++17-lang qt:6
+USE_QT=		base tools:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3
 
 PORTDOCS=	ChangeLog.md README.md
 PORTDATA=	*
 
-OPTIONS_DEFINE=	QT6 SOUND DOCS NLS
-OPTIONS_DEFAULT=QT6 SOUND
+OPTIONS_DEFINE=	SOUND DOCS NLS
+OPTIONS_DEFAULT=SOUND
 OPTIONS_SUB=	yes
 
-QT6_CMAKE_BOOL=	USE_QT6
-QT6_USES=	qt:6
-QT6_USE=	qt=base,tools:build
-QT6_USES_OFF=	qt:5
-QT6_USE_OFF=	qt=core,gui,widgets,qmake:build,buildtools:build,linguisttools:build
 SOUND_CMAKE_BOOL=ENABLE_SOUND
 SOUND_USE=	qt=multimedia
 NLS_CMAKE_BOOL=	ENABLE_NLS
