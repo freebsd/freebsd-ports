@@ -1,9 +1,9 @@
 PORTNAME=	gnustep-make
-DISTVERSION=	2.9.2
+DISTVERSION=	2.9.3
 CATEGORIES=	devel gnustep
 MASTER_SITES=	GNUSTEP/core
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joe.maloney@icloud.com
 COMMENT=	GNUstep makefile package
 WWW=		http://www.gnustep.org/
 
@@ -15,11 +15,8 @@ SHEBANG_FILES=	bake_debian_files.sh
 
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 CONFIGURE_ENV+=	INSTALL_PROGRAM="${INSTALL} -c" INSTALL_DATA="${INSTALL} -c"
-CONFIGURE_ARGS+=	--with-thread-lib=-pthread \
-			--with-config-file=${GNUSTEP_PREFIX}/GNUstep.conf \
+CONFIGURE_ARGS+=	--with-config-file=${GNUSTEP_PREFIX}/GNUstep.conf \
 			--with-layout=gnustep \
-			--enable-objc-nonfragile-abi \
-			--enable-native-objc-exceptions \
 			--with-library-combo=ng-gnu-gnu
 GNU_CONFIGURE_PREFIX=	${GNUSTEP_PREFIX}
 NO_ARCH=	yes
