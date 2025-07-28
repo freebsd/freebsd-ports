@@ -1,6 +1,6 @@
---- meson.build.orig	2023-04-27 13:51:02 UTC
+--- meson.build.orig	2025-07-24 01:31:52 UTC
 +++ meson.build
-@@ -234,7 +234,7 @@ programmer = {
+@@ -324,7 +324,7 @@ programmer = {
    },
    'internal' : {
      'systems' : systems_hwaccess + ['linux'],
