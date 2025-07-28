@@ -15,7 +15,7 @@ NOT_FOR_ARCHS=	riscv64
 NOT_FOR_ARCHS_REASON=	Unable to determine endianness.
 
 BUILD_DEPENDS+=	cmocka>=0:sysutils/cmocka \
-		${LOCALBASE}/bin/sphinx-build:textproc/py-sphinx
+		sphinx-build:textproc/py-sphinx
 LIB_DEPENDS=	libpci.so:devel/libpci
 
 USES=		meson pkgconfig tar:xz
@@ -28,13 +28,13 @@ OPTIONS_DEFINE_i386=	DMIDECODE
 OPTIONS_DEFAULT_amd64=	DMIDECODE
 OPTIONS_DEFAULT_i386=	DMIDECODE
 
-DOCS_MESON_ENABLED=	documentation man-pages
-DOCS_MESON_DISABLED=	generate_authors_list
-
 DMIDECODE_DESC=	Use dmidecode to gather DMI information
 FTDI_DESC=	Enable external FT2232SPI flasher support
 
 DMIDECODE_RUN_DEPENDS=	dmidecode:sysutils/dmidecode
+
+DOCS_MESON_ENABLED=	documentation man-pages
+DOCS_MESON_DISABLED=	generate_authors_list
 
 FTDI_LIB_DEPENDS=	libftdi1.so:devel/libftdi1
 
