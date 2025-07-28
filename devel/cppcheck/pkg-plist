@@ -1,5 +1,6 @@
 bin/cppcheck
 %%GUI%%bin/cppcheck-gui
+%%HTMLREPORT%%bin/cppcheck-htmlreport
 %%GUI%%share/applications/cppcheck-gui.desktop
 %%GUI%%share/icons/hicolor/64x64/apps/cppcheck-gui.png
 %%GUI%%share/icons/hicolor/scalable/apps/cppcheck-gui.svg
