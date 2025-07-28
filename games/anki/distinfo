@@ -1,6 +1,6 @@
-TIMESTAMP = 1753377198
-SHA256 (anki-yarn-cache-25.07.4.tar.gz) = 5137bb8dcbf4d19e7731c048327b344c524365271cd5a77a4669c9217a1d8336
-SIZE (anki-yarn-cache-25.07.4.tar.gz) = 527830365
+TIMESTAMP = 1753518688
+SHA256 (anki-yarn-cache-25.07.5.tar.gz) = 361af862b2c914e1c430b5f896cfca8b6d75ff6a8520c799eb1c70e59c60a7c4
+SIZE (anki-yarn-cache-25.07.5.tar.gz) = 527779870
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -1513,9 +1513,9 @@ SHA256 (ankitects-rust-url-bb930b8d089f4d30d7d19c12e54e66191de47b88_GH0.tar.gz) 
 SIZE (ankitects-rust-url-bb930b8d089f4d30d7d19c12e54e66191de47b88_GH0.tar.gz) = 394844
 SHA256 (ankitects-linkcheck-184b2ca50ed39ca43da13f0b830a463861adb9ca_GH0.tar.gz) = 58ac773ba2e7c76a9ec3f59ee9571576d76e74d58c4974a1d606d6976e1be70e
 SIZE (ankitects-linkcheck-184b2ca50ed39ca43da13f0b830a463861adb9ca_GH0.tar.gz) = 19408
-SHA256 (ankitects-anki-25.07.4_GH0.tar.gz) = 1eb7247fbeb4ec9a88d6b8375c67a73a00f001675869f3a4871cbd177db4688a
-SIZE (ankitects-anki-25.07.4_GH0.tar.gz) = 2513427
-SHA256 (ankitects-anki-core-i18n-40ed2ea_GH0.tar.gz) = 0a38064b03078eac22778a57e6a30f5ae4d5d41c9b72e76b6c82fa4b7ca514f0
-SIZE (ankitects-anki-core-i18n-40ed2ea_GH0.tar.gz) = 1693635
+SHA256 (ankitects-anki-25.07.5_GH0.tar.gz) = ad9c0f53c2388680cde23b131d9c2abbf0f5338024ae35d8f34592fdcdf63179
+SIZE (ankitects-anki-25.07.5_GH0.tar.gz) = 2513730
+SHA256 (ankitects-anki-core-i18n-a019a54_GH0.tar.gz) = c930da9b944b2e4af721f85248afbdf8142586da785092807bd2212f1934e355
+SIZE (ankitects-anki-core-i18n-a019a54_GH0.tar.gz) = 1697738
 SHA256 (ankitects-anki-desktop-ftl-bc2da83_GH0.tar.gz) = c561a0def2f170093c0cdf419a1429221cf1b531f1c6a603cf2be8c14e55a67f
 SIZE (ankitects-anki-desktop-ftl-bc2da83_GH0.tar.gz) = 250840

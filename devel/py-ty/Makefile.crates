@@ -27,6 +27,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		bincode_derive-2.0.1 \
 		bitflags-1.3.2 \
 		bitflags-2.9.1 \
+		bitvec-1.0.1 \
 		block-buffer-0.10.4 \
 		boxcar-0.2.13 \
 		bstr-1.12.0 \
@@ -117,6 +118,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		form_urlencoded-1.2.1 \
 		fs-err-2.11.0 \
 		fsevent-sys-4.1.0 \
+		funty-2.0.0 \
 		generic-array-0.14.7 \
 		get-size-derive2-0.5.2 \
 		get-size2-0.5.2 \
@@ -159,6 +161,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		insta-cmd-0.6.0 \
 		interpolator-0.5.0 \
 		intrusive-collections-0.9.7 \
+		inventory-0.3.20 \
 		is-docker-0.2.0 \
 		is-macro-0.3.7 \
 		is-terminal-0.4.16 \
@@ -220,7 +223,6 @@ CARGO_CRATES=	adler2-2.0.0 \
 		os_pipe-1.2.1 \
 		os_str_bytes-7.1.0 \
 		overload-0.1.1 \
-		papaya-0.2.3 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		paste-1.0.15 \
@@ -264,8 +266,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		quote-use-0.8.4 \
 		quote-use-macros-0.8.4 \
 		r-efi-5.2.0 \
+		radium-0.7.0 \
 		rand-0.8.5 \
-		rand-0.9.1 \
+		rand-0.9.2 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
@@ -292,12 +295,11 @@ CARGO_CRATES=	adler2-2.0.0 \
 		schemars_derive-0.8.22 \
 		scopeguard-1.2.0 \
 		seahash-4.1.0 \
-		seize-0.5.0 \
 		serde-1.0.219 \
 		serde-wasm-bindgen-0.6.5 \
 		serde_derive-1.0.219 \
 		serde_derive_internals-0.29.1 \
-		serde_json-1.0.140 \
+		serde_json-1.0.141 \
 		serde_repr-0.1.20 \
 		serde_spanned-0.6.9 \
 		serde_spanned-1.0.0 \
@@ -318,10 +320,11 @@ CARGO_CRATES=	adler2-2.0.0 \
 		statrs-0.18.0 \
 		strip-ansi-escapes-0.2.1 \
 		strsim-0.11.1 \
-		strum-0.27.1 \
-		strum_macros-0.27.1 \
+		strum-0.27.2 \
+		strum_macros-0.27.2 \
 		syn-2.0.104 \
 		synstructure-0.13.2 \
+		tap-1.0.1 \
 		tempfile-3.20.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.2 \
@@ -442,6 +445,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		winsafe-0.0.19 \
 		wit-bindgen-rt-0.39.0 \
 		writeable-0.6.1 \
+		wyz-0.5.1 \
 		yansi-1.0.1 \
 		yoke-0.8.0 \
 		yoke-derive-0.8.0 \
@@ -456,5 +460,5 @@ CARGO_CRATES=	adler2-2.0.0 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.15+zstd.1.5.7 \
-		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa?rev=fc00eba89e5dcaa5edba51c41aa5f309b5cb126b\#fc00eba89e5dcaa5edba51c41aa5f309b5cb126b \
+		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa?rev=dba66f1a37acca014c2402f231ed5b361bd7d8fe\#dba66f1a37acca014c2402f231ed5b361bd7d8fe \
 		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439

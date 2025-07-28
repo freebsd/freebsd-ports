@@ -18,5 +18,5 @@ include/wels/codec_ver.h
 lib/libopenh264.a
 lib/libopenh264.so
 lib/libopenh264.so.%%PORTVERSION%%
-lib/libopenh264.so.6
+lib/libopenh264.so.8
 libdata/pkgconfig/openh264.pc

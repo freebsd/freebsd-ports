@@ -11,6 +11,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
+DEPRECATED=	Migrate to newer asterisk, security support ends soon
+EXPIRATION_DATE=2025-10-20
+
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Open Source PBX and telephony toolkit
 WWW=		https://www.asterisk.org

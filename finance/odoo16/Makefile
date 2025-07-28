@@ -1,5 +1,6 @@
 PORTNAME=	odoo
 PORTVERSION=	16.0.20250719
+PORTREVISION=	1
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	16
@@ -101,7 +102,7 @@ post-patch:
 		${WRKSRC}/odoo/addons/snailmail/models/snailmail_letter.py.orig \
 		${WRKSRC}/odoo/addons/website_slides/models/slide_slide.py.orig \
 		${WRKSRC}/odoo/addons/website_event/controllers/main.py.orig \
-		${WRKSRC}/odoo/addons/website/models/website.py \
+		${WRKSRC}/odoo/addons/website/models/website.py.orig \
 		${WRKSRC}/odoo/http.py.orig \
 		${WRKSRC}/odoo/tools/pdf.py.orig
 

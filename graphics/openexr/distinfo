@@ -1,6 +1,6 @@
-TIMESTAMP = 1749601389
-SHA256 (openexr/openexr-3.3.4.tar.gz) = 73a6d83edcc68333afb95e133f6e12012073815a854bc41abc1a01c1db5f124c
-SIZE (openexr/openexr-3.3.4.tar.gz) = 21206562
+TIMESTAMP = 1753648872
+SHA256 (openexr/openexr-3.3.5.tar.gz) = 8f9241f0e9d6b7aec7e9509cf2a9224416b9cd9d41740deab3827b1f2d01c662
+SIZE (openexr/openexr-3.3.5.tar.gz) = 21207074
 SHA256 (openexr/Beachball/multipart.0001.exr) = 0cd032069fbaa14a2766861fef9893ea66a6494ff64650725d3b26a500df774b
 SIZE (openexr/Beachball/multipart.0001.exr) = 2894260
 SHA256 (openexr/Beachball/singlepart.0001.exr) = 29719942ed3c095a8f8f111fc139fc4c28f446007f5bfce00177cae585b1a87a

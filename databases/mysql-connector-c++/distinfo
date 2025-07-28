@@ -1,3 +1,3 @@
-TIMESTAMP = 1688279127
-SHA256 (mysql-connector-c++-8.0.33-src.tar.gz) = 160cf6881fbde9bd46cd11aaf12930b676bc6e27589ac5c7ba49c196b97e053b
-SIZE (mysql-connector-c++-8.0.33-src.tar.gz) = 4531693
+TIMESTAMP = 1753568390
+SHA256 (mysql-connector-c++-9.4.0-src.tar.gz) = 36a7c93d4a10d1da2a2e66367559d91741aa0f0362bc0ae943171cf1771f6615
+SIZE (mysql-connector-c++-9.4.0-src.tar.gz) = 4788987
