@@ -7,7 +7,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	af773b9f09753ea8614ac82dd8033c870a5a779c.patch:-p1 \
 		fda9fbe830c0db6fbba153f3c2de34ccebf4630f.patch:-p1
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Turn based tactical RPG with several campaigns, written in Rust
 WWW=		https://www.sulisgame.com/ \
 		https://github.com/Grokmoo/sulis/

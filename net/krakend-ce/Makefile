@@ -4,7 +4,7 @@ DISTVERSION=	2.10.0
 PORTREVISION=	1
 CATEGORIES=	net
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	High-performance, stateless, declarative, API Gateway
 WWW=		https://www.krakend.io/ \
 		https://github.com/krakend/krakend-ce/

@@ -4,7 +4,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Fullscreen text-mode manager for BOINC client
 WWW=		https://sourceforge.net/projects/boinctui/
 

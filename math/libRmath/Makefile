@@ -4,7 +4,7 @@ CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${DISTVERSION:C|\..*||}
 DISTNAME=	R-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Standalone math library from R
 WWW=		https://www.R-project.org/
 

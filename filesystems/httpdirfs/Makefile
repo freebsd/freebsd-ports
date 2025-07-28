@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	FUSE filesystem to mount HTTP directory listings, with a permanent cache
 WWW=		https://github.com/fangfufu/httpdirfs/
 

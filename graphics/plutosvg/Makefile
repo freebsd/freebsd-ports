@@ -4,7 +4,7 @@ DISTVERSION=	0.0.6
 PORTREVISION=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Tiny SVG rendering library in C
 WWW=		https://github.com/sammycage/plutosvg/
 

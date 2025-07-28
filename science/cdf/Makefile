@@ -5,7 +5,7 @@ MASTER_SITES=	https://spdf.gsfc.nasa.gov/pub/software/cdf/dist/cdf39_1/
 DISTNAME=	cdf${VER}-dist-cdf
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	alster@vinterdalen.se
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Device independent view of the CDF data model
 WWW=		https://cdf.gsfc.nasa.gov/
 
