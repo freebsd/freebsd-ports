@@ -1,4 +1,5 @@
 Obtained from:	https://github.com/pypa/pip-audit/commit/fe414d39fedce53f44b91bd3f89d152689141f0c
+		https://github.com/pypa/pip-audit/commit/3360a3da3fdd5104e99a737de9b509b8e28dbad9
 
 --- pyproject.toml.orig	2025-04-07 16:45:09 UTC
 +++ pyproject.toml
@@ -7,7 +8,7 @@ Obtained from:	https://github.com/pypa/pip-audit/commit/fe414d39fedce53f44b91bd3
  dependencies = [
      "CacheControl[filecache] >= 0.13.0",
 -    "cyclonedx-python-lib >= 5,< 10",
-+    "cyclonedx-python-lib >= 5,< 11",
++    "cyclonedx-python-lib >= 5,< 12",
      "packaging>=23.0.0",                 # https://github.com/pypa/pip-audit/issues/464
      "pip-api>=0.0.28",
      "pip-requirements-parser>=32.0.0",
