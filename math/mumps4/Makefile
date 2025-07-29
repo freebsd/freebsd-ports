@@ -10,7 +10,7 @@ DISTNAME=	MUMPS_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MUltifrontal Massively Parallel sparse direct Solver
-WWW=		https://graal.ens-lyon.fr/MUMPS/
+WWW=		https://mumps-solver.org/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
