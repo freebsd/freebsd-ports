@@ -14,12 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/gtest/gtest.h:devel/googletest
 LIB_DEPENDS=	libpdalcpp.so:math/pdal \
 		libnetcdf.so:science/netcdf \
-		libsqlite3.so:databases/sqlite3 \
 		libgdal.so:graphics/gdal \
 		libhdf5.so:science/hdf5 \
 		libsz.so:science/libaec
 
-USES=		cmake gnome localbase
+USES=		cmake gnome localbase sqlite
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
