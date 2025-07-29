@@ -1,3 +1,34 @@
+  <vuln vid="cd7f969e-6cb4-11f0-97c4-40b034429ecf">
+    <topic>p5-Crypt-CBC -- Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)</topic>
+    <affects>
+      <package>
+	<name>p5-Crypt-CBC</name>
+	<range><lt>3.07</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Lib-Crypt-CBC project reports:</p>
+	<blockquote cite="https://perldoc.perl.org/functions/rand">
+	  <p>
+	  Crypt::CBC versions between 1.21 and 3.05 for Perl may use the rand() function as the default
+	  source of entropy, which is not cryptographically secure, for cryptographic functions.
+	  This issue affects operating systems where "/dev/urandom'" is unavailable.
+	  In that case, Crypt::CBC will fallback to use the insecure rand() function.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-2814</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-2814</url>
+    </references>
+    <dates>
+      <discovery>2025-04-12</discovery>
+      <entry>2025-07-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c37f29ba-6ae3-11f0-b4bf-ecf4bbefc954">
     <topic>viewvc -- Arbitrary server filesystem content</topic>
     <affects>
@@ -16,7 +47,7 @@
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
-	<p>cmpilatoreports:</p>
+	<p>cmpilato reports:</p>
 	<blockquote cite="https://github.com/viewvc/viewvc/security/advisories/GHSA-rv3m-76rj-q397">
 	  <p>
 	    The ViewVC standalone web server (standalone.py) is a script provided in the ViewVC
