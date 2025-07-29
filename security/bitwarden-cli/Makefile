@@ -1,7 +1,6 @@
 PORTNAME=	bitwarden-cli
 DISTVERSIONPREFIX=	cli-v
-DISTVERSION=	2025.5.0
-PORTREVISION=	1
+DISTVERSION=	2025.7.0
 CATEGORIES=	security
 MASTER_SITES=	https://nodejs.org/dist/v${PKG_NODE_VER}/:node
 DISTFILES=	node-v${PKG_NODE_VER}${EXTRACT_SUFX}:node \
@@ -43,6 +42,9 @@ GH_PROJECT=	clients
 
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
+# don't strip executable upon install since it causes error
+STRIP=		# empty
+
 BUILD_WRKSRC=	${WRKSRC}/apps/cli
 
 PLIST_FILES=	bin/bw \
@@ -76,23 +78,26 @@ pre-fetch:
 		cd ${WRKDIR}/node-modules-cache && \
 		${SETENV} HOME=${WRKDIR} \
 			npm ci --ignore-scripts --no-progress --no-audit --no-fund; \
-		${FIND} ${WRKDIR}/node-modules-cache -depth 1 -print | \
-			${GREP} -v node_modules | ${XARGS} ${RM} -r; \
 		${FIND} ${WRKDIR}/node-modules-cache -type d -exec ${CHMOD} 755 {} ';'; \
-		cd ${WRKDIR}/node-modules-cache && \
-		${MTREE_CMD} -cbnSp node_modules | ${MTREE_CMD} -C | ${SED} \
-			-e 's:time=[0-9.]*:time=${PREFETCH_TIMESTAMP}.000000000:' \
-			-e 's:\([gu]id\)=[0-9]*:\1=0:g' \
-			-e 's:flags=.*:flags=none:' \
-			-e 's:^\.:./node_modules:' > node-modules-cache.mtree; \
-		${TAR} -cz --options 'gzip:!timestamp' \
-			-f ${DISTDIR}/${PREFETCH_FILE} \
-			@node-modules-cache.mtree; \
+		for dir in `${FIND} -s ${WRKDIR}/node-modules-cache -type d -name node_modules -print | \
+			${GREP} -ve 'node_modules/.*/node_modules'`; do \
+			${MTREE_CMD} -cbnSp $${dir} | ${MTREE_CMD} -C | ${SED} \
+				-e 's:time=[0-9.]*:time=${PREFETCH_TIMESTAMP}.000000000:' \
+				-e 's:\([gu]id\)=[0-9]*:\1=0:g' \
+				-e 's:flags=.*:flags=none:' \
+				-e "s|\.|$${dir}|" \
+				-e 's|^${WRKDIR}|.|' >> ${WRKDIR}/node-modules-cache.mtree; \
+		done; \
+		${TAR} -cz --options 'gzip:!timestamp' -f ${DISTDIR}/${PREFETCH_FILE} \
+			-C ${WRKDIR} @node-modules-cache.mtree; \
 		${RM} -r ${WRKDIR}; \
 	fi
 
 post-extract:
-	${MV} ${WRKDIR}/node_modules ${WRKSRC}
+	@for dir in `${FIND} -s ${WRKDIR}/node-modules-cache -type d -name node_modules -print | \
+		${GREP} -ve 'node_modules/.*/node_modules'`; do \
+		${MV} $${dir} `${ECHO_CMD} $${dir} | sed -e 's|${WRKDIR}/node-modules-cache|${WRKSRC}|'`; \
+	done
 
 post-patch:
 	# apply FreeBSD patches for node
@@ -104,7 +109,6 @@ post-patch:
 		${WRKSRC}/node_modules/@yao-pkg/pkg-fetch/patches/node.v${PKG_NODE_VER}.cpp.patch
 
 pre-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm run postinstall
 	# build patched node for pkg
 	cd ${WRKDIR}/node-v${PKG_NODE_VER} && \
 		${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} ./configure ${PKG_NODE_CONFIGURE_ARGS} && \
@@ -126,8 +130,7 @@ do-build:
 		./dist/bw completion --shell zsh > _bw
 
 do-install:
-	# don't strip executable since it causes error
-	${INSTALL_KLD} ${BUILD_WRKSRC}/dist/bw ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/dist/bw ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${BUILD_WRKSRC}/_bw \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_bw
