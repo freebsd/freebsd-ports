@@ -1,16 +1,16 @@
-commit 3524023ca1d2184ab9a5a7cc61695923e6834cc1
-Author: Christoph Moench-Tegeder <cmt@burggraben.net>
+commit 505b8f54ca7e3ee3230ed9c94e6553de504fda29
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
     avoid linux-only includes
 
 diff --git third_party/libwebrtc/modules/desktop_capture/linux/wayland/egl_dmabuf.cc third_party/libwebrtc/modules/desktop_capture/linux/wayland/egl_dmabuf.cc
-index 6a019c64b4b3..18bb43d797dd 100644
+index 9f30378451fb..75381cd39e29 100644
 --- third_party/libwebrtc/modules/desktop_capture/linux/wayland/egl_dmabuf.cc
 +++ third_party/libwebrtc/modules/desktop_capture/linux/wayland/egl_dmabuf.cc
-@@ -10,12 +10,16 @@
- 
+@@ -11,12 +11,16 @@
  #include "modules/desktop_capture/linux/wayland/egl_dmabuf.h"
  
+ #include <EGL/eglext.h>
 +#if !defined(__FreeBSD__)
  #include <asm/ioctl.h>
 +#endif
