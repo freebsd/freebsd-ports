@@ -986,6 +986,7 @@ share/OGRE-%%LIBVERSION%%/Media/materials/scripts/Laplace.material
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/LigthShafts.material
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/MotionBlur.material
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/NightVision.material
+share/OGRE-%%LIBVERSION%%/Media/materials/scripts/Ocean.controls
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/Ocean.material
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/OffsetMapping.material
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/Ogre.material
