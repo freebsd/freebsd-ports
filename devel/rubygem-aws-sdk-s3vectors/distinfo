@@ -1,3 +1,3 @@
-TIMESTAMP = 1753265686
-SHA256 (rubygem/aws-sdk-s3vectors-1.0.0.gem) = 2d625cf99e02feb557edf96fef9f69ab633523775a3065ff6c4dd7cbeba48921
-SIZE (rubygem/aws-sdk-s3vectors-1.0.0.gem) = 34816
+TIMESTAMP = 1753370100
+SHA256 (rubygem/aws-sdk-s3vectors-1.1.0.gem) = cff068dd9ddb059d46731bd53e1b55e79ad671e407108dee21396f46ab0a17e6
+SIZE (rubygem/aws-sdk-s3vectors-1.1.0.gem) = 35328
