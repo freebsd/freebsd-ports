@@ -1,7 +1,7 @@
 PORTNAME=	openmw
 DISTVERSIONPREFIX=	openmw-
 DISTVERSION=	0.49.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libavcodec.so.60:multimedia/ffmpeg \
 		libboost_thread.so:devel/boost-libs \
 		libMyGUIEngine.so:x11-toolkits/mygui \
 		libBulletCollision.so:devel/bullet@double \
+		libcollada-dom2.5-dp.so:devel/collada-dom \
 		libosg.so:graphics/osg \
 		libRecast.so:graphics/recastnavigation \
 		libunshield.so:archivers/unshield \
@@ -23,18 +24,15 @@ LIB_DEPENDS=	libavcodec.so.60:multimedia/ffmpeg \
 		libyaml-cpp.so:devel/yaml-cpp
 
 USES=		cmake compiler:c++20-lang desktop-file-utils gl luajit openal \
-		pkgconfig qt:5 sdl sqlite xorg
+		pkgconfig qt:6 sdl sqlite xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMW
 USE_GL=		gl
-USE_QT=		core gui linguisttools network opengl printsupport svg widgets \
-		buildtools:build qmake:build
-#USE_QT=		base imageformats multimedia svg tools:build
+USE_QT=		base imageformats multimedia svg tools:build
 USE_SDL=	sdl2
 USE_CXXSTD=	c++20
-#USE_GCC=	yes
 
-CMAKE_ARGS=	-DDESIRED_QT_VERSION=5 \
+CMAKE_ARGS=	-DDESIRED_QT_VERSION=${_QT_VER} \
 		-DOPENMW_USE_SYSTEM_BULLET=ON \
 		-DOPENMW_USE_SYSTEM_RECASTNAVIGATION=ON \
 		-DGLOBAL_DATA_PATH="${PREFIX}/share" \
