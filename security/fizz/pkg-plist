@@ -152,8 +152,6 @@ include/fizz/record/Extensions-inl.h
 include/fizz/record/Extensions.h
 include/fizz/record/PlaintextRecordLayer.h
 include/fizz/record/RecordLayer.h
-include/fizz/record/RecordLayerUtils-inl.h
-include/fizz/record/RecordLayerUtils.h
 include/fizz/record/Types-inl.h
 include/fizz/record/Types.h
 include/fizz/record/test/ExtensionTestsBase.h
