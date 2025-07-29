@@ -1,1 +1,6 @@
-Gyoku translates Ruby Hashes to XML.
+Gyoku is a Ruby library that helps convert Ruby hashes into XML. It offers a
+simple and readable way to build XML structures, and supports features like
+attributes, namespaces, and custom element names.
+
+It's often used with SOAP clients like Savon, but can be useful in any Ruby
+project that needs to generate XML from structured data.
