@@ -1,5 +1,5 @@
 PORTNAME=	capnproto
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	devel
 MASTER_SITES=	https://capnproto.org/
 DISTNAME=	${PORTNAME}-c++-${DISTVERSION}
