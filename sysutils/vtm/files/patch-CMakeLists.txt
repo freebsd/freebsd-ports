@@ -1,31 +1,50 @@
---- CMakeLists.txt.orig	2025-03-07 15:17:49 UTC
+--- CMakeLists.txt.orig	2025-07-27 17:50:34 UTC
 +++ CMakeLists.txt
-@@ -29,24 +29,15 @@ endif()
-     #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static -pthread -s")
+@@ -23,30 +23,34 @@ else()
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /O2 /EHsc /bigobj /utf-8 /Zc:preprocessor")
+     set(WIN32_RESOURCES ".resources/images/vtm.rc")
+ else()
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -pthread")
+-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -DLUA_USE_POSIX")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
++    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DLUA_USE_POSIX")
+     # Static linkage
+     #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static -O2 -pthread")
+     #set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -static -O2 -DLUA_USE_POSIX")
  endif()
  
--# Lua
+ # Lua dependency
 -include(FetchContent)
 -FetchContent_Declare(lua
 -                     URL      https://www.lua.org/ftp/lua-5.4.7.tar.gz
--                     URL_HASH SHA256=9fbf5e28ef86c69858f6d3d34eccc32e911c1a28b4120ff3e84aaa70cfbf1e30
--                     DOWNLOAD_EXTRACT_TIMESTAMP true)
+-                     URL_HASH SHA256=9fbf5e28ef86c69858f6d3d34eccc32e911c1a28b4120ff3e84aaa70cfbf1e30)
 -FetchContent_MakeAvailable(lua)
 -file(GLOB lua_src CONFIGURE_DEPENDS ${lua_SOURCE_DIR}/src/*.c)
 -list(REMOVE_ITEM lua_src ${lua_SOURCE_DIR}/src/lua.c ${lua_SOURCE_DIR}/src/luac.c)
 -add_library(lua ${lua_src})
 -target_include_directories(lua PUBLIC ${lua_SOURCE_DIR}/src)
 -target_sources(lua PRIVATE ${lua_src})
-+find_package(PkgConfig)
++#include(FetchContent)
++#FetchContent_Declare(lua
++#                     URL      https://www.lua.org/ftp/lua-5.4.7.tar.gz
++#                     URL_HASH SHA256=9fbf5e28ef86c69858f6d3d34eccc32e911c1a28b4120ff3e84aaa70cfbf1e30)
++#FetchContent_MakeAvailable(lua)
++#file(GLOB lua_src CONFIGURE_DEPENDS ${lua_SOURCE_DIR}/src/*.c)
++#list(REMOVE_ITEM lua_src ${lua_SOURCE_DIR}/src/lua.c ${lua_SOURCE_DIR}/src/luac.c)
++#add_library(lua ${lua_src})
++#target_include_directories(lua PUBLIC ${lua_SOURCE_DIR}/src)
++#target_sources(lua PRIVATE ${lua_src})
  
++find_package(PkgConfig)
 +pkg_check_modules(LUA REQUIRED lua-5.4 IMPORTED_TARGET GLOBAL)
 +
  add_executable(vtm "src/vtm.cpp" ${WIN32_RESOURCES})
  # add_executable(term "src/netxs/apps/term.cpp")
  # add_executable(calc "src/netxs/apps/calc.cpp")
  
--target_link_libraries(vtm lua)
-+target_link_libraries(vtm ${LUA_LIBRARIES})
- # target_link_libraries(term lua)
- # target_link_libraries(calc lua)
+-target_link_libraries(vtm PRIVATE lua)
++target_include_directories(vtm PRIVATE ${LUA_INCLUDE_DIRS})
++target_link_libraries(vtm ${LUA_LINK_LIBRARIES})
+ # target_link_libraries(term PRIVATE lua)
+ # target_link_libraries(calc PRIVATE lua)
  
