@@ -37,6 +37,7 @@ include/tiledb/api/c_api/group/group_api_external.h
 include/tiledb/api/c_api/ndrectangle/ndrectangle_api_external_experimental.h
 include/tiledb/api/c_api/object/object_api_enum.h
 include/tiledb/api/c_api/object/object_api_external.h
+include/tiledb/api/c_api/profile/profile_api_experimental.h
 include/tiledb/api/c_api/query/query_api_enum.h
 include/tiledb/api/c_api/query/query_api_external.h
 include/tiledb/api/c_api/query_aggregate/query_aggregate_api_external_experimental.h
@@ -81,6 +82,7 @@ include/tiledb/log.h
 include/tiledb/ndrectangle.h
 include/tiledb/object.h
 include/tiledb/object_iter.h
+include/tiledb/profile_experimental.h
 include/tiledb/query.h
 include/tiledb/query_channel.h
 include/tiledb/query_condition.h
