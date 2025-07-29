@@ -1,93 +1,93 @@
 PORTNAME=	simscan
-PORTVERSION=	1.4.0
-PORTREVISION=	9
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.4.6.2
 CATEGORIES=	mail security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bedreddinsahbaz@gmail.com
 COMMENT=	Fast Content/Anti-virus Scanner for qmail Written in C
-WWW=		https://www.inter7.com/?page=simscan
+WWW=		https://notes.sagredo.eu/en/qmail-notes-185/installing-and-configuring-simscan-38.html
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		qmail:build
+USE_GITHUB=	yes
+GH_ACCOUNT=	sagredo-dev
 
 GNU_CONFIGURE=	yes
-
-USERS=		${PORTNAME}
-GROUPS=		${USERS}
-
 WORKDIR?=	${QMAIL_PREFIX}/${PORTNAME}
 QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
-
-SUB_FILES=	pkg-message
-
-SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX} \
-		SIMSCAN_DIR=${PORTNAME}
-PLIST_SUB=	QMAIL_PREFIX=${QMAIL_PREFIX} \
-		SIMSCAN_DIR=${PORTNAME}
-
-OPTIONS_DEFINE=	CLAMAV RIPMIME SPAMD USER DOMAIN ATTACH DROPMSG PASSTHRU HEADERS DSPAM DOCS
-OPTIONS_DEFAULT=	CLAMAV RIPMIME
-CLAMAV_DESC=	Support for ClamAV Virus Scanning
-RIPMIME_DESC=	Ripmime Processing (if Clamav ScanMail disabled)
-SPAMD_DESC=	Support for SpamAssassin Spam Filtering
-USER_DESC=	Turn On Per User SpamAssassin (required SPAMD)
-DOMAIN_DESC=	Turn On Per Domain Based Checking
-ATTACH_DESC=	Turn On Attachment Scanning (required CLAMAV)
-DROPMSG_DESC=	Drop Message in Case of Virus Found
-PASSTHRU_DESC=	Pass Spam Thru, Do Not Reject (required SPAMD)
-HEADERS_DESC=	Add a Received Line With Versions of Scanners
-DSPAM_DESC=	Turn on DSPAM scanning
-
-CONFIGURE_ARGS=--enable-clamavdb-path=/var/db/clamav \
+CONFIGURE_ARGS=	--enable-clamavdb-path=/var/db/clamav \
 		--enable-qmaildir=${QMAIL_PREFIX} \
+		--enable-qmail-queue=${QMAIL_QUEUE} \
 		--enable-spamc-user=n \
 		--enable-workdir=${WORKDIR} \
 		--enable-user=nobody
+.if defined(QUARANTINE_DIR)
+CONFIGURE_ARGS+=--enable-quarantinedir=${QUARANTINE_DIR}
+.endif
+.if defined(SPAMC_ARGS)
+CONFIGURE_ARGS+=--enable-spamc-args=${SPAMC_ARGS}
+.endif
+.if defined(SPAM_HITS)
+CONFIGURE_ARGS+=--enable-spam-hits=${SPAM_HITS}
+.endif
 
-CLAMAV_CONFIGURE_OFF=	--enable-clamav=n
+SUB_FILES=	pkg-message
+SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX} \
+		SIMSCAN_DIR=${PORTNAME}
+
+USERS=		${PORTNAME}
+GROUPS=		${USERS:[1]} qmail
+
+PLIST_SUB=	QMAIL_PREFIX=${QMAIL_PREFIX} \
+		SIMSCAN_DIR=${PORTNAME} \
+		USER=${USERS:[1]} \
+		GROUP=${GROUPS:[1]} \
+		QMAIL_GROUP=${GROUPS:[2]}
+PORTDOCS=	AUTHORS ChangeLog README.md TODO
+
+OPTIONS_DEFINE=		ATTACH CLAMAV DOCS DOMAIN DROPMSG DSPAM HEADERS \
+			PASSTHRU RIPMIME SPAMD USER
+OPTIONS_DEFAULT=	ATTACH  RIPMIME
+ATTACH_DESC=		Turn On Attachment Scanning (required CLAMAV)
+CLAMAV_DESC=		Support for ClamAV Virus Scanning
+DOMAIN_DESC=		Turn On Per Domain Based Checking
+DROPMSG_DESC=		Drop Message in Case of Virus Found
+DSPAM_DESC=		Turn on DSPAM scanning
+HEADERS_DESC=		Add a Received Line With Versions of Scanners
+PASSTHRU_DESC=		Pass Spam Thru, Do Not Reject (required SPAMD)
+RIPMIME_DESC=		Ripmime Processing (if Clamav ScanMail disabled)
+SPAMD_DESC=		Support for SpamAssassin Spam Filtering
+USER_DESC=		Turn On Per User SpamAssassin (required SPAMD)
+
+ATTACH_CONFIGURE_ON=	--enable-attach=y
+
+CLAMAV_IMPLIES=		ATTACH
 CLAMAV_BUILD_DEPENDS=	clamdscan:security/clamav
+CLAMAV_CONFIGURE_OFF=	--enable-clamav=n
 
-RIPMIME_CONFIGURE_OFF=	--disable-ripmime
+DOMAIN_CONFIGURE_ON=	--enable-per-domain=y
+
+DROPMSG_CONFIGURE_ON=	--enable-dropmsg=y
+
+DSPAM_BUILD_DEPENDS=	dspam:mail/dspam
+DSPAM_CONFIGURE_ON=	--enable-dspam=y
+
+HEADERS_CONFIGURE_ON=	--enable-received=y \
+			--enable-sigtool-path=${LOCALBASE}/bin/sigtool
+
+PASSTHRU_CONFIGURE_ON=	--enable-spam-passthru=y
+
 RIPMIME_BUILD_DEPENDS=	ripmime:mail/ripmime
 RIPMIME_RUN_DEPENDS=	ripmime:mail/ripmime
+RIPMIME_CONFIGURE_OFF=	--disable-ripmime
 
 SPAMD_BUILD_DEPENDS=	spamassassin:mail/spamassassin
 SPAMD_CONFIGURE_ON=	--enable-spam=y \
 			--enable-spamassassin-path=${LOCALBASE}/bin/spamassassin
 
 USER_CONFIGURE_ON=	--enable-spamc-user=y
-
-DOMAIN_CONFIGURE_ON=	--enable-per-domain=y
-
-ATTACH_CONFIGURE_ON=	--enable-attach=y
-
-DROPMSG_CONFIGURE_ON=	--enable-dropmsg=y
-
-PASSTHRU_CONFIGURE_ON=	--enable-spam-passthru=y
-
-HEADERS_CONFIGURE_ON=	--enable-received=y \
-			--enable-sigtool-path=${LOCALBASE}/bin/sigtool
-
-DSPAM_CONFIGURE_ON=	--enable-dspam=y
-DSPAM_BUILD_DEPENDS=	dspam:mail/dspam
-
-.if defined(SPAM_HITS)
-CONFIGURE_ARGS+=--enable-spam-hits=${SPAM_HITS}
-.endif
-
-.if defined(QUARANTINE_DIR)
-CONFIGURE_ARGS+=--enable-quarantinedir=${QUARANTINE_DIR}
-.endif
-
-.if defined(SPAMC_ARGS)
-CONFIGURE_ARGS+=--enable-spamc-args=${SPAMC_ARGS}
-.endif
-
-.if defined(QMAIL_QUEUE)
-CONFIGURE_ARGS+=--enable-qmail-queue=${QMAIL_QUEUE}
-.endif
-
-PORTDOCS=	AUTHORS ChangeLog README TODO
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,($f/daily.cvd"),\1 || test -d "$$f/daily.inc",' \
