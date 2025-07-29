@@ -15,11 +15,11 @@
 %%BASE%%lib/libcanberra.so
 %%BASE%%lib/libcanberra.so.0
 %%BASE%%lib/libcanberra.so.0.2.5
-%%BASE%%%%GSTREAMER%%lib/libcanberra-%%VERSION%%/libcanberra-gstreamer.so
+%%GSTREAMER%%lib/libcanberra-%%VERSION%%/libcanberra-gstreamer.so
 %%BASE%%lib/libcanberra-%%VERSION%%/libcanberra-multi.so
 %%BASE%%lib/libcanberra-%%VERSION%%/libcanberra-null.so
 %%BASE%%lib/libcanberra-%%VERSION%%/libcanberra-oss.so
-%%BASE%%%%PULSEAUDIO%%lib/libcanberra-%%VERSION%%/libcanberra-pulse.so
+%%PULSE%%lib/libcanberra-%%VERSION%%/libcanberra-pulse.so
 %%BASE%%libdata/pkgconfig/libcanberra.pc
 %%GTK2%%libdata/pkgconfig/libcanberra-gtk.pc
 %%GTK3%%libdata/pkgconfig/libcanberra-gtk3.pc
