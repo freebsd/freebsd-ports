@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libwayland-client.so:graphics/wayland
+RUN_DEPENDS=	river:x11-wm/river
 
 USES=		gmake pkgconfig
 
