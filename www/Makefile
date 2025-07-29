@@ -26,6 +26,7 @@
     SUBDIR += UniversalFeedCreator
     SUBDIR += adguardhome
     SUBDIR += adjuster
+    SUBDIR += agate
     SUBDIR += alef-webfont
     SUBDIR += amfora
     SUBDIR += amphetadesk

@@ -1,0 +1,4 @@
+bin/agate
+@dir(www) etc/agate/tls
+@dir(www,www) www/agate
+@dir(www,www) /var/log/agate
