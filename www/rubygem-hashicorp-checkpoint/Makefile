@@ -1,16 +1,18 @@
 PORTNAME=	hashicorp-checkpoint
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Internal HashiCorp service to check version information
-WWW=		https://rubygems.org/gems/hashicorp-checkpoint
+WWW=		https://checkpoint.hashicorp.com/ \
+		https://github.com/hashicorp/ruby-checkpoint
 
 LICENSE=	MPL20
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		gem
 
 NO_ARCH=	yes
-USES=		gem
 
 .include <bsd.port.mk>
