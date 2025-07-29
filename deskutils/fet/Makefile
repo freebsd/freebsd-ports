@@ -1,5 +1,5 @@
 PORTNAME=	fet
-DISTVERSION=	7.3.2
+DISTVERSION=	7.4.1
 CATEGORIES=	deskutils education
 MASTER_SITES=	https://lalescu.ro/liviu/fet/download/ \
 		https://lalescu.ro/liviu/fet/download/old/ \
