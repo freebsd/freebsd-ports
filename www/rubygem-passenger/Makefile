@@ -23,7 +23,7 @@ RUN_DEPENDS=	rubygem-etc>=0:devel/rubygem-etc \
 		rubygem-rackup>=1.0.1:www/rubygem-rackup \
 		rubygem-rake>=12.3.3:devel/rubygem-rake
 
-USES=		compiler:c++11-lang cpe gem libtool python:env ssl
+USES=		compiler:c++14-lang cpe gem libtool python:env ssl
 
 CXXFLAGS+=	-I${LOCALBASE}/include/utf8cpp
 USE_CXXSTD=	c++14
