@@ -6,6 +6,7 @@
 %%WWWDIR%%/.dockerignore
 %%WWWDIR%%/.github/FUNDING.yml
 %%WWWDIR%%/.github/ISSUE_TEMPLATE/bug_report.md
+%%WWWDIR%%/.github/workflows/build-release-archive.yml
 %%WWWDIR%%/.github/workflows/check-pr.yml
 %%WWWDIR%%/.github/workflows/code-analysis.yml
 %%WWWDIR%%/.github/workflows/commits.yml
@@ -14,9 +15,9 @@
 %%WWWDIR%%/.github/workflows/docker-release.yml
 %%WWWDIR%%/.github/workflows/release.yml
 %%WWWDIR%%/.github/workflows/sonarcloud-scan.yml
+%%WWWDIR%%/.gitignore
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/.phpcs.xml
-%%WWWDIR%%/.readthedocs.yaml
 %%WWWDIR%%/.release-please-manifest.json
 %%WWWDIR%%/.travis.yml
 %%WWWDIR%%/.tx/config
