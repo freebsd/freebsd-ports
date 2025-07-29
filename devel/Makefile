@@ -380,6 +380,7 @@
     SUBDIR += cargo-llvm-cov
     SUBDIR += cargo-make
     SUBDIR += cargo-mutants
+    SUBDIR += cargo-readme
     SUBDIR += cargo-spellcheck
     SUBDIR += cargo-tarpaulin
     SUBDIR += cargo-udeps
