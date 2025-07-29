@@ -1,5 +1,5 @@
 PORTNAME=	scamper
-DISTVERSION=	20250227
+DISTVERSION=	20250729
 CATEGORIES=	net
 MASTER_SITES=	https://www.caida.org/catalog/software/scamper/code/
 DISTNAME=	${PORTNAME}-cvs-${DISTVERSION}
@@ -20,12 +20,13 @@ SLAVE_PORT?=	no
 
 .if ${SLAVE_PORT} == no
 
-OPTIONS_DEFINE=	HOIHO MINRTT UPTIME
+OPTIONS_DEFINE=	HOIHO MINRTT SUID_SCAMPER UPTIME
 OPTIONS_SUB=	yes
 
-HOIHO_DESC=	Install sc_hoiho
-MINRTT_DESC=	Install sc_minrtt
-UPTIME_DESC=	Install sc_uptime
+HOIHO_DESC=		Install sc_hoiho
+MINRTT_DESC=		Install sc_minrtt
+SUID_SCAMPER_DESC=	Install scamper with setuid bit to allow non-root use
+UPTIME_DESC=		Install sc_uptime
 
 HOIHO_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 HOIHO_USES=		localbase:ldflags

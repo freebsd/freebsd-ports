@@ -1,4 +1,5 @@
-bin/scamper
+%%SUID_SCAMPER%%@(,,4555) bin/scamper
+%%NO_SUID_SCAMPER%%bin/scamper
 bin/sc_ally
 bin/sc_analysis_dump
 bin/sc_attach
@@ -29,11 +30,11 @@ bin/sc_wartsfilter
 bin/sc_wartsfix
 lib/libscamperctrl.a
 lib/libscamperctrl.so.4
-lib/libscamperctrl.so.4.0.0
+lib/libscamperctrl.so.4.0.1
 lib/libscamperctrl.so
 lib/libscamperfile.a
-lib/libscamperfile.so.12
-lib/libscamperfile.so.12.0.0
+lib/libscamperfile.so.13
+lib/libscamperfile.so.13.2.1
 lib/libscamperfile.so
 share/man/man1/sc_ally.1.gz
 share/man/man1/sc_analysis_dump.1.gz
