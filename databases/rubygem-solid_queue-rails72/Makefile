@@ -1,5 +1,5 @@
 PORTNAME=	solid_queue
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails72
@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-activejob72>=7.1:devel/rubygem-activejob72 \
 		rubygem-concurrent-ruby>=1.3.1:devel/rubygem-concurrent-ruby \
 		rubygem-fugit>=1.11.0<1.12:devel/rubygem-fugit \
 		rubygem-railties72>=7.1:www/rubygem-railties72 \
-		rubygem-thor>=1.3.1<1.4:devel/rubygem-thor
+		rubygem-thor>=1.3.1:devel/rubygem-thor
 
 USES=		gem
 
