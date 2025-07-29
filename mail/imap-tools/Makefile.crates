@@ -19,7 +19,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bumpalo-3.19.0 \
 		cassowary-0.3.0 \
 		castaway-0.2.4 \
-		cc-1.2.29 \
+		cc-1.2.30 \
 		cfg-if-1.0.1 \
 		chrono-0.4.41 \
 		clap-4.5.41 \
@@ -58,7 +58,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		imap-3.0.0-alpha.15 \
 		imap-proto-0.16.5 \
 		indoc-2.0.6 \
-		instability-0.3.7 \
+		instability-0.3.9 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.13.0 \
 		itoa-1.0.15 \
@@ -101,14 +101,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		quote-1.0.40 \
 		r-efi-5.3.0 \
 		ratatui-0.29.0 \
-		redox_syscall-0.5.13 \
+		redox_syscall-0.5.17 \
 		regex-1.11.1 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.5 \
 		ring-0.17.14 \
-		rustc-demangle-0.1.25 \
+		rustc-demangle-0.1.26 \
 		rustix-0.38.44 \
 		rustix-1.0.8 \
 		rustls-0.22.4 \
@@ -127,7 +127,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde-value-0.7.0 \
 		serde_any-0.5.0 \
 		serde_derive-1.0.219 \
-		serde_json-1.0.140 \
+		serde_json-1.0.141 \
 		serde_yaml-0.7.5 \
 		sharded-slab-0.1.7 \
 		shell-words-1.1.0 \
@@ -138,7 +138,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		size-0.5.0 \
 		smallvec-1.15.1 \
 		static_assertions-1.1.0 \
-		strfmt-0.2.4 \
+		strfmt-0.2.5 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
@@ -185,7 +185,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.2 \
+		windows-targets-0.53.3 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_gnullvm-0.53.0 \
 		windows_aarch64_msvc-0.52.6 \
