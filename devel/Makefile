@@ -876,6 +876,7 @@
     SUBDIR += gitlab-shell
     SUBDIR += gitleaks
     SUBDIR += gitlist
+    SUBDIR += gitmux
     SUBDIR += gitolite
     SUBDIR += gitolite2
     SUBDIR += gitoxide
