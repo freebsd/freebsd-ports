@@ -1,3 +1,4 @@
-Windows Directory Monitor (WDM) is a library which can be used to monitor
-directories for changes. It's mostly implemented in C and uses the Win32 API
-for a better performance.
+Windows Directory Monitor (WDM) is a thread-safe ruby library which can be used
+to monitor directories for changes on Windows.
+
+It's mostly implemented in C and uses the Win32 API for a better performance.

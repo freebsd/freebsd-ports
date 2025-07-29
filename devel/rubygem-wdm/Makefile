@@ -1,9 +1,9 @@
 PORTNAME=	wdm
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for monitoring directories for changes
 WWW=		https://github.com/Maher4Ever/wdm
 
