@@ -271,6 +271,9 @@ include/thrift/lib/cpp2/async/processor/AsyncProcessor.h
 include/thrift/lib/cpp2/async/processor/AsyncProcessorFunc.h
 include/thrift/lib/cpp2/async/processor/EventTask.h
 include/thrift/lib/cpp2/async/processor/GeneratedAsyncProcessorBase.h
+include/thrift/lib/cpp2/async/processor/HandlerCallback.h
+include/thrift/lib/cpp2/async/processor/HandlerCallbackBase.h
+include/thrift/lib/cpp2/async/processor/HandlerCallbackOneWay.h
 include/thrift/lib/cpp2/async/processor/RequestParams.h
 include/thrift/lib/cpp2/async/processor/RequestTask.h
 include/thrift/lib/cpp2/async/processor/ServerInterface.h
