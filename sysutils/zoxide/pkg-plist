@@ -1,0 +1,7 @@
+bin/zoxide
+share/man/man1/zoxide-add.1.gz
+share/man/man1/zoxide-import.1.gz
+share/man/man1/zoxide-init.1.gz
+share/man/man1/zoxide-query.1.gz
+share/man/man1/zoxide-remove.1.gz
+share/man/man1/zoxide.1.gz
