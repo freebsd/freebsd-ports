@@ -177,8 +177,10 @@ include/wine/windows/bits5_0.h
 include/wine/windows/bits5_0.idl
 include/wine/windows/bitsmsg.h
 include/wine/windows/bluetoothapis.h
+include/wine/windows/bluetoothleapis.h
 include/wine/windows/bthdef.h
 include/wine/windows/bthioctl.h
+include/wine/windows/bthledef.h
 include/wine/windows/bthsdpdef.h
 include/wine/windows/cderr.h
 include/wine/windows/cdosys.h
@@ -356,6 +358,7 @@ include/wine/windows/dcomptypes.idl
 include/wine/windows/dde.h
 include/wine/windows/dde.rh
 include/wine/windows/ddeml.h
+include/wine/windows/ddk/bthguid.h
 include/wine/windows/ddk/compstui.h
 include/wine/windows/ddk/csq.h
 include/wine/windows/ddk/d3dkmthk.h
@@ -391,11 +394,14 @@ include/wine/windows/ddstream.h
 include/wine/windows/ddstream.idl
 include/wine/windows/delayloadhandler.h
 include/wine/windows/devenum.idl
+include/wine/windows/devfiltertypes.h
 include/wine/windows/devguid.h
 include/wine/windows/devicetopology.h
 include/wine/windows/devicetopology.idl
 include/wine/windows/devpkey.h
 include/wine/windows/devpropdef.h
+include/wine/windows/devquery.h
+include/wine/windows/devquerydef.h
 include/wine/windows/dhcpcsdk.h
 include/wine/windows/dhtmldid.h
 include/wine/windows/dhtmled.h
