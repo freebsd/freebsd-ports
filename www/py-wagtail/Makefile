@@ -1,6 +1,5 @@
 PORTNAME=	wagtail
-PORTVERSION=	7.0.1
-PORTREVISION=	1
+PORTVERSION=	7.0.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,7 +30,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}pillow>=9.1.0<12.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.11.1<3.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}telepath>=0.3.1<1:devel/py-telepath@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}willow>=1.10.0<2:graphics/py-willow@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}willow>=1.11.0<2:graphics/py-willow@${PY_FLAVOR}
 
 USES=		cpe python shebangfix
 USE_PYTHON=	autoplist concurrent pep517
