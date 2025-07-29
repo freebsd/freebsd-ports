@@ -3,7 +3,7 @@
 @@ -2,7 +2,7 @@ requires = [
  requires = [
      "scikit-build-core",
-     "pybind11",
+     "pybind11<3",
 -    "numpy>=2.0.1"
 +    "numpy>=1.25"
  ]
