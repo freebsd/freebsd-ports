@@ -164,7 +164,7 @@
 %%DATADIR%%/Definitions/desitorrents-api.yml
 %%DATADIR%%/Definitions/devil-torrents.yml
 %%DATADIR%%/Definitions/diablotorrent.yml
-%%DATADIR%%/Definitions/digitalcore.yml
+%%DATADIR%%/Definitions/digitalcore-api.yml
 %%DATADIR%%/Definitions/dimeadozen.yml
 %%DATADIR%%/Definitions/discfan.yml
 %%DATADIR%%/Definitions/dmhy.yml
@@ -190,6 +190,7 @@
 %%DATADIR%%/Definitions/extremebits.yml
 %%DATADIR%%/Definitions/exttorrents.yml
 %%DATADIR%%/Definitions/eztv.yml
+%%DATADIR%%/Definitions/eztvl.yml
 %%DATADIR%%/Definitions/f1carreras-api.yml
 %%DATADIR%%/Definitions/f1gp.yml
 %%DATADIR%%/Definitions/fanoin.yml
@@ -286,6 +287,7 @@
 %%DATADIR%%/Definitions/krazyzone.yml
 %%DATADIR%%/Definitions/kufei.yml
 %%DATADIR%%/Definitions/kufirc.yml
+%%DATADIR%%/Definitions/kufirc2fa.yml
 %%DATADIR%%/Definitions/lastdigitalunderground.yml
 %%DATADIR%%/Definitions/lastfiles.yml
 %%DATADIR%%/Definitions/lat-team-api.yml
@@ -348,7 +350,6 @@
 %%DATADIR%%/Definitions/nordicquality.yml
 %%DATADIR%%/Definitions/nortorrent.yml
 %%DATADIR%%/Definitions/nusantarare.yml
-%%DATADIR%%/Definitions/nyaapantsu.yml
 %%DATADIR%%/Definitions/nyaasi.yml
 %%DATADIR%%/Definitions/okpt.yml
 %%DATADIR%%/Definitions/oldgreektracker.yml
@@ -364,7 +365,6 @@
 %%DATADIR%%/Definitions/oxtorrent-vip.yml
 %%DATADIR%%/Definitions/p2pbg.yml
 %%DATADIR%%/Definitions/panda.yml
-%%DATADIR%%/Definitions/parabellumhd.yml
 %%DATADIR%%/Definitions/party-tracker.yml
 %%DATADIR%%/Definitions/pctorrent.yml
 %%DATADIR%%/Definitions/peeratiko.yml
@@ -382,9 +382,9 @@
 %%DATADIR%%/Definitions/pornolab.yml
 %%DATADIR%%/Definitions/pornotorrent.yml
 %%DATADIR%%/Definitions/pornrips.yml
+%%DATADIR%%/Definitions/pornxlab.yml
 %%DATADIR%%/Definitions/portugas-api.yml
 %%DATADIR%%/Definitions/postman.yml
-%%DATADIR%%/Definitions/privatesilverscreen-api.yml
 %%DATADIR%%/Definitions/proaudiotorrents.yml
 %%DATADIR%%/Definitions/proporno.yml
 %%DATADIR%%/Definitions/ptcafe.yml
@@ -395,8 +395,8 @@
 %%DATADIR%%/Definitions/ptgtk.yml
 %%DATADIR%%/Definitions/pthome.yml
 %%DATADIR%%/Definitions/ptitzmx.yml
-%%DATADIR%%/Definitions/ptorrents.yml
 %%DATADIR%%/Definitions/ptsbao.yml
+%%DATADIR%%/Definitions/ptskit.yml
 %%DATADIR%%/Definitions/pttime.yml
 %%DATADIR%%/Definitions/ptvicomo.yml
 %%DATADIR%%/Definitions/punkshorror.yml
@@ -433,6 +433,7 @@
 %%DATADIR%%/Definitions/seedfile.yml
 %%DATADIR%%/Definitions/seedpool-api.yml
 %%DATADIR%%/Definitions/selezen.yml
+%%DATADIR%%/Definitions/sewerpt.yml
 %%DATADIR%%/Definitions/sexypics.yml
 %%DATADIR%%/Definitions/sfp.yml
 %%DATADIR%%/Definitions/shanaproject.yml
@@ -441,6 +442,7 @@
 %%DATADIR%%/Definitions/showrss.yml
 %%DATADIR%%/Definitions/siambit.yml
 %%DATADIR%%/Definitions/skidrowrepack.yml
+%%DATADIR%%/Definitions/skipthecommercials-api.yml
 %%DATADIR%%/Definitions/sktorrent-org.yml
 %%DATADIR%%/Definitions/sktorrent.yml
 %%DATADIR%%/Definitions/snowpt.yml
