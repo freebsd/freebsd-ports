@@ -1,1 +1,8 @@
-Ruby library for Windows Remote Management
+This is a SOAP library that uses the functionality in Windows Remote Management
+(WinRM) to call native object in Windows. This includes, but is not limited to,
+running batch scripts, powershell scripts and fetching WMI variables. For more
+information on WinRM, please visit Microsoft's WinRM site.
+
+As of version 2.0, this gem retains the WinRM name but all powershell calls use
+the more modern Powershell Remoting Protocol (PSRP) for initializing runspace
+pools as well as creating and processing powershell pipelines.
