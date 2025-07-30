@@ -82,7 +82,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-openid_connect>=2.3.1<2.4:net/rubygem-openid_connect \
 	rubygem-omniauth-atlassian-oauth2>=0.2.0<0.3:security/rubygem-omniauth-atlassian-oauth2 \
 	rubygem-rack-oauth2-gitlab>=2.2.1<2.3:security/rubygem-rack-oauth2-gitlab \
-	rubygem-jwt>=2.9.3<3:www/rubygem-jwt \
+	rubygem-jwt29>=2.9.3<3:www/rubygem-jwt29 \
 	rubygem-gssapi>=1.3.1<1.4:security/rubygem-gssapi \
 	rubygem-recaptcha>=5.12<6.0:devel/rubygem-recaptcha \
 	rubygem-akismet>=3.0<4.0:devel/rubygem-akismet \
