@@ -1,3 +1,13 @@
-TIMESTAMP = 1752581291
-SHA256 (FreeSpacenav-spnavcfg-r20250612013246-e645cc46ca331bfc9447695fadb9056a165cda3c_GH0.tar.gz) = b24354131f7515b8d033717473584bbfad88fc6a3a1a29f0ba3c6ce93d529c15
-SIZE (FreeSpacenav-spnavcfg-r20250612013246-e645cc46ca331bfc9447695fadb9056a165cda3c_GH0.tar.gz) = 29183
+TIMESTAMP = 1753864362
+SHA256 (spnavcfg/devices.png) = 2d1e1f4ea6ceee7a6d0793057e3535d3bd1745e2df8651c25678953e250ec310
+SIZE (spnavcfg/devices.png) = 287656
+SHA256 (spnavcfg/spnavcfg-128x128.png) = c92f456dd757235dc11e3b60970eebe64d4094eb88f96e1fa4057c7f60dcc397
+SIZE (spnavcfg/spnavcfg-128x128.png) = 13642
+SHA256 (spnavcfg/spnavcfg-256x256.png) = a1f96e0db9c258be2a9aee3446fddfc2ce8d8b82145b153647320dfda216085a
+SIZE (spnavcfg/spnavcfg-256x256.png) = 40464
+SHA256 (spnavcfg/spnavcfg-48x48.png) = b09e80efa57841fe78df6e7bb9ee58354243c4503a017e469d0520aed350c84f
+SIZE (spnavcfg/spnavcfg-48x48.png) = 3244
+SHA256 (spnavcfg/spnavcfg.png) = bfaf59628bed683c91d1f798f6188c46a0fb00512d103131929cbaaf2b77c37e
+SIZE (spnavcfg/spnavcfg.png) = 133347
+SHA256 (spnavcfg/FreeSpacenav-spnavcfg-r20250612013246-e645cc46ca331bfc9447695fadb9056a165cda3c_GH0.tar.gz) = b24354131f7515b8d033717473584bbfad88fc6a3a1a29f0ba3c6ce93d529c15
+SIZE (spnavcfg/FreeSpacenav-spnavcfg-r20250612013246-e645cc46ca331bfc9447695fadb9056a165cda3c_GH0.tar.gz) = 29183
