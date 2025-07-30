@@ -1,6 +1,6 @@
-TIMESTAMP = 1750625954
-SHA256 (sinclairtarget-git-who-v1.1_GH0.tar.gz) = b88efe18a39987006df113e097a0e96493955237613997b56c940ff591473ea2
-SIZE (sinclairtarget-git-who-v1.1_GH0.tar.gz) = 558535
+TIMESTAMP = 1753901279
+SHA256 (sinclairtarget-git-who-v1.2_GH0.tar.gz) = 14d69c0e9e18ec40aa11d3e1fd6e76a0805a292de84805264a19c03798e443d0
+SIZE (sinclairtarget-git-who-v1.2_GH0.tar.gz) = 559386
 SHA256 (bmatcuk-doublestar-v4.8.1_GH0.tar.gz) = 0e3302161fdad14119562cb2e978b9e7fb88e8f50c26e7b9c2c2054e5ae52121
 SIZE (bmatcuk-doublestar-v4.8.1_GH0.tar.gz) = 27786
 SHA256 (golang-sys-v0.29.0_GH0.tar.gz) = 7bac3e0a686a05d0e86ca110917b45f60553d6c146dba8a4cdafb911486428e7
