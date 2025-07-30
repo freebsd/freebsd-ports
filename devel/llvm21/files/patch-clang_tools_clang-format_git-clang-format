@@ -1,0 +1,29 @@
+--- clang/tools/clang-format/git-clang-format.orig
++++ clang/tools/clang-format/git-clang-format
+@@ -136,7 +136,7 @@
+     )
+     p.add_argument(
+         "--binary",
+-        default=config.get("clangformat.binary", "clang-format"),
++        default=config.get("clangformat.binary", "clang-format%%LLVM_SUFFIX%%"),
+         help="path to clang-format",
+     ),
+     p.add_argument(
+@@ -539,7 +539,7 @@
+ 
+ 
+ def run_clang_format_and_save_to_tree(
+-    changed_lines, revision=None, binary="clang-format", style=None
++    changed_lines, revision=None, binary="clang-format%%LLVM_SUFFIX%%", style=None
+ ):
+     """Run clang-format on each file and save the result to a git tree.
+ 
+@@ -622,7 +622,7 @@
+     filename,
+     line_ranges,
+     revision=None,
+-    binary="clang-format",
++    binary="clang-format%%LLVM_SUFFIX%%",
+     style=None,
+     env=None,
+ ):
