@@ -10,6 +10,9 @@ WWW=		https://github.com/bobthecow/mustache.php
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Installation mode changed from systemwide to per-application with Composer
+EXPIRATION_DATE=2025-10-31
+
 USES=		php:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	bobthecow
