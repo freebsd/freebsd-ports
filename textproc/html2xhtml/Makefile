@@ -1,12 +1,13 @@
 PORTNAME=	html2xhtml
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.it.uc3m.es/jaf/html2xhtml/downloads/
 
 MAINTAINER=	wilfried.meindl@gmail.com
 COMMENT=	Convert HTML to XHTML
 WWW=		https://www.it.uc3m.es/jaf/html2xhtml
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
