@@ -25,7 +25,11 @@ USE_PYTHON=	distutils cython autoplist
 
 post-patch:
 .if defined(CPUTYPE)
+.  if ${ARCH:Mpowerpc*}
+	@${REINPLACE_CMD} -e "s|'-march=native'|'-mcpu=${CPUTYPE}'|" ${WRKSRC}/setup.py
+.  else
 	@${REINPLACE_CMD} -e "s|'-march=native'|'-march=${CPUTYPE}'|" ${WRKSRC}/setup.py
+.  endif
 .else
 	@${REINPLACE_CMD} -e "s|'-march=native', ||" ${WRKSRC}/setup.py
 .endif
