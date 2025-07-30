@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+Consider using graphics/feh for setting the wallpaper for some window managers that runs under X, e.g., x11-wm/i3
+EOM
+}
+]

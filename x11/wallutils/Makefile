@@ -1,6 +1,7 @@
 PORTNAME=	wallutils
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.14.2
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libX11.so:x11/libX11
 
-USES=		go:modules
+USES=		go:modules pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	xyproto
 GH_TUPLE=	antchfx:xmlquery:v1.4.4:antchfx_xmlquery/vendor/github.com/antchfx/xmlquery \
@@ -47,18 +48,20 @@ GO_TARGET=	./cmd/getdpi \
 		./cmd/vram \
 		./cmd/wayinfo \
 		./cmd/xinfo \
-		./cmd/xml2stw \
-		${NULL}
-PLIST_FILES=	${GO_TARGET:S,./cmd,bin,} \
-		share/man/man1/getdpi.1.gz \
-		share/man/man1/vram.1.gz
+		./cmd/xml2stw
+
+PLIST_FILES=	${GO_TARGET:S,./cmd,bin,}
+PLIST_FILES+=	${GO_TARGET:S,./cmd,share/man/man1,:S,$,.1.gz,}
 
 OPTIONS_DEFINE=		HEIF
 OPTIONS_DEFAULT=	HEIF
 
-HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
-HEIF_USES=		pkgconfig
-HEIF_VARS=		GO_TARGET+=./cmd/heic2stw
+# Using [HEIF_VARS= GO_TARGET+=./cmd/heic2stw] causes post-install to fail parsing instalation of heic2stw.1 manual
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MHEIF}
+LIB_DEPENDS+=	libheif.so:graphics/libheif
+GO_TARGET+=	./cmd/heic2stw
+.endif
 
 post-patch:
 # Respect PREFIX for wallpapers
@@ -67,7 +70,8 @@ post-patch:
 		${WRKSRC}/collections.go
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/cmd/getdpi/getdpi.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/cmd/vram/vram.1 ${STAGEDIR}${PREFIX}/share/man/man1
+.for _target in ${GO_TARGET:S,./cmd,/cmd,}
+	${INSTALL_MAN} ${WRKSRC}/${_target}/${_target:T}.1 ${STAGEDIR}${PREFIX}/share/man/man1
+.endfor
 
 .include <bsd.port.mk>
