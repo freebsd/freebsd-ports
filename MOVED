@@ -4660,3 +4660,4 @@ databases/libgdamm5||2025-07-24|No release for a year, depends libgda5 which is 
 deskutils/kuserfeedback||2025-07-26|Remove Qt5 port, all consumers have been ported to KF6/Qt6
 net/amneziawg-kmod||2025-07-26|Port was committed prematurely
 net/amneziawg-tools||2025-07-26|Port was committed prematurely
+www/novnc-websockify|devel/py-websockify|2025-07-30|Port is a duplicate
