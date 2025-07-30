@@ -1,8 +1,7 @@
 PORTNAME=	ser2net
-PORTVERSION=	4.6.4
-PORTREVISION=	1
+PORTVERSION=	4.6.5
 CATEGORIES=	comms net
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
+MASTER_SITES=	https://github.com/cminyard/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Allows to access serial ports over IP
