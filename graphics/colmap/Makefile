@@ -1,5 +1,6 @@
 PORTNAME=	colmap
 DISTVERSION=	3.12.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -32,7 +33,7 @@ USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 USE_GL=		gl glew
 USE_QT=		core gui widgets buildtools:build opengl:build qmake:build
-CMAKE_OFF=	BOOST_STATIC CUDA_ENABLED FETCH_FAISS FETCH_POSELIB
+CMAKE_OFF=	CUDA_ENABLED FETCH_FAISS FETCH_POSELIB
 CMAKE_TESTING_ON=	TESTS_ENABLED
 
 LDFLAGS+=	-Wl,--as-needed # gflags, glu, xi, xmu
