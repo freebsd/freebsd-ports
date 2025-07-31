@@ -1,0 +1,11 @@
+--- configure.orig	2025-07-31 04:57:28 UTC
++++ configure
+@@ -9488,7 +9488,7 @@ datadir=$game_datadir;
+ 
+ datadir=$game_datadir;
+ 
+-CFLAGS="$CFLAGS -DGAME_DATADIR=\\\"$datadir\\\""
++CFLAGS="$CFLAGS -DGAME_DATADIR=\\\"$datadir/xblast\\\""
+ 
+ 
+ 
