@@ -78,6 +78,7 @@ GRAFANA_HOMEDIR?=		${DATADIR}
 GRAFANA_LOGDIR?=		/var/log/${PORTNAME}
 GRAFANA_PLUGINDIR?=		${GRAFANA_DATADIR}/plugins
 GRAFANA_PROVISIONINGDIR?=	${ETCDIR}/provisioning
+GRAFANA_PROVISIONING=		access-control alerting dashboards datasources plugins sample
 
 post-extract:
 	@${ECHO_MSG} "===> Tidying ${GO_MODNAME} dependencies";
@@ -102,14 +103,11 @@ pre-build:
 		./pkg/build/wire/cmd/wire/main.go gen -tags "oss" ./pkg/server)
 
 post-install:
-	${MKDIR} ${STAGEDIR}${GRAFANA_HOMEDIR}
-	${MKDIR} ${STAGEDIR}${GRAFANA_HOMEDIR}/conf
-	${MKDIR} ${STAGEDIR}${GRAFANA_DATADIR}
-	${MKDIR} ${STAGEDIR}${GRAFANA_PLUGINDIR}
-.for dir in access-control alerting dashboards datasources plugins sample
-	${MKDIR} ${STAGEDIR}${GRAFANA_PROVISIONINGDIR}/${dir}
-.endfor
-	${MKDIR} ${STAGEDIR}${GRAFANA_LOGDIR}
+	${MKDIR} ${STAGEDIR}${GRAFANA_HOMEDIR}/conf \
+		 ${STAGEDIR}${GRAFANA_DATADIR} \
+		 ${STAGEDIR}${GRAFANA_PLUGINDIR} \
+		 ${STAGEDIR}${GRAFANA_LOGDIR} \
+		 ${GRAFANA_PROVISIONING:M*:C|^|${STAGEDIR}${GRAFANA_PROVISIONINGDIR}/|}
 	(cd ${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX} \
 		&& ${COPYTREE_SHARE} public ${STAGEDIR}${GRAFANA_HOMEDIR})
 	${INSTALL_DATA} ${WRKSRC}/conf/defaults.ini \
