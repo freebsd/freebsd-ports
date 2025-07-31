@@ -22,7 +22,6 @@
 %%DATADIR%%/lib/prim/Agda/Builtin/Cubical/Equiv.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Cubical/Glue.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Cubical/HCompU.agda
-%%DATADIR%%/lib/prim/Agda/Builtin/Cubical/Id.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Cubical/Path.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Cubical/Sub.agda
 %%DATADIR%%/lib/prim/Agda/Builtin/Equality.agda
@@ -59,7 +58,6 @@
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Cubical/Equiv.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Cubical/Glue.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Cubical/HCompU.agdai
-%%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Cubical/Id.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Cubical/Path.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Cubical/Sub.agdai
 %%DATADIR%%/lib/prim/_build/%%AGDA_VER%%/agda/Agda/Builtin/Equality.agdai
