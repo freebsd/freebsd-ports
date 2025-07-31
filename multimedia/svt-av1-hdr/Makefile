@@ -1,12 +1,11 @@
-PORTNAME=	svt-av1-psy
+PORTNAME=	svt-av1-hdr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.2
-#DISTVERSIONSUFFIX=	-A # PORTEPOCH workaround
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Scalable AV1 encoder focused on perceptual quality
-WWW=		https://github.com/gianni-rosato/svt-av1-psy
+WWW=		https://github.com/juliobbv-p/svt-av1-hdr
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE MIT
 LICENSE_COMB=	multi
@@ -20,7 +19,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cmake compiler:c11
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-GH_ACCOUNT=	psy-ex
+GH_ACCOUNT=	juliobbv-p
 GH_TUPLE=	1480c1:cpuinfo:e649baa:cpuinfo/third_party/cpuinfo
 CMAKE_ON=	ENABLE_NASM
 CMAKE_OFF=	NATIVE

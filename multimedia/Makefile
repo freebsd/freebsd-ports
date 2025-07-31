@@ -358,7 +358,7 @@
     SUBDIR += subtools
     SUBDIR += supersonic
     SUBDIR += svt-av1
-    SUBDIR += svt-av1-psy
+    SUBDIR += svt-av1-hdr
     SUBDIR += svt-hevc
     SUBDIR += svt-vp9
     SUBDIR += syncplay
