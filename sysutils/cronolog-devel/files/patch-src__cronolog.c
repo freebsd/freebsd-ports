@@ -1,5 +1,5 @@
---- ./src/cronolog.c.orig	2010-12-02 13:41:57.000000000 -0800
-+++ ./src/cronolog.c	2010-12-02 13:42:30.000000000 -0800
+--- ./src/cronolog.c.orig	2025-07-24 22:02:02 UTC
++++ ./src/cronolog.c
 @@ -84,8 +84,8 @@
  
  #ifndef _WIN32
