@@ -1,10 +1,16 @@
+===>  License BSD3CLAUSE accepted by the user
+===>   py311-granian-2.5.0 depends on file: /usr/local/sbin/pkg - found
+===> Fetching all distfiles required by py311-granian-2.5.0 for building
+===>  Extracting for py311-granian-2.5.0
+=> SHA256 Checksum OK for granian-2.5.0.tar.gz.
+===>  Moving crates to /usr/ports/www/py-granian/work-py311/granian-2.5.0/cargo-crates
 CARGO_CRATES=	addr2line-0.24.2 \
-		adler2-2.0.0 \
+		adler2-2.0.1 \
 		aes-0.8.4 \
 		anyhow-1.0.98 \
 		arc-swap-1.7.1 \
 		atomic-waker-1.1.2 \
-		autocfg-1.4.0 \
+		autocfg-1.5.0 \
 		backtrace-0.3.75 \
 		base64-0.22.1 \
 		base64ct-1.8.0 \
@@ -14,8 +20,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bus-2.4.1 \
 		bytes-1.10.1 \
 		cbc-0.1.2 \
-		cc-1.2.26 \
-		cfg-if-1.0.0 \
+		cc-1.2.30 \
+		cfg-if-1.0.1 \
 		cipher-0.4.4 \
 		const-oid-0.9.6 \
 		cpufeatures-0.2.17 \
@@ -41,10 +47,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		getrandom-0.2.16 \
 		getrandom-0.3.3 \
 		gimli-0.31.1 \
-		h2-0.4.10 \
+		h2-0.4.11 \
 		hashbrown-0.15.4 \
 		heck-0.5.0 \
-		hermit-abi-0.5.1 \
+		hermit-abi-0.5.2 \
 		hmac-0.12.1 \
 		http-1.3.1 \
 		http-body-1.0.1 \
@@ -52,24 +58,28 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		httparse-1.10.1 \
 		httpdate-1.0.3 \
 		hyper-1.6.0 \
-		hyper-util-0.1.14 \
-		indexmap-2.9.0 \
+		hyper-util-0.1.16 \
+		indexmap-2.10.0 \
 		indoc-2.0.6 \
 		inout-0.1.4 \
+		io-uring-0.7.9 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
-		libc-0.2.172 \
-		libmimalloc-sys-0.1.42 \
+		libc-0.2.174 \
+		libmimalloc-sys-0.1.43 \
 		lock_api-0.4.13 \
 		log-0.4.27 \
-		memchr-2.7.4 \
+		memchr-2.7.5 \
 		memoffset-0.9.1 \
-		mimalloc-0.1.46 \
+		mimalloc-0.1.47 \
 		mime-0.3.17 \
 		mime_guess-2.0.5 \
-		miniz_oxide-0.8.8 \
+		miniz_oxide-0.8.9 \
 		mio-1.0.4 \
+		ntapi-0.4.1 \
 		num_cpus-1.17.0 \
+		objc2-core-foundation-0.3.1 \
+		objc2-io-kit-0.3.1 \
 		object-0.36.7 \
 		once_cell-1.21.3 \
 		parking_lot-0.12.4 \
@@ -84,26 +94,26 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		portable-atomic-1.11.1 \
 		ppv-lite86-0.2.21 \
 		proc-macro2-1.0.95 \
-		pyo3-0.25.0 \
-		pyo3-build-config-0.25.0 \
-		pyo3-ffi-0.25.0 \
+		pyo3-0.25.1 \
+		pyo3-build-config-0.25.1 \
+		pyo3-ffi-0.25.1 \
 		pyo3-log-0.12.4 \
-		pyo3-macros-0.25.0 \
-		pyo3-macros-backend-0.25.0 \
+		pyo3-macros-0.25.1 \
+		pyo3-macros-backend-0.25.1 \
 		python3-dll-a-0.2.14 \
 		quote-1.0.40 \
-		r-efi-5.2.0 \
-		rand-0.9.1 \
+		r-efi-5.3.0 \
+		rand-0.9.2 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
 		rand_core-0.9.3 \
-		redox_syscall-0.5.12 \
+		redox_syscall-0.5.17 \
 		ring-0.17.14 \
-		rustc-demangle-0.1.24 \
-		rustls-0.23.27 \
+		rustc-demangle-0.1.26 \
+		rustls-0.23.31 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.12.0 \
-		rustls-webpki-0.103.3 \
+		rustls-webpki-0.103.4 \
 		salsa20-0.10.2 \
 		scopeguard-1.2.0 \
 		scrypt-0.11.0 \
@@ -113,27 +123,28 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		sha2-0.10.9 \
 		shlex-1.3.0 \
 		signal-hook-registry-1.4.5 \
-		slab-0.4.9 \
+		slab-0.4.10 \
 		smallvec-1.15.1 \
-		socket2-0.5.10 \
+		socket2-0.6.0 \
 		spki-0.7.3 \
 		subtle-2.6.1 \
-		syn-2.0.101 \
+		syn-2.0.104 \
+		sysinfo-0.36.1 \
 		target-lexicon-0.13.2 \
 		thiserror-2.0.12 \
 		thiserror-impl-2.0.12 \
 		tikv-jemalloc-sys-0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
 		tikv-jemallocator-0.6.0 \
 		tls-listener-0.11.0 \
-		tokio-1.45.1 \
+		tokio-1.47.0 \
 		tokio-macros-2.5.0 \
 		tokio-rustls-0.26.2 \
 		tokio-stream-0.1.17 \
-		tokio-tungstenite-0.26.2 \
+		tokio-tungstenite-0.27.0 \
 		tokio-util-0.7.15 \
 		tracing-0.1.41 \
 		tracing-core-0.1.34 \
-		tungstenite-0.26.2 \
+		tungstenite-0.27.0 \
 		typenum-1.18.0 \
 		unicase-2.8.1 \
 		unicode-ident-1.0.18 \
@@ -141,11 +152,25 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		untrusted-0.9.0 \
 		utf-8-0.7.6 \
 		version_check-0.9.5 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasi-0.14.2+wasi-0.2.4 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.61.3 \
+		windows-collections-0.2.0 \
+		windows-core-0.61.2 \
+		windows-future-0.2.1 \
+		windows-implement-0.60.0 \
+		windows-interface-0.59.1 \
+		windows-link-0.1.3 \
+		windows-numerics-0.2.0 \
+		windows-result-0.3.4 \
+		windows-strings-0.4.2 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
+		windows-threading-0.1.0 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.52.6 \
@@ -155,6 +180,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
 		wit-bindgen-rt-0.39.0 \
-		zerocopy-0.8.25 \
-		zerocopy-derive-0.8.25 \
+		zerocopy-0.8.26 \
+		zerocopy-derive-0.8.26 \
 		zeroize-1.8.1
