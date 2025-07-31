@@ -1,5 +1,5 @@
 PORTNAME=	bsdisks
-DISTVERSION=	0.37
+DISTVERSION=	0.38
 CATEGORIES=	sysutils
 
 MAINTAINER=	arrowd@FreeBSD.org
