@@ -11,6 +11,9 @@ LICENSE=	BSD2CLAUSE GPLv2+ PD
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Themes have been included in the main geany distribution
+EXPIRATION_DATE=2025-08-31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	geany
 
