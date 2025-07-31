@@ -1,5 +1,5 @@
 PORTNAME=	yubico-piv-tool
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	https://developers.yubico.com/yubico-piv-tool/Releases/
