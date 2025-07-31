@@ -1,8 +1,8 @@
 PORTNAME=	gc
 DISTVERSION=	8.2.8
 CATEGORIES=	devel
-MASTER_SITES=	http://www.hboehm.info/gc/gc_source/ \
-		https://github.com/ivmai/bdwgc/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://www.hboehm.info/gc/gc_source/ \
+		https://github.com/bdwgc/bdwgc/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	boehm-
 .ifdef GC_VARIANT
 PKGNAMESUFFIX=	-${GC_VARIANT}
