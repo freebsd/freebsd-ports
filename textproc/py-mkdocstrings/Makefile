@@ -1,5 +1,5 @@
 PORTNAME=	mkdocstrings
-DISTVERSION=	0.29.1
+DISTVERSION=	0.30.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,8 +30,7 @@ USE_PYTHON=	autoplist pep517 pytest
 # mkdocs-gen-files (not in Ports tree, yet).
 # The same applies to "test_plugin" which requires markdown-exec (not in Ports
 # tree yet).
-# The test_no_double_toc tests, on the other hand, require py-markdown >= 3.6.
-PYTEST_IGNORED_TESTS=	test_sphinx_load_mkdocstrings_inventory_file test_plugin test_no_double_toc
+PYTEST_IGNORED_TESTS=	test_sphinx_load_mkdocstrings_inventory_file test_plugin
 
 NO_ARCH=	yes
 
@@ -53,10 +52,5 @@ PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>=0.16.2:textproc/
 .if ${PYTHON_REL} < 31000
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.6:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
-
-# Prevent packaging of the Mypy cache folder
-post-extract:
-	@${RM} -r ${WRKSRC}/src/mkdocstrings/.mypy_cache \
-		${WRKSRC}/src/mkdocstrings/handlers/.mypy_cache
 
 .include <bsd.port.post.mk>
