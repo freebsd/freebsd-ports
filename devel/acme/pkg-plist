@@ -76,6 +76,7 @@ bin/acme
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c64doubledabble.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c64misc.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ddrv.a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/denial-of-service.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macedit.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/me/const.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/me/core.a
@@ -84,4 +85,5 @@ bin/acme
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/me/macros.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/me/out.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/me/vars.a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reu-detect.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/trigono.a

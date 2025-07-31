@@ -21,7 +21,7 @@ BUILD_WRKSRC=	${WRKSRC}/src
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 SVN_REPO=	https://svn.code.sf.net/p/acme-crossass/code-0/trunk
-SVN_REV=	r324
+SVN_REV=	r447
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/acme ${STAGEDIR}${PREFIX}/bin
