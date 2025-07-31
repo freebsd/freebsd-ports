@@ -4661,3 +4661,4 @@ deskutils/kuserfeedback||2025-07-26|Remove Qt5 port, all consumers have been por
 net/amneziawg-kmod||2025-07-26|Port was committed prematurely
 net/amneziawg-tools||2025-07-26|Port was committed prematurely
 www/novnc-websockify|devel/py-websockify|2025-07-30|Port is a duplicate
+databases/mongodb50|databases/mongodb60|2025-07-31|Has expired: EOL from October 2024, see https://www.mongodb.com/legal/support-policy/lifecycles, please use databases/mongodb60

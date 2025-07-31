@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-MongoDB on Rasperry Pi can work but is unsupported upstream.
-Please read https://jira.mongodb.org/browse/SERVER-71772 if you run this on a non-LSE ARM cpu.
-EOM
-}
-]

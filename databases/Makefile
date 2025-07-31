@@ -182,7 +182,6 @@
     SUBDIR += memcached
     SUBDIR += metabase
     SUBDIR += mongodb-tools
-    SUBDIR += mongodb50
     SUBDIR += mongodb60
     SUBDIR += mongodb70
     SUBDIR += mongodb80
