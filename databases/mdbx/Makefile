@@ -1,5 +1,5 @@
 PORTNAME=	mdbx
-DISTVERSION=	0.13.3
+DISTVERSION=	0.13.7
 CATEGORIES=	databases
 MASTER_SITES=	https://libmdbx.dqdkfa.ru/release/
 DISTNAME=	libmdbx-amalgamated-${DISTVERSION}
