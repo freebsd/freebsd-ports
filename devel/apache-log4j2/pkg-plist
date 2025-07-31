@@ -8,6 +8,7 @@
 %%JAVAJARDIR%%/log4j-couchdb.jar
 %%JAVAJARDIR%%/log4j-docker.jar
 %%JAVAJARDIR%%/log4j-iostreams.jar
+%%JAVAJARDIR%%/log4j-jakarta-jms.jar
 %%JAVAJARDIR%%/log4j-jakarta-smtp.jar
 %%JAVAJARDIR%%/log4j-jakarta-web.jar
 %%JAVAJARDIR%%/log4j-jcl.jar
