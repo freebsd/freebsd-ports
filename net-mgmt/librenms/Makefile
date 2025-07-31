@@ -1,5 +1,6 @@
 PORTNAME=	librenms
 PORTVERSION=	25.7.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -18,8 +19,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		bash:shells/bash \
 		dot:graphics/graphviz \
 		rrdtool:databases/rrdtool \
-		snmpget:net-mgmt/net-snmp \
-		sudo:security/sudo
+		snmpget:net-mgmt/net-snmp
 
 USES=		cpe php python shebangfix
 USE_GITHUB=	yes
@@ -94,12 +94,20 @@ DBDIR=		/var/db/${PORTNAME}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS \
 			NMAP WMIC X11
-OPTIONS_DEFAULT=	FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER WMIC
+OPTIONS_DEFAULT=	FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER SUDO \
+			WMIC
+OPTIONS_RADIO=		SUDO
+OPTIONS_RADIO_SUDO=	SUDO SUDO_SSSD
+
+SUDO_RUN_DEPENDS=	sudo:security/sudo
+SUDO_SSSD_RUN_DEPENDS=	sudo:security/sudo@sssd
 
 FPING_DESC=	Enable fping support ping monitoring
 IPMITOOL_DESC=	Enable support for monitoring hardware IPMI
 MYSQLD_DESC=	Use local MySQL server
 WMIC_DESC=	Enable support for WMI polling
+SUDO_DESC=	use security/sudo
+SUDO_SSSD_DESC=	use security/sudo@sssd
 
 FPING_RUN_DEPENDS=	fping:net/fping
 IPMITOOL_RUN_DEPENDS=	ipmitool:sysutils/ipmitool
