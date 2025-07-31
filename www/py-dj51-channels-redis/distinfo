@@ -1,3 +1,3 @@
-TIMESTAMP = 1738052794
-SHA256 (channels_redis-4.2.1.tar.gz) = 8375e81493e684792efe6e6eca60ef3d7782ef76c6664057d2e5c31e80d636dd
-SIZE (channels_redis-4.2.1.tar.gz) = 31152
+TIMESTAMP = 1753980067
+SHA256 (channels_redis-4.3.0.tar.gz) = 740ee7b54f0e28cf2264a940a24453d3f00526a96931f911fcb69228ef245dd2
+SIZE (channels_redis-4.3.0.tar.gz) = 31440
