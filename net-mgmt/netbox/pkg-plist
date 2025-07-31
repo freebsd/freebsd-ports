@@ -1515,6 +1515,7 @@
 %%DATADIR%%/users/migrations/0007_objectpermission_update_object_types.py
 %%DATADIR%%/users/migrations/0008_flip_objectpermission_assignments.py
 %%DATADIR%%/users/migrations/0009_update_group_perms.py
+%%DATADIR%%/users/migrations/0010_add_token_meta_ordering.py
 %%DATADIR%%/users/migrations/__init__.py
 %%DATADIR%%/users/models/__init__.py
 %%DATADIR%%/users/models/permissions.py
