@@ -3,6 +3,8 @@ lib/cmake/CXSparse/CXSparseConfig.cmake
 lib/cmake/CXSparse/CXSparseConfigVersion.cmake
 lib/cmake/CXSparse/CXSparseTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/CXSparse/CXSparseTargets.cmake
+lib/cmake/CXSparse/CXSparseTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/CXSparse/CXSparseTargets_static.cmake
 lib/libcxsparse.a
 lib/libcxsparse.so
 lib/libcxsparse.so.4

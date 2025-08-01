@@ -3,6 +3,8 @@ lib/cmake/COLAMD/COLAMDConfig.cmake
 lib/cmake/COLAMD/COLAMDConfigVersion.cmake
 lib/cmake/COLAMD/COLAMDTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/COLAMD/COLAMDTargets.cmake
+lib/cmake/COLAMD/COLAMDTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/COLAMD/COLAMDTargets_static.cmake
 lib/libcolamd.a
 lib/libcolamd.so
 lib/libcolamd.so.3

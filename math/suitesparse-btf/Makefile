@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	math
 
 COMMENT=	Permutation to block triangular form

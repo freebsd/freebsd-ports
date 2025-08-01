@@ -4,6 +4,8 @@ lib/cmake/SuiteSparse_Mongoose/SuiteSparse_MongooseConfig.cmake
 lib/cmake/SuiteSparse_Mongoose/SuiteSparse_MongooseConfigVersion.cmake
 lib/cmake/SuiteSparse_Mongoose/SuiteSparse_MongooseTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SuiteSparse_Mongoose/SuiteSparse_MongooseTargets.cmake
+lib/cmake/SuiteSparse_Mongoose/SuiteSparse_MongooseTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SuiteSparse_Mongoose/SuiteSparse_MongooseTargets_static.cmake
 lib/libsuitesparse_mongoose.a
 lib/libsuitesparse_mongoose.so
 lib/libsuitesparse_mongoose.so.3

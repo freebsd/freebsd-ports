@@ -10,6 +10,8 @@ lib/cmake/SuiteSparse_config/SuiteSparse_configConfig.cmake
 lib/cmake/SuiteSparse_config/SuiteSparse_configConfigVersion.cmake
 lib/cmake/SuiteSparse_config/SuiteSparse_configTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SuiteSparse_config/SuiteSparse_configTargets.cmake
+lib/cmake/SuiteSparse_config/SuiteSparse_configTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SuiteSparse_config/SuiteSparse_configTargets_static.cmake
 lib/libsuitesparseconfig.a
 lib/libsuitesparseconfig.so
 lib/libsuitesparseconfig.so.7

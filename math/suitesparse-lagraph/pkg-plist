@@ -5,6 +5,8 @@ lib/cmake/LAGraph/LAGraphConfig.cmake
 lib/cmake/LAGraph/LAGraphConfigVersion.cmake
 lib/cmake/LAGraph/LAGraphTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LAGraph/LAGraphTargets.cmake
+lib/cmake/LAGraph/LAGraphTargets_static-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/LAGraph/LAGraphTargets_static.cmake
 lib/liblagraph.a
 lib/liblagraph.so
 lib/liblagraph.so.1
