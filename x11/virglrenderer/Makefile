@@ -9,8 +9,6 @@ WWW=		https://virgil3d.github.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_riscv64=	fails to build: ../src/gallium/include/pipe/p_config.h:171:2: Unknown Endianness
-
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy
 
