@@ -1,4 +1,4 @@
---- gnu-devtools-for-arm/utilities.sh.orig	2025-03-31 10:59:01 UTC
+--- gnu-devtools-for-arm/utilities.sh.orig	2025-07-31 23:01:18 UTC
 +++ gnu-devtools-for-arm/utilities.sh
 @@ -33,6 +33,8 @@ number_of_cores()
      grep -c "^processor" /proc/cpuinfo
@@ -9,7 +9,14 @@
    else
      echo "1"
    fi
-@@ -56,6 +58,9 @@ find_build_triple ()
+@@ -50,12 +52,15 @@ find_build_triple ()
+ # Get the triple of the machine we're running on, i.e. the build machine.
+ find_build_triple ()
+ {
+-  machine=$(uname -m)
++  machine=$(uname -p)
+   plat=$(uname -s)
+   if [[ "$plat" == "Darwin" ]]; then
      echo "$machine-apple-darwin"    # e.g. x86_64-apple-darwin or arm64-apple-darwin
    elif [[ "$plat" == "Linux" ]]; then
      echo "$machine-none-linux-gnu"  # e.g. x86_64-none-linux-gnu

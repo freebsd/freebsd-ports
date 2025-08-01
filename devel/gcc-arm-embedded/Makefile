@@ -71,6 +71,12 @@ PLIST_SUB+=	GCC_VERSION=${GCC_VERSION} FULL_VERSION=${FULL_VERSION} TARGET=${TAR
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH:Mpowerpc64*}
+GMP_ABI=		ABI="mode64"
+.else
+GMP_ABI=
+.endif
+
 .if ${PORT_OPTIONS:MPYGDB}
 PYGDB_BUILD_OPT=	--enable-gdb-with-python=${PYTHON_CMD}
 .else
@@ -95,6 +101,8 @@ post-extract:
 	@${MV} ${WRKSRC}/gnu-devtools-for-arm-${GL_TAGNAME_tools} ${WRKSRC}/gnu-devtools-for-arm
 
 do-build:
+	${GMP_ABI}							\
+	CC="${CC}"							\
 	PATH=${WRKSRC}/gnu-devtools-for-arm:${PATH}			\
 	installdir=${WRKDIR}/${DIR_NAME}				\
 	LOCALBASE="${LOCALBASE}"					\
