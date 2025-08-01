@@ -1,5 +1,8 @@
 PORTNAME=	sqlite3
 DISTVERSION=	3.50.2
+# SECURITY WARNING: when updating this port, also file vuxml entry
+# for ports/databases/linux-c7-sqlite3 (but mind it has a different EPOCH)
+# and coordinate with ports/emulators/linux_base which also ships sqlite3.
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
