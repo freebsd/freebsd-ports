@@ -1,10 +1,10 @@
 PORTNAME=	ares
 DISTVERSIONPREFIX=	v
-DISTVERSION=	145
-PORTREVISION=	1
+DISTVERSION=	146
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/${PORTNAME}-emulator/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	${PORTNAME}-source
+DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	bsdcode@disroot.org
 COMMENT=	Multi-system emulator
@@ -29,10 +29,15 @@ CMAKE_OFF=	ARES_BUILD_LOCAL \
 		ARES_BUNDLE_SHADERS \
 		ARES_ENABLE_MINIMUM_CPU
 
-EXTRACT_AFTER_ARGS=	--exclude thirdparty/librashader \
+EXTRACT_AFTER_ARGS=	--exclude thirdparty/GL \
+			--exclude thirdparty/KHR \
+			--exclude thirdparty/libchdr \
+			--exclude thirdparty/librashader \
+			--exclude thirdparty/sse2neon.h \
+			--exclude thirdparty/xxhash.h \
 			--no-same-owner --no-same-permissions
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=			CHD SDL TOOLS
 OPTIONS_DEFAULT=		A26 ALSA AO CHD CV FC GB GBA LIBRASHADER \
@@ -92,8 +97,9 @@ ALSA_CMAKE_BOOL=		ARES_ENABLE_ALSA
 AO_LIB_DEPENDS=			libao.so:audio/libao
 AO_CMAKE_BOOL=			ARES_ENABLE_AO
 
-CHD_CMAKE_BOOL=			ARES_ENABLE_CHD \
-				WITH_SYSTEM_ZLIB
+CHD_LIB_DEPENDS=		libchdr.so:devel/libchdr
+CHD_USES=			localbase
+CHD_CMAKE_BOOL=			ARES_ENABLE_CHD
 
 CV_VARS=			_CORES+=cv
 
@@ -115,6 +121,8 @@ LIBRETRO_RUN_DEPENDS=		${_LIBRETRO_BR_DEPENDS}
 
 LTO_CMAKE_BOOL=			ENABLE_IPO
 
+MD_BUILD_DEPENDS=		xxhash>0:devel/xxhash
+MD_USES=			localbase
 MD_VARS=			_CORES+=md
 
 MSX_VARS=			_CORES+=msx
@@ -124,8 +132,12 @@ MS_VARS=			_CORES+=ms
 MYVISION_VARS=			_CORES+=myvision
 
 _N64_BR_DEPENDS=		vulkan-loader>0:graphics/vulkan-loader
-N64_BUILD_DEPENDS=		${_N64_BR_DEPENDS}
+_N64_BUILD_DEPENDS_aarch64=	sse2neon>0:devel/sse2neon
+N64_BUILD_DEPENDS=		${_N64_BR_DEPENDS} \
+				${_N64_BUILD_DEPENDS_${ARCH}} \
+				xxhash>0:devel/xxhash
 N64_RUN_DEPENDS=		${_N64_BR_DEPENDS}
+N64_USES=			localbase
 N64_VARS=			_CORES+=n64
 
 NGP_VARS=			_CORES+=ngp
@@ -157,8 +169,6 @@ SG_VARS=			_CORES+=sg
 
 SPEC_VARS=			_CORES+=spec
 
-# https://github.com/ares-emulator/ares/issues/2090
-TOOLS_IMPLIES=			GBA MD NG SFC
 TOOLS_CMAKE_BOOL=		ARES_BUILD_OPTIONAL_TARGETS
 
 UDEV_LIB_DEPENDS=		libudev.so:devel/libudev-devd
@@ -167,6 +177,20 @@ UDEV_CMAKE_BOOL=		ARES_ENABLE_UDEV
 USBHID_CMAKE_BOOL=		ARES_ENABLE_USBHID
 
 WS_VARS=			_CORES+=ws
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MTOOLS} && (${PORT_OPTIONS:MGBA} || ${PORT_OPTIONS:MSFC})
+PLIST_SUB+=	TOOLSARM7TDMI=""
+.else
+PLIST_SUB+=	TOOLSARM7TDMI="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MTOOLS} && (${PORT_OPTIONS:MMD} || ${PORT_OPTIONS:MNG})
+PLIST_SUB+=	TOOLSM68000=""
+.else
+PLIST_SUB+=	TOOLSM68000="@comment "
+.endif
 
 post-patch:
 	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' \
