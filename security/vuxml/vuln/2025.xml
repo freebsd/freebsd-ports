@@ -1,3 +1,32 @@
+  <vuln vid="95480188-6ebc-11f0-8a78-bf201f293bce">
+    <topic>navidrome -- transcoding permission bypass vulnerability</topic>
+    <affects>
+      <package>
+	<name>navidrome</name>
+	<range><lt>0.56.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Deluan Quintão reports:</p>
+	<blockquote cite="https://github.com/navidrome/navidrome/security/advisories/GHSA-f238-rggp-82m3">
+	  <p>A permission verification flaw in Navidrome allows any authenticated
+	    regular user to bypass authorization checks and perform
+	    administrator-only transcoding configuration operations, including
+	    creating, modifying, and deleting transcoding settings.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-48948</cvename>
+      <url>https://github.com/navidrome/navidrome/security/advisories/GHSA-f238-rggp-82m3</url>
+    </references>
+    <dates>
+      <discovery>2025-05-29</discovery>
+      <entry>2025-08-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f51077bd-6dd7-11f0-9d62-b42e991fc52e">
     <topic>SQLite -- integer overflow in key info allocation</topic>
     <affects>
