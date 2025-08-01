@@ -1,6 +1,11 @@
 PORTNAME=	bastille
 DISTVERSION=	1.0.1.250714
+PORTREVISION=	1
 CATEGORIES=	sysutils
+DIST_SUBDIR=	bastille
+
+PATCH_SITES=	https://github.com/BastilleBSD/bastille/pull/
+PATCHFILES=	1198.patch:-p1 1204.patch:-p1
 
 MAINTAINER=	jdhurtado@orbiware.com
 # co-maintainer: snarfingcode666@gmail.com

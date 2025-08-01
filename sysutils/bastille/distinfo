@@ -1,3 +1,7 @@
-TIMESTAMP = 1752181948
-SHA256 (bastillebsd-bastille-1.0.1.250714_GH0.tar.gz) = ffd3be789e5b9f0215e6552b4a89b33b657e2ded2ab7b0dd69cb22d72a167985
-SIZE (bastillebsd-bastille-1.0.1.250714_GH0.tar.gz) = 694112
+TIMESTAMP = 1754009419
+SHA256 (bastille/bastillebsd-bastille-1.0.1.250714_GH0.tar.gz) = ffd3be789e5b9f0215e6552b4a89b33b657e2ded2ab7b0dd69cb22d72a167985
+SIZE (bastille/bastillebsd-bastille-1.0.1.250714_GH0.tar.gz) = 694112
+SHA256 (bastille/1198.patch) = 470f7e0c93e93b0dc6629f46bdf00a53f60b0041341db6455bb6078e4aca1f48
+SIZE (bastille/1198.patch) = 4071
+SHA256 (bastille/1204.patch) = 204fa71c3d1e660bd86fe7de3963a74f4bd39e172496a20703896bb933a4fd9e
+SIZE (bastille/1204.patch) = 2435
