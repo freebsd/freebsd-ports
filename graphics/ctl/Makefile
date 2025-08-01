@@ -1,12 +1,8 @@
 PORTNAME=	ctl
 DISTVERSIONPREFIX=	ctl-
-DISTVERSION=	1.5.3
-PORTREVISION=	3
+DISTVERSION=	1.5.4
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-language
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	3871cd7717fd184d9fbb667730d35f1a89391f09.patch:-p1 # FreeBSD compatibility patch: https://github.com/ampas/CTL/pull/145
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Color Transformation Language
@@ -36,5 +32,7 @@ DATADIR=	share/CTL
 DOCSDIR=	share/doc/CTL
 
 OPTIONS_DEFINE=	DOCS
+
+# tests as of 1.5.4: 100% tests passed, 0 tests failed out of 220
 
 .include <bsd.port.mk>
