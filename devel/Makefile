@@ -1836,6 +1836,7 @@
     SUBDIR += opendht
     SUBDIR += opengrok
     SUBDIR += openocd
+    SUBDIR += openocd-devel
     SUBDIR += opentelemetry-cpp
     SUBDIR += opentelemetry-proto
     SUBDIR += orc

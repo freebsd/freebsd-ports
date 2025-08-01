@@ -1,0 +1,7 @@
+TIMESTAMP = 1753910927
+SHA256 (openocd-org-openocd-g20250708-6872f7e40_GH0.tar.gz) = ee069f9c59e177547540730de0e129a54ac88002167852dc1459e727c01afb34
+SIZE (openocd-org-openocd-g20250708-6872f7e40_GH0.tar.gz) = 3356558
+SHA256 (msteveb-jimtcl-f160866_GH0.tar.gz) = 478f9a8bd1f435139dba6c9d8ba260b1111d7d724d98688a7b98804be08b712b
+SIZE (msteveb-jimtcl-f160866_GH0.tar.gz) = 4465652
+SHA256 (libjaylink-f73ad5e.tar.bz2) = 023daec65d3c43b756545dd136506d0a85e687ac19be41be7c47c27e70e53c17
+SIZE (libjaylink-f73ad5e.tar.bz2) = 59032
