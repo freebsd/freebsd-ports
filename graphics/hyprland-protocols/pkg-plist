@@ -1,0 +1,8 @@
+%%DATADIR%%/protocols/hyprland-ctm-control-v1.xml
+%%DATADIR%%/protocols/hyprland-focus-grab-v1.xml
+%%DATADIR%%/protocols/hyprland-global-shortcuts-v1.xml
+%%DATADIR%%/protocols/hyprland-lock-notify-v1.xml
+%%DATADIR%%/protocols/hyprland-surface-v1.xml
+%%DATADIR%%/protocols/hyprland-toplevel-export-v1.xml
+%%DATADIR%%/protocols/hyprland-toplevel-mapping-v1.xml
+share/pkgconfig/hyprland-protocols.pc
