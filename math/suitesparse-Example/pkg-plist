@@ -1,0 +1,11 @@
+/you/have/to/check/what/makeplist/gives/you
+include/my.h
+lib/libmy.a
+lib/libmy.so
+lib/libmy.so.1
+lib/libmy.so.%%VER%%
+lib/libmy_cxx.a
+lib/libmy_cxx.so
+lib/libmy_cxx.so.1
+lib/libmy_cxx.so.%%VER%%
+%%PORTDOCS%%%%DOCSDIR%%/Example_README.md

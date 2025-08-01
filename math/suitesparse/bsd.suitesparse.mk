@@ -35,6 +35,7 @@ LIB_DEPENDS+=	libsuitesparseconfig.so:math/suitesparse-config
 .endif
 .if ${MPORTNAME} != config &&	\
 	${MPORTNAME} != BTF &&	\
+	${MPORTNAME} != Example &&	\
 	${MPORTNAME} != ssget
 OPTIONS_DEFINE+=DEMOS
 .endif

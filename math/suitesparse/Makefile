@@ -25,7 +25,8 @@ RUN_DEPENDS=	suitesparse-config>0:math/suitesparse-config		\
 		suitesparse-umfpack>0:math/suitesparse-umfpack		\
 		suitesparse-paru>0:math/suitesparse-paru
 .if !defined(PACKAGE_BUILDING)
-RUN_DEPENDS+=	suitesparse-csparse>0:math/suitesparse-csparse
+RUN_DEPENDS+=	suitesparse-csparse>0:math/suitesparse-csparse		\
+		suitesparse-Example>0:math/suitesparse-Example
 .endif
 
 USES=		metaport

@@ -1222,6 +1222,7 @@
     SUBDIR += stanmath
     SUBDIR += stp
     SUBDIR += suitesparse
+    SUBDIR += suitesparse-Example
     SUBDIR += suitesparse-amd
     SUBDIR += suitesparse-btf
     SUBDIR += suitesparse-camd
