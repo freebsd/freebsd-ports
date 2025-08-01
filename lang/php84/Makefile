@@ -1,5 +1,5 @@
 PORTNAME=	php84
-DISTVERSION=	8.4.10
+DISTVERSION=	8.4.11
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -92,7 +92,7 @@ ZTS_CONFIGURE_ENV=	pthreads_working="yes"
 
 DESTDIRNAME=	INSTALL_ROOT
 
-.if defined(PKGNAMEPREFIX)
+.  if defined(PKGNAMEPREFIX)
 USES+=			apache
 PLIST=			${PKGDIR}/pkg-plist.mod
 PKGMESSAGE=		${PKGDIR}/pkg-message.mod
@@ -100,40 +100,40 @@ MODULENAME=		libphp
 SHORTMODNAME=		php
 WARNING=		"!!! If you have a threaded Apache, you must build ${PHP_PORT} with ZTS support to enable thread-safety in extensions !!!"
 WARNING+=	"!!! Consider switching to php-fpm and mod_proxy_fcgi as per Apache httpd recommendations !!!"
-.endif
+.  endif
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:NOASLR}
-.if ${PORT_OPTIONS:MCLI}
+.  if ${PORT_OPTIONS:MNOASLR}
+.    if ${PORT_OPTIONS:MCLI}
 ELF_FEATURES+=+noaslr:sapi/cli/php
-.endif
-.if ${PORT_OPTIONS:MCGI}
+.    endif
+.    if ${PORT_OPTIONS:MCGI}
 ELF_FEATURES+=+noaslr:sapi/cgi/php-cgi
-.endif
-.if ${PORT_OPTIONS:MPHPDBG}
+.    endif
+.    if ${PORT_OPTIONS:MPHPDBG}
 ELF_FEATURES+=+noaslr:sapi/phpdbg/phpdbg
-.endif
-.if ${PORT_OPTIONS:MFPM}
+.    endif
+.    if ${PORT_OPTIONS:MFPM}
 ELF_FEATURES+=+noaslr:sapi/fpm/php-fpm
-.endif
-.endif
+.    endif
+.  endif
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == riscv64
+.  if ${ARCH} == riscv64
 CONFIGURE_ARGS+=	--without-pcre-jit
-.endif
+.  endif
 
-.if ${PORT_OPTIONS:MPHPDBG} && ${PORT_OPTIONS:MDEBUG}
+.  if ${PORT_OPTIONS:MPHPDBG} && ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-phpdbg-debug
-.endif
+.  endif
 
-.if ${PORT_OPTIONS:MCLI} || ${PORT_OPTIONS:MEMBED}
+.  if ${PORT_OPTIONS:MCLI} || ${PORT_OPTIONS:MEMBED}
 PLIST_SUB+=	SAPI_INC=""
-.else
+.  else
 PLIST_SUB+=	SAPI_INC="@comment "
-.endif
+.  endif
 
 CONFIGURE_ENV+=	ac_cv_decimal_fp_supported="no" \
 		lt_cv_path_SED="sed" \
@@ -151,7 +151,7 @@ post-patch-FPM-on:
 pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} MAKE=${MAKE_CMD} ./buildconf --force)
 
-.if !defined(PKGNAMEPREFIX)
+.  if !defined(PKGNAMEPREFIX)
 post-build:
 	@${ECHO_CMD} "PHP_VER=${PHP_VER}" > ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_VERSION=${PORTVERSION}" >> ${WRKDIR}/php.conf
@@ -184,12 +184,12 @@ post-install-FPM-on:
 post-install-PHPDBG-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/phpdbg
 
-.else
+.  else
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 	${INSTALL_LIB} ${WRKSRC}/libs/${MODULENAME}.so \
 		${STAGEDIR}${PREFIX}/${APACHEMODDIR}
-.endif
+.  endif
 
 .else
 COMMENT=	The ${PHP_MODNAME} shared extension for php
@@ -208,32 +208,32 @@ EXTRACT_AFTER_ARGS?=	${EXTSUBDIR}
 
 TEST_TARGET=	test
 
-.if ${PHP_MODNAME} == "bcmath"
+.  if ${PHP_MODNAME} == "bcmath"
 CONFIGURE_ARGS+=	--enable-bcmath
 
 PHP_HEADER_DIRS=	libbcmath/src
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "bz2"
+.  if ${PHP_MODNAME} == "bz2"
 CONFIGURE_ARGS+=	--with-bz2=/usr
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "calendar"
+.  if ${PHP_MODNAME} == "calendar"
 CONFIGURE_ARGS+=	--enable-calendar
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "ctype"
+.  if ${PHP_MODNAME} == "ctype"
 CONFIGURE_ARGS+=	--enable-ctype
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "curl"
+.  if ${PHP_MODNAME} == "curl"
 LIB_DEPENDS+=	libcurl.so:ftp/curl
 
 CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
 USES+=			pkgconfig
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "dba"
+.  if ${PHP_MODNAME} == "dba"
 CONFIGURE_ARGS+=	--enable-dba
 
 OPTIONS_DEFINE=		CDB DB4 FLATFILE GDBM INIFILE LMDB QDBM TOKYO
@@ -264,41 +264,41 @@ TOKYO_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 TOKYO_CONFIGURE_ON=	--with-tcadb=${LOCALBASE}
 
 PHP_HEADER_DIRS=	libcdb libflatfile libinifile
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "dom"
+.  if ${PHP_MODNAME} == "dom"
 CONFIGURE_ARGS+=	--enable-dom
 
 USES+=		pkgconfig
 USE_GNOME=	libxml2
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "enchant"
+.  if ${PHP_MODNAME} == "enchant"
 LIB_DEPENDS+=	libenchant-2.so:textproc/enchant2
 CONFIGURE_ARGS+=--with-enchant=${LOCALBASE}
 USES+=		pkgconfig
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "exif"
+.  if ${PHP_MODNAME} == "exif"
 CONFIGURE_ARGS+=	--enable-exif
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "ffi"
+.  if ${PHP_MODNAME} == "ffi"
 LIB_DEPENDS=		libffi.so:devel/libffi
 CONFIGURE_ARGS+=	--with-ffi
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "fileinfo"
+.  if ${PHP_MODNAME} == "fileinfo"
 CONFIGURE_ARGS+=	--enable-fileinfo
 
 PHP_HEADER_DIRS=	libmagic
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "filter"
+.  if ${PHP_MODNAME} == "filter"
 CONFIGURE_ARGS+=	--enable-filter
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "ftp"
+.  if ${PHP_MODNAME} == "ftp"
 CONFIGURE_ARGS+=	--enable-ftp
 
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
@@ -307,9 +307,9 @@ CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USES+=		pkgconfig ssl
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "gd"
+.  if ${PHP_MODNAME} == "gd"
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgd.so:graphics/gd \
 		libpng.so:graphics/png
@@ -332,39 +332,39 @@ WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 X11_CONFIGURE_ON=	--with-xpm
 X11_USE=		XORG=xpm
 X11_USES=		xorg
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "gettext"
+.  if ${PHP_MODNAME} == "gettext"
 CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE}
 
 USES+=		gettext
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "gmp"
+.  if ${PHP_MODNAME} == "gmp"
 LIB_DEPENDS+=	libgmp.so:math/gmp
 
 CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "iconv"
+.  if ${PHP_MODNAME} == "iconv"
 CONFIGURE_ARGS+=	--with-iconv=${LOCALBASE}
 
 USES+=		iconv:translit
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "intl"
+.  if ${PHP_MODNAME} == "intl"
 LIB_DEPENDS=	libicui18n.so:devel/icu
 USES+=		pkgconfig
 CPPFLAGS+=	-DU_USING_ICU_NAMESPACE=1
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "ldap"
+.  if ${PHP_MODNAME} == "ldap"
 LIB_DEPENDS+=libsasl2.so:security/cyrus-sasl2
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE} --with-ldap-sasl=${LOCALBASE}
 USES+=	ldap
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "mbstring"
+.  if ${PHP_MODNAME} == "mbstring"
 
 CONFIGURE_ARGS+=	--enable-mbstring
 
@@ -376,34 +376,34 @@ REGEX_LIB_DEPENDS=	libonig.so:devel/oniguruma
 REGEX_CONFIGURE_OFF=	--disable-mbregex
 
 PHP_HEADER_DIRS=	libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "mysqli"
+.  if ${PHP_MODNAME} == "mysqli"
 CONFIGURE_ARGS+=	--with-mysqli
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "odbc"
+.  if ${PHP_MODNAME} == "odbc"
 LIB_DEPENDS+=	libodbc.so:databases/unixODBC
 
 CONFIGURE_ARGS+= --with-unixODBC=${LOCALBASE}
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "opcache"
+.  if ${PHP_MODNAME} == "opcache"
 LIB_DEPENDS+=	libcapstone.so:devel/capstone
 # This is needed by Zend extensions, keep before everything.
 PHP_MOD_PRIO=		10
 CONFIGURE_ARGS+=        --enable-opcache --with-capstone
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "pcntl"
+.  if ${PHP_MODNAME} == "pcntl"
 CONFIGURE_ARGS+=	--enable-pcntl
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "pdo"
+.  if ${PHP_MODNAME} == "pdo"
 CONFIGURE_ARGS+=	--enable-pdo
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "pdo_dblib"
+.  if ${PHP_MODNAME} == "pdo_dblib"
 CONFIGURE_ARGS+=	--with-pdo-dblib=${LOCALBASE}
 
 USE_PHP=	pdo:build
@@ -413,23 +413,23 @@ OPTIONS_DEFINE=	MSSQL
 MSSQL_DESC=		Enable Microsoft SQL Server support
 MSSQL_LIB_DEPENDS=	libsybdb.so:databases/freetds
 MSSQL_LIB_DEPENDS_OFF=	libct.so:databases/freetds
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "pdo_firebird"
+.  if ${PHP_MODNAME} == "pdo_firebird"
 CONFIGURE_ARGS+=	--with-pdo-firebird=${LOCALBASE}
 
 USES+=		firebird
 USE_PHP=	pdo:build
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "pdo_odbc"
+.  if ${PHP_MODNAME} == "pdo_odbc"
 LIB_DEPENDS+=		libodbc.so:databases/unixODBC
 CONFIGURE_ARGS+=	--with-pdo-odbc=unixODBC,${LOCALBASE}
 
 USE_PHP=	pdo:build
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "pdo_mysql"
+.  if ${PHP_MODNAME} == "pdo_mysql"
 OPTIONS_DEFINE=		MYSQLND
 OPTIONS_DEFAULT=	MYSQLND
 
@@ -441,59 +441,59 @@ MYSQLND_CONFIGURE_OFF=	--with-pdo-mysql=${LOCALBASE} \
 MYSQLND_USES_OFF=	mysql
 
 USE_PHP=	pdo:build
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "pdo_pgsql"
+.  if ${PHP_MODNAME} == "pdo_pgsql"
 USES+=		pgsql
 
 CONFIGURE_ARGS+=	--with-pdo-pgsql=${LOCALBASE}
 
 USE_PHP=	pdo:build
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "pdo_sqlite"
+.  if ${PHP_MODNAME} == "pdo_sqlite"
 USES+=			localbase sqlite
 CONFIGURE_ARGS+=	--with-pdo-sqlite=${LOCALBASE}
 
 USE_PHP=	pdo:build
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "pgsql"
+.  if ${PHP_MODNAME} == "pgsql"
 USES+=		pgsql
 
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "phar"
+.  if ${PHP_MODNAME} == "phar"
 CONFIGURE_ARGS+=	--enable-phar
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "posix"
+.  if ${PHP_MODNAME} == "posix"
 CONFIGURE_ARGS+=	--enable-posix
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "readline"
+.  if ${PHP_MODNAME} == "readline"
 CONFIGURE_ARGS+=--with-libedit
 USES+=		libedit
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "session"
+.  if ${PHP_MODNAME} == "session"
 CONFIGURE_ARGS+=	--enable-session
 PHP_MOD_PRIO=		18
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "shmop"
+.  if ${PHP_MODNAME} == "shmop"
 CONFIGURE_ARGS+=	--enable-shmop
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "simplexml"
+.  if ${PHP_MODNAME} == "simplexml"
 CONFIGURE_ARGS+=	--enable-simplexml
 
 USES+=		pkgconfig
 USE_GNOME=	libxml2
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "snmp"
+.  if ${PHP_MODNAME} == "snmp"
 CONFIGURE_ARGS+=	--with-snmp=${LOCALBASE}
 
 CONFIGURE_ENV+=	ac_cv_buggy_snprint_value="no"
@@ -501,116 +501,116 @@ CONFIGURE_ENV+=	ac_cv_buggy_snprint_value="no"
 LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USES+=		ssl
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "soap"
+.  if ${PHP_MODNAME} == "soap"
 CONFIGURE_ARGS+=	--enable-soap
 
 USES+=		pkgconfig
 USE_GNOME=	libxml2
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "sockets"
+.  if ${PHP_MODNAME} == "sockets"
 CONFIGURE_ARGS+=	--enable-sockets
 CONFIGURE_ENV+=	LOCAL_CREDS_PERSISTENT=yes
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "sodium"
+.  if ${PHP_MODNAME} == "sodium"
 CONFIGURE_ARGS+=	--with-sodium=${LOCALBASE}
 LIB_DEPENDS+=		libsodium.so:security/libsodium
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "sqlite3"
+.  if ${PHP_MODNAME} == "sqlite3"
 USES+=			localbase pkgconfig sqlite
 CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "sysvmsg"
+.  if ${PHP_MODNAME} == "sysvmsg"
 CONFIGURE_ARGS+=	--enable-sysvmsg
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "sysvsem"
+.  if ${PHP_MODNAME} == "sysvsem"
 CONFIGURE_ARGS+=	--enable-sysvsem
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "sysvshm"
+.  if ${PHP_MODNAME} == "sysvshm"
 CONFIGURE_ARGS+=	--enable-sysvshm
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "tidy"
+.  if ${PHP_MODNAME} == "tidy"
 CONFIGURE_ARGS+=	--with-tidy=${LOCALBASE}
 
 LIB_DEPENDS+=	libtidy5.so:www/tidy-html5
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "tokenizer"
+.  if ${PHP_MODNAME} == "tokenizer"
 CONFIGURE_ARGS+=	--enable-tokenizer
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "xml"
+.  if ${PHP_MODNAME} == "xml"
 CONFIGURE_ARGS+=	--enable-xml
 
 USES+=		pkgconfig
 USE_GNOME=	libxml2
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "xmlreader"
+.  if ${PHP_MODNAME} == "xmlreader"
 CONFIGURE_ARGS+=	--enable-xmlreader
 
 USE_GNOME=	libxml2
 
 USE_PHP=	dom:build
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "xmlwriter"
+.  if ${PHP_MODNAME} == "xmlwriter"
 CONFIGURE_ARGS+=	--enable-xmlwriter
 
 USES+=		pkgconfig
 USE_GNOME=	libxml2
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "xsl"
+.  if ${PHP_MODNAME} == "xsl"
 CONFIGURE_ARGS+=	--with-xsl=${LOCALBASE}
 
 USE_GNOME=	libxslt
 USE_PHP=	dom:build xml:build
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "zip"
+.  if ${PHP_MODNAME} == "zip"
 LIB_DEPENDS+=	libzip.so:archivers/libzip
 
 CONFIGURE_ARGS+=	--with-zip
 USES+=			pkgconfig
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "zlib"
+.  if ${PHP_MODNAME} == "zlib"
 CONFIGURE_ARGS+=	--with-zlib=/usr
 USES+=			pkgconfig
-.endif
+.  endif
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386) && ${PHP_MODNAME} == "opcache"
+.  if (${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386) && ${PHP_MODNAME} == "opcache"
 post-configure:
 	@${BSDMAKE} -C ${WRKSRC} ./jit/ir/ir_fold_hash.h
 	@${BSDMAKE} -C ${WRKSRC} ./jit/ir/ir_emit.lo
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "soap"
+.  if ${PHP_MODNAME} == "soap"
 post-extract:
 	@${MKDIR} ${WRKSRC}/ext/session
 	@${CP} ${FILESDIR}/php_session.h ${WRKSRC}/ext/session
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "sqlite3" || ${PHP_MODNAME} == "zlib"
+.  if ${PHP_MODNAME} == "sqlite3" || ${PHP_MODNAME} == "zlib"
 post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
-.endif
+.  endif
 
-.if ${PHP_MODNAME} == "xml"
+.  if ${PHP_MODNAME} == "xml"
 post-extract:
 	@${MKDIR} ${WRKSRC}/ext/xml
 	@${CP} ${WRKSRC}/expat_compat.h ${WRKSRC}/ext/xml
-.endif
+.  endif
 .endif
 .include <bsd.port.post.mk>
