@@ -1,5 +1,5 @@
 PORTNAME=	locust-cloud
-DISTVERSION=	1.24.2
+DISTVERSION=	1.26.3
 CATEGORIES=	benchmarks www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configargparse>=0:devel/py-configargparse@${
 		${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-socketio>=0:devel/py-python-socketio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomli>=0:textproc/py-tomli@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tomli>=0:textproc/py-tomli@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-engineio>=0:devel/py-python-engineio@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
