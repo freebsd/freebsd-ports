@@ -1,5 +1,5 @@
 PORTNAME=	libvirt
-DISTVERSION=	11.5.0
+DISTVERSION=	11.6.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -140,7 +140,7 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-SHLIB_VER=	0.11005.0
+SHLIB_VER=	0.11006.0
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 #SHEBANG_FILES=	src/keycodemapdb/tools/keymap-gen
@@ -150,7 +150,7 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MQEMU} || ${PORT_OPTIONS:MNSS}
+.if ${PORT_OPTIONS:MBHYVE} || ${PORT_OPTIONS:MQEMU} || ${PORT_OPTIONS:MNSS}
 LIB_DEPENDS+=		libjson-c.so:devel/json-c
 MESON_ARGS+=	-Djson_c=enabled
 .else

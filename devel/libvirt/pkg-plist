@@ -355,6 +355,8 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/schemas/storagepool.rng
 %%DATADIR%%/schemas/storagepoolcaps.rng
 %%DATADIR%%/schemas/storagevol.rng
+%%DATADIR%%/schemas/sysinfo.rng
+%%DATADIR%%/schemas/sysinfocommon.rng
 %%DATADIR%%/test-screenshot.png
 %%NLS%%share/locale/as/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/libvirt.mo
