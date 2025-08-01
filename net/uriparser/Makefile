@@ -1,7 +1,7 @@
 PORTNAME=	uriparser
-DISTVERSION=	0.9.6
+DISTVERSION=	0.9.8
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	https://github.com/uriparser/uriparser/releases/download/uriparser-${DISTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -17,12 +17,12 @@ TEST_DEPENDS=	googletest>=1.10.0:devel/googletest
 
 USES=		cmake:noninja,testing cpe pathfix tar:xz
 CPE_VENDOR=	uriparser_project
-USE_LDCONFIG=	yes
 
-CMAKE_TESTING_ON=	URIPARSER_BUILD_TESTS
+USE_LDCONFIG=	yes
 
 CMAKE_OFF=	URIPARSER_BUILD_TESTS \
 		URIPARSER_BUILD_DOCS # will fetch prebuilds from the upstream, if DOCS is selected
+CMAKE_TESTING_ON=	URIPARSER_BUILD_TESTS
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 PORTDOCS=	*
