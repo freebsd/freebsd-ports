@@ -1,6 +1,5 @@
 PORTNAME=	vaultwarden
-DISTVERSION=	1.34.1
-PORTREVISION=	2
+DISTVERSION=	1.34.3
 CATEGORIES=	security
 
 MAINTAINER=	mr@FreeBSD.org
@@ -28,13 +27,14 @@ USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-OPTIONS_DEFINE=	WEBVAULT
-OPTIONS_DEFAULT=${OPTIONS_DEFINE} ${OPTIONS_MULTI_DATABASE}
+OPTIONS_DEFINE=	WEBVAULT S3
 OPTIONS_MULTI=	DATABASE
 OPTIONS_MULTI_DATABASE=	MYSQL PGSQL SQLITE
+OPTIONS_DEFAULT= WEBVAULT ${OPTIONS_MULTI_DATABASE}
 
 DATABASE_DESC=	Database support
 WEBVAULT_DESC=	Vaultwarden web (bw_web_builds)
+S3_DESC=        S3 storage backend support (experimental)
 
 MYSQL_USES=	mysql:client
 MYSQL_VARS=	cargo_features+=mysql
@@ -42,6 +42,7 @@ PGSQL_USES=	pgsql
 PGSQL_VARS=	cargo_features+=postgresql
 SQLITE_VARS=	cargo_features+=sqlite
 WEBVAULT_RUN_DEPENDS=	${WWWDIR}/web-vault/index.html:www/vaultwarden-web_vault
+S3_VARS=        cargo_features+=s3
 
 # make cargo-crates > Makefile.crates
 
