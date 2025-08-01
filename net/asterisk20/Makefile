@@ -1,5 +1,5 @@
 PORTNAME=	asterisk
-DISTVERSION=	20.15.0
+DISTVERSION=	20.15.1
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
