@@ -1441,7 +1441,6 @@
     SUBDIR += php84-opcache
     SUBDIR += php84-session
     SUBDIR += php84-tidy
-    SUBDIR += php85-opcache
     SUBDIR += php85-session
     SUBDIR += php85-tidy
     SUBDIR += phpbb3

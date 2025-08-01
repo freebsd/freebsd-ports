@@ -460,8 +460,6 @@ include/php/ext/standard/php_math.h
 include/php/ext/standard/php_math_round_mode.h
 include/php/ext/standard/php_net.h
 include/php/ext/standard/php_password.h
-include/php/ext/standard/php_smart_string.h
-include/php/ext/standard/php_smart_string_public.h
 include/php/ext/standard/php_standard.h
 include/php/ext/standard/php_string.h
 include/php/ext/standard/php_uuencode.h

@@ -4663,3 +4663,4 @@ net/amneziawg-tools||2025-07-26|Port was committed prematurely
 www/novnc-websockify|devel/py-websockify|2025-07-30|Port is a duplicate
 databases/mongodb50|databases/mongodb60|2025-07-31|Has expired: EOL from October 2024, see https://www.mongodb.com/legal/support-policy/lifecycles, please use databases/mongodb60
 multimedia/svt-av1-psy|multimedia/svt-av1-hdr|2025-07-31|New upstream
+www/php85-opcache||2025-08-01|Part of default php85
