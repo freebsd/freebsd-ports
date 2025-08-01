@@ -68,8 +68,6 @@ etc/filepizza.env
 %%HOMEDIR%%/.next/server/server-reference-manifest.js
 %%HOMEDIR%%/.next/server/server-reference-manifest.json
 %%HOMEDIR%%/.next/server/webpack-runtime.js
-%%HOMEDIR%%/.next/static/U4-x702Mdggzjy20o5UjU/_buildManifest.js
-%%HOMEDIR%%/.next/static/U4-x702Mdggzjy20o5UjU/_ssgManifest.js
 %%HOMEDIR%%/.next/static/chunks/207-53e07b601da84cd3.js
 %%HOMEDIR%%/.next/static/chunks/480-e5d2580c9900dcea.js
 %%HOMEDIR%%/.next/static/chunks/4b7feff4-4b9c84e7ff018791.js
@@ -83,10 +81,10 @@ etc/filepizza.env
 %%HOMEDIR%%/.next/static/chunks/app/api/destroy/route-6f145a526105edb1.js
 %%HOMEDIR%%/.next/static/chunks/app/api/ice/route-4d6df0e4b9a13df7.js
 %%HOMEDIR%%/.next/static/chunks/app/api/renew/route-86a806e9ce799e04.js
-%%HOMEDIR%%/.next/static/chunks/app/download/[...slug]/page-3d3877b7de00ee42.js
+%%HOMEDIR%%/.next/static/chunks/app/download/[...slug]/page-77a2a0caef58f8fe.js
 %%HOMEDIR%%/.next/static/chunks/app/layout-f60eb0f67ab37562.js
 %%HOMEDIR%%/.next/static/chunks/app/not-found-2f2aa723d59375d7.js
-%%HOMEDIR%%/.next/static/chunks/app/page-f8edd63df2359e97.js
+%%HOMEDIR%%/.next/static/chunks/app/page-1cd24049b1ee1bc2.js
 %%HOMEDIR%%/.next/static/chunks/app/reported/page-b82a7b30dda2922e.js
 %%HOMEDIR%%/.next/static/chunks/framework-304f19c65b4f07d4.js
 %%HOMEDIR%%/.next/static/chunks/main-7cbb4405fdc24b8a.js
@@ -96,6 +94,8 @@ etc/filepizza.env
 %%HOMEDIR%%/.next/static/chunks/polyfills-42372ed130431b0a.js
 %%HOMEDIR%%/.next/static/chunks/webpack-2777074bc8a01f6e.js
 %%HOMEDIR%%/.next/static/css/b1d11f07328460bf.css
+%%HOMEDIR%%/.next/static/pQvfcukEAkI9iu1xrBSY2/_buildManifest.js
+%%HOMEDIR%%/.next/static/pQvfcukEAkI9iu1xrBSY2/_ssgManifest.js
 %%HOMEDIR%%/node_modules/.pnpm/@next+env@15.3.4/node_modules/@next/env/dist/index.js
 %%HOMEDIR%%/node_modules/.pnpm/@next+env@15.3.4/node_modules/@next/env/package.json
 %%HOMEDIR%%/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/_/_class_private_field_loose_base/package.json
