@@ -3,8 +3,7 @@
     <affects>
       <package>
 	<name>sqlite3</name>
-	<range><gt>3.39.2</gt></range>
-	<range><lt>3.41.1</lt></range>
+	<range><gt>3.39.2</gt><lt>3.41.1</lt></range>
       </package>
     </affects>
     <description>
