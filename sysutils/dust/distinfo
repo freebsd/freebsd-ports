@@ -1,4 +1,4 @@
-TIMESTAMP = 1751904498
+TIMESTAMP = 1754017074
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
 SIZE (rust/crates/aho-corasick-1.1.3.crate) = 183311
 SHA256 (rust/crates/android-tzdata-0.1.1.crate) = e999941b234f3131b00bc13c22d06e8c5ff726d1b6318ac7eb276997bbb4fef0
@@ -295,5 +295,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.53.0.crate) = 271414315aff87387382ec3d
 SIZE (rust/crates/windows_x86_64_msvc-0.53.0.crate) = 834400
 SHA256 (rust/crates/wit-bindgen-rt-0.39.0.crate) = 6f42320e61fe2cfd34354ecb597f86f413484a798ba44a8ca1165c58d42da6c1
 SIZE (rust/crates/wit-bindgen-rt-0.39.0.crate) = 12241
-SHA256 (bootandy-dust-v1.2.2_GH0.tar.gz) = e72f539ebe2f30bd85f83f8efd87c70c11e27126eeccd93560d94d2f01e153fe
-SIZE (bootandy-dust-v1.2.2_GH0.tar.gz) = 117905
+SHA256 (bootandy-dust-v1.2.3_GH0.tar.gz) = 424b26adfbafeac31da269ecb3f189eca09803e60fad90b3ff692cf52e0aeeee
+SIZE (bootandy-dust-v1.2.3_GH0.tar.gz) = 117984
