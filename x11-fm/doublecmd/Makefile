@@ -328,7 +328,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MWLX_MPLAYER}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wlx/wlxmplayer/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wlx/WlxMplayer/lib/wlxmplayer.wlx ${STAGEDIR}${DATADIR}/plugins/wlx/wlxmplayer/
+	${INSTALL_LIB} ${WRKSRC}/plugins/wlx/WlxMplayer/wlxmplayer.wlx ${STAGEDIR}${DATADIR}/plugins/wlx/wlxmplayer/
 .endif
 
 .if ${PORT_OPTIONS:MDSX_LOCATE}
