@@ -969,7 +969,7 @@
 	<range><lt>3.50.2</lt></range>
       </package>
       <package>
-	<name>linux_base</name>
+	<name>linux_base-rl9</name>
 	<range><ge>0</ge></range>
       </package>
     </affects>
