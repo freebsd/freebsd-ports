@@ -1,6 +1,5 @@
 PORTNAME=	dar
-DISTVERSION=	2.7.18
-PORTREVISION=	1
+DISTVERSION=	2.7.19
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
@@ -12,7 +11,7 @@ LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libgpg-error.so:security/libgpg-error
 
-USES=		compiler:c++14-lang libtool localbase pathfix shebangfix
+USES=		compiler:c++14-lang libtool localbase shebangfix
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	doc/samples/*.bash doc/samples/*.sh doc/samples/dar_backup \
@@ -30,7 +29,7 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 
 INSTALL_TARGET=	install-strip
 
-PLIST_SUB=	SHLIB_VER=6000.8.2
+PLIST_SUB=	SHLIB_VER=6000.8.3
 
 OPTIONS_DEFINE=		ARGON2 BZIP2 DELTA DOCS GCRYPT GPGME LZ4 LZMA LZO \
 			MULTITHR NLS ZLIB ZSTD
