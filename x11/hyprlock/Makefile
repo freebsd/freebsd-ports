@@ -1,7 +1,6 @@
 PORTNAME=	hyprlock
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2
-PORTREVISION=	2
+DISTVERSION=	0.9.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -11,7 +10,8 @@ WWW=		https://github.com/hyprwm/hyprlock
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	hyprwayland-scanner>=0.4.4:devel/hyprwayland-scanner \
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		hyprwayland-scanner>=0.4.4:devel/hyprwayland-scanner \
 		wayland-protocols>=1.35:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
@@ -24,11 +24,15 @@ LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 RUN_DEPENDS=	unix-selfauth-helper>0:security/unix-selfauth-helper
 
 USES=		cmake compiler:c++11-lib gl gnome jpeg pkgconfig
+
 USE_GITHUB=	yes
+GH_ACCOUNT=	hyprwm
+
 USE_GL=		egl gbm
 USE_GNOME=	cairo pango
-GH_ACCOUNT=	hyprwm
+
 LDFLAGS+=	-Wl,--as-needed # pango deps
+
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/pam.d/${PORTNAME} \
 		share/hypr/${PORTNAME}.conf
