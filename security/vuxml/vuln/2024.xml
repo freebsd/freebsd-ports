@@ -3668,15 +3668,15 @@
     <affects>
       <package>
 	<name>sqlite3</name>
-	<range><ge>3.43.0</ge><lt>3.43.2,1</lt></range>
+	<range><ge>3.43.0,1</ge><lt>3.43.2,1</lt></range>
       </package>
       <package>
 	<name>linux-rl9-sqlite</name>
-	<range><ge>3.43.0</ge><lt>3.43.2</lt></range>
+	<range><ge>3.43.0,1</ge><lt>3.43.2,1</lt></range>
       </package>
       <package>
 	<name>linux-c7-sqlite</name>
-	<range><ge>3.43.0</ge><lt>3.43.2</lt></range>
+	<range><ge>3.43.0,1</ge><lt>3.43.2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -3698,6 +3698,7 @@
     <dates>
       <discovery>2024-01-16</discovery>
       <entry>2024-09-29</entry>
+      <modified>2025-08-01</modified>
     </dates>
   </vuln>
 

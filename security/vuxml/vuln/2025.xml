@@ -3,8 +3,10 @@
     <affects>
       <package>
 	<name>sqlite3</name>
-	<range><gt>3.39.2</gt><lt>3.41.1</lt></range>
+	<range><ge>3.39.2,1</ge><lt>3.41.2,1</lt></range>
       </package>
+      <!-- as of 2025-08-01, sqlite in -c7 is 3.7.17 and matched by the <3.50.2 below,
+	   and -rl9 aka linux_base ships 3.34.1 which is outside this range. -->
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -26,6 +28,7 @@
     <dates>
       <discovery>2025-07-29</discovery>
       <entry>2025-07-31</entry>
+      <modified>2025-08-01</modified>
     </dates>
   </vuln>
 
@@ -959,7 +962,15 @@
     <affects>
       <package>
 	<name>sqlite3</name>
+	<range><lt>3.50.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-c7-sqlite</name>
 	<range><lt>3.50.2</lt></range>
+      </package>
+      <package>
+	<name>linux_base</name>
+	<range><ge>0</ge></range>
       </package>
     </affects>
     <description>
@@ -980,6 +991,7 @@
     <dates>
       <discovery>2025-07-15</discovery>
       <entry>2025-07-23</entry>
+      <modified>2025-08-01</modified>
     </dates>
   </vuln>
 
