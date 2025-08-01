@@ -15,6 +15,8 @@ USES=		meson
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
 
+NO_ARCH=	yes
+
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
