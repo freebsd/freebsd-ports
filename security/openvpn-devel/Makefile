@@ -1,5 +1,5 @@
 PORTNAME=	openvpn
-DISTVERSION=	g20250629
+DISTVERSION=	g20250925
 PORTREVISION=	0  # leave in even if 0 to avoid accidental PORTEPOCH bumps
 PORTEPOCH=	1
 CATEGORIES=	security net net-vpn
@@ -21,7 +21,7 @@ LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 USES=		autoreconf cpe libtool pkgconfig python:build shebangfix tar:xz
 IGNORE_SSL=	libressl libressl-devel
 USE_GITLAB=	yes
-GL_TAGNAME=	df4863aa0e43544ea82ab9d98966a03a95c62334
+GL_TAGNAME=	0fb5a00549be6b065f9a4d61940ee06786d9fa61
 USE_RC_SUBR=	openvpn
 
 SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl \
@@ -63,7 +63,6 @@ OPTIONS_EXCLUDE_FreeBSD_13=	DCO # FreeBSD 14 only
 
 DCO_DESC=		Build with Data Channel Offload (ovpn(4)) support
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
-MBEDTLS_DESC=		SSL/TLS via mbedTLS (lacks TLS v1.3)
 PKCS11_DESC=		Use security/pkcs11-helper
 SMALL_DESC=		Build a smaller executable with fewer features
 X509ALTUSERNAME_DESC=	Enable --x509-username-field (OpenSSL only)
@@ -77,7 +76,7 @@ EASYRSA_RUN_DEPENDS=	easy-rsa>=0:security/easy-rsa
 LZ4_LIB_DEPENDS+=	liblz4.so:archivers/liblz4
 LZ4_CONFIGURE_OFF=	--disable-lz4
 
-MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls2
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls3
 MBEDTLS_CONFIGURE_ON=	--with-crypto-library=mbedtls
 
 OPENSSL_USES=		ssl
