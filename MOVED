@@ -4681,3 +4681,4 @@ mail/lmtp2nntp||2025-08-02|Has expired: Obsolete, last release in 2005 and uses 
 math/R-cran-RSvgDevice||2025-08-02|Has expired: Package ‘RSvgDevice’ was removed from the CRAN repository
 net/flower||2025-08-02|Has expired: Unmaintained upstream
 net/linknx||2025-08-02|Has expired: Outdated and unsupported upstream
+www/mediawiki142||2025-08-02|Has expired: Upstream EOL
