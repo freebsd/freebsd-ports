@@ -2185,7 +2185,6 @@
     SUBDIR += xmlada
     SUBDIR += xmlcatmgr
     SUBDIR += xmlcharent
-    SUBDIR += xmlenc
     SUBDIR += xmlf90
     SUBDIR += xmlformat
     SUBDIR += xmlgen
