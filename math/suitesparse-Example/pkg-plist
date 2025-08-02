@@ -1,4 +1,3 @@
-/you/have/to/check/what/makeplist/gives/you
 include/my.h
 lib/libmy.a
 lib/libmy.so
