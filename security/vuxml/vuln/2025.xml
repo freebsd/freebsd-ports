@@ -1,3 +1,42 @@
+  <vuln vid="b945ce3f-6f9b-11f0-bd96-b42e991fc52e">
+    <topic>sqlite -- integer overflow</topic>
+    <affects>
+      <package>
+	<name>sqlite3</name>
+	<range><lt>3.49.1</lt></range>
+      </package>
+      <package>
+	<name>linux-c7-sqlite</name>
+	<range><lt>3.49.1</lt></range>
+      </package>
+      <package>
+	<name>linux_base-rl9</name>
+	<range><lt>3.49.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve-coordination@google.com reports:</p>
+	<blockquote cite="https://sqlite.org/src/info/498e3f1cf57f164f">
+	  <p>An integer overflow can be triggered in SQLites `concat_ws()`
+	function.  The resulting, truncated integer is then used to allocate
+	a buffer.  When SQLite then writes the resulting string to the
+	buffer, it uses the original, untruncated size and thus a wild Heap
+	Buffer overflow of size ~4GB can be triggered.  This can result in
+	arbitrary code execution.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3277</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-3277</url>
+    </references>
+    <dates>
+      <discovery>2025-04-14</discovery>
+      <entry>2025-08-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="95480188-6ebc-11f0-8a78-bf201f293bce">
     <topic>navidrome -- transcoding permission bypass vulnerability</topic>
     <affects>
