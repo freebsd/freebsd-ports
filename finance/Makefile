@@ -50,7 +50,6 @@
     SUBDIR += ledgersmb12
     SUBDIR += libbtc
     SUBDIR += libofx
-    SUBDIR += libstocks
     SUBDIR += linux-tradingview
     SUBDIR += lnd
     SUBDIR += moneymanagerex
