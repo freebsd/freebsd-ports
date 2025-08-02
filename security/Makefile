@@ -442,7 +442,6 @@
     SUBDIR += openfhe
     SUBDIR += openfortivpn
     SUBDIR += openiked
-    SUBDIR += openiked-portable
     SUBDIR += opensaml
     SUBDIR += opensc
     SUBDIR += openssh-askpass
