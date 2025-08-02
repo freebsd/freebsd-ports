@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	25.2-branchpoint-682
-DISTVERSIONSUFFIX=	-gfa8731b8596
+DISTVERSION=	25.2-branchpoint-973
+DISTVERSIONSUFFIX=	-g5649a0aa06e
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -81,7 +81,7 @@ VULKAN_DESC=		Vulkan drivers
 anv_DESC=		Skylake and newer (implies OPENCL)
 anv_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
 			glslangValidator:graphics/glslang
-anv_MESON_ON=		${"${ARCH:Mamd64}":?:-Dintel-rt=disabled} # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10629
+anv_MESON_ON=		${"${ARCH:Naarch64:Namd64}":?-Dintel-rt=disabled:} # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10629
 anv_IMPLIES=		OPENCL
 hasvk_DESC=		Ivy Bridge, Haswell, Broadwell
 radv_DESC=		Southern Islands and newer
