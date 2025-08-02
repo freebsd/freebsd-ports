@@ -1,7 +1,6 @@
 PORTNAME=	lace
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.2
-PORTREVISION=	1
+DISTVERSION=	2.0.2
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-work-stealing
 
@@ -27,6 +26,6 @@ CMAKE_TESTING_ON=	LACE_BUILD_TESTS
 
 PORTSCOUT=	limit:^.*[0-9]+\.[0-9]+\.[0-9]+$$ # prevent tags like mucocos_2014_ri
 
-# tests as of 1.4.2: 100% tests passed, 0 tests failed out of 2
+# tests as of 2.0.2: 100% tests passed, 0 tests failed out of 2
 
 .include <bsd.port.mk>
