@@ -15,6 +15,9 @@ WWW=		https://www.openlighting.org/ola/ \
 
 LICENSE=	GPLv2+
 
+BROKEN_FreeBSD_14=	Fails to build, error: implicit instantiation of undefined template 'std::char_traits<unsigned char>'
+BROKEN_FreeBSD_13=	Fails to build, error: implicit instantiation of undefined template 'std::char_traits<unsigned char>'
+
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
 		libftdi1.so:devel/libftdi1 \
 		libmicrohttpd.so:www/libmicrohttpd \
