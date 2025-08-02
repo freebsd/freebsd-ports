@@ -10,7 +10,7 @@
 +#include <unistd.h>
  #include <wayland-client-core.h>
 +
-+#if defined(_LIBCPP_VERSION) || defined(_LIBCPP_HAS_NO_TIME_ZONE_DATABASE)
++#if defined(_LIBCPP_HAS_NO_TIME_ZONE_DATABASE)
 +#pragma comment(lib, "date-tz")
 +#include <date/tz.h>
 +namespace std {
