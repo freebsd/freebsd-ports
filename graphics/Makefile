@@ -118,7 +118,6 @@
     SUBDIR += compupic
     SUBDIR += converseen
     SUBDIR += corrupter
-    SUBDIR += cosmoplayer
     SUBDIR += cptutils
     SUBDIR += crw
     SUBDIR += ctl

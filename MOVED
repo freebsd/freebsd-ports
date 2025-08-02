@@ -4668,3 +4668,4 @@ devel/rpc2||2025-08-02|Has expired: Outdated, unsupported upstream and unmaintai
 devel/publib||2025-08-02|Has expired: Upstream is gone and last release around 2012
 devel/qmake||2025-08-02|Has expired: Obsolete and unsupported upstream
 devel/godot35-tools|devel/godot-tools|2025-08-02|Has expired: Fails to build and legacy, consider migrating to devel/godot-tools
+graphics/cosmoplayer||2025-08-02|Has expired: Abandonware
