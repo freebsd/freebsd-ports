@@ -1,5 +1,5 @@
 PORTNAME=	imagick
-PORTVERSION=	3.8.0
+DISTVERSION=	3.8.0
 CATEGORIES=	graphics
 
 MAINTAINER=	000.fbsd@quip.cz
@@ -14,4 +14,12 @@ CPE_VENDOR=	php
 
 CONFIGURE_ARGS=	--with-imagick=${LOCALBASE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${PHP_VER} >= 85
+	@${REINPLACE_CMD} -e 's|ext/standard/php_smart_string|Zend/zend_smart_string|' \
+		${WRKSRC}/imagick.c
+.endif
+
+.include <bsd.port.post.mk>
