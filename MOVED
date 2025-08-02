@@ -4678,3 +4678,4 @@ www/webcopy||2025-08-02|Has expired: Upstream is long gone and project not touch
 finance/libstocks||2025-08-02|Has expired: Abandoned upstream, last release in 2000
 java/servingxml||2025-08-02|Has expired: Abandoned and obsolete, last release in 2010
 mail/lmtp2nntp||2025-08-02|Has expired: Obsolete, last release in 2005 and uses legacy Local Mail Transfer Protocol
+math/R-cran-RSvgDevice||2025-08-02|Has expired: Package ‘RSvgDevice’ was removed from the CRAN repository
