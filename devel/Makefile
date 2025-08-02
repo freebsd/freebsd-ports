@@ -6331,7 +6331,6 @@
     SUBDIR += qgit
     SUBDIR += qjson
     SUBDIR += qlementine
-    SUBDIR += qmake
     SUBDIR += qschematic
     SUBDIR += qscintilla2
     SUBDIR += qscintilla2-designerplugin

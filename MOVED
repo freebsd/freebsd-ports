@@ -4666,3 +4666,4 @@ multimedia/svt-av1-psy|multimedia/svt-av1-hdr|2025-07-31|New upstream
 www/php85-opcache||2025-08-01|Part of default php85
 devel/rpc2||2025-08-02|Has expired: Outdated, unsupported upstream and unmaintained for years in tree
 devel/publib||2025-08-02|Has expired: Upstream is gone and last release around 2012
+devel/qmake||2025-08-02|Has expired: Obsolete and unsupported upstream
