@@ -705,7 +705,6 @@
     SUBDIR += memdump
     SUBDIR += memfetch
     SUBDIR += memtest86
-    SUBDIR += memtest86+
     SUBDIR += memtester
     SUBDIR += metalog
     SUBDIR += mfid
