@@ -18,7 +18,6 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 USE_PHP=	xml:build zlib:build
-IGNORE_WITH_PHP=	81
 
 PEARDIR=	${PREFIX}/share/pear
 
