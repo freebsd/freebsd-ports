@@ -765,6 +765,7 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/symbols/star_half_16.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/symbols/star_half_16.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tabs/README
+%%DATADIR%%/%%EMACS_VER%%/etc/images/tabs/close-modified.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tabs/close.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tabs/left-arrow.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tabs/new.xpm
@@ -3807,6 +3808,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/scroll-lock.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/select.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/select.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/send-to.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/send-to.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/server.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/server.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ses.el.gz
