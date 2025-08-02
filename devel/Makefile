@@ -1310,7 +1310,6 @@
     SUBDIR += libgamepad
     SUBDIR += libgdata
     SUBDIR += libgee
-    SUBDIR += libgee06
     SUBDIR += libgetline
     SUBDIR += libgit2
     SUBDIR += libgit2-glib
