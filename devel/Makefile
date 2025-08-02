@@ -1834,7 +1834,6 @@
     SUBDIR += orc
     SUBDIR += orcania
     SUBDIR += osc
-    SUBDIR += ossp-al
     SUBDIR += ossp-cfg
     SUBDIR += ossp-ex
     SUBDIR += ossp-l2
