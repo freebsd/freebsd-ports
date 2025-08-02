@@ -1834,7 +1834,6 @@
     SUBDIR += orc
     SUBDIR += orcania
     SUBDIR += osc
-    SUBDIR += ossp-ex
     SUBDIR += outcome
     SUBDIR += p4
     SUBDIR += p4.el

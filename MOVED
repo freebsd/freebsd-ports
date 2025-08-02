@@ -4700,3 +4700,4 @@ devel/ossp-l2||2025-08-02|Has expired: Abandoned upstream, last release in 2007
 devel/ossp-var||2025-08-02|Has expired: Obsolete, last release in 2002
 devel/ossp-cfg||2025-08-02|Has expired: Abandoned upstream, last release in 2006
 net/ossp-sa||2025-08-02|Removed, depends on expired devel/ossp-ex
+devel/ossp-ex||2025-08-02|Has expired: Abandoned upstream, last release in 2007

@@ -1,4 +1,0 @@
-OSSP ex is a small ISO-C++ style exception handling library for use in the
-ISO-C language. It allows you to use the paradigm of throwing and catching
-exceptions in order to reduce the amount of error handling code without
-making your program less robust.
