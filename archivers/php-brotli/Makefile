@@ -25,4 +25,10 @@ CONFIGURE_ARGS=	--with-libbrotli
 
 PHP_MODNAME=	brotli
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+post-patch:
+.if ${PHP_VER} >= 85
+	@${REINPLACE_CMD} -e 's|ext/standard/php_smart_string.h|Zend/zend_smart_string.h|' \
+		${WRKSRC}/brotli.c
+.endif
+.include <bsd.port.post.mk>
