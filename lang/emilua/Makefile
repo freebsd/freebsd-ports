@@ -26,7 +26,7 @@ LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libsord-0.so:devel/sord \
 		libfmt.so:devel/libfmt
 
-USES=		localbase luajit:luajit meson ncurses pathfix \
+USES=		localbase luajit meson ncurses pathfix \
 		pkgconfig ssl
 USE_GITLAB=	yes
 
