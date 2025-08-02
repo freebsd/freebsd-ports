@@ -1,4 +1,0 @@
-Fortuna PRNG library for generating random numbers
-
-libfortuna is a C library based on code extracted from BSD licensed PostgreSQL
-sources. It generates numbers with decent randomness.

@@ -1298,7 +1298,6 @@
     SUBDIR += libfixposix
     SUBDIR += libfmt
     SUBDIR += libfort
-    SUBDIR += libfortuna
     SUBDIR += libfreefare
     SUBDIR += libftdi
     SUBDIR += libftdi1
