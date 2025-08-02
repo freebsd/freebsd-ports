@@ -4674,3 +4674,4 @@ devel/aegis||2025-08-02|Has expired: Abandoned upstream, last release in 2012
 devel/wrangler||2025-08-02|Has expired: Deprecated upstream as of Aug 3, 2023
 devel/libgee06|devel/libgee|2025-08-02|Has expired: Legacy verision, unsupported upstream
 comms/hackrf-devel|comms/hackrf|2025-08-02|Has expired: Legacy version, consider migrating to comms/hackrf
+www/webcopy||2025-08-02|Has expired: Upstream is long gone and project not touched in decades, consider using ftp/wget

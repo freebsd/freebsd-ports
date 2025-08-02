@@ -1,6 +1,0 @@
-WebCopy is a perl program that retrieves the URL specified in a Unix-like
-command line. It can also retrieve recursively any file that a HTML file
-references, i.e. inlined images and/or anchors, if specified with an option.
-
-It can be used as a "mirror" program to retrieve a tree of documents from a
-remote site, and put them on-line immediately through the local server.
