@@ -1,7 +1,7 @@
-TIMESTAMP = 1752170002
-SHA256 (go/www_tinyauth/steveiliop56-tinyauth-v3.6.0_GH0/tinyauth-v3.6.0.frontend.tar.gz) = ecf4bdd74848c079eb7f79396154ec1263346829b03ad92e98406bf6065686a0
-SIZE (go/www_tinyauth/steveiliop56-tinyauth-v3.6.0_GH0/tinyauth-v3.6.0.frontend.tar.gz) = 914509
-SHA256 (go/www_tinyauth/steveiliop56-tinyauth-v3.6.0_GH0/go.mod) = c2e54fb63dc89ff9d8e55ca3bddcdc89a8afcdd9f6ac1608b55779c3cf2efd8d
-SIZE (go/www_tinyauth/steveiliop56-tinyauth-v3.6.0_GH0/go.mod) = 5367
-SHA256 (go/www_tinyauth/steveiliop56-tinyauth-v3.6.0_GH0/steveiliop56-tinyauth-v3.6.0_GH0.tar.gz) = d7a2a6b03c2fa7626e9fc0123e9b3a9d12a9a4a87ee72b72e4ae4a09e97c8ec7
-SIZE (go/www_tinyauth/steveiliop56-tinyauth-v3.6.0_GH0/steveiliop56-tinyauth-v3.6.0_GH0.tar.gz) = 5638082
+TIMESTAMP = 1754156249
+SHA256 (go/www_tinyauth/steveiliop56-tinyauth-v3.6.2_GH0/tinyauth-v3.6.2.frontend.tar.gz) = bb0261e35041d8f2cc73341df6a61969ff97bd35264bc45743b3994702eecad6
+SIZE (go/www_tinyauth/steveiliop56-tinyauth-v3.6.2_GH0/tinyauth-v3.6.2.frontend.tar.gz) = 952998
+SHA256 (go/www_tinyauth/steveiliop56-tinyauth-v3.6.2_GH0/go.mod) = d23ed0cab1f356dfb3e946fdabce2afffb1adaf8bfcf28cd195dc3c2f1d883f7
+SIZE (go/www_tinyauth/steveiliop56-tinyauth-v3.6.2_GH0/go.mod) = 5418
+SHA256 (go/www_tinyauth/steveiliop56-tinyauth-v3.6.2_GH0/steveiliop56-tinyauth-v3.6.2_GH0.tar.gz) = 4b3a592bc76c8293ac862620cfcdb70cfd418f810f27ec27ce73cd9d7130fc44
+SIZE (go/www_tinyauth/steveiliop56-tinyauth-v3.6.2_GH0/steveiliop56-tinyauth-v3.6.2_GH0.tar.gz) = 5638267
