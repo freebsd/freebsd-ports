@@ -18,8 +18,16 @@ USE_PHP=	session:build
 
 PORTDATA=	zookeeper-api.php
 
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${PHP_VER} >= 85
+	@${REINPLACE_CMD} -e 's|ext/standard/php_smart_string|Zend/zend_smart_string|' \
+		${WRKSRC}/php_zookeeper.c
+.endif
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/zookeeper-api.php ${STAGEDIR}${DATADIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
