@@ -56,6 +56,7 @@ include/filamat/Enums.h
 include/filamat/IncludeCallback.h
 include/filamat/MaterialBuilder.h
 include/filamat/Package.h
+include/filament-generatePrefilterMipmap/generatePrefilterMipmap.h
 include/filament-iblprefilter/IBLPrefilterContext.h
 include/filament/Box.h
 include/filament/BufferObject.h
@@ -195,6 +196,7 @@ lib/libdracodec.a
 lib/libfilabridge.a
 lib/libfilaflat.a
 lib/libfilamat.a
+lib/libfilament-generatePrefilterMipmap.a
 lib/libfilament-iblprefilter.a
 lib/libfilament.a
 lib/libfilameshio.a
