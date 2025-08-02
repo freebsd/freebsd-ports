@@ -4685,3 +4685,4 @@ www/mediawiki142||2025-08-02|Has expired: Upstream EOL
 devel/arpc||2025-08-02|Has expired: Unmaintained upstream
 devel/libgpc||2025-08-02|Has expired: No longer distributed by upstream as of August 2020
 devel/libfortuna||2025-08-02|Has expired: Legacy fortuna library, last upstream activity 10 years ago
+devel/pth-hard||2025-08-02|Has expired: Abandoned, last release in 2006

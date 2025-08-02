@@ -4349,7 +4349,6 @@
     SUBDIR += pstreams
     SUBDIR += psvn
     SUBDIR += pth
-    SUBDIR += pth-hard
     SUBDIR += pthreadpool
     SUBDIR += pthsem
     SUBDIR += ptl
