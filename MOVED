@@ -4687,3 +4687,4 @@ devel/libgpc||2025-08-02|Has expired: No longer distributed by upstream as of Au
 devel/libfortuna||2025-08-02|Has expired: Legacy fortuna library, last upstream activity 10 years ago
 devel/pth-hard||2025-08-02|Has expired: Abandoned, last release in 2006
 devel/pth||2025-08-02|Has expired: Abandoned, last release in 2006
+databases/rrdtool12|databases/rrdtool|2025-08-02|Has expired: Legacy version that's unsupported upstream and unfetchable
