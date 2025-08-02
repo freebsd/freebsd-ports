@@ -238,7 +238,6 @@
     SUBDIR += arm-none-eabi-gcc
     SUBDIR += arm-none-eabi-newlib
     SUBDIR += aros-sdk
-    SUBDIR += arpc
     SUBDIR += art
     SUBDIR += asfml
     SUBDIR += asl
