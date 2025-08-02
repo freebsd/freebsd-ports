@@ -1,7 +1,6 @@
 PORTNAME=	hyprcursor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.12
-PORTREVISION=	1
+DISTVERSION=	0.1.13
 CATEGORIES=	x11
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -17,14 +16,27 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 RUN_DEPENDS=	xcur2png:x11/xcur2png
 
 USES=		compiler:c++11-lib cmake:testing gnome pathfix pkgconfig
+
 USE_GITHUB=	yes
-USE_GNOME=	cairo librsvg2
 GH_ACCOUNT=	hyprwm
-PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
+
+USE_GNOME=	cairo librsvg2
+USE_LDCONFIG=	yes
+
+PLIST_SUB=	SOVERSION_MAJOR=0 \
+		SOVERSION_FULL=${DISTVERSION:C/-.*//}
+
+PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 # Respect PREFIX for icons
-	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
+	@${REINPLACE_CMD} 's|/usr/share|${DATADIR:H}|' \
 		${WRKSRC}/lib${PORTNAME}/${PORTNAME}.cpp
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
