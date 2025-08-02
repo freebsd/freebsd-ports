@@ -4348,7 +4348,6 @@
     SUBDIR += psimd
     SUBDIR += pstreams
     SUBDIR += psvn
-    SUBDIR += pth
     SUBDIR += pthreadpool
     SUBDIR += pthsem
     SUBDIR += ptl
