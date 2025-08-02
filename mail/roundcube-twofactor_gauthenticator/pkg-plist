@@ -10,6 +10,7 @@
 %%WWWDIR%%/localization/cs_CZ.inc
 %%WWWDIR%%/localization/da_DK.inc
 %%WWWDIR%%/localization/de_DE.inc
+%%WWWDIR%%/localization/el_GR.inc
 %%WWWDIR%%/localization/en_US.inc
 %%WWWDIR%%/localization/es_AR.inc
 %%WWWDIR%%/localization/es_ES.inc
@@ -27,6 +28,7 @@
 %%WWWDIR%%/localization/ru_RU.inc
 %%WWWDIR%%/localization/sk_SK.inc
 %%WWWDIR%%/localization/sv_SE.inc
+%%WWWDIR%%/localization/uk_UA.inc
 %%WWWDIR%%/qrcode.min.js
 %%WWWDIR%%/screenshots/001-login.png
 %%WWWDIR%%/screenshots/002-2steps.png
