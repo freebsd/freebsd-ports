@@ -4361,7 +4361,6 @@
     SUBDIR += pthsem
     SUBDIR += ptl
     SUBDIR += ptlib
-    SUBDIR += publib
     SUBDIR += purescript-language-server
     SUBDIR += pushmi
     SUBDIR += py-Automat
