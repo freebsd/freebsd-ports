@@ -4690,3 +4690,4 @@ devel/pth||2025-08-02|Has expired: Abandoned, last release in 2006
 databases/rrdtool12|databases/rrdtool|2025-08-02|Has expired: Legacy version that's unsupported upstream and unfetchable
 sysutils/memtest86+||2025-08-02|Has expired: ELF binary for BIOS boot has been broken for a long while
 textproc/xmlenc||2025-08-02|Has expired: Outdated and obsolete, last release in 2005
+devel/make++||2025-08-02|Has expired: Abandonware, last release in 2017
