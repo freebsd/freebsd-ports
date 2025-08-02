@@ -1,8 +1,0 @@
-bin/sa-config
-include/sa.h
-lib/libsa.a
-lib/libsa.so
-lib/libsa.so.12
-lib/libsa.so.12.0.26
-libdata/pkgconfig/sa.pc
-share/man/man3/sa.3.gz

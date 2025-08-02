@@ -1,6 +1,0 @@
-OSSP sa is an abstraction library for the Unix socket application
-programming interface (API) featuring stream and datagram oriented
-communication over Unix Domain and Internet Domain (TCP and UDP) sockets. It
-provides the following key features: address abstraction (local, IPv4, and
-IPv6), type abstraction, I/O timeouts, I/O stream buffering and convenience
-I/O functions.
