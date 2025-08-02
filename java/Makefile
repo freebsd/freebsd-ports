@@ -94,7 +94,6 @@
     SUBDIR += openjfx14
     SUBDIR += phpeclipse
     SUBDIR += proguard
-    SUBDIR += servingxml
     SUBDIR += sigar
     SUBDIR += springframework
     SUBDIR += springframework31

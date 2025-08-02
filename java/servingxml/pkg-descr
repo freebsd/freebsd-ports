@@ -1,6 +1,0 @@
-ServingXML is an open source, Apache 2.0 licensed, framework for flat/XML data
-transformations.
-It defines an extensible markup vocabulary for expressing flat-XML, XML-flat,
-flat-flat, and XML-XML processing in pipelines.
-ServingXML comes with a console app, and also documents an API for embedding
-the software in a standard Java or J2EE application.

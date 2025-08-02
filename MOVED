@@ -4676,3 +4676,4 @@ devel/libgee06|devel/libgee|2025-08-02|Has expired: Legacy verision, unsupported
 comms/hackrf-devel|comms/hackrf|2025-08-02|Has expired: Legacy version, consider migrating to comms/hackrf
 www/webcopy||2025-08-02|Has expired: Upstream is long gone and project not touched in decades, consider using ftp/wget
 finance/libstocks||2025-08-02|Has expired: Abandoned upstream, last release in 2000
+java/servingxml||2025-08-02|Has expired: Abandoned and obsolete, last release in 2010
