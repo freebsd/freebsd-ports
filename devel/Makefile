@@ -8216,7 +8216,6 @@
     SUBDIR += sigar
     SUBDIR += signal-sqlcipher-extension
     SUBDIR += sigslot
-    SUBDIR += silc-toolkit
     SUBDIR += silentbob
     SUBDIR += simavr
     SUBDIR += simde
