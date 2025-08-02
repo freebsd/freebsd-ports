@@ -18,4 +18,12 @@ IGBINARY_DESC=	Build with Igbinary serializer
 IGBINARY_USE=			PHP=igbinary:build
 IGBINARY_CONFIGURE_ENABLE=	redis-igbinary
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${PHP_VER} >= 85
+	@${REINPLACE_CMD} -e 's|ext/standard/php_smart_string.h|Zend/zend_smart_string.h|' \
+		${WRKSRC}/common.h
+.endif
+
+.include <bsd.port.post.mk>
