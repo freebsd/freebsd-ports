@@ -1,7 +1,0 @@
-LinKNX is a backend for controlling a KNX/EIB home and building automation
-system. It connects to eibd which is part of the BCU SDK and keeps state of
-KNX devices such as lamps, window blinds, heating and so on.
-Furthermore it provides a powerful, rule-based event after treatment, e.g.
-for switching other KNX devices, sending e-mail or SMS or executing a shell
-command. You can configure and control the LinKNX daemon using an XML-style
-protocol via TCP network socket or Unix domain socket.

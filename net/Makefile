@@ -442,7 +442,6 @@
     SUBDIR += libzmq3
     SUBDIR += libzmq4
     SUBDIR += liferea
-    SUBDIR += linknx
     SUBDIR += linphone
     SUBDIR += linux-c7-avahi-libs
     SUBDIR += linux-c7-openldap
