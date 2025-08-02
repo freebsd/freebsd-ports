@@ -4670,3 +4670,4 @@ devel/qmake||2025-08-02|Has expired: Obsolete and unsupported upstream
 devel/godot35-tools|devel/godot-tools|2025-08-02|Has expired: Fails to build and legacy, consider migrating to devel/godot-tools
 graphics/cosmoplayer||2025-08-02|Has expired: Abandonware
 devel/netscape-java40||2025-08-02|Has expired: Abandonware
+devel/aegis||2025-08-02|Has expired: Abandoned upstream, last release in 2012

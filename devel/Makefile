@@ -174,7 +174,6 @@
     SUBDIR += activitymail
     SUBDIR += actor-framework
     SUBDIR += adacurses
-    SUBDIR += aegis
     SUBDIR += agar
     SUBDIR += aifad
     SUBDIR += air-go
