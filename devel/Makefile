@@ -1836,7 +1836,6 @@
     SUBDIR += osc
     SUBDIR += ossp-cfg
     SUBDIR += ossp-ex
-    SUBDIR += ossp-var
     SUBDIR += outcome
     SUBDIR += p4
     SUBDIR += p4.el
