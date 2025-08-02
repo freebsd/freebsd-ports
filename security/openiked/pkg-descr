@@ -1,7 +1,8 @@
-OpenIKED is a lean Internet Key Exchange (IKEv2) daemon which performs
-mutual authentication and which establishes and maintains IPsec VPN
-flows and security associations (SAs) between the two peers.
+OpenIKED is a free, permissively licensed Internet Key Exchange
+(IKEv2) implementation, developed as part of the OpenBSD project.
+It is intended to be a lean, secure and interoperable daemon that
+allows for easy setup and management of IPsec VPNs.
 
-This version of OpenIKED is derived from OpenIKED's iked, but changed
-to support transport mode IPSec and lazy creation of associations,
-among many other improvements.
+The portable versions take the OpenBSD based source code and add
+compatibility functions and build infrastructure for other operating
+systems.

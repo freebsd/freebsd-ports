@@ -1,10 +1,11 @@
 PORTNAME=	openiked
 DISTVERSION=	7.4
+PORTREVISION=	1
 CATEGORIES=	security net
-MASTER_SITES=	https://cdn.openbsd.org/pub/OpenBSD/OpenIKED/ \
+MASTER_SITES=	OPENBSD/OpenIKED \
 		https://github.com/${PORTNAME}/${PORTNAME}-portable/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	marcel@FreeBSD.org
+MAINTAINER=	david.marec@proton.me
 COMMENT=	IKEv2 daemon
 WWW=		https://www.openiked.org
 
@@ -19,7 +20,8 @@ USE_RC_SUBR=	iked
 USERS=		_iked
 GROUPS=		_iked
 
-CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/share/man
+CMAKE_ARGS=	-DCADIR=${PREFIX}/etc/ssl \
+		-DCMAKE_INSTALL_MANDIR=${PREFIX}/share/man
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/iked.conf \
