@@ -34,4 +34,13 @@ MSGPACK_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}msgpack>=0:devel/pecl-msgpack@${PHP_FL
 SASL_CONFIGURE_ENABLE=	memcached-sasl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-.include <bsd.port.mk>
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${PHP_VER} >= 85
+	@${REINPLACE_CMD} -e 's|ext/standard/php_smart_string.h|Zend/zend_smart_string.h|' \
+		${WRKSRC}/php_memcached_private.h
+.endif
+
+.include <bsd.port.post.mk>
