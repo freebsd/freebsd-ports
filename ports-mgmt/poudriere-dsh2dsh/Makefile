@@ -1,5 +1,5 @@
 PORTNAME=	poudriere
-DISTVERSION=	3.4.99.20250725
+DISTVERSION=	3.4.99.20250802
 CATEGORIES=	ports-mgmt
 PKGNAMESUFFIX=	-dsh2dsh
 
@@ -7,6 +7,8 @@ MAINTAINER=	dsh@bamus.cz
 COMMENT=	Port build and test system (fork with more features)
 
 LICENSE=	BSD2CLAUSE
+
+USES=		ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dsh2dsh
