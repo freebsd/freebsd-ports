@@ -1711,7 +1711,6 @@
     SUBDIR += ncc
     SUBDIR += ncnf
     SUBDIR += ncurses
-    SUBDIR += netscape-java40
     SUBDIR += netsurf-buildsystem
     SUBDIR += newfile
     SUBDIR += newt
