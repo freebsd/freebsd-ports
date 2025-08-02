@@ -1,4 +1,4 @@
---- chrome/browser/flag_descriptions.h.orig	2025-06-30 07:04:30 UTC
+--- chrome/browser/flag_descriptions.h.orig	2025-07-21 19:32:31 UTC
 +++ chrome/browser/flag_descriptions.h
 @@ -413,7 +413,7 @@ extern const char
      kAutofillEnableAllowlistForBmoCardCategoryBenefitsDescription[];
@@ -81,7 +81,7 @@
  extern const char kReduceUserAgentDataLinuxPlatformVersionName[];
  extern const char kReduceUserAgentDataLinuxPlatformVersionDescription[];
  #endif  // #if BUILDFLAG(IS_LINUX)
-@@ -3430,7 +3430,7 @@ extern const char kTranslateOpenSettingsDescription[];
+@@ -3432,7 +3432,7 @@ extern const char kTranslateOpenSettingsDescription[];
  extern const char kTranslateOpenSettingsDescription[];
  #endif
  
@@ -90,7 +90,7 @@
  extern const char kWasmTtsComponentUpdaterEnabledName[];
  extern const char kWasmTtsComponentUpdaterEnabledDescription[];
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
-@@ -4630,7 +4630,7 @@ extern const char kTetheringExperimentalFunctionalityD
+@@ -4632,7 +4632,7 @@ extern const char kTetheringExperimentalFunctionalityD
  
  #endif  // #if BUILDFLAG(IS_CHROMEOS)
  
@@ -99,7 +99,7 @@
  extern const char kGetAllScreensMediaName[];
  extern const char kGetAllScreensMediaDescription[];
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
-@@ -4765,7 +4765,7 @@ extern const char kEnableArmHwdrmDescription[];
+@@ -4767,7 +4767,7 @@ extern const char kEnableArmHwdrmDescription[];
  
  // Linux ---------------------------------------------------------------------
  
@@ -108,7 +108,7 @@
  extern const char kOzonePlatformHintChoiceDefault[];
  extern const char kOzonePlatformHintChoiceAuto[];
  extern const char kOzonePlatformHintChoiceX11[];
-@@ -4796,6 +4796,9 @@ extern const char kWaylandUiScalingDescription[];
+@@ -4798,6 +4798,9 @@ extern const char kWaylandUiScalingDescription[];
  
  extern const char kWaylandUiScalingName[];
  extern const char kWaylandUiScalingDescription[];
@@ -118,7 +118,7 @@
  #endif  // BUILDFLAG(IS_LINUX)
  
  // Random platform combinations -----------------------------------------------
-@@ -4810,7 +4813,7 @@ extern const char kWebBluetoothConfirmPairingSupportDe
+@@ -4812,7 +4815,7 @@ extern const char kWebBluetoothConfirmPairingSupportDe
  extern const char kWebBluetoothConfirmPairingSupportDescription[];
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
  
@@ -127,7 +127,7 @@
  #if BUILDFLAG(ENABLE_PRINTING)
  extern const char kCupsIppPrintingBackendName[];
  extern const char kCupsIppPrintingBackendDescription[];
-@@ -4823,7 +4826,7 @@ extern const char kScreenlockReauthCardDescription[];
+@@ -4825,7 +4828,7 @@ extern const char kScreenlockReauthCardDescription[];
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -136,7 +136,7 @@
  extern const char kFollowingFeedSidepanelName[];
  extern const char kFollowingFeedSidepanelDescription[];
  
-@@ -4840,7 +4843,7 @@ extern const char kTaskManagerDesktopRefreshDescriptio
+@@ -4842,7 +4845,7 @@ extern const char kTaskManagerDesktopRefreshDescriptio
  extern const char kTaskManagerDesktopRefreshDescription[];
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -145,7 +145,7 @@
  extern const char kEnableNetworkServiceSandboxName[];
  extern const char kEnableNetworkServiceSandboxDescription[];
  
-@@ -4932,7 +4935,7 @@ extern const char kElementCaptureDescription[];
+@@ -4934,7 +4937,7 @@ extern const char kElementCaptureDescription[];
  extern const char kElementCaptureDescription[];
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -154,7 +154,7 @@
  extern const char kUIDebugToolsName[];
  extern const char kUIDebugToolsDescription[];
  #endif
-@@ -4971,7 +4974,7 @@ extern const char kComposeUpfrontInputModesDescription
+@@ -4973,7 +4976,7 @@ extern const char kComposeUpfrontInputModesDescription
  extern const char kComposeUpfrontInputModesDescription[];
  #endif  // BUILDFLAG(ENABLE_COMPOSE)
  
@@ -163,7 +163,7 @@
  extern const char kThirdPartyProfileManagementName[];
  extern const char kThirdPartyProfileManagementDescription[];
  
-@@ -5045,7 +5048,7 @@ extern const char kSupervisedUserBlockInterstitialV3De
+@@ -5047,7 +5050,7 @@ extern const char kSupervisedUserBlockInterstitialV3De
  extern const char kSupervisedUserBlockInterstitialV3Name[];
  extern const char kSupervisedUserBlockInterstitialV3Description[];
  
