@@ -1,5 +1,5 @@
 PORTNAME=	KVIrc
-DISTVERSION=	5.2.6
+DISTVERSION=	5.2.8
 CATEGORIES=	irc kde
 
 MAINTAINER=	vvd@FreeBSD.org
@@ -9,16 +9,15 @@ WWW=		https://www.kvirc.net
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/ABOUT-LICENSE
 
-USES=		cmake compiler:c++11-lang cpe desktop-file-utils pkgconfig qt:5 \
-		ssl xorg
+USES=		cmake compiler:c++11-lang cpe desktop-file-utils gl pkgconfig \
+		qt:6 ssl xorg
 USE_GITHUB=	yes
+USE_GL=		opengl
 USE_LDCONFIG=	yes
-USE_QT=		concurrent core declarative gui multimedia network printsupport \
-		sql widgets x11extras xml \
-		buildtools:build qmake:build
+USE_QT=		5compat base multimedia
 USE_XORG=	ice sm x11 xext xrender xscrnsaver
 
-CMAKE_ARGS=	-DQT_VERSION_MAJOR=5
+CMAKE_ARGS=	-DQT_VERSION_MAJOR=6
 CMAKE_ON=	WANT_CRYPT WANT_IPC WANT_IPV6 WANT_OPENSSL WANT_OSS WANT_STRIP \
 		WANT_TRANSPARENCY
 CMAKE_OFF=	WANT_COEXISTENCE WANT_DEBUG WANT_ENV_FLAGS \
@@ -35,16 +34,13 @@ OPTIONS_SUB=		yes
 
 DCC_VIDEO_DESC=		Direct client video connection support (experimental)
 DCC_VOICE_DESC=		Direct client voice connection support
-GTKSTYLE_DESC=		Enable QGtkStyle
 
 AUDIOFILE_LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile
 AUDIOFILE_CMAKE_BOOL=	WANT_AUDIOFILE
 
-DBUS_USE=		qt=dbus
 DBUS_CMAKE_BOOL=	WANT_QTDBUS
 
 DCC_VIDEO_CMAKE_BOOL=	WANT_DCC_VIDEO
-DCC_VIDEO_BROKEN=	qt5 support dropped: https://github.com/kvirc/KVIrc/pull/2628
 
 DCC_VOICE_CMAKE_BOOL=	WANT_DCC_VOICE
 
@@ -62,11 +58,11 @@ ENCHANT_CMAKE_BOOL=	WANT_SPELLCHECKER
 GSM_RUN_DEPENDS=	${LOCALBASE}/lib/libgsm.so:audio/gsm
 GSM_CMAKE_BOOL=		WANT_GSM
 
-KDE_IMPLIES=		DBUS
-KDE_USES=		kde:5
-KDE_USE=		kde=auth,codecs,completion,config,configwidgets,coreaddons,i18n \
-			kde=jobwidgets,kio,notifications,parts,phonon,service,solid \
-			kde=sonnet,textwidgets,widgetsaddons,windowsystem,xmlgui,ecm:build
+KDE_USES=		kde:6
+KDE_USE=		kde=colorscheme,completion,config,configwidgets \
+			kde=coreaddons,guiaddons,i18n,jobwidgets,kio \
+			kde=notifications,parts,service,statusnotifieritem \
+			kde=widgetsaddons,windowsystem,xmlgui,ecm:build
 KDE_CMAKE_BOOL=		WANT_KDE
 
 NLS_USES=		gettext-tools
@@ -81,7 +77,7 @@ PERL_USES=		perl5
 PERL_USE=		perl5:run
 PERL_CMAKE_BOOL=	WANT_PERL
 
-PHONON_USES=		kde:5
+PHONON_USES=		kde:6
 PHONON_USE=		kde=phonon
 PHONON_CMAKE_BOOL=	WANT_PHONON
 
@@ -91,7 +87,7 @@ PYTHON_CMAKE_BOOL=	WANT_PYTHON
 SVG_USE=		qt=svg
 SVG_CMAKE_BOOL=		WANT_QTSVG
 
-WEBENGINE_USE=		qt=location,webchannel,webengine
+WEBENGINE_USE=		qt=declarative,positioning,webchannel,webengine
 WEBENGINE_CMAKE_BOOL=	WANT_QTWEBENGINE
 
 .include <bsd.port.mk>

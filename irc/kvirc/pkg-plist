@@ -1489,6 +1489,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/about_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/about_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/about_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/about_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/about_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/about_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/addon_cs.mo
@@ -1507,6 +1508,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/addon_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/addon_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/addon_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/addon_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/addon_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/addon_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/dcc_cs.mo
@@ -1525,6 +1527,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/dcc_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/dcc_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/dcc_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/dcc_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/dcc_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/dcc_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/defscript_cs.mo
@@ -1543,6 +1546,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/defscript_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/defscript_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/defscript_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/defscript_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/defscript_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/defscript_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/editor_cs.mo
@@ -1561,6 +1565,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/editor_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/editor_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/editor_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/editor_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/editor_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/editor_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/filetransferwindow_cs.mo
@@ -1579,6 +1584,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/filetransferwindow_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/filetransferwindow_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/filetransferwindow_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/filetransferwindow_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/filetransferwindow_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/filetransferwindow_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/kvirc_cs.mo
@@ -1597,6 +1603,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/kvirc_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/kvirc_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/kvirc_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/kvirc_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/kvirc_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/kvirc_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/kvs_cs.mo
@@ -1615,6 +1622,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/kvs_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/kvs_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/kvs_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/kvs_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/kvs_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/kvs_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/log_cs.mo
@@ -1634,6 +1642,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/log_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/log_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/log_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/log_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/log_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/log_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/mediaplayer_cs.mo
@@ -1652,6 +1661,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/mediaplayer_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/mediaplayer_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/mediaplayer_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/mediaplayer_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/mediaplayer_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/mediaplayer_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/notifier_cs.mo
@@ -1670,6 +1680,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/notifier_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/notifier_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/notifier_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/notifier_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/notifier_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/notifier_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/objects_cs.mo
@@ -1687,6 +1698,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/objects_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/objects_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/objects_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/objects_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/objects_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/objects_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/options_cs.mo
@@ -1705,6 +1717,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/options_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/options_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/options_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/options_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/options_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/options_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/perl_cs.mo
@@ -1723,6 +1736,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/perl_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/perl_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/perl_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/perl_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/perl_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/perl_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/python_cs.mo
@@ -1740,6 +1754,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/python_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/python_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/python_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/python_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/python_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/python_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/register_cs.mo
@@ -1758,6 +1773,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/register_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/register_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/register_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/register_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/register_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/register_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/serverdb_cs.mo
@@ -1776,6 +1792,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/serverdb_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/serverdb_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/serverdb_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/serverdb_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/serverdb_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/serverdb_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/sharedfileswindow_cs.mo
@@ -1794,6 +1811,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/sharedfileswindow_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/sharedfileswindow_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/sharedfileswindow_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/sharedfileswindow_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/sharedfileswindow_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/sharedfileswindow_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/theme_cs.mo
@@ -1812,6 +1830,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/theme_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/theme_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/theme_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/theme_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/theme_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/theme_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/torrent_cs.mo
@@ -1830,6 +1849,7 @@ share/kvirc/%%VER%%/license/LICENSE-OPENSSL
 %%NLS%%share/kvirc/%%VER%%/locale/torrent_pt_BR.mo
 %%NLS%%share/kvirc/%%VER%%/locale/torrent_ru.mo
 %%NLS%%share/kvirc/%%VER%%/locale/torrent_sr.mo
+%%NLS%%share/kvirc/%%VER%%/locale/torrent_sv.mo
 %%NLS%%share/kvirc/%%VER%%/locale/torrent_tr.mo
 %%NLS%%share/kvirc/%%VER%%/locale/torrent_uk.mo
 %%NLS%%share/kvirc/%%VER%%/locale/about_ko.mo
