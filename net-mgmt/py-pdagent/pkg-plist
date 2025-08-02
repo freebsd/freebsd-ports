@@ -12,7 +12,6 @@ bin/pdagentd.py
 %%PYTHON_SITELIBDIR%%/pdagent/pdagentutil.py
 %%PYTHON_SITELIBDIR%%/pdagent/pdqueue.py
 %%PYTHON_SITELIBDIR%%/pdagent/pdthread.py
-%%PYTHON_SITELIBDIR%%/pdagent/root_certs/ca_certs.pem
 %%PYTHON_SITELIBDIR%%/pdagent/sendevent.py
 %%PYTHON_SITELIBDIR%%/pdagent/thirdparty/__init__.py
 %%PYTHON_SITELIBDIR%%/pdagent/thirdparty/argparse.py
