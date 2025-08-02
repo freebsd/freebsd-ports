@@ -1316,7 +1316,6 @@
     SUBDIR += libglademm24
     SUBDIR += libgnt
     SUBDIR += libgnuregex
-    SUBDIR += libgpc
     SUBDIR += libgpkg
     SUBDIR += libgpr
     SUBDIR += libgrading

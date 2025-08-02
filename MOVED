@@ -4683,3 +4683,4 @@ net/flower||2025-08-02|Has expired: Unmaintained upstream
 net/linknx||2025-08-02|Has expired: Outdated and unsupported upstream
 www/mediawiki142||2025-08-02|Has expired: Upstream EOL
 devel/arpc||2025-08-02|Has expired: Unmaintained upstream
+devel/libgpc||2025-08-02|Has expired: No longer distributed by upstream as of August 2020
