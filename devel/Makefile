@@ -6444,7 +6444,6 @@
     SUBDIR += ros-wstool
     SUBDIR += roswell
     SUBDIR += rote
-    SUBDIR += rpc2
     SUBDIR += rpclib
     SUBDIR += rsvndump
     SUBDIR += rttr
