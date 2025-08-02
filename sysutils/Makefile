@@ -1285,6 +1285,7 @@
     SUBDIR += seatd
     SUBDIR += seatools
     SUBDIR += sec
+    SUBDIR += sensors
     SUBDIR += sensu-go
     SUBDIR += serf
     SUBDIR += setcdboot
