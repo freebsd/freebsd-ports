@@ -8435,6 +8435,7 @@
     SUBDIR += wasi-libcxx20
     SUBDIR += wasm3
     SUBDIR += wasmer
+    SUBDIR += wasm-server-runner
     SUBDIR += websocketpp
     SUBDIR += websvn
     SUBDIR += wf-config
