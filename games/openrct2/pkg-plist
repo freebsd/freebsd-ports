@@ -97,6 +97,7 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/object/official/scenario_meta/rct1dlc.scenario_meta.steel_twister_roller_coaster_competition.parkobj
 %%DATADIR%%/object/official/scenario_meta/rct1dlc.scenario_meta.suspended_roller_coaster_competition.parkobj
 %%DATADIR%%/object/official/scenario_meta/rct1dlc.scenario_meta.wooden_roller_coaster_competition.parkobj
+%%DATADIR%%/object/official/scenario_meta/rct1tw.scenario_meta.taiwan_park.parkobj
 %%DATADIR%%/object/official/scenario_meta/rct2dlc.scenario_meta.panda_world.parkobj
 %%DATADIR%%/object/official/scenario_meta/uces.scenario_meta.beneath_the_christmas_tree.parkobj
 %%DATADIR%%/object/official/scenario_meta/uces.scenario_meta.bigrock_blast.parkobj
