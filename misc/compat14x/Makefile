@@ -1,5 +1,5 @@
 PORTNAME=	compat14x
-PORTVERSION=	14.2.1402000.20250721
+PORTVERSION=	14.2.1402000.20250803
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/arrowd
 PKGNAMESUFFIX=	-${ARCH}
@@ -36,6 +36,7 @@ COMPAT_LIBS=	libasn1.so.11 \
 		libprivateheimipcc.so.11 \
 		libprivateheimipcs.so.11 \
 		libroken.so.11 \
+		libutil.so.9 \
 		libwind.so.11
 
 OPTIONS_DEFINE=	COMPAT32
