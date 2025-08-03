@@ -1,5 +1,5 @@
 PORTNAME=	freeplane
-DISTVERSION=	1.12.11
+DISTVERSION=	1.12.12
 CATEGORIES=	deskutils editors java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable
 DISTNAME=	${PORTNAME}_bin-${PORTVERSION}
@@ -29,7 +29,7 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
-		"! ( -name license\.txt -or -name *\.bat -or -name *\.exe -or -name *\.orig -or -name *\.bak -or -name freeplane.sh )"
+		"! ( -name license\.txt -or -name *\.bat -or -name *\.exe -or -name *\.orig -or -name *\.bak -or -name freeplane.sh -or -name *\.dll -or -name *\.so )"
 	${INSTALL_DATA} ${WRKDIR}/freeplane.desktop ${STAGEDIR}${DESKTOPDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/freeplane.sh ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/freeplane ${STAGEDIR}${PREFIX}/bin/
