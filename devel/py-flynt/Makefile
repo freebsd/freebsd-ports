@@ -1,5 +1,5 @@
 PORTNAME=	flynt
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.6
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -9,7 +9,8 @@ WWW=		https://github.com/ikamensh/flynt
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 
 USES=		python:3.9+
 USE_GITHUB=	yes
