@@ -60,4 +60,13 @@ PTP_MESON_ENABLED=	ptp-helper
 MESON_ARGS+=	-D ptp-helper=disabled
 .endif
 
+# Custom target to update distinfo for all gstreamer1 ports under control of
+# _GST1_VERSION set in Mk/Uses/gstreamer.mk
+makesum-all: makesum
+.for p in editing-services libav rtsp-server vaapi
+	@${MAKE} -C ${.CURDIR:H:H}/multimedia/gstreamer1-${p} makesum
+.endfor
+	@${MAKE} -C ${.CURDIR:H:H}/multimedia/gstreamer1-plugins makesum-all
+	@${MAKE} -C ${.CURDIR:H:H}/multimedia/py-gstreamer1 makesum
+
 .include <bsd.port.mk>

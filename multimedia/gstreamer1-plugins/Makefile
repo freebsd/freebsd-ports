@@ -141,7 +141,7 @@ BROKEN=		unknown DIST setting
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gstreamer-${_GST1_LIB_VER}
 
-makesum-gst1:
-	${MAKE} DIST=makesum makesum
+makesum-all:
+	@${MAKE} DIST=makesum makesum
 
 .include <bsd.port.mk>

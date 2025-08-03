@@ -39,16 +39,9 @@ _GST_VER=	${_GST_VER_DEFAULT}
 
 #== Component setup
 
-# When modifying _GST1_VERSION, be sure to also update distinfo for the
-# following ports:
-# - multimedia/gstreamer1
-# - multimedia/gstreamer1-editing-services
-# - multimedia/gstreamer1-libav
-# - multimedia/gstreamer1-plugins (via `make makesum-gst1`)
-# - multimedia/gstreamer1-rtsp-server
-# - multimedia/gstreamer1-vaapi
-# - multimedia/py-gstreamer1
-_GST1_VERSION=		1.26.3
+# When modifying _GST1_VERSION, run `make -C ${PORTSDIR}/multimedia/gstreamer1 makesum-all`
+# to update the distinfo files for the entire suite.
+_GST1_VERSION=		1.26.4
 _GST1_LIB_VER=		1.0
 _GST1_SOVERSION=	0.${_GST1_VERSION:R:E}${${_GST1_VERSION:E} > 9:?:0}${_GST1_VERSION:E}.0
 
@@ -355,7 +348,7 @@ gst-rtsp-server_IMPL=	#
 
 gst-rust_PORT=		multimedia/gstreamer${_GST_VER}-plugins-rust
 gst-rust_IMPL=		#
-gst-rust_GST1_VERSION=	0.13.6
+gst-rust_GST1_VERSION=	0.14.0
 gst-rust_VERSION=	${gst-rust_GST${_GST_VER}_VERSION}
 
 gst-smoothstreaming_PORT=	multimedia/gstreamer${_GST_VER}-plugins-smoothstreaming

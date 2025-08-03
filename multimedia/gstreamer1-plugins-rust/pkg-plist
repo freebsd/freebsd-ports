@@ -4,12 +4,14 @@ lib/gstreamer-1.0/libgstcdg.so
 lib/gstreamer-1.0/libgstclaxon.so
 %%CSOUND%%lib/gstreamer-1.0/libgstcsound.so
 %%DAV1D%%lib/gstreamer-1.0/libgstdav1d.so
+lib/gstreamer-1.0/libgstelevenlabs.so
 lib/gstreamer-1.0/libgstfallbackswitch.so
 lib/gstreamer-1.0/libgstffv1.so
 lib/gstreamer-1.0/libgstfmp4.so
 lib/gstreamer-1.0/libgstgif.so
 lib/gstreamer-1.0/libgstgopbuffer.so
 %%GTK4%%lib/gstreamer-1.0/libgstgtk4.so
+lib/gstreamer-1.0/libgsthlsmultivariantsink.so
 lib/gstreamer-1.0/libgsthlssink3.so
 lib/gstreamer-1.0/libgsthsv.so
 lib/gstreamer-1.0/libgstjson.so
@@ -24,6 +26,7 @@ lib/gstreamer-1.0/libgstraptorq.so
 lib/gstreamer-1.0/libgstrav1e.so
 lib/gstreamer-1.0/libgstregex.so
 lib/gstreamer-1.0/libgstreqwest.so
+lib/gstreamer-1.0/libgstrsanalytics.so
 lib/gstreamer-1.0/libgstrsaudiofx.so
 %%PANGO%%lib/gstreamer-1.0/libgstrsclosedcaption.so
 lib/gstreamer-1.0/libgstrsfile.so
@@ -38,7 +41,9 @@ lib/gstreamer-1.0/libgstrstracers.so
 %%WEBP%%lib/gstreamer-1.0/libgstrswebp.so
 lib/gstreamer-1.0/libgstrswebrtc.so
 %%SODIUM%%lib/gstreamer-1.0/libgstsodium.so
+lib/gstreamer-1.0/libgstspeechmatics.so
 lib/gstreamer-1.0/libgstspotify.so
+lib/gstreamer-1.0/libgststreamgrouper.so
 lib/gstreamer-1.0/libgsttextahead.so
 lib/gstreamer-1.0/libgsttextwrap.so
 lib/gstreamer-1.0/libgstthreadshare.so
@@ -50,12 +55,14 @@ libdata/pkgconfig/gstcdg.pc
 libdata/pkgconfig/gstclaxon.pc
 %%CSOUND%%libdata/pkgconfig/gstcsound.pc
 %%DAV1D%%libdata/pkgconfig/gstdav1d.pc
+libdata/pkgconfig/gstelevenlabs.pc
 libdata/pkgconfig/gstfallbackswitch.pc
 libdata/pkgconfig/gstffv1.pc
 libdata/pkgconfig/gstfmp4.pc
 libdata/pkgconfig/gstgif.pc
 libdata/pkgconfig/gstgopbuffer.pc
 %%GTK4%%libdata/pkgconfig/gstgtk4.pc
+libdata/pkgconfig/gsthlsmultivariantsink.pc
 libdata/pkgconfig/gsthlssink3.pc
 libdata/pkgconfig/gsthsv.pc
 libdata/pkgconfig/gstjson.pc
@@ -70,6 +77,7 @@ libdata/pkgconfig/gstraptorq.pc
 libdata/pkgconfig/gstrav1e.pc
 libdata/pkgconfig/gstregex.pc
 libdata/pkgconfig/gstreqwest.pc
+libdata/pkgconfig/gstrsanalytics.pc
 libdata/pkgconfig/gstrsaudiofx.pc
 %%PANGO%%libdata/pkgconfig/gstrsclosedcaption.pc
 libdata/pkgconfig/gstrsfile.pc
@@ -84,7 +92,9 @@ libdata/pkgconfig/gstrstracers.pc
 %%WEBP%%libdata/pkgconfig/gstrswebp.pc
 libdata/pkgconfig/gstrswebrtc.pc
 %%SODIUM%%libdata/pkgconfig/gstsodium.pc
+libdata/pkgconfig/gstspeechmatics.pc
 libdata/pkgconfig/gstspotify.pc
+libdata/pkgconfig/gststreamgrouper.pc
 libdata/pkgconfig/gsttextahead.pc
 libdata/pkgconfig/gsttextwrap.pc
 libdata/pkgconfig/gstthreadshare.pc
