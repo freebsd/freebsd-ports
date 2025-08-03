@@ -1,5 +1,5 @@
 PORTNAME=	broom
-DISTVERSION=	1.0.8
+DISTVERSION=	1.0.9
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	R-cran-backports>0:math/R-cran-backports \
 		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle \
 		R-cran-purrr>0:devel/R-cran-purrr \
-		R-cran-rlang>0:devel/R-cran-rlang \
+		R-cran-rlang>=1.1.0:devel/R-cran-rlang \
 		R-cran-stringr>0:textproc/R-cran-stringr \
 		R-cran-tibble>=3.0.0:devel/R-cran-tibble \
 		R-cran-tidyr>=1.0.0:devel/R-cran-tidyr
