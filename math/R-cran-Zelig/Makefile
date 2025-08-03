@@ -10,9 +10,6 @@ WWW=		https://gking.harvard.edu/zelig
 
 LICENSE=	GPLv3+
 
-DEPRECATED=	Depends on expirnig finance/R-cran-AER
-EXPIRATION_DATE=2025-09-30
-
 BUILD_DEPENDS=	R-cran-AER>=0:finance/R-cran-AER \
 		R-cran-Amelia>=0:math/R-cran-Amelia \
 		R-cran-sandwich>=0:math/R-cran-sandwich \
