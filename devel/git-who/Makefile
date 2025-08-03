@@ -1,6 +1,7 @@
 PORTNAME=	git-who
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	nxjoseph@protonmail.com
