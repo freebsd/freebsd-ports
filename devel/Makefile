@@ -8369,6 +8369,7 @@
     SUBDIR += transient-devel
     SUBDIR += transwarp
     SUBDIR += tree-sitter
+    SUBDIR += tree-sitter-cli
     SUBDIR += tree-sitter-graph
     SUBDIR += treefmt
     SUBDIR += treepy.el
