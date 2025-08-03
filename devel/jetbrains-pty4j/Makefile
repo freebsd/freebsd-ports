@@ -1,5 +1,5 @@
 PORTNAME=	pty4j
-PORTVERSION=	0.13.2
+PORTVERSION=	0.13.10
 CATEGORIES=	devel java
 PKGNAMEPREFIX=	jetbrains-
 DIST_SUBDIR=	jetbrains
@@ -18,7 +18,7 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	JetBrains
 GH_PROJECT=	pty4j
-GH_TAGNAME=	1bc7a1207aca1c2116d8ae0d13f829d465a057a3
+GH_TAGNAME=	ff79291d0f511137a0489e523e132db558cf92ab
 
 MAKEFILE=	Makefile_freebsd
 ALL_TARGET=	linux_${ARCH:S/amd64/x86_64/:S/powerpc64le/ppc64le/}
