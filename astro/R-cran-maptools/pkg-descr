@@ -1,6 +1,0 @@
-Set of tools for manipulating and reading geographic data, in
-particular ESRI shapefiles; C code used from shapelib. It includes
-binary access to GSHHS shoreline files. The package also provides
-interface wrappers for exchanging spatial objects with packages
-such as PBSmapping, spatstat, maps, RArcInfo, Stata tmap, WinBUGS,
-Mondrian, and others.

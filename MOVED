@@ -4704,3 +4704,4 @@ devel/ossp-ex||2025-08-02|Has expired: Abandoned upstream, last release in 2007
 security/openiked-portable|security/openiked|2025-08-02|Merged into security/openiked
 devel/bmake||2025-08-03|Has expired: Outdated and redundant
 devel/bmkdep||2025-08-03|Has expired: Outdated and redundant
+astro/R-cran-maptools||2025-08-03|Has expired: Fails to build and upstream recommends using math/R-cran-sf or math/R-cran-terra instead
