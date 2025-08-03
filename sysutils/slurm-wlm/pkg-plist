@@ -255,3 +255,4 @@ sbin/slurmctld
 sbin/slurmd
 sbin/slurmdbd
 sbin/slurmstepd
+@dir(%%USERS%%,%%GROUPS%%,700) /var/spool/slurmctld
