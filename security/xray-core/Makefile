@@ -1,9 +1,9 @@
 PORTNAME=	xray-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.3.6
+DISTVERSION=	25.7.26
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/v2fly/geoip/releases/download/202503050126/:geoip \
-		https://github.com/v2fly/domain-list-community/releases/download/20250307074130/:geosite
+MASTER_SITES=	https://github.com/v2fly/geoip/releases/download/202507050144/:geoip \
+		https://github.com/v2fly/domain-list-community/releases/download/20250627153051/:geosite
 DISTFILES=	geoip.dat:geoip \
 		dlc.dat:geosite
 EXTRACT_ONLY=	XTLS-Xray-core-v${DISTVERSION}_GH0.tar.gz
