@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+
+20250804:
+  AFFECTS: users of databases/adminer
+  AUTHOR: pkaipila@gmail.com
+
+  Flavors have been added to the adminer port. Due to the change in PKGNAME,
+  pkg will not notice the update. Replace the package with a flavored one
+  such as php84-adminer.
+
 20250728:
   AFFECTS: users of www/privatebin
   AUTHOR: dvl@FreeBSD.org
@@ -13,7 +22,6 @@ you update your ports collection, before attempting any port upgrades.
   and removing legacy features.
 
   See details at https://github.com/PrivateBin/PrivateBin/releases/tag/2.0.0
-
 
 20250720:
   AFFECTS: users of www/phpmyfaq
