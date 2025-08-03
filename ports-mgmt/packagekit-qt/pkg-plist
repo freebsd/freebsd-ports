@@ -17,5 +17,5 @@ lib/cmake/packagekitqt%%QT_VER%%/packagekitqt%%QT_VER%%-config-version.cmake
 lib/cmake/packagekitqt%%QT_VER%%/packagekitqt%%QT_VER%%-config.cmake
 lib/libpackagekitqt%%QT_VER%%.so
 lib/libpackagekitqt%%QT_VER%%.so.1
-lib/libpackagekitqt%%QT_VER%%.so.1.1.2
+lib/libpackagekitqt%%QT_VER%%.so.%%SHLIB_VER%%
 libdata/pkgconfig/packagekitqt%%QT_VER%%.pc

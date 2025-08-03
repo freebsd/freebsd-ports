@@ -1,6 +1,5 @@
 PORTNAME=	PackageKit-Qt
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.1.3
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	https://www.freedesktop.org/software/PackageKit/releases/
 PKGNAMESUFFIX=	6
@@ -19,8 +18,7 @@ CPE_VENDOR=	packagekit_project
 USE_LDCONFIG=	yes
 USE_QT=		base
 
-CMAKE_ARGS=	-DBUILD_WITH_QT6:BOOL=TRUE
-
-PLIST_SUB=	QT_VER=6
+PLIST_SUB=	QT_VER=6 \
+		SHLIB_VER=${PORTVERSION}
 
 .include <bsd.port.mk>
