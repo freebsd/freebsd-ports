@@ -1,4 +1,4 @@
-TIMESTAMP = 1751351227
+TIMESTAMP = 1754183213
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
 SIZE (rust/crates/adler2-2.0.0.crate) = 13529
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
@@ -613,5 +613,5 @@ SHA256 (rust/crates/zlib-rs-0.5.1.crate) = 626bd9fa9734751fc50d6060752170984d705
 SIZE (rust/crates/zlib-rs-0.5.1.crate) = 193055
 SHA256 (rust/crates/zopfli-0.8.1.crate) = e5019f391bac5cf252e93bbcc53d039ffd62c7bfb7c150414d61369afe57e946
 SIZE (rust/crates/zopfli-0.8.1.crate) = 50972
-SHA256 (medialab-xan-0.51.0_GH0.tar.gz) = 0013f2edbfde15d4217e041b5eb156ae372de9b7df8b16cefbe010ac0c816c96
-SIZE (medialab-xan-0.51.0_GH0.tar.gz) = 5881000
+SHA256 (medialab-xan-0.52.0_GH0.tar.gz) = da4ee61b829284948841f88a7ce01078067aae29f0965311f0c4632467ff8721
+SIZE (medialab-xan-0.52.0_GH0.tar.gz) = 5898409
