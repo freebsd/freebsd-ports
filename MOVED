@@ -4702,3 +4702,4 @@ devel/ossp-cfg||2025-08-02|Has expired: Abandoned upstream, last release in 2006
 net/ossp-sa||2025-08-02|Removed, depends on expired devel/ossp-ex
 devel/ossp-ex||2025-08-02|Has expired: Abandoned upstream, last release in 2007
 security/openiked-portable|security/openiked|2025-08-02|Merged into security/openiked
+devel/bmake||2025-08-03|Has expired: Outdated and redundant

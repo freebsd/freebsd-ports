@@ -319,7 +319,6 @@
     SUBDIR += bloaty
     SUBDIR += bloomberg-bde
     SUBDIR += blueprint-compiler
-    SUBDIR += bmake
     SUBDIR += bmk
     SUBDIR += bmkdep
     SUBDIR += bnf
