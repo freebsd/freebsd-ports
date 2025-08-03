@@ -48,6 +48,7 @@
     SUBDIR += db
     SUBDIR += db18
     SUBDIR += db5
+    SUBDIR += dbeaver
     SUBDIR += dbf
     SUBDIR += dbh
     SUBDIR += dbixx

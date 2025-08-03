@@ -1,0 +1,10 @@
+Free multi-platform database tool for developers, SQL programmers, database
+administrators and analysts.
+
+ * Has a lot of features including schema editor, SQL editor, data editor, AI
+   integration, ER diagrams, data export/import/migration, SQL execution plans,
+   database administration tools, database dashboards, Spatial data viewer,
+   proxy and SSH tunnelling, custom database drivers editor, etc.
+ * Out of the box supports more than 100 database drivers.
+ * Supports any database which has JDBC or ODBC driver (basically - almost all
+   existing databases).

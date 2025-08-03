@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export JAVA_HOME=${JAVA_HOME:-"%%JAVA_HOME%%"}
+
+exec "%%DATADIR%%/dbeaver" "$@"

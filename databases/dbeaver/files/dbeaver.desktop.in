@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=Dbeaver community edition
+GenericName=Dbeaver community edition
+Comment=Dbever Development Environment
+Icon=%%DATADIR%%/dbeaver.png
+Exec=%%PREFIX%%/bin/dbeaver
+Terminal=false
+StartupNotify=true
+Categories=Application;Development;
