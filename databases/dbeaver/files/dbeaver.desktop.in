@@ -2,9 +2,9 @@
 Version=1.0
 Encoding=UTF-8
 Type=Application
-Name=Dbeaver community edition
-GenericName=Dbeaver community edition
-Comment=Dbever Development Environment
+Name=DBeaver community edition
+GenericName=DBeaver community edition
+Comment=DBeaver Development Environment
 Icon=%%DATADIR%%/dbeaver.png
 Exec=%%PREFIX%%/bin/dbeaver
 Terminal=false

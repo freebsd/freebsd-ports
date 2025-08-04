@@ -1,5 +1,6 @@
 PORTNAME=	dbeaver
 DISTVERSION=	25.1.3
+PORTREVISION=	1
 CATEGORIES=	databases java
 
 MAINTAINER=	freebsd@sysctl.cz
