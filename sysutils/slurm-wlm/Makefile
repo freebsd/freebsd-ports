@@ -1,11 +1,11 @@
 PORTNAME=	slurm
 DISTVERSION=	23.11.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rikka.goering@outlook.de
 COMMENT=	Simple Linux Utility for Resource Management
 WWW=		https://slurm.schedmd.com/
 
