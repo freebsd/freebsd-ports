@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pytest_regtest-${PORTVERSION}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pytest plugin for regression tests
 WWW=		https://gitlab.com/uweschmitt/pytest-regtest \
 		https://pypi.org/project/pytest-regtest/
