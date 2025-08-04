@@ -16,12 +16,14 @@ lib/cairo-lang/corelib/src/dict.cairo
 lib/cairo-lang/corelib/src/ec.cairo
 lib/cairo-lang/corelib/src/ecdsa.cairo
 lib/cairo-lang/corelib/src/felt_252.cairo
+lib/cairo-lang/corelib/src/fixed_size_array.cairo
 lib/cairo-lang/corelib/src/fmt.cairo
 lib/cairo-lang/corelib/src/gas.cairo
 lib/cairo-lang/corelib/src/hash.cairo
 lib/cairo-lang/corelib/src/integer.cairo
 lib/cairo-lang/corelib/src/internal.cairo
 lib/cairo-lang/corelib/src/internal/bounded_int.cairo
+lib/cairo-lang/corelib/src/internal/num.cairo
 lib/cairo-lang/corelib/src/iter.cairo
 lib/cairo-lang/corelib/src/iter/adapters.cairo
 lib/cairo-lang/corelib/src/iter/adapters/chain.cairo
@@ -47,9 +49,11 @@ lib/cairo-lang/corelib/src/num/traits/bounded.cairo
 lib/cairo-lang/corelib/src/num/traits/one.cairo
 lib/cairo-lang/corelib/src/num/traits/ops.cairo
 lib/cairo-lang/corelib/src/num/traits/ops/checked.cairo
+lib/cairo-lang/corelib/src/num/traits/ops/divrem.cairo
 lib/cairo-lang/corelib/src/num/traits/ops/overflowing.cairo
 lib/cairo-lang/corelib/src/num/traits/ops/pow.cairo
 lib/cairo-lang/corelib/src/num/traits/ops/saturating.cairo
+lib/cairo-lang/corelib/src/num/traits/ops/split.cairo
 lib/cairo-lang/corelib/src/num/traits/ops/sqrt.cairo
 lib/cairo-lang/corelib/src/num/traits/ops/widemul.cairo
 lib/cairo-lang/corelib/src/num/traits/ops/widesquare.cairo
@@ -69,6 +73,7 @@ lib/cairo-lang/corelib/src/prelude.cairo
 lib/cairo-lang/corelib/src/prelude/v2023_01.cairo
 lib/cairo-lang/corelib/src/prelude/v2023_10.cairo
 lib/cairo-lang/corelib/src/prelude/v2024_07.cairo
+lib/cairo-lang/corelib/src/qm31.cairo
 lib/cairo-lang/corelib/src/result.cairo
 lib/cairo-lang/corelib/src/serde.cairo
 lib/cairo-lang/corelib/src/sha256.cairo
@@ -76,6 +81,7 @@ lib/cairo-lang/corelib/src/starknet.cairo
 lib/cairo-lang/corelib/src/starknet/account.cairo
 lib/cairo-lang/corelib/src/starknet/class_hash.cairo
 lib/cairo-lang/corelib/src/starknet/contract_address.cairo
+lib/cairo-lang/corelib/src/starknet/deployment.cairo
 lib/cairo-lang/corelib/src/starknet/eth_address.cairo
 lib/cairo-lang/corelib/src/starknet/eth_signature.cairo
 lib/cairo-lang/corelib/src/starknet/event.cairo
@@ -108,6 +114,7 @@ lib/cairo-lang/corelib/src/test/dict_test.cairo
 lib/cairo-lang/corelib/src/test/ec_test.cairo
 lib/cairo-lang/corelib/src/test/felt_test.cairo
 lib/cairo-lang/corelib/src/test/fmt_test.cairo
+lib/cairo-lang/corelib/src/test/gas_reserve_test.cairo
 lib/cairo-lang/corelib/src/test/hash_test.cairo
 lib/cairo-lang/corelib/src/test/integer_test.cairo
 lib/cairo-lang/corelib/src/test/iter_test.cairo
@@ -119,15 +126,19 @@ lib/cairo-lang/corelib/src/test/language_features/const_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/early_return_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/for_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/glob_use_test.cairo
+lib/cairo-lang/corelib/src/test/language_features/macro_test.cairo
+lib/cairo-lang/corelib/src/test/language_features/match_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/panics_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/trait_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/while_test.cairo
+lib/cairo-lang/corelib/src/test/let_else_test.cairo
 lib/cairo-lang/corelib/src/test/math_test.cairo
 lib/cairo-lang/corelib/src/test/nullable_test.cairo
 lib/cairo-lang/corelib/src/test/num_test.cairo
 lib/cairo-lang/corelib/src/test/option_test.cairo
 lib/cairo-lang/corelib/src/test/plugins_test.cairo
 lib/cairo-lang/corelib/src/test/print_test.cairo
+lib/cairo-lang/corelib/src/test/qm31_test.cairo
 lib/cairo-lang/corelib/src/test/range_test.cairo
 lib/cairo-lang/corelib/src/test/result_test.cairo
 lib/cairo-lang/corelib/src/test/secp256k1_test.cairo
@@ -139,4 +150,5 @@ lib/cairo-lang/corelib/src/test/to_byte_array_test.cairo
 lib/cairo-lang/corelib/src/testing.cairo
 lib/cairo-lang/corelib/src/to_byte_array.cairo
 lib/cairo-lang/corelib/src/traits.cairo
+lib/cairo-lang/corelib/src/tuple.cairo
 lib/cairo-lang/corelib/src/zeroable.cairo
