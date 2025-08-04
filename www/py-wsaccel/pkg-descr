@@ -1,3 +1,0 @@
-WSAccell is WebSocket accelerator for AutobahnPython, ws4py and Tornado.
-
-WSAccell replaces per-byte process in them with Cython version.

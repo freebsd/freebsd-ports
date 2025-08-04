@@ -1976,7 +1976,6 @@
     SUBDIR += py-wikitools
     SUBDIR += py-woob
     SUBDIR += py-woob-qt
-    SUBDIR += py-wsaccel
     SUBDIR += py-wsgidav
     SUBDIR += py-xandikos
     SUBDIR += py-xyzservices

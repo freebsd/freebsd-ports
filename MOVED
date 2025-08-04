@@ -4708,3 +4708,4 @@ astro/R-cran-maptools||2025-08-03|Has expired: Fails to build and upstream recom
 security/openssl31-quictls||2025-08-04|Has expired: End-of-Life, please switch to security/quictls or OpenSSL 3.5
 security/openssl31||2025-08-04|Has expired: End-of-Life, will be removed when new vulnerabilities are reported or at end of quarter. Upgrade to security/openssl35 latest LTS
 databases/pear-DoctrineDBAL||2025-08-04|Has expired: Upstream no longer serves through PEAR channel and has been moved to Composer
+www/py-wsaccel||2025-08-04|Has expired: Upstream ceased development
