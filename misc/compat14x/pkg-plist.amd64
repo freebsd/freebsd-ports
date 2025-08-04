@@ -16,6 +16,7 @@ lib/compat/libmd.so.6
 lib/compat/libprivateheimipcc.so.11
 lib/compat/libprivateheimipcs.so.11
 lib/compat/libroken.so.11
+lib/compat/libutil.so.9
 lib/compat/libwind.so.11
 %%COMPAT32%%lib32/compat/libasn1.so.11
 %%COMPAT32%%lib32/compat/libcom_err.so.5
@@ -35,4 +36,5 @@ lib/compat/libwind.so.11
 %%COMPAT32%%lib32/compat/libprivateheimipcc.so.11
 %%COMPAT32%%lib32/compat/libprivateheimipcs.so.11
 %%COMPAT32%%lib32/compat/libroken.so.11
+%%COMPAT32%%lib32/compat/libutil.so.9
 %%COMPAT32%%lib32/compat/libwind.so.11

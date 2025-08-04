@@ -16,4 +16,5 @@ lib/compat/libmd.so.6
 lib/compat/libprivateheimipcc.so.11
 lib/compat/libprivateheimipcs.so.11
 lib/compat/libroken.so.11
+lib/compat/libutil.so.9
 lib/compat/libwind.so.11
