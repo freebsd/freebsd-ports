@@ -1,7 +1,6 @@
 PORTNAME=	sudo-rs
-PORTVERSION=	0.2.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	0.2.8
 CATEGORIES=	security
 
 MAINTAINER=	marc@trifectatech.org
@@ -13,22 +12,15 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-FLAVORS=		default coexist
-FLAVOR?=		${FLAVORS:[1]}
-coexist_PKGNAMESUFFIX=	-coexist
-coexist_DESCR=		pkg-descr-coexist
-
 USES=		cargo
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	trifectatechfoundation
 
-CARGO_CRATES=	diff-0.1.13 \
-		glob-0.3.2 \
-		libc-0.2.174 \
-		log-0.4.27 \
-		pretty_assertions-1.4.1 \
-		yansi-1.0.1
+FLAVORS=		default coexist
+FLAVOR?=		${FLAVORS:[1]}
+
+coexist_PKGNAMESUFFIX=	-coexist
+coexist_DESCR=		pkg-descr-coexist
 
 .if !defined(USER) || ${USER} == root
 CARGO_TEST=	no
@@ -42,10 +34,9 @@ PLIST_SUB+=		NO_COEXIST=""
 RS_SUFFIX=		-rs
 PLIST_SUB+=		NO_COEXIST="@comment "
 .endif
-PLIST_SUB+=		RS_SUFFIX=${RS_SUFFIX}
 
-PORTDOCS=	CHANGELOG.md CONTRIBUTING.md COPYRIGHT LICENSE-* README.md \
-		SECURITY.md
+PLIST_SUB+=	RS_SUFFIX=${RS_SUFFIX}
+PORTDOCS=	CHANGELOG.md CONTRIBUTING.md COPYRIGHT LICENSE-* README.md SECURITY.md
 
 OPTIONS_DEFINE=	DOCS
 
@@ -54,6 +45,8 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/man/sudo.8.man ${STAGEDIR}${PREFIX}/share/man/man8/sudo${RS_SUFFIX}.8
 	${INSTALL_MAN} ${WRKSRC}/docs/man/visudo.8.man ${STAGEDIR}${PREFIX}/share/man/man8/visudo${RS_SUFFIX}.8
 	${INSTALL_MAN} ${WRKSRC}/docs/man/sudoers.5.man ${STAGEDIR}${PREFIX}/share/man/man5/sudoers${RS_SUFFIX}.5
+	${LN} -s sudo${RS_SUFFIX} ${STAGEDIR}${PREFIX}/bin/sudoedit${RS_SUFFIX}
+	${LN} -s sudo${RS_SUFFIX}.8 ${STAGEDIR}${PREFIX}/share/man/man8/sudoedit${RS_SUFFIX}.8
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/sudoers.d
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/pam.d
 	${MKDIR} ${STAGEDIR}/var/run/sudo
