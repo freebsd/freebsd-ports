@@ -1,6 +1,6 @@
 PORTNAME=	polars
 DISTVERSIONPREFIX=	py-
-DISTVERSION=	1.31.0
+DISTVERSION=	1.32.0
 CATEGORIES=	misc
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -56,15 +56,15 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.0 \
 		avro-schema-0.3.0 \
-		aws-config-1.8.2 \
+		aws-config-1.8.3 \
 		aws-credential-types-1.2.4 \
-		aws-lc-rs-1.13.2 \
+		aws-lc-rs-1.13.3 \
 		aws-lc-sys-0.30.0 \
 		aws-runtime-1.5.9 \
-		aws-sdk-s3-1.98.0 \
-		aws-sdk-sso-1.76.0 \
-		aws-sdk-ssooidc-1.77.0 \
-		aws-sdk-sts-1.78.0 \
+		aws-sdk-s3-1.100.0 \
+		aws-sdk-sso-1.78.0 \
+		aws-sdk-ssooidc-1.79.0 \
+		aws-sdk-sts-1.80.0 \
 		aws-sigv4-1.3.3 \
 		aws-smithy-async-1.2.5 \
 		aws-smithy-checksums-0.60.13 \
@@ -76,11 +76,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		aws-smithy-json-0.61.4 \
 		aws-smithy-observability-0.1.3 \
 		aws-smithy-query-0.60.7 \
-		aws-smithy-runtime-1.8.4 \
-		aws-smithy-runtime-api-1.8.3 \
+		aws-smithy-runtime-1.8.5 \
+		aws-smithy-runtime-api-1.8.5 \
 		aws-smithy-types-1.3.2 \
 		aws-smithy-xml-0.60.10 \
-		aws-types-1.3.7 \
+		aws-types-1.3.8 \
 		backtrace-0.3.75 \
 		base16ct-0.1.1 \
 		base64-0.21.7 \
@@ -88,14 +88,15 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		base64-simd-0.8.0 \
 		base64ct-1.8.0 \
 		bigdecimal-0.4.8 \
-		bincode-1.3.3 \
+		bincode-2.0.1 \
+		bincode_derive-2.0.1 \
 		bindgen-0.69.5 \
 		bitflags-2.9.1 \
 		blake3-1.8.2 \
 		block-buffer-0.10.4 \
 		boxcar-0.2.13 \
-		brotli-7.0.0 \
-		brotli-decompressor-4.0.3 \
+		brotli-8.0.1 \
+		brotli-decompressor-5.0.0 \
 		bumpalo-3.19.0 \
 		bytemuck-1.23.1 \
 		bytemuck_derive-1.10.0 \
@@ -103,7 +104,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bytes-1.10.1 \
 		bytes-utils-0.1.4 \
 		castaway-0.2.4 \
-		cc-1.2.30 \
+		cc-1.2.31 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.1 \
 		cfg_aliases-0.2.1 \
@@ -113,7 +114,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		clipboard-win-5.4.1 \
 		cmake-0.1.54 \
 		comfy-table-7.1.4 \
-		compact_str-0.8.1 \
+		compact_str-0.9.0 \
 		concurrent-queue-2.5.0 \
 		const-oid-0.9.6 \
 		constant_time_eq-0.3.1 \
@@ -146,8 +147,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		digest-0.10.7 \
 		dispatch2-0.3.0 \
 		displaydoc-0.2.5 \
+		dissimilar-1.0.10 \
 		dunce-1.0.5 \
-		dyn-clone-1.0.19 \
+		dyn-clone-1.0.20 \
 		ecdsa-0.14.8 \
 		either-1.15.0 \
 		elliptic-curve-0.12.3 \
@@ -155,7 +157,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		errno-0.3.13 \
 		error-code-3.3.2 \
 		ethnum-1.5.2 \
-		event-listener-5.4.0 \
+		event-listener-5.4.1 \
 		event-listener-strategy-0.5.4 \
 		fallible-streaming-iterator-0.1.9 \
 		fast-float2-0.2.3 \
@@ -188,7 +190,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		group-0.12.1 \
 		h2-0.3.27 \
 		h2-0.4.11 \
-		halfbrown-0.2.5 \
+		halfbrown-0.3.0 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.4 \
@@ -209,7 +211,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		hyper-rustls-0.24.2 \
 		hyper-rustls-0.27.7 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.15 \
+		hyper-util-0.1.16 \
 		iana-time-zone-0.1.63 \
 		iana-time-zone-haiku-0.1.2 \
 		icu_collections-2.0.0 \
@@ -225,9 +227,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		indexmap-2.10.0 \
 		indoc-2.0.6 \
 		inventory-0.3.20 \
-		io-uring-0.7.8 \
+		io-uring-0.7.9 \
 		ipnet-2.11.0 \
 		iri-string-0.7.8 \
+		iter-read-1.1.0 \
 		itertools-0.10.5 \
 		itertools-0.12.1 \
 		itertools-0.14.0 \
@@ -270,10 +273,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		nom-7.1.3 \
 		now-0.1.3 \
 		ntapi-0.4.1 \
+		num-0.4.3 \
 		num-bigint-0.4.6 \
 		num-complex-0.4.6 \
 		num-conv-0.1.0 \
 		num-integer-0.1.46 \
+		num-iter-0.1.45 \
+		num-rational-0.4.2 \
 		num-traits-0.2.19 \
 		numpy-0.25.0 \
 		objc2-0.6.1 \
@@ -311,7 +317,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		potential_utf-0.1.2 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
-		prettyplease-0.2.35 \
+		prettyplease-0.2.36 \
 		proc-macro2-1.0.95 \
 		proptest-1.7.0 \
 		prost-0.11.9 \
@@ -323,7 +329,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pyo3-macros-0.25.1 \
 		pyo3-macros-backend-0.25.1 \
 		quad-rand-0.2.3 \
-		quick-xml-0.38.0 \
+		quick-xml-0.38.1 \
 		quinn-0.11.8 \
 		quinn-proto-0.11.12 \
 		quinn-udp-0.5.13 \
@@ -335,7 +341,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
 		rand_core-0.9.3 \
-		rand_distr-0.4.3 \
+		rand_distr-0.5.1 \
 		rand_xorshift-0.4.0 \
 		raw-cpuid-11.5.0 \
 		rawpointer-0.2.1 \
@@ -343,7 +349,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rayon-core-1.12.1 \
 		recursive-0.1.1 \
 		recursive-proc-macro-impl-0.1.1 \
-		redox_syscall-0.5.14 \
+		redox_syscall-0.5.17 \
 		ref-cast-1.0.24 \
 		ref-cast-impl-1.0.24 \
 		regex-1.11.1 \
@@ -356,14 +362,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rle-decode-fast-1.0.3 \
 		rmp-0.8.14 \
 		rmp-serde-1.3.0 \
-		rustc-demangle-0.1.25 \
+		rustc-demangle-0.1.26 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
 		rustix-1.0.8 \
 		rustls-0.21.12 \
-		rustls-0.23.29 \
+		rustls-0.23.31 \
 		rustls-native-certs-0.6.3 \
 		rustls-native-certs-0.8.1 \
 		rustls-pemfile-1.0.4 \
@@ -385,27 +391,30 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		security-framework-sys-2.14.0 \
 		semver-1.0.26 \
 		serde-1.0.219 \
+		serde-pickle-1.2.0 \
 		serde_bytes-0.11.17 \
 		serde_derive-1.0.219 \
 		serde_derive_internals-0.29.1 \
 		serde_ignored-0.1.12 \
-		serde_json-1.0.141 \
+		serde_json-1.0.142 \
+		serde_spanned-1.0.0 \
 		serde_urlencoded-0.7.1 \
 		sha1-0.10.6 \
 		sha2-0.10.9 \
 		shlex-1.3.0 \
 		signal-hook-0.3.18 \
-		signal-hook-registry-1.4.5 \
+		signal-hook-registry-1.4.6 \
 		signature-1.6.4 \
-		simd-json-0.14.3 \
+		simd-json-0.15.1 \
 		simdutf8-0.1.5 \
 		siphasher-1.0.1 \
-		skiplist-0.5.1 \
+		skiplist-0.6.0 \
 		slab-0.4.10 \
 		slotmap-1.0.7 \
 		smallvec-1.15.1 \
 		snap-1.1.1 \
 		socket2-0.5.10 \
+		socket2-0.6.0 \
 		spki-0.6.0 \
 		sqlparser-0.53.0 \
 		stable_deref_trait-1.2.0 \
@@ -415,7 +424,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		streaming-iterator-0.1.9 \
 		strength_reduce-0.2.4 \
 		strum-0.26.3 \
+		strum-0.27.2 \
 		strum_macros-0.26.4 \
+		strum_macros-0.27.2 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
 		syn-2.0.104 \
@@ -423,7 +434,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		synstructure-0.13.2 \
 		sysinfo-0.33.1 \
 		target-lexicon-0.13.2 \
+		target-triple-0.1.4 \
 		tempfile-3.20.0 \
+		termcolor-1.4.1 \
 		thiserror-1.0.69 \
 		thiserror-2.0.12 \
 		thiserror-impl-1.0.69 \
@@ -434,12 +447,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinystr-0.8.1 \
 		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.46.1 \
+		tokio-1.47.1 \
 		tokio-macros-2.5.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-rustls-0.26.2 \
-		tokio-util-0.7.15 \
+		tokio-util-0.7.16 \
+		toml-0.9.4 \
+		toml_datetime-0.7.0 \
+		toml_parser-1.0.1 \
+		toml_writer-1.0.2 \
 		tower-0.5.2 \
 		tower-http-0.6.6 \
 		tower-layer-0.3.3 \
@@ -448,6 +465,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tracing-attributes-0.1.30 \
 		tracing-core-0.1.34 \
 		try-lock-0.2.5 \
+		trybuild-1.0.110 \
 		twox-hash-2.1.1 \
 		typed-builder-0.19.1 \
 		typed-builder-macro-0.19.1 \
@@ -460,13 +478,15 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unicode-width-0.2.1 \
 		unindent-0.2.4 \
 		untrusted-0.9.0 \
+		unty-0.0.4 \
 		url-2.5.4 \
 		urlencoding-2.1.3 \
 		utf8_iter-1.0.4 \
 		uuid-1.17.0 \
-		value-trait-0.10.1 \
+		value-trait-0.11.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
+		virtue-0.0.18 \
 		vsimd-0.8.0 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
@@ -502,7 +522,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows-sys-0.60.2 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.2 \
+		windows-targets-0.53.3 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_gnullvm-0.53.0 \
@@ -526,6 +546,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
+		winnow-0.7.12 \
 		wit-bindgen-rt-0.39.0 \
 		writeable-0.6.1 \
 		x11rb-0.13.1 \
@@ -545,7 +566,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zlib-rs-0.5.1 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
-		zstd-sys-2.0.15+zstd.1.5.7
+		zstd-sys-2.0.15+zstd.1.5.7 \
+		tikv-jemalloc-sys,tikv-jemallocator@git+https://github.com/pola-rs/jemallocator?rev=c7991e5bb6b3e9f79db6b0f48dcda67c5c3d2936\#c7991e5bb6b3e9f79db6b0f48dcda67c5c3d2936
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
