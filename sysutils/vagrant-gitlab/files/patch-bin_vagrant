@@ -1,0 +1,12 @@
+--- bin/vagrant.orig	2019-02-27 15:35:56.000000000 +0000
++++ bin/vagrant	2019-03-11 03:50:43.415883000 +0000
+@@ -5,6 +5,9 @@
+ # initializing which have historically resulted in stack traces.
+ Signal.trap("INT") { abort }
+ 
++ENV["VAGRANT_INSTALLER_ENV"] = 'true'
++ENV["VAGRANT_INSTALLER_EMBEDDED_DIR"] = '@PREFIX@/share/vagrant/embedded'
++
+ # Disable exception reporting by default if available
+ if Thread.respond_to?(:report_on_exception=)
+   Thread.report_on_exception = false
