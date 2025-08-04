@@ -22,10 +22,13 @@ include/vgm/emu/cores/es5503.h
 include/vgm/emu/cores/es5506.h
 include/vgm/emu/cores/gb.h
 include/vgm/emu/cores/iremga20.h
+include/vgm/emu/cores/k005289.h
+include/vgm/emu/cores/k007232.h
 include/vgm/emu/cores/k051649.h
 include/vgm/emu/cores/k053260.h
 include/vgm/emu/cores/k054539.h
 include/vgm/emu/cores/mikey.h
+include/vgm/emu/cores/msm5205.h
 include/vgm/emu/cores/multipcm.h
 include/vgm/emu/cores/nesintf.h
 include/vgm/emu/cores/okim6258.h
@@ -59,7 +62,7 @@ include/vgm/player/playera.hpp
 include/vgm/player/playerbase.hpp
 include/vgm/player/s98player.hpp
 include/vgm/player/vgmplayer.hpp
-include/vgm/stdbool.h
+include/vgm/_stdbool.h
 include/vgm/stdtype.h
 include/vgm/utils/DataLoader.h
 include/vgm/utils/FileLoader.h
