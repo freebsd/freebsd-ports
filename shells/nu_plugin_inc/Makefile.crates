@@ -25,21 +25,18 @@ CARGO_CRATES=	adler2-2.0.0 \
 		clang-sys-1.8.1 \
 		core-foundation-sys-0.8.7 \
 		crc32fast-1.4.2 \
-		crossbeam-deque-0.8.5 \
-		crossbeam-epoch-0.9.18 \
-		crossbeam-utils-0.8.21 \
 		crossterm-0.28.1 \
 		crossterm_winapi-0.9.1 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
 		doctest-file-1.0.0 \
-		either-1.13.0 \
+		either-1.15.0 \
 		equivalent-1.0.1 \
 		erased-serde-0.4.5 \
 		errno-0.3.10 \
 		fancy-regex-0.14.0 \
-		flate2-1.0.35 \
-		foldhash-0.1.3 \
+		flate2-1.1.2 \
+		foldhash-0.1.5 \
 		getrandom-0.2.15 \
 		glob-0.3.1 \
 		hashbrown-0.15.2 \
@@ -47,14 +44,15 @@ CARGO_CRATES=	adler2-2.0.0 \
 		hex-0.4.3 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
-		indexmap-2.9.0 \
+		indexmap-2.10.0 \
 		interprocess-2.2.2 \
 		inventory-0.3.15 \
 		is_ci-1.2.0 \
 		itertools-0.13.0 \
+		itertools-0.14.0 \
 		itoa-1.0.14 \
 		js-sys-0.3.76 \
-		libc-0.2.168 \
+		libc-0.2.174 \
 		libloading-0.8.6 \
 		libproc-0.14.10 \
 		libredox-0.1.3 \
@@ -62,30 +60,33 @@ CARGO_CRATES=	adler2-2.0.0 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
 		lru-0.12.5 \
-		lscolors-0.17.0 \
+		lscolors-0.20.0 \
 		mach2-0.4.2 \
 		memchr-2.7.4 \
-		miette-7.5.0 \
-		miette-derive-7.5.0 \
+		miette-7.6.0 \
+		miette-derive-7.6.0 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.8.0 \
+		miniz_oxide-0.8.9 \
 		mio-1.0.3 \
 		nix-0.29.0 \
 		nom-7.1.3 \
 		ntapi-0.4.1 \
 		nu-ansi-term-0.50.1 \
-		nu-derive-value-0.104.1 \
-		nu-engine-0.104.1 \
-		nu-glob-0.104.1 \
-		nu-path-0.104.1 \
-		nu-plugin-0.104.1 \
-		nu-plugin-core-0.104.1 \
-		nu-plugin-protocol-0.104.1 \
-		nu-protocol-0.104.1 \
-		nu-system-0.104.1 \
-		nu-utils-0.104.1 \
+		nu-derive-value-0.106.1 \
+		nu-engine-0.106.1 \
+		nu-experimental-0.106.1 \
+		nu-glob-0.106.1 \
+		nu-path-0.106.1 \
+		nu-plugin-0.106.1 \
+		nu-plugin-core-0.106.1 \
+		nu-plugin-protocol-0.106.1 \
+		nu-protocol-0.106.1 \
+		nu-system-0.106.1 \
+		nu-utils-0.106.1 \
 		num-format-0.4.4 \
 		num-traits-0.2.19 \
+		objc2-core-foundation-0.3.1 \
+		objc2-io-kit-0.3.1 \
 		omnipath-0.1.6 \
 		once_cell-1.20.2 \
 		option-ext-0.2.0 \
@@ -102,8 +103,6 @@ CARGO_CRATES=	adler2-2.0.0 \
 		pure-rust-locales-0.8.1 \
 		pwd-1.4.0 \
 		quote-1.0.37 \
-		rayon-1.10.0 \
-		rayon-core-1.12.1 \
 		recvmsg-1.0.0 \
 		redox_syscall-0.5.8 \
 		redox_users-0.4.6 \
@@ -128,7 +127,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
 		smallvec-1.13.2 \
-		strip-ansi-escapes-0.2.0 \
+		strip-ansi-escapes-0.2.1 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
 		supports-color-3.0.2 \
@@ -136,7 +135,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		supports-unicode-3.0.0 \
 		syn-2.0.90 \
 		sys-locale-0.3.2 \
-		sysinfo-0.33.1 \
+		sysinfo-0.36.0 \
 		terminal_size-0.4.1 \
 		textwrap-0.16.1 \
 		thiserror-1.0.69 \
@@ -150,9 +149,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		unicode-ident-1.0.14 \
 		unicode-linebreak-0.1.5 \
 		unicode-width-0.1.11 \
-		utf8parse-0.2.2 \
-		vte-0.11.1 \
-		vte_generate_state_changes-0.1.2 \
+		vte-0.14.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.99 \
 		wasm-bindgen-backend-0.2.99 \
@@ -165,20 +162,27 @@ CARGO_CRATES=	adler2-2.0.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.56.0 \
-		windows-0.57.0 \
+		windows-0.61.3 \
+		windows-collections-0.2.0 \
 		windows-core-0.52.0 \
 		windows-core-0.56.0 \
-		windows-core-0.57.0 \
+		windows-core-0.61.2 \
+		windows-future-0.2.1 \
 		windows-implement-0.56.0 \
-		windows-implement-0.57.0 \
+		windows-implement-0.60.0 \
 		windows-interface-0.56.0 \
-		windows-interface-0.57.0 \
+		windows-interface-0.59.1 \
+		windows-link-0.1.3 \
+		windows-numerics-0.2.0 \
 		windows-result-0.1.2 \
+		windows-result-0.3.4 \
+		windows-strings-0.4.2 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
+		windows-threading-0.1.0 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.48.5 \
