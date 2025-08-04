@@ -1,5 +1,6 @@
 PORTNAME=	roundcube
 DISTVERSION=	1.6.11
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	https://github.com/roundcube/roundcubemail/releases/download/${DISTVERSION}/
@@ -20,7 +21,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}mail-${DISTVERSION}
 
 RCUBECOMP=	SQL config .htaccess index.php installer logs \
-		plugins program skins temp vendor
+		plugins program public_html skins temp vendor
 PORTDOCS=	CHANGELOG.md INSTALL README.md UPGRADING
 
 CPE_PRODUCT=	webmail
