@@ -5,7 +5,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Pythonic binding for the libxml2 and libxslt libraries
 WWW=		https://lxml.de/ \
 		https://github.com/lxml/lxml
