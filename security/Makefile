@@ -453,7 +453,6 @@
     SUBDIR += openssl-unsafe
     SUBDIR += openssl111
     SUBDIR += openssl31
-    SUBDIR += openssl31-quictls
     SUBDIR += openssl32
     SUBDIR += openssl33
     SUBDIR += openssl33-quictls
