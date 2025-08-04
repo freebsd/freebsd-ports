@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asttokens>=2.0.0<3.0.0:devel/py-asttokens@${
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.15.0:textproc/py-pygments@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
