@@ -4,15 +4,15 @@
 
 PORTNAME=	snappy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.10.5
-PORTREVISION=	1
+DISTVERSION=	1.1.10.8
 CATEGORIES=	archivers java
-MASTER_SITES=	LOCAL/otis:repo
+MASTER_SITES=	LOCAL/otis:deps \
+		LOCAL/vvd:deps
 PKGNAMESUFFIX=	java
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-${PKGNAMESUFFIX}-repository-${PORTVERSION}${EXTRACT_SUFX}:repo
+		${PORTNAME}-${PKGNAMESUFFIX}-repository-${DISTVERSION}.tar.xz:deps
 EXTRACT_ONLY=	${DISTFILE_DEFAULT} \
-		${PORTNAME}-${PKGNAMESUFFIX}-repository-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-${PKGNAMESUFFIX}-repository-${DISTVERSION}.tar.xz \
 		${DISTFILE_google_benchmark} \
 		${DISTFILE_google_googletest}
 
@@ -22,18 +22,17 @@ WWW=		https://github.com/xerial/snappy-java
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	cmake:devel/cmake-core \
-		sbt:devel/sbt
+BUILD_DEPENDS=	sbt:devel/sbt
 
-USES=		gmake java:build
+USES=		cmake:indirect gmake java:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xerial
 GH_PROJECT=	snappy-java
 GH_TAGNAME=	${DISTVERSIONFULL}
 GH_TUPLE=	google:snappy:${DISTVERSION:R}:google \
-		google:benchmark:d572f47:google_benchmark/google_benchmark \
-		google:googletest:b796f7d:google_googletest/google_googletest \
+		google:benchmark:v1.7.1:google_benchmark/google_benchmark \
+		google:googletest:v1.13.0:google_googletest/google_googletest \
 		kiyo-masui:bitshuffle:${BITSHUFFLE_V}:masui
 
 USE_LDCONFIG=	yes
@@ -62,7 +61,8 @@ post-extract:
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} JAVA_HOME=${JAVA_HOME} ${MAKE_ENV} \
-		${MAKE_CMD} ${MAKE_ARGS} SBT_IVY_HOME=${WRKDIR}/repository SBT_BOOT_DIR=${WRKDIR}/sbt_boot SBT_GLOBAL_DIR=${WRKDIR}/sbt_global
+		${MAKE_CMD} ${MAKE_ARGS} SBT_IVY_HOME=${WRKDIR}/repository \
+			SBT_BOOT_DIR=${WRKDIR}/sbt_boot SBT_GLOBAL_DIR=${WRKDIR}/sbt_global
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} JAVA_HOME=${JAVA_HOME} ${MAKE_ENV} \
@@ -93,7 +93,7 @@ PLATFORM_DIR_SUFFIX=	Default
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/target/snappy-java-*.jar \
 		${STAGEDIR}${JAVAJARDIR}/snappy-java.jar
-	${INSTALL_LIB} ${WRKSRC}/target/snappy-${PORTVERSION:R}-${PLATFORM_DIR_SUFFIX}/libsnappyjava.so \
+	${INSTALL_LIB} ${WRKSRC}/target/snappy-${DISTVERSION:R}-${PLATFORM_DIR_SUFFIX}/libsnappyjava.so \
 		${STAGEDIR}${LOCALBASE}/lib
 
 .include <bsd.port.post.mk>
