@@ -13,5 +13,5 @@ SHA256 (libpfctl-14.2_4.tar.gz) = 527c63aa4b9e7eed513fa0c669878faea2e935f3e505dd
 SIZE (libpfctl-14.2_4.tar.gz) = 11690
 SHA256 (libpfctl-14.3_4.tar.gz) = 0dba9d47cb5990e3029641bca9958925f20b091456bb7fe140ce1f4e9e2c30ce
 SIZE (libpfctl-14.3_4.tar.gz) = 11678
-SHA256 (libpfctl-9efd215411bb.tar.gz) = 040c8603f4f7d187f5ed11cd1d958a9e18604395be191bab21ed459d7255b403
-SIZE (libpfctl-498934c5ff51.tar.gz) = 18874
+SHA256 (libpfctl-28f618fcc2b4.tar.gz) = 37d9b90491f30b4772bc1dae687cf5c0caa733485a68cc6b59b9f23b9bd6a5f5
+SIZE (libpfctl-28f618fcc2b4.tar.gz) = 20180
