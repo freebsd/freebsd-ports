@@ -1,6 +1,6 @@
---- vendor/modules.txt.orig	2025-06-20 09:28:12 UTC
+--- vendor/modules.txt.orig	2025-08-05 11:35:18 UTC
 +++ vendor/modules.txt
-@@ -0,0 +1,348 @@
+@@ -0,0 +1,277 @@
 +# filippo.io/edwards25519 v1.1.0
 +## explicit; go 1.20
 +filippo.io/edwards25519
@@ -52,16 +52,12 @@
 +github.com/aws/aws-sdk-go/private/protocol/restjson
 +github.com/aws/aws-sdk-go/private/protocol/restxml
 +github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil
-+github.com/aws/aws-sdk-go/service/route53
 +github.com/aws/aws-sdk-go/service/s3
 +github.com/aws/aws-sdk-go/service/sso
 +github.com/aws/aws-sdk-go/service/sso/ssoiface
 +github.com/aws/aws-sdk-go/service/ssooidc
 +github.com/aws/aws-sdk-go/service/sts
 +github.com/aws/aws-sdk-go/service/sts/stsiface
-+# github.com/cloudflare/cloudflare-go v0.115.0
-+## explicit; go 1.21
-+github.com/cloudflare/cloudflare-go
 +# github.com/gabriel-vasile/mimetype v1.4.9
 +## explicit; go 1.23.0
 +github.com/gabriel-vasile/mimetype
@@ -71,20 +67,6 @@
 +# github.com/go-sql-driver/mysql v1.9.3
 +## explicit; go 1.21.0
 +github.com/go-sql-driver/mysql
-+# github.com/go-task/slim-sprig v0.0.0-20230315185526-52ccab3ef572
-+## explicit; go 1.13
-+github.com/go-task/slim-sprig
-+# github.com/goccy/go-json v0.10.5
-+## explicit; go 1.19
-+github.com/goccy/go-json
-+github.com/goccy/go-json/internal/decoder
-+github.com/goccy/go-json/internal/encoder
-+github.com/goccy/go-json/internal/encoder/vm
-+github.com/goccy/go-json/internal/encoder/vm_color
-+github.com/goccy/go-json/internal/encoder/vm_color_indent
-+github.com/goccy/go-json/internal/encoder/vm_indent
-+github.com/goccy/go-json/internal/errors
-+github.com/goccy/go-json/internal/runtime
 +# github.com/google/go-cmp v0.7.0
 +## explicit; go 1.21
 +github.com/google/go-cmp/cmp
@@ -93,20 +75,9 @@
 +github.com/google/go-cmp/cmp/internal/flags
 +github.com/google/go-cmp/cmp/internal/function
 +github.com/google/go-cmp/cmp/internal/value
-+# github.com/google/go-querystring v1.1.0
-+## explicit; go 1.10
-+github.com/google/go-querystring/query
-+# github.com/google/pprof v0.0.0-20230821062121-407c9e7a662f
-+## explicit; go 1.19
-+github.com/google/pprof/profile
 +# github.com/gotd/contrib v0.21.0
 +## explicit; go 1.22
 +github.com/gotd/contrib/http_range
-+# github.com/hashicorp/golang-lru/v2 v2.0.7
-+## explicit; go 1.18
-+github.com/hashicorp/golang-lru/v2
-+github.com/hashicorp/golang-lru/v2/internal
-+github.com/hashicorp/golang-lru/v2/simplelru
 +# github.com/jmespath/go-jmespath v0.4.0
 +## explicit; go 1.14
 +github.com/jmespath/go-jmespath
@@ -125,28 +96,10 @@
 +# github.com/montanaflynn/stats v0.7.1
 +## explicit; go 1.13
 +github.com/montanaflynn/stats
-+# github.com/onsi/ginkgo/v2 v2.12.0
-+## explicit; go 1.18
-+github.com/onsi/ginkgo/v2/config
-+github.com/onsi/ginkgo/v2/formatter
-+github.com/onsi/ginkgo/v2/ginkgo
-+github.com/onsi/ginkgo/v2/ginkgo/build
-+github.com/onsi/ginkgo/v2/ginkgo/command
-+github.com/onsi/ginkgo/v2/ginkgo/generators
-+github.com/onsi/ginkgo/v2/ginkgo/internal
-+github.com/onsi/ginkgo/v2/ginkgo/labels
-+github.com/onsi/ginkgo/v2/ginkgo/outline
-+github.com/onsi/ginkgo/v2/ginkgo/run
-+github.com/onsi/ginkgo/v2/ginkgo/unfocus
-+github.com/onsi/ginkgo/v2/ginkgo/watch
-+github.com/onsi/ginkgo/v2/internal/interrupt_handler
-+github.com/onsi/ginkgo/v2/internal/parallel_support
-+github.com/onsi/ginkgo/v2/reporters
-+github.com/onsi/ginkgo/v2/types
 +# github.com/quic-go/qpack v0.5.1
 +## explicit; go 1.22
 +github.com/quic-go/qpack
-+# github.com/quic-go/quic-go v0.52.0
++# github.com/quic-go/quic-go v0.53.0
 +## explicit; go 1.23
 +github.com/quic-go/quic-go
 +github.com/quic-go/quic-go/http3
@@ -162,8 +115,8 @@
 +github.com/quic-go/quic-go/internal/wire
 +github.com/quic-go/quic-go/logging
 +github.com/quic-go/quic-go/quicvarint
-+# github.com/quic-go/webtransport-go v0.8.1-0.20241018022711-4ac2c9250e66
-+## explicit; go 1.22
++# github.com/quic-go/webtransport-go v0.9.0
++## explicit; go 1.23
 +github.com/quic-go/webtransport-go
 +# github.com/ryszard/goskiplist v0.0.0-20150312221310-2dfbae5fcf46
 +## explicit
@@ -174,23 +127,21 @@
 +# github.com/shopspring/decimal v1.4.0
 +## explicit; go 1.10
 +github.com/shopspring/decimal
-+# go.etcd.io/bbolt v1.4.1
++# go.etcd.io/bbolt v1.4.2
 +## explicit; go 1.23
 +go.etcd.io/bbolt
 +go.etcd.io/bbolt/errors
 +go.etcd.io/bbolt/internal/common
 +go.etcd.io/bbolt/internal/freelist
-+# go.sia.tech/core v0.13.2
++# go.sia.tech/core v0.14.1
 +## explicit; go 1.23.1
 +go.sia.tech/core/blake2b
 +go.sia.tech/core/consensus
 +go.sia.tech/core/gateway
-+go.sia.tech/core/internal/smux
 +go.sia.tech/core/rhp/v2
-+go.sia.tech/core/rhp/v3
 +go.sia.tech/core/rhp/v4
 +go.sia.tech/core/types
-+# go.sia.tech/coreutils v0.16.2
++# go.sia.tech/coreutils v0.16.5
 +## explicit; go 1.23.1
 +go.sia.tech/coreutils
 +go.sia.tech/coreutils/chain
@@ -206,30 +157,6 @@
 +go.sia.tech/gofakes3
 +go.sia.tech/gofakes3/internal/goskipiter
 +go.sia.tech/gofakes3/signature
-+# go.sia.tech/hostd/v2 v2.3.2
-+## explicit; go 1.24.2
-+go.sia.tech/hostd/v2/alerts
-+go.sia.tech/hostd/v2/build
-+go.sia.tech/hostd/v2/explorer
-+go.sia.tech/hostd/v2/host/accounts
-+go.sia.tech/hostd/v2/host/contracts
-+go.sia.tech/hostd/v2/host/metrics
-+go.sia.tech/hostd/v2/host/registry
-+go.sia.tech/hostd/v2/host/settings
-+go.sia.tech/hostd/v2/host/settings/pin
-+go.sia.tech/hostd/v2/host/storage
-+go.sia.tech/hostd/v2/index
-+go.sia.tech/hostd/v2/internal/ddns
-+go.sia.tech/hostd/v2/internal/ddns/providers/cloudflare
-+go.sia.tech/hostd/v2/internal/ddns/providers/duckdns
-+go.sia.tech/hostd/v2/internal/ddns/providers/noip
-+go.sia.tech/hostd/v2/internal/ddns/providers/route53
-+go.sia.tech/hostd/v2/internal/threadgroup
-+go.sia.tech/hostd/v2/persist/sqlite
-+go.sia.tech/hostd/v2/rhp
-+go.sia.tech/hostd/v2/rhp/v2
-+go.sia.tech/hostd/v2/rhp/v3
-+go.sia.tech/hostd/v2/webhooks
 +# go.sia.tech/jape v0.14.0
 +## explicit; go 1.23.2
 +go.sia.tech/jape
@@ -241,11 +168,11 @@
 +# go.sia.tech/web v0.0.0-20240610131903-5611d44a533e
 +## explicit
 +go.sia.tech/web/internal/nextjs
-+# go.sia.tech/web/renterd v0.80.0
-+## explicit; go 1.23.0
++# go.sia.tech/web/renterd v0.82.1
++## explicit; go 1.24.3
 +go.sia.tech/web/renterd
-+# go.uber.org/mock v0.5.0
-+## explicit; go 1.22
++# go.uber.org/mock v0.5.2
++## explicit; go 1.23
 +go.uber.org/mock/mockgen
 +go.uber.org/mock/mockgen/model
 +# go.uber.org/multierr v1.11.0
@@ -343,6 +270,8 @@
 +golang.org/x/tools/internal/typeparams
 +golang.org/x/tools/internal/typesinternal
 +golang.org/x/tools/internal/versions
++# gopkg.in/yaml.v2 v2.4.0
++## explicit; go 1.15
 +# gopkg.in/yaml.v3 v3.0.1
 +## explicit
 +gopkg.in/yaml.v3
