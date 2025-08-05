@@ -9,8 +9,7 @@ CATEGORIES=	archivers java
 MASTER_SITES=	LOCAL/otis:deps \
 		LOCAL/vvd:deps
 PKGNAMESUFFIX=	java
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-${PKGNAMESUFFIX}-repository-${DISTVERSION}.tar.xz:deps
+DISTFILES=	${PORTNAME}-${PKGNAMESUFFIX}-repository-${DISTVERSION}.tar.xz:deps
 EXTRACT_ONLY=	${DISTFILE_DEFAULT} \
 		${PORTNAME}-${PKGNAMESUFFIX}-repository-${DISTVERSION}.tar.xz \
 		${DISTFILE_google_benchmark} \
@@ -29,7 +28,6 @@ USES=		cmake:indirect gmake java:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	xerial
 GH_PROJECT=	snappy-java
-GH_TAGNAME=	${DISTVERSIONFULL}
 GH_TUPLE=	google:snappy:${DISTVERSION:R}:google \
 		google:benchmark:v1.7.1:google_benchmark/google_benchmark \
 		google:googletest:v1.13.0:google_googletest/google_googletest \
