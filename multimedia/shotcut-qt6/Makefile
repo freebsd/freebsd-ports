@@ -1,5 +1,5 @@
 PORTNAME=	shotcut
-DISTVERSION=	25.05.11
+DISTVERSION=	25.07.26
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/mltframework/${PORTNAME}/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-qt6
