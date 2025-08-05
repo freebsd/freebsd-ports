@@ -1,6 +1,6 @@
---- templates/locales/en.yml.orig	2021-11-05 21:15:44 UTC
+--- templates/locales/en.yml.orig	2025-06-17 15:13:05 UTC
 +++ templates/locales/en.yml
-@@ -1863,7 +1863,7 @@ en:
+@@ -1989,7 +1989,7 @@ en:
            Address: %{address}
            Ranges: %{ranges}
  
