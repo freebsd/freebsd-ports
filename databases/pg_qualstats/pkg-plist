@@ -3,6 +3,8 @@ share/postgresql/extension/pg_qualstats--2.0.4--2.1.0.sql
 share/postgresql/extension/pg_qualstats--2.0.4.sql
 share/postgresql/extension/pg_qualstats--2.1.0--2.1.1.sql
 share/postgresql/extension/pg_qualstats--2.1.0.sql
+share/postgresql/extension/pg_qualstats--2.1.1--2.1.2.sql
 share/postgresql/extension/pg_qualstats--2.1.1.sql
+share/postgresql/extension/pg_qualstats--2.1.2.sql
 share/postgresql/extension/pg_qualstats.control
 share/doc/postgresql/extension/pg_qualstats-README.md
