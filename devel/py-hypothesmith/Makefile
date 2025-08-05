@@ -1,6 +1,5 @@
 PORTNAME=	hypothesmith
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.3.3
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,6 +9,7 @@ COMMENT=	Hypothesis strategies for generating Python programs
 WWW=		https://github.com/Zac-HD/hypothesmith
 
 LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=0:devel/py-hypothesis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libcst>=0:devel/py-libcst@${PY_FLAVOR}
