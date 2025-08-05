@@ -808,6 +808,7 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/5.9.7/schema.Oracle
 %%DOCSDIR%%/upgrade/5.9.7/schema.Pg
 %%DOCSDIR%%/upgrade/5.9.7/schema.mysql
+%%DOCSDIR%%/upgrade/6.0.1/content
 %%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%DOCSDIR%%/upgrade/reset-sequences
 %%DOCSDIR%%/upgrade/sanity-check-stylesheets
@@ -1633,6 +1634,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Ticket/Widgets/Display/Times
 %%DATADIR%%/html/Ticket/Widgets/Update/Basics
 %%DATADIR%%/html/Ticket/Widgets/Update/CustomFieldCustomGroupings
+%%DATADIR%%/html/Ticket/Widgets/Update/Dates
 %%DATADIR%%/html/Ticket/Widgets/Update/Description
 %%DATADIR%%/html/Ticket/Widgets/Update/Message
 %%DATADIR%%/html/Ticket/Widgets/Update/PreviewScrips
@@ -1747,7 +1749,6 @@ sbin/standalone_httpd
 %%DATADIR%%/po/pl.po
 %%DATADIR%%/po/pt.po
 %%DATADIR%%/po/pt_BR.po
-%%DATADIR%%/po/pt_PT.po
 %%DATADIR%%/po/rt.pot
 %%DATADIR%%/po/ru.po
 %%DATADIR%%/po/sk.po
