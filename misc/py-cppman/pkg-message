@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+To support vim on nvim as pager, cppman needs fdescfs(5)
+to be mounted on /dev/fd.
+
+If /dev/fd is not already mounted:
+
+	mount -t fdescfs fdesc /dev/fd
+
+To make it permanent, add the following line to /etc/fstab:
+
+	fdesc	/dev/fd		fdescfs		rw	0	0
+EOM
+}
+]
