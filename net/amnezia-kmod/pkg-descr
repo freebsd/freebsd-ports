@@ -1,0 +1,15 @@
+FreeBSD kernel module for Amnezia VPN protocol.
+
+Amnezia VPN is a VPN protocol that is backward compatible with the
+WireGuard VPN protocol. It offers protection against detection by Deep
+Packet Inspection (DPI) systems. At the same time, it retains the
+simplified architecture and high performance.
+
+The Amnezia VPN protocol has issues with detection due to distinctive
+packet signatures. Amnezia addresses this problem by employing advanced
+obfuscation methods, allowing its traffic to blend seamlessly with
+regular internet traffic.
+
+This package provides the FreeBSD kernel module (if_amn.ko)
+implementation for Amnezia VPN, enabling kernel-level support for the
+protocol.
