@@ -1,8 +1,7 @@
 PORTNAME=	rt
-DISTVERSION=	6.0.0
-PORTREVISION=	1
+DISTVERSION=	6.0.1
 CATEGORIES=	www
-MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
+MASTER_SITES=	https://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	60
 
 MAINTAINER=	einar@isnic.is
