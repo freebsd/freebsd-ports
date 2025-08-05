@@ -103,6 +103,7 @@ include/fluent-bit/flb_net_dns.h
 include/fluent-bit/flb_network.h
 include/fluent-bit/flb_notification.h
 include/fluent-bit/flb_oauth2.h
+include/fluent-bit/flb_opentelemetry.h
 include/fluent-bit/flb_output.h
 include/fluent-bit/flb_output_plugin.h
 include/fluent-bit/flb_output_thread.h
@@ -163,6 +164,8 @@ include/fluent-bit/flb_zstd.h
 include/fluent-bit/simdutf/flb_simdutf_connector.h
 include/fluent-bit/tls/flb_tls.h
 include/fluent-bit/tls/flb_tls_info.h
+include/fluent-bit/unicode/flb_conv.h
+include/fluent-bit/unicode/flb_wchar.h
 include/fluent-bit/wasm/flb_wasm.h
 include/libco.h
 include/monkey/mk_core.h
