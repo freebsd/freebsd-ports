@@ -881,7 +881,7 @@ lib/cmake/Coin-%%VERSION%%/coin-export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Coin-%%VERSION%%/coin-export.cmake
 lib/libCoin.so
 lib/libCoin.so.80
-lib/libCoin.so.80.0.4
+lib/libCoin.so.80.0.5
 libdata/pkgconfig/Coin.pc
 %%DATADIR%%/conf/coin-default.cfg
 %%DATADIR%%/draggerDefaults/centerballDragger.iv
