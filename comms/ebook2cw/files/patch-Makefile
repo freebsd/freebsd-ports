@@ -1,11 +1,11 @@
---- Makefile.orig	2013-01-04 14:33:04 UTC
+--- Makefile.orig	2023-08-16 18:54:49 UTC
 +++ Makefile
-@@ -3,37 +3,26 @@
- # $Id: Makefile 547 2012-12-29 21:07:53Z dj1yfk $
+@@ -1,30 +1,16 @@ VERSION=0.8.5
+ # ebook2cw Makefile -- Fabian Kurz, DJ5CW -- http://fkurz.net/ham/ebook2cw.html
  
- VERSION=0.8.2
+ VERSION=0.8.5
 -DESTDIR ?= /usr
-+DESTDIR ?= /usr/local
++DESTDIR ?= %%PREFIX%%
 +CC	?= gcc
  
 -# Set to NO to compile without Lame/Ogg-vorbis support
@@ -13,8 +13,8 @@
 -USE_OGG?=YES
 -
  CFLAGS:=$(CFLAGS) -D DESTDIR=\"$(DESTDIR)\" -D VERSION=\"$(VERSION)\"
-+CFLAGS+= -I/usr/local/include -D LAME -D OGGV
-+LDFLAGS+= -L/usr/local/lib -lmp3lame -lvorbis -lvorbisenc -logg
++CFLAGS+= -I%%LOCALBASE%%/include -D LAME -D OGGV
++LDFLAGS+= -L%%LOCALBASE%%/lib -lintl -lmp3lame -lvorbis -lvorbisenc -logg
  
 -ifeq ($(USE_LAME), YES)
 -		CFLAGS:=$(CFLAGS) -D LAME
@@ -24,26 +24,15 @@
 -		CFLAGS:=$(CFLAGS) -D OGGV
 -		LDFLAGS:=$(LDFLAGS) -lvorbis -lvorbisenc -logg
 -endif
-+all: ebook2cw cgi
+-
+ UNAME := $(shell uname)
  
+-ifeq ($(UNAME), Darwin)
+-	LDFLAGS += -lintl
+-endif
 -
 -all: ebook2cw
--
++all: ebook2cw cgi
+ 
  ebook2cw: ebook2cw.c codetables.h
--	gcc ebook2cw.c -pedantic -Wall -lm $(LDFLAGS) $(CFLAGS) -o ebook2cw
-+	${CC} ebook2cw.c -pedantic -Wall -lm $(LDFLAGS) $(CFLAGS) -o ebook2cw
- 
- cgi: ebook2cw.c codetables.h
--	gcc -static ebook2cw.c $(LDFLAGS) -lm $(CFLAGS) -D CGI -o cw.cgi
-+	${CC} -static ebook2cw.c $(LDFLAGS) -lm $(CFLAGS) -D CGI -o cw.cgi
- 
- cgibuffered: ebook2cw.c codetables.h
--	gcc -static ebook2cw.c $(LDFLAGS) -lm $(CFLAGS) -D CGI -D CGIBUFFERED -o cw.cgi
-+	${CC} -static ebook2cw.c $(LDFLAGS) -lm $(CFLAGS) -D CGI -D CGIBUFFERED -o cw.cgi
- 
- static:
--	gcc -static ebook2cw.c $(LDFLAGS) -lm $(CFLAGS) -o ebook2cw
-+	${CC} -static ebook2cw.c $(LDFLAGS) -lm $(CFLAGS) -o ebook2cw
- 
- install:
- 	install -d -v                      $(DESTDIR)/share/man/man1/
+ 	$(CC) ebook2cw.c -pedantic -Wall -Wno-format-truncation -lm $(LDFLAGS) $(CFLAGS) -o ebook2cw
