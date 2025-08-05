@@ -98,6 +98,10 @@ PLIST_SUB+=		GHC_ARCH=${GHC_ARCH}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 1500000
+BUILD_DEPENDS+=		${LOCALBASE}/lib/compat/libutil.so.9:misc/compat14x
+.endif
+
 # GHC 9.2 has a different name for this
 BOOT_SCRIPT?=	./boot.source
 
