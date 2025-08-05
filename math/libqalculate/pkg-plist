@@ -16,7 +16,7 @@ include/libqalculate/util.h
 lib/libqalculate.a
 lib/libqalculate.so
 lib/libqalculate.so.23
-lib/libqalculate.so.23.3.4
+lib/libqalculate.so.23.3.6
 libdata/pkgconfig/libqalculate.pc
 share/man/man1/qalc.1.gz
 %%NLS%%share/locale/ca/LC_MESSAGES/libqalculate.mo
@@ -28,6 +28,7 @@ share/man/man1/qalc.1.gz
 %%NLS%%share/locale/ru/LC_MESSAGES/libqalculate.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libqalculate.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libqalculate.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/libqalculate.mo
 share/qalculate/currencies.xml
 share/qalculate/datasets.xml
 share/qalculate/elements.xml
