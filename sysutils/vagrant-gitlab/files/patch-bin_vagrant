@@ -1,6 +1,6 @@
---- bin/vagrant.orig	2019-02-27 15:35:56.000000000 +0000
-+++ bin/vagrant	2019-03-11 03:50:43.415883000 +0000
-@@ -5,6 +5,9 @@
+--- bin/vagrant.orig	2025-06-17 15:13:05 UTC
++++ bin/vagrant
+@@ -5,6 +5,9 @@ Signal.trap("INT") { abort }
  # initializing which have historically resulted in stack traces.
  Signal.trap("INT") { abort }
  
