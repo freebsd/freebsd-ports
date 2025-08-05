@@ -33,7 +33,6 @@
 %%WWWDIR%%/bridges/ArtStationBridge.php
 %%WWWDIR%%/bridges/Arte7Bridge.php
 %%WWWDIR%%/bridges/AsahiShimbunAJWBridge.php
-%%WWWDIR%%/bridges/AskfmBridge.php
 %%WWWDIR%%/bridges/AssociatedPressNewsBridge.php
 %%WWWDIR%%/bridges/AstrophysicsDataSystemBridge.php
 %%WWWDIR%%/bridges/AtmoNouvelleAquitaineBridge.php
@@ -78,6 +77,7 @@
 %%WWWDIR%%/bridges/CodebergBridge.php
 %%WWWDIR%%/bridges/CollegeDeFranceBridge.php
 %%WWWDIR%%/bridges/ComboiosDePortugalBridge.php
+%%WWWDIR%%/bridges/ComickBridge.php
 %%WWWDIR%%/bridges/ComicsKingdomBridge.php
 %%WWWDIR%%/bridges/CommonDreamsBridge.php
 %%WWWDIR%%/bridges/CopieDoubleBridge.php
@@ -97,7 +97,6 @@
 %%WWWDIR%%/bridges/DailymotionBridge.php
 %%WWWDIR%%/bridges/DailythanthiBridge.php
 %%WWWDIR%%/bridges/DanbooruBridge.php
-%%WWWDIR%%/bridges/DansTonChatBridge.php
 %%WWWDIR%%/bridges/DarkReadingBridge.php
 %%WWWDIR%%/bridges/DauphineLibereBridge.php
 %%WWWDIR%%/bridges/DealabsBridge.php
@@ -146,9 +145,11 @@
 %%WWWDIR%%/bridges/FDroidRepoBridge.php
 %%WWWDIR%%/bridges/FM4Bridge.php
 %%WWWDIR%%/bridges/FSecureBlogBridge.php
+%%WWWDIR%%/bridges/FabBridge.php
 %%WWWDIR%%/bridges/FabriceBellardBridge.php
 %%WWWDIR%%/bridges/FacebookBridge.php
 %%WWWDIR%%/bridges/FallGuysBridge.php
+%%WWWDIR%%/bridges/FanaticalBridge.php
 %%WWWDIR%%/bridges/FarsideNitterBridge.php
 %%WWWDIR%%/bridges/FeedExpanderExampleBridge.php
 %%WWWDIR%%/bridges/FeedExpanderTestBridge.php
@@ -162,7 +163,6 @@
 %%WWWDIR%%/bridges/FindACrewBridge.php
 %%WWWDIR%%/bridges/FirefoxAddonsBridge.php
 %%WWWDIR%%/bridges/FirefoxReleaseNotesBridge.php
-%%WWWDIR%%/bridges/FirstLookMediaTechBridge.php
 %%WWWDIR%%/bridges/FlaschenpostBridge.php
 %%WWWDIR%%/bridges/FlashbackBridge.php
 %%WWWDIR%%/bridges/FlickrBridge.php
@@ -227,6 +227,7 @@
 %%WWWDIR%%/bridges/HumbleBundleBridge.php
 %%WWWDIR%%/bridges/HuntShowdownNewsBridge.php
 %%WWWDIR%%/bridges/HytaleBridge.php
+%%WWWDIR%%/bridges/I4wifiBridge.php
 %%WWWDIR%%/bridges/IGNBridge.php
 %%WWWDIR%%/bridges/IPBBridge.php
 %%WWWDIR%%/bridges/IKWYDBridge.php
@@ -308,6 +309,7 @@
 %%WWWDIR%%/bridges/NPRBridge.php
 %%WWWDIR%%/bridges/NYTBridge.php
 %%WWWDIR%%/bridges/NasaApodBridge.php
+%%WWWDIR%%/bridges/NasestrechaBridge.php
 %%WWWDIR%%/bridges/NationalGeographicBridge.php
 %%WWWDIR%%/bridges/NautiljonBridge.php
 %%WWWDIR%%/bridges/NewOnNetflixBridge.php
@@ -455,6 +457,7 @@
 %%WWWDIR%%/bridges/TwitterEngineeringBridge.php
 %%WWWDIR%%/bridges/TwitterV2Bridge.php
 %%WWWDIR%%/bridges/UberNewsroomBridge.php
+%%WWWDIR%%/bridges/UniverseTodayBridge.php
 %%WWWDIR%%/bridges/UnogsBridge.php
 %%WWWDIR%%/bridges/UnraidCommunityApplicationsBridge.php
 %%WWWDIR%%/bridges/UnsplashBridge.php
@@ -474,8 +477,10 @@
 %%WWWDIR%%/bridges/VproTegenlichtBridge.php
 %%WWWDIR%%/bridges/WKYTNewsBridge.php
 %%WWWDIR%%/bridges/WYMTNewsBridge.php
+%%WWWDIR%%/bridges/WaggaCouncilBridge.php
 %%WWWDIR%%/bridges/WallmineNewsBridge.php
 %%WWWDIR%%/bridges/WallpaperflareBridge.php
+%%WWWDIR%%/bridges/WarhammerComBridge.php
 %%WWWDIR%%/bridges/WeLiveSecurityBridge.php
 %%WWWDIR%%/bridges/WebfailBridge.php
 %%WWWDIR%%/bridges/WikiLeaksBridge.php
