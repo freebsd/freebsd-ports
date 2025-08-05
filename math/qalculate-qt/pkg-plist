@@ -20,3 +20,4 @@ share/metainfo/io.github.Qalculate.qalculate-qt.metainfo.xml
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_sl.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_sv.qm
 %%NLS%%%%DATADIR%%/translations/qalculate-qt_zh_CN.qm
+%%NLS%%%%DATADIR%%/translations/qalculate-qt_zh_TW.qm
