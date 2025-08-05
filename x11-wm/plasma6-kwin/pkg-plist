@@ -1435,6 +1435,7 @@ share/locale/pa/LC_MESSAGES/kcmkwincommon.mo
 share/locale/pa/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/pa/LC_MESSAGES/kcmkwm.mo
 share/locale/pa/LC_MESSAGES/kwin.mo
+share/locale/pl/LC_MESSAGES/kcm_animations.mo
 share/locale/pl/LC_MESSAGES/kcm_kwin_effects.mo
 share/locale/pl/LC_MESSAGES/kcm_kwin_scripts.mo
 share/locale/pl/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
