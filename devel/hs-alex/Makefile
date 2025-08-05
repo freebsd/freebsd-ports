@@ -1,5 +1,5 @@
 PORTNAME=	alex
-DISTVERSION=	3.5.3.0
+DISTVERSION=	3.5.4.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
