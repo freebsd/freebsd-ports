@@ -1,0 +1,15 @@
+Install headers for the qt6 flavor in a unique location. It's silly that
+they're still named qt5*.h, but we're trying not to deviate too much from
+upstream and this interfaces's only consumer, kmymoney.
+
+--- gui/qt5/Makefile.in.orig	2025-08-03 09:12:07 UTC
++++ gui/qt5/Makefile.in
+@@ -556,7 +556,7 @@ nodist_noinst_HEADERS = 
+ 
+ nodist_libgwengui_qt@QT_MAJOR_VERSION@_la_SOURCES = 
+ nodist_noinst_HEADERS = 
+-iheaderdir = ${gwenhywfar_headerdir_am}/gwen-gui-qt5
++iheaderdir = ${gwenhywfar_headerdir_am}/gwen-gui-qt@QT_MAJOR_VERSION@
+ iheader_HEADERS = \
+  qt5_gui.hpp \
+  qt5_gui_dialog.hpp \

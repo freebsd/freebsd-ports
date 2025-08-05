@@ -1,35 +1,67 @@
-Hunk 1: Fix dectection of fox libs.
-Hunk 2,3: Remove leftover file so temp directory is cleaned.
-Hunk 3: Use pkgconf for QT_LIBS. The other method produces the full path to the
-library which libtool seems to discard.
+Hunk 1: Fix detection of fox libs.
+Hunk 2: Avoid linking to unneeded Qt components (yet again) which were re-added
+        in 5.12.1, and re-add widgets which was removed for some reason. This
+        only needs core, gui, and widgets.
+        Use pkgconf to define QT_LIBS. The other method produces the full path
+        to the libraries which libtool seems to discard.
 
---- configure.orig	2024-12-17 18:57:54 UTC
+--- configure.orig	2025-07-06 17:51:09 UTC
 +++ configure
-@@ -23442,7 +23442,7 @@ if test "${with_fox_libs+set}" = set; then :
- 
+@@ -24831,7 +24831,7 @@ then :
  # Check whether --with-fox-libs was given.
- if test "${with_fox_libs+set}" = set; then :
+ if test ${with_fox_libs+y}
+ then :
 -  withval=$with_fox_libs; fox_libs="$withval"
 +  withval=$with_fox_libs; local_fox_libs="$withval"
- else
+ else $as_nop
  
        ac_ext=cpp
-@@ -25024,6 +25024,7 @@ $as_echo_n "checking for Qt... " >&6; }
-     am_have_qt_dir=`mktemp -d`
-     am_have_qt_pro="$am_have_qt_dir/test.pro"
-     am_have_qt_makefile="$am_have_qt_dir/Makefile"
-+    am_have_qt_stash="$am_have_qt_dir/.qmake.stash"
-     # http://qt-project.org/doc/qt-5/qmake-variable-reference.html#qt
-     cat > $am_have_qt_pro << EOF
- win32 {
-@@ -25039,8 +25040,8 @@ EOF
+@@ -26583,42 +26583,20 @@ win32 {
+     CONFIG -= debug_and_release
+     CONFIG += release
+ }
+-qtHaveModule(axcontainer):       QT += axcontainer
+-qtHaveModule(axserver):          QT += axserver
+-qtHaveModule(concurrent):        QT += concurrent
+ qtHaveModule(core):              QT += core
+-qtHaveModule(dbus):              QT += dbus
+-qtHaveModule(declarative):       QT += declarative
+-qtHaveModule(designer):          QT += designer
+ qtHaveModule(gui):               QT += gui
+-qtHaveModule(help):              QT += help
+-qtHaveModule(multimedia):        QT += multimedia
+-qtHaveModule(multimediawidgets): QT += multimediawidgets
+-qtHaveModule(network):           QT += network
+-qtHaveModule(opengl):            QT += opengl
+-qtHaveModule(printsupport):      QT += printsupport
+-qtHaveModule(qml):               QT += qml
+-qtHaveModule(qmltest):           QT += qmltest
+-qtHaveModule(x11extras):         QT += x11extras
+-qtHaveModule(script):            QT += script
+-qtHaveModule(scripttools):       QT += scripttools
+-qtHaveModule(sensors):           QT += sensors
+-qtHaveModule(serialport):        QT += serialport
+-qtHaveModule(sql):               QT += sql
+-qtHaveModule(svg):               QT += svg
+-qtHaveModule(testlib):           QT += testlib
+-qtHaveModule(uitools):           QT += uitools
+-qtHaveModule(webkit):            QT += webkit
+-qtHaveModule(webkitwidgets):     QT += webkitwidgets
+-qtHaveModule(xml):               QT += xml
+-qtHaveModule(xmlpatterns):       QT += xmlpatterns
++qtHaveModule(widgets):           QT += widgets
+ percent.target = %
+ percent.commands = @echo -n "\$(\$(@))\ "
+ QMAKE_EXTRA_TARGETS += percent
  EOF
-     $QT_QMAKE $am_have_qt_pro -o $am_have_qt_makefile
+     $QMAKE $am_have_qt_pro -o $am_have_qt_makefile
      QT_CXXFLAGS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile CXXFLAGS INCPATH`
 -    QT_LIBS=`cd $am_have_qt_dir; make -s -f $am_have_qt_makefile LIBS`
--    rm $am_have_qt_pro $am_have_qt_makefile
-+    QT_LIBS=`pkgconf --libs Qt5Widgets gl`
-+    rm $am_have_qt_pro $am_have_qt_makefile $am_have_qt_stash
++    if test "$ver" ">" "Qt version 5"; then
++      QT_LIBS=`pkgconf --libs Qt6Widgets opengl`
++    else
++      QT_LIBS=`pkgconf --libs Qt5Widgets gl`
++    fi
+     rm $am_have_qt_pro $am_have_qt_stash $am_have_qt_makefile
      rmdir $am_have_qt_dir
  
-     # Look for specific tools in $PATH

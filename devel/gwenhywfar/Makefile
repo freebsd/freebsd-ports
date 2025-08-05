@@ -1,8 +1,8 @@
 PORTNAME=	gwenhywfar
-PORTVERSION=	5.12.0
+PORTVERSION=	5.12.1
 PORTREVISION?=	0
 CATEGORIES=	devel net security
-MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/529/
+MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/533/
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Multi-platform helper library for networking and security applications
@@ -76,13 +76,20 @@ LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz
 USES+=		gettext-runtime gnome
 USE_GNOME+=	cairo gdkpixbuf gtk30
 .  elif ${_GWEN_GUI} == "qt5"
-USES+=		compiler:c++11-lang gl qmake:no_env qt:5
+USES+=		compiler:c++11-lang gl qt:5
 USE_GL=		gl
 USE_QT=		core gui widgets \
 		buildtools:build qmake:build
-CONFIGURE_ARGS+=--with-qt5-qmake=${QMAKE} \
-		--with-qt5-moc=${MOC} \
-		--with-qt5-uic=${UIC}
+CONFIGURE_ENV+=	QMAKE=${QMAKE} \
+		QT_MOC=${MOC} \
+		QT_UIC=${UIC}
+.  elif ${_GWEN_GUI} == "qt6"
+USES+=		compiler:c++17-lang gl qt:6
+USE_GL=		opengl
+USE_QT=		base
+CONFIGURE_ENV+=	QMAKE=${QMAKE} \
+		QT_MOC=${MOC} \
+		QT_UIC=${UIC}
 .  endif
 .endif
 
@@ -97,6 +104,9 @@ post-patch:
 			-e 's|[$$][(]builddir[)]/../cpp/libgwengui-cpp.la|-lgwengui-cpp|g' \
 			-e 's|[$$][(]top_builddir[)]/gui/cpp/libgwengui-cpp.la|-lgwengui-cpp|g' \
 			-e '/^SUBDIRS/s|cpp ||g'
+# The qt6 gui source is actually located in the qt5 subdir and needs this
+# symlink to build. This should be fixed in the next release.
+	@(cd ${BUILD_WRKSRC} && ${LN} -sf qt5 qt6)
 .endif
 
 post-build-DOXYGEN-on:
