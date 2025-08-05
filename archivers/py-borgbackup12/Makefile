@@ -1,10 +1,13 @@
 PORTNAME=	borgbackup
-DISTVERSION=	1.2.8
-PORTREVISION=	4
+DISTVERSION=	1.2.9
+PORTREVISION=	0
 CATEGORIES=	archivers python
-MASTER_SITES=	PYPI
+MASTER_SITES=	https://github.com/borgbackup/borg/releases/download/${DISTVERSION}/ \
+		PYPI  # note the .asc signature to accompany the tarball isn't available on PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	12
+
+DEPRECATED=	Likely the final 1.2.x release, please migrate to using 1.4.x (it is quite similar)
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Deduplicating backup program
@@ -14,7 +17,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # note that borgbackup pins the msgpack version range per patchlevel version!
-_BB_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.2<1.1.1_99:devel/py-msgpack@${PY_FLAVOR}
+_BB_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.2<1.1.2:devel/py-msgpack@${PY_FLAVOR}
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=1.7:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${_BB_DEPENDS}
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
