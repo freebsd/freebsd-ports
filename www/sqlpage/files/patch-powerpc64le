@@ -1,7 +1,7 @@
 Obtained from:	https://cgit.FreeBSD.org/ports/commit/?id=f08b67611f0b19c0ee8d9053ee4d22e09b03f2b1
 
---- cargo-crates/aws-lc-sys-0.29.0/aws-lc/crypto/fipsmodule/cpucap/cpu_ppc64le.c.orig	2024-07-03 21:50:24 UTC
-+++ cargo-crates/aws-lc-sys-0.29.0/aws-lc/crypto/fipsmodule/cpucap/cpu_ppc64le.c
+--- cargo-crates/aws-lc-sys-0.30.0/aws-lc/crypto/fipsmodule/cpucap/cpu_ppc64le.c.orig	2024-07-03 21:50:24 UTC
++++ cargo-crates/aws-lc-sys-0.30.0/aws-lc/crypto/fipsmodule/cpucap/cpu_ppc64le.c
 @@ -69,10 +69,15 @@ void OPENSSL_cpuid_setup(void) {
  
  void OPENSSL_cpuid_setup(void) {
