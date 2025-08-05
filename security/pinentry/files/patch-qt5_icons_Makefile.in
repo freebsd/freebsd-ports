@@ -1,8 +1,8 @@
 Rename icon to prevent install conflicts with the Qt6 frontend.
 
---- qt5/icons/Makefile.in.orig	2024-07-03 09:29:09 UTC
+--- qt5/icons/Makefile.in.orig	2025-07-28 07:07:41 UTC
 +++ qt5/icons/Makefile.in
-@@ -350,12 +350,12 @@ EXTRA_DIST = data-error.svg \
+@@ -350,7 +350,7 @@ EXTRA_DIST = data-error.svg \
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  EXTRA_DIST = data-error.svg \
@@ -10,7 +10,10 @@ Rename icon to prevent install conflicts with the Qt6 frontend.
 +	     pinentry-qt5.png \
  	     hint.svg \
  	     password-generate.svg \
-              visibility.svg
+ 	     visibility.svg \
+@@ -358,7 +358,7 @@ EXTRA_DIST = data-error.svg \
+ 	     password-generate_dark.svg \
+ 	     visibility_dark.svg
  
 -icons_DATA = pinentry.png
 +icons_DATA = pinentry-qt5.png
