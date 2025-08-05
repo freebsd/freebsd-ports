@@ -87,7 +87,6 @@ lib/postgresql/uuid-ossp.so
 %%DATADIR%%/extension/btree_gist--1.5--1.6.sql
 %%DATADIR%%/extension/btree_gist--1.6--1.7.sql
 %%DATADIR%%/extension/btree_gist--1.7--1.8.sql
-%%DATADIR%%/extension/btree_gist--1.8--1.9.sql
 %%DATADIR%%/extension/btree_gist.control
 %%DATADIR%%/extension/citext--1.0--1.1.sql
 %%DATADIR%%/extension/citext--1.1--1.2.sql
