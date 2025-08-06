@@ -1,6 +1,6 @@
 cmID and xid atoms only supported in mp4v2 >= 2.0.0
 
---- src/plugins/mp4v2metadata/m4afile.cpp.orig	2022-08-05 16:27:08 UTC
+--- src/plugins/mp4v2metadata/m4afile.cpp.orig	2025-07-24 02:28:50 UTC
 +++ src/plugins/mp4v2metadata/m4afile.cpp
 @@ -124,6 +124,8 @@ const struct {
    { "geID", Frame::FT_Other },
@@ -25,7 +25,7 @@ cmID and xid atoms only supported in mp4v2 >= 2.0.0
      if (size >= 4) {
        uint val = value[3] + (value[2] << 8) +
          (value[1] << 16) + (value[0] << 24);
-@@ -889,11 +894,13 @@ bool M4aFile::writeTags(bool force, bool* renamed, boo
+@@ -894,11 +899,13 @@ bool M4aFile::writeTags(bool force, bool* renamed, boo
            } else if (name == QLatin1String("geID")) {
              uint32_t val = str.toULong();
              MP4TagsSetGenreID(tags, &val);
@@ -39,7 +39,7 @@ cmID and xid atoms only supported in mp4v2 >= 2.0.0
            } else {
              MP4ItmfItem* item;
              if (name.length() == 4 &&
-@@ -1579,7 +1586,10 @@ QStringList M4aFile::getFrameIds(Frame::TagNumber tagN
+@@ -1595,7 +1602,10 @@ QStringList M4aFile::getFrameIds(Frame::TagNumber tagN
      QLatin1String("plID") << QLatin1String("purd") << QLatin1String("rtng") << QLatin1String("sfID") <<
      QLatin1String("sosn") << QLatin1String("stik") << QLatin1String("tven") <<
      QLatin1String("tves") << QLatin1String("tvnn") << QLatin1String("tvsh") << QLatin1String("tvsn") <<
