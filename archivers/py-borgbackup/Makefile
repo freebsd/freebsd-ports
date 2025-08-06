@@ -2,7 +2,8 @@ PORTNAME=	borgbackup
 DISTVERSION=	1.4.1
 PORTREVISION=	1
 CATEGORIES=	archivers python
-MASTER_SITES=	PYPI
+MASTER_SITES=	https://github.com/borgbackup/borg/releases/download/${DISTVERSION}/ \
+		PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mandree@FreeBSD.org
