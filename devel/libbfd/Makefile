@@ -11,7 +11,6 @@ BROKEN_aarch64=		Fails to configure: machine aarch64-portbld not recognized
 BROKEN_armv6=		Fails to configure: BFD does not support target armv6-portbld-freebsd12.0
 BROKEN_armv7=		Fails to configure: BFD does not support target armv7-portbld-freebsd12.0
 BROKEN_mips64=		Fails to configure: BFD does not support target mips64-portbld-freebsd12.0
-BROKEN_riscv64=		Fails to configure: machine riscv64-portbld not recognized
 
 CONFLICTS=	mingw-binutils binutils
 
