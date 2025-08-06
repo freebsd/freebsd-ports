@@ -132,8 +132,8 @@ Library selection is handled by libglvnd and/or libmap.conf.
    [files('anv_gem.c'), anv_hasvk_entrypoints[0]],
    include_directories : [
      inc_include, inc_src, inc_mapi, inc_mesa, inc_gallium, inc_intel, inc_compiler,
---- src/mapi/es1api/meson.build.orig	2025-03-28 23:07:17 UTC
-+++ src/mapi/es1api/meson.build
+--- src/mesa/glapi/es1api/meson.build.orig	2025-08-06 21:21:09 UTC
++++ src/mesa/glapi/es1api/meson.build
 @@ -23,7 +23,7 @@ libglesv1_cm = shared_library(
  )
  
@@ -143,8 +143,8 @@ Library selection is handled by libglvnd and/or libmap.conf.
    ['libgles1_public.c', es1_glapi_mapi_tmp_h],
    vs_module_defs : gles1_def,
    c_args : [
---- src/mapi/es2api/meson.build.orig	2025-03-28 23:07:17 UTC
-+++ src/mapi/es2api/meson.build
+--- src/mesa/glapi/es2api/meson.build.orig	2025-08-06 21:21:09 UTC
++++ src/mesa/glapi/es2api/meson.build
 @@ -23,7 +23,7 @@ libgles2 = shared_library(
  )
  
@@ -154,8 +154,8 @@ Library selection is handled by libglvnd and/or libmap.conf.
    ['libgles2_public.c', es2_glapi_mapi_tmp_h],
    vs_module_defs : gles2_def,
    c_args : [
---- src/mapi/shared-glapi/meson.build.orig	2025-03-28 23:07:17 UTC
-+++ src/mapi/shared-glapi/meson.build
+--- src/mesa/glapi/shared-glapi/meson.build.orig	2025-08-06 21:21:09 UTC
++++ src/mesa/glapi/shared-glapi/meson.build
 @@ -11,7 +11,7 @@ libglapi = static_library(
  )
  

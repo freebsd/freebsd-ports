@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	25.2-branchpoint-973
-DISTVERSIONSUFFIX=	-g5649a0aa06e
+DISTVERSION=	25.2-branchpoint-1118
+DISTVERSIONSUFFIX=	-g0de5e8cd59d
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -46,8 +46,8 @@ MESON_ARGS=	-Dgallium-mediafoundation=disabled \
 LDFLAGS+=	-Wl,--undefined-version # https://gitlab.freedesktop.org/mesa/mesa/-/issues/8003
 PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/}
 
-OPTIONS_DEFINE=		LLVM LTO OPENCL VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
-OPTIONS_DEFAULT=	LLVM LTO OPENCL VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
+OPTIONS_DEFINE=		DRM LLVM LTO OPENCL VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
+OPTIONS_DEFAULT=	DRM LLVM LTO OPENCL VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
 OPTIONS_GROUP=		GALLIUM VULKAN
 OPTIONS_GROUP_GALLIUM=	crocus iris panfrost r600 radeonsi
 OPTIONS_GROUP_VULKAN=	anv hasvk radv
@@ -94,6 +94,11 @@ COINST_PLIST_SUB=	SUFFIX=${PKGNAMESUFFIX}
 COINST_SUB_FILES=	libmap.conf
 COINST_SUB_LIST=	SUFFIX=${PKGNAMESUFFIX}
 COINST_PLIST_SUB_OFF=	SUFFIX=
+
+DRM_DESC=		KMS console support for Vulkan (KHR_display)
+DRM_LIB_DEPENDS=	libudev.so:devel/libudev-devd \
+			libdisplay-info.so:sysutils/libdisplay-info
+DRM_MESON_ENABLED=	display-info
 
 LLVM_DESC=		Build with LLVM support (see implies)
 LLVM_USES=		llvm:min=18,lib,noexport
