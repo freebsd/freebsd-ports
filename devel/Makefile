@@ -1183,6 +1183,7 @@
     SUBDIR += kyua
     SUBDIR += lab
     SUBDIR += lace
+    SUBDIR += lace14
     SUBDIR += lager
     SUBDIR += laminar
     SUBDIR += lasi

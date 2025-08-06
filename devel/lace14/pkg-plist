@@ -1,0 +1,11 @@
+include/lace.h
+include/lace14.h
+include/lace_config.h
+lib/cmake/lace/lace-config-version.cmake
+lib/cmake/lace/lace-config.cmake
+lib/cmake/lace/lace-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/lace/lace-targets.cmake
+lib/liblace.so
+lib/liblace14.so
+libdata/pkgconfig/lace.pc
+libdata/pkgconfig/lace14.pc
