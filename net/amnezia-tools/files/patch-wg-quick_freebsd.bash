@@ -26,7 +26,7 @@
  }
  
 -CONFIG_SEARCH_PATHS=( /etc/amnezia/amneziawg /usr/local/etc/amnezia/amneziawg )
-+CONFIG_SEARCH_PATHS=( /usr/local/etc/amnezia/amneziawg  /usr/local/etc/wireguard )
++CONFIG_SEARCH_PATHS=( ${AWG_QUICK_CONFIG_SEARCH_PATHS:-/usr/local/etc/amnezia} )
  
  unset ORIGINAL_TMPDIR
  make_temp() {

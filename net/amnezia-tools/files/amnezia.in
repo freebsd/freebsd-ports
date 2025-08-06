@@ -5,17 +5,19 @@
 # KEYWORD: shutdown
 #
 # amnezia_enable (bool):	Set to "YES" to enable amnezia.
-#                           (default: "NO")
+#							(default: "NO")
 #
 # amnezia_interfaces (str): List of interfaces to bring up/down
-#							on start/stop. (eg: "awg0 awg1")
+#							on start/stop. (eg: "amn0 amn1")
 #							(default: "")
 # amnezia_env (str):		Environment variables for the userspace
-#                           implementation. (eg: "LOG_LEVEL=debug")
-# amnezia_kmod (str):		Kernel module to load. (eg: "if_awg")
-#							(default: "if_awg", "" - no module)
+#							implementation. (eg: "LOG_LEVEL=debug")
+#
+# amnezia_kmod (str):		Kernel module to load.
+#							(default: "if_amn", "" - no module)
+#
 # amnezia_confdirs (str):	Directory to store the configuration files.
-#							(default: "/usr/local/etc/amnezia/amnezia")
+#							(default: "/usr/local/etc/amnezia")
 
 . /etc/rc.subr
 
