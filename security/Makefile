@@ -274,6 +274,7 @@
     SUBDIR += krb5
     SUBDIR += krb5-120
     SUBDIR += krb5-121
+    SUBDIR += krb5-122
     SUBDIR += krb5-devel
     SUBDIR += kstart
     SUBDIR += ktls_isa-l_crypto-kmod
