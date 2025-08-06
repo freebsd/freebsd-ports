@@ -1,6 +1,6 @@
 --- ../cvs-build/cvs/Makefile.orig	2012-09-05 19:25:43.000000000 -0700
-+++ ../cvs-build/cvs/Makefile	2021-01-02 17:11:22.159883000 -0800
-@@ -29,10 +29,10 @@
++++ ../cvs-build/cvs/Makefile	2025-08-05 23:33:37.681784000 -0700
+@@ -29,15 +29,22 @@
  	 -I/usr/include/gnu \
  	 -I${CVSDIR}/lib -I${CVSDIR}/diff -I.
  
@@ -11,6 +11,18 @@
  
 -.if ${MK_KERBEROS_SUPPORT} != "no"
 +.if defined(KERBEROS_SUPPORT)
++.if exists(/usr/libexec/krb5kdc)
++# MIT KRB5
++LDADD+= -lgssapi_krb5 -lkrb5 -lkrb5support -lcrypto -lcrypt -lcom_err
++DPADD+= ${LIBGSSAPI_KRB5} ${LIBKRB5} ${LIBKRB5SUPPORT} ${LIBCRYPTO}
++DPADD+= ${LIBCRYPT} ${LIBCOM_ERR}
++.else
  CFLAGS+= -DHAVE_GSSAPI -DENCRYPTION
  LDADD+= -lgssapi -lkrb5 -lhx509 -lasn1 -lcrypto -lroken -lcrypt -lcom_err
  DPADD+= ${LIBGSSAPI} ${LIBKRB5} ${LIBHX509} ${LIBASN1} ${LIBCRYPTO} ${LIBROKEN}
+ DPADD+= ${LIBCRYPT} ${LIBCOM_ERR}
+ .endif
++.endif
+ 
+ #
+ # Regression test support
