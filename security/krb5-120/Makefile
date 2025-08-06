@@ -13,6 +13,9 @@ PKGNAMESUFFIX=		${PKGNAME_X:S/--/-/:C/-$//}
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
 
+DEPRECATED=		Now that MIT KRB5 1.22 is GA 1.20 is EOL
+EXPIRATION_DATE=	2025-12-31
+
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		MIT implementation of RFC 4120 network authentication service
 WWW=			https://web.mit.edu/kerberos/
