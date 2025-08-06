@@ -859,6 +859,7 @@ include/folly/lang/RValueReferenceWrapper.h
 include/folly/lang/SafeAlias-fwd.h
 include/folly/lang/SafeAlias.h
 include/folly/lang/SafeAssert.h
+include/folly/lang/SafeClosure.h
 include/folly/lang/StaticConst.h
 include/folly/lang/Switch.h
 include/folly/lang/Thunk.h
@@ -866,6 +867,7 @@ include/folly/lang/ToAscii.h
 include/folly/lang/TypeInfo.h
 include/folly/lang/UncaughtExceptions.h
 include/folly/lang/VectorTraits.h
+include/folly/lang/bind/AsArgument.h
 include/folly/lang/bind/Bind.h
 include/folly/lang/bind/Named.h
 include/folly/lang/bind/NamedToStorage.h
@@ -998,6 +1000,7 @@ include/folly/random/xoshiro256pp.h
 include/folly/result/gtest_helpers.h
 include/folly/result/result.h
 include/folly/result/try.h
+include/folly/result/value_only_result.h
 include/folly/settings/CommandLineParser.h
 include/folly/settings/Immutables.h
 include/folly/settings/Observer.h
