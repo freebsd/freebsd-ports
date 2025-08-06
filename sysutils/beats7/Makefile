@@ -11,6 +11,8 @@ WWW=		https://www.elastic.co/products/beats/
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to build: link: golang.org/x/net/internal/socket: invalid reference to syscall.recvmsg
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/mage:devel/mage
 
 USES=		go:modules
