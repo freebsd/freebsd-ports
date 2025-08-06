@@ -73,6 +73,7 @@
     SUBDIR += fastnetmon
     SUBDIR += fence-agents
     SUBDIR += fetchconfig
+    SUBDIR += fli
     SUBDIR += flow-tools
     SUBDIR += flowd
     SUBDIR += flowviewer
