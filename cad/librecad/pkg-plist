@@ -1320,6 +1320,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/library/sheets/A4_2_text.dxf
 %%DATADIR%%/library/templates/empty.dxf
 %%DATADIR%%/patterns/angle.dxf
+%%DATADIR%%/patterns/angle45.dxf
 %%DATADIR%%/patterns/ansi31.dxf
 %%DATADIR%%/patterns/ar-b816.dxf
 %%DATADIR%%/patterns/ar-b816c.dxf
