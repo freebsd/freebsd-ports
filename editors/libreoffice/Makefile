@@ -1,4 +1,4 @@
-PORTREVISION=	2
+PORTREVISION=	3
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -228,7 +228,7 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		bsh-2.1.1-src.zip:src \
 		rhino-1.7.15.zip:src
 JAVA_USES=	java
-JAVA_VARS=	JAVA_VERSION=17+
+JAVA_VARS=	JAVA_VERSION=17+ NO_SHLIB_REQUIRES_GLOB=libjawt.so
 
 KF5_CONFIGURE_ENABLE=	kf5
 KF5_USE=	kde=config,coreaddons,i18n,kio,windowsystem
