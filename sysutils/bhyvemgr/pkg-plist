@@ -26,6 +26,7 @@ share/applications/bhyvemgr.desktop
 %%DATADIR%%/images/menu/com.png
 %%DATADIR%%/images/menu/edit.png
 %%DATADIR%%/images/menu/hide.png
+%%DATADIR%%/images/menu/paste.png
 %%DATADIR%%/images/menu/quit.png
 %%DATADIR%%/images/menu/rdp.png
 %%DATADIR%%/images/menu/remove.png
@@ -54,5 +55,9 @@ share/applications/bhyvemgr.desktop
 %%DATADIR%%/images/systems/rockylinux.png
 %%DATADIR%%/images/systems/ubuntu.png
 %%DATADIR%%/images/systems/windows.png
+%%DATADIR%%/samples/meta-data
+%%DATADIR%%/samples/user-data
+%%DATADIR%%/templates/meta-data
+%%DATADIR%%/templates/user-data
 share/icons/hicolor/512x512/apps/bhyvemgr.png
 share/icons/hicolor/scalable/apps/bhyvemgr.svg

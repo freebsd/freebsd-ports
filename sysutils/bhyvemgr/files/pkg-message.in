@@ -9,12 +9,24 @@ bhyvemgr was installed
 
 3) It can be compiled with supports for gtk2, qt5 or qt6 graphic interfaces
 
-4) For a better use of bhyvemgr, some settings must be applied to your system.
+4) Now, bhyvemgr supports the use of cloud and VM images. You can even use cloud
+   init or nuageinit to initialize them.
+
+5) If you use a minimal configuration it uses  files templates files inside
+   of %%DATADIR%%/templates directory.
+
+6) If you want to use your own configuration files: user-data, meta-data, try to
+   keep %%UUID%% and %%HOSTAME%% inside of them as you can look at
+   %%DATADIR%%/samples directory.
+
+   They will be will replace with virtual machine values.
+
+7) For a optimal use of bhyvemgr, some settings must be applied to your system.
    Take a look at the following url:
 
    https://github.com/alonsobsd/bhyvemgr/blob/main/README.md
 
-5) Enjoy it ;)
+8) Enjoy it ;)
 EOM
 }
 ]
