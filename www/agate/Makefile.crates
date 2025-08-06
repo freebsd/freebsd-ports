@@ -8,7 +8,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		backtrace-0.3.75 \
 		bitflags-2.9.1 \
 		bytes-1.10.1 \
-		cc-1.2.27 \
+		cc-1.2.31 \
 		cfg-if-1.0.1 \
 		colorchoice-1.0.4 \
 		configparser-3.1.0 \
@@ -36,6 +36,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		icu_provider-2.0.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.1 \
+		io-uring-0.7.9 \
 		is_terminal_polyfill-1.70.1 \
 		jiff-0.2.15 \
 		jiff-static-0.2.15 \
@@ -64,18 +65,18 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		powerfmt-0.2.0 \
 		proc-macro2-1.0.95 \
 		quote-1.0.40 \
-		rcgen-0.13.2 \
+		rcgen-0.14.3 \
 		ring-0.17.14 \
-		rustc-demangle-0.1.25 \
-		rustls-0.23.28 \
+		rustc-demangle-0.1.26 \
+		rustls-0.23.31 \
 		rustls-pki-types-1.12.0 \
-		rustls-webpki-0.103.3 \
+		rustls-webpki-0.103.4 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
 		shlex-1.3.0 \
 		slab-0.4.10 \
 		smallvec-1.15.1 \
-		socket2-0.5.10 \
+		socket2-0.6.0 \
 		stable_deref_trait-1.2.0 \
 		subtle-2.6.1 \
 		syn-2.0.104 \
@@ -85,7 +86,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		time-0.3.41 \
 		time-core-0.1.4 \
 		tinystr-0.8.1 \
-		tokio-1.45.1 \
+		tokio-1.47.1 \
 		tokio-macros-2.5.0 \
 		tokio-openssl-0.6.5 \
 		tokio-rustls-0.26.2 \
@@ -120,5 +121,5 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zerofrom-derive-0.1.6 \
 		zeroize-1.8.1 \
 		zerotrie-0.2.2 \
-		zerovec-0.11.2 \
+		zerovec-0.11.3 \
 		zerovec-derive-0.11.1
