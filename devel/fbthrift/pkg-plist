@@ -258,11 +258,11 @@ include/thrift/lib/cpp2/async/ServerStreamMultiPublisher.h
 include/thrift/lib/cpp2/async/ServiceInfoHolder.h
 include/thrift/lib/cpp2/async/ServiceRequestInfo.h
 include/thrift/lib/cpp2/async/Sink.h
-include/thrift/lib/cpp2/async/SinkBridgeUtil.h
 include/thrift/lib/cpp2/async/StreamCallbacks.h
 include/thrift/lib/cpp2/async/TAsyncTransportHandler.h
 include/thrift/lib/cpp2/async/TerminateInteractionOverloadPolicy.h
 include/thrift/lib/cpp2/async/TwoWayBridge.h
+include/thrift/lib/cpp2/async/TwoWayBridgeUtil.h
 include/thrift/lib/cpp2/async/metadata/CursorBasedRequestRpcMetadataAdapter.h
 include/thrift/lib/cpp2/async/metadata/RequestRpcMetadataAdapter.h
 include/thrift/lib/cpp2/async/metadata/RequestRpcMetadataFacade.h
@@ -727,11 +727,13 @@ include/thrift/lib/python/server/flagged/RcAwareTaskPatch.h
 include/thrift/lib/python/server/interceptor/PythonServerModule.h
 include/thrift/lib/python/server/interceptor/PythonServiceInterceptor.h
 include/thrift/lib/python/server/util.h
+include/thrift/lib/python/streaming/PythonUserException.h
+include/thrift/lib/python/streaming/Sink.h
+include/thrift/lib/python/streaming/StreamElementEncoder.h
 include/thrift/lib/python/test/event_handlers/handler.h
 include/thrift/lib/python/test/interactions/interaction_test.h
 include/thrift/lib/python/test/metadata_response/metadata_response.h
 include/thrift/lib/python/types.h
-include/thrift/lib/python/util.h
 include/thrift/lib/thrift/RpcMetadata_extra.h
 include/thrift/lib/thrift/SerializableDynamic.h
 include/thrift/lib/thrift/TypeToMaskAdapter.h
