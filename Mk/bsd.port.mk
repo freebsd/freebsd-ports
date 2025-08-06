@@ -4489,7 +4489,7 @@ describe-json:
 	${ECHO_CMD} \"complete_options_list\":[\"${COMPLETE_OPTIONS_LIST:ts,:S/,/\",\"/g}\"], ;\
 	${ECHO_CMD} \"categories\":[\"${CATEGORIES:ts,:S/,/\",\"/g}\"], ;\
 	${ECHO_CMD} \"license\":[\"${LICENSE:ts,:S/,/\",\"/g}\"], ;\
-	${ECHO_CMD} \"deprecated\":\""${DEPRECATED:S/"/\\\"/g:S/\\\\*/*/g:S/\\\'/'/g}" \", ;\
+	${ECHO_CMD} \"deprecated\":\"${DEPRECATED:Q:S/"/\\\"/g:S/\\\\*/*/g:S/\\\'/'/g}\", ;\
 	${ECHO_CMD} \"broken\":\"${BROKEN:Q:S/"/\\\"/g:S/\\\\*/*/g:S/\\\'/'/g}\", ;\
 	${ECHO_CMD} \"distversion\":\"${DISTVERSION}\", ;\
 	${ECHO_CMD} \"distversionprefix\":\"${DISTVERSIONPREFIX}\", ;\
