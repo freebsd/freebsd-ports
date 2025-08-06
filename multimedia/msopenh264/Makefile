@@ -1,6 +1,6 @@
 PORTNAME=	msopenh264
 DISTVERSION=	5.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia net
 
 PATCH_SITES=	https://gitlab.linphone.org/BC/public/msopenh264/-/commit/
