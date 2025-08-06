@@ -1,6 +1,6 @@
 PORTNAME=	dnscrypt-proxy
-PORTVERSION=	2.1.5
-PORTREVISION=	14
+PORTVERSION=	2.1.12
+PORTREVISION=	1
 CATEGORIES=	dns security
 PKGNAMESUFFIX=	2
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	ca_root_nss>=3.35:security/ca_root_nss
 
+GO_MIN_VER=		1.21
 USES=		go:modules
 USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	yes
