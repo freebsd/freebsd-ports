@@ -1,6 +1,7 @@
 PORTNAME=	etcd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.37
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/etcd-io/${PORTNAME}/${DISTVERSIONFULL}/:gomod
 PKGNAMEPREFIX=	coreos-

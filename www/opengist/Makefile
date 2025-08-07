@@ -1,6 +1,7 @@
 PORTNAME=	opengist
 PORTVERSION=	1.10.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www textproc
 MASTER_SITES=	LOCAL/fox/:js
 DISTFILES=	opengist-${DISTVERSION}-node_modules.tgz:js

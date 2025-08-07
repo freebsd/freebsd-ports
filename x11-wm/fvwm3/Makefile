@@ -1,6 +1,6 @@
 PORTNAME=	fvwm3
 DISTVERSION=	1.1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm3/releases/download/${DISTVERSION}/ \
 		http://fvwm.sourceforge.net/generated/icon_download/:icons

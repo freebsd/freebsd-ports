@@ -1,7 +1,7 @@
 PORTNAME=	prometheus
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.55.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod \
 		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONFULL}/:ui
