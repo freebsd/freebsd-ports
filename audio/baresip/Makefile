@@ -1,6 +1,6 @@
 PORTNAME=	baresip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.24.0
+DISTVERSION=	4.0.0
 CATEGORIES=	audio
 
 MAINTAINER=	herbert@gojira.at
@@ -46,7 +46,7 @@ VPX_DESC=	VP8/VP9 video codecs
 X11_DESC=	X11 video output
 
 _MODULES_LIST=	account aubridge auconv aufile auresamp ausine cons contact \
-		ctrl_tcp debug_cmd dtls_srtp ebuacip echo fakevideo httpd \
+		ctrl_tcp debug_cmd dtls_srtp echo fakevideo httpd \
 		httpreq ice l16 menu mixausrc mixminus mwi natpmp netroam pcp \
 		presence rtcpsummary selfview serreg srtp stdio stun syslog \
 		turn uuid vidbridge vidinfo vumeter

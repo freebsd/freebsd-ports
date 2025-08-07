@@ -17,7 +17,6 @@ lib/baresip/modules/contact.so
 lib/baresip/modules/ctrl_tcp.so
 lib/baresip/modules/debug_cmd.so
 lib/baresip/modules/dtls_srtp.so
-lib/baresip/modules/ebuacip.so
 lib/baresip/modules/echo.so
 lib/baresip/modules/fakevideo.so
 %%G711%%lib/baresip/modules/g711.so
@@ -62,8 +61,8 @@ lib/baresip/modules/vidinfo.so
 lib/baresip/modules/vumeter.so
 %%X11%%lib/baresip/modules/x11.so
 lib/libbaresip.so
-lib/libbaresip.so.20
-lib/libbaresip.so.20.24.0
+lib/libbaresip.so.21
+lib/libbaresip.so.21.0.0
 libdata/pkgconfig/libbaresip.pc
 share/applications/com.github.baresip.desktop
 %%DATADIR%%/autoanswer.wav
