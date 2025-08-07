@@ -4710,3 +4710,4 @@ security/openssl31||2025-08-04|Has expired: End-of-Life, will be removed when ne
 databases/pear-DoctrineDBAL||2025-08-04|Has expired: Upstream no longer serves through PEAR channel and has been moved to Composer
 www/py-wsaccel||2025-08-04|Has expired: Upstream ceased development
 databases/pear-DoctrineCommon||2025-08-05|Has expired: Upstream no longer serves through PEAR channel and has been moved to Composer
+devel/tclthread|devel/tcl8-thread|2025-08-07|Use tcl8-thread with Tcl8 and tcl9-thread Tcl9

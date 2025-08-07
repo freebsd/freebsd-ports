@@ -2,7 +2,7 @@ PORTNAME=	thread
 PORTVERSION=	2.8.10
 CATEGORIES=	devel
 MASTER_SITES=	SF/tcl/Tcl/8.6.15/
-PKGNAMEPREFIX=	tcl
+PKGNAMEPREFIX=	tcl8
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -12,9 +12,7 @@ WWW=		https://wiki.tcl.tk/2770
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.terms
 
-USES=		autoreconf tcl:tea
-
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USES=		tcl:tcl8,tea
 
 DOCSDIR=	${PREFIX}/share/doc/${TCL_PKG}
 USE_LDCONFIG=	${PREFIX}/lib/${TCL_PKG}

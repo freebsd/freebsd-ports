@@ -8317,7 +8317,8 @@
     SUBDIR += tcllib
     SUBDIR += tcllibc
     SUBDIR += tclreadline
-    SUBDIR += tclthread
+    SUBDIR += tcl8-thread
+    SUBDIR += tcl9-thread
     SUBDIR += tcltls
     SUBDIR += tclxml
     SUBDIR += tdl
