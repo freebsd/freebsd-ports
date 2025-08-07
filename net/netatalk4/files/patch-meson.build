@@ -1,4 +1,4 @@
---- meson.build.orig	2025-03-31 05:27:01 UTC
+--- meson.build.orig	2025-08-05 13:56:32 UTC
 +++ meson.build
 @@ -69,6 +69,7 @@ libdir = prefix / get_option('libdir')
  datadir = prefix / get_option('datadir')
@@ -17,15 +17,15 @@
  
  ############
  # Includes #
-@@ -394,6 +395,7 @@ bdb_subdirs = [
- endif
+@@ -408,6 +409,7 @@ if 'dbd' in get_option('with-cnid-backends')
+     endif
  
- bdb_subdirs = [
-+    '%%DB_NAME%%',
-     'db62',
-     'db6.2',
-     'db61',
-@@ -775,12 +777,12 @@ dns_sd_libs = []
+     bdb_subdirs = [
++        '%%DB_NAME%%',
+         'db62',
+         'db6.2',
+         'db61',
+@@ -924,12 +926,12 @@ dns_sd_libs = []
  
  dns_sd_libs = []
  
@@ -40,7 +40,7 @@
  if dns_sd.found()
      dns_sd_libs += system
  endif
-@@ -794,6 +796,8 @@ have_dns = (
+@@ -943,6 +945,8 @@ have_dns = (
      )
  )
  
@@ -49,7 +49,7 @@
  if enable_zeroconf
      if avahi.found()
          have_zeroconf = true
-@@ -807,6 +811,7 @@ if enable_zeroconf
+@@ -956,6 +960,7 @@ if enable_zeroconf
          cdata.set('HAVE_MDNS', 1)
          cdata.set('freebsd_zeroconf', 'mdnsd')
          zeroconf_provider += 'mDNS'
@@ -57,7 +57,7 @@
      endif
  endif
  
-@@ -1535,6 +1540,7 @@ if not enable_pam
+@@ -1562,6 +1567,7 @@ if not enable_pam
  
  if not enable_pam
      have_pam = false

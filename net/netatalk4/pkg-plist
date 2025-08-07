@@ -39,7 +39,6 @@ include/atalk/aep.h
 include/atalk/afp.h
 include/atalk/asp.h
 include/atalk/atp.h
-include/atalk/bstrlib.h
 include/atalk/cnid.h
 include/atalk/ddp.h
 include/atalk/ea.h
@@ -70,11 +69,6 @@ sbin/cnid_metad
 sbin/netatalk
 share/man/man1/ad.1.gz
 share/man/man1/addump.1.gz
-share/man/man1/afp_lantest.1.gz
-share/man/man1/afp_logintest.1.gz
-share/man/man1/afp_spectest.1.gz
-share/man/man1/afp_speedtest.1.gz
-share/man/man1/afparg.1.gz
 share/man/man1/afpldaptest.1.gz
 share/man/man1/afppasswd.1.gz
 %%DBUS%%share/man/man1/afpstats.1.gz
