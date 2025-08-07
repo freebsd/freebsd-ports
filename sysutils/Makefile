@@ -1362,6 +1362,7 @@
     SUBDIR += szyszka
     SUBDIR += tai64nfrac
     SUBDIR += tailspin
+    SUBDIR += tarbsd-builder
     SUBDIR += tarsnap
     SUBDIR += tarsnap-gui
     SUBDIR += tarsnap-periodic

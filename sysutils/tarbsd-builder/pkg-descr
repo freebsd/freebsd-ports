@@ -1,0 +1,2 @@
+tarBSD builder builds FreeBSD images that boot to memory. Depending on
+installed packages, the image can be even less than 40 megabytes.
