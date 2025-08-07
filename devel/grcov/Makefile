@@ -1,6 +1,6 @@
 PORTNAME=	grcov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.3
+DISTVERSION=	0.10.5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,11 +19,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.19 \
+		anstream-0.6.20 \
 		anstyle-1.0.11 \
 		anstyle-parse-0.2.7 \
-		anstyle-query-1.1.3 \
-		anstyle-wincon-3.0.9 \
+		anstyle-query-1.1.4 \
+		anstyle-wincon-3.0.10 \
 		arbitrary-1.4.1 \
 		autocfg-1.5.0 \
 		bitflags-2.9.1 \
@@ -32,14 +32,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bumpalo-3.19.0 \
 		bytecount-0.6.9 \
 		byteorder-1.5.0 \
-		cc-1.2.30 \
+		cc-1.2.31 \
 		cfb-0.7.3 \
 		cfg-if-1.0.1 \
 		chrono-0.4.41 \
 		chrono-tz-0.9.0 \
 		chrono-tz-build-0.3.0 \
-		clap-4.5.41 \
-		clap_builder-4.5.41 \
+		clap-4.5.42 \
+		clap_builder-4.5.42 \
 		clap_derive-4.5.41 \
 		clap_lex-0.7.5 \
 		colorchoice-1.0.4 \
@@ -117,7 +117,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		proc-macro-error-attr2-2.0.0 \
 		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.95 \
-		quick-xml-0.38.0 \
+		quick-xml-0.38.1 \
 		quote-1.0.40 \
 		r-efi-5.3.0 \
 		rand-0.8.5 \
@@ -138,7 +138,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		semver-1.0.26 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
-		serde_json-1.0.141 \
+		serde_json-1.0.142 \
 		sha2-0.10.9 \
 		shlex-1.3.0 \
 		simd-adler32-0.3.7 \
@@ -148,8 +148,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		smallvec-1.15.1 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
-		symbolic-common-12.16.0 \
-		symbolic-demangle-12.16.0 \
+		symbolic-common-12.16.1 \
+		symbolic-demangle-12.16.1 \
 		syn-2.0.104 \
 		tabled-0.20.0 \
 		tabled_derive-0.11.0 \
