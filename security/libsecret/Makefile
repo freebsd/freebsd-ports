@@ -25,4 +25,6 @@ MESON_ARGS=	-Dbash_completion=disabled
 # see PR 287429 / https://gitlab.gnome.org/GNOME/libsecret/-/issues/106
 MESON_ARGS+=	-Dc_args="-DHAVE_CMSGCRED"
 
+PIE_UNSAFE=	yes
+
 .include <bsd.port.mk>
