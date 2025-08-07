@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.8.2
+DISTVERSION=	2025.8.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -132,8 +132,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
 		darling-0.20.11 \
+		darling-0.21.0 \
 		darling_core-0.20.11 \
+		darling_core-0.21.0 \
 		darling_macro-0.20.11 \
+		darling_macro-0.21.0 \
 		dashmap-5.5.3 \
 		dashmap-6.1.0 \
 		deflate64-0.1.9 \
@@ -468,6 +471,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		regex-syntax-0.8.5 \
 		reqwest-0.12.22 \
 		ring-0.17.14 \
+		rmcp-0.3.2 \
+		rmcp-macros-0.3.2 \
 		rmp-0.8.14 \
 		rmp-serde-1.3.0 \
 		roff-0.2.2 \
@@ -494,6 +499,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		schannel-0.1.27 \
 		schemars-0.9.0 \
 		schemars-1.0.4 \
+		schemars_derive-1.0.4 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
 		scrypt-0.11.0 \
@@ -510,6 +516,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde-1.0.219 \
 		serde-value-0.7.0 \
 		serde_derive-1.0.219 \
+		serde_derive_internals-0.29.1 \
 		serde_ignored-0.1.12 \
 		serde_json-1.0.141 \
 		serde_regex-1.1.0 \
