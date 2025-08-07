@@ -1,5 +1,5 @@
 GITLAB_VERSION=		18.2.1
-GITLAB_PORTREVISION=	1
+GITLAB_PORTREVISION=	2
 
 # Git version gitaly should use (from gitlab mirror)
 # Find current tag from Makefile and .gitlab-ci.yaml
