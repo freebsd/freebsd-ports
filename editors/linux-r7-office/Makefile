@@ -1,6 +1,6 @@
 PORTNAME=	r7-office
-PORTVERSION=	2024.4.2
-DISTVERSIONSUFFIX=	-721.el8
+PORTVERSION=	2025.2.2
+DISTVERSIONSUFFIX=	-831.el8
 CATEGORIES=	editors linux russian
 MASTER_SITES=	https://download.r7-office.ru/centos/
 PKGNAMEPREFIX=	linux-
@@ -31,13 +31,14 @@ post-patch:
 	${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKDIR}/usr/bin/r7-office-*
 	${REINPLACE_CMD} -i '' -e 's|/usr/bin/|${PREFIX}/bin/|' -e 's|P7|Р7|' \
 		${WRKDIR}/usr/share/applications/*.desktop
+	${REINPLACE_CMD} -i '' -e 's|/bin/bash|/bin/sh|' \
+		${WRKDIR}/opt/r7-office/desktopeditors/testbird.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/usr/bin/r7-office-* ${STAGEDIR}${PREFIX}/bin/
 	${RLN} ${STAGEDIR}${PREFIX}/bin/r7-office-desktopeditors ${STAGEDIR}${PREFIX}/bin/r7-office
 	cd ${WRKDIR}/opt && ${CP} -r r7-office ${STAGEDIR}${PREFIX}/share
 	cd ${WRKDIR}/usr/share && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/share
-
 	${RLN} ${STAGEDIR}${DATADIR}/desktopeditors/asc-de-256.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/r7-office.png
 
