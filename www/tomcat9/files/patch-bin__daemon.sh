@@ -1,6 +1,6 @@
---- bin/daemon.sh.orig
+--- bin/daemon.sh.orig	2025-07-31 18:19:48 UTC
 +++ bin/daemon.sh
-@@ -115,12 +115,9 @@
+@@ -114,12 +114,9 @@ test ".$CATALINA_MAIN" = . && CATALINA_MAIN=org.apache
  test ".$CATALINA_HOME" = . && CATALINA_HOME=`cd "$DIRNAME/.." >/dev/null; pwd`
  test ".$CATALINA_BASE" = . && CATALINA_BASE="$CATALINA_HOME"
  test ".$CATALINA_MAIN" = . && CATALINA_MAIN=org.apache.catalina.startup.Bootstrap
@@ -15,7 +15,7 @@
  fi
  # Set the default service-start wait time if necessary
  test ".$SERVICE_START_WAIT_TIME" = . && SERVICE_START_WAIT_TIME=10
-@@ -137,7 +134,7 @@
+@@ -136,7 +133,7 @@ test ".$CLASSPATH" != . && CLASSPATH="$CLASSPATH:"
  
  # Add on extra jar files to CLASSPATH
  test ".$CLASSPATH" != . && CLASSPATH="$CLASSPATH:"
