@@ -1,4 +1,4 @@
---- configure.ac.orig	2024-09-01 19:17:42 UTC
+--- configure.ac.orig	2025-08-06 06:49:54 UTC
 +++ configure.ac
 @@ -165,21 +165,21 @@ dnl See if git exists.  If it does, update VERSION to 
  
@@ -37,11 +37,11 @@
  
  dnl Parses the version number for the manual
  manual_version=`echo $VERSION | sed 's+branch_++; s+_base++; s+_dirty++; s+_+.+g'`
-@@ -644,7 +644,7 @@ if test x"${enable_build_docs}" = xtrue ; then
+@@ -697,7 +697,7 @@ if test x"${enable_build_docs}" = xtrue ; then
  	dnl assuming that the end of the version string contains the
  	dnl version number consisting of digits separated by a period.
  	dnl This allows for version numbers like 6.8.90.
--	makeinfo_version_string=`expr "\`makeinfo --version | head -1\`" : '.* \([[.0-9]]\+\)'`
+-	makeinfo_version_string=`expr "\`$MAKEINFO --version | head -1\`" : '.* \([[.0-9]][[.0-9]]*\)'`
 +	makeinfo_version_string=`expr "$(makeinfo --version | head -1)" : '.* \([[.0-9]]\+\)'`
  	dnl echo Makeinfo version ${makeinfo_version}
  

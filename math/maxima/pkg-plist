@@ -4,7 +4,9 @@ bin/rmaxima
 %%SAGE%%lib/ecl/maxima.fas
 lib/maxima/%%PORTVERSION%%/%%BINDIR%%/%%BINNAME%%
 libexec/maxima/%%PORTVERSION%%/mgnuplot
-share/applications/net.sourceforge.maxima.xmaxima.desktop
+%%MANPAGES%%share/man/man1/maxima.1.gz
+%%PORTDOCS%%@dir %%DOCSDIR%%
+share/applications/X%%BINNAME%%.desktop
 share/bash-completion/completions/maxima
 share/bash-completion/completions/rmaxima
 share/bash-completion/completions/xmaxima
@@ -23,13 +25,15 @@ share/emacs/site-lisp/mylatex.ltx.el
 share/emacs/site-lisp/setup-imaxima-imath.el
 share/emacs/site-lisp/smart-complete.el
 share/emacs/site-lisp/sshell.el
-share/info/maxima-index.lisp
+share/icons/text-x-%%BINNAME%%-out.svg
+share/icons/text-x-%%BINNAME%%session.svg
+share/icons/x%%BINNAME%%.png
+share/icons/x%%BINNAME%%.svg
+share/info/guess.info
+share/info/mathml.info
 share/info/maxima-index-html.lisp
-%%MANPAGES%%share/man/man1/maxima.1.gz
-share/metainfo/net.sourceforge.maxima.xmaxima.appdata.xml
+share/info/maxima-index.lisp
+share/info/raddenest.info
+share/metainfo/net.sourceforge.%%BINNAME%%.x%%BINNAME%%.appdata.xml
 share/mime/packages/x-mac.xml
 share/mime/packages/x-maxima-out.xml
-%%XMAXIMA%%share/pixmaps/net.sourceforge.maxima.png
-%%XMAXIMA%%share/pixmaps/net.sourceforge.maxima.svg
-share/pixmaps/text-x-maxima-out.svg
-share/pixmaps/text-x-maximasession.svg

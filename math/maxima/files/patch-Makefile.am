@@ -1,11 +1,11 @@
---- Makefile.am.orig	2022-05-09 16:39:32 UTC
+--- Makefile.am.orig	2024-07-23 03:31:18 UTC
 +++ Makefile.am
 @@ -10,7 +10,7 @@ endif
     DOC_DIR = doc
  endif
  
--SUBDIRS = admin crosscompile-windows src lisp-utils tests $(DOC_DIR) interfaces share demo plotting desktopintegration $(LOCALE_DIR)
-+SUBDIRS = admin crosscompile-windows src lisp-utils tests interfaces share plotting desktopintegration $(LOCALE_DIR)
+-SUBDIRS = admin crosscompile-windows src lisp-utils $(DOC_DIR) interfaces share demo plotting desktopintegration $(LOCALE_DIR) tests
++SUBDIRS = admin crosscompile-windows src lisp-utils interfaces share demo plotting desktopintegration $(LOCALE_DIR) tests
  
  EXTRA_DIST = \
    common.mk maxima.iss.in \
