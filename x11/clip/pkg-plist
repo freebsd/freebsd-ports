@@ -1,0 +1,5 @@
+include/clip.h
+lib/cmake/clip/clip-config.cmake
+lib/cmake/clip/clip-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/clip/clip-targets.cmake
+lib/libclip.so
