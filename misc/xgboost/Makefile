@@ -5,7 +5,7 @@ CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scalable, Portable and Distributed Gradient Boosting (GBDT, GBRT, GBM)
-WWW=		https://xgboost.ai \ \
+WWW=		https://xgboost.ai \
 		https://xgboost.readthedocs.io/en/stable/ \
 		https://github.com/dmlc/xgboost
 
