@@ -1,7 +1,7 @@
-DISTVERSION=	1.23.7
+DISTVERSION=	1.23.12
 # Always set PORTREVISION explicitly as otherwise they are inherited from lang/go-devel
-PORTREVISION=	4
-MASTER_SITES=	https://golang.org/dl/ \
+PORTREVISION=	0
+MASTER_SITES=	https://go.dev/dl/ \
 		https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
 		LOCAL/dmgk:bootstrap
 DISTFILES=	go${DISTVERSION}.src.tar.gz \
