@@ -1,10 +1,10 @@
 PORTNAME=	xscreensaver
-DISTVERSION=	6.09
-PORTREVISION=	1
+DISTVERSION=	6.10
+DISTVERSIONSUFFIX=	.1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	vsasjason@gmail.com
 COMMENT=	Save your screen while you entertain your cat
 WWW=		https://www.jwz.org/xscreensaver/
 
@@ -29,7 +29,6 @@ USE_XORG=	ice sm x11 xext xft xi xinerama xmu xrandr xrender xt xxf86vm
 SHEBANG_FILES=	hacks/check-configs.pl
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-locking \
 		--with-app-defaults=${PREFIX}/lib/X11/app-defaults \
 		--with-configdir=${PREFIX}/share/xscreensaver/config/ \
@@ -56,6 +55,8 @@ MAKE_ARGS=	install_prefix=${STAGEDIR}
 
 SUB_FILES=	xscreensaver-blank.desktop xscreensaver-lock.desktop \
 		xscreensaver-start.desktop xscreensaver-stop.desktop
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 OPTIONS_DEFINE=	FIREF NLS NSFW SETUID_HACKS XAOS1 XDALI XEARTH XMOUN XPLANET \
 		XSNOW

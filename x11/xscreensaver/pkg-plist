@@ -64,6 +64,7 @@ bin/xscreensaver-hacks/discrete
 bin/xscreensaver-hacks/distort
 bin/xscreensaver-hacks/drift
 bin/xscreensaver-hacks/droste
+bin/xscreensaver-hacks/dumpsterfire
 bin/xscreensaver-hacks/dymaxionmap
 bin/xscreensaver-hacks/endgame
 bin/xscreensaver-hacks/energystream
@@ -121,6 +122,7 @@ bin/xscreensaver-hacks/hextrail
 bin/xscreensaver-hacks/highvoltage
 bin/xscreensaver-hacks/hilbert
 bin/xscreensaver-hacks/hopalong
+bin/xscreensaver-hacks/hopffibration
 bin/xscreensaver-hacks/hydrostat
 bin/xscreensaver-hacks/hypertorus
 bin/xscreensaver-hacks/hypnowheel
@@ -137,6 +139,7 @@ bin/xscreensaver-hacks/kaleidescope
 bin/xscreensaver-hacks/kaleidocycle
 bin/xscreensaver-hacks/kallisti
 bin/xscreensaver-hacks/klein
+bin/xscreensaver-hacks/klondike
 bin/xscreensaver-hacks/kumppa
 bin/xscreensaver-hacks/lament
 bin/xscreensaver-hacks/lavalite
@@ -177,6 +180,7 @@ bin/xscreensaver-hacks/photopile
 bin/xscreensaver-hacks/piecewise
 bin/xscreensaver-hacks/pinion
 bin/xscreensaver-hacks/pipes
+bin/xscreensaver-hacks/platonicfolding
 bin/xscreensaver-hacks/polyhedra
 bin/xscreensaver-hacks/polyominoes
 bin/xscreensaver-hacks/polytopes
@@ -423,6 +427,7 @@ share/man/man6/hextrail.6.gz
 share/man/man6/highvoltage.6.gz
 share/man/man6/hilbert.6.gz
 share/man/man6/hopalong.6.gz
+share/man/man6/hopffibration.6.gz
 share/man/man6/hydrostat.6.gz
 share/man/man6/hypertorus.6.gz
 share/man/man6/hypnowheel.6.gz
@@ -478,6 +483,7 @@ share/man/man6/photopile.6.gz
 share/man/man6/piecewise.6.gz
 share/man/man6/pinion.6.gz
 share/man/man6/pipes.6.gz
+share/man/man6/platonicfolding.6.gz
 share/man/man6/polyhedra.6.gz
 share/man/man6/polyominoes.6.gz
 share/man/man6/polytopes.6.gz
@@ -629,6 +635,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/distort.xml
 %%DATADIR%%/config/drift.xml
 %%DATADIR%%/config/droste.xml
+%%DATADIR%%/config/dumpsterfire.xml
 %%DATADIR%%/config/dymaxionmap.xml
 %%DATADIR%%/config/endgame.xml
 %%DATADIR%%/config/energystream.xml
@@ -686,6 +693,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/highvoltage.xml
 %%DATADIR%%/config/hilbert.xml
 %%DATADIR%%/config/hopalong.xml
+%%DATADIR%%/config/hopffibration.xml
 %%DATADIR%%/config/hydrostat.xml
 %%DATADIR%%/config/hypertorus.xml
 %%DATADIR%%/config/hypnowheel.xml
@@ -702,6 +710,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/kaleidocycle.xml
 %%DATADIR%%/config/kallisti.xml
 %%DATADIR%%/config/klein.xml
+%%DATADIR%%/config/klondike.xml
 %%DATADIR%%/config/kumppa.xml
 %%DATADIR%%/config/lament.xml
 %%DATADIR%%/config/lavalite.xml
@@ -741,6 +750,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/piecewise.xml
 %%DATADIR%%/config/pinion.xml
 %%DATADIR%%/config/pipes.xml
+%%DATADIR%%/config/platonicfolding.xml
 %%DATADIR%%/config/polyhedra.xml
 %%DATADIR%%/config/polyominoes.xml
 %%DATADIR%%/config/polytopes.xml

@@ -1,4 +1,4 @@
---- driver/XScreenSaver.ad.in.orig	2023-10-11 00:24:06 UTC
+--- driver/XScreenSaver.ad.in.orig	2025-04-28 19:46:11 UTC
 +++ driver/XScreenSaver.ad.in
 @@ -55,7 +55,7 @@
  *splashDuration:	0:00:05
@@ -37,11 +37,3 @@
  				maze --root				    \n\
  @GL_KLUDGE@ GL: 				superquadrics --root			    \n\
  				attraction --root			    \n\
-@@ -615,7 +627,6 @@ -				lcdscrub --root				    \n\
- *hacks.dangerball.name:     Danger Ball
- *hacks.decayscreen.name:    Decay Screen
- *hacks.deepstars.name:      Deep Stars
--*hacks.dnalogo.name:        DNA Logo
- *hacks.dymaxionmap.name:    Dymaxion Map
- *hacks.energystream.name:   Energy Stream
- *hacks.etruscanvenus.name:  Etruscan Venus
