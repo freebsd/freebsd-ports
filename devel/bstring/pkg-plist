@@ -1,7 +1,6 @@
-include/bstring/bstraux.h
-include/bstring/bstrlib.h
-lib/libbstring.a
+include/bstraux.h
+include/bstrlib.h
 lib/libbstring.so
-lib/libbstring.so.0
-lib/libbstring.so.0.1.0
+lib/libbstring.so.1
+lib/libbstring.so.1.0.0
 libdata/pkgconfig/bstring.pc
