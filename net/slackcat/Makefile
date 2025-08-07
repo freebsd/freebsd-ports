@@ -1,6 +1,6 @@
 PORTNAME=	slackcat
 DISTVERSION=	1.7.3
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	net
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod

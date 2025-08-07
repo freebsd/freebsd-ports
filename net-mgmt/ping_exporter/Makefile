@@ -1,5 +1,6 @@
 PORTNAME=	ping_exporter
 DISTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ivy@FreeBSD.org

@@ -1,6 +1,7 @@
 PORTNAME=	go-md2man
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	mateusz@serveraptor.com
