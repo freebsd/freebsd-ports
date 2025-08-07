@@ -1,6 +1,6 @@
 PORTNAME=	sg3_utils
 DISTVERSION=	1.48
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 
