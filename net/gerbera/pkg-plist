@@ -4,6 +4,7 @@ bin/gerbera
 %%DATADIR%%/js/import.js
 %%DATADIR%%/js/metadata.js
 %%DATADIR%%/js/playlists.js
+%%DATADIR%%/mysql-drop.sql
 %%DATADIR%%/mysql-upgrade.xml
 %%DATADIR%%/mysql.sql
 %%DATADIR%%/sqlite3-upgrade.xml
