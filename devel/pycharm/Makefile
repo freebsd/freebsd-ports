@@ -1,5 +1,5 @@
 PORTNAME=	pycharm
-DISTVERSION=	2025.1.3.1
+DISTVERSION=	2025.2
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/
 DIST_SUBDIR=	jetbrains
@@ -45,6 +45,7 @@ EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/fsnotifier \
 			--exclude ${DISTNAME}/plugins/cwm-plugin/quiche-native \
 			--exclude ${DISTNAME}/plugins/python-ce/helpers/pydev/pydevd_attach_to_process \
 			--exclude ${DISTNAME}/lib/pty4j \
+			--exclude ${DISTNAME}/lib/skiko-awt-runtime-all \
 			--exclude ${DISTNAME}/jbr \
 			--no-same-owner --no-same-permissions
 
