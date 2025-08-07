@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP script for managing your accounts
 WWW=		https://myphpmoney.sourceforge.net/
 
+DEPRECATED=	Unmaintained upstream and most probably does not work with modern PHP versions
+EXPIRATION_DATE=	2025-09-07
+
 WEBOWN?=	www
 WEBGRP?=	www
 APACHEDIR=	${PREFIX}/www/data
