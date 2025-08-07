@@ -1,6 +1,7 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/:netdata \
 		https://raw.githubusercontent.com/netdata/netdata/refs/tags/v${DISTVERSION}/src/go/:goplugin \
@@ -84,7 +85,6 @@ PLIST_SUB=	NETDATA_CACHE=${NETDATA_CACHE} \
 
 OPTIONS_DEFINE=		CUPS DASHBOARD FREEIPMI GOPLUGIN ML PROMETHEUS
 OPTIONS_DEFAULT=	DASHBOARD GOPLUGIN ML
-OPTIONS_EXCLUDE_powerpc64le=	ML
 OPTIONS_SUB=		YES
 
 CUPS_DESC=		Enable support for cups
