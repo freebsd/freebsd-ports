@@ -1,6 +1,6 @@
---- v8/BUILD.gn.orig	2025-07-02 06:08:04 UTC
+--- v8/BUILD.gn.orig	2025-08-07 06:57:29 UTC
 +++ v8/BUILD.gn
-@@ -1014,6 +1014,8 @@ external_v8_defines = [
+@@ -1012,6 +1012,8 @@ external_v8_defines = [
    "V8_TARGET_OS_MACOS",
    "V8_TARGET_OS_WIN",
    "V8_TARGET_OS_CHROMEOS",
@@ -9,7 +9,7 @@
  ]
  
  enabled_external_v8_defines = [
-@@ -1090,6 +1092,12 @@ if (target_os == "android") {
+@@ -1085,6 +1087,12 @@ if (target_os == "android") {
  } else if (target_os == "chromeos") {
    enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
    enabled_external_v8_defines += [ "V8_TARGET_OS_CHROMEOS" ]
@@ -22,7 +22,7 @@
  }
  
  disabled_external_v8_defines = external_v8_defines - enabled_external_v8_defines
-@@ -2598,6 +2606,12 @@ template("run_mksnapshot") {
+@@ -2604,6 +2612,12 @@ template("run_mksnapshot") {
        if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
          args += [ "--reorder-builtins" ]
        }
@@ -35,7 +35,7 @@
      }
  
      if (v8_enable_turboshaft_csa) {
-@@ -6760,7 +6774,7 @@ v8_component("v8_libbase") {
+@@ -6765,7 +6779,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -44,7 +44,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -6771,6 +6785,18 @@ v8_component("v8_libbase") {
+@@ -6776,6 +6790,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

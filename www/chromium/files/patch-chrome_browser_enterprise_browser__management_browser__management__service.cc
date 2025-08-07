@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/browser_management/browser_management_service.cc.orig	2025-07-02 06:08:04 UTC
+--- chrome/browser/enterprise/browser_management/browser_management_service.cc.orig	2025-08-07 06:57:29 UTC
 +++ chrome/browser/enterprise/browser_management/browser_management_service.cc
 @@ -50,7 +50,7 @@ GetManagementStatusProviders(Profile* profile) {
  
@@ -36,7 +36,7 @@
  void BrowserManagementService::SetBrowserManagementIconForTesting(
      const gfx::Image& management_icon) {
    CHECK_IS_TEST();
-@@ -171,7 +171,7 @@ void BrowserManagementService::SetManagementIconForBro
+@@ -183,7 +183,7 @@ void BrowserManagementService::SetManagementIconForBro
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
  void BrowserManagementService::OnPolicyStatusChanged() {

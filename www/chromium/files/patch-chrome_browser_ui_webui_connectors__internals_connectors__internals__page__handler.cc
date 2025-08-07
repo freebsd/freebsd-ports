@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/connectors_internals/connectors_internals_page_handler.cc.orig	2025-05-28 14:55:43 UTC
+--- chrome/browser/ui/webui/connectors_internals/connectors_internals_page_handler.cc.orig	2025-08-07 06:57:29 UTC
 +++ chrome/browser/ui/webui/connectors_internals/connectors_internals_page_handler.cc
-@@ -81,7 +81,7 @@ connectors_internals::mojom::ClientIdentityPtr GetIden
+@@ -82,7 +82,7 @@ connectors_internals::mojom::ClientIdentityPtr GetIden
  }
  #endif  // BUILDFLAG(ENTERPRISE_CLIENT_CERTIFICATES)
  
@@ -9,7 +9,7 @@
  std::string GetStringFromTimestamp(base::Time timestamp) {
    return (timestamp == base::Time()) ? std::string()
                                       : base::UnlocalizedTimeFormatWithPattern(
-@@ -190,7 +190,7 @@ void ConnectorsInternalsPageHandler::GetClientCertific
+@@ -191,7 +191,7 @@ void ConnectorsInternalsPageHandler::GetClientCertific
  
  void ConnectorsInternalsPageHandler::GetSignalsReportingState(
      GetSignalsReportingStateCallback callback) {

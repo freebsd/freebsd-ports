@@ -1,4 +1,4 @@
---- chrome/services/printing/print_backend_service_impl.cc.orig	2025-07-02 06:08:04 UTC
+--- chrome/services/printing/print_backend_service_impl.cc.orig	2025-08-07 06:57:29 UTC
 +++ chrome/services/printing/print_backend_service_impl.cc
 @@ -48,7 +48,7 @@
  #include "printing/backend/cups_connection_pool.h"
@@ -36,7 +36,7 @@
    // Test framework already initializes the UI, so this should not go in
    // `InitCommon()`.  Additionally, low-level Linux UI is not needed when tests
    // are using `TestPrintingContext`.
-@@ -688,7 +688,7 @@ void PrintBackendServiceImpl::UpdatePrintSettings(
+@@ -676,7 +676,7 @@ void PrintBackendServiceImpl::UpdatePrintSettings(
    crash_keys_ = std::make_unique<crash_keys::ScopedPrinterInfo>(
        *printer_name, print_backend_->GetPrinterDriverInfo(*printer_name));
  

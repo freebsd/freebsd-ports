@@ -1,4 +1,4 @@
---- components/device_signals/core/common/linux/platform_utils_linux.cc.orig	2025-05-28 14:55:43 UTC
+--- components/device_signals/core/common/linux/platform_utils_linux.cc.orig	2025-08-07 06:57:29 UTC
 +++ components/device_signals/core/common/linux/platform_utils_linux.cc
 @@ -4,12 +4,23 @@
  
@@ -24,7 +24,7 @@
  #include <algorithm>
  #include <optional>
  #include <string>
-@@ -98,6 +109,7 @@ SettingValue GetScreenlockSecured() {
+@@ -100,6 +111,7 @@ SettingValue GetScreenlockSecured() {
  // Implements the logic from the native host installation script. First find the
  // root device identifier, then locate its parent and get its type.
  SettingValue GetDiskEncrypted() {
@@ -32,7 +32,7 @@
    struct stat info;
    // First figure out the device identifier. Fail fast if this fails.
    if (stat("/", &info) != 0) {
-@@ -120,11 +132,35 @@ SettingValue GetDiskEncrypted() {
+@@ -122,11 +134,35 @@ SettingValue GetDiskEncrypted() {
      }
      return SettingValue::UNKNOWN;
    }
@@ -68,7 +68,7 @@
    base::DirReaderPosix reader("/sys/class/net");
    if (!reader.IsValid()) {
      return result;
-@@ -149,6 +185,7 @@ std::vector<std::string> GetMacAddresses() {
+@@ -151,6 +187,7 @@ std::vector<std::string> GetMacAddresses() {
                                &address);
      result.push_back(address);
    }

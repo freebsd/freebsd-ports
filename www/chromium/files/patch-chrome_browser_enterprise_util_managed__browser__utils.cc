@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/util/managed_browser_utils.cc.orig	2025-07-02 06:08:04 UTC
+--- chrome/browser/enterprise/util/managed_browser_utils.cc.orig	2025-08-07 06:57:29 UTC
 +++ chrome/browser/enterprise/util/managed_browser_utils.cc
 @@ -213,7 +213,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
    // The updated consent screen also ask the user for consent to share device
@@ -24,6 +24,6 @@
  bool CanShowEnterpriseBadgingForNTPFooter(Profile* profile) {
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- 
-   auto* management_service =
-       policy::ManagementServiceFactory::GetForProfile(profile);
+   if (!policy::ManagementServiceFactory::GetForProfile(profile)
+            ->IsBrowserManaged()) {
+     return false;

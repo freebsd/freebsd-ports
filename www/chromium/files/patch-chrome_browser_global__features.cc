@@ -1,4 +1,4 @@
---- chrome/browser/global_features.cc.orig	2025-07-02 06:08:04 UTC
+--- chrome/browser/global_features.cc.orig	2025-08-07 06:57:29 UTC
 +++ chrome/browser/global_features.cc
 @@ -24,7 +24,7 @@
  #include "chrome/browser/glic/host/glic_synthetic_trial_manager.h"  // nogncheck
@@ -18,7 +18,7 @@
    whats_new_registry_ = CreateWhatsNewRegistry();
  #endif
  
-@@ -120,7 +120,7 @@ GlobalFeatures::CreateSystemPermissionsPlatformHandle(
+@@ -119,7 +119,7 @@ GlobalFeatures::CreateSystemPermissionsPlatformHandle(
    return system_permission_settings::PlatformHandle::Create();
  }
  

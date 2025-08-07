@@ -1,10 +1,10 @@
---- base/process/process_metrics_freebsd.cc.orig	2025-02-19 07:43:18 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2025-08-07 06:57:29 UTC
 +++ base/process/process_metrics_freebsd.cc
 @@ -3,41 +3,92 @@
  // found in the LICENSE file.
  
  #include "base/process/process_metrics.h"
-+#include "base/notreached.h"
++#include "base/notimplemented.h"
  
  #include <stddef.h>
 +#include <sys/types.h>

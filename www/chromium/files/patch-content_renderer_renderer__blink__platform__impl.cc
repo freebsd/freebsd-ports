@@ -1,6 +1,6 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2025-07-02 06:08:04 UTC
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2025-08-07 06:57:29 UTC
 +++ content/renderer/renderer_blink_platform_impl.cc
-@@ -123,7 +123,7 @@
+@@ -124,7 +124,7 @@
  
  #if BUILDFLAG(IS_MAC)
  #include "content/child/child_process_sandbox_support_impl_mac.h"
@@ -9,7 +9,7 @@
  #include "content/child/child_process_sandbox_support_impl_linux.h"
  #include "content/child/sandboxed_process_thread_type_handler.h"
  #endif
-@@ -191,13 +191,13 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -192,13 +192,13 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
        is_locked_to_site_(false),
        main_thread_scheduler_(main_thread_scheduler),
        next_frame_sink_id_(uint32_t{std::numeric_limits<int32_t>::max()} + 1) {
@@ -25,7 +25,7 @@
      mojo::PendingRemote<font_service::mojom::FontService> font_service;
      RenderThreadImpl::current()->BindHostReceiver(
          font_service.InitWithNewPipeAndPassReceiver());
-@@ -222,7 +222,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -223,7 +223,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
    }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -34,7 +34,7 @@
    if (sandboxEnabled()) {
  #if BUILDFLAG(IS_MAC)
      sandbox_support_ = std::make_unique<WebSandboxSupportMac>();
-@@ -295,7 +295,7 @@ RendererBlinkPlatformImpl::GetWebUIBundledCodeCacheRes
+@@ -296,7 +296,7 @@ RendererBlinkPlatformImpl::GetWebUIBundledCodeCacheRes
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::GetSandboxSupport() {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

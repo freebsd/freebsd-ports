@@ -1,4 +1,4 @@
---- third_party/zlib/BUILD.gn.orig	2024-07-30 11:12:21 UTC
+--- third_party/zlib/BUILD.gn.orig	2025-08-07 06:57:29 UTC
 +++ third_party/zlib/BUILD.gn
 @@ -128,7 +128,7 @@ if (use_arm_neon_optimizations) {
      defines = [ "CRC32_ARMV8_CRC32" ]
@@ -20,7 +20,7 @@
      } else {
        assert(false, "Unsupported ARM OS")
      }
-@@ -413,7 +417,7 @@ static_library("minizip") {
+@@ -419,7 +423,7 @@ static_library("minizip") {
      ]
    }
  

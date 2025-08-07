@@ -1,7 +1,7 @@
---- components/supervised_user/core/browser/supervised_user_metrics_service.cc.orig	2025-07-02 06:08:04 UTC
+--- components/supervised_user/core/browser/supervised_user_metrics_service.cc.orig	2025-08-07 06:57:29 UTC
 +++ components/supervised_user/core/browser/supervised_user_metrics_service.cc
-@@ -68,7 +68,7 @@ SupervisedUserMetricsService::SupervisedUserMetricsSer
-       extensions_metrics_delegate_(std::move(extensions_metrics_delegate)) {
+@@ -83,7 +83,7 @@ SupervisedUserMetricsService::SupervisedUserMetricsSer
+           std::move(metrics_service_accessor_delegate)) {
    DCHECK(pref_service_);
    supervised_user_service_observation_.Observe(&supervised_user_service);
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

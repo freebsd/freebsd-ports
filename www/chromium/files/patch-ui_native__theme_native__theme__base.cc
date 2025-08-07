@@ -1,6 +1,6 @@
---- ui/native_theme/native_theme_base.cc.orig	2025-05-05 10:57:53 UTC
+--- ui/native_theme/native_theme_base.cc.orig	2025-08-07 06:57:29 UTC
 +++ ui/native_theme/native_theme_base.cc
-@@ -240,7 +240,7 @@ void NativeThemeBase::Paint(cc::PaintCanvas* canvas,
+@@ -241,7 +241,7 @@ void NativeThemeBase::Paint(cc::PaintCanvas* canvas,
                      std::get<ButtonExtraParams>(extra), color_scheme,
                      accent_color_opaque);
        break;

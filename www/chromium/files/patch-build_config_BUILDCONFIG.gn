@@ -1,4 +1,4 @@
---- build/config/BUILDCONFIG.gn.orig	2025-07-02 06:08:04 UTC
+--- build/config/BUILDCONFIG.gn.orig	2025-08-07 06:57:29 UTC
 +++ build/config/BUILDCONFIG.gn
 @@ -136,7 +136,8 @@ declare_args() {
    is_official_build = false
@@ -10,7 +10,7 @@
               (current_cpu != "s390x" && current_cpu != "s390" &&
                current_cpu != "ppc64" && current_cpu != "ppc" &&
                current_cpu != "mips" && current_cpu != "mips64" &&
-@@ -235,6 +236,10 @@ if (host_toolchain == "") {
+@@ -242,6 +243,10 @@ if (host_toolchain == "") {
      host_toolchain = "//build/toolchain/aix:$host_cpu"
    } else if (host_os == "zos") {
      host_toolchain = "//build/toolchain/zos:$host_cpu"
@@ -21,7 +21,7 @@
    } else {
      assert(false, "Unsupported host_os: $host_os")
    }
-@@ -284,6 +289,8 @@ if (target_os == "android") {
+@@ -291,6 +296,8 @@ if (target_os == "android") {
    assert(
        false,
        "emscripten is not a supported target_os. It is available only as secondary toolchain.")
@@ -30,7 +30,7 @@
  } else {
    assert(false, "Unsupported target_os: $target_os")
  }
-@@ -318,7 +325,11 @@ is_android = current_os == "android"
+@@ -325,7 +332,11 @@ is_android = current_os == "android"
  is_chromeos = current_os == "chromeos"
  is_fuchsia = current_os == "fuchsia"
  is_ios = current_os == "ios"

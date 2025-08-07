@@ -1,6 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	138.0.7204.96
-PORTREVISION=	2
+PORTVERSION=	139.0.7258.66
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	www wayland
@@ -103,7 +102,6 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 GN_ARGS+=	clang_use_chrome_plugins=false \
 		enable_backup_ref_ptr_support=false \
 		enable_hangout_services_extension=true \
-		enable_nacl=false \
 		enable_remoting=false \
 		enable_widevine=true \
 		fatal_linker_warnings=false \

@@ -1,4 +1,4 @@
---- base/threading/platform_thread_unittest.cc.orig	2025-07-02 06:08:04 UTC
+--- base/threading/platform_thread_unittest.cc.orig	2025-08-07 06:57:29 UTC
 +++ base/threading/platform_thread_unittest.cc
 @@ -36,7 +36,7 @@
  #include "base/time/time.h"
@@ -9,7 +9,7 @@
  #include <pthread.h>
  #include <sys/syscall.h>
  #include <sys/types.h>
-@@ -369,7 +369,7 @@ TEST(PlatformThreadTest,
+@@ -370,7 +370,7 @@ TEST(PlatformThreadTest,
  // and hardcodes what we know. Please inform scheduler-dev@chromium.org if this
  // proprerty changes for a given platform.
  TEST(PlatformThreadTest, CanChangeThreadType) {
@@ -18,7 +18,7 @@
    // On Ubuntu, RLIMIT_NICE and RLIMIT_RTPRIO are 0 by default, so we won't be
    // able to increase priority to any level unless we are root (euid == 0).
    bool kCanIncreasePriority = false;
-@@ -606,12 +606,16 @@ INSTANTIATE_TEST_SUITE_P(
+@@ -618,12 +618,16 @@ INSTANTIATE_TEST_SUITE_P(
  
  #endif  // BUILDFLAG(IS_APPLE)
  

@@ -1,7 +1,7 @@
---- base/process/process_posix.cc.orig	2025-07-02 06:08:04 UTC
+--- base/process/process_posix.cc.orig	2025-08-07 06:57:29 UTC
 +++ base/process/process_posix.cc
 @@ -25,10 +25,15 @@
- #include "base/trace_event/base_tracing.h"
+ #include "base/trace_event/trace_event.h"
  #include "build/build_config.h"
  
 -#if BUILDFLAG(IS_MAC)

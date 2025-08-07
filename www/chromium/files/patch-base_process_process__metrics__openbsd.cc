@@ -1,4 +1,4 @@
---- base/process/process_metrics_openbsd.cc.orig	2025-02-25 07:06:47 UTC
+--- base/process/process_metrics_openbsd.cc.orig	2025-08-07 06:57:29 UTC
 +++ base/process/process_metrics_openbsd.cc
 @@ -6,73 +6,85 @@
  
@@ -14,7 +14,7 @@
  #include "base/memory/ptr_util.h"
  #include "base/types/expected.h"
 +#include "base/values.h"
-+#include "base/notreached.h"
++#include "base/notimplemented.h"
  
  namespace base {
  
@@ -146,7 +146,7 @@
 +}
 +
 +bool GetSystemMemoryInfo(SystemMemoryInfoKB* meminfo) {
-+  NOTIMPLEMENTED_LOG_ONCE();
++  NOTIMPLEMENTED();
 +  return false;
 +}
 +

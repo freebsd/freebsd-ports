@@ -1,6 +1,6 @@
---- components/media_router/common/media_source.cc.orig	2025-05-28 14:55:43 UTC
+--- components/media_router/common/media_source.cc.orig	2025-08-07 06:57:29 UTC
 +++ components/media_router/common/media_source.cc
-@@ -58,7 +58,7 @@ bool IsSystemAudioCaptureSupported() {
+@@ -59,7 +59,7 @@ bool IsSystemAudioCaptureSupported() {
    if (!media::IsSystemLoopbackCaptureSupported()) {
      return false;
    }

@@ -1,4 +1,4 @@
---- chrome/browser/ui/browser_command_controller.cc.orig	2025-07-02 06:08:04 UTC
+--- chrome/browser/ui/browser_command_controller.cc.orig	2025-08-07 06:57:29 UTC
 +++ chrome/browser/ui/browser_command_controller.cc
 @@ -127,7 +127,7 @@
  #include "components/user_manager/user_manager.h"
@@ -45,7 +45,7 @@
        chrome::CreateDesktopShortcutForActiveWebContents(browser_);
  #else
        web_app::CreateWebAppFromCurrentWebContents(
-@@ -1015,7 +1015,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+@@ -1018,7 +1018,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
      case IDC_CHROME_WHATS_NEW:
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING) && \
@@ -54,7 +54,7 @@
        ShowChromeWhatsNew(browser_);
        break;
  #else
-@@ -1392,7 +1392,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -1395,7 +1395,7 @@ void BrowserCommandController::InitCommandState() {
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_4, true);
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_5, true);
  #endif

@@ -1,4 +1,4 @@
---- base/threading/platform_thread_posix.cc.orig	2025-04-04 08:52:13 UTC
+--- base/threading/platform_thread_posix.cc.orig	2025-08-07 06:57:29 UTC
 +++ base/threading/platform_thread_posix.cc
 @@ -79,11 +79,11 @@ void* ThreadFunc(void* params) {
        base::DisallowSingleton();
@@ -38,7 +38,7 @@
    NOTIMPLEMENTED();
 +// avoid pledge(2) violation
 +#elif BUILDFLAG(IS_BSD)
-+   NOTIMPLEMENTED();
++  NOTIMPLEMENTED();
  #else
    if (internal::SetCurrentThreadTypeForPlatform(thread_type, pump_type_hint)) {
      return;

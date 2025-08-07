@@ -1,11 +1,11 @@
---- components/power_metrics/energy_metrics_provider.cc.orig	2023-08-17 07:33:31 UTC
+--- components/power_metrics/energy_metrics_provider.cc.orig	2025-08-07 06:57:29 UTC
 +++ components/power_metrics/energy_metrics_provider.cc
 @@ -9,6 +9,8 @@
  #include "components/power_metrics/energy_metrics_provider_win.h"
  #elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  #include "components/power_metrics/energy_metrics_provider_linux.h"
 +#elif BUILDFLAG(IS_BSD)
-+#include "base/notreached.h"
++#include "base/notimplemented.h"
  #endif  // BUILDFLAG(IS_WIN)
  
  namespace power_metrics {

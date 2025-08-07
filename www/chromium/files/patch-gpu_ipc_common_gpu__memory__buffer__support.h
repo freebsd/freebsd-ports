@@ -1,8 +1,8 @@
---- gpu/ipc/common/gpu_memory_buffer_support.h.orig	2023-08-17 07:33:31 UTC
+--- gpu/ipc/common/gpu_memory_buffer_support.h.orig	2025-08-07 06:57:29 UTC
 +++ gpu/ipc/common/gpu_memory_buffer_support.h
-@@ -21,7 +21,7 @@
+@@ -22,7 +22,7 @@
  #include "ui/gfx/geometry/size.h"
- #include "ui/gfx/gpu_memory_buffer.h"
+ #include "ui/gfx/gpu_memory_buffer_handle.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_OZONE)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_OZONE) || BUILDFLAG(IS_BSD)

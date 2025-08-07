@@ -1,7 +1,7 @@
---- components/feature_engagement/public/feature_list.cc.orig	2025-07-02 06:08:04 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2025-08-07 06:57:29 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -189,7 +189,7 @@ const base::Feature* const kAllFeatures[] = {
-     &kIPHIOSGLICPromoFeature,
+@@ -193,7 +193,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHIOSPageActionMenu,
  #endif  // BUILDFLAG(IS_IOS)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
@@ -9,7 +9,7 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
      &kEsbDownloadRowPromoFeature,
  #endif
-@@ -264,7 +264,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -266,7 +266,7 @@ const base::Feature* const kAllFeatures[] = {
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
@@ -18,7 +18,7 @@
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
      &kIPHAutofillAiOptInFeature,
      &kIPHAutofillBnplAffirmOrZipSuggestionFeature,
-@@ -319,7 +319,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -323,7 +323,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHScalableIphGamingFeature,
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
