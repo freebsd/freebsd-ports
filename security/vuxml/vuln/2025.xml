@@ -1,3 +1,34 @@
+  <vuln vid="66f35fd9-73f5-11f0-8e0e-002590c1f29c">
+    <topic>FreeBSD -- Integer overflow in libarchive leading to double free</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.3</ge><lt>14.3_2</lt></range>
+	<range><ge>14.2</ge><lt>14.2_5</lt></range>
+	<range><ge>13.5</ge><lt>13.5_3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>An integer overflow in the archive_read_format_rar_seek_data()
+	function may lead to a double free problem.</p>
+	<h1>Impact:</h1>
+	<p>Exploiting a double free vulnerability can cause memory corruption.
+	This in turn could enable a threat actor to execute arbitrary code.
+	It might also result in denial of service.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5914</cvename>
+      <freebsdsa>SA-25:07.libarchive</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2025-08-08</discovery>
+      <entry>2025-08-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b945ce3f-6f9b-11f0-bd96-b42e991fc52e">
     <topic>sqlite -- integer overflow</topic>
     <affects>
