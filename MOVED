@@ -4711,3 +4711,5 @@ databases/pear-DoctrineDBAL||2025-08-04|Has expired: Upstream no longer serves t
 www/py-wsaccel||2025-08-04|Has expired: Upstream ceased development
 databases/pear-DoctrineCommon||2025-08-05|Has expired: Upstream no longer serves through PEAR channel and has been moved to Composer
 devel/tclthread|devel/tcl8-thread|2025-08-07|Use tcl8-thread with Tcl8 and tcl9-thread Tcl9
+graphics/libkexiv2@qt5||2025-08-08|Unflavorize; Qt5 flavor is not needed anymore
+graphics/libkexiv2@qt6|graphics/libkexiv2|2025-08-08|Unflavorize; Qt5 flavor is not needed anymore
