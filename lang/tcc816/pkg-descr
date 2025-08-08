@@ -1,0 +1,4 @@
+A fork of the the Tiny C Compiler (TCC) for the WDC 65816 CPU
+
+This CPU is used by the Super Nintendo Entertainment System (SNES)
+and the Super Famicom (SFC), as well as other devices from that era.
