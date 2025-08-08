@@ -12,7 +12,7 @@ WWW=		https://wiki.tcl.tk/2770
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.terms
 
-USES=		tcl:tcl8,tea
+USES=		tcl:86,tea
 
 DOCSDIR=	${PREFIX}/share/doc/${TCL_PKG}
 USE_LDCONFIG=	${PREFIX}/lib/${TCL_PKG}
