@@ -120,6 +120,7 @@
     SUBDIR += py-slixmpp
     SUBDIR += py-toxcore-c
     SUBDIR += py-unmessage
+    SUBDIR += py-zapzap
     SUBDIR += qTox
     SUBDIR += quaternion
     SUBDIR += qxmpp
