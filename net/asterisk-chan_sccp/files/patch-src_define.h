@@ -1,6 +1,6 @@
---- src/define.h.orig	2020-10-24 14:42:40 UTC
+--- src/define.h.orig	2021-12-29 10:49:04 UTC
 +++ src/define.h
-@@ -98,10 +98,10 @@ SCCP_LINE unsigned long long ___bswap_64(unsigned long
+@@ -96,10 +96,10 @@ SCCP_LINE unsigned long long ___bswap_64(unsigned long
  #    define htolel(x) (uint16_t)(x)
  #    define htoles(x) (uint16_t)(x)
  #  else
