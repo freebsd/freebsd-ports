@@ -9,6 +9,9 @@ WWW=		https://github.com/RedisInsight/RedisDesktopManager
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	RedisDesktopManager is no longer maintained upstream as the project has been replaced by RedisInsight
+EXPIRATION_DATE=2025-09-08
+
 LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli \
 		liblz4.so:archivers/liblz4 \
 		libpython${PYTHON_VER}${PYTHON_ABIVER}.so:lang/python${PYTHON_SUFFIX} \
