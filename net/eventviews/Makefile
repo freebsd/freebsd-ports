@@ -4,7 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Event view libraries for KDEPim
-WWW=		https://github.com/KDE/mailcommon
+WWW=		https://invent.kde.org/pim/eventviews
 
 LICENSE=	LGPL21
 

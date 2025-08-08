@@ -4,7 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE library for accessing mail storages in MBox format
-WWW=		https://www.kde.org/
+WWW=		https://invent.kde.org/pim/kmbox
 
 LICENSE=	LGPL21
 

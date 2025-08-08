@@ -4,7 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library for handling messages
-WWW=		https://github.com/KDE/messagelib
+WWW=		https://invent.kde.org/pim/messagelib
 
 LICENSE=	LGPL21
 

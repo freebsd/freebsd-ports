@@ -5,7 +5,7 @@ PKGNAMESUFFIX?=	-${FLAVOR}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	LibRaw interface for KDE
-WWW=		https://www.digikam.org/
+WWW=		https://invent.kde.org/graphics/libkdcraw
 
 LICENSE=	GPLv2+
 

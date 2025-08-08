@@ -4,7 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Incidence editor libraries for KDEPim
-WWW=		https://github.com/KDE/mailcommon
+WWW=		https://invent.kde.org/pim/incidenceeditor
 
 LICENSE=	LGPL21
 
