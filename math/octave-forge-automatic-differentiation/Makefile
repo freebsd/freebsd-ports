@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-automatic-differentiation
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -18,5 +19,6 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 OCTAVE_SRC=		${GH_PROJECT}-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${OCTAVE_SRC}
 
 .include <bsd.port.mk>

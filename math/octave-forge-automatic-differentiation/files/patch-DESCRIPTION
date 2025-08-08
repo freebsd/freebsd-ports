@@ -1,0 +1,9 @@
+--- DESCRIPTION.orig	2025-08-07 20:53:55.335448000 -0500
++++ DESCRIPTION	2025-08-07 20:54:04.639963000 -0500
+@@ -1,5 +1,5 @@
+ name: Automatic-Differentiation
+-version: 1.0.0
++version: 1.0.1
+ date: 2022-07-15
+ author: Steven Waldrip <https://mathsfromnothing.cf>
+ maintainer: Steven Waldrip <https://mathsfromnothing.cf>
