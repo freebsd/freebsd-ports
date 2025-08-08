@@ -1,5 +1,5 @@
 PORTNAME=	alsa-lib
-PORTVERSION=	1.2.13
+PORTVERSION=	1.2.14
 CATEGORIES=	audio
 MASTER_SITES=	https://www.alsa-project.org/files/pub/lib/
 
