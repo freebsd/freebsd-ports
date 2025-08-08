@@ -5,7 +5,7 @@ PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Mobipocket plugins for Strigi indexing and thumbnails
-WWW=		https://www.kde.org
+WWW=		https://invent.kde.org/graphics/kdegraphics-mobipocket
 
 FLAVORS=	qt6 qt5
 FLAVOR?=	qt6
