@@ -46,6 +46,7 @@ include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateMenuTextIn
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateMenuTextManager
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateMenuWidget
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateMessage
+include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateMessageUtils
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateMessagesModel
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateNetworkPluginConfigureWidget
 include/KF6/TextAutoGenerateText/TextAutoGenerateText/TextAutoGenerateQuickAskDialog
@@ -81,6 +82,7 @@ include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratemenutextma
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratemenuwidget.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratemessage.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratemessagesmodel.h
+include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratemessageutils.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratenetworkpluginconfigurewidget.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratequickaskdialog.h
 include/KF6/TextAutoGenerateText/textautogeneratetext/textautogeneratereply.h
@@ -601,6 +603,7 @@ share/locale/pt/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/pt/LC_MESSAGES/libtexttranslator.mo
 share/locale/pt_BR/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/pt_BR/LC_MESSAGES/libtextautocorrection.mo
+share/locale/pt_BR/LC_MESSAGES/libtextautogeneratetext.mo
 share/locale/pt_BR/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/pt_BR/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/pt_BR/LC_MESSAGES/libtextemoticons.mo
