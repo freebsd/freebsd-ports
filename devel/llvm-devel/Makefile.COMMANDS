@@ -30,6 +30,7 @@ LLVM_COMMANDS=	\
 		llvm-gsymutil \
 		llvm-ifs \
 		llvm-install-name-tool \
+		llvm-ir2vec \
 		llvm-jitlink \
 		llvm-libtool-darwin \
 		llvm-link \

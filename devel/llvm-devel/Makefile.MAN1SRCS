@@ -23,6 +23,7 @@ LLVM_MAN1SRCS= \
 	llvm-extract.1 \
 	llvm-ifs.1 \
 	llvm-install-name-tool.1 \
+	llvm-ir2vec.1 \
 	llvm-lib.1 \
 	llvm-libtool-darwin.1 \
 	llvm-lipo.1 \
