@@ -1,6 +1,6 @@
 lib/libnvidia-egl-wayland.so
 lib/libnvidia-egl-wayland.so.1
-lib/libnvidia-egl-wayland.so.1.1.19
+lib/libnvidia-egl-wayland.so.1.1.20
 libdata/pkgconfig/wayland-eglstream-protocols.pc
 libdata/pkgconfig/wayland-eglstream.pc
 share/egl/egl_external_platform.d/10_nvidia_wayland.json

@@ -147,7 +147,9 @@ LINUX32_LIBS+=	libnvidia-compiler.so.${PORTVERSION}
 
 ## graphics/egl-wayland supports
 ## Estimated to be upgraded often.
-.if ${NVVERSION} >= 570.14400 # 570.144
+.if ${NVVERSION} >= 570.18100 && ${NVVERSION} < 575.00000 # 570.181 but below 575.000
+NV_EGL_W_VERSION=	1.1.20
+.elif ${NVVERSION} >= 570.14400 # 570.144, excuding 570.181 to below 575.000
 NV_EGL_W_VERSION=	1.1.19
 .elif ${NVVERSION} >= 470.04201 # 470.42.01
 NV_EGL_W_VERSION=	1.1.7
@@ -276,9 +278,11 @@ PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-gpucomp\.so,d'
 
 # nvidia-egl-X11 supports (not in x11/nvidia-driver nor separate ports)
 # Estimated to be upgrated often.
-.if ${NVVERSION} >= 570.15302 && ${NVVERSION} < 575.00000 || ${NVVERSION} >= 575.05708
+.if ${NVVERSION} >= 570.18100 && ${NVVERSION} < 575.00000
+NV_EGL_X_VERSION=	1.0.3
+.elif ${NVVERSION} >= 570.15302 && ${NVVERSION} < 570.18100 || ${NVVERSION} >= 575.05708 && ${NVVERSION} < 580.00000
 NV_EGL_X_VERSION=	1.0.2
-.elif ${NVVERSION} >= 570.14400 # 570.144
+.elif ${NVVERSION} >= 570.14400 # 570.144, 580.65.06
 NV_EGL_X_VERSION=	1.0.1
 .elif ${NVVERSION} >= 570.00000	# 570.00, Intentionally kept to clarify
 				# the start of egl-x11 support.
@@ -331,6 +335,15 @@ LINUX32_LINKS+=	libnvidia-egl-gbm.so.${NV_EGL_G_VERSION} libnvidia-egl-gbm.so.1 
 PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-gbm\.so)\.X/\1.${NV_EGL_G_VERSION}/'
 .endif # 525.89.02
 # End of nvidia-egl-gbm supports
+
+
+# Vulkan layer implementing NVIDIA Smooth Motion support
+.if ${NVVERSION} >= 580.06506 # 580.65.06
+LINUX_LIBS+=	libnvidia-present.so.${PORTVERSION}
+.else
+PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-present\.so,d'
+.endif # 580.65.06
+# End of Vulkan layer implementing NVIDIA Smooth Motion support
 
 
 .if ${NVVERSION} >= 525.08902 # 525.89.02

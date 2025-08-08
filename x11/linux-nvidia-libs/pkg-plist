@@ -178,6 +178,7 @@
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-nvvm.so.4
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-nvvm.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ngx.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-present.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/tls/libnvidia-tls.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/vdpau/libvdpau_nvidia.so.1
 %%LINUXBASE%%/usr/share/egl/egl_external_platform.d/10_nvidia_wayland.json
