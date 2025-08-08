@@ -1,0 +1,22 @@
+--- pyproject.toml.orig	2000-11-11 11:11:11 UTC
++++ pyproject.toml
+@@ -13,8 +13,6 @@ readme = "README.md"
+ description = "Pure python ctypes wrapper for libsecp256k1"
+ keywords = ["libsecp256k1", "ecc"]
+ readme = "README.md"
+-license = "MIT"
+-license-files = ["LICENSE.txt"]
+ requires-python = ">=3.10"
+ dependencies = []
+ classifiers = [
+@@ -32,6 +30,10 @@ dynamic = ['version']
+     "Topic :: Security :: Cryptography",
+ ]
+ dynamic = ['version']
++
++
++[project.license]
++text = "MIT"
+ 
+ 
+ [project.urls]
