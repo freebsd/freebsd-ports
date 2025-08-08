@@ -4,7 +4,7 @@ CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library for gravatar support
-WWW=		https://github.com/KDE/libgravatar
+WWW=		https://invent.kde.org/pim/libgravatar
 
 LICENSE=	LGPL21
 
