@@ -1,6 +1,6 @@
 PORTNAME=	protobuf-go
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.36.6
+DISTVERSION=	1.36.7
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/protocolbuffers/protobuf-go
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:modules
 
 GO_MODULE=	google.golang.org/protobuf
 GO_TARGET=	./cmd/protoc-gen-go
