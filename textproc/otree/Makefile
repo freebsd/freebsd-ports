@@ -1,6 +1,6 @@
 PORTNAME=	otree
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
+DISTVERSION=	0.5.0
 CATEGORIES=	textproc
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -16,11 +16,11 @@ GH_ACCOUNT=	fioncat
 
 CARGO_CRATES=	aho-corasick-1.1.3 \
 		allocator-api2-0.2.21 \
-		anstream-0.6.19 \
+		anstream-0.6.20 \
 		anstyle-1.0.11 \
 		anstyle-parse-0.2.7 \
-		anstyle-query-1.1.3 \
-		anstyle-wincon-3.0.9 \
+		anstyle-query-1.1.4 \
+		anstyle-wincon-3.0.10 \
 		anyhow-1.0.98 \
 		autocfg-1.5.0 \
 		bitflags-1.3.2 \
@@ -31,8 +31,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		cassowary-0.3.0 \
 		castaway-0.2.4 \
 		cfg-if-1.0.1 \
-		clap-4.5.42 \
-		clap_builder-4.5.42 \
+		clap-4.5.43 \
+		clap_builder-4.5.43 \
 		clap_derive-4.5.41 \
 		clap_lex-0.7.5 \
 		colorchoice-1.0.4 \
@@ -135,7 +135,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		toml_datetime-0.7.0 \
 		toml_parser-1.0.2 \
 		toml_writer-1.0.2 \
-		tui-tree-widget-0.23.1 \
+		tui-textarea-0.7.0 \
 		unicode-ident-1.0.18 \
 		unicode-segmentation-1.12.0 \
 		unicode-truncate-1.1.0 \
@@ -177,7 +177,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
-		winnow-0.7.12
+		winnow-0.7.12 \
+		tui-tree-widget@git+https://github.com/fioncat/tui-rs-tree-widget?branch=main\#407fd9005271d93ae2411ec0231a51e7f5e070f9
 
 PLIST_FILES=	bin/otree
 
