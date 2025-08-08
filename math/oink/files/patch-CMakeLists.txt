@@ -1,7 +1,11 @@
---- CMakeLists.txt.orig	2025-03-28 04:18:13 UTC
+--- CMakeLists.txt.orig	2025-01-05 22:29:55 UTC
 +++ CMakeLists.txt
-@@ -24,7 +24,7 @@ find_package(Boost REQUIRED COMPONENTS filesystem iost
- find_package(Boost REQUIRED COMPONENTS filesystem iostreams regex system random CONFIG)
+@@ -21,10 +21,10 @@ endif()
+   endif()
+ endif()
+ 
+-find_package(Boost REQUIRED COMPONENTS filesystem iostreams regex system random CONFIG)
++find_package(Boost REQUIRED COMPONENTS filesystem iostreams regex random CONFIG)
  
  # Main library target
 -add_library(oink STATIC)
