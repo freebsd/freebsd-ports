@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_web_contents.cc.orig	2025-07-02 10:12:01 UTC
+--- electron/shell/browser/api/electron_api_web_contents.cc.orig	2025-08-06 01:20:29 UTC
 +++ electron/shell/browser/api/electron_api_web_contents.cc
 @@ -160,11 +160,11 @@
  #include "ui/base/cocoa/defaults_utils.h"
@@ -32,7 +32,7 @@
    if (auto* linux_ui = ui::LinuxUi::instance())
      return linux_ui->GetCursorBlinkInterval();
  #elif BUILDFLAG(IS_WIN)
-@@ -930,7 +930,7 @@ void WebContents::InitWithSessionAndOptions(
+@@ -931,7 +931,7 @@ void WebContents::InitWithSessionAndOptions(
    accept_languages.pop_back();
    prefs->accept_languages = accept_languages;
  
@@ -41,7 +41,7 @@
    // Update font settings.
    static const gfx::FontRenderParams params(
        gfx::GetFontRenderParams(gfx::FontRenderParamsQuery(), nullptr));
-@@ -2673,13 +2673,13 @@ void WebContents::ForcefullyCrashRenderer() {
+@@ -2681,13 +2681,13 @@ void WebContents::ForcefullyCrashRenderer() {
  
    content::RenderProcessHost* rph = rwh->GetProcess();
    if (rph) {
@@ -57,7 +57,7 @@
      CrashDumpHungChildProcess(rph->GetProcess().Handle());
  #endif
      rph->Shutdown(content::RESULT_CODE_HUNG);
-@@ -3356,7 +3356,7 @@ void WebContents::Focus() {
+@@ -3370,7 +3370,7 @@ void WebContents::Focus() {
  void WebContents::Focus() {
    // Focusing on WebContents does not automatically focus the window on macOS
    // and Linux, do it manually to match the behavior on Windows.
@@ -66,7 +66,7 @@
    if (owner_window())
      owner_window()->Focus(true);
  #endif
-@@ -4225,7 +4225,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
+@@ -4239,7 +4239,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
  }
  #endif
  
