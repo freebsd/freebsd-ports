@@ -24,7 +24,7 @@ CFLAGS+=	-Wall
 
 do-extract:
 	${MKDIR} ${WRKSRC}
-	${CP} ${_DISTDIR}vbsfilter-${PORTVERSION}.c ${WRKSRC}
+	${CP} ${DISTDIR}/vbsfilter-${PORTVERSION}.c ${WRKSRC}
 
 .for i in ${CTARGETS}
 ${i}:
