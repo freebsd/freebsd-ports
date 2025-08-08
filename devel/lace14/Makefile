@@ -1,6 +1,6 @@
 PORTNAME=	lace
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.2
+DISTVERSION=	1.5.1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	14-work-stealing
 
@@ -10,8 +10,6 @@ WWW=		https://github.com/trolando/lace
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_i386=	compilation fails: static assertion failed due to requirement '(sizeof(struct _Task) % 64) == 0': Task size should be a multiple of LINE_SIZE
 
 USES=		cmake:testing
 
