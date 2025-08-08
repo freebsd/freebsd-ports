@@ -17,6 +17,7 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 meson pkgconfig
+LDFLAGS+=	-lm # https://cgit.FreeBSD.org/ports/commit/?id=b991d37c58ed
 PLIST_FILES=	bin/${PORTNAME} \
 		share/zsh/site-functions/_${PORTNAME}
 
