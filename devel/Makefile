@@ -1179,6 +1179,7 @@
     SUBDIR += kpublictransport
     SUBDIR += kronosnet
     SUBDIR += ktextaddons
+    SUBDIR += kunifiedpush
     SUBDIR += kyua
     SUBDIR += lab
     SUBDIR += lace
