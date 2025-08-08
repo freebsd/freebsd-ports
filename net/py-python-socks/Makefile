@@ -1,5 +1,5 @@
 PORTNAME=	python-socks
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Core proxy (SOCKS4, SOCKS5, HTTP tunneling) functionality for Python
-WWW=		https://pypi.org/project/python-socks/
+WWW=		https://pypi.org/project/python-socks/ \
+		https://github.com/romis2012/python-socks
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
