@@ -1,5 +1,5 @@
 PORTNAME=	alsa-utils
-PORTVERSION=	1.2.13
+PORTVERSION=	1.2.14
 CATEGORIES=	audio
 MASTER_SITES=	https://www.alsa-project.org/files/pub/utils/
 
@@ -61,7 +61,7 @@ post-patch:
 		${WRKSRC}/amidi/amidi.1
 	@${REINPLACE_CMD} \
 		's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/alsa-info/alsa-info.sh.1 \
+		${WRKSRC}/alsa-info/alsa-info.sh.8 \
 		${WRKSRC}/amidi/amidi.1
 
 .include <bsd.port.mk>

@@ -23,7 +23,6 @@ lib/alsa-topology/libalsatplg_module_nhlt.so
 lib/udev/90-alsa-restore.rules
 %%MANPAGES%%share/man/fr/man8/alsaconf.8.gz
 %%MANPAGES%%share/man/man1/aconnect.1.gz
-%%MANPAGES%%share/man/man1/alsa-info.sh.1.gz
 %%MANPAGES%%%%BAT%%share/man/man1/alsabat.1.gz
 %%MANPAGES%%share/man/man1/alsactl.1.gz
 %%MANPAGES%%share/man/man1/alsaloop.1.gz
@@ -48,6 +47,7 @@ lib/udev/90-alsa-restore.rules
 %%MANPAGES%%share/man/man1/nhlt-dmic-info.1.gz
 %%MANPAGES%%share/man/man1/speaker-test.1.gz
 %%MANPAGES%%share/man/man7/alsactl_init.7.gz
+%%MANPAGES%%share/man/man8/alsa-info.sh.8.gz
 %%MANPAGES%%share/man/man8/alsaconf.8.gz
 sbin/alsa-info.sh
 %%BAT%%sbin/alsabat-test.sh
