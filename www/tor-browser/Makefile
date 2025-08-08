@@ -1,9 +1,8 @@
 PORTNAME=	tor-browser
-DISTVERSION=	14.5.5
-PORTREVISION=	1
+DISTVERSION=	15.0a1
 CATEGORIES=	www net security wayland
-TAG_BASE=	8600afeb12fdae895c37618e1386c1a1ac2f5308
-TAG_TOR=	9fe8a13ee4c69f91cd545dc3c575ca8f4851d58e
+TAG_BASE=	96a559c7c1f7b9231db2b5cece7ecae980ae835d
+TAG_TOR=	3becb908fbf68aa77accc1f2e03e2c29f4fe40e2
 MASTER_SITES=	TOR \
 		LOCAL/vvd \
 		https://build-sources.tbb.torproject.org/:source1 \
@@ -18,7 +17,7 @@ MASTER_SITES=	TOR \
 		LOCAL/vvd:source5
 MASTER_SITE_SUBDIR=	torbrowser/${DISTVERSION}/:DEFAULT \
 			download/releases/:source3
-DISTNAME=	src-firefox-tor-browser-128.13.0esr-14.5-1-build2
+DISTNAME=	src-firefox-tor-browser-140.1.0esr-15.0-1-build3
 MANUAL=		manual_215922.zip
 NOSCRIPT=	noscript-13.0.8.xpi
 DISTFILES=	${DISTNAME}.tar.xz \
@@ -36,12 +35,12 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.101:security/nss \
+		nss>=3.112:security/nss \
 		icu>=76.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=8.5.0:print/harfbuzz \
+		harfbuzz>=10.1.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
-		png>=1.6.43:graphics/png \
+		png>=1.6.45:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
 		libvpx>=1.14:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
@@ -105,14 +104,10 @@ MOZ_OPTIONS=	--with-base-browser-version=${DISTVERSION} \
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386
-BUILD_DEPENDS+=	node${NODEJS_VERSION}>=24:www/node${NODEJS_VERSION}
-USES+=		nodejs:24,build,env
-.  if ${MACHINE_CPU:Msse2}
+.if ${ARCH} == i386 && ${MACHINE_CPU:Msse2}
 # is not enabled on i386 by default
 # Fix for error: always_inline function '_mm_setzero_si64' requires target feature 'sse2'
 CFLAGS_i386+=	-msse2
-.  endif
 .endif
 
 .if ${ARCH} == amd64

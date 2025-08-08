@@ -1,4 +1,4 @@
---- memory/mozalloc/throw_gcc.h.orig	2022-03-05 00:14:41 UTC
+--- memory/mozalloc/throw_gcc.h.orig	2022-02-02 17:33:38 UTC
 +++ memory/mozalloc/throw_gcc.h
 @@ -74,50 +74,66 @@ __throw_bad_function_call(void) {
    mozalloc_abort("fatal: STL threw bad_function_call");
