@@ -1,5 +1,6 @@
 PORTNAME=	devilutionX
 DISTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/diasurgical/devilutionx-assets/releases/download/${DATA_VERSION}/:data
 DISTFILES=	devilutionx.mpq?tag=${DATA_VERSION}:data

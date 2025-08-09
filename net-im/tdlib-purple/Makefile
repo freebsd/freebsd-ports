@@ -1,7 +1,7 @@
 PORTNAME=	tdlib-purple
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 
 PATCH_SITES=	https://github.com/ars3niy/tdlib-purple/commit/

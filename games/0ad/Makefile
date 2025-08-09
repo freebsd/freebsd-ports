@@ -1,5 +1,6 @@
 PORTNAME=	0ad
 DISTVERSION=	0.27.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://releases.wildfiregames.com/
 DISTFILES=	${PORTNAME}-${DISTVERSION}-unix-build.tar.xz \

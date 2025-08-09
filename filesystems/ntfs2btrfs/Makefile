@@ -1,5 +1,6 @@
 PORTNAME=	ntfs2btrfs
 PORTVERSION=	20230501
+PORTREVISION=	1
 CATEGORIES=	filesystems sysutils
 
 MAINTAINER=	danfe@FreeBSD.org

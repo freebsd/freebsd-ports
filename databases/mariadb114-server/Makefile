@@ -1,6 +1,6 @@
 PORTNAME?=	mariadb
 PORTVERSION=	11.4.8
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	\
 		https://ftp.nluug.nl/db/${SITESDIR}/ \

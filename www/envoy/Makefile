@@ -1,7 +1,7 @@
 PORTNAME=	envoy
 PORTVERSION=	1.26.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www
 MASTER_SITES=	https://storage.googleapis.com/quiche-envoy-integration/:gurl
 DISTFILES=	dd4080fec0b443296c0ed0036e1e776df8813aa7${EXTRACT_SUFX}:gurl
