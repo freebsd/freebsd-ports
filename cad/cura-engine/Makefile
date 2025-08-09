@@ -15,7 +15,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/uuid/uuid.hpp:devel/boost-libs \
 		${LOCALBASE}/include/fmt/format.h:devel/libfmt \
 		${LOCALBASE}/include/range/v3/range.hpp:devel/range-v3 \
 		${LOCALBASE}/include/rapidjson/rapidjson.h:devel/rapidjson
-LIB_DEPENDS=	libArcus.so:net/libarcus \
+LIB_DEPENDS=	libabsl_log_internal_message.so:devel/abseil \
+		libArcus.so:net/libarcus \
+		libfmt.so:devel/libfmt \
 		libpolyclipping.so:graphics/polyclipping \
 		libprotobuf.so:devel/protobuf \
 		libspdlog.so:devel/spdlog
