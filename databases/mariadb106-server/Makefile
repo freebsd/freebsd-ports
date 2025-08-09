@@ -1,10 +1,11 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.6.22
-PORTREVISION?=	1
+PORTVERSION=	10.6.23
+PORTREVISION?=	0
 CATEGORIES=	databases
-MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
-		https://mirror.one.com/${SITESDIR}/ \
+MASTER_SITES=	\
 		https://ftp.nluug.nl/db/${SITESDIR}/ \
+		https://mirror.nodesdirect.com/${SITESDIR}/ \
+		https://mirror.one.com/${SITESDIR}/ \
 		https://ftp.icm.edu.pl/pub/unix/database/${SITESDIR}/ \
 		https://mirror.truenetwork.ru/${SITESDIR}/ \
 		https://mirrors.aliyun.com/${SITESDIR}/ \
@@ -22,7 +23,8 @@ WWW=		https://mariadb.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-#EXPIRATION_DATE=	2026-07-01
+DEPRECATED=		End-of-Life approaching, please switch to 11.8 (or 11.4)
+EXPIRATION_DATE=	2026-06-30
 
 LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2 \
 		libzstd.so:archivers/zstd
