@@ -1,0 +1,22 @@
+--- libhydrasdr/CMakeLists.txt.orig	2025-07-17 22:22:04 UTC
++++ libhydrasdr/CMakeLists.txt
+@@ -108,11 +108,18 @@ CONFIGURE_FILE(
+     ${CMAKE_CURRENT_BINARY_DIR}/libhydrasdr.pc
+ @ONLY)
+ 
++STRING(COMPARE EQUAL ${BSD} "FreeBSD" FREEBSD)
++if (FREEBSD)
+ INSTALL(
+     FILES ${CMAKE_CURRENT_BINARY_DIR}/libhydrasdr.pc
++    DESTINATION libdata${LIB_SUFFIX}/pkgconfig
++)
++else()
++INSTALL(
++    FILES ${CMAKE_CURRENT_BINARY_DIR}/libhydrasdr.pc
+     DESTINATION lib${LIB_SUFFIX}/pkgconfig
+ )
+-
++endif()
+ ########################################################################
+ # Create uninstall target
+ ########################################################################
