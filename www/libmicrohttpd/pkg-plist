@@ -2,7 +2,7 @@ include/microhttpd.h
 lib/libmicrohttpd.a
 lib/libmicrohttpd.so
 lib/libmicrohttpd.so.12
-lib/libmicrohttpd.so.12.62.1
+lib/libmicrohttpd.so.12.62.2
 libdata/pkgconfig/libmicrohttpd.pc
 share/man/man3/libmicrohttpd.3.gz
 share/info/libmicrohttpd_performance_data.png

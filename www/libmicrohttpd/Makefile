@@ -1,5 +1,5 @@
 PORTNAME=	libmicrohttpd
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	www
 MASTER_SITES=	GNU
 
@@ -20,11 +20,11 @@ INFO=		libmicrohttpd libmicrohttpd-tutorial
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-examples
 
 OPTIONS_DEFINE=		GNUTLS TESTCURL
 OPTIONS_DEFAULT=	GNUTLS
+
 TESTCURL_DESC=		Use curl when running unit tests
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
