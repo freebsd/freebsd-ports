@@ -1,6 +1,6 @@
 PORTNAME=	simpleviewer
 PORTVERSION=	3.1.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/andreyu/simple-viewer-gl/get/${BB_COMMIT}.tar.bz2?dummy=/
 
