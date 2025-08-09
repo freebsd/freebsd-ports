@@ -1,6 +1,6 @@
---- deps/hiredis/net.c.orig	2019-11-28 19:32:05 UTC
+--- deps/hiredis/net.c.orig	2025-08-04 11:05:03 UTC
 +++ deps/hiredis/net.c
-@@ -178,14 +178,34 @@
+@@ -185,14 +185,34 @@ int redisKeepAlive(redisContext *c, int interval) {
          __redisSetError(c,REDIS_ERR_OTHER,strerror(errno));
          return REDIS_ERR;
      }
