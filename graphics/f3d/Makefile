@@ -48,7 +48,7 @@ MODULES_DESC=			Build modules:
 ALEMBIC_DESC=			Alembic plugin (for ABC files)
 ALEMBIC_CMAKE_BOOL=		F3D_PLUGIN_BUILD_ALEMBIC
 ALEMBIC_LIB_DEPENDS=		libAlembic.so:graphics/alembic \
-				libImath-3_1.so:math/Imath
+				libImath.so:math/Imath
 
 ASSIMP_DESC=			Assimp plugin (for FBX, OFF, DAE and DXF files)
 ASSIMP_CMAKE_BOOL=		F3D_PLUGIN_BUILD_ASSIMP
