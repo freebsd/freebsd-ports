@@ -36,7 +36,10 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS?=	help2man:misc/help2man
 # exact libImath version required to avoid hard-to-debug issues
-LIB_DEPENDS?=	libImath-3_1.so.29:math/Imath \
+# but this is due to Imath and OpenEXR being close in terms of their
+# release engineering, no other port should version pin Imath
+# or OpenEXR without extremely good reason
+LIB_DEPENDS?=	libImath-3_2.so.30:math/Imath \
 		libdeflate.so:archivers/libdeflate
 
 USES?=		cmake:testing compiler:c++14-lang cpe pathfix pkgconfig
