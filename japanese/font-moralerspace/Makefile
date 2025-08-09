@@ -1,5 +1,5 @@
 PORTNAME=	moralerspace
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.0
 PORTREVISION=	0
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	https://github.com/yuru7/${FONTNAME}/releases/download/v${PORTVERSION}/
