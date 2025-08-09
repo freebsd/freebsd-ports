@@ -1,5 +1,5 @@
 PORTNAME=	xtxf
-DISTVERSION=	0.11.3
+DISTVERSION=	0.11.4
 CATEGORIES=	games
 
 MAINTAINER=	slowdive@me.com
@@ -9,8 +9,7 @@ WWW=		https://github.com/charlesrocket/xtxf
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	git>=2:devel/git \
-		zig>=0.14:lang/zig
+BUILD_DEPENDS=	zig>=0.14:lang/zig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	charlesrocket
@@ -24,7 +23,7 @@ BUILD_ARGS=	--prefix ${PREFIX} ${WITH_DEBUG:U-Doptimize=ReleaseFast} \
 MAKE_ENV=	DESTDIR=${STAGEDIR}
 
 PLIST_FILES=	bin/xtxf \
-		share/man/man1/xtxf.1.gz
+		share/man/man6/xtxf.6.gz
 
 OPTIONS_DEFAULT=		BASH ZSH
 OPTIONS_GROUP=			COMPLETION
@@ -43,8 +42,8 @@ post-build:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/cova_generator_xtxf
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/meta/help_docs/manpages/xtxf.1 \
-		${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/meta/help_docs/manpages/xtxf.6 \
+		${STAGEDIR}${PREFIX}/share/man/man6
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xtxf
