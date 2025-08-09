@@ -10,8 +10,6 @@ WWW=		https://gn.googlesource.com/gn/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_riscv64=		fails to build: ../src/util/build_config.h:168:2: Please add support for your architecture in build_config.h
-
 USES=		alias compiler:c++20-lang ninja python:build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	cglogic # mirror
