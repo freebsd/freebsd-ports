@@ -13,7 +13,7 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
-		libboost_system.so:devel/boost-libs \
+		libboost_iostreams.so:devel/boost-libs \
 		libImath.so:math/Imath \
 		libtbb.so:devel/onetbb
 TEST_DEPENDS=	googletest>0:devel/googletest
