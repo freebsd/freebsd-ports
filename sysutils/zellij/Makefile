@@ -1,15 +1,18 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.42.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
-MAINTAINER=	riggs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Versatile, extensible terminal multiplexer
 WWW=		https://zellij.dev/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+DEPRECATED=	Unsustainable dependency growth
+EXPIRATION_DATE=	2025-12-31
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	wasmer-vm crate currently only supports aarch64 and amd64
