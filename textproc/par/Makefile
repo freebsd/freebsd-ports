@@ -1,6 +1,6 @@
 PORTNAME=	par
 PORTVERSION=	1.53.0
-PORTREVISION=	2
+PORTREVISION=	3
 PKGNAMESUFFIX=	_format
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.nicemice.net/par/
