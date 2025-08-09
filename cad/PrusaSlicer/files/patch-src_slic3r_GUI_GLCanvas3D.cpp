@@ -1,6 +1,6 @@
---- src/slic3r/GUI/GLCanvas3D.cpp.orig	2025-02-20 18:44:48 UTC
+--- src/slic3r/GUI/GLCanvas3D.cpp.orig	2025-04-10 11:26:51 UTC
 +++ src/slic3r/GUI/GLCanvas3D.cpp
-@@ -13,7 +13,7 @@
+@@ -18,7 +18,7 @@
  
  #include <igl/unproject.h> // IWYU pragma: keep
  #include <LocalesUtils.hpp>
