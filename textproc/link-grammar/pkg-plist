@@ -1,6 +1,7 @@
 bin/link-generator
 bin/link-parser
 include/link-grammar/dict-api.h
+include/link-grammar/dict-atomese.h
 include/link-grammar/dict-structures.h
 include/link-grammar/link-features.h
 include/link-grammar/link-includes.h
@@ -76,6 +77,9 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/de/4.0.dict
 %%DATADIR%%/de/4.0.knowledge
 %%DATADIR%%/de/4.0.regex
+%%DATADIR%%/demo-atomese/4.0.affix
+%%DATADIR%%/demo-atomese/atomese-dict.scm
+%%DATADIR%%/demo-atomese/storage.dict
 %%DATADIR%%/demo-sql/4.0.affix
 %%DATADIR%%/demo-sql/4.0.constituent-knowledge
 %%DATADIR%%/demo-sql/4.0.knowledge
@@ -139,6 +143,7 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/en/words/words.n.3-const
 %%DATADIR%%/en/words/words.n.3-vowel
 %%DATADIR%%/en/words/words.n.3.y
+%%DATADIR%%/en/words/words.n.4-const
 %%DATADIR%%/en/words/words.n.t
 %%DATADIR%%/en/words/words.v.1.1
 %%DATADIR%%/en/words/words.v.1.2
