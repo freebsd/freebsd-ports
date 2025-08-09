@@ -1,5 +1,5 @@
 PORTNAME=	cdogs-sdl
-DISTVERSION=	2.3.0
+DISTVERSION=	2.3.1
 CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
