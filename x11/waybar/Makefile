@@ -1,5 +1,5 @@
 PORTNAME=	waybar
-DISTVERSION=	0.13.0
+DISTVERSION=	0.14.0
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
 
@@ -22,24 +22,27 @@ LIB_DEPENDS=	libdate-tz.so:devel/date \
 		libxkbregistry.so:x11/libxkbcommon
 TEST_DEPENDS=	catch>0:devel/catch
 
-FLAVORS=		default nopulse
-CONFLICTS_INSTALL=	${PORTNAME}*
+FLAVORS=	default nopulse
 
 USES=		compiler:c++20-lang gnome meson pkgconfig
 USE_GITHUB=	yes
-USE_GNOME=	gtkmm30
 GH_ACCOUNT=	Alexays
 GH_PROJECT=	Waybar
-MESON_ARGS=	${libnl systemd tests:L:C/.*/-D&=disabled/}
-PLIST_FILES=	bin/${PORTNAME} \
-		etc/xdg/${PORTNAME}/config.jsonc \
-		etc/xdg/${PORTNAME}/style.css
+USE_GNOME=	gtkmm30
 
 # XXX Add pkg-config support to devel/date
 .if exists(${.CURDIR}/files/date.pc.in)
 CONFIGURE_ENV+=	PKG_CONFIG_PATH="${WRKDIR}"
 SUB_FILES+=	date.pc
 .endif
+
+MESON_ARGS=	${libnl systemd tests:L:C/.*/-D&=disabled/}
+
+CONFLICTS_INSTALL=	${PORTNAME}*
+
+PLIST_FILES=	bin/${PORTNAME} \
+		etc/xdg/${PORTNAME}/config.jsonc \
+		etc/xdg/${PORTNAME}/style.css
 
 OPTIONS_DEFINE=		CAVA DBUS EVDEV ICONSFONT JACK MANPAGES MPD MPRIS \
 			PIPEWIRE PULSEAUDIO SNDIO UDEV UPOWER WIREPLUMBER
@@ -50,6 +53,14 @@ OPTIONS_EXCLUDE+=	CAVA # https://github.com/karlstav/cava/issues/487
 OPTIONS_EXCLUDE+=	PULSEAUDIO
 .endif
 
+EVDEV_DESC=	Keyboard state via libevdev
+ICONSFONT_DESC=	Install Font Awesome to properly render icons
+MPD_DESC=	Music Player Daemon support
+MPRIS_DESC=	Media Player Remote Interfacing Specification via playerctl
+UDEV_DESC=	Monitor backlight level via libudev
+UPOWER_DESC=	Monitor battery capacity via UPower
+WIREPLUMBER_DESC=	Show current volume via WirePlumber
+
 CAVA_LIB_DEPENDS=	libcava.so:audio/cava
 CAVA_MESON_ENABLED=	cava
 CAVA_VARS=		MANPAGES_PLIST_FILES+=share/man/man5/${PORTNAME}-cava.5.gz
@@ -58,14 +69,12 @@ DBUS_LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu
 DBUS_MESON_ENABLED=	dbusmenu-gtk
 DBUS_VARS=		MANPAGES_PLIST_FILES+=share/man/man5/${PORTNAME}-tray.5.gz
 
-EVDEV_DESC=		Keyboard state via libevdev
 EVDEV_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 EVDEV_LIB_DEPENDS=	libevdev.so:devel/libevdev \
 			libinput.so:x11/libinput
 EVDEV_MESON_ENABLED=	libevdev libinput
 EVDEV_VARS=		MANPAGES_PLIST_FILES+=share/man/man5/${PORTNAME}-keyboard-state.5.gz
 
-ICONSFONT_DESC=		Install Font Awesome to properly render icons
 ICONSFONT_RUN_DEPENDS=	font-awesome>0:x11-fonts/font-awesome
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
@@ -74,8 +83,7 @@ JACK_VARS=		MANPAGES_PLIST_FILES+=share/man/man5/${PORTNAME}-jack.5.gz
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
-MANPAGES_PLIST_FILES=	\
-			share/man/man5/${PORTNAME}-battery.5.gz \
+MANPAGES_PLIST_FILES=	share/man/man5/${PORTNAME}-battery.5.gz \
 			share/man/man5/${PORTNAME}-cffi.5.gz \
 			share/man/man5/${PORTNAME}-clock.5.gz \
 			share/man/man5/${PORTNAME}-cpu.5.gz \
@@ -83,6 +91,7 @@ MANPAGES_PLIST_FILES=	\
 			share/man/man5/${PORTNAME}-disk.5.gz \
 			share/man/man5/${PORTNAME}-dwl-tags.5.gz \
 			share/man/man5/${PORTNAME}-dwl-window.5.gz \
+			share/man/man5/${PORTNAME}-ext-workspaces.5.gz \
 			share/man/man5/${PORTNAME}-gamemode.5.gz \
 			share/man/man5/${PORTNAME}-gps.5.gz \
 			share/man/man5/${PORTNAME}-hyprland-language.5.gz \
@@ -112,12 +121,10 @@ MANPAGES_PLIST_FILES=	\
 			share/man/man5/${PORTNAME}-wlr-taskbar.5.gz \
 			share/man/man5/${PORTNAME}.5.gz
 
-MPD_DESC=		Music Player Daemon support
 MPD_LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 MPD_MESON_ENABLED=	mpd
 MPD_VARS=		MANPAGES_PLIST_FILES+=share/man/man5/${PORTNAME}-mpd.5.gz
 
-MPRIS_DESC=		Media Player Remote Interfacing Specification via playerctl
 MPRIS_LIB_DEPENDS=	libplayerctl.so:multimedia/playerctl
 MPRIS_MESON_ENABLED=	mpris
 MPRIS_VARS=		MANPAGES_PLIST_FILES+=share/man/man5/${PORTNAME}-mpris.5.gz
@@ -136,14 +143,12 @@ SNDIO_USES=		localbase:ldflags
 SNDIO_MESON_ENABLED=	sndio
 SNDIO_VARS=		MANPAGES_PLIST_FILES+=share/man/man5/${PORTNAME}-sndio.5.gz
 
-UDEV_DESC=		Monitor backlight level via libudev
 UDEV_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 			libudev.so:devel/libudev-devd
 UDEV_MESON_ENABLED=	libudev
 UDEV_VARS=		MANPAGES_PLIST_FILES+=share/man/man5/${PORTNAME}-backlight-slider.5.gz \
 			MANPAGES_PLIST_FILES+=share/man/man5/${PORTNAME}-backlight.5.gz
 
-UPOWER_DESC=		Monitor battery capacity via UPower
 UPOWER_LIB_DEPENDS=	libupower-glib.so:sysutils/upower
 UPOWER_MESON_ENABLED=	upower_glib
 UPOWER_VARS=		MANPAGES_PLIST_FILES+=share/man/man5/${PORTNAME}-upower.5.gz
@@ -167,7 +172,7 @@ post-patch:
 		${WRKSRC}/src/util/prepare_for_sleep.cpp
 # Respect PREFIX for icons
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
-		${WRKSRC}/src/modules/wlr/taskbar.cpp
+		${WRKSRC}/src/util/icon_loader.cpp
 
 pre-test:
 	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
