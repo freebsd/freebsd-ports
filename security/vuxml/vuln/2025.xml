@@ -1,3 +1,29 @@
+  <vuln vid="fb08d146-752a-11f0-952c-8447094a420f">
+    <topic>Apache httpd -- evaluation always true</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><ge>2.4.64</ge><lt>2.4.65</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://downloads.apache.org/httpd/CHANGES_2.4.65">
+	  <p>'RewriteCond expr' always evaluates to true in 2.4.64.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-54090</cvename>
+      <url>https://downloads.apache.org/httpd/CHANGES_2.4.65</url>
+    </references>
+    <dates>
+      <discovery>2025-07-23</discovery>
+      <entry>2025-08-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="66f35fd9-73f5-11f0-8e0e-002590c1f29c">
     <topic>FreeBSD -- Integer overflow in libarchive leading to double free</topic>
     <affects>
