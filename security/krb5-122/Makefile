@@ -3,7 +3,7 @@ PORTVERSION=		1.22
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
-PKGNAME_X=		-${FLAVOR:S/default//}-121
+PKGNAME_X=		-${FLAVOR:S/default//}-122
 .else
 PKGNAME_X=		-${FLAVOR:S/default//}
 .endif
