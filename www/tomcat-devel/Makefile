@@ -1,5 +1,5 @@
 PORTNAME=	tomcat
-DISTVERSION=	11.0.9
+DISTVERSION=	11.0.10
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION:C/([0-9]+)(.*)/\1/}/v${DISTVERSION}/bin
 PKGNAMESUFFIX=	-devel
@@ -17,6 +17,12 @@ USES=		cpe java
 CPE_VENDOR=	apache
 JAVA_VERSION=	17+
 USE_RC_SUBR=	${PKGBASE:C/-/_/}
+
+EXTRACT_AFTER_ARGS=	--exclude commons-daemon-native.tar.gz \
+			--exclude commons-daemon.jar \
+			--exclude tomcat-native.tar.gz \
+			--exclude *.bat \
+			--no-same-owner --no-same-permissions
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -41,27 +47,27 @@ TOMCAT_SUBDIR?=	${DISTNAME:R}${PKGNAMESUFFIX}
 TOMCAT_HOME=	${PREFIX}/${TOMCAT_SUBDIR}
 
 post-patch:
-	@${RM} ${WRKSRC}/bin/commons-daemon-native.tar.gz ${WRKSRC}/bin/commons-daemon.jar ${WRKSRC}/bin/tomcat-native.tar.gz
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; s|%%JAVAJARDIR%%|${JAVAJARDIR}|g' ${WRKSRC}/bin/daemon.sh
-	@${FIND} ${WRKSRC} -name '*.bak' -delete -o -name '*.orig' -delete
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; s|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
+		${WRKSRC}/bin/daemon.sh
+	${FIND} ${WRKSRC} -name '*.bak' -delete -o -name '*.orig' -delete
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${TOMCAT_HOME}/logs
-	@${CP} -R ${WRKSRC}/* ${STAGEDIR}${TOMCAT_HOME}
+	${MKDIR} ${STAGEDIR}${TOMCAT_HOME}/logs
+	(cd ${WRKSRC} && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${TOMCAT_HOME} "! -name *\.sh" && \
+		${COPYTREE_BIN} bin ${STAGEDIR}${TOMCAT_HOME} "-name *\.sh")
 
 post-install:
-	@${RM} ${STAGEDIR}${TOMCAT_HOME}/bin/*.bat
-	@(cd ${STAGEDIR}${TOMCAT_HOME}/conf &&\
-		for f in $$(find . -type f -not -name '*.xsd'); do ${MV} $$f $$f.sample; done)
+	${FIND} ${STAGEDIR}${TOMCAT_HOME}/conf -type f -not -name '*.xsd' -exec ${MV} {} {}.sample \;
 
 post-install-HOST_MANAGER-on:
-	@(cd ${STAGEDIR}${TOMCAT_HOME}/webapps &&\
-		for f in host-manager/META-INF/context.xml host-manager/WEB-INF/manager.xml host-manager/WEB-INF/web.xml; do \
+	(cd ${STAGEDIR}${TOMCAT_HOME}/webapps/host-manager && \
+		for f in META-INF/context.xml WEB-INF/manager.xml WEB-INF/web.xml; do \
 			${MV} $$f $$f.sample; done)
 
 post-install-MANAGER-on:
-	@(cd ${STAGEDIR}${TOMCAT_HOME}/webapps &&\
-		for f in manager/META-INF/context.xml manager/WEB-INF/web.xml; do \
+	(cd ${STAGEDIR}${TOMCAT_HOME}/webapps/manager && \
+		for f in META-INF/context.xml WEB-INF/web.xml; do \
 			${MV} $$f $$f.sample; done)
 
 .include <bsd.port.mk>
