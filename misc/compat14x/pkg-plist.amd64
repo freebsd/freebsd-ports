@@ -1,5 +1,6 @@
 lib/compat/libasn1.so.11
 lib/compat/libcom_err.so.5
+lib/compat/libcrypto.so.30
 lib/compat/libgssapi_krb5.so.10
 lib/compat/libgssapi_ntlm.so.10
 lib/compat/libgssapi_spnego.so.10
@@ -16,10 +17,12 @@ lib/compat/libmd.so.6
 lib/compat/libprivateheimipcc.so.11
 lib/compat/libprivateheimipcs.so.11
 lib/compat/libroken.so.11
+lib/compat/libssl.so.30
 lib/compat/libutil.so.9
 lib/compat/libwind.so.11
 %%COMPAT32%%lib32/compat/libasn1.so.11
 %%COMPAT32%%lib32/compat/libcom_err.so.5
+%%COMPAT32%%lib32/compat/libcrypto.so.30
 %%COMPAT32%%lib32/compat/libgssapi_krb5.so.10
 %%COMPAT32%%lib32/compat/libgssapi_ntlm.so.10
 %%COMPAT32%%lib32/compat/libgssapi_spnego.so.10
@@ -36,5 +39,6 @@ lib/compat/libwind.so.11
 %%COMPAT32%%lib32/compat/libprivateheimipcc.so.11
 %%COMPAT32%%lib32/compat/libprivateheimipcs.so.11
 %%COMPAT32%%lib32/compat/libroken.so.11
+%%COMPAT32%%lib32/compat/libssl.so.30
 %%COMPAT32%%lib32/compat/libutil.so.9
 %%COMPAT32%%lib32/compat/libwind.so.11
