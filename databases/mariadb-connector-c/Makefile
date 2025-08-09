@@ -1,9 +1,10 @@
 PORTNAME=	mariadb-connector-c
-PORTVERSION=	3.4.3
+PORTVERSION=	3.4.5
 CATEGORIES=	databases
-MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
-		https://mirror.one.com/${SITESDIR}/ \
+MASTER_SITES=	\
 		https://ftp.nluug.nl/db/${SITESDIR}/ \
+		https://mirror.nodesdirect.com/${SITESDIR}/ \
+		https://mirror.one.com/${SITESDIR}/ \
 		https://ftp.icm.edu.pl/pub/unix/database/${SITESDIR}/ \
 		https://mirror.truenetwork.ru/${SITESDIR}/ \
 		https://mirrors.aliyun.com/${SITESDIR}/ \
