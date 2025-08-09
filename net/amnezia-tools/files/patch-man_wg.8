@@ -1,15 +1,60 @@
 --- man/wg.8.orig	2024-10-01 13:02:42 UTC
 +++ man/wg.8
-@@ -55,7 +55,7 @@ by \fICONFIGURATION FILE FORMAT\fP below.
+@@ -1,10 +1,10 @@
+-.TH WG 8 "2015 August 13" ZX2C4 "WireGuard"
++.TH AWG 8 "2025 August 8" AWG "AmneziaWG"
+ 
+ .SH NAME
+-wg - set and retrieve configuration of WireGuard interfaces
++awg - set and retrieve configuration of WireGuard interfaces
+ 
+ .SH SYNOPSIS
+-.B wg
++.B awg
+ [
+ .I COMMAND
+ ] [
+@@ -15,17 +15,15 @@ wg - set and retrieve configuration of WireGuard inter
+ 
+ .SH DESCRIPTION
+ 
+-.B wg
++.B awg
+ is the configuration utility for getting and setting the configuration of
+ WireGuard tunnel interfaces. The interfaces themselves can be added and removed
+ using
+-.BR ip-link (8)
++.BR ifconfig (8)
+ and their IP addresses and routing tables can be set using
+-.BR ip-address (8)
+-and
+-.BR ip-route (8).
++.BR route (8).
+ The
+-.B wg
++.B awg
+ utility provides a series of sub-commands for changing WireGuard-specific
+ aspects of WireGuard interfaces.
+ 
+@@ -36,7 +34,7 @@ Sub-commands that take an INTERFACE must be passed a W
+ .SH COMMANDS
+ 
+ .TP
+-\fBshow\fP { \fI<interface>\fP | \fIall\fP | \fIinterfaces\fP } [\fIpublic-key\fP | \fIprivate-key\fP | \fIlisten-port\fP | \fIfwmark\fP | \fIpeers\fP | \fIpreshared-keys\fP | \fIendpoints\fP | \fIallowed-ips\fP | \fIlatest-handshakes\fP | \fIpersistent-keepalive\fP | \fItransfer\fP | \fIdump\fP]
++\fBshow\fP { \fI<interface>\fP | \fIall\fP | \fIinterfaces\fP } [\fIpublic-key\fP | \fIprivate-key\fP | \fIlisten-port\fP | \fIfwmark\fP | \fIpeers\fP | \fIpreshared-keys\fP | \fIendpoints\fP | \fIallowed-ips\fP | \fIlatest-handshakes\fP | \fIpersistent-keepalive\fP | \fItransfer\fP | \fIdump\fP | \fIjc\fP | \fIjmin\fP | \fIjmax\fP | \fIs1\fP | \fIs2\fP | \fIh1\fP | \fIh2\fP | \fIh3\fP | \fIh4\fP]
+ Shows current WireGuard configuration and runtime information of specified \fI<interface>\fP.
+ If no \fI<interface>\fP is specified, \fI<interface>\fP defaults to \fIall\fP.
+ If \fIinterfaces\fP is specified, prints a list of all WireGuard interfaces,
+@@ -55,7 +53,7 @@ by \fICONFIGURATION FILE FORMAT\fP below.
  Shows the current configuration of \fI<interface>\fP in the format described
  by \fICONFIGURATION FILE FORMAT\fP below.
  .TP
 -\fBset\fP \fI<interface>\fP [\fIlisten-port\fP \fI<port>\fP] [\fIfwmark\fP \fI<fwmark>\fP] [\fIprivate-key\fP \fI<file-path>\fP] [\fIpeer\fP \fI<base64-public-key>\fP [\fIremove\fP] [\fIpreshared-key\fP \fI<file-path>\fP] [\fIendpoint\fP \fI<ip>:<port>\fP] [\fIpersistent-keepalive\fP \fI<interval seconds>\fP] [\fIallowed-ips\fP \fI<ip1>/<cidr1>\fP[,\fI<ip2>/<cidr2>\fP]...] ]...
-+\fBset\fP \fI<interface>\fP [\fIlisten-port\fP \fI<port>\fP] [\fIfwmark\fP \fI<fwmark>\fP] [\fIprivate-key\fP \fI<file-path>\fP] [\fIpeer\fP \fI<base64-public-key>\fP [\fIremove\fP] [\fIpreshared-key\fP \fI<file-path>\fP] [\fIendpoint\fP \fI<ip>:<port>\fP] [\fIpersistent-keepalive\fP \fI<interval seconds>\fP] [\fIallowed-ips\fP \fI[+|-]<ip1>/<cidr1>\fP[,\fI[+|-]<ip2>/<cidr2>\fP]...] ]...
++\fBset\fP \fI<interface>\fP [\fIlisten-port\fP \fI<port>\fP] [\fIfwmark\fP \fI<fwmark>\fP] [\fIprivate-key\fP \fI<file-path>\fP] [\fIjc <jc>]\fP [\fI<jmin <jmin>]\fP [\fIjmax <jmax>\fP] [\fIs1 <s1>\fP] [\fIs2 <s2>\fP] [\fIh1\fP] [\fIh2 <h2>\fP] [\fIh3 <h3>\fP] [\fIh4 <h4>\fP] [\fIpeer\fP \fI<base64-public-key>\fP [\fIremove\fP] [\fIpreshared-key\fP \fI<file-path>\fP] [\fIendpoint\fP \fI<ip>:<port>\fP] [\fIpersistent-keepalive\fP \fI<interval seconds>\fP] [\fIallowed-ips\fP \fI[+|-]<ip1>/<cidr1>\fP[,\fI[+|-]<ip2>/<cidr2>\fP]...] ]...
  Sets configuration values for the specified \fI<interface>\fP. Multiple
  \fIpeer\fPs may be specified, and if the \fIremove\fP argument is given
  for a peer, that peer is removed, not configured. If \fIlisten-port\fP
-@@ -72,7 +72,11 @@ If \fIallowed-ips\fP is specified, but the value is th
+@@ -72,7 +70,11 @@ If \fIallowed-ips\fP is specified, but the value is th
  it adds an additional layer of symmetric-key cryptography to be mixed into
  the already existing public-key cryptography, for post-quantum resistance.
  If \fIallowed-ips\fP is specified, but the value is the empty string, all
@@ -22,3 +67,92 @@
  is optional and is by default off; setting it to 0 or "off" disables it.
  Otherwise it represents, in seconds, between 1 and 65535 inclusive, how often
  to send an authenticated empty packet to the peer, for the purpose of keeping
+@@ -119,11 +121,52 @@ A private key and a corresponding public key may be ge
+ .br
+     $ umask 077
+ .br
+-    $ wg genkey | tee private.key | wg pubkey > public.key
++    $ awg genkey | tee private.key | awg pubkey > public.key
+ .TP
+ \fBhelp\fP
+ Shows usage message.
+ 
++.SH AMNEZIA OPTIONS
++Configuration options to be use in order to bypass DPI filters, these options appears in
++\fBshow\fP, \fBset\fP, \fBsetconf\fP, \fBaddconf\fP commands.
++
++.TP
++\fBjc\fP
++Number of junk packets before handshake.
++.br
++1–128 (recomended 3–10)
++
++.TP
++\fBjmin\fP
++Minimum size of junk packets.
++.br
++jmin: < jmax (recomended ~ 8)
++
++.TP
++\fBjmax\fP
++Maximum size of junk packets.
++.br
++jmax: ≤ 1280 (recomended ~ 80)
++
++.TP
++\fBs1\fP
++Size of handshake initiation packet prepend junk. Should be the same on both ends.
++.br
++0–1132 (recomended 15–150), s1 + 56 ≠ s2
++
++.TP
++\fBs2\fP
++Size of handshake response packet prepend junk. Should be the same on both ends.
++.br
++0–1188 (recomended 15–150), s1 + 56 ≠ s2
++
++.TP
++\fBh1-h4\fP
++Custom identifiers for initiation/response/cookie/data packets. Should be the same on both ends.
++.br
++The unique value in range of 5 - 4,294,967,295 (0x5 - 0xFFFFFFFF), h1 != h2 != h3 != h4
++
++
+ .SH CONFIGURATION FILE FORMAT
+ The configuration file format is based on \fIINI\fP. There are two top level sections
+ -- \fIInterface\fP and \fIPeer\fP. Multiple \fIPeer\fP sections may be specified, but
+@@ -224,7 +267,7 @@ on a per-interface basis by using
+ on a per-interface basis by using
+ .BR ifconfig (1):
+ 
+-\fB    # ifconfig wg0 debug
++\fB    # ifconfig amn0 debug\fP
+ 
+ On userspace implementations, it is customary to set the \fILOG_LEVEL\fP environment variable to \fIverbose\fP.
+ 
+@@ -240,19 +283,18 @@ If set to an integer or to \fIinfinity\fP, DNS resolut
+ If set to an integer or to \fIinfinity\fP, DNS resolution for each peer's endpoint will be retried that many times for non-permanent errors, with an increasing delay between retries. If unset, the default is 15 retries.
+ 
+ .SH SEE ALSO
+-.BR wg-quick (8),
+-.BR ip (8),
+-.BR ip-link (8),
+-.BR ip-address (8),
+-.BR ip-route (8).
++.BR awg-quick (8),
++.BR ifconfig (8),
++.BR route (8).
+ 
+ .SH AUTHOR
++awg based on
+ .B wg
+-was written by
++that was written by
+ .MT Jason@zx2c4.com
+ Jason A. Donenfeld
+ .ME .
+ For updates and more information, a project page is available on the
+-.UR https://\:www.wireguard.com/
++.UR https://\:github.com/amnezia-vpn/amneziawg-tools/
+ World Wide Web
+ .UE .

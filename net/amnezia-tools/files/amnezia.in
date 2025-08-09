@@ -17,7 +17,7 @@
 #							(default: "if_amn", "" - no module)
 #
 # amnezia_confdirs (str):	Directory to store the configuration files.
-#							(default: "/usr/local/etc/amnezia")
+#							(default: "%%ETCDIR%%")
 
 . /etc/rc.subr
 
@@ -33,7 +33,6 @@ status_cmd="${name}_status"
 amnezia_start()
 {
 	kmod=${amnezia_kmod:-if_amn}
-	${amnezia_confdirs:+eval export AWG_QUICK_CONFIG_SEARCH_PATHS="$amnezia_confdirs"}
 	${amnezia_env:+eval export $amnezia_env}
 	[ -n "${kmod}" ] && kldstat -q -n ${kmod} || kldload -n ${kmod}
 
@@ -76,6 +75,8 @@ load_rc_config $name
 : ${amnezia_interfaces=""}
 : ${amnezia_env=""}
 : ${amnezia_kmod="if_amn"}
-: ${amnezia_confdirs="/usr/local/etc/amnezia"}
+: ${amnezia_confdirs="%%ETCDIR%%"}
+
+${amnezia_confdirs:+eval export AWG_QUICK_CONFIG_SEARCH_PATHS="$amnezia_confdirs"}
 
 run_rc_command "$1"

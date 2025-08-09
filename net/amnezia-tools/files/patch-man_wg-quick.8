@@ -1,0 +1,204 @@
+--- man/wg-quick.8.orig	2024-10-01 13:02:42 UTC
++++ man/wg-quick.8
+@@ -1,10 +1,10 @@
+-.TH WG-QUICK 8 "2016 January 1" ZX2C4 "WireGuard"
++.TH AWG-QUICK 8 "2025 August 8" AWG "AmneziaWG"
+ 
+ .SH NAME
+-wg-quick - set up a WireGuard interface simply
++awg-quick - set up a WireGuard interface simply
+ 
+ .SH SYNOPSIS
+-.B wg-quick
++.B awg-quick
+ [
+ .I up
+ |
+@@ -13,6 +13,8 @@ wg-quick - set up a WireGuard interface simply
+ .I save
+ |
+ .I strip
++|
++.I reload
+ ] [
+ .I CONFIG_FILE
+ |
+@@ -31,9 +33,9 @@ with all
+ runs pre/post down scripts. Running \fIsave\fP saves the configuration of an existing
+ interface without bringing the interface down. Use \fIstrip\fP to output a configuration file
+ with all
+-.BR wg-quick (8)-specific
++.BR awg-quick (8)-specific
+ options removed, suitable for use with
+-.BR wg (8).
++.BR awg (8).
+ 
+ \fICONFIG_FILE\fP is a configuration file, whose filename is the interface name
+ followed by `.conf'. Otherwise, \fIINTERFACE\fP is an interface name, with configuration
+@@ -41,24 +43,24 @@ Generally speaking, this utility is just a simple scri
+ search paths.
+ 
+ Generally speaking, this utility is just a simple script that wraps invocations to
+-.BR wg (8)
++.BR awg (8)
+ and
+-.BR ip (8)
+-in order to set up a WireGuard interface. It is designed for users with simple
++.BR ifconfig (8)
++in order to set up a AmneziaWG interface. It is designed for users with simple
+ needs, and users with more advanced needs are highly encouraged to use a more
+ specific tool, a more complete network manager, or otherwise just use
+-.BR wg (8)
++.BR awg (8)
+ and
+-.BR ip (8),
++.BR route (8),
+ as usual.
+ 
+ .SH CONFIGURATION
+ 
+ The configuration file adds a few extra configuration values to the format understood by
+-.BR wg (8)
++.BR awg (8)
+ in order to configure additional attributes of an interface. It handles the
+ values that it understands, and then it passes the remaining ones directly to
+-.BR wg (8)
++.BR awg (8)
+ for further processing.
+ 
+ It infers all routes from the list of peers' allowed IPs, and automatically adds
+@@ -67,7 +69,7 @@ to handle overriding of the default gateway.
+ .BR ip-rule (8)
+ to handle overriding of the default gateway.
+ 
+-The configuration file will be passed directly to \fBwg\fP(8)'s `setconf'
++The configuration file will be passed directly to \fBawg\fP(8)'s `setconf'
+ sub-command, with the exception of the following additions to the \fIInterface\fP section,
+ which are handled by this tool:
+ 
+@@ -102,9 +104,29 @@ interface is removed will therefore be overwritten.
+ SaveConfig \(em if set to `true', the configuration is saved from the current state of the
+ interface upon shutdown. Any changes made to the configuration file before the
+ interface is removed will therefore be overwritten.
++.IP \(bu
++Description \(em will setup interface description visible in ifconfig and SNMP.
++.IP \(bu
++UserLand \(em enforce to use amnezia-go instead of kernel driver, you can use
++\fBamnezia-wireguard-go\fP to install it.
++.IP \(bu
++Routes \(em list of routes for the peer to be installed into FIB - that option provides a way to have AllowedIPs list wider then routes installed. Empty list is allowed.
++That is useful if routing protocol will work over the link. 
++But remember that internal wireguard routing will happen according to AllowedIPs anyway.
++Suggested use in case dynamic route - one interface -> one link.
++.IP \(bu
++Monitor default route change \(em do not run `route monitor` when there is no need to do anything on default
++change. That will help to avoid keeping two bashes and one route binaries
++per interface always.
++Default value is true.
++.IP \(bu
++Track DNS Changes \(em if peer endpoint defined as a hostname - periodically (timeout in seconds)
++check if hostname was changed, and if changed update peer endpoint according
++to new hostname. Quite useful in case of DDNS configurations.
++Default values is 0, disabled.
+ 
+ .P
+-Recommended \fIINTERFACE\fP names include `wg0' or `wgvpn0' or even `wgmgmtlan0'.
++Recommended \fIINTERFACE\fP names include `amn0' or `awg0'.
+ However, the number at the end is in fact optional, and really
+ any free-form string [a-zA-Z0-9_=+.-]{1,15} will work. So even interface names corresponding
+ to geographic locations would suffice, such as `cincinnati', `nyc', or `paris', if that's
+@@ -113,9 +135,9 @@ These examples draw on the same syntax found for
+ .SH EXAMPLES
+ 
+ These examples draw on the same syntax found for
+-.BR wg (8),
++.BR awg (8),
+ and a more complete description may be found there. Bold lines below are for options that extend
+-.BR wg (8).
++.BR awg (8).
+ 
+ The following might be used for connecting as a client to a VPN gateway for tunneling all
+ traffic:
+@@ -151,15 +173,15 @@ two lines `PostUp` and `PreDown` lines to the `[Interf
+ to prevent the flow of unencrypted packets through the non-WireGuard interfaces, by adding the following
+ two lines `PostUp` and `PreDown` lines to the `[Interface]` section:
+ 
+-    \fBPostUp = iptables -I OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT\fP
++    \fBPostUp = iptables -I OUTPUT ! -o %i -m mark ! --mark $(awg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT\fP
+ .br
+-    \fBPreDown = iptables -D OUTPUT ! -o %i -m mark ! --mark $(wg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT\fP
++    \fBPreDown = iptables -D OUTPUT ! -o %i -m mark ! --mark $(awg show %i fwmark) -m addrtype ! --dst-type LOCAL -j REJECT\fP
+ .br
+ 
+ The `PostUp' and `PreDown' fields have been added to specify an
+ .BR iptables (8)
+ command which, when used with interfaces that have a peer that specifies 0.0.0.0/0 as part of the
+-`AllowedIPs', works together with wg-quick's fwmark usage in order to drop all packets that
++`AllowedIPs', works together with awg-quick's fwmark usage in order to drop all packets that
+ are either not coming out of the tunnel encrypted or not going through the tunnel itself. (Note
+ that this continues to allow most DHCP traffic through, since most DHCP clients make use of PF_PACKET
+ sockets, which bypass Netfilter.) When IPv6 is in use, additional similar lines could be added using
+@@ -168,7 +190,7 @@ Or, perhaps it is desirable to store private keys in e
+ Or, perhaps it is desirable to store private keys in encrypted form, such as through use of
+ .BR pass (1):
+ 
+-    \fBPreUp = wg set %i private-key <(pass WireGuard/private-keys/%i)\fP
++    \fBPreUp = awg set %i private-key <(pass WireGuard/private-keys/%i)\fP
+ .br
+ 
+ For use on a server, the following is a more complicated example involving multiple peers:
+@@ -242,36 +264,43 @@ in the filename:
+ These configuration files may be placed in any directory, putting the desired interface name
+ in the filename:
+ 
+-\fB    # wg-quick up /path/to/wgnet0.conf\fP
++\fB    # awg-quick up amn0\fP
+ 
++or
++
++\fB    # awg-quick up /path/to/amn0.conf\fP
++
+ For convenience, if only an interface name is supplied, it automatically chooses a path in
+ `/etc/wireguard/':
+ 
+-\fB    # wg-quick up wgnet0\fP
++\fB    # awg-quick up amn0\fP
+ 
+ This will load the configuration file `/etc/wireguard/wgnet0.conf'.
+ 
+ The \fIstrip\fP command is useful for reloading configuration files without disrupting active
+ sessions:
+ 
+-\fB    # wg syncconf wgnet0 <(wg-quick strip wgnet0)\fP
++\fB    # awg syncconf amn0 <(awg-quick strip amn)\fP
+ 
++or
++
++\fB    # awg-quick reload amn0\fP
++
++
+ .SH SEE ALSO
+-.BR wg (8),
+-.BR ip (8),
+-.BR ip-link (8),
+-.BR ip-address (8),
+-.BR ip-route (8),
+-.BR ip-rule (8),
+-.BR resolvconf (8).
++.BR awg (8),
++.BR ifconfig (8),
++.BR route (8),
+ 
+ .SH AUTHOR
++.B awg-quick
++based on 
+ .B wg-quick
+ was written by
+ .MT Jason@zx2c4.com
+ Jason A. Donenfeld
+ .ME .
+ For updates and more information, a project page is available on the
+-.UR https://\:www.wireguard.com/
++.UR https://\:github.com/amnezia-vpn/amneziawg-tools/
+ World Wide Web
+ .UE .
