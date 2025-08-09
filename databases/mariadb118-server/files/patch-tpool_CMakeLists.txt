@@ -1,8 +1,11 @@
---- tpool/CMakeLists.txt.orig	2020-06-23 15:10:18 UTC
+--- tpool/CMakeLists.txt.orig	2025-07-28 19:35:07 UTC
 +++ tpool/CMakeLists.txt
-@@ -1,4 +1,5 @@
- INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/include)
+@@ -11,7 +11,7 @@ TARGET_INCLUDE_DIRECTORIES(tpool PUBLIC "${CMAKE_CURRE
+ 
+ TARGET_INCLUDE_DIRECTORIES(tpool PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}"
+  PRIVATE ${PROJECT_SOURCE_DIR}/include)
+-
 +ADD_DEFINITIONS(-fPIC)
  IF(WIN32)
-   SET(EXTRA_SOURCES tpool_win.cc aio_win.cc)
+   TARGET_SOURCES(tpool PRIVATE tpool_win.cc aio_win.cc)
  ELSEIF(CMAKE_SYSTEM_NAME STREQUAL "Linux")
