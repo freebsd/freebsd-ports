@@ -1,3 +1,3 @@
-TIMESTAMP = 1703846623
-SHA256 (mariadb-connector-odbc-3.1.20-src.tar.gz) = 41f7db83c907017be67f9941649e7ce1d3597c6d68f6241cb9b7709bbe2a490b
-SIZE (mariadb-connector-odbc-3.1.20-src.tar.gz) = 562312
+TIMESTAMP = 1754737413
+SHA256 (mariadb-connector-odbc-3.2.6-src.tar.gz) = ec125605ac6773df260fa73986e921d7c3f1ee18bf0a9a2eb201ee6db1b2e079
+SIZE (mariadb-connector-odbc-3.2.6-src.tar.gz) = 665864
