@@ -62,4 +62,11 @@ post-install-ZSH-on:
 	${CARGO_TARGET_DIR}/shell-completions/_gpgv-sq.ps1 \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?}
+LTO_UNSAFE=	yes
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
+.include <bsd.port.post.mk>
