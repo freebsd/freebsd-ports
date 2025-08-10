@@ -5,6 +5,8 @@ PORTREVISION=	4
 DISTVERSIONSUFFIX=	-g50ac4db
 CATEGORIES=	graphics
 
+BROKEN=		work/magnum-integration-2020.06-264-g50ac4db/src/Magnum/ImGuiIntegration/Context.cpp:322:23: error: no member named 'TextureId' in 'ImDrawCmd', "pcmd->TextureId"
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Magnum Graphics: Integration libraries
 WWW=		https://magnum.graphics/ \
