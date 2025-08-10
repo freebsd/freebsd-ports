@@ -94,7 +94,7 @@ GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib
 GSSAPIINCDIR=	${GSSAPIBASEDIR}/include
 _HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5/krb5.h
 GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
-GSSAPILIBS=	-lkrb5 -lgssapi -lgssapi_krb5
+GSSAPILIBS=	-lkrb5 -lgssapi_krb5
 GSSAPILDFLAGS=
 .      else
          # Base has Heimdal KRB5 installed
