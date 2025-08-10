@@ -21,7 +21,7 @@ USE_GL=		opengl
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors
 USE_QT=		3d base charts connectivity datavis3d declarative doc graphs \
-		httpserver imageformats location multimedia networkauth pdf \
+		httpserver imageformats location multimedia networkauth \
 		positioning quick3d quicktimeline remoteobjects scxml sensors \
 		serialbus serialport shadertools speech svg tools translations \
 		webchannel websockets
@@ -37,15 +37,17 @@ PLIST_SUB=	PYTHON_MAJOR_VER=${PYTHON_MAJOR_VER} \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
-PLIST_SUB+=	WEBENGINE="" \
+PLIST_SUB+=	PDF="" \
+		WEBENGINE="" \
 		WEBVIEW=""
-USE_QT+=	webengine webview
+USE_QT+=	pdf webengine webview
 .else
 CMAKE_ON+=	CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineCore \
 		CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineQuick \
 		CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineWidgets \
 		CMAKE_DISABLE_FIND_PACKAGE_Qt6WebView
-PLIST_SUB+=	WEBENGINE="@comment " \
+PLIST_SUB+=	PDF="@comment " \
+		WEBENGINE="@comment " \
 		WEBVIEW="@comment "
 .endif
 

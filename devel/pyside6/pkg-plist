@@ -32,8 +32,8 @@ include/PySide6/QtNetworkAuth/pyside6_qtnetworkauth_python.h
 include/PySide6/QtNfc/pyside6_qtnfc_python.h
 include/PySide6/QtOpenGL/pyside6_qtopengl_python.h
 include/PySide6/QtOpenGLWidgets/pyside6_qtopenglwidgets_python.h
-include/PySide6/QtPdf/pyside6_qtpdf_python.h
-include/PySide6/QtPdfWidgets/pyside6_qtpdfwidgets_python.h
+%%PDF%%include/PySide6/QtPdf/pyside6_qtpdf_python.h
+%%PDF%%include/PySide6/QtPdfWidgets/pyside6_qtpdfwidgets_python.h
 include/PySide6/QtPositioning/pyside6_qtpositioning_python.h
 include/PySide6/QtPrintSupport/pyside6_qtprintsupport_python.h
 include/PySide6/QtQml/pyside6_qtqml_python.h
@@ -198,10 +198,10 @@ lib/libpyside6remoteobjects.a
 %%PYTHON_SITELIBDIR%%/PySide6/QtOpenGL.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtOpenGLWidgets.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PySide6/QtOpenGLWidgets.pyi
-%%PYTHON_SITELIBDIR%%/PySide6/QtPdf.abi%%PYTHON_MAJOR_VER%%.so
-%%PYTHON_SITELIBDIR%%/PySide6/QtPdf.pyi
-%%PYTHON_SITELIBDIR%%/PySide6/QtPdfWidgets.abi%%PYTHON_MAJOR_VER%%.so
-%%PYTHON_SITELIBDIR%%/PySide6/QtPdfWidgets.pyi
+%%PDF%%%%PYTHON_SITELIBDIR%%/PySide6/QtPdf.abi%%PYTHON_MAJOR_VER%%.so
+%%PDF%%%%PYTHON_SITELIBDIR%%/PySide6/QtPdf.pyi
+%%PDF%%%%PYTHON_SITELIBDIR%%/PySide6/QtPdfWidgets.abi%%PYTHON_MAJOR_VER%%.so
+%%PDF%%%%PYTHON_SITELIBDIR%%/PySide6/QtPdfWidgets.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtPositioning.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PySide6/QtPositioning.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtPrintSupport.abi%%PYTHON_MAJOR_VER%%.so
@@ -376,8 +376,8 @@ share/PySide6/typesystems/typesystem_opengl_modifications4_5.xml
 share/PySide6/typesystems/typesystem_opengl_modifications4_5_core.xml
 share/PySide6/typesystems/typesystem_opengl_modifications_va.xml
 share/PySide6/typesystems/typesystem_openglwidgets.xml
-share/PySide6/typesystems/typesystem_pdf.xml
-share/PySide6/typesystems/typesystem_pdfwidgets.xml
+%%PDF%%share/PySide6/typesystems/typesystem_pdf.xml
+%%PDF%%share/PySide6/typesystems/typesystem_pdfwidgets.xml
 share/PySide6/typesystems/typesystem_positioning.xml
 share/PySide6/typesystems/typesystem_printsupport.xml
 share/PySide6/typesystems/typesystem_printsupport_common.xml
