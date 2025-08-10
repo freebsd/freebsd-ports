@@ -3,7 +3,6 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.20241018
 PORTREVISION=	2
 CATEGORIES=	net net-vpn
-MASTER_SITES=	https://github.com/amnezia-vpn/amneziawg-tools/
 PKGNAMESUFFIX=	-tools
 
 MAINTAINER=	vova@zote.me
