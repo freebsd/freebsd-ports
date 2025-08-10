@@ -65,7 +65,7 @@ ALL_TARGET=	preinstall
 post-extract:
 
 pre-install:
-	@${CP} ${DISTFILES:M*\:toniesjson:C/\:.*//:S,^,${_DISTDIR},} ${WRKSRC}/install/pre/config/
+	@${CP} ${DISTFILES:M*\:toniesjson:C/\:.*//:S,^,${_DISTDIR}/,} ${WRKSRC}/install/pre/config/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/install/pre/teddycloud ${STAGEDIR}${PREFIX}/bin
