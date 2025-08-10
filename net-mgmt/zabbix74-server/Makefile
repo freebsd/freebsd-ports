@@ -1,5 +1,5 @@
 PORTNAME=	zabbix74
-DISTVERSION=	7.4.0
+DISTVERSION=	7.4.1
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
@@ -10,7 +10,7 @@ MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//})
 WWW=		https://www.zabbix.com/
 
-LICENSE=	GPLv2+
+LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	zabbix[0-9]${PKGNAMESUFFIX} \
