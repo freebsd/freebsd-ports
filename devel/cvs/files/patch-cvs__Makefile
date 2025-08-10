@@ -11,7 +11,7 @@
  
 -.if ${MK_KERBEROS_SUPPORT} != "no"
 +.if defined(KERBEROS_SUPPORT)
-+.if exists(/usr/libexec/krb5kdc)
++.if exists(/usr/libdata/pkgconfig/mit-krb5.pc)
 +# MIT KRB5
 +LDADD+= -lgssapi_krb5 -lkrb5 -lkrb5support -lcrypto -lcrypt -lcom_err
 +DPADD+= ${LIBGSSAPI_KRB5} ${LIBKRB5} ${LIBKRB5SUPPORT} ${LIBCRYPTO}
