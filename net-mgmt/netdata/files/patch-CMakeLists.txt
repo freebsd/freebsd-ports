@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2025-05-28 22:57:42 UTC
+--- CMakeLists.txt.orig	2025-08-08 18:59:37 UTC
 +++ CMakeLists.txt
 @@ -40,7 +40,7 @@ set(CMAKE_C_STANDARD 11)
  set(CMAKE_INSTALL_MESSAGE LAZY)
@@ -18,7 +18,7 @@
  
  if("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
          set(OS_MACOS True)
-@@ -399,7 +399,7 @@ include(NetdataBacktrace)
+@@ -410,7 +410,7 @@ include(NetdataBacktrace)
  include(NetdataJSONC)
  include(NetdataYAML)
  include(NetdataBacktrace)
@@ -27,7 +27,7 @@
  
  if(ENABLE_LEGACY_EBPF_PROGRAMS)
          include(NetdataEBPFLegacy)
-@@ -424,9 +424,9 @@ endif()
+@@ -435,9 +435,9 @@ endif()
          netdata_bundle_sentry()
  endif()
  
@@ -40,7 +40,7 @@
  
  #
  # check include files
-@@ -3006,9 +3006,9 @@ add_executable(netdata
+@@ -3171,9 +3171,9 @@ add_executable(netdata
          "$<$<BOOL:${OS_WINDOWS}>:${NETDATA_RES_FILES}>"
  )
  
@@ -53,7 +53,23 @@
  
  if(OS_WINDOWS)
          add_executable(NetdataClaim ${CLAIM_WINDOWS_FILES} ${NETDATA_CLAIM_RES_FILES})
-@@ -3152,12 +3152,12 @@ endif()
+@@ -3297,6 +3297,7 @@ if(ENABLE_PLUGIN_GO)
+             COMPONENT plugin-go
+             DESTINATION libexec/netdata/plugins.d)
+ 
++#[[
+     # Build and install nd-mcp (stdio-golang bridge) exactly like go.d.plugin
+     if (OS_WINDOWS)
+         set(ND_MCP_NAME nd-mcp.exe)
+@@ -3309,6 +3310,7 @@ if(ENABLE_PLUGIN_GO)
+             ${CMAKE_BINARY_DIR}/${ND_MCP_NAME}
+             COMPONENT plugin-go
+             DESTINATION "${BINDIR}")
++]]
+ endif()
+ 
+ #
+@@ -3330,12 +3332,12 @@ endif()
    string(REGEX REPLACE "/$" "" NETDATA_RUNTIME_PREFIX "${NETDATA_RUNTIME_PREFIX}")
  endif()
  
@@ -72,7 +88,7 @@
  
  # A non-default value is only used when building Debian packages (/var/lib/netdata/www)
  if(NOT DEFINED WEB_DIR)
-@@ -3210,11 +3210,12 @@ install(TARGETS netdata COMPONENT netdata DESTINATION 
+@@ -3388,11 +3390,12 @@ install(TARGETS netdata COMPONENT netdata DESTINATION 
  
  install(TARGETS netdata COMPONENT netdata DESTINATION "${BINDIR}")
  
@@ -90,7 +106,7 @@
  install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata)
  install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata/custom-plugins.d)
  install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata/health.d)
-@@ -3229,11 +3230,11 @@ set(sbindir_POST "${NETDATA_RUNTIME_PREFIX}/${BINDIR}"
+@@ -3407,11 +3410,11 @@ set(sbindir_POST "${NETDATA_RUNTIME_PREFIX}/${BINDIR}"
  set(pkglibexecdir_POST "${NETDATA_RUNTIME_PREFIX}/libexec/netdata")
  set(localstatedir_POST "${NETDATA_RUNTIME_PREFIX}/var")
  set(sbindir_POST "${NETDATA_RUNTIME_PREFIX}/${BINDIR}")
@@ -107,7 +123,7 @@
  set(netdata_user_POST "${NETDATA_USER}")
  set(netdata_group_POST "${NETDATA_USER}")
  
-@@ -3751,8 +3752,8 @@ if(ENABLE_DASHBOARD)
+@@ -3929,8 +3932,8 @@ if(ENABLE_DASHBOARD)
  #
  
  if(ENABLE_DASHBOARD)

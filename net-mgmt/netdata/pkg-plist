@@ -120,14 +120,11 @@ etc/logrotate.d/netdata
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_arista.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_aruba-base.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_aruba-switch-cpu-memory.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_base.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_base_cisco.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_base_cisco_voice.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_checkpoint-firewall-cpu-memory.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_avaya-utilization-management-mib.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-asa.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-base.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-catalyst.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-cpu-memory.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-generic.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-ipsec-flow-monitor.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-metadata.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_cisco-voice.yaml
@@ -135,29 +132,7 @@ etc/logrotate.d/netdata
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_dell-rac.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_dell.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_f5-big-ip-cpu-memory.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_fortinet-fortigate-cpu-memory.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_fortinet-fortigate-vpn-tunnel.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-bgp4.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-entity-sensor.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-host-cpu-memory.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-host-resources-base.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-host-resources.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-if.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-ip.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-lldp.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-ospf.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-router-bgp4.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-router-if.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-router-ip.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-router-ospf.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-router-tcp.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-router-udp.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-rtp.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-sip.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-tcp.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-ucd.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-udp.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_generic-ups.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_hp-base.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_hp-compaq-health.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_hp-driver-stats.yaml
@@ -174,6 +149,20 @@ etc/logrotate.d/netdata
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_juniper.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_opengear.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_palo-alto.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-bgp4-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-entity-sensor-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-host-resources-mib-feat-base.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-host-resources-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-if-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-ip-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-ospf-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-rtp-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-sip-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-tcp-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-ucd-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-udp-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_std-ups-mib.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_system-base.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_ubiquiti.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/_vertiv.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/a10-thunder.yaml
@@ -185,8 +174,8 @@ etc/logrotate.d/netdata
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/anue.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/apc-netbotz.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/apc-pdu.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/apc-ups.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/apc.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/apc_ups.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/arista-switch.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/arista.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/aruba-access-point.yaml
@@ -214,14 +203,12 @@ etc/logrotate.d/netdata
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/brocade.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/brother-net-printer.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/brother.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/chatsworth_pdu.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/checkpoint-firewall.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/chatsworth-pdu.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/checkpoint.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/chrysalis-luna-hsm.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/chrysalis.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-3850.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-access-point.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-asa-5525.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-asa.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-asr.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-catalyst-wlc.yaml
@@ -229,19 +216,19 @@ etc/logrotate.d/netdata
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-csr1000v.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-firepower-asa.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-firepower.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-icm.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-ironport-email.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-ise.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-isr-4431.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-isr.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-legacy-wlc.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-load-balancer.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-nexus.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-sb.yaml
+%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-uc-virtual-machine.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-ucs.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco-wan-optimizer.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco_icm.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco_isr_4431.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/cisco_uc_virtual_machine.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/citrix-netscaler-sdx.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/citrix-netscaler.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/citrix.yaml
@@ -267,7 +254,6 @@ etc/logrotate.d/netdata
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/fortinet-fortiswitch.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/fortinet.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/generic-device.yaml
-%%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/generic-router.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/generic-ups.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/gigamon.yaml
 %%GOPLUGIN%%lib/netdata/conf.d/go.d/snmp.profiles/default/hp-h3c-switch.yaml
@@ -408,7 +394,6 @@ etc/logrotate.d/netdata
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/isc_dhcpd.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/k8sstate.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/kubelet.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/linux_power_supply.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/load.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/lvm.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/mdstat.conf.sample
@@ -425,6 +410,7 @@ etc/logrotate.d/netdata
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/plugin.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/portcheck.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/postgres.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/power_supply_capacity.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/processes.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/python.d.plugin.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/qos.conf.sample
@@ -463,7 +449,6 @@ etc/logrotate.d/netdata
 lib/netdata/conf.d/log2journal.d/default.yaml
 lib/netdata/conf.d/log2journal.d/nginx-combined.yaml
 lib/netdata/conf.d/log2journal.d/nginx-json.yaml
-@sample(netdata,netdata,0640) lib/netdata/conf.d/netdata-updater.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/netdata.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/am2320.conf.sample
@@ -534,125 +519,134 @@ sbin/systemd-cat-native
 %%DASHBOARD%%%%DATADIR%%/web/registry-hello.html
 %%DASHBOARD%%%%DATADIR%%/web/static/splash.css
 %%DASHBOARD%%%%DATADIR%%/web/v3/.well-known/assetlinks.json
-%%DASHBOARD%%%%DATADIR%%/web/v3/1220.a656923d479f8c519ad0.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1414.f466fb11da15d616c833.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1526.afc6e3ac15b1324a1f9c.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1608.7f38e91b96408de20de3.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1658.494aa5947daf149ea36e.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/180.b7f7547d42a0b2b97124.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1817.619fd443a5a5c10c4703.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1817.619fd443a5a5c10c4703.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/1861.33e4e8fa9cc996841f6f.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1878.cf09647faefda0f83d16.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1910.20b8dadd91297a21ec10.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1941.bf40460979be2409751d.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1988.b713178a1dd7acfe9c7d.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1988.b713178a1dd7acfe9c7d.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/2117.a246cde83f725c1a005d.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2143.d4dd5bbb040618937b96.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2177.f90ea4ba78ed8450b247.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2201.3b152d88025b9f8829c1.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2224.2de91da2e6b13c0bf2ad.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2224.2de91da2e6b13c0bf2ad.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/2248.4b0f852afeccca641ade.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2386.de7fafeeb0e21a14f139.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2386.de7fafeeb0e21a14f139.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/2436.9b44907964665f7bfc1f.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2558.03d6e95d693b3fafda01.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2576.3b2c6290f68c319eb109.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1220.5ab71edfdf1b622d536d.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1414.21953588a34b6e4d5bff.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1526.5735c01d1b951d801e90.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1608.c26d022bc1262e4dc1fb.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1658.7ff07ea25cc75c3e1aa9.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/180.c9abf125e0f07ba9076f.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1861.8cc906c88f3c76370097.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1878.18a6c4ad993c0388e170.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1910.24475434cf4341cf352c.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1941.96eb080cc6f376135089.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1988.8009f65c7848e227da16.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1988.8009f65c7848e227da16.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/2117.b35e6176d55868e7e7c3.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2143.10083328fc4ea2b19dbe.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2177.1ec30ad747969f5d141f.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2201.8c5028ff66e1f8a0235c.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2248.75906c5b059e8a9d5bb5.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2314.2a61ed877845d5f20787.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2377.8d141fc28c417e37f62f.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2386.c5ee3dce21089d282e39.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2386.c5ee3dce21089d282e39.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/2436.889bd0ea69569d47cdd1.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2558.bb4eb5fc85bfdec015b9.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2573.7c68e7914804046289f9.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2576.7eae5e975593a03c3a39.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/2576.eaad527ad5b2c56e97a0.css
-%%DASHBOARD%%%%DATADIR%%/web/v3/2634.95b2eff04e2c021e6d28.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/271.d8763871ef574681793d.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2904.5f002a4ebbeebabca219.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2948.1661ba1fdf512b041494.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3068.5eb4140e6da0c567e867.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3185.1b58f16d13c1df850858.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3267.f6e98cf8deefecfb11a4.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/342.7a9926ed227307b6fb27.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3439.831c572cb98e550fe7f9.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/35.1dbdba4eb03966ff57eb.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3600.e9c0d5761172b896a096.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3718.db3b0f2889b7c5fa5226.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3802.02ca2fb7bb37b5ef055f.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3864.fa46a2c836e21383a46d.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3961.e7d211908728ae6adf74.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3961.e7d211908728ae6adf74.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/399.f44816cf47fbe348daa5.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2634.e5c7d87b60ff123aaf26.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/271.3d74db6e71e9d3e87623.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2904.eb51302c7d8da2ffffc0.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2948.7848224b8a2b7aa32289.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3068.fff580b9f0f71a462f8d.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3185.200caa329bb67ab6e7b3.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/342.8599384e1b1014c95d01.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3439.cc54000b71a4f02ab9b3.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/35.c32666592b1941e4aa7f.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3600.c61c79c4ecd128dab2f6.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3688.6de47a32432c88625204.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3704.6c5f655d29e59f527fd9.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3718.f47846aace26b69970ce.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3864.b1b7a06d80fe67993ffb.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3961.31544335ae18ce3db461.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3961.31544335ae18ce3db461.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/399.9cba57544f4d3ea240df.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/3D_PARTY_LICENSES.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/4209.2d5310c7ac0d3d01c379.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4211.3260d5a3c95ebb19cc31.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4265.0df7569a80dc4428eb84.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4269.2f60314af33acbfe5ddb.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4310.f4d8aa0a98a524b6828b.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4484.57c9731bceda595b2110.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4670.c9bef52779a7e846bd5c.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4670.c9bef52779a7e846bd5c.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/4670.d61abf3771ce679d59cf.css
-%%DASHBOARD%%%%DATADIR%%/web/v3/4837.bf1dc286b99488654832.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4913.dde841a57c38ecce1ea4.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5187.cafd9baa98e921b6485f.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5295.1a93af42ffa073fc4c0a.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5302.bd3b1c35764fbeed5764.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5476.6005abd0faa140864841.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5566.b7554f369529aab07443.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5860.d0ae3a48c841c43a4ee9.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6141.795674d1566262f8c875.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6168.bd9737cd46bf09b0f21c.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6168.bd9737cd46bf09b0f21c.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/6333.ab7e58278d8d9fea2c59.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6486.1da582a6cf9719df633c.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6497.414c2e15f0662b82a4a8.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6601.84f0c35e63a2349d715d.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7044.426a7e95d3a519e8becd.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7167.2ba0329c8f78921123a8.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7214.187ce9d2e22c362637fc.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7265.82220de4203101d3303e.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7281.0563303ec950c28a0c96.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7530.1804a579ea874c24a574.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7543.d982440ef736ebe6ce4c.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7755.ad0f13643947e1251457.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7799.0f58848420439d3bdc3c.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7877.e9e76a14aef5659d17bc.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7931.3d3d963f27348d1d32c9.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8039.83458de406f057ddcbf0.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8168.185c10e5059c237dda46.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8399.58d2155c3954cacb118e.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8502.a5330533d30ce12893ea.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8554.4d1f76d608a2b8b2218b.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8643.05b0ce4105714060712e.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8791.e59ea72baf93c5565514.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/884.a3abba94dcda799b4366.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8938.d0070dc7a6bad86dbcef.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9224.b1e4d1f7f1dbe09a0853.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9244.398ee719fa33bedb01d8.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9418.4e16eb7093b772b21960.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9418.4e16eb7093b772b21960.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/9707.d44d128f15f3060dd698.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9752.2d4cba9556611fc93e88.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9883.1a53a48b25005e8ff50d.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9961.121d35b02ac410f07198.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4265.a3c2019b19a174fc66c2.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4269.a8d9705a16dabc252621.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4278.d3c69e4b396c6645e240.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4310.ee637634c09232f6b644.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4424.a84c1dab1d0cc47c0e1e.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4484.bf243b2fc3da0f5fe911.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4674.e9e81d3fdc66b91fdc75.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4674.e9e81d3fdc66b91fdc75.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/4837.d18bfe99810fcefbbf53.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4913.420689f54795b8de04ab.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5187.137c15f383d9fc52bed5.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5295.3348fcd72ebdf9237028.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5297.9126a4416f6da34fa2af.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5302.3b3cf60ca4a422e37d27.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5476.4ec2a7f7c2f89dab66ec.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5566.33bd644e1278e714951a.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5641.d6dc2974d10b5848ddf1.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5752.aa9abbd2e131d53b96e1.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5860.118cf096c8a7b73a0e0b.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5914.cee15fb269a97d7139d3.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5914.cee15fb269a97d7139d3.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/5914.d61abf3771ce679d59cf.css
+%%DASHBOARD%%%%DATADIR%%/web/v3/6141.bb6c1a9512fd7dae7fa8.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6168.22f9295de4b3d3a8a568.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6168.22f9295de4b3d3a8a568.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/6333.8dfb4d3c42a9ff896c95.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6472.e2893d13e0b65d235694.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6497.0da7227dbf62bad96271.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6571.8ece1f3d859fee21620e.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6601.b9e1f3dd134ae1ab8c7e.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6707.31f86a1ad345fade6aa0.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7044.3d3a70fd1f169c720851.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7167.8cfc09afdae9fd2ef300.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7214.d9deb0cb00704c62f6eb.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7281.ef3395c23c7ae932e76e.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7355.2e5a445c2a73ee2d381a.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7530.0fbb8b60bbf5c6c14dd6.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7543.0cbfb3f2c23881e609e8.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7782.83889d1d67402157aefe.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7799.2b71d2d00ac6b7966e93.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7866.5d2b733769897332980b.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7866.5d2b733769897332980b.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/7877.16f1f8d6640c9317d7c7.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7931.7623e6aa88131876ea3d.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8399.a01cc31f1887155a9806.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8498.02a2788797dee56d6797.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8502.fe1835205984fb2a3e08.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8554.ed075e6f229e9d67d161.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8643.8dbb63da0c1b1667ddcb.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8791.5dd3c1331463fe8d2e31.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8800.ff177b98ca56c21135ed.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/884.86511f69c2664b0ba0d3.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8938.7826941874ff3f5ea9a3.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9244.35502b94208533d405d4.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9418.61a1eacc99be5dbdaa82.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9418.61a1eacc99be5dbdaa82.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/9707.416a80119b86af24b59d.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9749.ca7af31fde8336527a35.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9799.32a78ca94d47bc616de1.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9883.69c3ebb9e285652b0a98.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9961.7d91c4f8cadf5f262d05.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9997.fd204ddbfae9ae431ba2.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/LICENSE.md
 %%DASHBOARD%%%%DATADIR%%/web/v3/LICENSE.txt
 %%DASHBOARD%%%%DATADIR%%/web/v3/agent.html
-%%DASHBOARD%%%%DATADIR%%/web/v3/allFiles.7.58.1.json
+%%DASHBOARD%%%%DATADIR%%/web/v3/allFiles.7.59.10.json
 %%DASHBOARD%%%%DATADIR%%/web/v3/allFiles.7.json
 %%DASHBOARD%%%%DATADIR%%/web/v3/app.4da0883c6ce016bf3d81.css
-%%DASHBOARD%%%%DATADIR%%/web/v3/app.5da25a1b0ccb27d7b66a.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/app.d138e6ae320a05e433d7.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/apple-app-site-association
 %%DASHBOARD%%%%DATADIR%%/web/v3/bundlesManifest.7.json
 %%DASHBOARD%%%%DATADIR%%/web/v3/favicon.ico
 %%DASHBOARD%%%%DATADIR%%/web/v3/index.html
 %%DASHBOARD%%%%DATADIR%%/web/v3/local-agent.html
-%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.charts.f734b2f2c8d8200aca65.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.charts.f734b2f2c8d8200aca65.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.ui.6d60e201b8437dd7e1c3.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.ui.6d60e201b8437dd7e1c3.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/npm.react.dom.59737f5e22ad25c9600a.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/npm.react.dom.59737f5e22ad25c9600a.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.charts.89f1c993ded95b8e7b8d.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.charts.89f1c993ded95b8e7b8d.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.ui.8ebb94a52fc448c8f11d.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.ui.8ebb94a52fc448c8f11d.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/npm.react.dom.42e5c3515975905b8535.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/npm.react.dom.42e5c3515975905b8535.js.LICENSE.txt
 %%DASHBOARD%%%%DATADIR%%/web/v3/registry-access.html
 %%DASHBOARD%%%%DATADIR%%/web/v3/registry-alert-redirect.html
 %%DASHBOARD%%%%DATADIR%%/web/v3/registry-hello.html
-%%DASHBOARD%%%%DATADIR%%/web/v3/runtime.af8da8230c038de1f22a.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/runtime.d0e43c52cfea7f4a938c.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/static/.well-known/assetlinks.json
 %%DASHBOARD%%%%DATADIR%%/web/v3/static/apple-app-site-association
 %%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/clea_badge.png
@@ -893,8 +887,8 @@ sbin/systemd-cat-native
 @dir(netdata,netdata,0750) %%ETCDIR%%/ssl
 @dir(netdata,netdata,0750) %%ETCDIR%%/statsd.d
 @dir(netdata,netdata,0750) %%NETDATA_CACHE%%
-@dir(netdata,netdata,0750) %%NETDATA_PERST%%
 @dir(netdata,netdata,0750) %%NETDATA_PERST%%/cloud.d
 @dir(netdata,netdata,0750) %%NETDATA_PERST%%/registery
+@dir(netdata,netdata,0750) %%NETDATA_PERST%%
 @dir(netdata,netdata,0750) %%NETDATA_LOG%%
 @dir(netdata,netdata,0750) %%NETDATA_RUN%%
