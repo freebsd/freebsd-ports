@@ -1,4 +1,0 @@
-bin/sqlite3_analyzer
-lib/%%TCL_PKG%%/lib%%TCL_PKG_LIB_PREFIX%%%%TCL_PKG%%.so
-lib/%%TCL_PKG%%/pkgIndex.tcl
-share/man/mann/sqlite3.n.gz
