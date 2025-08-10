@@ -1,5 +1,5 @@
 PORTNAME=	modules
-DISTVERSION=	5.5.0
+DISTVERSION=	5.6.0
 CATEGORIES=	sysutils tcl
 MASTER_SITES=	https://github.com/cea-hpc/modules/releases/download/v${DISTVERSION}/
 

@@ -44,9 +44,12 @@ Modules/%%MODULES_VERSION%%/share/doc/MIGRATING.txt
 Modules/%%MODULES_VERSION%%/share/doc/NEWS.txt
 Modules/%%MODULES_VERSION%%/share/doc/README
 Modules/%%MODULES_VERSION%%/share/doc/changes.txt
+Modules/%%MODULES_VERSION%%/share/emacs/lisp/modulefile-mode.el
 Modules/%%MODULES_VERSION%%/share/nagelfar/plugin_globalrc.tcl
+Modules/%%MODULES_VERSION%%/share/nagelfar/plugin_modulecache.tcl
 Modules/%%MODULES_VERSION%%/share/nagelfar/plugin_modulefile.tcl
 Modules/%%MODULES_VERSION%%/share/nagelfar/plugin_modulerc.tcl
+Modules/%%MODULES_VERSION%%/share/nagelfar/syntaxdb_modulecache.tcl
 Modules/%%MODULES_VERSION%%/share/nagelfar/syntaxdb_modulefile.tcl
 Modules/%%MODULES_VERSION%%/share/nagelfar/syntaxdb_modulerc.tcl
 Modules/%%MODULES_VERSION%%/share/vim/vimfiles/ftdetect/modulefile.vim
@@ -55,6 +58,7 @@ Modules/%%MODULES_VERSION%%/share/vim/vimfiles/syntax/modulefile.vim
 Modules/versions/%%MODULES_VERSION%%
 etc/profile.d/module.csh
 etc/profile.d/module.sh
+share/man/man1/envml.1.gz
 share/man/man1/ml.1.gz
 share/man/man1/module.1.gz
 share/man/man5/modulefile.5.gz
