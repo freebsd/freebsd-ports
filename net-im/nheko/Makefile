@@ -27,18 +27,12 @@ LIB_DEPENDS=	\
 
 USES=		cmake compiler:c++20-lang desktop-file-utils \
 		localbase:ldflags pkgconfig qt:6 ssl tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	Nheko-Reborn
+GH_TUPLE=	hoytech:lmdbxx:029fb681213af3020f5e3a86045445552bd024c5:lmdb/deps/lmdb
 USE_QT=		base declarative multimedia \
 		svg \
 		tools:build translations:build
-
-OPTIONS_DEFINE=	VOIP
-OPTIONS_DEFAULT=
-
-VOIP_DESC=	Enable VOIP calls (experimental)
-VOIP_CMAKE_BOOL=	VOIP
-VOIP_USES=	gstreamer gettext-runtime xorg gnome
-VOIP_USE=	gstreamer=bad,dtls,srtp,webrtc xorg=xcb gnome=glib20
-VOIP_LIB_DEPENDS=	libnice.so:net-im/libnice
 
 # There is one external dependency: lmdb++
 #  - lmdb++ is a single header file, it just needs to be included
@@ -47,8 +41,16 @@ CMAKE_ARGS=	-DLMDBXX_INCLUDE_DIR=${WRKSRC}/deps/lmdb \
 CFLAGS+=	-DSPDLOG_FMT_EXTERNAL=1
 LDFLAGS+=	-L${LOCALBASE}/lib -lfmt
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	Nheko-Reborn
-GH_TUPLE=	hoytech:lmdbxx:029fb681213af3020f5e3a86045445552bd024c5:lmdb/deps/lmdb
+PATCH_STRIP=	-p1
+
+OPTIONS_DEFINE=	VOIP
+OPTIONS_DEFAULT=
+
+VOIP_DESC=	Enable VOIP calls (experimental)
+VOIP_LIB_DEPENDS=	libnice.so:net-im/libnice
+VOIP_USES=	gstreamer gettext-runtime xorg gnome
+VOIP_USE=	gstreamer=bad,dtls,srtp,webrtc xorg=xcb gnome=glib20
+VOIP_CMAKE_BOOL=	VOIP
+
 
 .include <bsd.port.mk>
