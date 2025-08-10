@@ -1,5 +1,6 @@
 PORTNAME=	squid
 DISTVERSION=	6.14
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}-cache/${PORTNAME}/releases/download/${PORTNAME:tu}_${DISTVERSION:S|.|_|g}/
 
@@ -149,8 +150,12 @@ FS_DISKD_VARS=			DISKIO_MODULES+=DiskDaemon \
 FS_ROCK_VARS=			STORAGE_SCHEMES+=rock
 GSSAPI_BASE_USES=		gssapi
 GSSAPI_BASE_CONFIGURE_ON=	${GSSAPI_CONFIGURE_ARGS} \
-				--with-heimdal-krb5=${GSSAPIBASEDIR} \
 				krb5_config=${GSSAPIBASEDIR}/bin/krb5-config
+.if exits(/usr/libexec/krb5kdc)
+GSSAPI_BASE_CONFIGURE_ON+=	--with-mit-krb5=${GSSAPIBASEDIR}
+.else
+GSSAPI_BASE_CONFIGURE_ON+=	--with-heimdal-krb5=${GSSAPIBASEDIR}
+.endif
 GSSAPI_BASE_PLIST_SUB=		AUTH_KERB=""
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal
 GSSAPI_HEIMDAL_CONFIGURE_ON=	${GSSAPI_CONFIGURE_ARGS} \
