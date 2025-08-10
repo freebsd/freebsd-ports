@@ -1,8 +1,8 @@
 PORTNAME=	restinio
-DISTVERSION=	0.7.3
-PORTREVISION=	5
+DISTVERSION=	0.7.7
+PORTREVISION=	0
 CATEGORIES=	www devel
-MASTER_SITES=	https://github.com/Stiffstream/${PORTNAME}/releases/download/v.${DISTVERSION}/
+MASTER_SITES=	https://github.com/Stiffstream/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-full
 
 MAINTAINER=	yuri@FreeBSD.org
