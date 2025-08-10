@@ -92,9 +92,7 @@
     SUBDIR += font-moralerspace
     SUBDIR += font-moralerspace-hw
     SUBDIR += font-moralerspace-hwjpdoc
-    SUBDIR += font-moralerspace-hwnf
     SUBDIR += font-moralerspace-jpdoc
-    SUBDIR += font-moralerspace-nf
     SUBDIR += font-motoya-al
     SUBDIR += font-mplus-bitmap
     SUBDIR += font-mplus-ipa
