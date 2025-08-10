@@ -1,6 +1,6 @@
 PORTNAME=	jq
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.10.0
+PORTREVISION=	0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI LOCAL/mandree:mandree
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,8 @@ WWW=		https://github.com/mwilliamson/jq.py
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3@${PY_FLAVOR}
 LIB_DEPENDS=	libjq.so:textproc/jq \
 		libonig.so:devel/oniguruma
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
