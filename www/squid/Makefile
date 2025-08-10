@@ -151,7 +151,7 @@ FS_ROCK_VARS=			STORAGE_SCHEMES+=rock
 GSSAPI_BASE_USES=		gssapi
 GSSAPI_BASE_CONFIGURE_ON=	${GSSAPI_CONFIGURE_ARGS} \
 				krb5_config=${GSSAPIBASEDIR}/bin/krb5-config
-.if exits(/usr/libexec/krb5kdc)
+.if exists(/usr/libdata/pkgconfig/mit-krb5.pc)
 GSSAPI_BASE_CONFIGURE_ON+=	--with-mit-krb5=${GSSAPIBASEDIR}
 .else
 GSSAPI_BASE_CONFIGURE_ON+=	--with-heimdal-krb5=${GSSAPIBASEDIR}
