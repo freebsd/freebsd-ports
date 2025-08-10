@@ -1,0 +1,16 @@
+Ymir is a Sega Saturn emulator with the following features:
+
+- Load games from MAME CHD, BIN+CUE, IMG+CCD, MDF+MDS or ISO files
+- Automatic IPL (BIOS) ROM detection
+- Automatic region switching
+- Up to two players with standard Control Pads or 3D Control Pads on both ports
+- Fully customizable keybindings
+- Backup RAM, DRAM and ROM cartridges
+- Integrated backup memory manager to import and export saves, and transfer
+  between internal and cartridge RAM
+- Save states
+- Rewinding (up to one minute at 60 fps), turbo speed, frame step (forwards and
+  backwards)
+- Full screen mode with VRR support and low input lag
+- Optional deinterlaced/progressive rendering of high resolution modes
+- A feature-rich debugger

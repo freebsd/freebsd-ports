@@ -1,0 +1,11 @@
+--- apps/ymir-sdl3/CMakeLists.txt.orig	2025-07-20 22:35:27 UTC
++++ apps/ymir-sdl3/CMakeLists.txt
+@@ -256,7 +256,7 @@ target_link_libraries(ymir-sdl3 PRIVATE
+     fmt
+     cxxopts
+     imgui::imgui
+-    tomlplusplus::tomlplusplus
++#    tomlplusplus::tomlplusplus
+     cereal::cereal
+     lz4::lz4
+     stb::stb

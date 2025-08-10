@@ -1,0 +1,13 @@
+--- libs/ymir-core/CMakeLists.txt.orig	2025-07-20 22:35:27 UTC
++++ libs/ymir-core/CMakeLists.txt
+@@ -239,7 +239,10 @@ target_compile_features(ymir-core PUBLIC cxx_std_20)
+ target_compile_features(ymir-core PUBLIC cxx_std_20)
+ 
+ ## Add dependencies
++find_package(Threads REQUIRED)
++
+ target_link_libraries(ymir-core PUBLIC
++    Threads::Threads
+     fmt
+     mio
+     concurrentqueue

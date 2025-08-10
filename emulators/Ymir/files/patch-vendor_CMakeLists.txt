@@ -1,0 +1,100 @@
+--- vendor/CMakeLists.txt.orig	2025-07-20 22:35:27 UTC
++++ vendor/CMakeLists.txt
+@@ -22,9 +22,12 @@ message(STATUS "Adding vendored libraries")
+ 
+ message(STATUS "Adding vendored libraries")
+ 
++find_package(PkgConfig REQUIRED)
++
+ # {fmt} - https://github.com/fmtlib/fmt
+ message(STATUS "==> {fmt}")
+-add_subdirectory(fmt EXCLUDE_FROM_ALL)
++pkg_check_modules(fmt REQUIRED IMPORTED_TARGET GLOBAL fmt)
++add_library(fmt ALIAS PkgConfig::fmt)
+ 
+ # mio - https://github.com/vimpunk/mio
+ # Notes:
+@@ -36,65 +39,55 @@ message(STATUS "==> SDL")
+ 
+ # SDL - https://github.com/libsdl-org/SDL
+ message(STATUS "==> SDL")
+-set(SDL_DISABLE_UNINSTALL ON)
+-set(SDL_TEST_LIBRARY OFF)
+-set(SDL_TESTS OFF)
+-set(SDL_EXAMPLES OFF)
+-if (BUILD_SHARED_LIBS)
+-    set(SDL_SHARED ON)
+-    set(SDL_STATIC OFF)
+-else ()
+-    set(SDL_SHARED OFF)
+-    set(SDL_STATIC ON)
+-endif ()
+-add_subdirectory_quiet(SDL EXCLUDE_FROM_ALL)
++find_package(SDL3 REQUIRED GLOBAL)
+ 
+ # cxxopts - https://github.com/jarro2783/cxxopts
+ message(STATUS "==> cxxopts")
+-add_subdirectory(cxxopts EXCLUDE_FROM_ALL)
++find_package(cxxopts REQUIRED GLOBAL)
++add_library(cxxopts ALIAS cxxopts::cxxopts)
+ 
+ # concurrentqueue - https://github.com/cameron314/concurrentqueue
+ message(STATUS "==> concurrentqueue")
+-add_subdirectory(concurrentqueue EXCLUDE_FROM_ALL)
++find_package(concurrentqueue REQUIRED GLOBAL)
++add_library(concurrentqueue ALIAS concurrentqueue::concurrentqueue)
+ 
+ # dear ImGui - https://github.com/ocornut/imgui
+ # docking branch
+ message(STATUS "==> dear ImGui")
+-add_subdirectory(imgui EXCLUDE_FROM_ALL)
++find_package(imgui REQUIRED GLOBAL)
+ 
+ # toml++ - https://github.com/marzer/tomlplusplus
+ message(STATUS "==> toml++")
+-add_subdirectory(tomlplusplus EXCLUDE_FROM_ALL)
++find_package(tomlplusplus REQUIRED GLOBAL)
+ 
+ # xxHash - https://github.com/Cyan4973/xxHash
+ message(STATUS "==> xxHash")
+-add_subdirectory(xxHash EXCLUDE_FROM_ALL)
++pkg_check_modules(libxxhash REQUIRED IMPORTED_TARGET GLOBAL libxxhash)
++add_library(xxHash::xxHash ALIAS PkgConfig::libxxhash)
+ 
+ # lz4 - https://github.com/lz4/lz4
+ message(STATUS "==> lz4")
+-add_subdirectory(lz4 EXCLUDE_FROM_ALL)
++pkg_check_modules(liblz4 REQUIRED IMPORTED_TARGET GLOBAL liblz4)
++add_library(lz4::lz4 ALIAS PkgConfig::liblz4)
+ 
+ # cereal - https://github.com/USCiLab/cereal
+ message(STATUS "==> cereal")
+-set(BUILD_DOC OFF)
+-set(BUILD_SANDBOX OFF)
+-set(JUST_INSTALL_CEREAL ON)
+-add_subdirectory(cereal EXCLUDE_FROM_ALL)
++find_package(cereal REQUIRED GLOBAL)
+ 
+ # stb - https://github.com/nothings/stb
+ message(STATUS "==> stb")
+-add_subdirectory(stb)
++add_library(stb INTERFACE)
++add_library(stb::stb ALIAS stb)
+ 
+ # libchdr - https://github.com/rtissera/libchdr
+ message(STATUS "==> libchdr")
+-set(BUILD_FUZZER OFF)
+-add_subdirectory(libchdr)
++pkg_check_modules(libchdr REQUIRED IMPORTED_TARGET GLOBAL libchdr)
++add_library(chdr-static ALIAS PkgConfig::libchdr)
+ 
+ # rtmidi - https://github.com/thestk/rtmidi
+ message(STATUS "==> rtmidi")
+-set(RTMIDI_BUILD_STATIC_LIBS ON)
+-set(RTMIDI_BUILD_TESTING OFF)
+-add_subdirectory(rtmidi)
++pkg_check_modules(rtmidi REQUIRED IMPORTED_TARGET GLOBAL rtmidi)
++add_library(rtmidi ALIAS PkgConfig::rtmidi)
+ 
+ # --------------------------------------------------------------------------------------------------
+ # Test dependencies
