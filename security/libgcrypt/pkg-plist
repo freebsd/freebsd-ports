@@ -6,7 +6,7 @@ include/gcrypt.h
 %%STATIC%%lib/libgcrypt.a
 lib/libgcrypt.so
 lib/libgcrypt.so.20
-lib/libgcrypt.so.20.5.1
+lib/libgcrypt.so.20.6.0
 libdata/pkgconfig/libgcrypt.pc
 share/man/man1/hmac256.1.gz
 share/aclocal/libgcrypt.m4
