@@ -1,6 +1,6 @@
 PORTNAME=	conduit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.7
+DISTVERSION=	0.10.8
 CATEGORIES=	net-im
 PKGNAMEPREFIX=	matrix-
 
@@ -32,7 +32,7 @@ DBDIR=		/var/db/${PORTNAME}
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	famedly
-GL_TAGNAME=	db6eaa8e5616c63a444b8707ead8501d3901f1e7
+GL_TAGNAME=	9bba85c7e532b99358d18df200be93bb2ccc9a63
 
 .include <bsd.port.pre.mk>
 
