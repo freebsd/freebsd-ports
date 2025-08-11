@@ -1,3 +1,3 @@
-TIMESTAMP = 1752397855
-SHA256 (kubernetes-kops-v1.32.1_GH0.tar.gz) = 4bc0fb78048a7d6868f0ffb8e07ad6108fa4b1d513e1e1d90073733acae3ce25
-SIZE (kubernetes-kops-v1.32.1_GH0.tar.gz) = 38552204
+TIMESTAMP = 1754949235
+SHA256 (kubernetes-kops-v1.33.0_GH0.tar.gz) = 05e51f9479fb9867c6fd2eddb234e40ba402169052310f2447f00ca19998aed6
+SIZE (kubernetes-kops-v1.33.0_GH0.tar.gz) = 39177877
