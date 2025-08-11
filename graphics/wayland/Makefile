@@ -1,6 +1,6 @@
 PORTNAME=	wayland
 DISTVERSION=	1.24.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/-/releases/${DISTVERSION}/downloads/
 
