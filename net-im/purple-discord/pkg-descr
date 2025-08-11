@@ -1,1 +1,6 @@
-A libpurple/Pidgin plugin for Discord
+This is a Discord plugin for libpurple-based instant messaging clients such as
+Pidgin, Finch, and Bitlbee. It lets users send and receive messages on Discord
+servers directly from their existing IM client.
+
+The plugin supports multiple accounts, rich text formatting, and optional
+QR code authentication.
