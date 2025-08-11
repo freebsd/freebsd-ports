@@ -26,7 +26,7 @@ RUN_DEPENDS=	suitesparse-config>0:math/suitesparse-config		\
 		suitesparse-paru>0:math/suitesparse-paru
 .if !defined(PACKAGE_BUILDING)
 RUN_DEPENDS+=	suitesparse-csparse>0:math/suitesparse-csparse		\
-		suitesparse-Example>0:math/suitesparse-Example
+		suitesparse-example>0:math/suitesparse-Example
 .endif
 
 USES=		metaport
