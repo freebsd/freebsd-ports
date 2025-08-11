@@ -1,5 +1,6 @@
 PORTNAME=	opensmtpd-table-sqlite
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	mail
 
 PATCH_SITES=	https://github.com/OpenSMTPD/table-sqlite/commit/
@@ -20,7 +21,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	opensmtpd
 GH_PROJECT=	table-sqlite
 
-PLIST_FILES=	libexec/smtpd/table-sqlite \
+PLIST_FILES=	libexec/opensmtpd/table-sqlite \
 		share/man/man5/table-sqlite.5.gz
+
+post-patch:
+	${REINPLACE_CMD} '/^smtpdir/s|smtpd$$|opensmtpd|' ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
