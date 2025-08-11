@@ -1,0 +1,4 @@
+Github Release Monitor is a powerful, self-hostable application to
+automatically monitor GitHub repository releases and receive instant
+email or Apprise notifications. Keep track of your favorite projects
+without manually checking for updates.
