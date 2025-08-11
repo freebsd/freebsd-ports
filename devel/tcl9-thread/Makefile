@@ -33,6 +33,8 @@ LMDB_CONFIGURE_WITH=	lmdb
 
 PORTDOCS=	*
 
+PORTSCOUT=	limit:^3\.
+
 post-patch:
 	@${REINPLACE_CMD} "/INSTALL_LIBRARY=/s|'\$$| -s'|" \
 	    ${WRKSRC}/tclconfig/tcl.m4
