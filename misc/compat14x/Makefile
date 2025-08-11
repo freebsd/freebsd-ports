@@ -1,5 +1,5 @@
 PORTNAME=	compat14x
-PORTVERSION=	14.2.1402000.20250809
+PORTVERSION=	14.2.1402000.20250811
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/arrowd
 PKGNAMESUFFIX=	-${ARCH}
@@ -21,6 +21,7 @@ USE_LDCONFIG=	${TARGET_DIR}
 COMPAT_LIBS=	libasn1.so.11 \
 		libcom_err.so.5 \
 		libcrypto.so.30 \
+		libgssapi.so.10 \
 		libgssapi_krb5.so.10 \
 		libgssapi_ntlm.so.10 \
 		libgssapi_spnego.so.10 \
