@@ -1,4 +1,4 @@
---- chrome/browser/browser_features.cc.orig	2025-05-05 10:57:53 UTC
+--- chrome/browser/browser_features.cc.orig	2025-07-02 06:08:04 UTC
 +++ chrome/browser/browser_features.cc
 @@ -75,7 +75,7 @@ BASE_FEATURE(kClearUserDataUponProfileDestruction,
               "ClearUserDataUponProfileDestruction",
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -227,7 +227,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
+@@ -232,7 +232,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
               "SandboxExternalProtocolBlockedWarning",
               base::FEATURE_ENABLED_BY_DEFAULT);
  

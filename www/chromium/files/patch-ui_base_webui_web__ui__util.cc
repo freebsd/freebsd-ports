@@ -1,6 +1,6 @@
---- ui/base/webui/web_ui_util.cc.orig	2025-05-05 10:57:53 UTC
+--- ui/base/webui/web_ui_util.cc.orig	2025-07-02 06:08:04 UTC
 +++ ui/base/webui/web_ui_util.cc
-@@ -46,7 +46,7 @@ namespace {
+@@ -42,7 +42,7 @@ namespace {
  constexpr float kMaxScaleFactor = 1000.0f;
  
  std::string GetFontFamilyMd() {
@@ -9,7 +9,7 @@
    return "Roboto, " + GetFontFamily();
  #else
    return GetFontFamily();
-@@ -221,7 +221,7 @@ void AppendWebUiCssTextDefaults(std::string* html) {
+@@ -217,7 +217,7 @@ void AppendWebUiCssTextDefaults(std::string* html) {
  std::string GetFontFamily() {
    std::string font_family = l10n_util::GetStringUTF8(IDS_WEB_FONT_FAMILY);
  

@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/reporting/cloud_profile_reporting_service_factory.cc.orig	2025-05-28 14:55:43 UTC
+--- chrome/browser/enterprise/reporting/cloud_profile_reporting_service_factory.cc.orig	2025-07-02 06:08:04 UTC
 +++ chrome/browser/enterprise/reporting/cloud_profile_reporting_service_factory.cc
 @@ -10,7 +10,7 @@
  #include "components/enterprise/browser/reporting/report_scheduler.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/signals/signals_aggregator_factory.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  
-@@ -47,7 +47,7 @@ CloudProfileReportingServiceFactory::CloudProfileRepor
+@@ -48,7 +48,7 @@ CloudProfileReportingServiceFactory::CloudProfileRepor
                                   ProfileSelections::BuildForRegularProfile()) {
    DependsOn(enterprise::ProfileIdServiceFactory::GetInstance());
  

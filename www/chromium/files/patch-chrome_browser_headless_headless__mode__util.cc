@@ -1,4 +1,4 @@
---- chrome/browser/headless/headless_mode_util.cc.orig	2025-04-04 08:52:13 UTC
+--- chrome/browser/headless/headless_mode_util.cc.orig	2025-07-02 06:08:04 UTC
 +++ chrome/browser/headless/headless_mode_util.cc
 @@ -10,7 +10,7 @@
  // New headless mode is available on Linux, Windows and Mac platforms.
@@ -9,16 +9,16 @@
  
  #include "base/base_switches.h"
  #include "base/files/file_path.h"
-@@ -20,7 +20,7 @@
+@@ -19,7 +19,7 @@
+ #include "chrome/common/chrome_switches.h"
  #include "content/public/common/content_switches.h"
- #include "ui/base/ui_base_switches.h"
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "ui/gl/gl_switches.h"               // nogncheck
  #include "ui/ozone/public/ozone_switches.h"  // nogncheck
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -95,7 +95,7 @@ class HeadlessModeHandleImpl : public HeadlessModeHand
+@@ -94,7 +94,7 @@ class HeadlessModeHandleImpl : public HeadlessModeHand
        }
      }
  

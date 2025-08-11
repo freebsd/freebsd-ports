@@ -1,15 +1,6 @@
---- content/browser/service_host/utility_sandbox_delegate.cc.orig	2025-04-04 08:52:13 UTC
+--- content/browser/service_host/utility_sandbox_delegate.cc.orig	2025-07-02 06:08:04 UTC
 +++ content/browser/service_host/utility_sandbox_delegate.cc
-@@ -77,7 +77,7 @@ UtilitySandboxedProcessLauncherDelegate::
- #if BUILDFLAG(IS_FUCHSIA)
-       sandbox_type_ == sandbox::mojom::Sandbox::kVideoCapture ||
- #endif
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-       sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
-       sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoEncoding ||
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -90,14 +90,14 @@ UtilitySandboxedProcessLauncherDelegate::
+@@ -91,14 +91,14 @@ UtilitySandboxedProcessLauncherDelegate::
  #endif  // BUILDFLAG(ENABLE_CROS_LIBASSISTANT)
  #endif  // BUILDFLAG(IS_CHROMEOS)
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -27,16 +18,7 @@
        sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceTranslation ||
  #endif
        sandbox_type_ == sandbox::mojom::Sandbox::kAudio ||
-@@ -144,7 +144,7 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
-   // process upon startup.
-   if (sandbox_type_ == sandbox::mojom::Sandbox::kNetwork ||
-       sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceModelExecution ||
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-       sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
-       sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoEncoding ||
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -158,11 +158,11 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
+@@ -159,11 +159,11 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
  #endif  // BUILDFLAG(IS_CHROMEOS)
        sandbox_type_ == sandbox::mojom::Sandbox::kAudio ||
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

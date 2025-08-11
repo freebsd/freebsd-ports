@@ -1,5 +1,14 @@
---- base/trace_event/process_memory_dump.cc.orig	2025-03-05 08:14:56 UTC
+--- base/trace_event/process_memory_dump.cc.orig	2025-08-07 06:57:29 UTC
 +++ base/trace_event/process_memory_dump.cc
+@@ -47,7 +47,7 @@
+ #include <Psapi.h>
+ #endif
+ 
+-#if BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+ #include <tuple>
+ 
+ #include "base/notreached.h"
 @@ -119,7 +119,7 @@ std::optional<size_t> ProcessMemoryDump::CountResident
  #if BUILDFLAG(IS_WIN)
    auto vec =

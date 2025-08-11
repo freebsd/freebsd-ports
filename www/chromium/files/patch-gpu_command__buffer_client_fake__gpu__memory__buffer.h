@@ -1,8 +1,8 @@
---- media/video/fake_gpu_memory_buffer.h.orig	2025-05-28 14:55:43 UTC
-+++ media/video/fake_gpu_memory_buffer.h
+--- gpu/command_buffer/client/fake_gpu_memory_buffer.h.orig	2025-07-02 06:08:04 UTC
++++ gpu/command_buffer/client/fake_gpu_memory_buffer.h
 @@ -12,7 +12,7 @@
  
- namespace media {
+ namespace gpu {
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

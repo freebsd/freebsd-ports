@@ -1,4 +1,4 @@
---- media/ffmpeg/scripts/robo_lib/config.py.orig	2025-02-19 07:43:18 UTC
+--- media/ffmpeg/scripts/robo_lib/config.py.orig	2025-08-07 06:57:29 UTC
 +++ media/ffmpeg/scripts/robo_lib/config.py
 @@ -56,19 +56,13 @@ class RoboConfiguration:
          self._llvm_path = os.path.join(self.chrome_src(), "third_party",
@@ -32,7 +32,7 @@
              self._host_architecture = "arm64"
          elif platform.machine() == "mips32":
              self._host_architecture = "mipsel"
-@@ -224,6 +218,10 @@ class RoboConfiguration:
+@@ -228,6 +222,10 @@ class RoboConfiguration:
          elif platform.system() == "Windows" or "CYGWIN_NT" in platform.system(
          ):
              self._host_operating_system = "win"
@@ -43,7 +43,7 @@
          else:
              raise ValueError(f"Unsupported platform: {platform.system()}")
  
-@@ -232,8 +230,8 @@ class RoboConfiguration:
+@@ -236,8 +234,8 @@ class RoboConfiguration:
          wd = os.getcwd()
          # Walk up the tree until we find src/AUTHORS
          while wd != "/":

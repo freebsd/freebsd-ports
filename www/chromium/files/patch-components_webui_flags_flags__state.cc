@@ -1,4 +1,4 @@
---- components/webui/flags/flags_state.cc.orig	2025-05-05 10:57:53 UTC
+--- components/webui/flags/flags_state.cc.orig	2025-08-07 06:57:29 UTC
 +++ components/webui/flags/flags_state.cc
 @@ -782,7 +782,7 @@ unsigned short FlagsState::GetCurrentPlatform() {
    return kOsWin;

@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_ui_prefs.cc.orig	2025-05-28 14:55:43 UTC
+--- chrome/browser/ui/browser_ui_prefs.cc.orig	2025-07-02 06:08:04 UTC
 +++ chrome/browser/ui/browser_ui_prefs.cc
-@@ -64,7 +64,7 @@ void RegisterBrowserPrefs(PrefRegistrySimple* registry
+@@ -80,7 +80,7 @@ void RegisterBrowserPrefs(PrefRegistrySimple* registry
    registry->RegisterTimePref(prefs::kPdfInfoBarLastShown, base::Time());
    registry->RegisterIntegerPref(prefs::kPdfInfoBarTimesShown, 0);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
@@ -9,7 +9,7 @@
    registry->RegisterStringPref(prefs::kEnterpriseCustomLabelForBrowser,
                                 std::string());
    registry->RegisterStringPref(prefs::kEnterpriseLogoUrlForBrowser,
-@@ -185,7 +185,7 @@ void RegisterBrowserUserPrefs(user_prefs::PrefRegistry
+@@ -203,7 +203,7 @@ void RegisterBrowserUserPrefs(user_prefs::PrefRegistry
    registry->RegisterDictionaryPref(prefs::kHttpsUpgradeFallbacks);
    registry->RegisterDictionaryPref(prefs::kHttpsUpgradeNavigations);
    registry->RegisterBooleanPref(prefs::kHttpsOnlyModeAutoEnabled, false);

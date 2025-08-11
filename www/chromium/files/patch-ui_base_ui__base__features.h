@@ -1,6 +1,6 @@
---- ui/base/ui_base_features.h.orig	2025-05-05 10:57:53 UTC
+--- ui/base/ui_base_features.h.orig	2025-07-02 06:08:04 UTC
 +++ ui/base/ui_base_features.h
-@@ -126,7 +126,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
+@@ -129,7 +129,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
  BASE_DECLARE_FEATURE(kWaylandSessionManagement);
  #endif  // BUILDFLAG(IS_OZONE)
  

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/profiles/profile_picker_view.cc.orig	2025-01-15 09:18:26 UTC
+--- chrome/browser/ui/views/profiles/profile_picker_view.cc.orig	2025-07-02 06:08:04 UTC
 +++ chrome/browser/ui/views/profiles/profile_picker_view.cc
-@@ -85,7 +85,7 @@
+@@ -84,7 +84,7 @@
  #include "chrome/browser/global_keyboard_shortcuts_mac.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/shell_integration_linux.h"
  #endif
  
-@@ -115,7 +115,7 @@ class ProfilePickerWidget : public views::Widget {
+@@ -114,7 +114,7 @@ class ProfilePickerWidget : public views::Widget {
      views::Widget::InitParams params(
          views::Widget::InitParams::NATIVE_WIDGET_OWNS_WIDGET);
      params.delegate = profile_picker_view_;

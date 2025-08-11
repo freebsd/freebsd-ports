@@ -1,4 +1,4 @@
---- services/on_device_model/on_device_model_service.h.orig	2024-11-14 07:57:23 UTC
+--- services/on_device_model/on_device_model_service.h.orig	2025-08-07 06:57:29 UTC
 +++ services/on_device_model/on_device_model_service.h
 @@ -31,6 +31,10 @@ class OnDeviceModelInternalImpl;
  class TsHolder;
@@ -10,8 +10,8 @@
 +
  namespace on_device_model {
  
- class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelService
-@@ -44,7 +48,7 @@ class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelS
+ inline constexpr base::TimeDelta kDefaultModelIdleTimeout = base::Minutes(5);
+@@ -46,7 +50,7 @@ class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelS
    // Must be called in the service's process after the run loop finished.
    [[nodiscard]] static bool Shutdown();
  

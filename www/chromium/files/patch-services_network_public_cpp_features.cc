@@ -1,6 +1,6 @@
---- services/network/public/cpp/features.cc.orig	2025-05-28 14:55:43 UTC
+--- services/network/public/cpp/features.cc.orig	2025-07-02 06:08:04 UTC
 +++ services/network/public/cpp/features.cc
-@@ -125,7 +125,7 @@ BASE_FEATURE(kSplitAuthCacheByNetworkIsolationKey,
+@@ -109,7 +109,7 @@ BASE_FEATURE(kSplitAuthCacheByNetworkIsolationKey,
  BASE_FEATURE(kDnsOverHttpsUpgrade,
               "DnsOverHttpsUpgrade",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -377,7 +377,7 @@ BASE_FEATURE(kAvoidResourceRequestCopies,
+@@ -359,7 +359,7 @@ BASE_FEATURE(kAvoidResourceRequestCopies,
  BASE_FEATURE(kDocumentIsolationPolicy,
               "DocumentIsolationPolicy",
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || \

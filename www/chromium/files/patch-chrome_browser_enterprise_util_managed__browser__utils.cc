@@ -1,6 +1,15 @@
---- chrome/browser/enterprise/util/managed_browser_utils.cc.orig	2025-05-28 14:55:43 UTC
+--- chrome/browser/enterprise/util/managed_browser_utils.cc.orig	2025-08-07 06:57:29 UTC
 +++ chrome/browser/enterprise/util/managed_browser_utils.cc
-@@ -222,7 +222,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
+@@ -213,7 +213,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
+   // The updated consent screen also ask the user for consent to share device
+   // signals.
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   if (accepted && base::FeatureList::IsEnabled(
+                       features::kEnterpriseUpdatedProfileCreationScreen)) {
+     profile->GetPrefs()->SetBoolean(
+@@ -225,7 +225,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
        profile_manager->GetProfileAttributesStorage()
            .GetProfileAttributesWithPath(profile->GetPath());
    if (entry) {
@@ -9,12 +18,12 @@
      SetEnterpriseProfileLabel(profile);
  #endif
      entry->SetUserAcceptedAccountManagement(accepted);
-@@ -341,7 +341,7 @@ bool CanShowEnterpriseProfileUI(Profile* profile) {
+@@ -344,7 +344,7 @@ bool CanShowEnterpriseProfileUI(Profile* profile) {
  }
  
  bool CanShowEnterpriseBadgingForNTPFooter(Profile* profile) {
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- 
-   auto* management_service =
-       policy::ManagementServiceFactory::GetForProfile(profile);
+   if (!policy::ManagementServiceFactory::GetForProfile(profile)
+            ->IsBrowserManaged()) {
+     return false;

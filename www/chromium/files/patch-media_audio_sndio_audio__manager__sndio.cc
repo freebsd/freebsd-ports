@@ -1,4 +1,4 @@
---- media/audio/sndio/audio_manager_sndio.cc.orig	2024-07-30 11:12:21 UTC
+--- media/audio/sndio/audio_manager_sndio.cc.orig	2025-07-02 06:08:04 UTC
 +++ media/audio/sndio/audio_manager_sndio.cc
 @@ -0,0 +1,213 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -62,7 +62,7 @@
 +}
 +
 +#if defined(USE_SNDIO)
-+const char* AudioManagerSndio::GetName() {
++const std::string_view AudioManagerSndio::GetName() {
 +  return "SNDIO";
 +}
 +#endif

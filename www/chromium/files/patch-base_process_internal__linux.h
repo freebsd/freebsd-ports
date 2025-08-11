@@ -1,6 +1,6 @@
---- base/process/internal_linux.h.orig	2025-04-04 08:52:13 UTC
+--- base/process/internal_linux.h.orig	2025-07-02 06:08:04 UTC
 +++ base/process/internal_linux.h
-@@ -144,6 +144,9 @@ TimeDelta ClockTicksToTimeDelta(int64_t clock_ticks);
+@@ -146,6 +146,9 @@ TimeDelta ClockTicksToTimeDelta(int64_t clock_ticks);
  // arguments to the lambda.
  template <typename Lambda>
  void ForEachProcessTask(base::ProcessHandle process, Lambda&& lambda) {
@@ -10,7 +10,7 @@
    // Iterate through the different threads tracked in /proc/<pid>/task.
    FilePath fd_path = GetProcPidDir(process).Append("task");
  
-@@ -167,6 +170,7 @@ void ForEachProcessTask(base::ProcessHandle process, L
+@@ -169,6 +172,7 @@ void ForEachProcessTask(base::ProcessHandle process, L
      FilePath task_path = fd_path.Append(tid_str);
      lambda(tid, task_path);
    }

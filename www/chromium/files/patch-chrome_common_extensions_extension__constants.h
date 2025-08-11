@@ -1,6 +1,6 @@
---- chrome/common/extensions/extension_constants.h.orig	2025-04-04 08:52:13 UTC
+--- chrome/common/extensions/extension_constants.h.orig	2025-08-07 06:57:29 UTC
 +++ chrome/common/extensions/extension_constants.h
-@@ -310,7 +310,7 @@ inline constexpr char kReadingModeGDocsHelperExtension
+@@ -313,7 +313,7 @@ inline constexpr char kReadingModeGDocsHelperExtension
  inline constexpr base::FilePath::CharType
      kReadingModeGDocsHelperManifestFilename[] =
          FILE_PATH_LITERAL("reading_mode_gdocs_helper_manifest.json");
