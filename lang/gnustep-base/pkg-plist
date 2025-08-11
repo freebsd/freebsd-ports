@@ -916,4 +916,3 @@ GNUstep/System/Tools/plutil
 GNUstep/System/Tools/sfparse
 GNUstep/System/Tools/xmlparse
 %%ETCDIR%%/gdomap_if
-libdata/ldconfig/gnustep-base
