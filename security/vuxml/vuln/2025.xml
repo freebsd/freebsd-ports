@@ -1,3 +1,50 @@
+  <vuln vid="15fd1321-768a-11f0-b3f7-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>139.0.7258.66</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>139.0.7258.66</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/08/stable-channel-update-for-desktop.html">
+	 <p>This update includes 12 security fixes:</p>
+	 <ul>
+	    <li>[414760982] Medium CVE-2025-8576: Use after free in Extensions. Reported by asnine on 2025-04-30</li>
+	    <li>[384050903] Medium CVE-2025-8577: Inappropriate implementation in Picture In Picture. Reported by Umar Farooq on 2024-12-14</li>
+	    <li>[423387026] Medium CVE-2025-8578: Use after free in Cast. Reported by Fayez on 2025-06-09</li>
+	    <li>[407791462] Low CVE-2025-8579: Inappropriate implementation in Gemini Live in Chrome. Reported by Alesandro Ortiz on 2025-04-02</li>
+	    <li>[411544197] Low CVE-2025-8580: Inappropriate implementation in Filesystems. Reported by Huuuuu on 2025-04-18</li>
+	    <li>[416942878] Low CVE-2025-8581: Inappropriate implementation in Extensions. Reported by Vincent Dragnea on 2025-05-11</li>
+	    <li>[40089450] Low CVE-2025-8582: Insufficient validation of untrusted input in DOM. Reported by Anonymous on 2017-10-31</li>
+	    <li>[373794472] Low CVE-2025-8583: Inappropriate implementation in Permissions. Reported by Shaheen Fazim on 2024-10-16</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8576</cvename>
+      <cvename>CVE-2025-8577</cvename>
+      <cvename>CVE-2025-8578</cvename>
+      <cvename>CVE-2025-8579</cvename>
+      <cvename>CVE-2025-8580</cvename>
+      <cvename>CVE-2025-8581</cvename>
+      <cvename>CVE-2025-8582</cvename>
+      <cvename>CVE-2025-8583</cvename>
+      <url>https://chromereleases.googleblog.com/2025/08/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2025-08-05</discovery>
+      <entry>2025-08-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fb08d146-752a-11f0-952c-8447094a420f">
     <topic>Apache httpd -- evaluation always true</topic>
     <affects>
