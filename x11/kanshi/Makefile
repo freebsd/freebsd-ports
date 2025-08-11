@@ -16,7 +16,6 @@ LIB_DEPENDS=	libscfg.so:devel/libscfg \
 
 USES=		compiler:c11 meson pkgconfig
 MESON_ARGS=	-Dipc=disabled # https://github.com/varlink/libvarlink/issues/53
-LDFLAGS+=	-lm # https://cgit.FreeBSD.org/ports/commit/?id=b991d37c58ed
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES
