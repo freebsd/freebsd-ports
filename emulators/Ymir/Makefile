@@ -1,6 +1,6 @@
 PORTNAME=	Ymir
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.6
+DISTVERSION=	0.1.7
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
@@ -10,9 +10,6 @@ WWW=		https://github.com/StrikerX3/Ymir/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=		https://github.com/StrikerX3/Ymir/pull/389 \
-			https://github.com/StrikerX3/Ymir/pull/421 \
-			https://github.com/llvm/llvm-project/issues/69524
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	upstream only supports aarch64 and amd64
 
@@ -41,7 +38,9 @@ _gtk4_BR_DEPENDS=		zenity:x11/zenity4
 ${FLAVOR}_BUILD_DEPENDS=	${_${FLAVOR}_BR_DEPENDS}
 ${FLAVOR}_RUN_DEPENDS=		${_${FLAVOR}_BR_DEPENDS}
 
-USES=		cmake compiler:c++20-lang gl llvm pkgconfig sdl xorg
+USES=		cmake compiler:c++20-lang desktop-file-utils gl \
+		llvm${_LLVM_${ARCH}} pkgconfig sdl xorg
+_LLVM_aarch64=	:min=21
 USE_GITHUB=	yes
 GH_ACCOUNT=	StrikerX3
 GH_TUPLE=	StrikerX3:mio:c9dbe3a6f74b2c2c4a6c9621005c3df213a33eaa:mio/vendor/mio
