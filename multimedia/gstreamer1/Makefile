@@ -66,6 +66,7 @@ makesum-all: makesum
 .for p in editing-services libav rtsp-server vaapi
 	@${MAKE} -C ${.CURDIR:H:H}/multimedia/gstreamer1-${p} makesum
 .endfor
+	@${MAKE} -C ${.CURDIR:H:H}/devel/gstreamer1-devtools makesum
 	@${MAKE} -C ${.CURDIR:H:H}/multimedia/gstreamer1-plugins makesum-all
 	@${MAKE} -C ${.CURDIR:H:H}/multimedia/py-gstreamer1 makesum
 

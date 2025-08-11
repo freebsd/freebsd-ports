@@ -954,6 +954,7 @@
     SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsl-lite
     SUBDIR += gsoap
+    SUBDIR += gstreamer1-devtools
     SUBDIR += gstreamer1-plugins-soup
     SUBDIR += gtgt
     SUBDIR += gtranslator

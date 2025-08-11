@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer (openh264) plugin

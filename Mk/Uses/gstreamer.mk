@@ -41,7 +41,7 @@ _GST_VER=	${_GST_VER_DEFAULT}
 
 # When modifying _GST1_VERSION, run `make -C ${PORTSDIR}/multimedia/gstreamer1 makesum-all`
 # to update the distinfo files for the entire suite.
-_GST1_VERSION=		1.26.4
+_GST1_VERSION=		1.26.5
 _GST1_LIB_VER=		1.0
 _GST1_SOVERSION=	0.${_GST1_VERSION:R:E}${${_GST1_VERSION:E} > 9:?:0}${_GST1_VERSION:E}.0
 

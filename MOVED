@@ -4716,3 +4716,4 @@ databases/mariadb105-server||2025-08-09|Has expired: Upstream End-of-Life, pleas
 databases/mariadb105-client||2025-08-09|Has expired: Upstream End-of-Life, please switch to databases/mariadb118-client
 japanese/font-moralerspace-hwnf|japanese/font-moralerspace-hw|2025-08-09|Moralerspace variants now include Nerd Fonts by default
 japanese/font-moralerspace-nf|japanese/font-moralerspace|2025-08-09|Moralerspace variants now include Nerd Fonts by default
+multimedia/gstreamer1-validate|devel/gstreamer1-devtools|2025-08-11|Project renamed

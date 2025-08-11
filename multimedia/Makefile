@@ -109,7 +109,6 @@
     SUBDIR += gstreamer1-plugins-x265
     SUBDIR += gstreamer1-rtsp-server
     SUBDIR += gstreamer1-vaapi
-    SUBDIR += gstreamer1-validate
     SUBDIR += gstreamermm
     SUBDIR += gtk-pipe-viewer
     SUBDIR += gtk-youtube-viewer
