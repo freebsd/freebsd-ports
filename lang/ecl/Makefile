@@ -18,7 +18,6 @@ LIB_DEPENDS=	libgc.so:devel/boehm-gc \
 RUN_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 
 USES=		autoreconf gmake localbase makeinfo perl5 tar:tgz
-USE_CSTD=	c99
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
@@ -34,17 +33,20 @@ AUTORECONF_WRKSRC=	${WRKSRC}/src
 INFO=			ecl
 PLIST_SUB=		VERSION="${PORTVERSION}"
 
-OPTIONS_DEFINE=		ASDF DFFI SAGE SOCKETS THREADS X11
+OPTIONS_DEFINE=		ASDF CXX DFFI SAGE SOCKETS THREADS X11
 OPTIONS_DEFAULT=	ASDF DFFI SAGE SOCKETS THREADS
 OPTIONS_SUB=		yes
 
 ASDF_DESC=	Enable ASDF building facility
+CXX_DESC=	Enable C++ support
 DFFI_DESC=	Dynamic foreign-function support
 SAGE_DESC=	Build with patches for sage
 SOCKETS_DESC=	Enable socket interface
 
 ASDF_CONFIGURE_ON=	--with-asdf=yes
 ASDF_CONFIGURE_OFF=	--with-asdf=no
+CXX_CONFIGURE_ON=	--with-cxx
+CXX_VARS_OFF=		USE_CSTD=c99
 DFFI_LIB_DEPENDS=	libffi.so:devel/libffi
 DFFI_CONFIGURE_ON=	--with-dffi=system
 DFFI_CONFIGURE_OFF=	--with-dffi=no
