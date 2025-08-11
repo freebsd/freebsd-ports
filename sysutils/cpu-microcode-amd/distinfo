@@ -1,11 +1,13 @@
-TIMESTAMP = 1752257785
-SHA256 (cpu-microcode-amd/microcode_amd.bin?id=331eac9144402d6cfa02ff3b2888a40bb9a7a01a) = 8a9d9e8b788e31e61cddc03cb1eeab5db99e0f667128943ff0780e6437d2e43e
-SIZE (cpu-microcode-amd/microcode_amd.bin?id=331eac9144402d6cfa02ff3b2888a40bb9a7a01a) = 12684
-SHA256 (cpu-microcode-amd/microcode_amd_fam15h.bin?id=331eac9144402d6cfa02ff3b2888a40bb9a7a01a) = 9d4a668410e72a4bdb86dc23e4261eca04daa83456ada02504115223f356981a
-SIZE (cpu-microcode-amd/microcode_amd_fam15h.bin?id=331eac9144402d6cfa02ff3b2888a40bb9a7a01a) = 7876
-SHA256 (cpu-microcode-amd/microcode_amd_fam16h.bin?id=331eac9144402d6cfa02ff3b2888a40bb9a7a01a) = e02ad653b39c975d6c52674b50f23727bb6706bab7b4e5b391a4ce229e7ff121
-SIZE (cpu-microcode-amd/microcode_amd_fam16h.bin?id=331eac9144402d6cfa02ff3b2888a40bb9a7a01a) = 3510
-SHA256 (cpu-microcode-amd/microcode_amd_fam17h.bin?id=331eac9144402d6cfa02ff3b2888a40bb9a7a01a) = 966e4b796ec689c618868d08f8a37f347b0e7bfce4ae9df793e08471d363b7d0
-SIZE (cpu-microcode-amd/microcode_amd_fam17h.bin?id=331eac9144402d6cfa02ff3b2888a40bb9a7a01a) = 22596
-SHA256 (cpu-microcode-amd/microcode_amd_fam19h.bin?id=331eac9144402d6cfa02ff3b2888a40bb9a7a01a) = 2b26d5804107bd39df0d9ab57f252942f0a177b72875622129ce22657c624a7b
-SIZE (cpu-microcode-amd/microcode_amd_fam19h.bin?id=331eac9144402d6cfa02ff3b2888a40bb9a7a01a) = 100684
+TIMESTAMP = 1754935856
+SHA256 (cpu-microcode-amd/microcode_amd.bin?id=3768c184de68a85b9df6697e7f93a2f61de90a99) = 8a9d9e8b788e31e61cddc03cb1eeab5db99e0f667128943ff0780e6437d2e43e
+SIZE (cpu-microcode-amd/microcode_amd.bin?id=3768c184de68a85b9df6697e7f93a2f61de90a99) = 12684
+SHA256 (cpu-microcode-amd/microcode_amd_fam15h.bin?id=3768c184de68a85b9df6697e7f93a2f61de90a99) = 9d4a668410e72a4bdb86dc23e4261eca04daa83456ada02504115223f356981a
+SIZE (cpu-microcode-amd/microcode_amd_fam15h.bin?id=3768c184de68a85b9df6697e7f93a2f61de90a99) = 7876
+SHA256 (cpu-microcode-amd/microcode_amd_fam16h.bin?id=3768c184de68a85b9df6697e7f93a2f61de90a99) = e02ad653b39c975d6c52674b50f23727bb6706bab7b4e5b391a4ce229e7ff121
+SIZE (cpu-microcode-amd/microcode_amd_fam16h.bin?id=3768c184de68a85b9df6697e7f93a2f61de90a99) = 3510
+SHA256 (cpu-microcode-amd/microcode_amd_fam17h.bin?id=3768c184de68a85b9df6697e7f93a2f61de90a99) = 966e4b796ec689c618868d08f8a37f347b0e7bfce4ae9df793e08471d363b7d0
+SIZE (cpu-microcode-amd/microcode_amd_fam17h.bin?id=3768c184de68a85b9df6697e7f93a2f61de90a99) = 22596
+SHA256 (cpu-microcode-amd/microcode_amd_fam19h.bin?id=3768c184de68a85b9df6697e7f93a2f61de90a99) = 4fe8cfa98c36b1804e2961a0cfa602b92a3bd6189f937e526c834b801b3d271e
+SIZE (cpu-microcode-amd/microcode_amd_fam19h.bin?id=3768c184de68a85b9df6697e7f93a2f61de90a99) = 100684
+SHA256 (cpu-microcode-amd/microcode_amd_fam1ah.bin?id=3768c184de68a85b9df6697e7f93a2f61de90a99) = 9a2eca6301cc763287279afc31cd276e39de2d59d704c82e500c885b0ba1e775
+SIZE (cpu-microcode-amd/microcode_amd_fam1ah.bin?id=3768c184de68a85b9df6697e7f93a2f61de90a99) = 28812
