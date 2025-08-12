@@ -22,7 +22,6 @@ lib/libqcadstemmer.so.0
 lib/libspatialindexnavel.so
 lib/libspatialindexnavel.so.0
 lib/libstemmer.a
-share/applications/usr_local_bin_qcadbin.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calibration.dxf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colors.dxf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/entities.dxf
@@ -11192,6 +11191,10 @@ share/applications/usr_local_bin_qcadbin.desktop
 %%DATADIR%%/scripts/Tools/Tools.pro
 %%DATADIR%%/scripts/Tools/arguments.js
 %%DATADIR%%/scripts/Tools/dir/dir.pro
+%%DATADIR%%/scripts/Tutorial/GenerateTutorial/doc/GenerateTutorial_da.html
+%%DATADIR%%/scripts/Tutorial/GenerateTutorial/doc/GenerateTutorial_es.html
+%%DATADIR%%/scripts/Tutorial/GenerateTutorial/doc/GenerateTutorial_ja.html
+%%DATADIR%%/scripts/Tutorial/GenerateTutorial/doc/GenerateTutorial_pl.html
 %%DATADIR%%/scripts/View/AntialiasingMode/AntialiasingMode-inverse.svg
 %%DATADIR%%/scripts/View/AntialiasingMode/AntialiasingMode.js
 %%DATADIR%%/scripts/View/AntialiasingMode/AntialiasingMode.pro
@@ -12167,6 +12170,7 @@ share/applications/usr_local_bin_qcadbin.desktop
 %%DATADIR%%/scripts/library.js
 %%DATADIR%%/scripts/map.js
 %%DATADIR%%/scripts/mimetype.png
+%%DATADIR%%/scripts/org.qcad.QCAD.png
 %%DATADIR%%/scripts/qcad_icon.png
 %%DATADIR%%/scripts/qcad_icon.svg
 %%DATADIR%%/scripts/scripts.dox
