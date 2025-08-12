@@ -19,11 +19,10 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 .if exists(/usr/include/sys/inotify.h)
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-libinotify.pc.in
+
 post-install:
-	${PRINTF} '#pragma GCC system_header\n#include_next <sys/inotify.h>\n' \
-		> ${STAGEDIR}${PREFIX}/include/sys/inotify.h
-	${SED} -e '/Libs:/d' -e '/Cflags:/d' ${WRKSRC}/libinotify.pc \
-		> ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libinotify.pc
+	${INSTALL_DATA} ${FILESDIR}/inotify.h ${STAGEDIR}${PREFIX}/include/sys/inotify.h
 .endif
 
 .include <bsd.port.mk>
