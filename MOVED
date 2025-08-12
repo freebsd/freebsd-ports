@@ -4722,3 +4722,4 @@ devel/py-pluggy0|devel/py-pluggy|2025-08-12|Remove obsoleted port. Use devel/py-
 devel/py-types-click|devel/py-click|2025-08-12|Remove obsoleted port. The click package includes type annotations or type stubs since version 8.0. Use devel/py-click instead
 devel/py-types-cryptography|security/py-cryptography|2025-08-12|Remove obsoleted port. The cryptography package includes type annotations or type stubs since version 3.4.4. Use security/py-cryptography instead
 devel/py-types-Flask|www/py-flask|2025-08-12|Remove obsoleted port. The Flask package includes type annotations or type stubs since version 2.0. Use www/py-flask instead
+devel/py-types-futures||2025-08-12|Remove obsoleted port

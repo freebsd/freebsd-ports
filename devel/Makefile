@@ -6092,7 +6092,6 @@
     SUBDIR += py-types-Werkzeug
     SUBDIR += py-types-decorator
     SUBDIR += py-types-docutils
-    SUBDIR += py-types-futures
     SUBDIR += py-types-jsonschema
     SUBDIR += py-types-mock
     SUBDIR += py-types-protobuf
