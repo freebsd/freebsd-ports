@@ -1,6 +1,6 @@
 PORTNAME=	imageviewer
 PORTVERSION=	0.6.3
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://www.nice.ch/~phip/ \
 		LOCAL/dinoex

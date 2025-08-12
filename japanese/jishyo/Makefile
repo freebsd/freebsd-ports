@@ -1,6 +1,6 @@
 PORTNAME=	jishyo
 PORTVERSION=	0.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	japanese gnustep
 MASTER_SITES=	http://www.eskimo.com/~pburns/Dictionaries/files/
 DISTNAME=	Jishyo-${PORTVERSION}

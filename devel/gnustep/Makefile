@@ -1,6 +1,6 @@
 PORTNAME=	gnustep
 PORTVERSION=	1.28.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel lang gnustep
 
 MAINTAINER=	ports@FreeBSD.org

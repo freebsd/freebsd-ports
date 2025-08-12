@@ -1,6 +1,6 @@
 PORTNAME=	toolbox
 PORTVERSION=	0.8
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://ftp.azc.uam.mx/mirrors/gnu/savannah/files/toolbox/Release.pkg/0.8/ \
 		LOCAL/dinoex
