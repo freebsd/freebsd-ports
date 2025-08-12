@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-lambda
-PORTVERSION=	1.154.0
+PORTVERSION=	1.155.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
