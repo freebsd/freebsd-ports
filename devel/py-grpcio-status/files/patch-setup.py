@@ -4,7 +4,7 @@
  }
  
  INSTALL_REQUIRES = (
--    "protobuf>=6.30.0,<7.0.0",
+-    "protobuf>=6.31.1,<7.0.0",
 +    "protobuf>=5.26.1,<7.0.0",
      "grpcio>={version}".format(version=grpc_version.VERSION),
      "googleapis-common-protos>=1.5.5",
