@@ -1,5 +1,6 @@
 PORTNAME=	qman
-PORTVERSION=	1.4.3.20250803
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.5.0
 CATEGORIES=	misc
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -15,7 +16,6 @@ USES=		groff:run meson pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	plp13
-GH_TAGNAME=	0c549098790bdfcf879334dabb1541d537cd5a56
 
 MESON_ARGS=	-Dconfigdir=${PREFIX}/etc/xdg/${PORTNAME} \
 		-Ddocs=disabled \
