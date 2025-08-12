@@ -1,0 +1,16 @@
+Obtained from:	https://github.com/kjdev/php-ext-zstd/commit/e061583361d4d4167a86dccda385b2944946a09e
+
+--- zstd.c.orig	2024-11-05 21:49:34 UTC
++++ zstd.c
+@@ -30,7 +30,11 @@
+ #include <php_ini.h>
+ #include <ext/standard/file.h>
+ #include <ext/standard/info.h>
++#if PHP_VERSION_ID < 70200
+ #include <ext/standard/php_smart_string.h>
++#else
++#include "Zend/zend_smart_string.h"
++#endif
+ #if defined(HAVE_APCU_SUPPORT)
+ #include <ext/standard/php_var.h>
+ #include <ext/apcu/apc_serializer.h>
