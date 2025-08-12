@@ -8313,6 +8313,8 @@
     SUBDIR += tcl-mmap
     SUBDIR += tcl-signal
     SUBDIR += tcl-trf
+    SUBDIR += tcl8-thread
+    SUBDIR += tcl9-thread
     SUBDIR += tclap
     SUBDIR += tclap12
     SUBDIR += tclbsd
@@ -8321,8 +8323,6 @@
     SUBDIR += tcllib
     SUBDIR += tcllibc
     SUBDIR += tclreadline
-    SUBDIR += tcl8-thread
-    SUBDIR += tcl9-thread
     SUBDIR += tcltls
     SUBDIR += tclxml
     SUBDIR += tdl
@@ -8440,9 +8440,9 @@
     SUBDIR += wasi-libcxx18
     SUBDIR += wasi-libcxx19
     SUBDIR += wasi-libcxx20
+    SUBDIR += wasm-server-runner
     SUBDIR += wasm3
     SUBDIR += wasmer
-    SUBDIR += wasm-server-runner
     SUBDIR += websocketpp
     SUBDIR += websvn
     SUBDIR += wf-config
