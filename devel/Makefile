@@ -6085,7 +6085,6 @@
     SUBDIR += py-typecode
     SUBDIR += py-typeguard
     SUBDIR += py-typer
-    SUBDIR += py-types-Jinja2
     SUBDIR += py-types-MarkupSafe
     SUBDIR += py-types-Pillow
     SUBDIR += py-types-Pygments
