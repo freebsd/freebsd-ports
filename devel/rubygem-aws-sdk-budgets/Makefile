@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-budgets
-PORTVERSION=	1.87.0
+PORTVERSION=	1.88.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
