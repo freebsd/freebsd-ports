@@ -32,7 +32,7 @@ COMPAT_LIBS=	libcrypto.so.111 \
 IGNORE=		is for FreeBSD 13.x and newer
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500000
 RUN_DEPENDS+=	compat14x-${ARCH}>=0:misc/compat14x
 .endif
 
