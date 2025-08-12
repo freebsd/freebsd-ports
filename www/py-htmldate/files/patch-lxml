@@ -1,0 +1,35 @@
+Obtained from:	https://github.com/adbar/htmldate/commit/b32422541cbc1f610838784f010a2e8cfc36fa05
+
+--- htmldate/extractors.py.orig	2024-11-28 17:24:58 UTC
++++ htmldate/extractors.py
+@@ -12,7 +12,6 @@ from dateparser import DateDataParser  # type: ignore 
+ 
+ # coverage for date parsing
+ from dateparser import DateDataParser  # type: ignore  # third-party, slow
+-from dateparser_data.settings import default_parsers
+ 
+ from dateutil.parser import parse as dateutil_parse
+ 
+@@ -34,9 +33,8 @@ EXTERNAL_PARSER = DateDataParser(
+     settings={
+         "NORMALIZE": True,  # False may be faster
+         "PARSERS": [
+-            p
+-            for p in default_parsers
+-            if p not in ("no-spaces-time", "relative-time", "timestamp")
++            "custom-formats",
++            "absolute-time",
+         ],
+         "PREFER_DATES_FROM": "past",
+         "PREFER_LOCALE_DATE_ORDER": True,
+--- pyproject.toml.orig	2024-11-27 17:50:43 UTC
++++ pyproject.toml
+@@ -53,7 +53,7 @@ dependencies = [
+     "dateparser >= 1.1.2",  # 1.1.3+ slower
+     # see tests on Github Actions
+     "lxml == 4.9.2 ; platform_system == 'Darwin' and python_version <= '3.8'",
+-    "lxml >= 5.3.0, < 6 ; platform_system != 'Darwin' or python_version > '3.8'",
++    "lxml >= 5.3.0 ; platform_system != 'Darwin' or python_version > '3.8'",
+     "python-dateutil >= 2.9.0.post0",
+     "urllib3 >= 1.26, < 3",
+ ]
