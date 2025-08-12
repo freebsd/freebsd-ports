@@ -6100,7 +6100,6 @@
     SUBDIR += py-types-retry
     SUBDIR += py-types-setuptools
     SUBDIR += py-types-toml
-    SUBDIR += py-types-typed-ast
     SUBDIR += py-types-ujson
     SUBDIR += py-types-urllib3
     SUBDIR += py-typeshed-client
