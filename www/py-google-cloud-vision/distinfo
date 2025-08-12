@@ -1,3 +1,3 @@
-TIMESTAMP = 1720536516
-SHA256 (google-cloud-vision-3.7.3.tar.gz) = ee48c48e820c7e09932663986970fef456dc0f45c7af729d46f1f3dd97c1dfb6
-SIZE (google-cloud-vision-3.7.3.tar.gz) = 519571
+TIMESTAMP = 1753796128
+SHA256 (google_cloud_vision-3.10.2.tar.gz) = 649380faab8933440b632bf88072c0c382a08d49ab02bc0b4fba821882ae1765
+SIZE (google_cloud_vision-3.10.2.tar.gz) = 570339
