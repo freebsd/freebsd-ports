@@ -4718,3 +4718,4 @@ japanese/font-moralerspace-hwnf|japanese/font-moralerspace-hw|2025-08-09|Moraler
 japanese/font-moralerspace-nf|japanese/font-moralerspace|2025-08-09|Moralerspace variants now include Nerd Fonts by default
 multimedia/gstreamer1-validate|devel/gstreamer1-devtools|2025-08-11|Project renamed
 devel/py-types-PyYAML|devel/py-types-pyyaml|2025-08-12|Move devel/py-types-PyYAML to devel/py-types-pyyaml
+devel/py-pluggy0|devel/py-pluggy|2025-08-12|Remove obsoleted port. Use devel/py-pluggy instead

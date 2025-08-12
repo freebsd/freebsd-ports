@@ -5486,7 +5486,6 @@
     SUBDIR += py-plex
     SUBDIR += py-plucky
     SUBDIR += py-pluggy
-    SUBDIR += py-pluggy0
     SUBDIR += py-pluginbase
     SUBDIR += py-plugincode
     SUBDIR += py-plux
