@@ -1,0 +1,3 @@
+rubygem-pg provides the module "pg", a Ruby interface to the
+PostgreSQL Relational Database Management System, which
+supersedes the old "postgres" module.
