@@ -1,0 +1,59 @@
+From 04260b868ac1b9d8d7946ead0ff866070d14fda2 Mon Sep 17 00:00:00 2001
+From: GRENEWODE <grenewode@pm.me>
+Date: Thu, 20 Feb 2025 23:02:21 -0500
+Subject: [PATCH] fix: Resolve API incompatiblities on FreeBSD hosts
+
+FreeBSD's `libutil` library defines `pw_init` and `pw_deinit` functions,
+conflicting with the PipeWire API `pw_init` and `pw_deinit` functions.
+
+To resolve the conflict, the PipeWire package in FreeBSD's ports
+patches the function definitions, renaming `pw_init` to `pipewire_init`
+and renaming `pw_deinit` to `pipewire_deinit`.
+
+As a result, the expected `pw_init` and `pw_deinit` functions are not
+generated on FreeBSD (and probably other BSDs).
+
+Since Rust supports namespaces, we can manually define `pw_init` and
+`pw_deinit` aliases and there are not conflicts with any other libraries.
+
+Notes:
+* `pipewire-sys/build.rs`
+  Update add the `pipewire_*` pattern to the allow list, so that the aliases are picked up by bindgen
+* `pipewire-sys/src/lib.rs`
+  Adds aliases to for `pipewire_init` and `pipewire_deinit` to `pw_init` and `pw_deinit` respectively.
+
+See Also:
+* https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=284719
+* https://github.com/freebsd/freebsd-ports/blob/87adc7e46597e5e28eb6139946530029f9363f79/multimedia/pipewire/files/patch-src_pipewire_pipewire_init
+
+--- cargo-crates/pipewire-sys-0.8.0/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/pipewire-sys-0.8.0/build.rs
+@@ -20,6 +20,11 @@ fn main() {
+         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
+         .size_t_is_usize(true)
+         .allowlist_function("pw_.*")
++        // Special case for FreeBSD.
++        // https://github.com/freebsd/freebsd-ports/blob/main/multimedia/pipewire/files/patch-src_pipewire_pipewire_init
++        // `libutil` defines functions pw_{init, deinit}, so those functions are aliased as pipewire_{init, deinit}
++        // in the port multimedia/pipewire
++        .allowlist_function("pipewire_.*")
+         .allowlist_type("pw_.*")
+         .allowlist_var("pw_.*")
+         .allowlist_var("PW_.*")
+--- cargo-crates/pipewire-sys-0.8.0/src/lib.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/pipewire-sys-0.8.0/src/lib.rs
+@@ -13,6 +13,14 @@ pub use bindings::*;
+ }
+ pub use bindings::*;
+ 
++// See comment in build.rs
++// Adds compatibility for patched pipewire in FreeBSD
++#[cfg(target_os = "freebsd")]
++pub use bindings::pipewire_init as pw_init;
++
++#[cfg(target_os = "freebsd")]
++pub use bindings::pipewire_deinit as pw_deinit;
++
+ #[cfg(test)]
+ mod tests {
+     use super::*;

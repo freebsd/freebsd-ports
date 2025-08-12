@@ -1,0 +1,184 @@
+--- core/src/window/settings.rs.orig	2025-08-12 05:43:56.930387000 +0900
++++ core/src/window/settings.rs	2025-08-12 05:51:27.392929000 +0900
+@@ -7,7 +7,7 @@
+ #[path = "settings/macos.rs"]
+ mod platform;
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(any(target_os = "linux", target_os = "freebsd"))]
+ #[path = "settings/linux.rs"]
+ mod platform;
+ 
+@@ -19,6 +19,7 @@
+     target_os = "windows",
+     target_os = "macos",
+     target_os = "linux",
++    target_os = "freebsd",
+     target_arch = "wasm32"
+ )))]
+ #[path = "settings/other.rs"]
+--- wgpu/src/window.rs.orig	2025-08-12 05:53:26.460947000 +0900
++++ wgpu/src/window.rs	2025-08-12 05:53:47.980178000 +0900
+@@ -17,8 +17,8 @@
+ fn ids_from_dev(dev: u64) -> Option<(u16, u16)> {
+     let path = PathBuf::from(format!(
+         "/sys/dev/char/{}:{}/device",
+-        major(dev),
+-        minor(dev)
++        major(dev.try_into().unwrap()),
++        minor(dev.try_into().unwrap())
+     ));
+     let vendor = {
+         let path = path.join("vendor");
+--- wgpu/src/window/x11.rs.orig	2025-08-12 05:52:34.754698000 +0900
++++ wgpu/src/window/x11.rs	2025-08-12 05:53:01.710865000 +0900
+@@ -145,7 +145,7 @@
+                                         let stat =
+                                             stat(Path::new("/dev/dri").join(device)).ok()?;
+                                         let dev = stat.st_rdev;
+-                                        return super::ids_from_dev(dev);
++                                        return super::ids_from_dev(dev.into());
+                                     }
+                                 }
+                             }
+@@ -166,6 +166,6 @@
+         let device_fd = dri3.device_fd;
+         let stat = fstat(device_fd).ok()?;
+         let dev = stat.st_rdev;
+-        super::ids_from_dev(dev)
++        super::ids_from_dev(dev.into())
+     }
+ }
+--- winit/Cargo.toml.orig	2025-08-12 05:44:28.568644000 +0900
++++ winit/Cargo.toml	2025-08-12 05:44:49.450272000 +0900
+@@ -56,7 +56,7 @@
+ sysinfo.workspace = true
+ sysinfo.optional = true
+ 
+-[target.'cfg(target_os = "linux")'.dependencies]
++[target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies]
+ raw-window-handle = { version = "0.6", optional = true }
+ cctk.workspace = true
+ cctk.optional = true
+--- winit/src/clipboard.rs.orig	2025-08-12 05:45:04.844075000 +0900
++++ winit/src/clipboard.rs	2025-08-12 05:45:26.719351000 +0900
+@@ -91,7 +91,7 @@
+                 })
+                 .unwrap_or(State::Unavailable);
+ 
+-        #[cfg(target_os = "linux")]
++        #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+         if let State::Connected { clipboard, .. } = &state {
+             clipboard.init_dnd(Box::new(sender));
+         }
+--- winit/src/conversion.rs.orig	2025-08-12 05:45:36.250589000 +0900
++++ winit/src/conversion.rs	2025-08-12 05:45:58.385240000 +0900
+@@ -106,7 +106,7 @@
+             );
+     }
+ 
+-    #[cfg(target_os = "linux")]
++    #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+     {
+         #[cfg(feature = "x11")]
+         {
+--- winit/src/platform_specific/mod.rs.orig	2025-08-12 05:46:10.694807000 +0900
++++ winit/src/platform_specific/mod.rs	2025-08-12 05:48:45.008556000 +0900
+@@ -10,19 +10,19 @@
+ };
+ use winit::raw_window_handle::HasWindowHandle;
+ 
+-#[cfg(all(feature = "wayland", target_os = "linux"))]
++#[cfg(all(feature = "wayland", any(target_os = "linux", target_os = "freebsd")))]
+ pub mod wayland;
+ 
+-#[cfg(all(feature = "wayland", target_os = "linux"))]
++#[cfg(all(feature = "wayland", any(target_os = "linux", target_os = "freebsd")))]
+ pub use wayland::*;
+-#[cfg(all(feature = "wayland", target_os = "linux"))]
++#[cfg(all(feature = "wayland", any(target_os = "linux", target_os = "freebsd")))]
+ use wayland_backend::client::Backend;
+ 
+ use crate::{program::WindowManager, Program};
+ 
+ #[derive(Debug)]
+ pub enum Event {
+-    #[cfg(all(feature = "wayland", target_os = "linux"))]
++    #[cfg(all(feature = "wayland", any(target_os = "linux", target_os = "freebsd")))]
+     Wayland(sctk_event::SctkEvent),
+ }
+ 
+@@ -48,7 +48,7 @@
+ 
+ #[derive(Debug, Default)]
+ pub struct PlatformSpecific {
+-    #[cfg(all(feature = "wayland", target_os = "linux"))]
++    #[cfg(all(feature = "wayland", any(target_os = "linux", target_os = "freebsd")))]
+     wayland: WaylandSpecific,
+ }
+ 
+@@ -58,7 +58,7 @@
+         action: iced_runtime::platform_specific::Action,
+     ) {
+         match action {
+-            #[cfg(all(feature = "wayland", target_os = "linux"))]
++            #[cfg(all(feature = "wayland", any(target_os = "linux", target_os = "freebsd")))]
+             iced_runtime::platform_specific::Action::Wayland(a) => {
+                 self.send_wayland(wayland::Action::Action(a));
+             }
+@@ -66,7 +66,7 @@
+     }
+ 
+     pub(crate) fn clear_subsurface_list(&mut self) {
+-        #[cfg(all(feature = "wayland", target_os = "linux"))]
++        #[cfg(all(feature = "wayland", any(target_os = "linux", target_os = "freebsd")))]
+         {
+             self.wayland.clear_subsurface_list();
+         }
+@@ -77,7 +77,7 @@
+         id: window::Id,
+         window: &dyn HasWindowHandle,
+     ) {
+-        #[cfg(all(feature = "wayland", target_os = "linux"))]
++        #[cfg(all(feature = "wayland", any(target_os = "linux", target_os = "freebsd")))]
+         {
+             use cctk::sctk::reexports::client::{
+                 protocol::wl_surface::WlSurface, Proxy,
+@@ -128,7 +128,7 @@
+     pub(crate) fn create_surface(
+         &mut self,
+     ) -> Option<Box<dyn HasWindowHandle + Send + Sync + 'static>> {
+-        #[cfg(all(feature = "wayland", target_os = "linux"))]
++        #[cfg(all(feature = "wayland", any(target_os = "linux", target_os = "freebsd")))]
+         {
+             return self.wayland.create_surface();
+         }
+@@ -144,7 +144,7 @@
+         data: &[u8],
+         offset: Vector,
+     ) {
+-        #[cfg(all(feature = "wayland", target_os = "linux"))]
++        #[cfg(all(feature = "wayland", any(target_os = "linux", target_os = "freebsd")))]
+         {
+             return self.wayland.update_surface_shm(
+                 surface, width, height, scale, data, offset,
+@@ -183,7 +183,7 @@
+     C: Compositor<Renderer = P::Renderer>,
+ {
+     match e {
+-        #[cfg(all(feature = "wayland", target_os = "linux"))]
++        #[cfg(all(feature = "wayland", any(target_os = "linux", target_os = "freebsd")))]
+         Event::Wayland(e) => {
+             platform_specific.wayland.handle_event(
+                 e,
+--- winit/src/program.rs.orig	2025-08-12 05:49:03.664542000 +0900
++++ winit/src/program.rs	2025-08-12 05:49:23.665007000 +0900
+@@ -773,7 +773,7 @@
+ 
+     let mut platform_specific_handler =
+         crate::platform_specific::PlatformSpecific::default();
+-    #[cfg(all(feature = "wayland", target_os = "linux"))]
++    #[cfg(all(feature = "wayland", any(target_os = "linux", target_os = "freebsd")))]
+     if is_wayland {
+         platform_specific_handler = platform_specific_handler.with_wayland(
+             control_sender.clone(),
