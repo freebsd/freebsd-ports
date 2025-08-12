@@ -5,16 +5,16 @@ Currently available providers:
 
 - Deepseek (Requires API key)
 - Groq (Requires a free API Key. Many models)
-- Isou (Deepseek-chat with SEARXNG)
-- KoboldAI (koboldcpp/HF_SPACE_Tiefighter-13B)
-- Ollama (Supports many models)
+- Isou (Free) (Deepseek-chat with SEARXNG)
+- KoboldAI (Free) (koboldcpp/HF_SPACE_Tiefighter-13B)
+- Ollama (Local models) (Supports many models)
 - OpenAI (All models, Requires API Key, supports custom endpoints)
-- Phind (Phind Model)
+- Phind (Free) (Phind Model)
 - Pollinations (Many free models)
 - Gemini (Requires a free API key, supports many models,
   default model is gemini-2.0-flash)
 
 Image Generation Models:
 
-- Arta
-- Pollinations
+- Arta (Free)
+- Pollinations (Free)
