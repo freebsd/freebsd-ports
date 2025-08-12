@@ -1,5 +1,5 @@
 PORTNAME=	cysignals
-PORTVERSION=	1.12.3
+PORTVERSION=	1.12.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorlog>0:devel/py-colorlog@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang pkgconfig pytest python shebangfix
 SHEBANG_FILES=	src/scripts/cysignals-CSI
-USE_PYTHON=	cython pep517
+USE_PYTHON=	cython3 pep517
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 TEST_TARGET=	check
