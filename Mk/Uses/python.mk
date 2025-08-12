@@ -144,8 +144,6 @@
 #
 #	pytest		- Run tests with latest pytest (devel/py-pytest)
 #
-#	pytest4		- Run tests with pytest 4.x (devel/py-pytest4)
-#
 #	unittest	- Run tests with unittest
 #
 #	unittest2	- Run tests with unittest2 (devel/py-unittest2)
@@ -371,7 +369,6 @@ _VALID_PYTHON_FEATURES=	allflavors \
 			pep517 \
 			py3kplist \
 			pytest \
-			pytest4 \
 			pythonprefix \
 			unittest \
 			unittest2
@@ -389,9 +386,6 @@ IGNORE=	uses unknown USE_PYTHON features: ${_INVALID_PYTHON_FEATURES}
 .  for var in ${USE_PYTHON}
 _PYTHON_FEATURE_${var:C/=.*$//:tu}=	${var:C/.*=//:S/,/ /g}
 .  endfor
-.  if defined(_PYTHON_FEATURE_PYTEST) && defined(_PYTHON_FEATURE_PYTEST4)
-IGNORE=		uses either USE_PYTHON=pytest or USE_PYTHON=pytest4, not both of them
-.  endif
 
 # distutils automatically generates flavors depending on the supported
 # versions.
@@ -781,10 +775,6 @@ TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose2>=0:devel/py-nose2@${PY_FLAVOR}
 # pytest support
 .  if defined(_PYTHON_FEATURE_PYTEST)
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytest>=7,1:devel/py-pytest@${PY_FLAVOR}
-.  elif defined(_PYTHON_FEATURE_PYTEST4)
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytest4>=4.6,1:devel/py-pytest4@${PY_FLAVOR}
-.  endif
-.  if defined(_PYTHON_FEATURE_PYTEST) || defined(_PYTHON_FEATURE_PYTEST4)
 PYTEST_BROKEN_TESTS?=	# empty
 PYTEST_IGNORED_TESTS?=	# empty
 _PYTEST_SKIPPED_TESTS?=	# empty
@@ -797,7 +787,7 @@ _PYTEST_SKIPPED_TESTS+=	${PYTEST_IGNORED_TESTS}
 .      endif
 .    endif # !defined(PYTEST_ENABLE_ALL_TESTS)
 _PYTEST_FILTER_EXPRESSION=	${_PYTEST_SKIPPED_TESTS:C/^(.)/and not \1/:tW:C/^and //}
-.  endif # defined(_PYTHON_FEATURE_PYTEST) || defined(_PYTHON_FEATURE_PYTEST4)
+.  endif # defined(_PYTHON_FEATURE_PYTEST)
 
 # unittest2 support
 .  if defined(_PYTHON_FEATURE_UNITTEST2)
@@ -1031,12 +1021,12 @@ do-test:
 .    endif
 .  endif # defined(_PYTHON_FEATURE_NOSE2)
 
-.  if defined(_PYTHON_FEATURE_PYTEST) || defined(_PYTHON_FEATURE_PYTEST4)
+.  if defined(_PYTHON_FEATURE_PYTEST)
 .    if !target(do-test)
 do-test:
 	cd ${TEST_WRKSRC} && ${SETENVI} ${WRK_ENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -k '${_PYTEST_FILTER_EXPRESSION}' -rs -v -o addopts= ${TEST_ARGS:NDESTDIR=*}
 .    endif
-.  endif # defined(_PYTHON_FEATURE_PYTEST) || defined(_PYTHON_FEATURE_PYTEST4)
+.  endif # defined(_PYTHON_FEATURE_PYTEST)
 
 .  if defined(_PYTHON_FEATURE_UNITTEST)
 .    if !target(do-test)
