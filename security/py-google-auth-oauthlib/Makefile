@@ -1,9 +1,9 @@
 PORTNAME=	google-auth-oauthlib
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	google_auth_oauthlib-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Authentication Library
