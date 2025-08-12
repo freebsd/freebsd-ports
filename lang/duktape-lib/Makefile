@@ -1,5 +1,6 @@
 PORTNAME=	duktape
 DISTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	https://github.com/svaarala/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://duktape.org/
@@ -16,6 +17,7 @@ USES=		gmake tar:xz
 USE_LDCONFIG=	yes
 
 MAKEFILE=	Makefile.sharedlibrary
+MAKE_ARGS=	INSTALL_PREFIX=${PREFIX}
 
 MAJOR=	207
 MINOR=	20700
