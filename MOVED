@@ -4720,3 +4720,4 @@ multimedia/gstreamer1-validate|devel/gstreamer1-devtools|2025-08-11|Project rena
 devel/py-types-PyYAML|devel/py-types-pyyaml|2025-08-12|Move devel/py-types-PyYAML to devel/py-types-pyyaml
 devel/py-pluggy0|devel/py-pluggy|2025-08-12|Remove obsoleted port. Use devel/py-pluggy instead
 devel/py-types-click|devel/py-click|2025-08-12|Remove obsoleted port. The click package includes type annotations or type stubs since version 8.0. Use devel/py-click instead
+devel/py-types-cryptography|security/py-cryptography|2025-08-12|Remove obsoleted port. The cryptography package includes type annotations or type stubs since version 3.4.4. Use security/py-cryptography instead

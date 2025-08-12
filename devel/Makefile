@@ -6091,7 +6091,6 @@
     SUBDIR += py-types-Pillow
     SUBDIR += py-types-Pygments
     SUBDIR += py-types-Werkzeug
-    SUBDIR += py-types-cryptography
     SUBDIR += py-types-decorator
     SUBDIR += py-types-docutils
     SUBDIR += py-types-futures
