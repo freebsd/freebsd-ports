@@ -54,7 +54,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-sprockets-gitlab>=3.7.5<3.8:devel/rubygem-sprockets-gitlab \
 	rubygem-sprockets-rails-rails-gitlab>=3.5.2<3.6:devel/rubygem-sprockets-rails-rails-gitlab \
 	rubygem-view_component-rails-gitlab>=3.23.2<3.24:devel/rubygem-view_component-rails-gitlab \
-	rubygem-pg>=1.5.9<1.6:databases/rubygem-pg \
+	rubygem-pg-gitlab>=1.5.9<1.6:databases/rubygem-pg-gitlab \
 	rubygem-rugged>=1.6<2:devel/rubygem-rugged \
 	rubygem-faraday-gitlab>=2.13.1<3:www/rubygem-faraday-gitlab \
 	rubygem-faraday-retry-gitlab>=2<3:www/rubygem-faraday-retry-gitlab \

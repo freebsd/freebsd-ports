@@ -1,5 +1,5 @@
 GITLAB_VERSION=		18.2.1
-GITLAB_PORTREVISION=	2
+GITLAB_PORTREVISION=	3
 
 # Git version gitaly should use (from gitlab mirror)
 # Find current tag from Makefile and .gitlab-ci.yaml
@@ -14,4 +14,3 @@ GITLAB_KAS_GRPC_VERSION=	${GITLAB_VERSION}
 
 # Rails version
 RAILS_VERSION=	7.1.5.1
-
