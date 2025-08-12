@@ -1,3 +1,6 @@
+Obtained from:	https://github.com/php-memcached-dev/php-memcached/commit/bb83855d1874d1741ec51277f2ed496a476d35ff
+		https://github.com/php-memcached-dev/php-memcached/commit/de7d53d13aecd329f03eab2eaf51c1ad8fa5c18f
+
 --- php_memcached.c.orig	2024-10-17 17:34:21 UTC
 +++ php_memcached.c
 @@ -3961,7 +3961,7 @@ zend_class_entry *php_memc_get_exception_base(int root
@@ -8,4 +11,15 @@
 +	return zend_ce_exception;
  }
  
+ 
+--- php_memcached_private.h.orig	2024-10-17 17:34:21 UTC
++++ php_memcached_private.h
+@@ -43,7 +43,7 @@
+ #include <ext/standard/info.h>
+ #include <zend_extensions.h>
+ #include <zend_exceptions.h>
+-#include <ext/standard/php_smart_string.h>
++#include <Zend/zend_smart_string.h>
+ #include <ext/standard/php_var.h>
+ #include <ext/standard/basic_functions.h>
  
