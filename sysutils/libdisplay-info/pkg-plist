@@ -2,11 +2,12 @@ bin/di-edid-decode
 include/libdisplay-info/cta.h
 include/libdisplay-info/cvt.h
 include/libdisplay-info/displayid.h
+include/libdisplay-info/displayid2.h
 include/libdisplay-info/dmt.h
 include/libdisplay-info/edid.h
 include/libdisplay-info/gtf.h
 include/libdisplay-info/info.h
 lib/libdisplay-info.so
 lib/libdisplay-info.so.%%VERSION%%
-lib/libdisplay-info.so.2
+lib/libdisplay-info.so.3
 libdata/pkgconfig/libdisplay-info.pc

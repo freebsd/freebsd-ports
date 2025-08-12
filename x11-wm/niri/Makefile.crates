@@ -204,9 +204,6 @@ CARGO_CRATES=	accesskit-0.21.0 \
 		libadwaita-0.7.2 \
 		libadwaita-sys-0.7.2 \
 		libc-0.2.175 \
-		libdisplay-info-0.2.2 \
-		libdisplay-info-derive-0.1.0 \
-		libdisplay-info-sys-0.2.2 \
 		libloading-0.8.8 \
 		libm-0.2.15 \
 		libredox-0.1.9 \
@@ -506,5 +503,6 @@ CARGO_CRATES=	accesskit-0.21.0 \
 		zvariant-5.7.0 \
 		zvariant_derive-5.7.0 \
 		zvariant_utils-3.2.1 \
+		libdisplay-info,libdisplay-info-derive,libdisplay-info-sys@git+https://github.com/Smithay/libdisplay-info-rs?branch=feature/0.3.0\#5b706d544d87f1bcae4c5ba97b281a8ab16754ed \
 		libspa,libspa-sys,pipewire,pipewire-sys@git+https://gitlab.freedesktop.org/pipewire/pipewire-rs.git\#93138d01b23628521b29b5604bbebe991cba4c65 \
 		smithay,smithay-drm-extras@git+https://github.com/Smithay/smithay.git\#20d2dacd71394b5f96f6ace0a70a6f20dc62c0c6

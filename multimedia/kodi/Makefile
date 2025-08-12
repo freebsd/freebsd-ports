@@ -1,6 +1,6 @@
 PORTNAME=	kodi
 DISTVERSION=	21.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia java
 MASTER_SITES=	http://mirrors.kodi.tv/build-deps/sources/
 DISTFILES=	apache-groovy-binary-${GROOVY_VERSION}.zip \

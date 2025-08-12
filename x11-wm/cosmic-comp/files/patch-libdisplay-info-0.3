@@ -1,0 +1,52 @@
+https://github.com/Smithay/libdisplay-info-rs/pull/17
+
+--- Cargo.lock.orig	2025-04-24 10:45:50 UTC
++++ Cargo.lock
+@@ -2900,9 +2900,8 @@ name = "libdisplay-info"
+ 
+ [[package]]
+ name = "libdisplay-info"
+-version = "0.2.2"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "4210cfe93a0dc37228e08105e3c13171e5af816f7bd39e00e3d3adcf2b487a2b"
++version = "0.2.3"
++source = "git+https://github.com/Smithay/libdisplay-info-rs?branch=feature%2F0.3.0#5b706d544d87f1bcae4c5ba97b281a8ab16754ed"
+ dependencies = [
+  "bitflags 2.8.0",
+  "libc",
+@@ -2913,9 +2912,8 @@ name = "libdisplay-info-derive"
+ 
+ [[package]]
+ name = "libdisplay-info-derive"
+-version = "0.1.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "ea1cd31036b732a546d845f9485c56b1b606b5e476b0821c680dd66c8cd6fcee"
++version = "0.1.1"
++source = "git+https://github.com/Smithay/libdisplay-info-rs?branch=feature%2F0.3.0#5b706d544d87f1bcae4c5ba97b281a8ab16754ed"
+ dependencies = [
+  "proc-macro2",
+  "quote",
+@@ -2924,9 +2922,8 @@ name = "libdisplay-info-sys"
+ 
+ [[package]]
+ name = "libdisplay-info-sys"
+-version = "0.2.2"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "7f4f9264ece23c37ffa023ae635f48d588e1786745dad06dff10c9fb99dc646c"
++version = "0.3.0"
++source = "git+https://github.com/Smithay/libdisplay-info-rs?branch=feature%2F0.3.0#5b706d544d87f1bcae4c5ba97b281a8ab16754ed"
+ dependencies = [
+  "semver",
+  "system-deps",
+--- Cargo.toml.orig	2025-04-24 10:45:50 UTC
++++ Cargo.toml
+@@ -118,6 +118,9 @@ lto = "fat"
+ [profile.release]
+ lto = "fat"
+ 
++[ patch.crates-io]
++libdisplay-info = { git = "https://github.com/Smithay/libdisplay-info-rs", branch = "feature/0.3.0" }
++
+ [patch."https://github.com/pop-os/cosmic-protocols"]
+ cosmic-protocols = { git = "https://github.com/pop-os//cosmic-protocols", branch = "main" }
+ cosmic-client-toolkit = { git = "https://github.com/pop-os//cosmic-protocols", branch = "main" }
