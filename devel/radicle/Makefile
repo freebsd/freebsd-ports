@@ -1,5 +1,5 @@
 PORTNAME=	radicle
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3.0
 CATEGORIES=	devel
 MASTER_SITES=	https://distfiles.pirateparty.in/ashish/:sources \
 		LOCAL/ashish:sources
@@ -17,24 +17,24 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	DOCS
 
-GIT_HEAD=	29043134a361aa8931cd069a1c72e3d2e8deae97
+GIT_HEAD=	0e48723b419be95340a5d9858d76963e8e97137b
 
 USES=			cargo
 CARGO_INSTALL_PATH=	crates/radicle-cli crates/radicle-remote-helper \
 			crates/radicle-node
 CARGO_ENV=		GIT_HEAD=${GIT_HEAD} \
 			RADICLE_VERSION=${DISTVERSION} \
-			SOURCE_DATE_EPOCH=1753025592
+			SOURCE_DATE_EPOCH=1754993629
 PLIST_FILES=		bin/git-remote-rad \
 			bin/rad \
 			bin/radicle-node
 
 DOCS_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
-DOCS_PLIST_FILES=	man/man1/git-remote-rad.1 \
-			man/man1/rad-id.1 \
-			man/man1/rad-patch.1 \
-			man/man1/rad.1 \
-			man/man1/radicle-node.1
+DOCS_PLIST_FILES=	share/man/man1/git-remote-rad.1.gz \
+			share/man/man1/rad-id.1.gz \
+			share/man/man1/rad-patch.1.gz \
+			share/man/man1/rad.1.gz \
+			share/man/man1/radicle-node.1.gz
 
 # courtesy: https://reproducible-builds.org/docs/archives/
 generate-tarball:
@@ -55,9 +55,9 @@ post-build-DOCS-on:
 	cd ${WRKSRC} && scripts/build-man-pages.sh . *.adoc
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1
 .for MANPAGE in ${DOCS_PLIST_FILES:T}
-	${INSTALL_MAN} ${WRKSRC}/${MANPAGE} ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${MANPAGE:S/.gz//} ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 
 .include <bsd.port.mk>
