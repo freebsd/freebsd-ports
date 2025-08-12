@@ -22,11 +22,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asttokens>=2.1.0:devel/py-asttokens@${PY_FLA
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}littleutils>=0:devel/py-littleutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0,1:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typeguard>=0:devel/py-typeguard@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cython>=0:lang/cython@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}typeguard>=0:devel/py-typeguard@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517 pytest
+USE_PYTHON=	autoplist concurrent cython_test pep517 pytest
 
 NO_ARCH=	yes
 
