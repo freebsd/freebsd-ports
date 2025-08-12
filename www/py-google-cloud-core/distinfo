@@ -1,3 +1,3 @@
-TIMESTAMP = 1702543714
-SHA256 (google-cloud-core-2.4.1.tar.gz) = 9b7749272a812bde58fff28868d0c5e2f585b82f37e09a1f6ed2d4d10f134073
-SIZE (google-cloud-core-2.4.1.tar.gz) = 35587
+TIMESTAMP = 1753796116
+SHA256 (google_cloud_core-2.4.3.tar.gz) = 1fab62d7102844b278fe6dead3af32408b1df3eb06f5c7e8634cbd40edc4da53
+SIZE (google_cloud_core-2.4.3.tar.gz) = 35861

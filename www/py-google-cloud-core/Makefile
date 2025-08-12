@@ -1,9 +1,9 @@
 PORTNAME=	google-cloud-core
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.4.3
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	google_cloud_core-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	API Client library for Google Cloud: Core Helpers
