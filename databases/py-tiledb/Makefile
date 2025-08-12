@@ -12,6 +12,8 @@ WWW=		https://tiledb-inc-tiledb.readthedocs-hosted.com/projects/tiledb-py/en/sta
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	error: static assertion failed due to requirement 'sizeof(unsigned long long) <= sizeof(int)': Implicit narrowing is not permitted.
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.25,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybind11>=0<3:devel/py-pybind11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0:devel/py-scikit-build-core@${PY_FLAVOR} \
