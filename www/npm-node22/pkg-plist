@@ -283,6 +283,7 @@ lib/node_modules/npm/lib/utils/installed-shallow.js
 lib/node_modules/npm/lib/utils/is-windows.js
 lib/node_modules/npm/lib/utils/log-file.js
 lib/node_modules/npm/lib/utils/npm-usage.js
+lib/node_modules/npm/lib/utils/oidc.js
 lib/node_modules/npm/lib/utils/open-url.js
 lib/node_modules/npm/lib/utils/output-error.js
 lib/node_modules/npm/lib/utils/ping.js
