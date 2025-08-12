@@ -90,7 +90,7 @@ include/linbox/algorithms/minpoly-rational.h
 include/linbox/algorithms/numeric-solver-lapack.h
 include/linbox/algorithms/one-invariant-factor.h
 include/linbox/algorithms/opencl-environ.h
-include/linbox/algorithms/opencl-kernels/opencl-domain-kernels.inl
+%%FULL%%include/linbox/algorithms/opencl-kernels/opencl-domain-kernels.inl
 include/linbox/algorithms/opencl-resource-controller.h
 include/linbox/algorithms/poly-det.h
 include/linbox/algorithms/poly-dixon.h

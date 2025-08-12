@@ -37,7 +37,8 @@ MIN_DESC=		Lightweight package, with less dependencies
 MIN_CONFIGURE_ON=	--without-saclib --without-ocl
 
 FULL_DESC=		Complete package with all its dependencies
-FULL_BUILD_DEPENDS=	gnuplot:math/gnuplot
+FULL_BUILD_DEPENDS=	gnuplot:math/gnuplot		\
+			opencl>0:devel/opencl
 FULL_LIB_DEPENDS=	libflint.so:math/flint2		\
 			libfplll.so:math/fplll		\
 			libiml.so:math/iml		\
