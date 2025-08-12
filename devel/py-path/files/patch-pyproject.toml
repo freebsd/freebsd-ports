@@ -1,0 +1,22 @@
+--- pyproject.toml.orig	2025-07-27 20:40:00 UTC
++++ pyproject.toml
+@@ -1,9 +1,7 @@ requires = [
+ [build-system]
+ requires = [
+-	"setuptools>=77",
++	"setuptools>=61",
+ 	"setuptools_scm[toml]>=3.4.1",
+-	# jaraco/skeleton#174
+-	"coherent.licensed",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+@@ -26,7 +24,7 @@ requires-python = ">=3.9"
+ 	"Topic :: Software Development :: Libraries :: Python Modules",
+ ]
+ requires-python = ">=3.9"
+-license = "MIT"
++license = {text = "MIT"}
+ dependencies = [
+ ]
+ dynamic = ["version"]
