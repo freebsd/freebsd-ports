@@ -1,4 +1,4 @@
-TIMESTAMP = 1751268076
+TIMESTAMP = 1754877902
 SHA256 (rust/crates/actix-codec-0.5.2.crate) = 5f7b0a21988c1bf877cf4759ef5ddaac04c1c9fe808c9142ecb78ba97d97a28a
 SIZE (rust/crates/actix-codec-0.5.2.crate) = 14085
 SHA256 (rust/crates/actix-files-0.6.6.crate) = 0773d59061dedb49a8aed04c67291b9d8cf2fe0b60130a381aab53c6dd86e9be
@@ -891,5 +891,5 @@ SHA256 (rust/crates/zstd-safe-7.2.4.crate) = 8f49c4d5f0abb602a93fb8736af2a4f4dd9
 SIZE (rust/crates/zstd-safe-7.2.4.crate) = 29350
 SHA256 (rust/crates/zstd-sys-2.0.15+zstd.1.5.7.crate) = eb81183ddd97d0c74cedf1d50d85c8d08c1b8b68ee863bdee9e706eedba1a237
 SIZE (rust/crates/zstd-sys-2.0.15+zstd.1.5.7.crate) = 774847
-SHA256 (svenstaro-miniserve-v0.30.0_GH0.tar.gz) = 147bd2ecc9be81ae2adf1e9f4f2b77270555cfae669cc9ba0d2f6442387c58f0
-SIZE (svenstaro-miniserve-v0.30.0_GH0.tar.gz) = 180876
+SHA256 (svenstaro-miniserve-v0.31.0_GH0.tar.gz) = a4773ae5a6fbc45baf15a5dcb54fd6b7e0151f2fde25c26ddafc0f95b7d26c32
+SIZE (svenstaro-miniserve-v0.31.0_GH0.tar.gz) = 183252
