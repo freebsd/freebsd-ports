@@ -8,13 +8,13 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to Cipher Block Chaining with DES and IDEA
 WWW=		https://metacpan.org/release/Crypt-CBC
 
-LICENSE=	ART10
+LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Crypt-PBKDF2>=0:security/p5-Crypt-PBKDF2 \
 		p5-Crypt-URandom>=0:security/p5-Crypt-URandom \
 		p5-CryptX>=0:security/p5-CryptX
-
 TEST_DEPENDS=	p5-Crypt-Blowfish>=0:security/p5-Crypt-Blowfish \
 		p5-Crypt-Blowfish_PP>=0:security/p5-Crypt-Blowfish_PP \
 		p5-Crypt-CAST5>=0:security/p5-Crypt-CAST5 \
