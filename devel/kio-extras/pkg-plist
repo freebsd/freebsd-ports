@@ -33,7 +33,7 @@ lib/libkioarchive6.so.6.0.0
 %%QT_PLUGINDIR%%/kf6/thumbcreator/directorythumbnail.so
 %%QT_PLUGINDIR%%/kf6/thumbcreator/djvuthumbnail.so
 %%QT_PLUGINDIR%%/kf6/thumbcreator/ebookthumbnail.so
-%%EXR%%%%QT_PLUGINDIR%%/kf6/thumbcreator/exrthumbnail.so
+%%OPENEXR%%%%QT_PLUGINDIR%%/kf6/thumbcreator/exrthumbnail.so
 %%QT_PLUGINDIR%%/kf6/thumbcreator/imagethumbnail.so
 %%QT_PLUGINDIR%%/kf6/thumbcreator/jpegthumbnail.so
 %%QT_PLUGINDIR%%/kf6/thumbcreator/kraorathumbnail.so
