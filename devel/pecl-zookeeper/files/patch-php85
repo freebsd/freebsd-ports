@@ -1,3 +1,14 @@
+--- php_zookeeper.c.orig	2025-01-02 06:11:14 UTC
++++ php_zookeeper.c
+@@ -39,7 +39,7 @@
+ #include <ext/standard/info.h>
+ #include <zend_extensions.h>
+ 
+-#include <ext/standard/php_smart_string.h>
++#include <Zend/zend_smart_string.h>
+ 
+ #include "php_zookeeper.h"
+ #include "php_zookeeper_private.h"
 --- php_zookeeper_exceptions.c.orig	2025-01-02 06:11:14 UTC
 +++ php_zookeeper_exceptions.c
 @@ -39,7 +39,7 @@ void php_zk_register_exceptions()
