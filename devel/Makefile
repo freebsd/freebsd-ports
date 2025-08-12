@@ -6086,7 +6086,6 @@
     SUBDIR += py-typeguard
     SUBDIR += py-typer
     SUBDIR += py-types-Pygments
-    SUBDIR += py-types-Werkzeug
     SUBDIR += py-types-decorator
     SUBDIR += py-types-docutils
     SUBDIR += py-types-jsonschema
