@@ -4725,3 +4725,4 @@ devel/py-types-Flask|www/py-flask|2025-08-12|Remove obsoleted port. The Flask pa
 devel/py-types-futures||2025-08-12|Remove obsoleted port
 devel/py-types-Jinja2|devel/py-Jinja2|2025-08-12|Remove obsoleted port. The Jinja2 package includes type annotations or type stubs since version 3.0. Use devel/py-Jinja2 instead
 devel/py-types-MarkupSafe|textproc/py-markupsafe|2025-08-12|Remove obsoleted port. The MarkupSafe package includes type annotations or type stubs since version 2.0. Use textproc/py-markupsafe instead
+devel/py-types-Pillow|graphics/py-pillow|2025-08-12|Remove obsoleted port. The Pillow package includes type annotations or type stubs since version 10.3.0. Use graphics/py-pillow instead
