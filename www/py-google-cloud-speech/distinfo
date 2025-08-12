@@ -1,3 +1,3 @@
-TIMESTAMP = 1720536514
-SHA256 (google-cloud-speech-2.26.1.tar.gz) = 12aceb02e34c14ed49eea3102ae7e776dfd8722babdd1466de4db0de8c1f91a9
-SIZE (google-cloud-speech-2.26.1.tar.gz) = 349975
+TIMESTAMP = 1753796124
+SHA256 (google_cloud_speech-2.33.0.tar.gz) = fd08511b5124fdaa768d71a4054e84a5d8eb02531cb6f84f311c0387ea1314ed
+SIZE (google_cloud_speech-2.33.0.tar.gz) = 389072
