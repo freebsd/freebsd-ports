@@ -1,3 +1,2 @@
 This is a PEP 561 type stub package for the setuptools package. It can be used
-by type-checking tools like mypy, pyright, pytype, PyCharm, etc. to check code
-that uses setuptools.
+by type checkers to check code that uses setuptools.
