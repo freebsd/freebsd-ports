@@ -52,7 +52,9 @@ MESON_ARGS=	-Dtests=false \
 
 GSSAPI_BASE_USES=		gssapi
 GSSAPI_BASE_MESON_ON=		-Dgssapi=enabled
+.if !exists(/usr/libdata/pkgconfig/mit-krb5.pc)
 GSSAPI_BASE_VARS=		pkgconfig_paths=${PATCHDIR}
+.endif
 
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal
 GSSAPI_HEIMDAL_MESON_ON=	-Dgssapi=enabled
@@ -67,8 +69,10 @@ VAPI_MESON_ENABLED=		vapi
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
+.if !exists(/usr/libdata/pkgconfig/mit-krb5.pc)
 post-install-GSSAPI_BASE-on:
 	${SED} -e 's|krb5-gssapi,||' \
 		${BUILD_WRKSRC}/meson-private/libsoup-3.0.pc > ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libsoup-3.0.pc
+.endif
 
 .include <bsd.port.mk>
