@@ -1,5 +1,6 @@
 PORTNAME=	llm
 DISTVERSION=	0.26
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click-default-group>=1.2.3:devel/py-click-de
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-ulid2>=1<3:textproc/py-python-ulid2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite-migrate>0:databases/py-sqlite-migrate@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}types-PyYAML>=0:devel/py-types-PyYAML@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}types-pyyaml>=0:devel/py-types-pyyaml@${PY_FLAVOR}
 
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent pep517

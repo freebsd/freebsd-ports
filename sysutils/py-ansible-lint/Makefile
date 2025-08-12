@@ -43,7 +43,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage_enable_subprocess>=0:devel/py-cove
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml.clib>=0:devel/py-ruamel.yaml.clib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spdx-tools>=0.7.1:misc/py-spdx-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-jsonschema>=0:devel/py-types-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}types-PyYAML>=0:devel/py-types-PyYAML@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}types-pyyaml>=0:devel/py-types-pyyaml@${PY_FLAVOR} \
 		bash:shells/bash
 
 USES=		python:3.9+

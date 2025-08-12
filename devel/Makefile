@@ -6090,7 +6090,6 @@
     SUBDIR += py-types-Jinja2
     SUBDIR += py-types-MarkupSafe
     SUBDIR += py-types-Pillow
-    SUBDIR += py-types-PyYAML
     SUBDIR += py-types-Pygments
     SUBDIR += py-types-Werkzeug
     SUBDIR += py-types-click
@@ -6104,6 +6103,7 @@
     SUBDIR += py-types-psutil
     SUBDIR += py-types-psycopg2
     SUBDIR += py-types-python-dateutil
+    SUBDIR += py-types-pyyaml
     SUBDIR += py-types-requests
     SUBDIR += py-types-retry
     SUBDIR += py-types-setuptools
