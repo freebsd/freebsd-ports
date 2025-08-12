@@ -1,5 +1,5 @@
 PORTNAME=	open-uri-cached
-PORTVERSION=	1.0.0
+PORTVERSION=	2.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
