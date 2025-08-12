@@ -1,5 +1,5 @@
 PORTNAME=	omniauth-cas
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
