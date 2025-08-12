@@ -29,8 +29,8 @@ SHEBANG_FILES=	info/kde-info2html
 # CVE-2018-19120
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineWidget
 
-OPTIONS_DEFINE=	SAMBA AFC MTP EXR EXIV SLP SSH TAGLIB DOCS
-OPTIONS_DEFAULT=	SAMBA AFC MTP EXR EXIV SLP SSH TAGLIB
+OPTIONS_DEFINE=	SAMBA AFC MTP EXIV OPENEXR SLP SSH TAGLIB DOCS
+OPTIONS_DEFAULT=	SAMBA AFC MTP EXIV OPENEXR SLP SSH TAGLIB
 OPTIONS_SUB=	yes
 
 SAMBA_DESC=		Needed to build the SMB kioslave
@@ -47,13 +47,13 @@ MTP_DESC=		Needed to build the MTP kioslave
 MTP_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Mtp
 MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 
-EXR_DESC=		Provides support for OpenEXR formatted images in the thumbnail kioslave
-EXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
-EXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
-
 EXIV_DESC=		Provides support for automatic rotation of JPEGs in the thumbnail kioslave
 EXIV_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF6kExiv2
 EXIV_USE=		KDE=libkexiv2
+
+OPENEXR_DESC=		Provides support for OpenEXR formatted images in the thumbnail kioslave
+OPENEXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
+OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
 
 SLP_DESC=		Provides SLP support in the network:/ kioslave
 SLP_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_SLP
