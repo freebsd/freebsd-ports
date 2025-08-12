@@ -1,3 +1,3 @@
 This is a PEP 561 type stub package for the toml package. It can be used by
-type-checking tools like mypy, PyCharm, pytype etc. to check code that uses
-toml.
+type-checking tools like mypy, pyright, pytype, PyCharm, etc. to check code that
+uses toml.
