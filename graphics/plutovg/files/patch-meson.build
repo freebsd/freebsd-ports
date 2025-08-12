@@ -1,0 +1,16 @@
+cherry-picked from https://github.com/sammycage/plutovg/pull/62
+
+--- meson.build.orig	2025-07-22 17:34:24 UTC
++++ meson.build
+@@ -30,6 +30,11 @@ endif
+     plutovg_deps += [math_dep]
+ endif
+ 
++stdthreads_dep = cc.find_library('stdthreads', required: false)
++if stdthreads_dep.found()
++    plutovg_deps += [stdthreads_dep]
++endif
++
+ plutovg_sources = [
+     'source/plutovg-blend.c',
+     'source/plutovg-canvas.c',
