@@ -1,5 +1,5 @@
 PORTNAME=	geogebra
-DISTVERSION=	5-2-894-2
+DISTVERSION=	5-2-894-3
 CATEGORIES=	math education java
 MASTER_SITES=	http://download.geogebra.org/installers/5.2/ \
 		https://static.geogebra.org/images/ \
