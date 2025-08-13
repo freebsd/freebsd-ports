@@ -1,4 +1,4 @@
---- core/Common/3dParty/v8_89/v8/build/config/compiler/BUILD.gn.orig	2022-04-04 20:12:27 UTC
+--- core/Common/3dParty/v8_89/v8/build/config/compiler/BUILD.gn.orig	2022-05-13 11:39:36 UTC
 +++ core/Common/3dParty/v8_89/v8/build/config/compiler/BUILD.gn
 @@ -132,7 +132,7 @@ declare_args() {
    #
@@ -27,7 +27,18 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
  
      cflags += [
-@@ -799,7 +799,7 @@ config("compiler_cpu_abi") {
+@@ -785,10 +785,6 @@ config("compiler_cpu_abi") {
+         ]
+       }
+     } else if (current_cpu == "arm") {
+-      if (is_clang && !is_android && !is_nacl) {
+-        cflags += [ "--target=arm-linux-gnueabihf" ]
+-        ldflags += [ "--target=arm-linux-gnueabihf" ]
+-      }
+       if (!is_nacl) {
+         cflags += [
+           "-march=$arm_arch",
+@@ -799,7 +795,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -36,7 +47,7 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1149,7 +1149,7 @@ config("compiler_deterministic") {
+@@ -1149,7 +1145,7 @@ config("compiler_deterministic") {
        "-Xclang",
        ".",
      ]
@@ -45,7 +56,7 @@
        # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
        asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
      }
-@@ -1177,7 +1177,7 @@ config("clang_revision") {
+@@ -1177,7 +1173,7 @@ config("clang_revision") {
  }
  
  config("clang_revision") {
@@ -54,7 +65,7 @@
      update_args = [
        "--print-revision",
        "--verify-version=$clang_version",
-@@ -1526,7 +1526,7 @@ config("default_warnings") {
+@@ -1526,7 +1522,7 @@ config("default_warnings") {
          "-Wno-undefined-var-template",
        ]
  
@@ -63,7 +74,7 @@
          # TODO(thakis): https://crbug.com/617318
          # Currently goma can not handle case sensitiveness for windows well.
          cflags += [ "-Wno-nonportable-include-path" ]
-@@ -1780,7 +1780,7 @@ config("thin_archive") {
+@@ -1780,7 +1776,7 @@ config("thin_archive") {
  config("thin_archive") {
    # The macOS and iOS default linker ld64 does not support reading thin
    # archives.
@@ -72,7 +83,7 @@
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2321,11 +2321,11 @@ config("symbols") {
+@@ -2321,11 +2317,11 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {
