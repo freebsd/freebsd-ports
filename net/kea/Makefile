@@ -1,6 +1,6 @@
 PORTNAME=	kea
 DISTVERSION=	3.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/${DISTVERSION}
 
@@ -20,8 +20,7 @@ MESON_ARGS=	--auto-features=disabled \
 		-Dnetconf=disabled
 
 BUILD_DEPENDS=	googletest>0:devel/googletest \
-		rst2man:textproc/py-docutils@${PY_FLAVOR} \
-		python3:lang/python3
+		rst2man:textproc/py-docutils@${PY_FLAVOR}
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${DISTVERSION:C/-.*//}
