@@ -1,6 +1,5 @@
 PORTNAME=	xscreensaver
-DISTVERSION=	6.10
-DISTVERSIONSUFFIX=	.1
+DISTVERSION=	6.12
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -10,14 +9,15 @@ WWW=		https://www.jwz.org/xscreensaver/
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libgle.so:graphics/gle \
-		libharfbuzz.so:print/harfbuzz
-RUN_DEPENDS=	giftopnm:graphics/netpbm \
-		p5-libwww>0:www/p5-libwww \
-		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https \
-		unix-selfauth-helper>0:security/unix-selfauth-helper
+EXTRACT_DEPENDS=	gtar:archivers/gtar
+LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2 \
+			libgle.so:graphics/gle \
+			libharfbuzz.so:print/harfbuzz
+RUN_DEPENDS=		giftopnm:graphics/netpbm \
+			p5-libwww>0:www/p5-libwww \
+			p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https \
+			unix-selfauth-helper>0:security/unix-selfauth-helper
 
 USES=		cpe gettext gl gmake gnome jpeg localbase:ldflags perl5 \
 		pkgconfig shebangfix xorg
@@ -53,13 +53,12 @@ CONFIGURE_ENV=	PERL="${PERL}"
 
 MAKE_ARGS=	install_prefix=${STAGEDIR}
 
+EXTRACT_CMD=	gtar
 SUB_FILES=	xscreensaver-blank.desktop xscreensaver-lock.desktop \
 		xscreensaver-start.desktop xscreensaver-stop.desktop
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
-
-OPTIONS_DEFINE=	FIREF NLS NSFW SETUID_HACKS XAOS1 XDALI XEARTH XMOUN XPLANET \
-		XSNOW
+OPTIONS_DEFINE=	FIREF NLS NSFW SETUID_HACKS WAYLAND XAOS1 XDALI XEARTH XMOUN \
+		XPLANET XSNOW
 OPTIONS_SUB=	yes
 
 FIREF_DESC=		Add extra port x11/fireflies
@@ -76,6 +75,9 @@ FIREF_RUN_DEPENDS=		${FIREF_HACKBIN}:x11/fireflies
 NLS_USES=			gettext-runtime
 NLS_CONFIGURE_ENABLE=		nls
 SETUID_HACKS_CONFIGURE_WITH=	setuid-hacks
+WAYLAND_BUILD_DEPENDS=		wayland-protocols>0:graphics/wayland-protocols
+WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland
+WAYLAND_CONFIGURE_WITH=		wayland
 XAOS1_RUN_DEPENDS=		xaos:graphics/xaos
 XDALI_RUN_DEPENDS=		xdaliclock:x11-clocks/xdaliclock
 XEARTH_RUN_DEPENDS=		xearth:astro/xearth
