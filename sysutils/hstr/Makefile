@@ -1,6 +1,5 @@
 PORTNAME=	hstr
 DISTVERSION=	3.1
-PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	monsieurp@gentoo.org
