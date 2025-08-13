@@ -11,7 +11,7 @@ WWW=		https://www.cog-genomics.org/plink/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=		aarch64 mips64 powerpc64 powerpc64le
+NOT_FOR_ARCHS=		aarch64 mips64 powerpc64
 NOT_FOR_ARCHS_REASON=	64bit code requires SSE2 instructions
 
 USES=		gmake fortran
@@ -25,6 +25,7 @@ WRKSRC_SUBDIR=	1.9
 MAKEFILE=	Makefile.std
 MAKE_ARGS=	ZLIB=-lz BLASFLAGS="${BLASLIB} ${LAPACKLIB}"
 CFLAGS+=	-DDYNAMIC_ZLIB -I${LOCALBASE}/include
+CFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS -D__SSE2__
 LDFLAGS+=	-lthr
 INSTALL_TARGET=	install-strip
 
