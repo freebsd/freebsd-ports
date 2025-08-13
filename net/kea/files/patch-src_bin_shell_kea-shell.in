@@ -1,0 +1,8 @@
+--- src/bin/shell/kea-shell.in.orig	2025-06-20 09:28:47.000000000 -0700
++++ src/bin/shell/kea-shell.in	2025-08-13 09:47:11.947513000 -0700
+@@ -1,4 +1,4 @@
+-#!@PYTHON@
++#!/usr/bin/env /usr/local/bin/python3
+ 
+ # Copyright (C) 2017-2025 Internet Systems Consortium, Inc. ("ISC")
+ #
