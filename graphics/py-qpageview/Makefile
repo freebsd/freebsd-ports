@@ -1,7 +1,6 @@
 PORTNAME=	qpageview
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
-PORTREVISION=	3
+DISTVERSION=	1.0.1
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,13 +11,13 @@ WWW=		https://qpageview.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-poppler-qt5>=0:graphics/py-python-poppler-qt5@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 
-USES=		pyqt:5 python qt:5
+USES=		pyqt:6 python qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	frescobaldi
-USE_PYQT=	pyqt5
-USE_PYTHON=	autoplist distutils
+USE_PYQT=	pyqt6
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
