@@ -1,7 +1,6 @@
 PORTNAME=	lunasvg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.1
-PORTREVISION=	1
+DISTVERSION=	3.4.0
 CATEGORIES=	graphics
 
 MAINTAINER=	alven@FreeBSD.org
@@ -19,9 +18,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sammycage
 USE_LDCONFIG=	yes
 
+EXTRACT_AFTER_ARGS=	--exclude plutovg --no-same-owner --no-same-permissions
+
 PLIST_SUB=	SOVERSION=${DISTVERSION}
 
-OPTIONS_DEFINE=		STATIC
+OPTIONS_DEFINE=	STATIC
 OPTIONS_SUB=	yes
 
 STATIC_MESON_ON=	-Ddefault_library=both
