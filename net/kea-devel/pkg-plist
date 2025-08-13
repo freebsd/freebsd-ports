@@ -526,8 +526,8 @@ lib/libkea-log.so.75.0.0
 %%MYSQL%%lib/libkea-mysql.so.86
 %%MYSQL%%lib/libkea-mysql.so.86.0.0
 %%PGSQL%%lib/libkea-pgsql.so
-%%PGSQL%%lib/libkea-pgsql.so.87
-%%PGSQL%%lib/libkea-pgsql.so.87.0.0
+%%PGSQL%%lib/libkea-pgsql.so.88
+%%PGSQL%%lib/libkea-pgsql.so.88.0.0
 lib/libkea-process.so
 lib/libkea-process.so.90
 lib/libkea-process.so.90.0.0

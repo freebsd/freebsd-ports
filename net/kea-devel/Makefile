@@ -46,10 +46,10 @@ MYSQL_SUB_LIST=		REQ_MYSQL=mysql
 MYSQL_SUB_LIST_OFF=	REQ_MYSQL=""
 
 PGSQL_USES=		pgsql
-PGSQ_MESON_ENABLED=	postgresql
+PGSQL_MESON_ENABLED=	postgresql
 PGSQL_SUB_LIST=		REQ_PGSQL=postgresql
 PGSQL_SUB_LIST_OFF=	REQ_PGSQL=""
-PGSQL_VARS=		WANT_PGSQL=client
+PGSQL_VARS=		WANT_PGSQL=lib
 
 post-build:
 	cd ${WRKSRC}/doc/sphinx/man; \
