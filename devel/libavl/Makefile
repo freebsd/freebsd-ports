@@ -9,6 +9,9 @@ MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library for balanced binary trees
 WWW=		https://adtinfo.org/
 
+DEPRECATED=	Since 2002 libavl is no longer distributed as a shared library.
+EXPIRATION_DATE=	2025-12-01
+
 GNU_CONFIGURE=	yes
 
 INFO=		avl
