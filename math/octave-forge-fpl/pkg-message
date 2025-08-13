@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Although the port builds, it is nonfunctional on sparc64 due to the absence
-of opendx.
-EOM
-}
-]
