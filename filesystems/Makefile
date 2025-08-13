@@ -106,6 +106,7 @@
     SUBDIR += rar2fs
     SUBDIR += rubygem-chef-winrm-fs
     SUBDIR += rubygem-winrm-fs
+    SUBDIR += rubygem-winrm-fs-gitlab
     SUBDIR += s3backer
     SUBDIR += s3fs
     SUBDIR += sandboxfs
