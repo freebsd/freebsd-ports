@@ -1,6 +1,6 @@
 PORTNAME=	kea
 DISTVERSION=	3.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/cur/3.0
 PKGNAMESUFFIX=	-devel
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		liblog4cplus.so:devel/log4cplus
 
 USES=		compiler:c++11-lang cmake:indirect cpe iconv libtool meson \
-		pathfix python tar:xz ssl
+		pathfix pkgconfig python tar:xz ssl
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${DISTVERSION:C/-.*//}

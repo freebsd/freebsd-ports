@@ -1,5 +1,6 @@
 PORTNAME=	kea
 DISTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/${DISTVERSION}
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		liblog4cplus.so:devel/log4cplus
 
-USES=		compiler:c++11-lang cpe iconv libtool pathfix ssl python tar:xz meson cmake:indirect
+USES=		compiler:c++11-lang cpe iconv libtool pathfix ssl python tar:xz meson pkgconfig cmake:indirect
 MESON_ARGS=	--auto-features=disabled \
 		-Dcrypto=openssl \
 		-Dnetconf=disabled
