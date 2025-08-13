@@ -1,15 +1,11 @@
---- CMakeLists.txt.orig	2024-12-09 12:10:16 UTC
+--- CMakeLists.txt.orig	2025-08-06 01:28:20 UTC
 +++ CMakeLists.txt
-@@ -28,10 +28,10 @@ else()
- 	# If you change this, make sure to update the corresponding line in the pybind CMakeLists
- 	if (MARCH_NATIVE)
- 		target_compile_options(${LIBRARY_NAME} PRIVATE
--			-march=native -Wall -Werror -fPIC -Wno-ignored-optimization-argument)
-+			-march=native -Wall -fPIC -Wno-ignored-optimization-argument)
- 	else()
- 		target_compile_options(${LIBRARY_NAME} PRIVATE
--			-Wall -Werror -fPIC)
-+			-Wall -fPIC)
+@@ -8,7 +8,7 @@ else()
+ 	target_compile_options(${build_target} PRIVATE /bigobj /fp:fast)
+ else()
+ 	target_compile_options(${build_target} PRIVATE
+-		-O3 -Wall -Werror -fPIC -Wno-sign-compare -Wfatal-errors)
++		-O3 -Wall -fPIC -Wno-sign-compare -Wfatal-errors)
+ 	if(MARCH_NATIVE)
+ 		target_compile_options(${build_target} PRIVATE -march=native)
  	endif()
- 	if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
- 		target_compile_options(${LIBRARY_NAME} PRIVATE
