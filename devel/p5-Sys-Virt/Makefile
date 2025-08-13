@@ -1,12 +1,12 @@
 PORTNAME=	Sys-Virt
-PORTVERSION=	11.2.0
+PORTVERSION=	11.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DANBERR
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fw@moov.de
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Perl bindings for libvirt
 WWW=		https://metacpan.org/release/Sys-Virt
 
