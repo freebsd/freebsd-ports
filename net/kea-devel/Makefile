@@ -12,8 +12,7 @@ WWW=		https://kea.isc.org/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	rst2man:textproc/py-docutils \
-		python3:lang/python3
+BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		liblog4cplus.so:devel/log4cplus
