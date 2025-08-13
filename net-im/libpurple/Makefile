@@ -94,7 +94,7 @@ CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 .if ${PORT_OPTIONS:MTCLTK}
-USES+=			tk
+USES+=			tk:8.6
 CFLAGS+=		-I${TK_INCLUDEDIR} -I${TCL_INCLUDEDIR}
 CONFIGURE_ARGS+=	--with-tclconfig=${TCL_LIBDIR} \
 			--with-tkconfig=${TK_LIBDIR}
