@@ -109,7 +109,7 @@ X11_MAKE_ARGS_OFF=		x11=False
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc*} || ${ARCH:Mriscv64*}
+.if ${ARCH} == powerpc || ${ARCH:Mriscv64*}
 MAKE_ARGS+=	module_embree_enabled=no \
 		module_raycast_enabled=no \
 		module_webm_enabled=no
