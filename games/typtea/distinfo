@@ -1,5 +1,5 @@
-TIMESTAMP = 1750623293
-SHA256 (go/games_typtea/typtea-v0.1.4/v0.1.4.mod) = 6154ff747f01685820d152913b88a3b69f4ac690bdadea502cc5a92801a8657b
-SIZE (go/games_typtea/typtea-v0.1.4/v0.1.4.mod) = 1309
-SHA256 (go/games_typtea/typtea-v0.1.4/v0.1.4.zip) = 0d00138dd38ab15507caa1f2b29230c875b0f6eda2b23646f47355fe5c6c9c2e
-SIZE (go/games_typtea/typtea-v0.1.4/v0.1.4.zip) = 957723
+TIMESTAMP = 1755115792
+SHA256 (go/games_typtea/typtea-v0.1.6/v0.1.6.mod) = 6154ff747f01685820d152913b88a3b69f4ac690bdadea502cc5a92801a8657b
+SIZE (go/games_typtea/typtea-v0.1.6/v0.1.6.mod) = 1309
+SHA256 (go/games_typtea/typtea-v0.1.6/v0.1.6.zip) = 5e050001d12c8ca0bc968c1a30e7f4c27f4d1051ce6d66242cc67df3850d2b5c
+SIZE (go/games_typtea/typtea-v0.1.6/v0.1.6.zip) = 957954
