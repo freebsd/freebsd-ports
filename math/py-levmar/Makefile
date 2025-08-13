@@ -19,8 +19,7 @@ BROKEN=		doesn't build with Python-3.11, 4 authors were notified via e-mail on 2
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4>0:devel/py-pytest4@${PY_FLAVOR} \
-		${PYNUMPY}
+TEST_DEPENDS=	${PYNUMPY}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
