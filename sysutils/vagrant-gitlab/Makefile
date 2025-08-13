@@ -1,6 +1,7 @@
 PORTNAME=	vagrant
 PORTVERSION=	2.4.7
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems devel
 PKGNAMESUFFIX=	-gitlab
 
@@ -38,8 +39,8 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		rubygem-vagrant_cloud-gitlab>=3.1.2<3.2:sysutils/rubygem-vagrant_cloud-gitlab \
 		rubygem-wdm>=0.2.0<0.3:devel/rubygem-wdm \
 		rubygem-winrm>=2.3.9<3:sysutils/rubygem-winrm \
-		rubygem-winrm-elevated>=1.2.3<2:sysutils/rubygem-winrm-elevated \
-		rubygem-winrm-fs>=1.3.5<2:filesystems/rubygem-winrm-fs
+		rubygem-winrm-elevated-gitlab>=1.2.3<2:sysutils/rubygem-winrm-elevated-gitlab \
+		rubygem-winrm-fs-gitlab>=1.3.5<2:filesystems/rubygem-winrm-fs-gitlab
 
 USES=		cpe ruby shebangfix
 CPE_VENDOR=	hashicorp
