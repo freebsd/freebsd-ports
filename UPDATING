@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20250813:
+  AFFECTS: users of security/py-fail2ban
+  AUTHOR: cy@FreeBSD.org
+
+  There has been some confusion which sshd filter to use on a FreeBSD system.
+  Only the bsd-sshd-session.conf should be used. The other sshd filters have
+  been removed.
+
 20250804:
   AFFECTS: users of databases/adminer
   AUTHOR: pkaipila@gmail.com
