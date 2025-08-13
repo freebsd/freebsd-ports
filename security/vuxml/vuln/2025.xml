@@ -1,3 +1,37 @@
+  <vuln vid="e2d49973-785a-11f0-a1c0-0050569f0b83">
+    <topic>www/varnish7 -- Denial of Service in HTTP/2</topic>
+    <affects>
+      <package>
+	<name>varnish7</name>
+	<range><lt>7.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Varnish Development Team reports:</p>
+	<blockquote cite="https://varnish-cache.org/security/VSV00017.html#vsv00017">
+	    <p>A denial of service attack can be performed on Varnish Cache servers
+	       that have the HTTP/2 protocol turned on. An attacker can create a
+	       large number of streams and immediately reset them without ever
+	       reaching the maximum number of concurrent streams allowed for the
+	       session, causing the Varnish server to consume unnecessary
+	       resources processing requests for which the response will not be
+	       delivered.</p>
+	    <p>This attack is a variant of the HTTP/2 Rapid Reset Attack, which was
+	       partially handled as VSV00013.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8671</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8671</url>
+    </references>
+    <dates>
+      <discovery>2025-08-13</discovery>
+      <entry>2025-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="defe9a20-781e-11f0-97c4-40b034429ecf">
     <topic>p5-Authen-SASL -- Insecure source of randomness</topic>
     <affects>
