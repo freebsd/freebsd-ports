@@ -1,5 +1,6 @@
 PORTNAME=	racket
 PORTVERSION=	8.17
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -87,6 +88,14 @@ CHEZ_MACHTYPE=	tarm64fb
 CHEZ_MACHTYPE=	ti3fb
 .elif ${ARCH} == "powerpc"
 CHEZ_MACHTYPE=	tppc32fb
+.elif ${ARCH} == "powerpc64"
+CHEZ_MACHTYPE=	tpb64b
+.elif ${ARCH} == "powerpc64le"
+CHEZ_MACHTYPE=	tpb64l
+.endif
+
+.if ${ARCH:Mpowerpc64*}
+CONFIGURE_ARGS+=	--enable-pb
 .endif
 
 post-patch:
