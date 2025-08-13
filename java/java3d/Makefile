@@ -1,6 +1,6 @@
 PORTNAME=	java3d
 PORTVERSION=	1.5.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	java graphics games devel
 MASTER_SITES=	https://sites.google.com/site/daemonwizard/
 
@@ -20,7 +20,6 @@ JAVA_VERSION=	8
 USE_GL=		gl
 USE_XORG=	xt
 JAVA_VENDOR=	openjdk
-LLD_UNSAFE=	yes
 NO_SHLIB_REQUIRES_GLOB=	libjawt.so libjvm.so
 
 PLIST_SUB+=	JAVA_HOME=${JAVA_HOME:S/^${PREFIX}\///} ARCH=${ARCH}

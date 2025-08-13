@@ -131,7 +131,7 @@ diff -ruN ../java3d-1.5.2/j3d-core/src/native/ogl/build-freebsd.xml ./j3d-core/s
 +
 +    <!-- Create the library file-->
 +    <exec dir="${build}/${platform}/${bldType}/native/ogl/objs" executable="ld">
-+	<arg line="DrawingSurfaceObjectAWT.o  Canvas3D.o  GraphicsContext3D.o  NativeScreenInfo.o  NativeConfigTemplate3D.o  MasterControl.o  GeometryArrayRetained.o  Attributes.o  CgShaderProgram.o  GLSLShaderProgram.o  Lights.o -G -z defs -L${ports.localbase}/lib -lGL -lX11 -lXext -lm -lc -L${java.home}/lib/${os.arch} -ljawt -L${java.home}/lib/${os.arch}/server -ljvm  -o libj3dcore-ogl.so"/>
++	<arg line="DrawingSurfaceObjectAWT.o  Canvas3D.o  GraphicsContext3D.o  NativeScreenInfo.o  NativeConfigTemplate3D.o  MasterControl.o  GeometryArrayRetained.o  Attributes.o  CgShaderProgram.o  GLSLShaderProgram.o  Lights.o -shared -z defs -L${ports.localbase}/lib -lGL -lX11 -lXext -lm -lc -L${java.home}/lib/${os.arch} -ljawt -L${java.home}/lib/${os.arch}/server -ljvm  -o libj3dcore-ogl.so"/>
 +    </exec>
 +
 +  </target>
@@ -144,7 +144,7 @@ diff -ruN ../java3d-1.5.2/j3d-core/src/native/ogl/build-freebsd.xml ./j3d-core/s
 +
 +    <!-- Create the wrapper library -->
 +    <exec dir="${build}/${platform}/${bldType}/native/ogl/objs" executable="ld">
-+	<arg line="CgWrapper.o -G -z defs -L/usr/X11R6/lib64 -ldl -lCg -lCgGL -lpthread -lGL -lX11 -lXext -lm -lnsl -lc -o libj3dcore-ogl-cg.so"/>
++	<arg line="CgWrapper.o -shared -z defs -L/usr/X11R6/lib64 -ldl -lCg -lCgGL -lpthread -lGL -lX11 -lXext -lm -lnsl -lc -o libj3dcore-ogl-cg.so"/>
 +    </exec>
 +
 +  </target>
