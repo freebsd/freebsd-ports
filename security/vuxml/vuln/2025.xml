@@ -1,3 +1,44 @@
+  <vuln vid="a60e73e0-7942-11f0-b3f7-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>139.0.7258.127</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>139.0.7258.127</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/08/stable-channel-update-for-desktop_12.html">
+	 <p>This update includes 6 security fixes:</p>
+	 <ul>
+	    <li>[432035817] High CVE-2025-8879: Heap buffer overflow in libaom. Reported by Anonymous on 2025-07-15</li>
+	    <li>[433533359] High CVE-2025-8880: Race in V8. Reported by Seunghyun Lee (@0x10n) on 2025-07-23</li>
+	    <li>[435139154] High CVE-2025-8901: Out of bounds write in ANGLE. Reported by Google Big Sleep on 2025-07-30</li>
+	    <li>[433800617] Medium CVE-2025-8881: Inappropriate implementation in File Picker. Reported by Alesandro Ortiz on 2025-07-23</li>
+	    <li>[435623339] Medium CVE-2025-8882: Use after free in Aura. Reported by Umar Farooq on 2025-08-01</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8579</cvename>
+      <cvename>CVE-2025-8580</cvename>
+      <cvename>CVE-2025-8901</cvename>
+      <cvename>CVE-2025-8881</cvename>
+      <cvename>CVE-2025-8882</cvename>
+      <url>https://chromereleases.googleblog.com/2025/08/stable-channel-update-for-desktop_12.html</url>
+    </references>
+    <dates>
+      <discovery>2025-08-12</discovery>
+      <entry>2025-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc048b51-7909-11f0-90a2-6cc21735f730">
     <topic>PostgreSQL -- vulnerabilities</topic>
     <affects>
