@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-You should install the database extension(s) what you want to use:
-php%%PHPVER%%-mysqli, php%%PHPVER%%-mssql, php%%PHPVER%%-odbc, php%%PHPVER%%-pgsql or php%%PHPVER%%-pdo_sqlite.
-EOM
-}
-]
