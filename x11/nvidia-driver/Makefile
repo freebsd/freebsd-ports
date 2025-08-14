@@ -328,7 +328,7 @@ post-patch: .SILENT
 .if ${OSVERSION} >= 1500051
 	${REINPLACE_CMD} -e 's/DMAP_MIN_ADDRESS/kva_layout.dmap_low/' \
 		-e 's/DMAP_MAX_ADDRESS/kva_layout.dmap_high/' \
-		${WRKSRC}/src/nvidia/nvidia_subr.c
+		${WRKSRC}/src/${NVSRC}/nvidia_subr.c
 .endif
 
 pre-install:
