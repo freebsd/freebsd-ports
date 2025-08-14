@@ -1,3 +1,49 @@
+  <vuln vid="fc048b51-7909-11f0-90a2-6cc21735f730">
+    <topic>PostgreSQL -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>postgresql17-server</name>
+	<range><lt>17.6</lt></range>
+      </package>
+      <package>
+	<name>postgresql16-server</name>
+	<range><lt>16.10</lt></range>
+      </package>
+      <package>
+	<name>postgresql15-server</name>
+	<range><lt>14.14</lt></range>
+      </package>
+      <package>
+	<name>postgresql14-server</name>
+	<range><lt>14.19</lt></range>
+      </package>
+      <package>
+	<name>postgresql13-server</name>
+	<range><lt>13.22</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL project reports:</p>
+	<blockquote cite="https://www.postgresql.org/about/news/postgresql-176-1610-1514-1419-1322-and-18-beta-3-released-3118/">
+	  <p>Tighten security checks in planner estimation functions.</p>
+	  <p>Prevent pg_dump scripts from being used to attack the user running the restore.</p>
+	  <p>Convert newlines to spaces in names included in comments in pg_dump output.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8713</cvename>
+      <cvename>CVE-2025-8714</cvename>
+      <cvename>CVE-2025-8715</cvename>
+      <url>https://www.postgresql.org/about/news/postgresql-176-1610-1514-1419-1322-and-18-beta-3-released-3118/</url>
+    </references>
+    <dates>
+      <discovery>2025-08-11</discovery>
+      <entry>2025-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7bfe6f39-78be-11f0-9d03-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
