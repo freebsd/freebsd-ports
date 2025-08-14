@@ -5968,6 +5968,7 @@
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Traits/PrivateMethodUnitTestTrait.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Traits/SynchronizeCsrfTokenSeedTrait.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/AlignmentPluginTest.php
+%%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/CKEditor5ImageControllerTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/CKEditor5Test.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/HTMLRestrictionsTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/HeadingPluginTest.php
@@ -6380,6 +6381,7 @@
 %%WWWDIR%%/core/modules/config/tests/config_transformer_test/config_transformer_test.info.yml
 %%WWWDIR%%/core/modules/config/tests/config_transformer_test/config_transformer_test.services.yml
 %%WWWDIR%%/core/modules/config/tests/config_transformer_test/src/EventSubscriber.php
+%%WWWDIR%%/core/modules/config/tests/fixtures/not_just_config.tar.gz
 %%WWWDIR%%/core/modules/config/tests/src/Functional/CacheabilityMetadataConfigOverrideIntegrationTest.php
 %%WWWDIR%%/core/modules/config/tests/src/Functional/ConfigDependencyWebTest.php
 %%WWWDIR%%/core/modules/config/tests/src/Functional/ConfigDraggableListBuilderTest.php
@@ -6579,6 +6581,8 @@
 %%WWWDIR%%/core/modules/contact/tests/src/Functional/ContactSitewideTest.php
 %%WWWDIR%%/core/modules/contact/tests/src/Functional/ContactStorageTest.php
 %%WWWDIR%%/core/modules/contact/tests/src/Functional/GenericTest.php
+%%WWWDIR%%/core/modules/contact/tests/src/Functional/Jsonapi/ContactFormTest.php
+%%WWWDIR%%/core/modules/contact/tests/src/Functional/Jsonapi/MessageTest.php
 %%WWWDIR%%/core/modules/contact/tests/src/Functional/Rest/ContactFormJsonAnonTest.php
 %%WWWDIR%%/core/modules/contact/tests/src/Functional/Rest/ContactFormJsonBasicAuthTest.php
 %%WWWDIR%%/core/modules/contact/tests/src/Functional/Rest/ContactFormJsonCookieTest.php
@@ -8313,7 +8317,6 @@
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Functional/ConfigEntityResourceTestBase.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Functional/ConfigTestTest.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Functional/ConfigurableLanguageTest.php
-%%WWWDIR%%/core/modules/jsonapi/tests/src/Functional/ContactFormTest.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Functional/ContentLanguageSettingsTest.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Functional/DateFormatTest.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Functional/EditorTest.php
@@ -8347,7 +8350,6 @@
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Functional/MediaTypeTest.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Functional/MenuLinkContentTest.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Functional/MenuTest.php
-%%WWWDIR%%/core/modules/jsonapi/tests/src/Functional/MessageTest.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Functional/NodeTest.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Functional/NodeTypeTest.php
 %%WWWDIR%%/core/modules/jsonapi/tests/src/Functional/PathAliasTest.php
@@ -8926,12 +8928,14 @@
 %%WWWDIR%%/core/modules/link/tests/src/FunctionalJavascript/LinkFieldFormStatesTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkFieldWidgetTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkFormatterDisplayTest.php
+%%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkFormatterTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkItemSerializationTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkItemTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkItemUrlValidationTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkSeparateFormatterDisplayTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/Plugin/migrate/field/d7/LinkFieldTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Traits/LinkInputValuesTraits.php
+%%WWWDIR%%/core/modules/link/tests/src/Unit/AttributeXssTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Unit/LinkFormatterTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Unit/Plugin/Validation/Constraint/LinkAccessConstraintValidatorTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Unit/Plugin/Validation/Constraint/LinkExternalProtocolsConstraintValidatorTest.php
@@ -9543,6 +9547,7 @@
 %%WWWDIR%%/core/modules/menu_ui/tests/src/Functional/MenuUninstallTest.php
 %%WWWDIR%%/core/modules/menu_ui/tests/src/FunctionalJavascript/MenuUiJavascriptTest.php
 %%WWWDIR%%/core/modules/menu_ui/tests/src/Kernel/MenuBlockTest.php
+%%WWWDIR%%/core/modules/menu_ui/tests/src/Kernel/MenuDeleteTest.php
 %%WWWDIR%%/core/modules/menu_ui/tests/src/Kernel/MenuLinkAddTest.php
 %%WWWDIR%%/core/modules/menu_ui/tests/src/Kernel/MenuUiNodeTypeTest.php
 %%WWWDIR%%/core/modules/menu_ui/tests/src/Kernel/Migrate/MigrateMenuSettingsTest.php
@@ -10674,6 +10679,7 @@
 %%WWWDIR%%/core/modules/package_manager/package_manager.services.yml
 %%WWWDIR%%/core/modules/package_manager/src/Attribute/AllowDirectWrite.php
 %%WWWDIR%%/core/modules/package_manager/src/ComposerInspector.php
+%%WWWDIR%%/core/modules/package_manager/src/ComposerRunner.php
 %%WWWDIR%%/core/modules/package_manager/src/DirectWritePreconditionBypass.php
 %%WWWDIR%%/core/modules/package_manager/src/Event/CollectPathsToExcludeEvent.php
 %%WWWDIR%%/core/modules/package_manager/src/Event/EventWithPackageListTrait.php
@@ -10720,7 +10726,6 @@
 %%WWWDIR%%/core/modules/package_manager/src/PathExcluder/VendorHardeningExcluder.php
 %%WWWDIR%%/core/modules/package_manager/src/PathLocator.php
 %%WWWDIR%%/core/modules/package_manager/src/Plugin/QueueWorker/Cleaner.php
-%%WWWDIR%%/core/modules/package_manager/src/ProcessFactory.php
 %%WWWDIR%%/core/modules/package_manager/src/ProcessOutputCallback.php
 %%WWWDIR%%/core/modules/package_manager/src/ProjectInfo.php
 %%WWWDIR%%/core/modules/package_manager/src/SandboxManagerBase.php
@@ -10901,7 +10906,6 @@
 %%WWWDIR%%/core/modules/package_manager/tests/src/Kernel/PendingUpdatesValidatorTest.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Kernel/PhpExtensionsValidatorTest.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Kernel/PhpTufValidatorTest.php
-%%WWWDIR%%/core/modules/package_manager/tests/src/Kernel/ProcessFactoryTest.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Kernel/ProjectInfoTest.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Kernel/RsyncValidatorTest.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Kernel/SandboxManagerBaseTest.php
@@ -10926,6 +10930,7 @@
 %%WWWDIR%%/core/modules/package_manager/tests/src/Traits/InstalledPackagesListTrait.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Traits/PackageManagerBypassTestTrait.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Traits/ValidationTestTrait.php
+%%WWWDIR%%/core/modules/package_manager/tests/src/Unit/ComposerRunnerTest.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Unit/EventWithPackageListTraitTest.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Unit/ExecutableFinderTest.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Unit/InstalledPackageTest.php
@@ -10976,6 +10981,8 @@
 %%WWWDIR%%/core/modules/path/src/Plugin/migrate/source/UrlAliasBase.php
 %%WWWDIR%%/core/modules/path/src/Plugin/migrate/source/d6/UrlAlias.php
 %%WWWDIR%%/core/modules/path/src/Plugin/migrate/source/d7/UrlAlias.php
+%%WWWDIR%%/core/modules/path/tests/modules/path_test_misc/path_test_misc.info.yml
+%%WWWDIR%%/core/modules/path/tests/modules/path_test_misc/src/Hook/PathTestMiscHooks.php
 %%WWWDIR%%/core/modules/path/tests/modules/path_test_node_grants/path_test_node_grants.info.yml
 %%WWWDIR%%/core/modules/path/tests/modules/path_test_node_grants/src/Hook/PathTestNodeGrantsHooks.php
 %%WWWDIR%%/core/modules/path/tests/src/Functional/GenericTest.php
@@ -11052,7 +11059,7 @@
 %%WWWDIR%%/core/modules/pgsql/src/Hook/PgsqlRequirementsHooks.php
 %%WWWDIR%%/core/modules/pgsql/src/Install/Requirements/PgsqlRequirements.php
 %%WWWDIR%%/core/modules/pgsql/tests/src/Functional/GenericTest.php
-%%WWWDIR%%/core/modules/pgsql/tests/src/Kernel/EntityQueryServiceDeprecation.php
+%%WWWDIR%%/core/modules/pgsql/tests/src/Kernel/EntityQueryServiceDeprecationTest.php
 %%WWWDIR%%/core/modules/pgsql/tests/src/Kernel/pgsql/ConnectionUnitTest.php
 %%WWWDIR%%/core/modules/pgsql/tests/src/Kernel/pgsql/DatabaseExceptionWrapperTest.php
 %%WWWDIR%%/core/modules/pgsql/tests/src/Kernel/pgsql/KernelTestBaseTest.php
@@ -12053,6 +12060,8 @@
 %%WWWDIR%%/core/modules/system/tests/modules/config_mapping_test/config/optional/field.storage.node.comment_config_mapping_test.yml
 %%WWWDIR%%/core/modules/system/tests/modules/config_mapping_test/config/optional/node.type.config_mapping_test.yml
 %%WWWDIR%%/core/modules/system/tests/modules/config_mapping_test/config_mapping_test.info.yml
+%%WWWDIR%%/core/modules/system/tests/modules/container_initialize/container_initialize.info.yml
+%%WWWDIR%%/core/modules/system/tests/modules/container_initialize/container_initialize.module
 %%WWWDIR%%/core/modules/system/tests/modules/container_rebuild_required_dependency_false/container_rebuild_required_dependency_false.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/container_rebuild_required_false/container_rebuild_required_false.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/container_rebuild_required_false_2/container_rebuild_required_false_2.info.yml
@@ -12380,8 +12389,8 @@
 %%WWWDIR%%/core/modules/system/tests/modules/evil/evil.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/experimental_module_dependency_test/experimental_module_dependency_test.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/experimental_module_requirements_test/experimental_module_requirements_test.info.yml
-%%WWWDIR%%/core/modules/system/tests/modules/experimental_module_requirements_test/experimental_module_requirements_test.install
 %%WWWDIR%%/core/modules/system/tests/modules/experimental_module_requirements_test/src/Hook/ExperimentalModuleRequirementsTestHooks.php
+%%WWWDIR%%/core/modules/system/tests/modules/experimental_module_requirements_test/src/Install/Requirements/ExperimentalModuleRequirementsTestRequirements.php
 %%WWWDIR%%/core/modules/system/tests/modules/experimental_module_test/experimental_module_test.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/experimental_module_test/src/Hook/ExperimentalModuleTestHooks.php
 %%WWWDIR%%/core/modules/system/tests/modules/field_storage_entity_type_dependency_test/field_storage_entity_type_dependency_test.info.yml
@@ -13003,6 +13012,7 @@
 %%WWWDIR%%/core/modules/system/tests/modules/system_project_namespace_test/system_project_namespace_test.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/system_status_obsolete_test/system_status_obsolete_test.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/system_test/src/Controller/BrokenSystemTestController.php
+%%WWWDIR%%/core/modules/system/tests/modules/system_test/src/Controller/OptionalServiceSystemTestController.php
 %%WWWDIR%%/core/modules/system/tests/modules/system_test/src/Controller/PageCacheAcceptHeaderController.php
 %%WWWDIR%%/core/modules/system/tests/modules/system_test/src/Controller/SystemTestController.php
 %%WWWDIR%%/core/modules/system/tests/modules/system_test/src/Form/CopyFieldValueTestForm.php
@@ -13247,6 +13257,7 @@
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Form/UrlTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Form/ValidationTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/GenericTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Hook/HookCollectorPassTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Lock/LockFunctionalTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Menu/AssertBreadcrumbTrait.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Menu/AssertMenuActiveTrailTrait.php
@@ -15744,8 +15755,10 @@
 %%WWWDIR%%/core/modules/workspaces/tests/modules/workspace_update_test/workspace_update_test.services.yml
 %%WWWDIR%%/core/modules/workspaces/tests/modules/workspaces_test/src/Entity/EntityTestMulRevPubStringId.php
 %%WWWDIR%%/core/modules/workspaces/tests/modules/workspaces_test/src/EntityTestRevPubWorkspaceHandler.php
+%%WWWDIR%%/core/modules/workspaces/tests/modules/workspaces_test/src/Form/ActiveWorkspaceTestForm.php
 %%WWWDIR%%/core/modules/workspaces/tests/modules/workspaces_test/src/Hook/WorkspacesTestHooks.php
 %%WWWDIR%%/core/modules/workspaces/tests/modules/workspaces_test/workspaces_test.info.yml
+%%WWWDIR%%/core/modules/workspaces/tests/modules/workspaces_test/workspaces_test.routing.yml
 %%WWWDIR%%/core/modules/workspaces/tests/src/Functional/GenericTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Functional/PathWorkspacesTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Functional/Rest/WorkspaceJsonAnonTest.php
@@ -15780,6 +15793,7 @@
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceContentTranslationTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceEntityDeleteTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceEntityRepositoryTest.php
+%%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceFormPersistenceTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceInformationTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceIntegrationTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceMergerTest.php
@@ -16738,11 +16752,14 @@
 %%WWWDIR%%/core/tests/Drupal/BuildTests/Composer/Component/ComponentsTaggedReleaseTest.php
 %%WWWDIR%%/core/tests/Drupal/BuildTests/Composer/ComposerBuildTestBase.php
 %%WWWDIR%%/core/tests/Drupal/BuildTests/Composer/ComposerValidateTest.php
+%%WWWDIR%%/core/tests/Drupal/BuildTests/Composer/Plugin/Unpack/Functional/UnpackRecipeTest.php
 %%WWWDIR%%/core/tests/Drupal/BuildTests/Composer/Template/ComposerProjectTemplatesTest.php
 %%WWWDIR%%/core/tests/Drupal/BuildTests/Framework/BuildTestBase.php
 %%WWWDIR%%/core/tests/Drupal/BuildTests/Framework/Tests/BuildTestTest.php
 %%WWWDIR%%/core/tests/Drupal/BuildTests/Framework/Tests/HtRouterTest.php
+%%WWWDIR%%/core/tests/Drupal/BuildTests/QuickStart/QuickStartTest.php
 %%WWWDIR%%/core/tests/Drupal/BuildTests/QuickStart/QuickStartTestBase.php
+%%WWWDIR%%/core/tests/Drupal/BuildTests/QuickStart/RecipeQuickStartTest.php
 %%WWWDIR%%/core/tests/Drupal/BuildTests/TestSiteApplication/InstallTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Ajax/AjaxCallbacksTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Ajax/AjaxFormCacheTest.php
@@ -17726,7 +17743,6 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/scaffold-override-fixture/assets/override-settings.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Scaffold/fixtures/scaffold-override-fixture/composer.json
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/Fixtures.php
-%%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/Functional/UnpackRecipeTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/SemVerTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/fixtures/composer-root/composer.json.tmpl
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/fixtures/modules/composer-module-a/composer.json
@@ -17793,6 +17809,8 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Asset/css_test_files/css_input_without_import.css
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Asset/css_test_files/css_input_without_import.css.optimized.css
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Asset/css_test_files/css_license.css.optimized.aggregated.css
+%%WWWDIR%%/core/tests/Drupal/Tests/Core/Asset/css_test_files/css_minified_with_relative_paths.css
+%%WWWDIR%%/core/tests/Drupal/Tests/Core/Asset/css_test_files/css_minified_with_relative_paths.css.optimized.css
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Asset/css_test_files/css_subfolder/css_input_with_import.css
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Asset/css_test_files/css_subfolder/css_input_with_import.css.optimized.css
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Asset/css_test_files/import1.css
@@ -17870,7 +17888,6 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Cache/NullBackendTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Cache/RefinableCacheableDependencyTraitTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Cache/VariationCacheTest.php
-%%WWWDIR%%/core/tests/Drupal/Tests/Core/Command/QuickStartTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Common/AttributesTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Common/DiffArrayTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Common/TagsTest.php
@@ -18153,7 +18170,6 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Queue/QueueExceptionsTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Recipe/CoreRecipesTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Recipe/RecipeConfigStorageWrapperTest.php
-%%WWWDIR%%/core/tests/Drupal/Tests/Core/Recipe/RecipeQuickStartTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Render/BubbleableMetadataTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Render/Element/HtmlTagTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Render/Element/MachineNameTest.php
@@ -18591,10 +18607,13 @@
 %%WWWDIR%%/core/tests/fixtures/default_content/menu_link_content/3434bd5a-d2cd-4f26-bf79-a7f6b951a21b.yml
 %%WWWDIR%%/core/tests/fixtures/default_content/node/2d3581c3-92c7-4600-8991-a0d4b3741198.yml
 %%WWWDIR%%/core/tests/fixtures/default_content/node/32650de8-9edd-48dc-80b8-8bda180ebbac.yml
+%%WWWDIR%%/core/tests/fixtures/default_content/node/48475954-e878-439c-9d3d-226724a44269.yml
 %%WWWDIR%%/core/tests/fixtures/default_content/node/7f1dd75a-0be2-4d3b-be5d-9d1a868b9267.yml
 %%WWWDIR%%/core/tests/fixtures/default_content/node/e1714f23-70c0-4493-8e92-af1901771921.yml
 %%WWWDIR%%/core/tests/fixtures/default_content/taxonomy_term/550f86ad-aa11-4047-953f-636d42889f85.yml
 %%WWWDIR%%/core/tests/fixtures/default_content/user/94503467-be7f-406c-9795-fc25baa22203.yml
+%%WWWDIR%%/core/tests/fixtures/default_content/workspace/inner_test.yml
+%%WWWDIR%%/core/tests/fixtures/default_content/workspace/test_workspace.yml
 %%WWWDIR%%/core/tests/fixtures/default_content_broken/no-uuid.yml
 %%WWWDIR%%/core/tests/fixtures/empty_file.php.module
 %%WWWDIR%%/core/tests/fixtures/files/README.txt
@@ -21460,6 +21479,7 @@
 %%WWWDIR%%/vendor/symfony/http-kernel/Fragment/RoutableFragmentRenderer.php
 %%WWWDIR%%/vendor/symfony/http-kernel/Fragment/SsiFragmentRenderer.php
 %%WWWDIR%%/vendor/symfony/http-kernel/HttpCache/AbstractSurrogate.php
+%%WWWDIR%%/vendor/symfony/http-kernel/HttpCache/CacheWasLockedException.php
 %%WWWDIR%%/vendor/symfony/http-kernel/HttpCache/Esi.php
 %%WWWDIR%%/vendor/symfony/http-kernel/HttpCache/HttpCache.php
 %%WWWDIR%%/vendor/symfony/http-kernel/HttpCache/ResponseCacheStrategy.php
