@@ -24,6 +24,8 @@ share/zsh/site-functions/_fastfetch
 %%DATADIR%%/presets/examples/25.jsonc
 %%DATADIR%%/presets/examples/26.jsonc
 %%DATADIR%%/presets/examples/27.jsonc
+%%DATADIR%%/presets/examples/28.jsonc
+%%DATADIR%%/presets/examples/29.jsonc
 %%DATADIR%%/presets/examples/2.jsonc
 %%DATADIR%%/presets/examples/3.jsonc
 %%DATADIR%%/presets/examples/4.jsonc
