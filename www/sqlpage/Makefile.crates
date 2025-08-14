@@ -22,11 +22,11 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		allocator-api2-0.2.21 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.19 \
+		anstream-0.6.20 \
 		anstyle-1.0.11 \
 		anstyle-parse-0.2.7 \
-		anstyle-query-1.1.3 \
-		anstyle-wincon-3.0.9 \
+		anstyle-query-1.1.4 \
+		anstyle-wincon-3.0.10 \
 		anyhow-1.0.98 \
 		argon2-0.5.3 \
 		arraydeque-0.5.1 \
@@ -36,7 +36,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		async-channel-2.5.0 \
 		async-http-codec-0.8.0 \
 		async-io-2.5.0 \
-		async-lock-3.4.0 \
+		async-lock-3.4.1 \
 		async-net-2.0.0 \
 		async-recursion-1.1.1 \
 		async-stream-0.3.6 \
@@ -69,13 +69,13 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		byteorder-1.5.0 \
 		bytes-1.10.1 \
 		bytestring-1.4.0 \
-		cc-1.2.31 \
+		cc-1.2.32 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.1 \
 		chrono-0.4.41 \
 		clang-sys-1.8.1 \
-		clap-4.5.42 \
-		clap_builder-4.5.42 \
+		clap-4.5.43 \
+		clap_builder-4.5.43 \
 		clap_derive-4.5.41 \
 		clap_lex-0.7.5 \
 		cmake-0.1.54 \
@@ -136,7 +136,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		env_logger-0.11.8 \
 		equivalent-1.0.2 \
 		errno-0.3.13 \
-		event-listener-5.4.0 \
+		event-listener-5.4.1 \
 		event-listener-strategy-0.5.4 \
 		fastrand-2.3.0 \
 		ff-0.13.1 \
@@ -153,7 +153,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		futures-executor-0.3.31 \
 		futures-intrusive-0.5.0 \
 		futures-io-0.3.31 \
-		futures-lite-2.6.0 \
+		futures-lite-2.6.1 \
 		futures-macro-0.3.31 \
 		futures-rustls-0.26.0 \
 		futures-sink-0.3.31 \
@@ -169,7 +169,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		handlebars-6.3.2 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
-		hashbrown-0.15.4 \
+		hashbrown-0.15.5 \
 		hashlink-0.10.0 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
@@ -281,7 +281,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		pkcs1-0.7.5 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.32 \
-		polling-3.9.0 \
+		polling-3.10.0 \
 		portable-atomic-1.11.1 \
 		portable-atomic-util-0.2.4 \
 		potential_utf-0.1.2 \
@@ -325,14 +325,14 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.12.0 \
 		rustls-webpki-0.103.4 \
-		rustversion-1.0.21 \
+		rustversion-1.0.22 \
 		ryu-1.0.20 \
 		schannel-0.1.27 \
 		schemars-0.9.0 \
 		schemars-1.0.4 \
 		scopeguard-1.2.0 \
 		sec1-0.7.3 \
-		security-framework-3.2.0 \
+		security-framework-3.3.0 \
 		security-framework-sys-2.14.0 \
 		semver-1.0.26 \
 		serde-1.0.219 \
@@ -348,9 +348,9 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		sha1-0.10.6 \
 		sha2-0.10.9 \
 		shlex-1.3.0 \
-		signal-hook-registry-1.4.5 \
+		signal-hook-registry-1.4.6 \
 		signature-2.2.0 \
-		slab-0.4.10 \
+		slab-0.4.11 \
 		smallvec-1.15.1 \
 		socket2-0.5.10 \
 		socket2-0.6.0 \
@@ -358,10 +358,10 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		spki-0.7.3 \
 		sqlparser-0.58.0 \
 		sqlparser_derive-0.3.0 \
-		sqlx-core-oldapi-0.6.45 \
-		sqlx-macros-oldapi-0.6.45 \
-		sqlx-oldapi-0.6.45 \
-		sqlx-rt-oldapi-0.6.45 \
+		sqlx-core-oldapi-0.6.47 \
+		sqlx-macros-oldapi-0.6.47 \
+		sqlx-oldapi-0.6.47 \
+		sqlx-rt-oldapi-0.6.47 \
 		stable_deref_trait-1.2.0 \
 		stringprep-0.1.5 \
 		strsim-0.11.1 \
@@ -384,10 +384,10 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		tokio-macros-2.5.0 \
 		tokio-rustls-0.26.2 \
 		tokio-stream-0.1.17 \
-		tokio-util-0.7.15 \
-		toml-0.9.4 \
+		tokio-util-0.7.16 \
+		toml-0.9.5 \
 		toml_datetime-0.7.0 \
-		toml_parser-1.0.1 \
+		toml_parser-1.0.2 \
 		tower-0.4.13 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
@@ -467,7 +467,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		zerofrom-derive-0.1.6 \
 		zeroize-1.8.1 \
 		zerotrie-0.2.2 \
-		zerovec-0.11.2 \
+		zerovec-0.11.4 \
 		zerovec-derive-0.11.1 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
