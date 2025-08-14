@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-sdk
-DISTVERSION=	533.0.0
+DISTVERSION=	534.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 DISTNAME=	google-cloud-sdk-${PORTVERSION}-linux-x86_64
