@@ -1,10 +1,10 @@
-commit e884ff2873b6ef8f3c8ee0a09e7651f46b3add95
-Author: Christoph Moench-Tegeder <cmt@burggraben.net>
+commit bcf74d8c7a315c4f8ef70f1a60d4ce957cebac1d
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
-    chase gn_processor.py move
+    FreeBSD workings for webrtc configure (gn_processor.py)
 
 diff --git build/gn_processor.py build/gn_processor.py
-index 2ba8b92c27..962479b228 100644
+index 36cc6bdfe492..ed0fb2b7aa45 100644
 --- build/gn_processor.py
 +++ build/gn_processor.py
 @@ -186,6 +186,7 @@ def filter_gn_config(path, gn_result, sandbox_vars, input_vars, gn_target):
@@ -15,7 +15,7 @@ index 2ba8b92c27..962479b228 100644
          "linux": "Linux",
          "mac": "Darwin",
          "openbsd": "OpenBSD",
-@@ -780,17 +781,17 @@ def main():
+@@ -801,17 +802,17 @@ def main():
  
      vars_set = []
      for is_debug in (True, False):
@@ -31,19 +31,19 @@ index 2ba8b92c27..962479b228 100644
 +            if target_os in ("android", "freebsd", "linux", "win"):
                  target_cpus.append("x86")
 -            if target_os in ("linux", "openbsd"):
-+            if target_os in ("linux", "freebsd", "openbsd"):
++            if target_os in ("freebsd", "linux", "openbsd"):
                  target_cpus.append("riscv64")
 -            if target_os == "linux":
 +            if target_os in ("freebsd", "linux"):
                  target_cpus.extend(["loong64", "ppc64", "mipsel", "mips64el"])
              for target_cpu in target_cpus:
                  vars = {
-@@ -799,7 +800,7 @@ def main():
+@@ -820,7 +821,7 @@ def main():
                      "target_cpu": target_cpu,
                      "target_os": target_os,
                  }
 -                if target_os == "linux":
 +                if target_os in ("freebsd", "linux"):
-                     for use_x11 in (True, False):
-                         vars["use_x11"] = use_x11
+                     for enable_x11 in (True, False):
+                         vars["ozone_platform_x11"] = enable_x11
                          vars_set.append(vars.copy())
