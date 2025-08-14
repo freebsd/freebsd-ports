@@ -1,13 +1,14 @@
 https://gitlab.com/veloren/veloren/-/issues/1975
 
---- ../wgpu-0.18-with-fixes-for-veloren-v2/wgpu/src/backend/direct.rs.orig	2024-09-27 04:53:27 UTC
-+++ ../wgpu-0.18-with-fixes-for-veloren-v2/wgpu/src/backend/direct.rs
-@@ -2279,9 +2279,7 @@ impl crate::Context for Context {
-             &size
-         )) {
+--- cargo-crates/wgpu-24.0.5/src/backend/wgpu_core.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/wgpu-24.0.5/src/backend/wgpu_core.rs
+@@ -1761,10 +1761,7 @@ impl dispatch::QueueInterface for CoreQueue {
+             &size,
+         ) {
              Ok(()) => (),
 -            Err(err) => {
--                self.handle_error_nolabel(&queue_data.error_sink, err, "Queue::write_texture")
+-                self.context
+-                    .handle_error_nolabel(&self.error_sink, err, "Queue::write_texture")
 -            }
 +            Err(_err) => ()
          }

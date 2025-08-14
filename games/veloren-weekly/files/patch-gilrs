@@ -23,9 +23,9 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
    |                |      help: a similar name exists in the module: `event`
    |                no `epoll` in `sys`
 
---- Cargo.lock.orig	2025-07-02 22:31:56 UTC
+--- Cargo.lock.orig	2025-08-14 15:14:34 UTC
 +++ Cargo.lock
-@@ -2628,9 +2628,9 @@ dependencies = [
+@@ -2564,9 +2564,9 @@ dependencies = [
  
  [[package]]
  name = "gilrs"
@@ -37,7 +37,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "fnv",
   "gilrs-core",
-@@ -2642,24 +2642,23 @@ dependencies = [
+@@ -2578,24 +2578,23 @@ dependencies = [
  
  [[package]]
  name = "gilrs-core"
@@ -67,7 +67,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  ]
  
  [[package]]
-@@ -3546,9 +3545,9 @@ dependencies = [
+@@ -3414,9 +3413,9 @@
  
  [[package]]
  name = "io-kit-sys"
@@ -79,7 +79,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "core-foundation-sys",
   "mach2",
-@@ -4381,6 +4380,17 @@ dependencies = [
+@@ -4205,6 +4204,17 @@ dependencies = [
   "memoffset 0.6.5",
  ]
  
@@ -97,16 +97,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  [[package]]
  name = "nix"
  version = "0.29.0"
-@@ -7578,7 +7588,7 @@ version = "1.6.3"
- source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
- dependencies = [
-- "cfg-if 1.0.0",
-+ "cfg-if 0.1.10",
-  "rand 0.8.5",
-  "static_assertions",
- ]
-@@ -9363,28 +9373,6 @@ dependencies = [
+@@ -9218,28 +9228,6 @@ dependencies = [
   "windows-targets 0.52.6",
  ]
  
@@ -134,8 +125,8 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
 -
  [[package]]
  name = "windows-core"
- version = "0.51.1"
-@@ -9430,16 +9418,6 @@ dependencies = [
+ version = "0.54.0"
+@@ -9276,16 +9264,6 @@ dependencies = [
   "windows-strings 0.4.0",
  ]
  
@@ -152,7 +143,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  [[package]]
  name = "windows-implement"
  version = "0.58.0"
-@@ -9490,16 +9468,6 @@ version = "0.1.1"
+@@ -9336,16 +9314,6 @@ version = "0.1.1"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "76840935b766e1b0a05c0066835fb9ec80071d4c09a16f6bd5f7e655e3c14c38"
  
