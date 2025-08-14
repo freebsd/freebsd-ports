@@ -4180,7 +4180,6 @@
     SUBDIR += pear-XML_Transformer
     SUBDIR += pear-XML_Tree
     SUBDIR += pear-XML_Util
-    SUBDIR += pear-channel-doctrine
     SUBDIR += pear-channel-ezc
     SUBDIR += pear-channel-geshi
     SUBDIR += pear-channel-horde
