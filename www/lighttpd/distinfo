@@ -1,3 +1,3 @@
-TIMESTAMP = 1743797125
-SHA256 (lighttpd-1.4.79.tar.xz) = 3b29a625b3ad88702d1fea4f5f42bb7d87488f2e4efc977d7f185329ca6084bd
-SIZE (lighttpd-1.4.79.tar.xz) = 865428
+TIMESTAMP = 1755171128
+SHA256 (lighttpd-1.4.80.tar.xz) = cc5f0f71e8b2ee6bad545d1e91dfc3f954716c9174e7b352c2147add44f25bf3
+SIZE (lighttpd-1.4.80.tar.xz) = 882656
