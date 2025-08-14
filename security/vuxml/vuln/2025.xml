@@ -1,3 +1,54 @@
+  <vuln vid="7bfe6f39-78be-11f0-9d03-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.2.0</ge><lt>18.2.2</lt></range>
+	<range><ge>18.1.0</ge><lt>18.1.4</lt></range>
+	<range><ge>8.14.0</ge><lt>18.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/08/13/patch-release-gitlab-18-2-2-released/">
+	  <p>Cross-site scripting issue in blob viewer impacts GitLab CE/EE</p>
+	  <p>Cross-site scripting issue in labels impacts GitLab CE/EE</p>
+	  <p>Cross-site scripting issue in Workitem impacts GitLab CE/EE</p>
+	  <p>Improper Handling of Permissions issue in project API impacts GitLab CE/EE</p>
+	  <p>Incorrect Privilege Assignment issue in delete issues operation impacts GitLab CE/EE</p>
+	  <p>Allocation of Resources Without Limits issue in release name creation impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in jobs API impacts GitLab CE/EE</p>
+	  <p>Authorization issue in Merge request approval policy impacts GitLab EE</p>
+	  <p>Inefficient Regular Expression Complexity issue in wiki impacts GitLab CE/EE</p>
+	  <p>Allocation of Resources Without Limits issue in Mattermost integration impacts GitLab CE/EE</p>
+	  <p>Incorrect Permission Assignment issue in ID token impacts GitLab CE/EE</p>
+	  <p>Insufficient Access Control issue in IP Restriction impacts GitLab EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-7734</cvename>
+      <cvename>CVE-2025-7739</cvename>
+      <cvename>CVE-2025-6186</cvename>
+      <cvename>CVE-2025-8094</cvename>
+      <cvename>CVE-2024-12303</cvename>
+      <cvename>CVE-2025-2614</cvename>
+      <cvename>CVE-2024-10219</cvename>
+      <cvename>CVE-2025-8770</cvename>
+      <cvename>CVE-2025-2937</cvename>
+      <cvename>CVE-2025-1477</cvename>
+      <cvename>CVE-2025-5819</cvename>
+      <cvename>CVE-2025-2498</cvename>
+      <url>https://about.gitlab.com/releases/2025/08/13/patch-release-gitlab-18-2-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-08-13</discovery>
+      <entry>2025-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e2d49973-785a-11f0-a1c0-0050569f0b83">
     <topic>www/varnish7 -- Denial of Service in HTTP/2</topic>
     <affects>
