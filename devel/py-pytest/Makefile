@@ -43,8 +43,6 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pytest4
-
 # XXX: test_pdb_custom_cls_with_set_trace fails
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
