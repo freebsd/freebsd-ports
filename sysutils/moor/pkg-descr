@@ -1,0 +1,14 @@
+Moor is a pager that designated to just do the right thing without any
+configuration. It reads and displays UTF-8 encoded text from files or pipes.
+
+Doing the right thing includes:
+
+o Syntax highlight source code by default using Chroma
+o Search is incremental / find-as-you-type just like in Chrome or Emacs
+o Filtering is incremental: Press & to filter the input interactively
+o Search becomes case sensitive if you add any UPPER CASE characters
+o Snappy UI even on slow / large input with multi-threaded search
+o Supports word wrapping
+o Mouse Scrolling works out of the box
+
+and more...
