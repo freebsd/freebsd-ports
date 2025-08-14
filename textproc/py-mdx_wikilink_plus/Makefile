@@ -5,7 +5,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts wikilinks to relative links
 WWW=		https://github.com/neurobin/mdx_wikilink_plus
 
