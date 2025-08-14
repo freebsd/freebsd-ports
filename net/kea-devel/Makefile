@@ -1,5 +1,6 @@
 PORTNAME=	kea
 DISTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/cur/3.1
 PKGNAMESUFFIX=	-devel
@@ -11,7 +12,8 @@ WWW=		https://kea.isc.org/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	rst2man:textproc/py-docutils
+BUILD_DEPENDS=	rst2man:textproc/py-docutils \
+		python3:lang/python3
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		liblog4cplus.so:devel/log4cplus
