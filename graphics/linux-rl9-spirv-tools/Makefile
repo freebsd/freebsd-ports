@@ -1,6 +1,7 @@
 PORTNAME=	spirv-tools
 PORTVERSION=	2024.4
 DISTVERSIONSUFFIX=	-1.el9
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org

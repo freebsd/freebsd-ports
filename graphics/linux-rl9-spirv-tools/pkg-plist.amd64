@@ -25,3 +25,4 @@ usr/lib64/libSPIRV-Tools.so
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 usr/share/licenses/spirv-tools/LICENSE
+usr/share/licenses/spirv-tools-libs/LICENSE
