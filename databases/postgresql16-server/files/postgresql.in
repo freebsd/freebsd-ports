@@ -41,7 +41,7 @@ eval _pgdir="~${postgresql_user}/data%%PG_VERSION%%"
 
 name=postgresql
 rcvar=postgresql_enable
-extra_commands="reload initdb"
+extra_commands="reload initdb promote logrotate"
 
 start_cmd="postgresql_command start"
 stop_cmd="postgresql_command stop"
@@ -49,6 +49,7 @@ restart_cmd="postgresql_command restart"
 reload_cmd="postgresql_command reload"
 status_cmd="postgresql_command status"
 promote_cmd="postgresql_command promote"
+logrotate_cmd="postgresql_command logrotate"
 
 initdb_cmd="postgresql_initdb"
 

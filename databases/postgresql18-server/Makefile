@@ -1,11 +1,10 @@
 PORTNAME?=	postgresql
-DISTVERSION?=	18beta2
+DISTVERSION?=	18beta3
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
-#DISTFILES+=	${PORTNAME}-${DISTVERSION}-docs.tar.bz:docs
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
 
 MAINTAINER?=	pgsql@FreeBSD.org
@@ -22,8 +21,12 @@ DIST_SUBDIR=	postgresql
 OPTIONS_SUB=	yes
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${COMPONENT}
-USES+=		bison perl5 tar:bzip2 cpe
+USES+=		tar:bzip2 cpe
+.if ${DISTVERSION:C/([0-9][0-9]).*/\1/g} >= 17
+USES+=		bison perl5
 USE_PERL5=	build
+.endif
+
 .if !defined(NO_BUILD)
 USES+=		gmake
 GNU_CONFIGURE=	yes
@@ -53,11 +56,11 @@ INSTALL_DIRS?=	src/common src/timezone src/backend \
 		src/backend/replication/pgoutput \
 		src/bin/initdb src/bin/pg_ctl \
 		src/bin/pg_archivecleanup src/bin/pg_basebackup \
-		src/bin/pg_checksums \
+		src/bin/pg_checksums src/bin/pg_combinebackup \
 		src/bin/pg_controldata src/bin/pg_resetwal src/pl \
 		src/bin/pg_rewind \
 		src/bin/pg_test_fsync src/bin/pg_test_timing \
-		src/bin/pg_waldump src/bin/pg_upgrade
+		src/bin/pg_waldump src/bin/pg_walsummary src/bin/pg_upgrade
 
 BUILD_DIRS?=	src/port ${INSTALL_DIRS}
 INSTALL_TARGET?=install-strip
@@ -68,7 +71,7 @@ COMPONENT=	-server
 USE_RC_SUBR=	postgresql
 USES+=		pgsql:${DISTVERSION:C/([0-9]\.?[0-9]).*/\1/g}
 USERS=		${PG_USER}
-GROUPS=	${PG_GROUP}
+GROUPS=		${PG_GROUP}
 SUB_FILES+=	502.pgsql
 .endif
 
@@ -92,14 +95,6 @@ OPTIONS_DEFAULT+=	LZ4
 LZ4_DESC=		Build with LZ4 compression support
 LZ4_CONFIGURE_WITH=	lz4
 LZ4_LIB_DEPENDS+=	liblz4.so:archivers/liblz4
-.  endif
-
-.  if ${DISTVERSION:C/([0-9][0-9]).*/\1/g} >= 15
-OPTIONS_DEFINE+=	ZSTD
-OPTIONS_DEFAULT+=	ZSTD
-ZSTD_DESC=		Build with ZSTD compression support
-ZSTD_CONFIGURE_WITH=	zstd
-ZSTD_LIB_DEPENDS+=	libzstd.so:archivers/zstd
 .  endif
 
 OPTIONS_DEFINE+=	LLVM
@@ -133,6 +128,20 @@ GSSAPI_CONFIGURE_WITH=	gssapi
 
 PATCH_DIST_STRIP=-p1
 .endif # !SLAVE_ONLY
+
+.if defined(SERVER_ONLY) || defined(CLIENT_ONLY) || ${COMPONENT} == "-contrib"
+.  if ${DISTVERSION:C/([0-9][0-9]).*/\1/g} >= 15
+OPTIONS_DEFINE+=	ZSTD
+OPTIONS_DEFAULT+=	ZSTD
+ZSTD_DESC=		Build with ZSTD compression support
+ZSTD_CONFIGURE_WITH=	zstd
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+USES+=			pkgconfig
+#ZSTD_CFLAGS=		-I${LOCALBASE}/include
+#ZSTD_LDFLAGS=		-L${LOCALBASE}/lib
+#ZSTD_LIBS=		-lzstd
+.  endif
+.endif
 
 SSL_USES=		ssl
 SSL_CONFIGURE_WITH=	openssl
@@ -193,7 +202,9 @@ do-build:
 		cd ${WRKSRC}/$${dir} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ; \
 	done
 .  if defined(CLIENT_ONLY)
+.    if ${DISTVERSION:C/([0-9][0-9]).*/\1/g} >= 17
 	@ cd ${WRKSRC}/doc && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} man
+.    endif
 .  endif
 .  if exists(${FILESDIR}/pkg-message${COMPONENT}.in)
 SUB_FILES+=	pkg-message${COMPONENT}
@@ -223,7 +234,9 @@ do-install:
 .  endif # SERVER_ONLY
 .  if defined(CLIENT_ONLY)
 	@ cd ${WRKSRC}/src && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-local
+.    if ${DISTVERSION:C/([0-9][0-9]).*/\1/g} >= 17
 	@ cd ${WRKSRC}/doc/src/sgml && ${COPYTREE_SHARE} "man1 man3 man7" ${STAGEDIR}${PREFIX}/share/man
+.    endif
 .  endif
 	@ if [ -r ${PKGMESSAGE} ]; then \
 		${MKDIR} ${STAGEDIR}${DOCSDIR} ;\
