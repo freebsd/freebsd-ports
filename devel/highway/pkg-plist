@@ -1,5 +1,6 @@
 include/hwy/abort.h
 include/hwy/aligned_allocator.h
+include/hwy/auto_tune.h
 include/hwy/base.h
 include/hwy/cache_control.h
 include/hwy/contrib/algo/copy-inl.h
@@ -19,6 +20,7 @@ include/hwy/contrib/sort/traits128-inl.h
 include/hwy/contrib/sort/vqsort-inl.h
 include/hwy/contrib/sort/vqsort.h
 include/hwy/contrib/thread_pool/futex.h
+include/hwy/contrib/thread_pool/spin.h
 include/hwy/contrib/thread_pool/thread_pool.h
 include/hwy/contrib/thread_pool/topology.h
 include/hwy/contrib/unroller/unroller-inl.h
@@ -33,6 +35,8 @@ include/hwy/ops/arm_sve-inl.h
 include/hwy/ops/emu128-inl.h
 include/hwy/ops/generic_ops-inl.h
 include/hwy/ops/inside-inl.h
+include/hwy/ops/loongarch_lasx-inl.h
+include/hwy/ops/loongarch_lsx-inl.h
 include/hwy/ops/ppc_vsx-inl.h
 include/hwy/ops/rvv-inl.h
 include/hwy/ops/scalar-inl.h
@@ -42,6 +46,7 @@ include/hwy/ops/wasm_128-inl.h
 include/hwy/ops/x86_128-inl.h
 include/hwy/ops/x86_256-inl.h
 include/hwy/ops/x86_512-inl.h
+include/hwy/ops/x86_avx3-inl.h
 include/hwy/per_target.h
 include/hwy/print-inl.h
 include/hwy/print.h
@@ -53,18 +58,19 @@ include/hwy/tests/test_util-inl.h
 include/hwy/tests/test_util.h
 include/hwy/timer-inl.h
 include/hwy/timer.h
+include/hwy/x86_cpuid.h
 lib/cmake/hwy/hwy-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/hwy/hwy-config-version.cmake
 lib/cmake/hwy/hwy-config.cmake
 lib/libhwy.so
 lib/libhwy.so.1
-lib/libhwy.so.1.2.0
+lib/libhwy.so.1.3.0
 lib/libhwy_contrib.so
 lib/libhwy_contrib.so.1
-lib/libhwy_contrib.so.1.2.0
+lib/libhwy_contrib.so.1.3.0
 lib/libhwy_test.so
 lib/libhwy_test.so.1
-lib/libhwy_test.so.1.2.0
+lib/libhwy_test.so.1.3.0
 libdata/pkgconfig/libhwy-contrib.pc
 libdata/pkgconfig/libhwy-test.pc
 libdata/pkgconfig/libhwy.pc
