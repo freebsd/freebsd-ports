@@ -4,7 +4,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Quimup%20${PORTVERSION:R}
 DISTNAME=	Quimup-${PORTVERSION}.source
 
-MAINTAINER=	cmangin@arobas.net
+MAINTAINER=	cmanv@duck.com
 COMMENT=	Qt client for MPD (Music Player Daemon)
 WWW=		https://sourceforge.net/projects/quimup/
 
