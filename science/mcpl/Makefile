@@ -11,6 +11,9 @@ WWW=		https://mctools.github.io/mcpl/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=	armv7 powerpc i386
+NOT_FOR_ARCHS_REASON=	MCPL does not support 32 bit platforms
+
 BROKEN_i386=	compilation fails, see https://github.com/mctools/mcpl/issues/88
 
 USES=		cmake:testing
