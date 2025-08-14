@@ -30,28 +30,28 @@ https://github.com/google/shaderc-rs/issues/62
  dependencies = [
   "cmake",
   "libc",
---- voxygen/Cargo.toml.orig	2024-05-20 18:26:00 UTC
+--- voxygen/Cargo.toml.orig	2025-08-14 15:14:34 UTC
 +++ voxygen/Cargo.toml
-@@ -32,7 +32,6 @@ egui-ui = ["voxygen-egui", "egui", "egui_wgpu_backend"
- tracy-memory = ["tracy"]                                                       # enables heap profiling with tracy
- plugins = ["client/plugins", "common-assets/plugins", "server/plugins"]
+@@ -36,7 +36,6 @@ egui-ui = ["voxygen-egui", "egui", "egui_wgpu_backend"
+ # enables heap profiling with tracy
+ plugins = ["client/plugins", "server/plugins", "anim/plugins", "common/plugins"]
  egui-ui = ["voxygen-egui", "egui", "egui_wgpu_backend", "egui_winit_platform"]
 -shaderc-from-source = ["shaderc/build-from-source"]
  discord = ["discord-sdk"]
- bin_img-export = ["common-assets"]
+ bin_cmd_doc_gen = []
  
-@@ -45,7 +44,7 @@ default-publish = [
+@@ -48,7 +47,7 @@ default-publish = [
+     "discord",
      "simd",
  ]
- # Temp for bug on current wgpu version that has access violation in vulkan when constructing egui pipeline
--default-no-egui = ["default-publish", "hot-reloading", "shaderc-from-source"]
-+default-no-egui = ["default-publish", "hot-reloading"]
- default = ["default-no-egui", "egui-ui"]
+-default = ["default-publish", "hot-reloading", "shaderc-from-source", "egui-ui"]
++default = ["default-publish", "hot-reloading", "egui-ui"]
  
  [dependencies]
-@@ -73,9 +72,7 @@ bytemuck = { version = "1.7", features = ["derive"] }
- ] }
- wgpu-profiler = "0.15.0"
+ client = { package = "veloren-client", path = "../client" }
+@@ -71,9 +70,7 @@ bytemuck = { version = "1.7", features = ["derive"] }
+ wgpu = { version = "24", default-features = false, features = ["spirv", "glsl"] }
+ wgpu-profiler = "0.22.0"
  bytemuck = { version = "1.7", features = ["derive"] }
 -# shaderc = "0.8.0"
 -# Working around a current bug in shaderc that causes it to use the system installation even if we specify compile from source
