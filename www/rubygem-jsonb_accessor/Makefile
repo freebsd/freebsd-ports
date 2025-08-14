@@ -1,5 +1,6 @@
 PORTNAME=	jsonb_accessor
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 
@@ -10,9 +11,9 @@ WWW=		https://github.com/devmynd/jsonb_accessor
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activerecord70>=6.1:databases/rubygem-activerecord70 \
-		rubygem-activesupport70>=6.1:devel/rubygem-activesupport70 \
-		rubygem-pg>=0.18.1:databases/rubygem-pg
+RUN_DEPENDS=	rubygem-activerecord-gitlab>=6.1:databases/rubygem-activerecord-gitlab \
+		rubygem-activesupport-gitlab>=6.1:devel/rubygem-activesupport-gitlab \
+		rubygem-pg-gitlab>=0.18.1:databases/rubygem-pg-gitlab
 
 USES=		gem shebangfix
 
