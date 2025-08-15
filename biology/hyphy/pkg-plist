@@ -117,6 +117,9 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/Distances/p_Distance_codon
 %%DATADIR%%/TemplateBatchFiles/F_ST.bf
 %%DATADIR%%/TemplateBatchFiles/FitnessAAModels.bf
+%%DATADIR%%/TemplateBatchFiles/GA/MSS-selector-codon.bf
+%%DATADIR%%/TemplateBatchFiles/GA/README.md
+%%DATADIR%%/TemplateBatchFiles/GA/processor-codon.bf
 %%DATADIR%%/TemplateBatchFiles/GARD.bf
 %%DATADIR%%/TemplateBatchFiles/GA_CHC.ibf
 %%DATADIR%%/TemplateBatchFiles/GA_CHC_Binary.ibf
@@ -131,7 +134,6 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/LocalMolClock.bf
 %%DATADIR%%/TemplateBatchFiles/MGvsGY.bf
 %%DATADIR%%/TemplateBatchFiles/MSS-joint-fitter.bf
-%%DATADIR%%/TemplateBatchFiles/MSS-selector-2.bf
 %%DATADIR%%/TemplateBatchFiles/MSS-selector.bf
 %%DATADIR%%/TemplateBatchFiles/MergeSequences.bf
 %%DATADIR%%/TemplateBatchFiles/MergeSites.bf
