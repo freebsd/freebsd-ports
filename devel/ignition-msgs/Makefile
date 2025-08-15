@@ -1,6 +1,6 @@
 PORTNAME=	ignition-msgs
 DISTVERSION=	3.0.0
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
@@ -22,7 +22,7 @@ BB_ACCOUNT=	ignitionrobotics
 BB_PROJECT=	ign-msgs
 BB_COMMIT=	4a1cbcabff7d
 
-LDFLAGS+=	-labsl_hash -labsl_log_internal_message -labsl_log_internal_nullguard -labsl_raw_hash_set
+LDFLAGS+=	-labsl_city -labsl_hash -labsl_log_internal_message -labsl_log_internal_nullguard -labsl_raw_hash_set
 USE_CXXSTD=	c++17
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 
