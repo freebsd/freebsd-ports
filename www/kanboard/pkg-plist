@@ -1,5 +1,6 @@
 %%WWWDIR%%/.devcontainer/devcontainer.json
 %%WWWDIR%%/.htaccess
+%%WWWDIR%%/.php-cs-fixer.php
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/ChangeLog
 %%WWWDIR%%/LICENSE
@@ -24,10 +25,12 @@
 %%WWWDIR%%/app/Action/TaskAssignCreator.php
 %%WWWDIR%%/app/Action/TaskAssignCurrentUser.php
 %%WWWDIR%%/app/Action/TaskAssignCurrentUserColumn.php
+%%WWWDIR%%/app/Action/TaskAssignCurrentUserColumnIfNoUserAlreadySet.php
 %%WWWDIR%%/app/Action/TaskAssignDueDateOnCreation.php
 %%WWWDIR%%/app/Action/TaskAssignDueDateOnMoveColumn.php
 %%WWWDIR%%/app/Action/TaskAssignPrioritySwimlane.php
 %%WWWDIR%%/app/Action/TaskAssignSpecificUser.php
+%%WWWDIR%%/app/Action/TaskAssignToUserOnCreationInColumn.php
 %%WWWDIR%%/app/Action/TaskAssignUser.php
 %%WWWDIR%%/app/Action/TaskAssignUserSwimlaneChange.php
 %%WWWDIR%%/app/Action/TaskClose.php
@@ -226,7 +229,6 @@
 %%WWWDIR%%/app/Core/Base.php
 %%WWWDIR%%/app/Core/Cache/BaseCache.php
 %%WWWDIR%%/app/Core/Cache/CacheInterface.php
-%%WWWDIR%%/app/Core/Cache/FileCache.php
 %%WWWDIR%%/app/Core/Cache/MemoryCache.php
 %%WWWDIR%%/app/Core/Controller/AccessForbiddenException.php
 %%WWWDIR%%/app/Core/Controller/BaseException.php
@@ -1077,9 +1079,9 @@
 %%WWWDIR%%/docker-compose.postgres.yml
 %%WWWDIR%%/docker-compose.sqlite.yml
 %%WWWDIR%%/favicon.ico
+%%WWWDIR%%/healthcheck.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/jsonrpc.php
-%%WWWDIR%%/healthcheck.php
 %%WWWDIR%%/libs/Captcha/CaptchaBuilder.php
 %%WWWDIR%%/libs/Captcha/CaptchaBuilderInterface.php
 %%WWWDIR%%/libs/Captcha/Font/captcha0.ttf
@@ -2098,4 +2100,5 @@
 %%WWWDIR%%/vendor/symfony/string/Slugger/SluggerInterface.php
 %%WWWDIR%%/vendor/symfony/string/UnicodeString.php
 %%WWWDIR%%/web.config
+@dir(%%KANBOARD_USERNAME%%,%%KANBOARD_GROUPNAME%%,) %%WWWDIR%%/data
 @dir %%WWWDIR%%/plugins
