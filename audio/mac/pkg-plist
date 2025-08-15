@@ -11,4 +11,4 @@ include/MAC/Version.h
 include/MAC/Warnings.h
 include/MAC/WindowsEnvironment.h
 lib/libMAC.so
-lib/libMAC.so.13
+lib/libMAC.so.14

@@ -1,8 +1,21 @@
 Unixify built-in help.
 
---- Source/Console/Console.cpp.orig	2025-05-07 22:12:54 UTC
+--- Source/Console/Console.cpp.orig	2025-08-15 06:11:17 UTC
 +++ Source/Console/Console.cpp
-@@ -136,7 +136,7 @@ static void DisplayProperUsage(FILE * pFile)
+@@ -61,10 +61,10 @@ class CArguments (public)
+                 #ifdef _UNICODE
+                     rspString.Assign(m_argv[nArgument], true, false);
+                 #else
+-                    rspString.Assign(CAPECharacterHelper::GetUTF16FromANSI(m_argv[nArgument]), true);
++                    rspString.Assign(CAPECharacterHelper::GetUTFNFromANSI(m_argv[nArgument]), true);
+                 #endif
+             #else
+-               rspString.Assign(CAPECharacterHelper::GetUTF16FromUTF8((str_utf8 *) m_argv[nArgument]), true);
++               rspString.Assign(CAPECharacterHelper::GetUTFNFromUTF8((str_utf8 *) m_argv[nArgument]), true);
+             #endif
+         }
+         else
+@@ -135,7 +135,7 @@ static void DisplayProperUsage(FILE * pFile)
  **************************************************************************************************/
  static void DisplayProperUsage(FILE * pFile)
  {
@@ -11,7 +24,7 @@ Unixify built-in help.
  
      fwprintf(pFile, L"Modes:\n");
      fwprintf(pFile, L"    Compress (fast): '-c1000'\n");
-@@ -156,18 +156,18 @@ static void DisplayProperUsage(FILE * pFile)
+@@ -155,18 +155,18 @@ static void DisplayProperUsage(FILE * pFile)
      fwprintf(pFile, L"    Set the number of threads when compressing or decompressing: -threads=#'\n\n");
  
      fwprintf(pFile, L"Examples:\n");
