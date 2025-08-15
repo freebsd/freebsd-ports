@@ -1,5 +1,6 @@
 PORTNAME=	coccinelle
 DISTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://coccinelle.gitlabpages.inria.fr/website/distrib/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

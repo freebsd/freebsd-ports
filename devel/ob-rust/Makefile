@@ -1,5 +1,6 @@
 PORTNAME=	ob-rust
 PORTVERSION=	g20220824
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	pat@patmaddox.com

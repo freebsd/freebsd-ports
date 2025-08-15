@@ -1,5 +1,5 @@
-TIMESTAMP = 1740416719
-SHA256 (emacs-30.1.tar.xz) = 6ccac1ae76e6af93c6de1df175e8eb406767c23da3dd2a16aa67e3124a6f138f
-SIZE (emacs-30.1.tar.xz) = 54978160
+TIMESTAMP = 1755212823
+SHA256 (emacs-30.2.tar.xz) = b3f36f18a6dd2715713370166257de2fae01f9d38cfe878ced9b1e6ded5befd9
+SIZE (emacs-30.2.tar.xz) = 55320324
 SHA256 (emacs30.1-canna-20250224.diff.gz) = b93296ae41037e6457317fd1113f8c3f659f32d4310c28a6a5bf633f6fcd31e5
 SIZE (emacs30.1-canna-20250224.diff.gz) = 30488

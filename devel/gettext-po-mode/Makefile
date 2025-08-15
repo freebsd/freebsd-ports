@@ -1,5 +1,5 @@
 PORTNAME=	gettext-po-mode
-PORTREVISION=	9
+PORTREVISION=	10
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	GNU gettext po-mode for emacs

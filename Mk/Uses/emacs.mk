@@ -35,15 +35,15 @@
 #                             will be generated as part of the package.
 #
 # Variables, which can be read by ports:
-# EMACS_CMD:                  Emacs command with full path (e.g. /usr/local/bin/emacs-30.1)
+# EMACS_CMD:                  Emacs command with full path (e.g. /usr/local/bin/emacs-30.2)
 # EMACS_FLAVOR:               Used for dependencies (e.g. BUILD_DEPENDS= dash.el${EMACS_PKGNAMESUFFIX}>0:devel/dash@${EMACS_FLAVOR})
 # EMACS_LIBDIR:               Emacs Library directory without ${PREFIX} (e.g. share/emacs)
-# EMACS_LIBDIR_WITH_VER:      Library directory without ${PREFIX} including version (e.g. share/emacs/30.1)
+# EMACS_LIBDIR_WITH_VER:      Library directory without ${PREFIX} including version (e.g. share/emacs/30.2)
 # EMACS_MAJOR_VER:            Emacs major version (e.g. 30)
 # EMACS_PKGNAMESUFFIX:        PKGNAMESUFFIX to distinguish Emacs flavors
 # EMACS_SITE_LISPDIR:         Emacs site-lisp directory without ${PREFIX} (e.g. share/emacs/site-lisp)
-# EMACS_VER:                  Emacs version (e.g. 30.1)
-# EMACS_VERSION_SITE_LISPDIR: Include version (e.g. share/emacs/30.1/site-lisp)
+# EMACS_VER:                  Emacs version (e.g. 30.2)
+# EMACS_VERSION_SITE_LISPDIR: Include version (e.g. share/emacs/30.2/site-lisp)
 #-------------------------------------------------------------------------------
 #
 # MAINTAINER:	emacs@FreeBSD.org
@@ -109,7 +109,7 @@ EMACS_FLAVOR=	full
 EMACS_VER=		31.0.50
 EMACS_PORTDIR=		editors/emacs-devel
 .  else
-EMACS_VER=		30.1
+EMACS_VER=		30.2
 EMACS_PORTDIR=		editors/emacs
 .  endif
 
