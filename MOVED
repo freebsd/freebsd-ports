@@ -4729,3 +4729,5 @@ devel/py-types-Pillow|graphics/py-pillow|2025-08-12|Remove obsoleted port. The P
 devel/py-types-typed-ast||2025-08-12|Remove obsoleted port. types-typed-ast is unmaintained and won't be updated
 devel/py-types-Werkzeug|www/py-werkzeug|2025-08-12|Remove obsoleted port. The Werkzeug package includes type annotations or type stubs since version 2.0. Use www/py-werkzeug instead
 devel/pear-channel-doctrine||2025-08-14|Has expired: Upstream no longer serves through PEAR channel and has been moved to Composer
+devel/qcoro@qt5||2025-08-15|Unflavorize; Qt5 flavor has no consumers
+devel/qcoro@qt6|devel/qcoro|2025-08-15|Unflavorize; Qt5 flavor has no consumers
