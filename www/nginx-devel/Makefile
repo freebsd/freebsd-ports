@@ -1,14 +1,10 @@
 PORTNAME?=	nginx
-PORTVERSION=	1.29.0
-PORTREVISION=	5
+PORTVERSION=	1.29.1
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
 PKGNAMESUFFIX?=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	https://github.com/nginx/nginx/commit/
-PATCHFILES=	0bb7489cb2fcc60ce24fae2d5581c7441bfa0931.patch:-p1
 
 MAINTAINER?=	osa@FreeBSD.org
 COMMENT?=	Robust and small WWW server

@@ -1,6 +1,6 @@
-TIMESTAMP = 1752290893
-SHA256 (nginx-1.29.0.tar.gz) = 109754dfe8e5169a7a0cf0db6718e7da2db495753308f933f161e525a579a664
-SIZE (nginx-1.29.0.tar.gz) = 1284291
+TIMESTAMP = 1755187799
+SHA256 (nginx-1.29.1.tar.gz) = c589f7e7ed801ddbd904afbf3de26ae24eb0cce27c7717a2e94df7fb12d6ad27
+SIZE (nginx-1.29.1.tar.gz) = 1285529
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
 SIZE (nginx_mogilefs_module-1.0.4.tar.gz) = 11208
 SHA256 (osokin-ngx_http_redis-0.4.0_GH0.tar.gz) = e5b699243035575cb8ffcd26fc3a8287bcd11ff414e30fd0a52c96729fd22d0d
@@ -141,5 +141,3 @@ SHA256 (openresty-xss-nginx-module-de2d87a_GH0.tar.gz) = f830c9300d751046e2592c7
 SIZE (openresty-xss-nginx-module-de2d87a_GH0.tar.gz) = 12779
 SHA256 (tokers-zstd-nginx-module-f4ba115_GH0.tar.gz) = 20045e8ac80e2cc9fd3659573153cb1f22d98a653a10fe939a4be0e90160826a
 SIZE (tokers-zstd-nginx-module-f4ba115_GH0.tar.gz) = 55848
-SHA256 (0bb7489cb2fcc60ce24fae2d5581c7441bfa0931.patch) = 2b2eea23d23fa70b80cb7cf8468d404e851e9cab023639969c7bb1df328914ab
-SIZE (0bb7489cb2fcc60ce24fae2d5581c7441bfa0931.patch) = 1132
