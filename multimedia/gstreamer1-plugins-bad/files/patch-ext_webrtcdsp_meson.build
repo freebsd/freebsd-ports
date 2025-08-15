@@ -1,6 +1,16 @@
---- ext/webrtcdsp/meson.build.orig	2025-03-11 20:14:44 UTC
+--- ext/webrtcdsp/meson.build.orig	2025-08-07 18:06:46 UTC
 +++ ext/webrtcdsp/meson.build
-@@ -49,7 +49,7 @@ if webrtc_dep.found()
+@@ -43,13 +43,17 @@ endif
+                           required : get_option('webrtcdsp'))
+ endif
+ 
++if get_option('webrtcdsp').disabled()
++  subdir_done()
++endif
++
+ if webrtc_dep.found()
+   gstwebrtcdsp = library('gstwebrtcdsp',
+     webrtc_sources,
      cpp_args : gst_plugins_bad_args,
      link_args : noseh_link_args,
      include_directories : [configinc],
