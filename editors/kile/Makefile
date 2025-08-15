@@ -1,7 +1,7 @@
 PORTNAME=	kile
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0b4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpoppler.so:graphics/poppler \
-		libpoppler-qt5.so:graphics/poppler-qt5
+		libpoppler-qt6.so:graphics/poppler-qt6
 
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext-tools \
 		kde:6 qt:6 shared-mime-info shebangfix xorg
