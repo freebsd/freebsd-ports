@@ -13,7 +13,7 @@ include/appstream-compose/asc-utils.h
 lib/girepository-1.0/AppStreamCompose-1.0.typelib
 lib/libappstream-compose.so
 lib/libappstream-compose.so.0
-lib/libappstream-compose.so.1.0.5
+lib/libappstream-compose.so.1.0.6
 libdata/pkgconfig/appstream-compose.pc
 libexec/appstreamcli-compose
 share/gir-1.0/AppStreamCompose-1.0.gir
