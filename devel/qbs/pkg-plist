@@ -58,8 +58,8 @@ include/qbs/tools/setupprojectparameters.h
 include/qbs/tools/toolchains.h
 include/qbs/tools/version.h
 lib/libqbscore.so
-lib/libqbscore.so.2.6
-lib/libqbscore.so.%%SHLIB_VERSION%%
+lib/libqbscore.so.%%QBS_VER%%
+lib/libqbscore.so.%%QBS_VERSION%%
 lib/qbs/plugins/libclangcompilationdbgenerator.so
 lib/qbs/plugins/libiarewgenerator.so
 lib/qbs/plugins/libkeiluvgenerator.so
@@ -104,8 +104,6 @@ libexec/qbs/qbs_processlauncher
 %%PORTDOCS%%%%DOCSDIR%%/html/images/bullet_dn.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/bullet_sq.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/home.png
-@comment %%PORTDOCS%%%%DOCSDIR%%/html/images/ico_note.png
-@comment %%PORTDOCS%%%%DOCSDIR%%/html/images/ico_note_attention.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/ico_out.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qbs-build-process.png
@@ -315,6 +313,8 @@ libexec/qbs/qbs_processlauncher
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-qt-quick.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-qt-scxml-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-qt-scxml.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-qt-shadertools-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-qt-shadertools.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-sanitizers-address-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-sanitizers-address.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-texttemplate-members.html
@@ -660,6 +660,18 @@ share/man/man1/qbs.1.gz
 %%DATADIR%%/examples/rpaths/rpaths.qbs
 %%DATADIR%%/examples/rule/lorem_ipsum.txt
 %%DATADIR%%/examples/rule/rule.qbs
+%%DATADIR%%/examples/shadereffects/content/face-smile.png
+%%DATADIR%%/examples/shadereffects/content/qt-logo.png
+%%DATADIR%%/examples/shadereffects/content/shaders/blur.frag
+%%DATADIR%%/examples/shadereffects/content/shaders/colorize.frag
+%%DATADIR%%/examples/shadereffects/content/shaders/genie.vert
+%%DATADIR%%/examples/shadereffects/content/shaders/outline.frag
+%%DATADIR%%/examples/shadereffects/content/shaders/shadow.frag
+%%DATADIR%%/examples/shadereffects/content/shaders/wobble.frag
+%%DATADIR%%/examples/shadereffects/main.cpp
+%%DATADIR%%/examples/shadereffects/resources.qrc
+%%DATADIR%%/examples/shadereffects/shadereffects.qbs
+%%DATADIR%%/examples/shadereffects/shadereffects.qml
 %%DATADIR%%/imports/qbs/BundleTools/bundle-tools.js
 %%DATADIR%%/imports/qbs/DarwinTools/darwin-tools.js
 %%DATADIR%%/imports/qbs/ModUtils/utils.js
@@ -752,6 +764,8 @@ share/man/man1/qbs.1.gz
 %%DATADIR%%/module-providers/Qt/templates/quick.qbs
 %%DATADIR%%/module-providers/Qt/templates/rcc.js
 %%DATADIR%%/module-providers/Qt/templates/scxml.qbs
+%%DATADIR%%/module-providers/Qt/templates/shadertools.js
+%%DATADIR%%/module-providers/Qt/templates/shadertools.qbs
 %%DATADIR%%/module-providers/__fallback/fallback.qbs
 %%DATADIR%%/module-providers/__fallback/provider.qbs
 %%DATADIR%%/module-providers/conan.js
