@@ -1,8 +1,7 @@
 PORTNAME=	kmymoney
-PORTVERSION=	5.1.3
-PORTREVISION=	7
+PORTVERSION=	5.2.1
 CATEGORIES=	finance kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE personal finance manager
@@ -11,70 +10,78 @@ WWW=		https://kmymoney.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt
 
-LIB_DEPENDS=	libalkimia5.so:finance/alkimia \
-		libKChart.so:graphics/kdiagram
+LIB_DEPENDS=	libalkimia6.so:finance/alkimia \
+		libKChart6.so:graphics/kdiagram-qt6 \
+		libmpir.so:math/mpir \
+		libqt6keychain.so:security/qtkeychain@qt6
 
-USES=		cmake compiler:c++14-lang desktop-file-utils \
-		gettext-runtime:build gettext-tools kde:5 \
-		pkgconfig qt:5 shared-mime-info shebangfix tar:xz
-USE_QT=		buildtools:build core dbus gui network printsupport \
-		qmake:build sql testlib:build xml webengine widgets
-USE_KDE=	activities archive codecs completion config \
-		configwidgets coreaddons doctools:build ecm:build i18n \
+USES=		cmake compiler:c++17-lang desktop-file-utils \
+		gettext-runtime:build gettext-tools kde:6 \
+		pkgconfig qt:6 shared-mime-info shebangfix tar:xz
+USE_KDE=	activities archive codecs colorscheme completion config \
+		configwidgets coreaddons crash i18n \
 		itemmodels itemviews jobwidgets kcmutils \
 		kio notifications textwidgets service sonnet \
-		wallet widgetsaddons xmlgui
+		widgetsaddons xmlgui \
+		doctools:build ecm:build
 USE_LDCONFIG=	yes
+USE_QT=		base
 
 SHEBANG_FILES=	kmymoney/misc/financequote.pl
 
-CMAKE_ON=	ENABLE_WEBENGINE
+CMAKE_ON=	BUILD_WITH_QT6
 
+PLIST_SUB=	KMM_VERSION=${PORTVERSION}
+
+OPTIONS_DEFINE=		ADDRESSBOOK GNUPG HOLIDAYS QUOTES
+OPTIONS_DEFAULT=	ADDRESSBOOK CALENDAR GNUPG HOLIDAYS KBANKING OFX QUOTES
 OPTIONS_GROUP=		PLUGINS
 OPTIONS_GROUP_PLUGINS=	CALENDAR KBANKING OFX SQLCIPHER WOOB
-OPTIONS_DEFINE=		GNUPG HOLIDAYS QUOTES
-OPTIONS_DEFAULT=	CALENDAR GNUPG HOLIDAYS KBANKING OFX QUOTES
+
 OPTIONS_SUB=		yes
+
+ADDRESSBOOK_DESC=	KDE PIM address book support
+ADDRESSBOOK_USE=	KDE=akonadi,contacts,identitymanagement
+ADDRESSBOOK_CMAKE_BOOL=	ENABLE_ADDRESSBOOK
 
 CALENDAR_DESC=		iCalendar exporter
 CALENDAR_LIB_DEPENDS=	libical.so:devel/libical
 CALENDAR_CMAKE_BOOL=	ENABLE_LIBICAL
 
 GNUPG_LIB_DEPENDS=	libgpgmepp.so:security/gpgmepp
-GNUPG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Gpgmepp \
-			CMAKE_DISABLE_FIND_PACKAGE_KF5Gpgmepp
+GNUPG_CMAKE_BOOL=	ENABLE_GPG
 
-HOLIDAYS_DESC=		Holidays support
-HOLIDAYS_USE=		kde=holidays
-HOLIDAYS_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF5Holidays
+HOLIDAYS_DESC=		Fetch holidays from KDE PIM system
+HOLIDAYS_USE=		KDE=holidays
+HOLIDAYS_CMAKE_BOOL=	ENABLE_HOLIDAYS
 
 KBANKING_DESC=		Online banking via KBanking (AqBanking)
 KBANKING_LIB_DEPENDS=	libgwenhywfar.so:devel/gwenhywfar \
-			libgwengui-qt5.so:devel/gwenhywfar-qt5 \
+			libgwengui-qt6.so:devel/gwenhywfar-qt6 \
 			libaqbanking.so:finance/aqbanking
-KBANKING_USE=		qt=declarative
+KBANKING_USE=		QT=declarative:run
 KBANKING_CMAKE_BOOL=	ENABLE_KBANKING
 
 OFX_DESC=		OFX (Open Financial Exchange) importer
 OFX_LIB_DEPENDS=	libofx.so:finance/libofx
-OFX_CMAKE_BOOL=		ENABLE_OFXIMPORTER
+OFX_CMAKE_BOOL=		ENABLE_LIBOFX
 
 QUOTES_DESC=		Online stock and currency price quotes
-QUOTES_USES=		perl5
-QUOTES_USE=		PERL5=run
 QUOTES_RUN_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \
 			p5-Finance-Quote>=0:finance/p5-Finance-Quote \
 			p5-XML-Parser>=0:textproc/p5-XML-Parser \
 			p5-XML-Writer>=0:textproc/p5-XML-Writer \
 			p5-libwww>=0:www/p5-libwww
+QUOTES_USES=		perl5
+QUOTES_USE=		PERL5=run
 
 SQLCIPHER_DESC=		KMyMoney database encryption
 SQLCIPHER_LIB_DEPENDS=	libsqlcipher.so:databases/sqlcipher
 SQLCIPHER_CMAKE_BOOL=	ENABLE_SQLCIPHER
 
 WOOB_DESC=		Online banking via Web Outside Of Browsers
-WOOB_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}woob-qt>0:www/py-woob-qt@${PY_FLAVOR}
-WOOB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}woob-qt>0:www/py-woob-qt@${PY_FLAVOR}
+WOOB_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}woob>0:www/py-woob@${PY_FLAVOR}
+WOOB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}woob>0:www/py-woob@${PY_FLAVOR}
 WOOB_USES=		python
 WOOB_CMAKE_BOOL=	ENABLE_WOOB
 
