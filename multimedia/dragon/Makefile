@@ -9,14 +9,13 @@ WWW=		https://www.kde.org/applications/multimedia/dragonplayer/
 
 LICENSE=	GPLv2
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:6 \
-		qt:6 tar:xz xorg
-USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
-		dbusaddons doctools i18n iconthemes jobwidgets kio \
-		notifications parts phonon service solid sonnet textwidgets \
-		widgetsaddons windowsystem xmlgui \
-		ecm:build
-USE_QT=		base
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+
+USES=		cmake compiler:c++23-lang desktop-file-utils gettext kde:6 \
+		pkgconfig qt:6 tar:xz xorg
+USE_KDE=	config coreaddons crash i18n kio kirigami2 windowsystem \
+		doctools:build ecm:build
+USE_QT=		base multimedia
 USE_XORG=	x11
 
 CONFLICTS_INSTALL=	dragon # bin/dragon

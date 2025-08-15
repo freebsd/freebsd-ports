@@ -65,7 +65,6 @@ share/icons/hicolor/scalable/status/moon-phase-first-quarter.svg
 share/icons/hicolor/scalable/status/moon-phase-full.svg
 share/icons/hicolor/scalable/status/moon-phase-last-quarter.svg
 share/icons/hicolor/scalable/status/moon-phase-new.svg
-share/knsrcfiles/korganizer.knsrc
 %%DATADIR%%/sounds/alert.wav
 %%DATADIR%%/sounds/icemag.wav
 %%DATADIR%%/sounds/lightmag.wav

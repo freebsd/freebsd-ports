@@ -7,6 +7,7 @@ share/icons/hicolor/22x22/apps/filelight.png
 share/icons/hicolor/32x32/apps/filelight.png
 share/icons/hicolor/48x48/apps/filelight.png
 share/icons/hicolor/64x64/apps/filelight.png
+share/kio/servicemenus/filelight.desktop
 share/locale/ar/LC_MESSAGES/filelight.mo
 share/locale/ast/LC_MESSAGES/filelight.mo
 share/locale/az/LC_MESSAGES/filelight.mo

@@ -1,5 +1,6 @@
 etc/xdg/libkleopatrarc
 include/KPim6/Libkleo/Libkleo/Algorithm
+include/KPim6/Libkleo/Libkleo/ApplicationPaletteWatcher
 include/KPim6/Libkleo/Libkleo/Assuan
 include/KPim6/Libkleo/Libkleo/AuditLogEntry
 include/KPim6/Libkleo/Libkleo/AuditLogViewer
@@ -16,6 +17,7 @@ include/KPim6/Libkleo/Libkleo/DefaultKeyFilter
 include/KPim6/Libkleo/Libkleo/DefaultKeyGenerationJob
 include/KPim6/Libkleo/Libkleo/DirectoryServicesWidget
 include/KPim6/Libkleo/Libkleo/Dn
+include/KPim6/Libkleo/Libkleo/DnAttributes
 include/KPim6/Libkleo/Libkleo/DocAction
 include/KPim6/Libkleo/Libkleo/EditDirectoryServiceDialog
 include/KPim6/Libkleo/Libkleo/Enum
@@ -70,13 +72,13 @@ include/KPim6/Libkleo/Libkleo/SystemInfo
 include/KPim6/Libkleo/Libkleo/Test
 include/KPim6/Libkleo/Libkleo/TreeView
 include/KPim6/Libkleo/Libkleo/TreeWidget
-include/KPim6/Libkleo/Libkleo/UniqueLock
 include/KPim6/Libkleo/Libkleo/UserIDListModel
 include/KPim6/Libkleo/Libkleo/UserIDListProxyModel
 include/KPim6/Libkleo/Libkleo/UserIDProxyModel
 include/KPim6/Libkleo/Libkleo/UserIDSelectionCombo
 include/KPim6/Libkleo/Libkleo/Validation
 include/KPim6/Libkleo/libkleo/algorithm.h
+include/KPim6/Libkleo/libkleo/applicationpalettewatcher.h
 include/KPim6/Libkleo/libkleo/assuan.h
 include/KPim6/Libkleo/libkleo/auditlogentry.h
 include/KPim6/Libkleo/libkleo/auditlogviewer.h
@@ -94,6 +96,7 @@ include/KPim6/Libkleo/libkleo/defaultkeygenerationjob.h
 include/KPim6/Libkleo/libkleo/directoryserviceswidget.h
 include/KPim6/Libkleo/libkleo/dn.h
 include/KPim6/Libkleo/libkleo/dnattributeorderconfigwidget.h
+include/KPim6/Libkleo/libkleo/dnattributes.h
 include/KPim6/Libkleo/libkleo/docaction.h
 include/KPim6/Libkleo/libkleo/editdirectoryservicedialog.h
 include/KPim6/Libkleo/libkleo/enum.h
@@ -150,7 +153,6 @@ include/KPim6/Libkleo/libkleo/systeminfo.h
 include/KPim6/Libkleo/libkleo/test.h
 include/KPim6/Libkleo/libkleo/treeview.h
 include/KPim6/Libkleo/libkleo/treewidget.h
-include/KPim6/Libkleo/libkleo/uniquelock.h
 include/KPim6/Libkleo/libkleo/useridlistmodel.h
 include/KPim6/Libkleo/libkleo/useridlistproxymodel.h
 include/KPim6/Libkleo/libkleo/useridproxymodel.h
@@ -191,6 +193,7 @@ share/locale/fr/LC_MESSAGES/libkleopatra6.mo
 share/locale/fy/LC_MESSAGES/libkleopatra6.mo
 share/locale/ga/LC_MESSAGES/libkleopatra6.mo
 share/locale/gl/LC_MESSAGES/libkleopatra6.mo
+share/locale/he/LC_MESSAGES/libkleopatra6.mo
 share/locale/hi/LC_MESSAGES/libkleopatra6.mo
 share/locale/hne/LC_MESSAGES/libkleopatra6.mo
 share/locale/hr/LC_MESSAGES/libkleopatra6.mo

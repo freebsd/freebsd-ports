@@ -34,8 +34,8 @@ lib/cmake/Okular6/Okular6ConfigVersion.cmake
 lib/cmake/Okular6/Okular6Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Okular6/Okular6Targets.cmake
 lib/libOkular6Core.so
-lib/libOkular6Core.so.3
-lib/libOkular6Core.so.3.0.0
+lib/libOkular6Core.so.4
+lib/libOkular6Core.so.4.0.0
 %%QT_PLUGINDIR%%/kf6/parts/okularpart.so
 %%QT_PLUGINDIR%%/okular_generators/okularGenerator_comicbook.so
 %%QT_PLUGINDIR%%/okular_generators/okularGenerator_djvu.so

@@ -1,6 +1,7 @@
 bin/neochat
 %%QT_PLUGINDIR%%/kf6/purpose/neochatshareplugin.so
 share/applications/org.kde.neochat.desktop
+share/dbus-1/services/org.kde.neochat.service
 share/icons/hicolor/scalable/apps/org.kde.neochat.svg
 share/icons/hicolor/scalable/apps/org.kde.neochat.tray.svg
 share/knotifications6/neochat.notifyrc
@@ -55,6 +56,7 @@ share/man/es/man1/neochat.1.gz
 share/man/it/man1/neochat.1.gz
 share/man/man1/neochat.1.gz
 share/man/nl/man1/neochat.1.gz
+share/man/ru/man1/neochat.1.gz
 share/man/sl/man1/neochat.1.gz
 share/man/sv/man1/neochat.1.gz
 share/man/tr/man1/neochat.1.gz

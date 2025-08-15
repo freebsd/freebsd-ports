@@ -30,6 +30,7 @@ include/kpmcore/fs/fat16.h
 include/kpmcore/fs/fat32.h
 include/kpmcore/fs/filesystem.h
 include/kpmcore/fs/filesystemfactory.h
+include/kpmcore/fs/freebsdswap.h
 include/kpmcore/fs/hfs.h
 include/kpmcore/fs/hfsplus.h
 include/kpmcore/fs/hpfs.h
@@ -89,6 +90,7 @@ lib/libkpmcore.so
 lib/libkpmcore.so.13
 lib/libkpmcore.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kpmcore/pmdummybackendplugin.so
+%%QT_PLUGINDIR%%/kpmcore/pmgeombackendplugin.so
 share/dbus-1/system-services/org.kde.kpmcore.helperinterface.service
 share/dbus-1/system.d/org.kde.kpmcore.helperinterface.conf
 share/locale/ar/LC_MESSAGES/kpmcore._policy_.mo

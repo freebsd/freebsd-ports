@@ -1,5 +1,4 @@
 include/QMobipocket6/qmobipocket/mobipocket.h
-include/QMobipocket6/qmobipocket/qfilestream.h
 include/QMobipocket6/qmobipocket/qmobipocket_export.h
 include/QMobipocket6/qmobipocket_version.h
 lib/cmake/QMobipocket6/QMobipocket6Config.cmake
@@ -7,5 +6,6 @@ lib/cmake/QMobipocket6/QMobipocket6ConfigVersion.cmake
 lib/cmake/QMobipocket6/QMobipocket6Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/QMobipocket6/QMobipocket6Targets.cmake
 lib/libQMobipocket6.so
-lib/libQMobipocket6.so.2
-lib/libQMobipocket6.so.2.1.0
+lib/libQMobipocket6.so.3
+lib/libQMobipocket6.so.3.0.0
+share/qlogging-categories6/qmobipocket.categories

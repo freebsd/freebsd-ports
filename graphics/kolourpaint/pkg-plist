@@ -1,4 +1,9 @@
 bin/kolourpaint
+etc/xdg/colors/40.colors
+etc/xdg/colors/Oxygen.colors
+etc/xdg/colors/Rainbow.colors
+etc/xdg/colors/Royal.colors
+etc/xdg/colors/Web.colors
 lib/libkolourpaint_lgpl.so
 lib/libkolourpaint_lgpl.so.5
 share/applications/org.kde.kolourpaint.desktop

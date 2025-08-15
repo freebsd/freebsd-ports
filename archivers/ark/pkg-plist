@@ -20,8 +20,6 @@ share/icons/hicolor/128x128/apps/ark.png
 share/icons/hicolor/48x48/apps/ark.png
 share/icons/hicolor/64x64/apps/ark.png
 share/icons/hicolor/scalable/apps/ark.svgz
-share/kconf_update/ark.upd
-share/kconf_update/ark_add_hamburgermenu_to_toolbar.sh
 share/locale/af/LC_MESSAGES/ark.mo
 share/locale/ar/LC_MESSAGES/ark.mo
 share/locale/ast/LC_MESSAGES/ark.mo
