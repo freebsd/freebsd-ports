@@ -1,21 +1,18 @@
-Make tests conditional
+Xmlgui is only needed for the tools.
 
---- CMakeLists.txt.orig	2022-05-05 15:16:34 UTC
+--- CMakeLists.txt.orig	2025-06-21 11:46:33 UTC
 +++ CMakeLists.txt
-@@ -75,7 +75,7 @@ if(BUILD_QT4)
-         set(QT_NETWORK_COMPONENT)
-     endif()
- 
--    find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui QtDBus ${QT_NETWORK_COMPONENT} QtTest ${QT_BROWSER_COMPONENT} QtDeclarative)
-+    find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui QtDBus ${QT_NETWORK_COMPONENT} ${QT_BROWSER_COMPONENT} QtDeclarative)
-     set(_kde4_uninstall_rule_created 1)
-     find_package(KDE4 REQUIRED)
-     if(NOT BUILD_WITH_QTNETWORK)
-@@ -150,7 +150,6 @@ else()
-     find_package(Qt5 REQUIRED COMPONENTS
-         Core
-         ${QT_NETWORK_COMPONENT}
--        Test
-         ${QT_BROWSER_COMPONENT}
-         Qml
+@@ -172,8 +172,12 @@ else()
+         IconThemes
+         ${PLASMA_COMPONENT}
+         TextWidgets
+-        XmlGui
      )
++    if(BUILD_TOOLS)
++        list(APPEND KF_PRIVATE_COMPONENTS
++            XmlGui
++        )
++    endif()
+     find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS ${KF_PRIVATE_COMPONENTS} ${KF_PUBLIC_COMPONENTS})
+ 
+     macro(ecm_add_executable)
