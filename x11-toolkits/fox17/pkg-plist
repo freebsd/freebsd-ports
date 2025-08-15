@@ -363,6 +363,7 @@ include/fox-%%MAJORVER%%/chart/chart.h
 include/fox-%%MAJORVER%%/chart/chartdefs.h
 include/fox-%%MAJORVER%%/fx.h
 include/fox-%%MAJORVER%%/fx3d.h
+include/fox-%%MAJORVER%%/fxadler32.h
 include/fox-%%MAJORVER%%/fxascii.h
 include/fox-%%MAJORVER%%/fxchar.h
 include/fox-%%MAJORVER%%/fxcpuid.h
@@ -377,11 +378,11 @@ include/fox-%%MAJORVER%%/xincs.h
 lib/libCHART-%%MAJORVER%%.a
 lib/libCHART-%%MAJORVER%%.so
 lib/libCHART-%%MAJORVER%%.so.0
-lib/libCHART-%%MAJORVER%%.so.0.0.85
+lib/libCHART-%%MAJORVER%%.so.0.0.86
 lib/libFOX-%%MAJORVER%%.a
 lib/libFOX-%%MAJORVER%%.so
 lib/libFOX-%%MAJORVER%%.so.0
-lib/libFOX-%%MAJORVER%%.so.0.0.85
+lib/libFOX-%%MAJORVER%%.so.0.0.86
 libdata/pkgconfig/fox17.pc
 share/man/man1/ControlPanel-17.1.gz
 %%PORTEXAMPLES%%share/man/man1/PathFinder-17.1.gz
