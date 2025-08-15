@@ -1,7 +1,7 @@
 PORTNAME=	quimup
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/Quimup%20${PORTVERSION:R}
+MASTER_SITES=	SF/${PORTNAME}/Quimup%20${DISTVERSION}
 DISTNAME=	Quimup-${PORTVERSION}.source
 
 MAINTAINER=	cmanv@duck.com
@@ -21,8 +21,14 @@ CXXFLAGS+=	-std=c++17
 
 DESKTOP_ENTRIES="Quimup" "MPD client" "quimup" "quimup" \
 		"Audio;AudioVideo;Qt;" true
+EXTRACT_AFTER_ARGS=	--exclude RPM_DEB_build \
+			--exclude Release \
+			--exclude Screenshots \
+			--exclude changelog \
+			--exclude readme \
+			--no-same-owner --no-same-permissions
 
-WRKSRC=		${WRKDIR}/Quimup-${PORTVERSION}.source
+WRKSRC=		${WRKDIR}/Quimup-${DISTVERSION}.source
 
 PLIST_FILES=	bin/quimup \
 		share/pixmaps/quimup.svg
