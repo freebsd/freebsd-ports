@@ -9,6 +9,7 @@ bin/toot
 %%PYTHON_SITELIBDIR%%/toot/cli/auth.py
 %%PYTHON_SITELIBDIR%%/toot/cli/diag.py
 %%PYTHON_SITELIBDIR%%/toot/cli/lists.py
+%%PYTHON_SITELIBDIR%%/toot/cli/polls.py
 %%PYTHON_SITELIBDIR%%/toot/cli/post.py
 %%PYTHON_SITELIBDIR%%/toot/cli/read.py
 %%PYTHON_SITELIBDIR%%/toot/cli/statuses.py
