@@ -1,6 +1,6 @@
 PORTNAME=	kea
 DISTVERSION=	3.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/${DISTVERSION}
 
@@ -14,14 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		liblog4cplus.so:devel/log4cplus
 
-USES=		compiler:c++11-lang cpe iconv libtool pathfix ssl python tar:xz meson pkgconfig cmake:indirect
+USES=		compiler:c++11-lang cpe iconv libtool pathfix ssl python tar:xz meson pkgconfig cmake:indirect shebangfix
 MESON_ARGS=	--auto-features=disabled \
 		-Dcrypto=openssl \
 		-Dnetconf=disabled
 
 BUILD_DEPENDS=	googletest>0:devel/googletest \
-		rst2man:textproc/py-docutils@${PY_FLAVOR} \
-		python3:lang/python3
+		rst2man:textproc/py-docutils@${PY_FLAVOR}
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${DISTVERSION:C/-.*//}
@@ -34,6 +33,9 @@ USE_RC_SUBR=	${PORTNAME}
 
 PORTDOCS=	AUTHORS CONTRIBUTING.md COPYING ChangeLog README SECURITY.md \
 		code_of_conduct.md examples platforms.rst
+
+SHEBANG_GLOB=	*.py *.in
+python_OLD_CMD+=@PYTHON@
 
 OPTIONS_DEFINE=	DOCS MYSQL PGSQL
 OPTIONS_SUB=	yes
