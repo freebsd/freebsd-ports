@@ -22,6 +22,8 @@ GH_ACCOUNT=	MalpenZibo
 
 LDFLAGS+=	-linotify
 
+PORTSCOUT=	limit:^[0-9]\.
+
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGELOG.md README.md
 
