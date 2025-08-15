@@ -266,8 +266,6 @@ etc/homepage.env
 %%HOMEDIR%%/.next/server/src/middleware.js
 %%HOMEDIR%%/.next/server/webpack-api-runtime.js
 %%HOMEDIR%%/.next/server/webpack-runtime.js
-%%HOMEDIR%%/.next/static/S9CA0oElVSriPRm2y29ge/_buildManifest.js
-%%HOMEDIR%%/.next/static/S9CA0oElVSriPRm2y29ge/_ssgManifest.js
 %%HOMEDIR%%/.next/static/chunks/01325ca9-7d5f3991c894ef3c.js
 %%HOMEDIR%%/.next/static/chunks/1024.b5f6ec8d81ab8092.js
 %%HOMEDIR%%/.next/static/chunks/1053.0e126909a1d737e2.js
@@ -313,7 +311,6 @@ etc/homepage.env
 %%HOMEDIR%%/.next/static/chunks/2905.7cecbab4a193b4eb.js
 %%HOMEDIR%%/.next/static/chunks/2952.fc229b125f864988.js
 %%HOMEDIR%%/.next/static/chunks/3020.b89df5e8835348a6.js
-%%HOMEDIR%%/.next/static/chunks/3121.d79b8c7b7a48bbb0.js
 %%HOMEDIR%%/.next/static/chunks/3156.4f1eab967a999625.js
 %%HOMEDIR%%/.next/static/chunks/3172.cfd46924ee421cfa.js
 %%HOMEDIR%%/.next/static/chunks/3270.70b501f792f14c3e.js
@@ -424,7 +421,6 @@ etc/homepage.env
 %%HOMEDIR%%/.next/static/chunks/9223.5b8e76af5666d50a.js
 %%HOMEDIR%%/.next/static/chunks/9241.f2e9e75eef2e2278.js
 %%HOMEDIR%%/.next/static/chunks/9298.0e4892b727337df7.js
-%%HOMEDIR%%/.next/static/chunks/9346.c1299f25a08dbde5.js
 %%HOMEDIR%%/.next/static/chunks/9354.209c8a325d31c25d.js
 %%HOMEDIR%%/.next/static/chunks/9379.11d0dec7b082338f.js
 %%HOMEDIR%%/.next/static/chunks/9448.facbd0ae7660664e.js
@@ -455,7 +451,6 @@ etc/homepage.env
 %%HOMEDIR%%/.next/static/chunks/pages/index-c767b321db535108.js
 %%HOMEDIR%%/.next/static/chunks/pages/site.webmanifest-61a35e125a46ba1c.js
 %%HOMEDIR%%/.next/static/chunks/polyfills-42372ed130431b0a.js
-%%HOMEDIR%%/.next/static/chunks/webpack-0e0fe0385c6de871.js
 %%HOMEDIR%%/.next/static/css/2699d50e78e78db5.css
 %%HOMEDIR%%/.next/static/media/Manrope.61cdc36c.ttf
 %%HOMEDIR%%/.next/static/media/Manrope.63012343.woff2
@@ -5175,3 +5170,8 @@ etc/homepage.env
 %%HOMEDIR%%/src/widgets/whatsupdocker/component.jsx
 %%HOMEDIR%%/src/widgets/xteve/component.jsx
 %%HOMEDIR%%/src/widgets/zabbix/component.jsx
+%%WWWDIR%%/.next/static/C96yU3PHL1RBxfvfUwXg7/_buildManifest.js
+%%WWWDIR%%/.next/static/C96yU3PHL1RBxfvfUwXg7/_ssgManifest.js
+%%WWWDIR%%/.next/static/chunks/3121.062fa4a7824bc243.js
+%%WWWDIR%%/.next/static/chunks/9346.79cfeec7ac0908a1.js
+%%WWWDIR%%/.next/static/chunks/webpack-db160e9b591c440c.js
