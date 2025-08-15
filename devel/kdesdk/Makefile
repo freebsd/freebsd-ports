@@ -9,8 +9,7 @@ WWW=		https://apps.kde.org/categories/development/
 USES=		kde:6 metaport qt:6
 USE_QT=		#
 
-OPTIONS_DEFINE=	CERVISIA \
-		DEVUTILS \
+OPTIONS_DEFINE=	DEVUTILS \
 		DEVSCRIPTS \
 		DOLPHIN \
 		KAPPTEMPLATE \
@@ -22,9 +21,6 @@ OPTIONS_DEFINE=	CERVISIA \
 		POXML \
 		THUMBNAILER \
 		UMBRELLO
-
-CERVISIA_DESC=		CVS frontend
-CERVISIA_RUN_DEPENDS=	cervisia>=${KDE_APPLICATIONS_VERSION}:devel/cervisia
 
 DEVUTILS_DESC=		KDE development utilities
 DEVUTILS_RUN_DEPENDS=	kde-dev-utils>=${KDE_APPLICATIONS_VERSION}:devel/kde-dev-utils
