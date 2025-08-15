@@ -2,12 +2,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		adler2-2.0.1 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.21 \
-		anstream-0.6.19 \
+		anstream-0.6.20 \
 		anstyle-1.0.11 \
 		anstyle-parse-0.2.7 \
-		anstyle-query-1.1.3 \
-		anstyle-wincon-3.0.9 \
-		anyhow-1.0.98 \
+		anstyle-query-1.1.4 \
+		anstyle-wincon-3.0.10 \
+		anyhow-1.0.99 \
 		assert_cmd-2.0.17 \
 		autocfg-1.5.0 \
 		backtrace-0.3.75 \
@@ -18,18 +18,18 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		byteorder-1.5.0 \
 		cargo-husky-1.5.0 \
 		cassowary-0.3.0 \
-		castaway-0.2.3 \
+		castaway-0.2.4 \
 		cfg-if-1.0.1 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.40 \
-		clap_builder-4.5.40 \
-		clap_complete-4.5.54 \
+		clap-4.5.45 \
+		clap_builder-4.5.44 \
+		clap_complete-4.5.57 \
 		clap_complete_fig-4.5.2 \
-		clap_complete_nushell-4.5.7 \
-		clap_derive-4.5.40 \
+		clap_complete_nushell-4.5.8 \
+		clap_derive-4.5.45 \
 		clap_lex-0.7.5 \
-		clap_mangen-0.2.27 \
+		clap_mangen-0.2.29 \
 		colorchoice-1.0.4 \
 		compact_str-0.8.1 \
 		concat-string-1.0.1 \
@@ -52,7 +52,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		doc-comment-0.3.3 \
 		document-features-0.2.11 \
 		downcast-rs-1.2.1 \
-		dyn-clone-1.0.19 \
+		dyn-clone-1.0.20 \
 		either-1.15.0 \
 		enum-as-inner-0.6.1 \
 		equivalent-1.0.2 \
@@ -65,25 +65,25 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		foldhash-0.1.5 \
 		getrandom-0.2.16 \
 		gimli-0.31.1 \
-		hashbrown-0.15.4 \
+		hashbrown-0.15.5 \
 		heck-0.5.0 \
 		humantime-2.2.0 \
 		ident_case-1.0.1 \
 		indexmap-2.10.0 \
 		indoc-2.0.6 \
-		instability-0.3.7 \
+		instability-0.3.9 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
 		lazy_static-1.5.0 \
 		lazycell-1.3.0 \
-		libc-0.2.174 \
+		libc-0.2.175 \
 		libloading-0.8.8 \
-		libredox-0.1.4 \
+		libredox-0.1.9 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.9.4 \
-		litrs-0.4.1 \
+		litrs-0.4.2 \
 		lock_api-0.4.13 \
 		log-0.4.27 \
 		lru-0.12.5 \
@@ -109,28 +109,28 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		parking_lot-0.12.4 \
 		parking_lot_core-0.9.11 \
 		paste-1.0.15 \
-		plist-1.7.3 \
+		plist-1.7.4 \
 		portable-pty-0.9.0 \
 		powerfmt-0.2.0 \
 		predicates-3.1.3 \
 		predicates-core-1.0.9 \
 		predicates-tree-1.0.12 \
-		proc-macro2-1.0.95 \
-		quick-xml-0.37.5 \
+		proc-macro2-1.0.97 \
+		quick-xml-0.38.1 \
 		quote-1.0.40 \
 		ratatui-0.29.0 \
-		redox_syscall-0.5.13 \
-		redox_users-0.5.0 \
+		redox_syscall-0.5.17 \
+		redox_users-0.5.2 \
 		ref-cast-1.0.24 \
 		ref-cast-impl-1.0.24 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
 		roff-0.2.2 \
-		rustc-demangle-0.1.25 \
+		rustc-demangle-0.1.26 \
 		rustix-0.38.44 \
-		rustix-1.0.7 \
-		rustversion-1.0.21 \
+		rustix-1.0.8 \
+		rustversion-1.0.22 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
 		schemars-0.9.0 \
@@ -139,32 +139,32 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
 		serde_derive_internals-0.29.1 \
-		serde_json-1.0.140 \
+		serde_json-1.0.142 \
 		serde_spanned-0.6.9 \
-		serial2-0.2.29 \
+		serial2-0.2.31 \
 		shared_library-0.1.9 \
 		shell-words-1.1.0 \
 		signal-hook-0.3.18 \
 		signal-hook-mio-0.2.4 \
-		signal-hook-registry-1.4.5 \
+		signal-hook-registry-1.4.6 \
 		smallvec-1.15.1 \
 		starship-battery-0.10.2 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
-		strum-0.27.1 \
+		strum-0.27.2 \
 		strum_macros-0.26.4 \
-		strum_macros-0.27.1 \
-		syn-2.0.104 \
+		strum_macros-0.27.2 \
+		syn-2.0.105 \
 		sysctl-0.6.0 \
-		sysinfo-0.36.1 \
+		sysinfo-0.37.0 \
 		tempfile-3.20.0 \
-		terminal_size-0.4.2 \
+		terminal_size-0.4.3 \
 		termtree-0.5.1 \
 		thiserror-1.0.69 \
-		thiserror-2.0.12 \
+		thiserror-2.0.14 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.12 \
+		thiserror-impl-2.0.14 \
 		time-0.3.41 \
 		time-core-0.1.4 \
 		time-macros-0.2.22 \
@@ -201,7 +201,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.2 \
+		windows-targets-0.53.3 \
 		windows-threading-0.1.0 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_gnullvm-0.53.0 \
@@ -219,6 +219,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
-		winnow-0.7.11 \
+		winnow-0.7.12 \
 		winreg-0.10.1 \
 		wrapcenum-derive-0.4.1
