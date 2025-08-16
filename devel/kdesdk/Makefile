@@ -1,5 +1,6 @@
 PORTNAME=	kdesdk
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -7,7 +8,6 @@ COMMENT=	KDE Software Development Kit
 WWW=		https://apps.kde.org/categories/development/
 
 USES=		kde:6 metaport qt:6
-USE_QT=		#
 
 OPTIONS_DEFINE=	DEVUTILS \
 		DEVSCRIPTS \
@@ -21,6 +21,7 @@ OPTIONS_DEFINE=	DEVUTILS \
 		POXML \
 		THUMBNAILER \
 		UMBRELLO
+OPTIONS_DEFAULT=${OPTIONS_DEFINE}
 
 DEVUTILS_DESC=		KDE development utilities
 DEVUTILS_RUN_DEPENDS=	kde-dev-utils>=${KDE_APPLICATIONS_VERSION}:devel/kde-dev-utils
