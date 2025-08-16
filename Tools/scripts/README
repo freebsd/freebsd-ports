@@ -12,15 +12,15 @@ bump_revision.pl - Small script to bump the PORTREVISION variable of ports
 checkcats.py - verify that master categories in all ports are correct and
                report any problems. Beware that the full check takes quite
 			   some time.
-checknewvers - checks for availability for a newest version of distfiles on
+checknewver.sh - checks for availability for a newest version of distfiles on
                MASTER_SITES (ftp only).
-checksum  - allows checking of ports to see if their checksums
+checksum.sh  - allows checking of ports to see if their checksums
 			match, and if they don't, give a diff against the older version to
 			help discover why the checksum didn't match.
 chkorigin.sh - checks all ports in the tree for a wrong PKGORIGIN.
                Run this tool after every repocopy.
 doportlint - run portlint on every port and return the results
-distclean - compare md5 sums of distfiles in ports/distfiles with currently
+distclean.sh - compare md5 sums of distfiles in ports/distfiles with currently
             installed ports collection in ports/* and prompt to remove
             unmatched entries
 getpatch - downloads patch attachments from a Bug Tracking Systems
