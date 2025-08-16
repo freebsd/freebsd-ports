@@ -31,6 +31,7 @@
     SUBDIR += amfora
     SUBDIR += amphetadesk
     SUBDIR += analog
+    SUBDIR += angelfish
     SUBDIR += angie
     SUBDIR += angie-console-light
     SUBDIR += angie-module-auth-jwt
