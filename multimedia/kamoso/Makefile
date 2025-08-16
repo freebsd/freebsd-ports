@@ -21,4 +21,9 @@ USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
 
+# Support for 13.5-RELEASE and 14.2-RELEASE
+.if !exists(/usr/bin/clang-scan-deps)
+USES+=		llvm
+.endif
+
 .include <bsd.port.mk>
