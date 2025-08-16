@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# PROVIDE: syncthingrelaysrv
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# syncthingrelaysrv_enable (bool):      Set to NO by default.
+#                                       Set it to YES to enable syncthing-relaysrv.
+# syncthingrelaysrv_user (user):        Set user to run syncthing-relaysrv.
+#                                       Default is "syncthing".
+# syncthingrelaysrv_group (group):      Set group to run syncthing-relaysrv.
+#                                       Default is "syncthing".
+# syncthingrelaysrv_dir (dir):          Set dir to run syncthing-relaysrv in.
+#                                       Default is "/var/db/syncthing-relaysrv".
+# syncthingrelaysrv_log_file (path):    Syncthing log file
+#                                       Default: /var/log/syncthing-relaysrv.log
+# syncthingrelaysrv_key (file):         Set key file to use
+#                                       Default is "${syncthingrelaysrv_dir}/syncthing.key".
+# syncthingrelaysrv_cert (file):        Set cert file to use
+#                                       Default is "${syncthingrelaysrv_dir}/syncthing.cert".
+# syncthingrelaysrv_args (string):      Extra args to pass to syncthing-relaysrv
+#                                       Default is ""
+
+. /etc/rc.subr
+
+name=syncthingrelaysrv
+rcvar=syncthingrelaysrv_enable
+
+load_rc_config $name
+
+: ${syncthingrelaysrv_enable:="NO"}
+: ${syncthingrelaysrv_user:="syncthing"}
+: ${syncthingrelaysrv_group:="syncthing"}
+: ${syncthingrelaysrv_dir:="/var/db/syncthing-relaysrv"}
+: ${syncthingrelaysrv_log_file=/var/log/syncthing-relaysrv.log}
+
+export STNORESTART=true
+
+pidfile=/var/run/syncthingrelaysrv.pid
+procname="%%PREFIX%%/bin/strelaysrv"
+command="/usr/sbin/daemon"
+command_args="-c -p ${pidfile} ${procname} -keys ${syncthingrelaysrv_dir} ${syncthingrelaysrv_args} >> ${syncthingrelaysrv_log_file} 2>&1"
+
+start_precmd=syncthingrelaysrv_startprecmd
+
+syncthingrelaysrv_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${syncthingrelaysrv_user} -g ${syncthingrelaysrv_group} /dev/null ${pidfile};
+        fi
+
+        if [ ! -d ${syncthingrelaysrv_dir} ]; then
+                install -d -o ${syncthingrelaysrv_user} -g ${syncthingrelaysrv_group} ${syncthingrelaysrv_dir}
+        fi
+        if [ ! -e ${syncthingrelaysrv_log_file} ]; then
+                install -o ${syncthingrelaysrv_user} -g ${syncthingrelaysrv_group} /dev/null ${syncthingrelaysrv_log_file};
+        fi
+}
+
+run_rc_command "$1"
