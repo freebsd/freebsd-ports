@@ -1,6 +1,6 @@
 PORTNAME=	miniupnpd
 DISTVERSION=	2.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/ \
@@ -17,7 +17,7 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libpfctl.so:net/libpfctl
 
-USES=		cpe localbase:ldflags ssl
+USES=		cpe
 CPE_VENDOR=	miniupnp_project
 
 USE_RC_SUBR=	${PORTNAME}
@@ -28,29 +28,25 @@ CONFIGURE_ARGS=	--firewall=pf --libpfctl
 
 MAKE_JOBS_UNSAFE=	yes
 
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB} -lpfctl
-
 PLIST_FILES=	etc/miniupnpd.conf.sample \
 		share/man/man8/miniupnpd.8.gz \
 		sbin/miniupnpd
 
 OPTIONS_DEFINE=			CHECK_PORTINUSE IPV6 LEASEFILE UPNP_IGDV2 \
-				UPNP_STRICT
+				UPNP_STRICT UPNP_DISABLEPPPCONN UPNP_VENDORCFG
 CHECK_PORTINUSE_DESC=		Check if ports are in use
 LEASEFILE_DESC=			Enable lease file
 UPNP_IGDV2_DESC=		Build an IGDv2 instead of an IGDv1
 UPNP_STRICT_DESC=		More strict UPnP specification compliance
+UPNP_DISABLEPPPCONN_DESC=	Disable legacy (IGDv1 only) WANPPPConnection
+UPNP_VENDORCFG_DESC=		Enable configuration of manufacturer info
 
-CHECK_PORTINUSE_CONFIGURE_ON=	--portinuse
-IPV6_CONFIGURE_ON=		--ipv6
-LEASEFILE_CONFIGURE_ON=		--leasefile
-UPNP_IGDV2_CONFIGURE_ON=	--igd2
-UPNP_STRICT_CONFIGURE_ON=	--strict
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|\(-lssl -lcrypto\)|$$(LDFLAGS) \1|g' \
-		-e 's|^INSTALLMANDIR.*|INSTALLMANDIR = ${PREFIX}/share/man|' \
-		${WRKSRC}/Makefile.bsd
+CHECK_PORTINUSE_CONFIGURE_ON=		--portinuse
+IPV6_CONFIGURE_ON=			--ipv6
+LEASEFILE_CONFIGURE_ON=			--leasefile
+UPNP_IGDV2_CONFIGURE_ON=		--igd2
+UPNP_STRICT_CONFIGURE_ON=		--strict
+UPNP_DISABLEPPPCONN_CONFIGURE_ON=	--disable-pppconn
+UPNP_VENDORCFG_CONFIGURE_ON=		--vendorcfg
 
 .include <bsd.port.mk>
