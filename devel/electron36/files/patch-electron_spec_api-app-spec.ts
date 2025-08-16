@@ -1,6 +1,6 @@
---- electron/spec/api-app-spec.ts.orig	2025-05-27 16:50:03 UTC
+--- electron/spec/api-app-spec.ts.orig	2025-08-14 14:48:00 UTC
 +++ electron/spec/api-app-spec.ts
-@@ -126,11 +126,11 @@ describe('app module', () => {
+@@ -129,11 +129,11 @@ describe('app module', () => {
    });
  
    describe('app.getPreferredSystemLanguages()', () => {
@@ -14,7 +14,7 @@
        const languages = app.getPreferredSystemLanguages();
        if (languages.length) {
          expect(languages).to.not.include('C');
-@@ -193,7 +193,7 @@ describe('app module', () => {
+@@ -196,7 +196,7 @@ describe('app module', () => {
        expect(code).to.equal(123, 'exit code should be 123, if you see this please tag @MarshallOfSound');
      });
  
@@ -23,7 +23,16 @@
        const electronPath = process.execPath;
        const appPath = path.join(fixturesPath, 'api', 'singleton');
        appProcess = cp.spawn(electronPath, [appPath]);
-@@ -447,7 +447,7 @@ describe('app module', () => {
+@@ -360,7 +360,7 @@ describe('app module', () => {
+   });
+ 
+   // GitHub Actions macOS-13 runners used for x64 seem to have a problem with this test.
+-  ifdescribe(process.platform !== 'linux' && !isMacOSx64)('app.{add|get|clear}RecentDocument(s)', () => {
++  ifdescribe(process.platform !== 'linux' && process.platform !== 'freebsd' && !isMacOSx64)('app.{add|get|clear}RecentDocument(s)', () => {
+     const tempFiles = [
+       path.join(fixturesPath, 'foo.txt'),
+       path.join(fixturesPath, 'bar.txt'),
+@@ -488,7 +488,7 @@ describe('app module', () => {
    //   let w = null
  
    //   before(function () {
@@ -32,16 +41,16 @@
    //       this.skip()
    //     }
    //   })
-@@ -554,7 +554,7 @@ describe('app module', () => {
+@@ -595,7 +595,7 @@ describe('app module', () => {
    describe('app.badgeCount', () => {
      const platformIsNotSupported =
-         (process.platform === 'win32') ||
--        (process.platform === 'linux' && !app.isUnityRunning());
-+	((process.platform === 'linux' || process.platform === 'freebsd') && !app.isUnityRunning());
+       (process.platform === 'win32') ||
+-      (process.platform === 'linux' && !app.isUnityRunning());
++      (process.platform === 'linux' && !app.isUnityRunning()) || (process.platform === 'freebsd');
  
      const expectedBadgeCount = 42;
  
-@@ -598,7 +598,7 @@ describe('app module', () => {
+@@ -639,7 +639,7 @@ describe('app module', () => {
      });
    });
  
@@ -50,7 +59,7 @@
      const isMac = process.platform === 'darwin';
      const isWin = process.platform === 'win32';
  
-@@ -978,7 +978,7 @@ describe('app module', () => {
+@@ -1019,7 +1019,7 @@ describe('app module', () => {
      });
    });
  
@@ -59,7 +68,7 @@
      it('is mutable', () => {
        const values = [false, true, false];
        const setters: Array<(arg: boolean) => void> = [
-@@ -1178,7 +1178,7 @@ describe('app module', () => {
+@@ -1219,7 +1219,7 @@ describe('app module', () => {
      });
    });
  
@@ -68,7 +77,7 @@
      let w: BrowserWindow;
  
      before(function () {
-@@ -1313,7 +1313,7 @@ describe('app module', () => {
+@@ -1354,7 +1354,7 @@ describe('app module', () => {
  
    describe('getApplicationNameForProtocol()', () => {
      // TODO: Linux CI doesn't have registered http & https handlers
@@ -77,7 +86,7 @@
        // We can't expect particular app names here, but these protocols should
        // at least have _something_ registered. Except on our Linux CI
        // environment apparently.
-@@ -1331,7 +1331,7 @@ describe('app module', () => {
+@@ -1372,7 +1372,7 @@ describe('app module', () => {
      });
    });
  
@@ -86,7 +95,7 @@
      it('returns promise rejection for a bogus protocol', async function () {
        await expect(
          app.getApplicationInfoForProtocol('bogus-protocol://')
-@@ -1381,7 +1381,7 @@ describe('app module', () => {
+@@ -1422,7 +1422,7 @@ describe('app module', () => {
    });
  
    // FIXME Get these specs running on Linux CI
@@ -95,7 +104,7 @@
      const iconPath = path.join(__dirname, 'fixtures/assets/icon.ico');
      const sizes = {
        small: 16,
-@@ -1463,7 +1463,7 @@ describe('app module', () => {
+@@ -1504,7 +1504,7 @@ describe('app module', () => {
            expect(entry.memory).to.have.property('privateBytes').that.is.greaterThan(0);
          }
  
@@ -104,7 +113,7 @@
            expect(entry.sandboxed).to.be.a('boolean');
          }
  
-@@ -1537,7 +1537,7 @@ describe('app module', () => {
+@@ -1578,7 +1578,7 @@ describe('app module', () => {
  
      it('succeeds with complete GPUInfo', async () => {
        const completeInfo = await getGPUInfo('complete');
@@ -113,7 +122,7 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo);
          const basicInfo = await getGPUInfo('basic');
-@@ -1561,7 +1561,7 @@ describe('app module', () => {
+@@ -1602,7 +1602,7 @@ describe('app module', () => {
      });
    });
  

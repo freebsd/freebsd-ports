@@ -1,4 +1,4 @@
---- electron/spec/chromium-spec.ts.orig	2025-07-22 07:50:49 UTC
+--- electron/spec/chromium-spec.ts.orig	2025-08-14 14:48:00 UTC
 +++ electron/spec/chromium-spec.ts
 @@ -475,13 +475,13 @@ describe('command line switches', () => {
      it('should not set an invalid locale', async () => testLocale('asdfkl', `${currentLocale}|${currentSystemLocale}|${currentPreferredLanguages}`));
@@ -33,7 +33,7 @@
      const html = `
      <html lang="ja-JP">
        <head>
-@@ -3515,7 +3515,7 @@ describe('paste execCommand', () => {
+@@ -3516,7 +3516,7 @@ describe('paste execCommand', () => {
    });
  });
  

@@ -1,4 +1,4 @@
---- electron/shell/browser/native_window_views.h.orig	2025-08-05 14:34:17 UTC
+--- electron/shell/browser/native_window_views.h.orig	2025-08-14 14:48:00 UTC
 +++ electron/shell/browser/native_window_views.h
 @@ -25,7 +25,7 @@ namespace electron {
  
@@ -9,7 +9,7 @@
  class GlobalMenuBarX11;
  #endif
  
-@@ -163,7 +163,7 @@ class NativeWindowViews : public NativeWindow,
+@@ -164,7 +164,7 @@ class NativeWindowViews : public NativeWindow,
                      LPARAM l_param,
                      LRESULT* result);
    void SetIcon(HICON small_icon, HICON app_icon);
@@ -18,7 +18,7 @@
    void SetIcon(const gfx::ImageSkia& icon);
  #endif
  
-@@ -249,7 +249,7 @@ class NativeWindowViews : public NativeWindow,
+@@ -253,7 +253,7 @@ class NativeWindowViews : public NativeWindow,
    // events from resizing the window.
    extensions::SizeConstraints old_size_constraints_;
  

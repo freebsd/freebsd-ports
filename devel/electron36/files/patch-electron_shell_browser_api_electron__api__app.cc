@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_app.cc.orig	2025-05-07 07:36:13 UTC
+--- electron/shell/browser/api/electron_api_app.cc.orig	2025-08-14 14:48:00 UTC
 +++ electron/shell/browser/api/electron_api_app.cc
 @@ -96,7 +96,7 @@
  #include "shell/common/process_util.h"
@@ -54,7 +54,7 @@
      auto memory_info = process_metric.second->GetMemoryInfo();
  
      auto memory_dict = gin_helper::Dictionary::CreateEmpty(isolate);
-@@ -1731,7 +1731,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
+@@ -1733,7 +1733,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
        .SetMethod(
            "removeAsDefaultProtocolClient",
            base::BindRepeating(&Browser::RemoveAsDefaultProtocolClient, browser))
@@ -63,7 +63,7 @@
        .SetMethod(
            "getApplicationInfoForProtocol",
            base::BindRepeating(&Browser::GetApplicationInfoForProtocol, browser))
-@@ -1789,7 +1789,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
+@@ -1791,7 +1791,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
        .SetMethod("getJumpListSettings", &App::GetJumpListSettings)
        .SetMethod("setJumpList", &App::SetJumpList)
  #endif
