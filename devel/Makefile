@@ -1079,6 +1079,7 @@
     SUBDIR += jgoodies-looks
     SUBDIR += jiic
     SUBDIR += jiri
+    SUBDIR += jjui
     SUBDIR += jline
     SUBDIR += jna
     SUBDIR += jsap
