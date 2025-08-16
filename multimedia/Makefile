@@ -22,6 +22,7 @@
     SUBDIR += bino
     SUBDIR += bitstream
     SUBDIR += blind
+    SUBDIR += btavctpd
     SUBDIR += butt
     SUBDIR += celluloid
     SUBDIR += cheese

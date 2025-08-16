@@ -1,0 +1,5 @@
+btavctpd is a daemon that allows you to remotely control media players
+on your workstation through the Bluetooth A/V Remote Control Profile.
+Can either emit X11 Keypresses through xdotool or use libplayerctl to
+dynamically detect players and listen for their events or send commands
+to them.
