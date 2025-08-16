@@ -1,0 +1,11 @@
+--- src/fs_copy_file_range_unsupported.icpp.orig	2025-08-16 08:24:30 UTC
++++ src/fs_copy_file_range_unsupported.icpp
+@@ -31,7 +31,7 @@ namespace fs
+                   int64_t            *off_in_,
+                   const int           fd_out_,
+                   int64_t            *off_out_,
+-                  const size_t        len_,
++                  const uint64_t      len_,
+                   const unsigned int  flags_)
+   {
+     return (errno=EOPNOTSUPP,-1);
