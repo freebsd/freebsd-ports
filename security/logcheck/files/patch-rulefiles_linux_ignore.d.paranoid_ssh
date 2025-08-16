@@ -1,0 +1,10 @@
+--- rulefiles/linux/ignore.d.paranoid/ssh.orig	2025-08-06 20:24:39 UTC
++++ rulefiles/linux/ignore.d.paranoid/ssh
+@@ -1,5 +1,5 @@
+ # https://sources.debian.org/src/pam/1.5.3-7/modules/pam_unix/pam_unix_sess.c/#L100
+-^(\w{3} [ :0-9]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[0-9]+\]: pam_[[:alnum:]]+\(sshd?:session\): session opened for user [^[:space:]]+\(uid=[0-9]+\) by \(uid=[0-9]+\)$
++^(\w{3} [ :0-9]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[0-9]+\]: pam_[[:alnum:]]+\(sshd?:session\): session opened for user [^[:space:]]+\(uid=[0-9]+\) by \(uid=[0-9]+\)$
+ 
+ # https://sources.debian.org/src/pam/1.5.3-7/modules/pam_unix/pam_unix_sess.c/#L130
+-^(\w{3} [ :0-9]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[0-9]+\]: pam_[[:alnum:]]+\(sshd?:session\): session closed for user [^[:space:]]+$
++^(\w{3} [ :0-9]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)\[[0-9]+\]: pam_[[:alnum:]]+\(sshd?:session\): session closed for user [^[:space:]]+$

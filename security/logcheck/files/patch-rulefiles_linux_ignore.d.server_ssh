@@ -1,0 +1,147 @@
+--- rulefiles/linux/ignore.d.server/ssh.orig	2025-08-06 20:24:39 UTC
++++ rulefiles/linux/ignore.d.server/ssh
+@@ -2,108 +2,108 @@
+ # gssapi-keyex is added by https://salsa.debian.org/ssh-team/openssh/-/blob/master/debian/patches/gssapi.patch -- this may be moved to a different package in future!
+ # sshd_config(5) lists: gssapi-with-mic,hostbased, keyboard-interactive, none, password, publickey
+ 
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Accepted (gssapi(-with-mic|-keyex)?|password|publickey|keyboard-interactive/pam|hostbased) for [^[:space:]]+ from [.:[:xdigit:]]+ port [[:digit:]]+ ssh2(: (RSA|ECDSA|ED25519) (SHA256:[0-9a-zA-Z+/=]{43}|(MD5:)?([[:xdigit:]]{2}:){15}[[:xdigit:]]{2}))?$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: Accepted (gssapi(-with-mic|-keyex)?|password|publickey|keyboard-interactive/pam|hostbased) for [^[:space:]]+ from [.:[:xdigit:]]+ port [[:digit:]]+ ssh2(: (RSA|ECDSA|ED25519) (SHA256:[0-9a-zA-Z+/=]{43}|(MD5:)?([[:xdigit:]]{2}:){15}[[:xdigit:]]{2}))?$
+ 
+ # https://salsa.debian.org/ssh-team/openssh/-/blob/master/gss-serv-krb5.c#L103
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Authorized to [^[:space:]]+, krb5 principal [^[:space:]]+ \(krb5_kuserok\)$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: Authorized to [^[:space:]]+, krb5 principal [^[:space:]]+ \(krb5_kuserok\)$
+ 
+ # possibly https://salsa.debian.org/ssh-team/openssh/-/blob/master/packet.c#L1985 and #L1508
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Disconnecting: Bad packet length [[:digit:]]+\.$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: Disconnecting: Bad packet length [[:digit:]]+\.$
+ # # possibly https://salsa.debian.org/ssh-team/openssh/-/blob/master/packet.c#L1586 (via #L1985)
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Disconnecting: Corrupted MAC on input\.$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: Disconnecting: Corrupted MAC on input\.$
+ 
+ # https://salsa.debian.org/ssh-team/openssh/-/blob/master/packet.c#L1735
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Received disconnect from [.:[:xdigit:]]+ port [[:digit:]]+:[[:digit:]]+: .+$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: Received disconnect from [.:[:xdigit:]]+ port [[:digit:]]+:[[:digit:]]+: .+$
+ 
+ # https://salsa.debian.org/ssh-team/openssh/-/blob/master/packet.c#1912
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Disconnected from ((invalid|authenticating) )?(user [^[:space:]]+ )?[.:[:xdigit:]]+ port [[:digit:]]+( \[preauth\])?$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: Disconnected from ((invalid|authenticating) )?(user [^[:space:]]+ )?[.:[:xdigit:]]+ port [[:digit:]]+( \[preauth\])?$
+ 
+ # https://salsa.debian.org/ssh-team/openssh/-/blob/master/packet.c#1905 and 1906
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Connection (closed|reset) by ((invalid|authenticating) )?(user [^[:space:]]+ )?[.:[:xdigit:]]+ port [[:digit:]]+( \[preauth\])?$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: Connection (closed|reset) by ((invalid|authenticating) )?(user [^[:space:]]+ )?[.:[:xdigit:]]+ port [[:digit:]]+( \[preauth\])?$
+ ^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Server listening on [.:[:xdigit:]]+ port [[:digit:]]+\.$
+ 
+ ## packet.c#1927 (logdie("Unable to negotiate with %s: %s. "...))
+ # offer is something like diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1 or ecdsa-sha2-nistp256-cert-v01@openssh.com
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Unable to negotiate with [.:[:xdigit:]]+ port [[:digit:]]+: no matching (key exchange|host key) method found\. Their offer: [[:alnum:]@.,-]+ \[preauth\]$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: Unable to negotiate with [.:[:xdigit:]]+ port [[:digit:]]+: no matching (key exchange|host key) method found\. Their offer: [[:alnum:]@.,-]+ \[preauth\]$
+ 
+ # packet.c#L133 (message is at ssherr.c#L87)
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: ssh_dispatch_run_fatal: Connection from user [^[:space:]]+ [.:[:xdigit:]]+ port [[:digit:]]+: message authentication code incorrect$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: ssh_dispatch_run_fatal: Connection from user [^[:space:]]+ [.:[:xdigit:]]+ port [[:digit:]]+: message authentication code incorrect$
+ 
+ # possibly https://salsa.debian.org/ssh-team/openssh/-/blob/master/auth.c#L344 (via packet.c#L1985)
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Disconnecting: Too many authentication failures for [^[:space:]]* \[preauth\]$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: Disconnecting: Too many authentication failures for [^[:space:]]* \[preauth\]$
+ 
+ # https://salsa.debian.org/ssh-team/openssh/-/blob/master/auth.c#L290-297
+ # 'invalid user' and UNKNOWN can be returned by ssh_remote_ipaddr() - see packet.c
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Failed (keyboard-interactive/pam|password|none) for (invalid user )?[^[:space:]]+ from ([.:[:xdigit:]]+|UNKNOWN) port [[:digit:]]+ ssh2$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: Failed (keyboard-interactive/pam|password|none) for (invalid user )?[^[:space:]]+ from ([.:[:xdigit:]]+|UNKNOWN) port [[:digit:]]+ ssh2$
+ 
+ # https://salsa.debian.org/ssh-team/openssh/-/blob/master/auth.c#L494
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Invalid user [^[:space:]]+ from ([.:[:xdigit:]]+|UNKNOWN) port [[:digit:]]+$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: Invalid user [^[:space:]]+ from ([.:[:xdigit:]]+|UNKNOWN) port [[:digit:]]+$
+ 
+ # auth.c #L286
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Postponed keyboard-interactive(/pam)? for (invalid user )?[^[:space:]]+ from [.:[:xdigit:]]+ port [[:digit:]]+ ssh2( \[preauth\])?$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: Postponed keyboard-interactive(/pam)? for (invalid user )?[^[:space:]]+ from [.:[:xdigit:]]+ port [[:digit:]]+ ssh2( \[preauth\])?$
+ 
+ # not found in code?
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: input_userauth_request: invalid user [^[:space:]]+ \[preauth\]$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: input_userauth_request: invalid user [^[:space:]]+ \[preauth\]$
+ 
+ # https://salsa.debian.org/ssh-team/openssh/-/blob/master/auth.c#L157-158 and #L185-186
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: User [^[:space:]]+ from [-_.[:alnum:]]+ not allowed because (listed in Deny|not listed in Allow)Users$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: User [^[:space:]]+ from [-_.[:alnum:]]+ not allowed because (listed in Deny|not listed in Allow)Users$
+ 
+ #https://salsa.debian.org/ssh-team/openssh/-/blob/master/auth.c#L208-209
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: User [^[:space:]]+ from [-_.[:alnum:]]+ not allowed because none of user's groups are listed in AllowGroups$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: User [^[:space:]]+ from [-_.[:alnum:]]+ not allowed because none of user's groups are listed in AllowGroups$
+ 
+ #' https://salsa.debian.org/ssh-team/openssh/-/blob/master/auth.c#L195-196
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: User [^[:space:]]+ from [-_.[:alnum:]]+ not allowed because a group is listed in DenyGroups$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: User [^[:space:]]+ from [-_.[:alnum:]]+ not allowed because a group is listed in DenyGroups$
+ 
+ # not found - auth_pam.c#L397 is close (but wont match without a ":" after "PAM")
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: PAM pam_putenv: delete non-existent entry; [[:alnum:]]+$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: PAM pam_putenv: delete non-existent entry; [[:alnum:]]+$
+ 
+ # canohost.c#L85
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Nasty PTR record "[.:[:xdigit:]]+" is set up for [.:[:xdigit:]]+, ignoring$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: Nasty PTR record "[.:[:xdigit:]]+" is set up for [.:[:xdigit:]]+, ignoring$
+ 
+ # possibly from auth-shadow.c#L96? think you would want to know if this was happening
+-#^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: error: Could not get shadow information for NOUSER$
++#^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: error: Could not get shadow information for NOUSER$
+ 
+ # sshd.c#L380
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: fatal: Timeout before authentication for [.:[:xdigit:]]+ port [[:digit:]]+$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: fatal: Timeout before authentication for [.:[:xdigit:]]+ port [[:digit:]]+$
+ 
+ # sshd.c#L977
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: fatal: recv_rexec_state: ssh_msg_recv failed$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: fatal: recv_rexec_state: ssh_msg_recv failed$
+ 
+ # eg from auth2-pubkey.c#L291
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: fatal: userauth_pubkey: send packet: Connection reset by peer \[preauth\]$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: fatal: userauth_pubkey: send packet: Connection reset by peer \[preauth\]$
+ 
+ # kex.c#1630 (verbose_f("Connection closed by remote host"))
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: error: kex_exchange_identification: Connection closed by remote host$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: error: kex_exchange_identification: Connection closed by remote host$
+ 
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: error: kex_exchange_identification: read: Connection reset by peer$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: error: kex_exchange_identification: read: Connection reset by peer$
+ 
+ # kex.c#L1672 (verbose_f("client sent invalid protocol identifier "...))
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: error: kex_exchange_identification: client sent invalid protocol identifier ".+"$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: error: kex_exchange_identification: client sent invalid protocol identifier ".+"$
+ 
+ # sshconnect.c#L1585 (sshpkt_fatal(ssh, r, "banner exchange"))
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: banner exchange: Connection from [.:[:xdigit:]]+ port [[:digit:]]+: invalid format$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: banner exchange: Connection from [.:[:xdigit:]]+ port [[:digit:]]+: invalid format$
+ 
+ # kex.c#L1646-1647
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: error: kex_exchange_identification: banner line contains invalid characters$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: error: kex_exchange_identification: banner line contains invalid characters$
+ 
+ # kex.c#L1720
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: error: Protocol major versions differ: 2 vs\. 1$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: error: Protocol major versions differ: 2 vs\. 1$
+ 
+ # ssherr.c#L101 (SSH_ERR_NO_PROTOCOL_VERSION)
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: banner exchange: Connection from [.:[:xdigit:]]+ port [[:digit:]]+: could not read protocol version$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: banner exchange: Connection from [.:[:xdigit:]]+ port [[:digit:]]+: could not read protocol version$
+ 
+ # subsystem.c#L1964
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: subsystem request for sftp by user [^[:space:]]+$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: subsystem request for sftp by user [^[:space:]]+$
+ 
+ # loginrec.c#L1439 --- you would want this message reported?
+-#^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: syslogin_perform_logout: logout\(\) returned an error$
++#^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: syslogin_perform_logout: logout\(\) returned an error$
+ 
+ # not sure where this is from
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: refused connect from [:[:alnum:]._-]+ \([:[:alnum:].]+\)$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: refused connect from [:[:alnum:]._-]+ \([:[:alnum:].]+\)$
+ 
+ # unclear if this is still generated
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: nss_ldap: reconnect(ing|ed) to LDAP server(\.\.\.| after [[:digit:]]+ attempt\(s\))$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: nss_ldap: reconnect(ing|ed) to LDAP server(\.\.\.| after [[:digit:]]+ attempt\(s\))$
+ 
+ # tcp wrappers - not sure what generates these, or if they are up-to-date
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: warning: /etc/hosts\.(allow|deny), line [[:digit:]]+: can't verify hostname: getaddrinfo\([._[:alnum:]-]+, AF_INET\) failed$
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: warning: /etc/hosts\.(allow|deny), line [[:digit:]]+: host name/(name|address) mismatch: [._[:alnum:]-]+ != [._[:alnum:]-]+$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: warning: /etc/hosts\.(allow|deny), line [[:digit:]]+: can't verify hostname: getaddrinfo\([._[:alnum:]-]+, AF_INET\) failed$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ sshd(-session)?\[[[:digit:]]+\]: warning: /etc/hosts\.(allow|deny), line [[:digit:]]+: host name/(name|address) mismatch: [._[:alnum:]-]+ != [._[:alnum:]-]+$
