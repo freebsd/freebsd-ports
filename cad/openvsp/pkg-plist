@@ -9,6 +9,7 @@ bin/vspscript
 bin/vspviewer
 help/AdvLink.html
 help/AttributeExplorer.html
+help/GeometryAnalysis.html
 help/SetEdit.html
 help/github-pandoc.css
 help/images/AdvLink_example.png
