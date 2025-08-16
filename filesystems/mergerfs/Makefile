@@ -10,8 +10,6 @@ WWW=		https://github.com/trapexit/mergerfs
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	i386
-
 USES=		fuse gmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	trapexit
