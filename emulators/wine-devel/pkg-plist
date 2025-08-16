@@ -115,6 +115,7 @@ include/wine/windows/adserr.h
 include/wine/windows/adshlp.h
 include/wine/windows/advpub.h
 include/wine/windows/af_irda.h
+include/wine/windows/afunix.h
 include/wine/windows/amaudio.h
 include/wine/windows/amsi.h
 include/wine/windows/amsi.idl
@@ -1136,6 +1137,8 @@ include/wine/windows/windows.data.json.h
 include/wine/windows/windows.data.json.idl
 include/wine/windows/windows.data.xml.dom.h
 include/wine/windows/windows.data.xml.dom.idl
+include/wine/windows/windows.devices.bluetooth.advertisement.h
+include/wine/windows/windows.devices.bluetooth.advertisement.idl
 include/wine/windows/windows.devices.bluetooth.genericattributeprofile.h
 include/wine/windows/windows.devices.bluetooth.genericattributeprofile.idl
 include/wine/windows/windows.devices.bluetooth.h
@@ -1197,6 +1200,8 @@ include/wine/windows/windows.media.capture.h
 include/wine/windows/windows.media.capture.idl
 include/wine/windows/windows.media.closedcaptioning.h
 include/wine/windows/windows.media.closedcaptioning.idl
+include/wine/windows/windows.media.core.h
+include/wine/windows/windows.media.core.idl
 include/wine/windows/windows.media.devices.h
 include/wine/windows/windows.media.devices.idl
 include/wine/windows/windows.media.effects.h
@@ -1205,12 +1210,16 @@ include/wine/windows/windows.media.faceanalysis.h
 include/wine/windows/windows.media.faceanalysis.idl
 include/wine/windows/windows.media.h
 include/wine/windows/windows.media.idl
+include/wine/windows/windows.media.mediaproperties.h
+include/wine/windows/windows.media.mediaproperties.idl
 include/wine/windows/windows.media.render.h
 include/wine/windows/windows.media.render.idl
 include/wine/windows/windows.media.speechrecognition.h
 include/wine/windows/windows.media.speechrecognition.idl
 include/wine/windows/windows.media.speechsynthesis.h
 include/wine/windows/windows.media.speechsynthesis.idl
+include/wine/windows/windows.media.transcoding.h
+include/wine/windows/windows.media.transcoding.idl
 include/wine/windows/windows.networking.connectivity.h
 include/wine/windows/windows.networking.connectivity.idl
 include/wine/windows/windows.networking.h
@@ -1273,6 +1282,8 @@ include/wine/windows/windows.ui.viewmanagement.core.h
 include/wine/windows/windows.ui.viewmanagement.core.idl
 include/wine/windows/windows.ui.viewmanagement.h
 include/wine/windows/windows.ui.viewmanagement.idl
+include/wine/windows/windows.ui.windowmanagement.h
+include/wine/windows/windows.ui.windowmanagement.idl
 include/wine/windows/windows.ui.xaml.h
 include/wine/windows/windows.ui.xaml.hosting.desktopwindowxamlsource.h
 include/wine/windows/windows.ui.xaml.hosting.desktopwindowxamlsource.idl
@@ -2542,6 +2553,7 @@ lib/wine/%%WINEARCH%%-windows/usp10.dll
 lib/wine/%%WINEARCH%%-windows/utildll.dll
 lib/wine/%%WINEARCH%%-windows/uxtheme.dll
 lib/wine/%%WINEARCH%%-windows/vbscript.dll
+lib/wine/%%WINEARCH%%-windows/vccorlib140.dll
 lib/wine/%%WINEARCH%%-windows/vcomp.dll
 lib/wine/%%WINEARCH%%-windows/vcomp100.dll
 lib/wine/%%WINEARCH%%-windows/vcomp110.dll
