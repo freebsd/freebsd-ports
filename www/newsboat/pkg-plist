@@ -12,6 +12,7 @@ bin/podboat
 %%PORTDOCS%%%%DOCSDIR%%/contrib/colorschemes/inkpot
 %%PORTDOCS%%%%DOCSDIR%%/contrib/colorschemes/kinda-maia
 %%PORTDOCS%%%%DOCSDIR%%/contrib/colorschemes/light
+%%PORTDOCS%%%%DOCSDIR%%/contrib/colorschemes/monochrome
 %%PORTDOCS%%%%DOCSDIR%%/contrib/colorschemes/nord
 %%PORTDOCS%%%%DOCSDIR%%/contrib/colorschemes/plain
 %%PORTDOCS%%%%DOCSDIR%%/contrib/colorschemes/psychedelic
