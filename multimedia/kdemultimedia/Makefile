@@ -7,7 +7,6 @@ COMMENT=	KDE Multimedia applications (meta port)
 WWW=		https://apps.kde.org/categories/multimedia/
 
 USES=		kde:6 metaport qt:6
-USE_QT=		#
 
 OPTIONS_DEFINE=		DRAGON FFMPEG AUDIOCD_KIO KDENLIVE KMIX
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE:NKMIX}
