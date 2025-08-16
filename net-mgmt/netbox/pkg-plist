@@ -235,6 +235,8 @@
 %%DATADIR%%/dcim/migrations/0206_load_module_type_profiles.py
 %%DATADIR%%/dcim/migrations/0207_remove_redundant_indexes.py
 %%DATADIR%%/dcim/migrations/0208_devicerole_uniqueness.py
+%%DATADIR%%/dcim/migrations/0209_device_component_denorm_site_location.py
+%%DATADIR%%/dcim/migrations/0210_macaddress_ordering.py
 %%DATADIR%%/dcim/migrations/__init__.py
 %%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/cpu.json
 %%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/expansion_card.json
@@ -764,6 +766,7 @@
 %%DATADIR%%/ipam/migrations/0079_add_service_fhrp_group_parent_gfk.py
 %%DATADIR%%/ipam/migrations/0080_populate_service_parent.py
 %%DATADIR%%/ipam/migrations/0081_remove_service_device_virtual_machine_add_parent_gfk_index.py
+%%DATADIR%%/ipam/migrations/0082_add_prefix_network_containment_indexes.py
 %%DATADIR%%/ipam/migrations/__init__.py
 %%DATADIR%%/ipam/models/__init__.py
 %%DATADIR%%/ipam/models/asns.py
@@ -1255,6 +1258,7 @@
 %%DATADIR%%/templates/extras/inc/configcontext_data.html
 %%DATADIR%%/templates/extras/inc/format_toggle.html
 %%DATADIR%%/templates/extras/inc/result_pending.html
+%%DATADIR%%/templates/extras/inc/script_list_content.html
 %%DATADIR%%/templates/extras/journalentry.html
 %%DATADIR%%/templates/extras/notificationgroup.html
 %%DATADIR%%/templates/extras/object_changelog.html
@@ -1581,6 +1585,7 @@
 %%DATADIR%%/utilities/paginator.py
 %%DATADIR%%/utilities/password_validation.py
 %%DATADIR%%/utilities/permissions.py
+%%DATADIR%%/utilities/prefetch.py
 %%DATADIR%%/utilities/proxy.py
 %%DATADIR%%/utilities/query.py
 %%DATADIR%%/utilities/query_functions.py
@@ -1630,6 +1635,7 @@
 %%DATADIR%%/utilities/templates/widgets/select_option.html
 %%DATADIR%%/utilities/templates/widgets/select_option_with_pk.html
 %%DATADIR%%/utilities/templates/widgets/sluginput.html
+%%DATADIR%%/utilities/templates/widgets/splitmultiselect.html
 %%DATADIR%%/utilities/templatetags/__init__.py
 %%DATADIR%%/utilities/templatetags/builtins/__init__.py
 %%DATADIR%%/utilities/templatetags/builtins/filters.py
@@ -1658,6 +1664,7 @@
 %%DATADIR%%/utilities/tests/test_forms.py
 %%DATADIR%%/utilities/tests/test_managers.py
 %%DATADIR%%/utilities/tests/test_ordering.py
+%%DATADIR%%/utilities/tests/test_prefetch.py
 %%DATADIR%%/utilities/tests/test_request.py
 %%DATADIR%%/utilities/tests/test_utils.py
 %%DATADIR%%/utilities/tracking.py

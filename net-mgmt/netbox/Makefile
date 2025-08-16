@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.5
+DISTVERSION=	4.3.6
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -32,16 +32,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2.3<5.3:www/py-django52@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj52-django-prometheus>=2.4.1<2.5:www/py-dj52-django-prometheus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-redis>=6.0.0<7:www/py-dj52-django-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-rich>=2.0.0<3:www/py-dj52-django-rich@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-django-rq>=3.0.1<3.1:devel/py-dj52-django-rq@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-django-rq>=3.0.1<3.2:devel/py-dj52-django-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-storages>=1.14.6<2:www/py-dj52-django-storages@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-tables2>=2.7.5<2.8:www/py-dj52-django-tables2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-taggit>=6.1.0<7:www/py-dj52-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-timezone-field>=7.1<8:www/py-dj52-django-timezone-field@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-djangorestframework>=3.16.0<3.17.0:www/py-dj52-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-djangorestframework>=3.16.1<3.17.0:www/py-dj52-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-drf-spectacular>=0.28.0<1:www/py-dj52-drf-spectacular@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-drf-spectacular-sidecar>=2025.7.1:www/py-dj52-drf-spectacular-sidecar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-drf-spectacular-sidecar>=2025.8.1:www/py-dj52-drf-spectacular-sidecar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-social-auth-app-django>=5.5.1<6:www/py-dj52-social-auth-app-django@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-strawberry-graphql>=0.278.0<0.300:devel/py-dj52-strawberry-graphql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-strawberry-graphql>=0.278.1<0.300:devel/py-dj52-strawberry-graphql@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-strawberry-graphql-django>=0.65.1<1:www/py-dj52-strawberry-graphql-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.11<7:textproc/py-feedparser@${PY_FLAVOR} \
