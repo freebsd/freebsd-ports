@@ -10,8 +10,7 @@ WWW=		https://veloren.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	https://github.com/bytecodealliance/wasmtime/issues/7924
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	unsupported platform by https://github.com/wasmerio/wasmer
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd \
@@ -36,10 +35,6 @@ PORTDATA=	*
 
 CONFLICTS_INSTALL=	${PORTNAME}
 
-.if ${MACHINE_ARCH} == i386
-# https://github.com/rust-lang/rust/issues/85598
-CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
-.endif
 # Fixes error "Instruction does not dominate all uses!"
 WITHOUT_LTO=	yes # XXX bug 277333
 
