@@ -1,6 +1,6 @@
---- scripts/locale_install.sh.orig	2023-02-02 08:17:33 UTC
+--- scripts/locale_install.sh.orig	2024-09-24 03:54:03 UTC
 +++ scripts/locale_install.sh
-@@ -246,6 +246,7 @@ for file in $locales_dir/*.msg; do
+@@ -247,6 +247,7 @@ for file in $locales_dir/*.msg; do
  	# Generate the proper location for the cat file.
  	loc=$(gen_nlspath "$destdir/$nlspath" "$locale" "$main_exec")
  
@@ -8,7 +8,7 @@
  	gencatfile "$loc" "$file"
  
  	printf 'done\n'
-@@ -289,8 +290,6 @@ for file in $locales_dir/*.msg; do
+@@ -290,8 +291,6 @@ for file in $locales_dir/*.msg; do
  		linkdir=$(dirname "$file")
  		locale=$(basename "$link" .msg)
  		linksrc=$(gen_nlspath "$nlspath" "$locale" "$main_exec")
@@ -17,7 +17,7 @@
  
  		# If the target file doesn't exist (because it's for a locale that is
  		# not installed), generate it anyway. It's easier this way.
-@@ -300,7 +299,8 @@ for file in $locales_dir/*.msg; do
+@@ -301,7 +300,8 @@ for file in $locales_dir/*.msg; do
  
  		# Finally, symlink to the install of the generated cat file that
  		# corresponds to the correct msg file.
