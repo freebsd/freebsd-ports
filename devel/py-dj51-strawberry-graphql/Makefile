@@ -1,5 +1,5 @@
 PORTNAME=	strawberry-graphql
-DISTVERSION=	0.278.0
+DISTVERSION=	0.278.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj51-
@@ -13,8 +13,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.6:devel/py-poetry-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.7.0:devel/py-python-dateutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}graphql-core>=3.2.0<3.4.0:devel/py-graphql-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphql-core>=3.2.0<3.4.0:devel/py-graphql-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lia-web>=0.2.1:www/py-lia-web@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=23:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.7.0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.5.0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python:3.10+
