@@ -1,13 +1,12 @@
 PORTNAME=	kdelibs4support
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 porting aid from KDELibs4
 
 BUILD_DEPENDS=	p5-URI>=0:net/p5-URI
-RUN_DEPENDS=	${LOCALBASE}/etc/xdg/colors/40.colors:graphics/kolourpaint
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 shebangfix \
 		tar:xz xorg
