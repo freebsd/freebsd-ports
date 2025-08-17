@@ -6,6 +6,7 @@ lib/fooyin/plugins/fyplugin_fileops.so
 lib/fooyin/plugins/fyplugin_filters.so
 lib/fooyin/plugins/fyplugin_gmeinput.so
 lib/fooyin/plugins/fyplugin_libarchive.so
+lib/fooyin/plugins/fyplugin_lyrics.so
 lib/fooyin/plugins/fyplugin_mpris.so
 lib/fooyin/plugins/fyplugin_rawaudio.so
 lib/fooyin/plugins/fyplugin_rgscanner.so
@@ -17,6 +18,7 @@ lib/fooyin/plugins/fyplugin_vumeter.so
 lib/fooyin/plugins/fyplugin_wavebar.so
 share/applications/org.fooyin.fooyin.desktop
 %%DATADIR%%/translations/fooyin_af.qm
+%%DATADIR%%/translations/fooyin_ca.qm
 %%DATADIR%%/translations/fooyin_de.qm
 %%DATADIR%%/translations/fooyin_en.qm
 %%DATADIR%%/translations/fooyin_en_GB.qm
@@ -27,6 +29,9 @@ share/applications/org.fooyin.fooyin.desktop
 %%DATADIR%%/translations/fooyin_id.qm
 %%DATADIR%%/translations/fooyin_ie.qm
 %%DATADIR%%/translations/fooyin_it.qm
+%%DATADIR%%/translations/fooyin_ja.qm
+%%DATADIR%%/translations/fooyin_lt.qm
+%%DATADIR%%/translations/fooyin_nb_NO.qm
 %%DATADIR%%/translations/fooyin_nl.qm
 %%DATADIR%%/translations/fooyin_pl.qm
 %%DATADIR%%/translations/fooyin_pt.qm
@@ -35,7 +40,10 @@ share/applications/org.fooyin.fooyin.desktop
 %%DATADIR%%/translations/fooyin_sk.qm
 %%DATADIR%%/translations/fooyin_sv.qm
 %%DATADIR%%/translations/fooyin_th.qm
+%%DATADIR%%/translations/fooyin_tr.qm
+%%DATADIR%%/translations/fooyin_uk.qm
 %%DATADIR%%/translations/fooyin_zh_CN.qm
+%%DATADIR%%/translations/fooyin_zh_Hant.qm
 share/icons/hicolor/128x128/apps/org.fooyin.fooyin.png
 share/icons/hicolor/16x16/apps/org.fooyin.fooyin.png
 share/icons/hicolor/22x22/apps/org.fooyin.fooyin.png
