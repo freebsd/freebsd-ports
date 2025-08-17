@@ -1,9 +1,8 @@
 PORTNAME=	mediamtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.1
-PORTREVISION=	1
+DISTVERSION=	1.14.0
 CATEGORIES=	multimedia net
-MASTER_SITES+=	https://github.com/video-dev/hls.js/releases/download/v1.6.7/
+MASTER_SITES+=	https://github.com/video-dev/hls.js/releases/download/v1.6.10/
 DISTFILES+=	release.zip
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -26,6 +25,7 @@ SUB_LIST=	USER=${USERS} GROUP=${GROUPS}
 
 post-extract:
 	${MV} ${WRKDIR}/dist/hls.min.js ${WRKSRC}/internal/servers/hls
+	${RM} -r ${WRKSRC}/internal/staticsources/rpicamera
 
 pre-configure:
 	${ECHO} ${DISTVERSIONFULL} > ${WRKSRC}/internal/core/VERSION
