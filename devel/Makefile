@@ -4614,6 +4614,7 @@
     SUBDIR += py-cachy
     SUBDIR += py-cadquery-pywrap
     SUBDIR += py-calver
+    SUBDIR += py-camel-converter
     SUBDIR += py-canonicaljson
     SUBDIR += py-capstone
     SUBDIR += py-capturer
