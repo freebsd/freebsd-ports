@@ -23,6 +23,6 @@ lib/cmake/fluidsynth/FluidSynthTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/fluidsynth/FluidSynthTargets.cmake
 lib/libfluidsynth.so
 lib/libfluidsynth.so.3
-lib/libfluidsynth.so.3.3.6
+lib/libfluidsynth.so.3.3.7
 libdata/pkgconfig/fluidsynth.pc
 share/man/man1/fluidsynth.1.gz
