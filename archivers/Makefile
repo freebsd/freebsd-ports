@@ -254,6 +254,7 @@
     SUBDIR += rzip
     SUBDIR += sectar
     SUBDIR += sharutils
+    SUBDIR += smpq
     SUBDIR += snappy
     SUBDIR += snappy-java
     SUBDIR += snzip
