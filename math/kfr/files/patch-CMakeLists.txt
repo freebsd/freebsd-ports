@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2025-07-18 13:33:23 UTC
++++ CMakeLists.txt
+@@ -180,8 +180,6 @@ option(ENABLE_TESTS "Enable KFR tests" OFF)
+        "Multiple architectures will be built with runtime dispatch" ON)
+ 
+ option(ENABLE_TESTS "Enable KFR tests" OFF)
+-cmake_dependent_option(ENABLE_EXAMPLES "Enable KFR examples" ON "ENABLE_TESTS"
+-                       OFF)
+ if (CLANG)
+     option(KFR_ENABLE_DFT "Enable DFT and related algorithms." ON)
+ else ()
+@@ -390,7 +388,6 @@ if (ENABLE_EXAMPLES)
+ endif ()
+ 
+ if (ENABLE_EXAMPLES)
+-    add_subdirectory(examples)
+     add_subdirectory(tools)
+ endif ()
+ if (ENABLE_TESTS)
