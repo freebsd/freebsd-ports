@@ -1,9 +1,10 @@
 include/cmocka.h
 include/cmocka_pbc.h
-lib/cmake/cmocka/cmocka-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cmocka/cmocka-config-version.cmake
 lib/cmake/cmocka/cmocka-config.cmake
+lib/cmake/cmocka/cmocka-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/cmocka/cmocka-targets.cmake
 lib/libcmocka.so
 lib/libcmocka.so.0
-lib/libcmocka.so.0.8.0
+lib/libcmocka.so.0.8.1
 libdata/pkgconfig/cmocka.pc
