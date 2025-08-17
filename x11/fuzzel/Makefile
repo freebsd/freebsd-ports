@@ -1,5 +1,5 @@
 PORTNAME=	fuzzel
-DISTVERSION=	1.12.0
+DISTVERSION=	1.13.0
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		tllist>=1.0.1:devel/tllist \
-		wayland-protocols>=1.32:graphics/wayland-protocols \
+		wayland-protocols>=1.41:graphics/wayland-protocols \
 		scdoc:textproc/scdoc
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libwayland-client.so:graphics/wayland \
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c11 meson pkgconfig xorg
+USES=		compiler:c11 meson pkgconfig python:build xorg
 USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
