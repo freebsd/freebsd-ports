@@ -67,6 +67,7 @@
     SUBDIR += firebird30-server
     SUBDIR += firebird40-client
     SUBDIR += firebird40-server
+    SUBDIR += fmptools
     SUBDIR += fortytwo-bdb
     SUBDIR += foundationdb71-client
     SUBDIR += foundationdb71-server
