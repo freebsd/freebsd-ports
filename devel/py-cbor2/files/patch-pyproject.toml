@@ -1,0 +1,28 @@
+--- pyproject.toml.orig	2025-08-17 10:46:46 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools >= 77",
++    "setuptools >= 63",
+     "setuptools_scm[toml] >= 6.4"
+ ]
+ build-backend = "setuptools.build_meta"
+@@ -10,7 +10,6 @@ authors = [{name = "Alex Grönholm", email = "alex.gro
+ description = "CBOR (de)serializer with extensive tag support"
+ readme = "README.rst"
+ authors = [{name = "Alex Grönholm", email = "alex.gronholm@nextday.fi"}]
+-license = "MIT"
+ keywords = ["serialization", "cbor"]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+@@ -27,6 +26,9 @@ dynamic = ["version"]
+ ]
+ requires-python = ">= 3.9"
+ dynamic = ["version"]
++
++[project.license]
++text = "MIT"
+ 
+ [project.urls]
+ Changelog = "https://cbor2.readthedocs.io/en/latest/versionhistory.html"
