@@ -4,7 +4,7 @@
  @PERL_ENABLED_TRUE@		chmod -R u+rwX $(TOCOPY); \
  @PERL_ENABLED_TRUE@	fi;
  @PERL_ENABLED_TRUE@	$(AM_V_SUBMAKE) $(PERL) Makefile.PL INSTALLDIRS=vendor DESTDIR=$(DESTDIR) PREFIX=$(prefix) CCFLAGS="$(LASSO_XS_CFLAGS)" INC="-I. -I$(top_srcdir) -I$(srcdir)" LIBS="`$(top_builddir)/lasso-src-config --libs` $(LDFLAGS)" OPTIMIZE="-g" $(AM_V_SUBMAKE_POSTFIX)
-+@PERL_ENABLED_TRUE@ $(AM_V_SUBMAKE) $(PERL) Makefile.PL CCFLAGS="$(LASSO_XS_CFLAGS)" INC="-I. -I$(top_srcdir) -I$(srcdir)" LIBS="`$(top_builddir)/lasso-src-config --libs`" OPTIMIZE="-g" $(AM_V_SUBMAKE_POSTFIX)
++@PERL_ENABLED_TRUE@	$(AM_V_SUBMAKE) $(PERL) Makefile.PL CCFLAGS="$(LASSO_XS_CFLAGS)" INC="-I. -I$(top_srcdir) -I$(srcdir)" LIBS="`$(top_builddir)/lasso-src-config --libs`" OPTIMIZE="-g" $(AM_V_SUBMAKE_POSTFIX)
  
  @PERL_ENABLED_TRUE@Lasso.xs Lasso.pm: lang.py typemap-in typemap-out
  @PERL_ENABLED_TRUE@	$(AM_V_GEN) $(PYTHON) $(top_srcdir)/bindings/bindings.py -l perl --src-dir=$(top_srcdir)/lasso/ $(EXTRA_ARGS)

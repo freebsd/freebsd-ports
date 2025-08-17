@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--disable-java \
 		--disable-php5 \
 		--with-zlib
 
+BINARY_ALIAS=	make=${GMAKE}
+
 INSTALL_TARGET=	install-strip
 
 SOLIB=	3.16.0
