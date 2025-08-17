@@ -214,8 +214,12 @@ share/icons/hicolor/scalable/apps/nm-signal-50-secure.svg
 share/icons/hicolor/scalable/apps/nm-signal-50.svg
 share/icons/hicolor/scalable/apps/nm-signal-75-secure.svg
 share/icons/hicolor/scalable/apps/nm-signal-75.svg
-share/locale/ru/LC_MESSAGES/networkmgr.mo
-share/locale/zh_CN/LC_MESSAGES/networkmgr.mo
+share/locale/de/LC_MESSAGES/NetworkMgr.mo
+share/locale/nb_NO/LC_MESSAGES/NetworkMgr.mo
+share/locale/pt_Br/LC_MESSAGES/NetworkMgr.mo
+share/locale/ru/LC_MESSAGES/NetworkMgr.mo
+share/locale/sv/LC_MESSAGES/NetworkMgr.mo
+share/locale/zh_CN/LC_MESSAGES/NetworkMgr.mo
 %%DATADIR%%/auto-switch.py
 %%DATADIR%%/link-up.py
 %%DATADIR%%/setup-nic.py
