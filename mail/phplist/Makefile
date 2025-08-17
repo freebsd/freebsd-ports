@@ -15,6 +15,7 @@ RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
 
 USES=		cpe tar:tgz php:web,flavors
 USE_PHP=	curl gd gettext iconv imap mbstring mysqli session simplexml xml zlib
+IGNORE_WITH_PHP=	81
 
 NO_ARCH=	yes
 NO_BUILD=	yes
