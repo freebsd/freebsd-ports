@@ -1,6 +1,6 @@
 PORTNAME=	hatari
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.1
 CATEGORIES=	emulators
 
 MAINTAINER=	laurent.chardon@gmail.com
