@@ -59,8 +59,6 @@ DYNAMIC_CONFIGURE_WITH=	system-libffi \
 			ffi-includes=${LOCALBASE}/include \
 			ffi-libraries=${LOCALBASE}/lib
 DYNAMIC_LIB_DEPENDS=	libffi.so:devel/libffi
-DYNAMIC_VARS=		hadrian_setting_dynamic=True
-DYNAMIC_VARS_OFF=	hadrian_setting_dynamic=False
 
 # do not replace this with GMP_CONFIGURE_WITH
 # it adds "--without-gmp-*" when the option is OFF, which results in "no" value
@@ -69,9 +67,6 @@ GMP_CONFIGURE_ON=	--with-gmp-includes=${LOCALBASE}/include \
 			--with-gmp-libraries=${LOCALBASE}/lib
 GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 GMP_VARS_OFF=		hadrian_gmp_arg=--bignum=native
-
-PROFILE_VARS=		hadrian_setting_profile=True
-PROFILE_VARS_OFF=	hadrian_setting_profile=False
 
 GHC_VERSION?=		9.8.4
 LLVM_VERSION?=		15
@@ -118,7 +113,7 @@ LIB_DEPENDS+=		libffi.so:devel/libffi
 .undef DYNAMIC_CONFIGURE_WITH
 CONFIGURE_ARGS+=	--with-system-libffi --with-ffi-includes=${LOCALBASE}/include --with-ffi-libraries=${LOCALBASE}/lib
 HADRIAN_CMD=		${WRKSRC}/hadrian/bootstrap/_build/bin/hadrian ${HADRIAN_DOCS_ARG} ${HADRIAN_GMP_ARG}
-DO_MAKE_BUILD=		${SETENVI} ${WRK_ENV} ${HADRIAN_CMD} ${_MAKE_JOBS} --flavour=ports
+DO_MAKE_BUILD=		${SETENVI} ${WRK_ENV} ${HADRIAN_CMD} ${_MAKE_JOBS}
 ALL_TARGET=		binary-dist-dir
 INSTALL_WRKSRC=		${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${CONFIGURE_TARGET}
 
@@ -146,11 +141,6 @@ DISTFILES+=		hadrian-${GHC_VERSION}-boot.tar.gz:boot
 CONFIGURE_TARGET=	${ARCH}-unknown-freebsd${"${ARCH:Maarch64}" != "":?:-gnueabihf}
 CONFIGURE_ARGS+=	--host=${CONFIGURE_TARGET}
 .endif
-
-post-patch:
-	${SED} -e 's|%%DYNAMIC%%|${HADRIAN_SETTING_DYNAMIC}|' \
-		-e 's|%%PROFILE%%|${HADRIAN_SETTING_PROFILE}|' \
-		${PATCHDIR}/UserSettings.hs > ${WRKSRC}/hadrian/src/UserSettings.hs
 
 pre-configure:
 # Call the bootstrap script
