@@ -1,0 +1,24 @@
+Remove unused TextWidgets.
+Don't globally install color palettes only used by this application.
+
+Ref: https://invent.kde.org/graphics/kolourpaint/-/merge_requests/79
+
+--- CMakeLists.txt.orig	2025-08-07 03:21:56 UTC
++++ CMakeLists.txt
+@@ -39,7 +39,6 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
+     WidgetsAddons
+     KIO
+     XmlGui
+-    TextWidgets
+     JobWidgets
+     Crash
+ )
+@@ -368,7 +367,7 @@ install(FILES org.kde.kolourpaint.appdata.xml DESTINAT
+ 
+ install(PROGRAMS org.kde.kolourpaint.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+ install(FILES org.kde.kolourpaint.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+-install(DIRECTORY colors DESTINATION ${KDE_INSTALL_CONFDIR})
++install(DIRECTORY colors DESTINATION ${KDE_INSTALL_DATADIR}/kolourpaint)
+ 
+ if(BUILD_DOC)
+     add_subdirectory(doc)
