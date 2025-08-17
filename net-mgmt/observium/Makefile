@@ -25,6 +25,7 @@ RUN_DEPENDS=	rrdtool:databases/rrdtool \
 
 USES=		cpe php:cli,flavors python shebangfix
 USE_PHP=	ctype filter gd iconv mysqli posix session snmp tokenizer xml zlib
+IGNORE_WITH_PHP=	81
 SHEBANG_FILES=	\
 		poller-wrapper.py \
 		poller.php \
