@@ -118,7 +118,7 @@ OPENLDAP_DEFAULT?=	26
     defined(PACKAGE_BUILDING))
 # When changing the default here, make sure the DEPRECATED/EXPIRATION lines in
 # the older Perl 5 ports are uncommented at the same time.
-PERL5_DEFAULT?=		5.40
+PERL5_DEFAULT?=		5.42
 .  elif !defined(PERL5_DEFAULT)
 # There's no need to replace development versions, like "5.23" with "devel"
 # because 1) nobody is supposed to use it outside of poudriere, and 2) it must
