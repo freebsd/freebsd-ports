@@ -1,5 +1,6 @@
 PORTNAME=	arrow
 DISTVERSION=	20.0.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION} \
 		https://github.com/apache/orc/archive/rel/:orc
@@ -185,7 +186,7 @@ TESTING_CMAKE_BOOL=		ARROW_TESTING
 TESTING_LIB_DEPENDS=		libgtest.so:devel/googletest
 
 # form OPTIONS_DEFAULT
-.for opt in ${OPTIONS_GROUP_COMPONENTS}
+.for opt in ${OPTIONS_GROUP_COMPONENTS} ${OPTIONS_GROUP_COMPRESSION}
 .  if "${${opt}_BROKEN}" == ""
 OPTIONS_DEFAULT+=	${opt}
 .  endif
@@ -203,6 +204,9 @@ PLIST_FILES+=	bin/arrow-file-to-stream \
 .endif
 .if ${PORT_OPTIONS:MGANDIVA} || ${PORT_OPTIONS:MCOMPUTE}
 PLIST_FILES+=	lib/cmake/Arrow/Findutf8proc.cmake
+.endif
+.if ${PORT_OPTIONS:MGANDIVA} || ${PORT_OPTIONS:MZSTD}
+PLIST_FILES+=	lib/cmake/Gandiva/FindzstdAlt.cmake
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON} == "PYTHON" && ${PORT_OPTIONS:MFLIGHT} == "FLIGHT"
