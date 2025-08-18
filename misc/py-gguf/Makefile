@@ -24,7 +24,7 @@ USE_PYTHON=	pep517 autoplist pytest
 USE_GITHUB=	yes
 GH_ACCOUNT=	ggml-org
 GH_PROJECT=	llama.cpp
-GH_TAGNAME=	b6040
+GH_TAGNAME=	b6191
 
 WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}/gguf-py
 
