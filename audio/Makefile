@@ -652,6 +652,7 @@
     SUBDIR += py-pydub
     SUBDIR += py-pyjacklib
     SUBDIR += py-pylast
+    SUBDIR += py-pyliblo3
     SUBDIR += py-pymad
     SUBDIR += py-pyogg
     SUBDIR += py-pyradio
