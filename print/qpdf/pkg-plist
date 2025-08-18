@@ -9,6 +9,7 @@ include/qpdf/DLL.h
 include/qpdf/FileInputSource.hh
 include/qpdf/InputSource.hh
 include/qpdf/JSON.hh
+include/qpdf/ObjectHandle.hh
 include/qpdf/PDFVersion.hh
 include/qpdf/Pipeline.hh
 include/qpdf/Pl_Buffer.hh
@@ -43,7 +44,6 @@ include/qpdf/QPDFNameTreeObjectHelper.hh
 include/qpdf/QPDFNumberTreeObjectHelper.hh
 include/qpdf/QPDFObjGen.hh
 include/qpdf/QPDFObject.hh
-include/qpdf/QPDFObjectHandle_future.hh
 include/qpdf/QPDFObjectHandle.hh
 include/qpdf/QPDFObjectHelper.hh
 include/qpdf/QPDFOutlineDocumentHelper.hh
@@ -72,8 +72,8 @@ include/qpdf/qpdf-c.h
 include/qpdf/qpdfjob-c.h
 include/qpdf/qpdflogger-c.h
 lib/libqpdf.so
-lib/libqpdf.so.29
-lib/libqpdf.so.29.10.1
+lib/libqpdf.so.30
+lib/libqpdf.so.30.2.0
 lib/cmake/qpdf/libqpdfTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/qpdf/libqpdfTargets.cmake
 lib/cmake/qpdf/qpdfConfig.cmake
