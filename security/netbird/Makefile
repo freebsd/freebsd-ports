@@ -1,7 +1,6 @@
 PORTNAME=	netbird
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.52.2
-PORTREVISION=	1
+DISTVERSION=	0.54.2
 CATEGORIES=	security net net-vpn
 
 MAINTAINER=	hakan.external@netbird.io
