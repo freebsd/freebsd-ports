@@ -1,0 +1,2 @@
+rjieba is the jieba-rs Python binding.
+jieba-rs is the Jieba Chinese Word Segmentation Implemented in Rust.

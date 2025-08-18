@@ -90,6 +90,7 @@
     SUBDIR += pcmanx
     SUBDIR += php-opencc
     SUBDIR += phpbb3-tw
+    SUBDIR += py-rjieba
     SUBDIR += pycangjie
     SUBDIR += pyzy
     SUBDIR += qe
