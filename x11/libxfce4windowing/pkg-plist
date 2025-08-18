@@ -27,54 +27,55 @@ libdata/pkgconfig/libxfce4windowing-x11-0.pc
 libdata/pkgconfig/libxfce4windowingui-0.pc
 %%GIR%%share/gir-1.0/Libxfce4windowing-0.0.gir
 %%GIR%%share/gir-1.0/Libxfce4windowingui-0.0.gir
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/XfwApplication.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/XfwMonitor.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/XfwScreen.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/XfwSeat.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/XfwWindow.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/XfwWorkspace.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/XfwWorkspaceGroup.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/XfwWorkspaceManager.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/annotation-glossary.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/api-index-4-19-1.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/api-index-4-19-3.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/api-index-4-19-4.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/api-index-full.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/home.png
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/index.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/left-insensitive.png
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/left.png
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/libxfce4windowing-Library-Configuration.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/libxfce4windowing-Utilities.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/libxfce4windowing-X11-Backend.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/libxfce4windowing-backend.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/libxfce4windowing-core.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/libxfce4windowing-introduction.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/libxfce4windowing-utilities.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/libxfce4windowing.devhelp2
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/right-insensitive.png
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/right.png
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/style.css
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/up-insensitive.png
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowing/up.png
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/XfwWindowActionMenu.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/XfwWindowListMenu.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/annotation-glossary.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/api-index-full.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/home.png
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/index.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/left-insensitive.png
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/left.png
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/libxfce4windowing-widgets.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/libxfce4windowingui-Library-Configuration.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/libxfce4windowingui-introduction.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/libxfce4windowingui-utilities.html
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/libxfce4windowingui.devhelp2
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/right-insensitive.png
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/right.png
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/style.css
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/up-insensitive.png
-@comment %%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui/up.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/XfwApplication.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/XfwMonitor.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/XfwScreen.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/XfwSeat.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/XfwWindow.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/XfwWorkspace.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/XfwWorkspaceGroup.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/XfwWorkspaceManager.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/annotation-glossary.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/api-index-4-19-1.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/api-index-4-19-3.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/api-index-4-19-4.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/api-index-full.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/home.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/index.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/left-insensitive.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/left.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/libxfce4windowing-0.devhelp2
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/libxfce4windowing-Library-Configuration.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/libxfce4windowing-Utilities.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/libxfce4windowing-X11-Backend.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/libxfce4windowing-backend.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/libxfce4windowing-core.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/libxfce4windowing-introduction.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/libxfce4windowing-utilities.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/right-insensitive.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/right.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/style.css
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/up-insensitive.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowing-0/up.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/XfwWindowActionMenu.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/XfwWindowListMenu.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/annotation-glossary.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/api-index-full.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/home.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/index.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/left-insensitive.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/left.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/libxfce4windowing-widgets.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/libxfce4windowingui-0.devhelp2
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/libxfce4windowingui-Library-Configuration.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/libxfce4windowingui-introduction.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/libxfce4windowingui-utilities.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/right-insensitive.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/right.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/style.css
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/up-insensitive.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4windowingui-0/up.png
+%%NLS%%share/locale/ar/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/libxfce4windowing.mo
@@ -118,3 +119,7 @@ libdata/pkgconfig/libxfce4windowingui-0.pc
 %%NLS%%share/locale/uk/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libxfce4windowing.mo
+%%VAPI%%share/vala/vapi/libxfce4windowing-0.deps
+%%VAPI%%share/vala/vapi/libxfce4windowing-0.vapi
+%%VAPI%%share/vala/vapi/libxfce4windowingui-0.deps
+%%VAPI%%share/vala/vapi/libxfce4windowingui-0.vapi

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+  <!ENTITY % gtkdocentities SYSTEM "xml/gtkdocentities.ent">
+  %gtkdocentities;
+]>
+
+<book id="index" xmlns:xi="http://www.w3.org/2003/XInclude">
+  <bookinfo>
+    <title>&package_name; Reference Manual</title>
+    <releaseinfo>
+      for &package_string;.
+      The latest version of this documentation can be found on-line at
+      <ulink role="online-location" url="https://developer.xfcr.org/&package_name;/index.html">https://developer.xfce.org/&package_name;/</ulink>.
+    </releaseinfo>
+    <copyright>
+      <year>@COPYRIGHT_YEAR@</year>
+      <holder>The libxfce4windowing contributors</holder>
+    </copyright>
+  </bookinfo>
+
+  <part id="libxfce4windowingui-introduction">
+    <title>Introduction</title>
+    <para>
+      Libxfce4windowingui is a UI widget utility library that makes use of libxfce4windowing primitives.
+    </para>
+  </part>
+
+  <part id="libxfce4windowingui-utilities">
+    <title>Windowing Utilities</title>
+    <xi:include href="xml/libxfce4windowingui-config.xml"/>
+  </part>
+
+  <part id="libxfce4windowing-widgets">
+    <title>Widgets</title>
+    <xi:include href="xml/xfw-window-action-menu.xml"/>
+    <xi:include href="xml/xfw-window-list-menu.xml"/>
+  </part>
+
+  <index id="api-index-full">
+    <title>Index of all symbols</title>
+    <xi:include href="xml/api-index-full.xml"><xi:fallback /></xi:include>
+  </index>
+  <!--
+  <index id="api-index-deprecated">
+    <title>Index of deprecated symbols</title>
+    <xi:include href="xml/api-index-deprecated.xml"><xi:fallback /></xi:include>
+  </index>
+  -->
+
+  <xi:include href="xml/annotation-glossary.xml"><xi:fallback /></xi:include>
+
+</book>
