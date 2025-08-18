@@ -58,6 +58,7 @@ share/icons/hicolor/scalable/apps/xfce4-logo.svg
 %%NLS%%share/locale/el/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/en_AU/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/libxfce4ui.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/es/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/et/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/libxfce4ui.mo
