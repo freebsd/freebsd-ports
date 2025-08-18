@@ -1,6 +1,5 @@
 PORTNAME=	warzone2100
-DISTVERSION=	4.5.5
-PORTREVISION=	2
+DISTVERSION=	4.6.1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/Warzone2100/warzone2100/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}_src
@@ -15,32 +14,35 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	7zz:archivers/7-zip \
 		a2x:textproc/asciidoc
-LIB_DEPENDS=	libphysfs.so:devel/physfs \
-		libpng.so:graphics/png \
-		libvorbis.so:audio/libvorbis \
-		libogg.so:audio/libogg \
-		libtheora.so:multimedia/libtheora \
+LIB_DEPENDS= 	libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
-		libsodium.so:security/libsodium \
-		libcurl.so:ftp/curl \
 		libminiupnpc.so:net/miniupnpc \
+		libogg.so:audio/libogg \
+		libopus.so:audio/opus \
 		libopusfile.so:audio/opusfile \
-		libopus.so:audio/opus
+		libphysfs.so:devel/physfs \
+		libpng.so:graphics/png \
+		libprotobuf.so:devel/protobuf \
+		libsodium.so:security/libsodium \
+		libtheoradec.so:multimedia/libtheora \
+		libvorbis.so:audio/libvorbis \
+		libzip.so:archivers/libzip
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 
 USES=		cmake bison compiler:c++11-lib gl openal:al pkgconfig \
 		sdl sqlite tar:xz
 USE_GL=		gl
 USE_SDL=	sdl2
-CMAKE_ARGS=	-DWZ_DISTRIBUTOR="FreeBSD ports" \
-		-DCMAKE_DISABLE_FIND_PACKAGE_Asciidoctor=TRUE \
-	       	-DCMAKE_DISABLE_FIND_PACKAGE_Git=TRUE \
-		-DWZ_ENABLE_WARNINGS_AS_ERRORS=FALSE \
-		-DFETCHCONTENT_FULLY_DISCONNECTED=TRUE \
-		-DWZ_FORCE_MINIMAL_OPUSFILE=FALSE \
-		-DWZ_DOWNLOAD_PREBUILT_PACKAGES=FALSE \
-		-DFMT_INSTALL=FALSE
+CMAKE_ON=	WZ_DISABLE_FETCHCONTENT_GIT_CLONE \
+		CMAKE_DISABLE_FIND_PACKAGE_Asciidoctor \
+		CMAKE_DISABLE_FIND_PACKAGE_Git \
+		FETCHCONTENT_FULLY_DISCONNECTED
+CMAKE_OFF=	FMT_INSTALL \
+		WZ_DOWNLOAD_PREBUILT_PACKAGES \
+		WZ_ENABLE_WARNINGS_AS_ERRORS \
+		WZ_FORCE_MINIMAL_OPUSFILE
+CMAKE_ARGS=	-DWZ_DISTRIBUTOR="FreeBSD ports"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -55,7 +57,6 @@ NLS_USES=	gettext
 NLS_CMAKE_BOOL=	ENABLE_NLS
 
 VULKAN_DESC=		Enable Vulkan backend
-VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers \
 			${LOCALBASE}/bin/glslc:graphics/shaderc
 VULKAN_CMAKE_BOOL=	WZ_ENABLE_BACKEND_VULKAN
