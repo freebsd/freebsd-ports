@@ -1,5 +1,6 @@
 PORTNAME=	vscode
 DISTVERSION=	1.103.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
