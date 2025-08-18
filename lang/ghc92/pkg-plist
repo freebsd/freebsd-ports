@@ -883,6 +883,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/Cabal-%%CAB
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/Cabal-%%CABAL_VERSION%%/Language/Haskell/Extension.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/Cabal-%%CABAL_VERSION%%/Language/Haskell/Extension.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/Cabal-%%CABAL_VERSION%%/Language/Haskell/Extension.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/Cabal-%%CABAL_VERSION%%/HSCabal-%%CABAL_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/Cabal-%%CABAL_VERSION%%/HSCabal-%%CABAL_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/Cabal-%%CABAL_VERSION%%/Paths_Cabal.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/Cabal-%%CABAL_VERSION%%/Paths_Cabal.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/Cabal-%%CABAL_VERSION%%/Paths_Cabal.p_hi
@@ -933,6 +935,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/array-%%ARR
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/array-%%ARRAY_VERSION%%/Data/Array/Unsafe.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/array-%%ARRAY_VERSION%%/Data/Array/Unsafe.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/array-%%ARRAY_VERSION%%/Data/Array/Unsafe.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/array-%%ARRAY_VERSION%%/HSarray-%%ARRAY_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/array-%%ARRAY_VERSION%%/HSarray-%%ARRAY_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/array-%%ARRAY_VERSION%%/libHSarray-%%ARRAY_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/array-%%ARRAY_VERSION%%/libHSarray-%%ARRAY_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/Control/Applicative.dyn_hi
@@ -1703,6 +1707,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/base-%%BASE
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/Unsafe/Coerce.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/Unsafe/Coerce.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/Unsafe/Coerce.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/HSbase-%%BASE_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/HSbase-%%BASE_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/include/EventConfig.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/include/HsBase.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/base-%%BASE_VERSION%%/include/HsBaseConfig.h
@@ -1737,6 +1743,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/binary-%%BI
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/binary-%%BINARY_VERSION%%/Data/Binary/Put.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/binary-%%BINARY_VERSION%%/Data/Binary/Put.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/binary-%%BINARY_VERSION%%/Data/Binary/Put.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/binary-%%BINARY_VERSION%%/HSbinary-%%BINARY_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/binary-%%BINARY_VERSION%%/HSbinary-%%BINARY_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/binary-%%BINARY_VERSION%%/libHSbinary-%%BINARY_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/binary-%%BINARY_VERSION%%/libHSbinary-%%BINARY_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/Data/ByteString.dyn_hi
@@ -1817,6 +1825,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/bytestring-
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/Data/ByteString/Unsafe.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/Data/ByteString/Unsafe.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/Data/ByteString/Unsafe.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/HSbytestring-%%BYTESTRING_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/HSbytestring-%%BYTESTRING_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/include/fpstring.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/libHSbytestring-%%BYTESTRING_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/libHSbytestring-%%BYTESTRING_VERSION%%_p.a
@@ -1928,6 +1938,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/containers-
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/containers-%%CONTAINERS_VERSION%%/Utils/Containers/Internal/TypeError.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/containers-%%CONTAINERS_VERSION%%/Utils/Containers/Internal/TypeError.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/containers-%%CONTAINERS_VERSION%%/Utils/Containers/Internal/TypeError.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/containers-%%CONTAINERS_VERSION%%/HScontainers-%%CONTAINERS_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/containers-%%CONTAINERS_VERSION%%/HScontainers-%%CONTAINERS_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/containers-%%CONTAINERS_VERSION%%/libHScontainers-%%CONTAINERS_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/containers-%%CONTAINERS_VERSION%%/libHScontainers-%%CONTAINERS_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/deepseq-%%DEEPSEQ_VERSION%%/Control/DeepSeq.dyn_hi
@@ -1936,6 +1948,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/deepseq-%%D
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/deepseq-%%DEEPSEQ_VERSION%%/Control/DeepSeq/BackDoor.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/deepseq-%%DEEPSEQ_VERSION%%/Control/DeepSeq/BackDoor.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/deepseq-%%DEEPSEQ_VERSION%%/Control/DeepSeq/BackDoor.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/deepseq-%%DEEPSEQ_VERSION%%/HSdeepseq-%%DEEPSEQ_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/deepseq-%%DEEPSEQ_VERSION%%/HSdeepseq-%%DEEPSEQ_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/deepseq-%%DEEPSEQ_VERSION%%/libHSdeepseq-%%DEEPSEQ_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/deepseq-%%DEEPSEQ_VERSION%%/libHSdeepseq-%%DEEPSEQ_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/directory-%%DIRECTORY_VERSION%%/System/Directory.dyn_hi
@@ -1962,6 +1976,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/directory-%
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/directory-%%DIRECTORY_VERSION%%/System/Directory/Internal/Windows.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/directory-%%DIRECTORY_VERSION%%/System/Directory/Internal/Windows.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/directory-%%DIRECTORY_VERSION%%/System/Directory/Internal/Windows.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/directory-%%DIRECTORY_VERSION%%/HSdirectory-%%DIRECTORY_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/directory-%%DIRECTORY_VERSION%%/HSdirectory-%%DIRECTORY_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/directory-%%DIRECTORY_VERSION%%/libHSdirectory-%%DIRECTORY_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/directory-%%DIRECTORY_VERSION%%/libHSdirectory-%%DIRECTORY_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/exceptions-%%EXCEPTIONS_VERSION%%/Control/Monad/Catch.dyn_hi
@@ -1970,6 +1986,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/exceptions-
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/exceptions-%%EXCEPTIONS_VERSION%%/Control/Monad/Catch/Pure.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/exceptions-%%EXCEPTIONS_VERSION%%/Control/Monad/Catch/Pure.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/exceptions-%%EXCEPTIONS_VERSION%%/Control/Monad/Catch/Pure.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/exceptions-%%EXCEPTIONS_VERSION%%/HSexceptions-%%EXCEPTIONS_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/exceptions-%%EXCEPTIONS_VERSION%%/HSexceptions-%%EXCEPTIONS_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/exceptions-%%EXCEPTIONS_VERSION%%/libHSexceptions-%%EXCEPTIONS_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/exceptions-%%EXCEPTIONS_VERSION%%/libHSexceptions-%%EXCEPTIONS_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/filepath-%%FILEPATH_VERSION%%/System/FilePath.dyn_hi
@@ -1981,6 +1999,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/filepath-%%
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/filepath-%%FILEPATH_VERSION%%/System/FilePath/Windows.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/filepath-%%FILEPATH_VERSION%%/System/FilePath/Windows.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/filepath-%%FILEPATH_VERSION%%/System/FilePath/Windows.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/filepath-%%FILEPATH_VERSION%%/HSfilepath-%%FILEPATH_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/filepath-%%FILEPATH_VERSION%%/HSfilepath-%%FILEPATH_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/filepath-%%FILEPATH_VERSION%%/libHSfilepath-%%FILEPATH_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/filepath-%%FILEPATH_VERSION%%/libHSfilepath-%%FILEPATH_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-%%GHC_VERSION%%/GHC.dyn_hi
@@ -3750,6 +3770,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-bignum-
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-bignum-%%GHC-BIGNUM_VERSION%%/GHC/Num/WordArray.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-bignum-%%GHC-BIGNUM_VERSION%%/GHC/Num/WordArray.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-bignum-%%GHC-BIGNUM_VERSION%%/GHC/Num/WordArray.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-bignum-%%GHC-BIGNUM_VERSION%%/HSghc-bignum-%%GHC-BIGNUM_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-bignum-%%GHC-BIGNUM_VERSION%%/HSghc-bignum-%%GHC-BIGNUM_VERSION%%.p_o
 %%GMP%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-bignum-%%GHC-BIGNUM_VERSION%%/include/HsIntegerGmp.h
 %%GMP%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-bignum-%%GHC-BIGNUM_VERSION%%/include/ghc-gmp.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-bignum-%%GHC-BIGNUM_VERSION%%/libHSghc-bignum-%%GHC-BIGNUM_VERSION%%.a
@@ -3796,6 +3818,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-%%
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-%%GHC_VERSION%%/GHC/Version.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-%%GHC_VERSION%%/GHC/Version.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-%%GHC_VERSION%%/GHC/Version.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-%%GHC_VERSION%%/HSghc-boot-%%GHC_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-%%GHC_VERSION%%/HSghc-boot-%%GHC_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-%%GHC_VERSION%%/libHSghc-boot-%%GHC_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-%%GHC_VERSION%%/libHSghc-boot-%%GHC_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-th-%%GHC_VERSION%%/GHC/ForeignSrcLang/Type.dyn_hi
@@ -3807,6 +3831,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-th
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-th-%%GHC_VERSION%%/GHC/Lexeme.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-th-%%GHC_VERSION%%/GHC/Lexeme.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-th-%%GHC_VERSION%%/GHC/Lexeme.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-th-%%GHC_VERSION%%/HSghc-boot-th-%%GHC_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-th-%%GHC_VERSION%%/HSghc-boot-th-%%GHC_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-th-%%GHC_VERSION%%/libHSghc-boot-th-%%GHC_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-boot-th-%%GHC_VERSION%%/libHSghc-boot-th-%%GHC_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-compact-%%GHC-COMPACT_VERSION%%/GHC/Compact.dyn_hi
@@ -3815,6 +3841,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-compact
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-compact-%%GHC-COMPACT_VERSION%%/GHC/Compact/Serialized.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-compact-%%GHC-COMPACT_VERSION%%/GHC/Compact/Serialized.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-compact-%%GHC-COMPACT_VERSION%%/GHC/Compact/Serialized.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-compact-%%GHC-COMPACT_VERSION%%/HSghc-compact-%%GHC-COMPACT_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-compact-%%GHC-COMPACT_VERSION%%/HSghc-compact-%%GHC-COMPACT_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-compact-%%GHC-COMPACT_VERSION%%/libHSghc-compact-%%GHC-COMPACT_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-compact-%%GHC-COMPACT_VERSION%%/libHSghc-compact-%%GHC-COMPACT_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-heap-%%GHC_VERSION%%/GHC/Exts/Heap.dyn_hi
@@ -3862,6 +3890,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-heap-%%
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-heap-%%GHC_VERSION%%/GHC/Exts/Heap/Utils.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-heap-%%GHC_VERSION%%/GHC/Exts/Heap/Utils.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-heap-%%GHC_VERSION%%/GHC/Exts/Heap/Utils.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-heap-%%GHC_VERSION%%/HSghc-heap-%%GHC_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-heap-%%GHC_VERSION%%/HSghc-heap-%%GHC_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-heap-%%GHC_VERSION%%/libHSghc-heap-%%GHC_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-heap-%%GHC_VERSION%%/libHSghc-heap-%%GHC_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-prim-%%GHC-PRIM_VERSION%%/GHC/CString.dyn_hi
@@ -3894,6 +3924,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-prim-%%
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-prim-%%GHC-PRIM_VERSION%%/GHC/Types.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-prim-%%GHC-PRIM_VERSION%%/GHC/Types.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-prim-%%GHC-PRIM_VERSION%%/GHC/Types.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-prim-%%GHC-PRIM_VERSION%%/HSghc-prim-%%GHC-PRIM_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-prim-%%GHC-PRIM_VERSION%%/HSghc-prim-%%GHC-PRIM_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-prim-%%GHC-PRIM_VERSION%%/libHSghc-prim-%%GHC-PRIM_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghc-prim-%%GHC-PRIM_VERSION%%/libHSghc-prim-%%GHC-PRIM_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghci-%%GHC_VERSION%%/GHCi/BinaryArray.dyn_hi
@@ -3938,6 +3970,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghci-%%GHC_
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghci-%%GHC_VERSION%%/GHCi/TH/Binary.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghci-%%GHC_VERSION%%/GHCi/TH/Binary.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghci-%%GHC_VERSION%%/GHCi/TH/Binary.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghci-%%GHC_VERSION%%/HSghci-%%GHC_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghci-%%GHC_VERSION%%/HSghci-%%GHC_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghci-%%GHC_VERSION%%/libHSghci-%%GHC_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/ghci-%%GHC_VERSION%%/libHSghci-%%GHC_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/haskeline-%%HASKELINE_VERSION%%/System/Console/Haskeline.dyn_hi
@@ -4021,6 +4055,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/haskeline-%
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/haskeline-%%HASKELINE_VERSION%%/System/Console/Haskeline/Vi.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/haskeline-%%HASKELINE_VERSION%%/System/Console/Haskeline/Vi.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/haskeline-%%HASKELINE_VERSION%%/System/Console/Haskeline/Vi.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/haskeline-%%HASKELINE_VERSION%%/HShaskeline-%%HASKELINE_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/haskeline-%%HASKELINE_VERSION%%/HShaskeline-%%HASKELINE_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/haskeline-%%HASKELINE_VERSION%%/libHShaskeline-%%HASKELINE_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/haskeline-%%HASKELINE_VERSION%%/libHShaskeline-%%HASKELINE_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/hpc-%%HPC_VERSION%%/Trace/Hpc/Mix.dyn_hi
@@ -4035,11 +4071,15 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/hpc-%%HPC_V
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/hpc-%%HPC_VERSION%%/Trace/Hpc/Util.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/hpc-%%HPC_VERSION%%/Trace/Hpc/Util.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/hpc-%%HPC_VERSION%%/Trace/Hpc/Util.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/hpc-%%HPC_VERSION%%/HShpc-%%HPC_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/hpc-%%HPC_VERSION%%/HShpc-%%HPC_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/hpc-%%HPC_VERSION%%/libHShpc-%%HPC_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/hpc-%%HPC_VERSION%%/libHShpc-%%HPC_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/integer-gmp-%%INTEGER-GMP_VERSION%%/GHC/Integer/GMP/Internals.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/integer-gmp-%%INTEGER-GMP_VERSION%%/GHC/Integer/GMP/Internals.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/integer-gmp-%%INTEGER-GMP_VERSION%%/GHC/Integer/GMP/Internals.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/integer-gmp-%%INTEGER-GMP_VERSION%%/HSinteger-gmp-%%INTEGER-GMP_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/integer-gmp-%%INTEGER-GMP_VERSION%%/HSinteger-gmp-%%INTEGER-GMP_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/integer-gmp-%%INTEGER-GMP_VERSION%%/libHSinteger-gmp-%%INTEGER-GMP_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/integer-gmp-%%INTEGER-GMP_VERSION%%/libHSinteger-gmp-%%INTEGER-GMP_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libHSCabal-%%CABAL_VERSION%%-ghc%%GHC_VERSION%%.so
@@ -4088,9 +4128,14 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libHStime-%
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libHStransformers-%%TRANSFORMERS_VERSION%%-ghc%%GHC_VERSION%%.so
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libHSunix-%%UNIX_VERSION%%-ghc%%GHC_VERSION%%.so
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libHSxhtml-%%XHTML_VERSION%%-ghc%%GHC_VERSION%%.so
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libffi.so
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libffi.so.7
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libffi.so.7.1.0
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libiserv-%%GHC_VERSION%%/GHCi/Utils.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libiserv-%%GHC_VERSION%%/GHCi/Utils.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libiserv-%%GHC_VERSION%%/GHCi/Utils.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libiserv-%%GHC_VERSION%%/HSlibiserv-%%GHC_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libiserv-%%GHC_VERSION%%/HSlibiserv-%%GHC_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libiserv-%%GHC_VERSION%%/Lib.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libiserv-%%GHC_VERSION%%/Lib.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/libiserv-%%GHC_VERSION%%/Lib.p_hi
@@ -4162,6 +4207,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/mtl-%%MTL_V
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/mtl-%%MTL_VERSION%%/Control/Monad/Writer/Strict.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/mtl-%%MTL_VERSION%%/Control/Monad/Writer/Strict.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/mtl-%%MTL_VERSION%%/Control/Monad/Writer/Strict.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/mtl-%%MTL_VERSION%%/HSmtl-%%MTL_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/mtl-%%MTL_VERSION%%/HSmtl-%%MTL_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/mtl-%%MTL_VERSION%%/libHSmtl-%%MTL_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/mtl-%%MTL_VERSION%%/libHSmtl-%%MTL_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/parsec-%%PARSEC_VERSION%%/Text/Parsec.dyn_hi
@@ -4239,6 +4286,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/parsec-%%PA
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/parsec-%%PARSEC_VERSION%%/Text/ParserCombinators/Parsec/Token.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/parsec-%%PARSEC_VERSION%%/Text/ParserCombinators/Parsec/Token.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/parsec-%%PARSEC_VERSION%%/Text/ParserCombinators/Parsec/Token.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/parsec-%%PARSEC_VERSION%%/HSparsec-%%PARSEC_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/parsec-%%PARSEC_VERSION%%/HSparsec-%%PARSEC_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/parsec-%%PARSEC_VERSION%%/libHSparsec-%%PARSEC_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/parsec-%%PARSEC_VERSION%%/libHSparsec-%%PARSEC_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/pretty-%%INTEGER-GMP_VERSION%%.3.6/Text/PrettyPrint.dyn_hi
@@ -4259,6 +4308,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/pretty-%%IN
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/pretty-%%INTEGER-GMP_VERSION%%.3.6/Text/PrettyPrint/HughesPJClass.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/pretty-%%INTEGER-GMP_VERSION%%.3.6/Text/PrettyPrint/HughesPJClass.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/pretty-%%INTEGER-GMP_VERSION%%.3.6/Text/PrettyPrint/HughesPJClass.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/pretty-%%INTEGER-GMP_VERSION%%.3.6/HSpretty-%%INTEGER-GMP_VERSION%%.3.6.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/pretty-%%INTEGER-GMP_VERSION%%.3.6/HSpretty-%%INTEGER-GMP_VERSION%%.3.6.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/pretty-%%INTEGER-GMP_VERSION%%.3.6/libHSpretty-%%INTEGER-GMP_VERSION%%.3.6.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/pretty-%%INTEGER-GMP_VERSION%%.3.6/libHSpretty-%%INTEGER-GMP_VERSION%%.3.6_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/process-%%PROCESS_VERSION%%/System/Cmd.dyn_hi
@@ -4276,6 +4327,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/process-%%P
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/process-%%PROCESS_VERSION%%/System/Process/Posix.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/process-%%PROCESS_VERSION%%/System/Process/Posix.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/process-%%PROCESS_VERSION%%/System/Process/Posix.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/process-%%PROCESS_VERSION%%/HSprocess-%%PROCESS_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/process-%%PROCESS_VERSION%%/HSprocess-%%PROCESS_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/process-%%PROCESS_VERSION%%/include/processFlags.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/process-%%PROCESS_VERSION%%/include/runProcess.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/process-%%PROCESS_VERSION%%/libHSprocess-%%PROCESS_VERSION%%.a
@@ -4287,6 +4340,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/i
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/Rts.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/RtsAPI.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/Stg.h
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/ffi.h
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/ffitarget.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/ghcautoconf.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/ghcconfig.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/ghcplatform.h
@@ -4352,6 +4407,16 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/i
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/stg/SMP.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/stg/Ticky.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/stg/Types.h
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/libCffi.a
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/libCffi_debug.a
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/libCffi_debug_p.a
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/libCffi_l.a
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/libCffi_p.a
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/libCffi_thr.a
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/libCffi_thr_debug.a
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/libCffi_thr_debug_p.a
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/libCffi_thr_l.a
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/libCffi_thr_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/libHSrts-1.0.2.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/libHSrts-1.0.2_debug.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/libHSrts-1.0.2_debug_p.a
@@ -4392,6 +4457,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/stm-%%STM_V
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/stm-%%STM_VERSION%%/Control/Sequential/STM.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/stm-%%STM_VERSION%%/Control/Sequential/STM.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/stm-%%STM_VERSION%%/Control/Sequential/STM.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/stm-%%STM_VERSION%%/HSstm-%%STM_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/stm-%%STM_VERSION%%/HSstm-%%STM_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/stm-%%STM_VERSION%%/libHSstm-%%STM_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/stm-%%STM_VERSION%%/libHSstm-%%STM_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/template-haskell-%%TEMPLATE-HASKELL_VERSION%%/Language/Haskell/TH.dyn_hi
@@ -4424,6 +4491,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/template-ha
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/template-haskell-%%TEMPLATE-HASKELL_VERSION%%/Language/Haskell/TH/Syntax.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/template-haskell-%%TEMPLATE-HASKELL_VERSION%%/Language/Haskell/TH/Syntax.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/template-haskell-%%TEMPLATE-HASKELL_VERSION%%/Language/Haskell/TH/Syntax.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/template-haskell-%%TEMPLATE-HASKELL_VERSION%%/HStemplate-haskell-%%TEMPLATE-HASKELL_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/template-haskell-%%TEMPLATE-HASKELL_VERSION%%/HStemplate-haskell-%%TEMPLATE-HASKELL_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/template-haskell-%%TEMPLATE-HASKELL_VERSION%%/libHStemplate-haskell-%%TEMPLATE-HASKELL_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/template-haskell-%%TEMPLATE-HASKELL_VERSION%%/libHStemplate-haskell-%%TEMPLATE-HASKELL_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/terminfo-%%TERMINFO_VERSION%%/System/Console/Terminfo.dyn_hi
@@ -4447,6 +4516,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/terminfo-%%
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/terminfo-%%TERMINFO_VERSION%%/System/Console/Terminfo/Keys.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/terminfo-%%TERMINFO_VERSION%%/System/Console/Terminfo/Keys.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/terminfo-%%TERMINFO_VERSION%%/System/Console/Terminfo/Keys.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/terminfo-%%TERMINFO_VERSION%%/HSterminfo-%%TERMINFO_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/terminfo-%%TERMINFO_VERSION%%/HSterminfo-%%TERMINFO_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/terminfo-%%TERMINFO_VERSION%%/libHSterminfo-%%TERMINFO_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/terminfo-%%TERMINFO_VERSION%%/libHSterminfo-%%TERMINFO_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/text-%%TEXT_VERSION%%/Data/Text.dyn_hi
@@ -4587,6 +4658,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/text-%%TEXT
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/text-%%TEXT_VERSION%%/Data/Text/Unsafe.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/text-%%TEXT_VERSION%%/Data/Text/Unsafe.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/text-%%TEXT_VERSION%%/Data/Text/Unsafe.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/text-%%TEXT_VERSION%%/HStext-%%TEXT_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/text-%%TEXT_VERSION%%/HStext-%%TEXT_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/text-%%TEXT_VERSION%%/libHStext-%%TEXT_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/text-%%TEXT_VERSION%%/libHStext-%%TEXT_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/time-%%TIME_VERSION%%/Data/Format.dyn_hi
@@ -4727,6 +4800,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/time-%%TIME
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/time-%%TIME_VERSION%%/Data/Time/LocalTime/Internal/ZonedTime.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/time-%%TIME_VERSION%%/Data/Time/LocalTime/Internal/ZonedTime.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/time-%%TIME_VERSION%%/Data/Time/LocalTime/Internal/ZonedTime.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/time-%%TIME_VERSION%%/HStime-%%TIME_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/time-%%TIME_VERSION%%/HStime-%%TIME_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/time-%%TIME_VERSION%%/include/HsTime.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/time-%%TIME_VERSION%%/include/HsTimeConfig.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/time-%%TIME_VERSION%%/libHStime-%%TIME_VERSION%%.a
@@ -4809,6 +4884,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/transformer
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/transformers-%%TRANSFORMERS_VERSION%%/Data/Functor/Reverse.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/transformers-%%TRANSFORMERS_VERSION%%/Data/Functor/Reverse.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/transformers-%%TRANSFORMERS_VERSION%%/Data/Functor/Reverse.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/transformers-%%TRANSFORMERS_VERSION%%/HStransformers-%%TRANSFORMERS_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/transformers-%%TRANSFORMERS_VERSION%%/HStransformers-%%TRANSFORMERS_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/transformers-%%TRANSFORMERS_VERSION%%/libHStransformers-%%TRANSFORMERS_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/transformers-%%TRANSFORMERS_VERSION%%/libHStransformers-%%TRANSFORMERS_VERSION%%_p.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/unix-%%UNIX_VERSION%%/System/Posix.dyn_hi
@@ -4928,6 +5005,8 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/unix-%%UNIX
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/unix-%%UNIX_VERSION%%/System/Posix/User.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/unix-%%UNIX_VERSION%%/System/Posix/User.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/unix-%%UNIX_VERSION%%/System/Posix/User.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/unix-%%UNIX_VERSION%%/HSunix-%%UNIX_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/unix-%%UNIX_VERSION%%/HSunix-%%UNIX_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/unix-%%UNIX_VERSION%%/include/HsUnix.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/unix-%%UNIX_VERSION%%/include/HsUnixConfig.h
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/unix-%%UNIX_VERSION%%/include/execvpe.h
@@ -4978,5 +5057,7 @@ lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/xhtml-%%XHT
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/xhtml-%%XHTML_VERSION%%/Text/XHtml/Transitional/Elements.dyn_hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/xhtml-%%XHTML_VERSION%%/Text/XHtml/Transitional/Elements.hi
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/xhtml-%%XHTML_VERSION%%/Text/XHtml/Transitional/Elements.p_hi
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/xhtml-%%XHTML_VERSION%%/HSxhtml-%%XHTML_VERSION%%.o
+%%NO_DYNAMIC%%lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/xhtml-%%XHTML_VERSION%%/HSxhtml-%%XHTML_VERSION%%.p_o
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/xhtml-%%XHTML_VERSION%%/libHSxhtml-%%XHTML_VERSION%%.a
 lib/ghc-%%GHC_VERSION%%/lib/%%GHC_ARCH%%-freebsd-ghc-%%GHC_VERSION%%/xhtml-%%XHTML_VERSION%%/libHSxhtml-%%XHTML_VERSION%%_p.a

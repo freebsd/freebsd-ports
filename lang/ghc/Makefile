@@ -55,10 +55,11 @@ PDFDOCS_BUILD_DEPENDS=	xelatex:print/tex-xetex \
 			${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 PDFDOCS_VARS=		hadrian_docs_arg=
 
-DYNAMIC_CONFIGURE_WITH=	system-libffi \
-			ffi-includes=${LOCALBASE}/include \
-			ffi-libraries=${LOCALBASE}/lib
+DYNAMIC_CONFIGURE_WITH=	system-libffi
+DYNAMIC_CONFIGURE_ON=	--with-ffi-includes=${LOCALBASE}/include \
+			--with-ffi-libraries=${LOCALBASE}/lib
 DYNAMIC_LIB_DEPENDS=	libffi.so:devel/libffi
+DYNAMIC_OFF_FLAVOUR?=	+no_dynamic_ghc+fully_static
 
 # do not replace this with GMP_CONFIGURE_WITH
 # it adds "--without-gmp-*" when the option is OFF, which results in "no" value
@@ -109,17 +110,19 @@ HADRIAN_PLAN=		${MASTERDIR}/files/plan-bootstrap-${BOOT_GHC_VERSION:C/\./_/g}.js
 PLIST_SUB+=		GMP=
 .endif
 
-LIB_DEPENDS+=		libffi.so:devel/libffi
-.undef DYNAMIC_CONFIGURE_WITH
-CONFIGURE_ARGS+=	--with-system-libffi --with-ffi-includes=${LOCALBASE}/include --with-ffi-libraries=${LOCALBASE}/lib
-HADRIAN_CMD=		${WRKSRC}/hadrian/bootstrap/_build/bin/hadrian ${HADRIAN_DOCS_ARG} ${HADRIAN_GMP_ARG}
+HADRIAN_FLAVOUR_ARG=	--flavour=default
+.if !${PORT_OPTIONS:MDYNAMIC}
+HADRIAN_FLAVOUR_ARG:=	${HADRIAN_FLAVOUR_ARG}${DYNAMIC_OFF_FLAVOUR}
+.endif
+
+HADRIAN_CMD=		${WRKSRC}/hadrian/bootstrap/_build/bin/hadrian \
+			${HADRIAN_DOCS_ARG} \
+			${HADRIAN_GMP_ARG} \
+			${HADRIAN_FLAVOUR_ARG}
+
 DO_MAKE_BUILD=		${SETENVI} ${WRK_ENV} ${HADRIAN_CMD} ${_MAKE_JOBS}
 ALL_TARGET=		binary-dist-dir
 INSTALL_WRKSRC=		${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${CONFIGURE_TARGET}
-
-.if ! ${PORT_OPTIONS:MDYNAMIC} || !${PORT_OPTIONS:MPROFILE}
-IGNORE=			Building with Hadrian requires both DYNAMIC and PROFILE for now
-.endif
 
 GHC_ARCH=		${ARCH:S/amd64/x86_64/:C/armv.*/arm/}
 BOOT_DIR=		${WRKDIR}/ghc-${BOOT_GHC_VERSION}-${CONFIGURE_TARGET}
