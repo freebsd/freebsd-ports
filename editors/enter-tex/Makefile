@@ -1,11 +1,12 @@
 PORTNAME=	enter-tex
 DISTVERSION=	3.48.0
+PORTREVISION=	1
 CATEGORIES=	editors
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated TeX/LaTeX editor
-WWW=		https://gitlab.gnome.org/swilmet/enter-tex
+WWW=		https://gitlab.gnome.org/World/gedit/enter-tex
 
 LICENSE=	GPLv3+
 
@@ -20,27 +21,24 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 USES=		compiler:c11 desktop-file-utils gettext gnome meson \
 		pkgconfig tar:bz2 tex vala:build
 USE_GNOME=	dconf glib20 gtk30 introspection:build
-USE_TEX=	base
+USE_TEX=	formats
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/gedit
 
-MESON_ARGS=	-Dgtk_doc=false \
-		-Dtests=false
-
+MESON_ARGS=	-Dtests=false
 GLIB_SCHEMAS=	org.gnome.enter_tex.gschema.xml
 
-# https://gitlab.gnome.org/swilmet/enter-tex/-/issues/19
-do-build:
-	@(cd ${BUILD_WRKSRC}; if ! ${DO_MAKE_BUILD} src/gtex/Gtex-1.gir; then \
-		if [ -n "${BUILD_FAIL_MESSAGE}" ]; then \
-			${ECHO_MSG} "===> Compilation failed unexpectedly." ;\
-			(${ECHO_CMD} "${BUILD_FAIL_MESSAGE}") ;\
-		fi ;\
-	fi)
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=	yes
 
-	@(cd ${BUILD_WRKSRC}; if ! ${DO_MAKE_BUILD} src/enter-tex; then \
+DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
+DOCS_MESON_TRUE=	gtk_doc
+
+# https://gitlab.gnome.org/World/gedit/enter-tex/-/issues/19
+pre-build:
+	@(cd ${BUILD_WRKSRC}; if ! ${DO_MAKE_BUILD} src/gtex/Gtex-1.gir; then \
 		if [ -n "${BUILD_FAIL_MESSAGE}" ]; then \
 			${ECHO_MSG} "===> Compilation failed unexpectedly." ;\
 			(${ECHO_CMD} "${BUILD_FAIL_MESSAGE}") ;\
