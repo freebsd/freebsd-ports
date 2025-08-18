@@ -77,7 +77,7 @@ ELF_FEATURES+=	+wxneeded:dist/bin/${MOZILLA} +wxneeded:dist/bin/${MOZILLA}-bin
 BUNDLE_LIBS=	yes
 
 BUILD_DEPENDS+=	rust-cbindgen>=0.28.0:devel/rust-cbindgen \
-				${RUST_DEFAULT}>=1.88.0:lang/${RUST_DEFAULT}
+				${RUST_DEFAULT}>=1.89.0:lang/${RUST_DEFAULT}
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 RUN_DEPENDS+=	${LOCALBASE}/lib/libpci.so:devel/libpci
 LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
