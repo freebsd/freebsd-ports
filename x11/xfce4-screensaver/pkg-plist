@@ -1,10 +1,10 @@
 bin/xfce4-screensaver
 bin/xfce4-screensaver-command
-bin/xfce4-screensaver-configure.py
 bin/xfce4-screensaver-preferences
 %%PAM%%@sample etc/pam.d/xfce4-screensaver.sample
 etc/xdg/autostart/xfce4-screensaver.desktop
 etc/xdg/menus/xfce4-screensavers.menu
+libexec/xfce4-screensaver-configure.py
 libexec/xfce4-screensaver-dialog
 libexec/xfce4-screensaver/floaters
 libexec/xfce4-screensaver/popsquares
