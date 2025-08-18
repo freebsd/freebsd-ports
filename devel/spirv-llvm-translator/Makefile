@@ -2,16 +2,16 @@ PORTNAME=	spirv-llvm-translator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DISTVERSION_${FLAVOR}}
 DISTVERSION_llvm21=	21.1.0
-DISTVERSION_llvm20=	20.1.5
-DISTVERSION_llvm19=	19.1.10
-DISTVERSION_llvm18=	18.1.15
-DISTVERSION_llvm17=	17.0.15
-DISTVERSION_llvm16=	16.0.15
-DISTVERSION_llvm15=	15.0.15
-DISTVERSION_llvm14=	14.0.14
+DISTVERSION_llvm20=	20.1.6
+DISTVERSION_llvm19=	19.1.11
+DISTVERSION_llvm18=	18.1.16
+DISTVERSION_llvm17=	17.0.16
+DISTVERSION_llvm16=	16.0.16
+DISTVERSION_llvm15=	15.0.16
+DISTVERSION_llvm14=	14.0.15
 DISTVERSION_llvm13=	13.0.3
 DISTVERSION_llvm12=	12.0.1
-DISTVERSION_llvm11=	11.0.4
+DISTVERSION_llvm11=	11.0.5
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -34,12 +34,10 @@ GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	SPIRV-LLVM-Translator
 .if ${FLAVOR:U:Mllvm1[12]}
 # empty
-.elif ${FLAVOR:U} == llvm21 || !defined(FLAVOR)
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-431-g9e3836d:headers/projects/SPIRV-Headers
-.elif ${FLAVOR:U} == llvm20
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-405-g0e71067:headers/projects/SPIRV-Headers
-.else
+.elif ${FLAVOR:U} == llvm14 || ${FLAVOR:U} == llvm13
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-411-gaa6cef1:headers/projects/SPIRV-Headers
+.else
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-431-g9e3836d:headers/projects/SPIRV-Headers
 .endif
 DISTINFO_FILE=	${.CURDIR}/distinfo.${FLAVOR}
 CXXFLAGS+=	${${FLAVOR:S/llvm//} < 16 && ${COMPILER_TYPE} == clang:?-Wno-enum-constexpr-conversion:}
