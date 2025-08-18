@@ -1,3 +1,3 @@
-TIMESTAMP = 1753129322
-SHA256 (zeek-7.0.9.tar.gz) = bebec9a71242da250ef8476bfce632c43892995c247d8dfafcef80ce42f6adbc
-SIZE (zeek-7.0.9.tar.gz) = 95973519
+TIMESTAMP = 1755544345
+SHA256 (zeek-8.0.0.tar.gz) = 385150bf06d6434a510c15b6643febe8599b3c2d7b5158fd2d1c302eeed9ae78
+SIZE (zeek-8.0.0.tar.gz) = 99581715

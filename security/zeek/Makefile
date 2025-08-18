@@ -1,5 +1,5 @@
 PORTNAME=	zeek
-DISTVERSION=	7.0.9
+DISTVERSION=	8.0.0
 CATEGORIES=	security
 MASTER_SITES=	https://download.zeek.org/
 
@@ -12,11 +12,12 @@ LICENSE=	CC-BY-4.0
 BUILD_DEPENDS=	bison>=3.3:devel/bison \
 		flex>=2.6:textproc/flex \
 		swig>=4.0.2:devel/swig
-LIB_DEPENDS=	libcares.so:dns/c-ares
+LIB_DEPENDS=	libcares.so:dns/c-ares \
+		libzmq.so:net/libzmq4
 RUN_DEPENDS=	c-ares>=1.25.0:dns/c-ares
 
-USES=           bison cmake compiler:c++17-lang cpe perl5 python \
-		shebangfix ssl
+USES=		bison cmake compiler:c++17-lang cpe gettext-runtime perl5 \
+		python shebangfix ssl
 
 USE_LDCONFIG=	yes
 
