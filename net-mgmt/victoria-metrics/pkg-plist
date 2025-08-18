@@ -230,15 +230,17 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/relabeling.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/scrape_config_examples.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/sd_configs.md
-%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation-check-avg.webp
-%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation-check-increase.webp
-%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation-check-max.webp
-%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation-check-min.webp
-%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation-check-stdvar.webp
-%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation-check-sum-samples.webp
-%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation-check-total-reset.webp
-%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation-check-total.webp
-%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation.md
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation/README.md
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation/_index.md
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation/configuration-avg.webp
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation/configuration-increase.webp
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation/configuration-max.webp
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation/configuration-min.webp
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation/configuration-stdvar.webp
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation/configuration-sum-samples.webp
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation/configuration-total-reset.webp
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation/configuration-total.webp
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation/configuration.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/url-examples.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/victoriametrics-datasource.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
