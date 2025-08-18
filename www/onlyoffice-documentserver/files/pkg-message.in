@@ -59,7 +59,7 @@ files = %%ETCDIR%%/documentserver/supervisor/*.conf
       include %%ETCDIR%%/documentserver/nginx/ds.conf;
 
 NOTE: documentserver-update-securelink.sh will only update ./nginx/ds.conf and local.json under %%ETCDIR%%/documentserver/!
-  - run documentserver-update-securelink.sh once for creationg a verysecretstring 
+  - run documentserver-update-securelink.sh once for creating a verysecretstring
 
   - start nginx:
     # service nginx start

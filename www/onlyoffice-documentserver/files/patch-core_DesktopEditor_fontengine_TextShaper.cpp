@@ -1,5 +1,5 @@
---- core/DesktopEditor/fontengine/TextShaper.cpp.orig	2022-09-27 21:25:17.640269000 +0200
-+++ core/DesktopEditor/fontengine/TextShaper.cpp	2022-09-27 21:21:12.793630000 +0200
+--- core/DesktopEditor/fontengine/TextShaper.cpp.orig	2025-08-02 18:33:34 UTC
++++ core/DesktopEditor/fontengine/TextShaper.cpp
 @@ -649,9 +649,9 @@ namespace NSShaper
  
  #ifdef SUPPORT_HARFBUZZ_SHAPER

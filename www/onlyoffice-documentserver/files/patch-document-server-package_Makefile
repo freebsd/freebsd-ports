@@ -1,5 +1,5 @@
---- document-server-package/Makefile.orig	2024-02-12 13:46:57.000000000 +0100
-+++ document-server-package/Makefile	2024-03-01 10:49:36.212407000 +0100
+--- document-server-package/Makefile.orig	2024-02-12 14:46:57 UTC
++++ document-server-package/Makefile
 @@ -23,6 +23,7 @@ PACKAGE_VERSION := $(PRODUCT_VERSION)-$(BUILD_NUMBER)
  PACKAGE_NAME := $(COMPANY_NAME_LOW)-$(PRODUCT_NAME_LOW)
  PACKAGE_VERSION := $(PRODUCT_VERSION)-$(BUILD_NUMBER)
@@ -26,7 +26,7 @@
 +                DS_FILES := /var/db/$(DS_PREFIX)
 +                DS_EXAMLE := %%LOCALBASE%%/www/$(DS_PREFIX)-example
 +                DEV_NULL := /dev/null
-+                PKG_TARGET := node20
++                PKG_TARGET := node%%PKGFETCH_NODE_MAJOR_VERSION%%
 +        endif
  	ifeq ($(UNAME_S),Linux)
  		PLATFORM := linux

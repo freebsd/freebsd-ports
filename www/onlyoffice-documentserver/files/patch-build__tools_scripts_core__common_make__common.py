@@ -1,6 +1,6 @@
---- build_tools/scripts/core_common/make_common.py.orig	2025-06-11 12:56:35 UTC
+--- build_tools/scripts/core_common/make_common.py.orig	2025-08-05 15:06:08 UTC
 +++ build_tools/scripts/core_common/make_common.py
-@@ -8,21 +8,21 @@ import config
+@@ -8,22 +8,22 @@ import config
  import base
  import glob
  
@@ -22,6 +22,7 @@
 +#import hunspell
  import glew
  import harfbuzz
+ import oo_brotli
 -import hyphen
 -import googletest
 +#import hyphen
@@ -29,7 +30,7 @@
  import libvlc
  
  def check_android_ndk_macos_arm(dir):
-@@ -38,19 +38,19 @@ def make():
+@@ -39,19 +39,19 @@ def make():
        if base.is_dir(toolchain):
          check_android_ndk_macos_arm(toolchain + "/prebuilt")
  
@@ -54,6 +55,6 @@
 -  googletest.make()
 +#  hyphen.make()
 +#  googletest.make()
+   oo_brotli.make()
  
    if config.check_option("build-libvlc", "1"):
-     libvlc.make()

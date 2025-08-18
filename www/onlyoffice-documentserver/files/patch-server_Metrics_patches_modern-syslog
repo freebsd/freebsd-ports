@@ -1,0 +1,11 @@
+--- server/Metrics/patches/modern-syslog+1.2.0.patch.orig	2025-08-31 16:23:19 UTC
++++ server/Metrics/patches/modern-syslog+1.2.0.patch
+@@ -0,0 +1,8 @@
++diff --git a/node_modules/modern-syslog/Makefile b/node_modules/modern-syslog/Makefile
++index 8d2ec3a..125d526 100644
++--- a/node_modules/modern-syslog/Makefile
+++++ b/node_modules/modern-syslog/Makefile
++@@ -1,2 +1,2 @@
++ rebuild:
++-	node-gyp rebuild
+++	node-gyp --nodedir=%%LOCALBASE%% rebuild

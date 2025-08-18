@@ -1,5 +1,5 @@
---- core/Common/3dParty/v8_89/v8/src/base/macros.h.orig	2021-04-12 21:00:33.000000000 +0000
-+++ core/Common/3dParty/v8_89/v8/src/base/macros.h	2025-06-20 09:42:18.838769000 +0000
+--- core/Common/3dParty/v8_89/v8/src/base/macros.h.orig	2021-04-12 21:00:33 UTC
++++ core/Common/3dParty/v8_89/v8/src/base/macros.h
 @@ -203,7 +203,8 @@
  // base::is_trivially_copyable will differ for these cases.
  template <typename T>

@@ -1,5 +1,5 @@
---- core/MsBinaryFile/XlsFile/Format/Logic/Biff_structures/BitMarkedStructs.h.orig	2023-01-27 21:00:04.000000000 +0100
-+++ core/MsBinaryFile/XlsFile/Format/Logic/Biff_structures/BitMarkedStructs.h	2023-02-13 11:18:01.384933000 +0100
+--- core/MsBinaryFile/XlsFile/Format/Logic/Biff_structures/BitMarkedStructs.h.orig	2025-08-02 18:33:34 UTC
++++ core/MsBinaryFile/XlsFile/Format/Logic/Biff_structures/BitMarkedStructs.h
 @@ -31,7 +31,7 @@
   */
  #pragma once

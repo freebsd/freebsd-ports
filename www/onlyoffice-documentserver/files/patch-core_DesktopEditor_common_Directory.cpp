@@ -45,7 +45,7 @@
  		BYTE* pUtf8 = NULL;
  		LONG lLen = 0;
  		NSFile::CUtf8Converter::GetUtf8StringFromUnicode(strSrc.c_str(), strSrc.length(), pUtf8, lLen, false);
-@@ -495,14 +495,14 @@ namespace NSDirectory
+@@ -495,7 +495,7 @@ namespace NSDirectory
  		}
  #if defined(_WIN32) || defined (_WIN64)
  		if (deleteRoot) RemoveDirectoryW(strDirectory.c_str());
@@ -54,11 +54,3 @@
  		BYTE* pUtf8 = NULL;
  		LONG lLen = 0;
  		NSFile::CUtf8Converter::GetUtf8StringFromUnicode(strDirectory.c_str(), strDirectory.length(), pUtf8, lLen, false);
- 		rmdir((char*)pUtf8);
- 		delete [] pUtf8;
- 
--		if (deleteRoot = false)CreateDirectory(strDirectory);
-+		if (deleteRoot == false)CreateDirectory(strDirectory);
- #elif MAC
- 		BYTE* pUtf8 = NULL;
- 		LONG lLen = 0;

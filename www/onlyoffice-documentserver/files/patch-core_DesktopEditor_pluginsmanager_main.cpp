@@ -1,5 +1,5 @@
---- core/DesktopEditor/pluginsmanager/main.cpp.orig	2023-06-19 10:50:14.262222000 +0200
-+++ core/DesktopEditor/pluginsmanager/main.cpp	2023-06-19 10:50:48.083404000 +0200
+--- core/DesktopEditor/pluginsmanager/main.cpp.orig	2025-08-02 18:33:34 UTC
++++ core/DesktopEditor/pluginsmanager/main.cpp
 @@ -52,7 +52,7 @@
  #undef GetTempPath
  #endif

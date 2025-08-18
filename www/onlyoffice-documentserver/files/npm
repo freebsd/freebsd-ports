@@ -1,3 +1,3 @@
 #!/bin/sh
-exec %%LOCALBASE%%/bin/npm --offline --nodedir=%%LOCALBASE%% "$@"
-#exec %%LOCALBASE%%/bin/npm --nodedir=%%LOCALBASE%% "$@"
+exec %%LOCALBASE%%/bin/npm --offline "$@"
+#exec %%LOCALBASE%%/bin/npm "$@"

@@ -1,6 +1,6 @@
---- build_tools/scripts/core_common/modules/v8_89.py.orig	2024-02-07 10:44:24.000000000 +0100
-+++ build_tools/scripts/core_common/modules/v8_89.py	2024-03-01 10:42:06.847661000 +0100
-@@ -115,46 +115,7 @@ def make():
+--- build_tools/scripts/core_common/modules/v8_89.py.orig	2025-08-05 15:06:08 UTC
++++ build_tools/scripts/core_common/modules/v8_89.py
+@@ -123,46 +123,7 @@ def make():
      base.cmd("git", ["config", "--global", "http.postBuffer", "157286400"], True)
  
    os.chdir(base_dir)
@@ -47,9 +47,9 @@
    os.chdir("v8")
    
    gn_args = ["v8_static_library=true",
-@@ -163,6 +124,11 @@ def make():
+@@ -170,6 +131,11 @@ def make():
+              "v8_monolithic=true",
               "v8_use_external_startup_data=false",
-              "use_custom_libcxx=false",
               "treat_warnings_as_errors=false"]
 +
 +  if config.check_option("platform", "freebsd_64"):

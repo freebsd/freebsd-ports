@@ -1,5 +1,5 @@
---- core/Apple/IWork.cpp.orig	2025-03-08 16:26:16.590289000 +0100
-+++ core/Apple/IWork.cpp	2025-03-08 16:45:14.932729000 +0100
+--- core/Apple/IWork.cpp.orig	2025-08-02 18:33:34 UTC
++++ core/Apple/IWork.cpp
 @@ -6,7 +6,8 @@
  #include <libodfgen/OdtGenerator.hxx>
  #include <libodfgen/OdsGenerator.hxx>

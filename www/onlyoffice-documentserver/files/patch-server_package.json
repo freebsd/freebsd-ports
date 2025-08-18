@@ -1,6 +1,6 @@
 --- server/package.json.orig	2025-06-16 18:22:18 UTC
 +++ server/package.json
-@@ -4,6 +4,8 @@
+@@ -4,9 +4,11 @@
    "homepage": "https://www.onlyoffice.com",
    "private": true,
    "dependencies": {
@@ -8,8 +8,12 @@
 +    "grunt-cli": "^1.5.0",
      "license-downloader": "1.0.8",
      "license-report": "6.5.0",
-     "npm-run-all": "4.1.5"
-@@ -25,10 +25,10 @@
+-    "npm-run-all": "4.1.5"
++    "concurrently": "^9.2.0"
+   },
+   "devDependencies": {
+     "@jest/globals": "29.7.0",
+@@ -23,10 +25,10 @@
      "integration database tests": "cd ./DocService && jest integration/databaseTests --inject-globals=false --config=../tests/jest.config.js",
      "tests": "cd ./DocService && jest --inject-globals=false --config=../tests/jest.config.js",
      "tests:dev": "cd ./DocService && jest --inject-globals=false --config=../tests/jest.config.js --watch",
@@ -24,3 +28,11 @@
      "3d-party-lic-json:Common": "license-report --output=json --package=./Common/package.json --config ./3d-party-lic-report/license-report-config.json > ./3d-party-lic-report/license-report.json",
      "3d-party-lic-json:DocService": "license-report --output=json --package=./DocService/package.json --config ./3d-party-lic-report/license-report-config.json > ./3d-party-lic-report/license-report.json",
      "3d-party-lic-json:FileConverter": "license-report --output=json --package=./FileConverter/package.json --config ./3d-party-lic-report/license-report-config.json > ./3d-party-lic-report/license-report.json",
+@@ -39,6 +41,6 @@
+     "3d-party-lic-report:FileConverter": "run-s 3d-party-lic-json:FileConverter 3d-party-lic-downloader 3d-party-lic-md",
+     "3d-party-lic-report:Metrics": "run-s 3d-party-lic-json:Metrics 3d-party-lic-downloader 3d-party-lic-md",
+     "3d-party-lic-report": "run-s 3d-party-lic-md-header 3d-party-lic-report:*",
+-    "build": "run-p install:*"
++    "build": "concurrently \"npm run install:Common\" \"npm run install:DocService\" \"npm run install:FileConverter\" \"npm run install:Metrics\""
+   }
+ }
