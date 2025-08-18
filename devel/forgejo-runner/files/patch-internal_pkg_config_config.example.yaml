@@ -1,0 +1,11 @@
+--- internal/pkg/config/config.example.yaml.orig	2025-08-18 06:29:45 UTC
++++ internal/pkg/config/config.example.yaml
+@@ -11,7 +11,7 @@ runner:
+
+ runner:
+   # Where to store the registration result.
+-  file: .runner
++  file: /var/db/act_runner/.runner
+   # Execute how many tasks concurrently at the same time.
+   capacity: 1
+   # Extra environment variables to run jobs.

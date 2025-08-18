@@ -1,0 +1,3 @@
+bin/act_runner
+@sample %%ETCDIR%%/act_runner.conf.sample
+@dir(%%ACT_RUNNER_USER%%,%%ACT_RUNNER_GROUP%%,750) %%DATADIR%%

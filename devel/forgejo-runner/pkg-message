@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+FreeBSD does not support Docker.
+When configuring the runner, use 'host' as the label. e.g.
+act_runner register --labels FreeBSD:host,FreeBSD-14.3:host
+EOM
+}
+]

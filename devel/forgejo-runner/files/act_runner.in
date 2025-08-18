@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# PROVIDE: act_runner
+# REQUIRE: NETWORKING SYSLOG
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable act_runner:
+#
+# act_runner_enable (bool):   Set to "NO" by default.
+#                       Set it to "YES" to enable act_runner.
+
+. /etc/rc.subr
+
+name="act_runner"
+rcvar="act_runner_enable"
+
+load_rc_config "${name}"
+
+: ${act_runner_user:="act_runner"}
+: ${act_runner_enable:="NO"}
+: ${act_runner_facility:="daemon"}
+: ${act_runner_priority:="debug"}
+: ${act_runner_config:="%%ETCDIR%%/act_runner.conf"}
+: ${act_runner_cache_dir:="%%DATADIR%%"}
+: ${act_runner_log_dir:="/var/log/act_runner"}
+: ${act_runner_log_file:="${act_runner_log_dir}/act_runner.log"}
+: ${act_runner_flags:="-c ${act_runner_config} daemon"}
+
+procname="%%PREFIX%%/bin/act_runner"
+command="${procname} ${act_runner_flags}"
+
+pidfile="/var/run/${name}.pid"
+
+start_cmd="${name}_start"
+sig_stop=KILL
+
+act_runner_start() {
+  #  ensure the log directories are owned by the unprivileged user
+  for d in "${act_runner_log_dir}"; do
+    if [ ! -e "$d" ]; then
+      mkdir "$d"
+      chown "${act_runner_user}" "$d"
+    fi
+  done
+  /usr/sbin/daemon -S -l "${act_runner_facility}" -s "${act_runner_priority}" \
+    -T "${name}" \
+    -u "${act_runner_user}" -p "${pidfile}" \
+    -o "${act_runner_log_file}" \
+    $command
+}
+
+run_rc_command "$1"
