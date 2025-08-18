@@ -1,0 +1,4 @@
+A simple polkit authentication agent for Hyprland, written in QT/QML.
+
+hyprpolkitagent is a polkit authentication daemon. It is required for
+GUI applications to be able to request elevated privileges.

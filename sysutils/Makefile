@@ -516,6 +516,7 @@
     SUBDIR += httplog
     SUBDIR += hw-probe
     SUBDIR += hwstat
+    SUBDIR += hyprpolkitagent
     SUBDIR += i2c-tools
     SUBDIR += i7z
     SUBDIR += iat
