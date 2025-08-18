@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_base_window.cc.orig	2025-05-22 22:48:48 UTC
+--- electron/shell/browser/api/electron_api_base_window.cc.orig	2025-08-13 14:21:20 UTC
 +++ electron/shell/browser/api/electron_api_base_window.cc
 @@ -42,7 +42,7 @@
  #include "shell/browser/ui/views/win_frame_view.h"
@@ -18,7 +18,7 @@
    static_cast<NativeWindowViews*>(window_.get())
        ->SetIcon(native_image->image().AsImageSkia());
  #endif
-@@ -1091,7 +1091,7 @@ bool BaseWindow::IsSnapped() const {
+@@ -1118,7 +1118,7 @@ v8::Local<v8::Value> BaseWindow::GetAccentColor() cons
  }
  #endif
  
@@ -27,7 +27,7 @@
  void BaseWindow::SetTitleBarOverlay(const gin_helper::Dictionary& options,
                                      gin_helper::Arguments* args) {
    // Ensure WCO is already enabled on this window
-@@ -1342,7 +1342,7 @@ void BaseWindow::BuildPrototype(v8::Isolate* isolate,
+@@ -1371,7 +1371,7 @@ void BaseWindow::BuildPrototype(v8::Isolate* isolate,
        .SetMethod("setThumbnailToolTip", &BaseWindow::SetThumbnailToolTip)
        .SetMethod("setAppDetails", &BaseWindow::SetAppDetails)
  #endif

@@ -1,7 +1,7 @@
---- electron/shell/browser/api/electron_api_base_window.h.orig	2025-05-07 07:36:13 UTC
+--- electron/shell/browser/api/electron_api_base_window.h.orig	2025-08-13 14:21:20 UTC
 +++ electron/shell/browser/api/electron_api_base_window.h
-@@ -257,7 +257,7 @@ class BaseWindow : public gin_helper::TrackableObject<
-   bool IsSnapped() const;
+@@ -259,7 +259,7 @@ class BaseWindow : public gin_helper::TrackableObject<
+   v8::Local<v8::Value> GetAccentColor() const;
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
