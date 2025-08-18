@@ -1,5 +1,5 @@
 PORTNAME=	litellm
-DISTVERSION=	1.74.8
+DISTVERSION=	1.75.8
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.23.0:www/py-httpx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openai>=1.68.2:misc/py-openai@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openai>=1.99.5:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=0.2.0:www/py-python-dotenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.7.0:textproc/py-tiktoken@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=6.8.0:devel/py-importlib-metadata@${PY_FLAVOR} \
@@ -28,7 +28,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.23.0:www/py-httpx@${PY_FLAVOR} \
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent pep517
 
-REINPLACE_ARGS=	-i ''
+SHEBANG_FILES=	litellm/proxy/start.sh
+bash_CMD=	${SH}
+
 NO_ARCH=	yes
 
 PORTDOCS=	README.md
@@ -36,10 +38,9 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
+	@${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' \
 		${WRKSRC}/litellm/proxy/start.sh
-	@${FIND} ${WRKSRC}/litellm/proxy -type f \
-		\( -name '*.orig' -o -name '*.bak' \) -delete
+	@${FIND} ${WRKSRC}/litellm/proxy -type f -name '*.bak' -delete
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
