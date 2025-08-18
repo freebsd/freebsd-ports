@@ -67,7 +67,7 @@
  INSTALL_PACKAGE_TARGETS = install-packages
  INSTALL_DEV_TARGETS = install-headers
  INSTALL_EXTRA_TARGETS = @EXTRA_INSTALL@
--INSTALL_TARGETS = $(INSTALL_BASE_TARGETS) $(INSTALL_DOC_TARGETS) $(INSTALL_DEV_TARGETS) \
+-INSTALL_TARGETS = $(INSTALL_BASE_TARGETS) $(INSTALL_DEV_TARGETS) $(INSTALL_DOC_TARGETS) \
 -		  $(INSTALL_PACKAGE_TARGETS) $(INSTALL_EXTRA_TARGETS)
 +INSTALL_TARGETS = $(INSTALL_BASE_TARGETS) $(INSTALL_DEV_TARGETS) \
 +		  $(INSTALL_EXTRA_TARGETS)
@@ -138,10 +138,10 @@
  	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl \
 -		"$(MODULE_INSTALL_DIR)/8.5/msgcat-1.6.1.tm"
 +		"$(SCRIPT_INSTALL_DIR)/msgcat-1.6.1.tm"
- 	@echo "Installing package tcltest 2.5.9 as a Tcl Module"
+ 	@echo "Installing package tcltest 2.5.10 as a Tcl Module"
  	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl \
--		"$(MODULE_INSTALL_DIR)/8.5/tcltest-2.5.9.tm"
-+		"$(SCRIPT_INSTALL_DIR)/tcltest-2.5.9.tm"
+-		"$(MODULE_INSTALL_DIR)/8.5/tcltest-2.5.10.tm"
++		"$(SCRIPT_INSTALL_DIR)/tcltest-2.5.10.tm"
  	@echo "Installing package platform 1.0.19 as a Tcl Module"
  	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl \
 -		"$(MODULE_INSTALL_DIR)/8.4/platform-1.0.19.tm"

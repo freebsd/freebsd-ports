@@ -47,12 +47,13 @@ lib/tcl%%TCL_VER%%/opt0.4/optparse.tcl
 lib/tcl%%TCL_VER%%/opt0.4/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/platform-1.0.19.tm
 lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
-lib/tcl%%TCL_VER%%/tcltest-2.5.9.tm
+lib/tcl%%TCL_VER%%/tcltest-2.5.10.tm
 lib/tcl%%TCL_VER%%/auto.tcl
 lib/tcl%%TCL_VER%%/clock.tcl
 lib/tcl%%TCL_VER%%/encoding/ascii.enc
 lib/tcl%%TCL_VER%%/encoding/big5.enc
 lib/tcl%%TCL_VER%%/encoding/cns11643.enc
+lib/tcl%%TCL_VER%%/encoding/cp165.enc
 lib/tcl%%TCL_VER%%/encoding/cp1250.enc
 lib/tcl%%TCL_VER%%/encoding/cp1251.enc
 lib/tcl%%TCL_VER%%/encoding/cp1252.enc
@@ -343,6 +344,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%share/man/man3/Tcl_ClassSetMetadata.tcl86.3.gz
 %%TCLMAN%%share/man/man3/Tcl_ClearChannelHandlers.tcl86.3.gz
 %%TCLMAN%%share/man/man3/Tcl_Close.tcl86.3.gz
+%%TCLMAN%%share/man/man3/Tcl_CloseEx.tcl86.3.gz
 %%TCLMAN%%share/man/man3/Tcl_CommandComplete.tcl86.3.gz
 %%TCLMAN%%share/man/man3/Tcl_CommandTraceInfo.tcl86.3.gz
 %%TCLMAN%%share/man/man3/Tcl_Concat.tcl86.3.gz
@@ -1195,6 +1197,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Coral_Harbour
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Cordoba
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Costa_Rica
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Coyhaique
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Creston
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Cuiaba
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Curacao
