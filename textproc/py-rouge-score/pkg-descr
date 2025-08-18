@@ -1,0 +1,7 @@
+This package implements:
+* ROUGE-N (N-gram) scoring
+* ROUGE-L (Longest Common Subsequence) scoring
+* Text normalization
+* Bootstrap resampling for confidence interval calculation
+* Optional Porter stemming to remove plurals and word suffixes
+  such as (ing, ion, ment).

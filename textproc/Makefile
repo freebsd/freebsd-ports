@@ -1595,6 +1595,7 @@
     SUBDIR += py-rich-rst
     SUBDIR += py-rnc2rng
     SUBDIR += py-roman-numerals-py
+    SUBDIR += py-rouge-score
     SUBDIR += py-rst2ansi
     SUBDIR += py-rst2html5
     SUBDIR += py-sacremoses
