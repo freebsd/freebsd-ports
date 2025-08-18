@@ -1,6 +1,6 @@
---- core/PdfFile/PdfFile.pro.orig	2023-02-13 12:29:53.978119000 +0100
-+++ core/PdfFile/PdfFile.pro	2023-02-13 12:30:22.230355000 +0100
-@@ -113,6 +113,11 @@ LIBS += -L$$CORE_BUILDS_LIBRARIES_PATH -lCryptoPPLib
+--- core/PdfFile/PdfFile.pro.orig	2025-08-02 18:33:34 UTC
++++ core/PdfFile/PdfFile.pro
+@@ -110,6 +110,11 @@ DEFINES += CRYPTOPP_DISABLE_ASM \
             NOMINMAX
  LIBS += -L$$CORE_BUILDS_LIBRARIES_PATH -lCryptoPPLib
  

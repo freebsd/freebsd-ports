@@ -1,6 +1,6 @@
---- core/PdfFile/SrcWriter/Types.h.orig	2023-02-13 11:25:36.702286000 +0100
-+++ core/PdfFile/SrcWriter/Types.h	2023-02-13 11:25:55.342494000 +0100
-@@ -46,7 +46,7 @@
+--- core/PdfFile/SrcWriter/Types.h.orig	2025-08-02 18:33:34 UTC
++++ core/PdfFile/SrcWriter/Types.h
+@@ -47,7 +47,7 @@
  #include <algorithm>
  #include <math.h>
  

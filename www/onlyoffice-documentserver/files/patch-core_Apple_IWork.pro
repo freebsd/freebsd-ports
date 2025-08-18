@@ -1,6 +1,6 @@
---- core/Apple/IWork.pro.orig	2025-03-08 16:31:03.447633000 +0100
-+++ core/Apple/IWork.pro	2025-03-08 17:07:58.170674000 +0100
-@@ -10,6 +10,14 @@ DEFINES += IWORK_USE_DYNAMIC_LIBRARY
+--- core/Apple/IWork.pro.orig	2025-08-02 18:33:34 UTC
++++ core/Apple/IWork.pro
+@@ -10,6 +10,14 @@ CONFIG += plugin
  
  DEFINES += IWORK_USE_DYNAMIC_LIBRARY
  
@@ -15,7 +15,7 @@
  CORE_ROOT_DIR = $$PWD/..
  PWD_ROOT_DIR = $$PWD
  include($$CORE_ROOT_DIR/Common/base.pri)
-@@ -38,8 +46,8 @@ include($$CORE_ROOT_DIR/Common/3dParty/apple/apple.pri
+@@ -38,8 +46,8 @@ include($$PWD/../DesktopEditor/xml/build/qt/libxml2.pr
  include($$CORE_ROOT_DIR/Common/3dParty/apple/apple.pri)
  
  # TEST

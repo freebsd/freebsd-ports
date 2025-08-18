@@ -1,8 +1,11 @@
 --- build_tools/scripts/build_server.py.orig	2025-06-11 12:56:35 UTC
 +++ build_tools/scripts/build_server.py
-@@ -41,6 +41,10 @@ def make():
+@@ -39,8 +39,12 @@
+       base.copy_file(custom_public_key, server_dir + '/Common/sources')
+ 
    #node22 packaging has issue https://github.com/yao-pkg/pkg/issues/87
-   pkg_target = "node20"
+-  pkg_target = "node20"
++  pkg_target = "node%%PKGFETCH_NODE_MAJOR_VERSION%%"
  
 +  if ("freebsd" == base.host_platform()):
 +    pkg_target += "-freebsd"
@@ -11,7 +14,7 @@
    if ("linux" == base.host_platform()):
      pkg_target += "-linux"
      if (-1 != config.option("platform").find("linux_arm64")):
-@@ -49,14 +53,15 @@ def make():
+@@ -49,14 +53,15 @@
    if ("windows" == base.host_platform()):
      pkg_target += "-win"
  

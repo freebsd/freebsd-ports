@@ -1,7 +1,7 @@
 Fix build with llvm16
 
---- core/Common/3dParty/v8_89/v8/build/config/clang/BUILD.gn.orig	2023-07-17 10:46:22.246271000 +0200
-+++ core/Common/3dParty/v8_89/v8/build/config/clang/BUILD.gn	2023-07-17 10:46:59.136940000 +0200
+--- core/Common/3dParty/v8_89/v8/build/config/clang/BUILD.gn.orig	2022-05-13 11:39:36 UTC
++++ core/Common/3dParty/v8_89/v8/build/config/clang/BUILD.gn
 @@ -38,5 +38,6 @@ config("extra_warnings") {
      "-Wstring-conversion",
  
