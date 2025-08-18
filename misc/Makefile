@@ -498,6 +498,7 @@
     SUBDIR += py-openpaperwork-core
     SUBDIR += py-openpaperwork-gtk
     SUBDIR += py-openvdb
+    SUBDIR += py-opt-einsum
     SUBDIR += py-optuna
     SUBDIR += py-oterm
     SUBDIR += py-palettable
