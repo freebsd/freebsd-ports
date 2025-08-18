@@ -1,13 +1,14 @@
 PORTNAME=	android-file-transfer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3
+DISTVERSION=	4.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	tiago.gasiba@gmail.com
 COMMENT=	Android MTP client with minimalistic UI
 WWW=		https://github.com/whoozle/android-file-transfer-linux
 
-LICENSE=	GPLv3+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake compiler:c++11-lib pkgconfig
 USE_GITHUB=	yes
