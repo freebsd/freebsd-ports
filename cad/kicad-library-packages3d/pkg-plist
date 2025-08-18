@@ -240,7 +240,11 @@
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_DIP_SPSTx12_Slide_9.78x32.66mm_W8.61mm_P2.54mm.wrl
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_Push_1P1T-SH_NO_CK_KMR2xxG.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_Push_1P1T_NO_CK_KMR2.step
+%%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_Push_1P1T_NO_CK_KSC6xxG.step
+%%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_Push_1P1T_NO_CK_KSC6xxJ.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_Push_1P1T_NO_CK_KSC7xxJ.step
+%%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_Push_1P1T_NO_CK_KSC9xxG.step
+%%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_Push_1P1T_NO_CK_KSC9xxJ.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_Push_1P1T_NO_CK_PTS125Sx43PSMTR.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_Push_1P1T_NO_CK_PTS125Sx43SMTR.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_Push_1P1T_NO_CK_PTS125Sx73PSMTR.step
@@ -272,6 +276,7 @@
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_CK_RS282G05A3.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_CK_RS282G05A3.wrl
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_EVPBF.step
+%%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_EVQP0.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_EVQP2_MiddlePushTravel_H2.5mm.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_EVQP2_ShortPushTravel_H2.1mm.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_EVQP2_ShortPushTravel_H2.5mm.step
@@ -293,6 +298,8 @@
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_PTS647Sx70.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_PTS647Sx70.wrl
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_PTS810.step
+%%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_Panasonic_EVQPL_3PL_5PL_PT_A08.step
+%%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_Panasonic_EVQPL_3PL_5PL_PT_A15.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_REED_CT05-XXXX-G1.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_REED_CT05-XXXX-G1.wrl
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_REED_CT05-XXXX-J1.step
@@ -303,11 +310,15 @@
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_REED_CT10-XXXX-G2.wrl
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_REED_CT10-XXXX-G4.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_REED_CT10-XXXX-G4.wrl
+%%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_SKQG_WithStem.step
+%%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_SKQG_WithoutStem.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_TL3305A.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_TL3305B.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_TL3305C.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_TL3342.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_TL3342.wrl
+%%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_TS-1088-xR020.step
+%%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_TS-1088-xR025.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS.wrl
 %%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/Nidec_Copal_SH-7010C.step
@@ -437,7 +448,13 @@
 %%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_Slide_SPDT_Angled_CK_OS102011MA1Q.wrl
 %%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_Slide_SPDT_Straight_CK_OS102011MS2Q.step
 %%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_Slide_SPDT_Straight_CK_OS102011MS2Q.wrl
-%%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_TH_Tactile_Omron_B3F-10xx.step
+%%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_TH_Tactile_Omron_B3F-100x.step
+%%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_TH_Tactile_Omron_B3F-102x.step
+%%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_TH_Tactile_Omron_B3F-106x.step
+%%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_TH_Tactile_Omron_B3F-107x.step
+%%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_TH_Tactile_Omron_B3F-110x.step
+%%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_TH_Tactile_Omron_B3F-1110.step
+%%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_TH_Tactile_Omron_B3F-112x.step
 %%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_Tactile_SPST_Angled_PTS645Vx31-2LFS.step
 %%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_Tactile_SPST_Angled_PTS645Vx31-2LFS.wrl
 %%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_Tactile_SPST_Angled_PTS645Vx39-2LFS.step
@@ -446,6 +463,8 @@
 %%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_Tactile_SPST_Angled_PTS645Vx58-2LFS.wrl
 %%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_Tactile_SPST_Angled_PTS645Vx83-2LFS.step
 %%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_Tactile_SPST_Angled_PTS645Vx83-2LFS.wrl
+%%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_Tactile_Straight_KSA0Axx1LFTR.step
+%%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_Tactile_Straight_KSL0Axx1LFTR.step
 %%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_XKB_DM1-16UC-1.step
 %%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_XKB_DM1-16UC-1.wrl
 %%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/SW_XKB_DM1-16UD-1.step
@@ -7993,6 +8012,9 @@
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_A_Kycon_KDMIX-SL1-NS-WS-B15_VerticalRightAngle.step
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_A_Molex_208658-1001_Horizontal.step
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_A_Molex_208658-1001_Horizontal.wrl
+%%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_Micro-D_Molex_46765-0xxx.step
+%%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_Micro-D_Molex_46765-1xxx.step
+%%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_Micro-D_Molex_46765-2xxx.step
 %%DATADIR%%/3dmodels/Connector_Wuerth.3dshapes/Wuerth_WR-PHD_610004243021_SMD_2x02_P2.54mm_Vertical.step
 %%DATADIR%%/3dmodels/Connector_Wuerth.3dshapes/Wuerth_WR-PHD_610004243021_SMD_2x02_P2.54mm_Vertical.wrl
 %%DATADIR%%/3dmodels/Connector_Wuerth.3dshapes/Wuerth_WR-PHD_610006243021_SMD_2x03_P2.54mm_Vertical.step
@@ -9044,6 +9066,7 @@
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_APV_APH1770.wrl
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_APV_APH2213.step
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_APV_APH2213.wrl
+%%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_AVX_LMLP07A7.step
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_Abracon_ASPI-0425.step
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_Abracon_ASPI-0425.wrl
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_Abracon_ASPIAIG-F4020.step
@@ -9408,6 +9431,7 @@
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_SXN_SMDRI73.wrl
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_SXN_SMDRI74.step
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_SXN_SMDRI74.wrl
+%%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_SXN_SMMS1770.step
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_Sunlord_MWSA0402S.step
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_Sunlord_MWSA0402S.wrl
 %%DATADIR%%/3dmodels/Inductor_SMD.3dshapes/L_Sunlord_MWSA0412S.step
@@ -10239,6 +10263,13 @@
 %%DATADIR%%/3dmodels/LED_THT.3dshapes/LED_VCCLite_5381H7_6.35x6.35mm.wrl
 %%DATADIR%%/3dmodels/Module.3dshapes/Google_Coral_SMT_TPU_Module.step
 %%DATADIR%%/3dmodels/Module.3dshapes/Google_Coral_SMT_TPU_Module.wrl
+%%DATADIR%%/3dmodels/Module.3dshapes/RaspberryPi_Pico.step
+%%DATADIR%%/3dmodels/Module.3dshapes/RaspberryPi_Pico_AddedHeaders_H2.54mm.step
+%%DATADIR%%/3dmodels/Module.3dshapes/RaspberryPi_Pico_H.step
+%%DATADIR%%/3dmodels/Module.3dshapes/RaspberryPi_Pico_PinSockets_H8.50mm.step
+%%DATADIR%%/3dmodels/Module.3dshapes/RaspberryPi_Pico_W.step
+%%DATADIR%%/3dmodels/Module.3dshapes/RaspberryPi_Pico_WH.step
+%%DATADIR%%/3dmodels/Module.3dshapes/RaspberryPi_Pico_W_AddedHeaders_H2.54mm.step
 %%DATADIR%%/3dmodels/Module.3dshapes/Sipeed-M1.step
 %%DATADIR%%/3dmodels/Module.3dshapes/Sipeed-M1.wrl
 %%DATADIR%%/3dmodels/Module.3dshapes/Sipeed-M1W.step
@@ -10797,6 +10828,8 @@
 %%DATADIR%%/3dmodels/Package_BGA.3dshapes/WLP-4_0.83x0.83mm_P0.4mm.wrl
 %%DATADIR%%/3dmodels/Package_BGA.3dshapes/WLP-4_0.86x0.86mm_P0.4mm.step
 %%DATADIR%%/3dmodels/Package_BGA.3dshapes/WLP-4_0.86x0.86mm_P0.4mm.wrl
+%%DATADIR%%/3dmodels/Package_BGA.3dshapes/csBGA-64_5x5mm_Layout8x8_P0.5mm.step
+%%DATADIR%%/3dmodels/Package_BGA.3dshapes/ucBGA-64_4x4mm_Layout8x8_P0.4mm.step
 %%DATADIR%%/3dmodels/Package_CSP.3dshapes/Analog_LFCSP-16-1EP_4x4mm_P0.65mm_EP2.1x2.1mm.step
 %%DATADIR%%/3dmodels/Package_CSP.3dshapes/Analog_LFCSP-16-1EP_4x4mm_P0.65mm_EP2.1x2.1mm.wrl
 %%DATADIR%%/3dmodels/Package_CSP.3dshapes/Analog_LFCSP-16-1EP_4x4mm_P0.65mm_EP2.35x2.35mm.step
@@ -11088,6 +11121,7 @@
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/TQFN-48-1EP_7x7mm_P0.5mm_EP5.1x5.1mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_DLH0010A_WSON-10-1EP_2.2x2mm_P0.4mm_EP0.9x1.5mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_DLH0010A_WSON-10-1EP_2.2x2mm_P0.4mm_EP0.9x1.5mm.wrl
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_DSQ0010A_WSON-10-1EP_2x2mm_P0.4mm_EP0.9x1.5mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_PicoStar_DFN-3_0.69x0.60mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_PicoStar_DFN-3_0.69x0.60mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_R-PUQFN-N12.step
@@ -11838,6 +11872,8 @@
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/HTSSOP-56-1EP_6.1x14mm_P0.5mm_EP3.61x6.35mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/Infineon_PG-DSO-20-U03_7.5x12.8mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/Infineon_PG-DSO-20-U03_7.5x12.8mm.wrl
+%%DATADIR%%/3dmodels/Package_SO.3dshapes/JEITA_SOIC-16_3.9x9.9mm_P1.27mm.step
+%%DATADIR%%/3dmodels/Package_SO.3dshapes/JEITA_SOIC-16_3.9x9.9mm_P1.27mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/JEITA_SOIC-8_3.9x4.9mm_P1.27mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/JEITA_SOIC-8_3.9x4.9mm_P1.27mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm.step
@@ -11954,8 +11990,6 @@
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOIC-8_7.5x5.85mm_P1.27mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOJ-36_10.16x23.495mm_P1.27mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOJ-36_10.16x23.495mm_P1.27mm.wrl
-%%DATADIR%%/3dmodels/Package_SO.3dshapes/SOP-16_3.9x9.9mm_P1.27mm.step
-%%DATADIR%%/3dmodels/Package_SO.3dshapes/SOP-16_3.9x9.9mm_P1.27mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOP-16_4.4x10.4mm_P1.27mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOP-16_4.4x10.4mm_P1.27mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOP-28_8.4x18.16mm_P1.27mm.step
