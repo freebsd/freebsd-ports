@@ -12,7 +12,7 @@ WWW=		https://github.com/alexdupre/rtl_bsd_drv
 LICENSE=	BSD4CLAUSE
 
 DEPRECATED=	Use net/realtek-re-kmod with checksum offloading disabled, see also bug 286879
-EXPIRATION_DATE=	2025-12-31
+EXPIRATION_DATE=	2026-03-31
 
 USES=		kmod tar:tgz uidfix
 
