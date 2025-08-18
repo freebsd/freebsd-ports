@@ -3,5 +3,5 @@ lib/cmake/yyjson/yyjson-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/yyjson/yyjson-config.cmake
 lib/libyyjson.so
 lib/libyyjson.so.0
-lib/libyyjson.so.0.11.1
+lib/libyyjson.so.0.12.0
 libdata/pkgconfig/yyjson.pc
