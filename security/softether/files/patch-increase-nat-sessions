@@ -1,3 +1,5 @@
+# Copyright (c) 2019, Koichiro Iwao <meta@FreeBSD.org> (https://github.com/metalefty)
+# SPDX-License-Identifier: Apache-2.0
 --- src/Cedar/Cedar.h.orig2	2020-07-25 22:58:57.344813000 +0900
 +++ src/Cedar/Cedar.h	2020-07-25 23:00:25.740997000 +0900
 @@ -208,7 +208,7 @@
