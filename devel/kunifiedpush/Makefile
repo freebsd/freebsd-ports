@@ -11,4 +11,6 @@ USE_KDE=	coreaddons i18n kcmutils service solid \
 		ecm:build
 USE_QT=		base declarative websockets
 
+IGNORE_FreeBSD_13=	does not build with OpenSSL 1.1.1
+
 .include <bsd.port.mk>
