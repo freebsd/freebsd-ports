@@ -24,7 +24,6 @@ include/fb303/ThreadLocalStats-inl.h
 include/fb303/ThreadLocalStats.h
 include/fb303/ThreadLocalStatsMap-inl.h
 include/fb303/ThreadLocalStatsMap.h
-include/fb303/Timeseries-inl.h
 include/fb303/Timeseries.h
 include/fb303/TimeseriesExporter.h
 include/fb303/TimeseriesHistogram-inl.h
