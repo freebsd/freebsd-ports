@@ -1,4 +1,4 @@
---- cupsfilters/colormanager.c.orig	2018-10-03 20:12:51 UTC
+--- cupsfilters/colormanager.c.orig	2023-01-25 01:41:08 UTC
 +++ cupsfilters/colormanager.c
 @@ -26,6 +26,7 @@ MIT Open Source License  -  http://www.opensource.org/
  */
@@ -15,5 +15,5 @@
 -               "%s/profiles/%s", CUPSDATA, attr->value);
 +               "%s/profiles/%s", CUPS_DATADIR, attr->value);
      else {
-       strncpy(full_path, attr->value, sizeof(full_path));
+       strncpy(full_path, attr->value, sizeof(full_path) - 1);
        if (strlen(attr->value) > 1023)

@@ -1,6 +1,6 @@
 PORTNAME=	cups-filters
 PORTVERSION=	1.28.17
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/OpenPrinting/cups-filters/releases/download/${DISTVERSION}/
 
@@ -15,7 +15,15 @@ PATCHFILES=	9799398713b941557642d0b2bdbef360837ece0c.diff:-p1 \
 		770ec883e68e505c1d1856a42b78f9323dc326a6.diff:-p1 \
 		2076627d33477212f21352ad39e9d305adb63af3.diff:-p1 \
 		10fb02eaaee52e0be9b16917b38aa8ec5bddd87f.diff:-p1 \
-		b7461ec2a8d1f2aa627b24e01e118ec4cca78ec0.diff:-p1
+		b7461ec2a8d1f2aa627b24e01e118ec4cca78ec0.diff:-p1 \
+		6fd2bdfbdce76149af531ce9fca9062304238451.patch:-p1 \
+		3534e01cb41ddfa61ac78d32052b8822df71d97d.patch:-p1 \
+		b378f09c9b8aaa8dccb5eb557938b30da874101d.patch:-p1 \
+		c8522bb128546a1910bca538a504a2c9363ebb22.patch:-p1 \
+		dccb537afe85af3ea01e3f274974d9d1f53f8e14.patch:-p1 \
+		d5cc66b410a3246e74b71f718e86504d08e4bfa3.patch:-p1 \
+		86b060d2ac20d6dee757c609286cfaaa17d65428.patch:-p1 \
+		d43610f82e1757b45925a8830ac297ff9dc4abca.patch:-p1
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Additional backends, filters and other software for CUPS
