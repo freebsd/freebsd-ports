@@ -2,7 +2,7 @@ include/tdbc/tdbc.h
 include/tdbc/tdbcDecls.h
 include/tdbc/tdbcInt.h
 lib/tdbc%%VERSION%%/lib%%TCL_PKG_LIB_PREFIX%%tdbc%%VERSION%%.so
-lib/tdbc%%VERSION%%/libtdbcstub.a
+lib/tdbc%%VERSION%%/libtdbcstub%%TCL_PKG_STUB_POSTFIX%%.a
 lib/tdbc%%VERSION%%/pkgIndex.tcl
 lib/tdbc%%VERSION%%/tdbc.tcl
 lib/tdbc%%VERSION%%/tdbcConfig.sh
