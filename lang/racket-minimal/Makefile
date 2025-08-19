@@ -1,6 +1,5 @@
 PORTNAME=	racket
-PORTVERSION=	8.17
-PORTREVISION=	1
+PORTVERSION=	8.18
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -33,8 +32,7 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-liblz4 \
-		--enable-pthread \
-		--mandir=${PREFIX}/share/man
+		--enable-pthread
 
 CONFLICTS=	racket
 

@@ -68,6 +68,7 @@ lib/racket/system.rktd
 %%DATADIR%%/collects/compiler/private/mach-o.rkt
 %%DATADIR%%/collects/compiler/private/pe-rsrc.rkt
 %%DATADIR%%/collects/compiler/private/read-bstr.rkt
+%%DATADIR%%/collects/compiler/private/recompile-cache.rkt
 %%DATADIR%%/collects/compiler/private/win-dll-list.rkt
 %%DATADIR%%/collects/compiler/private/windlldir.rkt
 %%DATADIR%%/collects/compiler/private/winsubsys.rkt
@@ -202,6 +203,7 @@ lib/racket/system.rktd
 %%DATADIR%%/collects/pkg/private/lock.rkt
 %%DATADIR%%/collects/pkg/private/metadata.rkt
 %%DATADIR%%/collects/pkg/private/migrate.rkt
+%%DATADIR%%/collects/pkg/private/missing-deps.rkt
 %%DATADIR%%/collects/pkg/private/mod-paths.rkt
 %%DATADIR%%/collects/pkg/private/network.rkt
 %%DATADIR%%/collects/pkg/private/new.rkt
@@ -248,6 +250,8 @@ lib/racket/system.rktd
 %%DATADIR%%/collects/racket/case.rkt
 %%DATADIR%%/collects/racket/class.rkt
 %%DATADIR%%/collects/racket/cmdline.rkt
+%%DATADIR%%/collects/racket/deprecation.rkt
+%%DATADIR%%/collects/racket/deprecation/transformer.rkt
 %%DATADIR%%/collects/racket/contract.rkt
 %%DATADIR%%/collects/racket/contract/base.rkt
 %%DATADIR%%/collects/racket/contract/collapsible.rkt
@@ -791,6 +795,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/collects/compiler/private/compiled/pe-
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/compiler/private/compiled/pe-rsrc_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/compiler/private/compiled/read-bstr_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/compiler/private/compiled/read-bstr_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/compiler/private/compiled/recompile-cache_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/compiler/private/compiled/recompile-cache_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/compiler/private/compiled/win-dll-list_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/compiler/private/compiled/win-dll-list_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/compiler/private/compiled/windlldir_rkt.dep
@@ -1059,6 +1065,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/metadata
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/metadata_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/migrate_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/migrate_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/missing-deps_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/missing-deps_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/mod-paths_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/mod-paths_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/pkg/private/compiled/network_rkt.dep
@@ -1137,6 +1145,10 @@ lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/class_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/class_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/cmdline_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/cmdline_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/deprecation_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/deprecation_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/deprecation/compiled/transformer_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/deprecation/compiled/transformer_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/contract_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/contract_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/control_rkt.dep
