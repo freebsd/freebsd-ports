@@ -1,0 +1,13 @@
+XFile is a compact file manager for Unix and alike systems running X11.
+It presents the file system as is, without imaginary locations, trashcans etc.
+XFile uses its own file type association database written in typical Unix/RC
+file syntax. Mounting support for file systems defined in fstab, and integration
+with mount daemons that manage a dedicated media directory is also included.
+
+XFile is easily configurable and customizable with X resources. The Tools
+dropdown menu can be populated with user defined commands, which may be run with
+selected files, current directory and user specified parameters as arguments.
+
+The application has no dependencies, save for X and Motif, and is built using
+simple Makefiles. It's written in C, and the source code is freely available
+under the terms of the X/MIT license.
