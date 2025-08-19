@@ -1,7 +1,6 @@
 PORTNAME=	libcint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.1.2
-PORTREVISION=	2
+DISTVERSION=	6.1.3
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +23,7 @@ PLIST_FILES=	include/cint.h \
 		include/cint_funcs.h \
 		lib/libcint.so \
 		lib/libcint.so.${PORTVERSION:R:R} \
-		lib/libcint.so.6.1.1 # see https://github.com/sunqm/libcint/issues/106
+		lib/libcint.so.${PORTVERSION}
 		#lib/libcint.so.${PORTVERSION}
 
 post-patch:
@@ -38,5 +37,7 @@ do-test: # needs science/py-pyscf, pending https://github.com/pyscf/pyscf/issues
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DENABLE_TEST:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests as of 6.1.3: 100% tests passed, 0 tests failed out of 2
 
 .include <bsd.port.mk>
