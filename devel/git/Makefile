@@ -1,5 +1,5 @@
 PORTNAME=	git
-DISTVERSION=	2.50.1
+DISTVERSION=	2.51.0
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -61,7 +61,6 @@ SHEBANG_FILES=	Documentation/*.perl \
 		contrib/*/*/*.pl \
 		contrib/contacts/git-contacts \
 		contrib/fast-import/import-zips.py \
-		contrib/hooks/update-paranoid \
 		git-p4.py \
 		templates/hooks/fsmonitor-watchman.sample
 TEST_TARGET=	test
@@ -220,7 +219,7 @@ post-patch:
 .if ${SUBPORT} == gui
 	@${REINPLACE_CMD} -e "/exec wish/s,wish,${WISH}," \
 		${WRKSRC}/gitk-git/gitk \
-		${WRKSRC}/git-gui/git-gui--askpass
+		${WRKSRC}/git-gui/git-gui--askpass.sh
 .endif
 
 post-patch-CONTRIB-on:
@@ -249,11 +248,6 @@ post-install:
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/man/man5)
 	(cd ${WRKDIR}/man7/ && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/man/man7)
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git
-	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git.el \
-		${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git/
-	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git-blame.el \
-		${STAGEDIR}${PREFIX}/share/emacs/site-lisp/git/
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/completion/git-completion.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/
@@ -301,8 +295,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/libexec/git-core/
 	${LN} ${STAGEDIR}${PREFIX}/libexec/git-core/git-gui \
 		${STAGEDIR}${PREFIX}/libexec/git-core/git-citool
-	${INSTALL_SCRIPT} ${WRKSRC}/git-gui/git-gui--askpass \
-		${STAGEDIR}${PREFIX}/libexec/git-core/
+	${INSTALL_SCRIPT} ${WRKSRC}/git-gui/git-gui--askpass.sh \
+		${STAGEDIR}${PREFIX}/libexec/git-core/git-gui--askpass
 	${INSTALL_DATA} ${WRKSRC}/git-gui/lib/tclIndex \
 		${STAGEDIR}${PREFIX}/share/git-gui/lib/
 	${INSTALL_DATA} ${WRKSRC}/git-gui/lib/*.ico \
