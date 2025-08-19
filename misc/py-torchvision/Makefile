@@ -1,6 +1,6 @@
 PORTNAME=	torchvision
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.0
+DISTVERSION=	0.23.0
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -34,6 +34,8 @@ GH_ACCOUNT=	pytorch
 GH_PROJECT=	vision
 
 MAKE_ENV=	TORCHVISION_INCLUDE=${LOCALBASE}/include # workaround for build failure suggested here: https://github.com/pytorch/vision/issues/8397#issuecomment-2168351425
+
+LDFLAGS+=	-Wl,-rpath=${PYTHON_SITELIBDIR}/torch/lib # https://github.com/pytorch/vision/issues/9185
 
 post-install: # strip binaries
 	@${STRIP_CMD} \
