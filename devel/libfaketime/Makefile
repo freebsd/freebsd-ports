@@ -1,7 +1,6 @@
 PORTNAME=	libfaketime
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.10
-PORTREVISION=	1
+DISTVERSION=	0.9.12
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,12 +10,12 @@ WWW=		https://github.com/wolfcw/libfaketime
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_15=	ld: error: version script assignment of 'GLIBC_2.2' to symbol 'timer_gettime' failed: symbol not defined
+RUN_DEPENDS=	coreutils>=0:sysutils/coreutils
 
 USES=		gmake shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	wolfcw
-GH_TAGNAME=	da77808
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	test/functests/common.inc test/testframe.sh
