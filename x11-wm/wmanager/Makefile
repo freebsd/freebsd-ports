@@ -1,9 +1,9 @@
 PORTNAME=	wmanager
-PORTVERSION=	0.3.1
+DISTVERSION=	0.3.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://devel.ringlet.net/files/x11/wmanager/
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 window manager selector
 WWW=		https://devel.ringlet.net/files/x11/wmanager/
 
@@ -16,7 +16,6 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 USES=		gl gmake pkgconfig tar:xz xorg
 USE_GL=		gl glu
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
-
 
 OPTIONS_DEFINE=	ADDONS DOCS EXAMPLES
 OPTIONS_DEFAULT=ADDONS
