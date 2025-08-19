@@ -1,6 +1,6 @@
---- wpa_supplicant/wpa_supplicant.c.orig	2019-04-21 03:10:22.000000000 -0400
-+++ wpa_supplicant/wpa_supplicant.c	2019-05-15 22:44:44.919859000 -0400
-@@ -6357,13 +6357,6 @@
+--- wpa_supplicant/wpa_supplicant.c.orig	2024-07-20 18:04:37 UTC
++++ wpa_supplicant/wpa_supplicant.c
+@@ -7983,13 +7983,6 @@ struct wpa_global * wpa_supplicant_init(struct wpa_par
  	if (params == NULL)
  		return NULL;
  

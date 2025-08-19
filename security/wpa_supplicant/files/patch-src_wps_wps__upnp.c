@@ -1,6 +1,6 @@
---- src/wps/wps_upnp.c.orig	2021-03-16 13:50:10.000000000 -0700
-+++ src/wps/wps_upnp.c	2021-03-18 12:49:19.537874000 -0700
-@@ -963,7 +963,8 @@
+--- src/wps/wps_upnp.c.orig	2024-07-20 18:04:37 UTC
++++ src/wps/wps_upnp.c
+@@ -963,7 +963,8 @@ int get_netif_info(const char *net_if, unsigned *ip_ad
  		goto fail;
  	}
  	os_memcpy(mac, req.ifr_addr.sa_data, 6);

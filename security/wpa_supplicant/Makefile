@@ -1,6 +1,6 @@
 PORTNAME=	wpa_supplicant
 PORTVERSION=	2.11
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security net
 MASTER_SITES=	https://w1.fi/releases/
 
@@ -12,6 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/README
 
 USES=		cpe gmake pkgconfig:build readline ssl
+USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/wpa_supplicant
 INSTALL_WRKSRC=	${WRKSRC}/src
 CFLAGS+=	${CPPFLAGS} # USES=readline only augments CPPFLAGS and LDFLAGS
@@ -39,13 +40,13 @@ OPTIONS_DEFINE=		WPS WPS_ER WPS_NOREG WPS_NFC WPS_UPNP PKCS12 SMARTCARD \
 			DELAYED_MIC IEEE80211N IEEE80211AC INTERWORKING \
 			IEEE8021X_EAPOL EAPOL_TEST \
 			HS20 NO_ROAMING P2P TDLS DBUS MATCH DOCS \
-                        SIM_SIMULATOR USIM_SIMULATOR WEP PASN
+			SIM_SIMULATOR USIM_SIMULATOR WEP PASN LIBWPA
 OPTIONS_DEFAULT=	BSD WIRED \
 			TLS PEAP TTLS MD5 MSCHAPV2 GTC LEAP OTP PSK \
 			WPS PKCS12 SMARTCARD IEEE80211R DEBUG_SYSLOG \
 			INTERWORKING HS20 DBUS MATCH IEEE80211R IEEE80211W \
 			IEEE8021X_EAPOL WPS_ER WPS_NFC WPS_UPNP \
-			FAST PWD PAX SAKE GPSK TNC IKEV2 EKE WEP PASN
+			FAST PWD PAX SAKE GPSK TNC IKEV2 EKE WEP PASN LIBWPA
 OPTIONS_SUB=
 
 WPS_DESC=		Wi-Fi Protected Setup
@@ -108,10 +109,14 @@ SAKE_DESC=		Shared-Secret Authentication & Key Establishment
 GPSK_DESC=		Generalized Pre-Shared Key
 TNC_DESC=		Trusted Network Connect
 PASN_DESC=		Pre-Association Security Negotiation
+LIBWPA_DESC=	libwpa_client Shared Library
 
 PRIVSEP_PLIST_FILES=	sbin/wpa_priv
 DBUS_PLIST_FILES=	share/dbus-1/system-services/fi.w1.wpa_supplicant1.service \
 			etc/dbus-1/system.d/dbus-wpa_supplicant.conf
+LIBWPA_PLIST_FILES=	lib/libwpa_client.so \
+			lib/libwpa_client.so.2 \
+			include/wpa_ctrl.h
 
 .include <bsd.port.pre.mk>
 
@@ -190,6 +195,9 @@ post-patch:
 .if ${PORT_OPTIONS:MSIM_SIMULATOR}
 	@${ECHO_CMD} CONFIG_SIM_SIMULATOR=y >> ${CFG}
 .endif
+.if ${PORT_OPTIONS:MLIBWPA}
+	@${ECHO_CMD} CONFIG_BUILD_WPA_CLIENT_SO=y >> ${CFG}
+.endif
 	@${ECHO_CMD} CONFIG_OS=unix >> ${CFG}
 	@${ECHO_CMD} CONFIG_CTRL_IFACE=unix >> ${CFG}
 	@${ECHO_CMD} CONFIG_BACKEND=file >> ${CFG}
@@ -223,5 +231,12 @@ do-install-DBUS-on:
 		${STAGEDIR}${PREFIX}/share/dbus-1/system-services/
 	${INSTALL_DATA} ${BUILD_WRKSRC}/dbus/dbus-wpa_supplicant.conf \
 		${STAGEDIR}${PREFIX}/etc/dbus-1/system.d/
+
+do-install-LIBWPA-on:
+	${INSTALL_LIB} ${BUILD_WRKSRC}/libwpa_client.so \
+		${STAGEDIR}${PREFIX}/lib/libwpa_client.so.2
+	${LN} -s libwpa_client.so.2 ${STAGEDIR}${PREFIX}/lib/libwpa_client.so
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/common/wpa_ctrl.h \
+		${STAGEDIR}${PREFIX}/include
 
 .include <bsd.port.post.mk>
