@@ -1,7 +1,6 @@
 PORTNAME=	torchaudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.1
-PORTREVISION=	9
+DISTVERSION=	2.8.0
 CATEGORIES=	audio python # machine-learning
 MASTER_SITES=	https://downloads.sourceforge.net/project/sox/sox/14.4.2/:sox
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +9,8 @@ EXTRACT_ONLY=	${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSIONFULL}_GH0.tar.gz
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PyTorch-based audio signal processing and machine learning library
-WWW=		https://pytorch.org/audio/stable/index.html
+WWW=		https://pytorch.org/audio/stable/index.html \
+		https://github.com/pytorch/audio
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -33,6 +33,8 @@ MAKE_ENV=	USE_FFMPEG=0 # ffmpeg integration is broken or unavailable, see https:
 USE_GITHUB=	yes
 GH_ACCOUNT=	pytorch
 GH_PROJECT=	audio
+
+LDFLAGS+=	-Wl,-rpath=${PYTHON_SITELIBDIR}/torch/lib # https://github.com/pytorch/audio/issues/4047
 
 post-patch:
 	@${REINPLACE_CMD} \

@@ -1,5 +1,5 @@
-TIMESTAMP = 1709965762
+TIMESTAMP = 1755584345
 SHA256 (sox-14.4.2.tar.bz2) = 81a6956d4330e75b5827316e44ae381e6f1e8928003c6aa45896da9041ea149c
 SIZE (sox-14.4.2.tar.bz2) = 935449
-SHA256 (pytorch-audio-v2.2.1_GH0.tar.gz) = 5f2a9cda9369ff348d1d7ca2c0a1f01afc9ebff1a13df9775c22aa5c43f5b0f1
-SIZE (pytorch-audio-v2.2.1_GH0.tar.gz) = 4498329
+SHA256 (pytorch-audio-v2.8.0_GH0.tar.gz) = 8809e4b0fa1635a89d5b05fe8e6e1db79fc0cc2052474ef6e76e349755827c12
+SIZE (pytorch-audio-v2.8.0_GH0.tar.gz) = 4510296
