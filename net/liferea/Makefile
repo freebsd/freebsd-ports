@@ -1,7 +1,7 @@
 PORTNAME=	liferea
-DISTVERSION=	1.16-RC4
+DISTVERSION=	1.16.0
 CATEGORIES=	net gnome
-MASTER_SITES=	https://github.com/lwindolf/liferea/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/lwindolf/liferea/releases/download/v.${DISTVERSION}/
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
