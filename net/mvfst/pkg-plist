@@ -23,6 +23,7 @@ include/quic/api/QuicTimer.h
 include/quic/api/QuicTransportBase.h
 include/quic/api/QuicTransportBaseLite.h
 include/quic/api/QuicTransportFunctions.h
+include/quic/api/TransportInfo.h
 include/quic/api/test/MockQuicSocket.h
 include/quic/api/test/Mocks.h
 include/quic/client/QuicClientAsyncTransport.h
