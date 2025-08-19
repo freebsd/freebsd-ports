@@ -401,6 +401,7 @@ include/php/ext/libxml/php_libxml.h
 %%BUNDLED_PCRE%%include/php/ext/pcre/pcre2lib/pcre2_jit_neon_inc.h
 %%BUNDLED_PCRE%%include/php/ext/pcre/pcre2lib/pcre2_jit_simd_inc.h
 %%BUNDLED_PCRE%%include/php/ext/pcre/pcre2lib/pcre2_ucp.h
+include/php/ext/opcache/zend_accelerator_api.h
 include/php/ext/pcre/php_pcre.h
 include/php/ext/random/php_random.h
 include/php/ext/random/php_random_csprng.h
