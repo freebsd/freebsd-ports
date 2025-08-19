@@ -209,6 +209,7 @@ include/proxygen/lib/http/sink/HTTPTunnelSink.h
 include/proxygen/lib/http/stats/ConnectionStats.h
 include/proxygen/lib/http/stats/HTTPCodecStats.h
 include/proxygen/lib/http/stats/HTTPCodecStatsFilter.h
+include/proxygen/lib/http/stats/HttpServerStats.h
 include/proxygen/lib/http/stats/HeaderCodecStats.h
 include/proxygen/lib/http/stats/ResponseCodeStatsMinute.h
 include/proxygen/lib/http/stats/TLResponseCodeStats.h
@@ -218,6 +219,7 @@ include/proxygen/lib/http/structuredheaders/StructuredHeadersConstants.h
 include/proxygen/lib/http/structuredheaders/StructuredHeadersDecoder.h
 include/proxygen/lib/http/structuredheaders/StructuredHeadersEncoder.h
 include/proxygen/lib/http/structuredheaders/StructuredHeadersUtilities.h
+include/proxygen/lib/http/webtransport/FlowController.h
 include/proxygen/lib/http/webtransport/HTTPWebTransport.h
 include/proxygen/lib/http/webtransport/WebTransport.h
 include/proxygen/lib/http/webtransport/test/FakeSharedWebTransport.h
