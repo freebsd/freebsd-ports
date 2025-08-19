@@ -281,6 +281,7 @@ include/thrift/lib/cpp2/async/processor/ServerRequest.h
 include/thrift/lib/cpp2/async/processor/ServerRequestHelper.h
 include/thrift/lib/cpp2/async/processor/ServerRequestTask.h
 include/thrift/lib/cpp2/async/processor/ServiceHandlerBase.h
+include/thrift/lib/cpp2/async/tests/ClientInterceptorWithResponseValue.h
 include/thrift/lib/cpp2/async/tests/util/TestSinkService.h
 include/thrift/lib/cpp2/async/tests/util/TestStreamService.h
 include/thrift/lib/cpp2/async/tests/util/Util.h
@@ -295,11 +296,13 @@ include/thrift/lib/cpp2/detail/EventHandlerRuntime.h
 include/thrift/lib/cpp2/detail/Isset.h
 include/thrift/lib/cpp2/detail/meta.h
 include/thrift/lib/cpp2/dynamic/SerializableRecord.h
+include/thrift/lib/cpp2/dynamic/SerializableTypeSystemBuilder.h
 include/thrift/lib/cpp2/dynamic/TypeId.h
 include/thrift/lib/cpp2/dynamic/TypeSystem.h
 include/thrift/lib/cpp2/dynamic/TypeSystemBuilder.h
 include/thrift/lib/cpp2/dynamic/TypeSystemTraits.h
 include/thrift/lib/cpp2/dynamic/detail/Traits.h
+include/thrift/lib/cpp2/dynamic/detail/TypeSystem.h
 include/thrift/lib/cpp2/folly_dynamic/folly_dynamic.h
 include/thrift/lib/cpp2/folly_dynamic/internal/folly_dynamic-inl-post.h
 include/thrift/lib/cpp2/folly_dynamic/internal/folly_dynamic-inl-pre.h
@@ -467,6 +470,11 @@ include/thrift/lib/cpp2/server/ControlServerInterface.h
 include/thrift/lib/cpp2/server/Cpp2ConnContext.h
 include/thrift/lib/cpp2/server/Cpp2Connection.h
 include/thrift/lib/cpp2/server/Cpp2Worker.h
+include/thrift/lib/cpp2/server/DecoratorData.h
+include/thrift/lib/cpp2/server/DecoratorDataHandle.h
+include/thrift/lib/cpp2/server/DecoratorDataKey.h
+include/thrift/lib/cpp2/server/DecoratorDataRuntime.h
+include/thrift/lib/cpp2/server/DecoratorDataStorage.h
 include/thrift/lib/cpp2/server/ExecutorToThreadManagerAdaptor.h
 include/thrift/lib/cpp2/server/IOUringUtil.h
 include/thrift/lib/cpp2/server/IOWorkerContext.h
@@ -508,6 +516,7 @@ include/thrift/lib/cpp2/server/ServiceInterceptorBase.h
 include/thrift/lib/cpp2/server/ServiceInterceptorQualifiedName.h
 include/thrift/lib/cpp2/server/ServiceInterceptorStorage.h
 include/thrift/lib/cpp2/server/ServiceInterceptorControl.h
+include/thrift/lib/cpp2/server/ServiceMethodDecoratorBase.h
 include/thrift/lib/cpp2/server/StandardConcurrencyController.h
 include/thrift/lib/cpp2/server/StatusServerInterface.h
 include/thrift/lib/cpp2/server/TMConcurrencyController.h
@@ -589,8 +598,6 @@ include/thrift/lib/cpp2/transport/rocket/client/RocketClient.h
 include/thrift/lib/cpp2/transport/rocket/client/RocketSinkServerCallback.h
 include/thrift/lib/cpp2/transport/rocket/client/RocketStreamServerCallback.h
 include/thrift/lib/cpp2/transport/rocket/client/RocketStreamServerCallbackWithChunkTimeout.h
-include/thrift/lib/cpp2/transport/rocket/client/StreamChannelStatus.h
-include/thrift/lib/cpp2/transport/rocket/client/StreamChannelStatusResponse.h
 include/thrift/lib/cpp2/transport/rocket/compression/CompressionAlgorithmSelector.h
 include/thrift/lib/cpp2/transport/rocket/compression/CompressionManager.h
 include/thrift/lib/cpp2/transport/rocket/compression/CustomCompressor.h
@@ -726,7 +733,7 @@ include/thrift/lib/python/server/event_handler.h
 include/thrift/lib/python/server/flagged/RcAwareTaskPatch.h
 include/thrift/lib/python/server/interceptor/PythonServerModule.h
 include/thrift/lib/python/server/interceptor/PythonServiceInterceptor.h
-include/thrift/lib/python/server/util.h
+include/thrift/lib/python/server/response_helpers.h
 include/thrift/lib/python/streaming/PythonUserException.h
 include/thrift/lib/python/streaming/Sink.h
 include/thrift/lib/python/streaming/StreamElementEncoder.h
