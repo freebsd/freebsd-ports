@@ -1,5 +1,6 @@
 PORTNAME=	quarto # quarto also requires some Linux base to be installed, for example linux_base-rl9
 DISTVERSION=	1.7.30
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/quarto-dev/quarto-cli/releases/download/v${DISTVERSION}/
 DISTFILES=	quarto-${DISTVERSION}-linux-amd64.tar.gz # same for all architectures
@@ -98,7 +99,7 @@ do-install:
 	${RM} -r ${STAGEDIR}${DATADIR}/bin/tools/${XARCH}/dart-sass
 	${MKDIR} ${STAGEDIR}${DATADIR}/bin/tools/${XARCH}/dart-sass
 	${LN} -s \
-		${LOCALBASE}/lib/ruby/gems/3.2/gems/dartsass-1.49.8/exe/linux/sass \
+		${LOCALBASE}/lib/ruby/gems/*/gems/dartsass-*/exe/linux/sass \
 		${STAGEDIR}${DATADIR}/bin/tools/${XARCH}/dart-sass/sass
 
 do-test: # tests fail to run with: RuntimeError: Failed to lock Pipfile.lock!
