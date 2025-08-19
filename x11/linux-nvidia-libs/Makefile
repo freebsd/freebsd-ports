@@ -147,7 +147,7 @@ LINUX32_LIBS+=	libnvidia-compiler.so.${PORTVERSION}
 
 ## graphics/egl-wayland supports
 ## Estimated to be upgraded often.
-.if ${NVVERSION} >= 570.18100 && ${NVVERSION} < 575.00000 # 570.181 but below 575.000
+.if ${NVVERSION} >= 570.18100
 NV_EGL_W_VERSION=	1.1.20
 .elif ${NVVERSION} >= 570.14400 # 570.144, excuding 570.181 to below 575.000
 NV_EGL_W_VERSION=	1.1.19
@@ -278,11 +278,11 @@ PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-gpucomp\.so,d'
 
 # nvidia-egl-X11 supports (not in x11/nvidia-driver nor separate ports)
 # Estimated to be upgrated often.
-.if ${NVVERSION} >= 570.18100 && ${NVVERSION} < 575.00000
+.if ${NVVERSION} >= 570.18100	# 570.181
 NV_EGL_X_VERSION=	1.0.3
-.elif ${NVVERSION} >= 570.15302 && ${NVVERSION} < 570.18100 || ${NVVERSION} >= 575.05708 && ${NVVERSION} < 580.00000
+.elif ${NVVERSION} >= 570.15302	# 570.153.02
 NV_EGL_X_VERSION=	1.0.2
-.elif ${NVVERSION} >= 570.14400 # 570.144, 580.65.06
+.elif ${NVVERSION} >= 570.14400 # 570.144
 NV_EGL_X_VERSION=	1.0.1
 .elif ${NVVERSION} >= 570.00000	# 570.00, Intentionally kept to clarify
 				# the start of egl-x11 support.
