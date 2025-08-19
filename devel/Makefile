@@ -935,6 +935,7 @@
     SUBDIR += gorm
     SUBDIR += goswagger
     SUBDIR += got
+    SUBDIR += gotestsum
     SUBDIR += gpds
     SUBDIR += gperf
     SUBDIR += gprbuild

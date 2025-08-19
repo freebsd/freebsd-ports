@@ -1,0 +1,5 @@
+gotestsum runs tests using go test -json, prints formatted test output,
+and a summary of the test run. It is designed to work well for both
+local development, and for automation like CI.
+
+It's `go test`, but just better.
