@@ -205,6 +205,7 @@ include/folly/concurrency/memory/TLRefCount.h
 include/folly/container/Access.h
 include/folly/container/Array.h
 include/folly/container/BitIterator.h
+include/folly/container/CollectionUtil.h
 include/folly/container/Enumerate.h
 include/folly/container/EvictingCacheMap.h
 include/folly/container/F14Map-fwd.h
@@ -268,6 +269,7 @@ include/folly/coro/Concat.h
 include/folly/coro/Coroutine.h
 include/folly/coro/CurrentExecutor.h
 include/folly/coro/DetachOnCancel.h
+include/folly/coro/Error.h
 include/folly/coro/Filter-inl.h
 include/folly/coro/Filter.h
 include/folly/coro/FutureUtil.h
