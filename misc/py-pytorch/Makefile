@@ -1,7 +1,6 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.1
-PORTREVISION=	2
+DISTVERSION=	2.8.0
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -79,9 +78,9 @@ USES+=	llvm:max=15
 
 post-patch:
 	@cd ${WRKSRC} && \
-		${RM} -r third_party/cpuinfo third_party/fbgemm/third_party/cpuinfo && \
+		${RM} -r third_party/cpuinfo third_party/fbgemm/external/cpuinfo && \
 		${CP} -r cpuinfo-with-freebsd-support third_party/cpuinfo && \
-		${CP} -r cpuinfo-with-freebsd-support third_party/fbgemm/third_party/cpuinfo
+		${CP} -r cpuinfo-with-freebsd-support third_party/fbgemm/external/cpuinfo
 
 post-install: # strip binaries
 	@${STRIP_CMD} \

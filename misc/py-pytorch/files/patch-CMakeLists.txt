@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2025-04-23 16:19:35 UTC
+--- CMakeLists.txt.orig	2025-08-06 17:08:00 UTC
 +++ CMakeLists.txt
-@@ -182,7 +182,7 @@ set(CPU_POWER OFF)
+@@ -173,7 +173,7 @@ set(CPU_POWER OFF)
  set(CPU_INTEL OFF)
  set(CPU_POWER OFF)
  
@@ -9,7 +9,7 @@
    set(CPU_INTEL ON)
  elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(aarch64|arm64)")
    set(CPU_AARCH64 ON)
-@@ -212,7 +212,7 @@ option(BUILD_CUSTOM_PROTOBUF
+@@ -203,7 +203,7 @@ option(BUILD_CUSTOM_PROTOBUF
  option(ATEN_NO_TEST "Do not build ATen test binaries" OFF)
  option(BUILD_BINARY "Build C++ binaries" OFF)
  option(BUILD_CUSTOM_PROTOBUF
@@ -18,7 +18,7 @@
  option(BUILD_PYTHON "Build Python binaries" ON)
  option(BUILD_LITE_INTERPRETER "Master flag to build Lite Interpreter" OFF)
  option(BUILD_SHARED_LIBS "Build libcaffe2.so" ON)
-@@ -263,7 +263,7 @@ option(USE_GLOG "Use GLOG" OFF)
+@@ -254,7 +254,7 @@ option(USE_GLOG "Use GLOG" OFF)
  option(USE_FAKELOWP "Use FakeLowp operators" OFF)
  option(USE_GFLAGS "Use GFLAGS" OFF)
  option(USE_GLOG "Use GLOG" OFF)
@@ -27,7 +27,7 @@
  option(USE_MAGMA "Use MAGMA" ON)
  option(USE_PYTORCH_METAL "Use Metal for PyTorch iOS build" OFF)
  option(USE_PYTORCH_METAL_EXPORT "Export Metal models on MacOSX desktop" OFF)
-@@ -453,15 +453,15 @@ option(USE_SYSTEM_CPUINFO "Use system-provided cpuinfo
+@@ -451,15 +451,15 @@ option(USE_SYSTEM_CPUINFO "Use system-provided cpuinfo
  # USE_SYSTEM_LIBS being "OFF".
  option(USE_SYSTEM_LIBS "Use all available system-provided libraries." OFF)
  option(USE_SYSTEM_CPUINFO "Use system-provided cpuinfo." OFF)
