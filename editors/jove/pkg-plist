@@ -33,3 +33,4 @@ man/man1/teachjove.1
 @dir /var/lib/jove/preserve
 @dir /var/lib/jove
 @dir /var/lib
+@dir etc/jove
