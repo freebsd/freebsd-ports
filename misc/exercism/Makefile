@@ -1,7 +1,6 @@
 PORTNAME=	exercism
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.0
-PORTREVISION=	2
+DISTVERSION=	3.5.1
 CATEGORIES=	misc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://exercism.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.21,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	exercism
 GH_PROJECT=	cli
