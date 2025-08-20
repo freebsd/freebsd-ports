@@ -939,6 +939,7 @@
     SUBDIR += rubygem-bdb1
     SUBDIR += rubygem-bigrecord
     SUBDIR += rubygem-brpoplpush-redis_script
+    SUBDIR += rubygem-click_house-client
     SUBDIR += rubygem-couchrest
     SUBDIR += rubygem-dalli
     SUBDIR += rubygem-data_objects
