@@ -1,6 +1,6 @@
 PORTNAME=	fail2ban
 DISTVERSION=	1.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -63,7 +63,6 @@ post-patch:
 		${MAN_FILES}
 	@${REINPLACE_CMD} -e 's, sed , ${SED} ,g' \
 		${WRKSRC}/config/action.d/hostsdeny.conf
-	@${RM} ${WRKSRC}/config/filter.d/sshd.conf
 
 	# XXX Ideally this should be in do-build but it only works in
 	# XXX post-patch
@@ -79,7 +78,6 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-	@${RM} ${STAGEDIR}/${ETCDIR}/filter.d/selinux-sshd.conf
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
