@@ -434,6 +434,7 @@
     SUBDIR += py-crudini
     SUBDIR += py-datasets
     SUBDIR += py-detecta
+    SUBDIR += py-diffusers
     SUBDIR += py-eemeter
     SUBDIR += py-einops
     SUBDIR += py-emoji
