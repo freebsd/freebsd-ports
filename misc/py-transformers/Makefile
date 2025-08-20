@@ -1,5 +1,6 @@
 PORTNAME=	transformers
 DISTVERSION=	4.55.2
+PORTREVISION=	1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,10 +24,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>=0:sysutils/py-filelock@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}safetensors>=0.4.3:misc/py-safetensors@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tokenizers>=0.21:textproc/py-tokenizers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.27:misc/py-tqdm@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytorch>=2.1:misc/py-pytorch@${PY_FLAVOR}
-		#${PYTHON_PKGNAMEPREFIX}torchaudio>0:audio/py-torchaudio@${PY_FLAVOR} \
-		#${PYTHON_PKGNAMEPREFIX}torchvision>0:misc/py-torchvision@${PY_FLAVOR}
-		# the last two dependencies have some issues with shared libs
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytorch>=2.1:misc/py-pytorch@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}torchaudio>0:audio/py-torchaudio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}torchvision>0:misc/py-torchvision@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR}
 
 USES=		python
