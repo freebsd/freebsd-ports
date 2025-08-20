@@ -1,7 +1,7 @@
 PORTNAME=	torchaudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio python # machine-learning
 MASTER_SITES=	https://downloads.sourceforge.net/project/sox/sox/14.4.2/:sox
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,6 +35,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pytorch
 GH_PROJECT=	audio
 
+# workaround for missing libsox.so
+PLIST_FILES=	lib/python${_PYTHON_VERSION}/site-packages/torchaudio/lib/libsox.so
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's| URL .*| URL file://${DISTDIR}/sox-14.4.2.tar.bz2|' \
@@ -46,5 +49,9 @@ post-install:
 		torchaudio/lib/_torchaudio_sox.so \
 		torchaudio/lib/libtorchaudio.so \
 		torchaudio/lib/libtorchaudio_sox.so
+	# workaround for missing libsox.so
+	@${CP} \
+		${WRKSRC}/build/*/third_party/sox/libsox.so \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/torchaudio/lib
 
 .include <bsd.port.mk>
