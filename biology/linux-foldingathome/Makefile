@@ -1,9 +1,10 @@
 PORTNAME=	foldingathome
 DISTVERSION=	8.4.9
 CATEGORIES=	biology linux
-MASTER_SITES=	https://download.foldingathome.org/releases/public/fah-client/debian-10-64bit/release/
+MASTER_SITES=	${_MASTER_SITES}
 PKGNAMEPREFIX=	linux-
 DISTNAME=	fah-client_${DISTVERSION}-64bit-release
+DISTFILES=	${_DISTFILES}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Folding@home Client
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/${DISTNAME}/LICENSE
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell \
 		auto-accept
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
 
 USES=		linux:rl9 tar:bz2
@@ -45,6 +46,16 @@ OPTIONS_DEFINE=	DOCS
 _FAHCLIENT_CONFIG_XML=	${ETCDIR}/config.xml
 _FAHCLIENT_WORK_DIR=	/var/db/fahclient
 _FAHCLIENT_PROGRAM=	${PREFIX}/bin/fah-client
+
+_MASTER_SITES_amd64=	https://download.foldingathome.org/releases/public/fah-client/debian-10-64bit/release/
+_MASTER_SITES_aarch64=	https://download.foldingathome.org/releases/public/fah-client/debian-stable-arm64/release/
+.if make(makesum)
+_MASTER_SITES=		${ONLY_FOR_ARCHS:@.ARCH.@${_MASTER_SITES_${.ARCH.}}@}
+_DISTFILES=		${ONLY_FOR_ARCHS:@.ARCH.@${DISTNAME}${EXTRACT_SUFX}?a=${.ARCH.}@}
+.else
+_MASTER_SITES=		${_MASTER_SITES_${ARCH}}
+_DISTFILES=		${DISTNAME}${EXTRACT_SUFX}?a=${ARCH}
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME}/fah-client ${STAGEDIR}${PREFIX}/bin/
