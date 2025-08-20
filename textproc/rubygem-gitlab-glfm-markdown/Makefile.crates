@@ -23,7 +23,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
 		colorchoice-1.0.4 \
-		comrak-0.39.1 \
+		comrak-0.40.0 \
 		crc32fast-1.4.2 \
 		deranged-0.4.0 \
 		deunicode-1.6.2 \
