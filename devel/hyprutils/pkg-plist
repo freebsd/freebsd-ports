@@ -9,6 +9,7 @@ include/hyprutils/math/Misc.hpp
 include/hyprutils/math/Region.hpp
 include/hyprutils/math/Vector2D.hpp
 include/hyprutils/memory/Atomic.hpp
+include/hyprutils/memory/Casts.hpp
 include/hyprutils/memory/ImplBase.hpp
 include/hyprutils/memory/SharedPtr.hpp
 include/hyprutils/memory/UniquePtr.hpp
