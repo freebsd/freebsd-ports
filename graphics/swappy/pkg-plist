@@ -1,0 +1,10 @@
+bin/swappy
+share/applications/swappy.desktop
+share/icons/hicolor/scalable/apps/swappy.svg
+share/locale/de/LC_MESSAGES/swappy.mo
+share/locale/en/LC_MESSAGES/swappy.mo
+share/locale/fr/LC_MESSAGES/swappy.mo
+share/locale/pt_BR/LC_MESSAGES/swappy.mo
+share/locale/tr/LC_MESSAGES/swappy.mo
+share/locale/zh_CN/LC_MESSAGES/swappy.mo
+%%MANPAGES%%share/man/man1/swappy.1.gz

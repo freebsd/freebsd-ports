@@ -1,8 +1,9 @@
 PORTNAME=	swappy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1
-PORTREVISION=	4
+DISTVERSION=	1.7.1
 CATEGORIES=	graphics wayland
+MASTER_SITES=	https://github.com/jtheoof/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Snapshot editing for Wayland (a la Snappy on macOS)
@@ -11,37 +12,23 @@ WWW=		https://github.com/jtheoof/swappy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c11 desktop-file-utils gettext-tools gnome meson pkgconfig
-USE_GITHUB=	yes
+USES=		compiler:c11 desktop-file-utils gettext-tools gnome meson \
+		pkgconfig
+
 USE_GNOME=	cairo gdkpixbuf gtk30
-GH_ACCOUNT=	jtheoof
-PLIST_FILES=	bin/${PORTNAME} \
-		share/applications/${PORTNAME}.desktop \
-		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
-		share/locale/de/LC_MESSAGES/${PORTNAME}.mo \
-		share/locale/en/LC_MESSAGES/${PORTNAME}.mo \
-		share/locale/fr/LC_MESSAGES/${PORTNAME}.mo \
-		share/locale/pt_BR/LC_MESSAGES/${PORTNAME}.mo \
-		share/locale/tr/LC_MESSAGES/${PORTNAME}.mo \
-		${NULL}
 
 OPTIONS_DEFINE=	CLIPBOARD ICONSFONT MANPAGES
 OPTIONS_DEFAULT=CLIPBOARD ICONSFONT MANPAGES
+OPTIONS_SUB=	yes
 
 CLIPBOARD_DESC=		Copy to clipboard support
+ICONSFONT_DESC=		Install Font Awesome to properly render icons
+
 CLIPBOARD_RUN_DEPENDS=	wl-copy:x11/wl-clipboard
 
-ICONSFONT_DESC=		Install Font Awesome to properly render icons
 ICONSFONT_RUN_DEPENDS=	font-awesome>0:x11-fonts/font-awesome
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
-MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
-
-post-patch:
-# Extract (snapshot) version from the port instead of meson.build
-	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
-		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
-		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
