@@ -1,6 +1,6 @@
---- config/pre.in.orig	2014-10-15 16:55:10.000000000 -0700
-+++ config/pre.in	2015-02-04 12:43:45.693875606 -0800
-@@ -178,9 +178,9 @@
+--- config/pre.in.orig	2025-08-05 14:15:15 UTC
++++ config/pre.in
+@@ -182,9 +182,9 @@ INSTALL_PROGRAM=@INSTALL_PROGRAM@ $(INSTALL_STRIP)
  INSTALL=@INSTALL@
  INSTALL_STRIP=
  INSTALL_PROGRAM=@INSTALL_PROGRAM@ $(INSTALL_STRIP)
@@ -12,7 +12,7 @@
  INSTALL_SETUID=$(INSTALL) $(INSTALL_STRIP) -m 4755 -o root
  ## This is needed because autoconf will sometimes define @exec_prefix@ to be
  ## ${prefix}.
-@@ -197,7 +197,7 @@
+@@ -202,7 +202,7 @@ CLIENT_BINDIR =@bindir@
  ADMIN_BINDIR = @sbindir@
  SERVER_BINDIR = @sbindir@
  CLIENT_BINDIR =@bindir@

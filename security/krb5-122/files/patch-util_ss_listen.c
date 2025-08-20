@@ -1,5 +1,5 @@
---- util/ss/listen.c.orig	2023-08-07 11:38:21.000000000 -0700
-+++ util/ss/listen.c	2023-08-09 13:09:30.816661000 -0700
+--- util/ss/listen.c.orig	2025-08-05 14:15:15 UTC
++++ util/ss/listen.c
 @@ -15,7 +15,11 @@
  #include <sys/param.h>
  

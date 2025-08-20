@@ -1,6 +1,6 @@
---- lib/krad/packet.c.orig	2025-08-05 07:15:15.000000000 -0700
-+++ lib/krad/packet.c	2025-08-06 00:16:54.383533000 -0700
-@@ -477,6 +477,9 @@
+--- lib/krad/packet.c.orig	2025-08-05 14:15:15 UTC
++++ lib/krad/packet.c
+@@ -477,6 +477,9 @@ verify_msgauth(const char *secret, const krad_packet *
      krb5_error_code retval;
  
      msgauth = krad_packet_get_attr(pkt, KRAD_ATTR_MESSAGE_AUTHENTICATOR, 0);

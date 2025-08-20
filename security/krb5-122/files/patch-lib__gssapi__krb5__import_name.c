@@ -1,7 +1,7 @@
---- lib/gssapi/krb5/import_name.c.orig	Mon Jul 18 15:12:42 2005
-+++ lib/gssapi/krb5/import_name.c	Tue Nov  8 09:53:58 2005
-@@ -33,6 +33,11 @@
- #endif
+--- lib/gssapi/krb5/import_name.c.orig	2025-08-05 14:15:15 UTC
++++ lib/gssapi/krb5/import_name.c
+@@ -32,6 +32,11 @@
+ #include <stdio.h>
  #endif
  
 +#include <sys/param.h>

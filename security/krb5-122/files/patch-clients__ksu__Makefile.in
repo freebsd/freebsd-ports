@@ -1,6 +1,6 @@
---- clients/ksu/Makefile.in.orig	2019-05-21 14:09:23.000000000 -0700
-+++ clients/ksu/Makefile.in	2019-05-21 20:30:48.612847000 -0700
-@@ -1,6 +1,6 @@
+--- clients/ksu/Makefile.in.orig	2025-08-05 14:15:15 UTC
++++ clients/ksu/Makefile.in
+@@ -1,6 +1,6 @@ BUILDTOP=$(REL)..$(S)..
  mydir=clients$(S)ksu
  BUILDTOP=$(REL)..$(S)..
 -DEFINES = -DGET_TGT_VIA_PASSWD -DPRINC_LOOK_AHEAD -DCMD_PATH='"/usr/local/sbin /usr/local/bin /sbin /bin /usr/sbin /usr/bin"'
@@ -8,7 +8,7 @@
  
  KSU_LIBS=@KSU_LIBS@
  
-@@ -30,6 +30,6 @@
+@@ -30,7 +30,7 @@ install:
  
  install:
  	-for f in ksu; do \
@@ -16,3 +16,4 @@
 +	  $(INSTALL_PROGRAM) $$f \
  		$(DESTDIR)$(CLIENT_BINDIR)/`echo $$f|sed '$(transform)'`; \
  	done
+ 

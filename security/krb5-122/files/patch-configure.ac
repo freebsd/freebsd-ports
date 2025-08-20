@@ -1,6 +1,6 @@
---- configure.ac.orig	2023-08-07 11:38:21.000000000 -0700
-+++ configure.ac	2023-08-09 14:49:19.833149000 -0700
-@@ -1356,8 +1356,12 @@
+--- configure.ac.orig	2025-08-05 14:15:15 UTC
++++ configure.ac
+@@ -1365,8 +1365,12 @@ if test "x$with_libedit" != xno; then
      AC_DEFINE([HAVE_LIBEDIT], 1, [Define if building with libedit.])
      AC_MSG_NOTICE([Using libedit for readline support])
    elif test "x$with_libedit" = xyes; then

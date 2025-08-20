@@ -1,8 +1,8 @@
---- plugins/preauth/pkinit/pkinit_crypto_openssl.c.orig	2022-10-17 09:52:43 UTC
+--- plugins/preauth/pkinit/pkinit_crypto_openssl.c.orig	2025-08-05 14:15:15 UTC
 +++ plugins/preauth/pkinit/pkinit_crypto_openssl.c
-@@ -184,6 +184,17 @@ pkcs11err(int err);
-     (*_x509_pp) = PKCS7_cert_from_signer_info(_p7,_si)
- #endif
+@@ -201,6 +201,17 @@ create_identifiers_from_stack(STACK_OF(X509) *sk,
+ create_identifiers_from_stack(STACK_OF(X509) *sk,
+                               krb5_external_principal_identifier *** ids);
  
 +#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
 +
@@ -18,7 +18,7 @@
  #if OPENSSL_VERSION_NUMBER < 0x10100000L
  
  /* 1.1 standardizes constructor and destructor names, renaming
-@@ -193,13 +204,6 @@ pkcs11err(int err);
+@@ -210,13 +221,6 @@ create_identifiers_from_stack(STACK_OF(X509) *sk,
  #define EVP_MD_CTX_free EVP_MD_CTX_destroy
  #define ASN1_STRING_get0_data ASN1_STRING_data
  
@@ -32,7 +32,7 @@
  /* 1.1 makes many handle types opaque and adds accessors.  Add compatibility
   * versions of the new accessors we use for pre-1.1. */
  
-@@ -588,7 +592,7 @@ set_padded_derivation(EVP_PKEY_CTX *ctx)
+@@ -657,7 +661,7 @@ set_padded_derivation(EVP_PKEY_CTX *ctx)
  {
      EVP_PKEY_CTX_set_dh_pad(ctx, 1);
  }
