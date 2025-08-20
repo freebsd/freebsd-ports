@@ -1,5 +1,5 @@
 PORTNAME=	pg
-PORTVERSION=	1.5.9
+PORTVERSION=	1.6.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -19,6 +19,6 @@ CONFIGURE_ARGS=	--with-pgsql-include-dir=`${PG_CONFIG} --includedir` \
 		--with-pgsql-lib-dir=`${PG_CONFIG} --libdir`
 PG_CONFIG=	${LOCALBASE}/bin/pg_config
 
-PORTSCOUT=	limit:^1\.5\.
+PORTSCOUT=	limit:^1\.6\.
 
 .include <bsd.port.mk>
