@@ -1,6 +1,6 @@
---- doc/man-sections/generic-options.rst.orig	2023-01-25 10:00:58 UTC
+--- doc/man-sections/generic-options.rst.orig	2025-04-02 06:53:10 UTC
 +++ doc/man-sections/generic-options.rst
-@@ -507,5 +507,8 @@ which mode OpenVPN is configured as.
+@@ -514,5 +514,8 @@ --user user
    since it is usually used by other system services already. Always
    create a dedicated user for openvpn.
  

@@ -1,6 +1,6 @@
---- sample/sample-config-files/loopback-server.orig	2016-08-23 14:16:22 UTC
+--- sample/sample-config-files/loopback-server.orig	2025-04-02 06:53:10 UTC
 +++ sample/sample-config-files/loopback-server
-@@ -9,8 +9,8 @@
+@@ -9,15 +9,15 @@
  #  ./openvpn --config sample-config-files/loopback-client  (In one window) 
  #  ./openvpn --config sample-config-files/loopback-server  (Simultaneously in another window) 
  
@@ -11,3 +11,11 @@
  remote localhost
  local localhost
  dev null
+ verb 3
+ reneg-sec 10
+ tls-server
+-dh sample-keys/dh2048.pem
++dh none
+ ca sample-keys/ca.crt
+ key sample-keys/server.key
+ cert sample-keys/server.crt
