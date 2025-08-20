@@ -1,5 +1,5 @@
 PORTNAME=	postfix
-DISTVERSION=	3.11-20250606
+DISTVERSION=	3.11-20250818
 PORTREVISION?=	0
 PORTEPOCH=	6
 CATEGORIES=	mail
@@ -155,7 +155,7 @@ MAKEFILEFLAGS+=	DEBUG=
 
 MAKEFILEFLAGS+=	pie=yes CC="${CC}" OPT="${CFLAGS}"
 
-.if ${SSL_DEFAULT} == libressl
+.if defined(TLS) && ${SSL_DEFAULT} == libressl
 BROKEN=		error: OpenSSL-1.1.1 is the minimum supported version. LibreSSL is not supported
 .endif
 
