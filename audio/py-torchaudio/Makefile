@@ -1,6 +1,7 @@
 PORTNAME=	torchaudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	audio python # machine-learning
 MASTER_SITES=	https://downloads.sourceforge.net/project/sox/sox/14.4.2/:sox
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,8 +34,6 @@ MAKE_ENV=	USE_FFMPEG=0 # ffmpeg integration is broken or unavailable, see https:
 USE_GITHUB=	yes
 GH_ACCOUNT=	pytorch
 GH_PROJECT=	audio
-
-LDFLAGS+=	-Wl,-rpath=${PYTHON_SITELIBDIR}/torch/lib # https://github.com/pytorch/audio/issues/4047
 
 post-patch:
 	@${REINPLACE_CMD} \
