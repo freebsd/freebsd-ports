@@ -1,6 +1,7 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -49,6 +50,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}astunparse>0:devel/py-astunparse@${PY_FLAVO
 
 USES=		compiler:c++17-lang localbase:ldflags python
 USE_PYTHON=	distutils autoplist
+USE_LDCONFIG=	${PYTHON_SITELIBDIR}/torch/lib
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	pytorch:cpuinfo:1e83a2f:cpuinfo/cpuinfo-with-freebsd-support # https://github.com/pytorch/cpuinfo/pull/230/commits
