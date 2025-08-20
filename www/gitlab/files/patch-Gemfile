@@ -1,34 +1,14 @@
---- Gemfile.orig	2025-07-22 11:41:34 UTC
+--- Gemfile.orig	2025-08-20 06:43:08 UTC
 +++ Gemfile
-@@ -164,8 +164,8 @@ gem 'rack-cors', '~> 2.0.1', require: 'rack/cors', fea
- gem 'rack-cors', '~> 2.0.1', require: 'rack/cors', feature_category: :shared
+@@ -165,7 +165,7 @@ gem 'graphql', '2.5.11', feature_category: :api
  
  # GraphQL API
--gem 'graphql', '2.4.13', feature_category: :api
--gem 'graphql-docs', '~> 5.0.0', group: [:development, :test], feature_category: :api
-+gem 'graphql', '~> 2.4.13', feature_category: :api
-+#gem 'graphql-docs', '~> 5.0.0', group: [:development, :test], feature_category: :api
+ gem 'graphql', '2.5.11', feature_category: :api
+-gem 'graphql-docs', '~> 5.2.0', group: [:development, :test], feature_category: :api
++#gem 'graphql-docs', '~> 5.2.0', group: [:development, :test], feature_category: :api
  gem 'apollo_upload_server', '~> 2.1.6', feature_category: :api
  
  # Cells
-@@ -220,7 +220,7 @@ gem 'google-cloud-storage', '~> 1.45.0', feature_categ
- gem 'google-apis-storage_v1', '~> 0.29', feature_category: :shared
- gem 'google-cloud-storage', '~> 1.45.0', feature_category: :shared
- # We need >= 0.11.1 because that's when match_glob support is added to list_objects
--gem 'google-apis-core', '~> 0.11.0', '>= 0.11.1', feature_category: :shared
-+gem 'google-apis-core', '~> 0.11', '>= 0.11.1', feature_category: :shared
- gem 'google-apis-compute_v1', '~> 0.57.0', feature_category: :shared
- gem 'google-apis-container_v1', '~> 0.43.0', feature_category: :shared
- gem 'google-apis-container_v1beta1', '~> 0.43.0', feature_category: :shared
-@@ -231,7 +231,7 @@ gem 'google-apis-androidpublisher_v3', '~> 0.34.0', fe
- gem 'google-apis-sqladmin_v1beta4', '~> 0.41.0', feature_category: :shared
- gem 'google-apis-androidpublisher_v3', '~> 0.34.0', feature_category: :shared
- 
--gem 'googleauth', '~> 1.8.1', feature_category: :shared
-+gem 'googleauth', '~> 1.8', feature_category: :shared
- gem 'google-cloud-artifact_registry-v1', '~> 0.11.0', feature_category: :shared
- gem 'google-cloud-compute-v1', '~> 2.6.0', feature_category: :shared
- 
 @@ -295,7 +295,7 @@ gem 'state_machines-activerecord', '~> 0.8.0', feature
  gem 'state_machines-activerecord', '~> 0.8.0', feature_category: :shared
  
@@ -38,12 +18,12 @@
  gem 'sidekiq-cron', '~> 1.12.0', feature_category: :scalability
  gem 'gitlab-sidekiq-fetcher',
    path: 'vendor/gems/sidekiq-reliable-fetch',
-@@ -465,143 +465,15 @@ gem 'warning', '~> 1.5.0', feature_category: :shared
+@@ -468,148 +468,15 @@ gem 'warning', '~> 1.5.0', feature_category: :shared
  
  gem 'warning', '~> 1.5.0', feature_category: :shared
  
 -group :development do
--  gem 'lefthook', '~> 1.11.0', require: false, feature_category: :tooling
+-  gem 'lefthook', '~> 1.12.0', require: false, feature_category: :tooling
 -  gem 'rubocop', feature_category: :tooling
 -
 -  gem 'solargraph', '~> 0.54.0', require: false, feature_category: :shared
@@ -76,7 +56,7 @@
 -group :development, :test do
 -  gem 'deprecation_toolkit', '~> 2.2.3', require: false, feature_category: :shared
 -  gem 'bullet', '~> 8.0.0', feature_category: :shared
--  gem 'parser', '= 3.3.8.0', feature_category: :shared
+-  gem 'parser', '= 3.3.9.0', feature_category: :shared
 -  gem 'pry-byebug', feature_category: :shared
 -  gem 'pry-rails', '~> 0.3.9', feature_category: :shared
 -  gem 'pry-shell', '~> 0.6.4', feature_category: :shared
@@ -128,7 +108,7 @@
 -end
 -
  group :development, :test, :danger do
-   gem 'gitlab-dangerfiles', '~> 4.9.0', require: false, feature_category: :tooling
+   gem 'gitlab-dangerfiles', '~> 4.10.0', require: false, feature_category: :tooling
  end
  
 -group :development, :test, :coverage do
@@ -162,6 +142,11 @@
 -
 -  gem 'graphlyte', '~> 1.0.0', feature_category: :shared
 -
+-  # Upload CI metrics to a GCP BigQuery instance
+-  #
+-  # We only use this gem in CI.
+-  gem 'google-cloud-bigquery', '~> 1.0', feature_category: :tooling
+-
 -  gem 'shoulda-matchers', '~> 6.4.0', require: false, feature_category: :shared
 -  gem 'email_spec', '~> 2.3.0', feature_category: :shared
 -  gem 'webmock', '~> 3.25.0', feature_category: :shared
@@ -176,32 +161,27 @@
 -  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
 -  gem 'derailed_benchmarks', require: false, feature_category: :shared
 -
--  gem 'gitlab_quality-test_tooling', '~> 2.10.0', require: false, feature_category: :tooling
+-  gem 'gitlab_quality-test_tooling', '~> 2.18.0', require: false, feature_category: :tooling
 -end
 -
  gem 'octokit', '~> 9.0', feature_category: :importers
  # Needed by octokit: https://github.com/octokit/octokit.rb/pull/1688
  gem 'faraday-multipart', '~> 1.0', feature_category: :importers
-@@ -636,14 +508,14 @@ gem 'spamcheck', '~> 1.3.0', feature_category: :inside
+@@ -643,10 +510,10 @@ gem 'spamcheck', '~> 1.3.0', feature_category: :inside
  gem 'spamcheck', '~> 1.3.0', feature_category: :insider_threat
  
  # Gitaly GRPC protocol definitions
--gem 'gitaly', '~> 18.1.0.pre.rc1', feature_category: :gitaly
-+gem 'gitaly', '~> 18.1', feature_category: :gitaly
+-gem 'gitaly', '~> 18.2.0', feature_category: :gitaly
++gem 'gitaly', '~> 18.2', feature_category: :gitaly
  
  # KAS GRPC protocol definitions
--gem 'gitlab-kas-grpc', '~> 18.1.0', feature_category: :deployment_management
-+gem 'gitlab-kas-grpc', '~> 18.2.0', feature_category: :deployment_management
+-gem 'gitlab-kas-grpc', '~> 18.2.0', feature_category: :deployment_management
++gem 'gitlab-kas-grpc', '~> 18.2', feature_category: :deployment_management
  
- # Lock until 1.74.0 is available
- # https://gitlab.com/gitlab-com/gl-infra/production/-/issues/20067
--gem 'grpc', '= 1.63.0', feature_category: :shared
-+gem 'grpc', '~> 1.63', feature_category: :shared
+ gem 'grpc', '~> 1.74.0', feature_category: :shared
  
- gem 'google-protobuf', '~> 3.25', '>= 3.25.3', feature_category: :shared
- 
-@@ -664,7 +536,7 @@ gem 'gitlab-net-dns', '~> 0.12.0', feature_category: :
- gem 'gitlab-net-dns', '~> 0.12.0', feature_category: :shared
+@@ -669,7 +536,7 @@ gem 'gitlab-net-dns', '~> 0.15.0', feature_category: :
+ gem 'gitlab-net-dns', '~> 0.15.0', feature_category: :shared
  
  # Countries list
 -gem 'countries', '~> 4.0.0', feature_category: :shared
@@ -209,7 +189,7 @@
  
  gem 'retriable', '~> 3.1.2', feature_category: :shared
  
-@@ -746,10 +618,15 @@ gem 'duo_api', '~> 1.3', feature_category: :system_acc
+@@ -750,10 +617,15 @@ gem 'duo_api', '~> 1.3', feature_category: :system_acc
  
  gem 'duo_api', '~> 1.3', feature_category: :system_access
  
@@ -225,4 +205,4 @@
 -gem "i18n_data", "~> 0.13.1", feature_category: :system_access
 +gem "i18n_data", "~> 0.13", feature_category: :system_access
  
- gem "gitlab-cloud-connector", "~> 1.21", require: 'gitlab/cloud_connector', feature_category: :plan_provisioning
+ gem "gitlab-cloud-connector", "~> 1.26", require: 'gitlab/cloud_connector', feature_category: :plan_provisioning

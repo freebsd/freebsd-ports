@@ -1,5 +1,5 @@
-TIMESTAMP = 1752680378
-SHA256 (go/textproc_gitlab-zoekt-indexer/gitlab-zoekt-indexer-v0.24.0/go.mod) = f9bcc8f70e8c386677f3de9422b6d5388d9fbe384dbe64b1fb923aee87d931f9
-SIZE (go/textproc_gitlab-zoekt-indexer/gitlab-zoekt-indexer-v0.24.0/go.mod) = 6837
-SHA256 (go/textproc_gitlab-zoekt-indexer/gitlab-zoekt-indexer-v0.24.0/gitlab-zoekt-indexer-v0.24.0.tar.bz2) = 384cd8c3dc1e271a78ecbf91190bb0ce8d2085ee53961b387d5887ddc7d53631
-SIZE (go/textproc_gitlab-zoekt-indexer/gitlab-zoekt-indexer-v0.24.0/gitlab-zoekt-indexer-v0.24.0.tar.bz2) = 152552
+TIMESTAMP = 1755691637
+SHA256 (go/textproc_gitlab-zoekt-indexer/gitlab-zoekt-indexer-v1.2.0/go.mod) = 17b5c5171037c83bf065acc0bca7a8994cc4f7952ba938326c69d0b31ac02de5
+SIZE (go/textproc_gitlab-zoekt-indexer/gitlab-zoekt-indexer-v1.2.0/go.mod) = 6838
+SHA256 (go/textproc_gitlab-zoekt-indexer/gitlab-zoekt-indexer-v1.2.0/gitlab-zoekt-indexer-v1.2.0.tar.bz2) = a378794cd4eee60d8cf6a5aa14a1ce2e6ee177f9c8b31e832356257aaa878301
+SIZE (go/textproc_gitlab-zoekt-indexer/gitlab-zoekt-indexer-v1.2.0/gitlab-zoekt-indexer-v1.2.0.tar.bz2) = 839590

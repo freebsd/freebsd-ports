@@ -6,7 +6,7 @@ Gitlab was installed successfully.
 You now need to set up the various components of Gitlab, so please
 follow the instructions in the guide at:
 
-https://gitlab.com/mfechner/freebsd-gitlab-docu/blob/master/install/18.2-freebsd.md
+https://gitlab.com/mfechner/freebsd-gitlab-docu/blob/master/install/18.3-freebsd.md
 EOM
   type: install
 }
@@ -18,9 +18,9 @@ EOM
 {
   message: <<EOM
 If you just installed an major upgrade of GitLab, for example you
-switched from 18.1.x to 18.2.x, please follow the instructions in the guide at:
+switched from 18.2.x to 18.3.x, please follow the instructions in the guide at:
 
-https://gitlab.com/mfechner/freebsd-gitlab-docu/blob/master/update/18.1-18.2-freebsd.md
+https://gitlab.com/mfechner/freebsd-gitlab-docu/blob/master/update/18.2-18.3-freebsd.md
 
 If you just installed an minor upgrade of GitLab please follow
 the instructions in the guide at:
