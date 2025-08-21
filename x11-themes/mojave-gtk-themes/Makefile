@@ -1,5 +1,5 @@
 PORTNAME=	mojave-gtk-themes
-DISTVERSION=	2022-06-07
+DISTVERSION=	2024-11-15
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
