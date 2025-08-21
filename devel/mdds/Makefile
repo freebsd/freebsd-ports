@@ -1,7 +1,7 @@
 PORTNAME=	mdds
-PORTVERSION=	2.1.1
+PORTVERSION=	3.1.0
 CATEGORIES=	devel
-MASTER_SITES=	https://kohei.us/files/mdds/src/
+#MASTER_SITES=	https://kohei.us/files/mdds/src/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Multi-dimensional data index algorithm
@@ -11,6 +11,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:xz
+
+USE_GITLAB=	yes
+GL_ACCOUNT=	mdds
 
 NO_ARCH=	yes
 NO_BUILD=	yes

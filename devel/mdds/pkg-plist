@@ -1,3 +1,4 @@
+include/mdds-%%API_VERSION%%/mdds/cref_wrapper.hpp
 include/mdds-%%API_VERSION%%/mdds/flat_segment_tree_def.inl
 include/mdds-%%API_VERSION%%/mdds/flat_segment_tree_itr.hpp
 include/mdds-%%API_VERSION%%/mdds/flat_segment_tree.hpp
@@ -15,6 +16,7 @@ include/mdds-%%API_VERSION%%/mdds/multi_type_vector/aos/main.hpp
 include/mdds-%%API_VERSION%%/mdds/multi_type_vector/block_funcs.hpp
 include/mdds-%%API_VERSION%%/mdds/multi_type_vector/collection_def.inl
 include/mdds-%%API_VERSION%%/mdds/multi_type_vector/collection.hpp
+include/mdds-%%API_VERSION%%/mdds/multi_type_vector/delayed_delete_vector.hpp
 include/mdds-%%API_VERSION%%/mdds/multi_type_vector/env.hpp
 include/mdds-%%API_VERSION%%/mdds/multi_type_vector/iterator_node.hpp
 include/mdds-%%API_VERSION%%/mdds/multi_type_vector/macro.hpp
