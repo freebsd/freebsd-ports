@@ -332,7 +332,7 @@ _USE_PLASMA_ALL=	${_USE_PLASMA${_KDE_VERSION}_ALL}
 
 # List of frequently used components of the KDE Gears distribution.
 _USE_GEAR5_ALL=		libkdcraw
-_USE_GEAR6_ALL=		baloo-widgets kate kosm kpublictransport \
+_USE_GEAR6_ALL=		baloo-widgets kosm kpublictransport \
 			libkcddb libkcompactdisc libkdcraw \
 			libkdegames libkeduvocdocument libkexiv2 \
 			libksane marble okular
@@ -961,9 +961,6 @@ kde-akonadi_LIB=		libKPim${_KDE_VERSION}AkonadiPrivate.so
 
 kde-baloo-widgets_PORT=		sysutils/baloo-widgets
 kde-baloo-widgets_LIB=		libKF${_KDE_VERSION}BalooWidgets.so
-
-kde-kate_PORT=			editors/kate
-kde-kate_PATH=			${QT_PLUGINDIR}/ktexteditor/katebacktracebrowserplugin.so
 
 kde-libkcddb_PORT=		audio/libkcddb
 kde-libkcddb_LIB=		libKCddb${_KDE_VERSION}.so
