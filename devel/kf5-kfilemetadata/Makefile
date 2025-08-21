@@ -22,10 +22,10 @@ USE_QT=		core gui xml \
 		buildtools:build qmake:build
 
 OPTIONS_DEFINE=	MOBIPOCKET
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 OPTIONS_SUB=	yes
 
 MOBIPOCKET_DESC=	Mobipocket plugin to handle metadata
 MOBIPOCKET_LIB_DEPENDS=	libqmobipocket.so:graphics/kdegraphics-mobipocket@qt5
+MOBIPOCKET_BROKEN=	does not build with KDE Gear 25.08
 
 .include <bsd.port.mk>
