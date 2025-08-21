@@ -1,10 +1,7 @@
 PORTNAME=	acpica
-PORTVERSION=	20250404
+PORTVERSION=	20250807
 CATEGORIES=	sysutils devel
-MASTER_SITES=	https://github.com/user-attachments/files/19600803/ \
-		LOCAL/jkim
 PKGNAMESUFFIX=	-tools
-DISTNAME=	${PORTNAME}-unix-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Tools from the ACPI Component Architecture (ACPICA) project
@@ -14,6 +11,7 @@ LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 
 USES=		gmake
+USE_GITHUB=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/generate/unix
 
@@ -24,9 +22,6 @@ PLIST_FILES=	${ACPICA_TOOLS:S,^,bin/,}
 
 MAKE_ARGS=	HOST=_FreeBSD PROGS="${ACPICA_TOOLS}"
 MAKE_ARGS+=	CC="${CC}" LEX="${FLEX}" YACC="${YACC}"
-
-post-patch:
-	( cd ${WRKSRC}/source/include && ${MV} ACPIXF.H acpixf.h )
 
 do-install:
 	${INSTALL_PROGRAM} ${ACPICA_TOOLS:S,^,${BUILD_WRKSRC}/bin/,} \
