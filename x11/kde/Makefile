@@ -10,7 +10,6 @@ RUN_DEPENDS=	kde-baseapps>=${KDE_APPLICATIONS_VERSION}:x11/kde-baseapps \
 		plasma6-plasma>=${KDE_PLASMA_VERSION}:x11/plasma6-plasma
 
 USES=		kde:6 metaport qt:6
-USE_QT=		# empty
 
 # The official VLC backend can be used, but vlc port still uses Qt5 for GUI.
 OPTIONS_DEFAULT=	MPV

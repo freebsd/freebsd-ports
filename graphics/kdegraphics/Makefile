@@ -7,7 +7,6 @@ COMMENT=	Graphics applications for KDE (meta port)
 WWW=		https://apps.kde.org/categories/graphics/
 
 USES=		kde:6 metaport qt:6
-USE_QT=		#
 
 OPTIONS_DEFINE=	COLORD \
 		GPHOTO \
