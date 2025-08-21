@@ -156,7 +156,6 @@
 %%DATADIR%%/Definitions/cyanbug.yml
 %%DATADIR%%/Definitions/damagnet.yml
 %%DATADIR%%/Definitions/danishbytes-api.yml
-%%DATADIR%%/Definitions/dark-shadow.yml
 %%DATADIR%%/Definitions/darkpeers.yml
 %%DATADIR%%/Definitions/dasunerwartete.yml
 %%DATADIR%%/Definitions/datascene-api.yml
@@ -201,8 +200,10 @@
 %%DATADIR%%/Definitions/file-tracker.yml
 %%DATADIR%%/Definitions/filemood.yml
 %%DATADIR%%/Definitions/finelite.yml
+%%DATADIR%%/Definitions/flood.yml
 %%DATADIR%%/Definitions/fluxzone.yml
 %%DATADIR%%/Definitions/freefarm.yml
+%%DATADIR%%/Definitions/freejavtorrent.yml
 %%DATADIR%%/Definitions/frozenlayer.yml
 %%DATADIR%%/Definitions/funkytorrents.yml
 %%DATADIR%%/Definitions/futuretorrent.yml
@@ -212,7 +213,6 @@
 %%DATADIR%%/Definitions/gay-torrentsorg.yml
 %%DATADIR%%/Definitions/gaytorrentru.yml
 %%DATADIR%%/Definitions/generationfree-api.yml
-%%DATADIR%%/Definitions/genesismovement.yml
 %%DATADIR%%/Definitions/ggpt.yml
 %%DATADIR%%/Definitions/gigatorrents.yml
 %%DATADIR%%/Definitions/gimmepeers.yml
@@ -253,6 +253,7 @@
 %%DATADIR%%/Definitions/helltorrents.yml
 %%DATADIR%%/Definitions/hhanclub.yml
 %%DATADIR%%/Definitions/hhd-api.yml
+%%DATADIR%%/Definitions/homeporntorrents.yml
 %%DATADIR%%/Definitions/houseofdevil.yml
 %%DATADIR%%/Definitions/hqmusic.yml
 %%DATADIR%%/Definitions/hudbt.yml
@@ -304,6 +305,7 @@
 %%DATADIR%%/Definitions/locadora.yml
 %%DATADIR%%/Definitions/losslessclub.yml
 %%DATADIR%%/Definitions/lst.yml
+%%DATADIR%%/Definitions/luckpt.yml
 %%DATADIR%%/Definitions/mactorrentsdownload.yml
 %%DATADIR%%/Definitions/madsrevolution.yml
 %%DATADIR%%/Definitions/magnetcat.yml
@@ -359,7 +361,6 @@
 %%DATADIR%%/Definitions/opencd.yml
 %%DATADIR%%/Definitions/opensharing.yml
 %%DATADIR%%/Definitions/oshenpt.yml
-%%DATADIR%%/Definitions/ostwiki.yml
 %%DATADIR%%/Definitions/ourbits.yml
 %%DATADIR%%/Definitions/oxtorrent-co.yml
 %%DATADIR%%/Definitions/oxtorrent-vip.yml
@@ -385,6 +386,7 @@
 %%DATADIR%%/Definitions/pornxlab.yml
 %%DATADIR%%/Definitions/portugas-api.yml
 %%DATADIR%%/Definitions/postman.yml
+%%DATADIR%%/Definitions/postman-api.yml
 %%DATADIR%%/Definitions/proaudiotorrents.yml
 %%DATADIR%%/Definitions/proporno.yml
 %%DATADIR%%/Definitions/ptcafe.yml
@@ -538,6 +540,7 @@
 %%DATADIR%%/Definitions/uploadcx.yml
 %%DATADIR%%/Definitions/upscalevault.yml
 %%DATADIR%%/Definitions/utopia.yml
+%%DATADIR%%/Definitions/uztracker.yml
 %%DATADIR%%/Definitions/vault-network.yml
 %%DATADIR%%/Definitions/videoteka.yml
 %%DATADIR%%/Definitions/vsthouse.yml
@@ -568,7 +571,6 @@
 %%DATADIR%%/Definitions/zetorrents.yml
 %%DATADIR%%/Definitions/zktorrent.yml
 %%DATADIR%%/Definitions/zmpt.yml
-%%DATADIR%%/Definitions/zomb.yml
 %%DATADIR%%/Definitions/ztracker.yml
 %%DATADIR%%/FlareSolverrSharp.dll
 %%DATADIR%%/ICSharpCode.SharpZipLib.dll
