@@ -1,3 +1,248 @@
+  <vuln vid="07335fb9-7eb1-11f0-ba14-b42e991fc52e">
+    <topic>Mozilla -- memory safety bugs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>142,2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>142</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1825621%2C1970079%2C1976736%2C1979072">
+	  <p>Memory safety bugs present in Firefox 141 and Thunderbird
+	  141. Some of these bugs showed evidence of memory corruption
+	  and we presume that with enough effort some of these could
+	  have been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9187</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-9187</url>
+    </references>
+    <dates>
+      <discovery>2025-08-19</discovery>
+      <entry>2025-08-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="feb359ef-7eb0-11f0-ba14-b42e991fc52e">
+    <topic>Mozilla -- memory safety bugs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>142,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.14</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>140.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1970154%2C1976782%2C1977166">
+	  <p>Memory safety bugs present in Firefox ESR 115.26, Firefox
+	  ESR 128.13, Thunderbird ESR 128.13, Firefox ESR 140.1,
+	  Thunderbird ESR 140.1, Firefox 141 and Thunderbird 141.
+	  Some of these bugs showed evidence of memory corruption and
+	  we presume that with enough effort some of these could have
+	  been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9184</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-9184</url>
+      <cvename>CVE-2025-9185</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-9185</url>
+    </references>
+    <dates>
+      <discovery>2025-08-19</discovery>
+      <entry>2025-08-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fa7fd6d4-7eb0-11f0-ba14-b42e991fc52e">
+    <topic>Firefox -- Spoofing in the Address Bar</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>142,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1976102">
+	  <p>Spoofing issue in the Address Bar component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9183</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-9183</url>
+    </references>
+    <dates>
+      <discovery>2025-08-19</discovery>
+      <entry>2025-08-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f994cea5-7eb0-11f0-ba14-b42e991fc52e">
+    <topic>Mozilla -- DoS in WebRender</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>142,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>142</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1975837">
+	  <p>&apos;Denial-of-service due to out-of-memory in the
+	  Graphics: WebRender component.&apos;</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9182</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-9182</url>
+    </references>
+    <dates>
+      <discovery>2025-08-19</discovery>
+      <entry>2025-08-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f7e8e9a3-7eb0-11f0-ba14-b42e991fc52e">
+    <topic>Mozilla -- Uninitialized memory</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>142,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>140.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1977130">
+	  <p>Uninitialized memory in the JavaScript Engine component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9181</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-9181</url>
+    </references>
+    <dates>
+      <discovery>2025-08-19</discovery>
+      <entry>2025-08-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f6219d24-7eb0-11f0-ba14-b42e991fc52e">
+    <topic>Mozilla -- Same-origin policy bypass</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>142,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>142</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1979782">
+	  <p>&apos;Same-origin policy bypass in the Graphics: Canvas2D
+	component.&apos;</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9180</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-9180</url>
+    </references>
+    <dates>
+      <discovery>2025-08-19</discovery>
+      <entry>2025-08-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f42ee983-7eb0-11f0-ba14-b42e991fc52e">
+    <topic>Mozilla -- memory corruption in GMP</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>142,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>140.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1979527">
+	  <p>An attacker was able to perform memory corruption in the GMP process
+	which processes encrypted media.  This process is also heavily
+	sandboxed, but represents slightly different privileges from the
+	content process.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9179</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-9179</url>
+    </references>
+    <dates>
+      <discovery>2025-08-19</discovery>
+      <entry>2025-08-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eb03714d-79f0-11f0-b4c1-ac5afc632ba3">
     <topic>nginx -- worker process memory disclosure</topic>
     <affects>
