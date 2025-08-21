@@ -246,6 +246,6 @@ include/solarus/third_party/hqx.h
 include/solarus/third_party/spc.h
 lib/libsolarus.so
 lib/libsolarus.so.2
-lib/libsolarus.so.2.0.0
+lib/libsolarus.so.2.0.1
 share/man/man6/solarus-run.6.gz
 %%DATADIR%%/gamecontrollerdb.txt
