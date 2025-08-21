@@ -1,9 +1,4 @@
 bin/kolourpaint
-etc/xdg/colors/40.colors
-etc/xdg/colors/Oxygen.colors
-etc/xdg/colors/Rainbow.colors
-etc/xdg/colors/Royal.colors
-etc/xdg/colors/Web.colors
 lib/libkolourpaint_lgpl.so
 lib/libkolourpaint_lgpl.so.5
 share/applications/org.kde.kolourpaint.desktop
@@ -13,6 +8,11 @@ share/icons/hicolor/22x22/apps/kolourpaint.png
 share/icons/hicolor/32x32/apps/kolourpaint.png
 share/icons/hicolor/48x48/apps/kolourpaint.png
 share/icons/hicolor/scalable/apps/kolourpaint.svgz
+%%DATADIR%%/colors/40.colors
+%%DATADIR%%/colors/Oxygen.colors
+%%DATADIR%%/colors/Rainbow.colors
+%%DATADIR%%/colors/Royal.colors
+%%DATADIR%%/colors/Web.colors
 %%DATADIR%%/icons/hicolor/16x16/actions/tool_brush.png
 %%DATADIR%%/icons/hicolor/16x16/actions/tool_color_eraser.png
 %%DATADIR%%/icons/hicolor/16x16/actions/tool_color_picker.png
