@@ -1,10 +1,9 @@
 PORTNAME=	foldingathome
 DISTVERSION=	8.4.9
 CATEGORIES=	biology linux
-MASTER_SITES=	${_MASTER_SITES}
+MASTER_SITES=	https://download.foldingathome.org/releases/public/fah-client/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	fah-client_${DISTVERSION}-64bit-release
-DISTFILES=	${_DISTFILES}
+DISTNAME=	${_DISTNAME_${ARCH}}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Folding@home Client
@@ -47,14 +46,12 @@ _FAHCLIENT_CONFIG_XML=	${ETCDIR}/config.xml
 _FAHCLIENT_WORK_DIR=	/var/db/fahclient
 _FAHCLIENT_PROGRAM=	${PREFIX}/bin/fah-client
 
-_MASTER_SITES_amd64=	https://download.foldingathome.org/releases/public/fah-client/debian-10-64bit/release/
-_MASTER_SITES_aarch64=	https://download.foldingathome.org/releases/public/fah-client/debian-stable-arm64/release/
+# The base name of the distribution file is the same for all supported
+# architectures, so we need to work around that in a creative way.
+_DISTNAME_amd64=	debian-10-64bit/release/fah-client_${DISTVERSION}-64bit-release
+_DISTNAME_aarch64=	debian-stable-arm64/release/fah-client_${DISTVERSION}-64bit-release
 .if make(makesum)
-_MASTER_SITES=		${ONLY_FOR_ARCHS:@.ARCH.@${_MASTER_SITES_${.ARCH.}}@}
-_DISTFILES=		${ONLY_FOR_ARCHS:@.ARCH.@${DISTNAME}${EXTRACT_SUFX}?a=${.ARCH.}@}
-.else
-_MASTER_SITES=		${_MASTER_SITES_${ARCH}}
-_DISTFILES=		${DISTNAME}${EXTRACT_SUFX}?a=${ARCH}
+DISTFILES=		${ONLY_FOR_ARCHS:@.ARCH.@${_DISTNAME_${.ARCH.}}${EXTRACT_SUFX}@}
 .endif
 
 do-install:
