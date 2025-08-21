@@ -35,7 +35,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pytorch
 GH_PROJECT=	audio
 
-# workaround for missing libsox.so
+# workaround for missing libsox.so, see https://github.com/pytorch/audio/issues/4062
 PLIST_FILES=	lib/python${_PYTHON_VERSION}/site-packages/torchaudio/lib/libsox.so
 
 post-patch:
@@ -49,7 +49,7 @@ post-install:
 		torchaudio/lib/_torchaudio_sox.so \
 		torchaudio/lib/libtorchaudio.so \
 		torchaudio/lib/libtorchaudio_sox.so
-	# workaround for missing libsox.so
+	# workaround for missing libsox.so, see https://github.com/pytorch/audio/issues/4062
 	@${CP} \
 		${WRKSRC}/build/*/third_party/sox/libsox.so \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/torchaudio/lib
