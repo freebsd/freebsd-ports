@@ -1,10 +1,11 @@
-bin/hla_tcp
+bin/hla-http
+bin/hla-tcp
 bin/hlc
-bin/hlf
-bin/hlm
-bin/hlp
-bin/hlr
-bin/hls
+bin/hlk
+bin/hls-filesharer
+bin/hls-messenger
+bin/hls-pinger
+bin/hls-remoter
 %%PORTDOCS%%%%DOCSDIR%%/CODESTYLE.md
 %%PORTDOCS%%%%DOCSDIR%%/DEF_PORTS.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md

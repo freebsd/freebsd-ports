@@ -1,7 +1,6 @@
 PORTNAME=	hidden-lake
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.6
-PORTREVISION=	2
+DISTVERSION=	1.9.0
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	alven@FreeBSD.org
@@ -14,13 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 
 GO_MODULE=	github.com/number571/hidden-lake
-GO_TARGET=	./cmd/hla/hla_tcp:hla_tcp \
+GO_TARGET=	./cmd/hla/hla-http:hla-http \
+		./cmd/hla/hla-tcp:hla-tcp \
 		./cmd/hlc:hlc \
-		./cmd/hlf:hlf \
-		./cmd/hlm:hlm \
-		./cmd/hlp:hlp \
-		./cmd/hlr:hlr \
-		./cmd/hls:hls
+		./cmd/hlk:hlk \
+		./cmd/hls/hls-filesharer:hls-filesharer \
+		./cmd/hls/hls-messenger:hls-messenger \
+		./cmd/hls/hls-pinger:hls-pinger \
+		./cmd/hls/hls-remoter:hls-remoter
 
 TEST_TARGET=	test-run
 
