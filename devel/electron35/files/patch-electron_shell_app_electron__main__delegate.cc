@@ -1,6 +1,6 @@
---- electron/shell/app/electron_main_delegate.cc.orig	2025-01-29 20:10:57 UTC
+--- electron/shell/app/electron_main_delegate.cc.orig	2025-08-19 00:41:48 UTC
 +++ electron/shell/app/electron_main_delegate.cc
-@@ -59,13 +59,13 @@
+@@ -63,13 +63,13 @@
  #include "chrome/child/v8_crashpad_support_win.h"
  #endif
  
@@ -16,7 +16,7 @@
  #include "components/crash/core/app/crash_switches.h"  // nogncheck
  #include "components/crash/core/app/crashpad.h"        // nogncheck
  #include "components/crash/core/common/crash_key.h"
-@@ -156,7 +156,7 @@ bool ElectronPathProvider(int key, base::FilePath* res
+@@ -160,7 +160,7 @@ bool ElectronPathProvider(int key, base::FilePath* res
        create_dir = true;
        break;
      }
@@ -25,7 +25,7 @@
      case DIR_APP_DATA: {
        auto env = base::Environment::Create();
        cur = base::nix::GetXDGDirectory(
-@@ -282,7 +282,7 @@ std::optional<int> ElectronMainDelegate::BasicStartupC
+@@ -302,7 +302,7 @@ std::optional<int> ElectronMainDelegate::BasicStartupC
      base::win::PinUser32();
  #endif
  
@@ -34,7 +34,7 @@
    // Check for --no-sandbox parameter when running as root.
    if (getuid() == 0 && IsSandboxEnabled(command_line))
      LOG(FATAL) << "Running as root without --"
-@@ -332,7 +332,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
+@@ -352,7 +352,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
        /* is_preinit = */ IsBrowserProcess() || IsZygoteProcess());
  #endif
  
@@ -43,7 +43,7 @@
    crash_reporter::InitializeCrashKeys();
  #endif
  
-@@ -367,7 +367,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
+@@ -387,7 +387,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
    }
  #endif
  
@@ -52,7 +52,7 @@
    crash_keys::SetCrashKeysFromCommandLine(*command_line);
    crash_keys::SetPlatformCrashKey();
  #endif
-@@ -402,7 +402,7 @@ std::optional<int> ElectronMainDelegate::PreBrowserMai
+@@ -422,7 +422,7 @@ std::optional<int> ElectronMainDelegate::PreBrowserMai
  #if BUILDFLAG(IS_MAC)
    RegisterAtomCrApp();
  #endif
