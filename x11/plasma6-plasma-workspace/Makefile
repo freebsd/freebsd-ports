@@ -1,5 +1,6 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 COMMENT=	KDE Plasma Workspace
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-util.so:x11/xcb-util \
 		libxkbcommon.so:x11/libxkbcommon \
-		libQCoro6Core.so:devel/qcoro@qt6
+		libQCoro6Core.so:devel/qcoro
 RUN_DEPENDS=	kio-extras>=24.12.3:devel/kio-extras \
 		kio-fuse>=5.1.0_1:filesystems/kio-fuse \
 		mkfontscale:x11-fonts/mkfontscale \

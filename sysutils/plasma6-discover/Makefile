@@ -1,5 +1,6 @@
 PORTNAME=	discover
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,7 +10,7 @@ WWW=		https://www.kde.org/plasma-desktop
 LIB_DEPENDS=	libAppStreamQt.so:devel/appstream-qt \
 		libpackagekitqt6.so:ports-mgmt/packagekit-qt \
 		libmarkdown.so:textproc/discount \
-		libQCoro6Core.so:devel/qcoro@qt6
+		libQCoro6Core.so:devel/qcoro
 RUN_DEPENDS=	PackageKit>0:ports-mgmt/packagekit
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl kde:6 \

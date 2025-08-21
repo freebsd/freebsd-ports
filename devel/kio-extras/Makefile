@@ -1,5 +1,6 @@
 PORTNAME=	kio-extras
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	2
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,7 +11,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libImath.so:math/Imath \
 		libkdsoap-qt6.so:www/kdsoap \
 		libKDSoapWSDiscoveryClient.so:www/kdsoap-ws-discovery-client\
-		libQCoro6Core.so:devel/qcoro@qt6
+		libQCoro6Core.so:devel/qcoro
 
 USES=		cmake compiler:c++11-lib gettext gperf kde:6 pkgconfig qt:6 \
 		shared-mime-info shebangfix tar:xz xorg
