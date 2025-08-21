@@ -4651,3 +4651,4 @@ graphics/libkexiv2@qt5||2025-08-08|Unflavorize; Qt5 flavor is not needed anymore
 graphics/libkexiv2@qt6|graphics/libkexiv2|2025-08-08|Unflavorize; Qt5 flavor is not needed anymore
 devel/qcoro@qt5||2025-08-15|Unflavorize; Qt5 flavor has no consumers
 devel/qcoro@qt6|devel/qcoro|2025-08-15|Unflavorize; Qt5 flavor has no consumers
+devel/cervisia||2025-08-15|Not ported to Qt6 and excluded from KDE Gear releases
