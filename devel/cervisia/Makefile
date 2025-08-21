@@ -5,7 +5,8 @@ CATEGORIES=	devel kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	CVS Frontend for KDE
 
-DEPRECATED=	Abandoned and excluded from future KDE Gear releases
+IGNORE=		Abandoned and excluded from KDE Gear releases
+DEPRECATED=	Abandoned and excluded from KDE Gear releases
 EXPIRATION_DATE=	2025-08-31
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \

@@ -6992,12 +6992,14 @@ share/locale/pt_BR/LC_MESSAGES/calligra_shape_text.mo
 share/locale/pt_BR/LC_MESSAGES/calligra_shape_threed.mo
 share/locale/pt_BR/LC_MESSAGES/calligra_shape_vector.mo
 share/locale/pt_BR/LC_MESSAGES/calligra_shape_video.mo
+share/locale/pt_BR/LC_MESSAGES/calligra_shape_webshape.mo
 share/locale/pt_BR/LC_MESSAGES/calligra_textediting_autocorrect.mo
 share/locale/pt_BR/LC_MESSAGES/calligra_textediting_changecase.mo
 share/locale/pt_BR/LC_MESSAGES/calligra_textediting_spellcheck.mo
 share/locale/pt_BR/LC_MESSAGES/calligra_textediting_thesaurus.mo
 share/locale/pt_BR/LC_MESSAGES/calligra_textinlineobject_variables.mo
 share/locale/pt_BR/LC_MESSAGES/calligrafilters.mo
+share/locale/pt_BR/LC_MESSAGES/calligralauncher.mo
 share/locale/pt_BR/LC_MESSAGES/calligrasheets.mo
 share/locale/pt_BR/LC_MESSAGES/calligrasheets_calendar.mo
 share/locale/pt_BR/LC_MESSAGES/calligrasheets_solver.mo

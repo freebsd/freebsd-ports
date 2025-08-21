@@ -1510,10 +1510,12 @@ share/locale/pt_BR/LC_MESSAGES/kgetplugin.mo
 share/locale/pt_BR/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/pt_BR/LC_MESSAGES/khtmltts.mo
 share/locale/pt_BR/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/pt_BR/LC_MESSAGES/konqsidebar.mo
 share/locale/pt_BR/LC_MESSAGES/konqueror.mo
 share/locale/pt_BR/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/pt_BR/LC_MESSAGES/libkonq.mo
 share/locale/pt_BR/LC_MESSAGES/searchbarplugin.mo
+share/locale/pt_BR/LC_MESSAGES/temporarysavedir.mo
 share/locale/pt_BR/LC_MESSAGES/uachangerplugin.mo
 share/locale/pt_BR/LC_MESSAGES/webarchiver.mo
 share/locale/pt_BR/LC_MESSAGES/webenginepart.mo

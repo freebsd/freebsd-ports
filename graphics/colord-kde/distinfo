@@ -1,3 +1,3 @@
-TIMESTAMP = 1751381448
-SHA256 (KDE/release-service/25.04.3/colord-kde-25.04.3.tar.xz) = bcebe47737750d066e9c5560a7f9398bbe6327cf265714b3c708a4d1d6ea1803
-SIZE (KDE/release-service/25.04.3/colord-kde-25.04.3.tar.xz) = 120080
+TIMESTAMP = 1754646358
+SHA256 (KDE/release-service/25.08.0/colord-kde-25.08.0.tar.xz) = 73a619de531c76086973efce0ee1a1520bd385cff2e5708e2921123354c4552a
+SIZE (KDE/release-service/25.08.0/colord-kde-25.08.0.tar.xz) = 120040

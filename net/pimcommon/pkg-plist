@@ -102,7 +102,6 @@ include/KPim6/PimCommonAkonadi/PimCommonAkonadi/ImapResourceCapabilitiesManager
 include/KPim6/PimCommonAkonadi/PimCommonAkonadi/IncidencesForWidget
 include/KPim6/PimCommonAkonadi/PimCommonAkonadi/LdapSearchDialog
 include/KPim6/PimCommonAkonadi/PimCommonAkonadi/MailUtil
-include/KPim6/PimCommonAkonadi/PimCommonAkonadi/ManageServerSideSubscriptionJob
 include/KPim6/PimCommonAkonadi/PimCommonAkonadi/PluginInterface
 include/KPim6/PimCommonAkonadi/PimCommonAkonadi/ProgressManagerAkonadi
 include/KPim6/PimCommonAkonadi/PimCommonAkonadi/RecentAddresses
@@ -120,7 +119,6 @@ include/KPim6/PimCommonAkonadi/pimcommonakonadi/imapresourcecapabilitiesmanager.
 include/KPim6/PimCommonAkonadi/pimcommonakonadi/incidencesforwidget.h
 include/KPim6/PimCommonAkonadi/pimcommonakonadi/ldapsearchdialog.h
 include/KPim6/PimCommonAkonadi/pimcommonakonadi/mailutil.h
-include/KPim6/PimCommonAkonadi/pimcommonakonadi/manageserversidesubscriptionjob.h
 include/KPim6/PimCommonAkonadi/pimcommonakonadi/pimcommonakonadi_export.h
 include/KPim6/PimCommonAkonadi/pimcommonakonadi/plugininterface.h
 include/KPim6/PimCommonAkonadi/pimcommonakonadi/progressmanagerakonadi.h

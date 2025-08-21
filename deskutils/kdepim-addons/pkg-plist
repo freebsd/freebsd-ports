@@ -4,6 +4,8 @@ bin/kmail_fprot.sh
 bin/kmail_sav.sh
 etc/xdg/kmail.antispamrc
 etc/xdg/kmail.antivirusrc
+lib/libKPim6AutoGenerateText.so.6
+lib/libKPim6AutoGenerateText.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libakonadidatasetools.so.6
 lib/libakonadidatasetools.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libdkimverifyconfigure.so.6
@@ -44,11 +46,15 @@ lib/libshorturlpluginprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/pim6/kmail/mainview/kmail_akonadidatabasetoolplugin.so
 %%QT_PLUGINDIR%%/pim6/kmail/mainview/kmail_antispamplugin.so
 %%QT_PLUGINDIR%%/pim6/kmail/mainview/kmail_antivirusplugin.so
+%%QT_PLUGINDIR%%/pim6/kmail/mainview/kmail_checkfoldersizeaccount.so
 %%QT_PLUGINDIR%%/pim6/kmail/mainview/kmail_expertplugin.so
 %%QT_PLUGINDIR%%/pim6/kmail/plugincheckbeforesend/kmail_automaticaddcontactseditorplugin.so
 %%QT_PLUGINDIR%%/pim6/kmail/plugincheckbeforesend/kmail_checkbeforesendeditorplugin.so
 %%QT_PLUGINDIR%%/pim6/kmail/plugincheckbeforesend/kmail_confirmaddresseditorplugin.so
+%%QT_PLUGINDIR%%/pim6/kmail/plugineditor/kmail_aitooleditorplugin.so
+%%QT_PLUGINDIR%%/pim6/kmail/plugineditor/kmail_askautogeneratetexteditorplugin.so
 %%QT_PLUGINDIR%%/pim6/kmail/plugineditor/kmail_autocorrectioneditorplugin.so
+%%QT_PLUGINDIR%%/pim6/kmail/plugineditor/kmail_autogenerateanswerseditorplugin.so
 %%QT_PLUGINDIR%%/pim6/kmail/plugineditor/kmail_changecaseeditorplugin.so
 %%QT_PLUGINDIR%%/pim6/kmail/plugineditor/kmail_insertemaileditorplugin.so
 %%QT_PLUGINDIR%%/pim6/kmail/plugineditor/kmail_insertshorturleditorplugin.so
@@ -117,6 +123,7 @@ share/locale/ar/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/ar/LC_MESSAGES/kmail_plugins.mo
 share/locale/ar/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/ar/LC_MESSAGES/korganizer_plugins.mo
+share/locale/ar/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/ar/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/ar/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/ar/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -196,6 +203,7 @@ share/locale/bg/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/bg/LC_MESSAGES/kmail_plugins.mo
 share/locale/bg/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/bg/LC_MESSAGES/korganizer_plugins.mo
+share/locale/bg/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/bg/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/bg/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/bg/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -232,6 +240,7 @@ share/locale/ca/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/ca/LC_MESSAGES/kmail_plugins.mo
 share/locale/ca/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/ca/LC_MESSAGES/korganizer_plugins.mo
+share/locale/ca/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/ca/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/ca/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/ca/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -257,6 +266,7 @@ share/locale/ca@valencia/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/kmail_plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/korganizer_plugins.mo
+share/locale/ca@valencia/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/ca@valencia/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/ca@valencia/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/ca@valencia/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -334,6 +344,7 @@ share/locale/de/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/de/LC_MESSAGES/kmail_plugins.mo
 share/locale/de/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/de/LC_MESSAGES/korganizer_plugins.mo
+share/locale/de/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/de/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/de/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/de/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -415,6 +426,7 @@ share/locale/es/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/es/LC_MESSAGES/kmail_plugins.mo
 share/locale/es/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/es/LC_MESSAGES/korganizer_plugins.mo
+share/locale/es/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/es/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/es/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/es/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -464,6 +476,7 @@ share/locale/eu/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/eu/LC_MESSAGES/kmail_plugins.mo
 share/locale/eu/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/eu/LC_MESSAGES/korganizer_plugins.mo
+share/locale/eu/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/eu/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/eu/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/eu/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -493,6 +506,7 @@ share/locale/fi/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/fi/LC_MESSAGES/kmail_plugins.mo
 share/locale/fi/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/fi/LC_MESSAGES/korganizer_plugins.mo
+share/locale/fi/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/fi/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/fi/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/fi/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -518,6 +532,7 @@ share/locale/fr/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/fr/LC_MESSAGES/kmail_plugins.mo
 share/locale/fr/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/fr/LC_MESSAGES/korganizer_plugins.mo
+share/locale/fr/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/fr/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/fr/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/fr/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -553,6 +568,7 @@ share/locale/gl/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/gl/LC_MESSAGES/kmail_plugins.mo
 share/locale/gl/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/gl/LC_MESSAGES/korganizer_plugins.mo
+share/locale/gl/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/gl/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/gl/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/gl/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -578,6 +594,7 @@ share/locale/he/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/he/LC_MESSAGES/kmail_plugins.mo
 share/locale/he/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/he/LC_MESSAGES/korganizer_plugins.mo
+share/locale/he/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/he/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/he/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/he/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -644,6 +661,7 @@ share/locale/ia/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/ia/LC_MESSAGES/kmail_plugins.mo
 share/locale/ia/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/ia/LC_MESSAGES/korganizer_plugins.mo
+share/locale/ia/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/ia/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/ia/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/ia/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -673,6 +691,7 @@ share/locale/it/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/it/LC_MESSAGES/kmail_plugins.mo
 share/locale/it/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/it/LC_MESSAGES/korganizer_plugins.mo
+share/locale/it/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/it/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/it/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/it/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -723,6 +742,7 @@ share/locale/ka/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/ka/LC_MESSAGES/kmail_plugins.mo
 share/locale/ka/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/ka/LC_MESSAGES/korganizer_plugins.mo
+share/locale/ka/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/ka/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/ka/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/ka/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -759,6 +779,7 @@ share/locale/ko/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/ko/LC_MESSAGES/kmail_plugins.mo
 share/locale/ko/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/ko/LC_MESSAGES/korganizer_plugins.mo
+share/locale/ko/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/ko/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/ko/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/ko/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -846,6 +867,7 @@ share/locale/nl/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/nl/LC_MESSAGES/kmail_plugins.mo
 share/locale/nl/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/nl/LC_MESSAGES/korganizer_plugins.mo
+share/locale/nl/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/nl/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/nl/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/nl/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -881,6 +903,7 @@ share/locale/pl/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/pl/LC_MESSAGES/kmail_plugins.mo
 share/locale/pl/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/pl/LC_MESSAGES/korganizer_plugins.mo
+share/locale/pl/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/pl/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/pl/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/pl/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -931,6 +954,7 @@ share/locale/pt_BR/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/pt_BR/LC_MESSAGES/kmail_plugins.mo
 share/locale/pt_BR/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/pt_BR/LC_MESSAGES/korganizer_plugins.mo
+share/locale/pt_BR/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/pt_BR/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/pt_BR/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/pt_BR/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -1044,6 +1068,7 @@ share/locale/sl/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/sl/LC_MESSAGES/kmail_plugins.mo
 share/locale/sl/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/sl/LC_MESSAGES/korganizer_plugins.mo
+share/locale/sl/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/sl/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/sl/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/sl/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -1151,6 +1176,7 @@ share/locale/sv/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/sv/LC_MESSAGES/kmail_plugins.mo
 share/locale/sv/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/sv/LC_MESSAGES/korganizer_plugins.mo
+share/locale/sv/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/sv/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/sv/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/sv/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -1209,6 +1235,7 @@ share/locale/tr/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/tr/LC_MESSAGES/kmail_plugins.mo
 share/locale/tr/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/tr/LC_MESSAGES/korganizer_plugins.mo
+share/locale/tr/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/tr/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/tr/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/tr/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -1240,6 +1267,7 @@ share/locale/uk/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/uk/LC_MESSAGES/kmail_plugins.mo
 share/locale/uk/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/uk/LC_MESSAGES/korganizer_plugins.mo
+share/locale/uk/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/uk/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/uk/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/uk/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -1277,6 +1305,7 @@ share/locale/zh_CN/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/zh_CN/LC_MESSAGES/kmail_plugins.mo
 share/locale/zh_CN/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/zh_CN/LC_MESSAGES/korganizer_plugins.mo
+share/locale/zh_CN/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/zh_CN/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/zh_CN/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/zh_CN/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
@@ -1302,6 +1331,7 @@ share/locale/zh_TW/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/zh_TW/LC_MESSAGES/kmail_plugins.mo
 share/locale/zh_TW/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/zh_TW/LC_MESSAGES/korganizer_plugins.mo
+share/locale/zh_TW/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/zh_TW/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/zh_TW/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/zh_TW/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo

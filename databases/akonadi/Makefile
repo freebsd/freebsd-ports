@@ -1,6 +1,8 @@
 PORTNAME=	akonadi
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	databases kde kde-applications
+PATCH_SITES=	https://invent.kde.org/pim/akonadi/-/commit/
+PATCHFILES=	6964e49050e9e6e094669c74ac8527faabaaffb6.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Storage server for KDE-Pim

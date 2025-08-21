@@ -28,6 +28,7 @@ include/kdevplatform/documentation/documentationexport.h
 include/kdevplatform/documentation/documentationfindwidget.h
 include/kdevplatform/documentation/standarddocumentationview.h
 include/kdevplatform/execute/iexecuteplugin.h
+include/kdevplatform/execute/iexecutepluginhelpers.h
 include/kdevplatform/executescript/iexecutescriptplugin.h
 include/kdevplatform/interfaces/configpage.h
 include/kdevplatform/interfaces/context.h
@@ -577,7 +578,7 @@ share/icons/hicolor/16x16/apps/github-private.png
 share/icons/hicolor/16x16/apps/github-repo.png
 share/icons/hicolor/16x16/apps/kdevelop.png
 share/icons/hicolor/16x16/apps/kdevgh.png
-@comment share/icons/hicolor/16x16/apps/subversion.png
+share/icons/hicolor/16x16/apps/subversion.png
 share/icons/hicolor/22x22/actions/breakpoint.png
 share/icons/hicolor/256x256/apps/kdevelop.png
 share/icons/hicolor/32x32/actions/breakpoint.png
@@ -1782,10 +1783,25 @@ share/locale/gl/LC_MESSAGES/kdevvcsprojectintegration.mo
 share/locale/gl/LC_MESSAGES/kdevwelcomepage.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
+share/locale/he/LC_MESSAGES/kdevandroid.mo
 share/locale/he/LC_MESSAGES/kdevbazaar.mo
+share/locale/he/LC_MESSAGES/kdevclassbrowser.mo
+share/locale/he/LC_MESSAGES/kdevcodeutils.mo
+share/locale/he/LC_MESSAGES/kdevdocker.mo
+share/locale/he/LC_MESSAGES/kdevdocumentswitcher.mo
+share/locale/he/LC_MESSAGES/kdevdocumentview.mo
+share/locale/he/LC_MESSAGES/kdevfilemanager.mo
 share/locale/he/LC_MESSAGES/kdevkonsole.mo
+share/locale/he/LC_MESSAGES/kdevmanpage.mo
+share/locale/he/LC_MESSAGES/kdevokteta.mo
+share/locale/he/LC_MESSAGES/kdevoutlineview.mo
+share/locale/he/LC_MESSAGES/kdevqmakebuilder.mo
 share/locale/he/LC_MESSAGES/kdevswitchtobuddy.mo
+share/locale/he/LC_MESSAGES/kdevtestview.mo
+share/locale/he/LC_MESSAGES/kdevvcsprojectintegration.mo
+share/locale/he/LC_MESSAGES/kdevwelcomepage.mo
 share/locale/he/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
+share/locale/he/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/locale/hi/LC_MESSAGES/kdevandroid.mo
 share/locale/hi/LC_MESSAGES/kdevappwizard.mo
 share/locale/hi/LC_MESSAGES/kdevastyle.mo

@@ -7,16 +7,6 @@ lib/libMerkuroComponents.so.6
 lib/libmerkuro_contact.so
 lib/libmerkuro_contact.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libmerkuro_contact.so.6
-%%QT_QMLDIR%%/org/kde/akonadi/AgentConfigurationForm.qml
-%%QT_QMLDIR%%/org/kde/akonadi/CollectionChooserPage.qml
-%%QT_QMLDIR%%/org/kde/akonadi/CollectionComboBox.qml
-%%QT_QMLDIR%%/org/kde/akonadi/MobileCollectionComboBox.qml
-%%QT_QMLDIR%%/org/kde/akonadi/ProgressStatusBar.qml
-%%QT_QMLDIR%%/org/kde/akonadi/TagManagerPage.qml
-%%QT_QMLDIR%%/org/kde/akonadi/akonadi_quick_plugin.qmltypes
-%%QT_QMLDIR%%/org/kde/akonadi/kde-qmlmodule.version
-%%QT_QMLDIR%%/org/kde/akonadi/libakonadi_quick_plugin.so
-%%QT_QMLDIR%%/org/kde/akonadi/qmldir
 %%QT_QMLDIR%%/org/kde/merkuro/components/BaseApplication.qml
 %%QT_QMLDIR%%/org/kde/merkuro/components/ColoredCheckbox.qml
 %%QT_QMLDIR%%/org/kde/merkuro/components/EditMenu.qml
@@ -213,6 +203,5 @@ share/plasma/plasmoids/org.kde.merkuro.contact.applet/contents/ui/QrCodePage.qml
 share/plasma/plasmoids/org.kde.merkuro.contact.applet/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.merkuro.contact.applet/metadata.json
 share/plasma/plasmoids/org.kde.merkuro.contact.applet/metadata.json.license
-share/qlogging-categories6/akonadi.quick.categories
 share/qlogging-categories6/merkuro.categories
 share/qlogging-categories6/merkuro.contact.categories

@@ -535,6 +535,7 @@ share/locale/pt/LC_MESSAGES/marble_qt.qm
 share/locale/pt/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
 share/locale/pt/LC_MESSAGES/plasma_runner_marble.mo
 share/locale/pt/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
+share/locale/pt_BR/LC_MESSAGES/marble-behaim.mo
 share/locale/pt_BR/LC_MESSAGES/marble-maps.mo
 share/locale/pt_BR/LC_MESSAGES/marble.mo
 share/locale/pt_BR/LC_MESSAGES/marble_qt.qm

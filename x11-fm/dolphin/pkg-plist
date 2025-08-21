@@ -17,6 +17,7 @@ lib/libdolphinvcs.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libdolphinvcs.so.%%SHLIB_SHVER%%
 %%QT_PLUGINDIR%%/dolphin/kcms/kcm_dolphingeneral.so
 %%QT_PLUGINDIR%%/dolphin/kcms/kcm_dolphinviewmodes.so
+%%QT_PLUGINDIR%%/kf%%SHLIB_SHVER%%/kfileitemaction/setfoldericonitemaction.so
 %%QT_PLUGINDIR%%/kf6/kfileitemaction/movetonewfolderitemaction.so
 %%QT_PLUGINDIR%%/kf6/parts/dolphinpart.so
 lib/systemd/user/plasma-dolphin.service
@@ -34,8 +35,8 @@ share/dbus-1/services/org.kde.dolphin.FileManager1.service
 %%DATADIR%%/dolphinpartactions.desktop
 share/icons/hicolor/scalable/apps/org.kde.dolphin.svg
 share/kconf_update/dolphin_detailsmodesettings.upd
-share/kconf_update/dolphin_directorysizemode.py
-share/kconf_update/dolphin_directorysizemode.upd
+share/kconf_update/dolphin_replace_view_mode_with_view_settings_in_toolbar.py
+share/kconf_update/dolphin_replace_view_mode_with_view_settings_in_toolbar.upd
 share/kconf_update/dolphin_statusandlocationbarssettings.upd
 share/kglobalaccel/org.kde.dolphin.desktop
 share/knsrcfiles/servicemenu.knsrc

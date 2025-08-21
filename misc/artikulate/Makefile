@@ -6,13 +6,11 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Pronunciation trainer for KDE
 WWW=		https://edu.kde.org/
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
-USE_KDE=	archive attica auth codecs config configwidgets coreaddons \
-		crash i18n kdeclarative newstuff service widgetsaddons xmlgui \
+USES=		cmake compiler:c++11-lang gettext gnome kde:6 qt:6 tar:xz
+USE_GNOME=	libxml2
+USE_KDE=	archive config crash i18n itemmodels kirigami2 newstuff \
 		doctools:build ecm:build
-USE_QT=		core dbus declarative gui multimedia network sql testlib \
-		widgets xml xmlpatterns \
-		buildtools:build qmake:build
+USE_QT=		base declarative multimedia
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

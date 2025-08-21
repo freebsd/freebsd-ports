@@ -13,6 +13,8 @@ lib/libKUnifiedPush.so
 lib/libKUnifiedPush.so.1
 lib/libKUnifiedPush.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_push_notifications.so
+lib/systemd/user/graphical-session.target.wants/kunifiedpush-distributor.service
+lib/systemd/user/kunifiedpush-distributor.service
 share/applications/kcm_push_notifications.desktop
 share/locale/ar/LC_MESSAGES/kcm_push_notifications.mo
 share/locale/ast/LC_MESSAGES/kcm_push_notifications.mo
@@ -30,6 +32,7 @@ share/locale/fr/LC_MESSAGES/kcm_push_notifications.mo
 share/locale/gl/LC_MESSAGES/kcm_push_notifications.mo
 share/locale/he/LC_MESSAGES/kcm_push_notifications.mo
 share/locale/hi/LC_MESSAGES/kcm_push_notifications.mo
+share/locale/hu/LC_MESSAGES/kcm_push_notifications.mo
 share/locale/ia/LC_MESSAGES/kcm_push_notifications.mo
 share/locale/it/LC_MESSAGES/kcm_push_notifications.mo
 share/locale/ja/LC_MESSAGES/kcm_push_notifications.mo

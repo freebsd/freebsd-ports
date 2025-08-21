@@ -1,6 +1,5 @@
 PORTNAME=	kontrast
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics accessibility kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

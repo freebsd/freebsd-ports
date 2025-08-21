@@ -1,6 +1,6 @@
 bin/kig
 bin/pykig.py
-%%QT_PLUGINDIR%%/kf5/parts/kigpart.so
+%%QT_PLUGINDIR%%/kf6/parts/kigpart.so
 share/applications/org.kde.kig.desktop
 share/icons/hicolor/128x128/apps/kig.png
 share/icons/hicolor/128x128/mimetypes/application-x-kig.png

@@ -5,6 +5,7 @@ bin/akonadi_agent_server
 bin/akonadi_control
 bin/akonadi_knut_resource
 bin/akonadi_rds
+bin/akonadiagentconfigdialog
 bin/akonadictl
 bin/akonadiselftest
 bin/akonadiserver
@@ -46,6 +47,11 @@ include/KPim6/AkonadiAgentBase/akonadi/resourcebase.h
 include/KPim6/AkonadiAgentBase/akonadi/resourcebasesettings.h
 include/KPim6/AkonadiAgentBase/akonadi/resourcesettings.h
 include/KPim6/AkonadiAgentBase/akonadi/transportresourcebase.h
+include/KPim6/AkonadiAgentWidgetBase/Akonadi/AgentWidgetBase
+include/KPim6/AkonadiAgentWidgetBase/Akonadi/ResourceWidgetBase
+include/KPim6/AkonadiAgentWidgetBase/akonadi/agentwidgetbase.h
+include/KPim6/AkonadiAgentWidgetBase/akonadi/akonadiagentwidgetbase_export.h
+include/KPim6/AkonadiAgentWidgetBase/akonadi/resourcewidgetbase.h
 include/KPim6/AkonadiCore/Akonadi/AbstractDifferencesReporter
 include/KPim6/AkonadiCore/Akonadi/AccountActivitiesAbstract
 include/KPim6/AkonadiCore/Akonadi/AgentConfigurationBase
@@ -326,6 +332,9 @@ lib/cmake/KPim6Akonadi/KPimAkonadiMacros.cmake
 lib/libKPim6AkonadiAgentBase.so
 lib/libKPim6AkonadiAgentBase.so.6
 lib/libKPim6AkonadiAgentBase.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6AkonadiAgentWidgetBase.so
+lib/libKPim6AkonadiAgentWidgetBase.so.6
+lib/libKPim6AkonadiAgentWidgetBase.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libKPim6AkonadiCore.so
 lib/libKPim6AkonadiCore.so.6
 lib/libKPim6AkonadiCore.so.%%KDE_APPLICATIONS_SHLIB_VER%%
@@ -340,7 +349,18 @@ lib/libKPim6AkonadiXml.so.6
 lib/libKPim6AkonadiXml.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/designer/akonadi6widgets.so
 %%QT_PLUGINDIR%%/pim6/akonadi/akonadi_test_searchplugin.so
+%%QT_PLUGINDIR%%/pim6/akonadi/config/knutconfig.so
+%%QT_QMLDIR%%/org/kde/akonadi/AgentConfigurationForm.qml
+%%QT_QMLDIR%%/org/kde/akonadi/CollectionChooserPage.qml
+%%QT_QMLDIR%%/org/kde/akonadi/CollectionComboBox.qml
+%%QT_QMLDIR%%/org/kde/akonadi/FormCollectionComboBox.qml
+%%QT_QMLDIR%%/org/kde/akonadi/TagManagerPage.qml
+%%QT_QMLDIR%%/org/kde/akonadi/akonadi_quick_plugin.qmltypes
+%%QT_QMLDIR%%/org/kde/akonadi/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/akonadi/libakonadi_quick_plugin.so
+%%QT_QMLDIR%%/org/kde/akonadi/qmldir
 %%DATADIR%%/agents/knutresource.desktop
+share/applications/org.kde.akonadi.configdialog.desktop
 share/config.kcfg/resourcebase.kcfg
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Search.xml
@@ -487,6 +507,7 @@ share/locale/pl/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/pl/LC_MESSAGES/libakonadi6.mo
 share/locale/pt/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/pt/LC_MESSAGES/libakonadi6.mo
+share/locale/pt_BR/LC_MESSAGES/akonadi-db-migrator.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/pt_BR/LC_MESSAGES/libakonadi6.mo
 share/locale/ro/LC_MESSAGES/akonadi_knut_resource.mo
