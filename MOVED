@@ -1883,7 +1883,6 @@ x11/plasma5-kwayland-server|x11-wm/plasma5-kwin|2023-02-07|Reintegrated into x11
 finance/py-TA-Lib|finance/py-ta-lib|2023-02-12|Remove duplicate port
 x11-toolkits/gnocl||2023-02-13|Fails to build, newer snapshot depends on a removed port
 games/opendungeons||2023-02-14|Has expired: Broken for more than 6 months
-databases/mysql-connector-odbc|databases/mysql-connector-odbc-80|2023-02-18|Has expired: Requires EOLd mysql version
 devel/yaml-cpp03|devel/yaml-cpp|2023-02-21|Used by blender-lts28 which is EOL'd
 sysutils/uutils|sysutils/rust-coreutils|2023-02-22|Request by upstream
 print/harfbuzz-hb-view|print/harfbuzz-cairo|2023-02-23|Match feature and library name
@@ -4732,3 +4731,4 @@ devel/pear-channel-doctrine||2025-08-14|Has expired: Upstream no longer serves t
 devel/qcoro@qt5||2025-08-15|Unflavorize; Qt5 flavor has no consumers
 devel/qcoro@qt6|devel/qcoro|2025-08-15|Unflavorize; Qt5 flavor has no consumers
 devel/cervisia||2025-08-15|Not ported to Qt6 and excluded from KDE Gear releases
+databases/mysql-connector-odbc-80|databases/mysql-connector-odbc@unixodbc|2025-08-21|Was tied to only mysql80 and now supports all MySQL versions

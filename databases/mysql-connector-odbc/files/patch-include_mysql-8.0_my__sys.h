@@ -1,6 +1,6 @@
---- include/mysql-8.0/my_sys.h.orig	2022-12-10 21:58:26 UTC
+--- include/mysql-8.0/my_sys.h.orig	2025-06-19 12:19:21 UTC
 +++ include/mysql-8.0/my_sys.h
-@@ -34,8 +34,12 @@
+@@ -41,8 +41,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
  #include "my_config.h"
  
  #ifdef HAVE_ALLOCA_H
@@ -13,7 +13,7 @@
  #include <limits.h>
  #ifdef _WIN32
  #include <malloc.h>
-@@ -322,6 +326,8 @@ typedef int (*IO_CACHE_CALLBACK)(IO_CACHE *);
+@@ -332,6 +336,8 @@ typedef int (*IO_CACHE_CALLBACK)(IO_CACHE *);
  
  struct IO_CACHE;
  typedef int (*IO_CACHE_CALLBACK)(IO_CACHE *);
