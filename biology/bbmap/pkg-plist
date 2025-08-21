@@ -378,6 +378,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/align2/QuadHeap.java
 %%JAVAJARDIR%%/bbmap/align2/QualityTools.class
 %%JAVAJARDIR%%/bbmap/align2/QualityTools.java
+%%JAVAJARDIR%%/bbmap/align2/README.md
 %%JAVAJARDIR%%/bbmap/align2/RefToIndex.class
 %%JAVAJARDIR%%/bbmap/align2/RefToIndex.java
 %%JAVAJARDIR%%/bbmap/align2/ReformatBatchOutput.class
@@ -527,6 +528,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/aligner/QuantumPlusAligner4.java
 %%JAVAJARDIR%%/bbmap/aligner/Query.class
 %%JAVAJARDIR%%/bbmap/aligner/Query.java
+%%JAVAJARDIR%%/bbmap/aligner/README.md
 %%JAVAJARDIR%%/bbmap/aligner/RelativeAligner.class
 %%JAVAJARDIR%%/bbmap/aligner/RelativeAligner.java
 %%JAVAJARDIR%%/bbmap/aligner/ScrabbleAligner.class
@@ -605,6 +607,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/assemble/KmerCompressor.java
 %%JAVAJARDIR%%/bbmap/assemble/Postfilter.class
 %%JAVAJARDIR%%/bbmap/assemble/Postfilter.java
+%%JAVAJARDIR%%/bbmap/assemble/README.md
 %%JAVAJARDIR%%/bbmap/assemble/Rollback.class
 %%JAVAJARDIR%%/bbmap/assemble/Rollback.java
 %%JAVAJARDIR%%/bbmap/assemble/ShaveObject.class
@@ -680,6 +683,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/barcode/PCRMatrixHDist$PopThread.class
 %%JAVAJARDIR%%/bbmap/barcode/PCRMatrixHDist.class
 %%JAVAJARDIR%%/bbmap/barcode/PCRMatrixHDist.java
+%%JAVAJARDIR%%/bbmap/barcode/README.md
 %%JAVAJARDIR%%/bbmap/barcode/TagAndMerge.class
 %%JAVAJARDIR%%/bbmap/barcode/TagAndMerge.java
 %%JAVAJARDIR%%/bbmap/barcode/Transition.class
@@ -692,6 +696,11 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/barcode/stub/PCRMatrixTile.java
 %%JAVAJARDIR%%/bbmap/bbmin/Minimizer.class
 %%JAVAJARDIR%%/bbmap/bbmin/Minimizer.java
+%%JAVAJARDIR%%/bbmap/bbmin/README.md
+%%JAVAJARDIR%%/bbmap/bin/AbstractRefiner$EnsembleRefinerParams.class
+%%JAVAJARDIR%%/bbmap/bin/AbstractRefiner$EvidenceRefinerParams.class
+%%JAVAJARDIR%%/bbmap/bin/AbstractRefiner$GraphRefinerParams.class
+%%JAVAJARDIR%%/bbmap/bin/AbstractRefiner$RefinerParams.class
 %%JAVAJARDIR%%/bbmap/bin/AbstractRefiner.class
 %%JAVAJARDIR%%/bbmap/bin/AbstractRefiner.java
 %%JAVAJARDIR%%/bbmap/bin/AdjustEntropy.class
@@ -750,8 +759,19 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/bin/CrystalChamber$Centroid.class
 %%JAVAJARDIR%%/bbmap/bin/CrystalChamber.class
 %%JAVAJARDIR%%/bbmap/bin/CrystalChamber.java
+%%JAVAJARDIR%%/bbmap/bin/CrystalChamber2$Centroid.class
+%%JAVAJARDIR%%/bbmap/bin/CrystalChamber2.class
+%%JAVAJARDIR%%/bbmap/bin/CrystalChamber2.java
 %%JAVAJARDIR%%/bbmap/bin/DataLoader.class
 %%JAVAJARDIR%%/bbmap/bin/DataLoader.java
+%%JAVAJARDIR%%/bbmap/bin/EnsembleRefiner$ConsensusResult.class
+%%JAVAJARDIR%%/bbmap/bin/EnsembleRefiner$RefinerResult.class
+%%JAVAJARDIR%%/bbmap/bin/EnsembleRefiner.class
+%%JAVAJARDIR%%/bbmap/bin/EnsembleRefiner.java
+%%JAVAJARDIR%%/bbmap/bin/EvidenceRefiner$ContigStatus.class
+%%JAVAJARDIR%%/bbmap/bin/EvidenceRefiner$DBSCANResult.class
+%%JAVAJARDIR%%/bbmap/bin/EvidenceRefiner.class
+%%JAVAJARDIR%%/bbmap/bin/EvidenceRefiner.java
 %%JAVAJARDIR%%/bbmap/bin/FileRenamer.class
 %%JAVAJARDIR%%/bbmap/bin/FileRenamer.java
 %%JAVAJARDIR%%/bbmap/bin/GTDBLine.class
@@ -762,6 +782,10 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/bin/GradeBins$ProcessThread.class
 %%JAVAJARDIR%%/bbmap/bin/GradeBins.class
 %%JAVAJARDIR%%/bbmap/bin/GradeBins.java
+%%JAVAJARDIR%%/bbmap/bin/GraphRefiner$SimilarityGraph$Edge.class
+%%JAVAJARDIR%%/bbmap/bin/GraphRefiner$SimilarityGraph.class
+%%JAVAJARDIR%%/bbmap/bin/GraphRefiner.class
+%%JAVAJARDIR%%/bbmap/bin/GraphRefiner.java
 %%JAVAJARDIR%%/bbmap/bin/IDComparator.class
 %%JAVAJARDIR%%/bbmap/bin/IDComparator.java
 %%JAVAJARDIR%%/bbmap/bin/Key.class
@@ -775,6 +799,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/bin/QuickBin$ProcessThread.class
 %%JAVAJARDIR%%/bbmap/bin/QuickBin.class
 %%JAVAJARDIR%%/bbmap/bin/QuickBin.java
+%%JAVAJARDIR%%/bbmap/bin/README.md
 %%JAVAJARDIR%%/bbmap/bin/SamLoader$LoadThread.class
 %%JAVAJARDIR%%/bbmap/bin/SamLoader.class
 %%JAVAJARDIR%%/bbmap/bin/SamLoader.java
@@ -851,6 +876,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/bloom/PolyFilter$ProcessThread.class
 %%JAVAJARDIR%%/bbmap/bloom/PolyFilter.class
 %%JAVAJARDIR%%/bbmap/bloom/PolyFilter.java
+%%JAVAJARDIR%%/bbmap/bloom/README.md
 %%JAVAJARDIR%%/bbmap/bloom/ReadCounter$1.class
 %%JAVAJARDIR%%/bbmap/bloom/ReadCounter$CountThread.class
 %%JAVAJARDIR%%/bbmap/bloom/ReadCounter.class
@@ -886,6 +912,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/cardinality/LogLog_old.java
 %%JAVAJARDIR%%/bbmap/cardinality/MultiLogLog.class
 %%JAVAJARDIR%%/bbmap/cardinality/MultiLogLog.java
+%%JAVAJARDIR%%/bbmap/cardinality/README.md
 %%JAVAJARDIR%%/bbmap/clump/Clump.class
 %%JAVAJARDIR%%/bbmap/clump/Clump.java
 %%JAVAJARDIR%%/bbmap/clump/ClumpList$ClumpThread.class
@@ -928,6 +955,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/clump/PivotSet$HashThread.class
 %%JAVAJARDIR%%/bbmap/clump/PivotSet.class
 %%JAVAJARDIR%%/bbmap/clump/PivotSet.java
+%%JAVAJARDIR%%/bbmap/clump/README.md
 %%JAVAJARDIR%%/bbmap/clump/ReadKey.class
 %%JAVAJARDIR%%/bbmap/clump/ReadKey.java
 %%JAVAJARDIR%%/bbmap/clump/Splitter.class
@@ -940,6 +968,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/cluster/ClusterTools.java
 %%JAVAJARDIR%%/bbmap/cluster/MergeReadHeaders.class
 %%JAVAJARDIR%%/bbmap/cluster/MergeReadHeaders.java
+%%JAVAJARDIR%%/bbmap/cluster/README.md
 %%JAVAJARDIR%%/bbmap/cluster/ReadTag.class
 %%JAVAJARDIR%%/bbmap/cluster/ReadTag.java
 %%JAVAJARDIR%%/bbmap/cluster/ReclusterByKmer$ClusterThread.class
@@ -965,6 +994,8 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/consensus/Lilypad$ProcessThread.class
 %%JAVAJARDIR%%/bbmap/consensus/Lilypad.class
 %%JAVAJARDIR%%/bbmap/consensus/Lilypad.java
+%%JAVAJARDIR%%/bbmap/consensus/README.md
+%%JAVAJARDIR%%/bbmap/covid/README.md
 %%JAVAJARDIR%%/bbmap/covid/SummarizeCoverage.class
 %%JAVAJARDIR%%/bbmap/covid/SummarizeCoverage.java
 %%JAVAJARDIR%%/bbmap/dna/AminoAcid.class
@@ -997,6 +1028,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/dna/MotifProbsN.java
 %%JAVAJARDIR%%/bbmap/dna/MotifSimple.class
 %%JAVAJARDIR%%/bbmap/dna/MotifSimple.java
+%%JAVAJARDIR%%/bbmap/dna/README.md
 %%JAVAJARDIR%%/bbmap/dna/ScafLoc.class
 %%JAVAJARDIR%%/bbmap/dna/ScafLoc.java
 %%JAVAJARDIR%%/bbmap/dna/Scaffold.class
@@ -1088,6 +1120,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/driver/ProcessSpeed2.java
 %%JAVAJARDIR%%/bbmap/driver/ProcessWebcheck.class
 %%JAVAJARDIR%%/bbmap/driver/ProcessWebcheck.java
+%%JAVAJARDIR%%/bbmap/driver/README.md
 %%JAVAJARDIR%%/bbmap/driver/ReduceSilva.class
 %%JAVAJARDIR%%/bbmap/driver/ReduceSilva.java
 %%JAVAJARDIR%%/bbmap/driver/RenameAndMux$MuxThread.class
@@ -1188,6 +1221,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/fileIO/PipeThread.java
 %%JAVAJARDIR%%/bbmap/fileIO/QuickFile.class
 %%JAVAJARDIR%%/bbmap/fileIO/QuickFile.java
+%%JAVAJARDIR%%/bbmap/fileIO/README.md
 %%JAVAJARDIR%%/bbmap/fileIO/ReadWrite$1.class
 %%JAVAJARDIR%%/bbmap/fileIO/ReadWrite$WriteObjectThread.class
 %%JAVAJARDIR%%/bbmap/fileIO/ReadWrite$WriteStringThread.class
@@ -1266,6 +1300,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/fun/ProbShared2.java
 %%JAVAJARDIR%%/bbmap/fun/ProbShared3.class
 %%JAVAJARDIR%%/bbmap/fun/ProbShared3.java
+%%JAVAJARDIR%%/bbmap/fun/README.md
 %%JAVAJARDIR%%/bbmap/gff/CompareGff.class
 %%JAVAJARDIR%%/bbmap/gff/CompareGff.java
 %%JAVAJARDIR%%/bbmap/gff/CompareGff_old.class
@@ -1287,6 +1322,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/gff/GtfLine.java
 %%JAVAJARDIR%%/bbmap/gff/ParseCrispr.class
 %%JAVAJARDIR%%/bbmap/gff/ParseCrispr.java
+%%JAVAJARDIR%%/bbmap/gff/README.md
 %%JAVAJARDIR%%/bbmap/gff/VcfToGff$1.class
 %%JAVAJARDIR%%/bbmap/gff/VcfToGff.class
 %%JAVAJARDIR%%/bbmap/gff/VcfToGff.java
@@ -1321,6 +1357,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/hiseq/PlotHist.java
 %%JAVAJARDIR%%/bbmap/hiseq/PlotReadPosition.class
 %%JAVAJARDIR%%/bbmap/hiseq/PlotReadPosition.java
+%%JAVAJARDIR%%/bbmap/hiseq/README.md
 %%JAVAJARDIR%%/bbmap/hiseq/ReadHeaderParser.class
 %%JAVAJARDIR%%/bbmap/hiseq/ReadHeaderParser.java
 %%JAVAJARDIR%%/bbmap/hiseq/Tile.class
@@ -1333,6 +1370,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/hmm/HMMSearchReport.java
 %%JAVAJARDIR%%/bbmap/hmm/ProteinSummary.class
 %%JAVAJARDIR%%/bbmap/hmm/ProteinSummary.java
+%%JAVAJARDIR%%/bbmap/hmm/README.md
 %%JAVAJARDIR%%/bbmap/icecream/IceCreamAligner.class
 %%JAVAJARDIR%%/bbmap/icecream/IceCreamAligner.java
 %%JAVAJARDIR%%/bbmap/icecream/IceCreamAlignerJNI.class
@@ -1351,6 +1389,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/icecream/PBHeader.java
 %%JAVAJARDIR%%/bbmap/icecream/PolymerTrimmer.class
 %%JAVAJARDIR%%/bbmap/icecream/PolymerTrimmer.java
+%%JAVAJARDIR%%/bbmap/icecream/README.md
 %%JAVAJARDIR%%/bbmap/icecream/ReadBuilder.class
 %%JAVAJARDIR%%/bbmap/icecream/ReadBuilder.java
 %%JAVAJARDIR%%/bbmap/icecream/ReformatPacBio$ProcessThread.class
@@ -1364,6 +1403,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/jasper/KmerPosition.java
 %%JAVAJARDIR%%/bbmap/jasper/KmerPosition3.class
 %%JAVAJARDIR%%/bbmap/jasper/KmerPosition3.java
+%%JAVAJARDIR%%/bbmap/jasper/README.md
 %%JAVAJARDIR%%/bbmap/jgi/AddAdapters.class
 %%JAVAJARDIR%%/bbmap/jgi/AddAdapters.java
 %%JAVAJARDIR%%/bbmap/jgi/AdjustHomopolymers.class
@@ -1555,6 +1595,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/jgi/PickSubset$Node.class
 %%JAVAJARDIR%%/bbmap/jgi/PickSubset.class
 %%JAVAJARDIR%%/bbmap/jgi/PickSubset.java
+%%JAVAJARDIR%%/bbmap/jgi/README.md
 %%JAVAJARDIR%%/bbmap/jgi/RQCFilter2.class
 %%JAVAJARDIR%%/bbmap/jgi/RQCFilter2.java
 %%JAVAJARDIR%%/bbmap/jgi/RQCFilterStats.class
@@ -1635,6 +1676,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/json/JsonObject.java
 %%JAVAJARDIR%%/bbmap/json/JsonParser.class
 %%JAVAJARDIR%%/bbmap/json/JsonParser.java
+%%JAVAJARDIR%%/bbmap/json/README.md
 %%JAVAJARDIR%%/bbmap/kmer/AbstractKmerTable$AllocThread.class
 %%JAVAJARDIR%%/bbmap/kmer/AbstractKmerTable.class
 %%JAVAJARDIR%%/bbmap/kmer/AbstractKmerTable.java
@@ -1678,6 +1720,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/kmer/KmerTableSet.java
 %%JAVAJARDIR%%/bbmap/kmer/OwnershipThread.class
 %%JAVAJARDIR%%/bbmap/kmer/OwnershipThread.java
+%%JAVAJARDIR%%/bbmap/kmer/README.md
 %%JAVAJARDIR%%/bbmap/kmer/ScheduleMaker.class
 %%JAVAJARDIR%%/bbmap/kmer/ScheduleMaker.java
 %%JAVAJARDIR%%/bbmap/kmer/SimpleKmerTable.class
@@ -1726,6 +1769,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/ml/ProcessBBMergeHeaders.java
 %%JAVAJARDIR%%/bbmap/ml/Profiler.class
 %%JAVAJARDIR%%/bbmap/ml/Profiler.java
+%%JAVAJARDIR%%/bbmap/ml/README.md
 %%JAVAJARDIR%%/bbmap/ml/RSLog.class
 %%JAVAJARDIR%%/bbmap/ml/RSLog.java
 %%JAVAJARDIR%%/bbmap/ml/ReduceColumns.class
@@ -1790,6 +1834,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/pacbio/ProcessStackedSitesNormalized$Ssra.class
 %%JAVAJARDIR%%/bbmap/pacbio/ProcessStackedSitesNormalized.class
 %%JAVAJARDIR%%/bbmap/pacbio/ProcessStackedSitesNormalized.java
+%%JAVAJARDIR%%/bbmap/pacbio/README.md
 %%JAVAJARDIR%%/bbmap/pacbio/RemoveAdapters2$1.class
 %%JAVAJARDIR%%/bbmap/pacbio/RemoveAdapters2$ProcessThread.class
 %%JAVAJARDIR%%/bbmap/pacbio/RemoveAdapters2.class
@@ -1852,6 +1897,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/prok/PGMTools.java
 %%JAVAJARDIR%%/bbmap/prok/ProkObject.class
 %%JAVAJARDIR%%/bbmap/prok/ProkObject.java
+%%JAVAJARDIR%%/bbmap/prok/README.md
 %%JAVAJARDIR%%/bbmap/prok/RiboMaker$ProcessThread.class
 %%JAVAJARDIR%%/bbmap/prok/RiboMaker.class
 %%JAVAJARDIR%%/bbmap/prok/RiboMaker.java
@@ -1879,6 +1925,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/repeat/RepeatSet.java
 %%JAVAJARDIR%%/bbmap/server/PercentEncoding.class
 %%JAVAJARDIR%%/bbmap/server/PercentEncoding.java
+%%JAVAJARDIR%%/bbmap/server/README.md
 %%JAVAJARDIR%%/bbmap/server/ServerTools$1.class
 %%JAVAJARDIR%%/bbmap/server/ServerTools.class
 %%JAVAJARDIR%%/bbmap/server/ServerTools.java
@@ -1936,6 +1983,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/shared/PreParser.java
 %%JAVAJARDIR%%/bbmap/shared/Primes.class
 %%JAVAJARDIR%%/bbmap/shared/Primes.java
+%%JAVAJARDIR%%/bbmap/shared/README.md
 %%JAVAJARDIR%%/bbmap/shared/SIMD.class
 %%JAVAJARDIR%%/bbmap/shared/SIMD.java
 %%JAVAJARDIR%%/bbmap/shared/SIMDAlign.class
@@ -2007,6 +2055,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/sketch/KmerLimit2.java
 %%JAVAJARDIR%%/bbmap/sketch/MergeSketch.class
 %%JAVAJARDIR%%/bbmap/sketch/MergeSketch.java
+%%JAVAJARDIR%%/bbmap/sketch/README.md
 %%JAVAJARDIR%%/bbmap/sketch/Record.class
 %%JAVAJARDIR%%/bbmap/sketch/Record.java
 %%JAVAJARDIR%%/bbmap/sketch/RecordSet.class
@@ -2056,6 +2105,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/sort/ContigLengthComparator.java
 %%JAVAJARDIR%%/bbmap/sort/MergeSorted.class
 %%JAVAJARDIR%%/bbmap/sort/MergeSorted.java
+%%JAVAJARDIR%%/bbmap/sort/README.md
 %%JAVAJARDIR%%/bbmap/sort/ReadComparator.class
 %%JAVAJARDIR%%/bbmap/sort/ReadComparator.java
 %%JAVAJARDIR%%/bbmap/sort/ReadComparatorClump.class
@@ -2325,6 +2375,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/structures/Point.java
 %%JAVAJARDIR%%/bbmap/structures/Quantizer.class
 %%JAVAJARDIR%%/bbmap/structures/Quantizer.java
+%%JAVAJARDIR%%/bbmap/structures/README.md
 %%JAVAJARDIR%%/bbmap/structures/Range.class
 %%JAVAJARDIR%%/bbmap/structures/Range.java
 %%JAVAJARDIR%%/bbmap/structures/RawBitSet.class
@@ -2433,6 +2484,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/tax/PrintTaxonomy.java
 %%JAVAJARDIR%%/bbmap/tax/Query.class
 %%JAVAJARDIR%%/bbmap/tax/Query.java
+%%JAVAJARDIR%%/bbmap/tax/README.md
 %%JAVAJARDIR%%/bbmap/tax/RenameGiToTaxid.class
 %%JAVAJARDIR%%/bbmap/tax/RenameGiToTaxid.java
 %%JAVAJARDIR%%/bbmap/tax/RenameIMG.class
@@ -2502,6 +2554,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/template/BBTool_ST.java
 %%JAVAJARDIR%%/bbmap/template/DoWorker.class
 %%JAVAJARDIR%%/bbmap/template/DoWorker.java
+%%JAVAJARDIR%%/bbmap/template/README.md
 %%JAVAJARDIR%%/bbmap/template/ThreadPoolJob.class
 %%JAVAJARDIR%%/bbmap/template/ThreadPoolJob.java
 %%JAVAJARDIR%%/bbmap/template/ThreadWaiter.class
@@ -2560,6 +2613,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/ukmer/KmerTableSetU.java
 %%JAVAJARDIR%%/bbmap/ukmer/OwnershipThread.class
 %%JAVAJARDIR%%/bbmap/ukmer/OwnershipThread.java
+%%JAVAJARDIR%%/bbmap/ukmer/README.md
 %%JAVAJARDIR%%/bbmap/ukmer/WalkerU.class
 %%JAVAJARDIR%%/bbmap/ukmer/WalkerU.java
 %%JAVAJARDIR%%/bbmap/var/ApplyVarsToReference$1.class
@@ -2579,6 +2633,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/var/GenerateVarlets3$ProcessThread.class
 %%JAVAJARDIR%%/bbmap/var/GenerateVarlets3.class
 %%JAVAJARDIR%%/bbmap/var/GenerateVarlets3.java
+%%JAVAJARDIR%%/bbmap/var/README.md
 %%JAVAJARDIR%%/bbmap/var/StackVariations$1.class
 %%JAVAJARDIR%%/bbmap/var/StackVariations$SVThread.class
 %%JAVAJARDIR%%/bbmap/var/StackVariations.class
@@ -2608,6 +2663,8 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/var2/CallVariants2.java
 %%JAVAJARDIR%%/bbmap/var2/CompareVCF.class
 %%JAVAJARDIR%%/bbmap/var2/CompareVCF.java
+%%JAVAJARDIR%%/bbmap/var2/FeatureVectorMaker.class
+%%JAVAJARDIR%%/bbmap/var2/FeatureVectorMaker.java
 %%JAVAJARDIR%%/bbmap/var2/FilterSam$ProcessThread.class
 %%JAVAJARDIR%%/bbmap/var2/FilterSam.class
 %%JAVAJARDIR%%/bbmap/var2/FilterSam.java
@@ -2617,6 +2674,7 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/var2/MergeSamples$MergeThread.class
 %%JAVAJARDIR%%/bbmap/var2/MergeSamples.class
 %%JAVAJARDIR%%/bbmap/var2/MergeSamples.java
+%%JAVAJARDIR%%/bbmap/var2/README.md
 %%JAVAJARDIR%%/bbmap/var2/Realign$ProcessThread.class
 %%JAVAJARDIR%%/bbmap/var2/Realign.class
 %%JAVAJARDIR%%/bbmap/var2/Realign.java
@@ -2657,3 +2715,9 @@ libexec/bbmap/wobbleplusaligner.sh
 %%JAVAJARDIR%%/bbmap/var2/VcfWriter$ProcessThread.class
 %%JAVAJARDIR%%/bbmap/var2/VcfWriter.class
 %%JAVAJARDIR%%/bbmap/var2/VcfWriter.java
+%%JAVAJARDIR%%/bbmap/var2/VectorDonovan$QuantileTransformer.class
+%%JAVAJARDIR%%/bbmap/var2/VectorDonovan.class
+%%JAVAJARDIR%%/bbmap/var2/VectorDonovan.java
+%%JAVAJARDIR%%/bbmap/var2/VectorElba$ElbaMinMaxValues.class
+%%JAVAJARDIR%%/bbmap/var2/VectorElba.class
+%%JAVAJARDIR%%/bbmap/var2/VectorElba.java
