@@ -1,11 +1,10 @@
---- external/skia/UnpackedTarball_skia.mk.orig	2024-11-22 20:05:31 UTC
+--- external/skia/UnpackedTarball_skia.mk.orig	2025-05-10 18:09:26 UTC
 +++ external/skia/UnpackedTarball_skia.mk
-@@ -41,6 +41,8 @@ skia_patches := \
-     help-msvc-analyzer.patch \
-     always_inline_and_multiversioning_conflict.patch.1 \
-     windows-define-conflict.patch.1 \
+@@ -43,6 +43,7 @@ skia_patches := \
+ 	0002-loong64-Honor-existing-LASX-LSX-settings.patch \
+ 	0003-loong64-Fix-missing-rounding-in-loong64-scaled_mult-.patch \
+ 	0004-loong64-Fix-the-remaining-implicit-vector-casts.patch \
 +    freebsd-limits.h.patch.0 \
-+    powerpc64le-skia.patch.0 \
  
- $(eval $(call gb_UnpackedTarball_set_patchlevel,skia,1))
- 
+ ifneq ($(MSYSTEM),)
+ # use binary flag so patch from git-bash won't choke on mixed line-endings in patches

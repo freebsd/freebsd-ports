@@ -1,4 +1,4 @@
-PORTREVISION=	3
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		dmake:devel/dmake \
 		gperf>=3.1:devel/gperf \
 		${LOCALBASE}/include/libcuckoo/cuckoohash_map.hh:devel/libcuckoo \
-		mdds>=2.1:devel/mdds \
+		mdds>=${MDDS_VERSION}:devel/mdds \
 		gpatch:devel/patch \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
@@ -37,7 +37,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
 		libltdl.so:devel/libltdl \
-		liborcus-0.18.so:devel/liborcus \
+		liborcus-0.20.so:devel/liborcus \
 		libplds4.so:devel/nspr \
 		libcurl.so:ftp/curl \
 		libgraphite2.so:graphics/graphite2 \
@@ -110,7 +110,7 @@ DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-ope
 DISTFILES+=	dtoa-20180411.tgz:src
 DISTFILES+=	dragonbox-1.1.3.tar.gz:src
 DISTFILES+=	frozen-1.2.0.tar.gz:src
-DISTFILES+=	skia-m130-3c64459d5df2fa9794b277f0959ed8a92552bf4c.tar.xz:src
+DISTFILES+=	skia-m136-28685d899b0a35894743e2cedad4c9f525e90e1e.tar.xz:src
 DISTFILES+=	zxcvbn-c-2.5.tar.gz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
@@ -133,6 +133,7 @@ USE_GL=		gl glew glu
 USE_GNOME=	cairo glib20 libxml2 libxslt
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
+USE_LOCALE?=	en_US.UTF-8
 
 USES+=		elfctl
 ELF_FEATURES=	+wxneeded:instdir/program/soffice.bin
@@ -141,7 +142,7 @@ OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA LTO MMEDIA PDFIUM PGSQL MA
 OPTIONS_RADIO=	QT KDE
 OPTIONS_RADIO_QT=	QT5 QT6
 OPTIONS_RADIO_KDE=	KF5 KF6
-OPTIONS_DEFAULT=	CUPS DOCS JAVA MMEDIA PDFIUM QT5
+OPTIONS_DEFAULT=	CUPS DOCS GTK3 JAVA MMEDIA PDFIUM QT6
 #OPTIONS_EXCLUDE=	GTK4
 
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
@@ -250,7 +251,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-6764.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-7012.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
@@ -360,6 +361,7 @@ BINARY_ALIAS=	sed=gsed
 
 PIE_UNSAFE=	yes
 #MAKE_JOBS_UNSAFE=	yes
+MDDS_VERSION=	3.1
 
 .include <bsd.port.options.mk>
 
@@ -397,10 +399,13 @@ CXXFLAGS_WARN=	-Wshadow -Woverloaded-virtual
 LDFLAGS+=	-Wl,--undefined-version
 
 post-patch:
+	${REINPLACE_CMD} \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		-e 's|mdds-3.0|mdds-${MDDS_VERSION}|g' \
+		${WRKSRC}/configure
 .if ${COMPILER_FEATURES:Mlibstdc++}
 	${REINPLACE_CMD} -e 's/gb_CC/gb_CXX/' ${WRKSRC}/solenv/gbuild/platform/unxgcc.mk
 .endif
-	${CP} ${FILESDIR}/powerpc64le-skia.patch.0 ${WRKSRC}/external/skia/
 
 pre-configure:
 	@${TOUCH} ${WRKSRC}/autogen.lastrun
