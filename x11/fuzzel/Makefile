@@ -1,5 +1,5 @@
 PORTNAME=	fuzzel
-DISTVERSION=	1.13.0
+DISTVERSION=	1.13.1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
