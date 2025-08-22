@@ -1,7 +1,6 @@
 PORTNAME=	envconsul
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.3
-PORTREVISION=	3
+DISTVERSION=	0.13.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/hashicorp/envconsul
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/hashicorp/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags='\
@@ -24,7 +23,7 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-GHTAG=	3f77deb
+GHTAG=	300afa6
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
