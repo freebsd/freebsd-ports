@@ -1,5 +1,5 @@
 PORTNAME=	tailwindcss4
-DISTVERSION=	4.1.10
+DISTVERSION=	4.1.11
 CATEGORIES=	www devel
 MASTER_SITES=	LOCAL/dch/${PORTNAME}/:npm
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npm
@@ -17,7 +17,7 @@ USES=		nodejs:24,build,run python:build tar:txz
 
 CONFLICTS_INSTALL=	tailwindcss*
 
-_DAISYUI_VER=	5.0.43
+_DAISYUI_VER=	5.0.46
 _FORMS_VER=	0.5.10
 _POSTCSS_VER=	8.5.5
 _TWCLI_VER=	${DISTVERSION}
@@ -32,9 +32,12 @@ do-extract:
 	${TAR} -xf ${DISTDIR}/${_NPM_ARCHIVE} -C ${_NPM_CACHE}
 
 do-build:
+	${MKDIR} -p ${WRKDIR}
 # because nodejs is fiddly we can't build & then install
 .if !defined(MAINTAINER_MODE)
 	${ECHO_CMD} offline=true > ${WRKDIR}/.npmrc
+.else
+	${ECHO_CMD} > ${WRKDIR}/.npmrc
 .endif
 
 do-install:
@@ -68,6 +71,7 @@ do-install:
 	${RM} -rf ${STAGEDIR}${PREFIX}/lib/node_modules/@parcel/watcher/build/${file}
 .endfor
 
+# first, run `make -DMAINTAINER_MODE do-build`, then `make _tarball`
 _tarball: do-install
 	${TAR} -caf ${DISTDIR}/${_NPM_ARCHIVE} -C ${_NPM_CACHE} _cacache
 	${CHMOD} 644 ${DISTDIR}/${_NPM_ARCHIVE}
