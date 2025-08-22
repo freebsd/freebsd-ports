@@ -1,5 +1,5 @@
 PORTNAME=	fastjet
-DISTVERSION=	3.4.3
+DISTVERSION=	3.5.1
 CATEGORIES=	science
 MASTER_SITES=	https://fastjet.fr/repo/
 
@@ -46,7 +46,7 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
 
 post-install-PYTHON-on:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_fastjet.so.0.0.0
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_fastjet_swig.so.0.0.0
 
 do-test:
 	# python tests
