@@ -1,7 +1,7 @@
 PORTNAME=	bsd-spell
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.0.1
+DISTVERSION=	1.0.1
+PORTREVISION=	3
 CATEGORIES=	textproc
 
 MAINTAINER=	gbe@FreeBSD.org
@@ -15,6 +15,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gbergling
 GH_PROJECT=	bsdspell
 
+post-extract:
+	${REINPLACE_CMD} -e 's,/usr/share/,${PREFIX}/share/,' \
+	    ${WRKSRC}/usr.bin/spell/spell.sh ${WRKSRC}/usr.bin/spell/spell.1
+	${REINPLACE_CMD} -E -e 's,\<SPELL\>,B&,' -e 's,\<spell\>,b&,' \
+	    ${WRKSRC}/usr.bin/spell/spell.1
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/usr.bin/spell/spellprog ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/usr.bin/deroff/deroff ${STAGEDIR}${PREFIX}/bin
@@ -26,7 +32,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/usr.bin/spell/special.math ${STAGEDIR}${PREFIX}/share/dict
 	${INSTALL_DATA} ${WRKSRC}/usr.bin/spell/stop ${STAGEDIR}${PREFIX}/share/dict
 
-	${INSTALL_MAN} ${WRKSRC}/usr.bin/spell/spell.1.gz ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/usr.bin/spell/spell.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/bspell.1.gz
 	${INSTALL_MAN} ${WRKSRC}/usr.bin/deroff/deroff.1.gz ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
