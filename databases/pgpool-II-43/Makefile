@@ -1,5 +1,5 @@
 PORTNAME=	pgpool-II
-DISTVERSION=	4.3.15
+DISTVERSION=	4.3.16
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 PKGNAMESUFFIX=	-43
@@ -35,12 +35,6 @@ MEMCACHED_CONFIGURE_ON=	--with-memcached=${LOCALBASE}/include
 PAM_CONFIGURE_ON=	--with-pam
 SSL_USES=		ssl
 SSL_CONFIGURE_WITH=	openssl
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD
-CFLAGS+=	-Wno-error=int-conversion
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/pgpool
