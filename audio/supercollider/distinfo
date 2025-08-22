@@ -1,13 +1,3 @@
-TIMESTAMP = 1740092854
-SHA256 (supercollider-supercollider-3.13.1-g20250219-066ef94c70903c440e010eb81d4ac6e85bb2d84c_GH0.tar.gz) = c2404c4da6546700405444c55d3e726b4299936b3e3f044c48673c1bd6acf666
-SIZE (supercollider-supercollider-3.13.1-g20250219-066ef94c70903c440e010eb81d4ac6e85bb2d84c_GH0.tar.gz) = 16401696
-SHA256 (timblechmann-nova-simd-2bdc68bc5704a42578300a4c18411df2405cb307_GH0.tar.gz) = df9f280daaad56fdadb5fa75d492ee6a06762a41d7346aa473aa49c1ac9ec9c8
-SIZE (timblechmann-nova-simd-2bdc68bc5704a42578300a4c18411df2405cb307_GH0.tar.gz) = 53005
-SHA256 (timblechmann-nova-tt-692a8859fb94030f581b8a3d626a5f40c236114e_GH0.tar.gz) = a3e40d2cdf06dc6b29a6e1f3353c371dc3dc7ca08fe475697cc9659702ebc178
-SIZE (timblechmann-nova-tt-692a8859fb94030f581b8a3d626a5f40c236114e_GH0.tar.gz) = 31253
-SHA256 (supercollider-hidapi-hidapi-sc-0.8.0-10-g976cb11_GH0.tar.gz) = ccdea1468120976205719865218919c83cc8dd9505ed58dfd6890743720e79d2
-SIZE (supercollider-hidapi-hidapi-sc-0.8.0-10-g976cb11_GH0.tar.gz) = 147854
-SHA256 (supercollider-yaml-cpp-release-0.5.3-35-g728e26e_GH0.tar.gz) = b84cda403e26fc64e4973e907413b40c43a7e1485f2c223ed30a1a387cf0dae4
-SIZE (supercollider-yaml-cpp-release-0.5.3-35-g728e26e_GH0.tar.gz) = 2022032
-SHA256 (ableton-link-Link-3.0.6_GH0.tar.gz) = 4f4fae68bd9351cba603f07990b0d1d9cd7f986c1c78f748d97168c8ae5269b2
-SIZE (ableton-link-Link-3.0.6_GH0.tar.gz) = 1905749
+TIMESTAMP = 1753803284
+SHA256 (SuperCollider-3.14.0-Source.tar.bz2) = ab710e84376f5c082c92fcea7465b85d375934f3da7deed583457a0a48b0a918
+SIZE (SuperCollider-3.14.0-Source.tar.bz2) = 20936611
