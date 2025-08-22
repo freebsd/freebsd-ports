@@ -858,6 +858,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/providers/virtualbox/driver/version_6_1.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/providers/virtualbox/driver/version_7_0.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/providers/virtualbox/driver/version_7_1.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/providers/virtualbox/driver/version_7_2.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/providers/virtualbox/model/forwarded_port.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/providers/virtualbox/model/storage_controller.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/providers/virtualbox/model/storage_controller_array.rb
