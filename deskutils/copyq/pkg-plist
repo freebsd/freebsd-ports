@@ -7,7 +7,6 @@ bin/copyq
 %%PLUGINS%%lib/copyq/plugins/libitemsync.so
 %%PLUGINS%%lib/copyq/plugins/libitemtags.so
 %%PLUGINS%%lib/copyq/plugins/libitemtext.so
-share/man/man1/copyq.1.gz
 share/applications/com.github.hluk.copyq.desktop
 share/bash-completion/completions/copyq
 %%DATADIR%%/themes/dark.ini
@@ -34,12 +33,14 @@ share/bash-completion/completions/copyq
 %%DATADIR%%/translations/copyq_fa.qm
 %%DATADIR%%/translations/copyq_fi.qm
 %%DATADIR%%/translations/copyq_fr.qm
+%%DATADIR%%/translations/copyq_ga.qm
 %%DATADIR%%/translations/copyq_he.qm
 %%DATADIR%%/translations/copyq_hr.qm
 %%DATADIR%%/translations/copyq_hu.qm
 %%DATADIR%%/translations/copyq_id.qm
 %%DATADIR%%/translations/copyq_it.qm
 %%DATADIR%%/translations/copyq_ja.qm
+%%DATADIR%%/translations/copyq_kab.qm
 %%DATADIR%%/translations/copyq_ko.qm
 %%DATADIR%%/translations/copyq_lt.qm
 %%DATADIR%%/translations/copyq_nb.qm
@@ -63,4 +64,5 @@ share/icons/hicolor/48x48/apps/copyq.png
 share/icons/hicolor/64x64/apps/copyq.png
 share/icons/hicolor/scalable/apps/copyq.svg
 share/icons/hicolor/scalable/apps/copyq_mask.svg
+share/man/man1/copyq.1.gz
 share/metainfo/com.github.hluk.copyq.appdata.xml

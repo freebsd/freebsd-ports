@@ -1,11 +1,8 @@
 PORTNAME=	copyq
-DISTVERSION=	10.0.0
+DISTVERSION=	11.0.0
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/hluk/CopyQ/releases/download/v${DISTVERSION}/
 DISTNAME=	Copyq-${DISTVERSION}
-
-PATCH_SITES=	https://github.com/hluk/CopyQ/commit/
-PATCHFILES+=	f08c0d46a239362c5d3525ef9c3ba943bb00f734.patch:-p1 # Fix build with Qt >= 6.9.0
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Qt6 based clipboard manager
