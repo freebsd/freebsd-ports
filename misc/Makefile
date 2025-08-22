@@ -533,6 +533,7 @@
     SUBDIR += py-shap2
     SUBDIR += py-shell-gpt
     SUBDIR += py-sigopt
+    SUBDIR += py-smdebug-rulesconfig
     SUBDIR += py-soapy_power
     SUBDIR += py-spdx-tools
     SUBDIR += py-spinners
