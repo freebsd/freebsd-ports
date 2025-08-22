@@ -526,6 +526,7 @@
     SUBDIR += py-pytorch-lightning
     SUBDIR += py-pyviz-comms
     SUBDIR += py-safetensors
+    SUBDIR += py-sagemaker
     SUBDIR += py-sagemaker-core
     SUBDIR += py-schedulefree
     SUBDIR += py-scikit-fusion
