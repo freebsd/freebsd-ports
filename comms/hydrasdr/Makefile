@@ -25,4 +25,7 @@ OPTIONS_DEFAULT_i386=	SIMD
 
 SIMD_CFLAGS=	-DFREEBSD_USE_SIMD -msse -msse2 -mfpmath=sse -mmmx
 
+CFLAGS_powerpc64=	-DNO_WARN_X86_INTRINSICS -mvsx
+CFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
+
 .include <bsd.port.mk>
