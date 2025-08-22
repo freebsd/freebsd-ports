@@ -30,7 +30,6 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}torchvision>0:misc/py-torchvision@${PY_FLAVOR}
 # speech/audio
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}librosa>0:audio/py-librosa@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}phonemizer>0:textproc/py-phonemizer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}torchaudio>0:audio/py-torchaudio@${PY_FLAVOR}
 # serving
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}fastapi>0:www/py-fastapi@${PY_FLAVOR} \
