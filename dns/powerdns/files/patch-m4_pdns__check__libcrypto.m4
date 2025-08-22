@@ -1,4 +1,4 @@
---- m4/pdns_check_libcrypto.m4.orig	2023-06-01 06:54:16 UTC
+--- m4/pdns_check_libcrypto.m4.orig	2025-08-22 07:51:37 UTC
 +++ m4/pdns_check_libcrypto.m4
 @@ -75,8 +75,10 @@ AC_DEFUN([PDNS_CHECK_LIBCRYPTO], [
          for ssldir in $ssldirs; do
@@ -12,3 +12,4 @@
 +                fi
                  LIBCRYPTO_LIBS="-lcrypto"
                  found=true
+                 AC_MSG_RESULT([yes])
