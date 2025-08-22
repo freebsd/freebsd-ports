@@ -1,5 +1,5 @@
 PORTNAME=	calibre
-PORTVERSION=	8.8.0
+PORTVERSION=	8.9.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://download.calibre-ebook.com/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -66,7 +66,7 @@ USES=		desktop-file-utils gettext-runtime:build gl localbase:ldflags \
 		pkgconfig pyqt:6 python:3.11+ qt:6 shared-mime-info shebangfix sqlite ssl \
 		tar:xz xorg
 USE_GITHUB=	nodefault
-GH_TUPLE=	kovidgoyal:calibre-translations:3f9e7e2:translations \
+GH_TUPLE=	kovidgoyal:calibre-translations:6890dae:translations \
 		LibreOffice:dictionaries:ea41884:hypenation
 USE_GL=		opengl
 USE_PYQT=	pyqt6 pysip webengine qtbuilder:build sip:build
