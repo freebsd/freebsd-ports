@@ -1,3 +1,3 @@
-TIMESTAMP = 1749359050
-SHA256 (rubygem/opentelemetry-instrumentation-faraday-0.27.0.gem) = 2376b11c04a69d5f6619066916f9373942c9d5b5a218ab4efdcf72d5e7de4564
-SIZE (rubygem/opentelemetry-instrumentation-faraday-0.27.0.gem) = 12800
+TIMESTAMP = 1755838244
+SHA256 (rubygem/opentelemetry-instrumentation-faraday-0.28.0.gem) = d35ceafb5d2e18c398c601c8b7c06be35db00e771f7fe78f56ebc65aacfe6c66
+SIZE (rubygem/opentelemetry-instrumentation-faraday-0.28.0.gem) = 13824
