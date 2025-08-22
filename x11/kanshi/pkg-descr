@@ -3,4 +3,5 @@ enabled and disabled on hotplug. For instance, this can be used to
 turn a laptop's internal screen off when docked.
 
 This is a Wayland equivalent for tools like autorandr. kanshi can be
-used on Wayland compositors supporting wlr-output-management protocol.
+used on Wayland compositors supporting the wlr-output-management
+protocol.
