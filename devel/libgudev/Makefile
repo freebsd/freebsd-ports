@@ -29,8 +29,7 @@ DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
 
 VALA_DESC=		Build and install Vala bindings
 VALA_MESON_ENABLED=	vapi
-VALA_BUILD_DEPENDS=	vapigen:lang/vala
-VALA_VARS=		USE+=vala:build
+VALA_USES=		vala:build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-export-dynamic|-Wl,--export-dynamic|' ${WRKSRC}/gudev/meson.build
