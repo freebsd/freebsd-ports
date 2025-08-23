@@ -1,7 +1,6 @@
 PORTNAME=	openvkl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
-PORTREVISION=	18
+DISTVERSION=	2.0.1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BROKEN_i386=	https://github.com/openvkl/openvkl/issues/14
 
 BUILD_DEPENDS=	ispc:devel/ispc
-LIB_DEPENDS=	libembree3.so:graphics/embree3 \
+LIB_DEPENDS=	libembree4.so:graphics/embree \
 		libglfw.so:graphics/glfw \
 		librkcommon.so:devel/rkcommon \
 		libtbbmalloc.so:devel/onetbb
