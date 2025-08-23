@@ -1,5 +1,5 @@
 PORTNAME=	smoldyn
-DISTVERSION=	2.74
+DISTVERSION=	2.75
 CATEGORIES=	science
 MASTER_SITES=	https://www.smoldyn.org/
 
@@ -32,8 +32,8 @@ PYTHON_CMAKE_BOOL=	OPTION_PYTHON
 PYTHON_USES=		python
 PYTHON_CMAKE_ON=	-DPython3_EXECUTABLE=${PYTHON_CMD}
 PYTHON_BUILD_DEPENDS=	${PY_SETUPTOOLS}
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}biosimulators-utils>0:biology/py-biosimulators-utils@${PY_FLAVOR}
-PYTHON_BROKEN=		pending biology/py-biosimulators-utils completion
+#PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}biosimulators-utils>0:biology/py-biosimulators-utils@${PY_FLAVOR}
+PYTHON_BROKEN=		some python dependencies aren't ported
 
 post-extract: # see https://github.com/ssandrews/Smoldyn/issues/127
 	@${CHMOD} +x ${WRKSRC}/scripts/run_pyscript.py.in
