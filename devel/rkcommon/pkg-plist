@@ -6,7 +6,9 @@ include/rkcommon/containers/FlatMap.h
 include/rkcommon/containers/TransactionalBuffer.h
 include/rkcommon/containers/aligned_allocator.h
 include/rkcommon/math/AffineSpace.h
+include/rkcommon/math/AffineSpace.ih
 include/rkcommon/math/LinearSpace.h
+include/rkcommon/math/LinearSpace.ih
 include/rkcommon/math/Quaternion.h
 include/rkcommon/math/arm/emulation.h
 include/rkcommon/math/arm/sse2neon.h
@@ -32,16 +34,15 @@ include/rkcommon/tasking/AsyncTask.h
 include/rkcommon/tasking/async.h
 include/rkcommon/tasking/detail/TaskSys.h
 include/rkcommon/tasking/detail/async_task.inl
-include/rkcommon/tasking/detail/enkiTS/Atomics.h
 include/rkcommon/tasking/detail/enkiTS/LockLessMultiReadPipe.h
 include/rkcommon/tasking/detail/enkiTS/TaskScheduler.h
-include/rkcommon/tasking/detail/enkiTS/Threads.h
 include/rkcommon/tasking/detail/parallel_for.inl
 include/rkcommon/tasking/detail/schedule.inl
 include/rkcommon/tasking/parallel_for.h
 include/rkcommon/tasking/parallel_foreach.h
 include/rkcommon/tasking/schedule.h
 include/rkcommon/tasking/tasking_system_init.h
+include/rkcommon/tracing/Tracing.h
 include/rkcommon/traits/rktraits.h
 include/rkcommon/utility/AbstractArray.h
 include/rkcommon/utility/Any.h
