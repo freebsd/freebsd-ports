@@ -34,5 +34,9 @@ bin/vlogscli
 %%PORTDOCS%%%%DOCSDIR%%/cluster.md
 %%PORTDOCS%%%%DOCSDIR%%/logql-to-logsql.md
 %%PORTDOCS%%%%DOCSDIR%%/sql-to-logsql.md
+%%PORTDOCS%%%%DOCSDIR%%/Articles.md
+%%PORTDOCS%%%%DOCSDIR%%/Release-Guide.md
+%%PORTDOCS%%%%DOCSDIR%%/security-and-lb.md
+%%PORTDOCS%%%%DOCSDIR%%/vlagent.md
 
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
