@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2019-04-04 06:38:39 UTC
+--- CMakeLists.txt.orig	2023-02-06 15:09:28 UTC
 +++ CMakeLists.txt
-@@ -20,6 +20,8 @@ include(GNUInstallDirs)
+@@ -20,6 +20,8 @@ add_subdirectory(gtest EXCLUDE_FROM_ALL) # We don't wa
  project(leelaz)
  add_subdirectory(gtest EXCLUDE_FROM_ALL) # We don't want to install gtest, exclude it from `all`
  
@@ -9,7 +9,16 @@
  # Required Packages
  set(Boost_MIN_VERSION "1.58.0")
  set(Boost_USE_MULTITHREADED ON)
-@@ -70,13 +72,13 @@ if(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_T
+@@ -49,7 +51,7 @@ find_package(Qt5Core)
+ endif()
+ find_package(Qt5Core)
+ 
+-set(CMAKE_CXX_STANDARD 14)
++set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED on)
+ 
+ # See if we can set optimization flags as expected.
+@@ -70,13 +72,13 @@ if(GccSpecificFlags)
  endif(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
  
  if(GccSpecificFlags)
@@ -25,7 +34,7 @@
  endif(GccSpecificFlags)
  
  if(USE_CPU_ONLY)
-@@ -86,7 +88,7 @@ if(USE_HALF)
+@@ -86,7 +88,7 @@ endif()
    add_definitions(-DUSE_HALF)
  endif()
  
@@ -34,7 +43,7 @@
  set(SrcPath "${CMAKE_CURRENT_SOURCE_DIR}/src")
  
  include_directories(${IncludePath})
-@@ -130,6 +132,7 @@ else()
+@@ -130,6 +132,7 @@ endif()
  endif()
  
  # Google Test below
@@ -42,7 +51,7 @@
  file(GLOB tests_SRC "${SrcPath}/tests/*.cpp")
  
  add_executable(tests ${tests_SRC} $<TARGET_OBJECTS:objs>)
-@@ -142,6 +145,7 @@ target_link_libraries(tests ${BLAS_LIBRARIES})
+@@ -142,6 +145,7 @@ target_link_libraries(tests gtest_main ${CMAKE_THREAD_
  target_link_libraries(tests ${OpenCL_LIBRARIES})
  target_link_libraries(tests ${ZLIB_LIBRARIES})
  target_link_libraries(tests gtest_main ${CMAKE_THREAD_LIBS_INIT})
