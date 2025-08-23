@@ -1,4 +1,4 @@
-TIMESTAMP = 1733898065
+TIMESTAMP = 1755978302
 SHA256 (quilc-1.26.0/alexa-20180831-git.tgz) = 64656047b0ffca7113a4ce159fb883f21080c8e9ed585d02d08af46db042e82c
 SIZE (quilc-1.26.0/alexa-20180831-git.tgz) = 11101
 SHA256 (quilc-1.26.0/alexandria-20220707-git.tgz) = 8e6173120de8786c7ae0fefba8102d82620fac42e9aade954af9135e0870d6b1
@@ -123,7 +123,7 @@ SHA256 (quilc-1.26.0/quicklisp.tar) = a8a3c8c91b51dd185175abad4d7c3999ebb4e2520b
 SIZE (quilc-1.26.0/quicklisp.tar) = 266240
 SHA256 (quilc-1.26.0/quicklisp.sexp) = b4f515c5ed204d9fa4ea8637e60c0b12575609f450f26919dbfb835ee29933e0
 SIZE (quilc-1.26.0/quicklisp.sexp) = 839
-SHA256 (quilc-1.26.0/quicklisp.txt) = 50f28759e82c5b9788aa993978418c8ff01889a9b8243503793a5b5f9a80efbf
+SHA256 (quilc-1.26.0/quicklisp.txt) = 4131eb968a0efe00f7badd484a8a69441ce79b36b7d0b7c98a9abea8934aa409
 SIZE (quilc-1.26.0/quicklisp.txt) = 408
 SHA256 (quilc-1.26.0/releases.txt) = 16f745e54d542d636f7f8ad319304183be8930d57c2bd9824cc2f601431fb397
 SIZE (quilc-1.26.0/releases.txt) = 530186
