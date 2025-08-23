@@ -1,5 +1,5 @@
 PORTNAME=	mail
-PORTVERSION=	5.3.0
+PORTVERSION=	5.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
@@ -15,5 +15,8 @@ USES=		cpe gettext nextcloud php:flavors
 USE_PHP=	imap
 
 CPE_VENDOR=	nextcloud
+
+post-patch:
+	${RM} ${WRKSRC}/vendor/nextcloud/kitinerary-bin/bin/kitinerary-extractor
 
 .include <bsd.port.mk>
