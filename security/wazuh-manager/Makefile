@@ -1,7 +1,7 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.12.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/40/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
@@ -149,7 +149,7 @@ WZPYTHONWHEELS=	cffi-1.15.1-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		multidict-5.2.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		numpy-1.26.4-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		psutil-5.9.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		pyarrow-19.0.1-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		pyarrow-20.0.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		pyyaml-6.0.1-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		rpds_py-0.15.2-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		uvloop-0.17.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl
@@ -165,12 +165,12 @@ IGNORE=		FreeBSD ${OSVERSION} ${ARCH} is not supported
 .endif
 
 .if ${ARCH} == "aarch64"
-FBSD14_PATCH_LEVEL=     #
+FBSD14_PATCH_LEVEL=     _p2
 .endif
 
 .if ${ARCH} != "aarch64"
 FBSD13_PATCH_LEVEL=	#
-FBSD14_PATCH_LEVEL=	#
+FBSD14_PATCH_LEVEL=	_p2
 .endif
 
 .if ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
