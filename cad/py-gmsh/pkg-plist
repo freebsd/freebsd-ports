@@ -1,4 +1,4 @@
-%%PYTHON_SITELIBDIR%%/gmsh-4.13.1.dev1.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/gmsh-4.14.0.dev1.dist-info/METADATA
 %%PYTHON_SITELIBDIR%%/gmsh.py
 %%PYTHON_SITELIBDIR%%/gmshpy/__init__.py
 %%PYTHON_SITELIBDIR%%/gmshpy/_gmshCommon.so
@@ -14,5 +14,8 @@
 %%PYTHON_SITELIBDIR%%/gmshpy/gmshPost.py
 %%PYTHON_SITELIBDIR%%/gmshpy/gmshSolver.py
 %%PYTHON_SITELIBDIR%%/libgmsh.so
-%%PYTHON_SITELIBDIR%%/libgmsh.so.4.13
-%%PYTHON_SITELIBDIR%%/libgmsh.so.4.13.1
+%%PYTHON_SITELIBDIR%%/libgmsh.so.4.14
+%%PYTHON_SITELIBDIR%%/libgmsh.so.4.14.0
+%%DATADIR%%/gmshConfig.cmake
+%%DATADIR%%/gmshTargets-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/gmshTargets.cmake

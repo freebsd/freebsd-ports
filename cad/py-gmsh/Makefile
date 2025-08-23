@@ -1,6 +1,5 @@
 PORTNAME=	gmsh
-DISTVERSION=	4.13.1
-PORTREVISION=	4
+DISTVERSION=	4.14.0
 CATEGORIES=	cad python
 MASTER_SITES=	https://gmsh.info/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,11 +13,10 @@ WWW=		https://gmsh.info/
 LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
 LICENSE_COMB=	multi
 
-BROKEN=		fails to compile with cgnslib-4.5.0, see https://github.com/CGNS/CGNS/issues/863
-
 BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libcgns.so:science/cgnslib \
 		libfltk_images.so:x11-toolkits/fltk \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgmp.so:math/gmp \
 		libhdf5.so:science/hdf5 \
@@ -31,7 +29,7 @@ USES=		cmake gl gnome jpeg python tar:tgz xorg
 USE_PYTHON=	flavors
 USE_GNOME=	cairo
 USE_GL=		gl glu
-USE_XORG=	ice sm x11 xext
+USE_XORG=	ice sm x11 xcursor xext xfixes xft xinerama xrender
 USE_LDCONFIG=	${PYTHON_SITELIBDIR}
 
 PATCHDIR=	${PORTSDIR}/cad/gmsh/files
