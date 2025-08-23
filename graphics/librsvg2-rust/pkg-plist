@@ -140,5 +140,5 @@ share/man/man1/rsvg-convert.1.gz
 %%PORTDOCS%%share/doc/Rsvg-2.0/urlmap.js
 share/gir-1.0/Rsvg-2.0.gir
 share/thumbnailers/librsvg.thumbnailer
-share/vala/vapi/librsvg-2.0.deps
-share/vala/vapi/librsvg-2.0.vapi
+%%VAPI%%share/vala/vapi/librsvg-2.0.deps
+%%VAPI%%share/vala/vapi/librsvg-2.0.vapi
