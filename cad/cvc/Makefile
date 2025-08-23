@@ -10,6 +10,9 @@ WWW=		https://github.com/d-m-bailey/cvc
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream stalled, needs EOL GCC 11 to build
+EXPIRATION_DATE=2025-09-23
+
 BUILD_DEPENDS=	pyinstaller:devel/py-pyinstaller@${PY_FLAVOR} \
 		bash:shells/bash
 
