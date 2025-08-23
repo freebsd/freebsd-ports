@@ -29,7 +29,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/antelope/data.json
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/antelope/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/antelope/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/antelope/src.blend
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/antelope/src.txt
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/antelope/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/antelope/upper_idle_handgun_24x24.png
@@ -38,7 +37,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/camel/data.json
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/camel/legs_idle_30x30.png
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/camel/legs_run_30x30.png
-%%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/camel/src.blend
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/camel/src.txt
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/camel/upper_idle_30x30.png
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/camel/upper_idle_handgun_30x30.png
@@ -47,7 +45,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/giraffe/data.json
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/giraffe/legs_idle_32x32.png
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/giraffe/legs_run_32x32.png
-%%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/giraffe/src.blend
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/giraffe/src.txt
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/giraffe/upper_idle_32x32.png
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/giraffe/upper_idle_handgun_32x32.png
@@ -57,7 +54,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/monkey/legs_idle_32x32.png
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/monkey/legs_run_24x24.png
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/monkey/legs_run_32x32.png
-%%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/monkey/src.blend
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/monkey/src.txt
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/monkey/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/monkey/upper_idle_32x32.png
@@ -70,7 +66,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/ostrich/data.json
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/ostrich/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/ostrich/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/ostrich/src.blend
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/ostrich/src.txt
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/ostrich/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/ostrich/upper_idle_handgun_24x24.png
@@ -79,7 +74,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/sheep/data.json
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/sheep/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/sheep/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/sheep/src.blend
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/sheep/src.txt
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/sheep/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/N3Ddata.cdogscpn/graphics/chars/bodies/sheep/upper_idle_handgun_24x24.png
@@ -229,7 +223,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/angel/data.json
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/angel/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/angel/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/angel/src.blend
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/angel/src.txt
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/angel/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/angel/upper_idle_dualgun_24x24.png
@@ -240,7 +233,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/bat/data.json
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/bat/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/bat/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/bat/src.blend
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/bat/src.txt
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/bat/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/bat/upper_idle_handgun_24x24.png
@@ -249,7 +241,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/big_mutant/data.json
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/big_mutant/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/big_mutant/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/big_mutant/src.blend
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/big_mutant/src.txt
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/big_mutant/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/big_mutant/upper_idle_dualgun_24x24.png
@@ -260,7 +251,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/wizard/data.json
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/wizard/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/wizard/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/wizard/src.blend
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/wizard/src.txt
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/wizard/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD2data.cdogscpn/graphics/chars/bodies/wizard/upper_idle_dualgun_24x24.png
@@ -372,7 +362,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/angel/data.json
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/angel/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/angel/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/angel/src.blend
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/angel/src.txt
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/angel/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/angel/upper_idle_dualgun_24x24.png
@@ -383,7 +372,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/bat/data.json
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/bat/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/bat/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/bat/src.blend
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/bat/src.txt
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/bat/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/bat/upper_idle_handgun_24x24.png
@@ -392,7 +380,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/big_mutant/data.json
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/big_mutant/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/big_mutant/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/big_mutant/src.blend
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/big_mutant/src.txt
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/big_mutant/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/big_mutant/upper_idle_dualgun_24x24.png
@@ -403,7 +390,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/wizard/data.json
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/wizard/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/wizard/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/wizard/src.blend
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/wizard/src.txt
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/wizard/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/SD3data.cdogscpn/graphics/chars/bodies/wizard/upper_idle_dualgun_24x24.png
@@ -527,7 +513,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/angel/data.json
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/angel/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/angel/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/angel/src.blend
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/angel/src.txt
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/angel/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/angel/upper_idle_dualgun_24x24.png
@@ -538,7 +523,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/big_mutant/data.json
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/big_mutant/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/big_mutant/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/big_mutant/src.blend
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/big_mutant/src.txt
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/big_mutant/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/big_mutant/upper_idle_dualgun_24x24.png
@@ -549,7 +533,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/mutant/data.json
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/mutant/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/mutant/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/mutant/src.blend
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/mutant/src.txt
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/mutant/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/mutant/upper_idle_handgun_24x24.png
@@ -558,7 +541,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/wizard/data.json
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/wizard/legs_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/wizard/legs_run_24x24.png
-%%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/wizard/src.blend
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/wizard/src.txt
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/wizard/upper_idle_24x24.png
 %%DATADIR%%/data/.wolf3d/common.cdogscpn/graphics/chars/bodies/wizard/upper_idle_dualgun_24x24.png
@@ -869,7 +851,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/chars/bodies/base/data.json
 %%DATADIR%%/graphics/chars/bodies/base/legs_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/base/legs_run_24x24.png
-%%DATADIR%%/graphics/chars/bodies/base/src.blend
 %%DATADIR%%/graphics/chars/bodies/base/src.txt
 %%DATADIR%%/graphics/chars/bodies/base/upper_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/base/upper_idle_dualgun_24x24.png
@@ -884,7 +865,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/chars/bodies/big/data.json
 %%DATADIR%%/graphics/chars/bodies/big/legs_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/big/legs_run_24x24.png
-%%DATADIR%%/graphics/chars/bodies/big/src.blend
 %%DATADIR%%/graphics/chars/bodies/big/src.txt
 %%DATADIR%%/graphics/chars/bodies/big/upper_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/big/upper_idle_dualgun_24x24.png
@@ -895,7 +875,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/chars/bodies/big_skinny/data.json
 %%DATADIR%%/graphics/chars/bodies/big_skinny/legs_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/big_skinny/legs_run_24x24.png
-%%DATADIR%%/graphics/chars/bodies/big_skinny/src.blend
 %%DATADIR%%/graphics/chars/bodies/big_skinny/src.txt
 %%DATADIR%%/graphics/chars/bodies/big_skinny/upper_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/big_skinny/upper_idle_handgun_24x24.png
@@ -904,7 +883,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/chars/bodies/big_soldier/data.json
 %%DATADIR%%/graphics/chars/bodies/big_soldier/legs_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/big_soldier/legs_run_24x24.png
-%%DATADIR%%/graphics/chars/bodies/big_soldier/src.blend
 %%DATADIR%%/graphics/chars/bodies/big_soldier/src.txt
 %%DATADIR%%/graphics/chars/bodies/big_soldier/upper_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/big_soldier/upper_idle_dualgun_24x24.png
@@ -915,7 +893,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/chars/bodies/dog/data.json
 %%DATADIR%%/graphics/chars/bodies/dog/legs_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/dog/legs_run_24x24.png
-%%DATADIR%%/graphics/chars/bodies/dog/src.blend
 %%DATADIR%%/graphics/chars/bodies/dog/src.txt
 %%DATADIR%%/graphics/chars/bodies/dog/upper_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/dog/upper_idle_handgun_24x24.png
@@ -925,7 +902,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/chars/bodies/mech/data.json
 %%DATADIR%%/graphics/chars/bodies/mech/legs_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/mech/legs_run_24x24.png
-%%DATADIR%%/graphics/chars/bodies/mech/src.blend
 %%DATADIR%%/graphics/chars/bodies/mech/src.txt
 %%DATADIR%%/graphics/chars/bodies/mech/upper_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/mech/upper_idle_dualgun_24x24.png
@@ -944,7 +920,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/chars/bodies/skinny/data.json
 %%DATADIR%%/graphics/chars/bodies/skinny/legs_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/skinny/legs_run_24x24.png
-%%DATADIR%%/graphics/chars/bodies/skinny/src.blend
 %%DATADIR%%/graphics/chars/bodies/skinny/src.txt
 %%DATADIR%%/graphics/chars/bodies/skinny/upper_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/skinny/upper_idle_handgun_24x24.png
@@ -953,7 +928,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/chars/bodies/soldier/data.json
 %%DATADIR%%/graphics/chars/bodies/soldier/legs_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/soldier/legs_run_24x24.png
-%%DATADIR%%/graphics/chars/bodies/soldier/src.blend
 %%DATADIR%%/graphics/chars/bodies/soldier/src.txt
 %%DATADIR%%/graphics/chars/bodies/soldier/upper_idle_24x24.png
 %%DATADIR%%/graphics/chars/bodies/soldier/upper_idle_dualgun_24x24.png
@@ -1025,7 +999,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/chars/heads/ogre_10x10.png
 %%DATADIR%%/graphics/chars/heads/render.py
 %%DATADIR%%/graphics/chars/heads/robot_10x8.png
-%%DATADIR%%/graphics/chars/heads/skull.blend
 %%DATADIR%%/graphics/chars/heads/skull.txt
 %%DATADIR%%/graphics/chars/heads/skull_12x12.png
 %%DATADIR%%/graphics/chars/heads/skull_big_12x14.png
@@ -2896,7 +2869,6 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/missions/doom.cdogscpn/graphics/chars/bodies/demon/data.json
 %%DATADIR%%/missions/doom.cdogscpn/graphics/chars/bodies/demon/legs_idle_24x24.png
 %%DATADIR%%/missions/doom.cdogscpn/graphics/chars/bodies/demon/legs_run_24x24.png
-%%DATADIR%%/missions/doom.cdogscpn/graphics/chars/bodies/demon/src.blend
 %%DATADIR%%/missions/doom.cdogscpn/graphics/chars/bodies/demon/src.txt
 %%DATADIR%%/missions/doom.cdogscpn/graphics/chars/bodies/demon/upper_idle_24x24.png
 %%DATADIR%%/missions/doom.cdogscpn/graphics/chars/bodies/demon/upper_idle_handgun_24x24.png
