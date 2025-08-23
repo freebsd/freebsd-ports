@@ -69,6 +69,6 @@ include/torrent/utils/signal_bitfield.h
 include/torrent/utils/thread.h
 include/torrent/utils/uri_parser.h
 lib/libtorrent.so
-lib/libtorrent.so.25
-lib/libtorrent.so.25.0.0
+lib/libtorrent.so.26
+lib/libtorrent.so.26.0.0
 libdata/pkgconfig/libtorrent.pc
