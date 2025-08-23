@@ -1,5 +1,5 @@
 PORTNAME=	iozone
-DISTVERSION=	3_507
+DISTVERSION=	3_508
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
 DISTNAME=	${PORTNAME}${DISTVERSION}
