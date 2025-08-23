@@ -4811,6 +4811,7 @@
     SUBDIR += py-dj52-django-rq
     SUBDIR += py-dj52-strawberry-graphql
     SUBDIR += py-django-rq
+    SUBDIR += py-dlinfo
     SUBDIR += py-dm-tree
     SUBDIR += py-docformatter
     SUBDIR += py-dockerfile-parse
