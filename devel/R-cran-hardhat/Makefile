@@ -1,11 +1,11 @@
 PORTNAME=	hardhat
-DISTVERSION=	1.4.1
+DISTVERSION=	1.4.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Construct Modeling Packages
-WWW=		https://cran.r-project.org/web/packages/hardhat/
+WWW=		https://cran.r-project.org/package=hardhat
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
