@@ -54,6 +54,6 @@ VAPI_MESON_ENABLED=	vala
 VAPI_USES=		vala:build
 
 post-install-DOCS-off:
-	${LOCALBASE}/bin/rst2man --no-datestamp ${WRKSRC}/rsvg-convert.rst --output=${STAGEDIR}${PREFIX}/share/man/man1/rsvg-convert.1
+	${LOCALBASE}/bin/rst2man --no-datestamp ${WRKSRC}/rsvg-convert.rst > ${STAGEDIR}${PREFIX}/share/man/man1/rsvg-convert.1
 
 .include <bsd.port.mk>
