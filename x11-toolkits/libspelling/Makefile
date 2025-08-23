@@ -1,5 +1,5 @@
 PORTNAME=	libspelling
-DISTVERSION=	0.4.8
+DISTVERSION=	0.4.9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -11,7 +11,7 @@ WWW=		https://gitlab.gnome.org/GNOME/libspelling
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gnome meson pkgconfig tar:xz vala:build
+USES=		gettext-tools gnome meson pkgconfig tar:xz vala:build
 USE_GNOME=	gtk40 gtksourceview5 introspection:build
 USE_LDCONFIG=	yes
 

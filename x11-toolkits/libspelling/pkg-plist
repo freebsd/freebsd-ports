@@ -120,6 +120,7 @@ libdata/pkgconfig/libspelling-1.pc
 %%PORTDOCS%%%%DOCSDIR%%-1/urlmap.js
 share/gir-1.0/Spelling-1.gir
 share/locale/ab/LC_MESSAGES/libspelling.mo
+share/locale/ar/LC_MESSAGES/libspelling.mo
 share/locale/be/LC_MESSAGES/libspelling.mo
 share/locale/bg/LC_MESSAGES/libspelling.mo
 share/locale/ca/LC_MESSAGES/libspelling.mo
