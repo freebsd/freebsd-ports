@@ -14,6 +14,8 @@ WWW=		https://gmsh.info/
 LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
 LICENSE_COMB=	multi
 
+BROKEN=		fails to compile with cgnslib-4.5.0, see https://github.com/CGNS/CGNS/issues/863
+
 BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libcgns.so:science/cgnslib \
 		libfltk_images.so:x11-toolkits/fltk \
