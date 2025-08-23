@@ -129,6 +129,7 @@
     SUBDIR += sunclock
     SUBDIR += sunwait
     SUBDIR += swe
+    SUBDIR += traccar
     SUBDIR += viking
     SUBDIR += wcslib
     SUBDIR += weather
