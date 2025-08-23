@@ -1,8 +1,16 @@
 bin/check_isa
 bin/ispc
+include/intrinsics/emmintrin.isph
+include/intrinsics/xmmintrin.isph
+include/ispc/ispc.h
 include/ispcrt/ispcrt.h
 include/ispcrt/ispcrt.hpp
 include/ispcrt/ispcrt.isph
+include/stdlib/short_vec.isph
+lib/cmake/ispc/ispcConfig.cmake
+lib/cmake/ispc/ispcConfigVersion.cmake
+lib/cmake/ispc/ispc_Exports-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ispc/ispc_Exports.cmake
 lib/cmake/ispcrt-%%VERSION%%/Finddpcpp_compiler.cmake
 lib/cmake/ispcrt-%%VERSION%%/Findlevel_zero.cmake
 lib/cmake/ispcrt-%%VERSION%%/interop.cmake
@@ -11,6 +19,9 @@ lib/cmake/ispcrt-%%VERSION%%/ispcrtConfig.cmake
 lib/cmake/ispcrt-%%VERSION%%/ispcrtConfigVersion.cmake
 lib/cmake/ispcrt-%%VERSION%%/ispcrt_Exports-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ispcrt-%%VERSION%%/ispcrt_Exports.cmake
+lib/libispc.so
+lib/libispc.so.1
+lib/libispc.so.%%VERSION%%
 lib/libispcrt.so
 lib/libispcrt.so.1
 lib/libispcrt.so.%%VERSION%%
