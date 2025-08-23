@@ -77,7 +77,7 @@ CMAKE_ARGS+=		-DENABLE_LIBOPENJPEG:STRING="none" \
 
 .  if ${_SLAVE_PORT} == glib
 USES+=			gnome python:build
-USE_GNOME+=		cairo glib20 introspection:Build libxml2
+USE_GNOME+=		cairo glib20 introspection:build libxml2
 BINARY_ALIAS+=		python3=${PYTHON_CMD}
 .  elif ${_SLAVE_PORT} == qt5
 USES+=			qt:5
