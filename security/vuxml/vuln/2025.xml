@@ -1,3 +1,32 @@
+  <vuln vid="c323bab5-80dd-11f0-97c4-40b034429ecf">
+    <topic>p5-Catalyst-Authentication-Credential-HTTP -- Insecure source of randomness</topic>
+    <affects>
+      <package>
+	<name>p5-Catalyst-Authentication-Credential-HTTP</name>
+	<range><lt>1.019</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>perl-catalyst project reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2025-40920">
+	  <p>Catalyst::Authentication::Credential::HTTP versions 1.018 and earlier for Perl generate nonces using
+             the Perl Data::UUID library. * Data::UUID does not use a strong cryptographic source for generating
+             UUIDs.* Data::UUID returns v3 UUIDs, which are generated from known information and are unsuitable for
+             security, as per RFC 9562. * The nonces should be generated from a strong cryptographic source, as per RFC 7616.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-40920</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-40920</url>
+    </references>
+    <dates>
+      <discovery>2025-08-11</discovery>
+      <entry>2025-08-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="07335fb9-7eb1-11f0-ba14-b42e991fc52e">
     <topic>Mozilla -- memory safety bugs</topic>
     <affects>
