@@ -1,4 +1,4 @@
-Metacity is a low-frills Window Manager, and is the default
-Window Manager of the GNOME 2 desktop.  It provides most of
-the features expected of a Window Manager, but leaves everything
-it can up to other components of the GNOME environment.
+Metacity is a simple compositing window manager that integrates nicely
+with GNOME Flashback.
+It uses GTK+ 3 for drawing window frames, so that it inherits colors,
+fonts, and so on from the GTK+ theme.

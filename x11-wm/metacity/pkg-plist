@@ -8,8 +8,9 @@ include/metacity/libmetacity/meta-frame-enums.h
 include/metacity/libmetacity/meta-theme.h
 lib/libmetacity.so
 lib/libmetacity.so.3
-lib/libmetacity.so.%%GTK3_VERSION%%
+lib/libmetacity.so.3.0.0
 libdata/pkgconfig/libmetacity.pc
+libexec/metacity-dialog
 share/applications/metacity.desktop
 share/gnome-control-center/keybindings/50-metacity-navigation.xml
 share/gnome-control-center/keybindings/50-metacity-system.xml

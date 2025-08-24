@@ -1,5 +1,5 @@
 PORTNAME=	metacity
-PORTVERSION=	3.56.0
+PORTVERSION=	3.57.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -10,15 +10,13 @@ WWW=		https://gitlab.gnome.org/GNOME/metacity
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
-		zenity>0:x11/zenity
+BUILD_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libharfbuzz.so:print/harfbuzz \
 		libgtop-2.0.so:devel/libgtop \
 		libstartup-notification-1.so:x11/startup-notification
-RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
-		zenity>0:x11/zenity
+RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
 USES=		compiler:c11 gettext gmake gnome libtool localbase pathfix \
 		pkgconfig tar:xz xorg

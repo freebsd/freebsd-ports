@@ -1,0 +1,10 @@
+--- data/Makefile.in.orig	2025-08-23 09:46:51 UTC
++++ data/Makefile.in
+@@ -381,7 +381,6 @@ SUBDIRS = \
+ 	keybindings \
+ 	pkgconfig \
+ 	schemas \
+-	systemd \
+ 	ui \
+ 	$(NULL)
+ 
