@@ -155,6 +155,7 @@
     SUBDIR += veroroute
     SUBDIR += veryl
     SUBDIR += xcircuit
+    SUBDIR += xschem
     SUBDIR += xyce
     SUBDIR += yosys
     SUBDIR += yosys-ghdl-plugin
