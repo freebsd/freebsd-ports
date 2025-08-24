@@ -59,7 +59,6 @@ share/man/man1/profanity-omemo.1.gz
 share/man/man1/profanity-otr.1.gz
 share/man/man1/profanity-outtype.1.gz
 share/man/man1/profanity-ox-setup.1.gz
-share/man/man1/profanity-ox.1.gz
 share/man/man1/profanity-paste.1.gz
 share/man/man1/profanity-pgp.1.gz
 share/man/man1/profanity-ping.1.gz
@@ -71,6 +70,7 @@ share/man/man1/profanity-privacy.1.gz
 share/man/man1/profanity-privileges.1.gz
 share/man/man1/profanity-quit.1.gz
 share/man/man1/profanity-receipts.1.gz
+share/man/man1/profanity-redraw.1.gz
 share/man/man1/profanity-reconnect.1.gz
 share/man/man1/profanity-register.1.gz
 share/man/man1/profanity-reload.1.gz
