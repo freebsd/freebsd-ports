@@ -100,6 +100,14 @@
 %%MANPAGES%%share/man/man1/glab-mr-update.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-view.1.gz
 %%MANPAGES%%share/man/man1/glab-mr.1.gz
+%%MANPAGES%%share/man/man1/glab-opentofu-init.1.gz
+%%MANPAGES%%share/man/man1/glab-opentofu-state-delete.1.gz
+%%MANPAGES%%share/man/man1/glab-opentofu-state-download.1.gz
+%%MANPAGES%%share/man/man1/glab-opentofu-state-list.1.gz
+%%MANPAGES%%share/man/man1/glab-opentofu-state-lock.1.gz
+%%MANPAGES%%share/man/man1/glab-opentofu-state-unlock.1.gz
+%%MANPAGES%%share/man/man1/glab-opentofu-state.1.gz
+%%MANPAGES%%share/man/man1/glab-opentofu.1.gz
 %%MANPAGES%%share/man/man1/glab-release-create.1.gz
 %%MANPAGES%%share/man/man1/glab-release-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-release-download.1.gz
