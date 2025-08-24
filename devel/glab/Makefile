@@ -1,9 +1,9 @@
 PORTNAME=	glab
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.64.0
+DISTVERSION=	1.65.0
 CATEGORIES=	devel
 
-MAINTAINER=	lcook@FreeBSD.org
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	GitLab CLI tool bringing GitLab to your command line
 WWW=		https://gitlab.com/gitlab-org/cli
 
