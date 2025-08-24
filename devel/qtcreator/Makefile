@@ -1,5 +1,5 @@
 PORTNAME=	qtcreator
-DISTVERSION=	16.0.0
+DISTVERSION=	17.0.0
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -12,16 +12,15 @@ WWW=		https://qt-project.org/wiki/Category:Tools::QtCreator
 LICENSE=	QtGPL
 LICENSE_GROUPS_QtGPL=	GPL
 LICENSE_NAME=	GPLv3 with Qt Company GPL Exception 1.0
-LICENSE_FILE=	${WRKSRC}/LICENSE.GPL3-EXCEPT
+LICENSE_FILE=	${WRKSRC}/LICENSES/LICENSE.GPL3-EXCEPT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
-LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
-		libzstd.so:archivers/zstd
+LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake compiler:c++20-lang desktop-file-utils gl \
-		llvm:build,run,noexport,min=17 pkgconfig python \
-		qt:6 shebangfix tar:xz
+		libarchive llvm:build,run,noexport,min=17 pkgconfig \
+		python qt:6 shebangfix tar:xz
 USE_GL=		gl opengl
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 USE_QT=		5compat base declarative quick3d quicktimeline serialport \
