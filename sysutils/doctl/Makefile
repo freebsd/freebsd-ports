@@ -1,7 +1,6 @@
 PORTNAME=	doctl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.122.0
-PORTREVISION=	2
+DISTVERSION=	1.141.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/digitalocean/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
@@ -13,7 +12,7 @@ WWW=		https://github.com/digitalocean/doctl
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		go:1.22,modules
+USES=		go:1.24,modules
 
 GO_TARGET=	./cmd/${PORTNAME}
 
