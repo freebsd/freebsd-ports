@@ -1,6 +1,6 @@
 PORTNAME=	paperless-ngx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.17.1
+DISTVERSION=	2.18.2
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:webui \
 		GH:gh
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}concurrent-log-handler>=0.9.19:sysutils/py-concurrent-log-handler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateparser>=1.2.2:devel/py-dateparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-channels-redis>=4.3.0:www/py-dj51-channels-redis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj51-django-allauth>=65.10.0:www/py-dj51-django-allauth@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj51-django-allauth>=65.11.0:www/py-dj51-django-allauth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-django-auditlog>=3.0.0:www/py-dj51-django-auditlog@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-django-celery-results>=2.6.0:www/py-dj51-django-celery-results@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-django-compression-middleware>=0.5.0:www/py-dj51-django-compression-middleware@${PY_FLAVOR} \
