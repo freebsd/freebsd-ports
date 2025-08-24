@@ -1731,8 +1731,8 @@ lib/R/library/translations/DESCRIPTION
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/tcltk.mo
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/tools.mo
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/utils.mo
-%%NLS%%lib/R/library/utils/DESCRIPTION
 lib/R/library/utils/INDEX
+lib/R/library/utils/DESCRIPTION
 lib/R/library/utils/Meta/Rd.rds
 lib/R/library/utils/Meta/features.rds
 lib/R/library/utils/Meta/hsearch.rds
