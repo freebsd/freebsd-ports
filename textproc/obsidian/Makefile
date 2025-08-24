@@ -7,8 +7,7 @@
 # make USE_PACKAGE_DEPENDS_ONLY=yes install clean
 
 PORTNAME=	obsidian
-PORTVERSION=	1.8.10
-PORTREVISION=	4
+PORTVERSION=	1.9.10
 CATEGORIES=	textproc
 # Icon is taken from the Nix build recipe
 # https://github.com/NixOS/nixpkgs/blob/de5448dab588ad41aef40f8c7c0c230981656698/pkgs/applications/misc/obsidian/default.nix#L31-L34
@@ -27,7 +26,7 @@ LICENSE_NAME=	End User License Agreement
 LICENSE_TEXT=	See https://obsidian.md/terms
 LICENSE_PERMS=
 
-USES=		electronfix:34
+USES=		electronfix:37
 
 ELECTRONFIX_MAIN_EXECUTABLE=	obsidian
 SUB_FILES=	obsidian
