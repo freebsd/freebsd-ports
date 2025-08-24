@@ -1,7 +1,7 @@
 PORTNAME=	beats
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.17.11
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	7
 
@@ -11,11 +11,9 @@ WWW=		https://www.elastic.co/products/beats/
 
 LICENSE=	APACHE20
 
-BROKEN=		fails to build: link: golang.org/x/net/internal/socket: invalid reference to syscall.recvmsg
-
 BUILD_DEPENDS=	${LOCALBASE}/bin/mage:devel/mage
 
-USES=		go:modules
+USES=		go:1.22,modules
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	elastic
