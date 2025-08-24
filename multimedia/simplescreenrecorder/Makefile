@@ -1,17 +1,18 @@
 PORTNAME=	simplescreenrecorder
-DISTVERSION=	0.4.4-9
-DISTVERSIONSUFFIX=	-gc092f3e
-PORTREVISION=	4
+DISTVERSION=	0.4.4-73
+DISTVERSIONSUFFIX=	-g232eac7
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Screen video/audio recorder
-WWW=		https://www.maartenbaert.be/simplescreenrecorder/
+WWW=		https://www.maartenbaert.be/simplescreenrecorder/ \
+		https://github.com/MaartenBaert/ssr
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
+LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
+		libpipewire-0.3.so:multimedia/pipewire
 
 USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig qt:5 xorg
 USE_QT=		core gui widgets x11extras buildtools:build linguisttools:build qmake:build
