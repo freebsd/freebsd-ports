@@ -48,7 +48,7 @@ NGX_CONFIGURE_ARGS=	--with-compat \
 
 PLIST_FILES=	libexec/nginx/ngx_http_acme_module.so
 
-post-extract:
+pre-configure:
 	( cd ${WRKDIR}/nginx-${NGINX_VERSION} && \
 		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${NGX_CONFIGURE_ARGS} )
 
