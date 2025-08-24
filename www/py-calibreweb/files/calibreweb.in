@@ -20,11 +20,11 @@
 # %%RC_NAME%%_gdrive:       Directory and file name of %%RC_NAME%% gdrive
 #                       db is stored.
 #                       Default: %%PREFIX%%/%%RC_NAME%%/gdrive.db
-# %%RC_NAME%%_cert:         Directory and file name of %%RC_NAME%% gdrive
-#                       db is stored.
+# %%RC_NAME%%_cert:         Directory and file name of %%RC_NAME%%
+#                       certificate is stored.
 #                       Default: None
-# %%RC_NAME%%_key:          Directory and file name of %%RC_NAME%% gdrive
-#                       db is stored.
+# %%RC_NAME%%_key:          Directory and file name of %%RC_NAME%%
+#                       key is stored.
 #                       Default: None
 # %%RC_NAME%%_flags:        Additonal flags as needed
 #                       Default: None
@@ -54,10 +54,10 @@ load_rc_config ${name}
 : ${%%RC_NAME%%_enable:=NO}
 : ${%%RC_NAME%%_user:=%%USER%%}
 : ${%%RC_NAME%%_group:=%%GROUP%%}
-: ${%%RC_NAME%%_ip_addr="0.0.0.0"}
-: ${%%RC_NAME%%_conf_dir="%%DATADIR%%"}
-: ${%%RC_NAME%%_settings="${%%RC_NAME%%_conf_dir}/app.db"}
-: ${%%RC_NAME%%_gdrive="${%%RC_NAME%%_conf_dir}/gdrive.db"}
+: ${%%RC_NAME%%_ip_addr:="0.0.0.0"}
+: ${%%RC_NAME%%_conf_dir:="%%DATADIR%%"}
+: ${%%RC_NAME%%_settings:="${%%RC_NAME%%_conf_dir}/app.db"}
+: ${%%RC_NAME%%_gdrive:="${%%RC_NAME%%_conf_dir}/gdrive.db"}
 : ${%%RC_NAME%%_pid:="%%PORTNAME%%.pid"}
 : ${%%RC_NAME%%_pid_dir:="/var/run/%%PORTNAME%%"}
 : ${%%RC_NAME%%_log:="%%PORTNAME%%.log"}
