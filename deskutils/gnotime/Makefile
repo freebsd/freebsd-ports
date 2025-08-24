@@ -10,6 +10,9 @@ WWW=		https://github.com/GnoTime/gnotime
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired databases/qof
+EXPIRATION_DATE=2025-11-24
+
 BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive \
 		scrollkeeper-config:textproc/rarian
 LIB_DEPENDS=	libqof.so:databases/qof \
