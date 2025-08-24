@@ -1,5 +1,5 @@
 PORTNAME=	mod_wsgi
-DISTVERSION=	4.9.4
+DISTVERSION=	5.0.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ WWW=		https://www.modwsgi.org/
 
 LICENSE=	APACHE20
 
-USES=		apache cpe gettext python
+USES=		apache cpe gettext python:3.8+
 USE_PYTHON=	flavors
 
 CPE_VENDOR=	modwsgi
@@ -18,17 +18,9 @@ CPE_VENDOR=	modwsgi
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}"
 
-SUB_FILES=	pkg-message ${APMOD_FILE}
+SUB_FILES=	${APMOD_FILE}
 APMOD_FILE=	270_${PORTNAME}.conf.sample
 PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
-
-pre-everything::
-	@${ECHO_MSG} "======================= ATTENTION! ======================"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to use daemon mode you will need to make sure"
-	@${ECHO_MSG} "Apache and APR include thread support."
-	@${ECHO_MSG}
-	@${ECHO_MSG} "========================================================="
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d

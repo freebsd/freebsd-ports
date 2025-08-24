@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250908:
+  AFFECTS: users of www/mod_wsgi4
+  AUTHOR: michaelo@FreeBSD.org
+
+  This port has been renamed to www/mod_wsgi to be able to upgrade to
+  version 5.
+
 20250828:
   AFFECTS: users of databases/mongodb70, databases/mongodb80
   AUTHOR: ronald@FreeBSD.org

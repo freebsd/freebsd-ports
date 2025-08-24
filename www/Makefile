@@ -450,7 +450,7 @@
     SUBDIR += mod_umask
     SUBDIR += mod_webauth
     SUBDIR += mod_webkit
-    SUBDIR += mod_wsgi4
+    SUBDIR += mod_wsgi
     SUBDIR += mod_xsendfile
     SUBDIR += mohawk
     SUBDIR += moin2

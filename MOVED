@@ -4768,3 +4768,4 @@ www/node18||2025-09-03|Has expired: Node.js 18.* has reached its EoL on 2025-04-
 devel/rubygem-hashie4|devel/rubygem-hashie|2025-09-07|Remove obsoleted port. Use devel/rubygem-hashie instead
 print/rubygem-afm0|print/rubygem-afm|2025-09-07|Remove obsoleted port. Use print/rubygem-afm instead
 www/rubygem-jwt29|www/rubygem-jwt|2025-09-07|Remove obsoleted port. Use www/rubygem-jwt instead
+www/mod_wsgi4|www/mod_wsgi|2025-09-08|Was tied to only major version 4, now upgraded to 5
