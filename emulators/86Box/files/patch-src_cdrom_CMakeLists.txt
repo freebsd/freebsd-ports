@@ -1,0 +1,10 @@
+--- src/cdrom/CMakeLists.txt.orig	2025-08-24 18:40:59 UTC
++++ src/cdrom/CMakeLists.txt
+@@ -26,6 +26,7 @@ target_link_libraries(86Box PkgConfig::SNDFILE)
+     cdrom_mke.c
+ )
+ target_link_libraries(86Box PkgConfig::SNDFILE)
++target_include_directories(cdrom PRIVATE /usr/local/include)
+ 
+ if(CDROM_MITSUMI)
+     target_compile_definitions(cdrom PRIVATE USE_CDROM_MITSUMI)

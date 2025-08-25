@@ -1,6 +1,6 @@
 PORTNAME=	86Box
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.1
+DISTVERSION=	5.0
 CATEGORIES=	emulators
 
 MAINTAINER=	tiago.gasiba@gmail.com
@@ -72,8 +72,6 @@ ICON_RESOLUTIONS=	128x128 192x192 256x256 48x48 512x512 64x64 72x72 96x96
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/src/86Box ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/86Box-install-roms.sh ${STAGEDIR}${PREFIX}/bin
-	${REINPLACE_CMD} -e 's|Exec=86Box|Exec=/bin/sh -c "${PREFIX}/bin/86Box -C $${HOME}/.config/86Box.cfg"|' \
-		${WRKSRC}/src/unix/assets/net.86box.86Box.desktop
 	${INSTALL_DATA} ${WRKSRC}/src/unix/assets/net.86box.86Box.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 .for F in ${ICON_RESOLUTIONS}

@@ -1,0 +1,10 @@
+--- src/network/CMakeLists.txt.orig	2025-08-24 18:50:29 UTC
++++ src/network/CMakeLists.txt
+@@ -71,6 +71,7 @@ if (UNIX)
+ endif()
+ 
+ if (UNIX)
++    set_source_files_properties(net_slirp.c PROPERTIES COMPILE_FLAGS "-I/usr/local/include")
+     find_path(HAS_VDE "libvdeplug.h" PATHS ${VDE_INCLUDE_DIR} "/usr/include /usr/local/include" "/opt/homebrew/include" )
+     if(HAS_VDE)
+         find_library(VDE_LIB vdeplug)

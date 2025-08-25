@@ -1,6 +1,6 @@
---- src/printer/CMakeLists.txt.orig	2024-08-02 00:15:09 UTC
+--- src/printer/CMakeLists.txt.orig	2025-08-24 12:26:31 UTC
 +++ src/printer/CMakeLists.txt
-@@ -29,6 +29,7 @@ target_link_libraries(86Box PkgConfig::FREETYPE)
+@@ -37,6 +37,7 @@ target_link_libraries(86Box PkgConfig::FREETYPE)
  find_package(PkgConfig REQUIRED)
  pkg_check_modules(FREETYPE REQUIRED IMPORTED_TARGET freetype2)
  target_link_libraries(86Box PkgConfig::FREETYPE)

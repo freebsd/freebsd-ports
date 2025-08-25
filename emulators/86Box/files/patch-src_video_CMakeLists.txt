@@ -1,0 +1,11 @@
+--- src/video/CMakeLists.txt.orig	2025-08-24 18:56:26 UTC
++++ src/video/CMakeLists.txt
+@@ -143,6 +143,8 @@ add_library(vid OBJECT
+ 
+ )
+ 
++target_include_directories(vid PRIVATE /usr/local/include)
++
+ if(G100)
+     target_compile_definitions(vid PRIVATE USE_G100)
+ endif()

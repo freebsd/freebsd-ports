@@ -1,6 +1,6 @@
---- src/qt/qt_mainwindow.cpp.orig	2024-08-02 00:15:09 UTC
+--- src/qt/qt_mainwindow.cpp.orig	2025-08-24 12:26:31 UTC
 +++ src/qt/qt_mainwindow.cpp
-@@ -378,6 +378,7 @@ MainWindow::MainWindow(QWidget *parent)
+@@ -469,6 +469,7 @@ MainWindow::MainWindow(QWidget *parent)
  
  #if QT_CONFIG(vulkan)
      bool vulkanAvailable = false;
