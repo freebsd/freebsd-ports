@@ -205,6 +205,7 @@ include/mathsResources/greenFunctions/Helmholtz3dKernel.hpp
 include/mathsResources/greenFunctions/Laplace2dKernel.hpp
 include/mathsResources/greenFunctions/Laplace3dKernel.hpp
 include/mathsResources/greenFunctions/Maxwell3dKernel.hpp
+include/mathsResources/greenFunctions/Navier3dKernel.hpp
 include/mathsResources/polynomialsRoots.hpp
 include/mathsResources/quadratureMethods.hpp
 include/mathsResources/randomGenerators.hpp
@@ -304,7 +305,6 @@ include/utils/Node.hpp
 include/utils/Parameters.hpp
 include/utils/Point.hpp
 include/utils/PrintStream.hpp
-include/utils/Reals.hpp
 include/utils/SparseMatrix.hpp
 include/utils/String.hpp
 include/utils/SymbolicFunction.hpp
