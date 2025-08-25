@@ -1,0 +1,4 @@
+The csvw package provides:
+* Python API to read and write relational, tabular data according to the CSV
+  on the Web specification and
+* commandline tools for reading and validating CSVW data

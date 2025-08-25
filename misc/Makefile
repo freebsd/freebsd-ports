@@ -432,6 +432,7 @@
     SUBDIR += py-colorzero
     SUBDIR += py-cppman
     SUBDIR += py-crudini
+    SUBDIR += py-csvw
     SUBDIR += py-datasets
     SUBDIR += py-detecta
     SUBDIR += py-diffusers
