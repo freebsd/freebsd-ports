@@ -1442,6 +1442,7 @@
     SUBDIR += py-langdetect
     SUBDIR += py-langid
     SUBDIR += py-language-data
+    SUBDIR += py-language-tags
     SUBDIR += py-laserhammer
     SUBDIR += py-latexcodec
     SUBDIR += py-license-expression
