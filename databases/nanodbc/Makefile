@@ -11,6 +11,7 @@ WWW=		https://nanodbc.github.io/nanodbc/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13=	compilation fails with clang-19, see https://github.com/nanodbc/nanodbc/issues/421
 BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/nanodbc/nanodbc/issues/421
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
