@@ -1,7 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.32.0
-PORTREVISION=	2
+DISTVERSION=	0.34.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +15,8 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	altsem
 
-CARGO_CRATES=	aho-corasick-1.1.3 \
+CARGO_CRATES=	ahash-0.8.12 \
+		aho-corasick-1.1.3 \
 		allocator-api2-0.2.18 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
@@ -26,20 +26,29 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		anstyle-parse-0.2.5 \
 		anstyle-query-1.1.1 \
 		anstyle-wincon-3.0.4 \
+		anyhow-1.0.98 \
 		arboard-3.4.1 \
 		atomic-0.6.0 \
 		autocfg-1.4.0 \
+		base64-0.21.7 \
+		bit-set-0.5.3 \
+		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
+		block-buffer-0.10.4 \
 		block2-0.5.1 \
 		bstr-1.10.0 \
 		bumpalo-3.16.0 \
 		bytemuck-1.19.0 \
+		cached-0.55.1 \
+		cached_proc_macro-0.24.0 \
+		cached_proc_macro_types-0.1.1 \
 		cassowary-0.3.0 \
 		cast-0.3.0 \
 		castaway-0.2.3 \
-		cc-1.0.106 \
+		cc-1.2.26 \
 		cfg-if-1.0.0 \
+		cfg_aliases-0.2.1 \
 		chrono-0.4.40 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
@@ -53,6 +62,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		compact_str-0.8.0 \
 		console-0.15.8 \
 		core-foundation-sys-0.8.7 \
+		cpufeatures-0.2.17 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
 		crossbeam-deque-0.8.5 \
@@ -61,7 +71,16 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		crossterm-0.28.1 \
 		crossterm_winapi-0.9.1 \
 		crunchy-0.2.2 \
+		crypto-common-0.1.6 \
+		csscolorparser-0.6.2 \
+		darling-0.20.11 \
+		darling_core-0.20.11 \
+		darling_macro-0.20.11 \
+		deltae-0.3.2 \
 		diff-0.1.13 \
+		digest-0.10.7 \
+		dirs-4.0.0 \
+		dirs-sys-0.3.7 \
 		displaydoc-0.2.5 \
 		either-1.13.0 \
 		encode_unicode-0.3.6 \
@@ -69,31 +88,32 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		errno-0.3.10 \
 		error-code-3.3.1 \
 		etcetera-0.10.0 \
+		euclid-0.22.11 \
+		fancy-regex-0.11.0 \
+		fastrand-2.3.0 \
 		figment-0.10.19 \
+		filedescriptor-0.8.3 \
 		filetime-0.2.25 \
+		finl_unicode-1.3.0 \
+		fixedbitset-0.4.2 \
+		fnv-1.0.7 \
 		foldhash-0.1.3 \
 		form_urlencoded-1.2.1 \
 		fsevent-sys-4.1.0 \
-		futures-0.3.31 \
-		futures-channel-0.3.31 \
-		futures-core-0.3.31 \
-		futures-executor-0.3.31 \
-		futures-io-0.3.31 \
-		futures-macro-0.3.31 \
-		futures-sink-0.3.31 \
-		futures-task-0.3.31 \
-		futures-timer-3.0.3 \
-		futures-util-0.3.31 \
+		generic-array-0.14.7 \
 		gethostname-0.4.3 \
+		getrandom-0.2.16 \
+		getrandom-0.3.3 \
 		git-version-0.3.9 \
 		git-version-macro-0.3.9 \
 		git2-0.20.1 \
-		glob-0.3.1 \
 		half-2.4.1 \
+		hashbrown-0.14.5 \
 		hashbrown-0.15.0 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		hermit-abi-0.4.0 \
+		hex-0.4.3 \
 		home-0.5.9 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
@@ -107,6 +127,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		icu_properties_data-1.5.1 \
 		icu_provider-1.5.0 \
 		icu_provider_macros-1.5.0 \
+		ident_case-1.0.1 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
 		indexmap-2.6.0 \
@@ -123,9 +144,10 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		itertools-0.14.0 \
 		itoa-1.0.11 \
 		jobserver-0.1.32 \
-		js-sys-0.3.72 \
+		js-sys-0.3.77 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
+		lab-0.11.0 \
 		lazy_static-1.5.0 \
 		libc-0.2.168 \
 		libgit2-sys-0.18.1+1.9.0 \
@@ -133,16 +155,24 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		libz-sys-1.1.20 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
+		linux-raw-sys-0.9.4 \
 		litemap-0.7.5 \
 		lock_api-0.4.12 \
 		log-0.4.27 \
 		lru-0.12.5 \
+		mac_address-1.1.8 \
 		memchr-2.7.4 \
+		memmem-0.1.1 \
+		memoffset-0.7.1 \
+		memoffset-0.9.1 \
 		minimal-lexical-0.2.1 \
 		mio-1.0.2 \
+		nix-0.26.4 \
+		nix-0.29.0 \
 		nom-7.1.3 \
 		notify-7.0.0 \
 		notify-types-1.0.0 \
+		num-derive-0.3.3 \
 		num-traits-0.2.19 \
 		objc-sys-0.3.5 \
 		objc2-0.5.2 \
@@ -155,91 +185,113 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		objc2-quartz-core-0.2.2 \
 		once_cell-1.20.2 \
 		oorandom-11.1.4 \
+		ordered-float-4.6.0 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		paste-1.0.15 \
 		percent-encoding-2.3.1 \
+		pest-2.8.0 \
+		pest_derive-2.8.0 \
+		pest_generator-2.8.0 \
+		pest_meta-2.8.0 \
+		phf-0.11.3 \
+		phf_codegen-0.11.3 \
+		phf_generator-0.11.3 \
+		phf_macros-0.11.3 \
+		phf_shared-0.11.3 \
 		pin-project-1.1.10 \
 		pin-project-internal-1.1.10 \
-		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.31 \
 		plotters-0.3.7 \
 		plotters-backend-0.3.7 \
 		plotters-svg-0.3.7 \
 		pretty_assertions-1.4.1 \
-		proc-macro-crate-3.2.0 \
 		proc-macro2-1.0.88 \
 		quote-1.0.37 \
+		r-efi-5.2.0 \
+		rand-0.8.5 \
+		rand_core-0.6.4 \
 		ratatui-0.29.0 \
-		ratatui-macros-0.6.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.1.57 \
 		redox_syscall-0.5.7 \
+		redox_users-0.4.6 \
 		regex-1.11.1 \
 		regex-automata-0.4.8 \
 		regex-syntax-0.8.5 \
-		relative-path-1.9.3 \
-		rstest-0.23.0 \
-		rstest_macros-0.23.0 \
-		rustc_version-0.4.1 \
 		rustix-0.38.42 \
+		rustix-1.0.7 \
 		rustversion-1.0.18 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		semver-1.0.23 \
+		semver-0.11.0 \
+		semver-parser-0.10.3 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
-		serde_json-1.0.128 \
+		serde_json-1.0.140 \
 		serde_spanned-0.6.8 \
+		sha2-0.10.9 \
+		shlex-1.3.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
 		similar-2.7.0 \
 		simple-logging-2.0.2 \
-		slab-0.4.9 \
+		siphasher-0.3.11 \
+		siphasher-1.0.1 \
 		smallvec-1.13.2 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
+		streaming-iterator-0.1.9 \
 		strip-ansi-escapes-0.2.1 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
-		syn-2.0.85 \
+		syn-1.0.109 \
+		syn-2.0.87 \
 		synstructure-0.13.1 \
 		temp-dir-0.1.14 \
-		thiserror-1.0.64 \
-		thiserror-impl-1.0.64 \
+		tempfile-3.20.0 \
+		terminfo-0.8.0 \
+		termios-0.3.3 \
+		termwiz-0.22.0 \
+		thiserror-1.0.69 \
+		thiserror-2.0.12 \
+		thiserror-impl-1.0.69 \
+		thiserror-impl-2.0.12 \
 		thread-id-3.3.0 \
 		tinystr-0.7.6 \
 		tinytemplate-1.2.1 \
 		toml-0.8.20 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.24 \
-		tree-sitter-0.20.10 \
-		tree-sitter-bash-0.20.5 \
-		tree-sitter-c-0.20.8 \
-		tree-sitter-c-sharp-0.20.0 \
-		tree-sitter-cpp-0.20.5 \
-		tree-sitter-elixir-0.1.1 \
-		tree-sitter-go-0.20.0 \
-		tree-sitter-haskell-0.15.0 \
-		tree-sitter-highlight-0.20.1 \
-		tree-sitter-html-0.20.0 \
-		tree-sitter-java-0.20.2 \
-		tree-sitter-javascript-0.20.4 \
-		tree-sitter-json-0.20.2 \
-		tree-sitter-ocaml-0.20.4 \
-		tree-sitter-php-0.20.0 \
-		tree-sitter-python-0.20.4 \
-		tree-sitter-ruby-0.20.1 \
-		tree-sitter-rust-0.20.4 \
-		tree-sitter-scala-0.20.3 \
-		tree-sitter-toml-0.20.0 \
-		tree-sitter-typescript-0.20.5 \
-		tui-prompts-0.5.0 \
+		tree-sitter-0.25.6 \
+		tree-sitter-bash-0.25.0 \
+		tree-sitter-c-0.24.1 \
+		tree-sitter-c-sharp-0.23.1 \
+		tree-sitter-cpp-0.23.4 \
+		tree-sitter-elixir-0.3.4 \
+		tree-sitter-go-0.23.4 \
+		tree-sitter-haskell-0.23.1 \
+		tree-sitter-highlight-0.25.6 \
+		tree-sitter-html-0.23.2 \
+		tree-sitter-java-0.23.5 \
+		tree-sitter-javascript-0.23.1 \
+		tree-sitter-json-0.24.8 \
+		tree-sitter-language-0.1.5 \
+		tree-sitter-ocaml-0.24.2 \
+		tree-sitter-php-0.23.11 \
+		tree-sitter-python-0.23.6 \
+		tree-sitter-ruby-0.23.1 \
+		tree-sitter-rust-0.24.0 \
+		tree-sitter-scala-0.23.4 \
+		tree-sitter-toml-ng-0.7.0 \
+		tree-sitter-typescript-0.23.2 \
+		typenum-1.18.0 \
+		ucd-trie-0.1.7 \
 		uncased-0.9.10 \
 		unicode-ident-1.0.13 \
 		unicode-segmentation-1.12.0 \
@@ -250,17 +302,27 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
+		uuid-1.17.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		vte-0.14.1 \
+		vtparse-0.6.2 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.95 \
-		wasm-bindgen-backend-0.2.95 \
-		wasm-bindgen-macro-0.2.95 \
-		wasm-bindgen-macro-support-0.2.95 \
-		wasm-bindgen-shared-0.2.95 \
+		wasi-0.14.2+wasi-0.2.4 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
 		web-sys-0.3.72 \
+		web-time-1.1.0 \
+		wezterm-bidi-0.2.3 \
+		wezterm-blob-leases-0.1.1 \
+		wezterm-color-types-0.3.0 \
+		wezterm-dynamic-0.2.1 \
+		wezterm-dynamic-derive-0.1.1 \
+		wezterm-input-types-0.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
@@ -288,6 +350,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.7.4 \
+		wit-bindgen-rt-0.39.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		x11rb-0.13.1 \
@@ -295,6 +358,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		yansi-1.0.1 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
+		zerocopy-0.8.26 \
+		zerocopy-derive-0.8.26 \
 		zerofrom-0.1.6 \
 		zerofrom-derive-0.1.6 \
 		zerovec-0.10.4 \
