@@ -163,7 +163,7 @@
     SUBDIR += docbook2mdoc
     SUBDIR += docbookrx
     SUBDIR += docproj
-    SUBDIR += docproj-fonts-cj
+    SUBDIR += docproj-fonts-cjk
     SUBDIR += doxx
     SUBDIR += dsssl-docbook-modular
     SUBDIR += dtd-catalogs
