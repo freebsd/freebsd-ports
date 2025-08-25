@@ -265,7 +265,6 @@ share/applications/freeplane.desktop
 %%DATADIR%%/freeplane256.png
 %%DATADIR%%/freeplaneConsole.l4j.ini
 %%DATADIR%%/freeplanelauncher.jar
-%%DATADIR%%/gitinfo.txt
 %%DATADIR%%/init.xargs
 %%DATADIR%%/plugins/org.freeplane.plugin.bugreport/META-INF/MANIFEST.MF
 %%DATADIR%%/plugins/org.freeplane.plugin.bugreport/lib/plugin-%%PORTVERSION%%.jar
@@ -379,7 +378,6 @@ share/applications/freeplane.desktop
 %%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/xml-apis-ext-1.3.04.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.svg/lib/xmlgraphics-commons-2.11.jar
 %%DATADIR%%/props.xargs
-%%DATADIR%%/resources/gitinfo.properties
 %%DATADIR%%/resources/linkDecoration.ini
 %%DATADIR%%/resources/ortho/dictionary_de.ortho
 %%DATADIR%%/resources/ortho/dictionary_en.ortho
