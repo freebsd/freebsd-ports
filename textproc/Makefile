@@ -1601,6 +1601,7 @@
     SUBDIR += py-rst2html5
     SUBDIR += py-sacremoses
     SUBDIR += py-scour
+    SUBDIR += py-segments
     SUBDIR += py-segno
     SUBDIR += py-sense2vec
     SUBDIR += py-sentencepiece
