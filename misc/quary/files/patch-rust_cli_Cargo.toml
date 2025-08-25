@@ -1,4 +1,4 @@
---- rust/cli/Cargo.toml.orig	2024-11-02 16:21:45 UTC
+--- rust/cli/Cargo.toml.orig	2025-08-01 16:20:00 UTC
 +++ rust/cli/Cargo.toml
 @@ -21,7 +21,7 @@ serde_yaml = "0.9.33"
  base64 = "0.22.1"
@@ -6,6 +6,6 @@
  serde_yaml = "0.9.33"
 -duckdb = { version = "1.0.0", features = ["bundled"] }
 +duckdb = { version = "1.0.0" }
- 
- [dev-dependencies]
- chrono = "0.4.38"
+ sqlinference.workspace = true
+ sqruff-lib-core.workspace = true
+ sqruff-lib-dialects.workspace = true
