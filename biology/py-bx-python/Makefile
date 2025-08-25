@@ -1,6 +1,5 @@
 PORTNAME=	bx-python
-DISTVERSION=	0.13.0
-PORTREVISION=	1
+DISTVERSION=	0.14.0
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,11 +13,18 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	${PYNUMPY}
-BUILD_DEPENDS=	${PY_DEPENDS}
-RUN_DEPENDS=	${PY_DEPENDS}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PY_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PY_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR}
 
 USES=		compiler python
-USE_PYTHON=	autoplist cython3 distutils
+USE_PYTHON=	pep517 cython3 autoplist
+
+post-patch:
+	# force cythonization, compilation fails otherwise for some reason
+	@${TOUCH} `${FIND} ${WRKSRC} -name "*.pyx" -o -name "*.pxd"`
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/bx -name "*.so" | ${XARGS} ${STRIP_CMD}
