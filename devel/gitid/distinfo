@@ -1,5 +1,5 @@
-TIMESTAMP = 1752089277
-SHA256 (go/devel_gitid/gitid-v1.1.0/v1.1.0.mod) = d9b5b7ffc4dd8b9fcf7bd6a627ca0827c51a3fed351fc2bd3a4f3b6cc8d43a72
-SIZE (go/devel_gitid/gitid-v1.1.0/v1.1.0.mod) = 1022
-SHA256 (go/devel_gitid/gitid-v1.1.0/v1.1.0.zip) = a3bc18b2919c1536f3511e5a23e4f9ffe45fd7daa7dc9771934d0b1ebcba824c
-SIZE (go/devel_gitid/gitid-v1.1.0/v1.1.0.zip) = 10229
+TIMESTAMP = 1756104146
+SHA256 (go/devel_gitid/gitid-v1.2.0/v1.2.0.mod) = 578184a8ad33681b7673f435f12c32dedfff442179c00cc0a122e2ffe2a2412a
+SIZE (go/devel_gitid/gitid-v1.2.0/v1.2.0.mod) = 1119
+SHA256 (go/devel_gitid/gitid-v1.2.0/v1.2.0.zip) = 341f2b3373998f561f4f0fdae0727f0e074f8e67712492d91c368f049d18d0c2
+SIZE (go/devel_gitid/gitid-v1.2.0/v1.2.0.zip) = 17889
