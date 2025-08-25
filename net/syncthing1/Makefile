@@ -25,13 +25,13 @@ BINS=		syncthing stdiscosrv strelaysrv strelaypoolsrv
 MAKE_ENV+=	BUILD_HOST=freebsd \
 		BUILD_USER=ports
 
+CONFLICTS_INSTALL=	syncthing
+
 NO_CCACHE=	yes
 NO_WRKSUBDIR=	yes
 
 USERS=		syncthing
 GROUPS=		syncthing
-
-CONFLICTS=	syncthing
 
 .for x in ${BINS}
 PLIST_FILES+=	bin/${x}
