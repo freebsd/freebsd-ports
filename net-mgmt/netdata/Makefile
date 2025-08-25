@@ -1,7 +1,6 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.1
-PORTREVISION=	1
+DISTVERSION=	2.6.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/:netdata \
 		https://raw.githubusercontent.com/netdata/netdata/refs/tags/v${DISTVERSION}/src/go/:goplugin \
@@ -17,8 +16,7 @@ WWW=		https://github.com/netdata/netdata
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/mmv:misc/mmv \
-		${LOCALBASE}/lib/libbacktrace.a:devel/libbacktrace
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbacktrace.a:devel/libbacktrace
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libbrotlicommon.so:archivers/brotli \
 		libcurl.so:ftp/curl \
@@ -76,7 +74,7 @@ NETDATA_CACHE=	/var/cache/${PORTNAME}
 NETDATA_LOG=	/var/log/${PORTNAME}
 NETDATA_PERST=	/var/db/${PORTNAME}
 NETDATA_RUN=	/var/run/${PORTNAME}
-NETDATA_DASHBOARD_VERSION=	20250723
+NETDATA_DASHBOARD_VERSION=	20250824
 
 PLIST_SUB=	NETDATA_CACHE=${NETDATA_CACHE} \
 		NETDATA_LOG=${NETDATA_LOG} \
@@ -155,7 +153,7 @@ post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/netdata-updater.sh \
 		 ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/conf.d/netdata-updater.conf \
 		 ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/system
-	@(cd ${STAGEDIR}${PREFIX}/lib/${PORTNAME} && mmv ";*.conf" "#1#2.conf.sample")
+	${FIND} ${STAGEDIR}${PREFIX}/lib/${PORTNAME} -type f -name "*.conf" -exec ${MV} {} {}.sample \;
 
 post-install-DASHBOARD-on:
 	@(cd ${WRKDIR}/dist/agent && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/web)
