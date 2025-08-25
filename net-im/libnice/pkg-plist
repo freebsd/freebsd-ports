@@ -20,6 +20,6 @@ include/stun/win32_common.h
 lib/girepository-1.0/Nice-0.1.typelib
 lib/libnice.so
 lib/libnice.so.10
-lib/libnice.so.10.13.1
+lib/libnice.so.10.14.0
 libdata/pkgconfig/nice.pc
 share/gir-1.0/Nice-0.1.gir

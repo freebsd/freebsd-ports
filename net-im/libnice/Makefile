@@ -1,6 +1,5 @@
 PORTNAME=	libnice
-PORTVERSION=	0.1.21
-PORTREVISION=	2
+PORTVERSION=	0.1.22
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://nice.freedesktop.org/releases/
 
