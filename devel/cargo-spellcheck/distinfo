@@ -1,4 +1,4 @@
-TIMESTAMP = 1741670003
+TIMESTAMP = 1756087680
 SHA256 (rust/crates/addr2line-0.21.0.crate) = 8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb
 SIZE (rust/crates/addr2line-0.21.0.crate) = 40807
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -697,5 +697,5 @@ SHA256 (rust/crates/zip-0.5.13.crate) = 93ab48844d61251bb3835145c521d88aa4031d71
 SIZE (rust/crates/zip-0.5.13.crate) = 48237
 SHA256 (rust/crates/zspell-0.5.5.crate) = 1fd15eb5f5e7040be5fb1ad8ca0a8b4dd2ee7f6ee6f59d18a9b159bb12cb9b3a
 SIZE (rust/crates/zspell-0.5.5.crate) = 284736
-SHA256 (drahnr-cargo-spellcheck-v0.15.4_GH0.tar.gz) = 04f22f2f3448ac73d36790f2551a63948e09090a7756a82640d778d769b49eb3
-SIZE (drahnr-cargo-spellcheck-v0.15.4_GH0.tar.gz) = 7530980
+SHA256 (drahnr-cargo-spellcheck-v0.15.5_GH0.tar.gz) = ab4027dea18ac252b1a3ad733f47899daa50dde3c90aa34f5f22534745f853d7
+SIZE (drahnr-cargo-spellcheck-v0.15.5_GH0.tar.gz) = 7530974
