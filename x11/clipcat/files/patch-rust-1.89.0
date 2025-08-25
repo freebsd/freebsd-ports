@@ -1,0 +1,9 @@
+--- crates/server/src/notification/dummy.rs.orig	2025-08-22 08:47:55 UTC
++++ crates/server/src/notification/dummy.rs
+@@ -1,5 +1,6 @@
+ use crate::notification::traits;
+ 
++#[allow(dead_code)]
+ #[derive(Clone, Copy, Debug, Default)]
+ pub struct Notification {}
+ 
