@@ -8,6 +8,9 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Graphical Morse Code Trainer
 WWW=		https://www.nongnu.org/gtkmmorse/
 
+DEPRECATED=	Depends on expired devel/gconfmm26
+EXPIRATION_DATE=2025-11-25
+
 LIB_DEPENDS=	libao.so:audio/libao \
 		libgtkmm-2.4.so:x11-toolkits/gtkmm24 \
 		libgconfmm-2.6.so:devel/gconfmm26
