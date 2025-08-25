@@ -1,10 +1,10 @@
 PORTNAME=	cliphist
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Wayland clipboard manager
 WWW=		https://github.com/sentriz/cliphist
 
