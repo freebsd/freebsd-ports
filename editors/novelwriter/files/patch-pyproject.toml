@@ -1,21 +1,21 @@
---- pyproject.toml.orig	2025-06-24 14:43:34 UTC
+--- pyproject.toml.orig	2025-07-15 15:15:10 UTC
 +++ pyproject.toml
-@@ -1,15 +1,15 @@
+@@ -1,5 +1,5 @@
  [build-system]
 -requires = ["setuptools >= 77.0.3"]
 +requires = ["setuptools"]
  build-backend = "setuptools.build_meta"
  
  [project]
--name = "novelWriter"
-+name = "novelwriter"
- authors = [
-     {name = "Veronica Berglyd Olsen", email = "code@vkbo.net"},
+@@ -9,11 +9,6 @@ readme = {file = "setup/description_pypi.md", content-
  ]
  description = "A plain text editor for planning and writing novels"
  readme = {file = "setup/description_pypi.md", content-type = "text/markdown"}
--license = "GPL-3.0"
-+#license = "GPL-3.0"
+-license = "GPL-3.0-or-later AND Apache-2.0 AND CC-BY-4.0"
+-license-files = [
+-    "LICENSE.md",
+-    "setup/LICENSE-Apache-2.0.txt",
+-]
  classifiers = [
      "Programming Language :: Python :: 3 :: Only",
      "Programming Language :: Python :: 3.10",
