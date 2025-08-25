@@ -1,7 +1,6 @@
 PORTNAME=	gonic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.4
-PORTREVISION=	8
+DISTVERSION=	0.17.0
 CATEGORIES=	audio net
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		mpv:multimedia/mpv
 
-USES=		go:modules,1.21 pkgconfig sqlite
+USES=		go:modules pkgconfig sqlite
 
 USE_RC_SUBR=	${PORTNAME}
 
@@ -25,6 +24,13 @@ GO_TARGET=	./cmd/gonic
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
-PLIST_FILES=	bin/gonic
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	CHANGELOG.md README.md
+
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
