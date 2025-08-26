@@ -1,5 +1,5 @@
 PORTNAME=	gnupg
-DISTVERSION=	2.4.7
+DISTVERSION=	2.4.8
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -76,7 +76,6 @@ pre-build:
 	${TOUCH} ${WRKSRC}/doc/*.texi
 
 post-install:
-	${RMDIR} ${STAGEDIR}${PREFIX}/share/man/manh
 	${MV} ${STAGEDIR}${PREFIX}/bin/gpgsplit ${STAGEDIR}${PREFIX}/bin/gpgsplit2
 	${MV} ${STAGEDIR}${DATADIR}/help*.txt ${STAGEDIR}${DOCSDIR}
 
