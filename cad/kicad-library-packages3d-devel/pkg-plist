@@ -317,6 +317,8 @@
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_TL3305C.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_TL3342.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_TL3342.wrl
+%%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_TS-1088-xR020.step
+%%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_SPST_TS-1088-xR025.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS.step
 %%DATADIR%%/3dmodels/Button_Switch_SMD.3dshapes/SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS.wrl
 %%DATADIR%%/3dmodels/Button_Switch_THT.3dshapes/Nidec_Copal_SH-7010C.step
@@ -8007,9 +8009,14 @@
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/DVI-D_Molex_74320-4004_Horizontal.wrl
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/DVI-I_Molex_74320-1004_Horizontal.step
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/DVI-I_Molex_74320-1004_Horizontal.wrl
+%%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_A_Amphenol_10029449-x01xLF_Horizontal.step
+%%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_A_Contact_Technology_19APL2_Horizontal.step
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_A_Kycon_KDMIX-SL1-NS-WS-B15_VerticalRightAngle.step
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_A_Molex_208658-1001_Horizontal.step
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_A_Molex_208658-1001_Horizontal.wrl
+%%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_Micro-D_Molex_46765-0xxx.step
+%%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_Micro-D_Molex_46765-1xxx.step
+%%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_Micro-D_Molex_46765-2xxx.step
 %%DATADIR%%/3dmodels/Connector_Wuerth.3dshapes/Wuerth_WR-PHD_610004243021_SMD_2x02_P2.54mm_Vertical.step
 %%DATADIR%%/3dmodels/Connector_Wuerth.3dshapes/Wuerth_WR-PHD_610004243021_SMD_2x02_P2.54mm_Vertical.wrl
 %%DATADIR%%/3dmodels/Connector_Wuerth.3dshapes/Wuerth_WR-PHD_610006243021_SMD_2x03_P2.54mm_Vertical.step
@@ -10258,6 +10265,13 @@
 %%DATADIR%%/3dmodels/LED_THT.3dshapes/LED_VCCLite_5381H7_6.35x6.35mm.wrl
 %%DATADIR%%/3dmodels/Module.3dshapes/Google_Coral_SMT_TPU_Module.step
 %%DATADIR%%/3dmodels/Module.3dshapes/Google_Coral_SMT_TPU_Module.wrl
+%%DATADIR%%/3dmodels/Module.3dshapes/RaspberryPi_Pico.step
+%%DATADIR%%/3dmodels/Module.3dshapes/RaspberryPi_Pico_AddedHeaders_H2.54mm.step
+%%DATADIR%%/3dmodels/Module.3dshapes/RaspberryPi_Pico_H.step
+%%DATADIR%%/3dmodels/Module.3dshapes/RaspberryPi_Pico_PinSockets_H8.50mm.step
+%%DATADIR%%/3dmodels/Module.3dshapes/RaspberryPi_Pico_W.step
+%%DATADIR%%/3dmodels/Module.3dshapes/RaspberryPi_Pico_WH.step
+%%DATADIR%%/3dmodels/Module.3dshapes/RaspberryPi_Pico_W_AddedHeaders_H2.54mm.step
 %%DATADIR%%/3dmodels/Module.3dshapes/Sipeed-M1.step
 %%DATADIR%%/3dmodels/Module.3dshapes/Sipeed-M1.wrl
 %%DATADIR%%/3dmodels/Module.3dshapes/Sipeed-M1W.step

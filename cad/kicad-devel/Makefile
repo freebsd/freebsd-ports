@@ -29,6 +29,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libGLEW-wayland.so:graphics/glew-wayland \
 		libnng.so:net/nng \
+		libpoppler-glib.so:graphics/poppler-glib \
+		libspnav.so:misc/libspnav \
 		libodbc.so:databases/unixODBC
 
 CONFLICTS_INSTALL=	kicad # bin/_cvpcb.kiface

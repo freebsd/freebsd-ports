@@ -201,6 +201,7 @@
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_SPDT_CK_JS102011SAQN.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_SPDT_PCM12.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_SPDT_REED_MSDM-DT.kicad_mod
+%%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_SPDT_Shouhan_MSK12C02.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_SPST_B3S-1000.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_SPST_B3S-1100.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_SPST_B3SL-1002P.kicad_mod
@@ -248,6 +249,8 @@
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_SPST_TL3305B.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_SPST_TL3305C.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_SPST_TL3342.kicad_mod
+%%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_SPST_TS-1088-xR020.kicad_mod
+%%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_SPST_TS-1088-xR025.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_THT.pretty/KSA_Tactile_SPST.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_THT.pretty/Nidec_Copal_SH-7010C.kicad_mod
@@ -8231,12 +8234,14 @@
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TEN20-110xxWIRH_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TEN20-xxxx-N4_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TEN20-xxxx_THT.kicad_mod
+%%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TEN30-xxxxUIR_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TEN40-110xxWIRH_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TES1-051x_121x_241x_Single_SMD.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TES1-052x_122x_242x_Dual_SMD.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THB10-xxxx_Dual_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THB10-xxxx_Single_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THD_15-xxxxWIN_THT.kicad_mod
+%%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THL40-xxxxWI_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THN10-xxxxUIR_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THN30-xxxx_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THR40-72xxWI_THT.kicad_mod
@@ -12177,6 +12182,7 @@
 %%DATADIR%%/footprints/Package_LGA.pretty/Texas_SIL0010A_MicroSiP-10-1EP_3.8x3mm_P0.6mm_EP0.7x2.9mm.kicad_mod
 %%DATADIR%%/footprints/Package_LGA.pretty/Texas_SIL0010A_MicroSiP-10-1EP_3.8x3mm_P0.6mm_EP0.7x2.9mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_LGA.pretty/VLGA-4_2x2.5mm_P1.65mm.kicad_mod
+%%DATADIR%%/footprints/Package_LGA.pretty/ublox_LGA-53_4.5x4.5mm_Layout9x9_P0.5mm.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/EQFP-144-1EP_20x20mm_P0.5mm_EP5x5mm.kicad_mod
@@ -12187,8 +12193,6 @@
 %%DATADIR%%/footprints/Package_QFP.pretty/EQFP-144-1EP_20x20mm_P0.5mm_EP7.2x6.35mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/EQFP-144-1EP_20x20mm_P0.5mm_EP8.93x8.7mm.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/EQFP-144-1EP_20x20mm_P0.5mm_EP8.93x8.7mm_ThermalVias.kicad_mod
-%%DATADIR%%/footprints/Package_QFP.pretty/HTQFP-64-1EP_10x10mm_P0.5mm_EP8x8mm.kicad_mod
-%%DATADIR%%/footprints/Package_QFP.pretty/HTQFP-64-1EP_10x10mm_P0.5mm_EP8x8mm_Mask4.4x4.4mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/Hitachi_FP80B_PQFP-80_14x20mm_P0.8mm.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/LQFP-100-1EP_14x14mm_P0.5mm_EP6.9x6.9mm.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/LQFP-100-1EP_14x14mm_P0.5mm_EP6.9x6.9mm_ThermalVias.kicad_mod
@@ -12266,7 +12270,6 @@
 %%DATADIR%%/footprints/Package_QFP.pretty/TQFP-52-1EP_10x10mm_P0.65mm_EP6.5x6.5mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/TQFP-64-1EP_10x10mm_P0.5mm_EP5.305x5.305mm.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/TQFP-64-1EP_10x10mm_P0.5mm_EP5.305x5.305mm_ThermalVias.kicad_mod
-%%DATADIR%%/footprints/Package_QFP.pretty/TQFP-64-1EP_10x10mm_P0.5mm_EP8x8mm.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/TQFP-64_10x10mm_P0.5mm.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/TQFP-64_14x14mm_P0.8mm.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/TQFP-64_7x7mm_P0.4mm.kicad_mod
@@ -12276,6 +12279,10 @@
 %%DATADIR%%/footprints/Package_QFP.pretty/TQFP-80_14x14mm_P0.65mm.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/Texas_PHP0048E_HTQFP-48-1EP_7x7mm_P0.5mm_EP6.5x6.5mm_Mask3.62x3.62mm.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/Texas_PHP0048E_HTQFP-48-1EP_7x7mm_P0.5mm_EP6.5x6.5mm_Mask3.62x3.62mm_ThermalVias.kicad_mod
+%%DATADIR%%/footprints/Package_QFP.pretty/Texas_TQFP-64-1EP_10x10mm_P0.5mm_EP8x8mm_Mask4.44x4.44mm.kicad_mod
+%%DATADIR%%/footprints/Package_QFP.pretty/Texas_TQFP-64-1EP_10x10mm_P0.5mm_EP8x8mm_Mask4.44x4.44mm_ThermalVias.kicad_mod
+%%DATADIR%%/footprints/Package_QFP.pretty/Texas_TQFP-64-1EP_10x10mm_P0.5mm_EP8x8mm_Mask5x5mm.kicad_mod
+%%DATADIR%%/footprints/Package_QFP.pretty/Texas_TQFP-64-1EP_10x10mm_P0.5mm_EP8x8mm_Mask5x5mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/VQFP-128_14x14mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_QFP.pretty/VQFP-176_20x20mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_SIP.pretty/PowerIntegrations_eSIP-7C.kicad_mod
