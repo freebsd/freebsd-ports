@@ -11,6 +11,8 @@ WWW=		https://sequoia-pgp.org/ \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	compilation fails, see https://gitlab.com/sequoia-pgp/nettle-sys/-/issues/20
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libnettle.so:security/nettle
 
