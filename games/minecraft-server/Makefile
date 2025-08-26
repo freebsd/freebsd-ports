@@ -1,7 +1,7 @@
 PORTNAME=	minecraft-server
-DISTVERSION=	1.21.7
+DISTVERSION=	1.21.8
 CATEGORIES=	games java
-MASTER_SITES=	https://piston-data.mojang.com/v1/objects/05e4b48fbc01f0385adb74bcff9751d34552486c/
+MASTER_SITES=	https://piston-data.mojang.com/v1/objects/6bce4ef400e4efaa63a13d5e6f6b500be969ef81/
 DISTNAME=	server
 EXTRACT_SUFX=	.jar
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
