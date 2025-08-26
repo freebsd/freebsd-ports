@@ -1,6 +1,6 @@
---- build/rust/allocator/lib.rs.orig	2025-08-26 06:51:00 UTC
+--- build/rust/allocator/lib.rs.orig	2025-08-26 21:39:41 UTC
 +++ build/rust/allocator/lib.rs
-@@ -0,0 +1,118 @@
+@@ -0,0 +1,125 @@
 +// Copyright 2025 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -93,7 +93,14 @@
 +    /// rustc-generated shims we must define this symbol, since we are opting in
 +    /// to unstable functionality. See https://github.com/rust-lang/rust/issues/123015
 +    #[rustc_std_internal_symbol]
++    #[linkage = "weak"]
 +    fn __rust_no_alloc_shim_is_unstable_v2() {}
++
++    // TODO(crbug.com/422538133) Remove after rolling past
++    // https://github.com/rust-lang/rust/pull/141061
++    #[no_mangle]
++    #[linkage = "weak"]
++    static __rust_no_alloc_shim_is_unstable: u8 = 0;
 +
 +    // Mangle the symbol name as rustc expects.
 +    #[rustc_std_internal_symbol]
