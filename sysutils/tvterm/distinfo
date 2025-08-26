@@ -1,5 +1,3 @@
-TIMESTAMP = 1742858971
-SHA256 (magiblot-tvterm-g20250324-feedbf7_GH0.tar.gz) = fdcfc0f0c486685dd675d690ac44e6cdb59591654a3014fa246fe5e708fff78c
-SIZE (magiblot-tvterm-g20250324-feedbf7_GH0.tar.gz) = 26384
-SHA256 (magiblot-tvision-d9bc009_GH0.tar.gz) = 641aa637539305520f9ad830ece9e32938e7bcec5e6ff0254c147097ee7ef81a
-SIZE (magiblot-tvision-d9bc009_GH0.tar.gz) = 845000
+TIMESTAMP = 1756200000
+SHA256 (magiblot-tvterm-g20250621-c6abf12_GH0.tar.gz) = ace53c19aa8136e1fb05662f3be3d0c1d37ce5ad8da1e9391c2e3fa8273932ae
+SIZE (magiblot-tvterm-g20250621-c6abf12_GH0.tar.gz) = 26393
