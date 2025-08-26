@@ -1,6 +1,9 @@
 PORTNAME=	libei
-DISTVERSION=	1.4.1
+DISTVERSION=	1.5.0
 CATEGORIES=	x11
+
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	4f11112be0c0.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/357
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Library for Emulated Input
