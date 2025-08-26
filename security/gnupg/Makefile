@@ -24,6 +24,10 @@ USES=		compiler:c11 cpe gmake iconv makeinfo pkgconfig readline sqlite \
 
 CPE_VENDOR=	gnupg
 
+# Odd minor-versions are the development branch; in particular 2.5 is
+# close to being a new 2.6, but we don't want portscout informing about it.
+PORTSCOUT=	limitw:1,even
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ntbtls \
 		--enable-gpg-is-gpg2
