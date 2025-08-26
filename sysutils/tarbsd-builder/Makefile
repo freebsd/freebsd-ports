@@ -1,5 +1,5 @@
 PORTNAME=	tarbsd-builder
-DISTVERSION=	25.08.17
+DISTVERSION=	25.08.24
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DIST_SUBDIR=	${DISTNAME}-${DISTVERSION}
@@ -11,11 +11,14 @@ WWW=		https://github.com/pavetheway91/tarbsd
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS_REASON=	Generated images are amd64 only at the moment, aarch64 planned but no others
+
 USES=		php:flavors,build
 USE_GITHUB=	yes
 GH_ACCOUNT=	pavetheway91
 GH_PROJECT=	tarbsd
-USE_PHP=	pcntl phar zlib
+USE_PHP=	filter pcntl phar zlib
 
 IGNORE_WITH_PHP=	81
 NO_ARCH=	yes
