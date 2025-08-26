@@ -81,8 +81,8 @@ CHOSEN_COMPILER_TYPE=	clang
 CONFIGURE_ARGS+=	--cc-abi="-march=armv8-a+crypto"
 .elif ${ARCH:Mpowerpc64*}
 CONFIGURE_ARGS+=	--cpu="ppc64"
-.if !defined(MACHINE_CPU) || (defined(MACHINE_CPU) && !${MACHINE_ABI:Mvsx2})
-CONFIGURE_ARGS+=	--disable-powercrypto
+.if !defined(MACHINE_CPU) || (defined(MACHINE_CPU) && !${MACHINE_CPU:Mvsx2})
+CONFIGURE_ARGS+=	--disable-modules=aes_power8,ghash_cpu
 .endif
 .endif
 
