@@ -1,6 +1,5 @@
 PORTNAME=	freerdp
-DISTVERSION=	3.16.0
-PORTREVISION=	1
+DISTVERSION=	3.17.0
 CATEGORIES=	net comms
 MASTER_SITES+=	https://pub.freerdp.com/releases/:freerdp \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/:freerdp
@@ -8,18 +7,10 @@ PKGNAMESUFFIX=	3
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}:freerdp
 
 PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
-PATCHFILES=	281b9245966f019a8aa0271a73acd8da8104baa9.patch:-p1 \
-		6f03b25f8ec9320d10b3f3163543f8b6dd9ebc0c.patch:-p1 \
-		5d32afcdd0b780d95b77c6005d1b79482884cd46.patch:-p1 \
-		40c988e2da289e83081421942685a1a248f46603.patch:-p1 \
-		8e38600298310bc74271fd99aca74c2d5a2d071c.patch:-p1 \
-		4dc6091fde72a25dadcfed1f76c455cc9c3bf093.patch:-p1 \
-		bee5edeb315336102f738a26a9bcff5b4d9ff03c.patch:-p1 \
-		59bfe47ef7c0fa596edad0716aaf28782d9e857a.patch:-p1 \
-		419ad81aa78d31394c8e8b8452b40ef842f48730.patch:-p1 \
-		a86e3dc53c5cf4ba6879a4571b0610dddd224fbf.patch:-p1 \
-		daeec1f98d69516fe52276608a750de3b3146d4e.patch:-p1 \
-		efd89c035481088c5b352222fbeb0bfc69ac75fe.patch:-p1
+PATCHFILES=	83ffa524e90ae08a0f940b70cf66204477a172be.patch:-p1 \
+		afa7069a8dde0e2109939d64b5f904dedeff1909.patch:-p1 \
+		78f51bed0dd51c271358f04769faf927bfdfcba8.patch:-p1 \
+		7e9149e6aa12e3105612f53d3bbf7d14e84835d4.patch:-p1
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
@@ -65,7 +56,7 @@ OPTIONS_DEFINE_aarch64=		SIMD
 OPTIONS_DEFINE_amd64=		SIMD
 OPTIONS_DEFINE_armv7=		SIMD
 OPTIONS_DEFINE_i386=		SIMD
-OPTIONS_DEFAULT=		AAD CUPS FFMPEG GSSAPI_HEIMDAL ICU JSON_C \
+OPTIONS_DEFAULT=		AAD CUPS FFMPEG GSSAPI_MIT ICU JSON_C \
 				KEYBOARD_LAYOUT MANPAGES RDPECAM SDL2 SDL3 \
 				SWSCALE TIMEZONE_FILE WAYLAND WEBVIEW X11
 OPTIONS_DEFAULT_aarch64=	SIMD
