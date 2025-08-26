@@ -1,0 +1,10 @@
+The octave-forge package is the result of The GNU Octave Repository project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is mboct-numerical-pkg.
+
+ This package belongs to a suite of packages which can be used for pre- and
+ postprocessing of flexible bodies in MBDyn (www.mbdyn.org) with GNU-Octave.
+ It contains interfaces to several well known numerical solvers.
