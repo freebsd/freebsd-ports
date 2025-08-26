@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# PROVIDE: filebrowser_quantum
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for FileBrowser Quantum in /etc/rc.conf
+#
+# filebrowser_quantum_enable (bool):       Enable FileBrowser Quantum. (default=NO)
+# filebrowser_quantum_log (str):           Log output. (default=/var/log/filebrowser-quantum.log)
+# filebrowser_quantum_runas (str):         User to run FileBrowser Quantum as. (default=%%USER%%)
+# filebrowser_quantum_config (str):        Configuration file. (default=%%PREFIX%%/etc/filebrowser-quantum.yaml)
+#
+
+. /etc/rc.subr
+
+name="filebrowser_quantum"
+desc="Web File Browser"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${filebrowser_quantum_enable:="NO"}
+: ${filebrowser_quantum_log:="/var/log/filebrowser-quantum.log"}
+: ${filebrowser_quantum_runas:="%%USER%%"}
+: ${filebrowser_quantum_config:="%%PREFIX%%/etc/filebrowser-quantum.yaml"}
+
+filebrowser_quantum_env="FILEBROWSER_CONFIG=${filebrowser_quantum_config}"
+pidfile="/var/run/filebrowser-quantum.pid"
+procname="%%LOCALBASE%%/bin/filebrowser-quantum"
+command="/usr/sbin/daemon"
+command_args="-c -u ${filebrowser_quantum_runas} -o ${filebrowser_quantum_log} -p ${pidfile} -t \"${desc}\" ${procname}"
+
+run_rc_command "$1"
