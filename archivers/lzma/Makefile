@@ -8,22 +8,33 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-ratio LZMA compressor
 WWW=		https://www.7-zip.org/sdk.html
 
-CONFLICTS=	lzmautils xz
+LICENSE=	PD
+LICENSE_TEXT_PD=	LZMA SDK is written and placed in the public \
+		domain by Igor PavlovAnyone. Anyone is free to copy, modify, \
+		publish, use, compile, sell, or distribute the original LZMA \
+		SDK code, either in source code form or as a compiled binary, \
+		for any purpose, commercial or non-commercial, and by any means.
 
-USES=		7z gmake dos2unix
-NO_WRKSUBDIR=	yes
-BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Bundles/LzmaCon
+USES=		7z dos2unix gmake
+
 MAKEFILE=	makefile.gcc
-PLIST_FILES=	bin/${PORTNAME}
-.ifdef(WITH_LZMA_PROB32)
+
+.ifdef (WITH_LZMA_PROB32)
 #increase the speed of decoding on some 32-bit CPUs, at the expense of doubled
 #memory usage for CLzmaDec::probs
 CFLAGS+=	-D_LZMA_PROB32
 .endif
-.ifdef(WITH_LZMA_SIZE_OPT)
+.ifdef (WITH_LZMA_SIZE_OPT)
 #enable some optimizations in LZMA Decoder to get smaller executable code
 CFLAGS+=	-D_LZMA_SIZE_OPT
 .endif
+CONFLICTS=	lzmautils xz
+
+NO_WRKSUBDIR=	yes
+BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Bundles/LzmaCon
+
+PLIST_FILES=	bin/${PORTNAME}
+
 PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt lzma-history.txt lzma.txt
 
 OPTIONS_DEFINE=	DOCS
