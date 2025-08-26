@@ -4520,7 +4520,6 @@ devel/artifactory||2025-06-17|Has expired: Outdated with known vulnerabilities a
 devel/m17n-inscript2||2025-06-23|Now included in devel/m17n-db
 devel/py-pytest4-cov||2025-06-23|Has expired: Depends on expiring devel/py-pytest4
 devel/py-spyder-unittest||2025-06-23|Has expired: Depends on expiring devel/spyder
-comms/py-pynitrokey||2025-06-23|Has expired: Depends on expiring comms/py-spsdk
 devel/bit||2025-06-23|Has expired: Upstream ceased development
 biology/py-orange3-single-cell||2025-06-23|Has expired: Depends on expired math/py-fastdtw and expiring misc/orange3
 biology/py-orange3-bioinformatics||2025-06-23|Has expired: Depends on expiring misc/orange3

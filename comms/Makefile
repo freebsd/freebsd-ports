@@ -145,6 +145,7 @@
     SUBDIR += py-nkdfu
     SUBDIR += py-pylink-square
     SUBDIR += py-pymodbus
+    SUBDIR += py-pynitrokey
     SUBDIR += py-pyocd
     SUBDIR += py-pyocd-pemicro
     SUBDIR += py-pyserial
