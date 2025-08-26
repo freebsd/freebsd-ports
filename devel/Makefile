@@ -8331,6 +8331,7 @@
     SUBDIR += test-drive
     SUBDIR += tevent
     SUBDIR += tevent016
+    SUBDIR += tevent017
     SUBDIR += tex-kpathsea
     SUBDIR += tex-libtexlua
     SUBDIR += tex-libtexluajit
