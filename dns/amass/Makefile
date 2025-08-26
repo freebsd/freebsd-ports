@@ -11,6 +11,8 @@ WWW=		https://owasp.org/www-project-amass/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: cgo_specific.go:100:2: type [1073741824]*_Ctype_char larger than address space
+
 LIB_DEPENDS=	libpostal.so:misc/libpostal
 
 USES=		go:1.24,modules pkgconfig
