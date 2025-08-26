@@ -1,0 +1,109 @@
+diff --git src/Components/Covers/Fetcher/Audioscrobbler.cpp src/Components/Covers/Fetcher/Audioscrobbler.cpp
+index 2490f8f4..7916ed16 100644
+--- src/Components/Covers/Fetcher/Audioscrobbler.cpp
++++ src/Components/Covers/Fetcher/Audioscrobbler.cpp
+@@ -30,6 +30,8 @@
+ #include <QStringList>
+ #include <QUrl>
+ 
++#include <array>
++
+ using Cover::Fetcher::Audioscrobbler;
+ 
+ namespace
+@@ -37,7 +39,7 @@ namespace
+ 	QStringList mapToStringList(const QMap<QString, QString>& map)
+ 	{
+ 		auto result = QStringList {};
+-		const auto sizes = std::array {"mega", "extralarge", "large", "medium", "small"};
++		const auto sizes = std::array<const char *, 5> {"mega", "extralarge", "large", "medium", "small"};
+ 		for(const auto size: sizes)
+ 		{
+ 			result.push_back(map[size]);
+diff --git src/Components/Engine/PipelineExtensions/Changeable.cpp src/Components/Engine/PipelineExtensions/Changeable.cpp
+index 654a3c3c..2119e49d 100644
+--- src/Components/Engine/PipelineExtensions/Changeable.cpp
++++ src/Components/Engine/PipelineExtensions/Changeable.cpp
+@@ -306,6 +306,12 @@ namespace
+ 	}
+ }
+ 
++static Logger& operator<<(Logger& lhs, const EU::GStringAutoFree& s) 
++{ 
++	const auto * p = s.data();
++	return lhs << (p ? p : "null"); 
++}
++
+ namespace PipelineExtensions::Changeable
+ {
+ 	// NOLINTNEXTLINE(*-make-member-function-const)
+@@ -360,11 +366,11 @@ namespace PipelineExtensions::Changeable
+ 		auto parent = EU::AutoUnref(gst_element_get_parent(elementA));
+ 		auto* parentElement = GST_ELEMENT(*parent);
+ 		const auto name = EU::GStringAutoFree(gst_element_get_name(element));
+-
+-		spLog(Log::Debug, __FUNCTION__) << "Remove " << name.data() << " from pipeline";
++		
++		spLog(Log::Debug, __FUNCTION__) << "Remove " << name << " from pipeline";
+ 		if(!EU::hasElement(GST_BIN(parentElement), element))
+ 		{
+-			spLog(Log::Debug, __FUNCTION__) << "Element " << name.data() << " not in pipeline";
++			spLog(Log::Debug, __FUNCTION__) << "Element " << name << " not in pipeline";
+ 			return true;
+ 		}
+ 
+@@ -386,7 +392,7 @@ namespace PipelineExtensions::Changeable
+ 
+ 		if(!success)
+ 		{
+-			spLog(Log::Debug, __FUNCTION__) << "Could not remove " << name.data();
++			spLog(Log::Debug, __FUNCTION__) << "Could not remove " << name;
+ 		}
+ 
+ 		return success;
+@@ -428,4 +434,4 @@ namespace PipelineExtensions::Changeable
+ 		return success;
+ 	}
+ }
+-#pragma clang diagnostic pop
+\ No newline at end of file
++#pragma clang diagnostic pop
+diff --git src/Components/Lyrics/LyricWebpageParser.cpp src/Components/Lyrics/LyricWebpageParser.cpp
+index b5297b21..53b3b2dc 100644
+--- src/Components/Lyrics/LyricWebpageParser.cpp
++++ src/Components/Lyrics/LyricWebpageParser.cpp
+@@ -27,6 +27,8 @@
+ #include <QTextBlock>
+ #include <QTextDocument>
+ 
++#include <array>
++
+ using namespace Lyrics;
+ 
+ namespace
+diff --git src/Gui/InfoDialog/GUI_InfoDialog.cpp src/Gui/InfoDialog/GUI_InfoDialog.cpp
+index 1752180a..709b8690 100644
+--- src/Gui/InfoDialog/GUI_InfoDialog.cpp
++++ src/Gui/InfoDialog/GUI_InfoDialog.cpp
+@@ -47,6 +47,8 @@
+ #include <QTabBar>
+ #include <QTableWidgetItem>
+ 
++#include <unordered_map>
++
+ namespace
+ {
+ 	enum StackedWidgetTab
+diff --git src/Gui/Plugins/Engine/GUI_LevelPainter.cpp src/Gui/Plugins/Engine/GUI_LevelPainter.cpp
+index 455051bb..98b3ee63 100644
+--- src/Gui/Plugins/Engine/GUI_LevelPainter.cpp
++++ src/Gui/Plugins/Engine/GUI_LevelPainter.cpp
+@@ -185,7 +185,7 @@ void GUI_LevelPainter::paint()
+ 
+ 			else
+ 			{
+-				m->steps[c][r] = std::max(m->steps[c][r] - 1, 0);
++				m->steps[c][r] = std::max(int(m->steps[c][r]) - 1, 0);
+ 			}
+ 
+ 			if(m->steps[c][r] == 0)
