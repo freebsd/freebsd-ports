@@ -1,6 +1,5 @@
 PORTNAME=	virt-manager
-PORTVERSION=	5.0.0
-PORTREVISION=	1
+PORTVERSION=	5.1.0
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	https://releases.pagure.org/${PORTNAME}/
 
