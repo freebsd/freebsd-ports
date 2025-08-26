@@ -1,0 +1,11 @@
+--- Cargo.toml.orig	2025-08-21 11:42:16 UTC
++++ Cargo.toml
+@@ -43,7 +43,7 @@ chrono = { version = "0.4", features = ["serde"] }
+ tracing = { version = "0.1.40", features = ["attributes"] }
+ tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+ chrono = { version = "0.4", features = ["serde"] }
+-git2 = { version = "0.20.2", features = ["vendored-libgit2", "vendored-openssl"] }
++git2 = { version = "0.20.2", features = ["vendored-libgit2"] }
+ tempfile = "3.20.0"
+ dirs = "6.0.0"
+ 
