@@ -1,5 +1,5 @@
 PORTNAME=	zeek
-DISTVERSION=	8.0.0
+DISTVERSION=	8.0.1
 CATEGORIES=	security
 MASTER_SITES=	https://download.zeek.org/
 
@@ -177,6 +177,8 @@ post-install:
 	    ${STAGEDIR}${DATADIR}/site/local.zeek.sample
 	@${RM} -rf ${STAGEDIR}${PREFIX}/var
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/zeek-cut
+	@${RM} ${STAGEDIR}${PREFIX}/share/zeek/tests
+	${LN} -s ../btest/data ${STAGEDIR}${PREFIX}/share/zeek/tests
 
 post-install-SPICY-on:
 	@${RM} -rf ${STAGEDIR}${PREFIX}/include/hilti/rt/3rdparty/SafeInt/Archive
