@@ -8298,6 +8298,7 @@
     SUBDIR += tailor
     SUBDIR += talloc
     SUBDIR += talloc242
+    SUBDIR += talloc243
     SUBDIR += task
     SUBDIR += taskctl
     SUBDIR += taskflow
