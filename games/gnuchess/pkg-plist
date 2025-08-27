@@ -7,15 +7,16 @@ share/man/man1/gnuchess.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/Makefile.in
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/fdl.texi
+%%PORTDOCS%%%%DOCSDIR%%/gnuchess.ini
 %%PORTDOCS%%%%DOCSDIR%%/gnuchess.texi
 %%PORTDOCS%%%%DOCSDIR%%/mdate-sh
+%%PORTDOCS%%%%DOCSDIR%%/pkg.texi
 %%PORTDOCS%%%%DOCSDIR%%/quotes.rb
 %%PORTDOCS%%%%DOCSDIR%%/stamp-vti
 %%PORTDOCS%%%%DOCSDIR%%/texinfo.tex
 %%PORTDOCS%%%%DOCSDIR%%/version.texi
 share/games/plugins/logos/gnuchess.png
 share/games/plugins/xboard/gnuchess.eng
-%%DATADIR%%/gnuchess.ini
 %%DATADIR%%/smallbook.bin
 %%NLS%%share/locale/da/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gnuchess.mo
@@ -27,6 +28,7 @@ share/games/plugins/xboard/gnuchess.eng
 %%NLS%%share/locale/nb/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gnuchess.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gnuchess.mo
