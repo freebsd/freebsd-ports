@@ -1,6 +1,6 @@
 PORTNAME=	unixODBC
 PORTVERSION=	2.3.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/ \
 		ftp://ftp.unixodbc.org/pub/unixODBC/
@@ -28,6 +28,9 @@ PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\.ini$$|.ini.sample|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} \
+		-e 's|/etc|${LOCALBASE}/etc|' \
+		-e 's|/usr/lib|${LOCALBASE}/lib|' ${WRKSRC}/man/*.[1-9]
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
