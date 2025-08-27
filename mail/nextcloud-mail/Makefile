@@ -1,6 +1,7 @@
 PORTNAME=	mail
 PORTVERSION=	5.3.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -15,6 +16,9 @@ USES=		cpe gettext nextcloud php:flavors
 USE_PHP=	imap
 
 CPE_VENDOR=	nextcloud
+
+# Precompiled linux binary is removed by post-patch but path still exist for future manual use
+PLIST_DIRS+=   %%WWWDIR%%/vendor/nextcloud/kitinerary-bin/bin
 
 post-patch:
 	${RM} ${WRKSRC}/vendor/nextcloud/kitinerary-bin/bin/kitinerary-extractor
