@@ -40,6 +40,10 @@ bin/toot
 %%PYTHON_SITELIBDIR%%/toot/tui/timeline.py
 %%PYTHON_SITELIBDIR%%/toot/tui/utils.py
 %%PYTHON_SITELIBDIR%%/toot/tui/widgets.py
+%%PYTHON_SITELIBDIR%%/toot/urwidgets/README.md
+%%PYTHON_SITELIBDIR%%/toot/urwidgets/__init__.py
+%%PYTHON_SITELIBDIR%%/toot/urwidgets/hyperlink.py
+%%PYTHON_SITELIBDIR%%/toot/urwidgets/text_embed.py
 %%PYTHON_SITELIBDIR%%/toot/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/toot/utils/datetime.py
 %%PYTHON_SITELIBDIR%%/toot/utils/language.py

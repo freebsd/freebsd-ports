@@ -1,5 +1,5 @@
 PORTNAME=	toot
-DISTVERSION=	0.50.0
+DISTVERSION=	0.50.1
 CATEGORIES=	net-im python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,8 +26,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>=0:devel/py-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=9.5.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pudb>=2025.1:devel/py-pudb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyright>=0:devel/py-pyright@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=0:devel/py-pytest-xdist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twine>=0:devel/py-twine@${PY_FLAVOR} \
@@ -63,9 +63,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@(cd ${WRKSRC}/${PORTNAME} && \
-		${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/{} \
-		\; && \
-		${FIND} . -type f -not -name "*.bak" -exec ${INSTALL_DATA} \
-		{} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/{} \;)
+		${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME} \
+		"! -name *\.bak")
 
 .include <bsd.port.mk>
