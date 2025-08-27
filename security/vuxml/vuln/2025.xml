@@ -48,10 +48,14 @@
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>perl-catalyst project reports:</p>
 	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2025-40920">
-	  <p>Catalyst::Authentication::Credential::HTTP versions 1.018 and earlier for Perl generate nonces using
-             the Perl Data::UUID library. * Data::UUID does not use a strong cryptographic source for generating
-             UUIDs.* Data::UUID returns v3 UUIDs, which are generated from known information and are unsuitable for
-             security, as per RFC 9562. * The nonces should be generated from a strong cryptographic source, as per RFC 7616.</p>
+	  <p>Catalyst::Authentication::Credential::HTTP versions 1.018
+	  and earlier for Perl generate nonces using
+	  the Perl Data::UUID library. * Data::UUID does not use a
+	  strong cryptographic source for generating
+	  UUIDs.* Data::UUID returns v3 UUIDs, which are generated
+	  from known information and are unsuitable for
+	  security, as per RFC 9562. * The nonces should be generated
+	  from a strong cryptographic source, as per RFC 7616.</p>
 	</blockquote>
 	</body>
     </description>
