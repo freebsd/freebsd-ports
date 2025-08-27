@@ -1,7 +1,7 @@
 PORTNAME=	alloy
-DISTVERSION=	1.6.1
+DISTVERSION=	1.10.2
 DISTVERSIONPREFIX=v
-PORTREVISION=	4
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	zach.leslie@grafana.com
@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	git:devel/git
 
-USES=		go:1.23,modules
+USES=		go:1.24,modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grafana
