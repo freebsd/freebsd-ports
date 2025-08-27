@@ -1,6 +1,7 @@
 PORTNAME=	openhab
-PORTVERSION=	4.3.6
+PORTVERSION=	4.3.7
 PORTREVISION=	0
+# For those waiting for OpenHAB 5: it has 3rd party components which do an OS check, FreeBSD is not supported
 CATEGORIES=	misc java
 MASTER_SITES=	https://openhab.jfrog.io/artifactory/libs-release-local/org/openhab/distro/openhab/${PORTVERSION}/
 DISTNAME=	openhab-${PORTVERSION}
