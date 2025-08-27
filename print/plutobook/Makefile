@@ -1,6 +1,6 @@
 PORTNAME=		plutobook
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.5.0
+DISTVERSION=		0.6.0
 CATEGORIES=		print
 
 MAINTAINER=		jbo@FreeBSD.org
@@ -26,11 +26,6 @@ USE_GNOME=		cairo
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		plutoprint
-
-# Don't pull in deps using wrap files
-# See https://github.com/plutoprint/plutobook/issues/3
-EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/subprojects \
-			--no-same-owner --no-same-permissions
 
 PLIST_SUB=		SOVERSION="${DISTVERSION}"
 
