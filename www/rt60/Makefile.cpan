@@ -249,6 +249,9 @@ REST2_DEPS=	p5-Module-Runtime>0:devel/p5-Module-Runtime				\
 ### Try::Tiny
 ### WWW::Mechanize 1.80
 ### XML::Simple
+### Markdown::Render
+### Test::Selenium::Remote::Driver
+### HTML::Selector::XPath
 
 DEVELOPER_DEPS=	p5-Email-Abstract>0:mail/p5-Email-Abstract				\
 		p5-File-Which>0:sysutils/p5-File-Which					\
@@ -272,7 +275,10 @@ DEVELOPER_DEPS=	p5-Email-Abstract>0:mail/p5-Email-Abstract				\
 		p5-Test-Warn>0:devel/p5-Test-Warn					\
 		p5-Try-Tiny>0:lang/p5-Try-Tiny						\
 		p5-WWW-Mechanize>=1.80:www/p5-WWW-Mechanize				\
-		p5-XML-Simple>0:textproc/p5-XML-Simple
+		p5-XML-Simple>0:textproc/p5-XML-Simple					\
+		p5-Markdown-Render>0:textproc/p5-Markdown-Render			\
+		p5-Selenium-Remote-Driver>0:www/p5-Selenium-Remote-Driver		\
+		p5-HTML-Selector-XPath>0:www/p5-HTML-Selector-XPath
 
 ### --- FASTCGI ---
 ### FCGI 0.74
