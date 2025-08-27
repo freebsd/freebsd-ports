@@ -1,11 +1,11 @@
 --- src/webrtc/src/testing/test.gni.orig	2022-02-18 09:31:19 UTC
 +++ src/webrtc/src/testing/test.gni
-@@ -17,7 +17,7 @@ declare_args() {
+@@ -19,7 +19,7 @@ declare_args() {
    # "location_tags.json", and so we don't want to try and upload the tags
    # for their tests.
    # And, some build configs may simply turn off generation altogether.
 -  tests_have_location_tags = generate_location_tags
 +  tests_have_location_tags = false
- }
  
- if (is_android) {
+   # Build individual_fuzztest_wrapper if use_fuzztest_wrapper is set.
+   # Some projects doesn't have //base and cannot build

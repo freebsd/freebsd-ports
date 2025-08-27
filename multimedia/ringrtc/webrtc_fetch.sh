@@ -1,6 +1,13 @@
 #!/bin/sh
 
-WEBRTC_REV=7103e
+#Fetching https://android.googlesource.com/platform/external/perfetto.git/+archive/.tar.gz
+#fetch: https://android.googlesource.com/platform/external/perfetto.git/+archive/.tar.gz: Not Found
+
+#  'src/third_party/perfetto':
+#    Var('chromium_git') + '/external/github.com/google/perfetto.git' + '@' + 'dd35b295cd359ba094404218414955f961a0d6ae',
+
+
+WEBRTC_REV=7204a
 
 base_url="https://chromium.googlesource.com/chromium/src/base.git/+archive/"
 boringssl_url="https://boringssl.googlesource.com/boringssl.git/+archive/"
@@ -13,7 +20,7 @@ libsrtp_url="https://chromium.googlesource.com/chromium/deps/libsrtp.git/+archiv
 libvpx_url="https://chromium.googlesource.com/webm/libvpx.git/+archive/"
 libyuv_url="https://chromium.googlesource.com/libyuv/libyuv.git/+archive/"
 nasm_url="https://chromium.googlesource.com/chromium/deps/nasm.git/+archive/"
-perfetto_url="https://android.googlesource.com/platform/external/perfetto.git/+archive/"
+perfetto_url="https://chromium.googlesource.com/external/github.com/google/perfetto.git/+archive/"
 protobuf_javascript_url="https://chromium.googlesource.com/external/github.com/protocolbuffers/protobuf-javascript.git/+archive/"
 re2_url="https://chromium.googlesource.com/external/github.com/google/re2.git/+archive/"
 testing_url="https://chromium.googlesource.com/chromium/src/testing.git/+archive/"
@@ -70,7 +77,7 @@ opus_hash=$(grep 'opus.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',#
 printf "OPUS_REV=\t${opus_hash}\n"
 printf "OPUS_REV=\t${opus_hash}\n" | portedit merge -i Makefile
 
-perfetto_hash=$(grep 'perfetto.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
+perfetto_hash=$(grep 'perfetto.git' /tmp/DEPS | awk -F '+' '{print $4}' | sed -e "s# ##g" -e "s#',##" -e "s#'##")
 printf "PERFETTO_REV=\t${perfetto_hash}\n"
 printf "PERFETTO_REV=\t${perfetto_hash}\n" | portedit merge -i Makefile
 
