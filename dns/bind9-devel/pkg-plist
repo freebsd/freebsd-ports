@@ -4,7 +4,6 @@ bin/named-compilezone
 bin/named-journalprint
 bin/named-makejournal
 %%LMDB%%bin/named-nzd2nzf
-bin/named-rrchecker
 @sample etc/mtree/BIND.chroot.dist.sample
 @sample etc/mtree/BIND.chroot.local.dist.sample
 @sample %%ETCDIR%%/named.conf.sample
@@ -35,6 +34,7 @@ include/dns/dnssec.h
 include/dns/dnstap.h
 include/dns/ds.h
 include/dns/dsdigest.h
+include/dns/dsync.h
 include/dns/dyndb.h
 include/dns/ecs.h
 include/dns/ede.h
@@ -234,19 +234,19 @@ include/ns/update.h
 include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
-lib/libdns.so.9.21.10
+lib/libdns.so.9.21.11
 lib/libdns.so.9.21
 lib/libdns.so
-lib/libisc.so.9.21.10
+lib/libisc.so.9.21.11
 lib/libisc.so.9.21
 lib/libisc.so
-lib/libisccc.so.9.21.10
+lib/libisccc.so.9.21.11
 lib/libisccc.so.9.21
 lib/libisccc.so
-lib/libisccfg.so.9.21.10
+lib/libisccfg.so.9.21.11
 lib/libisccfg.so.9.21
 lib/libisccfg.so
-lib/libns.so.9.21.10
+lib/libns.so.9.21.11
 lib/libns.so.9.21
 lib/libns.so
 @comment share/man/man1/arpaname.1.gz
@@ -269,6 +269,7 @@ share/man/man1/named-checkconf.1.gz
 share/man/man1/named-checkzone.1.gz
 share/man/man1/named-compilezone.1.gz
 share/man/man1/named-journalprint.1.gz
+share/man/man1/named-makejournal.1.gz
 %%LMDB%%share/man/man1/named-nzd2nzf.1.gz
 @comment share/man/man1/named-rrchecker.1.gz
 @comment share/man/man1/nsec3hash.1.gz
