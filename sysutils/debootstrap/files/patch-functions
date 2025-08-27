@@ -1,4 +1,4 @@
---- functions.orig	2022-10-18 22:48:32 UTC
+--- functions.orig	2024-12-29 18:30:24 UTC
 +++ functions
 @@ -658,7 +658,7 @@ download_release_sig () {
  		info RELEASESIG "Checking Release signature"
@@ -36,32 +36,32 @@
  	else
  		error 1 UNPACKCMDUNVL "Extracting %s requires the %s command, which is not available" "$pkg" "$cat_cmd"
  	fi
-@@ -1515,7 +1515,7 @@ while (read STDIN, $x, 1) {
+@@ -1614,7 +1614,7 @@ while (read STDIN, $x, 1) {
  }' "$@"
  		elif [ "$1" = "GETDEPS" ]; then
  			local pkgdest="$2"; shift; shift
 -LC_ALL=C grep "$gropt" '^$|^Package:|^Depends:|^Pre-Depends:'  $pkgdest | perl -e '
-+LC_ALL=C pcregrep '^$|^Package:|^Depends:|^Pre-Depends:' $pkgdest | perl -e '
++LC_ALL=C pcre2grep '^$|^Package:|^Depends:|^Pre-Depends:' $pkgdest | perl -e '
  %seen = map { $_ => 1 } @ARGV;
  while (<STDIN>) {
  	if (/^Package: (.*)$/) {
-@@ -1543,13 +1543,13 @@ while (<STDIN>) {
+@@ -1642,13 +1642,13 @@ while (<STDIN>) {
  			local m="$2"
  			local p="$3"
  			shift; shift; shift
 -			LC_ALL=C grep "$gropt" '^$|^Architecture:|^Filename:|^MD5sum:|^Package:|^Priority:|^SHA256:|^Size:|^Version:|^Depends:|^Pre-Depends:' "$p" | pkgdetails_field 1 Package: "$m" "$@"
-+			LC_ALL=C pcregrep '^$|^Architecture:|^Filename:|^MD5sum:|^Package:|^Priority:|^SHA256:|^Size:|^Version:|^Depends:|^Pre-Depends:' "$p" | pkgdetails_field 1 Package: "$m" "$@"
++			LC_ALL=C pcre2grep '^$|^Architecture:|^Filename:|^MD5sum:|^Package:|^Priority:|^SHA256:|^Size:|^Version:|^Depends:|^Pre-Depends:' "$p" | pkgdetails_field 1 Package: "$m" "$@"
  		elif [ "$1" = "FIELD" ]; then
  			local f="$2"
  			local m="$3"
  			local p="$4"
  			shift; shift; shift; shift
 -			LC_ALL=C grep "$gropt" '^$|^Package:|^Priority:' "$p" | pkgdetails_field 0 "$f" "$m" "$@"
-+			LC_ALL=C pcregrep '^$|^Package:|^Priority:' "$p" | pkgdetails_field 0 "$f" "$m" "$@"
++			LC_ALL=C pcre2grep '^$|^Package:|^Priority:' "$p" | pkgdetails_field 0 "$f" "$m" "$@"
  		elif [ "$1" = "STANZAS" ]; then
  			local pkgdest="$2"; shift; shift
  			perl -e '
-@@ -1706,7 +1706,7 @@ read_gpg_status () {
+@@ -1805,7 +1805,7 @@ read_gpg_status () {
  	elif [ "$unkkey" ]; then
  		error 1 UNKNOWNRELSIG "Release signed by unknown key (key id %s)\n   The specified keyring $KEYRING may be incorrect or out of date.\n   You can find the latest Debian release key at https://ftp-master.debian.org/keys.html" "$unkkey"
  	else
