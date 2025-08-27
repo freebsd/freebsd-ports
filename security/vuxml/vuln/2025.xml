@@ -1,3 +1,41 @@
+  <vuln vid="6989312e-8366-11f0-9bc6-b42e991fc52e">
+    <topic>SQLite -- application crash</topic>
+    <affects>
+      <package>
+	<name>sqlite3</name>
+	<range><lt>3.49.1</lt></range>
+      </package>
+      <package>
+	<name>linux_base-rl9-9.6</name>
+	<range><lt>9.6</lt></range>
+      </package>
+      <package>
+	<name>linux-c7-sqlite</name>
+	<range><lt>3.7.17_2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://gist.github.com/ylwango613/d3883fb9f6ba8a78086356779ce88248">
+	  <p>In SQLite 3.49.0 before 3.49.1, certain argument values
+	  to sqlite3_db_config (in the C-language API) can cause a
+	  denial of service (application crash). An sz*nBig
+	  multiplication is not cast to a 64-bit integer, and
+	  consequently some memory allocations may be incorrect.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-29088</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-29088</url>
+    </references>
+    <dates>
+      <discovery>2025-04-10</discovery>
+      <entry>2025-08-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c323bab5-80dd-11f0-97c4-40b034429ecf">
     <topic>p5-Catalyst-Authentication-Credential-HTTP -- Insecure source of randomness</topic>
     <affects>
