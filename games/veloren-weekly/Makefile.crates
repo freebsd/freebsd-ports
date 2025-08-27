@@ -104,7 +104,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		clipboard_x11-0.4.2 \
 		cmake-0.1.54 \
 		cobs-0.2.3 \
-		codespan-reporting-0.11.1 \
+		codespan-reporting-0.12.0 \
 		colorchoice-1.0.3 \
 		combine-4.6.7 \
 		compact_str-0.8.1 \
@@ -118,6 +118,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		core-foundation-sys-0.8.7 \
 		core-graphics-0.23.2 \
 		core-graphics-types-0.1.3 \
+		core-graphics-types-0.2.0 \
 		coreaudio-rs-0.11.3 \
 		coreaudio-sys-0.2.16 \
 		cpal-0.15.3 \
@@ -183,14 +184,14 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		downcast-rs-1.2.1 \
 		dpi-0.1.2 \
 		drop_guard-0.3.0 \
-		ecolor-0.31.1 \
-		egui-0.31.1 \
-		egui_plot-0.32.1 \
-		egui_wgpu_backend-0.34.0 \
-		egui_winit_platform-0.26.0 \
+		ecolor-0.32.1 \
+		egui-0.32.1 \
+		egui_plot-0.33.0 \
+		egui_wgpu_backend-0.35.0 \
+		egui_winit_platform-0.27.0 \
 		either-1.15.0 \
 		elapsed-0.1.2 \
-		emath-0.31.1 \
+		emath-0.32.1 \
 		embedded-io-0.4.0 \
 		embedded-io-0.6.1 \
 		encode_unicode-1.0.0 \
@@ -202,8 +203,8 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		enumset-1.1.6 \
 		enumset_derive-0.11.0 \
 		env_home-0.1.0 \
-		epaint-0.31.1 \
-		epaint_default_fonts-0.31.1 \
+		epaint-0.32.1 \
+		epaint_default_fonts-0.32.1 \
 		equivalent-1.0.2 \
 		errno-0.3.11 \
 		error-chain-0.12.4 \
@@ -392,7 +393,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		memmap2-0.9.5 \
 		memoffset-0.5.6 \
 		memoffset-0.6.5 \
-		metal-0.31.0 \
+		metal-0.32.0 \
 		mimalloc-0.1.43 \
 		mime-0.3.17 \
 		minifb-0.28.0 \
@@ -403,7 +404,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		mio-1.0.3 \
 		moka-0.12.10 \
 		mumble-link-0.2.0 \
-		naga-24.0.0 \
+		naga-26.0.0 \
 		native-dialog-0.9.0 \
 		ndk-0.8.0 \
 		ndk-0.9.0 \
@@ -495,7 +496,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		pem-3.0.5 \
 		percent-encoding-2.3.1 \
 		petgraph-0.4.13 \
-		petgraph-0.7.1 \
 		petgraph-0.8.1 \
 		phf-0.11.3 \
 		phf_codegen-0.11.3 \
@@ -512,9 +512,9 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		png-0.17.16 \
 		polling-3.7.4 \
 		portable-atomic-1.11.0 \
+		portable-atomic-util-0.2.4 \
 		postcard-1.1.1 \
 		powerfmt-0.2.0 \
-		pp-rs-0.2.1 \
 		ppv-lite86-0.2.21 \
 		presser-0.3.1 \
 		proc-macro-crate-3.3.0 \
@@ -808,11 +808,14 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		web-time-1.1.0 \
 		webpki-root-certs-0.26.10 \
 		wfd-0.1.7 \
-		wgpu-24.0.5 \
-		wgpu-core-24.0.5 \
-		wgpu-hal-24.0.4 \
-		wgpu-profiler-0.22.0 \
-		wgpu-types-24.0.0 \
+		wgpu-26.0.1 \
+		wgpu-core-26.0.1 \
+		wgpu-core-deps-apple-26.0.0 \
+		wgpu-core-deps-emscripten-26.0.0 \
+		wgpu-core-deps-windows-linux-android-26.0.0 \
+		wgpu-hal-26.0.4 \
+		wgpu-profiler-0.24.0 \
+		wgpu-types-26.0.0 \
 		which-7.0.3 \
 		widestring-1.2.0 \
 		wiggle-29.0.1 \
