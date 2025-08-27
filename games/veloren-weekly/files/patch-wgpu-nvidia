@@ -1,8 +1,8 @@
 https://gitlab.com/veloren/veloren/-/issues/1975
 
---- cargo-crates/wgpu-24.0.5/src/backend/wgpu_core.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/wgpu-24.0.5/src/backend/wgpu_core.rs
-@@ -1761,10 +1761,7 @@ impl dispatch::QueueInterface for CoreQueue {
+--- cargo-crates/wgpu-26.0.1/src/backend/wgpu_core.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/wgpu-26.0.1/src/backend/wgpu_core.rs
+@@ -1802,10 +1802,7 @@ impl dispatch::QueueInterface for CoreQueue {
              &size,
          ) {
              Ok(()) => (),

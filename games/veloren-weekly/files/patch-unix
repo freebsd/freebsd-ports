@@ -1,5 +1,77 @@
 Relax Linux checks for the code works on any non-Windows platform.
 
+--- cargo-crates/wgpu-26.0.1/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/wgpu-26.0.1/build.rs
+@@ -16,7 +16,7 @@ fn main() {
+         metal: { all(target_vendor = "apple", feature = "metal") },
+         vulkan: { any(
+             // The `vulkan` feature enables the Vulkan backend only on "native Vulkan" platforms, i.e. Windows/Linux/Android
+-            all(any(windows, target_os = "linux", target_os = "android"), feature = "vulkan"),
++            all(any(windows, unix), not(target_vendor = "apple"), feature = "vulkan"),
+             // On Apple platforms, however, we require the `vulkan-portability` feature
+             // to explicitly opt-in to Vulkan since it's meant to be used with MoltenVK.
+             all(target_vendor = "apple", feature = "vulkan-portability")
+@@ -24,7 +24,7 @@ fn main() {
+         gles: { any(
+             // The `gles` feature enables the OpenGL/GLES backend only on "native OpenGL" platforms, i.e. Windows, Linux, Android, and Emscripten.
+             // (Note that WebGL is also not included here!)
+-            all(any(windows, target_os = "linux", target_os = "android", Emscripten), feature = "gles"),
++            all(any(windows, unix, Emscripten), not(target_vendor = "apple"), feature = "gles"),
+             // On Apple platforms, however, we require the `angle` feature to explicitly opt-in to OpenGL
+             // since its meant to be used with ANGLE.
+             all(target_vendor = "apple", feature = "angle")
+--- cargo-crates/wgpu-core-26.0.1/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/wgpu-core-26.0.1/Cargo.toml
+@@ -206,7 +206,7 @@ optional = true
+ version = "26.0.0"
+ optional = true
+ 
+-[target.'cfg(any(windows, target_os = "linux", target_os = "android"))'.dependencies.wgpu-core-deps-windows-linux-android]
++[target.'cfg(all(any(windows, unix), not(target_vendor = "apple")))'.dependencies.wgpu-core-deps-windows-linux-android]
+ version = "26.0.0"
+ optional = true
+ 
+--- cargo-crates/wgpu-core-26.0.1/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/wgpu-core-26.0.1/build.rs
+@@ -1,6 +1,6 @@ fn main() {
+ fn main() {
+     cfg_aliases::cfg_aliases! {
+-        windows_linux_android: { any(windows, target_os = "linux", target_os = "android") },
++        windows_linux_android: { all(any(windows, unix), not(target_vendor = "apple")) },
+         send_sync: { all(
+             feature = "std",
+             any(
+--- cargo-crates/wgpu-core-deps-windows-linux-android-26.0.0/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/wgpu-core-deps-windows-linux-android-26.0.0/Cargo.toml
+@@ -38,5 +38,5 @@ vulkan = ["wgpu-hal/vulkan"]
+ renderdoc = ["wgpu-hal/renderdoc"]
+ vulkan = ["wgpu-hal/vulkan"]
+ 
+-[target.'cfg(any(windows, target_os = "linux", target_os = "android"))'.dependencies.wgpu-hal]
++[target.'cfg(all(any(windows, unix), not(target_vendor = "apple")))'.dependencies.wgpu-hal]
+ version = "26.0.0"
+--- cargo-crates/wgpu-hal-26.0.4/src/vulkan/adapter.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/wgpu-hal-26.0.4/src/vulkan/adapter.rs
+@@ -1170,7 +1170,7 @@ impl PhysicalDeviceProperties {
+         // Prevent very large buffers on mesa and most android devices.
+         let is_nvidia = self.properties.vendor_id == crate::auxil::db::nvidia::VENDOR;
+         let max_buffer_size =
+-            if (cfg!(target_os = "linux") || cfg!(target_os = "android")) && !is_nvidia {
++            if (cfg!(all(unix, not(target_vendor = "apple")))) && !is_nvidia {
+                 i32::MAX as u64
+             } else {
+                 u64::MAX
+--- cargo-crates/wgpu-hal-26.0.4/src/vulkan/instance.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/wgpu-hal-26.0.4/src/vulkan/instance.rs
+@@ -986,7 +986,7 @@ impl crate::Instance for super::Instance {
+             exposed.info.device_type == wgt::DeviceType::DiscreteGpu
+                 && exposed.info.vendor == db::nvidia::VENDOR
+         });
+-        if cfg!(target_os = "linux") && has_nvidia_dgpu && self.shared.has_nv_optimus {
++        if cfg!(unix) && has_nvidia_dgpu && self.shared.has_nv_optimus {
+             for exposed in exposed_adapters.iter_mut() {
+                 if exposed.info.device_type == wgt::DeviceType::IntegratedGpu
+                     && exposed.info.vendor == db::intel::VENDOR
 --- server-cli/src/main.rs.orig	2024-02-14 21:58:23 UTC
 +++ server-cli/src/main.rs
 @@ -66,14 +66,14 @@ fn main() -> io::Result<()> {
