@@ -1392,6 +1392,7 @@ llvm%%LLVM_SUFFIX%%/bin/verify-uselistorder
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Lex/ModuleMap.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Lex/ModuleMapFile.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Lex/MultipleIncludeOpt.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Lex/NoTrivialPPDirectiveTracer.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Lex/PPCallbacks.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Lex/PPConditionalDirectiveRecord.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Lex/PPDirectiveParameter.h
