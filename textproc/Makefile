@@ -1228,6 +1228,7 @@
     SUBDIR += pdfresurrect
     SUBDIR += pdfsandwich
     SUBDIR += pdftohtml
+    SUBDIR += pdjson
     SUBDIR += pear-File_Fortune
     SUBDIR += pear-File_MARC
     SUBDIR += pear-Horde_CssMinify
