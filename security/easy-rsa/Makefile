@@ -1,5 +1,5 @@
 PORTNAME=	easy-rsa
-DISTVERSION=	3.2.3
+DISTVERSION=	3.2.4
 PORTREVISION=	0  # leave in if 0 to avoid accidental PORTEPOCH bumps
 PORTEPOCH=	1
 CATEGORIES=	security net-mgmt
