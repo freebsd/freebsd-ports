@@ -8,6 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	12
 
 DEPRECATED=	Likely the final 1.2.x release, please migrate to using 1.4.x (it is quite similar)
+EXPIRATION_DATE=2025-12-31
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Deduplicating backup program
