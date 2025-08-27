@@ -37,6 +37,7 @@ include/dns/dnssec.h
 include/dns/dnstap.h
 include/dns/ds.h
 include/dns/dsdigest.h
+include/dns/dsync.h
 include/dns/dyndb.h
 include/dns/ecs.h
 include/dns/edns.h
@@ -240,19 +241,19 @@ include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
 lib/libbind9.so
-lib/libbind9-9.18.38.so
+lib/libbind9-9.18.39.so
 lib/libdns.so
-lib/libdns-9.18.38.so
+lib/libdns-9.18.39.so
 lib/libirs.so
-lib/libirs-9.18.38.so
+lib/libirs-9.18.39.so
 lib/libisc.so
-lib/libisc-9.18.38.so
+lib/libisc-9.18.39.so
 lib/libisccc.so
-lib/libisccc-9.18.38.so
+lib/libisccc-9.18.39.so
 lib/libisccfg.so
-lib/libisccfg-9.18.38.so
+lib/libisccfg-9.18.39.so
 lib/libns.so
-lib/libns-9.18.38.so
+lib/libns-9.18.39.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
 @comment share/man/man1/dig.1.gz
