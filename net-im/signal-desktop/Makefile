@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.62.0
-PORTREVISION=	3
+DISTVERSION=	7.66.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://registry.npmjs.org/@esbuild/freebsd-arm64/-/:esbuildarm64 \
@@ -84,7 +83,7 @@ ESBUILD_BINARY_PATH=${WRKSRC}/node_modules/.pnpm/@esbuild+freebsd-${ESBUILD_ARCH
 
 _BUILD_DATE=	$$(date +'%s')
 
-ELECTRON_VER_MAJOR=	35
+ELECTRON_VER_MAJOR=	37
 ESBUILD_VERS=		0.24.0
 PNPM_VERS=		10.11
 
@@ -104,8 +103,8 @@ PLIST_SUB+=	NOT_AARCH64=""
 .endif
 
 do-build:
-# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron34/electron with WRITE priv
-# copy ${LOCALBASE}/share/electron34 in WRKDIR
+# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron37/electron with WRITE priv
+# copy ${LOCALBASE}/share/electron37 in WRKDIR
 # it's needed for the do-install phase, it's here because of this issue
 # https://github.com/MikaelUrankar/signal-desktop/issues/6 (I don't know why it fails though)
 	@${RM} -r ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
