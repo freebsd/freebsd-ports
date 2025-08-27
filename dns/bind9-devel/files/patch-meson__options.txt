@@ -1,3 +1,5 @@
+Add bind-tools option to ease the server/tools package split
+
 --- meson_options.txt.orig	2025-07-19 11:32:37 UTC
 +++ meson_options.txt
 @@ -188,3 +188,5 @@ option(
