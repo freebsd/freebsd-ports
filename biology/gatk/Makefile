@@ -1,6 +1,5 @@
 PORTNAME=	gatk
-DISTVERSION=	4.6.1.0
-PORTREVISION=	1
+DISTVERSION=	4.6.2.0
 CATEGORIES=	biology java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -31,7 +30,7 @@ NO_ARCH=	yes
 DEPS_CACHE_DIR=	${WRKDIR}
 
 TEST_ENV=	${MAKE_ENV} \
-		JAVA_TOOL_OPTIONS="-DLIBBWA_PATH=${PREFIX}/lib/libfml.so" \
+		JAVA_TOOL_OPTIONS="-DLIBBWA_PATH=${PREFIX}/lib/libfml.so -DLIBFML_PATH=${PREFIX}/lib/libfml.so" \
 		GATK_LOCAL_JAR=${STAGEDIR}${JAVAJARDIR}/GenomeAnalysisTK-${PORTVERSION}.jar
 
 PLIST_FILES=	bin/${PORTNAME} \
@@ -117,9 +116,10 @@ do-install:
 
 do-test: # tests require WITH_LARGE_FILES=ON, and they use a lot of disk space
 	@cd ${WRKSRC} && \
-		${SETENV} ${TEST_ENV} gradle8 -DLIBBWA_PATH=${PREFIX}/lib/libfml.so test
+		${SETENV} ${TEST_ENV} gradle8 test
 
-# tests results as of version 4.6.1.0: 288552 tests, 301 failures, 37 ignored, 1h55m5.63s duration, 99% successful, see https://github.com/broadinstitute/gatk/issues/8940
+# tests as of 4.6.1.0: 288552 tests, 301 failures, 37 ignored, 1h55m5.63s duration, 99% successful, see https://github.com/broadinstitute/gatk/issues/8940
+# tests as of 4.6.2.0: 288719 tests completed, 300 failed, 37 skipped
 # see https://github.com/broadinstitute/gatk/issues/8939: Tests fail to find libgkl libraries in /usr/local/lib
 
 .include <bsd.port.mk>

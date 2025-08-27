@@ -23,5 +23,5 @@ fi
 
 # execute the command
 # add the LIBBWA_PATH system parameter (not sure whether the env. var or argument alone are sufficient)
-JAVA_TOOL_OPTIONS="-DLIBBWA_PATH=%%PREFIX%%/lib/libfml.so" \
-%%JAVA%% $MEM_OPTS -DLIBBWA_PATH=%%PREFIX%%/lib/libfml.so -jar %%JAVAJARDIR%%/GenomeAnalysisTK-%%PORTVERSION%%.jar "$@"
+JAVA_TOOL_OPTIONS="-DLIBBWA_PATH=%%PREFIX%%/lib/libfml.so -DLIBFML_PATH=%%PREFIX%%/lib/libfml.so" \
+%%JAVA%% $MEM_OPTS -DLIBBWA_PATH=%%PREFIX%%/lib/libfml.so -DLIBFML_PATH=%%PREFIX%%/lib/libfml.so -jar %%JAVAJARDIR%%/GenomeAnalysisTK-%%PORTVERSION%%.jar "$@"
