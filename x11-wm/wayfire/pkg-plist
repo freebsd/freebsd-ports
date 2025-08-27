@@ -21,9 +21,9 @@ include/wayfire/lexer/lexer.hpp
 include/wayfire/lexer/literal.hpp
 include/wayfire/lexer/symbol.hpp
 include/wayfire/matcher.hpp
+include/wayfire/nonstd/json.hpp
 include/wayfire/nonstd/observer_ptr.h
 include/wayfire/nonstd/reverse.hpp
-include/wayfire/nonstd/safe-list.hpp
 include/wayfire/nonstd/tracking-allocator.hpp
 include/wayfire/nonstd/wlroots-full.hpp
 include/wayfire/nonstd/wlroots.hpp
@@ -38,6 +38,7 @@ include/wayfire/parser/lambda_rule_parser.hpp
 include/wayfire/parser/rule_parser.hpp
 include/wayfire/per-output-plugin.hpp
 include/wayfire/plugin.hpp
+include/wayfire/plugins/animate/animate.hpp
 include/wayfire/plugins/blur/blur.hpp
 include/wayfire/plugins/common/cairo-util.hpp
 include/wayfire/plugins/common/geometry-animation.hpp
@@ -47,7 +48,6 @@ include/wayfire/plugins/common/move-drag-interface.hpp
 include/wayfire/plugins/common/preview-indication.hpp
 include/wayfire/plugins/common/shared-core-data.hpp
 include/wayfire/plugins/common/simple-text-node.hpp
-include/wayfire/plugins/common/simple-texture.hpp
 include/wayfire/plugins/common/util.hpp
 include/wayfire/plugins/common/workspace-wall.hpp
 include/wayfire/plugins/crossfade.hpp
@@ -56,12 +56,14 @@ include/wayfire/plugins/input-method-v1/input-method-v1.hpp
 include/wayfire/plugins/ipc/ipc-activator.hpp
 include/wayfire/plugins/ipc/ipc-helpers.hpp
 include/wayfire/plugins/ipc/ipc-method-repository.hpp
+include/wayfire/plugins/ipc/ipc-rules-common.hpp
 include/wayfire/plugins/scale-signal.hpp
 include/wayfire/plugins/vswitch.hpp
 include/wayfire/plugins/wm-actions-signals.hpp
 include/wayfire/plugins/wobbly/wobbly-signal.hpp
 include/wayfire/region.hpp
 include/wayfire/render-manager.hpp
+include/wayfire/render.hpp
 include/wayfire/rule/lambda_rule.hpp
 include/wayfire/rule/rule.hpp
 include/wayfire/scene-input.hpp
@@ -98,6 +100,8 @@ include/wayfire/workarea.hpp
 include/wayfire/workspace-set.hpp
 include/wayfire/workspace-stream.hpp
 lib/libwayfire-blur-base.so
+lib/libwayfire-move-drag-interface.a
+lib/libwayfire-workspace-wall.a
 lib/libwf-utils.so
 lib/libwf-utils.so.0
 lib/libwf-utils.so.0.4.0
@@ -110,7 +114,6 @@ lib/wayfire/libcommand.so
 lib/wayfire/libcube.so
 lib/wayfire/libdecoration.so
 lib/wayfire/libdefault-config-backend.so
-lib/wayfire/libdemo-ipc.so
 lib/wayfire/libexpo.so
 lib/wayfire/libextra-gestures.so
 lib/wayfire/libfast-switcher.so
@@ -135,6 +138,7 @@ lib/wayfire/libshortcuts-inhibit.so
 lib/wayfire/libsimple-tile.so
 lib/wayfire/libstipc.so
 lib/wayfire/libswitcher.so
+lib/wayfire/libvk-color-management.so
 lib/wayfire/libvswipe.so
 lib/wayfire/libvswitch.so
 lib/wayfire/libwayfire-shell.so
@@ -197,3 +201,4 @@ share/man/man1/wayfire.1.gz
 %%DATADIR%%/metadata/zoom.xml
 %%DATADIR%%/protocols/unstable/wayfire-shell-unstable-v2.xml
 share/wayland-sessions/wayfire.desktop
+share/xdg-desktop-portal/wayfire-portals.conf

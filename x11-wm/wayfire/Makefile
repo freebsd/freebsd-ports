@@ -1,7 +1,6 @@
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
-PORTREVISION=	3
+DISTVERSION=	0.10.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,23 +10,21 @@ WWW=		https://wayfire.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build with wf-config 0.10
-
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		nlohmann-json>0:devel/nlohmann-json \
-		wf-config>=0.9.0<0.10.0:devel/wf-config \
+		wf-config>=0.10.0<0.11.0:devel/wf-config \
 		${LOCALBASE}/include/xf86drmMode.h:graphics/libdrm \
 		wayland-protocols>=1.12:graphics/wayland-protocols \
 		glm>=0.9.8:math/glm
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libinotify.so:devel/libinotify \
+		libudev.so:devel/libudev-devd \
 		libwf-config.so:devel/wf-config \
+		libyyjson.so:devel/yyjson \
 		libpng.so:graphics/png \
 		libwayland-server.so:graphics/wayland \
-		libwlroots-0.17.so:x11-toolkits/wlroots017 \
+		libwlroots-0.19.so:x11-toolkits/wlroots019 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
-RUN_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 TEST_DEPENDS=	doctest>0:devel/doctest
 
 USES=		cmake:indirect compiler:c++17-lang gl gnome jpeg meson pkgconfig xorg
@@ -36,11 +33,14 @@ USE_GL=		egl glesv2
 USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT=	WayfireWM
-GH_TUPLE=	WayfireWM:wf-touch:b8b844f:wftouch/subprojects/wf-touch \
-		WayfireWM:wf-utils:08553c4:wfutils/subprojects/wf-utils
+GH_TUPLE=	WayfireWM:wf-touch:093d894:wftouch/subprojects/wf-touch \
+		WayfireWM:wf-utils:3ef27d1:wfutils/subprojects/wf-utils
 MESON_ARGS=	-Dtests=disabled \
 		-Dwf-touch:tests=disabled \
 		${NULL}
+
+# XXX https://github.com/WayfireWM/wayfire/issues/2800
+USES+=		localbase
 
 .if !exists(/usr/include/omp.h)
 # LLVM openmp in base doesn't support powerpc, armv6, armv7 yet
