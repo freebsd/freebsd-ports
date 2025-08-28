@@ -4731,3 +4731,4 @@ devel/qcoro@qt5||2025-08-15|Unflavorize; Qt5 flavor has no consumers
 devel/qcoro@qt6|devel/qcoro|2025-08-15|Unflavorize; Qt5 flavor has no consumers
 devel/cervisia||2025-08-15|Not ported to Qt6 and excluded from KDE Gear releases
 databases/mysql-connector-odbc-80|databases/mysql-connector-odbc@unixodbc|2025-08-21|Was tied to only mysql80 and now supports all MySQL versions
+textproc/randlm||2025-08-28|Unmaintained and broken
