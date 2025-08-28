@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/chrome/browser/ui/webui/signin/profile_picker_handler.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/chrome/browser/ui/webui/signin/profile_picker_handler.cc.orig	2025-08-18 00:53:11 UTC
 +++ src/3rdparty/chromium/chrome/browser/ui/webui/signin/profile_picker_handler.cc
 @@ -209,7 +209,7 @@ base::Value::Dict CreateProfileEntry(const ProfileAttr
  
@@ -9,7 +9,7 @@
    } else if (base::FeatureList::IsEnabled(
                   supervised_user::kShowKiteForSupervisedUsers) &&
               entry->IsSupervised()) {
-@@ -1224,7 +1224,7 @@ void ProfilePickerHandler::BeginFirstWebContentsProfil
+@@ -1222,7 +1222,7 @@ void ProfilePickerHandler::MaybeUpdateGuestMode() {
  }
  
  void ProfilePickerHandler::MaybeUpdateGuestMode() {

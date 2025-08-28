@@ -102,6 +102,7 @@
 %%GSTREAMER%%%%QT_INCDIR%%/QtGstreamerMediaPluginImpl/QtGstreamerMediaPluginImplVersion
 %%GSTREAMER%%%%QT_INCDIR%%/QtGstreamerMediaPluginImpl/qtgstreamermediapluginimplversion.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudio_alignment_support_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudio_platform_implementation_support_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudio_qiodevice_support_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudio_qspan_support_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudio_rtsan_support_p.h
@@ -112,8 +113,6 @@
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudioformat_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiohelpers_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudioringbuffer_p.h
-%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiostatemachine_p.h
-%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiostatemachineutils_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiosystem_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiosystem_platform_stream_support_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qautoresetevent_p.h
@@ -342,7 +341,6 @@
 %%QT_INCDIR%%/QtSpatialAudio/qtspatialaudioexports.h
 %%QT_INCDIR%%/QtSpatialAudio/qtspatialaudioglobal.h
 %%QT_INCDIR%%/QtSpatialAudio/qtspatialaudioversion.h
-lib/cmake/Qt6/FindAVFoundation.cmake
 lib/cmake/Qt6/FindFFmpeg.cmake
 lib/cmake/Qt6/FindGObject.cmake
 lib/cmake/Qt6/FindGStreamer.cmake

@@ -1,0 +1,246 @@
+Security patches since 6.9.2 release
+
+CVE-2025-8879: Heap buffer overflow in libaom
+CVE-2025-8880: Race in V8
+CVE-2025-8881: Inappropriate implementation in File Picker
+CVE-2025-8901: Out of bounds write in ANGLE
+
+https://github.com/qt/qtwebengine-chromium/compare/136d7fe8aa41c9d4cd764a6b890af9699f5141dd..130-based.diff
+
+diff --git a/chromium/content/browser/web_contents/file_chooser_impl.cc b/chromium/content/browser/web_contents/file_chooser_impl.cc
+index 7e2391bd1afd..d366c5d26bba 100644
+--- src/3rdparty/chromium/content/browser/web_contents/file_chooser_impl.cc
++++ src/3rdparty/chromium/content/browser/web_contents/file_chooser_impl.cc
+@@ -169,6 +169,12 @@ void FileChooserImpl::OpenFileChooser(blink::mojom::FileChooserParamsPtr params,
+     return;
+   }
+ 
++  // Do not allow open dialogs to have renderer-controlled default_file_name.
++  // See https://crbug.com/433800617 for context.
++  if (params->mode != blink::mojom::FileChooserParams::Mode::kSave) {
++    params->default_file_name = base::FilePath();
++  }
++
+   // Don't allow page with open FileChooser to enter BackForwardCache to avoid
+   // any unexpected behaviour from BackForwardCache.
+   BackForwardCache::DisableForRenderFrameHost(
+diff --git a/chromium/media/audio/audio_input_device.cc b/chromium/media/audio/audio_input_device.cc
+index a7d8e1098241..44abd451c397 100644
+--- src/3rdparty/chromium/media/audio/audio_input_device.cc
++++ src/3rdparty/chromium/media/audio/audio_input_device.cc
+@@ -482,7 +482,7 @@ void AudioInputDevice::AudioThreadCallback::Process(uint32_t pending_data) {
+   const base::TimeTicks capture_time =
+       base::TimeTicks() + base::Microseconds(buffer->params.capture_time_us);
+   const base::TimeTicks now_time = base::TimeTicks::Now();
+-  DCHECK_GE(now_time, capture_time);
++  // DCHECK_GE(now_time, capture_time);
+ 
+   AudioGlitchInfo glitch_info{
+       .duration = base::Microseconds(buffer->params.glitch_duration_us),
+diff --git a/chromium/third_party/angle/src/compiler/translator/Compiler.cpp b/chromium/third_party/angle/src/compiler/translator/Compiler.cpp
+index 107f61cf4603..04b698b7fc08 100644
+--- src/3rdparty/chromium/third_party/angle/src/compiler/translator/Compiler.cpp
++++ src/3rdparty/chromium/third_party/angle/src/compiler/translator/Compiler.cpp
+@@ -775,24 +775,6 @@ bool TCompiler::checkAndSimplifyAST(TIntermBlock *root,
+         return false;
+     }
+ 
+-    // For now, rewrite pixel local storage before collecting variables or any operations on images.
+-    //
+-    // TODO(anglebug.com/40096838):
+-    //   Should this actually run after collecting variables?
+-    //   Do we need more introspection?
+-    //   Do we want to hide rewritten shader image uniforms from glGetActiveUniform?
+-    if (hasPixelLocalStorageUniforms())
+-    {
+-        ASSERT(
+-            IsExtensionEnabled(mExtensionBehavior, TExtension::ANGLE_shader_pixel_local_storage));
+-        if (!RewritePixelLocalStorage(this, root, getSymbolTable(), compileOptions,
+-                                      getShaderVersion()))
+-        {
+-            mDiagnostics.globalError("internal compiler error translating pixel local storage");
+-            return false;
+-        }
+-    }
+-
+     if (shouldRunLoopAndIndexingValidation(compileOptions) &&
+         !ValidateLimitations(root, mShaderType, &mSymbolTable, &mDiagnostics))
+     {
+@@ -939,6 +921,24 @@ bool TCompiler::checkAndSimplifyAST(TIntermBlock *root,
+         return false;
+     }
+ 
++    // For now, rewrite pixel local storage before collecting variables or any operations on images.
++    //
++    // TODO(anglebug.com/40096838):
++    //   Should this actually run after collecting variables?
++    //   Do we need more introspection?
++    //   Do we want to hide rewritten shader image uniforms from glGetActiveUniform?
++    if (hasPixelLocalStorageUniforms())
++    {
++        ASSERT(
++            IsExtensionEnabled(mExtensionBehavior, TExtension::ANGLE_shader_pixel_local_storage));
++        if (!RewritePixelLocalStorage(this, root, getSymbolTable(), compileOptions,
++                                      getShaderVersion()))
++        {
++            mDiagnostics.globalError("internal compiler error translating pixel local storage");
++            return false;
++        }
++    }
++
+     // Clamping uniform array bounds needs to happen after validateLimitations pass.
+     if (compileOptions.clampIndirectArrayBounds)
+     {
+diff --git a/chromium/third_party/angle/src/compiler/translator/ValidateOutputs.cpp b/chromium/third_party/angle/src/compiler/translator/ValidateOutputs.cpp
+index 927783db73f6..d3481f1a4d1f 100644
+--- src/3rdparty/chromium/third_party/angle/src/compiler/translator/ValidateOutputs.cpp
++++ src/3rdparty/chromium/third_party/angle/src/compiler/translator/ValidateOutputs.cpp
+@@ -72,15 +72,19 @@ ValidateOutputsTraverser::ValidateOutputsTraverser(const TExtensionBehavior &ext
+ void ValidateOutputsTraverser::visitSymbol(TIntermSymbol *symbol)
+ {
+     if (symbol->variable().symbolType() == SymbolType::Empty)
++    {
+         return;
++    }
+ 
+     if (mVisitedSymbols.count(symbol->uniqueId().get()) == 1)
++    {
+         return;
++    }
+ 
+     mVisitedSymbols.insert(symbol->uniqueId().get());
+ 
+     TQualifier qualifier = symbol->getQualifier();
+-    if (qualifier == EvqFragmentOut)
++    if (qualifier == EvqFragmentOut || qualifier == EvqFragmentInOut)
+     {
+         const TLayoutQualifier &layoutQualifier = symbol->getType().getLayoutQualifier();
+         if (layoutQualifier.location != -1)
+diff --git a/chromium/third_party/blink/public/mojom/choosers/file_chooser.mojom b/chromium/third_party/blink/public/mojom/choosers/file_chooser.mojom
+index 22ccb9cc709f..f323fa2aa2eb 100644
+--- src/3rdparty/chromium/third_party/blink/public/mojom/choosers/file_chooser.mojom
++++ src/3rdparty/chromium/third_party/blink/public/mojom/choosers/file_chooser.mojom
+@@ -25,7 +25,7 @@ struct FileChooserParams {
+     kUploadFolder,
+ 
+     // Allows picking a nonexistent file, and prompts to overwrite if the file
+-    // already exists. This is not for Blink but for PPAPI.
++    // already exists.
+     kSave,
+   };
+   Mode mode = kOpen;
+@@ -34,7 +34,8 @@ struct FileChooserParams {
+   // which will be either "Open" or "Save" depending on the mode.
+   mojo_base.mojom.String16 title;
+ 
+-  // Default file name to select in the dialog with kSave mode.
++  // Default file name to select in the dialog with kSave mode. This value
++  // is cleared if mode is not kSave.
+   mojo_base.mojom.FilePath default_file_name;
+ 
+   // |selected_files| has filenames which a file upload control already
+diff --git a/chromium/third_party/libaom/source/libaom/av1/encoder/ratectrl.c b/chromium/third_party/libaom/source/libaom/av1/encoder/ratectrl.c
+index 4fd5ec6bf54b..82a48c39cb10 100644
+--- src/3rdparty/chromium/third_party/libaom/source/libaom/av1/encoder/ratectrl.c
++++ src/3rdparty/chromium/third_party/libaom/source/libaom/av1/encoder/ratectrl.c
+@@ -3236,8 +3236,9 @@ static void rc_scene_detection_onepass_rt(AV1_COMP *cpi,
+   // non-zero sad exists along bottom border even though source is static.
+   const int border =
+       rc->prev_frame_is_dropped || cpi->svc.number_temporal_layers > 1;
+-  // Store blkwise SAD for later use
+-  if (width == cm->render_width && height == cm->render_height) {
++  // Store blkwise SAD for later use. Disable for spatial layers for now.
++  if (width == cm->render_width && height == cm->render_height &&
++      cpi->svc.number_spatial_layers == 1) {
+     if (cpi->src_sad_blk_64x64 == NULL) {
+       CHECK_MEM_ERROR(cm, cpi->src_sad_blk_64x64,
+                       (uint64_t *)aom_calloc(sb_cols * sb_rows,
+diff --git a/chromium/v8/src/wasm/streaming-decoder.cc b/chromium/v8/src/wasm/streaming-decoder.cc
+index f3745b4c055a..ce5dad96d52f 100644
+--- src/3rdparty/chromium/v8/src/wasm/streaming-decoder.cc
++++ src/3rdparty/chromium/v8/src/wasm/streaming-decoder.cc
+@@ -230,45 +230,61 @@ class V8_EXPORT_PRIVATE AsyncStreamingDecoder : public StreamingDecoder {
+ };
+ 
+ void AsyncStreamingDecoder::OnBytesReceived(base::Vector<const uint8_t> bytes) {
+-  DCHECK(!full_wire_bytes_.empty());
++  TRACE_STREAMING("OnBytesReceived(%zu bytes)\n", bytes.size());
++
++  // Note: The bytes are passed by the embedder, and they might point into the
++  // sandbox. Hence we copy them once and then process those copied bytes, to
++  // avoid being vulnerable to concurrent modification.
++  // Since we might not be able to store the bytes contiguously in memory,
++  // remember up to two byte vectors to process after copying.
++  base::Vector<const uint8_t> copied_bytes[2] = {{}, {}};
++
+   // Fill the previous vector, growing up to 16kB. After that, allocate new
+   // vectors on overflow.
++  DCHECK(!full_wire_bytes_.empty());
++  std::vector<uint8_t>* last_wire_byte_vector = &full_wire_bytes_.back();
++  size_t existing_vector_size = last_wire_byte_vector->size();
+   size_t remaining_capacity =
+-      std::max(full_wire_bytes_.back().capacity(), size_t{16} * KB) -
+-      full_wire_bytes_.back().size();
++      std::max(last_wire_byte_vector->capacity(), size_t{16} * KB) -
++      existing_vector_size;
+   size_t bytes_for_existing_vector = std::min(remaining_capacity, bytes.size());
+-  full_wire_bytes_.back().insert(full_wire_bytes_.back().end(), bytes.data(),
+-                                 bytes.data() + bytes_for_existing_vector);
++  last_wire_byte_vector->insert(last_wire_byte_vector->end(), bytes.data(),
++                                bytes.data() + bytes_for_existing_vector);
++  copied_bytes[0] =
++      base::VectorOf(last_wire_byte_vector->data() + existing_vector_size,
++                     bytes_for_existing_vector);
+   if (bytes.size() > bytes_for_existing_vector) {
+     // The previous vector's capacity is not enough to hold all new bytes, and
+     // it's bigger than 16kB, so expensive to copy. Allocate a new vector for
+     // the remaining bytes, growing exponentially.
+     size_t new_capacity = std::max(bytes.size() - bytes_for_existing_vector,
+-                                   2 * full_wire_bytes_.back().capacity());
++                                   2 * last_wire_byte_vector->capacity());
+     full_wire_bytes_.emplace_back();
+-    full_wire_bytes_.back().reserve(new_capacity);
+-    full_wire_bytes_.back().insert(full_wire_bytes_.back().end(),
+-                                   bytes.data() + bytes_for_existing_vector,
+-                                   bytes.end());
++    last_wire_byte_vector = &full_wire_bytes_.back();
++    last_wire_byte_vector->reserve(new_capacity);
++    last_wire_byte_vector->insert(last_wire_byte_vector->end(),
++                                  bytes.data() + bytes_for_existing_vector,
++                                  bytes.end());
++    copied_bytes[1] = base::VectorOf(*last_wire_byte_vector);
+   }
++  // Do not access `bytes` any more after copying.
++  DCHECK_EQ(bytes.size(), copied_bytes[0].size() + copied_bytes[1].size());
++  bytes = {};
+ 
+   if (deserializing()) return;
+ 
+-  TRACE_STREAMING("OnBytesReceived(%zu bytes)\n", bytes.size());
+-
+-  size_t current = 0;
+-  while (ok() && current < bytes.size()) {
+-    size_t num_bytes =
+-        state_->ReadBytes(this, bytes.SubVector(current, bytes.size()));
+-    current += num_bytes;
+-    module_offset_ += num_bytes;
+-    if (state_->offset() == state_->buffer().size()) {
+-      state_ = state_->Next(this);
++  for (base::Vector<const uint8_t> vec : copied_bytes) {
++    size_t current = 0;
++    while (ok() && current < vec.size()) {
++      size_t num_bytes = state_->ReadBytes(this, vec.SubVectorFrom(current));
++      current += num_bytes;
++      module_offset_ += num_bytes;
++      if (state_->offset() == state_->buffer().size()) {
++        state_ = state_->Next(this);
++      }
+     }
+   }
+-  if (ok()) {
+-    processor_->OnFinishedChunk();
+-  }
++  if (ok()) processor_->OnFinishedChunk();
+ }
+ 
+ size_t AsyncStreamingDecoder::DecodingState::ReadBytes(

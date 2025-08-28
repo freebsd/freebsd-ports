@@ -1,11 +1,7 @@
 PORTNAME=	svg
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	qt6-
-
-PATCH_SITES=	https://github.com/qt/qtsvg/commit/
-PATCHFILES+=	07b3434f91c95d196f687c51e1a58a95a0b1ef2e.patch:-p1 # PR 287659
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt6 classes for displaying the contents of SVG files
