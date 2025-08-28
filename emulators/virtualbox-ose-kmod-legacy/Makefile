@@ -36,7 +36,8 @@ CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
 CONFLICTS_INSTALL=	virtualbox-ose-kmod \
 			virtualbox-ose-kmod-70 \
-			virtualbox-ose-kmod-71
+			virtualbox-ose-kmod-71 \
+			virtualbox-ose-kmod-72
 
 PATCHDIR=		${.CURDIR}/../${PORTNAME}-legacy/files
 PORTSCOUT=		limit:^5\.

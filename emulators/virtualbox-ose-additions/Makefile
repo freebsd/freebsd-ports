@@ -42,7 +42,9 @@ CONFLICTS_INSTALL=	virtualbox-ose-additions-legacy \
 			virtualbox-ose-additions-70 \
 			virtualbox-ose-additions-nox11-70 \
 			virtualbox-ose-additions-71 \
-			virtualbox-ose-additions-nox11-71
+			virtualbox-ose-additions-nox11-71 \
+			virtualbox-ose-additions-72 \
+			virtualbox-ose-additions-nox11-72
 
 PATCHDIR=		${.CURDIR}/../${PORTNAME}/files
 EXTRACT_AFTER_ARGS=	--exclude tools/*.x86 --exclude tools/*.amd64 --exclude Firmware
