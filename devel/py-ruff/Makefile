@@ -1,5 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.12.9
+DISTVERSION=	0.12.10
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,7 +38,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-query-1.1.4 \
 		anstyle-svg-0.1.10 \
 		anstyle-wincon-3.0.10 \
-		anyhow-1.0.98 \
+		anyhow-1.0.99 \
 		approx-0.5.1 \
 		arc-swap-1.7.1 \
 		argfile-0.2.1 \
@@ -52,7 +52,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bincode-2.0.1 \
 		bincode_derive-2.0.1 \
 		bitflags-1.3.2 \
-		bitflags-2.9.1 \
+		bitflags-2.9.2 \
 		bitvec-1.0.1 \
 		block-buffer-0.10.4 \
 		boxcar-0.2.13 \
@@ -70,12 +70,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.43 \
-		clap_builder-4.5.43 \
+		clap-4.5.45 \
+		clap_builder-4.5.44 \
 		clap_complete-4.5.55 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.8 \
-		clap_derive-4.5.41 \
+		clap_derive-4.5.45 \
 		clap_lex-0.7.5 \
 		clearscreen-4.0.2 \
 		codspeed-3.0.5 \
@@ -152,7 +152,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		getopts-0.2.23 \
 		getrandom-0.2.16 \
 		getrandom-0.3.3 \
-		glob-0.3.2 \
+		glob-0.3.3 \
 		globset-0.4.16 \
 		globwalk-0.9.1 \
 		half-2.6.0 \
@@ -207,7 +207,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
-		libc-0.2.174 \
+		libc-0.2.175 \
 		libcst-1.8.2 \
 		libcst_derive-1.8.2 \
 		libmimalloc-sys-0.1.43 \
@@ -486,8 +486,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.15+zstd.1.5.7 \
-		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=918d35d873b2b73a0237536144ef4d22e8d57f27\#918d35d873b2b73a0237536144ef4d22e8d57f27 \
-		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439
+		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439 \
+		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=a3ffa22cb26756473d56f867aedec3fd907c4dd9\#a3ffa22cb26756473d56f867aedec3fd907c4dd9
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
