@@ -1,3 +1,31 @@
+  <vuln vid="f727fe60-8389-11f0-8438-001b217e4ee5">
+    <topic>ISC KEA -- kea-dhcp4 aborts if client sends a broadcast request with particular options</topic>
+    <affects>
+      <package>
+	<name>kea</name>
+	<range><lt>3.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Internet Systems Consortium, Inc. reports:</p>
+	<blockquote cite="https://kb.isc.org/docs/">
+	<p>We corrected an issue in `kea-dhcp4` that caused
+	the server to abort if a client sent a broadcast request with particular
+	options, and Kea failed to find an appropriate subnet for that client.
+	This addresses CVE-2025-40779 [#4055, #4048].</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-40779</cvename>
+    </references>
+    <dates>
+      <discovery>2025-08-27</discovery>
+      <entry>2025-08-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2a11aa1e-83c7-11f0-b6e5-4ccc6adda413">
     <topic>qt6-base -- DoS in QColorTransferGenericFunction</topic>
     <affects>
