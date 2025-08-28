@@ -1,6 +1,6 @@
 PORTNAME=	xrdp
 DISTVERSION=	0.10.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/neutrinolabs/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -96,6 +96,9 @@ post-patch:
 		-e "s|^#runtime_user=xrdp|#runtime_user=_xrdp|" \
 		-e "s|^#runtime_group=xrdp|#runtime_group=_xrdp|" \
 		${WRKSRC}/xrdp/xrdp.ini.in
+	${REINPLACE_CMD} \
+		-e "s|^#SessionSockdirGroup=xrdp|#SessionSockdirGroup=_xrdp|" \
+		${WRKSRC}/sesman/sesman.ini.in
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/startwm.sh ${STAGEDIR}${ETCDIR}
