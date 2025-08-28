@@ -1,3 +1,81 @@
+  <vuln vid="edf83c10-83b8-11f0-b6e5-4ccc6adda413">
+    <topic>qt6-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt6-pdf</name>
+	<name>qt6-webengine</name>
+	<range><lt>6.9.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=130-based">
+	  <p>Backports for 25 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2025-5063: Use after free in Compositing</li>
+	    <li>CVE-2025-5064: Inappropriate implementation in Background Fetch</li>
+	    <li>CVE-2025-5065: Inappropriate implementation in FileSystemAccess API</li>
+	    <li>CVE-2025-5068: Use after free in Blink</li>
+	    <li>CVE-2025-5280: Out of bounds write in V8</li>
+	    <li>CVE-2025-5281: Inappropriate implementation in BFCache</li>
+	    <li>CVE-2025-5283: Use after free in libvpx</li>
+	    <li>CVE-2025-5419: Out of bounds read and write in V8</li>
+	    <li>CVE-2025-6191: Integer overflow in V8</li>
+	    <li>CVE-2025-6192: Use after free in Profiler</li>
+	    <li>CVE-2025-6554: Type Confusion in V8</li>
+	    <li>CVE-2025-6556: Insufficient policy enforcement in Loader</li>
+	    <li>CVE-2025-6557: Insufficient data validation in DevTools</li>
+	    <li>CVE-2025-6558: Incorrect validation of untrusted input in ANGLE and GPU</li>
+	    <li>CVE-2025-7656: Integer overflow in V8</li>
+	    <li>CVE-2025-7657: Use after free in WebRTC</li>
+	    <li>CVE-2025-8010: Type Confusion in V8</li>
+	    <li>CVE-2025-8576: Use after free in Extensions</li>
+	    <li>CVE-2025-8578: Use after free in Cast</li>
+	    <li>CVE-2025-8580: Inappropriate implementation in Filesystems</li>
+	    <li>CVE-2025-8582: Insufficient validation of untrusted input in DOM</li>
+	    <li>CVE-2025-8879: Heap buffer overflow in libaom</li>
+	    <li>CVE-2025-8880: Race in V8</li>
+	    <li>CVE-2025-8881: Inappropriate implementation in File Picker</li>
+	    <li>CVE-2025-8901: Out of bounds write in ANGLE</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5063</cvename>
+      <cvename>CVE-2025-5064</cvename>
+      <cvename>CVE-2025-5065</cvename>
+      <cvename>CVE-2025-5068</cvename>
+      <cvename>CVE-2025-5280</cvename>
+      <cvename>CVE-2025-5281</cvename>
+      <cvename>CVE-2025-5283</cvename>
+      <cvename>CVE-2025-5419</cvename>
+      <cvename>CVE-2025-6191</cvename>
+      <cvename>CVE-2025-6192</cvename>
+      <cvename>CVE-2025-6554</cvename>
+      <cvename>CVE-2025-6556</cvename>
+      <cvename>CVE-2025-6557</cvename>
+      <cvename>CVE-2025-6558</cvename>
+      <cvename>CVE-2025-7656</cvename>
+      <cvename>CVE-2025-7657</cvename>
+      <cvename>CVE-2025-8010</cvename>
+      <cvename>CVE-2025-8576</cvename>
+      <cvename>CVE-2025-8578</cvename>
+      <cvename>CVE-2025-8580</cvename>
+      <cvename>CVE-2025-8582</cvename>
+      <cvename>CVE-2025-8879</cvename>
+      <cvename>CVE-2025-8880</cvename>
+      <cvename>CVE-2025-8881</cvename>
+      <cvename>CVE-2025-8901</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=130-based</url>
+    </references>
+    <dates>
+      <discovery>2025-05-27</discovery>
+      <entry>2025-08-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6989312e-8366-11f0-9bc6-b42e991fc52e">
     <topic>SQLite -- application crash</topic>
     <affects>
