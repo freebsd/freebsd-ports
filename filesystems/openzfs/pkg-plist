@@ -446,6 +446,7 @@ share/man/man8/zfs-recv.8.gz
 share/man/man8/zfs-redact.8.gz
 share/man/man8/zfs-release.8.gz
 share/man/man8/zfs-rename.8.gz
+share/man/man8/zfs-rewrite.8.gz
 share/man/man8/zfs-rollback.8.gz
 share/man/man8/zfs-send.8.gz
 share/man/man8/zfs-set.8.gz
@@ -595,6 +596,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/bin/mkfiles
 %%TESTS%%share/zfs/zfs-tests/bin/mktree
 %%TESTS%%share/zfs/zfs-tests/bin/mmap_exec
+%%TESTS%%share/zfs/zfs-tests/bin/mmap_ftruncate
 %%TESTS%%share/zfs/zfs-tests/bin/mmap_seek
 %%TESTS%%share/zfs/zfs-tests/bin/mmap_sync
 %%TESTS%%share/zfs/zfs-tests/bin/mmapwrite
@@ -1167,6 +1169,9 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_reservation/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_reservation/zfs_reservation_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_reservation/zfs_reservation_002_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_rewrite/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_rewrite/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_rewrite/zfs_rewrite.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_rollback/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_rollback/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_rollback/zfs_rollback.cfg
@@ -1414,6 +1419,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_events/zpool_events_errors.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_events/zpool_events_follow.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_events/zpool_events_poolname.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_events/zpool_events_scrub_txg_continue_from_last.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_expand/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_expand/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_expand/zpool_expand.cfg
@@ -1854,6 +1860,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_fdt_create.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_fdt_import.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_fdt_pacing.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_legacy_create.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_legacy_fdt_mixed.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/dedup/dedup_legacy_fdt_upgrade.ksh
@@ -1982,6 +1989,10 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/features/large_dnode/large_dnode_008_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/features/large_dnode/large_dnode_009_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/features/large_dnode/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/gang_blocks/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/gang_blocks/gang_blocks.kshlib
+%%TESTS%%share/zfs/zfs-tests/tests/functional/gang_blocks/gang_blocks_redundant.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/gang_blocks/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/grow/grow.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/grow/grow_pool_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/grow/grow_replicas_001_pos.ksh
@@ -2141,6 +2152,7 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/migration/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap.cfg
+%%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap_ftruncate.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap_libaio_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap_mixed.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/mmap/mmap_read_001_pos.ksh
