@@ -1,0 +1,5 @@
+bin/dns-blackhole.sh
+etc/periodic/daily/901.dns-blackhole
+@sample %%ETCDIR%%/allowed_hosts.sample
+@sample %%ETCDIR%%/blocked_hosts.sample
+@sample %%ETCDIR%%/dns-blackhole.conf.sample

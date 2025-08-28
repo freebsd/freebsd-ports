@@ -1,0 +1,20 @@
+--- dns-blackhole.conf.dist.orig	2025-08-18 11:53:06 UTC
++++ dns-blackhole.conf.dist
+@@ -3,7 +3,7 @@
+ #
+ 
+ # Directory in which config and custom host files reside
+-dns_blackhole_dir="/usr/local/etc/dns-blackhole"
++dns_blackhole_dir="/var/db/%%PORTNAME%%"
+ 
+ # Path to your BIND namedb directory where included files go
+ named_includes_dir="/usr/local/etc/namedb"
+@@ -12,7 +12,7 @@ named_zone_files_dir="/usr/local/etc/namedb"
+ named_zone_files_dir="/usr/local/etc/namedb"
+ 
+ # Temporary directory in which to fetch and build zone files
+-tmp_dir="/var/tmp/dns-blackhole"
++tmp_dir="/var/tmp/%%PORTNAME%%"
+ 
+ # The fully qualified hostname of your nameserver
+ dns_server_hostname="localhost"
