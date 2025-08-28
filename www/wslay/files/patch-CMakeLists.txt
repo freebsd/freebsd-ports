@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2021-01-15 10:48:52 UTC
++++ CMakeLists.txt
+@@ -35,4 +35,10 @@ if (WSLAY_CONFIGURE_INSTALL)
+ 	configure_file(wslay-config.cmake.in wslay-config.cmake @ONLY)
+ 	install(FILES ${CMAKE_CURRENT_BINARY_DIR}/wslay-config.cmake
+ 		DESTINATION ${INSTALL_CMAKE_DIR})
++
++	set(INSTALL_LIB_DIR ${CMAKE_INSTALL_PREFIX}/lib)
++	set(INSTALL_INC_DIR ${CMAKE_INSTALL_PREFIX}/include)
++	configure_file(wslay.pc.cmake.in libwslay.pc @ONLY)
++	set(INSTALL_PKGCONFIG_DIR "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" CACHE PATH "Installation directory for pkgconfig (.pc) files")
++	install(FILES ${CMAKE_BINARY_DIR}/libwslay.pc DESTINATION "${INSTALL_PKGCONFIG_DIR}")
+ endif()
