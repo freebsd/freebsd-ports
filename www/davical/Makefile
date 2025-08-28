@@ -1,10 +1,11 @@
 PORTNAME=	davical
 DISTVERSIONPREFIX=	r
 DISTVERSION=	1.1.12
+PORTREVISION=	1
 CATEGORIES?=	www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simple CalDAV server using a postgres backend
 WWW=		https://www.davical.org/
 
