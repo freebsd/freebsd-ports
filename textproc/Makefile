@@ -1744,7 +1744,6 @@
     SUBDIR += quarto
     SUBDIR += quickwit
     SUBDIR += rand
-    SUBDIR += randlm
     SUBDIR += rapidxml
     SUBDIR += raptor2
     SUBDIR += rarian
