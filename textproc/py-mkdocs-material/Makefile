@@ -1,5 +1,5 @@
 PORTNAME=	mkdocs-material
-DISTVERSION=	9.6.16
+DISTVERSION=	9.6.18
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}trove-classifiers>=2023.10.18:devel/py-trove-classifiers@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.10<3:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}backrefs>=5.7:textproc/py-backrefs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click<8.2.2:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.4<1:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1<4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.2<4:textproc/py-markdown@${PY_FLAVOR} \
