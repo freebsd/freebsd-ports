@@ -1,7 +1,6 @@
 PORTNAME=	wizer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.0.0
-PORTREVISION=	3
+DISTVERSION=	10.0.0
 CATEGORIES=	devel www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,9 +20,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bytecodealliance
 
 CARGO_CRATES=	addr2line-0.21.0 \
-		addr2line-0.24.2 \
+		addr2line-0.25.0 \
 		adler-1.0.2 \
-		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.21 \
 		ambient-authority-0.0.2 \
@@ -35,25 +33,25 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.95 \
+		anyhow-1.0.97 \
 		arbitrary-1.4.1 \
 		async-trait-0.1.79 \
 		atty-0.2.14 \
 		autocfg-1.2.0 \
 		backtrace-0.3.71 \
-		base64-0.21.7 \
+		base64-0.22.1 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
 		block-buffer-0.10.4 \
 		bumpalo-3.17.0 \
 		byteorder-1.5.0 \
 		bytes-1.7.1 \
-		cap-fs-ext-3.4.2 \
-		cap-net-ext-3.4.2 \
-		cap-primitives-3.4.2 \
-		cap-rand-3.4.2 \
-		cap-std-3.4.2 \
-		cap-time-ext-3.4.2 \
+		cap-fs-ext-3.4.4 \
+		cap-net-ext-3.4.4 \
+		cap-primitives-3.4.4 \
+		cap-rand-3.4.4 \
+		cap-std-3.4.4 \
+		cap-time-ext-3.4.4 \
 		cast-0.3.0 \
 		cc-1.0.90 \
 		cfg-if-1.0.0 \
@@ -69,16 +67,19 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		core-foundation-sys-0.8.7 \
 		cpp_demangle-0.4.3 \
 		cpufeatures-0.2.12 \
-		cranelift-bforest-0.116.1 \
-		cranelift-bitset-0.116.1 \
-		cranelift-codegen-0.116.1 \
-		cranelift-codegen-meta-0.116.1 \
-		cranelift-codegen-shared-0.116.1 \
-		cranelift-control-0.116.1 \
-		cranelift-entity-0.116.1 \
-		cranelift-frontend-0.116.1 \
-		cranelift-isle-0.116.1 \
-		cranelift-native-0.116.1 \
+		cranelift-assembler-x64-0.123.2 \
+		cranelift-assembler-x64-meta-0.123.2 \
+		cranelift-bforest-0.123.2 \
+		cranelift-bitset-0.123.2 \
+		cranelift-codegen-0.123.2 \
+		cranelift-codegen-meta-0.123.2 \
+		cranelift-codegen-shared-0.123.2 \
+		cranelift-control-0.123.2 \
+		cranelift-entity-0.123.2 \
+		cranelift-frontend-0.123.2 \
+		cranelift-isle-0.123.2 \
+		cranelift-native-0.123.2 \
+		cranelift-srcgen-0.123.2 \
 		crc32fast-1.4.0 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
@@ -91,14 +92,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		derive_arbitrary-1.4.1 \
 		digest-0.10.7 \
 		directories-next-2.0.0 \
-		dirs-4.0.0 \
-		dirs-sys-0.3.7 \
 		dirs-sys-next-0.1.2 \
 		either-1.10.0 \
 		embedded-io-0.4.0 \
 		encoding_rs-0.8.33 \
 		env_filter-0.1.0 \
-		env_logger-0.11.3 \
+		env_logger-0.11.8 \
 		equivalent-1.0.1 \
 		errno-0.3.10 \
 		fallible-iterator-0.3.0 \
@@ -119,15 +118,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		generic-array-0.14.7 \
 		getrandom-0.2.12 \
 		gimli-0.28.1 \
-		gimli-0.31.1 \
+		gimli-0.32.2 \
 		half-2.4.0 \
-		hashbrown-0.14.3 \
 		hashbrown-0.15.2 \
 		heck-0.3.3 \
 		heck-0.5.0 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.3.9 \
-		humantime-2.1.0 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		id-arena-2.2.1 \
@@ -135,13 +132,16 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		indexmap-2.7.1 \
 		io-extras-0.18.4 \
 		io-lifetimes-2.0.3 \
+		io-uring-0.7.10 \
 		ipnet-2.9.0 \
 		is-terminal-0.4.12 \
 		itertools-0.10.5 \
-		itertools-0.12.1 \
+		itertools-0.14.0 \
 		itoa-1.0.14 \
 		ittapi-0.4.0 \
 		ittapi-sys-0.4.0 \
+		jiff-0.2.6 \
+		jiff-static-0.2.6 \
 		jobserver-0.1.28 \
 		js-sys-0.3.69 \
 		lazy_static-1.4.0 \
@@ -152,7 +152,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libm-0.2.8 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.15 \
-		log-0.4.21 \
+		linux-raw-sys-0.9.4 \
+		log-0.4.27 \
 		mach2-0.4.2 \
 		maybe-owned-0.3.4 \
 		memchr-2.7.2 \
@@ -161,10 +162,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		mio-1.0.2 \
 		num-traits-0.2.18 \
 		object-0.32.2 \
-		object-0.36.7 \
+		object-0.37.3 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
-		paste-1.0.14 \
 		percent-encoding-2.3.1 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
@@ -172,27 +172,31 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		plotters-0.3.5 \
 		plotters-backend-0.3.5 \
 		plotters-svg-0.3.5 \
+		portable-atomic-1.11.0 \
+		portable-atomic-util-0.2.4 \
 		postcard-1.0.8 \
 		ppv-lite86-0.2.20 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.93 \
-		psm-0.1.21 \
-		pulley-interpreter-29.0.1 \
-		quote-1.0.35 \
+		pulley-interpreter-36.0.2 \
+		pulley-macros-36.0.2 \
+		quote-1.0.40 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_users-0.4.5 \
-		regalloc2-0.11.1 \
+		regalloc2-0.12.2 \
 		regex-1.10.4 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.3 \
 		rustc-demangle-0.1.23 \
 		rustc-hash-2.1.1 \
 		rustix-0.38.44 \
+		rustix-1.0.8 \
+		rustix-linux-procfs-0.1.1 \
 		ryu-1.0.17 \
 		same-file-1.0.6 \
 		semver-1.0.22 \
@@ -202,10 +206,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde_spanned-0.6.5 \
 		serde_yaml-0.9.34+deprecated \
 		sha2-0.10.8 \
-		shellexpand-2.1.2 \
+		slab-0.4.11 \
 		smallvec-1.13.2 \
 		socket2-0.5.7 \
-		sptr-0.3.2 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.8.0 \
 		structopt-0.3.26 \
@@ -217,18 +220,19 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		termcolor-1.4.1 \
 		textwrap-0.11.0 \
 		thiserror-1.0.58 \
+		thiserror-2.0.16 \
 		thiserror-impl-1.0.58 \
+		thiserror-impl-2.0.16 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.39.3 \
+		tokio-1.46.1 \
 		toml-0.8.12 \
 		toml_datetime-0.6.5 \
 		toml_edit-0.22.9 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
-		trait-variant-0.1.2 \
 		typenum-1.17.0 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
@@ -251,57 +255,69 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
 		wasm-encoder-0.202.0 \
-		wasm-encoder-0.221.3 \
-		wasm-encoder-0.225.0 \
+		wasm-encoder-0.236.1 \
+		wasm-encoder-0.238.0 \
 		wasm-smith-0.202.0 \
-		wasmparser-0.202.0 \
-		wasmparser-0.221.3 \
-		wasmparser-0.225.0 \
-		wasmprinter-0.202.0 \
-		wasmprinter-0.221.3 \
-		wasmtime-29.0.1 \
-		wasmtime-asm-macros-29.0.1 \
-		wasmtime-cache-29.0.1 \
-		wasmtime-component-macro-29.0.1 \
-		wasmtime-component-util-29.0.1 \
-		wasmtime-cranelift-29.0.1 \
-		wasmtime-environ-29.0.1 \
-		wasmtime-fiber-29.0.1 \
-		wasmtime-jit-debug-29.0.1 \
-		wasmtime-jit-icache-coherence-29.0.1 \
-		wasmtime-math-29.0.1 \
-		wasmtime-slab-29.0.1 \
-		wasmtime-versioned-export-macros-29.0.1 \
-		wasmtime-wasi-29.0.1 \
-		wasmtime-winch-29.0.1 \
-		wasmtime-wit-bindgen-29.0.1 \
+		wasmparser-0.236.1 \
+		wasmparser-0.238.0 \
+		wasmprinter-0.236.1 \
+		wasmprinter-0.238.0 \
+		wasmtime-36.0.2 \
+		wasmtime-environ-36.0.2 \
+		wasmtime-internal-asm-macros-36.0.2 \
+		wasmtime-internal-cache-36.0.2 \
+		wasmtime-internal-component-macro-36.0.2 \
+		wasmtime-internal-component-util-36.0.2 \
+		wasmtime-internal-cranelift-36.0.2 \
+		wasmtime-internal-fiber-36.0.2 \
+		wasmtime-internal-jit-debug-36.0.2 \
+		wasmtime-internal-jit-icache-coherence-36.0.2 \
+		wasmtime-internal-math-36.0.2 \
+		wasmtime-internal-slab-36.0.2 \
+		wasmtime-internal-unwinder-36.0.2 \
+		wasmtime-internal-versioned-export-macros-36.0.2 \
+		wasmtime-internal-winch-36.0.2 \
+		wasmtime-internal-wit-bindgen-36.0.2 \
+		wasmtime-wasi-36.0.2 \
+		wasmtime-wasi-io-36.0.2 \
 		wast-35.0.2 \
-		wast-225.0.0 \
-		wat-1.225.0 \
+		wast-238.0.0 \
+		wat-1.238.0 \
 		web-sys-0.3.69 \
-		wiggle-29.0.1 \
-		wiggle-generate-29.0.1 \
-		wiggle-macro-29.0.1 \
+		wiggle-36.0.2 \
+		wiggle-generate-36.0.2 \
+		wiggle-macro-36.0.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winch-codegen-29.0.1 \
+		winch-codegen-36.0.2 \
 		windows-core-0.52.0 \
+		windows-link-0.1.3 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
 		windows-targets-0.52.6 \
+		windows-targets-0.53.3 \
 		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_gnullvm-0.53.0 \
 		windows_aarch64_msvc-0.52.6 \
+		windows_aarch64_msvc-0.53.0 \
 		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.0 \
 		windows_i686_gnullvm-0.52.6 \
+		windows_i686_gnullvm-0.53.0 \
 		windows_i686_msvc-0.52.6 \
+		windows_i686_msvc-0.53.0 \
 		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.0 \
 		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.52.6 \
+		windows_x86_64_msvc-0.53.0 \
 		winnow-0.6.5 \
 		winx-0.36.3 \
-		wit-parser-0.221.3 \
+		wit-parser-0.236.1 \
 		witx-0.9.1 \
 		zerocopy-0.7.32 \
 		zerocopy-derive-0.7.32 \
