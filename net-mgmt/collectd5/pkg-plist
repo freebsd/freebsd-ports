@@ -66,7 +66,7 @@ lib/collectd/ntpd.so
 %%OPENLDAP%%lib/collectd/openldap.so
 lib/collectd/openvpn.so
 %%PERL%%lib/collectd/perl.so
-lib/collectd/pf.so
+%%PF%%lib/collectd/pf.so
 %%PINBA%%lib/collectd/pinba.so
 %%PING%%lib/collectd/ping.so
 %%PGSQL%%lib/collectd/postgresql.so
