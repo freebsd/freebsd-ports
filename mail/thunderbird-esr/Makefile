@@ -1,9 +1,8 @@
 PORTNAME=	thunderbird
-DISTVERSION=	140.2.0
-PORTREVISION=	2
+DISTVERSION=	140.2.1
 CATEGORIES=	mail news net-im wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build3/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build1/source
 PKGNAMESUFFIX=	-esr
 DISTFILES=	${DISTNAME}esr.source${EXTRACT_SUFX}
 
