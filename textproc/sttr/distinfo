@@ -1,5 +1,5 @@
-TIMESTAMP = 1753722151
-SHA256 (go/textproc_sttr/abhimanyu003-sttr-v0.2.26_GH0/go.mod) = 1d11bb3f27aa72a9e5ddeaa2ee691392b1659073bef8e121a2e302783208de6e
-SIZE (go/textproc_sttr/abhimanyu003-sttr-v0.2.26_GH0/go.mod) = 2048
-SHA256 (go/textproc_sttr/abhimanyu003-sttr-v0.2.26_GH0/abhimanyu003-sttr-v0.2.26_GH0.tar.gz) = d59a4f25c2ad4478699585aff16d3b99b9b1fddfb894bdf072705d6342aee59a
-SIZE (go/textproc_sttr/abhimanyu003-sttr-v0.2.26_GH0/abhimanyu003-sttr-v0.2.26_GH0.tar.gz) = 1235704
+TIMESTAMP = 1756360492
+SHA256 (go/textproc_sttr/abhimanyu003-sttr-v0.2.27_GH0/go.mod) = 69243cb9a557d481cb65a7c322fbcdf1dbbe6a9eee76064102a97867543cbbc5
+SIZE (go/textproc_sttr/abhimanyu003-sttr-v0.2.27_GH0/go.mod) = 2086
+SHA256 (go/textproc_sttr/abhimanyu003-sttr-v0.2.27_GH0/abhimanyu003-sttr-v0.2.27_GH0.tar.gz) = 72e1c173843e42b3e719843f2825bf1d2a20e3167016c5962158365969e38df2
+SIZE (go/textproc_sttr/abhimanyu003-sttr-v0.2.27_GH0/abhimanyu003-sttr-v0.2.27_GH0.tar.gz) = 1235741
