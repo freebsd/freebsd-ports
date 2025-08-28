@@ -1,6 +1,6 @@
 PORTNAME=	swappy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.1
+DISTVERSION=	1.8.0
 CATEGORIES=	graphics wayland
 MASTER_SITES=	https://github.com/jtheoof/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}
