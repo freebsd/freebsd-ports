@@ -1,6 +1,6 @@
---- meson.build.orig	2025-06-20 09:28:47.000000000 -0700
-+++ meson.build	2025-07-10 10:25:47.651315000 -0700
-@@ -59,7 +59,7 @@
+--- meson.build.orig	2025-06-20 16:28:47 UTC
++++ meson.build
+@@ -59,7 +59,7 @@ if PREFIX == '/usr/local'
  # Meson is annoying with its opinionated alteration of certain paths based on whether prefix is default or not.
  # So we revert what it does.
  if PREFIX == '/usr/local'
@@ -9,7 +9,7 @@
  endif
  
  DATABASE_SCRIPTS_DIR = TOP_BUILD_DIR / 'src/share/database/scripts'
-@@ -69,17 +69,17 @@
+@@ -69,17 +69,17 @@ KEA_LFC_INSTALLED = PREFIX / SBINDIR / 'kea-lfc'
  KEA_ADMIN_INSTALLED = PREFIX / SBINDIR / 'kea-admin'
  KEA_LFC_BUILT = TOP_BUILD_DIR / 'src/bin/lfc/kea-lfc'
  KEA_LFC_INSTALLED = PREFIX / SBINDIR / 'kea-lfc'
@@ -31,7 +31,7 @@
  SHAREDSTATEDIR_INSTALLED = PREFIX / SHAREDSTATEDIR
  SYSCONFDIR_INSTALLED = PREFIX / SYSCONFDIR
  TEST_CA_DIR = TOP_SOURCE_DIR / 'src/lib/asiolink/testutils/ca'
-@@ -88,9 +88,9 @@
+@@ -88,9 +88,9 @@ if PREFIX == '/usr/local'
  # So we revert what it does.
  if PREFIX == '/usr/local'
      SYSCONFDIR_INSTALLED = '/usr/local/etc'
@@ -44,7 +44,7 @@
  endif
  
  #### Build Options
-@@ -1108,9 +1108,9 @@
+@@ -1108,9 +1108,9 @@ if PREFIX == '/usr/local'
  # In case prefix is default, install to hardcoded path.
  if PREFIX == '/usr/local'
      install_emptydir('/usr/local/lib/kea')

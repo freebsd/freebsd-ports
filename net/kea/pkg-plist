@@ -472,8 +472,8 @@ lib/libkea-asiodns.so
 lib/libkea-asiodns.so.62
 lib/libkea-asiodns.so.62.0.0
 lib/libkea-asiolink.so
-lib/libkea-asiolink.so.87
-lib/libkea-asiolink.so.87.0.0
+lib/libkea-asiolink.so.88
+lib/libkea-asiolink.so.88.0.0
 lib/libkea-cc.so
 lib/libkea-cc.so.82
 lib/libkea-cc.so.82.0.0
@@ -484,8 +484,8 @@ lib/libkea-config.so
 lib/libkea-config.so.83
 lib/libkea-config.so.83.0.0
 lib/libkea-cryptolink.so
-lib/libkea-cryptolink.so.63
-lib/libkea-cryptolink.so.63.0.0
+lib/libkea-cryptolink.so.64
+lib/libkea-cryptolink.so.64.0.0
 lib/libkea-d2srv.so
 lib/libkea-d2srv.so.63
 lib/libkea-d2srv.so.63.0.0
@@ -499,8 +499,8 @@ lib/libkea-dhcp_ddns.so
 lib/libkea-dhcp_ddns.so.68
 lib/libkea-dhcp_ddns.so.68.0.0
 lib/libkea-dhcpsrv.so
-lib/libkea-dhcpsrv.so.129
-lib/libkea-dhcpsrv.so.129.0.0
+lib/libkea-dhcpsrv.so.130
+lib/libkea-dhcpsrv.so.130.0.0
 lib/libkea-dns.so
 lib/libkea-dns.so.71
 lib/libkea-dns.so.71.0.0
@@ -511,8 +511,8 @@ lib/libkea-exceptions.so
 lib/libkea-exceptions.so.45
 lib/libkea-exceptions.so.45.0.0
 lib/libkea-hooks.so
-lib/libkea-hooks.so.118
-lib/libkea-hooks.so.118.0.0
+lib/libkea-hooks.so.119
+lib/libkea-hooks.so.119.0.0
 lib/libkea-http.so
 lib/libkea-http.so.87
 lib/libkea-http.so.87.0.0
