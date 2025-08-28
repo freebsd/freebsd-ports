@@ -1,7 +1,6 @@
 PORTNAME=	alloy
+DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.2
-DISTVERSIONPREFIX=v
-PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	zach.leslie@grafana.com
@@ -10,34 +9,31 @@ WWW=		https://github.com/grafana/alloy
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	git:devel/git
-
-USES=		go:1.24,modules
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grafana
-GH_PROJECT=	alloy
 
-USE_RC_SUBR=	alloy
+USE_RC_SUBR=	${PORTNAME}
 
 GO_MODULE=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGET=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
-GO_BUILDFLAGS=	-ldflags='-X github.com/grafana/alloy/internal/build.Version=v${PORTVERSION}'
+GO_BUILDFLAGS=	-ldflags='-X github.com/grafana/alloy/internal/build.Version=${GH_TAGNAME}'
 
 post-fetch:
-	@${ECHO_MSG} "===> Fetching ${GO_MODNAME}/syntax dependency";
+	@${ECHO_MSG} "===> Fetching ${GO_MODNAME}/syntax dependency"
 	(cd ${DISTDIR}/${DIST_SUBDIR}; [ -e syntax/go.mod ] || (\
-		${MKDIR} syntax/; \
-		${TAR} -xzf ${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-${PORTVERSION}/syntax/go.mod; \
-		${CP} ${PORTNAME}-${PORTVERSION}/syntax/go.mod syntax/go.mod))
+		${MKDIR} syntax; \
+		${TAR} -xzf ${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-${DISTVERSION}/syntax/go.mod; \
+		${CP} ${PORTNAME}-${DISTVERSION}/syntax/go.mod syntax/go.mod))
 
 post-extract:
-	${CP} -r ${WRKDIR}/${PORTNAME}-${PORTVERSION}/syntax ${GO_WRKSRC}/syntax;
+	${CP} -r ${WRKDIR}/${PORTNAME}-${DISTVERSION}/syntax ${GO_WRKSRC}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/alloy ${STAGEDIR}${PREFIX}/bin/alloy
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/example-config.alloy ${STAGEDIR}${PREFIX}/etc/alloy.flow.sample
-	${MKDIR} ${STAGEDIR}/var/alloy
+	${MKDIR} ${STAGEDIR}/var/${PORTNAME}
 
 .include <bsd.port.mk>
