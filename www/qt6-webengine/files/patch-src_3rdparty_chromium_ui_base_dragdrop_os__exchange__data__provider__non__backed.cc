@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/base/dragdrop/os_exchange_data_provider_non_backed.cc.orig	2024-04-19 13:02:56 UTC
+--- src/3rdparty/chromium/ui/base/dragdrop/os_exchange_data_provider_non_backed.cc.orig	2025-08-18 00:53:11 UTC
 +++ src/3rdparty/chromium/ui/base/dragdrop/os_exchange_data_provider_non_backed.cc
-@@ -99,7 +99,7 @@ void OSExchangeDataProviderNonBacked::SetPickledData(
+@@ -101,7 +101,7 @@ std::optional<std::u16string> OSExchangeDataProviderNo
  
  std::optional<std::u16string> OSExchangeDataProviderNonBacked::GetString()
      const {

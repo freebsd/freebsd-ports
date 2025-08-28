@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-08-18 00:53:11 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/runtime_enabled_features.json5
 @@ -384,7 +384,7 @@
        name: "AppTitle",
@@ -36,7 +36,7 @@
        status: "stable",
        public: true,
        base_feature: "none",
-@@ -4313,7 +4313,7 @@
+@@ -4320,7 +4320,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -45,7 +45,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -4460,7 +4460,7 @@
+@@ -4467,7 +4467,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
@@ -54,7 +54,7 @@
        status: "experimental",
        base_feature: "none",
      },
-@@ -4503,7 +4503,7 @@
+@@ -4510,7 +4510,7 @@
        status: "experimental",
        base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",

@@ -795,7 +795,6 @@ lib/cmake/Qt6Quick3DUtilsPrivate/Qt6Quick3DUtilsPrivateVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/wasdcontroller16.png
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/images/wasdcontroller@2x.png
 %%QT_QMLDIR%%/QtQuick3D/Helpers/impl/DepthOfFieldBlur.qml
-%%QT_QMLDIR%%/QtQuick3D/Helpers/impl/LightmapperOutputWindow.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/impl/SceneEffect.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/impl/libqtquick3dhelpersimplplugin.so
 %%QT_QMLDIR%%/QtQuick3D/Helpers/impl/plugins.qmltypes
@@ -804,6 +803,7 @@ lib/cmake/Qt6Quick3DUtilsPrivate/Qt6Quick3DUtilsPrivateVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/Helpers/meshes/axisGrid.mesh
 %%QT_QMLDIR%%/QtQuick3D/Helpers/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick3D/Helpers/qmldir
+%%QT_QMLDIR%%/QtQuick3D/LightmapperOutputWindow.qml
 %%QT_QMLDIR%%/QtQuick3D/MaterialEditor/AboutDialog.qml
 %%QT_QMLDIR%%/QtQuick3D/MaterialEditor/EditorView.qml
 %%QT_QMLDIR%%/QtQuick3D/MaterialEditor/FrostedGlass.qml

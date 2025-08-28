@@ -1,4 +1,4 @@
---- cmake/QtToolchainHelpers.cmake.orig	2025-05-29 01:27:28 UTC
+--- cmake/QtToolchainHelpers.cmake.orig	2025-08-18 00:53:11 UTC
 +++ cmake/QtToolchainHelpers.cmake
 @@ -95,6 +95,8 @@ function(get_gn_os result)
          set(${result} "mac" PARENT_SCOPE)
@@ -9,7 +9,7 @@
      else()
          message(DEBUG "Unrecognized OS")
      endif()
-@@ -310,7 +312,7 @@ macro(append_build_type_setup)
+@@ -323,7 +325,7 @@ macro(append_build_type_setup)
  
      extend_gn_list(gnArgArg
          ARGS enable_precompiled_headers
@@ -18,7 +18,7 @@
      )
      extend_gn_list(gnArgArg
          ARGS dcheck_always_on
-@@ -402,7 +404,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -415,7 +417,7 @@ macro(append_compiler_linker_sdk_setup)
                  use_libcxx=true
              )
          endif()
@@ -27,7 +27,7 @@
              extend_gn_list(gnArgArg ARGS use_libcxx
                  CONDITION QT_FEATURE_stdlib_libcpp
              )
-@@ -443,7 +445,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -456,7 +458,7 @@ macro(append_compiler_linker_sdk_setup)
          )
      endif()
      get_gn_arch(cpu ${TEST_architecture_arch})
@@ -36,7 +36,7 @@
  
          extend_gn_list_cflag(gnArgArg
              ARG arm_tune
-@@ -548,7 +550,7 @@ macro(append_toolchain_setup)
+@@ -561,7 +563,7 @@ macro(append_toolchain_setup)
          endif()
          unset(host_cpu)
          unset(target_cpu)

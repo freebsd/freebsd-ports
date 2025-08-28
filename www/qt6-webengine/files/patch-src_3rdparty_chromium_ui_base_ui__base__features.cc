@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/base/ui_base_features.cc.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/ui/base/ui_base_features.cc.orig	2025-08-18 00:53:11 UTC
 +++ src/3rdparty/chromium/ui/base/ui_base_features.cc
 @@ -165,7 +165,7 @@ BASE_FEATURE(kWaylandTextInputV3,
               base::FEATURE_DISABLED_BY_DEFAULT);
@@ -18,7 +18,7 @@
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
       !BUILDFLAG(IS_CHROMEOS_LACROS))
  BASE_FEATURE(kExperimentalFlingAnimation,
-@@ -385,7 +385,7 @@ bool IsForcedColorsEnabled() {
+@@ -389,7 +389,7 @@ bool IsForcedColorsEnabled() {
  // and Linux. This feature will be released for other platforms in later
  // milestones.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

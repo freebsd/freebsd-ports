@@ -1,4 +1,4 @@
---- cmake/Functions.cmake.orig	2025-05-29 01:27:28 UTC
+--- cmake/Functions.cmake.orig	2025-08-18 00:53:11 UTC
 +++ cmake/Functions.cmake
 @@ -103,7 +103,7 @@ function(add_linker_options target buildDir completeSt
      set(libs_rsp "${buildDir}/${ninjaTarget}_libs.rsp")
@@ -9,7 +9,7 @@
           get_gn_arch(cpu ${TEST_architecture_arch})
           if(CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm" AND ${config} STREQUAL "Debug")
               target_link_options(${cmakeTarget} PRIVATE "LINKER:--long-plt")
-@@ -370,6 +370,20 @@ function(add_gn_build_artifacts_to_target)
+@@ -373,6 +373,20 @@ function(add_gn_build_artifacts_to_target)
              set_target_properties(${arg_CMAKE_TARGET} PROPERTIES
                  LINK_DEPENDS ${arg_BUILDDIR}/${config}/${arch}/${arg_NINJA_STAMP}
              )

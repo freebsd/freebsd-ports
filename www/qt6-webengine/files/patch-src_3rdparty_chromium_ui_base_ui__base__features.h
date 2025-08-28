@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/base/ui_base_features.h.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/ui/base/ui_base_features.h.orig	2025-08-18 00:53:11 UTC
 +++ src/3rdparty/chromium/ui/base/ui_base_features.h
-@@ -143,7 +143,7 @@ BASE_DECLARE_FEATURE(kWaylandTextInputV3);
+@@ -146,7 +146,7 @@ BASE_DECLARE_FEATURE(kWaylandTextInputV3);
  BASE_DECLARE_FEATURE(kWaylandTextInputV3);
  #endif  // BUILDFLAG(IS_OZONE)
  
