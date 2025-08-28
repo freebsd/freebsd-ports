@@ -763,6 +763,7 @@
     SUBDIR += netevent
     SUBDIR += nfcutils
     SUBDIR += ngbuddy
+    SUBDIR += nginx-ui
     SUBDIR += nitro
     SUBDIR += nitrogen
     SUBDIR += nix

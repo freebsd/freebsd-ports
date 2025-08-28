@@ -1,0 +1,9 @@
+TIMESTAMP = 1756360261
+SHA256 (nginx-ui-v2.1.17.frontend.tar.gz) = 8f93d1d2e69600ce2a0ef56c78f1913914806cc3bf524ca81e1641905ccfb23b
+SIZE (nginx-ui-v2.1.17.frontend.tar.gz) = 1694681
+SHA256 (nginx-ui-v2.1.17.vendor.tar.gz) = d5da0ff0503fc8ab7468e48b9c8e5a3cfcdbd248b590bb55e934d8ef319e593b
+SIZE (nginx-ui-v2.1.17.vendor.tar.gz) = 24145528
+SHA256 (2758ffc346a65bc99084e20ff3c2dee4b8ce7b58.patch) = a9d512710c21126504a2fc524bbe1f1865255c52faa84b55da4c03e2a510de84
+SIZE (2758ffc346a65bc99084e20ff3c2dee4b8ce7b58.patch) = 21707
+SHA256 (0xJacky-nginx-ui-v2.1.17_GH0.tar.gz) = da00d80d0e8b13b742597021fdb13b260662a87fdbd5b2d71fc37cac75fd3e82
+SIZE (0xJacky-nginx-ui-v2.1.17_GH0.tar.gz) = 12110923

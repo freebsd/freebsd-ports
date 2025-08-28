@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# PROVIDE: nginx_ui
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for NGINX UI in /etc/rc.conf
+#
+# nginx_ui_enable (bool):     Enable NGINX UI. (default=NO)
+# nginx_ui_log (str):         Log output. (default=/var/log/nginx-ui.log)
+# nginx_ui_runas (str):       User to run NGINX UI as. (default=%%USER%%)
+#
+
+. /etc/rc.subr
+
+name="nginx_ui"
+desc="Yet another WebUI for Nginx"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${nginx_ui_enable:="NO"}
+: ${nginx_ui_log:="/var/log/nginx-ui.log"}
+: ${nginx_ui_runas:="%%USER%%"}
+
+nginx_ui_chdir="/var/db/nginx-ui"
+pidfile="/var/run/nginx-ui.pid"
+procname="%%LOCALBASE%%/bin/nginx-ui"
+command="/usr/sbin/daemon"
+command_args="-o ${nginx_ui_log} -u ${nginx_ui_runas} -p ${pidfile} -t \"${desc}\" ${procname}"
+
+run_rc_command "$1"
