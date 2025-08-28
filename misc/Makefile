@@ -72,6 +72,7 @@
     SUBDIR += concourse
     SUBDIR += copperspice-examples
     SUBDIR += countrycodes
+    SUBDIR += cpp-mcp
     SUBDIR += cpuid
     SUBDIR += crosti
     SUBDIR += cryptoballot
