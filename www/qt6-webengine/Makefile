@@ -19,6 +19,9 @@ PKGNAMEPREFIX=	qt6-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT?=	Qt 6 library to render web content
 
+# 32-bit platforms are not supported by upstream, but we're limping them along.
+ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR} \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
@@ -26,9 +29,8 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libopenjp2.so:graphics/openjpeg \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		bison cmake compiler:c++20-lang gl gperf \
-		localbase:ldflags ninja:build nodejs:build,lts \
-		pkgconfig python:build qt-dist:6,webengine
+USES=		bison cmake compiler:c++20-lang gl gperf localbase:ldflags \
+		ninja:build pkgconfig python:build qt-dist:6,webengine
 USE_GL=		opengl
 USE_QT=		base declarative tools
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
@@ -137,6 +139,14 @@ PULSEAUDIO_CMAKE_OFF=	-DQT_FEATURE_webengine_system_pulseaudio:BOOL=OFF
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_CMAKE_ON=		-DQT_FEATURE_webengine_system_sndio:BOOL=ON
 SNDIO_CMAKE_OFF=	-DQT_FEATURE_webengine_system_sndio:BOOL=OFF
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mi386}
+USES+=		nodejs:build,20
+.else
+USES+=		nodejs:build,lts
 .endif
 
 post-extract:
