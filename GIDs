@@ -798,7 +798,7 @@ _geodns:*:853:
 ebusd:*:854:
 opensearch:*:855:
 # free: 856
-# free: 857
+kanidmd:*:857:
 umurmur:*:858:
 kanidm:*:859:
 plocate:*:860:

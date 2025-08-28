@@ -804,9 +804,9 @@ _geodns:*:853:853::0:0:GeoDNS User:/var/empty:/usr/sbin/nologin
 ebusd:*:854:854::0:0:eBUS Daemon user:/nonexistent:/usr/sbin/nologin
 opensearch:*:855:855::0:0:opensearch user:/nonexistent:/usr/sbin/nologin
 # free: 856
-# free: 857
+kanidmd:*:857:857::0:0:Kanidmd server:/nonexistent:/usr/sbin/nologin
 umurmur:*:858:858::0:0:uMurmur:/nonexistent:/usr/sbin/nologin
-kanidm:*:859:859::0:0:Kanidm user:/nonexistent:/usr/sbin/nologin
+kanidm:*:859:859::0:0:Kanidm client resolver:/nonexistent:/usr/sbin/nologin
 # free: 860
 rekor:*:861:861::0:0:rekor user:/nonexistent:/usr/sbin/nologin
 timestamp-authority:*:862:862::0:0:Timestamp Authority:/nonexistent:/usr/sbin/nologin

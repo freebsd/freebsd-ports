@@ -1,7 +1,5 @@
-libexec/kanidm_unixd
-libexec/kanidm_unixd_tasks
+libexec/kanidmd
 @dir %%ETCDIR%%
 @dir /var/lib
-@dir(_kanidm_unixd,_kanidm_unixd,750) /var/cache/kanidm-unixd
-@dir(_kanidm_unixd,_kanidm_unixd,750) /var/lib/kanidm-unixd
-@dir(_kanidm_unixd,_kanidm_unixd,755) /var/run/kanidm-unixd
+@dir(kanidmd,kanidmd,750) /var/lib/kanidmd
+@dir(kanidmd,kanidmd,755) /var/run/kanidmd
