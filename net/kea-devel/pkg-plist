@@ -475,8 +475,8 @@ lib/libkea-asiodns.so
 lib/libkea-asiodns.so.72
 lib/libkea-asiodns.so.72.0.0
 lib/libkea-asiolink.so
-lib/libkea-asiolink.so.98
-lib/libkea-asiolink.so.98.0.0
+lib/libkea-asiolink.so.99
+lib/libkea-asiolink.so.99.0.0
 lib/libkea-cc.so
 lib/libkea-cc.so.93
 lib/libkea-cc.so.93.0.0
@@ -499,8 +499,8 @@ lib/libkea-dhcp_ddns.so
 lib/libkea-dhcp_ddns.so.78
 lib/libkea-dhcp_ddns.so.78.0.0
 lib/libkea-dhcpsrv.so
-lib/libkea-dhcpsrv.so.140
-lib/libkea-dhcpsrv.so.140.0.0
+lib/libkea-dhcpsrv.so.141
+lib/libkea-dhcpsrv.so.141.0.0
 lib/libkea-dns.so
 lib/libkea-dns.so.81
 lib/libkea-dns.so.81.0.0
@@ -511,14 +511,14 @@ lib/libkea-exceptions.so
 lib/libkea-exceptions.so.55
 lib/libkea-exceptions.so.55.0.0
 lib/libkea-hooks.so
-lib/libkea-hooks.so.129
-lib/libkea-hooks.so.129.0.0
+lib/libkea-hooks.so.130
+lib/libkea-hooks.so.130.0.0
 lib/libkea-http.so
 lib/libkea-http.so.98
 lib/libkea-http.so.98.0.0
 lib/libkea-log-interprocess.so
-lib/libkea-log-interprocess.so.3
-lib/libkea-log-interprocess.so.3.0.0
+lib/libkea-log-interprocess.so.4
+lib/libkea-log-interprocess.so.4.0.0
 lib/libkea-log.so
 lib/libkea-log.so.85
 lib/libkea-log.so.85.0.0
@@ -618,6 +618,7 @@ sbin/perfdhcp
 %%DATADIR%%/api/lease6-get-all.json
 %%DATADIR%%/api/lease6-get-by-duid.json
 %%DATADIR%%/api/lease6-get-by-hostname.json
+%%DATADIR%%/api/lease6-get-by-hw-address.json
 %%DATADIR%%/api/lease6-get-page.json
 %%DATADIR%%/api/lease6-get.json
 %%DATADIR%%/api/lease6-resend-ddns.json
@@ -812,6 +813,7 @@ sbin/perfdhcp
 %%DATADIR%%/scripts/mysql/upgrade_028_to_029.sh
 %%DATADIR%%/scripts/mysql/upgrade_029_to_030.sh
 %%DATADIR%%/scripts/mysql/upgrade_030_to_031.sh
+%%DATADIR%%/scripts/mysql/upgrade_031_to_032.sh
 %%DATADIR%%/scripts/mysql/wipe_data.sh
 %%DATADIR%%/scripts/pgsql/dhcpdb_create.pgsql
 %%DATADIR%%/scripts/pgsql/dhcpdb_drop.pgsql
@@ -850,6 +852,7 @@ sbin/perfdhcp
 %%DATADIR%%/scripts/pgsql/upgrade_027_to_028.sh
 %%DATADIR%%/scripts/pgsql/upgrade_028_to_029.sh
 %%DATADIR%%/scripts/pgsql/upgrade_029_to_030.sh
+%%DATADIR%%/scripts/pgsql/upgrade_030_to_031.sh
 %%DATADIR%%/scripts/pgsql/wipe_data.sh
 share/man/man8/kea-admin.8.gz
 share/man/man8/kea-ctrl-agent.8.gz
