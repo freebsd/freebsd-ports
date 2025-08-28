@@ -1,5 +1,5 @@
 PORTNAME=	openzfs
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 PORTEPOCH=	1
 CATEGORIES=	filesystems sysutils
 MASTER_SITES=	https://github.com/openzfs/zfs/releases/download/zfs-${PORTVERSION}/
