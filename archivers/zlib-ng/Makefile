@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 TEST_DEPENDS=	googletest>=0:devel/googletest
 
-USES=		cmake:testing compiler:c11
+USES=		cmake:testing compiler:c++14-lang
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
