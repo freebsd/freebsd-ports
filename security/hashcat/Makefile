@@ -43,6 +43,12 @@ BRAIN_DESC=		Build Hashcat Brain
 BRAIN_MAKE_ARGS_OFF=	ENABLE_BRAIN=0
 BRAIN_CFLAGS=		-DWITH_BRAIN -Ideps/git/xxHash
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le
+USE_GCC=	yes:build
+.endif
+
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/libhashcat.so.${PORTVERSION}
 	${STRIP_CMD} ${WRKSRC}/modules/*.so
