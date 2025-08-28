@@ -1,5 +1,5 @@
 PORTNAME=	rapidfuzz
-DISTVERSION=	3.13.0
+DISTVERSION=	3.14.0
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,6 +36,6 @@ post-install:
 	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 
-# tests as of 3.13.0: 387 passed in 79.76s (0:01:19)
+# tests as of 3.14.0: 388 passed in 90.91s (0:01:30)
 
 .include <bsd.port.mk>
