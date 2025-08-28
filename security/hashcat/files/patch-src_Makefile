@@ -20,7 +20,19 @@
  CFLAGS_UNRAR            += -Wno-misleading-indentation
  endif
  CFLAGS_UNRAR            += -Wno-missing-braces
-@@ -651,10 +653,10 @@ $(HASHCAT_FRONTEND): src/main.c $(HASHCAT_LIBRARY)
+@@ -608,6 +610,11 @@ uninstall:
+ ## native compiled hashcat library and frontend
+ ##
+ 
++ifeq ($(shell uname -p),powerpc64le)
++obj/emu_inc_cipher_serpent.NATIVE.o:  src/emu_inc_cipher_serpent.c
++	$(CC) -c $(CCFLAGS) $(CFLAGS_NATIVE) -O0 $< -o $@ -fpic
++endif
++
+ obj/%.NATIVE.o: src/%.c
+ 	$(CC) -c $(CCFLAGS) $(CFLAGS_NATIVE) $< -o $@ -fpic
+ 
+@@ -651,10 +658,10 @@ $(HASHCAT_FRONTEND): src/main.c $(HASHCAT_LIBRARY)
  
  ifeq ($(SHARED),1)
  $(HASHCAT_FRONTEND): src/main.c $(HASHCAT_LIBRARY)
