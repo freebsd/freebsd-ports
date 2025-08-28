@@ -778,12 +778,15 @@ share/OMSimulator/schema/fmi3/fmi3Type.xsd
 share/OMSimulator/schema/fmi3/fmi3Unit.xsd
 share/OMSimulator/schema/fmi3/fmi3Variable.xsd
 share/OMSimulator/schema/fmi3/fmi3VariableDependency.xsd
+share/OMSimulator/schema/ssp/SSPTraceabilityCommon.xsd
+share/OMSimulator/schema/ssp/SimulationResourceMetaData.xsd
 share/OMSimulator/schema/ssp/SystemStructureCommon.xsd
 share/OMSimulator/schema/ssp/SystemStructureDescription.xsd
 share/OMSimulator/schema/ssp/SystemStructureDescription11.xsd
 share/OMSimulator/schema/ssp/SystemStructureParameterMapping.xsd
 share/OMSimulator/schema/ssp/SystemStructureParameterValues.xsd
 share/OMSimulator/schema/ssp/SystemStructureSignalDictionary.xsd
+share/OMSimulator/schema/ssp/xlink.xsd
 share/OMSimulator/scripts/OMSimulatorServer.py
 share/cmake/ZeroMQ/ZeroMQConfig.cmake
 share/cmake/ZeroMQ/ZeroMQConfigVersion.cmake

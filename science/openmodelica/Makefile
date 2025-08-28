@@ -1,7 +1,6 @@
 PORTNAME=	openmodelica
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.25.1
-PORTREVISION=	1
+DISTVERSION=	1.25.2
 CATEGORIES=	science cad java
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
@@ -54,15 +53,15 @@ GH_PROJECT=	OpenModelica
 SHEBANG_GLOB=	*.sh *.in *.ac
 
 GH_TUPLE=	\
-		OpenModelica:OMOptim:f1036f43db18c5015da259771004cfb80e08a110:OpenModelica_OMOptim/OMOptim \
-		OpenModelica:OMSimulator:46fa40f:OpenModelica_OMSimulator/OMSimulator \
+		OpenModelica:OMOptim:d53288b:OpenModelica_OMOptim/OMOptim \
+		OpenModelica:OMSimulator:e3a3aeb:OpenModelica_OMSimulator/OMSimulator \
 		OpenModelica:OMSimulator-3rdParty:5c10de1648d1134a577d9284b58580a72383d89f:OpenModelica_OMSimulator_3rdParty/OMSimulator/3rdParty \
 		OpenModelica:OMCompiler-3rdParty:520663f:OpenModelica_OMCompiler_3rdParty/OMCompiler/3rdParty \
 		OpenModelica:OMSens:093ad11:OpenModelica_OMSens/OMSens \
 		OpenModelica:OMSens_Qt:bab329a:OpenModelica_OMSens_Qt/OMSens_Qt \
 		OpenModelica:OpenModelica-common:08a01802db5ba5edb540383c46718b89ff229ef2:OpenModelica_OpenModelica_common/OMOptim/common \
 		OpenModelica:OpenModelica-common:08a01802db5ba5edb540383c46718b89ff229ef2:OpenModelica_OpenModelica_common/OMSens_Qt/common
-GH_TUPLE+=	OpenModelica:OMBootstrapping:91938f0acbdc6e9ba91114376e3640ca6147b579:bootstrapping/OMCompiler/Compiler/boot/bomc # downloaded by cmake
+GH_TUPLE+=	OpenModelica:OMBootstrapping:04d16f7461e5401321f0f72613daf466ae2f76be:bootstrapping/OMCompiler/Compiler/boot/bomc # downloaded by cmake
 
 # this should change make program everywhere, but it doesn't,
 # hence the patches in OMCompiler/Compiler/runtime/CMakeLists.txt, OMEdit/OMEditLIB/Simulation/SimulationOutputWidget.cpp
