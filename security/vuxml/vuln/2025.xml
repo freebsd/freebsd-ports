@@ -3,7 +3,12 @@
     <affects>
       <package>
 	<name>kea</name>
-	<range><lt>3.0.1</lt></range>
+	<range><ge>3.0.0</ge><lt>3.0.1</lt></range>
+      </package>
+      <package>
+	<name>kea-devel</name>
+	<range><ge>3.1.0</ge><lt>3.1.1</lt></range>
+	<range><ge>2.7.1</ge><le>2.7.9</le></range>
       </package>
     </affects>
     <description>
