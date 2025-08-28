@@ -1,3 +1,31 @@
+  <vuln vid="2a11aa1e-83c7-11f0-b6e5-4ccc6adda413">
+    <topic>qt6-base -- DoS in QColorTransferGenericFunction</topic>
+    <affects>
+      <package>
+	<name>qt6-base</name>
+	<range><lt>6.9.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Andy Shaw reports:</p>
+	<blockquote cite="https://www.qt.io/blog/security-advisory-recently-reported-denial-of-service-issue-in-qcolortransfergenericfunction-impacts-qt">
+	  <p>When passing values outside of the expected range to QColorTransferGenericFunction
+	  it can cause a denial of service, for example, this can happen when passing a
+	  specifically crafted ICC profile to QColorSpace::fromICCProfile.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5992</cvename>
+      <url>https://www.qt.io/blog/security-advisory-recently-reported-denial-of-service-issue-in-qcolortransfergenericfunction-impacts-qt</url>
+    </references>
+    <dates>
+      <discovery>2025-07-11</discovery>
+      <entry>2025-08-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="edf83c10-83b8-11f0-b6e5-4ccc6adda413">
     <topic>qt6-webengine -- Multiple vulnerabilities</topic>
     <affects>
