@@ -38,5 +38,6 @@ bin/vlogscli
 %%PORTDOCS%%%%DOCSDIR%%/Release-Guide.md
 %%PORTDOCS%%%%DOCSDIR%%/security-and-lb.md
 %%PORTDOCS%%%%DOCSDIR%%/vlagent.md
-
+%%PORTDOCS%%%%DOCSDIR%%/metrics.md
+%%PORTDOCS%%%%DOCSDIR%%/vlagent-metrics.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
