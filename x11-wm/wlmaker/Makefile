@@ -1,6 +1,6 @@
 PORTNAME=	wlmaker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5
+DISTVERSION=	0.6
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/phkaeser/wlmaker
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>=1.31:graphics/wayland-protocols
+		wayland-protocols>=1.32:graphics/wayland-protocols
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libwayland-server.so:graphics/wayland \
 		libwlroots-0.18.so:x11-toolkits/wlroots018 \
@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo
 USE_XORG=	xcb
 GH_ACCOUNT=	phkaeser
-GH_TUPLE=	phkaeser:libbase:114022f:libbase/submodules/libbase
+GH_TUPLE=	phkaeser:libbase:f44570e:libbase/submodules/libbase
 CMAKE_OFF=	${WITH_DEBUG:D:Uconfig_DEBUG}
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/wlmclock \
