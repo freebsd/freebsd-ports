@@ -1,10 +1,9 @@
 PORTNAME=	v2ray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.35.0
-PORTREVISION=	2
+DISTVERSION=	5.38.0
 CATEGORIES=	net
 
-MAINTAINER=	shen.elf@gmail.com
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Platform for building proxies to bypass network restrictions
 WWW=		https://www.v2fly.org/ \
 		https://github.com/v2fly/v2ray-core/
