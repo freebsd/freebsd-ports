@@ -22,6 +22,7 @@ lib/baresip/modules/fakevideo.so
 %%G711%%lib/baresip/modules/g711.so
 %%G722%%lib/baresip/modules/g722.so
 %%G726%%lib/baresip/modules/g726.so
+%%GTK3%%lib/baresip/modules/gtk.so
 lib/baresip/modules/httpd.so
 lib/baresip/modules/httpreq.so
 lib/baresip/modules/ice.so
