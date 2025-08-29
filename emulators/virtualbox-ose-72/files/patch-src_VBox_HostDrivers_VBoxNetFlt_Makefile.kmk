@@ -1,0 +1,11 @@
+--- src/VBox/HostDrivers/VBoxNetFlt/Makefile.kmk.orig	2019-05-13 13:33:07 UTC
++++ src/VBox/HostDrivers/VBoxNetFlt/Makefile.kmk
+@@ -565,7 +565,7 @@ $(PATH_OUT)/opt_netgraph.h:
+ 	$(QUIET)$(RM) -f -- $@
+ 	$(QUIET)$(CP) -f $< $@
+  ifndef VBOX_WITH_HARDENING
+-	$(QUIET)$(SED) -e "s;VBOX_WITH_HARDENING;;g" --output $@.tmp $@
++	$(QUIET)$(SED) -e "s;-DVBOX_WITH_HARDENING;;g" --output $@.tmp $@
+ 	${QUIET}$(MV) -f $@.tmp $@
+  endif
+  ifndef VBOX_WITH_NETFLT_VIMAGE

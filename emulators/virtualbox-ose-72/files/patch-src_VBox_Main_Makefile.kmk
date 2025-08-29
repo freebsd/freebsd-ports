@@ -1,0 +1,10 @@
+--- src/VBox/Main/Makefile.kmk.orig	2024-10-10 20:31:38.000000000 +0200
++++ src/VBox/Main/Makefile.kmk	2024-12-27 13:32:31.610875000 +0100
+@@ -761,6 +761,7 @@
+ 
+  VBoxSVC_SOURCES.freebsd = \
+  	src-server/freebsd/HostHardwareFreeBSD.cpp \
++	$(if $(VBOX_WITH_DBUS),src-server/linux/HostPowerLinux.cpp) \
+  	src-server/HostDnsServiceResolvConf.cpp
+ 
+  VBoxSVC_LDFLAGS.freebsd += -lcam

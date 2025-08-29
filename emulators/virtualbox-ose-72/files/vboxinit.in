@@ -1,0 +1,91 @@
+#!/bin/sh
+
+# PROVIDE: vboxinit
+# REQUIRE: LOGIN vboxnet vboxwebsrv sshd
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable vboxinit
+#
+# vboxinit_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable vboxinit.
+#				stop and faststop are always enabled.
+# vboxinit_user (str):		Default user account to run with.
+# 				(default: %%VBOXUSER%%)
+# vboxinit_home (str):		Default home directory to run with.
+#				(default: home of user ${vboxinit_user}
+# vboxinit_stop (str):		Default stop cmd for VBoxManage controlvm.
+#				(default: savestate)
+# vboxinit_start_delay (int):	Default startup delay in seconds.
+#				(default: 0)
+# vboxinit_stop_delay (int):	Default shutdown delay in seconds.
+#				(default: 0)
+#
+# Set the "Startup Mode" to "Automatic" for the virtual machine in
+# phpvirtualbox to automatically start the virtual machine during OS boot.
+#
+
+. /etc/rc.subr
+
+name="vboxinit"
+rcvar="${name}_enable"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+status_cmd="${name}_status"
+restart_cmd="${name}_restart"
+
+vboxinit_start()
+{
+	# Get a list of all machines with autorun enabled in phpvirtualbox
+	${su_command} "${command} list vms | /usr/bin/tr -d '{}\"'" | /usr/bin/sort | while read VMNAME UUID; do
+		STARTUP=$(${su_command} "${command} getextradata ${UUID} 'pvbx/startupMode'" | /usr/bin/cut -d' ' -f2)
+		if [ "${STARTUP}" == "auto" ]; then
+			echo "${name}: starting machine ${VMNAME} ..."
+			${su_command} "${command} startvm ${UUID} --type headless"
+			sleep "${vboxinit_start_delay}"
+		fi
+	done
+}
+
+vboxinit_stop()
+{
+	# Get all running machines
+	${su_command} "${command} list runningvms | /usr/bin/tr -d '{}\"'" | /usr/bin/sort -r | while read VMNAME UUID; do
+		echo "${name}: stopping machine ${VMNAME} with action '${vboxinit_stop}' ..."
+		${su_command} "${command} controlvm ${UUID} ${vboxinit_stop}"
+		sleep "${vboxinit_stop_delay}"
+	done
+}
+
+vboxinit_status()
+{
+	# List all running machines
+	${su_command} "${command} list runningvms"
+}
+
+vboxinit_restart()
+{
+	vboxinit_stop
+	vboxinit_start
+}
+
+load_rc_config $name
+
+: ${vboxinit_enable="NO"}
+: ${vboxinit_user="%%VBOXUSER%%"}
+: ${vboxinit_home=$(/usr/sbin/pw usershow -7 -n "${vboxinit_user}" | /usr/bin/cut -d: -f6)}
+: ${vboxinit_stop="savestate"}
+: ${vboxinit_start_delay="1"}
+: ${vboxinit_stop_delay="0"}
+HOME=${vboxinit_home}
+USER=${vboxinit_user}
+export HOME USER
+
+command="%%VBOXDIR%%/VBoxManage"
+su_command="/usr/bin/su -m ${vboxinit_user} -c"
+
+if [ "x$1" = "xstop" ] || [ "x$1" = "xfaststop" ]; then
+	vboxinit_enable="YES"
+fi
+
+run_rc_command "$1"

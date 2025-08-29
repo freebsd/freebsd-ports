@@ -1,0 +1,120 @@
+[
+{ type: install
+  message: <<EOM
+VirtualBox was installed.
+
+You need to load the vboxdrv kernel module via /boot/loader.conf:
+
+vboxdrv_load="YES"
+
+You also have to add all users to your vboxusers group in order to use vbox.
+
+% pw groupmod vboxusers -m jerry
+
+Reboot the machine to load the needed kernel modules.
+
+
+Bridging Support:
+=================
+
+For bridged networking please add the following line to your /etc/rc.conf:
+
+vboxnet_enable="YES"
+
+
+USB Support:
+============
+
+For USB support your user needs to be in the operator group and needs read
+and write permissions to the USB device.
+
+% pw groupmod operator -m jerry
+
+Add the following to /etc/devfs.rules (create if it doesn't exist):
+
+[system=10]
+add path 'usb/*' mode 0660 group operator
+
+To load these new rule add the following to /etc/rc.conf:
+
+devfs_system_ruleset="system"
+
+Then restart devfs to load the new rules:
+
+% /etc/rc.d/devfs restart
+
+
+Troubleshooting:
+================
+
+Running VirtualBox as non-root user may fail with a fatal error
+NS_ERROR_FACTORY_NOT_REGISTERED. In this case delete /tmp/.vbox-*-ipc file.
+
+If you experience "Network: write Failed: Cannot allocate memory" errors
+try to increase net.graph.maxdata in /boot/loader.conf
+
+If you are using AIO, then increase these limits (https://bugs.freebsd.org/168298):
+vfs.aio.max_buf_aio=8192
+vfs.aio.max_aio_queue_per_proc=65536
+vfs.aio.max_aio_per_proc=8192
+vfs.aio.max_aio_queue=65536
+To check if AIO is used use: kldstat -v | grep aio
+
+If you are experiencing VMs freezes with an error in VBox.log such as:
+"
+00:01:29.590192 AssertLogRel /usr/ports/emulators/virtualbox-ose/work/VirtualBox-6.1.44
+/src/VBox/VMM/VMMR3/PGMPhys.cpp(5148) int PGMR3PhysAllocateHandyPages(PVM): RT_SUCCESS(rc)
+00:01:29.590221 87/128: idPage=0x3d400 HCPhysGCPhys=000000027eaed000 rc=VERR_NO_MEMORY
+00:01:29.590247 Changing the VM state from 'RUNNING' to 'GURU_MEDITATION'
+00:01:29.590261 Console: Machine state changed to 'GuruMeditation'
+00:01:29.590695 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+00:01:29.590696 !!
+00:01:29.590697 !!         VCPU0: Guru Meditation -8 (VERR_NO_MEMORY)
+"
+and see a lot of free RAM, then increase sysctl vm.max_user_wired
+(https://bugs.freebsd.org/252227).
+For dedicated VM servers, a good start is:
+("RAM in GB" - max(1, "RAM in GB" / 32)) * 1024*1024*1024 / PAGE_SIZE
+PAGE_SIZE on x86 is 4096.
+Examples with different RAM sizes in GB:
+ 16: ( 16-max(1, 16/32)*1024*1024*1024/4096 = 3932160  =>  15GB
+ 32: ( 32-max(1, 32/32)*1024*1024*1024/4096 = 8126464  =>  31GB
+ 48: ( 48-max(1, 48/32)*1024*1024*1024/4096 = 12189696 =>  46.5GB
+ 64: ( 64-max(1, 64/32)*1024*1024*1024/4096 = 16252928 =>  62GB
+128: (128-max(1,128/32)*1024*1024*1024/4096 = 32505856 => 124GB
+256: (256-max(1,256/32)*1024*1024*1024/4096 = 65011712 => 248GB
+
+When assigning IP addresses in host-only mode from ranges outside
+of VirtualBox's defaults, the respective ranges need to be listed
+in %%VBOX_ETC%%/networks.conf (https://bugs.freebsd.org/259399).
+
+Check the wiki page for known issues and troubleshooting:
+https://wiki.freebsd.org/VirtualBox
+
+Please report any problems to emulation@. Thanks!
+EOM
+}
+{ type: upgrade
+  maximum_version: 6.1.22
+  message: <<EOM
+The PULSEAUDIO option has been forcibly disabled since VirtualBox
+version 6.1.24 due to a bug in it preventing virtual machines
+configured to use it from starting.
+
+When upgrading from a previous version please reconfigure any virtual
+machines using the Pulseaudio host audio driver to use another
+supported one.
+EOM
+}
+{ type: upgrade
+  minimum_version: 6.1.26
+  maximum_version: 6.1.32_1
+  message: <<EOM
+To comply to hier(7) requirements, networks.conf's location changed
+to %%VBOX_ETC%%/networks.conf.
+
+In case /etc/vbox/networks.conf exists, it needs to be moved to
+%%VBOX_ETC%% and /etc/vbox should be deleted.
+EOM
+}
+]
