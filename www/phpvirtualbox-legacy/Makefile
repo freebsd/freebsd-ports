@@ -18,8 +18,7 @@ USE_PHP=	session simplexml soap xml
 
 ETCDIR=		${WWWDIR}
 WWWDIR=		${PREFIX}/www/${PORTNAME}${SUFFIX}
-EXTRA_PATCHES+=	${.CURDIR}/../phpvirtualbox/files/patch-php8 \
-		${.CURDIR}/../phpvirtualbox/files/patch-panes_mediumEncryptionPasswords.html
+EXTRA_PATCHES+=	${.CURDIR}/../phpvirtualbox-72/files/patch-panes_mediumEncryptionPasswords.html
 NO_ARCH=	yes
 NO_BUILD=	yes
 PORTSCOUT=	limit:^5\.

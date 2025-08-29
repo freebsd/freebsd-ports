@@ -17,6 +17,8 @@ GH_TAGNAME=	cf82d58f2
 USE_PHP=	session simplexml soap xml
 
 ETCDIR=		${WWWDIR}
+EXTRA_PATCHES+=	${.CURDIR}/../phpvirtualbox-72/files/patch-panes_mediumEncryptionPasswords.html \
+		${.CURDIR}/../phpvirtualbox-legacy/files/patch-php8
 NO_ARCH=	yes
 NO_BUILD=	yes
 PORTSCOUT=	limit:^6\.
