@@ -33,8 +33,8 @@ GL_TUPLE=	wayfireplugins:focus-request:v0.9.0:focus_request/subprojects/focus-re
 MESON_ARGS=	-Denable_focus_request=true -Denable_wayfire_shadows=true \
 		-Denable_filters=true
 
-OPTIONS_DEFINE=	LIBRSVG2 PANGO
-OPTIONS_DEFAULT=LIBRSVG2 PANGO
+OPTIONS_DEFINE=	PANGO
+OPTIONS_DEFAULT=PANGO
 OPTIONS_SUB=	yes
 
 PANGO_USE=		GNOME=pango
