@@ -1,5 +1,5 @@
 PORTNAME=	tcpreplay
-DISTVERSION=	4.5.1
+DISTVERSION=	4.5.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/appneta/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -23,10 +23,16 @@ CONFIGURE_ARGS=	--disable-libopts-install \
 
 TEST_TARGET=	test
 
-OPTIONS_DEFINE=			LIBPCAP_PORTS
-LIBPCAP_PORTS_DESC=		Build with net/libpcap instead of from the base OS
-# needs .so version (see: 262976)
+OPTIONS_DEFINE=		LIBPCAP_PORTS
+OPTIONS_DEFAULT=	LIBPCAP_PORTS
+LIBPCAP_PORTS_DESC=	Build with net/libpcap instead of from the base OS
+
+# needs .so version (libpcap.so:net/libpcap uses libpcap from the base system)
 LIBPCAP_PORTS_LIB_DEPENDS=	libpcap.so.1:net/libpcap
 LIBPCAP_PORTS_CONFIGURE_OFF=	--with-libpcap=/usr/lib
+
+post-patch:
+	@${REINPLACE_CMD} -e '/make test/s|make|${MAKE_CMD}|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
