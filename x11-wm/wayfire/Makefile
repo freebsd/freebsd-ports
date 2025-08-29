@@ -1,7 +1,7 @@
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -38,7 +38,6 @@ GH_TUPLE=	WayfireWM:wf-touch:b8b844f:wftouch/subprojects/wf-touch \
 		WayfireWM:wf-utils:08553c4:wfutils/subprojects/wf-utils
 MESON_ARGS=	-Dtests=disabled \
 		-Dwf-touch:tests=disabled \
-		-Dwf-utils:default_library=static \
 		${NULL}
 
 .if !exists(/usr/include/omp.h)
@@ -58,12 +57,6 @@ post-patch:
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
 
-.ifdef GH_TUPLE
-post-configure:
-	@${REINPLACE_CMD} 's/meson install/& \
-		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
-.endif
-
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.ini ${STAGEDIR}${EXAMPLESDIR}
@@ -71,7 +64,8 @@ post-install:
 pre-test:
 	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
 		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
-		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dtests=enabled"; \
+		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure \
+			${MESON_ARGS:M*tests*:S/=dis/=en/}"; \
 		${TOUCH} ${WRKDIR}/.meson_build_tests; \
 	fi
 
