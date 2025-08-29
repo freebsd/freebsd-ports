@@ -1,6 +1,14 @@
---- content/browser/BUILD.gn.orig	2025-06-19 07:37:57 UTC
+--- content/browser/BUILD.gn.orig	2025-06-18 12:17:42 UTC
 +++ content/browser/BUILD.gn
-@@ -2571,6 +2571,14 @@ source_set("browser") {
+@@ -125,6 +125,7 @@ source_set("browser") {
+     "//components/optimization_guide/core:features",
+     "//components/optimization_guide/public/mojom",
+     "//components/os_crypt/sync",
++    "//components/paint_preview/buildflags:buildflags",
+     "//components/payments/content/icon",
+     "//components/payments/mojom",
+     "//components/performance_manager/scenario_api",
+@@ -2571,6 +2572,14 @@ source_set("browser") {
      ]
    }
  
@@ -15,7 +23,7 @@
    if (is_linux || is_chromeos) {
      sources -=
          [ "file_system_access/file_path_watcher/file_path_watcher_stub.cc" ]
-@@ -2616,6 +2624,15 @@ source_set("browser") {
+@@ -2616,6 +2625,15 @@ source_set("browser") {
    if (allow_oop_video_decoder) {
      sources += [ "media/oop_video_decoder_factory.cc" ]
      deps += [ "//media/mojo/mojom" ]
