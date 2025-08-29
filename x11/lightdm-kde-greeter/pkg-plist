@@ -1,6 +1,6 @@
 bin/lightdm-kde-greeter-rootimage
 bin/lightdm-kde-greeter-wifikeeper
-etc/lightdm/lightdm-kde-greeter.conf
+@sample etc/lightdm/lightdm-kde-greeter.conf.sample
 lib/libexec/kf6/kauth/kcmlightdmhelper
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_lightdm.so
 sbin/lightdm-kde-greeter
