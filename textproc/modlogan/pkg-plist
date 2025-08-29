@@ -10,11 +10,11 @@ etc/modlogan/match.os.conf
 etc/modlogan/match.searchengines.conf
 etc/modlogan/match.ua.conf
 etc/modlogan/match.useragents.conf
-@unexec if cmp -s %D/etc/modlogan/modlogan.conf %D/etc/modlogan/modlogan.conf-dist; then rm -f %D/etc/modlogan/modlogan.conf; fi
+@preunexec if cmp -s %D/etc/modlogan/modlogan.conf %D/etc/modlogan/modlogan.conf-dist; then rm -f %D/etc/modlogan/modlogan.conf; fi
 etc/modlogan/modlogan.conf-dist
-@unexec if cmp -s %D/etc/modlogan/modlogan.css %D/etc/modlogan/modlogan.css-dist; then rm -f %D/etc/modlogan/modlogan.css; fi
+@preunexec if cmp -s %D/etc/modlogan/modlogan.css %D/etc/modlogan/modlogan.css-dist; then rm -f %D/etc/modlogan/modlogan.css; fi
 etc/modlogan/modlogan.css-dist
-@unexec if cmp -s %D/etc/modlogan/modlogan.def.conf %D/etc/modlogan/modlogan.def.conf-dist; then rm -f %D/etc/modlogan/modlogan.def.conf; fi
+@preunexec if cmp -s %D/etc/modlogan/modlogan.def.conf %D/etc/modlogan/modlogan.def.conf-dist; then rm -f %D/etc/modlogan/modlogan.def.conf; fi
 etc/modlogan/modlogan.def.conf-dist
 lib/libmla_input_bsdftpd.a
 lib/libmla_input_bsdftpd.so
