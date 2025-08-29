@@ -1,6 +1,6 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.18.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	018
 
@@ -57,7 +57,8 @@ VULKAN_DESC=		Vulkan renderer
 VULKAN_BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
-VULKAN_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
+VULKAN_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri \
+			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_VARS=		RENDERERS+=vulkan
 
 X11_LIB_DEPENDS=	libxcb-errors.so:x11/xcb-util-errors \
