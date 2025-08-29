@@ -1,6 +1,6 @@
---- src/VBox/Runtime/r0drv/freebsd/thread-r0drv-freebsd.c.orig	2021-04-20 04:32:44 UTC
+--- src/VBox/Runtime/r0drv/freebsd/thread-r0drv-freebsd.c.orig	2025-08-13 19:51:51 UTC
 +++ src/VBox/Runtime/r0drv/freebsd/thread-r0drv-freebsd.c
-@@ -49,7 +49,6 @@ RTDECL(RTNATIVETHREAD) RTThreadNativeSelf(void)
+@@ -59,7 +59,6 @@ static int rtR0ThreadFbsdSleepCommon(RTMSINTERVAL cMil
  static int rtR0ThreadFbsdSleepCommon(RTMSINTERVAL cMillies)
  {
      int rc;
@@ -8,7 +8,7 @@
  
      /*
       * 0 ms sleep -> yield.
-@@ -60,30 +59,34 @@ static int rtR0ThreadFbsdSleepCommon(RTMSINTERVAL cMil
+@@ -70,30 +69,34 @@ static int rtR0ThreadFbsdSleepCommon(RTMSINTERVAL cMil
          return VINF_SUCCESS;
      }
  
@@ -60,7 +60,7 @@
      switch (rc)
      {
          case 0:
-@@ -114,11 +117,13 @@ RTDECL(int) RTThreadSleepNoLog(RTMSINTERVAL cMillies)
+@@ -124,11 +127,13 @@ RTDECL(bool) RTThreadYield(void)
  
  RTDECL(bool) RTThreadYield(void)
  {
@@ -74,7 +74,7 @@
      return false; /** @todo figure this one ... */
  }
  
-@@ -167,12 +172,14 @@ RTDECL(void) RTThreadPreemptDisable(PRTTHREADPREEMPTST
+@@ -177,12 +182,14 @@ RTDECL(void) RTThreadPreemptRestore(PRTTHREADPREEMPTST
  
  RTDECL(void) RTThreadPreemptRestore(PRTTHREADPREEMPTSTATE pState)
  {

@@ -1,6 +1,6 @@
---- src/VBox/Runtime/r0drv/freebsd/time-r0drv-freebsd.c.orig	2021-01-07 15:42:09 UTC
+--- src/VBox/Runtime/r0drv/freebsd/time-r0drv-freebsd.c.orig	2025-08-13 19:51:51 UTC
 +++ src/VBox/Runtime/r0drv/freebsd/time-r0drv-freebsd.c
-@@ -64,16 +64,23 @@
+@@ -74,16 +74,23 @@ RTDECL(uint64_t) RTTimeNanoTS(void)
  
  RTDECL(uint64_t) RTTimeNanoTS(void)
  {
@@ -29,7 +29,7 @@
  }
  
  
-@@ -91,8 +98,7 @@ RTDECL(uint64_t) RTTimeSystemMilliTS(void)
+@@ -101,8 +108,7 @@ RTDECL(PRTTIMESPEC) RTTimeNow(PRTTIMESPEC pTime)
  
  RTDECL(PRTTIMESPEC) RTTimeNow(PRTTIMESPEC pTime)
  {

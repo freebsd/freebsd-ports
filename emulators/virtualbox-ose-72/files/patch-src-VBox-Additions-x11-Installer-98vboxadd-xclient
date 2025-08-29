@@ -1,6 +1,6 @@
---- src/VBox/Additions/x11/Installer/98vboxadd-xclient.orig	2025-01-21 19:49:30.000000000 +0700
-+++ src/VBox/Additions/x11/Installer/98vboxadd-xclient	2025-01-23 00:43:43.597269000 +0700
-@@ -42,15 +42,15 @@
+--- src/VBox/Additions/x11/Installer/98vboxadd-xclient.orig	2025-08-13 19:41:21 UTC
++++ src/VBox/Additions/x11/Installer/98vboxadd-xclient
+@@ -42,15 +42,15 @@ elif test -z "${SSH_CONNECTION}"; then
     # not use "exit" here as this script is "source"d, not executed.
  
      # Check wheather X11 or Wayland version of VBoxClient should be started.

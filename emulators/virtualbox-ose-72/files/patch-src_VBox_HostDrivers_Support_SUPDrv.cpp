@@ -1,6 +1,6 @@
---- src/VBox/HostDrivers/Support/SUPDrv.cpp.orig	2024-12-27 08:34:02.157677000 +0100
-+++ src/VBox/HostDrivers/Support/SUPDrv.cpp	2024-12-27 08:34:25.419134000 +0100
-@@ -317,8 +317,8 @@
+--- src/VBox/HostDrivers/Support/SUPDrv.cpp.orig	2025-08-13 19:51:08 UTC
++++ src/VBox/HostDrivers/Support/SUPDrv.cpp
+@@ -322,8 +322,8 @@ static SUPFUNC g_aFunctions[] =
      SUPEXP_STK_BACK(    2,  SUPR0PageFree),
      SUPEXP_STK_BACK(    6,  SUPR0PageMapKernel),
      SUPEXP_STK_BACK(    6,  SUPR0PageProtect),

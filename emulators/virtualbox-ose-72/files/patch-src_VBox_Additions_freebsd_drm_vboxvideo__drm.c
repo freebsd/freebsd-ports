@@ -1,6 +1,6 @@
---- src/VBox/Additions/freebsd/drm/vboxvideo_drm.c.orig	2022-07-26 18:05:21 UTC
+--- src/VBox/Additions/freebsd/drm/vboxvideo_drm.c.orig	2025-08-13 19:41:18 UTC
 +++ src/VBox/Additions/freebsd/drm/vboxvideo_drm.c
-@@ -154,10 +154,14 @@ static driver_t vboxvideo_driver = {
+@@ -164,10 +164,14 @@ static driver_t vboxvideo_driver = {
  	sizeof(struct drm_device)
  };
  

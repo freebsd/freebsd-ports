@@ -1,6 +1,6 @@
---- src/VBox/Additions/common/VBoxGuest/freebsd/Makefile.orig	2019-04-16 10:09:09 UTC
+--- src/VBox/Additions/common/VBoxGuest/freebsd/Makefile.orig	2025-08-13 19:41:14 UTC
 +++ src/VBox/Additions/common/VBoxGuest/freebsd/Makefile
-@@ -25,7 +25,7 @@
+@@ -35,7 +35,7 @@ KMOD = vboxguest
  #
  KMOD = vboxguest
  
@@ -9,7 +9,7 @@
  
  .if (${MACHINE_ARCH} == "i386")
   CFLAGS += -DRT_ARCH_X86
-@@ -80,6 +80,7 @@ SRCS += \
+@@ -91,6 +91,7 @@ SRCS += \
  	handletable.c \
  	handletablectx.c \
  	once.c \
@@ -17,7 +17,7 @@
  	thread.c
  
  .PATH:	${.CURDIR}/common/string
-@@ -147,6 +148,7 @@ SRCS += \
+@@ -163,6 +164,7 @@ SRCS += \
  
  .PATH:	${.CURDIR}/r0drv
  SRCS += \

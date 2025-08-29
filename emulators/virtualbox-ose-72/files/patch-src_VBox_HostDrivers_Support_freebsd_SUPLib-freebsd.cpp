@@ -1,6 +1,6 @@
---- src/VBox/HostDrivers/Support/freebsd/SUPLib-freebsd.cpp.orig	2024-10-10 20:31:28.000000000 +0200
-+++ src/VBox/HostDrivers/Support/freebsd/SUPLib-freebsd.cpp	2024-11-17 18:27:46.400938000 +0100
-@@ -88,7 +88,7 @@
+--- src/VBox/HostDrivers/Support/freebsd/SUPLib-freebsd.cpp.orig	2025-08-13 19:51:09 UTC
++++ src/VBox/HostDrivers/Support/freebsd/SUPLib-freebsd.cpp
+@@ -88,7 +88,7 @@ DECLHIDDEN(int) suplibOsInit(PSUPLIBDATA pThis, bool f
      /*
       * Try open the BSD device.
       */

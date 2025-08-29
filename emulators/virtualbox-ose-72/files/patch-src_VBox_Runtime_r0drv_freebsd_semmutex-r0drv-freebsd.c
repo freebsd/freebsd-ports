@@ -1,6 +1,6 @@
---- src/VBox/Runtime/r0drv/freebsd/semmutex-r0drv-freebsd.c.orig	2018-10-15 14:31:31 UTC
+--- src/VBox/Runtime/r0drv/freebsd/semmutex-r0drv-freebsd.c.orig	2025-08-13 19:51:51 UTC
 +++ src/VBox/Runtime/r0drv/freebsd/semmutex-r0drv-freebsd.c
-@@ -62,6 +62,7 @@ RTDECL(int)  RTSemMutexCreate(PRTSEMMUTEX phMutexSem)
+@@ -72,6 +72,7 @@ RTDECL(int)  RTSemMutexCreate(PRTSEMMUTEX phMutexSem)
  {
      AssertCompile(sizeof(RTSEMMUTEXINTERNAL) > sizeof(void *));
      AssertPtrReturn(phMutexSem, VERR_INVALID_POINTER);
@@ -8,7 +8,7 @@
  
      PRTSEMMUTEXINTERNAL pThis = (PRTSEMMUTEXINTERNAL)RTMemAllocZ(sizeof(*pThis));
      if (pThis)
-@@ -70,8 +71,10 @@ RTDECL(int)  RTSemMutexCreate(PRTSEMMUTEX phMutexSem)
+@@ -80,8 +81,10 @@ RTDECL(int)  RTSemMutexCreate(PRTSEMMUTEX phMutexSem)
          sx_init_flags(&pThis->SxLock, "IPRT Mutex Semaphore", SX_RECURSE);
  
          *phMutexSem = pThis;
@@ -19,7 +19,7 @@
      return VERR_NO_MEMORY;
  }
  
-@@ -83,12 +86,14 @@ RTDECL(int)  RTSemMutexDestroy(RTSEMMUTEX hMutexSem)
+@@ -93,12 +96,14 @@ RTDECL(int)  RTSemMutexDestroy(RTSEMMUTEX hMutexSem)
          return VINF_SUCCESS;
      AssertPtrReturn(pThis, VERR_INVALID_HANDLE);
      AssertMsgReturn(pThis->u32Magic == RTSEMMUTEX_MAGIC, ("%p: u32Magic=%RX32\n", pThis, pThis->u32Magic), VERR_INVALID_HANDLE);
@@ -34,7 +34,7 @@
      return VINF_SUCCESS;
  }
  
-@@ -99,6 +104,7 @@ RTDECL(int)  RTSemMutexRequest(RTSEMMUTEX hMutexSem, R
+@@ -109,6 +114,7 @@ RTDECL(int)  RTSemMutexRequest(RTSEMMUTEX hMutexSem, R
      int                 rc;
      AssertPtrReturn(pThis, VERR_INVALID_HANDLE);
      AssertMsgReturn(pThis->u32Magic == RTSEMMUTEX_MAGIC, ("%p: u32Magic=%RX32\n", pThis, pThis->u32Magic), VERR_INVALID_HANDLE);
@@ -42,7 +42,7 @@
  
      if (cMillies == RT_INDEFINITE_WAIT)
      {
-@@ -133,6 +139,7 @@ RTDECL(int)  RTSemMutexRequest(RTSEMMUTEX hMutexSem, R
+@@ -143,6 +149,7 @@ RTDECL(int)  RTSemMutexRequest(RTSEMMUTEX hMutexSem, R
          } while (RTTimeSystemMilliTS() - StartTS < cMillies);
      }
  
@@ -50,7 +50,7 @@
      return VINF_SUCCESS;
  }
  
-@@ -149,6 +156,7 @@ RTDECL(int)  RTSemMutexRequestNoResume(RTSEMMUTEX hMut
+@@ -159,6 +166,7 @@ RTDECL(int)  RTSemMutexRequestNoResume(RTSEMMUTEX hMut
      int                 rc;
      AssertPtrReturn(pThis, VERR_INVALID_HANDLE);
      AssertMsgReturn(pThis->u32Magic == RTSEMMUTEX_MAGIC, ("%p: u32Magic=%RX32\n", pThis, pThis->u32Magic), VERR_INVALID_HANDLE);
@@ -58,7 +58,7 @@
  
      if (cMillies == RT_INDEFINITE_WAIT)
      {
-@@ -186,6 +194,7 @@ RTDECL(int)  RTSemMutexRequestNoResume(RTSEMMUTEX hMut
+@@ -196,6 +204,7 @@ RTDECL(int)  RTSemMutexRequestNoResume(RTSEMMUTEX hMut
          } while (RTTimeSystemMilliTS() - StartTS < cMillies);
      }
  
@@ -66,7 +66,7 @@
      return VINF_SUCCESS;
  }
  
-@@ -201,8 +210,11 @@ RTDECL(int)  RTSemMutexRelease(RTSEMMUTEX hMutexSem)
+@@ -211,8 +220,11 @@ RTDECL(int)  RTSemMutexRelease(RTSEMMUTEX hMutexSem)
      PRTSEMMUTEXINTERNAL pThis = hMutexSem;
      AssertPtrReturn(pThis, VERR_INVALID_HANDLE);
      AssertMsgReturn(pThis->u32Magic == RTSEMMUTEX_MAGIC, ("%p: u32Magic=%RX32\n", pThis, pThis->u32Magic), VERR_INVALID_HANDLE);

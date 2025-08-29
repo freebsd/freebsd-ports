@@ -1,8 +1,8 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c.orig	2023-07-12 15:59:35 UTC
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c.orig	2025-08-13 19:41:18 UTC
 +++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c
-@@ -14,228 +14,1416 @@
-  * VirtualBox OSE distribution. VirtualBox OSE is distributed in the
-  * hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
+@@ -24,228 +24,1416 @@
+  *
+  * SPDX-License-Identifier: GPL-3.0-only
   */
 -
 -#include "vboxvfs.h"

@@ -1,6 +1,6 @@
---- include/iprt/x86.h.orig	2021-04-20 04:22:23 UTC
+--- include/iprt/x86.h.orig	2025-08-13 19:37:26 UTC
 +++ include/iprt/x86.h
-@@ -38,6 +38,16 @@
+@@ -53,6 +53,16 @@
  # pragma D depends_on library vbox-types.d
  #endif
  
@@ -15,5 +15,5 @@
 +#endif
 +
  /** Workaround for Solaris sys/regset.h defining CS, DS and sys/controlregs.h
-  * defining MSR_IA32_FLUSH_CMD */
+  * defining MSR_IA32_FLUSH_CMD and MSR_AMD_VIRT_SPEC_CTL */
  #ifdef RT_OS_SOLARIS

@@ -1,6 +1,6 @@
---- src/VBox/Devices/Graphics/DevVGA-SVGA3d-dx-dx11.cpp.orig	2025-05-12 17:49:35 UTC
+--- src/VBox/Devices/Graphics/DevVGA-SVGA3d-dx-dx11.cpp.orig	2025-08-13 19:47:43 UTC
 +++ src/VBox/Devices/Graphics/DevVGA-SVGA3d-dx-dx11.cpp
-@@ -3363,7 +3363,7 @@ static DECLCALLBACK(int) vmsvga3dBackInit(PPDMDEVINS p
+@@ -3021,7 +3021,7 @@ static DECLCALLBACK(int) vmsvga3dBackInit(PPDMDEVINS p
      RT_NOREF(pDevIns, pThis);
  
      int rc;

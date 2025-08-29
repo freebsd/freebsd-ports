@@ -1,4 +1,4 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c.orig	2021-04-28 16:24:46 UTC
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c.orig	2025-08-13 19:41:18 UTC
 +++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c
 @@ -1,8 +1,3 @@
 -/* $Id: vboxvfs_vfsops.c $ */
@@ -7,11 +7,11 @@
 - */
 -
  /*
-  * Copyright (C) 2008-2020 Oracle Corporation
+  * Copyright (C) 2008-2025 Oracle and/or its affiliates.
   *
-@@ -14,245 +9,478 @@
-  * VirtualBox OSE distribution. VirtualBox OSE is distributed in the
-  * hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
+@@ -24,245 +19,478 @@
+  *
+  * SPDX-License-Identifier: GPL-3.0-only
   */
 -
 -#include "vboxvfs.h"
@@ -38,10 +38,9 @@
 -#include <iprt/mem.h>
 +#include <geom/geom.h>
 +#include <geom/geom_vfs.h>
--
 +#include <vm/uma.h>
 +#include "vboxvfs.h"
-+
+ 
  #define VFSMP2SFGLOBINFO(mp) ((struct sf_glob_info *)mp->mnt_data)
  
 -static int vboxvfs_version = VBOXVFS_VERSION;

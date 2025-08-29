@@ -1,6 +1,6 @@
---- src/VBox/HostDrivers/VBoxNetFlt/freebsd/Makefile.orig	2019-05-13 13:33:07 UTC
+--- src/VBox/HostDrivers/VBoxNetFlt/freebsd/Makefile.orig	2025-08-13 19:51:11 UTC
 +++ src/VBox/HostDrivers/VBoxNetFlt/freebsd/Makefile
-@@ -26,7 +26,7 @@
+@@ -36,7 +36,7 @@ KMOD = vboxnetflt
  
  KMOD = vboxnetflt
  

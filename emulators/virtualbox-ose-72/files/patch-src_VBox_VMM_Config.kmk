@@ -1,6 +1,6 @@
---- src/VBox/VMM/Config.kmk.orig	2024-12-27 03:55:34.269311000 +0100
-+++ src/VBox/VMM/Config.kmk	2024-12-27 03:42:41.858673000 +0100
-@@ -91,7 +91,7 @@
+--- src/VBox/VMM/Config.kmk.orig	2025-08-13 19:52:06 UTC
++++ src/VBox/VMM/Config.kmk
+@@ -133,7 +133,7 @@ endif
    VMM_COMMON_DEFS += VBOX_WITH_NATIVE_NEM VBOX_WITH_NEM_R0
   endif
  endif

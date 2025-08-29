@@ -1,6 +1,6 @@
---- src/VBox/HostDrivers/VBoxNetAdp/freebsd/Makefile.orig	2019-05-13 13:33:07 UTC
+--- src/VBox/HostDrivers/VBoxNetAdp/freebsd/Makefile.orig	2025-08-13 19:51:10 UTC
 +++ src/VBox/HostDrivers/VBoxNetAdp/freebsd/Makefile
-@@ -26,7 +26,7 @@
+@@ -36,7 +36,7 @@ KMOD = vboxnetadp
  
  KMOD = vboxnetadp
  

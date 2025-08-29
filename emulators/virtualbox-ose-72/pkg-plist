@@ -252,8 +252,10 @@ lib/virtualbox/VBoxDDU.so
 %%QT%%lib/virtualbox/UICommon.so
 %%QT%%lib/virtualbox/VBoxDbg.so
 %%QT%%lib/virtualbox/VBoxDragAndDropSvc.so
-lib/virtualbox/VBoxEFI32.fd
-lib/virtualbox/VBoxEFI64.fd
+lib/virtualbox/VBoxEFI-amd64.fd
+lib/virtualbox/VBoxEFI-arm32.fd
+lib/virtualbox/VBoxEFI-arm64.fd
+lib/virtualbox/VBoxEFI-x86.fd
 lib/virtualbox/VBoxExtPackHelperApp
 lib/virtualbox/VBoxGuestControlSvc.so
 lib/virtualbox/VBoxGuestPropSvc.so
@@ -276,6 +278,7 @@ lib/virtualbox/VBoxSharedClipboard.so
 lib/virtualbox/VBoxSharedFolders.so
 lib/virtualbox/VBoxTraceLogDecoders.so
 lib/virtualbox/VBoxVMM.so
+lib/virtualbox/VBoxVMMArm.so
 lib/virtualbox/VBoxVMMPreload.so
 lib/virtualbox/VBoxXPCOM.so
 lib/virtualbox/VBoxXPCOMC.so

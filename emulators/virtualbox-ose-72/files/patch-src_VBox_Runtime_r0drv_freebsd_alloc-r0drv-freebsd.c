@@ -1,6 +1,6 @@
---- src/VBox/Runtime/r0drv/freebsd/alloc-r0drv-freebsd.c.orig	2024-10-10 20:32:14.000000000 +0200
-+++ src/VBox/Runtime/r0drv/freebsd/alloc-r0drv-freebsd.c	2024-12-27 13:39:49.059878000 +0100
-@@ -88,6 +88,7 @@
+--- src/VBox/Runtime/r0drv/freebsd/alloc-r0drv-freebsd.c.orig	2025-08-13 19:51:51 UTC
++++ src/VBox/Runtime/r0drv/freebsd/alloc-r0drv-freebsd.c
+@@ -88,6 +88,7 @@ DECLHIDDEN(int) rtR0MemAllocEx(size_t cb, uint32_t fFl
  
  DECLHIDDEN(int) rtR0MemAllocEx(size_t cb, uint32_t fFlags, PRTMEMHDR *ppHdr)
  {
@@ -8,7 +8,7 @@
      size_t      cbAllocated = cb;
      PRTMEMHDR   pHdr        = (PRTMEMHDR)malloc(cb + sizeof(RTMEMHDR), M_IPRTHEAP,
                                                  fFlags & RTMEMHDR_FLAG_ZEROED ? M_NOWAIT | M_ZERO : M_NOWAIT);
-@@ -99,21 +100,28 @@
+@@ -99,21 +100,28 @@ DECLHIDDEN(int) rtR0MemAllocEx(size_t cb, uint32_t fFl
          pHdr->cbReq      = cb;
  
          *ppHdr = pHdr;
@@ -38,7 +38,7 @@
      void *pv;
  
      /*
-@@ -138,6 +146,7 @@
+@@ -138,6 +146,7 @@ RTR0DECL(void *) RTMemContAlloc(PRTCCPHYS pPhys, size_
          *pPhys = vtophys(pv);
          Assert(!(*pPhys & PAGE_OFFSET_MASK));
      }
@@ -46,7 +46,7 @@
      return pv;
  }
  
-@@ -147,7 +156,9 @@
+@@ -147,7 +156,9 @@ RTR0DECL(void) RTMemContFree(void *pv, size_t cb)
      if (pv)
      {
          AssertMsg(!((uintptr_t)pv & PAGE_OFFSET_MASK), ("pv=%p\n", pv));

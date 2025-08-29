@@ -9,9 +9,9 @@ follows what tvtohz does. The rest of the patch just chases an upstream
 KPI change.
 
 Submitted by:	Andriy Gapon <avg@FreeBSD.org>
---- src/VBox/Runtime/r0drv/freebsd/sleepqueue-r0drv-freebsd.h.orig	2024-07-29 13:10:32 UTC
+--- src/VBox/Runtime/r0drv/freebsd/sleepqueue-r0drv-freebsd.h.orig	2025-08-13 19:51:51 UTC
 +++ src/VBox/Runtime/r0drv/freebsd/sleepqueue-r0drv-freebsd.h
-@@ -84,6 +84,8 @@ DECLINLINE(uint32_t) rtR0SemBsdWaitUpdateTimeout(PRTR0
+@@ -94,6 +94,8 @@ DECLINLINE(uint32_t) rtR0SemBsdWaitUpdateTimeout(PRTR0
      uint64_t cTicks = ASMMultU64ByU32DivByU32(uTimeout, hz, UINT32_C(1000000000));
      if (cTicks >= INT_MAX)
          return RTSEMWAIT_FLAGS_INDEFINITE;
@@ -20,7 +20,7 @@ Submitted by:	Andriy Gapon <avg@FreeBSD.org>
      else
          pWait->iTimeout     = (int)cTicks;
  #endif
-@@ -300,10 +302,16 @@ DECLINLINE(void) rtR0SemBsdSignal(void *pvWaitChan)
+@@ -310,10 +312,16 @@ DECLINLINE(void) rtR0SemBsdSignal(void *pvWaitChan)
  DECLINLINE(void) rtR0SemBsdSignal(void *pvWaitChan)
  {
      sleepq_lock(pvWaitChan);

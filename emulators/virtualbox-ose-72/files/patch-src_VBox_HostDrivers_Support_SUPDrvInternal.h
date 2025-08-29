@@ -1,6 +1,6 @@
---- src/VBox/HostDrivers/Support/SUPDrvInternal.h.orig	2021-01-07 15:41:25 UTC
+--- src/VBox/HostDrivers/Support/SUPDrvInternal.h.orig	2025-08-13 19:51:08 UTC
 +++ src/VBox/HostDrivers/Support/SUPDrvInternal.h
-@@ -217,7 +217,7 @@
+@@ -368,7 +368,7 @@
  # define SUPDRV_WITHOUT_MSR_PROBER
  #endif
  

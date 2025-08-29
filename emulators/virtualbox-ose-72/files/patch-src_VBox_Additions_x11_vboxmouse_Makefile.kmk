@@ -1,6 +1,6 @@
---- src/VBox/Additions/x11/vboxmouse/Makefile.kmk.orig	2019-01-25 18:24:30 UTC
+--- src/VBox/Additions/x11/vboxmouse/Makefile.kmk.orig	2025-08-13 19:41:22 UTC
 +++ src/VBox/Additions/x11/vboxmouse/Makefile.kmk
-@@ -227,10 +227,22 @@ endif # neq ($(KBUILD_TARGET),linux)
+@@ -237,10 +237,22 @@ ifdef VBOX_USE_SYSTEM_XORG_HEADERS
  
  
  ifdef VBOX_USE_SYSTEM_XORG_HEADERS

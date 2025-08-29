@@ -1,6 +1,6 @@
---- src/VBox/Runtime/r0drv/freebsd/semfastmutex-r0drv-freebsd.c.orig	2021-01-07 15:42:08 UTC
+--- src/VBox/Runtime/r0drv/freebsd/semfastmutex-r0drv-freebsd.c.orig	2025-08-13 19:51:51 UTC
 +++ src/VBox/Runtime/r0drv/freebsd/semfastmutex-r0drv-freebsd.c
-@@ -86,6 +86,7 @@ RTDECL(int)  RTSemFastMutexCreate(PRTSEMFASTMUTEX phFa
+@@ -96,6 +96,7 @@ RTDECL(int)  RTSemFastMutexCreate(PRTSEMFASTMUTEX phFa
  {
      AssertCompile(sizeof(RTSEMFASTMUTEXINTERNAL) > sizeof(void *));
      AssertPtrReturn(phFastMtx, VERR_INVALID_POINTER);
@@ -8,7 +8,7 @@
  
      PRTSEMFASTMUTEXINTERNAL pThis = (PRTSEMFASTMUTEXINTERNAL)RTMemAllocZ(sizeof(*pThis));
      if (pThis)
-@@ -94,8 +95,10 @@ RTDECL(int)  RTSemFastMutexCreate(PRTSEMFASTMUTEX phFa
+@@ -104,8 +105,10 @@ RTDECL(int)  RTSemFastMutexCreate(PRTSEMFASTMUTEX phFa
          sx_init_flags(&pThis->SxLock, "IPRT Fast Mutex Semaphore", SX_DUPOK);
  
          *phFastMtx = pThis;
@@ -19,7 +19,7 @@
      return VERR_NO_MEMORY;
  }
  
-@@ -107,11 +110,13 @@ RTDECL(int)  RTSemFastMutexDestroy(RTSEMFASTMUTEX hFas
+@@ -117,11 +120,13 @@ RTDECL(int)  RTSemFastMutexDestroy(RTSEMFASTMUTEX hFas
          return VINF_SUCCESS;
      AssertPtrReturn(pThis, VERR_INVALID_HANDLE);
      AssertMsgReturn(pThis->u32Magic == RTSEMFASTMUTEX_MAGIC, ("%p: u32Magic=%RX32\n", pThis, pThis->u32Magic), VERR_INVALID_HANDLE);
@@ -33,7 +33,7 @@
      return VINF_SUCCESS;
  }
  
-@@ -121,8 +126,11 @@ RTDECL(int)  RTSemFastMutexRequest(RTSEMFASTMUTEX hFas
+@@ -131,8 +136,11 @@ RTDECL(int)  RTSemFastMutexRequest(RTSEMFASTMUTEX hFas
      PRTSEMFASTMUTEXINTERNAL pThis = hFastMtx;
      AssertPtrReturn(pThis, VERR_INVALID_HANDLE);
      AssertMsgReturn(pThis->u32Magic == RTSEMFASTMUTEX_MAGIC, ("%p: u32Magic=%RX32\n", pThis, pThis->u32Magic), VERR_INVALID_HANDLE);
@@ -45,7 +45,7 @@
      return VINF_SUCCESS;
  }
  
-@@ -132,8 +140,11 @@ RTDECL(int)  RTSemFastMutexRelease(RTSEMFASTMUTEX hFas
+@@ -142,8 +150,11 @@ RTDECL(int)  RTSemFastMutexRelease(RTSEMFASTMUTEX hFas
      PRTSEMFASTMUTEXINTERNAL pThis = hFastMtx;
      AssertPtrReturn(pThis, VERR_INVALID_HANDLE);
      AssertMsgReturn(pThis->u32Magic == RTSEMFASTMUTEX_MAGIC, ("%p: u32Magic=%RX32\n", pThis, pThis->u32Magic), VERR_INVALID_HANDLE);

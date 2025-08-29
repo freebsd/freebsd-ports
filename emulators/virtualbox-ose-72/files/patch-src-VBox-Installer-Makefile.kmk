@@ -1,6 +1,6 @@
---- src/VBox/Installer/Makefile.kmk.orig	2020-05-13 19:44:01 UTC
+--- src/VBox/Installer/Makefile.kmk.orig	2025-08-13 19:51:15 UTC
 +++ src/VBox/Installer/Makefile.kmk
-@@ -41,9 +41,11 @@ ifndef VBOX_ONLY_SDK
+@@ -51,9 +51,11 @@ ifndef VBOX_ONLY_SDK
   if "$(KBUILD_TARGET)" == "win" && "$(KBUILD_HOST)" == "win"
    include $(PATH_SUB_CURRENT)/win/Makefile.kmk
   endif

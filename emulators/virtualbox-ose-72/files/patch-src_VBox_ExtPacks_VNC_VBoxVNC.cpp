@@ -1,6 +1,6 @@
---- src/VBox/ExtPacks/VNC/VBoxVNC.cpp.orig	2024-01-11 12:24:04 UTC
+--- src/VBox/ExtPacks/VNC/VBoxVNC.cpp.orig	2025-08-13 19:50:02 UTC
 +++ src/VBox/ExtPacks/VNC/VBoxVNC.cpp
-@@ -45,7 +45,7 @@
+@@ -55,7 +55,7 @@
  
  #ifdef LIBVNCSERVER_IPv6
  // enable manually!
@@ -9,7 +9,7 @@
  #endif
  
  
-@@ -421,7 +421,7 @@ DECLCALLBACK(int) VNCServerImpl::VRDEEnableConnections
+@@ -431,7 +431,7 @@ DECLCALLBACK(int) VNCServerImpl::VRDEEnableConnections
  
      // get address
      char *pszTCPAddress = (char *)RTMemTmpAllocZ(VNC_ADDRESS_OPTION_MAX);
@@ -18,7 +18,7 @@
                                                      VRDE_QP_NETWORK_ADDRESS,
                                                      pszTCPAddress,
                                                      VNC_ADDRESS_OPTION_MAX,
-@@ -582,19 +582,35 @@ DECLCALLBACK(int) VNCServerImpl::VRDEEnableConnections
+@@ -592,19 +592,35 @@ DECLCALLBACK(int) VNCServerImpl::VRDEEnableConnections
              pszServerAddress6 = szIPv6ListenAll;
      }
  

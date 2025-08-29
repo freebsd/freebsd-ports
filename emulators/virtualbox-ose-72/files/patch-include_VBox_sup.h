@@ -1,6 +1,6 @@
---- include/VBox/sup.h.orig	2024-12-27 04:08:45.986426000 +0100
-+++ include/VBox/sup.h	2024-12-27 04:09:08.925387000 +0100
-@@ -2248,7 +2248,7 @@
+--- include/VBox/sup.h.orig	2025-08-13 19:37:16 UTC
++++ include/VBox/sup.h
+@@ -2325,7 +2325,7 @@ SUPR0DECL(void) SUPR0BadContext(PSUPDRVSESSION pSessio
  
  SUPR0DECL(void) SUPR0BadContext(PSUPDRVSESSION pSession, const char *pszFile, uint32_t uLine, const char *pszExpr);
  

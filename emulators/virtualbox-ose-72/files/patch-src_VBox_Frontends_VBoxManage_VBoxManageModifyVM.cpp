@@ -1,6 +1,6 @@
---- src/VBox/Frontends/VBoxManage/VBoxManageModifyVM.cpp.orig	2022-10-06 19:10:28.000000000 +0200
-+++ src/VBox/Frontends/VBoxManage/VBoxManageModifyVM.cpp	2024-12-26 16:08:30.624183000 +0100
-@@ -170,7 +170,7 @@
+--- src/VBox/Frontends/VBoxManage/VBoxManageModifyVM.cpp.orig	2025-08-13 19:50:05 UTC
++++ src/VBox/Frontends/VBoxManage/VBoxManageModifyVM.cpp
+@@ -151,7 +151,7 @@ enum
      MODIFYVM_UARTMODE,
      MODIFYVM_UARTTYPE,
      MODIFYVM_UART,
@@ -9,7 +9,7 @@
      MODIFYVM_LPTMODE,
      MODIFYVM_LPT,
  #endif
-@@ -382,7 +382,7 @@
+@@ -393,7 +393,7 @@ static const RTGETOPTDEF g_aModifyVMOptions[] =
      OPT2("--uart-mode",                     "--uartmode",               MODIFYVM_UARTMODE,                  RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX),
      OPT2("--uart-type",                     "--uarttype",               MODIFYVM_UARTTYPE,                  RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX),
      OPT1("--uart",                                                      MODIFYVM_UART,                      RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX),
@@ -18,7 +18,7 @@
      OPT2("--lpt-mode",                      "--lptmode",                MODIFYVM_LPTMODE,                   RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX),
      OPT1("--lpt",                                                       MODIFYVM_LPT,                       RTGETOPT_REQ_STRING | RTGETOPT_FLAG_INDEX),
  #endif
-@@ -2496,7 +2496,7 @@
+@@ -2680,7 +2680,7 @@ RTEXITCODE handleModifyVM(HandlerArg *a)
                  break;
              }
  

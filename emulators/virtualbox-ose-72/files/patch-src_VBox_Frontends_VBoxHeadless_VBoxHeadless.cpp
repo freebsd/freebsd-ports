@@ -1,6 +1,6 @@
---- src/VBox/Frontends/VBoxHeadless/VBoxHeadless.cpp.orig	2024-12-26 22:32:13.106542000 +0100
-+++ src/VBox/Frontends/VBoxHeadless/VBoxHeadless.cpp	2024-12-26 22:32:32.805126000 +0100
-@@ -61,7 +61,7 @@
+--- src/VBox/Frontends/VBoxHeadless/VBoxHeadless.cpp.orig	2025-08-13 19:50:04 UTC
++++ src/VBox/Frontends/VBoxHeadless/VBoxHeadless.cpp
+@@ -63,7 +63,7 @@ using namespace com;
  # include <iprt/process.h>
  #endif
  

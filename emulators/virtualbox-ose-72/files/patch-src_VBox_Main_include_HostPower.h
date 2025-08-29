@@ -1,6 +1,6 @@
---- src/VBox/Main/include/HostPower.h.orig	2021-01-07 15:41:38 UTC
+--- src/VBox/Main/include/HostPower.h.orig	2025-08-13 19:51:21 UTC
 +++ src/VBox/Main/include/HostPower.h
-@@ -31,7 +31,7 @@
+@@ -41,7 +41,7 @@
  
  #include <vector>
  
@@ -9,7 +9,7 @@
  # include <VBox/dbus.h>
  #endif
  
-@@ -67,7 +67,7 @@ class HostPowerServiceWin : public HostPowerService (p
+@@ -77,7 +77,7 @@ class HostPowerServiceWin : public HostPowerService (p
      RTTHREAD    mThread;
  };
  # endif

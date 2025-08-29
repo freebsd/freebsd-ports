@@ -1,10 +1,10 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	7.1.12
+DISTVERSION=	7.2.0
 PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
 		LOCAL/vvd:docs
-PKGNAMESUFFIX?=	-71
+PKGNAMESUFFIX?=	-72
 DISTFILES=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX}:src \
 		VirtualBox-docs-${DISTVERSION}${EXTRACT_SUFX}:docs
 EXTRACT_ONLY=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX} \
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	gtar:archivers/gtar \
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libcurl.so:ftp/curl
-RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod-71
+RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod-72
 
 USES=		compiler:c++17-lang cpe gnome iconv pkgconfig qt:6 ssl tar:bzip2
 CPE_VENDOR=	oracle
@@ -45,10 +45,10 @@ CONFLICTS_INSTALL=	virtualbox-ose-legacy \
 			virtualbox-ose-nox11 \
 			virtualbox-ose-70 \
 			virtualbox-ose-nox11-70 \
-			virtualbox-ose-72 \
-			virtualbox-ose-nox11-72
+			virtualbox-ose-71 \
+			virtualbox-ose-nox11-71
 
-PORTSCOUT=	limit:^7\.1\.
+PORTSCOUT=	limit:^7\.2\.
 SUB_FILES=	pkg-message
 SUB_LIST=	VBOXDIR=${VBOX_DIR} \
 		VBOX_ETC=${VBOX_ETC} \
@@ -148,9 +148,9 @@ ENV=
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == no
-CONFLICTS_INSTALL+=	virtualbox-ose-nox11-71
+CONFLICTS_INSTALL+=	virtualbox-ose-nox11-72
 .else
-CONFLICTS_INSTALL+=	virtualbox-ose-71
+CONFLICTS_INSTALL+=	virtualbox-ose-72
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}

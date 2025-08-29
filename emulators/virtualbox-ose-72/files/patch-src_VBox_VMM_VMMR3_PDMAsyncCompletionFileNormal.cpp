@@ -1,6 +1,6 @@
---- src/VBox/VMM/VMMR3/PDMAsyncCompletionFileNormal.cpp.orig	2021-04-19 21:33:04.000000000 -0700
-+++ src/VBox/VMM/VMMR3/PDMAsyncCompletionFileNormal.cpp	2021-05-18 11:45:08.396136000 -0700
-@@ -27,6 +27,13 @@
+--- src/VBox/VMM/VMMR3/PDMAsyncCompletionFileNormal.cpp.orig	2025-08-13 19:52:13 UTC
++++ src/VBox/VMM/VMMR3/PDMAsyncCompletionFileNormal.cpp
+@@ -37,6 +37,13 @@
  #include <iprt/string.h>
  #include <iprt/assert.h>
  #include <VBox/log.h>
@@ -14,7 +14,7 @@
  
  #include "PDMAsyncCompletionFileInternal.h"
  
-@@ -1120,8 +1127,40 @@
+@@ -1119,8 +1126,40 @@ static int pdmacFileAioMgrNormalProcessTaskList(PPDMAC
               */
              pdmacFileAioMgrNormalBalanceLoad(pAioMgr);
  #else

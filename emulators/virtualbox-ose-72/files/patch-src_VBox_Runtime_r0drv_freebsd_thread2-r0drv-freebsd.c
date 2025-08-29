@@ -1,6 +1,6 @@
---- src/VBox/Runtime/r0drv/freebsd/thread2-r0drv-freebsd.c.orig	2021-01-07 15:42:09 UTC
+--- src/VBox/Runtime/r0drv/freebsd/thread2-r0drv-freebsd.c.orig	2025-08-13 19:51:51 UTC
 +++ src/VBox/Runtime/r0drv/freebsd/thread2-r0drv-freebsd.c
-@@ -94,6 +94,8 @@ DECLHIDDEN(int) rtThreadNativeSetPriority(PRTTHREADINT
+@@ -104,6 +104,8 @@ DECLHIDDEN(int) rtThreadNativeSetPriority(PRTTHREADINT
              return VERR_INVALID_PARAMETER;
      }
  
@@ -9,7 +9,7 @@
  #if __FreeBSD_version < 700000
      /* Do like they're doing in subr_ntoskrnl.c... */
      mtx_lock_spin(&sched_lock);
-@@ -110,6 +112,7 @@ DECLHIDDEN(int) rtThreadNativeSetPriority(PRTTHREADINT
+@@ -120,6 +122,7 @@ DECLHIDDEN(int) rtThreadNativeSetPriority(PRTTHREADINT
      thread_unlock(curthread);
  #endif
  
@@ -17,7 +17,7 @@
      return VINF_SUCCESS;
  }
  
-@@ -159,6 +162,7 @@ static void rtThreadNativeMain(void *pvThreadInt)
+@@ -169,6 +172,7 @@ DECLHIDDEN(int) rtThreadNativeCreate(PRTTHREADINT pThr
  
  DECLHIDDEN(int) rtThreadNativeCreate(PRTTHREADINT pThreadInt, PRTNATIVETHREAD pNativeThread)
  {
@@ -25,7 +25,7 @@
      int rc;
      struct proc *pProc;
  
-@@ -174,6 +178,7 @@ DECLHIDDEN(int) rtThreadNativeCreate(PRTTHREADINT pThr
+@@ -184,6 +188,7 @@ DECLHIDDEN(int) rtThreadNativeCreate(PRTTHREADINT pThr
      }
      else
          rc = RTErrConvertFromErrno(rc);

@@ -1,6 +1,6 @@
---- src/VBox/HostDrivers/VBoxNetFlt/freebsd/files_vboxnetflt.orig	2022-10-06 19:11:15.000000000 +0200
-+++ src/VBox/HostDrivers/VBoxNetFlt/freebsd/files_vboxnetflt	2024-12-26 15:41:50.870345000 +0100
-@@ -72,6 +72,7 @@
+--- src/VBox/HostDrivers/VBoxNetFlt/freebsd/files_vboxnetflt.orig	2025-08-13 19:51:11 UTC
++++ src/VBox/HostDrivers/VBoxNetFlt/freebsd/files_vboxnetflt
+@@ -73,6 +73,7 @@ VBOX_VBOXNETFLT_SOURCES=" \
      ${PATH_ROOT}/include/iprt/uni.h=>include/iprt/uni.h \
      ${PATH_ROOT}/include/iprt/utf16.h=>include/iprt/utf16.h \
      ${PATH_ROOT}/include/iprt/uuid.h=>include/iprt/uuid.h \

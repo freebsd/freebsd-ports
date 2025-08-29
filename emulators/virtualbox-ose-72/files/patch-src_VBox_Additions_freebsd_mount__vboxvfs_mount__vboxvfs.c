@@ -1,5 +1,5 @@
---- src/VBox/Additions/freebsd/mount_vboxvfs/mount_vboxvfs.c.orig	1970-01-01 01:00:00.000000000 +0100
-+++ src/VBox/Additions/freebsd/mount_vboxvfs/mount_vboxvfs.c	2017-07-12 19:24:26.106029000 +0200
+--- src/VBox/Additions/freebsd/mount_vboxvfs/mount_vboxvfs.c.orig	2025-08-28 22:09:24 UTC
++++ src/VBox/Additions/freebsd/mount_vboxvfs/mount_vboxvfs.c
 @@ -0,0 +1,168 @@
 +/*
 +* Copyright (c) 1992, 1993, 1994

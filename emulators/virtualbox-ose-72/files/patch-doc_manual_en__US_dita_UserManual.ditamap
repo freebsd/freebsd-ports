@@ -1,6 +1,6 @@
---- doc/manual/en_US/dita/UserManual.ditamap.orig	2025-04-14 17:41:38 UTC
+--- doc/manual/en_US/dita/UserManual.ditamap.orig	2025-08-13 19:37:06 UTC
 +++ doc/manual/en_US/dita/UserManual.ditamap
-@@ -613,7 +613,7 @@
+@@ -540,7 +540,7 @@
           <topicref href="topics/security-model.dita"/>
           <topicref href="topics/secure-config-vms.dita">
              <topicref href="topics/security-networking.dita"/>

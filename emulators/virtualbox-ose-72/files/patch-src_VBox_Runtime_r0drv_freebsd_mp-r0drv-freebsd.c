@@ -1,6 +1,6 @@
---- src/VBox/Runtime/r0drv/freebsd/mp-r0drv-freebsd.c.orig	2019-04-16 10:17:21 UTC
+--- src/VBox/Runtime/r0drv/freebsd/mp-r0drv-freebsd.c.orig	2025-08-13 19:51:51 UTC
 +++ src/VBox/Runtime/r0drv/freebsd/mp-r0drv-freebsd.c
-@@ -147,7 +147,9 @@ RTDECL(RTCPUID) RTMpGetOnlineCount(void)
+@@ -157,7 +157,9 @@ static void rtmpOnAllFreeBSDWrapper(void *pvArg)
  static void rtmpOnAllFreeBSDWrapper(void *pvArg)
  {
      PRTMPARGS pArgs = (PRTMPARGS)pvArg;
@@ -10,7 +10,7 @@
  }
  
  
-@@ -159,7 +161,9 @@ RTDECL(int) RTMpOnAll(PFNRTMPWORKER pfnWorker, void *p
+@@ -169,7 +171,9 @@ RTDECL(int) RTMpOnAll(PFNRTMPWORKER pfnWorker, void *p
      Args.pvUser2 = pvUser2;
      Args.idCpu = NIL_RTCPUID;
      Args.cHits = 0;
@@ -20,7 +20,7 @@
      return VINF_SUCCESS;
  }
  
-@@ -175,7 +179,11 @@ static void rtmpOnOthersFreeBSDWrapper(void *pvArg)
+@@ -185,7 +189,11 @@ static void rtmpOnOthersFreeBSDWrapper(void *pvArg)
      PRTMPARGS pArgs = (PRTMPARGS)pvArg;
      RTCPUID idCpu = curcpu;
      if (pArgs->idCpu != idCpu)
@@ -32,7 +32,7 @@
  }
  
  
-@@ -196,6 +204,7 @@ RTDECL(int) RTMpOnOthers(PFNRTMPWORKER pfnWorker, void
+@@ -206,6 +214,7 @@ RTDECL(int) RTMpOnOthers(PFNRTMPWORKER pfnWorker, void
          Args.pvUser2 = pvUser2;
          Args.idCpu = RTMpCpuId();
          Args.cHits = 0;
@@ -40,7 +40,7 @@
  #if __FreeBSD_version >= 700000
  # if __FreeBSD_version >= 900000
          Mask = all_cpus;
-@@ -207,6 +216,7 @@ RTDECL(int) RTMpOnOthers(PFNRTMPWORKER pfnWorker, void
+@@ -217,6 +226,7 @@ RTDECL(int) RTMpOnOthers(PFNRTMPWORKER pfnWorker, void
  #else
          smp_rendezvous(NULL, rtmpOnOthersFreeBSDWrapper, NULL, &Args);
  #endif
@@ -48,7 +48,7 @@
      }
      return VINF_SUCCESS;
  }
-@@ -224,8 +234,10 @@ static void rtmpOnSpecificFreeBSDWrapper(void *pvArg)
+@@ -234,8 +244,10 @@ static void rtmpOnSpecificFreeBSDWrapper(void *pvArg)
      RTCPUID     idCpu = curcpu;
      if (pArgs->idCpu == idCpu)
      {
@@ -59,7 +59,7 @@
      }
  }
  
-@@ -248,6 +260,7 @@ RTDECL(int) RTMpOnSpecific(RTCPUID idCpu, PFNRTMPWORKE
+@@ -258,6 +270,7 @@ RTDECL(int) RTMpOnSpecific(RTCPUID idCpu, PFNRTMPWORKE
      Args.pvUser2 = pvUser2;
      Args.idCpu = idCpu;
      Args.cHits = 0;
@@ -67,7 +67,7 @@
  #if __FreeBSD_version >= 700000
  # if __FreeBSD_version >= 900000
      CPU_SETOF(idCpu, &Mask);
-@@ -258,6 +271,7 @@ RTDECL(int) RTMpOnSpecific(RTCPUID idCpu, PFNRTMPWORKE
+@@ -268,6 +281,7 @@ RTDECL(int) RTMpOnSpecific(RTCPUID idCpu, PFNRTMPWORKE
  #else
      smp_rendezvous(NULL, rtmpOnSpecificFreeBSDWrapper, NULL, &Args);
  #endif
@@ -75,7 +75,7 @@
      return Args.cHits == 1
           ? VINF_SUCCESS
           : VERR_CPU_NOT_FOUND;
-@@ -287,12 +301,14 @@ RTDECL(int) RTMpPokeCpu(RTCPUID idCpu)
+@@ -297,12 +311,14 @@ RTDECL(int) RTMpPokeCpu(RTCPUID idCpu)
      if (!RTMpIsCpuOnline(idCpu))
          return VERR_CPU_NOT_FOUND;
  

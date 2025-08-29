@@ -1,6 +1,6 @@
---- src/VBox/Runtime/r0drv/freebsd/spinlock-r0drv-freebsd.c.orig	2021-01-07 15:42:09 UTC
+--- src/VBox/Runtime/r0drv/freebsd/spinlock-r0drv-freebsd.c.orig	2025-08-13 19:51:51 UTC
 +++ src/VBox/Runtime/r0drv/freebsd/spinlock-r0drv-freebsd.c
-@@ -106,7 +106,9 @@ RTDECL(int)  RTSpinlockCreate(PRTSPINLOCK pSpinlock, u
+@@ -116,7 +116,9 @@ RTDECL(int)  RTSpinlockCreate(PRTSPINLOCK pSpinlock, u
       * Allocate.
       */
      AssertCompile(sizeof(RTSPINLOCKINTERNAL) > sizeof(void *));
@@ -10,7 +10,7 @@
      if (!pThis)
          return VERR_NO_MEMORY;
  
-@@ -140,7 +142,9 @@ RTDECL(int)  RTSpinlockDestroy(RTSPINLOCK Spinlock)
+@@ -150,7 +152,9 @@ RTDECL(int)  RTSpinlockDestroy(RTSPINLOCK Spinlock)
       * Make the lock invalid and release the memory.
       */
      ASMAtomicIncU32(&pThis->u32Magic);
@@ -20,7 +20,7 @@
      return VINF_SUCCESS;
  }
  
-@@ -166,6 +170,7 @@ RTDECL(void) RTSpinlockAcquire(RTSPINLOCK Spinlock)
+@@ -176,6 +180,7 @@ RTDECL(void) RTSpinlockAcquire(RTSPINLOCK Spinlock)
                  {
                      RT_ASSERT_PREEMPT_CPUID_SPIN_ACQUIRED(pThis);
                      pThis->fIntSaved = fIntSaved;
