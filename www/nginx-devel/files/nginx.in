@@ -69,6 +69,7 @@ if [ -n "$2" ]; then
 		required_files="${nginx_configfile}"
 		eval nginx_enable="\${nginx_${profile}_enable:-${nginx_enable}}"
 		eval nginx_flags="\${nginx_${profile}_flags:-${nginx_flags}}"
+		eval nginx_svcj_options="\${nginx_${profile}_svcj_options:-${nginx_svcj_options}}"
 		eval nginxlimits_enable="\${nginxlimits_${profile}_enable:-${nginxlimits_enable}}"
 		eval nginxlimits_args="\${nginxlimits_${profile}_args:-${nginxlimits_args}}"
 		nginx_flags="-c ${nginx_configfile} -g \"pid ${pidfile};\" ${nginx_flags}"
