@@ -1,5 +1,5 @@
 PORTNAME=	html2xhtml
-PORTVERSION=	1.4
+DISTVERSION=	1.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.it.uc3m.es/jaf/html2xhtml/downloads/
 
@@ -8,10 +8,10 @@ COMMENT=	Convert HTML to XHTML
 WWW=		https://www.it.uc3m.es/jaf/html2xhtml
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		iconv
+GNU_CONFIGURE=	yes
 
 CONFLICTS_INSTALL=	p5-HTML-HTML5-Parser p5-XML-Driver-HTML # bin/html2xhtml
 
