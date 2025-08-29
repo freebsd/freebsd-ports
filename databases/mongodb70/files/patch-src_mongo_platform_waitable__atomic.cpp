@@ -52,7 +52,7 @@
 +    }
 +
 +    int umtxOpRet;
-+    if ((umtxOpRet = _umtx_op(const_cast<void*>(uaddr), UMTX_OP_WAIT_UINT_PRIVATE, old, (void*)sizeof(struct _umtx_time), uaddr2)) != 0) {
++    if ((umtxOpRet = _umtx_op(const_cast<void*>(uaddr), UMTX_OP_WAIT_UINT_PRIVATE, old, (void*)sizeof(struct _umtx_time), uaddr2)) == -1) {
 +        if (errno == ETIMEDOUT) {
 +            return false;
 +        }
