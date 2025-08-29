@@ -566,7 +566,7 @@ sbin/systemd-cat-native
 %%DASHBOARD%%%%DATADIR%%/web/v3/1083.bfcffcae47e37eafd532.chunk.js.LICENSE.txt
 %%DASHBOARD%%%%DATADIR%%/web/v3/1083.d61abf3771ce679d59cf.css
 %%DASHBOARD%%%%DATADIR%%/web/v3/1220.308e2174e62c44e06938.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/127.b38f17ae8eb1%%PYTHON_SUFFIX%%d3aa9.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/127.b38f17ae8eb1311d3aa9.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/1526.ea56050e11a00e20d98f.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/1608.b6e817e2bb513f0f92f7.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/1658.bbd335679cb24cf069ef.chunk.js
