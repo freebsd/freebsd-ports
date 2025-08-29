@@ -4,7 +4,7 @@ DISTVERSION=	0.9.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for managing configuration files, written for wayfire
 WWW=		https://wayfire.org/
 
