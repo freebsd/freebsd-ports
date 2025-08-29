@@ -1,0 +1,27 @@
+From 560bb92d3ddaeb31d7af77d22d01b0050b45bebe Mon Sep 17 00:00:00 2001
+From: Scott Moreau <oreaus@gmail.com>
+Date: Tue, 8 Oct 2024 12:56:55 -0600
+Subject: [PATCH] frame-writer: Track ffmpeg changes (#279)
+
+* frame-writer: Track ffmpeg changes
+
+The frame_rate variable has been made private API.
+
+* frame-writer: Remove comment
+---
+ src/frame-writer.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git src/frame-writer.cpp src/frame-writer.cpp
+index 2a5ba17..b8abe51 100644
+--- src/frame-writer.cpp
++++ src/frame-writer.cpp
+@@ -371,7 +371,7 @@ void FrameWriter::init_video_filters(const AVCodec *codec)
+     this->videoCodecCtx->height = filter_output->h;
+     this->videoCodecCtx->pix_fmt = (AVPixelFormat)filter_output->format;
+     this->videoCodecCtx->time_base = filter_output->time_base;
+-    this->videoCodecCtx->framerate = filter_output->frame_rate; // can be 1/0 if unknown
++    this->videoCodecCtx->framerate = AVRational{1,0};
+     this->videoCodecCtx->sample_aspect_ratio = filter_output->sample_aspect_ratio;
+ 
+     this->hw_frame_context = av_buffersink_get_hw_frames_ctx(
