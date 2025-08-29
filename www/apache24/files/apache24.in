@@ -43,6 +43,8 @@ pidfile="${_pidprefix}.pid"
 required_files=%%PREFIX%%/etc/apache24/httpd.conf
 envvars="%%PREFIX%%/sbin/envvars"
 
+: ${apache24_svcj_options:="net_basic"}
+
 [ -z "$apache24_enable" ]       && apache24_enable="NO"
 [ -z "$apache24limits_enable" ] && apache24limits_enable="NO"
 [ -z "$apache24limits_args" ]   && apache24limits_args="-e -C daemon"
@@ -83,6 +85,7 @@ if [ -n "$2" ]; then
 		eval command="\${apache24_${profile}_command:-${command}}"
 		eval pidfile="\${apache24_${profile}_pidfile:-${pidfile}}"
 		eval apache24_envvars="\${apache24_${profile}_envvars:-${envvars}}"
+		eval apache24_svcj_options="\${apache24_${profile}_svcj_options:-${apache24_svcj_options}}"
 		apache24_flags="-f ${apache24_configfile} -c \"PidFile ${pidfile}\" ${apache24_flags}"
 	else
 		echo "$0: extra argument ignored"
