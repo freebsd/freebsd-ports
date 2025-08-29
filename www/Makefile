@@ -1456,6 +1456,7 @@
     SUBDIR += phpvirtualbox
     SUBDIR += phpvirtualbox-70
     SUBDIR += phpvirtualbox-71
+    SUBDIR += phpvirtualbox-72
     SUBDIR += phpvirtualbox-legacy
     SUBDIR += piwigo
     SUBDIR += plasma6-plasma-browser-integration
