@@ -1,12 +1,13 @@
 PORTNAME=	phpvirtualbox
 DISTVERSION=	7.1-1
+PORTREVISION=	1
 CATEGORIES=	www
 SUFFIX=		-71
 PKGNAMESUFFIX=	${SUFFIX}${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	AJAX Web Interface for VirtualBox
-WWW=		https://sourceforge.net/projects/phpvirtualbox-7-0/
+WWW=		https://github.com/phpvirtualbox/phpvirtualbox/
 
 LICENSE=	GPLv3
 
