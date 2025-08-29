@@ -24,7 +24,6 @@ CONFIGURE_ARGS=	--disable-libopts-install \
 TEST_TARGET=	test
 
 OPTIONS_DEFINE=		LIBPCAP_PORTS
-OPTIONS_DEFAULT=	LIBPCAP_PORTS
 LIBPCAP_PORTS_DESC=	Build with net/libpcap instead of from the base OS
 
 # needs .so version (libpcap.so:net/libpcap uses libpcap from the base system)
