@@ -4,7 +4,7 @@ DISTVERSION=	0.9.0
 PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Wayland compositor
 WWW=		https://wayfire.org/
 
