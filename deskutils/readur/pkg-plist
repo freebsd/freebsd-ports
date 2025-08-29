@@ -5,6 +5,6 @@ bin/readur
 %%WWWDIR%%/readur.png
 %%WWWDIR%%/index.html
 @dir %%WWWDIR%%/assets
-%%WWWDIR%%/assets/index-C700-JQP.js
+%%WWWDIR%%/assets/index-Dj5jAB9U.js
 %%WWWDIR%%/assets/index-C5nToalm.css
 @dir(%%USER%%,%%GROUP%%,0700) %%HOMEDIR%%

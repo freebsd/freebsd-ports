@@ -20,7 +20,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		assert-json-diff-2.0.2 \
 		async-stream-0.3.6 \
 		async-stream-impl-0.3.6 \
-		async-trait-0.1.88 \
+		async-trait-0.1.89 \
 		atoi-2.0.0 \
 		atomic-waker-1.1.2 \
 		autocfg-1.4.0 \
@@ -58,7 +58,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		base64-0.22.1 \
 		base64-simd-0.8.0 \
 		base64ct-1.8.0 \
-		bcrypt-0.17.0 \
+		bcrypt-0.17.1 \
 		bindgen-0.64.0 \
 		bindgen-0.69.5 \
 		bit_field-0.10.2 \
@@ -113,7 +113,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		darling_core-0.20.11 \
 		darling_macro-0.20.11 \
 		data-encoding-2.9.0 \
-		deadpool-0.10.0 \
+		deadpool-0.12.2 \
 		deadpool-runtime-0.1.4 \
 		der-0.6.1 \
 		der-0.7.10 \
@@ -147,7 +147,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		foldhash-0.1.5 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
-		form_urlencoded-1.2.1 \
+		form_urlencoded-1.2.2 \
 		fs_extra-1.3.0 \
 		fsevent-sys-4.1.0 \
 		futures-0.3.31 \
@@ -189,7 +189,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		httparse-1.10.1 \
 		httpdate-1.0.3 \
 		hyper-0.14.32 \
-		hyper-1.6.0 \
+		hyper-1.7.0 \
 		hyper-named-pipe-0.1.0 \
 		hyper-rustls-0.24.2 \
 		hyper-rustls-0.27.7 \
@@ -206,7 +206,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		icu_properties_data-2.0.1 \
 		icu_provider-2.0.0 \
 		ident_case-1.0.1 \
-		idna-1.0.3 \
+		idna-1.1.0 \
 		idna_adapter-1.2.1 \
 		image-0.25.6 \
 		image-webp-0.2.2 \
@@ -305,7 +305,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		peeking_take_while-0.1.2 \
 		pem-3.0.5 \
 		pem-rfc7468-0.7.0 \
-		percent-encoding-2.3.1 \
+		percent-encoding-2.3.2 \
 		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
 		pkcs1-0.7.5 \
@@ -342,7 +342,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		redox_syscall-0.5.13 \
 		ref-cast-1.0.24 \
 		ref-cast-impl-1.0.24 \
-		regex-1.11.1 \
+		regex-1.11.2 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.9 \
 		regex-lite-0.1.6 \
@@ -386,7 +386,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		semver-1.0.26 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
-		serde_json-1.0.142 \
+		serde_json-1.0.143 \
 		serde_path_to_error-0.1.17 \
 		serde_repr-0.1.20 \
 		serde_spanned-0.6.9 \
@@ -443,9 +443,9 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		testcontainers-0.24.0 \
 		testcontainers-modules-0.12.1 \
 		thiserror-1.0.69 \
-		thiserror-2.0.14 \
+		thiserror-2.0.16 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.14 \
+		thiserror-impl-2.0.16 \
 		thread_local-1.1.9 \
 		tiff-0.9.1 \
 		time-0.3.41 \
@@ -486,7 +486,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		unicode-normalization-0.1.24 \
 		unicode-properties-0.1.3 \
 		untrusted-0.9.0 \
-		url-2.5.4 \
+		url-2.5.7 \
 		urlencoding-2.1.3 \
 		utf-8-0.7.6 \
 		utf8_iter-1.0.4 \
@@ -568,7 +568,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		windows_x86_64_msvc-0.53.0 \
 		winnow-0.7.11 \
 		winreg-0.50.0 \
-		wiremock-0.6.4 \
+		wiremock-0.6.5 \
 		wit-bindgen-rt-0.39.0 \
 		writeable-0.6.1 \
 		xattr-1.5.0 \
