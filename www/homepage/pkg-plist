@@ -366,7 +366,6 @@ etc/homepage.env
 %%HOMEDIR%%/.next/static/chunks/5860.a10d0361279e6f9a.js
 %%HOMEDIR%%/.next/static/chunks/5944.4bff334081a2eb22.js
 %%HOMEDIR%%/.next/static/chunks/6002.f6ac6a7504802f1e.js
-%%HOMEDIR%%/.next/static/chunks/611.acdfd27946411a66.js
 %%HOMEDIR%%/.next/static/chunks/6182.e82eb4ec3e4fa068.js
 %%HOMEDIR%%/.next/static/chunks/6187.d0e3c9e2a14feb51.js
 %%HOMEDIR%%/.next/static/chunks/6218.b4f08a33f469d76a.js
@@ -5170,8 +5169,9 @@ etc/homepage.env
 %%HOMEDIR%%/src/widgets/whatsupdocker/component.jsx
 %%HOMEDIR%%/src/widgets/xteve/component.jsx
 %%HOMEDIR%%/src/widgets/zabbix/component.jsx
-%%WWWDIR%%/.next/static/C96yU3PHL1RBxfvfUwXg7/_buildManifest.js
-%%WWWDIR%%/.next/static/C96yU3PHL1RBxfvfUwXg7/_ssgManifest.js
-%%WWWDIR%%/.next/static/chunks/3121.062fa4a7824bc243.js
-%%WWWDIR%%/.next/static/chunks/9346.79cfeec7ac0908a1.js
-%%WWWDIR%%/.next/static/chunks/webpack-db160e9b591c440c.js
+%%HOMEDIR%%/.next/static/-dFR4Fpx7vGAuCNFyOPRb/_buildManifest.js
+%%HOMEDIR%%/.next/static/-dFR4Fpx7vGAuCNFyOPRb/_ssgManifest.js
+%%HOMEDIR%%/.next/static/chunks/3121.062fa4a7824bc243.js
+%%HOMEDIR%%/.next/static/chunks/9346.c6d566c362c5e060.js
+%%HOMEDIR%%/.next/static/chunks/611.47bd2aede4f96794.js
+%%HOMEDIR%%/.next/static/chunks/webpack-d2d287706f398086.js
