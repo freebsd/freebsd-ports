@@ -1,0 +1,11 @@
+--- endpoints/lib/vboxwebService-7.2.wsdl.orig	2025-08-28 05:41:35 UTC
++++ endpoints/lib/vboxwebService-7.2.wsdl
+@@ -5,7 +5,7 @@ -->
+   Generator: src/VBox/Main/webservice/websrv-wsdl-service.xsl
+ -->
+ <definitions xmlns:interface="urn:vbox" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:vbox="http://www.virtualbox.org/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="VirtualBox" targetNamespace="http://www.virtualbox.org/Service">
+-  <import location="vboxweb.wsdl" namespace="http://www.virtualbox.org/"/>
++  <import location="vboxweb-7.2.wsdl" namespace="http://www.virtualbox.org/"/>
+   <service name="vboxService">
+     <port binding="vbox:vboxBinding" name="vboxServicePort">
+       <soap:address location="http://localhost:18083/"/>
