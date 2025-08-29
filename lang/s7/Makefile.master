@@ -1,7 +1,7 @@
 PORTNAME=	s7
 CATEGORIES=	lang lisp
 # S7_MAJOR_VERSION / S7_MINOR_VERSION / S7_DATE from s7.h
-PORTVERSION=	11.4.20250505
+PORTVERSION=	11.5.20250902
 
 MAINTAINER?=	fuz@FreeBSD.org
 WWW=		https://ccrma.stanford.edu/software/snd/snd/s7.html
@@ -12,7 +12,7 @@ USES=		localbase:ldflags
 USE_GITLAB=	yes
 GL_SITE=	https://cm-gitlab.stanford.edu
 GL_ACCOUNT=	bil
-GL_TAGNAME=	f9a99df1cb1470b7daa19daf7148e76363f7bceb
+GL_TAGNAME=	d839d9edb74cb898fa366cbb76596a3d04185fc8
 
 CFLAGS+=	-DS7_LOAD_PATH=\"${DATADIR}\" \
 		-DHAVE_COMPLEX_NUMBERS \
