@@ -1,6 +1,6 @@
 PORTNAME=	phpvirtualbox
 DISTVERSION=	5.2-1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 SUFFIX=		-legacy
 PKGNAMESUFFIX=	${SUFFIX}${PHP_PKGNAMESUFFIX}
@@ -29,6 +29,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#Alias /phpvirtualbox#Alias /phpvirtualbox-legacy#' \
 		-e 's#/usr/share/phpvirtualbox#${WWWDIR}#g' \
 		${WRKSRC}/phpvirtualbox-legacy.conf
+	@${REINPLACE_CMD} -e 's#\r#\n#g' ${WRKSRC}/languages/zh_tw.xml
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
