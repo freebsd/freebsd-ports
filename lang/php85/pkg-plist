@@ -335,7 +335,6 @@ include/php/ext/lexbor/ns/ns.h
 include/php/ext/lexbor/ns/res.h
 include/php/ext/lexbor/punycode/base.h
 include/php/ext/lexbor/punycode/punycode.h
-include/php/ext/lexbor/selectors/selectors.h
 include/php/ext/lexbor/tag/base.h
 include/php/ext/lexbor/tag/res.h
 include/php/ext/lexbor/tag/tag.h
@@ -475,10 +474,10 @@ include/php/ext/standard/url.h
 include/php/ext/standard/url_scanner_ex.h
 include/php/ext/standard/user_filters_arginfo.h
 include/php/ext/standard/winver.h
-include/php/ext/uri/php_lexbor.h
 include/php/ext/uri/php_uri.h
 include/php/ext/uri/php_uri_common.h
-include/php/ext/uri/php_uriparser.h
+include/php/ext/uri/uri_parser_rfc3986.h
+include/php/ext/uri/uri_parser_whatwg.h
 @touch include/php/ext/php_config.h
 @rmempty include/php/ext/php_config.h
 include/php/main/SAPI.h
