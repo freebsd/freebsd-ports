@@ -1,5 +1,5 @@
 PORTNAME=	asterisk
-PORTVERSION=	18.26.3
+PORTVERSION=	18.26.4
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -216,7 +216,7 @@ ASTERISK_MOH_G729_SOUNDS=	asterisk-moh-opsound-g729-2.03.tar.gz
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk
 
-PJSIP_VERSION=	2.14.1
+PJSIP_VERSION=	2.15.1
 
 .include <bsd.port.options.mk>
 
