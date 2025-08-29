@@ -129,6 +129,7 @@
     SUBDIR += xfsprogs
     SUBDIR += xfuse
     SUBDIR += zap
+    SUBDIR += zerofs
     SUBDIR += zfs-periodic
     SUBDIR += zfs-replicate
     SUBDIR += zfs-snap-diff
