@@ -82,5 +82,6 @@
     SUBDIR += submodules2tuple
     SUBDIR += synth
     SUBDIR += wanted-ports
+    SUBDIR += zig2tuple
 
 .include <bsd.port.subdir.mk>
