@@ -22,11 +22,10 @@ include/valkey/visibility.h
 lib/libvalkey.a
 lib/libvalkey.so
 lib/libvalkey.so.0
-lib/libvalkey.so.0.1.0
+lib/libvalkey.so.0.2.1
 lib/libvalkey_tls.a
 lib/libvalkey_tls.so
 lib/libvalkey_tls.so.0
-lib/libvalkey_tls.so.0.1.0
+lib/libvalkey_tls.so.0.2.1
 libdata/pkgconfig/valkey.pc
 libdata/pkgconfig/valkey_tls.pc
-
