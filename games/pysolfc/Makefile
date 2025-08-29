@@ -1,5 +1,5 @@
 PORTNAME=	pysolfc
-DISTVERSION=	3.4.0
+DISTVERSION=	3.4.1
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/PySolFC/${PYSOLFCDIR} \
 		SF/${PORTNAME}/PySolFC-Cardsets/minimal/:cardsets \
