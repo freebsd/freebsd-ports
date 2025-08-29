@@ -1,7 +1,6 @@
 PORTNAME=	go-yq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.45.4
-PORTREVISION=	2
+DISTVERSION=	4.47.1
 CATEGORIES=	textproc
 
 MAINTAINER=	timp87@gmail.com
@@ -11,7 +10,7 @@ WWW=		https://github.com/mikefarah/yq
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24,modules
+USES=		go:modules
 GO_MODULE=	github.com/mikefarah/yq/v4
 GO_TARGET=	.:yq
 
