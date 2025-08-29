@@ -1,3 +1,38 @@
+  <vuln vid="d7b7e505-8486-11f0-9d03-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.3.0</ge><lt>18.3.1</lt></range>
+	<range><ge>18.2.0</ge><lt>18.2.5</lt></range>
+	<range><ge>8.15.0</ge><lt>18.1.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/08/27/patch-release-gitlab-18-3-1-released/">
+	  <p>Allocation of Resources Without Limits issue in import function impacts GitLab CE/EE</p>
+	  <p>Missing authentication issue in GraphQL endpoint impacts GitLab CE/EE</p>
+	  <p>Allocation of Resources Without Limits issue in GraphQL impacts GitLab CE/EE</p>
+	  <p>Code injection issue in GitLab repositories impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-3601</cvename>
+      <cvename>CVE-2025-2246</cvename>
+      <cvename>CVE-2025-4225</cvename>
+      <cvename>CVE-2025-5101</cvename>
+      <url>https://about.gitlab.com/releases/2025/08/27/patch-release-gitlab-18-3-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-08-27</discovery>
+      <entry>2025-08-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f727fe60-8389-11f0-8438-001b217e4ee5">
     <topic>ISC KEA -- kea-dhcp4 aborts if client sends a broadcast request with particular options</topic>
     <affects>
