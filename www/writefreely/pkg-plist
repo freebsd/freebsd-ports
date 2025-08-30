@@ -2,6 +2,7 @@ bin/writefreely
 %%PORTDOCS%%%%DOCSDIR%%/admin/chorus.md
 %%PORTDOCS%%%%DOCSDIR%%/admin/commands.md
 %%PORTDOCS%%%%DOCSDIR%%/admin/config.md
+%%PORTDOCS%%%%DOCSDIR%%/admin/design.md
 %%PORTDOCS%%%%DOCSDIR%%/admin/docker.md
 %%PORTDOCS%%%%DOCSDIR%%/admin/moderation.md
 %%PORTDOCS%%%%DOCSDIR%%/developer/database.md
@@ -341,6 +342,7 @@ bin/writefreely
 %%WWWDIR%%/templates/chorus-collection-post.tmpl
 %%WWWDIR%%/templates/chorus-collection.tmpl
 %%WWWDIR%%/templates/classic.tmpl
+%%WWWDIR%%/templates/collection-archive.tmpl
 %%WWWDIR%%/templates/collection-post.tmpl
 %%WWWDIR%%/templates/collection-tags.tmpl
 %%WWWDIR%%/templates/collection.tmpl
