@@ -14,9 +14,9 @@ error[E0425]: cannot find function `pw_deinit` in crate `pw_sys`
 165 |     pw_sys::pw_deinit()
     |             ^^^^^^^^^ not found in `pw_sys`
 
---- ../pipewire-rs-fd3d8f7861a29c2eeaa4c393402e013578bb36d9/pipewire/src/lib.rs.orig	2006-07-24 01:21:28 UTC
-+++ ../pipewire-rs-fd3d8f7861a29c2eeaa4c393402e013578bb36d9/pipewire/src/lib.rs
-@@ -152,7 +152,7 @@ pub fn init() {
+--- ../pipewire-rs-93138d01b23628521b29b5604bbebe991cba4c65/pipewire/src/lib.rs.orig	2006-07-24 01:21:28 UTC
++++ ../pipewire-rs-93138d01b23628521b29b5604bbebe991cba4c65/pipewire/src/lib.rs
+@@ -149,7 +149,7 @@ pub fn init() {
  pub fn init() {
      use once_cell::sync::OnceCell;
      static INITIALIZED: OnceCell<()> = OnceCell::new();
@@ -25,7 +25,7 @@ error[E0425]: cannot find function `pw_deinit` in crate `pw_sys`
  }
  
  /// Deinitialize PipeWire
-@@ -161,7 +161,7 @@ pub unsafe fn deinit() {
+@@ -158,7 +158,7 @@ pub unsafe fn deinit() {
  /// This must only be called once during the lifetime of the process, once no PipeWire threads
  /// are running anymore and all PipeWire resources are released.
  pub unsafe fn deinit() {
@@ -34,18 +34,18 @@ error[E0425]: cannot find function `pw_deinit` in crate `pw_sys`
  }
  
  #[cfg(test)]
---- ../pipewire-rs-fd3d8f7861a29c2eeaa4c393402e013578bb36d9/pipewire-sys/build.rs.orig	2006-07-24 01:21:28 UTC
-+++ ../pipewire-rs-fd3d8f7861a29c2eeaa4c393402e013578bb36d9/pipewire-sys/build.rs
+--- ../pipewire-rs-93138d01b23628521b29b5604bbebe991cba4c65/pipewire-sys/build.rs.orig	2006-07-24 01:21:28 UTC
++++ ../pipewire-rs-93138d01b23628521b29b5604bbebe991cba4c65/pipewire-sys/build.rs
 @@ -19,6 +19,7 @@ fn main() {
          // included header files changed.
-         .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
          .size_t_is_usize(true)
 +        .allowlist_function("pipewire_.*")
          .allowlist_function("pw_.*")
          .allowlist_type("pw_.*")
          .allowlist_var("pw_.*")
---- ../pipewire-rs-fd3d8f7861a29c2eeaa4c393402e013578bb36d9/pipewire-sys/src/lib.rs.orig	2006-07-24 01:21:28 UTC
-+++ ../pipewire-rs-fd3d8f7861a29c2eeaa4c393402e013578bb36d9/pipewire-sys/src/lib.rs
+--- ../pipewire-rs-93138d01b23628521b29b5604bbebe991cba4c65/pipewire-sys/src/lib.rs.orig	2006-07-24 01:21:28 UTC
++++ ../pipewire-rs-93138d01b23628521b29b5604bbebe991cba4c65/pipewire-sys/src/lib.rs
 @@ -20,8 +20,8 @@ mod tests {
      #[test]
      fn init() {
