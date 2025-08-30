@@ -44,10 +44,6 @@ share/icons/hicolor/scalable/apps/net.sourceforge.liferea.svg
 %%DATADIR%%/doc/html/concepts_en.html
 %%DATADIR%%/doc/html/concepts_it.html
 %%DATADIR%%/doc/html/concepts_ru.html
-%%DATADIR%%/doc/html/faq_de.html
-%%DATADIR%%/doc/html/faq_en.html
-%%DATADIR%%/doc/html/faq_it.html
-%%DATADIR%%/doc/html/faq_ru.html
 %%DATADIR%%/doc/html/folders_de.html
 %%DATADIR%%/doc/html/folders_en.html
 %%DATADIR%%/doc/html/folders_it.html
@@ -89,11 +85,6 @@ share/icons/hicolor/scalable/apps/net.sourceforge.liferea.svg
 %%DATADIR%%/doc/html/preferences_en.html
 %%DATADIR%%/doc/html/preferences_it.html
 %%DATADIR%%/doc/html/preferences_ru.html
-%%DATADIR%%/doc/html/reference_de.html
-%%DATADIR%%/doc/html/reference_en.html
-%%DATADIR%%/doc/html/reference_it.html
-%%DATADIR%%/doc/html/reference_ru.html
-%%DATADIR%%/doc/html/reference.css
 %%DATADIR%%/doc/html/searching_de.html
 %%DATADIR%%/doc/html/searching_en.html
 %%DATADIR%%/doc/html/searching_it.html
@@ -156,6 +147,7 @@ share/icons/hicolor/scalable/apps/net.sourceforge.liferea.svg
 %%DATADIR%%/properties.ui
 %%DATADIR%%/reedah_source.ui
 %%DATADIR%%/rename_node.ui
+%%DATADIR%%/shortcuts.ui
 %%DATADIR%%/search_folder.ui
 %%DATADIR%%/search.ui
 %%DATADIR%%/simple_search.ui
