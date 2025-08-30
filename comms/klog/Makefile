@@ -1,5 +1,5 @@
 PORTNAME=	klog
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 #PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
@@ -38,6 +38,7 @@ PLIST_FILES=	bin/klog \
 		${DATADIR}/translations/klog_pl.qm \
 		${DATADIR}/translations/klog_ru.qm \
 		${DATADIR}/translations/klog_uk.qm \
+		share/applications/klog.desktop \
 		share/man/man1/klog.1.gz
 
 post-patch:
