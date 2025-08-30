@@ -1,9 +1,8 @@
 PORTNAME=	objconv
-DISTVERSION=	2.54_1
+DISTVERSION=	2.55_1
 CATEGORIES=	devel
 MASTER_SITES=	http://fuz.su/pub/objconv/ \
-		https://www.agner.org/optimize/objconv.zip?dummy=/ \
-		https://archive.org/download/objconv/
+		https://www.agner.org/optimize/objconv.zip?dummy=/
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Agner Fog's object file converter
