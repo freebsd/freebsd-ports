@@ -1,6 +1,5 @@
 PORTNAME=	handbrake
-DISTVERSION=	1.9.2
-PORTREVISION=	3
+DISTVERSION=	1.10.1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/HandBrake/HandBrake/releases/download/${DISTVERSION}/
 MASTER_SITES+=	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/:contrib
@@ -13,10 +12,11 @@ MAINTAINER=	naito.yuichiro@gmail.com
 COMMENT=	Versatile DVD ripper and video transcoder
 WWW=		https://handbrake.fr/
 
-LICENSE=		GPLv2
+LICENSE=		GPLv2 FDK_AAC
+LICENSE_COMB=		multi
 LICENSE_NAME_FDK_AAC=	Software License for The Fraunhofer FDK AAC Codec Library for Android
 LICENSE_FILE_FDK_AAC=	${WRKDIR}/${DISTFILES:Mfdk*:R:R}/NOTICE
-LICENSE_FILE=		${WRKSRC}/COPYING
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_PERMS_FDK_AAC=	dist-mirror pkg-mirror auto-accept
 
 ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64le
@@ -45,16 +45,16 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 USES=		autoreconf:build compiler:c11 gmake iconv libtool:build \
 		localbase:ldflags ninja:build pkgconfig python:build
 
-CONTRIB_FILES=	SVT-AV1-v2.3.0.tar.gz \
+CONTRIB_FILES=	SVT-AV1-v3.1.0.tar.gz \
 		fdk-aac-2.0.3.tar.gz \
-		ffmpeg-7.1.tar.bz2 \
+		ffmpeg-7.1.1.tar.bz2 \
 		libbluray-1.3.4.tar.bz2 \
 		libdvdnav-6.1.1.tar.bz2 \
 		libdvdread-6.1.3.tar.bz2 \
 		dav1d-1.5.1.tar.bz2 \
-		dovi_tool-libdovi-3.1.2.tar.gz \
-		x265_4.1.tar.gz \
-		zimg-3.0.5.tar.gz
+		dovi_tool-libdovi-3.3.2.tar.gz \
+		x265-snapshot-20250729-13276.tar.gz \
+		zimg-snapshot-20250624.tar.gz
 
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in contrib/libdvdread/libdvdread-5.0.0-6-gcb1ae87/src/dvd_input.c (dlopen'ed)

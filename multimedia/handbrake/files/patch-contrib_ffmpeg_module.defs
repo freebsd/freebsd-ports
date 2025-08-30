@@ -1,20 +1,10 @@
-Disable vulkan support.
-Handbrake doesn't require Vulkan but if it is installed in build environment
-(for other ports like QT5),  It fails to build Handbrake, because following
-definitions has been removed since vulkan-headers-1.3.238.
-
-* VK_EXT_VIDEO_DECODE_H264_EXTENSION_NAME
-* VK_EXT_VIDEO_DECODE_H265_EXTENSION_NAME
-
---- contrib/ffmpeg/module.defs.orig	2024-12-01 15:28:40 UTC
+--- contrib/ffmpeg/module.defs.orig	2025-08-08 16:41:24 UTC
 +++ contrib/ffmpeg/module.defs
-@@ -34,8 +34,10 @@ FFMPEG.CONFIGURE.extra = \
-     --enable-filters \
+@@ -35,6 +35,7 @@ FFMPEG.CONFIGURE.extra = \
      --disable-hwaccels \
      --disable-vdpau \
-+    --disable-vulkan \
      --disable-postproc \
++    --disable-vulkan \
      --disable-encoders \
-+    --disable-xlib \
      --enable-libmp3lame \
-     --enable-encoder=ac3 \
+     --enable-encoder=aac \

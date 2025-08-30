@@ -1,0 +1,11 @@
+--- make/include/contrib.defs.orig	2025-08-23 10:38:18 UTC
++++ make/include/contrib.defs
+@@ -60,7 +60,7 @@ define import.CONTRIB.defs
+     $(1).EXTRACT.target  = $$($(1).build/).stamp.$$($(1).name).extract
+     define $(1).EXTRACT
+         $$(RM.exe) -fr $$($(1).EXTRACT.dir/)
+-        $$(TAR.exe) xfC $$($(1).FETCH.distfile) $$($(1).build/)
++        $$(TAR.exe) xfC $$($(1).FETCH.distfile) $$($(1).build/) --no-xattrs
+         $$(TOUCH.exe) $$@
+     endef
+ 
