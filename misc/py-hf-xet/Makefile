@@ -1,5 +1,5 @@
 PORTNAME=	hf-xet
-DISTVERSION=	1.1.8
+DISTVERSION=	1.1.9
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ COMMENT=	Fast transfer of large files with the Hugging Face Hub
 WWW=		https://github.com/huggingface/xet-core
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/hf_xet/LICENSE
 
 BROKEN_i386=	fails to build: cannot find function `_mm256_insert_epi64` in this scope
 
