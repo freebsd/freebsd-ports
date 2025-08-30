@@ -4748,6 +4748,7 @@
     SUBDIR += py-cwcwidth
     SUBDIR += py-cxx
     SUBDIR += py-cycler
+    SUBDIR += py-cyclopts
     SUBDIR += py-cykhash
     SUBDIR += py-cymbal
     SUBDIR += py-cymem
