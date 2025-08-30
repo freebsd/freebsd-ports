@@ -88,12 +88,9 @@ share/icons/hicolor/72x72/apps/Nextcloud_sync.png
 share/icons/hicolor/72x72/apps/Nextcloud_sync_shared.png
 share/icons/hicolor/72x72/apps/Nextcloud_warn.png
 share/icons/hicolor/72x72/apps/Nextcloud_warn_shared.png
-%%DOCS%%share/man/man1/nextcloud.1.gz
-%%DOCS%%share/man/man1/nextcloudcmd.1.gz
 share/mime/packages/nextcloud.xml
 %%GNOME%%share/nautilus-python/extensions/syncstate-Nextcloud.py
 %%GNOME%%share/nemo-python/extensions/syncstate-Nextcloud.py
-share/nextcloud/i18n/client_TW.qm
 share/nextcloud/i18n/client_af.qm
 share/nextcloud/i18n/client_ar.qm
 share/nextcloud/i18n/client_bg.qm
