@@ -140,8 +140,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dmg-0.1.2 \
 		document-features-0.2.10 \
 		downcast-rs-1.2.0 \
-		downcast-rs-2.0.1 \
-		dpi-0.1.1 \
 		drm-0.11.1 \
 		drm-ffi-0.7.1 \
 		drm-fourcc-2.2.0 \
@@ -168,7 +166,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fastrand-2.0.1 \
 		fd-lock-4.0.0 \
 		fdeflate-0.3.0 \
-		filetime-0.2.17 \
+		filetime-0.2.26 \
 		flate2-1.0.30 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
@@ -372,7 +370,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		owned_ttf_parser-0.19.0 \
 		parking-2.2.0 \
 		parking_lot-0.12.3 \
-		parking_lot_core-0.9.3 \
+		parking_lot_core-0.9.11 \
 		paste-1.0.9 \
 		pathdiff-0.2.1 \
 		peniko-0.4.0 \
@@ -640,43 +638,48 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		windows-core-0.58.0 \
 		windows-implement-0.58.0 \
 		windows-interface-0.58.0 \
+		windows-link-0.1.3 \
 		windows-result-0.2.0 \
 		windows-strings-0.1.0 \
-		windows-sys-0.36.1 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
 		windows-targets-0.42.2 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
+		windows-targets-0.53.3 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_msvc-0.36.1 \
+		windows_aarch64_gnullvm-0.53.0 \
 		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_i686_gnu-0.36.1 \
+		windows_aarch64_msvc-0.53.0 \
 		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.0 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_msvc-0.36.1 \
+		windows_i686_gnullvm-0.53.0 \
 		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
-		windows_x86_64_gnu-0.36.1 \
+		windows_i686_msvc-0.53.0 \
 		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.0 \
 		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_msvc-0.36.1 \
+		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
+		windows_x86_64_msvc-0.53.0 \
 		winnow-0.5.10 \
 		winnow-0.7.11 \
 		winreg-0.50.0 \
@@ -720,6 +723,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		zvariant_utils-3.2.0 \
 		structdesc@git+https://github.com/lapce/structdesc?rev=bb56969f22fdb2c2d6c03f158fd4a2bdc983b659\#bb56969f22fdb2c2d6c03f158fd4a2bdc983b659 \
 		psp-types@git+https://github.com/lapce/psp-types?rev=f7fea28f59e7b2d6faa1034a21679ad49b3524ad\#f7fea28f59e7b2d6faa1034a21679ad49b3524ad \
+		floem,floem-editor-core,floem_reactive,floem_renderer,floem_tiny_skia_renderer,floem_vger_renderer@git+https://github.com/lapce/floem?rev=abe59206013a3d700d861ccff3439d94ad3e2c45\#abe59206013a3d700d861ccff3439d94ad3e2c45 \
 		alacritty_terminal@git+https://github.com/alacritty/alacritty?rev=cacdb5bb3b72bad2c729227537979d95af75978f\#cacdb5bb3b72bad2c729227537979d95af75978f \
 		wasi-experimental-http-wasmtime@git+https://github.com/lapce/wasi-experimental-http\#21419eb785cb583ead180f25a9685fa16de7f326 \
 		human-sort@git+https://github.com/dragazo/human-sort?rev=1e74db1e09e8194ba88ad983723cf6f8b0c365da\#1e74db1e09e8194ba88ad983723cf6f8b0c365da \
@@ -729,5 +733,4 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tracing,tracing-appender,tracing-attributes,tracing-core,tracing-log,tracing-subscriber@git+https://github.com/tokio-rs/tracing?rev=908cc432a5994f6e17c8f36e13c217dc40085704\#908cc432a5994f6e17c8f36e13c217dc40085704 \
 		regalloc2@git+https://github.com/bytecodealliance/regalloc2?rev=5d79e12d0a93b10fc181f4da409b4671dd365228\#5d79e12d0a93b10fc181f4da409b4671dd365228 \
 		lsp-types@git+https://github.com/lapce/lsp-types?rev=feaa1e2ec80975c9dadd400a238ceacf071058e6\#feaa1e2ec80975c9dadd400a238ceacf071058e6 \
-		locale_config@git+https://github.com/lapce/locale_config.git?branch=lapce\#54c9fe6a247c3618c224ec57e6c3a747bc3a96e4 \
-		floem,floem-editor-core,floem_reactive,floem_renderer,floem_tiny_skia_renderer,floem_vger_renderer@git+https://github.com/lapce/floem?rev=2055dde9833699b65ff052eb63cadbddec91c7ce\#2055dde9833699b65ff052eb63cadbddec91c7ce
+		locale_config@git+https://github.com/lapce/locale_config.git?branch=lapce\#54c9fe6a247c3618c224ec57e6c3a747bc3a96e4
