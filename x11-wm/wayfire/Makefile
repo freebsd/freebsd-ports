@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
 CATEGORIES=	x11-wm wayland
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	8bbea76d3b47.patch:-p1 # https://github.com/WayfireWM/wayfire/pull/2802
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Wayland compositor
 WWW=		https://wayfire.org/
@@ -38,9 +41,6 @@ GH_TUPLE=	WayfireWM:wf-touch:093d894:wftouch/subprojects/wf-touch \
 MESON_ARGS=	-Dtests=disabled \
 		-Dwf-touch:tests=disabled \
 		${NULL}
-
-# XXX https://github.com/WayfireWM/wayfire/issues/2800
-USES+=		localbase
 
 .if !exists(/usr/include/omp.h)
 # LLVM openmp in base doesn't support powerpc, armv6, armv7 yet

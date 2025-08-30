@@ -5,3 +5,5 @@ SHA256 (WayfireWM-wf-touch-093d894_GH0.tar.gz) = 7fa685012ed73363d507f093838b7d6
 SIZE (WayfireWM-wf-touch-093d894_GH0.tar.gz) = 10577
 SHA256 (WayfireWM-wf-utils-3ef27d1_GH0.tar.gz) = fcea63b4e4fd026fede0fc0fbeb4858c3d2df0eb9da400d26a322b2ff10a2d68
 SIZE (WayfireWM-wf-utils-3ef27d1_GH0.tar.gz) = 48507
+SHA256 (8bbea76d3b47.patch) = 724609c6bf0d543e541ddbb113ad81db4d27bf8c706a014af6c06bb93db1d38e
+SIZE (8bbea76d3b47.patch) = 767
