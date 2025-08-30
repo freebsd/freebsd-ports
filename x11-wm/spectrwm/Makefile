@@ -1,6 +1,6 @@
 PORTNAME=	spectrwm
 DISTVERSIONPREFIX=	SPECTRWM_
-DISTVERSION=	3_6_0
+DISTVERSION=	3_7_0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -47,13 +47,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/spectrwm.conf \
 		${STAGEDIR}${PREFIX}/etc/spectrwm.conf.sample
-.for f in ${CONFEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} \
+	${INSTALL_DATA} ${CONFEXAMPLES:C|^|${WRKSRC}/|} \
+			${SCRIPTEXAMPLES:C|^|${WRKSRC}/|} \
 		${STAGEDIR}${EXAMPLESDIR}
-.endfor
-.for f in ${SCRIPTEXAMPLES}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} \
-		${STAGEDIR}${EXAMPLESDIR}
-.endfor
 
 .include <bsd.port.mk>
