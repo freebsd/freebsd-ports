@@ -12,18 +12,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
-USES=		cmake compiler:c++11-lang iconv localbase:ldflags
+USES=		cmake:testing compiler:c++11-lang iconv localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	dscharrer
 CMAKE_ON=	Boost_USE_STATIC_LIBS
+CMAKE_TESTING_ON=	BUILD_TESTS
+CMAKE_TESTING_TARGET=	check
 
 PLIST_FILES=	bin/innoextract \
 		share/man/man1/innoextract.1.gz
-
-do-test:
-	@cd ${BUILD_WRKSRC} && \
-		${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
-		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check
 
 .include <bsd.port.mk>
