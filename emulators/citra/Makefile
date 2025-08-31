@@ -25,6 +25,8 @@ LICENSE_FILE_LGPL21+ =	${_LICENSE_STORE}/LGPL21 # soundtouch
 LICENSE_FILE_MIT=	${WRKSRC}/externals/enet/LICENSE
 LICENSE_FILE_OpenSSL=	${WRKSRC}/externals/libressl/COPYING
 
+DEPRECATED=	project has been discontinued and build fails with FFmpeg >7
+EXPIRATION_DATE=	2025-10-31
 BROKEN_aarch64=	https://github.com/citra-emu/citra/issues/5921
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
