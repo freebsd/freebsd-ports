@@ -20,7 +20,7 @@
              lib_name = std::string(path);
            }
            result.push_back(SharedLibraryAddress(
-+#if defined(__i386__) || defined(OS_FREEBSD)
++#if defined(__arm__) || defined(__i386__) || defined(OS_FREEBSD)
 +              lib_name, static_cast<uintptr_t>(map->kve_start),
 +              static_cast<uintptr_t>(map->kve_end)));
 +#else
