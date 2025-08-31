@@ -1433,6 +1433,7 @@
     SUBDIR += py-jinjanator-plugins
     SUBDIR += py-jiter
     SUBDIR += py-jq
+    SUBDIR += py-json-repair
     SUBDIR += py-json2html
     SUBDIR += py-jsonslicer
     SUBDIR += py-jsx-lexer

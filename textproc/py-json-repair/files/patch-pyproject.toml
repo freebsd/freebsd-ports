@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2025-08-31 06:16:42 UTC
++++ pyproject.toml
+@@ -4,8 +4,6 @@ version = "0.50.0"
+ [project]
+ name = "json_repair"
+ version = "0.50.0"
+-license = "MIT"
+-license-files = ["LICENSE"]
+ authors = [
+   { name="Stefano Baccianella", email="4247706+mangiucugna@users.noreply.github.com" },
+ ]
+@@ -111,4 +109,4 @@ line-ending = "auto"
+ 
+ [tool.ruff.lint.per-file-ignores]
+ # Explicit re-exports is fine in __init__.py, still a code smell elsewhere.
+-"__init__.py" = ["PLC0414"]
+\ No newline at end of file
++"__init__.py" = ["PLC0414"]
