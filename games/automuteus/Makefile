@@ -1,9 +1,8 @@
 PORTNAME=	automuteus
-DISTVERSION=	8.3.6
-PORTREVISION=	9
+DISTVERSION=	8.3.7
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	seafork@disroot.org
 COMMENT=	Discord Bot to automute Among Us players at round transitions
 WWW=		https://automute.us/
 
@@ -12,7 +11,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 USE_GITHUB=	yes
-GH_ACCOUNT=	denverquane
 
 GH_TUPLE=	\
 		BurntSushi:toml:v1.1.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
@@ -92,14 +90,13 @@ GO_TARGET=	.:${PORTNAME}
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME} \
-		"@sample etc/${PORTNAME}/automuteus.conf.sample" \
-		"@dir /var/log/automuteus" \
+		"@sample etc/${PORTNAME}/${PORTNAME}.conf.sample" \
+		"@dir /var/log/${PORTNAME}" \
 		/var/log/${PORTNAME}/logs.txt
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	@${CP} ${FILESDIR}/automuteus.conf ${STAGEDIR}${ETCDIR}/automuteus.conf.sample
-	@${MKDIR} ${STAGEDIR}/var/log/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}/var/log/${PORTNAME}
+	@${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.conf ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
 	@${TOUCH} ${STAGEDIR}/var/log/${PORTNAME}/logs.txt
 
 .include <bsd.port.mk>

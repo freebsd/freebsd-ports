@@ -1,6 +1,6 @@
-TIMESTAMP = 1715788613
-SHA256 (denverquane-automuteus-8.3.6_GH0.tar.gz) = 37f0c85d0cafaa6dfa5108ecb63c2e5353b39932cc5476292f0cdc00e8ae09e8
-SIZE (denverquane-automuteus-8.3.6_GH0.tar.gz) = 13667612
+TIMESTAMP = 1756582613
+SHA256 (automuteus-automuteus-8.3.7_GH0.tar.gz) = 80d0b1edee53127ccb1e1ef9e19b26a75899391ffa569ac29fcc641562c6bc1d
+SIZE (automuteus-automuteus-8.3.7_GH0.tar.gz) = 13667676
 SHA256 (BurntSushi-toml-v1.1.0_GH0.tar.gz) = 91d03c925082c1282636fe9f2c69fd6d54410ac56f2b6d7492ba56c00ada626d
 SIZE (BurntSushi-toml-v1.1.0_GH0.tar.gz) = 91871
 SHA256 (KyleBanks-depth-v1.2.1_GH0.tar.gz) = 8417300d559ec88f24fb3eef3eb8e76c1a6f5bf861d3e46a83d303dc5601f8ed
