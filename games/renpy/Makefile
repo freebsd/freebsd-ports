@@ -18,6 +18,7 @@ LICENSE_PERMS_DejaVu=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 # https://github.com/renpy/renpy/issues/2003
 DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2025-10-31
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}game_sdl2>0:devel/py-game_sdl2@${PY_FLAVOR}
