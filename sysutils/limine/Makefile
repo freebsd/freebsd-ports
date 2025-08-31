@@ -1,7 +1,7 @@
 PORTNAME=	limine
-DISTVERSION=	9.6.1
+DISTVERSION=	9.6.5
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/${PORTNAME}-bootloader/${PORTNAME}/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://codeberg.org/Limine/Limine/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	mintsuki@protonmail.com
 COMMENT=	Modern, advanced, portable, multiprotocol bootloader and boot manager
