@@ -1,5 +1,6 @@
 PORTNAME=	obuparse
-DISTVERSION=	g20241212
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -9,22 +10,19 @@ WWW=		https://github.com/dwbuiten/obuparse
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+USES=		cmake
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dwbuiten
-GH_TAGNAME=	918524a
-
-MAKE_ARGS+=	PREFIX="${STAGEDIR}${PREFIX}"
-
-INSTALL_TARGET=	install-shared
 
 PLIST_FILES=	include/obuparse.h \
 		lib/libobuparse.so \
-		lib/libobuparse.so.1
+		lib/libobuparse.so.2 \
+		lib/libobuparse.so.${DISTVERSION}
 
-post-install:
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libobuparse.so.1
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|g' \
+	    ${PATCH_WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
