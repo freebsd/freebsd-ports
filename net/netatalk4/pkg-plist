@@ -72,7 +72,6 @@ share/man/man1/addump.1.gz
 share/man/man1/afpldaptest.1.gz
 share/man/man1/afppasswd.1.gz
 %%DBUS%%share/man/man1/afpstats.1.gz
-share/man/man1/afptest.1.gz
 share/man/man1/asip-status.1.gz
 share/man/man1/dbd.1.gz
 share/man/man1/fce_listen.1.gz
