@@ -13,6 +13,7 @@
     SUBDIR += budgie-backgrounds
     SUBDIR += canta-gtk-themes
     SUBDIR += canta-icon-theme
+    SUBDIR += catppuccin-gtk-theme
     SUBDIR += chicago95
     SUBDIR += classiclooks
     SUBDIR += claws-mail-themes
