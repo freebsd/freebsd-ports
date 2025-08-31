@@ -8,6 +8,8 @@ include/libyuv/convert_argb.h
 include/libyuv/convert_from.h
 include/libyuv/convert_from_argb.h
 include/libyuv/cpu_id.h
+include/libyuv/cpu_support.h
+include/libyuv/loongson_intrinsics.h
 include/libyuv/macros_msa.h
 include/libyuv/mjpeg_decoder.h
 include/libyuv/planar_functions.h
@@ -15,8 +17,10 @@ include/libyuv/rotate.h
 include/libyuv/rotate_argb.h
 include/libyuv/rotate_row.h
 include/libyuv/row.h
+include/libyuv/row_sve.h
 include/libyuv/scale.h
 include/libyuv/scale_argb.h
+include/libyuv/scale_rgb.h
 include/libyuv/scale_row.h
 include/libyuv/scale_uv.h
 include/libyuv/version.h
