@@ -5338,6 +5338,7 @@
     SUBDIR += py-onigurumacffi
     SUBDIR += py-opcodes
     SUBDIR += py-openapi-core
+    SUBDIR += py-openapi-pydantic
     SUBDIR += py-openapi-schema-validator
     SUBDIR += py-openapi-spec-validator
     SUBDIR += py-opencensus
