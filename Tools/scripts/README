@@ -20,7 +20,7 @@ checksum.sh  - allows checking of ports to see if their checksums
 chkorigin.sh - checks all ports in the tree for a wrong PKGORIGIN.
                Run this tool after every repocopy.
 doportlint - run portlint on every port and return the results
-distclean.sh - compare md5 sums of distfiles in ports/distfiles with currently
+distclean.sh - compare sha256 sums of distfiles in ports/distfiles with currently
             installed ports collection in ports/* and prompt to remove
             unmatched entries
 getpatch - downloads patch attachments from a Bug Tracking Systems
