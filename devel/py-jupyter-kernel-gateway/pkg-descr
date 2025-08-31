@@ -1,0 +1,4 @@
+Jupyter Kernel Gateway is a web server that provides headless access to Jupyter
+kernels. Your application communicates with the kernels remotely, through REST
+calls and Websockets rather than ZeroMQ messages. There are no provisions for
+editing notebooks through the Kernel Gateway.
