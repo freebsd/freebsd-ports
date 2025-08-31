@@ -1,6 +1,5 @@
 PORTNAME=	gnome-maps
-DISTVERSION=	47.7
-PORTREVISION=	1
+DISTVERSION=	47.9
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -11,6 +10,8 @@ WWW=		https://apps.gnome.org/Maps/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+PORTSCOUT=	limit:^47\.
 
 BUILD_DEPENDS=	geoclue>=0:net/geoclue
 LIB_DEPENDS=	libgeocode-glib-2.so:net/geocode-glib2 \
