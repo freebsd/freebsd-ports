@@ -1,5 +1,6 @@
 PORTNAME=	gnome-shell-extension-lockkeys
 PORTVERSION=	65
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome
 

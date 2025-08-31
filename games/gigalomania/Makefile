@@ -1,6 +1,6 @@
 PORTNAME=	gigalomania
 PORTVERSION=	0.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://launchpad.net/gigalomania/trunk/${PORTVERSION}/+download/
 DISTNAME=	${PORTNAME}src

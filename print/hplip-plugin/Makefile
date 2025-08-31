@@ -1,5 +1,6 @@
 PORTNAME=	hplip-plugin
 PORTVERSION=	3.24.4
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	https://developers.hp.com/sites/default/files/ \
 		https://www.openprinting.org/download/printdriver/auxfiles/HP/plugins/

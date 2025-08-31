@@ -1,6 +1,6 @@
 PORTNAME=	mbpurple
 PORTVERSION=	0.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im
 MASTER_SITES=	https://BSDforge.com/projects/source/net-im/mbpurple/
 

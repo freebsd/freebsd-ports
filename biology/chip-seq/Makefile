@@ -1,5 +1,6 @@
 PORTNAME=	chip-seq
 DISTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	biology python
 MASTER_SITES=	# empty
 

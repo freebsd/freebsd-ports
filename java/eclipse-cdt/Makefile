@@ -1,5 +1,6 @@
 PORTNAME=	cdt
 PORTVERSION=	9.0.1
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	ECLIPSE/tools/${PORTNAME}/releases/9.0/sr1 \
 		ECLIPSE/releases/neon/201606221000:base

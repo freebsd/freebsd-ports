@@ -1,5 +1,6 @@
 PORTNAME=	eclipse-yaml-editor
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	java devel
 
 MAINTAINER=	mizhka@FreeBSD.org

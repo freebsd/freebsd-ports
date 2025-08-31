@@ -1,6 +1,6 @@
 PORTNAME=	bout++-merging-filaments
 DISTVERSION=	g20200812
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org

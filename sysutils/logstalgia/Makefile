@@ -1,6 +1,6 @@
 PORTNAME=	logstalgia
 DISTVERSION=	1.1.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils www
 MASTER_SITES=	https://github.com/acaudwell/${PORTNAME}/releases/download/${DISTNAME}/
 

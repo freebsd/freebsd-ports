@@ -1,5 +1,6 @@
 PORTNAME=	hidetopbar
 DISTVERSION=	120
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 PKGNAMEPREFIX=	gnome-shell-extension-
 DIST_SUBDIR=	gnome

@@ -1,6 +1,6 @@
 PORTNAME=	data
 PORTVERSION=	1.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://files3.bungie.org/trilogy/
 PKGNAMEPREFIX=	alephone-

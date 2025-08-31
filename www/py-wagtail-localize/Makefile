@@ -1,5 +1,6 @@
 PORTNAME=	wagtail-localize
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 DISTNAME=	wagtail_localize-${PORTVERSION}

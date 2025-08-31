@@ -1,5 +1,6 @@
 PORTNAME=	biostar-tools
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	biology python
 MASTER_SITES=	# empty
 

@@ -1,5 +1,6 @@
 PORTNAME=	links
 PORTVERSION=	2.30
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://links.twibright.com/download/

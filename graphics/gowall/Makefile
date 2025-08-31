@@ -1,6 +1,7 @@
 PORTNAME=	gowall
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	nxjoseph@protonmail.com

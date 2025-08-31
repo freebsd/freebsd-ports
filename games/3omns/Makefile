@@ -1,6 +1,6 @@
 PORTNAME=	3omns
 DISTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	https://lab.burn.capital/chaz/3omns/uploads/6ec547a14fec72a72f9fa53c374bfa7e/
 

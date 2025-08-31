@@ -1,6 +1,7 @@
 PORTNAME=	blockattack
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	nxjoseph@protonmail.com

@@ -1,6 +1,7 @@
 PORTNAME=	gnome-shell-extension-openweather
 DISTVERSION=	139
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	https://github.com/penguin-teal/gnome-openweather/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	${PORTNAME}refined-${DISTVERSIONFULL}

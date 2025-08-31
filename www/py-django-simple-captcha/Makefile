@@ -3,7 +3,7 @@ PORTNAME=	django-simple-captcha
 # updating, it should be first checked whether its consumers, e.g. www/seahub,
 # have been switched to Django 4.2.
 PORTVERSION=	0.5.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

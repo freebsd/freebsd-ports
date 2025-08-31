@@ -1,6 +1,6 @@
 PORTNAME=	markdownmacro
 PORTVERSION=	0.11.10r${REV}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	https://trac-hacks.org/browser/markdownmacro/
 PKGNAMEPREFIX=	trac-

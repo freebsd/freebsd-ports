@@ -1,6 +1,6 @@
 PORTNAME=	spamfilter
 PORTVERSION=	1.5.1r${REV}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	https://trac.edgewall.org/browser/plugins/trunk/
 PKGNAMEPREFIX=	trac-

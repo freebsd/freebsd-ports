@@ -1,6 +1,6 @@
 PORTNAME=	gnome-shell-extension-mediaplayer
 PORTVERSION=	4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome
 

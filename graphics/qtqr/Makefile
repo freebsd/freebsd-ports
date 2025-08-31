@@ -1,5 +1,6 @@
 PORTNAME=	qtqr
 DISTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	https://launchpad.net/qr-tools/2.0/${PORTVERSION}/+download/ \
 		LOCAL/ehaupt

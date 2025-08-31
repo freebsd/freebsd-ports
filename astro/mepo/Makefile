@@ -1,5 +1,6 @@
 PORTNAME=	mepo
 DISTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	astro geography wayland
 MASTER_SITES=	https://git.sr.ht/~mil/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 

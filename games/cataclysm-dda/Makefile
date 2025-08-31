@@ -1,6 +1,7 @@
 PORTNAME=	cataclysm-dda
 PORTVERSION=	0.H			# Preserve PORTVERSION so uppercase is respected
 DISTVERSIONSUFFIX=	-g08f04fd	# Using TAG instead of upstream 0.H-RELEASE
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 

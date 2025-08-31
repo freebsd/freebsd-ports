@@ -1,5 +1,6 @@
 PORTNAME=	torch-geometric
 DISTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -1,6 +1,6 @@
 PORTNAME=	gnudatalanguage
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science lang
 MASTER_SITES=	https://github.com/${PORTNAME}/gdl/releases/download/v${PORTVERSION}/

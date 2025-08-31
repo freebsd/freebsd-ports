@@ -1,6 +1,6 @@
 PORTNAME=	tocmacro
 PORTVERSION=	12.0.0r${REV}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	https://trac-hacks.org/browser/tocmacro/
 PKGNAMEPREFIX=	trac-

@@ -1,5 +1,6 @@
 PORTNAME=	vectoroids
 DISTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://tuxpaint.org/ftp/unix/x/${PORTNAME}/src/
 

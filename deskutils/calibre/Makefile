@@ -1,5 +1,6 @@
 PORTNAME=	calibre
 PORTVERSION=	8.9.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://download.calibre-ebook.com/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

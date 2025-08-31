@@ -1,6 +1,6 @@
 PORTNAME=	gnome-shell-extension-filesmenu
 PORTVERSION=	0.0.0.20171125
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome
 
