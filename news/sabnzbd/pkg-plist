@@ -17,8 +17,8 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/emailer.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/encoding.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/filesystem.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/get_addrinfo.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/getipaddress.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/happyeyeballs.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/interface.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/internetspeed.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/lang.py
