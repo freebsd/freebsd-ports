@@ -1,0 +1,11 @@
+--- libtrellis/CMakeLists.txt.orig	2025-08-31 16:45:20 UTC
++++ libtrellis/CMakeLists.txt
+@@ -46,7 +46,7 @@ endif()
+     endif()
+ endif()
+ 
+-set(boost_libs filesystem program_options system)
++set(boost_libs filesystem program_options)
+ if (Threads_FOUND)
+     list(APPEND boost_libs thread)
+ else()

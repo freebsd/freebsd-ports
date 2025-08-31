@@ -33,5 +33,6 @@ GH_TAGNAME=	14ac883fa639b11fdc98f3cdef87a5d01f79e73d
 GH_TUPLE=	YosysHQ:prjtrellis-db:4dda149b9e4f1753ebc8b011ece2fe794be1281a:database/database
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/libtrellis
+CMAKE_ARGS=	-DCURRENT_GIT_VERSION=${GH_TAGNAME}
 
 .include <bsd.port.mk>
