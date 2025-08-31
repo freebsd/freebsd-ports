@@ -10,6 +10,7 @@
     SUBDIR += ant-dracula-theme
     SUBDIR += arc-gruvbox-theme
     SUBDIR += audacious-skins
+    SUBDIR += bibata-cursor-theme
     SUBDIR += budgie-backgrounds
     SUBDIR += canta-gtk-themes
     SUBDIR += canta-icon-theme
