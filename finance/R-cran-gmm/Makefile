@@ -1,5 +1,5 @@
 PORTNAME=	gmm
-DISTVERSION=	1.8
+DISTVERSION=	1.9-1
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,9 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/gmm/
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-sandwich>0:math/R-cran-sandwich
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-sandwich>0:math/R-cran-sandwich
 
 USES=		cran:auto-plist,compiles
 
