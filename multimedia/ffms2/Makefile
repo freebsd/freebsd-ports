@@ -1,12 +1,9 @@
 PORTNAME=	ffms2
-DISTVERSION=	2.40
-PORTREVISION=	3
+DISTVERSION=	5.0
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	96cbf38ea938.patch:-p1 # https://github.com/FFMS/ffms2/pull/380
-PATCHFILES+=	586d87de3f89.patch:-p1 # https://github.com/FFMS/ffms2/pull/380
-PATCHFILES+=	45673149e9a2.patch:-p1 # https://github.com/FFMS/ffms2/pull/380
+PATCHFILES=	25cef14386fcaaa58ee547065deee8f6e82c56a2.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FFmpeg-based source library and VapourSynth plugin
@@ -22,27 +19,26 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	FFMS
 
 USES=		autoreconf compiler:c++11-lib gmake libtool pathfix pkgconfig
-EXCLUDE=	VSHelper.h VSScript.h VapourSynth.h
-EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-static
-CPPFLAGS+=	`pkg-config vapoursynth --cflags`
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+EXTRACT_AFTER_ARGS=	--exclude src/vapoursynth/V*.h \
+			--no-same-owner --no-same-permissions
+
+GNU_CONFIGURE=	yes
+
 DATADIR=	${PREFIX}/lib/vapoursynth
+INSTALL_TARGET=	install-strip
+
+CONFIGURE_ARGS=	--enable-static
 
 OPTIONS_DEFINE=	DOCS
 
-pre-configure:
-	@${MKDIR} ${WRKSRC}/src/config # from autogen.sh
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^dist_doc_DATA/s,=,& \
-			doc/${PORTNAME}-vapoursynth.md,' \
-		${WRKSRC}/Makefile.am
+	   doc/${PORTNAME}-vapoursynth.md,' \
+	   ${WRKSRC}/Makefile.am
 
-post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${LN} -sf ../lib${PORTNAME}.so ${STAGEDIR}${DATADIR}/
+pre-configure:
+	@${MKDIR} ${WRKSRC}/src/config # from autogen.sh
 
 .include <bsd.port.mk>
