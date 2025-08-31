@@ -1,5 +1,5 @@
 PORTNAME=	libpanel
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -12,7 +12,7 @@ LICENSE=	LGPL3+
 
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
 
-USES=		gettext gnome meson pkgconfig tar:xz vala:build
+USES=		gettext-tools gnome meson pkgconfig tar:xz vala:build
 USE_GNOME=	cairo glib20 gtk40 introspection:build libadwaita
 
 MESON_ARGS=	-Dintrospection=enabled \
