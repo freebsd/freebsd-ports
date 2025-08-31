@@ -1,17 +1,20 @@
-CARGO_CRATES=	ahash-0.8.12 \
+CARGO_CRATES=	addr2line-0.24.2 \
+		adler2-2.0.1 \
+		ahash-0.8.12 \
 		aho-corasick-1.1.3 \
-		anstream-0.6.19 \
+		anstream-0.6.20 \
 		anstyle-1.0.11 \
 		anstyle-parse-0.2.7 \
-		anstyle-query-1.1.3 \
-		anstyle-wincon-3.0.9 \
-		autocfg-1.4.0 \
+		anstyle-query-1.1.4 \
+		anstyle-wincon-3.0.10 \
+		autocfg-1.5.0 \
+		backtrace-0.3.75 \
 		base64-0.13.1 \
-		bitflags-2.9.1 \
-		bumpalo-3.18.1 \
-		castaway-0.2.3 \
-		cc-1.2.27 \
-		cfg-if-1.0.1 \
+		bitflags-2.9.3 \
+		bumpalo-3.19.0 \
+		castaway-0.2.4 \
+		cc-1.2.34 \
+		cfg-if-1.0.3 \
 		colorchoice-1.0.4 \
 		compact_str-0.9.0 \
 		console-0.15.11 \
@@ -29,22 +32,33 @@ CARGO_CRATES=	ahash-0.8.12 \
 		encode_unicode-1.0.0 \
 		env_filter-0.1.3 \
 		env_logger-0.11.8 \
-		errno-0.3.12 \
+		errno-0.3.13 \
 		esaxx-rs-0.1.10 \
 		fastrand-2.3.0 \
 		fnv-1.0.7 \
+		futures-0.3.31 \
+		futures-channel-0.3.31 \
+		futures-core-0.3.31 \
+		futures-executor-0.3.31 \
+		futures-io-0.3.31 \
+		futures-macro-0.3.31 \
+		futures-sink-0.3.31 \
+		futures-task-0.3.31 \
+		futures-util-0.3.31 \
 		getrandom-0.3.3 \
+		gimli-0.31.1 \
 		heck-0.5.0 \
 		ident_case-1.0.1 \
 		indicatif-0.17.11 \
 		indoc-2.0.6 \
+		io-uring-0.7.10 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
 		jiff-0.2.15 \
 		jiff-static-0.2.15 \
 		js-sys-0.3.77 \
-		libc-0.2.173 \
+		libc-0.2.175 \
 		linux-raw-sys-0.9.4 \
 		log-0.4.27 \
 		macro_rules_attribute-0.2.2 \
@@ -53,6 +67,8 @@ CARGO_CRATES=	ahash-0.8.12 \
 		memchr-2.7.5 \
 		memoffset-0.9.1 \
 		minimal-lexical-0.2.1 \
+		miniz_oxide-0.8.9 \
+		mio-1.0.4 \
 		monostate-0.1.14 \
 		monostate-impl-0.1.14 \
 		ndarray-0.16.1 \
@@ -62,50 +78,59 @@ CARGO_CRATES=	ahash-0.8.12 \
 		num-traits-0.2.19 \
 		number_prefix-0.4.0 \
 		numpy-0.25.0 \
+		object-0.36.7 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.1 \
 		onig-6.5.1 \
 		onig_sys-69.9.1 \
 		paste-1.0.15 \
+		pin-project-lite-0.2.16 \
+		pin-utils-0.1.0 \
 		pkg-config-0.3.32 \
 		portable-atomic-1.11.1 \
 		portable-atomic-util-0.2.4 \
 		ppv-lite86-0.2.21 \
-		proc-macro2-1.0.95 \
+		proc-macro2-1.0.101 \
 		pyo3-0.25.1 \
+		pyo3-async-runtimes-0.25.0 \
 		pyo3-build-config-0.25.1 \
 		pyo3-ffi-0.25.1 \
 		pyo3-macros-0.25.1 \
 		pyo3-macros-backend-0.25.1 \
 		quote-1.0.40 \
 		r-efi-5.3.0 \
-		rand-0.9.1 \
+		rand-0.9.2 \
 		rand_chacha-0.9.0 \
 		rand_core-0.9.3 \
 		rawpointer-0.2.1 \
-		rayon-1.10.0 \
+		rayon-1.11.0 \
 		rayon-cond-0.4.0 \
-		rayon-core-1.12.1 \
-		regex-1.11.1 \
-		regex-automata-0.4.9 \
-		regex-syntax-0.8.5 \
+		rayon-core-1.13.0 \
+		regex-1.11.2 \
+		regex-automata-0.4.10 \
+		regex-syntax-0.8.6 \
+		rustc-demangle-0.1.26 \
 		rustc-hash-2.1.1 \
-		rustix-1.0.7 \
-		rustversion-1.0.21 \
+		rustix-1.0.8 \
+		rustversion-1.0.22 \
 		ryu-1.0.20 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
-		serde_json-1.0.140 \
+		serde_json-1.0.143 \
 		shlex-1.3.0 \
+		signal-hook-registry-1.4.6 \
+		slab-0.4.11 \
 		smallvec-1.15.1 \
 		spm_precompiled-0.1.4 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
-		syn-2.0.103 \
+		syn-2.0.106 \
 		target-lexicon-0.13.2 \
-		tempfile-3.20.0 \
-		thiserror-2.0.12 \
-		thiserror-impl-2.0.12 \
+		tempfile-3.21.0 \
+		thiserror-2.0.16 \
+		thiserror-impl-2.0.16 \
+		tokio-1.47.1 \
+		tokio-macros-2.5.0 \
 		unicode-ident-1.0.18 \
 		unicode-normalization-alignments-0.1.12 \
 		unicode-segmentation-1.12.0 \
@@ -114,23 +139,35 @@ CARGO_CRATES=	ahash-0.8.12 \
 		unindent-0.2.4 \
 		utf8parse-0.2.2 \
 		version_check-0.9.5 \
-		wasi-0.14.2+wasi-0.2.4 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasi-0.14.3+wasi-0.2.4 \
 		wasm-bindgen-0.2.100 \
 		wasm-bindgen-backend-0.2.100 \
 		wasm-bindgen-macro-0.2.100 \
 		wasm-bindgen-macro-support-0.2.100 \
 		wasm-bindgen-shared-0.2.100 \
 		web-time-1.1.0 \
+		windows-link-0.1.3 \
 		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
 		windows-targets-0.52.6 \
+		windows-targets-0.53.3 \
 		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_gnullvm-0.53.0 \
 		windows_aarch64_msvc-0.52.6 \
+		windows_aarch64_msvc-0.53.0 \
 		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.0 \
 		windows_i686_gnullvm-0.52.6 \
+		windows_i686_gnullvm-0.53.0 \
 		windows_i686_msvc-0.52.6 \
+		windows_i686_msvc-0.53.0 \
 		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.0 \
 		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.52.6 \
-		wit-bindgen-rt-0.39.0 \
-		zerocopy-0.8.25 \
-		zerocopy-derive-0.8.25
+		windows_x86_64_msvc-0.53.0 \
+		wit-bindgen-0.45.0 \
+		zerocopy-0.8.26 \
+		zerocopy-derive-0.8.26

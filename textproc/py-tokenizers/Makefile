@@ -1,5 +1,5 @@
 PORTNAME=	tokenizers
-DISTVERSION=	0.21.4
+DISTVERSION=	0.22.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ TEST_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/oniguruma.pc:devel/oniguruma \
 
 USES=		cargo python
 USE_PYTHON=	autoplist pep517 pytest
-PYTEST_BROKEN_TESTS=	test_datasets test_gzip
+PYTEST_BROKEN_TESTS=	test_gzip
 
 CARGO_CARGOTOML=${WRKSRC}/bindings/python/Cargo.toml
 CARGO_CARGOLOCK=${WRKSRC}/bindings/python/Cargo.lock
