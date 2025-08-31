@@ -429,6 +429,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 
 PLIST_FILES=	bin/${PORTNAME}
 
+# https://github.com/arxanas/git-branchless/issues/1585
+CARGO_BUILDDEP=	no
+BUILD_DEPENDS+=	rust188>0:lang/rust188
+
 # sys-info-0.9.1 crate fix: https://github.com/FillZpp/sys-info-rs/issues/80 (same as in devel/git-delta)
 post-patch:
 	@${REINPLACE_CMD} \
