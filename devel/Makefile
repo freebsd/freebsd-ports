@@ -811,7 +811,6 @@
     SUBDIR += geany-plugin-xmlsnippets
     SUBDIR += geany-plugins
     SUBDIR += geany-plugins-l10n
-    SUBDIR += geany-themes
     SUBDIR += generate
     SUBDIR += gengetopt
     SUBDIR += genht
