@@ -1,6 +1,5 @@
 PORTNAME=	squeezelite
-DISTVERSION=	1.9.9.1422
-PORTREVISION=	4
+DISTVERSION=	2.0.0.1541
 CATEGORIES=	audio
 
 MAINTAINER=	jockl@pianojockl.org
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libfaad.so:audio/faad \
 USES=		gmake localbase:ldflags ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ralph-irving
-GH_TAGNAME=	6394b3f
+GH_TAGNAME=	72e1fd8
 
 CPPFLAGS+=	-I${PREFIX}/include/portaudio2
 LDFLAGS+=	-lportaudio -lm
