@@ -1,6 +1,7 @@
 PORTNAME=	android-file-transfer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	tiago.gasiba@gmail.com
@@ -30,7 +31,7 @@ CLI_DESC=		CLI (Command-Line Interface) support
 TAGLIB_DESC=		Reading audio metadata via taglib
 CLI_PLIST_FILES=	bin/aft-mtp-cli
 
-FUSE_USES=		fuse
+FUSE_USES=		fuse:3
 FUSE_CMAKE_BOOL=	BUILD_FUSE
 FUSE_PLIST_FILES=	bin/aft-mtp-mount
 
