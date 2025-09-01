@@ -3692,6 +3692,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/json-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ld-script.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ld-script.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/lua-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/lua-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/lua-ts-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/lua-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/m4-mode.el.gz
