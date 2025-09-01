@@ -1567,6 +1567,7 @@
     SUBDIR += py-python-bidi
     SUBDIR += py-python-docs-theme
     SUBDIR += py-python-docx
+    SUBDIR += py-python-frontmatter
     SUBDIR += py-python-gettext
     SUBDIR += py-python-lsp-black
     SUBDIR += py-python-lsp-jsonrpc
