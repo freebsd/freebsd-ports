@@ -2123,6 +2123,7 @@
     SUBDIR += translate-shell
     SUBDIR += translate-toolkit
     SUBDIR += trdsql
+    SUBDIR += tree-sitter-grammars
     SUBDIR += ts-hunspell
     SUBDIR += tth
     SUBDIR += tttcmds
