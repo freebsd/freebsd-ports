@@ -1,9 +1,9 @@
 PORTNAME=	welle.io
-DISTVERSION=	2.4
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.7
 CATEGORIES=	audio hamradio
 
-MAINTAINER=	nsonack@outlook.com
+MAINTAINER=	nsonack@herrhotzenplotz.de
 COMMENT=	SDR DAB/DAB+ Receiver
 WWW=		https://www.welle.io/
 
@@ -16,12 +16,10 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libmpg123.so:audio/mpg123
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 
-USES=		cmake compiler:c++11-lang pkgconfig qt:5
+USES=		cmake compiler:c++17-lang pkgconfig qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	AlbrechtL
-GH_TAGNAME=	0aacf578d77d79212483cd6fce436fb66523f63f
-USE_QT=		charts core dbus declarative gui multimedia network \
-		quickcontrols2 widgets buildtools:build qmake:build
+USE_QT=		base charts declarative multimedia
 
 OPTIONS_DEFINE=		AIRSPY CLI FFTW RTLSDR SOAPY
 OPTIONS_DEFAULT=	FFTW RTLSDR
