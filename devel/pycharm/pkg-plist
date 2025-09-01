@@ -36,7 +36,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/lib/async-profiler/amd64/symsrv.dll
 %%DATADIR%%/lib/async-profiler/libasyncProfiler.dylib
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PY-252.23892.439
+%%DATADIR%%/lib/build-marker-PY-252.25557.130
 %%DATADIR%%/lib/eclipse.lsp4j.debug.jar
 %%DATADIR%%/lib/eclipse.lsp4j.jar
 %%DATADIR%%/lib/eclipse.lsp4j.jsonrpc.debug.jar
@@ -80,6 +80,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/lib/modules/intellij.platform.clouds.jar
 %%DATADIR%%/lib/modules/intellij.platform.collaborationTools.jar
 %%DATADIR%%/lib/modules/intellij.platform.compose.jar
+%%DATADIR%%/lib/modules/intellij.platform.compose.markdown.jar
 %%DATADIR%%/lib/modules/intellij.platform.coverage.agent.jar
 %%DATADIR%%/lib/modules/intellij.platform.coverage.jar
 %%DATADIR%%/lib/modules/intellij.platform.dap.jar
@@ -114,13 +115,16 @@ share/applications/pycharm.desktop
 %%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.extensions.gfmAlerts.jar
 %%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.extensions.gfmStrikethrough.jar
 %%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.extensions.gfmTables.jar
+%%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.extensions.images.jar
 %%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.ideLafBridgeStyling.jar
 %%DATADIR%%/lib/modules/intellij.platform.jewel.ui.jar
 %%DATADIR%%/lib/modules/intellij.platform.kernel.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.kernel.impl.jar
+%%DATADIR%%/lib/modules/intellij.platform.lang.impl.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.lvcs.impl.jar
 %%DATADIR%%/lib/modules/intellij.platform.managed.cache.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.ml.impl.jar
+%%DATADIR%%/lib/modules/intellij.platform.ml.logs.jar
 %%DATADIR%%/lib/modules/intellij.platform.monolith.jar
 %%DATADIR%%/lib/modules/intellij.platform.navbar.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.navbar.frontend.jar
@@ -222,6 +226,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/aiplayground/lib/modules/intellij.aiplayground.models.jar
 %%DATADIR%%/plugins/aiplayground/lib/modules/intellij.aiplayground.ollama.jar
 %%DATADIR%%/plugins/aiplayground/lib/modules/intellij.aiplayground.openai.jar
+%%DATADIR%%/plugins/aiplayground/lib/modules/intellij.aiplayground.openrouter.jar
 %%DATADIR%%/plugins/angular/angular-service/node_modules/ws-typescript-angular-plugin/index.js
 %%DATADIR%%/plugins/angular/angular-service/node_modules/ws-typescript-angular-plugin/package.json
 %%DATADIR%%/plugins/angular/lib/angular.jar
@@ -304,6 +309,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/cwm-plugin/lib/modules/intellij.terminal.backend.split.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/modules/intellij.vcs.git.backend.split.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/modules/intellij.vcs.git.frontend.split.jar
+%%DATADIR%%/plugins/cwm-plugin/lib/modules/intellij.xml.frontend.split.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/quiche-jna-stubs.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/remote-controller-backend.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/remote-controller.jar
@@ -339,7 +345,6 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/fullLine/lib/clikt.jar
 %%DATADIR%%/plugins/fullLine/lib/fullLine.jar
 %%DATADIR%%/plugins/fullLine/lib/jgrapht.core.jar
-%%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.core.completion.trigger.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.css.local.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.go.local.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.html.local.jar
@@ -354,6 +359,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.ruby.local.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.rust.local.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.terraform.local.jar
+%%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.completion.trigger.model.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.cpp.completion.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.css.completion.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.go.completion.jar
@@ -578,11 +584,11 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/indexing-shared-ultimate-plugin-bundled/lib/modules/intellij.indexing.shared.ultimate.java.jar
 %%DATADIR%%/plugins/indexing-shared/lib/indexing-shared.jar
 %%DATADIR%%/plugins/ini/lib/ini.jar
+%%DATADIR%%/plugins/javascript-debugger/lib/javascript-debugger-frontend.jar
 %%DATADIR%%/plugins/javascript-debugger/lib/javascript-debugger.jar
 %%DATADIR%%/plugins/javascript-debugger/lib/modules/intellij.javascript.debugger.backend.jar
 %%DATADIR%%/plugins/javascript-debugger/lib/modules/intellij.javascript.debugger.frontend.jar
 %%DATADIR%%/plugins/javascript-debugger/lib/modules/intellij.javascript.debugger.shared.jar
-%%DATADIR%%/plugins/javascript-debugger/lib/modules/intellij.javascript.debugger.ui.shared.jar
 %%DATADIR%%/plugins/javascript-debugger/lib/modules/intellij.javascript.debugger.webstorm.specific.jar
 %%DATADIR%%/plugins/javascript-debugger/lib/modules/intellij.javascript.reactNativeDebugger.jar
 %%DATADIR%%/plugins/javascript-debugger/nodeDebugInitializer/debugConnectionForwarder.js
@@ -636,8 +642,8 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-e03c56caf84a.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-e03c56caf84a.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-b598e85cdad2.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-b598e85cdad2.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/!HowToUpdateBundledTypeScript.md
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_tsserver.js
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_typingsInstaller.js
@@ -1375,6 +1381,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/puppet/lib/stubs/builtin.pp
 %%DATADIR%%/plugins/puppet/lib/stubs/builtin_variables.pp
 %%DATADIR%%/plugins/puppet/lib/stubs/stub_functions.rb
+%%DATADIR%%/plugins/pycharm-community-customization-shared/lib/io.github.z4kn4fein.semver.jvm.jar
 %%DATADIR%%/plugins/pycharm-community-customization-shared/lib/modules/intellij.platform.whatsNew.jar
 %%DATADIR%%/plugins/pycharm-community-customization-shared/lib/pycharm-community-customization-shared.jar
 %%DATADIR%%/plugins/pycharm-ds-jupyter-customCells/lib/pycharm-ds-jupyter-customCells.jar
@@ -1383,8 +1390,8 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/pycharm-pro-customization.jar
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/tips-pycharm-pro.jar
 %%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/lib/pycharm-pro-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-b3ae9b5d7125-f0eec537fc84.ijx
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-b3ae9b5d7125-f0eec537fc84.txt
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-1bde30d8e611-7b97d883f26b.ijx
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-1bde30d8e611-7b97d883f26b.txt
 %%DATADIR%%/plugins/python-ce/helpers/.gitignore
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/MathJax.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/TeX-AMS_HTML-full.js
@@ -1704,9 +1711,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/gdal/raster/const.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/gdal/raster/source.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/gdal/srs.pyi
-%%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geoip2/__init__.pyi
-%%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geoip2/base.pyi
-%%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geoip2/resources.pyi
+%%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geoip2.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geometry.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geos/__init__.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/contrib/gis/geos/base.pyi
@@ -2037,6 +2042,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/enums.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/expressions.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/fields/__init__.pyi
+%%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/fields/composite.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/fields/files.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/fields/generated.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/fields/json.pyi
@@ -2049,6 +2055,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/functions/__init__.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/functions/comparison.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/functions/datetime.pyi
+%%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/functions/json.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/functions/math.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/functions/mixins.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/db/models/functions/text.pyi
@@ -2095,8 +2102,10 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/middleware/http.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/middleware/locale.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/middleware/security.pyi
+%%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/py.typed
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/shortcuts.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/template/__init__.pyi
+%%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/template/autoreload.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/template/backends/__init__.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/template/backends/base.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/template/backends/django.pyi
@@ -2170,7 +2179,6 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/inspect.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/ipv6.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/itercompat.pyi
-%%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/jslex.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/log.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/lorem_ipsum.pyi
 %%DATADIR%%/plugins/python-ce/helpers/bundled_stubs/Django/django-stubs/utils/module_loading.pyi
@@ -2862,6 +2870,8 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/python-ce/helpers/pycharm/teamcity/pylint_reporter.py
 %%DATADIR%%/plugins/python-ce/helpers/pycharm/teamcity/pytest_plugin.py
 %%DATADIR%%/plugins/python-ce/helpers/pycharm/teamcity/unittestpy.py
+%%DATADIR%%/plugins/python-ce/helpers/pycharm_altair_backend/__init__.py
+%%DATADIR%%/plugins/python-ce/helpers/pycharm_altair_backend/sitecustomize.py
 %%DATADIR%%/plugins/python-ce/helpers/pycharm_display/datalore/__init__.py
 %%DATADIR%%/plugins/python-ce/helpers/pycharm_display/datalore/display/__init__.py
 %%DATADIR%%/plugins/python-ce/helpers/pycharm_display/datalore/display/display_.py
@@ -3260,6 +3270,9 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/python-ce/helpers/syspath.py
 %%DATADIR%%/plugins/python-ce/helpers/testResources/.gitattributes
 %%DATADIR%%/plugins/python-ce/helpers/testResources/__main__.py
+%%DATADIR%%/plugins/python-ce/helpers/testResources/behave_examples/feature_with_rules/rule.feature
+%%DATADIR%%/plugins/python-ce/helpers/testResources/behave_examples/feature_with_rules/steps/example_steps.py
+%%DATADIR%%/plugins/python-ce/helpers/testResources/behave_examples/feature_with_rules/steps/person_steps.py
 %%DATADIR%%/plugins/python-ce/helpers/testResources/build.gradle.kts
 %%DATADIR%%/plugins/python-ce/helpers/testResources/data/docstrings/google_fragments_math.html
 %%DATADIR%%/plugins/python-ce/helpers/testResources/data/docstrings/google_fragments_math.json
@@ -9371,11 +9384,11 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/python-ce/helpers/virtualenv-py3.pyz
 %%DATADIR%%/plugins/python-ce/lib/completion-ranking-python-with-full-line.jar
 %%DATADIR%%/plugins/python-ce/lib/io.github.z4kn4fein.semver.jvm.jar
-%%DATADIR%%/plugins/python-ce/lib/jetbrains.ml.models.python.imports.ranking.model.jar
 %%DATADIR%%/plugins/python-ce/lib/jsr305.jar
 %%DATADIR%%/plugins/python-ce/lib/kaml.jar
 %%DATADIR%%/plugins/python-ce/lib/libthrift.jar
 %%DATADIR%%/plugins/python-ce/lib/ml-completion-prev-exprs-models.jar
+%%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.ml.features.jar
 %%DATADIR%%/plugins/python-ce/lib/python-ce-frontend.jar
 %%DATADIR%%/plugins/python-ce/lib/python-ce.jar
 %%DATADIR%%/plugins/python-ce/lib/tuweni-toml.jar
@@ -10613,6 +10626,11 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/vitejs/lib/vitejs.jar
 %%DATADIR%%/plugins/vuejs/lib/commons-text.jar
 %%DATADIR%%/plugins/vuejs/lib/vuejs.jar
+%%DATADIR%%/plugins/vuejs/typescript-vue-plugin/node_modules/@vue/typescript-plugin/README.md
+%%DATADIR%%/plugins/vuejs/typescript-vue-plugin/node_modules/@vue/typescript-plugin/index.js
+%%DATADIR%%/plugins/vuejs/typescript-vue-plugin/node_modules/@vue/typescript-plugin/package-lock.json
+%%DATADIR%%/plugins/vuejs/typescript-vue-plugin/node_modules/@vue/typescript-plugin/package.json
+%%DATADIR%%/plugins/vuejs/typescript-vue-plugin/node_modules/@vue/typescript-plugin/rolldown.config.ts
 %%DATADIR%%/plugins/vuejs/vue-language-server/.gitignore
 %%DATADIR%%/plugins/vuejs/vue-language-server/README.md
 %%DATADIR%%/plugins/vuejs/vue-language-server/bin/vue-language-server.js
