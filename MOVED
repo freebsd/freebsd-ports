@@ -4734,3 +4734,4 @@ databases/mysql-connector-odbc-80|databases/mysql-connector-odbc@unixodbc|2025-0
 textproc/randlm||2025-08-28|Unmaintained and broken
 lang/zig010|lang/zig|2025-08-31|Has expired: Old zig implementation, no consumers in ports
 databases/closql-devel|databases/closql|2025-09-01|Has expired: Use databases/closql instead
+databases/emacsql-devel|databases/emacsql|2025-09-01|Has expired: Use databases/emacsql instead
