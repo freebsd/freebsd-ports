@@ -1,6 +1,5 @@
 PORTNAME=	streamdeck
-DISTVERSION=	0.9.6
-PORTREVISION=	1
+DISTVERSION=	0.9.7
 CATEGORIES=	comms python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,18 +15,17 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libhidapi.so:comms/hidapi
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=8.1.1:graphics/py-pillow@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.2.1:devel/py-pytest@${PY_FLAVOR}
 
-USES=		dos2unix python
+USES=		dos2unix pytest python
 USE_PYTHON=	autoplist pep517
+PYTEST_ARGS=	test.py
+# Note: PYTEST_ARGS isn't respected if pytest is placed in USE_PYTHON section
 
 post-patch:
 	${RM} ${WRKSRC}/src/StreamDeck/Transport/LibUSBHIDAPI.py.orig
 
-TEST_WRKSRC=	${WRKSRC}/test
-DO_MAKE_TEST=	${SETENV} ${TEST_ENV} pytest-${PYTHON_VER}
-TEST_TARGET=	test.py
-
 NO_ARCH=	yes
+
+TEST_WRKSRC=	${WRKSRC}/test
 
 .include <bsd.port.mk>
