@@ -4355,6 +4355,7 @@
     SUBDIR += py-BTrees
     SUBDIR += py-Dumper
     SUBDIR += py-Faker
+    SUBDIR += py-Farama-Notifications
     SUBDIR += py-IBMQuantumExperience
     SUBDIR += py-Jinja2
     SUBDIR += py-Jinja2-doc
