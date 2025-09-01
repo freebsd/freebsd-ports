@@ -1,5 +1,5 @@
 PORTNAME=	nitro
-PORTVERSION=	0.2
+DISTVERSION=	0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.vuxu.org/nitro/snapshot/
 
@@ -8,7 +8,7 @@ COMMENT=	Minimal init implementation and process supervisor
 WWW=		https://git.vuxu.org/nitro/about/
 
 LICENSE=	ISCL
-LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nitro ${STAGEDIR}${PREFIX}/bin/nitro

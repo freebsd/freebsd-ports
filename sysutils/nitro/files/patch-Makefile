@@ -1,0 +1,8 @@
+--- Makefile.orig	2025-09-01 16:57:47 UTC
++++ Makefile
+@@ -1,4 +1,4 @@
+-CFLAGS=-Os -Wall -Wno-unused-parameter -Wextra -Wwrite-strings
++CFLAGS+=-Wall -Wno-unused-parameter -Wextra -Wwrite-strings
+ 
+ ALL=nitro nitroctl
+ 
