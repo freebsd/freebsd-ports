@@ -1,9 +1,0 @@
-#!/bin/sh
-
-mkdir -p m4
-aclocal
-autoconf
-autoheader
-automake --add-missing
-autopoint
-exit 0
