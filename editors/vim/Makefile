@@ -92,7 +92,7 @@ USE_XORG=	ice sm x11 xmu xpm xt
 .endif
 
 .if ${FLAVOR:U} != tiny
-USES=		python:build
+USES+=		python:build
 CONFIGURE_ARGS+=--enable-python3interp=dynamic \
 		--with-python3-command=${PYTHON_CMD}
 .endif
