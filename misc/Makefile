@@ -451,6 +451,7 @@
     SUBDIR += py-gguf
     SUBDIR += py-google-ai-generativelanguage
     SUBDIR += py-gpiozero
+    SUBDIR += py-gymnasium
     SUBDIR += py-halo
     SUBDIR += py-hf-doc-builder
     SUBDIR += py-hf-xet
