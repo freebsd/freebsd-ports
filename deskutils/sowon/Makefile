@@ -3,7 +3,7 @@ DISTVERSION=	g20201203
 PORTREVISION=	1
 CATEGORIES=	deskutils
 
-MAINTAINER=	nsonack@outlook.com
+MAINTAINER=	nsonack@herrhotzenplotz.de
 COMMENT=	Graphical countdown and timer application
 WWW=		https://github.com/tsoding/sowon/
 

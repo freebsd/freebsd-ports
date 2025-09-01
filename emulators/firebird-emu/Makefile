@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6
 CATEGORIES=	emulators
 
-MAINTAINER=	nsonack@outlook.com
+MAINTAINER=	nsonack@herrhotzenplotz.de
 COMMENT=	Emulator of the ARM-based TI-Nspire calculators
 WWW=		https://github.com/nspire-emus/firebird/
 
