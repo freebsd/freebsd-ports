@@ -1,9 +1,8 @@
 PORTNAME=	tor-browser
-DISTVERSION=	15.0a1
-PORTREVISION=	2
+DISTVERSION=	15.0a2
 CATEGORIES=	www net security wayland
-TAG_BASE=	96a559c7c1f7b9231db2b5cece7ecae980ae835d
-TAG_TOR=	3becb908fbf68aa77accc1f2e03e2c29f4fe40e2
+TAG_BASE=	948fad2286cb59fe168a949009b67d986fd9c153
+TAG_TOR=	ec17987af29cb2614d114789996a3b4a09cbc3e7
 MASTER_SITES=	TOR \
 		LOCAL/vvd \
 		https://build-sources.tbb.torproject.org/:source1 \
@@ -18,9 +17,9 @@ MASTER_SITES=	TOR \
 		LOCAL/vvd:source5
 MASTER_SITE_SUBDIR=	torbrowser/${DISTVERSION}/:DEFAULT \
 			download/releases/:source3
-DISTNAME=	src-firefox-tor-browser-140.1.0esr-15.0-1-build3
+DISTNAME=	src-firefox-tor-browser-140.2.0esr-15.0-1-build3
 MANUAL=		manual_215922.zip
-NOSCRIPT=	noscript-13.0.8.xpi
+NOSCRIPT=	noscript-13.0.9.xpi
 DISTFILES=	${DISTNAME}.tar.xz \
 		${MANUAL}:source1 \
 		fonts-3--4348e1.tar.zst:source2 \
@@ -57,7 +56,7 @@ USES=		compiler:c++11-lib libtool localbase:ldflags perl5 pkgconfig \
 		python shebangfix tar:xz
 USE_GECKO=	gecko
 USE_GITHUB=	nodefault
-TAG_L10N=	fcd0300e8478d1ec4d1c097a073ddb8e1e0351e3
+TAG_L10N=	468bb10
 GH_TUPLE=	mozilla-l10n:firefox-l10n:${TAG_L10N}:ffl10n
 USE_MOZILLA=	-sqlite
 
