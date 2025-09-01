@@ -831,7 +831,6 @@
     SUBDIR += ghostie
     SUBDIR += ghq
     SUBDIR += ghub
-    SUBDIR += ghub-devel
     SUBDIR += gilt
     SUBDIR += gindent
     SUBDIR += gio-sharp
