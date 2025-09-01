@@ -1,0 +1,18 @@
+fix build with rust 1.89
+
+cf https://bugzilla.mozilla.org/show_bug.cgi?id=1982003
+
+taken from:
+https://github.com/openbsd/ports/commit/3ef8a2538893109bea8211ef13a870822264e096
+
+--- third_party/rust/allocator-api2/src/stable/vec/mod.rs.orig	2025-08-13 22:43:24.000000000 +0200
++++ third_party/rust/allocator-api2/src/stable/vec/mod.rs	2025-09-01 08:52:19.103780000 +0200
+@@ -51,6 +51,8 @@
+ //!
+ //! [`push`]: Vec::push
+ 
++#![warn(dangerous_implicit_autorefs)]
++
+ #[cfg(not(no_global_oom_handling))]
+ use core::cmp;
+ use core::cmp::Ordering;
