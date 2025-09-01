@@ -1,5 +1,5 @@
 PORTNAME=	vim
-PORTVERSION=	9.1.1627
+PORTVERSION=	9.1.1723
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -91,15 +91,21 @@ USES+=		xorg
 USE_XORG=	ice sm x11 xmu xpm xt
 .endif
 
+.if ${FLAVOR:U} != tiny
+USES=		python:build
+CONFIGURE_ARGS+=--enable-python3interp=dynamic \
+		--with-python3-command=${PYTHON_CMD}
+.endif
+
 # Options {{{1
 # The bulk of the OPTIONS are for normal (non-tiny) vim
 ### Make sure any new options are excluded below in CONSOLE/TINY
-OPTIONS_DEFAULT=	CTAGS_BASE PYTHON XXD
+OPTIONS_DEFAULT=	CTAGS_BASE XXD
 OPTIONS_DEFINE=		MAKE_JOBS NLS XTERM_SAVE XXD
 OPTIONS_SINGLE=		CTAGS
 OPTIONS_SINGLE_CTAGS=	CTAGS_BASE CTAGS_EXUBERANT CTAGS_UNIVERSAL
 OPTIONS_GROUP=		LANGBIND
-OPTIONS_GROUP_LANGBIND=	LUA PERL PYTHON RUBY SCHEME TCL
+OPTIONS_GROUP_LANGBIND=	LUA PERL RUBY SCHEME TCL
 OPTIONS_SUB=		yes
 
 # vim-tiny excludes everything except CONSOLE, MAKE_JOBS
@@ -138,11 +144,6 @@ LUA_USES=		lua
 
 PERL_CONFIGURE_ENABLE=	perlinterp
 PERL_USES=		perl5
-
-PYTHON_USES=		python
-PYTHON_USES_OFF=	python:env
-PYTHON_CONFIGURE_ENABLE=	python3interp
-PYTHON_CONFIGURE_WITH=	python3-command=${PYTHON_CMD}
 
 RUBY_CONFIGURE_ENABLE=	rubyinterp
 RUBY_USES=		ruby

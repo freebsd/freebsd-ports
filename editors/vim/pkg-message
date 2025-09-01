@@ -7,5 +7,16 @@
   $VIMRUNTIME/defaults.vim to see Vim's defaults, and see ':h initialization'
   for the standard locations Vim looks for configuration files.
 EOM
-  }
+  },
+  { type:upgrade
+    maximum version: "0.9.1627"
+    message: <<EOM
+  The Vim port no longer brings in python automatically. Instead, it is
+  a dynloadable feature that can be enabled at runtime by installing python.
+
+      # pkg add python3
+
+  It will ONLY work with the version of python that the port was build with
+  (i.e. the defualt python version). If you've changed it manually, and want
+  python plugin, then you'll need to build and install the port locally.
 ]
