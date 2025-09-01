@@ -4738,3 +4738,4 @@ databases/emacsql-devel|databases/emacsql|2025-09-01|Has expired: Use databases/
 devel/geany-themes|devel/geany|2025-09-01|Has expired: Themes have been included in the main geany distribution
 devel/transient-devel|devel/transient|2025-09-01|Has expired: Use devel/transient instead
 devel/ghub-devel|devel/ghub|2025-09-01|Has expired: Use devel/ghub instead
+devel/magit-devel|devel/magit|2025-09-01|Has expired: Use devel/magit instead

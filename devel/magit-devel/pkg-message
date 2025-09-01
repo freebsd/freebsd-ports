@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-To use Magit, you should add following line to your .emacs file:
-
-(require 'magit)
-EOM
-}
-]
