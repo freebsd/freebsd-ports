@@ -69,6 +69,8 @@ GMP_CONFIGURE_ON=	--with-gmp-includes=${LOCALBASE}/include \
 GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 GMP_VARS_OFF=		hadrian_gmp_arg=--bignum=native
 
+PROFILE_OFF_FLAVOUR=	+no_profiled_libs
+
 GHC_VERSION?=		9.8.4
 LLVM_VERSION?=		15
 BOOT_GHC_VERSION?=	9.6.7
@@ -113,6 +115,9 @@ PLIST_SUB+=		GMP=
 HADRIAN_FLAVOUR_ARG=	--flavour=default
 .if !${PORT_OPTIONS:MDYNAMIC}
 HADRIAN_FLAVOUR_ARG:=	${HADRIAN_FLAVOUR_ARG}${DYNAMIC_OFF_FLAVOUR}
+.endif
+.if !${PORT_OPTIONS:MPROFILE}
+HADRIAN_FLAVOUR_ARG:=	${HADRIAN_FLAVOUR_ARG}${PROFILE_OFF_FLAVOUR}
 .endif
 
 HADRIAN_CMD=		${WRKSRC}/hadrian/bootstrap/_build/bin/hadrian \
