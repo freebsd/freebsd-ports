@@ -1,6 +1,6 @@
 PORTNAME=	lwjgl
 DISTVERSION=	2.9.4.20161208
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games java
 
 MAINTAINER=	freebsd@skinc.ru
@@ -26,6 +26,8 @@ USE_LDCONFIG=	yes
 USE_XORG=	x11 xcursor xext xrandr xxf86vm
 MAKE_ENV+=	CLASSPATH=${JAVAJARDIR}/jutils/jutils.jar:${JAVAJARDIR}/jinput/jinput.jar:${WRKSRC}/${DISTNAME}/jar/
 ALL_TARGET=	jars compile_native
+
+NO_SHLIB_REQUIRES_GLOB=	libjawt.so
 
 PLIST_DIRS=	${JAVAJARDIR}/${PORTNAME} \
 		lib/${PORTNAME}
