@@ -1,5 +1,6 @@
 PORTNAME=	cargo-tarpaulin
 DISTVERSION=	0.32.8
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org

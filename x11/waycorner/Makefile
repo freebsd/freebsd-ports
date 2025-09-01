@@ -1,5 +1,6 @@
 PORTNAME=	waycorner
 DISTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org

@@ -1,7 +1,7 @@
 PORTNAME=	wl-gammarelay-rs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	accessibility wayland
 
 MAINTAINER=	jbeich@FreeBSD.org

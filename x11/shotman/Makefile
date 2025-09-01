@@ -1,6 +1,7 @@
 PORTNAME=	shotman
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.10
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~whynothugo/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES

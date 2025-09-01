@@ -1,6 +1,6 @@
 PORTNAME=	xtensa-esp-elf
 DISTVERSION=	13.2.0_20240530
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/espressif/crosstool-NG/releases/download/esp-${DISTVERSION}/:source1 \
 		GNU/gmp:source2 \

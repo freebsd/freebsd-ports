@@ -1,6 +1,6 @@
 PORTNAME=	halloy
 DISTVERSION=	2025.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 
 MAINTAINER=	pokeysquirrel@gmail.com
@@ -32,6 +32,5 @@ post-install:
 LTO_UNSAFE=	yes
 CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 .endif
-
 
 .include <bsd.port.post.mk>

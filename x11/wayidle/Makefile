@@ -1,7 +1,7 @@
 PORTNAME=	wayidle
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~whynothugo/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES

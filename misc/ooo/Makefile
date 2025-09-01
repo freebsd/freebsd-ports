@@ -1,6 +1,6 @@
 PORTNAME=	ooo
 DISTVERSION=	0.1.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	misc # machine learning
 
 MAINTAINER=	yuri@FreeBSD.org

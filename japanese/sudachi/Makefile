@@ -1,7 +1,7 @@
 PORTNAME=	sudachi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese
 MASTER_SITES=	http://sudachi.s3-website-ap-northeast-1.amazonaws.com/sudachidict/:dict
 DISTFILES=	sudachi-dictionary-20220519-core.zip:dict # see ${WRKSRC}/fetch_dictionary.sh

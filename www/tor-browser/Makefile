@@ -1,6 +1,6 @@
 PORTNAME=	tor-browser
 DISTVERSION=	15.0a1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www net security wayland
 TAG_BASE=	96a559c7c1f7b9231db2b5cece7ecae980ae835d
 TAG_TOR=	3becb908fbf68aa77accc1f2e03e2c29f4fe40e2

@@ -1,6 +1,6 @@
 PORTNAME=	unit-otel
 PORTVERSION=	${UNIT_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES?=	https://unit.nginx.org/download/
 DISTFILES=	unit-${PORTVERSION}.tar.gz

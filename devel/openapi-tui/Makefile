@@ -1,5 +1,6 @@
 PORTNAME=	openapi-tui
 DISTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org

@@ -1,6 +1,6 @@
 PORTNAME=	radio_datetime_analyzer
 DISTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	https://codeberg.org/rene0/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # prevent USES=cargo from overriding default DISTFILES

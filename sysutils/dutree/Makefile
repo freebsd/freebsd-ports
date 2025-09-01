@@ -1,7 +1,7 @@
 PORTNAME=	dutree
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.15
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/nachoparker/dutree/commit/

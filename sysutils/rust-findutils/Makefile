@@ -1,6 +1,6 @@
 PORTNAME=	rust-findutils
 DISTVERSION=	0.7.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	television
 DISTVERSION=	0.13.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	uzsolt@FreeBSD.org

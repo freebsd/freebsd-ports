@@ -1,5 +1,6 @@
 PORTNAME=	sheldon
 DISTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	tagattie@FreeBSD.org
