@@ -1375,6 +1375,7 @@
     SUBDIR += py-dparse
     SUBDIR += py-duecredit
     SUBDIR += py-ebcdic
+    SUBDIR += py-elastic-transport
     SUBDIR += py-elasticsearch
     SUBDIR += py-elasticsearch-async
     SUBDIR += py-elasticsearch-curator

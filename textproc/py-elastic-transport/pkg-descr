@@ -1,0 +1,4 @@
+Transport classes and utilities shared among Python Elastic client libraries
+
+This library was lifted from elasticsearch-py and then transformed to be used
+across all Elastic services rather than only Elasticsearch.
