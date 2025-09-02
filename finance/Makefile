@@ -149,7 +149,6 @@
     SUBDIR += py-ystockquote
     SUBDIR += qtbitcointrader
     SUBDIR += quantlib
-    SUBDIR += quba-viewer
     SUBDIR += quickfix
     SUBDIR += rubygem-money
     SUBDIR += skrooge

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Quba Viewer
-Comment=Quba - Invoice Viewer
-Icon=quba-desktop
-Exec=quba -- %u
-Terminal=false
-Categories=Utility;
