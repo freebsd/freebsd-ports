@@ -1,5 +1,5 @@
 PORTNAME=	active_hash
-PORTVERSION=	3.3.1
+PORTVERSION=	4.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/active-hash/active_hash
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport71>=5.0.0:devel/rubygem-activesupport71
+RUN_DEPENDS=	rubygem-activesupport80>=6.1.0:devel/rubygem-activesupport80
 
 USES=		gem
 
