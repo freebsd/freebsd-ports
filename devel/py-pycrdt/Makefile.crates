@@ -1,5 +1,5 @@
 CARGO_CRATES=	arc-swap-1.7.1 \
-		async-lock-3.4.0 \
+		async-lock-3.4.1 \
 		async-trait-0.1.88 \
 		autocfg-1.5.0 \
 		bitflags-2.9.1 \
@@ -8,7 +8,7 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		concurrent-queue-2.5.0 \
 		crossbeam-utils-0.8.21 \
 		dashmap-6.1.0 \
-		event-listener-5.4.0 \
+		event-listener-5.4.1 \
 		event-listener-strategy-0.5.4 \
 		fastrand-2.3.0 \
 		getrandom-0.2.16 \
@@ -27,19 +27,19 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		parking_lot_core-0.9.11 \
 		pin-project-lite-0.2.16 \
 		portable-atomic-1.11.1 \
-		proc-macro2-1.0.95 \
+		proc-macro2-1.0.96 \
 		pyo3-0.25.1 \
 		pyo3-build-config-0.25.1 \
 		pyo3-ffi-0.25.1 \
 		pyo3-macros-0.25.1 \
 		pyo3-macros-backend-0.25.1 \
 		quote-1.0.40 \
-		redox_syscall-0.5.13 \
+		redox_syscall-0.5.17 \
 		ryu-1.0.20 \
 		scopeguard-1.2.0 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
-		serde_json-1.0.140 \
+		serde_json-1.0.142 \
 		smallstr-0.3.0 \
 		smallvec-1.15.1 \
 		syn-2.0.104 \
