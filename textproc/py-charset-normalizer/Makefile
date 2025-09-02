@@ -1,5 +1,5 @@
 PORTNAME=	charset-normalizer
-PORTVERSION=	3.4.2
+PORTVERSION=	3.4.3
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/jawah/charset_normalizer/releases/download/${PORTVERSION}/
