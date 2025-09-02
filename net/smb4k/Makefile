@@ -1,5 +1,5 @@
 PORTNAME=	smb4k
-DISTVERSION=	4.0.0
+DISTVERSION=	4.0.4
 CATEGORIES=	net kde
 MASTER_SITES=	SF/${PORTNAME}/${DISTVERSION}
 
@@ -20,7 +20,7 @@ USES=		cmake compiler:c++17-lang cpe gettext-tools gl kde:6 qt:6 \
 CPE_VENDOR=	${PORTNAME}_project
 USE_GL=		gl opengl # GLX
 USE_KDE=	auth colorscheme completion config configwidgets coreaddons \
-		crash dbusaddons dnssd i18n iconthemes jobwidgets kirigami2 \
+		crash dbusaddons dnssd guiaddons i18n iconthemes jobwidgets kirigami2 \
 		kio libplasma notifications service solid statusnotifieritem \
 		wallet widgetsaddons windowsystem xmlgui \
 		doctools:build ecm:build
