@@ -1,6 +1,0 @@
-%%SITE_PERL%%/Dancer2/Plugin/Passphrase.pm
-%%SITE_PERL%%/Dancer2/Plugin/Passphrase/Core.pm
-%%SITE_PERL%%/Dancer2/Plugin/Passphrase/Hashed.pm
-%%PERL5_MAN3%%/Dancer2::Plugin::Passphrase.3.gz
-%%PERL5_MAN3%%/Dancer2::Plugin::Passphrase::Core.3.gz
-%%PERL5_MAN3%%/Dancer2::Plugin::Passphrase::Hashed.3.gz

@@ -4760,3 +4760,4 @@ net-mgmt/netdisco||2025-09-02|Has expired: Depends on expired security/p5-Data-E
 www/p5-Dancer2-Plugin-Interchange6||2025-09-02|Has expired: Depends on expired security/p5-Data-Entropy via databases/p5-Interchange6-Schema
 www/p5-Interchange6||2025-09-02|Has expired: Depends on expired security/p5-Data-Entropy via databases/p5-Interchange6-Schema
 security/p5-Dancer-Plugin-Passphrase||2025-09-02|Has expired: Depends on expired security/p5-Data-Entropy
+security/p5-Dancer2-Plugin-Passphrase||2025-09-02|Has expired: Depends on expired security/p5-Data-Entropy

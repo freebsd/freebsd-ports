@@ -653,7 +653,6 @@
     SUBDIR += p5-Dancer2-Plugin-Auth-Extensible-Provider-DBIC
     SUBDIR += p5-Dancer2-Plugin-Auth-Extensible-Provider-Database
     SUBDIR += p5-Dancer2-Plugin-Auth-Extensible-Provider-IMAP
-    SUBDIR += p5-Dancer2-Plugin-Passphrase
     SUBDIR += p5-Data-Entropy
     SUBDIR += p5-Data-Password
     SUBDIR += p5-Digest
