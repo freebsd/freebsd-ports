@@ -1011,7 +1011,6 @@
     SUBDIR += p5-I18N-AcceptLanguage
     SUBDIR += p5-IMDB-Film
     SUBDIR += p5-Image-Delivery
-    SUBDIR += p5-Interchange6
     SUBDIR += p5-JE
     SUBDIR += p5-JSON-API
     SUBDIR += p5-JSON-WebToken
