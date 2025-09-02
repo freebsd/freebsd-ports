@@ -1,6 +1,7 @@
 PORTNAME=	adios2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.10.2
+PORTREVISION=	1
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +16,7 @@ BROKEN_i386=	constant expression evaluates to 18446744073709551613 which cannot 
 BROKEN_powerpc=	constant expression evaluates to 18446744073709551613 which cannot be narrowed to type 'unsigned int': https://github.com/ornladios/ADIOS2/issues/2469
 
 PY_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}mpi4py>=3.0.3:net/py-mpi4py@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}mpi4py-mpich>=3.0.3:net/py-mpi4py-mpich@${PY_FLAVOR}
 BUILD_DEPENDS=	bash:shells/bash \
 		pybind11>0:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}pybind11>=2.4:devel/py-pybind11@${PY_FLAVOR} \

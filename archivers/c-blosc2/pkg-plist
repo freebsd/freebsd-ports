@@ -21,5 +21,5 @@ lib/cmake/Blosc2/Modules/toolchain-armsf.cmake
 lib/libblosc2.a
 lib/libblosc2.so
 lib/libblosc2.so.%%PORTVERSION%%
-lib/libblosc2.so.4
+lib/libblosc2.so.5
 libdata/pkgconfig/blosc2.pc
