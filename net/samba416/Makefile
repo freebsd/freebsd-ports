@@ -459,10 +459,10 @@ SAMBA4_MODULES+=		auth_skel pdb_test gpext_security gpext_registry \
 .endif
 # Python bindings
 .if ! ${PORT_OPTIONS:MPYTHON3} || defined(NO_PYTHON)
-USES+=				python:build,test
+USES+=				python:build,test,-3.11
 CONFIGURE_ARGS+=		--disable-python
 .else
-USES+=				python
+USES+=				python:-3.11
 PLIST+=				${PKGDIR}/pkg-plist.python
 # Don't cache Python modules
 CONFIGURE_ARGS+=		--nopycache
