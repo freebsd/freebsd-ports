@@ -4745,3 +4745,4 @@ converters/pdf2djvu||2025-09-01|Has expired: Port has been abandoned upstream fo
 multimedia/py-PySceneDetect|multimedia/py-scenedetect|2025-09-01|Renamed to match the registered PYPI package name
 finance/quba-viewer||2025-09-02|Has expired: Depends on expired devel/electron32
 devel/electron32||2025-09-02|Has expired: EOLed upstream, switch to newer version
+devel/rubygem-thor13|devel/rubygem-thor|2025-09-02|Remove obsoleted port. Use devel/rubygem-thor instead
