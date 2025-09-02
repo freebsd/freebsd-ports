@@ -1,6 +1,5 @@
 PORTNAME=	rgbds
-DISTVERSION=	0.9.3
-PORTREVISION=	1
+DISTVERSION=	1.0.0-rc1
 CATEGORIES=	devel games
 MASTER_SITES=	https://github.com/gbdev/rgbds/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-source
