@@ -35,6 +35,6 @@ lib/mysql/libmysqlclient_r.so.24
 %%SASLCLIENT%%lib/mysql/plugin/authentication_oci_client.so
 %%SASLCLIENT%%lib/mysql/plugin/authentication_openid_connect_client.so
 %%SASLCLIENT%%lib/mysql/plugin/authentication_webauthn_client.so
-lib/mysql/plugin/mysql_native_password.so
+%%SASLCLIENT%%lib/mysql/plugin/mysql_native_password.so
 libdata/pkgconfig/mysqlclient.pc
 share/aclocal/mysql.m4
