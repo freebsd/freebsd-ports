@@ -1,4 +1,4 @@
---- libcdi/src/cgribexlib.c.orig	2024-02-02 10:51:13 UTC
+--- libcdi/src/cgribexlib.c.orig	2025-07-14 15:03:05 UTC
 +++ libcdi/src/cgribexlib.c
 @@ -10,7 +10,7 @@
  #pragma GCC diagnostic warning "-Wstrict-overflow"
@@ -9,31 +9,31 @@
  #pragma options nostrict
  #include <ppu_intrinsics.h>
  #endif
-@@ -766,21 +766,21 @@ pwr6_minmax_val_double_unrolled6(const double *restric
+@@ -752,21 +752,21 @@ pwr6_minmax_val_double_unrolled6(const double *restric
+     {
+       for (size_t j = 0; j < __UNROLL_DEPTH_1; ++j)
        {
-         for (size_t j = 0; j < __UNROLL_DEPTH_1; ++j)
-           {
--            dmin[j] = __fsel(dmin[j] - data[i + j], data[i + j], dmin[j]);
--            dmax[j] = __fsel(data[i + j] - dmax[j], data[i + j], dmax[j]);
-+	    dmin[j] = __builtin_ppc_fsel(dmin[j] - data[i + j], data[i + j], dmin[j]);
-+	    dmax[j] = __builtin_ppc_fsel(data[i + j] - dmax[j], data[i + j], dmax[j]);
-           }
+-        dmin[j] = __fsel(dmin[j] - data[i + j], data[i + j], dmin[j]);
+-        dmax[j] = __fsel(data[i + j] - dmax[j], data[i + j], dmax[j]);
++        dmin[j] = __builtin_ppc_fsel(dmin[j] - data[i + j], data[i + j], dmin[j]);
++        dmax[j] = __builtin_ppc_fsel(data[i + j] - dmax[j], data[i + j], dmax[j]);
        }
+     }
  
      for (size_t j = 0; j < residual; ++j)
-       {
--        dmin[j] = __fsel(dmin[j] - data[ofs + j], data[ofs + j], dmin[j]);
--        dmax[j] = __fsel(data[ofs + j] - dmax[j], data[ofs + j], dmax[j]);
-+	dmin[j] = __builtin_ppc_fsel(dmin[j] - data[ofs + j], data[ofs + j], dmin[j]);
-+	dmax[j] = __builtin_ppc_fsel(data[ofs + j] - dmax[j], data[ofs + j], dmax[j]);
-       }
+     {
+-      dmin[j] = __fsel(dmin[j] - data[ofs + j], data[ofs + j], dmin[j]);
+-      dmax[j] = __fsel(data[ofs + j] - dmax[j], data[ofs + j], dmax[j]);
++      dmin[j] = __builtin_ppc_fsel(dmin[j] - data[ofs + j], data[ofs + j], dmin[j]);
++      dmax[j] = __builtin_ppc_fsel(data[ofs + j] - dmax[j], data[ofs + j], dmax[j]);
+     }
  
      for (size_t j = 0; j < __UNROLL_DEPTH_1; ++j)
-       {
--        *fmin = __fsel(*fmin - dmin[j], dmin[j], *fmin);
--        *fmax = __fsel(dmax[j] - *fmax, dmax[j], *fmax);
-+	*fmin = __builtin_ppc_fsel(*fmin - dmin[j], dmin[j], *fmin);
-+	*fmax = __builtin_ppc_fsel(dmax[j] - *fmax, dmax[j], *fmax);
-       }
+     {
+-      *fmin = __fsel(*fmin - dmin[j], dmin[j], *fmin);
+-      *fmax = __fsel(dmax[j] - *fmax, dmax[j], *fmax);
++      *fmin = __builtin_ppc_fsel(*fmin - dmin[j], dmin[j], *fmin);
++      *fmax = __builtin_ppc_fsel(dmax[j] - *fmax, dmax[j], *fmax);
+     }
    }
  #undef __UNROLL_DEPTH_1
