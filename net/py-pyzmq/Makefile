@@ -1,33 +1,27 @@
 PORTNAME=	pyzmq
-DISTVERSION=	27.0.0
-PORTREVISION=	0
+PORTVERSION=	27.0.1
 CATEGORIES=	net devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python bindings for ZeroMQ
-WWW=		https://github.com/zeromq/pyzmq
+WWW=		https://pyzmq.readthedocs.io/en/latest/ \
+		https://github.com/zeromq/pyzmq
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	cmake:devel/cmake-core \
-                ninja:devel/ninja \
-		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0.1.5:devel/py-scikit-build-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0.10:devel/py-scikit-build-core@${PY_FLAVOR}
 LIB_DEPENDS=	libzmq.so:net/libzmq4
 
-USES=		python
-USE_PYTHON=	autoplist cython3 pep517 pytest
+USES=		cmake:indirect python
+USE_PYTHON=	autoplist concurrent cython3 pep517 pytest
 
-PYDISTUTILS_CONFIGUREARGS=	--zmq=${LOCALBASE}
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext --inplace
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/zmq/backend/cython/*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

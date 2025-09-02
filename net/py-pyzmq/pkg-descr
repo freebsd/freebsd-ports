@@ -1,2 +1,2 @@
-PyZMQ is a lightweight and super-fast messaging library built on top of
-the ZeroMQ library.
+This package contains Python bindings for ZeroMQ. ZeroMQ is a lightweight and
+fast messaging implementation.
