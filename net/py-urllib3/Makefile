@@ -8,7 +8,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	HTTP library with thread-safe connection pooling, file post, and more
-WWW=		https://github.com/urllib3/urllib3
+WWW=		https://urllib3.readthedocs.io/en/stable/ \
+		https://github.com/urllib3/urllib3
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -26,15 +27,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flaky>=3.6.1:devel/py-flaky@${PY_FLAVOR} \
 USES=		cpe python
 USE_PYTHON=	autoplist concurrent cryptography_test pep517 pytest
 
-CPE_VENDOR=	python
-
 NO_ARCH=	yes
+PYTEST_IGNORED_TESTS=	test_ssl_read_timeout
 TEST_ENV=	LC_ALL=en_US.UTF-8 PYTHONPATH=${WRKSRC}/src
 
-# Test 'test_ssl_read_timeout' fails with FreeBSD >= 12.0. That was already the case with earlier versions of net/py-urllib3.
-PYTEST_IGNORED_TESTS=	test_ssl_read_timeout
-
 SUB_FILES=	pkg-message
+
+CPE_VENDOR=	python
 
 OPTIONS_DEFINE=	BROTLI SOCKS SSL
 OPTIONS_DEFAULT=SOCKS
