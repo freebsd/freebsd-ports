@@ -1,3 +1,0 @@
-Libu2f-host provides a C library and command-line tool that implements the
-host-side of the U2F protocol. There are APIs to talk to a U2F device and
-perform the U2F Register and U2F Authenticate operations.

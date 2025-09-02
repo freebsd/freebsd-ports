@@ -4762,3 +4762,4 @@ www/p5-Interchange6||2025-09-02|Has expired: Depends on expired security/p5-Data
 security/p5-Dancer-Plugin-Passphrase||2025-09-02|Has expired: Depends on expired security/p5-Data-Entropy
 security/p5-Dancer2-Plugin-Passphrase||2025-09-02|Has expired: Depends on expired security/p5-Data-Entropy
 security/p5-Data-Entropy||2025-09-02|Has expired: The maintainer of this distribution has indicated that it is deprecated and no longer suitable for use
+security/libu2f-host||2025-09-02|Has expired: This project is deprecated and is no longer being maintained. libfido2 is a new project with support for U2F and FIDO2. Use security/libfido2 instead

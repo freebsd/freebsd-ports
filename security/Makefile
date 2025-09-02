@@ -331,7 +331,6 @@
     SUBDIR += libtasn1
     SUBDIR += libtatsu
     SUBDIR += libtomcrypt
-    SUBDIR += libu2f-host
     SUBDIR += libwhisker
     SUBDIR += libxcrypt
     SUBDIR += libyubikey
