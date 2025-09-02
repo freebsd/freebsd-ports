@@ -27,6 +27,7 @@ procname="%%PREFIX%%/bin/soju"
 pidfile=/var/run/${name}.pid
 command_args="-P /var/run/daemon_${name}.pid -p $pidfile -u %%USER%% -H -c -f $procname -config ${soju_config}"
 start_precmd="mkdir -p /var/run/soju && chown %%USER%%: /var/run/soju"
+extra_commands="reload"
 
 load_rc_config $name
 run_rc_command "$1"
