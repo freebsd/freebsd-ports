@@ -10,6 +10,10 @@ include/aom/aom_image.h
 include/aom/aom_integer.h
 include/aom/aomcx.h
 include/aom/aomdx.h
+lib/cmake/AOM/AOMConfig.cmake
+lib/cmake/AOM/AOMConfigVersion.cmake
+lib/cmake/AOM/AOMTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/AOM/AOMTargets.cmake
 lib/libaom.a
 lib/libaom.so
 lib/libaom.so.3
