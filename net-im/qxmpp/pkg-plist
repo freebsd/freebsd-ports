@@ -5,6 +5,7 @@ include/QXmppQt6/Omemo/qxmppomemo_export.h
 include/QXmppQt6/QXmppAccountMigrationManager.h
 include/QXmppQt6/QXmppArchiveIq.h
 include/QXmppQt6/QXmppArchiveManager.h
+include/QXmppQt6/QXmppAsync_p.h
 include/QXmppQt6/QXmppAtmManager.h
 include/QXmppQt6/QXmppAtmTrustMemoryStorage.h
 include/QXmppQt6/QXmppAtmTrustStorage.h
@@ -30,6 +31,7 @@ include/QXmppQt6/QXmppClient.h
 include/QXmppQt6/QXmppClientExtension.h
 include/QXmppQt6/QXmppColorGeneration.h
 include/QXmppQt6/QXmppConfiguration.h
+include/QXmppQt6/QXmppConstants_p.h
 include/QXmppQt6/QXmppCredentials.h
 include/QXmppQt6/QXmppDataForm.h
 include/QXmppQt6/QXmppDataFormBase.h
@@ -53,7 +55,6 @@ include/QXmppQt6/QXmppFileMetadata.h
 include/QXmppQt6/QXmppFileShare.h
 include/QXmppQt6/QXmppFileSharingManager.h
 include/QXmppQt6/QXmppFileSharingProvider.h
-include/QXmppQt6/QXmppFutureUtils_p.h
 include/QXmppQt6/QXmppGeolocItem.h
 include/QXmppQt6/QXmppGlobal.h
 include/QXmppQt6/QXmppHash.h
@@ -150,10 +151,13 @@ include/QXmppQt6/QXmppUserLocationManager.h
 include/QXmppQt6/QXmppUserTuneItem.h
 include/QXmppQt6/QXmppUserTuneManager.h
 include/QXmppQt6/QXmppUtils.h
+include/QXmppQt6/QXmppUtils_p.h
 include/QXmppQt6/QXmppVCardIq.h
 include/QXmppQt6/QXmppVCardManager.h
 include/QXmppQt6/QXmppVersionIq.h
 include/QXmppQt6/QXmppVersionManager.h
+include/QXmppQt6/QXmppVisitHelper_p.h
+include/QXmppQt6/QXmppXmlTags_p.h
 include/QXmppQt6/qxmpp_export.h
 lib/cmake/QXmppOmemoQt6/QXmppOmemo-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/QXmppOmemoQt6/QXmppOmemo.cmake
@@ -164,9 +168,9 @@ lib/cmake/QXmppQt6/QXmpp.cmake
 lib/cmake/QXmppQt6/QXmppQt6Config.cmake
 lib/cmake/QXmppQt6/QXmppQt6ConfigVersion.cmake
 lib/libQXmppOmemoQt6.so
-lib/libQXmppOmemoQt6.so.5
+lib/libQXmppOmemoQt6.so.6
 lib/libQXmppOmemoQt6.so.%%SOVERSION%%
 lib/libQXmppQt6.so
-lib/libQXmppQt6.so.5
+lib/libQXmppQt6.so.6
 lib/libQXmppQt6.so.%%SOVERSION%%
 libdata/pkgconfig/QXmppQt6.pc
