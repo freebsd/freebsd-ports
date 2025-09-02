@@ -5,7 +5,7 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		QuickCheck-2.15.0.1_1 \
 		Ranged-sets-0.4.0_2 \
 		StateVar-1.2.2 \
-		adjunctions-4.4.2_2 \
+		adjunctions-4.4.3 \
 		aeson-2.2.3.0_4 \
 		aeson-pretty-0.8.10 \
 		ansi-terminal-1.1.2 \
@@ -19,7 +19,7 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		atomic-primops-0.8.8 \
 		attoparsec-0.14.4_6 \
 		attoparsec-aeson-2.2.2.0 \
-		auto-update-0.1.6 \
+		auto-update-0.2.6 \
 		base-compat-0.14.1 \
 		base-compat-batteries-0.14.1 \
 		base-orphans-0.9.3 \
@@ -31,27 +31,27 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		bitvec-1.1.5.0_3 \
 		bsb-http-chunked-0.0.0.4_4 \
 		byteorder-1.0.4 \
-		bytestring-strict-builder-0.4.5.7 \
-		bytestring-tree-builder-0.2.7.12 \
+		bytestring-strict-builder-0.4.5.8 \
+		bytestring-tree-builder-0.2.7.13 \
 		cabal-doctest-1.0.11 \
 		cache-0.1.3.0_1 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
-		cassava-0.5.3.2_1 \
+		cassava-0.5.4.0_1 \
 		cereal-0.5.8.3 \
 		character-ps-0.1 \
-		charset-0.3.11 \
+		charset-0.3.12 \
 		clock-0.8.4 \
 		cmdargs-0.10.22 \
 		colour-2.3.6 \
 		comonad-5.0.9_1 \
-		configurator-pg-0.2.10_1 \
+		configurator-pg-0.2.10_3 \
 		contravariant-1.5.5 \
 		contravariant-extras-0.3.5.4 \
-		cookie-0.4.6 \
+		cookie-0.5.1 \
 		cryptohash-md5-0.11.101.0_6 \
 		cryptohash-sha1-0.11.101.0_6 \
-		crypton-1.0.1 \
+		crypton-1.0.4 \
 		crypton-x509-1.7.7 \
 		data-bword-0.1.0.2 \
 		data-checked-0.3 \
@@ -67,59 +67,60 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		data-sketches-0.3.1.0 \
 		data-sketches-core-0.1.0.0 \
 		data-textual-0.3.0.3 \
-		deferred-folds-0.9.18.6 \
+		deferred-folds-0.9.18.7 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_2 \
 		easy-file-0.2.5 \
-		either-5.0.2_3 \
+		either-5.0.3 \
 		entropy-0.4.1.11 \
 		extra-1.8 \
-		fast-logger-3.2.4 \
+		fast-logger-3.2.6 \
 		foldl-1.4.18_1 \
 		free-5.2_7 \
 		fuzzyset-0.2.4 \
 		generically-0.1.1_4 \
 		generics-sop-0.5.1.4_2 \
 		groups-0.5.3 \
-		hashable-1.4.7.0 \
+		hashable-1.5.0.0_1 \
 		hashtables-1.4.2 \
 		hasql-1.6.4.4 \
 		hasql-dynamic-statements-0.3.1.5 \
 		hasql-implicits-0.1.1.3 \
 		hasql-notifications-0.2.2.2 \
 		hasql-pool-1.0.1 \
-		hasql-transaction-1.0.1.4 \
+		hasql-transaction-1.1.0.1 \
 		heredoc-0.2.0.0 \
 		hourglass-0.2.12_1 \
 		hsc2hs-0.68.10_4 \
 		http-date-0.0.11 \
 		http-media-0.8.1.1_2 \
+		http-semantics-0.3.0 \
 		http-types-0.12.4 \
-		http2-5.0.1 \
+		http2-5.3.10 \
 		indexed-profunctors-0.1.1.1 \
 		indexed-traversable-0.1.4_1 \
 		indexed-traversable-instances-0.1.2_1 \
-		insert-ordered-containers-0.2.6 \
+		insert-ordered-containers-0.2.7 \
 		integer-conversion-0.1.1_1 \
 		integer-logarithms-1.0.4 \
 		invariant-0.6.4_1 \
 		iproute-1.7.15 \
-		isomorphism-class-0.3 \
+		isomorphism-class-0.3.1.2 \
 		jose-jwt-0.10.0 \
-		kan-extensions-5.2.6_1 \
+		kan-extensions-5.2.7 \
 		keys-3.12.4_1 \
-		lawful-conversions-0.1.6 \
-		lens-5.2.3_5 \
+		lawful-conversions-0.1.7 \
+		lens-5.3.5 \
 		lens-aeson-1.2.3_2 \
 		math-functions-0.3.4.4 \
-		megaparsec-9.6.1 \
+		megaparsec-9.7.0 \
 		memory-0.18.0_1 \
 		mtl-compat-0.2.2 \
 		mwc-random-0.15.2.0 \
 		neat-interpolation-0.5.1.4 \
-		network-3.1.4.0_1 \
+		network-3.2.7.0 \
 		network-byte-order-0.1.7 \
-		network-control-0.0.2 \
+		network-control-0.1.7 \
 		network-info-0.2.1 \
 		network-ip-0.3.0.3 \
 		network-uri-2.6.4.2_1 \
@@ -140,23 +141,22 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		postgresql-libpq-configure-0.10.0.1 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.9.0.0_2 \
-		profunctors-5.6.2_3 \
+		primitive-0.9.1.0 \
+		profunctors-5.6.3 \
 		prometheus-client-1.1.1 \
-		protolude-0.3.4 \
+		protolude-0.3.5 \
 		psqueues-0.2.8.1 \
-		ptr-0.16.8.6 \
-		quickcheck-instances-0.3.32_1 \
-		random-1.2.1.3 \
+		ptr-0.16.8.7 \
+		quickcheck-instances-0.3.33_1 \
+		random-1.3.1 \
 		rebase-1.21.2 \
-		recv-0.1.0 \
+		recv-0.1.1 \
 		reflection-2.1.9_1 \
-		regex-base-0.94.0.2_4 \
-		regex-tdfa-1.3.2.2_3 \
+		regex-base-0.94.0.3 \
+		regex-tdfa-1.3.2.4 \
 		rerebase-1.21.2 \
 		resourcet-1.3.0 \
 		retry-0.9.3.1 \
-		safe-exceptions-0.1.7.4_1 \
 		scientific-0.3.8.0_2 \
 		selective-0.7.0.1 \
 		semialign-1.3.1_2 \
@@ -165,16 +165,16 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		simple-sendfile-0.2.32 \
 		sop-core-0.5.0.2_5 \
 		split-0.2.5 \
-		splitmix-0.1.1 \
+		splitmix-0.1.3.1 \
 		streaming-commons-0.2.3.0 \
 		strict-0.5.1_1 \
-		strict-list-0.1.7.5 \
-		swagger2-2.8.9 \
+		strict-list-0.1.7.6 \
+		swagger2-2.8.10 \
 		tagged-0.8.9 \
 		tasty-1.5.3_2 \
-		template-haskell-compat-v0208-0.1.9.4 \
-		text-builder-0.6.7.2 \
-		text-builder-dev-0.3.9 \
+		template-haskell-compat-v0208-0.1.9.5 \
+		text-builder-0.6.10 \
+		text-builder-dev-0.3.10 \
 		text-iso8601-0.1.1_2 \
 		text-latin1-0.3.1 \
 		text-metrics-0.3.3 \
@@ -184,30 +184,29 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		th-compat-0.1.6 \
 		these-1.2.1_2 \
 		time-compat-1.9.8 \
-		time-manager-0.0.1 \
+		time-manager-0.2.3 \
 		timeit-2.0_2 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		type-hint-0.1 \
-		unix-compat-0.7.3_1 \
-		unix-time-0.4.16 \
-		unliftio-0.2.25.0 \
+		unix-compat-0.7.4 \
+		unix-time-0.4.17 \
 		unliftio-core-0.2.1.0_4 \
 		unordered-containers-0.2.20_4 \
 		utf8-string-1.0.2 \
 		uuid-1.3.16_3 \
 		uuid-types-1.0.6_3 \
 		vault-0.3.1.5_10 \
-		vector-0.13.2.0_1 \
-		vector-algorithms-0.9.0.3 \
-		vector-instances-3.4.2 \
-		vector-stream-0.1.0.1_3 \
+		vector-0.13.2.0_2 \
+		vector-algorithms-0.9.1.0 \
+		vector-instances-3.4.3 \
+		vector-stream-0.1.0.1_4 \
 		void-0.7.3 \
 		wai-3.2.4 \
 		wai-cors-0.2.7 \
 		wai-extra-3.1.17 \
 		wai-logger-2.5.0 \
-		warp-3.3.31 \
+		warp-3.4.8 \
 		witherable-0.5_1 \
 		word8-0.1.3 \
 		zlib-0.7.1.0_2
