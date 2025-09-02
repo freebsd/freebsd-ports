@@ -1,4 +1,4 @@
---- cloudinit/distros/freebsd.py.orig	2024-10-25 15:58:28 UTC
+--- cloudinit/distros/freebsd.py.orig	2025-08-12 19:00:58 UTC
 +++ cloudinit/distros/freebsd.py
 @@ -35,7 +35,7 @@ class Distro(cloudinit.distros.bsd.BSD):
      pkg_cmd_update_prefix = ["pkg", "update"]

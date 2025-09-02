@@ -1,6 +1,6 @@
---- setup.py.orig	2021-03-17 15:40:30 UTC
+--- setup.py.orig	2025-08-12 19:00:58 UTC
 +++ setup.py
-@@ -153,7 +153,7 @@ INITSYS_TYPES = sorted([f.partition(".")[0] for f in I
+@@ -176,7 +176,7 @@ USR = "usr"
  # Install everything in the right location and take care of Linux (default) and
  # FreeBSD systems.
  USR = "usr"
@@ -8,4 +8,4 @@
 +ETC = "%%PREFIX%%/etc"
  USR_LIB_EXEC = "usr/lib"
  LIB = "lib"
- if os.uname()[0] in ["FreeBSD", "DragonFly"]:
+ if os.uname()[0] in ["FreeBSD", "DragonFly", "OpenBSD"]:

@@ -1,6 +1,5 @@
 PORTNAME=	cloud-init
-DISTVERSION=	24.1.4
-PORTREVISION=	4
+DISTVERSION=	25.2
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -29,10 +28,11 @@ USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	canonical
 USE_PYTHON=	autoplist distutils
-PYDISTUTILS_INSTALLARGS+=	"--init-system=sysvinit_freebsd"
 
 SHEBANG_FILES=	tools/hook-hotplug tools/read-dependencies tools/read-version \
 		tools/validate-yaml.py
+
+NO_ARCH=	yes
 
 # Conflicts
 CONFLICTS_INSTALL=	cloud-init-devel
@@ -40,13 +40,23 @@ CONFLICTS_INSTALL=	cloud-init-devel
 # Standard bsd.port.mk variables
 ETCDIR=		${PREFIX}/etc/cloud
 
+MAN1FILES=	cloud-id.1 cloud-init-per.1 cloud-init.1
+
+PLIST_FILES+=	${MAN1FILES:S|^|share/man/man1/|:S|.1$|.1.gz|}
+
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000
-EXTRA_PATCHES=	${PATCHDIR}/extra-cloudinit_distros_freebsd.py
+EXTRA_PATCHES+=	${PATCHDIR}/extra-cloudinit_distros_freebsd.py
 .endif
 
-NO_ARCH=	yes
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500000
+EXTRA_PATCHES+=	${PATCHDIR}/extra-cloudinit_netinfo.py
+.endif
+
+.include <bsd.port.pre.mk>
+
+PYDISTUTILS_INSTALLARGS+=	"--init-system=sysvinit_freebsd"
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g' ${WRKSRC}/setup.py
@@ -60,6 +70,10 @@ post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/cloud.cfg.d/99_freebsd.cfg ${STAGEDIR}${ETCDIR}/cloud.cfg.d/99_freebsd.cfg.sample
 	${REINPLACE_CMD} -e 's|^.*\.cfg$$|@sample &.sample|'  \
 		-e 's|${ETCDIR}/clean.d|@dir ${ETCDIR}/clean.d|' \
+		-e 's|${DOCSDIR}/module-docs|@dir ${DOCSDIR}/module-docs|' \
 		${_PYTHONPKGLIST}
+.for man in ${MAN1FILES}
+		${INSTALL_MAN} ${WRKSRC}/doc/man/${man} ${STAGEDIR}${PREFIX}/share/man/man1
+.endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
