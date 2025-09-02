@@ -4744,3 +4744,4 @@ editors/with-editor-devel|editors/with-editor|2025-09-01|Has expired: Use editor
 converters/pdf2djvu||2025-09-01|Has expired: Port has been abandoned upstream for almost three years: https://groups.io/g/pdf2djvu/message/146
 multimedia/py-PySceneDetect|multimedia/py-scenedetect|2025-09-01|Renamed to match the registered PYPI package name
 finance/quba-viewer||2025-09-02|Has expired: Depends on expired devel/electron32
+devel/electron32||2025-09-02|Has expired: EOLed upstream, switch to newer version
