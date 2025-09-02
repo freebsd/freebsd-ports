@@ -4753,3 +4753,4 @@ security/p5-Dancer-Plugin-Auth-Extensible-Provider-Usergroup||2025-09-02|Has exp
 security/py-onlykey||2025-09-02|Has expired: Depends on expired security/libu2f-host
 security/yubikey-manager-qt||2025-09-02|Has expired: Depends on expired security/libu2f-host via security/py-yubikey-manager
 security/yubioath-desktop||2025-09-02|Has expired: Depends on expired security/libu2f-host via security/py-yubikey-manager
+textproc/opensearch-dashboards213||2025-09-02|Has expired: Depends on expired www/npm-node18
