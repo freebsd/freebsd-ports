@@ -1,9 +1,8 @@
 PORTNAME=	getopt
-PORTVERSION=	1.1.6
-PORTREVISION=	2
+PORTVERSION=	2.41.1
 CATEGORIES=	misc
-MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${UTIL_LINUX_PORTVERSION:R}/
-DISTNAME=	util-linux-${UTIL_LINUX_PORTVERSION}
+MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${PORTVERSION:R}/
+DISTNAME=	util-linux-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Replacement for getopt(1) that supports GNU-style long options
@@ -25,8 +24,7 @@ GNU_CONFIGURE=	yes
 
 SHEBANG_FILES=	misc-utils/getopt-example.bash
 
-UTIL_LINUX_PORTVERSION=	2.39.4
-
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_SUB=	yes
 
 .include <bsd.port.mk>

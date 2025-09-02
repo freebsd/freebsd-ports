@@ -1,5 +1,5 @@
 bin/getopt
 share/bash-completion/completions/getopt
-%%PORTDOCS%%share/doc/util-linux/getopt-example.bash
-%%PORTDOCS%%share/doc/util-linux/getopt-example.tcsh
+%%PORTEXAMPLES%%share/examples/util-linux/getopt-example.bash
+%%PORTEXAMPLES%%share/examples/util-linux/getopt-example.tcsh
 share/man/man1/getopt.1.gz
