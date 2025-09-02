@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-cleanrooms
-PORTVERSION=	1.47.0
+PORTVERSION=	1.48.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
