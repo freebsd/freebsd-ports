@@ -26,10 +26,12 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	PROTOBUF
+OPTIONS_DEFINE=	PROTOBUF TRACING
 OPTIONS_DEFINE=	PROTOBUF
 PROTOBUF_DESC=	Protocol buffers support
+TRACING_DESC=	Generate traces using OpenTelemetry
 
 PROTOBUF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=3.20.2,1<7.0.0,1:devel/py-protobuf@${PY_FLAVOR}
+TRACING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.1.0<2.0.0:devel/py-opentelemetry-api@${PY_FLAVOR}
 
 .include <bsd.port.mk>
