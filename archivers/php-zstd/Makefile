@@ -1,10 +1,9 @@
 PORTNAME=	zstd
-DISTVERSION=	0.14.0
-PORTREVISION=	1
+DISTVERSION=	0.15.2
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
-MAINTAINER=	pkaipila@gmail.com
+MAINTAINER=	pkapila@gmail.com
 COMMENT=	Zstandard extension for PHP
 WWW=		https://github.com/kjdev/php-ext-zstd
 
@@ -21,12 +20,4 @@ GH_PROJECT=	php-ext-zstd
 
 CONFIGURE_ARGS=	--with-libzstd
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${PHP_VER} >= 85
-	@${REINPLACE_CMD} -e 's|ext/standard/php_smart_string|Zend/zend_smart_string|' \
-		${WRKSRC}/zstd.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
