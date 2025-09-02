@@ -14,8 +14,7 @@ DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.0:chromium \
 		pulseaudio-${PULSEV}.tar.gz:pulseaudio \
 		electron-yarn-cache-${ELECTRON_VER}${EXTRACT_SUFX}:prefetch
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX} \
-		${DISTFILES:C/:[^:]+$//:C/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}\.[0-9]//}
+EXTRACT_ONLY=	${DISTFILES:C/:[^:]+$//:C/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}\.[0-9]//}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Build cross-platform desktop apps with JavaScript, HTML, and CSS
@@ -218,7 +217,7 @@ PIPEWIRE_VARS_OFF=	GN_ARGS+=rtc_use_pipewire=false \
 			GN_ARGS+=rtc_link_pipewire=false
 
 PULSEAUDIO_VARS=	GN_ARGS+=use_pulseaudio=true \
-			PINCLUDES="-I${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/pulseaudio-${PULSEV}/src -DPA_MAJOR=${PULSEMV}"
+			PINCLUDES="-I${WRKSRC:H}/pulseaudio-${PULSEV}/src -DPA_MAJOR=${PULSEMV}"
 PULSEAUDIO_VARS_OFF=	GN_ARGS+=use_pulseaudio=false
 
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
@@ -327,30 +326,32 @@ pre-fetch:
 	fi
 
 pre-extract:
-	@if [ ! -f ${DISTDIR}/${DIST_SUBDIR}/chromium-${CHROMIUM_VER}${EXTRACT_SUFX} ]; then \
-		${CAT} ${DISTDIR}/${DIST_SUBDIR}/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.? > \
-			${DISTDIR}/${DIST_SUBDIR}/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}; \
-	fi
+# Chromium source tarball is splitted into multiple fragments. Concatenate them
+# into a single one and manually extract it into WRKDIR.
+	@${CAT} ${DISTDIR}/${DIST_SUBDIR}/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.? > \
+		${WRKSRC:H}/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}
+	@cd ${WRKSRC:H} && \
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		chromium-${CHROMIUM_VER}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
 
 post-extract:
 # Move extracted sources to appropriate locations
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/chromium-${CHROMIUM_VER} ${WRKSRC}
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${PORTNAME}-${ELECTRON_VER} ${WRKSRC}/electron
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_nan}-${NAN_VER} \
-		${WRKSRC}/third_party/nan
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_node}-${NODE_VER} \
+	${MV} ${WRKSRC:H}/chromium-${CHROMIUM_VER} ${WRKSRC}
+	${MV} ${WRKSRC:H}/${PORTNAME}-${ELECTRON_VER} ${WRKSRC}/electron
+	${MV} ${WRKSRC:H}/${GH_PROJECT_nan}-${NAN_VER} ${WRKSRC}/third_party/nan
+	${MV} ${WRKSRC:H}/${GH_PROJECT_node}-${NODE_VER} \
 		${WRKSRC}/third_party/electron_node
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_squirrel_mac}-${SQUIRREL_MAC_VER} \
+	${MV} ${WRKSRC:H}/${GH_PROJECT_squirrel_mac}-${SQUIRREL_MAC_VER} \
 		${WRKSRC}/third_party/squirrel.mac
-	${MKDIR} ${WRKSRC}/third_party/squirrel.mac/vendor
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_reactiveobjc}-${REACTIVEOBJC_VER} \
+	@${MKDIR} ${WRKSRC}/third_party/squirrel.mac/vendor
+	${MV} ${WRKSRC:H}/${GH_PROJECT_reactiveobjc}-${REACTIVEOBJC_VER} \
 		${WRKSRC}/third_party/squirrel.mac/vendor/ReactiveObjC
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_mantle}-${MANTLE_VER} \
+	${MV} ${WRKSRC:H}/${GH_PROJECT_mantle}-${MANTLE_VER} \
 		${WRKSRC}/third_party/squirrel.mac/vendor/Mantle
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_reclient_configs}-${ENGFLOW_RECLIENT_CONFIGS_VER} \
+	${MV} ${WRKSRC:H}/${GH_PROJECT_reclient_configs}-${ENGFLOW_RECLIENT_CONFIGS_VER} \
 		${WRKSRC}/third_party/engflow-reclient-configs
 # Install node modules for electron
-	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/yarn-offline-cache ${WRKDIR}
+	${MV} ${WRKSRC:H}/yarn-offline-cache ${WRKDIR}
 	${ECHO_CMD} 'yarn-offline-mirror "../../../yarn-offline-cache"' >> ${WRKSRC}/electron/.yarnrc
 	${MV} ${WRKSRC}/electron/package.json ${WRKSRC}/electron/package.json.bak
 	${CP} ${FILESDIR}/package.json ${WRKSRC}/electron
@@ -380,7 +381,7 @@ pre-configure:
 .for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
 	-${CP} -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
-	touch ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/pulseaudio-${PULSEV}/src/pulse/version.h
+	touch ${WRKSRC:H}/pulseaudio-${PULSEV}/src/pulse/version.h
 	@${REINPLACE_CMD} -e 's|$${LOCALBASE}|${LOCALBASE}|;s|$${MODCLANG_VERSION}|${LLVM_DEFAULT}|' \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni
