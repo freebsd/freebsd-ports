@@ -88,6 +88,7 @@ include/openssl/time.h
 include/openssl/tls1.h
 include/openssl/trust_token.h
 include/openssl/type_check.h
+include/openssl/ui.h
 include/openssl/x509.h
 include/openssl/x509_vfy.h
 include/openssl/x509v3.h
