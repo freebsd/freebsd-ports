@@ -4,7 +4,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	https://www.net2ftp.com/download/
 DISTNAME=	net2ftp_v${PORTVERSION}
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based FTP client written in PHP
 WWW=		https://www.net2ftp.com/
 
