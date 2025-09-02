@@ -1,5 +1,5 @@
 PORTNAME=	niquests
-PORTVERSION=	3.14.1
+PORTVERSION=	3.15.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/jawah/niquests/releases/download/v${PORTVERSION}/
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.6.0<2:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=2<4:textproc/py-charset-normalizer@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}urllib3-future>=2.12.900<3:net/py-urllib3-future@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wassima>=1.0.1<2:security/py-wassima@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}urllib3-future>=2.13.903<3:net/py-urllib3-future@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wassima>=1.0.1<3:security/py-wassima@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
