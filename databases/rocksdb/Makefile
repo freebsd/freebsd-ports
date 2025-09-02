@@ -1,5 +1,5 @@
 PORTNAME=	rocksdb
-PORTVERSION=	10.4.2
+PORTVERSION=	10.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -59,7 +59,7 @@ ZSTD_MAKE_ENV_OFF=	ROCKSDB_DISABLE_ZSTD=yes
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
-CXXFLAGS+=	-Wno-unused-parameter -Wno-unused-variable
+CXXFLAGS+=	-Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable
 .if ${COMPILER_VERSION} >= 170
 CXXFLAGS+=	-Wno-sync-alignment
 .endif

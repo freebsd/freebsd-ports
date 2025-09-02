@@ -90,6 +90,7 @@ include/rocksdb/transaction_log.h
 include/rocksdb/types.h
 include/rocksdb/unique_id.h
 include/rocksdb/universal_compaction.h
+include/rocksdb/user_defined_index.h
 include/rocksdb/user_write_callback.h
 include/rocksdb/utilities/agg_merge.h
 include/rocksdb/utilities/backup_engine.h
