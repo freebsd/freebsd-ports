@@ -1,0 +1,23 @@
+--- pyproject.toml.orig	2025-08-09 03:14:52 UTC
++++ pyproject.toml
+@@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools>=61"]
+ 
+ [project]
+ name = "types-psycopg2"
+ version = "2.9.21.20250809"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = { text = "Apache-2.0" }
+ description = "Typing stubs for psycopg2"
+ readme = { text = """\
+ ## Typing stubs for psycopg2
+@@ -46,5 +45,4 @@ dependencies = []
+ "Chat" = "https://gitter.im/python/typing"
+ 
+ [tool.setuptools]
+-packages = ['psycopg2-stubs']
+ include-package-data = false
