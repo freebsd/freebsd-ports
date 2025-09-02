@@ -1,6 +1,5 @@
 PORTNAME=	wagtail
-PORTVERSION=	7.0.2
-PORTREVISION=	1
+PORTVERSION=	7.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}django-modelcluster>=6.2.1<7.0:www/py-django-modelcluster@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-permissionedforms>=0.1<1.0:www/py-django-permissionedforms@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-taggit>=5.0<7:www/py-django-taggit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-tasks>=0.7:www/py-django-tasks@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-tasks>=0.8<0.9:www/py-django-tasks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-treebeard>=4.5.1<5.0:www/py-django-treebeard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.15.1,1<4.0,1:www/py-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}draftjs-exporter>=2.1.5<6.0:www/py-draftjs-exporter@${PY_FLAVOR} \
