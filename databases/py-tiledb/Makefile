@@ -1,5 +1,5 @@
 PORTNAME=	tiledb
-PORTVERSION=	0.34.1
+PORTVERSION=	0.34.2
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libtiledb.so:databases/tiledb
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.25,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
 
-USES=		cmake:indirect compiler:c++17-lang localbase python:3.9+
+USES=		cmake:indirect compiler:c++17-lang localbase python
 USE_PYTHON=	autoplist concurrent pep517
 
 MAKE_ENV=	TILEDB_PATH=${LOCALBASE}
