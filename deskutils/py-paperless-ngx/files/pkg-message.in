@@ -52,4 +52,15 @@ If you did not alter your workflow triggers after upgrading from v2.15,
 no changes are required.
 EOM
 }
+{ type: upgrade
+  maximum_version: "2.18.2_2"
+  message: <<EOM
+Starting with version 2.18, paperless-ngx uses ES6 module files using
+the file extension `mjs`. These need to be served using the media type
+`text/javascript`.
+
+See %%EXAMPLESDIR%%/nginx.conf for an example
+of how this can be configured when using nginx.
+EOM
+}
 ]
