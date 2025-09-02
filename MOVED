@@ -4755,3 +4755,4 @@ security/yubikey-manager-qt||2025-09-02|Has expired: Depends on expired security
 security/yubioath-desktop||2025-09-02|Has expired: Depends on expired security/libu2f-host via security/py-yubikey-manager
 textproc/opensearch-dashboards213||2025-09-02|Has expired: Depends on expired www/npm-node18
 textproc/opensearch-dashboards210||2025-09-02|Has expired: Depends on expired www/npm-node18
+textproc/opensearch-dashboards216||2025-09-02|Has expired: Depends on expired www/npm-node18
