@@ -4748,3 +4748,4 @@ devel/electron32||2025-09-02|Has expired: EOLed upstream, switch to newer versio
 devel/rubygem-thor13|devel/rubygem-thor|2025-09-02|Remove obsoleted port. Use devel/rubygem-thor instead
 devel/rubygem-xdg2|devel/rubygem-xdg|2025-09-02|Remove obsoleted port. Use devel/rubygem-xdg instead
 math/libmissing||2025-09-02|Has expired: Old. FreeBSD's libm improved since 2012 when this was imported
+security/p5-Dancer2-Plugin-Auth-Extensible-Provider-Usergroup||2025-09-02|Has expired: Depends on expired security/p5-Data-Entropy via security/p5-Dancer2-Plugin-Passphrase
