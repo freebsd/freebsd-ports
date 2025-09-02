@@ -4764,3 +4764,4 @@ security/p5-Dancer2-Plugin-Passphrase||2025-09-02|Has expired: Depends on expire
 security/p5-Data-Entropy||2025-09-02|Has expired: The maintainer of this distribution has indicated that it is deprecated and no longer suitable for use
 security/libu2f-host||2025-09-02|Has expired: This project is deprecated and is no longer being maintained. libfido2 is a new project with support for U2F and FIDO2. Use security/libfido2 instead
 net-mgmt/nagcon||2025-09-02|Has expired: Obsolete, only supports legacy versions of Nagios
+www/yarn-node18||2025-09-02|Has expired: Depeneds on expired www/node18. Node.js 18.* has reached its EoL on 2025-04-30
