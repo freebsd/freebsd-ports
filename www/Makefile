@@ -803,7 +803,6 @@
     SUBDIR += p5-Dancer2-Plugin-Ajax
     SUBDIR += p5-Dancer2-Plugin-Deferred
     SUBDIR += p5-Dancer2-Plugin-FormValidator
-    SUBDIR += p5-Dancer2-Plugin-Interchange6
     SUBDIR += p5-Dancer2-Plugin-Path-Class
     SUBDIR += p5-Data-TreeDumper-Renderer-DHTML
     SUBDIR += p5-Data-Validate-URI

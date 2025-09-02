@@ -4757,3 +4757,4 @@ textproc/opensearch-dashboards213||2025-09-02|Has expired: Depends on expired ww
 textproc/opensearch-dashboards210||2025-09-02|Has expired: Depends on expired www/npm-node18
 textproc/opensearch-dashboards216||2025-09-02|Has expired: Depends on expired www/npm-node18
 net-mgmt/netdisco||2025-09-02|Has expired: Depends on expired security/p5-Data-Entropy via security/p5-Dancer-Plugin-Passphrase
+www/p5-Dancer2-Plugin-Interchange6||2025-09-02|Has expired: Depends on expired security/p5-Data-Entropy via databases/p5-Interchange6-Schema
