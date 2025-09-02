@@ -12,7 +12,7 @@ DISTFILES?=	${NIGHTLY_DATE:D${NIGHTLY_DATE}/}${DISTNAME}${EXTRACT_SUFX}:src \
 		${_RUST_STD_BOOTSTRAP}${EXTRACT_SUFX}:bootstrap \
 		${_CARGO_BOOTSTRAP}${EXTRACT_SUFX}:bootstrap
 DIST_SUBDIR?=	rust
-PKGNAMESUFFIX=	182
+PKGNAMESUFFIX=	188
 
 MAINTAINER=	rust@FreeBSD.org
 COMMENT=	Language with a focus on memory safety and concurrency (deprecated 1.88.* series)
