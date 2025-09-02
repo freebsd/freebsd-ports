@@ -224,6 +224,7 @@
     SUBDIR += rubygem-prawn-rails
     SUBDIR += rubygem-prawn-security
     SUBDIR += rubygem-prawn-svg
+    SUBDIR += rubygem-prawn-svg036
     SUBDIR += rubygem-prawn-table
     SUBDIR += rubygem-prawn-templates
     SUBDIR += rubygem-prawn24
