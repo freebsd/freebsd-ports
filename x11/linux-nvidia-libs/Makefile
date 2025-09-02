@@ -168,6 +168,8 @@ LINUX_LINKS+=   libnvidia-egl-wayland.so.${NV_EGL_W_VERSION} libnvidia-egl-wayla
 .  if ${NVVERSION} >= 570.12400 # 570.124 added 32bit version supports
 LINUX32_LIBS+=	libnvidia-egl-wayland.so.${NV_EGL_W_VERSION}
 LINUX32_LINKS+=	libnvidia-egl-wayland.so.${NV_EGL_W_VERSION} libnvidia-egl-wayland.so.1
+.else
+PLIST_RE+=	'\,${LINUXBASE}.*lib\/libnvidia-egl-wayland\.so,d'
 .  endif # 570.124
 PLIST_RE+=      '\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.${NV_EGL_W_VERSION}/'
 .else

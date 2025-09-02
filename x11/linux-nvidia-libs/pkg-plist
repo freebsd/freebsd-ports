@@ -48,6 +48,8 @@
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-gbm.so
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-gbm.so.1
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-gbm.so.X
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-wayland.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-wayland.so.X
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-xcb.so
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-xcb.so.1
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-xcb.so.X
