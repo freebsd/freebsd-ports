@@ -152,7 +152,6 @@
     SUBDIR += mtrace
     SUBDIR += mysql-snmp
     SUBDIR += mysqld_exporter
-    SUBDIR += nagcon
     SUBDIR += nagios
     SUBDIR += nagios-certexp-plugin
     SUBDIR += nagios-check_bacula13
