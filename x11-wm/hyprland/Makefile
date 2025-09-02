@@ -92,7 +92,7 @@ post-install:
 .include <bsd.port.mk>
 
 # XXX COMPILER_TYPE is defined after USES was already parsed
-.if "${CHOSEN_COMPILER_TYPE}-${_OSRELEASE:C/.*-//}" == "clang-CURRENT"
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${_CCVERSION:M+assertions}
 llvm_ARGS=	build
 .include "${USESDIR}/llvm.mk"
 .endif
