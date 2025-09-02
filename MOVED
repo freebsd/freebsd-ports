@@ -4756,3 +4756,4 @@ security/yubioath-desktop||2025-09-02|Has expired: Depends on expired security/l
 textproc/opensearch-dashboards213||2025-09-02|Has expired: Depends on expired www/npm-node18
 textproc/opensearch-dashboards210||2025-09-02|Has expired: Depends on expired www/npm-node18
 textproc/opensearch-dashboards216||2025-09-02|Has expired: Depends on expired www/npm-node18
+net-mgmt/netdisco||2025-09-02|Has expired: Depends on expired security/p5-Data-Entropy via security/p5-Dancer-Plugin-Passphrase
