@@ -1,5 +1,5 @@
 PORTNAME=	chef-winrm
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
