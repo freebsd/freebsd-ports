@@ -461,7 +461,6 @@
     SUBDIR += libformfactor
     SUBDIR += libhomfly
     SUBDIR += libmesh
-    SUBDIR += libmissing
     SUBDIR += libnormaliz
     SUBDIR += libocas
     SUBDIR += liborigin
