@@ -26,13 +26,15 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	JSON LUA PROBABILISTIC
+OPTIONS_DEFINE=	JSON LUA PROBABILISTIC VALKEY
 LUA_DESC=		Lua support
 PROBABILISTIC_DESC=	Probabilistic data structure support
+VALKEY_DESC=		Valkey support
 
 JSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonpath-ng>=1.5<2:devel/py-jsonpath-ng@${PY_FLAVOR}
 LUA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lupa>=2.1<3.0:lang/py-lupa@${PY_FLAVOR}
 PROBABILISTIC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyprobables>=0.6<1:math/py-pyprobables@${PY_FLAVOR}
+VALKEY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}valkey>=6:databases/py-valkey@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
