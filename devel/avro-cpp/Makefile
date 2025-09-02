@@ -11,8 +11,6 @@ COMMENT=	C++ library for Apache Avro
 WWW=		https://avro.apache.org/ \
 		https://github.com/apache/avro
 
-BROKEN=		Lots of cmake warnings, does not find snappy, does not link libfmt dynamically
-
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
