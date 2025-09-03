@@ -498,7 +498,6 @@
     SUBDIR += nginx-vts-exporter
     SUBDIR += nift
     SUBDIR += node
-    SUBDIR += node18
     SUBDIR += node20
     SUBDIR += node22
     SUBDIR += node24

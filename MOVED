@@ -4766,3 +4766,4 @@ security/libu2f-host||2025-09-02|Has expired: This project is deprecated and is 
 net-mgmt/nagcon||2025-09-02|Has expired: Obsolete, only supports legacy versions of Nagios
 www/yarn-node18||2025-09-02|Has expired: Depeneds on expired www/node18. Node.js 18.* has reached its EoL on 2025-04-30
 www/npm-node18||2025-09-03|Has expired: Depeneds on expired www/node18. Node.js 18.* has reached its EoL on 2025-04-30
+www/node18||2025-09-03|Has expired: Node.js 18.* has reached its EoL on 2025-04-30. Use Node.js 22.* (www/node22) instead
