@@ -1,5 +1,6 @@
 PORTNAME=	kibana
 DISTVERSION=	8.11.3
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-linux-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
@@ -13,13 +14,10 @@ WWW=		https://www.elastic.co/products/kibana
 
 LICENSE=	APACHE20
 
-DEPRECATED=	Depends on expired www/*node18
-EXPIRATION_DATE=2025-09-01
-
-BUILD_DEPENDS=	npm-node18>=9.7.2:www/npm-node18
+BUILD_DEPENDS=	npm-node20>=9.7.2:www/npm-node20
 LIB_DEPENDS=	libre2.so:devel/re2 \
 		libuv.so:devel/libuv
-RUN_DEPENDS=	${LOCALBASE}/bin/node:www/node18
+RUN_DEPENDS=	${LOCALBASE}/bin/node:www/node20
 
 USES=		compiler:c++17-lang cpe nodejs:18,build,run python:build
 CPE_VENDOR=	elastic
