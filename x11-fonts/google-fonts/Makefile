@@ -10,6 +10,9 @@ WWW=		https://fonts.google.com/
 LICENSE=	APACHE20 OFL11
 LICENSE_COMB=	multi
 
+DEPRECATED=	Depends on expired x11-fonts/gentium-basic
+EXPIRATION_DATE=2025-12-03
+
 RUN_DEPENDS=	Andika>0:x11-fonts/andika \
 		GentiumBasic>0:x11-fonts/gentium-basic \
 		alef>0:x11-fonts/alef \
