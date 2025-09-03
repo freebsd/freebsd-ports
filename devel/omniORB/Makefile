@@ -15,8 +15,6 @@ NOT_FOR_ARCHS_REASON=	use of overloaded operator '[]' is ambiguous (with operand
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		gmake pkgconfig python shebangfix ssl tar:bzip2
-BROKEN_SSL=	openssl
-BROKEN_SSL_REASON_openssl=	member access into incomplete type 'DH' (aka 'dh_st')
 USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
 
