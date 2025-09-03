@@ -1,5 +1,5 @@
 PORTNAME=	vieb
-DISTVERSION=	12.3.0
+DISTVERSION=	12.4.0
 PORTREVISION=	0
 CATEGORIES=	www linux
 MASTER_SITES=	https://github.com/Jelmerro/Vieb/releases/download/${DISTVERSION}/ \
