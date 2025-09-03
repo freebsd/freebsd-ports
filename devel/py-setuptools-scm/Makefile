@@ -1,6 +1,6 @@
 PORTNAME=	setuptools-scm
 PORTVERSION=	8.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -45,5 +45,6 @@ PYTEST_IGNORED_TESTS=	test_dump_version_on_old_python \
 
 post-patch:
 	@${REINPLACE_CMD} -e '497,521s|"gpg|"gpg2|' ${WRKSRC}/testing/test_git.py
+	@${REINPLACE_CMD} -e 's/"GIT_SSH", "GIT_SSH_COMMAND"/"GIT_SSH", "GIT_SSH_COMMAND", "GIT_CEILING_DIRECTORIES"/' ${WRKSRC}/src/setuptools_scm/_run_cmd.py
 
 .include <bsd.port.mk>
