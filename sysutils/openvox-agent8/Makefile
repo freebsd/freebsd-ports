@@ -1,6 +1,5 @@
 PORTNAME=	openvox-agent
-PORTVERSION=	8.21.0
-PORTREVISION=	1
+PORTVERSION=	8.22.0
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	8
@@ -12,14 +11,18 @@ WWW=		https://github.com/OpenVoxProject/openvox
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
+RUN_DEPENDS=	rubygem-base64>=0.1:converters/rubygem-base64 \
+		rubygem-benchmark>=0.1:benchmarks/rubygem-benchmark \
+		rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
 		rubygem-deep_merge>1.0:devel/rubygem-deep_merge \
 		rubygem-fast_gettext>=2.1:devel/rubygem-fast_gettext \
 		rubygem-getoptlong>=0.2.0:devel/rubygem-getoptlong \
 		rubygem-locale>=2.1:devel/rubygem-locale \
 		rubygem-multi_json>=1.13:devel/rubygem-multi_json \
 		rubygem-openfact>=5.0.0:sysutils/rubygem-openfact \
+		rubygem-ostruct>=0.6.0:devel/rubygem-ostruct \
 		rubygem-puppet-resource_api>=1.5:devel/rubygem-puppet-resource_api \
+		rubygem-racc>=1.5:devel/rubygem-racc \
 		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas \
 		rubygem-scanf>=1.0:devel/rubygem-scanf \
 		rubygem-semantic_puppet>=1.0:devel/rubygem-semantic_puppet
