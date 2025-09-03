@@ -1,6 +1,6 @@
 --- CMakeLists.txt.orig	2018-03-16 17:25:33 UTC
 +++ CMakeLists.txt
-@@ -91,7 +91,6 @@ function(add_linker_flags)
+@@ -91,7 +91,6 @@ endfunction()
  	endforeach()
  endfunction()
  
@@ -8,7 +8,16 @@
  if(USE_GCC_STYLE_LTCG)
  	set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -flto")
  	set(CMAKE_CXX_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS_MINSIZEREL} -flto")
-@@ -337,8 +336,6 @@ if(READLINE_FOUND)
+@@ -167,7 +166,7 @@ if(UNIX)
+ endif()
+ 
+ if(UNIX)
+-	add_definitions("-DOC_SYSTEM_DATA_DIR=\"${CMAKE_INSTALL_PREFIX}/share/games/openclonk\"")
++	add_definitions("-DOC_SYSTEM_DATA_DIR=\"${CMAKE_INSTALL_PREFIX}/share/openclonk\"")
+ endif()
+ 
+ if(APPLE)
+@@ -337,8 +336,6 @@ SET(HAVE_LIBREADLINE ${READLINE_FOUND} CACHE INTERNAL 
  endif()
  SET(HAVE_LIBREADLINE ${READLINE_FOUND} CACHE INTERNAL "libreadline available")
  
@@ -17,7 +26,7 @@
  # Select an audio library
  find_package("Audio")
  if(Audio_FOUND)
-@@ -356,8 +353,6 @@ set(HAVE_SDL ${SDL2_FOUND})
+@@ -356,8 +353,6 @@ include_directories(SYSTEM ${SDL2_INCLUDE_DIRS})
  include_directories(SYSTEM ${SDL2_INCLUDE_DIRS})
  
  # Qt5 for editor
@@ -26,3 +35,28 @@
  if(Qt5Widgets_FOUND)
  	SET(WITH_QT_EDITOR ${Qt5Widgets_FOUND} "Qt editor dialogues available")
  	set(CMAKE_AUTOMOC ON)
+@@ -1537,13 +1532,13 @@ foreach(group ${OC_C4GROUPS})
+ 			DEPENDS "${native_c4group}"
+ 			VERBATIM
+ 		)
+-		install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${group} DESTINATION share/games/openclonk)
++		install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${group} DESTINATION share/openclonk)
+ 	endif()
+ endforeach()
+ 
+ if(NOT APPLE)
+ 	if(NOT HEADLESS_ONLY)
+-		install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/planet/Music.ocg DESTINATION share/games/openclonk)
++		install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/planet/Music.ocg DESTINATION share/openclonk)
+ 	endif()
+ 	# group files (game data)
+ 	add_custom_target(groups DEPENDS ${OC_C4GROUPS})
+@@ -1563,7 +1558,7 @@ if(NOT HEADLESS_ONLY)
+ 		install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/openclonk.appdata.xml DESTINATION share/appdata)
+ 
+ 		# Install binaries
+-		install(TARGETS openclonk DESTINATION games)
++		install(TARGETS openclonk DESTINATION bin)
+ 	else()
+ 		install(TARGETS openclonk
+ 			BUNDLE DESTINATION .
