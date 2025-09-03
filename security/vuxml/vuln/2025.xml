@@ -1,3 +1,36 @@
+  <vuln vid="9f9b0b37-88fa-11f0-90a2-6cc21735f730">
+    <topic>Shibboleth Service Provider -- SQL injection vulnerability in ODBC plugin</topic>
+    <affects>
+      <package>
+	<name>shibboleth-sp</name>
+	<range><lt>3.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Internet2 reports:</p>
+	<blockquote cite="https://shibboleth.net/community/advisories/secadv_20250903.txt">
+	  <p>The Shibboleth Service Provider includes a storage API usable
+	  for a number of different use cases such as the session cache,
+	  replay cache, and relay state management. An ODBC extension
+	  plugin is provided with some distributions of the software
+	  (notably on Windows).</p>
+	  <p>A SQL injection vulnerability was identified in some of the
+	  queries issued by the plugin, and this can be creatively
+	  exploited through specially crafted inputs to exfiltrate
+	  information stored in the database used by the SP.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://shibboleth.net/community/advisories/secadv_20250903.txt</url>
+    </references>
+    <dates>
+      <discovery>2025-09-03</discovery>
+      <entry>2025-09-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aaa060af-88d6-11f0-a294-b0416f0c4c67">
     <topic>Vieb -- Remote Code Execution via Visiting Untrusted URLs</topic>
     <affects>
