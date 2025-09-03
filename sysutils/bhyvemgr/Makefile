@@ -1,6 +1,6 @@
 PORTNAME=	bhyvemgr
 DISTVERSIONPREFIX=	v
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -60,13 +60,13 @@ USE_GNOME+=	${USE_GNOME_${FLAVOR}}
 SUB_FILES=	pkg-message
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/setup/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/512x512/apps
 	${INSTALL_DATA} ${WRKSRC}/setup/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/512x512/apps/${PORTNAME}.png
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_DATA} ${WRKSRC}/setup/${PORTNAME}.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}.svg
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "images samples templates" ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "images languages samples templates" ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>

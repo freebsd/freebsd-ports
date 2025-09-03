@@ -56,6 +56,9 @@ share/applications/bhyvemgr.desktop
 %%DATADIR%%/images/systems/rockylinux.png
 %%DATADIR%%/images/systems/ubuntu.png
 %%DATADIR%%/images/systems/windows.png
+%%DATADIR%%/languages/bhyvemgr.es.po
+%%DATADIR%%/languages/bhyvemgr.pot
+%%DATADIR%%/languages/lcl/lclstrconsts.es.po
 %%DATADIR%%/samples/meta-data
 %%DATADIR%%/samples/network-config
 %%DATADIR%%/samples/user-data
