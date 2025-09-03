@@ -1545,6 +1545,7 @@
     SUBDIR += py-dj51-django-js-asset
     SUBDIR += py-dj51-django-mptt
     SUBDIR += py-dj51-django-multiselectfield
+    SUBDIR += py-dj51-django-netfields
     SUBDIR += py-dj51-django-prometheus
     SUBDIR += py-dj51-django-redis
     SUBDIR += py-dj51-django-rich
