@@ -1,6 +1,5 @@
 PORTNAME=	urbackup-client
-DISTVERSION=	2.5.25.0
-PORTREVISION=	1
+DISTVERSION=	2.5.26.0
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Client/${DISTVERSION:R}/
 
@@ -44,10 +43,8 @@ CXXFLAGS+=	-DCRYPTOPP_DISABLE_ASM
 post-patch:
 	${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" \
 		${WRKSRC}/urbackupclient/backup_scripts/postgresqldump
-	${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} \
-		-e 's|std::char_traits|std::vector|g' \
-		-e 's|std::basic_string|std::vector|g' \
-		-e 's|auto_ptr|unique_ptr|g' {} +
+	${FIND} ${WRKSRC} -type f \( -name '*.cpp' -o -name '*.h' \) \
+		-exec ${REINPLACE_CMD} -e 's|auto_ptr|unique_ptr|g' {} +
 
 post-stage:
 	${INSTALL_DATA} ${WRKDIR}/urbackupclient.conf.sample-daemon \

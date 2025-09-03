@@ -1,13 +1,16 @@
 bin/blockalign
 bin/urbackupclientctl
-sbin/urbackupclientbackend
-share/man/man1/urbackupclientbackend.1.gz
-@mode 0600
+etc/newsyslog.conf.d/urbackupclient.conf
+@mode 0640
 @sample etc/urbackup/mariadbdump.conf.sample
 @sample etc/urbackup/mariadbxtrabackup.conf.sample
 @sample etc/urbackup/postgresbase.conf.sample
 @sample etc/urbackup/postgresqldump.conf.sample
-@mode 0700
+@sample etc/urbackup/urbackupclient.conf.sample
+@mode
+sbin/urbackupclientbackend
+share/man/man1/urbackupclientbackend.1.gz
+@mode 0750
 share/urbackup/scripts/list
 share/urbackup/scripts/list_incr
 share/urbackup/scripts/mariadbdump
@@ -22,9 +25,7 @@ share/urbackup/scripts/postgresqlprebackup
 share/urbackup/scripts/restore-mariadbbackup
 share/urbackup/scripts/setup-mariadbbackup
 share/urbackup/scripts/setup-postgresbackup
-@mode 0644
-@sample etc/urbackup/urbackupclient.conf.sample
-etc/newsyslog.conf.d/urbackupclient.conf
+@mode 0640
 share/urbackup/updates_h.dat
 @dir(,,0700) /var/urbackup/data
 @dir(urbackup,urbackup,0755) /var/urbackup
