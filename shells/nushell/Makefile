@@ -1,6 +1,5 @@
 PORTNAME=	nushell
-DISTVERSION=	0.106.1
-PORTREVISION=	1
+DISTVERSION=	0.107.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -89,6 +88,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		brotli-7.0.0 \
 		brotli-decompressor-4.0.1 \
 		bstr-1.11.1 \
+		buf-trait-0.4.1 \
 		bumpalo-3.16.0 \
 		bytecount-0.6.8 \
 		bytemuck-1.23.0 \
@@ -97,10 +97,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bytes-1.10.0 \
 		bytes-utils-0.1.4 \
 		bytesize-1.3.3 \
+		byteyarn-0.5.1 \
 		calamine-0.28.0 \
 		cassowary-0.3.0 \
 		castaway-0.2.3 \
 		cc-1.2.16 \
+		cesu8-1.1.0 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
@@ -121,6 +123,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		codepage-0.1.2 \
 		colorchoice-1.0.3 \
 		colorz-1.1.4 \
+		combine-4.6.7 \
 		comfy-table-7.1.3 \
 		compact_str-0.8.0 \
 		concurrent-queue-2.5.0 \
@@ -202,7 +205,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		event-listener-strategy-0.5.4 \
 		fallible-iterator-0.3.0 \
 		fallible-streaming-iterator-0.1.9 \
-		fancy-regex-0.14.0 \
+		fancy-regex-0.16.1 \
 		fast-float2-0.2.3 \
 		fastrand-2.3.0 \
 		fd-lock-4.0.2 \
@@ -250,7 +253,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.2 \
 		hashlink-0.9.1 \
-		heapless-0.8.0 \
+		heapless-0.9.1 \
 		heck-0.5.0 \
 		hex-0.4.3 \
 		hmac-0.12.1 \
@@ -258,7 +261,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		html5ever-0.27.0 \
 		html5ever-0.29.0 \
 		http-0.2.12 \
-		http-1.2.0 \
+		http-1.3.1 \
 		http-body-0.4.6 \
 		http-body-1.0.1 \
 		http-body-util-0.1.2 \
@@ -288,7 +291,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ident_case-1.0.1 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
-		indexmap-2.10.0 \
+		indexmap-2.11.0 \
 		indicatif-0.17.11 \
 		indoc-2.0.5 \
 		inotify-0.9.6 \
@@ -307,12 +310,15 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.14 \
+		jni-0.21.1 \
+		jni-sys-0.3.0 \
 		jobserver-0.1.32 \
 		js-sys-0.3.76 \
 		jsonpath_lib_polars_vendor-0.0.1 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
+		lean_string-0.5.0 \
 		libc-0.2.174 \
 		libflate-1.4.0 \
 		libflate_lz77-1.2.0 \
@@ -332,7 +338,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		litrs-0.4.1 \
 		lock_api-0.4.12 \
 		lockfree-object-pool-0.1.6 \
-		log-0.4.22 \
+		log-0.4.27 \
 		lru-0.12.5 \
 		lscolors-0.20.0 \
 		lsp-server-0.7.8 \
@@ -341,7 +347,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lz4-1.28.0 \
 		lz4-sys-1.11.1+lz4-1.10.0 \
 		mac-0.1.1 \
-		mach2-0.4.2 \
+		mach2-0.4.3 \
 		markup5ever-0.12.1 \
 		markup5ever-0.14.0 \
 		markup5ever_rcdom-0.3.0 \
@@ -394,7 +400,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		objc2-quartz-core-0.2.2 \
 		object-0.36.5 \
 		object_store-0.12.1 \
-		oem_cp-2.0.0 \
+		oem_cp-2.1.0 \
 		omnipath-0.1.6 \
 		once_cell-1.20.2 \
 		open-5.3.1 \
@@ -501,14 +507,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rand_distr-0.4.3 \
 		ratatui-0.29.0 \
 		raw-cpuid-11.2.0 \
-		rayon-1.10.0 \
-		rayon-core-1.12.1 \
+		rayon-1.11.0 \
+		rayon-core-1.13.0 \
 		recursive-0.1.1 \
 		recursive-proc-macro-impl-0.1.1 \
 		recvmsg-1.0.0 \
 		redox_syscall-0.5.8 \
 		redox_users-0.4.6 \
-		reedline-0.41.0 \
+		reedline-0.42.0 \
 		ref-cast-1.0.23 \
 		ref-cast-impl-1.0.23 \
 		regex-1.11.1 \
@@ -539,14 +545,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustix-0.38.42 \
 		rustix-1.0.7 \
 		rustls-0.21.12 \
-		rustls-0.23.20 \
+		rustls-0.23.28 \
 		rustls-native-certs-0.6.3 \
 		rustls-native-certs-0.8.1 \
 		rustls-pemfile-1.0.4 \
 		rustls-pemfile-2.2.0 \
-		rustls-pki-types-1.10.0 \
+		rustls-pki-types-1.12.0 \
+		rustls-platform-verifier-0.5.3 \
+		rustls-platform-verifier-android-0.1.1 \
 		rustls-webpki-0.101.7 \
-		rustls-webpki-0.102.8 \
+		rustls-webpki-0.103.3 \
 		rustversion-1.0.18 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
@@ -619,10 +627,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.1 \
 		sys-locale-0.3.2 \
-		sysinfo-0.36.0 \
+		sysinfo-0.36.1 \
 		tabled-0.20.0 \
 		tango-bench-0.6.0 \
-		tempfile-3.20.0 \
+		tempfile-3.21.0 \
 		tendril-0.4.3 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.1 \
@@ -682,9 +690,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unsafe-libyaml-0.2.11 \
 		untrusted-0.9.0 \
 		update-informer-1.3.0 \
-		ureq-2.12.1 \
-		ureq-3.0.3 \
-		ureq-proto-0.3.5 \
+		ureq-3.0.12 \
+		ureq-proto-0.4.2 \
 		url-2.5.4 \
 		urlencoding-2.1.3 \
 		utf-8-0.7.6 \
@@ -760,25 +767,34 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows-result-0.3.4 \
 		windows-strings-0.1.0 \
 		windows-strings-0.4.2 \
+		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
+		windows-targets-0.42.2 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows-threading-0.1.0 \
+		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.6.20 \
