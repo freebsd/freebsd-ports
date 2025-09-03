@@ -24,7 +24,6 @@ USES=		gmake python
 USE_GITHUB=	yes
 GH_TUPLE=	michaeljones:breathe:v${PORTVERSION}
 USE_PYTHON=	autoplist pep517 pytest
-MAKE_ENV+=	GIT_DIR=.
 
 NO_ARCH=	yes
 
