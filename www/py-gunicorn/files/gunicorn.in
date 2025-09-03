@@ -6,9 +6,14 @@
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable gunicorn:
-#  gunicorn_enable (bool):    Set to "NO" by default.
-#                       Set it to "YES" to enable gunicorn.
+#  gunicorn_enable (bool):  Set to "NO" by default.
+#			    Set it to "YES" to enable gunicorn.
 #
+# gunicorn_config (str):    Path to gunicorn config file.
+#
+# gunicorn_user (str):      User to run gunicorn as.
+#
+# gunicorn_group (str):     Group to run gunicorn as.
 
 . /etc/rc.subr
 
@@ -20,9 +25,9 @@ rcvar=gunicorn_enable
 load_rc_config $name
 
 : ${gunicorn_enable:=NO}
-: ${gunicorn_config=%%PREFIX%%/etc/gunicorn/gunicorn.conf.py}
-: ${gunicorn_user=%%USERS%%}
-: ${gunicorn_group=%%GROUPS%%}
+: ${gunicorn_config:=%%PREFIX%%/etc/gunicorn/gunicorn.conf.py}
+: ${gunicorn_user:=%%USERS%%}
+: ${gunicorn_group:=%%GROUPS%%}
 
 pidfile="/var/run/${name}.pid"
 cpidfile="/var/run/${name}-worker.pid"
