@@ -161,6 +161,7 @@
     SUBDIR += plutobook
     SUBDIR += pnm2ppa
     SUBDIR += posterazor
+    SUBDIR += ppa6
     SUBDIR += ps2eps
     SUBDIR += pscal
     SUBDIR += psdim
