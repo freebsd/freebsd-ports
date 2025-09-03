@@ -19,7 +19,7 @@ LIB_DEPENDS=	libre2.so:devel/re2 \
 		libuv.so:devel/libuv
 RUN_DEPENDS=	${LOCALBASE}/bin/node:www/node20
 
-USES=		compiler:c++17-lang cpe nodejs:18,build,run python:build
+USES=		compiler:c++17-lang cpe nodejs:20,build,run python:build
 CPE_VENDOR=	elastic
 
 USE_GITHUB=	nodefault
