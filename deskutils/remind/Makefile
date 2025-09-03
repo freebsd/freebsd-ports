@@ -1,5 +1,5 @@
 PORTNAME=	remind
-DISTVERSION=	06.00.01
+DISTVERSION=	06.01.00
 CATEGORIES=	deskutils
 # upstream moves distfiles to OLD once a new release appears
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/ \
@@ -24,7 +24,7 @@ BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 # disable LTO on riscv64
-EXTRA_PATCHES_riscv64=	${FILESDIR}/extra-patch-configure.in
+EXTRA_PATCHES_riscv64=	${FILESDIR}/extra-patch-configure.ac
 EXTRA_PATCHES=	${EXTRA_PATCHES_${ARCH}}
 
 OPTIONS_DEFINE=	A4 TCLTK REM2HTML REM2PDF
