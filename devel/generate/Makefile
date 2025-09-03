@@ -1,5 +1,6 @@
 PORTNAME=	generate
 DISTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.druid.net/darcy/
 
