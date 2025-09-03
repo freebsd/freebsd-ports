@@ -12,7 +12,7 @@ WWW=		https://foldingathome.org/
 # Distribution without permission is prohibited
 LICENSE=	FAHSL
 LICENSE_NAME=	Folding@home Software License
-LICENSE_FILE=	${WRKSRC}/${DISTNAME}/LICENSE
+LICENSE_FILE=	${WRKSRC}/${DISTNAME:T}/LICENSE
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell \
 		auto-accept
 
@@ -55,7 +55,7 @@ DISTFILES=		${ONLY_FOR_ARCHS:@.ARCH.@${_DISTNAME_${.ARCH.}}${EXTRACT_SUFX}@}
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME}/fah-client ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME:T}/fah-client ${STAGEDIR}${PREFIX}/bin/
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${FILESDIR}/config.xml.sample \
 		${STAGEDIR}${_FAHCLIENT_CONFIG_XML}.sample
@@ -63,7 +63,7 @@ do-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/${DISTNAME}/|} \
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/${DISTNAME:T}/|} \
 		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
