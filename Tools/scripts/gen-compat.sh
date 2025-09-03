@@ -25,7 +25,7 @@ if [ ! -f ${filelist} ]; then
 fi
 
 case $arch in
-amd64)
+aarch64 | amd64 | powerpc64)
 	sets="base lib32" ;;
 *)
 	sets="base" ;;
@@ -36,6 +36,12 @@ if [ $tarch = "arm64" ]; then
 fi
 if [ $tarch = "aarch64" ]; then
 	arch="arm64"
+fi
+if [ $tarch = "powerpc64" ]  || [ $tarch = "powerpc64le" ]; then
+	arch="powerpc"
+fi
+if [ $tarch = "riscv64" ]; then
+	arch="riscv"
 fi
 
 flist=""
@@ -53,7 +59,7 @@ for s in $sets; do
 	if [ $s = "base" ]; then
 		extract_list="${extract_list} */sys/param.h"
 	fi
-	fetch -o - https://download.freebsd.org/releases/${arch}/${version}-RELEASE/${s}.txz | tar -C ${tmpdir}/base -x -f - $extract_list
+	fetch -o - https://download.freebsd.org/releases/${arch}/${tarch}/${version}-RELEASE/${s}.txz | tar -C ${tmpdir}/base -x -f - $extract_list
 done
 set +o noglob
 fbsd_version=$(awk '/#define __FreeBSD_version/ { print $3 }' ${tmpdir}/base/usr/include/sys/param.h)
