@@ -136,6 +136,7 @@
     SUBDIR += hyprlock
     SUBDIR += hyprpaper
     SUBDIR += hyprpicker
+    SUBDIR += hyprviz
     SUBDIR += i3bar-river
     SUBDIR += i3blocks
     SUBDIR += i3lock-color

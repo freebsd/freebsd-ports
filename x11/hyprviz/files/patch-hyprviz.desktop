@@ -1,0 +1,11 @@
+--- hyprviz.desktop.orig	2025-08-22 02:23:35 UTC
++++ hyprviz.desktop
+@@ -1,7 +1,7 @@ Comment=GUI for configuring Hyprland, written in blazi
+ [Desktop Entry]
+ Name=HyprViz
+ Comment=GUI for configuring Hyprland, written in blazingly fast Rust!
+-Exec=/usr/bin/hyprviz
++Exec=hyprviz
+ Icon=preferences-system
+ Type=Application
+ Terminal=false
