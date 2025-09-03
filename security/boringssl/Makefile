@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake:insource cpe go:no_targets,1.24 localbase perl5
 
 CONFLICTS_INSTALL=	libressl libressl-devel openssl openssl111 \
-			openssl3[2345] openssl-quictls openssl33-quictls
+			openssl3[23456] openssl-quictls openssl33-quictls
 
 CPE_VENDOR=	google
 
