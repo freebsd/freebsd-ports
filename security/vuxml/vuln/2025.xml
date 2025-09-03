@@ -1,3 +1,31 @@
+  <vuln vid="aaa060af-88d6-11f0-a294-b0416f0c4c67">
+    <topic>Vieb -- Remote Code Execution via Visiting Untrusted URLs</topic>
+    <affects>
+      <package>
+	<name>linux-vieb</name>
+	<range><lt>12.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Zhengyu Liu, Jianjia Yu, Jelmer van Arnhem report:</p>
+	<blockquote cite="https://github.com/Jelmerro/Vieb/security/advisories/GHSA-h2fq-667q-7gpm">
+    <p>We discovered a remote code execution (RCE) vulnerability in the latest
+      release of the Vieb browser (v12.3.0). By luring a user to visit a
+      malicious website, an attacker can achieve arbitrary code execution on the
+      victim’s machine.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/Jelmerro/Vieb/security/advisories/GHSA-h2fq-667q-7gpm</url>
+    </references>
+    <dates>
+      <discovery>2025-07-31</discovery>
+      <entry>2025-09-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d7b7e505-8486-11f0-9d03-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
