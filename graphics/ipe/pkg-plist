@@ -4,6 +4,7 @@ bin/ipe6upgrade
 bin/ipeextract
 bin/ipepresenter
 bin/iperender
+bin/iperender-par
 bin/ipescript
 bin/ipetoipe
 include/ipeattributes.h
@@ -24,7 +25,6 @@ include/ipelatex.h
 include/ipelet.h
 include/ipelib.h
 include/ipeobject.h
-include/ipeosx.h
 include/ipepage.h
 include/ipepainter.h
 include/ipepath.h
