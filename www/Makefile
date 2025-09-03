@@ -2541,6 +2541,7 @@
     SUBDIR += tinyproxy
     SUBDIR += tivoka
     SUBDIR += tntnet
+    SUBDIR += tocaia
     SUBDIR += tokyopromenade
     SUBDIR += tomcat-devel
     SUBDIR += tomcat-native
