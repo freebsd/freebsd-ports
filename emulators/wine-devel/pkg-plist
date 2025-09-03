@@ -231,6 +231,7 @@ include/wine/windows/cpl.h
 include/wine/windows/crtrow.idl
 include/wine/windows/cryptdlg.h
 include/wine/windows/cryptuiapi.h
+include/wine/windows/cryptxml.h
 include/wine/windows/ctfutb.h
 include/wine/windows/ctfutb.idl
 include/wine/windows/ctxtcall.h
@@ -540,6 +541,8 @@ include/wine/windows/fltdefs.h
 include/wine/windows/fontsub.h
 include/wine/windows/fusion.h
 include/wine/windows/fusion.idl
+include/wine/windows/gameinput.h
+include/wine/windows/gameinput.idl
 include/wine/windows/gameux.h
 include/wine/windows/gameux.idl
 include/wine/windows/gamingtcui.h
@@ -1450,6 +1453,7 @@ lib/wine/%%WINEARCH%%-unix/libcryptdll.a
 lib/wine/%%WINEARCH%%-unix/libcryptnet.a
 lib/wine/%%WINEARCH%%-unix/libcryptsp.a
 lib/wine/%%WINEARCH%%-unix/libcryptui.a
+lib/wine/%%WINEARCH%%-unix/libcryptxml.a
 lib/wine/%%WINEARCH%%-unix/libd2d1.a
 lib/wine/%%WINEARCH%%-unix/libd3d10.a
 lib/wine/%%WINEARCH%%-unix/libd3d10_1.a
@@ -1764,6 +1768,7 @@ lib/wine/%%WINEARCH%%-windows/cryptnet.dll
 lib/wine/%%WINEARCH%%-windows/cryptowinrt.dll
 lib/wine/%%WINEARCH%%-windows/cryptsp.dll
 lib/wine/%%WINEARCH%%-windows/cryptui.dll
+lib/wine/%%WINEARCH%%-windows/cryptxml.dll
 lib/wine/%%WINEARCH%%-windows/cscript.exe
 lib/wine/%%WINEARCH%%-windows/ctapi32.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/ctl3d.dll16
@@ -1910,6 +1915,7 @@ lib/wine/%%WINEARCH%%-windows/fontsub.dll
 lib/wine/%%WINEARCH%%-windows/fsutil.exe
 lib/wine/%%WINEARCH%%-windows/fusion.dll
 lib/wine/%%WINEARCH%%-windows/fwpuclnt.dll
+lib/wine/%%WINEARCH%%-windows/gameinput.dll
 lib/wine/%%WINEARCH%%-windows/gameux.dll
 lib/wine/%%WINEARCH%%-windows/gamingtcui.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/gdi.exe16
@@ -2009,6 +2015,7 @@ lib/wine/%%WINEARCH%%-windows/libcryptdll.a
 lib/wine/%%WINEARCH%%-windows/libcryptnet.a
 lib/wine/%%WINEARCH%%-windows/libcryptsp.a
 lib/wine/%%WINEARCH%%-windows/libcryptui.a
+lib/wine/%%WINEARCH%%-windows/libcryptxml.a
 lib/wine/%%WINEARCH%%-windows/libd2d1.a
 lib/wine/%%WINEARCH%%-windows/libd3d10.a
 lib/wine/%%WINEARCH%%-windows/libd3d10_1.a
@@ -2595,6 +2602,7 @@ lib/wine/%%WINEARCH%%-windows/wimgapi.dll
 lib/wine/%%WINEARCH%%-windows/win32u.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/win87em.dll16
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/winaspi.dll16
+lib/wine/%%WINEARCH%%-windows/winbio.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/windebug.dll16
 lib/wine/%%WINEARCH%%-windows/windows.applicationmodel.dll
 lib/wine/%%WINEARCH%%-windows/windows.devices.bluetooth.dll
