@@ -1860,6 +1860,7 @@
     SUBDIR += py-pecan
     SUBDIR += py-pelican
     SUBDIR += py-planet
+    SUBDIR += py-playwright
     SUBDIR += py-postorius
     SUBDIR += py-praw
     SUBDIR += py-prawcore
