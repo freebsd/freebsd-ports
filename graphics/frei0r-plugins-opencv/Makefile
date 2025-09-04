@@ -1,11 +1,11 @@
-PORTREVISION=	1
-PKGNAMESUFFIX=	-plugins-${SLAVE_PORT:tl}
+PORTREVISION=	0
+PKGNAMESUFFIX=	-plugins-${EXTRA_PLUGINS:tl}
 
-COMMENT=	Frei0r ${SLAVE_PORT} plugins
+COMMENT=	Frei0r ${EXTRA_PLUGINS} plugins
 
 MASTERDIR=	${.CURDIR}/../frei0r
 PLIST=		${.CURDIR}/pkg-plist
 
-SLAVE_PORT=	OpenCV
+EXTRA_PLUGINS=	OpenCV
 
 .include "${MASTERDIR}/Makefile"

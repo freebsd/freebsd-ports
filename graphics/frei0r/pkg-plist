@@ -1,4 +1,10 @@
 include/frei0r.h
+include/frei0r.hpp
+include/frei0r/blur.h
+include/frei0r/cairo.h
+include/frei0r/cfc.h
+include/frei0r/colorspace.h
+include/frei0r/math.h
 lib/frei0r-1/3dflippo.so
 lib/frei0r-1/B.so
 lib/frei0r-1/G.so
@@ -53,6 +59,7 @@ lib/frei0r-1/edgeglow.so
 lib/frei0r-1/elastic_scale.so
 lib/frei0r-1/emboss.so
 lib/frei0r-1/equaliz0r.so
+lib/frei0r-1/euclid_eraser.so
 lib/frei0r-1/filmgrain.so
 lib/frei0r-1/flippo.so
 lib/frei0r-1/gamma.so
@@ -85,6 +92,7 @@ lib/frei0r-1/nervous.so
 lib/frei0r-1/nois0r.so
 lib/frei0r-1/normaliz0r.so
 lib/frei0r-1/nosync0r.so
+lib/frei0r-1/ntsc.so
 lib/frei0r-1/onecol0r.so
 lib/frei0r-1/overlay.so
 lib/frei0r-1/partik0l.so

@@ -1,6 +1,6 @@
 - Add logic so slave ports can build without installing base plugins.
 
---- src/mixer2/CMakeLists.txt.orig	2023-01-14 18:47:26 UTC
+--- src/mixer2/CMakeLists.txt.orig	2025-09-03 14:34:34 UTC
 +++ src/mixer2/CMakeLists.txt
 @@ -3,6 +3,7 @@ endif (${Cairo_FOUND})
  add_subdirectory (cairoblend)
@@ -10,7 +10,7 @@
  add_subdirectory (addition)
  add_subdirectory (addition_alpha)
  add_subdirectory (alphaatop)
-@@ -34,3 +35,4 @@ add_subdirectory (sleid0r)
+@@ -35,3 +36,4 @@ add_subdirectory (sleid0r)
  add_subdirectory (value)
  add_subdirectory (xfade0r)
  add_subdirectory (sleid0r)

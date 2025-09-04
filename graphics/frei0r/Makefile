@@ -15,22 +15,22 @@ USES=		cmake compiler:c++11-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	dyne
 
-.if defined(SLAVE_PORT)
+.if defined(EXTRA_PLUGINS)
 RUN_DEPENDS=	frei0r>=${FREI0R_VERSION}:graphics/frei0r
-.  if ${SLAVE_PORT:tl} == "cairo"
+.  if ${EXTRA_PLUGINS:tl} == "cairo"
 USES+=		gnome
 USE_GNOME+=	cairo
 
 CMAKE_ON=	WITHOUT_GAVL \
 		WITHOUT_OPENCV
 CMAKE_OFF=	WITHOUT_CAIRO
-.  elif ${SLAVE_PORT:tl} == "gavl"
+.  elif ${EXTRA_PLUGINS:tl} == "gavl"
 LIB_DEPENDS+=	libgavl.so:multimedia/gavl
 
 CMAKE_ON=	WITHOUT_CAIRO \
 		WITHOUT_OPENCV
 CMAKE_OFF=	WITHOUT_GAVL
-.  elif ${SLAVE_PORT:tl} == "opencv"
+.  elif ${EXTRA_PLUGINS:tl} == "opencv"
 LIB_DEPENDS+=	libopencv_core.so:graphics/opencv
 
 CMAKE_ON=	WITHOUT_CAIRO \
