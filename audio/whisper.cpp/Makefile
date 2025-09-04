@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libggml.so:misc/ggml
 
-USES=		cmake
+USES=		cmake:testing
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -30,6 +30,8 @@ OPTIONS_DEFAULT=	EXAMPLES # examples contain important user level programs
 OPTIONS_SUB=		yes
 
 EXAMPLES_CMAKE_BOOL=	WHISPER_BUILD_EXAMPLES
+
+MAKE_JOBS_UNSAFE=	yes # for tests to suceed on smaller Vulkan devices: they fail to allocate memory otherwise
 
 post-install:
 	${INSTALL_SCRIPT} \
