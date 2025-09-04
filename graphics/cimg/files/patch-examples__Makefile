@@ -1,5 +1,14 @@
---- examples/Makefile.orig	2025-05-02 13:41:33 UTC
+--- examples/Makefile.orig	2025-09-23 12:47:26 UTC
 +++ examples/Makefile
+@@ -78,7 +78,7 @@ FILES = CImg_demo \
+ 	use_RGBclass \
+ 
+ # Files which requires external libraries to run.
+-EXTRA_FILES = test_template_types use_tiff_stream use_jpeg_buffer
++EXTRA_FILES = use_tiff_stream use_jpeg_buffer
+ 
+ #---------------------------------
+ # Set correct variables and paths
 @@ -89,7 +89,7 @@ SVERSION = $(VERSION1).$(VERSION2).$(VERSION3)
  VERSION3 = $(shell grep 'cimg_version\ ' ../CImg.h | tail -c2 | head -c1)
  SVERSION = $(VERSION1).$(VERSION2).$(VERSION3)
@@ -18,7 +27,7 @@
  LIBS = -lm
  ifdef IS_GCC
  CXXVER = $(shell $(CXX) -v 2>&1 | tail -n 1)
-@@ -151,7 +151,7 @@ VT100_CFLAGS = -Dcimg_use_vt100
+@@ -152,7 +152,7 @@ VT100_CFLAGS = -Dcimg_use_vt100
  VT100_CFLAGS = -Dcimg_use_vt100
  
  # Flags to enable code optimization by the compiler.
@@ -27,19 +36,19 @@
  ifdef IS_GCC
  # Add -mtune=generic for GCC if supported.
  NO_MTUNE_GENERIC = $(shell $(CXX) -mtune=generic -E - < /dev/null > /dev/null 2>&1; echo $$?)
-@@ -176,9 +176,9 @@ OPENCV_DEFINE = -Dcimg_use_opencv
+@@ -177,9 +177,9 @@ OPENCV_DEFINE = -Dcimg_use_opencv
  
  # Flags to enable OpenCV support.
  OPENCV_DEFINE = -Dcimg_use_opencv
 -OPENCV_INCDIR = $(shell pkg-config opencv --cflags || echo -I/usr/include/opencv) -I/usr/include/opencv -I/usr/include/opencv4
 +OPENCV_INCDIR = $(shell pkg-config opencv4 --cflags || echo -I/usr/include/opencv) -I/usr/include/opencv -I/usr/include/opencv4
  OPENCV_CFLAGS = $(OPENCV_DEFINE) $(OPENCV_INCDIR)
--OPENCV_LIBS = $(shell pkg-config opencv --libs || echo -lopencv_core -lopencv_highgui)
-+OPENCV_LIBS = $(shell pkg-config opencv4 --libs || echo -lopencv_core -lopencv_highgui)
+-OPENCV_LIBS = $(shell pkg-config opencv --libs || echo -lopencv_core -lopencv_highgui -lopencv_videoio)
++OPENCV_LIBS = $(shell pkg-config opencv4 --libs || echo -lopencv_core -lopencv_highgui -lopencv_videoio)
  
  # Flags used to disable display capablities of CImg
  NODISPLAY_CFLAGS = -Dcimg_display=0
-@@ -241,7 +241,7 @@ TIFF_CFLAGS = $(TIFF_DEFINE) $(TIFF_INCDIR)
+@@ -242,7 +242,7 @@ TIFF_CFLAGS = $(TIFF_DEFINE) $(TIFF_INCDIR)
  TIFF_DEFINE = -Dcimg_use_tiff
  TIFF_INCDIR =
  TIFF_CFLAGS = $(TIFF_DEFINE) $(TIFF_INCDIR)
@@ -48,7 +57,7 @@
  
  # Flags to enable native support for loading HEIF image files, using the libheif library.
  # ( https://github.com/strukturag/libheif )
-@@ -260,16 +260,16 @@ OPENEXR_DEFINE = -Dcimg_use_openexr
+@@ -261,16 +261,16 @@ OPENEXR_DEFINE = -Dcimg_use_openexr
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
  OPENEXR_DEFINE = -Dcimg_use_openexr
@@ -71,7 +80,7 @@
  
  # Flags to enable native support for compressed .cimgz files, using the Zlib library.
  # ( http://www.zlib.net/ )
-@@ -305,17 +305,17 @@ endif
+@@ -306,11 +306,18 @@ endif
  
  # Flags to enable the use of LAPACK routines for matrix computation
  # ( http://www.netlib.org/lapack/ )
@@ -83,18 +92,17 @@
 +#LAPACK_CFLAGS = $(LAPACK_DEFINE) $(LAPACK_INCDIR)
 +#LAPACK_LIBS = -lblas -llapack
  
- # Flags to enable the use of the Board library
- # ( https://github.com/GreycLab/libboard )
- BOARD_DEFINE = -Dcimg_use_board
--BOARD_INCDIR = -I/usr/include/board
++# Flags to enable the use of the Board library
++# ( https://github.com/GreycLab/libboard )
++BOARD_DEFINE = -Dcimg_use_board
 +BOARD_INCDIR = -I$(LOCALBASE)/include/board
- BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
--BOARD_LIBS = -lboard
++BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
 +BOARD_LIBS = -lboard -lMagick++-7
- 
++
  # Enable native support of WebP image files, using the WebP library.
  # (https://chromium.googlesource.com/webm/libwebp/)
-@@ -392,6 +392,7 @@ $(XSHM_LIBS)" \
+ WEBP_DEFINE = -Dcimg_use_webp
+@@ -386,6 +393,7 @@ $(XSHM_LIBS)" \
  $(HEIF_LIBS) \
  $(LAPACK_LIBS) \
  $(XSHM_LIBS)" \
@@ -102,7 +110,7 @@
  all $(EXTRA_FILES)
  
  # Linux/BSD/Mac OSX targets, with X11 display.
-@@ -470,6 +471,7 @@ $(OPT_CFLAGS) \
+@@ -464,6 +472,7 @@ $(OPT_CFLAGS) \
  	@$(MAKE) \
  "CONF_CFLAGS = \
  $(OPT_CFLAGS) \
@@ -110,7 +118,7 @@
  $(VT100_CFLAGS) \
  $(X11_CFLAGS) \
  $(XSHM_CFLAGS) \
-@@ -483,8 +485,12 @@ $(MAGICK_CFLAGS) \
+@@ -477,8 +486,12 @@ $(MAGICK_CFLAGS) \
  $(CURL_CFLAGS) \
  $(OPENCV_CFLAGS) \
  $(MAGICK_CFLAGS) \
@@ -123,7 +131,7 @@
  $(X11_LIBS) \
  $(XSHM_LIBS) \
  $(XRANDR_LIBS) \
-@@ -497,6 +503,9 @@ $(MAGICK_LIBS) \
+@@ -491,6 +504,9 @@ $(MAGICK_LIBS) \
  $(CURL_LIBS) \
  $(OPENCV_LIBS) \
  $(MAGICK_LIBS) \
