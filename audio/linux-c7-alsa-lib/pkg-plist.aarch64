@@ -85,5 +85,4 @@ usr/share/alsa/topology/sklrt286/skl_i2s.conf
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/asoundrc.txt
-@dir usr/lib
 @dir usr/share/alsa/ucm
