@@ -31,8 +31,11 @@ RUN_DEPENDS=	R-cran-brio>=1.1.3:devel/R-cran-brio \
 
 USES=		cran:auto-plist,compiles
 
-TESTING_UNSAFE=	Error in `edition_require(3, "expect_snapshot()")`: `expect_snapshot()` requires the 3rd edition. \
-		https://github.com/r-lib/testthat/issues/1924 \
-		https://github.com/r-lib/testthat/issues/1347
+TESTING_UNSAFE=	https://github.com/r-lib/testthat/issues/2214
+
+do-test:
+	@${FIND} ${WRKSRC} \( -name '*.o' -o -name '*.so' \) -delete
+	@cd ${WRKDIR} ; ${SETENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE \
+	${LOCALBASE}/bin/R CMD check --no-manual ${PORTNAME}
 
 .include <bsd.port.mk>
