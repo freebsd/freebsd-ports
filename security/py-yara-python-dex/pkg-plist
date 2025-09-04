@@ -1,6 +1,0 @@
-%%PYTHON_SITELIBDIR%%/yara%%PYTHON_TAG%%.so
-%%PYTHON_SITELIBDIR%%/yara_python_dex-%%VER%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/yara_python_dex-%%VER%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/yara_python_dex-%%VER%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/yara_python_dex-%%VER%%-py%%PYTHON_VER%%.egg-info/not-zip-safe
-%%PYTHON_SITELIBDIR%%/yara_python_dex-%%VER%%-py%%PYTHON_VER%%.egg-info/top_level.txt
