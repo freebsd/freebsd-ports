@@ -1,5 +1,5 @@
 PORTNAME=	fastmcp
-DISTVERSION=	2.12.0
+DISTVERSION=	2.12.1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI # no tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}authlib>=1.5.2:security/py-authlib@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}openai>=1.95.1:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openapi-core>=0.19.5:devel/py-openapi-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openapi-pydantic>=0.5.1:devel/py-openapi-pydantic@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic2>0:devel/py-pydantic2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.11.7:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyperclip>0:devel/py-pyperclip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.1.0:www/py-python-dotenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=13.9.4:textproc/py-rich@${PY_FLAVOR}
@@ -51,5 +51,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 NO_ARCH=	yes
 
 # tests as of 2.12.0: 54 failed, 2580 passed, 14 xfailed, 1 xpassed, 8 warnings, 1 error in 298.28s (0:04:58), see https://github.com/jlowin/fastmcp/issues/1690
+# tests as of 2.12.1: 57 failed, 2568 passed, 14 xfailed, 1 xpassed, 8 warnings, 2 errors in 343.76s (0:05:43)
 
 .include <bsd.port.mk>
