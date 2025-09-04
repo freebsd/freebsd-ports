@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	6301
+DISTVERSION=	6374
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,7 +44,6 @@ CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 EXAMPLES_CMAKE_BOOL=	LLAMA_BUILD_EXAMPLES
 
-VULKAN_DESC=		Vulkan GPU offload support
 VULKAN_CMAKE_BOOL=	GGML_VULKAN
 VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
 			vulkan-headers>0:graphics/vulkan-headers

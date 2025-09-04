@@ -49,8 +49,8 @@ include/ggml-opt.h
 include/ggml-rpc.h
 include/ggml-sycl.h
 include/ggml-vulkan.h
-include/ggml.h
 include/ggml-webgpu.h
+include/ggml.h
 include/gguf.h
 include/llama-cpp.h
 include/llama.h
