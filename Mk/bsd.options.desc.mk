@@ -522,6 +522,7 @@ VAAPI_DESC?=		VAAPI (GPU video acceleration) support
 VAPI_DESC?=		Build VALA API files
 VDPAU_DESC?=		VDPAU (GPU video acceleration) support
 VIDEO_DESC?=		Video support
+VULKAN_DESC?=		Vulkan GPU support
 VO_AACENC_DESC?=	AAC audio encoding via vo-aacenc
 VO_AMRWBENC_DESC?=	AMR Wide Band encoding via vo-amrwbenc
 VORBIS_DESC?=		Ogg Vorbis audio codec support
