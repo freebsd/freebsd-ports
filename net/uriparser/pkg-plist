@@ -7,7 +7,7 @@ include/uriparser/UriDefsUnicode.h
 include/uriparser/UriIp4.h
 lib/liburiparser.so
 lib/liburiparser.so.1
-lib/liburiparser.so.1.0.31
+lib/liburiparser.so.1.1.0
 lib/cmake/uriparser-%%DISTVERSION%%/uriparser-config-version.cmake
 lib/cmake/uriparser-%%DISTVERSION%%/uriparser-config.cmake
 lib/cmake/uriparser-%%DISTVERSION%%/uriparser-%%CMAKE_BUILD_TYPE%%.cmake
