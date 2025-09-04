@@ -1,18 +1,20 @@
-PORTNAME=	mathics_scanner
-PORTVERSION=	1.4.1
-PORTREVISION=	3
+PORTNAME=	Mathics_Scanner
+PORTVERSION=	2.0.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Tokeniser, char tables, & conversion routines for the Wolfram Language
 WWW=		https://mathics.org/
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ujson>0:devel/py-ujson@${PY_FLAVOR}	\
+BUILD_DEPENDS=	${PY_SETUPTOOLS}	\
+		${PYTHON_PKGNAMEPREFIX}ujson>0:devel/py-ujson@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR}	\
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ujson>0:devel/py-ujson@${PY_FLAVOR}	\
@@ -28,7 +30,7 @@ TEST_DEPENDS=	gmake:devel/gmake	\
 #GH_ACCOUNT=	Mathics3
 
 USES=		python shebangfix
-USE_PYTHON=	distutils noflavors
+USE_PYTHON=	noflavors pep517
 
 NO_ARCH=	yes
 MAKE_ENV+=	PYTHON=${PYTHON_CMD}
