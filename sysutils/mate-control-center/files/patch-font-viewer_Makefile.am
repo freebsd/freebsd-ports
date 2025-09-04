@@ -1,0 +1,11 @@
+--- font-viewer/Makefile.am.orig	2025-09-04 15:59:11 UTC
++++ font-viewer/Makefile.am
+@@ -41,7 +41,7 @@ endif
+ 	$(AM_V_GEN) sed '/^# Translators/d' < $< > $@
+ endif
+ 
+-install-data-local: install-desktop-database
++#install-data-local: install-desktop-database
+ 
+ install-desktop-database: install-desktopDATA
+ 	update-desktop-database $(DESTDIR)$(desktopdir)
