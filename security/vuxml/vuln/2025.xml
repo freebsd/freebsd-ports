@@ -1,3 +1,70 @@
+  <vuln vid="340dc4c1-895a-11f0-b6e5-4ccc6adda413">
+    <topic>exiv2 -- Denial-of-service</topic>
+    <affects>
+      <package>
+	<name>exiv2</name>
+	<range><lt>0.28.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kevin Backhouse reports:</p>
+	<blockquote cite="https://github.com/Exiv2/exiv2/security/advisories/GHSA-m54q-mm9w-fp6g">
+	  <p>A denial-of-service was found in Exiv2 version v0.28.5: a quadratic
+	  algorithm in the ICC profile parsing code in jpegBase::readMetadata()
+	  can cause Exiv2 to run for a long time. Exiv2 is a command-line utility
+	  and C++ library for reading, writing, deleting, and modifying the
+	  metadata of image files. The denial-of-service is triggered when Exiv2
+	  is used to read the metadata of a crafted jpg image file.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-55304</cvename>
+      <url>https://github.com/Exiv2/exiv2/security/advisories/GHSA-m54q-mm9w-fp6g</url>
+    </references>
+    <dates>
+      <discovery>2025-08-29</discovery>
+      <entry>2025-09-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="84a77710-8958-11f0-b6e5-4ccc6adda413">
+    <topic>exiv2 -- Out-of-bounds read in Exiv2::EpsImage::writeMetadata()</topic>
+    <affects>
+      <package>
+	<name>exiv2</name>
+	<range><lt>0.28.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kevin Backhouse reports:</p>
+	<blockquote cite="https://github.com/Exiv2/exiv2/security/advisories/GHSA-496f-x7cq-cq39">
+	  <p>An out-of-bounds read was found in Exiv2 versions v0.28.5 and earlier.
+	  Exiv2 is a command-line utility and C++ library for reading, writing,
+	  deleting, and modifying the metadata of image files. The out-of-bounds
+	  read is triggered when Exiv2 is used to write metadata into a crafted
+	  image file. An attacker could potentially exploit the vulnerability to
+	  cause a denial of service by crashing Exiv2, if they can trick the victim
+	  into running Exiv2 on a crafted image file.</p>
+	  <p>Note that this bug is only triggered when writing the metadata, which
+	  is a less frequently used Exiv2 operation than reading the metadata. For
+	  example, to trigger the bug in the Exiv2 command-line application, you
+	  need to add an extra command-line argument such as delete.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-54080</cvename>
+      <url>https://github.com/Exiv2/exiv2/security/advisories/GHSA-496f-x7cq-cq39</url>
+    </references>
+    <dates>
+      <discovery>2025-08-29</discovery>
+      <entry>2025-09-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0db8684f-8938-11f0-8325-bc2411f8eb0b">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
