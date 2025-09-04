@@ -1,3 +1,41 @@
+  <vuln vid="0db8684f-8938-11f0-8325-bc2411f8eb0b">
+    <topic>Django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py39-django42</name>
+	<name>py310-django42</name>
+	<name>py311-django42</name>
+	<range><lt>4.2.24</lt></range>
+      </package>
+      <package>
+	<name>py310-django51</name>
+	<name>py311-django51</name>
+	<range><lt>5.1.12</lt></range>
+      </package>
+      <package>
+	<name>py310-django52</name>
+	<name>py311-django52</name>
+	<range><lt>5.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Django reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2025/sep/03/security-releases/">
+	  <p>CVE-2025-57833: Potential SQL injection in FilteredRelation column aliases.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-57833</cvename>
+      <url>https://www.djangoproject.com/weblog/2025/sep/03/security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2025-09-01</discovery>
+      <entry>2025-09-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9f9b0b37-88fa-11f0-90a2-6cc21735f730">
     <topic>Shibboleth Service Provider -- SQL injection vulnerability in ODBC plugin</topic>
     <affects>
