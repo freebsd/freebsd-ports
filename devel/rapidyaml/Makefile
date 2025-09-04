@@ -1,6 +1,6 @@
 PORTNAME=	rapidyaml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
+DISTVERSION=	0.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	gasol.wu@gmail.com
@@ -18,13 +18,13 @@ USES=		compiler:c++11-lib cmake:noninja localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	biojppm
 GH_PROJECT=	cmake:cmake
-GH_TAGNAME=	9416f29:cmake
 GH_SUBDIR=	ext/c4core/cmake:cmake
+GH_TAGNAME=	e87e11f:cmake
 
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	VERSION=${DISTVERSION}
 
 .include <bsd.port.mk>
