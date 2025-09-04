@@ -12,6 +12,8 @@ WWW=				https://gitlab.com/samba-freebsd/
 LICENSE=			GPLv3+
 LICENSE_FILE=			${WRKSRC}/COPYING
 
+DEPRECATED=	Discontinued upstream; transition to a supported versions of Samba (refer to https://wiki.samba.org/index.php/Samba_Release_Planning)
+
 USES=				cpe
 
 CONFLICTS_INSTALL?=		samba4*
