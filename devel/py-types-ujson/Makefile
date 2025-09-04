@@ -10,6 +10,9 @@ WWW=		https://github.com/python/typeshed
 
 LICENSE=	APACHE20
 
+DEPRECATED=	No longer required by devel/py-ujson ≥ 5.11
+EXPIRATION_DATE=2025-10-31
+
 USES=		python
 USE_PYTHON=	distutils
 NO_ARCH=	yes
