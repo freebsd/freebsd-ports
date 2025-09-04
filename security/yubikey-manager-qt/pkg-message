@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+In addition to the application itself, you may also need to manually install and start the pcscd service <devel/pcsc-lite> for CCID support.
+EOM
+}
+]
