@@ -1,5 +1,5 @@
 PORTNAME=	gargle
-DISTVERSION=	1.5.2
+DISTVERSION=	1.6.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,7 +9,7 @@ WWW=		https://gargle.r-lib.org/
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-cli>=3.0.1:devel/R-cran-cli \
+RUN_DEPENDS=	R-cran-cli>=3.0.1:devel/R-cran-cli \
 		R-cran-fs>=1.3.1:filesystems/R-cran-fs \
 		R-cran-glue>=1.3.0:devel/R-cran-glue \
 		R-cran-httr>=1.4.5:www/R-cran-httr \
@@ -19,10 +19,19 @@ CRAN_DEPENDS=	R-cran-cli>=3.0.1:devel/R-cran-cli \
 		R-cran-rappdirs>0:devel/R-cran-rappdirs \
 		R-cran-rlang>=1.1.0:devel/R-cran-rlang \
 		R-cran-withr>0:devel/R-cran-withr
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
-TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat
+TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
+		R-cran-httpuv>0:www/R-cran-httpuv \
+		R-cran-knitr>0:print/R-cran-knitr \
+		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
+		R-cran-sodium>0:security/R-cran-sodium \
+		R-cran-spelling>0:textproc/R-cran-spelling \
+		R-cran-testthat>=3.1.7:devel/R-cran-testthat
 
 USES=		cran:auto-plist
+
+do-test:
+	@${FIND} ${WRKSRC} \( -name '*.o' -o -name '*.so' \) -delete
+	@cd ${WRKDIR} ; ${SETENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE \
+	${LOCALBASE}/bin/R CMD check --no-manual ${PORTNAME}
 
 .include <bsd.port.mk>
