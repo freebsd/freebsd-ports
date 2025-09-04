@@ -176,6 +176,11 @@ share/man/man1/podman-port.1.gz
 share/man/man1/podman-ps.1.gz
 share/man/man1/podman-pull.1.gz
 share/man/man1/podman-push.1.gz
+share/man/man1/podman-quadlet-install.1.gz
+share/man/man1/podman-quadlet-list.1.gz
+share/man/man1/podman-quadlet-print.1.gz
+share/man/man1/podman-quadlet-rm.1.gz
+share/man/man1/podman-quadlet.1.gz
 share/man/man1/podman-remote.1.gz
 share/man/man1/podman-rename.1.gz
 share/man/man1/podman-restart.1.gz
