@@ -2,7 +2,7 @@ bin/mac
 include/MAC/APETag.h
 include/MAC/All.h
 include/MAC/CharacterHelper.h
-include/MAC/IO.h
+include/MAC/IAPEIO.h
 include/MAC/MACDll.h
 include/MAC/MACLib.h
 include/MAC/NoWindows.h
