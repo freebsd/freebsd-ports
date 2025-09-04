@@ -1,6 +1,6 @@
-PORTNAME=	cgrep
-PORTVERSION=	8.1.0
-CATEGORIES=	textproc
+PORTNAME=	hs-cgrep
+DISTVERSION=	8.1.0
+CATEGORIES=	textproc haskell
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Context-aware grep for source codes
