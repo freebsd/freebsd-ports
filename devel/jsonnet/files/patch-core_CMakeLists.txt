@@ -1,6 +1,6 @@
---- core/CMakeLists.txt.orig	2022-01-06 06:59:54 UTC
+--- core/CMakeLists.txt.orig	2025-05-07 12:28:56 UTC
 +++ core/CMakeLists.txt
-@@ -30,7 +30,7 @@ set(LIBJSONNET_SOURCE
+@@ -32,7 +32,7 @@ add_dependencies(libjsonnet md5 stdlib)
  
  add_library(libjsonnet SHARED ${LIBJSONNET_HEADERS} ${LIBJSONNET_SOURCE})
  add_dependencies(libjsonnet md5 stdlib)

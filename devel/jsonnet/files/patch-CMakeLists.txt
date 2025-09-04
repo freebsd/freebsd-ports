@@ -1,10 +1,10 @@
---- CMakeLists.txt.orig	2021-12-21 17:55:49 UTC
+--- CMakeLists.txt.orig	2025-05-07 12:28:56 UTC
 +++ CMakeLists.txt
-@@ -121,7 +121,6 @@ endif()
+@@ -122,7 +122,6 @@ add_subdirectory(third_party/md5)
  add_subdirectory(include)
  add_subdirectory(stdlib)
  add_subdirectory(third_party/md5)
--add_subdirectory(third_party/rapidyaml/rapidyaml ryml)
+-add_subdirectory(third_party/rapidyaml)
  add_subdirectory(core)
  add_subdirectory(cpp)
  add_subdirectory(cmd)

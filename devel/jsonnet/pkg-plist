@@ -6,8 +6,8 @@ include/libjsonnet_fmt.h
 lib/libjsonnet++.a
 lib/libjsonnet++.so
 lib/libjsonnet++.so.0
-lib/libjsonnet++.so.%%PORTVERSION%%
+lib/libjsonnet++.so.%%VERSION%%-rc2
 lib/libjsonnet.a
 lib/libjsonnet.so
 lib/libjsonnet.so.0
-lib/libjsonnet.so.%%PORTVERSION%%
+lib/libjsonnet.so.%%VERSION%%
