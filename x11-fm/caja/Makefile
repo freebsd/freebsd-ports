@@ -1,6 +1,6 @@
 PORTNAME=	caja
 PORTVERSION=	1.28.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -31,7 +31,8 @@ USE_GNOME=	cairo gtk30 gnomeprefix intltool introspection:build libxml2 \
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--disable-packagekit
+CONFIGURE_ARGS=	--disable-packagekit \
+		--disable-update-mimedb
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.caja.gschema.xml \
