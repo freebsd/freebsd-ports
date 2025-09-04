@@ -14,7 +14,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING-GPLV2
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING-LGPLV3
 
 BROKEN=		Fails to build, ld: error: version script assignment of 'global' to symbol 'client_dump' failed: symbol not defined
-DEPRECATE=	Outdated and unsupported upstream, current version in tree was released in 2021 while upstream is still active and is at 10.x
+DEPRECATED=	Outdated and unsupported upstream, current version in tree was released in 2021 while upstream is still active and is at 10.x
 EXPIRATION_DATE=2025-01-31
 #BROKEN_SSL=	libressl
 
