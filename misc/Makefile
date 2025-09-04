@@ -157,6 +157,7 @@
     SUBDIR += gedkeeper
     SUBDIR += geekcode
     SUBDIR += getopt
+    SUBDIR += ggml
     SUBDIR += gimp-help-en
     SUBDIR += gkrellm-gamma
     SUBDIR += gkrellm-xkb
