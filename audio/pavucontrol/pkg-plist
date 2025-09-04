@@ -1,5 +1,5 @@
 bin/pavucontrol
-share/applications/pavucontrol.desktop
+share/applications/org.pulseaudio.pavucontrol.desktop
 %%DOCSDIR%%/README.html
 %%DOCSDIR%%/style.css
 share/locale/as/LC_MESSAGES/pavucontrol.mo
@@ -22,6 +22,7 @@ share/locale/he/LC_MESSAGES/pavucontrol.mo
 share/locale/hi/LC_MESSAGES/pavucontrol.mo
 share/locale/hr/LC_MESSAGES/pavucontrol.mo
 share/locale/hu/LC_MESSAGES/pavucontrol.mo
+share/locale/id/LC_MESSAGES/pavucontrol.mo
 share/locale/it/LC_MESSAGES/pavucontrol.mo
 share/locale/ja/LC_MESSAGES/pavucontrol.mo
 share/locale/kk/LC_MESSAGES/pavucontrol.mo
@@ -38,6 +39,7 @@ share/locale/pa/LC_MESSAGES/pavucontrol.mo
 share/locale/pl/LC_MESSAGES/pavucontrol.mo
 share/locale/pt/LC_MESSAGES/pavucontrol.mo
 share/locale/pt_BR/LC_MESSAGES/pavucontrol.mo
+share/locale/ro/LC_MESSAGES/pavucontrol.mo
 share/locale/ru/LC_MESSAGES/pavucontrol.mo
 share/locale/si/LC_MESSAGES/pavucontrol.mo
 share/locale/sk/LC_MESSAGES/pavucontrol.mo
@@ -52,4 +54,4 @@ share/locale/tr/LC_MESSAGES/pavucontrol.mo
 share/locale/uk/LC_MESSAGES/pavucontrol.mo
 share/locale/zh_CN/LC_MESSAGES/pavucontrol.mo
 share/locale/zh_TW/LC_MESSAGES/pavucontrol.mo
-%%DATADIR%%/pavucontrol.glade
+share/metainfo/org.pulseaudio.pavucontrol.metainfo.xml

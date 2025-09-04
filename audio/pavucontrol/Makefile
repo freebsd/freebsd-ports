@@ -1,6 +1,5 @@
 PORTNAME=	pavucontrol
-PORTVERSION=	5.0
-PORTREVISION=	5
+PORTVERSION=	6.1
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/${PORTNAME}/
 
@@ -11,23 +10,11 @@ WWW=		https://freedesktop.org/software/pulseaudio/pavucontrol/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
-		libjson-glib-1.0.so:devel/json-glib \
+LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libpulse.so:audio/pulseaudio
 
-USES=		compiler:c++11-lang gettext gmake gnome pkgconfig tar:xz
-USE_GNOME=	glibmm gtkmm30 intltool libsigc++20
-USE_CXXSTD=	c++11
-
-GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-CONFIGURE_ARGS=	--disable-lynx
-
-post-patch:
-# Install locales files in right place
-	${REINPLACE_CMD} -e 's|[$$][(]DATADIRNAME[)]|share|' \
-		${WRKSRC}/po/Makefile.in.in
+USES=		gettext gnome meson pkgconfig tar:xz
+USE_GNOME=	gtkmm40 intltool
+MESON_ARGS=	-Dlynx=false
 
 .include <bsd.port.mk>
