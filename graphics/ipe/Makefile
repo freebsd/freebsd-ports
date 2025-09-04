@@ -1,5 +1,5 @@
 PORTNAME=	ipe
-DISTVERSION=	7.2.24
+DISTVERSION=	7.2.25
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/otfried/old-ipe-releases/releases/download/v${DISTVERSION}/
@@ -37,7 +37,8 @@ MAKE_ENV=	DL_LIBS="" \
 		JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg" \
 		LUA_PACKAGE="lua-${LUA_VER}" \
-		MOC="${MOC}"
+		MOC="${MOC}" \
+		IPE_NO_SPELLCHECK="1"
 
 CPPFLAGS+=	-I${LOCALBASE}/${QT_INCDIR_REL} \
 		-I${LOCALBASE}/include/cairo \
@@ -67,7 +68,8 @@ post-patch:
 		s|<QApplication>|<QtWidgets/QApplication>|; \
 		s|<QAction>|<QtWidgets/QAction>|' \
 		${WRKSRC}/ipeui/ipeui_qt.h
-	@${REINPLACE_CMD} -e 's|<QApplication>|<QtWidgets/QApplication>|' \
+	@${REINPLACE_CMD} -e 's|<QApplication>|<QtWidgets/QApplication>|; \
+		s|<QCheckBox>|<QtWidgets/QCheckBox>|' \
 		${WRKSRC}/ipeui/ipeui_qt.cpp
 	@${REINPLACE_CMD} -e 's|<QListWidget>|<QtWidgets/QListWidget>|' \
 		${WRKSRC}/ipecanvas/ipeselector_qt.h
@@ -77,7 +79,8 @@ post-patch:
 		${WRKSRC}/ipepresenter/timelabel_qt.h
 	@${REINPLACE_CMD} -e 's|<QInputDialog>|<QtWidgets/QInputDialog>|' \
 		${WRKSRC}/ipepresenter/timelabel_qt.cpp
-	@${REINPLACE_CMD} -e 's|<QMainWindow>|<QtWidgets/QMainWindow>|' \
+	@${REINPLACE_CMD} -e 's|<QMainWindow>|<QtWidgets/QMainWindow>|; \
+		s|<QPlainTextEdit>|<QtWidgets/QPlainTextEdit>|' \
 		${WRKSRC}/ipepresenter/ipepresenter_qt.h
 
 post-install:
