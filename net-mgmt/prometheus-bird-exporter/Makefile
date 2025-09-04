@@ -1,6 +1,6 @@
 PORTNAME=	prometheus-bird-exporter
 DISTVERSION=	1.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ivy@FreeBSD.org

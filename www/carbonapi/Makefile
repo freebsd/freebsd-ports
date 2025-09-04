@@ -1,6 +1,6 @@
 PORTNAME=	carbonapi
 DISTVERSION=	0.14.1
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	www
 
 MAINTAINER=	a.andersson.thn@gmail.com

@@ -1,6 +1,7 @@
 PORTNAME=	fzf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.65.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod
