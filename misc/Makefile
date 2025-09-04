@@ -123,6 +123,7 @@
     SUBDIR += fortune-mod-epictetus
     SUBDIR += fortune-mod-freebsd-classic
     SUBDIR += fortune-mod-futurama
+    SUBDIR += fortune-mod-mormon
     SUBDIR += fortune-mod-psalms
     SUBDIR += fortuneit
     SUBDIR += fq
