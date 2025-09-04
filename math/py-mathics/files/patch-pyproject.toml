@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-08-28 23:47:16 UTC
++++ pyproject.toml
+@@ -34,7 +34,7 @@ dependencies = [
+     # change a little
+     "sympy>=1.13,<1.14",
+ ]
+-license = "GPL-3.0-or-later"
++license = {text = "GPL-3.0-or-later"}
+ name = "Mathics3"
+ requires-python = ">=3.10" # bisect.insort_left with key parameter starts in 3.10
+ readme = "README.rst"

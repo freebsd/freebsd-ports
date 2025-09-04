@@ -1,20 +1,22 @@
 PORTNAME=	Mathics3
-PORTVERSION=	8.0.1
-PORTREVISION=	2
+PORTVERSION=	9.0.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	General-purpose computer algebra system (CAS)
 WWW=		https://mathics.org/
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 
-BUILD_DEPENDS=	${PYNUMPY}	\
-		${PY_PILLOW}	\
+BUILD_DEPENDS=	${PYNUMPY}		\
+		${PY_PILLOW}		\
+		${PY_SETUPTOOLS}	\
 		${PYTHON_PKGNAMEPREFIX}pint>0:devel/py-pint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mpmath>0:math/py-mpmath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
@@ -22,11 +24,10 @@ BUILD_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}llvmlite>0:devel/py-llvmlite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}palettable>0:misc/py-palettable@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wordcloud>0:textproc/py-wordcloud@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-image>0:graphics/py-scikit-image@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>0:devel/py-python-dateutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mathics_scanner>0:math/py-mathics-scanner
+		${PYTHON_PKGNAMEPREFIX}Mathics_Scanner>0:math/py-mathics-scanner
 RUN_DEPENDS=	${PYNUMPY}	\
 		${PY_PILLOW}	\
 		bash:shells/bash	\
@@ -62,7 +63,7 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}recordclass>0:devel/py-recordclass@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unidecode>0:converters/py-unidecode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-image>0:graphics/py-scikit-image@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mathics_scanner>0:math/py-mathics-scanner
+		${PYTHON_PKGNAMEPREFIX}Mathics_Scanner>0:math/py-mathics-scanner
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>0:devel/py-pluggy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR}
@@ -71,7 +72,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 #GH_ACCOUNT=	${PORTNAME:tl}
 
 USES=		python shebangfix
-USE_PYTHON=	cython cython_run distutils noflavors
+USE_PYTHON=	cython cython_run noflavors pep517
 MAKE_ENV+=	USE_CYTHON=yes
 SHEBANG_GLOB=	*.py
 
