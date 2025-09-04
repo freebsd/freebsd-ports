@@ -75,4 +75,3 @@ usr/share/licenses/at-spi2-core-2.28.0/COPYING
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/at-spi2-core.mo
 %%NLS%%usr/share/locale/zh_HK/LC_MESSAGES/at-spi2-core.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/at-spi2-core.mo
-@dir usr/lib
