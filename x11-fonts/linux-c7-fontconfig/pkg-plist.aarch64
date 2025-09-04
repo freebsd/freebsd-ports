@@ -34,4 +34,3 @@ usr/share/xml/fontconfig/fonts.dtd
 @rmtry var/db/fontconfig/CACHEDIR.TAG
 @dir var/db/fontconfig
 @postexec %D/usr/bin/fc-cache-64 -f -s
-@dir usr/lib
