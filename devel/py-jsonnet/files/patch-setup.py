@@ -1,64 +1,93 @@
---- setup.py.orig	2022-01-08 16:20:10 UTC
+--- setup.py.orig	2025-05-07 12:28:56 UTC
 +++ setup.py
-@@ -21,30 +21,6 @@ from subprocess import Popen
- DIR = os.path.abspath(os.path.dirname(__file__))
+@@ -21,18 +21,6 @@ LIB_SOURCES = [
  # NOTE: If you are editing the array below then you probably also need
  # to change MANIFEST.in.
--LIB_OBJECTS = [
--    'core/desugarer.o',
--    'core/formatter.o',
--    'core/libjsonnet.o',
--    'core/lexer.o',
--    'core/parser.o',
--    'core/pass.o',
--    'core/static_analysis.o',
--    'core/string_utils.o',
--    'core/vm.o',
--    'third_party/md5/md5.o',
--    'third_party/rapidyaml/rapidyaml/ext/c4core/src/c4/char_traits.o',
--    'third_party/rapidyaml/rapidyaml/ext/c4core/src/c4/base64.o',
--    'third_party/rapidyaml/rapidyaml/ext/c4core/src/c4/language.o',
--    'third_party/rapidyaml/rapidyaml/ext/c4core/src/c4/memory_util.o',
--    'third_party/rapidyaml/rapidyaml/ext/c4core/src/c4/format.o',
--    'third_party/rapidyaml/rapidyaml/ext/c4core/src/c4/time.o',
--    'third_party/rapidyaml/rapidyaml/ext/c4core/src/c4/memory_resource.o',
--    'third_party/rapidyaml/rapidyaml/ext/c4core/src/c4/error.o',
--    'third_party/rapidyaml/rapidyaml/src/c4/yml/parse.o',
--    'third_party/rapidyaml/rapidyaml/src/c4/yml/preprocess.o',
--    'third_party/rapidyaml/rapidyaml/src/c4/yml/common.o',
--    'third_party/rapidyaml/rapidyaml/src/c4/yml/tree.o',
--]
+ LIB_SOURCES = [
+-    "core/desugarer.cpp",
+-    "core/formatter.cpp",
+-    "core/libjsonnet.cpp",
+-    "core/lexer.cpp",
+-    "core/parser.cpp",
+-    "core/pass.cpp",
+-    "core/path_utils.cpp",
+-    "core/static_analysis.cpp",
+-    "core/string_utils.cpp",
+-    "core/vm.cpp",
+-    "third_party/md5/md5.cpp",
+-    "third_party/rapidyaml/rapidyaml.cpp",
+     "python/_jsonnet.c",
+ ]
  
- MODULE_SOURCES = ['python/_jsonnet.c']
+@@ -54,50 +42,7 @@ def get_version():
+     )
  
-@@ -60,19 +36,10 @@ def get_version():
-                     v_code = v_code[1:]
-                 return v_code
  
 -class BuildJsonnetExt(BuildExt):
--    def run(self):
--        p = Popen(['make'] + LIB_OBJECTS, cwd=DIR)
--        p.wait()
--        if p.returncode != 0:
--            raise Exception('Could not build %s' % (', '.join(LIB_OBJECTS)))
--        BuildExt.run(self)
--
- jsonnet_ext = Extension(
-     '_jsonnet',
-     sources=MODULE_SOURCES,
--    extra_objects=LIB_OBJECTS,
--    include_dirs = ['include'],
-+    libraries = ['jsonnet'],
-     language='c++'
- )
+-    def _pack_std_jsonnet(self):
+-        print("generating core/std.jsonnet.h from stdlib/std.jsonnet")
+-        with open("stdlib/std.jsonnet", "rb") as f:
+-            stdlib = f.read()
+-        with open("core/std.jsonnet.h", "w", encoding="utf-8") as f:
+-            f.write(",".join(str(x) for x in stdlib))
+-            f.write(",0\n\n")
  
-@@ -83,9 +50,6 @@ setup(name='jsonnet',
-       author='David Cunningham',
-       author_email='dcunnin@google.com',
-       version=get_version(),
--      cmdclass={
--          'build_ext': BuildJsonnetExt,
--      },
-       ext_modules=[jsonnet_ext],
-       test_suite="python._jsonnet_test",
- )
+-    def build_extensions(self):
+-        # At this point, the compiler has been chosen so we add compiler-specific flags.
+-        # There is unfortunately no built in support for this in setuptools.
+-        # Feature request: https://github.com/pypa/setuptools/issues/1819
+-        print("Adjusting compiler for compiler type " + self.compiler.compiler_type)
+-        # This is quite hacky as we're modifying the Extension object itself.
+-        if self.compiler.compiler_type == "msvc":
+-            for ext in self.extensions:
+-                ext.extra_compile_args.append("/std:c++17")
+-        else:
+-            # -std=c++17 should only be applied to C++ build,
+-            # not when compiling C source code. Unfortunately,
+-            # the extra_compile_args applies to both. Instead,
+-            # patch the CC/CXX commands in the compiler object.
+-            #
+-            # Note that older versions of distutils/setuptools do not
+-            # have the necessary separation between C and C++ compilers.
+-            # This requires setuptools 72.2.
+-            for v in ("compiler_cxx", "compiler_so_cxx"):
+-                if not hasattr(self.compiler, v):
+-                    print(
+-                        f"WARNING: cannot adjust flag {v}, "
+-                        f"compiler type {self.compiler.compiler_type}, "
+-                        f"compiler class {type(self.compiler).__name__}"
+-                    )
+-                    continue
+-                current = getattr(self.compiler, v)
+-                self.compiler.set_executable(v, current + ["-std=c++17"])
+-        super().build_extensions()
+-
+-    def run(self):
+-        self._pack_std_jsonnet()
+-        super().run()
+-
+-
+ setuptools.setup(
+     name="jsonnet",
+     url="https://jsonnet.org",
+@@ -109,19 +54,11 @@ setuptools.setup(
+     author="David Cunningham",
+     author_email="dcunnin@google.com",
+     version=get_version(),
+-    cmdclass={
+-        "build_ext": BuildJsonnetExt,
+-    },
+     ext_modules=[
+         setuptools.Extension(
+             "_jsonnet",
+             sources=LIB_SOURCES,
+-            include_dirs=[
+-                "include",
+-                "third_party/md5",
+-                "third_party/json",
+-                "third_party/rapidyaml",
+-            ],
++            libraries = ['jsonnet'],
+             language="c++",
+         )
+     ],
