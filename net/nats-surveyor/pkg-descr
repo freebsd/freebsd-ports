@@ -1,0 +1,4 @@
+NATS Surveyor is a simplified monitoring tool for NATS infrastructure.
+It provides real-time observability and monitoring capabilities for NATS
+servers and clusters, making it easier to track performance, health, and
+metrics across your NATS messaging system.
