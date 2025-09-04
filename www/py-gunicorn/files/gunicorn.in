@@ -14,6 +14,9 @@
 # gunicorn_user (str):      User to run gunicorn as.
 #
 # gunicorn_group (str):     Group to run gunicorn as.
+#
+# gunicorn_profiles (str):  Set to "" by default.
+#                           Define your profiles here.
 
 . /etc/rc.subr
 
@@ -29,12 +32,45 @@ load_rc_config $name
 : ${gunicorn_user:=%%USERS%%}
 : ${gunicorn_group:=%%GROUPS%%}
 
-pidfile="/var/run/${name}.pid"
-cpidfile="/var/run/${name}-worker.pid"
+_pidprefix="/var/run/gunicorn"
+pidfile="${_pidprefix}/${name}.pid"
+cpidfile="${_pidprefix}/${name}-worker.pid"
 command=/usr/sbin/daemon
 command_args="-P ${pidfile} -p ${cpidfile} -f -ST ${name} %%PREFIX%%/bin/gunicorn -c ${gunicorn_config}"
 required_files="${gunicorn_config}"
 start_precmd="gunicorn_precmd"
+
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ "x${gunicorn_profiles}" != "x" ]; then
+		pidfile="${_pidprefix}/gunicorn-${profile}.pid"
+		cpidfile="${_pidprefix}/gunicorn-${profile}-worker.pid"
+		eval gunicorn_config="\${gunicorn_${profile}_config:-}"
+		if [ "x${gunicorn_config}" = "x" ]; then
+			echo "You must define a configuration file (gunicorn_${profile}_config)"
+			exit 1
+		fi
+		required_files="${gunicorn_config}"
+		command_args="-P ${pidfile} -p ${cpidfile} -f -ST ${name} /usr/local/bin/gunicorn -c ${gunicorn_config}"
+		eval gunicorn_enable="\${gunicorn_${profile}_enable:-${gunicorn_enable}}"
+	else
+		echo "$0: extra argument ignored"
+	fi
+else
+	if [ "x${gunicorn_profiles}" != "x" -a "x$1" != "x" ]; then
+		for profile in ${gunicorn_profiles}; do
+			echo "===> gunicorn profile: ${profile}"
+			%%PREFIX%%/etc/rc.d/gunicorn $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+			fi
+		done
+		exit 0
+	fi
+fi
 
 gunicorn_precmd()
 {
