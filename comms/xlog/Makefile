@@ -1,5 +1,6 @@
 PORTNAME=	xlog
 DISTVERSION=	2.0.25
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
 
@@ -19,8 +20,7 @@ USES=		compiler:c11 gnome pkgconfig shared-mime-info
 USE_GNOME=	cairo gdkpixbuf gtk20
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-mime-update
-CONFIGURE_ENV+=	ac_cv_c_compiler_gnu=no
+CONFIGURE_ENV=	ac_cv_c_compiler_gnu=no
 
 DESKTOP_ENTRIES="${PORTNAME}" "${COMMENT}" "${PORTNAME}" \
 	"${PORTNAME}" "Utility;" ${FALSE}
