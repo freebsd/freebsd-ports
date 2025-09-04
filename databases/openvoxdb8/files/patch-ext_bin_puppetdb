@@ -1,6 +1,6 @@
---- ext/bin/puppetdb.orig	2016-03-17 04:17:10 UTC
+--- ext/bin/puppetdb.orig	2025-08-08 17:49:06 UTC
 +++ ext/bin/puppetdb
-@@ -5,6 +5,12 @@ if [ -r "/etc/default/puppetdb" ] ; then
+@@ -8,6 +8,12 @@ elif [ -r "/etc/sysconfig/puppetdb" ] ; then
      . /etc/default/puppetdb
  elif [ -r "/etc/sysconfig/puppetdb" ] ; then
      . /etc/sysconfig/puppetdb
@@ -12,4 +12,4 @@
 +    USER="puppet"
  elif [ `uname` == "OpenBSD" ] ; then
      JAVA_BIN=$(javaPathHelper -c puppetdb)
-     JAVA_ARGS="-Xmx192m"
+     JAVA_ARGS="-Xmx192m -Djdk.tls.ephemeralDHKeySize=2048"

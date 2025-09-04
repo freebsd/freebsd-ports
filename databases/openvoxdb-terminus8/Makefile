@@ -1,5 +1,5 @@
 PORTNAME=	openvoxdb-terminus
-PORTVERSION=	8.9.1
+PORTVERSION=	8.11.0
 CATEGORIES=	databases ruby
 MASTER_SITES=	https://artifacts.voxpupuli.org/openvoxdb/${PORTVERSION}/
 PKGNAMESUFFIX=	8
@@ -16,10 +16,8 @@ NO_BUILD=	yes
 USES=		gmake ruby
 WRKSRC=		${WRKDIR}/puppetdb-${PORTVERSION}
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/Makefile
-
 do-install:
-	@cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${GMAKE} install-puppetdb-termini
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} puppet ${STAGEDIR}${RUBY_SITELIBDIR}
 
 .include <bsd.port.mk>

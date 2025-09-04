@@ -1,5 +1,5 @@
 PORTNAME=	openvoxdb
-PORTVERSION=	8.9.1
+PORTVERSION=	8.11.0
 CATEGORIES=	databases java
 MASTER_SITES=	https://artifacts.voxpupuli.org/${PORTNAME}/${PORTVERSION}/
 PKGNAMESUFFIX=	8
@@ -22,11 +22,7 @@ SHEBANG_FILES=	ext/bin/puppetdb \
 		ext/cli/config-migration \
 		ext/cli/foreground \
 		ext/cli/ssl-setup \
-		ext/cli/start \
-		ext/cli/stop \
-		ext/cli/reload \
-		ext/cli/upgrade \
-		ext/ezbake-functions.sh
+		ext/cli/upgrade
 JAVA_VERSION=	11+
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -42,16 +38,22 @@ DATADIR=	${PREFIX}/share/puppetdb
 ETCDIR=		${PREFIX}/etc/puppetdb
 
 post-patch:
-.for file in Makefile ext/bin/puppetdb ext/cli/ssl-setup \
+.for file in ext/bin/puppetdb ext/cli/ssl-setup \
 	ext/config/conf.d/jetty.ini ext/config/conf.d/config.ini
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|" ${WRKSRC}/ext/bin/puppetdb
-	@${REINPLACE_CMD} -e 's|/puppetlabs/puppetdb/|/puppetdb/|' \
-		-e 's|\(install -m 0644 ext/config/.*\)"|\1.sample"|' \
-		${WRKSRC}/Makefile
+	${FIND} ${WRKSRC}/ext/cli ${WRKSRC}/ext/config \( -name \*.bak -o -name \*.orig \) -delete
+	${FIND} ${WRKSRC}/ext/config -type f -print0 | ${XARGS} -0 -I {} ${MV} {} {}.sample
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} make install-puppetdb
+	${INSTALL_SCRIPT} ${WRKSRC}/ext/bin/puppetdb ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	cd ${WRKSRC}/ext/config && ${COPYTREE_SHARE} \* ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/cli/apps
+	cd ${WRKSRC} && ${COPYTREE_SHARE} puppetdb.jar ${STAGEDIR}${DATADIR}
+.for file in ext/cli/anonymize ext/cli/config-migration ext/cli/delete-reports ext/cli/foreground ext/cli/ssl-setup ext/cli/upgrade
+	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${DATADIR}/cli/apps
+.endfor
 
 .include <bsd.port.mk>
