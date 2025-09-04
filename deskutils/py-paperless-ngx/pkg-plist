@@ -611,6 +611,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_sanity_check.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_task_signals.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_tasks.py
+%%PYTHON_SITELIBDIR%%/paperless/paperless/tests/test_utils.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_views.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_workflows.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/utils.py

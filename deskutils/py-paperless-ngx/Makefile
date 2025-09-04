@@ -1,7 +1,6 @@
 PORTNAME=	paperless-ngx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.18.2
-PORTREVISION=	2
+DISTVERSION=	2.18.3
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:webui \
 		GH:gh
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}concurrent-log-handler>=0.9.19:sysutils/py-concurrent-log-handler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateparser>=1.2.2:devel/py-dateparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-channels-redis>=4.3.0:www/py-dj51-channels-redis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj51-django-allauth>=65.11.0:www/py-dj51-django-allauth@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj51-django-allauth>=65.11.1:www/py-dj51-django-allauth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-django-auditlog>=3.0.0:www/py-dj51-django-auditlog@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-django-celery-results>=2.6.0:www/py-dj51-django-celery-results@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-django-compression-middleware>=0.5.0:www/py-dj51-django-compression-middleware@${PY_FLAVOR} \
@@ -34,14 +33,14 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}dj51-drf-writable-nested>=0.7.2:www/py-dj51-drf-writable-nested@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.17.0:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flower>=2.0.1:www/py-flower@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gotenberg-client>=0.10.0:converters/py-gotenberg-client@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}granian>=2.5.0:www/py-granian@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gotenberg-client>=0.11.0:converters/py-gotenberg-client@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}granian>=2.5.2:www/py-granian@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h2>=4.1.0:www/py-h2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hiredis>=3.0.0:databases/py-hiredis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httptools>=0.6.4:www/py-httptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx-oauth>=0.10.1:www/py-httpx-oauth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}imap-tools>=1.11.0:mail/py-imap-tools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}inotifyrecursive>=0.3.5_2:devel/py-inotifyrecursive@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}inotifyrecursive>=0.3.5_3:devel/py-inotifyrecursive@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langdetect>=1.0.9:textproc/py-langdetect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mysqlclient>=2.2.7:databases/py-mysqlclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nltk>=3.8.1:textproc/py-nltk@${PY_FLAVOR} \
