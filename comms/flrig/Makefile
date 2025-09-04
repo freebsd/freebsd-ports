@@ -2,8 +2,7 @@ PORTNAME=	flrig
 DISTVERSION=	2.0.08
 PORTREVISION=	1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/fldigi/${PORTNAME} \
-		https://www.w1hkj.org/files/flrig/
+MASTER_SITES=	SF/fldigi/${PORTNAME}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Ham Radio rig control program, cooperates with fldigi
