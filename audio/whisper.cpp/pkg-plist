@@ -1,0 +1,12 @@
+%%EXAMPLES%%bin/vad-speech-segments
+%%EXAMPLES%%bin/whisper-bench
+%%EXAMPLES%%bin/whisper-cli
+%%EXAMPLES%%bin/whisper-server
+bin/whisper.cpp-download-ggml-model.sh
+include/whisper.h
+lib/cmake/whisper/whisper-config.cmake
+lib/cmake/whisper/whisper-version.cmake
+lib/libwhisper.so
+lib/libwhisper.so.1
+lib/libwhisper.so.1.7.6
+libdata/pkgconfig/whisper.pc
