@@ -6,6 +6,6 @@ lib/cmake/verdict/VerdictTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/verdict/VerdictTargets.cmake
 lib/libverdict.so
 lib/libverdict.so.1.4
-lib/libverdict.so.1.4.2
+lib/libverdict.so.1.4.4
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/SAND2007-2853p.pdf
