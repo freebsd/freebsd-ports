@@ -21,6 +21,8 @@ include/libsemigroups/cong.hpp
 include/libsemigroups/constants.hpp
 include/libsemigroups/debug.hpp
 include/libsemigroups/deprecated.hpp
+include/libsemigroups/detail/aho-corasick-impl.hpp
+include/libsemigroups/detail/aho-corasick-impl.tpp
 include/libsemigroups/detail/bruidhinn-traits.hpp
 include/libsemigroups/detail/citow.hpp
 include/libsemigroups/detail/cong-common-class.hpp
@@ -33,6 +35,7 @@ include/libsemigroups/detail/felsch-tree.hpp
 include/libsemigroups/detail/fmt.hpp
 include/libsemigroups/detail/formatters.hpp
 include/libsemigroups/detail/function-ref.hpp
+include/libsemigroups/detail/guard.hpp
 include/libsemigroups/detail/int-range.hpp
 include/libsemigroups/detail/iterator.hpp
 include/libsemigroups/detail/kambites-nf.hpp
@@ -42,7 +45,7 @@ include/libsemigroups/detail/ke.hpp
 include/libsemigroups/detail/knuth-bendix-impl.hpp
 include/libsemigroups/detail/knuth-bendix-impl.tpp
 include/libsemigroups/detail/knuth-bendix-nf.hpp
-include/libsemigroups/detail/multi-string-view.hpp
+include/libsemigroups/detail/multi-view.hpp
 include/libsemigroups/detail/node-managed-graph.hpp
 include/libsemigroups/detail/node-managed-graph.tpp
 include/libsemigroups/detail/node-manager.hpp
@@ -50,6 +53,7 @@ include/libsemigroups/detail/node-manager.tpp
 include/libsemigroups/detail/path-iterators.hpp
 include/libsemigroups/detail/path-iterators.tpp
 include/libsemigroups/detail/pool.hpp
+include/libsemigroups/detail/print.hpp
 include/libsemigroups/detail/race.hpp
 include/libsemigroups/detail/report.hpp
 include/libsemigroups/detail/report.tpp
@@ -67,6 +71,7 @@ include/libsemigroups/detail/word-iterators.hpp
 include/libsemigroups/dot.hpp
 include/libsemigroups/exception.hpp
 include/libsemigroups/forest.hpp
+include/libsemigroups/forest.tpp
 include/libsemigroups/freeband.hpp
 include/libsemigroups/froidure-pin-base.hpp
 include/libsemigroups/froidure-pin.hpp
@@ -110,6 +115,7 @@ include/libsemigroups/hpcombi/simde/x86/svml.h
 include/libsemigroups/hpcombi/simde/x86/xop.h
 include/libsemigroups/hpcombi/vect16.hpp
 include/libsemigroups/hpcombi/vect_generic.hpp
+include/libsemigroups/is_specialization_of.hpp
 include/libsemigroups/kambites-class.hpp
 include/libsemigroups/kambites-class.tpp
 include/libsemigroups/kambites-helpers.hpp

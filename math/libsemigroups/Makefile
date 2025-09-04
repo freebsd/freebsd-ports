@@ -1,6 +1,5 @@
 PORTNAME=	libsemigroups
-PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTVERSION=	3.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt
 
 USE_GITHUB=	yes
 
-USES=		autoreconf compiler:c++11-lang eigen:3,build \
+USES=		autoreconf compiler:c++17-lang eigen:3,build \
 		libtool pathfix pkgconfig
 
 GNU_CONFIGURE=	yes
