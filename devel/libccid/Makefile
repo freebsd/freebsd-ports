@@ -17,14 +17,14 @@ LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 USES=		meson perl5 pkgconfig tar:xz
 USE_PERL5=	build
 
-MESON_FALSE=	class \
-		composite-as-multislot \
-		embedded \
-		os_log \
-		serial \
-		zlp
-MESON_TRUE=	enable-extras \
-		pcsclite
+MESON_ARGS=	-Dclass=false \
+		-Dcomposite-as-multislot=false \
+		-Dembedded=false \
+		-Denable-extras=true \
+		-Dos_log=false \
+		-Dpcsclite=true \
+		-Dserial=false \
+		-Dzlp=false
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/_build/Kobil_mIDentity_switch ${STAGEDIR}${PREFIX}/bin
