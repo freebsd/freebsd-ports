@@ -1,15 +1,11 @@
 PORTNAME=	rsyslog
-PORTVERSION=	8.2506.0
-PORTREVISION=	2
+PORTVERSION=	8.2508.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Syslogd supporting SQL, TCP, and TLS
 WWW=		https://www.rsyslog.com/
-
-PATCH_SITES=	https://github.com/rgerhards/${PORTNAME}/commit/
-PATCHFILES=	72b8bcc05318f0a72ec828d1a5329fa98c021eb8.patch:-p1
 
 LICENSE=	GPLv3 LGPL3 APACHE20
 LICENSE_COMB=	multi
