@@ -1,6 +1,6 @@
 PORTNAME=	wl-screenrec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.5
+DISTVERSION=	0.1.5 # see PORTSCOUT comment below
 PORTREVISION=	11
 CATEGORIES=	multimedia wayland
 
