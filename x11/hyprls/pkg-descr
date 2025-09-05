@@ -1,0 +1,8 @@
+An LSP server for Hyprland configuration files.
+
+Features:
+- Auto-complete
+- Hover
+- Go to definition
+- Color pickers
+- Document symbols

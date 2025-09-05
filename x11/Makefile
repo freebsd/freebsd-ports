@@ -134,6 +134,7 @@
     SUBDIR += hypridle
     SUBDIR += hyprland-qtutils
     SUBDIR += hyprlock
+    SUBDIR += hyprls
     SUBDIR += hyprpaper
     SUBDIR += hyprpicker
     SUBDIR += hyprviz
