@@ -1,11 +1,11 @@
 bin/plog-converter
 bin/pvs-studio
 bin/pvs-studio-analyzer
-lib/pvs-studio/plugins/libpvs-studio-qtcreator-10.0.x-%%QT%%.linux.zip
-lib/pvs-studio/plugins/libpvs-studio-qtcreator-11.0.x-%%QT%%.linux.zip
 lib/pvs-studio/plugins/libpvs-studio-qtcreator-12.0.x-%%QT%%.linux.zip
 lib/pvs-studio/plugins/libpvs-studio-qtcreator-13.0.x-%%QT%%.linux.zip
 lib/pvs-studio/plugins/libpvs-studio-qtcreator-14.0.x-%%QT%%.linux.zip
-lib/pvs-studio/plugins/libpvs-studio-qtcreator-6.0.x-qt5-kpda-%%QT%%.linux.zip
-lib/pvs-studio/plugins/libpvs-studio-qtcreator-9.0.x-%%QT%%.linux.zip
+lib/pvs-studio/plugins/libpvs-studio-qtcreator-15.0.x-%%QT%%.linux.zip
+lib/pvs-studio/plugins/libpvs-studio-qtcreator-16.0.x-%%QT%%.linux.zip
+lib/pvs-studio/plugins/libpvs-studio-qtcreator-17.0.x-%%QT%%.linux.zip
+lib/pvs-studio/plugins/libpvs-studio-qtcreator-6.0.x-qt5-neutrino-%%QT%%.linux.zip
 lib/pvs-studio/plugins/pvs-studio-vscode-%%VSCODE%%.vsix
