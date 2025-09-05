@@ -1,6 +1,6 @@
 NO_BUILD=	yes
 USES+=		java
-JAVA_VERSION=	17+
+JAVA_VERSION=	21+
 
 REPO_DIRS?=	features plugins
 
