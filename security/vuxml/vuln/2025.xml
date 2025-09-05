@@ -2233,7 +2233,7 @@
     <affects>
       <package>
 	<name>libxslt</name>
-	<range><lt>2</lt></range> <!-- adjust should libxslt ever be fixed -->
+	<range><lt>1.1.43_2</lt></range> <!-- adjust should libxslt ever be fixed -->
       </package>
       <package>
 	<name>linux-c7-libxslt</name>
