@@ -1,5 +1,5 @@
 PORTNAME=	ipe
-DISTVERSION=	7.2.25
+DISTVERSION=	7.2.26
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/otfried/old-ipe-releases/releases/download/v${DISTVERSION}/
