@@ -1,6 +1,5 @@
 PORTNAME=	chrome
 PORTVERSION=	${CHROME_VER}
-PORTREVISION=	2
 CATEGORIES=	www linux
 MASTER_SITES=	https://dl.google.com/linux/chrome/rpm/stable/x86_64/
 DISTNAME=	google-${PORTNAME}-stable-${CHROME_VER}-${CHROME_BUILD}.x86_64
@@ -33,7 +32,7 @@ SRC_SUFX?=		.src${EXTRACT_SUFX}
 
 REINPLACE_ARGS=	-i ""
 
-CHROME_VER?=	133.0.6943.126
+CHROME_VER?=	140.0.7339.80
 CHROME_BUILD?=	1
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
@@ -45,7 +44,8 @@ SUB_FILES=	google-chrome
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|/usr/bin/google-chrome-stable|${LOCALBASE}/bin/google-chrome|' \
-		${WRKSRC}/usr/share/applications/google-chrome.desktop
+		${WRKSRC}/usr/share/applications/google-chrome.desktop \
+		${WRKSRC}/usr/share/applications/com.google.Chrome.desktop
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/google-chrome ${STAGEDIR}${PREFIX}/bin
