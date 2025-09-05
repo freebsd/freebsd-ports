@@ -1,5 +1,5 @@
 PORTNAME=	prestashop
-PORTVERSION=	8.2.2
+PORTVERSION=	8.2.3
 CATEGORIES=	finance www
 MASTER_SITES=	https://github.com/PrestaShop/PrestaShop/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
