@@ -12,12 +12,14 @@ libexec/aerc/filters/wrap
 %%DATADIR%%/aerc.conf
 %%DATADIR%%/binds.conf
 %%DATADIR%%/stylesets/blue
+%%DATADIR%%/stylesets/catppuccin
 %%DATADIR%%/stylesets/default
 %%DATADIR%%/stylesets/dracula
 %%DATADIR%%/stylesets/monochrome
 %%DATADIR%%/stylesets/nord
 %%DATADIR%%/stylesets/pink
 %%DATADIR%%/stylesets/solarized
+%%DATADIR%%/stylesets/solarized-dark
 %%DATADIR%%/templates/forward_as_body
 %%DATADIR%%/templates/new_message
 %%DATADIR%%/templates/quoted_reply
