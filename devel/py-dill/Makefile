@@ -1,12 +1,13 @@
 PORTNAME=	dill
-DISTVERSION=	0.3.9
+DISTVERSION=	0.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Serialize all of python
-WWW=		https://dill.readthedocs.io/en/latest/
+WWW=		https://dill.readthedocs.io/en/latest/ \
+		https://github.com/uqfoundation/dill
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
