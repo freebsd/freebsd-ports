@@ -1,0 +1,22 @@
+--- pyproject.toml.orig	2025-07-16 04:22:08 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
+ build-backend = "setuptools.build_meta"
+ requires = [
+-  "setuptools>=77",
++  "setuptools",
+   "setuptools-scm[toml]>=6.2",
+ ]
+ 
+@@ -10,10 +10,6 @@ readme.file = "README.rst"
+ description = "Pytest support for asyncio"
+ readme.content-type = "text/x-rst"
+ readme.file = "README.rst"
+-license = "Apache-2.0"
+-license-files = [
+-  "LICENSE",
+-]
+ maintainers = [
+   { name = "Michael Seifert", email = "m.seifert@digitalernachschub.de" },
+ ]

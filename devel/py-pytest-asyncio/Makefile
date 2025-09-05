@@ -1,6 +1,5 @@
 PORTNAME=	pytest-asyncio
-DISTVERSION=	0.23.8
-PORTREVISION=	1
+DISTVERSION=	1.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,21 +7,24 @@ DISTNAME=	pytest_asyncio-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Py.test plugin providing fixtures and markers for asyncio
-WWW=		https://pypi.org/project/pytest-asyncio/
+WWW=		https://pytest-asyncio.readthedocs.io/en/stable/ \
+		https://github.com/pytest-dev/pytest-asyncio
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# note that the next version requires pytest 8.2.0, while ports still only have 8.1.1 ATOW
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=6.1.0:devel/py-pytest@${PY_FLAVOR}
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=6.1.0:devel/py-pytest@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=5.7.1:devel/py-hypothesis@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8.2:devel/py-setuptools-scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=8.0:devel/py-pytest@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=6.2:devel/py-coverage@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hypothesis>=5.7.1:devel/py-hypothesis@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils pytest
+USE_PYTHON=	pep517 autoplist pytest
+
 NO_ARCH=	yes
 
-post-patch:
-	@${ECHO_CMD} 'from setuptools import setup; setup()' > ${WRKSRC}/setup.py
+# tests as of 1.1.0: 23 failed, 145 passed in 214.54s (0:03:34), see https://github.com/pytest-dev/pytest-asyncio/issues/1227
 
 .include <bsd.port.mk>
