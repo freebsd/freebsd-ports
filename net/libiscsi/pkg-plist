@@ -5,13 +5,14 @@ bin/iscsi-md5sum
 bin/iscsi-perf
 bin/iscsi-pr
 bin/iscsi-readcapacity16
+bin/iscsi-rtpg
 bin/iscsi-swp
 include/iscsi/iscsi.h
 include/iscsi/scsi-lowlevel.h
 lib/libiscsi.a
 lib/libiscsi.so
 lib/libiscsi.so.11
-lib/libiscsi.so.11.0.0
+lib/libiscsi.so.11.0.2
 libdata/pkgconfig/libiscsi.pc
 share/man/man1/iscsi-inq.1.gz
 share/man/man1/iscsi-ls.1.gz

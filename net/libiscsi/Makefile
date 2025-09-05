@@ -1,5 +1,5 @@
 PORTNAME=	libiscsi
-DISTVERSION=	1.20.1
+DISTVERSION=	1.20.3
 CATEGORIES=	net
 
 MAINTAINER=	d8zNeCFG@aon.at
@@ -19,10 +19,9 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
-# 1.20.2 only affects environments defining __APPLE__
-PORTSCOUT=	skipv:1.20.2
+CFLAGS+=	-Wno-cast-align
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so.11.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so
 
 .include <bsd.port.mk>
