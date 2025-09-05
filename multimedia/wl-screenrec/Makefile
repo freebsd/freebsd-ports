@@ -24,7 +24,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/zsh/site-functions/_${PORTNAME}
 
 # https://github.com/russelltg/wl-screenrec/issues/99
-# https://github.com/zmwangx/rust-ffmpeg-sys/issues/96
 PORTSCOUT=	ignore:1
 
 post-patch:
