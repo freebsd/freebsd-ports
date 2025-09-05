@@ -1,6 +1,5 @@
 PORTNAME=	brave
 PORTVERSION=	${BRAVE_VER}
-PORTREVISION=	2
 CATEGORIES=	www linux
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}-browser/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-browser-${BRAVE_VER}-${BRAVE_BUILD}${EXTRACT_SUFX_${ARCH}}
@@ -31,7 +30,7 @@ SRC_SUFX?=		.src${EXTRACT_SUFX}
 
 REINPLACE_ARGS=	-i ""
 
-BRAVE_VER?=	1.75.180
+BRAVE_VER?=	1.82.161
 BRAVE_BUILD?=	1
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
@@ -43,7 +42,8 @@ SUB_FILES=	brave-browser
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|/usr/bin/brave-browser-stable|${LOCALBASE}/bin/brave-browser|' \
-		${WRKSRC}/usr/share/applications/brave-browser.desktop
+		${WRKSRC}/usr/share/applications/brave-browser.desktop \
+		${WRKSRC}/usr/share/applications/com.brave.Browser.desktop
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/brave-browser ${STAGEDIR}${PREFIX}/bin
