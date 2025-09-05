@@ -25,9 +25,10 @@ include/torrent/error.h
 include/torrent/event.h
 include/torrent/exceptions.h
 include/torrent/hash_string.h
-include/torrent/http.h
 include/torrent/net/address_info.h
 include/torrent/net/fd.h
+include/torrent/net/http_get.h
+include/torrent/net/http_stack.h
 include/torrent/net/resolver.h
 include/torrent/net/socket_address.h
 include/torrent/net/socket_address_key.h
@@ -69,6 +70,6 @@ include/torrent/utils/signal_bitfield.h
 include/torrent/utils/thread.h
 include/torrent/utils/uri_parser.h
 lib/libtorrent.so
-lib/libtorrent.so.26
-lib/libtorrent.so.26.0.0
+lib/libtorrent.so.30
+lib/libtorrent.so.30.0.0
 libdata/pkgconfig/libtorrent.pc

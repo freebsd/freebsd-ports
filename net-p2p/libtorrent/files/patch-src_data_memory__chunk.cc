@@ -1,6 +1,6 @@
---- src/data/memory_chunk.cc.orig	2025-06-01 13:09:26 UTC
+--- src/data/memory_chunk.cc.orig	2025-09-05 08:47:37 UTC
 +++ src/data/memory_chunk.cc
-@@ -66,6 +66,9 @@ MemoryChunk::unmap() {
+@@ -49,6 +49,9 @@ MemoryChunk::unmap() {
    if (!is_valid())
      throw internal_error("MemoryChunk::unmap() called on an invalid object");
  

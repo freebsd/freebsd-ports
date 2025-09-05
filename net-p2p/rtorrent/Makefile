@@ -1,5 +1,5 @@
 PORTNAME=	rtorrent
-DISTVERSION=	0.15.6
+DISTVERSION=	0.16.0
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v${DISTVERSION}/
 
@@ -11,14 +11,13 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libtorrent.so:net-p2p/libtorrent
+LIB_DEPENDS=	libtorrent.so:net-p2p/libtorrent
 
 USES=		compiler:c++17-lang ncurses pkgconfig
 USE_RC_SUBR=	rtorrent
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-debug
-LDFLAGS+=	-lexecinfo -pthread
+CONFIGURE_ARGS=	--disable-debug \
+		--with-xmlrpc-tinyxml2
 
 SUB_FILES=	pkg-message
 
@@ -26,19 +25,11 @@ USERS=		rtorrent
 GROUPS=		rtorrent
 
 PLIST_FILES=	bin/rtorrent \
-		"@sample ${ETCDIR}/rtorrent.conf.sample"
-PORTDOCS=	README
+		"@sample ${ETCDIR}/rtorrent.conf.sample" \
+		${DATADIR}/lua/rtorrent.lua
+PORTDOCS=	README.md
 
-OPTIONS_DEFINE=		DOCS IPV6
-OPTIONS_DEFAULT=	TINYXML
-OPTIONS_RADIO=		XML
-OPTIONS_RADIO_XML=	TINYXML XMLRPC
-XMLRPC_DESC=		Compile with xmlrpc-c support
-
-IPV6_CONFIGURE_ENABLE=	ipv6
-TINYXML_CONFIGURE_ON=	--with-xmlrpc-tinyxml2
-XMLRPC_LIB_DEPENDS=	libxmlrpc.so:net/xmlrpc-c
-XMLRPC_CONFIGURE_ON=	--with-xmlrpc-c
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
