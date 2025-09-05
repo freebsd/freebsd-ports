@@ -16,6 +16,7 @@ LIB_DEPENDS=	liblapack.so:math/lapack \
 
 USES=		fortran gmake libtool
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-linalg-prefix=${LOCALBASE}
 
 OPTIONS_DEFINE=		DOCS LIBXC
 OPTIONS_DEFAULT=	LIBXC
