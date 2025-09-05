@@ -1679,6 +1679,7 @@
     SUBDIR += modd
     SUBDIR += mold
     SUBDIR += mongo-c-driver
+    SUBDIR += mongo-cxx-driver
     SUBDIR += mono-addins
     SUBDIR += mpatrol
     SUBDIR += mph
