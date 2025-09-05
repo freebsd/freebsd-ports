@@ -17,7 +17,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gnome localbase meson pkgconfig python tar:xz
+USES=		gettext-tools gnome localbase meson pkgconfig python tar:xz
 USE_GNOME=	glib20 introspection:build libadwaita libxml2
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dca_certificates=true \
