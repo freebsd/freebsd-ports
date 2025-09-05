@@ -1,6 +1,10 @@
 @sample(%%U%%,%%G%%,0400) etc/lightningd-bitcoin.conf.sample
+%%RUST%%libexec/c-lightning/plugins/cln-bip353
 %%RUST%%libexec/c-lightning/plugins/cln-grpc
+%%RUST%%libexec/c-lightning/plugins/cln-lsps-client
+%%RUST%%libexec/c-lightning/plugins/cln-lsps-service
 %%RUST%%libexec/c-lightning/plugins/clnrest
+%%RUST%%libexec/c-lightning/plugins/wss-proxy
 bin/lightning-cli
 bin/lightning-hsmtool
 bin/lightningd
@@ -33,15 +37,10 @@ libexec/c-lightning/plugins/spenderp
 libexec/c-lightning/plugins/sql
 libexec/c-lightning/plugins/topology
 libexec/c-lightning/plugins/txprepare
-libexec/c-lightning/plugins/wss-proxy/Makefile
-libexec/c-lightning/plugins/wss-proxy/poetry.lock
-libexec/c-lightning/plugins/wss-proxy/pyproject.toml
-libexec/c-lightning/plugins/wss-proxy/wss-proxy
-libexec/c-lightning/plugins/wss-proxy/wss-proxy.py
-libexec/c-lightning/plugins/wss-proxy/wss_proxy/__init__.py
 share/doc/c-lightning/LICENSE
 share/doc/c-lightning/README.md
 share/man/man1/lightning-cli.1.gz
+share/man/man1/lightning-reckless.1.gz
 share/man/man5/lightningd-config.5.gz
 share/man/man7/lightning-addgossip.7.gz
 share/man/man7/lightning-addpsbtoutput.7.gz
@@ -73,9 +72,6 @@ share/man/man7/lightning-check.7.gz
 share/man/man7/lightning-checkmessage.7.gz
 share/man/man7/lightning-checkrune.7.gz
 share/man/man7/lightning-close.7.gz
-share/man/man7/lightning-commando-blacklist.7.gz
-share/man/man7/lightning-commando-listrunes.7.gz
-share/man/man7/lightning-commando-rune.7.gz
 share/man/man7/lightning-commando.7.gz
 share/man/man7/lightning-connect.7.gz
 share/man/man7/lightning-createinvoice.7.gz
@@ -99,6 +95,7 @@ share/man/man7/lightning-emergencyrecover.7.gz
 share/man/man7/lightning-enableoffer.7.gz
 share/man/man7/lightning-exposesecret.7.gz
 share/man/man7/lightning-feerates.7.gz
+share/man/man7/lightning-fetchbip353.7.gz
 share/man/man7/lightning-fetchinvoice.7.gz
 share/man/man7/lightning-fundchannel.7.gz
 share/man/man7/lightning-fundchannel_cancel.7.gz
@@ -118,6 +115,8 @@ share/man/man7/lightning-invoice.7.gz
 share/man/man7/lightning-invoicerequest.7.gz
 share/man/man7/lightning-keysend.7.gz
 share/man/man7/lightning-listaddresses.7.gz
+share/man/man7/lightning-listchainmoves.7.gz
+share/man/man7/lightning-listchannelmoves.7.gz
 share/man/man7/lightning-listchannels.7.gz
 share/man/man7/lightning-listclosedchannels.7.gz
 share/man/man7/lightning-listconfigs.7.gz
@@ -190,6 +189,5 @@ share/man/man7/lightning-waitsendpay.7.gz
 share/man/man7/lightning-withdraw.7.gz
 share/man/man7/lightning-xpay.7.gz
 share/man/man7/lightningd-rpc.7.gz
-share/man/man7/reckless.7.gz
 share/man/man8/lightning-hsmtool.8.gz
 share/man/man8/lightningd.8.gz
