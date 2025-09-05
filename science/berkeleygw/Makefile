@@ -18,7 +18,7 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		blaslapack:openblas gmake fortran python shebangfix
+USES=		blaslapack:openblas gmake fortran:gfortran python shebangfix
 
 SHEBANG_GLOB=	*.sh *.py *awk
 
