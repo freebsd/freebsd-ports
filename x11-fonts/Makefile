@@ -119,6 +119,7 @@
     SUBDIR += freefont-ttf
     SUBDIR += freefonts
     SUBDIR += fslsfonts
+    SUBDIR += gallant
     SUBDIR += gbdfed
     SUBDIR += geist-mono
     SUBDIR += geist-sans
