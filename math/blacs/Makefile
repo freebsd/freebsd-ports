@@ -1,6 +1,6 @@
 PORTNAME=	blacs
 PORTVERSION=	1.7
-PORTREVISION=	40
+PORTREVISION=	41
 CATEGORIES=	math
 MASTER_SITES=	NETLIB/blacs
 DISTNAME=	BLACS
@@ -36,7 +36,7 @@ MPICH_EXTRA_PATCHES=	${FILESDIR}/Bmake.inc-mpich.diff
 .include <bsd.port.pre.mk>
 
 F77EXTRAFLAGS=	#-w -fno-globals -fugly-complex
-.if ${GCC_DEFAULT} >= 10
+.if ${FORTRAN_DEFAULT} == gfortran && ${GCC_DEFAULT} >= 10
 # workaround for Rank mismatch between actual argument at (1) and actual argument at (2) (scalar and rank-1)
 F77EXTRAFLAGS+=	-fallow-argument-mismatch
 .endif
