@@ -1,6 +1,6 @@
 PORTNAME=	polymake
 DISTVERSION=	4.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/V${DISTVERSION}/ \
 		https://polymake.org/lib/exe/fetch.php/download/
@@ -93,7 +93,7 @@ TESTS_DESC=	Run bundled self tests after build
 
 BLISS_CONFIGURE_ON=	--with-bliss=${LOCALBASE}
 BLISS_CONFIGURE_OFF=	--without-bliss
-BLISS_BUILD_DEPENDS=	bliss-graph-tool>=0.73:math/bliss
+BLISS_BUILD_DEPENDS=	bliss-graph-tool>=0.73:math/bliss # does it need the tool or the library? LIB_DEPENDS should be used in the latter case.
 BLISS_RUN_DEPENDS=	bliss-graph-tool>=0.73:math/bliss
 
 NAUTY_CONFIGURE_ON=	--with-nauty=${LOCALBASE}

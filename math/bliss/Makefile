@@ -1,5 +1,6 @@
 PORTNAME=	bliss
 DISTVERSION=	0.73
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.tcs.hut.fi/Software/bliss/
 PKGNAMESUFFIX=	-graph-tool
@@ -17,7 +18,7 @@ MAKE_ARGS=	CC=${CXX}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libbliss.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/libbliss.so ${STAGEDIR}${PREFIX}/lib
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	${CP} ${WRKSRC}/*.hh ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 
