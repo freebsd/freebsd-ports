@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOD
+For installation instructions please refer to the related wiki page:
+
+- https://wiki.freebsd.org/Ports/net-mgmt/peering-manager
+EOD
+}
+]

@@ -296,6 +296,7 @@
     SUBDIR += pandorafms_agent
     SUBDIR += pandorafms_console
     SUBDIR += pandorafms_server
+    SUBDIR += peering-manager
     SUBDIR += pftabled
     SUBDIR += php-fpm_exporter
     SUBDIR += php81-snmp
