@@ -1,7 +1,7 @@
 PORTNAME=	wl-screenrec
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia wayland
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +9,8 @@ COMMENT=	High performance wlroots screen recording, featuring hardware encoding
 WWW=		https://github.com/russelltg/wl-screenrec
 
 LICENSE=	APACHE20
+
+BROKEN_i386=	https://github.com/zmwangx/rust-ffmpeg-sys/issues/96
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libavformat.so:multimedia/ffmpeg
