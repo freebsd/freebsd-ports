@@ -1,5 +1,5 @@
 PORTNAME=	cmap
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.2
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +23,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bokeh>0:www/py-bokeh@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyqtgraph>0:graphics/py-pyqtgraph@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-qt>0:devel/py-pytest-qt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}QtPy>0:devel/py-QtPy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>0:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vispy>=0.14:graphics/py-vispy@${PY_FLAVOR}
 		# TEST_DEPENDS also needs napari, pygfx, viscm
@@ -38,5 +39,6 @@ TEST_ENV=	${MAKE_ENV} \
 		XAUTHORITY=${XAUTHORITY}
 
 # tests as of 0.5.0: 217 passed, 3 skipped in 109.38s (0:01:49)
+# tests as of 0.6.2: 3 failed, 214 passed, 3 skipped in 54.50s (3 failures due to deprecation warnings in the Pillow module)
 
 .include <bsd.port.mk>
