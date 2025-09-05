@@ -190,6 +190,7 @@ lib/usermin/authentic-theme/extensions/csf/csf-lib.pl
 lib/usermin/authentic-theme/extensions/csf/csf.min.css
 lib/usermin/authentic-theme/extensions/csf/csf.min.css.gz
 lib/usermin/authentic-theme/extensions/csf/csf.min.js
+lib/usermin/authentic-theme/extensions/csf/csf.min.js.LEGAL.txt
 lib/usermin/authentic-theme/extensions/csf/csf.min.js.gz
 lib/usermin/authentic-theme/extensions/file-manager/acls.cgi
 lib/usermin/authentic-theme/extensions/file-manager/bookmark.cgi
@@ -209,8 +210,10 @@ lib/usermin/authentic-theme/extensions/file-manager/extract.cgi
 lib/usermin/authentic-theme/extensions/file-manager/fetcher.cgi
 lib/usermin/authentic-theme/extensions/file-manager/file-manager-lib.pl
 lib/usermin/authentic-theme/extensions/file-manager/file-manager-reinit.min.js
+lib/usermin/authentic-theme/extensions/file-manager/file-manager-reinit.min.js.LEGAL.txt
 lib/usermin/authentic-theme/extensions/file-manager/file-manager-reinit.min.js.gz
 lib/usermin/authentic-theme/extensions/file-manager/file-manager.min.js
+lib/usermin/authentic-theme/extensions/file-manager/file-manager.min.js.LEGAL.txt
 lib/usermin/authentic-theme/extensions/file-manager/file-manager.min.js.gz
 lib/usermin/authentic-theme/extensions/file-manager/gpg.cgi
 lib/usermin/authentic-theme/extensions/file-manager/http_download.cgi
@@ -226,12 +229,14 @@ lib/usermin/authentic-theme/extensions/mail/mail-lib.pl
 lib/usermin/authentic-theme/extensions/mail/mail.min.css
 lib/usermin/authentic-theme/extensions/mail/mail.min.css.gz
 lib/usermin/authentic-theme/extensions/mail/mail.min.js
+lib/usermin/authentic-theme/extensions/mail/mail.min.js.LEGAL.txt
 lib/usermin/authentic-theme/extensions/mail/mail.min.js.gz
 lib/usermin/authentic-theme/extensions/mail/mail.src.js
 lib/usermin/authentic-theme/extensions/mail/message.cgi
 lib/usermin/authentic-theme/extensions/mail/messages.cgi
 lib/usermin/authentic-theme/extensions/mail/search.cgi
 lib/usermin/authentic-theme/extensions/sql.min.js
+lib/usermin/authentic-theme/extensions/sql.min.js.LEGAL.txt
 lib/usermin/authentic-theme/extensions/sql.min.js.gz
 lib/usermin/authentic-theme/extensions/stats/stats.min.css
 lib/usermin/authentic-theme/extensions/stats/stats.min.js
@@ -459,6 +464,7 @@ lib/usermin/authentic-theme/images/modules/bind8/slaves.gif
 lib/usermin/authentic-theme/images/modules/bind8/soa.gif
 lib/usermin/authentic-theme/images/modules/bind8/stub.gif
 lib/usermin/authentic-theme/images/modules/bind8/text.gif
+lib/usermin/authentic-theme/images/modules/bind8/tls.gif
 lib/usermin/authentic-theme/images/modules/bind8/view.gif
 lib/usermin/authentic-theme/images/modules/bind8/whois.gif
 lib/usermin/authentic-theme/images/modules/bind8/zonedef.gif
@@ -6545,7 +6551,8 @@ lib/usermin/mysql/config-aix
 lib/usermin/mysql/config-cobalt-linux
 lib/usermin/mysql/config-coherent-linux
 lib/usermin/mysql/config-debian-linux
-lib/usermin/mysql/config-debian-linux-10.0-ALL
+lib/usermin/mysql/config-debian-linux-10.0-12.0
+lib/usermin/mysql/config-debian-linux-13.0-ALL
 lib/usermin/mysql/config-debian-linux-2.2-9.0
 lib/usermin/mysql/config-freebsd
 lib/usermin/mysql/config-freebsd-8-ALL
