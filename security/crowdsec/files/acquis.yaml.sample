@@ -1,0 +1,18 @@
+filenames:
+  - /var/log/nginx/*.log
+  - ./tests/nginx/nginx.log
+#this is not a syslog log, indicate which kind of logs it is
+labels:
+  type: nginx
+---
+filenames:
+ - /var/log/auth.log
+ - /var/log/syslog
+labels:
+  type: syslog
+---
+filenames:
+ - /var/log/httpd-access.log
+ - /var/log/httpd-error.log
+labels:
+  type: apache2
