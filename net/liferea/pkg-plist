@@ -111,7 +111,6 @@ share/icons/hicolor/scalable/apps/net.sourceforge.liferea.svg
 %%DATADIR%%/mark_read_dialog.ui
 %%DATADIR%%/new_folder.ui
 %%DATADIR%%/new_newsbin.ui
-%%DATADIR%%/new_subscription.ui
 %%DATADIR%%/node_source.ui
 %%DATADIR%%/opml_source.ui
 %%DATADIR%%/opml/feedlist_bg.opml
