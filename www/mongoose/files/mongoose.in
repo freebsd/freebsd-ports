@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: mongoose
-# REQUIRE: daemon
+# REQUIRE: DAEMON
 
 # Define these mongoose_* variables in one of these files:
 #       /etc/rc.conf
