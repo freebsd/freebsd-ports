@@ -1,7 +1,6 @@
 PORTNAME=	lapce
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.4 # Cargo.lock patched: `make patch cargo-crates`
-PORTREVISION=	1
+DISTVERSION=	0.4.5 # Cargo.lock patched: `make patch cargo-crates`
 CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -44,5 +43,6 @@ post-install:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/cargo-crates/fontdb-0.16.2/src/lib.rs
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/cargo-crates/fontdb-0.23.0/src/lib.rs
 
 .include <bsd.port.mk>

@@ -133,7 +133,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dirs-sys-0.3.7 \
 		dirs-sys-next-0.1.2 \
 		dispatch-0.2.0 \
-		dispatch2-0.2.0 \
 		dispatch2-0.3.0 \
 		displaydoc-0.2.5 \
 		dlib-0.5.2 \
@@ -429,7 +428,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		renderdoc-sys-1.1.0 \
 		reqwest-0.11.27 \
 		resvg-0.45.1 \
-		rfd-0.15.3 \
+		rfd-0.15.4 \
 		rgb-0.8.36 \
 		roxmltree-0.19.0 \
 		roxmltree-0.20.0 \
@@ -489,9 +488,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strict-num-0.1.1 \
 		strsim-0.10.0 \
 		strum-0.26.3 \
-		strum-0.27.1 \
+		strum-0.27.2 \
 		strum_macros-0.26.4 \
-		strum_macros-0.27.1 \
+		strum_macros-0.27.2 \
 		svgtypes-0.15.3 \
 		swash-0.2.5 \
 		syn-1.0.109 \
@@ -630,7 +629,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wiggle-macro-14.0.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
+		winapi-util-0.1.10 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		winch-codegen-0.12.2 \
 		windows-0.44.0 \
@@ -723,12 +722,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		zvariant_utils-3.2.0 \
 		structdesc@git+https://github.com/lapce/structdesc?rev=bb56969f22fdb2c2d6c03f158fd4a2bdc983b659\#bb56969f22fdb2c2d6c03f158fd4a2bdc983b659 \
 		psp-types@git+https://github.com/lapce/psp-types?rev=f7fea28f59e7b2d6faa1034a21679ad49b3524ad\#f7fea28f59e7b2d6faa1034a21679ad49b3524ad \
-		floem,floem-editor-core,floem_reactive,floem_renderer,floem_tiny_skia_renderer,floem_vger_renderer@git+https://github.com/lapce/floem?rev=abe59206013a3d700d861ccff3439d94ad3e2c45\#abe59206013a3d700d861ccff3439d94ad3e2c45 \
 		alacritty_terminal@git+https://github.com/alacritty/alacritty?rev=cacdb5bb3b72bad2c729227537979d95af75978f\#cacdb5bb3b72bad2c729227537979d95af75978f \
 		wasi-experimental-http-wasmtime@git+https://github.com/lapce/wasi-experimental-http\#21419eb785cb583ead180f25a9685fa16de7f326 \
 		human-sort@git+https://github.com/dragazo/human-sort?rev=1e74db1e09e8194ba88ad983723cf6f8b0c365da\#1e74db1e09e8194ba88ad983723cf6f8b0c365da \
 		floem-vger@git+https://github.com/lapce/vger-rs.git?rev=3206d47ec1e30b645ddcb0687036ba3e1f0d98ec\#3206d47ec1e30b645ddcb0687036ba3e1f0d98ec \
 		dpi,winit@git+https://github.com/rust-windowing/winit?rev=ee245c569d65fdeacf705ee5eedb564508d10ebe\#ee245c569d65fdeacf705ee5eedb564508d10ebe \
+		floem,floem-editor-core,floem_reactive,floem_renderer,floem_tiny_skia_renderer,floem_vger_renderer@git+https://github.com/lapce/floem?rev=e0dd862564e3afbad5cba8ebe60df166a7a41e56\#e0dd862564e3afbad5cba8ebe60df166a7a41e56 \
 		muda@git+https://github.com/tauri-apps/muda?rev=8e986af3cea96a729413abc75c3702dec3990bd2\#8e986af3cea96a729413abc75c3702dec3990bd2 \
 		tracing,tracing-appender,tracing-attributes,tracing-core,tracing-log,tracing-subscriber@git+https://github.com/tokio-rs/tracing?rev=908cc432a5994f6e17c8f36e13c217dc40085704\#908cc432a5994f6e17c8f36e13c217dc40085704 \
 		regalloc2@git+https://github.com/bytecodealliance/regalloc2?rev=5d79e12d0a93b10fc181f4da409b4671dd365228\#5d79e12d0a93b10fc181f4da409b4671dd365228 \
