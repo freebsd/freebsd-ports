@@ -1,7 +1,6 @@
 PORTNAME=	croc
-PORTVERSION=	10.0.13
+PORTVERSION=	10.2.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -12,10 +11,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
+USE_RC_SUBR=	croc
 
 GO_MODULE=	github.com/schollz/croc/v10
-
-USE_RC_SUBR=	croc
 
 PLIST_FILES=	bin/croc
 

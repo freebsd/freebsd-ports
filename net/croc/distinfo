@@ -1,5 +1,5 @@
-TIMESTAMP = 1727860010
-SHA256 (go/net_croc/croc-v10.0.13/v10.0.13.mod) = 2004d2aa2ff36dc27b5630af816af5876ab42294a26915bf17f86f784958cdcc
-SIZE (go/net_croc/croc-v10.0.13/v10.0.13.mod) = 1341
-SHA256 (go/net_croc/croc-v10.0.13/v10.0.13.zip) = 04ec89bd9fe5537ff3f34968c5fcebe6da9eeb3aa8c16a6d2b1739a91584f25c
-SIZE (go/net_croc/croc-v10.0.13/v10.0.13.zip) = 597747
+TIMESTAMP = 1757102771
+SHA256 (go/net_croc/croc-v10.2.4/v10.2.4.mod) = 01e604b4c84a83edd6500ba8ad4c84ede227cf89ebdea0e425372d2b4dfafc32
+SIZE (go/net_croc/croc-v10.2.4/v10.2.4.mod) = 1402
+SHA256 (go/net_croc/croc-v10.2.4/v10.2.4.zip) = 41169d0fc75bdf346d23c2728e43dcc9be5ab4a5f68af88f6c8554678e7781aa
+SIZE (go/net_croc/croc-v10.2.4/v10.2.4.zip) = 599745
