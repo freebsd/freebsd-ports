@@ -42,6 +42,7 @@
     SUBDIR += coregarage
     SUBDIR += countdown
     SUBDIR += crengine-ng
+    SUBDIR += crqt-ng
     SUBDIR += dailystrips
     SUBDIR += deforaos-notes
     SUBDIR += deforaos-todo
