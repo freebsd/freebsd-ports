@@ -1,7 +1,7 @@
 PORTNAME=	dotnet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DOTNETVERSION}.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang devel
 MASTER_SITES=	https://github.com/dotnet/dotnet/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/release.json?dummy=/:dotnetmanifest \
 		LOCAL/arrowd/dotnet/:bootstrap
