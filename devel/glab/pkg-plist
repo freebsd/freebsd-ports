@@ -9,6 +9,8 @@
 %%MANPAGES%%share/man/man1/glab-auth-login.1.gz
 %%MANPAGES%%share/man/man1/glab-auth-logout.1.gz
 %%MANPAGES%%share/man/man1/glab-auth-status.1.gz
+%%MANPAGES%%share/man/man1/glab-cluster-agent-token-list.1.gz
+%%MANPAGES%%share/man/man1/glab-cluster-agent-token.1.gz
 %%MANPAGES%%share/man/man1/glab-auth.1.gz
 %%MANPAGES%%share/man/man1/glab-changelog-generate.1.gz
 %%MANPAGES%%share/man/man1/glab-changelog.1.gz
@@ -50,6 +52,8 @@
 %%MANPAGES%%share/man/man1/glab-deploy-key.1.gz
 %%MANPAGES%%share/man/man1/glab-duo-ask.1.gz
 %%MANPAGES%%share/man/man1/glab-duo.1.gz
+%%MANPAGES%%share/man/man1/glab-duo-claude-token.1.gz
+%%MANPAGES%%share/man/man1/glab-duo-claude.1.gz
 %%MANPAGES%%share/man/man1/glab-incident-close.1.gz
 %%MANPAGES%%share/man/man1/glab-incident-list.1.gz
 %%MANPAGES%%share/man/man1/glab-incident-note.1.gz
