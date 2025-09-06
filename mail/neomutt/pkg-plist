@@ -68,6 +68,7 @@ libexec/neomutt/smime_keys
 %%DATADIR%%/account-command/gpg-json/credentials.sh
 %%DATADIR%%/account-command/macos-keychain/README.md
 %%DATADIR%%/account-command/macos-keychain/keychain.py
+%%DATADIR%%/colorschemes/ayu-dark-256.neomuttrc
 %%DATADIR%%/colorschemes/neonwolf-256.neomuttrc
 %%DATADIR%%/colorschemes/solarized-dark-256.neomuttrc
 %%DATADIR%%/colorschemes/vombatidae.neomuttrc
