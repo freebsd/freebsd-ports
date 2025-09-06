@@ -1,7 +1,6 @@
 PORTNAME=	otree
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.2
-PORTREVISION=	1
+DISTVERSION=	0.6.1
 CATEGORIES=	textproc
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -63,6 +62,9 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		fsevent-sys-4.1.0 \
 		getrandom-0.2.16 \
 		hashbrown-0.15.5 \
+		hcl-edit-0.9.1 \
+		hcl-primitives-0.1.9 \
+		hcl-rs-0.19.2 \
 		heck-0.5.0 \
 		humansize-2.1.3 \
 		ident_case-1.0.1 \
@@ -76,6 +78,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		itoa-1.0.15 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
+		kstring-2.0.2 \
 		libc-0.2.175 \
 		libm-0.2.15 \
 		libredox-0.1.9 \
@@ -100,6 +103,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		parking_lot_core-0.9.11 \
 		paste-1.0.15 \
 		powerfmt-0.2.0 \
+		pratt-0.4.0 \
 		proc-macro2-1.0.101 \
 		quick-xml-0.38.3 \
 		quote-1.0.40 \
@@ -145,12 +149,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		toml_parser-1.0.2 \
 		toml_writer-1.0.2 \
 		tui-textarea-0.7.0 \
+		tui-tree-widget-0.23.1 \
 		unicode-ident-1.0.18 \
 		unicode-segmentation-1.12.0 \
 		unicode-truncate-1.1.0 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
 		utf8parse-0.2.2 \
+		vecmap-rs-0.2.3 \
 		vergen-9.0.6 \
 		vergen-lib-0.1.6 \
 		version_check-0.9.5 \
@@ -186,8 +192,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
-		winnow-0.7.13 \
-		tui-tree-widget@git+https://github.com/fioncat/tui-rs-tree-widget?branch=main\#407fd9005271d93ae2411ec0231a51e7f5e070f9
+		winnow-0.7.13
 
 PLIST_FILES=	bin/otree
 
