@@ -1,6 +1,5 @@
 PORTNAME=	radicle
-DISTVERSION=	1.3.0
-PORTREVISION=	1
+DISTVERSION=	1.4.0
 CATEGORIES=	devel
 MASTER_SITES=	https://distfiles.pirateparty.in/ashish/:sources \
 		LOCAL/ashish:sources
@@ -18,14 +17,14 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	DOCS
 
-GIT_HEAD=	0e48723b419be95340a5d9858d76963e8e97137b
+GIT_HEAD=	bbd1e2cff60cb8086617251adc0c41d0847fe303
 
 USES=			cargo
 CARGO_INSTALL_PATH=	crates/radicle-cli crates/radicle-remote-helper \
 			crates/radicle-node
 CARGO_ENV=		GIT_HEAD=${GIT_HEAD} \
 			RADICLE_VERSION=${DISTVERSION} \
-			SOURCE_DATE_EPOCH=1754993629
+			SOURCE_DATE_EPOCH=1756995139
 PLIST_FILES=		bin/git-remote-rad \
 			bin/rad \
 			bin/radicle-node
