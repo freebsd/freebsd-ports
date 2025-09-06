@@ -1,9 +1,9 @@
 Version 11.00 added multi-threading support, but we need to link to -lpthread
 to resolve symbols.
 
-Version 11.41 renamed IO.h to IAPEIO.h, but they didn't update CMakeLists.txt
+Fix typo in MAC_SHARED_HEADERS.
 
---- CMakeLists.txt.orig	2025-09-01 19:26:38 UTC
+--- CMakeLists.txt.orig	2025-09-05 10:46:54 UTC
 +++ CMakeLists.txt
 @@ -6,6 +6,8 @@ option(BUILD_UTIL "Build the mac command line tool" ON
  option(BUILD_SHARED "Build libMAC as a shared library" ON)
@@ -14,22 +14,12 @@ Version 11.41 renamed IO.h to IAPEIO.h, but they didn't update CMakeLists.txt
  #
  # Determine interface version
  #
-@@ -74,7 +76,7 @@ set(MAC_PUBLIC_HEADERS
-         Shared/All.h
-         Shared/APETag.h
-         Shared/CharacterHelper.h
--        Shared/IO.h
-+        Shared/IAPEIO.h
-         Shared/MACDll.h
-         Shared/MACLib.h
-         Shared/NoWindows.h
-@@ -91,8 +93,8 @@ set(MAC_SHARED_HEADERS
-         Source/Shared/CPUFeatures.h
+@@ -92,7 +94,7 @@ set(MAC_SHARED_HEADERS
          Source/Shared/CRC.h
          Source/Shared/GlobalFunctions.h
-+        Source/Shared/IAPEIO.h
          Source/Shared/ID3Genres.h
--        Source/Shared/IO.h
+-        Source/Shared/IAPEIOO.h
++        Source/Shared/IAPEIO.h
          Source/Shared/MACDll.h
          Source/Shared/MemoryIO.h
          Source/Shared/MFCGlobals.h
