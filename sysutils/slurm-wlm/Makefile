@@ -1,6 +1,6 @@
 PORTNAME=	slurm
 DISTVERSION=	23.11.7
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
