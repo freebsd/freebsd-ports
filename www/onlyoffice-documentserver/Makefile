@@ -16,8 +16,10 @@ WWW=		https://www.onlyoffice.com/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_SSL=	boringssl libressl libressl-devel
+BROKEN_SSL_REASON=	Node.js requires OpenSSL
 ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	"Upstream only supports amd64 and arm64"
+ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and arm64
 
 # node version used with "npm install @yao-pkg/pkg@6.6.0"
 # keep in sync with patch-build__tools_scripts_build__server.py and patch-document-server-package_Makefile
@@ -50,7 +52,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLA
 		webfonts>=0:x11-fonts/webfonts
 
 USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv localbase pkgconfig \
-		python:3.9+,build qt:5 ssl:build trigger
+		python:3.9+,build qt:5 ssl trigger
 
 DOS2UNIX_FILES=	document-server-package/common/documentserver/nginx/includes/http-common.conf.m4
 
@@ -165,7 +167,6 @@ pre-configure:
 		${WRKSRC}/core/Apple/IWork.pro \
 		${WRKSRC}/core/Common/3dParty/boost/boost.pri \
 		${WRKSRC}/core/Common/3dParty/icu/icu.pri \
-		${WRKSRC}/core/Common/3dParty/openssl/openssl.pri \
 		${WRKSRC}/core/Common/3dParty/v8_89/v8/build/toolchain/gcc_toolchain.gni \
 		${WRKSRC}/core/Common/3dParty/v8_89/v8/buildtools/third_party/libc++/BUILD.gn \
 		${WRKSRC}/core/DesktopEditor/fontengine/ApplicationFonts.cpp \
@@ -199,6 +200,8 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' -e 's|%%ETCDIR%%|${ETCDIR}|' \
 		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-flush-cache.sh.m4 \
 		${WRKSRC}/document-server-package/Makefile
+	@${REINPLACE_CMD} 's|%%OPENSSL_LIB%%|${OPENSSLLIB}|' \
+		${WRKSRC}/core/Common/3dParty/openssl/openssl.pri
 	@${RM} ${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch.orig
 	@${RM} ${WRKSRC}/server/Metrics/patches/modern-syslog+1.2.0.patch.orig
 

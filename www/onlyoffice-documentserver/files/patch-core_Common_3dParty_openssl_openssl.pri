@@ -6,8 +6,8 @@
  } else {
 -    LIBS += $$OPENSSL_LIBS_DIRECTORY/libssl.a
 -	LIBS += $$OPENSSL_LIBS_DIRECTORY/libcrypto.a
-+    LIBS +=  %%LOCALBASE%%/lib/libssl.a
-+	LIBS +=  %%LOCALBASE%%/lib/libcrypto.a
++    LIBS +=  %%OPENSSL_LIB%%/libssl.so
++	LIBS +=  %%OPENSSL_LIB%%/libcrypto.so
  }
  
  INCLUDEPATH += $$OPENSSL_LIBS_DIRECTORY/../include
