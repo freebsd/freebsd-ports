@@ -23,7 +23,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 #CMAKE_ARGS=	-DOpenGL_GL_PREFERENCE:STRING="GLVND"
 CMAKE_ARGS=	-DOpenGL_GL_PREFERENCE:STRING="LEGACY"
-FFLAGS+=	-fPIC -std=legacy
+FFLAGS=		-fPIC
 TEST_TARGET=	test
 
 OPTIONS_DEFINE=		FORTRAN HDF5 TESTS TOOLS
@@ -57,6 +57,10 @@ TOOLS_CMAKE_ON=		-DTCL_INCLUDE_PATH:STRING="${TCL_INCLUDEDIR}" \
 
 .if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
+.if ${FORTRAN_DEFAULT} != flang
+FFLAGS+=	-std=legacy
 .endif
 
 pre-configure:
