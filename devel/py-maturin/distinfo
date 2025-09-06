@@ -1,6 +1,6 @@
-TIMESTAMP = 1752386758
-SHA256 (maturin-1.9.1.tar.gz) = 97b52fb19d20c1fdc70e4efdc05d79853a4c9c0051030c93a793cd5181dc4ccd
-SIZE (maturin-1.9.1.tar.gz) = 209757
+TIMESTAMP = 1756543540
+SHA256 (maturin-1.9.4.tar.gz) = 235163a0c99bc6f380fb8786c04fd14dcf6cd622ff295ea3de525015e6ac40cf
+SIZE (maturin-1.9.4.tar.gz) = 213647
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
 SIZE (rust/crates/adler2-2.0.0.crate) = 13529
 SHA256 (rust/crates/ahash-0.8.11.crate) = e89da841a80418a9b391ebaea17f5c112ffaaa96f621d2c285b5174da76b9011

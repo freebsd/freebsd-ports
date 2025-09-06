@@ -1,0 +1,27 @@
+* Relax version requirements for py-setuptools and enable build for
+  older versions of it
+
+--- pyproject.toml.orig	2025-08-04 11:39:48 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ requires = [
+ # Workaround to bootstrap maturin on non-manylinux platforms
+ [build-system]
+ requires = [
+-    "setuptools>=77.0.0",
++    "setuptools",
+     "tomli>=1.1.0 ; python_version<'3.11'",
+     "setuptools-rust>=1.11.0",
+ ]
+@@ -14,11 +14,7 @@ requires-python = ">=3.7"
+ authors = [{ name = "konstin", email = "konstin@mailbox.org" }]
+ readme = { file = "README.md", content-type = "text/markdown" }
+ requires-python = ">=3.7"
+-license = "MIT OR Apache-2.0"
+-license-files = [
+-    "license-mit",
+-    "license-apache",
+-]
++license = { text = "MIT OR Apache-2.0" }
+ classifiers = [
+     "Topic :: Software Development :: Build Tools",
+     "Programming Language :: Rust",
