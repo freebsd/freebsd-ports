@@ -665,6 +665,7 @@ lib/calibre/calibre/gui2/actions/browse_annots.py
 lib/calibre/calibre/gui2/actions/browse_notes.py
 lib/calibre/calibre/gui2/actions/catalog.py
 lib/calibre/calibre/gui2/actions/choose_library.py
+lib/calibre/calibre/gui2/actions/column_tooltips.py
 lib/calibre/calibre/gui2/actions/convert.py
 lib/calibre/calibre/gui2/actions/copy_to_library.py
 lib/calibre/calibre/gui2/actions/delete.py
