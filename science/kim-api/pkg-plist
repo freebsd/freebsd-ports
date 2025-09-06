@@ -134,8 +134,9 @@ lib/kim-api/portable-models/ex_model_Ar_SLJ_MultiCutoff/libkim-api-portable-mode
 lib/kim-api/simulator-models/Sim_LAMMPS_LJcut_AkersonElliott_Alchemy_PbAu/libkim-api-simulator-model.so
 lib/libkim-api.so
 lib/libkim-api.so.2
-lib/libkim-api.so.2.3.0
+lib/libkim-api.so.2.4.1
 libdata/pkgconfig/libkim-api.pc
+libexec/kim-api/kim-api-base64-encode
 libexec/kim-api/kim-api-collections-info
 libexec/kim-api/kim-api-portable-model-info
 libexec/kim-api/kim-api-shared-library-test
