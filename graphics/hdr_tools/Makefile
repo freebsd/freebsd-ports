@@ -1,6 +1,6 @@
 PORTNAME=	hdr_tools
 PORTVERSION=	0.0.2010.11.23	# unspecified by the author, so use the date
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	graphics
 MASTER_SITES=	http://ttic.uchicago.edu/~cotter/projects/hdr_tools/archives/ \
 		http://freebsd.nsu.ru/distfiles/

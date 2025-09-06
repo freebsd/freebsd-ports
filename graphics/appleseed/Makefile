@@ -1,6 +1,6 @@
 PORTNAME=	appleseed
 DISTVERSION=	2.1.0-beta
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	graphics
 
 PATCH_SITES=	http://vault.101011010.xyz/distfiles/ LOCAL/danfe

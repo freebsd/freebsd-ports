@@ -1,6 +1,6 @@
 PORTNAME=	kimageformats
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
