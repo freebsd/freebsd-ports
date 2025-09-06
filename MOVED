@@ -4765,4 +4765,3 @@ net-mgmt/nagcon||2025-09-02|Has expired: Obsolete, only supports legacy versions
 www/yarn-node18||2025-09-02|Has expired: Depeneds on expired www/node18. Node.js 18.* has reached its EoL on 2025-04-30
 www/npm-node18||2025-09-03|Has expired: Depeneds on expired www/node18. Node.js 18.* has reached its EoL on 2025-04-30
 www/node18||2025-09-03|Has expired: Node.js 18.* has reached its EoL on 2025-04-30. Use Node.js 22.* (www/node22) instead
-textproc/cgrep|textproc/hs-cgrep|2025-09-04|Per the convention for Haskell ports

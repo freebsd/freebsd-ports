@@ -92,6 +92,7 @@
     SUBDIR += castxml
     SUBDIR += catdoc
     SUBDIR += cg3
+    SUBDIR += cgrep
     SUBDIR += chkascii
     SUBDIR += choose
     SUBDIR += chpp
@@ -272,7 +273,6 @@
     SUBDIR += highlight
     SUBDIR += hil-aspell
     SUBDIR += hr-aspell
-    SUBDIR += hs-cgrep
     SUBDIR += hs-lhs2tex
     SUBDIR += hs-pandoc
     SUBDIR += hs-pandoc-crossref
