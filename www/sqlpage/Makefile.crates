@@ -1,5 +1,5 @@
 CARGO_CRATES=	actix-codec-0.5.2 \
-		actix-http-3.11.0 \
+		actix-http-3.11.1 \
 		actix-macros-0.2.4 \
 		actix-multipart-0.7.2 \
 		actix-multipart-derive-0.7.0 \
@@ -27,7 +27,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		anstyle-parse-0.2.7 \
 		anstyle-query-1.1.4 \
 		anstyle-wincon-3.0.10 \
-		anyhow-1.0.98 \
+		anyhow-1.0.99 \
 		argon2-0.5.3 \
 		arraydeque-0.5.1 \
 		asn1-rs-0.6.2 \
@@ -42,7 +42,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		async-stream-0.3.6 \
 		async-stream-impl-0.3.6 \
 		async-task-4.7.1 \
-		async-trait-0.1.88 \
+		async-trait-0.1.89 \
 		async-web-client-0.6.2 \
 		atoi-2.0.0 \
 		atomic-waker-1.1.2 \
@@ -57,31 +57,31 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		base64-0.22.1 \
 		base64ct-1.8.0 \
 		bindgen-0.69.5 \
-		bitflags-2.9.1 \
+		bitflags-2.9.3 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
 		blocking-1.6.2 \
 		brotli-3.5.0 \
-		brotli-8.0.1 \
+		brotli-8.0.2 \
 		brotli-decompressor-2.5.1 \
 		brotli-decompressor-5.0.0 \
 		bumpalo-3.19.0 \
 		byteorder-1.5.0 \
 		bytes-1.10.1 \
 		bytestring-1.4.0 \
-		cc-1.2.32 \
+		cc-1.2.34 \
 		cexpr-0.6.0 \
-		cfg-if-1.0.1 \
+		cfg-if-1.0.3 \
 		chrono-0.4.41 \
 		clang-sys-1.8.1 \
-		clap-4.5.43 \
-		clap_builder-4.5.43 \
-		clap_derive-4.5.41 \
+		clap-4.5.46 \
+		clap_builder-4.5.46 \
+		clap_derive-4.5.45 \
 		clap_lex-0.7.5 \
 		cmake-0.1.54 \
 		colorchoice-1.0.4 \
 		concurrent-queue-2.5.0 \
-		config-0.15.13 \
+		config-0.15.14 \
 		const-oid-0.9.6 \
 		const-random-0.1.18 \
 		const-random-macro-0.1.16 \
@@ -135,6 +135,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		env_filter-0.1.3 \
 		env_logger-0.11.8 \
 		equivalent-1.0.2 \
+		erased-serde-0.4.6 \
 		errno-0.3.13 \
 		event-listener-5.4.1 \
 		event-listener-strategy-0.5.4 \
@@ -145,7 +146,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		flume-0.11.1 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
-		form_urlencoded-1.2.1 \
+		form_urlencoded-1.2.2 \
 		fs_extra-1.3.0 \
 		futures-0.3.31 \
 		futures-channel-0.3.31 \
@@ -163,7 +164,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		getrandom-0.2.16 \
 		getrandom-0.3.3 \
 		gimli-0.31.1 \
-		glob-0.3.2 \
+		glob-0.3.3 \
 		group-0.13.0 \
 		h2-0.3.27 \
 		handlebars-6.3.2 \
@@ -193,21 +194,21 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		icu_properties_data-2.0.1 \
 		icu_provider-2.0.0 \
 		ident_case-1.0.1 \
-		idna-1.0.3 \
+		idna-1.1.0 \
 		idna_adapter-1.2.1 \
 		impl-more-0.1.9 \
 		include_dir-0.7.4 \
 		include_dir_macros-0.7.4 \
 		indexmap-1.9.3 \
-		indexmap-2.10.0 \
-		io-uring-0.7.9 \
+		indexmap-2.11.0 \
+		io-uring-0.7.10 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
 		itertools-0.12.1 \
 		itoa-1.0.15 \
 		jiff-0.2.15 \
 		jiff-static-0.2.15 \
-		jobserver-0.1.33 \
+		jobserver-0.1.34 \
 		js-sys-0.3.77 \
 		json5-0.4.1 \
 		lambda-web-0.2.1 \
@@ -216,7 +217,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		language-tags-0.3.2 \
 		lazy_static-1.5.0 \
 		lazycell-1.3.0 \
-		libc-0.2.174 \
+		libc-0.2.175 \
 		libflate-2.1.0 \
 		libflate_lz77-2.1.0 \
 		libloading-0.8.8 \
@@ -268,7 +269,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		pathdiff-0.2.3 \
 		pem-3.0.5 \
 		pem-rfc7468-0.7.0 \
-		percent-encoding-2.3.1 \
+		percent-encoding-2.3.2 \
 		pest-2.8.1 \
 		pest_derive-2.8.1 \
 		pest_generator-2.8.1 \
@@ -287,9 +288,9 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		potential_utf-0.1.2 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
-		prettyplease-0.2.36 \
+		prettyplease-0.2.37 \
 		primeorder-0.13.6 \
-		proc-macro2-1.0.95 \
+		proc-macro2-1.0.101 \
 		quote-1.0.40 \
 		r-efi-5.3.0 \
 		rand-0.8.5 \
@@ -303,16 +304,16 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.24 \
 		ref-cast-impl-1.0.24 \
-		regex-1.11.1 \
-		regex-automata-0.4.9 \
-		regex-lite-0.1.6 \
-		regex-syntax-0.8.5 \
+		regex-1.11.2 \
+		regex-automata-0.4.10 \
+		regex-lite-0.1.7 \
+		regex-syntax-0.8.6 \
 		rfc6979-0.4.0 \
 		ring-0.17.14 \
 		rle-decode-fast-1.0.3 \
 		ron-0.8.1 \
 		rsa-0.9.8 \
-		rust-ini-0.21.2 \
+		rust-ini-0.21.1 \
 		rustc-demangle-0.1.26 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.1 \
@@ -336,9 +337,10 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		security-framework-sys-2.14.0 \
 		semver-1.0.26 \
 		serde-1.0.219 \
+		serde-untagged-0.1.8 \
 		serde-value-0.7.0 \
 		serde_derive-1.0.219 \
-		serde_json-1.0.142 \
+		serde_json-1.0.143 \
 		serde_path_to_error-0.1.17 \
 		serde_plain-1.0.2 \
 		serde_spanned-1.0.0 \
@@ -366,19 +368,19 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		stringprep-0.1.5 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
-		syn-2.0.104 \
+		syn-2.0.106 \
 		synstructure-0.13.2 \
-		tempfile-3.20.0 \
+		tempfile-3.21.0 \
 		thiserror-1.0.69 \
-		thiserror-2.0.12 \
+		thiserror-2.0.16 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.12 \
+		thiserror-impl-2.0.16 \
 		time-0.3.41 \
 		time-core-0.1.4 \
 		time-macros-0.2.22 \
 		tiny-keccak-2.0.2 \
 		tinystr-0.8.1 \
-		tinyvec-1.9.0 \
+		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.47.1 \
 		tokio-macros-2.5.0 \
@@ -394,7 +396,9 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		tracing-0.1.41 \
 		tracing-attributes-0.1.30 \
 		tracing-core-0.1.34 \
+		trim-in-place-0.1.7 \
 		try-lock-0.2.5 \
+		typeid-1.0.3 \
 		typenum-1.18.0 \
 		ucd-trie-0.1.7 \
 		unicase-2.8.1 \
@@ -406,15 +410,15 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		unicode-segmentation-1.12.0 \
 		unicode-xid-0.2.6 \
 		untrusted-0.9.0 \
-		url-2.5.4 \
+		url-2.5.7 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.17.0 \
+		uuid-1.18.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		want-0.3.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasi-0.14.2+wasi-0.2.4 \
+		wasi-0.14.3+wasi-0.2.4 \
 		wasite-0.1.0 \
 		wasm-bindgen-0.2.100 \
 		wasm-bindgen-backend-0.2.100 \
@@ -425,7 +429,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		webpki-roots-0.26.11 \
 		webpki-roots-1.0.2 \
 		which-4.4.2 \
-		whoami-1.6.0 \
+		whoami-1.6.1 \
 		windows-core-0.61.2 \
 		windows-implement-0.60.0 \
 		windows-interface-0.59.1 \
@@ -453,8 +457,8 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
-		winnow-0.7.12 \
-		wit-bindgen-rt-0.39.0 \
+		winnow-0.7.13 \
+		wit-bindgen-0.45.0 \
 		writeable-0.6.1 \
 		x509-parser-0.16.0 \
 		yaml-rust2-0.10.3 \
