@@ -49,8 +49,6 @@ USES+=	llvm:max=14
 post-patch:
 	@${REINPLACE_CMD} -e 's+-exact Tcl 8\.6\.10+Tcl 8.6+' \
 		${WRKSRC}/src/other/tcl/library/init.tcl
-	@${REINPLACE_CMD} -e '2745s+^+include(CheckSymbolExists)+' \
-		${WRKSRC}/CMakeLists.txt
 
 pre-install:
 	${CP} ${FILESDIR}/mged.sh ${WRKSRC}
