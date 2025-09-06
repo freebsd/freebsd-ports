@@ -950,6 +950,7 @@ lib/webmin/authentic-theme/extensions/csf/csf-lib.pl
 lib/webmin/authentic-theme/extensions/csf/csf.min.css
 lib/webmin/authentic-theme/extensions/csf/csf.min.css.gz
 lib/webmin/authentic-theme/extensions/csf/csf.min.js
+lib/webmin/authentic-theme/extensions/csf/csf.min.js.LEGAL.txt
 lib/webmin/authentic-theme/extensions/csf/csf.min.js.gz
 lib/webmin/authentic-theme/extensions/file-manager/acls.cgi
 lib/webmin/authentic-theme/extensions/file-manager/bookmark.cgi
@@ -969,8 +970,10 @@ lib/webmin/authentic-theme/extensions/file-manager/extract.cgi
 lib/webmin/authentic-theme/extensions/file-manager/fetcher.cgi
 lib/webmin/authentic-theme/extensions/file-manager/file-manager-lib.pl
 lib/webmin/authentic-theme/extensions/file-manager/file-manager-reinit.min.js
+lib/webmin/authentic-theme/extensions/file-manager/file-manager-reinit.min.js.LEGAL.txt
 lib/webmin/authentic-theme/extensions/file-manager/file-manager-reinit.min.js.gz
 lib/webmin/authentic-theme/extensions/file-manager/file-manager.min.js
+lib/webmin/authentic-theme/extensions/file-manager/file-manager.min.js.LEGAL.txt
 lib/webmin/authentic-theme/extensions/file-manager/file-manager.min.js.gz
 lib/webmin/authentic-theme/extensions/file-manager/gpg.cgi
 lib/webmin/authentic-theme/extensions/file-manager/http_download.cgi
@@ -986,12 +989,14 @@ lib/webmin/authentic-theme/extensions/mail/mail-lib.pl
 lib/webmin/authentic-theme/extensions/mail/mail.min.css
 lib/webmin/authentic-theme/extensions/mail/mail.min.css.gz
 lib/webmin/authentic-theme/extensions/mail/mail.min.js
+lib/webmin/authentic-theme/extensions/mail/mail.min.js.LEGAL.txt
 lib/webmin/authentic-theme/extensions/mail/mail.min.js.gz
 lib/webmin/authentic-theme/extensions/mail/mail.src.js
 lib/webmin/authentic-theme/extensions/mail/message.cgi
 lib/webmin/authentic-theme/extensions/mail/messages.cgi
 lib/webmin/authentic-theme/extensions/mail/search.cgi
 lib/webmin/authentic-theme/extensions/sql.min.js
+lib/webmin/authentic-theme/extensions/sql.min.js.LEGAL.txt
 lib/webmin/authentic-theme/extensions/sql.min.js.gz
 lib/webmin/authentic-theme/extensions/stats/stats.min.css
 lib/webmin/authentic-theme/extensions/stats/stats.min.js
@@ -1158,6 +1163,7 @@ lib/webmin/authentic-theme/images/modules/bind8/slaves.gif
 lib/webmin/authentic-theme/images/modules/bind8/soa.gif
 lib/webmin/authentic-theme/images/modules/bind8/stub.gif
 lib/webmin/authentic-theme/images/modules/bind8/text.gif
+lib/webmin/authentic-theme/images/modules/bind8/tls.gif
 lib/webmin/authentic-theme/images/modules/bind8/view.gif
 lib/webmin/authentic-theme/images/modules/bind8/whois.gif
 lib/webmin/authentic-theme/images/modules/bind8/zonedef.gif
@@ -8261,6 +8267,7 @@ lib/webmin/firewalld/config.info.de
 lib/webmin/firewalld/config.info.fr
 lib/webmin/firewalld/config.info.no
 lib/webmin/firewalld/config.info.pl
+lib/webmin/firewalld/config_info.pl
 lib/webmin/firewalld/create_zone.cgi
 lib/webmin/firewalld/default_zone.cgi
 lib/webmin/firewalld/delete_rules.cgi
@@ -13474,7 +13481,8 @@ lib/webmin/mysql/config-aix
 lib/webmin/mysql/config-cobalt-linux
 lib/webmin/mysql/config-coherent-linux
 lib/webmin/mysql/config-debian-linux
-lib/webmin/mysql/config-debian-linux-10.0-ALL
+lib/webmin/mysql/config-debian-linux-10.0-12.0
+lib/webmin/mysql/config-debian-linux-13.0-ALL
 lib/webmin/mysql/config-debian-linux-2.2-9.0
 lib/webmin/mysql/config-freebsd
 lib/webmin/mysql/config-freebsd-8-ALL
@@ -19854,7 +19862,6 @@ lib/webmin/status/alive-monitor.pl
 lib/webmin/status/apache-monitor.pl
 lib/webmin/status/backup_config.pl
 lib/webmin/status/bind8-monitor.pl
-lib/webmin/status/cfengine-monitor.pl
 lib/webmin/status/cgi_args.pl
 lib/webmin/status/change-monitor.pl
 lib/webmin/status/config
@@ -19893,7 +19900,6 @@ lib/webmin/status/delete_mons.cgi
 lib/webmin/status/delete_tmpls.cgi
 lib/webmin/status/dhcpd-monitor.pl
 lib/webmin/status/dns-monitor.pl
-lib/webmin/status/dnsadmin-monitor.pl
 lib/webmin/status/dovecot-monitor.pl
 lib/webmin/status/du-monitor.pl
 lib/webmin/status/edit_mon.cgi
@@ -19920,7 +19926,6 @@ lib/webmin/status/imap-monitor.pl
 lib/webmin/status/index.cgi
 lib/webmin/status/inetd-monitor.pl
 lib/webmin/status/init-monitor.pl
-lib/webmin/status/jabber-monitor.pl
 lib/webmin/status/lang/ar.auto
 lib/webmin/status/lang/bg.auto
 lib/webmin/status/lang/ca
@@ -20043,8 +20048,8 @@ lib/webmin/status/mon-monitor.pl
 lib/webmin/status/monitor.pl
 lib/webmin/status/mysql-monitor.pl
 lib/webmin/status/nfs-monitor.pl
-lib/webmin/status/nut-monitor.pl
 lib/webmin/status/oldfile-monitor.pl
+lib/webmin/status/phpini-monitor.pl
 lib/webmin/status/ping-monitor.pl
 lib/webmin/status/portsentry-monitor.pl
 lib/webmin/status/postfix-monitor.pl
