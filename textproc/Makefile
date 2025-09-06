@@ -1610,6 +1610,7 @@
     SUBDIR += py-sentencepiece
     SUBDIR += py-simplebayes
     SUBDIR += py-smartypants
+    SUBDIR += py-smile
     SUBDIR += py-snowballstemmer
     SUBDIR += py-spacy
     SUBDIR += py-spacy-legacy
