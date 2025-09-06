@@ -1,11 +1,14 @@
 PORTNAME=	iocage
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 # Pull in PR #61 to unbreak default route detection on CURRENT
+# Pull in PR #90 to unbreak on python 3.12
 PATCH_SITES=    https://github.com/freebsd/iocage/commit/
-PATCHFILES=	2120a86d1d4fd3d383a3f0bddfc1e92eb5a7d2e7.patch:-p1
+PATCHFILES=	2120a86d1d4fd3d383a3f0bddfc1e92eb5a7d2e7.patch:-p1 \
+		c2cf9d218a643b6231d1bce0361846352f58c50f.patch:-p1
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	FreeBSD jail manager written in Python3
