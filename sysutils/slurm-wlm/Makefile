@@ -1,6 +1,6 @@
 PORTNAME=	slurm
 DISTVERSION=	23.11.7
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -123,6 +123,12 @@ LLD2FIX=	api plugins/openapi sacctmgr sackd scontrol scrontab scrun	\
 		slurmctld slurmd/slurmd squeue
 
 .include <bsd.port.options.mk>
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/src/plugins/task/pgid
+# Use an existing plugin's Makefile.in as a template
+	@${CP}	${WRKSRC}/src/plugins/task/cray_aries/Makefile.in \
+		${WRKSRC}/src/plugins/task/pgid/Makefile.in
 
 # Hack around nonfunctional --disable-gtktest flag
 pre-configure-GUI-off:
