@@ -1,5 +1,5 @@
-TIMESTAMP = 1756449200
-SHA256 (go/audio_sonicradio/sonicradio-v0.7.5/v0.7.5.mod) = e13d7c88d2c94f14eec5b9f603bc5ded2e13d9baab8eab44849479c58f0bdd6d
-SIZE (go/audio_sonicradio/sonicradio-v0.7.5/v0.7.5.mod) = 1197
-SHA256 (go/audio_sonicradio/sonicradio-v0.7.5/v0.7.5.zip) = 22471313420adc7e82930d18463373a6bded7bb29c3b667c79e8f6f8c04fc907
-SIZE (go/audio_sonicradio/sonicradio-v0.7.5/v0.7.5.zip) = 1264258
+TIMESTAMP = 1757144161
+SHA256 (go/audio_sonicradio/sonicradio-v0.8.4/v0.8.4.mod) = c3d6fb914b773066e02f024e166e02a16db329491472ba5b448ad6b3a046978e
+SIZE (go/audio_sonicradio/sonicradio-v0.8.4/v0.8.4.mod) = 1520
+SHA256 (go/audio_sonicradio/sonicradio-v0.8.4/v0.8.4.zip) = 7761a64bf8a6fc33c588af29f464214602dce25a3c06af5cf26d267076ade57c
+SIZE (go/audio_sonicradio/sonicradio-v0.8.4/v0.8.4.zip) = 1270261
