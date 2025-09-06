@@ -501,11 +501,11 @@
     SUBDIR += covtool
     SUBDIR += cpan-upload
     SUBDIR += cpan-upload-http
-    SUBDIR += cpp-codec
     SUBDIR += cpp-netlib
     SUBDIR += cpp-utilities
     SUBDIR += cpp2py
     SUBDIR += cppcheck
+    SUBDIR += cppcodec
     SUBDIR += cppi
     SUBDIR += cppinsights
     SUBDIR += cpplint
