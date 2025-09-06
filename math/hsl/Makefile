@@ -10,7 +10,9 @@ WWW=		https://github.com/coin-or-tools/ThirdParty-HSL
 
 LICENSE=	EPL
 
-USES=		fortran gmake libtool pkgconfig
+# Flang can't be used because the project bundles too old libtool and
+# running autoreconf is too painful
+USES=		fortran:gfortran gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
