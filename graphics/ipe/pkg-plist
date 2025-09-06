@@ -83,6 +83,7 @@ share/man/man1/ipetoipe.1.gz
 %%DATADIR%%/%%VERSION%%/scripts/add-style.lua
 %%DATADIR%%/%%VERSION%%/scripts/onepage.lua
 %%DATADIR%%/%%VERSION%%/scripts/page-labels.lua
+%%DATADIR%%/%%VERSION%%/scripts/scratchpad.lua
 %%DATADIR%%/%%VERSION%%/scripts/update-master.lua
 %%DATADIR%%/%%VERSION%%/scripts/update-styles.lua
 %%DATADIR%%/%%VERSION%%/styles/arabic.isy

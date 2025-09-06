@@ -1,8 +1,8 @@
 PORTNAME=	ipe
-DISTVERSION=	7.2.26
+DISTVERSION=	7.2.27
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
-MASTER_SITES=	https://github.com/otfried/old-ipe-releases/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/otfried/ipe/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Extensible vector graphics editor with LaTeX support
@@ -17,10 +17,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libspiro.so:graphics/libspiro
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		compiler:c++11-lib gmake gnome jpeg lua:52 pkgconfig shebangfix qt:5 tex
+USES=		compiler:c++11-lib gmake gnome jpeg lua:54 pkgconfig shebangfix qt:6 tex
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes
-USE_QT=		buildtools:build core gui qmake:build widgets
+USE_QT=		base
 USE_TEX=	pdftex
 
 SHEBANG_FILES=	${WRKSRC}/ipecurl/ipecurl.sh
@@ -66,9 +66,12 @@ post-patch:
 		s|<QGridLayout>|<QtWidgets/QGridLayout>|; \
 		s|<QMenu>|<QtWidgets/QMenu>|; \
 		s|<QApplication>|<QtWidgets/QApplication>|; \
-		s|<QAction>|<QtWidgets/QAction>|' \
+		s|<QAction>|<QtGui/QAction>|' \
 		${WRKSRC}/ipeui/ipeui_qt.h
 	@${REINPLACE_CMD} -e 's|<QApplication>|<QtWidgets/QApplication>|; \
+		s|<QCloseEvent>|<QtGui/QCloseEvent>|; \
+		s|<QColorDialog>|<QtWidgets/QColorDialog>|; \
+		s|<QComboBox>|<QtWidgets/QComboBox>|; \
 		s|<QCheckBox>|<QtWidgets/QCheckBox>|' \
 		${WRKSRC}/ipeui/ipeui_qt.cpp
 	@${REINPLACE_CMD} -e 's|<QListWidget>|<QtWidgets/QListWidget>|' \
