@@ -23,7 +23,6 @@ MAKE_FLAGS=	INSTALLDIR=${STAGEDIR}${PREFIX} OS=freebsd ENV=gnu \
 		FORTRAN=yes FC_freebsd=${F77}
 MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	test  # XXX: test segfaults
-FFLAGS+=	-std=legacy
 
 WRKSRC=		${WRKDIR}/cdf${VER}-dist
 SUB_FILES=	pkg-message
@@ -36,6 +35,12 @@ PORTDOCS=	CDF_copyright.txt CHANGES.txt Release.notes Welcome.txt
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 MAKE_ARGS+=	OS=freebsd ENV=gnu all
+
+.include <bsd.port.pre.mk>
+
+.if ${FORTRAN_DEFAULT} != flang
+FFLAGS=		-std=legacy
+.endif
 
 post-patch:
 .for def in ${DEFS}
@@ -51,4 +56,4 @@ post-install:
 	${SED} -i '' 's,${STAGEDIR},,g' ${STAGEDIR}${PREFIX}/bin/definitions.?
 	${RM} -f ${STAGEDIR}${PREFIX}/CDFLeapSeconds.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
