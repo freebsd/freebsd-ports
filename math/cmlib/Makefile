@@ -18,15 +18,21 @@ USE_LDCONFIG=	yes
 SHLIB_MAJOR=	1
 
 LDFLAGS+=	${FFLAGS}
-LDADD ?=	-lgfortran -lm
+LDADD=		-lm
 SRCCONF=	/dev/null
 MAKE_ENV=	LDADD="${LDADD}" SHLIB_MAJOR="${SHLIB_MAJOR}" \
 		SRCCONF="${SRCCONF}"
-FFLAGS+=	-std=legacy
 
 NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
+.if ${FORTRAN_DEFAULT} != flang
+FFLAGS+=	-std=legacy
+LDADD+=		-lgfortran
+.endif
 
 post-extract:
 	${CP} ${_DISTDIR}/[dir]1mach.f ${WRKSRC}/src/machcon
@@ -49,4 +55,4 @@ do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
