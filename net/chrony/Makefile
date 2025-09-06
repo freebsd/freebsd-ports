@@ -90,17 +90,6 @@ post-patch:
 		${REINPLACE_CMD} -e 's!%%PREFIX%%!${PREFIX}!g' \
 		                 -e 's!/var/lib!/var/db!g' \
 				 ${PORTEXAMPLES:M*.conf.example*}
-.if "4.8" == ${PORTVERSION} && empty(WITH_DEBUG)
-	# SCK_AcceptConnection sets the socket to non-blocking,
-	# and socket.test (built from socket.c and wildcarded)
-	# fails with EAGAIN; to see for yourself, build
-	# with WITH_DEBUG=yes set, so that you get --enable-debug
-	# for configure, and run test/unit/socket.test -d
-	# You can avoid that by running under truss, at least
-	# on FreeBSD 14.3 amd64.  The same does not happen
-	# on Fedora Linux 42 x86_64 on the very same computer.
-	${MV} ${WRKSRC}/test/unit/socket.c ${WRKSRC}/test/unit/socket.c.disabled
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/chronyc
