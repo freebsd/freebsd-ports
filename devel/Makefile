@@ -6563,6 +6563,7 @@
     SUBDIR += rubygem-aws-sdk-bcmdashboards
     SUBDIR += rubygem-aws-sdk-bcmdataexports
     SUBDIR += rubygem-aws-sdk-bcmpricingcalculator
+    SUBDIR += rubygem-aws-sdk-bcmrecommendedactions
     SUBDIR += rubygem-aws-sdk-bedrock
     SUBDIR += rubygem-aws-sdk-bedrockagent
     SUBDIR += rubygem-aws-sdk-bedrockagentcore
