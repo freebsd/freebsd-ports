@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-08-03 03:33:19 UTC
++++ pyproject.toml
+@@ -33,7 +33,7 @@ authors = [
+     {name = "Simeon Visser"},
+     {name = "Thomas Goirand"},
+ ]
+-license = "Apache-2.0"
++license = {text = "Apache-2.0"}
+ readme = "README.md"
+ requires-python = ">=3.6"
+ classifiers = [
