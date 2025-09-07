@@ -38,50 +38,69 @@ share/metainfo/io.github.ra3xdh.qucs_s.metainfo.xml
 %%DATADIR%%/examples/external_interface/probe_and_subcircuit/example_probe_and_subcircuit.sch
 %%DATADIR%%/examples/external_interface/probe_and_subcircuit/example_sub_subcircuit.sch
 %%DATADIR%%/examples/external_interface/probe_and_subcircuit/example_subcircuit.sch
-%%DATADIR%%/examples/ngspice/2N3904_follower.sch
-%%DATADIR%%/examples/ngspice/555timer_osc.sch
-%%DATADIR%%/examples/ngspice/Amp_Two_Tone.sch
-%%DATADIR%%/examples/ngspice/B-source_Tunnel_Diode.sch
-%%DATADIR%%/examples/ngspice/B-sources.sch
-%%DATADIR%%/examples/ngspice/B-sources_updated.sch
-%%DATADIR%%/examples/ngspice/BJT-four.sch
-%%DATADIR%%/examples/ngspice/BJT-noise.sch
-%%DATADIR%%/examples/ngspice/BJT-swp.sch
-%%DATADIR%%/examples/ngspice/BJT.sch
-%%DATADIR%%/examples/ngspice/BJT_Phase_Shift_Osc.sch
-%%DATADIR%%/examples/ngspice/BJT_TEMPER_swp.sch
-%%DATADIR%%/examples/ngspice/BJT_T_swp.sch
-%%DATADIR%%/examples/ngspice/BJT_dc.sch
-%%DATADIR%%/examples/ngspice/BSIM4/BSIM4_Ring_Osc.sch
-%%DATADIR%%/examples/ngspice/BSIM4/BSIM4_inv.sch
-%%DATADIR%%/examples/ngspice/BSIM4/BSIM4_x1_TRAN.sch
-%%DATADIR%%/examples/ngspice/BSIM4/nmos4p0.mod
-%%DATADIR%%/examples/ngspice/BSIM4/pmos4p0.mod
-%%DATADIR%%/examples/ngspice/CV_curve.sch
-%%DATADIR%%/examples/ngspice/Comb_Gen.sch
-%%DATADIR%%/examples/ngspice/Current_Source_Generator.sch
-%%DATADIR%%/examples/ngspice/DAC_out.sch
-%%DATADIR%%/examples/ngspice/DBM_Mixer.sch
-%%DATADIR%%/examples/ngspice/Distortion.sch
-%%DATADIR%%/examples/ngspice/EDD-Q-test.sch
-%%DATADIR%%/examples/ngspice/Full_Wave_Bridge_Rectifier_PS.sch
-%%DATADIR%%/examples/ngspice/Full_wave.sch
-%%DATADIR%%/examples/ngspice/IRFZ44_switch.sch
-%%DATADIR%%/examples/ngspice/JCM-800.sch
-%%DATADIR%%/examples/ngspice/JFET_Cascode.sch
-%%DATADIR%%/examples/ngspice/LCR-1.sch
-%%DATADIR%%/examples/ngspice/LM317_test.sch
-%%DATADIR%%/examples/ngspice/MESFETs/NE3509.cir
-%%DATADIR%%/examples/ngspice/MESFETs/NE3509_sub.sch
-%%DATADIR%%/examples/ngspice/MESFETs/NE3509_sub_Id_Vg.sch
-%%DATADIR%%/examples/ngspice/MESFETs/Statz_dc_mod.cir
-%%DATADIR%%/examples/ngspice/MESFETs/Statz_sub.sch
-%%DATADIR%%/examples/ngspice/MESFETs/Statz_sub_Id_Vg.sch
-%%DATADIR%%/examples/ngspice/MESFETs/testACMESFETCL1.sch
-%%DATADIR%%/examples/ngspice/MESFETs/testDCIdsVgs.sch
-%%DATADIR%%/examples/ngspice/MESFETs/testDCMESFETCL1.sch
-%%DATADIR%%/examples/ngspice/Mixer_FFT.sch
-%%DATADIR%%/examples/ngspice/NE555_disc_Oscillator.sch
+%%DATADIR%%/examples/ngspice/B-Sources/B-source_Tunnel_Diode.sch
+%%DATADIR%%/examples/ngspice/B-Sources/B-sources.sch
+%%DATADIR%%/examples/ngspice/B-Sources/B-sources_updated.sch
+%%DATADIR%%/examples/ngspice/Devices/BJT_TEMPER_swp.sch
+%%DATADIR%%/examples/ngspice/Devices/BJT_T_swp.sch
+%%DATADIR%%/examples/ngspice/Devices/BJT_dc.sch
+%%DATADIR%%/examples/ngspice/Devices/BSIM4/BSIM4_Ring_Osc.sch
+%%DATADIR%%/examples/ngspice/Devices/BSIM4/BSIM4_inv.sch
+%%DATADIR%%/examples/ngspice/Devices/BSIM4/BSIM4_x1_TRAN.sch
+%%DATADIR%%/examples/ngspice/Devices/BSIM4/nmos4p0.mod
+%%DATADIR%%/examples/ngspice/Devices/BSIM4/pmos4p0.mod
+%%DATADIR%%/examples/ngspice/Devices/CV_curve.sch
+%%DATADIR%%/examples/ngspice/Devices/EDD-Q-test.sch
+%%DATADIR%%/examples/ngspice/Devices/FET noise/fet.sch
+%%DATADIR%%/examples/ngspice/Devices/FET noise/fet_noise.sch
+%%DATADIR%%/examples/ngspice/Devices/MESFETs/NE3509.cir
+%%DATADIR%%/examples/ngspice/Devices/MESFETs/NE3509_sub.sch
+%%DATADIR%%/examples/ngspice/Devices/MESFETs/NE3509_sub_Id_Vg.sch
+%%DATADIR%%/examples/ngspice/Devices/MESFETs/Statz_dc_mod.cir
+%%DATADIR%%/examples/ngspice/Devices/MESFETs/Statz_sub.sch
+%%DATADIR%%/examples/ngspice/Devices/MESFETs/Statz_sub_Id_Vg.sch
+%%DATADIR%%/examples/ngspice/Devices/MESFETs/testACMESFETCL1.sch
+%%DATADIR%%/examples/ngspice/Devices/MESFETs/testDCIdsVgs.sch
+%%DATADIR%%/examples/ngspice/Devices/MESFETs/testDCMESFETCL1.sch
+%%DATADIR%%/examples/ngspice/Devices/Tunnel_Diode_EDD.sch
+%%DATADIR%%/examples/ngspice/Devices/XTAL/XTAL.sch
+%%DATADIR%%/examples/ngspice/Devices/XTAL/quarz.sch
+%%DATADIR%%/examples/ngspice/Devices/XTAL/quarz_test.sch
+%%DATADIR%%/examples/ngspice/Devices/charac.sch
+%%DATADIR%%/examples/ngspice/Devices/diode.sch
+%%DATADIR%%/examples/ngspice/Devices/diode_dblswp_qucs.sch
+%%DATADIR%%/examples/ngspice/Devices/fhr01fh.sch
+%%DATADIR%%/examples/ngspice/Devices/gyrator.sch
+%%DATADIR%%/examples/ngspice/Devices/single_phase_transformer.sch
+%%DATADIR%%/examples/ngspice/Digital/flip_flops_truth_tables.sch
+%%DATADIR%%/examples/ngspice/General Electronics/2N3904_follower.sch
+%%DATADIR%%/examples/ngspice/General Electronics/555timer_osc.sch
+%%DATADIR%%/examples/ngspice/General Electronics/Active Filters/active_bp.sch
+%%DATADIR%%/examples/ngspice/General Electronics/Active Filters/notch.sch
+%%DATADIR%%/examples/ngspice/General Electronics/Audio Amplifiers/audio_amp.sch
+%%DATADIR%%/examples/ngspice/General Electronics/Audio Amplifiers/audio_amp_thd.sch
+%%DATADIR%%/examples/ngspice/General Electronics/DAC_out.sch
+%%DATADIR%%/examples/ngspice/General Electronics/RC_filter_FFT.sch
+%%DATADIR%%/examples/ngspice/General Electronics/Test_tran_coup.sch
+%%DATADIR%%/examples/ngspice/General Electronics/Waveform Generation/Current_Source_Generator.sch
+%%DATADIR%%/examples/ngspice/General Electronics/Waveform Generation/Sawtooth-discreet.sch
+%%DATADIR%%/examples/ngspice/General Electronics/Waveform Generation/Triangle_Wave_Generator.sch
+%%DATADIR%%/examples/ngspice/General Electronics/Waveform Generation/sawtooth-2.sch
+%%DATADIR%%/examples/ngspice/General Electronics/Waveform Generation/sawtooth-3.sch
+%%DATADIR%%/examples/ngspice/General Electronics/chargepump.sch
+%%DATADIR%%/examples/ngspice/General Electronics/gain_phase_AC.sch
+%%DATADIR%%/examples/ngspice/General Electronics/opamp_gyrator.sch
+%%DATADIR%%/examples/ngspice/General Electronics/schmitt.sch
+%%DATADIR%%/examples/ngspice/General Electronics/singleOPV.sch
+%%DATADIR%%/examples/ngspice/MagneticCores/core_test.sch
+%%DATADIR%%/examples/ngspice/MagneticCores/core_test_BH.sch
+%%DATADIR%%/examples/ngspice/Miscellaneous/example_sub_subcircuit.sch
+%%DATADIR%%/examples/ngspice/Miscellaneous/example_subcircuit.sch
+%%DATADIR%%/examples/ngspice/Miscellaneous/schematic_symbols.sch
+%%DATADIR%%/examples/ngspice/Miscellaneous/time_resistor.sch
+%%DATADIR%%/examples/ngspice/NGspice features/nutmeg_script.sch
+%%DATADIR%%/examples/ngspice/NGspice features/par_sweep_test.sch
+%%DATADIR%%/examples/ngspice/NGspice features/sensitivityACandDC.sch
 %%DATADIR%%/examples/ngspice/OpenVAF/Tunnel_Ngspice_prj/tunn.sch
 %%DATADIR%%/examples/ngspice/OpenVAF/Tunnel_Ngspice_prj/tunnel.dat
 %%DATADIR%%/examples/ngspice/OpenVAF/Tunnel_Ngspice_prj/tunnel.sym
@@ -90,154 +109,137 @@ share/metainfo/io.github.ra3xdh.qucs_s.metainfo.xml
 %%DATADIR%%/examples/ngspice/OpenVAF/Tunnel_Ngspice_prj/tunnel_props.json
 %%DATADIR%%/examples/ngspice/OpenVAF/Tunnel_Ngspice_prj/tunnel_sym.json
 %%DATADIR%%/examples/ngspice/OpenVAF/Tunnel_Ngspice_prj/tunnel_symbol.json
-%%DATADIR%%/examples/ngspice/RCL_resonance.sch
-%%DATADIR%%/examples/ngspice/RC_filter_FFT.sch
-%%DATADIR%%/examples/ngspice/RFLumpComp/RFLumpedComponents.lib
-%%DATADIR%%/examples/ngspice/RFLumpComp/Test_RATF_EquivCircD.sch
-%%DATADIR%%/examples/ngspice/RFLumpComp/Test_chip_res_basic.sch
-%%DATADIR%%/examples/ngspice/Relay.sch
-%%DATADIR%%/examples/ngspice/Sawtooth-discreet.sch
-%%DATADIR%%/examples/ngspice/Signetics_NE520.sch
-%%DATADIR%%/examples/ngspice/SmithChartTest.sch
-%%DATADIR%%/examples/ngspice/Test_tran_coup.sch
-%%DATADIR%%/examples/ngspice/Triangle_Wave_Generator.sch
-%%DATADIR%%/examples/ngspice/Tube_amp6V6.sch
-%%DATADIR%%/examples/ngspice/Tunnel_Diode_EDD.sch
-%%DATADIR%%/examples/ngspice/VoltageDoubler.sch
-%%DATADIR%%/examples/ngspice/X2_100_Bipolar.sch
-%%DATADIR%%/examples/ngspice/X5_500.sch
+%%DATADIR%%/examples/ngspice/Power Electronics/Full_Wave_Bridge_Rectifier_PS.sch
+%%DATADIR%%/examples/ngspice/Power Electronics/Full_wave.sch
+%%DATADIR%%/examples/ngspice/Power Electronics/IRFZ44_switch.sch
+%%DATADIR%%/examples/ngspice/Power Electronics/LM317_test.sch
+%%DATADIR%%/examples/ngspice/Power Electronics/preregulator.sch
+%%DATADIR%%/examples/ngspice/RF/Amplifiers/Distortion simulations/Amp_Two_Tone.sch
+%%DATADIR%%/examples/ngspice/RF/Amplifiers/Distortion simulations/Distortion.sch
+%%DATADIR%%/examples/ngspice/RF/Amplifiers/JFET_Cascode.sch
+%%DATADIR%%/examples/ngspice/RF/Amplifiers/Q2N2222A/BJT-four.sch
+%%DATADIR%%/examples/ngspice/RF/Amplifiers/Q2N2222A/BJT-noise.sch
+%%DATADIR%%/examples/ngspice/RF/Amplifiers/Q2N2222A/BJT-swp.sch
+%%DATADIR%%/examples/ngspice/RF/Amplifiers/Q2N2222A/BJT.sch
+%%DATADIR%%/examples/ngspice/RF/Amplifiers/Signetics_NE520.sch
+%%DATADIR%%/examples/ngspice/RF/Amplifiers/Tube Amplifiers/JCM-800.sch
+%%DATADIR%%/examples/ngspice/RF/Amplifiers/Tube Amplifiers/Tube_amp6V6.sch
+%%DATADIR%%/examples/ngspice/RF/Amplifiers/s_param_wideband_amp.sch
+%%DATADIR%%/examples/ngspice/RF/Amplifiers/s_param_wideband_amp_noise.sch
+%%DATADIR%%/examples/ngspice/RF/Amplifiers/selective_amp.sch
+%%DATADIR%%/examples/ngspice/RF/Frequency Multipliers/X2_100_Bipolar.sch
+%%DATADIR%%/examples/ngspice/RF/Frequency Multipliers/X5_500.sch
+%%DATADIR%%/examples/ngspice/RF/Miscellaneous/Comb_Gen.sch
+%%DATADIR%%/examples/ngspice/RF/Miscellaneous/Group Delay Simulations/groupdelay_ac.sch
+%%DATADIR%%/examples/ngspice/RF/Miscellaneous/Group Delay Simulations/groupdelay_sp.sch
+%%DATADIR%%/examples/ngspice/RF/Miscellaneous/LCR-1.sch
+%%DATADIR%%/examples/ngspice/RF/Miscellaneous/RCL_resonance.sch
+%%DATADIR%%/examples/ngspice/RF/Miscellaneous/Relay.sch
+%%DATADIR%%/examples/ngspice/RF/Miscellaneous/SmithChartTest.sch
+%%DATADIR%%/examples/ngspice/RF/Miscellaneous/giacoletto.sch
+%%DATADIR%%/examples/ngspice/RF/Miscellaneous/stab.sch
+%%DATADIR%%/examples/ngspice/RF/Mixers/DBM_Mixer.sch
+%%DATADIR%%/examples/ngspice/RF/Mixers/Mixer_FFT.sch
+%%DATADIR%%/examples/ngspice/RF/Mixers/active_mixer.sch
+%%DATADIR%%/examples/ngspice/RF/Mixers/gilbert.sch
+%%DATADIR%%/examples/ngspice/RF/Mixers/single_balanced_CMOS_FFT.sch
+%%DATADIR%%/examples/ngspice/RF/Mixers/single_balanced_CMOS_TRAN.sch
+%%DATADIR%%/examples/ngspice/RF/Oscillators/BJT_Phase_Shift_Osc.sch
+%%DATADIR%%/examples/ngspice/RF/Oscillators/NE555_disc_Oscillator.sch
+%%DATADIR%%/examples/ngspice/RF/Oscillators/XTAL_colpitts.sch
+%%DATADIR%%/examples/ngspice/RF/Oscillators/classic_osci_2.sch
+%%DATADIR%%/examples/ngspice/RF/Oscillators/colpitts.sch
+%%DATADIR%%/examples/ngspice/RF/Oscillators/colpitts_base.sch
+%%DATADIR%%/examples/ngspice/RF/Oscillators/lc_osc.sch
+%%DATADIR%%/examples/ngspice/RF/Oscillators/rf_osci.sch
+%%DATADIR%%/examples/ngspice/RF/Oscillators/sym_osci.sch
+%%DATADIR%%/examples/ngspice/RF/Power Detector/VoltageDoubler.sch
+%%DATADIR%%/examples/ngspice/RF/Power Detector/multiplier.sch
+%%DATADIR%%/examples/ngspice/RF/RFLumpComp/RFLumpedComponents.lib
+%%DATADIR%%/examples/ngspice/RF/RFLumpComp/Test_RATF_EquivCircD.sch
+%%DATADIR%%/examples/ngspice/RF/RFLumpComp/Test_chip_res_basic.sch
 %%DATADIR%%/examples/ngspice/XSPICE_CM/DiodeCap_prj/diodecap.ifs
 %%DATADIR%%/examples/ngspice/XSPICE_CM/DiodeCap_prj/diodecap.mod
 %%DATADIR%%/examples/ngspice/XSPICE_CM/testRFind.sch
-%%DATADIR%%/examples/ngspice/XTAL.sch
-%%DATADIR%%/examples/ngspice/XTAL_colpitts.sch
-%%DATADIR%%/examples/ngspice/active_bp.sch
-%%DATADIR%%/examples/ngspice/active_mixer.sch
-%%DATADIR%%/examples/ngspice/audio_amp.sch
-%%DATADIR%%/examples/ngspice/audio_amp_thd.sch
-%%DATADIR%%/examples/ngspice/charac.sch
-%%DATADIR%%/examples/ngspice/chargepump.sch
-%%DATADIR%%/examples/ngspice/classic_osci_2.sch
-%%DATADIR%%/examples/ngspice/colpitts.sch
-%%DATADIR%%/examples/ngspice/colpitts_base.sch
-%%DATADIR%%/examples/ngspice/diode.sch
-%%DATADIR%%/examples/ngspice/diode_dblswp_qucs.sch
-%%DATADIR%%/examples/ngspice/example_sub_subcircuit.sch
-%%DATADIR%%/examples/ngspice/example_subcircuit.sch
-%%DATADIR%%/examples/ngspice/fet.sch
-%%DATADIR%%/examples/ngspice/fet_noise.sch
-%%DATADIR%%/examples/ngspice/fhr01fh.sch
-%%DATADIR%%/examples/ngspice/flip_flops_truth_tables.sch
-%%DATADIR%%/examples/ngspice/gain_phase_AC.sch
-%%DATADIR%%/examples/ngspice/giacoletto.sch
-%%DATADIR%%/examples/ngspice/gilbert.sch
-%%DATADIR%%/examples/ngspice/groupdelay_ac.sch
-%%DATADIR%%/examples/ngspice/groupdelay_sp.sch
-%%DATADIR%%/examples/ngspice/gyrator.sch
-%%DATADIR%%/examples/ngspice/lc_osc.sch
-%%DATADIR%%/examples/ngspice/multiplier.sch
-%%DATADIR%%/examples/ngspice/notch.sch
-%%DATADIR%%/examples/ngspice/nutmeg_script.sch
-%%DATADIR%%/examples/ngspice/opamp_gyrator.sch
-%%DATADIR%%/examples/ngspice/par_sweep_test.sch
-%%DATADIR%%/examples/ngspice/preregulator.sch
-%%DATADIR%%/examples/ngspice/quarz.sch
-%%DATADIR%%/examples/ngspice/quarz_test.sch
-%%DATADIR%%/examples/ngspice/rf_osci.sch
-%%DATADIR%%/examples/ngspice/s_param_wideband_amp.sch
-%%DATADIR%%/examples/ngspice/s_param_wideband_amp_noise.sch
-%%DATADIR%%/examples/ngspice/sawtooth-2.sch
-%%DATADIR%%/examples/ngspice/sawtooth-3.sch
-%%DATADIR%%/examples/ngspice/schematic_symbols.sch
-%%DATADIR%%/examples/ngspice/schmitt.sch
-%%DATADIR%%/examples/ngspice/selective_amp.sch
-%%DATADIR%%/examples/ngspice/sensitivityACandDC.sch
-%%DATADIR%%/examples/ngspice/singleOPV.sch
-%%DATADIR%%/examples/ngspice/single_balanced_CMOS_FFT.sch
-%%DATADIR%%/examples/ngspice/single_balanced_CMOS_TRAN.sch
-%%DATADIR%%/examples/ngspice/single_phase_transformer.sch
-%%DATADIR%%/examples/ngspice/stab.sch
-%%DATADIR%%/examples/ngspice/sym_osci.sch
-%%DATADIR%%/examples/ngspice/time_resistor.sch
-%%DATADIR%%/examples/qucsator/Amp_Baseband_Low-noise.sch
-%%DATADIR%%/examples/qucsator/Amp_Two_Tone.sch
-%%DATADIR%%/examples/qucsator/BJT_T_swp_qucs.sch
-%%DATADIR%%/examples/qucsator/BPF_1550_edge_cpld.sch
-%%DATADIR%%/examples/qucsator/BPF_2000_Co-ax.sch
-%%DATADIR%%/examples/qucsator/Comb_Gen.sch
-%%DATADIR%%/examples/qucsator/IdealBalun.sch
-%%DATADIR%%/examples/qucsator/LPF-Balun2.sch
-%%DATADIR%%/examples/qucsator/LPF-Balun3.sch
-%%DATADIR%%/examples/qucsator/LPF_1000_Coplanar.sch
-%%DATADIR%%/examples/qucsator/LPF_1000_Radial-Stub.sch
-%%DATADIR%%/examples/qucsator/LPF_1250_Elliptical.sch
-%%DATADIR%%/examples/qucsator/Mixer_FFT.sch
-%%DATADIR%%/examples/qucsator/Puls3b.sch
-%%DATADIR%%/examples/qucsator/SmithChartTest.sch
-%%DATADIR%%/examples/qucsator/VCO_100.sch
-%%DATADIR%%/examples/qucsator/X2_100_Bipolar.sch
-%%DATADIR%%/examples/qucsator/X5_500.sch
-%%DATADIR%%/examples/qucsator/active_bp.sch
-%%DATADIR%%/examples/qucsator/active_lp.sch
-%%DATADIR%%/examples/qucsator/active_mixer.sch
-%%DATADIR%%/examples/qucsator/bbv.sch
-%%DATADIR%%/examples/qucsator/boostconverter.sch
-%%DATADIR%%/examples/qucsator/bpf_10Ghz.sch
-%%DATADIR%%/examples/qucsator/bridge.sch
-%%DATADIR%%/examples/qucsator/buckboost.sch
-%%DATADIR%%/examples/qucsator/buckconverter.sch
-%%DATADIR%%/examples/qucsator/charac.sch
-%%DATADIR%%/examples/qucsator/chargepump.sch
-%%DATADIR%%/examples/qucsator/chebyshev1_5th.sch
-%%DATADIR%%/examples/qucsator/classic_osci.sch
-%%DATADIR%%/examples/qucsator/colpitts.sch
-%%DATADIR%%/examples/qucsator/colpitts_base.sch
-%%DATADIR%%/examples/qucsator/diff1.sch
-%%DATADIR%%/examples/qucsator/diode_hb.sch
-%%DATADIR%%/examples/qucsator/elliptic_5th.sch
-%%DATADIR%%/examples/qucsator/fet.sch
-%%DATADIR%%/examples/qucsator/fet_noise.sch
-%%DATADIR%%/examples/qucsator/fgummel.sch
-%%DATADIR%%/examples/qucsator/fhr01fh.sch
-%%DATADIR%%/examples/qucsator/filter_optimization.sch
-%%DATADIR%%/examples/qucsator/flicker.sch
-%%DATADIR%%/examples/qucsator/fullwaverectifier_1.sch
-%%DATADIR%%/examples/qucsator/fullwaverectifier_2.sch
-%%DATADIR%%/examples/qucsator/gain.sch
-%%DATADIR%%/examples/qucsator/giacoletto.sch
-%%DATADIR%%/examples/qucsator/gilbert.sch
-%%DATADIR%%/examples/qucsator/groupdelay_ac.sch
-%%DATADIR%%/examples/qucsator/groupdelay_sp.sch
-%%DATADIR%%/examples/qucsator/gyrator.sch
-%%DATADIR%%/examples/qucsator/lc_osc.sch
-%%DATADIR%%/examples/qucsator/lf_osci.sch
-%%DATADIR%%/examples/qucsator/microstrip.sch
-%%DATADIR%%/examples/qucsator/mixer.sch
-%%DATADIR%%/examples/qucsator/mscoupler.sch
-%%DATADIR%%/examples/qucsator/multiplier.sch
-%%DATADIR%%/examples/qucsator/notch.sch
-%%DATADIR%%/examples/qucsator/opamp_gyrator.sch
-%%DATADIR%%/examples/qucsator/pentode.sch
-%%DATADIR%%/examples/qucsator/preregulator.sch
-%%DATADIR%%/examples/qucsator/resonance.sch
-%%DATADIR%%/examples/qucsator/rf_osci.sch
-%%DATADIR%%/examples/qucsator/rgummel.sch
-%%DATADIR%%/examples/qucsator/sawtooth-1.sch
-%%DATADIR%%/examples/qucsator/sawtooth-2.sch
-%%DATADIR%%/examples/qucsator/sawtooth-3.sch
-%%DATADIR%%/examples/qucsator/sawtooth-discreet.sch
-%%DATADIR%%/examples/qucsator/schmitt.sch
-%%DATADIR%%/examples/qucsator/selective_amp.sch
-%%DATADIR%%/examples/qucsator/shot.sch
-%%DATADIR%%/examples/qucsator/singleOPV.sch
-%%DATADIR%%/examples/qucsator/single_balanced.sch
-%%DATADIR%%/examples/qucsator/stab.sch
-%%DATADIR%%/examples/qucsator/supply.sch
-%%DATADIR%%/examples/qucsator/swr_meter.sch
-%%DATADIR%%/examples/qucsator/sym_osci.sch
-%%DATADIR%%/examples/qucsator/time_resistor.sch
-%%DATADIR%%/examples/qucsator/triode.sch
-%%DATADIR%%/examples/qucsator/wilkinson.sch
+%%DATADIR%%/examples/qucsator/Devices/BJT_T_swp_qucs.sch
+%%DATADIR%%/examples/qucsator/Devices/FET noise/fet.sch
+%%DATADIR%%/examples/qucsator/Devices/FET noise/fet_noise.sch
+%%DATADIR%%/examples/qucsator/Devices/fgummel.sch
+%%DATADIR%%/examples/qucsator/Devices/fhr01fh.sch
+%%DATADIR%%/examples/qucsator/Devices/flicker.sch
+%%DATADIR%%/examples/qucsator/Devices/pentode.sch
+%%DATADIR%%/examples/qucsator/Devices/rgummel.sch
+%%DATADIR%%/examples/qucsator/Devices/shot.sch
+%%DATADIR%%/examples/qucsator/Devices/triode.sch
+%%DATADIR%%/examples/qucsator/General Electronics/Active filters/active_bp.sch
+%%DATADIR%%/examples/qucsator/General Electronics/Active filters/active_lp.sch
+%%DATADIR%%/examples/qucsator/General Electronics/Active filters/notch.sch
+%%DATADIR%%/examples/qucsator/General Electronics/Comb_Gen.sch
+%%DATADIR%%/examples/qucsator/General Electronics/Waveform generation/Puls3b.sch
+%%DATADIR%%/examples/qucsator/General Electronics/Waveform generation/sawtooth-1.sch
+%%DATADIR%%/examples/qucsator/General Electronics/Waveform generation/sawtooth-2.sch
+%%DATADIR%%/examples/qucsator/General Electronics/Waveform generation/sawtooth-3.sch
+%%DATADIR%%/examples/qucsator/General Electronics/Waveform generation/sawtooth-discreet.sch
+%%DATADIR%%/examples/qucsator/General Electronics/bridge.sch
+%%DATADIR%%/examples/qucsator/General Electronics/chargepump.sch
+%%DATADIR%%/examples/qucsator/General Electronics/diff1.sch
+%%DATADIR%%/examples/qucsator/General Electronics/gain.sch
+%%DATADIR%%/examples/qucsator/General Electronics/gyrator.sch
+%%DATADIR%%/examples/qucsator/General Electronics/opamp_gyrator.sch
+%%DATADIR%%/examples/qucsator/General Electronics/schmitt.sch
+%%DATADIR%%/examples/qucsator/General Electronics/singleOPV.sch
+%%DATADIR%%/examples/qucsator/General Electronics/time_resistor.sch
+%%DATADIR%%/examples/qucsator/Power Electronics/boostconverter.sch
+%%DATADIR%%/examples/qucsator/Power Electronics/buckboost.sch
+%%DATADIR%%/examples/qucsator/Power Electronics/buckconverter.sch
+%%DATADIR%%/examples/qucsator/Power Electronics/fullwaverectifier_1.sch
+%%DATADIR%%/examples/qucsator/Power Electronics/fullwaverectifier_2.sch
+%%DATADIR%%/examples/qucsator/Power Electronics/preregulator.sch
+%%DATADIR%%/examples/qucsator/Power Electronics/supply.sch
+%%DATADIR%%/examples/qucsator/RF/Amplifiers/Amp_Baseband_Low-noise.sch
+%%DATADIR%%/examples/qucsator/RF/Amplifiers/Distortion Simulation/Amp_Two_Tone.sch
+%%DATADIR%%/examples/qucsator/RF/Amplifiers/bbv.sch
+%%DATADIR%%/examples/qucsator/RF/Amplifiers/selective_amp.sch
+%%DATADIR%%/examples/qucsator/RF/Amplifiers/stab.sch
+%%DATADIR%%/examples/qucsator/RF/Couplers/mscoupler.sch
+%%DATADIR%%/examples/qucsator/RF/Filters/BPF/BPF_1550_edge_cpld.sch
+%%DATADIR%%/examples/qucsator/RF/Filters/BPF/BPF_2000_Co-ax.sch
+%%DATADIR%%/examples/qucsator/RF/Filters/BPF/bpf_10Ghz.sch
+%%DATADIR%%/examples/qucsator/RF/Filters/LPF/IdealBalun.sch
+%%DATADIR%%/examples/qucsator/RF/Filters/LPF/LPF-Balun2.sch
+%%DATADIR%%/examples/qucsator/RF/Filters/LPF/LPF-Balun3.sch
+%%DATADIR%%/examples/qucsator/RF/Filters/LPF/LPF_1000_Coplanar.sch
+%%DATADIR%%/examples/qucsator/RF/Filters/LPF/LPF_1000_Radial-Stub.sch
+%%DATADIR%%/examples/qucsator/RF/Filters/LPF/LPF_1250_Elliptical.sch
+%%DATADIR%%/examples/qucsator/RF/Filters/LPF/chebyshev1_5th.sch
+%%DATADIR%%/examples/qucsator/RF/Filters/LPF/elliptic_5th.sch
+%%DATADIR%%/examples/qucsator/RF/Filters/filter_optimization.sch
+%%DATADIR%%/examples/qucsator/RF/Frequency Multipliers/X2_100_Bipolar.sch
+%%DATADIR%%/examples/qucsator/RF/Frequency Multipliers/X5_500.sch
+%%DATADIR%%/examples/qucsator/RF/Miscellaneous/Group Delay/groupdelay_ac.sch
+%%DATADIR%%/examples/qucsator/RF/Miscellaneous/Group Delay/groupdelay_sp.sch
+%%DATADIR%%/examples/qucsator/RF/Miscellaneous/IdealBalun.sch
+%%DATADIR%%/examples/qucsator/RF/Miscellaneous/SmithChartTest.sch
+%%DATADIR%%/examples/qucsator/RF/Miscellaneous/charac.sch
+%%DATADIR%%/examples/qucsator/RF/Miscellaneous/diode_hb.sch
+%%DATADIR%%/examples/qucsator/RF/Miscellaneous/giacoletto.sch
+%%DATADIR%%/examples/qucsator/RF/Miscellaneous/resonance.sch
+%%DATADIR%%/examples/qucsator/RF/Miscellaneous/swr_meter.sch
+%%DATADIR%%/examples/qucsator/RF/Mixers/active_mixer.sch
+%%DATADIR%%/examples/qucsator/RF/Mixers/gilbert.sch
+%%DATADIR%%/examples/qucsator/RF/Mixers/mixer.sch
+%%DATADIR%%/examples/qucsator/RF/Mixers/single_balanced.sch
+%%DATADIR%%/examples/qucsator/RF/Oscillators/VCO_100.sch
+%%DATADIR%%/examples/qucsator/RF/Oscillators/classic_osci.sch
+%%DATADIR%%/examples/qucsator/RF/Oscillators/colpitts.sch
+%%DATADIR%%/examples/qucsator/RF/Oscillators/colpitts_base.sch
+%%DATADIR%%/examples/qucsator/RF/Oscillators/lc_osc.sch
+%%DATADIR%%/examples/qucsator/RF/Oscillators/lf_osci.sch
+%%DATADIR%%/examples/qucsator/RF/Oscillators/rf_osci.sch
+%%DATADIR%%/examples/qucsator/RF/Oscillators/sym_osci.sch
+%%DATADIR%%/examples/qucsator/RF/Power Detectors/multiplier.sch
+%%DATADIR%%/examples/qucsator/RF/Power combiners/wilkinson.sch
+%%DATADIR%%/examples/qucsator/RF/Transmission Lines/microstrip.sch
 %%DATADIR%%/examples/symbols/schematic_symbols.sch
 %%DATADIR%%/examples/symbols/symbols_blank.sch
 %%DATADIR%%/examples/symbols/symbols_optos.sch
@@ -352,6 +354,9 @@ share/metainfo/io.github.ra3xdh.qucs_s.metainfo.xml
 %%DATADIR%%/library/Diodes_Extended.lib
 %%DATADIR%%/library/DualGateMOSFET.lib
 %%DATADIR%%/library/DualGateMOSFET/DualGateMos.cir
+%%DATADIR%%/library/FerritesAmidon.lib
+%%DATADIR%%/library/FerritesEpcos.lib
+%%DATADIR%%/library/FerritesFerroxcube.lib
 %%DATADIR%%/library/GeDiodes.lib
 %%DATADIR%%/library/Ideal.lib
 %%DATADIR%%/library/JFETs.lib
@@ -388,6 +393,8 @@ share/metainfo/io.github.ra3xdh.qucs_s.metainfo.xml
 %%DATADIR%%/library/TubesExtended/EF183.CIR
 %%DATADIR%%/library/TubesExtended/EF184.cir
 %%DATADIR%%/library/TubesExtended/tube.lib
+%%DATADIR%%/library/VDMOS.lib
+%%DATADIR%%/library/VDMOS_IR.lib
 %%DATADIR%%/library/Varactor.lib
 %%DATADIR%%/library/Varactor_RF.lib
 %%DATADIR%%/library/Varistors.lib
@@ -449,6 +456,10 @@ share/metainfo/io.github.ra3xdh.qucs_s.metainfo.xml
 %%DATADIR%%/python/parse_result_example.py
 %%DATADIR%%/python/rc_ac_sweep.dat
 %%DATADIR%%/python/rc_ac_sweep.net
+%%DATADIR%%/spicelibrary/coax.cir
+%%DATADIR%%/spicelibrary/core.cir
+%%DATADIR%%/spicelibrary/winding.cir
+%%DATADIR%%/spicelibrary/xfmr.cir
 %%DATADIR%%/symbols/and2.sym
 %%DATADIR%%/symbols/buf.sym
 %%DATADIR%%/symbols/darlington_npn.sym

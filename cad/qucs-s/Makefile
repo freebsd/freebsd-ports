@@ -1,5 +1,5 @@
 PORTNAME=	qucs-s
-DISTVERSION=	25.1.2
+DISTVERSION=	25.2.0
 CATEGORIES=	cad
 MASTER_SITES=	https://github.com/ra3xdh/qucs_s/releases/download/${DISTVERSION}/
 
@@ -8,7 +8,7 @@ COMMENT=	Quite Universal Circuit Simulator: GUI for circuit simulation kernels
 WWW=		https://ra3xdh.github.io/ \
 		https://github.com/ra3xdh/qucs_s/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	dos2unix:converters/dos2unix \
