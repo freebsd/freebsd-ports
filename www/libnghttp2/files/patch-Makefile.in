@@ -1,10 +1,10 @@
---- Makefile.in.orig	2025-06-17 10:27:07 UTC
+--- Makefile.in.orig	2025-09-02 12:26:39 UTC
 +++ Makefile.in
-@@ -456,11 +456,10 @@ top_srcdir = @top_srcdir@
+@@ -458,11 +458,10 @@ top_srcdir = @top_srcdir@
  # LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
--SUBDIRS = lib third-party src bpf examples tests integration-tests \
+-SUBDIRS = lib tests third-party src bpf examples integration-tests \
 -	doc contrib
 +SUBDIRS = lib
  
