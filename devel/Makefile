@@ -4741,6 +4741,7 @@
     SUBDIR += py-ctags
     SUBDIR += py-ctypesgen
     SUBDIR += py-cucumber-expressions
+    SUBDIR += py-cucumber-tag-expressions
     SUBDIR += py-curio
     SUBDIR += py-cursive
     SUBDIR += py-curtsies
