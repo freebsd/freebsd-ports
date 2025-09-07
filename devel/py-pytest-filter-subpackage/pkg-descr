@@ -1,0 +1,3 @@
+pytest-filter-subpackage is a simple plugin for the pytest framework that
+provides a shortcut to testing all code and documentation for a given
+sub-package.

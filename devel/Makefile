@@ -5702,6 +5702,7 @@
     SUBDIR += py-pytest-env
     SUBDIR += py-pytest-examples
     SUBDIR += py-pytest-factoryboy
+    SUBDIR += py-pytest-filter-subpackage
     SUBDIR += py-pytest-fixture-config
     SUBDIR += py-pytest-flake8
     SUBDIR += py-pytest-flakes
