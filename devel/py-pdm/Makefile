@@ -1,5 +1,5 @@
 PORTNAME=	pdm
-PORTVERSION=	2.25.4
+PORTVERSION=	2.25.9
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,13 +18,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=2024.8.30:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dep-logic>=0.5:devel/py-dep-logic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.13:sysutils/py-filelock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}findpython>=0.6.0<1.0.0:devel/py-findpython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}findpython>=0.7.0<1.0.0:devel/py-findpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hishel>=0.0.32:devel/py-hishel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpcore>=1.0.6:www/py-httpcore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.20<1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}id>=1.5.0:devel/py-id@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}installer>=0.7<0.8:devel/py-installer@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>=20.9:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=22.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbs-installer>=2025.6.6:devel/py-pbs-installer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproject-hooks>=0:devel/py-pyproject-hooks@${PY_FLAVOR} \
@@ -59,7 +59,7 @@ MSGPACK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0:devel/py-msgpack@${PY_F
 .if ${PYTHON_REL} < 31000
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.6:devel/py-importlib-metadata@${PY_FLAVOR}
 .else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}truststore>=0.9:security/py-truststore@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}truststore>=0.10.4:security/py-truststore@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
