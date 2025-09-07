@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250917:
+  AFFECTS: users of mail/pflogsumm
+  AUTHOR: flo@FreeBSD.org
+
+  Some command line arguments were renamed in 1.1.11 and 1.1.12.
+
+  For details, see https://jimsun.linxnet.com/downloads/ChangeLog-1.1.12
+
 20250908:
   AFFECTS: users of www/mod_wsgi4
   AUTHOR: michaelo@FreeBSD.org
