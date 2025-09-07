@@ -1,6 +1,6 @@
 --- src/openvpn/dco_freebsd.c.orig	2025-04-02 06:53:10 UTC
 +++ src/openvpn/dco_freebsd.c
-@@ -72,6 +72,67 @@ sockaddr_to_nvlist(const struct sockaddr *sa)
+@@ -72,6 +72,61 @@ sockaddr_to_nvlist(const struct sockaddr *sa)
      return (nvl);
  }
  
@@ -32,10 +32,7 @@
 +
 +            in->sin_len = sizeof(*in);
 +            data = nvlist_get_binary(nvl, "address", &len);
-+            if (len != sizeof(in->sin_addr))
-+	    {
-+		return (false);
-+	    }
++            ASSERT(len == sizeof(in->sin_addr));
 +            memcpy(&in->sin_addr, data, sizeof(in->sin_addr));
 +            in->sin_port = nvlist_get_number(nvl, "port");
 +            break;
@@ -49,10 +46,7 @@
 +
 +            in6->sin6_len = sizeof(*in6);
 +            data = nvlist_get_binary(nvl, "address", &len);
-+            if (len != sizeof(in6->sin6_addr))
-+	    {
-+		return (false);
-+	    }
++            ASSERT(len == sizeof(in6->sin6_addr));
 +            memcpy(&in6->sin6_addr, data, sizeof(in6->sin6_addr));
 +            in6->sin6_port = nvlist_get_number(nvl, "port");
 +            break;
@@ -68,7 +62,7 @@
  int
  dco_new_peer(dco_context_t *dco, unsigned int peerid, int sd,
               struct sockaddr *localaddr, struct sockaddr *remoteaddr,
-@@ -570,6 +631,25 @@ dco_do_read(dco_context_t *dco)
+@@ -570,6 +625,25 @@ dco_do_read(dco_context_t *dco)
          case OVPN_NOTIF_ROTATE_KEY:
              dco->dco_message_type = OVPN_CMD_SWAP_KEYS;
              break;
