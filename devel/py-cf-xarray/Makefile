@@ -1,5 +1,5 @@
 PORTNAME=	cf-xarray
-PORTVERSION=	0.10.6
+PORTVERSION=	0.10.7
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=45:devel/py-setuptools@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}xarray>=2023.09.0:devel/py-xarray@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xarray>=2023.09.0:devel/py-xarray@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.11+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
