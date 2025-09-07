@@ -1,5 +1,5 @@
 PORTNAME=	flipper-active_support_cache_store
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
