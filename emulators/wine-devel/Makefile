@@ -18,18 +18,21 @@ ONLY_FOR_ARCHS=	amd64 i386
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
 # Only devel/llvm17 and later come with necessary include files - PR274542
-USES=		bison cpe desktop-file-utils gmake \
-		llvm:min=17,build,noexport localbase \
-		pkgconfig sdl shebangfix tar:xz
+USES=		bison cpe desktop-file-utils gmake llvm:min=17,build,noexport \
+		localbase pkgconfig sdl shebangfix tar:xz
+CPE_VENDOR=	winehq
 USE_GCC=	yes
+WINELIBDIR=	${PREFIX}/lib
+.if !defined(USE_LDCONFIG32)
+USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
+.endif
 USE_SDL=	sdl2
 
-CPE_VENDOR=	winehq
-
-CONFLICTS_INSTALL=	wine
+SHEBANG_FILES=	tools/make_requests tools/winemaker/winemaker \
+		tools/winedump/function_grep.pl
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--verbose \
+CONFIGURE_ARGS=	--verbose \
 		--disable-kerberos \
 		--disable-tests \
 		--without-capi \
@@ -53,70 +56,66 @@ CONFIGURE_ARGS+=--verbose \
 		--without-unwind \
 		--without-usb
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
-WINELIBDIR=	${PREFIX}/lib
-.if !defined(USE_LDCONFIG32)
-USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
-.endif
-SHEBANG_FILES=	tools/make_requests tools/winemaker/winemaker \
-		tools/winedump/function_grep.pl
+
+PIE_UNSAFE=	yes
+
+CONFLICTS_INSTALL=	wine
 
 BINARY_ALIAS+=	clang=${LOCALBASE}/bin/clang${LLVM_VERSION} \
 		lld-link=${LOCALBASE}/bin/lld-link${LLVM_VERSION}
 
 SUB_FILES=	pkg-message
 
-PIE_UNSAFE=	yes
-
 PORTDATA=	wine.inf
 
-OPTIONS_DEFINE=	CUPS DOCS DOSBOX GNUTLS V4L WAYLAND X11 GECKO MONO
-OPTIONS_DEFAULT=ALSA GNUTLS WAYLAND X11
-OPTIONS_RADIO=	AUDIO
+OPTIONS_DEFINE=		CUPS DOCS DOSBOX GECKO GNUTLS MONO V4L WAYLAND X11
+OPTIONS_DEFAULT=	ALSA GNUTLS WAYLAND X11
+OPTIONS_RADIO=		AUDIO
 OPTIONS_RADIO_AUDIO=	ALSA OSS
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
 DOSBOX_DESC=	Use DOSBox to run MS-DOS programs
 GECKO_DESC=	Bundle Gecko MSI package for Wine
 MONO_DESC=	Bundle Mono MSI package for Wine
 WAYLAND_DESC=	Wayland Support
 
-ALSA_CONFIGURE_WITH=	alsa
-ALSA_USES=		gnome gstreamer
-ALSA_USE=		GNOME=glib20
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_RUN_DEPENDS=	alsa-plugins>0:audio/alsa-plugins
+ALSA_USES=		gnome gstreamer
+ALSA_USE=		GNOME=glib20
+ALSA_CONFIGURE_WITH=	alsa
 
-CUPS_CONFIGURE_WITH=	cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
+CUPS_CONFIGURE_WITH=	cups
 
 DOSBOX_RUN_DEPENDS=	dosbox:emulators/dosbox
 
 GECKO_RUN_DEPENDS=	wine-gecko-devel>0:emulators/wine-gecko-devel
 
-GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+GNUTLS_CONFIGURE_WITH=	gnutls
 
 MONO_RUN_DEPENDS=	wine-mono-devel>0:emulators/wine-mono-devel
 
-OSS_CONFIGURE_WITH=	oss
 OSS_USES=		gnome gstreamer
 OSS_USE=		GNOME=glib20
+OSS_CONFIGURE_WITH=	oss
 
-V4L_CONFIGURE_WITH=	v4l2
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
+V4L_CONFIGURE_WITH=	v4l2
 
-WAYLAND_CONFIGURE_WITH=	wayland
 WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon
+WAYLAND_CONFIGURE_WITH=	wayland
 
-X11_CONFIGURE_WITH=	x fontconfig freetype opengl xinerama xinput2 xrandr xrender
-X11_USES=		gl xorg
-X11_USE=		GL=glu XORG=x11,xext,xcomposite,xcursor,xi,xinerama,xrandr,xrender
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			libvulkan.so:graphics/vulkan-loader
+X11_USES=		gl xorg
+X11_USE=		GL=glu XORG=x11,xcomposite,xcursor,xext,xi,xinerama,xrandr,xrender
+X11_CONFIGURE_WITH=	fontconfig freetype opengl x xinerama xinput2 xrandr xrender
 
 .include <bsd.port.pre.mk>
 
@@ -147,7 +146,7 @@ post-patch:
 	${REINPLACE_CMD} '/Exec/s|wine|wine64|g' ${WRKSRC}/loader/wine.desktop
 
 .else
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-tools-winebuild-res32
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-tools-winebuild-res32
 PLIST_SUB+=		WINE32="" WINE64="@comment " WINEARCH="i386"
 .endif
 
