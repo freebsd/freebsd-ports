@@ -1,9 +1,0 @@
---- MANIFEST.orig	2022-07-31 06:10:05 UTC
-+++ MANIFEST
-@@ -1,5 +1,5 @@
- .travis.yml
--bin/json_pp
-+bin/p5json_pp
- Changes
- lib/JSON/PP.pm
- lib/JSON/PP/Boolean.pm
