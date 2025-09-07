@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-cpp
-DISTVERSION=	1.11.627
+DISTVERSION=	1.11.642
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -25,21 +25,18 @@ LIB_DEPENDS=	libaws-c-auth.so:security/aws-c-auth \
 		libpulse.so:audio/pulseaudio \
 		libs2n.so:security/s2n-tls
 
-USES=		cmake localbase:ldflags pkgconfig ssl
+USES=		cmake:testing localbase:ldflags pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	aws
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBUILD_ONLY="${BUILD_ONLY}"
 CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	BUILD_DEPS
+CMAKE_OFF=	BUILD_DEPS ENABLE_TESTING AUTORUN_UNIT_TESTS
+CMAKE_TESTING_ON=	ENABLE_TESTING
+CMAKE_TESTING_TARGET=	# No internal target for running tests. Run via post-test.
 
 BUILD_ONLY?=
-
-OPTIONS_DEFINE=	TEST
-OPTIONS_SUB=	yes
-
-TEST_CMAKE_BOOL=	ENABLE_TESTING
 
 pre-everything::
 	@${ECHO_MSG}
@@ -63,5 +60,11 @@ post-patch:
 post-install:
 	@cd ${STAGEDIR}/${LOCALBASE} && \
 	${FIND} -s -d * -type f > ${TMPPLIST}
+
+post-test:
+	for test_binary in ${BUILD_WRKSRC}/generated/tests/*/*-gen-tests; do \
+			echo "Running $$(basename $${test_binary})..."; \
+			$$test_binary --gtest_brief=1; \
+	done
 
 .include <bsd.port.mk>
