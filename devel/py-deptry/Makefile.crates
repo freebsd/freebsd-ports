@@ -1,49 +1,61 @@
 CARGO_CRATES=	aho-corasick-1.1.3 \
 		arc-swap-1.7.1 \
-		autocfg-1.4.0 \
-		bitflags-2.8.0 \
-		bstr-1.11.3 \
-		byteorder-1.5.0 \
-		castaway-0.2.3 \
-		cc-1.2.10 \
-		cfg-if-1.0.0 \
+		attribute-derive-0.10.3 \
+		attribute-derive-macro-0.10.3 \
+		autocfg-1.5.0 \
+		bitflags-2.9.1 \
+		bstr-1.12.0 \
+		castaway-0.2.4 \
+		cc-1.2.30 \
+		cfg-if-1.0.1 \
 		chardetng-0.1.17 \
-		compact_str-0.8.1 \
+		collection_literals-1.0.2 \
+		compact_str-0.9.0 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
-		either-1.13.0 \
+		derive-where-1.5.0 \
+		either-1.15.0 \
 		encoding_rs-0.8.35 \
-		getopts-0.2.21 \
-		getrandom-0.2.15 \
-		globset-0.4.15 \
+		get-size-derive2-0.5.2 \
+		get-size2-0.5.2 \
+		getopts-0.2.23 \
+		getrandom-0.2.16 \
+		globset-0.4.16 \
+		hashbrown-0.15.4 \
 		heck-0.5.0 \
 		ignore-0.4.23 \
-		indoc-2.0.5 \
+		indoc-2.0.6 \
+		interpolator-0.5.0 \
 		is-macro-0.3.7 \
 		itertools-0.14.0 \
-		itoa-1.0.14 \
-		libc-0.2.169 \
-		log-0.4.25 \
-		memchr-2.7.4 \
+		itoa-1.0.15 \
+		libc-0.2.174 \
+		log-0.4.27 \
+		manyhow-0.11.4 \
+		manyhow-macros-0.11.4 \
+		memchr-2.7.5 \
 		memoffset-0.9.1 \
-		once_cell-1.20.2 \
+		once_cell-1.21.3 \
 		path-slash-0.2.1 \
 		phf-0.11.3 \
 		phf_codegen-0.11.3 \
 		phf_generator-0.11.3 \
 		phf_shared-0.11.3 \
-		portable-atomic-1.10.0 \
-		ppv-lite86-0.2.20 \
-		proc-macro2-1.0.93 \
-		pyo3-0.23.4 \
-		pyo3-build-config-0.23.4 \
-		pyo3-ffi-0.23.4 \
-		pyo3-log-0.12.1 \
-		pyo3-macros-0.23.4 \
-		pyo3-macros-backend-0.23.4 \
-		python3-dll-a-0.2.12 \
-		quote-1.0.38 \
+		portable-atomic-1.11.1 \
+		ppv-lite86-0.2.21 \
+		proc-macro-utils-0.10.0 \
+		proc-macro2-1.0.95 \
+		pyo3-0.25.1 \
+		pyo3-build-config-0.25.1 \
+		pyo3-ffi-0.25.1 \
+		pyo3-log-0.12.4 \
+		pyo3-macros-0.25.1 \
+		pyo3-macros-backend-0.25.1 \
+		python3-dll-a-0.2.14 \
+		quote-1.0.40 \
+		quote-use-0.8.4 \
+		quote-use-macros-0.8.4 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -52,28 +64,31 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		rustc-hash-2.1.0 \
-		rustversion-1.0.19 \
-		ryu-1.0.18 \
+		rustc-hash-2.1.1 \
+		rustversion-1.0.21 \
+		ryu-1.0.20 \
 		same-file-1.0.6 \
-		serde-1.0.217 \
-		serde_derive-1.0.217 \
-		serde_json-1.0.137 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
+		serde_json-1.0.141 \
 		shlex-1.3.0 \
 		siphasher-1.0.1 \
+		smallvec-1.15.1 \
 		static_assertions-1.1.0 \
-		syn-2.0.96 \
-		target-lexicon-0.12.16 \
-		tinyvec-1.8.1 \
+		syn-2.0.104 \
+		target-lexicon-0.13.2 \
+		thiserror-2.0.12 \
+		thiserror-impl-2.0.12 \
+		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
-		unicode-ident-1.0.15 \
+		unicode-ident-1.0.18 \
 		unicode-normalization-0.1.24 \
-		unicode-width-0.1.14 \
+		unicode-width-0.2.1 \
 		unicode_names2-1.3.0 \
 		unicode_names2_generator-1.3.0 \
-		unindent-0.2.3 \
+		unindent-0.2.4 \
 		walkdir-2.5.0 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
 		winapi-util-0.1.9 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
@@ -85,6 +100,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		zerocopy-0.7.35 \
-		zerocopy-derive-0.7.35 \
-		ruff_python_ast,ruff_python_parser,ruff_python_trivia,ruff_source_file,ruff_text_size@git+https://github.com/astral-sh/ruff?tag=0.9.3\#90589372daf58ec4d314cbd15db8d2ef572c33cc
+		zerocopy-0.8.26 \
+		zerocopy-derive-0.8.26 \
+		ruff_python_ast,ruff_python_parser,ruff_python_trivia,ruff_source_file,ruff_text_size@git+https://github.com/astral-sh/ruff?tag=0.12.4\#ee2759b365448e58503b63636c1cedaa65360bd1
