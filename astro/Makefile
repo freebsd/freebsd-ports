@@ -103,6 +103,7 @@
     SUBDIR += py-pysofa
     SUBDIR += py-pytest-astropy
     SUBDIR += py-pytest-astropy-header
+    SUBDIR += py-pyvo
     SUBDIR += py-pywapi
     SUBDIR += py-ro
     SUBDIR += py-sgp4
