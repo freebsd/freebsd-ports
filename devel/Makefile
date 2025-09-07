@@ -6560,6 +6560,7 @@
     SUBDIR += rubygem-aws-sdk-backupgateway
     SUBDIR += rubygem-aws-sdk-backupsearch
     SUBDIR += rubygem-aws-sdk-batch
+    SUBDIR += rubygem-aws-sdk-bcmdashboards
     SUBDIR += rubygem-aws-sdk-bcmdataexports
     SUBDIR += rubygem-aws-sdk-bcmpricingcalculator
     SUBDIR += rubygem-aws-sdk-bedrock
