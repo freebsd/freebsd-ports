@@ -1,3 +1,42 @@
+  <vuln vid="bda50cf1-8bcf-11f0-b3f7-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>140.0.7339.80</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>140.0.7339.80</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/09/stable-channel-update-for-desktop.html">
+	 <p>This update includes 6 security fixes:</p>
+	 <ul>
+	    <li>[434513380] High CVE-2025-9864: Use after free in V8. Reported by Pavel Kuzmin of Yandex Security Team on 2025-07-28</li>
+	    <li>[437147699] Medium CVE-2025-9865: Inappropriate implementation in Toolbar. Reported by Khalil Zhani on 2025-08-07</li>
+	    <li>[379337758] Medium CVE-2025-9866: Inappropriate implementation in Extensions. Reported by NDevTK on 2024-11-16</li>
+	    <li>[415496161] Medium CVE-2025-9867: Inappropriate implementation in Downloads. Reported by Farras Givari on 2025-05-04</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9864</cvename>
+      <cvename>CVE-2025-9865</cvename>
+      <cvename>CVE-2025-9866</cvename>
+      <cvename>CVE-2025-9867</cvename>
+      <url>https://chromereleases.googleblog.com/2025/09/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2025-09-02</discovery>
+      <entry>2025-09-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="340dc4c1-895a-11f0-b6e5-4ccc6adda413">
     <topic>exiv2 -- Denial-of-service</topic>
     <affects>
