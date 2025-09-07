@@ -1,12 +1,13 @@
 PORTNAME=	wagtail
-PORTVERSION=	7.1
+PORTVERSION=	7.1.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Django content management system
-WWW=		https://wagtail.io/ \
+WWW=		https://wagtail.org/ \
+		https://docs.wagtail.org/en/latest/ \
 		https://github.com/wagtail/wagtail
 
 LICENSE=	BSD3CLAUSE
