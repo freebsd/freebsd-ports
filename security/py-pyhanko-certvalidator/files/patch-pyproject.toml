@@ -1,14 +1,11 @@
---- pyproject.toml.orig	2025-05-24 11:55:40 UTC
+--- pyproject.toml.orig	2025-08-23 12:29:44 UTC
 +++ pyproject.toml
-@@ -1,6 +1,6 @@ requires = [
+@@ -1,12 +1,11 @@
  [build-system]
- requires = [
--    "setuptools>=67.4",
-+    "setuptools>=61",
-     "wheel"
- ]
+-requires = ["setuptools>=80.8.0"]
++requires = ["setuptools>=61"]
  build-backend = "setuptools.build_meta"
-@@ -8,8 +8,7 @@ authors = [{name = "Matthias Valvekens", email = "dev@
+ 
  [project]
  name = "pyhanko-certvalidator"
  authors = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
