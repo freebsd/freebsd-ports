@@ -1,5 +1,5 @@
 PORTNAME=	sys-uname
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/djberg96/sys-uname
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-ffi>=1.1<2:devel/rubygem-ffi
+RUN_DEPENDS=	rubygem-ffi>=1.1<2:devel/rubygem-ffi \
+		rubygem-memoist>=0.16.2<0.17:devel/rubygem-memoist
 
 USES=		gem
 
