@@ -1,0 +1,13 @@
+Obtained from:	https://github.com/hukkin/mdformat/commit/a822aca00e5b918953597499e67c8bb7767c7960
+
+--- pyproject.toml.orig	2025-01-30 17:57:20 UTC
++++ pyproject.toml
+@@ -13,7 +13,7 @@ dependencies = [
+ license = { file = "LICENSE" }
+ requires-python = ">=3.9"
+ dependencies = [
+-    'markdown-it-py >=1.0.0,<4.0.0',
++    'markdown-it-py>=1,<5',
+     'tomli >=1.1.0; python_version < "3.11"',
+     'importlib-metadata >=3.6.0; python_version < "3.10"',
+ ]
