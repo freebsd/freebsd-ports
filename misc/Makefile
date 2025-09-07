@@ -452,6 +452,7 @@
     SUBDIR += py-fuzzy
     SUBDIR += py-gguf
     SUBDIR += py-google-ai-generativelanguage
+    SUBDIR += py-google-genai
     SUBDIR += py-gpiozero
     SUBDIR += py-gymnasium
     SUBDIR += py-halo
