@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2025-08-31 06:16:42 UTC
+--- pyproject.toml.orig	2025-09-07 22:29:05 UTC
 +++ pyproject.toml
-@@ -4,8 +4,6 @@ version = "0.50.0"
+@@ -4,8 +4,6 @@ version = "0.50.1"
  [project]
  name = "json_repair"
- version = "0.50.0"
+ version = "0.50.1"
 -license = "MIT"
 -license-files = ["LICENSE"]
  authors = [
