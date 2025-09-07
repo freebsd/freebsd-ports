@@ -1,6 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.12.10
-PORTREVISION=	1
+DISTVERSION=	0.12.12
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -53,7 +52,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bincode-2.0.1 \
 		bincode_derive-2.0.1 \
 		bitflags-1.3.2 \
-		bitflags-2.9.2 \
+		bitflags-2.9.3 \
 		bitvec-1.0.1 \
 		block-buffer-0.10.4 \
 		boxcar-0.2.13 \
@@ -61,7 +60,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bumpalo-3.19.0 \
 		byteorder-1.5.0 \
 		cachedir-0.3.1 \
-		camino-1.1.11 \
+		camino-1.1.12 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
 		cc-1.2.31 \
@@ -71,8 +70,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.45 \
-		clap_builder-4.5.44 \
+		clap-4.5.46 \
+		clap_builder-4.5.46 \
 		clap_complete-4.5.55 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.8 \
@@ -139,11 +138,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		etcetera-0.10.0 \
 		fastrand-2.3.0 \
 		fern-0.7.1 \
-		filetime-0.2.25 \
+		filetime-0.2.26 \
 		flate2-1.1.2 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
-		form_urlencoded-1.2.1 \
+		form_urlencoded-1.2.2 \
 		fs-err-2.11.0 \
 		fsevent-sys-4.1.0 \
 		funty-2.0.0 \
@@ -174,12 +173,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		icu_properties_data-2.0.1 \
 		icu_provider-2.0.0 \
 		ident_case-1.0.1 \
-		idna-1.0.3 \
+		idna-1.1.0 \
 		idna_adapter-1.2.1 \
 		ignore-0.4.23 \
 		imara-diff-0.1.8 \
 		imperative-1.0.6 \
-		indexmap-2.10.0 \
+		indexmap-2.11.0 \
 		indicatif-0.18.0 \
 		indoc-2.0.6 \
 		inotify-0.11.0 \
@@ -211,7 +210,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libc-0.2.175 \
 		libcst-1.8.2 \
 		libcst_derive-1.8.2 \
-		libmimalloc-sys-0.1.43 \
+		libmimalloc-sys-0.1.44 \
 		libredox-0.1.9 \
 		libtest-mimic-0.7.3 \
 		linux-raw-sys-0.9.4 \
@@ -222,12 +221,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		manyhow-0.11.4 \
 		manyhow-macros-0.11.4 \
 		markdown-1.0.0 \
-		matchers-0.1.0 \
+		matchers-0.2.0 \
 		matches-0.1.10 \
 		matchit-0.8.6 \
 		memchr-2.7.5 \
 		memoffset-0.9.1 \
-		mimalloc-0.1.47 \
+		mimalloc-0.1.48 \
 		minicov-0.3.7 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
@@ -240,17 +239,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		normalize-line-endings-0.3.0 \
 		notify-8.2.0 \
 		notify-types-2.0.0 \
-		nu-ansi-term-0.46.0 \
+		nu-ansi-term-0.50.1 \
 		num-traits-0.2.19 \
 		num_cpus-1.17.0 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.1 \
 		oorandom-11.1.5 \
 		option-ext-0.2.0 \
-		ordermap-0.5.8 \
+		ordermap-0.5.9 \
 		os_pipe-1.2.2 \
 		os_str_bytes-7.1.1 \
-		overload-0.1.1 \
 		parking_lot-0.12.4 \
 		parking_lot_core-0.9.11 \
 		paste-1.0.15 \
@@ -263,7 +261,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		peg-runtime-0.8.5 \
 		pep440_rs-0.7.3 \
 		pep508_rs-0.9.2 \
-		percent-encoding-2.3.1 \
+		percent-encoding-2.3.2 \
 		pest-2.8.1 \
 		pest_derive-2.8.1 \
 		pest_generator-2.8.1 \
@@ -284,7 +282,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pretty_assertions-1.4.1 \
 		proc-macro-crate-3.3.0 \
 		proc-macro-utils-0.10.0 \
-		proc-macro2-1.0.96 \
+		proc-macro2-1.0.101 \
 		pyproject-toml-0.13.5 \
 		quick-junit-0.5.1 \
 		quick-xml-0.37.5 \
@@ -305,11 +303,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.5.17 \
 		redox_users-0.5.2 \
-		regex-1.11.1 \
-		regex-automata-0.1.10 \
-		regex-automata-0.4.9 \
+		regex-1.11.2 \
+		regex-automata-0.4.10 \
 		regex-lite-0.1.6 \
-		regex-syntax-0.6.29 \
 		regex-syntax-0.8.5 \
 		ron-0.7.1 \
 		rust-stemmers-1.2.0 \
@@ -327,7 +323,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde-wasm-bindgen-0.6.5 \
 		serde_derive-1.0.219 \
 		serde_derive_internals-0.29.1 \
-		serde_json-1.0.142 \
+		serde_json-1.0.143 \
 		serde_repr-0.1.20 \
 		serde_spanned-0.6.9 \
 		serde_spanned-1.0.0 \
@@ -350,7 +346,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		strsim-0.11.1 \
 		strum-0.27.2 \
 		strum_macros-0.27.2 \
-		syn-2.0.104 \
+		syn-2.0.106 \
 		synstructure-0.13.2 \
 		tap-1.0.1 \
 		tempfile-3.20.0 \
@@ -363,9 +359,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		test-case-macros-3.3.1 \
 		thin-vec-0.2.14 \
 		thiserror-1.0.69 \
-		thiserror-2.0.12 \
+		thiserror-2.0.16 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.12 \
+		thiserror-impl-2.0.16 \
 		thread_local-1.1.9 \
 		threadpool-1.8.1 \
 		tikv-jemalloc-sys-0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
@@ -385,9 +381,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tracing-attributes-0.1.30 \
 		tracing-core-0.1.34 \
 		tracing-flame-0.2.0 \
-		tracing-indicatif-0.3.12 \
+		tracing-indicatif-0.3.13 \
 		tracing-log-0.2.0 \
-		tracing-subscriber-0.3.19 \
+		tracing-subscriber-0.3.20 \
 		tryfn-0.2.3 \
 		typed-arena-2.0.2 \
 		typenum-1.18.0 \
@@ -407,7 +403,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unit-prefix-0.5.1 \
 		unscanny-0.1.0 \
 		unty-0.0.4 \
-		url-2.5.4 \
+		url-2.5.7 \
 		urlencoding-2.1.3 \
 		utf8-width-0.1.7 \
 		utf8_iter-1.0.4 \
@@ -438,16 +434,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		web-time-1.1.0 \
 		which-8.0.0 \
 		wild-2.2.1 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.61.2 \
 		windows-implement-0.60.0 \
 		windows-interface-0.59.1 \
 		windows-link-0.1.3 \
 		windows-result-0.3.4 \
 		windows-strings-0.4.2 \
+		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
 		windows-targets-0.52.6 \
