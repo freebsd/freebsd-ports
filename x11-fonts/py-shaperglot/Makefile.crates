@@ -5,57 +5,57 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		anstyle-parse-0.2.6 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.7 \
-		anyhow-1.0.97 \
+		anyhow-1.0.95 \
+		arrayvec-0.7.6 \
 		autocfg-1.4.0 \
-		bitflags-2.9.0 \
+		bitflags-2.8.0 \
 		bumpalo-3.17.0 \
-		bytemuck-1.22.0 \
-		bytemuck_derive-1.9.3 \
-		bytes-1.10.1 \
+		bytemuck-1.21.0 \
+		bytemuck_derive-1.8.1 \
+		bytes-1.10.0 \
 		cfg-if-1.0.0 \
-		clap-4.5.34 \
-		clap_builder-4.5.34 \
-		clap_derive-4.5.32 \
+		clap-4.5.43 \
+		clap_builder-4.5.43 \
+		clap_derive-4.5.41 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
 		colored-3.0.0 \
 		console_error_panic_hook-0.1.7 \
 		core_maths-0.1.1 \
-		either-1.15.0 \
-		equivalent-1.0.2 \
+		either-1.13.0 \
+		equivalent-1.0.1 \
 		errno-0.3.10 \
 		fastrand-2.3.0 \
 		fixedbitset-0.5.7 \
-		font-types-0.8.4 \
-		getrandom-0.3.2 \
+		font-types-0.9.0 \
+		fontations-0.3.0 \
+		getrandom-0.3.1 \
 		glob-0.3.2 \
-		google-fonts-languages-0.7.3 \
-		hashbrown-0.12.3 \
+		google-fonts-languages-0.7.6 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		home-0.5.11 \
-		indexmap-1.9.3 \
-		indexmap-2.8.0 \
-		indoc-2.0.6 \
+		indexmap-2.10.0 \
+		indoc-2.0.5 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
-		itoa-1.0.15 \
+		itoa-1.0.14 \
 		js-sys-0.3.77 \
-		libc-0.2.171 \
+		kurbo-0.11.2 \
+		libc-0.2.169 \
 		libm-0.2.11 \
 		linux-raw-sys-0.4.15 \
-		linux-raw-sys-0.9.3 \
 		log-0.4.27 \
 		memchr-2.7.4 \
 		memoffset-0.9.1 \
 		multimap-0.10.0 \
-		once_cell-1.21.3 \
+		once_cell-1.20.3 \
 		petgraph-0.7.1 \
-		portable-atomic-1.11.0 \
-		prettyplease-0.2.31 \
-		proc-macro2-1.0.94 \
+		portable-atomic-1.10.0 \
+		prettyplease-0.2.29 \
+		proc-macro2-1.0.93 \
 		prost-0.13.5 \
 		prost-build-0.13.5 \
 		prost-derive-0.13.5 \
@@ -63,53 +63,51 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		protobuf-3.7.2 \
 		protobuf-parse-3.7.2 \
 		protobuf-support-3.7.2 \
-		pyo3-0.23.5 \
-		pyo3-build-config-0.23.5 \
-		pyo3-ffi-0.23.5 \
-		pyo3-macros-0.23.5 \
-		pyo3-macros-backend-0.23.5 \
-		pythonize-0.23.0 \
-		quote-1.0.40 \
-		r-efi-5.2.0 \
-		read-fonts-0.25.3 \
-		read-fonts-0.26.0 \
+		pyo3-0.25.1 \
+		pyo3-build-config-0.25.1 \
+		pyo3-ffi-0.25.1 \
+		pyo3-macros-0.25.1 \
+		pyo3-macros-backend-0.25.1 \
+		pythonize-0.25.0 \
+		quote-1.0.38 \
+		read-fonts-0.31.2 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
 		rustix-0.38.44 \
-		rustix-1.0.3 \
-		rustversion-1.0.20 \
+		rustversion-1.0.19 \
 		rustybuzz-0.20.1 \
-		ryu-1.0.20 \
+		ryu-1.0.19 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
-		serde_json-1.0.140 \
-		serde_spanned-0.6.8 \
-		skrifa-0.26.6 \
-		smallvec-1.14.0 \
+		serde_json-1.0.142 \
+		serde_spanned-1.0.0 \
+		skrifa-0.33.2 \
+		smallvec-1.15.0 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
-		syn-2.0.100 \
-		target-lexicon-0.12.16 \
-		tempfile-3.19.1 \
+		syn-2.0.98 \
+		target-lexicon-0.13.2 \
+		tempfile-3.16.0 \
 		thiserror-1.0.69 \
 		thiserror-impl-1.0.69 \
-		tinyvec-1.9.0 \
+		tinyvec-1.8.1 \
 		tinyvec_macros-0.1.1 \
-		toml-0.8.20 \
-		toml_datetime-0.6.8 \
-		toml_edit-0.22.24 \
+		toml-0.9.5 \
+		toml_datetime-0.7.0 \
+		toml_parser-1.0.2 \
+		toml_writer-1.0.2 \
 		ttf-parser-0.25.1 \
 		unicode-bidi-mirroring-0.4.0 \
 		unicode-ccc-0.4.0 \
-		unicode-ident-1.0.18 \
+		unicode-ident-1.0.16 \
 		unicode-joining-type-1.0.0 \
 		unicode-normalization-0.1.24 \
 		unicode-properties-0.1.3 \
 		unicode-script-0.5.7 \
-		unindent-0.2.4 \
+		unindent-0.2.3 \
 		utf8parse-0.2.2 \
-		wasi-0.14.2+wasi-0.2.4 \
+		wasi-0.13.3+wasi-0.2.2 \
 		wasm-bindgen-0.2.100 \
 		wasm-bindgen-backend-0.2.100 \
 		wasm-bindgen-macro-0.2.100 \
@@ -126,5 +124,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.7.4 \
-		wit-bindgen-rt-0.39.0
+		winnow-0.7.10 \
+		wit-bindgen-rt-0.33.0 \
+		write-fonts-0.39.1

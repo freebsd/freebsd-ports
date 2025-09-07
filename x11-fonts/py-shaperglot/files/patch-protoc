@@ -1,16 +1,5 @@
---- cargo-crates/google-fonts-languages-0.7.3/build.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/google-fonts-languages-0.7.3/build.rs
-@@ -21,7 +21,7 @@ fn main() {
-     // Now we use the prost crate to compile them, so that we can
-     // generate Rust structs.
-     let mut config = prost_build::Config::new();
--    config.protoc_executable(protoc_bin_vendored::protoc_bin_path().unwrap());
-+    config.protoc_executable("%%LOCALBASE%%/bin/protoc");
-     // config.boxed(".google.languages_public.LanguageProto.sample_text");
-     // config.boxed(".google.languages_public.LanguageProto.exemplar_chars");
- 
---- cargo-crates/google-fonts-languages-0.7.3/Cargo.toml.orig	1970-01-01 00:00:01 UTC
-+++ cargo-crates/google-fonts-languages-0.7.3/Cargo.toml
+--- cargo-crates/google-fonts-languages-0.7.6/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/google-fonts-languages-0.7.6/Cargo.toml
 @@ -65,9 +65,6 @@ version = "3.7.1"
  [build-dependencies.protobuf-support]
  version = "3.7.1"
@@ -20,4 +9,15 @@
 -
  [build-dependencies.quote]
  version = "1.0"
+ 
+--- cargo-crates/google-fonts-languages-0.7.6/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/google-fonts-languages-0.7.6/build.rs
+@@ -21,7 +21,7 @@ fn main() {
+     // Now we use the prost crate to compile them, so that we can
+     // generate Rust structs.
+     let mut config = prost_build::Config::new();
+-    config.protoc_executable(protoc_bin_vendored::protoc_bin_path().unwrap());
++    config.protoc_executable("%%LOCALBASE%%/bin/protoc");
+     // config.boxed(".google.languages_public.LanguageProto.sample_text");
+     // config.boxed(".google.languages_public.LanguageProto.exemplar_chars");
  
