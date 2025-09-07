@@ -37,6 +37,8 @@ SUB_FILES=	pkg-message
 
 CPE_VENDOR=	xiph
 
+PORTSCOUT=	skipv:2.4.99.1,2.4.99.2,2.4.99.3,2.4.999.1
+
 OPTIONS_DEFINE=	DOCS
 
 post-install:
