@@ -30,7 +30,7 @@ include/geos/algorithm/PolygonNodeTopology.h
 include/geos/algorithm/RayCrossingCounter.h
 include/geos/algorithm/Rectangle.h
 include/geos/algorithm/RobustDeterminant.h
-include/geos/algorithm/SimplePointInRing.h
+include/geos/algorithm/construct/ExactMaxInscribedCircle.h
 include/geos/algorithm/construct/IndexedDistanceToPoint.h
 include/geos/algorithm/construct/IndexedPointInPolygonsLocator.h
 include/geos/algorithm/construct/LargestEmptyCircle.h
@@ -48,8 +48,10 @@ include/geos/algorithm/locate/IndexedPointInAreaLocator.h
 include/geos/algorithm/locate/PointOnGeometryLocator.h
 include/geos/algorithm/locate/SimplePointInAreaLocator.h
 include/geos/constants.h
+include/geos/coverage/CleanCoverage.h
 include/geos/coverage/Corner.h
 include/geos/coverage/CoverageBoundarySegmentFinder.h
+include/geos/coverage/CoverageCleaner.h
 include/geos/coverage/CoverageEdge.h
 include/geos/coverage/CoverageGapFinder.h
 include/geos/coverage/CoveragePolygon.h
@@ -62,6 +64,9 @@ include/geos/coverage/CoverageValidator.h
 include/geos/coverage/InvalidSegmentDetector.h
 include/geos/coverage/TPVWSimplifier.h
 include/geos/coverage/VertexRingCounter.h
+include/geos/dissolve/DissolveEdgeGraph.h
+include/geos/dissolve/DissolveHalfEdge.h
+include/geos/dissolve/LineDissolver.h
 include/geos/edgegraph/EdgeGraph.h
 include/geos/edgegraph/EdgeGraphBuilder.h
 include/geos/edgegraph/HalfEdge.h
@@ -327,6 +332,16 @@ include/geos/operation/distance/FacetSequence.h
 include/geos/operation/distance/FacetSequenceTreeBuilder.h
 include/geos/operation/distance/GeometryLocation.h
 include/geos/operation/distance/IndexedFacetDistance.h
+include/geos/operation/grid/Cell.h
+include/geos/operation/grid/Crossing.h
+include/geos/operation/grid/FloodFill.h
+include/geos/operation/grid/Grid.h
+include/geos/operation/grid/GridIntersection.h
+include/geos/operation/grid/Matrix.h
+include/geos/operation/grid/PerimeterDistance.h
+include/geos/operation/grid/Side.h
+include/geos/operation/grid/Traversal.h
+include/geos/operation/grid/TraversalAreas.h
 include/geos/operation/intersection/Rectangle.h
 include/geos/operation/intersection/RectangleIntersection.h
 include/geos/operation/intersection/RectangleIntersectionBuilder.h
@@ -451,7 +466,6 @@ include/geos/precision/EnhancedPrecisionOp.h
 include/geos/precision/GeometryPrecisionReducer.h
 include/geos/precision/MinimumClearance.h
 include/geos/precision/PointwisePrecisionReducerTransformer.h
-include/geos/precision/PrecisionReducerCoordinateOperation.h
 include/geos/precision/PrecisionReducerTransformer.h
 include/geos/precision/SimpleGeometryPrecisionReducer.h
 include/geos/profiler.h
@@ -494,7 +508,6 @@ include/geos/triangulate/tri/Tri.h
 include/geos/triangulate/tri/TriEdge.h
 include/geos/triangulate/tri/TriList.h
 include/geos/triangulate/tri/TriangulationBuilder.h
-include/geos/unload.h
 include/geos/util.h
 include/geos/util/Assert.h
 include/geos/util/AssertionFailedException.h
@@ -522,5 +535,5 @@ lib/libgeos.so
 lib/libgeos.so.%%PORTVERSION%%
 lib/libgeos_c.so
 lib/libgeos_c.so.1
-lib/libgeos_c.so.1.19.2
+lib/libgeos_c.so.1.20.4
 libdata/pkgconfig/geos.pc
