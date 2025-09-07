@@ -1,11 +1,12 @@
---- pyproject.toml.orig	2025-08-01 16:02:21 UTC
+--- pyproject.toml.orig	2025-08-27 21:09:31 UTC
 +++ pyproject.toml
-@@ -4,7 +4,7 @@ authors = [{ name = "Toby Mao", email = "toby.mao@gmai
+@@ -4,8 +4,7 @@ authors = [{ name = "Toby Mao", email = "toby.mao@gmai
  description = "An easily customizable SQL parser and transpiler"
  readme = "README.md"
  authors = [{ name = "Toby Mao", email = "toby.mao@gmail.com" }]
+-license = "MIT"
 -license-files = ["LICENSE"]
-+license = { file = "LICENSE" }
++license = { text = "MIT" }
  requires-python = ">= 3.9"
  classifiers = [
      "Development Status :: 5 - Production/Stable",
