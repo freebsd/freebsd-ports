@@ -1,6 +1,6 @@
 PORTNAME=	vscode
 DISTVERSION=	1.103.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
@@ -288,6 +288,8 @@ build-remote-extension-host: configure pre-build
 
 ### targets for port maintainer(s)
 make-node-modules-archive: extract
+# add node module for signature verification of extensions from Open VSX Registry
+	@${PATCH} -s -p0 -d ${WRKSRC} < ${FILESDIR}/patch-package.json
 	@${ECHO_MSG} "===>  Fetching and installing node modules in ${WRKSRC}"
 	@cd ${WRKSRC} && \
 	${SETENV} ${MAKE_ENV} npm install --ignore-scripts --no-progress --no-audit --no-fund && \
