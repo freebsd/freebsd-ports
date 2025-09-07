@@ -1,6 +1,6 @@
---- chrome/browser/signin/signin_util.cc.orig	2025-08-07 06:57:29 UTC
+--- chrome/browser/signin/signin_util.cc.orig	2025-09-06 10:01:20 UTC
 +++ chrome/browser/signin/signin_util.cc
-@@ -84,7 +84,7 @@ CookiesMover::CookiesMover(base::WeakPtr<Profile> sour
+@@ -90,7 +90,7 @@ CookiesMover::CookiesMover(base::WeakPtr<Profile> sour
  CookiesMover::~CookiesMover() = default;
  
  void CookiesMover::StartMovingCookies() {
@@ -9,8 +9,8 @@
    bool allow_cookies_to_be_moved = base::FeatureList::IsEnabled(
        profile_management::features::kThirdPartyProfileManagement);
  #else
-@@ -344,7 +344,7 @@ SignedInState GetSignedInState(
-   return SignedInState::kSignedOut;
+@@ -369,7 +369,7 @@ std::string SignedInStateToString(SignedInState state)
+   }
  }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)

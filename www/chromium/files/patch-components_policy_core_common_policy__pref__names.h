@@ -1,6 +1,6 @@
---- components/policy/core/common/policy_pref_names.h.orig	2025-08-07 06:57:29 UTC
+--- components/policy/core/common/policy_pref_names.h.orig	2025-09-06 10:01:20 UTC
 +++ components/policy/core/common/policy_pref_names.h
-@@ -90,7 +90,7 @@ extern const char kFloatingWorkspaceEnabled[];
+@@ -94,7 +94,7 @@ extern const char kFloatingWorkspaceEnabled[];
  #endif
  extern const char kBuiltInAIAPIsEnabled[];
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \

@@ -1,11 +1,21 @@
---- base/threading/platform_thread_internal_posix.cc.orig	2025-08-07 06:57:29 UTC
+--- base/threading/platform_thread_internal_posix.cc.orig	2025-09-06 10:01:20 UTC
 +++ base/threading/platform_thread_internal_posix.cc
-@@ -31,7 +31,7 @@ ThreadPriorityForTest NiceValueToThreadPriorityForTest
+@@ -31,6 +31,10 @@ ThreadPriorityForTest NiceValueToThreadPriorityForTest
  }
  
  int GetCurrentThreadNiceValue() {
--#if BUILDFLAG(IS_NACL)
-+#if BUILDFLAG(IS_NACL) || BUILDFLAG(IS_BSD)
-   NOTIMPLEMENTED();
-   return 0;
- #else
++#if BUILDFLAG(IS_BSD)
++  NOTIMPLEMENTED();
++  return 0;
++#else
+   // Need to clear errno before calling getpriority():
+   // http://man7.org/linux/man-pages/man2/getpriority.2.html
+   errno = 0;
+@@ -42,6 +46,7 @@ int GetCurrentThreadNiceValue() {
+   }
+ 
+   return nice_value;
++#endif
+ }
+ 
+ }  // namespace base::internal

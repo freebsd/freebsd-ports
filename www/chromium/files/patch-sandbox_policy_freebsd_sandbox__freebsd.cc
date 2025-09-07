@@ -1,6 +1,6 @@
---- sandbox/policy/freebsd/sandbox_freebsd.cc.orig	2024-11-14 07:57:23 UTC
+--- sandbox/policy/freebsd/sandbox_freebsd.cc.orig	2025-09-06 10:01:20 UTC
 +++ sandbox/policy/freebsd/sandbox_freebsd.cc
-@@ -0,0 +1,211 @@
+@@ -0,0 +1,210 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -37,7 +37,6 @@
 +#include "base/time/time.h"
 +#include "build/build_config.h"
 +#include "crypto/crypto_buildflags.h"
-+#include "ppapi/buildflags/buildflags.h"
 +#include "sandbox/constants.h"
 +#include "sandbox/linux/services/credentials.h"
 +#include "sandbox/linux/services/namespace_sandbox.h"

@@ -1,14 +1,14 @@
---- sandbox/linux/services/init_process_reaper.cc.orig	2025-03-05 08:14:56 UTC
+--- sandbox/linux/services/init_process_reaper.cc.orig	2025-09-06 10:01:20 UTC
 +++ sandbox/linux/services/init_process_reaper.cc
-@@ -7,6 +7,7 @@
- #pragma allow_unsafe_libc_calls
- #endif
+@@ -2,6 +2,7 @@
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
  
 +#if 0
  #include "sandbox/linux/services/init_process_reaper.h"
  
  #include <signal.h>
-@@ -105,3 +106,4 @@ bool CreateInitProcessReaper(base::OnceClosure post_fo
+@@ -101,3 +102,4 @@ bool CreateInitProcessReaper(base::OnceClosure post_fo
  }
  
  }  // namespace sandbox.

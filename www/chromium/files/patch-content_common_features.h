@@ -1,4 +1,4 @@
---- content/common/features.h.orig	2025-07-02 06:08:04 UTC
+--- content/common/features.h.orig	2025-09-06 10:01:20 UTC
 +++ content/common/features.h
 @@ -60,7 +60,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kCommittedOriginEn
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kCommittedOriginTracking);
@@ -8,4 +8,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableDevToolsJsErrorReporting);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kEmbeddingRequiresOptIn);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnforceSameDocumentOriginInvariants);

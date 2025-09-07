@@ -1,6 +1,6 @@
---- chrome/browser/browser_features.cc.orig	2025-07-02 06:08:04 UTC
+--- chrome/browser/browser_features.cc.orig	2025-09-06 10:01:20 UTC
 +++ chrome/browser/browser_features.cc
-@@ -75,7 +75,7 @@ BASE_FEATURE(kClearUserDataUponProfileDestruction,
+@@ -80,7 +80,7 @@ BASE_FEATURE(kClearUserDataUponProfileDestruction,
               "ClearUserDataUponProfileDestruction",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -9,7 +9,7 @@
  // Enables usage of os_crypt_async::SecretPortalKeyProvider.  Once
  // `kSecretPortalKeyProviderUseForEncryption` is enabled, this flag cannot be
  // disabled without losing data.
-@@ -94,7 +94,7 @@ BASE_FEATURE(kUseFreedesktopSecretKeyProvider,
+@@ -99,7 +99,7 @@ BASE_FEATURE(kUseFreedesktopSecretKeyProvider,
  // the browser exits.
  BASE_FEATURE(kDestroyProfileOnBrowserClose,
               "DestroyProfileOnBrowserClose",
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -232,7 +232,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
+@@ -241,7 +241,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
               "SandboxExternalProtocolBlockedWarning",
               base::FEATURE_ENABLED_BY_DEFAULT);
  

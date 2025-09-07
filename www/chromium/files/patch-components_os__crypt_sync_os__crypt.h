@@ -1,6 +1,6 @@
---- components/os_crypt/sync/os_crypt.h.orig	2025-08-07 06:57:29 UTC
+--- components/os_crypt/sync/os_crypt.h.orig	2025-09-06 10:01:20 UTC
 +++ components/os_crypt/sync/os_crypt.h
-@@ -23,7 +23,7 @@ class AppleKeychain;
+@@ -23,7 +23,7 @@ class Keychain;
  }
  #endif
  

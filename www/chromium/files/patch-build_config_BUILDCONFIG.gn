@@ -1,4 +1,4 @@
---- build/config/BUILDCONFIG.gn.orig	2025-08-07 06:57:29 UTC
+--- build/config/BUILDCONFIG.gn.orig	2025-09-06 10:01:20 UTC
 +++ build/config/BUILDCONFIG.gn
 @@ -136,7 +136,8 @@ declare_args() {
    is_official_build = false
@@ -41,5 +41,5 @@
 +is_freebsd = current_os == "freebsd"
 +is_bsd = current_os == "openbsd" || current_os == "freebsd"
  is_mac = current_os == "mac"
- is_nacl = current_os == "nacl"
- is_wasm = current_os == "emscripten"
+ 
+ # TODO(crbug.com/40511454): Remove is_nacl from all build files, then

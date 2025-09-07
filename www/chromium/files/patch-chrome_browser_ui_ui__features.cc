@@ -1,4 +1,4 @@
---- chrome/browser/ui/ui_features.cc.orig	2025-08-07 06:57:29 UTC
+--- chrome/browser/ui/ui_features.cc.orig	2025-09-06 10:01:20 UTC
 +++ chrome/browser/ui/ui_features.cc
 @@ -38,7 +38,7 @@ BASE_FEATURE(kCloseOmniboxPopupOnInactiveAreaClick,
               "CloseOmniboxPopupOnInactiveAreaClick",
@@ -9,7 +9,7 @@
  // Enables the feature to remove the last confirmation dialog when relaunching
  // to update Chrome.
  BASE_FEATURE(kFewerUpdateConfirmations,
-@@ -320,7 +320,7 @@ BASE_FEATURE(kViewsJSAppModalDialog,
+@@ -398,7 +398,7 @@ BASE_FEATURE(kViewsJSAppModalDialog,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

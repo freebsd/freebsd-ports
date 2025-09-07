@@ -1,6 +1,6 @@
---- chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc.orig	2025-08-07 06:57:29 UTC
+--- chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc.orig	2025-09-06 10:01:20 UTC
 +++ chrome/browser/ui/web_applications/web_app_ui_manager_impl.cc
-@@ -566,7 +566,7 @@ void WebAppUiManagerImpl::MaybeShowIPHPromoForAppsLaun
+@@ -564,7 +564,7 @@ void WebAppUiManagerImpl::MaybeShowIPHPromoForAppsLaun
      Browser* browser,
      Profile* profile,
      const std::string& app_id) {
@@ -9,7 +9,7 @@
    WebAppProvider* provider = WebAppProvider::GetForWebApps(profile);
    CHECK(provider);
  
-@@ -795,7 +795,7 @@ void WebAppUiManagerImpl::ClearWebAppSiteDataIfNeeded(
+@@ -793,7 +793,7 @@ void WebAppUiManagerImpl::ClearWebAppSiteDataIfNeeded(
    }
  }
  

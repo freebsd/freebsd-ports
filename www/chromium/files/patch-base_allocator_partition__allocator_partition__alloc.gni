@@ -1,24 +1,15 @@
---- base/allocator/partition_allocator/partition_alloc.gni.orig	2025-08-07 06:57:29 UTC
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2025-09-06 10:01:20 UTC
 +++ base/allocator/partition_allocator/partition_alloc.gni
 @@ -87,7 +87,7 @@ if (current_cpu == "x64" || current_cpu == "arm64" || 
  # TODO(crbug.com/329199197): Clean this up when experiments are complete.
  use_large_empty_slot_span_ring = true
  
 -has_memory_tagging = current_cpu == "arm64" && is_clang && !is_asan &&
-+has_memory_tagging = current_cpu == "arm64" && is_clang && !is_asan && !is_bsd &&
++has_memory_tagging = current_cpu == "arm64" && !is_bsd && is_clang && !is_asan &&
                       !is_hwasan && (is_linux || is_android)
  
  declare_args() {
-@@ -340,7 +340,7 @@ declare_args() {
- declare_args() {
-   # Shadow metadata is still under development and only supports Linux
-   # for now.
--  enable_shadow_metadata = is_linux && has_64_bit_pointers
-+  enable_shadow_metadata = !is_bsd && is_linux && has_64_bit_pointers
- }
- 
- declare_args() {
-@@ -483,7 +483,7 @@ assert(!use_asan_backup_ref_ptr || use_raw_ptr_hookabl
+@@ -493,7 +493,7 @@ assert(!use_asan_backup_ref_ptr || use_raw_ptr_hookabl
  # dependencies that use partition_allocator are compiled in AOSP against a
  # version of glibc that does not include pkeys syscall numbers.
  is_pkeys_available =

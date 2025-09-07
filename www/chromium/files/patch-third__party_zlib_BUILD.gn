@@ -1,4 +1,4 @@
---- third_party/zlib/BUILD.gn.orig	2025-08-07 06:57:29 UTC
+--- third_party/zlib/BUILD.gn.orig	2025-09-06 10:01:20 UTC
 +++ third_party/zlib/BUILD.gn
 @@ -128,7 +128,7 @@ if (use_arm_neon_optimizations) {
      defines = [ "CRC32_ARMV8_CRC32" ]
@@ -24,8 +24,8 @@
      ]
    }
  
--  if (is_apple || is_android || is_nacl) {
-+  if (is_apple || is_android || is_nacl || is_bsd) {
+-  if (is_apple || is_android) {
++  if (is_apple || is_android || is_bsd) {
      # Mac, Android and the BSDs don't have fopen64, ftello64, or fseeko64. We
      # use fopen, ftell, and fseek instead on these systems.
      defines = [ "USE_FILE32API" ]

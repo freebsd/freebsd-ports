@@ -1,7 +1,7 @@
---- chrome/browser/ui/views/new_tab_footer/footer_controller.cc.orig	2025-08-07 06:57:29 UTC
+--- chrome/browser/ui/views/new_tab_footer/footer_controller.cc.orig	2025-09-06 10:01:20 UTC
 +++ chrome/browser/ui/views/new_tab_footer/footer_controller.cc
-@@ -37,7 +37,7 @@ NewTabFooterController::NewTabFooterController(Browser
-       base::BindRepeating(&NewTabFooterController::UpdateFooterVisibility,
+@@ -44,7 +44,7 @@ NewTabFooterController::NewTabFooterController(
+       base::BindRepeating(&NewTabFooterController::UpdateFooterVisibilities,
                            weak_factory_.GetWeakPtr(),
                            /*log_on_load_metric=*/false));
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

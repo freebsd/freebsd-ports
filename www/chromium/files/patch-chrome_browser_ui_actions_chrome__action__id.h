@@ -1,6 +1,6 @@
---- chrome/browser/ui/actions/chrome_action_id.h.orig	2025-08-07 06:57:29 UTC
+--- chrome/browser/ui/actions/chrome_action_id.h.orig	2025-09-06 10:01:20 UTC
 +++ chrome/browser/ui/actions/chrome_action_id.h
-@@ -504,7 +504,7 @@
+@@ -508,7 +508,7 @@
  #if BUILDFLAG(IS_CHROMEOS)
  #define CHROME_PLATFORM_SPECIFIC_ACTION_IDS \
    E(kToggleMultitaskMenu, IDC_TOGGLE_MULTITASK_MENU)
