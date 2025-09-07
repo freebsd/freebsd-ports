@@ -27,6 +27,8 @@ USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes
 
-# tests as of 1.7: 2 failed, 398 passed, 63 skipped, 1 xfailed in 11.41s, see https://github.com/astropy/pyvo/issues/701
+TEST_ARGS=	--remote-data
+
+# tests as of 1.7: 462 passed, 1 xfailed, 1 xpassed in 146.52s (0:02:26)
 
 .include <bsd.port.mk>
