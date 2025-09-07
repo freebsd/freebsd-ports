@@ -87,6 +87,7 @@
     SUBDIR += py-astropy
     SUBDIR += py-astropy-helpers
     SUBDIR += py-astropy-iers-data
+    SUBDIR += py-astroquery
     SUBDIR += py-ephem
     SUBDIR += py-extension-helpers
     SUBDIR += py-fitsio
