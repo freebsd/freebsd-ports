@@ -31,3 +31,11 @@
      let path = if let Some(subpath) = grammar.source.subpath.as_ref() {
          path.join(subpath)
      } else {
+@@ -171,6 +171,7 @@ fn build_tree_sitter(name: &str, path: &Path, output: 
+ fn build_tree_sitter(name: &str, path: &Path, output: &Path) -> Result<()> {
+     println!("-----------------------------------");
+     println!("now building tree sitter for {name}");
++    std::env::set_var("XDG_CACHE_HOME", "WRKDIR/.cache");
+     let output = Command::new("tree-sitter")
+         .current_dir(path)
+         .arg("build")

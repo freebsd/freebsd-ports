@@ -60,6 +60,10 @@ post-extract:
 
 	${CP} ${DISTDIR}/${LANG_HASH}/languages.toml ${WRKSRC}
 
+post-patch:
+	${REINPLACE_CMD} "s#WRKDIR#${WRKDIR}#" \
+		${WRKSRC}/src/main.rs
+
 post-build:
 	cd ${WRKSRC}; \
 		${CARGO_TARGET_DIR}/release/build-tree-sitter --output ./output --tmp ${WRKSRC}/grammars
