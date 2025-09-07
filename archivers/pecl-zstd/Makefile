@@ -1,5 +1,5 @@
 PORTNAME=	zstd
-PORTVERSION=	0.14.0
+PORTVERSION=	0.15.1
 CATEGORIES=	archivers
 
 MAINTAINER=	sunpoet@FreeBSD.org
