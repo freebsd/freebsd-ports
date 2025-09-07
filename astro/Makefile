@@ -101,6 +101,7 @@
     SUBDIR += py-pymeeus
     SUBDIR += py-pymetar
     SUBDIR += py-pysofa
+    SUBDIR += py-pytest-astropy-header
     SUBDIR += py-pywapi
     SUBDIR += py-ro
     SUBDIR += py-sgp4
