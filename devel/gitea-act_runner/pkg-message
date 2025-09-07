@@ -3,7 +3,7 @@
   message: <<EOM
 FreeBSD does not support Docker.
 When configuring the runner, use 'host' as the label. e.g.
-act-runner register --labels FreeBSD:host,FreeBSD-14.2:host
+act-runner register --labels FreeBSD:host,FreeBSD-14.3:host
 EOM
 }
 ]

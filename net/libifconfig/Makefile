@@ -41,7 +41,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${h} ${STAGEDIR}${PREFIX}/include
 .endfor
 
-_ALL_VERSIONS=	13.3 13.4 13.5 14.0 14.1 14.2 14.3
+_ALL_VERSIONS=	13.5 14.3
 .if make(makesum)
 DISTFILES=	libifconfig-${_LIBIFCONFIG_HASH}.tar.gz
 .for version in ${_ALL_VERSIONS}
