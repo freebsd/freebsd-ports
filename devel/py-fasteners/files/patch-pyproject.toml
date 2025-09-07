@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-08-11 10:07:08 UTC
++++ pyproject.toml
+@@ -5,7 +5,7 @@ keywords = ["lock", "thread", "process", "fasteners"]
+ readme = { file = "README.md", content-type = "text/markdown; charset=UTF-8" }
+ requires-python = ">=3.6"
+ keywords = ["lock", "thread", "process", "fasteners"]
+-license = "Apache-2.0"
++license = { text = "Apache-2.0" }
+ authors = [{ name = "Joshua Harlow" }]
+ maintainers = [{ name = "Paulius Šarka" }]
+ classifiers = [
