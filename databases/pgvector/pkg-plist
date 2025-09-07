@@ -1,3 +1,4 @@
+/you/have/to/check/what/makeplist/gives/you
 include/postgresql/server/extension/vector/halfvec.h
 include/postgresql/server/extension/vector/sparsevec.h
 include/postgresql/server/extension/vector/vector.h
@@ -36,5 +37,6 @@ share/postgresql/extension/vector--0.7.1--0.7.2.sql
 share/postgresql/extension/vector--0.7.2--0.7.3.sql
 share/postgresql/extension/vector--0.7.3--0.7.4.sql
 share/postgresql/extension/vector--0.7.4--0.8.0.sql
-share/postgresql/extension/vector--0.8.0.sql
+share/postgresql/extension/vector--0.8.0--0.8.1.sql
+share/postgresql/extension/vector--0.8.1.sql
 share/postgresql/extension/vector.control
