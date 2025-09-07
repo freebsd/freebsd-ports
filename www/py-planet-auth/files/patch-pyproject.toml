@@ -1,0 +1,23 @@
+--- pyproject.toml.orig	2025-08-12 03:59:50 UTC
++++ pyproject.toml
+@@ -12,10 +12,7 @@ authors = [{ name = "Carl Adams", email = "carl.adams@
+ # docs/index.md - front page for ReadTheDocs doc page.  Complete developer user documentation.
+ readme = "docs/readme.md"
+ authors = [{ name = "Carl Adams", email = "carl.adams@planet.com" }]
+-license = "Apache-2.0"
+-license-files = [
+-    "LICENSE",
+-]
++license = { text = "Apache-2.0" }
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+ ]
+@@ -85,7 +82,7 @@ plauth = "planet_auth_utils.commands.cli.main:cmd_plau
+ plauth = "planet_auth_utils.commands.cli.main:cmd_plauth"
+ 
+ [build-system]
+-requires = ["setuptools>=64", "setuptools_scm>=8", "wheel"]
++requires = ["setuptools>=61", "setuptools_scm>=8", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools.dynamic]
