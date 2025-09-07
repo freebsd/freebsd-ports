@@ -1,0 +1,13 @@
+Reference:	https://github.com/copier-org/copier/commit/16d7ede9dfc63addfca3e5cfdd4297e20b3f012d
+		https://github.com/tmbo/questionary/commit/2b3bf564c744fa31718595ab491b491b8cb31237
+
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -26,7 +26,6 @@ dependencies = [
+   "packaging>=23.0",
+   "pathspec>=0.9.0",
+   "plumbum>=1.6.9",
+-  "prompt-toolkit<3.0.52",
+   "pydantic>=2.4.2",
+   "pygments>=2.7.1",
+   "pyyaml>=5.3.1",
