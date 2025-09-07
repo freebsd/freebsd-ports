@@ -1,5 +1,5 @@
 PORTNAME=	clutter
-PORTVERSION=	4.3.0
+PORTVERSION=	4.3.3
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,8 @@ BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter
 RUN_DEPENDS=	rubygem-cairo-gobject>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-cairo-gobject \
 		rubygem-gobject-introspection>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-gobject-introspection \
-		rubygem-pango>=${PORTVERSION}<${PORTVERSION}_99:x11-toolkits/rubygem-pango
+		rubygem-pango>=${PORTVERSION}<${PORTVERSION}_99:x11-toolkits/rubygem-pango \
+		rubygem-rake>=0:devel/rubygem-rake
 
 USES=		gem
 
