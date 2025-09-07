@@ -1,13 +1,11 @@
 %%SITE_PERL%%/PAR.pm
 %%SITE_PERL%%/PAR/Environment.pod
-%%SITE_PERL%%/PAR/FAQ.pod
 %%SITE_PERL%%/PAR/Heavy.pm
 %%SITE_PERL%%/PAR/SetupProgname.pm
 %%SITE_PERL%%/PAR/SetupTemp.pm
 %%SITE_PERL%%/PAR/Tutorial.pod
 %%PERL5_MAN3%%/PAR.3.gz
 %%PERL5_MAN3%%/PAR::Environment.3.gz
-%%PERL5_MAN3%%/PAR::FAQ.3.gz
 %%PERL5_MAN3%%/PAR::Heavy.3.gz
 %%PERL5_MAN3%%/PAR::SetupProgname.3.gz
 %%PERL5_MAN3%%/PAR::SetupTemp.3.gz
