@@ -1,11 +1,13 @@
---- pleaserun.gemspec.orig	2024-02-20 09:39:50 UTC
+--- pleaserun.gemspec.orig	2025-09-03 13:51:04 UTC
 +++ pleaserun.gemspec
-@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+@@ -23,8 +23,8 @@ Gem::Specification.new do |s|
    s.add_runtime_dependency(%q<cabin>.freeze, ["> 0".freeze])
    s.add_runtime_dependency(%q<clamp>.freeze, [">= 0".freeze])
    s.add_runtime_dependency(%q<stud>.freeze, [">= 0".freeze])
 -  s.add_runtime_dependency(%q<mustache>.freeze, ["= 0.99.8".freeze])
 +  s.add_runtime_dependency(%q<mustache>.freeze, [">= 0.99.8".freeze])
    s.add_runtime_dependency(%q<insist>.freeze, [">= 0".freeze])
-   s.add_runtime_dependency(%q<dotenv>.freeze, [">= 0".freeze])
+-  s.add_runtime_dependency(%q<dotenv>.freeze, ["~> 2".freeze])
++  s.add_runtime_dependency(%q<dotenv>.freeze, [">= 2".freeze])
  end
+ 
