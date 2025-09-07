@@ -8,6 +8,7 @@
 %%SITE_PERL%%/Minion/Guide.pod
 %%SITE_PERL%%/Minion/Iterator.pm
 %%SITE_PERL%%/Minion/Job.pm
+%%SITE_PERL%%/Minion/Util.pm
 %%SITE_PERL%%/Minion/Worker.pm
 %%SITE_PERL%%/Mojolicious/Plugin/Minion.pm
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/Admin.pm
@@ -56,6 +57,7 @@
 %%PERL5_MAN3%%/Minion::Guide.3.gz
 %%PERL5_MAN3%%/Minion::Iterator.3.gz
 %%PERL5_MAN3%%/Minion::Job.3.gz
+%%PERL5_MAN3%%/Minion::Util.3.gz
 %%PERL5_MAN3%%/Minion::Worker.3.gz
 %%PERL5_MAN3%%/Mojolicious::Plugin::Minion.3.gz
 %%PERL5_MAN3%%/Mojolicious::Plugin::Minion::Admin.3.gz
