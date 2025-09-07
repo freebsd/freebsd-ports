@@ -1,5 +1,5 @@
 PORTNAME=	Specio
-PORTVERSION=	0.51
+PORTVERSION=	0.52
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DROLSKY
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
-		p5-Clone-Choose>=0:devel/p5-Clone-Choose \
 		p5-Clone-PP>=0:devel/p5-Clone-PP \
 		p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
 		p5-Eval-Closure>=0:devel/p5-Eval-Closure \
