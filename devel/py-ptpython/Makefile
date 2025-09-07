@@ -1,5 +1,5 @@
 PORTNAME=	ptpython
-PORTVERSION=	3.0.30
+PORTVERSION=	3.0.31
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ USE_PYTHON=	autoplist concurrent pep517
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	ALL PTIPYTHON
-ALL_DESC=	All optional dependency
+ALL_DESC=	All optional dependencies
 PTIPYTHON_DESC=	Interactive shell with IPython support
 
 PTIPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=0:devel/ipython@${PY_FLAVOR}
