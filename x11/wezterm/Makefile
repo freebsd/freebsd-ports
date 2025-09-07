@@ -1,7 +1,6 @@
 PORTNAME=	wezterm
-DISTVERSION=	20250213-133349
-DISTVERSIONSUFFIX=	-ee0c04e7
-PORTREVISION=	5
+DISTVERSION=	20250730-110715
+DISTVERSIONSUFFIX=	-6a493f88
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	vladislav.movchan@gmail.com
@@ -21,17 +20,16 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd \
 
 USES=		cargo ssl xorg
 USE_GITHUB=	yes
-USE_GITLAB=	nodefault
 USE_XORG=	x11 xcb
 GH_ACCOUNT=	wez vladmovchan:build_docs_offline
 GH_PROJECT=	wezterm freebsd-wezterm-port-extra-files:build_docs_offline
-GH_TAGNAME=	ee0c04e735fb94cb5119681f704fb7fa6731e713 253f1e8:build_docs_offline
+GH_TAGNAME=	6a493f88fab06a792308e0c704790390fd3c6232 0cf07e1:build_docs_offline
 
 GH_TUPLE=	freetype:freetype:42608f77f:freetype2/deps/freetype/freetype2 \
 		nyorain:dlg:72dfcc858:dlg/deps/freetype/freetype2/subprojects/dlg \
 		glennrp:libpng:f5e92d769:libpng/deps/freetype/libpng \
 		madler:zlib:51b7f2abd:zlib/deps/freetype/zlib \
-		harfbuzz:harfbuzz:7b27c8edd:harfbuzz/deps/harfbuzz/harfbuzz \
+		harfbuzz:harfbuzz:33a3f8de6:harfbuzz/deps/harfbuzz/harfbuzz \
 		fcitx:xcb-imdkit:30e2f16:xcb_imdkit/../${WRKSRC_crate_xcb-imdkit:T}/deps/xcb-imdkit
 
 PLIST_FILES=	bin/strip-ansi-escapes \
@@ -70,8 +68,8 @@ PORTDOCS=		html
 .include <bsd.port.pre.mk>
 
 .if ${ARCH:Marmv?}
-LTO_UNSAFE=     yes
-CARGO_ENV+=     CARGO_PROFILE_RELEASE_LTO=false
+LTO_UNSAFE=	yes
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 .endif
 
 post-patch:
