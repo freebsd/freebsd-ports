@@ -13,11 +13,8 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-logger>=0:devel/rubygem-logger
 
 USES=		gem magick:${FLAVOR}
+USES=		gem magick
 
 NO_ARCH=	yes
-
-FLAVORS=	x11 nox11
-FLAVOR?=	${FLAVORS:[1]}
-nox11_PKGNAMESUFFIX=	-nox11
 
 .include <bsd.port.mk>
