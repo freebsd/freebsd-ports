@@ -1,5 +1,5 @@
 PORTNAME=	angie-console-light
-DISTVERSION=	1.8.0
+DISTVERSION=	1.8.1
 CATEGORIES=	www
 MASTER_SITES=	https://download.angie.software/files/angie-console-light/
 
