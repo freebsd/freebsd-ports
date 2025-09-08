@@ -12,6 +12,8 @@ WWW=		https://arrow.apache.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
+BROKEN_i386=	compilation fails: ran out of registers during register allocation
+
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
