@@ -4770,3 +4770,4 @@ print/rubygem-afm0|print/rubygem-afm|2025-09-07|Remove obsoleted port. Use print
 www/rubygem-jwt29|www/rubygem-jwt|2025-09-07|Remove obsoleted port. Use www/rubygem-jwt instead
 www/mod_wsgi4|www/mod_wsgi|2025-09-08|Was tied to only major version 4, now upgraded to 5
 net-mgmt/netdata-go|net-mgmt/netdata|2025-09-08|The netdata-go plugin is included in the main netdata port
+finance/myphpmoney||2025-09-08|Has expired: Unmaintained upstream and most probably does not work with modern PHP versions
