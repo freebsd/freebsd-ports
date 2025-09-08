@@ -36,6 +36,7 @@
     SUBDIR += angie-console-light
     SUBDIR += angie-module-auth-jwt
     SUBDIR += angie-module-auth-spnego
+    SUBDIR += angie-module-auth-totp
     SUBDIR += angie-module-brotli
     SUBDIR += angie-module-cache-purge
     SUBDIR += angie-module-dav-ext

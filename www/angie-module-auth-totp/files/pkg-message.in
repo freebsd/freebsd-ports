@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+
+The auth-TOTP dynamic module for Angie has been installed.
+To enable this module, add the following to %%PREFIX%%/etc/angie/angie.conf
+and reload angie:
+
+    load_module modules/ngx_http_auth_totp_module.so;
+
+Please refer to the module documentation for further details:
+https://github.com/61131/nginx-http-auth-totp
+EOM
+}
+]
