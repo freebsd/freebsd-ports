@@ -1,6 +1,6 @@
 PORTNAME=	budgie-desktop
 DISTVERSION=	10.8.2
-PORTREVISION=	6
+PORTREVISION=	7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11 budgie
 MASTER_SITES=	BUDGIE
@@ -71,6 +71,8 @@ GLIB_SCHEMAS=	20_buddiesofbudgie.budgie-desktop.notifications.gschema.override \
 		org.buddiesofbudgie.budgie-desktop.raven.widget.UsageMonitor.gschema.xml \
 		org.buddiesofbudgie.budgie-desktop.screenshot.gschema.xml \
 		25_org.buddiesofbudgie-default-settings.gschema.override
+
+NO_SHLIB_REQUIRES_GLOB=	libmagpie-clutter-0.so.0 libmagpie-cogl-0.so.0
 
 .include <bsd.port.options.mk>
 
