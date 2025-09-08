@@ -10,15 +10,11 @@ WWW=		https://github.com/janko/image_processing
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-mini_magick4${PKGNAMESUFFIX}>=4.9.5<6:graphics/rubygem-mini_magick4@${FLAVOR} \
-		rubygem-ruby-vips${PKGNAMESUFFIX}>=2.0.17<3:graphics/rubygem-ruby-vips@${FLAVOR}
+RUN_DEPENDS=	rubygem-mini_magick4${PKGNAMESUFFIX}>=4.9.5<6:graphics/rubygem-mini_magick4 \
+		rubygem-ruby-vips${PKGNAMESUFFIX}>=2.0.17<3:graphics/rubygem-ruby-vips
 
 USES=		gem
 
 NO_ARCH=	yes
-
-FLAVORS=	x11 nox11
-FLAVOR?=	${FLAVORS:[1]}
-nox11_PKGNAMESUFFIX=	-nox11
 
 .include <bsd.port.mk>
