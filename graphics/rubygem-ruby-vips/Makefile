@@ -10,7 +10,7 @@ WWW=		https://github.com/libvips/ruby-vips
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libvips.so:graphics/vips@${FLAVOR}
+LIB_DEPENDS=	libvips.so:graphics/vips
 RUN_DEPENDS=	rubygem-ffi>=1.12<2:devel/rubygem-ffi \
 		rubygem-logger>=0:devel/rubygem-logger
 
@@ -18,10 +18,6 @@ USES=		gem gnome shebangfix
 USE_GNOME=	glib20
 
 NO_ARCH=	yes
-
-FLAVORS=	x11 nox11
-FLAVOR?=	${FLAVORS:[1]}
-nox11_PKGNAMESUFFIX=	-nox11
 
 SHEBANG_FILES=	example/*.rb
 
