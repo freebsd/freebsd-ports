@@ -346,6 +346,7 @@
     SUBDIR += hppsmtools
     SUBDIR += hs-tart
     SUBDIR += hugin
+    SUBDIR += hvif-tools
     SUBDIR += hyprgraphics
     SUBDIR += hyprland-protocols
     SUBDIR += icat
