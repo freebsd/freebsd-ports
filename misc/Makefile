@@ -532,6 +532,7 @@
     SUBDIR += py-pytorch
     SUBDIR += py-pytorch-lightning
     SUBDIR += py-pyviz-comms
+    SUBDIR += py-runloop-api-client
     SUBDIR += py-safetensors
     SUBDIR += py-sagemaker
     SUBDIR += py-sagemaker-core
