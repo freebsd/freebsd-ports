@@ -12,6 +12,7 @@ WWW=		https://github.com/trolando/lace
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails: error: static assertion failed due to requirement '(sizeof(struct _lace_task) % 64) == 0': lace_task size should be a multiple of LACE_CACHE_LINE_SIZE
 BROKEN_i386=	compilation fails: error: static assertion failed due to requirement '(sizeof(struct _lace_task) % 64) == 0': lace_task size should be a multiple of LACE_CACHE_LINE_SIZE
 
 USES=		cmake:testing
