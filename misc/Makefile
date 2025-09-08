@@ -452,6 +452,7 @@
     SUBDIR += py-fuzzy
     SUBDIR += py-gguf
     SUBDIR += py-google-ai-generativelanguage
+    SUBDIR += py-google-genai
     SUBDIR += py-gpiozero
     SUBDIR += py-gymnasium
     SUBDIR += py-halo
@@ -531,6 +532,7 @@
     SUBDIR += py-pytorch
     SUBDIR += py-pytorch-lightning
     SUBDIR += py-pyviz-comms
+    SUBDIR += py-runloop-api-client
     SUBDIR += py-safetensors
     SUBDIR += py-sagemaker
     SUBDIR += py-sagemaker-core

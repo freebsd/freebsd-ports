@@ -1,5 +1,5 @@
 PORTNAME=	clutter-gstreamer
-PORTVERSION=	4.3.0
+PORTVERSION=	4.3.3
 CATEGORIES=	multimedia rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,8 @@ BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 LIB_DEPENDS=	libclutter-gst-3.0.so:multimedia/clutter-gst3
 RUN_DEPENDS=	rubygem-clutter>=${PORTSVERSION}:graphics/rubygem-clutter \
 		rubygem-gdk_pixbuf2>=${PORTSVERSION}:graphics/rubygem-gdk_pixbuf2 \
-		rubygem-gstreamer>=${PORTVERSION}<${PORTVERSION}_99:multimedia/rubygem-gstreamer
+		rubygem-gstreamer>=${PORTVERSION}<${PORTVERSION}_99:multimedia/rubygem-gstreamer \
+		rubygem-rake>=0:devel/rubygem-rake
 
 USES=		gem
 

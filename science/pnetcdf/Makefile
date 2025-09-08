@@ -1,5 +1,5 @@
 PORTNAME=	pnetcdf
-PORTVERSION=	1.14.0
+PORTVERSION=	1.14.1
 CATEGORIES=	science parallel
 MASTER_SITES=	https://parallel-netcdf.github.io/Release/ \
 		LOCAL/sunpoet

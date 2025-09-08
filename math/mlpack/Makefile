@@ -11,6 +11,7 @@ WWW=		https://www.mlpack.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_FreeBSD_13=	compilation fails with clang-19, see https://github.com/mlpack/mlpack/issues/3825
 BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/mlpack/mlpack/issues/3825
 BROKEN_i386=	undefined symbol: __atomic_load
 

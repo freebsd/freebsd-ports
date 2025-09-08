@@ -1,10 +1,11 @@
 PORTNAME=	highlight
-PORTVERSION=	4.16
+DISTVERSION=	4.16
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://andre-simon.de/zip/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Customizable syntax highlighter
 WWW=		http://andre-simon.de/
 
@@ -26,8 +27,8 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS GUI
 OPTIONS_SUB=	yes
 
-GUI_USES=	qt:5
-GUI_USE=	QT=buildtools:build,qmake:build,core,gui,widgets
+GUI_USES=	gl qt:6,qmake
+GUI_USE=	GL=opengl QT=tools:build,base
 GUI_MAKE_ENV=	QMAKE="${QMAKE}"
 GUI_ALL_TARGET=	gui
 GUI_INSTALL_TARGET=	install-gui

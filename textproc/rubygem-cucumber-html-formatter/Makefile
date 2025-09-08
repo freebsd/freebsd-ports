@@ -1,5 +1,5 @@
 PORTNAME=	cucumber-html-formatter
-PORTVERSION=	21.13.0
+PORTVERSION=	21.14.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

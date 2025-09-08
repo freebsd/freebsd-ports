@@ -1,5 +1,5 @@
 PORTNAME=	jbuilder
-PORTVERSION=	2.13.0
+PORTVERSION=	2.14.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails71
@@ -11,8 +11,8 @@ WWW=		https://github.com/rails/jbuilder
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-actionview71>=5.0.0:devel/rubygem-actionview71 \
-		rubygem-activesupport71>=5.0.0:devel/rubygem-activesupport71
+RUN_DEPENDS=	rubygem-actionview71>=7.0.0:devel/rubygem-actionview71 \
+		rubygem-activesupport71>=7.0.0:devel/rubygem-activesupport71
 
 USES=		gem shebangfix
 

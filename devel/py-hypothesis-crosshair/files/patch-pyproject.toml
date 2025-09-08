@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2025-08-13 20:44:59 UTC
++++ pyproject.toml
+@@ -13,7 +13,6 @@ dependencies = [
+ license = { file = "LICENSE" }
+ requires-python = ">=3.9"
+ dependencies = [
+-    "hypothesis>=6.137.0",
+     "crosshair-tool>=0.0.74"
+ ]
+ classifiers = [

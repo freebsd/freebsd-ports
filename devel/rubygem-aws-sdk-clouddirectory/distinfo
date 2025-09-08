@@ -1,3 +1,3 @@
-TIMESTAMP = 1753369544
-SHA256 (rubygem/aws-sdk-clouddirectory-1.76.0.gem) = ff345aac7c3cb422cb59fcd74036a250fba3083f99795e51d3b6291e2a1697ad
-SIZE (rubygem/aws-sdk-clouddirectory-1.76.0.gem) = 85504
+TIMESTAMP = 1757121030
+SHA256 (rubygem/aws-sdk-clouddirectory-1.80.0.gem) = db63af96d461bca184c133cf112b7827a35621c86bb70ab78875ff8b9fb84f02
+SIZE (rubygem/aws-sdk-clouddirectory-1.80.0.gem) = 86016

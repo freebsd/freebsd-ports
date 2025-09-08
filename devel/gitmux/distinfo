@@ -1,5 +1,5 @@
-TIMESTAMP = 1755062448
-SHA256 (go/devel_gitmux/gitmux-v0.11.3/v0.11.3.mod) = 0cd0e61a6549870ee3340b69943c2283f31a5cb058ac88c9ee61a5e81c9f3312
-SIZE (go/devel_gitmux/gitmux-v0.11.3/v0.11.3.mod) = 353
-SHA256 (go/devel_gitmux/gitmux-v0.11.3/v0.11.3.zip) = 2501714669f20e8c9f4e3f8073cfe702b733063420dfc688aeadcbcacadc3586
-SIZE (go/devel_gitmux/gitmux-v0.11.3/v0.11.3.zip) = 20394
+TIMESTAMP = 1757120490
+SHA256 (go/devel_gitmux/gitmux-v0.11.5/v0.11.5.mod) = 5de14b73617972647a01f268b9b9bc60bd7ec93ebc36e1aba23752be90ddb5c6
+SIZE (go/devel_gitmux/gitmux-v0.11.5/v0.11.5.mod) = 368
+SHA256 (go/devel_gitmux/gitmux-v0.11.5/v0.11.5.zip) = 6d585b86069b89083bfbecdfcf9ad6e7f1e1f2f6d9c1e83bbc782aff8de6fe0a
+SIZE (go/devel_gitmux/gitmux-v0.11.5/v0.11.5.zip) = 20735

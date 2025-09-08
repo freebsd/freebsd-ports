@@ -1,5 +1,5 @@
 PORTNAME=	pleaserun
-PORTVERSION=	0.0.32
+PORTVERSION=	0.0.33
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-cabin>=0:devel/rubygem-cabin \
 		rubygem-clamp>=0:devel/rubygem-clamp \
-		rubygem-dotenv>=0:misc/rubygem-dotenv \
+		rubygem-dotenv>=2:misc/rubygem-dotenv \
 		rubygem-insist>=0:devel/rubygem-insist \
 		rubygem-mustache>=0.99.8:devel/rubygem-mustache \
 		rubygem-stud>=0:devel/rubygem-stud

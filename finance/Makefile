@@ -53,7 +53,6 @@
     SUBDIR += linux-tradingview
     SUBDIR += lnd
     SUBDIR += moneymanagerex
-    SUBDIR += myphpmoney
     SUBDIR += nextcloud-cospend
     SUBDIR += odoo
     SUBDIR += odoo16

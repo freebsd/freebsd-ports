@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-bigtable-admin-v2
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-bigtable-admin-v
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-gapic-common>=1.0<2:devel/rubygem-gapic-common \
+RUN_DEPENDS=	rubygem-gapic-common>=1.1<2:devel/rubygem-gapic-common \
 		rubygem-google-cloud-errors>=1.0<2:net/rubygem-google-cloud-errors \
 		rubygem-grpc-google-iam-v1>=1.11<2:devel/rubygem-grpc-google-iam-v1
 

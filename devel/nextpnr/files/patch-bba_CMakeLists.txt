@@ -1,13 +1,10 @@
---- bba/CMakeLists.txt.orig	2025-03-25 22:08:07 UTC
+--- bba/CMakeLists.txt.orig	2025-09-08 14:21:44 UTC
 +++ bba/CMakeLists.txt
-@@ -9,7 +9,7 @@ target_link_libraries(bbasm LINK_PRIVATE
+@@ -10,6 +10,5 @@ target_link_libraries(bbasm LINK_PRIVATE
  add_executable(bbasm
      main.cc)
  target_link_libraries(bbasm LINK_PRIVATE
 -    ${Boost_PROGRAM_OPTIONS_LIBRARY}
--    ${Boost_FILESYSTEM_LIBRARY}
 -    ${Boost_SYSTEM_LIBRARY})
-+	Boost::program_options
-+	Boost::filesystem
-+	Boost::system)
++    Boost::program_options)
  export(TARGETS bbasm FILE ${CMAKE_BINARY_DIR}/bba-export.cmake)

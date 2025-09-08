@@ -228,6 +228,7 @@
     SUBDIR += rep-gtk2
     SUBDIR += rubygem-gdk3
     SUBDIR += rubygem-gdk4
+    SUBDIR += rubygem-gsk4
     SUBDIR += rubygem-gtk2
     SUBDIR += rubygem-gtk3
     SUBDIR += rubygem-gtk4

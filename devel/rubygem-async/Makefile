@@ -1,5 +1,5 @@
 PORTNAME=	async
-PORTVERSION=	2.27.0
+PORTVERSION=	2.28.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-console>=1.29<2:devel/rubygem-console \
 		rubygem-fiber-annotation>=0:devel/rubygem-fiber-annotation \
 		rubygem-io-event>=1.11<2:devel/rubygem-io-event \
 		rubygem-metrics>=0.12<1:devel/rubygem-metrics \
-		rubygem-traces>=0.15<1:devel/rubygem-traces
+		rubygem-traces>=0.18<1:devel/rubygem-traces
 
 USES=		gem
 

@@ -16,4 +16,6 @@ RUN_DEPENDS=	rubygem-activerecord-gitlab>=7<9:databases/rubygem-activerecord-git
 
 USES=		gem
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

@@ -1,10 +1,9 @@
---- Gemfile.orig	2024-02-29 06:16:41 UTC
+--- Gemfile.orig	2025-06-13 08:42:45 UTC
 +++ Gemfile
-@@ -7,34 +7,4 @@ gem 'rake'
- gem 'emot'
+@@ -9,28 +9,6 @@ gem 'rake'
  gem 'mail'
  gem 'rake'
--
+ 
 -group :development do
 -  gem 'pit', require: false
 -  gem 'racksh', require: false
@@ -21,18 +20,12 @@
 -    gem 'launchy'
 -    gem 'sequel'
 -    gem 'sqlite3'
--    gem 'jasmine', '< 3'
 -    gem 'simplecov', require: false
--    gem 'coveralls', '~> 0.8', require: false
 -    gem "rexml"
 -    gem "webrick"
 -  end
 -end
 -
--# https://github.com/redmine/redmine/blob/master/Gemfile#L89
--local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
--if File.exist?(local_gemfile)
--  puts "Loading Gemfile.local ..." if $DEBUG # `ruby -d` or `bundle -v`
--  instance_eval File.read(local_gemfile)
--end
-+gem 'base64'
+ # https://github.com/redmine/redmine/blob/master/Gemfile#L89
+ local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
+ if File.exist?(local_gemfile)

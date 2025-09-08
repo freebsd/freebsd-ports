@@ -4765,3 +4765,9 @@ net-mgmt/nagcon||2025-09-02|Has expired: Obsolete, only supports legacy versions
 www/yarn-node18||2025-09-02|Has expired: Depeneds on expired www/node18. Node.js 18.* has reached its EoL on 2025-04-30
 www/npm-node18||2025-09-03|Has expired: Depeneds on expired www/node18. Node.js 18.* has reached its EoL on 2025-04-30
 www/node18||2025-09-03|Has expired: Node.js 18.* has reached its EoL on 2025-04-30. Use Node.js 22.* (www/node22) instead
+devel/rubygem-hashie4|devel/rubygem-hashie|2025-09-07|Remove obsoleted port. Use devel/rubygem-hashie instead
+print/rubygem-afm0|print/rubygem-afm|2025-09-07|Remove obsoleted port. Use print/rubygem-afm instead
+www/rubygem-jwt29|www/rubygem-jwt|2025-09-07|Remove obsoleted port. Use www/rubygem-jwt instead
+www/mod_wsgi4|www/mod_wsgi|2025-09-08|Was tied to only major version 4, now upgraded to 5
+net-mgmt/netdata-go|net-mgmt/netdata|2025-09-08|The netdata-go plugin is included in the main netdata port
+finance/myphpmoney||2025-09-08|Has expired: Unmaintained upstream and most probably does not work with modern PHP versions

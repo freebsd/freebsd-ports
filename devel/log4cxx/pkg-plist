@@ -203,5 +203,5 @@ lib/cmake/log4cxx/log4cxxConfig.cmake
 lib/cmake/log4cxx/log4cxxConfigVersion.cmake
 lib/liblog4cxx.so
 lib/liblog4cxx.so.15
-lib/liblog4cxx.so.15.4.0
+lib/liblog4cxx.so.15.5.0
 libdata/pkgconfig/liblog4cxx.pc

@@ -1,7 +1,6 @@
 PORTNAME=	nextpnr
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	0.8
-PORTREVISION=	2
+DISTVERSION=	0.9
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -40,5 +39,11 @@ PLIST_FILES=	bin/nextpnr-ecp5 \
 # Don't create __pycache__ directory when executing blueprint-compiler
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV=	PYTHONDONTWRITEBYTECODE=1
+
+.if exists(/usr/include/omp.h)
+CMAKE_ON=	USE_OPENMP
+.else
+CMAKE_OFF=	USE_OPENMP
+.endif
 
 .include <bsd.port.mk>

@@ -9,6 +9,7 @@ bin/dh_bugfiles
 bin/dh_builddeb
 bin/dh_clean
 bin/dh_compress
+bin/dh_computeautosubstvars
 bin/dh_dwz
 bin/dh_fixperms
 bin/dh_gencontrol

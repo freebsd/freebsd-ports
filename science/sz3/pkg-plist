@@ -1,4 +1,5 @@
 bin/sz3
+bin/sz3_customized_demo
 bin/sz3_smoke_test
 include/SZ3/api/impl/SZAlgoInterp.hpp
 include/SZ3/api/impl/SZAlgoLorenzoReg.hpp
@@ -9,13 +10,11 @@ include/SZ3/api/impl/SZImplOMP.hpp
 include/SZ3/api/sz.hpp
 include/SZ3/compressor/Compressor.hpp
 include/SZ3/compressor/SZGenericCompressor.hpp
-include/SZ3/compressor/SZIterateCompressor.hpp
-include/SZ3/compressor/specialized/SZBlockInterpolationCompressor.hpp
 include/SZ3/compressor/specialized/SZExaaltCompressor.hpp
 include/SZ3/compressor/specialized/SZTruncateCompressor.hpp
+include/SZ3/decomposition/BlockwiseDecomposition.hpp
 include/SZ3/decomposition/Decomposition.hpp
 include/SZ3/decomposition/InterpolationDecomposition.hpp
-include/SZ3/decomposition/LorenzoRegressionDecomposition.hpp
 include/SZ3/decomposition/NoPredictionDecomposition.hpp
 include/SZ3/decomposition/TimeSeriesDecomposition.hpp
 include/SZ3/def.hpp
@@ -29,11 +28,6 @@ include/SZ3/lossless/Lossless_bypass.hpp
 include/SZ3/lossless/Lossless_zstd.hpp
 include/SZ3/predictor/ComposedPredictor.hpp
 include/SZ3/predictor/LorenzoPredictor.hpp
-include/SZ3/predictor/MetaLorenzoPredictor.hpp
-include/SZ3/predictor/MetaRegressionPredictor.hpp
-include/SZ3/predictor/PolyRegressionCoeffAux.hpp
-include/SZ3/predictor/PolyRegressionCoeffAux.m
-include/SZ3/predictor/PolyRegressionPredictor.hpp
 include/SZ3/predictor/Predictor.hpp
 include/SZ3/predictor/RegressionPredictor.hpp
 include/SZ3/preprocessor/PreFilter.hpp
@@ -42,6 +36,7 @@ include/SZ3/preprocessor/Transpose.hpp
 include/SZ3/preprocessor/Wavelet.hpp
 include/SZ3/quantizer/LinearQuantizer.hpp
 include/SZ3/quantizer/Quantizer.hpp
+include/SZ3/utils/BlockwiseIterator.hpp
 include/SZ3/utils/ByteUtil.hpp
 include/SZ3/utils/Config.hpp
 include/SZ3/utils/Extraction.hpp
@@ -50,12 +45,10 @@ include/SZ3/utils/Interpolators.hpp
 include/SZ3/utils/Iterator.hpp
 include/SZ3/utils/KmeansUtil.hpp
 include/SZ3/utils/MemoryUtil.hpp
-include/SZ3/utils/MetaDef.hpp
 include/SZ3/utils/QuantOptimizatioin.hpp
+include/SZ3/utils/Sample.hpp
 include/SZ3/utils/Statistic.hpp
 include/SZ3/utils/Timer.hpp
-include/SZ3/utils/inih/INIReader.h
-include/SZ3/utils/inih/LICENSE.txt
 include/SZ3/utils/ska_hash/LICENSE.txt
 include/SZ3/utils/ska_hash/bytell_hash_map.hpp
 include/SZ3/utils/ska_hash/flat_hash_map.hpp

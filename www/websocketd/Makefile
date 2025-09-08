@@ -1,7 +1,7 @@
 PORTNAME=	websocketd
 PORTVERSION=	0.4.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	30
+PORTREVISION=	31
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,6 +20,6 @@ PLIST_FILES=	bin/websocketd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	joewalnes
-GH_TUPLE=	gorilla:websocket:v1.4.0:gorilla_websocket/vendor/github.com/gorilla/websocket
+GH_TUPLE=	gorilla:websocket:v1.5.3:gorilla_websocket/vendor/github.com/gorilla/websocket
 
 .include <bsd.port.mk>

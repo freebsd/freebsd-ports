@@ -1,5 +1,5 @@
 PORTNAME=	fastfetch
-DISTVERSION=	2.51.1
+DISTVERSION=	2.52.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -17,10 +17,10 @@ USES=		cmake:testing localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	fastfetch-cli
 
-OPTIONS_DEFINE=	VULKAN WAYLAND XRANDR LIBDRM GIO DCONF DBUS XFCONF SQLITE3 \
+OPTIONS_DEFINE=	VULKAN WAYLAND XRANDR LIBDRM GIO DCONF DBUS SQLITE3 \
 		IMAGEMAGICK CHAFA GLX OPENCL
 
-OPTIONS_DEFAULT=VULKAN WAYLAND XRANDR LIBDRM GIO DCONF DBUS XFCONF SQLITE3 \
+OPTIONS_DEFAULT=VULKAN WAYLAND XRANDR LIBDRM GIO DCONF DBUS SQLITE3 \
 		IMAGEMAGICK CHAFA GLX OPENCL
 
 DCONF_DESC=	Needed for values that are only stored in DConf + Fallback for GSettings
@@ -28,7 +28,6 @@ CHAFA_DESC=	Image output as ascii art
 LIBDRM_DESC=	Enable display server detection via libdrm
 VULKAN_DESC=	Vulkan module & fallback for GPU output
 XRANDR_DESC=	Needed for display and WM detection in X11
-XFCONF_DESC=	Needed for XFWM theme and XFCE Terminal font
 
 VULKAN_CMAKE_BOOL=	ENABLE_VULKAN
 VULKAN_BUILD_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader \
@@ -51,9 +50,6 @@ DBUS_BUILD_DEPENDS=	${LOCALBASE}/lib/libdbus-1.so:devel/dbus
 
 DCONF_CMAKE_BOOL=	ENABLE_DCONF
 DCONF_BUILD_DEPENDS=	${LOCALBASE}/lib/libdconf.so:devel/dconf
-
-XFCONF_CMAKE_BOOL=	ENABLE_XFCONF
-XFCONF_BUILD_DEPENDS=	${LOCALBASE}/lib/libxfconf-0.so:x11/xfce4-conf
 
 SQLITE3_CMAKE_BOOL=	ENABLE_SQLITE3
 SQLITE3_BUILD_DEPENDS=	${LOCALBASE}/lib/libsqlite3.so:databases/sqlite3

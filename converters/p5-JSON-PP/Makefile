@@ -6,6 +6,9 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ISHIGAKI
 PKGNAMEPREFIX=	p5-
 
+PATCH_SITES=	https://github.com/makamaka/JSON-PP/commit/
+PATCHFILES=	7052740e158491666e4f27d75241617a16170102.patch:-p1
+
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON::XS compatible pure-Perl module
 WWW=		https://metacpan.org/release/JSON-PP

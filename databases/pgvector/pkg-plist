@@ -1,4 +1,3 @@
-/you/have/to/check/what/makeplist/gives/you
 include/postgresql/server/extension/vector/halfvec.h
 include/postgresql/server/extension/vector/sparsevec.h
 include/postgresql/server/extension/vector/vector.h

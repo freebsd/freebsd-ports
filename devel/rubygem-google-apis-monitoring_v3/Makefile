@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-monitoring_v3
-PORTVERSION=	0.80.0
+PORTVERSION=	0.82.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

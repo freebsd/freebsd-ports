@@ -1,5 +1,5 @@
 PORTNAME=	gnome
-PORTVERSION=	4.3.0
+PORTVERSION=	4.3.3
 CATEGORIES=	x11 gnome rubygems
 PKGNAMEPREFIX=	rubygem-
 
@@ -20,6 +20,8 @@ RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}<${PORTVERSION}_99:accessibility/rubygem
 		rubygem-gio2>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-gio2 \
 		rubygem-glib2>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-glib2 \
 		rubygem-gobject-introspection>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-gobject-introspection \
+		rubygem-graphene1>=${PORTVERSION}<${PORTVERSION}_99:graphics/rubygem-graphene1 \
+		rubygem-gsk4>=${PORTVERSION}<${PORTVERSION}_99:x11-toolkits/rubygem-gsk4 \
 		rubygem-gstreamer>=${PORTVERSION}<${PORTVERSION}_99:multimedia/rubygem-gstreamer \
 		rubygem-gtk3>=${PORTVERSION}<${PORTVERSION}_99:x11-toolkits/rubygem-gtk3 \
 		rubygem-gtk4>=${PORTVERSION}<${PORTVERSION}_99:x11-toolkits/rubygem-gtk4 \

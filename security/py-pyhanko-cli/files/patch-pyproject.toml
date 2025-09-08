@@ -17,3 +17,14 @@
  keywords = [
      "signature",
      "pdf",
+@@ -33,8 +32,8 @@ dependencies = [
+ dependencies = [
+     "asn1crypto>=1.5.1",
+     "tzlocal>=4.3",
+-    "pyhanko>=0.29.1,<0.30",
+-    "pyhanko-certvalidator>=0.27.0,<0.28",
++    "pyhanko>=0.29.1",
++    "pyhanko-certvalidator>=0.27.0",
+     "click>=8.1.3,!=8.2.0",
+ ]
+ version = "0.1.2"

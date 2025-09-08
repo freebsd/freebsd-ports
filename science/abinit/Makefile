@@ -1,5 +1,5 @@
 PORTNAME=	abinit
-DISTVERSION=	10.4.5
+DISTVERSION=	10.4.7
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,7 +53,8 @@ TEST_TARGET=	tests_abirules tests_buildsys # Many tests print RuntimeError, http
 TEST_WRKSRC=	${WRKSRC}/abichecks
 PORTDOCS=	*
 
-BINARY_ALIAS=	git=false
+BINARY_ALIAS=	git=false \
+		gfortran=gfortran${GCC_DEFAULT} # for tests
 
 OPTIONS_DEFINE=			DOCS OPENMP
 OPTIONS_DEFAULT=		MPICH

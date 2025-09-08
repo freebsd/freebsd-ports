@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-08-14 11:05:05 UTC
++++ pyproject.toml
+@@ -13,8 +13,7 @@ maintainers = [
+ maintainers = [
+     {name = "pyproj contributors"},
+ ]
+-license = "MIT"
+-license-files = ["LICENSE", "LICENSE_proj"]
++license = {text = "MIT"}
+ keywords = [
+     "GIS",
+     "map",

@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-server-ydoc
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,9 +19,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18.0:devel/py-jsonschema@${PY_
 		${PYTHON_PKGNAMEPREFIX}jupyter-events>=0.11.0:devel/py-jupyter-events@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-server>=2.15.0<3.0.0:devel/py-jupyter-server@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-server-fileid>=0.7.0<1:devel/py-jupyter-server-fileid@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-ydoc>=2.1.2<4.0.0:devel/py-jupyter-ydoc@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-ydoc>=3.0.3<4.0.0:devel/py-jupyter-ydoc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycrdt>=0:devel/py-pycrdt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pycrdt-websocket>=0.15.0<0.16.0:devel/py-pycrdt-websocket@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pycrdt-websocket>=0.16.0<0.17.0:devel/py-pycrdt-websocket@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517

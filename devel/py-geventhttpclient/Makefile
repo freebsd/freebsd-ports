@@ -1,7 +1,7 @@
 PORTNAME=	geventhttpclient
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.5
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,6 +20,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=0:archivers/py-brotli@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
+
+USE_GITHUB=	yes
+GH_TUPLE=	nodejs:llhttp:release/v6.0.11:nodejs_llhttp/llhttp
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${WRKSRC}/pyproject.toml ${WRKSRC}/src/geventhttpclient/__init__.py
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +

@@ -450,7 +450,7 @@
     SUBDIR += mod_umask
     SUBDIR += mod_webauth
     SUBDIR += mod_webkit
-    SUBDIR += mod_wsgi4
+    SUBDIR += mod_wsgi
     SUBDIR += mod_xsendfile
     SUBDIR += mohawk
     SUBDIR += moin2
@@ -1860,6 +1860,7 @@
     SUBDIR += py-pecan
     SUBDIR += py-pelican
     SUBDIR += py-planet
+    SUBDIR += py-planet-auth
     SUBDIR += py-playwright
     SUBDIR += py-postorius
     SUBDIR += py-praw
@@ -2222,7 +2223,6 @@
     SUBDIR += rubygem-json-jwt-gitlab
     SUBDIR += rubygem-jsonb_accessor
     SUBDIR += rubygem-jwt
-    SUBDIR += rubygem-jwt29
     SUBDIR += rubygem-kamal
     SUBDIR += rubygem-kaminari
     SUBDIR += rubygem-kaminari-actionview

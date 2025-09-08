@@ -1,5 +1,5 @@
 PORTNAME=	net-ldap
-PORTVERSION=	0.19.0
+PORTVERSION=	0.20.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,9 @@ WWW=		https://github.com/ruby-ldap/ruby-net-ldap
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.rdoc
+
+RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
+		rubygem-ostruct>=0:devel/rubygem-ostruct
 
 USES=		gem
 

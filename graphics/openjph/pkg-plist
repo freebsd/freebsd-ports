@@ -16,6 +16,6 @@ lib/cmake/openjph/openjph-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/openjph/openjph-targets.cmake
 lib/libopenjph.so
 lib/libopenjph.so.0
-lib/libopenjph.so.0.21
+lib/libopenjph.so.0.22
 lib/libopenjph.so.%%PORTVERSION%%
 libdata/pkgconfig/openjph.pc
