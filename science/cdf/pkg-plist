@@ -50,9 +50,9 @@ lib/cdf/help/cdfvalidatej.olh
 lib/cdf/help/cdfxp.ilh
 lib/cdf/help/skt2cdf.olh
 lib/cdf/help/skt2cdfj.olh
-lib/libcdf.3.9.1.so
 lib/libcdf.a
 lib/libcdf.so
+lib/libcdf.%%SOVERSION%%.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/OperateAttributes.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/OperateCDF.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/OperateVariables.c
