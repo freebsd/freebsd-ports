@@ -18,7 +18,7 @@ LICENSE_NAME=	IDSOFTWARE
 LICENSE_TEXT=	Redistribution limited
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386
 USES=		linux zip:infozip
 USE_LINUX=	dri xorglibs
 ETDIR=		${PREFIX}/lib/${PORTNAME}
@@ -33,9 +33,9 @@ OPTIONS_DEFINE=	DOCS
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && \
-		${TAIL} +374 ${_DISTDIR}et-linux-2.60.x86.run | ${TAR} xfz -
+		${TAIL} +374 ${_DISTDIR}/et-linux-2.60.x86.run | ${TAR} xfz -
 	@cd ${WRKSRC} && \
-		${UNZIP_CMD} -q ${_DISTDIR}ET-2.60b.zip
+		${UNZIP_CMD} -q ${_DISTDIR}/ET-2.60b.zip
 
 post-patch:
 .for FILE in et etded
