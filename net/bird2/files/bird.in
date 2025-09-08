@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: bird dynamicrouting
-# REQUIRE: LOGIN
+# REQUIRE: DAEMONS
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
@@ -26,5 +26,9 @@ load_rc_config $name
 
 command=%%PREFIX%%/sbin/${name}
 command_args="-c $bird_config -g $bird_group"
+
+extra_commands="gracefulrestart" # It is not a restart but a stop
+
+gracefulrestart_cmd="%%PREFIX%%/sbin/${name}c graceful restart"
 
 run_rc_command "$1"
