@@ -12,6 +12,7 @@ WWW=		https://fastscapelib.readthedocs.io/en/latest/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13=	compilation fails with clang-19, see https://github.com/fastscape-lem/fastscapelib/issues/168
 BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/fastscape-lem/fastscapelib/issues/168
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
