@@ -1,11 +1,11 @@
 PORTNAME=	TH.data
-DISTVERSION=	1.1-3
+DISTVERSION=	1.1-4
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	TH's Data Archive
-WWW=		https://cran.r-project.org/web/packages/TH.data/
+WWW=		https://cran.r-project.org/package=TH.data
 
 LICENSE=	GPLv3
 
