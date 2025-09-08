@@ -1,8 +1,11 @@
 PORTNAME=	gegl
 DISTVERSION=	0.4.62
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
+
+PATCH_SITES+=	https://gitlab.gnome.org/GNOME/gegl/-/commit/
+PATCHFILES+=	eda8ba51786f197b72265eafcdab407d91ec9c70.diff:-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graph based image processing framework
