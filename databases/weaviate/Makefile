@@ -12,6 +12,8 @@ WWW=		https://weaviate.io/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	build error: no error messages printed
+
 USES=		go:modules
 
 GO_MODULE=	github.com/weaviate/weaviate
