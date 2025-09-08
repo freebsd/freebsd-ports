@@ -191,7 +191,6 @@
     SUBDIR += netbox
     SUBDIR += netbox-agent
     SUBDIR += netdata
-    SUBDIR += netdata-go
     SUBDIR += netdisco-mibs
     SUBDIR += netleak
     SUBDIR += netmagis-common
