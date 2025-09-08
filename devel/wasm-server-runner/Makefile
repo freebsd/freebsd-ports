@@ -1,7 +1,7 @@
 PORTNAME=	wasm-server-runner
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	cs@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS+=	libzstd.so:archivers/zstd
 
-USES=		cargo
+USES=		cargo llvm
 USE_GITHUB=	yes
 GH_ACCOUNT=	jakobhellermann
 
