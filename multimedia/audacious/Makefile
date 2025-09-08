@@ -1,5 +1,5 @@
 PORTNAME=	audacious
-DISTVERSION=	4.5
+DISTVERSION=	4.5.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://distfiles.audacious-media-player.org/
 
