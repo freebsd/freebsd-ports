@@ -27,6 +27,7 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/js/preview.js
 %%WWWDIR%%/lib/aws/pa_api.rb
 %%WWWDIR%%/lib/aws/sig_v4.rb
+%%WWWDIR%%/lib/rack/server.rb
 %%WWWDIR%%/lib/tdiary.rb
 %%WWWDIR%%/lib/tdiary/admin.rb
 %%WWWDIR%%/lib/tdiary/application.rb
@@ -95,7 +96,6 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/lib/tdiary/tasks/db.rake
 %%WWWDIR%%/lib/tdiary/tasks/doc.rake
 %%WWWDIR%%/lib/tdiary/tasks/heroku.rake
-%%WWWDIR%%/lib/tdiary/tasks/jasmine.rake
 %%WWWDIR%%/lib/tdiary/tasks/mongodb.rake
 %%WWWDIR%%/lib/tdiary/tasks/rdoc.rake
 %%WWWDIR%%/lib/tdiary/tasks/release.rake
@@ -246,6 +246,7 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/misc/plugin/xmlrpc/README
 %%WWWDIR%%/misc/plugin/xmlrpc/xmlrpc.rb
 %%WWWDIR%%/misc/templates/Gemfile.local.erb
+%%WWWDIR%%/package-lock.json
 %%WWWDIR%%/package.json
 %%WWWDIR%%/tdiary.conf.beginner
 %%WWWDIR%%/tdiary.conf.sample

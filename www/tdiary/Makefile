@@ -1,6 +1,5 @@
 PORTNAME=	tdiary
-DISTVERSION=	5.3.0
-PORTREVISION=	2
+DISTVERSION=	5.4.0
 CATEGORIES?=	www ruby
 MASTER_SITES=	https://github.com/tdiary/tdiary-core/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -12,16 +11,17 @@ WWW=		https://www.tdiary.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-base64>0:converters/rubygem-base64 \
+RUN_DEPENDS=	rubygem-base64>=0.3.0:converters/rubygem-base64 \
 		rubygem-bundler>=2.0.2:sysutils/rubygem-bundler \
 		rubygem-emot>=0.0.4:textproc/rubygem-emot \
-		rubygem-fastimage>=2.2.6:graphics/rubygem-fastimage \
+		rubygem-fastimage>=2.4.0:graphics/rubygem-fastimage \
 		rubygem-hikidoc>=0.1.0:textproc/rubygem-hikidoc \
-		rubygem-mail>=2.7.1:mail/rubygem-mail \
-		rubygem-net-smtp>=0.3.1:mail/rubygem-net-smtp \
-		rubygem-rack>=3.0.1,3:www/rubygem-rack \
-		rubygem-rackup21>=0.2.3:www/rubygem-rackup21 \
-		rubygem-rake>=13.0.6:devel/rubygem-rake
+		rubygem-mail>=2.8.1:mail/rubygem-mail \
+		rubygem-net-smtp>=0.5.1:mail/rubygem-net-smtp \
+		rubygem-rack-session>=2.1.1:www/rubygem-rack-session \
+		rubygem-rack>=3.1.16,3:www/rubygem-rack \
+		rubygem-rackup>=2.2.1:www/rubygem-rackup \
+		rubygem-rake>=13.3.0:devel/rubygem-rake
 
 USES=		cpe ruby shebangfix
 
