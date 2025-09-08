@@ -196,10 +196,12 @@ do-configure:
 .if ${PORT_OPTIONS:MLTO}
 	@${ECHO_CMD} 'thin-lto=true' >> ${WRKSRC}/config.toml
 .endif
+.if !defined(PKGNAMESUFFIX)
 .if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
 	@${ECHO_CMD} 'ccache="${CCACHE_BIN}"' >> ${WRKSRC}/config.toml
 .else
 	@${ECHO_CMD} 'ccache=false' >> ${WRKSRC}/config.toml
+.endif
 .endif
 	@${ECHO_CMD} 'ninja=true' >> ${WRKSRC}/config.toml
 .if ${ARCH} == powerpc

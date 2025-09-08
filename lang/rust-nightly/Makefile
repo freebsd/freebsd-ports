@@ -14,12 +14,8 @@ MASTERDIR=	${.CURDIR}/../rust
 PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
-NIGHTLY_DATE=		2025-08-05
-BOOTSTRAPS_DATE=	2025-06-24
+NIGHTLY_DATE=		2025-09-07
+BOOTSTRAPS_DATE=	2025-08-05
 RUST_BOOTSTRAP_VERSION=	beta
-
-post-configure:
-	# remove after bootstraps are updated to version higher than 2025-07-27
-	@${REINPLACE_CMD} -e '/ccache=/d' ${WRKSRC}/config.toml
 
 .include "${MASTERDIR}/Makefile"
