@@ -1,7 +1,6 @@
 PORTNAME=	gotosocial
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.1
-PORTREVISION=	2
+DISTVERSION=	0.19.2
 CATEGORIES=	net-im
 MASTER_SITES=	https://codeberg.org/superseriousbusiness/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTFILES=	${PORTNAME}-${DISTVERSION}-source-code.tar.gz ${PORTNAME}_${DISTVERSION}_web-assets.tar.gz
@@ -21,29 +20,29 @@ LICENSE_FILE_OFL11=		${WRKSRC}/OFL11
 ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386
 ONLY_FOR_ARCHS_REASON=	https://gitlab.com/cznic/libc/-/issues/15
 
-USES=		go:modules
+USES=		go:1.24,modules
 USE_RC_SUBR=	${PORTNAME}
 
 GO_TARGET=	./cmd/gotosocial
 GO_BUILDFLAGS+=	-tags "netgo osusergo static_build kvformat ${WITH_DEBUG:Ddebugenv}" \
- 	-ldflags="${STRIP} -w -extldflags '-static' -X 'main.Version=${PKGVERSION}'"
+	-ldflags="${STRIP} -w -extldflags '-static' -X 'main.Version=${PKGVERSION}'"
 CGO_ENABLED=	0
+
+TESTING_UNSAFE=	FAIL    codeberg.org/superseriousbusiness/gotosocial/internal/log
 
 SUB_LIST=	DBDIR="${DBDIR}" \
 		GROUP="${GROUPS}" \
 		USER="${USERS}" \
 		WWWDIR="${WWWDIR}"
 
+NO_WRKSUBDIR=	yes
+
 USERS=		gotosocial
 GROUPS=		gotosocial
-
-NO_WRKSUBDIR=	yes
 
 DBDIR=		/var/db/${PORTNAME}
 
 PLIST_SUB=	WWWDIR="${WWWDIR}"
-
-TESTING_UNSAFE=	FAIL    codeberg.org/superseriousbusiness/gotosocial/internal/log
 
 post-extract:
 	${SED} -n "1, 27p" ${WRKSRC}/web/assets/Fork-Awesome/LICENSES \
