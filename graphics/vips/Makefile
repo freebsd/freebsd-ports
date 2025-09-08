@@ -41,12 +41,6 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
-FLAVORS=	x11 nox11
-FLAVOR?=	${FLAVORS:[1]}
-nox11_PKGNAMESUFFIX=	-nox11
-
-CONFLICTS_INSTALL=	vips vips-nox11
-
 OPTIONS_DEFINE=	CFITSIO DOCS FFTW FONTCONFIG GIF HEIF IMAGEQUANT JPEG JXL LCMS2 LIBARCHIVE LIBEXIF LIBRSVG2 MATIO OPENEXR PANGO PNG POPPLER SPNG TIFF WEBP
 OPTIONS_RADIO=	MAGICK SIMD
 OPTIONS_RADIO_MAGICK=	IMAGEMAGICK GRAPHICSMAGICK
@@ -74,7 +68,7 @@ FONTCONFIG_MESON_ENABLED=	fontconfig
 GIF_BUILD_DEPENDS=	cgif>=0.2.0:graphics/cgif
 GIF_LIB_DEPENDS=	libcgif.so:graphics/cgif
 GIF_MESON_ENABLED=	cgif
-GRAPHICSMAGICK_LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick@${FLAVOR}
+GRAPHICSMAGICK_LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick
 GRAPHICSMAGICK_MESON_ON=-Dmagick=enabled -Dmagick-package=GraphicsMagick
 HEIF_BUILD_DEPENDS=	libheif>=1.4.0:graphics/libheif
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
@@ -83,7 +77,7 @@ HIGHWAY_BUILD_DEPENDS=	highway>=1.0.5:devel/highway
 HIGHWAY_LIB_DEPENDS=	libhwy.so:devel/highway
 HIGHWAY_MESON_ENABLED=	highway
 IMAGEMAGICK_MESON_ON=	-Dmagick=enabled -Dmagick-package=MagickCore
-IMAGEMAGICK_USES=	magick:${FLAVOR}
+IMAGEMAGICK_USES=	magick
 IMAGEQUANT_LIB_DEPENDS=	libimagequant.so:graphics/libimagequant
 IMAGEQUANT_MESON_ENABLED=	imagequant
 JPEG_BUILD_DEPENDS=	openjpeg>=2.4:graphics/openjpeg
