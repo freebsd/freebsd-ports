@@ -11,7 +11,6 @@
     SUBDIR += R-cran-sqldf
     SUBDIR += WWWdb
     SUBDIR += adminer
-    SUBDIR += adminerevo
     SUBDIR += adodb5
     SUBDIR += akonadi
     SUBDIR += apache-commons-dbutils

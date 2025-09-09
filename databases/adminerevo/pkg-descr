@@ -1,3 +1,0 @@
-AdminerEvo (fork of Adminer) is a full-featured database management tool
-written in PHP. Conversely to phpMyAdmin, it consists of a single file
-ready to deploy to the target server.
