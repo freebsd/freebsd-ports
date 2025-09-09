@@ -1,6 +1,14 @@
 --- inotify_simple.py.orig	2025-08-25 06:27:48 UTC
 +++ inotify_simple.py
-@@ -76,12 +76,12 @@ class INotify(FileIO):
+@@ -3,6 +3,7 @@ from enum import IntEnum
+ from collections import namedtuple
+ from struct import unpack_from, calcsize
+ from select import poll
++from select import POLLIN
+ from time import sleep
+ from ctypes import CDLL, get_errno, c_int
+ from ctypes.util import find_library
+@@ -76,12 +77,12 @@ class INotify(FileIO):
                  object is garbage collected or when `~inotify_simple.INotify.close` is
                  called."""
              
