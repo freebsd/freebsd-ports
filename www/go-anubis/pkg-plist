@@ -5,7 +5,6 @@ sbin/robots2policy
 %%DATADIR%%/apps/gitea-rss-feeds.yaml
 %%DATADIR%%/apps/qualys-ssl-labs.yml
 %%DATADIR%%/apps/searx-checker.yml
-%%DATADIR%%/botPolicies.json
 %%DATADIR%%/botPolicies.yaml
 %%DATADIR%%/bots/_deny-pathological.yaml
 %%DATADIR%%/bots/aggressive-brazilian-scrapers.yaml
@@ -50,3 +49,6 @@ sbin/robots2policy
 %%DATADIR%%/meta/ai-block-moderate.yaml
 %%DATADIR%%/meta/ai-block-permissive.yaml
 %%DATADIR%%/services/uptime-robot.yaml
+%%DATADIR%%/bots/custom-async-http-client.yaml
+%%DATADIR%%/crawlers/alibaba-cloud.yaml
+%%DATADIR%%/crawlers/huawei-cloud.yaml

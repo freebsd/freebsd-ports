@@ -1,7 +1,6 @@
 PORTNAME=	anubis
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.21.3
-PORTREVISION=	3
+DISTVERSION=	1.22.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/techarohq/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMEPREFIX=	go-
@@ -18,6 +17,8 @@ USES=		go:1.24,no_targets
 USE_RC_SUBR=	${PORTNAME}
 
 ALL_TARGET=	prebaked-build
+
+MAKE_FLAGS=	VERSION=${DISTVERSION} GOFLAGS="-buildvcs=false"
 
 post-patch:
 	@${FIND} ${WRKSRC}/data \( -name "*.yaml" -or -name "*.json" \) \
