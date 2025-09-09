@@ -1,0 +1,11 @@
+--- src/plugins/task/Makefile.in.orig	2025-09-08 23:07:24 UTC
++++ src/plugins/task/Makefile.in
+@@ -465,7 +465,7 @@ top_srcdir = @top_srcdir@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = affinity cray_aries $(am__append_1)
++SUBDIRS = affinity cray_aries pgid $(am__append_1)
+ all: all-recursive
+
+ .SUFFIXES:
