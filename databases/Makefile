@@ -896,7 +896,6 @@
     SUBDIR += redis74
     SUBDIR += redis80
     SUBDIR += redis_exporter
-    SUBDIR += redisdesktopmanager
     SUBDIR += redisjson
     SUBDIR += retcl
     SUBDIR += rocksdb
