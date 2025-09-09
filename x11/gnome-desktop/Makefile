@@ -1,5 +1,5 @@
 PORTNAME=	gnome-desktop
-PORTVERSION=	44.3
+PORTVERSION=	44.4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -25,8 +25,8 @@ RUN_DEPENDS=	iso-codes>0:misc/iso-codes \
 		source-code-pro-ttf>0:x11-fonts/source-code-pro-ttf \
 		xkeyboard-config>0:x11/xkeyboard-config
 
-USES=		bison cpe gettext gnome localbase:ldflags meson \
-		pkgconfig python tar:xz xorg
+USES=		bison cpe gettext-tools gnome localbase:ldflags meson \
+		pkgconfig tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf gtk30 gtk40 introspection:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
