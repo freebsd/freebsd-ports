@@ -490,6 +490,7 @@
     SUBDIR += concurrencpp
     SUBDIR += concurrencykit
     SUBDIR += concurrentqueue
+    SUBDIR += cond-let
     SUBDIR += cons
     SUBDIR += cons-test
     SUBDIR += containers
