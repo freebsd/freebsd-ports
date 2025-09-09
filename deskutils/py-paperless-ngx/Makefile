@@ -1,6 +1,7 @@
 PORTNAME=	paperless-ngx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.18.3
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:webui \
 		GH:gh
@@ -40,7 +41,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}httptools>=0.6.4:www/py-httptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx-oauth>=0.10.1:www/py-httpx-oauth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}imap-tools>=1.11.0:mail/py-imap-tools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}inotifyrecursive>=0.3.5_3:devel/py-inotifyrecursive@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}inotifyrecursive>=0.3.5_4:devel/py-inotifyrecursive@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langdetect>=1.0.9:textproc/py-langdetect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mysqlclient>=2.2.7:databases/py-mysqlclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nltk>=3.8.1:textproc/py-nltk@${PY_FLAVOR} \
