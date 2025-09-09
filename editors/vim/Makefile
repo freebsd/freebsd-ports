@@ -1,5 +1,5 @@
 PORTNAME=	vim
-PORTVERSION=	9.1.1723
+PORTVERSION=	9.1.1744
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -22,7 +22,8 @@ CONFIGURE_ARGS=	--disable-canberra \
 		--enable-cscope \
 		--enable-gui=${GUI} \
 		--enable-multibyte \
-		--with-tlib=ncursesw
+		--with-tlib=ncursesw \
+		--without-wayland
 MAKE_ARGS=	STRIP="${STRIP_CMD}" \
 		VIMRCLOC=${ETCDIR} \
 		VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER}
@@ -69,7 +70,8 @@ USE_XORG=	ice sm x11 xpm xt
 
 .elif ${FLAVOR:U} == gtk3
 GUI=		gtk3
-CONFIGURE_ARGS+=--enable-xim --enable-fontset
+CONFIGURE_ARGS+=--enable-xim --enable-fontset --with-wayland
+LIB_DEPENDS+=	libwayland-client.so:graphics/wayland
 PLIST_SUB+=	GUI="" DESKTOP=""
 USES+=		desktop-file-utils gnome xorg
 USE_GNOME=	cairo gdkpixbufextra gtk30
