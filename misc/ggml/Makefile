@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake:testing compiler:c++17-lang python:run shebangfix
 USE_LDCONFIG=	yes
 
+BROKEN_i386=	compilation fails: LLVM ERROR: out of memory
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ggerganov
 GH_TAGNAME=	83835ff
