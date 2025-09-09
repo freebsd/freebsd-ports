@@ -1,6 +1,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-autoloads.el
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-bitbucket.el
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-bitbucket.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-client.el
+%%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-client.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-commands.el
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-commands.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-core.el
