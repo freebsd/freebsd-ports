@@ -1,6 +1,6 @@
 PORTNAME=	rump
 PORTVERSION=	20170822
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -23,7 +23,7 @@ USES=		compiler
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-CFLAGS+=	-Wno-error=strict-prototypes -Wno-error=array-parameter
+CFLAGS+=	-Wno-error=strict-prototypes -Wno-error=array-parameter -Wno-error=cast-function-type-mismatch
 .endif
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
