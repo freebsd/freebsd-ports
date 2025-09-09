@@ -1,7 +1,7 @@
 PORTNAME=	plantuml
-PORTVERSION=	1.2024.8
+DISTVERSION=	1.2025.7
 CATEGORIES=	graphics java textproc
-MASTER_SITES=	https://github.com/plantuml/plantuml/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
@@ -16,15 +16,18 @@ USES=		java
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	%%JAVASHAREDIR%%/${PORTNAME}/${PORTNAME}.jar bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		${JAVASHAREDIR}/${PORTNAME}/${PORTNAME}.jar
 
 pre-install:
-	${ECHO} "#!/bin/sh" > ${WRKDIR}/plantum.sh
-	${ECHO} '${PREFIX}/bin/java -jar ${JAVASHAREDIR}/${PORTNAME}/${PORTNAME}.jar $$*' >> ${WRKDIR}/plantum.sh
+	${ECHO} '#!/bin/sh' > ${WRKDIR}/${PORTNAME}
+	${ECHO} '${PREFIX}/bin/java -jar ${JAVASHAREDIR}/${PORTNAME}/${PORTNAME}.jar $$*' \
+		>> ${WRKDIR}/${PORTNAME}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}/${PORTNAME}.jar
-	${INSTALL_SCRIPT} ${WRKDIR}/plantum.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-${DISTVERSION}.jar \
+		${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}/${PORTNAME}.jar
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
