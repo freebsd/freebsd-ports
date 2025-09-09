@@ -582,9 +582,13 @@ lib/OGRE/cmake/OGREConfig.cmake
 lib/OGRE/cmake/OGREConfigVersion.cmake
 lib/OGRE/cmake/OgreTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/OGRE/cmake/OgreTargets.cmake
+%%JAVA%%lib/OGRE/libOgreJNI.so
+%%CSHARP%%lib/cli/ogre-sharp-%%PORTVERSION%%/Ogre.dll
+%%CSHARP%%lib/cli/ogre-sharp-%%PORTVERSION%%/libOgre.so
 lib/libOgreBites.so
 lib/libOgreBites.so.%%LIBVERSION%%
 %%BULLET%%lib/libOgreBullet.so
+%%JAVA%%lib/libOgreJNI.so
 lib/libOgreMain.so
 lib/libOgreMain.so.%%LIBVERSION%%
 lib/libOgreMeshLodGenerator.so
@@ -1320,9 +1324,10 @@ share/OGRE-%%LIBVERSION%%/Media/thumbnails/thumb_water.png
 share/OGRE-%%LIBVERSION%%/Media/volumeTerrain/triplanarReference.material
 share/OGRE-%%LIBVERSION%%/Media/volumeTerrain/volumeTerrain.cfg
 share/OGRE-%%LIBVERSION%%/Media/volumeTerrain/volumeTerrainBig.zip
-%%JAVA%%share/OGRE/java/Ogre-14.3.jar
-%%JAVA%%lib/OGRE/libOgreJNI.so
+%%JAVA%%share/OGRE/java/Ogre-%%PORTVERSION%%.jar
+%%JAVA%%%%JAVASHAREDIR%%/Ogre-%%PORTVERSION%%.jar
 share/OGRE-%%LIBVERSION%%/plugins.cfg
 share/OGRE-%%LIBVERSION%%/resources.cfg
 share/OGRE-%%LIBVERSION%%/samples.cfg
 %%JAVA%%@dir share/OGRE/java
+%%CSHARP%%@dir lib/cli
