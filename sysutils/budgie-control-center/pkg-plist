@@ -16,7 +16,6 @@ share/applications/budgie-microphone-panel.desktop
 share/applications/budgie-mouse-panel.desktop
 share/applications/budgie-multitasking-panel.desktop
 share/applications/budgie-notifications-panel.desktop
-share/applications/budgie-online-accounts-panel.desktop
 share/applications/budgie-power-panel.desktop
 share/applications/budgie-printers-panel.desktop
 share/applications/budgie-region-panel.desktop
@@ -53,7 +52,6 @@ share/icons/hicolor/scalable/apps/org.buddiesofbudgie.Settings-microphone-symbol
 share/icons/hicolor/scalable/apps/org.buddiesofbudgie.Settings-mouse-symbolic.svg
 share/icons/hicolor/scalable/apps/org.buddiesofbudgie.Settings-multitasking-symbolic.svg
 share/icons/hicolor/scalable/apps/org.buddiesofbudgie.Settings-notifications-symbolic.svg
-share/icons/hicolor/scalable/apps/org.buddiesofbudgie.Settings-online-accounts-symbolic.svg
 share/icons/hicolor/scalable/apps/org.buddiesofbudgie.Settings-power-symbolic.svg
 share/icons/hicolor/scalable/apps/org.buddiesofbudgie.Settings-printers-symbolic.svg
 share/icons/hicolor/scalable/apps/org.buddiesofbudgie.Settings-region-symbolic.svg

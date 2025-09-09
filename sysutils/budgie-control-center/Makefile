@@ -1,6 +1,5 @@
 PORTNAME=	budgie-control-center
-DISTVERSION=	1.3.0
-PORTREVISION=	5
+DISTVERSION=	1.4.1
 CATEGORIES=	sysutils budgie
 MASTER_SITES=	BUDGIE
 
@@ -9,8 +8,7 @@ COMMENT=	Control center for the Budgie desktop
 WWW=		https://github.com/BuddiesOfBudgie/budgie-control-center
 
 LICENSE=	GPLv2+
-
-BROKEN=		Fails to build, error: too few arguments to function call, expected 6, have 5
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
@@ -35,7 +33,7 @@ LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy \
 		libgnutls.so:security/gnutls
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USES=		budgie compiler:c++11-lib gettext gnome meson \
+USES=		budgie compiler:c++11-lib gettext-tools gnome meson \
 		localbase:ldflags pkgconfig samba:lib tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf glib20 gnomedesktop3 gtk30 gsound libxml2
 USE_XORG=	x11 xi
