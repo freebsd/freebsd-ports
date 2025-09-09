@@ -46,7 +46,7 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/_aqt/data/qt/icons/heart.svg
 %%DATADIR%%/_aqt/data/qt/icons/magnify-dark.svg
 %%DATADIR%%/_aqt/data/qt/icons/magnify-light.svg
-%%DATADIR%%/_aqt/data/qt/icons/media-record.png
+%%DATADIR%%/_aqt/data/qt/icons/media-record.svg
 %%DATADIR%%/_aqt/data/qt/icons/menu-down-dark.svg
 %%DATADIR%%/_aqt/data/qt/icons/menu-down-light.svg
 %%DATADIR%%/_aqt/data/qt/icons/menu-up-dark.svg

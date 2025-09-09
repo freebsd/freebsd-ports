@@ -1,5 +1,5 @@
-Skip code formatting with "ruff" on FreeBSD 15.0-CURRENT (observed with
-n278368-5c9b1c7e5f27) to prevent following error:
+Skip code formatting with "ruff" on !FreeBSD RELEASE builds to prevent
+following error (observed with FreeBSD 15.0-CURRENT n278368-5c9b1c7e5f27):
 
 [...]
 FAILED: /wrkdirs/usr/ports/games/anki/work/anki-25.07.2/out/qt/_aqt/hooks.py
@@ -32,5 +32,5 @@ Traceback (most recent call last):
          file.write(code.encode("utf8"))
 -    subprocess.run([sys.executable, "-m", "ruff", "format", "-q", path], check=True)
 +
-+    if not (platform.system() == 'FreeBSD' and platform.release() == '15.0-CURRENT'):
++    if platform.system() == 'FreeBSD' and platform.release().endswith('-RELEASE'):
 +        subprocess.run([sys.executable, "-m", "ruff", "format", "-q", path], check=True)
