@@ -200,6 +200,8 @@ lib/slurm/task_affinity.a
 lib/slurm/task_affinity.so
 lib/slurm/task_cray_aries.a
 lib/slurm/task_cray_aries.so
+lib/slurm/task_pgid.a
+lib/slurm/task_pgid.so
 lib/slurm/topology_3d_torus.a
 lib/slurm/topology_3d_torus.so
 lib/slurm/topology_block.a
