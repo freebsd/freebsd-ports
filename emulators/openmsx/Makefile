@@ -1,7 +1,7 @@
 PORTNAME=	openmsx
-DISTVERSION=	19.1
+DISTVERSION=	20.0
 CATEGORIES=	emulators
-MASTER_SITES=	https://github.com/openMSX/openMSX/releases/download/RELEASE_19_1/
+MASTER_SITES=	https://github.com/openMSX/openMSX/releases/download/RELEASE_20_0/
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Open source MSX emulator
@@ -18,11 +18,12 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libtheora.so:multimedia/libtheora \
 		libvorbis.so:audio/libvorbis
 
-USES=		gl gmake pkgconfig python sdl tcl
-USE_GCC=	yes
+USES=		compiler:c++20-lang gl gmake pkgconfig python sdl tcl
 
 USE_GL=		gl glew
 USE_SDL=	sdl2 ttf2
+
+CXXFLAGS+=	-I/usr/include/c++/v1 -std=c++20
 
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	CXXFLAGS="${CXXFLAGS}" \
