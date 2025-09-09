@@ -26,20 +26,20 @@ USES=		compiler:c11 cpe fortran python:3.9+
 USE_PYTHON=	allflavors autoplist concurrent cython distutils
 
 GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e s/libgfortran.so//
-LDFLAGS+=	-s
-PYDISTUTILS_BUILDARGS=		--fcompiler=gnu95
 PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
+PYDISTUTILS_BUILDARGS=		--fcompiler=gnu95
 
+LDFLAGS+=	-s
 PIE_UNSAFE=	yes
-
-PORTDOCS=	*
 
 PORTSCOUT=	limit:^1\.
 
+PORTDOCS=	*
+
 OPTIONS_DEFINE=		DOCS SUITESPARSE
+OPTIONS_DEFAULT=	OPENBLAS SUITESPARSE
 OPTIONS_SINGLE=		BLASLIB
 OPTIONS_SINGLE_BLASLIB=	ATLAS NETLIB OPENBLAS
-OPTIONS_DEFAULT=	OPENBLAS SUITESPARSE
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 
 ATLAS_USES=		blaslapack:atlas
@@ -56,9 +56,6 @@ post-extract:
 	@${TOUCH} ${WRKSRC}/numpy/random/_examples/temp
 	@${TOUCH} ${WRKSRC}/numpy/core/tests/examples/temp
 
-pre-configure-SUITESPARSE-off:
-	@${REINPLACE_CMD} -e 's|:%%LOCALBASE%%/include/suitesparse||' ${WRKSRC}/site.cfg
-
 pre-configure:
 	@${REINPLACE_CMD} -e 's|%%FC%%|${FC}|' ${WRKSRC}/numpy/distutils/fcompiler/gnu.py
 	@${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
@@ -67,6 +64,9 @@ pre-configure:
 		-e 's|%%LAPACKLIBS%%|${LAPACKLIBS}|; s|%%LIBRARIES%%|${LIBRARIES}|' \
 			${WRKSRC}/site.cfg
 	@${REINPLACE_CMD} -e "s|%%GCCLIBDIR%%|$$(${GCCLIBDIR_CMDS})|" ${WRKSRC}/site.cfg ${WRKSRC}/numpy/distutils/system_info.py
+
+pre-configure-SUITESPARSE-off:
+	@${REINPLACE_CMD} -e 's|:%%LOCALBASE%%/include/suitesparse||' ${WRKSRC}/site.cfg
 
 do-configure:
 
