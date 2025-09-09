@@ -1,6 +1,6 @@
 PORTNAME=	inotifyrecursive
 PORTVERSION=	0.3.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://github.com/letorbi/inotifyrecursive
 
 LICENSE=	LGPL3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}inotify-simple>=2.0.1_1:devel/py-inotify-simple@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}inotify-simple>=2.0.1_2:devel/py-inotify-simple@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
