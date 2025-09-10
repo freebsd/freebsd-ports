@@ -18,16 +18,17 @@ WWW=		https://www.numpy.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=6.2.5:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hypothesis>=6.24.1:devel/py-hypothesis@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=6.24.1:devel/py-hypothesis@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>=6.2.5:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.2.0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		compiler:c11 cpe fortran python:3.9+
 USE_PYTHON=	allflavors autoplist concurrent cython distutils
 
-GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e s/libgfortran.so//
+GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e \
+		s/libgfortran.so//
 PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
-PYDISTUTILS_BUILDARGS=		--fcompiler=gnu95
+PYDISTUTILS_BUILDARGS=	--fcompiler=gnu95
 
 LDFLAGS+=	-s
 PIE_UNSAFE=	yes
@@ -42,14 +43,23 @@ OPTIONS_SINGLE=		BLASLIB
 OPTIONS_SINGLE_BLASLIB=	ATLAS NETLIB OPENBLAS
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 
-ATLAS_USES=		blaslapack:atlas
-ATLAS_VARS=		BLASLIBS="ptf77blas, ptcblas" BLASNAME=atlas LAPACKLIBS=alapack LIBRARIES=atlas_libs
-NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
-NETLIB_USES=		blaslapack:netlib
-NETLIB_VARS=		BLASLIBS="blas, cblas" BLASNAME=atlas LAPACKLIBS=lapack LIBRARIES=atlas_libs
-OPENBLAS_USES=		blaslapack:openblas
-OPENBLAS_VARS=		BLASLIBS="openblas, gfortran" BLASNAME=openblas LAPACKLIBS="openblas, gfortran" LIBRARIES=libraries
-SUITESPARSE_LIB_DEPENDS=libumfpack.so:math/suitesparse-umfpack
+ATLAS_USES=			blaslapack:atlas
+ATLAS_VARS=			BLASLIBS="ptf77blas, ptcblas" \
+				BLASNAME=atlas \
+				LAPACKLIBS=alapack \
+				LIBRARIES=atlas_libs
+NETLIB_LIB_DEPENDS=		libcblas.so:math/cblas
+NETLIB_USES=			blaslapack:netlib
+NETLIB_VARS=			BLASLIBS="blas, cblas" \
+				BLASNAME=atlas \
+				LAPACKLIBS=lapack \
+				LIBRARIES=atlas_libs
+OPENBLAS_USES=			blaslapack:openblas
+OPENBLAS_VARS=			BLASLIBS="openblas, gfortran" \
+				BLASNAME=openblas \
+				LAPACKLIBS="openblas, gfortran" \
+				LIBRARIES=libraries
+SUITESPARSE_LIB_DEPENDS=	libumfpack.so:math/suitesparse-umfpack
 
 post-extract:
 	@${TOUCH} ${WRKSRC}/numpy/f2py/tests/src/temp
