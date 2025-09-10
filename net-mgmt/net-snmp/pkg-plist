@@ -188,6 +188,7 @@ include/net-snmp/system/freebsd12.h
 include/net-snmp/system/freebsd13.h
 include/net-snmp/system/freebsd14.h
 include/net-snmp/system/freebsd15.h
+include/net-snmp/system/freebsd16.h
 include/net-snmp/system/freebsd2.h
 include/net-snmp/system/freebsd3.h
 include/net-snmp/system/freebsd4.h
