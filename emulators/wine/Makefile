@@ -22,6 +22,7 @@ USES=		bison cpe desktop-file-utils gmake \
 		llvm:min=17,build,noexport localbase \
 		pkgconfig sdl shebangfix tar:xz
 USE_GCC=	yes
+USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/wine
 USE_SDL=	sdl2
 
 CPE_VENDOR=	winehq
@@ -55,10 +56,6 @@ CONFIGURE_ARGS+=--verbose \
 		--without-unwind \
 		--without-usb
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
-WINELIBDIR=	${PREFIX}/lib
-.if !defined(USE_LDCONFIG32)
-USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
-.endif
 SHEBANG_FILES=	tools/make_requests tools/winemaker/winemaker \
 		tools/winedump/function_grep.pl
 
