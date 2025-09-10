@@ -117,6 +117,7 @@ include/isc/backtrace.h
 include/isc/barrier.h
 include/isc/base32.h
 include/isc/base64.h
+include/isc/bit.h
 include/isc/buffer.h
 include/isc/commandline.h
 include/isc/counter.h
@@ -234,21 +235,11 @@ include/ns/update.h
 include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
-lib/libdns.so.9.21.11
-lib/libdns.so.9.21
-lib/libdns.so
-lib/libisc.so.9.21.11
-lib/libisc.so.9.21
-lib/libisc.so
-lib/libisccc.so.9.21.11
-lib/libisccc.so.9.21
-lib/libisccc.so
-lib/libisccfg.so.9.21.11
-lib/libisccfg.so.9.21
-lib/libisccfg.so
-lib/libns.so.9.21.11
-lib/libns.so.9.21
-lib/libns.so
+lib/libdns-9.21.12.so
+lib/libisc-9.21.12.so
+lib/libisccc-9.21.12.so
+lib/libisccfg-9.21.12.so
+lib/libns-9.21.12.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
 @comment share/man/man1/dig.1.gz

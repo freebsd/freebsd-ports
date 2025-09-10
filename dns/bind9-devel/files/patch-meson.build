@@ -1,6 +1,6 @@
 Use bind-tools option to ease the server/tools package split
 
---- meson.build.orig	2025-08-13 17:10:38 UTC
+--- meson.build.orig	2025-09-04 15:54:02 UTC
 +++ meson.build
 @@ -69,6 +69,8 @@ zlib_opt = get_option('zlib')
  tracing_opt = get_option('tracing')
@@ -11,59 +11,7 @@ Use bind-tools option to ease the server/tools package split
  if meson.version().version_compare('>=1.1.0')
      build_options = meson.build_options()
      if build_options == ''
-@@ -976,9 +978,15 @@ isc_srcconf = isc_srcset.apply(config, strict: false)
- 
- isc_srcconf = isc_srcset.apply(config, strict: false)
- 
-+project_version = meson.project_version()
-+soversion_parts = project_version.split('.')  # ['1', '2', '3']
-+soversion = '@0@.@1@'.format(soversion_parts[0], soversion_parts[1])
-+
- libisc = library(
-     'isc',
-     isc_srcconf.sources(),
-+    version: project_version,
-+    soversion: soversion,
-     objects: isc_probe_objects,
-     install: true,
-     install_rpath: libdir,
-@@ -1006,6 +1014,8 @@ libdns = library(
- libdns = library(
-     'dns',
-     dns_srcconf.sources(),
-+    version: project_version,
-+    soversion: soversion,
-     include_directories: dns_inc,
-     install: true,
-     install_rpath: libdir,
-@@ -1040,6 +1050,8 @@ libns = library(
- libns = library(
-     'ns',
-     ns_srcconf.sources(),
-+    version: project_version,
-+    soversion: soversion,
-     objects: ns_probe_objects,
-     install: true,
-     install_rpath: libdir,
-@@ -1066,6 +1078,8 @@ libisccc = library(
- libisccc = library(
-     'isccc',
-     isccc_srcconf.sources(),
-+    version: project_version,
-+    soversion: soversion,
-     implicit_include_directories: false,
-     include_directories: isccc_inc,
-     install: true,
-@@ -1087,6 +1101,8 @@ libisccfg = library(
- libisccfg = library(
-     'isccfg',
-     isccfg_srcconf.sources(),
-+    version: project_version,
-+    soversion: soversion,
-     implicit_include_directories: false,
-     include_directories: isccfg_inc,
-     install: true,
-@@ -1107,6 +1123,7 @@ named_srcconf = named_srcset.apply(config, strict: fal
+@@ -1159,6 +1175,7 @@ named_srcconf = named_srcset.apply(config, strict: fal
  
  named_srcconf = named_srcset.apply(config, strict: false)
  
@@ -71,7 +19,7 @@ Use bind-tools option to ease the server/tools package split
  executable(
      'arpaname',
      arpaname_src,
-@@ -1335,7 +1352,9 @@ executable(
+@@ -1371,7 +1388,9 @@ executable(
          libisc_dep,
      ],
  )
@@ -81,7 +29,7 @@ Use bind-tools option to ease the server/tools package split
  executable(
      'named-checkconf',
      named_checkconf_src,
-@@ -1413,7 +1432,9 @@ endif
+@@ -1444,7 +1463,9 @@ endif
          ],
      )
  endif
@@ -91,7 +39,7 @@ Use bind-tools option to ease the server/tools package split
  executable(
      'named-rrchecker',
      named_rrchecker_src,
-@@ -1427,7 +1448,9 @@ executable(
+@@ -1457,7 +1478,9 @@ executable(
      ],
  
  )
@@ -101,7 +49,7 @@ Use bind-tools option to ease the server/tools package split
  executable(
      'named',
      named_srcconf.sources(),
-@@ -1458,7 +1481,9 @@ executable(
+@@ -1487,7 +1510,9 @@ executable(
          named_srcconf.dependencies(),
      ],
  )
@@ -111,7 +59,7 @@ Use bind-tools option to ease the server/tools package split
  executable(
      'nsec3hash',
      nsec3hash_src,
-@@ -1506,7 +1531,9 @@ executable(
+@@ -1532,7 +1557,9 @@ executable(
          edit_dep,
      ],
  )
@@ -121,7 +69,7 @@ Use bind-tools option to ease the server/tools package split
  executable(
      'rndc-confgen',
      rndc_confgen_src,
-@@ -1592,6 +1619,7 @@ shared_library(
+@@ -1613,6 +1640,7 @@ shared_library(
          libns_dep,
      ],
  )
@@ -129,7 +77,7 @@ Use bind-tools option to ease the server/tools package split
  
  subdir('doc')
  subdir('tests')
-@@ -1659,7 +1687,6 @@ print(release_date, end="")
+@@ -1680,7 +1708,6 @@ print(release_date, end="")
  print(release_date, end="")
  '''
  
@@ -137,7 +85,7 @@ Use bind-tools option to ease the server/tools package split
      release_date = ''
      if python.found()
          release_date = run_command(python, ['-c', get_release_date], check: true).stdout()
-@@ -1680,6 +1707,7 @@ if doc_opt.allowed()
+@@ -1701,6 +1728,7 @@ if doc_opt.allowed()
  
      install_man(man_pages)
  
