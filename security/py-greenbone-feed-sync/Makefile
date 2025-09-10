@@ -1,6 +1,7 @@
 PORTNAME=	greenbone-feed-sync
 DISTVERSION=	25.1.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rich>=13.2.0:textproc/py-rich@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomli>=2.0.1:textproc/py-tomli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shtab>=1.6.5:devel/py-shtab@${PY_FLAVOR} \
+		${PY_TOMLI} \
 		rsync:net/rsync
 
 USE_GITHUB=	yes
