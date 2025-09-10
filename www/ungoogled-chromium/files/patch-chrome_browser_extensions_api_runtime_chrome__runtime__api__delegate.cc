@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc.orig	2025-05-31 17:16:41 UTC
+--- chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc.orig	2025-09-10 13:22:16 UTC
 +++ chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc
-@@ -288,7 +288,9 @@ bool ChromeRuntimeAPIDelegate::GetPlatformInfo(Platfor
+@@ -356,7 +356,9 @@ bool ChromeRuntimeAPIDelegate::GetPlatformInfo(Platfor
    } else if (strcmp(os, "linux") == 0) {
      info->os = extensions::api::runtime::PlatformOs::kLinux;
    } else if (strcmp(os, "openbsd") == 0) {
@@ -8,6 +8,6 @@
 +    info->os = extensions::api::runtime::PlatformOs::kLinux;
 +  } else if (strcmp(os, "freebsd") == 0) {
 +    info->os = extensions::api::runtime::PlatformOs::kLinux;
+   } else if (strcmp(os, "android") == 0) {
+     info->os = extensions::api::runtime::PlatformOs::kAndroid;
    } else {
-     NOTREACHED() << "Platform not supported: " << os;
-   }

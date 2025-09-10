@@ -1,15 +1,24 @@
---- services/device/usb/usb_device_handle_usbfs.cc.orig	2025-05-06 12:23:00 UTC
+--- services/device/usb/usb_device_handle_usbfs.cc.orig	2025-09-10 13:22:16 UTC
 +++ services/device/usb/usb_device_handle_usbfs.cc
-@@ -39,7 +39,7 @@
+@@ -38,7 +38,7 @@
  #include "chromeos/dbus/permission_broker/permission_broker_client.h"
  #endif
  
 -#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "base/metrics/histogram_macros.h"
  #include "services/device/public/cpp/device_features.h"
  #include "services/device/usb/usb_interface_detach_allowlist.h"
- #endif  // BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
-@@ -271,7 +271,7 @@ bool UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper::R
+@@ -55,7 +55,7 @@ using mojom::UsbTransferType;
+ 
+ namespace {
+ 
+-#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Outcome of detaching a kernel driver before ClaimInterface().
+ // These values are persisted to logs. Entries should not be renumbered and
+ // numeric values should never be reused.
+@@ -297,7 +297,7 @@ bool UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper::R
    return true;
  }
  
@@ -18,7 +27,7 @@
  bool UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper::DetachInterface(
      int interface_number,
      const CombinedInterfaceInfo& interface_info) {
-@@ -599,7 +599,7 @@ void UsbDeviceHandleUsbfs::ClaimInterface(int interfac
+@@ -633,7 +633,7 @@ void UsbDeviceHandleUsbfs::ClaimInterface(int interfac
      return;
    }
  #endif
@@ -27,7 +36,7 @@
    if (base::FeatureList::IsEnabled(features::kAutomaticUsbDetach)) {
      const mojom::UsbConfigurationInfo* config =
          device_->GetActiveConfiguration();
-@@ -945,7 +945,7 @@ void UsbDeviceHandleUsbfs::ReleaseInterfaceComplete(in
+@@ -979,7 +979,7 @@ void UsbDeviceHandleUsbfs::ReleaseInterfaceComplete(in
      return;
    }
  #endif

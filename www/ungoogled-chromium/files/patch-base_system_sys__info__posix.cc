@@ -1,6 +1,6 @@
---- base/system/sys_info_posix.cc.orig	2025-05-06 12:23:00 UTC
+--- base/system/sys_info_posix.cc.orig	2025-09-10 13:22:16 UTC
 +++ base/system/sys_info_posix.cc
-@@ -143,7 +143,7 @@ void GetKernelVersionNumbers(int32_t* major_version,
+@@ -144,7 +144,7 @@ void GetKernelVersionNumbers(int32_t* major_version,
  
  namespace base {
  
@@ -9,7 +9,7 @@
  // static
  int SysInfo::NumberOfProcessors() {
  #if BUILDFLAG(IS_MAC)
-@@ -199,7 +199,7 @@ int SysInfo::NumberOfProcessors() {
+@@ -200,7 +200,7 @@ int SysInfo::NumberOfProcessors() {
  
    return cached_num_cpus;
  }
@@ -18,7 +18,7 @@
  
  // static
  uint64_t SysInfo::AmountOfVirtualMemory() {
-@@ -285,6 +285,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -286,6 +286,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

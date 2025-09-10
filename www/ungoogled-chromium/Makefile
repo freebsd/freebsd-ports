@@ -1,6 +1,5 @@
 PORTNAME=	ungoogled-chromium
-PORTVERSION=	137.0.7151.103
-PORTREVISION=	5
+PORTVERSION=	140.0.7339.80
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 UGVERSION=	${DISTVERSION}-1
@@ -140,7 +139,6 @@ GN_ARGS+=	build_with_tflite_lib=false \
 		enable_backup_ref_ptr_support=false \
 		enable_hangout_services_extension=false \
 		enable_mdns=false \
-		enable_nacl=false \
 		enable_reading_list=false \
 		enable_remoting=false \
 		enable_reporting=false \

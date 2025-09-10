@@ -1,6 +1,6 @@
---- chrome/browser/supervised_user/classify_url_navigation_throttle.cc.orig	2025-05-31 17:16:41 UTC
+--- chrome/browser/supervised_user/classify_url_navigation_throttle.cc.orig	2025-09-10 13:22:16 UTC
 +++ chrome/browser/supervised_user/classify_url_navigation_throttle.cc
-@@ -68,7 +68,7 @@ std::ostream& operator<<(std::ostream& stream,
+@@ -70,7 +70,7 @@ std::ostream& operator<<(std::ostream& stream,
    }
  }
  
@@ -9,7 +9,7 @@
  bool ShouldShowReAuthInterstitial(
      content::NavigationHandle& navigation_handle) {
    Profile* profile = Profile::FromBrowserContext(
-@@ -229,7 +229,7 @@ void ClassifyUrlNavigationThrottle::OnInterstitialResu
+@@ -232,7 +232,7 @@ void ClassifyUrlNavigationThrottle::OnInterstitialResu
      }
      case InterstitialResultCallbackActions::kCancelWithInterstitial: {
        CHECK(navigation_handle());

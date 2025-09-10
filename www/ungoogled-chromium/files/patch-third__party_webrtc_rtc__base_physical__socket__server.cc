@@ -1,24 +1,24 @@
---- third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2025-05-31 17:16:41 UTC
+--- third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2025-09-10 13:22:16 UTC
 +++ third_party/webrtc/rtc_base/physical_socket_server.cc
-@@ -65,7 +65,7 @@
- #include "rtc_base/synchronization/mutex.h"
- #include "rtc_base/time_utils.h"
+@@ -61,7 +61,7 @@
+ #undef SetPort
+ #endif
  
 -#if defined(WEBRTC_LINUX)
 +#if defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD)
+ #include <asm-generic/socket.h>
  #include <linux/sockios.h>
- #endif
- 
-@@ -85,7 +85,7 @@ typedef void* SockOptArg;
- 
+ #include <sys/epoll.h>
+@@ -78,7 +78,7 @@
+ typedef void* SockOptArg;
  #endif  // WEBRTC_POSIX
  
--#if defined(WEBRTC_POSIX) && !defined(WEBRTC_MAC) && !defined(__native_client__)
-+#if defined(WEBRTC_POSIX) && !defined(WEBRTC_MAC) && !defined(__native_client__) && !defined(WEBRTC_BSD)
- 
+-#if defined(WEBRTC_POSIX) && !defined(WEBRTC_MAC)
++#if defined(WEBRTC_POSIX) && !defined(WEBRTC_MAC) && !defined(WEBRTC_BSD)
  int64_t GetSocketRecvTimestamp(int socket) {
    struct timeval tv_ioctl;
-@@ -341,7 +341,7 @@ int PhysicalSocket::GetOption(Option opt, int* value) 
+   int ret = ioctl(socket, SIOCGSTAMP, &tv_ioctl);
+@@ -331,7 +331,7 @@ int PhysicalSocket::GetOption(Option opt, int* value) 
      return -1;
    }
    if (opt == OPT_DONTFRAGMENT) {
@@ -27,7 +27,7 @@
      *value = (*value != IP_PMTUDISC_DONT) ? 1 : 0;
  #endif
    } else if (opt == OPT_DSCP) {
-@@ -370,7 +370,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
+@@ -360,7 +360,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
    if (TranslateOption(opt, &slevel, &sopt) == -1)
      return -1;
    if (opt == OPT_DONTFRAGMENT) {
@@ -36,7 +36,7 @@
      value = (value) ? IP_PMTUDISC_DO : IP_PMTUDISC_DONT;
  #endif
    } else if (opt == OPT_DSCP) {
-@@ -401,7 +401,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
+@@ -391,7 +391,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
  int PhysicalSocket::Send(const void* pv, size_t cb) {
    int sent = DoSend(
        s_, reinterpret_cast<const char*>(pv), static_cast<int>(cb),
@@ -45,7 +45,7 @@
        // Suppress SIGPIPE. Without this, attempting to send on a socket whose
        // other end is closed will result in a SIGPIPE signal being raised to
        // our process, which by default will terminate the process, which we
-@@ -430,7 +430,7 @@ int PhysicalSocket::SendTo(const void* buffer,
+@@ -420,7 +420,7 @@ int PhysicalSocket::SendTo(const void* buffer,
    size_t len = addr.ToSockAddrStorage(&saddr);
    int sent =
        DoSendTo(s_, static_cast<const char*>(buffer), static_cast<int>(length),
@@ -54,16 +54,16 @@
                 // Suppress SIGPIPE. See above for explanation.
                 MSG_NOSIGNAL,
  #else
-@@ -708,7 +708,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -698,7 +698,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *slevel = IPPROTO_IP;
        *sopt = IP_DONTFRAGMENT;
        break;
--#elif defined(WEBRTC_MAC) || defined(BSD) || defined(__native_client__)
-+#elif defined(WEBRTC_MAC) || defined(WEBRTC_BSD) || defined(__native_client__)
+-#elif defined(WEBRTC_MAC) || defined(BSD)
++#elif defined(WEBRTC_MAC) || defined(WEBRTC_BSD)
        RTC_LOG(LS_WARNING) << "Socket::OPT_DONTFRAGMENT not supported.";
        return -1;
  #elif defined(WEBRTC_POSIX)
-@@ -757,7 +757,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -747,7 +747,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        return -1;
  #endif
      case OPT_RECV_ECN:
@@ -72,7 +72,7 @@
        if (family_ == AF_INET6) {
          *slevel = IPPROTO_IPV6;
          *sopt = IPV6_RECVTCLASS;
-@@ -777,10 +777,19 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -767,10 +767,19 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *sopt = SO_KEEPALIVE;
        break;
      case OPT_TCP_KEEPCNT:
@@ -92,7 +92,7 @@
        *slevel = IPPROTO_TCP;
  #if !defined(WEBRTC_MAC)
        *sopt = TCP_KEEPIDLE;
-@@ -788,12 +797,18 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -778,12 +787,18 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *sopt = TCP_KEEPALIVE;
  #endif
        break;

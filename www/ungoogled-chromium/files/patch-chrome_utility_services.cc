@@ -1,6 +1,6 @@
---- chrome/utility/services.cc.orig	2025-05-06 12:23:00 UTC
+--- chrome/utility/services.cc.orig	2025-09-10 13:22:16 UTC
 +++ chrome/utility/services.cc
-@@ -48,7 +48,7 @@
+@@ -50,7 +50,7 @@
  #include "chrome/services/system_signals/mac/mac_system_signals_service.h"
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -9,7 +9,7 @@
  #include "chrome/services/system_signals/linux/linux_system_signals_service.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -203,7 +203,7 @@ auto RunMacNotificationService(
+@@ -213,7 +213,7 @@ auto RunMacNotificationService(
  }
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -18,7 +18,7 @@
  auto RunSystemSignalsService(
      mojo::PendingReceiver<device_signals::mojom::SystemSignalsService>
          receiver) {
-@@ -470,7 +470,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -481,7 +481,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunWindowsIconReader);
  #endif  // BUILDFLAG(IS_WIN)
  

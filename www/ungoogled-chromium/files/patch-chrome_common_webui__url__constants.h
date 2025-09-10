@@ -1,14 +1,7 @@
---- chrome/common/webui_url_constants.h.orig	2025-05-31 17:16:41 UTC
+--- chrome/common/webui_url_constants.h.orig	2025-09-10 13:22:16 UTC
 +++ chrome/common/webui_url_constants.h
-@@ -524,18 +524,18 @@ inline constexpr char kChromeUIOsUrlAppURL[] = "chrome
+@@ -557,12 +557,12 @@ inline constexpr char kChromeUIOsUrlAppURL[] = "chrome
  #endif  // BUILDFLAG(IS_CHROMEOS)
- 
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- inline constexpr char kChromeUIConnectorsInternalsHost[] =
-     "connectors-internals";
- #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_DESKTOP_ANDROID)
@@ -22,7 +15,7 @@
  inline constexpr char kChromeUIWebAppSettingsHost[] = "app-settings";
  inline constexpr char kChromeUIWebAppSettingsURL[] = "chrome://app-settings/";
  inline constexpr char kChromeUIWhatsNewHost[] = "whats-new";
-@@ -547,11 +547,11 @@ inline constexpr char kChromeUILinuxProxyConfigHost[] 
+@@ -574,11 +574,11 @@ inline constexpr char kChromeUILinuxProxyConfigHost[] 
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -36,12 +29,12 @@
  inline constexpr char kChromeUIBrowserSwitchHost[] = "browser-switch";
  inline constexpr char kChromeUIBrowserSwitchURL[] = "chrome://browser-switch/";
  inline constexpr char kChromeUIIntroDefaultBrowserSubPage[] = "default-browser";
-@@ -576,7 +576,7 @@ inline constexpr char kChromeUIHistorySyncOptinURL[] =
+@@ -603,7 +603,7 @@ inline constexpr char kChromeUIHistorySyncOptinURL[] =
      "chrome://history-sync-optin/";
  #endif
  
 -#if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && \
-+#if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) && \
++#if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || BUILDFLAG(IS_CHROMEOS)) && \
       defined(TOOLKIT_VIEWS)) ||                         \
      defined(USE_AURA)
  inline constexpr char kChromeUITabModalConfirmDialogHost[] =

@@ -1,7 +1,7 @@
---- components/device_signals/core/common/signals_features.h.orig	2025-05-31 17:16:41 UTC
+--- components/device_signals/core/common/signals_features.h.orig	2025-09-10 13:22:16 UTC
 +++ components/device_signals/core/common/signals_features.h
-@@ -29,7 +29,7 @@ bool IsProfileSignalsReportingEnabled();
- bool IsBrowserSignalsReportingEnabled();
+@@ -33,7 +33,7 @@ bool IsBrowserSignalsReportingEnabled();
+ bool IsDetectedAgentSignalCollectionEnabled();
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_CHROMEOS)

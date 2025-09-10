@@ -1,6 +1,6 @@
---- ipc/ipc_channel_mojo.cc.orig	2023-02-11 09:11:04 UTC
+--- ipc/ipc_channel_mojo.cc.orig	2025-09-10 13:22:16 UTC
 +++ ipc/ipc_channel_mojo.cc
-@@ -105,7 +105,7 @@ class ThreadSafeChannelProxy : public mojo::ThreadSafe
+@@ -104,7 +104,7 @@ class ThreadSafeChannelProxy : public mojo::ThreadSafe
  };
  
  base::ProcessId GetSelfPID() {

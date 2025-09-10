@@ -1,8 +1,8 @@
---- chrome/browser/webauthn/password_credential_controller.cc.orig	2025-05-06 12:23:00 UTC
+--- chrome/browser/webauthn/password_credential_controller.cc.orig	2025-09-10 13:22:16 UTC
 +++ chrome/browser/webauthn/password_credential_controller.cc
 @@ -46,7 +46,7 @@ password_manager::PasswordManagerClient* GetPasswordMa
- }
  
+ #if !BUILDFLAG(IS_ANDROID)
  std::u16string GetAuthenticationMessage(std::string_view rp_id) {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

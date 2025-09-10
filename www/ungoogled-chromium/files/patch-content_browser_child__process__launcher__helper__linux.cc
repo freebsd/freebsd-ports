@@ -1,4 +1,4 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2024-06-22 08:49:42 UTC
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2025-09-10 13:22:16 UTC
 +++ content/browser/child_process_launcher_helper_linux.cc
 @@ -22,7 +22,9 @@
  #include "content/public/common/result_codes.h"
@@ -109,7 +109,7 @@
  }
  
  void ChildProcessLauncherHelper::SetProcessPriorityOnLauncherThread(
-@@ -182,11 +202,13 @@ void ChildProcessLauncherHelper::SetProcessPriorityOnL
+@@ -181,11 +201,13 @@ void ChildProcessLauncherHelper::SetProcessPriorityOnL
    }
  }
  

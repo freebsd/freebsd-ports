@@ -1,4 +1,4 @@
---- content/common/gpu_pre_sandbox_hook_bsd.cc.orig	2024-04-23 07:42:17 UTC
+--- content/common/gpu_pre_sandbox_hook_bsd.cc.orig	2025-09-10 13:22:16 UTC
 +++ content/common/gpu_pre_sandbox_hook_bsd.cc
 @@ -0,0 +1,68 @@
 +// Copyright 2023 The Chromium Authors
@@ -49,14 +49,14 @@
 +  }
 +}
 +
++}  // namespace
++
 +bool LoadLibrariesForGpu(
 +    const sandbox::policy::SandboxSeccompBPF::Options& options) {
 +  LoadVulkanLibraries();
 +
 +  return true;
 +}
-+
-+}  // namespace
 +
 +bool GpuPreSandboxHook(sandbox::policy::SandboxLinux::Options options) {
 +  if (!LoadLibrariesForGpu(options))
