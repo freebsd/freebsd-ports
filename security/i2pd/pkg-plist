@@ -14,7 +14,6 @@ share/man/man1/i2pd.1.gz
 %%DATADIR%%/certificates/family/volatile.crt
 %%DATADIR%%/certificates/reseed/acetone_at_mail.i2p.crt
 %%DATADIR%%/certificates/reseed/admin_at_stormycloud.org.crt
-%%DATADIR%%/certificates/reseed/arnavbhatt288_at_mail.i2p.crt
 %%DATADIR%%/certificates/reseed/creativecowpat_at_mail.i2p.crt
 %%DATADIR%%/certificates/reseed/echelon3_at_mail.i2p.crt
 %%DATADIR%%/certificates/reseed/hankhill19580_at_gmail.com.crt
@@ -25,7 +24,6 @@ share/man/man1/i2pd.1.gz
 %%DATADIR%%/certificates/reseed/r4sas-reseed_at_mail.i2p.crt
 %%DATADIR%%/certificates/reseed/rambler_at_mail.i2p.crt
 %%DATADIR%%/certificates/reseed/reseed_at_diva.exchange.crt
-%%DATADIR%%/certificates/reseed/unixeno_at_cubicchaos.net.crt
 @dir %%ETCDIR%%/tunnels.d
 @dir(%%USER%%,%%GROUP%%,755) /var/db/i2pd
 @dir(%%USER%%,%%GROUP%%,755) /var/log/i2pd
