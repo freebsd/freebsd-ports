@@ -38,14 +38,6 @@ lib/libgbm%%SUFFIX%%.so.1.0.0
 %%anv%%lib/libvulkan_intel%%SUFFIX%%.so
 %%hasvk%%lib/libvulkan_intel_hasvk%%SUFFIX%%.so
 %%radv%%lib/libvulkan_radeon%%SUFFIX%%.so
-%%VDPAU%%%%r600%%lib/vdpau%%SUFFIX%%/libvdpau_r600.so
-%%VDPAU%%%%r600%%lib/vdpau%%SUFFIX%%/libvdpau_r600.so.1
-%%VDPAU%%%%r600%%lib/vdpau%%SUFFIX%%/libvdpau_r600.so.1.0
-%%VDPAU%%%%r600%%lib/vdpau%%SUFFIX%%/libvdpau_r600.so.1.0.0
-%%VDPAU%%%%radeonsi%%lib/vdpau%%SUFFIX%%/libvdpau_radeonsi.so
-%%VDPAU%%%%radeonsi%%lib/vdpau%%SUFFIX%%/libvdpau_radeonsi.so.1
-%%VDPAU%%%%radeonsi%%lib/vdpau%%SUFFIX%%/libvdpau_radeonsi.so.1.0
-%%VDPAU%%%%radeonsi%%lib/vdpau%%SUFFIX%%/libvdpau_radeonsi.so.1.0.0
 %%NO_COINST%%libdata/pkgconfig/dri.pc
 %%NO_COINST%%libdata/pkgconfig/gbm.pc
 share/drirc.d/00-mesa%%SUFFIX%%-defaults.conf

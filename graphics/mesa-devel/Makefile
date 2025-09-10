@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	25.2-branchpoint-2843
-DISTVERSIONSUFFIX=	-g29fb897c0a0
+DISTVERSION=	25.2-branchpoint-3042
+DISTVERSIONSUFFIX=	-ga9ea4630d47
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -46,8 +46,8 @@ MESON_ARGS=	-Dgallium-mediafoundation=disabled \
 LDFLAGS+=	-Wl,--undefined-version # https://gitlab.freedesktop.org/mesa/mesa/-/issues/8003
 PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/}
 
-OPTIONS_DEFINE=		DRM LLVM LTO OPENCL VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
-OPTIONS_DEFAULT=	DRM LLVM LTO OPENCL VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
+OPTIONS_DEFINE=		DRM LLVM LTO OPENCL VAAPI VKLAYERS WAYLAND X11 ZSTD
+OPTIONS_DEFAULT=	DRM LLVM LTO OPENCL VAAPI VKLAYERS WAYLAND X11 ZSTD
 OPTIONS_GROUP=		GALLIUM VULKAN
 OPTIONS_GROUP_GALLIUM=	crocus iris panfrost r600 radeonsi
 OPTIONS_GROUP_VULKAN=	anv hasvk radv
@@ -124,11 +124,6 @@ OPENCL_IMPLIES=		LLVM ${"${PORT_OPTIONS:Miris}":?iris:radeonsi} # any from OPTIO
 VAAPI_DESC=		Hardware encoding/decoding (only r600, radeonsi)
 VAAPI_BUILD_DEPENDS=	libva>0:multimedia/libva
 VAAPI_MESON_ENABLED=	gallium-va
-
-VDPAU_DESC=		Hardware decoding (only r600, radeonsi) (implies X11)
-VDPAU_BUILD_DEPENDS=	libvdpau>0:multimedia/libvdpau
-VDPAU_MESON_ENABLED=	gallium-vdpau
-VDPAU_IMPLIES=		X11
 
 VKLAYERS_DESC=		Vulkan layers: ${VKLAYERS_MESON_ON:C/.*=//} (implies ${VKLAYERS_IMPLIES})
 VKLAYERS_BUILD_DEPENDS=	glslangValidator:graphics/glslang

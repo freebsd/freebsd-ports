@@ -15,5 +15,3 @@ libgbm.so.1 libgbm%%SUFFIX%%.so.1
 
 %%VAAPI%%%%r600%%%%PREFIX%%/lib/dri/r600_drv_video.so %%PREFIX%%/lib/dri%%SUFFIX%%/r600_drv_video.so
 %%VAAPI%%%%radeonsi%%%%PREFIX%%/lib/dri/radeonsi_drv_video.so %%PREFIX%%/lib/dri%%SUFFIX%%/radeonsi_drv_video.so
-%%VDPAU%%%%r600%%%%PREFIX%%/lib/vdpau/libvdpau_r600.so.1 %%PREFIX%%/lib/vdpau%%SUFFIX%%/libvdpau_r600.so.1
-%%VDPAU%%%%radeonsi%%%%PREFIX%%/lib/vdpau/libvdpau_radeonsi.so.1 %%PREFIX%%/lib/vdpau%%SUFFIX%%/libvdpau_radeonsi.so.1
