@@ -71,3 +71,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 589f6da84c646204747d1270
 SIZE (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 832564
 SHA256 (waypipe-v0.10.4.tar.bz2) = 4de622de39890912a0242e446b8d401f6fe385977985224f15353d40d6f7f0a3
 SIZE (waypipe-v0.10.4.tar.bz2) = 441033
+SHA256 (02891f1514bf.patch) = 53d5de05aeb2f3457dacade335f03f930407259c14156cad8990427a855ac3be
+SIZE (02891f1514bf.patch) = 2317

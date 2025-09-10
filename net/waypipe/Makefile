@@ -1,8 +1,11 @@
 PORTNAME=	waypipe
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net wayland
+
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	02891f1514bf.patch:-p1 # https://gitlab.freedesktop.org/mstoeckl/waypipe/-/merge_requests/32
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Network transparency with Wayland
