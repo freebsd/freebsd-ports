@@ -1,9 +1,3 @@
-===>  License MIT accepted by the user
-===>   rust-coreutils-0.2.2 depends on file: /usr/local/sbin/pkg - found
-===> Fetching all distfiles required by rust-coreutils-0.2.2 for building
-===>  Extracting for rust-coreutils-0.2.2
-=> SHA256 Checksum OK for uutils-coreutils-0.2.2_GH0.tar.gz.
-===>  Moving crates to /tmp/usr/ports/sysutils/rust-coreutils/work/coreutils-0.2.2/cargo-crates
 CARGO_CRATES=	adler2-2.0.1 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.21 \
