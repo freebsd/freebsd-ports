@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--disable-asciidoc \
 		--disable-nls \
 		--disable-makeinstall-chown \
 		--disable-makeinstall-setuid \
+		--disable-year2038 \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 GNU_CONFIGURE=	yes
 
