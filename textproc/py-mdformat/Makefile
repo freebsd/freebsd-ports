@@ -1,13 +1,13 @@
 # XXX: see below (post-patch target) before updating
 PORTNAME=	mdformat
 DISTVERSION=	0.7.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	CommonMark compliant Markdown formatter
-WWW=		https://github.com/executablebooks/mdformat
+WWW=		https://github.com/hukkin/mdformat
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0.0:devel/py-setuptools@${P
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.6.0:devel/py-importlib-metadata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown-it-py>=1<5:textproc/py-markdown-it-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mdurl>=0.1.2:textproc/py-mdurl@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomli>=1.1.0:textproc/py-tomli@${PY_FLAVOR} \
+		${PY_TOMLI} \
 		${PYTHON_PKGNAMEPREFIX}zipp>=0.5:devel/py-zipp@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.3.0_1:devel/py-covdefaults@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=4.1.0:devel/py-pytest-cov@${PY_FLAVOR} \
