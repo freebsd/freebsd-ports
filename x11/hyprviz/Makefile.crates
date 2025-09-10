@@ -16,7 +16,7 @@ CARGO_CRATES=	autocfg-1.4.0 \
 		gdk-pixbuf-sys-0.21.0 \
 		gdk4-0.10.0 \
 		gdk4-sys-0.10.0 \
-		gio-0.21.0 \
+		gio-0.21.1 \
 		gio-sys-0.21.0 \
 		glib-0.21.0 \
 		glib-macros-0.21.0 \
@@ -34,7 +34,7 @@ CARGO_CRATES=	autocfg-1.4.0 \
 		hyprparser-0.1.6 \
 		indexmap-2.6.0 \
 		itoa-1.0.11 \
-		libc-0.2.174 \
+		libc-0.2.175 \
 		memchr-2.7.5 \
 		memoffset-0.9.1 \
 		pango-0.21.0 \
@@ -50,7 +50,7 @@ CARGO_CRATES=	autocfg-1.4.0 \
 		semver-1.0.23 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
-		serde_json-1.0.142 \
+		serde_json-1.0.143 \
 		serde_spanned-0.6.9 \
 		slab-0.4.9 \
 		smallvec-1.15.1 \
