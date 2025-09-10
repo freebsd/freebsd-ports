@@ -1,5 +1,5 @@
 PORTNAME=	Image-ExifTool
-DISTVERSION=	13.35
+DISTVERSION=	13.36
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://exiftool.org/ \
 		SF/exiftool
