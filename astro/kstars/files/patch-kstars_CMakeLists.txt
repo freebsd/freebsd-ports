@@ -6,17 +6,17 @@ ld: error: undefined symbol: pthread_create
 std::__1::default_delete<io::ByteSourceBase>>)::'lambda'(), void>(io::detail::AsynchronousReader::init(std::__1::unique_ptr<io::ByteSourceBase,
 std::__1::default_delete<io::ByteSourceBase>>)::'lambda'()&&)) in archive lib/libKStarsLib.a
 
---- kstars/CMakeLists.txt.orig	2024-10-01 07:34:49 UTC
+--- kstars/CMakeLists.txt.orig	2025-08-10 17:18:25 UTC
 +++ kstars/CMakeLists.txt
-@@ -1314,6 +1314,7 @@ IF (NOT ANDROID)
-     ${ZLIB_LIBRARIES}
-     Eigen3::Eigen
-     GSL::gsl
-+    Threads::Threads
+@@ -1358,6 +1358,7 @@ IF (NOT ANDROID)
+         ${ZLIB_LIBRARIES}
+         Eigen3::Eigen
+         GSL::gsl
++        Threads::Threads
      )
      if (BUILD_QT5)
          target_link_libraries(KStarsLib
-@@ -1412,7 +1413,6 @@ if(INDI_FOUND)
+@@ -1458,7 +1459,6 @@ if(INDI_FOUND)
      ## Linux + MacOS Lite: Requires INDI Qt5 Client
      ## Android: Requires INDI Qt5 Client built for Android
      if (NOT ANDROID)
