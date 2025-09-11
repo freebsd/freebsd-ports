@@ -1,7 +1,7 @@
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 
@@ -39,7 +39,9 @@ GH_PROJECT=	jdk18u
 
 NO_CCACHE=	yes
 
-_MAKE_JOBS=	#
+# Suppress passing -j to do-build target via Mk/bsd.port.mk
+# In the JDK build the number of parallel jobs is passed in via configure --with-num-cores=N
+_MAKE_JOBS=
 MAKE_ENV=	LANG="C" \
 		LC_ALL="C" \
 		CLASSPATH="" \
@@ -48,6 +50,7 @@ MAKE_ENV=	LANG="C" \
 		CC=${CC} \
 		CXX=${CXX} \
 		CPP=${CPP} \
+		LOG=cmdlines \
 		MAKEFLAGS=""
 
 JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc64/ppc64/}
@@ -90,6 +93,7 @@ CONFIGURE_ARGS=	--with-boot-jdk=${BOOTSTRAPJDKDIR} \
 		--with-giflib-lib=${LOCALBASE}/lib \
 		--with-harfbuzz=system \
 		--with-libpng=system \
+		--with-num-cores=${MAKE_JOBS_NUMBER} \
 		--with-zlib=system \
 		--with-lcms=system \
 		--x-includes=${LOCALBASE}/include \
@@ -112,6 +116,11 @@ ALL_TARGET=		images
 JDK_BUILD_TYPE=		release
 
 .include <bsd.port.pre.mk>
+
+# portsfallout.com shows flapping builds on 13.5 and 14.2
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1403000
+MAKE_JOBS_UNSAFE=	yes
+.endif
 
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk18
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH:Mpowerpc64*}

@@ -40,7 +40,7 @@ GH_PROJECT=	jdk17u
 NO_CCACHE=	yes
 
 # Suppress passing -j to do-build target via Mk/bsd.port.mk
-# In the JDK build the number of parallel jobs is passed in via configure --with-jobs=N
+# In the JDK build the number of parallel jobs is passed in via configure --with-num-cores=N
 _MAKE_JOBS=
 MAKE_ENV=	LANG="C" \
 		LC_ALL="C" \
