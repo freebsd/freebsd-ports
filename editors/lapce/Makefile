@@ -1,6 +1,7 @@
 PORTNAME=	lapce
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.5 # Cargo.lock patched: `make patch cargo-crates`
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -15,7 +16,8 @@ NOT_FOR_ARCHS_REASON_i386=	doesn't build: [zstd-sys 2.0.1+zstd.1.5.2] AR_i686_un
 
 LIB_DEPENDS=	libssh2.so:security/libssh2 \
 		libgit2.so:devel/libgit2
-RUN_DEPENDS=	xdg-desktop-portal>0:deskutils/xdg-desktop-portal
+RUN_DEPENDS=	tree-sitter-grammars>0:textproc/tree-sitter-grammars \
+		xdg-desktop-portal>0:deskutils/xdg-desktop-portal
 
 USES=		cargo desktop-file-utils dos2unix gmake localbase:ldflags perl5 pkgconfig ssl xorg
 USE_GITHUB=	yes
@@ -44,5 +46,6 @@ post-install:
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/cargo-crates/fontdb-0.16.2/src/lib.rs
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/cargo-crates/fontdb-0.23.0/src/lib.rs
+	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${PREFIX}/share|g' ${WRKSRC}/lapce-core/src/directory.rs
 
 .include <bsd.port.mk>
