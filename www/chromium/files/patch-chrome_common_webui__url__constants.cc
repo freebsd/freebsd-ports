@@ -1,12 +1,7 @@
---- chrome/common/webui_url_constants.cc.orig	2025-08-07 06:57:29 UTC
+--- chrome/common/webui_url_constants.cc.orig	2025-09-06 10:01:20 UTC
 +++ chrome/common/webui_url_constants.cc
-@@ -194,21 +194,21 @@ base::span<const base::cstring_view> ChromeURLHosts() 
+@@ -194,17 +194,17 @@ base::span<const base::cstring_view> ChromeURLHosts() 
        kChromeUIAssistantOptInHost,
- #endif
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-       kChromeUIConnectorsInternalsHost,
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_DESKTOP_ANDROID)

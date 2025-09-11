@@ -1,8 +1,8 @@
---- ui/gfx/switches.cc.orig	2024-04-23 07:42:17 UTC
+--- ui/gfx/switches.cc.orig	2025-09-10 13:22:16 UTC
 +++ ui/gfx/switches.cc
-@@ -32,7 +32,7 @@ const char kForcePrefersNoReducedMotion[] = "force-pre
- // Run in headless mode, i.e., without a UI or display server dependencies.
- const char kHeadless[] = "headless";
+@@ -36,7 +36,7 @@ const char kHeadless[] = "headless";
+ // See //components/headless/screen_info/README.md for more details.
+ const char kScreenInfo[] = "screen-info";
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

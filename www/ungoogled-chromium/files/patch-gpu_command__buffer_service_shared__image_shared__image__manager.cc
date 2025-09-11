@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/shared_image_manager.cc.orig	2025-04-15 08:30:07 UTC
+--- gpu/command_buffer/service/shared_image/shared_image_manager.cc.orig	2025-09-10 13:22:16 UTC
 +++ gpu/command_buffer/service/shared_image/shared_image_manager.cc
-@@ -756,7 +756,7 @@ bool SharedImageManager::SupportsScanoutImages() {
+@@ -760,7 +760,7 @@ bool SharedImageManager::SupportsScanoutImages() {
    return true;
  #elif BUILDFLAG(IS_ANDROID)
    return base::AndroidHardwareBufferCompat::IsSupportAvailable();

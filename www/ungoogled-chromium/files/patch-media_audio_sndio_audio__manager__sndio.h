@@ -1,4 +1,4 @@
---- media/audio/sndio/audio_manager_sndio.h.orig	2022-10-01 07:40:07 UTC
+--- media/audio/sndio/audio_manager_sndio.h.orig	2025-09-10 13:22:16 UTC
 +++ media/audio/sndio/audio_manager_sndio.h
 @@ -0,0 +1,66 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -34,7 +34,7 @@
 +  void GetAudioOutputDeviceNames(AudioDeviceNames* device_names) override;
 +  AudioParameters GetInputStreamParameters(
 +      const std::string& device_id) override;
-+  const char* GetName() override;
++  const std::string_view GetName() override;
 +
 +  // Implementation of AudioManagerBase.
 +  AudioOutputStream* MakeLinearOutputStream(

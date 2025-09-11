@@ -1,6 +1,6 @@
---- base/memory/platform_shared_memory_region_posix.cc.orig	2025-05-31 17:16:41 UTC
+--- base/memory/platform_shared_memory_region_posix.cc.orig	2025-09-10 13:22:16 UTC
 +++ base/memory/platform_shared_memory_region_posix.cc
-@@ -61,7 +61,7 @@ std::optional<FDAccessModeError> CheckFDAccessMode(int
+@@ -59,7 +59,7 @@ std::optional<FDAccessModeError> CheckFDAccessMode(int
  
  }  // namespace
  
@@ -9,7 +9,7 @@
  // static
  ScopedFD PlatformSharedMemoryRegion::ExecutableRegion::CreateFD(size_t size) {
    PlatformSharedMemoryRegion region =
-@@ -183,7 +183,7 @@ bool PlatformSharedMemoryRegion::ConvertToUnsafe() {
+@@ -184,7 +184,7 @@ bool PlatformSharedMemoryRegion::ConvertToUnsafe() {
  // static
  PlatformSharedMemoryRegion PlatformSharedMemoryRegion::Create(Mode mode,
                                                                size_t size
@@ -18,7 +18,7 @@
                                                                ,
                                                                bool executable
  #endif
-@@ -212,7 +212,7 @@ PlatformSharedMemoryRegion PlatformSharedMemoryRegion:
+@@ -209,7 +209,7 @@ PlatformSharedMemoryRegion PlatformSharedMemoryRegion:
    // flag.
    FilePath directory;
    if (!GetShmemTempDir(

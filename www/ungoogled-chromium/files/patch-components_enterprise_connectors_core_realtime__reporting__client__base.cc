@@ -1,7 +1,7 @@
---- components/enterprise/connectors/core/realtime_reporting_client_base.cc.orig	2025-05-31 17:16:41 UTC
+--- components/enterprise/connectors/core/realtime_reporting_client_base.cc.orig	2025-09-10 13:22:16 UTC
 +++ components/enterprise/connectors/core/realtime_reporting_client_base.cc
 @@ -191,7 +191,7 @@ void RealtimeReportingClientBase::ReportEvent(
-     event.mutable_time()->set_nanos((timestamp_millis % 1000) * 1000000);
+     *event.mutable_time() = ToProtoTimestamp(base::Time::Now());
    }
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

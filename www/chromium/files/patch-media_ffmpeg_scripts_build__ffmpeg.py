@@ -1,4 +1,4 @@
---- media/ffmpeg/scripts/build_ffmpeg.py.orig	2025-07-02 06:08:04 UTC
+--- media/ffmpeg/scripts/build_ffmpeg.py.orig	2025-09-06 10:01:20 UTC
 +++ media/ffmpeg/scripts/build_ffmpeg.py
 @@ -33,7 +33,7 @@ NDK_ROOT_DIR = os.path.abspath(
  SUCCESS_TOKEN = 'THIS_BUILD_WORKED'
@@ -12,13 +12,13 @@
 @@ -43,6 +43,8 @@ BRANDINGS = [
  ARCH_MAP = {
      'android': ['ia32', 'x64', 'arm-neon', 'arm64'],
-     'linux': ['ia32', 'x64', 'noasm-x64', 'arm', 'arm-neon', 'arm64'],
+     'linux': ['ia32', 'x64', 'noasm-x64', 'arm', 'arm-neon', 'arm64', 'riscv64'],
 +    'openbsd': ['x64', 'arm64', 'ia32'],
 +    'freebsd': ['x64', 'arm64', 'ia32'],
      'mac': ['x64', 'arm64'],
      'win': ['ia32', 'x64', 'arm64'],
  }
-@@ -122,7 +124,7 @@ def PrintAndCheckCall(argv, *args, **kwargs):
+@@ -124,7 +126,7 @@ def PrintAndCheckCall(argv, *args, **kwargs):
  
  
  def GetDsoName(target_os, dso_name, dso_version):
@@ -27,7 +27,7 @@
          return 'lib%s.so.%s' % (dso_name, dso_version)
      elif target_os == 'mac':
          return 'lib%s.%s.dylib' % (dso_name, dso_version)
-@@ -473,7 +475,7 @@ def BuildFFmpeg(target_os, target_arch, host_os, host_
+@@ -475,7 +477,7 @@ def BuildFFmpeg(target_os, target_arch, host_os, host_
      # removing <sys/sysctl.h> soon, so this is needed to silence a deprecation
      # #warning which will be converted to an error via -Werror.
      # There is also no prctl.h
@@ -36,7 +36,7 @@
          pre_make_rewrites += [
              (r'(#define HAVE_SYSCTL [01])',
               r'#define HAVE_SYSCTL 0 /* \1 -- forced to 0 for Fuchsia */'),
-@@ -596,7 +598,7 @@ def main(argv):
+@@ -598,7 +600,7 @@ def main(argv):
      configure_args = args[2:]
  
      if target_os not in ('android', 'linux', 'linux-noasm', 'mac', 'win',
@@ -45,7 +45,7 @@
          parser.print_help()
          return 1
  
-@@ -710,7 +712,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -712,7 +714,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
              '--optflags="-O2"',
          ])
  
@@ -54,7 +54,7 @@
          if target_arch == 'x64':
              if target_os == 'android':
                  configure_flags['Common'].extend([
-@@ -825,9 +827,6 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -827,9 +829,6 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
  
                  configure_flags['Common'].extend([
                      '--target-os=linux',

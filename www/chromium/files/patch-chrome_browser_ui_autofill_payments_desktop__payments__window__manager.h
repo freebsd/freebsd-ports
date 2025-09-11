@@ -1,4 +1,4 @@
---- chrome/browser/ui/autofill/payments/desktop_payments_window_manager.h.orig	2025-05-28 14:55:43 UTC
+--- chrome/browser/ui/autofill/payments/desktop_payments_window_manager.h.orig	2025-09-06 10:01:20 UTC
 +++ chrome/browser/ui/autofill/payments/desktop_payments_window_manager.h
 @@ -14,7 +14,7 @@
  #include "components/autofill/core/browser/payments/payments_window_manager.h"
@@ -27,7 +27,7 @@
    // BrowserListObserver:
    void OnBrowserSetLastActive(Browser* browser) override;
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -165,7 +165,7 @@ class DesktopPaymentsWindowManager : public PaymentsWi
+@@ -130,7 +130,7 @@ class DesktopPaymentsWindowManager : public PaymentsWi
    // Used in tests to notify the test infrastructure that the pop-up has closed.
    base::RepeatingClosure popup_closed_closure_for_testing_;
  

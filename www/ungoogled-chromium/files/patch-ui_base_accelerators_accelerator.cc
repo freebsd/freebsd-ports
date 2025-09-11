@@ -1,6 +1,6 @@
---- ui/base/accelerators/accelerator.cc.orig	2025-05-31 17:16:41 UTC
+--- ui/base/accelerators/accelerator.cc.orig	2025-09-10 13:22:16 UTC
 +++ ui/base/accelerators/accelerator.cc
-@@ -331,7 +331,7 @@ std::vector<std::u16string> Accelerator::GetLongFormMo
+@@ -335,7 +335,7 @@ std::vector<std::u16string> Accelerator::GetLongFormMo
      modifiers.push_back(l10n_util::GetStringUTF16(IDS_APP_SEARCH_KEY));
  #elif BUILDFLAG(IS_WIN)
      modifiers.push_back(l10n_util::GetStringUTF16(IDS_APP_WINDOWS_KEY));

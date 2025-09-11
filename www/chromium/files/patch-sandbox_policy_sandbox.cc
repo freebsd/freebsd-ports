@@ -1,4 +1,4 @@
---- sandbox/policy/sandbox.cc.orig	2024-04-19 13:02:56 UTC
+--- sandbox/policy/sandbox.cc.orig	2025-09-06 10:01:20 UTC
 +++ sandbox/policy/sandbox.cc
 @@ -18,6 +18,10 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
@@ -11,7 +11,7 @@
  #if BUILDFLAG(IS_MAC)
  #include "sandbox/mac/seatbelt.h"
  #endif  // BUILDFLAG(IS_MAC)
-@@ -32,7 +36,7 @@
+@@ -34,7 +38,7 @@
  namespace sandbox {
  namespace policy {
  

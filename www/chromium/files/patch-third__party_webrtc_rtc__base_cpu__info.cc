@@ -1,12 +1,23 @@
---- third_party/webrtc/rtc_base/cpu_info.cc.orig	2025-08-07 06:57:29 UTC
+--- third_party/webrtc/rtc_base/cpu_info.cc.orig	2025-09-06 10:01:20 UTC
 +++ third_party/webrtc/rtc_base/cpu_info.cc
-@@ -22,7 +22,9 @@
- #elif defined(WEBRTC_FUCHSIA)
- #include <zircon/syscalls.h>
+@@ -36,7 +36,7 @@
+ #if defined(WEBRTC_ARCH_X86_FAMILY) && defined(_MSC_VER)
+ #include <intrin.h>
+ #endif
+-#if defined(WEBRTC_ARCH_ARM_FAMILY) && defined(WEBRTC_LINUX)
++#if defined(WEBRTC_ARCH_ARM_FAMILY) && defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD)
+ #include <asm/hwcap.h>
+ #include <sys/auxv.h>
+ #endif
+@@ -178,7 +178,11 @@ bool Supports(ISA instruction_set_architecture) {
+     return 0 != (android_getCpuFeatures() & ANDROID_CPU_ARM_FEATURE_NEON);
  #elif defined(WEBRTC_LINUX)
-+#if !defined(WEBRTC_BSD)
- #include <features.h>
+     uint64_t hwcap = 0;
++#if defined(WEBRTC_BSD)
++    elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
++#else
+     hwcap = getauxval(AT_HWCAP);
 +#endif
- #include <stdlib.h>
- #include <string.h>  // IWYU pragma: keep
- #include <unistd.h>
+ #if defined(__aarch64__)
+     if ((hwcap & HWCAP_ASIMD) != 0) {
+       return true;

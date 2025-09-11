@@ -1,4 +1,4 @@
---- tools/gn/build/gen.py.orig	2025-05-31 17:16:41 UTC
+--- tools/gn/build/gen.py.orig	2025-09-10 13:22:16 UTC
 +++ tools/gn/build/gen.py
 @@ -94,6 +94,12 @@ class Platform(object):
    def is_solaris(self):
@@ -22,7 +22,7 @@
        'haiku': 'build_haiku.ninja.template',
        'solaris': 'build_linux.ninja.template',
        'netbsd': 'build_linux.ninja.template',
-@@ -551,6 +557,9 @@ def WriteGNNinja(path, platform, host, options, args_l
+@@ -552,6 +558,9 @@ def WriteGNNinja(path, platform, host, options, args_l
  
      if platform.is_posix() and not platform.is_haiku():
        ldflags.append('-pthread')

@@ -1,4 +1,4 @@
---- chrome/browser/media/webrtc/chrome_screen_enumerator.cc.orig	2025-04-15 08:30:07 UTC
+--- chrome/browser/media/webrtc/chrome_screen_enumerator.cc.orig	2025-09-10 13:22:16 UTC
 +++ chrome/browser/media/webrtc/chrome_screen_enumerator.cc
 @@ -21,7 +21,7 @@
  #if BUILDFLAG(IS_CHROMEOS)
@@ -27,7 +27,7 @@
  blink::mojom::StreamDevicesSetPtr EnumerateScreens(
      blink::mojom::MediaStreamType stream_type) {
    DCHECK_CURRENTLY_ON(content::BrowserThread::UI);
-@@ -130,7 +130,7 @@ void ChromeScreenEnumerator::SetRootWindowsForTesting(
+@@ -132,7 +132,7 @@ void ChromeScreenEnumerator::SetRootWindowsForTesting(
    root_windows_for_testing_.Get() = std::move(root_windows);
  }
  
@@ -36,7 +36,7 @@
  void ChromeScreenEnumerator::SetDesktopCapturerForTesting(
      std::unique_ptr<webrtc::DesktopCapturer> capturer) {
    g_desktop_capturer_for_testing.Get() = std::move(capturer);
-@@ -143,7 +143,7 @@ void ChromeScreenEnumerator::EnumerateScreens(
+@@ -145,7 +145,7 @@ void ChromeScreenEnumerator::EnumerateScreens(
      ScreensCallback screens_callback) const {
    DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
  

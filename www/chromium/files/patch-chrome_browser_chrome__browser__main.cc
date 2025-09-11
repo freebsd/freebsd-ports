@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main.cc.orig	2025-08-07 06:57:29 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2025-09-06 10:01:20 UTC
 +++ chrome/browser/chrome_browser_main.cc
-@@ -152,7 +152,7 @@
+@@ -153,7 +153,7 @@
  #endif
  
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #include "sql/database.h"
  #endif
  
-@@ -178,11 +178,11 @@
+@@ -179,11 +179,11 @@
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -23,7 +23,7 @@
  #include "chrome/browser/headless/headless_mode_metrics.h"  // nogncheck
  #include "chrome/browser/headless/headless_mode_util.h"     // nogncheck
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
-@@ -193,7 +193,7 @@
+@@ -194,7 +194,7 @@
  #include "ui/gfx/switches.h"
  #endif
  
@@ -32,7 +32,7 @@
  #include "chrome/browser/first_run/upgrade_util.h"
  #endif
  
-@@ -271,7 +271,7 @@
+@@ -266,7 +266,7 @@
  #include "chrome/browser/chrome_process_singleton.h"
  #include "chrome/browser/ui/startup/startup_browser_creator.h"
  
@@ -41,7 +41,7 @@
  #include "base/nix/xdg_util.h"
  #endif
  #endif  // BUILDFLAG(ENABLE_PROCESS_SINGLETON)
-@@ -294,7 +294,7 @@
+@@ -289,7 +289,7 @@
  
  namespace {
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || \
@@ -50,7 +50,7 @@
  constexpr base::FilePath::CharType kMediaHistoryDatabaseName[] =
      FILE_PATH_LITERAL("Media History");
  
-@@ -445,7 +445,7 @@ void ProcessSingletonNotificationCallbackImpl(
+@@ -440,7 +440,7 @@ void ProcessSingletonNotificationCallbackImpl(
    }
  #endif
  
@@ -59,7 +59,7 @@
    // Set the global activation token sent as a command line switch by another
    // browser process. This also removes the switch after use to prevent any side
    // effects of leaving it in the command line after this point.
-@@ -1012,7 +1012,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1007,7 +1007,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
  
  #if BUILDFLAG(ENABLE_EXTENSIONS_CORE) &&                                   \
      (BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -68,7 +68,7 @@
    // Create directory for user-level Native Messaging manifest files. This
    // makes it less likely that the directory will be created by third-party
    // software with incorrect owner or permission. See crbug.com/725513 .
-@@ -1056,7 +1056,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1051,7 +1051,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
  
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -76,8 +76,8 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    metrics::DesktopSessionDurationTracker::Initialize();
    ProfileActivityMetricsRecorder::Initialize();
-   TouchModeStatsTracker::Initialize(
-@@ -1258,7 +1258,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
+   TouchUIControllerStatsTracker::Initialize(
+@@ -1271,7 +1271,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
  #endif  // BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || \
@@ -86,7 +86,7 @@
    // Delete the media history database if it still exists.
    // TODO(crbug.com/40177301): Remove this.
    base::ThreadPool::PostTask(
-@@ -1309,7 +1309,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
+@@ -1322,7 +1322,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
        *UrlLanguageHistogramFactory::GetForBrowserContext(profile));
  #endif
  
@@ -95,7 +95,7 @@
    if (headless::IsHeadlessMode()) {
      headless::ReportHeadlessActionMetrics();
    }
-@@ -1418,7 +1418,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+@@ -1431,7 +1431,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
    // In headless mode provide alternate SelectFileDialog factory overriding
    // any platform specific SelectFileDialog implementation that may have been
    // set.
@@ -104,7 +104,7 @@
    if (headless::IsHeadlessMode()) {
      headless::HeadlessSelectFileDialogFactory::SetUp();
    }
-@@ -1963,7 +1963,7 @@ bool ChromeBrowserMainParts::ProcessSingletonNotificat
+@@ -1965,7 +1965,7 @@ bool ChromeBrowserMainParts::ProcessSingletonNotificat
  
    // Drop the request if headless mode is in effect or the request is from
    // a headless Chrome process.

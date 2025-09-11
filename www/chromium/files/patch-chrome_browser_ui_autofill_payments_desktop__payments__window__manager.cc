@@ -1,4 +1,4 @@
---- chrome/browser/ui/autofill/payments/desktop_payments_window_manager.cc.orig	2025-05-28 14:55:43 UTC
+--- chrome/browser/ui/autofill/payments/desktop_payments_window_manager.cc.orig	2025-09-06 10:01:20 UTC
 +++ chrome/browser/ui/autofill/payments/desktop_payments_window_manager.cc
 @@ -58,7 +58,7 @@ gfx::Rect GetPopupSizeForBnpl() {
  DesktopPaymentsWindowManager::DesktopPaymentsWindowManager(
@@ -9,7 +9,7 @@
    scoped_observation_.Observe(BrowserList::GetInstance());
  #endif  // BUILDFLAG(IS_LINUX)
  }
-@@ -144,7 +144,7 @@ void DesktopPaymentsWindowManager::WebContentsDestroye
+@@ -151,7 +151,7 @@ void DesktopPaymentsWindowManager::WebContentsDestroye
    }
  }
  

@@ -1,6 +1,6 @@
---- components/autofill/core/common/autofill_payments_features.cc.orig	2025-08-07 06:57:29 UTC
+--- components/autofill/core/common/autofill_payments_features.cc.orig	2025-09-06 10:01:20 UTC
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -365,7 +365,7 @@ BASE_FEATURE(kDisableAutofillStrikeSystem,
+@@ -345,7 +345,7 @@ BASE_FEATURE(kDisableAutofillStrikeSystem,
               base::FEATURE_DISABLED_BY_DEFAULT);
  
  bool ShouldShowImprovedUserConsentForCreditCardSave() {

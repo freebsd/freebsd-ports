@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2025-08-07 06:57:29 UTC
+--- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2025-09-06 10:01:20 UTC
 +++ gpu/command_buffer/service/shared_image/shared_image_factory.cc
-@@ -51,7 +51,7 @@
+@@ -50,7 +50,7 @@
  #include "gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.h"
  #include "gpu/vulkan/vulkan_device_queue.h"
  
@@ -9,7 +9,7 @@
  #include "gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.h"
  #endif
  
-@@ -105,7 +105,7 @@ const char* GmbTypeToString(gfx::GpuMemoryBufferType t
+@@ -104,7 +104,7 @@ const char* GmbTypeToString(gfx::GpuMemoryBufferType t
      case gfx::IO_SURFACE_BUFFER:
        return "platform";
  #endif
@@ -18,7 +18,7 @@
      case gfx::NATIVE_PIXMAP:
        return "platform";
  #endif
-@@ -126,7 +126,7 @@ gfx::GpuMemoryBufferType GetNativeBufferType() {
+@@ -125,7 +125,7 @@ gfx::GpuMemoryBufferType GetNativeBufferType() {
    return gfx::GpuMemoryBufferType::IO_SURFACE_BUFFER;
  #elif BUILDFLAG(IS_ANDROID)
    return gfx::GpuMemoryBufferType::ANDROID_HARDWARE_BUFFER;
@@ -27,7 +27,7 @@
    return gfx::GpuMemoryBufferType::NATIVE_PIXMAP;
  #elif BUILDFLAG(IS_WIN)
    return gfx::GpuMemoryBufferType::DXGI_SHARED_HANDLE;
-@@ -298,7 +298,7 @@ SharedImageFactory::SharedImageFactory(
+@@ -297,7 +297,7 @@ SharedImageFactory::SharedImageFactory(
          context_state_, workarounds_);
      factories_.push_back(std::move(ozone_factory));
    }

@@ -1,4 +1,4 @@
---- media/ffmpeg/scripts/build_ffmpeg.py.orig	2024-07-31 14:19:23 UTC
+--- media/ffmpeg/scripts/build_ffmpeg.py.orig	2025-09-10 13:22:16 UTC
 +++ media/ffmpeg/scripts/build_ffmpeg.py
 @@ -33,7 +33,7 @@ NDK_ROOT_DIR = os.path.abspath(
  SUCCESS_TOKEN = 'THIS_BUILD_WORKED'
@@ -12,13 +12,13 @@
 @@ -43,6 +43,8 @@ BRANDINGS = [
  ARCH_MAP = {
      'android': ['ia32', 'x64', 'arm-neon', 'arm64'],
-     'linux': ['ia32', 'x64', 'noasm-x64', 'arm', 'arm-neon', 'arm64'],
+     'linux': ['ia32', 'x64', 'noasm-x64', 'arm', 'arm-neon', 'arm64', 'riscv64'],
 +    'openbsd': ['x64', 'arm64', 'ia32'],
 +    'freebsd': ['x64', 'arm64', 'ia32'],
      'mac': ['x64', 'arm64'],
      'win': ['ia32', 'x64', 'arm64'],
  }
-@@ -122,7 +124,7 @@ def PrintAndCheckCall(argv, *args, **kwargs):
+@@ -124,7 +126,7 @@ def PrintAndCheckCall(argv, *args, **kwargs):
  
  
  def GetDsoName(target_os, dso_name, dso_version):

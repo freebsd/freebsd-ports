@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/wtf/stack_util.cc.orig	2025-07-02 06:08:04 UTC
+--- third_party/blink/renderer/platform/wtf/stack_util.cc.orig	2025-09-06 10:01:20 UTC
 +++ third_party/blink/renderer/platform/wtf/stack_util.cc
 @@ -27,6 +27,11 @@ extern "C" void* __libc_stack_end;  // NOLINT
  #include <sanitizer/asan_interface.h>
@@ -9,7 +9,7 @@
 +#include <pthread_np.h>
 +#endif
 +
- namespace WTF {
+ namespace blink {
  
  size_t GetUnderestimatedStackSize() {
 @@ -71,6 +76,8 @@ size_t GetUnderestimatedStackSize() {

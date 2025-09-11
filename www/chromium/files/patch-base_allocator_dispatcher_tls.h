@@ -1,6 +1,6 @@
---- base/allocator/dispatcher/tls.h.orig	2025-02-19 07:43:18 UTC
+--- base/allocator/dispatcher/tls.h.orig	2025-09-06 10:01:20 UTC
 +++ base/allocator/dispatcher/tls.h
-@@ -81,7 +81,7 @@ struct BASE_EXPORT MMapAllocator {
+@@ -86,7 +86,7 @@ struct BASE_EXPORT MMapAllocator {
    constexpr static size_t AllocationChunkSize = 16384;
  #elif BUILDFLAG(IS_ANDROID) && defined(ARCH_CPU_64_BITS)
    constexpr static size_t AllocationChunkSize = 16384;

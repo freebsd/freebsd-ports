@@ -1,6 +1,6 @@
---- third_party/webrtc/rtc_base/physical_socket_server.h.orig	2025-05-31 17:16:41 UTC
+--- third_party/webrtc/rtc_base/physical_socket_server.h.orig	2025-09-10 13:22:16 UTC
 +++ third_party/webrtc/rtc_base/physical_socket_server.h
-@@ -21,7 +21,7 @@
+@@ -22,7 +22,7 @@
  #include "rtc_base/third_party/sigslot/sigslot.h"
  
  #if defined(WEBRTC_POSIX)

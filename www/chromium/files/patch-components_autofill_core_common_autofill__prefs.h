@@ -1,4 +1,4 @@
---- components/autofill/core/common/autofill_prefs.h.orig	2025-08-07 06:57:29 UTC
+--- components/autofill/core/common/autofill_prefs.h.orig	2025-09-06 10:01:20 UTC
 +++ components/autofill/core/common/autofill_prefs.h
 @@ -32,7 +32,7 @@ inline constexpr std::string_view kAutofillAblationSee
  inline constexpr char kAutofillAiOptInStatus[] =
@@ -9,8 +9,8 @@
  // Boolean that is true if BNPL on Autofill is enabled.
  inline constexpr char kAutofillBnplEnabled[] = "autofill.bnpl_enabled";
  // Boolean that is true if the user has ever seen a BNPL suggestion.
-@@ -226,7 +226,7 @@ void SetFacilitatedPaymentsPixAccountLinking(PrefServi
- bool IsFacilitatedPaymentsPixAccountLinkingEnabled(const PrefService* prefs);
+@@ -247,7 +247,7 @@ bool IsFacilitatedPaymentsA2AEnabled(const PrefService
+ void SetFacilitatedPaymentsA2ATriggeredOnce(PrefService* prefs, bool value);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
@@ -18,7 +18,7 @@
  void SetAutofillBnplEnabled(PrefService* prefs, bool value);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -234,7 +234,7 @@ void SetAutofillBnplEnabled(PrefService* prefs, bool v
+@@ -255,7 +255,7 @@ void SetAutofillBnplEnabled(PrefService* prefs, bool v
  bool IsAutofillBnplEnabled(const PrefService* prefs);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

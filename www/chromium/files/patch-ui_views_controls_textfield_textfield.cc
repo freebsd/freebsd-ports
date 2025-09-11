@@ -1,4 +1,4 @@
---- ui/views/controls/textfield/textfield.cc.orig	2025-08-07 06:57:29 UTC
+--- ui/views/controls/textfield/textfield.cc.orig	2025-09-06 10:01:20 UTC
 +++ ui/views/controls/textfield/textfield.cc
 @@ -86,7 +86,7 @@
  #include "base/win/win_util.h"
@@ -18,7 +18,7 @@
    return flags & ui::EF_CONTROL_DOWN;
  #else
    return false;
-@@ -790,7 +790,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -791,7 +791,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
      return handled;
    }
  
@@ -27,7 +27,7 @@
    if (!handled) {
      if (auto* linux_ui = ui::LinuxUi::instance()) {
        const auto command =
-@@ -975,7 +975,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+@@ -976,7 +976,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
@@ -36,7 +36,7 @@
    // Skip any accelerator handling that conflicts with custom keybindings.
    if (auto* linux_ui = ui::LinuxUi::instance()) {
      if (IsTextEditCommandEnabled(linux_ui->GetTextEditCommandForEvent(
-@@ -2063,7 +2063,7 @@ bool Textfield::ShouldDoLearning() {
+@@ -2065,7 +2065,7 @@ bool Textfield::ShouldDoLearning() {
    return false;
  }
  

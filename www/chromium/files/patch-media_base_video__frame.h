@@ -1,6 +1,6 @@
---- media/base/video_frame.h.orig	2025-08-07 06:57:29 UTC
+--- media/base/video_frame.h.orig	2025-09-06 10:01:20 UTC
 +++ media/base/video_frame.h
-@@ -42,7 +42,7 @@
+@@ -41,7 +41,7 @@
  #include "ui/gfx/geometry/size.h"
  #include "ui/gfx/hdr_metadata.h"
  
@@ -9,7 +9,7 @@
  #include "base/files/scoped_file.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -88,7 +88,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -95,7 +95,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
      STORAGE_UNOWNED_MEMORY = 2,  // External, non owned data pointers.
      STORAGE_OWNED_MEMORY = 3,  // VideoFrame has allocated its own data buffer.
      STORAGE_SHMEM = 4,         // Backed by read-only shared memory.
@@ -18,16 +18,16 @@
      STORAGE_DMABUFS = 5,  // Each plane is stored into a DmaBuf.
  #endif
      STORAGE_GPU_MEMORY_BUFFER = 6,
-@@ -400,7 +400,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
-       ReleaseMailboxAndGpuMemoryBufferCB mailbox_holder_and_gmb_release_cb,
+@@ -370,7 +370,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
        base::TimeDelta timestamp);
+ #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/html/latest/driver-api/dma-buf.html) with a
    // VideoFrame. The frame will take ownership of |dmabuf_fds|, and will
-@@ -716,7 +716,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -692,7 +692,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // wait for the included sync point.
    scoped_refptr<gpu::ClientSharedImage> shared_image() const;
  
@@ -36,7 +36,7 @@
    // The number of DmaBufs will be equal or less than the number of planes of
    // the frame. If there are less, this means that the last FD contains the
    // remaining planes. Should be > 0 for STORAGE_DMABUFS.
-@@ -954,7 +954,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -927,7 +927,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // GpuMemoryBuffers. Clients will set this flag while creating a VideoFrame.
    bool is_mappable_si_enabled_ = false;
  

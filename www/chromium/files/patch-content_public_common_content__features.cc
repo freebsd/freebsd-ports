@@ -1,6 +1,6 @@
---- content/public/common/content_features.cc.orig	2025-08-07 06:57:29 UTC
+--- content/public/common/content_features.cc.orig	2025-09-06 10:01:20 UTC
 +++ content/public/common/content_features.cc
-@@ -91,7 +91,7 @@ BASE_FEATURE(kAudioServiceLaunchOnStartup,
+@@ -103,7 +103,7 @@ BASE_FEATURE(kAudioServiceLaunchOnStartup,
  // Runs the audio service in a separate process.
  BASE_FEATURE(kAudioServiceOutOfProcess,
               "AudioServiceOutOfProcess",
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1319,9 +1319,9 @@ BASE_FEATURE(kWebAssemblyTiering,
+@@ -1394,9 +1394,9 @@ BASE_FEATURE(kWebAssemblyTiering,
  BASE_FEATURE(kWebAssemblyTrapHandler,
               "WebAssemblyTrapHandler",
  #if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) ||  \
@@ -21,7 +21,7 @@
       defined(ARCH_CPU_ARM64))
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -1381,7 +1381,11 @@ BASE_FEATURE(kWebUIJSErrorReportingExtended,
+@@ -1453,7 +1453,11 @@ BASE_FEATURE(kWebUIJSErrorReportingExtended,
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

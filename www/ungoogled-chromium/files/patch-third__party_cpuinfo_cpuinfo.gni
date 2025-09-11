@@ -1,8 +1,8 @@
---- third_party/cpuinfo/cpuinfo.gni.orig	2024-03-22 14:16:19 UTC
+--- third_party/cpuinfo/cpuinfo.gni.orig	2025-09-10 13:22:16 UTC
 +++ third_party/cpuinfo/cpuinfo.gni
-@@ -8,7 +8,7 @@ use_cpuinfo =
+@@ -7,7 +7,7 @@ use_cpuinfo =
+     current_cpu != "ppc64" && current_cpu != "ppc64le" &&
      current_cpu != "s390" && current_cpu != "s390x" &&
-     current_cpu != "riscv64" &&
      # cpuinfo is not supported on fuchsia.
 -    !is_fuchsia &&
 +    !is_fuchsia && !is_bsd &&

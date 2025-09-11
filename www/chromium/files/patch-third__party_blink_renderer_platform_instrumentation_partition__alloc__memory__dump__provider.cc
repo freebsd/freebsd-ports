@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/instrumentation/partition_alloc_memory_dump_provider.cc.orig	2024-04-19 13:02:56 UTC
+--- third_party/blink/renderer/platform/instrumentation/partition_alloc_memory_dump_provider.cc.orig	2025-09-06 10:01:20 UTC
 +++ third_party/blink/renderer/platform/instrumentation/partition_alloc_memory_dump_provider.cc
 @@ -14,7 +14,9 @@
  
@@ -18,7 +18,7 @@
    using base::trace_event::MemoryDumpLevelOfDetail;
  
    MemoryDumpLevelOfDetail level_of_detail = args.level_of_detail;
-@@ -49,6 +52,7 @@ bool PartitionAllocMemoryDumpProvider::OnMemoryDump(
+@@ -48,6 +51,7 @@ bool PartitionAllocMemoryDumpProvider::OnMemoryDump(
        "size", "bytes", partition_stats_dumper.total_active_bytes());
    memory_dump->AddOwnershipEdge(allocated_objects_dump->guid(),
                                  partitions_dump->guid());

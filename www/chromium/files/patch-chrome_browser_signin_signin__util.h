@@ -1,8 +1,8 @@
---- chrome/browser/signin/signin_util.h.orig	2025-08-07 06:57:29 UTC
+--- chrome/browser/signin/signin_util.h.orig	2025-09-06 10:01:20 UTC
 +++ chrome/browser/signin/signin_util.h
-@@ -168,7 +168,7 @@ bool IsSigninPending(signin::IdentityManager* identity
- // Returns the current state of the primary account that is used in Chrome.
- SignedInState GetSignedInState(const signin::IdentityManager* identity_manager);
+@@ -171,7 +171,7 @@ SignedInState GetSignedInState(const signin::IdentityM
+ // Returns a string representation of `SignedInState`.
+ std::string SignedInStateToString(SignedInState state);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)

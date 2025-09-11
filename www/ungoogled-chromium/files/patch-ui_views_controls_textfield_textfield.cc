@@ -1,6 +1,6 @@
---- ui/views/controls/textfield/textfield.cc.orig	2025-05-06 12:23:00 UTC
+--- ui/views/controls/textfield/textfield.cc.orig	2025-09-10 13:22:16 UTC
 +++ ui/views/controls/textfield/textfield.cc
-@@ -87,7 +87,7 @@
+@@ -86,7 +86,7 @@
  #include "base/win/win_util.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
  #include "ui/base/ime/text_input_flags.h"
  #include "ui/linux/linux_ui.h"
-@@ -184,7 +184,7 @@ bool IsControlKeyModifier(int flags) {
+@@ -183,7 +183,7 @@ bool IsControlKeyModifier(int flags) {
  // Control-modified key combination, but we cannot extend it to other platforms
  // as Control has different meanings and behaviors.
  // https://crrev.com/2580483002/#msg46
@@ -36,7 +36,7 @@
    // Skip any accelerator handling that conflicts with custom keybindings.
    if (auto* linux_ui = ui::LinuxUi::instance()) {
      if (IsTextEditCommandEnabled(linux_ui->GetTextEditCommandForEvent(
-@@ -2062,7 +2062,7 @@ bool Textfield::ShouldDoLearning() {
+@@ -2065,7 +2065,7 @@ bool Textfield::ShouldDoLearning() {
    return false;
  }
  
@@ -45,7 +45,7 @@
  // TODO(crbug.com/41452689): Implement this method to support Korean IME
  // reconversion feature on native text fields (e.g. find bar).
  bool Textfield::SetCompositionFromExistingText(
-@@ -2580,7 +2580,7 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
+@@ -2581,7 +2581,7 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
  #endif
          return ui::TextEditCommand::DELETE_BACKWARD;
        }
@@ -54,7 +54,7 @@
        // Only erase by line break on Linux and ChromeOS.
        if (shift) {
          return ui::TextEditCommand::DELETE_TO_BEGINNING_OF_LINE;
-@@ -2588,7 +2588,7 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
+@@ -2589,7 +2589,7 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
  #endif
        return ui::TextEditCommand::DELETE_WORD_BACKWARD;
      case ui::VKEY_DELETE:

@@ -1,11 +1,11 @@
---- chrome/browser/ui/web_applications/web_app_ui_manager_impl.h.orig	2025-08-07 06:57:29 UTC
+--- chrome/browser/ui/web_applications/web_app_ui_manager_impl.h.orig	2025-09-06 10:01:20 UTC
 +++ chrome/browser/ui/web_applications/web_app_ui_manager_impl.h
-@@ -245,7 +245,7 @@ class WebAppUiManagerImpl : public BrowserListObserver
+@@ -243,7 +243,7 @@ class WebAppUiManagerImpl : public BrowserListObserver
        UninstallCompleteCallback uninstall_complete_callback,
        webapps::UninstallResultCode uninstall_code);
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   void ShowIPHPromoForAppsLaunchedViaLinkCapturing(const Browser* browser,
+   void ShowIPHPromoForAppsLaunchedViaLinkCapturing(Browser* browser,
                                                     const webapps::AppId& app_id,
                                                     bool is_activated);

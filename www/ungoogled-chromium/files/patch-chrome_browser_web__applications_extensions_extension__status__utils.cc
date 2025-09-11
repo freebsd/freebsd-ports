@@ -1,15 +1,6 @@
---- chrome/browser/web_applications/extensions/extension_status_utils.cc.orig	2025-05-06 12:23:00 UTC
+--- chrome/browser/web_applications/extensions/extension_status_utils.cc.orig	2025-09-10 13:22:16 UTC
 +++ chrome/browser/web_applications/extensions/extension_status_utils.cc
-@@ -26,7 +26,7 @@ namespace {
- 
- const char* g_preinstalled_app_for_testing = nullptr;
- 
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- // TODO(b/268221237): Remove this allow-list.
- const char kDefaultAllowedExtensionIds[] =
-     "alhngdkjgnedakdlnamimgfihgkmenbh,"
-@@ -105,7 +105,7 @@ bool IsExternalExtensionUninstalled(content::BrowserCo
+@@ -94,7 +94,7 @@ bool IsExternalExtensionUninstalled(content::BrowserCo
    return prefs && prefs->IsExternalExtensionUninstalled(extension_id);
  }
  
