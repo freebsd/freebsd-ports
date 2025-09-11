@@ -4775,3 +4775,4 @@ databases/adminerevo||2025-09-09|Has expired: Abandoned upstream, repo archived 
 databases/redisdesktopmanager||2025-09-09|Has expired: RedisDesktopManager is no longer maintained upstream as the project has been replaced by RedisInsight
 games/palomino||2025-09-11|Has expired: Obsolete and abandoneed, last release in 2013, not playable
 graphics/osg34||2025-09-11|Has expired: Obsolete version released in 2015
+games/motogt||2025-09-11|Has expired: Depends on obsolete devel/sfml1
