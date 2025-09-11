@@ -1,4 +1,4 @@
-TIMESTAMP = 1754969402
+TIMESTAMP = 1757557738
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -571,5 +571,5 @@ SHA256 (rust/crates/zerovec-derive-0.11.1.crate) = 5b96237efa0c878c64bd89c436f66
 SIZE (rust/crates/zerovec-derive-0.11.1.crate) = 21294
 SHA256 (rust/crates/zip-4.0.0.crate) = 153a6fff49d264c4babdcfa6b4d534747f520e56e8f0f384f3b808c4b64cc1fd
 SIZE (rust/crates/zip-4.0.0.crate) = 111911
-SHA256 (rust-analyzer-rust-analyzer-2025-08-11_GH0.tar.gz) = e56326b9e413eadf606d5cfe03d1fbb9b59bb417363c911dd38f88b578e77217
-SIZE (rust-analyzer-rust-analyzer-2025-08-11_GH0.tar.gz) = 3397560
+SHA256 (rust-analyzer-rust-analyzer-2025-08-25_GH0.tar.gz) = b48823d37f20fd9954c7105a1c0ce30c1a659319c65afa33555c59da5cee46d8
+SIZE (rust-analyzer-rust-analyzer-2025-08-25_GH0.tar.gz) = 3398212
