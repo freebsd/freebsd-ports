@@ -4,5 +4,7 @@ PC(sunshine or NV shield) to your FreeBSD system.
 In contrast to moonlight-qt, this port can grab keyboard and mouse
 and has full worked vaapi decoder, which helps in case of crashes.
 
-Note: This is a fork of moonlight-embedded aimed for more features
+Note1: This is a fork of moonlight-embedded aimed for more features
 and fixes for FreeBSD on amd64, not only on embedded systems.
+Note2: If meet crash frequently, try adjust Integrated Graphics
+Device(IDG) Aperture size from BIOS.
