@@ -24,4 +24,8 @@ CMAKE_ARGS+=	-DVERSION=${PORTVERSION}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+.if exists(/usr/include/sys/inotify.h)
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-cmake_target__definitions.cmake
+.endif
+
 .include <bsd.port.mk>
