@@ -42,6 +42,7 @@ LLVM_COMMANDS=	\
 		llvm-nm \
 		llvm-objcopy \
 		llvm-objdump \
+		llvm-offload-wrapper \
 		llvm-opt-report \
 		llvm-otool \
 		llvm-pdbutil \
@@ -140,6 +141,7 @@ LLDB_COMMANDS=	\
 		lldb-argdumper \
 		lldb-dap \
 		lldb-instr \
+		lldb-mcp \
 		lldb-server
 
 MLIR_COMMANDS=	\
