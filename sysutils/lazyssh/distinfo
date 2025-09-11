@@ -1,0 +1,5 @@
+TIMESTAMP = 1757595175
+SHA256 (go/sysutils_lazyssh/lazyssh-v0.2.1/v0.2.1.mod) = f0bb32cc6e8869a7b83188ebebc58eea5399842aabf98759991c29fb23639068
+SIZE (go/sysutils_lazyssh/lazyssh-v0.2.1/v0.2.1.mod) = 821
+SHA256 (go/sysutils_lazyssh/lazyssh-v0.2.1/v0.2.1.zip) = f98a04417f9df2378090cda9192e9a768a6c7672cfb17e2be7482d98d92735c6
+SIZE (go/sysutils_lazyssh/lazyssh-v0.2.1/v0.2.1.zip) = 1759295

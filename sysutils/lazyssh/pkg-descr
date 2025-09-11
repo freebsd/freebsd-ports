@@ -1,0 +1,5 @@
+Lazyssh is a terminal-based, interactive SSH manager built for managing your
+fleet of servers directly from your terminal. With lazyssh, you can quickly
+navigate, connect, manage, and transfer files between your local machine and
+any server defined in your ssh config. No more remembering IP addresses or
+running long scp commands -- just a clean, keyboard-driven UI.
