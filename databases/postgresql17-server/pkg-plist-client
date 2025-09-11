@@ -912,6 +912,7 @@ lib/libecpg.so.6
 lib/libecpg_compat.a
 lib/libecpg_compat.so
 lib/libecpg_compat.so.3
+lib/libpgfeutils.a
 lib/libpgport.a
 lib/libpgport_shlib.a
 lib/libpgtypes.a

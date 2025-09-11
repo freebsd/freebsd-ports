@@ -1,11 +1,11 @@
 PORTNAME=	postgresql
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	PostgreSQL database (client)
 
 MASTERDIR=	${.CURDIR}/../postgresql17-server
 
-BUILD_DIRS=	config src/include src/interfaces src/port src/bin/pg_amcheck \
+BUILD_DIRS=	config src/include src/interfaces src/port src/fe_utils src/bin/pg_amcheck \
 		src/bin/pg_dump src/bin/psql src/bin/scripts src/bin/pg_config \
 		src/bin/pgbench src/makefiles src/test/regress
 INSTALL_DIRS=	${BUILD_DIRS}
