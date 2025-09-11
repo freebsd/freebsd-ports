@@ -1,5 +1,5 @@
-TIMESTAMP = 1755615589
-SHA256 (go/devel_gotestsum/gotestsum-v1.12.3/v1.12.3.mod) = f81e03c518a0af15594245c050274007bb9a81c4960273890be887e72a1d3aee
-SIZE (go/devel_gotestsum/gotestsum-v1.12.3/v1.12.3.mod) = 608
-SHA256 (go/devel_gotestsum/gotestsum-v1.12.3/v1.12.3.zip) = 74fb757cdaa7711cdc5e3ed38658f0b67d76b56c870ba45a70ed830acd0f7600
-SIZE (go/devel_gotestsum/gotestsum-v1.12.3/v1.12.3.zip) = 184119
+TIMESTAMP = 1757599902
+SHA256 (go/devel_gotestsum/gotestsum-v1.13.0/v1.13.0.mod) = 0529691902224feb8047c69fe0da20c793972c6ea3d1151eaacb0b5b58f4fffb
+SIZE (go/devel_gotestsum/gotestsum-v1.13.0/v1.13.0.mod) = 608
+SHA256 (go/devel_gotestsum/gotestsum-v1.13.0/v1.13.0.zip) = f9a484530bafb51bc7c211c0b251fa0d3aaf58a3035b2cc12ff981ddd8f3c832
+SIZE (go/devel_gotestsum/gotestsum-v1.13.0/v1.13.0.zip) = 187104
