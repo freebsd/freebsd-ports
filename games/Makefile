@@ -754,7 +754,6 @@
     SUBDIR += pachi
     SUBDIR += pacmanarena
     SUBDIR += palapeli
-    SUBDIR += palomino
     SUBDIR += pangzero
     SUBDIR += passage
     SUBDIR += patapizza-tetris

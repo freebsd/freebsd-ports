@@ -4773,3 +4773,4 @@ net-mgmt/netdata-go|net-mgmt/netdata|2025-09-08|The netdata-go plugin is include
 finance/myphpmoney||2025-09-08|Has expired: Unmaintained upstream and most probably does not work with modern PHP versions
 databases/adminerevo||2025-09-09|Has expired: Abandoned upstream, repo archived Jan 24, 2025
 databases/redisdesktopmanager||2025-09-09|Has expired: RedisDesktopManager is no longer maintained upstream as the project has been replaced by RedisInsight
+games/palomino||2025-09-11|Has expired: Obsolete and abandoneed, last release in 2013, not playable
