@@ -4887,6 +4887,7 @@
     SUBDIR += py-fastjsonschema
     SUBDIR += py-fastnumbers
     SUBDIR += py-fastprogress
+    SUBDIR += py-fastuuid
     SUBDIR += py-fiddle
     SUBDIR += py-fields
     SUBDIR += py-filebytes

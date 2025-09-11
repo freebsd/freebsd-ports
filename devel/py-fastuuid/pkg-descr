@@ -1,0 +1,5 @@
+FastUUID is a library which provides CPython bindings to Rust's UUID
+library. The provided API is exactly as Python's builtin UUID class.
+
+It is much faster than Python's pure-python implementation and it is
+stricter when parsing hexadecimal representation of UUIDs.
