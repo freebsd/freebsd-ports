@@ -1,3 +1,42 @@
+  <vuln vid="602fc0fa-8ece-11f0-9d03-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.3.0</ge><lt>18.3.2</lt></range>
+	<range><ge>18.2.0</ge><lt>18.2.6</lt></range>
+	<range><ge>7.8.0</ge><lt>18.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/09/10/patch-release-gitlab-18-3-2-released/">
+	  <p>Denial of Service issue in SAML Responses impacts GitLab CE/EE</p>
+	  <p>Server-Side Request Forgery issue in Webhook custom header impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in User-Controllable Fields impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in endpoint file upload impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in token listing operations impacts GitLab CE/EE</p>
+	  <p>Information disclosure issue in runner endpoints impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-2256</cvename>
+      <cvename>CVE-2025-6454</cvename>
+      <cvename>CVE-2025-1250</cvename>
+      <cvename>CVE-2025-7337</cvename>
+      <cvename>CVE-2025-10094</cvename>
+      <cvename>CVE-2025-6769</cvename>
+      <url>https://about.gitlab.com/releases/2025/09/10/patch-release-gitlab-18-3-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-09-10</discovery>
+      <entry>2025-09-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bda50cf1-8bcf-11f0-b3f7-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
