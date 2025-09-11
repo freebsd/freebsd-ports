@@ -1,6 +1,5 @@
 PORTNAME=	compiz-plugins-unsupported
-DISTVERSION=	0.8.8
-PORTREVISION=	12
+DISTVERSION=	0.8.9
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -21,8 +20,7 @@ RUN_DEPENDS=	${MY_DEPENDS}
 
 USES=		gettext-tools gmake gnome libtool:keepla localbase:ldflags \
 		pathfix pkgconfig xorg
-# pet pkgfallout@ till I finish updating Compiz et al;
-USE_CSTD=	gnu89
+
 USE_GNOME=	intltool libxslt
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xinerama xorgproto \
 		xrandr
