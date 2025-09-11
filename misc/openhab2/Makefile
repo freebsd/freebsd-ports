@@ -12,6 +12,9 @@ WWW=		https://www.openhab.org/
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
+DEPRECATED=	superseeded by misc/openhab
+EXPIRATION_DATE=2025-12-31
+
 USES=		cpe java zip
 JAVA_VERSION=	8
 USE_RC_SUBR=	openhab2

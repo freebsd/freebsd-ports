@@ -11,6 +11,9 @@ WWW=		https://www.openhab.org/
 
 LICENSE=	EPL
 
+DEPRECATED=	superseeded by misc/openhab-addons
+EXPIRATION_DATE=2025-12-31
+
 RUN_DEPENDS=	${LOCALBASE}/libexec/openhab2/addons/README:misc/openhab2
 
 USERS=	openhab
