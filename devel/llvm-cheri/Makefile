@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -8,10 +8,6 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT?=	LLVM and Clang with support for the CHERI architecture
 WWW?=		https://cheri-cpu.org
 
-.if defined(LLVM_SUFFIX) && ${LLVM_SUFFIX:M-morello*}
-# XXX: really (LLVM_MAJOR < 16), but it's not defined here
-LICENSE_FILE_BSD3CLAUSE=${LICENSE_DIR}/utils/unittest/googletest/LICENSE.TXT
-.endif
 .include "${.PARSEDIR}/../llvm-devel/Makefile.LICENSE"
 
 NOT_FOR_ARCHS=		i386 armv6 armv7 powerpc mips
@@ -219,10 +215,8 @@ post-install:
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}${FIRST_COMMAND}${COMMAND_SUFFIX} \
 	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}${command}${COMMAND_SUFFIX}
 .endfor
-.if ${LLVM_SUFFIX} != "-cheriot"
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/CHERI/cheri-compressed-cap/.github/workflows
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/CHERI/cheri-compressed-cap/.github
-.endif
 
 post-install-DOCS-on:
 	${RM} -r ${STAGEDIR}${DOCSDIR}
