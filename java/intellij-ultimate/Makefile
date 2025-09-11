@@ -1,5 +1,5 @@
 PORTNAME=	intellij-ultimate
-DISTVERSION=	2025.1.2
+DISTVERSION=	2025.2.1
 CATEGORIES=	java devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/idea/
 DISTNAME=	ideaIU-${DISTVERSION}
@@ -29,7 +29,7 @@ NO_BUILD=	yes
 SUB_FILES=	idea idea.desktop pkg-message
 
 BUILD_TYPE=	IU
-BUILD_VERSION=	251.26094.121
+BUILD_VERSION=	252.25557.131
 BUILD_MARKER=	${BUILD_TYPE}-${BUILD_VERSION}
 PLIST_SUB=	BUILD_MARKER=${BUILD_MARKER}
 WRKSRC=		${WRKDIR}/idea-${BUILD_MARKER}
@@ -48,6 +48,7 @@ post-patch:
 		${WRKSRC}/lib/jna/ \
 		${WRKSRC}/lib/native/ \
 		${WRKSRC}/lib/pty4j/ \
+		${WRKSRC}/lib/skiko-awt-runtime-all \
 		${WRKSRC}/plugins/clouds-docker-gateway \
 		${WRKSRC}/plugins/clouds-docker-impl \
 		${WRKSRC}/plugins/cwm-plugin \
@@ -57,7 +58,9 @@ post-patch:
 		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/ \
 		${WRKSRC}/plugins/maven/lib/maven4-server-lib \
 		${WRKSRC}/plugins/remote-dev-server/ \
+		${WRKSRC}/plugins/station-plugin/toolbox/ \
 		${WRKSRC}/plugins/webp/lib/libwebp/
+
 	@${SED} -i '' 's,/amd64,,' ${WRKSRC}/bin/idea.sh ${WRKSRC}/product-info.json
 	@${SED} -i '' 's/amd64/${ARCH}/' ${WRKSRC}/product-info.json
 
