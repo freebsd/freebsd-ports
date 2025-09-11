@@ -25,8 +25,16 @@ if [ ! -f ${filelist} ]; then
 fi
 
 case $arch in
-aarch64 | amd64 | powerpc64)
+amd64 | powerpc64)
 	sets="base lib32" ;;
+aarch64)
+	case $version in
+	13.*)
+		sets="base" ;;
+	*)
+		sets="base lib32" ;;
+	esac
+	;;
 *)
 	sets="base" ;;
 esac
