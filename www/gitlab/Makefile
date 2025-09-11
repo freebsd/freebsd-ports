@@ -32,7 +32,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	gitlab-elasticsearch-indexer>=5.7.0:textproc/gitlab-elasticsearch-indexer \
 	gitlab-agent>=${GITLAB_VERSION}:net/gitlab-agent \
 	gitlab-pages>=${GITLAB_VERSION}:www/gitlab-pages \
-	gitlab-shell>=14.44.0:devel/gitlab-shell \
+	gitlab-shell>=14.45.2:devel/gitlab-shell \
 	gitlab-workhorse>=${GITLAB_VERSION}:www/gitlab-workhorse \
 	gitlab-zoekt-indexer>=1.2.0:textproc/gitlab-zoekt-indexer \
 	redis>=6.2.11:databases/redis \
@@ -68,7 +68,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-doorkeeper-openid_connect>=1.8.11<2:security/rubygem-doorkeeper-openid_connect \
 	rubygem-doorkeeper-device_authorization_grant>=1.0.0<1.1:security/rubygem-doorkeeper-device_authorization_grant \
 	rubygem-rexml>=3.4.1<3.5:textproc/rubygem-rexml \
-	rubygem-ruby-saml-gitlab>=1.18<2:security/rubygem-ruby-saml-gitlab \
+	rubygem-ruby-saml-gitlab>=1.18.1<2:security/rubygem-ruby-saml-gitlab \
 	rubygem-omniauth-saml-gitlab>=2.2.4<3:security/rubygem-omniauth-saml-gitlab \
 	rubygem-omniauth>=2.1.3<3:security/rubygem-omniauth \
 	rubygem-omniauth-auth0-gitlab>=3.1.1<3.2.0:net/rubygem-omniauth-auth0-gitlab \
