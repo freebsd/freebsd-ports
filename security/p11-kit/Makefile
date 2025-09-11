@@ -1,5 +1,5 @@
 PORTNAME=	p11-kit
-DISTVERSION=	0.25.5
+DISTVERSION=	0.25.7
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/p11-glue/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -21,6 +21,7 @@ CPE_VENDOR=	p11-kit_project
 
 MESON_ARGS=	-Dnls=false \
 		-Dsystemd=disabled \
+		-Dzsh_completion=disabled \
 		-Dtrust_paths=${DATADIR}/certs
 
 OPTIONS_DEFINE=		DOCS MANPAGES TEST
