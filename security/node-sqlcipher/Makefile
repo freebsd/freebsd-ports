@@ -1,5 +1,5 @@
 PORTNAME=	node-sqlcipher
-DISTVERSION=	2.2.2
+DISTVERSION=	2.4.4
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/signalapp/node-sqlcipher/archive/refs/tags/v${DISTVERSION}/:sqlcipher \
 		https://registry.npmjs.org/@esbuild/freebsd-arm64/-/:esbuildarm64 \

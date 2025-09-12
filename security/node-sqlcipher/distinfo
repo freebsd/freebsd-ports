@@ -1,9 +1,9 @@
-TIMESTAMP = 1755508730
+TIMESTAMP = 1757237368
 SHA256 (freebsd-arm64-0.25.9.tgz) = ffa1616767d7660bc93d439c19d91a9b1e5751065c946d09382e330ea688f3f2
 SIZE (freebsd-arm64-0.25.9.tgz) = 4016542
 SHA256 (freebsd-x64-0.25.9.tgz) = 86d04ec7f0dc3fe07b91e625c283f07b82ef2da04809f9ba4193492743c7fcbc
 SIZE (freebsd-x64-0.25.9.tgz) = 4370517
-SHA256 (node-sqlcipher-2.2.2.tar.gz) = 924916f16f61a0448c8fa062963055d73ba7af104781e8848766a97c88b1662b
-SIZE (node-sqlcipher-2.2.2.tar.gz) = 2714491
-SHA256 (node-sqlcipher-2.2.2-npm-cache.tar.gz) = 45b4c5bf67cd9f6eac4f02f1bbed0bbae57ca0d97733e0d4cbecf0ebb327cac8
-SIZE (node-sqlcipher-2.2.2-npm-cache.tar.gz) = 67597779
+SHA256 (node-sqlcipher-2.4.4.tar.gz) = b28b7a05d139edbf0a5aaf35caeb296ad3d90b107e0d3242451c6bf78e12f85f
+SIZE (node-sqlcipher-2.4.4.tar.gz) = 2732706
+SHA256 (node-sqlcipher-2.4.4-npm-cache.tar.gz) = ead2a8db40b7bc84c4e4edf45f88f1e50be0302ed42efd3b870b005dd4e6bb0f
+SIZE (node-sqlcipher-2.4.4-npm-cache.tar.gz) = 67535275
