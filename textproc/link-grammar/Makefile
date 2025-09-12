@@ -1,5 +1,5 @@
 PORTNAME=	link-grammar
-DISTVERSION=	5.12.5
+DISTVERSION=	5.12.6
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.gnucash.org/${PORTNAME}/downloads/${PORTVERSION}/
 
@@ -10,6 +10,8 @@ WWW=		https://opencog.github.io/link-grammar-website/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+
 USES=		compiler:c++11-lib dos2unix gmake libtool localbase ncurses \
 		pathfix pkgconfig sqlite
 USE_LDCONFIG=	yes
@@ -19,8 +21,6 @@ CONFIGURE_ARGS=	--disable-maintainer-mode \
 		--disable-python-bindings
 
 INSTALL_TARGET=	install-strip
-
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
