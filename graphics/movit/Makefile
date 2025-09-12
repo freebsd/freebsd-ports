@@ -1,5 +1,5 @@
 PORTNAME=	movit
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://${PORTNAME}.sesse.net/
 

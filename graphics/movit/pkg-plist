@@ -47,5 +47,5 @@ include/movit/ycbcr_input.h
 lib/libmovit.a
 lib/libmovit.so
 lib/libmovit.so.8
-lib/libmovit.so.8.0.5
+lib/libmovit.so.8.0.6
 libdata/pkgconfig/movit.pc
