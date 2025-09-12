@@ -1,0 +1,5 @@
+compdbgen is a general-purpose tool for generating compile_commands.json
+files, used with clangd's lsp-server.  The tool uses ptrace to intercept
+system calls for the current task and all its child tasks, capture the
+arguments and environment variables of the execve system call, and
+generate compile_commands.json files.
