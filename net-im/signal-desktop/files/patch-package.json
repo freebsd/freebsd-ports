@@ -1,6 +1,6 @@
 --- package.json.orig	2025-05-28 20:17:57 UTC
 +++ package.json
-@@ -101,9 +101,6 @@
+@@ -110,9 +110,6 @@
      "react-devtools": "react-devtools",
      "run-with-devtools": "cross-env REACT_DEVTOOLS=1 run-p --print-label react-devtools start"
    },
@@ -10,42 +10,35 @@
    "dependencies": {
      "@electron/asar": "3.4.1",
      "@formatjs/fast-memoize": "2.2.3",
-@@ -180,6 +177,7 @@
-     "p-timeout": "4.1.0",
-     "pify": "3.0.0",
-     "pino": "9.5.0",
-+    "pnpm": "^10.11",
-     "protobufjs": "7.3.2",
-     "proxy-agent": "6.4.0",
-     "qrcode-generator": "1.4.4",
-@@ -227,7 +225,6 @@
+@@ -236,7 +233,6 @@
      "@indutny/parallel-prettier": "3.0.0",
      "@indutny/rezip-electron": "2.0.1",
      "@napi-rs/canvas": "0.1.61",
--    "@signalapp/mock-server": "13.2.0",
+-    "@signalapp/mock-server": "13.3.0",
      "@storybook/addon-a11y": "8.4.4",
      "@storybook/addon-actions": "8.4.4",
      "@storybook/addon-controls": "8.4.4",
-@@ -363,7 +360,6 @@
-       "@types/backbone@1.4.22": "patches/@types+backbone+1.4.22.patch",
+@@ -380,7 +376,6 @@
+     "patchedDependencies": {
        "casual@1.6.2": "patches/casual+1.6.2.patch",
        "protobufjs@7.3.2": "patches/protobufjs+7.3.2.patch",
 -      "@types/express@4.17.21": "patches/@types+express+4.17.21.patch",
        "protobufjs-cli@1.1.1": "patches/protobufjs-cli+1.1.1.patch",
        "@types/fabric@4.5.3": "patches/@types+fabric+4.5.3.patch",
        "qrcode-generator@1.4.4": "patches/qrcode-generator+1.4.4.patch",
-@@ -379,7 +375,9 @@
-       "node-fetch@2.6.7": "patches/node-fetch+2.6.7.patch",
+@@ -396,7 +391,10 @@
        "zod@3.23.8": "patches/zod+3.23.8.patch",
        "app-builder-lib": "patches/app-builder-lib.patch",
--      "dmg-builder": "patches/dmg-builder.patch"
-+      "dmg-builder": "patches/dmg-builder.patch",
+       "dmg-builder": "patches/dmg-builder.patch",
+-      "eslint-plugin-better-tailwindcss": "patches/eslint-plugin-better-tailwindcss.patch"
++      "eslint-plugin-better-tailwindcss": "patches/eslint-plugin-better-tailwindcss.patch",
 +      "electron-builder": "patches/electron-builder.patch",
 +      "@signalapp/ringrtc": "patches/signalapp-ringrtc.patch"
++
      },
      "onlyBuiltDependencies": [
        "@indutny/mac-screen-share",
-@@ -393,7 +391,6 @@
+@@ -411,7 +409,6 @@
        "bufferutil",
        "electron",
        "esbuild",
@@ -53,16 +46,16 @@
        "utf-8-validate"
      ],
      "ignoredBuiltDependencies": [
-@@ -404,7 +401,7 @@
+@@ -422,7 +419,7 @@
      ]
    },
    "engines": {
--    "node": "22.15.0"
+-    "node": "22.18.0"
 +    "node": ""
    },
    "build": {
      "appId": "org.whispersystems.signal-desktop",
-@@ -481,20 +478,6 @@
+@@ -499,20 +496,6 @@
        "asarUnpack": [
          "build/icons/win/icon.ico"
        ]
