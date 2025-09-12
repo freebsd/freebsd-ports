@@ -28,5 +28,9 @@ pidfile="/var/run/nginx-ui.pid"
 procname="%%LOCALBASE%%/bin/nginx-ui"
 command="/usr/sbin/daemon"
 command_args="-o ${nginx_ui_log} -u ${nginx_ui_runas} -p ${pidfile} -t \"${desc}\" ${procname}"
+# If, for example, there is a power failure, the UNIX socket file will be left and
+# the error "connect: connection refused" will be displayed, so the best thing to
+# do is to delete it before starting NGINX UI.
+start_precmd="rm -f /var/db/nginx-ui/nginx-ui.sock"
 
 run_rc_command "$1"
