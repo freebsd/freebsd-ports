@@ -1,4 +1,4 @@
-TIMESTAMP = 1753430083
+TIMESTAMP = 1757578345
 SHA256 (rust/crates/ahash-0.7.0.crate) = efa60d2eadd8b12a996add391db32bd1153eac697ba4869660c0016353611426
 SIZE (rust/crates/ahash-0.7.0.crate) = 55813
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
@@ -485,5 +485,5 @@ SHA256 (rust/crates/zerocopy-0.8.25.crate) = a1702d9583232ddb9174e01bb7c15a2ab8f
 SIZE (rust/crates/zerocopy-0.8.25.crate) = 252714
 SHA256 (rust/crates/zerocopy-derive-0.8.25.crate) = 28a6e20d751156648aa063f3800b706ee209a32c0b4d9f24be3d980b01be55ef
 SIZE (rust/crates/zerocopy-derive-0.8.25.crate) = 87671
-SHA256 (Qiskit-qiskit-2.1.1_GH0.tar.gz) = 96cd5725ea5f99a6527885e9ef4436bcb34e6388c6ab1bf43d48b9dab80f429f
-SIZE (Qiskit-qiskit-2.1.1_GH0.tar.gz) = 7095152
+SHA256 (Qiskit-qiskit-2.1.2_GH0.tar.gz) = 23559ca58042d263152b233843af24f6753d591500de5a84df14a68a54f4a7db
+SIZE (Qiskit-qiskit-2.1.2_GH0.tar.gz) = 7100760
