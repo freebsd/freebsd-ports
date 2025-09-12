@@ -4,6 +4,6 @@ lib/cmake/simdjson/simdjson-config.cmake
 lib/cmake/simdjson/simdjsonTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/simdjson/simdjsonTargets.cmake
 lib/libsimdjson.so
-lib/libsimdjson.so.26
-lib/libsimdjson.so.26.0.0
+lib/libsimdjson.so.27
+lib/libsimdjson.so.27.0.0
 libdata/pkgconfig/simdjson.pc
