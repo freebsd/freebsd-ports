@@ -1,5 +1,5 @@
 PORTNAME=	flint
-DISTVERSION=	3.2.0
+DISTVERSION=	3.3.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.flintlib.org/download/
 
@@ -45,8 +45,8 @@ MAKE_ENV+=	VERBOSE=1
 MAKE_ARGS+=	VERBOSE=1
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libflint.so.20.0.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libflint.so.21.0.0
 
-# tests as of 3.2.0: All tests passed.
+# tests as of 3.3.1: All tests passed.
 
 .include <bsd.port.mk>

@@ -174,6 +174,6 @@ include/flint/thread_pool.h
 include/flint/thread_support.h
 include/flint/ulong_extras.h
 lib/libflint.so
-lib/libflint.so.20
-lib/libflint.so.20.0.0
+lib/libflint.so.21
+lib/libflint.so.21.0.0
 libdata/pkgconfig/flint.pc
