@@ -1,13 +1,6 @@
 #!/bin/sh
 
-#Fetching https://android.googlesource.com/platform/external/perfetto.git/+archive/.tar.gz
-#fetch: https://android.googlesource.com/platform/external/perfetto.git/+archive/.tar.gz: Not Found
-
-#  'src/third_party/perfetto':
-#    Var('chromium_git') + '/external/github.com/google/perfetto.git' + '@' + 'dd35b295cd359ba094404218414955f961a0d6ae',
-
-
-WEBRTC_REV=7204a
+WEBRTC_REV=7204c
 
 base_url="https://chromium.googlesource.com/chromium/src/base.git/+archive/"
 boringssl_url="https://boringssl.googlesource.com/boringssl.git/+archive/"

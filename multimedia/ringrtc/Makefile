@@ -1,7 +1,6 @@
 PORTNAME=	ringrtc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.56.0
-PORTREVISION=	1
+DISTVERSION=	2.57.0
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/mikael/ringrtc/:base \
 		LOCAL/mikael/ringrtc/:boringssl \
@@ -65,7 +64,7 @@ GH_TUPLE=	signalapp:ringrtc:${DISTVERSIONPREFIX}${DISTVERSION} \
 		signalapp:webrtc:${WEBRTC_REV}:webrtc
 
 # sh net-im/signal-desktop/get_deps.sh
-WEBRTC_REV=	7204a
+WEBRTC_REV=	7204c
 
 # modify webrtc_fetch.sh, then sh webrtc_fetch.sh
 BASE_REV=		4ba67f727a84a10e32a417dc7e194f4fc6a23390
