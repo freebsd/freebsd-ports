@@ -40,6 +40,7 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/material-design
 %%DATADIR%%/themes/modus-operandi
 %%DATADIR%%/themes/modus-vivendi
+%%DATADIR%%/themes/modus-vivendi-tinted
 %%DATADIR%%/themes/molokai
 %%DATADIR%%/themes/monokai-pro
 %%DATADIR%%/themes/moonfly
