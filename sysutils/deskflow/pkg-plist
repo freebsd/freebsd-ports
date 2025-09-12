@@ -1,12 +1,8 @@
 bin/deskflow
-bin/deskflow-client
-bin/deskflow-server
+bin/deskflow-core
 share/applications/org.deskflow.deskflow.desktop
 share/icons/hicolor/512x512/apps/org.deskflow.deskflow.png
-share/licenses/deskflow/LICENSE
-share/licenses/deskflow/LICENSE_EXCEPTION
-share/man/man1/deskflow-client.1.gz
-share/man/man1/deskflow-server.1.gz
+share/man/man1/deskflow-core.1.gz
 share/man/man1/deskflow.1.gz
 share/metainfo/org.deskflow.deskflow.metainfo.xml
 %%PORTDOCS%%%%DOCSDIR%%/html/bc_s.png
@@ -47,10 +43,10 @@ share/metainfo/org.deskflow.deskflow.metainfo.xml
 %%PORTDOCS%%%%DOCSDIR%%/html/search/close.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/search/files_0.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/files_1.js
+%%PORTDOCS%%%%DOCSDIR%%/html/search/mag.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/search/mag_d.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/search/mag_sel.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/search/mag_seld.svg
-%%PORTDOCS%%%%DOCSDIR%%/html/search/mag.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/search/pages_0.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/pages_1.js
 %%PORTDOCS%%%%DOCSDIR%%/html/search/search.css
