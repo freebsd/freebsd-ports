@@ -50,6 +50,7 @@ include/nss/keythi.h
 include/nss/kyber.h
 include/nss/lowkeyi.h
 include/nss/lowkeyti.h
+include/nss/ml_dsat.h
 include/nss/nss.h
 include/nss/nssb64.h
 include/nss/nssb64t.h
