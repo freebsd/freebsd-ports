@@ -477,6 +477,7 @@ include/php/ext/standard/winver.h
 include/php/ext/uri/php_uri.h
 include/php/ext/uri/php_uri_common.h
 include/php/ext/uri/uri_parser_rfc3986.h
+include/php/ext/uri/uri_parser_php_parse_url.h
 include/php/ext/uri/uri_parser_whatwg.h
 @touch include/php/ext/php_config.h
 @rmempty include/php/ext/php_config.h
