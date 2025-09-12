@@ -1,6 +1,6 @@
 PORTNAME=	vtm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.07.28
+DISTVERSION=	2025.09.12
 CATEGORIES=	sysutils
 
 MAINTAINER=	seafork@disroot.org
@@ -31,7 +31,7 @@ CXXFLAGS+=	-stdlib=libstdc++
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|/etc/vtm|${LOCALBASE}/etc/vtm|' \
+	@${REINPLACE_CMD} -e 's|/etc/vtm|${ETCDIR}|' \
 		${WRKSRC}/src/vtm.xml \
 		${WRKSRC}/src/netxs/desktopio/application.hpp
 
