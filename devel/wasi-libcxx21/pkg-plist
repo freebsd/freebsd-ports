@@ -1459,6 +1459,7 @@ share/wasi-sysroot/include/c++/v1/__type_traits/is_trivially_lexicographically_c
 share/wasi-sysroot/include/c++/v1/__type_traits/is_trivially_relocatable.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_unbounded_array.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_union.h
+share/wasi-sysroot/include/c++/v1/__type_traits/is_unqualified.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_unsigned.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_valid_expansion.h
 share/wasi-sysroot/include/c++/v1/__type_traits/is_void.h
