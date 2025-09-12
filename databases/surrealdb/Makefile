@@ -1,7 +1,6 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.7
-PORTREVISION=	1
+DISTVERSION=	2.3.8
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -325,7 +324,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		mac-0.1.1 \
 		maplit-1.0.2 \
 		markup5ever-0.12.1 \
-		matchers-0.1.0 \
+		matchers-0.2.0 \
 		matchit-0.7.3 \
 		matrixmultiply-0.3.9 \
 		md-5-0.10.6 \
@@ -354,6 +353,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		nom-7.1.3 \
 		ntapi-0.4.1 \
 		nu-ansi-term-0.46.0 \
+		nu-ansi-term-0.50.1 \
 		num-bigint-0.4.6 \
 		num-complex-0.4.6 \
 		num-conv-0.1.0 \
@@ -454,9 +454,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ref-cast-1.0.24 \
 		ref-cast-impl-1.0.24 \
 		regex-1.11.1 \
-		regex-automata-0.1.10 \
 		regex-automata-0.4.9 \
-		regex-syntax-0.6.29 \
 		regex-syntax-0.8.5 \
 		relative-path-1.9.3 \
 		rend-0.4.2 \
@@ -617,7 +615,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tracing-log-0.2.0 \
 		tracing-opentelemetry-0.25.0 \
 		tracing-serde-0.2.0 \
-		tracing-subscriber-0.3.19 \
+		tracing-subscriber-0.3.20 \
 		trice-0.4.0 \
 		try-lock-0.2.5 \
 		try_map-0.3.1 \
