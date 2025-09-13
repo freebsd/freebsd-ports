@@ -1,6 +1,6 @@
---- ui/accessibility/accessibility_features.cc.orig	2025-09-10 13:22:16 UTC
+--- ui/accessibility/accessibility_features.cc.orig	2025-09-11 16:30:26 UTC
 +++ ui/accessibility/accessibility_features.cc
-@@ -507,7 +507,7 @@ bool IsScreenAITestModeEnabled() {
+@@ -516,7 +516,7 @@ bool IsScreenAITestModeEnabled() {
    return base::FeatureList::IsEnabled(::features::kScreenAITestMode);
  }
  
@@ -9,7 +9,7 @@
  BASE_FEATURE(kScreenAIPartitionAllocAdvancedChecksEnabled,
               "ScreenAIPartitionAllocAdvancedChecksEnabled",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -549,7 +549,7 @@ bool IsBlockRootWindowAccessibleNameChangeEventEnabled
+@@ -558,7 +558,7 @@ bool IsBlockRootWindowAccessibleNameChangeEventEnabled
  }
  #endif  // BUILDFLAG(IS_MAC)
  
