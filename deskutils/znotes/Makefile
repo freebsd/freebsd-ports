@@ -9,6 +9,9 @@ WWW=		http://znotes.sourceforge.net
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Abandonware, depends on legacy QT 5 and last release in 2011
+EXPIRATION_DATE=2025-12-31
+
 USES=		compiler:c++11-lang gl qmake qt:5
 USE_GL=		gl
 USE_QT=		buildtools:build linguisttools:build core gui network \
