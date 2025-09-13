@@ -1,7 +1,6 @@
 PORTNAME=	boinc-client
-DISTVERSIONPREFIX=	client_release/8.0/
-DISTVERSION=	8.0.2
-PORTREVISION=	2
+DISTVERSIONPREFIX=	client_release/8.2/
+DISTVERSION=	8.2.4
 CATEGORIES=	net
 
 MAINTAINER=	alven@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://boinc.berkeley.edu/ \
 
 LICENSE=	LGPL3
 
-USES=		autoreconf compiler:c++11-lang gmake libtool pkgconfig ssl
+USES=		autoreconf compiler:c++11-lang gmake libtool localbase:ldflags pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	BOINC
 GH_PROJECT=	boinc
@@ -23,8 +22,7 @@ CONFIGURE_ENV=	OBJCXX="${CXX}"
 
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+LDFLAGS+=	-lexecinfo
 
 SUB_FILES=	pkg-deinstall pkg-install
 SUB_LIST=	BOINC_CLIENT_GROUP="${BOINC_CLIENT_GROUP}" \
@@ -45,16 +43,16 @@ OPTIONS_GROUP=		SCRIPT
 OPTIONS_GROUP_SCRIPT=	NO_GUI_RPC NO_NET_INFO
 OPTIONS_SUB=		yes
 
-CLIENT_DESC=		BOINC Build client
+CLIENT_DESC=		Build BOINC client
 LINUX_DESC=		Accept science applications for GNU/Linux
-MANAGER_DESC=		BOINC Build GUI manager
+MANAGER_DESC=		Build BOINC GUI manager
 NLS_DESC=		Install language translations for use in the GUI
-NO_GUI_RPC_DESC=	(breaks and boinc_curses) Disable GUI RPC socket
-NO_NET_INFO_DESC=	address and Do host name not send servers to
-SCRIPT_DESC=		Command in line options script
-SKINS_DESC=		BOINC for Install manager more skins
-USER_DESC=		and BOINC client Create/check directory user
-X11_DESC=		API Build graphics
+NO_GUI_RPC_DESC=	Disable GUI RPC socket (breaks boinc_curses)
+NO_NET_INFO_DESC=	Do not send host name and address to servers
+SCRIPT_DESC=		Command-line options in script
+SKINS_DESC=		Install more skins for BOINC manager
+USER_DESC=		Create/check user directory
+X11_DESC=		Build graphics API
 
 CLIENT_LIB_DEPENDS=		libcurl.so:ftp/curl \
 				libfreetype.so:print/freetype2
@@ -69,22 +67,24 @@ LINUX_CONFIGURE_ON_aarch64=	--with-boinc-alt-platform=aarch64-unknown-linux-gnu
 LINUX_CONFIGURE_ON_amd64=	--with-boinc-alt-platform=x86_64-pc-linux-gnu
 LINUX_CONFIGURE_ON_i386=	--with-boinc-alt-platform=i686-pc-linux-gnu
 
-MANAGER_LIB_DEPENDS=		libnotify.so:devel/libnotify \
+MANAGER_LIB_DEPENDS=		libfreetype.so:print/freetype2 \
+				libnotify.so:devel/libnotify \
 				libxcb-util.so:x11/xcb-util \
-				libfreetype.so:print/freetype2 \
 				libxkbcommon.so:x11/libxkbcommon
 MANAGER_USES=			desktop-file-utils gnome iconv xorg
 MANAGER_USE=			GNOME=atk,cairo,gdkpixbuf,glib20,gtk30,pango \
-				WX=3.2+ XORG=x11,xcb,xext,xscrnsaver
+				WX=3.2+ \
+				XORG=x11,xcb,xext,xscrnsaver
 MANAGER_CONFIGURE_ENABLE=	manager
 MANAGER_CONFIGURE_WITH=		wx-config
 
-NLS_USES=			gettext-tools
+NLS_USES=	gettext-tools
 
-X11_USES=			desktop-file-utils gl jpeg xorg
-X11_USE=			GL=glut XORG=x11,xi,xmu,xscrnsaver
-X11_CONFIGURE_OFF=		ax_cv_check_glut_libglut=no
-X11_CONFIGURE_WITH=		x
+X11_USES=		desktop-file-utils gl jpeg xorg
+X11_USE=		GL=glut \
+			XORG=x11,xi,xmu,xscrnsaver
+X11_CONFIGURE_OFF=	ax_cv_check_glut_libglut=no
+X11_CONFIGURE_WITH=	x
 
 BOINC_CLIENT_GROUP?=	boinc
 BOINC_CLIENT_HOME?=	/var/db/boinc
@@ -93,10 +93,10 @@ BOINC_CLIENT_USER?=	boinc
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANAGER}
-WX_CONF_ARGS=		absolute
-SUB_LIST+=		OPTION_MANAGER="true"
+WX_CONF_ARGS=	absolute
+SUB_LIST+=	OPTION_MANAGER="true"
 .else
-SUB_LIST+=		OPTION_MANAGER=""
+SUB_LIST+=	OPTION_MANAGER=""
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT}
