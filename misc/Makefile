@@ -482,6 +482,7 @@
     SUBDIR += py-lightgbm
     SUBDIR += py-lightning-utilities
     SUBDIR += py-litellm
+    SUBDIR += py-litellm-proxy-extras
     SUBDIR += py-llama-cpp-python
     SUBDIR += py-llm
     SUBDIR += py-llm-claude-3
