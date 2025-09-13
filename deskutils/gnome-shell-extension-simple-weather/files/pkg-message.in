@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+To enable this extension:
+gsettings set org.gnome.shell enabled-extensions "['%%UUID%%']"
+
+The gnome-shell must be restarted, press Alt+F2 and type 'r' (X11 only).
+
+To configure or disable an extension, after restarting the shell,
+you have to launch 'gnome-extensions-app'.
+
+To disable this extension (before remove):
+gdbus call --session --dest org.gnome.Shell.Extensions \
+--object-path /org/gnome/Shell/Extensions \
+--method org.gnome.Shell.Extensions.DisableExtension %%UUID%%
+EOM
+}
+]
