@@ -11,6 +11,9 @@ WWW=		https://babelouest.github.io/iddawc/ \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream repo archived on Nov 11, 2024
+EXPIRATION_DATE=2024-10-13
+
 BUILD_DEPENDS=	jansson>=2.11:devel/jansson \
 		orcania>=2.3.2:devel/orcania \
 		rhonabwy>=1.1.10:security/rhonabwy \
