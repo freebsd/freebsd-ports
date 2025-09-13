@@ -16,6 +16,7 @@ lib/libKF6WalletBackend.so.6
 lib/libKF6WalletBackend.so.%%KDE_FRAMEWORKS_VERSION%%
 share/applications/org.kde.ksecretd.desktop
 share/dbus-1/interfaces/kf6_org.kde.KWallet.xml
+share/dbus-1/services/org.freedesktop.impl.portal.desktop.kwallet.service
 share/dbus-1/services/org.kde.kwalletd5.service
 share/dbus-1/services/org.kde.kwalletd6.service
 share/dbus-1/services/org.kde.secretservicecompat.service
