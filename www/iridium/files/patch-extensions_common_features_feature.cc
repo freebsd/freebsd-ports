@@ -1,9 +1,9 @@
---- extensions/common/features/feature.cc.orig	2025-05-07 06:48:23 UTC
+--- extensions/common/features/feature.cc.orig	2025-09-11 13:19:19 UTC
 +++ extensions/common/features/feature.cc
-@@ -29,6 +29,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
+@@ -30,6 +30,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
    return WIN_PLATFORM;
- #elif BUILDFLAG(IS_FUCHSIA)
-   return FUCHSIA_PLATFORM;
+ #elif BUILDFLAG(ENABLE_DESKTOP_ANDROID_EXTENSIONS)
+   return DESKTOP_ANDROID_PLATFORM;
 +#elif BUILDFLAG(IS_BSD)
 +  return LINUX_PLATFORM;
  #else

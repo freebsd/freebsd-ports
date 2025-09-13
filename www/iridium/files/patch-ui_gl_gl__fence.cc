@@ -1,6 +1,6 @@
---- ui/gl/gl_fence.cc.orig	2025-05-07 06:48:23 UTC
+--- ui/gl/gl_fence.cc.orig	2025-09-11 13:19:19 UTC
 +++ ui/gl/gl_fence.cc
-@@ -17,7 +17,7 @@
+@@ -18,7 +18,7 @@
  #include "ui/gl/gl_surface_egl.h"
  #include "ui/gl/gl_version_info.h"
  

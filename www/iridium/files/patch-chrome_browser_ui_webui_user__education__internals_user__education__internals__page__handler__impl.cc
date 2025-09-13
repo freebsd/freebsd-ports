@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/user_education_internals/user_education_internals_page_handler_impl.cc.orig	2025-06-19 07:37:57 UTC
+--- chrome/browser/ui/webui/user_education_internals/user_education_internals_page_handler_impl.cc.orig	2025-09-11 13:19:19 UTC
 +++ chrome/browser/ui/webui/user_education_internals/user_education_internals_page_handler_impl.cc
-@@ -45,7 +45,7 @@
+@@ -49,7 +49,7 @@
  #include "ui/base/l10n/l10n_util.h"
  #include "ui/base/webui/resource_path.h"
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/browser_navigator.h"
  #include "chrome/browser/ui/browser_navigator_params.h"
  #include "net/base/url_util.h"
-@@ -85,7 +85,7 @@ user_education::NewBadgeRegistry* GetNewBadgeRegistry(
+@@ -89,7 +89,7 @@ user_education::NewBadgeRegistry* GetNewBadgeRegistry(
  }
  
  whats_new::WhatsNewRegistry* GetWhatsNewRegistry() {
@@ -18,7 +18,7 @@
    return g_browser_process->GetFeatures()->whats_new_registry();
  #else
    return nullptr;
-@@ -823,7 +823,7 @@ void UserEducationInternalsPageHandlerImpl::ClearWhats
+@@ -912,7 +912,7 @@ void UserEducationInternalsPageHandlerImpl::ClearWhats
  }
  
  void UserEducationInternalsPageHandlerImpl::LaunchWhatsNewStaging() {

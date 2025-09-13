@@ -1,6 +1,6 @@
---- headless/BUILD.gn.orig	2025-05-07 06:48:23 UTC
+--- headless/BUILD.gn.orig	2025-09-11 13:19:19 UTC
 +++ headless/BUILD.gn
-@@ -475,7 +475,7 @@ component("headless_non_renderer") {
+@@ -478,7 +478,7 @@ component("headless_non_renderer") {
      }
    }
  

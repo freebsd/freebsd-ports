@@ -1,10 +1,10 @@
---- build/linux/strip_binary.py.orig	2025-05-07 06:48:23 UTC
+--- build/linux/strip_binary.py.orig	2025-09-11 13:19:19 UTC
 +++ build/linux/strip_binary.py
 @@ -10,6 +10,7 @@ import sys
  
  
- def main():
+ def main() -> int:
 +  return 0
-   argparser = argparse.ArgumentParser(description='eu-strip binary.')
- 
-   argparser.add_argument('--eu-strip-binary-path', help='eu-strip path.')
+   parser = argparse.ArgumentParser(description="Strip binary using LLVM tools.")
+   parser.add_argument("--llvm-strip-binary-path",
+                       help="Path to llvm-strip executable.")

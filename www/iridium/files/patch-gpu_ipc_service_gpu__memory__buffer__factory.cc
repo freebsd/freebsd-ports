@@ -1,4 +1,4 @@
---- gpu/ipc/service/gpu_memory_buffer_factory.cc.orig	2025-05-07 06:48:23 UTC
+--- gpu/ipc/service/gpu_memory_buffer_factory.cc.orig	2025-09-11 13:19:19 UTC
 +++ gpu/ipc/service/gpu_memory_buffer_factory.cc
 @@ -14,7 +14,7 @@
  #include "gpu/ipc/service/gpu_memory_buffer_factory_io_surface.h"
@@ -9,7 +9,7 @@
  #include "gpu/ipc/service/gpu_memory_buffer_factory_native_pixmap.h"
  #endif
  
-@@ -71,7 +71,7 @@ GpuMemoryBufferFactory::CreateNativeType(
+@@ -65,7 +65,7 @@ GpuMemoryBufferFactory::CreateNativeType(
    // to have a factory that vends invalid GMB handles rather than having no
    // factory at all.
    return std::make_unique<GpuMemoryBufferFactoryStub>();

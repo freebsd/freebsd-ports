@@ -1,4 +1,4 @@
---- base/trace_event/malloc_dump_provider.cc.orig	2025-05-07 06:48:23 UTC
+--- base/trace_event/malloc_dump_provider.cc.orig	2025-09-11 13:19:19 UTC
 +++ base/trace_event/malloc_dump_provider.cc
 @@ -31,6 +31,8 @@
  
@@ -18,7 +18,7 @@
  void ReportMallinfoStats(ProcessMemoryDump* pmd,
                           size_t* total_virtual_size,
                           size_t* resident_size,
-@@ -370,6 +372,9 @@ bool MallocDumpProvider::OnMemoryDump(const MemoryDump
+@@ -383,6 +385,9 @@ bool MallocDumpProvider::OnMemoryDump(const MemoryDump
                       &allocated_objects_count);
  #elif BUILDFLAG(IS_FUCHSIA)
  // TODO(fuchsia): Port, see https://crbug.com/706592.

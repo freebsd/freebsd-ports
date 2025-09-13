@@ -1,6 +1,42 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-06-19 07:37:57 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-09-11 13:19:19 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -484,7 +484,7 @@
+@@ -324,7 +324,7 @@
+         "default": "",
+       },
+       origin_trial_feature_name: "AIPromptAPIMultimodalInput",
+-      origin_trial_os: ["win", "mac", "linux"],
++      origin_trial_os: ["win", "mac", "linux", "openbsd", "freebsd"],
+       origin_trial_allows_third_party: true,
+       implied_by: ["AIPromptAPIMultimodalInput"],
+     },
+@@ -354,7 +354,7 @@
+         "default": "",
+       },
+       origin_trial_feature_name: "AIPromptAPIMultimodalInput",
+-      origin_trial_os: ["win", "mac", "linux"],
++      origin_trial_os: ["win", "mac", "linux", "openbsd", "freebsd"],
+       origin_trial_allows_third_party: true,
+       base_feature_status: "enabled",
+       copied_from_base_feature_if: "overridden",
+@@ -379,7 +379,7 @@
+         "default": "",
+       },
+       origin_trial_feature_name: "AIRewriterAPI",
+-      origin_trial_os: ["win", "mac", "linux"],
++      origin_trial_os: ["win", "mac", "linux", "openbsd", "freebsd"],
+       origin_trial_allows_third_party: true,
+       base_feature_status: "enabled",
+       copied_from_base_feature_if: "overridden",
+@@ -412,7 +412,7 @@
+         "default": "",
+       },
+       origin_trial_feature_name: "AIWriterAPI",
+-      origin_trial_os: ["win", "mac", "linux"],
++      origin_trial_os: ["win", "mac", "linux", "openbsd", "freebsd"],
+       origin_trial_allows_third_party: true,
+       base_feature_status: "enabled",
+       copied_from_base_feature_if: "overridden",
+@@ -516,7 +516,7 @@
        name: "AppTitle",
        status: "experimental",
        origin_trial_feature_name: "AppTitle",
@@ -9,7 +45,16 @@
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1777,7 +1777,7 @@
+@@ -1720,7 +1720,7 @@
+     {
+       name: "DeviceBoundSessionCredentials",
+       origin_trial_feature_name: "DeviceBoundSessionCredentials",
+-      origin_trial_os: ["win", "linux", "mac"],
++      origin_trial_os: ["win", "linux", "mac", "openbsd", "freebsd"],
+       status: "experimental",
+       // Killswitch is net::features::kDeviceBoundSessions
+       base_feature: "none",
+@@ -1859,7 +1859,7 @@
        name: "DocumentIsolationPolicy",
        status: "experimental",
        origin_trial_feature_name: "DocumentIsolationPolicy",
@@ -18,7 +63,7 @@
        base_feature: "none",
      },
      {
-@@ -2017,7 +2017,7 @@
+@@ -2119,7 +2119,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -27,7 +72,7 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3434,7 +3434,7 @@
+@@ -3615,7 +3615,7 @@
        // Tracking bug for the implementation: https://crbug.com/1462930
        name: "PermissionElement",
        origin_trial_feature_name: "PermissionElement",
@@ -36,16 +81,7 @@
        status: "experimental",
        public: true,
        base_feature_status: "enabled",
-@@ -3592,7 +3592,7 @@
-     {
-       name: "PrivateNetworkAccessPermissionPrompt",
-       origin_trial_feature_name: "PrivateNetworkAccessPermissionPrompt",
--      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos"],
-+      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
-       status: "stable",
-       public: true,
-       base_feature: "none",
-@@ -4811,7 +4811,7 @@
+@@ -5157,7 +5157,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -54,7 +90,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -4997,7 +4997,7 @@
+@@ -5355,7 +5355,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
@@ -63,7 +99,16 @@
        status: "experimental",
        base_feature: "none",
      },
-@@ -5265,7 +5265,7 @@
+@@ -5457,7 +5457,7 @@
+     {
+       name: "WebAuthenticationImmediateGet",
+       origin_trial_feature_name: "WebAuthenticationImmediateGet",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       base_feature: "none",
+       public: true,
+     },
+@@ -5610,7 +5610,7 @@
      {
        name: "WebIdentityDigitalCredentials",
        origin_trial_feature_name: "WebIdentityDigitalCredentials",

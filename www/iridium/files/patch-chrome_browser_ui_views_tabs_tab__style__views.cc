@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/tab_style_views.cc.orig	2025-06-19 07:37:57 UTC
+--- chrome/browser/ui/views/tabs/tab_style_views.cc.orig	2025-09-11 13:19:19 UTC
 +++ chrome/browser/ui/views/tabs/tab_style_views.cc
-@@ -563,7 +563,7 @@ float TabStyleViewsImpl::GetCurrentActiveOpacity() con
+@@ -575,7 +575,7 @@ float TabStyleViewsImpl::GetCurrentActiveOpacity() con
    if (!IsHoverAnimationActive()) {
      return base_opacity;
    }

@@ -1,11 +1,11 @@
---- chrome/browser/ui/views/profiles/profile_menu_coordinator.cc.orig	2025-06-19 07:37:57 UTC
+--- chrome/browser/ui/views/profiles/profile_menu_coordinator.cc.orig	2025-09-11 13:19:19 UTC
 +++ chrome/browser/ui/views/profiles/profile_menu_coordinator.cc
-@@ -52,7 +52,7 @@ void ProfileMenuCoordinator::Show(
-   browser.window()->NotifyFeaturePromoFeatureUsed(
-       feature_engagement::kIPHProfileSwitchFeature,
-       FeaturePromoFeatureUsedAction::kClosePromoIfPresent);
+@@ -55,7 +55,7 @@ void ProfileMenuCoordinator::Show(
+       ->NotifyFeaturePromoFeatureUsed(
+           feature_engagement::kIPHProfileSwitchFeature,
+           FeaturePromoFeatureUsedAction::kClosePromoIfPresent);
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   browser.window()->NotifyFeaturePromoFeatureUsed(
-       feature_engagement::kIPHSupervisedUserProfileSigninFeature,
-       FeaturePromoFeatureUsedAction::kClosePromoIfPresent);
+   BrowserUserEducationInterface::From(GetBrowser())
+       ->NotifyFeaturePromoFeatureUsed(
+           feature_engagement::kIPHSupervisedUserProfileSigninFeature,

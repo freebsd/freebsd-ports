@@ -1,6 +1,6 @@
---- content/public/common/content_features.cc.orig	2025-06-19 07:37:57 UTC
+--- content/public/common/content_features.cc.orig	2025-09-11 13:19:19 UTC
 +++ content/public/common/content_features.cc
-@@ -80,7 +80,7 @@ BASE_FEATURE(kAudioServiceLaunchOnStartup,
+@@ -103,7 +103,7 @@ BASE_FEATURE(kAudioServiceLaunchOnStartup,
  // Runs the audio service in a separate process.
  BASE_FEATURE(kAudioServiceOutOfProcess,
               "AudioServiceOutOfProcess",
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1275,9 +1275,9 @@ BASE_FEATURE(kWebAssemblyTiering,
+@@ -1394,9 +1394,9 @@ BASE_FEATURE(kWebAssemblyTiering,
  BASE_FEATURE(kWebAssemblyTrapHandler,
               "WebAssemblyTrapHandler",
  #if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) ||  \
@@ -21,7 +21,7 @@
       defined(ARCH_CPU_ARM64))
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -1334,7 +1334,11 @@ BASE_FEATURE(kWebUIJSErrorReportingExtended,
+@@ -1453,7 +1453,11 @@ BASE_FEATURE(kWebUIJSErrorReportingExtended,
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb
@@ -31,5 +31,5 @@
  BASE_FEATURE(kWebUsb, "WebUSB", base::FEATURE_ENABLED_BY_DEFAULT);
 +#endif
  
- // Controls whether the WebXR Device API is enabled.
- BASE_FEATURE(kWebXr, "WebXR", base::FEATURE_ENABLED_BY_DEFAULT);
+ // Apply `PrefetchPriority::kHighest` for Webview Prefetch API.
+ BASE_FEATURE(kWebViewPrefetchHighestPrefetchPriority,

@@ -1,4 +1,4 @@
---- ui/gfx/font_render_params_linux.cc.orig	2025-05-07 06:48:23 UTC
+--- ui/gfx/font_render_params_linux.cc.orig	2025-09-11 13:19:19 UTC
 +++ ui/gfx/font_render_params_linux.cc
 @@ -24,7 +24,7 @@
  #include "ui/gfx/linux/fontconfig_util.h"
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -222,7 +222,7 @@ FontRenderParams GetFontRenderParams(const FontRenderP
+@@ -224,7 +224,7 @@ FontRenderParams GetFontRenderParams(const FontRenderP
  
    // Start with the delegate's settings, but let Fontconfig have the final say.
    FontRenderParams params;

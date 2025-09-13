@@ -1,6 +1,6 @@
---- services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.cc.orig	2025-05-07 06:48:23 UTC
+--- services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.cc.orig	2025-09-11 13:19:19 UTC
 +++ services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.cc
-@@ -58,6 +58,7 @@ bool ScreenAIPreSandboxHook(base::FilePath binary_path
+@@ -70,6 +70,7 @@ bool ScreenAIPreSandboxHook(base::FilePath binary_path
      }
    }
  
@@ -8,7 +8,7 @@
    auto* instance = sandbox::policy::SandboxLinux::GetInstance();
  
    std::vector<BrokerFilePermission> permissions{
-@@ -79,6 +80,7 @@ bool ScreenAIPreSandboxHook(base::FilePath binary_path
+@@ -91,6 +92,7 @@ bool ScreenAIPreSandboxHook(base::FilePath binary_path
                              sandbox::syscall_broker::COMMAND_OPEN}),
        permissions, options);
    instance->EngageNamespaceSandboxIfPossible();

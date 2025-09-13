@@ -1,6 +1,6 @@
---- build/config/BUILD.gn.orig	2025-05-07 06:48:23 UTC
+--- build/config/BUILD.gn.orig	2025-09-11 13:19:19 UTC
 +++ build/config/BUILD.gn
-@@ -215,6 +215,10 @@ config("default_libs") {
+@@ -209,6 +209,10 @@ config("default_libs") {
      # Targets should choose to explicitly link frameworks they require. Since
      # linking can have run-time side effects, nothing should be listed here.
      libs = []

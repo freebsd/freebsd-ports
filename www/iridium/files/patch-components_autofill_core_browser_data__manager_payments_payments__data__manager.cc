@@ -1,6 +1,6 @@
---- components/autofill/core/browser/data_manager/payments/payments_data_manager.cc.orig	2025-06-19 07:37:57 UTC
+--- components/autofill/core/browser/data_manager/payments/payments_data_manager.cc.orig	2025-09-11 13:19:19 UTC
 +++ components/autofill/core/browser/data_manager/payments/payments_data_manager.cc
-@@ -466,7 +466,7 @@ void PaymentsDataManager::OnWebDataServiceRequestDone(
+@@ -471,7 +471,7 @@ void PaymentsDataManager::OnWebDataServiceRequestDone(
  
  bool PaymentsDataManager::ShouldShowBnplSettings() const {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
    // Check `kAutofillEnableBuyNowPayLater` only if the user has seen a BNPL
    // suggestion before, or there are already linked issuers present, to avoid
    // unnecessary feature flag checks. The linked issuer check is due to the fact
-@@ -971,7 +971,7 @@ void PaymentsDataManager::SetPrefService(PrefService* 
+@@ -1000,7 +1000,7 @@ void PaymentsDataManager::SetPrefService(PrefService* 
            &PaymentsDataManager::OnAutofillPaymentsCardBenefitsPrefChange,
            base::Unretained(this)));
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
    pref_registrar_.Add(
        prefs::kAutofillBnplEnabled,
        base::BindRepeating(&PaymentsDataManager::OnBnplEnabledPrefChange,
-@@ -1047,7 +1047,7 @@ void PaymentsDataManager::SetAutofillHasSeenIban() {
+@@ -1074,7 +1074,7 @@ void PaymentsDataManager::SetAutofillHasSeenIban() {
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,16 +27,16 @@
  bool PaymentsDataManager::IsAutofillHasSeenBnplPrefEnabled() const {
    return prefs::HasSeenBnpl(pref_service_);
  }
-@@ -2029,7 +2029,7 @@ bool PaymentsDataManager::AreEwalletAccountsSupported(
+@@ -2084,7 +2084,7 @@ bool PaymentsDataManager::AreEwalletAccountsSupported(
  
  bool PaymentsDataManager::AreBnplIssuersSupported() const {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   return app_locale_ == "en-US" && GetCountryCodeForExperimentGroup() == "US" &&
-          base::FeatureList::IsEnabled(
-              features::kAutofillEnableBuyNowPayLaterSyncing);
-@@ -2062,7 +2062,7 @@ void PaymentsDataManager::ClearAllCreditCardBenefits()
+   return (app_locale_ == "en-US" || app_locale_ == "en-GB" ||
+           app_locale_ == "en-CA") &&
+          GetCountryCodeForExperimentGroup() == "US" &&
+@@ -2119,7 +2119,7 @@ void PaymentsDataManager::ClearAllCreditCardBenefits()
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

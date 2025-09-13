@@ -1,6 +1,6 @@
---- services/device/public/mojom/BUILD.gn.orig	2025-06-19 07:37:57 UTC
+--- services/device/public/mojom/BUILD.gn.orig	2025-09-11 13:19:19 UTC
 +++ services/device/public/mojom/BUILD.gn
-@@ -98,7 +98,7 @@ mojom("device_service") {
+@@ -95,7 +95,7 @@ mojom("device_service") {
    enable_js_fuzzing = false
  
    enabled_features = []

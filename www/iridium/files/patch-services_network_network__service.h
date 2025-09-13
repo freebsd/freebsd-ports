@@ -1,6 +1,6 @@
---- services/network/network_service.h.orig	2025-06-19 07:37:57 UTC
+--- services/network/network_service.h.orig	2025-09-11 13:19:19 UTC
 +++ services/network/network_service.h
-@@ -251,7 +251,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
+@@ -243,7 +243,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
        const std::vector<ContentSettingPatternSource>& settings) override;
  
    void SetExplicitlyAllowedPorts(const std::vector<uint16_t>& ports) override;

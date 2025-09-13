@@ -1,6 +1,6 @@
---- media/video/video_encode_accelerator_adapter.cc.orig	2025-05-07 06:48:23 UTC
+--- media/video/video_encode_accelerator_adapter.cc.orig	2025-09-11 13:19:19 UTC
 +++ media/video/video_encode_accelerator_adapter.cc
-@@ -468,7 +468,7 @@ void VideoEncodeAcceleratorAdapter::InitializeOnAccele
+@@ -467,7 +467,7 @@ void VideoEncodeAcceleratorAdapter::InitializeOnAccele
  
    auto format = PIXEL_FORMAT_I420;
    auto storage_type = VideoEncodeAccelerator::Config::StorageType::kShmem;

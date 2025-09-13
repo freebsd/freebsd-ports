@@ -1,6 +1,6 @@
---- chrome/browser/memory_details.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/memory_details.cc.orig	2025-09-11 13:19:19 UTC
 +++ chrome/browser/memory_details.cc
-@@ -335,7 +335,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+@@ -334,7 +334,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
            });
      }
  
