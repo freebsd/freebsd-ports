@@ -48,7 +48,6 @@ share/locale/uk/LC_MESSAGES/kweather.mo
 share/locale/zh_CN/LC_MESSAGES/kweather.mo
 share/locale/zh_TW/LC_MESSAGES/kweather.mo
 share/metainfo/org.kde.kweather.appdata.xml
-share/metainfo/org.kde.plasma.kweather_1x4.appdata.xml
 share/plasma/plasmoids/org.kde.plasma.kweather_1x4/contents/ui/LocationSelector.qml
 share/plasma/plasmoids/org.kde.plasma.kweather_1x4/contents/ui/WeatherContainer.qml
 share/plasma/plasmoids/org.kde.plasma.kweather_1x4/contents/ui/main.qml

@@ -789,7 +789,6 @@ share/locale/zh_TW/LC_MESSAGES/kdeconnect-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/zh_TW/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
-share/metainfo/org.kde.kdeconnect.appdata.xml
 share/metainfo/org.kde.kdeconnect.metainfo.xml
 share/nautilus-python/extensions/kdeconnect-share.py
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Battery.qml

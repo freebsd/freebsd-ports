@@ -1,5 +1,3 @@
-TIMESTAMP = 1755258573
-SHA256 (KDE/release-service/25.08.0/akonadi-25.08.0.tar.xz) = d7b79d8ad021f3bbe1410bbd2c1755d3fa54a727c70eb9008dccf94e642a664e
-SIZE (KDE/release-service/25.08.0/akonadi-25.08.0.tar.xz) = 1766664
-SHA256 (KDE/release-service/25.08.0/6964e49050e9e6e094669c74ac8527faabaaffb6.patch) = 30cfae6439e34986634f3a90892c2ff6b6972704f3f964c79f19ca9b118b8401
-SIZE (KDE/release-service/25.08.0/6964e49050e9e6e094669c74ac8527faabaaffb6.patch) = 960
+TIMESTAMP = 1757409647
+SHA256 (KDE/release-service/25.08.1/akonadi-25.08.1.tar.xz) = d32ad5435bb7c9da06a00cfef0804f8d77784ffcf8521b951005c1035572afde
+SIZE (KDE/release-service/25.08.1/akonadi-25.08.1.tar.xz) = 1766632

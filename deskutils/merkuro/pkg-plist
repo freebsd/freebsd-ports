@@ -158,6 +158,7 @@ share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/pt/LC_MESSAGES/merkuro.mo
 share/locale/pt/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/pt_BR/LC_MESSAGES/merkuro.mo
+share/locale/pt_BR/LC_MESSAGES/merkurolauncher.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/ru/LC_MESSAGES/merkuro.mo
 share/locale/ru/LC_MESSAGES/merkurolauncher.mo
@@ -189,7 +190,6 @@ share/locale/zh_TW/LC_MESSAGES/merkuro.mo
 share/locale/zh_TW/LC_MESSAGES/merkurolauncher.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/metainfo/org.kde.merkuro.calendar.metainfo.xml
-share/metainfo/org.kde.merkuro.contact.applet.appdata.xml
 share/metainfo/org.kde.merkuro.contact.metainfo.xml
 share/metainfo/org.kde.merkuro.mail.metainfo.xml
 share/metainfo/org.kde.merkuro.metainfo.xml

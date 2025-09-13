@@ -989,6 +989,7 @@ share/locale/ru/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/ru/LC_MESSAGES/kmail_plugins.mo
 share/locale/ru/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/ru/LC_MESSAGES/korganizer_plugins.mo
+share/locale/ru/LC_MESSAGES/libpimautogeneratetext.mo
 share/locale/ru/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/ru/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/ru/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo

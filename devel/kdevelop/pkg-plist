@@ -1796,6 +1796,7 @@ share/locale/he/LC_MESSAGES/kdevmanpage.mo
 share/locale/he/LC_MESSAGES/kdevokteta.mo
 share/locale/he/LC_MESSAGES/kdevoutlineview.mo
 share/locale/he/LC_MESSAGES/kdevqmakebuilder.mo
+share/locale/he/LC_MESSAGES/kdevsourceformatter.mo
 share/locale/he/LC_MESSAGES/kdevswitchtobuddy.mo
 share/locale/he/LC_MESSAGES/kdevtestview.mo
 share/locale/he/LC_MESSAGES/kdevvcsprojectintegration.mo
@@ -3436,7 +3437,6 @@ share/locale/zh_TW/LC_MESSAGES/kdevwelcomepage.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/metainfo/org.kde.kdevelop.appdata.xml
-share/metainfo/org.kde.kdevelopsessions.appdata.xml
 share/mime/packages/kdevclang.xml
 share/mime/packages/kdevelop.xml
 share/mime/packages/kdevgit.xml

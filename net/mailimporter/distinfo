@@ -1,3 +1,3 @@
-TIMESTAMP = 1754646538
-SHA256 (KDE/release-service/25.08.0/mailimporter-25.08.0.tar.xz) = 5c5d2fbbe2942f2a7b1b660db55bc6cdac49db4d1dd7ee0062ec0bb59ffc2552
-SIZE (KDE/release-service/25.08.0/mailimporter-25.08.0.tar.xz) = 603432
+TIMESTAMP = 1757410240
+SHA256 (KDE/release-service/25.08.1/mailimporter-25.08.1.tar.xz) = 304bdc9155bb74aaceca3cb79608b6b80d1494809683055645ad9570ea8db7cc
+SIZE (KDE/release-service/25.08.1/mailimporter-25.08.1.tar.xz) = 603564

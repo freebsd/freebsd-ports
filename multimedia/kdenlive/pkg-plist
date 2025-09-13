@@ -79,9 +79,10 @@ share/icons/hicolor/256x256/apps/kdenlive.png
 share/icons/hicolor/32x32/apps/kdenlive.png
 share/icons/hicolor/32x32/mimetypes/application-x-kdenlivetitle.png
 share/icons/hicolor/48x48/apps/kdenlive.png
+share/icons/hicolor/512x512/apps/kdenlive.png
 share/icons/hicolor/64x64/apps/kdenlive.png
 share/icons/hicolor/64x64/mimetypes/application-x-kdenlivetitle.png
-share/icons/hicolor/scalable/apps/kdenlive.svgz
+share/icons/hicolor/scalable/apps/kdenlive.svg
 share/icons/hicolor/scalable/mimetypes/application-x-kdenlive.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-kdenlivetitle.svgz
 share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz

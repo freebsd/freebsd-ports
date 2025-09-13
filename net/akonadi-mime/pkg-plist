@@ -56,6 +56,10 @@ lib/libKPim6AkonadiMime.so
 lib/libKPim6AkonadiMime.so.6
 lib/libKPim6AkonadiMime.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/akonadi_serializer_mail.so
+%%QT_QMLDIR%%/org/kde/akonadi/mime/akonadi_mime_quick_plugin.qmltypes
+%%QT_QMLDIR%%/org/kde/akonadi/mime/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/akonadi/mime/libakonadi_mime_quick_plugin.so
+%%QT_QMLDIR%%/org/kde/akonadi/mime/qmldir
 share/akonadi/plugins/serializer/akonadi_serializer_mail.desktop
 share/config.kcfg/specialmailcollections.kcfg
 share/locale/ar/LC_MESSAGES/libakonadi-kmime6.mo

@@ -1317,6 +1317,7 @@ share/locale/ru/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/ru/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/ru/LC_MESSAGES/kate.mo
 share/locale/ru/LC_MESSAGES/katebacktracebrowserplugin.mo
+share/locale/ru/LC_MESSAGES/katebookmarksplugin.mo
 share/locale/ru/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ru/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/ru/LC_MESSAGES/katecolorpickerplugin.mo
