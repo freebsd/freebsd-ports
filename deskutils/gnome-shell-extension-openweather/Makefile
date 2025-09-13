@@ -12,6 +12,9 @@ WWW=		https://github.com/penguin-teal/gnome-openweather
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Superseded by deskutils/gnome-shell-extension-simple-weather
+EXPIRATION_DATE=	2025-10-13
+
 RUN_DEPENDS=	gnome-shell>=47.0:x11/gnome-shell \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
