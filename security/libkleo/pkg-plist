@@ -168,7 +168,7 @@ lib/libKPim6Libkleo.so.6
 lib/libKPim6Libkleo.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/KPim6Libkleo/find-modules/FindLibAssuan.cmake
 share/KPim6Libkleo/find-modules/FindLibGpgError.cmake
-%%DATADIR%%patra/pics/smartcard.xpm
+share/libkleopatra/pics/smartcard.xpm
 share/locale/ar/LC_MESSAGES/libkleopatra6.mo
 share/locale/ast/LC_MESSAGES/libkleopatra6.mo
 share/locale/be/LC_MESSAGES/libkleopatra6.mo
