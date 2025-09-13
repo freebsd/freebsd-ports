@@ -1,7 +1,7 @@
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 
@@ -48,7 +48,6 @@ MAKE_ENV=	LANG="C" \
 		CXX=${CXX} \
 		CPP=${CPP} \
 		MAKEFLAGS=""
-MAKE_JOBS_UNSAFE=	yes
 
 JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc64/ppc64/}
 JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-${JDK_BUILD_JVM}-${JDK_BUILD_TYPE}
@@ -102,6 +101,12 @@ CONFIGURE_ARGS=	--with-boot-jdk=${BOOTSTRAPJDKDIR} \
 		--with-vendor-bug-url="${JDK_BUG_URL}" \
 		--with-vendor-vm-bug-url="${JDK_BUG_URL}"
 
+.if defined(MAKE_JOBS_UNSAFE)
+CONFIGURE_ARGS+=	--with-jobs=1
+.elif defined(MAKE_JOBS_NUMBER)
+CONFIGURE_ARGS+=	--with-jobs=${MAKE_JOBS_NUMBER}
+.endif
+
 JAVAVMS_COMMENT=	OpenJDK${JDK_MAJOR_VERSION}
 
 .if defined(BUILD_JRE)
@@ -112,6 +117,11 @@ ALL_TARGET=		images
 JDK_BUILD_TYPE=		release
 
 .include <bsd.port.pre.mk>
+
+# portsfallout.com shows flapping builds on 13.5 and 14.2
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1403000
+MAKE_JOBS_UNSAFE=	yes
+.endif
 
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk17 ${LOCALBASE}/bootstrap-openjdk17
 
