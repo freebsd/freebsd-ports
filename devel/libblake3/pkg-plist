@@ -1,0 +1,9 @@
+include/blake3.h
+lib/cmake/blake3/blake3-config-version.cmake
+lib/cmake/blake3/blake3-config.cmake
+lib/cmake/blake3/blake3-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/blake3/blake3-targets.cmake
+lib/libblake3.so
+lib/libblake3.so.0
+lib/libblake3.so.%%DISTVERSION%%
+libdata/pkgconfig/libblake3.pc

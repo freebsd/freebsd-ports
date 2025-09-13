@@ -1228,6 +1228,7 @@
     SUBDIR += libbegemot
     SUBDIR += libbfd
     SUBDIR += libbinio
+    SUBDIR += libblake3
     SUBDIR += libbpfjit
     SUBDIR += libbson
     SUBDIR += libburn
