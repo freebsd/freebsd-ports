@@ -12,6 +12,7 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		does not configure: No fonts installed on the system
+EXPIRATION_DATE=2025-10-13
 
 LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2 \
 		libfontconfig.so:x11-fonts/fontconfig \
