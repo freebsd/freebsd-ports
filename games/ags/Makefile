@@ -1,8 +1,11 @@
 PORTNAME=	ags
-DISTVERSION=	3.6.2.12
+DISTVERSION=	3.6.2.13
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/adventuregamestudio/ags/releases/download/v${PORTVERSION}/
 DISTNAME=	ags_${DISTVERSION}_source
+
+PATCH_SITES=	https://github.com/adventuregamestudio/ags/commit/
+PATCHFILES+=	898533ec0ef974155f882c124acaf036b9591805.patch:-p1 #Fix build on 32-bit
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Adventure Game Studio Engine

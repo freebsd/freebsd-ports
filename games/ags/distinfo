@@ -1,3 +1,5 @@
-TIMESTAMP = 1756949576
-SHA256 (ags_3.6.2.12_source.tar.xz) = ef9b0d4c71b3f43dcaf1ebd73433840abdb3af4dd77d1bb3b1f62fe4b150eedc
-SIZE (ags_3.6.2.12_source.tar.xz) = 6357360
+TIMESTAMP = 1757750239
+SHA256 (ags_3.6.2.13_source.tar.xz) = cd6ddee584bacf0f3b0409ac325a738610a4d295db3d258878e7665c03dc3079
+SIZE (ags_3.6.2.13_source.tar.xz) = 6373024
+SHA256 (898533ec0ef974155f882c124acaf036b9591805.patch) = 9877257bd2f6c35872049f5ac429e519ed54f0bc7feb01f9f7ac52cdd00cffcd
+SIZE (898533ec0ef974155f882c124acaf036b9591805.patch) = 5533
