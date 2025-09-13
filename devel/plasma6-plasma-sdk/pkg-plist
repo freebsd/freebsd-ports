@@ -492,8 +492,6 @@ share/man/uk/man1/kqml.1.gz
 share/man/uk/man1/plasmaengineexplorer.1.gz
 share/man/uk/man1/plasmoidviewer.1.gz
 share/metainfo/org.kde.plasma.iconexplorer.appdata.xml
-share/metainfo/org.kde.plasma.plasmoidviewershell.appdata.xml
-share/metainfo/org.kde.plasma.themeexplorer.appdata.xml
 share/metainfo/org.kde.plasmaengineexplorer.appdata.xml
 share/metainfo/org.kde.plasmoidviewer.appdata.xml
 share/plasma/shells/org.kde.plasma.plasmoidviewershell/contents/applet/AppletError.qml

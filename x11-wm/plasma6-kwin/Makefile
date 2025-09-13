@@ -1,6 +1,5 @@
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
 
 COMMENT=	Easy to use, but flexible, Wayland Compositor
@@ -29,8 +28,6 @@ LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info \
 RUN_DEPENDS=	hwdata>0:misc/hwdata \
 		Xwayland:x11-servers/xwayland
 
-CONFLICTS_INSTALL=	theseus-ship # bin/kwin_wayland
-
 USES=		cmake gettext gl kde:6 pkgconfig python qt:6 shebangfix tar:xz \
 		xorg
 USE_GL=		egl gbm gl opengl
@@ -45,8 +42,11 @@ USE_KDE=	activities attica auth colorscheme config \
 USE_QT=		base declarative multimedia sensors tools wayland
 USE_XORG=	ice sm x11 xcb xext xi
 
+DATADIR=	${PREFIX}/share/kwin-wayland
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 SHEBANG_FILES=	src/plugins/strip-effect-metadata.py
+
+CONFLICTS_INSTALL=	theseus-ship # bin/kwin_wayland
 
 OPTIONS_DEFINE=		EI
 OPTIONS_DEFAULT=	EI

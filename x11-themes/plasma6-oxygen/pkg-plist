@@ -784,7 +784,6 @@ share/locale/zh_TW/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/zh_TW/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/zh_TW/LC_MESSAGES/oxygen_style_config.mo
 share/locale/zh_TW/LC_MESSAGES/oxygen_style_demo.mo
-share/metainfo/org.kde.oxygen.appdata.xml
 share/plasma/desktoptheme/oxygen/colors
 share/plasma/desktoptheme/oxygen/dialogs/background.svgz
 share/plasma/desktoptheme/oxygen/metadata.json

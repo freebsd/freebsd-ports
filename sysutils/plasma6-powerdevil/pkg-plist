@@ -478,8 +478,6 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.brightness.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_powerdevil.mo
 share/locale/zh_TW/LC_MESSAGES/powerdevil.mo
-share/metainfo/org.kde.plasma.battery.appdata.xml
-share/metainfo/org.kde.plasma.brightness.appdata.xml
 share/plasma/plasmoids/org.kde.plasma.battery/contents/config/main.xml
 share/plasma/plasmoids/org.kde.plasma.battery/contents/ui/BatteryItem.qml
 share/plasma/plasmoids/org.kde.plasma.battery/contents/ui/CompactRepresentation.qml
