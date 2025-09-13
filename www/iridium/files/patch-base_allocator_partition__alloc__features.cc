@@ -1,6 +1,6 @@
---- base/allocator/partition_alloc_features.cc.orig	2025-06-19 07:37:57 UTC
+--- base/allocator/partition_alloc_features.cc.orig	2025-09-11 13:19:19 UTC
 +++ base/allocator/partition_alloc_features.cc
-@@ -164,7 +164,7 @@ BASE_FEATURE(kPartitionAllocEventuallyZeroFreedMemory,
+@@ -154,7 +154,7 @@ BASE_FEATURE(kPartitionAllocEventuallyZeroFreedMemory,
  // disabled elsewhere (for now). Does not apply to Windows.
  BASE_FEATURE(kPartitionAllocFewerMemoryRegions,
               "PartitionAllocFewerMemoryRegions",

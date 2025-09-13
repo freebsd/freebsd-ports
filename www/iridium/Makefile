@@ -1,6 +1,5 @@
 PORTNAME=	iridium
-PORTVERSION=	2025.06.137.3
-PORTREVISION=	4
+PORTVERSION=	2025.09.140.1
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	www wayland
@@ -106,7 +105,6 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		chrome_pgo_phase=0 \
 		enable_backup_ref_ptr_support=false \
 		enable_hangout_services_extension=true \
-		enable_nacl=false \
 		enable_remoting=false \
 		fatal_linker_warnings=false \
 		icu_use_data_file=false \

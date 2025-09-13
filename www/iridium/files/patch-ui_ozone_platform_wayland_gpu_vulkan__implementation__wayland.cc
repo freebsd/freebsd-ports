@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/gpu/vulkan_implementation_wayland.cc.orig	2025-05-07 06:48:23 UTC
+--- ui/ozone/platform/wayland/gpu/vulkan_implementation_wayland.cc.orig	2025-09-11 13:19:19 UTC
 +++ ui/ozone/platform/wayland/gpu/vulkan_implementation_wayland.cc
-@@ -38,7 +38,11 @@ bool VulkanImplementationWayland::InitializeVulkanInst
+@@ -39,7 +39,11 @@ bool VulkanImplementationWayland::InitializeVulkanInst
  
      path = path.Append("libvk_swiftshader.so");
    } else {

@@ -1,6 +1,6 @@
---- third_party/blink/renderer/modules/peerconnection/webrtc_audio_renderer_test.cc.orig	2025-06-19 07:37:57 UTC
+--- third_party/blink/renderer/modules/peerconnection/webrtc_audio_renderer_test.cc.orig	2025-09-11 13:19:19 UTC
 +++ third_party/blink/renderer/modules/peerconnection/webrtc_audio_renderer_test.cc
-@@ -383,7 +383,7 @@ TEST_F(WebRtcAudioRendererTest, DISABLED_VerifySinkPar
+@@ -384,7 +384,7 @@ TEST_F(WebRtcAudioRendererTest, DISABLED_VerifySinkPar
    SetupRenderer(kDefaultOutputDeviceId);
    renderer_proxy_->Start();
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_APPLE) || \

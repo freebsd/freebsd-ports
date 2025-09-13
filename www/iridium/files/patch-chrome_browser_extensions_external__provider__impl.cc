@@ -1,6 +1,6 @@
---- chrome/browser/extensions/external_provider_impl.cc.orig	2025-06-19 07:37:57 UTC
+--- chrome/browser/extensions/external_provider_impl.cc.orig	2025-09-11 13:19:19 UTC
 +++ chrome/browser/extensions/external_provider_impl.cc
-@@ -828,7 +828,7 @@ void ExternalProviderImpl::CreateExternalProviders(
+@@ -827,7 +827,7 @@ void ExternalProviderImpl::CreateExternalProviders(
  
  #endif  // BUILDFLAG(IS_CHROMEOS)
    if (!profile->GetPrefs()->GetBoolean(pref_names::kBlockExternalExtensions)) {
@@ -9,7 +9,7 @@
      provider_list->push_back(std::make_unique<ExternalProviderImpl>(
          service,
          base::MakeRefCounted<ExternalPrefLoader>(
-@@ -856,7 +856,7 @@ void ExternalProviderImpl::CreateExternalProviders(
+@@ -855,7 +855,7 @@ void ExternalProviderImpl::CreateExternalProviders(
          bundled_extension_creation_flags));
  
      // Define a per-user source of external extensions.

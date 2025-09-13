@@ -1,15 +1,15 @@
---- components/os_crypt/sync/os_crypt.h.orig	2025-05-07 06:48:23 UTC
+--- components/os_crypt/sync/os_crypt.h.orig	2025-09-11 13:19:19 UTC
 +++ components/os_crypt/sync/os_crypt.h
-@@ -16,7 +16,7 @@
- #include "build/chromecast_buildflags.h"
- #include "crypto/subtle_passkey.h"
+@@ -23,7 +23,7 @@ class Keychain;
+ }
+ #endif
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  class KeyStorageLinux;
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -32,7 +32,7 @@ struct Config;
+@@ -39,7 +39,7 @@ struct Config;
  // Temporary interface due to OSCrypt refactor. See OSCryptImpl for descriptions
  // of what each function does.
  namespace OSCrypt {
@@ -18,7 +18,7 @@
  COMPONENT_EXPORT(OS_CRYPT)
  void SetConfig(std::unique_ptr<os_crypt::Config> config);
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -77,7 +77,7 @@ COMPONENT_EXPORT(OS_CRYPT) void UseMockKeyForTesting(b
+@@ -84,7 +84,7 @@ COMPONENT_EXPORT(OS_CRYPT) void UseMockKeyForTesting(b
  COMPONENT_EXPORT(OS_CRYPT) void SetLegacyEncryptionForTesting(bool legacy);
  COMPONENT_EXPORT(OS_CRYPT) void ResetStateForTesting();
  #endif  // BUILDFLAG(IS_WIN)
@@ -27,7 +27,7 @@
  COMPONENT_EXPORT(OS_CRYPT)
  void UseMockKeyStorageForTesting(
      base::OnceCallback<std::unique_ptr<KeyStorageLinux>()>
-@@ -111,7 +111,7 @@ class COMPONENT_EXPORT(OS_CRYPT) OSCryptImpl {
+@@ -118,7 +118,7 @@ class COMPONENT_EXPORT(OS_CRYPT) OSCryptImpl {
    // Returns singleton instance of OSCryptImpl.
    static OSCryptImpl* GetInstance();
  
@@ -36,7 +36,7 @@
    // Set the configuration of OSCryptImpl.
    // This method, or SetRawEncryptionKey(), must be called before using
    // EncryptString() and DecryptString().
-@@ -207,7 +207,7 @@ class COMPONENT_EXPORT(OS_CRYPT) OSCryptImpl {
+@@ -214,7 +214,7 @@ class COMPONENT_EXPORT(OS_CRYPT) OSCryptImpl {
    void ResetStateForTesting();
  #endif
  
@@ -45,7 +45,7 @@
    // For unit testing purposes, inject methods to be used.
    // |storage_provider_factory| provides the desired |KeyStorage|
    // implementation. If the provider returns |nullptr|, a hardcoded password
-@@ -231,13 +231,13 @@ class COMPONENT_EXPORT(OS_CRYPT) OSCryptImpl {
+@@ -241,13 +241,13 @@ class COMPONENT_EXPORT(OS_CRYPT) OSCryptImpl {
    bool DeriveKey();
  #endif  // BUILDFLAG(IS_APPLE)
  

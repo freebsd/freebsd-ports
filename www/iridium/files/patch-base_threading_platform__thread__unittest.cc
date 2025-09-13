@@ -1,4 +1,4 @@
---- base/threading/platform_thread_unittest.cc.orig	2025-05-07 06:48:23 UTC
+--- base/threading/platform_thread_unittest.cc.orig	2025-09-11 13:19:19 UTC
 +++ base/threading/platform_thread_unittest.cc
 @@ -36,7 +36,7 @@
  #include "base/time/time.h"
@@ -18,16 +18,7 @@
    // On Ubuntu, RLIMIT_NICE and RLIMIT_RTPRIO are 0 by default, so we won't be
    // able to increase priority to any level unless we are root (euid == 0).
    bool kCanIncreasePriority = false;
-@@ -435,7 +435,7 @@ TEST(PlatformThreadTest, SetCurrentThreadTypeTest) {
- #if BUILDFLAG(IS_APPLE)
-   TestPriorityResultingFromThreadType(ThreadType::kResourceEfficient,
-                                       ThreadPriorityForTest::kUtility);
--#elif BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   TestPriorityResultingFromThreadType(
-       ThreadType::kResourceEfficient,
-       ThreadPriorityForTest::kResourceEfficient);
-@@ -624,12 +624,16 @@ INSTANTIATE_TEST_SUITE_P(
+@@ -618,12 +618,16 @@ INSTANTIATE_TEST_SUITE_P(
  
  #endif  // BUILDFLAG(IS_APPLE)
  

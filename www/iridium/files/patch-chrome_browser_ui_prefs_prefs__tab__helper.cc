@@ -1,11 +1,11 @@
---- chrome/browser/ui/prefs/prefs_tab_helper.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/ui/prefs/prefs_tab_helper.cc.orig	2025-09-11 13:19:19 UTC
 +++ chrome/browser/ui/prefs/prefs_tab_helper.cc
-@@ -66,7 +66,7 @@
- #include <windows.h>
+@@ -68,7 +68,7 @@
  #endif
  
--#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(ENABLE_DESKTOP_ANDROID_EXTENSIONS)
++    BUILDFLAG(ENABLE_DESKTOP_ANDROID_EXTENSIONS) || BUILDFLAG(IS_BSD)
  // If a font name in prefs default values starts with a comma, consider it's a
  // comma-separated font list and resolve it to the first available font.
  #define PREFS_FONT_LIST 1

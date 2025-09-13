@@ -1,6 +1,6 @@
---- v8/src/trap-handler/handler-inside-posix.cc.orig	2025-05-07 06:48:23 UTC
+--- v8/src/trap-handler/handler-inside-posix.cc.orig	2025-09-11 13:19:19 UTC
 +++ v8/src/trap-handler/handler-inside-posix.cc
-@@ -61,6 +61,8 @@ namespace trap_handler {
+@@ -62,6 +62,8 @@ namespace trap_handler {
  #define CONTEXT_REG(reg, REG) &uc->uc_mcontext->__ss.__##reg
  #elif V8_OS_FREEBSD
  #define CONTEXT_REG(reg, REG) &uc->uc_mcontext.mc_##reg
@@ -9,7 +9,7 @@
  #else
  #error "Unsupported platform."
  #endif
-@@ -80,8 +82,12 @@ bool IsKernelGeneratedSignal(siginfo_t* info) {
+@@ -81,8 +83,12 @@ bool IsKernelGeneratedSignal(siginfo_t* info) {
    // si_code at its default of 0 for signals that don’t originate in hardware.
    // The other conditions are only relevant for Linux.
    return info->si_code > 0 && info->si_code != SI_USER &&

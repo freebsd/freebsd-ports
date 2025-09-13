@@ -1,4 +1,4 @@
---- net/dns/BUILD.gn.orig	2025-05-07 06:48:23 UTC
+--- net/dns/BUILD.gn.orig	2025-09-11 13:19:19 UTC
 +++ net/dns/BUILD.gn
 @@ -140,7 +140,7 @@ source_set("dns") {
        "dns_config_service_android.cc",
@@ -9,15 +9,23 @@
      sources += [
        "dns_config_service_linux.cc",
        "dns_config_service_linux.h",
-@@ -181,6 +181,7 @@ source_set("dns") {
+@@ -174,6 +174,7 @@ source_set("dns") {
+   }
+ 
+   deps = [ "//net:net_deps" ]
++  deps += [ "//services/screen_ai/buildflags" ]
+ 
+   public_deps = [
+     ":dns_client",
+@@ -181,6 +182,7 @@ source_set("dns") {
      ":host_resolver_manager",
      ":mdns_client",
      "//net:net_public_deps",
 +    "//printing/buildflags",
    ]
  
-   allow_circular_includes_from = [
-@@ -450,9 +451,9 @@ source_set("tests") {
+   if (enable_mdns) {
+@@ -454,9 +456,9 @@ source_set("tests") {
  
    if (is_android) {
      sources += [ "dns_config_service_android_unittest.cc" ]

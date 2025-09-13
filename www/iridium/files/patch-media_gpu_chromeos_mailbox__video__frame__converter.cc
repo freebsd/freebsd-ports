@@ -1,11 +1,11 @@
---- media/gpu/chromeos/mailbox_video_frame_converter.cc.orig	2025-05-07 06:48:23 UTC
+--- media/gpu/chromeos/mailbox_video_frame_converter.cc.orig	2025-09-11 13:19:19 UTC
 +++ media/gpu/chromeos/mailbox_video_frame_converter.cc
-@@ -68,7 +68,7 @@ viz::SharedImageFormat GetSharedImageFormat(gfx::Buffe
-                     << static_cast<int>(buffer_format);
-       NOTREACHED();
+@@ -321,7 +321,7 @@ bool MailboxVideoFrameConverter::GenerateSharedImage(
+                            VideoPixelFormatToString(origin_frame->format()));
+     return false;
    }
 -#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // If format is true multiplanar format, we prefer external sampler on
    // ChromeOS and Linux.
-   if (format.is_multi_plane()) {
+   if (si_format->is_multi_plane()) {

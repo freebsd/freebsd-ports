@@ -1,6 +1,6 @@
---- net/dns/address_info.cc.orig	2025-05-07 06:48:23 UTC
+--- net/dns/address_info.cc.orig	2025-09-11 13:19:19 UTC
 +++ net/dns/address_info.cc
-@@ -83,8 +83,12 @@ AddressInfo::AddressInfoAndResult AddressInfo::Get(
+@@ -78,8 +78,12 @@ AddressInfo::AddressInfoAndResult AddressInfo::Get(
      // error.
      // http://crbug.com/134142
      err = ERR_NAME_NOT_RESOLVED;

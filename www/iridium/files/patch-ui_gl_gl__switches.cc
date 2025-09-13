@@ -1,24 +1,24 @@
---- ui/gl/gl_switches.cc.orig	2025-06-19 07:37:57 UTC
+--- ui/gl/gl_switches.cc.orig	2025-09-11 13:19:19 UTC
 +++ ui/gl/gl_switches.cc
-@@ -13,7 +13,7 @@
- #include "base/android/build_info.h"
+@@ -15,7 +15,7 @@
  #endif
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(ENABLE_VULKAN) && \
+-    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID))
++    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD))
  #include <vulkan/vulkan_core.h>
  #include "third_party/angle/src/gpu_info_util/SystemInfo.h"  // nogncheck
- #endif
-@@ -319,7 +319,7 @@ bool IsDefaultANGLEVulkan() {
-     return false;
+ #endif  // BUILDFLAG(ENABLE_VULKAN) && (BUILDFLAG(IS_LINUX) ||
+@@ -328,7 +328,7 @@ bool IsDefaultANGLEVulkan() {
    }
  #endif  // BUILDFLAG(IS_ANDROID)
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(ENABLE_VULKAN) && \
+-    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID))
++    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD))
    angle::SystemInfo system_info;
    {
-     GPU_STARTUP_TRACE_EVENT("angle::GetSystemInfoVulkan");
-@@ -388,7 +388,7 @@ bool IsDefaultANGLEVulkan() {
+     TRACE_EVENT("gpu,startup", "angle::GetSystemInfoVulkan");
+@@ -410,7 +410,7 @@ bool IsDefaultANGLEVulkan() {
    }
  #endif  // BUILDFLAG(IS_ANDROID)
  

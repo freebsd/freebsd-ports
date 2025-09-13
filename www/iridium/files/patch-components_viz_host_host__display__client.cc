@@ -1,11 +1,14 @@
---- components/viz/host/host_display_client.cc.orig	2025-05-07 06:48:23 UTC
+--- components/viz/host/host_display_client.cc.orig	2025-09-11 13:19:19 UTC
 +++ components/viz/host/host_display_client.cc
-@@ -65,7 +65,7 @@ void HostDisplayClient::AddChildWindowToBrowser(
+@@ -66,9 +66,9 @@ void HostDisplayClient::AddChildWindowToBrowser(
  }
  #endif
  
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(IS_OZONE_X11)
  void HostDisplayClient::DidCompleteSwapWithNewSize(const gfx::Size& size) {
-   NOTIMPLEMENTED();
+-  NOTIMPLEMENTED();
++  NOTREACHED();
  }
+ #endif  // BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
+ 

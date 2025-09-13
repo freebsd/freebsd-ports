@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/connectors/reporting/crash_reporting_context.cc.orig	2025-06-19 07:37:57 UTC
+--- chrome/browser/enterprise/connectors/reporting/crash_reporting_context.cc.orig	2025-09-11 13:19:19 UTC
 +++ chrome/browser/enterprise/connectors/reporting/crash_reporting_context.cc
-@@ -24,7 +24,7 @@
+@@ -29,7 +29,7 @@
  
  namespace enterprise_connectors {
  

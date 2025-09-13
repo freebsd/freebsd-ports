@@ -1,7 +1,7 @@
---- content/zygote/BUILD.gn.orig	2025-05-07 06:48:23 UTC
+--- content/zygote/BUILD.gn.orig	2025-09-11 13:19:19 UTC
 +++ content/zygote/BUILD.gn
-@@ -5,7 +5,7 @@
- import("//build/config/nacl/config.gni")
+@@ -4,7 +4,7 @@
+ 
  import("//content/public/common/zygote/features.gni")
  
 -if (is_linux || is_chromeos) {

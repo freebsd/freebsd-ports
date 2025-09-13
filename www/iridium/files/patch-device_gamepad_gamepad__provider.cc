@@ -1,6 +1,6 @@
---- device/gamepad/gamepad_provider.cc.orig	2025-05-07 06:48:23 UTC
+--- device/gamepad/gamepad_provider.cc.orig	2025-09-11 13:19:19 UTC
 +++ device/gamepad/gamepad_provider.cc
-@@ -159,7 +159,7 @@ void GamepadProvider::Initialize(std::unique_ptr<Gamep
+@@ -155,7 +155,7 @@ void GamepadProvider::Initialize(std::unique_ptr<Gamep
  
    if (!polling_thread_)
      polling_thread_ = std::make_unique<base::Thread>("Gamepad polling thread");

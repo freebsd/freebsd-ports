@@ -1,10 +1,10 @@
---- services/network/BUILD.gn.orig	2025-06-19 07:37:57 UTC
+--- services/network/BUILD.gn.orig	2025-09-11 13:19:19 UTC
 +++ services/network/BUILD.gn
-@@ -413,7 +413,6 @@ if (is_linux || is_chromeos) {
+@@ -421,7 +421,6 @@ if (is_linux || is_chromeos) {
      ]
      deps = [
-       "//base:base",
+       "//base",
 -      "//sandbox/linux:sandbox_services",
-       "//sandbox/policy:policy",
+       "//sandbox/policy",
      ]
      configs += [ "//build/config/compiler:wexit_time_destructors" ]

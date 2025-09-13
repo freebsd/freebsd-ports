@@ -1,0 +1,19 @@
+--- third_party/protobuf/proto_library.gni.orig	2025-09-11 13:19:19 UTC
++++ third_party/protobuf/proto_library.gni
+@@ -260,7 +260,15 @@ _protoc_gen_ts_runtime_deps = [
+ 
+ # When use_remoteexec=true, node actions may run on remote
+ # Linux worker. So it should include linux node binary in inputs.
+-if (is_linux || is_chromeos || use_remoteexec) {
++if (is_openbsd) {
++  _protoc_gen_ts_runtime_deps +=
++      [ "//third_party/node/openbsd/node-openbsd/bin/node" ]
++}
++if (is_freebsd) {
++  _protoc_gen_ts_runtime_deps +=
++      [ "//third_party/node/freebsd/node-freebsd/bin/node" ]
++}
++if (!is_bsd && (is_linux || is_chromeos || use_remoteexec)) {
+   _protoc_gen_ts_runtime_deps +=
+       [ "//third_party/node/linux/node-linux-x64/bin/node" ]
+ }

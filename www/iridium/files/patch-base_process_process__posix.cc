@@ -1,7 +1,7 @@
---- base/process/process_posix.cc.orig	2025-05-07 06:48:23 UTC
+--- base/process/process_posix.cc.orig	2025-09-11 13:19:19 UTC
 +++ base/process/process_posix.cc
-@@ -23,10 +23,15 @@
- #include "base/trace_event/base_tracing.h"
+@@ -25,10 +25,15 @@
+ #include "base/trace_event/trace_event.h"
  #include "build/build_config.h"
  
 -#if BUILDFLAG(IS_MAC)
@@ -17,7 +17,7 @@
  #if BUILDFLAG(CLANG_PROFILING)
  #include "base/test/clang_profiling.h"
  #endif
-@@ -100,7 +105,7 @@ bool WaitpidWithTimeout(base::ProcessHandle handle,
+@@ -104,7 +109,7 @@ bool WaitpidWithTimeout(base::ProcessHandle handle,
  }
  #endif
  
@@ -26,7 +26,7 @@
  // Using kqueue on Mac so that we can wait on non-child processes.
  // We can't use kqueues on child processes because we need to reap
  // our own children using wait.
-@@ -379,7 +384,7 @@ bool Process::WaitForExitWithTimeoutImpl(base::Process
+@@ -387,7 +392,7 @@ bool Process::WaitForExitWithTimeoutImpl(base::Process
    const bool exited = (parent_pid < 0);
  
    if (!exited && parent_pid != our_pid) {
@@ -35,7 +35,7 @@
      // On Mac we can wait on non child processes.
      return WaitForSingleNonChildProcess(handle, timeout);
  #else
-@@ -416,7 +421,56 @@ void Process::Exited(int exit_code) const {
+@@ -424,7 +429,56 @@ void Process::Exited(int exit_code) const {
  
  int Process::GetOSPriority() const {
    DCHECK(IsValid());

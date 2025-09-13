@@ -1,4 +1,4 @@
---- ui/base/ui_base_switches.cc.orig	2025-05-07 06:48:23 UTC
+--- ui/base/ui_base_switches.cc.orig	2025-09-11 13:19:19 UTC
 +++ ui/base/ui_base_switches.cc
 @@ -24,13 +24,13 @@ const char kDisableModalAnimations[] = "disable-modal-
  const char kShowMacOverlayBorders[] = "show-mac-overlay-borders";
@@ -15,4 +15,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // Specify the toolkit used to construct the Linux GUI.
  const char kUiToolkitFlag[] = "ui-toolkit";
- // Disables GTK IME integration.
+ // Specify the GTK version to be loaded.
