@@ -1,9 +1,26 @@
---- pyproject.toml.orig	2024-08-09 12:41:18 UTC
+--- pyproject.toml.orig	2025-09-10 11:41:02 UTC
 +++ pyproject.toml
-@@ -1,5 +1,5 @@
+@@ -1,12 +1,11 @@
  [build-system]
--requires = ["setuptools>=64", "versioningit>=1.1.0"]
-+requires = ["setuptools>=63", "versioningit>=1.1.0"]
+-requires = ["setuptools>=77", "setuptools-scm>=8"]
++requires = ["setuptools>=63", "setuptools-scm>=8"]
  build-backend = "setuptools.build_meta"
  
- [tool.versioningit.vcs]
+ [project]
+ name = "zlib-ng"
+ dynamic = ["version"]
+ description = "Drop-in replacement for zlib and gzip modules using zlib-ng"
+-license="PSF-2.0"
+ keywords=["zlib-ng", "zlib", "compression", "deflate", "gzip"]
+ authors = [{name = "Leiden University Medical Center"},
+            {email = "r.h.p.vorderman@lumc.nl"}]
+@@ -31,6 +30,9 @@ urls.documentation = "https://python-zlib-ng.readthedo
+ ]
+ urls.homepage = "https://github.com/pycompression/python-zlib-ng"
+ urls.documentation = "https://python-zlib-ng.readthedocs.io"
++
++[project.license]
++text = "PSF-2.0"
+ 
+ [tool.setuptools_scm]
+ version_file = "src/zlib_ng/_version.py"
