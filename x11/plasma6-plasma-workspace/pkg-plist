@@ -6216,32 +6216,6 @@ share/locale/zh_TW/LC_MESSAGES/plasmashellprivateplugin.mo
 share/locale/zh_TW/LC_MESSAGES/plasmawindowed.mo
 share/locale/zh_TW/LC_MESSAGES/session-shortcuts-kded.mo
 share/locale/zh_TW/LC_MESSAGES/soliduiserver.mo
-share/metainfo/org.kde.breeze.desktop.appdata.xml
-share/metainfo/org.kde.breezedark.desktop.appdata.xml
-share/metainfo/org.kde.breezetwilight.desktop.appdata.xml
-share/metainfo/org.kde.color.appdata.xml
-share/metainfo/org.kde.image.appdata.xml
-share/metainfo/org.kde.plasma.activitybar.appdata.xml
-share/metainfo/org.kde.plasma.analogclock.appdata.xml
-share/metainfo/org.kde.plasma.appmenu.appdata.xml
-share/metainfo/org.kde.plasma.calendar.appdata.xml
-share/metainfo/org.kde.plasma.cameraindicator.appdata.xml
-share/metainfo/org.kde.plasma.clipboard.appdata.xml
-share/metainfo/org.kde.plasma.devicenotifier.appdata.xml
-share/metainfo/org.kde.plasma.digitalclock.appdata.xml
-share/metainfo/org.kde.plasma.lock_logout.appdata.xml
-share/metainfo/org.kde.plasma.manage-inputmethod.appdata.xml
-share/metainfo/org.kde.plasma.notifications.appdata.xml
-share/metainfo/org.kde.plasma.panelspacer.appdata.xml
-share/metainfo/org.kde.plasma.systemmonitor.appdata.xml
-share/metainfo/org.kde.plasma.systemmonitor.cpu.appdata.xml
-share/metainfo/org.kde.plasma.systemmonitor.cpucore.appdata.xml
-share/metainfo/org.kde.plasma.systemmonitor.diskactivity.appdata.xml
-share/metainfo/org.kde.plasma.systemmonitor.diskusage.appdata.xml
-share/metainfo/org.kde.plasma.systemmonitor.memory.appdata.xml
-share/metainfo/org.kde.plasma.systemmonitor.net.appdata.xml
-share/metainfo/org.kde.plasma.systemtray.appdata.xml
-share/metainfo/org.kde.slideshow.appdata.xml
 share/plasma/avatars/Artist Konqi.png
 share/plasma/avatars/Bookworm Konqi.png
 share/plasma/avatars/Boss Konqi.png
