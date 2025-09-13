@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server browser for many popular 3D action games
 WWW=		http://www.linuxgames.com/xqf/
 
+BROKEN=		Fails to build, ld: error: non-exported symbol 'environ' in '/usr/lib/crt1.o' is referenced by DSO '/lib/libc.so.7'
+EXPIRATION_DATE=2025-10-13
+
 RUN_DEPENDS=	qstat:games/qstat
 
 USES=		autoreconf gettext gmake gnome pkgconfig xorg
