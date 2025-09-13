@@ -1,5 +1,5 @@
 PORTNAME=	wildfly
-DISTVERSION=	37.0.0
+DISTVERSION=	37.0.1
 CATEGORIES=	java www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
@@ -70,24 +70,11 @@ do-install:
 	${MV} ${STAGEDIR}${PREFIX}/${PORTNAME}/${FILE} \
 		${STAGEDIR}${PREFIX}/${PORTNAME}/${FILE}.sample
 .endfor
-	${FIND} -s ${STAGEDIR}${PREFIX}/${PORTNAME} -not -type d | ${SORT} | \
+	@${FIND} -s ${STAGEDIR}${PREFIX}/${PORTNAME} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' | \
 		${SED} -E -e '/sample$$/ s#^#@sample #' | \
 		${SED} -E -e '/bin\/.*sh$$/ s#^#@(,,755) #'>> ${TMPPLIST}
-	${FIND} -s ${STAGEDIR}${PORTNAME} -type d | ${SORT} | \
+	@${FIND} -s ${STAGEDIR}${PREFIX}/${PORTNAME} -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
-	${ECHO_CMD} "@dir wildfly/.galleon/hashes/.installation" >> ${TMPPLIST}
-	${ECHO_CMD} "@dir wildfly/.galleon/hashes/.well-known/acme-challenge" >> ${TMPPLIST}
-	${ECHO_CMD} "@dir wildfly/.galleon/hashes/domain/tmp/auth" >> ${TMPPLIST}
-	${ECHO_CMD} "@dir wildfly/.galleon/hashes/standalone/lib/ext" >> ${TMPPLIST}
-	${ECHO_CMD} "@dir wildfly/.galleon/hashes/standalone/tmp/auth" >> ${TMPPLIST}
-	${ECHO_CMD} "@dir wildfly/.galleon/hashes/standalone/tmp/embedded-server/auth" >> ${TMPPLIST}
-	${ECHO_CMD} "@dir wildfly/.galleon/hashes/standalone/tmp/embedded-server/vfs/temp" >> ${TMPPLIST}
-	${ECHO_CMD} "@dir wildfly/.well-known/acme-challenge" >> ${TMPPLIST}
-	${ECHO_CMD} "@dir wildfly/domain/tmp/auth" >> ${TMPPLIST}
-	${ECHO_CMD} "@dir wildfly/standalone/lib/ext" >> ${TMPPLIST}
-	${ECHO_CMD} "@dir wildfly/standalone/tmp/auth" >> ${TMPPLIST}
-	${ECHO_CMD} "@dir wildfly/standalone/tmp/embedded-server/auth" >> ${TMPPLIST}
-	${ECHO_CMD} "@dir wildfly/standalone/tmp/embedded-server/vfs/temp" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
