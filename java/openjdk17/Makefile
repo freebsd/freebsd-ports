@@ -1,7 +1,7 @@
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 
@@ -39,6 +39,9 @@ GH_PROJECT=	jdk17u
 
 NO_CCACHE=	yes
 
+# Suppress passing -j to do-build target via Mk/bsd.port.mk
+# In the JDK build the number of parallel jobs is passed in via configure --with-jobs=N
+_MAKE_JOBS=
 MAKE_ENV=	LANG="C" \
 		LC_ALL="C" \
 		CLASSPATH="" \
@@ -88,6 +91,7 @@ CONFIGURE_ARGS=	--with-boot-jdk=${BOOTSTRAPJDKDIR} \
 		--with-giflib-include=${LOCALBASE}/include \
 		--with-giflib-lib=${LOCALBASE}/lib \
 		--with-harfbuzz=system \
+		--with-jobs=${MAKE_JOBS_NUMBER} \
 		--with-libpng=system \
 		--with-zlib=system \
 		--with-lcms=system \
@@ -100,12 +104,6 @@ CONFIGURE_ARGS=	--with-boot-jdk=${BOOTSTRAPJDKDIR} \
 		--with-vendor-url="https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/" \
 		--with-vendor-bug-url="${JDK_BUG_URL}" \
 		--with-vendor-vm-bug-url="${JDK_BUG_URL}"
-
-.if defined(MAKE_JOBS_UNSAFE)
-CONFIGURE_ARGS+=	--with-jobs=1
-.elif defined(MAKE_JOBS_NUMBER)
-CONFIGURE_ARGS+=	--with-jobs=${MAKE_JOBS_NUMBER}
-.endif
 
 JAVAVMS_COMMENT=	OpenJDK${JDK_MAJOR_VERSION}
 
