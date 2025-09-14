@@ -16,7 +16,7 @@ include/json-glib-1.0/json-glib/json-version.h
 %%GIR%%lib/girepository-1.0/Json-1.0.typelib
 lib/libjson-glib-1.0.so
 lib/libjson-glib-1.0.so.0
-lib/libjson-glib-1.0.so.0.1000.6
+lib/libjson-glib-1.0.so.0.1000.8
 libdata/pkgconfig/json-glib-1.0.pc
 %%GIR%%share/gir-1.0/Json-1.0.gir
 %%DOCS%%%%DOCSDIR%%-1.0/RedHatDisplay-Black.woff
@@ -401,6 +401,7 @@ libdata/pkgconfig/json-glib-1.0.pc
 %%NLS%%share/locale/tr/LC_MESSAGES/json-glib-1.0.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/json-glib-1.0.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/json-glib-1.0.mo
+%%NLS%%share/locale/uz/LC_MESSAGES/json-glib-1.0.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/json-glib-1.0.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/json-glib-1.0.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/json-glib-1.0.mo
