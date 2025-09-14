@@ -1,15 +1,20 @@
 #!/bin/sh
 
-# Set $XDG_RUNTIME_DIR
-_user_id=$(id -u)
-if [ -d "/var/run/user/${_user_id}" ]; then
-    XDG_RUNTIME_DIR="/var/run/user/${_user_id}"
-    export XDG_RUNTIME_DIR
+_version=$(sysctl kern.osreldate | awk -F " " '{printf("%s", $2);}')
 
-    if [ ! -d "/var/run/user/${_user_id}" ]; then
-        mkdir "/var/run/user/${_user_id}/pulse"
-    fi
-fi
+# Set $XDG_RUNTIME_DIR (uncomment if use with login manager other than gdm)
+#if [ ${_version} -gt 1401000 ]; then
+#    _user_id=$(id -un)
+#    if [ -d "/var/run/xdg/${_user_id}" ]; then
+#        XDG_RUNTIME_DIR="/var/run/xdg/${_user_id}"
+#    fi
+#else
+#    _user_id=$(id -u)
+#    if [ -d "/var/run/user/${_user_id}" ]; then
+#        XDG_RUNTIME_DIR="/var/run/user/${_user_id}"
+#    fi
+#fi
+#export XDG_RUNTIME_DIR
 
 # Set environment variables for D-Bus session services
 if command -v dbus-update-activation-environment >/dev/null 2>&1 ; then
@@ -60,7 +65,7 @@ fi
 
 # Unlock gnome-keyring-daemon
 if test -n "$DESKTOP_SESSION" ; then
-    SSH_AUTH_SOCK="/var/run/user/${_user_id}/keyring/ssh"
+    SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/keyring"
 
     # If .xinitrc is used, uncomment the next line
     #eval $(gnome-keyring-daemon --start --components=pkc11,secrets,ssh)

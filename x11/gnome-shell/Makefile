@@ -1,6 +1,5 @@
 PORTNAME=	gnome-shell
-PORTVERSION=	47.8
-PORTREVISION=	1
+PORTVERSION=	47.10
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -37,7 +36,7 @@ CPE_VENDOR=	gnome
 USE_GNOME=	atk evolutiondataserver3 gdkpixbuf glib20 \
 		gnomedesktop4 gnomecontrolcenter3 gtk40 introspection \
 		libxml2 libxslt:build
-USE_XORG=	x11 xfixes
+USE_XORG=	x11 xfixes xext
 
 PORTSCOUT=	limit:^47\.
 
