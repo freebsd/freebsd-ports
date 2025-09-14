@@ -1,6 +1,11 @@
 --- Gemfile.orig	2025-07-07 21:05:05 UTC
 +++ Gemfile
-@@ -6,22 +6,22 @@ gem "actionpack-xml_parser"
+@@ -2,26 +2,26 @@ ruby '>= 3.1.0', '< 3.4.0'
+ 
+ ruby '>= 3.1.0', '< 3.4.0'
+ 
+-gem 'rails', '7.2.2.1'
++gem 'rails', '~> 7.2.2'
  gem 'rouge', '~> 4.5'
  gem 'mini_mime', '~> 1.1.0'
  gem "actionpack-xml_parser"
@@ -44,7 +49,7 @@
  # Optional gem for LDAP authentication
  group :ldap do
 -  gem 'net-ldap', '~> 0.17.0'
-+  gem 'net-ldap', '~> 0.19.0'
++  gem 'net-ldap', '>= 0.19'
  end
  
  # Optional gem for exporting the gantt to a PNG file
