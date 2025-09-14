@@ -12,16 +12,8 @@ share/man/man1/uncpk.1.gz
 share/man/man1/xa.1.gz
 share/man/man1/xa65.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.1st
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/fileformat.txt
-%%PORTDOCS%%%%DOCSDIR%%/xa-de.log
-%%PORTDOCS%%%%DOCSDIR%%/xa-de.txt
-%%PORTDOCS%%%%DOCSDIR%%/xa.html
-%%PORTDOCS%%%%DOCSDIR%%/xa.log
-%%PORTDOCS%%%%DOCSDIR%%/xa.txt
-%%PORTDOCS%%%%DOCSDIR%%/xaannounce
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/a.o65
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c64def.def
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pack.doc
