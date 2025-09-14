@@ -3,7 +3,7 @@
     <affects>
       <package>
 	<name>unit-java</name>
-	<range><lt>1.35.0</lt></range>
+	<range><lt>1.34.2</lt></range>
       </package>
     </affects>
     <description>
