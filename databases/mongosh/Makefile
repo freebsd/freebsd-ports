@@ -1,6 +1,7 @@
 PORTNAME=	mongosh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.5
+PORTREVISION=	1
 CATEGORIES=	databases shells net
 MASTER_SITES=	https://registry.npmjs.org/mongodb-client-encryption/-/:mongocrypt \
 		https://registry.npmjs.org/kerberos/-/:kerberos \
