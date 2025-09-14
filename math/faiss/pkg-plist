@@ -85,6 +85,7 @@ include/faiss/impl/platform_macros.h
 include/faiss/impl/pq4_fast_scan.h
 include/faiss/impl/residual_quantizer_encode_steps.h
 include/faiss/impl/simd_result_handlers.h
+include/faiss/impl/zerocopy_io.h
 include/faiss/index_factory.h
 include/faiss/index_io.h
 include/faiss/invlists/BlockInvertedLists.h
