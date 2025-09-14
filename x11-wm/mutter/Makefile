@@ -1,6 +1,5 @@
 PORTNAME=	mutter
-PORTVERSION=	47.9
-PORTREVISION=	1
+PORTVERSION=	47.10
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -26,7 +25,6 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libpipewire-0.3.so:multimedia/pipewire \
 		libstartup-notification-1.so:x11/startup-notification \
 		libxkbcommon.so:x11/libxkbcommon \
-		libxkbfile.so:x11/libxkbfile \
 		liblcms2.so:graphics/lcms2 \
 		libcolord.so:graphics/colord \
 		libharfbuzz.so:print/harfbuzz \
@@ -36,12 +34,12 @@ RUN_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		xkeyboard-config>0:x11/xkeyboard-config
 
-USES=		compiler:c++0x gettext gl gnome localbase meson pkgconfig \
-		tar:xz xorg
+USES=		compiler:c++0x gettext-tools gl gnome localbase meson \
+		pkgconfig tar:xz xorg
 USE_GL=		egl gbm
 USE_GNOME=	atk cairo gdkpixbuf gnomedesktop4 gtk40 introspection:build
 USE_XORG=	ice pixman sm x11 xcb xcomposite xcursor xdamage xext \
-		xfixes xi xinerama xrandr xrender xtst
+		xfixes xi xinerama xkbfile xrandr xrender xtst
 USE_LDCONFIG=	yes
 
 PORTSCOUT=	limit:^47\.
@@ -58,10 +56,6 @@ MESON_ARGS=	-Dlibdisplay_info=enabled \
 		-Dclutter_tests=false \
 		-Dmutter_tests=false \
 		-Dinstalled_tests=false
-
-# Required by embedded cogl/clutter forks.
-MESON_ARGS+=	-Dgles2_libname=libGLESv2 \
-		-Dopengl_libname=libGL.so
 
 GLIB_SCHEMAS=	org.gnome.mutter.gschema.xml \
 		org.gnome.mutter.wayland.gschema.xml
