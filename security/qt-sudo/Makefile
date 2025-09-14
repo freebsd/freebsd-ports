@@ -1,5 +1,5 @@
 PORTNAME=	qt-sudo
-DISTVERSION=	2.0.1
+DISTVERSION=	2.2.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/aarnt/${PORTNAME}/releases/download/v${DISTVERSION}/
 
