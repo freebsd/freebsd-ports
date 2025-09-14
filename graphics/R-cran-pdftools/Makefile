@@ -1,6 +1,5 @@
 PORTNAME=	pdftools
-DISTVERSION=	3.5.0
-PORTREVISION=	2
+DISTVERSION=	3.6.0
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,8 +15,7 @@ CRAN_DEPENDS=	R-cran-qpdf>0:graphics/R-cran-qpdf \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 LIB_DEPENDS=	libpoppler-cpp.so:graphics/poppler
 RUN_DEPENDS=	${CRAN_DEPENDS}
-TEST_DEPENDS=	R-cran-jpeg>0:graphics/R-cran-jpeg \
-		R-cran-png>0:graphics/R-cran-png \
+TEST_DEPENDS=	R-cran-png>0:graphics/R-cran-png \
 		R-cran-testthat>0:devel/R-cran-testthat \
 		R-cran-webp>0:graphics/R-cran-webp
 
