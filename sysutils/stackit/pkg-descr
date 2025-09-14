@@ -1,0 +1,6 @@
+Use the STACKIT command-line tool, stackit, to manage
+STACKIT services and resources as well as perform
+operations using the command-line or in scripts or
+automation.
+
+See also: https://github.com/stackitcloud/stackit-cli
