@@ -6399,6 +6399,7 @@
     SUBDIR += recycle
     SUBDIR += redasm
     SUBDIR += redo
+    SUBDIR += reflect-cpp
     SUBDIR += reflection-cpp
     SUBDIR += regexx
     SUBDIR += regexxer
