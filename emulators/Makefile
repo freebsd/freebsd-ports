@@ -4,6 +4,7 @@
     SUBDIR += Ymir
     SUBDIR += adamem
     SUBDIR += almostti
+    SUBDIR += amiberry
     SUBDIR += anese
     SUBDIR += aqemu
     SUBDIR += aranym
