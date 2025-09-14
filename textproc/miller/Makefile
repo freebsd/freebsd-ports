@@ -1,7 +1,6 @@
 PORTNAME=	miller
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.13.0
-PORTREVISION=	6
+DISTVERSION=	6.15.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://raw.githubusercontent.com/johnkerl/${PORTNAME}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod
@@ -13,7 +12,7 @@ WWW=		https://johnkerl.org/miller/doc/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cpe go:modules
+USES=		cpe go:1.24,modules
 CPE_VENDOR=	johnkerl
 GO_MODULE=	github.com/johnkerl/miller
 GO_TARGET=	./cmd/mlr
