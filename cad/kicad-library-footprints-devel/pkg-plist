@@ -345,6 +345,7 @@
 %%DATADIR%%/footprints/Button_Switch_THT.pretty/SW_SPST_Omron_B3F-40xx.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_THT.pretty/SW_SPST_Omron_B3F-50xx.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_THT.pretty/SW_Slide-03_Wuerth-WS-SLTV_10x2.5x6.4_P2.54mm.kicad_mod
+%%DATADIR%%/footprints/Button_Switch_THT.pretty/SW_Slide_SP3T_Straight_CK_OS103012MU1QP1.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_THT.pretty/SW_Slide_SPDT_Angled_CK_OS102011MA1Q.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_THT.pretty/SW_Slide_SPDT_Straight_CK_OS102011MS2Q.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_THT.pretty/SW_TH_Tactile_Omron_B3F-100x.kicad_mod
@@ -8241,6 +8242,7 @@
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THB10-xxxx_Dual_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THB10-xxxx_Single_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THD_15-xxxxWIN_THT.kicad_mod
+%%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THL30-xxxxWI_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THL40-xxxxWI_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THN10-xxxxUIR_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THN30-xxxx_THT.kicad_mod
@@ -11098,6 +11100,8 @@
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/DFN-10-1EP_3x3mm_P0.5mm_EP1.55x2.48mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/DFN-10-1EP_3x3mm_P0.5mm_EP1.58x2.35mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/DFN-10-1EP_3x3mm_P0.5mm_EP1.58x2.35mm_ThermalVias.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/DFN-10-1EP_3x3mm_P0.5mm_EP1.646x3.1mm.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/DFN-10-1EP_3x3mm_P0.5mm_EP1.646x3.1mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/DFN-10-1EP_3x3mm_P0.5mm_EP1.65x2.38mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/DFN-10-1EP_3x3mm_P0.5mm_EP1.65x2.38mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/DFN-10-1EP_3x3mm_P0.5mm_EP1.75x2.7mm.kicad_mod
@@ -11219,6 +11223,7 @@
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Maxim_TDFN-12-1EP_3x3mm_P0.5mm_EP1.7x2.5mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Maxim_TDFN-12-1EP_3x3mm_P0.5mm_EP1.7x2.5mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Maxim_TDFN-6-1EP_3x3mm_P0.95mm_EP1.5x2.3mm.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/Maxim_WSON-8-1EP_3x2mm_P0.5mm_EP1.75x1.63mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Micrel_MLF-8-1EP_2x2mm_P0.5mm_EP0.6x1.2mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Micrel_MLF-8-1EP_2x2mm_P0.5mm_EP0.6x1.2mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Micrel_MLF-8-1EP_2x2mm_P0.5mm_EP0.8x1.3mm_ThermalVias.kicad_mod
@@ -11232,6 +11237,7 @@
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Mini-Circuits_FG873-4_3x3mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/NXP_LQFN-48-1EP_7x7mm_P0.5mm_EP3.5x3.5mm_16xMask0.45x0.45.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/NXP_LQFN-48-1EP_7x7mm_P0.5mm_EP3.5x3.5mm_16xMask0.45x0.45_ThermalVias.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/NXP_VQFN-16-1EP_4x4mm_P0.65mm_EP2.1x2.1mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Nordic_AQFN-73-1EP_7x7mm_P0.5mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Nordic_AQFN-94-1EP_7x7mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/OnSemi_DFN-14-1EP_4x4mm_P0.5mm_EP2.7x3.4mm.kicad_mod
@@ -11491,6 +11497,7 @@
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/QFN-76-1EP_9x9mm_P0.4mm_EP3.8x3.8mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/QFN-76-1EP_9x9mm_P0.4mm_EP5.81x6.31mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/QFN-76-1EP_9x9mm_P0.4mm_EP5.81x6.31mm_ThermalVias.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/QFN-8-1EP_6x5mm_P1.27mm_EP3.4x4.2mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/QFN-80-1EP_10x10mm_P0.4mm_EP3.4x3.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/QFN-80-1EP_10x10mm_P0.4mm_EP3.4x3.4mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Qorvo_DFN-8-1EP_2x2mm_P0.5mm.kicad_mod
@@ -11678,6 +11685,7 @@
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/UQFN-10_1.3x1.8mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/UQFN-10_1.4x1.8mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/UQFN-10_1.6x2.1mm_P0.5mm.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/UQFN-12-1EP_2x2mm_P0.4mm_EP1.1x1.1mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/UQFN-16-1EP_3x3mm_P0.5mm_EP1.75x1.75mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/UQFN-16-1EP_4x4mm_P0.65mm_EP2.6x2.6mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/UQFN-16-1EP_4x4mm_P0.65mm_EP2.6x2.6mm_ThermalVias.kicad_mod
@@ -11756,6 +11764,10 @@
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-48-1EP_7x7mm_P0.5mm_EP4.1x4.1mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-48-1EP_7x7mm_P0.5mm_EP5.15x5.15mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-48-1EP_7x7mm_P0.5mm_EP5.15x5.15mm_ThermalVias.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-56-1EP_8x8mm_P0.5mm_EP5.1x4.96mm.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-56-1EP_8x8mm_P0.5mm_EP5.1x4.96mm_ThermalVias.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-56-1EP_8x8mm_P0.5mm_EP5.5x5.06mm.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-56-1EP_8x8mm_P0.5mm_EP5.5x5.06mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-64-1EP_9x9mm_P0.5mm_EP5.4x5.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-64-1EP_9x9mm_P0.5mm_EP5.4x5.4mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/VQFN-64-1EP_9x9mm_P0.5mm_EP7.15x7.15mm.kicad_mod
@@ -12149,6 +12161,7 @@
 %%DATADIR%%/footprints/Package_LGA.pretty/AMS_LGA-20_4.7x4.5mm_P0.65mm.kicad_mod
 %%DATADIR%%/footprints/Package_LGA.pretty/AMS_OLGA-8_2x3.1mm_P0.8mm.kicad_mod
 %%DATADIR%%/footprints/Package_LGA.pretty/Bosch_LGA-14_3x2.5mm_P0.5mm.kicad_mod
+%%DATADIR%%/footprints/Package_LGA.pretty/Bosch_LGA-16_4.5x3mm_P0.5mm_LayoutBorder7x1y_ClockwisePinNumbering.kicad_mod
 %%DATADIR%%/footprints/Package_LGA.pretty/Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering.kicad_mod
 %%DATADIR%%/footprints/Package_LGA.pretty/Bosch_LGA-8_2x2.5mm_P0.65mm_ClockwisePinNumbering.kicad_mod
 %%DATADIR%%/footprints/Package_LGA.pretty/Bosch_LGA-8_3x3mm_P0.8mm_ClockwisePinNumbering.kicad_mod
@@ -12366,8 +12379,8 @@
 %%DATADIR%%/footprints/Package_SO.pretty/HTSSOP-44-1EP_6.1x14mm_P0.635mm_EP5.2x14mm_Mask4.31x8.26mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/HTSSOP-44_6.1x14mm_P0.635mm_TopEP4.14x7.01mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/HTSSOP-56-1EP_6.1x14mm_P0.5mm_EP3.61x6.35mm.kicad_mod
-%%DATADIR%%/footprints/Package_SO.pretty/HVSSOP-10-1EP_3x3mm_P0.5mm_EP1.57x1.88mm.kicad_mod
-%%DATADIR%%/footprints/Package_SO.pretty/HVSSOP-10-1EP_3x3mm_P0.5mm_EP1.57x1.88mm_ThermalVias.kicad_mod
+%%DATADIR%%/footprints/Package_SO.pretty/HVSSOP-10-1EP_3x3mm_P0.5mm_EP1.83x1.89mm.kicad_mod
+%%DATADIR%%/footprints/Package_SO.pretty/HVSSOP-10-1EP_3x3mm_P0.5mm_EP1.83x1.89mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/HVSSOP-8-1EP_3x3mm_P0.65mm_EP1.57x1.89mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/HVSSOP-8-1EP_3x3mm_P0.65mm_EP1.57x1.89mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/Infineon_PG-DSO-12-11.kicad_mod
@@ -14172,10 +14185,6 @@
 %%DATADIR%%/footprints/Symbol.pretty/WEEE-Logo_4.2x6mm_SilkScreen.kicad_mod
 %%DATADIR%%/footprints/Symbol.pretty/WEEE-Logo_5.6x8mm_SilkScreen.kicad_mod
 %%DATADIR%%/footprints/Symbol.pretty/WEEE-Logo_8.4x12mm_SilkScreen.kicad_mod
-%%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_Altech_AK300-2_P5.00mm.kicad_mod
-%%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_Altech_AK300-3_P5.00mm.kicad_mod
-%%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_Altech_AK300-4_P5.00mm.kicad_mod
-%%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_Degson_DG246-3.81-03P.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_MaiXu_MX126-5.0-02P_1x02_P5.00mm.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_MaiXu_MX126-5.0-03P_1x03_P5.00mm.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_MaiXu_MX126-5.0-04P_1x04_P5.00mm.kicad_mod
@@ -14199,7 +14208,6 @@
 %%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_MaiXu_MX126-5.0-22P_1x22_P5.00mm.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_MaiXu_MX126-5.0-23P_1x23_P5.00mm.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_MaiXu_MX126-5.0-24P_1x24_P5.00mm.kicad_mod
-%%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_Wuerth_691311400102_P7.62mm.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_Xinya_XY308-2.54-10P_1x10_P2.54mm_Horizontal.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_Xinya_XY308-2.54-11P_1x11_P2.54mm_Horizontal.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_Xinya_XY308-2.54-12P_1x12_P2.54mm_Horizontal.kicad_mod
@@ -14222,12 +14230,6 @@
 %%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_Xinya_XY308-2.54-7P_1x07_P2.54mm_Horizontal.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_Xinya_XY308-2.54-8P_1x08_P2.54mm_Horizontal.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_Xinya_XY308-2.54-9P_1x09_P2.54mm_Horizontal.kicad_mod
-%%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_bornier-2_P5.08mm.kicad_mod
-%%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_bornier-3_P5.08mm.kicad_mod
-%%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_bornier-4_P5.08mm.kicad_mod
-%%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_bornier-5_P5.08mm.kicad_mod
-%%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_bornier-6_P5.08mm.kicad_mod
-%%DATADIR%%/footprints/TerminalBlock.pretty/TerminalBlock_bornier-8_P5.08mm.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock_4Ucon.pretty/TerminalBlock_4Ucon_1x02_P3.50mm_Horizontal.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock_4Ucon.pretty/TerminalBlock_4Ucon_1x02_P3.50mm_Vertical.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock_4Ucon.pretty/TerminalBlock_4Ucon_1x03_P3.50mm_Horizontal.kicad_mod
@@ -14325,6 +14327,7 @@
 %%DATADIR%%/footprints/TerminalBlock_CUI.pretty/TerminalBlock_CUI_TB007-508-22_1x22_P5.08mm_Horizontal.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock_CUI.pretty/TerminalBlock_CUI_TB007-508-23_1x23_P5.08mm_Horizontal.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock_CUI.pretty/TerminalBlock_CUI_TB007-508-24_1x24_P5.08mm_Horizontal.kicad_mod
+%%DATADIR%%/footprints/TerminalBlock_Degson.pretty/Degson_DG246-3.81-03P.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock_Degson.pretty/TerminalBlock_Degson_DG250-3.5-01P_1x01_P3.50mm_45Degree.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock_Degson.pretty/TerminalBlock_Degson_DG250-3.5-02P_1x02_P3.50mm_45Degree.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock_Degson.pretty/TerminalBlock_Degson_DG250-3.5-03P_1x03_P3.50mm_45Degree.kicad_mod
@@ -14877,6 +14880,7 @@
 %%DATADIR%%/footprints/TerminalBlock_WAGO.pretty/TerminalBlock_WAGO_804-312_1x12_P7.50mm_45Degree.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock_WAGO.pretty/TerminalBlock_WAGO_804-316_1x16_P7.50mm_45Degree.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock_WAGO.pretty/TerminalBlock_WAGO_804-324_1x24_P7.50mm_45Degree.kicad_mod
+%%DATADIR%%/footprints/TerminalBlock_Wuerth.pretty/Wuerth_691311400102_P7.62mm.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock_Wuerth.pretty/Wuerth_REDCUBE-THR_WP-THRBU_74650073_THR.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock_Wuerth.pretty/Wuerth_REDCUBE-THR_WP-THRBU_74650074_THR.kicad_mod
 %%DATADIR%%/footprints/TerminalBlock_Wuerth.pretty/Wuerth_REDCUBE-THR_WP-THRBU_74650094_THR.kicad_mod

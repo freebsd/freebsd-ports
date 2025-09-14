@@ -59,7 +59,7 @@ EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
 SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py
 #CXXFLAGS+=	--std=c++14 -I${WRKSRC} -I${WRKSRC}/include -I${LOCALBASE}/include
-CXXFLAGS+=	-g 
+CXXFLAGS+=	-g -DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED # error: "Boost.Stacktrace requires `_Unwind_Backtrace` function. Define `_GNU_SOURCE` macro or `BOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED` if _Unwind_Backtrace is available without `_GNU_SOURCE`."
 # -undefined dynamic_lookup
 CXXFLAGS_powerpc=	-O0
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
