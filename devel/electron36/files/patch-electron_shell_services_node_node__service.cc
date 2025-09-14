@@ -1,6 +1,6 @@
---- electron/shell/services/node/node_service.cc.orig	2025-01-29 20:10:57 UTC
+--- electron/shell/services/node/node_service.cc.orig	2025-09-08 12:48:33 UTC
 +++ electron/shell/services/node/node_service.cc
-@@ -22,7 +22,7 @@
+@@ -23,7 +23,7 @@
  #include "shell/common/node_includes.h"
  #include "shell/services/node/parent_port.h"
  
@@ -9,7 +9,7 @@
  #include "shell/common/crash_keys.h"
  #endif
  
-@@ -39,7 +39,7 @@ void V8FatalErrorCallback(const char* location, const 
+@@ -40,7 +40,7 @@ void V8FatalErrorCallback(const char* location, const 
      g_client_remote->OnV8FatalError(location, outstream.str());
    }
  
