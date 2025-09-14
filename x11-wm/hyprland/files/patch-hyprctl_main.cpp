@@ -1,6 +1,6 @@
---- hyprctl/main.cpp.orig	2025-07-25 09:09:59 UTC
+--- hyprctl/main.cpp.orig	2025-09-10 12:53:39 UTC
 +++ hyprctl/main.cpp
-@@ -268,7 +268,7 @@ int requestIPC(std::string_view filename, std::string_
+@@ -270,7 +270,7 @@ int requestIPC(std::string_view filename, std::string_
      sockaddr_un serverAddress = {0};
      serverAddress.sun_family  = AF_UNIX;
  

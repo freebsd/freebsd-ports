@@ -1,7 +1,3 @@
-TIMESTAMP = 1753943980
-SHA256 (hyprland/source-v0.50.1.tar.gz) = 2e7280e08d9b0460159bdfcdebdf6c532a79843a6a1e8417f78c15f6293fc956
-SIZE (hyprland/source-v0.50.1.tar.gz) = 54239562
-SHA256 (hyprland/ecc04e8ba7469fb01c5a066bf1c48d5cd58d1a18.patch) = 47b1a8071e38a4e47237af604a736e5b11ea023a8b3c23bfb04b4e1fb30755f7
-SIZE (hyprland/ecc04e8ba7469fb01c5a066bf1c48d5cd58d1a18.patch) = 5564
-SHA256 (hyprland/66a6ef3859255f2a21c1e902a4b5f56562e87041.patch) = 321d2b75fa6a5062cfdc55d9a35500b55858b6d814f922ea8c5f8b18808b0317
-SIZE (hyprland/66a6ef3859255f2a21c1e902a4b5f56562e87041.patch) = 2217
+TIMESTAMP = 1757747353
+SHA256 (hyprland/source-v0.51.0.tar.gz) = 6f02fcde4f21286f8b36f19f491e4a987e5cc7e7d74f48271da31b85cec47fb7
+SIZE (hyprland/source-v0.51.0.tar.gz) = 54279784

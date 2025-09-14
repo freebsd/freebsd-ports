@@ -7,6 +7,7 @@ include/hyprland/protocols/color-management-v1.hpp
 include/hyprland/protocols/content-type-v1.hpp
 include/hyprland/protocols/cursor-shape-v1.hpp
 include/hyprland/protocols/drm-lease-v1.hpp
+include/hyprland/protocols/ext-data-control-v1.hpp
 include/hyprland/protocols/ext-foreign-toplevel-list-v1.hpp
 include/hyprland/protocols/ext-idle-notify-v1.hpp
 include/hyprland/protocols/ext-session-lock-v1.hpp
@@ -28,6 +29,7 @@ include/hyprland/protocols/linux-dmabuf-v1.hpp
 include/hyprland/protocols/linux-drm-syncobj-v1.hpp
 include/hyprland/protocols/pointer-constraints-unstable-v1.hpp
 include/hyprland/protocols/pointer-gestures-unstable-v1.hpp
+include/hyprland/protocols/pointer-warp-v1.hpp
 include/hyprland/protocols/presentation-time.hpp
 include/hyprland/protocols/primary-selection-unstable-v1.hpp
 include/hyprland/protocols/relative-pointer-unstable-v1.hpp
@@ -128,7 +130,6 @@ include/hyprland/src/layout/IHyprLayout.hpp
 include/hyprland/src/layout/MasterLayout.hpp
 include/hyprland/src/macros.hpp
 include/hyprland/src/managers/ANRManager.hpp
-include/hyprland/src/managers/AnimationManager.hpp
 include/hyprland/src/managers/CursorManager.hpp
 include/hyprland/src/managers/DonationNagManager.hpp
 include/hyprland/src/managers/EventManager.hpp
@@ -143,12 +144,26 @@ include/hyprland/src/managers/TokenManager.hpp
 include/hyprland/src/managers/VersionKeeperManager.hpp
 include/hyprland/src/managers/XCursorManager.hpp
 include/hyprland/src/managers/XWaylandManager.hpp
+include/hyprland/src/managers/animation/AnimationManager.hpp
+include/hyprland/src/managers/animation/DesktopAnimationManager.hpp
 include/hyprland/src/managers/eventLoop/EventLoopManager.hpp
 include/hyprland/src/managers/eventLoop/EventLoopTimer.hpp
 include/hyprland/src/managers/input/InputManager.hpp
 include/hyprland/src/managers/input/InputMethodPopup.hpp
 include/hyprland/src/managers/input/InputMethodRelay.hpp
 include/hyprland/src/managers/input/TextInput.hpp
+include/hyprland/src/managers/input/UnifiedWorkspaceSwipeGesture.hpp
+include/hyprland/src/managers/input/trackpad/GestureTypes.hpp
+include/hyprland/src/managers/input/trackpad/TrackpadGestures.hpp
+include/hyprland/src/managers/input/trackpad/gestures/CloseGesture.hpp
+include/hyprland/src/managers/input/trackpad/gestures/DispatcherGesture.hpp
+include/hyprland/src/managers/input/trackpad/gestures/FloatGesture.hpp
+include/hyprland/src/managers/input/trackpad/gestures/FullscreenGesture.hpp
+include/hyprland/src/managers/input/trackpad/gestures/ITrackpadGesture.hpp
+include/hyprland/src/managers/input/trackpad/gestures/MoveGesture.hpp
+include/hyprland/src/managers/input/trackpad/gestures/ResizeGesture.hpp
+include/hyprland/src/managers/input/trackpad/gestures/SpecialWorkspaceGesture.hpp
+include/hyprland/src/managers/input/trackpad/gestures/WorkspaceSwipeGesture.hpp
 include/hyprland/src/managers/permissions/DynamicPermissionManager.hpp
 include/hyprland/src/pch/pch.hpp
 include/hyprland/src/plugins/HookSystem.hpp
@@ -162,6 +177,7 @@ include/hyprland/src/protocols/CursorShape.hpp
 include/hyprland/src/protocols/DRMLease.hpp
 include/hyprland/src/protocols/DRMSyncobj.hpp
 include/hyprland/src/protocols/DataDeviceWlr.hpp
+include/hyprland/src/protocols/ExtDataDevice.hpp
 include/hyprland/src/protocols/ExtWorkspace.hpp
 include/hyprland/src/protocols/FocusGrab.hpp
 include/hyprland/src/protocols/ForeignToplevel.hpp
@@ -182,6 +198,7 @@ include/hyprland/src/protocols/OutputManagement.hpp
 include/hyprland/src/protocols/OutputPower.hpp
 include/hyprland/src/protocols/PointerConstraints.hpp
 include/hyprland/src/protocols/PointerGestures.hpp
+include/hyprland/src/protocols/PointerWarp.hpp
 include/hyprland/src/protocols/PresentationTime.hpp
 include/hyprland/src/protocols/PrimarySelection.hpp
 include/hyprland/src/protocols/RelativePointer.hpp

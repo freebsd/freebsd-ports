@@ -1,14 +1,10 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.50.1
+DISTVERSION=	0.51.0
 CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://github.com/hyprwm/Hyprland/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	source-${DISTVERSIONFULL}
 DIST_SUBDIR=	${PORTNAME}
-
-PATCH_SITES=	https://github.com/hyprwm/Hyprland/commit/
-PATCHFILES+=	ecc04e8ba7469fb01c5a066bf1c48d5cd58d1a18.patch:-p1 # avoid app hang
-PATCHFILES+=	66a6ef3859255f2a21c1e902a4b5f56562e87041.patch:-p1 # see #10437
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
@@ -20,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		glaze>0:devel/glaze \
 		hyprwayland-scanner>=0.3.10:devel/hyprwayland-scanner \
-		wayland-protocols>=1.43:graphics/wayland-protocols
+		wayland-protocols>=1.45:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
 		libinotify.so:devel/libinotify \
@@ -76,6 +72,8 @@ post-patch:
 # Respect consolekit2 as XDG_RUNTIME_DIR fallback
 	@${REINPLACE_CMD} 's|/run/user|/var&|' \
 		${WRKSRC}/hyprctl/main.cpp \
+		${WRKSRC}/hyprpm/src/core/HyprlandSocket.cpp \
+		${WRKSRC}/hyprtester/src/hyprctlCompat.cpp \
 		${WRKSRC}/src/Compositor.cpp
 # Respect PREFIX for wallpapers
 	@${REINPLACE_CMD} 's|/usr/share|${DATADIR:H}|' \
@@ -83,7 +81,11 @@ post-patch:
 # XXX Replace linprocfs(4) with sysctl(3)
 	@${REINPLACE_CMD} -e 's|/proc|${LINUXBASE}&|g' \
 		${WRKSRC}/src/desktop/Window.cpp \
-		${WRKSRC}/src/plugins/HookSystem.cpp
+		${WRKSRC}/src/debug/HyprCtl.cpp \
+		${WRKSRC}/src/debug/CrashReporter.cpp \
+		${WRKSRC}/src/helpers/MiscFunctions.cpp \
+		${WRKSRC}/src/plugins/HookSystem.cpp \
+		${WRKSRC}/src/plugins/PluginAPI.cpp
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/hyprland
