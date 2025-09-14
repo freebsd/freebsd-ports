@@ -22,4 +22,10 @@ do-build:
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-mainloop.c
+.endif
+
 .include <bsd.port.mk>
