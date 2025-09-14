@@ -1,6 +1,5 @@
 PORTNAME=	unit-otel
 PORTVERSION=	${UNIT_VERSION}
-PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES?=	https://unit.nginx.org/download/
 DISTFILES=	unit-${PORTVERSION}.tar.gz
@@ -20,46 +19,45 @@ CPE_PRODUCT=	unit
 WRKSRC=		${WRKDIR}/unit-${PORTVERSION}/src/otel
 
 CARGO_CRATES=	addr2line-0.24.2 \
-		adler2-2.0.0 \
-		anyhow-1.0.94 \
+		adler2-2.0.1 \
+		anyhow-1.0.98 \
 		async-channel-1.9.0 \
-		async-channel-2.3.1 \
-		async-executor-1.13.1 \
+		async-channel-2.5.0 \
+		async-executor-1.13.2 \
 		async-global-executor-2.4.1 \
-		async-io-2.4.0 \
+		async-io-2.5.0 \
 		async-lock-3.4.0 \
-		async-std-1.13.0 \
+		async-std-1.13.1 \
 		async-stream-0.3.6 \
 		async-stream-impl-0.3.6 \
 		async-task-4.7.1 \
-		async-trait-0.1.83 \
+		async-trait-0.1.88 \
 		atomic-waker-1.1.2 \
-		autocfg-1.4.0 \
+		autocfg-1.5.0 \
 		axum-0.7.9 \
 		axum-core-0.4.5 \
-		backtrace-0.3.74 \
+		backtrace-0.3.75 \
 		base64-0.22.1 \
-		bitflags-2.6.0 \
-		blocking-1.6.1 \
-		bumpalo-3.16.0 \
-		byteorder-1.5.0 \
-		bytes-1.9.0 \
-		cc-1.2.4 \
-		cfg-if-1.0.0 \
+		bitflags-2.9.1 \
+		blocking-1.6.2 \
+		bumpalo-3.19.0 \
+		bytes-1.10.1 \
+		cc-1.2.30 \
+		cfg-if-1.0.1 \
 		cfg_aliases-0.2.1 \
 		concurrent-queue-2.5.0 \
 		core-foundation-0.9.4 \
-		core-foundation-0.10.0 \
+		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
 		crossbeam-utils-0.8.21 \
 		displaydoc-0.2.5 \
-		either-1.13.0 \
+		either-1.15.0 \
 		encoding_rs-0.8.35 \
-		equivalent-1.0.1 \
-		errno-0.3.10 \
+		equivalent-1.0.2 \
+		errno-0.3.13 \
 		event-listener-2.5.3 \
-		event-listener-5.3.1 \
-		event-listener-strategy-0.5.3 \
+		event-listener-5.4.0 \
+		event-listener-strategy-0.5.4 \
 		fastrand-2.3.0 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
@@ -69,66 +67,67 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		futures-core-0.3.31 \
 		futures-executor-0.3.31 \
 		futures-io-0.3.31 \
-		futures-lite-2.5.0 \
+		futures-lite-2.6.0 \
 		futures-macro-0.3.31 \
 		futures-sink-0.3.31 \
 		futures-task-0.3.31 \
 		futures-util-0.3.31 \
-		getrandom-0.2.15 \
+		getrandom-0.2.16 \
+		getrandom-0.3.3 \
 		gimli-0.31.1 \
-		glob-0.3.1 \
+		glob-0.3.2 \
 		gloo-timers-0.3.0 \
-		h2-0.4.7 \
+		h2-0.4.11 \
 		hashbrown-0.12.3 \
-		hashbrown-0.15.2 \
-		hermit-abi-0.4.0 \
-		http-1.2.0 \
+		hashbrown-0.15.4 \
+		hermit-abi-0.5.2 \
+		http-1.3.1 \
 		http-body-1.0.1 \
-		http-body-util-0.1.2 \
-		httparse-1.9.5 \
+		http-body-util-0.1.3 \
+		httparse-1.10.1 \
 		httpdate-1.0.3 \
-		hyper-1.5.2 \
-		hyper-rustls-0.27.3 \
+		hyper-1.6.0 \
+		hyper-rustls-0.27.7 \
 		hyper-timeout-0.5.2 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.10 \
-		icu_collections-1.5.0 \
-		icu_locid-1.5.0 \
-		icu_locid_transform-1.5.0 \
-		icu_locid_transform_data-1.5.0 \
-		icu_normalizer-1.5.0 \
-		icu_normalizer_data-1.5.0 \
-		icu_properties-1.5.1 \
-		icu_properties_data-1.5.0 \
-		icu_provider-1.5.0 \
-		icu_provider_macros-1.5.0 \
+		hyper-util-0.1.16 \
+		icu_collections-2.0.0 \
+		icu_locale_core-2.0.0 \
+		icu_normalizer-2.0.0 \
+		icu_normalizer_data-2.0.0 \
+		icu_properties-2.0.1 \
+		icu_properties_data-2.0.1 \
+		icu_provider-2.0.0 \
 		idna-1.0.3 \
-		idna_adapter-1.2.0 \
+		idna_adapter-1.2.1 \
 		indexmap-1.9.3 \
-		indexmap-2.7.0 \
-		ipnet-2.10.1 \
-		itertools-0.13.0 \
-		itoa-1.0.14 \
-		js-sys-0.3.76 \
+		indexmap-2.10.0 \
+		io-uring-0.7.9 \
+		ipnet-2.11.0 \
+		iri-string-0.7.8 \
+		itertools-0.14.0 \
+		itoa-1.0.15 \
+		js-sys-0.3.77 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.5.0 \
-		libc-0.2.168 \
-		linux-raw-sys-0.4.14 \
-		litemap-0.7.4 \
-		lock_api-0.4.12 \
-		log-0.4.22 \
+		libc-0.2.174 \
+		linux-raw-sys-0.9.4 \
+		litemap-0.8.0 \
+		lock_api-0.4.13 \
+		log-0.4.27 \
+		lru-slab-0.1.2 \
 		matchit-0.7.3 \
-		memchr-2.7.4 \
+		memchr-2.7.5 \
 		mime-0.3.17 \
-		miniz_oxide-0.8.1 \
-		mio-1.0.3 \
-		native-tls-0.2.12 \
-		object-0.36.5 \
-		once_cell-1.20.2 \
-		openssl-0.10.68 \
+		miniz_oxide-0.8.9 \
+		mio-1.0.4 \
+		native-tls-0.2.14 \
+		object-0.36.7 \
+		once_cell-1.21.3 \
+		openssl-0.10.73 \
 		openssl-macros-0.1.1 \
-		openssl-probe-0.1.5 \
-		openssl-sys-0.9.104 \
+		openssl-probe-0.1.6 \
+		openssl-sys-0.9.109 \
 		opentelemetry-0.24.0 \
 		opentelemetry-http-0.13.0 \
 		opentelemetry-otlp-0.17.0 \
@@ -136,129 +135,146 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		opentelemetry-semantic-conventions-0.16.0 \
 		opentelemetry_sdk-0.24.1 \
 		parking-2.2.1 \
-		parking_lot-0.12.3 \
-		parking_lot_core-0.9.10 \
+		parking_lot-0.12.4 \
+		parking_lot_core-0.9.11 \
 		percent-encoding-2.3.1 \
-		pin-project-1.1.7 \
-		pin-project-internal-1.1.7 \
-		pin-project-lite-0.2.15 \
+		pin-project-1.1.10 \
+		pin-project-internal-1.1.10 \
+		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
 		piper-0.2.4 \
-		pkg-config-0.3.31 \
-		polling-3.7.4 \
-		ppv-lite86-0.2.20 \
-		proc-macro2-1.0.92 \
-		prost-0.13.4 \
-		prost-derive-0.13.4 \
-		quinn-0.11.6 \
-		quinn-proto-0.11.9 \
-		quinn-udp-0.5.8 \
-		quote-1.0.37 \
+		pkg-config-0.3.32 \
+		polling-3.9.0 \
+		potential_utf-0.1.2 \
+		ppv-lite86-0.2.21 \
+		proc-macro2-1.0.95 \
+		prost-0.13.5 \
+		prost-derive-0.13.5 \
+		quinn-0.11.8 \
+		quinn-proto-0.11.12 \
+		quinn-udp-0.5.13 \
+		quote-1.0.40 \
+		r-efi-5.3.0 \
 		rand-0.8.5 \
+		rand-0.9.2 \
 		rand_chacha-0.3.1 \
+		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
-		redox_syscall-0.5.8 \
-		reqwest-0.12.9 \
-		ring-0.17.8 \
-		rustc-demangle-0.1.24 \
-		rustc-hash-2.1.0 \
-		rustix-0.38.42 \
-		rustls-0.23.20 \
+		rand_core-0.9.3 \
+		redox_syscall-0.5.15 \
+		reqwest-0.12.22 \
+		ring-0.17.14 \
+		rustc-demangle-0.1.25 \
+		rustc-hash-2.1.1 \
+		rustix-1.0.8 \
+		rustls-0.23.29 \
 		rustls-native-certs-0.8.1 \
-		rustls-pemfile-2.2.0 \
-		rustls-pki-types-1.10.1 \
-		rustls-webpki-0.102.8 \
-		rustversion-1.0.18 \
-		ryu-1.0.18 \
+		rustls-pki-types-1.12.0 \
+		rustls-webpki-0.103.4 \
+		rustversion-1.0.21 \
+		ryu-1.0.20 \
 		schannel-0.1.27 \
 		scopeguard-1.2.0 \
 		security-framework-2.11.1 \
-		security-framework-3.0.1 \
-		security-framework-sys-2.12.1 \
-		serde-1.0.216 \
-		serde_derive-1.0.216 \
-		serde_json-1.0.133 \
+		security-framework-3.2.0 \
+		security-framework-sys-2.14.0 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
+		serde_json-1.0.141 \
 		serde_urlencoded-0.7.1 \
 		shlex-1.3.0 \
-		signal-hook-registry-1.4.2 \
-		slab-0.4.9 \
-		smallvec-1.13.2 \
-		socket2-0.5.8 \
-		spin-0.9.8 \
+		signal-hook-registry-1.4.5 \
+		slab-0.4.11 \
+		smallvec-1.15.1 \
+		socket2-0.5.10 \
+		socket2-0.6.0 \
 		stable_deref_trait-1.2.0 \
 		subtle-2.6.1 \
-		syn-2.0.90 \
+		syn-2.0.104 \
 		sync_wrapper-1.0.2 \
-		synstructure-0.13.1 \
+		synstructure-0.13.2 \
 		system-configuration-0.6.1 \
 		system-configuration-sys-0.6.0 \
-		tempfile-3.14.0 \
+		tempfile-3.20.0 \
 		thiserror-1.0.69 \
-		thiserror-2.0.7 \
+		thiserror-2.0.12 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.7 \
-		tinystr-0.7.6 \
-		tinyvec-1.8.0 \
+		thiserror-impl-2.0.12 \
+		tinystr-0.8.1 \
+		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.42.0 \
-		tokio-macros-2.4.0 \
+		tokio-1.46.1 \
+		tokio-macros-2.5.0 \
 		tokio-native-tls-0.3.1 \
-		tokio-rustls-0.26.1 \
+		tokio-rustls-0.26.2 \
 		tokio-stream-0.1.17 \
-		tokio-util-0.7.13 \
+		tokio-util-0.7.15 \
 		tonic-0.12.3 \
 		tower-0.4.13 \
 		tower-0.5.2 \
+		tower-http-0.6.6 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
 		tracing-0.1.41 \
-		tracing-attributes-0.1.28 \
-		tracing-core-0.1.33 \
-		tracing-subscriber-0.3.19 \
+		tracing-attributes-0.1.30 \
+		tracing-core-0.1.34 \
+		tracing-subscriber-0.3.20 \
 		try-lock-0.2.5 \
-		unicode-ident-1.0.14 \
+		unicode-ident-1.0.18 \
 		untrusted-0.9.0 \
 		url-2.5.4 \
-		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
-		value-bag-1.10.0 \
+		value-bag-1.11.1 \
 		vcpkg-0.2.15 \
 		want-0.3.1 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.99 \
-		wasm-bindgen-backend-0.2.99 \
-		wasm-bindgen-futures-0.4.49 \
-		wasm-bindgen-macro-0.2.99 \
-		wasm-bindgen-macro-support-0.2.99 \
-		wasm-bindgen-shared-0.2.99 \
-		web-sys-0.3.76 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasi-0.14.2+wasi-0.2.4 \
+		wasm-bindgen-0.2.100 \
+		wasm-bindgen-backend-0.2.100 \
+		wasm-bindgen-futures-0.4.50 \
+		wasm-bindgen-macro-0.2.100 \
+		wasm-bindgen-macro-support-0.2.100 \
+		wasm-bindgen-shared-0.2.100 \
+		web-sys-0.3.77 \
 		web-time-1.1.0 \
-		webpki-roots-0.26.7 \
-		windows-registry-0.2.0 \
-		windows-result-0.2.0 \
-		windows-strings-0.1.0 \
+		webpki-roots-1.0.2 \
+		windows-link-0.1.3 \
+		windows-registry-0.5.3 \
+		windows-result-0.3.4 \
+		windows-strings-0.4.2 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
 		windows-targets-0.52.6 \
+		windows-targets-0.53.2 \
 		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_gnullvm-0.53.0 \
 		windows_aarch64_msvc-0.52.6 \
+		windows_aarch64_msvc-0.53.0 \
 		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.0 \
 		windows_i686_gnullvm-0.52.6 \
+		windows_i686_gnullvm-0.53.0 \
 		windows_i686_msvc-0.52.6 \
+		windows_i686_msvc-0.53.0 \
 		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.0 \
 		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.52.6 \
-		write16-1.0.0 \
-		writeable-0.5.5 \
-		yoke-0.7.5 \
-		yoke-derive-0.7.5 \
-		zerocopy-0.7.35 \
-		zerocopy-derive-0.7.35 \
-		zerofrom-0.1.5 \
-		zerofrom-derive-0.1.5 \
+		windows_x86_64_msvc-0.53.0 \
+		wit-bindgen-rt-0.39.0 \
+		writeable-0.6.1 \
+		yoke-0.8.0 \
+		yoke-derive-0.8.0 \
+		zerocopy-0.8.26 \
+		zerocopy-derive-0.8.26 \
+		zerofrom-0.1.6 \
+		zerofrom-derive-0.1.6 \
 		zeroize-1.8.1 \
-		zerovec-0.10.4 \
-		zerovec-derive-0.10.3
+		zerotrie-0.2.2 \
+		zerovec-0.11.2 \
+		zerovec-derive-0.11.1
 
 PLIST_FILES=	lib/libotel.a
 
