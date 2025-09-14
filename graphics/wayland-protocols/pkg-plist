@@ -5,6 +5,7 @@ include/wayland-protocols/commit-timing-v1-enum.h
 include/wayland-protocols/content-type-v1-enum.h
 include/wayland-protocols/cursor-shape-v1-enum.h
 include/wayland-protocols/drm-lease-v1-enum.h
+include/wayland-protocols/ext-background-effect-v1-enum.h
 include/wayland-protocols/ext-data-control-v1-enum.h
 include/wayland-protocols/ext-foreign-toplevel-list-v1-enum.h
 include/wayland-protocols/ext-idle-notify-v1-enum.h
@@ -26,6 +27,7 @@ include/wayland-protocols/linux-drm-syncobj-v1-enum.h
 include/wayland-protocols/linux-explicit-synchronization-unstable-v1-enum.h
 include/wayland-protocols/pointer-constraints-unstable-v1-enum.h
 include/wayland-protocols/pointer-gestures-unstable-v1-enum.h
+include/wayland-protocols/pointer-warp-v1-enum.h
 include/wayland-protocols/presentation-time-enum.h
 include/wayland-protocols/primary-selection-unstable-v1-enum.h
 include/wayland-protocols/relative-pointer-unstable-v1-enum.h
@@ -53,6 +55,7 @@ include/wayland-protocols/xdg-toplevel-icon-v1-enum.h
 include/wayland-protocols/xdg-toplevel-tag-v1-enum.h
 include/wayland-protocols/xwayland-keyboard-grab-unstable-v1-enum.h
 include/wayland-protocols/xwayland-shell-v1-enum.h
+include/wayland-protocols/xx-session-management-v1-enum.h
 share/pkgconfig/wayland-protocols.pc
 %%DATADIR%%/stable/linux-dmabuf/linux-dmabuf-v1.xml
 %%DATADIR%%/stable/presentation-time/presentation-time.xml
@@ -66,6 +69,7 @@ share/pkgconfig/wayland-protocols.pc
 %%DATADIR%%/staging/content-type/content-type-v1.xml
 %%DATADIR%%/staging/cursor-shape/cursor-shape-v1.xml
 %%DATADIR%%/staging/drm-lease/drm-lease-v1.xml
+%%DATADIR%%/staging/ext-background-effect/ext-background-effect-v1.xml
 %%DATADIR%%/staging/ext-data-control/ext-data-control-v1.xml
 %%DATADIR%%/staging/ext-foreign-toplevel-list/ext-foreign-toplevel-list-v1.xml
 %%DATADIR%%/staging/ext-idle-notify/ext-idle-notify-v1.xml
@@ -77,6 +81,7 @@ share/pkgconfig/wayland-protocols.pc
 %%DATADIR%%/staging/fifo/fifo-v1.xml
 %%DATADIR%%/staging/fractional-scale/fractional-scale-v1.xml
 %%DATADIR%%/staging/linux-drm-syncobj/linux-drm-syncobj-v1.xml
+%%DATADIR%%/staging/pointer-warp/pointer-warp-v1.xml
 %%DATADIR%%/staging/security-context/security-context-v1.xml
 %%DATADIR%%/staging/single-pixel-buffer/single-pixel-buffer-v1.xml
 %%DATADIR%%/staging/tearing-control/tearing-control-v1.xml
