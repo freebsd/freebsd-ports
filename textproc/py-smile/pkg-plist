@@ -33,8 +33,10 @@ share/locale/oc/LC_MESSAGES/smile.mo
 share/locale/pl/LC_MESSAGES/smile.mo
 share/locale/pt_BR/LC_MESSAGES/smile.mo
 share/locale/ru/LC_MESSAGES/smile.mo
+share/locale/sv/LC_MESSAGES/smile.mo
 share/locale/tr/LC_MESSAGES/smile.mo
 share/locale/zh/LC_MESSAGES/smile.mo
+share/locale/zh_TW/LC_MESSAGES/smile.mo
 %%DATADIR%%/assets/emoji_locales/da.json
 %%DATADIR%%/assets/emoji_locales/de.json
 %%DATADIR%%/assets/emoji_locales/es.json
