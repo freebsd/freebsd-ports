@@ -1417,6 +1417,7 @@
     SUBDIR += py-html2text
     SUBDIR += py-htmlmin2
     SUBDIR += py-humanfriendly
+    SUBDIR += py-humps
     SUBDIR += py-hunspell
     SUBDIR += py-ini2toml
     SUBDIR += py-interegular
