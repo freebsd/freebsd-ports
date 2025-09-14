@@ -19,7 +19,7 @@ lib/libpng/libpng16.cmake
 lib/libpng16.a
 lib/libpng16.so
 lib/libpng16.so.16
-lib/libpng16.so.16.49.0
+lib/libpng16.so.16.50.0
 libdata/pkgconfig/libpng.pc
 libdata/pkgconfig/libpng16.pc
 share/man/man3/libpng.3.gz
