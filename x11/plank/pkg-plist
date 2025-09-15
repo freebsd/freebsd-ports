@@ -8,11 +8,12 @@ lib/plank/docklets/libdocklet-battery.so
 lib/plank/docklets/libdocklet-clippy.so
 lib/plank/docklets/libdocklet-clock.so
 lib/plank/docklets/libdocklet-desktop.so
+lib/plank/docklets/libdocklet-notifications.so
 lib/plank/docklets/libdocklet-separator.so
 lib/plank/docklets/libdocklet-trash.so
 lib/plank/docklets/libdocklet-workspaces.so
 libdata/pkgconfig/plank.pc
-share/applications/plank.desktop
+share/applications/net.launchpad.plank.desktop
 share/icons/hicolor/128x128/apps/plank-reloaded.png
 share/icons/hicolor/16x16/apps/plank-reloaded.png
 share/icons/hicolor/22x22/apps/plank-reloaded.png
@@ -53,6 +54,7 @@ share/locale/ja/LC_MESSAGES/plank-reloaded.mo
 share/locale/ka/LC_MESSAGES/plank-reloaded.mo
 share/locale/kab/LC_MESSAGES/plank-reloaded.mo
 share/locale/ko/LC_MESSAGES/plank-reloaded.mo
+share/locale/ku/LC_MESSAGES/plank-reloaded.mo
 share/locale/lt/LC_MESSAGES/plank-reloaded.mo
 share/locale/lv/LC_MESSAGES/plank-reloaded.mo
 share/locale/ml/LC_MESSAGES/plank-reloaded.mo
@@ -71,7 +73,7 @@ share/locale/sl/LC_MESSAGES/plank-reloaded.mo
 share/locale/sma/LC_MESSAGES/plank-reloaded.mo
 share/locale/sq/LC_MESSAGES/plank-reloaded.mo
 share/locale/sr/LC_MESSAGES/plank-reloaded.mo
-share/locale/sr@latin/LC_MESSAGES/plank-reloaded.mo
+share/locale/sr_CS/LC_MESSAGES/plank-reloaded.mo
 share/locale/sv/LC_MESSAGES/plank-reloaded.mo
 share/locale/szl/LC_MESSAGES/plank-reloaded.mo
 share/locale/ta/LC_MESSAGES/plank-reloaded.mo
