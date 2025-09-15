@@ -2,4 +2,4 @@
 #
 # This will be included from consumers such as nvidia-drm
 DRM_KMOD_DISTVERSION=	6.6.25
-DRM_KMOD_GH_TAGNAME=	drm_v6.6.25_5
+DRM_KMOD_GH_TAGNAME=	drm_v6.6.25_6
