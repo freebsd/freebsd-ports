@@ -262,7 +262,7 @@ lib/gimp/%%ABIVER%%/environ/default.env
 lib/gimp/%%ABIVER%%/environ/python.env
 lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/goat-exercise-c
 lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/goat-exercise-c.c
-lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/goat-exercise-gjs.js
+%%JS%%lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/goat-exercise-gjs.js
 lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/goat-exercise-py3.py
 %%LUASCRIPTS%%lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/goat-exercise-lua.lua
 %%VALA%%lib/gimp/%%ABIVER%%/extensions/org.gimp.extension.goat-exercises/goat-exercise-vala
