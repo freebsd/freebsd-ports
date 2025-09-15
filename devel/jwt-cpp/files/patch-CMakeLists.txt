@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-09-15 06:53:07 UTC
++++ CMakeLists.txt
+@@ -132,7 +132,7 @@ if(NOT JWT_DISABLE_PICOJSON AND JWT_EXTERNAL_PICOJSON)
+ endif()
+ 
+ if(NOT JWT_DISABLE_PICOJSON AND JWT_EXTERNAL_PICOJSON)
+-  target_link_libraries(jwt-cpp INTERFACE picojson::picojson>)
++  target_link_libraries(jwt-cpp INTERFACE picojson::picojson)
+ endif()
+ 
+ # Hunter needs relative paths so the files are placed correctly

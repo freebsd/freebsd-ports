@@ -11,7 +11,6 @@ include/jwt-cpp/traits/nlohmann-json/defaults.h
 include/jwt-cpp/traits/nlohmann-json/traits.h
 include/jwt-cpp/traits/open-source-parsers-jsoncpp/defaults.h
 include/jwt-cpp/traits/open-source-parsers-jsoncpp/traits.h
-include/picojson/picojson.h
 lib/cmake/jwt-cpp/jwt-cpp-config-version.cmake
 lib/cmake/jwt-cpp/jwt-cpp-config.cmake
 lib/cmake/jwt-cpp/jwt-cpp-targets.cmake
