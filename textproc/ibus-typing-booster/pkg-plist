@@ -187,6 +187,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/as.xml
 %%DATADIR%%/data/annotationsDerived/ast.xml
 %%DATADIR%%/data/annotationsDerived/az.xml
+%%DATADIR%%/data/annotationsDerived/ba.xml
 %%DATADIR%%/data/annotationsDerived/be.xml
 %%DATADIR%%/data/annotationsDerived/bew.xml
 %%DATADIR%%/data/annotationsDerived/bg.xml
@@ -306,6 +307,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/sat.xml
 %%DATADIR%%/data/annotationsDerived/sc.xml
 %%DATADIR%%/data/annotationsDerived/sd.xml
+%%DATADIR%%/data/annotationsDerived/shn.xml
 %%DATADIR%%/data/annotationsDerived/si.xml
 %%DATADIR%%/data/annotationsDerived/sk.xml
 %%DATADIR%%/data/annotationsDerived/sl.xml
@@ -320,6 +322,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/sv.xml
 %%DATADIR%%/data/annotationsDerived/sw.xml
 %%DATADIR%%/data/annotationsDerived/sw_KE.xml
+%%DATADIR%%/data/annotationsDerived/syr.xml
 %%DATADIR%%/data/annotationsDerived/ta.xml
 %%DATADIR%%/data/annotationsDerived/te.xml
 %%DATADIR%%/data/annotationsDerived/tg.xml
@@ -370,6 +373,8 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/engine/__pycache__/itb_emoji%%PYTHON_TAG%%.pyc
 %%DATADIR%%/engine/__pycache__/itb_nltk%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/engine/__pycache__/itb_nltk%%PYTHON_TAG%%.pyc
+%%DATADIR%%/engine/__pycache__/itb_ollama%%PYTHON_TAG%%.opt-1.pyc
+%%DATADIR%%/engine/__pycache__/itb_ollama%%PYTHON_TAG%%.pyc
 %%DATADIR%%/engine/__pycache__/itb_pango%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/engine/__pycache__/itb_pango%%PYTHON_TAG%%.pyc
 %%DATADIR%%/engine/__pycache__/itb_sound%%PYTHON_TAG%%.opt-1.pyc
@@ -394,6 +399,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/engine/itb_active_window.py
 %%DATADIR%%/engine/itb_emoji.py
 %%DATADIR%%/engine/itb_nltk.py
+%%DATADIR%%/engine/itb_ollama.py
 %%DATADIR%%/engine/itb_pango.py
 %%DATADIR%%/engine/itb_sound.py
 %%DATADIR%%/engine/itb_util.py
