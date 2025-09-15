@@ -1,6 +1,5 @@
 PORTNAME=	libudisks
-DISTVERSION=	2.10.1
-PORTREVISION=	1
+DISTVERSION=	2.10.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/storaged-project/udisks/releases/download/udisks-${DISTVERSION}/
 DISTNAME=	udisks-${DISTVERSION}
@@ -27,10 +26,10 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 # --with-libintl-prefix is needed because otherwise
 # configure won't find libintl when PREFIX != LOCALBASE.
 CONFIGURE_ARGS=	--disable-daemon \
+		--enable-introspection=no \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-libintl-prefix=${LOCALBASE}
 
@@ -55,7 +54,7 @@ UDISKSCTL_LIB_DEPENDS=		libpolkit-agent-1.so:sysutils/polkit \
 UDISKSCTL_CONFIGURE_ENABLE=	man
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libudisks2.so.0.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libudisks2.so
 
 post-install-UDISKSCTL-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/udisksctl
