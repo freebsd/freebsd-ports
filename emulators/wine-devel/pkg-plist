@@ -1215,6 +1215,8 @@ include/wine/windows/windows.media.h
 include/wine/windows/windows.media.idl
 include/wine/windows/windows.media.mediaproperties.h
 include/wine/windows/windows.media.mediaproperties.idl
+include/wine/windows/windows.media.playback.h
+include/wine/windows/windows.media.playback.idl
 include/wine/windows/windows.media.render.h
 include/wine/windows/windows.media.render.idl
 include/wine/windows/windows.media.speechrecognition.h
@@ -1229,6 +1231,8 @@ include/wine/windows/windows.networking.h
 include/wine/windows/windows.networking.idl
 include/wine/windows/windows.networking.sockets.h
 include/wine/windows/windows.networking.sockets.idl
+include/wine/windows/windows.perception.h
+include/wine/windows/windows.perception.idl
 include/wine/windows/windows.perception.spatial.h
 include/wine/windows/windows.perception.spatial.idl
 include/wine/windows/windows.perception.spatial.surfaces.h
@@ -1241,6 +1245,8 @@ include/wine/windows/windows.security.credentials.h
 include/wine/windows/windows.security.credentials.idl
 include/wine/windows/windows.security.credentials.ui.h
 include/wine/windows/windows.security.credentials.ui.idl
+include/wine/windows/windows.security.cryptography.core.h
+include/wine/windows/windows.security.cryptography.core.idl
 include/wine/windows/windows.security.cryptography.h
 include/wine/windows/windows.security.cryptography.idl
 include/wine/windows/windows.security.enterprisedata.h
@@ -1469,6 +1475,7 @@ lib/wine/%%WINEARCH%%-unix/libd3dcompiler_43.a
 lib/wine/%%WINEARCH%%-unix/libd3dcompiler_46.a
 lib/wine/%%WINEARCH%%-unix/libd3drm.a
 lib/wine/%%WINEARCH%%-unix/libd3dx10.a
+lib/wine/%%WINEARCH%%-unix/libd3dx10_33.a
 lib/wine/%%WINEARCH%%-unix/libd3dx10_34.a
 lib/wine/%%WINEARCH%%-unix/libd3dx10_35.a
 lib/wine/%%WINEARCH%%-unix/libd3dx10_36.a
@@ -2031,6 +2038,7 @@ lib/wine/%%WINEARCH%%-windows/libd3dcompiler_43.a
 lib/wine/%%WINEARCH%%-windows/libd3dcompiler_46.a
 lib/wine/%%WINEARCH%%-windows/libd3drm.a
 lib/wine/%%WINEARCH%%-windows/libd3dx10.a
+lib/wine/%%WINEARCH%%-windows/libd3dx10_33.a
 lib/wine/%%WINEARCH%%-windows/libd3dx10_34.a
 lib/wine/%%WINEARCH%%-windows/libd3dx10_35.a
 lib/wine/%%WINEARCH%%-windows/libd3dx10_36.a
@@ -2614,6 +2622,8 @@ lib/wine/%%WINEARCH%%-windows/windows.globalization.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.devices.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.mediacontrol.dll
+lib/wine/%%WINEARCH%%-windows/windows.media.playback.backgroundmediaplayer.dll
+lib/wine/%%WINEARCH%%-windows/windows.media.playback.mediaplayer.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.speech.dll
 lib/wine/%%WINEARCH%%-windows/windows.networking.connectivity.dll
 lib/wine/%%WINEARCH%%-windows/windows.networking.dll

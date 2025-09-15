@@ -1,5 +1,5 @@
 PORTNAME=	wine
-DISTVERSION=	10.14
+DISTVERSION=	10.15
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/10.x/
@@ -38,6 +38,7 @@ CONFIGURE_ARGS=	--verbose \
 		--without-capi \
 		--without-coreaudio \
 		--without-dbus \
+		--without-ffmpeg \
 		--without-gettext --without-gettextpo \
 		--without-gphoto \
 		--without-gssapi \
