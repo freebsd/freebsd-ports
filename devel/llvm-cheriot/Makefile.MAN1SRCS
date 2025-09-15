@@ -47,6 +47,7 @@ LLVM_MAN1SRCS= \
 	llvm-strip.1 \
 	llvm-symbolizer.1 \
 	llvm-tblgen.1 \
+	llvm-test-mustache-spec.1 \
 	llvm-tli-checker.1 \
 	opt.1 \
 	tblgen.1

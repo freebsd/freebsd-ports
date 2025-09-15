@@ -1,3 +1,5 @@
+.include "${.CURDIR}/../llvm-cheri/Makefile.COMMANDS"
+
 LLVM_COMMANDS=	\
 		amdgpu-arch \
 		bugpoint \
@@ -11,10 +13,8 @@ LLVM_COMMANDS=	\
 		llvm-bitcode-strip \
 		llvm-cat \
 		llvm-cfi-verify \
-		llvm-cgdata \
 		llvm-config \
 		llvm-cov \
-		llvm-ctxprof-util \
 		llvm-cvtres \
 		llvm-cxxdump \
 		llvm-cxxfilt \
@@ -40,8 +40,8 @@ LLVM_COMMANDS=	\
 		llvm-mc \
 		llvm-mca \
 		llvm-ml \
+		llvm-ml64 \
 		llvm-modextract \
-		llvm-mt \
 		llvm-nm \
 		llvm-objcopy \
 		llvm-objdump \
@@ -71,8 +71,8 @@ LLVM_COMMANDS=	\
 		llvm-windres \
 		llvm-xray \
 		nvptx-arch \
+		offload-arch \
 		opt \
-		reduce-chunk-list \
 		sancov
 
 CLANG_COMMANDS=	\
@@ -84,14 +84,12 @@ CLANG_COMMANDS=	\
 		clang-cpp \
 		clang-extdef-mapping \
 		clang-format \
-		clang-installapi \
+		clang-include-cleaner \
 		clang-linker-wrapper \
-		clang-nvlink-wrapper \
 		clang-offload-bundler \
 		clang-offload-packager \
 		clang-repl \
 		clang-scan-deps \
-		clang-sycl-linker \
 		clang-tblgen \
 		diagtool \
 		hmaptool \
