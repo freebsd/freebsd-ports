@@ -77,6 +77,7 @@ share/man/man1/openocd.1.gz
 %%DATADIR%%/scripts/board/digilent_nexys2.cfg
 %%DATADIR%%/scripts/board/digilent_nexys_video.cfg
 %%DATADIR%%/scripts/board/digilent_zedboard.cfg
+%%DATADIR%%/scripts/board/digilent_zybo.cfg
 %%DATADIR%%/scripts/board/diolan_lpc4350-db1.cfg
 %%DATADIR%%/scripts/board/diolan_lpc4357-db1.cfg
 %%DATADIR%%/scripts/board/dk-tm4c129.cfg
@@ -181,6 +182,7 @@ share/man/man1/openocd.1.gz
 %%DATADIR%%/scripts/board/microchip_same51_curiosity_nano.cfg
 %%DATADIR%%/scripts/board/microchip_same54_xplained_pro.cfg
 %%DATADIR%%/scripts/board/microchip_saml11_xplained_pro.cfg
+%%DATADIR%%/scripts/board/mikroe/clicker4-stm32f745vg.cfg
 %%DATADIR%%/scripts/board/mini2440.cfg
 %%DATADIR%%/scripts/board/mini6410.cfg
 %%DATADIR%%/scripts/board/minispartan6.cfg
@@ -227,6 +229,7 @@ share/man/man1/openocd.1.gz
 %%DATADIR%%/scripts/board/phytec_lpc3250.cfg
 %%DATADIR%%/scripts/board/pic-p32mx.cfg
 %%DATADIR%%/scripts/board/pico-debug.cfg
+%%DATADIR%%/scripts/board/pico2-debug.cfg
 %%DATADIR%%/scripts/board/pipistrello.cfg
 %%DATADIR%%/scripts/board/propox_mmnet1001.cfg
 %%DATADIR%%/scripts/board/pxa255_sst.cfg
@@ -249,10 +252,10 @@ share/man/man1/openocd.1.gz
 %%DATADIR%%/scripts/board/rsc-w910.cfg
 %%DATADIR%%/scripts/board/sayma_amc.cfg
 %%DATADIR%%/scripts/board/sheevaplug.cfg
-%%DATADIR%%/scripts/board/sifive-e31arty.cfg
-%%DATADIR%%/scripts/board/sifive-e51arty.cfg
-%%DATADIR%%/scripts/board/sifive-hifive1-revb.cfg
-%%DATADIR%%/scripts/board/sifive-hifive1.cfg
+%%DATADIR%%/scripts/board/sifive/e31-arty.cfg
+%%DATADIR%%/scripts/board/sifive/e51-arty.cfg
+%%DATADIR%%/scripts/board/sifive/hifive1-rev-b.cfg
+%%DATADIR%%/scripts/board/sifive/hifive1.cfg
 %%DATADIR%%/scripts/board/smdk6410.cfg
 %%DATADIR%%/scripts/board/snps_em_sk.cfg
 %%DATADIR%%/scripts/board/snps_em_sk_v1.cfg
@@ -525,6 +528,7 @@ share/man/man1/openocd.1.gz
 %%DATADIR%%/scripts/interface/beaglebone-swd-native.cfg
 %%DATADIR%%/scripts/interface/buspirate.cfg
 %%DATADIR%%/scripts/interface/chameleon.cfg
+%%DATADIR%%/scripts/interface/cmsis-dap-tcp.cfg
 %%DATADIR%%/scripts/interface/cmsis-dap.cfg
 %%DATADIR%%/scripts/interface/dln-2-gpiod.cfg
 %%DATADIR%%/scripts/interface/dummy.cfg
@@ -634,8 +638,18 @@ share/man/man1/openocd.1.gz
 %%DATADIR%%/scripts/interface/openjtag.cfg
 %%DATADIR%%/scripts/interface/osbdm.cfg
 %%DATADIR%%/scripts/interface/parport.cfg
+%%DATADIR%%/scripts/interface/parport/altium.cfg
+%%DATADIR%%/scripts/interface/parport/amt-wiggler-old.cfg
+%%DATADIR%%/scripts/interface/parport/arm-jtag.cfg
+%%DATADIR%%/scripts/interface/parport/aspo.cfg
+%%DATADIR%%/scripts/interface/parport/chameleon.cfg
 %%DATADIR%%/scripts/interface/parport/dlc5.cfg
+%%DATADIR%%/scripts/interface/parport/flashlink.cfg
+%%DATADIR%%/scripts/interface/parport/lattice.cfg
+%%DATADIR%%/scripts/interface/parport/triton.cfg
+%%DATADIR%%/scripts/interface/parport/wiggler-ntrst-inverted.cfg
 %%DATADIR%%/scripts/interface/parport/wiggler.cfg
+%%DATADIR%%/scripts/interface/parport/wiggler2.cfg
 %%DATADIR%%/scripts/interface/parport_dlc5.cfg
 %%DATADIR%%/scripts/interface/raspberrypi-gpio-connector.cfg
 %%DATADIR%%/scripts/interface/raspberrypi-native.cfg
@@ -678,6 +692,7 @@ share/man/man1/openocd.1.gz
 %%DATADIR%%/scripts/target/ar71xx.cfg
 %%DATADIR%%/scripts/target/arm_corelink_sse200.cfg
 %%DATADIR%%/scripts/target/armada370.cfg
+%%DATADIR%%/scripts/target/artery/at32f4x.cfg
 %%DATADIR%%/scripts/target/at32ap7000.cfg
 %%DATADIR%%/scripts/target/at91r40008.cfg
 %%DATADIR%%/scripts/target/at91rm9200.cfg
@@ -853,6 +868,12 @@ share/man/man1/openocd.1.gz
 %%DATADIR%%/scripts/target/max32620.cfg
 %%DATADIR%%/scripts/target/max32625.cfg
 %%DATADIR%%/scripts/target/max3263x.cfg
+%%DATADIR%%/scripts/target/max32670.cfg
+%%DATADIR%%/scripts/target/max32672.cfg
+%%DATADIR%%/scripts/target/max32675.cfg
+%%DATADIR%%/scripts/target/max32680.cfg
+%%DATADIR%%/scripts/target/max32690.cfg
+%%DATADIR%%/scripts/target/max32xxx_common.cfg
 %%DATADIR%%/scripts/target/mc13224v.cfg
 %%DATADIR%%/scripts/target/mdr32f9q2i.cfg
 %%DATADIR%%/scripts/target/microchip/mpfs.cfg
@@ -889,6 +910,7 @@ share/man/man1/openocd.1.gz
 %%DATADIR%%/scripts/target/pxa270.cfg
 %%DATADIR%%/scripts/target/pxa3xx.cfg
 %%DATADIR%%/scripts/target/qn908x.cfg
+%%DATADIR%%/scripts/target/qualcomm/qcs6490.cfg
 %%DATADIR%%/scripts/target/qualcomm_qca4531.cfg
 %%DATADIR%%/scripts/target/quark_d20xx.cfg
 %%DATADIR%%/scripts/target/quark_x10xx.cfg
@@ -902,6 +924,7 @@ share/man/man1/openocd.1.gz
 %%DATADIR%%/scripts/target/renesas_s7g2.cfg
 %%DATADIR%%/scripts/target/rk3308.cfg
 %%DATADIR%%/scripts/target/rk3399.cfg
+%%DATADIR%%/scripts/target/rk3588.cfg
 %%DATADIR%%/scripts/target/rp2040.cfg
 %%DATADIR%%/scripts/target/rp2350.cfg
 %%DATADIR%%/scripts/target/rsl10.cfg
@@ -944,6 +967,7 @@ share/man/man1/openocd.1.gz
 %%DATADIR%%/scripts/target/stm32l4x.cfg
 %%DATADIR%%/scripts/target/stm32l5x.cfg
 %%DATADIR%%/scripts/target/stm32u0x.cfg
+%%DATADIR%%/scripts/target/stm32u3x.cfg
 %%DATADIR%%/scripts/target/stm32u5x.cfg
 %%DATADIR%%/scripts/target/stm32w108xx.cfg
 %%DATADIR%%/scripts/target/stm32wbax.cfg

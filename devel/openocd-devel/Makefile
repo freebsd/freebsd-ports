@@ -1,5 +1,5 @@
 PORTNAME=	openocd
-DISTVERSION=	g20250708
+DISTVERSION=	g20250901
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-devel
 
@@ -14,11 +14,11 @@ USES=		autoreconf gmake libtool makeinfo pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openocd-org
-GH_TAGNAME=	6872f7e40
-GH_TUPLE=	msteveb:jimtcl:f160866:jimtcl/jimtcl
+GH_TAGNAME=	0732a9bb7
+GH_TUPLE=	msteveb:jimtcl:0.83:jimtcl/jimtcl
 
 USE_GITLAB=	nodefault
-GL_TUPLE=	https://gitlab.zapb.de:libjaylink:libjaylink:f73ad5e:libjaylink/src/jtag/drivers/libjaylink
+GL_TUPLE=	https://gitlab.zapb.de:libjaylink:libjaylink:0.3.1:libjaylink/src/jtag/drivers/libjaylink
 
 GNU_CONFIGURE=	yes
 
