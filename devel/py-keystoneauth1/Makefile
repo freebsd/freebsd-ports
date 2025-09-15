@@ -1,5 +1,6 @@
 PORTNAME=	keystoneauth1
 PORTVERSION=	5.12.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -37,6 +38,6 @@ BETAMAX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}betamax>=0.7.0:www/py-betamax@${PY_F
 			${PYTHON_PKGNAMEPREFIX}pyyaml>=3.13:devel/py-pyyaml@${PY_FLAVOR}
 KERBEROS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests-kerberos>=0.8.0:security/py-requests-kerberos@${PY_FLAVOR}
 OAUTH1_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oauthlib>=0.6.2:security/py-oauthlib@${PY_FLAVOR}
-SAML2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml5>=4.2.0:devel/py-lxml5@${PY_FLAVOR}
+SAML2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.2.0:devel/py-lxml@${PY_FLAVOR}
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	napalm
 DISTVERSION=	5.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml5>=4.3.0:devel/py-lxml5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=4.3.0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}textfsm>=1.1.2:textproc/py-textfsm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}junos-eznc>=2.7.0:net-mgmt/py-junos-eznc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ncclient>0:net-mgmt/py-ncclient@${PY_FLAVOR} \

@@ -1,6 +1,6 @@
 PORTNAME=	pycollada
 DISTVERSION=	0.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,6 @@ USE_PYTHON=	autoplist distutils
 OPTIONS_DEFINE=	LXML
 
 LXML_DESC=		Uses lxml for XML loading, construction, and saving.
-LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml5>0:devel/py-lxml5@${PY_FLAVOR}
+LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
 
 .include <bsd.port.mk>

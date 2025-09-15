@@ -1,6 +1,6 @@
 PORTNAME=	itstool
 PORTVERSION=	2.0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	https://files.itstool.org/itstool/
 
@@ -15,7 +15,7 @@ WWW=		https://itstool.org/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml5>=0:devel/py-lxml5@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
 USES=		autoreconf python tar:bzip2
 

@@ -1,6 +1,6 @@
 PORTNAME=	cinnamon
 DISTVERSION=	6.4.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -32,7 +32,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		cinnamon-settings-daemon>0:sysutils/cinnamon-settings-daemon \
 		nemo:x11-fm/nemo \
 		${PY_PILLOW} \
-		${PYTHON_PKGNAMEPREFIX}lxml5>0:devel/py-lxml5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyinotify>0:devel/py-pyinotify@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xapp>0:x11/py-python-xapp@${PY_FLAVOR} \
