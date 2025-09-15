@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.103.2
-PORTREVISION=	3
+DISTVERSION=	1.104.0
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
@@ -69,7 +68,7 @@ USES=		desktop-file-utils gl gmake gnome gssapi:mit iconv:wchar_t \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	6f17636121051a53c88d3e605c491d22af2ba755
+SOURCE_COMMIT_HASH=	f220831ea2d946c0dcb0f3eaa480eb435a2c1260
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -287,9 +286,11 @@ build-remote-extension-host: configure pre-build
 	# cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm run gulp vscode-reh-web-linux-${ELECTRON_ARCH}-min
 
 ### targets for port maintainer(s)
-make-node-modules-archive: extract
+patch-package-json: extract
 # add node module for signature verification of extensions from Open VSX Registry
 	@${PATCH} -s -p0 -d ${WRKSRC} < ${FILESDIR}/patch-package.json
+
+make-node-modules-archive: extract patch-package-json
 	@${ECHO_MSG} "===>  Fetching and installing node modules in ${WRKSRC}"
 	@cd ${WRKSRC} && \
 	${SETENV} ${MAKE_ENV} npm install --ignore-scripts --no-progress --no-audit --no-fund && \
