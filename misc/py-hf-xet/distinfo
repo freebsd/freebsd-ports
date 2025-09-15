@@ -1,6 +1,6 @@
-TIMESTAMP = 1756544028
-SHA256 (hf_xet-1.1.9.tar.gz) = c99073ce404462e909f1d5839b2d14a3827b8fe75ed8aed551ba6609c026c803
-SIZE (hf_xet-1.1.9.tar.gz) = 484242
+TIMESTAMP = 1757901237
+SHA256 (hf_xet-1.1.10.tar.gz) = 408aef343800a2102374a883f283ff29068055c111f003ff840733d3b715bb97
+SIZE (hf_xet-1.1.10.tar.gz) = 487910
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
