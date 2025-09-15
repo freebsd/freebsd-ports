@@ -1,0 +1,11 @@
+This python utility package helps to create lazy modules. A lazy module defers
+loading (some of) its attributes until these attributes are first accessed. The
+module's lazy attributes in turn are attributes of other modules. These other
+modules will be imported/loaded only when (and if) associated attributes are
+used. A lazy import strategy can drastically reduce runtime and memory
+consumption.
+
+Additionally, this package provides a utility for optional imports with which
+one can import a module globally while triggering associated import errors only
+at use-sites (when and if a dependency is actually required, for example in the
+context of a specific functionality).
