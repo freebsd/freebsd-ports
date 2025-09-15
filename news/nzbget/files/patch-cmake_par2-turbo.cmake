@@ -1,11 +1,11 @@
---- cmake/par2-turbo.cmake.orig	2025-07-01 18:05:03 UTC
+--- cmake/par2-turbo.cmake.orig	2025-09-14 16:16:06 UTC
 +++ cmake/par2-turbo.cmake
-@@ -51,12 +51,6 @@ endif()
+@@ -51,12 +51,6 @@ ExternalProject_add(
  ExternalProject_add(
  	par2-turbo
  	PREFIX			par2-turbo
 -	GIT_REPOSITORY	https://github.com/nzbgetcom/par2cmdline-turbo.git
--	GIT_TAG			v1.3.0
+-	GIT_TAG			v1.3.0-20250808
 -	TLS_VERIFY		TRUE
 -	GIT_SHALLOW		TRUE
 -	GIT_PROGRESS	TRUE

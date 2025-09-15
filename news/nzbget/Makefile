@@ -1,6 +1,6 @@
 PORTNAME=	nzbget
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.2
+DISTVERSION=	25.3
 CATEGORIES=	news
 
 MAINTAINER=	a13xlevy@pm.me
@@ -16,7 +16,7 @@ RUN_DEPENDS=	7-zip>0:archivers/7-zip \
 
 # Since v24.4 nzbget maintainers switched from libpar2 to a fork of par2cmdline-turbo which is in its own repository.
 # See https://github.com/nzbgetcom/nzbget/blob/v24.4/cmake/par2-turbo.cmake for the version to pull
-PAR2CMDLINE_TURBO_VERSION=	1.3.0
+PAR2CMDLINE_TURBO_VERSION=	1.3.0-20250808
 
 USES=		cmake:testing,noninja gnome ssl
 USE_GITHUB=	yes
