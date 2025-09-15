@@ -1174,7 +1174,6 @@
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/Microsoft.Extensions.Logging.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/Microsoft.Extensions.Options.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/Microsoft.Extensions.Primitives.dll
-%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/System.Collections.Immutable.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/System.CommandLine.Rendering.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/System.CommandLine.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/System.Composition.AttributedModel.dll
