@@ -45,6 +45,7 @@
 %%WWWDIR%%/core/Raycaster.js
 %%WWWDIR%%/core/RenderTarget.js
 %%WWWDIR%%/core/RenderTarget3D.js
+%%WWWDIR%%/core/Timer.js
 %%WWWDIR%%/core/Uniform.js
 %%WWWDIR%%/core/UniformsGroup.js
 %%WWWDIR%%/extras/Controls.js
@@ -341,6 +342,7 @@
 %%WWWDIR%%/nodes/gpgpu/BarrierNode.js
 %%WWWDIR%%/nodes/gpgpu/ComputeBuiltinNode.js
 %%WWWDIR%%/nodes/gpgpu/ComputeNode.js
+%%WWWDIR%%/nodes/gpgpu/SubgroupFunctionNode.js
 %%WWWDIR%%/nodes/gpgpu/WorkgroupInfoNode.js
 %%WWWDIR%%/nodes/lighting/AONode.js
 %%WWWDIR%%/nodes/lighting/AmbientLightNode.js
@@ -370,6 +372,7 @@
 %%WWWDIR%%/nodes/materialx/lib/mx_hsv.js
 %%WWWDIR%%/nodes/materialx/lib/mx_noise.js
 %%WWWDIR%%/nodes/materialx/lib/mx_transform_color.js
+%%WWWDIR%%/nodes/math/BitcastNode.js
 %%WWWDIR%%/nodes/math/ConditionalNode.js
 %%WWWDIR%%/nodes/math/Hash.js
 %%WWWDIR%%/nodes/math/MathNode.js
@@ -390,6 +393,7 @@
 %%WWWDIR%%/nodes/utils/DebugNode.js
 %%WWWDIR%%/nodes/utils/Discard.js
 %%WWWDIR%%/nodes/utils/EquirectUV.js
+%%WWWDIR%%/nodes/utils/EventNode.js
 %%WWWDIR%%/nodes/utils/FlipNode.js
 %%WWWDIR%%/nodes/utils/FunctionOverloadingNode.js
 %%WWWDIR%%/nodes/utils/JoinNode.js
@@ -698,6 +702,7 @@
 %%WWWDIR%%/textures/DataArrayTexture.js
 %%WWWDIR%%/textures/DataTexture.js
 %%WWWDIR%%/textures/DepthTexture.js
+%%WWWDIR%%/textures/ExternalTexture.js
 %%WWWDIR%%/textures/FramebufferTexture.js
 %%WWWDIR%%/textures/Source.js
 %%WWWDIR%%/textures/Texture.js
