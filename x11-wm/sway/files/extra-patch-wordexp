@@ -1,4 +1,5 @@
 https://github.com/swaywm/sway/issues/8673#issuecomment-2818260191
+https://github.com/swaywm/sway/issues/8828#issuecomment-3290045852
 
 --- common/stringop.c.orig	2025-04-20 11:31:10 UTC
 +++ common/stringop.c
@@ -11,7 +12,7 @@ https://github.com/swaywm/sway/issues/8673#issuecomment-2818260191
  #include "list.h"
  #include "log.h"
  #include "stringop.h"
-@@ -318,11 +320,34 @@ bool expand_path(char **path) {
+@@ -318,11 +320,37 @@ bool expand_path(char **path) {
  		char *ptr = strstr(*path, "  ") + 1;
  		memmove(ptr + 1, ptr, strlen(ptr) + 1);
  		*ptr = '\\';
@@ -42,7 +43,10 @@ https://github.com/swaywm/sway/issues/8673#issuecomment-2818260191
 +       }
 +
 +       int status;
-+       while (waitpid(-1, &status, WNOHANG) != -1 || errno == EINTR);
++       int wres;
++       do {
++               wres = waitpid(-1, &status, WNOHANG);
++       } while (wres > 0 || (wres == -1 && errno == EINTR));
 +
 +       if (res != 0 || p.we_wordv[0] == NULL) {
 +               wordfree(&p);
