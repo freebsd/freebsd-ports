@@ -240,6 +240,7 @@
     SUBDIR += identify
     SUBDIR += imds-filterd
     SUBDIR += intel-ipsec-mb
+    SUBDIR += interactsh
     SUBDIR += ipfmeta
     SUBDIR += ipguard
     SUBDIR += ipsec-tools
