@@ -1,8 +1,8 @@
 PORTNAME=	awstats
-PORTVERSION=	7.9
+DISTVERSION=	8.0
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/AWStats/${DISTVERSION}
 
 MAINTAINER=	vidar@karlsen.tech
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/docs/LICENSE.TXT
 
 USES=		cpe dos2unix perl5 shebangfix
 CPE_VENDOR=	laurent_destailleur
-DOS2UNIX_GLOB=	*.xml *.pm
+DOS2UNIX_GLOB=	*.pm *.xml
 USE_PERL5=	run
 
 SHEBANG_GLOB=	*.pl *.pm
@@ -27,16 +27,27 @@ OPTIONS_DEFINE=			DOCS GEOIPFREE IPV6
 OPTIONS_DEFAULT=		HOSTINFO
 OPTIONS_GROUP=			MODULES
 
-OPTIONS_GROUP_MODULES=		DECODEUTFKEYS HOSTINFO
+OPTIONS_GROUP_MODULES=		DECODEUTFKEYS HOSTINFO JSON
 DECODEUTFKEYS_DESC=		DecodeUTFKeys (requires p5-URI)
 GEOIPFREE_DESC=			Country lookups via Geo::IPfree
 HOSTINFO_DESC=			HostInfo (requires p5-Net-XWhois)
+JSON_DESC=			JSON (requires p5-JSON-XS, p5-Try-Tiny)
 MODULES_DESC=			Plugin support not present in Perl CORE
 DECODEUTFKEYS_RUN_DEPENDS=	p5-URI>0:net/p5-URI
 GEOIPFREE_RUN_DEPENDS=		p5-Geo-IPfree>=0:net/p5-Geo-IPfree
 HOSTINFO_RUN_DEPENDS=		p5-Net-XWhois>=0:net/p5-Net-XWhois
 IPV6_RUN_DEPENDS=		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 				p5-Net-DNS>=0:dns/p5-Net-DNS
+JSON_RUN_DEPENDS=		p5-JSON-XS>=0:converters/p5-JSON-XS \
+				p5-Try-Tiny>=0:lang/p5-Try-Tiny
+
+_DOCS=		dolibarr httpd_conf nginx webmin
+_TOOLS=		awstats_buildstaticpages.pl awstats_configure.pl \
+		awstats_exportlib.pl awstats_updateall.pl geoip_generator.pl \
+		logresolvemerge.pl maillogconvert.pl urlaliasbuilder.pl
+_CGI_BIN=	awdownloadcsv.pl awredir.pl awstats.model.conf awstats.pl
+_SHARE_DIRS=	lang lib plugins
+_WWW_DIRS=	css icon js
 
 pre-patch:
 # This file is so messed up, not even dos2unix can fix it
@@ -60,28 +71,23 @@ post-patch:
 			-e 's|AWSTATS_PATH/wwwroot|AWSTATS_PATH|' \
 		${WRKSRC}/tools/awstats_configure.pl
 
-pre-install:
-.for f in dolibarr httpd_conf nginx webmin
-	${MV} ${WRKSRC}/tools/$f ${WRKSRC}/docs
-.endfor
+post-patch-JSON-on:
+	${REINPLACE_CMD} -e '/^use JSON::XS;$$/d' -e '/^use Try::Tiny;$$/d' \
+		${WRKSRC}/wwwroot/cgi-bin/awstats.pl
+
+pre-install-DOCS-on:
+	${MV} ${_DOCS:C|^|${WRKSRC}/tools/|} ${WRKSRC}/docs
 	${RM} ${WRKSRC}/docs/*.bak
 
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}
-	${MKDIR} ${STAGEDIR}${WWWDIR}/tools
-	${MKDIR} ${STAGEDIR}${WWWDIR}/cgi-bin
-.for f in awstats_buildstaticpages.pl awstats_configure.pl \
-	awstats_exportlib.pl awstats_updateall.pl geoip_generator.pl \
-	logresolvemerge.pl maillogconvert.pl urlaliasbuilder.pl
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/$f ${STAGEDIR}${WWWDIR}/tools
-.endfor
-.for f in awdownloadcsv.pl awredir.pl awstats.model.conf awstats.pl
-	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/$f ${STAGEDIR}${WWWDIR}/cgi-bin
-.endfor
-	(cd ${WRKSRC}/wwwroot/cgi-bin && ${COPYTREE_SHARE} "lang lib plugins" ${STAGEDIR}${WWWDIR}/cgi-bin)
-	(cd ${WRKSRC}/wwwroot && ${COPYTREE_SHARE} "css icon js" ${STAGEDIR}${WWWDIR})
+	${MKDIR} ${STAGEDIR}${WWWDIR}/tools \
+		 ${STAGEDIR}${WWWDIR}/cgi-bin \
+		 ${STAGEDIR}${WWWDIR}/classes
+	${INSTALL_SCRIPT} ${_TOOLS:C|^|${WRKSRC}/tools/|} ${STAGEDIR}${WWWDIR}/tools
+	${INSTALL_SCRIPT} ${_CGI_BIN:C|^|${WRKSRC}/wwwroot/cgi-bin/|} ${STAGEDIR}${WWWDIR}/cgi-bin
+	(cd ${WRKSRC}/wwwroot/cgi-bin && ${COPYTREE_SHARE} "${_SHARE_DIRS}" ${STAGEDIR}${WWWDIR}/cgi-bin)
+	(cd ${WRKSRC}/wwwroot && ${COPYTREE_SHARE} "${_WWW_DIRS}" ${STAGEDIR}${WWWDIR})
 	(cd ${WRKSRC}/tools && ${COPYTREE_SHARE} xslt ${STAGEDIR}${WWWDIR}/tools)
-	${MKDIR} ${STAGEDIR}${WWWDIR}/classes
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/classes/awgraphapplet.jar ${STAGEDIR}${WWWDIR}/classes
 
 do-install-DOCS-on:
