@@ -1,6 +1,6 @@
 PORTNAME=	drm-61-kmod
 PORTVERSION=	${DRM_KMOD_DISTVERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics kld
 
 .include "Makefile.version"
