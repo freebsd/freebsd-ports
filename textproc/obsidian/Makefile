@@ -8,7 +8,7 @@
 
 PORTNAME=	obsidian
 PORTVERSION=	1.9.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 # Icon is taken from the Nix build recipe
 # https://github.com/NixOS/nixpkgs/blob/de5448dab588ad41aef40f8c7c0c230981656698/pkgs/applications/misc/obsidian/default.nix#L31-L34
