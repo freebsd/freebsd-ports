@@ -1,7 +1,11 @@
 PORTNAME=	cmake
 DISTVERSION=	${_CMAKE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-core
+
+PATCH_SITES+=	https://github.com/Kitware/CMake/commit/
+PATCHFILES+=	2bb8c6aec74bb658b9ef7b8b3c8db75f2fb6c2b5.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform Makefile generator
