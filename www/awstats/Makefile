@@ -71,7 +71,7 @@ post-patch:
 			-e 's|AWSTATS_PATH/wwwroot|AWSTATS_PATH|' \
 		${WRKSRC}/tools/awstats_configure.pl
 
-post-patch-JSON-on:
+post-patch-JSON-off:
 	${REINPLACE_CMD} -e '/^use JSON::XS;$$/d' -e '/^use Try::Tiny;$$/d' \
 		${WRKSRC}/wwwroot/cgi-bin/awstats.pl
 
