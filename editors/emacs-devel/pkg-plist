@@ -887,6 +887,7 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/dotnet-packages-config.rnc
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/dotnet-packages-props.rnc
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/dotnet-resx.rnc
+%%DATADIR%%/%%EMACS_VER%%/etc/schema/dotnet-slnx.rnc
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/locate.rnc
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/msbuild.rnc
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/nuget.rnc
@@ -1802,6 +1803,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/text-property-search.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/thunk.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/thunk.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/timeout.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/timeout.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/timer-list.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/timer-list.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/timer.el.gz
