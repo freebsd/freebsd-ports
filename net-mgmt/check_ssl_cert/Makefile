@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/matteocorti/${PORTNAME}/releases/download/v${DI
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Nagios/Icinga plugin for checking SSL/TLS certificates
-WWW=		https://matteocorti.github.io/check_ssl_cert/
+WWW=		https://github.com/matteocorti/check_ssl_cert/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.md
