@@ -1,4 +1,5 @@
 include/s2n.h
+include/s2n/unstable/async_offload.h
 include/s2n/unstable/cert_authorities.h
 include/s2n/unstable/cleanup.h
 include/s2n/unstable/crl.h
