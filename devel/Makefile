@@ -2231,6 +2231,7 @@
     SUBDIR += p5-Data-Binary
     SUBDIR += p5-Data-Bind
     SUBDIR += p5-Data-Capture
+    SUBDIR += p5-Data-Censor
     SUBDIR += p5-Data-ClearSilver-HDF
     SUBDIR += p5-Data-Clone
     SUBDIR += p5-Data-Cmp
