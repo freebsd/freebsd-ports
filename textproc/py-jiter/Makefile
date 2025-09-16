@@ -1,6 +1,5 @@
 PORTNAME=	jiter
-DISTVERSION=	0.10.0
-PORTREVISION=	3
+DISTVERSION=	0.11.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,7 @@ WWW=		https://github.com/pydantic/jiter
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/crates/jiter/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.0<2.0:devel/py-maturin@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.9.4<2.0:devel/py-maturin@${PY_FLAVOR}
 
 USES=		cargo python
 USE_PYTHON=	autoplist pep517
