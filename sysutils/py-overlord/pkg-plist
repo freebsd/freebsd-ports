@@ -82,6 +82,8 @@ bin/overlord
 %%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/serve%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/spec%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/spec%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/template%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/template%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/token%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/token%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/overlord/commands/__pycache__/watch%%PYTHON_TAG%%.opt-1.pyc
@@ -95,6 +97,7 @@ bin/overlord
 %%PYTHON_SITELIBDIR%%/overlord/commands/poll.py
 %%PYTHON_SITELIBDIR%%/overlord/commands/serve.py
 %%PYTHON_SITELIBDIR%%/overlord/commands/spec.py
+%%PYTHON_SITELIBDIR%%/overlord/commands/template.py
 %%PYTHON_SITELIBDIR%%/overlord/commands/token.py
 %%PYTHON_SITELIBDIR%%/overlord/commands/watch.py
 %%PYTHON_SITELIBDIR%%/overlord/config.py
