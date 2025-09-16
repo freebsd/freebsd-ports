@@ -12,15 +12,19 @@ EXTRACT_ONLY=	Impact-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Finite Element Program Suite
-WWW=		https://www.impact-fem.org/
+WWW=		https://impact.sourceforge.net/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Does not work as intended	# PR 288493
+EXPIRATION_DATE=2025-10-31
+
 RUN_DEPENDS=	java3d>0:java/java3d
+
+USES=		java zip
 
 WRKSRC=		${WRKDIR}/Impact
 
-USES=		java zip
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/Impact
