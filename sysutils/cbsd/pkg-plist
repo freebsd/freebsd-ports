@@ -41,6 +41,7 @@ cbsd/bhyvectl/bhyve-controller-tui
 cbsd/bhyvectl/bhyve-dsk-tui
 cbsd/bhyvectl/bhyve-nic-tui
 cbsd/bhyvectl/bhyve-nvme-tui
+cbsd/bhyvectl/bhyve-usb
 cbsd/bhyvectl/bhyvecfg-passhtu-tui
 cbsd/bhyvectl/bimport
 cbsd/bhyvectl/bjail
@@ -100,6 +101,9 @@ cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-14.3
 cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-14.4
 cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-15
 cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-15.0
+cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-15.1
+cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-16
+cbsd/etc/defaults/FreeBSD-kernel-CBSD-amd64-16.0
 cbsd/etc/defaults/FreeBSD-kernel-FIRE-amd64-14.1
 cbsd/etc/defaults/FreeBSD-kernel-FIRE-amd64-15
 cbsd/etc/defaults/FreeBSD-kernel-FIRE-amd64-15.0
@@ -112,6 +116,9 @@ cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-14.2
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-14.3
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-15
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-15.0
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-15.1
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-16
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-amd64-16.0
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-13
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-13.5
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-14
@@ -120,6 +127,9 @@ cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-14.3
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-14.4
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-15
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-15.0
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-15.1
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-16
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-arm64-16.0
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-13.5
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-14
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-14.2
@@ -127,6 +137,9 @@ cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-14.3
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-14.4
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-15
 cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-15.0
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-15.1
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-16
+cbsd/etc/defaults/FreeBSD-kernel-GENERIC-riscv-16.0
 cbsd/etc/defaults/FreeBSD-kernels.conf
 cbsd/etc/defaults/FreeBSD-sources.conf
 cbsd/etc/defaults/FreeBSD-srvbrowser.conf
@@ -277,6 +290,7 @@ cbsd/etc/defaults/vm-linux-CentOS-stream-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-Debian-aarch64-12.conf
 cbsd/etc/defaults/vm-linux-Debian-x86-11.conf
 cbsd/etc/defaults/vm-linux-Debian-x86-12.conf
+cbsd/etc/defaults/vm-linux-Debian-x86-13.conf
 cbsd/etc/defaults/vm-linux-Deepin-x86-25.conf
 cbsd/etc/defaults/vm-linux-Devuan-x86-5.conf
 cbsd/etc/defaults/vm-linux-ESOS-x86-master.conf
@@ -324,6 +338,7 @@ cbsd/etc/defaults/vm-linux-cloud-CentOS-stream-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-aarch64-12.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-11.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-12.conf
+cbsd/etc/defaults/vm-linux-cloud-Debian-x86-13.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-9.conf
 cbsd/etc/defaults/vm-linux-cloud-Devuan-x86-5.conf
 cbsd/etc/defaults/vm-linux-cloud-Fedora-39-x86_64.conf
@@ -351,6 +366,7 @@ cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-24.04.conf
 cbsd/etc/defaults/vm-linux-fedora-server-41-x86_64.conf
 cbsd/etc/defaults/vm-linux-fedora-server-42-x86_64.conf
 cbsd/etc/defaults/vm-linux-fedora-silverblue-42-x86_64.conf
+cbsd/etc/defaults/vm-linux-fnOS-0.9.conf
 cbsd/etc/defaults/vm-linux-kubuntu-desktop-amd64-22.conf
 cbsd/etc/defaults/vm-linux-kubuntu-desktop-amd64-24.conf
 cbsd/etc/defaults/vm-linux-lubuntu-desktop-amd64-22.conf
@@ -1269,6 +1285,13 @@ cbsd/tools/zfs-migrator
 cbsd/tools/zfs-recv
 cbsd/upgrade/backup_db/pre-initenv-backup
 cbsd/upgrade/patch/BHYVE_UEFI_VARS.fd
+cbsd/upgrade/patch/bhyve-usb_passthru-15.0/patch-15x-usr.sbin-bhyve-Makefile
+cbsd/upgrade/patch/bhyve-usb_passthru-15.0/patch-15x-usr.sbin-bhyve-Makefile.depend
+cbsd/upgrade/patch/bhyve-usb_passthru-15.0/patch-15x-usr.sbin-bhyve-pci_xhci.c
+cbsd/upgrade/patch/bhyve-usb_passthru-15.0/patch-15x-usr.sbin-bhyve-usb_emul.c
+cbsd/upgrade/patch/bhyve-usb_passthru-15.0/patch-15x-usr.sbin-bhyve-usb_emul.h
+cbsd/upgrade/patch/bhyve-usb_passthru-15.0/patch-15x-usr.sbin-bhyve-usb_mouse.c
+cbsd/upgrade/patch/bhyve-usb_passthru-15.0/patch-15x-usr.sbin-bhyve-usb_passthru.c
 cbsd/upgrade/patch/bhyve-vesa-fb-13.0/patch-13x-usr.sbin-bhyve-pci_fbuf.c
 cbsd/upgrade/patch/efi.fd
 cbsd/upgrade/patch/efigop.fd
