@@ -33,7 +33,8 @@ MAKE_ARGS=	CC="${CC}" \
 CFLAGS+=	-Wall
 # https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html
 # Note there are ${ARCH}-dependent options below after .include <bsd.port.pre.mk>
-CFLAGS+=	-O2 -Wall -Wformat -Wformat=2 \
+# Note that these are enforced for now (2025-09-16), and we can't subject them to PIE/FORTIFY/SSP_UNSAFE or WITHOUT_ options for now.
+CFLAGS+=	-Wall -Wformat -Wformat=2 \
 		-Werror=format-security \
 		-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 \
 		-fstrict-flex-arrays=3 \
