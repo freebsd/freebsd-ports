@@ -1,5 +1,5 @@
 PORTNAME=	instructor
-DISTVERSION=	1.10.0
+DISTVERSION=	1.11.3
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,13 +20,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openai>=1.70.0<2.0.0:misc/py-openai@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.9.1<4.0.0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tenacity>=8.2.3<10.0.0:devel/py-tenacity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-core>=2.18.0<3.0.0:devel/py-pydantic-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jiter>=0.6.1<0.11:textproc/py-jiter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jiter>=0.6.1:textproc/py-jiter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.4<4.0.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3<3.0.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}diskcache>=5.6.3:devel/py-diskcache@${PY_FLAVOR}
+# TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-examples>=0.0.15:devel/py-pytest-examples@${PY_FLAVOR} \
+# 		${PYTHON_PKGNAMEPREFIX}sqlmodel>=0.0.22<1.0.0:databases/py-sqlmodel@${PY_FLAVOR} \
+# 		${PYTHON_PKGNAMEPREFIX}anthropic>=0.53.0:misc/py-anthropic@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
