@@ -200,9 +200,11 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/integrations/grafana.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/integrations/graphite.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/integrations/influxdb.md
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/integrations/kafka.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/integrations/newrelic.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/integrations/opentsdb.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/integrations/prometheus.md
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/integrations/pubsub.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/keyConcepts/_index.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/keyConcepts/counter.webp
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/keyConcepts/data_collection.webp
@@ -242,5 +244,6 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation/configuration-total.webp
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/stream-aggregation/configuration.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/url-examples.md
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/victoria_metrics_flags.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/victoriametrics-datasource.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
