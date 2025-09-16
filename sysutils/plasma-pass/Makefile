@@ -1,6 +1,7 @@
 PORTNAME=	plasma-pass
 DISTVERSION=	1.3.0
 MASTER_SITES=	KDE/stable/${PORTNAME}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 
 MAINTAINER=	kde@FreeBSD.org

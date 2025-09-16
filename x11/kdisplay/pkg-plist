@@ -36,7 +36,6 @@ share/locale/ru/LC_MESSAGES/kcm_kdisplay.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kwinft.kdisplay.mo
 share/locale/uk/LC_MESSAGES/kcm_kdisplay.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kwinft.kdisplay.mo
-share/metainfo/org.kwinft.kdisplay.appdata.xml
 share/plasma/plasmoids/org.kwinft.kdisplay/contents/ui/InhibitionHint.qml
 share/plasma/plasmoids/org.kwinft.kdisplay/contents/ui/PresentationModeItem.qml
 share/plasma/plasmoids/org.kwinft.kdisplay/contents/ui/ScreenLayoutSelection.qml

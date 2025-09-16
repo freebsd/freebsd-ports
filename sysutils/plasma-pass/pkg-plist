@@ -46,7 +46,6 @@ share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.plasma.pass.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_org.kde.plasma.pass.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.pass.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.pass.mo
-share/metainfo/org.kde.plasma.pass.appdata.xml
 share/plasma/plasmoids/org.kde.plasma.pass/contents/ui/PasswordItemDelegate.qml
 share/plasma/plasmoids/org.kde.plasma.pass/contents/ui/PasswordsPage.qml
 share/plasma/plasmoids/org.kde.plasma.pass/contents/ui/ProviderDelegate.qml

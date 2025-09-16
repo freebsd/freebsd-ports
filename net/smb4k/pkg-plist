@@ -221,7 +221,6 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.smb4kqml.mo
 share/locale/zh_TW/LC_MESSAGES/smb4k-core.mo
 share/locale/zh_TW/LC_MESSAGES/smb4k.mo
 share/metainfo/org.kde.smb4k.appdata.xml
-share/metainfo/org.kde.smb4kqml.appdata.xml
 share/plasma/plasmoids/org.kde.smb4kqml/contents/config/main.xml
 share/plasma/plasmoids/org.kde.smb4kqml/contents/ui/BookmarkItemDelegate.qml
 share/plasma/plasmoids/org.kde.smb4kqml/contents/ui/BookmarksPage.qml
