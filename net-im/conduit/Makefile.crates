@@ -424,4 +424,4 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zstd-sys-2.0.10+zstd.1.5.6 \
 		zune-core-0.4.12 \
 		zune-jpeg-0.4.11 \
-		ruma,ruma-appservice-api,ruma-client-api,ruma-common,ruma-events,ruma-federation-api,ruma-identifiers-validation,ruma-macros,ruma-push-gateway-api,ruma-signatures,ruma-state-res@git+https://github.com/ruma/ruma.git\#547efbf24831066ae3199dc51b93f6b3a30ea8e7
+		ruma,ruma-appservice-api,ruma-client-api,ruma-common,ruma-events,ruma-federation-api,ruma-identifiers-validation,ruma-macros,ruma-push-gateway-api,ruma-signatures,ruma-state-res@git+https://github.com/ruma/ruma.git\#d879f7df16ba9928a73649f8149dabeee939691e
