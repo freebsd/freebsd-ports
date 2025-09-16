@@ -577,6 +577,7 @@
     SUBDIR += pgroonga
     SUBDIR += pgrouting
     SUBDIR += pgsanity
+    SUBDIR += pgschema
     SUBDIR += pgtcl
     SUBDIR += pgtop
     SUBDIR += pguri
