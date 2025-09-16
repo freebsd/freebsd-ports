@@ -4,7 +4,7 @@ DISTVERSION=	2.8.0
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Small utility to dump info about DRM devices
+COMMENT=	Dump info about DRM devices
 WWW=		https://gitlab.freedesktop.org/emersion/drm_info
 
 LICENSE=	MIT
