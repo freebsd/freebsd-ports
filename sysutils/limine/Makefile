@@ -1,5 +1,5 @@
 PORTNAME=	limine
-DISTVERSION=	9.6.5
+DISTVERSION=	10.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://codeberg.org/Limine/Limine/releases/download/v${DISTVERSION}/
 
@@ -28,7 +28,6 @@ PORTDOCS=	3RDPARTY.md CONFIG.md FAQ.md PROTOCOL.md USAGE.md
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e '/COPYING/d' ${WRKSRC}/GNUmakefile.in
-	@${REINPLACE_CMD} -e '/LICENSES/d' ${WRKSRC}/GNUmakefile.in
+	@${REINPLACE_CMD} -e '/COPYING/d; /LICENSES/d' ${WRKSRC}/GNUmakefile.in
 
 .include <bsd.port.mk>
