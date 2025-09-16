@@ -1,3 +1,36 @@
+  <vuln vid="b959f00c-92cc-11f0-a064-74563cf9e4e9">
+    <topic>CUPS -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cups</name>
+	<range><lt>2.4.13</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenPrinting reports:</p>
+	<blockquote cite="https://github.com/OpenPrinting/cups/security/advisories/GHSA-4c68-qgrh-rmmq">
+	  <p>When the AuthType is set to anything but Basic, if the request contains an
+	    Authorization: Basic ... header, the password is not checked.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/OpenPrinting/cups/security/advisories/GHSA-7qx3-r744-6qv4">
+	  <p>An unsafe deserialization and validation of printer attributes, causes null
+	    dereference in libcups library.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-58060</cvename>
+      <cvename>CVE-2025-58364</cvename>
+      <url>https://github.com/OpenPrinting/cups/security/advisories/GHSA-4c68-qgrh-rmmq</url>
+      <url>https://github.com/OpenPrinting/cups/security/advisories/GHSA-7qx3-r744-6qv4</url>
+    </references>
+    <dates>
+      <discovery>2025-09-11</discovery>
+      <entry>2025-09-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f6ca7c47-9190-11f0-b8da-589cfc10a551">
     <topic>unit-java -- security vulnerability</topic>
     <affects>
