@@ -1,5 +1,5 @@
 PORTNAME=	icewm
-PORTVERSION=	3.8.2
+PORTVERSION=	3.9.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
 
@@ -19,7 +19,7 @@ USES=		compiler:c++11-lang gmake gnome iconv:translit localbase \
 		perl5 pkgconfig shebangfix tar:lz xorg
 USE_GNOME=	glib20
 USE_PERL5=	build
-USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xpm xrender
+USE_XORG=	ice sm x11 xcomposite xcursor xdamage xext xfixes xrender
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-icesound=oss
 SHEBANG_FILES=	contrib/icewm-menu-xrandr
