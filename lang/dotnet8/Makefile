@@ -1,8 +1,7 @@
 PORTNAME=	dotnet
-DISTVERSIONPREFIX=	v
-DISTVERSION=	${DOTNETVERSION}.18
+DISTVERSION=	${DOTNETVERSION}.20
 CATEGORIES=	lang devel
-MASTER_SITES=	https://github.com/dotnet/dotnet/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/release.json?dummy=/:dotnetmanifest \
+MASTER_SITES=	https://github.com/dotnet/dotnet/releases/download/${GH_TAGNAME}/release.json?dummy=/:dotnetmanifest \
 		LOCAL/arrowd/dotnet/:bootstrap
 PKGNAMESUFFIX=	8
 DISTFILES=	release.json-${PORTVERSION}:dotnetmanifest \
@@ -34,6 +33,7 @@ USES=		autoreconf:build gssapi:mit llvm:noexport nodejs pkgconfig \
 		python:build,3.9+ shebangfix ssl
 
 USE_GITHUB=	yes
+GH_TAGNAME=	v${SDKVERSION}
 
 SHEBANG_FILES=	src/diagnostics/src/Tools/dotnet-trace/*.sh \
 		src/source-build-externals/src/azure-activedirectory-identitymodel-extensions-for-dotnet/updateAssemblyInfo.sh
@@ -48,7 +48,7 @@ BOOTSTRAP_SOURCEBUILT_ARTIFACTS_DISTNAME=	Private.SourceBuilt.Artifacts.${BOOTST
 BOOTSTRAP_SDK_DISTNAME=				dotnet-sdk-${BOOTSTRAP_SDKVERSION}-freebsd-${DOTNET_ARCH}
 
 DOTNETVERSION=			8.0
-SDKVERSION=			${DOTNETVERSION}.118
+SDKVERSION=			${DOTNETVERSION}.120
 SDKVERSIONSUFFIX=		-servicing.25323.1
 SOURCEBUILT_ARTIFACTS_DISTNAME?=Private.SourceBuilt.Artifacts.${SDKVERSION}${SDKVERSIONSUFFIX}.freebsd.13-${DOTNET_ARCH}
 SDK_DISTNAME=			dotnet-sdk-${SDKVERSION}-freebsd-${DOTNET_ARCH}
