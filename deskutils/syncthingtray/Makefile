@@ -1,6 +1,6 @@
 PORTNAME=	syncthingtray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	dsh@bamus.cz
@@ -17,7 +17,7 @@ FLAVORS=	qt6 qt5
 FLAVOR?=	${FLAVORS:[1]}
 FLAVORS_SUB=	yes
 
-qt6_PKGNAMESUFFIX=	-qt6
+qt5_PKGNAMESUFFIX=	-qt5
 
 USES=		cmake:insource iconv perl5 xorg
 
@@ -25,10 +25,10 @@ USE_GITHUB=	nodefault
 GH_ACCOUNT=	Martchus
 GH_TUPLE:=	${GH_ACCOUNT}:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:${PORTNAME}/../${PORTNAME} \
 		${GH_ACCOUNT}:cpp-utilities:v5.30.0:cpputilities/../c++utilities \
-		${GH_ACCOUNT}:qtutilities:v6.18.0:qtutilities/../qtutilities \
+		${GH_ACCOUNT}:qtutilities:v6.18.1:qtutilities/../qtutilities \
 		${GH_ACCOUNT}:qtforkawesome:v0.3.1:qtforkawesome/../qtforkawesome \
 		ForkAwesome:Fork-Awesome:4fef70f:ForkAwesome/../forkawesome \
-		${GH_ACCOUNT}:subdirs:52fc6e4:subdirs/../subdirs
+		${GH_ACCOUNT}:subdirs:0a522cf:subdirs/../subdirs
 
 USE_PERL5=	build
 USE_QT=		declarative svg
@@ -69,9 +69,6 @@ WEBENGINE_DESC=		Built-in web view (webengine dependency)
 PLASMA_USE=	KDE=ecm:build
 PLASMA_CMAKE_BOOL_OFF=	NO_FILE_ITEM_ACTION_PLUGIN NO_PLASMOID
 
-WEBENGINE_CMAKE_ON=	-DWEBVIEW_PROVIDER:STRING=webengine
-WEBENGINE_CMAKE_OFF=	-DWEBVIEW_PROVIDER:STRING=none
-
 .if ${FLAVOR} == qt5
 PLASMA_USES=	kde:5
 PLASMA_USE+=	KDE=plasma-framework:build
@@ -81,6 +78,9 @@ PLASMA_USES=	kde:6
 PLASMA_USE+=	KDE=libplasma:build
 WEBENGINE_USE=	QT=webchannel,webengine
 .endif
+
+WEBENGINE_CMAKE_ON=	-DWEBVIEW_PROVIDER:STRING=webengine
+WEBENGINE_CMAKE_OFF=	-DWEBVIEW_PROVIDER:STRING=none
 
 post-install:
 	${RM} -r \
