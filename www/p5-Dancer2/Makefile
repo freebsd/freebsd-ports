@@ -1,6 +1,5 @@
 PORTNAME=	Dancer2
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +19,7 @@ RUN_DEPENDS=	p5-CLI-Osprey>=0:devel/p5-CLI-Osprey \
 		p5-Clone>=0:devel/p5-Clone \
 		p5-Crypt-URandom>=0:security/p5-Crypt-URandom \
 		p5-Config-Any>=0:devel/p5-Config-Any \
+		p5-Data-Censor>=0:devel/p5-Data-Censor \
 		p5-File-Share>=0:devel/p5-File-Share \
 		p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-Hash-Merge-Simple>=0:devel/p5-Hash-Merge-Simple \
@@ -54,6 +54,7 @@ TEST_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
 		p5-Test-CPAN-Meta>=0:devel/p5-Test-CPAN-Meta \
 		p5-Test-EOL>=0:devel/p5-Test-EOL \
+		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \
 		p5-Test-MockTime>=0:devel/p5-Test-MockTime \
