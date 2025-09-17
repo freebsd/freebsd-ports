@@ -198,6 +198,7 @@
     SUBDIR += ft2-clone
     SUBDIR += ft2play
     SUBDIR += furnace
+    SUBDIR += g4music
     SUBDIR += ganv
     SUBDIR += gbsplay
     SUBDIR += geonkick-lv2

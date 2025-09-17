@@ -1,0 +1,3 @@
+[com.github.neithern.g4music]
+# ossink (or osssink4) through autoaudiosink crashes G4Music
+audio-sink='pulsesink'
