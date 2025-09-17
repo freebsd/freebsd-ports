@@ -1,6 +1,6 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.8
+DISTVERSION=	2.3.9
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -309,7 +309,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		libloading-0.7.4 \
 		libloading-0.8.6 \
 		libm-0.2.11 \
-		libmimalloc-sys-0.1.40 \
 		libredox-0.1.3 \
 		librocksdb-sys-0.17.1+9.9.3 \
 		libz-sys-1.1.22 \
@@ -332,7 +331,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		memmap2-0.9.5 \
 		miette-5.10.0 \
 		miette-derive-5.10.0 \
-		mimalloc-0.1.44 \
 		mime-0.3.17 \
 		mime_guess-2.0.5 \
 		minimal-lexical-0.2.1 \
