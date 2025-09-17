@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	28.0.4
+DISTVERSION=	28.1
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime${PORTVERSION:C/\..*//}
 DIST_SUBDIR=	erlang
@@ -116,8 +116,9 @@ post-configure-ODBC-off:
 
 post-install-CHUNKS-on:
 	cd ${WRKSRC_otp} && \
-		${SETENV} ERL_TOP=${WRKSRC_otp} ${MAKE_CMD} release_docs \
-		DOC_TARGETS=chunks RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${_ERLANG_LIB}
+		${SETENV} ERL_TOP=${WRKSRC_otp} \
+		${MAKE_CMD} release_docs DOC_TARGETS=chunks \
+		RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${_ERLANG_LIB}
 
 post-build-CORBA-on:
 	cd ${WRKSRC_corba} && \
