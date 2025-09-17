@@ -1,7 +1,6 @@
 PORTNAME=	miniserve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.0
-PORTREVISION=	1
+DISTVERSION=	0.32.0
 CATEGORIES=	www
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -15,8 +14,9 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	the ring crate requires SSE2 instruction on intel cpu
 
-BUILD_DEPENDS=	zstd>0:archivers/zstd
-LIB_DEPENDS=	libonig.so:devel/oniguruma
+#BUILD_DEPENDS=	zstd>0:archivers/zstd
+LIB_DEPENDS=	libonig.so:devel/oniguruma \
+		libzstd.so:archivers/zstd
 
 USES=		cargo ssl:build
 USE_GITHUB=	yes
