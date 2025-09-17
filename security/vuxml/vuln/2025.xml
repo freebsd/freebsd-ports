@@ -1,3 +1,44 @@
+  <vuln vid="b9b668f0-96ec-4568-b618-2edea45d6933">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.528</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.516.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2025-09-17/">
+	  <h1>Description</h1>
+	  <h5>(High) SECURITY-3618 / CVE-2025-5115</h5>
+	  <p>HTTP/2 denial of service vulnerability in bundled Jetty</p>
+	  <h5>(Medium) SECURITY-3594 / CVE-2025-59474</h5>
+	  <p>Missing permission check allows obtaining agent names</p>
+	  <h5>(Medium) SECURITY-3625 / CVE-2025-59475</h5>
+	  <p> Missing permission check in authenticated users' profile menu</p>
+	  <h5>(Medium) SECURITY-3424 / CVE-2025-59476</h5>
+	  <p>Log message injection vulnerability</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-5115</cvename>
+      <cvename>CVE-2025-59474</cvename>
+      <cvename>CVE-2025-59475</cvename>
+      <cvename>CVE-2025-59476</cvename>
+      <url>https://www.jenkins.io/security/advisory/2025-09-17/</url>
+    </references>
+    <dates>
+      <discovery>2025-09-17</discovery>
+      <entry>2025-09-17</entry>
+  </dates>
+  </vuln>
+
   <vuln vid="f6ca7c47-9190-11f0-b8da-589cfc10a551">
     <topic>unit-java -- security vulnerability</topic>
     <affects>
