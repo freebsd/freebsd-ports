@@ -1,5 +1,5 @@
 PORTNAME=	mediastreamer
-DISTVERSION=	5.4.24
+DISTVERSION=	5.4.26
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -9,11 +9,10 @@ WWW=		https://www.linphone.org/technical-corner/mediastreamer2
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libbctoolbox.a:net/bctoolbox \
-		${LOCALBASE}/lib/libbcunit.a:devel/bcunit \
-		${LOCALBASE}/lib/libbzrtp.a:security/bzrtp \
-		${LOCALBASE}/lib/libortp.a:net/ortp
-LIB_DEPENDS=	libsrtp2.so:net/libsrtp2
+LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
+		libbzrtp.so:security/bzrtp \
+		libortp.so:net/ortp \
+		libsrtp2.so:net/libsrtp2
 
 USES=		cmake compiler gnome python:build sqlite
 USE_GITLAB=	yes
@@ -31,8 +30,9 @@ CMAKE_ARGS=	-DENABLE_ALSA=NO \
 		-DENABLE_PULSEAUDIO=NO \
 		-DENABLE_STATIC=NO \
 		-DENABLE_STRICT=NO \
-		-DENABLE_TOOLS=NO \
-		-DENABLE_UNIT_TESTS=NO
+		-DENABLE_TOOLS=NO
+CMAKE_ON=		BUILD_SHARED_LIBS
+CMAKE_OFF=		ENABLE_UNIT_TESTS
 
 LDFLAGS+=	-pthread
 
@@ -63,7 +63,7 @@ GLX_USE=	GL=gl,glew
 GLX_CMAKE_BOOL=	ENABLE_GL ENABLE_GLX
 GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 GSM_CMAKE_BOOL=		ENABLE_GSM
-MATROSKA_BUILD_DEPENDS=	${LOCALBASE}/lib/libbcmatroska2.a:multimedia/bcmatroska2
+MATROSKA_LIB_DEPENDS=	libbcmatroska2.so:multimedia/bcmatroska2
 MATROSKA_CMAKE_BOOL=	ENABLE_MKV
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 OPUS_CMAKE_BOOL=	ENABLE_OPUS
@@ -71,7 +71,8 @@ QTGL_IMPLIES=	VIDEO
 QTGL_USES=	qt:5
 QTGL_USE=	QT=core,declarative,gui,network,buildtools:build,qmake:build
 QTGL_CMAKE_BOOL=	ENABLE_QT_GL
-SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex \
+			libspeexdsp.so:audio/speexdsp
 SPEEX_CMAKE_BOOL=	ENABLE_SPEEX_CODEC
 THEORA_IMPLIES=		VIDEO
 THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
@@ -86,7 +87,7 @@ VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 VPX_CMAKE_BOOL=		ENABLE_VPX
 XVIDEO_IMPLIES=		VIDEO
 XVIDEO_USES=		xorg
-XVIDEO_USE=		XORG=x11,xorgproto,xv
+XVIDEO_USE=		XORG=x11,xext,xfixes,xorgproto,xv
 XVIDEO_CMAKE_BOOL=	ENABLE_X11 ENABLE_XV
 XVIDEO_LDFLAGS=		-L${LOCALBASE}/lib -lX11
 
