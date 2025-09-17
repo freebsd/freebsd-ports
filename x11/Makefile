@@ -457,6 +457,7 @@
     SUBDIR += virglrenderer
     SUBDIR += virtboard
     SUBDIR += virtualgl
+    SUBDIR += walker
     SUBDIR += wallutils
     SUBDIR += wapanel
     SUBDIR += watershot
