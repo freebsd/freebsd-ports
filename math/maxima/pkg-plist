@@ -6,7 +6,7 @@ lib/maxima/%%PORTVERSION%%/%%BINDIR%%/%%BINNAME%%
 libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%MANPAGES%%share/man/man1/maxima.1.gz
 %%PORTDOCS%%@dir %%DOCSDIR%%
-share/applications/X%%BINNAME%%.desktop
+%%ECL%%share/applications/X%%BINNAME%%.desktop
 share/bash-completion/completions/maxima
 share/bash-completion/completions/rmaxima
 share/bash-completion/completions/xmaxima
@@ -25,15 +25,15 @@ share/emacs/site-lisp/mylatex.ltx.el
 share/emacs/site-lisp/setup-imaxima-imath.el
 share/emacs/site-lisp/smart-complete.el
 share/emacs/site-lisp/sshell.el
-share/icons/text-x-%%BINNAME%%-out.svg
-share/icons/text-x-%%BINNAME%%session.svg
-share/icons/x%%BINNAME%%.png
-share/icons/x%%BINNAME%%.svg
+%%ECL%%share/icons/text-x-%%BINNAME%%-out.svg
+%%ECL%%share/icons/text-x-%%BINNAME%%session.svg
+%%ECL%%%%XMAXIMA%%share/icons/x%%BINNAME%%.png
+%%ECL%%%%XMAXIMA%%share/icons/x%%BINNAME%%.svg
 share/info/guess.info
 share/info/mathml.info
 share/info/maxima-index-html.lisp
 share/info/maxima-index.lisp
 share/info/raddenest.info
-share/metainfo/net.sourceforge.%%BINNAME%%.x%%BINNAME%%.appdata.xml
+%%ECL%%share/metainfo/net.sourceforge.%%BINNAME%%.x%%BINNAME%%.appdata.xml
 share/mime/packages/x-mac.xml
 share/mime/packages/x-maxima-out.xml
