@@ -1,0 +1,10 @@
+--- ../rust-sshkeys-d736693769b9c4abebad8050fba92271f3c50226/src/reader.rs.orig	2025-09-17 10:09:23 UTC
++++ ../rust-sshkeys-d736693769b9c4abebad8050fba92271f3c50226/src/reader.rs
+@@ -21,6 +21,7 @@ impl<'a> Reader<'a> {
+     /// let num = reader.read_u32().unwrap();
+     /// assert_eq!(num, 42);
+     /// ```
++    #[allow(mismatched_lifetime_syntaxes)]
+     pub fn new<T: ?Sized + AsRef<[u8]>>(inner: &T) -> Reader {
+         Reader {
+             inner: inner.as_ref(),
