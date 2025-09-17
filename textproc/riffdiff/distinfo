@@ -1,4 +1,4 @@
-TIMESTAMP = 1753124376
+TIMESTAMP = 1758123882
 SHA256 (rust/crates/addr2line-0.14.0.crate) = 7c0929d69e78dd9bf5408269919fcbcaeb2e35e5d43e5815517cdc6a8e11a423
 SIZE (rust/crates/addr2line-0.14.0.crate) = 30065
 SHA256 (rust/crates/adler-0.2.3.crate) = ee2a4ec343196209d6594e19543ae87a39f96d5534d7174822a3ad825dd6ed7e
@@ -247,5 +247,5 @@ SHA256 (rust/crates/zerovec-0.11.2.crate) = 4a05eb080e015ba39cc9e23bbe5e7fb04d5f
 SIZE (rust/crates/zerovec-0.11.2.crate) = 124500
 SHA256 (rust/crates/zerovec-derive-0.11.1.crate) = 5b96237efa0c878c64bd89c436f661be4e46b2f3eff1ebb976f7ef2321d2f58f
 SIZE (rust/crates/zerovec-derive-0.11.1.crate) = 21294
-SHA256 (walles-riff-3.4.0_GH0.tar.gz) = ac1b973ab3dc0386f59c1b92bb509eab762d1524781c5e60e1208cfce70966e4
-SIZE (walles-riff-3.4.0_GH0.tar.gz) = 2074194
+SHA256 (walles-riff-3.4.1_GH0.tar.gz) = d209e5b5a68907382cc91061d2e0570789293214b402c1b344008760fe298302
+SIZE (walles-riff-3.4.1_GH0.tar.gz) = 2074368
