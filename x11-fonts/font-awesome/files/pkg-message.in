@@ -2,7 +2,7 @@
 { type: install
   message: <<EOM
 If you're upgrading from a previous version, you may need to update your configs
-to the new font families "Font Awesome 6 Free" and "Font Awesome 6 Free Solid".
+to the new font families "Font Awesome %%VER%% Free" and "Font Awesome %%VER%% Free Solid".
 EOM
 }
 ]
