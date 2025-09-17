@@ -1,7 +1,7 @@
 PORTNAME=	mapnik
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 
 MAINTAINER=	hummeltech@sherpaguru.com
@@ -15,7 +15,6 @@ BUILD_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu \
 		protozero>0:devel/protozero
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libboost_regex.so:devel/boost-libs \
-		libboost_system.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libicuuc.so:devel/icu
