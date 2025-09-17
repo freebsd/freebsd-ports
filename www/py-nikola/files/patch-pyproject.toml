@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-09-16 01:33:40 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "Nikola"
++name = "nikola"
+ version = "8.3.3"
+ description = "A modular, fast, simple, static website and blog generator"
+ readme = "README.rst"
+@@ -111,7 +111,7 @@ exclude = ["tests", "tests.*"]
+     "docs/theming.rst",
+     "docs/extending.rst"
+ ]
+-"share/man/man1" = ["docs/man/nikola.1.gz"]
++#"share/man/man1" = ["docs/man/nikola.1.gz"]
+ 
+ [tool.pydocstyle]
+ add-ignore = ["D412", "D413"]
