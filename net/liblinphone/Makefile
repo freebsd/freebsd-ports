@@ -1,5 +1,5 @@
 PORTNAME=	liblinphone
-DISTVERSION=	5.4.25
+DISTVERSION=	5.4.26
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -9,24 +9,17 @@ WWW=		https://www.linphone.org/technical-corner/liblinphone.html
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libbcmatroska2.a:multimedia/bcmatroska2 \
-		${LOCALBASE}/lib/libbctoolbox.a:net/bctoolbox \
-		${LOCALBASE}/lib/libbcunit.a:devel/bcunit \
-		${LOCALBASE}/lib/libbelcard.a:deskutils/belcard \
-		${LOCALBASE}/lib/libbelle-sip.a:net/belle-sip \
-		${LOCALBASE}/lib/libbelr.a:textproc/belr \
-		${LOCALBASE}/lib/libbzrtp.a:security/bzrtp \
-		${LOCALBASE}/lib/liblime.a:security/lime \
-		${LOCALBASE}/lib/libmediastreamer2.a:net/mediastreamer \
-		${LOCALBASE}/lib/libortp.a:net/ortp \
-		${PYTHON_PKGNAMEPREFIX}pystache>=0:textproc/py-pystache@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pystache>=0:textproc/py-pystache@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 		doxygen:devel/doxygen \
 		v4l_compat>=1.0.20120501:multimedia/v4l_compat \
 		xsd>0:devel/xsd
-LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp \
-		libsoci_core.so:databases/soci \
-		libxerces-c.so:textproc/xerces-c3
+LIB_DEPENDS=	\
+		libbelcard.so:deskutils/belcard \
+		libbelle-sip.so:net/belle-sip \
+		liblime.so:security/lime \
+		libmediastreamer2.so:net/mediastreamer \
+		libsoci_core.so:databases/soci
 
 USES=		cmake compiler:c++17-lang gnome iconv pkgconfig python:build \
 		sqlite xorg
@@ -45,8 +38,9 @@ CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
 		-DENABLE_QRCODE=NO \
 		-DENABLE_STATIC=NO \
 		-DENABLE_STRICT=NO \
-		-DENABLE_TOOLS=NO \
-		-DENABLE_UNIT_TESTS=NO
+		-DENABLE_TOOLS=NO
+CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	ENABLE_UNIT_TESTS
 
 LDFLAGS+=	-lpthread
 
