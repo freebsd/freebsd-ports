@@ -1,6 +1,6 @@
-TIMESTAMP = 1754237620
-SHA256 (matrix_synapse-1.135.0.tar.gz) = 6956c04873b0f24fb792eedb422d545661ae000f403820f9498207f2aea6c3c5
-SIZE (matrix_synapse-1.135.0.tar.gz) = 3834787
+TIMESTAMP = 1756821576
+SHA256 (matrix_synapse-1.138.0.tar.gz) = 72d2afd78e8731f934cf3a0918b0af46a627f0426dd8ce8107e1d65aa66b62a5
+SIZE (matrix_synapse-1.138.0.tar.gz) = 3895205
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627

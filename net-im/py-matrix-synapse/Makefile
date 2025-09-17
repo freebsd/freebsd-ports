@@ -1,10 +1,9 @@
 PORTNAME=	matrix-synapse
-DISTVERSION=	1.135.0
-PORTREVISION=	3
+DISTVERSION=	1.138.0
 CATEGORIES=	net-im python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	${PORTNAME:S/-/_/}-${DISTVERSION}.tar.gz
+DISTFILES+=	${PORTNAME:S/-/_/}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@skyforge.at
 COMMENT=	Matrix protocol reference homeserver
@@ -57,16 +56,19 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=15.0:devel/py-virtualenv@${PY_F
 USES=		cargo python shebangfix
 USE_PYTHON=	autoplist cryptography pep517
 USE_RC_SUBR=	synapse
-WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}-${DISTVERSION}
-CARGO_CONFIGURE=	yes
-CARGO_BUILD=	no
-CARGO_TEST=	no
-CARGO_INSTALL=	no
-CARGO_CARGOTOML=	${WRKSRC}/rust/Cargo.toml
 
 SHEBANG_FILES=	synapse/_scripts/*.py
+
+CARGO_CONFIGURE=	yes
+CARGO_CARGOTOML=	${WRKSRC}/rust/Cargo.toml
+CARGO_BUILD=		no
+CARGO_INSTALL=		no
+CARGO_TEST=		no
+
 SUB_FILES=	pkg-message log.config
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} DBDIR=${DBDIR} LOGDIR=${LOGDIR} PIDDIR=${PIDDIR} USERS=${USERS}
+
+WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}-${DISTVERSION}
 
 USERS=		synapse
 GROUPS=		synapse
@@ -77,7 +79,7 @@ PIDDIR?=	/var/run/${PORTNAME}
 
 PLIST_FILES=	"@sample ${ETCDIR}/log.config.sample"
 
-DOCS=		README.rst UPGRADE.rst CHANGES.md docs/postgres.md
+DOCS=		CHANGES.md README.rst UPGRADE.rst docs/postgres.md
 PORTDOCS=	${DOCS:T}
 
 OPTIONS_DEFINE=		DOCS JWT LDAP OIDC PGSQL REDIS SQLITE URLPREVIEW
