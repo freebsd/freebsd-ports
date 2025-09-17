@@ -18,7 +18,8 @@ include/belcard/belcard_rfc6474.hpp
 include/belcard/belcard_security.hpp
 include/belcard/belcard_utils.hpp
 include/belcard/vcard_grammar.hpp
-lib/libbelcard.a
+lib/libbelcard.so
+lib/libbelcard.so.1
 share/BelCard/cmake/BelCardConfig.cmake
 share/BelCard/cmake/BelCardConfigVersion.cmake
 share/BelCard/cmake/BelCardTargets-%%CMAKE_BUILD_TYPE%%.cmake
