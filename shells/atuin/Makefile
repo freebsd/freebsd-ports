@@ -1,7 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.7.1
-PORTREVISION=	1
+DISTVERSION=	18.8.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -87,7 +86,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		concurrent-queue-2.5.0 \
 		condtype-1.3.0 \
 		config-0.15.11 \
-		console-0.15.11 \
+		console-0.16.0 \
 		const-oid-0.9.6 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.7 \
@@ -213,7 +212,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		indenter-0.3.3 \
 		indexmap-1.9.3 \
 		indexmap-2.8.0 \
-		indicatif-0.17.11 \
+		indicatif-0.18.0 \
 		indoc-2.0.6 \
 		inout-0.1.4 \
 		instability-0.3.7 \
@@ -272,7 +271,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
 		num_threads-0.1.7 \
-		number_prefix-0.4.0 \
 		objc-sys-0.3.5 \
 		objc2-0.5.2 \
 		objc2-app-kit-0.2.2 \
@@ -487,6 +485,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unicode-truncate-1.1.0 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
+		unit-prefix-0.5.1 \
 		universal-hash-0.5.1 \
 		untrusted-0.9.0 \
 		url-2.5.4 \
@@ -531,9 +530,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.0 \
+		windows-targets-0.53.2 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_gnullvm-0.53.0 \
