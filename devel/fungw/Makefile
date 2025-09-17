@@ -1,6 +1,5 @@
 PORTNAME=	fungw
-DISTVERSION=	1.2.1
-PORTREVISION=	2
+DISTVERSION=	1.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.repo.hu/projects/fungw/releases/
 
@@ -44,10 +43,4 @@ TCL_USES=		tcl
 post-install:
 	[ '${STRIP}' = -s ] && ${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfungw*.so.?
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 504200
-BROKEN=	does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
