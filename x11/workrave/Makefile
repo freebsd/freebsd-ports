@@ -1,11 +1,10 @@
 PORTNAME=	workrave
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.50
-PORTREVISION=	4
+DISTVERSION=	1.10.53
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/rcaelers/workrave/releases/download/v${DISTVERSION:S/./_/g}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pauamma@gundo.com
 COMMENT=	RSI prevention tool (${FLAVOR} flavor)
 WWW=		https://www.workrave.org/
 
@@ -13,7 +12,9 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgdome.so:textproc/gdome2 \
-		libharfbuzz.so:print/harfbuzz
+		libgraphene-1.0.so:graphics/graphene \
+		libharfbuzz.so:print/harfbuzz \
+		libvulkan.so:graphics/vulkan-loader
 
 FLAVORS=			default xfce
 FLAVOR?=			${FLAVORS:[1]}
@@ -22,8 +23,7 @@ xfce_PKGNAMESUFFIX=		-xfce
 xfce_CONFLICTS_INSTALL=		workrave
 xfce_DESCR=			${.CURDIR}/pkg-descr.xfce
 
-USES=		compiler:c++11-lang desktop-file-utils gmake gnome libtool \
-		localbase pkgconfig xorg
+USES=		compiler:c++11-lang gmake gnome libtool localbase pkgconfig xorg
 .if ${FLAVOR} == xfce
 CATEGORIES+=	xfce
 USES+=		xfce
@@ -34,7 +34,9 @@ PLIST_FILES=	lib/xfce4/panel/plugins/libworkrave-plugin.a \
 		share/xfce4/panel/plugins/workrave-xfce-applet.desktop
 .endif
 USE_CXXSTD=	c++11
-USE_GNOME=	gdkpixbuf gtkmm30 intlhack intltool introspection:build libxml2
+# gtkmm30 and gtk40 needed (the latter for lib/libworkrave-gtk4-private-1.0).
+USE_GNOME=	gdkpixbuf gtkmm30 gtk40 intlhack intltool introspection:build \
+		libxml2
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xext xmu xorgproto xscrnsaver xtst
 
