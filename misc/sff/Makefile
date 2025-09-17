@@ -1,6 +1,5 @@
 PORTNAME=	sff
-DISTVERSION=	1.1
-PORTREVISION=	1
+DISTVERSION=	1.2
 CATEGORIES=	misc
 MASTER_SITES=	https://codeberg.org/sylphenix/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -19,5 +18,8 @@ MAKE_ARGS=	CC="${CC}" \
 		PREFIX="${PREFIX}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
