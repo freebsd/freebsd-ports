@@ -17,5 +17,6 @@ share/Ortp/cmake/OrtpConfig.cmake
 share/Ortp/cmake/OrtpConfigVersion.cmake
 share/Ortp/cmake/OrtpTargets-%%CMAKE_BUILD_TYPE%%.cmake
 share/Ortp/cmake/OrtpTargets.cmake
-lib/libortp.a
+lib/libortp.so
+lib/libortp.so.15
 libdata/pkgconfig/ortp.pc
