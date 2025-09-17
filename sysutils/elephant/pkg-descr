@@ -1,0 +1,10 @@
+Elephant - cuz it's phat - is a powerful data provider service and
+backend for building custom application launchers and desktop
+utilities. It provides various data sources and actions through a
+plugin-based architecture, communicating via Unix sockets and Protocol
+Buffers.
+
+Elephant acts as a unified backend service that aggregates data from
+various sources (desktop applications, files, clipboard history, etc.)
+and provides a consistent interface for frontend applications like
+custom launchers, productivity tools, or desktop widgets.
