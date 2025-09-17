@@ -1,4 +1,4 @@
-TIMESTAMP = 1757497798
+TIMESTAMP = 1758134710
 SHA256 (rust/crates/ab_glyph-0.2.31.crate) = e074464580a518d16a7126262fffaaa47af89d4099d4cb403f8ed938ba12ee7d
 SIZE (rust/crates/ab_glyph-0.2.31.crate) = 20909
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.10.crate) = 366ffbaa4442f4684d91e2cd7c5ea7c4ed8add41959a31447066e279e432b618
@@ -1925,5 +1925,5 @@ SHA256 (veloren-conrod-c74446362371dc837b8b4b6d6ddcd7693b48d9b6_GL0.tar.gz) = 43
 SIZE (veloren-conrod-c74446362371dc837b8b4b6d6ddcd7693b48d9b6_GL0.tar.gz) = 808402
 SHA256 (DaforLynx-kira-v0.10.7-with-config_GH0.tar.gz) = ffc38b7c73cb6419d02a21a3905cd0b00b3a544711230c5b11ef77301b7b9bb2
 SIZE (DaforLynx-kira-v0.10.7-with-config_GH0.tar.gz) = 4379268
-SHA256 (veloren-v0.17.0-1107-g188d737f06.tar.bz2) = 576638f69884ab00cd491804ae5c13f297baee7b10a6c43fec82caffbed48534
-SIZE (veloren-v0.17.0-1107-g188d737f06.tar.bz2) = 341670101
+SHA256 (veloren-v0.17.0-1195-g845809a7a8.tar.bz2) = 2b73e5f2c909d78e3ff3214ce38bd3d6d177d238d00e9ef5933c52d0d0198be2
+SIZE (veloren-v0.17.0-1195-g845809a7a8.tar.bz2) = 345073107
