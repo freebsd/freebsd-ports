@@ -1,7 +1,6 @@
 PORTNAME=	check_wg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.7
-PORTREVISION=	3
+DISTVERSION=	0.0.8
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dsh@bamus.cz
@@ -11,10 +10,15 @@ WWW=		https://github.com/dsh2dsh/${PORTNAME}
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:1.25,modules
 
-GO_MODULE=	github.com/dsh2dsh/${PORTNAME}
-GO_BUILDFLAGS=	-ldflags="${STRIP} -w -X ${GO_MODULE}/main.version=${DISTVERSIONFULL}"
+USE_GITHUB=	yes
+GH_ACCOUNT=	dsh2dsh
+
+GO_MOD_DIST=	github
+GO_MODULE=	github.com/${GH_ACCOUNT}/${PORTNAME}
+_BUILD_XFLAGS=	main.version=${DISTVERSIONFULL}
+GO_BUILDFLAGS=	-ldflags "${STRIP} ${_BUILD_XFLAGS:S!^!-X ${GO_MODULE}/!}"
 
 PLIST_FILES=	libexec/nagios/${PORTNAME}
 

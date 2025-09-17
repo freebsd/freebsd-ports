@@ -1,5 +1,5 @@
-TIMESTAMP = 1716219169
-SHA256 (go/net-mgmt_check_wg/check_wg-v0.0.7/v0.0.7.mod) = 70bf440bb65daba36df9cf87cb3314523bb0435053cd72ff796b932cd3790809
-SIZE (go/net-mgmt_check_wg/check_wg-v0.0.7/v0.0.7.mod) = 423
-SHA256 (go/net-mgmt_check_wg/check_wg-v0.0.7/v0.0.7.zip) = f4f19a8cc0090d92323a4ebeb6ded085f7d1614e18f6ab1f7d67db0b41a0d2ee
-SIZE (go/net-mgmt_check_wg/check_wg-v0.0.7/v0.0.7.zip) = 18637
+TIMESTAMP = 1757950900
+SHA256 (go/net-mgmt_check_wg/dsh2dsh-check_wg-v0.0.8_GH0/go.mod) = 30f089264b5856c3c455619f2324027ce33d9b2a1fd511ad5541a1ef8a63083e
+SIZE (go/net-mgmt_check_wg/dsh2dsh-check_wg-v0.0.8_GH0/go.mod) = 424
+SHA256 (go/net-mgmt_check_wg/dsh2dsh-check_wg-v0.0.8_GH0/dsh2dsh-check_wg-v0.0.8_GH0.tar.gz) = 573329e204297d56c6f31019ba1a3520d21cbae44dc35fadb86398e2f36f4f65
+SIZE (go/net-mgmt_check_wg/dsh2dsh-check_wg-v0.0.8_GH0/dsh2dsh-check_wg-v0.0.8_GH0.tar.gz) = 12746
