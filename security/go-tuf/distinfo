@@ -1,5 +1,5 @@
-TIMESTAMP = 1747045552
-SHA256 (go/security_go-tuf/go-tuf-v2.1.1/v2.1.1.mod) = 01abcafde3e6211d004bc6a5a052e588f541396559d23954bda5472dd008d23f
-SIZE (go/security_go-tuf/go-tuf-v2.1.1/v2.1.1.mod) = 1120
-SHA256 (go/security_go-tuf/go-tuf-v2.1.1/v2.1.1.zip) = 67a08defddf0d88cda636b83d6f15daf3c61fe3fd781979ee485802004644676
-SIZE (go/security_go-tuf/go-tuf-v2.1.1/v2.1.1.zip) = 165204
+TIMESTAMP = 1758122870
+SHA256 (go/security_go-tuf/go-tuf-v2.2.0/v2.2.0.mod) = 390dab55053b9e26074655ad77457af88a469de8b48439b975f5dc08329ec7d3
+SIZE (go/security_go-tuf/go-tuf-v2.2.0/v2.2.0.mod) = 1231
+SHA256 (go/security_go-tuf/go-tuf-v2.2.0/v2.2.0.zip) = 1bdc681f1abd5b77b88b599f131060a4edb555303aaf1b39d8a2ce691ab16364
+SIZE (go/security_go-tuf/go-tuf-v2.2.0/v2.2.0.zip) = 164877
