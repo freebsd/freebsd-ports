@@ -1,6 +1,5 @@
 PORTNAME=	openssl
-DISTVERSION=	3.6.0-alpha1
-PORTREVISION=	1
+DISTVERSION=	3.6.0-beta1
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	36
 MASTER_SITES=	https://github.com/openssl/openssl/releases/download/${DISTNAME}/
