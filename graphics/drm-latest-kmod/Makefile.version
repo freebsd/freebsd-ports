@@ -1,0 +1,5 @@
+# drm-kmod common version definition
+#
+# This will be included from consumers such as nvidia-drm
+DRM_KMOD_DISTVERSION=	6.9
+DRM_KMOD_GH_TAGNAME=	drm_v6.9

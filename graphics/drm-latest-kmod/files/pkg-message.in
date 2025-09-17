@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+The %%PORTNAME%% port can be enabled for amdgpu (for AMD
+GPUs starting with the HD7000 series / Tahiti) or i915kms (for Intel
+APUs starting with HD3000 / Sandy Bridge) through kld_list in
+/etc/rc.conf. radeonkms for older AMD GPUs can be loaded and there are
+some positive reports if EFI boot is NOT enabled.
+
+For amdgpu: kld_list="amdgpu"
+For Intel: kld_list="i915kms"
+For radeonkms: kld_list="radeonkms"
+
+Please ensure that all users requiring graphics are members of the
+"video" group.
+
+Please note that this package was built for %%OPSYS%% %%OSREL%%.
+If this is not your current running version, please rebuild
+it from ports to prevent panics when loading the module.
+EOM
+}
+]
