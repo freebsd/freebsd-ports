@@ -1080,6 +1080,7 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Snapshot.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Sql.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Ssl.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Streams.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Synonyms.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Tasks.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/TextStructure.php
@@ -1179,6 +1180,7 @@
 %%WWWDIR%%/src/libs/guzzlehttp/guzzle/README.md
 %%WWWDIR%%/src/libs/guzzlehttp/guzzle/UPGRADING.md
 %%WWWDIR%%/src/libs/guzzlehttp/guzzle/composer.json
+%%WWWDIR%%/src/libs/guzzlehttp/guzzle/package-lock.json
 %%WWWDIR%%/src/libs/guzzlehttp/guzzle/src/BodySummarizer.php
 %%WWWDIR%%/src/libs/guzzlehttp/guzzle/src/BodySummarizerInterface.php
 %%WWWDIR%%/src/libs/guzzlehttp/guzzle/src/Client.php
@@ -2017,6 +2019,7 @@
 %%WWWDIR%%/src/libs/open-telemetry/context/FiberBoundContextStorageExecutionAwareBC.php
 %%WWWDIR%%/src/libs/open-telemetry/context/ImplicitContextKeyedInterface.php
 %%WWWDIR%%/src/libs/open-telemetry/context/Propagation/ArrayAccessGetterSetter.php
+%%WWWDIR%%/src/libs/open-telemetry/context/Propagation/EnvironmentGetterSetter.php
 %%WWWDIR%%/src/libs/open-telemetry/context/Propagation/ExtendedPropagationGetterInterface.php
 %%WWWDIR%%/src/libs/open-telemetry/context/Propagation/MultiTextMapPropagator.php
 %%WWWDIR%%/src/libs/open-telemetry/context/Propagation/NoopTextMapPropagator.php
@@ -5748,6 +5751,7 @@
 %%WWWDIR%%/translations/language_zh.php
 %%WWWDIR%%/ucp.php
 %%WWWDIR%%/update/index.php
+%%WWWDIR%%/web.config
 @dir %%WWWDIR%%/src/libs/symfony/mime/Resources/bin
 @dir(www,www,) %%WWWDIR%%/content/core/config
 @dir(www,www,) %%WWWDIR%%/content/core/data
