@@ -1,3 +1,30 @@
+  <vuln vid="744966b3-93d8-11f0-b8da-589cfc10a551">
+    <topic>expat -- dynamic memory allocations issue</topic>
+    <affects>
+      <package>
+	<name>expat2</name>
+	<range><lt>2.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p>libexpat allows attackers to trigger large dynamic memory allocations
+	  via a small document that is submitted for parsing.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-59375</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-59375</url>
+    </references>
+    <dates>
+      <discovery>2025-09-17</discovery>
+      <entry>2025-09-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b9b668f0-96ec-4568-b618-2edea45d6933">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
