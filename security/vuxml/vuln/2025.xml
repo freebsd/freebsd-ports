@@ -8,8 +8,8 @@
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<p>expat security advisory:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2025-59375">
 	  <p>libexpat allows attackers to trigger large dynamic memory allocations
 	  via a small document that is submitted for parsing.</p>
 	</blockquote>
