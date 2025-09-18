@@ -1,6 +1,6 @@
 PORTNAME=	freetube
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.8-beta
+DISTVERSION=	0.23.9-beta
 PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/FreeTubeApp/FreeTube/releases/download/${DISTVERSIONFULL}/ \
