@@ -1,0 +1,11 @@
+--- third_party/tflite/features.gni.orig	2025-06-30 07:04:30 UTC
++++ third_party/tflite/features.gni
+@@ -8,7 +8,7 @@ declare_args() {
+ 
+ declare_args() {
+   # This enables building TFLite with XNNPACK.
+-  build_tflite_with_xnnpack = current_cpu != "arm" && !is_fuchsia
++  build_tflite_with_xnnpack = current_cpu != "arm" && !is_fuchsia && !is_bsd
+ 
+   # Turns on TFLITE_WITH_RUY, using ruy as the gemm backend instead of gemmlowp.
+   build_tflite_with_ruy = true

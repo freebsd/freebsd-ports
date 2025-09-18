@@ -1,0 +1,11 @@
+--- chrome/browser/enterprise/connectors/reporting/crash_reporting_context.cc.orig	2025-08-26 20:49:50 UTC
++++ chrome/browser/enterprise/connectors/reporting/crash_reporting_context.cc
+@@ -29,7 +29,7 @@ namespace enterprise_connectors {
+ 
+ namespace enterprise_connectors {
+ 
+-#if !BUILDFLAG(IS_CHROMEOS)
++#if !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_BSD)
+ 
+ namespace {
+ 

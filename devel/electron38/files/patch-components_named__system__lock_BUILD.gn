@@ -1,0 +1,20 @@
+--- components/named_system_lock/BUILD.gn.orig	2025-04-22 20:15:27 UTC
++++ components/named_system_lock/BUILD.gn
+@@ -5,7 +5,7 @@ static_library("named_system_lock") {
+ static_library("named_system_lock") {
+   sources = [ "lock.h" ]
+   deps = [ "//base" ]
+-  if (is_linux) {
++  if (!is_bsd && is_linux) {
+     sources += [ "lock_linux.cc" ]
+   } else if (is_mac) {
+     sources += [ "lock_mac.mm" ]
+@@ -20,7 +20,7 @@ source_set("unit_tests") {
+   sources = []
+ 
+   # Disable NamedSystemLockTest on unsupported platforms.
+-  if (is_linux || is_win || is_mac) {
++  if (!is_bsd && (is_linux || is_win || is_mac)) {
+     sources += [ "lock_unittest.cc" ]
+   }
+ 

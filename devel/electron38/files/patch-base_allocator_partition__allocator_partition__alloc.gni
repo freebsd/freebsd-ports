@@ -1,0 +1,20 @@
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2025-08-26 20:49:50 UTC
++++ base/allocator/partition_allocator/partition_alloc.gni
+@@ -87,7 +87,7 @@ use_large_empty_slot_span_ring = true
+ # TODO(crbug.com/329199197): Clean this up when experiments are complete.
+ use_large_empty_slot_span_ring = true
+ 
+-has_memory_tagging = current_cpu == "arm64" && is_clang && !is_asan &&
++has_memory_tagging = current_cpu == "arm64" && !is_bsd && is_clang && !is_asan &&
+                      !is_hwasan && (is_linux || is_android)
+ 
+ declare_args() {
+@@ -493,7 +493,7 @@ is_pkeys_available =
+ # dependencies that use partition_allocator are compiled in AOSP against a
+ # version of glibc that does not include pkeys syscall numbers.
+ is_pkeys_available =
+-    (is_linux || is_chromeos) && current_cpu == "x64" && !is_cronet_build
++    !is_bsd && (is_linux || is_chromeos) && current_cpu == "x64" && !is_cronet_build
+ declare_args() {
+   enable_pkeys = is_pkeys_available
+ }

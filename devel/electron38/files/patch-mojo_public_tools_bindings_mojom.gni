@@ -1,0 +1,19 @@
+--- mojo/public/tools/bindings/mojom.gni.orig	2025-08-26 20:49:50 UTC
++++ mojo/public/tools/bindings/mojom.gni
+@@ -762,6 +762,16 @@ template("mojom") {
+       enabled_features += [ "is_apple" ]
+     }
+ 
++    if (is_openbsd) {
++      enabled_features += [ "is_openbsd" ]
++      enabled_features += [ "is_bsd" ]
++    }
++
++    if (is_freebsd) {
++      enabled_features += [ "is_freebsd" ]
++      enabled_features += [ "is_bsd" ]
++    }
++
+     action_outputs = []
+     foreach(base_path, output_file_base_paths) {
+       filename = get_path_info(base_path, "file")

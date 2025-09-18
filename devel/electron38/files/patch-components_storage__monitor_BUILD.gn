@@ -1,0 +1,20 @@
+--- components/storage_monitor/BUILD.gn.orig	2025-04-22 20:15:27 UTC
++++ components/storage_monitor/BUILD.gn
+@@ -73,7 +73,7 @@ component("storage_monitor") {
+       deps += [ "//services/device/public/mojom" ]
+     }
+   } else if (is_linux) {
+-    if (use_udev) {
++    if (use_udev && !is_bsd) {
+       sources += [
+         "mtab_watcher_linux.cc",
+         "mtab_watcher_linux.h",
+@@ -182,7 +182,7 @@ source_set("unit_tests") {
+         "storage_monitor_chromeos_unittest.cc",
+       ]
+     }
+-  } else if (is_linux) {
++  } else if (is_linux && !is_bsd) {
+     if (use_udev) {
+       sources += [ "storage_monitor_linux_unittest.cc" ]
+     }

@@ -1,0 +1,131 @@
+--- build/config/compiler/BUILD.gn.orig	2025-08-26 20:49:50 UTC
++++ build/config/compiler/BUILD.gn
+@@ -194,7 +194,7 @@ declare_args() {
+   # This greatly reduces the size of debug builds, at the cost of
+   # debugging information which is required by some specialized
+   # debugging tools.
+-  simple_template_names = is_clang && !is_win && !is_apple
++  simple_template_names = is_clang && !is_win && !is_apple && !is_bsd
+ 
+   # This switch is used to enable -Wexit-time-destructors by default. This
+   # warning serves as a flip switch to allow a gradual migration of targets
+@@ -272,7 +272,7 @@ use_clang_warning_suppression_file =
+ # Since this is referenced both when passing the file and when deciding which
+ # warnings to enable, store it in a separate variable here.
+ use_clang_warning_suppression_file =
+-    default_toolchain != "//build/toolchain/cros:target" &&
++    !is_bsd && default_toolchain != "//build/toolchain/cros:target" &&
+     !llvm_android_mainline && is_clang && clang_warning_suppression_file != ""
+ 
+ # default_include_dirs ---------------------------------------------------------
+@@ -290,13 +290,16 @@ config("no_unresolved_symbols") {
+ # Compiler instrumentation can introduce dependencies in DSOs to symbols in
+ # the executable they are loaded into, so they are unresolved at link-time.
+ config("no_unresolved_symbols") {
+-  if (!using_sanitizer &&
++  if (!using_sanitizer && !is_bsd &&
+       (is_linux || is_chromeos || is_android || is_fuchsia)) {
+     ldflags = [
+       "-Wl,-z,defs",
+       "-Wl,--as-needed",
+     ]
+   }
++  if (current_cpu == "x86" && is_openbsd) {
++    ldflags = [ "-Wl,-z,notext", "-Wl,--strip-all" ]
++  }
+ }
+ 
+ # compiler ---------------------------------------------------------------------
+@@ -564,6 +567,10 @@ config("compiler") {
+     }
+   }
+ 
++  if (is_openbsd) {
++    ldflags += [ "-Wl,-z,wxneeded" ]
++  }
++
+   # Linux-specific compiler flags setup.
+   # ------------------------------------
+   if (use_icf && (!is_apple || use_lld)) {
+@@ -639,7 +646,7 @@ config("compiler") {
+     ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
+   }
+ 
+-  if (is_clang) {
++  if (is_clang && !is_bsd) {
+     cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
+     if (save_reproducers_on_lld_crash && use_lld) {
+       ldflags += [
+@@ -1281,7 +1288,7 @@ config("compiler_cpu_abi") {
+     # CPU architecture. We may or may not be doing a cross compile now, so for
+     # simplicity we always explicitly set the architecture.
+     if (current_cpu == "x64") {
+-      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device) {
++      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device && !is_bsd) {
+         cflags += [ "--target=x86_64-unknown-linux-gnu" ]
+         ldflags += [ "--target=x86_64-unknown-linux-gnu" ]
+       } else {
+@@ -1290,7 +1297,7 @@ config("compiler_cpu_abi") {
+       }
+       cflags += [ "-msse3" ]
+     } else if (current_cpu == "x86") {
+-      if (is_clang && !is_android && !is_chromeos_device) {
++      if (is_clang && !is_android && !is_chromeos_device && !Is_bsd) {
+         cflags += [ "--target=i386-unknown-linux-gnu" ]
+         ldflags += [ "--target=i386-unknown-linux-gnu" ]
+       } else {
+@@ -1302,7 +1309,7 @@ config("compiler_cpu_abi") {
+         "-msse3",
+       ]
+     } else if (current_cpu == "arm") {
+-      if (is_clang && !is_android && !is_chromeos_device) {
++      if (is_clang && !is_android && !is_chromeos_device && !is_bsd) {
+         cflags += [ "--target=arm-linux-gnueabihf" ]
+         ldflags += [ "--target=arm-linux-gnueabihf" ]
+       }
+@@ -1314,7 +1321,7 @@ config("compiler_cpu_abi") {
+         cflags += [ "-mtune=$arm_tune" ]
+       }
+     } else if (current_cpu == "arm64") {
+-      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device) {
++      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device && !is_bsd) {
+         cflags += [ "--target=aarch64-linux-gnu" ]
+         ldflags += [ "--target=aarch64-linux-gnu" ]
+       }
+@@ -1713,7 +1720,7 @@ config("clang_revision") {
+ }
+ 
+ config("clang_revision") {
+-  if (is_clang && clang_base_path == default_clang_base_path &&
++  if (is_clang && !is_bsd && clang_base_path == default_clang_base_path &&
+       current_os != "zos") {
+     _perform_consistency_checks = current_toolchain == default_toolchain
+     if (llvm_force_head_revision) {
+@@ -2134,9 +2141,6 @@ config("default_warnings") {
+ 
+       # TODO(crbug.com/40284799): Fix and re-enable.
+       "-Wno-thread-safety-reference-return",
+-
+-      # TODO(crbug.com/376641662): Fix and re-enable.
+-      "-Wno-nontrivial-memcall",
+     ]
+ 
+     cflags_cc += [
+@@ -2920,7 +2924,7 @@ config("afdo") {
+ # There are some targeted places that AFDO regresses, so we provide a separate
+ # config to allow AFDO to be disabled per-target.
+ config("afdo") {
+-  if (is_clang) {
++  if (is_clang && !is_bsd) {
+     cflags = []
+     if (clang_emit_debug_info_for_profiling) {
+       # Add the following flags to generate debug info for profiling.
+@@ -2947,7 +2951,7 @@ config("afdo") {
+       cflags += [ "-Wno-backend-plugin" ]
+       inputs = [ _clang_sample_profile ]
+     }
+-  } else if (auto_profile_path != "" && is_a_target_toolchain) {
++  } else if (auto_profile_path != "" && is_a_target_toolchain && !is_bsd) {
+     cflags = [ "-fauto-profile=${auto_profile_path}" ]
+     inputs = [ auto_profile_path ]
+   }

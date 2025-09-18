@@ -1,0 +1,13 @@
+--- third_party/ffmpeg/configure.orig	2025-08-26 20:49:50 UTC
++++ third_party/ffmpeg/configure
+@@ -6914,8 +6914,8 @@ if ! disabled pthreads && ! enabled w32threads && ! en
+         if enabled pthread_np_h; then
+             hdrs="$hdrs pthread_np.h"
+         fi
+-        check_lib pthread_set_name_np "$hdrs" pthread_set_name_np -lpthread
+-        check_lib pthread_setname_np "$hdrs" pthread_setname_np -lpthread
++        check_lib pthread_set_name_np pthread_np.h pthread_set_name_np -lpthread
++        check_lib pthread_setname_np pthread_np.h pthread_setname_np -lpthread
+     fi
+ fi
+ 

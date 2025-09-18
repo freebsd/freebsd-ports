@@ -1,0 +1,11 @@
+--- mojo/core/embedder/features.h.orig	2025-08-26 20:49:50 UTC
++++ mojo/core/embedder/features.h
+@@ -15,7 +15,7 @@ namespace core {
+ namespace core {
+ 
+ #if BUILDFLAG(IS_POSIX) && !BUILDFLAG(MOJO_USE_APPLE_CHANNEL)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
+ COMPONENT_EXPORT(MOJO_CORE_EMBEDDER_FEATURES)
+ BASE_DECLARE_FEATURE(kMojoLinuxChannelSharedMem);
+ 
