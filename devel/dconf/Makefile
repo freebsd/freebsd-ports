@@ -27,8 +27,6 @@ LDFLAGS+=	-B${LOCALBASE}/bin
 SHEBANG_FILES=	tests/test-dconf.py
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
-TESTING_UNSAFE=	some tests fail
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/dconf/db
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/dconf/profile
