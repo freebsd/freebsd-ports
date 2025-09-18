@@ -1,0 +1,18 @@
+commit 18ea032974539d7f4db64d21a87fd174333b9e2c
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+
+    build XErrorTrap for FreeBSD, too
+
+diff --git dom/media/webrtc/libwebrtc_overrides/moz.build dom/media/webrtc/libwebrtc_overrides/moz.build
+index ed9c450e5649..1ac213e48b28 100644
+--- dom/media/webrtc/libwebrtc_overrides/moz.build
++++ dom/media/webrtc/libwebrtc_overrides/moz.build
+@@ -34,7 +34,7 @@ UNIFIED_SOURCES += [
+     "call/call_basic_stats.cc",
+ ]
+
+-if CONFIG["OS_TARGET"] == "OpenBSD":
++if CONFIG["OS_TARGET"] in ("FreeBSD", "OpenBSD"):
+     CXXFLAGS += CONFIG["MOZ_X11_CFLAGS"]
+     UNIFIED_SOURCES += [
+         "modules/desktop_capture/linux/x11/x_error_trap.cc",
