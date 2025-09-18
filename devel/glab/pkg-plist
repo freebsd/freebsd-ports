@@ -85,6 +85,8 @@
 %%MANPAGES%%share/man/man1/glab-label-list.1.gz
 %%MANPAGES%%share/man/man1/glab-label.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-approve.1.gz
+%%MANPAGES%%share/man/man1/glab-mcp-serve.1.gz
+%%MANPAGES%%share/man/man1/glab-mcp.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-approvers.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-checkout.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-close.1.gz
