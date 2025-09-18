@@ -1,5 +1,5 @@
 PORTNAME=	ggplot2
-PORTVERSION=	3.5.2
+PORTVERSION=	4.0.0
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -18,7 +18,8 @@ CRAN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-scales>=1.2.0:graphics/R-cran-scales \
 		R-cran-tibble>0:devel/R-cran-tibble \
 		R-cran-vctrs>=0.5.0:devel/R-cran-vctrs \
-		R-cran-withr>=2.5.0:devel/R-cran-withr
+		R-cran-withr>=2.5.0:devel/R-cran-withr \
+		R-cran-S7>=0:devel/R-cran-S7
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
