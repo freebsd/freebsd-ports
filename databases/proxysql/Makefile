@@ -10,8 +10,6 @@ WWW=		https://www.proxysql.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	configure: error: Unsupported pointer size: 0
-
 BUILD_DEPENDS=	aclocal:devel/automake \
 		autoreconf:devel/autoconf \
 		bash:shells/bash \
