@@ -1,6 +1,6 @@
 PORTNAME=	testssl.sh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.1
+DISTVERSION=	3.2.2
 CATEGORIES=	security
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -42,5 +42,4 @@ do-test:
 # run.
 	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} prove -v t/51_badssl.com.t
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
