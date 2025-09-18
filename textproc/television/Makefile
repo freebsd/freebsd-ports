@@ -1,6 +1,6 @@
 PORTNAME=	television
 DISTVERSION=	0.13.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	uzsolt@FreeBSD.org
@@ -19,11 +19,6 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	alexpasmantier
 
-PLIST_FILES=	bin/${PORTNAME} \
-		bin/tv \
-		share/man/man1/${PORTNAME}.1.gz \
-		share/man/man1/tv.1.gz
-
 post-install:
 	cd ${STAGEDIR}${PREFIX}/bin && \
 		${LN} tv ${PORTNAME}
@@ -31,5 +26,8 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/man/man1/tv.1
 	cd ${STAGEDIR}${PREFIX}/share/man/man1 && \
 		${LN} tv.1 television.1
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/.config/config.toml ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/01-Users/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
