@@ -1,0 +1,2 @@
+Library for detecting if a HTTP User Agent header is likely to be a bot.
+It uses the list of registered robots from https://www.robotstxt.org/.
