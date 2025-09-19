@@ -515,6 +515,7 @@
     SUBDIR += py-palettable
     SUBDIR += py-papermill
     SUBDIR += py-pdd
+    SUBDIR += py-peft
     SUBDIR += py-pexpect
     SUBDIR += py-pkbar
     SUBDIR += py-placekey
