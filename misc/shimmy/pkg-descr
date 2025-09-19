@@ -1,0 +1,5 @@
+Drop-in OpenAI API Replacement for Local LLMs.
+
+Shimmy is a 5.1MB single-binary that provides 100% OpenAI-compatible
+endpoints for GGUF models. Point your existing AI tools to Shimmy and
+they just work --- locally, privately, and free.

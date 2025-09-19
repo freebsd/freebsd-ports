@@ -629,6 +629,7 @@
     SUBDIR += sfm
     SUBDIR += shared-mime-info
     SUBDIR += shc
+    SUBDIR += shimmy
     SUBDIR += shuffle
     SUBDIR += shuffle-db
     SUBDIR += silicon
