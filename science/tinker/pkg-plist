@@ -96,7 +96,9 @@ bin/xyzpdb
 %%DATADIR%%/params/mmff94.prm
 %%DATADIR%%/params/mmff94s.prm
 %%DATADIR%%/params/oplsaa08.prm
+%%DATADIR%%/params/oplsaa24.prm
 %%DATADIR%%/params/oplsaal.prm
+%%DATADIR%%/params/oplsaam.prm
 %%DATADIR%%/params/oplsua.prm
 %%DATADIR%%/params/smoothaa.prm
 %%DATADIR%%/params/smoothua.prm
