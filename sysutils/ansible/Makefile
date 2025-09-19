@@ -11,8 +11,14 @@ WWW=		https://www.ansible.com/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core>0:sysutils/py-ansible-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}importlib-resources>0:devel/py-importlib-resources@${PY_FLAVOR}
+FLAVORS=	default core219
+
+.if ${FLAVOR:U} == core219
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core>0:sysutils/py-ansible-core219@${PY_FLAVOR}
+.else
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core>0:sysutils/py-ansible-core@${PY_FLAVOR}
+.endif
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>0:devel/py-importlib-resources@${PY_FLAVOR}
 
 USES=		ansible:env cpe python:3.10+ shebangfix
 CPE_VENDOR=	redhat
