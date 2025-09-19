@@ -1,6 +1,17 @@
---- src/ggml-cpu/CMakeLists.txt.orig	2025-09-07 09:13:51 UTC
+--- src/ggml-cpu/CMakeLists.txt.orig	2025-09-16 11:42:24 UTC
 +++ src/ggml-cpu/CMakeLists.txt
-@@ -382,13 +382,13 @@ function(ggml_add_cpu_backend_variant_impl tag_name)
+@@ -127,10 +127,6 @@ function(ggml_add_cpu_backend_variant_impl tag_name)
+                 if (NOT ARM_MCPU_RESULT)
+                     string(REGEX MATCH "-mcpu=[^ ']+" ARM_MCPU_FLAG "${ARM_MCPU}")
+                 endif()
+-                if ("${ARM_MCPU_FLAG}" STREQUAL "")
+-                    set(ARM_MCPU_FLAG -mcpu=native)
+-                    message(STATUS "ARM -mcpu not found, -mcpu=native will be used")
+-                endif()
+ 
+                 include(CheckCXXSourceRuns)
+ 
+@@ -382,13 +378,13 @@ function(ggml_add_cpu_backend_variant_impl tag_name)
              string(REGEX REPLACE "POWER *([0-9]+)" "\\1" EXTRACTED_NUMBER "${MATCHED_STRING}")
  
              if (EXTRACTED_NUMBER GREATER_EQUAL 10)
