@@ -217,6 +217,7 @@
     SUBDIR += gallery2
     SUBDIR += garage
     SUBDIR += gatling
+    SUBDIR += gatus
     SUBDIR += gauche-makiki
     SUBDIR += geckodriver
     SUBDIR += geneweb

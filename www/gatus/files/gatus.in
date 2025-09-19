@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# PROVIDE: gatus
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for Gatus in /etc/rc.conf
+#
+# gatus_enable (bool):                    Enable Gatus. (default=NO)
+# gatus_log (str):                        Log output. (default=/var/log/gatus.log)
+# gatus_log_level (str):                  Log level. (default=INFO)
+# gatus_delay_start_seconds (int):        Sleep on startup. (default=0)
+# gatus_runas (str):                      User to run Gatus as. (default=%%USER%%)
+# gatus_config (str):                     Configuration file. (default=%%PREFIX%%/etc/gatus.yaml)
+
+. /etc/rc.subr
+
+name="gatus"
+desc="Automated developer-oriented status page"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${gatus_enable:="NO"}
+: ${gatus_log:="/var/log/${name}.log"}
+: ${gatus_log_level:="INFO"}
+: ${gatus_delay_start_seconds:="0"}
+: ${gatus_runas:="%%USER%%"}
+: ${gatus_config:="%%PREFIX%%/etc/${name}.yaml"}
+
+gatus_env="GATUS_CONFIG_PATH=${gatus_config} GATUS_LOG_LEVEL=${gatus_log_level} GATUS_DELAY_START_SECONDS=${gatus_delay_start_seconds}"
+pidfile="/var/run/${name}.pid"
+procname="%%LOCALBASE%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-c -u ${gatus_runas} -o ${gatus_log} -p ${pidfile} -t \"${desc}\" ${procname}"
+
+run_rc_command "$1"
