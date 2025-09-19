@@ -564,6 +564,7 @@
     SUBDIR += py-toil
     SUBDIR += py-torch-geometric
     SUBDIR += py-torchao
+    SUBDIR += py-torchdata
     SUBDIR += py-torchmetrics
     SUBDIR += py-torchvision
     SUBDIR += py-tqdm
