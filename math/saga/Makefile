@@ -1,5 +1,5 @@
 PORTNAME=	saga
-PORTVERSION=	9.9.1
+PORTVERSION=	9.9.2
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -16,6 +16,7 @@ BROKEN=		requires OpenMP support that is missing on this architecture
 
 BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libexiv2.so:graphics/exiv2 \
 		libfftw3.so:math/fftw3 \
 		libgdal.so:graphics/gdal \
 		libhdf5.so:science/hdf5 \
@@ -31,16 +32,18 @@ RUN_DEPENDS:=	swig:devel/swig
 
 USES=		cmake compiler:c++17-lang desktop-file-utils dos2unix \
 		gnome iconv:wchar_t localbase pkgconfig python
-DOS2UNIX_GLOB=	*.cpp *.h
+DOS2UNIX_GLOB=	*.cpp *.h *.txt
 USE_LDCONFIG=	yes
 USE_WX=		3.2+
 
-GIT_TAGNAME=	f41608881
+GIT_TAGNAME=	5d95de070
 
-CMAKE_ARGS=	-DSVM_INCLUDE:PATH=${LOCALBASE}/include/svm.h
+CMAKE_ARGS=	-DSVM_INCLUDE:PATH=${LOCALBASE}/include/svm.h \
+		-DWITH_TOOLS_PDAL:BOOL=TRUE
 CMAKE_ON=	CMAKE_VERBOSE_MAKEFILE
 CMAKE_ON+=	WITH_DEV_TOOLS
 CMAKE_ON+=	WITH_EXCERCISES
+CMAKE_ON+=	WITH_EXIV2
 CMAKE_ON+=	WITH_LIFETIME_TRACKER
 CMAKE_ON+=	WITH_MRMR
 CMAKE_ON+=	WITH_SYSTEM_SVM
