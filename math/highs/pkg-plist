@@ -122,6 +122,7 @@ include/highs/mip/HighsSeparator.h
 include/highs/mip/HighsTableauSeparator.h
 include/highs/mip/HighsTransformedLp.h
 include/highs/mip/MipTimer.h
+include/highs/mip/feasibilityjump.hh
 include/highs/model/HighsHessian.h
 include/highs/model/HighsHessianUtils.h
 include/highs/model/HighsModel.h
@@ -194,8 +195,8 @@ include/highs/simplex/HighsSimplexAnalysis.h
 include/highs/simplex/SimplexConst.h
 include/highs/simplex/SimplexStruct.h
 include/highs/simplex/SimplexTimer.h
-include/highs/test/DevKkt.h
-include/highs/test/KktCh2.h
+include/highs/test_kkt/DevKkt.h
+include/highs/test_kkt/KktCh2.h
 include/highs/util/FactorTimer.h
 include/highs/util/HFactor.h
 include/highs/util/HFactorConst.h
@@ -228,10 +229,12 @@ include/highs/util/stringutil.h
 include/highs/zstr/strict_fstream.hpp
 include/highs/zstr/zstr.hpp
 include/highs_export.h
+lib/cmake/highs/highs-config-version.cmake
 lib/cmake/highs/highs-config.cmake
 lib/cmake/highs/highs-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/highs/highs-targets.cmake
+lib/cmake/highs/highs-targets.cmake.bak
 lib/libhighs.so
 lib/libhighs.so.1
-lib/libhighs.so.1.10.0
+lib/libhighs.so.1.11.0
 libdata/pkgconfig/highs.pc

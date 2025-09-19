@@ -1,7 +1,6 @@
 PORTNAME=	highs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.0
-PORTREVISION=	1
+DISTVERSION=	1.11.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -13,6 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cmake:testing compiler:c++11-lang pkgconfig
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ERGO-Code
@@ -28,6 +28,6 @@ post-install:
 		-e 's|INTERFACE_INCLUDE_DIRECTORIES "/include;|INTERFACE_INCLUDE_DIRECTORIES "|' \
 		${STAGEDIR}${PREFIX}/lib/cmake/highs/highs-targets.cmake
 
-# tests as of 1.10.0: 100% tests passed, 0 tests failed out of 2
+# tests as of 1.11.0: 100% tests passed, 0 tests failed out of 2
 
 .include <bsd.port.mk>
