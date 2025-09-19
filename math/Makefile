@@ -1001,6 +1001,7 @@
     SUBDIR += py-hdmedians
     SUBDIR += py-hepstats
     SUBDIR += py-heyoka
+    SUBDIR += py-highspy
     SUBDIR += py-hmmlearn
     SUBDIR += py-hypernetx
     SUBDIR += py-igraph
