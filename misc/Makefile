@@ -562,6 +562,7 @@
     SUBDIR += py-timm-vis
     SUBDIR += py-toil
     SUBDIR += py-torch-geometric
+    SUBDIR += py-torchao
     SUBDIR += py-torchmetrics
     SUBDIR += py-torchvision
     SUBDIR += py-tqdm
