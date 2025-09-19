@@ -546,6 +546,7 @@
     SUBDIR += py-schedulefree
     SUBDIR += py-scikit-fusion
     SUBDIR += py-scikit-quant
+    SUBDIR += py-sentence-transformers
     SUBDIR += py-serverfiles
     SUBDIR += py-shap2
     SUBDIR += py-shell-gpt
