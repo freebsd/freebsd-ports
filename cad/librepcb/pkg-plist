@@ -25,6 +25,7 @@ share/icons/hicolor/scalable/mimetypes/org.librepcb.LibrePCB-project.svg
 %%DATADIR%%/i18n/librepcb_es.qm
 %%DATADIR%%/i18n/librepcb_fr.qm
 %%DATADIR%%/i18n/librepcb_gsw.qm
+%%DATADIR%%/i18n/librepcb_hu.qm
 %%DATADIR%%/i18n/librepcb_id.qm
 %%DATADIR%%/i18n/librepcb_is.qm
 %%DATADIR%%/i18n/librepcb_it.qm
@@ -32,6 +33,8 @@ share/icons/hicolor/scalable/mimetypes/org.librepcb.LibrePCB-project.svg
 %%DATADIR%%/i18n/librepcb_jv.qm
 %%DATADIR%%/i18n/librepcb_ko_KR.qm
 %%DATADIR%%/i18n/librepcb_pl.qm
+%%DATADIR%%/i18n/librepcb_pt_BR.qm
+%%DATADIR%%/i18n/librepcb_ro.qm
 %%DATADIR%%/i18n/librepcb_ru_RU.qm
 %%DATADIR%%/i18n/librepcb_sk.qm
 %%DATADIR%%/i18n/librepcb_sv.qm
