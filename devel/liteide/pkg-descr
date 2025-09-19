@@ -1,22 +1,23 @@
 LiteIDE is a simple, open source, cross-platform Go IDE.
 
-Main features:
-- System environment management
-- Configurable build commands
-- Simple and open debug system
-- Kate format for auto-completion and theming
-- Configurable auto-completion with WordApi
-- MIME type based system
-- Plugin support
-- Package browser
-- Class view and outline
-- Document browser
-- Gocode support
-- GOPATH API index
-- Code Navigation
-- Find Usages
-- Code Refactor
-- Go playground
-- Markdown
-- Json
-- Golang Present
+Core features
+ - System environment management
+ - MIME type management
+ - Configurable build commands
+ - Support files search replace and revert
+ - Quick open file, symbol and commands
+ - Plug-in system
+ - Integrated terminal
+
+Advanced code editor
+ - Code editor supports Golang, Markdown and Golang Present
+ - Rapid code navigation tools
+ - Syntax highlighting and color scheme
+ - Code completion
+ - Code folding
+ - Display save revision
+ - Reload file by internal diff way
+
+Golang support
+ - Support Go1.18~Go1.24 generics, go.work
+ - Golang build environment management
