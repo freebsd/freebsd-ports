@@ -11,7 +11,7 @@ include/p11-kit-1/p11-kit/uri.h
 include/p11-kit-1/p11-kit/version.h
 lib/libp11-kit.so
 lib/libp11-kit.so.0
-lib/libp11-kit.so.0.4.3
+lib/libp11-kit.so.0.4.4
 lib/p11-kit-proxy.so
 lib/pkcs11/p11-kit-client.so
 lib/pkcs11/p11-kit-trust.so
