@@ -1,5 +1,5 @@
-TIMESTAMP = 1758012223
-SHA256 (go/devel_task/task-v3.45.3/v3.45.3.mod) = d06c4a69e7e4d739306e439fa243fbe8185847aa7fe4926e1a08fbe976cad48c
-SIZE (go/devel_task/task-v3.45.3/v3.45.3.mod) = 2628
-SHA256 (go/devel_task/task-v3.45.3/v3.45.3.zip) = b2d182deed9977ea6de17182ca0fb6bbb01845e3b343b0ebd3b00698bcd0a271
-SIZE (go/devel_task/task-v3.45.3/v3.45.3.zip) = 649177
+TIMESTAMP = 1758273016
+SHA256 (go/devel_task/task-v3.45.4/v3.45.4.mod) = 9f2769c1b9474290c6f048334d1a182772e7e11affb2469092398c0e81d101be
+SIZE (go/devel_task/task-v3.45.4/v3.45.4.mod) = 2628
+SHA256 (go/devel_task/task-v3.45.4/v3.45.4.zip) = eb1548ce036f5d66a7cd534025674055b39d6d7375ccf681fea1a0e3e2ff2603
+SIZE (go/devel_task/task-v3.45.4/v3.45.4.zip) = 649326
