@@ -1,6 +1,6 @@
-TIMESTAMP = 1757161718
-SHA256 (anki-yarn-cache-25.09.tar.gz) = 41c4e2b229370e595fa9d0d12a88ca997942125ef07dba9d85924436aaeefa68
-SIZE (anki-yarn-cache-25.09.tar.gz) = 527778869
+TIMESTAMP = 1758183213
+SHA256 (anki-yarn-cache-25.09.2.tar.gz) = 25255d77cfbacc3b2b7c003fa90cfb8662cc9f8757ec68ac24791f7abe74ce15
+SIZE (anki-yarn-cache-25.09.2.tar.gz) = 527861671
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -1513,9 +1513,9 @@ SHA256 (ankitects-rust-url-bb930b8d089f4d30d7d19c12e54e66191de47b88_GH0.tar.gz) 
 SIZE (ankitects-rust-url-bb930b8d089f4d30d7d19c12e54e66191de47b88_GH0.tar.gz) = 394844
 SHA256 (ankitects-linkcheck-184b2ca50ed39ca43da13f0b830a463861adb9ca_GH0.tar.gz) = 58ac773ba2e7c76a9ec3f59ee9571576d76e74d58c4974a1d606d6976e1be70e
 SIZE (ankitects-linkcheck-184b2ca50ed39ca43da13f0b830a463861adb9ca_GH0.tar.gz) = 19408
-SHA256 (ankitects-anki-25.09_GH0.tar.gz) = eed3002b5e300b58edd63aa50655aded5187a6b42d02f31c94d48b2513949a94
-SIZE (ankitects-anki-25.09_GH0.tar.gz) = 2518339
-SHA256 (ankitects-anki-core-i18n-6552c95_GH0.tar.gz) = 7e99ffbcb84a4916349856b7953f1e6c2a3a7cd2bc0de0e455f453a03753b36b
-SIZE (ankitects-anki-core-i18n-6552c95_GH0.tar.gz) = 1731229
-SHA256 (ankitects-anki-desktop-ftl-dad4e27_GH0.tar.gz) = 4a3cb364759533f97a811ce2a602d8daaa55b6701c38e167ee44786f9668a47f
-SIZE (ankitects-anki-desktop-ftl-dad4e27_GH0.tar.gz) = 256082
+SHA256 (ankitects-anki-25.09.2_GH0.tar.gz) = 4414972cb270c25b7b96f3ac942277db1f3db6cebe410ed4d76b6c8c4427949b
+SIZE (ankitects-anki-25.09.2_GH0.tar.gz) = 2518022
+SHA256 (ankitects-anki-core-i18n-480ef0d_GH0.tar.gz) = bc1adbd675e4aaef1c93847d13d8df27fc24046710b263af43592e4e2825f49e
+SIZE (ankitects-anki-core-i18n-480ef0d_GH0.tar.gz) = 1734561
+SHA256 (ankitects-anki-desktop-ftl-fd5f984_GH0.tar.gz) = ad6f03b0d044ed53526647221193d92788fb6d65071905f8e6b32321c1777a75
+SIZE (ankitects-anki-desktop-ftl-fd5f984_GH0.tar.gz) = 256161
