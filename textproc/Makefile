@@ -1552,6 +1552,7 @@
     SUBDIR += py-pygtail
     SUBDIR += py-pyhamcrest
     SUBDIR += py-pykwalify
+    SUBDIR += py-pylatexenc
     SUBDIR += py-pylons-sphinx-themes
     SUBDIR += py-pyls-spyder
     SUBDIR += py-pymdown-extensions
