@@ -483,6 +483,7 @@
     SUBDIR += py-lazrs
     SUBDIR += py-lightgbm
     SUBDIR += py-lightning-utilities
+    SUBDIR += py-lion-pytorch
     SUBDIR += py-litellm
     SUBDIR += py-litellm-proxy-extras
     SUBDIR += py-llama-cpp-python
