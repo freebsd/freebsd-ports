@@ -8,7 +8,6 @@ bin/rspamd_stats
 %%CGP%%bin/rspamd-cgp-helper
 etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/actions.conf
-%%ETCDIR%%/cgp.inc
 %%ETCDIR%%/common.conf
 %%ETCDIR%%/composites.conf
 %%ETCDIR%%/groups.conf
@@ -162,12 +161,13 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/argparse.lua
 %%DATADIR%%/lualib/fun.lua
 %%DATADIR%%/lualib/global_functions.lua
+%%DATADIR%%/lualib/llm_common.lua
 %%DATADIR%%/lualib/lpegre.lua
 %%DATADIR%%/lualib/lua_auth_results.lua
 %%DATADIR%%/lualib/lua_aws.lua
-%%DATADIR%%/lualib/lua_cache.lua
 %%DATADIR%%/lualib/lua_bayes_learn.lua
 %%DATADIR%%/lualib/lua_bayes_redis.lua
+%%DATADIR%%/lualib/lua_cache.lua
 %%DATADIR%%/lualib/lua_cfg_transform.lua
 %%DATADIR%%/lualib/lua_cfg_utils.lua
 %%DATADIR%%/lualib/lua_clickhouse.lua
@@ -175,6 +175,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_content/init.lua
 %%DATADIR%%/lualib/lua_content/pdf.lua
 %%DATADIR%%/lualib/lua_content/vcard.lua
+%%DATADIR%%/lualib/lua_cta.lua
 %%DATADIR%%/lualib/lua_dkim_tools.lua
 %%DATADIR%%/lualib/lua_ffi/common.lua
 %%DATADIR%%/lualib/lua_ffi/dkim.lua
@@ -227,6 +228,8 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lupa.lua
 %%DATADIR%%/lualib/plugins/dmarc.lua
 %%DATADIR%%/lualib/plugins/neural.lua
+%%DATADIR%%/lualib/plugins/neural/providers/llm.lua
+%%DATADIR%%/lualib/plugins/neural/providers/symbols.lua
 %%DATADIR%%/lualib/plugins/ratelimit.lua
 %%DATADIR%%/lualib/plugins/rbl.lua
 %%DATADIR%%/lualib/plugins_stats.lua
