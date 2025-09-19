@@ -13,8 +13,8 @@ date=$(fetch -qo- https://static.rust-lang.org/dist/channel-rust-stable-date.txt
 export ABI=FreeBSD:13:amd64
 export INSTALL_AS_USER=1
 export PKG_DBDIR="${DATADIR}/pkgdb"
-pkg update -f -r FreeBSD
-pkg fetch -r FreeBSD -o "${DATADIR}" -yg "*-rust-bootstrap-${version}*"
+pkg update -f -r FreeBSD-ports
+pkg fetch -r FreeBSD-ports -o "${DATADIR}" -yg "*-rust-bootstrap-${version}*"
 
 find "${DATADIR}/All" -name "*rust-bootstrap-${version}*.*" \
 	-execdir tar -xvf {} \;

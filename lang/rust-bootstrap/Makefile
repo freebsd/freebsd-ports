@@ -2,7 +2,7 @@
 # to upload them to ~/public_distfiles on freefall in preparation
 # for the next lang/rust update.
 PORTNAME=	rust
-PORTVERSION=	1.89.0
+PORTVERSION=	1.90.0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/
 PKGNAMEPREFIX=	${FLAVOR:S/_/-/g}-
@@ -95,6 +95,11 @@ do-configure:
 	@${ECHO_CMD} 'host=["${_RUST_HOST}","${_RUST_TARGET}"]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'target=["${_RUST_TARGET}"]' >> ${WRKSRC}/config.toml
 .endif
+.if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
+	@${ECHO_CMD} 'ccache="${CCACHE_BIN}"' >> ${WRKSRC}/config.toml
+.else
+	@${ECHO_CMD} 'ccache=false' >> ${WRKSRC}/config.toml
+.endif
 	@${ECHO_CMD} '[rust]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'channel="stable"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
@@ -102,11 +107,6 @@ do-configure:
 	@${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'download-ci-llvm=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'link-shared=false' >> ${WRKSRC}/config.toml
-.if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
-	@${ECHO_CMD} 'ccache="${CCACHE_BIN}"' >> ${WRKSRC}/config.toml
-.else
-	@${ECHO_CMD} 'ccache=false' >> ${WRKSRC}/config.toml
-.endif
 # https://github.com/rust-lang/rust/pull/72696#issuecomment-641517185
 	@${ECHO_CMD} 'ldflags="-lz"' >> ${WRKSRC}/config.toml
 # we need to make sure to always build llvm with host arch support to get a

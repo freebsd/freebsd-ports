@@ -1,5 +1,5 @@
 PORTNAME=	rust
-PORTVERSION?=	1.89.0
+PORTVERSION?=	1.90.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -71,8 +71,8 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
 # See WRKSRC/src/stage0 for the date and version values
-BOOTSTRAPS_DATE?=		2025-06-26
-RUST_BOOTSTRAP_VERSION?=	1.88.0
+BOOTSTRAPS_DATE?=		2025-08-07
+RUST_BOOTSTRAP_VERSION?=	1.89.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -173,6 +173,11 @@ do-configure:
 	@${ECHO_CMD} 'cargo="${WRKDIR}/bootstrap/bin/cargo"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'rustc="${WRKDIR}/bootstrap/bin/rustc"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'tools=[${_RUST_TOOLS:@.tool.@"${.tool.}"@:ts,}]' >> ${WRKSRC}/config.toml
+.if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
+	@${ECHO_CMD} 'ccache="${CCACHE_BIN}"' >> ${WRKSRC}/config.toml
+.else
+	@${ECHO_CMD} 'ccache=false' >> ${WRKSRC}/config.toml
+.endif
 	@${ECHO_CMD} '[install]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'prefix="${PREFIX}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'sysconfdir="${PREFIX}/etc"' >> ${WRKSRC}/config.toml
@@ -195,13 +200,6 @@ do-configure:
 	@${ECHO_CMD} 'download-ci-llvm=false' >> ${WRKSRC}/config.toml
 .if ${PORT_OPTIONS:MLTO}
 	@${ECHO_CMD} 'thin-lto=true' >> ${WRKSRC}/config.toml
-.endif
-.if !defined(PKGNAMESUFFIX)
-.if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
-	@${ECHO_CMD} 'ccache="${CCACHE_BIN}"' >> ${WRKSRC}/config.toml
-.else
-	@${ECHO_CMD} 'ccache=false' >> ${WRKSRC}/config.toml
-.endif
 .endif
 	@${ECHO_CMD} 'ninja=true' >> ${WRKSRC}/config.toml
 .if ${ARCH} == powerpc
