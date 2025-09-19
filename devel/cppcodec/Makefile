@@ -1,6 +1,7 @@
 PORTNAME=	cppcodec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2
+DISTVERSION=	0.2-11
+DISTVERSIONSUFFIX=	-g8019b8b
 CATEGORIES=	devel
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,10 +11,10 @@ WWW=		https://github.com/tplgy/cppcodec
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	catch>0:devel/catch
-
 USES=		cmake localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	tplgy
+
+CMAKE_OFF+=	CPPCODEC_BUILD_TESTING
 
 .include <bsd.port.mk>
