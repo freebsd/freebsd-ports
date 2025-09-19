@@ -8265,6 +8265,7 @@
     SUBDIR += spr
     SUBDIR += spread-sheet-widget
     SUBDIR += srecord
+    SUBDIR += srell
     SUBDIR += sse2neon
     SUBDIR += st
     SUBDIR += stack
