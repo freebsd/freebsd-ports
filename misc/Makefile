@@ -567,6 +567,7 @@
     SUBDIR += py-torchao
     SUBDIR += py-torchdata
     SUBDIR += py-torchmetrics
+    SUBDIR += py-torchsummary
     SUBDIR += py-torchvision
     SUBDIR += py-tqdm
     SUBDIR += py-transformers
