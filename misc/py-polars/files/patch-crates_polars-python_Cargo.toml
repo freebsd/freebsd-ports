@@ -1,0 +1,18 @@
+--- crates/polars-python/Cargo.toml.orig	2025-09-09 05:54:25 UTC
++++ crates/polars-python/Cargo.toml
+@@ -54,11 +54,11 @@ mimalloc = { version = "0.1", default-features = false
+ mimalloc = { version = "0.1", default-features = false }
+ 
+ # Feature background_threads is unsupported on MacOS (https://github.com/jemalloc/jemalloc/issues/843).
+-[target.'cfg(all(target_family = "unix", not(target_os = "macos"), not(target_os = "emscripten")))'.dependencies]
+-tikv-jemallocator = { version = "0.6.0", features = ["disable_initial_exec_tls", "background_threads"] }
++#[target.'cfg(all(target_family = "unix", not(target_os = "macos"), not(target_os = "emscripten"), not(target_os = "freebsd")))'.dependencies]
++#tikv-jemallocator = { version = "0.6.0", features = ["disable_initial_exec_tls", "background_threads"] }
+ 
+-[target.'cfg(all(target_family = "unix", target_os = "macos"))'.dependencies]
+-tikv-jemallocator = { version = "0.6.0", features = ["disable_initial_exec_tls"] }
++#[target.'cfg(all(target_family = "unix", target_os = "macos"))'.dependencies]
++#tikv-jemallocator = { version = "0.6.0", features = ["disable_initial_exec_tls"] }
+ 
+ [dependencies.polars]
+ workspace = true
