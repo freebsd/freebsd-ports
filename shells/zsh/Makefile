@@ -25,7 +25,8 @@ USE_PERL5=	build
 SHEBANG_LANG=	zsh
 zsh_OLD_CMD=	zsh	# shebang appears as /bin/zsh and just zsh
 SHEBANG_FILES=	Functions/Calendar/* \
-		Functions/Misc/*
+		Functions/Misc/* \
+		Functions/VCS_Info/*
 
 CONFIGURE_ARGS=	--with-tcsetpgrp \
 		--enable-function-subdirs \
