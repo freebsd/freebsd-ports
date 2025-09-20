@@ -1,5 +1,5 @@
-TIMESTAMP = 1757783287
-SHA256 (go/sysutils_moor/moor-v2.1.1/v2.1.1.mod) = 00a99435b9a18c1066acc954bb0d8140ee7d889276809627985a4e2d92e2fab2
-SIZE (go/sysutils_moor/moor-v2.1.1/v2.1.1.mod) = 582
-SHA256 (go/sysutils_moor/moor-v2.1.1/v2.1.1.zip) = 073bb583a1b6b4292be9e3df805e05177bce6740f0135d59548c2b9a6b3ec9d7
-SIZE (go/sysutils_moor/moor-v2.1.1/v2.1.1.zip) = 3112256
+TIMESTAMP = 1758391546
+SHA256 (go/sysutils_moor/moor-v2.2.0/v2.2.0.mod) = 00a99435b9a18c1066acc954bb0d8140ee7d889276809627985a4e2d92e2fab2
+SIZE (go/sysutils_moor/moor-v2.2.0/v2.2.0.mod) = 582
+SHA256 (go/sysutils_moor/moor-v2.2.0/v2.2.0.zip) = 588ca012c5ffedc2164fed3651c05ea46629231ae9a07919863f5665b1c85326
+SIZE (go/sysutils_moor/moor-v2.2.0/v2.2.0.zip) = 3113312
