@@ -1,3 +1,36 @@
+  <vuln vid="b51a4121-9607-11f0-becf-00a098b42aeb">
+    <topic>PCRE2: heap-buffer-overflow read in match_ref due to missing boundary restoration in SCS</topic>
+    <affects>
+      <package>
+	<name>pcre2</name>
+	<range><eq>10.45</eq></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/PCRE2Project/pcre2/commit/a141712e5967d448c7ce13090ab530c8e3d82254">
+	  <p>The PCRE2 library is a set of C functions that implement regular
+	expression pattern matching.  In version 10.45, a heap-buffer-overflow
+	read vulnerability exists in the PCRE2 regular expression matching
+	engine, specifically within the handling of the (*scs:...) (Scan
+	SubString) verb when combined with (*ACCEPT) in src/pcre2_match.c.
+	This vulnerability may potentially lead to information disclosure
+	if the out-of-bounds data read during the memcmp affects the final
+	match result in a way observable by the attacker.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-58050</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-58050</url>
+    </references>
+    <dates>
+      <discovery>2025-08-27</discovery>
+      <entry>2025-09-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="744966b3-93d8-11f0-b8da-589cfc10a551">
     <topic>expat -- dynamic memory allocations issue</topic>
     <affects>
