@@ -1,7 +1,7 @@
 Build with system wx workaround:
 https://github.com/aardappel/treesheets/issues/1083
 
---- CMakeLists.txt.orig	2025-09-10 10:53:00 UTC
+--- CMakeLists.txt.orig	2025-09-20 08:01:27 UTC
 +++ CMakeLists.txt
 @@ -7,7 +7,7 @@ endif()
      set(TREESHEETS_VERSION "${timestamp}")
@@ -31,7 +31,7 @@ https://github.com/aardappel/treesheets/issues/1083
  
  ### Options
  
-@@ -143,7 +137,11 @@ target_precompile_headers(TreeSheets PUBLIC src/stdafx
+@@ -143,7 +137,12 @@ target_precompile_headers(TreeSheets PUBLIC src/stdafx
  target_precompile_headers(TreeSheets PUBLIC src/stdafx.h)
  
  ## Link wxWidgets, lobster-impl and StackWalker into TreeSheets
@@ -41,24 +41,11 @@ https://github.com/aardappel/treesheets/issues/1083
 +target_link_libraries(TreeSheets PRIVATE ${TREESHEETS_LIBS})
 +target_include_directories(TreeSheets PRIVATE ${wxWidgets_INCLUDE_DIRS})
 +target_compile_definitions(TreeSheets PRIVATE ${wxWidgets_DEFINITIONS})
++# https://github.com/aardappel/treesheets/issues/1083
  if(WIN32)
      list(APPEND TREESHEETS_LIBS StackWalker)
  endif()
-@@ -153,11 +151,11 @@ target_link_libraries(TreeSheets PRIVATE ${TREESHEETS_
- 
- ## Platform specific installation paths
- 
--if(LINUX)
-+if(LINUX OR BSD)
-     OPTION(TREESHEETS_RELOCATABLE_INSTALLATION "Install data relative to the TreeSheets binary, instead of respecting the Filesystem Hierarchy Standard" OFF)
- endif()
- 
--if(LINUX AND NOT TREESHEETS_RELOCATABLE_INSTALLATION)
-+if((LINUX OR BSD) AND NOT TREESHEETS_RELOCATABLE_INSTALLATION)
-     include(GNUInstallDirs)
- 
-     set(TREESHEETS_BINDIR ${CMAKE_INSTALL_BINDIR})
-@@ -193,7 +191,7 @@ install(FILES ${treesheets_readme_files} DESTINATION $
+@@ -193,7 +192,7 @@ install(FILES ${treesheets_readme_files} DESTINATION $
  install(DIRECTORY TS/docs DESTINATION ${TREESHEETS_DOCDIR})
  file(GLOB treesheets_readme_files "TS/readme*.html")
  install(FILES ${treesheets_readme_files} DESTINATION ${TREESHEETS_DOCDIR})
