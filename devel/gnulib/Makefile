@@ -1,6 +1,6 @@
 PORTNAME=	gnulib
 PORTVERSION=	20140202
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://erislabs.net/ianb/projects/gnulib/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
@@ -16,6 +16,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
 
 USES=		cpe gmake perl5 shebangfix
 SHEBANG_FILES=	check-module lib/uniname/gen-uninames.lisp
+SHEBANG_LANG=	perl clisp
+clisp_OLD_CMD=	/usr/local/bin/clisp
+clisp_CMD=	${LOCALBASE}/bin/clisp
 CPE_VENDOR=	gnu
 
 NO_ARCH=	yes
