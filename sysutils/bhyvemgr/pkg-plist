@@ -36,6 +36,7 @@ share/applications/bhyvemgr.desktop
 %%DATADIR%%/images/systems/almalinux.png
 %%DATADIR%%/images/systems/alpinelinux.png
 %%DATADIR%%/images/systems/archlinux.png
+%%DATADIR%%/images/systems/cachyos.png
 %%DATADIR%%/images/systems/category.png
 %%DATADIR%%/images/systems/debian.png
 %%DATADIR%%/images/systems/dragonflybsd.png
@@ -56,9 +57,12 @@ share/applications/bhyvemgr.desktop
 %%DATADIR%%/images/systems/rockylinux.png
 %%DATADIR%%/images/systems/ubuntu.png
 %%DATADIR%%/images/systems/windows.png
+%%DATADIR%%/images/systems/zorinos.png
 %%DATADIR%%/languages/bhyvemgr.es.po
 %%DATADIR%%/languages/bhyvemgr.pot
+%%DATADIR%%/languages/bhyvemgr.zh_CN.po
 %%DATADIR%%/languages/lcl/lclstrconsts.es.po
+%%DATADIR%%/languages/lcl/lclstrconsts.zh_CN.po
 %%DATADIR%%/samples/meta-data
 %%DATADIR%%/samples/network-config
 %%DATADIR%%/samples/user-data
