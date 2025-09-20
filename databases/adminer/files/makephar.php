@@ -54,14 +54,29 @@ foreach(new DirectoryIterator(__DIR__ . '/plugins') as $file)
     if ($file->isFile())
     {
         $contents = php_strip_whitespace($file->getRealPath());
-        $pharFile = 'adminer-plugins/' . $file->getFileName();
-        $plugins[$pharFile] = $contents;
-        if (preg_match('/class\s(A[a-zA-Z]+)\sextends\sAdminer/', $contents, $m))
-        {
+        $fileName = $file->getFileName();
+        $pharFile = 'adminer-plugins/' . $fileName;
+
+        if (
+            /**
+             * Skip affected plugin
+             * https://nvd.nist.gov/vuln/detail/CVE-2023-45197
+             */
+            $fileName !== 'file-upload.php'
+            /**
+             * Adminer editor's plugins are only relevant
+             * in Adminer editor.
+             */
+            && !str_starts_with($fileName, 'editor')
+            && preg_match('/class\s(A[a-zA-Z0-9]+)\sextends\sAdminer/', $contents, $m)
+        ) {
+            $plugins[$pharFile] = $contents;
             $classMap[$m[1]] = $file->getFileName();
         }
     }
 }
+
+ksort($classMap);
 
 $phar->setStub(
     sprintf(
