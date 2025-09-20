@@ -1,0 +1,47 @@
+--- meson.build.orig	2025-01-12 20:41:47 UTC
++++ meson.build
+@@ -144,19 +144,33 @@ root = not meson.is_subproject()
+ endif
+ 
+ root = not meson.is_subproject()
+-subdir('tests')
+-subdir('examples')
+ 
+ if root
+-  datadir = get_option('datadir')
+-  docdir = get_option('docdir')
+-  if docdir == ''
+-    docdir = datadir / 'doc' / meson.project_name()
++  if get_option('docs').enabled()
++    docsdir = get_option('docsdir')
++
++    install_data('README.md', install_dir: docsdir)
++
++    install_subdir(
++      'docs',
++      install_dir: docsdir,
++      strip_directory: true
++    )
+   endif
+ 
+-  install_subdir(
+-    'docs',
+-    install_dir: docdir,
+-    strip_directory: true,
+-  )
++  if get_option('examples').enabled()
++    examplesdir = get_option('examplesdir')
++
++    subdir('examples')
++
++    install_subdir(
++      'examples',
++      install_dir: examplesdir,
++      strip_directory: true
++    )
++  endif
++
++  if get_option('tests').enabled()
++    subdir('tests')
++  endif
+ endif
