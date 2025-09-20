@@ -1,7 +1,8 @@
 PORTNAME=	jpegoptim
-DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.6
+PORTREVISION=	1
 CATEGORIES=	graphics
+MASTER_SITES=   https://github.com/tjko/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility to optimize jpeg files
@@ -12,8 +13,6 @@ LICENSE_COMB=	dual
 
 USES=		cpe gmake jpeg localbase:ldflags
 CPE_VENDOR=	${PORTNAME}_project
-USE_GITHUB=	yes
-GH_ACCOUNT=	tjko
 
 GNU_CONFIGURE=	yes
 
