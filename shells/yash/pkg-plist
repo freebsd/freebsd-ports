@@ -49,6 +49,7 @@ share/man/man1/yash.1.gz
 %%DATADIR%%/completion/dnf
 %%DATADIR%%/completion/doas
 %%DATADIR%%/completion/du
+%%DATADIR%%/completion/dvtm
 %%DATADIR%%/completion/echo
 %%DATADIR%%/completion/ed
 %%DATADIR%%/completion/egrep
@@ -62,6 +63,7 @@ share/man/man1/yash.1.gz
 %%DATADIR%%/completion/expand
 %%DATADIR%%/completion/export
 %%DATADIR%%/completion/fc
+%%DATADIR%%/completion/fd
 %%DATADIR%%/completion/fg
 %%DATADIR%%/completion/fgrep
 %%DATADIR%%/completion/file
@@ -156,6 +158,7 @@ share/man/man1/yash.1.gz
 %%DATADIR%%/completion/mksh
 %%DATADIR%%/completion/more
 %%DATADIR%%/completion/mv
+%%DATADIR%%/completion/mw
 %%DATADIR%%/completion/nawk
 %%DATADIR%%/completion/newgrp
 %%DATADIR%%/completion/nice
@@ -217,6 +220,14 @@ share/man/man1/yash.1.gz
 %%DATADIR%%/completion/tree
 %%DATADIR%%/completion/type
 %%DATADIR%%/completion/typeset
+%%DATADIR%%/completion/typst
+%%DATADIR%%/completion/typst-compile
+%%DATADIR%%/completion/typst-fonts
+%%DATADIR%%/completion/typst-help
+%%DATADIR%%/completion/typst-init
+%%DATADIR%%/completion/typst-query
+%%DATADIR%%/completion/typst-update
+%%DATADIR%%/completion/typst-watch
 %%DATADIR%%/completion/ulimit
 %%DATADIR%%/completion/umask
 %%DATADIR%%/completion/unalias
