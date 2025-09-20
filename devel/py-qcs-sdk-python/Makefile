@@ -509,7 +509,11 @@ WRKSRC_SUBDIR=	crates/python
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 post-patch:
-	${MKDIR} ${WRKDIR}/quil-rs-quil-py
-	${MV} ${WRKDIR}/quil-rs-quil-py-v0.12.1 ${WRKDIR}/quil-rs-quil-py/v0.12.1
+	@${MKDIR} ${WRKDIR}/quil-rs-quil-py
+	@${MV} ${WRKDIR}/quil-rs-quil-py-v0.12.1 ${WRKDIR}/quil-rs-quil-py/v0.12.1
+	# prevent breakage due to crates/.cargo inclusion
+	@${REINPLACE_CMD} \
+		-e 's|members = \["crates/\*"\]|members = ["crates/python"]|' \
+		${WRKSRC}/../../Cargo.toml
 
 .include <bsd.port.mk>
