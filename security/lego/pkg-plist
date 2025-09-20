@@ -1,8 +1,8 @@
 bin/lego
 etc/periodic/weekly/604.lego
-@dir(_lego,_lego,0700) etc/lego
+@dir(%%LEGO_USER%%,%%LEGO_USER%%,0700) etc/lego
 @dir(,,0755) etc/ssl
-@dir(_lego,_lego,0755) etc/ssl/lego
-@dir(_lego,www,) %%WWWDIR%%
-@sample(_lego,_lego,0700) etc/lego/lego.sh.sample
+@dir(%%LEGO_USER%%,%%LEGO_USER%%,0755) etc/ssl/lego
+@dir(%%LEGO_USER%%,www,) %%WWWDIR%%
+@sample(%%LEGO_USER%%,%%LEGO_USER%%,0700) etc/lego/lego.sh.sample
 @sample etc/lego/deploy.sh.sample
