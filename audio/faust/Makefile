@@ -1,6 +1,9 @@
 PORTNAME=	faust
-DISTVERSION=	2.79.3
+DISTVERSION=	2.81.2
 CATEGORIES=	audio devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	e4e9e51a1a12ef0806fc7c8439fa817a98ec57ce.patch:-p1 # https://github.com/grame-cncm/faust/pull/1170: Fix compilation flags for generated projects: use c++17 instead of c++14
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Functional programming language for realtime audio signal processing
@@ -23,7 +26,7 @@ USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TUPLE=	\
-		grame-cncm:faustlibraries:ef8dbf7:grame_cncm_faustlibraries/libraries \
+		grame-cncm:faustlibraries:9e866dc047433cedeb250cf6e58310a8d3f79803:grame_cncm_faustlibraries/libraries \
 		ccrma:faust2ck:db879cb:faust2ck/tools/faust2ck \
 		shakfu:py2max:3aaa8ca:py2max/architecture/max-msp/py2max \
 		yixuan:spectra:8c7242e:spectra/tools/physicalModeling/mesh2faust/spectra
@@ -93,8 +96,5 @@ do-test:
 	@cd ${TEST_WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${TEST_ENV} faust2jaqt example-freeverb_demo.dsp && \
 		${SETENV} ${TEST_ENV} ./example-freeverb_demo
-
-# test fails to build with Qt6 because of wrong C++11 option written into Makefile: https://github.com/grame-cncm/faust/issues/1109
-# once this is corrected, test builds and works fine
 
 .include <bsd.port.mk>

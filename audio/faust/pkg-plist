@@ -68,6 +68,9 @@ bin/faust2portaudiojulia
 bin/faust2portaudiorust
 bin/faust2pure
 bin/faust2puredata
+bin/faust2pwconsole
+bin/faust2pwgtk
+bin/faust2pwqt
 bin/faust2raqt
 bin/faust2rnbo
 bin/faust2ros
@@ -125,6 +128,7 @@ include/faust/audio/oboe-dsp.h
 include/faust/audio/ofaudio-dsp.h
 include/faust/audio/opensles-android-dsp.h
 include/faust/audio/osc-dsp.h
+include/faust/audio/pipewire-dsp.h
 include/faust/audio/portaudio-dsp.h
 include/faust/audio/rtaudio-dsp.h
 include/faust/audio/samAudio.h
@@ -176,6 +180,7 @@ include/faust/dsp/timed-dsp.h
 include/faust/dsp/timed-dsp.h.orig
 include/faust/dsp/wasm-dsp-imp.h
 include/faust/dsp/wasm-dsp.h
+include/faust/dsp/wasm-machine-dsp.h
 include/faust/dsp/ysfx-dsp.h
 include/faust/export.h
 include/faust/gui/APIUI.h
@@ -205,6 +210,7 @@ include/faust/gui/JuceStateUI.h
 include/faust/gui/LayoutUI.h
 include/faust/gui/LibsndfileReader.h
 include/faust/gui/MapUI.h
+include/faust/gui/McpUI.h
 include/faust/gui/MemoryReader.h
 include/faust/gui/MetaDataUI.h
 include/faust/gui/MidiUI.h
@@ -253,6 +259,7 @@ include/faust/midi/iplug2-midi.h
 include/faust/midi/jack-midi.h
 include/faust/midi/juce-midi.h
 include/faust/midi/midi.h
+include/faust/midi/pipewire-midi.h
 include/faust/midi/rt-midi.h
 include/faust/midi/teensy-midi.h
 include/faust/miniaudio.h
@@ -277,7 +284,7 @@ lib/ios-libsndfile.a
 lib/libOSCFaust.a
 lib/libfaust.so
 lib/libfaust.so.2
-lib/libfaust.so.2.79.3
+lib/libfaust.so.2.81.2
 %%HIGHLIGHT%%share/apps/katepart/syntax/faust.xml
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.cpp
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.h
@@ -928,6 +935,9 @@ lib/libfaust.so.2.79.3
 %%DATADIR%%/path-printer.cpp
 %%DATADIR%%/phaflangers.lib
 %%DATADIR%%/physmodels.lib
+%%DATADIR%%/pipewire-console.cpp
+%%DATADIR%%/pipewire-gtk.cpp
+%%DATADIR%%/pipewire-qt.cpp
 %%DATADIR%%/platform.lib
 %%DATADIR%%/plot.cpp
 %%DATADIR%%/pure.c
