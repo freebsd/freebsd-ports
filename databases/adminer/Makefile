@@ -1,6 +1,6 @@
 PORTNAME=	adminer
 DISTVERSION=	5.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases www
 MASTER_SITES=	https://github.com/vrana/${PORTNAME}/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
@@ -8,7 +8,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}.php ${PORTNAME}-${DISTVERSION}.zip
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.zip
 
 MAINTAINER=	pkaipila@gmail.com
-COMMENT=	Full-featured database management tool written in PHP
+COMMENT=	Full-featured database management tool in a single PHP file
 WWW=		https://www.adminer.org
 
 LICENSE=	APACHE20
@@ -40,5 +40,6 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/index.php ${STAGEDIR}${WWWDIR}
+	${INSTALL_DATA} ${FILESDIR}/adminer-plugins-example.php ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
