@@ -38,10 +38,12 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_babel.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_ballerina.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_bat.png
+%%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_bazel.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_bicep.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_binary.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_blade.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_c.png
+%%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_c3.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_cfm.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_cheader.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_clojure.png
@@ -75,6 +77,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_fsproj.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_gcode.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_gdscript.png
+%%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_gleam.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_glsl.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_gnuplot.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_go.png
@@ -352,8 +355,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/themes/sub.cuda-theme-ui
 %%DATADIR%%/data/themes/syn.cuda-theme-syntax
 %%DATADIR%%/data/themes/syn.cuda-theme-ui
-%%DATADIR%%/data/themes/white.cuda-theme-syntax
-%%DATADIR%%/data/themes/white.cuda-theme-ui
 %%DATADIR%%/data/toolbaricons/default_24x24/case.png
 %%DATADIR%%/data/toolbaricons/default_24x24/comment.png
 %%DATADIR%%/data/toolbaricons/default_24x24/e_copy.png
@@ -703,7 +704,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext_snippets_menu.png
 %%DATADIR%%/readme/wiki/cudatext_vs_other_editors.wiki
 %%DATADIR%%/settings_default/default.json
-%%DATADIR%%/settings_default/lexer Assembly.json
 %%DATADIR%%/settings_default/lexer Bash script.json
 %%DATADIR%%/settings_default/lexer CSS.json
 %%DATADIR%%/settings_default/lexer JSON.json
