@@ -1,6 +1,5 @@
 PORTNAME=	mod_security
-PORTVERSION=	2.9.10
-PORTREVISION=	1
+PORTVERSION=	2.9.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www security
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2 \
 		libgdbm.so:databases/gdbm \
 		libexpat.so:textproc/expat2
 
-USES=		apache bdb:18 gnome perl5 pkgconfig shebangfix autoreconf libtool:build
+USES=		apache gnome perl5 pkgconfig shebangfix autoreconf libtool:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	owasp-modsecurity
 GH_PROJECT=	ModSecurity
@@ -79,5 +78,7 @@ post-install:
 
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
 	${INSTALL_DATA} ${WRKDIR}/${APMOD_FILE}.sample ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mod_security2.so \
+		${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_security2.so
 
 .include <bsd.port.mk>
