@@ -385,6 +385,7 @@
     SUBDIR += cask
     SUBDIR += catch
     SUBDIR += catch2
+    SUBDIR += catppuccin-whiskers
     SUBDIR += cbang
     SUBDIR += cbfmt
     SUBDIR += cbmc
