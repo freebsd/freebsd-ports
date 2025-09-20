@@ -42,6 +42,7 @@
     SUBDIR += broot
     SUBDIR += bsod
     SUBDIR += caffe
+    SUBDIR += chatblade
     SUBDIR += chatgpt-shell-cli
     SUBDIR += cheat
     SUBDIR += chef

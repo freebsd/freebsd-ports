@@ -1,0 +1,6 @@
+Chatblade is a versatile command-line interface (CLI) tool designed to interact
+with OpenAI's ChatGPT. It accepts piped input, arguments, or both, and allows
+you to save common prompt preambles for quick usage. Additionally, Chatblade
+provides utility methods to extract JSON or Markdown from ChatGPT responses.
+
+Note: You'll need to set up your OpenAI API key to use Chatblade.
