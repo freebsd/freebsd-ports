@@ -10,8 +10,8 @@ WWW=		https://github.com/google/cpu_features
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64 riscv64
-NOT_FOR_ARCHS_REASON=	assumes android if on ARM or MIPS; not ported to riscv64
+NOT_FOR_ARCHS=		mips mips64 riscv64
+NOT_FOR_ARCHS_REASON=	assumes android if on MIPS; not ported to riscv64
 
 USES=		cmake:testing
 USE_GITHUB=	yes
