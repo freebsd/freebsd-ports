@@ -1,5 +1,5 @@
 PORTNAME=	netgen
-DISTVERSION=	1.5.290
+DISTVERSION=	1.5.300
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-lvs
 
@@ -12,17 +12,19 @@ LICENSE_FILE=	${WRKSRC}/Copying
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake python shebangfix tar:tgz tcl tk xorg
-USE_XORG=	x11
-
+USES=		gmake python shebangfix tk xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	RTimothyEdwards
+USE_XORG=	x11
 
 SHEBANG_FILES=	tcltk/netgen.sh.in
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-interpreter=tcl \
+		--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR} \
+		--with-x
 CONFIGURE_ENV=	HAVE_PYTHON3=yes
-CONFIGURE_ARGS=	--with-interpreter=tcl --with-tcl=${LOCALBASE}/lib/tcl8.6 --with-tk=${LOCALBASE}/lib/tk8.6 --with-x
 
 CONFLICTS_INSTALL=	netgen # bin/netgen
 
@@ -32,6 +34,7 @@ post-patch:
 		${WRKSRC}/python/*.py.in
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/netgen/tcl/netgenexec ${STAGEDIR}${PREFIX}/lib/netgen/tcl/tclnetgen.so
+	@cd ${STAGEDIR}${PREFIX}/lib/netgen/tcl && \
+		${STRIP_CMD} netgenexec tclnetgen.so
 
 .include <bsd.port.mk>
