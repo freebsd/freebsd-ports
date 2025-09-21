@@ -49,7 +49,9 @@ post-patch:
 .endif
 # /sys by default is a symlink to /usr/src/sys
 	@${REINPLACE_CMD} -e 's,/sys,${LINUXBASE}&,' \
-		${WRKSRC}/src/debug.rs
+		${WRKSRC}/src/backend/kms/surface/timings.rs \
+		${WRKSRC}/src/debug.rs \
+		${WRKSRC}/src/utils/env.rs
 # https://github.com/RazrFalcon/fontdb/issues/61
 	@${REINPLACE_CMD} -e 's,/usr/share,${DATADIR:H},' \
 		-e 's,/etc,${LOCALBASE}&,' \
