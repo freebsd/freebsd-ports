@@ -15,9 +15,6 @@ WWW=		https://magnum.graphics/corrade/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_13_armv7=	compilation fails: error: use of undeclared identifier 'vshrn_high_n_u16'
-BROKEN_FreeBSD_14_armv7=	compilation fails: error: use of undeclared identifier 'vshrn_high_n_u16'
-
 USES=		cmake:testing compiler:c++14-lang
 USE_LDCONFIG=	yes
 
@@ -25,7 +22,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mosra
 GH_TUPLE=	mosra:toolchains:2243706:toolchains/toolchains
 
-CMAKE_ARGS=	-DLIB_SUFFIX:STRING=""
+CMAKE_ARGS_armv7=	-DCORRADE_CPU_USE_IFUNC:BOOL=OFF
+CMAKE_ARGS=	-DLIB_SUFFIX:STRING="" \
+		${CMAKE_ARGS_${ARCH}}
 
 OPTIONS_DEFINE=	TEST
 TEST_CMAKE_BOOL=	CORRADE_BUILD_TESTS
