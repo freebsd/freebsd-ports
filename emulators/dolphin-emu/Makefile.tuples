@@ -2,11 +2,12 @@ GH_TUPLE= \
 	mgba-emu:mgba:8739b22fbc90fdf0b4f6612ef9c0520f0ba44a51:mgba/Externals/mGBA/mgba \
 	GPUOpen-LibrariesAndSDKs:VulkanMemoryAllocator:3bab6924988e5f19bf36586a496156cf72f70d9f:VulkanMemoryAllocator/Externals/VulkanMemoryAllocator \
 	mozilla:cubeb:54217bca3f3e0cd53c073690a23dd25d83557909:cubeb/Externals/cubeb/cubeb \
-	epezent:implot:18c72431f8265e2b0b5378a3a73d8a883b2175ff:implot/Externals/implot/implot \
+	epezent:implot:3da8bd34299965d3b0ab124df743fe3e076fa222:implot/Externals/implot/implot \
 	google:googletest:58d77fa8070e8cec2dc1ed015d66b454c8d78850:googletest/Externals/gtest \
-	RetroAchievements:rcheevos:0115d9198ff7a73ff6568027dfb948ef6031818c:rcheevos/Externals/rcheevos/rcheevos \
+	RetroAchievements:rcheevos:b443902b1cdfee5a66b09fec20a94d2d2afaf2ec:rcheevos/Externals/rcheevos/rcheevos \
 	lsalzman:enet:2a85cd64459f6ba038d233a634d9440490dbba12:enet/Externals/enet/enet \
 	syoyo:tinygltf:c5641f2c22d117da7971504591a8f6a41ece488b:tinygltf/Externals/tinygltf/tinygltf \
 	SFML:SFML:7f1162dfea4969bc17417563ac55d93b72e84c1e:SFML/Externals/SFML/SFML \
+	e-dant:watcher:b03bdcfc11549df595b77239cefe2643943a3e2f:watcher/Externals/watcher/watcher \
 	arsenm:sanitizers-cmake:aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a:sanitizerscmake/Externals/cubeb/cubeb/cmake/sanitizers-cmake \
 
