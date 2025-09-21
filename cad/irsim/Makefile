@@ -23,6 +23,8 @@ USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
 
+PORTSCOUT=	limit:^9\.7\.\d{3}
+
 CONFIGURE_WRKSRC=	${WRKSRC}/scripts
 
 PLIST=		pkg-plist.${FLAVOR}
