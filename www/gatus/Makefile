@@ -20,10 +20,10 @@ GH_ACCOUNT=	TwiN
 
 USE_RC_SUBR=	${PORTNAME}
 
+SUB_LIST=	USER=${GATUS_USER}
+
 PLIST_FILES=	bin/${PORTNAME} \
 		"@sample etc/${PORTNAME}.yaml.sample"
-
-SUB_LIST=	USER=${GATUS_USER}
 
 GATUS_USER=	www
 
