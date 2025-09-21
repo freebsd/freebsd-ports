@@ -5,8 +5,8 @@ lib/cmake/sleef/sleefTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/sleef/sleefTargets.cmake
 lib/libsleef.so
 lib/libsleef.so.3
-lib/libsleef.so.3.8.0
+lib/libsleef.so.3.9.0
 libdata/pkgconfig/sleef.pc
 %%GNUABI%%lib/libsleefgnuabi.so
 %%GNUABI%%lib/libsleefgnuabi.so.3
-%%GNUABI%%lib/libsleefgnuabi.so.3.8
+%%GNUABI%%lib/libsleefgnuabi.so.3.9
