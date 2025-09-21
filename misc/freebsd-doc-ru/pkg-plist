@@ -61,9 +61,11 @@
 %%HTML%%%%DOCBASE%%/ru/books/handbook/x11/index.html
 %%HTML%%%%DOCBASE%%/ru/books/porters-handbook/book/index.html
 %%HTML%%%%DOCBASE%%/ru/books/porters-handbook/index.html
+%%HTML%%%%DOCBASE%%/ru/books/porters-handbook/flavors/index.html
 %%HTML%%%%DOCBASE%%/ru/books/porters-handbook/keeping-up/index.html
 %%HTML%%%%DOCBASE%%/ru/books/porters-handbook/makefiles/index.html
 %%HTML%%%%DOCBASE%%/ru/books/porters-handbook/new-port/index.html
+%%HTML%%%%DOCBASE%%/ru/books/porters-handbook/order/index.html
 %%HTML%%%%DOCBASE%%/ru/books/porters-handbook/pkg-files/index.html
 %%HTML%%%%DOCBASE%%/ru/books/porters-handbook/plist/index.html
 %%HTML%%%%DOCBASE%%/ru/books/porters-handbook/porting-dads/index.html
