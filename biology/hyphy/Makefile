@@ -1,6 +1,5 @@
 PORTNAME=	hyphy
-DISTVERSION=	2.5.77
-PORTREVISION=	1
+DISTVERSION=	2.5.88
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -21,11 +20,17 @@ USES=		cmake:insource,testing localbase:ldflags # tests fail in outsource build,
 USE_GITHUB=	yes
 GH_ACCOUNT=	veg
 
-OPTIONS_DEFINE=		AVX TARGET_NATIVE
-AVX_DESC=		Advanced vector extensions support
-TARGET_NATIVE_DESC=	Enable CPU-specific instructions and tuning for build machine
+OPTIONS_DEFINE=		AVX FMA3 NEON SSE4 TARGET_NATIVE
+AVX_DESC=		Support for AVX (Advanced Vector Extensions) instructions
+FMA3_DESC=		Support for FMA3 (Fused Multiply-Add) instructions on x86
+NEON_DESC=		Support for NEON SIMD instructions on ARM
+SSE4_DESC=		Support for SSE4 (Streaming SIMD Extensions) instructions
+TARGET_NATIVE_DESC=	Enable CPU-specific optimizations for the build machine
 
 AVX_CMAKE_BOOL_OFF=		NOAVX
+FMA3_CMAKE_BOOL_OFF=		NOFMA3
+NEON_CMAKE_BOOL_OFF=		NONEON
+SSE4_CMAKE_BOOL_OFF=		NOSSE4
 TARGET_NATIVE_CMAKE_BOOL=	TARGET_NATIVE
 
 .include <bsd.port.mk>
