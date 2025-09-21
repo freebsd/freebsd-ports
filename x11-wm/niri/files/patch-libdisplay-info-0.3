@@ -2,51 +2,61 @@ https://github.com/Smithay/libdisplay-info-rs/pull/17
 
 --- Cargo.lock.orig	2025-08-30 12:18:41 UTC
 +++ Cargo.lock
-@@ -2082,9 +2082,8 @@ name = "libdisplay-info"
+@@ -2082,9 +2082,9 @@ name = "libdisplay-info"
  
  [[package]]
  name = "libdisplay-info"
 -version = "0.2.2"
--source = "registry+https://github.com/rust-lang/crates.io-index"
++version = "0.3.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
 -checksum = "4210cfe93a0dc37228e08105e3c13171e5af816f7bd39e00e3d3adcf2b487a2b"
-+version = "0.2.3"
-+source = "git+https://github.com/Smithay/libdisplay-info-rs?branch=feature/0.3.0#5b706d544d87f1bcae4c5ba97b281a8ab16754ed"
++checksum = "59fd96dbb2381ff31f314f07accbdf8550febdcc5cd8761ecaf7c1763361c359"
  dependencies = [
   "bitflags 2.9.3",
   "libc",
-@@ -2095,9 +2094,8 @@ name = "libdisplay-info-derive"
+@@ -2095,9 +2095,9 @@ name = "libdisplay-info-derive"
  
  [[package]]
  name = "libdisplay-info-derive"
 -version = "0.1.0"
--source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "ea1cd31036b732a546d845f9485c56b1b606b5e476b0821c680dd66c8cd6fcee"
 +version = "0.1.1"
-+source = "git+https://github.com/Smithay/libdisplay-info-rs?branch=feature/0.3.0#5b706d544d87f1bcae4c5ba97b281a8ab16754ed"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "ea1cd31036b732a546d845f9485c56b1b606b5e476b0821c680dd66c8cd6fcee"
++checksum = "8dc2c710cf5819e91220a446d9e64acc6814386cc22c509c3f0df83c0b874a98"
  dependencies = [
   "proc-macro2",
   "quote",
-@@ -2106,9 +2104,8 @@ name = "libdisplay-info-sys"
+@@ -2106,9 +2106,9 @@ name = "libdisplay-info-sys"
  
  [[package]]
  name = "libdisplay-info-sys"
 -version = "0.2.2"
--source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "7f4f9264ece23c37ffa023ae635f48d588e1786745dad06dff10c9fb99dc646c"
 +version = "0.3.0"
-+source = "git+https://github.com/Smithay/libdisplay-info-rs?branch=feature/0.3.0#5b706d544d87f1bcae4c5ba97b281a8ab16754ed"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "7f4f9264ece23c37ffa023ae635f48d588e1786745dad06dff10c9fb99dc646c"
++checksum = "26590d55b8819f9c6b0d95d9d12dc9edbfd1f2413e88814a33b631ac049bb51f"
  dependencies = [
   "semver",
   "system-deps",
 --- Cargo.toml.orig	2025-08-30 12:18:41 UTC
 +++ Cargo.toml
-@@ -124,6 +124,9 @@ xshell = "0.2.7"
- wayland-client = "0.31.11"
- xshell = "0.2.7"
+@@ -72,7 +72,7 @@ libc = "0.2.175"
+ input = { version = "0.9.1", features = ["libinput_1_21"] }
+ keyframe = { version = "1.1.1", default-features = false }
+ libc = "0.2.175"
+-libdisplay-info = "0.2.2"
++libdisplay-info = "0.3.0"
+ log = { version = "0.4.27", features = ["max_level_trace", "release_max_level_debug"] }
+ niri-config = { version = "25.8.0", path = "niri-config" }
+ niri-ipc = { version = "25.8.0", path = "niri-ipc", features = ["clap"] }
+--- ../smithay-20d2dacd71394b5f96f6ace0a70a6f20dc62c0c6/smithay-drm-extras/Cargo.toml.orig	2025-08-21 10:00:27 UTC
++++ ../smithay-20d2dacd71394b5f96f6ace0a70a6f20dc62c0c6/smithay-drm-extras/Cargo.toml
+@@ -6,7 +6,7 @@ authors = ["Bartłomiej Maryńczak <marynczakbartlomie
+ authors = ["Bartłomiej Maryńczak <marynczakbartlomiej@gmail.com>"]
  
-+[patch.crates-io]
-+libdisplay-info = { git = "https://github.com/Smithay/libdisplay-info-rs", branch = "feature/0.3.0" }
-+
+ [dependencies]
+-libdisplay-info = { version = "0.2.1", optional = true }
++libdisplay-info = { version = "0.3.0", optional = true }
+ drm = { version = "0.14.0" }
+ 
  [features]
- default = ["dbus", "systemd", "xdp-gnome-screencast"]
- # Enables D-Bus support (serve various freedesktop and GNOME interfaces, accessibility tree, power button handling).
