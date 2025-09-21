@@ -1,5 +1,5 @@
 PORTNAME=	catppuccin-gtk-theme
-DISTVERSION=	g20250828
+DISTVERSION=	g20250910
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -21,7 +21,7 @@ USES=		shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	Fausto-Korpsvart
 GH_PROJECT=	Catppuccin-GTK-Theme
-GH_TAGNAME=	7b94b62bdc15596c0fc0ae1a711d0f733575c64f
+GH_TAGNAME=	11469afc966f13cc3853ed777f4e1a727a2fd193
 
 SHEBANG_FILES=	themes/build.sh \
 		themes/install.sh
