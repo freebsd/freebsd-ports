@@ -17,6 +17,7 @@ USES=		autoreconf compiler:c11 gmake localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	SRI-CSL
 GH_PROJECT=	yices2
+GH_TAGNAME=	yices-${DISTVERSION}
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
