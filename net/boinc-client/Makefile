@@ -24,6 +24,7 @@ INSTALL_TARGET=	install-strip
 
 LDFLAGS+=	-lexecinfo
 
+PORTSCOUT=	limit:^8\.2\.\d+
 SUB_FILES=	pkg-deinstall pkg-install
 SUB_LIST=	BOINC_CLIENT_GROUP="${BOINC_CLIENT_GROUP}" \
 		BOINC_CLIENT_HOME="${BOINC_CLIENT_HOME}" \
