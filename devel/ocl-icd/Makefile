@@ -1,6 +1,6 @@
 PORTNAME=	ocl-icd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.3
+DISTVERSION=	2.3.4
 CATEGORIES=	devel
 
 MAINTAINER=	ohartmann@walstatt.org
@@ -14,14 +14,14 @@ BUILD_DEPENDS=	opencl>=3.0:devel/opencl
 
 USES=		autoreconf gmake libtool localbase:ldflags pathfix ruby:build
 
-USE_GITHUB=		yes
-GH_ACCOUNT=		OCL-dev
-USE_LDCONFIG=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--disable-debug \
-			--enable-custom-layerdir=${LOCALBASE}/etc/OpenCL/layers \
-			--enable-custom-vendordir=${LOCALBASE}/etc/OpenCL/vendors \
-			--enable-pthread-once
+USE_GITHUB=	yes
+GH_ACCOUNT=	OCL-dev
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-debug \
+		--enable-custom-layerdir=${LOCALBASE}/etc/OpenCL/layers \
+		--enable-custom-vendordir=${LOCALBASE}/etc/OpenCL/vendors \
+		--enable-pthread-once
 
 INSTALL_TARGET=	install-strip
 
