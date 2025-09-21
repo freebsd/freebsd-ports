@@ -1,5 +1,7 @@
 PORTNAME=	mongo-c-driver
+# Note: devel/mongo-cxx-driver requires specific versions of this port
 DISTVERSION=	1.30.4
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ports@bsdserwis.com
@@ -33,7 +35,7 @@ CMAKE_OFF=	BUILD_TESTING \
 
 OPTIONS_DEFINE=		CRYPTOPROFILE DOCS ICU MONGODBAWS RDTSCP SASL SNAPPY \
 			SRV SSL ZSTD
-OPTIONS_DEFAULT=	SSL
+OPTIONS_DEFAULT=	SRV SSL
 OPTIONS_SUB=		yes
 
 CRYPTOPROFILE_DESC=	Use system crypto profile (requires OpenSSL)
