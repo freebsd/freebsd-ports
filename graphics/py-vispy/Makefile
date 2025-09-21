@@ -1,12 +1,13 @@
 PORTNAME=	vispy
-DISTVERSION=	0.14.3
+DISTVERSION=	0.15.2
 CATEGORIES=	graphics science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High-performance interactive 2D/3D data visualization library
-WWW=		https://vispy.org/
+WWW=		https://vispy.org/ \
+		https://github.com/vispy/vispy
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

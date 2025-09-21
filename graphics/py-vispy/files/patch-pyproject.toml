@@ -1,11 +1,13 @@
---- pyproject.toml.orig	2024-09-07 04:18:42 UTC
+--- pyproject.toml.orig	2025-05-19 13:17:34 UTC
 +++ pyproject.toml
-@@ -3,7 +3,7 @@ requires = [
-     "wheel",
-     "setuptools>=42",
+@@ -2,8 +2,8 @@ requires = [
+ requires = [
+     "setuptools>=69.4.0",
      # see https://numpy.org/devdocs/dev/depending_on_numpy.html#numpy-2-0-specific-advice
--    "numpy>=2.0.0rc2",
+-    "numpy>=2.0.0",
+-    "setuptools_scm[toml]>=8.1",
 +    "numpy",
-     "setuptools_scm[toml]>=7.1",
++    "setuptools_scm[toml]",
      "Cython>=3.0.0"
  ]
+ 
