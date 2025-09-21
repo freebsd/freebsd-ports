@@ -1,42 +1,23 @@
---- pyproject.toml.orig	2022-06-12 15:28:34 UTC
+--- pyproject.toml.orig	2025-02-18 17:45:36 UTC
 +++ pyproject.toml
-@@ -1,37 +1,10 @@ requires = [
- [build-system]
- requires = [
-     "wheel",
--    "setuptools<=59.4",
-+    "setuptools",
-     "packaging",
-     "Cython>=0.29.24,<3.0",
-     "pythran",
- 
--    # We follow scipy for much of these pinnings
--    # https://github.com/scipy/scipy/blob/master/pyproject.toml
--    # numpy 1.19 was the first minor release to provide aarch64 wheels, but
--    # wheels require fixes contained in numpy 1.19.2
--    "numpy==1.19.2; python_version=='3.7' and platform_machine=='aarch64'",
--    "numpy==1.19.2; python_version=='3.8' and platform_machine=='aarch64'",
--    # aarch64 for py39 and py310 are covered by the default requirement below
--
--    # arm64 on Darwin supports Python 3.8 and above requires numpy>=1.20.0
--    "numpy==1.20.0; python_version=='3.8' and platform_machine=='arm64' and platform_system=='Darwin'",
--    "numpy==1.20.0; python_version=='3.9' and platform_machine=='arm64' and platform_system=='Darwin'",
--    # arm64 for py310 is covered by the default requirement below
--
--    # default numpy requirements
--    "numpy==1.17.3; python_version=='3.7' and (platform_machine!='arm64' or platform_system!='Darwin') and platform_machine!='aarch64' and platform_python_implementation != 'PyPy'",
--    "numpy==1.17.3; python_version=='3.8' and (platform_machine!='arm64' or platform_system!='Darwin') and platform_machine!='aarch64' and platform_python_implementation != 'PyPy'",
--    "numpy==1.19.3; python_version=='3.9' and (platform_machine!='arm64' or platform_system!='Darwin') and platform_python_implementation != 'PyPy'",
--    "numpy==1.21.4; python_version=='3.10' and platform_python_implementation != 'PyPy'",
--
--    # First PyPy versions for which there are numpy wheels
--    "numpy==1.20.0; python_version=='3.7' and platform_python_implementation=='PyPy'",
--
--    # For Python versions which aren't yet officially supported,
--    # we specify an unpinned NumPy which allows source distributions
--    # to be used and allows wheels to be used as soon as they
--    # become available.
--    "numpy; python_version>='3.11'",
--    "numpy; python_version>='3.8' and platform_python_implementation=='PyPy'",
-+    "numpy",
+@@ -50,9 +50,9 @@ build = [
+     'ninja>=1.11.1.1',
+     'Cython>=3.0.8',
+     'pythran>=0.16',
+-    'numpy>=2.0',
++    'numpy>=1.24',
+     # Developer UI
+-    'spin==0.13',
++    'spin>=0.13',
+     'build>=1.2.1',
  ]
+ data = ['pooch>=1.6.0']
+@@ -120,7 +120,7 @@ requires = [
+     'Cython>=3.0.8',
+     'pythran>=0.16',
+     'lazy_loader>=0.4',
+-    'numpy>=2.0',
++    'numpy>=1.24',
+ ]
+ 
+ [tool.spin]
