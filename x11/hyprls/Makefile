@@ -1,6 +1,6 @@
 PORTNAME=	hyprls
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
+DISTVERSION=	0.9.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -10,10 +10,10 @@ WWW=		https://gwen.works/hyprls
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.25,modules
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	hyprwm:hyprland-wiki:e0ea9da1f78890ead3233cc26e6f5fd3ffc91517:hyprland_wiki/hyprland-wiki
+GH_TUPLE=	hyprwm:hyprland-wiki:6c123a2f295b6b1846511587df0b68616dff1a47:hyprland_wiki/hyprland-wiki
 
 GO_MODULE=	github.com/hyprland-community/hyprls
 GO_TARGET=	./cmd/hyprls

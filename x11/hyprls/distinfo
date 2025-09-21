@@ -1,7 +1,7 @@
-TIMESTAMP = 1754980071
-SHA256 (go/x11_hyprls/hyprls-v0.8.0/v0.8.0.mod) = 143097be73aea79fff95679f4a779a0ea6049dd01408d329ef35ce315dfc345d
-SIZE (go/x11_hyprls/hyprls-v0.8.0/v0.8.0.mod) = 903
-SHA256 (go/x11_hyprls/hyprls-v0.8.0/v0.8.0.zip) = 4f56e2291aa1e52a038db3e9c32eaaf3155734ecaff74c3b664decf11df6595b
-SIZE (go/x11_hyprls/hyprls-v0.8.0/v0.8.0.zip) = 1898699
-SHA256 (go/x11_hyprls/hyprls-v0.8.0/hyprwm-hyprland-wiki-e0ea9da1f78890ead3233cc26e6f5fd3ffc91517_GH0.tar.gz) = bb14bcd9574676deeb115c5aec521440b5c631472efc1bfb504641d26a5c46a6
-SIZE (go/x11_hyprls/hyprls-v0.8.0/hyprwm-hyprland-wiki-e0ea9da1f78890ead3233cc26e6f5fd3ffc91517_GH0.tar.gz) = 415554
+TIMESTAMP = 1758445157
+SHA256 (go/x11_hyprls/hyprls-v0.9.1/v0.9.1.mod) = 245e17a069d23e2e4a1f07f92685ea7f755ac2f7b517f8da801b4f38cc398b9c
+SIZE (go/x11_hyprls/hyprls-v0.9.1/v0.9.1.mod) = 906
+SHA256 (go/x11_hyprls/hyprls-v0.9.1/v0.9.1.zip) = 2d07cf48c1b26a4e125e8912d779fe2fab835e32c97b14717288d179c03457fb
+SIZE (go/x11_hyprls/hyprls-v0.9.1/v0.9.1.zip) = 1902059
+SHA256 (go/x11_hyprls/hyprls-v0.9.1/hyprwm-hyprland-wiki-6c123a2f295b6b1846511587df0b68616dff1a47_GH0.tar.gz) = 80a8da05f86590b2af38ca1c35f06cb950ca5bb03c17e8fb54bd473048f5c73a
+SIZE (go/x11_hyprls/hyprls-v0.9.1/hyprwm-hyprland-wiki-6c123a2f295b6b1846511587df0b68616dff1a47_GH0.tar.gz) = 409680
