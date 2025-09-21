@@ -12,6 +12,8 @@ WWW=		https://gatus.io
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	cannot use int64(off) (value of type int64) as int32 value in assignment
+
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	TwiN
