@@ -1,5 +1,6 @@
 PORTNAME=	simplescreenrecorder
 DISTVERSION=	0.4.4-73
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g232eac7
 CATEGORIES=	multimedia
 
@@ -14,15 +15,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libpipewire-0.3.so:multimedia/pipewire
 
-USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig qt:5 xorg
-USE_QT=		core gui widgets x11extras buildtools:build linguisttools:build qmake:build
+USES=		cmake compiler:c++11-lang desktop-file-utils gl pkgconfig qt:6 xorg
+USE_QT=		base tools:build
+USE_GL=		gl opengl
 USE_XORG=	x11 xext xfixes xi xinerama
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MaartenBaert
 GH_PROJECT=	ssr
 
-CMAKE_ON=	WITH_QT5
+CMAKE_ON=	WITH_QT6
 CMAKE_OFF=	WITH_GLINJECT  # doesn't yet work on FreeBSD: https://github.com/MaartenBaert/ssr/issues/586#issuecomment-343780107
 CMAKE_OFF+=	WITH_OPENGL_RECORDING  # extra option requiried when GLInject is off, because this makes OpenGL recording dysfunctional
 
