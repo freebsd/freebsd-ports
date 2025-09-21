@@ -1,6 +1,6 @@
 PORTNAME=	git-credential-gopass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.17
+DISTVERSION=	1.15.18
 CATEGORIES=	security
 
 MAINTAINER=	ehaupt@FreeBSD.org
