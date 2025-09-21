@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2025-06-24 00:26:31 UTC
++++ Makefile.in
+@@ -1134,7 +1134,7 @@ lib_libtblis_la_LIBADD = src/external/tci/lib/libtci.l
+ @ENABLE_KNL_TRUE@                        src/configs/knl/bli_dgemm_opt_24x8.c \
+ @ENABLE_KNL_TRUE@                        src/configs/knl/config_ker.cxx
+ 
+-@ENABLE_INTEL_COMPILER_FALSE@@ENABLE_KNL_TRUE@@IS_OSX_FALSE@lib_libknl_la_CFLAGS = -O3 -mavx512f -mavx512pf -march=knl -mfpmath=sse
++@ENABLE_INTEL_COMPILER_FALSE@@ENABLE_KNL_TRUE@@IS_OSX_FALSE@lib_libknl_la_CFLAGS = -O3 -mavx512f -march=knl -mfpmath=sse
+ @ENABLE_INTEL_COMPILER_FALSE@@ENABLE_KNL_TRUE@@IS_OSX_TRUE@lib_libknl_la_CFLAGS = -O3 -mavx512f -mavx512pf -march=knl -mfpmath=sse -Wa,-march=knl
+ #                        src/configs/knl/bli_dgemm_opt_12x16.c \
+ #                        src/configs/knl/bli_dgemm_opt_30x8.c \
+@@ -1142,7 +1142,7 @@ lib_libtblis_la_LIBADD = src/external/tci/lib/libtci.l
+ #                        src/configs/knl/bli_sgemm_opt_30x16_knc.c \
+ #                        src/configs/knl/bli_dgemm_opt_30x8_knc.c
+ @ENABLE_INTEL_COMPILER_TRUE@@ENABLE_KNL_TRUE@lib_libknl_la_CFLAGS = -O3 -xMIC-AVX512
+-@ENABLE_INTEL_COMPILER_FALSE@@ENABLE_KNL_TRUE@@IS_OSX_FALSE@lib_libknl_la_CXXFLAGS = -O3 -mavx512f -mavx512pf -march=knl -mfpmath=sse
++@ENABLE_INTEL_COMPILER_FALSE@@ENABLE_KNL_TRUE@@IS_OSX_FALSE@lib_libknl_la_CXXFLAGS = -O3 -mavx512f -march=knl -mfpmath=sse
+ @ENABLE_INTEL_COMPILER_FALSE@@ENABLE_KNL_TRUE@@IS_OSX_TRUE@lib_libknl_la_CXXFLAGS = -O3 -mavx512f -mavx512pf -march=knl -mfpmath=sse -Wa,-march=knl
+ @ENABLE_INTEL_COMPILER_TRUE@@ENABLE_KNL_TRUE@lib_libknl_la_CXXFLAGS = -O3 -xMIC-AVX512
+ @ENABLE_SKX1_TRUE@lib_libskx1_la_SOURCES =  \
