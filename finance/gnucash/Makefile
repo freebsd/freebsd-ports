@@ -86,6 +86,9 @@ OFX_VARS=		GLIB_SCHEMAS+=org.gnucash.GnuCash.dialogs.import.ofx.gschema.xml
 PYTHON_CMAKE_BOOL=	WITH_PYTHON
 PYTHON_USES=		python
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/-Werror //' ${WRKSRC}/CMakeLists.txt
+
 post-install-PYTHON-on:
 	@(cd ${STAGEDIR}${PREFIX} \
 		&& ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
