@@ -1,7 +1,7 @@
 PORTNAME=	openmw
 DISTVERSIONPREFIX=	openmw-
 DISTVERSION=	0.49.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -64,11 +64,11 @@ LDFLAGS_i386+=	-Wl,--no-check-dynamic-relocations
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's/Qt6 Qt5/Qt6/' \
+	@${REINPLACE_CMD} -e 's/Qt6 Qt5/Qt6/' \
 	-e 's/program_options system/program_options/' \
-	${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e '/Boost::system/d' \
-	${WRKSRC}/components/CMakeLists.txt
+		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/Boost::system/d' \
+		${WRKSRC}/components/CMakeLists.txt
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
