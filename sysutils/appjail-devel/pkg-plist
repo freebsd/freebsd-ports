@@ -69,6 +69,7 @@ libexec/appjail/network/network
 %%DATADIR%%/files/rctl-actions
 %%DATADIR%%/files/rctl-resources
 %%DATADIR%%/files/rctl-subjects
+%%DATADIR%%/files/pkgbase/base.conf
 %%DATADIR%%/lib/atexit
 %%DATADIR%%/lib/check_func
 %%DATADIR%%/lib/colors
