@@ -301,6 +301,7 @@
     SUBDIR += diskcheckd
     SUBDIR += diskimage-tools
     SUBDIR += diskonaut
+    SUBDIR += diskroaster
     SUBDIR += diskscrub
     SUBDIR += diskus
     SUBDIR += dmg2img
