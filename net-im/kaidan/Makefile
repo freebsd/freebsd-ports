@@ -1,5 +1,5 @@
 PORTNAME=	kaidan
-DISTVERSION=	0.12.2
+DISTVERSION=	0.13.0
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/unstable/${PORTNAME}/${DISTVERSION}
 
@@ -14,6 +14,7 @@ BUILD_DEPENDS=	kquickimageeditor-qt6>0:graphics/kquickimageeditor
 LIB_DEPENDS=	libQXmppQt6.so:net-im/qxmpp \
 		libicuuc.so:devel/icu \
 		libkdsingleapplication-qt6.so:devel/kdsingleapplication \
+		libqt6keychain.so:security/qtkeychain@qt6 \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	kquickimageeditor-qt6>0:graphics/kquickimageeditor
 
