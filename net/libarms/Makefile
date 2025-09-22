@@ -1,5 +1,5 @@
 PORTNAME=	libarms
-PORTVERSION=	6.33
+PORTVERSION=	6.50
 CATEGORIES=	net devel
 MASTER_SITES=	https://dev.smf.jp/dl/
 
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 USES=		gmake libtool localbase ssl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 post-patch:
 # NetBSD's SIMPLEQ_* macros are called STAILQ_* on FreeBSD

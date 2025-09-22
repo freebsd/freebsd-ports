@@ -1,0 +1,28 @@
+--- Makefile.in.orig	2024-12-04 00:27:42 UTC
++++ Makefile.in
+@@ -397,24 +397,7 @@ debian/rules \
+ libarms.spec
+ 
+ nobase_dist_doc_DATA = \
+-doc/api \
+-doc/armsd \
+-doc/appendix \
+-doc/arch \
+-doc/impl \
+-doc/index.html \
+-doc/contents.html \
+-doc/download.html \
+-doc/intro \
+-doc/genindex.html \
+-doc/search.html \
+-doc/version \
+-doc/.buildinfo \
+-doc/objects.inv \
+-doc/searchindex.js \
+-doc/_sources \
+-doc/_images \
+-doc/_static
++$(shell find doc -type f -print)
+ 
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am

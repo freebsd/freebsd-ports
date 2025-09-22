@@ -1,12 +1,12 @@
---- libarms/ssl.c.orig	2019-03-29 01:15:24 UTC
+--- libarms/ssl.c.orig	2024-12-04 00:27:42 UTC
 +++ libarms/ssl.c
-@@ -338,7 +338,8 @@ arms_ssl_dhparam(SSL_CTX *ctx)
- 	}
- 
- /* for compatibility with before OpenSSL-1.1.0 and LibreSSL-2.7.0 */
--#if OPENSSL_VERSION_NUMBER < 0x10100000L || LIBRESSL_VERSION_NUMBER < 0x20700000L
-+#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || \
-+	(defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x20700000L)
- 	dh->p = p;
- 	dh->g = g;
- #else
+@@ -794,6 +794,9 @@ arms_ssl_cleanup(void)
+ {
+ 	CRYPTO_cleanup_all_ex_data();
+ 	ERR_free_strings();
++/* <= 1.0.1f = old API, 1.0.1g+ = new API */
++#if OPENSSL_VERSION_NUMBER <= 0x1000106fL
+ 	ERR_remove_state(0);
++#endif
+ 	EVP_cleanup();
+ }
