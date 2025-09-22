@@ -1,6 +1,6 @@
 PORTNAME=	bosh-cli
 PORTVERSION=	5.5.0
-PORTREVISION=	30
+PORTREVISION=	31
 CATEGORIES=	net sysutils
 
 MAINTAINER=	dumbbell@FreeBSD.org
@@ -8,6 +8,9 @@ COMMENT=	CLI for BOSH
 WWW=		https://bosh.io/docs/cli-v2.html
 
 LICENSE=	APACHE20
+
+DEPRECATED=	Not updated in years, no demand for them
+EXPIRATION_DATE=	2025-10-01
 
 USE_GITHUB=	yes
 GH_TUPLE=	cloudfoundry:bosh-cli:v${PORTVERSION}

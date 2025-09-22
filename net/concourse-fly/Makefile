@@ -1,6 +1,6 @@
 PORTNAME=	concourse
 PORTVERSION=	6.7.1
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	net sysutils
 MASTER_SITES=	LOCAL/dumbbell/concourse/
 PKGNAMESUFFIX=	-fly
@@ -10,6 +10,9 @@ COMMENT=	CLI for Concourse
 WWW=		https://concourse-ci.org/
 
 LICENSE=	APACHE20
+
+DEPRECATED=	Not updated in years, no demand for them
+EXPIRATION_DATE=	2025-10-01
 
 USES=		cpe go:modules tar:xz
 

@@ -1,7 +1,7 @@
 PORTNAME=	cf
 PORTVERSION=	6.49.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	30
+PORTREVISION=	31
 CATEGORIES=	net
 
 MAINTAINER=	dumbbell@FreeBSD.org
@@ -10,6 +10,9 @@ WWW=		https://cloudfoundry.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Not updated in years, no demand for them
+EXPIRATION_DATE=	2025-10-01
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go-bindata:devel/go-bindata
 
