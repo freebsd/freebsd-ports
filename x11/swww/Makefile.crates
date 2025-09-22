@@ -150,8 +150,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		version-compare-0.2.0 \
 		version_check-0.9.5 \
 		wait-timeout-0.2.1 \
-		waybackend-0.6.0 \
-		waybackend-scanner-0.6.0 \
+		waybackend-0.6.2 \
+		waybackend-scanner-0.6.2 \
 		weezl-0.1.10 \
 		windows-link-0.1.3 \
 		windows-link-0.2.0 \
