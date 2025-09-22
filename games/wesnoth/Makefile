@@ -1,6 +1,6 @@
 PORTNAME=	wesnoth
 PORTVERSION=	1.18.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
@@ -31,7 +31,7 @@ USE_SDL=	image2 mixer2 ttf2
 USE_GNOME=	cairo pango
 USE_XORG=	ice sm x11 xext
 
-LDFLAGS+=	-lboost_system -lpthread
+LDFLAGS+=	-lpthread
 
 PORTSCOUT=	limitw:1,even
 
@@ -121,6 +121,10 @@ NOTIFY_CMAKE_OFF=-DENABLE_NOTIFICATIONS=off
 SERVER_DESC=	Server
 SERVER_CMAKE_OFF=-DENABLE_SERVER=off
 TEST_CMAKE_ON=	-DENABLE_TESTS=on
+
+post-patch:
+#	@${REINPLACE_CMD} -e 's/system thread/process thread/' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/Boost::system/d' ${WRKSRC}/src/CMakeLists.txt
 
 #post-install:
 #	${FIND} ${STAGEDIR}${PREFIX}/man -type d -empty -delete
