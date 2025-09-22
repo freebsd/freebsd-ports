@@ -1,5 +1,3 @@
-TIMESTAMP = 1753371083
-SHA256 (gnome/gdk-pixbuf-2.42.12.tar.xz) = b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7
-SIZE (gnome/gdk-pixbuf-2.42.12.tar.xz) = 6525072
-SHA256 (gnome/4af78023ce7d3b5e3cec422a59bb4f48fa4f5886.patch) = e5cfbfed908833871e45562b72e70be4895844c08ed8edce7d24a8d36696aeba
-SIZE (gnome/4af78023ce7d3b5e3cec422a59bb4f48fa4f5886.patch) = 1643
+TIMESTAMP = 1758197129
+SHA256 (gnome/gdk-pixbuf-2.44.1.tar.xz) = 4eec84cfc55979045b3e0fca72c3cc081d556952ad33b30c7d29c0474db48a28
+SIZE (gnome/gdk-pixbuf-2.44.1.tar.xz) = 6538636
