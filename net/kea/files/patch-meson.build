@@ -1,4 +1,4 @@
---- meson.build.orig	2025-06-20 16:28:47 UTC
+--- meson.build.orig	2025-08-20 08:14:44 UTC
 +++ meson.build
 @@ -59,7 +59,7 @@ if PREFIX == '/usr/local'
  # Meson is annoying with its opinionated alteration of certain paths based on whether prefix is default or not.
@@ -44,7 +44,16 @@
  endif
  
  #### Build Options
-@@ -1108,9 +1108,9 @@ if PREFIX == '/usr/local'
+@@ -189,7 +189,7 @@ message(f'Detected system "@SYSTEM@".')
+ 
+ #### Dependencies
+ 
+-boost_dep = dependency('boost', version: '>=1.66', modules: ['system'])
++boost_dep = dependency('boost', version: '>=1.69')
+ dl_dep = dependency('dl')
+ threads_dep = dependency('threads')
+ add_project_dependencies(boost_dep, dl_dep, threads_dep, language: ['cpp'])
+@@ -1127,9 +1127,9 @@ if PREFIX == '/usr/local'
  # In case prefix is default, install to hardcoded path.
  if PREFIX == '/usr/local'
      install_emptydir('/usr/local/lib/kea')

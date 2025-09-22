@@ -1,5 +1,6 @@
 PORTNAME=	kea
 DISTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/${DISTVERSION}
 
@@ -10,7 +11,7 @@ WWW=		https://kea.isc.org/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		liblog4cplus.so:devel/log4cplus
 
 USES=		compiler:c++11-lang cpe iconv libtool pathfix ssl python tar:xz meson pkgconfig cmake:indirect shebangfix
