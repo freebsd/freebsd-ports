@@ -1,3 +1,42 @@
+  <vuln vid="6904ba53-22ff-4478-bfae-059dc2eefee1">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>140.0.7339.185</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>140.0.7339.185</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/09/stable-channel-update-for-desktop_17.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[445380761] High CVE-2025-10585: Type Confusion in V8. Reported by Google Threat Analysis Group on 2025-09-16</li>
+	    <li>[435875050] High CVE-2025-10500: Use after free in Dawn. Reported by Giunash (Gyujeong Jin) on 2025-08-03</li>
+	    <li>[440737137] High CVE-2025-10501: Use after free in WebRTC. Reported by sherkito on 2025-08-23</li>
+	    <li>[438038775] High CVE-2025-10502: Heap buffer overflow in ANGLE. Reported by Google Big Sleep on 2025-08-12</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10585</cvename>
+      <cvename>CVE-2025-10500</cvename>
+      <cvename>CVE-2025-10501</cvename>
+      <cvename>CVE-2025-10502</cvename>
+      <url>https://chromereleases.googleblog.com/2025/09/stable-channel-update-for-desktop_17.html</url>
+    </references>
+    <dates>
+      <discovery>2025-09-17</discovery>
+      <entry>2025-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b51a4121-9607-11f0-becf-00a098b42aeb">
     <topic>PCRE2: heap-buffer-overflow read in match_ref due to missing boundary restoration in SCS</topic>
     <affects>
