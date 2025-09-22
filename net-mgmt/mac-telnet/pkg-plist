@@ -7,5 +7,5 @@ share/locale/bg/LC_MESSAGES/mactelnet.mo
 share/locale/nb/LC_MESSAGES/mactelnet.mo
 share/man/man1/macping.1.gz
 share/man/man1/mactelnet.1.gz
-share/man/man1/mactelnetd.1.gz
 share/man/man1/mndp.1.gz
+share/man/man8/mactelnetd.8.gz
