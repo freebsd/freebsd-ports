@@ -123,6 +123,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		instability-0.3.7 \
 		itertools-0.13.0 \
 		itoa-1.0.15 \
+		jemalloc-sys-0.5.4+5.3.0-patched \
+		jemallocator-0.5.4 \
 		jiff-0.2.14 \
 		jiff-static-0.2.14 \
 		jiff-tzdb-0.1.4 \
