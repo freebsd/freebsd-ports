@@ -4841,6 +4841,7 @@
     SUBDIR += py-dukpy
     SUBDIR += py-dulwich
     SUBDIR += py-dunamai
+    SUBDIR += py-durationpy
     SUBDIR += py-durus
     SUBDIR += py-dynrules
     SUBDIR += py-e3-core

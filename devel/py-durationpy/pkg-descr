@@ -1,0 +1,2 @@
+Python module for converting between datetime.timedelta
+and Go's Duration strings.
