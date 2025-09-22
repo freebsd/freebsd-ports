@@ -1,6 +1,6 @@
 PORTNAME=	spamfilter
 PORTVERSION=	1.5.1r${REV}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 MASTER_SITES=	https://trac.edgewall.org/browser/plugins/trunk/
 PKGNAMEPREFIX=	trac-
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	tracd:www/trac
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
-REV=			17824
+REV=			17911
 WRKSRC=			${WRKDIR}/spam-filter
 USES=			python zip
 USE_PYTHON=		distutils autoplist
