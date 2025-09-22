@@ -1,6 +1,6 @@
 PORTNAME=	rustrover
-DISTVERSION=	2025.2
-CATEGORIES=	devel
+DISTVERSION=	2025.2.2
+CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/rustrover/
 PKGNAMEPREFIX=	jetbrains-
 DISTNAME=	RustRover-${PORTVERSION}
@@ -25,7 +25,7 @@ RUN_DEPENDS=	cmake:devel/cmake-core \
 		jetbrains-sqlite>=241.15989.150:devel/jetbrains-sqlite \
 		lsof:sysutils/lsof
 
-USES=		cpe java python:run
+USES=		cpe java python:run desktop-file-utils
 
 CPE_VENDOR=	jetbrains
 JAVA_VERSION=	21+

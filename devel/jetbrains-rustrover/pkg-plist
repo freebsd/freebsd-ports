@@ -18,7 +18,7 @@ share/applications/rustrover.desktop
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-RR-252.23892.452
+%%DATADIR%%/lib/build-marker-RR-252.26199.159
 %%DATADIR%%/lib/eclipse.lsp4j.debug.jar
 %%DATADIR%%/lib/eclipse.lsp4j.jar
 %%DATADIR%%/lib/eclipse.lsp4j.jsonrpc.debug.jar
@@ -55,6 +55,7 @@ share/applications/rustrover.desktop
 %%DATADIR%%/lib/modules/intellij.grid.types.jar
 %%DATADIR%%/lib/modules/intellij.ide.startup.importSettings.jar
 %%DATADIR%%/lib/modules/intellij.libraries.ai.grazie.spell.gec.engine.local.jar
+%%DATADIR%%/lib/modules/intellij.libraries.coil.jar
 %%DATADIR%%/lib/modules/intellij.libraries.compose.foundation.desktop.jar
 %%DATADIR%%/lib/modules/intellij.libraries.grpc.jar
 %%DATADIR%%/lib/modules/intellij.libraries.grpc.netty.shaded.jar
@@ -70,6 +71,7 @@ share/applications/rustrover.desktop
 %%DATADIR%%/lib/modules/intellij.platform.clouds.jar
 %%DATADIR%%/lib/modules/intellij.platform.collaborationTools.jar
 %%DATADIR%%/lib/modules/intellij.platform.compose.jar
+%%DATADIR%%/lib/modules/intellij.platform.compose.markdown.jar
 %%DATADIR%%/lib/modules/intellij.platform.coverage.agent.jar
 %%DATADIR%%/lib/modules/intellij.platform.coverage.jar
 %%DATADIR%%/lib/modules/intellij.platform.dap.jar
@@ -103,13 +105,16 @@ share/applications/rustrover.desktop
 %%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.extensions.gfmAlerts.jar
 %%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.extensions.gfmStrikethrough.jar
 %%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.extensions.gfmTables.jar
+%%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.extensions.images.jar
 %%DATADIR%%/lib/modules/intellij.platform.jewel.markdown.ideLafBridgeStyling.jar
 %%DATADIR%%/lib/modules/intellij.platform.jewel.ui.jar
 %%DATADIR%%/lib/modules/intellij.platform.kernel.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.kernel.impl.jar
+%%DATADIR%%/lib/modules/intellij.platform.lang.impl.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.lvcs.impl.jar
 %%DATADIR%%/lib/modules/intellij.platform.managed.cache.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.ml.impl.jar
+%%DATADIR%%/lib/modules/intellij.platform.ml.logs.jar
 %%DATADIR%%/lib/modules/intellij.platform.monolith.jar
 %%DATADIR%%/lib/modules/intellij.platform.navbar.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.navbar.frontend.jar
@@ -126,7 +131,6 @@ share/applications/rustrover.desktop
 %%DATADIR%%/lib/modules/intellij.platform.registry.cloud.jar
 %%DATADIR%%/lib/modules/intellij.platform.rpc.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.scopes.backend.jar
-%%DATADIR%%/lib/modules/intellij.platform.scopes.jar
 %%DATADIR%%/lib/modules/intellij.platform.searchEverywhere.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.searchEverywhere.frontend.jar
 %%DATADIR%%/lib/modules/intellij.platform.searchEverywhere.jar
@@ -135,6 +139,8 @@ share/applications/rustrover.desktop
 %%DATADIR%%/lib/modules/intellij.platform.tasks.impl.jar
 %%DATADIR%%/lib/modules/intellij.platform.tasks.jar
 %%DATADIR%%/lib/modules/intellij.platform.tips.jar
+%%DATADIR%%/lib/modules/intellij.platform.trialPromotion.common.jar
+%%DATADIR%%/lib/modules/intellij.platform.trialPromotion.idesWithoutFreeTier.jar
 %%DATADIR%%/lib/modules/intellij.platform.vcs.dvcs.impl.jar
 %%DATADIR%%/lib/modules/intellij.platform.vcs.dvcs.impl.shared.jar
 %%DATADIR%%/lib/modules/intellij.platform.vcs.impl.backend.jar
@@ -260,7 +266,6 @@ share/applications/rustrover.desktop
 %%DATADIR%%/plugins/fullLine/lib/clikt.jar
 %%DATADIR%%/plugins/fullLine/lib/fullLine.jar
 %%DATADIR%%/plugins/fullLine/lib/jgrapht.core.jar
-%%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.core.completion.trigger.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.css.local.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.go.local.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.html.local.jar
@@ -275,6 +280,7 @@ share/applications/rustrover.desktop
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.ruby.local.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.rust.local.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.terraform.local.jar
+%%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.completion.trigger.model.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.cpp.completion.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.css.completion.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.go.completion.jar
@@ -486,9 +492,9 @@ share/applications/rustrover.desktop
 %%DATADIR%%/plugins/grid-plugin/lib/modules/intellij.grid.scripting.rt.jar
 %%DATADIR%%/plugins/html-tools/lib/html-tools.jar
 %%DATADIR%%/plugins/intellij-rust/caches/crates-local-index.zip
-%%DATADIR%%/plugins/intellij-rust/caches/macro-expansion-cache-1.88.0.zip
-%%DATADIR%%/plugins/intellij-rust/caches/rust-src-bundle-1.88.0.zip
-%%DATADIR%%/plugins/intellij-rust/caches/rust-stdlib-vendor-1.88.0.zip
+%%DATADIR%%/plugins/intellij-rust/caches/macro-expansion-cache-1.89.0.zip
+%%DATADIR%%/plugins/intellij-rust/caches/rust-src-bundle-1.89.0.zip
+%%DATADIR%%/plugins/intellij-rust/caches/rust-stdlib-vendor-1.89.0.zip
 %%DATADIR%%/plugins/intellij-rust/lib/antlr4-runtime.jar
 %%DATADIR%%/plugins/intellij-rust/lib/commons-text.jar
 %%DATADIR%%/plugins/intellij-rust/lib/intellij-rust.jar
@@ -504,11 +510,11 @@ share/applications/rustrover.desktop
 %%DATADIR%%/plugins/intellij-rust/prettyPrinters/lldb_formatters/lldb/formatters.pyi
 %%DATADIR%%/plugins/intellij-rust/prettyPrinters/lldb_formatters/lldb_providers.py
 %%DATADIR%%/plugins/intellij-rust/prettyPrinters/rust_types.py
+%%DATADIR%%/plugins/javascript-debugger/lib/javascript-debugger-frontend.jar
 %%DATADIR%%/plugins/javascript-debugger/lib/javascript-debugger.jar
 %%DATADIR%%/plugins/javascript-debugger/lib/modules/intellij.javascript.debugger.backend.jar
 %%DATADIR%%/plugins/javascript-debugger/lib/modules/intellij.javascript.debugger.frontend.jar
 %%DATADIR%%/plugins/javascript-debugger/lib/modules/intellij.javascript.debugger.shared.jar
-%%DATADIR%%/plugins/javascript-debugger/lib/modules/intellij.javascript.debugger.ui.shared.jar
 %%DATADIR%%/plugins/javascript-debugger/lib/modules/intellij.javascript.debugger.webstorm.specific.jar
 %%DATADIR%%/plugins/javascript-debugger/lib/modules/intellij.javascript.reactNativeDebugger.jar
 %%DATADIR%%/plugins/javascript-debugger/nodeDebugInitializer/debugConnectionForwarder.js
@@ -560,10 +566,11 @@ share/applications/rustrover.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/protractor-intellij/lib/protractor-intellij-util.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
+%%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-file-path-resolver.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-e03c56caf84a.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-e03c56caf84a.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-9c94529fcfe0.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-9c94529fcfe0.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/!HowToUpdateBundledTypeScript.md
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_tsserver.js
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_typingsInstaller.js
@@ -1426,6 +1433,11 @@ share/applications/rustrover.desktop
 %%DATADIR%%/plugins/vitejs/lib/vitejs.jar
 %%DATADIR%%/plugins/vuejs/lib/commons-text.jar
 %%DATADIR%%/plugins/vuejs/lib/vuejs.jar
+%%DATADIR%%/plugins/vuejs/typescript-vue-plugin/node_modules/@vue/typescript-plugin/README.md
+%%DATADIR%%/plugins/vuejs/typescript-vue-plugin/node_modules/@vue/typescript-plugin/index.js
+%%DATADIR%%/plugins/vuejs/typescript-vue-plugin/node_modules/@vue/typescript-plugin/package-lock.json
+%%DATADIR%%/plugins/vuejs/typescript-vue-plugin/node_modules/@vue/typescript-plugin/package.json
+%%DATADIR%%/plugins/vuejs/typescript-vue-plugin/node_modules/@vue/typescript-plugin/rolldown.config.ts
 %%DATADIR%%/plugins/vuejs/vue-language-server/.gitignore
 %%DATADIR%%/plugins/vuejs/vue-language-server/README.md
 %%DATADIR%%/plugins/vuejs/vue-language-server/bin/vue-language-server.js
@@ -1472,4 +1484,4 @@ share/applications/rustrover.desktop
 %%DATADIR%%/product-info.json
 share/man/man1/rustrover.1.gz
 @dir %%DATADIR%%/lib/skiko-awt-runtime-all
-@dir %%DATADIR%%/plugins/station-plugin/toolbox/jetbrains-toolbox-2.7.0.48109.tar.gz
+@dir %%DATADIR%%/plugins/station-plugin/toolbox/jetbrains-toolbox-2.8.1.52155.tar.gz
