@@ -1,0 +1,20 @@
+A simple GOG client for Linux that lets you download and play your GOG games.
+
+The most important features of Minigalaxy:
+
+- Log in with your GOG account
+- Download the Linux games you own on GOG
+- Launch them!
+
+In addition to that, Minigalaxy also allows you to:
+
+- Update your games
+- Install and update DLC
+- Select which language you'd prefer to download your games in
+- Change where games are installed
+- Search your GOG Linux library
+- Show all games or just the ones you've installed
+- View the error message if a game fails to launch
+- Enable displaying the FPS in games
+- Use the system's ScummVM or DOSBox installation
+- Install Windows games using Wine
