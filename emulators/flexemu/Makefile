@@ -1,6 +1,6 @@
 PORTNAME=	flexemu
 DISTVERSIONPREFIX=	V
-DISTVERSION=	3.27
+DISTVERSION=	3.30
 CATEGORIES=	emulators
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -9,30 +9,27 @@ WWW=		https://flexemu.neocities.org/
 
 LICENSE=	GPLv2
 
-USES=		compiler desktop-file-utils gl libtool ncurses \
-		pkgconfig qt:5 shared-mime-info xorg
+USES=		cmake compiler:c++17-lang desktop-file-utils gl libtool \
+		ncurses qt:6 shared-mime-info xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	aladur
 GH_TUPLE=	fmtlib:fmt:0c9fce2:fmt/fmt \
 		google:googletest:b514bdc:googletest/googletest \
 		open-source-parsers:jsoncpp:8214f71:jsoncpp/jsoncpp
-USE_GL=		gl
-USE_QT=		buildtools:build core dbus gui network printsupport \
-		qmake:build widgets x11extras
+USE_GL=		gl opengl
+USE_QT=		base declarative
 USE_XORG=	ice sm x11
 
-GNU_CONFIGURE=	yes
+# The minimum supported clang-tidy version is 19.0.0
+CMAKE_ARGS+=	-DFLEXEMU_QT_MAJOR_VERSION=6 \
+		-DCLANG_TIDY=${LOCALBASE}/bin/clang-tidy${COMPILER_VERSION:C/.$//} \
+		-DRUN_CLANG_TIDY=${LOCALBASE}/llvm${COMPILER_VERSION:C/.$//}/bin/run-clang-tidy
 
-post-install:
-	@${RM} ${STAGEDIR}${PREFIX}/bin/rcvflex
-	@${RM} ${STAGEDIR}${PREFIX}/bin/send2flx
-	@${RM} ${STAGEDIR}${PREFIX}/bin/testdaa
+# test target has build errors atm.
+test:
+	@cd ${WRKDIR}/.build && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} ${CMAKE_SOURCE_PATH} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
+		${BUILD_WRKSRC}/test
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == gcc
-USE_GCC=	yes
-CONFIGURE_ARGS=	--disable-precompiled-headers
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
