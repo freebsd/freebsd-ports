@@ -2,6 +2,7 @@ bin/adfbitmap
 bin/adfformat
 bin/adfimgcreate
 bin/adfinfo
+bin/adfls
 bin/adfsalvage
 bin/unadf
 include/adf/adf_bitm.h
@@ -37,7 +38,7 @@ include/adf/adflib.h
 lib/libadf.a
 lib/libadf.so
 lib/libadf.so.3
-lib/libadf.so.3.0.4
+lib/libadf.so.3.0.5
 libdata/pkgconfig/adflib.pc
 %%PORTDOCS%%%%DOCSDIR%%/API/API.txt
 %%PORTDOCS%%%%DOCSDIR%%/API/api_device.html
@@ -62,5 +63,6 @@ share/man/man1/adfbitmap.1.gz
 share/man/man1/adfformat.1.gz
 share/man/man1/adfimgcreate.1.gz
 share/man/man1/adfinfo.1.gz
+share/man/man1/adfls.1.gz
 share/man/man1/adfsalvage.1.gz
 share/man/man1/unadf.1.gz
