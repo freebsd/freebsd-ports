@@ -1,5 +1,5 @@
 PORTNAME=	vte
-PORTVERSION=	0.80.3
+PORTVERSION=	0.80.4
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -35,8 +35,8 @@ MESON_ARGS=	-Da11y=true \
 		-Dglade=false \
 		-Dvapi=true
 
-# shlib version numbers come from gtk3/4 meson options, not from PYTHON_VER
-PLIST_SUB=	VERSION=2.91 VER3=3.91
+# VTE API minor version
+PLIST_SUB=	API_VER=91
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
