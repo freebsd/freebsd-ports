@@ -1,5 +1,5 @@
 PORTNAME=	plank
-DISTVERSION=	0.11.149
+DISTVERSION=	0.11.151
 CATEGORIES=	x11
 
 MAINTAINER=	daniel@shafer.cc
@@ -35,6 +35,7 @@ DBUSMENU_MESON_YES=	enable-dbusmenu
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/docklets/Separator/SeparatorDockItem.vala \
 		${WRKSRC}/lib/Factories/ItemFactory.vala
 
 .include <bsd.port.mk>
