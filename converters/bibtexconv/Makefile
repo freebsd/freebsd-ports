@@ -1,5 +1,5 @@
 PORTNAME=	bibtexconv
-DISTVERSION=	2.0.3
+DISTVERSION=	2.0.4
 CATEGORIES=	converters
 MASTER_SITES=	https://www.nntb.no/~dreibh/bibtexconv/download/
 
@@ -24,6 +24,8 @@ OPTIONS_DEFINE=	EXAMPLES
 
 # Remove trailing subdir from CMAKE_INSTALL_DOCDIR
 post-patch:
-	@${REINPLACE_CMD} -e 's|/examples||' ${WRKSRC}/src/CMakeLists.txt ${WRKSRC}/src/Images/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|/examples||' \
+		${WRKSRC}/src/CMakeLists.txt \
+		${WRKSRC}/src/Images/CMakeLists.txt
 
 .include <bsd.port.mk>
