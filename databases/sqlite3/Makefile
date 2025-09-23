@@ -38,7 +38,9 @@ USES=	libtool ncurses zip
 USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--linemacros --soname=legacy OPTIONS='${_OPTIONS}'
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--linemacros \
+			--soname=legacy OPTIONS='${_OPTIONS}'
 # [The Chronicles of SONAME](https://sqlite.org/src/forumpost/5a3b44f510df8ded)
 # [Set features OPTIONS for autosetup configurator](https://msteveb.github.io/autosetup/)
 
