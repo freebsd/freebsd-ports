@@ -88,6 +88,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Geolocation.pm
 %%SITE_PERL%%/Image/ExifTool/Geotag.pm
 %%SITE_PERL%%/Image/ExifTool/GoPro.pm
+%%SITE_PERL%%/Image/ExifTool/Google.pm
 %%SITE_PERL%%/Image/ExifTool/H264.pm
 %%SITE_PERL%%/Image/ExifTool/HP.pm
 %%SITE_PERL%%/Image/ExifTool/HTML.pm
@@ -294,6 +295,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Geolocation.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Geotag.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::GoPro.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Google.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::H264.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::HP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::HTML.3.gz
