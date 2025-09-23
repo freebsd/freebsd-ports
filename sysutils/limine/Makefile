@@ -1,5 +1,5 @@
 PORTNAME=	limine
-DISTVERSION=	10.0.0
+DISTVERSION=	10.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://codeberg.org/Limine/Limine/releases/download/v${DISTVERSION}/
 
