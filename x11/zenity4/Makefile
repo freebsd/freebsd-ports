@@ -1,5 +1,5 @@
 PORTNAME=	zenity
-PORTVERSION=	4.0.5
+PORTVERSION=	4.2.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -16,7 +16,7 @@ CONFLICTS_INSTALL=	zenity-3.*
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		help2man:misc/help2man
 
-USES=		gettext gnome localbase meson pkgconfig \
+USES=		gettext-tools gnome localbase meson pkgconfig \
 		perl5 tar:xz xorg
 USE_CSTD=	c99
 USE_GNOME=	gtk40 libadwaita
