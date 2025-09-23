@@ -1,5 +1,5 @@
 PORTNAME=	rpki-client
-DISTVERSION=	9.5
+DISTVERSION=	9.6
 CATEGORIES=	net
 MASTER_SITES=	OPENBSD
 MASTER_SITE_SUBDIR=rpki-client
@@ -22,6 +22,8 @@ USES=		libtool pkgconfig ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libtls=libtls
+
+LDFLAGS+=	-lpthread
 
 USERS=		_rpki-client
 GROUPS=		${USERS}
