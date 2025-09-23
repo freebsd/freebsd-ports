@@ -10,8 +10,6 @@ WWW=		https://github.com/fmang/opustags
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_15=	compilation is broken with clang-19, see https://github.com/fmang/opustags/issues/73
-
 LIB_DEPENDS=	libogg.so:audio/libogg
 
 USES=		cmake compiler:c++20-lang iconv pkgconfig
