@@ -1,5 +1,5 @@
 PORTNAME=	libretro-nestopia
-DISTVERSION=	0.20250424
+DISTVERSION=	0.20250814
 CATEGORIES=	games
 
 MAINTAINER=	tilde@ultros.pro
@@ -12,7 +12,7 @@ USES=		compiler:c++11-lib gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	nestopia
-GH_TAGNAME=	d2eefab298b0b9152d2934d6f0227b6803c877b3
+GH_TAGNAME=	51ad831fcd9f10a02dcb0cbf398c2cd1b028765e
 USE_LDCONFIG=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/libretro
