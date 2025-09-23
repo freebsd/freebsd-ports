@@ -1,8 +1,10 @@
 --- pyproject.toml.orig	2025-05-19 13:17:34 UTC
 +++ pyproject.toml
-@@ -2,8 +2,8 @@ requires = [
+@@ -1,9 +1,9 @@ requires = [
+ [build-system]
  requires = [
-     "setuptools>=69.4.0",
+-    "setuptools>=69.4.0",
++    "setuptools",
      # see https://numpy.org/devdocs/dev/depending_on_numpy.html#numpy-2-0-specific-advice
 -    "numpy>=2.0.0",
 -    "setuptools_scm[toml]>=8.1",
