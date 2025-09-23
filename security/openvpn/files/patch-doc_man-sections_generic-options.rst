@@ -1,6 +1,6 @@
---- doc/man-sections/generic-options.rst.orig	2025-04-02 06:53:10 UTC
+--- doc/man-sections/generic-options.rst.orig	2025-09-22 09:50:37 UTC
 +++ doc/man-sections/generic-options.rst
-@@ -514,5 +514,8 @@ --user user
+@@ -513,5 +513,8 @@ --user user
    since it is usually used by other system services already. Always
    create a dedicated user for openvpn.
  

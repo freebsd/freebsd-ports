@@ -1,6 +1,6 @@
 PORTNAME=		openvpn
-DISTVERSION=		2.6.14
-PORTREVISION?=		3
+DISTVERSION=		2.6.15
+PORTREVISION?=		0
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 			https://build.openvpn.net/downloads/releases/ \
@@ -105,7 +105,6 @@ pre-everything::
 .endif
 
 post-patch:
-	${RM} sample/sample-keys/dh2048.pem  # no longer needed
 	${REINPLACE_CMD} -E -i '' -e 's/(user|group) nobody/\1 openvpn/' \
 		-e 's/"nobody"( after init)/"openvpn" \1/' \
 		${WRKSRC}/sample/sample-config-files/*.conf \
