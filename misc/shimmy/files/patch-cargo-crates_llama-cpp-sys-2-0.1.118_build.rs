@@ -1,5 +1,5 @@
---- llama-cpp-sys-2/build.rs.orig	2025-09-12 14:16:40 UTC
-+++ llama-cpp-sys-2/build.rs
+--- cargo-crates/llama-cpp-sys-2-0.1.118/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/llama-cpp-sys-2-0.1.118/build.rs
 @@ -20,6 +20,7 @@ enum TargetOs {
      Apple(AppleVariant),
      Linux,
@@ -17,7 +17,7 @@
      } else {
          Err(target)
      }
-@@ -632,7 +635,7 @@ fn main() {
+@@ -610,7 +613,7 @@ fn main() {
                  config.cflag("/FS");
                  config.cxxflag("/FS");
              }
@@ -26,7 +26,7 @@
                  println!("cargo:rustc-link-lib=vulkan");
              }
              _ => (),
-@@ -738,6 +741,9 @@ fn main() {
+@@ -716,6 +719,9 @@ fn main() {
          }
          TargetOs::Linux => {
              println!("cargo:rustc-link-lib=dylib=stdc++");
