@@ -1,5 +1,4 @@
 include/appstream-compose/appstream-compose.h
-include/appstream-compose/asc-canvas.h
 include/appstream-compose/asc-compose.h
 include/appstream-compose/asc-directory-unit.h
 include/appstream-compose/asc-enums-types.h
@@ -13,7 +12,7 @@ include/appstream-compose/asc-utils.h
 lib/girepository-1.0/AppStreamCompose-1.0.typelib
 lib/libappstream-compose.so
 lib/libappstream-compose.so.0
-lib/libappstream-compose.so.1.0.6
+lib/libappstream-compose.so.1.1.0
 libdata/pkgconfig/appstream-compose.pc
 libexec/appstreamcli-compose
 share/gir-1.0/AppStreamCompose-1.0.gir

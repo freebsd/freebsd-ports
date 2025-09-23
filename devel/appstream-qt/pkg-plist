@@ -27,5 +27,5 @@ include/AppStreamQt/video.h
 lib/cmake/AppStreamQt/AppStreamQtConfig.cmake
 lib/cmake/AppStreamQt/AppStreamQtConfigVersion.cmake
 lib/libAppStreamQt.so
-lib/libAppStreamQt.so.1.0.6
+lib/libAppStreamQt.so.1.1.0
 lib/libAppStreamQt.so.3

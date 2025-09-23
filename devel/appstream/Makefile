@@ -2,7 +2,7 @@
 # being overriden by devel/appstream-qt slave port
 
 PORTNAME?=	AppStream
-DISTVERSION=	1.0.6
+DISTVERSION=	1.1.0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME:tl}/releases/
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 LIB_DEPENDS?=	libcurl.so:ftp/curl \
 		libstemmer.so:textproc/snowballstemmer \
 		libxmlb.so:textproc/libxmlb \
-		libyaml.so:textproc/libyaml \
+		libfyaml.so:textproc/libfyaml \
 		libzstd.so:archivers/zstd
 
 USES+=		gettext gnome localbase:ldflags meson pkgconfig \
