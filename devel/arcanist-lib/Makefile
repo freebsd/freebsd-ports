@@ -12,6 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:cli,flavors python:env shebangfix
+IGNORE_WITH_PHP=	85
 USE_GITHUB=	yes
 GH_ACCOUNT=	phacility
 GH_TAGNAME=	85c953e
