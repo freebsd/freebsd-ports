@@ -1,5 +1,5 @@
 PORTNAME=	gnome-pomodoro
-PORTVERSION=	0.27.0
+PORTVERSION=	0.28.0
 PORTEPOCH=	1
 CATEGORIES=	deskutils gnome
 
