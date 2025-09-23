@@ -1,0 +1,73 @@
+[
+{ type: install
+  message: <<EOM
+- Create root directory for your root certificate authority (CA),
+    e.g. "/ca_home":
+    mkdir -p /ca_home/private
+- Publish it in your environment as CA_HOME (this name is fixed):
+    e.g. export CA_HOME=/ca_home
+- Populate it as:
+    cp -pR %%EXAMPLESDIR%%/ /ca_home
+    cp -pR %%DOCSDIR%%/ /ca_home
+- Follow advice at:
+    /ca_home/*.md (patched for FreeBSD) or
+    https://github.com/openxpki/clca (for original Debian Linux)
+- Revise your configuration in 
+    /ca_home/etc/*
+    /ca_home/bin/*
+- Run main interactive Bash script of this port as follows:
+    cd /ca_home
+    bin/clca
+- This port/package installs some scripts into %%PREFIX%%/bin:
+    clca, change-quorum.sh, provision,secret
+    Sometime it is convenient to run them from your root ca directory /ca_home,
+    as they are in your PATH. But beware of confusing them with scripts, which
+    are located in /ca_home/bin/*.
+- Use of OpenSSL or LibreSSL
+  = This package comes (from FreeBSD build cluster) bound with 
+  openssl from base system, cf: /usr/ports/Mk/Uses/ssl.mk
+  If you want to use openssl or libressl from ports instead, then:
+    1) add the name of respective port 
+       (openssl, openssl30, openssl31, libressl, libressl-devel...)
+       to /etc/make.conf file e.g. like this:
+       DEFAULT_VERSIONS+= ssl=openssl31
+    2) install security/openssl31
+    3) cd /usr/ports/security/p5-openxpki-clca && make reinstall
+       you do not need to rebuild dependencies, installed from packages.
+    4) repeat steps above for re-population of root directory and revising
+        configuration.
+	5) If your system has more that one installation of openssl/libressl, you
+		may want to create a symlink (early in the path) to your preferred
+		openssl binary. Check your working copy of openssl with:
+			which openssl
+			openssl version
+	6) Revise again your configuration in 
+		/ca_home/etc/*
+		/ca_home/bin/*
+  = Using versions OpenSSL 1.0 or less can restrict features of this port.
+  = This port builds just fine with any available versions of OpenSSL or 
+    LibreSSL. But its operation with LibreSSL or OpenSSL 3.1+ has not been fully
+	tested. Report your respective story to the list
+      https://sourceforge.net/p/openxpki/mailman/
+    or use OpenSSL 3.0 instead.
+- If you choose to create (as docs advice) a new optional perl script in
+  the /ca_home/bin directory, you may want to employ a construct like
+    use FindBin;
+    use lib "$FindBin::Bin/../lib";
+  inside your script, so that perl modules from /ca_home/lib directory
+  become available to your script if you need them to be.
+- Note, that this software is optimized for use from autonomous device, when
+  /ca_home directory is located on USB drive, which is extracted from computer
+  after  work to be kept inside a steel vault.   
+
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+If you update existing installation, repeat steps for re-population of root
+directory and revising configuration. And please check if extra handwork 
+is needed in your case:
+    https://github.com/openxpki/clca
+EOM
+}
+]
