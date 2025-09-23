@@ -85,3 +85,5 @@ bin/nats-server
 %%PORTDOCS%%%%DOCSDIR%%/configs/tls_curve_prefs.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/tls_empty_cipher.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/tls_empty_curve_prefs.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/tls_insecure_ciphers.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/tls_insecure_ciphers_allowed.conf
