@@ -1,11 +1,6 @@
 PORTNAME=	xiphos
-DISTVERSION=	4.3.1
-PORTREVISION=	2
+DISTVERSION=	4.3.2
 CATEGORIES=	misc gnome
-# Don't use USE_GITHUB: the sources downloaded by USE_GITHUB cannot be
-# built as they miss the file ${WRKSRC}/cmake/source_version.txt.
-# See also: https://github.com/crosswire/xiphos/issues/1037
-MASTER_SITES=	https://github.com/crosswire/${PORTNAME}/archive/refs/tags/${DISTVERSION}/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Bible interface utilizing the sword framework
@@ -31,6 +26,9 @@ LIB_DEPENDS=	libbiblesync.so:misc/biblesync \
 # gettext is always needed, even if NLS is off
 USES=		cmake compiler:c11 gettext gnome minizip pkgconfig
 USE_GNOME=	cairo gtk30 gtkhtml4 intltool libgsf
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	crosswire
 
 CMAKE_OFF=	EPUB
 CMAKE_ON=	GTKHTML
