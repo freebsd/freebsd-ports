@@ -1705,6 +1705,7 @@
     SUBDIR += py-towncrier
     SUBDIR += py-translationstring
     SUBDIR += py-transpopy
+    SUBDIR += py-tree-sitter-language-pack
     SUBDIR += py-ttp
     SUBDIR += py-ttp-templates
     SUBDIR += py-typogrify
