@@ -36,7 +36,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/lib/async-profiler/amd64/symsrv.dll
 %%DATADIR%%/lib/async-profiler/libasyncProfiler.dylib
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PY-252.25557.130
+%%DATADIR%%/lib/build-marker-PY-252.26199.168
 %%DATADIR%%/lib/eclipse.lsp4j.debug.jar
 %%DATADIR%%/lib/eclipse.lsp4j.jar
 %%DATADIR%%/lib/eclipse.lsp4j.jsonrpc.debug.jar
@@ -67,6 +67,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/lib/modules/intellij.grid.types.jar
 %%DATADIR%%/lib/modules/intellij.ide.startup.importSettings.jar
 %%DATADIR%%/lib/modules/intellij.libraries.ai.grazie.spell.gec.engine.local.jar
+%%DATADIR%%/lib/modules/intellij.libraries.coil.jar
 %%DATADIR%%/lib/modules/intellij.libraries.compose.foundation.desktop.jar
 %%DATADIR%%/lib/modules/intellij.libraries.kotlinx.io.jar
 %%DATADIR%%/lib/modules/intellij.libraries.ktor.client.cio.jar
@@ -141,7 +142,6 @@ share/applications/pycharm.desktop
 %%DATADIR%%/lib/modules/intellij.platform.registry.cloud.jar
 %%DATADIR%%/lib/modules/intellij.platform.rpc.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.scopes.backend.jar
-%%DATADIR%%/lib/modules/intellij.platform.scopes.jar
 %%DATADIR%%/lib/modules/intellij.platform.searchEverywhere.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.searchEverywhere.frontend.jar
 %%DATADIR%%/lib/modules/intellij.platform.searchEverywhere.jar
@@ -640,10 +640,11 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/protractor-intellij/lib/protractor-intellij-util.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
+%%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-file-path-resolver.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-b598e85cdad2.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-b598e85cdad2.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-9c94529fcfe0.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-9c94529fcfe0.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/!HowToUpdateBundledTypeScript.md
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_tsserver.js
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_typingsInstaller.js
@@ -1385,13 +1386,14 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/pycharm-community-customization-shared/lib/modules/intellij.platform.whatsNew.jar
 %%DATADIR%%/plugins/pycharm-community-customization-shared/lib/pycharm-community-customization-shared.jar
 %%DATADIR%%/plugins/pycharm-ds-jupyter-customCells/lib/pycharm-ds-jupyter-customCells.jar
-%%DATADIR%%/plugins/pycharm-pro-customization/lib/modules/intellij.platform.trialPromotion.jar
+%%DATADIR%%/plugins/pycharm-pro-customization/lib/modules/intellij.platform.trialPromotion.common.jar
+%%DATADIR%%/plugins/pycharm-pro-customization/lib/modules/intellij.platform.trialPromotion.idesWithFreeTier.jar
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/modules/intellij.pycharm.pro.customizationTrial.jar
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/pycharm-pro-customization.jar
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/tips-pycharm-pro.jar
 %%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/lib/pycharm-pro-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-1bde30d8e611-7b97d883f26b.ijx
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-1bde30d8e611-7b97d883f26b.txt
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-b3d66beaba9a-c6efb3732140.ijx
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-b3d66beaba9a-c6efb3732140.txt
 %%DATADIR%%/plugins/python-ce/helpers/.gitignore
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/MathJax.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/TeX-AMS_HTML-full.js
