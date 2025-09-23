@@ -167,7 +167,6 @@ share/locale/zh_TW/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_onlinequote.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
 %%TOOLS%%share/metainfo/org.kde.onlinequoteseditor6.appdata.xml
-%%PLASMA%%share/metainfo/org.wincak.foreigncurrencies26.appdata.xml
 %%PLASMA%%share/plasma/plasmoids/org.wincak.foreigncurrencies26/LICENSE
 %%PLASMA%%share/plasma/plasmoids/org.wincak.foreigncurrencies26/README
 %%PLASMA%%share/plasma/plasmoids/org.wincak.foreigncurrencies26/contents/config/config.qml
