@@ -15,6 +15,7 @@ RUN_DEPENDS=	arcanist-lib${PHP_PKGNAMESUFFIX}>=20210113_4:devel/arcanist-lib@${P
 		git:devel/git
 
 USES=		cpe dos2unix php:cli,flavors shebangfix
+IGNORE_WITH_PHP=	85
 CPE_VENDOR=	phacility
 DOS2UNIX_FILES=	externals/phpmailer/class.smtp.php externals/phpqrcode/phpqrcode.php
 USE_GITHUB=	yes
