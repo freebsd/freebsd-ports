@@ -1,3 +1,40 @@
+  <vuln vid="57b54de1-85a5-439a-899e-75d19cbdff54">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>140.0.7339.207</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>140.0.7339.207</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/09/stable-channel-update-for-desktop_23.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[430336833] High CVE-2025-10890: Side-channel information leakage in V8. Reported by Mate Marjanović (SharpEdged) on 2025-07-09</li>
+	    <li>[443765373] High CVE-2025-10891: Integer overflow in V8. Reported by Google Big Sleep on 2025-09-09</li>
+	    <li>[444048019] High CVE-2025-10892: Integer overflow in V8. Reported by Google Big Sleep on 2025-09-10</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10890</cvename>
+      <cvename>CVE-2025-10891</cvename>
+      <cvename>CVE-2025-10892</cvename>
+      <url>https://chromereleases.googleblog.com/2025/09/stable-channel-update-for-desktop_23.html</url>
+    </references>
+    <dates>
+      <discovery>2025-09-23</discovery>
+      <entry>2025-09-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6904ba53-22ff-4478-bfae-059dc2eefee1">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
