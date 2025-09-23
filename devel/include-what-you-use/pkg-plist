@@ -10,15 +10,8 @@ share/man/man1/include-what-you-use.1.gz
 %%DATADIR%%/boost-all.imp
 %%DATADIR%%/clang-6.intrinsics.imp
 %%DATADIR%%/gcc-8.intrinsics.imp
-%%DATADIR%%/gcc.libc.imp
-%%DATADIR%%/gcc.stl.headers.imp
-%%DATADIR%%/gcc.symbols.imp
-%%DATADIR%%/iwyu.gcc.imp
-%%DATADIR%%/libcxx.imp
 %%DATADIR%%/python2.7.imp
 %%DATADIR%%/python3.8.imp
 %%DATADIR%%/qt4.imp
 %%DATADIR%%/qt5_11.imp
 %%DATADIR%%/qt5_4.imp
-%%DATADIR%%/stl.c.headers.imp
-%%DATADIR%%/stl.public.imp
