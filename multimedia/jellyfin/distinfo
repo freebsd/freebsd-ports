@@ -1,6 +1,6 @@
-TIMESTAMP = 1753771617
-SHA256 (jellyfin-10.10.7-node-modules.tar.gz) = 4f0a1063f5234bb7ac13b7a68c37254f6e73ba42a85404b51d9fade34eeb54bd
-SIZE (jellyfin-10.10.7-node-modules.tar.gz) = 462456529
+TIMESTAMP = 1758617554
+SHA256 (jellyfin-10.10.7-node22-modules.tar.gz) = 4f0a1063f5234bb7ac13b7a68c37254f6e73ba42a85404b51d9fade34eeb54bd
+SIZE (jellyfin-10.10.7-node22-modules.tar.gz) = 462456529
 SHA256 (nuget/asynckeyedlock.7.0.2.nupkg) = 5053ed6bcc96b6e161a5fcbb3a9064503427c8ef133835c4134cc0eae6f3d503
 SIZE (nuget/asynckeyedlock.7.0.2.nupkg) = 357035
 SHA256 (nuget/autofixture.4.18.1.nupkg) = ade3fe6a86223dc223e066c22218dde7f3a1b9654b0ad0f884ab8b3c77b61172

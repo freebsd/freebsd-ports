@@ -27,7 +27,7 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 TEST_DEPENDS=	npm:www/npm${NODEJS_SUFFIX} \
 		dotnet:lang/dotnet8
 
-USES=		nodejs:lts,build sqlite:3 ssl elfctl
+USES=		nodejs:22,build sqlite:3 ssl elfctl
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	jellyfin:server,ui
@@ -387,10 +387,8 @@ GROUPS=		jellyfin
 DOTNET_ENV=	DOTNET_CLI_HOME=/tmp
 
 #json files must be replaced every time DISTVERSION is updated
-PREFETCH_FILE=	${PORTNAME}-${DISTVERSION}-node-modules${EXTRACT_SUFX}
+PREFETCH_FILE=	${PORTNAME}-${DISTVERSION}-node${NODEJS_VERSION}-modules${EXTRACT_SUFX}
 PREFETCH_TIMESTAMP=	61171200
-PKG_NODE_VER=	20.14.0
-NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/}
 
 .include "nuget.mk"
 
