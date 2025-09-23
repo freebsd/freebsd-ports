@@ -1,5 +1,5 @@
 PORTNAME=	rsplib
-DISTVERSION=	3.5.3
+DISTVERSION=	3.5.4
 CATEGORIES=	net
 MASTER_SITES=	https://www.nntb.no/~dreibh/rserpool/download/
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	gm:graphics/GraphicsMagick \
 
 USES=		cmake desktop-file-utils ghostscript:10,build gl qt:6 \
 		shebangfix tar:xz
-USE_GL=		gl opengl
+USE_GL=		opengl
 USE_LDCONFIG=	yes
 USE_QT=		base
 
