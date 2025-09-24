@@ -1,4 +1,4 @@
---- tree_sitter_language_pack/__init__.py.orig	2025-09-22 16:54:57 UTC
+--- tree_sitter_language_pack/__init__.py.orig	2025-09-23 06:46:36 UTC
 +++ tree_sitter_language_pack/__init__.py
 @@ -6,9 +6,9 @@ from typing import Literal, cast
  from pathlib import Path
@@ -29,7 +29,7 @@
      "erlang",
      "fennel",
      "firrtl",
-@@ -175,7 +173,6 @@ SupportedLanguage = Literal[
+@@ -179,7 +177,6 @@ SupportedLanguage = Literal[
      "wgsl",
      "xcompose",
      "xml",
