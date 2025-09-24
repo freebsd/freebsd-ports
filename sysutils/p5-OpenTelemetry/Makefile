@@ -1,5 +1,6 @@
 PORTNAME=	OpenTelemetry
 PORTVERSION=	0.031
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JJATRIA
@@ -35,6 +36,7 @@ RUN_DEPENDS=	p5-Bytes-Random-Secure>0:security/p5-Bytes-Random-Secure \
 		p5-Syntax-Keyword-Dynamically>0:devel/p5-Syntax-Keyword-Dynamically \
 		p5-URI>0:net/p5-URI \
 		p5-URL-Encode>0:www/p5-URL-Encode \
+		p5-UUID-URandom>0:devel/p5-UUID-URandom \
 		p5-X-Tiny>0:devel/p5-X-Tiny
 
 NO_ARCH=	yes
