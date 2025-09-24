@@ -1,15 +1,14 @@
 PORTNAME=	budgie
-PORTVERSION=	10.8
+PORTVERSION=	10.9
 CATEGORIES=	x11 budgie
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Meta-port for the Budgie Desktop Environment
-WWW=		https://blog.buddiesofbudgie.org/
+WWW=		https://buddiesofbudgie.org/
 
-RUN_DEPENDS=	budgie-desktop>0:x11/budgie-desktop \
+RUN_DEPENDS=	budgie-desktop:x11/budgie-desktop \
 		budgie-desktop-view>0:deskutils/budgie-desktop-view \
-		budgie-control-center>0:sysutils/budgie-control-center \
-		qogir-gtk-themes>0:x11-themes/qogir-gtk-themes \
+		budgie-control-center:sysutils/budgie-control-center \
 		adwaita-icon-theme>0:x11-themes/adwaita-icon-theme \
 		tela-icon-theme>0:x11-themes/tela-icon-theme \
 		xdg-user-dirs>0:devel/xdg-user-dirs
@@ -26,14 +25,12 @@ USES=		metaport
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SUB=	yes
 
-EXAMPLES_SUB_FILES=	pkg-message xinitrc xprofile
+EXAMPLES_SUB_FILES=	pkg-message xprofile
 
 pre-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 
 post-install-EXAMPLES-on:
-.for f in xinitrc xprofile
-	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${STAGEDIR}${EXAMPLESDIR}
-.endfor
+	${INSTALL_SCRIPT} ${WRKDIR}/xprofile ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

@@ -1,31 +1,24 @@
 #!/bin/sh
 
-# Use the Xorg backend
-if test "x$GDK_BACKEND" = "x"; then
-    GDK_BACKEND="x11"
+# Set $XDG_RUNTIME_DIR (comment, if use with x11/gdm)
+_version=$(sysctl kern.osreldate | awk -F " " '{printf("%s", $2);}')
+if [ ${_version} -gt 1401000 ]; then
+    _user_id=$(id -un)
+    if [ -d "/var/run/xdg/${_user_id}" ]; then
+        XDG_RUNTIME_DIR="/var/run/xdg/${_user_id}"
+    fi
+else
+    _user_id=$(id -u)
+    if [ -d "/var/run/user/${_user_id}" ]; then
+        XDG_RUNTIME_DIR="/var/run/user/${_user_id}"
+    fi
 fi
-export XDG_SESSION_TYPE
+export XDG_RUNTIME_DIR
 
-# Set $XDG_MENU_PREFIX
-if test "x$XDG_MENU_PREFIX" = "x" ; then
-    XDG_MENU_PREFIX="gnome-"
+# Set environment variables for D-Bus session services
+if command -v dbus-update-activation-environment >/dev/null 2>&1 ; then
+    dbus-update-activation-environment --all
 fi
-export XDG_MENU_PREFIX
-
-# Set $DESKTOP_SESSION
-if test "x$DESKTOP_SESSION" = "x" ; then
-    DESKTOP_SESSION="budgie-desktop"
-fi
-export DESKTOP_SESSION
-
-# Set $XDG_CURRENT_DESKTOP
-if test "x$XDG_CURRENT_DESKTOP" = "x" ; then
-    XDG_CURRENT_DESKTOP="Budgie:GNOME"
-fi
-export XDG_CURRENT_DESKTOP
-
-# Suppress warning about accessibility bus
-#export NO_AT_BRIDGE=1
 
 # Set $XDG_CONFIG_DIRS
 if test "x$XDG_CONFIG_DIRS" = "x" ; then
@@ -69,14 +62,17 @@ if test "x$XDG_STATE_HOME" = "x" ; then
 fi
 [ -d "$XDG_STATE_HOME" ] || mkdir -p "$XDG_STATE_HOME"
 
-# Unlock gnome-keyring
+# Unlock gnome-keyring daemon
 if test -n "$DESKTOP_SESSION" ; then
-    # If .xinitrc is used, uncomment the next line
+    SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/keyring"
+
+    # Uncomment, if gnome-keyring daemon is not started automatically
+    # by XDG desktop portal backend
     #eval $(gnome-keyring-daemon --start --components=pkc11,secrets,ssh)
     export SSH_AUTH_SOCK
 fi
 
-# Set up XDG user directores. See
+# Set up XDG user directories (devel/xdg-user-dirs)
 # https://freedesktop.org/wiki/Software/xdg-user-dirs
 if command -v xdg-user-dirs-update >/dev/null 2>&1 ; then
     xdg-user-dirs-update
