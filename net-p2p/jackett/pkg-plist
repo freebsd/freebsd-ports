@@ -136,6 +136,7 @@
 %%DATADIR%%/Definitions/catorrent.yml
 %%DATADIR%%/Definitions/cdfile.yml
 %%DATADIR%%/Definitions/ceskeforum.yml
+%%DATADIR%%/Definitions/cgpeers.yml
 %%DATADIR%%/Definitions/chdbits.yml
 %%DATADIR%%/Definitions/chilebt-api.yml
 %%DATADIR%%/Definitions/cinemageddon.yml
@@ -179,7 +180,6 @@
 %%DATADIR%%/Definitions/empornium.yml
 %%DATADIR%%/Definitions/empornium2fa.yml
 %%DATADIR%%/Definitions/emuwarez.yml
-%%DATADIR%%/Definitions/esharenet.yml
 %%DATADIR%%/Definitions/estone.yml
 %%DATADIR%%/Definitions/ex-torrenty.yml
 %%DATADIR%%/Definitions/exitorrent-org.yml
@@ -436,6 +436,7 @@
 %%DATADIR%%/Definitions/seedpool-api.yml
 %%DATADIR%%/Definitions/selezen.yml
 %%DATADIR%%/Definitions/sewerpt.yml
+%%DATADIR%%/Definitions/sextorrent.yml
 %%DATADIR%%/Definitions/sexypics.yml
 %%DATADIR%%/Definitions/sfp.yml
 %%DATADIR%%/Definitions/shanaproject.yml
@@ -486,7 +487,6 @@
 %%DATADIR%%/Definitions/tmghub.yml
 %%DATADIR%%/Definitions/tocashare.yml
 %%DATADIR%%/Definitions/tokyotosho.yml
-%%DATADIR%%/Definitions/torlock.yml
 %%DATADIR%%/Definitions/tormac.yml
 %%DATADIR%%/Definitions/tornado.yml
 %%DATADIR%%/Definitions/torrent-heaven.yml
@@ -562,7 +562,6 @@
 %%DATADIR%%/Definitions/yggcookie.yml
 %%DATADIR%%/Definitions/yggtorrent.yml
 %%DATADIR%%/Definitions/yoinked.yml
-%%DATADIR%%/Definitions/yourbittorrent.yml
 %%DATADIR%%/Definitions/yts.yml
 %%DATADIR%%/Definitions/yuscene-api.yml
 %%DATADIR%%/Definitions/zamundanet.yml
