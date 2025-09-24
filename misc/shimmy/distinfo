@@ -1,4 +1,4 @@
-TIMESTAMP = 1758633603
+TIMESTAMP = 1758697180
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -617,7 +617,7 @@ SHA256 (rust/crates/zerovec-derive-0.11.1.crate) = 5b96237efa0c878c64bd89c436f66
 SIZE (rust/crates/zerovec-derive-0.11.1.crate) = 21294
 SHA256 (Michael-A-Kuykendall-llama-cpp-rs-5066492a156fa138e4e81210a48dd1d2099dbace_GH0.tar.gz) = 8675ece17220b21300dfce26b966912c42d4f2023c1b5d3d2a77dd69f548685a
 SIZE (Michael-A-Kuykendall-llama-cpp-rs-5066492a156fa138e4e81210a48dd1d2099dbace_GH0.tar.gz) = 108996
-SHA256 (Michael-A-Kuykendall-shimmy-v1.5.5_GH0.tar.gz) = a93cafb7004ce6abb572d494b631eb434eadd27111943ddb626c2fe549f22c0d
-SIZE (Michael-A-Kuykendall-shimmy-v1.5.5_GH0.tar.gz) = 234037969
+SHA256 (Michael-A-Kuykendall-shimmy-v1.5.6_GH0.tar.gz) = 092430a73c8d0c5651389a8c8011a46ac58c4d6a4a0b104d7a9de760544884bb
+SIZE (Michael-A-Kuykendall-shimmy-v1.5.6_GH0.tar.gz) = 234050538
 SHA256 (ggml-org-llama.cpp-9515c6131aecaccc955fdedcfe16c3e030aaefcb_GH0.tar.gz) = 94f24c97fc27b528feff4afc49edd5af66f9b557aae4f0814d03cf4b22596b11
 SIZE (ggml-org-llama.cpp-9515c6131aecaccc955fdedcfe16c3e030aaefcb_GH0.tar.gz) = 25475973
