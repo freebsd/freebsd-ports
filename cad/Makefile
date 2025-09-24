@@ -24,7 +24,6 @@
     SUBDIR += csxcad
     SUBDIR += cura
     SUBDIR += cura-engine
-    SUBDIR += cvc
     SUBDIR += digital
     SUBDIR += dinotrace
     SUBDIR += ecpprog

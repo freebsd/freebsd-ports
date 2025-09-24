@@ -4778,3 +4778,4 @@ graphics/osg34||2025-09-11|Has expired: Obsolete version released in 2015
 games/motogt||2025-09-11|Has expired: Depends on obsolete devel/sfml1
 devel/sfml1|devel/sfml|2025-09-11|Has expired: Broken obsolete version
 net/benthos|net/redpanda-connect|2025-09-12|Has expired: Superseded by net/redpanda-connect
+cad/cvc||2025-09-24|Has expired: Upstream stalled, needs EOL GCC 11 to build
