@@ -1,5 +1,5 @@
 PORTNAME=	diff-cover
-DISTVERSION=	9.6.0
+DISTVERSION=	9.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,6 +33,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-# tests as of 9.6.0: 336 passed in 23.36s
+# tests as of 9.7.0: 338 passed in 21.61s
 
 .include <bsd.port.mk>
