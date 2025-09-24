@@ -1,7 +1,6 @@
 PORTNAME=	budgie-desktop
-DISTVERSION=	10.8.2
-PORTREVISION=	7
 DISTVERSIONPREFIX=	v
+DISTVERSION=	10.9.3
 CATEGORIES=	x11 budgie
 MASTER_SITES=	BUDGIE
 
@@ -9,13 +8,15 @@ MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Modern and familiar desktop environment
 WWW=		https://github.com/BuddiesOfBudgie/budgie-desktop
 
-LICENSE_COMB=	multi
-LICENSE=	GPLv2 LGPL21
+LICENSE=		GPLv2 LGPL21
+LICENSE_COMB=		multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE
+LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE.LGPL2.1
 
 BUILD_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		sassc:textproc/sassc \
-		zenity>0:x11/zenity
+		zenity:x11/zenity
 LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit \
 		libpeas-1.0.so:devel/libpeas1 \
 		libuuid.so:misc/libuuid \
@@ -28,27 +29,30 @@ LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit \
 		libibus-1.0.so:textproc/ibus \
 		libcanberra.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
-		libgee-0.8.so:devel/libgee
+		libgee-0.8.so:devel/libgee \
+		libgudev-1.0.so:devel/libgudev
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
-		gnome-session>0:x11/gnome-session \
+		budgie-session>0:x11/budgie-session \
 		consolekit2>0:sysutils/consolekit2 \
-		zenity>0:x11/zenity \
-		xdotool>0:x11/xdotool
+		zenity:x11/zenity \
+		xdotool:x11/xdotool \
+		matcha-gtk-themes>0:x11-themes/matcha-gtk-themes \
+		xdg-desktop-portal-gtk>0:x11/xdg-desktop-portal-gtk
 
-USES=		budgie gettext gnome gstreamer meson pkgconfig tar:xz \
-		vala:build xorg
+USES=		budgie gettext-tools gnome gstreamer meson pkgconfig \
+		tar:xz vala:build xfce xorg
 USE_BUDGIE=	libmagpie screensaver:build
 USE_GNOME=	cairo gdkpixbuf glib20 gnomedesktop3 gnomemenus3 \
-		gtk30 intltool introspection libwnck3
+		gtk30 intltool:build introspection libwnck3
 USE_GSTREAMER=	libgstreamer
-USE_XORG=	x11 xcomposite
+USE_XFCE=	windowing
+USE_XORG=	x11 xext xfixes xi xorgproto
 
 MESON_ARGS=	-Dwith-gtk-doc=false \
 		-Dwith-bluetooth=false \
-		-Dwith-hibernate=false \
-		-Dwith-libuuid-time-safe=false
+		-Dwith-hibernate=false
 
-# If zenity >= 3.90 → build against Gtk4 (new API)
+# As long as x11/gtk30 is required, we depend of x11/zenity
 MESON_ARGS+=	-Duse-old-zenity=true
 
 GLIB_SCHEMAS=	20_buddiesofbudgie.budgie-desktop.notifications.gschema.override \
@@ -70,9 +74,10 @@ GLIB_SCHEMAS=	20_buddiesofbudgie.budgie-desktop.notifications.gschema.override \
 		org.buddiesofbudgie.budgie-desktop.raven.widget.SoundOutput.gschema.xml \
 		org.buddiesofbudgie.budgie-desktop.raven.widget.UsageMonitor.gschema.xml \
 		org.buddiesofbudgie.budgie-desktop.screenshot.gschema.xml \
+		org.buddiesofbudgie.settings-daemon.plugins.media-keys.gschema.xml \
 		25_org.buddiesofbudgie-default-settings.gschema.override
 
-NO_SHLIB_REQUIRES_GLOB=	libmagpie-clutter-0.so.0 libmagpie-cogl-0.so.0
+NO_SHLIB_REQUIRES_GLOB=	libmagpie-clutter-* libmagpie-cogl-*
 
 .include <bsd.port.options.mk>
 

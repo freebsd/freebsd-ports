@@ -1,0 +1,11 @@
+--- src/daemon/bsd/meson.build.orig	2025-09-07 12:35:19 UTC
++++ src/daemon/bsd/meson.build
+@@ -200,7 +200,7 @@ endif
+ endif
+ 
+ # Rfkill
+-enable_rfkill = true #get_option('rfkill')
++enable_rfkill = false #get_option('rfkill')
+ assert(enable_rfkill or not host_is_linux, 'rfkill is not optional on Linux platforms')
+ if enable_rfkill
+   assert(cc.has_header('linux/rfkill.h'), 'rfkill support requested but RFKill headers not found')
