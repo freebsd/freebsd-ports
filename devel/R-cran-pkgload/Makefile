@@ -1,5 +1,5 @@
 PORTNAME=	pkgload
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -26,7 +26,7 @@ TEST_DEPENDS=	R-cran-bitops>0:devel/R-cran-bitops \
 		R-cran-Rcpp>0:devel/R-cran-Rcpp \
 		R-cran-remotes>0:devel/R-cran-remotes \
 		R-cran-rstudioapi>0:devel/R-cran-rstudioapi \
-		R-cran-testthat>=3.2.1:devel/R-cran-testthat \
+		R-cran-testthat>=3.2.1.1:devel/R-cran-testthat \
 		R-cran-usethis>0:devel/R-cran-usethis
 
 USES=		cran:auto-plist
