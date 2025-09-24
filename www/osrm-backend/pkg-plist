@@ -114,6 +114,7 @@ share/osrm/profiles/lib/destination.lua
 share/osrm/profiles/lib/guidance.lua
 share/osrm/profiles/lib/maxspeed.lua
 share/osrm/profiles/lib/measure.lua
+share/osrm/profiles/lib/obstacles.lua
 share/osrm/profiles/lib/pprint.lua
 share/osrm/profiles/lib/profile_debugger.lua
 share/osrm/profiles/lib/relations.lua

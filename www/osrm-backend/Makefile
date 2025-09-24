@@ -1,7 +1,5 @@
 PORTNAME=	osrm-backend
-DISTVERSIONPREFIX=	v
-DISTVERSION=	5.28.0.d20240803
-PORTREVISION=	4
+DISTVERSION=	6.0.0.g20250916
 CATEGORIES=	www
 
 MAINTAINER=	freebsd@mosedal.net
@@ -13,8 +11,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 NOT_FOR_ARCHS=	armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	Building on a 32 bit system is not supported
-
-BROKEN=		fails to build with Boost>=1.87
 
 BUILD_DEPENDS=	${LOCALBASE}/include/sol:devel/sol2
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
@@ -29,8 +25,7 @@ USES=		cmake compiler:c++20-lang lua:54 pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Project-OSRM
-GH_TAGNAME=	203314b1
-
+GH_TAGNAME=	0ae940c31566df2aec0ecd679c84c11ede9831ef
 USE_RC_SUBR=	osrm
 CMAKE_ON=	BUILD_STATIC_LIBS
 USERS=		osrm
