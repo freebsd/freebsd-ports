@@ -1,28 +1,28 @@
 Upstream has switched from mimalloc to jemalloc in 0.64.0, but
 tikv-jemallocator does not currently build on FreeBSD, so just
 switch it to system allocator which is jemalloc anyway.
---- Cargo.toml.orig	2025-06-15 21:48:50 UTC
+--- Cargo.toml.orig	2025-09-24 03:24:08 UTC
 +++ Cargo.toml
-@@ -106,7 +106,7 @@ tree-sitter-yaml = "0.7.0"
- tree-sitter-xml = "0.7.0"
+@@ -110,7 +110,7 @@ tree-sitter-zig = "1.1.2"
  tree-sitter-yaml = "0.7.0"
+ tree-sitter-zig = "1.1.2"
  
--[target.'cfg(not(target_env = "msvc"))'.dependencies]
+-[target.'cfg(not(any(target_env = "msvc", target_os = "illumos")))'.dependencies]
 +[target.'cfg(not(any(target_env = "msvc", target_os = "freebsd")))'.dependencies]
  tikv-jemallocator = "0.6"
  
  [dev-dependencies]
---- src/main.rs.orig	2025-06-15 21:48:50 UTC
+--- src/main.rs.orig	2025-09-24 03:24:08 UTC
 +++ src/main.rs
-@@ -86,10 +86,10 @@ use crate::parse::syntax;
+@@ -91,10 +91,10 @@ use crate::parse::syntax;
  ///
  /// For reference, Jemalloc uses 10-20% more time (although up to 33%
  /// more instructions) when testing on sample files.
--#[cfg(not(target_env = "msvc"))]
+-#[cfg(not(any(target_env = "msvc", target_os = "illumos")))]
 +#[cfg(not(any(target_env = "msvc", target_os = "freebsd")))]
  use tikv_jemallocator::Jemalloc;
  
--#[cfg(not(target_env = "msvc"))]
+-#[cfg(not(any(target_env = "msvc", target_os = "illumos")))]
 +#[cfg(not(any(target_env = "msvc", target_os = "freebsd")))]
  #[global_allocator]
  static GLOBAL: Jemalloc = Jemalloc;

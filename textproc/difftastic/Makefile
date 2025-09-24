@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.64.0
-PORTREVISION=	2
+DISTVERSION=	0.65.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -149,7 +148,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tree-sitter-php-0.23.11 \
 		tree-sitter-python-0.23.5 \
 		tree-sitter-ruby-0.23.1 \
-		tree-sitter-rust-0.23.2 \
+		tree-sitter-rust-orchard-0.13.0 \
 		tree-sitter-scala-0.23.3 \
 		tree-sitter-swift-0.7.0 \
 		tree-sitter-toml-ng-0.7.0 \
@@ -157,6 +156,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tree-sitter-verilog-1.0.3 \
 		tree-sitter-xml-0.7.0 \
 		tree-sitter-yaml-0.7.0 \
+		tree-sitter-zig-1.1.2 \
 		tree_magic_mini-3.1.6 \
 		typed-arena-2.0.2 \
 		unicode-ident-1.0.12 \
