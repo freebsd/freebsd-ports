@@ -1,6 +1,6 @@
-TIMESTAMP = 1753107989
-SHA256 (dnsdist-2.0.0.tar.xz) = da30742f51aac8be7e116677cb07bc49fbea979fc5443e7e1fa8fa7bd0a63fe5
-SIZE (dnsdist-2.0.0.tar.xz) = 2275260
+TIMESTAMP = 1758417851
+SHA256 (dnsdist-2.0.1.tar.xz) = 144e2356d07d6577a570782a6f79f426125344221dbdc4ddaaa7f9d468d51900
+SIZE (dnsdist-2.0.1.tar.xz) = 2279512
 SHA256 (rust/crates/anstyle-1.0.10.crate) = 55cc3b69f167a1ef2e161439aa98aed94e6028e5f9a59be9a6ffb47aef1651f9
 SIZE (rust/crates/anstyle-1.0.10.crate) = 15725
 SHA256 (rust/crates/cc-1.2.25.crate) = d0fc897dc1e865cc67c0e05a836d9d3f1df3cbe442aa4a9473b18e12624a4951
