@@ -1,5 +1,6 @@
 bin/gpgme-config
 bin/gpgme-json
+bin/gnupg-key-manage
 bin/gpgme-tool
 include/gpgme.h
 lib/common-lisp/gpgme/gpgme-grovel.lisp
@@ -8,7 +9,7 @@ lib/common-lisp/gpgme/gpgme.asd
 lib/common-lisp/gpgme/gpgme.lisp
 lib/libgpgme.so
 lib/libgpgme.so.45
-lib/libgpgme.so.45.0.0
+lib/libgpgme.so.45.0.1
 libdata/pkgconfig/gpgme-glib.pc
 libdata/pkgconfig/gpgme.pc
 share/aclocal/gpgme.m4
