@@ -1953,6 +1953,7 @@
     SUBDIR += py-textile
     SUBDIR += py-ticketutil
     SUBDIR += py-tornado
+    SUBDIR += py-torrequest
     SUBDIR += py-treq
     SUBDIR += py-ttrv
     SUBDIR += py-tuir
