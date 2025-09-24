@@ -5,7 +5,7 @@
  bash_5_or_greater=no
  case "${bash_major}.${bash_minor}" in
 -  '5.0' | '5.0')
-+  '5.0' | '5.0' | '5.1' | '5.2' | '5.3')
++  '5.0' | '5.0' | '5.1' | '5.2' | '5.3' | '5.4' | '5.5')
      bash_5_or_greater=yes
      ;;
    *)
