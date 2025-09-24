@@ -1935,6 +1935,7 @@
     SUBDIR += py-selenium-wire
     SUBDIR += py-semiphemeral
     SUBDIR += py-sentinelhub
+    SUBDIR += py-sherlock-project
     SUBDIR += py-simple-websocket
     SUBDIR += py-slimit
     SUBDIR += py-slumber
