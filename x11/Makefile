@@ -34,6 +34,7 @@
     SUBDIR += budgie
     SUBDIR += budgie-desktop
     SUBDIR += budgie-screensaver
+    SUBDIR += budgie-session
     SUBDIR += cde
     SUBDIR += cde-devel
     SUBDIR += chayang
