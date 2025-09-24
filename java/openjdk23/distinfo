@@ -1,3 +1,3 @@
-TIMESTAMP = 1739592718
-SHA256 (battleblow-jdk23u-jdk-23.0.2+7-1_GH0.tar.gz) = 092147404af068e85dbd1535f36da32c9a2077708154f69ba3a94ba64fa2aaba
-SIZE (battleblow-jdk23u-jdk-23.0.2+7-1_GH0.tar.gz) = 117326728
+TIMESTAMP = 1756989931
+SHA256 (freebsd-openjdk-jdk-23.0.2+7-2-jdk-23.0.2+7-freebsd-2_GH0.tar.gz) = ec011f440f6e3f0eff1b67811a3a9fc5094be772f30519af2bfb914abaa6d666
+SIZE (freebsd-openjdk-jdk-23.0.2+7-2-jdk-23.0.2+7-freebsd-2_GH0.tar.gz) = 117311366
