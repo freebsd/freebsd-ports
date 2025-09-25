@@ -1,4 +1,4 @@
-TIMESTAMP = 1748776485
+TIMESTAMP = 1758824600
 SHA256 (cabal/Cabal-3.14.2.0/Cabal-3.14.2.0.tar.gz) = a58ca2b17c250472ed4dac0ec0aa2c65173701cbfdfecca104713f73b4429432
 SIZE (cabal/Cabal-3.14.2.0/Cabal-3.14.2.0.tar.gz) = 475699
 SHA256 (cabal/Cabal-3.14.2.0/revision/1.cabal) = f98aa86a37b9920dc6dfc8d79119a10df69542734f158a1c66ff144592f1d004
@@ -905,8 +905,8 @@ SHA256 (cabal/strict-0.5.1/revision/1.cabal) = 58c373b7c7748cbb4a5a6c8c15073f99a
 SIZE (cabal/strict-0.5.1/revision/1.cabal) = 3557
 SHA256 (cabal/strict-checked-vars-0.2.0.0.tar.gz) = 69f80f5f301d7e42731ae66cb80fa52810b8fc2277d57cb5d22278e380c9dd60
 SIZE (cabal/strict-checked-vars-0.2.0.0.tar.gz) = 12418
-SHA256 (cabal/strict-checked-vars-0.2.0.0/revision/3.cabal) = 8154f375c555b58a558cd136077e0b7034c7e029f2c148a555a5f8f26acc07e2
-SIZE (cabal/strict-checked-vars-0.2.0.0/revision/3.cabal) = 2717
+SHA256 (cabal/strict-checked-vars-0.2.0.0/revision/1.cabal) = 8154f375c555b58a558cd136077e0b7034c7e029f2c148a555a5f8f26acc07e2
+SIZE (cabal/strict-checked-vars-0.2.0.0/revision/1.cabal) = 2717
 SHA256 (cabal/strict-list-0.1.7.6/strict-list-0.1.7.6.tar.gz) = 756b16c12b5528cdb44ba905bdc78e5f4a749f33f630226645311a8d52207987
 SIZE (cabal/strict-list-0.1.7.6/strict-list-0.1.7.6.tar.gz) = 6786
 SHA256 (cabal/strict-mvar-1.5.0.0/strict-mvar-1.5.0.0.tar.gz) = d0c916f9eb519c014921d2562a84ff9d6c71b256e883066e38f44b0b7ce4465e
