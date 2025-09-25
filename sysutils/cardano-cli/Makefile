@@ -372,7 +372,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		streaming-bytestring-0.3.4 \
 		streaming-commons-0.2.3.0 \
 		strict-0.5.1_1 \
-		strict-checked-vars-0.2.0.0_3:chap \
+		strict-checked-vars-0.2.0.0_1:chap \
 		strict-list-0.1.7.6 \
 		strict-mvar-1.5.0.0_1 \
 		strict-sop-core-0.1.3.0:chap \
