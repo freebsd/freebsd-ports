@@ -11,7 +11,7 @@ WWW=		https://gitlab.gnome.org/GNOME/gnome-autoar
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe gettext-runtime gmake gnome libarchive meson pkgconfig \
+USES=		cpe gettext-runtime gnome libarchive meson pkgconfig \
 		tar:xz vala:build
 
 CPE_VENDOR=	gnome
