@@ -1,6 +1,5 @@
 PORTNAME=	nncp
-DISTVERSION=	8.8.1
-PORTREVISION=	10
+DISTVERSION=	8.8.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.nncpgo.org/download/
 
@@ -11,7 +10,7 @@ WWW=		http://www.nncpgo.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		go:1.20,modules,no_targets tar:xz
+USES=		go:1.21,modules,no_targets tar:xz
 
 USE_RC_SUBR=	nncp-caller nncp-daemon nncp-toss
 
