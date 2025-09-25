@@ -103,11 +103,11 @@ lib/libnutscan.so.4.0.0
 %%SERIAL%%libexec/nut/oneac
 %%SERIAL%%libexec/nut/optiups
 %%IPMIPSU%%libexec/nut/nut-ipmipsu
-%%PDU%%libexec/nut/nutdrv_hashx
+%%SERIAL%%libexec/nut/nutdrv_hashx
 %%SERIAL%%libexec/nut/nutdrv_siemens-sitop
 %%SERIAL%%libexec/nut/powercom
 %%PDU%%libexec/nut/powerman-pdu
-%%PDU%%libexec/nut/powervar_cx_ser
+%%SERIAL%%libexec/nut/powervar_cx_ser
 %%SERIAL%%libexec/nut/powerpanel
 %%USB%%libexec/nut/powervar_cx_usb
 %%SERIAL%%libexec/nut/rhino

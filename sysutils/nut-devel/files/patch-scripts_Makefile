@@ -1,8 +1,11 @@
---- scripts/Makefile.am.orig	2020-02-09 10:44:01.000000000 -0800
-+++ scripts/Makefile.am	2020-03-24 19:40:01.084978000 -0700
-@@ -25,4 +25,4 @@
-     Windows/halt.c \
-     Windows/Makefile
+--- scripts/Makefile.am.orig	2025-09-23 07:29:43.000000000 -0700
++++ scripts/Makefile.am	2025-09-24 11:18:33.361330000 -0700
+@@ -30,7 +30,7 @@
+     valgrind/valgrind.sh.in \
+     Windows/halt.c
  
--SUBDIRS = augeas devd hotplug python systemd udev Solaris upsdrvsvcctl
-+SUBDIRS = augeas devd hotplug python udev upsdrvsvcctl
+-SUBDIRS = augeas devd hotplug installer python systemd udev ufw Solaris Windows upsdrvsvcctl external_apis
++SUBDIRS = augeas devd hotplug installer python udev ufw Solaris upsdrvsvcctl external_apis
+ 
+ SPELLCHECK_SRC = README.adoc RedHat/README.adoc usb_resetter/README.adoc valgrind/README.adoc
+ 
