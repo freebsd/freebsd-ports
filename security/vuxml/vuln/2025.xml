@@ -1,3 +1,43 @@
+  <vuln vid="e5cf9f44-9a64-11f0-8241-93c889bb8de1">
+    <topic>openvpn-devel -- script injection vulnerability from trusted but malicious server</topic>
+    <affects>
+      <package>
+	<name>openvpn-devel</name>
+	<range><ge>g20250629,1</ge><lt>g20250925,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gert Doering reports:</p>
+	<blockquote cite="https://github.com/OpenVPN/openvpn/commit/0fb5a00549be6b065f9a4d61940ee06786d9fa61">
+	  <p>Notable changes beta1 -&gt;
+	    beta2 are: [...] add proper input sanitation to DNS strings to
+	    prevent an attack coming from a trusted-but-malicous OpenVPN server
+	    (CVE: 2025-10680, affects unixoid systems with --dns-updown scripts
+	    and windows using the built-in powershell call)
+	  </p>
+	</blockquote>
+	<p>Lev Stipakov writes:</p>
+	<blockquote cite="https://github.com/OpenVPN/openvpn/commit/3a66045b407321c9d1c096227db164df3955ab40">
+	  <p> On Linux (and similar platforms), those options are written to a tmp
+	    file, which is later sourced by a script running as root. Since
+	    options are controlled by the server, it is possible for a malicious
+	    server to execute script injection attack [...].</p>
+	</blockquote>
+	<p>The original report is credited to Stanislav Fort &lt;disclosure@aisle.com&gt;.</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10680</cvename>
+      <url>https://github.com/OpenVPN/openvpn/commit/0fb5a00549be6b065f9a4d61940ee06786d9fa61</url>
+      <url>https://github.com/OpenVPN/openvpn/commit/3a66045b407321c9d1c096227db164df3955ab40</url>
+    </references>
+    <dates>
+      <discovery>2025-09-24</discovery>
+      <entry>2025-09-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c2253bff-9952-11f0-b6e2-6805ca2fa271">
     <topic>dnsdist -- Denial of service via crafted DoH exchange</topic>
     <affects>
