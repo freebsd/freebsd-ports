@@ -11,7 +11,6 @@ WWW=		https://github.com/dofuuz/python-soxr
 LICENSE=	LGPL21 BSD3CLAUSE
 LICENSE_COMB=	multi
 
-BROKEN_armv7=	compilation fails: soxr.c:17:12: fatal error: 'asm/hwcap.h' file not found
 BROKEN_i386=	fails to compile: ...requires target feature 'sse', but would be inlined into function 'h8' that is compiled without support for 'sse'
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
