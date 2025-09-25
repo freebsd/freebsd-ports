@@ -1,10 +1,7 @@
 PORTNAME=	bstring
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/msteinert/${PORTNAME}/releases/download/v${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/msteinert/bstring/commit/
-PATCHFILES=	251cf825eaf66e04736921330c8e847ffe6d9ee0.patch:-p1
 
 MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	Improved string processing functionality for the C language
