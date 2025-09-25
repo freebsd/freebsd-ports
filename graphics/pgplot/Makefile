@@ -28,6 +28,10 @@ FFLAGS+=	-std=legacy
 SUFFIXES=	flib clib bin
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+# ld.bfd supports neither -z relro nor -z norelro on armv7
+BINUTILS_NO_MAKE_ENV_armv7=    LD
+BINUTILS_NO_MAKE_ENV=  ${BINUTILS_NO_MAKE_ENV_${ARCH}}
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
