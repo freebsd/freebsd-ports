@@ -11,6 +11,8 @@ WWW=		https://github.com/ximion/appstream-generator
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with new devel/appstream
+
 BUILD_DEPENDS=	girtod:lang/gir-to-d \
 		ldc2:lang/ldc \
 		xsltproc:textproc/libxslt \
