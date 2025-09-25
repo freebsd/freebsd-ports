@@ -1,5 +1,5 @@
 PORTNAME=	datovka
-DISTVERSION=	4.26.0
+DISTVERSION=	4.27.0
 CATEGORIES=	mail
 MASTER_SITES=	https://secure.nic.cz/files/datove_schranky/${DISTVERSION}/
 
@@ -10,8 +10,7 @@ WWW=		https://gitlab.nic.cz/datovka/datovka
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	libglvnd>0:graphics/libglvnd \
-		pkgconf:devel/pkgconf
+BUILD_DEPENDS=	libglvnd>0:graphics/libglvnd
 LIB_DEPENDS=	libdatovka.so:devel/libdatovka
 
 USES=		compiler:c++17-lang gl pkgconfig qmake qt:6 ssl tar:xz
