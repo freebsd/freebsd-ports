@@ -1,5 +1,5 @@
 PORTNAME=	php84
-DISTVERSION=	8.4.12
+DISTVERSION=	8.4.13
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -594,6 +594,12 @@ USES+=			pkgconfig
 post-configure:
 	@${BSDMAKE} -C ${WRKSRC} ./jit/ir/ir_fold_hash.h
 	@${BSDMAKE} -C ${WRKSRC} ./jit/ir/ir_emit.lo
+.  endif
+
+.  if ${PHP_MODNAME} == "dom"
+post-patch:
+	@${REINPLACE_CMD} -e 's|ext/dom/lexbor/lexbor/selectors-adapted/selectors.h|lexbor/lexbor/selectors-adapted/selectors.h|g' \
+		${WRKSRC}/lexbor/lexbor/selectors-adapted/selectors.c
 .  endif
 
 .  if ${PHP_MODNAME} == "soap"
