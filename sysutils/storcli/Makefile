@@ -1,8 +1,9 @@
 PORTNAME=	storcli
-DISTVERSION=	7.3404
+DISTVERSION=	7.3503
 CATEGORIES=	sysutils
 MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_nvme_12g_p35/
-DISTNAME=	STORCLI_SAS3.5_P35
+DISTNAME=	STORCLI_SAS3.5_P36
+DIST_SUBDIR=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	SAS MegaRAID FreeBSD StorCLI
@@ -28,10 +29,10 @@ BINSRC=		${WRKSRC}/${DISTNAME}/univ_viva_cli_rel/Unified_storcli_all_os
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
 DOWNLOAD_URL=	https://docs.broadcom.com/docs/${DISTNAME}${EXTRACT_SUFX}
 IGNORE=		you must manually fetch the distribution file \
-		(${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, \
+		(${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, \
 		place it in ${DISTDIR} and then run make again
 .endif
 
@@ -47,6 +48,8 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/storcli64 ${STAGEDIR}${PREFIX}/sbin/storcli
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA}	${BINSRC}/../../MR_SAS_Unified_StorCLI--00${DISTVERSION}.0000.0000.pdf \
 		${BINSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
