@@ -11,6 +11,9 @@ WWW=		http://pysvn.tigris.org/
 LICENSE=	APACHE11
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
+BROKEN=		Fails to build, error: implicit instantiation of undefined template 'std::char_traits<unsigned int>'
+EXPIRATION_DATE=2025-10-31
+
 .if ${WITH_SUBVERSION_VER:U} == LTS
 LIB_DEPENDS=	libsvn_client-1.so:devel/subversion-lts
 .else
