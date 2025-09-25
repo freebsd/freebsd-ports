@@ -1,5 +1,5 @@
 PORTNAME=	zathura
-DISTVERSION=	0.5.12
+DISTVERSION=	0.5.13
 CATEGORIES=	graphics print
 MASTER_SITES=	https://pwmt.org/projects/zathura/download/
 
@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara \
 		libjson-glib-1.0.so:devel/json-glib
 
-USES=		compiler:c17 gettext-runtime gettext-tools gnome meson ninja \
-		pkgconfig sqlite tar:xz
+USES=		compiler:c17 gettext gnome meson pkgconfig sqlite tar:xz
 USE_GNOME=	glib20 gtk30
 MESON_ARGS=	-Dlandlock=disabled \
 		-Dseccomp=disabled \
