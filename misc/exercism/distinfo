@@ -1,6 +1,6 @@
-TIMESTAMP = 1756465787
-SHA256 (exercism-cli-v3.5.7_GH0.tar.gz) = dc8f06d9390a8ff11b24b251644287453e73f0f71eb4277f8fb53dca1825140a
-SIZE (exercism-cli-v3.5.7_GH0.tar.gz) = 81109
+TIMESTAMP = 1758790093
+SHA256 (exercism-cli-v3.5.8_GH0.tar.gz) = 386cee0117c42a0ead45b6f636f96c2fc20cc5f64f802fcda93c7a0778330f3c
+SIZE (exercism-cli-v3.5.8_GH0.tar.gz) = 80824
 SHA256 (blang-semver-v3.5.1_GH0.tar.gz) = 3d9da53f4c2d3169bfa9b25f2f36f301a37556a47259c870881524c643c69c57
 SIZE (blang-semver-v3.5.1_GH0.tar.gz) = 14831
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
