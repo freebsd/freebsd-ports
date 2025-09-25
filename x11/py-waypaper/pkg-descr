@@ -7,8 +7,8 @@ Features
     - Vim keys
     - Support for GIF animations (with swww or mpvpaper)
     - Support for videos (with mpvpaper)
-    - Support for multiple monitors (with swww or swaybg or hyprpaper or mpvpaper)
-    - Works on Wayland (with swww or swaybg or hyprpaper or wallutils or mpvpaper)
+    - Support for multiple monitors (with swww, swaybg, hyprpaper or mpvpaper)
+    - Works on Wayland (with swww, swaybg, hyprpaper, wallutils or mpvpaper)
     - Works on Xorg (with feh or wallutils)
     - Restores wallpaper at launch of your WM
     - Caching for fast loading
