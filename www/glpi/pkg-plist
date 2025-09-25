@@ -1382,6 +1382,8 @@
 %%WWWDIR%%/install/mysql/glpi-10.0.15-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.16-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.17-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.18-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.19-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.2-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.3-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.4-empty.sql
@@ -1639,6 +1641,8 @@
 %%WWWDIR%%/locales/sk_SK.po
 %%WWWDIR%%/locales/sl_SI.mo
 %%WWWDIR%%/locales/sl_SI.po
+%%WWWDIR%%/locales/sq_AL.mo
+%%WWWDIR%%/locales/sq_AL.po
 %%WWWDIR%%/locales/sr_RS.mo
 %%WWWDIR%%/locales/sr_RS.po
 %%WWWDIR%%/locales/sv_SE.mo
@@ -3617,6 +3621,7 @@
 %%WWWDIR%%/templates/components/search/controls.html.twig
 %%WWWDIR%%/templates/components/search/display_data.html.twig
 %%WWWDIR%%/templates/components/search/table.html.twig
+%%WWWDIR%%/templates/components/supplier/info_card.html.twig
 %%WWWDIR%%/templates/components/table.html.twig
 %%WWWDIR%%/templates/components/user/info_card.html.twig
 %%WWWDIR%%/templates/components/user/link_with_tooltip.html.twig
@@ -3762,6 +3767,7 @@
 %%WWWDIR%%/vendor/firebase/php-jwt/src/ExpiredException.php
 %%WWWDIR%%/vendor/firebase/php-jwt/src/JWK.php
 %%WWWDIR%%/vendor/firebase/php-jwt/src/JWT.php
+%%WWWDIR%%/vendor/firebase/php-jwt/src/JWTExceptionWithPayloadInterface.php
 %%WWWDIR%%/vendor/firebase/php-jwt/src/Key.php
 %%WWWDIR%%/vendor/firebase/php-jwt/src/SignatureInvalidException.php
 %%WWWDIR%%/vendor/glpi-project/inventory_format/CHANGELOG.md
@@ -4595,6 +4601,7 @@
 %%WWWDIR%%/vendor/league/oauth2-client/LICENSE
 %%WWWDIR%%/vendor/league/oauth2-client/README.md
 %%WWWDIR%%/vendor/league/oauth2-client/composer.json
+%%WWWDIR%%/vendor/league/oauth2-client/phpunit.xml.dist
 %%WWWDIR%%/vendor/league/oauth2-client/src/Grant/AbstractGrant.php
 %%WWWDIR%%/vendor/league/oauth2-client/src/Grant/AuthorizationCode.php
 %%WWWDIR%%/vendor/league/oauth2-client/src/Grant/ClientCredentials.php
@@ -4613,6 +4620,7 @@
 %%WWWDIR%%/vendor/league/oauth2-client/src/Token/AccessToken.php
 %%WWWDIR%%/vendor/league/oauth2-client/src/Token/AccessTokenInterface.php
 %%WWWDIR%%/vendor/league/oauth2-client/src/Token/ResourceOwnerAccessTokenInterface.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Token/SettableRefreshTokenInterface.php
 %%WWWDIR%%/vendor/league/oauth2-client/src/Tool/ArrayAccessorTrait.php
 %%WWWDIR%%/vendor/league/oauth2-client/src/Tool/BearerAuthorizationTrait.php
 %%WWWDIR%%/vendor/league/oauth2-client/src/Tool/GuardedPropertyTrait.php
@@ -4626,7 +4634,6 @@
 %%WWWDIR%%/vendor/league/oauth2-google/LICENSE
 %%WWWDIR%%/vendor/league/oauth2-google/README.md
 %%WWWDIR%%/vendor/league/oauth2-google/composer.json
-%%WWWDIR%%/vendor/league/oauth2-google/phpunit.xml.dist
 %%WWWDIR%%/vendor/league/oauth2-google/src/Exception/HostedDomainException.php
 %%WWWDIR%%/vendor/league/oauth2-google/src/Provider/Google.php
 %%WWWDIR%%/vendor/league/oauth2-google/src/Provider/GoogleUser.php
@@ -4767,21 +4774,16 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Utils.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/LICENSE
 %%WWWDIR%%/vendor/paragonie/sodium_compat/README.md
-%%WWWDIR%%/vendor/paragonie/sodium_compat/appveyor.yml
-%%WWWDIR%%/vendor/paragonie/sodium_compat/autoload-fast.php
-%%WWWDIR%%/vendor/paragonie/sodium_compat/autoload-pedantic.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/autoload-php7.php
-%%WWWDIR%%/vendor/paragonie/sodium_compat/autoload-phpunit.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/autoload.php
-%%WWWDIR%%/vendor/paragonie/sodium_compat/build-phar.sh
 %%WWWDIR%%/vendor/paragonie/sodium_compat/composer-php52.json
 %%WWWDIR%%/vendor/paragonie/sodium_compat/composer.json
-%%WWWDIR%%/vendor/paragonie/sodium_compat/dist/Makefile
-%%WWWDIR%%/vendor/paragonie/sodium_compat/dist/box.json
 %%WWWDIR%%/vendor/paragonie/sodium_compat/lib/constants.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/lib/namespaced.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/lib/php72compat.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/lib/php72compat_const.php
+%%WWWDIR%%/vendor/paragonie/sodium_compat/lib/php84compat.php
+%%WWWDIR%%/vendor/paragonie/sodium_compat/lib/php84compat_const.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/lib/ristretto255.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/lib/sodium_compat.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/lib/stream-xchacha20.php
@@ -4811,12 +4813,16 @@
 %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced/Core/Xsalsa20.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced/Crypto.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced/File.php
-%%WWWDIR%%/vendor/paragonie/sodium_compat/phpunit.xml.dist
-%%WWWDIR%%/vendor/paragonie/sodium_compat/psalm-above-3.xml
-%%WWWDIR%%/vendor/paragonie/sodium_compat/psalm-below-3.xml
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Compat.php
+%%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/AEGIS/State128L.php
+%%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/AEGIS/State256.php
+%%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/AEGIS128L.php
+%%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/AEGIS256.php
+%%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/AES.php
+%%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/AES/Block.php
+%%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/AES/Expanded.php
+%%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/AES/KeySchedule.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/BLAKE2b.php
-%%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/Base64/Common.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/Base64/Original.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/Base64/UrlSafe.php
 %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/ChaCha20.php
@@ -5329,6 +5335,7 @@
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/IMoveTarget.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/IMultiGet.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/INode.php
+%%WWWDIR%%/vendor/sabre/dav/lib/DAV/INodeByPath.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/IProperties.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/IQuota.php
 %%WWWDIR%%/vendor/sabre/dav/lib/DAV/Locks/Backend/AbstractBackend.php
@@ -5427,7 +5434,6 @@
 %%WWWDIR%%/vendor/sabre/event/lib/WildcardEmitter.php
 %%WWWDIR%%/vendor/sabre/event/lib/WildcardEmitterTrait.php
 %%WWWDIR%%/vendor/sabre/event/lib/coroutine.php
-%%WWWDIR%%/vendor/sabre/event/phpstan.neon
 %%WWWDIR%%/vendor/sabre/http/CHANGELOG.md
 %%WWWDIR%%/vendor/sabre/http/LICENSE
 %%WWWDIR%%/vendor/sabre/http/README.md
@@ -5459,7 +5465,6 @@
 %%WWWDIR%%/vendor/sabre/uri/lib/InvalidUriException.php
 %%WWWDIR%%/vendor/sabre/uri/lib/Version.php
 %%WWWDIR%%/vendor/sabre/uri/lib/functions.php
-%%WWWDIR%%/vendor/sabre/uri/phpstan.neon
 %%WWWDIR%%/vendor/sabre/vobject/LICENSE
 %%WWWDIR%%/vendor/sabre/vobject/README.md
 %%WWWDIR%%/vendor/sabre/vobject/composer.json
@@ -6429,6 +6434,12 @@
 %%WWWDIR%%/vendor/thenetworg/oauth2-azure/src/Provider/Azure.php
 %%WWWDIR%%/vendor/thenetworg/oauth2-azure/src/Provider/AzureResourceOwner.php
 %%WWWDIR%%/vendor/thenetworg/oauth2-azure/src/Token/AccessToken.php
+%%WWWDIR%%/vendor/thenetworg/oauth2-azure/tests/Fakers/B2cTokenFaker.php
+%%WWWDIR%%/vendor/thenetworg/oauth2-azure/tests/Fakers/KeysFaker.php
+%%WWWDIR%%/vendor/thenetworg/oauth2-azure/tests/Helper/AzureHelper.php
+%%WWWDIR%%/vendor/thenetworg/oauth2-azure/tests/Provider/AzureResourceOwnerTest.php
+%%WWWDIR%%/vendor/thenetworg/oauth2-azure/tests/Provider/AzureTest.php
+%%WWWDIR%%/vendor/thenetworg/oauth2-azure/tests/Token/AccessTokenTest.php
 %%WWWDIR%%/vendor/true/punycode/CHANGELOG.md
 %%WWWDIR%%/vendor/true/punycode/LICENSE
 %%WWWDIR%%/vendor/true/punycode/README.md
@@ -6705,7 +6716,7 @@
 %%WWWDIR%%/vendor/webmozart/assert/src/Assert.php
 %%WWWDIR%%/vendor/webmozart/assert/src/InvalidArgumentException.php
 %%WWWDIR%%/vendor/webmozart/assert/src/Mixin.php
-%%WWWDIR%%/version/10.0.18
+%%WWWDIR%%/version/10.0.20
 @dir %%WWWDIR%%/ajax
 @dir %%WWWDIR%%/bin
 @dir %%WWWDIR%%/config
@@ -6955,6 +6966,7 @@
 @dir %%WWWDIR%%/templates/components/kanban
 @dir %%WWWDIR%%/templates/components/kanban/item_panels
 @dir %%WWWDIR%%/templates/components/search
+@dir %%WWWDIR%%/templates/components/supplier
 @dir %%WWWDIR%%/templates/components/user
 @dir %%WWWDIR%%/templates/impact
 @dir %%WWWDIR%%/templates/install
@@ -7123,7 +7135,6 @@
 @dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Test
 @dir %%WWWDIR%%/vendor/paragonie
 @dir %%WWWDIR%%/vendor/paragonie/sodium_compat
-@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/dist
 @dir %%WWWDIR%%/vendor/paragonie/sodium_compat/lib
 @dir %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced
 @dir %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced/Core
@@ -7133,6 +7144,8 @@
 @dir %%WWWDIR%%/vendor/paragonie/sodium_compat/namespaced/Core/Poly1305
 @dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src
 @dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/AEGIS
+@dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/AES
 @dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/Base64
 @dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/ChaCha20
 @dir %%WWWDIR%%/vendor/paragonie/sodium_compat/src/Core/Curve25519
@@ -7437,6 +7450,11 @@
 @dir %%WWWDIR%%/vendor/thenetworg/oauth2-azure/src/Grant
 @dir %%WWWDIR%%/vendor/thenetworg/oauth2-azure/src/Provider
 @dir %%WWWDIR%%/vendor/thenetworg/oauth2-azure/src/Token
+@dir %%WWWDIR%%/vendor/thenetworg/oauth2-azure/tests
+@dir %%WWWDIR%%/vendor/thenetworg/oauth2-azure/tests/Fakers
+@dir %%WWWDIR%%/vendor/thenetworg/oauth2-azure/tests/Helper
+@dir %%WWWDIR%%/vendor/thenetworg/oauth2-azure/tests/Provider
+@dir %%WWWDIR%%/vendor/thenetworg/oauth2-azure/tests/Token
 @dir %%WWWDIR%%/vendor/true
 @dir %%WWWDIR%%/vendor/true/punycode
 @dir %%WWWDIR%%/vendor/true/punycode/src
