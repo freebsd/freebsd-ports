@@ -12,9 +12,7 @@ WWW=		https://surge-synthesizer.github.io/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	error: use of undeclared identifier '__builtin_ia32_packssdw'
-BROKEN_armv6=	emmintrin.h:14:2: error: "This header is only meant to be used on x86 and x64, see https://github.com/surge-synthesizer/surge/issues/6418
-BROKEN_armv7=	emmintrin.h:14:2: error: "This header is only meant to be used on x86 and x64, see https://github.com/surge-synthesizer/surge/issues/6418
+BROKEN_armv7=		fatal error: error in backend: Cannot select: 0x263f6370: v4f32 = froundeven 0x263f4eb0
 BROKEN_powerpc=		compilation fails due to a problem in the clang header, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276794
 BROKEN_powerpc64=	compilation fails due to a problem in the clang header, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276794
 BROKEN_powerpc64le=	compilation fails due to a problem in the clang header, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276794
@@ -57,6 +55,10 @@ GH_TUPLE=	\
 		steinbergmedia:vst3_public_sdk:ced72c00d5c1365a4cca16cdbfb871be2496848b:steinbergmedia_vst3_public_sdk/vst3sdk/public.sdk \
 
 LDFLAGS+=	-lexecinfo
+
+CMAKE_ARGS_aarch64=	-DLINUX_ON_ARM:BOOL=ON
+CMAKE_ARGS_armv7=	-DLINUX_ON_ARM:BOOL=ON
+CMAKE_ARGS+=	${CMAKE_ARGS_${ARCH}}
 
 BINARY_ALIAS=	python=${PYTHON_CMD} # git=false
 
