@@ -1,5 +1,5 @@
 PORTNAME=	glpi
-DISTVERSION=	10.0.18
+DISTVERSION=	10.0.20
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/glpi-project/glpi/releases/download/${DISTVERSION}/
