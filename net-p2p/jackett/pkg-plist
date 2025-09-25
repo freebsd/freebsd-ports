@@ -72,8 +72,6 @@
 %%DATADIR%%/Definitions/aidoruonline.yml
 %%DATADIR%%/Definitions/aither-api.yml
 %%DATADIR%%/Definitions/amigosshare.yml
-%%DATADIR%%/Definitions/anime-time.yml
-%%DATADIR%%/Definitions/anime-timel.yml
 %%DATADIR%%/Definitions/animelayer.yml
 %%DATADIR%%/Definitions/animelovers-api.yml
 %%DATADIR%%/Definitions/animetorrentsro.yml
@@ -180,6 +178,7 @@
 %%DATADIR%%/Definitions/empornium.yml
 %%DATADIR%%/Definitions/empornium2fa.yml
 %%DATADIR%%/Definitions/emuwarez.yml
+%%DATADIR%%/Definitions/esharenet.yml
 %%DATADIR%%/Definitions/estone.yml
 %%DATADIR%%/Definitions/ex-torrenty.yml
 %%DATADIR%%/Definitions/exitorrent-org.yml
@@ -271,7 +270,6 @@
 %%DATADIR%%/Definitions/internetarchive.yml
 %%DATADIR%%/Definitions/isohunt2.yml
 %%DATADIR%%/Definitions/itatorrents.yml
-%%DATADIR%%/Definitions/itorrent.yml
 %%DATADIR%%/Definitions/jme-reunit3d-api.yml
 %%DATADIR%%/Definitions/joyhd.yml
 %%DATADIR%%/Definitions/jpopsuki.yml
@@ -347,6 +345,7 @@
 %%DATADIR%%/Definitions/newstudiol.yml
 %%DATADIR%%/Definitions/nicept.yml
 %%DATADIR%%/Definitions/nipponsei.yml
+%%DATADIR%%/Definitions/nirvana.yml
 %%DATADIR%%/Definitions/noname-club.yml
 %%DATADIR%%/Definitions/noname-clubl.yml
 %%DATADIR%%/Definitions/nordicquality.yml
@@ -383,7 +382,6 @@
 %%DATADIR%%/Definitions/pornolab.yml
 %%DATADIR%%/Definitions/pornotorrent.yml
 %%DATADIR%%/Definitions/pornrips.yml
-%%DATADIR%%/Definitions/pornxlab.yml
 %%DATADIR%%/Definitions/portugas-api.yml
 %%DATADIR%%/Definitions/postman.yml
 %%DATADIR%%/Definitions/postman-api.yml

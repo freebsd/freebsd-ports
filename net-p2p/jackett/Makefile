@@ -1,6 +1,6 @@
 PORTNAME=	jackett
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.59
+DISTVERSION=	0.24.72
 CATEGORIES=	net-p2p
 
 MAINTAINER=	tremere@cainites.net
@@ -36,8 +36,6 @@ DOTNET_CMD=	${SETENV} HOME=${WRKDIR} ${LOCALBASE}/bin/dotnet
 post-patch:
 	${REINPLACE_CMD} "s/0.0.0/${DISTVERSION}/" \
 		${WRKSRC}/src/Jackett.Common/Jackett.Common.csproj
-	${REINPLACE_CMD} "s/net8.0/net9.0/g" \
-		${WRKSRC}/src/Jackett.Server/Jackett.Server.csproj
 
 do-build:
 	cd ${WRKSRC}/src && \

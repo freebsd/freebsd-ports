@@ -32,7 +32,7 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		Microsoft.AspNetCore.Http:2.3.0 \
 		Microsoft.AspNetCore.HttpOverrides:2.3.0 \
 		Microsoft.AspNetCore.JsonPatch:2.3.0 \
-		Microsoft.AspNetCore.JsonPatch:8.0.20 \
+		Microsoft.AspNetCore.JsonPatch:9.0.9 \
 		Microsoft.AspNetCore.Localization:2.3.0 \
 		Microsoft.AspNetCore.Mvc.Abstractions:2.3.0 \
 		Microsoft.AspNetCore.Mvc.ApiExplorer:2.3.0 \
@@ -41,7 +41,7 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		Microsoft.AspNetCore.Mvc.DataAnnotations:2.3.0 \
 		Microsoft.AspNetCore.Mvc.Formatters.Json:2.3.0 \
 		Microsoft.AspNetCore.Mvc.Localization:2.3.0 \
-		Microsoft.AspNetCore.Mvc.NewtonsoftJson:8.0.20 \
+		Microsoft.AspNetCore.Mvc.NewtonsoftJson:9.0.9 \
 		Microsoft.AspNetCore.Mvc.Razor.Extensions:2.3.0 \
 		Microsoft.AspNetCore.Mvc.Razor:2.3.0 \
 		Microsoft.AspNetCore.Mvc.RazorPages:2.3.0 \
@@ -66,7 +66,7 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		Microsoft.AspNetCore.StaticFiles:2.3.0 \
 		Microsoft.AspNetCore.WebUtilities:2.3.0 \
 		Microsoft.AspNetCore:2.3.0 \
-		Microsoft.Bcl.AsyncInterfaces:8.0.0 \
+		Microsoft.Bcl.AsyncInterfaces:9.0.9 \
 		Microsoft.Bcl.TimeProvider:8.0.0 \
 		Microsoft.CodeAnalysis.Analyzers:1.1.0 \
 		Microsoft.CodeAnalysis.Common:2.8.2 \
@@ -78,6 +78,7 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		Microsoft.Extensions.Caching.Abstractions:8.0.0 \
 		Microsoft.Extensions.Caching.Memory:8.0.1 \
 		Microsoft.Extensions.Configuration.Abstractions:8.0.0 \
+		Microsoft.Extensions.Configuration.Abstractions:9.0.9 \
 		Microsoft.Extensions.Configuration.Binder:8.0.2 \
 		Microsoft.Extensions.Configuration.CommandLine:8.0.0 \
 		Microsoft.Extensions.Configuration.EnvironmentVariables:8.0.0 \
@@ -85,6 +86,7 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		Microsoft.Extensions.Configuration.Json:8.0.1 \
 		Microsoft.Extensions.Configuration.UserSecrets:8.0.1 \
 		Microsoft.Extensions.Configuration:8.0.0 \
+		Microsoft.Extensions.Configuration:9.0.9 \
 		Microsoft.Extensions.DependencyInjection.Abstractions:8.0.0 \
 		Microsoft.Extensions.DependencyInjection.Abstractions:8.0.2 \
 		Microsoft.Extensions.DependencyInjection:8.0.0 \
@@ -109,6 +111,7 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		Microsoft.Extensions.Options.ConfigurationExtensions:8.0.0 \
 		Microsoft.Extensions.Options:8.0.2 \
 		Microsoft.Extensions.Primitives:8.0.0 \
+		Microsoft.Extensions.Primitives:9.0.9 \
 		Microsoft.Extensions.WebEncoders:8.0.11 \
 		Microsoft.Net.Http.Headers:2.3.0 \
 		Microsoft.NETCore.Platforms:1.1.0 \
@@ -138,7 +141,7 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		System.Diagnostics.Debug:4.3.0 \
 		System.Diagnostics.DiagnosticSource:7.0.2 \
 		System.Diagnostics.DiagnosticSource:8.0.1 \
-		System.Diagnostics.EventLog:8.0.1 \
+		System.Diagnostics.EventLog:9.0.9 \
 		System.Diagnostics.FileVersionInfo:4.3.0 \
 		System.Diagnostics.StackTrace:4.3.0 \
 		System.Diagnostics.Tools:4.3.0 \
@@ -150,7 +153,7 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		System.IO.FileSystem:4.3.0 \
 		System.IO.Pipelines:4.6.0 \
 		System.IO.Pipelines:5.0.1 \
-		System.IO.Pipelines:8.0.0 \
+		System.IO.Pipelines:9.0.9 \
 		System.IO:4.3.0 \
 		System.Linq.Expressions:4.3.0 \
 		System.Linq:4.3.0 \
@@ -173,16 +176,17 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		System.Security.Cryptography.Cng:5.0.0 \
 		System.Security.Cryptography.Encoding:4.3.0 \
 		System.Security.Cryptography.Primitives:4.3.0 \
-		System.Security.Cryptography.ProtectedData:8.0.0 \
+		System.Security.Cryptography.ProtectedData:9.0.9 \
 		System.Security.Cryptography.X509Certificates:4.3.0 \
 		System.Security.Cryptography.Xml:8.0.2 \
 		System.Security.Principal.Windows:5.0.0 \
-		System.ServiceProcess.ServiceController:8.0.1 \
-		System.Text.Encoding.CodePages:8.0.0 \
+		System.ServiceProcess.ServiceController:9.0.9 \
+		System.Text.Encoding.CodePages:9.0.9 \
 		System.Text.Encoding.Extensions:4.3.0 \
 		System.Text.Encoding:4.3.0 \
 		System.Text.Encodings.Web:8.0.0 \
-		System.Text.Json:8.0.6 \
+		System.Text.Encodings.Web:9.0.9 \
+		System.Text.Json:9.0.9 \
 		System.Threading.Tasks.Extensions:4.5.4 \
 		System.Threading.Tasks.Extensions:4.6.0 \
 		System.Threading.Tasks.Parallel:4.3.0 \
