@@ -1,7 +1,6 @@
 PORTNAME=	xyce
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	7.9.0
-PORTREVISION=	1
+DISTVERSION=	7.10.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -75,5 +74,10 @@ do-test: # one test is known to fail, see https://github.com/Xyce/Xyce/issues/67
 # Xyce build instructions: https://xyce.sandia.gov/documentation-tutorials/building-guide/
 # Xyce regression suite instructions: https://xyce.sandia.gov/documentation-tutorials/running-the-xyce-regression-suite/
 # docs are in https://xyce.sandia.gov/files/xyce/Xyce_Docs-7.5.tar.gz
+
+# tests as of 7.10.0:
+# All Test runs complete - Warning 1 Tests FAILED (CommandLine/command_line.........................................TIME LIMIT[sh])
+#                                  0 Tests EXITED WITH ERROR
+# 				 Total testing time: 159.1m (wall),  8997s (user),   382s (system)
 
 .include <bsd.port.mk>
