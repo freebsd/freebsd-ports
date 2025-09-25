@@ -1,5 +1,5 @@
-TIMESTAMP = 1742500888
-SHA256 (go/databases_prometheus-postgres-exporter/prometheus-postgres-exporter-v0.17.1/v0.17.1.mod) = d4e5283cf7e96aaabff30962deb272e2566fa9cd9bbf8f8de2d0979bcb5e3a84
-SIZE (go/databases_prometheus-postgres-exporter/prometheus-postgres-exporter-v0.17.1/v0.17.1.mod) = 1806
-SHA256 (go/databases_prometheus-postgres-exporter/prometheus-postgres-exporter-v0.17.1/v0.17.1.zip) = d7e49ae1f9488cd3195dee4b99dd39981dc13dd7118aa323029d90dfb8c46cca
-SIZE (go/databases_prometheus-postgres-exporter/prometheus-postgres-exporter-v0.17.1/v0.17.1.zip) = 160921
+TIMESTAMP = 1758831846
+SHA256 (go/databases_prometheus-postgres-exporter/prometheus-postgres-exporter-v0.18.0/v0.18.0.mod) = bb1bfb3b310f64f02f53eb0c8d9a732ea6b14d09348212d8b600049bc2fb9311
+SIZE (go/databases_prometheus-postgres-exporter/prometheus-postgres-exporter-v0.18.0/v0.18.0.mod) = 1814
+SHA256 (go/databases_prometheus-postgres-exporter/prometheus-postgres-exporter-v0.18.0/v0.18.0.zip) = ddc0c2222e335ecb1f2071e3489a7cee3371029153b927af5aec314cf1e9f195
+SIZE (go/databases_prometheus-postgres-exporter/prometheus-postgres-exporter-v0.18.0/v0.18.0.zip) = 169765
