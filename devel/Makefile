@@ -5523,6 +5523,7 @@
     SUBDIR += py-poetry-types
     SUBDIR += py-poetry2setup
     SUBDIR += py-polib
+    SUBDIR += py-pondpond
     SUBDIR += py-pooch
     SUBDIR += py-pop
     SUBDIR += py-pop-config
