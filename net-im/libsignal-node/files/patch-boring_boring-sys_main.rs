@@ -1,5 +1,5 @@
---- ../boring-signal-v4.15.0/boring-sys/build/main.rs.orig	2024-04-27 16:40:34 UTC
-+++ ../boring-signal-v4.15.0/boring-sys/build/main.rs
+--- ../boring-signal-v4.18.0/boring-sys/build/main.rs.orig	2024-04-27 16:40:34 UTC
++++ ../boring-signal-v4.18.0/boring-sys/build/main.rs
 @@ -478,9 +478,9 @@ fn ensure_patches_applied(config: &Config) -> io::Resu
      lock_file.lock()?;
  

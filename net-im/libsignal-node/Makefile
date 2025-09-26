@@ -1,6 +1,6 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.78.3
+DISTVERSION=	0.81.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm
 PKGNAMESUFFIX=	-node
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		npm:www/npm${NODEJS_SUFFIX} \
 		protoc:devel/protobuf
 
-USES=		cargo gmake nodejs:20,build python:build
+USES=		cargo gmake nodejs:22,build python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
 # to get the GH_TUPLE
@@ -43,6 +43,8 @@ MAKE_ENV=	HOME=${WRKDIR} \
 
 MAKE_ENV+=	RUSTC_BOOTSTRAP=aes,polyval
 
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libsignal_node.so
@@ -52,27 +54,28 @@ RUST_ARCH=	${ARCH:S/amd64/x86_64/}
 
 .include <bsd.port.options.mk>
 
-post-patch:
-	${REINPLACE_CMD} "s#python3#${PYTHON_CMD}#" \
-		${WRKSRC}/node/binding.gyp
+#post-patch:
+#	${REINPLACE_CMD} "s#python3#${PYTHON_CMD}#" \
+#		${WRKSRC}/node/binding.gyp
 
 # to get the hash:
-# fetch -o - https://raw.githubusercontent.com/signalapp/libsignal/v0.67.4/Cargo.lock | grep https://github.com/signalapp/boring
+# fetch -o - https://raw.githubusercontent.com/signalapp/libsignal/v0.80.0/Cargo.lock | grep https://github.com/signalapp/boring
+#source = "git+https://github.com/signalapp/boring?tag=signal-v4.18.0#81d4aa19ac6c5af99238ff0bf9328b381ccebcdd"
 post-extract:
-	${MV} ${WRKDIR}/boringssl-44b3df6f03d85c901767250329c571db405122d5/* ${WRKDIR}/boring-signal-v4.15.0/boring-sys/deps/boringssl
-	${MV} ${WRKDIR}/boringssl-853ca1ea1168dff08011e5d42d94609cc0ca2e27/* ${WRKDIR}/boring-signal-v4.15.0/boring-sys/deps/boringssl-fips
+	${MV} ${WRKDIR}/boringssl-44b3df6f03d85c901767250329c571db405122d5/* ${WRKDIR}/boring-signal-v4.18.0/boring-sys/deps/boringssl
+	${MV} ${WRKDIR}/boringssl-853ca1ea1168dff08011e5d42d94609cc0ca2e27/* ${WRKDIR}/boring-signal-v4.18.0/boring-sys/deps/boringssl-fips
 
 do-build:
 	${ECHO_CMD} offline=true >> ${WRKSRC}/.npmrc
 	cd ${WRKSRC}/node && \
 		${SETENV} ${MAKE_ENV} npm install --ignore-optional --nodedir=${LOCALBASE}
 	cd ${WRKSRC}/node && \
-		${SETENV} ${MAKE_ENV} npx node-gyp rebuild --nodedir=${LOCALBASE}
+		${SETENV} ${MAKE_ENV} npm run build --nodedir=${LOCALBASE}
 	cd ${WRKSRC}/node && \
 		${SETENV} ${MAKE_ENV} npm run tsc
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/node/build/Release/obj.target/libsignal_client_freebsd_${NODE_ARCH}.node/geni/rust/${RUST_ARCH}-unknown-freebsd/release/libsignal_node.so \
+	${INSTALL_LIB} ${WRKSRC}/target/release/libsignal_node.so \
 		${STAGEDIR}${PREFIX}/lib/
 
 create-caches-tarball:
