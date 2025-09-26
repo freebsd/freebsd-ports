@@ -1,11 +1,19 @@
 PORTNAME=	nomad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.3
-PORTREVISION=	5
+DISTVERSION=	1.9.6
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/nomad/${DISTVERSIONFULL}/
 DISTFILES=	go.mod \
 		api/go.mod
+
+# Patches with fixes:
+# - Fix default client retry configuration
+# - Allow disabling "wait" again
+# - Fix runaway render loop in consul-template
+PATCH_SITES=	https://github.com/hashicorp/${PORTNAME}/commit/
+PATCHFILES+=	7b89c0ee28b17a742b97ecd9c6601ba7839748cb.diff:-p1 \
+		590b085246c58bb233b2c1a59b3f22a0bf2e2bd4.diff:-p1 \
+		37fb418a160a380ee20dc19ea3eaecf0bbd27e64.diff:-p1
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Cluster manager and scheduler
