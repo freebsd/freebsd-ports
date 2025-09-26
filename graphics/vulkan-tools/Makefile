@@ -1,7 +1,6 @@
 PORTNAME=	vulkan-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.321
-PORTREVISION=	1
+DISTVERSION=	1.4.327
 CATEGORIES=	graphics
 
 MAINTAINER=	atanubiswas484@gmail.com
@@ -9,6 +8,7 @@ COMMENT=	Tools and demos for the Vulkan graphics API
 WWW=		https://github.com/KhronosGroup/Vulkan-Tools
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 		vulkan-headers>0:graphics/vulkan-headers
@@ -19,9 +19,6 @@ GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-Tools
 CMAKE_ARGS=	-DGLSLANG_INSTALL_DIR:PATH="${LOCALBASE}"
 CMAKE_OFF=	BUILD_ICD
-
-PATCH_SITES=	https://github.com/KhronosGroup/Vulkan-Tools/commit/
-PATCHFILES+=	105d6c1fede00c3a9055e5a531ebf3d99bac406e.patch:-p1
 
 OPTIONS_DEFINE=		WAYLAND XCB XLIB
 OPTIONS_DEFAULT=	WAYLAND XCB XLIB
