@@ -1,9 +1,9 @@
-TIMESTAMP = 1757678731
-SHA256 (signal-desktop-7.70.0-npm-cache.tar.gz) = 598f56df247805136d2016123466a2ffd099fa4929b4298db0fd0158ea381400
-SIZE (signal-desktop-7.70.0-npm-cache.tar.gz) = 998244014
+TIMESTAMP = 1758877230
+SHA256 (signal-desktop-7.72.1-npm-cache.tar.gz) = f3731026fbe8f0bb2dc4c906774009b9254c6041205ae0bb603b171a8092daac
+SIZE (signal-desktop-7.72.1-npm-cache.tar.gz) = 999831425
 SHA256 (freebsd-arm64-0.24.0.tgz) = c09c0acf0e892cf3aa54b61aa02d447a9ecf00a9d7f0e6165e81f208d25d7de0
 SIZE (freebsd-arm64-0.24.0.tgz) = 3970551
 SHA256 (freebsd-x64-0.24.0.tgz) = f2562d5c4b5d48f832c73f30dc6155adc505b5a296081ddae48b517f2e3d6b42
 SIZE (freebsd-x64-0.24.0.tgz) = 4318529
-SHA256 (signalapp-Signal-Desktop-v7.70.0_GH0.tar.gz) = 33a72160870fa4f2feeb959ba4ab4c9ea20b133f292759b9b7f1c1ee96e62258
-SIZE (signalapp-Signal-Desktop-v7.70.0_GH0.tar.gz) = 46146500
+SHA256 (signalapp-Signal-Desktop-v7.72.1_GH0.tar.gz) = bbbff7d2027589664e1a4cb519697b8e8da072fb9e8221800a21c1f6306e654b
+SIZE (signalapp-Signal-Desktop-v7.72.1_GH0.tar.gz) = 46149922
