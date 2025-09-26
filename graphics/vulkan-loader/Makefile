@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-loader
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.321
+DISTVERSION=	1.4.327
 CATEGORIES=	graphics devel
 
 MAINTAINER=	atanubiswas484@gmail.com
@@ -8,6 +8,7 @@ COMMENT=	Driver loader for the Vulkan graphics API
 WWW=		https://github.com/KhronosGroup/Vulkan-Loader
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 
