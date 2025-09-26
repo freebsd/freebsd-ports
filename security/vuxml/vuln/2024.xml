@@ -5885,7 +5885,7 @@ All of these are related to the CometVisu add-on for openHAB - if you are a user
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>The Vaultwarden Team reports:</p>
 	<blockquote cite="https://github.com/dani-garcia/vaultwarden/releases/tag/1.32.0">
 	  <p>This release has several CVE Reports fixed and we recommend
 	    everybody to update to the latest version as soon as possible.</p>
@@ -13486,7 +13486,7 @@ All of these are related to the CometVisu add-on for openHAB - if you are a user
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>The OpenSSL Team reports:</p>
 	<blockquote cite="https://www.openssl.org/news/secadv/20240109.txt">
 	  <p>The POLY1305 MAC (message authentication code) implementation
 	    contains a bug that might corrupt the internal state of applications running

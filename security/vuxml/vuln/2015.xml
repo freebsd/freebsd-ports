@@ -17642,7 +17642,7 @@
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>MIT krb5 Security Advisory 2015-001 reports:</p>
 	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2015-001.txt">
 	  <p>CVE-2014-5352: In the MIT krb5 libgssapi_krb5 library, after
 	     gss_process_context_token() is used to process a valid context

@@ -8873,7 +8873,7 @@ In limited circumstances it was possible for users to authenticate using variati
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>GitLab Team reports:</p>
 	<blockquote cite="https://about.gitlab.com/releases/2021/04/14/security-release-gitlab-13-10-3-released/">
 	  <p>Remote code execution when uploading specially crafted image files</p>
 	  <p>Update Rexml</p>
@@ -11170,7 +11170,7 @@ raptor_xml_writer_start_element_common.</p>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>The oauth2-proxy Team reports:</p>
 	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2021-21291">
 	  <p>In OAuth2 Proxy before version 7.0.0, for users that use the
 	     whitelist domain feature, a domain that ended in a similar way to
@@ -12044,7 +12044,7 @@ raptor_xml_writer_start_element_common.</p>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>NVD reports:</p>
 	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2020-15900">
 	  <p>A memory corruption issue was found in Artifex
 	  Ghostscript 9.50 and 9.52. Use of a non-standard
@@ -12123,7 +12123,7 @@ raptor_xml_writer_start_element_common.</p>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>The GitLab Team reports:</p>
 	<blockquote cite="https://about.gitlab.com/releases/2021/01/14/critical-security-release-gitlab-13-7-4-released/">
 	  <p>Ability to steal a user's API access token through GitLab Pages</p>
 	</blockquote>

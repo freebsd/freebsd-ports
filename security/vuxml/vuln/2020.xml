@@ -13152,7 +13152,7 @@ whitespace)
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>The GitLab Team reports:</p>
 	<blockquote cite="https://about.gitlab.com/blog/2020/01/02/security-release-gitlab-12-6-2-released/">
 	  <p>Group Maintainers Can Update/Delete Group Runners Using API</p>
 	  <p>GraphQL Queries Can Hang the Application</p>

@@ -1852,7 +1852,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>The OpenSSL team reports:</p>
 	<blockquote cite="https://www.openssl.org/news/secadv/20231024.txt">
 	  <p>Moderate severity: A bug has been identified in the processing
 	    of key and initialisation vector (IV) lengths. This can lead to
@@ -5529,7 +5529,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>The MIT krb5 Team reports:</p>
 	<blockquote cite="https://github.com/krb5/krb5/commit/88a1701b423c13991a8064feeb26952d3641d840">
 	  <p>When issuing a ticket for a TGS renew or validate request, copy
 	     only the server field from the outer part of the header ticket
