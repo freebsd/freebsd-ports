@@ -1,3 +1,41 @@
+  <vuln vid="3bf134f4-942d-11f0-95de-0800276af896">
+    <topic>libudisks -- Udisks: out-of-bounds read in udisks daemon</topic>
+    <affects>
+      <package>
+	<name>libudisks</name>
+	<range><lt>2.10.2</lt></range>
+	<range><ge>2.10.90</ge><lt>2.10.91</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secalert@redhat.com reports:</p>
+	<blockquote cite="https://access.redhat.com/errata/RHSA-2025:15017">
+	  <p>A flaw was found in the Udisks daemon, where it allows unprivileged
+	users to create loop devices using the D-BUS system.  This is
+	achieved via the loop device handler, which handles requests sent
+	through the D-BUS interface.  As two of the parameters of this
+	handle, it receives the file descriptor list and index specifying
+	the file where the loop device should be backed.  The function
+	itself validates the index value to ensure it isn&apos;t bigger
+	than the maximum value allowed.  However, it fails to validate the
+	lower bound, allowing the index parameter to be a negative value.
+	Under these circumstances, an attacker can cause the UDisks daemon
+	to crash or perform a local privilege escalation by gaining access
+	to files owned by privileged users.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-8067</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-8067</url>
+    </references>
+    <dates>
+      <discovery>2025-08-28</discovery>
+      <entry>2025-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="32bdeb94-9958-11f0-b6e2-6805ca2fa271">
     <topic>quiche -- Infinite loop triggered by connection ID retirement</topic>
     <affects>
