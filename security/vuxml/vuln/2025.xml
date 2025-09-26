@@ -9581,7 +9581,7 @@
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>The NGINX Unit team reports:</p>
 	<blockquote cite="https://mailman.nginx.org/pipermail/unit/2025-March/QVYLJKLBIDWOJ7OLYGT27VUWH7RGBRQM.html">
 	  <p>Unit 1.34.2 fixes two issues in the Java language module websocket code.</p>
 	    <ol>
