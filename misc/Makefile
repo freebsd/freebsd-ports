@@ -49,6 +49,7 @@
     SUBDIR += chmlib
     SUBDIR += chrono
     SUBDIR += cinnamon-translations
+    SUBDIR += claude-code
     SUBDIR += cldr-emoji-annotation
     SUBDIR += clex
     SUBDIR += clifm
