@@ -9,13 +9,6 @@ WWW=		https://www.matroska.org/downloads/mkclean.html
 
 LICENSE=	BSD3CLAUSE
 
-# These may work better now with cmake.
-BROKEN_aarch64=	does not install: arm-none-linux-gnueabi-gcc: Command not found
-BROKEN_armv6=	does not install: arm-none-linux-gnueabi-gcc: Command not found
-BROKEN_armv7=	does not install: arm-none-linux-gnueabi-gcc: Command not found
-BROKEN_mips64=	does not install: mipsel-linux-gcc: Command not found
-BROKEN_riscv64=	does not compile: cc: invalid arch name 'i486', string must begin with rv32{i,e,g} or rv64{i,g}
-
 USES=		cmake compiler:c++11-lang cpe iconv localbase:ldflags
 
 CPE_VENDOR=	matroska
