@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsignal_sqlcipher_extension.a:devel/signal-sqlcipher-extension \
 		npm:www/npm${NODEJS_SUFFIX}
 
-USES=		nodejs:20,build
+USES=		nodejs:22,build
 
 PLIST_FILES=	lib/node_sqlcipher.node
 
