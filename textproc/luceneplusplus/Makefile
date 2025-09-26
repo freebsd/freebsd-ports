@@ -1,6 +1,6 @@
 PORTNAME=	lucene++
 PORTVERSION=	3.0.9
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	rel_
 CATEGORIES=	textproc
 
@@ -15,7 +15,7 @@ PATCHFILES+=	e6a376836e5c891577eae6369263152106b9bc02.patch:-p1
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LGPL.license
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	luceneplusplus
@@ -34,5 +34,7 @@ post-patch:
 		${WRKSRC}/src/test/CMakeLists.txt
 	${REINPLACE_CMD} 's,LIB_DESTINATION}/pkgconfig,CMAKE_INSTALL_LIBDIR}/pkgconfig,' \
 		${WRKSRC}/src/config/core/CMakeLists.txt
+	${FIND} ${WRKSRC} -name CMakeLists.txt | ${XARGS} \
+		${REINPLACE_CMD} -e '/Boost::system/d'
 
 .include <bsd.port.post.mk>
