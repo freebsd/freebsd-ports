@@ -1,5 +1,5 @@
 PORTNAME=	imapsync
-PORTVERSION=	2.290
+PORTVERSION=	2.314
 CATEGORIES=	mail perl5
 MASTER_SITES=	https://imapsync.lamiral.info/dist/
 
