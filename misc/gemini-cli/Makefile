@@ -1,10 +1,9 @@
 PORTNAME=	gemini-cli
 DISTVERSION=	0.6.1
 CATEGORIES=	misc # machine-learning
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Google gemini api for terminal (CLI)
+COMMENT=	Google Gemini api for terminal (CLI)
 WWW=		https://google-gemini.github.io/gemini-cli/ \
 		https://github.com/google-gemini/gemini-cli
 
