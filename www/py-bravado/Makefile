@@ -1,6 +1,5 @@
 PORTNAME=	bravado
-DISTVERSION=	11.1.0
-PORTREVISION=	1
+DISTVERSION=	12.0.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bravado-core>=5.16.1:www/py-bravado-core@${P
 		${PYTHON_PKGNAMEPREFIX}monotonic>0:devel/py-monotonic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.17:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR}
