@@ -87,7 +87,8 @@
     <affects>
       <package>
 	<name>dnsdist</name>
-	<range><lt>2.0.1</lt></range>
+	<range><lt>1.9.11</lt></range>
+	<range><ge>2.0.0</ge><lt>2.0.1</lt></range>
       </package>
     </affects>
     <description>
@@ -110,6 +111,7 @@
     <dates>
       <discovery>2025-09-18</discovery>
       <entry>2025-09-24</entry>
+      <modified>2025-09-26</modified>
     </dates>
   </vuln>
 
