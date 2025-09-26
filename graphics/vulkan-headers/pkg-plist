@@ -13,7 +13,6 @@ include/vk_video/vulkan_video_codecs_common.h
 include/vulkan/vk_icd.h
 include/vulkan/vk_layer.h
 include/vulkan/vk_platform.h
-include/vulkan/vulkan.cppm
 include/vulkan/vulkan.h
 include/vulkan/vulkan.hpp
 include/vulkan/vulkan_android.h
@@ -40,7 +39,6 @@ include/vulkan/vulkan_static_assertions.hpp
 include/vulkan/vulkan_structs.hpp
 include/vulkan/vulkan_to_string.hpp
 include/vulkan/vulkan_vi.h
-include/vulkan/vulkan_video.cppm
 include/vulkan/vulkan_video.hpp
 include/vulkan/vulkan_wayland.h
 include/vulkan/vulkan_win32.h
