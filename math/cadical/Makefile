@@ -5,7 +5,8 @@ CATEGORIES=	math devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple CDCL satisfiability solver
-WWW=		http://fmv.jku.at/cadical/
+WWW=		https://fmv.jku.at/cadical/ \
+		https://github.com/arminbiere/cadical
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
