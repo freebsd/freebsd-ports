@@ -7,6 +7,7 @@ bin/promtool
 %%PORTDOCS%%%%DOCSDIR%%/configuration/configuration.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/https.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/index.md
+%%PORTDOCS%%%%DOCSDIR%%/configuration/promtool.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/recording_rules.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/template_examples.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/template_reference.md
