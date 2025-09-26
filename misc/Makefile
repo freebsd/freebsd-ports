@@ -158,6 +158,7 @@
     SUBDIR += g810-led
     SUBDIR += gedkeeper
     SUBDIR += geekcode
+    SUBDIR += gemini-cli
     SUBDIR += getopt
     SUBDIR += ggml
     SUBDIR += gimp-help-en
