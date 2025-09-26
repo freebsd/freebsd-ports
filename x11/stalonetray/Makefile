@@ -1,27 +1,25 @@
 PORTNAME=	stalonetray
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.5
-PORTREVISION=	1
+DISTVERSION=	0.9.0
 CATEGORIES=	x11
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	STAnd-aLONE system tray
-WWW=		https://kolbusa.github.io/stalonetray/
+WWW=		https://d3adb5.github.io/stalonetray/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 		libxslt>0:textproc/libxslt
 
 USES=		autoreconf gmake xorg
 USE_GITHUB=	yes
-GH_ACCOUNT=	kolbusa
-USE_XORG=	sm ice x11 xpm
+GH_ACCOUNT=	d3adb5
+USE_XORG=	ice sm x11 xpm
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=	--disable-native-kde \
-		--disable-debug
+CONFIGURE_ARGS=	--disable-debug \
+		--disable-native-kde
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
