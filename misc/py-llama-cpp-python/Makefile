@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp-python
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
+DISTVERSION=	0.3.16
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +12,7 @@ WWW=		https://llama-cpp-python.readthedocs.io/en/latest/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-build-core>0:devel/py-scikit-build-core@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0.9.2:devel/py-scikit-build-core@${PY_FLAVOR} \
 		cmake:devel/cmake-core
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}diskcache>=5.6.1:devel/py-diskcache@${PY_FLAVOR} \
@@ -34,7 +34,7 @@ USE_PYTHON=	pep517 autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	abetlen
-GH_TUPLE=	ggerganov:llama.cpp:74d73dc:cpp/vendor/llama.cpp
+GH_TUPLE=	ggerganov:llama.cpp:b6598:cpp/vendor/llama.cpp
 
 SHEBANG_GLOB=	*.py
 
