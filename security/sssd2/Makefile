@@ -1,6 +1,6 @@
 PORTNAME=	sssd
 PORTVERSION=	2.9.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 PKGNAMESUFFIX=	2
 
@@ -30,7 +30,7 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libinotify.so:devel/libinotify \
 		libjansson.so:devel/jansson \
 		libjose.so:net/jose \
-		libldb.so:${SAMBA_LDB_PORT} \
+		libldb.so:${SAMBA_LDB_PORT:U${SAMBA_PORT}} \
 		libndr-krb5pac.so:${SAMBA_PORT} \
 		libndr-nbt.so:${SAMBA_PORT} \
 		libndr-standard.so:${SAMBA_PORT} \
