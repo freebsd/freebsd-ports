@@ -13,7 +13,7 @@
 %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.DotNetAppHost.%%FULL_DOTNETVERSION%%.nupkg
 %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.ILAsm.%%FULL_DOTNETVERSION%%.nupkg
 %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.ILDAsm.%%FULL_DOTNETVERSION%%.nupkg
-@comment %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.TestHost.%%FULL_DOTNETVERSION%%%%LIBPACKSUFFIX%%.nupkg
+@comment %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.TestHost.%%FULL_DOTNETVERSION%%-servicing.25419.16.nupkg
 %%DATADIR%%/metadata/workloads/%%MANIFESTSUFFIX%%/userlocal
 %%DATADIR%%/packs/Microsoft.AspNetCore.App.Ref/%%FULL_DOTNETVERSION%%/analyzers/dotnet/cs/Microsoft.AspNetCore.App.Analyzers.dll
 %%DATADIR%%/packs/Microsoft.AspNetCore.App.Ref/%%FULL_DOTNETVERSION%%/analyzers/dotnet/cs/Microsoft.AspNetCore.App.CodeFixes.dll
@@ -4573,5 +4573,5 @@
 %%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.common.itemtemplates.%%SDKVERSION%%.nupkg
 %%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.common.projecttemplates.%%DOTNETVERSION%%.%%SDKVERSION%%.nupkg
 %%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.test.projecttemplates.%%DOTNETVERSION%%.1.1.0-rtm.25262.1.nupkg
-%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.web.itemtemplates.%%DOTNETVERSION%%.%%FULL_DOTNETVERSION%%.nupkg
-%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.web.projecttemplates.%%DOTNETVERSION%%.%%FULL_DOTNETVERSION%%.nupkg
+%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.web.itemtemplates.%%FULL_DOTNETVERSION%%.0.9.nupkg
+%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.web.projecttemplates.%%FULL_DOTNETVERSION%%.0.9.nupkg
