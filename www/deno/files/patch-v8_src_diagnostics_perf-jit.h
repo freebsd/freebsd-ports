@@ -1,11 +1,12 @@
---- cargo-crates/v8-135.1.0/v8/src/diagnostics/perf-jit.h.orig
-+++ cargo-crates/v8-135.1.0/v8/src/diagnostics/perf-jit.h
-@@ -31,7 +31,7 @@
+--- cargo-crates/v8-137.2.1/v8/src/diagnostics/perf-jit.h.orig
++++ cargo-crates/v8-137.2.1/v8/src/diagnostics/perf-jit.h
+@@ -30,8 +30,7 @@
+ 
  #include "include/v8config.h"
  
- // {LinuxPerfJitLogger} is only implemented on Linux.
--#if V8_OS_LINUX
-+#if defined(V8_OS_LINUX) || defined(V8_OS_BSD)
+-// {PerfJitLogger} is only implemented on Linux & Darwin.
+-#if V8_OS_LINUX || V8_OS_DARWIN
++#if 1
  
  #include "src/logging/log.h"
  

@@ -1,5 +1,5 @@
---- cargo-crates/v8-135.1.0/build/config/sysroot.gni.orig
-+++ cargo-crates/v8-135.1.0/build/config/sysroot.gni
+--- cargo-crates/v8-137.2.1/build/config/sysroot.gni.orig
++++ cargo-crates/v8-137.2.1/build/config/sysroot.gni
 @@ -20,9 +20,11 @@ declare_args() {
    # Controls default is_linux sysroot. If set to true, and sysroot
    # is empty, default sysroot is calculated.

@@ -1,27 +1,29 @@
 --- ext/os/lib.rs.orig	2023-01-13 13:12:37 UTC
 +++ ext/os/lib.rs
-@@ -3,6 +3,7 @@
+@@ -4,6 +4,7 @@ use std::env;
  use std::collections::HashMap;
  use std::collections::HashSet;
  use std::env;
 +use std::path::PathBuf;
+ use std::sync::Arc;
  use std::sync::atomic::AtomicI32;
  use std::sync::atomic::Ordering;
- use std::sync::Arc;
-@@ -155,7 +156,8 @@ pub enum OsError {
- #[op2(stack_trace)]
+@@ -112,7 +113,8 @@ fn op_exec_path() -> Result<String, OsError> {
+ #[op2]
  #[string]
- fn op_exec_path(state: &mut OpState) -> Result<String, OsError> {
+ fn op_exec_path() -> Result<String, OsError> {
 -  let current_exe = env::current_exe().unwrap();
-+  let current_exe
-+    = env::current_exe().unwrap_or_else(|_| PathBuf::from("LOCALBASE/bin/deno"));
-   state
-     .borrow_mut::<PermissionsContainer>()
-     .check_read_blind(&current_exe, "exec_path", "Deno.execPath()")?;
-@@ -668,6 +668,46 @@ fn rss() -> usize {
-   }
- }
++  let current_exe =
++    env::current_exe().unwrap_or_else(|_| PathBuf::from("PREFIX/bin/deno"));
+   // normalize path so it doesn't include '.' or '..' components
+   let path = normalize_path(Cow::Owned(current_exe));
  
+@@ -660,6 +662,46 @@ fn rss() -> u64 {
+   } else {
+     0
+   }
++}
++
 +#[cfg(target_os = "freebsd")]
 +fn rss() -> usize {
 +  // Uses FreeBSD's KERN_PROC_PID sysctl(2)
@@ -60,8 +62,6 @@
 +  } else {
 +  0
 +  } 
-+}
-+
+ }
+ 
  #[cfg(windows)]
- fn rss() -> usize {
-   use winapi::shared::minwindef::DWORD;

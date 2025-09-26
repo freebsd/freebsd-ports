@@ -1,5 +1,5 @@
---- cargo-crates/v8-135.1.0/build/config/BUILD.gn.orig	2024-07-30 11:12:21 UTC
-+++ cargo-crates/v8-135.1.0/build/config/BUILD.gn
+--- cargo-crates/v8-137.2.1/build/config/BUILD.gn.orig	2024-07-30 11:12:21 UTC
++++ cargo-crates/v8-137.2.1/build/config/BUILD.gn
 @@ -123,7 +123,7 @@ config("debug") {
        # builds, and we have to tell it to turn it off.
        defines += [ "_HAS_ITERATOR_DEBUGGING=0" ]

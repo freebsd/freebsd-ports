@@ -1,5 +1,5 @@
---- cargo-crates/v8-135.1.0/build.rs.orig	2006-07-24 03:21:28 UTC
-+++ cargo-crates/v8-135.1.0/build.rs
+--- cargo-crates/v8-137.2.1/build.rs.orig	2006-07-24 03:21:28 UTC
++++ cargo-crates/v8-137.2.1/build.rs
 @@ -254,16 +254,10 @@ fn build_v8(is_asan: bool) {
    // cross-compilation setup
    if target_arch == "aarch64" {

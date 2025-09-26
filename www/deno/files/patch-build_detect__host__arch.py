@@ -1,5 +1,5 @@
---- cargo-crates/v8-135.1.0/build/detect_host_arch.py.orig	2020-06-26 16:27:54 UTC
-+++ cargo-crates/v8-135.1.0/build/detect_host_arch.py
+--- cargo-crates/v8-137.2.1/build/detect_host_arch.py.orig	2020-06-26 16:27:54 UTC
++++ cargo-crates/v8-137.2.1/build/detect_host_arch.py
 @@ -24,6 +24,8 @@ def HostArch():
      host_arch = 'arm'
    elif host_arch.startswith('aarch64'):

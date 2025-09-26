@@ -1,5 +1,5 @@
---- cargo-crates/v8-135.1.0/v8/BUILD.gn.orig   2021-01-19 00:12:40 UTC
-+++ cargo-crates/v8-135.1.0/v8/BUILD.gn
+--- cargo-crates/v8-137.2.1/v8/BUILD.gn.orig   2021-01-19 00:12:40 UTC
++++ cargo-crates/v8-137.2.1/v8/BUILD.gn
 @@ -974,6 +974,8 @@ external_v8_defines = [
    "V8_TARGET_OS_MACOS",
    "V8_TARGET_OS_WIN",

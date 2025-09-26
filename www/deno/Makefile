@@ -1,7 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.9
-PORTREVISION=	3
+DISTVERSION=	2.4.5
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,7 +14,10 @@ BROKEN_i386=	cargo:warning=c/freebsd.c:31:10: error: conflicting types for 'get_
 
 BUILD_DEPENDS=	gn:devel/gn \
 		protoc:devel/protobuf
-LIB_DEPENDS=	libzstd.so:archivers/zstd
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libffi.so:devel/libffi \
+		liblcms2.so:graphics/lcms2 \
+		libzstd.so:archivers/zstd
 
 USES=		cargo cpe gmake gnome llvm:min=16,build ninja:build pkgconfig:build python:3.9+,build
 
@@ -31,9 +33,11 @@ USE_GNOME=	glib20
 CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO="false" \
 		CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
+		LCMS2_INCLUDE_DIR="${LOCALBASE}/include" \
+		LCMS2_LIB_DIR="${LOCALBASE}/lib" \
 		NINJA=${NINJA_CMD} \
-		V8_FROM_SOURCE=1 \
 		RUSTC_BOOTSTRAP=yes \
+		V8_FROM_SOURCE=1 \
 		GN_ARGS="clang_use_chrome_plugins=false \
 		fatal_linker_warnings=false \
 		is_clang=true \
@@ -42,13 +46,15 @@ CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO="false" \
 		use_udev=false \
 		use_glib=false"
 
+RUSTFLAGS+=	"-L${LOCALBASE}/lib"
+
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/denort
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 DENO_CORE_ICUDATA_V=	0.74.0
-V8_CARGO_V=		135.1.0
+V8_CARGO_V=		137.2.1
 
 V8_DISTDIR=	${CARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR=	${V8_DISTDIR}/v8/tools/builtins-pgo
@@ -58,11 +64,10 @@ CARGO_INSTALL=	no
 WITHOUT_LTO=	yes
 
 post-patch:
-	${REINPLACE_CMD} "s|LOCALBASE|${LOCALBASE}|" \
+	${REINPLACE_CMD} "s|PREFIX|${PREFIX}|" \
 		${WRKSRC}/cli/task_runner.rs \
 		${WRKSRC}/cli/tools/jupyter/install.rs \
-		${WRKSRC}/ext/os/lib.rs
-	${REINPLACE_CMD} "s|PREFIX|${PREFIX}|" \
+		${WRKSRC}/ext/os/lib.rs \
 		${WRKSRC}/tests/unit_node/process_test.ts
 	${REINPLACE_CMD} "s|WRKDIR|${WRKDIR}|" \
 		${WRKSRC}/tests/util/server/src/lib.rs

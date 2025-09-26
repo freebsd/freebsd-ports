@@ -9,16 +9,16 @@ Index: cli/lib/version.rs
  
  pub static DENO_VERSION_INFO: std::sync::LazyLock<DenoVersionInfo> =
    std::sync::LazyLock::new(|| {
-+    #[cfg(not(target_os="openbsd"))]
++    #[cfg(not(target_os="freebsd"))]
      let release_channel = libsui::find_section("denover")
-       .and_then(|buf| std::str::from_utf8(buf).ok())
-       .and_then(|str_| ReleaseChannel::deserialize(str_).ok())
-@@ -35,6 +36,9 @@ pub static DENO_VERSION_INFO: std::sync::LazyLock<Deno
+       .ok()
+       .flatten()
+@@ -37,6 +38,9 @@ pub static DENO_VERSION_INFO: std::sync::LazyLock<Deno
            ReleaseChannel::Stable
          }
        });
 +
-+    #[cfg(target_os="openbsd")]
++    #[cfg(target_os="freebsd")]
 +    let release_channel = ReleaseChannel::Stable;
  
      DenoVersionInfo {

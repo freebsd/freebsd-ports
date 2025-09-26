@@ -1,5 +1,5 @@
---- cargo-crates/v8-135.1.0/build/toolchain/toolchain.gni.orig	2024-03-22 08:19:40 UTC
-+++ cargo-crates/v8-135.1.0/build/toolchain/toolchain.gni
+--- cargo-crates/v8-137.2.1/build/toolchain/toolchain.gni.orig	2024-03-22 08:19:40 UTC
++++ cargo-crates/v8-137.2.1/build/toolchain/toolchain.gni
 @@ -72,7 +72,7 @@ if (host_os == "mac") {
    host_shlib_extension = ".dylib"
  } else if (host_os == "win") {

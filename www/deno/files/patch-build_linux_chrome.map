@@ -1,5 +1,5 @@
---- cargo-crates/v8-135.1.0/build/linux/chrome.map.orig	2021-02-25 20:45:34 UTC
-+++ cargo-crates/v8-135.1.0/build/linux/chrome.map
+--- cargo-crates/v8-137.2.1/build/linux/chrome.map.orig	2021-02-25 20:45:34 UTC
++++ cargo-crates/v8-137.2.1/build/linux/chrome.map
 @@ -20,6 +20,10 @@ global:
    # Program entry point.
    _start;

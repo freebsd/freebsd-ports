@@ -1,5 +1,5 @@
---- cargo-crates/v8-135.1.0/build/toolchain/gcc_toolchain.gni.orig	1970-01-01 01:00:00 UTC
-+++ cargo-crates/v8-135.1.0/build/toolchain/gcc_toolchain.gni
+--- cargo-crates/v8-137.2.1/build/toolchain/gcc_toolchain.gni.orig	1970-01-01 01:00:00 UTC
++++ cargo-crates/v8-137.2.1/build/toolchain/gcc_toolchain.gni
 @@ -56,6 +56,12 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
  }
