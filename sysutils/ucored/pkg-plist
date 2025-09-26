@@ -1,0 +1,11 @@
+@sample etc/devd/ucored.conf.sample
+etc/rc.d/ucored
+etc/syslog.d/ucored.conf
+@sample etc/ucored.conf.sample
+libexec/ucore-shuttle
+sbin/ucored
+%%DATADIR%%/config.lua
+%%DATADIR%%/ucored.lua
+share/man/man8/ucored.8.gz
+%%KMOD%%share/man/man4/ucoredev.4.gz
+%%KMOD%%/%%KMODDIR%%/ucoredev.ko
