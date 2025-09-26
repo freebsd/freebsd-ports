@@ -1,3 +1,63 @@
+  <vuln vid="32bdeb94-9958-11f0-b6e2-6805ca2fa271">
+    <topic>quiche -- Infinite loop triggered by connection ID retirement</topic>
+    <affects>
+      <package>
+	<name>quiche</name>
+	<range><lt>0.24.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Quiche Releases reports:</p>
+	<blockquote cite="https://github.com/cloudflare/quiche/releases/tag/0.24.5">
+	  <p>This update includes 1 security fix:</p>
+	  <ul>
+	    <li>High CVE-2025-7054: Infinite loop triggered by connection ID retirement. Reported by Catena cyber on 2025-08-07.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-7054</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2025-7054</url>
+    </references>
+    <dates>
+      <discovery>2025-08-07</discovery>
+      <entry>2025-09-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7b0cbc73-9955-11f0-b6e2-6805ca2fa271">
+    <topic>quiche -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>quiche</name>
+	<range><lt>0.24.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Quiche Releases reports:</p>
+	<blockquote cite="https://github.com/cloudflare/quiche/releases/tag/0.24.4">
+	  <p>This update includes 2 security fixes:</p>
+	  <ul>
+	    <li>Medium CVE-2025-4820: Incorrect congestion window growth by optimistic ACK. Reported by Louis Navarre on 2025-06-18.</li>
+	    <li>High CVE-2025-4821: Incorrect congestion window growth by invalid ACK ranges. Reported by Louis Navarre on 2025-06-18.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4820</cvename>
+      <cvename>CVE-2025-4821</cvename>
+      <url>https://github.com/cloudflare/quiche/releases/tag/0.24.4</url>
+    </references>
+    <dates>
+      <discovery>2025-06-18</discovery>
+      <entry>2025-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="477fdc04-9aa2-11f0-961b-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
