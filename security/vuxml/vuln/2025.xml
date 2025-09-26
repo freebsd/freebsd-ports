@@ -1,3 +1,47 @@
+  <vuln vid="477fdc04-9aa2-11f0-961b-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.4.0</ge><lt>18.4.1</lt></range>
+	<range><ge>18.3.0</ge><lt>18.3.3</lt></range>
+	<range><ge>11.10.0</ge><lt>18.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/09/25/patch-release-gitlab-18-4-1-released/">
+	  <p>Denial of Service issue when uploading specifically crafted JSON files impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue bypassing query complexity limits impacts GitLab CE/EE</p>
+	  <p>Information disclosure issue in virtual registery configuration for low privileged users impacts GitLab CE/EE</p>
+	  <p>Privilege Escalation issue from within the Developer role impacts GitLab EE</p>
+	  <p>Denial of Service issue in GraphQL API via Unbounded Array Parameters impacts GitLab CE/EE</p>
+	  <p>Improper Authorization issue for Project Maintainers when assigning roles impacts GitLab EE</p>
+	  <p>Denial of Service issue in GraphQL API blobSearch impacts GitLab CE/EE</p>
+	  <p>Incorrect ownership assignment via Move Issue drop-down impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue via string conversion methods impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10858</cvename>
+      <cvename>CVE-2025-8014</cvename>
+      <cvename>CVE-2025-9958</cvename>
+      <cvename>CVE-2025-7691</cvename>
+      <cvename>CVE-2025-10871</cvename>
+      <cvename>CVE-2025-10867</cvename>
+      <cvename>CVE-2025-5069</cvename>
+      <cvename>CVE-2025-10868</cvename>
+      <url>https://about.gitlab.com/releases/2025/09/25/patch-release-gitlab-18-4-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-09-25</discovery>
+      <entry>2025-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e5cf9f44-9a64-11f0-8241-93c889bb8de1">
     <topic>openvpn-devel -- script injection vulnerability from trusted but malicious server</topic>
     <affects>
