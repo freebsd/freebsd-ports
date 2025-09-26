@@ -1,6 +1,6 @@
 PORTNAME=	frp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.64.0
+DISTVERSION=	0.65.0
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/fatedier/frp
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:1.24,modules
 USE_GITHUB=	nodefault
 GH_TUPLE=	golang:net:v0.8.0:net \
 		golang:sys:v0.6.0:sys \
