@@ -78,6 +78,7 @@
     SUBDIR += cpp-mcp
     SUBDIR += cpuid
     SUBDIR += crosti
+    SUBDIR += crush
     SUBDIR += cryptoballot
     SUBDIR += cs
     SUBDIR += cstream
