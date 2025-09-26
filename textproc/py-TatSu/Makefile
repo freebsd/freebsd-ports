@@ -1,6 +1,6 @@
 PORTNAME=	TatSu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.13.1
+DISTVERSION=	5.13.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 
@@ -31,6 +31,6 @@ post-install: # workaround https://github.com/neogeny/TatSu/issues/333
 fix-plist:
 	${REINPLACE_CMD} -e 's|^.*/test/.*$$||' ${TMPPLIST}
 
-# tests as of version 5.13.1: 141 passed, 2 skipped in 71.02s (0:01:11)
+# tests as of version 5.13.2: 141 passed, 2 skipped, 2 warnings in 60.29s (0:01:00)
 
 .include <bsd.port.mk>
