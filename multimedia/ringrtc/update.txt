@@ -2,4 +2,4 @@ To update this port:
 Bump DISTVERSION
 eventually bump WEBRTC_REV (sh net-im/signal-desktop/get_deps.sh)
 eventually update *_REV (sh multimedia/ringrtc/webrtc_fetch.sh)
-eventually update CARGO_CRATES (fetch -qo - https://raw.githubusercontent.com/signalapp/ringrtc/v2.54.1/Cargo.lock | awk -f /usr/ports/Mk/Scripts/cargo-crates.awk | portedit merge -i Makefile.crates)
+eventually update CARGO_CRATES (fetch -qo - https://raw.githubusercontent.com/signalapp/ringrtc/v2.57.1/Cargo.lock | awk -f /usr/ports/Mk/Scripts/cargo-crates.awk | portedit merge -i Makefile.crates)
