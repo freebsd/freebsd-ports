@@ -1,12 +1,12 @@
 PORTNAME=	clion
-DISTVERSION=	2025.1.4
+DISTVERSION=	2025.2.2
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/cpp/ \
-		https://packages.jetbrains.team/files/p/clion/ports/2025.1.4/freebsd/clang/:clang
+		https://packages.jetbrains.team/files/p/clion/ports/2025.2/freebsd/clang/:clang
 PKGNAMEPREFIX=	jetbrains-
 DISTFILES=	CLion-${PORTVERSION}.tar.gz
-DISTFILES_aarch64=	clang-clion2025.1.4-freebsd-aarch64.tar.gz:clang
-DISTFILES_amd64=	clang-clion2025.1.4-freebsd-x86_64.tar.gz:clang
+DISTFILES_aarch64=	clang-clion2025.2-freebsd-aarch64.tar.gz:clang
+DISTFILES_amd64=	clang-clion2025.2-freebsd-x86_64.tar.gz:clang
 DIST_SUBDIR=	jetbrains
 
 .if make(makesum)
@@ -30,8 +30,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	cmake:devel/cmake-core \
 		intellij-fsnotifier>0:java/intellij-fsnotifier \
-		jetbrains-pty4j>=0.13.2:devel/jetbrains-pty4j \
-		jetbrains-restarter>=241.15989.150:devel/jetbrains-restarter \
+		jetbrains-pty4j>=0.13.11:devel/jetbrains-pty4j \
+		jetbrains-restarter>=2025.2.2:devel/jetbrains-restarter \
 		jetbrains-sqlite>=241.15989.150:devel/jetbrains-sqlite \
 		lsof:sysutils/lsof \
 		ninja:devel/ninja
@@ -82,11 +82,12 @@ do-install:
 		${WRKSRC}/lib/pty4j \
 		${WRKSRC}/lib/skiko-awt-runtime-all \
 		${WRKSRC}/plugins/cidr-completionMlRanking-plugin \
-		${WRKSRC}/plugins/clion-cwm-plugin \
 		${WRKSRC}/plugins/clion-radler \
+		${WRKSRC}/plugins/cwm-plugin \
 		${WRKSRC}/plugins/gateway-plugin/lib/remote-dev-workers \
 		${WRKSRC}/plugins/python-ce/helpers/testResources/data/generator3 \
-		${WRKSRC}/plugins/remote-dev-server
+		${WRKSRC}/plugins/remote-dev-server \
+		${WRKSRC}/plugins/station-plugin/toolbox
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
 		"! -name *\.bak ! -name *\.so ! -name *\.dll ! -name *\.dylib ! -name *\.pdb ! -name *\.sh ! -name *\.exe")
