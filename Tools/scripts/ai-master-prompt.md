@@ -30,7 +30,7 @@ MAINTAINER: yuri@FreeBSD.org
   - When USES contains the word 'cargo' this is a Rust based port.
   - When USES contains the word 'cabal' this is a Haskell based port.
 - Port uses GitHub to fetch distfiles if it has the USE_GITHUB=yes line.
-- Every port has a maintainer, maintainer's e-mail address in is the MAINTAINER field.
+- Every port has a maintainer, maintainer's e-mail address is in the MAINTAINER variable.
 
 ### Instructions for ports that use GitHub to fetch distfiles
 - GitHub account name of such ports is in GH_ACCOUNT, or otherwise PORTNAME is used as an account name.
@@ -38,7 +38,7 @@ MAINTAINER: yuri@FreeBSD.org
 - The GitHub git URL is constructed as https://github.com/{GH_ACCOUNT}/{GH_PROJECT}.git
 - The latest released version of a git URL can be determined using the command '../../Tools/scripts/git-get-latest-remote-version.sh {Git-URL} {DISTVERSIONPREFIX}'
 
-### Instructions for Python ports (ports that contain the python element in the USES line)
+### Instructions for Python based ports
 - The latest released version of the software can be determined using the command '../../Tools/scripts/pypi-get-latest-version.sh {python project name}'
 - Dependencies need to be updated when the port is updated. They need to be compared with the dependency requirements set in the project.
 - setuptools build dependency should never be added to BUILD_DEPENDS, and instead the distutils element should be present in USE_PYTHON.
@@ -48,6 +48,6 @@ MAINTAINER: yuri@FreeBSD.org
 - Do not add upper version limits for Python based ports.
 - Always replace exact version comparison in dependencies with >=.
 
-### Instructions for Haskell based ports (ports that contain the python element in the USES line)
+### Instructions for Haskell based ports
 - Directories of all Haskell ports have the prefix "hs-".
 - The latest released version of the software can be determined using the command '../../Tools/scripts/haskell-get-latest-version.sh {haskell project name}'
