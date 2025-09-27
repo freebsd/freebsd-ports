@@ -1,3 +1,3 @@
-TIMESTAMP = 1758029677
-SHA256 (grpcio_tools-1.75.0.tar.gz) = eb5e4025034d92da3c81fd5e3468c33d5ae7571b07a72c385b5ec1746658573f
-SIZE (grpcio_tools-1.75.0.tar.gz) = 5390883
+TIMESTAMP = 1758951895
+SHA256 (grpcio_tools-1.75.1.tar.gz) = bb78960cf3d58941e1fec70cbdaccf255918beed13c34112a6915a6d8facebd1
+SIZE (grpcio_tools-1.75.1.tar.gz) = 5390470
