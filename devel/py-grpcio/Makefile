@@ -1,5 +1,5 @@
 PORTNAME=	grpcio
-PORTVERSION=	1.75.0
+PORTVERSION=	1.75.1
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcares.so:dns/c-ares
 USES=		compiler:c++11-lib localbase:ldflags python ssl
 BROKEN_SSL=	libressl
 BROKEN_SSL_REASON=	use of undeclared identifier 'X509_STORE_set_get_crl'
-USE_PYTHON=	autoplist cython distutils
+USE_PYTHON=	autoplist cython3 distutils
 MAKE_ENV+=	GRPC_PYTHON_BUILD_SYSTEM_CARES=true \
 		GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=true \
 		GRPC_PYTHON_BUILD_SYSTEM_ZLIB=true
