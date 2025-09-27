@@ -2,12 +2,12 @@ This program draws the Solar System's bodies in simulated 3-dimensionality.
 You can view all the planets, their moons and a few spaceships in motion,
 trace them, follow them, orbit them, and even control them.
 
-OpenUniverse was formerly known as Solar System Simulator (Ssystem).  It was
+OpenUniverse was formerly known as Solar System Simulator (Ssystem). It was
 initially released in 1997 with the intent of creating a rotating display of
-the Earth on a mainstream PC.  Ssystem version 1.0 was only aware of the
-planets.  Version 1.2 added moons; and 1.6, more means of movement and
+the Earth on a mainstream PC. Ssystem version 1.0 was only aware of the
+planets. Version 1.2 added moons; and 1.6, more means of movement and
 better textures.
 
 The program has been renamed OpenUniverse 1.0 to underline the concept
 behind its further development: openness for the whole Universe, not just
-the solar system -- open for anyone to use, extend, and change.
+the solar system - open for anyone to use, extend, and change.
