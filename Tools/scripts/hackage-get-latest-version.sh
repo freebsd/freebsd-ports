@@ -44,4 +44,4 @@ curl -H "Accept: application/json" https://hackage.haskell.org/package/$PACKAGE_
 	jq -r 'keys[]' |
 	version_sort |
 	tail -1 ||
-	! echo "failed to find the Python package '$PACKAGE_NAME'"
+	! echo "failed to find the Haskell package '$PACKAGE_NAME'"
