@@ -1,5 +1,5 @@
 PORTNAME=	wifibox-core
-PORTVERSION=	0.15.0
+PORTVERSION=	0.15.1
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
