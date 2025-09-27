@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.41.0
+DISTVERSION=	0.42.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -13,8 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libonig.so:devel/oniguruma
 RUN_DEPENDS=	rg:textproc/ripgrep
+TEST_DEPENDS=	bash:shells/bash
 
-USES=		cargo ssl
+USES=		cargo python:test ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openai
@@ -39,6 +40,13 @@ COMPLETIONS_DESC=	Build and/or install shell completions
 COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/fish/completions/${PORTNAME}.fish \
 			share/zsh/site-functions/_${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}&|' \
+		${BUILD_WRKSRC}/core/src/environment_context.rs \
+		${BUILD_WRKSRC}/core/src/shell.rs
+	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|' \
+		${BUILD_WRKSRC}/core/src/exec_command/session_manager.rs
 
 post-build-COMPLETIONS-on:
 	@${MKDIR} ${WRKSRC}/completions

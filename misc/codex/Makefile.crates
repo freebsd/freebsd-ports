@@ -52,6 +52,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cesu8-1.1.0 \
 		cfg-if-1.0.1 \
 		cfg_aliases-0.1.1 \
+		cfg_aliases-0.2.1 \
 		chrono-0.4.42 \
 		chunked_transfer-1.5.0 \
 		clap-4.5.47 \
@@ -83,9 +84,14 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crunchy-0.2.4 \
 		crypto-common-0.1.6 \
 		ctor-0.1.26 \
+		ctor-0.5.0 \
+		ctor-proc-macro-0.0.6 \
 		darling-0.20.11 \
+		darling-0.21.3 \
 		darling_core-0.20.11 \
+		darling_core-0.21.3 \
 		darling_macro-0.20.11 \
+		darling_macro-0.21.3 \
 		deadpool-0.12.3 \
 		deadpool-runtime-0.1.4 \
 		debugserver-types-0.5.0 \
@@ -109,6 +115,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		doc-comment-0.3.3 \
 		dotenvy-0.15.7 \
 		downcast-rs-1.2.1 \
+		dtor-0.1.0 \
+		dtor-proc-macro-0.0.6 \
 		dupe-0.9.1 \
 		dupe_derive-0.9.1 \
 		dyn-clone-1.0.19 \
@@ -126,6 +134,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		erased-serde-0.3.31 \
 		errno-0.3.13 \
 		error-code-3.3.2 \
+		escargot-0.5.15 \
 		event-listener-5.4.0 \
 		event-listener-strategy-0.5.4 \
 		eventsource-stream-0.2.3 \
@@ -236,6 +245,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		logos-0.12.1 \
 		logos-derive-0.12.1 \
 		lru-0.12.5 \
+		lru-slab-0.1.2 \
 		lsp-types-0.94.1 \
 		maplit-1.0.2 \
 		matchers-0.2.0 \
@@ -253,6 +263,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		new_debug_unreachable-1.0.6 \
 		nibble_vec-0.1.0 \
 		nix-0.28.0 \
+		nix-0.30.1 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
 		nu-ansi-term-0.50.1 \
@@ -309,11 +320,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		predicates-tree-1.0.12 \
 		pretty_assertions-1.4.1 \
 		proc-macro2-1.0.95 \
+		process-wrap-8.2.1 \
 		pulldown-cmark-0.10.3 \
 		pulldown-cmark-escape-0.10.1 \
 		pxfm-0.1.23 \
 		quick-error-2.0.1 \
 		quick-xml-0.38.0 \
+		quinn-0.11.9 \
+		quinn-proto-0.11.13 \
+		quinn-udp-0.5.14 \
 		quote-1.0.40 \
 		r-efi-5.3.0 \
 		radix_trie-0.2.1 \
@@ -332,7 +347,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		regex-syntax-0.8.5 \
 		reqwest-0.12.23 \
 		ring-0.17.14 \
+		rmcp-0.7.0 \
+		rmcp-macros-0.7.0 \
 		rustc-demangle-0.1.25 \
+		rustc-hash-2.1.1 \
 		rustix-0.38.44 \
 		rustix-1.0.8 \
 		rustls-0.23.29 \
@@ -350,6 +368,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		schemars-0.9.0 \
 		schemars-1.0.4 \
 		schemars_derive-0.8.22 \
+		schemars_derive-1.0.4 \
 		scopeguard-1.2.0 \
 		seccompiler-0.5.0 \
 		security-framework-2.11.1 \
@@ -424,6 +443,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tiny-keccak-2.0.2 \
 		tiny_http-0.12.0 \
 		tinystr-0.8.1 \
+		tinyvec-1.10.0 \
+		tinyvec_macros-0.1.1 \
 		tokio-1.47.1 \
 		tokio-macros-2.5.0 \
 		tokio-native-tls-0.3.1 \
@@ -486,7 +507,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wasm-bindgen-shared-0.2.100 \
 		wasm-streams-0.4.2 \
 		web-sys-0.3.77 \
+		web-time-1.1.0 \
 		webbrowser-1.0.5 \
+		webpki-roots-1.0.2 \
 		weezl-0.1.10 \
 		which-6.0.3 \
 		wildmatch-2.5.0 \
@@ -494,11 +517,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.61.3 \
+		windows-collections-0.2.0 \
 		windows-core-0.61.2 \
+		windows-future-0.2.1 \
 		windows-implement-0.60.0 \
 		windows-interface-0.59.1 \
 		windows-link-0.1.3 \
 		windows-link-0.2.0 \
+		windows-numerics-0.2.0 \
 		windows-registry-0.5.3 \
 		windows-result-0.3.4 \
 		windows-strings-0.4.2 \
@@ -510,6 +537,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows-targets-0.53.2 \
+		windows-threading-0.1.0 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
