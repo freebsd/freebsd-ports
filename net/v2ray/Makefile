@@ -1,6 +1,6 @@
 PORTNAME=	v2ray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.38.0
+DISTVERSION=	5.39.0
 CATEGORIES=	net
 
 MAINTAINER=	alven@FreeBSD.org
@@ -32,11 +32,8 @@ GROUPS=		v2ray
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/release/config/config.json \
-		${STAGEDIR}${ETCDIR}/config.json.sample
-	${INSTALL_DATA} ${WRKSRC}/release/config/vpoint_socks_vmess.json \
-		${STAGEDIR}${ETCDIR}/vpoint_socks_vmess.json
-	${INSTALL_DATA} ${WRKSRC}/release/config/vpoint_vmess_freedom.json \
-		${STAGEDIR}${ETCDIR}/vpoint_vmess_freedom.json
+	cd ${WRKSRC}/release/config/ && \
+		${INSTALL_DATA} vpoint*.json ${STAGEDIR}${ETCDIR} && \
+		${INSTALL_DATA}  config.json ${STAGEDIR}${ETCDIR}/config.json.sample
 
 .include <bsd.port.mk>
