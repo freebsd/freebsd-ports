@@ -1,3 +1,3 @@
-TIMESTAMP = 1758525863
-SHA256 (litellm_proxy_extras-0.2.19.tar.gz) = e53592e39eb0b9c3b6cd32f29e6a0a53be51d7ad31dedfb69b58c24073b5b3ec
-SIZE (litellm_proxy_extras-0.2.19.tar.gz) = 15445
+TIMESTAMP = 1758942225
+SHA256 (litellm_proxy_extras-0.2.22.tar.gz) = 59c395bff3353de57d67b7637e8ce0a8a4e096ce55e2ee2df4d9d4bda94f6ef0
+SIZE (litellm_proxy_extras-0.2.22.tar.gz) = 15753
