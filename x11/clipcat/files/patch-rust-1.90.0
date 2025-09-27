@@ -1,0 +1,11 @@
+--- crates/server/src/snippets/mod.rs.orig	2025-09-27 10:08:20 UTC
++++ crates/server/src/snippets/mod.rs
+@@ -39,7 +39,7 @@ async fn load(config: &config::SnippetConfig) -> HashM
+                 clipcat_base::utils::fs::read_dir_recursively_async(&path)
+                     .await
+                     .into_iter()
+-                    .map(|file| (async move { (tokio::fs::read(&file).await.ok(), file) })),
++                    .map(|file| async move { (tokio::fs::read(&file).await.ok(), file) }),
+             )
+             .await
+             .into_iter()
