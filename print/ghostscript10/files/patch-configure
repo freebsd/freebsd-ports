@@ -1,6 +1,15 @@
---- configure.orig	2022-04-04 13:48:49 UTC
+--- configure.orig	2025-09-09 09:36:39 UTC
 +++ configure
-@@ -13383,7 +13383,12 @@ if test "${enable_dynamic+set}" = set; then :
+@@ -5630,7 +5630,7 @@ -Wmissing-declarations -Wmissing-prototypes -Wwrite-st
+ if test x"$GCC" = x"yes"; then
+     cflags_to_try="-Wall -Wstrict-prototypes -Wundef \
+ -Wmissing-declarations -Wmissing-prototypes -Wwrite-strings \
+--fno-strict-aliasing -Werror=declaration-after-statement \
++-fno-strict-aliasing  \
+ -fno-builtin -fno-common -Werror=return-type -Wno-unused-local-typedefs $CFLAGS_LARGEFILE"
+     optflags_to_try="$CC_OPT_FLAGS_TO_TRY"
+     dbgflags_to_try="$CC_DBG_FLAGS_TO_TRY"
+@@ -13615,7 +13615,12 @@ then :
          DBG_CFLAGS="$DYNAMIC_CFLAGS $DBG_CFLAGS"
        ;;
        *bsd*)
@@ -14,3 +23,12 @@
          DYNAMIC_FLAGS="-DGS_DEVS_SHARED -DGS_DEVS_SHARED_DIR=\\\"\$(gssharedir)\\\""
          X11_DEVS=""
          OPT_CFLAGS="$DYNAMIC_CFLAGS $OPT_CFLAGS"
+@@ -15791,7 +15796,7 @@ CFLAGSAUX=$(echo $CFLAGSAUX | sed -e 's/-DGS_NO_FILESY
+ 
+ CFLAGSAUX=$(echo $CFLAGSAUX | sed -e 's/-DGS_NO_FILESYSTEM//g')
+ 
+-GXXFLAGS=$(echo $GCFLAGS | sed -e 's/-Wstrict-prototypes//g' | sed -e 's/-Wmissing-prototypes//g' | sed -e 's/-Werror=declaration-after-statement//g')
++GXXFLAGS=$(echo $GCFLAGS | sed -e 's/-Wstrict-prototypes//g' | sed -e 's/-Wmissing-prototypes//g')
+ 
+ SRCDIR="$srcdir"
+ 
