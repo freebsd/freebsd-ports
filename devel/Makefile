@@ -7923,6 +7923,7 @@
     SUBDIR += rubygem-scientist
     SUBDIR += rubygem-sd_notify
     SUBDIR += rubygem-sdoc
+    SUBDIR += rubygem-semantic_logger
     SUBDIR += rubygem-semantic_puppet
     SUBDIR += rubygem-semantic_range
     SUBDIR += rubygem-semi_semantic
