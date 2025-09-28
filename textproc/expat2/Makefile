@@ -1,5 +1,5 @@
 PORTNAME=	expat
-DISTVERSION=	2.7.2
+DISTVERSION=	2.7.3
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/libexpat/libexpat/releases/download/R_${DISTVERSION:S|.|_|g}/
 
