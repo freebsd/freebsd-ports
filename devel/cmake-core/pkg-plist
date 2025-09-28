@@ -399,7 +399,6 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/module/FindBLAS.rst
 %%DATADIR%%/Help/module/FindBZip2.rst
 %%DATADIR%%/Help/module/FindBacktrace.rst
-%%DATADIR%%/Help/module/FindBoost.rst
 %%DATADIR%%/Help/module/FindBullet.rst
 %%DATADIR%%/Help/module/FindCABLE.rst
 %%DATADIR%%/Help/module/FindCUDA.rst
@@ -2639,7 +2638,6 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/FindBLAS.cmake
 %%DATADIR%%/Modules/FindBZip2.cmake
 %%DATADIR%%/Modules/FindBacktrace.cmake
-%%DATADIR%%/Modules/FindBoost.cmake
 %%DATADIR%%/Modules/FindBullet.cmake
 %%DATADIR%%/Modules/FindCABLE.cmake
 %%DATADIR%%/Modules/FindCUDA.cmake
