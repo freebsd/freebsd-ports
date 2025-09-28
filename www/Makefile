@@ -1873,6 +1873,7 @@
     SUBDIR += py-postorius
     SUBDIR += py-praw
     SUBDIR += py-prawcore
+    SUBDIR += py-primp
     SUBDIR += py-priority
     SUBDIR += py-priority1
     SUBDIR += py-protego

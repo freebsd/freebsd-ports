@@ -1,0 +1,11 @@
+#!/bin/sh
+
+NEW_CMD="/usr/bin/cc"
+
+for a in "$@"; do
+	if [ "$a" != "-lstdc++" ]; then
+		NEW_CMD="$NEW_CMD $a"
+	fi
+done
+
+$NEW_CMD
