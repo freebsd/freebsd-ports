@@ -1,6 +1,5 @@
 PORTNAME=	dwave-preprocessing
-DISTVERSION=	0.6.6
-PORTREVISION=	1
+DISTVERSION=	0.6.10
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.12.6:science/py-dimod@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.12.6:science/py-dimod@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.12.20:science/py-dimod@${PY_FLAVOR} \
 		${PYNUMPY}
 
 USES=		localbase:ldflags python
