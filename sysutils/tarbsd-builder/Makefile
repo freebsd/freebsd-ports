@@ -1,5 +1,5 @@
 PORTNAME=	tarbsd-builder
-DISTVERSION=	25.08.27
+DISTVERSION=	25.09.28
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DIST_SUBDIR=	${DISTNAME}-${DISTVERSION}
@@ -14,42 +14,35 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	Generated images are amd64 only at the moment, aarch64 planned but no others
 
+RUN_DEPENDS=	${LOCALBASE}/sbin/pkg:${PKG_ORIGIN}
+
 USES=		php:flavors,build
 USE_GITHUB=	yes
 GH_ACCOUNT=	pavetheway91
 GH_PROJECT=	tarbsd
-USE_PHP=	filter pcntl phar zlib
+USE_PHP=	ctype filter mbstring pcntl phar zlib
 
 IGNORE_WITH_PHP=	81
 NO_ARCH=	yes
 
-_TARBSD_COMPILE_ARGS=--ports --version-tag=${DISTVERSION}
+_TARBSD_COMPILE_ARGS=	--ports --version-tag=${PORTVERSION} --np-iconv
 
 PLIST_FILES=	bin/tarbsd
 
-OPTIONS_DEFINE=		INTL MBSTRING QEMU_TOOLS ZOPFLI
-OPTIONS_DEFAULT=	MBSTRING ZOPFLI
+OPTIONS_DEFINE=		INTL QEMU_TOOLS ZOPFLI
+OPTIONS_DEFAULT=	ZOPFLI
 
-INTL_DESC=	Intl extension instead of a polyfill
-MBSTRING_DESC=	Mbstring extension instead of a polyfill
+INTL_DESC=		Intl extension instead of a polyfill
 QEMU_TOOLS_DESC=	Export image to hypervisor formats
-ZOPFLI_DESC=	Better kernel compression
+ZOPFLI_DESC=		Better kernel compression
 
 INTL_USE=		PHP=intl
-MBSTRING_USE=		PHP=mbstring
 QEMU_TOOLS_RUN_DEPENDS=	qemu-img:emulators/qemu@tools
 ZOPFLI_RUN_DEPENDS=	zopfli:archivers/zopfli
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMBSTRING}
-_TARBSD_COMPILE_ARGS+=	--np-iconv
-.endif
-
 do-build:
-	${LOCALBASE}/bin/php \
-		-d phar.readonly=0 \
-		${WRKSRC}/stubs/compile.php ${_TARBSD_COMPILE_ARGS}
+	${LOCALBASE}/bin/php -d phar.readonly=0 ${WRKSRC}/stubs/compile.php \
+		${_TARBSD_COMPILE_ARGS}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/out/tarbsd \
