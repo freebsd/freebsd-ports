@@ -407,6 +407,7 @@ share/metainfo/gnucash.appdata.xml
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2021
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2022
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2023
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2024
 %%PORTDOCS%%%%DOCSDIR%%/DOCUMENTERS
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
@@ -885,8 +886,10 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/accounts/zh_TW/acctchrt_spouseinc.gnucash-xea
 %%DATADIR%%/accounts/zh_TW/acctchrt_spouseretire.gnucash-xea
 %%DATADIR%%/accounts/zh_TW/acctchrt_vehicle.gnucash-xea
-%%DATADIR%%/chartjs/Chart.bundle.js
-%%DATADIR%%/chartjs/Chart.bundle.min.js
+%%DATADIR%%/chartjs-2/Chart.bundle.js
+%%DATADIR%%/chartjs-2/Chart.bundle.min.js
+%%DATADIR%%/chartjs-4/chart.js
+%%DATADIR%%/chartjs-4/chart.umd.js
 %%DATADIR%%/checks/deluxe.chk
 %%DATADIR%%/checks/liberty.chk
 %%DATADIR%%/checks/quicken.chk
