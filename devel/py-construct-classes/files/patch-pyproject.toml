@@ -1,0 +1,30 @@
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -5,7 +5,7 @@ readme = "README.rst"
+ authors = [{ name = "matejcik", email = "ja@matejcik.cz" }]
+ requires-python = ">=3.10,<4.0"
+ readme = "README.rst"
+-license = "MIT"
++license = { text = "MIT" }
+ classifiers = [
+     "Development Status :: 2 - Pre-Alpha",
+     "Intended Audience :: Developers",
+@@ -36,16 +36,8 @@ dev = [
+     "typing-extensions>4.2",
+ ]
+ 
+-[build-system]
+-requires = ["uv_build>=0.8.13,<0.9.0"]
+-build-backend = "uv_build"
+-
+-[tool.uv.build-backend]
+-source-include = [
+-    "CHANGELOG.rst",
+-    "LICENSE",
+-    "README.rst",
+-]
++requires = ["setuptools>=68", "wheel"]
++build-backend = "setuptools.build_meta:__legacy__"
+ 
+ [tool.isort]
+ profile = "black"
