@@ -8033,6 +8033,7 @@
     SUBDIR += rubygem-syntax_tree
     SUBDIR += rubygem-sysinfo
     SUBDIR += rubygem-syslog
+    SUBDIR += rubygem-syslog_protocol
     SUBDIR += rubygem-systemu
     SUBDIR += rubygem-table_print
     SUBDIR += rubygem-tdiff
