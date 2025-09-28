@@ -1003,6 +1003,7 @@
     SUBDIR += process-viewer
     SUBDIR += procmap
     SUBDIR += procs
+    SUBDIR += progress
     SUBDIR += pslist
     SUBDIR += psmisc
     SUBDIR += pstack
