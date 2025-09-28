@@ -1,10 +1,9 @@
 PORTNAME=	eggdrop
-DISTVERSION=	1.10.0
-PORTREVISION=	1
+DISTVERSION=	1.10.1
 CATEGORIES=	irc
 MASTER_SITES=	https://github.com/eggheads/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	cpetrik@proton.me
+MAINTAINER=	ek@purplehat.org
 COMMENT=	Popular Internet Relay Chat (IRC) bot
 WWW=		https://www.eggheads.org/
 
@@ -24,8 +23,7 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKSRC}/eggdrop.conf \
-		> ${WRKSRC}/eggdrop.conf.sample
+	${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/eggdrop.conf
 
 post-configure:
 	@(cd ${WRKSRC}; ${MAKE} config)
@@ -33,7 +31,8 @@ post-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/eggdrop ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/man1/eggdrop.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_DATA} ${WRKSRC}/eggdrop.conf.sample ${STAGEDIR}${PREFIX}/etc
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/eggdrop.conf ${STAGEDIR}${ETCDIR}/eggdrop.conf.sample
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eggdrop
 .for f in assoc.so blowfish.so channels.so compress.so console.so ctcp.so dns.so \
 	filesys.so irc.so notes.so seen.so server.so share.so transfer.so \
