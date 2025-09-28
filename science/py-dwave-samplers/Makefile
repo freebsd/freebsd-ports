@@ -1,6 +1,5 @@
 PORTNAME=	dwave-samplers
-DISTVERSION=	1.3.0
-PORTREVISION=	2
+DISTVERSION=	1.6.0
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.12.13:science/py-dimod@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}networkx>=2.6.3:math/py-networkx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}networkx>=3.0:math/py-networkx@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}reno>0:textproc/py-reno@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS}
@@ -20,7 +19,7 @@ RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	cython3 distutils unittest # 2 tests fail, see https://github.com/dwavesystems/dwave-samplers/issues/66
+USE_PYTHON=	cython3 distutils autoplist unittest # 2 tests fail, see https://github.com/dwavesystems/dwave-samplers/issues/66
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dwavesystems
@@ -45,5 +44,7 @@ post-install:
 
 post-test:
 	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/example.py
+
+# tests as of 1.6.0: Ran 522 tests in 102.085s
 
 .include <bsd.port.mk>
