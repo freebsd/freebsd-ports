@@ -105,7 +105,7 @@ USE_CABAL=	Diff-0.5_1 \
 		cardano-crypto-class-2.1.5.0:chap \
 		cardano-crypto-praos-2.1.2.0_2:chap \
 		cardano-crypto-test-1.5.0.2:chap \
-		cardano-crypto-tests-2.1.2.0_2:chap \
+		cardano-crypto-tests-2.1.2.0_1:chap \
 		cardano-crypto-wrapper-1.5.1.3:chap \
 		cardano-data-1.2.3.1:chap \
 		cardano-git-rev-0.2.2.0:chap \
@@ -462,7 +462,7 @@ USE_CABAL=	Diff-0.5_1 \
 		transformers-except-0.1.4_1 \
 		tree-diff-0.3.1_1 \
 		typed-process-0.2.12.0 \
-		typed-protocols-0.1.1.0_3:chap \
+		typed-protocols-0.1.1.0_1:chap \
 		typed-protocols-cborg-0.1.0.4_1:chap \
 		typed-protocols-examples-0.2.0.2:chap \
 		unagi-chan-0.4.1.4 \
