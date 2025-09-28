@@ -1,5 +1,5 @@
 PORTNAME=	langchain
-DISTVERSION=	0.3.26
+DISTVERSION=	0.3.27
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +15,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=1.4:databases/py-sqlalchemy20@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}async_timeout>=4.0.0:devel/py-async_timeout@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-core>=0.3.66:misc/py-langchain-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-text-splitters>=0.3.8:misc/py-langchain-text-splitters@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain-core>=0.3.72:misc/py-langchain-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain-text-splitters>=0.3.9:misc/py-langchain-text-splitters@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langsmith>=0.1.17:misc/py-langsmith@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.7.4:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2:www/py-requests@${PY_FLAVOR} \
