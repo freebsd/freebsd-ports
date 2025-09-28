@@ -1,13 +1,11 @@
---- pyproject.toml.orig	2024-07-15 16:16:29 UTC
+--- pyproject.toml.orig	2025-09-27 21:16:33 UTC
 +++ pyproject.toml
-@@ -1,8 +1,8 @@ requires = [
+@@ -1,7 +1,7 @@ requires = [
  [build-system]
  requires = [
--    "cython==3.0.8",
-+    "cython>=3.0.8",
-     'numpy==1.19.0;python_version<"3.9"',  # C API for numpy.random
--    'oldest-supported-numpy;python_version>="3.9"',
-+    'numpy;python_version>="3.9"',
-     "setuptools>=46.4.0",
-     "setuptools_dso>=2.10,<3.0;platform_system != 'Windows'",  # On Windows we don't distribute a dynamic library
-     "wheel>=0.30.0",
+     "cython~=3.1.0",
+-    "meson-python~=0.18.0",
++    "meson-python",
+ ]
+ build-backend = 'mesonpy'
+ 
