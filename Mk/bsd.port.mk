@@ -1773,6 +1773,7 @@ CFLAGS:=	${CFLAGS:C/ $//}
 .      if defined(_CPUCFLAGS)
 .        if !empty(_CPUCFLAGS)
 CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
+CXXFLAGS:=	${CXXFLAGS:C/${_CPUCFLAGS}//}
 .        endif
 .      endif
 .    endif
