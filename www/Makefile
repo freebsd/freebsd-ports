@@ -1527,6 +1527,7 @@
     SUBDIR += py-cssutils
     SUBDIR += py-daphne
     SUBDIR += py-dash
+    SUBDIR += py-ddgs
     SUBDIR += py-dj-database-url
     SUBDIR += py-dj51-channels
     SUBDIR += py-dj51-channels-redis
