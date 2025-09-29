@@ -17,6 +17,7 @@ GH_TUPLE=	golang:sys:v0.6.0:sys
 
 GO_MODULE=	github.com/muesli/${PORTNAME}
 
+PORTSCOUT=	site:https://github.com/muesli/gitty/releases
 PLIST_FILES=	bin/${PORTNAME}
 
 pre-build:
