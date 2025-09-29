@@ -650,6 +650,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-find-dlg.png
 %%DATADIR%%/readme/wiki/cudatext-find-markers.png
 %%DATADIR%%/readme/wiki/cudatext-findinfiles-intabs.png
+%%DATADIR%%/readme/wiki/cudatext-fmt-menuitems.png
 %%DATADIR%%/readme/wiki/cudatext-fmt-onsave.png
 %%DATADIR%%/readme/wiki/cudatext-fold-comments.png
 %%DATADIR%%/readme/wiki/cudatext-folding-gutter-ctx-menu.png
