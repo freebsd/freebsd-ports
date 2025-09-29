@@ -1,15 +1,15 @@
---- Makefile.am.orig	2020-07-23 09:26:04 UTC
+--- Makefile.am.orig	2025-05-05 08:28:44 UTC
 +++ Makefile.am
-@@ -65,7 +65,7 @@ CHECK_LOCALS =
- EXTRA_DIST =
+@@ -84,7 +84,7 @@ DISTCLEANFILES =
  CLEANFILES =
+ DISTCLEANFILES =
  
 -SUBDIRS = po
-+SUBDIRS = # po
++SUBDIRS = 
  
  RCS_FIND_IGNORE = \( -name SCCS -o -name BitKeeper -o -name .svn -o \
  		-name CVS -o -name .pc -o -name .hg -o -name .git \) -prune -o
-@@ -76,7 +76,6 @@ EXTRA_DIST += \
+@@ -95,7 +95,6 @@ EXTRA_DIST += \
  	.version \
  	autogen.sh \
  	Documentation \
@@ -17,3 +17,11 @@
  	README.licensing
  
  include tools/Makemodule.am
+@@ -120,7 +119,6 @@ include man-common/Makemodule.am
+ include pam_lastlog2/Makemodule.am
+ include bash-completion/Makemodule.am
+ include man-common/Makemodule.am
+-include po-man/Makemodule.am
+ 
+ include Documentation/Makemodule.am
+ include tests/Makemodule.am

@@ -1,6 +1,6 @@
+bin/bits
 %%CAL%%bin/cal
 bin/chrt
-bin/col
 bin/colcrt
 bin/colrm
 bin/column
@@ -17,6 +17,7 @@ bin/rename
 bin/renice
 bin/rev
 bin/scriptreplay
+bin/setpgid
 @comment bin/setsid
 bin/ul
 bin/wall
@@ -34,7 +35,7 @@ lib/libsmartcols.so.1.1.0
 libdata/pkgconfig/fdisk.pc
 libdata/pkgconfig/smartcols.pc
 sbin/cfdisk
-sbin/fdisk
+sbin/fdisk-linux
 sbin/findfs
 sbin/fsck.cramfs
 sbin/fsck.minix
@@ -50,7 +51,6 @@ sbin/wipefs
 %%CAL%%share/bash-completion/completions/cal
 share/bash-completion/completions/cfdisk
 share/bash-completion/completions/chrt
-share/bash-completion/completions/col
 share/bash-completion/completions/colcrt
 share/bash-completion/completions/colrm
 share/bash-completion/completions/column
@@ -76,6 +76,7 @@ share/bash-completion/completions/rename
 share/bash-completion/completions/renice
 share/bash-completion/completions/rev
 share/bash-completion/completions/scriptreplay
+share/bash-completion/completions/setpgid
 @comment share/bash-completion/completions/setsid
 share/bash-completion/completions/sfdisk
 share/bash-completion/completions/swaplabel
@@ -83,9 +84,9 @@ share/bash-completion/completions/ul
 share/bash-completion/completions/wall
 share/bash-completion/completions/whereis
 share/bash-completion/completions/wipefs
+share/man/man1/bits.1.gz
 %%CAL%%share/man/man1/cal.1.gz
 share/man/man1/chrt.1.gz
-share/man/man1/col.1.gz
 share/man/man1/colcrt.1.gz
 share/man/man1/colrm.1.gz
 share/man/man1/column.1.gz
@@ -101,10 +102,12 @@ share/man/man1/rename.1.gz
 share/man/man1/renice.1.gz
 share/man/man1/rev.1.gz
 share/man/man1/scriptreplay.1.gz
+share/man/man1/setpgid.1.gz
 @comment share/man/man1/setsid.1.gz
 share/man/man1/ul.1.gz
 share/man/man1/wall.1.gz
 share/man/man1/whereis.1.gz
+share/man/man5/scols-filter.5.gz
 share/man/man8/cfdisk.8.gz
 share/man/man8/fdisk.8.gz
 share/man/man8/findfs.8.gz
