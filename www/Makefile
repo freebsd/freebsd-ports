@@ -1581,6 +1581,7 @@
     SUBDIR += py-dj52-django-prometheus
     SUBDIR += py-dj52-django-redis
     SUBDIR += py-dj52-django-rich
+    SUBDIR += py-dj52-django-soft-delete
     SUBDIR += py-dj52-django-storages
     SUBDIR += py-dj52-django-stubs-ext
     SUBDIR += py-dj52-django-tables2
