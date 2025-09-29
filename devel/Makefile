@@ -5341,6 +5341,9 @@
     SUBDIR += py-objsize
     SUBDIR += py-oci
     SUBDIR += py-odfpy
+    SUBDIR += py-odoo-addon-openupgrade-framework16
+    SUBDIR += py-odoo-addon-openupgrade-framework17
+    SUBDIR += py-odoo-addon-openupgrade-framework18
     SUBDIR += py-offtrac
     SUBDIR += py-olefile
     SUBDIR += py-omegaconf
