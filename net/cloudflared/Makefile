@@ -1,5 +1,5 @@
 PORTNAME=	cloudflared
-DISTVERSION=	2024.11.1
+DISTVERSION=	2025.8.0
 CATEGORIES=	net www
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		cpe go:1.22,modules
+USES=		cpe go:modules
 USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudflare
