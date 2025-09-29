@@ -31,5 +31,6 @@ git diff HEAD "$@" |
 	grep -v Mk/ |
 	grep -v Tools/ |
 	sed -E 's|diff --git a/||; s| .*||; s|([^/]+/[^/]+).*|\1|' |
+	grep -v '/Makefile$' |
 	sort |
 	uniq
