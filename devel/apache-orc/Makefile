@@ -1,12 +1,11 @@
 PORTNAME=	orc
-DISTVERSION=	2.0.3
-PORTREVISION=	3
+DISTVERSION=	2.2.0
 CATEGORIES=	devel
-MASTER_SITES=	https://dlcdn.apache.org/orc/orc-2.0.3/:orc \
-		https://archive.apache.org/dist/orc/orc-format-1.0.0/:orc_format
+MASTER_SITES=	https://dlcdn.apache.org/orc/orc-2.2.0/:orc \
+		https://archive.apache.org/dist/orc/orc-format-1.1.0/:orc_format
 PKGNAMEPREFIX=	apache-
 DISTFILES=	${PORTNAME}-${DISTVERSION}.tar.gz:orc \
-		orc-format-1.0.0.tar.gz:orc_format
+		orc-format-1.1.0.tar.gz:orc_format
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Smallest, fastest columnar storage for Hadoop workloads
