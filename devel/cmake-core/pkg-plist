@@ -2443,6 +2443,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Compiler/GNU-C-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/GNU-C-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/GNU-C.cmake
+%%DATADIR%%/Modules/Compiler/GNU-CXX-CXXImportStd.cmake
 %%DATADIR%%/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/GNU-CXX-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/GNU-CXX.cmake
