@@ -1,5 +1,6 @@
 PORTNAME=	glslang
 DISTVERSION=	15.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
