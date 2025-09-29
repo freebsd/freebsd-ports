@@ -1,7 +1,10 @@
 PORTNAME=	vkquake
 DISTVERSION=	1.32.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	85ddf2386f15944c26317a763d4044077fc8731f.patch:-p1
 
 MAINTAINER=	seafork@disroot.org
 COMMENT=	Vulkan Quake port based on QuakeSpasm
