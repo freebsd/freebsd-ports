@@ -5,7 +5,7 @@
  
  
 -DIR_PATH = os.path.dirname(os.path.realpath(__file__))
-+DIR_PATH = "/usr/local/share/onedrivegui"
++DIR_PATH = "%%DATADIR%%"
  PROFILES_FILE = os.path.expanduser("~/.config/onedrive-gui/profiles")
  
  

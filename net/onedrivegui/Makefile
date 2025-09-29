@@ -1,5 +1,5 @@
 PORTNAME=	onedrivegui
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net python
 
@@ -31,8 +31,6 @@ SUB_FILES=	onedrivegui.sh
 
 post-patch:
 	${REINPLACE_CMD} -i "" -e "s|%%DATADIR%%|${DATADIR}|g" ${WRKSRC}/src/global_config.py
-	${REINPLACE_CMD} -i "" -e "s|%%PYTHON_CMD%%|${PYTHON_CMD}|g" \
-		-e "s|%%DATADIR%%|${DATADIR}|g" ${WRKSRC}/src/resources/OneDriveGUI.desktop
 	${RM} ${WRKSRC}/src/resources/OneDriveGUI.desktop.orig
 	${RM} ${WRKSRC}/src/global_config.py.orig
 
