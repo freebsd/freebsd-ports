@@ -1,15 +1,16 @@
 PORTNAME=	rmarkdown
-DISTVERSION=	2.29
+DISTVERSION=	2.30
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Dynamic Documents for R
-WWW=		https://cran.r-project.org/web/packages/rmarkdown/
+WWW=		https://cran.r-project.org/package=rmarkdown
 
 LICENSE=	GPLv3
 
-CRAN_DEPENDS=	R-cran-bslib>=0.2.5.1:www/R-cran-bslib \
+RUN_DEPENDS=	hs-pandoc>=1.14:textproc/hs-pandoc \
+		R-cran-bslib>=0.2.5.1:www/R-cran-bslib \
 		R-cran-evaluate>=0.13:devel/R-cran-evaluate \
 		R-cran-fontawesome>=0.5.0:devel/R-cran-fontawesome \
 		R-cran-htmltools>=0.5.1:textproc/R-cran-htmltools \
@@ -20,9 +21,6 @@ CRAN_DEPENDS=	R-cran-bslib>=0.2.5.1:www/R-cran-bslib \
 		R-cran-tinytex>=0.31:print/R-cran-tinytex \
 		R-cran-xfun>=0.36:misc/R-cran-xfun \
 		R-cran-yaml>=2.1.19:textproc/R-cran-yaml
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS} \
-		hs-pandoc>=1.14:textproc/hs-pandoc
 TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat
 
 USES=		cran:auto-plist
