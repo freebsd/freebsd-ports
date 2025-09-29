@@ -1,14 +1,15 @@
-Tinker is a set of small programs for doing general purpose molecular
-modeling calculations. Tools are included for energy minimizations,
-geometry calculations, simulated annealing, molecular dynamics, and
-molecular analysis calculations. Tools for converting coordinate sets
-are also provided.  Tinker employs several force fields and minimization
-techniques.
+Tinker is a comprehensive and versatile molecular modeling software package
+designed for molecular mechanics and dynamics simulations, with specialized
+capabilities for biopolymers. It provides a complete set of tools for
+energy minimizations, geometry calculations, simulated annealing, and
+molecular dynamics.
 
-This port sets the maxatm value to 2500 atoms.  This should be
-sufficient for most molecular systems.  Should you need to work with
-larger systems you can set the maxatm parameter in the sizes.i file
-located in the tinker/source directory and recompile.  Note that if it
-is set too large that tinker programs will abort and core dump.
-
-For more information about Tinker see:
+Tinker supports a wide array of force fields, including Amber, CHARMM,
+OPLS, MMFF94, and advanced polarizable models like AMOEBA. It features
+atomic multipole-based electrostatics with explicit dipole polarizability
+and various continuum solvation treatments. The software offers efficient
+truncated Newton optimization, normal mode vibrational analysis, and
+free energy calculations. It also includes algorithms for conformational
+searches, global optimization, and transition state location. Written in
+Fortran 95, Tinker is a modular and extensible system, widely used in
+computational chemistry and biophysics.
