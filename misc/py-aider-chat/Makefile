@@ -1,6 +1,5 @@
 PORTNAME=	aider_chat
-DISTVERSION=	0.84.0
-PORTREVISION=	1
+DISTVERSION=	0.86.1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +16,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8.0:devel/py-setuptools-sc
 		${PYTHON_PKGNAMEPREFIX}setuptools>=63:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.44:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=1.3:devel/py-arrow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}SoundFile>=0.12:audio/py-SoundFile@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aiosqlite>0:databases/py-aiosqlite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}backoff>=2.2:devel/py-backoff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.12:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}blinker>=1.8:devel/py-blinker@${PY_FLAVOR} \
@@ -55,7 +56,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=1.3:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shtab>0:devel/py-shtab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}socksio>=1<2:net/py-socksio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sounddevice>=0.5.0:audio/py-sounddevice@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}SoundFile>=0.12:audio/py-SoundFile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}streamlit>=1.38:www/py-streamlit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.7.0:textproc/py-tiktoken@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tokenizers>=0.20.0:textproc/py-tokenizers@${PY_FLAVOR} \
