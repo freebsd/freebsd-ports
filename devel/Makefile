@@ -5379,6 +5379,7 @@
     SUBDIR += py-opentelemetry-semantic-conventions
     SUBDIR += py-opentelemetry-util-http
     SUBDIR += py-opentracing
+    SUBDIR += py-openupgradelib
     SUBDIR += py-opster
     SUBDIR += py-optik
     SUBDIR += py-optree
