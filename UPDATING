@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20250918:
+  AFFECTS: users of sysutils/py-mitogen
+  AUTHOR: dch@FreeBSD.org
+
+  Ansible 12 is soft deprecating the ANSIBLE_STRATEGY functionality that
+  mitogen uses to integrate with Ansible. A future version of ansible-core
+  may remove this. See https://github.com/mitogen-hq/mitogen/issues/1278
+
 20250917:
   AFFECTS: users of mail/pflogsumm
   AUTHOR: flo@FreeBSD.org
