@@ -1,6 +1,5 @@
 PORTNAME=	gnome-flashback
-PORTVERSION=	3.56.0
-PORTREVISION=	1
+PORTVERSION=	3.58.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -27,15 +26,13 @@ LIB_DEPENDS=	libgnome-panel.so:x11/gnome-panel \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	xkeyboard-config>0:x11/xkeyboard-config \
 		gnome-session>0:x11/gnome-session \
-		metacity>0:x11-wm/metacity \
+		metacity:x11-wm/metacity \
 		gnome-applets>0:x11/gnome-applets \
-		tecla>0:x11/tecla \
-		alacarte>0:x11/alacarte \
-		gedit>0:editors/gedit \
-		sushi>0:x11-fm/sushi \
-		nautilus>0:x11-fm/nautilus \
-		gnome-terminal>0:x11/gnome-terminal \
-		xdg-user-dirs-gtk>0:x11/xdg-user-dirs-gtk \
+		tecla:x11/tecla \
+		alacarte:x11/alacarte \
+		nautilus:x11-fm/nautilus \
+		gnome-terminal:x11/gnome-terminal \
+		xdg-user-dirs-gtk-update:x11/xdg-user-dirs-gtk \
 		cantarell-fonts>0:x11-fonts/cantarell-fonts \
 		source-code-pro-ttf>0:x11-fonts/source-code-pro-ttf
 
@@ -65,10 +62,14 @@ GLIB_SCHEMAS=	00_gnome-flashback.gschema.override \
 		org.gnome.gnome-flashback.system-indicators.input-sources.gschema.xml
 
 post-extract:
-	${CP} ${FILESDIR}/gf-consolekit-* \
+# Add support for ConsoleKit
+	@${CP} ${FILESDIR}/gf-consolekit-* \
 		${WRKSRC}/dbus/
-	${CP} ${FILESDIR}/org.freedesktop.ConsoleKit* \
+	@${CP} ${FILESDIR}/org.freedesktop.ConsoleKit* \
 		${WRKSRC}/dbus/
+# Re-add XDG autostart .desktop files removed for systemd service
+	@${CP} ${FILESDIR}/*.desktop.in.in \
+		${WRKSRC}/data/autostart/
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${LOCALBASE}|" \

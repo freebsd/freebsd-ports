@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Idle Monitor (GNOME Flashback)
+Exec=@libexecdir@/gnome-flashback-idle-monitor
+AutostartCondition=GSettings org.gnome.gnome-flashback idle-monitor
+OnlyShowIn=GNOME-Flashback;
+NoDisplay=true
+X-GNOME-Autostart-Phase=Initialization
+X-GNOME-Autostart-Notify=true
+X-GNOME-AutoRestart=true

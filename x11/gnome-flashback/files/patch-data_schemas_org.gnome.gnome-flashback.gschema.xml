@@ -1,0 +1,53 @@
+Revert: https://gitlab.gnome.org/GNOME/gnome-flashback/-/commit/5f4aa0d8
+
+From 5f4aa0d89e1f2022ebc9c59d9a2171b00643f847 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Alberts=20Muktup=C4=81vels?= <alberts.muktupavels@gmail.com>
+Date: Sun, 28 Sep 2025 11:45:53 +0300
+Subject: [PATCH] schemas: remove no longer needed settings
+
+These was used to start/stop services by GNOME Session. Related
+services now are started by systemd and these settings are no
+longer used.
+
+https://gitlab.gnome.org/GNOME/gnome-flashback/-/issues/103
+
+--- data/schemas/org.gnome.gnome-flashback.gschema.xml.orig	2025-09-28 09:52:06 UTC
++++ data/schemas/org.gnome.gnome-flashback.gschema.xml
+@@ -17,6 +17,11 @@
+       <description>If set to true, then GNOME Flashback application will be used to automount removable media.</description>
+     </key>
+ 
++    <key name="clipboard" type="b">
++      <default>true</default>
++      <summary>Clipboard</summary>
++    </key>
++
+     <key name="desktop" type="b">
+       <default>true</default>
+       <summary>Desktop</summary>
+@@ -28,6 +33,12 @@
+       <description>If set to true, then GNOME Flashback application will be used to show the end session dialog.</description>
+     </key>
+ 
++    <key name="idle-monitor" type="b">
++      <default>true</default>
++      <summary>Idle monitor</summary>
++      <description>If set to true, then GNOME Flashback application will be used for user activity monitoring.</description>
++    </key>
++
+     <key name="input-settings" type="b">
+       <default>true</default>
+       <summary>Input settings</summary>
+@@ -43,6 +54,12 @@
+       <default>true</default>
+       <summary>Notification daemon</summary>
+       <description>If set to true, then GNOME Flashback application will be used to manage notifications.</description>
++    </key>
++
++    <key name="polkit" type="b">
++      <default>true</default>
++      <summary>Authentication agent for polkit</summary>
++      <description>This is the same authentication agent that was provided by PolicyKit-gnome.</description>
+     </key>
+ 
+     <key name="root-background" type="b">

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Clipboard (GNOME Flashback)
+Exec=@libexecdir@/gnome-flashback-clipboard
+AutostartCondition=GSettings org.gnome.gnome-flashback clipboard
+OnlyShowIn=GNOME-Flashback;
+NoDisplay=true
+X-GNOME-Autostart-Phase=Initialization
+X-GNOME-Autostart-Notify=true
+X-GNOME-AutoRestart=true
