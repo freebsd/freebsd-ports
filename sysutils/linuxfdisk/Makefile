@@ -11,14 +11,14 @@ MAINTAINER=	netch@netch.kiev.ua
 COMMENT=	Fdisk, a partition tables manipulator, from util-linux
 
 DEPRECATED=	This port is way out of date, use devel/util-linux instead
-EXPIRATION_DATE=2025-09-30
+EXPIRATION_DATE=2025-12-31
 
 LICENSE=	GPLv2+
 
 BROKEN_aarch64=	fails to build: error unknown architecture
 
-WRKSRC=		${WRKDIR}/util-linux-${PORTVERSION}/fdisk
 USES=		tar:bzip2
+WRKSRC=		${WRKDIR}/util-linux-${PORTVERSION}/fdisk
 
 pre-patch:
 	@${CP} ${FILESDIR}/linuxfdisk-Makefile ${WRKSRC}/Makefile
