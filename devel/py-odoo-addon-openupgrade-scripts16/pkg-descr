@@ -1,0 +1,5 @@
+odoo-addon-openupgrade-scripts is a critical open-source tool for
+the Odoo ecosystem, specifically designed to automate and manage
+the database migration process between major and minor versions of
+Odoo. It contains a comprehensive collection of analysis and scripts
+that facilitate the upgrade of Odoo SA's official modules.
