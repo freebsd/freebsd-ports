@@ -1,5 +1,3 @@
-bin/fsnotifywait
-bin/fsnotifywatch
 bin/inotifywait
 bin/inotifywatch
 %%STATIC%%bin/inotifywait.static
@@ -13,7 +11,5 @@ lib/libinotifytools.a
 lib/libinotifytools.so
 lib/libinotifytools.so.0
 lib/libinotifytools.so.0.4.1
-share/man/man1/fsnotifywait.1.gz
-share/man/man1/fsnotifywatch.1.gz
 share/man/man1/inotifywait.1.gz
 share/man/man1/inotifywatch.1.gz
