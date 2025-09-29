@@ -516,6 +516,7 @@
     SUBDIR += libqrencode
     SUBDIR += librasterlite2
     SUBDIR += libraw
+    SUBDIR += libresprite
     SUBDIR += librsvg2
     SUBDIR += librsvg2-rust
     SUBDIR += librtprocess

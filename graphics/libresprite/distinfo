@@ -1,0 +1,13 @@
+TIMESTAMP = 1759123602
+SHA256 (LibreSprite-LibreSprite-v1.2_GH0.tar.gz) = bfc2b1c83847feb390d248f1df8f9264dbd885d9fbea2a6303cd26f42b939400
+SIZE (LibreSprite-LibreSprite-v1.2_GH0.tar.gz) = 14255193
+SHA256 (aseprite-simpleini-c94997d_GH0.tar.gz) = 511ae8fdb65a46a80af88f5a7547b669f7e324e6a23b32b48f57ca6f4613e0c9
+SIZE (aseprite-simpleini-c94997d_GH0.tar.gz) = 55214
+SHA256 (libresprite-duktape-6f71555_GH0.tar.gz) = 0522b35c3d481afc1ac1b8b1075b6ad276a891e404ff19cf973eb0317cb839df
+SIZE (libresprite-duktape-6f71555_GH0.tar.gz) = 932118
+SHA256 (aseprite-flic-876ef60_GH0.tar.gz) = 35f69efb4980e3f34531e141ff48165de1fb15c3da621b90aabae2bf4424ba54
+SIZE (aseprite-flic-876ef60_GH0.tar.gz) = 8188
+SHA256 (aseprite-clip-94693e2_GH0.tar.gz) = 51a11a8d3a5dc0dbf77be9b9c9ba41b2c1921043dfbdb7d4fe1e202a7e7a653c
+SIZE (aseprite-clip-94693e2_GH0.tar.gz) = 27748
+SHA256 (aseprite-undo-f39b188_GH0.tar.gz) = adfa338452fb7af52da89d87f72a45ae6acf9f84a3b73fc1f712f69ddaabb220
+SIZE (aseprite-undo-f39b188_GH0.tar.gz) = 4114
