@@ -1568,6 +1568,7 @@
     SUBDIR += py-dj52-django-auth-ldap
     SUBDIR += py-dj52-django-celery-results
     SUBDIR += py-dj52-django-choices-field
+    SUBDIR += py-dj52-django-compression-middleware
     SUBDIR += py-dj52-django-cors-headers
     SUBDIR += py-dj52-django-debug-toolbar
     SUBDIR += py-dj52-django-filter

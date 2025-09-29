@@ -1,0 +1,6 @@
+Django Compression Middleware
+
+This middleware implements compressed content encoding for HTTP. It is similar
+to Django's GZipMiddleware, but additionally supports other compression methods.
+
+It is meant to be a drop-in replacement for Django's GZipMiddleware.
