@@ -9,6 +9,7 @@ bin/copyq
 %%PLUGINS%%lib/copyq/plugins/libitemtext.so
 share/applications/com.github.hluk.copyq.desktop
 share/bash-completion/completions/copyq
+%%DATADIR%%/themes/black.ini
 %%DATADIR%%/themes/dark.ini
 %%DATADIR%%/themes/forest.ini
 %%DATADIR%%/themes/items.css
