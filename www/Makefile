@@ -1580,6 +1580,7 @@
     SUBDIR += py-dj52-django-taggit
     SUBDIR += py-dj52-django-timezone-field
     SUBDIR += py-dj52-djangorestframework
+    SUBDIR += py-dj52-djangorestframework-guardian
     SUBDIR += py-dj52-drf-spectacular
     SUBDIR += py-dj52-drf-spectacular-sidecar
     SUBDIR += py-dj52-social-auth-app-django
