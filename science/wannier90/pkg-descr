@@ -1,2 +1,15 @@
-The computer program that calculates maximally-localized Wannier functions
-(MLWFs) and Wannier90 for quantum chemistry and physics fields.
+Wannier90 is an open-source software package for generating maximally-
+localized Wannier functions (MLWFs) and utilizing them to calculate
+advanced electronic properties of materials with high efficiency and
+accuracy. It is widely used in computational materials science and
+interfaced with numerous popular electronic structure codes such as
+Quantum ESPRESSO, ABINIT, VASP, and Siesta.
+
+The program exploits the real-space localization of MLWFs for efficient
+Wannier interpolation of spectral and Fermi-surface properties. Its
+applications include calculating electronic band structures, densities
+of states, Fermi surfaces, and various transport properties. Wannier90
+also supports advanced functionalities like symmetry-adapted MLWFs,
+calculation of shift currents, and Berry-curvature dipole, making it a
+versatile tool for analyzing chemical bonding, dielectric properties,
+and topological features in materials.
