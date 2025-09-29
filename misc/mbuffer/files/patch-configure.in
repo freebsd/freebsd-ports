@@ -13,7 +13,12 @@
   Remove md5 and only searches for md here to avoid linking with lib/libmd5.*
   installed by www/libwww.
 
---- configure.in.orig	2023-02-27 19:18:52 UTC
+- CFLAGS="-O0" was introduced since mbuffer-20250429, this overrides the PIE_CFLAGS
+  if the port is built with WITH_PIE, while LDFLAGS=-pie is passed to the compiler,
+  and it results in this error message:
+  ld: error: relocation R_X86_64_64 cannot be used against local symbol; recompile with -fPIC
+
+--- configure.in.orig	2025-04-29 23:11:07 UTC
 +++ configure.in
 @@ -104,7 +104,7 @@ AC_PROG_INSTALL
  AC_SUBST(CFLAGS)
@@ -42,3 +47,12 @@
  	AC_CHECK_HEADER(md5.h,AC_DEFINE([HAVE_MD5_H],[1],[found md5.h]),)
  	AC_SEARCH_LIBS(MD5_Init,crypto,AC_DEFINE([HAVE_LIBCRYPTO], [1], [Define to 1 if you have the OpenSSL crypto library]),)
  fi
+@@ -156,7 +156,7 @@ else
+ 	AC_MSG_WARN([unable to find objdump, which is needed to run tests])
+ else
+ 	cflags_tmp="${CFLAGS}"
+-	CFLAGS="-O0"
++	CFLAGS="${CFLAGS} -O0"
+ 	AC_MSG_CHECKING([linking open() and write() to detect libc names])
+ 	AC_LINK_IFELSE([
+ 	AC_LANG_SOURCE([[
