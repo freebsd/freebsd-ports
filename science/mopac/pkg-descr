@@ -1,2 +1,14 @@
-MOPAC7, semi-empirical (MNDO, AM1, PM3, MINDO/3) quantum-chemical
-calculation written by James J. P. Stewart and co-workers.
+MOPAC (Molecular Orbital PACkage) is a powerful computational chemistry
+software that employs semi-empirical quantum chemistry methods to study
+molecular and periodic structures. Developed since 1981, it offers a
+balance of computational speed and accuracy for a wide range of
+applications in chemistry and materials science.
+
+MOPAC implements various semi-empirical models, including AM1, PM3, PM6,
+and PM7. It performs geometry optimization, transition-state optimization,
+and vibrational analysis. Key features include solvation models (COSMO),
+support for periodic boundary conditions, and the unique MOZYME solver
+for rapid calculations on large systems, such as biomolecules and
+materials. MOPAC also calculates gas-phase thermodynamics, molecular
+polarizability, and integrates with numerous graphical user interfaces
+and other chemistry software. It supports 83 elements of the periodic table.
