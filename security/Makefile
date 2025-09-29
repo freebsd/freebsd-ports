@@ -749,6 +749,7 @@
     SUBDIR += p5-Yahoo-BBAuth
     SUBDIR += p5-dicewaregen
     SUBDIR += p5-openxpki
+    SUBDIR += p5-openxpki-clca
     SUBDIR += p5-openxpki-i18n
     SUBDIR += p5-plog
     SUBDIR += pam-modules
