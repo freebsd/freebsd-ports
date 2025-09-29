@@ -1,5 +1,5 @@
 PORTNAME=	deck
-PORTVERSION=	1.15.2
+DISTVERSION=	1.16.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -9,7 +9,7 @@ WWW=		https://apps.nextcloud.com/apps/deck
 
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NEXTCLOUD_RUN_DEPENDS=	31
+NEXTCLOUD_RUN_DEPENDS=	32
 
 USES=		cpe nextcloud php:flavors
 
