@@ -1,5 +1,5 @@
 PORTNAME?=	postgresql
-DISTVERSION?=	18rc1
+DISTVERSION?=	18.0
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
@@ -137,9 +137,6 @@ ZSTD_DESC=		Build with ZSTD compression support
 ZSTD_CONFIGURE_WITH=	zstd
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 USES+=			pkgconfig
-#ZSTD_CFLAGS=		-I${LOCALBASE}/include
-#ZSTD_LDFLAGS=		-L${LOCALBASE}/lib
-#ZSTD_LIBS=		-lzstd
 .  endif
 .endif
 
