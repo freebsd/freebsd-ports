@@ -10,6 +10,7 @@ WWW=		https://tailwindcss.com/
 
 LICENSE=	MIT
 
+ONLY_FOR_ARCHS=	amd64 aarch64 # causes runaway builds in pkg cluster
 BUILD_DEPENDS=	npm:www/npm
 USES=		nodejs:run tar:txz
 
