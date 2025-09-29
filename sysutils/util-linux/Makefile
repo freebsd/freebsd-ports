@@ -1,7 +1,7 @@
 PORTNAME=	util-linux
 DISTVERSION=	2.41.1
 PORTREVISION=	0
-CATEGORIES=	devel
+CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${DISTVERSION:R}/
 
 MAINTAINER=	yuri@FreeBSD.org
