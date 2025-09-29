@@ -1,5 +1,5 @@
-TIMESTAMP = 1740403192
-SHA256 (go/sysutils_rest-server/rest-server-v0.13.0/v0.13.0.mod) = 8232d9f5a821ee7eb63505781e4f8c760d8027d598f13bb8688178878f2f479f
-SIZE (go/sysutils_rest-server/rest-server-v0.13.0/v0.13.0.mod) = 936
-SHA256 (go/sysutils_rest-server/rest-server-v0.13.0/v0.13.0.zip) = e257a8e2832cb10a3f661c4a409fb735ca0577299415ec622837a389c7aa09d0
-SIZE (go/sysutils_rest-server/rest-server-v0.13.0/v0.13.0.zip) = 291281
+TIMESTAMP = 1756025432
+SHA256 (go/sysutils_rest-server/rest-server-v0.14.0/v0.14.0.mod) = 045dcdda938cef72446ace81d56b194a12c675a652d1cc946d85e65d38155d37
+SIZE (go/sysutils_rest-server/rest-server-v0.14.0/v0.14.0.mod) = 943
+SHA256 (go/sysutils_rest-server/rest-server-v0.14.0/v0.14.0.zip) = c4d197353e53f134dc0ae80dd47debc5389ab07e50a3c24cdcd7c847d0331f88
+SIZE (go/sysutils_rest-server/rest-server-v0.14.0/v0.14.0.zip) = 298478
