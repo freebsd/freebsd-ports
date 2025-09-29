@@ -1,3 +1,10 @@
-This is a fairly complete CPU identification utility. It has been tested on
-several Intel, AMD and Cyrix CPUs. If the Pentium III serial number misfeature
-is present and enabled, this program will display it.
+cpuid is a comprehensive utility designed to identify and display
+detailed information about the central processing unit (CPU) installed
+in a system. It provides insights into various CPU characteristics,
+including vendor, model, family, stepping, features, and cache
+configurations. The tool has been rigorously tested across a range
+of processors from manufacturers such as Intel, AMD, and Cyrix.
+Notably, it can detect and report the presence and status of the
+Pentium III serial number "misfeature" if it is enabled, offering
+valuable diagnostic information for system administrators and users
+interested in their hardware specifications.

@@ -1,3 +1,12 @@
-This plugin puts a lock and shoot button on your GKrellM 2, It uses
-ImageMagick for screen capture and can be configured for your screen
-saver program. Known to work with either Xlock or xscreensaver.
+gkrellshoot2 is a versatile plugin designed to enhance the functionality
+of GKrellM 2.x and later versions. This utility integrates two
+convenient features directly into your GKrellM monitor: a screen
+lock button and a screen capture ("shoot") button. The screen
+capture functionality leverages ImageMagick to efficiently take
+screenshots, providing a quick way to document your desktop.
+Additionally, gkrellshoot2 can be seamlessly configured to interact
+with your preferred screen saver program, with known compatibility
+for popular options like Xlock or xscreensaver. This plugin offers
+a streamlined approach to managing screen security and capturing
+desktop visuals, making it a practical addition for users who
+require these actions readily accessible from their system monitor.

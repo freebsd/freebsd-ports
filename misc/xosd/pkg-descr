@@ -1,3 +1,12 @@
-XOSD displays text on your screen; sounds simple, right?  The difference is
-that it is unmanaged and shaped, so it appears transparent.  This gives the
-effect of an on-screen-display, just like on your TV/VCR, etc.
+XOSD (X On-Screen Display) is a versatile utility that enables
+the display of text messages directly on your X Window System
+screen. What sets XOSD apart is its ability to render text
+as an unmanaged and shaped overlay, creating a transparent
+effect that mimics the on-screen displays found on televisions,
+VCRs, and other consumer electronic devices. This allows for
+non-intrusive notifications, status updates, or other textual
+information to be presented to the user without interfering
+with active applications or requiring dedicated window space.
+XOSD is particularly useful for providing subtle feedback
+in various desktop environments and applications, enhancing
+the user experience with its elegant and unobtrusive display method.

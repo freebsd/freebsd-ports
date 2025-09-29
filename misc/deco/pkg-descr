@@ -1,2 +1,8 @@
-A clone of Norton Commander for Unix.  Text-based,
-full featured file manager intuitive interface.
+Deco is a robust, text-based file manager for Unix-like operating
+systems, serving as a functional clone of the classic Norton Commander.
+It provides a full-featured and intuitive interface for navigating
+the filesystem, performing file operations such as copying, moving,
+deleting, and renaming, as well as managing directories. Designed
+for efficiency and ease of use in a terminal environment, Deco is
+an excellent tool for users who prefer keyboard-driven interaction
+and a powerful, yet lightweight, approach to file management.

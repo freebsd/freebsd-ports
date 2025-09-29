@@ -1,2 +1,11 @@
-ftdi-eeprom writes the contents of the configuration eeproms for
-FTDI usb chips.
+ftdi-eeprom is a specialized utility designed for programming
+the Electrically Erasable Programmable Read-Only Memory (EEPROM)
+of FTDI (Future Technology Devices International) USB chips.
+These chips are commonly used in various electronic devices
+to provide USB-to-serial, USB-to-parallel, or other USB interface
+functionality. The ftdi-eeprom tool allows users to write custom
+configuration data to the EEPROM, enabling the modification of
+device descriptors, vendor and product IDs, serial numbers,
+and other operational parameters. This is crucial for customizing
+FTDI-based hardware, ensuring proper device recognition, and
+tailoring its behavior for specific applications.

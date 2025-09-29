@@ -1,1 +1,8 @@
-This is a simple utility to execute a program under a different name.
+rname is a straightforward command-line utility designed to execute
+a specified program under an alternative name. This functionality
+can be particularly useful in scenarios where a program's behavior
+is dependent on the name by which it is invoked, or when you need
+to bypass certain environment checks. It provides a flexible way
+to test different execution paths or to integrate programs into
+scripts that expect specific command names, without altering the
+original executable file.

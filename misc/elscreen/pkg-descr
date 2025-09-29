@@ -1,3 +1,11 @@
-ElScreen is an Emacs utility with which you can have multiple
-screens (window-configuration) on your GNU Emacs as well as
-GNU screen on shell.
+ElScreen is a powerful and versatile utility designed to enhance
+the user experience within GNU Emacs by introducing advanced
+screen management capabilities. Much like the familiar GNU Screen
+for shell environments, ElScreen allows Emacs users to create
+and manage multiple virtual screens or "window configurations"
+within a single Emacs instance. This enables efficient organization
+of various buffers, frames, and windows, facilitating seamless
+switching between different work contexts without cluttering
+the display. It significantly improves productivity for Emacs
+users who frequently work with numerous files and tasks, providing
+a structured and flexible workspace.

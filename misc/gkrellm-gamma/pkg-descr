@@ -1,2 +1,11 @@
-gkrellm-gamma is a plugin for GKrellM. It allows you to control
-your monitor's gamma correction setting under XFree86.
+gkrellm-gamma is a specialized plugin designed to extend the
+functionality of GKrellM, a popular GNU/Linux system monitor.
+This plugin provides users with direct control over their monitor's
+gamma correction settings within the XFree86 environment. By
+integrating seamlessly with GKrellM, gkrellm-gamma allows for
+convenient, real-time adjustments to display brightness and
+contrast characteristics, enabling users to fine-tune their
+visual output for optimal viewing comfort or specific application
+requirements. It is particularly useful for graphic designers,
+photographers, or anyone who requires precise color calibration
+and display management directly from their desktop monitoring tool.

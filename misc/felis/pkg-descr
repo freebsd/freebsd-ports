@@ -1,2 +1,10 @@
-Felis sends one or more files to stdin. Unlike cat, felis will place all
-of its output to a single line.
+Felis is a specialized command-line utility designed for concatenating
+the contents of one or more files and outputting them as a single,
+continuous line to standard output. Unlike traditional tools such
+as 'cat', which preserve line breaks, Felis processes all input
+files and presents their combined content without any newline
+characters, effectively flattening the text into a single stream.
+This unique behavior makes it particularly useful for scripting
+and data processing tasks where a compact, single-line representation
+of file contents is required, such as for log parsing or generating
+single-line configuration strings.

@@ -1,3 +1,10 @@
-One of the most useless dockapps in the world...
-
-Wmpal is a Window Maker dockapp based off a Black Box application called bbpal.
+wmpal is a lightweight and minimalist dockapp designed for the
+Window Maker desktop environment. Inspired by the Black Box
+application 'bbpal', wmpal serves primarily as a decorative
+or simple informational applet for your desktop's dock. While
+it may not offer extensive functionality, its purpose lies
+in providing a compact and aesthetically pleasing addition
+to the Window Maker interface. It caters to users who appreciate
+the clean and efficient design philosophy of Window Maker
+and seek small, unobtrusive utilities to personalize their
+desktop without adding unnecessary complexity.

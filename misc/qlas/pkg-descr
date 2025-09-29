@@ -1,1 +1,7 @@
-qico FIDO mailer log analyzer and statistic builder.
+QLAS is a utility specifically designed for the qico FIDO mailer.
+It functions as a comprehensive log analyzer and statistic builder,
+providing valuable insights into the operation and performance of
+the qico mailer system. By processing mailer logs, QLAS can generate
+detailed reports and statistical summaries, helping administrators
+monitor mail flow, identify potential issues, and optimize the
+overall efficiency of their FIDO network mail exchange.

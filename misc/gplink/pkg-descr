@@ -1,2 +1,8 @@
-gplink is a gp32 linking tool with support for upload, download delete files
-create and remove directories, run files, etc in the smc card on the GP32.
+gplink is a dedicated linking tool designed for the GP32 handheld
+gaming console. It provides comprehensive functionality for managing
+files and applications on the GP32's SmartMedia Card (SMC). Users
+can leverage gplink to effortlessly upload and download files,
+delete existing content, create and remove directories, and directly
+execute programs on the device. This tool is essential for developers,
+homebrew enthusiasts, and users who wish to transfer, organize,
+and run custom software or media on their GP32 console.

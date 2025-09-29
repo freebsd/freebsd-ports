@@ -1,2 +1,12 @@
-This package contains implementations of UTF-aware wc, fmt,
-expand, and unexpand.
+utftools is a valuable collection of command-line utilities that
+provide enhanced functionality for working with text files encoded
+in UTF (Unicode Transformation Format). This package includes
+UTF-aware implementations of common tools such as 'wc' (word count),
+'fmt' (text formatter), 'expand' (tabs to spaces), and 'unexpand'
+(spaces to tabs). Unlike their traditional counterparts, these
+utilities are specifically designed to correctly interpret and
+process multi-byte Unicode characters, ensuring accurate results
+when dealing with internationalized text. By offering proper
+handling of various UTF encodings, utftools is an essential
+resource for developers, system administrators, and users who
+regularly work with diverse character sets and multilingual content.
