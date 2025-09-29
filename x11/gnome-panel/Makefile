@@ -1,6 +1,5 @@
 PORTNAME=	gnome-panel
-PORTVERSION=	3.56.0
-PORTREVISION=	2
+PORTVERSION=	3.58.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -51,9 +50,9 @@ GLIB_SCHEMAS=	org.gnome.gnome-panel.applet.clock.gschema.xml \
 		org.gnome.gnome-panel.toplevel.gschema.xml
 
 post-extract:
-	${CP} ${FILESDIR}/gp-consolekit-manager-gen.* \
+	@${CP} ${FILESDIR}/gp-consolekit-manager-gen.* \
 		${WRKSRC}/modules/menu/
-	${CP} ${FILESDIR}/org.freedesktop.ConsoleKit.Manager.xml \
+	@${CP} ${FILESDIR}/org.freedesktop.ConsoleKit.Manager.xml \
 		${WRKSRC}/modules/menu/
 
 .include <bsd.port.mk>
