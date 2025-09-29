@@ -1,6 +1,5 @@
 PORTNAME=	gnome-applets
-PORTVERSION=	3.56.0
-PORTREVISION=	2
+PORTVERSION=	3.58.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -11,7 +10,7 @@ WWW=		https://gitlab.gnome.org/GNOME/gnome-applets
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	adwaita-icon-theme>=46.0:x11-themes/adwaita-icon-theme \
+BUILD_DEPENDS=	adwaita-icon-theme>0:x11-themes/adwaita-icon-theme \
 		xorgproto>0:x11/xorgproto \
 		itstool>0:textproc/itstool
 LIB_DEPENDS=	libgnome-panel.so:x11/gnome-panel \
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libgnome-panel.so:x11/gnome-panel \
 		libgucharmap_2_90.so:deskutils/gucharmap \
 		libpcre2-8.so:devel/pcre2 \
 		libpolkit-gobject-1.so:sysutils/polkit
-RUN_DEPENDS=	adwaita-icon-theme>=46.0:x11-themes/adwaita-icon-theme
+RUN_DEPENDS=	adwaita-icon-theme>0:x11-themes/adwaita-icon-theme
 
 USES=		gettext gmake gnome iconv libtool pkgconfig tar:xz xorg
 GNU_CONFIGURE=	yes
