@@ -1,5 +1,13 @@
-maeparser is a parser for Schrodinger Maestro files.
+maeparser is a C++ library developed by Schrodinger for efficiently and
+losslessly parsing Maestro files, which serve as Schrodinger's primary
+output format for storing molecular structures and data. This parser is
+crucial for any software package needing to interact with Schrodinger's
+physics-based modeling outputs.
 
-Structure files (.mae,.maegz,.mae.gz) can contain multiple structures
-delimited by "f_m_ct". See MaeConstants.hpp for standard block and property
-names.
+It supports various applications in computational chemistry, including
+molecular dynamics, ligand-protein docking, and quantum mechanics. The
+library utilizes a recursive descent approach, prioritizing parsing speed
+to ensure quick and accurate extraction of data from .mae, .maegz, and
+.mae.gz structure files. These files can contain multiple structures,
+delimited by "f_m_ct", with standard block and property names defined in
+MaeConstants.hpp.
