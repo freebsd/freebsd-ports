@@ -293,6 +293,7 @@
     SUBDIR += ipxe
     SUBDIR += irrd
     SUBDIR += isboot-kmod
+    SUBDIR += isboot-kmod-devel
     SUBDIR += isc-dhcp44-client
     SUBDIR += isc-dhcp44-relay
     SUBDIR += isc-dhcp44-server
