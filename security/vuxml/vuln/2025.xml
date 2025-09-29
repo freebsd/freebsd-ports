@@ -1,3 +1,32 @@
+  <vuln vid="4ccd6222-9c83-11f0-a337-b42e991fc52e">
+    <topic>goldendict -- dangerous method exposed</topic>
+    <affects>
+      <package>
+	<name>goldendict</name>
+	<range><lt>1.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://github.com/goldendict/goldendict/releases">
+	  <p>GoldenDict 1.5.0 and 1.5.1 has an exposed dangerous
+	  method that allows reading and modifying files when a user
+	  adds a crafted dictionary and then searches for any term
+	  included in that dictionary.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-53964</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-53964</url>
+    </references>
+    <dates>
+      <discovery>2025-07-17</discovery>
+      <entry>2025-09-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3bf134f4-942d-11f0-95de-0800276af896">
     <topic>libudisks -- Udisks: out-of-bounds read in udisks daemon</topic>
     <affects>
@@ -1640,8 +1669,6 @@
 	<name>sqlite3</name>
 	<range><ge>3.39.2,1</ge><lt>3.41.2,1</lt></range>
       </package>
-      <!-- as of 2025-08-01, sqlite in -c7 is 3.7.17 and matched by the <3.50.2 below,
-	   and -rl9 aka linux_base ships 3.34.1 which is outside this range. -->
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -2599,12 +2626,18 @@
 	<name>sqlite3</name>
 	<range><lt>3.50.2,1</lt></range>
       </package>
+      <!-- as of 2025-08-01, sqlite in -c7 is 3.7.17 and matched by the <3.50.2 below,
+	   and -rl9 aka linux_base ships 3.34.1 which is outside this range. -->
       <package>
 	<name>linux-c7-sqlite</name>
 	<range><lt>3.50.2</lt></range>
       </package>
       <package>
 	<name>linux_base-rl9</name>
+	<range><ge>9.5.14</ge><lt>9.6_1</lt></range>
+      </package>
+      <package>
+	<name>linux-rl9-sqlite3</name>
 	<range><ge>0</ge></range>
       </package>
     </affects>
@@ -2626,7 +2659,7 @@
     <dates>
       <discovery>2025-07-15</discovery>
       <entry>2025-07-23</entry>
-      <modified>2025-08-01</modified>
+      <modified>2025-09-07</modified>
     </dates>
   </vuln>
 

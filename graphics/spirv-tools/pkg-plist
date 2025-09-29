@@ -1,5 +1,6 @@
 bin/spirv-as
 bin/spirv-cfg
+bin/spirv-diff
 bin/spirv-dis
 bin/spirv-lesspipe.sh
 bin/spirv-link

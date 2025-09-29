@@ -1,5 +1,5 @@
 PORTNAME=	wifibox
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com

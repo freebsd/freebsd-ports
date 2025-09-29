@@ -1,5 +1,5 @@
 PORTNAME=	copyq
-DISTVERSION=	11.0.0
+DISTVERSION=	12.0.0
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/hluk/CopyQ/releases/download/v${DISTVERSION}/
 DISTNAME=	Copyq-${DISTVERSION}
@@ -19,8 +19,6 @@ USE_GL=		opengl
 USE_KDE=	notifications ecm:build statusnotifieritem
 USE_QT=		base declarative svg wayland translations:build
 USE_XORG=	ice sm x11 xext xfixes xtst
-
-CMAKE_ARGS=	-DWITH_QT6:BOOL=TRUE
 
 PORTSCOUT=	limit:^d\.d\.
 

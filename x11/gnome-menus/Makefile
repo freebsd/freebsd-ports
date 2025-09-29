@@ -1,18 +1,17 @@
 PORTNAME=	gnome-menus
-PORTVERSION=	3.36.0
+PORTVERSION=	3.38.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Implementation of the FreeDesktop Desktop Menu Spec
-WWW=		https://www.freedesktop.org/Standards/menu-spec
+WWW=		https://gitlab.gnome.org/GNOME/gnome-menus
 
 LICENSE=	GPLv2
 
 USES=		gettext gmake gnome libtool localbase pathfix pkgconfig python tar:xz
-USE_GNOME=	glib20 gnomeprefix intlhack \
-		introspection:build
+USE_GNOME=	glib20 gnomeprefix introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

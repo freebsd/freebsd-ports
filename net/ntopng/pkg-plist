@@ -1147,6 +1147,7 @@ share/man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/rest/v2/acknowledge/user/alerts.lua
 %%DATADIR%%/scripts/lua/rest/v2/add/host/pool.lua
 %%DATADIR%%/scripts/lua/rest/v2/add/host/to_scan.lua
+%%DATADIR%%/scripts/lua/rest/v2/add/ntopng/analyze_pcap.lua
 %%DATADIR%%/scripts/lua/rest/v2/add/ntopng/user.lua
 %%DATADIR%%/scripts/lua/rest/v2/add/tables/user_columns_config.lua
 %%DATADIR%%/scripts/lua/rest/v2/bind/host/pool/member.lua

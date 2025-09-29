@@ -10,7 +10,7 @@ index ed9c450e5649..1ac213e48b28 100644
 @@ -34,7 +34,7 @@ UNIFIED_SOURCES += [
      "call/call_basic_stats.cc",
  ]
-
+ 
 -if CONFIG["OS_TARGET"] == "OpenBSD":
 +if CONFIG["OS_TARGET"] in ("FreeBSD", "OpenBSD"):
      CXXFLAGS += CONFIG["MOZ_X11_CFLAGS"]

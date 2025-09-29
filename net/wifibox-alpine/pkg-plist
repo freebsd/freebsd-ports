@@ -4,12 +4,12 @@
 @sample(,,640) etc/wifibox/appliance/sysctl.conf.sample
 @sample(,,640) etc/wifibox/appliance/udhcpd.conf.sample
 %%UDS_PASSTHRU%%@sample(,,640) etc/wifibox/appliance/uds_passthru.conf.sample
-%%IPV6%%%%APP_WPA_SUPPLICANT%%@sample(,,640) etc/wifibox/appliance/dhcpcd.conf.sample
+%%IPV6%%%%APP_SUPPLICANT%%@sample(,,640) etc/wifibox/appliance/dhcpcd.conf.sample
 %%IPV6%%@sample(,,640) etc/wifibox/appliance/ip6tables.sample
 %%IPV6%%@sample(,,640) etc/wifibox/appliance/radvd.conf.sample
 %%IPV6%%@sample(,,640) etc/wifibox/appliance/sysctl.d/ipv6.conf.sample
-%%APP_WPA_SUPPLICANT%%@sample(,,640) etc/wifibox/wpa_supplicant/wpa_supplicant.conf.sample
-%%APP_HOSTAPD%%@sample(,,640) etc/wifibox/hostapd/hostapd.conf.sample
+%%APP_SUPPLICANT%%@sample(,,640) etc/wifibox/wpa_supplicant/wpa_supplicant.conf.sample
+%%APP_ACCESS_POINT%%@sample(,,640) etc/wifibox/hostapd/hostapd.conf.sample
 %%XX_MDNS%%@sample(,,640) etc/wifibox/appliance/mdnsd-services.conf.sample
 %%XX_FORWARDING%%@sample(,,640) etc/wifibox/appliance/forwarding.conf.sample
 etc/wifibox/app_config
@@ -21,12 +21,12 @@ share/wifibox/vmlinuz
 /var/run/wifibox/appliance/run
 /var/run/wifibox/appliance/spool/cron/crontabs
 /var/run/wifibox/appliance/spool/mail
-%%APP_HOSTAPD%%%%UDS_PASSTHRU%%@dir /var/run/hostapd
+%%APP_ACCESS_POINT%%%%UDS_PASSTHRU%%@dir /var/run/hostapd
 @dir /var/run/wifibox/appliance/cache/apk
 @dir /var/run/wifibox/appliance/cache/misc
 @dir /var/run/wifibox/appliance/cache
 @dir /var/run/wifibox/appliance/empty
-%%IPV6%%%%APP_WPA_SUPPLICANT%%@dir /var/run/wifibox/appliance/lib/dhcpcd
+%%IPV6%%%%APP_SUPPLICANT%%@dir /var/run/wifibox/appliance/lib/dhcpcd
 @dir /var/run/wifibox/appliance/lib/iptables
 @dir /var/run/wifibox/appliance/lib/misc
 @dir /var/run/wifibox/appliance/lib

@@ -1,3 +1,5 @@
-TIMESTAMP = 1728155413
+TIMESTAMP = 1758387041
 SHA256 (dirkvdb-ffmpegthumbnailer-2.2.3_GH0.tar.gz) = 8c9b9057c6cc8bce9d11701af224c8139c940f734c439a595525e073b09d19b8
 SIZE (dirkvdb-ffmpegthumbnailer-2.2.3_GH0.tar.gz) = 1291942
+SHA256 (df789ec326ae0f2c619f91c8f2fc8b5e45b50a70.patch) = b144efb0e8d914e1950e8a16299c532d59819768ffcb1ec152f72abf0d3a65fb
+SIZE (df789ec326ae0f2c619f91c8f2fc8b5e45b50a70.patch) = 2591

@@ -1,13 +1,7 @@
 PORTNAME=	fooyin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.1
-PORTREVISION=	1
+DISTVERSION=	0.9.2
 CATEGORIES=	audio multimedia
-
-PATCH_SITES=	https://github.com/fooyin/fooyin/commit/
-PATCHFILES=	abf2c25802fde6be01008c2ad7a70b26f18bc302.patch:-p1 \
-		772418e58288a4cf77e1b8040ded044e771ae827.patch:-p1 \
-		cffe88058e96c44e563e927d8a4a903e28246020.patch:-p1
 
 MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	foobar2000 inspired audio player

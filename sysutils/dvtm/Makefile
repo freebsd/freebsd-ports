@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.brain-dump.org/projects/dvtm/
 
-MAINTAINER=	beat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiling window management for the console
 WWW=		https://www.brain-dump.org/projects/dvtm/
 

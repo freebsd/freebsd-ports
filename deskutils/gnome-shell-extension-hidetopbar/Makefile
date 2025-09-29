@@ -1,6 +1,5 @@
 PORTNAME=	hidetopbar
-DISTVERSION=	120
-PORTREVISION=	1
+DISTVERSION=	121
 CATEGORIES=	deskutils gnome
 PKGNAMEPREFIX=	gnome-shell-extension-
 DIST_SUBDIR=	gnome
@@ -14,7 +13,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	gnome-shell>=47.0:x11/gnome-shell \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USES=		gnome
+USES=		gnome tar:bz2
 USE_GNOME=	glib20
 
 NO_BUILD=	yes
@@ -23,7 +22,7 @@ NO_ARCH=	yes
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	tuxor1337
-GL_TAGNAME=	e9ececc2
+GL_TAGNAME=	bd46cf82
 
 UUID_EXTENSION=	hidetopbar@mathieu.bidon.ca
 
@@ -38,6 +37,10 @@ pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/${UUID_EXTENSION}
 
 do-install:
+.for f in Settings.ui metadata.json
+	${INSTALL_DATA} ${WRKSRC}/${f} \
+		${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/${UUID_EXTENSION}
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/*.js \
 		${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/${UUID_EXTENSION}
 	${INSTALL_DATA} ${WRKSRC}/schemas/*.gschema.xml \

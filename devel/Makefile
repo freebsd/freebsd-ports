@@ -7923,6 +7923,7 @@
     SUBDIR += rubygem-scientist
     SUBDIR += rubygem-sd_notify
     SUBDIR += rubygem-sdoc
+    SUBDIR += rubygem-semantic_logger
     SUBDIR += rubygem-semantic_puppet
     SUBDIR += rubygem-semantic_range
     SUBDIR += rubygem-semi_semantic
@@ -8032,6 +8033,7 @@
     SUBDIR += rubygem-syntax_tree
     SUBDIR += rubygem-sysinfo
     SUBDIR += rubygem-syslog
+    SUBDIR += rubygem-syslog_protocol
     SUBDIR += rubygem-systemu
     SUBDIR += rubygem-table_print
     SUBDIR += rubygem-tdiff

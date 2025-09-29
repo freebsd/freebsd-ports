@@ -1,0 +1,12 @@
+--- codex-rs/cli/Cargo.toml.orig	2025-09-27 08:06:01 UTC
++++ codex-rs/cli/Cargo.toml
+@@ -52,6 +52,9 @@ libc = { workspace = true }
+ [target.'cfg(target_os = "macos")'.dependencies]
+ libc = { workspace = true }
+ 
++[target.'cfg(target_os = "freebsd")'.dependencies]
++libc = { workspace = true }
++
+ [dev-dependencies]
+ assert_cmd = { workspace = true }
+ predicates = { workspace = true }

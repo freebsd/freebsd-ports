@@ -2,6 +2,9 @@ PORTNAME=	ffmpegthumbnailer
 DISTVERSION=	2.2.3
 CATEGORIES=	multimedia graphics
 
+PATCH_SITES=	https://github.com/dirkvdb/ffmpegthumbnailer/commit/
+PATCHFILES=	df789ec326ae0f2c619f91c8f2fc8b5e45b50a70.patch:-p1
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight video thumbnailer that can be used by file managers
 WWW=		https://github.com/dirkvdb/ffmpegthumbnailer
@@ -33,6 +36,6 @@ OPTIONS_SUB=	yes
 
 THUMBNAILER_DESC=	Register as a system thumbnailer
 
-THUMBNAILER_CMAKE_ON=	-DENABLE_THUMBNAILER:BOOL=ON
+THUMBNAILER_CMAKE_BOOL=	ENABLE_THUMBNAILER
 
 .include <bsd.port.mk>

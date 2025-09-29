@@ -1,0 +1,2 @@
+This Python 3 library is designed for parsing and serializing HTTP Structured
+Fields, as defined by RFC 9651.

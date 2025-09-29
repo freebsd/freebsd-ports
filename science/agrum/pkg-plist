@@ -956,9 +956,9 @@ lib/libagrumID.so.%%VERSION%%
 lib/libagrumMRF.so
 lib/libagrumMRF.so.2
 lib/libagrumMRF.so.%%VERSION%%
-%%PYTHON_SITELIBDIR%%/pyagrum-%%VERSION%%.dist-info/LICENSE
-%%PYTHON_SITELIBDIR%%/pyagrum-%%VERSION%%.dist-info/LICENSE.LGPL
-%%PYTHON_SITELIBDIR%%/pyagrum-%%VERSION%%.dist-info/LICENSE.MIT
+%%PYTHON_SITELIBDIR%%/pyagrum-%%VERSION%%.dist-info/LICENSE.md
+%%PYTHON_SITELIBDIR%%/pyagrum-%%VERSION%%.dist-info/LICENSES/LGPL-3.0-or-later.txt
+%%PYTHON_SITELIBDIR%%/pyagrum-%%VERSION%%.dist-info/LICENSES/MIT.txt
 %%PYTHON_SITELIBDIR%%/pyagrum-%%VERSION%%.dist-info/METADATA
 %%PYTHON_SITELIBDIR%%/pyagrum-%%VERSION%%.dist-info/WHEEL
 %%PYTHON_SITELIBDIR%%/pyagrum/__init__.py

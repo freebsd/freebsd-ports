@@ -18,7 +18,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_actions_1745a1bd.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_binary_478594b0.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_build_e554a463.png
-%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_changelog_bb1bec17.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_changelog_dd5dbc1b.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_clipboard_673291d1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_color-stack_b2e66ffc.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_conf_6d817f14.png
@@ -30,6 +30,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_launch_2c8ae1a7.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_matching_f5ed7c14.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_rc_4121b4bb.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_save-as-session_b77c65fc.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_ssh-copy_26aa9e71.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_glossary_e93f6fff.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_graphics-protocol_96eb2627.png
@@ -64,6 +65,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_mapping_aea5afa6.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_marks_66066db1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_misc-protocol_baba0cc2.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_multiple-cursors-protocol_49ab6a61.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_open_actions_b5f13270.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_overview_249bd848.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_performance_fb7e6752.png
@@ -75,6 +77,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_quickstart_9d1a56df.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_rc_protocol_ea1138ef.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_remote-control_7371e6b3.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_sessions_7cc12e6e.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_shell-integration_4b2a7549.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_support_daeae705.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_text-sizing-protocol_974e580e.png
@@ -99,6 +102,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_sources/generated/launch.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/generated/matching.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/generated/rc.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/generated/save-as-session.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/generated/ssh-copy.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/glossary.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/graphics-protocol.rst.txt
@@ -133,6 +137,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_sources/mapping.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/marks.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/misc-protocol.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/multiple-cursors-protocol.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/open_actions.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/overview.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/performance.rst.txt
@@ -144,6 +149,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_sources/quickstart.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/rc_protocol.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/remote-control.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/sessions.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/shell-integration.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/support.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/text-sizing-protocol.rst.txt
@@ -203,6 +209,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/generated/launch.html
 %%PORTDOCS%%%%DOCSDIR%%/generated/matching.html
 %%PORTDOCS%%%%DOCSDIR%%/generated/rc.html
+%%PORTDOCS%%%%DOCSDIR%%/generated/save-as-session.html
 %%PORTDOCS%%%%DOCSDIR%%/generated/ssh-copy.html
 %%PORTDOCS%%%%DOCSDIR%%/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/glossary.html
@@ -238,6 +245,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/mapping.html
 %%PORTDOCS%%%%DOCSDIR%%/marks.html
 %%PORTDOCS%%%%DOCSDIR%%/misc-protocol.html
+%%PORTDOCS%%%%DOCSDIR%%/multiple-cursors-protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/objects.inv
 %%PORTDOCS%%%%DOCSDIR%%/open_actions.html
 %%PORTDOCS%%%%DOCSDIR%%/overview.html
@@ -252,6 +260,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/remote-control.html
 %%PORTDOCS%%%%DOCSDIR%%/search.html
 %%PORTDOCS%%%%DOCSDIR%%/searchindex.js
+%%PORTDOCS%%%%DOCSDIR%%/sessions.html
 %%PORTDOCS%%%%DOCSDIR%%/shell-integration.html
 %%PORTDOCS%%%%DOCSDIR%%/support.html
 %%PORTDOCS%%%%DOCSDIR%%/text-sizing-protocol.html
@@ -662,6 +671,9 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/bash.py
 %%DATADIR%%/kitty/bgimage_fragment.glsl
 %%DATADIR%%/kitty/bgimage_vertex.glsl
+%%DATADIR%%/kitty/blit_common.glsl
+%%DATADIR%%/kitty/blit_fragment.glsl
+%%DATADIR%%/kitty/blit_vertex.glsl
 %%DATADIR%%/kitty/border_fragment.glsl
 %%DATADIR%%/kitty/border_vertex.glsl
 %%DATADIR%%/kitty/borders.py
@@ -964,6 +976,8 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/remote_control.py
 %%DATADIR%%/kitty/render_cache.py
 %%DATADIR%%/kitty/rgb.py
+%%DATADIR%%/kitty/rounded_rect_fragment.glsl
+%%DATADIR%%/kitty/rounded_rect_vertex.glsl
 %%DATADIR%%/kitty/search_query_parser.py
 %%DATADIR%%/kitty/session.py
 %%DATADIR%%/kitty/shaders.py
@@ -981,6 +995,7 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/types.py
 %%DATADIR%%/kitty/typing_compat.py
 %%DATADIR%%/kitty/update_check.py
+%%DATADIR%%/kitty/utils.glsl
 %%DATADIR%%/kitty/utils.py
 %%DATADIR%%/kitty/window.py
 %%DATADIR%%/kitty/window_list.py

@@ -1,4 +1,12 @@
-QWalk is a program developed to perform high accuracy quantum Monte Carlo
-calculations of electronic structure in molecules and solids. It is specifically
-designed as a research vehicle for new algorithms and method developments, as
-well as being able to scale up to large system sizes.
+QWalk is a high-accuracy quantum Monte Carlo (QMC) program designed for
+electronic structure calculations in molecules and solids. It serves as a
+research vehicle for developing new algorithms and methods, capable of
+scaling up to large system sizes and finding very accurate solutions to
+the stationary Schrodinger equation for atoms, molecules, solids, and
+various model systems.
+
+Its primary application lies in computational condensed-matter physics
+and chemistry, particularly for studying correlated electron systems and
+determining both ground-state and excited-state properties of quantum
+systems. QWalk provides a robust platform for advanced research in
+quantum chemistry and materials science.

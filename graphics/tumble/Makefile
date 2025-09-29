@@ -1,7 +1,7 @@
 PORTNAME=	tumble
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.38
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics print
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -10,6 +10,9 @@ WWW=		http://tumble.brouhaha.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	historical tool, use imagemagick instead
+EXPIRATION_DATE=	2025-12-31
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libnetpbm.so:graphics/netpbm

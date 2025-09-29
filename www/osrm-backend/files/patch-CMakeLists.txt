@@ -1,0 +1,17 @@
+--- CMakeLists.txt.orig	2025-02-23 16:13:28 UTC
++++ CMakeLists.txt
+@@ -512,9 +512,11 @@ install(TARGETS osrm-components DESTINATION bin)
+ target_link_libraries(osrm-components ${TBB_LIBRARIES} ${BOOST_BASE_LIBRARIES} ${UTIL_LIBRARIES})
+ install(TARGETS osrm-components DESTINATION bin)
+ 
+-add_executable(osrm-io-benchmark src/tools/io-benchmark.cpp $<TARGET_OBJECTS:UTIL>)
+-target_link_libraries(osrm-io-benchmark ${BOOST_BASE_LIBRARIES} ${TBB_LIBRARIES})
+-install(TARGETS osrm-io-benchmark DESTINATION bin)
++# IO-Benchmark tool is nut supported on FreeBSD according to upstream. 
++# It is also currently not installed and it causes a build error.
++#add_executable(osrm-io-benchmark src/tools/io-benchmark.cpp $<TARGET_OBJECTS:UTIL>)
++#target_link_libraries(osrm-io-benchmark ${BOOST_BASE_LIBRARIES} ${TBB_LIBRARIES})
++#install(TARGETS osrm-io-benchmark DESTINATION bin)
+ 
+ if (ENABLE_ASSERTIONS)
+   message(STATUS "Enabling assertions")

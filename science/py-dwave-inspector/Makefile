@@ -1,6 +1,5 @@
 PORTNAME=	dwave-inspector
-DISTVERSION=	0.5.1
-PORTREVISION=	2
+DISTVERSION=	0.5.5
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.10.0:science/py-dimod@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dwave-cloud-client>=0.11.0:science/py-dwave-cloud-client@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dwave-cloud-client>=0.13.0:science/py-dwave-cloud-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dwave-system>=1.3.0:science/py-dwave-system@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask>=2.2:www/py-flask@${PY_FLAVOR} \
 		${PYNUMPY} \

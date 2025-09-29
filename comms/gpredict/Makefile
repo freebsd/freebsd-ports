@@ -1,6 +1,6 @@
 PORTNAME=	gpredict
 DISTVERSION=	2.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	comms hamradio
 MASTER_SITES=	https://github.com/csete/${PORTNAME}/releases/download/v${DISTVERSION}/
 

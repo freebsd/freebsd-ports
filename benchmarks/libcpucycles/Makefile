@@ -1,6 +1,5 @@
 PORTNAME=	libcpucycles
-DISTVERSION=	20240318
-PORTREVISION=	2
+DISTVERSION=	20250925
 CATEGORIES=	benchmarks devel
 MASTER_SITES=	https://cpucycles.cr.yp.to/
 

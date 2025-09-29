@@ -1003,6 +1003,7 @@
     SUBDIR += process-viewer
     SUBDIR += procmap
     SUBDIR += procs
+    SUBDIR += progress
     SUBDIR += pslist
     SUBDIR += psmisc
     SUBDIR += pstack
@@ -1632,8 +1633,10 @@
     SUBDIR += zetaback
     SUBDIR += zetaback-devel
     SUBDIR += zidrav
+    SUBDIR += zli
     SUBDIR += znapzend
     SUBDIR += zogftw
+    SUBDIR += zot
     SUBDIR += zoxide
     SUBDIR += zpool-iostat-viz
     SUBDIR += zrep

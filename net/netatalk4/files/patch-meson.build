@@ -1,4 +1,4 @@
---- meson.build.orig	2025-08-05 13:56:32 UTC
+--- meson.build.orig	2025-09-07 19:42:40 UTC
 +++ meson.build
 @@ -69,6 +69,7 @@ libdir = prefix / get_option('libdir')
  datadir = prefix / get_option('datadir')
@@ -25,7 +25,7 @@
          'db62',
          'db6.2',
          'db61',
-@@ -924,12 +926,12 @@ dns_sd_libs = []
+@@ -922,12 +924,12 @@ dns_sd_libs = []
  
  dns_sd_libs = []
  
@@ -40,24 +40,24 @@
  if dns_sd.found()
      dns_sd_libs += system
  endif
-@@ -943,6 +945,8 @@ have_dns = (
+@@ -941,6 +943,8 @@ have_dns = (
      )
  )
  
 +threads = dependency('threads', required: true)
 +
  if enable_zeroconf
-     if avahi.found()
-         have_zeroconf = true
-@@ -956,6 +960,7 @@ if enable_zeroconf
-         cdata.set('HAVE_MDNS', 1)
-         cdata.set('freebsd_zeroconf', 'mdnsd')
-         zeroconf_provider += 'mDNS'
-+        dns_sd_libs += threads
-     endif
- endif
- 
-@@ -1562,6 +1567,7 @@ if not enable_pam
+     if host_os == 'darwin'
+         # On Darwin/macOS, prefer mDNS (Bonjour) over Avahi
+@@ -950,6 +954,7 @@ if enable_zeroconf
+             cdata.set('HAVE_MDNS', 1)
+             cdata.set('freebsd_zeroconf', 'mdnsd')
+             zeroconf_provider += 'mDNS'
++            dns_sd_libs += threads
+         elif avahi.found()
+             have_zeroconf = true
+             cdata.set('USE_ZEROCONF', 1)
+@@ -1578,6 +1583,7 @@ if not enable_pam
  
  if not enable_pam
      have_pam = false

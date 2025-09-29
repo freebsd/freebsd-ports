@@ -1,5 +1,5 @@
 PORTNAME=	langchain-openai
-DISTVERSION=	0.3.28
+DISTVERSION=	0.3.33
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=0.3.68:misc/py-langchain-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openai>=1.86.0:misc/py-openai@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=0.3.76:misc/py-langchain-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openai>=1.104.2:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.7:textproc/py-tiktoken@${PY_FLAVOR}
 
 USES=		python

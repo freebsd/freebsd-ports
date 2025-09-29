@@ -1,6 +1,10 @@
 PORTNAME=	kfr
-DISTVERSION=	6.3.0
+DISTVERSION=	6.3.1
 CATEGORIES=	math
+
+PATCH_SITES=	https://github.com/kfrlib/kfr/commit/
+PATCHFILES=	eb615703f5f15eb7794d6ec3f20d83130d9f5274.patch:-p1 \
+		6056e7d24723531e10484d63f6a9a5c58f976daa.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ DSP framework, FFT, Sample Rate Conversion, FIR/IIR/Biquad Filters

@@ -1,7 +1,7 @@
 PORTNAME=	cadquery-pywrap
 DISTVERSIONPREFIX=	occt
 DISTVERSION=	7.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,6 +11,9 @@ WWW=		https://github.com/CadQuery/pywrap
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	This port was part of an effort to port CadQuery. This has been abandoned, so this port is no longer needed as it serves no other purpose.
+EXPIRATION_DATE=2025-12-31
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}clang>0:devel/py-clang@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \

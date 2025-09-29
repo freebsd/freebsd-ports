@@ -14,8 +14,6 @@ LICENSE_NAME=	PGPLOT License
 LICENSE_FILE=	${WRKSRC}/copyright.notice
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-BROKEN_armv7=	link error: /usr/local/bin/ld: error: unsupported option: -z relro
-
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		fortran shebangfix xorg
@@ -29,6 +27,10 @@ SHEBANG_FILES=	makehtml maketex
 FFLAGS+=	-std=legacy
 SUFFIXES=	flib clib bin
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+# ld.bfd supports neither -z relro nor -z norelro on armv7
+BINUTILS_NO_MAKE_ENV_armv7=    LD
+BINUTILS_NO_MAKE_ENV=  ${BINUTILS_NO_MAKE_ENV_${ARCH}}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

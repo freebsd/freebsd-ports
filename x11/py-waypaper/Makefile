@@ -1,6 +1,6 @@
 PORTNAME=	waypaper
-DISTVERSION=	2.6
-PORTREVISION=	2
+DISTVERSION=	2.7
+PORTREVISION=	0
 CATEGORIES=	x11 python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=10.4.0:graphics/py-pillow@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}imageio>=2.36.0:graphics/py-imageio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}imageio-ffmpeg>=0.5.1:graphics/py-imageio-ffmpeg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}screeninfo>=0.8.1:x11/py-screeninfo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}platformdirs>=4.4.0:devel/py-platformdirs@${PY_FLAVOR} \
 		feh:graphics/feh \
 		swaybg:x11/swaybg
 

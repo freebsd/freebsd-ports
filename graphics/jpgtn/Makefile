@@ -1,6 +1,6 @@
 PORTNAME=	jpgtn
 PORTVERSION=	2.06
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	SF SUNSITE/apps/graphics/misc
 
@@ -10,6 +10,9 @@ WWW=		https://jpgtn.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	obsolete historical tool, use imagemagick instead
+EXPIRATION_DATE=	2025-12-31
 
 USES=		jpeg
 GNU_CONFIGURE=	yes

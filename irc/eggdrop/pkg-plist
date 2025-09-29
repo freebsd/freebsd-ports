@@ -1,5 +1,7 @@
 bin/eggdrop
-etc/eggdrop.conf.sample
+@mode 0640
+@sample %%ETCDIR%%/eggdrop.conf.sample
+@mode
 lib/eggdrop/assoc.so
 lib/eggdrop/blowfish.so
 lib/eggdrop/channels.so
@@ -15,7 +17,6 @@ lib/eggdrop/server.so
 lib/eggdrop/share.so
 lib/eggdrop/transfer.so
 lib/eggdrop/uptime.so
-share/man/man1/eggdrop.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ABOUT
 %%PORTDOCS%%%%DOCSDIR%%/ACCOUNTS
 %%PORTDOCS%%%%DOCSDIR%%/AUTOSCRIPTS
@@ -26,18 +27,17 @@ share/man/man1/eggdrop.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CONTENTS
 %%PORTDOCS%%%%DOCSDIR%%/Changes1.9
 %%PORTDOCS%%%%DOCSDIR%%/FIRST-SCRIPT
-%%PORTDOCS%%%%DOCSDIR%%/MODULES
-%%PORTDOCS%%%%DOCSDIR%%/PARTYLINE
-%%PORTDOCS%%%%DOCSDIR%%/PATCH-HOWTO
-%%PORTDOCS%%%%DOCSDIR%%/TRICKS
-%%PORTDOCS%%%%DOCSDIR%%/USERS
 %%PORTDOCS%%%%DOCSDIR%%/IPV6
 %%PORTDOCS%%%%DOCSDIR%%/IRCv3
 %%PORTDOCS%%%%DOCSDIR%%/LEGAL
+%%PORTDOCS%%%%DOCSDIR%%/MODULES
+%%PORTDOCS%%%%DOCSDIR%%/PARTYLINE
+%%PORTDOCS%%%%DOCSDIR%%/PATCH-HOWTO
 %%PORTDOCS%%%%DOCSDIR%%/PBKDF2
 %%PORTDOCS%%%%DOCSDIR%%/TLS
+%%PORTDOCS%%%%DOCSDIR%%/TRICKS
 %%PORTDOCS%%%%DOCSDIR%%/TWITCH
-%%PORTDOCS%%%%DOCSDIR%%/twitch-tcl-commands.doc
+%%PORTDOCS%%%%DOCSDIR%%/USERS
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/search.html
 %%PORTDOCS%%%%DOCSDIR%%/settings/CONTENTS
@@ -60,6 +60,7 @@ share/man/man1/eggdrop.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/settings/mod.uptime
 %%PORTDOCS%%%%DOCSDIR%%/settings/mod.woobie
 %%PORTDOCS%%%%DOCSDIR%%/tcl-commands.doc
+%%PORTDOCS%%%%DOCSDIR%%/twitch-tcl-commands.doc
 %%DATADIR%%/help/assoc.help
 %%DATADIR%%/help/chaninfo.help
 %%DATADIR%%/help/channels.help
@@ -153,3 +154,4 @@ share/man/man1/eggdrop.1.gz
 %%DATADIR%%/scripts/weed
 %%DATADIR%%/text/banner
 %%DATADIR%%/text/motd
+share/man/man1/eggdrop.1.gz

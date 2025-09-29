@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+  A minimum configuration for zot has been installed but please
+  check out their various examples and the documentation on how
+  to create a proper config:
+
+  https://github.com/project-zot/zot/tree/main/examples
+  https://zotregistry.dev/v2.1.8/admin-guide/admin-configuration/
+EOM
+}
+]

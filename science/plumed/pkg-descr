@@ -1,6 +1,13 @@
-PLUMED is an open-source, community-developed library that provides a wide
-range of different methods, which include:
-* enhanced-sampling algorithms
-* free-energy methods
-* tools to analyze the vast amounts of data produced by molecular dynamics (MD)
-  simulations.
+PLUMED is an open-source, community-developed library designed to work
+with molecular dynamics (MD) simulations. It provides a comprehensive
+toolbox of methods, including enhanced-sampling algorithms, free-energy
+methods, and advanced tools for analyzing the vast amounts of data
+produced by MD simulations.
+
+This versatile library offers a wide range of collective variables,
+making it suitable for studying complex processes across various scientific
+disciplines such as physics, chemistry, material science, and biology.
+PLUMED seamlessly integrates with popular MD engines like GROMACS and
+LAMMPS, as well as analysis tools such as VMD. Its API supports multiple
+programming languages (C, C++, Fortran, Python) and its L-GPL license
+ensures compatibility with proprietary software.

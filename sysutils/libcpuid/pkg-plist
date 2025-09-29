@@ -5,5 +5,11 @@ include/libcpuid/libcpuid_types.h
 lib/libcpuid.a
 lib/libcpuid.so
 lib/libcpuid.so.17
-lib/libcpuid.so.17.1.0
+lib/libcpuid.so.17.1.1
 libdata/pkgconfig/libcpuid.pc
+%%MANPAGES%%share/man/man3/cpu_id_t.3.gz
+%%MANPAGES%%share/man/man3/cpu_list_t.3.gz
+%%MANPAGES%%share/man/man3/cpu_mark_t.3.gz
+%%MANPAGES%%share/man/man3/cpu_raw_data_t.3.gz
+%%MANPAGES%%share/man/man3/cpuid_tool.3.gz
+%%MANPAGES%%share/man/man3/libcpuid.3.gz

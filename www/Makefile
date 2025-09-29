@@ -1527,6 +1527,7 @@
     SUBDIR += py-cssutils
     SUBDIR += py-daphne
     SUBDIR += py-dash
+    SUBDIR += py-ddgs
     SUBDIR += py-dj-database-url
     SUBDIR += py-dj51-channels
     SUBDIR += py-dj51-channels-redis
@@ -1813,6 +1814,7 @@
     SUBDIR += py-htmldate
     SUBDIR += py-httmock
     SUBDIR += py-http-parser
+    SUBDIR += py-http-sf
     SUBDIR += py-httpbin
     SUBDIR += py-httpcore
     SUBDIR += py-httpie
@@ -1872,6 +1874,7 @@
     SUBDIR += py-postorius
     SUBDIR += py-praw
     SUBDIR += py-prawcore
+    SUBDIR += py-primp
     SUBDIR += py-priority
     SUBDIR += py-priority1
     SUBDIR += py-protego

@@ -1,7 +1,9 @@
+share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/Settings.ui
 share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/convenience.js
 share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/desktopIconsIntegration.js
 share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/extension.js
 share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/intellihide.js
+share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/metadata.json
 share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/panelVisibilityManager.js
 share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca/prefs.js
 share/locale/ca/LC_MESSAGES/hidetopbar.po

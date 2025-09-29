@@ -3,7 +3,7 @@ DISTVERSION=	0.6.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Google Gemini api for terminal (CLI)
+COMMENT=	Open-source CLI for direct access to Google's Gemini AI model
 WWW=		https://google-gemini.github.io/gemini-cli/ \
 		https://github.com/google-gemini/gemini-cli
 

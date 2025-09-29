@@ -1,6 +1,6 @@
 PORTNAME=	stamp
 PORTVERSION=	2.0.8
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -10,6 +10,9 @@ WWW=		https://stamp.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	historical tool, use imagemagick instead
+EXPIRATION_DATE=	2025-12-31
 
 USES=		jpeg localbase
 GNU_CONFIGURE=	yes

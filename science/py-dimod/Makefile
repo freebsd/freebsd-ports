@@ -1,5 +1,5 @@
 PORTNAME=	dimod
-DISTVERSION=	0.12.20
+DISTVERSION=	0.12.21
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,6 +27,6 @@ TEST_WRKSRC=	${WRKSRC}/tests
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME} -name "*${PYTHON_TAG}.so" | ${XARGS} ${STRIP_CMD}
 
-# tests as of 0.12.20: Ran 2913 tests in 34.742s
+# tests as of 0.12.21: Ran 2914 tests in 35.706s
 
 .include <bsd.port.mk>

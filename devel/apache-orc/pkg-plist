@@ -10,6 +10,7 @@ include/orc/ColumnPrinter.hh
 include/orc/Common.hh
 include/orc/Exceptions.hh
 include/orc/Int128.hh
+include/orc/Geospatial.hh
 include/orc/MemoryPool.hh
 include/orc/OrcFile.hh
 include/orc/Reader.hh
@@ -22,3 +23,12 @@ include/orc/sargs/Literal.hh
 include/orc/sargs/SearchArgument.hh
 include/orc/sargs/TruthValue.hh
 lib/liborc.a
+lib/cmake/orc/FindLZ4.cmake
+lib/cmake/orc/FindProtobuf.cmake
+lib/cmake/orc/FindSnappy.cmake
+lib/cmake/orc/FindZLIB.cmake
+lib/cmake/orc/FindZSTD.cmake
+lib/cmake/orc/orcConfig.cmake
+lib/cmake/orc/orcConfigVersion.cmake
+lib/cmake/orc/orcTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/orc/orcTargets.cmake

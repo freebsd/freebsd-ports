@@ -1,3 +1,3 @@
-TIMESTAMP = 1752898952
-SHA256 (langchain_anthropic-0.3.17.tar.gz) = f2c2a0382ed7992204d790ff8538448f5243f4dbb1e798256ef790c9a69033e4
-SIZE (langchain_anthropic-0.3.17.tar.gz) = 55831
+TIMESTAMP = 1758900433
+SHA256 (langchain_anthropic-0.3.20.tar.gz) = 8ad996817a051db1dbaa1b76d710ad2588b93b9bf3c4ac7ecf66c1d480f921fc
+SIZE (langchain_anthropic-0.3.20.tar.gz) = 306369

@@ -29,7 +29,7 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 RUN_DEPENDS=	terminfo-db>0:misc/terminfo-db \
 		dotnet:lang/dotnet-host
 
-USES=		autoreconf:build gssapi:mit llvm:noexport nodejs pkgconfig \
+USES=		autoreconf:build gssapi:mit llvm:noexport pkgconfig \
 		python:build,3.9+ shebangfix ssl
 
 USE_GITHUB=	yes

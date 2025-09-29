@@ -1,0 +1,15 @@
+DDGS is a powerful Python library designed for comprehensive web searches
+using the DuckDuckGo search engine. It provides a convenient and efficient
+way to programmatically search for a wide range of content, including:
+
+- Words and phrases
+- Documents
+- Images
+- Videos
+- News articles
+- Maps
+- Text translation
+
+With DDGS, developers can easily integrate DuckDuckGo's search capabilities
+into their Python applications, enabling features such as automated data
+collection, content discovery, and more, all while respecting user privacy.
