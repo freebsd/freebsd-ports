@@ -1,6 +1,6 @@
 PORTNAME=	cmake
 DISTVERSION=	${_CMAKE_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-core
 
@@ -97,7 +97,5 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Auxiliary/cmake-mode.el ${STAGEDIR}${PREFIX}/share/emacs/site-lisp
-	# remove boost module because it is broken and unnecessary and breaks build of many packages
-	@${FIND} ${STAGEDIR}${PREFIX} -name "FindBoost.*" -delete
 
 .include <bsd.port.mk>
