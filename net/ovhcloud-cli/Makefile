@@ -5,7 +5,7 @@ CATEGORIES=		net devel
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Command Line Interface to manage your OVHcloud services
-WWW=		https://github.com/ovh/ovhcloud-li
+WWW=		https://github.com/ovh/ovhcloud-cli
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
