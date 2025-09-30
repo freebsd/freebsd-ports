@@ -3,6 +3,9 @@ PORTVERSION=	0.4.3
 CATEGORIES=	misc
 MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 
+PATCH_SITES=	https://github.com/twaugh/patchutils/commit/
+PATCHFILES=	eaf8353cc8931535bbe8d05129eeeda034edb42c.patch:-p1
+
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small collection of programs that operate on patch files
 WWW=		http://cyberelk.net/tim/software/patchutils/ \
