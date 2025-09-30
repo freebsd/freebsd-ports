@@ -7604,6 +7604,7 @@
     SUBDIR += rubygem-marcel
     SUBDIR += rubygem-memo_wise
     SUBDIR += rubygem-memoist
+    SUBDIR += rubygem-memoist3
     SUBDIR += rubygem-memoizable
     SUBDIR += rubygem-memoize
     SUBDIR += rubygem-memory_profiler
