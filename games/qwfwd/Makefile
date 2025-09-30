@@ -17,11 +17,12 @@ USE_RC_SUBR=	${PORTNAME}
 EXTRACT_AFTER_ARGS=	--exclude .git* \
 			--exclude */.git* \
 			--exclude build_cmake.sh \
-			--exclude tools*
+			--exclude tools* \
+			--no-same-owner --no-same-permissions
 
 SUB_LIST=	QWUSER=${USERS}
-USERS=		qwfwd
-GROUPS=		qwfwd
+USERS=		${PORTNAME}
+GROUPS=		${PORTNAME}
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
@@ -34,6 +35,6 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
