@@ -1831,6 +1831,7 @@
     SUBDIR += oniguruma
     SUBDIR += open-beagle
     SUBDIR += open62541
+    SUBDIR += openapi
     SUBDIR += openapi-tui
     SUBDIR += opencl
     SUBDIR += opencl-clang
