@@ -1,5 +1,6 @@
 PORTNAME=	supercollider
 DISTVERSION=	3.14.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/Version-${DISTVERSION}/
 DISTNAME=	SuperCollider-${DISTVERSION}-Source
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3 \
 		vulkan-headers>0:graphics/vulkan-headers
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libjack.so:audio/jack \
 		libsndfile.so:audio/libsndfile \
 		libfftw3f.so:math/fftw3-float \
