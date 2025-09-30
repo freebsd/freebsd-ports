@@ -511,6 +511,7 @@
     SUBDIR += npm-node22
     SUBDIR += npm-node24
     SUBDIR += nyxt
+    SUBDIR += oatpp
     SUBDIR += oauth2-proxy
     SUBDIR += obhttpd
     SUBDIR += offpunk
