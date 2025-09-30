@@ -1,7 +1,7 @@
 PORTNAME=	openroad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0-20250216
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	cad
 
@@ -73,6 +73,10 @@ post-patch: # override the TCL version to be the same as USES=tcl sets
 		| ${XARGS} ${REINPLACE_CMD} -e ' \
 			s|set(TCL_POSSIBLE_NAMES |set(TCL_POSSIBLE_NAMES tcl$${FREEBSD_TCL_VER} |; \
 			s|PATHS $${TCL_LIB_PARENT1}|PATHS $${FREEBSD_TCL_INCLUDEDIR} $${TCL_LIB_PARENT1}|'
+	@${REINPLACE_CMD} \
+			-e '/^find_package(Boost /s| system||' \
+			-e '/Boost::system/d'  \
+			${WRKSRC}/src/dst/CMakeLists.txt
 
 post-install: # unnecessarily installs bundled OpenSTA project: https://github.com/The-OpenROAD-Project/OpenROAD/issues/597
 	${RM} -r ${STAGEDIR}${PREFIX}/include/sta ${STAGEDIR}${PREFIX}/lib/libOpenSTA.a
