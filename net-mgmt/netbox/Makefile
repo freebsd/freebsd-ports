@@ -26,7 +26,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 #
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2.3<5.3:www/py-django52@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-cors-headers>=4.7.0<5:www/py-dj52-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-django-debug-toolbar>=5.2.0<6:www/py-dj52-django-debug-toolbar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-django-debug-toolbar>=5.2.0<7:www/py-dj52-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-filter>=25.1<26:www/py-dj52-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-htmx>=1.23.2<2:www/py-dj52-django-htmx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-mptt>=0.17.0<0.18:www/py-dj52-django-mptt@${PY_FLAVOR} \
@@ -48,7 +48,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2.3<5.3:www/py-django52@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.11<7:textproc/py-feedparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6<4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.24.0<5:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}markdown>=3.8<3.9:textproc/py-markdown@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markdown>=3.8<3.10:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=9.6.18<10:textproc/py-mkdocs-material@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=0.30.0<1:textproc/py-mkdocstrings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>0:textproc/py-mkdocstrings-python@${PY_FLAVOR} \
