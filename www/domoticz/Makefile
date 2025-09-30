@@ -1,6 +1,6 @@
 PORTNAME=	domoticz
 DISTVERSION=	2024.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 
 MAINTAINER=	kiwi@FreeBSD.org
@@ -50,6 +50,11 @@ PRECOMP_CMAKE_BOOL=	USE_PRECOMPILED_HEADER
 
 PYTHON_USES=		python:3.9+
 PYTHON_CMAKE_BOOL=	USE_PYTHON
+
+post-patch:
+	@${REINPLACE_CMD} -e '/find_package/s| system||' \
+			  -e '/target_link_libraries/s| Boost::system||' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	${MKDIR} ${STAGEDIR}/var/db/domoticz ${STAGEDIR}/var/run/domoticz
