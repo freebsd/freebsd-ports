@@ -1,6 +1,6 @@
 PORTNAME=	redmine
 PORTVERSION=	6.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	60
@@ -76,7 +76,7 @@ NO_OPTIONS_SORT=	yes
 MYSQL_RUN_DEPENDS=	rubygem-mysql2>=0.5.0:databases/rubygem-mysql2 \
 			rubygem-with_advisory_lock61>0:devel/rubygem-with_advisory_lock61
 POSTGRESQL_RUN_DEPENDS=	rubygem-pg>=1.2.2:databases/rubygem-pg
-PUMA_RUN_DEPENDS=	rubygem-puma>=6.5.0<7:www/rubygem-puma \
+PUMA_RUN_DEPENDS=	rubygem-puma6>=6.5.0<7:www/rubygem-puma6 \
 			rubygem-rb-kqueue>=0.2:devel/rubygem-rb-kqueue
 PUMA_SUB_LIST=		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PUMA_VARS=		USE_RC_SUBR=redmine
