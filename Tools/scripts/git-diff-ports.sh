@@ -16,7 +16,7 @@ export LC_ALL=C
 for dep in git; do
 	if ! which -s $dep; then
 		echo "error: the '$dep' dependency is missing"
-		if [ $dep == "git" ]; then
+		if [ $dep = "git" ]; then
 			echo "... please install the 'git' package"
 		fi
 		exit 1
@@ -27,10 +27,5 @@ done
 # MAIN
 
 git diff HEAD "$@" |
-	grep "^diff " |
-	grep -v Mk/ |
-	grep -v Tools/ |
-	sed -E 's|diff --git a/||; s| .*||; s|([^/]+/[^/]+).*|\1|' |
-	grep -v '/Makefile$' |
-	sort |
-	uniq
+	awk -F / '/^diff/ && $2 !~ /[[:upper:]]/ && $3 !~ /^Makefile/ { print $2 "/" $3 }' |
+	sort -u
