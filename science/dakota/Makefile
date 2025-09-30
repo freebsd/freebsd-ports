@@ -1,5 +1,6 @@
 PORTNAME=	dakota
 DISTVERSION=	6.22.0
+PORTEVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/snl-dakota/dakota/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-public-src-cli
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nanoflann>0:math/nanoflann
 LIB_DEPENDS=	libblas.so:math/blas \
-		libboost_system.so:devel/boost-libs \
+		libboost_program_options.so:devel/boost-libs \
 		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -73,6 +74,11 @@ MAKE_ARGS=	VERBOSE=1
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 	@${ECHO} ${DISTVERSION} > ${WRKSRC}/VERSION # expected by the 'install' target
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| Boost::system||' \
+		${WRKSRC}/cmake/DakotaFindSystemTPLs.cmake \
+		${WRKSRC}/src/surrogates/unit/CMakeLists.txt
 
 pre-configure: # MUQ_STANMATH_DIR is lost otherwise
 	@${REINPLACE_CMD} 's|find_package(PkgConfig)|set(MUQ_STANMATH_DIR ${WRKSRC}/stanmath)|' ${WRKSRC}/packages/external/muq2/cmake/finds/FindSTANMATH.cmake
