@@ -1,11 +1,10 @@
 PORTNAME=	ipaddr
-PORTVERSION=	5.6.0
+PORTVERSION=	5.6.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	OCaml library for manipulation of IP address representations
 WWW=		https://github.com/mirage/ocaml-ipaddr
 
