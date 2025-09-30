@@ -15,8 +15,7 @@ BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
 LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara
 RUN_DEPENDS=	zathura:graphics/zathura
 
-# testing without USES=ssl
-USES=		compiler:c11 desktop-file-utils gnome libarchive meson ninja \
+USES=		compiler:c17 desktop-file-utils gnome libarchive meson \
 		pkgconfig tar:xz
 USE_GNOME=	glib20 gtk30
 
