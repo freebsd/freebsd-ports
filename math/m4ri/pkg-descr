@@ -1,24 +1,5 @@
-M4RI is a high-performance library designed for rapid arithmetic operations
-with dense matrices over the finite field F2 (GF(2)). F2, the field with
-two elements (0 and 1), is fundamental in areas like coding theory,
-cryptography, and computational algebra.
-
-The library's name, M4RI, originates from its core implementation of the
-"Method of the Four Russians" inversion algorithm, a technique published
-by Gregory Bard. This algorithm, inspired by Kronrod's multiplication
-method, provides significant speedups for matrix operations over F2.
-
-M4RI offers optimized routines for various matrix manipulations, including:
-
--   **Multiplication**: Efficiently computes products of dense matrices.
--   **Inversion**: Fast calculation of matrix inverses.
--   **Gaussian Elimination**: Solves systems of linear equations.
-
-This makes M4RI an invaluable tool for:
-
--   **Error-correcting codes**: Implementing and analyzing binary codes.
--   **Cryptography**: Developing and testing algorithms based on binary fields.
--   **Computational Algebra**: Solving problems in linear algebra over F2.
-
-M4RI provides researchers and developers with a powerful and efficient
-solution for numerical computations in specialized algebraic structures.
+M4RI is a library for fast arithmetic with dense matrices over F2. The name M4RI
+comes from the first implemented algorithm: The "Method of the Four Russians"
+inversion algorithm published by Gregory Bard. This algorithm in turn is named
+after the "Method of the Four Russians" multiplication algorithm which is
+probably better referred to as Kronrod's method.

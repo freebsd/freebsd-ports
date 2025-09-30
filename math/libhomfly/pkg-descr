@@ -1,21 +1,6 @@
-libhomfly is a specialized C library designed to compute the HOMFLY
-polynomial of a link. The HOMFLY polynomial is a powerful invariant
-in knot theory, used to distinguish different knots and links, providing
-crucial information about their topological properties.
+Library to compute the homfly polynomial of a link
 
-This library is a robust conversion of the original program by
-Robert J. Jenkins Jr., refactored into a shared library for broader
-applicability and ease of integration. It offers a straightforward
-interface:
-
--   **Input**: Accepts a character string formatted identically to the
-    input files used by the original standalone program, representing
-    the link's structure.
--   **Output**: Returns a string containing the computed HOMFLY polynomial,
-    mirroring the output format of the original utility.
-
-libhomfly is an invaluable resource for mathematicians, researchers,
-and developers working in knot theory, topology, and related fields.
-It provides a reliable and efficient computational engine for analyzing
-the complex structures of knots and links, enabling further research
-and application development.
+This is basically a conversion of the program written by Robert J Jenkins Jr
+into a shared library. It accepts as entry a character string, formatted in the
+same way as the input files that the original code used. The returned value is
+the string that the original program would print on screen.

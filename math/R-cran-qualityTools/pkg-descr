@@ -1,21 +1,10 @@
-The R-cran-qualityTools package provides a comprehensive suite of
-statistical methods essential for Quality Science and Six Sigma
-Quality Management, particularly supporting the Define, Measure,
-Analyze, Improve, and Control (DMAIC) cycle.
+qualityTools: Statistical Methods for Quality Science
 
-Key functionalities include:
-
--   **Distribution Fitting**: Tools for fitting various statistical
-    distributions to data.
--   **Process Capability Analysis**: Calculation of normal and non-normal
-    process capability indices.
--   **Measurement Systems Analysis (MSA)**: Techniques such as gauge
-    capability indices and Gauge Repeatability and Reproducibility (GR&R)
-    studies.
--   **Experimental Design**: Support for factorial and fractional
-    factorial designs.
--   **Response Surface Methods**: Including the use of desirability functions.
-
-This package is an invaluable resource for quality engineers, statisticians,
-and practitioners implementing Six Sigma methodologies, enabling robust
-analysis and improvement of processes.
+Contains methods associated with the Define, Measure, Analyze, Improve and
+Control (i.e. DMAIC) cycle of the Six Sigma Quality Management
+methodology.It covers distribution fitting, normal and non-normal process
+capability indices, techniques for Measurement Systems Analysis especially
+gage capability indices and Gage Repeatability (i.e Gage RR) and
+Reproducibility studies, factorial and fractional factorial designs as
+well as response surface methods including the use of desirability
+functions.

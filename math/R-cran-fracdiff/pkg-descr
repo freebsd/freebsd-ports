@@ -1,20 +1,3 @@
-The R-cran-fracdiff package provides robust functionality for the
-maximum likelihood estimation of parameters in fractionally differenced
-ARIMA(p,d,q) models. These models are a powerful extension of traditional
-ARIMA models, designed to capture long-range dependence in time series data,
-where the 'd' parameter (differencing order) can be a non-integer value.
-
-Fractionally differenced ARIMA models are particularly useful for
-analyzing phenomena that exhibit persistent memory effects, such as:
-
--   Financial time series (e.g., stock prices, volatility)
--   Hydrological data (e.g., river flows, rainfall)
--   Environmental data (e.g., temperature anomalies)
--   Long-memory processes in various scientific and engineering fields
-
-Based on the methodology by Haslett and Raftery (Applied Statistics, 1989),
-this package offers a reliable and statistically sound approach to
-modeling time series with fractional integration. It enables researchers
-and practitioners in R to accurately estimate the parameters of these
-complex models, leading to more precise forecasts and a deeper understanding
-of long-memory processes.
+Maximum likelihood estimation of the parameters of a fractionally
+differenced ARIMA(p,d,q) model (Haslett and Raftery, Appl.Statistics,
+1989).

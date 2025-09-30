@@ -1,24 +1,11 @@
-clRNG is a specialized library designed for high-quality uniform random
-number generation within OpenCL environments. It provides a robust and
-efficient solution for parallel applications requiring statistically
-sound random numbers on GPUs and other OpenCL-compatible devices.
+clRNG
 
-The library introduces the concept of "streams of random numbers," which
-act as virtual random number generators. These streams can be created
-in unlimited quantities on the host system and then utilized by work
-items on computing devices to generate random numbers. Each stream also
-features equally-spaced substreams, offering additional flexibility for
-complex simulations.
+a library for uniform random number generation in OpenCL.
 
-clRNG currently implements a selection of well-regarded pseudorandom
-number generators, including:
-
--   MRG31k3p
--   MRG32k3a
--   LFSR113
--   Philox-4x32-10
-
-This library is an invaluable resource for researchers and developers
-in fields such as Monte Carlo simulations, scientific computing, and
-machine learning, where efficient and reliable parallel random number
-generation is crucial.
+Streams of random numbers act as virtual random number generators.
+They can be created on the host computer in unlimited numbers, and
+then used either on the host or on computing devices by work items
+to generate random numbers. Each stream also has equally-spaced
+substreams, which are occasionally useful. The API is currently
+implemented for four different RNGs, namely the MRG31k3p, MRG32k3a,
+LFSR113 and Philox-4x32-10 generators.

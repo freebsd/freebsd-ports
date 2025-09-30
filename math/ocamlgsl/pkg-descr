@@ -1,22 +1,2 @@
-OCamlGSL provides a robust and comprehensive interface to the GNU
-Scientific Library (GSL) for the Objective Caml (OCaml) programming
-language. The GSL is a vast collection of numerical routines for
-scientific computing, offering a wide range of mathematical functions
-and algorithms.
-
-By bridging OCaml with GSL, OCamlGSL empowers OCaml developers to
-leverage high-performance, well-tested numerical capabilities directly
-within their functional programming environment. This integration is
-particularly beneficial for applications requiring:
-
--   **Numerical Analysis**: Solving differential equations, integration,
-    differentiation, root finding.
--   **Linear Algebra**: Matrix operations, eigenvalue problems, linear systems.
--   **Statistics**: Random number generation, probability distributions,
-    statistical tests.
--   **Special Functions**: Bessel functions, Gamma functions, error functions.
--   **Optimization**: Minimization and maximization algorithms.
-
-OCamlGSL allows OCaml programmers to perform complex scientific and
-mathematical computations with the efficiency and reliability of GSL,
-while retaining the expressiveness and safety features of OCaml.
+ocamlgsl is an interface to GSL (GNU scientific library), for the
+Objective Caml langage.

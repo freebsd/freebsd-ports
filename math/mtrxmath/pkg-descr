@@ -1,20 +1,4 @@
-Matrix Math (mtrxmath) is a dedicated software tool designed for the
-rapid and straightforward computation of various matrix functions and
-operations. It provides a user-friendly environment for manipulating
-matrices of arbitrary size, making complex linear algebra tasks
-accessible and efficient.
-
-Key functionalities include:
-
--   **Fundamental Operations**: Addition, subtraction, and multiplication
-    of matrices.
--   **Advanced Operations**: Matrix inversion and division, crucial for
-    solving systems of linear equations and other analytical tasks.
--   **Extensibility**: Designed to support a comprehensive and growing
-    suite of matrix operations, adapting to diverse mathematical needs.
-
-Mtrxmath is an invaluable resource for students, engineers, scientists,
-and anyone requiring quick and accurate matrix calculations. It
-streamlines the process of working with linear systems, data transformations,
-and other matrix-dependent computations, offering a reliable and efficient
-solution for numerical analysis.
+Matrix Math is software to quickly and easily compute functions of
+matrices of any size. It supports addition, subtraction,
+multiplication, inversion, division, and will support whatever else is
+necessary.

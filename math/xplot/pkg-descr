@@ -1,9 +1,1 @@
-Xplot is a versatile and efficient graphing utility specifically designed
-for the X11 windowing system. It provides a robust platform for visualizing
-various types of data, making it particularly useful for scientific,
-engineering, and network analysis applications.
-
-Commonly employed to display TCP traces, Xplot can also handle other
-time-series data, scatter plots, and more. Its interactive features allow
-users to zoom, pan, and inspect data points directly within the X11
-environment, offering a dynamic approach to data exploration and analysis.
+An X11 graphing utility.  Commonly used to display TCP traces.

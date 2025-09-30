@@ -1,21 +1,4 @@
-M4RIE is a high-performance library dedicated to fast arithmetic operations
-with dense matrices over finite fields of the form GF(2^e), where 'e'
-ranges from 2 to 16. Finite fields, also known as Galois fields, are
-fundamental in areas like coding theory, cryptography, and computational
-algebra.
+M4RIE is a library for fast arithmetic with dense matrices over GF(2^e) for
+2<=e<=16. The name stems from the fact that is relies heavily on M4RI.
 
-Building upon the capabilities of the M4RI library, M4RIE extends its
-functionality to support these larger finite fields, providing optimized
-routines for matrix manipulations such as multiplication, inversion,
-and Gaussian elimination. This makes it an invaluable tool for:
-
--   **Error-correcting codes**: Designing and implementing robust codes
-    for data transmission and storage.
--   **Cryptography**: Developing and analyzing cryptographic algorithms
-    that rely on finite field arithmetic.
--   **Computational Algebra**: Solving systems of linear equations and
-    performing other algebraic computations over specific finite fields.
-
-M4RIE offers researchers and developers a powerful and efficient solution
-for numerical computations in specialized algebraic structures, crucial
-for various advanced scientific and engineering applications.
+See also: https://github.com/malb/m4rie

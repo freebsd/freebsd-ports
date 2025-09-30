@@ -1,20 +1,4 @@
-LINPACK is a foundational software library for performing numerical
-linear algebra. Developed by a distinguished team including Jack Dongarra,
-Jim Bunch, Cleve Moler, and Pete Stewart, it was released on February 1, 1984.
-
-Despite its age, LINPACK remains highly significant in the field of
-high-performance computing. It provides a robust collection of Fortran
-subroutines for solving common problems in linear algebra, such as:
-
--   Solving systems of linear equations
--   Least squares solutions
--   Eigenvalue problems
--   Matrix factorization (e.g., LU, Cholesky, QR)
-
-Historically, LINPACK has been a cornerstone for benchmarking the
-performance of supercomputers (via the LINPACK Benchmark). It also
-formed a critical component of early numerical software environments,
-including MATLAB. While more modern libraries exist, LINPACK's
-algorithms are still widely respected for their accuracy and efficiency,
-making it a valuable resource for understanding and implementing core
-linear algebra operations.
+Developed by Jack Dongarra, Jim Bunch, Cleve Moler and Pete Stewart.
+ 1 Feb 84
+Used as part of Matlab, and often used to benchmark machines.
+Otherwise it is a very good linear algebra package.

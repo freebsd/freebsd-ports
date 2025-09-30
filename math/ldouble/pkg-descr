@@ -1,20 +1,2 @@
-The ldouble library provides a comprehensive collection of elementary
-mathematical functions, probability functions, and elliptic integrals,
-all implemented with extended precision. This library is specifically
-designed for computations requiring higher accuracy than standard
-double-precision floating-point numbers.
-
-It supports 80-bit long double precision on x86 architectures and
-128-bit long double precision where available, offering enhanced
-numerical stability and reduced round-off errors for demanding
-scientific and engineering applications. This extended precision is
-crucial for fields such as:
-
--   Computational physics and chemistry
--   High-precision financial modeling
--   Numerical analysis and algorithm development
--   Any application where accumulated floating-point errors can lead
-    to significant inaccuracies.
-
-By leveraging ldouble, developers can achieve greater confidence in the
-accuracy of their complex mathematical computations.
+Library of elementary mathematical functions, probability and elliptic
+integrals in 80-bit (x86) or 128-bit long double precision.

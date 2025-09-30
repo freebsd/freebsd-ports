@@ -1,20 +1,2 @@
-GMP-ECM is a specialized program for efficient integer factorization
-using the Elliptic Curve Method (ECM). This method excels at finding
-relatively small prime factors of very large numbers, making it a
-crucial tool in computational number theory and cryptography.
-
-It leverages the high-performance GNU MP (Multiple Precision) library
-for arbitrary-precision arithmetic, allowing it to handle integers of
-virtually any size with accuracy and speed.
-
-Key applications include:
-
--   **Cryptanalysis**: Analyzing cryptographic systems (e.g., RSA).
--   **Number Theory Research**: Exploring properties of integers and
-    primes.
--   **Computational Mathematics**: Decomposing numbers into prime
-    components.
-
-GMP-ECM offers a robust and optimized solution for researchers,
-cryptographers, and mathematicians needing efficient large integer
-factorization.
+GMP-ECM is a program to factor integers using the Elliptic Curve Method
+(ECM), based on the GNU MP multiprecision library.

@@ -1,21 +1,10 @@
-ised is a versatile command-line tool designed for generating number
-sequences and performing arithmetic evaluations. Unlike large GUI-based
-mathematical software, ised is specifically tailored for efficient use
-within shell scripting environments, complementing GNU core utilities.
+ised is a command-line tool for generating number sequences and
+arithmetic evaluation. Unlike big gui-based software (e.g. Mathematica,
+Derive, Matlab, Octave,...) it is intended for use in shell scripting,
+together with gnu core utilities.
 
-Its primary advantage lies in its ability to generalize all functions
-to operate on one-dimensional arrays, making it highly flexible for
-various tasks:
-
--   **Sequence Generation**: Functions similarly to `seq` for creating
-    numerical sequences, useful for loop indexing.
--   **File Processing**: Enables line-by-line arithmetic processing of
-    data files.
--   **Floating-Point Math**: Provides robust floating-point arithmetic
-    capabilities for shells that lack native support.
--   **Interactive Calculator**: Can be used interactively as an extended
-    calculator for quick computations.
-
-ised is an invaluable utility for system administrators, developers,
-and researchers who require a lightweight yet powerful tool for numerical
-manipulation and scripting in command-line environments.
+Its main advantage is that all functions are generalized to operate
+on one-dimensional arrays. It can be used for loop indexing (much
+like seq), line-by-line arithmetic processing of files, floating
+point math for shells that don't support it natively, or interactively,
+as extended calculator.

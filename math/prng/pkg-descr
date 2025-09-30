@@ -1,22 +1,4 @@
-PRNG (Pseudorandom Number Generators) is a robust collection of portable,
-high-performance ANSI-C implementations of various pseudorandom number
-generators. Developed by Otmar Lendl and Josef Leydold, this library
-is designed to provide statistically sound and efficient random number
-sequences for a wide range of applications.
-
-The collection includes implementations of:
-
--   **Linear Congruential Generators (LCG)**: A classic and widely
-    understood method for generating pseudorandom numbers.
--   **Inversive Congruential Generators (ICG)**: Offers improved
-    statistical properties compared to LCGs, particularly in terms of
-    period length and lattice structure.
--   **Explicit Inversive Congruential Generators (EICG)**: Further
-    enhances the quality of pseudorandom sequences, often used in
-    more demanding simulations.
-
-PRNG is an invaluable resource for researchers, statisticians, and
-developers in fields such as Monte Carlo simulations, cryptography,
-and scientific modeling, where the quality and performance of random
-number generation are critical. Its ANSI-C implementation ensures
-broad compatibility and efficient execution across different platforms.
+PRNG is a collection of portable, high-performance ANSI-C implementations of
+pseudorandom number generators such as linear congruential, inversive
+congruential, and explicit inversive congruential random number generators (LCG,
+ICG and EICG, respectively) created by Otmar Lendl and Josef Leydold.

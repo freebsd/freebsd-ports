@@ -1,24 +1,21 @@
-CRlibm is an efficient and rigorously proven mathematical library
-providing correctly rounded implementations of double-precision C99
-standard elementary functions. It supports all four IEEE-754 rounding
-modes, offering high accuracy and reliability for numerical computations.
+CRlibm is an efficient and proven mathematical library, which
+provides implementations of the double-precision C99 standard
+elementary functions, correctly rounded in the four IEEE-754 rounding
+modes, and sufficiently efficient in average time, worst-case time,
+and memory consumption to replace existing libms transparently.
 
-Designed for transparent replacement of existing `libm` implementations,
-CRlibm maintains efficiency in average and worst-case time, along with
-optimized memory consumption. Its development includes extensive
-documentation with formal proofs for each function, making it an
-excellent resource for understanding software elementary function
+The distribution includes extensive documentation with the proof
+of each function (currently more than 100 pages), as well as all
+the Maple scripts used to develop the functions. This makes this
+library an excellent tutorial on software elementary function
 development.
 
-CRlibm also integrates scslib (Software Carry Save Library), a lightweight
-multiple-precision library. scslib is tailored for CRlibm's needs,
-offering precision up to a few hundred bits, portability, IEEE
-floating-point compatibility, and performance comparable to or better
-than GMP, all within a small footprint. It efficiently handles
-multiple-precision additions, subtractions, multiplications, and conversions
-by avoiding carry propagations during multiplication.
-
-CRlibm is an invaluable tool for applications demanding high-precision,
-correctly rounded mathematical functions, particularly in scientific
-computing, financial modeling, and other fields where numerical accuracy
-is paramount.
+CRlibm also includes a lightweight library for multiple precision,
+scslib (Software Carry Save Library). This library has been developed
+specifically to answer the needs of the CRlibm project: precision
+up to a few hundred bits, portability, compatibility with IEEE
+floating-point standards, performance comparable to or better than
+GMP, and a small footprint. It uses a data-structure which allows
+carry propagations to be avoided during multiple-precision
+multiplications, and supports addition, subtraction, multiplication,
+and conversions.

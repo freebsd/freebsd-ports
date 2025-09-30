@@ -1,24 +1,7 @@
-TRLAN is a portable and modular Fortran 90 software package that
-implements the thick-restart Lanczos method. This advanced numerical
-technique is specifically designed for efficiently solving large-scale
-eigenvalue problems, particularly when only a small subset of eigenvalues
-and their corresponding eigenvectors are required.
-
-TRLAN excels in scenarios involving real symmetric or complex Hermitian
-matrices that are too large to be stored entirely in computer memory.
-Its key features include:
-
--   **Memory Efficiency**: Handles very large matrices by avoiding full
-    storage, making it suitable for high-performance computing.
--   **Targeted Eigenvalue Computation**: Focuses on finding a few desired
-    eigenvalues and eigenvectors, rather than the entire spectrum.
--   **BLAS and LAPACK Integration**: Leverages highly optimized Basic
-    Linear Algebra Subprograms (BLAS) and Linear Algebra Package (LAPACK)
-    routines for core arithmetic computations, ensuring high performance.
--   **Checkpointing Capability**: Supports writing checkpoint files,
-    allowing computations to be paused and restarted later, which is
-    crucial for long-running simulations or in case of system interruptions.
-
-TRLAN is an invaluable tool for researchers and engineers in fields
-such as quantum chemistry, structural analysis, and materials science,
-where efficient and robust solutions to large eigenvalue problems are essential.
+This portable, modular Fortran 90 software package implements the thick-restart
+Lanczos method, for use with real symmetric or complex Hermitian eigenvalue
+problems where a small number of eigevalues and eigenvectors are needed, and
+the matrices involved may be too large to store in computer memory. Most of
+the arithmetic computations in the software are done through calls to BLAS
+and LAPACK.  The software can be instructed to write checkpoint files so that
+it can be restarted is a later time.

@@ -1,21 +1,4 @@
-Physcalc is an exceptionally flexible and powerful mathematical calculator
-designed for a wide range of scientific and engineering computations.
-Its primary strength lies in its extensive unit conversion capabilities
-and highly adaptable problem-solving interface.
-
-Key features include:
-
--   **Comprehensive Unit Conversions**: Seamlessly convert between numerous
-    units across various domains, such as length, mass, time, temperature,
-    energy, and more.
--   **Flexible Math Problem Specification**: Allows users to input and
-    solve mathematical problems with remarkable versatility, accommodating
-    complex expressions and scientific notation.
--   **User-Extensible Conversions**: Empowering users to define and add
-    their own custom unit conversions, tailoring the calculator to specific
-    needs and specialized fields.
-
-Physcalc is an invaluable tool for physicists, engineers, students, and
-anyone who frequently deals with unit conversions and intricate mathematical
-problems. It streamlines calculations and enhances productivity by providing
-a highly customizable and efficient computational environment.
+Physcalc is a neat mathematical calculator that does conversions
+from many different units in many forms, and is extremely flexible
+as far as specifying math problems go.  You can also add your own
+types of conversions.

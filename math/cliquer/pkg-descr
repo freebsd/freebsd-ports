@@ -1,23 +1,9 @@
-Cliquer is a highly efficient C library designed for finding cliques
-in arbitrary weighted graphs. In graph theory, a clique is a subset
-of vertices where every pair of vertices is connected by an edge.
-Finding cliques is a fundamental problem with applications in social
-network analysis, bioinformatics, and computer vision.
+Cliquer is a set of C routines for finding cliques in an arbitrary weighted
+graph. It uses an exact branch-and-bound algorithm developed by Patric
+Ostergard. It is designed with the aim of being efficient while still being
+flexible and easy to use.
 
-This library implements an exact branch-and-bound algorithm developed
-by Patric Ostergard, ensuring optimal solutions. Cliquer is meticulously
-designed to be:
+Note: this port do not use the upstream version, but the version autotoolized
+by Dima Pasechnik.
 
--   **Efficient**: Optimized for performance, even on complex graphs.
--   **Flexible**: Adaptable to various graph structures and problem
-    specifications.
--   **Easy to Use**: Provides a straightforward API for integration
-    into other applications.
-
-Note that this port utilizes a version of Cliquer that has been
-autotoolized by Dima Pasechnik, enhancing its build system and
-portability. This ensures a robust and well-maintained package.
-
-Cliquer is an invaluable resource for researchers and developers working
-with graph algorithms, offering a powerful and reliable tool for
-identifying dense subgraphs and solving related combinatorial problems.
+See also: https://github.com/dimpase/autocliquer

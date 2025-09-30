@@ -1,21 +1,7 @@
-GRPN is a powerful and intuitive Reverse Polish Notation (RPN) calculator
-designed for the X Window System, built with the GIMP Toolkit (GTK).
-RPN calculators streamline complex calculations by eliminating the need
-for parentheses and prioritizing operational flow.
+GRPN is a RPN calculator for the X Window system built using
+the GIMP Toolkit (GTK).
 
-This graphical calculator offers extensive support for various number
-types and display formats, making it a versatile tool for mathematicians,
-engineers, and students. Key features include:
-
--   **Diverse Data Types**: Handles calculations with real numbers,
-    complex numbers, matrices, and complex matrices.
--   **Flexible Radix Modes**: Numbers can be displayed in four different
-    radix modes (e.g., binary, octal, decimal, hexadecimal) for enhanced
-    versatility in various computing contexts.
--   **Complex Number Representation**: Complex numbers can be viewed in
-    either Cartesian (a + bi) or polar (r * e^(i*theta)) form, catering
-    to different analytical needs.
-
-GRPN provides a robust and user-friendly environment for performing
-advanced mathematical computations, combining the efficiency of RPN
-with the visual clarity of a modern graphical interface.
+GRPN works with real numbers, complex numbers, matrices, and
+complex matrices.  Numbers can be displayed in 4 different
+radix modes, and complex numbers can be displayed in either
+Cartesian or polar form.

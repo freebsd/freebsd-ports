@@ -1,15 +1,2 @@
-GLgraph is a powerful and interactive visualization tool designed to
-render complex mathematical functions in a graphical environment.
-Leveraging OpenGL, it provides dynamic 3D and 4D representations,
-making abstract mathematical concepts tangible and explorable.
-
-This utility excels at visualizing functions with up to three independent
-variables (typically denoted as x, z, and t). Notably, it can generate
-stunning 4D function plots, where three dimensions represent space and
-the fourth dimension represents time, allowing for the visualization of
-evolving systems or dynamic surfaces.
-
-GLgraph is an invaluable resource for students, educators, and researchers
-in mathematics, physics, engineering, and other scientific disciplines
-who need to understand and analyze multi-dimensional functions through
-intuitive and high-quality graphical representations.
+GLgraph visualize mathematical functions. It can handle 3 unknowns (x,z,t) and
+can produce a 4D function with 3 space and 1 time dimension.

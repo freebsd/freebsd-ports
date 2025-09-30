@@ -1,21 +1,20 @@
-RANDLIB is a comprehensive library of routines for generating various
-types of random numbers and permutations. It provides a robust set of
-functions for statistical simulations and modeling, making it a valuable
-tool for researchers and developers.
-
-The library offers routines to return:
-
--   **Continuous Random Deviates**: Beta, Chi-square, Exponential, F,
-    Gamma, Noncentral Chi-square, Noncentral F, and Univariate Normal.
--   **Discrete Random Deviates**: Binomial, Negative Binomial, Multinomial,
-    and Poisson.
--   **Uniform Random Deviates**: Real uniform deviates between specified
-    limits, and integer uniform deviates between specified limits.
--   **Multivariate Normal Deviates**: With specified mean and covariance matrix.
--   **Random Permutations**: Generates random permutations of an integer array.
--   **Seed Generation**: Calculates seeds for the random number generator
-    from a character string.
-
-RANDLIB ensures a wide range of random number generation capabilities,
-essential for Monte Carlo methods, statistical analysis, and other
-applications requiring diverse and reliable random variates.
+This library provides routines that return:
+    (1)  Beta random deviates
+    (2)  Chi-square random deviates
+    (3)  Exponential random deviates
+    (4)  F random deviates
+    (5)  Gamma random deviates
+    (6)  Multivariate normal random deviates (mean and covariance
+         matrix specified)
+    (7)  Noncentral chi-square random deviates
+    (8)  Noncentral F random deviates
+    (9)  Univariate normal random deviates
+    (10) Random permutations of an integer array
+    (11) Real uniform random deviates between specif
+    (12) Binomial random deviates
+    (13) Negative Binomial random deviates
+    (14) Multinomial random deviates
+    (15) Poisson random deviates
+    (16) Integer uniform deviates between specified limits
+    (17) Seeds for the random number generator calculated from a
+         character string

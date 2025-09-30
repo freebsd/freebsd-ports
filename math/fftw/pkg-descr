@@ -1,23 +1,14 @@
-FFTW (Fastest Fourier Transform in the West) is a highly optimized C
-subroutine library for computing the Discrete Fourier Transform (DFT).
-It supports one or more dimensions, both real and complex data, and
-arbitrary input size, making it a versatile tool for various applications.
+FFTW is a C subroutine library for computing the Discrete Fourier Transform
+(DFT) in one or more dimensions, of both real and complex data, and of
+arbitrary input size. We believe that FFTW, which is free software, should
+become the FFT library of choice for most applications. Our benchmarks,
+performed on a variety of platforms, show that FFTW's performance is
+typically superior to that of other publicly available FFT software.
+Moreover, FFTW's performance is portable: the program will perform well on
+most architectures without modification.
 
-FFTW is renowned for its exceptional performance, consistently outperforming
-other publicly available FFT software across a wide range of platforms.
-Its performance is also highly portable, ensuring optimal execution on
-most architectures without requiring modifications.
-
-Key features and benefits include:
-
--   **Versatile DFT Computation**: Handles 1D, 2D, and multi-dimensional
-    DFTs for both real and complex datasets.
--   **Arbitrary Input Size**: Efficiently processes data of any length,
-    without power-of-two restrictions.
--   **Self-Optimizing**: Employs adaptive algorithms that tune themselves
-    to the underlying hardware for peak performance.
-
-Developed at MIT by Matteo Frigo and Steven G. Johnson, FFTW has become
-the de facto standard for FFT computations in scientific computing,
-signal processing, image analysis, and many other fields where fast
-and accurate Fourier transforms are critical.
+The FFTW package was developed at MIT by Matteo Frigo and Steven G.
+Johnson.  Please send email to fftw@theory.lcs.mit.edu so that we can keep
+track of users and send you information about new releases.  The latest
+version of FFTW, benchmarks, links, and other information can be found at
+the FFTW home page.

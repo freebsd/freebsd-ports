@@ -1,24 +1,2 @@
-The R-cran-conf.design package provides a specialized set of tools
-within the R environment for the construction and manipulation of
-confounded and fractional factorial designs. These experimental designs
-are fundamental in statistics and engineering for efficiently studying
-the effects of multiple factors on an outcome, especially when resources
-are limited.
-
-Confounded designs allow for the study of a large number of factors
-with a smaller number of experimental runs by strategically sacrificing
-information about higher-order interactions. Fractional factorial designs
-are a type of confounded design that uses a fraction of the full factorial
-experiment, making them highly efficient for screening important factors.
-
-This library simplifies the process of setting up and analyzing such
-designs, making it invaluable for:
-
--   Experiment design in industrial and scientific research.
--   Quality improvement and process optimization.
--   Situations where a full factorial experiment is impractical due to
-    cost or time constraints.
-
-By offering these simple yet powerful tools, R-cran-conf.design enables
-researchers and practitioners to conduct more efficient and insightful
-experiments.
+This small library contains a series of simple tools for constructing and
+manipulating confounded and fractional factorial designs.

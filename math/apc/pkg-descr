@@ -1,20 +1,17 @@
-APC (Auto Payment Calculator) is a simple, Xforms-based graphical
-application designed for the X Window System. It provides a user-friendly
-interface for calculating auto loan payments.
+        the Auto Payment Calculator V1.0 Release
+	Copyright (C) 1997  Eric A. Griff
 
-Users can easily input the principal amount, loan term (in months),
-and interest rate. Upon calculation, it displays the monthly payment,
-as well as the number of weeks and the corresponding weekly payment.
+Auto Payment Calculator is a simple, xforms based, application for
+use under the X-windows system, that calculates auto loan payments.
 
-Key features include:
+It is pretty straight forward. You enter the Principal (Amount),
+Term (in months), and Rate, and then with either [RETURN]
+(or [enter] or whatever your keyboard equivelent is),  (ALT-C), or
+clicking the calculate button; you will have the payment in months,
+as well as number of weeks, and weekly payment.
 
--   **Intuitive Interface**: Built with Xforms for a straightforward
-    graphical user experience.
--   **Loan Calculation**: Quickly determines monthly and weekly payments
-    based on user-provided loan details.
--   **Interactive Input**: Supports keyboard navigation (e.g., Tab, Enter)
-    and mouse interaction for efficient data entry.
-
-APC is a practical utility for individuals needing to quickly estimate
-car loan payments, offering a clear and concise solution within the
-X Window environment.
+You may also [TAB] through the Amount, Term, and Rate, as well as
+hold down ALT and press the character in its Name that is underlined
+to go do that function. As long as all three are filled in, you may
+hit [ENTER] to Calculate right there. This makes it easy to cycle
+quickly through numerous terms, amounts, and rates.

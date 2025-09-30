@@ -1,24 +1,7 @@
-clFFT is a high-performance software library providing optimized Fast
-Fourier Transform (FFT) functions implemented in OpenCL. The FFT is a
-fundamental algorithm in digital signal processing and numerical analysis,
-used for tasks such as spectral analysis, image processing, and solving
-partial differential equations.
+clFFT
 
-Leveraging the OpenCL framework, clFFT enables efficient computation
-of FFTs on a wide range of parallel processing devices. Its key features
-include:
+a software library containing FFT functions written in OpenCL
 
--   **GPU Acceleration**: Primarily designed to harness the power of
-    Graphics Processing Units (GPUs) for significant speedups in FFT
-    computations.
--   **CPU Support**: Also supports execution on Central Processing Units
-    (CPUs), which is beneficial for debugging, development, and
-    heterogeneous computing environments where a mix of device types
-    is utilized.
--   **OpenCL Standard**: Adheres to the OpenCL standard, ensuring
-    portability across different hardware vendors and platforms.
-
-clFFT is an invaluable resource for developers and researchers who need
-to perform fast and efficient Fourier transforms on large datasets,
-particularly in applications that can benefit from the parallel
-processing capabilities of modern GPUs and multi-core CPUs.
+clFFT is a software library containing FFT functions written in OpenCL. In
+addition to GPU devices, the libraries also support running on CPU devices to
+facilitate debugging and heterogeneous programming.

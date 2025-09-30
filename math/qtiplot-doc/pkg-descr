@@ -1,22 +1,3 @@
-This package provides the comprehensive documentation for QtiPlot,
-a powerful and platform-independent application for data analysis
-and visualization. QtiPlot is a free (GPL) software often compared
-to commercial alternatives like Origin, offering extensive capabilities
-for scientific plotting, data manipulation, and statistical analysis.
-
-The documentation included in this package is an essential resource
-for both new and experienced QtiPlot users. It covers:
-
--   **Getting Started**: Installation, interface overview, and basic
-    operations.
--   **Data Handling**: Importing, organizing, and manipulating datasets.
--   **Plotting**: Creating 2D and 3D plots, customizing graphs, and
-    exporting results.
--   **Analysis**: Performing statistical tests, curve fitting, and
-    signal processing.
--   **Scripting**: Utilizing QtiPlot's scripting capabilities for
-    automation.
-
-By providing detailed guides, tutorials, and reference materials, this
-documentation package ensures users can fully leverage QtiPlot's
-features to effectively analyze and visualize their scientific data.
+QtiPlot is a free (GPL) platform independent data analysis and
+visualization application similar to the non-free Windows program
+Origin.

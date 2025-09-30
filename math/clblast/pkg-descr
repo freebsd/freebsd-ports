@@ -1,22 +1,2 @@
-CLBlast is a cutting-edge, lightweight, and highly performant OpenCL
-BLAS (Basic Linear Algebra Subprograms) library. It provides efficient
-and accelerated linear algebra computations on OpenCL-compatible devices.
-
-BLAS routines are fundamental building blocks for numerical algorithms
-in scientific computing, machine learning, and data analysis. CLBlast
-leverages OpenCL to offload these tasks to GPUs and other accelerators,
-significantly speeding up applications.
-
-Key features and benefits:
-
--   **Modern Design**: Built with contemporary OpenCL practices for
-    optimal performance.
--   **Lightweight Footprint**: Minimizes overhead for diverse systems.
--   **High Performance**: Achieves superior execution speeds through
-    careful optimization.
--   **Tunable**: Allows fine-grained control to extract maximum
-    performance from specific hardware (Intel, AMD, NVIDIA accelerators).
-
-CLBlast is an invaluable resource for developers and researchers seeking
-to accelerate numerical workloads by harnessing parallel processing
-capabilities of modern hardware through OpenCL.
+Modern, lightweight, performant and tunable OpenCL BLAS library. Tuned for
+Intel, AMD, and NVIDIA accelerators.

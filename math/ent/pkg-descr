@@ -1,20 +1,5 @@
-Ent is a powerful command-line utility for applying statistical tests
-to byte sequences within files. It provides insights into the randomness
-and information density of data, crucial for evaluating various digital
-processes.
-
-Key analyses performed include:
-
--   **Entropy Calculation**: Measures information content per byte.
--   **Chi-Square Test**: Assesses uniformity of byte distribution.
--   **Arithmetic Mean and Monte Carlo Pi Estimation**: Statistical indicators.
--   **Serial Correlation Coefficient**: Detects patterns between bytes.
-
-Ent is particularly useful for:
-
--   **Evaluating Pseudorandom Number Generators (PRNGs)**: Essential for
-    cryptography and statistical sampling.
--   **Assessing Compression Algorithms**: Analyzing information density.
--   **Analyzing Data Streams**: Identifying non-random patterns.
-
-It helps users ensure the integrity and quality of their data and algorithms.
+ent applies various tests to sequences of bytes stored in files and reports the
+results of those tests. The program is useful for evaluating pseudorandom
+number generators for encryption and statistical sampling applications,
+compression algorithms, and other applications where the information density of
+a file is of interest.

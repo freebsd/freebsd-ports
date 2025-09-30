@@ -1,17 +1,2 @@
-MATH77 provides a foundational collection of mathematical subprogram
-libraries specifically designed for use with Fortran 77. Developed by
-CalTech, these libraries offer a robust and historically significant
-suite of routines for various numerical computations.
-
-Fortran 77 has been a cornerstone of scientific and engineering computing
-for decades, and MATH77 complements this by offering optimized and
-reliable implementations of common mathematical operations. These
-subprograms typically cover areas such as:
-
--   Linear algebra (e.g., matrix operations, solving linear systems)
--   Numerical analysis (e.g., root finding, integration, differentiation)
--   Special functions (e.g., Bessel functions, error functions)
-
-This package is particularly valuable for maintaining and developing
-applications that rely on established Fortran 77 codebases, ensuring
-accuracy and performance in numerical tasks.
+Mathematical subprogram libraries for Fortran 77.
+Created by CalTech.

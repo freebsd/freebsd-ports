@@ -1,20 +1,8 @@
-Emc2 is a portable, interactive, and graphical editor for two-dimensional
-mesh geometries. It provides a comprehensive environment for creating,
-modifying, and analyzing mesh structures, making it an invaluable tool
-for numerical simulations and engineering applications.
+Emc2 is a portable, interactive, graphical editor of two-dimensional mesh
+geometries. It can create and modify geometries (as in CAD), and define line
+discretizations, subdomains, and reference numbers (to take into account
+boundary conditions and material properties). Grid and Delaunay-Voronoi
+meshes composed of triangles or quadrilaterals can be regularized, rotated,
+and modified via the addition, removal, or moving of vertices.
 
-Key functionalities include:
-
--   **Geometry Creation and Modification**: Functions similar to CAD
-    software for designing and altering 2D shapes.
--   **Mesh Definition**: Define line discretizations, subdomains, and
-    assign reference numbers for boundary conditions and material properties.
--   **Mesh Generation**: Create grid and Delaunay-Voronoi meshes composed
-    of triangles or quadrilaterals.
--   **Mesh Manipulation**: Regularize, rotate, and modify meshes by
-    adding, removing, or moving vertices, ensuring optimal mesh quality.
-
-Emc2 streamlines the preprocessing stage for finite element analysis,
-computational fluid dynamics, and other simulation methods. For enhanced
-mesh generation capabilities, it is highly suggested that users also
-install the `math/bamg` port.
+It is suggested that users also install the math/bamg port.

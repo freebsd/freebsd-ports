@@ -1,22 +1,7 @@
-libbraiding is a C++ shared library that exposes the functionalities
-of the Braiding program, a tool for computations within braid groups.
-Braid groups are fundamental mathematical objects in topology and algebra,
-used to describe the intertwining of strands.
+This is a project to expose the functionalitis of the Braiding program as a
+shared library. The original goal is to include it as a component of SageMath,
+but it can be used in any other c++ program.
 
-This library provides a robust and efficient framework for performing
-various computations on braid groups, including:
+It allows various computations on braid groups, such as normal forms.
 
--   **Normal Forms**: Calculating canonical representations of braids,
-    essential for comparison and analysis.
--   **Other Computations**: Facilitating a range of algebraic operations
-    and manipulations within braid groups.
-
-While initially conceived for integration as a component of SageMath,
-a comprehensive open-source mathematics software system, libbraiding
-is designed to be a standalone library. This allows any C++ program
-to leverage its powerful capabilities for braid group computations.
-
-libbraiding is an invaluable resource for mathematicians, computer
-scientists, and researchers working in topology, group theory, and
-related fields, offering a flexible and high-performance solution
-for exploring the intricate world of braids.
+See also: https://github.com/miguelmarco/libbraiding

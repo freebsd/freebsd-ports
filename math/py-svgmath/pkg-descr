@@ -1,20 +1,2 @@
-SVGMath is a specialized command-line utility written entirely in Python
-that facilitates the conversion of MathML (Mathematical Markup Language)
-expressions into SVG (Scalable Vector Graphics) format.
-
-MathML is an XML-based markup language for describing mathematical
-notation, while SVG is an XML-based vector image format for two-dimensional
-graphics. The conversion provided by SVGMath is highly beneficial for:
-
--   **High-quality rendering**: SVG ensures that mathematical equations
-    are rendered sharply and clearly at any resolution, making them ideal
-    for web display, print, and presentations.
--   **Web integration**: Easily embed complex mathematical formulas into
-    web pages and other digital documents without relying on raster images
-    or specialized fonts.
--   **Accessibility**: Vector graphics maintain their quality when scaled,
-    improving readability for users with varying display needs.
-
-As a pure Python implementation, SVGMath offers a portable and easily
-integrable solution for developers and content creators who need to
-present mathematical content in a visually appealing and scalable format.
+SVGMath is a command-line utility to convert MathML expressions
+to SVG, written entirely in Python.

@@ -1,20 +1,4 @@
-EdenMath is a user-friendly scientific calculator designed to perform
-a wide array of mathematical computations. It offers a comprehensive
-set of functionalities, making it a versatile tool for students,
-educators, and professionals alike.
+EdenMath is a scientific calculator. It does standard arithmetic,
+probability, and trigonometric functions.
 
-Key features of EdenMath include:
-
--   **Standard Arithmetic**: Basic operations such as addition, subtraction,
-    multiplication, and division.
--   **Advanced Mathematical Functions**: Support for powers, roots, logarithms,
-    and exponential functions.
--   **Trigonometric Functions**: Calculations involving sine, cosine, tangent,
-    and their inverses.
--   **Probability and Statistics**: Functions for permutations, combinations,
-    and basic statistical calculations.
-
-With its intuitive interface, EdenMath simplifies complex calculations,
-providing accurate and quick results. It is distributed under the terms
-of the GPL2 or later license, ensuring it remains free and open-source
-for everyone to use and modify.
+LICENSE: GPL2 or later

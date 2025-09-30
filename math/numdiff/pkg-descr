@@ -1,21 +1,8 @@
-Numdiff is a specialized command-line utility designed for intelligent
-comparison of files containing numerical data. Unlike standard `diff`
-tools, Numdiff excels at identifying semantic differences between files
-by intelligently handling numerical variations and formatting discrepancies.
+Numdiff is a little program that can be used to compare putatively
+similar files line by line and field by field, ignoring small numeric
+differences or/and different numeric formats.
 
-Its core functionality allows users to compare putatively similar files
-line by line and field by field, with key features including:
+Equivalently, Numdiff is a program with the capability to appropriately
+compare files containing numerical fields (and not only).
 
--   **Tolerance for Numeric Differences**: Ignores small numerical
-    variations, focusing on significant changes.
--   **Format Agnostic Comparison**: Accommodates different numerical
-    formats (e.g., scientific notation, varying precision), ensuring
-    accurate comparisons regardless of presentation.
--   **Mixed Content Handling**: Capable of comparing files that contain
-    both numerical fields and other types of data.
-
-Numdiff is an invaluable tool for scientists, engineers, and developers
-who frequently work with simulation outputs, experimental data, or
-configuration files where minor numerical fluctuations or formatting
-differences should not be flagged as significant changes. It streamlines
-the process of verifying data integrity and tracking meaningful updates.
+% numdiff file1 file2

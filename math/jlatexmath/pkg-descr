@@ -1,24 +1,19 @@
-JLaTeXMath is a Java API designed to render mathematical formulas
-written in LaTeX. It provides a robust solution for displaying complex
-mathematical expressions within Java applications, with UTF-8 as the
-default encoding.
+The goal of this Java API is to display mathematical formulas written in
+LaTeX. The default encoding is UTF-8.
 
-The library supports a wide range of LaTeX commands and features, including:
+The most of LaTeX commands are available and :
 
--   **Comprehensive Command Support**: Most standard LaTeX commands,
-    macros from `amsmath`, and symbols from `amssymb` and `stmaryrd`.
--   **Graphics Integration**: Supports `\includegraphics` (without options)
-    and `\over` macro.
--   **Extended Accents**: Includes accents from the `amsxtra` package.
--   **Color/Graphics Manipulation**: Provides `\definecolor`, `\textcolor`,
-    `\colorbox`, `\fcolorbox` (from `color` package), and `\rotatebox`,
-    `\reflectbox`, `\scalebox` (from `graphicx`).
--   **Unicode/Font Support**: Detects and loads fonts for Latin, Cyrillic,
-    and Greek Unicode characters.
--   **Custom Commands/Environments**: Supports `\newcommand`, `\newenvironment`,
-    `array`, `matrix`, `pmatrix`, `eqnarray`, and `cases` environments.
--   **Embedded Fonts**: Fonts embedded in JAR for PDF, PS, EPS generation
-    via FOP 0.95; SVG export also supported.
-
-JLaTeXMath is an invaluable tool for Java developers needing to integrate
-high-quality mathematical typesetting into their applications.
+ 1) macros from amsmath and symbols from amssymb and stmaryrd;
+ 2) \includegraphics (without options);
+ 3) the TeX macro \over;
+ 4) accents from amsxtra package;
+ 5) the macros \definecolor, \textcolor, \colorbox and \fcolorbox from the
+    package color;
+ 6) the macros \rotatebox, \reflectbox and \scalebox from the package graphicx;
+ 7) the most of latin unicode characters are available and cyrillic or
+    greek characters are detected for the loading of the different fonts;
+ 8) the commands \newcommand and \newenvironment;
+ 9) the environments array, matrix, pmatrix,..., eqnarray, cases;
+10) the fonts are embedded in the jar file to be used by fop 0.95 to generate
+    PDF, PS or EPS (SVG export with shaped fonts works fine too);
+11) and probably other things I forgot...

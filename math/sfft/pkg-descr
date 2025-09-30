@@ -1,19 +1,6 @@
-sfft is an optimized library for computing Discrete Fourier Transforms
-(DFTs) of signals with a sparse frequency domain. It exploits this
-sparsity for significantly more efficient computations than traditional
-FFT algorithms.
-
-Developed by a team at MIT CSAIL (Hassanieh, Indyk, Katabi, Price),
-sfft represents a breakthrough in sparse Fourier transform techniques.
-Further performance optimizations were contributed by J. Schumacher at
-ETH Zurich.
-
-This library is beneficial for applications where:
-
--   **Signals have few dominant frequencies**: E.g., compressed sensing,
-    spectral analysis of sparse signals.
--   **Computational speed is critical**: Offering faster processing.
--   **Resource efficiency is desired**: Reducing computational load.
-
-sfft provides a powerful tool for researchers and engineers working with
-sparse spectral data, enabling faster analysis and processing.
+sfft is a library to compute discrete Fourier transforms of signals with
+a sparse frequency domain, using an algorithm that is more efficient than
+other known FFT algorithms. It was developed by Haitham Hassanieh, Piotr
+Indyk, Dina Katabi, and Eric Price at the Computer Science and Artifical
+Intelligence Lab at MIT. Performance optimizations were developed by J.
+Schumacher at the Computer Science Department of ETH Zurich in 2013.

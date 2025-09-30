@@ -1,18 +1,4 @@
-ARPACK++ provides an object-oriented C++ interface to ARPACK (ARnoldi
-PACKage), a widely used Fortran library for solving large-scale
-eigenvalue problems. This wrapper allows C++ developers to leverage
-ARPACK's power within a modern programming paradigm.
-
-ARPACK is known for efficiently computing a few eigenvalues and
-eigenvectors of large, sparse matrices, making it vital in quantum
-mechanics, structural engineering, and data analysis. ARPACK++ retains
-the original Fortran package's strengths:
-
--   **Full Capability**: Access to all ARPACK functionalities for
-    various eigenvalue problems.
--   **High Performance**: Maintains computational speed and efficiency.
--   **Exceptional Accuracy**: Delivers precise numerical results.
--   **Low Memory Requirements**: Optimized for large matrices.
-
-By integrating ARPACK's robust numerical algorithms with C++ flexibility,
-ARPACK++ offers a powerful solution for complex eigenvalue computations.
+ARPACK++ is a collection of classes that offers c++ programmers an interface
+to ARPACK. It preserves the full capability, performance, accuracy and low
+memory requirements of the FORTRAN package, but takes advantage of the C++
+object-oriented programming environment.
