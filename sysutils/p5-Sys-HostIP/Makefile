@@ -13,4 +13,6 @@ WWW=		https://metacpan.org/release/Sys-HostIP
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
