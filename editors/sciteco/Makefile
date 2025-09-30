@@ -19,7 +19,7 @@ gtk_PKGNAMESUFFIX=	-gtk
 # As SciTECO uses itself during the build process,
 # it makes sense to compile it running under a dummy XServer.
 # This is both faster and works in headless environments as well.
-gtk_BUILD_DEPENDS=	mcookie:devel/util-linux \
+gtk_BUILD_DEPENDS=	mcookie:sysutils/util-linux \
 			xauth:x11/xauth \
 			Xvfb:x11-servers/xorg-server@xvfb
 

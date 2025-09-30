@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpopt.so:devel/popt \
 		librepo.so:misc/librepo \
 		librpmio.so:archivers/rpm4 \
-		libsmartcols.so:devel/util-linux \
+		libsmartcols.so:sysutils/util-linux \
 		libsolv.so:misc/libsolv \
 		libyaml.so:textproc/libyaml \
 		libzstd.so:archivers/zstd
