@@ -1,9 +1,8 @@
 PORTNAME=	pdfpc
+DISTVERSIONPREFIX=	v
 DISTVERSION=	4.7.0
 PORTREVISION=	2
 CATEGORIES=	graphics
-DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Keynote-like multi-monitor presentation viewer
