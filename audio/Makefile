@@ -832,6 +832,7 @@
     SUBDIR += vgmtools
     SUBDIR += vimpc
     SUBDIR += virtual_oss
+    SUBDIR += virtual_oss_bluetooth
     SUBDIR += virtual_oss_ctl
     SUBDIR += virtual_oss_equalizer
     SUBDIR += virtual_oss_sndio
