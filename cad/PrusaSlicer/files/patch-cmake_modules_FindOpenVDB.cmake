@@ -39,7 +39,7 @@
  endif()
  
  if(OpenVDB_USES_EXR)
-@@ -463,7 +451,7 @@ endif()
+@@ -463,15 +451,15 @@ endif()
  endif()
  
  # Set deps. Note that the order here is important. If we're building against
@@ -48,10 +48,11 @@
  # users chosen namespaced headers are correctly prioritized. Otherwise other
  # include paths from shared installs (including houdini) may pull in the wrong
  # headers
-@@ -471,7 +459,7 @@ set(_OPENVDB_VISIBLE_DEPENDENCIES
+ 
  set(_OPENVDB_VISIBLE_DEPENDENCIES
++  Boost::filesystem
    Boost::iostreams
-   Boost::system
+-  Boost::system
 -  IlmBase::Half
 +  Imath::Imath
  )
