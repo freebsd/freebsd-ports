@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-09-02 18:23:38 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools >= 77.0.3",  # license and license-files alignment
++    "setuptools >= 61.0.0",  # license and license-files alignment
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+@@ -9,8 +9,7 @@ requires-python = ">=3.9"
+ description = "Windows Negotiate Authentication Client and Server"
+ readme = "README.md"
+ requires-python = ">=3.9"
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {file = "LICENSE"}
+ authors = [
+     { name = "Jordan Borean", email = "jborean93@gmail.com" }
+ ]
