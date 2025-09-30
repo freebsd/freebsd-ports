@@ -1,5 +1,5 @@
 PORTNAME=	connection_pool
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
