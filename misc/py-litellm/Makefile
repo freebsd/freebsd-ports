@@ -1,5 +1,5 @@
 PORTNAME=	litellm
-DISTVERSION=	1.77.4
+DISTVERSION=	1.77.5
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastuuid>=0.12.0:devel/py-fastuuid@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastuuid>=0.13.0:devel/py-fastuuid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.23.0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openai>=1.99.5:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=0.2.0:www/py-python-dotenv@${PY_FLAVOR} \
@@ -25,7 +25,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastuuid>=0.12.0:devel/py-fastuuid@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.10:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.5.0<3.0.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.22.0<5.0.0:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pondpond>=1.4.1<2.0.0:devel/py-pondpond@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpydoc>0:textproc/py-numpydoc@${PY_FLAVOR}
 
 USES=		python shebangfix
