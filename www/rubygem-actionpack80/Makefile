@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-actionview80>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-actionview80 \
 		rubygem-activesupport80>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport80 \
 		rubygem-nokogiri>=1.8.5:textproc/rubygem-nokogiri \
-		rubygem-rack>=2.2.4,3<3.2,3:www/rubygem-rack \
+		rubygem-rack>=2.2.4,3:www/rubygem-rack \
 		rubygem-rack-session>=1.0.1:www/rubygem-rack-session \
 		rubygem-rack-test>=0.6.3:www/rubygem-rack-test \
 		rubygem-rails-dom-testing-rails80>=2.2<3:textproc/rubygem-rails-dom-testing-rails80 \
