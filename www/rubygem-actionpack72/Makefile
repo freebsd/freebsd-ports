@@ -1,5 +1,6 @@
 PORTNAME=	actionpack
 PORTVERSION=	7.2.2.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	72
@@ -16,7 +17,7 @@ RUN_DEPENDS=	rubygem-actionview72>=${PORTVERSION}<${PORTVERSION}_99:devel/rubyge
 		rubygem-activesupport72>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport72 \
 		rubygem-nokogiri>=1.8.5:textproc/rubygem-nokogiri \
 		rubygem-racc>=0:devel/rubygem-racc \
-		rubygem-rack>=2.2.4,3<3.2,3:www/rubygem-rack \
+		rubygem-rack>=2.2.4,3:www/rubygem-rack \
 		rubygem-rack-session>=1.0.1:www/rubygem-rack-session \
 		rubygem-rack-test>=0.6.3:www/rubygem-rack-test \
 		rubygem-rails-dom-testing-rails72>=2.2<3:textproc/rubygem-rails-dom-testing-rails72 \
