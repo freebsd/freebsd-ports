@@ -11,8 +11,6 @@ WWW=		https://open-music-kontrollers.ch/lv2/lv2lint/
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSES/Artistic-2.0.txt
 
-BROKEN_riscv64=	ld: error: lto.tmp: cannot link object files with different floating-point ABI
-
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		curl>0:ftp/curl \
 		libelf>0:devel/libelf
