@@ -1,8 +1,10 @@
 PORTNAME=	virtual_oss
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
+
+IGNORE_FreeBSD_15=	included in base system
 
 MAINTAINER=	christos@FreeBSD.org
 COMMENT=	Virtual OSS multi device mixer application
