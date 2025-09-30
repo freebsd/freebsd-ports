@@ -3,7 +3,7 @@ PORTVERSION=	2.1.62
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Formatted and highlighted view of Markdown files
 WWW=		https://rubygems.org/gems/mdless
 

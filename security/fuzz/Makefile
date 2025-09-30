@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Tool for testing software by bombarding the program with random data
 WWW=		https://fuzz.sourceforge.net/
 

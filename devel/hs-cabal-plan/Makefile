@@ -2,7 +2,7 @@ PORTNAME=	cabal-plan
 DISTVERSION=	0.7.6.1
 CATEGORIES=	devel haskell
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Utility for processing cabal's plan.json file
 WWW=		https://github.com/haskell-hvr/cabal-plan
 

@@ -2,7 +2,7 @@ PORTNAME=	tvterm
 PORTVERSION=	g20250621
 CATEGORIES=	sysutils
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Terminal emulator powered by Turbo Vision
 WWW=		https://github.com/magiblot/tvterm
 

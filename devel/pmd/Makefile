@@ -4,7 +4,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}_releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-dist-${DISTVERSION}-bin
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Static analysis tool for Java source code
 WWW=		https://pmd.github.io/
 

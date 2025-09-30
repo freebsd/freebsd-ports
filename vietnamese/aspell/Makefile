@@ -4,7 +4,7 @@ PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	vietnamese textproc
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Aspell Vietnamese dictionaries
 WWW=		http://aspell.net/
 

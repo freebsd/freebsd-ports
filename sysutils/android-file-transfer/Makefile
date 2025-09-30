@@ -4,7 +4,7 @@ DISTVERSION=	4.5
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Android MTP client with minimalistic UI
 WWW=		https://github.com/whoozle/android-file-transfer-linux
 

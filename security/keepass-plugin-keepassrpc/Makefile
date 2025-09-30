@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=v
 CATEGORIES=	security
 PKGNAMEPREFIX=	keepass-plugin-
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	KeePass plugin which facilitates the Kee Firefox plugin
 WWW=		https://www.kee.pm/
 

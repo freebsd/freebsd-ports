@@ -4,7 +4,7 @@ CATEGORIES=	devel security java
 MASTER_SITES=	https://github.com/NationalSecurityAgency/${PORTNAME}/releases/download/Ghidra_${DISTVERSION}_build/
 DISTNAME=	${PORTNAME}_${DISTVERSION}_PUBLIC_20250219
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Software reverse engineering (SRE) framework
 WWW=		https://ghidra-sre.org/
 

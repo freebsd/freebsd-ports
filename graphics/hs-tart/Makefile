@@ -3,7 +3,7 @@ DISTVERSION=	0.4
 CATEGORIES=	graphics haskell
 PKGNAMESUFFIX=	-terminal-art
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Program to make ASCII art on the terminal
 WWW=		https://hackage.haskell.org/package/tart \
 		https://github.com/jtdaugherty/tart

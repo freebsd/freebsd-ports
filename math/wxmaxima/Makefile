@@ -4,7 +4,7 @@ DISTVERSION=	25.04.0
 PORTEPOCH=	1
 CATEGORIES=	math
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	WxWidgets GUI for the computer algebra system maxima
 WWW=		https://wxmaxima-developers.github.io/wxmaxima/
 

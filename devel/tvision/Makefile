@@ -2,7 +2,7 @@ PORTNAME=	tvision
 PORTVERSION=	g20250515
 CATEGORIES=	devel
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Modern port of Turbo Vision 2.0, a TUI framework
 WWW=		https://github.com/magiblot/tvision
 

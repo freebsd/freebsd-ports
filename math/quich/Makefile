@@ -6,7 +6,7 @@ CATEGORIES=	math
 PATCH_SITES=	https://github.com/Usbac/quich/commit/
 PATCHFILES=	9ddb21a370fe403b6863995f1f2225529a5f0f81.patch:-p1
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Just an advanced terminal calculator
 WWW=		https://github.com/Usbac/quich
 

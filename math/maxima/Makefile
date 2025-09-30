@@ -3,7 +3,7 @@ DISTVERSION=	5.48.1
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Symbolic mathematics program
 WWW=		http://maxima.sourceforge.net/
 

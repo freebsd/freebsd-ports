@@ -3,7 +3,7 @@ PORTVERSION=	2.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://xi6.com/files/
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Multi-CPU macro assembler for many major 8-bit and 16-bit CPUs
 WWW=		http://xi6.com/projects/asmx/
 

@@ -2,7 +2,7 @@ PORTNAME=	hadolint
 DISTVERSION=	2.12.0
 CATEGORIES=	devel haskell
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Dockerfile linter, validate inline bash, written in Haskell
 WWW=		https://github.com/hadolint/hadolint
 

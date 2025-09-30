@@ -2,7 +2,7 @@ PORTNAME=	pycdc
 DISTVERSION=	g20250704
 CATEGORIES=	devel
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Python bytecode disassembler and decompiler
 WWW=		https://github.com/zrax/pycdc
 

@@ -2,7 +2,7 @@ PORTNAME=	xschem
 DISTVERSION=	3.4.7
 CATEGORIES=	cad
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Schematic capture and edit program for VLSI/ASIC/Analog designs
 WWW=		https://xschem.sourceforge.io/stefan/index.html
 

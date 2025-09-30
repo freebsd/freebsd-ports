@@ -4,7 +4,7 @@ CATEGORIES=	comms python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Python library to control the Elgato Stream Deck
 WWW=		https://github.com/abcminiuser/python-elgato-streamdeck
 

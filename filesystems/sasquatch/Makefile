@@ -2,7 +2,7 @@ PORTNAME=	sasquatch
 DISTVERSION=	4.3
 CATEGORIES=	filesystems sysutils
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	SquashFS extractor with patches for firmware analysis
 WWW=		https://gitlab.com/tgasiba/sasquatch/
 

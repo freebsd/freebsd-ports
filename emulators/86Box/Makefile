@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	5.0
 CATEGORIES=	emulators
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Emulator of x86-based machines based on PCem
 WWW=		https://86box.net/
 

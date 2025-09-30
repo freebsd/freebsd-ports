@@ -3,7 +3,7 @@ DISTVERSION=	1.6.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://github.com/DaveFlater/libXaw3dXft/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	3D Xaw (Athena Widget Set) replacement with extended fonts
 WWW=		https://github.com/DaveFlater/libXaw3dXft/
 

@@ -3,7 +3,7 @@ DISTVERSION=	0.21
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/netdiscover-scanner/netdiscover/releases/download/${DISTVERSION}/
 
-MAINTAINER=	tiago.gasiba@gmail.com
+MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Network address discovering tool
 WWW=		https://github.com/netdiscover-scanner/netdiscover
 
