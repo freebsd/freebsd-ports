@@ -1,6 +1,7 @@
 PORTNAME=	lms
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.68.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
-		libboost_system.so:devel/boost-libs \
+		libboost_program_options.so:devel/boost-libs \
 		libconfig++.so:devel/libconfig \
 		libtag.so:audio/taglib \
 		libwthttp.so:www/wt \
@@ -57,6 +58,12 @@ post-patch:
 		${WRKSRC}/src/libs/core/include/core/SystemPaths.hpp
 	@${REINPLACE_CMD} -e 's|"/usr/|"${PREFIX}/|; s|"/var/lms/"|"/var/db/lms/"|' \
 		${WRKSRC}/conf/lms.conf
+	@${REINPLACE_CMD} -e '/find_package/s| system||' \
+			  -e '/target_link_libraries/s| Boost::system||' \
+		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/Boost::system/d' \
+		${WRKSRC}/src/libs/core/CMakeLists.txt \
+		${WRKSRC}/src/libs/services/auth/CMakeLists.txt
 
 post-install:
 	# link sample
