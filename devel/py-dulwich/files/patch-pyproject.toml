@@ -1,0 +1,26 @@
+--- pyproject.toml.orig	2025-08-01 10:05:10 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0.0"]
++requires = ["setuptools>=61.0.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,7 +7,7 @@ authors = [{name = "Jelmer Vernooij", email = "jelmer@
+ description = "Python Git Library"
+ readme = "README.rst"
+ authors = [{name = "Jelmer Vernooij", email = "jelmer@jelmer.uk"}]
+-license = "Apache-2.0 OR GPL-2.0-or-later"
++license = {text = "Apache-2.0 OR GPL-2.0-or-later"}
+ keywords = ["vcs", "git"]
+ classifiers = [
+     "Development Status :: 4 - Beta",
+@@ -28,7 +28,6 @@ dynamic = ["version"]
+     'typing_extensions >=4.0 ; python_version < "3.11"',
+ ]
+ dynamic = ["version"]
+-license-files = ["COPYING"]
+ 
+ [project.urls]
+ Homepage = "https://www.dulwich.io/"
