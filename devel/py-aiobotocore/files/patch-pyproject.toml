@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-07-24 17:30:01 UTC
+--- pyproject.toml.orig	2025-09-05 11:55:29 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -7,25 +7,25 @@
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -31,7 +31,7 @@ dependencies = [
+@@ -32,7 +32,7 @@ dependencies = [
  dependencies = [
      "aiohttp >= 3.9.2, < 4.0.0",
      "aioitertools >= 0.5.1, < 1.0.0",
--    "botocore >= 1.39.9, < 1.39.12", # NOTE: When updating, always keep `project.optional-dependencies` aligned
-+    "botocore >= 1.39.9", # NOTE: When updating, always keep `project.optional-dependencies` aligned
+-    "botocore >= 1.40.15, < 1.40.19", # NOTE: When updating, always keep `project.optional-dependencies` aligned
++    "botocore >= 1.40.15", # NOTE: When updating, always keep `project.optional-dependencies` aligned
      "python-dateutil >= 2.1, < 3.0.0",
      "jmespath >= 0.7.1, < 2.0.0",
      "multidict >= 6.0.0, < 7.0.0",
-@@ -40,10 +40,10 @@ awscli = [
+@@ -41,10 +41,10 @@ awscli = [
  
  [project.optional-dependencies]
  awscli = [
--    "awscli >= 1.41.9, < 1.41.12",
-+    "awscli >= 1.29.81",
+-    "awscli >= 1.42.15, < 1.42.19",
++    "awscli >= 1.42.15",
  ]
  boto3 = [
--    "boto3 >= 1.39.9, < 1.39.12",
-+    "boto3 >= 1.39.9",
+-    "boto3 >= 1.40.15, < 1.40.19",
++    "boto3 >= 1.40.15",
  ]
  httpx = [
      "httpx >= 0.25.1, < 0.29"
