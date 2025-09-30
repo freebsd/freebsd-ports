@@ -82,7 +82,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-openid_connect>=2.3.1<2.4:net/rubygem-openid_connect \
 	rubygem-omniauth-atlassian-oauth2>=0.2.0<0.3:security/rubygem-omniauth-atlassian-oauth2 \
 	rubygem-rack-oauth2-gitlab>=2.2.1<2.3:security/rubygem-rack-oauth2-gitlab \
-	rubygem-jwt>=2.10.2<2.11:www/rubygem-jwt \
+	rubygem-jwt2>=2.10.2<2.11:www/rubygem-jwt2 \
 	rubygem-gssapi>=1.3.1<1.4:security/rubygem-gssapi \
 	rubygem-recaptcha>=5.12<6.0:devel/rubygem-recaptcha \
 	rubygem-akismet>=3.0<4.0:devel/rubygem-akismet \
@@ -168,7 +168,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-diffy>=3.4.4<4:textproc/rubygem-diffy \
 	rubygem-rack22>=2.2.17,3<2.3,3:www/rubygem-rack22 \
 	rubygem-rack-timeout>=0.7.0<0.8:www/rubygem-rack-timeout \
-	rubygem-puma>=6.6.1<6.6.2:www/rubygem-puma \
+	rubygem-puma6>=6.6.1<6.6.2:www/rubygem-puma6 \
 	rubygem-sd_notify>=0.1.1<0.2:devel/rubygem-sd_notify \
 	rubygem-state_machines-activerecord-gitlab>=0.8.0<0.9.0:databases/rubygem-state_machines-activerecord-gitlab \
 	rubygem-sidekiq-gitlab>=7.3.9:devel/rubygem-sidekiq-gitlab \
