@@ -1,8 +1,17 @@
-Plot density and distribution functions with automatic selection of suitable
-regions. Numerically invert (compute quantiles) distribution functions.
-Simulate real and complex numbers from distributions of their magnitude and
-arguments. Optionally, the magnitudes and/or arguments may be fixed in almost
-arbitrary ways. Create polynomials from roots given in Cartesian or polar form.
-Small programming utilities: check if an object is identical to NA, count
-positional arguments in a call, set intersection of more than two sets, check
-if an argument is unnamed, compute the graph of S4 classes in packages.
+The R-cran-gbutils package offers general-purpose utilities for numerical
+and statistical computations in R, enhancing flexibility and ease of use.
+
+Key functionalities include:
+
+-   **Distribution Analysis**: Plotting density/distribution functions,
+    numerically inverting distributions for quantiles, and simulating
+    real/complex numbers from magnitude/argument distributions.
+-   **Polynomial Manipulation**: Creating polynomials from roots
+    (Cartesian or polar form).
+-   **Programming Utilities**: Checking for NA identity, counting
+    positional arguments, computing set intersections for multiple sets,
+    identifying unnamed arguments, and graphing S4 classes.
+
+This invaluable toolkit streamlines common tasks in data analysis,
+statistical modeling, and numerical programming, boosting productivity
+and analytical capabilities for R users.

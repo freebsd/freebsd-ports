@@ -1,24 +1,23 @@
-SNNS (Stuttgart Neural Network Simulator) is a software simulator for neural
-networks on Unix workstations developed at the Institute for Parallel and
-Distributed High Performance Systems (IPVR) at the University of Stuttgart.
-The goal of the SNNS project is to create an efficient and flexible
-simulation environment for research on and application of neural nets.
+SNNS (Stuttgart Neural Network Simulator) is a comprehensive software
+simulator for neural networks, developed at the Institute for Parallel
+and Distributed High Performance Systems (IPVR) at the University of
+Stuttgart. It provides an efficient and flexible environment for
+research and application of neural networks.
 
-The SNNS simulator consists of two main components:
+SNNS comprises two main components:
 
-1) simulator kernel written in C
-2) graphical user interface under X
+1.  **Simulator Kernel (C-based)**: This core component handles internal
+    network data structures, learning, and recall operations. It supports
+    arbitrary network topologies and the concept of sites. The kernel
+    can be extended with user-defined activation functions, output
+    functions, site functions, and learning procedures written in C.
+    It can also be embedded in custom applications.
+2.  **Graphical User Interface (XGUI)**: Built on top of the kernel,
+    XGUI provides 2D and 3D graphical representations of neural networks.
+    It controls the kernel during simulation and includes an integrated
+    network editor for creating, manipulating, and visualizing neural
+    nets interactively.
 
-The simulator kernel operates on the internal network data structures of the
-neural nets and performs all operations of learning and recall. It can also
-be used without the other parts as a C program embedded in custom
-applications. It supports arbitrary network topologies and the concept of
-sites. SNNS can be extended by the user with user defined activation
-functions, output functions, site functions and learning procedures, which
-are written as simple C programs and linked to the simulator kernel.
-
-The graphical user interface XGUI (X Graphical User Interface), built on top
-of the kernel, gives a 2D and a 3D graphical representation of the neural
-networks and controls the kernel during the simulation run. In addition, the
-2D user interface has an integrated network editor which can be used to
-directly create, manipulate and visualize neural nets in various ways.
+SNNS is an invaluable tool for researchers, students, and developers
+working with neural networks, offering a powerful platform for
+experimentation, simulation, and understanding of complex neural models.

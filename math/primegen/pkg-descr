@@ -1,7 +1,23 @@
-primegen is a small, fast library to generate prime numbers in order.
-It generates the 50847534 primes up to 1000000000 in just 8 seconds
-on a Pentium II-350; it prints them in decimal in just 35 seconds.
+primegen is a highly optimized and fast library designed for generating
+prime numbers in sequential order. It provides an efficient solution
+for applications requiring lists of primes, particularly for numbers
+within the 32-bit range.
 
-primegen can generate primes up to 1000000000000000, although it
-is not optimized for primes past 32 bits. It uses the Sieve of Atkin
-instead of the traditional Sieve of Eratosthenes.
+A key feature of primegen is its use of the Sieve of Atkin, an advanced
+algorithm that significantly outperforms the traditional Sieve of
+Eratosthenes for generating primes up to a given limit. This optimization
+results in impressive performance:
+
+-   Generates 50,847,534 primes up to 1,000,000,000 in approximately
+    8 seconds on a Pentium II-350.
+-   Prints these primes in decimal format in about 35 seconds on the
+    same hardware.
+
+While primegen can theoretically generate primes up to 10^15, its
+performance is specifically optimized for primes that fit within 32-bit
+integers. It is an invaluable tool for:
+
+-   **Number Theory Research**: Exploring properties of prime numbers.
+-   **Cryptography**: Generating primes for key creation or testing.
+-   **Computational Mathematics**: Any application requiring efficient
+    prime number generation.

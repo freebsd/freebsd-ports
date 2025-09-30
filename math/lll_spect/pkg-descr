@@ -1,6 +1,21 @@
-This software calculates a normalized version of the classical spectral test for
-linear congruential pseudorandom number generators (LCGs), where the shortest
-vector is replaced by an approximation obtained with the Lenstra-Lenstra-Lovasz
-basis reduction algorithm, which can be calculated in polynomial time. The code
-is able to test in up to 24 dimensions, and includes an example of how to use
-the test to search for good LCG parameters.
+lll_spect evaluates Linear Congruential Pseudorandom Number Generators
+(LCGs) using a normalized spectral test. This test measures an LCG's
+statistical randomness.
+
+It employs the Lenstra-Lenstra-Lovasz (LLL) basis reduction algorithm
+to approximate the shortest vector, enabling efficient calculation in
+polynomial time. This makes the spectral test practical for higher
+dimensions.
+
+Key features:
+
+-   **LCG Quality Assessment**: Robust method for LCG statistical
+    properties.
+-   **High-Dimensional Testing**: Tests up to 24 dimensions for modern
+    simulations.
+-   **Parameter Optimization**: Includes examples for finding optimal
+    LCG parameters.
+
+lll_spect is invaluable for researchers and developers working with PRNGs,
+helping select and validate LCGs for applications requiring strong
+statistical properties.

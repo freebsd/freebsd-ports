@@ -1,1 +1,17 @@
-Routines for combinatorics.
+The R-cran-combinat package provides a collection of essential routines
+for combinatorial mathematics within the R environment. Combinatorics is
+a branch of mathematics concerning the study of finite or countable
+discrete structures.
+
+This package offers functions to generate and manipulate various combinatorial
+objects, including permutations, combinations, and partitions. It is
+invaluable for researchers, statisticians, and data scientists who need
+to perform tasks such as:
+
+-   Generating all possible orderings of a set of items.
+-   Selecting subsets of items without regard to their order.
+-   Enumerating ways to divide a set into non-empty subsets.
+
+By providing these fundamental combinatorial tools, R-cran-combinat
+facilitates a wide range of applications in probability, statistics,
+computer science, and experimental design.

@@ -1,4 +1,19 @@
-This program computes zeros and values of L-function.
+Lcalc is a specialized program designed for computations involving
+L-functions, which are fundamental objects in analytic number theory
+with deep connections to prime numbers and other arithmetic properties.
+This utility provides powerful capabilities for both calculating values
+and finding zeros of these complex functions.
 
-It installs the L-function c++ class library and, the command line program
-lcalc.
+The package offers a dual approach for users:
+
+-   **lcalc command-line program**: A direct and efficient tool for
+    interactive computation and analysis of L-functions.
+-   **L-function C++ class library**: Provides a robust and flexible
+    interface for C++ programmers to integrate L-function computations
+    into their own applications, leveraging the library's optimized
+    algorithms.
+
+Lcalc is an invaluable resource for mathematicians, number theorists,
+and researchers working on problems related to the Riemann Hypothesis,
+elliptic curves, and other areas of advanced number theory, offering
+precise numerical tools for exploring the intricate behavior of L-functions.

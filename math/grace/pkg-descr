@@ -1,16 +1,24 @@
-Grace is a WYSIWYG 2D plotting tool for the X Window System and M*tif,
-successor of ACE/gr (Xmgr). A few of its features are:
+Grace is a powerful WYSIWYG (What You See Is What You Get) 2D plotting
+tool for the X Window System, built with Motif. It is the successor to
+ACE/gr (Xmgr) and provides an extensive set of features for creating
+high-quality scientific plots.
 
-    * User defined scaling, tick marks, labels, symbols, line styles,
-	colors.
-    * Batch mode for unattended plotting.
-    * Read and write parameters used during a session.
-    * Polynomial regression, splines, running averages, DFT/FFT,
-	cross/auto-correlation.
-    * Exports high-resolution graphics to (E)PS, PDF, MIF, and SVG
-	formats
-    * Supports cross-platform PNM, JPEG and PNG formats
+Key features include:
 
-While grace has a convenient point-and-click interface, most parameter
-settings and operations are available through a command line interface
-(found in Data/Commands).
+-   **Customizable Plot Elements**: User-defined scaling, tick marks,
+    labels, symbols, line styles, and colors.
+-   **Batch Processing**: Supports batch mode for unattended plotting,
+    ideal for automated data visualization.
+-   **Session Management**: Ability to read and write parameters used
+    during a session for reproducibility.
+-   **Data Analysis**: Built-in functions for polynomial regression,
+    splines, running averages, DFT/FFT, and cross/auto-correlation.
+-   **High-Resolution Export**: Exports graphics to various formats,
+    including (E)PS, PDF, MIF, and SVG.
+-   **Image Format Support**: Supports cross-platform PNM, JPEG, and PNG
+    image formats.
+-   **Dual Interface**: Offers both a convenient point-and-click graphical
+    interface and a comprehensive command-line interface for advanced control.
+
+Grace is an invaluable tool for scientists, engineers, and researchers
+who require precise and visually appealing data representation.

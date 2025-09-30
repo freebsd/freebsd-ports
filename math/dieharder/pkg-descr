@@ -1,22 +1,21 @@
-At the suggestion of Linas Vepstas on the Gnu Scientific Library (GSL) list,
-this GPL'd suite of random number tests will be named "Dieharder". Using a
-movie sequel pun for the name is a double tribute to George Marsaglia, whose
-"Diehard battery of tests" of random number generators has enjoyed years of
-enduring usefulness as a test suite.
+Dieharder is a comprehensive, GPL-licensed test suite for evaluating
+the quality of random number generators (RNGs). It builds upon the
+legacy of George Marsaglia's "Diehard battery of tests" and expands
+upon it with modern statistical methodologies.
 
-The dieharder suite is more than just the diehard tests cleaned up and given a
-pretty GPL'd source face in native C: tests from the Statistical Test Suite
-(STS) developed by the National Institute for Standards and Technology (NIST)
-are being incorporated, as are new tests developed by rgb. Where possible,
-tests are parametrized and controllable so that failure, at least, is
-unambiguous.
+This suite incorporates a diverse collection of tests, including:
 
-A further design goal is to provide some indication of *why* a generator fails
-a test, where such information can be extracted during the test process and
-placed in usable form. For example, the bit-distribution tests should
-(eventually) be able to display the actual histogram for the different bit
-n-tuplets.
+-   **Diehard Tests**: Classic tests for assessing RNG randomness.
+-   **NIST Statistical Test Suite (STS)**: Tests developed by the
+    National Institute for Standards and Technology.
+-   **New Tests**: Additional tests developed by the project's author.
 
-Dieharder is by design extensible. It is intended to be the "Swiss army knife
-of random number test suites", or if you prefer, "the last suite you'll ever
-ware" for testing random numbers.
+Dieharder is designed with extensibility in mind, allowing for the
+incorporation of new tests and analysis methods. A key design goal is
+to provide not just pass/fail results, but also insights into *why* an
+RNG might fail a particular test, offering diagnostic information
+(e.g., displaying histograms for bit distributions).
+
+This makes Dieharder an invaluable tool for researchers, cryptographers,
+and developers who require rigorous validation of RNGs for applications
+in simulations, security, and statistical analysis.

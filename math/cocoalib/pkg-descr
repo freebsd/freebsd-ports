@@ -1,6 +1,20 @@
-CoCoALib is a C++ library for Computations in Commutative Algebra,
-focused mainly on polynomial rings, ideals, Groebner basis and
-similar topics.
+CoCoALib is a powerful C++ library dedicated to Computations in
+Commutative Algebra. This field of mathematics is fundamental to
+algebraic geometry, number theory, and computer algebra systems,
+focusing on algebraic structures like rings and ideals.
 
-You might like to install CoCoA-5 too, a shell that lets you interact
-with most of CoCoALib without the need to learn C++.
+The library provides a robust set of tools for working with:
+
+-   **Polynomial Rings**: Operations on multivariate polynomials.
+-   **Ideals**: Computations with ideals in polynomial rings.
+-   **Grobner Bases**: A cornerstone algorithm for solving systems of
+    polynomial equations and performing other algebraic manipulations.
+-   **Related Topics**: Other advanced concepts in commutative algebra.
+
+For users who prefer an interactive environment without direct C++
+programming, the companion CoCoA-5 shell (available separately) offers
+a user-friendly interface to most of CoCoALib's functionalities.
+
+CoCoALib is an invaluable resource for mathematicians, computer scientists,
+and researchers engaged in algebraic computations, providing a high-performance
+and flexible framework for exploring complex algebraic structures.

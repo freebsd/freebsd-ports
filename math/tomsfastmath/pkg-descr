@@ -1,2 +1,18 @@
-TomsFastMath is a portable fixed precision math library designed for
-very fast exponentiations.
+TomsFastMath (TFM) is a highly optimized and portable fixed-precision
+mathematics library, specifically engineered for exceptionally fast
+exponentiation operations. Designed for environments where performance
+is critical, TFM provides a robust solution for cryptographic applications,
+large number arithmetic, and other computational tasks demanding rapid
+modular exponentiation.
+
+The library's fixed-precision nature means it operates on integers of
+a predetermined size, offering predictable performance characteristics
+and efficient memory usage. Its primary strength lies in its ability
+to perform modular exponentiation (e.g., a^b mod n) with remarkable speed,
+a fundamental operation in public-key cryptography algorithms like RSA
+and Diffie-Hellman.
+
+TFM's portability ensures it can be easily integrated into various
+projects across different platforms, making it a valuable asset for
+developers building secure communication protocols, digital signatures,
+or any system requiring high-speed, fixed-precision arithmetic.

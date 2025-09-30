@@ -1,3 +1,15 @@
-The program xspread is a public domain spreadsheet which runs under
-X Window system or ascii terminals. Xspread uses the X Window system
-if available or curses and term[cap/info] for ascii displays.
+Xspread is a versatile and robust public domain spreadsheet program
+designed for broad accessibility. It offers a flexible user experience,
+operating seamlessly in both graphical X Window System environments and
+text-based ASCII terminals.
+
+When running under the X Window System, xspread leverages its graphical
+capabilities to provide an intuitive and interactive interface. For users
+in command-line or remote environments, it gracefully falls back to
+curses and termcap/terminfo for ASCII displays, ensuring functionality
+across a wide range of setups.
+
+As a public domain tool, xspread provides a free and open solution for
+data organization, calculation, and analysis. It's an excellent choice
+for users seeking a lightweight yet powerful spreadsheet application
+that adapts to various computing environments.

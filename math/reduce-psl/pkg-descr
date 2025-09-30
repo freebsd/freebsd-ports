@@ -1,17 +1,23 @@
-		REDUCE Portable Standard Lisp (PSL)
+REDUCE Portable Standard Lisp (PSL) is an interactive system for
+general algebraic computations. It is designed to assist mathematicians,
+scientists, and engineers with symbolic manipulation and numerical tasks.
 
-REDUCE is an interactive system for general algebraic computations of
-interest to mathematicians, scientists and engineers.
+REDUCE, powered by PSL, is particularly adept at handling complex
+calculations that are not feasible to perform by hand. PSL, originally
+the implementation of Standard Lisp, has evolved to include numerous
+facilities and is optimized for algebraic computation.
 
-PSL was the original implementation of Standard Lisp, but now contains
-many more facilities. It is quite efficient in its use of both space and
-time, and has been optimized for algebraic computation. All PSL versions
-of REDUCE are distributed with sufficient PSL support to run on the given
-computing system. PSL is supported on many architectures and is an ideal
-system for those wanting to run REDUCE as a stand-alone system. The
-principal developer of PSL before it became Open Source was the Konrad
-Zuse Center, Berlin (ZIB).
+Key features and benefits:
 
-It is often used as an algebraic calculator for problems that are possible
-to do by hand. However,  REDUCE is designed to support calculations that
-are not feasible by hand.
+-   **General Algebraic Computations**: Performs symbolic manipulation,
+    simplification, differentiation, integration, and equation solving.
+-   **Efficiency**: Optimized for both space and time, making it efficient
+    for algebraic workloads.
+-   **Stand-alone System**: PSL provides all necessary support to run
+    REDUCE as a self-contained system.
+-   **Broad Architecture Support**: Available on many architectures,
+    ensuring wide compatibility.
+
+REDUCE-PSL is an invaluable tool for academic and industrial users
+requiring a powerful and efficient computer algebra system for research,
+development, and problem-solving in various scientific and engineering domains.

@@ -1,2 +1,22 @@
-SLATEC is a comprehensive software library containing over 1400 general
-purpose mathematical and statistical routines written in Fortran 77.
+SLATEC (Scientific Library for Advanced Technology Exchange) is a
+comprehensive and historically significant software library, offering
+over 1400 general-purpose mathematical and statistical routines.
+Originally developed by a consortium of U.S. government laboratories,
+these routines are primarily written in Fortran 77, reflecting their
+proven reliability and efficiency in numerical computation.
+
+This extensive collection covers a broad spectrum of numerical methods,
+including but not limited to:
+
+-   Linear algebra (e.g., solving systems of equations, eigenvalue problems)
+-   Special functions (e.g., Bessel functions, Gamma functions)
+-   Numerical integration and differentiation
+-   Interpolation and approximation
+-   Statistical analysis and probability distributions
+-   Optimization techniques
+
+SLATEC serves as a robust foundation for scientific and engineering
+applications requiring high-quality, well-tested numerical algorithms.
+It remains a valuable resource for researchers, engineers, and developers
+working with Fortran-based projects or those needing a reliable suite
+of established numerical methods.

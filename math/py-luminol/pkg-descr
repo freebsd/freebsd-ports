@@ -1,3 +1,23 @@
-Luminol is a light weight python library for time series data analysis.
-The two major functionalities it supports are anomaly detection and
-correlation. It can be used to investigate possible causes of anomaly.
+Luminol is an efficient and lightweight Python library specifically
+designed for comprehensive time series data analysis. It provides
+powerful functionalities for two critical aspects of time series
+investigation: anomaly detection and correlation analysis.
+
+As a lightweight library, Luminol is optimized for performance and
+resource efficiency, making it suitable for integration into various
+data pipelines and applications without significant overhead.
+
+Its core capabilities include:
+-   **Anomaly Detection**: Identifying unusual patterns or outliers in
+    time series data that deviate significantly from expected behavior.
+    This is crucial for monitoring systems, detecting fraudulent activities,
+    or pinpointing performance issues.
+-   **Correlation Analysis**: Discovering relationships and dependencies
+    between different time series. This feature is particularly useful
+    for investigating the root causes of detected anomalies, allowing
+    users to understand which factors might be contributing to unusual events.
+
+Luminol empowers data scientists, engineers, and analysts to gain deeper
+insights from their time series data, enabling proactive problem-solving
+and informed decision-making by effectively pinpointing and diagnosing
+anomalous behavior.

@@ -1,3 +1,12 @@
-Gexpr is a shell calculator with floating point, standard C functions,
-relational operators, and output in base 2/8/10/16. It is a light alternative
-to bc(1). It can also be used to add floating point math to shell scripts.
+Gexpr is a powerful and lightweight command-line calculator designed
+for shell environments. It supports floating-point arithmetic, a wide
+range of standard C mathematical functions, and relational operators
+for conditional expressions. Gexpr offers flexible output options,
+allowing results to be displayed in binary, octal, decimal, or
+hexadecimal bases.
+
+It serves as an excellent alternative to traditional command-line
+calculators like bc(1), especially when a more streamlined and
+feature-rich solution is desired. Furthermore, gexpr can be seamlessly
+integrated into shell scripts, providing robust floating-point math
+capabilities for automation and complex calculations.

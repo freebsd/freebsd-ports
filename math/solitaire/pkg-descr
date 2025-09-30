@@ -1,7 +1,22 @@
-Solitaire is an encryption system based on a deck of cards by Bruce
-Schneier.  Although it is designed to be worked out by a human, it can
-work on computers.  This is the reference implementation programmed in
-Perl.  The program itself is installed as 'solitaire', and the source
-code and test vectors are installed in share/doc/solitaire.
+Solitaire is a unique encryption system designed by renowned cryptographer
+Bruce Schneier, based on the manipulation of a deck of playing cards.
+While ingeniously crafted for manual execution by a human, this system
+can also be implemented computationally.
 
-Please read the web site below before relying on this for real security.
+This package provides the reference implementation of the Solitaire
+encryption algorithm, programmed in Perl. It serves as a faithful
+digital representation of Schneier's original design, allowing for
+both study and practical application.
+
+Key components installed:
+
+-   **solitaire executable**: The primary program for performing
+    encryption and decryption.
+-   **Source code and test vectors**: Located in share/doc/solitaire,
+    these resources are invaluable for understanding the algorithm's
+    mechanics and verifying its correctness.
+
+**IMPORTANT SECURITY NOTE**: Before relying on this implementation for
+any real-world security applications, it is strongly advised to
+thoroughly read the official website and understand the nuances and
+limitations of the Solitaire algorithm.

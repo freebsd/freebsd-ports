@@ -1,11 +1,21 @@
-clBLAS
+clBLAS is a high-performance software library that provides optimized
+BLAS (Basic Linear Algebra Subprograms) functions implemented in OpenCL.
+BLAS routines are fundamental building blocks for numerical linear algebra,
+widely used in scientific computing, engineering, and data analysis.
 
-a software library containing BLAS functions written in OpenCL
+The primary goal of clBLAS is to empower developers to leverage the
+performance and power efficiency of heterogeneous computing environments.
+It achieves this by:
 
-The primary goal of clBLAS is to make it easier for developers to utilize the
-inherent performance and power efficiency benefits of heterogeneous computing.
-clBLAS interfaces do not hide nor wrap OpenCL interfaces, but rather leaves
-OpenCL state management to the control of the user to allow for maximum
-performance and flexibility. The clBLAS library does generate and enqueue
-optimized OpenCL kernels, relieving the user from the task of writing,
-optimizing and maintaining kernel code themselves.
+-   **OpenCL Integration**: Directly utilizes OpenCL interfaces, allowing
+    users full control over OpenCL state management for maximum
+    performance and flexibility.
+-   **Optimized Kernel Generation**: Automatically generates and enqueues
+    optimized OpenCL kernels, freeing users from the complex task of
+    writing, optimizing, and maintaining kernel code.
+
+clBLAS is an invaluable resource for developers and researchers who need
+to accelerate their linear algebra workloads by harnessing the parallel
+processing capabilities of GPUs and other OpenCL-compatible devices.
+It streamlines the development of high-performance computing applications
+by providing a robust and efficient foundation for numerical operations.

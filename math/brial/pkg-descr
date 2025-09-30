@@ -1,11 +1,22 @@
-BRiAl is the successor to PolyBoRi.
+BRiAl (Boolean Rings and Algebra) is a powerful C++ library for
+computations with polynomials over Boolean rings, serving as the
+successor to PolyBoRi. It provides high-level data types and efficient
+algorithms for symbolic computation in this specialized algebraic domain.
 
-The core of PolyBoRi is a C++ library, which provides high-level data
-types for Boolean polynomials and monomials, exponent vectors, as well
-as for the underlying polynomial rings and subsets of the powerset of
-the Boolean variables. As a unique approach, binary decision diagrams
-are used as internal storage type for polynomial structures. On top of
-this C++-library we provide a Python interface. This allows parsing of
-complex polynomial systems, as well as sophisticated and extendable
-strategies for Groebner base computation. PolyBoRi features a powerful
-reference implementation for Groebner basis computation.
+Key features include:
+
+-   **High-level Data Types**: For Boolean polynomials, monomials,
+    exponent vectors, and related algebraic structures.
+-   **Binary Decision Diagrams (BDDs)**: Utilizes BDDs as the internal
+    storage type for polynomial structures, enabling efficient
+    representation and manipulation.
+-   **Python Interface**: Offers a convenient Python binding, allowing
+    for parsing complex polynomial systems and implementing sophisticated
+    strategies for Grobner basis computation.
+-   **Grobner Basis Computation**: Provides a robust and powerful
+    reference implementation for Grobner basis algorithms, essential
+    for solving systems of polynomial equations.
+
+BRiAl is an invaluable tool for researchers and developers in areas
+such as cryptography, coding theory, formal verification, and computer
+algebra, where efficient manipulation of Boolean polynomials is critical.

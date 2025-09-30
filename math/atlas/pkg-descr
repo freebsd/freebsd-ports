@@ -1,18 +1,21 @@
-The ATLAS (Automatically Tuned Linear Algebra Software) project is an ongoing
-research effort focusing on applying empirical techniques in order to provide
-portable performance.  At present, it provides C and Fortran77 interfaces to
-a portable, efficient BLAS implementation, as well as enhanced versions of a
-few routines from LAPACK.  To link with ATLAS shared libraries:
+ATLAS (Automatically Tuned Linear Algebra Software) is a high-performance
+software library for numerical linear algebra. It focuses on applying
+empirical optimization techniques to deliver portable and efficient
+performance across diverse hardware architectures.
 
-Serial (thread-safe) Fortran77 BLAS:
-	-lf77blas
-Multi-threaded Fortran77 BLAS:
-	-lptf77blas
-Serial (thread-safe) C BLAS:
-	-lcblas
-Multi-threaded C BLAS:
-	-lptcblas
-ATLAS-enhanced LAPACK, serial (thread-safe) interface:
-	-lalapack -lf77blas -lcblas
-ATLAS-enhanced LAPACK, multi-threaded interface:
-	-lalapack -lptf77blas -lptcblas
+ATLAS provides optimized implementations of:
+
+-   **BLAS (Basic Linear Algebra Subprograms)**: Offers C and Fortran77
+    interfaces for Level 1, 2, and 3 BLAS routines, crucial for vector,
+    matrix-vector, and matrix-matrix operations. Both serial (thread-safe)
+    and multi-threaded versions are available.
+-   **LAPACK (Linear Algebra Package)**: Includes enhanced versions of
+    key LAPACK routines, providing efficient solutions for problems
+    like solving systems of linear equations, eigenvalue problems, and
+    singular value decomposition.
+
+The project's core strength lies in its ability to automatically tune
+itself to the specific characteristics of the underlying hardware during
+installation, ensuring optimal performance. ATLAS is an invaluable
+resource for scientific computing, engineering simulations, and any
+application requiring fast and reliable linear algebra computations.

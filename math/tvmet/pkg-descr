@@ -1,4 +1,24 @@
-This Tiny Vector and Matrix template library uses Meta and Expression
-Templates to evaluate results at compile time, thus making it fast for
-low-end systems. Temporaries are avoided because of this. The dimensions
-are static and bounded at compile time.
+TVMet (Tiny Vector and Matrix template library) is a high-performance
+C++ library designed for efficient linear algebra operations, particularly
+suited for resource-constrained or performance-critical applications.
+It leverages advanced C++ features like Meta-programming and Expression
+Templates to achieve remarkable speed and memory efficiency.
+
+The core innovation of TVMet lies in its ability to evaluate many
+mathematical expressions involving vectors and matrices at compile time.
+This approach eliminates the creation of costly temporary objects during
+runtime, leading to:
+
+-   **Exceptional Performance**: Significantly faster execution compared
+    to traditional approaches.
+-   **Minimal Memory Footprint**: Reduced memory consumption, making it
+    ideal for embedded systems or applications with strict memory budgets.
+-   **Static Dimensioning**: Vector and matrix dimensions are fixed at
+    compile time, allowing for aggressive optimizations and compile-time
+    error checking.
+
+TVMet is an excellent choice for developers working on scientific simulations,
+game development, embedded systems, or any project where fast and
+memory-efficient linear algebra is paramount. It provides a robust and
+optimized solution for numerical computations without compromising on
+performance or resource usage.

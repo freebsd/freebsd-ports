@@ -1,7 +1,22 @@
-The spreadsheet calculator sc is based on rectangular tables much like
-a financial spreadsheet.  When invoked it presents you with a table
-organized as rows and columns of cells.  If invoked without a file
-argument, the table is initially empty.  Each cell may have associated
-with it a numeric value, a label string, and/or an expression (formula)
-which evaluates to a numeric value or label string, often based on other
-cell values.
+sc (spreadsheet calculator) is a powerful and flexible terminal-based
+spreadsheet program. It operates on rectangular tables, providing a
+familiar interface of rows and columns for data organization and analysis.
+Unlike graphical spreadsheets, sc is designed for efficiency and accessibility
+within text-based environments.
+
+Upon invocation, sc presents an organized table of cells. If no file
+argument is provided, it starts with an empty table, ready for user input.
+Each cell in the spreadsheet can store and display various types of data:
+
+-   **Numeric Values**: Direct numerical entries.
+-   **Label Strings**: Textual descriptions or headers.
+-   **Expressions (Formulas)**: Dynamic calculations that evaluate to
+    either a numeric value or a label string. These formulas can
+    reference other cell values, enabling complex inter-cell dependencies
+    and powerful data manipulation.
+
+sc is an invaluable tool for users who prefer a command-line interface
+for data management, financial calculations, or any task requiring
+spreadsheet functionality without the overhead of a graphical environment.
+Its robust formula support and cell-based operations make it a versatile
+choice for data analysis and reporting.

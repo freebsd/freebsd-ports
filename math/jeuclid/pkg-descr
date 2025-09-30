@@ -1,4 +1,21 @@
-JEuclid is a complete MathML rendering solution, consisting of: a MathViewer
-application, command line converters from MathML to other formats, an ant
-task for autmated conversion, display components for AWT and Swing and a
-component for Apache Cocoon.
+JEuclid offers a comprehensive MathML rendering solution, providing
+tools to display and convert mathematical expressions. MathML (Mathematical
+Markup Language) is an XML-based standard for describing mathematical
+notation, and JEuclid ensures its accurate and versatile presentation.
+
+This package includes several key components:
+
+-   **MathViewer application**: A standalone viewer for MathML content.
+-   **Command-line converters**: Transform MathML into various other
+    formats for broader compatibility.
+-   **Ant task**: Facilitates automated conversion workflows, ideal for
+    build processes.
+-   **Display components for AWT and Swing**: Enables seamless integration
+    of MathML rendering into Java desktop applications.
+-   **Apache Cocoon component**: Supports dynamic generation and delivery
+    of MathML content within web applications.
+
+JEuclid is an invaluable resource for developers and content creators
+working with mathematical content, providing flexible options for
+rendering, conversion, and integration across different platforms and
+applications.

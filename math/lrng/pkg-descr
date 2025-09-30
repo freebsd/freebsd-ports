@@ -1,3 +1,9 @@
-lrng is a collection of uniform pseudorandom number
-generators, written in C, and based on algorithms by Francois
-Panneton, Pierre L'Ecuyer, and Makoto Matsumoto.
+LRNG (Lightweight Random Number Generator) is a comprehensive collection of
+high-quality, uniform pseudorandom number generators (PRNGs). Implemented in C,
+LRNG is built upon robust algorithms developed by prominent researchers
+Francois Panneton, Pierre L'Ecuyer, and Makoto Matsumoto.
+
+This library provides a reliable and efficient solution for applications
+requiring statistically sound random numbers, such as simulations,
+cryptography, and scientific computing. Its lightweight nature makes it
+suitable for integration into various projects without significant overhead.

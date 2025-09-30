@@ -1,11 +1,23 @@
-RngStreams is a C implementation of a high-quality uniform random number
-generator that supports multiple "independent" streams of uniform random
-numbers.
+RngStreams is a C implementation of a high-quality uniform random
+number generator (RNG) that provides support for multiple "independent"
+streams of random numbers. This feature is crucial for parallel and
+distributed simulations, ensuring that different parts of a simulation
+can draw from distinct, non-overlapping sequences of random numbers.
 
-It was written by Pierre L'Ecuyer and Richard Simard, who have a website
-at:
+Developed by Pierre L'Ecuyer and Richard Simard, RngStreams is designed
+to offer statistically sound and reproducible random number sequences.
+Its core strength lies in managing multiple streams, which is essential
+for:
 
-http://www.iro.umontreal.ca/~simardr/indexe.html
+-   **Parallel Simulations**: Running independent simulation replicates
+    concurrently.
+-   **Distributed Computing**: Ensuring unique random number sequences
+    across different processors or nodes.
+-   **Reproducibility**: Allowing for the exact replication of simulation
+    results by controlling the state of each stream.
 
-This GNU-style package is compiled and maintained by Josef Leydold and
-released under the GNU Public License (GPL).
+This GNU-style package is compiled and maintained by Josef Leydold,
+and is released under the GNU Public License (GPL). RngStreams is an
+invaluable tool for researchers and developers in Monte Carlo methods,
+statistical modeling, and any application requiring robust and manageable
+random number generation.

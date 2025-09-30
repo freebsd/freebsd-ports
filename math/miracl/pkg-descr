@@ -1,16 +1,21 @@
-[ excerpt from developer's web site ]
+MIRACL (Multiprecision Integer and Rational Arithmetic C/C++ Library)
+is a powerful Big Number Library for implementing cryptographic systems.
+It provides primitives for integrating advanced number-theoretic
+cryptography into real-world applications.
 
-MIRACL is a Big Number Library which implements all of the primitives
-necessary to design Big Number Cryptography into your real-world
-application. It is primarily a tool for cryptographic system
-implementors. RSA public key cryptography, Diffie-Hellman Key
-exchange, DSA digital signature, they are all just a few procedure
-calls away. Support is also included for even more esoteric Elliptic
-Curves and Lucas function based schemes. The latest version offers
-full support for Elliptic Curve Cryptography over GF(p) and GF(2m).
-Less well-known techniques can also be implemented as MIRACL allows
-you to work directly and efficiently with the big numbers that are
-the building blocks of number-theoretic cryptography. Although
-implemented as a C library, a well-thought out C++ wrapper is
-provided, which greatly simplifies program development. Most example
-programs (25+ of them) are provided in both C and C++ versions.
+Primarily a tool for cryptographic system implementers, MIRACL offers
+robust support for:
+
+-   **Public Key Cryptography**: RSA, Diffie-Hellman Key Exchange, DSA.
+-   **Elliptic Curve Cryptography (ECC)**: Full support over GF(p)
+    and GF(2m), including esoteric ECC schemes.
+-   **Lucas Function Based Schemes**: Support for less common techniques.
+
+MIRACL enables efficient work with large numbers foundational to modern
+cryptography. It's a C library with a C++ wrapper that simplifies
+program development, with examples in both languages.
+
+This library is invaluable for security researchers, cryptographers,
+and developers building secure communication protocols, digital
+signature systems, and other applications requiring high-assurance
+cryptographic primitives.

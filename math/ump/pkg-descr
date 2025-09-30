@@ -1,2 +1,16 @@
-ump is a graphical, easy to use math program, which works with complex
-numbers, matrices, functions and much more.
+UMP (Universal Math Program) is an intuitive and powerful graphical
+mathematics program designed for ease of use. It provides a comprehensive
+environment for performing a wide range of mathematical operations,
+making complex calculations accessible to students, educators, and
+professionals alike.
+
+Key features include robust support for:
+-   Complex numbers: Perform arithmetic and functions with complex values.
+-   Matrices: Handle matrix operations, inversions, and determinants.
+-   Functions: Define, plot, and analyze mathematical functions.
+-   Advanced calculations: Solve equations, perform calculus operations,
+    and work with various mathematical expressions.
+
+With its user-friendly graphical interface, UMP simplifies the process
+of exploring mathematical concepts and solving intricate problems,
+offering a visual and interactive approach to mathematics.

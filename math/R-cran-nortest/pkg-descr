@@ -1,1 +1,17 @@
-Five omnibus tests for testing the composite hypothesis of normality.
+The R-cran-nortest package provides a suite of five omnibus tests
+for assessing the composite hypothesis of normality in statistical data.
+Normality tests are crucial in statistics to determine if a data set
+is well-modeled by a normal distribution, which is a common assumption
+for many parametric statistical methods.
+
+This package includes implementations of the following widely used tests:
+-   Anderson-Darling test
+-   Cramer-von Mises test
+-   Shapiro-Francia test
+-   Lilliefors test (Kolmogorov-Smirnov test with estimated parameters)
+-   Pearson chi-square test
+
+These tests are valuable tools for statisticians, researchers, and data
+analysts working with R, enabling them to rigorously evaluate the
+distributional assumptions of their data before applying further
+statistical procedures.

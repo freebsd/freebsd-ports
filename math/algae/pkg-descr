@@ -1,4 +1,19 @@
-Algae is a programming language for numerical analysis.  It was written in
-the Boeing Company to fulfill their need for a fast and versatile tool,
-capable of handling large systems.  Algae has been applied to interesting
-problems in aerospace and related fields for more than a decade.
+Algae is a specialized programming language meticulously designed for
+numerical analysis, particularly adept at tackling complex and large-scale
+computational problems. Developed by the Boeing Company, Algae was
+created to meet the demanding requirements of a fast, versatile, and
+robust tool for advanced engineering and scientific applications.
+
+Its core strengths lie in efficiently handling numerical computations
+involving large systems, making it suitable for:
+
+-   Solving differential equations
+-   Performing matrix operations
+-   Implementing optimization algorithms
+-   Simulating complex physical phenomena
+
+With a proven track record of over a decade in aerospace and related
+fields, Algae continues to be a valuable asset for researchers and
+engineers who require a powerful and reliable language for high-performance
+numerical analysis. Its design emphasizes both speed and the ability
+to manage extensive datasets and intricate models.

@@ -1,7 +1,23 @@
-Compute expected shortfall (ES) and Value at Risk (VaR) from a quantile
-function, distribution function, random number generator or probability density
-function. ES is also known as Conditional Value at Risk (CVaR). Virtually any
-continuous distribution can be specified. The functions are vectorized over the
-arguments. The computations are done directly from the definitions, see e.g.
-Acerbi and Tasche (2002) <doi:10.1111/1468-0300.00091>. Some support for GARCH
-models is provided, as well.
+The R-cran-cvar package provides essential tools for risk management,
+enabling the computation of Expected Shortfall (ES) and Value at Risk (VaR).
+ES, also known as Conditional Value at Risk (CVaR), and VaR are key metrics
+used to quantify potential financial losses in portfolios or investments.
+
+This package offers high flexibility, allowing users to compute these
+risk measures from various input types, including:
+
+-   Quantile functions
+-   Distribution functions
+-   Random number generators
+-   Probability density functions
+
+It supports virtually any continuous distribution, making it adaptable
+to diverse financial models. The functions are vectorized for efficient
+computation across multiple arguments. The calculations are performed
+directly from their definitions, as detailed by Acerbi and Tasche (2002).
+Additionally, the package includes some support for GARCH (Generalized
+Autoregressive Conditional Heteroskedasticity) models, further enhancing
+its utility for analyzing financial time series volatility.
+
+R-cran-cvar is an invaluable resource for financial analysts, risk managers,
+and quantitative researchers working with R to assess and manage financial risk.

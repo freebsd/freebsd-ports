@@ -1,5 +1,23 @@
-The BLACS (Basic Linear Algebra Communication Subprograms)
-project is an ongoing investigation whose purpose is to create
-a linear algebra oriented message passing interface
-that may be implemented efficiently and uniformly across
-a large range of distributed memory platforms.
+The BLACS (Basic Linear Algebra Communication Subprograms) library is a
+fundamental component for high-performance parallel computing, specifically
+designed to facilitate linear algebra operations on distributed memory
+platforms. It provides a standardized and efficient message passing
+interface tailored for numerical linear algebra algorithms.
+
+BLACS enables the communication and synchronization of data between
+processors in a parallel computing environment, which is crucial for
+implementing scalable versions of dense linear algebra routines. This
+makes it an essential building block for:
+
+-   **Distributed Linear Algebra Libraries**: Such as ScaLAPACK, which
+    relies on BLACS for inter-processor communication.
+-   **Scientific Simulations**: Large-scale computations in physics,
+    engineering, and other fields that require solving complex linear
+    systems or eigenvalue problems across multiple nodes.
+-   **High-Performance Computing (HPC)**: Optimizing numerical workloads
+    on clusters and supercomputers.
+
+By offering a uniform and efficient communication layer, BLACS allows
+developers to write portable and high-performing parallel linear algebra
+code, ensuring that numerical applications can effectively utilize the
+power of distributed memory architectures.

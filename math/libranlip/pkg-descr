@@ -1,5 +1,17 @@
-libranlip is a C++ library created by G. Beliakov, which generates random
-variates with arbitrary Lipschitz-continuous densities via the acceptance /
-rejection method. The density should have a dimension of no more than about
-five. The user needs to supply the density function using a simple syntax, and
-then call the methods of construction and generation provided in libranlip.
+libranlip is a C++ library by G. Beliakov for generating random variates
+from distributions with arbitrary Lipschitz-continuous densities. It
+produces random numbers following smooth probability distributions,
+essential for advanced simulations and statistical modeling.
+
+The library uses the efficient acceptance/rejection method for sampling,
+effective for densities up to approximately five dimensions. Users provide
+their desired density function via a simple syntax.
+
+libranlip is invaluable for researchers and developers in:
+
+-   **Monte Carlo simulations**: For complex systems.
+-   **Statistical inference**: Generating samples for Bayesian methods.
+-   **Numerical analysis**: Exploring probability distributions.
+
+It offers a flexible and powerful solution for high-fidelity random
+number generation in C++ applications.

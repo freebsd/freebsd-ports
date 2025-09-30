@@ -1,7 +1,24 @@
-This is an ANSI C++ implementation of the complete ANSI C specification of
-Chapter 3 of the BLAS Technical Forum Standard. The distribution is quite
-small and it is meant as a starting point for developing an optimized and
-architecture-dependent version. (C++ was used, rather than C, as it has support
-for complex arithmetic and templates to facilitate to creation of various
-precision codes.) The library includes support for all four precision types
-(single, double precision, real, and complex) and Level 1, 2, and 3 operations.
+SPBLAS is an ANSI C++ implementation of Chapter 3 of the BLAS (Basic
+Linear Algebra Subprograms) Technical Forum Standard. BLAS routines are
+fundamental building blocks for high-performance numerical linear algebra,
+widely used in scientific computing, engineering, and data analysis.
+
+This library serves as a robust starting point for developing optimized
+and architecture-dependent BLAS implementations. Its C++ design offers
+several advantages:
+
+-   **Complex Arithmetic Support**: Facilitates computations involving
+    complex numbers directly.
+-   **Templates**: Enables the creation of various precision codes,
+    supporting single, double precision, real, and complex data types.
+
+SPBLAS provides comprehensive coverage of BLAS operations, including:
+
+-   **Level 1**: Vector-vector operations (e.g., dot product, vector scaling).
+-   **Level 2**: Matrix-vector operations (e.g., matrix-vector multiplication).
+-   **Level 3**: Matrix-matrix operations (e.g., matrix-matrix multiplication),
+    which are crucial for many high-performance computing tasks.
+
+This library is an invaluable resource for developers and researchers
+who need a portable, standard-compliant, and extensible foundation for
+implementing efficient linear algebra routines in C++.

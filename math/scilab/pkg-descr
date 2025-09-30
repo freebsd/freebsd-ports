@@ -1,34 +1,24 @@
-Scilab is a scientific software package for numerical computations in a
-user-friendly environment.
+Scilab is a powerful, open-source scientific software package for
+numerical computations, offering a user-friendly environment for
+engineers, scientists, and students. It provides a high-level
+programming language and a rich set of functionalities.
 
-Main features
-    * Hundreds of mathematical functions
-    * High level programming language
-    * 2-D and 3-D graphics
-    * Advanced data structures and user defined data types
-    * Xcos: hybrid dynamic systems modeler and simulator
-2-D and 3-D visualization
-    * Lines
-    * Pie charts
-    * Histograms
-    * Surfaces
-    * Animations
-    * Graphics export in many formats: GIF, BMP, JPEG, SVG, PDF...
-Numerical computation
-    * Linear algebra
-    * Sparse matrices
-    * Polynomials and rational functions
-    * Simulation: explicit and implicit systems of differential
-      equations solvers
-    * Classic and robust control
-    * Differentiable and non-differentiable optimization
-Data analysis
-    * Interpolation, approximation
-    * Signal Processing
-    * Statistics
-Extended features
-    * Graphs and Networks
-    * Interface with Fortran, C, C++, Java
-    * Functions for calling Scilab from C, C++, Fortran and Java
-    * LabVIEW Gateway
-    * A large number of modules available via ATOMS
+Key features:
+
+-   **Mathematical Functions**: Hundreds of built-in functions.
+-   **High-Level Programming Language**: For scripting and automation.
+-   **2-D and 3-D Graphics**: Comprehensive visualization, including
+    lines, charts, histograms, surfaces, and animations. Exports to
+    GIF, BMP, JPEG, SVG, PDF.
+-   **Xcos**: Hybrid dynamic systems modeler and simulator.
+-   **Numerical Computation**: Linear algebra, sparse matrices,
+    polynomials, rational functions, differential equation solvers,
+    control, optimization.
+-   **Data Analysis**: Interpolation, approximation, signal processing,
+    and statistics.
+-   **Extensibility**: Interfaces with Fortran, C, C++, Java; numerous
+    modules via ATOMS.
+
+Scilab is an invaluable tool for numerical analysis, data processing,
+and scientific visualization, a free and powerful alternative to
+commercial mathematical software.

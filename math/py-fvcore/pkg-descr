@@ -1,4 +1,21 @@
-fvcore is a light-weight core library that provides the most common and
-essential functionality shared in various computer vision frameworks
-developed in FAIR, such as Detectron2, PySlowFast, and ClassyVision. All
-components in this library are type-annotated, tested, and benchmarked.
+fvcore is a lightweight and highly optimized core library designed to
+provide essential functionalities shared across various computer vision
+frameworks developed at FAIR (Facebook AI Research). It serves as a
+foundational toolkit, streamlining the development of advanced vision
+models and applications.
+
+This library encapsulates common utilities and building blocks, such as:
+
+-   **Configuration Management**: Tools for handling model configurations.
+-   **Logging and Monitoring**: Utilities for tracking experiment progress.
+-   **Data Structures**: Efficient data representations for computer
+    vision tasks.
+-   **Performance Benchmarking**: Integrated tools for evaluating and
+    optimizing code performance.
+
+A key strength of fvcore lies in its commitment to quality: all components
+are meticulously type-annotated for clarity, thoroughly tested for
+reliability, and rigorously benchmarked for optimal performance. It acts
+as a crucial dependency for prominent FAIR projects like Detectron2,
+PySlowFast, and ClassyVision, enabling developers to build robust and
+efficient computer vision systems with confidence.

@@ -1,3 +1,15 @@
-basecalc came with Xlib Programming Manual from O'Reilly as an
-example of X lib programming. mbasecalc is an immitation of basecalc
-which is available on different platforms.
+mbasecalc is a versatile base calculator, inspired by the original
+'basecalc' example from the Xlib Programming Manual by O'Reilly.
+It provides a convenient tool for performing arithmetic operations
+and conversions across different numerical bases.
+
+Unlike its predecessor, mbasecalc is designed to be cross-platform,
+making it accessible and functional on various operating systems
+and environments. Users can effortlessly switch between common bases
+such as binary, octal, decimal, and hexadecimal, facilitating tasks
+involving low-level programming, network protocols, or digital logic.
+
+This utility is particularly useful for developers, students, and
+anyone who frequently needs to work with numbers in different bases,
+offering a straightforward and efficient solution for base conversions
+and calculations.
