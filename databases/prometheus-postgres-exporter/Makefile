@@ -1,6 +1,6 @@
 PORTNAME=	prometheus-postgres-exporter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0
+DISTVERSION=	0.18.1
 CATEGORIES=	databases
 
 MAINTAINER=	ivy@FreeBSD.org
