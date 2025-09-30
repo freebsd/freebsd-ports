@@ -239,6 +239,7 @@
 %%DATADIR%%/tables/iu-ca-g1.ctb
 %%DATADIR%%/tables/ja-kantenji.utb
 %%DATADIR%%/tables/ja-kantenji-ucs2.utb
+%%DATADIR%%/tables/ja-rokutenkanji.utb
 %%DATADIR%%/tables/ka.utb
 %%DATADIR%%/tables/ka-in-g1.utb
 %%DATADIR%%/tables/kannada.cti
