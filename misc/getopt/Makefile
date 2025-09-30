@@ -1,5 +1,6 @@
 PORTNAME=	getopt
 PORTVERSION=	2.41.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${PORTVERSION:R}/
 DISTNAME=	util-linux-${PORTVERSION}
@@ -19,8 +20,9 @@ CONFIGURE_ARGS=	--disable-asciidoc \
 		--disable-nls \
 		--disable-makeinstall-chown \
 		--disable-makeinstall-setuid \
-		--disable-year2038 \
-		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
+		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
+		${CONFIGURE_ARGS_${ARCH}}
+CONFIGURE_ARGS_i386=	--disable-year2038
 GNU_CONFIGURE=	yes
 
 SHEBANG_FILES=	misc-utils/getopt-example.bash
