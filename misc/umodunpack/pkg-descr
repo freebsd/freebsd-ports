@@ -1,9 +1,1 @@
-umodunpack is a specialized utility designed for extracting content
-from Unreal Tournament mod files, typically distributed in the
-'.umod' archive format. This tool allows users to unpack these
-proprietary archives, gaining access to the packed game assets,
-scripts, and other resources contained within. It is an essential
-tool for mod developers, enthusiasts, or anyone needing to inspect
-or modify the components of Unreal Tournament modifications,
-facilitating deeper customization and understanding of the game's
-modding ecosystem.
+Extract the packed Unreal [Tournament] mod files from a given umod.

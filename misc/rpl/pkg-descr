@@ -1,13 +1,4 @@
-rpl is a powerful and flexible command-line utility designed for
-efficient text replacement across multiple files within a Unix-like
-environment. It excels at finding and replacing specified strings
-with new ones, offering robust features such as recursive directory
-scanning. This allows rpl to process all files found within a given
-directory and its subdirectories, making it ideal for large-scale
-code refactoring, configuration file updates, or batch text
-modifications. Furthermore, users can refine their search by
-limiting operations to files with specific filename suffixes
-(e.g., '.html', '.c', '.txt'), ensuring precise control over
-which files are modified. rpl is an indispensable tool for developers,
-system administrators, and anyone needing to perform quick and
-reliable text substitutions across numerous files.
+rpl is a Unix text replacement utility. It will replace strings with new
+strings in multiple text files. It can scan directories recursively and
+replace strings in all files found. The search can be limited to files
+with certain filename suffixes (e.g. '.html', '.c', etc.).

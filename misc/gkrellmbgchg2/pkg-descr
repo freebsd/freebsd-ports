@@ -1,11 +1,2 @@
-gkrellmbgchg2 is a dynamic plugin designed for integration with
-GKrellM, the popular GNU/Linux system monitor. This utility
-enhances the desktop experience by periodically updating the
-desktop's background image. Users can configure gkrellmbgchg2
-to cycle through a specified collection of images at set intervals,
-providing a fresh and visually engaging desktop environment.
-It offers a convenient way to personalize your workspace with
-rotating wallpapers, eliminating the need for manual changes.
-This plugin is ideal for users who appreciate visual variety
-and wish to automate the management of their desktop backgrounds
-directly from their GKrellM monitoring interface.
+A plugin for GKrellM, which periodically updates the desktop's
+background image.

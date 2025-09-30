@@ -1,9 +1,1 @@
-lxde-common provides the essential shared files and configurations
-for the Lightweight X11 Desktop Environment (LXDE). This package
-includes critical components such as startup and logout scripts,
-default settings, and other common resources that ensure the proper
-functioning and consistent user experience across the entire LXDE
-desktop. By centralizing these common elements, lxde-common helps
-to maintain the lightweight and efficient nature of LXDE, offering
-a cohesive and responsive desktop environment for users who prioritize
-speed and minimal resource consumption.
+LXDE Common files including startup and logout scripts.

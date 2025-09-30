@@ -1,10 +1,3 @@
-lc is a venerable and widely-used command-line utility that serves
-as an alternative to the standard 'ls' command for listing directory
-contents. Originating from the University of Waterloo in the mid-1970s,
-lc offers a distinct approach to displaying file and directory
-information. While performing the same fundamental task as 'ls',
-it often provides a different set of default behaviors, output
-formats, or command-line options that some users may find more
-convenient or efficient for their specific workflows. Its long
-history of use attests to its reliability and enduring utility
-in various computing environments.
+lc is an alternative to ls, that has been in wide use at the
+University of Waterloo (and elsewhere) since at least the
+mid 1970's.

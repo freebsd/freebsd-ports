@@ -1,11 +1,2 @@
-gkrellm-xkb is a convenient plugin designed to integrate with
-GKrellM, the popular GNU/Linux system monitor. This plugin provides
-a visual indicator of the currently active national keyboard layout
-by displaying a small country flag directly within the GKrellM
-interface. For users who frequently switch between different keyboard
-layouts (e.g., for multilingual typing or programming), gkrellm-xkb
-offers an immediate and unobtrusive way to ascertain the active
-layout at a glance. This enhances usability and helps prevent
-typing errors or confusion when working with multiple input methods,
-making it a valuable addition for international users or those
-with specialized keyboard needs.
+gkrellm-xkb is a plugin for gkrellm which displays a small country
+flag indicating currently active national keyboard layout.

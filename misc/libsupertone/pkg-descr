@@ -1,11 +1,2 @@
-libsupertone is a comprehensive library specifically engineered
-to facilitate the generation and detection of supervisory tones
-used in telecommunication systems worldwide. These tones, which
-include various call progress tones, busy signals, and other
-signaling sounds, are crucial for indicating call status and
-managing connections across diverse global telephony networks.
-By providing robust support for a wide array of international
-tone standards, libsupertone enables developers to create
-applications that can accurately interpret and produce these
-essential audio signals, ensuring compatibility and reliable
-operation in a global communication context.
+This library is designed to support supervisory tone generation and detection
+for all parts of the world.

@@ -1,10 +1,2 @@
-raspbsd-led provides a set of essential tools for controlling and
-manipulating the built-in LEDs commonly found on various ARM-based
-single-board computers, including popular platforms like the
-BeagleBone Black and potentially Raspberry Pi devices running
-FreeBSD. These utilities enable users to programmatically flash,
-toggle, and manage the status of these onboard indicator lights.
-This package is particularly useful for embedded systems development,
-debugging, and creating visual feedback mechanisms for custom
-applications running on these ARM boards, offering a straightforward
-interface for hardware interaction.
+This provides LED tools for flashing the built-on LEDs found on many
+ARM boards, such as the BeagleBone Black.

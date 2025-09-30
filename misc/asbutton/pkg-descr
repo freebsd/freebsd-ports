@@ -1,12 +1,3 @@
-asbutton is a compact and highly functional swallowable applet
-designed for desktop environments utilizing a Wharf or dock.
-This innovative utility allows users to embed multiple small,
-customizable buttons directly within a single dock icon. Each
-of these miniature buttons can be configured to launch a specific
-application or execute a command upon a single click. By consolidating
-several application launchers into one space-saving icon, asbutton
-helps to declutter the desktop and streamline workflow, providing
-quick and efficient access to frequently used programs without
-consuming excessive screen real estate. It is an ideal solution
-for users who prioritize a clean desktop and efficient application
-management.
+A swallowable applet presents a number of little buttons inside a
+Wharf or dock icon and each of those starts an application when
+clicked.

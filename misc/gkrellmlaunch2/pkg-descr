@@ -1,12 +1,2 @@
-gkrellmlaunch2 is an enhanced plugin designed for GKrellM 2.x and
-later versions, serving as a convenient application launcher.
-This utility provides users with one-click access to their most
-frequently used programs directly from the GKrellM system monitor
-interface. As an updated version of the original GKrellMLaunch,
-gkrellmlaunch2 offers improved compatibility and functionality
-within modern GKrellM environments. It allows for quick customization
-of launch buttons, enabling users to streamline their workflow
-and efficiently start applications without navigating through
-menus or desktop icons. This plugin is ideal for users who desire
-a compact and readily accessible application launcher integrated
-into their system monitoring setup.
+An update to  GKrellMLaunch for GKrellM 2+ allowing one-click access
+to frequently used programs.

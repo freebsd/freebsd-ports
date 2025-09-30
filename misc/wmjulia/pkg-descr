@@ -1,10 +1,2 @@
-wmjulia is a captivating graphical utility that generates and displays
-an animated Julia set, a fascinating fractal image derived from
-complex numbers. Designed primarily as a dock or wharf applet for
-Window Maker and Afterstep desktop environments, wmjulia provides
-a dynamic and visually engaging element for your desktop. It continuously
-renders and animates the intricate patterns of the Julia set, offering
-a unique blend of mathematical beauty and aesthetic appeal. This
-applet serves as both a decorative addition and a subtle demonstration
-of fractal geometry, enhancing the visual experience for users
-of compatible window managers.
+Makes an animated julia set.  Intended for a windowmaker/afterstep dock/wharf
+applet.

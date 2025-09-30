@@ -1,11 +1,2 @@
-translate is a convenient command-line utility implemented as a
-Perl script, designed to provide quick and easy language translation.
-It leverages the powerful Google Translate service to translate
-a given string or word from one language to another. Users can
-specify the source and target languages, making it a versatile
-tool for various translation needs directly from the terminal.
-This script is particularly useful for developers, writers, or
-anyone who frequently encounters foreign language text and requires
-on-the-fly translations without needing to open a web browser.
-It offers a lightweight and efficient way to bridge language barriers
-in a command-line environment.
+A small Perl script that takes a given string or word and translates
+it to a selected language using the Google Translate service.
