@@ -9,9 +9,9 @@ lib/cmake/Catch2/Catch2ConfigVersion.cmake
 lib/cmake/Catch2/Catch2Targets.cmake
 lib/cmake/Catch2/CatchAddTests.cmake
 lib/cmake/Catch2/ParseAndAddCatchTests.cmake
-share/pkgconfig/catch2.pc
 share/Catch2/gdbinit
 share/Catch2/lldbinit
+share/pkgconfig/catch2.pc
 %%PORTDOCS%%%%DOCSDIR%%/Readme.md
 %%PORTDOCS%%%%DOCSDIR%%/assertions.md
 %%PORTDOCS%%%%DOCSDIR%%/benchmarks.md
