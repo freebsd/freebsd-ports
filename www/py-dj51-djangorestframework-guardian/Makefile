@@ -12,6 +12,9 @@ WWW=		https://github.com/rpkilby/django-rest-framework-guardian
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Extended support of Django 5.1 ends December 2025, upgrade to the Django 5.2+ version of this port. See https://www.djangoproject.com/download/
+EXPIRATION_DATE=2025-12-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django51>=5.1:www/py-django51@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-djangorestframework>=3.16.0:www/py-dj51-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj51-django-guardian>=2.4.0:www/py-dj51-django-guardian@${PY_FLAVOR}
