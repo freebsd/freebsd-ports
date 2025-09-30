@@ -29,6 +29,7 @@ lib/imlib2/loaders/lzma.so
 %%PNG%%lib/imlib2/loaders/png.so
 lib/imlib2/loaders/pnm.so
 lib/imlib2/loaders/qoi.so
+%%LIBRSVG2%%lib/imlib2/loaders/svg.so
 lib/imlib2/loaders/tga.so
 %%TIFF%%lib/imlib2/loaders/tiff.so
 %%WEBP%%lib/imlib2/loaders/webp.so
