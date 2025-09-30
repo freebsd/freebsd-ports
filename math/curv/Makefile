@@ -45,7 +45,7 @@ PLIST_FILES=	bin/curv \
 
 post-patch:
 	@${REINPLACE_CMD} -e '/find_package/s| system||' \
-			  -e '/target_link_libraries/s| Boost::system||' \
+			  -e 's| Boost::system||' \
 			${WRKSRC}/CMakeLists.txt
 
 post-install:
