@@ -1,0 +1,5 @@
+sndio backend for virtual_oss.
+
+This is an extension for the base system version of virtual_oss. It provides
+sndio support and gets loaded dynamically only when a virtual_oss(8) invocation
+uses an sndio device.

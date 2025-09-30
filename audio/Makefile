@@ -833,6 +833,7 @@
     SUBDIR += vimpc
     SUBDIR += virtual_oss
     SUBDIR += virtual_oss_ctl
+    SUBDIR += virtual_oss_sndio
     SUBDIR += visp-go
     SUBDIR += vitunes
     SUBDIR += vm-lv2
