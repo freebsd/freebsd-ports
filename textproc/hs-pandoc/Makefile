@@ -1,5 +1,5 @@
 PORTNAME=	pandoc
-DISTVERSION=	3.8
+DISTVERSION=	3.8.1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -78,7 +78,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		dec-0.0.6_1 \
 		digest-0.0.2.1 \
 		distributive-0.6.2.1_1 \
-		djot-0.1.2.2 \
+		djot-0.1.2.3 \
 		dlist-1.0_2 \
 		doclayout-0.5.0.1 \
 		doctemplates-0.11.0.1 \
@@ -89,7 +89,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		file-embed-0.0.16.0 \
 		generically-0.1.1_4 \
 		generics-sop-0.5.1.4_2 \
-		gridtables-0.1.0.0_1 \
+		gridtables-0.1.1.0 \
 		haddock-library-1.11.0_5 \
 		half-0.3.3 \
 		happy-2.1.7 \
@@ -150,7 +150,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		optparse-applicative-0.19.0.0 \
 		ordered-containers-0.2.4 \
 		os-string-2.0.8 \
-		pandoc-3.8 \
+		pandoc-3.8.1 \
 		pandoc-lua-engine-0.5 \
 		pandoc-lua-marshal-0.3.1 \
 		pandoc-server-0.1.1 \
@@ -164,7 +164,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		random-1.3.1 \
 		recv-0.1.1 \
 		regex-base-0.94.0.3 \
-		regex-tdfa-1.3.2.4 \
+		regex-tdfa-1.3.2.5 \
 		resourcet-1.3.0 \
 		safe-0.3.21_1 \
 		scientific-0.3.8.0_2 \
@@ -205,7 +205,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		time-compat-1.9.8 \
 		time-manager-0.2.3 \
 		tls-2.1.11 \
-		toml-parser-2.0.1.2 \
+		toml-parser-2.0.1.2_1 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		typed-process-0.2.13.0 \
@@ -228,9 +228,9 @@ USE_CABAL=	Glob-0.10.2_3 \
 		wai-3.2.4 \
 		wai-app-static-3.1.9 \
 		wai-cors-0.2.7 \
-		wai-extra-3.1.17 \
+		wai-extra-3.1.18 \
 		wai-logger-2.5.0 \
-		warp-3.4.8 \
+		warp-3.4.9 \
 		witherable-0.5_1 \
 		word8-0.1.3 \
 		xml-1.3.14_2 \
@@ -242,7 +242,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 
 CABAL_WRAPPER_SCRIPTS=	${CABAL_EXECUTABLES}
 
-OPTIONS_DEFINE=		EMBED_DATA
+OPTIONS_DEFINE=	EMBED_DATA
 OPTIONS_SUB=	yes
 
 EMBED_DATA_DESC=	Embed data files in binary for relocatable executable
