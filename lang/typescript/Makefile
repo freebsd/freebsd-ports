@@ -4,9 +4,12 @@ CATEGORIES=	lang
 MASTER_SITES=	https://registry.npmjs.org/${PORTNAME}/-/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Superset of JavaScript that compiles to JavaScript output
 WWW=		https://www.typescriptlang.org/
+
+DEPRECATED=	No port maintainer, fast moving port.
+EXPIRATION_DATE=2025-11-30
 
 LICENSE=	APACHE20
 
