@@ -1,7 +1,6 @@
 PORTNAME=	libdatadog
-PORTVERSION=	16.0.3
+PORTVERSION=	20.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -27,9 +26,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	DataDog
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/library-config/src/lib.rs
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/datadog-library-config/src/lib.rs
 .for file in datadog_profiling datadog_profiling-static datadog_profiling_with_rpath
-	@${SED} -e 's|@Datadog_VERSION@|${PORTVERSION}|; s|@Datadog_LIBRARIES@|${NATIVE_STATIC_LIBS}|' ${WRKSRC}/profiling-ffi/${file}.pc.in > ${WRKSRC}/${file}.pc
+	@${SED} -e 's|@Datadog_VERSION@|${PORTVERSION}|; s|@Datadog_LIBRARIES@|${NATIVE_STATIC_LIBS}|' ${WRKSRC}/datadog-profiling-ffi/${file}.pc.in > ${WRKSRC}/${file}.pc
 .endfor
 .for file in DatadogConfig DataPipelineConfig
 	@${SED} -e 's|@Datadog_LIBRARIES@|${NATIVE_STATIC_LIBS}|' ${WRKSRC}/cmake/${file}.cmake.in > ${WRKSRC}/${file}.cmake
@@ -45,7 +44,7 @@ post-build:
 		${CARGO_TARGET_DIR}/include/datadog/telemetry.h \
 		${CARGO_TARGET_DIR}/include/datadog/data-pipeline.h
 	@${CC} -I ${CARGO_TARGET_DIR}/include/ -L ${CARGO_TARGET_DIR}/release/ -ldatadog_profiling_ffi \
-		${WRKSRC}/crashtracker/libdatadog-crashtracking-receiver.c -o ${WRKSRC}/libdatadog-crashtracking-receiver
+		${WRKSRC}/datadog-crashtracker/libdatadog-crashtracking-receiver.c -o ${WRKSRC}/libdatadog-crashtracking-receiver
 	@${MV} ${CARGO_TARGET_DIR}/release/libtest_spawn_from_lib.so ${CARGO_TARGET_DIR}/release/libtest_spawn_from_lib.so.skip
 
 do-install:

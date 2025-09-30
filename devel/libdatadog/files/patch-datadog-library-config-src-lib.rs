@@ -1,5 +1,5 @@
---- library-config/src/lib.rs.orig	2025-02-11 17:46:31 UTC
-+++ library-config/src/lib.rs
+--- datadog-library-config/src/lib.rs.orig	2025-02-11 17:46:31 UTC
++++ datadog-library-config/src/lib.rs
 @@ -461,14 +461,19 @@ pub enum Target {
  }
  

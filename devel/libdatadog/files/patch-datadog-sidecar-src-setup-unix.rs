@@ -1,5 +1,5 @@
---- sidecar/src/setup/unix.rs.orig	2024-05-03 17:30:09 UTC
-+++ sidecar/src/setup/unix.rs
+--- datadog-sidecar/src/setup/unix.rs.orig	2024-05-03 17:30:09 UTC
++++ datadog-sidecar/src/setup/unix.rs
 @@ -111,6 +111,9 @@ impl Default for SharedDirLiaison {
      }
  }
