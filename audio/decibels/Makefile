@@ -8,6 +8,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME audio player
 WWW=		https://gitlab.gnome.org/GNOME/decibels
 
+DEPRECATED=	Depends on deprecated lang/typescript (which needs a maintainer), see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=289856
+EXPIRATION_DATE=2025-11-30
+
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	tsc:lang/typescript \
