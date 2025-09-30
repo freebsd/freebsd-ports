@@ -1,5 +1,6 @@
 PORTNAME=	r10k
 PORTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,13 +11,14 @@ WWW=		https://github.com/puppetlabs/r10k
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-colored2>=3.1.2:textproc/rubygem-colored2 \
+RUN_DEPENDS=	rubygem-colored2>=3.0<5.0:textproc/rubygem-colored2 \
 		rubygem-cri>=2.15.10:devel/rubygem-cri \
-		rubygem-gettext-setup>=1.0:devel/rubygem-gettext-setup \
-		rubygem-jwt>=2.2.3:www/rubygem-jwt \
-		rubygem-log4r>=1.1.10:sysutils/rubygem-log4r \
-		rubygem-multi_json>=1.10:devel/rubygem-multi_json \
-		rubygem-puppet_forge>=4.1:sysutils/rubygem-puppet_forge
+		rubygem-gettext-setup>=0.24<2.0:devel/rubygem-gettext-setup \
+		rubygem-jwt2>=2.2.3<3:www/rubygem-jwt2 \
+		rubygem-log4r>=1.1.10<1.1.10_99:sysutils/rubygem-log4r \
+		rubygem-minitar>=0.9<2:archivers/rubygem-minitar \
+		rubygem-multi_json>=1.10<2:devel/rubygem-multi_json \
+		rubygem-puppet_forge>=4.1.0<7:sysutils/rubygem-puppet_forge
 
 USES=		gem
 
