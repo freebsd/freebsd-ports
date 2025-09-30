@@ -321,7 +321,7 @@ reposilite:*:371:371::0:0:Reposilite user:/nonexistent:/usr/sbin/nologin
 beam:*:372:372::0:0:Erlang BEAM VM user:/nonexistent:/usr/sbin/nologin
 mautrix-whatsapp:*:373:373::0:0:Mautrix-Whatsapp Daemon:/nonexistent:/usr/sbin/nologin
 traccar:*:374:374::0:0:Traccar GPS Tracking Platform:/nonexistent:/usr/sbin/nologin
-# free: 375
+unpackerr:*:375:375::0:0:Unpackerr Daemon:/nonexistent:/usr/sbin/nologin
 # free: 376
 hostd:*:377:377::0:0:hostd Daemon:/nonexistent:/usr/sbin/nologin
 walletd:*:378:378::0:0:walletd Daemon:/nonexistent:/usr/sbin/nologin
