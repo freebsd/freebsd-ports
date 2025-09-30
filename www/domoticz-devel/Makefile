@@ -1,6 +1,6 @@
 PORTNAME=	domoticz
 PORTVERSION=	2024.7.${DOMOTICZ_REL}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devel
 
@@ -59,7 +59,9 @@ PYTHON_CMAKE_BOOL=	USE_PYTHON
 PRECOMP_CMAKE_BOOL=	USE_PRECOMPILED_HEADER
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,\/opt,${PREFIX},g" ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/find_package/s| system||' \
+			  -e '/target_link_libraries/s| Boost::system||' \
+			  -e "s,\/opt,${PREFIX},g" ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e "s,XXXPREFIXXXX,${PREFIX}/domoticz,g" ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e "/^ADD_PRECOMPILED_HEADER/ d" ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e "s/\(#define APPVERSION\)\(.*\)/\1 ${DOMOTICZ_REL}/" ${WRKSRC}/appversion.h
