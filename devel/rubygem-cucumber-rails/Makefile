@@ -1,6 +1,5 @@
 PORTNAME=	cucumber-rails
-PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTVERSION=	4.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,9 +11,9 @@ WWW=		https://cucumber.io/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-capybara>=3.11<4:devel/rubygem-capybara \
-		rubygem-cucumber9>=5<10:devel/rubygem-cucumber9 \
-		rubygem-railties72>=5.2<9:www/rubygem-railties72
+RUN_DEPENDS=	rubygem-capybara>=3.25<4:devel/rubygem-capybara \
+		rubygem-cucumber>=7<11:devel/rubygem-cucumber \
+		rubygem-railties80>=6.1<9:www/rubygem-railties80
 
 USES=		gem
 
