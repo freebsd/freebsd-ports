@@ -1,17 +1,10 @@
 PORTNAME=	freerdp
-DISTVERSION=	3.17.0
-PORTREVISION=	1
+DISTVERSION=	3.17.2
 CATEGORIES=	net comms
 MASTER_SITES+=	https://pub.freerdp.com/releases/:freerdp \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/:freerdp
 PKGNAMESUFFIX=	3
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}:freerdp
-
-PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
-PATCHFILES=	83ffa524e90ae08a0f940b70cf66204477a172be.patch:-p1 \
-		afa7069a8dde0e2109939d64b5f904dedeff1909.patch:-p1 \
-		78f51bed0dd51c271358f04769faf927bfdfcba8.patch:-p1 \
-		7e9149e6aa12e3105612f53d3bbf7d14e84835d4.patch:-p1
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
