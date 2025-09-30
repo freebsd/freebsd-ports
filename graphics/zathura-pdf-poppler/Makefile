@@ -12,13 +12,12 @@ LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
-		zathura>=0.5.3:graphics/zathura
+		zathura:graphics/zathura
 LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara \
 		libpoppler-glib.so:graphics/poppler-glib
-RUN_DEPENDS=	zathura>=0.5.3:graphics/zathura
+RUN_DEPENDS=	zathura:graphics/zathura
 
-USES=		compiler:c11 desktop-file-utils gnome meson ninja pkgconfig \
-		tar:xz
+USES=		compiler:c17 desktop-file-utils gnome meson pkgconfig tar:xz
 USE_GNOME=	cairo glib20
 
 CONFLICTS_INSTALL=	zathura-pdf-mupdf
