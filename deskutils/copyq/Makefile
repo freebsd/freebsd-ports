@@ -1,5 +1,5 @@
 PORTNAME=	copyq
-DISTVERSION=	12.0.0
+DISTVERSION=	12.0.1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/hluk/CopyQ/releases/download/v${DISTVERSION}/
 DISTNAME=	Copyq-${DISTVERSION}
