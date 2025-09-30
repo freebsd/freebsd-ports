@@ -17,8 +17,7 @@ LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara \
 		libspectre.so:print/libspectre
 RUN_DEPENDS=	zathura:graphics/zathura
 
-USES=		compiler:c11 desktop-file-utils gnome meson ninja pkgconfig \
-		tar:xz
+USES=		compiler:c17 desktop-file-utils gnome meson pkgconfig tar:xz
 USE_GNOME=	cairo
 
 PLIST_FILES=	lib/zathura/libps.so \
