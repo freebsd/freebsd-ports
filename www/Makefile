@@ -2248,6 +2248,7 @@
     SUBDIR += rubygem-json-jwt-gitlab
     SUBDIR += rubygem-jsonb_accessor
     SUBDIR += rubygem-jwt
+    SUBDIR += rubygem-jwt2
     SUBDIR += rubygem-kamal
     SUBDIR += rubygem-kaminari
     SUBDIR += rubygem-kaminari-actionview
