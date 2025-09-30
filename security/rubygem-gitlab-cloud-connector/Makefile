@@ -1,5 +1,6 @@
 PORTNAME=	gitlab-cloud-connector
 PORTVERSION=	1.31.0
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport-gitlab>=7.0<8:devel/rubygem-activesupport-gitlab \
-		rubygem-jwt>=2.9<3:www/rubygem-jwt
+		rubygem-jwt2>=2.9<3:www/rubygem-jwt2
 
 USES=		gem
 
