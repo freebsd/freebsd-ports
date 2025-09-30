@@ -1,9 +1,10 @@
 PORTNAME=	zstd
 DISTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
-MAINTAINER=	pave@FreeBSD.org
+MAINTAINER=	pkaipila@gmail.com
 COMMENT=	Zstandard extension for PHP
 WWW=		https://github.com/kjdev/php-ext-zstd
 

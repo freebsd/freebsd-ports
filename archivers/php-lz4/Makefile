@@ -1,9 +1,10 @@
 PORTNAME=	lz4
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
-MAINTAINER=	pave@FreeBSD.org
+MAINTAINER=	pkaipila@gmail.com
 COMMENT=	LZ4 extension for PHP
 WWW=		https://github.com/kjdev/php-ext-lz4
 
