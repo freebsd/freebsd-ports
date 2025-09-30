@@ -137,7 +137,6 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ghiper.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/headerapi.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hiperfifo.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/href_extractor.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hsts-preload.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htmltidy.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htmltitle.cpp
@@ -232,6 +231,7 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlapi.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/usercertinmem.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/websocket-cb.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/websocket-updown.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/websocket.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlstream.c
 share/man/man1/curl-config.1.gz
@@ -314,6 +314,11 @@ share/man/man3/CURLINFO_TOTAL_TIME.3.gz
 share/man/man3/CURLINFO_TOTAL_TIME_T.3.gz
 share/man/man3/CURLINFO_USED_PROXY.3.gz
 share/man/man3/CURLINFO_XFER_ID.3.gz
+share/man/man3/CURLMINFO_XFERS_ADDED.3.gz
+share/man/man3/CURLMINFO_XFERS_CURRENT.3.gz
+share/man/man3/CURLMINFO_XFERS_DONE.3.gz
+share/man/man3/CURLMINFO_XFERS_PENDING.3.gz
+share/man/man3/CURLMINFO_XFERS_RUNNING.3.gz
 share/man/man3/CURLMOPT_CHUNK_LENGTH_PENALTY_SIZE.3.gz
 share/man/man3/CURLMOPT_CONTENT_LENGTH_PENALTY_SIZE.3.gz
 share/man/man3/CURLMOPT_MAXCONNECTS.3.gz
@@ -321,6 +326,7 @@ share/man/man3/CURLMOPT_MAX_CONCURRENT_STREAMS.3.gz
 share/man/man3/CURLMOPT_MAX_HOST_CONNECTIONS.3.gz
 share/man/man3/CURLMOPT_MAX_PIPELINE_LENGTH.3.gz
 share/man/man3/CURLMOPT_MAX_TOTAL_CONNECTIONS.3.gz
+share/man/man3/CURLMOPT_NETWORK_CHANGED.3.gz
 share/man/man3/CURLMOPT_PIPELINING.3.gz
 share/man/man3/CURLMOPT_PIPELINING_SERVER_BL.3.gz
 share/man/man3/CURLMOPT_PIPELINING_SITE_BL.3.gz
@@ -695,6 +701,7 @@ share/man/man3/curl_multi_assign.3.gz
 share/man/man3/curl_multi_cleanup.3.gz
 share/man/man3/curl_multi_fdset.3.gz
 share/man/man3/curl_multi_get_handles.3.gz
+share/man/man3/curl_multi_get_offt.3.gz
 share/man/man3/curl_multi_info_read.3.gz
 share/man/man3/curl_multi_init.3.gz
 share/man/man3/curl_multi_perform.3.gz
@@ -731,6 +738,7 @@ share/man/man3/curl_version_info.3.gz
 share/man/man3/curl_ws_meta.3.gz
 share/man/man3/curl_ws_recv.3.gz
 share/man/man3/curl_ws_send.3.gz
+share/man/man3/curl_ws_start_frame.3.gz
 share/man/man3/libcurl-easy.3.gz
 share/man/man3/libcurl-env-dbg.3.gz
 share/man/man3/libcurl-env.3.gz

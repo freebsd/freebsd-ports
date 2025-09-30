@@ -1,6 +1,5 @@
 PORTNAME=	curl
-PORTVERSION=	8.15.0
-PORTREVISION=	1
+PORTVERSION=	8.16.0
 CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.se/download/ \
 		https://github.com/curl/curl/releases/download/curl-${PORTVERSION:S|.|_|g}/
@@ -29,9 +28,9 @@ CONFIGURE_ARGS=	--disable-unity \
 		--enable-openssl-auto-load-config \
 		--enable-progress-meter \
 		--enable-ssls-export \
+		--with-ca-path=/etc/ssl/certs \
 		--with-zsh-functions-dir=${LOCALBASE}/share/zsh/site-functions \
 		--without-ca-bundle \
-		--with-ca-path=/etc/ssl/certs \
 		--without-fish-functions-dir
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} \
 		ac_cv_func_SSLv2_client_method=no
