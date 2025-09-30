@@ -26,6 +26,9 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
+post-extract:
+	@${FIND} ${WRKSRC} -name "._*" -delete
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${STAGEDIR}${JAVAJARDIR}
 	${LN} -sf ${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
