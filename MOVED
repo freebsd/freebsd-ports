@@ -4785,3 +4785,4 @@ sysutils/linuxfdisk||2025-10-01|Has expired: Upstream distfile unavailable, way 
 sysutils/linrename||2025-10-01|Has expired: FreeBSD port unmaintained, use misc/mmv or rename from sysutils/util-linux instead
 security/botan2||2025-10-01|Has expired: End of life 2024-12-31 upstream, consider migrating to security/botan3
 security/openssl32||2025-10-01|Has expired: Please use security/openssl35 (LTS)
+devel/py-buildbot-react-console-view||2025-10-01|Has expired: No longer required by Buildbot 4.X

@@ -4606,7 +4606,6 @@
     SUBDIR += py-buildbot-console-view
     SUBDIR += py-buildbot-grid-view
     SUBDIR += py-buildbot-pkg
-    SUBDIR += py-buildbot-react-console-view
     SUBDIR += py-buildbot-waterfall-view
     SUBDIR += py-buildbot-worker
     SUBDIR += py-buildbot-wsgi-dashboards
