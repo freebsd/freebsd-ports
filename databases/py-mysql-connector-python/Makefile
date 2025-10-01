@@ -1,5 +1,5 @@
 PORTNAME=	mysql-connector-python
-PORTVERSION=	8.2.0
+DISTVERSION=	9.4.0
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,6 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=4.21.1:devel/py-protobuf@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes
@@ -21,6 +20,8 @@ USE_PYTHON=	autoplist pep517
 NO_ARCH=	yes
 
 PORTSCOUT=	skipv:init
+
+WRKSRC_SUBDIR=	${PORTNAME}
 
 OPTIONS_DEFINE=	COMPRESSION DNS GSSAPI
 
@@ -36,8 +37,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|"gcc"|"${CC}"|g ; \
 		s|"g++"|"${CXX}"|g' \
 		${WRKSRC}/cpydist/__init__.py
-	@${REINPLACE_CMD} -e 's|protobuf>=4.21.1,<=4.21.12|protobuf>=4.21.1|g' \
-		${WRKSRC}/setup.py
 
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ./unittests.py)
