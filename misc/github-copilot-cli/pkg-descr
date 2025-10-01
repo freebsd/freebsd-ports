@@ -1,0 +1,18 @@
+github-copilot-cli brings the power of GitHub Copilot coding agent directly to
+your terminal. With GitHub Copilot CLI, you can work locally and synchronously
+with an AI agent that understands your code and GitHub context.
+
+Features:
+
+* Terminal-native development: Work with Copilot coding agent directly in your
+  command line - no context switching required.
+* GitHub integration out of the box: Access your repositories, issues, and pull
+  requests using natural language, all authenticated with your existing GitHub
+  account.
+* Agentic capabilities: Build, edit, debug, and refactor code with an AI
+  collaborator that can plan and execute complex tasks.
+* MCP-powered extensibility: Take advantage of the fact that the coding agent
+  ships with GitHub's MCP server by default and supports custom MCP servers to
+  extend capabilities.
+* Full control: Preview every action before execution - nothing happens without
+  your explicit approval.
