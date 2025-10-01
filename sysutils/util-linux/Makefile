@@ -1,6 +1,5 @@
 PORTNAME=	util-linux
-DISTVERSION=	2.41.1
-PORTREVISION=	0
+DISTVERSION=	2.41.2
 CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${DISTVERSION:R}/
 
@@ -74,5 +73,15 @@ post-install: # https://github.com/karelzak/util-linux/issues/1149
 	${FIND} ${STAGEDIR}${PREFIX} -name 'libblkid*' -delete
 	${FIND} ${STAGEDIR}${PREFIX} -name 'libuuid*' -delete
 	${FIND} ${STAGEDIR}${PREFIX} -name 'uuid*' -delete
+	${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/lib/libfdisk.so.1.1.0 \
+		${STAGEDIR}${PREFIX}/lib/libsmartcols.so.1.1.0
+
+# tests as of 2.41.2 (see https://github.com/util-linux/util-linux/issues/3767):
+# 3 tests of 337 FAILED
+#
+#      misc/setpgid
+#      misc/whereis
+#      misc/flock
 
 .include <bsd.port.mk>
