@@ -358,6 +358,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/schemas/sysinfo.rng
 %%DATADIR%%/schemas/sysinfocommon.rng
 %%DATADIR%%/test-screenshot.png
+%%NLS%%share/locale/ar/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/as/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/bn_IN/LC_MESSAGES/libvirt.mo
