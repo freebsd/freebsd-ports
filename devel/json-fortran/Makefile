@@ -21,4 +21,13 @@ CMAKE_OFF=	JSONFORTRAN_ENABLE_TESTS
 CMAKE_TESTING_ON=	JSONFORTRAN_ENABLE_TESTS ENABLE_TESTS
 CMAKE_TESTING_TARGET=	check
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${FORTRAN_DEFAULT} == flang
+PLIST_SUB+=	LIBSUFFIX=llvmflang
+TESTING_UNSAFE=	https://github.com/llvm/llvm-project/issues/161568
+.else
+PLIST_SUB+=	LIBSUFFIX=gnu
+.endif
+
+.include <bsd.port.post.mk>
