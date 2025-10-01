@@ -1,6 +1,7 @@
 PORTNAME=	faust
-DISTVERSION=	2.81.2
+DISTVERSION=	2.81.8
 CATEGORIES=	audio devel
+MASTER_SITES=	https://github.com/grame-cncm/faust/releases/download/${DISTVERSION}/
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	e4e9e51a1a12ef0806fc7c8439fa817a98ec57ce.patch:-p1 # https://github.com/grame-cncm/faust/pull/1170: Fix compilation flags for generated projects: use c++17 instead of c++14
@@ -23,19 +24,14 @@ USES=		compiler:c++17-lang cmake localbase:ldflags llvm:min=${LLVM_VER},lib ncur
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++17
 
-USE_GITHUB=	yes
+USE_GITHUB=	nodefault
 GH_ACCOUNT=	grame-cncm
-GH_TUPLE=	\
-		grame-cncm:faustlibraries:9e866dc047433cedeb250cf6e58310a8d3f79803:grame_cncm_faustlibraries/libraries \
-		ccrma:faust2ck:db879cb:faust2ck/tools/faust2ck \
-		shakfu:py2max:3aaa8ca:py2max/architecture/max-msp/py2max \
-		yixuan:spectra:8c7242e:spectra/tools/physicalModeling/mesh2faust/spectra
 
-#LLVM_VER=	15 # not c++17 by default
 LLVM_VER=	19
 
 SHEBANG_FILES=	tools/faust-config \
 		tools/faust2appls/* \
+		tools/faust2clap/faust2clap.py \
 		tools/benchmark/faustbench \
 		tools/sound2faust/sound2reader
 

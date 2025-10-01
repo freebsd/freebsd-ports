@@ -16,6 +16,7 @@ bin/faust2caconsole
 bin/faust2cagtk
 bin/faust2caqt
 bin/faust2caqtios
+bin/faust2clap.py
 bin/faust2cmajor
 bin/faust2comparator
 bin/faust2cpalrust
@@ -104,6 +105,9 @@ bin/faust2w64max6
 bin/faust2w64puredata
 bin/faust2w64vst
 bin/faust2winunity
+bin/faust2wwise
+bin/faust2wwise.cmd
+bin/faust2wwise.py
 bin/faustoptflags
 bin/faustpath
 bin/faustremote
@@ -284,7 +288,7 @@ lib/ios-libsndfile.a
 lib/libOSCFaust.a
 lib/libfaust.so
 lib/libfaust.so.2
-lib/libfaust.so.2.81.2
+lib/libfaust.so.2.81.8
 %%HIGHLIGHT%%share/apps/katepart/syntax/faust.xml
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.cpp
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.h
@@ -447,6 +451,7 @@ lib/libfaust.so.2.81.2
 %%DATADIR%%/daisy/faust_sdram_converter.py
 %%DATADIR%%/delays.lib
 %%DATADIR%%/demos.lib
+%%DATADIR%%/doc.lib
 %%DATADIR%%/dplug.d
 %%DATADIR%%/dssi.cpp
 %%DATADIR%%/dummy-mem.cpp
@@ -454,6 +459,7 @@ lib/libfaust.so.2.81.2
 %%DATADIR%%/dx7.lib
 %%DATADIR%%/effect.lib
 %%DATADIR%%/embedded/platform.lib
+%%DATADIR%%/env.lib
 %%DATADIR%%/envelopes.lib
 %%DATADIR%%/esp32/CMakeLists.txt
 %%DATADIR%%/esp32/MPU9250.cpp
@@ -693,6 +699,7 @@ lib/libfaust.so.2.81.2
 %%DATADIR%%/julia/portaudio-gtk.jl
 %%DATADIR%%/ladspa.cpp
 %%DATADIR%%/latexheader.tex
+%%DATADIR%%/lfo.lib
 %%DATADIR%%/linearalgebra.lib
 %%DATADIR%%/lv2.cpp
 %%DATADIR%%/lv2qtgui.h
@@ -715,111 +722,6 @@ lib/libfaust.so.2.81.2
 %%DATADIR%%/max-msp/mc-faustgen-wrapper.maxpat
 %%DATADIR%%/max-msp/mc-wrapper-poly.maxpat
 %%DATADIR%%/max-msp/mc-wrapper.maxpat
-%%DATADIR%%/max-msp/py2max/.gitignore
-%%DATADIR%%/max-msp/py2max/CHANGELOG.md
-%%DATADIR%%/max-msp/py2max/LICENSE
-%%DATADIR%%/max-msp/py2max/MANIFEST.in
-%%DATADIR%%/max-msp/py2max/README.md
-%%DATADIR%%/max-msp/py2max/TODO.md
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/circular.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/default_h.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/default_v.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/dot.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/fdp.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/hola.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/kamada_kawai_layout.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/neato.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/orthogonal.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/planar.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/pyhola.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/sfdp.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/shell.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/spectral.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/spring-layout.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/tsmp0-uselp.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/tsmp1-uselp.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/tsmp1.png
-%%DATADIR%%/max-msp/py2max/docs/assets/imgs/twopi.png
-%%DATADIR%%/max-msp/py2max/docs/auto-layouts.md
-%%DATADIR%%/max-msp/py2max/docs/notes/alternatives.md
-%%DATADIR%%/max-msp/py2max/docs/notes/graph-drawing.md
-%%DATADIR%%/max-msp/py2max/docs/notes/hola-options.md
-%%DATADIR%%/max-msp/py2max/docs/notes/storage.md
-%%DATADIR%%/max-msp/py2max/py2max/__init__.py
-%%DATADIR%%/max-msp/py2max/py2max/common.py
-%%DATADIR%%/max-msp/py2max/py2max/core.py
-%%DATADIR%%/max-msp/py2max/py2max/maxclassdb.py
-%%DATADIR%%/max-msp/py2max/py2max/utils.py
-%%DATADIR%%/max-msp/py2max/pyproject.toml
-%%DATADIR%%/max-msp/py2max/scripts/clean.sh
-%%DATADIR%%/max-msp/py2max/scripts/compare.py
-%%DATADIR%%/max-msp/py2max/scripts/convert.py
-%%DATADIR%%/max-msp/py2max/scripts/coverage.sh
-%%DATADIR%%/max-msp/py2max/scripts/create_wheel.sh
-%%DATADIR%%/max-msp/py2max/scripts/dump_registry.py
-%%DATADIR%%/max-msp/py2max/scripts/gen_defaults.py
-%%DATADIR%%/max-msp/py2max/scripts/gen_test.py
-%%DATADIR%%/max-msp/py2max/scripts/parse_refs.py
-%%DATADIR%%/max-msp/py2max/scripts/parse_thesaurus.py
-%%DATADIR%%/max-msp/py2max/scripts/test.sh
-%%DATADIR%%/max-msp/py2max/tests/__init__.py
-%%DATADIR%%/max-msp/py2max/tests/data/complex.maxpat
-%%DATADIR%%/max-msp/py2max/tests/data/desc.maxpat
-%%DATADIR%%/max-msp/py2max/tests/data/empty.maxpat
-%%DATADIR%%/max-msp/py2max/tests/data/nested.maxpat
-%%DATADIR%%/max-msp/py2max/tests/data/simple.maxpat
-%%DATADIR%%/max-msp/py2max/tests/data/tabular.maxpat
-%%DATADIR%%/max-msp/py2max/tests/graphs/random/v30e33.tglf
-%%DATADIR%%/max-msp/py2max/tests/registry.py
-%%DATADIR%%/max-msp/py2max/tests/scratch.py
-%%DATADIR%%/max-msp/py2max/tests/test_abstraction.py
-%%DATADIR%%/max-msp/py2max/tests/test_add.py
-%%DATADIR%%/max-msp/py2max/tests/test_attrui.py
-%%DATADIR%%/max-msp/py2max/tests/test_basic.py
-%%DATADIR%%/max-msp/py2max/tests/test_beap.py
-%%DATADIR%%/max-msp/py2max/tests/test_bpatcher.py
-%%DATADIR%%/max-msp/py2max/tests/test_coll.py
-%%DATADIR%%/max-msp/py2max/tests/test_colors.py
-%%DATADIR%%/max-msp/py2max/tests/test_comment.py
-%%DATADIR%%/max-msp/py2max/tests/test_defaults.py
-%%DATADIR%%/max-msp/py2max/tests/test_dict.py
-%%DATADIR%%/max-msp/py2max/tests/test_ezdac.py
-%%DATADIR%%/max-msp/py2max/tests/test_gen.py
-%%DATADIR%%/max-msp/py2max/tests/test_itable.py
-%%DATADIR%%/max-msp/py2max/tests/test_js.py
-%%DATADIR%%/max-msp/py2max/tests/test_kwds_filter.py
-%%DATADIR%%/max-msp/py2max/tests/test_layout.py
-%%DATADIR%%/max-msp/py2max/tests/test_layout_hola1.py
-%%DATADIR%%/max-msp/py2max/tests/test_layout_hola2.py
-%%DATADIR%%/max-msp/py2max/tests/test_layout_hola3.py
-%%DATADIR%%/max-msp/py2max/tests/test_layout_networkx1.py
-%%DATADIR%%/max-msp/py2max/tests/test_layout_networkx2.py
-%%DATADIR%%/max-msp/py2max/tests/test_layout_nx_graphviz.py
-%%DATADIR%%/max-msp/py2max/tests/test_layout_nx_orthogonal.py
-%%DATADIR%%/max-msp/py2max/tests/test_layout_nx_tsmpy.py
-%%DATADIR%%/max-msp/py2max/tests/test_layout_pyhola.py
-%%DATADIR%%/max-msp/py2max/tests/test_layout_vertical.py
-%%DATADIR%%/max-msp/py2max/tests/test_linking.py
-%%DATADIR%%/max-msp/py2max/tests/test_mc_cycle.py
-%%DATADIR%%/max-msp/py2max/tests/test_message.py
-%%DATADIR%%/max-msp/py2max/tests/test_mypatch.py
-%%DATADIR%%/max-msp/py2max/tests/test_nested.py
-%%DATADIR%%/max-msp/py2max/tests/test_number_tilde.py
-%%DATADIR%%/max-msp/py2max/tests/test_numbers.py
-%%DATADIR%%/max-msp/py2max/tests/test_param.py
-%%DATADIR%%/max-msp/py2max/tests/test_patcher.py
-%%DATADIR%%/max-msp/py2max/tests/test_pitched_osc.py
-%%DATADIR%%/max-msp/py2max/tests/test_rnbo.py
-%%DATADIR%%/max-msp/py2max/tests/test_rnbo_subpatcher.py
-%%DATADIR%%/max-msp/py2max/tests/test_scripting_name.py
-%%DATADIR%%/max-msp/py2max/tests/test_subpatch.py
-%%DATADIR%%/max-msp/py2max/tests/test_table.py
-%%DATADIR%%/max-msp/py2max/tests/test_tree.py
-%%DATADIR%%/max-msp/py2max/tests/test_tree_builder.py
-%%DATADIR%%/max-msp/py2max/tests/test_two_sines.py
-%%DATADIR%%/max-msp/py2max/tests/test_umenu.py
-%%DATADIR%%/max-msp/py2max/tests/test_varname.py
-%%DATADIR%%/max-msp/py2max/tests/test_zl_group.py
 %%DATADIR%%/max-msp/rnbo.py
 %%DATADIR%%/max-msp/sndfile/arm/libsndfile.a
 %%DATADIR%%/max-msp/sndfile/intel/libsndfile.a
@@ -849,6 +751,7 @@ lib/libfaust.so.2.81.2
 %%DATADIR%%/noises.lib
 %%DATADIR%%/octave.cpp
 %%DATADIR%%/old-scheduler.cpp
+%%DATADIR%%/operator.lib
 %%DATADIR%%/oscillator.lib
 %%DATADIR%%/oscillators.lib
 %%DATADIR%%/oscio-gtk.cpp
@@ -938,6 +841,7 @@ lib/libfaust.so.2.81.2
 %%DATADIR%%/pipewire-console.cpp
 %%DATADIR%%/pipewire-gtk.cpp
 %%DATADIR%%/pipewire-qt.cpp
+%%DATADIR%%/pitchenv.lib
 %%DATADIR%%/platform.lib
 %%DATADIR%%/plot.cpp
 %%DATADIR%%/pure.c
@@ -1047,8 +951,37 @@ lib/libfaust.so.2.81.2
 %%DATADIR%%/webaudio/mixer64.wast
 %%DATADIR%%/webaudio/wasm-standalone-node-wrapper-double.js
 %%DATADIR%%/webaudio/wasm-standalone-node-wrapper.js
+%%DATADIR%%/wwise.cpp
+%%DATADIR%%/wwise/README.md
+%%DATADIR%%/wwise/__init__.py
+%%DATADIR%%/wwise/config.py
+%%DATADIR%%/wwise/default/effect (in-place)/SoundEnginePlugin/ProjectNameFX.cpp
+%%DATADIR%%/wwise/default/effect (in-place)/SoundEnginePlugin/ProjectNameFX.h
+%%DATADIR%%/wwise/default/effect (in-place)/SoundEnginePlugin/ProjectNameFXParams.cpp
+%%DATADIR%%/wwise/default/effect (in-place)/SoundEnginePlugin/ProjectNameFXParams.h
+%%DATADIR%%/wwise/default/effect (in-place)/WwisePlugin/ProjectNamePlugin.cpp
+%%DATADIR%%/wwise/default/effect (out-of-place)/SoundEnginePlugin/ProjectNameFX.cpp
+%%DATADIR%%/wwise/default/effect (out-of-place)/SoundEnginePlugin/ProjectNameFX.h
+%%DATADIR%%/wwise/default/effect (out-of-place)/SoundEnginePlugin/ProjectNameFXParams.cpp
+%%DATADIR%%/wwise/default/effect (out-of-place)/SoundEnginePlugin/ProjectNameFXParams.h
+%%DATADIR%%/wwise/default/effect (out-of-place)/WwisePlugin/ProjectNamePlugin.cpp
+%%DATADIR%%/wwise/default/source/SoundEnginePlugin/ProjectNameSource.cpp
+%%DATADIR%%/wwise/default/source/SoundEnginePlugin/ProjectNameSource.h
+%%DATADIR%%/wwise/default/source/SoundEnginePlugin/ProjectNameSourceParams.cpp
+%%DATADIR%%/wwise/default/source/SoundEnginePlugin/ProjectNameSourceParams.h
+%%DATADIR%%/wwise/default/source/WwisePlugin/ProjectNamePlugin.cpp
+%%DATADIR%%/wwise/integrator.py
+%%DATADIR%%/wwise/jsonprocessor.py
+%%DATADIR%%/wwise/orchestrator.py
+%%DATADIR%%/wwise/parameters.py
+%%DATADIR%%/wwise/processor.py
+%%DATADIR%%/wwise/spkcfg.py
+%%DATADIR%%/wwise/test.py
+%%DATADIR%%/wwise/utils.py
+%%DATADIR%%/wwise/xmlinjector.py
 share/gtksourceview-2.0/language-specs/faust.lang
 share/gtksourceview-3.0/language-specs/faust.lang
 share/highlight/langDefs/dsp.lang
 share/man/man1/faust.1.gz
 %%HIGHLIGHT%%share/vim/vimfiles/syntax/faust.vim
+@dir %%DATADIR%%/max-msp/py2max
