@@ -4781,3 +4781,4 @@ net/benthos|net/redpanda-connect|2025-09-12|Has expired: Superseded by net/redpa
 cad/cvc||2025-09-24|Has expired: Upstream stalled, needs EOL GCC 11 to build
 lang/gcc11||2025-09-24|Has expired: End-of-life upstream since mid 2024, newer versions available
 devel/util-linux|sysutils/util-linux|2025-09-29|Move to the proper category
+sysutils/linuxfdisk||2025-10-01|Has expired: Upstream distfile unavailable, way out of date, upstream distfile gone, use gpart instead
