@@ -3,7 +3,7 @@ PORTVERSION=	20250428
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	Metaport of DRM modules for the linuxkpi-based KMS components
+COMMENT=	Direct Rendering Manager GPU drivers metaport
 WWW=		https://github.com/freebsd/drm-kmod
 
 USES=		metaport

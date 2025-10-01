@@ -4,7 +4,7 @@ DISTVERSIONSUFFIX=	-2.el7
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Interface to kernel Direct Rendering Module (Linux CentOS ${LINUX_DIST_VER})
+COMMENT=	CentOS Linux Direct Rendering Manager runtime
 WWW=		https://dri.freedesktop.org/
 
 USES=		linux:c7
