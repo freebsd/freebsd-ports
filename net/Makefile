@@ -1071,6 +1071,7 @@
     SUBDIR += py-gdown
     SUBDIR += py-geopy
     SUBDIR += py-gntp
+    SUBDIR += py-google-cloud-pubsub
     SUBDIR += py-greenstalk
     SUBDIR += py-gspread
     SUBDIR += py-h11
