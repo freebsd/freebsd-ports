@@ -17,6 +17,8 @@ PACKAGE_NAME="$1"
 
 if [ -z "$PACKAGE_NAME" ]; then
 	echo "Usage: $0 <package-name>"
+	echo "Example: $0 cryptol"
+	echo "Example: $0 ShellCheck"
 	exit 1
 fi
 
@@ -25,11 +27,11 @@ fi
 for dep in curl jq version_sort; do
 	if ! which -s $dep; then
 		echo "error: the '$dep' dependency is missing"
-		if [ $dep == "curl" ]; then
+		if [ $dep = "curl" ]; then
 			echo "... please install the 'curl' package"
-		elif [ $dep == "jq" ]; then
+		elif [ $dep = "jq" ]; then
 			echo "... please install the 'jq' package"
-		elif [ $dep == "version_sort" ]; then
+		elif [ $dep = "version_sort" ]; then
 			echo "... please install the 'libversion' package"
 		fi
 		exit 1
