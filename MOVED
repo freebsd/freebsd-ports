@@ -4789,3 +4789,4 @@ devel/py-buildbot-react-console-view||2025-10-01|Has expired: No longer required
 audio/spotify-tui||2025-10-01|Has expired: dead upstream and doesn't build
 www/rubygem-rackup21||2025-10-01|Has expired: No consumers in ports tree
 audio/libopenspc|audio/libgme|2025-10-01|Has expired: Legacy library based on a very old emulator, consider using audio/libgme
+net/bosh-cli||2025-10-01|Has expired: Not updated in years, no demand for them
