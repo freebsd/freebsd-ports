@@ -1,5 +1,5 @@
 PORTNAME=	haskell-language-server
-DISTVERSION=	2.11.0.0
+DISTVERSION=	2.12.0.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,17 +12,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_aarch64=	compiler crashes
 NOT_FOR_ARCHS=	i386
 
-FLAVORS=	default ghc94 ghc96
+FLAVORS=	default ghc96
 FLAVOR?=	${FLAVORS:[1]}
 .if ${FLAVOR:U} != default
 PKGNAMESUFFIX=	-${FLAVOR}
 .endif
 
 # Do not use a flavor helper to let Uses/cabal.mk machinery to kick in
-.if ${FLAVOR:U} == ghc94
-BUILD_DEPENDS=	ghc-9.4.8:lang/ghc94
-GHC_VERSION=	9.4.8
-.elif ${FLAVOR:U} == ghc96
+.if ${FLAVOR:U} == ghc96
 BUILD_DEPENDS=	ghc-9.6.7:lang/ghc96
 GHC_VERSION=	9.6.7
 .endif
@@ -64,7 +61,8 @@ BUILD_ARGS+=	--disable-optimization
 .if ${FLAVOR:U} != default
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-wrapper
-	${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${GHC_VERSION}
+	${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${GHC_VERSION}
 .endif
 
 .include <bsd.port.post.mk>
