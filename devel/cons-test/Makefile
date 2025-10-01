@@ -14,9 +14,6 @@ WWW=		http://www.dsmit.com/cons/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Depends on expired devel/cons
-EXPIRATION_DATE=2025-09-30
-
 RUN_DEPENDS=	${LOCALBASE}/bin/cons:devel/cons
 
 USES=		perl5 tar:tgz
