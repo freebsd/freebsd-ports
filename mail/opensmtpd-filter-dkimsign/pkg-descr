@@ -1,0 +1,20 @@
+This filter adds a DKIM signature to emails sent through OpenSMTPd.
+The rsa and ed25519 signing algorithms are supported, as well as the
+simple and relaxed canonicalization algorithms.
+
+The filter can sign emails for several domains, selecting them
+according to the from-header, but can only use a single selector,
+managing multiple selectors must be done at the OpenSMTPd level.
+
+It depends on the libopensmtpd port.
+
+
+An example of a minimal configuration for signing outgoing emails for
+domain "example.com" and selector "_selector" would be:
+
+filter "dkimsign" proc-exec "filter-dkimsign -d example.com -s _selector \
+    -k /usr/local/etc/smtpd/dkim/private.key" user _smtpd group _smtpd
+
+And then you can apply that filter to the mail that needs to be signed:
+
+listen on lo0 filter dkimsign

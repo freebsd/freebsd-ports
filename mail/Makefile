@@ -290,6 +290,7 @@
     SUBDIR += opensmtpd-extras-table-redis
     SUBDIR += opensmtpd-extras-table-socketmap
     SUBDIR += opensmtpd-extras-table-sqlite
+    SUBDIR += opensmtpd-filter-dkimsign
     SUBDIR += opensmtpd-filter-rspamd
     SUBDIR += opensmtpd-filter-senderscore
     SUBDIR += opensmtpd-table-sqlite
