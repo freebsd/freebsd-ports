@@ -643,7 +643,6 @@
     SUBDIR += lineak-defaultplugin
     SUBDIR += lineak-xosdplugin
     SUBDIR += lineakd
-    SUBDIR += linrename
     SUBDIR += linux-c7-lttng-ust
     SUBDIR += linux-c7-numactl-libs
     SUBDIR += linux-c7-userspace-rcu
