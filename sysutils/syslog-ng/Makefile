@@ -1,6 +1,5 @@
 PORTNAME=	syslog-ng
-DISTVERSION=	4.8.2
-PORTREVISION=	4
+DISTVERSION=	4.10.1
 CATEGORIES=	sysutils
 # official master site:
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
@@ -127,27 +126,10 @@ JAVA_MOD_CONFIGURE_ENABLE=	java-modules
 JAVA_MOD_USE=			JAVA=yes
 JAVA_MOD_BUILD_DEPENDS=		gradle:devel/gradle \
 				bash:shells/bash
-JAVA_MOD_PLIST_DIRS=		lib/syslog-ng/java-modules/elastic-jest-client
-JAVA_MOD_PLIST_FILES=		lib/syslog-ng/java-modules/log4j-api-2.17.2.jar \
-				lib/syslog-ng/java-modules/log4j-core-2.17.2.jar \
-				lib/syslog-ng/java-modules/elastic-jest-client/jest-2.0.2.jar \
-				lib/syslog-ng/java-modules/elastic-jest-client/jest-common-2.0.2.jar \
-				lib/syslog-ng/java-modules/elastic-jest-client/httpcore-nio-4.4.4.jar \
-				lib/syslog-ng/java-modules/elastic-jest-client/httpclient-4.5.2.jar \
-				lib/syslog-ng/java-modules/elastic-jest-client/httpasyncclient-4.1.1.jar \
-				lib/syslog-ng/java-modules/elastic-jest-client/slf4j-api-1.7.13.jar \
-				lib/syslog-ng/java-modules/elastic-jest-client/guava-19.0.jar \
-				lib/syslog-ng/java-modules/elastic-jest-client/gson-2.6.2.jar \
-				lib/syslog-ng/java-modules/elastic-jest-client/commons-lang3-3.4.jar \
-				lib/syslog-ng/java-modules/elastic-jest-client/httpcore-4.4.4.jar \
-				lib/syslog-ng/java-modules/elastic-jest-client/commons-logging-1.2.jar \
-				lib/syslog-ng/java-modules/elastic-jest-client/commons-codec-1.9.jar \
-				lib/syslog-ng/java-modules/elastic-jest-client/slf4j-simple-1.7.13.jar \
+JAVA_MOD_PLIST_FILES=		lib/syslog-ng/java-modules/log4j-api-2.24.3.jar \
+				lib/syslog-ng/java-modules/log4j-core-2.24.3.jar \
 				lib/syslog-ng/java-modules/hdfs.jar \
-				lib/syslog-ng/java-modules/elastic-v2.jar \
-				lib/syslog-ng/java-modules/kafka.jar \
 				lib/syslog-ng/java-modules/dummy.jar \
-				lib/syslog-ng/java-modules/http.jar \
 				lib/syslog-ng/java-modules/syslog-ng-common.jar
 
 PYTHON_BUILD_DEPENDS=		${PY_SETUPTOOLS}
@@ -170,7 +152,7 @@ PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
 		lib/syslog-ng/python/syslogng/__pycache__/persist%%PYTHON_TAG%%.pyc \
 		lib/syslog-ng/python/syslogng/__pycache__/source%%PYTHON_TAG%%.pyc \
 		lib/syslog-ng/python/syslogng/__pycache__/template%%PYTHON_TAG%%.pyc \
-                lib/syslog-ng/python/syslogng/__pycache__/reloc%%PYTHON_TAG%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/reloc%%PYTHON_TAG%%.pyc \
 		lib/syslog-ng/python/syslogng/dest.py \
 		lib/syslog-ng/python/syslogng/logger.py \
 		lib/syslog-ng/python/syslogng/message.py \
@@ -178,7 +160,7 @@ PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
 		lib/syslog-ng/python/syslogng/persist.py \
 		lib/syslog-ng/python/syslogng/source.py \
 		lib/syslog-ng/python/syslogng/template.py \
-                lib/syslog-ng/python/syslogng/reloc.py \
+		lib/syslog-ng/python/syslogng/reloc.py \
 		lib/syslog-ng/python/syslogng/__init__.py \
 		lib/syslog-ng/python/syslogng/__pycache__/__init__.cpython-${PYTHON_SUFFIX}.pyc \
 		lib/syslog-ng/python/syslogng/debuggercli/__init__.py \
@@ -233,17 +215,23 @@ PYTHON_MOD_PLIST_FILES=		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-
 		lib/syslog-ng/python/syslogng/modules/hypr/__init__.py \
 		lib/syslog-ng/python/syslogng/modules/hypr/__pycache__/__init__%%PYTHON_TAG%%.pyc \
 		lib/syslog-ng/python/syslogng/modules/hypr/scl/hypr.conf \
-                lib/syslog-ng/python/syslogng/modules/s3/__init__.py \
-                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/__init__%%PYTHON_TAG%%.pyc \
-                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/compressable_file_buffer%%PYTHON_TAG%%.pyc \
-                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_destination%%PYTHON_TAG%%.pyc \
-                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_object_buffer%%PYTHON_TAG%%.pyc \
-                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_session_handler%%PYTHON_TAG%%.pyc \
-                lib/syslog-ng/python/syslogng/modules/s3/s3_object_buffer.py \
-                lib/syslog-ng/python/syslogng/modules/s3/s3_session_handler.py \
-                lib/syslog-ng/python/syslogng/modules/s3/compressable_file_buffer.py \
-                lib/syslog-ng/python/syslogng/modules/s3/s3_destination.py \
-                lib/syslog-ng/python/syslogng/modules/s3/scl/s3.conf
+		lib/syslog-ng/python/syslogng/modules/s3/__init__.py \
+		lib/syslog-ng/python/syslogng/modules/s3/__pycache__/__init__%%PYTHON_TAG%%.pyc \
+		lib/syslog-ng/python/syslogng/modules/s3/__pycache__/compressable_file_buffer%%PYTHON_TAG%%.pyc \
+		lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_destination%%PYTHON_TAG%%.pyc \
+		lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_object_buffer%%PYTHON_TAG%%.pyc \
+		lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_session_handler%%PYTHON_TAG%%.pyc \
+		lib/syslog-ng/python/syslogng/modules/s3/s3_object_buffer.py \
+		lib/syslog-ng/python/syslogng/modules/s3/s3_session_handler.py \
+		lib/syslog-ng/python/syslogng/modules/s3/compressable_file_buffer.py \
+		lib/syslog-ng/python/syslogng/modules/s3/s3_destination.py \
+		lib/syslog-ng/python/syslogng/modules/s3/scl/s3.conf \
+		lib/syslog-ng/python/syslogng/modules/webhook/__init__.py \
+		lib/syslog-ng/python/syslogng/modules/webhook/__pycache__/__init__%%PYTHON_TAG%%.pyc \
+		lib/syslog-ng/python/syslogng/modules/webhook/__pycache__/source%%PYTHON_TAG%%.pyc \
+		lib/syslog-ng/python/syslogng/modules/webhook/scl/webhook.conf \
+		lib/syslog-ng/python/syslogng/modules/webhook/source.py
+
 
 
 CURL_CONFIGURE_OFF=		--with-libcurl=off
@@ -270,7 +258,9 @@ GRPC_PLIST_FILES=		lib/libgrpc-protos.so \
  				lib/libgrpc-protos.so.0.0.0 \
  				lib/syslog-ng/libloki.so \
  				lib/syslog-ng/libotel.so \
+ 				lib/syslog-ng/libclickhouse.so \
  				lib/syslog-ng/libbigquery.so \
+ 				lib/syslog-ng/libpubsub.so \
 				lib/syslog-ng/libcloud_auth.so
 
 MQTT_CONFIGURE_ON=		--enable-mqtt --with-libpaho-mqtt=${PREFIX}
@@ -284,6 +274,10 @@ MQTT_PLIST_FILES=		lib/syslog-ng/libmqtt.so
 
 .if !${PORT_OPTIONS:MJSON}
 BROKEN=		Default configuration does not currently support non-JSON builds
+.endif
+
+.if ${PORT_OPTIONS:MJAVA_MOD}
+BROKEN=		Java-based modules do not build due to Gradle problems
 .endif
 
 post-patch:
