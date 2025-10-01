@@ -63,6 +63,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/DJI.pm
 %%SITE_PERL%%/Image/ExifTool/DNG.pm
 %%SITE_PERL%%/Image/ExifTool/DPX.pm
+%%SITE_PERL%%/Image/ExifTool/DSF.pm
 %%SITE_PERL%%/Image/ExifTool/DV.pm
 %%SITE_PERL%%/Image/ExifTool/DarwinCore.pm
 %%SITE_PERL%%/Image/ExifTool/DjVu.pm
@@ -223,6 +224,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Vorbis.pm
 %%SITE_PERL%%/Image/ExifTool/WPG.pm
 %%SITE_PERL%%/Image/ExifTool/WTV.pm
+%%SITE_PERL%%/Image/ExifTool/WavPack.pm
 %%SITE_PERL%%/Image/ExifTool/WriteCanonRaw.pl
 %%SITE_PERL%%/Image/ExifTool/WriteExif.pl
 %%SITE_PERL%%/Image/ExifTool/WriteIPTC.pl
@@ -271,6 +273,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::DJI.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::DNG.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::DPX.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::DSF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::DV.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::DarwinCore.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::DjVu.3.gz
@@ -429,6 +432,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Vorbis.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WPG.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WTV.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::WavPack.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteCanonRaw.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteExif.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteIPTC.3.gz
