@@ -378,7 +378,6 @@
     SUBDIR += liboggz
     SUBDIR += libopenmpt
     SUBDIR += libopenshot-audio
-    SUBDIR += libopenspc
     SUBDIR += libopusenc
     SUBDIR += libremidi
     SUBDIR += libsamplerate

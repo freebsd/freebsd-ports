@@ -1,3 +1,0 @@
-libopenspc provides a library that allows for the emulated playback of SPC
-files, which are SNES audio files. It uses the SNEeSe emulator sound core for
-accurate playback.
