@@ -1,6 +1,6 @@
 PORTNAME=	eisl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.42
+DISTVERSION=	5.55
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,5 +45,10 @@ CFLAGS+=	-Wno-error=int-conversion
 .if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
+
+post-install:
+	${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/bin/eisl \
+		${STAGEDIR}${PREFIX}/bin/edlis
 
 .include <bsd.port.post.mk>

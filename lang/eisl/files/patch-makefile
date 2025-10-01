@@ -1,29 +1,44 @@
---- makefile.orig	2023-03-05 08:53:07 UTC
+--- makefile.orig	2025-09-30 06:45:40 UTC
 +++ makefile
-@@ -1,7 +1,7 @@
- .POSIX:
- .DELETE_ON_ERROR:
+@@ -6,11 +6,11 @@ USE_GDB ?= 0
+ USE_FLTO ?= 0
+ USE_GDB ?= 0
  
--CC := cc
-+#CC := cc
- DC := ldc2
- LD := $(CC)
- ifneq  ($(shell uname),Darwin)
-@@ -67,7 +67,7 @@ ifeq ($(DEBUG),1)
- 		LDFLAGS += -fsanitize=undefined
- 	endif
- else
--	CFLAGS += -O3 -flto -DNDEBUG=1 -DWITHOUT_NANA=1
-+	CFLAGS += -O3 -DNDEBUG=1 -DWITHOUT_NANA=1
- 	SRC_CII += cii/src/mem.c
+-CC := gcc
++#CC := gcc
+ LIBS := -lm -ldl -lpthread -lncurses
+ INCS := -Icii/include
+-CURSES_CFLAGS := $(shell ncursesw6-config --cflags) 
+-CURSES_LIBS := $(shell ncursesw6-config --libs)
++#CURSES_CFLAGS := $(shell ncursesw6-config --cflags) 
++#CURSES_LIBS := $(shell ncursesw6-config --libs)
+ 
+ 
+ CFLAGS += $(INCS) -Wall $(CURSES_CFLAGS) 
+@@ -33,7 +33,7 @@ ifeq ($(USE_FLTO),1)
+ CFLAGS += -O3 -DNDEBUG=1 -Wno-stringop-truncation 
+ 
+ ifeq ($(USE_FLTO),1)
+-CFLAGS += -O3 -flto -DNDEBUG=1 -Wno-stringop-truncation
++CFLAGS += -O3 -DNDEBUG=1 -Wno-stringop-truncation
  endif
- OBJ_CII := $(SRC_CII:.c=.o)
-@@ -85,7 +85,7 @@ ifeq  ($(shell uname -n),raspberrypi)
- 	CFLAGS += -D__rpi__
- endif
- ifneq ($(DEBUG),1)
--	LDFLAGS += -flto
-+	#LDFLAGS += -flto
- 	ifeq  ($(shell uname),Darwin)
- 		LDFLAGS += -Wl,-S,-x
- 	else
+ ifeq ($(USE_GDB),1)
+ CFLAGS += -O0 -g -DNDEBUG=1 -Wno-stringop-truncation
+@@ -98,7 +98,7 @@ eisl: $(EISL_OBJS) $(OBJ_CII)
+ all: $(TARGETS)
+ 
+ eisl: $(EISL_OBJS) $(OBJ_CII)
+-	$(CC) $(CFLAGS) $^ -o $@ $(LIBS) 
++	$(CC) $(CFLAGS) $^ -o $@ $(LIBS) $(LDFLAGS)
+ 
+ %.o: %.c eisl.h ffi.h term.h cii/include/except.h 
+ 	$(CC) $(CFLAGS) -c $< -o $@
+@@ -126,7 +126,7 @@ edlis: edlis.o syn_highlight.o $(OBJ_CII) 
+ 
+ 
+ edlis: edlis.o syn_highlight.o $(OBJ_CII) 
+-	$(CC) $(CFLAGS) $^ -o $@ $(CURSES_LIBS)
++	$(CC) $(CFLAGS) $^ -o $@ $(CURSES_LIBS) $(LDFLAGS)
+ 
+ edlis.o: edlis.c edlis.h term.h
+ 	$(CC) $(CFLAGS) -c edlis.c
