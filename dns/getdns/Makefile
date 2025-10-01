@@ -1,6 +1,5 @@
 PORTNAME=	getdns
-PORTVERSION=	1.5.2
-PORTREVISION=	7
+PORTVERSION=	1.7.3
 CATEGORIES=	dns
 MASTER_SITES=	https://getdnsapi.net/dist/ \
 		ZI \
@@ -13,42 +12,36 @@ WWW=		https://getdnsapi.net/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libexpat.so:textproc/expat2 \
-		libidn.so:dns/libidn \
-		libldns.so:dns/ldns \
-		libunbound.so:dns/unbound
+BUILD_DEPENDS=	check>0:devel/check
 
-USES=		compiler:c11 libtool pathfix ssl
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=	--with-libidn=${LOCALBASE} --docdir=${DOCSDIR} \
-		--with-trust-anchor=${LOCALBASE}/etc/unbound/root.key
+LIB_DEPENDS=	libidn2.so:dns/libidn2 \
+		libunbound.so:dns/unbound
+USES=		compiler:c11 libtool pathfix ssl cmake
+
 SOMAJVER=	10
-SOVERSION=	${SOMAJVER}.1.${PORTVERSION:C/[0-9].[0-9].([0-9])/\1/1}
+SOVERSION=	${SOMAJVER}.2.0
 MAKE_JOBS_UNSAFE=yes
 
 PLIST_SUB+=	SOVERSION="${SOVERSION}" SOMAJVER="${SOMAJVER}"
 SUB_FILES+=	pkg-message
+CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH:FILEPATH="${LOCALBASE}" \
+		-DENABLE_STATIC:BOOL=OFF -DBUILD_LIBUV:BOOL=OFF \
+		-DPATH_TRUST_ANCHOR_FILE:STRING="${LOCALBASE}/etc/unbound/root.key"
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	DOCS LIBEV LIBEVENT LIBUV STUBBY
+OPTIONS_DEFINE=	LIBEV LIBEVENT STUBBY
 OPTIONS_DEFAULT=STUBBY
 
-LIBEV_DESC=	Build with libev extension
-LIBEVENT_DESC=	Build with libevent extension
-LIBUV_DESC=	Build with libuv extension
-STUBBY_DESC=	Build with Stubby DNS/TLS resolver
-
-LIBEV_LIB_DEPENDS=	libev.so:devel/libev
-LIBEV_CONFIGURE_WITH=	libev
-LIBEVENT_LIB_DEPENDS=	libevent_core.so:devel/libevent
-LIBEVENT_CONFIGURE_WITH=libevent
-LIBUV_LIB_DEPENDS=	libuv.so:devel/libuv
-LIBUV_CONFIGURE_WITH=	libuv
+STUBBY_CMAKE_ON=	-DBUILD_STUBBY:BOOL=ON
+STUBBY_DESC=		Build with stubby support
 STUBBY_LIB_DEPENDS=	libyaml.so:textproc/libyaml
-STUBBY_CONFIGURE_WITH=	stubby
-STUBBY_VARS=		USE_RC_SUBR="stubby"
+LIBEVENT_CMAKE_ON=	-DBUILD_LIBEVENT2:BOOL=ON
+LIBEVENT_CMAKE_OFF=	-DBUILD_LIBEVENT2:BOOL=OFF
+LIBEVENT_DESC=		Build with libevent support
+LIBEVENT_LIB_DEPENDS=	libevent_core.so:devel/libevent
+LIBEV_CMAKE_OFF=	-DBUILD_LIBEV:BOOL=OFF
+LIBEV_DESC=		Build with libev support
+LIBEV_LIB_DEPENDS=	libev.so:devel/libev
 
 .include <bsd.port.pre.mk>
 
@@ -57,18 +50,16 @@ CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -Ee 's,^(sharedoc = ).*,\1${WRKDIR}/doc,' \
-		-e '/echo .\*\*\*/d' ${WRKSRC}/Makefile.in
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetdns*.so.*
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/getdns_*
+	${REINPLACE_CMD} -e 's,$${RUNSTATEDIR},/var/run,' \
+		${WRKSRC}/stubby/CMakeLists.txt
+	${REINPLACE_CMD} -e 's,/etc/unbound/getdns-root.key,${LOCALBASE}/unbound/root.key,' \
+		${WRKSRC}/src/getdns/getdns_extra.h.in
+	${REINPLACE_CMD} -e 's,-Wpedantic,-Wpedantic -Wno-strict-prototypes,' \
+		-e '/^\*\*\* /d' -e '/^\*\*\*\\n/d' \
+		${WRKSRC}/CMakeLists.txt
 
 post-stage-STUBBY-on:
 	${MV} ${STAGEDIR}${PREFIX}/etc/stubby/stubby.yml \
 		${STAGEDIR}${PREFIX}/etc/stubby/stubby.yml.sample
-
-post-install-STUBBY-on:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/stubby
 
 .include <bsd.port.post.mk>

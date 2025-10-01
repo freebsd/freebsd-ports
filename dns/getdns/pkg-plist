@@ -6,33 +6,21 @@ include/getdns/getdns.h
 include/getdns/getdns_extra.h
 %%LIBEV%%include/getdns/getdns_ext_libev.h
 %%LIBEVENT%%include/getdns/getdns_ext_libevent.h
-%%LIBUV%%include/getdns/getdns_ext_libuv.h
 lib/libgetdns.so
-lib/libgetdns.so.%%SOVERSION%%
 lib/libgetdns.so.%%SOMAJVER%%
-lib/libgetdns.a
+lib/libgetdns.so.%%SOVERSION%%
 libdata/pkgconfig/getdns.pc
-libdata/pkgconfig/getdns_ext_event.pc
 %%LIBEV%%lib/libgetdns_ext_ev.so.%%SOMAJVER%%
 %%LIBEV%%lib/libgetdns_ext_ev.so.%%SOVERSION%%
-%%LIBEV%%lib/libgetdns_ext_ev.a
 %%LIBEV%%lib/libgetdns_ext_ev.so
 %%LIBEVENT%%lib/libgetdns_ext_event.so.%%SOMAJVER%%
 %%LIBEVENT%%lib/libgetdns_ext_event.so.%%SOVERSION%%
-%%LIBEVENT%%lib/libgetdns_ext_event.a
 %%LIBEVENT%%lib/libgetdns_ext_event.so
-%%LIBUV%%lib/libgetdns_ext_uv.so.%%SOMAJVER%%
-%%LIBUV%%lib/libgetdns_ext_uv.so.%%SOVERSION%%
-%%LIBUV%%lib/libgetdns_ext_uv.a
-%%LIBUV%%lib/libgetdns_ext_uv.so
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/spec/index.html
+%%STUBBY%%@comment share/doc/stubby/AUTHORS
+%%STUBBY%%@comment share/doc/stubby/COPYING
+%%STUBBY%%@comment share/doc/stubby/ChangeLog
+%%STUBBY%%@comment share/doc/stubby/NEWS
+%%STUBBY%%@comment share/doc/stubby/README.md
 %%STUBBY%%share/man/man1/stubby.1.gz
 share/man/man3/getdns_address.3.gz
 share/man/man3/getdns_address_sync.3.gz
