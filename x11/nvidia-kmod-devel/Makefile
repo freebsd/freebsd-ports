@@ -1,7 +1,8 @@
-NVIDIA_DISTVERSION?=	580.82.07
+DISTVERSION?=	580.82.07
 # Explicitly set PORTREVISION as it can be overridden by the master port
-PORTREVISION=	1
-MASTERDIR=	${.CURDIR}/../nvidia-drm-515-kmod
+PORTREVISION=	0
+
+MASTERDIR=	${.CURDIR}/../nvidia-kmod
 PKGNAMESUFFIX=	-devel
 
 .include "${MASTERDIR}/Makefile"

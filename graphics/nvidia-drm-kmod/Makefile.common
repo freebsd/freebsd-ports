@@ -20,7 +20,7 @@ USES=		kmod uidfix tar:xz
 
 SUB_FILES=	20-nvidia-drm-outputclass.conf
 
-RUN_DEPENDS+=	${KMODDIR}/nvidia.ko:x11/nvidia-driver${PKGNAMESUFFIX}
+RUN_DEPENDS+=	${KMODDIR}/nvidia.ko:x11/nvidia-kmod${PKGNAMESUFFIX}
 
 .include "${.CURDIR}/../../x11/nvidia-driver/Makefile.version"
 .include "${.CURDIR}/../../x11/nvidia-driver/Makefile.common"

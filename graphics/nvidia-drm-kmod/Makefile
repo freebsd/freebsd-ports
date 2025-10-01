@@ -1,5 +1,6 @@
 PORTNAME=	nvidia-drm-kmod
 DISTVERSION?=	${NVIDIA_DISTVERSION}
+PORTREVISION?=	1
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
@@ -22,6 +23,8 @@ RUN_DEPENDS+=  ${KMODDIR}/nvidia-drm.ko:graphics/nvidia-drm-510-kmod${PKGNAMESUF
 RUN_DEPENDS+=  ${KMODDIR}/nvidia-drm.ko:graphics/nvidia-drm-61-kmod${PKGNAMESUFFIX}
 .  endif
 .endif
+
+RUN_DEPENDS+=  nvidia-driver${PKGNAMESUFFIX}>0:x11/nvidia-driver${PKGNAMESUFFIX}
 
 CONFLICTS_INSTALL=	nvidia-drm-kmod*
 
