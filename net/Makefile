@@ -67,7 +67,6 @@
     SUBDIR += boinc-client
     SUBDIR += boinc_curses
     SUBDIR += boinctui
-    SUBDIR += bosh-bootloader
     SUBDIR += bounce
     SUBDIR += bredbandskollen
     SUBDIR += brynet
