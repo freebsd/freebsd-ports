@@ -778,13 +778,13 @@ include/octave-%%OCTAVE_VERSION%%/octave/xnorm.h
 include/octave-%%OCTAVE_VERSION%%/octave/xpow.h
 lib/octave/%%OCTAVE_VERSION%%/liboctave.so
 lib/octave/%%OCTAVE_VERSION%%/liboctave.so.12
-lib/octave/%%OCTAVE_VERSION%%/liboctave.so.12.0.1
+lib/octave/%%OCTAVE_VERSION%%/liboctave.so.12.0.2
 %%QT6%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so
 %%QT6%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.13
-%%QT6%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.13.0.1
+%%QT6%%lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.13.0.2
 lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so
 lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.13
-lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.13.1.0
+lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.13.1.1
 lib/octave/%%OCTAVE_VERSION%%/liboctmex.so
 lib/octave/%%OCTAVE_VERSION%%/liboctmex.so.1
 lib/octave/%%OCTAVE_VERSION%%/liboctmex.so.1.0.0
@@ -1219,6 +1219,8 @@ share/metainfo/org.octave.Octave.metainfo.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/load-path/in-load-path/load_path_fcn.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/load-path/not-in-load-path/load_path_fcn.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/load-path/refresh-load-path.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/load-path/shadowed-builtin/quad.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/load-path/shadowed-corelib/plot.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/local-functions/local_function_eval.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/local-functions/local-functions.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/logical-index.tst
