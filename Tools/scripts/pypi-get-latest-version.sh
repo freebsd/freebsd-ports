@@ -17,6 +17,8 @@ PACKAGE_NAME="$1"
 
 if [ -z "$PACKAGE_NAME" ]; then
 	echo "Usage: $0 <package-name>"
+	echo "Example: $0 numpy"
+	echo "Example: $0 scipy"
 	exit 1
 fi
 
@@ -25,9 +27,9 @@ fi
 for dep in jq version_sort; do
 	if ! which -s $dep; then
 		echo "error: the '$dep' dependency is missing"
-		if [ $dep == "jq" ]; then
+		if [ $dep = "jq" ]; then
 			echo "... please install the 'jq' package"
-		elif [ $dep == "version_sort" ]; then
+		elif [ $dep = "version_sort" ]; then
 			echo "... please install the 'libversion' package"
 		fi
 		exit 1
