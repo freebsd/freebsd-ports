@@ -1,5 +1,5 @@
 PORTNAME=	gtk
-DISTVERSION=	3.24.50 # sync with x11-themes: adwaita-icon-theme, gnome-themes-standard and mate-themes
+DISTVERSION=	3.24.51 # sync with x11-themes: adwaita-icon-theme, gnome-themes-standard and mate-themes
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -36,7 +36,7 @@ MESON_ARGS=	-Dtests=false
 
 PORTSCOUT=	limit:1,even
 
-LIBVERSION=	0.2418.32
+LIBVERSION=	0.2419.32
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 OPTIONS_DEFINE=		ATK_BRIDGE COLORD CUPS DOCS
