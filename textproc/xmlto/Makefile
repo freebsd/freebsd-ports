@@ -17,8 +17,8 @@ WWW=		https://pagure.io/xmlto/
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Depends on vulnerable unmaintained libxslt
-EXPIRATION_DATE=2025-09-12
+DEPRECATED=	Depends on vulnerable libxslt
+EXPIRATION_DATE=2025-12-31
 
 BUILD_DEPENDS=	${BASH_CMD}:shells/bash \
 		${GETOPT_CMD}:misc/getopt \
