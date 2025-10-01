@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	luarocks${LUA_VER_STR}:devel/lua-luarocks@${FLAVOR}
 
-USES=		lua:module
+USES=		lua:53-54,module
 USE_GITHUB=	yes
 GH_ACCOUNT=	mikejsavage
 GH_PROJECT=	lua-bcrypt
