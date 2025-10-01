@@ -1,3 +1,49 @@
+  <vuln vid="00e912c5-9e92-11f0-bc5f-8447094a420f">
+    <topic>OpenSSL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.18,1</lt></range>
+      </package>
+      <package>
+	<name>openssl32</name>
+	<range><lt>3.2.6</lt></range>
+      </package>
+      <package>
+	<name>openssl33</name>
+	<range><lt>3.3.5</lt></range>
+      </package>
+      <package>
+	<name>openssl34</name>
+	<range><lt>3.4.3</lt></range>
+      </package>
+      <package>
+	<name>openssl35</name>
+	<range><lt>3.5.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports reports:</p>
+	<blockquote cite="https://openssl-library.org/news/secadv/20250930.txt">
+	  <p>Out-of-bounds read &amp; write in RFC 3211 KEK Unwrap</p>
+	  <p>Timing side-channel in SM2 algorithm on 64-bit ARM</p>
+	  <p>Fix Out-of-bounds read in HTTP client no_proxy handling</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9230</cvename>
+      <cvename>CVE-2025-9231</cvename>
+      <cvename>CVE-2025-9232</cvename>
+      <url>https://openssl-library.org/news/secadv/20250930.txt</url>
+    </references>
+    <dates>
+      <discovery>2025-09-30</discovery>
+      <entry>2025-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="699ef80f-9e91-11f0-bc5f-8447094a420f">
     <topic>LibreSSL -- overwrite and -read vulnerability</topic>
     <affects>
