@@ -1,5 +1,5 @@
 PORTNAME=	typescript
-DISTVERSION=	5.9.2
+DISTVERSION=	5.9.3
 CATEGORIES=	lang
 MASTER_SITES=	https://registry.npmjs.org/${PORTNAME}/-/
 EXTRACT_SUFX=	.tgz
