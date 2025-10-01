@@ -127,4 +127,15 @@ do-install:
 
 	${RLN} ${STAGEDIR}${DATADIR}/dotnet ${STAGEDIR}${PREFIX}/bin/dotnet
 
+bootstrap-makesum:
+	cd ${WRKSRC}/artifacts/assets/Release && sha256 ${SOURCEBUILT_ARTIFACTS_DISTNAME}${EXTRACT_SUFX}
+	@${ECHO_CMD} -n "SIZE (${DIST_SUBDIR}/${SOURCEBUILT_ARTIFACTS_DISTNAME}${EXTRACT_SUFX}) = "
+	@${STAT} -f %z ${WRKSRC}/artifacts/assets/Release/${SOURCEBUILT_ARTIFACTS_DISTNAME}${EXTRACT_SUFX}
+
+	@cd ${WRKSRC}/artifacts/assets/Release && sha256 ${SDK_DISTNAME}${EXTRACT_SUFX}
+	@${ECHO_CMD} -n "SIZE (${DIST_SUBDIR}/${SDK_DISTNAME}${EXTRACT_SUFX}) = "
+	@${STAT} -f %z ${WRKSRC}/artifacts/assets/Release/${SDK_DISTNAME}${EXTRACT_SUFX}
+
+	@${ECHO_CMD}
+
 .include <bsd.port.post.mk>
