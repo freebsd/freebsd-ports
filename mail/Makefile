@@ -181,6 +181,7 @@
     SUBDIR += libesmtp
     SUBDIR += libetpan
     SUBDIR += libmilter
+    SUBDIR += libopensmtpd
     SUBDIR += libpst
     SUBDIR += libsieve
     SUBDIR += libspamtest
