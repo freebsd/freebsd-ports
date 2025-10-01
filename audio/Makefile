@@ -768,7 +768,6 @@
     SUBDIR += spiralsynthmodular
     SUBDIR += spotify-player
     SUBDIR += spotify-qt
-    SUBDIR += spotify-tui
     SUBDIR += spotifyd
     SUBDIR += squash
     SUBDIR += squeezelite
