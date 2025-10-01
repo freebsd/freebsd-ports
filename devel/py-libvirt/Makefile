@@ -1,10 +1,10 @@
 PORTNAME=	libvirt
-PORTVERSION=	11.7.0
+PORTVERSION=	11.8.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/python/ \
 		ftp://libvirt.org/libvirt/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-python-${PORTVERSION}
+DISTNAME=	${PORTNAME}_python-${PORTVERSION}
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Python bindings for Libvirt virtualization API
