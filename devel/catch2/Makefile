@@ -1,7 +1,6 @@
 PORTNAME=	catch2 # 2.x series is under devel/catch, the project is called catch2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.8.1
-PORTREVISION=	1
+DISTVERSION=	3.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,6 +27,6 @@ OPTIONS_DEFINE=	DOCS
 
 CONFLICTS=	catch
 
-# tests as of 3.8.1: 1 tests failed out of 70, see https://github.com/catchorg/Catch2/issues/2606
+# tests as of 3.11.0: 100% tests passed, 0 tests failed out of 74
 
 .include <bsd.port.mk>
