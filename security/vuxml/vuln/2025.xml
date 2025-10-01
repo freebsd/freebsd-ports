@@ -1,3 +1,33 @@
+  <vuln vid="699ef80f-9e91-11f0-bc5f-8447094a420f">
+    <topic>LibreSSL -- overwrite and -read vulnerability</topic>
+    <affects>
+      <package>
+	<name>libressl</name>
+	<range><lt>4.1.1</lt></range>
+      </package>
+      <package>
+	<name>libressl-devel</name>
+	<range><lt>4.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The LibreSSL project reports:</p>
+	<blockquote cite="https://github.com/libressl/portable/releases/tag/v4.1.1">
+	  <p>An incorrect length check can result in a 4-byte overwrite and an 8-byte overread.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9230</cvename>
+      <url>https://github.com/libressl/portable/releases/tag/v4.1.1</url>
+    </references>
+    <dates>
+      <discovery>2025-10-01</discovery>
+      <entry>2025-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4ccd6222-9c83-11f0-a337-b42e991fc52e">
     <topic>goldendict -- dangerous method exposed</topic>
     <affects>
