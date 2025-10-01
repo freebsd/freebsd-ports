@@ -118,14 +118,11 @@ do-install:
 	${FIND} ${WRKSRC}/artifacts/packages/Release -name "*freebsd*.nupkg" -exec \
 		${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/library-packs/ \;
 
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/dotnet
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/sdk/${SDKVERSION}/AppHostTemplate/apphost
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/packs/Microsoft.NETCore.App.Host.${SDK_RID}/${DISTVERSION}/runtimes/${SDK_RID}/native/apphost
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/packs/Microsoft.NETCore.App.Host.${SDK_RID}/${DISTVERSION}/runtimes/${SDK_RID}/native/singlefilehost
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/packs/runtime.${SDK_RID}.Microsoft.DotNet.ILCompiler/${DISTVERSION}/tools/ilc
 	${FIND} ${STAGEDIR}${DATADIR} -name "*.so" -exec ${STRIP_CMD} -s "{}" ";"
-
-	${RLN} ${STAGEDIR}${DATADIR}/dotnet ${STAGEDIR}${PREFIX}/bin/dotnet
 
 bootstrap-makesum:
 	cd ${WRKSRC}/artifacts/assets/Release && sha256 ${SOURCEBUILT_ARTIFACTS_DISTNAME}${EXTRACT_SUFX}
