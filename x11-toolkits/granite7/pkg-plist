@@ -163,6 +163,7 @@ share/locale/rue/LC_MESSAGES/granite-7.mo
 share/locale/rw/LC_MESSAGES/granite-7.mo
 share/locale/sa/LC_MESSAGES/granite-7.mo
 share/locale/sc/LC_MESSAGES/granite-7.mo
+share/locale/sco/LC_MESSAGES/granite-7.mo
 share/locale/sd/LC_MESSAGES/granite-7.mo
 share/locale/se/LC_MESSAGES/granite-7.mo
 share/locale/sg/LC_MESSAGES/granite-7.mo
@@ -211,6 +212,8 @@ share/locale/yo/LC_MESSAGES/granite-7.mo
 share/locale/za/LC_MESSAGES/granite-7.mo
 share/locale/zh/LC_MESSAGES/granite-7.mo
 share/locale/zh_CN/LC_MESSAGES/granite-7.mo
+share/locale/zh_HANS/LC_MESSAGES/granite-7.mo
+share/locale/zh_HANT/LC_MESSAGES/granite-7.mo
 share/locale/zh_HK/LC_MESSAGES/granite-7.mo
 share/locale/zh_TW/LC_MESSAGES/granite-7.mo
 share/locale/zu/LC_MESSAGES/granite-7.mo

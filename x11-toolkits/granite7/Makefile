@@ -1,5 +1,5 @@
 PORTNAME=	granite
-DISTVERSION=	7.6.0
+DISTVERSION=	7.7.0
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	7
 
@@ -16,7 +16,8 @@ RUN_DEPENDS=	contractor:sysutils/contractor \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		xdg-desktop-portal>0:deskutils/xdg-desktop-portal
 
-USES=		gettext gnome meson pkgconfig python:build tar:xz vala:build
+USES=		gettext-tools gnome meson pkgconfig python:build tar:xz \
+		vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 USE_GNOME=	glib20 gtk40 introspection:build
@@ -29,6 +30,7 @@ OPTIONS_DEFINE=	DEMO
 OPTIONS_SUB=	yes
 
 DEMO_DESC=	Install demo widgets
+DEMO_LIB_DEPENDS=	libshumate-1.0.so:x11-toolkits/libshumate
 DEMO_MESON_TRUE=	demo
 
 .include <bsd.port.mk>
