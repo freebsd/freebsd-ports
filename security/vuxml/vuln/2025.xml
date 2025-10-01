@@ -55,12 +55,20 @@
 	<range><lt>3.3.5</lt></range>
       </package>
       <package>
+	<name>openssl33-quictls</name>
+	<range><lt>3.3.5</lt></range>
+      </package>
+      <package>
 	<name>openssl34</name>
 	<range><lt>3.4.3</lt></range>
       </package>
       <package>
 	<name>openssl35</name>
 	<range><lt>3.5.4</lt></range>
+      </package>
+      <package>
+	<name>openssl36</name>
+	<range><lt>3.6.0</lt></range>
       </package>
     </affects>
     <description>
