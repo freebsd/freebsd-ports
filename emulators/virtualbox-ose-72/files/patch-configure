@@ -42,15 +42,6 @@
      else
        log_failure "Qt6 framework not found (can be disabled using --disable-qt)"
        fail
-@@ -1897,7 +1905,7 @@ EOF
-   return 0;
- }
- EOF
--    [ -n "$INCOGG" ] && I_INCVRB=`prefix_I "$INCOGG"`
-+    [ -n "$INCOGG" ] && I_INCOGG=`prefix_I "$INCOGG"`
-     if test_compile "$LIBOGG $I_INCOGG" ogg ogg nofatal; then
-       if test_execute; then
-         cnf_append "SDK_VBoxLibOgg_INCS" "$INCOGG"
 @@ -2125,8 +2133,8 @@ EOF
          echo "compiling the following source file:" >> $LOG
          cat $ODIR.tmp_src.cc >> $LOG

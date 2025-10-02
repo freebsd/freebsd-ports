@@ -1,4 +1,4 @@
---- src/VBox/Devices/Makefile.kmk.orig	2025-08-13 19:48:02 UTC
+--- src/VBox/Devices/Makefile.kmk.orig	2025-09-10 16:59:18 UTC
 +++ src/VBox/Devices/Makefile.kmk
 @@ -135,6 +135,7 @@ if !defined(VBOX_ONLY_EXTPACKS)
    VBoxDDU_LDFLAGS.darwin += -framework IOKit
@@ -29,11 +29,20 @@
      	Graphics/DevVGA-SVGA3d-glLdr.cpp
     else
      VBoxDD_LIBS.linux   += X11 GL
-+    VBoxDD_LIBS.freebsd   += X11 GL
++    VBoxDD_LIBS.freebsd += X11 GL
      VBoxDD_LIBS.win     += $(PATH_SDK_$(VBOX_WINPSDK)_LIB)/Opengl32.lib
     endif
     VBoxDD_LDFLAGS.darwin += -framework OpenGL
-@@ -1523,6 +1526,8 @@ if defined(VBOX_WITH_VMSVGA3D) && !defined(VBOX_ONLY_E
+@@ -517,6 +520,8 @@ if !defined(VBOX_ONLY_EXTPACKS) && "$(intersects $(KBU
+    	Video/JPEGEnc.cpp
+    VBoxDD_SOURCES.darwin += \
+    	Video/HostWebcam-darwin.mm
++   VBoxDD_SOURCES.freebsd += \
++   	Video/HostWebcam-v4l2.cpp
+    VBoxDD_SOURCES.linux += \
+    	Video/HostWebcam-v4l2.cpp
+    VBoxDD_SOURCES.solaris += \
+@@ -1536,6 +1541,8 @@ if defined(VBOX_WITH_VMSVGA3D) && !defined(VBOX_ONLY_E
   VBoxSVGA3D_INCS = $(VBOX_GRAPHICS_INCS)
   VBoxSVGA3D_INCS.win    := \
   	Graphics/shaderlib/libWineStub/include
