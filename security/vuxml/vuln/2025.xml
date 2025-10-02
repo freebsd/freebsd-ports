@@ -1,3 +1,43 @@
+  <vuln vid="90fc859e-9fe4-11f0-9fa2-080027836e8b">
+    <topic>Django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py39-django42</name>
+	<name>py310-django42</name>
+	<name>py311-django42</name>
+	<range><lt>4.2.25</lt></range>
+      </package>
+      <package>
+	<name>py310-django51</name>
+	<name>py311-django51</name>
+	<range><lt>5.1.13</lt></range>
+      </package>
+      <package>
+	<name>py310-django52</name>
+	<name>py311-django52</name>
+	<range><lt>5.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Django reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2025/oct/01/security-releases/">
+	  <p>CVE-2025-59681: Potential SQL injection in QuerySet.annotate(), alias(), aggregate(), and extra() on MySQL and MariaDB.</p>
+	  <p>CVE-2025-59682: Potential partial directory-traversal via archive.extract().</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-59681</cvename>
+      <cvename>CVE-2025-59682</cvename>
+      <url>https://www.djangoproject.com/weblog/2025/oct/01/security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2025-10-01</discovery>
+      <entry>2025-10-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cb570d6f-9ea9-11f0-9446-f02f7497ecda">
     <topic>py-mysql-connector-python -- Vulnerability in the MySQL Connectors product of Oracle MySQL</topic>
     <affects>
