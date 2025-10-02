@@ -1,7 +1,6 @@
 PORTNAME=	ghdl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.1
-PORTREVISION=	1
+DISTVERSION=	5.1.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,40 +12,37 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 
 BROKEN_aarch64=	build breaks, see https://github.com/ghdl/ghdl/issues/2639
 
-TEST_DEPENDS=	bash:shells/bash \
-		${PYTHON_PKGNAMEPREFIX}pyTooling>=2.11.0:devel/py-pyTooling@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyTooling>=2.11.0:devel/py-pyTooling@${PY_FLAVOR} \
+		bash:shells/bash
 
 USES=		ada:run gmake python:test shebangfix
-SHEBANG_FILES=	testsuite/testsuite.sh
-USE_LDCONFIG=	yes
-NO_SHLIB_REQUIRES_GLOB=	libgnat-12.so
-
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+
+SHEBANG_FILES=	testsuite/testsuite.sh
 
 GNU_CONFIGURE=	yes
 
+NO_SHLIB_REQUIRES_GLOB=	libgnat-12.so
+PIE_UNSAFE=	yes
+
 OPTIONS_DEFINE=		SYNTH
-OPTIONS_SINGLE=		BACKEND
-OPTIONS_SINGLE_BACKEND=	MCODE LLVM
 OPTIONS_DEFAULT=	LLVM SYNTH
+OPTIONS_SINGLE=		BACKEND
+OPTIONS_SINGLE_BACKEND=	LLVM MCODE
 OPTIONS_SUB=		yes
 
-MCODE_DESC=		Use the MCODE backend
+LLVM_DESC=	Use the LLVM backend
+MCODE_DESC=	Use the MCODE backend
 # MCODE is enabled by default and doesn't require any configuration options
+SYNTH_DESC=	Enable Synthesis Features in ghdl
 
-LLVM_USES=		llvm:15,lib ncurses
+LLVM_USES=		llvm:lib ncurses
 LLVM_CONFIGURE_ON=	--with-llvm-config=${LOCALBASE}/bin/llvm-config${LLVM_VERSION}
-
-SYNTH_DESC=		Enable Synthesis Features in ghdl
 SYNTH_CONFIGURE_ON=	--enable-synth
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libghdl-${DISTVERSION:S/./_/g}.so
-
-post-install-MCODE-on:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/ghdl \
-		${STAGEDIR}${PREFIX}/lib/libghdlvpi.so
 
 post-install-LLVM-on:
 	@${STRIP_CMD} \
@@ -55,6 +51,11 @@ post-install-LLVM-on:
 		${STAGEDIR}${PREFIX}/bin/ghdl1-llvm \
 		${STAGEDIR}${PREFIX}/lib/libghdlvpi.so \
 		${STAGEDIR}${PREFIX}/lib/libghw.so
+
+post-install-MCODE-on:
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/bin/ghdl \
+		${STAGEDIR}${PREFIX}/lib/libghdlvpi.so
 
 do-test:
 	@cd ${WRKSRC}/testsuite && \

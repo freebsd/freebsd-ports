@@ -2,10 +2,10 @@ bin/ghdl
 %%LLVM%%bin/ghdl1-llvm
 bin/ghwdump
 include/ghdl/libghw.h
+include/ghdl/synth.h
+include/ghdl/synth_gates.h
 include/ghdl/vhpi_user.h
 include/ghdl/vpi_user.h
-%%SYNTH%%include/ghdl/synth.h
-%%SYNTH%%include/ghdl/synth_gates.h
 lib/ghdl/ansi_color.sh
 %%LLVM%%lib/ghdl/grt-exec.lst
 %%LLVM%%lib/ghdl/grt-shared.lst
@@ -196,7 +196,7 @@ lib/ghdl/vendors/config.sh
 lib/ghdl/vendors/filter.analyze.sh
 lib/ghdl/vendors/shared.psm1
 lib/ghdl/vendors/shared.sh
-lib/libghdl-5_0_1.so
+lib/libghdl-5_1_1.so
 lib/libghdl.a
 lib/libghdl.link
 lib/libghdlvpi.so
