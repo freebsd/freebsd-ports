@@ -60,11 +60,11 @@ include/vips/vips8
 lib/libvips-cpp.a
 lib/libvips-cpp.so
 lib/libvips-cpp.so.42
-lib/libvips-cpp.so.42.19.1
+lib/libvips-cpp.so.42.19.2
 lib/libvips.a
 lib/libvips.so
 lib/libvips.so.42
-lib/libvips.so.42.19.1
+lib/libvips.so.42.19.2
 libdata/pkgconfig/vips-cpp.pc
 libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/Combine.png
@@ -133,6 +133,7 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/class.Foreign.html
 %%PORTDOCS%%%%DOCSDIR%%/class.ForeignLoad.html
 %%PORTDOCS%%%%DOCSDIR%%/class.ForeignSave.html
+%%PORTDOCS%%%%DOCSDIR%%/class.GInputStream.html
 %%PORTDOCS%%%%DOCSDIR%%/class.Image.html
 %%PORTDOCS%%%%DOCSDIR%%/class.Interpolate.html
 %%PORTDOCS%%%%DOCSDIR%%/class.Object.html
@@ -141,6 +142,7 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/class.Sbuf.html
 %%PORTDOCS%%%%DOCSDIR%%/class.Source.html
 %%PORTDOCS%%%%DOCSDIR%%/class.SourceCustom.html
+%%PORTDOCS%%%%DOCSDIR%%/class.SourceGInputStream.html
 %%PORTDOCS%%%%DOCSDIR%%/class.Target.html
 %%PORTDOCS%%%%DOCSDIR%%/class.TargetCustom.html
 %%PORTDOCS%%%%DOCSDIR%%/class.ThreadState.html
@@ -232,6 +234,7 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/ctor.ArrayInt.newv.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Blob.new.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Blob.profile_load.html
+%%PORTDOCS%%%%DOCSDIR%%/ctor.GInputStream.new_from_source.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.analyzeload.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.black.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.csvload.html
@@ -347,6 +350,7 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Source.new_from_options.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Source.new_from_target.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.SourceCustom.new.html
+%%PORTDOCS%%%%DOCSDIR%%/ctor.SourceGInputStream.new.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Target.new_temp.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Target.new_to_descriptor.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Target.new_to_file.html
@@ -603,7 +607,6 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/func.format_sizeof.html
 %%PORTDOCS%%%%DOCSDIR%%/func.format_sizeof_unsafe.html
 %%PORTDOCS%%%%DOCSDIR%%/func.g_error.html
-%%PORTDOCS%%%%DOCSDIR%%/func.g_input_stream_new_from_source.html
 %%PORTDOCS%%%%DOCSDIR%%/func.g_thread_new.html
 %%PORTDOCS%%%%DOCSDIR%%/func.get_argv0.html
 %%PORTDOCS%%%%DOCSDIR%%/func.get_disc_threshold.html
@@ -1315,6 +1318,7 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/property.ForeignSave.page-height.html
 %%PORTDOCS%%%%DOCSDIR%%/property.ForeignSave.profile.html
 %%PORTDOCS%%%%DOCSDIR%%/property.ForeignSave.strip.html
+%%PORTDOCS%%%%DOCSDIR%%/property.GInputStream.input.html
 %%PORTDOCS%%%%DOCSDIR%%/property.Image.bands.html
 %%PORTDOCS%%%%DOCSDIR%%/property.Image.coding.html
 %%PORTDOCS%%%%DOCSDIR%%/property.Image.demand.html
@@ -1335,6 +1339,7 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/property.Object.nickname.html
 %%PORTDOCS%%%%DOCSDIR%%/property.Sbuf.input.html
 %%PORTDOCS%%%%DOCSDIR%%/property.Source.blob.html
+%%PORTDOCS%%%%DOCSDIR%%/property.SourceGInputStream.stream.html
 %%PORTDOCS%%%%DOCSDIR%%/property.Target.blob.html
 %%PORTDOCS%%%%DOCSDIR%%/property.Target.memory.html
 %%PORTDOCS%%%%DOCSDIR%%/search.js
@@ -1368,15 +1373,11 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/struct.Blob.html
 %%PORTDOCS%%%%DOCSDIR%%/struct.Buf.html
 %%PORTDOCS%%%%DOCSDIR%%/struct.Dbuf.html
-%%PORTDOCS%%%%DOCSDIR%%/struct.GInputStream.html
-%%PORTDOCS%%%%DOCSDIR%%/struct.GInputStreamClass.html
 %%PORTDOCS%%%%DOCSDIR%%/struct.Progress.html
 %%PORTDOCS%%%%DOCSDIR%%/struct.Rect.html
 %%PORTDOCS%%%%DOCSDIR%%/struct.RefString.html
 %%PORTDOCS%%%%DOCSDIR%%/struct.SaveString.html
 %%PORTDOCS%%%%DOCSDIR%%/struct.Semaphore.html
-%%PORTDOCS%%%%DOCSDIR%%/struct.SourceGInputStream.html
-%%PORTDOCS%%%%DOCSDIR%%/struct.SourceGInputStreamClass.html
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/tn_owl.jpg
 %%PORTDOCS%%%%DOCSDIR%%/type_func.Area.free_cb.html
@@ -1421,7 +1422,6 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/type_func.Object.summary_class.html
 %%PORTDOCS%%%%DOCSDIR%%/type_func.Operation.block_set.html
 %%PORTDOCS%%%%DOCSDIR%%/type_func.Progress.set.html
-%%PORTDOCS%%%%DOCSDIR%%/type_func.Source.g_input_stream_new.html
 %%PORTDOCS%%%%DOCSDIR%%/type_func.ThreadState.set.html
 %%PORTDOCS%%%%DOCSDIR%%/urlmap.js
 %%PORTDOCS%%%%DOCSDIR%%/using-from-c.html
@@ -1475,5 +1475,4 @@ share/locale/en_GB/LC_MESSAGES/vips%%VERSION%%.mo
 share/man/man1/vips.1.gz
 share/man/man1/vipsedit.1.gz
 share/man/man1/vipsheader.1.gz
-share/man/man1/vipsprofile.1.gz
 share/man/man1/vipsthumbnail.1.gz
