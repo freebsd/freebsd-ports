@@ -10,6 +10,9 @@ WWW=		https://gtkmmorse.nongnu.org/ \
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Depends on expired devel/gconfmm26
+EXPIRATION_DATE=2025-11-25
+
 LIB_DEPENDS=	libao.so:audio/libao \
 		libgconfmm-2.6.so:devel/gconfmm26
 
