@@ -1,7 +1,6 @@
 PORTNAME=	gedit
-PORTVERSION=	48.1
+DISTVERSION=	48.2
 CATEGORIES=	editors gnome
-MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -11,6 +10,8 @@ WWW=		https://gitlab.gnome.org/World/gedit/gedit
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+PORTSCOUT=	limit:^48\.
+
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		itstool:textproc/itstool
 LIB_DEPENDS=	libgspell-1.so:textproc/gspell \
@@ -19,19 +20,20 @@ LIB_DEPENDS=	libgspell-1.so:textproc/gspell \
 		libgedit-gfls-1.so:filesystems/libgedit-gfls \
 		libgedit-amtk-5.so:x11-toolkits/amtk \
 		libgedit-tepl-6.so:x11-toolkits/tepl6
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas1>0:devel/py-libpeas1@${PY_FLAVOR}
 
 USES=		compiler:c11 cpe desktop-file-utils gettext gnome localbase \
-		meson pkgconfig python tar:xz vala:build xorg
+		meson pkgconfig tar:xz vala:build
 USE_CSTD=	c11
-USE_GNOME=	glib20 gtk30 introspection libxml2 \
-		pygobject3
-USE_XORG=	sm x11
+USE_GNOME=	glib20 gtk30 introspection
 USE_LDCONFIG=	yes
 PLIST_SUB=	VERSION=${DISTVERSION}
 MESON_ARGS=	-Dgtk_doc=false
-BINARY_ALIAS=	python3=${PYTHON_CMD}
 CPE_VENDOR=	gnome
+
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.gnome.org
+GL_ACCOUNT=	World/gedit
+GL_TUPLE=	GNOME:libgd:3cccf992:libgd/subprojects/libgd
 
 GLIB_SCHEMAS=	org.gnome.gedit.enums.xml \
 		org.gnome.gedit.gschema.xml \
