@@ -1,7 +1,7 @@
-TIMESTAMP = 1756400000
-SHA256 (VirtualBox-7.2.0.tar.bz2) = 4f2804ff27848ea772aee6b637bb1e10ee74ec2da117c257413e2d2c4f670ba0
-SIZE (VirtualBox-7.2.0.tar.bz2) = 206755781
-SHA256 (VirtualBox-docs-7.2.0.tar.bz2) = 12b27989f2ab9b9316384322a8f1cdadd7003d2e2d6592298e1a84e81f5e0572
-SIZE (VirtualBox-docs-7.2.0.tar.bz2) = 9200668
-SHA256 (VBoxGuestAdditions_7.2.0.iso) = 43f7a1045cad0aab40e3af906fea37244ba6873b91b4e227245a14e51b399abd
-SIZE (VBoxGuestAdditions_7.2.0.iso) = 53143552
+TIMESTAMP = 1759400000
+SHA256 (VirtualBox-7.2.2.tar.bz2) = b0e63bfb855327aecf1122cda33390c33734e5ffed72f123f5edf786a8ce1393
+SIZE (VirtualBox-7.2.2.tar.bz2) = 206992991
+SHA256 (VirtualBox-docs-7.2.2.tar.bz2) = 5784f7ccb0cd28f1e4647771301c51cbd2427ec84e071d3dd92c9f0e12690f8c
+SIZE (VirtualBox-docs-7.2.2.tar.bz2) = 9134609
+SHA256 (VBoxGuestAdditions_7.2.2.iso) = 42457487fb5f117265fe41bf8b2a521449c2cff75c95029d8f667f7dab5a4409
+SIZE (VBoxGuestAdditions_7.2.2.iso) = 53135360

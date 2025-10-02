@@ -1,5 +1,5 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	7.2.0
+DISTVERSION=	7.2.2
 PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
@@ -22,6 +22,7 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	gtar:archivers/gtar \
 		kmk:devel/kBuild \
 		yasm:devel/yasm \
+		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libcurl.so:ftp/curl
