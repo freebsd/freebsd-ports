@@ -8009,6 +8009,8 @@
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/DVI-D_Molex_74320-4004_Horizontal.wrl
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/DVI-I_Molex_74320-1004_Horizontal.step
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/DVI-I_Molex_74320-1004_Horizontal.wrl
+%%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_A_Amphenol_10029449-x01xLF_Horizontal.step
+%%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_A_Contact_Technology_19APL2_Horizontal.step
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_A_Kycon_KDMIX-SL1-NS-WS-B15_VerticalRightAngle.step
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_A_Molex_208658-1001_Horizontal.step
 %%DATADIR%%/3dmodels/Connector_Video.3dshapes/HDMI_A_Molex_208658-1001_Horizontal.wrl
@@ -10979,6 +10981,7 @@
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/MLF-6-1EP_1.6x1.6mm_P0.5mm_EP0.5x1.26mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/MPS_QFN-16_3x3mm_P0.5mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/MPS_QFN-16_3x3mm_P0.5mm.wrl
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Maxim_WSON-8-1EP_3x2mm_P0.5mm_EP1.75x1.63mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Micrel_MLF-8-1EP_2x2mm_P0.5mm_EP0.6x1.2mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Micrel_MLF-8-1EP_2x2mm_P0.5mm_EP0.6x1.2mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Mini-Circuits_FG873-4_3x3mm.step
@@ -11160,6 +11163,7 @@
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_S-PVQFN-N14.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_S-PWQFN-N20.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_S-PWQFN-N20.wrl
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_UQFN-8_1.5x1.5mm_P0.5mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_VQFN-RGR-20-1EP_3.5x3.5mm_Pitch0.5mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_VQFN-RGR-20-1EP_3.5x3.5mm_Pitch0.5mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/Texas_WQFN-MR-100.step
@@ -11652,6 +11656,7 @@
 %%DATADIR%%/3dmodels/Package_LGA.3dshapes/AMS_LGA-20_4.7x4.5mm_P0.65mm.wrl
 %%DATADIR%%/3dmodels/Package_LGA.3dshapes/Bosch_LGA-14_3x2.5mm_P0.5mm.step
 %%DATADIR%%/3dmodels/Package_LGA.3dshapes/Bosch_LGA-14_3x2.5mm_P0.5mm.wrl
+%%DATADIR%%/3dmodels/Package_LGA.3dshapes/Bosch_LGA-16_4.5x3mm_P0.5mm_LayoutBorder7x1y_ClockwisePinNumbering.step
 %%DATADIR%%/3dmodels/Package_LGA.3dshapes/Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering.step
 %%DATADIR%%/3dmodels/Package_LGA.3dshapes/Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering.wrl
 %%DATADIR%%/3dmodels/Package_LGA.3dshapes/Bosch_LGA-8_2x2.5mm_P0.65mm_ClockwisePinNumbering.step
