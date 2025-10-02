@@ -1,6 +1,5 @@
 PORTNAME=	radicle
-DISTVERSION=	1.4.0
-PORTREVISION=	1
+DISTVERSION=	1.5.0
 CATEGORIES=	devel
 MASTER_SITES=	https://distfiles.pirateparty.in/ashish/:sources \
 		LOCAL/ashish:sources
@@ -18,14 +17,14 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	DOCS
 
-GIT_HEAD=	bbd1e2cff60cb8086617251adc0c41d0847fe303
+GIT_HEAD=	5fea9ac05c7296dce3f8dec363b7442bec929c55
 
 USES=			cargo
 CARGO_INSTALL_PATH=	crates/radicle-cli crates/radicle-remote-helper \
 			crates/radicle-node
 CARGO_ENV=		GIT_HEAD=${GIT_HEAD} \
 			RADICLE_VERSION=${DISTVERSION} \
-			SOURCE_DATE_EPOCH=1756995139
+			SOURCE_DATE_EPOCH=1758638030
 PLIST_FILES=		bin/git-remote-rad \
 			bin/rad \
 			bin/radicle-node
@@ -39,17 +38,19 @@ DOCS_PLIST_FILES=	share/man/man1/git-remote-rad.1.gz \
 
 # courtesy: https://reproducible-builds.org/docs/archives/
 generate-tarball:
-	git clone https://seed.radicle.xyz/z3gqcJUoA1n9HaHKufZs5FCSGazv5.git ${PORTNAME}
+	git init --bare ${PORTNAME}
+	git -C ${PORTNAME} remote add origin https://seed.radicle.xyz/z3gqcJUoA1n9HaHKufZs5FCSGazv5.git
+	git -C ${PORTNAME} fetch --depth=1 origin ${GIT_HEAD}
 	${RM} -rf ${DISTNAME}
-	cd ${PORTNAME} && git archive --format tar --prefix ${DISTNAME}/ \
-		${GIT_HEAD} | ${TAR} xf - -C ../
+	git -C ${PORTNAME} archive --format tar --prefix ${DISTNAME}/ \
+		${GIT_HEAD} | ${TAR} xf -
 	${FIND} ${DISTNAME} -print0 | \
 	     ${XARGS} -0r ${TOUCH} -d '1970-01-01T00:00:00Z'
 	${FIND} ${DISTNAME} -print0 | LC_ALL=C ${SORT} -z | \
 		sudo ${TAR} --owner=0 --group=0 --numeric-owner --no-recursion \
 		--null -T - -cf - ${DISTNAME} | \
 		${GZIP_CMD} -9n >${DISTNAME}.tar.gz
-	git -C ${PORTNAME} log -1 --pretty=%ct HEAD
+	git -C ${PORTNAME} log -1 --pretty=%ct ${GIT_HEAD}
 	${RM} -rf ${PORTNAME} ${DISTNAME}
 
 post-build-DOCS-on:
