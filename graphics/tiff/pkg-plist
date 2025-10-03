@@ -27,10 +27,10 @@ lib/cmake/tiff/TiffTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/tiff/TiffTargets.cmake
 lib/libtiff.so
 lib/libtiff.so.6
-lib/libtiff.so.6.1.0
+lib/libtiff.so.6.2.0
 lib/libtiffxx.so
 lib/libtiffxx.so.6
-lib/libtiffxx.so.6.1.0
+lib/libtiffxx.so.6.2.0
 libdata/pkgconfig/libtiff-4.pc
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
@@ -188,6 +188,7 @@ libdata/pkgconfig/libtiff-4.pc
 %%PORTDOCS%%%%DOCSDIR%%/manual/_sources/releases/v4.5.1.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual/_sources/releases/v4.6.0.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual/_sources/releases/v4.7.0.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual/_sources/releases/v4.7.1.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual/_sources/rfcs/index.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual/_sources/rfcs/rfc1_psc.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual/_sources/rfcs/rfc2_restoring_needed_tools.rst.txt
@@ -369,6 +370,7 @@ libdata/pkgconfig/libtiff-4.pc
 %%PORTDOCS%%%%DOCSDIR%%/manual/releases/v4.5.1.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/releases/v4.6.0.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/releases/v4.7.0.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/releases/v4.7.1.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/rfcs/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/rfcs/rfc1_psc.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/rfcs/rfc2_restoring_needed_tools.html
