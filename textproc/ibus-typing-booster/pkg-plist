@@ -2,6 +2,7 @@ bin/emoji-picker
 libexec/ibus-engine-typing-booster
 libexec/ibus-setup-typing-booster
 share/applications/emoji-picker.desktop
+share/applications/ibus-setup-tb.desktop
 share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/Blocks.txt
 %%DATADIR%%/data/DerivedAge.txt
@@ -387,10 +388,13 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/engine/__pycache__/m17n_translit%%PYTHON_TAG%%.pyc
 %%DATADIR%%/engine/__pycache__/main%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/engine/__pycache__/main%%PYTHON_TAG%%.pyc
+%%DATADIR%%/engine/__pycache__/ollama_pull%%PYTHON_TAG%%.opt-1.pyc
+%%DATADIR%%/engine/__pycache__/ollama_pull%%PYTHON_TAG%%.pyc
 %%DATADIR%%/engine/__pycache__/tabsqlitedb%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/engine/__pycache__/tabsqlitedb%%PYTHON_TAG%%.pyc
 %%DATADIR%%/engine/__pycache__/tabstatistics%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/engine/__pycache__/tabstatistics%%PYTHON_TAG%%.pyc
+%%DATADIR%%/engine/ollama_pull.py
 %%DATADIR%%/engine/emoji_picker.py
 %%DATADIR%%/engine/factory.py
 %%DATADIR%%/engine/get_clipboard_gtk4.py
