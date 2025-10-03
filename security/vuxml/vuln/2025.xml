@@ -1,3 +1,40 @@
+  <vuln vid="21fba35e-a05f-11f0-a8b8-a1ef31191bc1">
+    <topic>fetchmail -- potential crash when authenticating to SMTP server</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><ge>5.9.9</ge><lt>6.5.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="https://www.fetchmail.info/fetchmail-SA-2025-01.txt">
+	  <p>
+	    fetchmail's SMTP client, when configured to authenticate, is
+	    susceptible to a protocol violation where, when a trusted but
+	    malicious or malfunctioning SMTP server responds to an
+	    authentication request with a "334" code but without a following
+	    blank on the line, it will attempt to start reading from memory
+	    address 0x1 to parse the server's SASL challenge. This address is
+	    constant and not under the attacker's control. This event will
+	    usually cause a crash of fetchmail.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <!-- cvename has been requested from MITRE but not yet created <cvename>INSERT CVE RECORD IF AVAILABLE</cvename> -->
+      <url>https://www.fetchmail.info/fetchmail-SA-2025-01.txt</url>
+      <url>https://gitlab.com/fetchmail/fetchmail/-/raw/legacy_6x/fetchmail-SA-2025-01.txt?ref_type=heads</url>
+      <url>https://gitlab.com/fetchmail/fetchmail/-/commit/4c3cebfa4e659fb778ca2cae0ccb3f69201609a8</url>
+    </references>
+    <dates>
+      <discovery>2025-10-02</discovery>
+      <entry>2025-10-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="169a87de-a157-4558-9f97-a7395a9ae144">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
