@@ -918,6 +918,7 @@
     SUBDIR += py-certbot-dns-standalone
     SUBDIR += py-certbot-nginx
     SUBDIR += py-certifi
+    SUBDIR += py-certipy
     SUBDIR += py-certomancer
     SUBDIR += py-certstream
     SUBDIR += py-ckcc-protocol
