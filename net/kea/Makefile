@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		liblog4cplus.so:devel/log4cplus
 
-USES=		compiler:c++11-lang cpe iconv libtool pathfix ssl python tar:xz meson pkgconfig cmake:indirect shebangfix
+USES=		compiler:c++11-lang cpe iconv pathfix ssl python tar:xz meson pkgconfig cmake:indirect shebangfix
 MESON_ARGS=	--auto-features=disabled \
 		-Dcrypto=openssl \
 		-Dnetconf=disabled

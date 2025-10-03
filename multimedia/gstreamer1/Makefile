@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libunwind.so:devel/libunwind
 
-USES=		bison libtool gnome gstreamer:_internal meson ninja \
+USES=		bison gnome gstreamer:_internal meson ninja \
 		pkgconfig python:build shebangfix tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_GSTREAMER=	#

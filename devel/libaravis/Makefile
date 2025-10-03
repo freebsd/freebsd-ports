@@ -10,7 +10,7 @@ WWW=		https://github.com/AravisProject/aravis/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gnome libtool meson pkgconfig
+USES=		gnome meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	AravisProject
 GH_PROJECT=	aravis

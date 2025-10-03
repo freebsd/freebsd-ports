@@ -14,7 +14,7 @@ LIB_DEPENDS=	libbasu.so:devel/basu \
 		libfprint-2.so:security/libfprint \
 		libpolkit-gobject-1.so:sysutils/polkit
 
-USES=		gettext gnome libtool meson pkgconfig
+USES=		gettext gnome meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	libfprint

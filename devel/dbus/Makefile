@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		cpe libtool localbase meson pkgconfig python:build \
+USES=		cpe localbase meson pkgconfig python:build \
 		shebangfix tar:xz
 CPE_VENDOR=	d-bus_project
 CPE_PRODUCT=	d-bus

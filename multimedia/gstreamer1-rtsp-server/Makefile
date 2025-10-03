@@ -11,7 +11,7 @@ WWW=		https://gstreamer.freedesktop.org/
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		bison gnome gstreamer libtool meson ninja pathfix pkgconfig python:build tar:xz
+USES=		bison gnome gstreamer meson ninja pathfix pkgconfig python:build tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_GSTREAMER=	bad good
 USE_LDCONFIG=	yes

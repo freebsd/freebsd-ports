@@ -21,7 +21,7 @@ LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
 		liborc-0.4.so:devel/orc
 RUN_DEPENDS+=	iso-codes>=0:misc/iso-codes
 
-USES+=		meson cpe gettext gnome gstreamer libtool pathfix pkgconfig python:build tar:xz
+USES+=		meson cpe gettext gnome gstreamer pathfix pkgconfig python:build tar:xz
 CPE_VENDOR=	gstreamer_project
 CPE_PRODUCT=	gstreamer
 USE_GNOME+=	glib20 introspection:build libxml2

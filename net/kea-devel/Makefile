@@ -16,7 +16,7 @@ BUILD_DEPENDS=	rst2man:textproc/py-docutils
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		liblog4cplus.so:devel/log4cplus
 
-USES=		compiler:c++11-lang cmake:indirect cpe iconv libtool meson \
+USES=		compiler:c++11-lang cmake:indirect cpe iconv meson \
 		pathfix pkgconfig python tar:xz shebangfix ssl
 
 CPE_VENDOR=	isc

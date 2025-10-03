@@ -14,7 +14,7 @@ LICENSE=	LGPL21+
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libgraphene-1.0.so:graphics/graphene
 
-USES=		compiler:c++17-lang gnome libtool meson pkgconfig \
+USES=		compiler:c++17-lang gnome meson pkgconfig \
 		python:build tar:xz
 USE_CXXSTD=	c++17
 USE_GNOME=	gdkpixbuf gtk40 glibmm26 cairomm11 pangomm24

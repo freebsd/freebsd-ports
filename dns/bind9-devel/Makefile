@@ -43,7 +43,7 @@ LIB_DEPENDS=	libnghttp2.so:www/libnghttp2 \
 RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 .endif
 
-USES=		compiler:c11 cpe gnome libedit libtool meson perl5 pkgconfig \
+USES=		compiler:c11 cpe gnome libedit meson perl5 pkgconfig \
 		ssl tar:xz
 
 CPE_VENDOR=	isc
