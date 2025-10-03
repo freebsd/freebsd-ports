@@ -2,11 +2,11 @@ PORTNAME=	xd3d
 PORTVERSION=	8.3.1
 PORTREVISION=	21
 CATEGORIES=	graphics math
-MASTER_SITES=	http://www.cmap.polytechnique.fr/~jouve/xd3d/
+MASTER_SITES=	https://www.ljll.fr/jouve/xd3d/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Simple scientific visualization tool
-WWW=		http://www.cmap.polytechnique.fr/~jouve/xd3d/
+WWW=		https://www.ljll.fr/jouve/xd3d/
 
 LICENSE=	GPLv2
 
@@ -33,7 +33,7 @@ USES+=		magick:run
 RUN_DEPENDS+=	gifsicle:graphics/gifsicle
 .endif
 
-MASTER_SITES_BACKUP=	http://pompo.net/ports/
+MASTER_SITES_BACKUP=	https://www.pompo.net/ports/
 
 REINPLACE_ARGS=	-i ""
 FETCH_ARGS=
