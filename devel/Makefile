@@ -4646,6 +4646,7 @@
     SUBDIR += py-cfgv
     SUBDIR += py-cfn-lint
     SUBDIR += py-cftime
+    SUBDIR += py-cgen
     SUBDIR += py-chai
     SUBDIR += py-chainmap
     SUBDIR += py-characteristic
