@@ -962,6 +962,7 @@
     SUBDIR += py-cmyt
     SUBDIR += py-colormath
     SUBDIR += py-contourpy
+    SUBDIR += py-conway-polynomials
     SUBDIR += py-cryptominisat
     SUBDIR += py-cvxopt
     SUBDIR += py-cvxpy
