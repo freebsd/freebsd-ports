@@ -1,5 +1,6 @@
 PORTNAME=	ufs
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	filesystems sysutils
 PKGNAMEPREFIX=	fusefs-
 

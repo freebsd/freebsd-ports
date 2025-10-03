@@ -1,7 +1,7 @@
 PORTNAME=	wl-screenrec
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.5 # see PORTSCOUT comment below
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia wayland
 
 MAINTAINER=	ports@FreeBSD.org

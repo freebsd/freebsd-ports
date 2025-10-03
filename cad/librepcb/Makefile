@@ -1,6 +1,7 @@
 PORTNAME=	librepcb
 DISTVERSION=	1.3.0
 DISTVERSIONSUFFIX=	-source
+PORTREVISION=	1
 CATEGORIES=	cad
 #MASTER_SITES=	https://download.librepcb.org/releases/${DISTVERSION}/
 MASTER_SITES=	LOCAL/yuri:main # .zip archive repackaged as .tar.gz

@@ -1,7 +1,7 @@
 PORTNAME=	salut
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.1
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		Fails to build with rust 1.90.0
 EXPIRATION_DATE=2025-11-24
-
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libxkbcommon.so:x11/libxkbcommon
