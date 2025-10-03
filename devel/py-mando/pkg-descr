@@ -1,0 +1,15 @@
+mando is a wrapper around argparse, and allows you to write complete CLI
+applications in seconds while maintaining all the flexibility.
+
+While argparse is great for simple command line applications with only
+one, default command, when you have to add multiple commands and manage them
+things get really messy and long. But don't worry, mando comes to help!
+
+Features:
+* Create complete CLI applications with decorators
+* Supports multiple commands and subcommands
+* Automatic help generation from docstrings
+* Type annotations support for Python 3
+* Sphinx, Google, and NumPy docstring styles
+* Shell autocompletion via argcomplete package
+* Custom format classes support
