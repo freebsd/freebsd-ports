@@ -1,8 +1,7 @@
 PORTNAME=	goldendict-ng
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.06.0
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-Release.8a87a79b
+DISTVERSION=	25.10.1
+DISTVERSIONSUFFIX=	-Release.85f9a3d5
 CATEGORIES=	textproc
 
 MAINTAINER=	mew14930xvi@inbox.lv
@@ -29,16 +28,20 @@ GH_ACCOUNT=	xiaoyifang
 USE_GL=		opengl
 USE_QT=		5compat base declarative multimedia positioning svg webchannel \
 		webengine tools:build
-USE_XORG=	ice sm x11 xext xtst
+USE_XORG=	ice sm x11 xext xorgproto xtst
 
 CMAKE_ON=		USE_ALTERNATIVE_NAME USE_SYSTEM_FMT USE_SYSTEM_TOML
 CONFIGURE_WRKSRC=	${WRKSRC}/build_dir
 
-OPTIONS_DEFINE=		EPWING
+OPTIONS_DEFINE=		EPWING SPEECH
 OPTIONS_DEFAULT=	EPWING
 
 EPWING_DESC=		Japanese EPWING dictionary format support
+SPEECH_DESC=		Text to speech support
+
 EPWING_LIB_DEPENDS=	libeb.so:japanese/eb
 EPWING_CMAKE_OFF=	-DWITH_EPWING_SUPPORT=OFF
+SPEECH_USE=		QT=speech
+SPEECH_CMAKE_ON=	-DWITH_TTS=ON
 
 .include <bsd.port.mk>
