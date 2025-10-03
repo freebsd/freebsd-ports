@@ -9,6 +9,9 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Robust and Accurate Polygon Interference Detection
 WWW=		http://www.cs.unc.edu/~geom/OBB/OBBT.html
 
+DEPRECATED=	Upstream project is long dead
+EXPIRATION_DATE=	2025-12-31
+
 LICENSE=	UNKNOWN
 LICENSE_NAME=	unknown
 LICENSE_TEXT=	For any commercial purpose, you must request a license from \
