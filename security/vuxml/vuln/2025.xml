@@ -1,3 +1,58 @@
+  <vuln vid="169a87de-a157-4558-9f97-a7395a9ae144">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>141.0.7390.54</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>141.0.7390.54</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/09/stable-channel-update-for-desktop_30.html">
+	 <p>This update includes 21 security fixes:</p>
+	 <ul>
+	    <li>[442444724] High CVE-2025-11205: Heap buffer overflow in WebGPU. Reported by Atte Kettunen of OUSPG on 2025-09-02</li>
+	    <li>[444755026] High CVE-2025-11206: Heap buffer overflow in Video. Reported by Elias Hohl on 2025-09-12</li>
+	    <li>[428189824] Medium CVE-2025-11207: Side-channel information leakage in Storage. Reported by Alesandro Ortiz on 2025-06-27</li>
+	    <li>[397878997] Medium CVE-2025-11208: Inappropriate implementation in Media. Reported by Kevin Joensen on 2025-02-20</li>
+	    <li>[438226517] Medium CVE-2025-11209: Inappropriate implementation in Omnibox. Reported by Hafiizh on 2025-08-13</li>
+	    <li>[440523110] Medium CVE-2025-11210: Side-channel information leakage in Tab. Reported by Umar Farooq  on 2025-08-22</li>
+	    <li>[441917796] Medium CVE-2025-11211: Out of bounds read in Media. Reported by Kosir Jakob on 2025-08-29</li>
+	    <li>[420734141] Medium CVE-2025-11212: Inappropriate implementation in Media. Reported by Ameen Basha M K on 2025-05-28</li>
+	    <li>[443408317] Medium CVE-2025-11213: Inappropriate implementation in Omnibox. Reported by Hafiizh on 2025-09-06</li>
+	    <li>[439758498] Medium CVE-2025-11215: Off by one error in V8. Reported by Google Big Sleep on 2025-08-19</li>
+	    <li>[419721056] Low CVE-2025-11216: Inappropriate implementation in Storage. Reported by Farras Givari on 2025-05-23</li>
+	    <li>[439772737] Low CVE-2025-11219: Use after free in V8. Reported by Google Big Sleep on 2025-08-19</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11205</cvename>
+      <cvename>CVE-2025-11206</cvename>
+      <cvename>CVE-2025-11207</cvename>
+      <cvename>CVE-2025-11208</cvename>
+      <cvename>CVE-2025-11209</cvename>
+      <cvename>CVE-2025-11210</cvename>
+      <cvename>CVE-2025-11211</cvename>
+      <cvename>CVE-2025-11212</cvename>
+      <cvename>CVE-2025-11213</cvename>
+      <cvename>CVE-2025-11215</cvename>
+      <cvename>CVE-2025-11216</cvename>
+      <cvename>CVE-2025-11219</cvename>
+      <url>https://chromereleases.googleblog.com/2025/09/stable-channel-update-for-desktop_30.html</url>
+    </references>
+    <dates>
+      <discovery>2025-09-30</discovery>
+      <entry>2025-10-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="90fc859e-9fe4-11f0-9fa2-080027836e8b">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
