@@ -1,6 +1,6 @@
---- ui/base/test/skia_gold_pixel_diff.cc.orig	2025-09-06 10:01:20 UTC
+--- ui/base/test/skia_gold_pixel_diff.cc.orig	2025-10-02 04:28:32 UTC
 +++ ui/base/test/skia_gold_pixel_diff.cc
-@@ -121,7 +121,7 @@ const char* GetPlatformName() {
+@@ -116,7 +116,7 @@ const char* GetPlatformName() {
    return "windows";
  #elif BUILDFLAG(IS_APPLE)
    return "macOS";

@@ -1,7 +1,7 @@
---- chrome/browser/global_features.cc.orig	2025-08-07 06:57:29 UTC
+--- chrome/browser/global_features.cc.orig	2025-10-02 04:28:32 UTC
 +++ chrome/browser/global_features.cc
 @@ -24,7 +24,7 @@
- #include "chrome/browser/glic/host/glic_synthetic_trial_manager.h"  // nogncheck
+ #include "chrome/browser/glic/public/glic_enabling.h"               // nogncheck
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

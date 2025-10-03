@@ -1,6 +1,6 @@
---- base/threading/platform_thread_metrics.cc.orig	2025-08-07 06:57:29 UTC
+--- base/threading/platform_thread_metrics.cc.orig	2025-10-02 04:28:32 UTC
 +++ base/threading/platform_thread_metrics.cc
-@@ -26,7 +26,7 @@ PlatformThreadMetrics::CreateForCurrentThread() {
+@@ -55,7 +55,7 @@ PlatformThreadMetrics::CreateForCurrentThread() {
  }
  
  #elif BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS) || \

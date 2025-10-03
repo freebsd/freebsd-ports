@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui_browser/webui_browser_window.cc.orig	2025-09-06 10:01:20 UTC
+--- chrome/browser/ui/webui_browser/webui_browser_window.cc.orig	2025-10-02 04:28:32 UTC
 +++ chrome/browser/ui/webui_browser/webui_browser_window.cc
-@@ -22,7 +22,7 @@ namespace {
+@@ -42,7 +42,7 @@ const char* const kWebUIBrowserWindowKey = "__WEBUI_BR
  
  // Copied from chrome/browser/ui/views/frame/browser_frame.cc.
  bool IsUsingLinuxSystemTheme(Profile* profile) {

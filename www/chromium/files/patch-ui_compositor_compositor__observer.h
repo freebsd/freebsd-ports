@@ -1,8 +1,8 @@
---- ui/compositor/compositor_observer.h.orig	2025-02-19 07:43:18 UTC
+--- ui/compositor/compositor_observer.h.orig	2025-10-02 04:28:32 UTC
 +++ ui/compositor/compositor_observer.h
-@@ -56,7 +56,7 @@ class COMPOSITOR_EXPORT CompositorObserver {
-   // Called when a child of the compositor is resizing.
-   virtual void OnCompositingChildResizing(Compositor* compositor) {}
+@@ -59,7 +59,7 @@ class COMPOSITOR_EXPORT CompositorObserver {
+   virtual void OnChildResizeActivated() {}
+ #endif  // BUILDFLAG(IS_CHROMEOS)
  
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(IS_OZONE_X11)

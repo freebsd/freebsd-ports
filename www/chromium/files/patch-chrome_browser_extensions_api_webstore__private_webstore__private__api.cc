@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/webstore_private/webstore_private_api.cc.orig	2025-08-07 06:57:29 UTC
+--- chrome/browser/extensions/api/webstore_private/webstore_private_api.cc.orig	2025-10-02 04:28:32 UTC
 +++ chrome/browser/extensions/api/webstore_private/webstore_private_api.cc
-@@ -912,7 +912,7 @@ void WebstorePrivateBeginInstallWithManifest3Function:
+@@ -938,7 +938,7 @@ void WebstorePrivateBeginInstallWithManifest3Function:
  #if BUILDFLAG(IS_CHROMEOS)
        RequestExtensionApproval(contents);
        return;

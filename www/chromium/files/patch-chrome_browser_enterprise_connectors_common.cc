@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/connectors/common.cc.orig	2025-09-06 10:01:20 UTC
+--- chrome/browser/enterprise/connectors/common.cc.orig	2025-10-02 04:28:32 UTC
 +++ chrome/browser/enterprise/connectors/common.cc
-@@ -19,7 +19,7 @@
+@@ -20,7 +20,7 @@
  #include "components/user_manager/user.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #include "components/prefs/pref_service.h"
  #endif
-@@ -235,7 +235,7 @@ std::string GetProfileEmail(Profile* profile) {
+@@ -306,7 +306,7 @@ std::string GetProfileEmail(Profile* profile) {
    std::string email =
        GetProfileEmail(IdentityManagerFactory::GetForProfile(profile));
  

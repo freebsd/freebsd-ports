@@ -1,6 +1,6 @@
---- third_party/vulkan-loader/src/loader/vk_loader_platform.h.orig	2025-03-05 08:14:56 UTC
+--- third_party/vulkan-loader/src/loader/vk_loader_platform.h.orig	2025-10-02 04:28:32 UTC
 +++ third_party/vulkan-loader/src/loader/vk_loader_platform.h
-@@ -353,7 +353,15 @@ static inline char *loader_platform_executable_path(ch
+@@ -357,7 +357,15 @@ static inline char *loader_platform_executable_path(ch
  
      return buffer;
  }
