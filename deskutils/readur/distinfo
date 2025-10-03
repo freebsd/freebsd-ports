@@ -1,6 +1,6 @@
-TIMESTAMP = 1757102963
-SHA256 (readur-v2.6.1.frontend.tar.gz) = d643842a516d31babe36d52364af2116c022ffb7aa8d0cb156b580f9f2ba5eda
-SIZE (readur-v2.6.1.frontend.tar.gz) = 2509908
+TIMESTAMP = 1759449022
+SHA256 (readur-v2.6.2.frontend.tar.gz) = 326cd6480507c18275c3b5902f2fb66b62b41b3159bee003aea40d042b32301f
+SIZE (readur-v2.6.2.frontend.tar.gz) = 2510345
 SHA256 (swagger-ui-v5.17.14.zip) = 481244d0812097b11fbaeef79f71d942b171617f9c9f9514e63acbe13e71ccdc
 SIZE (swagger-ui-v5.17.14.zip) = 4388280
 SHA256 (rust/crates/ab_glyph-0.2.29.crate) = ec3672c180e71eeaaac3a541fbbc5f5ad4def8b747c595ad30d674e43049f7b0
@@ -1203,5 +1203,5 @@ SHA256 (rust/crates/zune-inflate-0.2.54.crate) = 73ab332fe2f6680068f3582b16a24f9
 SIZE (rust/crates/zune-inflate-0.2.54.crate) = 37973
 SHA256 (rust/crates/zune-jpeg-0.4.17.crate) = 0f6fe2e33d02a98ee64423802e16df3de99c43e5cf5ff983767e1128b394c8ac
 SIZE (rust/crates/zune-jpeg-0.4.17.crate) = 65784
-SHA256 (readur-readur-v2.6.1_GH0.tar.gz) = ee7eb9e12f0e1a492c8c718921d0704f4e113918ce336d6daa2d5e49992ae19d
-SIZE (readur-readur-v2.6.1_GH0.tar.gz) = 12755337
+SHA256 (readur-readur-v2.6.2_GH0.tar.gz) = 4973979c1d54c7377e45950ac39ff11bd2cab2f461d4940761428f2a703c8352
+SIZE (readur-readur-v2.6.2_GH0.tar.gz) = 12785892
