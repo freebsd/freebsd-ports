@@ -1,0 +1,22 @@
+[
+{
+    type:    install,
+    message: <<EOM
+===========================================================
+
+    Before running `rustlings` for the first time, you need to initialize the
+    directory structure and prepare the exercises. To do that, run:
+
+        $ cd /a/good/plate/for/exercises
+        $ rustlings init
+
+        $ cd rustlings
+        $ rustlings
+
+    For more information, visit the Rustlings website:
+        https://rustlings.rust-lang.org/
+
+===========================================================
+EOM
+}
+]

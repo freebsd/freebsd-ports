@@ -637,6 +637,7 @@
     SUBDIR += rubygem-rabbit
     SUBDIR += rubygem-vpim
     SUBDIR += rump
+    SUBDIR += rustlings
     SUBDIR += ruut
     SUBDIR += schilytools
     SUBDIR += sdformat
