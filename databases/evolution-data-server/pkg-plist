@@ -139,6 +139,8 @@ include/evolution-data-server/libebackend/e-cache.h
 include/evolution-data-server/libebackend/e-collection-backend-factory.h
 include/evolution-data-server/libebackend/e-collection-backend.h
 include/evolution-data-server/libebackend/e-data-factory.h
+%%BDB%%include/evolution-data-server/libebackend/e-db3-utils.h
+%%BDB%%include/evolution-data-server/libebackend/e-dbhash.h
 include/evolution-data-server/libebackend/e-dbus-server.h
 include/evolution-data-server/libebackend/e-file-cache.h
 include/evolution-data-server/libebackend/e-oauth2-support.h
@@ -205,6 +207,7 @@ include/evolution-data-server/libecal/e-reminder-watcher.h
 include/evolution-data-server/libecal/e-timezone-cache.h
 include/evolution-data-server/libecal/libecal.h
 include/evolution-data-server/libedata-book/e-book-backend-cache.h
+%%BDB%%include/evolution-data-server/libedata-book/e-book-backend-db-cache.h
 include/evolution-data-server/libedata-book/e-book-backend-factory.h
 include/evolution-data-server/libedata-book/e-book-backend-sexp.h
 include/evolution-data-server/libedata-book/e-book-backend-sqlitedb.h
@@ -341,17 +344,17 @@ include/evolution-data-server/libedataserverui/e-reminders-widget.h
 include/evolution-data-server/libedataserverui/e-trust-prompt.h
 include/evolution-data-server/libedataserverui/e-webdav-discover-widget.h
 include/evolution-data-server/libedataserverui/libedataserverui.h
-include/evolution-data-server/libedataserverui4/e-buffer-tagger.h
-include/evolution-data-server/libedataserverui4/e-cell-renderer-color.h
-include/evolution-data-server/libedataserverui4/e-certificate-widget.h
-include/evolution-data-server/libedataserverui4/e-credentials-prompter-impl-oauth2.h
-include/evolution-data-server/libedataserverui4/e-credentials-prompter-impl-password.h
-include/evolution-data-server/libedataserverui4/e-credentials-prompter-impl.h
-include/evolution-data-server/libedataserverui4/e-credentials-prompter.h
-include/evolution-data-server/libedataserverui4/e-reminders-widget.h
-include/evolution-data-server/libedataserverui4/e-trust-prompt.h
-include/evolution-data-server/libedataserverui4/e-webdav-discover-widget.h
-include/evolution-data-server/libedataserverui4/libedataserverui4.h
+%%GTK4%%include/evolution-data-server/libedataserverui4/e-buffer-tagger.h
+%%GTK4%%include/evolution-data-server/libedataserverui4/e-cell-renderer-color.h
+%%GTK4%%include/evolution-data-server/libedataserverui4/e-certificate-widget.h
+%%GTK4%%include/evolution-data-server/libedataserverui4/e-credentials-prompter-impl-oauth2.h
+%%GTK4%%include/evolution-data-server/libedataserverui4/e-credentials-prompter-impl-password.h
+%%GTK4%%include/evolution-data-server/libedataserverui4/e-credentials-prompter-impl.h
+%%GTK4%%include/evolution-data-server/libedataserverui4/e-credentials-prompter.h
+%%GTK4%%include/evolution-data-server/libedataserverui4/e-reminders-widget.h
+%%GTK4%%include/evolution-data-server/libedataserverui4/e-trust-prompt.h
+%%GTK4%%include/evolution-data-server/libedataserverui4/e-webdav-discover-widget.h
+%%GTK4%%include/evolution-data-server/libedataserverui4/libedataserverui4.h
 lib/evolution-data-server/addressbook-backends/libebookbackendcarddav.so
 lib/evolution-data-server/addressbook-backends/libebookbackendfile.so
 %%LDAP%%lib/evolution-data-server/addressbook-backends/libebookbackendldap.so
@@ -394,7 +397,7 @@ lib/girepository-1.0/EDataBook-%%EVO_VERSION%%.typelib
 lib/girepository-1.0/EDataCal-%%CAL_API_VERSION%%.typelib
 lib/girepository-1.0/EDataServer-%%EVO_VERSION%%.typelib
 lib/girepository-1.0/EDataServerUI-%%EVO_VERSION%%.typelib
-lib/girepository-1.0/EDataServerUI4-1.0.typelib
+%%GTK4%%lib/girepository-1.0/EDataServerUI4-1.0.typelib
 lib/libcamel-%%EVO_VERSION%%.so
 lib/libcamel-%%EVO_VERSION%%.so.64
 lib/libcamel-%%EVO_VERSION%%.so.64.0.0
@@ -422,9 +425,9 @@ lib/libedataserver-%%EVO_VERSION%%.so.27.0.0
 lib/libedataserverui-%%EVO_VERSION%%.so
 lib/libedataserverui-%%EVO_VERSION%%.so.4
 lib/libedataserverui-%%EVO_VERSION%%.so.4.0.0
-lib/libedataserverui4-1.0.so
-lib/libedataserverui4-1.0.so.0
-lib/libedataserverui4-1.0.so.0.0.0
+%%GTK4%%lib/libedataserverui4-1.0.so
+%%GTK4%%lib/libedataserverui4-1.0.so.0
+%%GTK4%%lib/libedataserverui4-1.0.so.0.0.0
 libdata/pkgconfig/camel-%%EVO_VERSION%%.pc
 libdata/pkgconfig/evolution-data-server-%%EVO_VERSION%%.pc
 libdata/pkgconfig/libebackend-%%EVO_VERSION%%.pc
@@ -435,7 +438,7 @@ libdata/pkgconfig/libedata-book-%%EVO_VERSION%%.pc
 libdata/pkgconfig/libedata-cal-%%CAL_API_VERSION%%.pc
 libdata/pkgconfig/libedataserver-%%EVO_VERSION%%.pc
 libdata/pkgconfig/libedataserverui-%%EVO_VERSION%%.pc
-libdata/pkgconfig/libedataserverui4-1.0.pc
+%%GTK4%%libdata/pkgconfig/libedataserverui4-1.0.pc
 libexec/camel-gpg-photo-saver
 libexec/camel-index-control-%%EVO_VERSION%%
 @(,mail,2755) libexec/camel-lock-helper-%%EVO_VERSION%%
@@ -444,7 +447,7 @@ libexec/evolution-addressbook-factory-subprocess
 libexec/evolution-calendar-factory
 libexec/evolution-calendar-factory-subprocess
 libexec/evolution-data-server/addressbook-export
-libexec/evolution-data-server/csv2vcard
+%%OAUTH2%%libexec/evolution-data-server/csv2vcard
 libexec/evolution-data-server/evolution-alarm-notify
 libexec/evolution-data-server/evolution-oauth2-handler
 libexec/evolution-data-server/list-sources
@@ -492,7 +495,7 @@ share/gir-1.0/EDataBook-%%EVO_VERSION%%.gir
 share/gir-1.0/EDataCal-%%CAL_API_VERSION%%.gir
 share/gir-1.0/EDataServer-%%EVO_VERSION%%.gir
 share/gir-1.0/EDataServerUI-%%EVO_VERSION%%.gir
-share/gir-1.0/EDataServerUI4-1.0.gir
+%%GTK4%%share/gir-1.0/EDataServerUI4-1.0.gir
 share/icons/hicolor/scalable/apps/org.gnome.Evolution-alarm-notify.svg
 share/locale/am/LC_MESSAGES/evolution-data-server.mo
 share/locale/ar/LC_MESSAGES/evolution-data-server.mo
@@ -619,5 +622,5 @@ share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
 %%VAPI%%share/vala/vapi/libedataserver-%%EVO_VERSION%%.vapi
 %%VAPI%%share/vala/vapi/libedataserverui-%%EVO_VERSION%%.deps
 %%VAPI%%share/vala/vapi/libedataserverui-%%EVO_VERSION%%.vapi
-%%VAPI%%share/vala/vapi/libedataserverui4-1.0.deps
-%%VAPI%%share/vala/vapi/libedataserverui4-1.0.vapi
+%%GTK4%%%%VAPI%%share/vala/vapi/libedataserverui4-1.0.deps
+%%GTK4%%%%VAPI%%share/vala/vapi/libedataserverui4-1.0.vapi
