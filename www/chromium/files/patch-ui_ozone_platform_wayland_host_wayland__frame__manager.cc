@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/host/wayland_frame_manager.cc.orig	2025-09-06 10:01:20 UTC
+--- ui/ozone/platform/wayland/host/wayland_frame_manager.cc.orig	2025-10-02 04:28:32 UTC
 +++ ui/ozone/platform/wayland/host/wayland_frame_manager.cc
-@@ -460,8 +460,10 @@ std::optional<bool> WaylandFrameManager::ApplySurfaceC
+@@ -462,8 +462,10 @@ std::optional<bool> WaylandFrameManager::ApplySurfaceC
    surface->UpdateBufferDamageRegion(
        gfx::ToEnclosingRectIgnoringError(surface_damage));
  

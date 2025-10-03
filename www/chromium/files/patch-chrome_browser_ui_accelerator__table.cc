@@ -1,5 +1,5 @@
---- chrome/browser/ui/views/accelerator_table.cc.orig	2025-07-02 06:08:04 UTC
-+++ chrome/browser/ui/views/accelerator_table.cc
+--- chrome/browser/ui/accelerator_table.cc.orig	2025-10-02 04:28:32 UTC
++++ chrome/browser/ui/accelerator_table.cc
 @@ -72,11 +72,11 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_S, ui::EF_PLATFORM_ACCELERATOR, IDC_SAVE_PAGE},
      {ui::VKEY_9, ui::EF_PLATFORM_ACCELERATOR, IDC_SELECT_LAST_TAB},

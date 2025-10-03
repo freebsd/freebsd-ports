@@ -1,15 +1,16 @@
---- third_party/webrtc/rtc_base/cpu_info.cc.orig	2025-09-06 10:01:20 UTC
+--- third_party/webrtc/rtc_base/cpu_info.cc.orig	2025-10-02 04:28:32 UTC
 +++ third_party/webrtc/rtc_base/cpu_info.cc
-@@ -36,7 +36,7 @@
- #if defined(WEBRTC_ARCH_X86_FAMILY) && defined(_MSC_VER)
+@@ -37,7 +37,9 @@
  #include <intrin.h>
  #endif
--#if defined(WEBRTC_ARCH_ARM_FAMILY) && defined(WEBRTC_LINUX)
-+#if defined(WEBRTC_ARCH_ARM_FAMILY) && defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD)
+ #if defined(WEBRTC_ARCH_ARM_FAMILY) && defined(WEBRTC_LINUX)
++#if !defined(WEBRTC_BSD)
  #include <asm/hwcap.h>
++#endif
  #include <sys/auxv.h>
  #endif
-@@ -178,7 +178,11 @@ bool Supports(ISA instruction_set_architecture) {
+ 
+@@ -178,7 +180,11 @@ bool Supports(ISA instruction_set_architecture) {
      return 0 != (android_getCpuFeatures() & ANDROID_CPU_ARM_FEATURE_NEON);
  #elif defined(WEBRTC_LINUX)
      uint64_t hwcap = 0;

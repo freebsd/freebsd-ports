@@ -1,6 +1,6 @@
---- ui/platform_window/platform_window_delegate.cc.orig	2025-04-04 08:52:13 UTC
+--- ui/platform_window/platform_window_delegate.cc.orig	2025-10-02 04:28:32 UTC
 +++ ui/platform_window/platform_window_delegate.cc
-@@ -56,7 +56,7 @@ gfx::Insets PlatformWindowDelegate::CalculateInsetsInD
+@@ -58,7 +58,7 @@ gfx::Insets PlatformWindowDelegate::CalculateInsetsInD
    return gfx::Insets();
  }
  
