@@ -1,9 +1,8 @@
 PORTNAME=	xnec2c
-PORTVERSION=	4.4.16
 DISTVERSIONPREFIX=	v
+DISTVERSION=	4.4.17
 CATEGORIES=	comms hamradio
-MASTER_SITES=	https://www.xnec2c.org/releases/ \
-		LOCAL/db
+MASTER_SITES=	https://www.xnec2c.org/releases/
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Used to calculate antenna patterns useful to ham radio
@@ -14,17 +13,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf desktop-file-utils gettext gmake gnome pkgconfig \
 		shared-mime-info
+USE_GNOME=	cairo gdkpixbuf glib20 gtk30 intltool
 
-GNU_CONFIGURE=			yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ENV+=			LIBS=-lexecinfo
-USE_GNOME=			cairo gdkpixbuf glib20 gtk30 intltool
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	LIBS=-lexecinfo
+
+PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+OPTIONS_SUB=	yes
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -36,5 +33,13 @@ post-install-DOCS-on:
 	excitation.png nec2_edit.png web-heading.png wire.png
 	${INSTALL_DATA} ${WRKSRC}/doc/images/$f ${STAGEDIR}${DOCSDIR}/images
 .endfor
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${MV} ${STAGEDIR}${DATADIR}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+	${RM} -r ${STAGEDIR}${DATADIR} # Remove pre-installed examples
+
+post-install-EXAMPLES-off:
+	${RM} -r ${STAGEDIR}${DATADIR} # Remove pre-installed examples
 
 .include <bsd.port.mk>
