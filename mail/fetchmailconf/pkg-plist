@@ -3,3 +3,4 @@ share/man/man1/fetchmailconf.1.gz
 %%PYTHON_SITELIBDIR%%/fetchmailconf.py
 %%PYTHON_SITELIBDIR%%/fetchmailconf.pyc
 %%PYTHON_SITELIBDIR%%/fetchmailconf.pyo
+@comment %%PYTHON_SITELIBDIR%%/__pycache__/fetchmailconf%%PYTHON_TAG%%.opt-2.pyc
