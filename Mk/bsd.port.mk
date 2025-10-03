@@ -1081,7 +1081,7 @@ LD+=		--sysroot=${CROSS_SYSROOT}
 STRIP_CMD=	${CROSS_BINUTILS_PREFIX}strip
 # only bmake support the below
 STRIPBIN=	${STRIP_CMD}
-.export.env STRIPBIN
+.export-env STRIPBIN
 .endif
 
 #
