@@ -1,7 +1,7 @@
 PORTNAME=	storcli
 DISTVERSION=	7.3503
 CATEGORIES=	sysutils
-MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_nvme_12g_p35/
+MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_nvme_12g_p36/
 DISTNAME=	STORCLI_SAS3.5_P36
 DIST_SUBDIR=	${PORTNAME}${DISTVERSION}
 
@@ -33,7 +33,7 @@ BINSRC=		${WRKSRC}/${DISTNAME}/univ_viva_cli_rel/Unified_storcli_all_os
 DOWNLOAD_URL=	https://docs.broadcom.com/docs/${DISTNAME}${EXTRACT_SUFX}
 IGNORE=		you must manually fetch the distribution file \
 		(${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, \
-		place it in ${DISTDIR} and then run make again
+		place it in ${DISTDIR}/${DIST_SUBDIR} and then run make again
 .endif
 
 post-extract:
