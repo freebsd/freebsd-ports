@@ -180,11 +180,13 @@
       <cvename>CVE-2025-9230</cvename>
       <cvename>CVE-2025-9231</cvename>
       <cvename>CVE-2025-9232</cvename>
+      <freebsdsa>SA-25:08.openssl</freebsdsa>
       <url>https://openssl-library.org/news/secadv/20250930.txt</url>
     </references>
     <dates>
       <discovery>2025-09-30</discovery>
       <entry>2025-10-01</entry>
+      <modified>2025-10-03</modified>
     </dates>
   </vuln>
 
