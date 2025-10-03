@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 LIB_DEPENDS=	libsimage.so:graphics/simage
 
-USES=		cmake gl openal:al libtool pathfix xorg
+USES=		cmake gl openal:al pathfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin3d

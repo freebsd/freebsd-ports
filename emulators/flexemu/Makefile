@@ -9,7 +9,7 @@ WWW=		https://flexemu.neocities.org/
 
 LICENSE=	GPLv2
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl libtool \
+USES=		cmake compiler:c++17-lang desktop-file-utils gl \
 		ncurses qt:6 shared-mime-info xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	aladur

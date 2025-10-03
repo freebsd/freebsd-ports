@@ -16,7 +16,7 @@ BUILD_DEPENDS=	check>0:devel/check
 
 LIB_DEPENDS=	libidn2.so:dns/libidn2 \
 		libunbound.so:dns/unbound
-USES=		compiler:c11 libtool pathfix ssl cmake
+USES=		compiler:c11 pathfix ssl cmake
 
 SOMAJVER=	10
 SOVERSION=	${SOMAJVER}.2.0
