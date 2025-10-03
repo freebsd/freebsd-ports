@@ -1,5 +1,5 @@
 LDView is a real-time 3D viewer for displaying LDraw models using
-hardware-accellerated 3D graphics. For information on LDraw, please visit
+hardware-accelerated 3D graphics. For information on LDraw, please visit
 www.ldraw.org, the centralized LDraw information site.
 
 The program can read LDraw LDR/DAT files as well as MPD files. It then allows

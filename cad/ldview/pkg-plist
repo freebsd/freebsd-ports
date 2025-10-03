@@ -8,14 +8,14 @@ share/icons/gnome/32x32/mimetypes/gnome-mime-application-x-multipart-ldraw.png
 %%DATADIR%%/ChangeHistory.html
 %%DATADIR%%/Help.html
 %%DATADIR%%/LDViewMessages.ini
-%%DATADIR%%/LDViewMessages_cz.ini
+%%DATADIR%%/LDViewMessages_cs.ini
 %%DATADIR%%/LDViewMessages_de.ini
 %%DATADIR%%/LDViewMessages_hu.ini
 %%DATADIR%%/LDViewMessages_it.ini
 %%DATADIR%%/LGEO.xml
 %%DATADIR%%/Readme.txt
 %%DATADIR%%/SansSerif.fnt
-%%DATADIR%%/ldview_cz.qm
+%%DATADIR%%/ldview_cs.qm
 %%DATADIR%%/ldview_de.qm
 %%DATADIR%%/ldview_en.qm
 %%DATADIR%%/ldview_hu.qm
