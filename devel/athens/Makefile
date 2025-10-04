@@ -1,6 +1,7 @@
 PORTNAME=	athens
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -13,13 +14,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:1.23,modules
 USE_RC_SUBR=	${PORTNAME}
 
-BUILD_DATE=	2025-09-13-00:00:00-UTC
-
 GO_MODULE=	github.com/gomods/${PORTNAME}
 GO_TARGET=	./cmd/proxy
 GO_BUILDFLAGS=	-ldflags " \
 		-X github.com/gomods/${PORTNAME}/pkg/build.version=${DISTVERSION} \
 		-X github.com/gomods/${PORTNAME}/pkg/build.buildDate=${BUILD_DATE}"
+
+SUB_LIST=	ATHENS_USER=${USERS} \
+		ATHENS_GROUP=${GROUPS}
+
+USERS=		${PORTNAME}
+GROUPS=		${PORTNAME}
+
+BUILD_DATE=	2025-09-13-00:00:00-UTC
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/proxy ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

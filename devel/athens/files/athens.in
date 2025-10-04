@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # PROVIDE: athens
-# REQUIRE: networking
+# REQUIRE: LOGIN networking
 # KEYWORD: shutdown
 #
 # athens_enable (bool):
@@ -12,17 +12,28 @@
 #   Default value %%ETCDIR%%/athens.toml
 #   Path to the athens configuration file
 #
+# athens_user (string)
+#   This is the user that athens runs as
+#   Set to %%ATHENS_USER%% by default
+#
+# athens_group (string)
+#   This is the group that athens runs as
+#   Set to %%ATHENS_GROUP%% by default
 
 . /etc/rc.subr
 
-: ${athens_enable:="NO"}
-: ${athens_config:="%%ETCDIR%%/athens.toml"}
-
 name=athens
 rcvar=athens_enable
+
+: ${athens_enable:="NO"}
+: ${athens_config:="%%ETCDIR%%/athens.toml"}
+: ${athens_user:=%%ATHENS_USER%%}
+: ${athens_group:=%%ATHENS_GROUP%%}
+: ${athens_pidfile:="/var/run/athens.pid"}
+
 athens_command="%%PREFIX%%/bin/athens -config_file ${athens_config}"
 command="/usr/sbin/daemon"
-command_args="-S ${athens_command}"
+command_args="-p ${athens_pidfile} -u ${athens_user} -S ${athens_command}"
 
 PATH="${PATH}:%%PREFIX%%/bin"
 
