@@ -74,7 +74,8 @@ X11_LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor \
 			libxcb-icccm.so:x11/xcb-util-wm \
 			libxcb-image.so:x11/xcb-util-image \
 			libxcb-keysyms.so:x11/xcb-util-keysyms \
-			libxcb-render-util.so:x11/xcb-util-renderutil
+			libxcb-render-util.so:x11/xcb-util-renderutil \
+			libxcb-util.so:x11/xcb-util
 X11_USES=		xorg
 X11_USE=		XORG=ice,pixman,sm,x11,xau,xcb,xcomposite,xcursor,xdamage,xdmcp,xext,xfixes,xi,xinerama,xrandr,xrender
 X11_CMAKE_BOOL=		FEATURE_xcb \

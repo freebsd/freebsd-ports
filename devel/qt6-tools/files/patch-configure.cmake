@@ -15,11 +15,11 @@ Call Stack (most recent call first):
 
 Regressed by: https://code.qt.io/cgit/qt/qttools.git/commit/?h=6.6.0&id=ff5c080c2eb9267c43da6fafe953bf50076443c4
 
---- configure.cmake.orig	2025-02-19 09:54:25 UTC
+--- configure.cmake.orig	2025-09-25 00:29:00 UTC
 +++ configure.cmake
-@@ -1,6 +1,11 @@
- # Copyright (C) 2022 The Qt Company Ltd.
- # SPDX-License-Identifier: BSD-3-Clause
+@@ -4,6 +4,11 @@ include(${CMAKE_CURRENT_LIST_DIR}/src/qdoc/cmake/QDocC
+ # Include QDoc-specific configuration early (needed for feature definitions)
+ include(${CMAKE_CURRENT_LIST_DIR}/src/qdoc/cmake/QDocConfiguration.cmake)
  
 +#### Libraries
 +
@@ -29,7 +29,7 @@ Regressed by: https://code.qt.io/cgit/qt/qttools.git/commit/?h=6.6.0&id=ff5c080c
  #### Tests
  
  qt_find_package(WrapLibClang 8 PROVIDED_TARGETS WrapLibClang::WrapLibClang)
-@@ -8,7 +13,6 @@ endif()
+@@ -11,7 +16,6 @@ endif()
  if(TARGET WrapLibClang::WrapLibClang)
      set(TEST_libclang "ON" CACHE BOOL "Required libclang version found." FORCE)
  endif()

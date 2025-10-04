@@ -122,9 +122,12 @@
 %%QT_DOCDIR%%/qtdoc/images/bullet_dn.png
 %%QT_DOCDIR%%/qtdoc/images/bullet_sq.png
 %%QT_DOCDIR%%/qtdoc/images/car_configurator_overview.png
+%%QT_DOCDIR%%/qtdoc/images/coffee_machine_emptycup.png
 %%QT_DOCDIR%%/qtdoc/images/coffee_machine_modify.png
 %%QT_DOCDIR%%/qtdoc/images/coffee_machine_overview.png
 %%QT_DOCDIR%%/qtdoc/images/coffee_machine_selection.png
+%%QT_DOCDIR%%/qtdoc/images/coffee_machine_selection_android_landscape.png
+%%QT_DOCDIR%%/qtdoc/images/coffee_machine_selection_windows.png
 %%QT_DOCDIR%%/qtdoc/images/colorpalette_editing.png
 %%QT_DOCDIR%%/qtdoc/images/colorpalette_listing.png
 %%QT_DOCDIR%%/qtdoc/images/colorpalette_urlselection.png

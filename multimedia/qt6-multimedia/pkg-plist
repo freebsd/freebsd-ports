@@ -348,7 +348,6 @@ lib/cmake/Qt6/FindMMRenderer.cmake
 lib/cmake/Qt6/FindMMRendererCore.cmake
 lib/cmake/Qt6/FindPipeWire.cmake
 lib/cmake/Qt6/FindVAAPI.cmake
-lib/cmake/Qt6/FindWMF.cmake
 lib/cmake/Qt6/FindWrapBundledResonanceAudioConfigExtra.cmake
 lib/cmake/Qt6/FindWrapPulseAudio.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtMultimediaTestsConfig.cmake

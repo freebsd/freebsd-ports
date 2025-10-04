@@ -1406,12 +1406,6 @@ lib/cmake/Qt63DRenderPrivate/Qt63DRenderPrivateTargets.cmake
 lib/cmake/Qt63DRenderPrivate/Qt63DRenderPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt63DRenderPrivate/Qt63DRenderPrivateVersionlessTargets.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/Qt3DTestsConfig.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt63DQuickLogicpluginAdditionalTargetInfo.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt63DQuickLogicpluginConfig.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt63DQuickLogicpluginConfigVersion.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt63DQuickLogicpluginConfigVersionImpl.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt63DQuickLogicpluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt63DQuickLogicpluginTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickscene2dpluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickscene2dpluginConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickscene2dpluginConfigVersion.cmake
@@ -1448,6 +1442,12 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dinputpluginConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dinputpluginConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dinputpluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dinputpluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dlogicpluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dlogicpluginConfig.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dlogicpluginConfigVersion.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dlogicpluginConfigVersionImpl.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dlogicpluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dlogicpluginTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3drenderpluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3drenderpluginConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3drenderpluginConfigVersion.cmake
@@ -1572,7 +1572,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3drenderpluginTargets.cmake
 %%QT_QMLDIR%%/Qt3D/Input/libquick3dinputplugin.so
 %%QT_QMLDIR%%/Qt3D/Input/plugins.qmltypes
 %%QT_QMLDIR%%/Qt3D/Input/qmldir
-%%QT_QMLDIR%%/Qt3D/Logic/lib3dquicklogicplugin.so
+%%QT_QMLDIR%%/Qt3D/Logic/libquick3dlogicplugin.so
 %%QT_QMLDIR%%/Qt3D/Logic/plugins.qmltypes
 %%QT_QMLDIR%%/Qt3D/Logic/qmldir
 %%QT_QMLDIR%%/Qt3D/Render/libquick3drenderplugin.so

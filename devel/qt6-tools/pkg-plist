@@ -369,6 +369,7 @@ lib/cmake/Qt6Tools/Qt6ToolsConfig.cmake
 lib/cmake/Qt6Tools/Qt6ToolsConfigVersion.cmake
 lib/cmake/Qt6Tools/Qt6ToolsConfigVersionImpl.cmake
 lib/cmake/Qt6Tools/Qt6ToolsDependencies.cmake
+lib/cmake/Qt6Tools/Qt6ToolsExtraProperties.cmake
 lib/cmake/Qt6Tools/Qt6ToolsTargets.cmake
 lib/cmake/Qt6Tools/Qt6ToolsVersionlessAliasTargets.cmake
 lib/cmake/Qt6Tools/Qt6ToolsVersionlessTargets.cmake
