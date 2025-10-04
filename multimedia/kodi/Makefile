@@ -10,7 +10,8 @@ DIST_SUBDIR=	${PORTNAME}
 # do not forget to fix devel/kodi-platform when updating kodi
 
 PATCH_SITES=	https://github.com/xbmc/xbmc/commit/
-PATCHFILES=	269053ebbfd3cc4a3156a511f54ab7f08a09a730.patch:-p1
+PATCHFILES=	269053ebbfd3cc4a3156a511f54ab7f08a09a730.patch:-p1 \
+		957b4faa0b765bc91e64c6d33f07e853decae0d0.patch:-p1
 
 MAINTAINER=	yzrh@noema.org
 COMMENT=	Award winning media center application
