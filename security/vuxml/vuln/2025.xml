@@ -1,3 +1,49 @@
+  <vuln vid="c27c05a7-a0c8-11f0-8471-4ccc6adda413">
+    <topic>qt6-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt6-pdf</name>
+	<name>qt6-webengine</name>
+	<range><lt>6.9.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=130-based">
+	  <p>Backports for 9 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2025-9866: Determine whether to bypass redirect checks per request</li>
+	    <li>CVE-2025-10200: Use after free in Serviceworker</li>
+	    <li>CVE-2025-10201: Inappropriate implementation in Mojo</li>
+	    <li>CVE-2025-10500: Use after free in Dawn</li>
+	    <li>CVE-2025-10501: Use after free in WebRTC</li>
+	    <li>CVE-2025-10502: Heap buffer overflow in ANGLE</li>
+	    <li>CVE-2025-10890: Side-channel information leakage in V8 (1/2)</li>
+	    <li>CVE-2025-10891: Integer overflow in V8</li>
+	    <li>CVE-2025-10892: Integer overflow in V8</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9866</cvename>
+      <cvename>CVE-2025-10200</cvename>
+      <cvename>CVE-2025-10201</cvename>
+      <cvename>CVE-2025-10500</cvename>
+      <cvename>CVE-2025-10501</cvename>
+      <cvename>CVE-2025-10502</cvename>
+      <cvename>CVE-2025-10890</cvename>
+      <cvename>CVE-2025-10891</cvename>
+      <cvename>CVE-2025-10892</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=130-based</url>
+    </references>
+    <dates>
+      <discovery>2025-09-25</discovery>
+      <entry>2025-10-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="21fba35e-a05f-11f0-a8b8-a1ef31191bc1">
     <topic>fetchmail -- potential crash when authenticating to SMTP server</topic>
     <affects>
