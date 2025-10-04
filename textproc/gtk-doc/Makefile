@@ -1,31 +1,29 @@
 PORTNAME=	gtk-doc
-DISTVERSION=	1.33.2
-PORTREVISION=	3
+DISTVERSION=	1.35.1
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
-COMMENT=	Code documentation system, originally for GTK
-WWW=		https://www.gtk.org/
+COMMENT=	Documentation generator for GLib/GTK based code
+WWW=		https://gitlab.gnome.org/GNOME/gtk-doc
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
 		docbook-xml>0:textproc/docbook-xml \
-		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl \
-		itstool:textproc/itstool \
-		yelp-tools>=0:textproc/yelp-tools \
-		xsltproc:textproc/libxslt
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
+		docbook-xsl>0:textproc/docbook-xsl
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
 		docbook-xml>0:textproc/docbook-xml \
-		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl \
-		xsltproc:textproc/libxslt
+		docbook-xsl>0:textproc/docbook-xsl
 
-USES=		gettext-tools meson python pkgconfig tar:xz
+USES=		gnome meson python pkgconfig tar:xz
+USE_GNOME=	glib20 libxslt
 
-MESON_ARGS=	-Dtests=false
+MESON_ARGS=	-Dyelp_manual=false
 
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 NO_ARCH=	yes
 
 post-install:

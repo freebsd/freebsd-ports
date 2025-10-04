@@ -1,3 +1,3 @@
-TIMESTAMP = 1611398512
-SHA256 (gtk-doc-1.33.2.tar.xz) = cc1b709a20eb030a278a1f9842a362e00402b7f834ae1df4c1998a723152bf43
-SIZE (gtk-doc-1.33.2.tar.xz) = 507852
+TIMESTAMP = 1759575111
+SHA256 (gnome/gtk-doc-1.35.1.tar.xz) = 611c9f24edd6d88a8ae9a79d73ab0dc63c89b81e90ecc31d6b9005c5f05b25e2
+SIZE (gnome/gtk-doc-1.35.1.tar.xz) = 538008

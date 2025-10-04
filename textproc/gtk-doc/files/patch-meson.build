@@ -1,20 +1,20 @@
---- meson.build.orig	2020-11-17 13:56:44 UTC
+--- meson.build.orig	2024-03-05 18:09:52 UTC
 +++ meson.build
-@@ -7,7 +7,7 @@ project('gtk-doc', 'c',
+@@ -7,7 +7,7 @@ python = import('python')
  gnome = import('gnome')
- python = import('python') # Meson new Python module https://mesonbuild.com/Python-module.html
+ python = import('python')
  
--python3 = python.find_installation('python3')
-+python3 = python.find_installation()
+-python3 = python.find_installation('python3', modules: ['pygments'])
++python3 = python.find_installation(python.find_installation().full_path(), modules: ['pygments'])
  
- version = meson.project_version()
- package_name = meson.project_name()
-@@ -163,7 +163,7 @@ configure_file(
+ # Paths
+ srcdir = meson.current_source_dir()
+@@ -134,7 +134,7 @@ configure_file(
    output: 'gtk-doc.pc',
    configuration: gtkdoc_pc,
    install: true,
--  install_dir: pkgconfigdir,
-+  install_dir: join_paths(libdir, 'pkgconfig'),
+-  install_dir: get_option('datadir') / 'pkgconfig',
++  install_dir: join_paths(get_option('prefix'), 'libdata', 'pkgconfig'),
  )
  
  subdir('help')
