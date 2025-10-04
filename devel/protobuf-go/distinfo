@@ -1,5 +1,5 @@
-TIMESTAMP = 1757501214
-SHA256 (go/devel_protobuf-go/protobuf-go-v1.36.9/v1.36.9.mod) = 66595c5b637107cec82b3faddea4b105be9a3e113788eaf02252b409bd5d3f89
-SIZE (go/devel_protobuf-go/protobuf-go-v1.36.9/v1.36.9.mod) = 201
-SHA256 (go/devel_protobuf-go/protobuf-go-v1.36.9/v1.36.9.zip) = a8cd9b7f4b9e2d58784b247f4419b589e5b5286e986adc0477dd77b6994c5bb2
-SIZE (go/devel_protobuf-go/protobuf-go-v1.36.9/v1.36.9.zip) = 2254340
+TIMESTAMP = 1759523840
+SHA256 (go/devel_protobuf-go/protobuf-go-v1.36.10/v1.36.10.mod) = a75c105a852fbd8da8d8cfac09c2eab9a206cfd27ed37c973737e23f632ca96e
+SIZE (go/devel_protobuf-go/protobuf-go-v1.36.10/v1.36.10.mod) = 124
+SHA256 (go/devel_protobuf-go/protobuf-go-v1.36.10/v1.36.10.zip) = 9265fbe7d073ca8571f1a9c4b8e8f20b244c35ad913346892d688e58fe4b1f22
+SIZE (go/devel_protobuf-go/protobuf-go-v1.36.10/v1.36.10.zip) = 2263898
