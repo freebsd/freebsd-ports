@@ -70,7 +70,7 @@
       </body>
     </description>
     <references>
-      <!-- cvename has been requested from MITRE but not yet created <cvename>INSERT CVE RECORD IF AVAILABLE</cvename> -->
+      <cvename>CVE-2025-61962</cvename>
       <url>https://www.fetchmail.info/fetchmail-SA-2025-01.txt</url>
       <url>https://gitlab.com/fetchmail/fetchmail/-/raw/legacy_6x/fetchmail-SA-2025-01.txt?ref_type=heads</url>
       <url>https://gitlab.com/fetchmail/fetchmail/-/commit/4c3cebfa4e659fb778ca2cae0ccb3f69201609a8</url>
@@ -78,6 +78,7 @@
     <dates>
       <discovery>2025-10-02</discovery>
       <entry>2025-10-03</entry>
+      <modified>2025-10-04</modified>
     </dates>
   </vuln>
 
