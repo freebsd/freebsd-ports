@@ -1,6 +1,7 @@
 PORTNAME=	flexemu
 DISTVERSIONPREFIX=	V
 DISTVERSION=	3.30
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -24,12 +25,5 @@ USE_XORG=	ice sm x11
 CMAKE_ARGS+=	-DFLEXEMU_QT_MAJOR_VERSION=6 \
 		-DCLANG_TIDY=${LOCALBASE}/bin/clang-tidy${COMPILER_VERSION:C/.$//} \
 		-DRUN_CLANG_TIDY=${LOCALBASE}/llvm${COMPILER_VERSION:C/.$//}/bin/run-clang-tidy
-
-# test target has build errors atm.
-test:
-	@cd ${WRKDIR}/.build && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} ${CMAKE_SOURCE_PATH} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${BUILD_WRKSRC}/test
 
 .include <bsd.port.mk>
