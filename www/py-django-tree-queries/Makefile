@@ -1,5 +1,5 @@
 PORTNAME=	django-tree-queries
-DISTVERSION=	0.20.0
+DISTVERSION=	0.21.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,5 +21,11 @@ USE_PYTHON=	autoplist pep517
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=		yes
+
+OPTIONS_DEFINE=	ADMIN
+
+ADMIN_DESC=	Tree management support for Django admin
+
+ADMIN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-js-asset>0:www/py-django-js-asset@${PY_FLAVOR}
 
 .include <bsd.port.mk>
