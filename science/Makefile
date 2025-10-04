@@ -410,6 +410,7 @@
     SUBDIR += py-pymatgen-analysis-alloys
     SUBDIR += py-pymbd
     SUBDIR += py-pymol
+    SUBDIR += py-pynrrd
     SUBDIR += py-pyosf
     SUBDIR += py-pyphot
     SUBDIR += py-pyprecice
