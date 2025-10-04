@@ -28,6 +28,7 @@ include/hydrogen/core/Globals.h
 include/hydrogen/core/H2Exception.h
 include/hydrogen/core/Helpers/Files.h
 include/hydrogen/core/Helpers/Filesystem.h
+include/hydrogen/core/Helpers/Future.h
 include/hydrogen/core/Helpers/Legacy.h
 include/hydrogen/core/Helpers/Random.h
 include/hydrogen/core/Helpers/Translations.h
@@ -64,8 +65,8 @@ include/hydrogen/core/Preferences/Preferences.h
 include/hydrogen/core/Preferences/Theme.h
 include/hydrogen/core/Sampler/Interpolation.h
 include/hydrogen/core/Sampler/Sampler.h
-include/hydrogen/core/Smf/SMF.h
-include/hydrogen/core/Smf/SMFEvent.h
+include/hydrogen/core/SMF/SMF.h
+include/hydrogen/core/SMF/SMFEvent.h
 include/hydrogen/core/SoundLibrary/SoundLibraryDatabase.h
 include/hydrogen/core/SoundLibrary/SoundLibraryInfo.h
 include/hydrogen/core/Synth/Synth.h
@@ -75,7 +76,7 @@ include/hydrogen/core/Version.h
 include/hydrogen/core/rt_clock.h
 lib/libhydrogen-core-%%HYDROGEN_VERSION%%.so
 share/man/man1/hydrogen.1.gz
-share/appdata/org.hydrogenmusic.Hydrogen.appdata.xml
+share/metainfo/org.hydrogenmusic.Hydrogen.metainfo.xml
 share/applications/org.hydrogenmusic.Hydrogen.desktop
 %%DATADIR%%/data/click.wav
 %%DATADIR%%/data/demo_songs/GM_kit_Diddley.h2song
