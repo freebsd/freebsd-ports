@@ -1,4 +1,4 @@
-TIMESTAMP = 1743432741
+TIMESTAMP = 1759400337
 SHA256 (kodi/apache-groovy-binary-4.0.16.zip) = b8c3bec88a3f5a62235d9429a97e371032bf7216f3e28724823a9169dd10befc
 SIZE (kodi/apache-groovy-binary-4.0.16.zip) = 29793704
 SHA256 (kodi/commons-lang3-3.14.0-bin.tar.gz) = 317c3e3fcd5fcca3781a7996ff1e0c50c13244ee961e94e5f6f6d84b84733b16
@@ -15,3 +15,5 @@ SHA256 (kodi/xbmc-libdvdread-6.1.3-Next-Nexus-Alpha2-2_GH0.tar.gz) = 719130091e3
 SIZE (kodi/xbmc-libdvdread-6.1.3-Next-Nexus-Alpha2-2_GH0.tar.gz) = 110513
 SHA256 (kodi/269053ebbfd3cc4a3156a511f54ab7f08a09a730.patch) = 72282e0c3d407c3337861995f093fbd955a4cad668f432c665931a6f276772e3
 SIZE (kodi/269053ebbfd3cc4a3156a511f54ab7f08a09a730.patch) = 1257
+SHA256 (kodi/957b4faa0b765bc91e64c6d33f07e853decae0d0.patch) = dd1a61b6ea81a68bcfd84fb0c49d5153364c4838f90741ee5cb5d4ba8940e0fc
+SIZE (kodi/957b4faa0b765bc91e64c6d33f07e853decae0d0.patch) = 851
