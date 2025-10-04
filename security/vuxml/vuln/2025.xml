@@ -1,3 +1,222 @@
+  <vuln vid="0af2f18e-a119-11f0-9446-f02f7497ecda">
+    <topic>redis,valkey -- Out of bound read due to a bug in LUA</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+    <range><ge>8.2.0</ge><lt>8.2.2</lt></range>
+      </package>
+      <package>
+	<name>redis80</name>
+    <range><ge>8.0.0</ge><lt>8.0.4</lt></range>
+      </package>
+      <package>
+	<name>redis74</name>
+    <range><ge>7.4.0</ge><lt>7.4.6</lt></range>
+      </package>
+      <package>
+	<name>redis72</name>
+    <range><ge>7.2.0</ge><lt>7.2.11</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+    <range><ge>6.2.0</ge><lt>6.2.20</lt></range>
+      </package>
+      <package>
+	<name>valkey</name>
+    <range><lt>8.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>redis reports:</p>
+	<blockquote cite="https://github.com/redis/redis/security/advisories/GHSA-4c68-q8q8-3g4f">
+	  <p>
+	    An authenticated user may use a specially crafted LUA script to read
+	    out-of-bound data or crash the server and subsequent denial of
+	    service.
+	    The problem exists in all versions of Redis with Lua scripting
+	    An additional workaround to mitigate the problem without patching
+	    the redis-server executable is to prevent users from executing Lua
+	    scripts. This can be done using ACL to block a script by restricting
+	    both the EVAL and FUNCTION command families.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-46819</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-46819</url>
+    </references>
+    <dates>
+      <discovery>2025-10-03</discovery>
+      <entry>2025-10-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0258d37d-a118-11f0-9446-f02f7497ecda">
+    <topic>redis,valkey -- Running Lua function as a different user</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+    <range><ge>8.2.0</ge><lt>8.2.2</lt></range>
+      </package>
+      <package>
+	<name>redis80</name>
+    <range><ge>8.0.0</ge><lt>8.0.4</lt></range>
+      </package>
+      <package>
+	<name>redis74</name>
+    <range><ge>7.4.0</ge><lt>7.4.6</lt></range>
+      </package>
+      <package>
+	<name>redis72</name>
+    <range><ge>7.2.0</ge><lt>7.2.11</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+    <range><ge>6.2.0</ge><lt>6.2.20</lt></range>
+      </package>
+      <package>
+	<name>valkey</name>
+    <range><lt>8.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>redis reports:</p>
+    <blockquote cite="https://github.com/redis/redis/security/advisories/GHSA-qrv7-wcrx-q5jp">
+	  <p>
+	    An authenticated user may use a specially crafted Lua script to
+	    manipulate different LUA objects and potentially run their own code
+	    in the context of another user
+	    The problem exists in all versions of Redis with Lua scripting.
+	    An additional workaround to mitigate the problem without patching
+	    the redis-server executable is to prevent users from executing Lua
+	    scripts. This can be done using ACL to block a script by restricting
+	    both the EVAL and FUNCTION command families.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-46818</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-46818</url>
+    </references>
+    <dates>
+      <discovery>2025-10-03</discovery>
+      <entry>2025-10-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f6b8de04-a116-11f0-9446-f02f7497ecda">
+    <topic>redis,valkey -- Lua library commands may lead to integer overflow and potential RCE</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+    <range><ge>8.2.0</ge><lt>8.2.2</lt></range>
+      </package>
+      <package>
+	<name>redis80</name>
+    <range><ge>8.0.0</ge><lt>8.0.4</lt></range>
+      </package>
+      <package>
+	<name>redis74</name>
+    <range><ge>7.4.0</ge><lt>7.4.6</lt></range>
+      </package>
+      <package>
+	<name>redis72</name>
+    <range><ge>7.2.0</ge><lt>7.2.11</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+    <range><ge>6.2.0</ge><lt>6.2.20</lt></range>
+      </package>
+      <package>
+	<name>valkey</name>
+    <range><lt>8.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>redis reports:</p>
+	<blockquote cite="https://github.com/redis/redis/security/advisories/GHSA-m8fj-85cg-7vhp">
+	  <p>
+	    An authenticated user may use a specially crafted Lua script to
+	    cause an integer overflow and potentially lead to remote code
+	    execution
+	    The problem exists in all versions of Redis with Lua scripting.
+	    An additional workaround to mitigate the problem without patching
+	    the redis-server executable is to prevent users from executing Lua
+	    scripts. This can be done using ACL to block a script by restricting
+	    both the EVAL and FUNCTION command families.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-46817</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-46817</url>
+    </references>
+    <dates>
+      <discovery>2025-10-03</discovery>
+      <entry>2025-10-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="17e85cae-a115-11f0-9446-f02f7497ecda">
+    <topic>redis,valkey -- Lua Use-After-Free may lead to remote code execution</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+    <range><ge>8.2.0</ge><lt>8.2.2</lt></range>
+      </package>
+      <package>
+	<name>redis80</name>
+    <range><ge>8.0.0</ge><lt>8.0.4</lt></range>
+      </package>
+      <package>
+	<name>redis74</name>
+    <range><ge>7.4.0</ge><lt>7.4.6</lt></range>
+      </package>
+      <package>
+	<name>redis72</name>
+    <range><ge>7.2.0</ge><lt>7.2.11</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+    <range><ge>6.2.0</ge><lt>6.2.20</lt></range>
+      </package>
+      <package>
+	<name>valkey</name>
+    <range><lt>8.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>redis reports:</p>
+    <blockquote cite="https://github.com/redis/redis/security/advisories/GHSA-4789-qfc9-5f9q">
+      <p>
+	An authenticated user may use a specially crafted Lua script to
+	manipulate the garbage collector, trigger a use-after-free and
+	potentially lead to remote code execution.
+	The problem exists in all versions of Redis with Lua scripting.
+	An additional workaround to mitigate the problem without patching the
+	redis-server executable is to prevent users from executing Lua scripts.
+	This can be done using ACL to restrict EVAL and EVALSHA commands.
+      </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-49844</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-49844</url>
+    </references>
+    <dates>
+      <discovery>2025-10-03</discovery>
+      <entry>2025-10-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c27c05a7-a0c8-11f0-8471-4ccc6adda413">
     <topic>qt6-webengine -- Multiple vulnerabilities</topic>
     <affects>
