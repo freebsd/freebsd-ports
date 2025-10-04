@@ -2,7 +2,7 @@ PORTNAME=	libmpeg2
 PORTVERSION=	0.5.1
 PORTREVISION=	8
 CATEGORIES=	multimedia
-MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
+MASTER_SITES=	http://download.videolan.org/contrib/${PORTNAME}/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free library for decoding MPEG-2 and MPEG-1 video streams
