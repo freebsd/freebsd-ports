@@ -1,0 +1,8 @@
+ML Collections is a library of Python collections designed for ML usecases.
+
+ML Collections provides:
+* ConfigDict: A 'dict' with additional functionality for easier management
+  of configuration dictionaries
+* FrozenConfigDict: A configuration dictionary which is immutable
+* FieldReference: A way to reference a field in a nested data structure
+* lazy_imports: A mechanism to import modules when they are actually used

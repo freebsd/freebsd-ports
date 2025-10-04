@@ -501,6 +501,7 @@
     SUBDIR += py-mem0ai
     SUBDIR += py-mffpy
     SUBDIR += py-mixpanel
+    SUBDIR += py-ml-collections
     SUBDIR += py-mmcv
     SUBDIR += py-mmdet
     SUBDIR += py-mmengine
