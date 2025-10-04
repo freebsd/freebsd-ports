@@ -1,10 +1,10 @@
 bin/openrct2
 bin/openrct2-cli
 lib/libopenrct2.so
-share/applications/openrct2-savegame.desktop
-share/applications/openrct2-scenario.desktop
-share/applications/openrct2-uri.desktop
-share/applications/openrct2.desktop
+share/applications/io.openrct2.openrct2.desktop
+share/applications/io.openrct2.savegame.desktop
+share/applications/io.openrct2.scenario.desktop
+share/applications/io.openrct2.uri.desktop
 %%PORTDOCS%%%%DOCSDIR%%/PRIVACY.md
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/contributors.md
@@ -23,7 +23,7 @@ share/icons/hicolor/96x96/apps/openrct2.png
 share/icons/hicolor/scalable/apps/openrct2.svg
 share/man/man6/openrct2-cli.6.gz
 share/man/man6/openrct2.6.gz
-share/metainfo/openrct2.appdata.xml
+share/metainfo/io.openrct2.openrct2.appdata.xml
 share/mime/packages/openrct2.xml
 %%DATADIR%%/assetpack/openrct2.music.alternative.parkap
 %%DATADIR%%/assetpack/openrct2.music.cover.parkap
