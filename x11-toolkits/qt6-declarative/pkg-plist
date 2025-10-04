@@ -2991,14 +2991,6 @@ lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateVersionlessTargets.cmake
 %%QT_PLUGINDIR%%/qmltooling/libqmldbg_quickprofiler.so
 %%QT_PLUGINDIR%%/qmltooling/libqmldbg_server.so
 %%QT_PLUGINDIR%%/qmltooling/libqmldbg_tcp.so
-%%QT_QMLDIR%%/Assets/Downloader/libqmlassetdownloaderplugin.a
-%%QT_QMLDIR%%/Assets/Downloader/libqmlassetdownloaderplugin.prl
-%%DEBUG%%%%QT_QMLDIR%%/Assets/Downloader/objects-Debug/QmlAssetDownloader_resources_1/.qt/rcc/qrc_qmake_Assets_Downloader_init.cpp.o
-%%DEBUG%%%%QT_QMLDIR%%/Assets/Downloader/objects-Debug/QmlAssetDownloaderplugin_init/QmlAssetDownloaderplugin_init.cpp.o
-%%NO_DEBUG%%%%QT_QMLDIR%%/Assets/Downloader/objects-Release/QmlAssetDownloader_resources_1/.qt/rcc/qrc_qmake_Assets_Downloader_init.cpp.o
-%%NO_DEBUG%%%%QT_QMLDIR%%/Assets/Downloader/objects-Release/QmlAssetDownloaderplugin_init/QmlAssetDownloaderplugin_init.cpp.o
-%%QT_QMLDIR%%/Assets/Downloader/plugins.qmltypes
-%%QT_QMLDIR%%/Assets/Downloader/qmldir
 %%QT_QMLDIR%%/QML/plugins.qmltypes
 %%QT_QMLDIR%%/QML/qmldir
 %%QT_QMLDIR%%/QmlTime/qmldir
@@ -3006,6 +2998,14 @@ lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateVersionlessTargets.cmake
 %%QT_QMLDIR%%/Qt/labs/animation/liblabsanimationplugin.so
 %%QT_QMLDIR%%/Qt/labs/animation/plugins.qmltypes
 %%QT_QMLDIR%%/Qt/labs/animation/qmldir
+%%QT_QMLDIR%%/Qt/labs/assetdownloader/libqmlassetdownloaderplugin.a
+%%QT_QMLDIR%%/Qt/labs/assetdownloader/libqmlassetdownloaderplugin.prl
+%%DEBUG%%%%QT_QMLDIR%%/Qt/labs/assetdownloader/objects-Debug/QmlAssetDownloader_resources_1/.qt/rcc/qrc_qmake_Qt_labs_assetdownloader_init.cpp.o
+%%DEBUG%%%%QT_QMLDIR%%/Qt/labs/assetdownloader/objects-Debug/QmlAssetDownloaderplugin_init/QmlAssetDownloaderplugin_init.cpp.o
+%%NO_DEBUG%%%%QT_QMLDIR%%/Qt/labs/assetdownloader/objects-Release/QmlAssetDownloader_resources_1/.qt/rcc/qrc_qmake_Qt_labs_assetdownloader_init.cpp.o
+%%NO_DEBUG%%%%QT_QMLDIR%%/Qt/labs/assetdownloader/objects-Release/QmlAssetDownloaderplugin_init/QmlAssetDownloaderplugin_init.cpp.o
+%%QT_QMLDIR%%/Qt/labs/assetdownloader/plugins.qmltypes
+%%QT_QMLDIR%%/Qt/labs/assetdownloader/qmldir
 %%QT_QMLDIR%%/Qt/labs/folderlistmodel/libqmlfolderlistmodelplugin.so
 %%QT_QMLDIR%%/Qt/labs/folderlistmodel/plugins.qmltypes
 %%QT_QMLDIR%%/Qt/labs/folderlistmodel/qmldir
@@ -4013,6 +4013,7 @@ lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick/Controls/Fusion/impl/SliderGroove.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Fusion/impl/SliderHandle.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Fusion/impl/SwitchIndicator.qml
+%%QT_QMLDIR%%/QtQuick/Controls/Fusion/impl/TextFieldBackground.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Fusion/impl/libqtquickcontrols2fusionstyleimplplugin.so
 %%QT_QMLDIR%%/QtQuick/Controls/Fusion/impl/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/Controls/Fusion/impl/qmldir

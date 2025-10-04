@@ -5,6 +5,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtConcurrent/QtConcurrentFilter
 %%QT_INCDIR%%/QtConcurrent/QtConcurrentMap
 %%QT_INCDIR%%/QtConcurrent/QtConcurrentRun
+%%QT_INCDIR%%/QtConcurrent/QtConcurrentTask
 %%QT_INCDIR%%/QtConcurrent/QtConcurrentVersion
 %%QT_INCDIR%%/QtConcurrent/qtaskbuilder.h
 %%QT_INCDIR%%/QtConcurrent/qtconcurrent_global.h
@@ -968,8 +969,8 @@ bin/qmake6
 %%QT_INCDIR%%/QtFbSupport/QtFbSupportDepends
 %%QT_INCDIR%%/QtFbSupport/QtFbSupportVersion
 %%QT_INCDIR%%/QtFbSupport/qtfbsupportversion.h
-%%X11%%%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/atspiadaptor_p.h
-%%X11%%%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/dbusconnection_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/atspiadaptor_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/dbusconnection_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qabstractfileiconengine_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qabstractfileiconprovider_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qabstractlayoutstyleinfo_p.h
@@ -1123,11 +1124,11 @@ bin/qmake6
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshortcut_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qshortcutmap_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qsimpledrag_p.h
-%%X11%%%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qspi_constant_mappings_p.h
-%%X11%%%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qspi_struct_marshallers_p.h
-%%X11%%%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qspiaccessiblebridge_p.h
-%%X11%%%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qspiapplicationadaptor_p.h
-%%X11%%%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qspidbuscache_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qspi_constant_mappings_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qspi_struct_marshallers_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qspiaccessiblebridge_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qspiapplicationadaptor_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qspidbuscache_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qstandarditemmodel_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qstatictext_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qstatusnotifieritemadaptor_p.h
@@ -1444,9 +1445,9 @@ bin/qmake6
 %%QT_INCDIR%%/QtGui/QtGui
 %%QT_INCDIR%%/QtGui/QtGuiDepends
 %%QT_INCDIR%%/QtGui/QtGuiVersion
-%%X11%%%%QT_INCDIR%%/QtGui/bus_interface.h
-%%X11%%%%QT_INCDIR%%/QtGui/cache_adaptor.h
-%%X11%%%%QT_INCDIR%%/QtGui/deviceeventcontroller_adaptor.h
+%%QT_INCDIR%%/QtGui/bus_interface.h
+%%QT_INCDIR%%/QtGui/cache_adaptor.h
+%%QT_INCDIR%%/QtGui/deviceeventcontroller_adaptor.h
 %%QT_INCDIR%%/QtGui/properties_interface.h
 %%QT_INCDIR%%/QtGui/qabstractfileiconprovider.h
 %%QT_INCDIR%%/QtGui/qabstracttextdocumentlayout.h
@@ -1566,7 +1567,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtGui/qvulkanwindow.h
 %%QT_INCDIR%%/QtGui/qwindow.h
 %%QT_INCDIR%%/QtGui/qwindowdefs.h
-%%X11%%%%QT_INCDIR%%/QtGui/socket_interface.h
+%%QT_INCDIR%%/QtGui/socket_interface.h
 %%QT_INCDIR%%/QtInputSupport/%%FULLVER%%/QtInputSupport/private/devicehandlerlist_p.h
 %%QT_INCDIR%%/QtInputSupport/%%FULLVER%%/QtInputSupport/private/qevdevkeyboard_defaultmap_p.h
 %%QT_INCDIR%%/QtInputSupport/%%FULLVER%%/QtInputSupport/private/qevdevkeyboardhandler_p.h
@@ -3503,6 +3504,7 @@ lib/cmake/Qt6XmlPrivate/Qt6XmlPrivateVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/features/android/spec_post.prf
 %%QT_MKSPECDIR%%/features/benchmark.prf
 %%QT_MKSPECDIR%%/features/build_pass.prf
+%%QT_MKSPECDIR%%/features/ccache.prf
 %%QT_MKSPECDIR%%/features/cmake_functions.prf
 %%QT_MKSPECDIR%%/features/cmdline.prf
 %%QT_MKSPECDIR%%/features/configure.prf
@@ -3601,7 +3603,6 @@ lib/cmake/Qt6XmlPrivate/Qt6XmlPrivateVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/features/uikit/xcodebuild.mk
 %%QT_MKSPECDIR%%/features/uikit/xcodebuild.prf
 %%QT_MKSPECDIR%%/features/unix/bsymbolic_functions.prf
-%%QT_MKSPECDIR%%/features/unix/ccache.prf
 %%QT_MKSPECDIR%%/features/unix/hide_symbols.prf
 %%QT_MKSPECDIR%%/features/unix/largefile.prf
 %%QT_MKSPECDIR%%/features/unix/no_direct_extern_access.prf

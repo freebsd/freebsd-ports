@@ -133,6 +133,7 @@ lib/cmake/Qt6Connectivity/Qt6ConnectivityAdditionalTargetInfo.cmake
 lib/cmake/Qt6Connectivity/Qt6ConnectivityConfig.cmake
 lib/cmake/Qt6Connectivity/Qt6ConnectivityConfigVersion.cmake
 lib/cmake/Qt6Connectivity/Qt6ConnectivityConfigVersionImpl.cmake
+lib/cmake/Qt6Connectivity/Qt6ConnectivityExtraProperties.cmake
 lib/cmake/Qt6Connectivity/Qt6ConnectivityTargets.cmake
 lib/cmake/Qt6Connectivity/Qt6ConnectivityVersionlessAliasTargets.cmake
 lib/cmake/Qt6Connectivity/Qt6ConnectivityVersionlessTargets.cmake

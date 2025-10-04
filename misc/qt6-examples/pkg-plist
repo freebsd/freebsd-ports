@@ -1158,7 +1158,10 @@
 %%QT_EXAMPLEDIR%%/demos/coffee/doc/images/coffee_machine_emptycup.png
 %%QT_EXAMPLEDIR%%/demos/coffee/doc/images/coffee_machine_modify.png
 %%QT_EXAMPLEDIR%%/demos/coffee/doc/images/coffee_machine_overview.png
+%%QT_EXAMPLEDIR%%/demos/coffee/doc/images/coffee_machine_overview_landscape.png
 %%QT_EXAMPLEDIR%%/demos/coffee/doc/images/coffee_machine_selection.png
+%%QT_EXAMPLEDIR%%/demos/coffee/doc/images/coffee_machine_selection_android_landscape.png
+%%QT_EXAMPLEDIR%%/demos/coffee/doc/images/coffee_machine_selection_windows.png
 %%QT_EXAMPLEDIR%%/demos/coffee/doc/src/coffee.qdoc
 %%QT_EXAMPLEDIR%%/demos/coffee/images/Cups/card_cup_dark.svg
 %%QT_EXAMPLEDIR%%/demos/coffee/images/Cups/card_cup_light.svg
@@ -1729,6 +1732,12 @@
 %%QT_EXAMPLEDIR%%/demos/qtjennydemo/CMakeLists.txt
 %%QT_EXAMPLEDIR%%/demos/qtjennydemo/Main.qml
 %%QT_EXAMPLEDIR%%/demos/qtjennydemo/android/AndroidManifest.xml
+%%QT_EXAMPLEDIR%%/demos/qtjennydemo/android/res/drawable-hdpi/icon.png
+%%QT_EXAMPLEDIR%%/demos/qtjennydemo/android/res/drawable-ldpi/icon.png
+%%QT_EXAMPLEDIR%%/demos/qtjennydemo/android/res/drawable-mdpi/icon.png
+%%QT_EXAMPLEDIR%%/demos/qtjennydemo/android/res/drawable-xhdpi/icon.png
+%%QT_EXAMPLEDIR%%/demos/qtjennydemo/android/res/drawable-xxhdpi/icon.png
+%%QT_EXAMPLEDIR%%/demos/qtjennydemo/android/res/drawable-xxxhdpi/icon.png
 %%QT_EXAMPLEDIR%%/demos/qtjennydemo/backend.cpp
 %%QT_EXAMPLEDIR%%/demos/qtjennydemo/backend.h
 %%QT_EXAMPLEDIR%%/demos/qtjennydemo/doc/images/qtjennydemo_overview.png

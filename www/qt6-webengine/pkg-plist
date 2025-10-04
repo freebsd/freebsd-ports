@@ -104,7 +104,6 @@
 %%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebengineprofileprototype_p.h
 %%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebengineprofileprototype_p_p.h
 %%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebenginescriptcollection_p.h
-%%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebenginescriptcollection_p_p.h
 %%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebenginesettings_p.h
 %%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebenginesingleton_p.h
 %%QT_INCDIR%%/QtWebEngineQuick/%%FULLVER%%/QtWebEngineQuick/private/qquickwebenginetouchhandle_p.h

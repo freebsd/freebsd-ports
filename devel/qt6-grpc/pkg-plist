@@ -1,5 +1,6 @@
 %%QT_INCDIR%%/QtGrpc/%%FULLVER%%/QtGrpc/private/qabstractgrpcchannel_p.h
 %%QT_INCDIR%%/QtGrpc/%%FULLVER%%/QtGrpc/private/qgrpcoperation_p.h
+%%QT_INCDIR%%/QtGrpc/%%FULLVER%%/QtGrpc/private/qgrpcoperationcontext_p.h
 %%QT_INCDIR%%/QtGrpc/%%FULLVER%%/QtGrpc/private/qtgrpc-config_p.h
 %%QT_INCDIR%%/QtGrpc/%%FULLVER%%/QtGrpc/private/qtgrpclogging_p.h
 %%QT_INCDIR%%/QtGrpc/QAbstractGrpcChannel
