@@ -15,6 +15,7 @@ ALL_TARGET=	static sharedlib
 INSTALL_TARGET=	install install-sharedlib
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS}" \
+		LDFLAGS="${LDFLAGS}" \
 		mandir=${PREFIX}/share/man \
 		pkgconfdir=${PREFIX}/libdata/pkgconfig \
 		prefix=${PREFIX}
