@@ -19214,6 +19214,7 @@ lib/webmin/spam/edit_setup.cgi
 lib/webmin/spam/edit_simple.cgi
 lib/webmin/spam/edit_user.cgi
 lib/webmin/spam/edit_white.cgi
+lib/webmin/spam/help/help.zip
 lib/webmin/spam/images/awl.gif
 lib/webmin/spam/images/db.gif
 lib/webmin/spam/images/header.gif
