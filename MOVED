@@ -4793,3 +4793,4 @@ net/bosh-cli||2025-10-01|Has expired: Not updated in years, no demand for them
 net/bosh-bootloader||2025-10-01|Has expired: Not updated in years, no demand for them
 net/cf||2025-10-01|Has expired: Not updated in years, no demand for them
 net/concourse-fly||2025-10-01|Has expired: Not updated in years, no demand for them
+net/netatalk3|net/netatalk4|2025-10-05|Has expired: End of support; use net/netatalk4 instead
