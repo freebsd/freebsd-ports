@@ -67,7 +67,7 @@ EXTRA_PATCHES+=	${FILESDIR}/rts-skip.patch
 
 post-patch:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
-	@${ECHO_CMD} "${CC} ${STRIP}" > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} "${CC} ${LDFLAGS} ${STRIP}" > ${WRKSRC}/conf-ld
 
 do-install:
 	(while read cmd; do \
