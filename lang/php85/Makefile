@@ -1,5 +1,5 @@
 PORTNAME=	php85
-DISTVERSION=	8.5.0beta3
+DISTVERSION=	8.5.0RC1
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	https://downloads.php.net/~edorian/ \
