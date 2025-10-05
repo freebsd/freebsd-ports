@@ -279,6 +279,7 @@
     SUBDIR += tasksh
     SUBDIR += taskwarrior
     SUBDIR += taskwarrior-tui
+    SUBDIR += tatuin
     SUBDIR += teapot
     SUBDIR += terminal-image-viewer
     SUBDIR += thinkingrock
