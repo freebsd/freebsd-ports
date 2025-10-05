@@ -1,0 +1,30 @@
+--- Makefile.orig	2024-06-01 14:02:02 UTC
++++ Makefile
+@@ -1,6 +1,6 @@ PACKAGE = z80pack
+ PACKAGE = z80pack
+-PREFIX = $(HOME)
+-#PREFIX = /usr/local
++#PREFIX = $(HOME)
++PREFIX = /usr/local
+ EXEC_PREFIX = $(PREFIX)
+ BINDIR = $(EXEC_PREFIX)/bin
+ DATAROOTDIR = $(PREFIX)/share
+@@ -109,12 +109,12 @@ install:
+ FORCE:
+ 
+ install:
+-#	@set -e; for subdir in $(TOOLS) $(LIBS) $(BIOSES) $(MISC); do \
+-#		$(MAKE) -C $$subdir "PREFIX=$(PREFIX)" install; \
+-#	done
+-#	@set -e; for subdir in $(MACHINES); do \
+-#		$(MAKE) -C $$subdir/srcsim "PREFIX=$(PREFIX)" install; \
+-#	done
++	@set -e; for subdir in $(TOOLS) $(LIBS) $(BIOSES) $(MISC); do \
++		$(MAKE) -C $$subdir "PREFIX=$(PREFIX)" install; \
++	done
++	@set -e; for subdir in $(MACHINES); do \
++		$(MAKE) -C $$subdir/srcsim "PREFIX=$(PREFIX)" install; \
++	done
+ 
+ uninstall:
+ #	@set -e; for subdir in $(TOOLS) $(LIBS) $(BIOSES) $(MISC); do \

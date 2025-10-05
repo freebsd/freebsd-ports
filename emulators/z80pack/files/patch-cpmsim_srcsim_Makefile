@@ -1,0 +1,24 @@
+--- cpmsim/srcsim/Makefile.orig	2024-06-01 14:02:02 UTC
++++ cpmsim/srcsim/Makefile
+@@ -13,7 +13,7 @@ CPROG = $(MACHINE)sim
+ # http://www.gnu.org/prep/standards/html_node/Directory-Variables.html
+ PACKAGE = z80pack
+ CPROG = $(MACHINE)sim
+-PREFIX ?= /usr/local
++PREFIX = /usr/local
+ EXEC_PREFIX = $(PREFIX)
+ BINDIR = $(EXEC_PREFIX)/bin
+ DATAROOTDIR = $(PREFIX)/share
+@@ -103,8 +103,10 @@ install: $(SIM)
+ build: _rm_obj all
+ 
+ install: $(SIM)
+-#	$(INSTALL) -d $(DESTDIR)$(BINDIR)
+-#	$(INSTALL_PROGRAM) -s $(SIM) $(DESTDIR)$(BINDIR)
++	$(INSTALL) -d $(DESTDIR)$(BINDIR)
++	$(INSTALL_PROGRAM) -s $(SIM) $(DESTDIR)$(BINDIR)
++	$(INSTALL) -d $(DESTDIR)$(DISKS_DIR)
++	$(INSTALL_PROGRAM) ../disks/library/*.dsk $(DESTDIR)$(DISKS_DIR)
+ 
+ uninstall:
+ #	rm -f $(DESTDIR)$(BINDIR)/$(CPROG)
