@@ -197,8 +197,7 @@ share/locale/yo/LC_MESSAGES/io.elementary.terminal.mo
 share/locale/za/LC_MESSAGES/io.elementary.terminal.mo
 share/locale/zh/LC_MESSAGES/io.elementary.terminal.mo
 share/locale/zh_CN/LC_MESSAGES/io.elementary.terminal.mo
-share/locale/zh_HK/LC_MESSAGES/io.elementary.terminal.mo
 share/locale/zh_TW/LC_MESSAGES/io.elementary.terminal.mo
 share/locale/zu/LC_MESSAGES/io.elementary.terminal.mo
 share/man/man1/io.elementary.terminal.1.gz
-share/metainfo/io.elementary.terminal.appdata.xml
+share/metainfo/io.elementary.terminal.metainfo.xml

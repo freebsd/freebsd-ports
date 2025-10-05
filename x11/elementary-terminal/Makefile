@@ -1,5 +1,5 @@
 PORTNAME=	terminal
-DISTVERSION=	6.2.0
+DISTVERSION=	7.1.2
 CATEGORIES=	x11
 PKGNAMEPREFIX=	elementary-
 
@@ -15,7 +15,8 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libpcre2-posix.so:devel/pcre2
 
-USES=		desktop-file-utils gettext gnome meson pkgconfig vala:build
+USES=		desktop-file-utils gettext-tools gnome meson pkgconfig \
+		vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 USE_GNOME=	cairo gdkpixbuf glib20 gtk30 vte3

@@ -1,6 +1,6 @@
---- src/meson.build.orig	2023-04-04 17:39:57 UTC
+--- src/meson.build.orig	2025-02-13 20:52:15 UTC
 +++ src/meson.build
-@@ -37,34 +37,3 @@ executable(
+@@ -40,36 +40,3 @@ executable(
      dependencies: terminal_deps,
      install : true
  )
@@ -35,3 +35,5 @@
 -    protocol: 'tap',
 -    depends: test_schemas
 -)
+-
+-subdir('tests')
