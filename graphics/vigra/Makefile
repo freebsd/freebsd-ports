@@ -1,10 +1,9 @@
 PORTNAME=	vigra
-DISTVERSIONPREFIX=v
-DISTVERSION=	1.12.1
-PORTREVISION=	3
+DISTVERSIONPREFIX=	Version-
+DISTVERSION=	1-12-2
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
 WWW=		https://ukoethe.github.io/vigra/
 
@@ -17,7 +16,6 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 USES=		cmake compiler:c++14-lang python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	ukoethe
-GH_TAGNAME=	8acd73a
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/Imath
