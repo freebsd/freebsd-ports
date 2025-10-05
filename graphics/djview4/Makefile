@@ -4,7 +4,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/djvu/DjView/${PORTVERSION}
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone Djvu viewer and plugin based on Qt toolkit
 WWW=		https://djvu.sourceforge.net/
 
