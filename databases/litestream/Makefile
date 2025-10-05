@@ -4,7 +4,7 @@ DISTVERSION=	0.3.13
 PORTREVISION=	8
 CATEGORIES=	databases
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone streaming replication tool for SQLite
 WWW=		https://litestream.io/
 
