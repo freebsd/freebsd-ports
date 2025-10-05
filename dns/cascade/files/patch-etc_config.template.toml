@@ -1,0 +1,89 @@
+--- etc/config.template.toml.orig	2025-10-05 12:23:15 UTC
++++ etc/config.template.toml
+@@ -3,14 +3,14 @@
+ #
+ # This is a template file.  Uncommented lines demonstrate the default settings.
+ # You can copy this and customize it to your liking, or write a configuration
+-# file from scratch using this as a reference.  
++# file from scratch using this as a reference.
+ 
+ # The configuration file version.
+ #
+ # This is the only required option.  All other settings, and their defaults, are
+ # associated with this version number.  More versions may be added in the future
+ # and Cascade may drop support for older versions over time.
+-# 
++#
+ # - 'v1': This format.
+ version = "v1"
+ 
+@@ -20,28 +20,28 @@ version = "v1"
+ # Zone policies are user-managed files configuring groups of zones.  You can
+ # modify them as you like, then ask Cascade to reload them with 'cascade policy
+ # reload'.
+-policy-dir = "/etc/cascade/policies"
++policy-dir = "%%ETCDIR%%/policies"
+ 
+ # The directory storing per-zone state files.
+ #
+ # Cascade maintains an internal state file for every known zone here.  These
+ # files should not be modified manually, but they can be backed up and restored
+ # in the event of filesystem corruption.
+-zone-state-dir = "/var/lib/cascade/zone-state"
++zone-state-dir = "%%DBDIR%%/zone-state"
+ 
+ # The file storing TSIG key secrets.
+ #
+ # This is an internal state file containing sensitive cryptographic material.
+ # It should not be modified manually, but it can be backed up and restored in
+ # the event of filesystem corruption.  Carefully consider its security.
+-tsig-store-path = "/var/lib/cascade/tsig-keys.db"
++tsig-store-path = "%%DBDIR%%/tsig-keys.db"
+ 
+ # The file storing KMIP credentials.
+ #
+ # This is an internal state file containing sensitive cryptographic material.
+ # It should not be modified manually, but it can be backed up and restored in
+ # the event of filesystem corruption.  Carefully consider its security.
+-kmip-credentials-store-path = "/var/lib/cascade/kmip/credentials.db"
++kmip-credentials-store-path = "%%DBDIR%%/kmip/credentials.db"
+ 
+ # The directory storing rollover states and on-disk DNSSEC keys.
+ #
+@@ -55,23 +55,23 @@ kmip-credentials-store-path = "/var/lib/cascade/kmip/c
+ # Carefully consider its security.
+ #
+ # TODO: Move rollover state files to a separate directory?
+-keys-dir = "/var/lib/cascade/keys"
++keys-dir = "%%DBDIR%%/keys"
+ 
+ # The directory containing KMIP server state.
+ #
+ # Information about known KMIP servers is stored in this directory.
+-# 
++#
+ # The organization of this directory (file names and file formats) constitutes
+ # internal implementation details.  It should not be modified manually, but
+ # it can be backed up and restored in the event of filesystem corruption.
+-kmip-server-state-dir = "/var/lib/cascade/kmip"
++kmip-server-state-dir = "%%DBDIR%%/kmip"
+ 
+ # The path to the dnst binary Cascade should use.
+ #
+ # Cascade relies on the 'dnst' program (<https://github.com/NLnetLabs/dnst>) in
+ # order to perform DNSSEC key rollovers.  You can specify an absolute path here,
+ # or just 'dnst' if it is in $PATH.
+-dnst-binary-path = "/usr/libexec/cascade/cascade-dnst"
++dnst-binary-path = "%%LOCALBASE%%/bin/dnst"
+ 
+ 
+ # Settings relevant to any daemon program.
+@@ -213,7 +213,7 @@ servers = ["127.0.0.1:8052", "[::1]:8052"] # TODO: Pic
+ # How zones are published.
+ [server]
+ # Where to serve published zones.
+-# 
++#
+ # A DNS server will be bound to these addresses, and will serve the contents of
+ # all published zones.  This is the final output from Cascade.
+ #

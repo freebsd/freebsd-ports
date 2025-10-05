@@ -1,0 +1,7 @@
+bin/cascade
+bin/cascaded
+@owner %%USERS%%
+@group %%GROUPS%%
+@sample %%ETCDIR%%/config.toml.sample
+@sample %%ETCDIR%%/policy.toml.sample
+@dir %%ETCDIR%%

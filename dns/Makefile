@@ -11,6 +11,7 @@
     SUBDIR += bindgraph
     SUBDIR += blocky
     SUBDIR += c-ares
+    SUBDIR += cascade
     SUBDIR += cli53
     SUBDIR += coredns
     SUBDIR += ddclient
