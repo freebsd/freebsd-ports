@@ -163,7 +163,6 @@ include/g2o/stuff/macros.h
 include/g2o/stuff/misc.h
 include/g2o/stuff/opengl_primitives.h
 include/g2o/stuff/opengl_wrapper.h
-include/g2o/stuff/os_specific.h
 include/g2o/stuff/property.h
 include/g2o/stuff/sampler.h
 include/g2o/stuff/sparse_helper.h
