@@ -1,9 +1,8 @@
 PORTNAME=	forgejo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	11.0.3
-PORTREVISION=	1
+DISTVERSION=	12.0.4
 CATEGORIES=	www
-MASTER_SITES=	https://codeberg.org/forgejo/forgejo/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
+MASTER_SITES=	https://codeberg.org/forgejo/forgejo/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	forgejo-src-${DISTVERSION}
 
 MAINTAINER=	stb@lassitu.de
