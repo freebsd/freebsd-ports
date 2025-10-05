@@ -324,6 +324,7 @@
     SUBDIR += ydotool
     SUBDIR += zanshin
     SUBDIR += zim
+    SUBDIR += zk
     SUBDIR += znotes
     SUBDIR += zorro
 
