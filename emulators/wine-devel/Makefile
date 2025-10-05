@@ -1,5 +1,5 @@
 PORTNAME=	wine
-DISTVERSION=	10.15
+DISTVERSION=	10.16
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/10.x/

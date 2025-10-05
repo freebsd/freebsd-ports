@@ -2468,6 +2468,7 @@ lib/wine/%%WINEARCH%%-windows/rsaenh.dll
 lib/wine/%%WINEARCH%%-windows/rstrtmgr.dll
 lib/wine/%%WINEARCH%%-windows/rtutils.dll
 lib/wine/%%WINEARCH%%-windows/rtworkq.dll
+lib/wine/%%WINEARCH%%-windows/runas.exe
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/rundll.exe16
 lib/wine/%%WINEARCH%%-windows/rundll32.exe
 lib/wine/%%WINEARCH%%-windows/samlib.dll
@@ -2876,6 +2877,16 @@ share/man/pl.UTF-8/man1/wine.1.gz
 %%DATADIR%%/nls/normnfkd.nls
 %%DATADIR%%/nls/sortdefault.nls
 %%WINE64%%%%DATADIR%%/pkg32.sh
+%%DATADIR%%/winmd/windows.applicationmodel.winmd
+%%DATADIR%%/winmd/windows.globalization.winmd
+%%DATADIR%%/winmd/windows.graphics.winmd
+%%DATADIR%%/winmd/windows.media.winmd
+%%DATADIR%%/winmd/windows.networking.winmd
+%%DATADIR%%/winmd/windows.perception.winmd
+%%DATADIR%%/winmd/windows.storage.winmd
+%%DATADIR%%/winmd/windows.system.winmd
+%%DATADIR%%/winmd/windows.ui.winmd
+%%DATADIR%%/winmd/windows.ui.xaml.winmd
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE.md
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
