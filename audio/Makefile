@@ -216,6 +216,7 @@
     SUBDIR += gnupod
     SUBDIR += gnuspeechsa
     SUBDIR += gnustep-cdplayer
+    SUBDIR += go-librespot
     SUBDIR += goattracker
     SUBDIR += gogglesmm
     SUBDIR += gonic
