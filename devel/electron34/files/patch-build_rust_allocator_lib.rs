@@ -1,6 +1,6 @@
---- build/rust/allocator/lib.rs.orig	2025-08-26 22:47:37 UTC
+--- build/rust/allocator/lib.rs.orig	2025-10-05 11:01:12 UTC
 +++ build/rust/allocator/lib.rs
-@@ -0,0 +1,125 @@
+@@ -0,0 +1,132 @@
 +// Copyright 2025 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -102,7 +102,14 @@
 +    #[linkage = "weak"]
 +    static __rust_no_alloc_shim_is_unstable: u8 = 0;
 +
++    #[rustc_std_internal_symbol]
++    #[linkage = "weak"]
++    fn __rust_alloc_error_handler_should_panic_v2() -> u8 {
++        0
++    }
++
 +    // Mangle the symbol name as rustc expects.
++    // TODO(crbug.com/440481922): Remove this after rolling past https://github.com/rust-lang/rust/pull/143387
 +    #[rustc_std_internal_symbol]
 +    #[allow(non_upper_case_globals)]
 +    #[linkage = "weak"]
