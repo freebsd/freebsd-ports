@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 DISTVERSION=	7.0.26
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
 		LOCAL/vvd:docs
@@ -79,10 +79,10 @@ PLIST_SUB=	GUEST_VER=${DISTVERSION} \
 
 SLAVE_PORT?=	no
 
-OPTIONS_DEFINE=		AIO ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS OGG PULSEAUDIO \
-			PYTHON QT5 R0LOGGING UDPTUNNEL VBOXIMG VDE VNC VORBIS VPX \
-			WEBSERVICE X11
-OPTIONS_DEFAULT=	AIO DBUS QT5 UDPTUNNEL VNC WEBSERVICE X11
+OPTIONS_DEFINE=		AIO ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS OGG \
+			PULSEAUDIO PYTHON QT5 R0LOGGING TPM UDPTUNNEL VBOXIMG \
+			VDE VNC VORBIS VPX WEBSERVICE X11
+OPTIONS_DEFAULT=	AIO DBUS QT5 TPM UDPTUNNEL VNC WEBSERVICE X11
 .if ${SLAVE_PORT} == no
 OPTIONS_DEFAULT+=	PYTHON
 .endif
@@ -98,6 +98,7 @@ NLS_DESC=		Native language support (requires QT5)
 OGG_DESC=		Use libogg from audio/libogg instead of bundled one
 QT5_DESC=		Build with QT5 frontend (requires X11)
 R0LOGGING_DESC=		Enable R0 logging (requires DEBUG)
+TPM_DESC=		Enable TPM device emulation using sysutils/libtpms
 UDPTUNNEL_DESC=		Build with UDP tunnel support
 VBOXIMG_DESC=		Build vboximg-mount (requires fuse-libs)
 VDE_DESC=		Build with VDE support
@@ -122,12 +123,14 @@ PYTHON_USE=		PYTHON=distutils,noegginfo,noflavors
 PYTHON_CONFIGURE_OFF=	--disable-python
 PYTHON_VARS=		pydistutils_pkgname=vboxapi pydistutils_pkgversion=1.0
 QT5_IMPLIES=		X11
-QT5_USES=		gl qmake:no_env qt:5 xorg
+QT5_USES=		gl qmake:no_env xorg
 QT5_USE=		QT=buildtools:build,core,dbus,gui,linguisttools:build,opengl \
 			QT=printsupport,widgets,x11extras,xml XORG=xcb GL=gl
 QT5_CONFIGURE_ON=	--enable-qt5
 QT5_CONFIGURE_OFF=	--disable-qt
 R0LOGGING_IMPLIES=	DEBUG
+TPM_LIB_DEPENDS=	libtpms.so:sysutils/libtpms
+TPM_CONFIGURE_OFF=	--disable-libtpms
 UDPTUNNEL_CONFIGURE_OFF=	--disable-udptunnel
 VBOXIMG_LIB_DEPENDS=	libfuse.so.2:filesystems/fusefs-libs
 VDE_RUN_DEPENDS=	vde_switch:net/vde2

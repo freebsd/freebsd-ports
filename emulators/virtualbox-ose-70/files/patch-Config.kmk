@@ -1,6 +1,6 @@
---- Config.kmk.orig	2024-10-10 20:19:24.000000000 +0200
-+++ Config.kmk	2024-12-27 17:28:48.466891000 +0100
-@@ -579,11 +579,11 @@
+--- Config.kmk.orig	2025-10-02 22:44:57 UTC
++++ Config.kmk
+@@ -579,11 +579,11 @@ endif
   # Enable OSS audio support.
   VBOX_WITH_AUDIO_OSS = 1
  endif
@@ -14,7 +14,7 @@
   # Enable PulseAudio audio support.
   VBOX_WITH_AUDIO_PULSE = 1
  endif
-@@ -596,11 +596,11 @@
+@@ -596,11 +596,11 @@ VBOX_WITH_PCI_PASSTHROUGH =
  # (disabled with 6.1, since it's not complete/useful enough)
  VBOX_WITH_PCI_PASSTHROUGH =
  # Enable statically linked dbus support.
@@ -28,7 +28,7 @@
   VBOX_WITH_PAM = 1
  endif
  # Enable internal networking.
-@@ -608,7 +608,7 @@
+@@ -608,7 +608,7 @@ VBOX_WITH_VMSVGA = 1
  # Enable vmsvga (svga2) graphics device variant, 2D part
  VBOX_WITH_VMSVGA = 1
  # Enable vmsvga (svga2) graphics device variant, 3D part
@@ -37,7 +37,16 @@
   VBOX_WITH_VMSVGA3D = 1
  endif
  # Enable vmsvga (svga2) graphics device variant, 3D part, VGPU10 DX commands
-@@ -787,7 +787,7 @@
+@@ -735,7 +735,7 @@ VBOX_WITH_TPM = 1
+ # Enable TPM device emulation support.
+ VBOX_WITH_TPM = 1
+ # Enable libtpms, required for the in process TPM emulation.
+-if1of ($(KBUILD_TARGET), linux darwin win solaris)
++if1of ($(KBUILD_TARGET), freebsd linux darwin win solaris)
+  VBOX_WITH_LIBTPMS = 1
+ endif
+ ## @}
+@@ -787,7 +787,7 @@ VBOX_WITH_VBOXMANAGE_NLS  = 1
  #endif
  # Set this to prefix all C symbols in XPCOM, to avoid dynamic linking problems
  # caused by our XPCOM library polluting the symbol namespace for system libs.
@@ -46,7 +55,7 @@
   VBOX_WITH_XPCOM_NAMESPACE_CLEANUP = 1
  endif
  # The webservices api.
-@@ -1295,10 +1295,6 @@
+@@ -1295,10 +1295,6 @@ endif
   endif
  endif
  
@@ -57,7 +66,7 @@
  ifeq ($(KBUILD_TARGET),haiku)
   VBOX_WITH_VRDP_RDESKTOP =
   # Permanent (no working SDL).
-@@ -1457,7 +1453,7 @@
+@@ -1457,7 +1453,7 @@ ifdef VBOX_OSE
   # not yet
   VBOX_WITH_PLUGIN_CRYPT =
   VBOX_WITH_DRAG_AND_DROP_PROMISES =
@@ -66,7 +75,7 @@
    VBOX_WITH_DOCS =
    VBOX_WITH_DOCS_PACKING =
   endif
-@@ -3518,19 +3514,7 @@
+@@ -3517,19 +3513,7 @@ ifndef VBOX_GCC_std
  #
  ## @todo consider maxing this out.
  ifndef VBOX_GCC_std
@@ -86,7 +95,7 @@
  endif
  ifndef VBOX_VCC_std
   if $(VBOX_VCC_TOOL_STEM) >= VCC141 # since 2017 15.3
-@@ -5484,11 +5468,11 @@
+@@ -5483,11 +5467,11 @@ ifeq ($(VBOX_LDR_FMT),elf)
    # Solaris driver signing.
    TEMPLATE_VBoxR0_POST_CMDS         = $(VBOX_SIGN_DRIVER_CMDS)
   else
@@ -100,7 +109,7 @@
    VBOX_WITH_VBOXR0_AS_DLL = 1
    TEMPLATE_VBoxR0_DLLSUFF           = .r0
    TEMPLATE_VBoxR0_CFLAGS           += -fPIC
-@@ -5499,7 +5483,7 @@
+@@ -5498,7 +5482,7 @@ ifeq ($(VBOX_LDR_FMT),elf)
   else
    TEMPLATE_VBoxR0_CFLAGS.amd64     += -mcmodel=kernel
    TEMPLATE_VBoxR0_CXXFLAGS.amd64   += -mcmodel=kernel
@@ -109,7 +118,7 @@
   ifdef VBOX_WITH_KMOD_WRAPPED_R0_MODS # For BTF/pahold issue we use -g1
    TEMPLATE_VBoxR0_DEFS             += VBOX_WITH_KMOD_WRAPPED_R0_MODS
    TEMPLATE_VBoxR0_LDFLAGS.linux    += $(PATH_ROOT)/src/VBox/HostDrivers/Support/linux/VBoxR0-wrapped.lds
-@@ -5880,7 +5864,7 @@
+@@ -5879,7 +5863,7 @@ ifeq ($(KBUILD_TARGET),freebsd)
   # x86 FreeBSD (6.2 or something):
   #  cc -O2 -fno-strict-aliasing -pipe -Werror -D_KERNEL -DKLD_MODULE \
   #   -nostdinc -I- -I. -I@ -I@/contrib/altq -I@/../include -I/usr/include \
@@ -118,7 +127,7 @@
   #   -mno-mmx -mno-3dnow -mno-sse -mno-sse2 -ffreestanding -Wall -Wredundant-decls -Wnested-externs \
   #   -Wstrict-prototypes -Wmissing-prototypes -Wpointer-arith -Winline -Wcast-qual -fformat-extensions \
   #   -std=c99 -c ../my.c
-@@ -5891,7 +5875,7 @@
+@@ -5890,7 +5874,7 @@ ifeq ($(KBUILD_TARGET),freebsd)
   #
   # AMD64 FreeBSD (7.1):
   #  cc -O2 -fno-strict-aliasing -pipe -D_KERNEL -DKLD_MODULE -std=c99 -nostdinc -I. -I@ -I@/contrib/altq \
@@ -127,7 +136,7 @@
   #  -fno-omit-frame-pointer -mcmodel=kernel -mno-red-zone -mfpmath=387 -mno-sse -mno-sse2 -mno-mmx \
   #  -mno-3dnow -msoft-float -fno-asynchronous-unwind-tables -ffreestanding \
   #  -Wall -Wredundant-decls -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes -Wpointer-arith -Winline -Wcast-qual -Wundef -Wno-pointer-sign \
-@@ -5973,7 +5957,7 @@
+@@ -5972,7 +5956,7 @@ ifeq ($(KBUILD_TARGET),freebsd)
  		| xargs -J% objcopy % $(outbase).kld
  
     # Link the final .ko (a shared object).
@@ -136,7 +145,7 @@
    endef
   endif # x86
  
-@@ -6008,7 +5992,7 @@
+@@ -6007,7 +5991,7 @@ ifeq ($(KBUILD_TARGET),netbsd)
   	$(VBOX_GCC_fdiagnostics-show-option) \
   	-Wstrict-prototypes -Wmissing-prototypes -Wstrict-prototypes \
   	-Wimplicit-function-declaration -Werror-implicit-function-declaration \
@@ -145,7 +154,7 @@
   	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
   	-nostdinc -std=c99 -msoft-float
   TEMPLATE_VBoxR0Drv_CFLAGS.x86         = -m32 -mno-mmx -mno-sse -mno-avx \
-@@ -6019,7 +6003,7 @@
+@@ -6018,7 +6002,7 @@ ifeq ($(KBUILD_TARGET),netbsd)
   	-fno-asynchronous-unwind-tables -mno-fp-ret-in-387
   TEMPLATE_VBoxR0Drv_CXXFLAGS           = -fno-exceptions -fno-rtti \
   	$(VBOX_GCC_WARN) -Wpointer-arith -Winline \
@@ -154,7 +163,7 @@
   	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
   	-nostdinc -msoft-float
   TEMPLATE_VBoxR0Drv_CXXFLAGS.x86       = $(TEMPLATE_VBoxR0Drv_CFLAGS.x86)
-@@ -6318,11 +6302,11 @@
+@@ -6317,11 +6301,11 @@ else # the gcc guys
    TEMPLATE_VBoxR3Exe_LIBS              = pthread m rt dl
   else ifeq ($(KBUILD_TARGET),os2)
    TEMPLATE_VBoxR3Exe_TOOL              = GXX3OMF
@@ -168,7 +177,7 @@
    TEMPLATE_VBoxR3Exe_SDKS.darwin       = $(VBOX_DARWIN_DEF_SDK_SDKS)
    TEMPLATE_VBoxR3Exe_DEFS.darwin       = $(VBOX_DARWIN_DEF_SDK_DEFS)
    TEMPLATE_VBoxR3Exe_CFLAGS.darwin     = $(VBOX_DARWIN_DEF_SDK_CFLAGS) -fno-common
-@@ -6339,17 +6323,26 @@
+@@ -6338,17 +6322,26 @@ else # the gcc guys
   else ifeq ($(KBUILD_TARGET),haiku)
    TEMPLATE_VBoxR3Exe_TOOL              = GXX3
    TEMPLATE_VBoxR3Exe_POST_CMDS        = $(VBOX_HAIKU_XRES_SETVER_CMDS)
@@ -197,7 +206,7 @@
    	/usr/include \
    	/usr/X11R6/include \
    	/usr/local/include
-@@ -6368,7 +6361,7 @@
+@@ -6367,7 +6360,7 @@ else # the gcc guys
    	/usr/X11R7/lib
   else ifeq ($(KBUILD_TARGET),solaris)
    TEMPLATE_VBoxR3Exe_TOOL              = GXX3PLAIN
@@ -206,7 +215,7 @@
    if $(VBOX_GCC_VERSION_CC) < 30500
     TEMPLATE_VBoxR3Exe_CFLAGS          += -std=gnu99
    endif
-@@ -6384,6 +6377,7 @@
+@@ -6383,6 +6376,7 @@ else # the gcc guys
    TEMPLATE_VBoxR3Exe_LDFLAGS          += '$(VBOX_GCC_RPATH_OPT)$(VBOX_WITH_RELATIVE_RUNPATH)'
   endif
   ifdef VBOX_WITH_ORIGIN
@@ -214,7 +223,7 @@
    TEMPLATE_VBoxR3Exe_LDFLAGS.linux    += $(VBOX_GCC_ORIGIN_OPT)
   endif
  endif
-@@ -6590,7 +6584,7 @@
+@@ -6589,7 +6583,7 @@ else
   ifdef VBOX_WITH_NOCRT_STATIC
    TEMPLATE_VBoxR3StaticBase_DEFS           += RT_WITH_NOCRT_WRAPPERS
   endif
@@ -223,7 +232,7 @@
    # The gcc guys sans darwin, linux and solaris (don't depend on statically compiled system libs there)
    TEMPLATE_VBoxR3StaticBase_CFLAGS          = $(TEMPLATE_VBoxR3Exe_CFLAGS) -static
    TEMPLATE_VBoxR3StaticBase_CXXFLAGS        = $(TEMPLATE_VBoxR3Exe_CXXFLAGS) -static
-@@ -6656,7 +6650,7 @@
+@@ -6655,7 +6649,7 @@ else
   	$(SDK_VBoxLzf_LIBS) \
   	$(SDK_VBoxZlib_LIBS)
   if1of ($(KBUILD_TARGET), darwin freebsd)
@@ -232,7 +241,7 @@
   else ifeq ($(KBUILD_TARGET),solaris)
    TEMPLATE_VBoxR3Static_LIBS       += kstat
   endif
-@@ -6830,6 +6824,7 @@
+@@ -6829,6 +6823,7 @@ else ifn1of ($(KBUILD_TARGET), os2)
  else ifn1of ($(KBUILD_TARGET), os2)
   ifneq ($(KBUILD_TYPE),asan) # Keep RPATH in asan builds so we can find libasan.so.X and libubsan.so.Y.
    TEMPLATE_VBoxR3HardenedExe_LDFLAGS       = $(filter-out '$(VBOX_GCC_RPATH_OPT)%,$(TEMPLATE_VBoxR3Exe_LDFLAGS))
@@ -240,7 +249,7 @@
    TEMPLATE_VBoxR3HardenedExe_LDFLAGS.linux = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBoxR3Exe_LDFLAGS.linux))
   endif
  endif
-@@ -6861,6 +6856,7 @@
+@@ -6860,6 +6855,7 @@ ifn1of ($(KBUILD_TARGET), win os2)
  	$(if-expr !defined(VBOX_WITHOUT_WINDOWS_KERNEL_CODE_SIGNING_CERT),-IntegrityCheck,)
  ifn1of ($(KBUILD_TARGET), win os2)
   TEMPLATE_VBoxR3HardenedTstDll_LDFLAGS       = $(filter-out '$(VBOX_GCC_RPATH_OPT)%,$(TEMPLATE_VBoxR3TstDll_LDFLAGS))
@@ -248,7 +257,7 @@
   TEMPLATE_VBoxR3HardenedTstDll_LDFLAGS.linux = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBoxR3TstDll_LDFLAGS.linux))
  endif
  
-@@ -6884,6 +6880,7 @@
+@@ -6883,6 +6879,7 @@ ifndef VBOX_WITH_HARDENING
    TEMPLATE_VBoxR3SetUidToRoot_LDFLAGS += '$(VBOX_GCC_RPATH_OPT)$(VBOX_WITH_RELATIVE_RUNPATH)'
   endif
   ifdef VBOX_WITH_ORIGIN
@@ -256,7 +265,7 @@
    TEMPLATE_VBoxR3SetUidToRoot_LDFLAGS.linux += $(VBOX_GCC_ORIGIN_OPT)
   endif
  endif
-@@ -7208,7 +7205,7 @@
+@@ -7207,7 +7204,7 @@ else # the GCC guys:
   endif
   TEMPLATE_VBoxMainExe_CXXFLAGS           = -g $(VBOX_GCC_pipe) \
   	$(VBOX_GCC_PEDANTIC_CXX) $(VBOX_GCC_Wno-variadic-macros) $(VBOX_GCC_Wno-multistatement-macros) $(VBOX_GCC_Wno-class-memaccess) -Wshadow \
@@ -265,7 +274,7 @@
   	$(VBOX_GCC_fvisibility-inlines-hidden) $(VBOX_GCC_fvisibility-hidden) $(VBOX_GCC_std) $(VBOX_GCC_IPRT_FMT_CHECK) \
   	$(VBOX_GCC_SANITIZER_FLAGS)
   if !defined("VBOX_GCC_Wno-delete-non-virtual-dtor") && defined("VBOX_GCC_Wno-non-virtual-dtor")
-@@ -7272,10 +7269,19 @@
+@@ -7271,10 +7268,19 @@ else # the GCC guys:
   else ifeq ($(KBUILD_TARGET),haiku)
    TEMPLATE_VBoxMainExe_TOOL              = GXX3
    TEMPLATE_VBoxMainExe_LIBS              = $(LIB_RUNTIME) network stdc++ supc++
@@ -286,7 +295,7 @@
    	/usr/include \
    	/usr/X11R6/include \
    	/usr/local/include
-@@ -7307,6 +7313,7 @@
+@@ -7306,6 +7312,7 @@ else # the GCC guys:
    TEMPLATE_VBoxMainExe_LDFLAGS          += '$(VBOX_GCC_RPATH_OPT)$(VBOX_WITH_RELATIVE_RUNPATH)'
   endif
   ifdef VBOX_WITH_ORIGIN
@@ -294,7 +303,7 @@
    TEMPLATE_VBoxMainExe_LDFLAGS.linux    += $(VBOX_GCC_ORIGIN_OPT)
   endif
  
-@@ -7943,13 +7950,11 @@
+@@ -7942,13 +7949,11 @@ ifdef VBOX_WITH_QTGUI
     TEMPLATE_VBoxQtGuiExe_LIBPATH += \
     	$(VBOX_LIBPATH_X11)
     ifeq ($(KBUILD_TARGET),freebsd)
@@ -310,7 +319,7 @@
      	/usr/local/lib
     endif
     ifeq ($(KBUILD_TARGET),solaris)
-@@ -8231,7 +8236,7 @@
+@@ -8230,7 +8235,7 @@ else
    TEMPLATE_VBoxBldProg_LIBS              = pthread m rt dl
   else ifeq ($(KBUILD_HOST),os2)
    TEMPLATE_VBoxBldProg_TOOL              = GXX3OMF
@@ -319,7 +328,7 @@
   else ifeq ($(KBUILD_HOST),darwin)
    TEMPLATE_VBoxBldProg_TOOL              = $(VBOX_GCC_TOOL)
    if "$(VBOX_DEF_MACOSX_VERSION_MIN)" == "10.7" || "$(VBOX_DARWIN_HOST_VERSION_MAJOR)" == "7"
-@@ -8271,13 +8276,20 @@
+@@ -8270,13 +8275,20 @@ else
    TEMPLATE_VBoxBldProg_LIBS              =
   else ifeq ($(KBUILD_HOST),haiku)
    TEMPLATE_VBoxBldProg_TOOL              = GXX3
@@ -342,7 +351,7 @@
    	/usr/include \
    	/usr/X11R6/include \
    	/usr/local/include
-@@ -8324,11 +8336,11 @@
+@@ -8323,11 +8335,11 @@ TEMPLATE_VBoxAdvBldProg_LIBS.darwin = \
  	$(TEMPLATE_VBoxBldProg_LIBS)
  TEMPLATE_VBoxAdvBldProg_LIBS.darwin = \
  	$(TEMPLATE_VBoxAdvBldProg_LIBS) \
@@ -356,7 +365,7 @@
  	rt \
  	$(TEMPLATE_VBoxBldProg_LIBS.freebsd)
  TEMPLATE_VBoxAdvBldProg_LIBS.linux = \
-@@ -8419,6 +8431,7 @@
+@@ -8418,6 +8430,7 @@ else # the gcc guys
   # Do not inherit sanitizer flags from VBoxR3Exe in guest executables.  Deal with them separately.
   TEMPLATE_VBoxGuestR3ExeBase_CXXFLAGS.debug = $(NO_SUCH_VARIABLE)
   TEMPLATE_VBoxGuestR3ExeBase_CFLAGS.debug = $(NO_SUCH_VARIABLE)
@@ -364,7 +373,7 @@
   TEMPLATE_VBoxGuestR3ExeBase_LDFLAGS.linux = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_$(TEMPLATE_VBoxGuestR3ExeBase_EXTENDS)_LDFLAGS.linux))
   TEMPLATE_VBoxGuestR3ExeBase_LDFLAGS.debug = $(NO_SUCH_VARIABLE)
   TEMPLATE_VBoxGuestR3ExeBase_LDFLAGS  = $(filter-out '$(VBOX_GCC_RPATH_OPT)%,$(TEMPLATE_$(TEMPLATE_VBoxGuestR3ExeBase_EXTENDS)_LDFLAGS))
-@@ -8442,7 +8455,7 @@
+@@ -8441,7 +8454,7 @@ else if1of ($(KBUILD_TARGET), darwin freebsd openbsd)
  ifeq ($(KBUILD_TARGET),linux) # As few libs as possible on linux.
   TEMPLATE_VBoxGuestR3ExeBase_LIBS     = pthread rt m dl
  else if1of ($(KBUILD_TARGET), darwin freebsd openbsd)
@@ -373,7 +382,7 @@
  else ifeq ($(KBUILD_TARGET),solaris)
   TEMPLATE_VBoxGuestR3ExeBase_LIBS     = $(TEMPLATE_$(TEMPLATE_VBoxGuestR3ExeBase_EXTENDS)_LIBS) nsl
  endif
-@@ -8455,6 +8468,7 @@
+@@ -8454,6 +8467,7 @@ TEMPLATE_VBoxGuestR3ExeBase_CFLAGS.linux      = $(TEMP
  	$(VBOX_GCC_fno-stack-protector)
  TEMPLATE_VBoxGuestR3ExeBase_CFLAGS.linux      = $(TEMPLATE_VBoxGuestR3ExeBase_CXXFLAGS.linux)
  # The GNU_HASH ELF tag is not supported by older systems.
@@ -381,7 +390,7 @@
  TEMPLATE_VBoxGuestR3ExeBase_LDFLAGS.linux    += $(VBOX_LD_hash_style_sysv)
  
  
-@@ -8684,6 +8698,7 @@
+@@ -8683,6 +8697,7 @@ TEMPLATE_VBoxGuestR3XFree86Mod_LDFLAGS.$(KBUILD_TARGET
  TEMPLATE_VBoxGuestR3XFree86Mod_CXXFLAGS.linux           = $(VBOX_GCC_fno-stack-protector) # Remove symvers.h
  TEMPLATE_VBoxGuestR3XFree86Mod_LDFLAGS.$(KBUILD_TARGET) = $(NO_SUCH_VARIABLE)
  # The GNU_HASH ELF tag is not supported by older glibc dynamic linkers.
@@ -389,7 +398,7 @@
  TEMPLATE_VBoxGuestR3XFree86Mod_LDFLAGS.linux            = $(subst -Wl$(COMMA),,$(VBOX_LD_hash_style_sysv))
  TEMPLATE_VBoxGuestR3XFree86Mod_LDFLAGS.$(KBUILD_TYPE)   = $(NO_SUCH_VARIABLE)
  TEMPLATE_VBoxGuestR3XFree86Mod_LDFLAGS                 := -r
-@@ -8725,7 +8740,7 @@
+@@ -8724,7 +8739,7 @@ TEMPLATE_VBoxGuestR3XOrgMod_LIBS.$(KBUILD_TARGET)   = 
  TEMPLATE_VBoxGuestR3XOrgMod_LIBS                    = $(VBOX_LIB_VBGL_R3_XORG)
  TEMPLATE_VBoxGuestR3XOrgMod_LIBS.$(KBUILD_TYPE)     = $(NO_SUCH_VARIABLE)
  TEMPLATE_VBoxGuestR3XOrgMod_LIBS.$(KBUILD_TARGET)   = $(NO_SUCH_VARIABLE)
