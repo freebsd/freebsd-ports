@@ -1,6 +1,7 @@
 bin/jj
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.md
 %%PORTDOCS%%%%DOCSDIR%%/bookmarks.md
+%%PORTDOCS%%%%DOCSDIR%%/changelog.md
 %%PORTDOCS%%%%DOCSDIR%%/cli-reference.md
 %%PORTDOCS%%%%DOCSDIR%%/code-of-conduct.md
 %%PORTDOCS%%%%DOCSDIR%%/community_tools.md
@@ -19,6 +20,7 @@ bin/jj
 %%PORTDOCS%%%%DOCSDIR%%/design_doc_blueprint.md
 %%PORTDOCS%%%%DOCSDIR%%/design_docs.md
 %%PORTDOCS%%%%DOCSDIR%%/filesets.md
+%%PORTDOCS%%%%DOCSDIR%%/gerrit.md
 %%PORTDOCS%%%%DOCSDIR%%/git-command-table.md
 %%PORTDOCS%%%%DOCSDIR%%/git-command-table.yml
 %%PORTDOCS%%%%DOCSDIR%%/git-comparison.md
@@ -27,6 +29,8 @@ bin/jj
 %%PORTDOCS%%%%DOCSDIR%%/glossary.md
 %%PORTDOCS%%%%DOCSDIR%%/governance/GOVERNANCE.md
 %%PORTDOCS%%%%DOCSDIR%%/governance/temporary-voting.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/divergence.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/multiple-remotes.md
 %%PORTDOCS%%%%DOCSDIR%%/images/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/images/favicon-96x96.png
 %%PORTDOCS%%%%DOCSDIR%%/images/jj-logo.svg
@@ -37,6 +41,7 @@ bin/jj
 %%PORTDOCS%%%%DOCSDIR%%/related-work.md
 %%PORTDOCS%%%%DOCSDIR%%/releasing.md
 %%PORTDOCS%%%%DOCSDIR%%/revsets.md
+%%PORTDOCS%%%%DOCSDIR%%/revsets.toml
 %%PORTDOCS%%%%DOCSDIR%%/roadmap.md
 %%PORTDOCS%%%%DOCSDIR%%/sapling-comparison.md
 %%PORTDOCS%%%%DOCSDIR%%/style_guide.md
