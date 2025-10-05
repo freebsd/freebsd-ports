@@ -21,7 +21,9 @@ BUILD_DEPENDS+=	Xvfb:x11-servers/xorg-server@xvfb \
 	xkbcomp:x11/xkbcomp
 
 XVFBPORT!=	port=0; while test -S /tmp/.X11-unix/X$${port} ; do port=$$(( port + 1 )) ; done ; ${ECHO_CMD} $$port
+PREV_XVFBPORT!=	${ECHO_CMD} $$(( ${XVFBPORT} - 1))
 XVFBPIDFILE=	/tmp/.xvfb-${XVFBPORT}.pid
+PREV_XVFBPIDFILE=	/tmp/.xvfb-${PREV_XVFBPORT}.pid
 MAKE_ENV+=	DISPLAY=":${XVFBPORT}"
 
 _USES_${display_ARGS}+=	290:start-display 860:stop-display
@@ -29,7 +31,7 @@ start-display:
 	daemon -p ${XVFBPIDFILE} Xvfb :${XVFBPORT}
 
 stop-display:
-	pkill -15 -F ${XVFBPIDFILE}
+	pkill -15 -F ${PREV_XVFBPIDFILE}
 
 .  endif
 .endif
