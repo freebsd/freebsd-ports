@@ -25,20 +25,27 @@
 name=athens
 rcvar=athens_enable
 
+load_rc_config $name
+
 : ${athens_enable:="NO"}
 : ${athens_config:="%%ETCDIR%%/athens.toml"}
 : ${athens_user:=%%ATHENS_USER%%}
 : ${athens_group:=%%ATHENS_GROUP%%}
-: ${athens_pidfile:="/var/run/athens.pid"}
 
 athens_command="%%PREFIX%%/bin/athens -config_file ${athens_config}"
+pidfile="/var/run/${name}/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-p ${athens_pidfile} -u ${athens_user} -S ${athens_command}"
+command_args="-P ${pidfile} -S ${athens_command}"
 
 PATH="${PATH}:%%PREFIX%%/bin"
 
-load_rc_config $name
-
 required_files="${athens_config}"
+
+start_precmd="athens_precmd"
+
+athens_precmd()
+{
+  /usr/bin/install -d -m 700 -o "${athens_user}" -g "${athens_group}" /var/run/athens
+}
 
 run_rc_command "$1"
