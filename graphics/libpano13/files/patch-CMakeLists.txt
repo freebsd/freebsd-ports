@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-12-06 23:34:35 UTC
+--- CMakeLists.txt.orig	2025-10-05 12:06:18 UTC
 +++ CMakeLists.txt
-@@ -333,7 +333,7 @@ INSTALL(
+@@ -325,7 +325,7 @@ INSTALL(
  	AUTHORS
  	COPYING
  	README
@@ -9,7 +9,7 @@
    COMPONENT headers
          )
  INSTALL(
-@@ -342,7 +342,7 @@ INSTALL(
+@@ -334,7 +334,7 @@ INSTALL(
          doc/PTblender.readme
          doc/PTmender.readme
          doc/stitch.txt
