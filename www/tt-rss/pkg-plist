@@ -2004,6 +2004,7 @@
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_cad.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_comicclass.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_comicpress.php
+%%WWWDIR%%/plugins/af_comics/filters/af_comics_danbydraws.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_darklegacy.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_dilbert.php
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_dumbingofage.php
@@ -2211,6 +2212,7 @@
 %%WWWDIR%%/tests/autoload.php
 %%WWWDIR%%/tests/integration/ApiTest.php
 %%WWWDIR%%/tests/integration/SanitizerTest.php
+%%WWWDIR%%/tests/integration/feed.xml
 %%WWWDIR%%/tests/integration/selenium_test.py
 %%WWWDIR%%/themes/compact.css
 %%WWWDIR%%/themes/compact.less
@@ -2356,6 +2358,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/README.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/UPGRADING.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/composer.json
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/package-lock.json
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/BodySummarizer.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/BodySummarizerInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Client.php

@@ -1,5 +1,5 @@
 PORTNAME=	tt-rss
-DISTVERSION=	g20250730
+DISTVERSION=	g20251002
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/meta
@@ -18,7 +18,7 @@ USES=		gettext-tools php:cli,web,flavors shebangfix
 # dist download is blocked by cloudflare DDOS.  Need to upload to LOCAL/
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.tt-rss.org
-GL_TAGNAME=	851ddf4bbe750e30816b6c494165e9860bd39b92
+GL_TAGNAME=	c67b943aa894b90103c4752ac430958886b996b2
 # phe json/openssl extension is required but it's statically linked in default php
 USE_PHP=	ctype dom exif fileinfo filter iconv intl mbstring pcntl pdo \
 		pdo_pgsql phar posix session simplexml sockets sodium tokenizer \
