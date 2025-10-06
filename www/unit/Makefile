@@ -4,7 +4,7 @@ CATEGORIES=	www
 MASTER_SITES?=	https://unit.nginx.org/download/
 DISTFILES?=	${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	osa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Dynamic web application server
 WWW=		https://unit.nginx.org
 
