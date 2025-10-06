@@ -915,3 +915,4 @@ share/man/man1/hare.1.gz
 share/man/man1/haredoc.1.gz
 share/man/man5/hare-module.5.gz
 share/man/man5/haredoc.5.gz
+@dir %%DATADIR%%/third-party

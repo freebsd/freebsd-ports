@@ -1,5 +1,6 @@
 PORTNAME=	hare
 DISTVERSION=	0.25.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 PKGNAMESUFFIX=	-lang
@@ -41,6 +42,7 @@ do-configure:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/bin/*
+	${MKDIR} ${STAGEDIR}${DATADIR}/third-party
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.md ${STAGEDIR}${DOCSDIR}
 
