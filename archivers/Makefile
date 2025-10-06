@@ -277,9 +277,9 @@
     SUBDIR += undms
     SUBDIR += unfoo
     SUBDIR += unlzx
-    SUBDIR += unpackerr
     SUBDIR += unmakeself
     SUBDIR += unmass
+    SUBDIR += unpackerr
     SUBDIR += unrar
     SUBDIR += unrar-iconv
     SUBDIR += unrpa
