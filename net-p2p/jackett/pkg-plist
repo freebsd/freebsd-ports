@@ -71,6 +71,7 @@
 %%DATADIR%%/Definitions/agsvpt.yml
 %%DATADIR%%/Definitions/aidoruonline.yml
 %%DATADIR%%/Definitions/aither-api.yml
+%%DATADIR%%/Definitions/alingpt.yml
 %%DATADIR%%/Definitions/amigosshare.yml
 %%DATADIR%%/Definitions/animelayer.yml
 %%DATADIR%%/Definitions/animelovers-api.yml
@@ -100,7 +101,6 @@
 %%DATADIR%%/Definitions/bitbazis.yml
 %%DATADIR%%/Definitions/bitded.yml
 %%DATADIR%%/Definitions/bitgamer.yml
-%%DATADIR%%/Definitions/bithorlo.yml
 %%DATADIR%%/Definitions/bithumen.yml
 %%DATADIR%%/Definitions/bitmagnet.yml
 %%DATADIR%%/Definitions/bitpalace.yml
@@ -126,6 +126,7 @@
 %%DATADIR%%/Definitions/bwtorrents.yml
 %%DATADIR%%/Definitions/byrbt.yml
 %%DATADIR%%/Definitions/byrutor.yml
+%%DATADIR%%/Definitions/cangbaoge.yml
 %%DATADIR%%/Definitions/capybarabr.yml
 %%DATADIR%%/Definitions/carpathians.yml
 %%DATADIR%%/Definitions/carphunter.yml
@@ -186,7 +187,6 @@
 %%DATADIR%%/Definitions/explosiv-world.yml
 %%DATADIR%%/Definitions/extratorrent-st.yml
 %%DATADIR%%/Definitions/extremebits.yml
-%%DATADIR%%/Definitions/exttorrents.yml
 %%DATADIR%%/Definitions/eztv.yml
 %%DATADIR%%/Definitions/eztvl.yml
 %%DATADIR%%/Definitions/f1carreras-api.yml
@@ -287,6 +287,7 @@
 %%DATADIR%%/Definitions/kufei.yml
 %%DATADIR%%/Definitions/kufirc.yml
 %%DATADIR%%/Definitions/kufirc2fa.yml
+%%DATADIR%%/Definitions/lajidui.yml
 %%DATADIR%%/Definitions/lastdigitalunderground.yml
 %%DATADIR%%/Definitions/lastfiles.yml
 %%DATADIR%%/Definitions/lat-team-api.yml
@@ -412,7 +413,6 @@
 %%DATADIR%%/Definitions/railgunpt.yml
 %%DATADIR%%/Definitions/rain.yml
 %%DATADIR%%/Definitions/rainbowtracker.yml
-%%DATADIR%%/Definitions/rapidzona.yml
 %%DATADIR%%/Definitions/rastastugan-api.yml
 %%DATADIR%%/Definitions/redstartorrent.yml
 %%DATADIR%%/Definitions/reelflix-api.yml
@@ -429,6 +429,7 @@
 %%DATADIR%%/Definitions/rutor.yml
 %%DATADIR%%/Definitions/rutracker-ru.yml
 %%DATADIR%%/Definitions/samaritano.yml
+%%DATADIR%%/Definitions/sbpt.yml
 %%DATADIR%%/Definitions/scenerush.yml
 %%DATADIR%%/Definitions/seedfile.yml
 %%DATADIR%%/Definitions/seedpool-api.yml
@@ -457,6 +458,7 @@
 %%DATADIR%%/Definitions/sukebeinyaasi.yml
 %%DATADIR%%/Definitions/superbits.yml
 %%DATADIR%%/Definitions/swarmazon-api.yml
+%%DATADIR%%/Definitions/tangmen.yml
 %%DATADIR%%/Definitions/tapochek.yml
 %%DATADIR%%/Definitions/tasmanit.yml
 %%DATADIR%%/Definitions/teamctgame.yml
@@ -494,6 +496,7 @@
 %%DATADIR%%/Definitions/torrentbd.yml
 %%DATADIR%%/Definitions/torrentby.yml
 %%DATADIR%%/Definitions/torrentccf.yml
+%%DATADIR%%/Definitions/torrentcontrol.yml
 %%DATADIR%%/Definitions/torrentcore.yml
 %%DATADIR%%/Definitions/torrentdd.yml
 %%DATADIR%%/Definitions/torrentdownload.yml
