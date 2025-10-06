@@ -11,6 +11,9 @@ WWW=		https://babelouest.github.io/rhonabwy/ \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream repository has been archived on Nov 11, 2024
+EXPIRATION_DATE=2025-10-31
+
 BUILD_DEPENDS=	jansson>=2.4:devel/jansson \
 		orcania>=2.3.3:devel/orcania \
 		ulfius>=2.7.15:www/ulfius \
