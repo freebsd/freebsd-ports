@@ -5266,6 +5266,7 @@
     SUBDIR += py-mediapy
     SUBDIR += py-medikit
     SUBDIR += py-memory-allocator
+    SUBDIR += py-memory-graph
     SUBDIR += py-memory-profiler
     SUBDIR += py-mergedeep
     SUBDIR += py-merossiot
