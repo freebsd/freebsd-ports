@@ -1,0 +1,50 @@
+--- pyproject.toml.orig	2025-09-09 08:12:05 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
+ build-backend = "setuptools.build_meta"
+ requires = [
+-  "setuptools>=78.0.2"
++  "setuptools>=61"
+ ]
+ 
+ [dependency-groups]
+@@ -71,8 +71,7 @@ keywords = [
+ keywords = [
+   "i18n l10n gettext translate"
+ ]
+-license = "GPL-2.0-or-later"
+-license-files = ["COPYING"]
++license = { text = "GPL-2.0-or-later" }
+ name = "translate-toolkit"
+ requires-python = ">=3.9"
+ 
+@@ -87,10 +86,10 @@ ical = [
+   "fluent.syntax>=0.19.0,<0.20"
+ ]
+ ical = [
+-  "vobject==0.9.9"
++  "vobject>=0.9.6.1"
+ ]
+ ini = [
+-  "iniparse==0.5"
++  "iniparse>=0.5"
+ ]
+ levenshtein = [
+   "python-Levenshtein>=0.21.0"
+@@ -105,13 +104,13 @@ spellcheck = [
+   "pyparsing>=3.2.0,<3.3"
+ ]
+ spellcheck = [
+-  "pyenchant==3.2.2"
++  "pyenchant>=3.2.2"
+ ]
+ subtitles = [
+   "aeidon>=1.14.1,<1.16"
+ ]
+ tmserver = [
+-  "cheroot==10.0.1"
++  "cheroot>=10.0.1"
+ ]
+ trados = [
+   "BeautifulSoup4>=4.13.0"
