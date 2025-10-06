@@ -5911,6 +5911,7 @@
     SUBDIR += py-robotframework-seleniumlibrary
     SUBDIR += py-robotframework-stacktrace
     SUBDIR += py-robotremoteserver
+    SUBDIR += py-rodi
     SUBDIR += py-rope
     SUBDIR += py-rose
     SUBDIR += py-rpcq

@@ -1,0 +1,15 @@
+RODI is a dependency injection library for Python 3, providing a lightweight
+and fast implementation of the dependency injection pattern. It supports
+both synchronous and asynchronous dependency resolution.
+
+Key features:
+* Fast dependency injection container
+* Support for singleton and transient lifetimes
+* Automatic dependency resolution
+* Support for factory functions
+* Decorator-based service registration
+* Type hints support for automatic registration
+* Compatible with async/await patterns
+
+RODI is designed to be simple, fast, and easy to integrate into existing
+Python applications, particularly web frameworks and applications.
