@@ -1,0 +1,23 @@
+commit 57e76d9b31fd5a5c08e20fd128b09d01e4980274
+Author: Maxim Khon <fjoe@samodelkin.net>
+Date:   Mon Aug 18 12:05:42 2025 +0000
+
+    Use SSH_TUN_COMPAT_AF on FreeBSD. Otherwise tun forwarding from other OSes
+    fails as soon as the first IPv6 message is sent by the other side
+    (which is usually a Router Solicitation ICMPv6 message which is sent as soon
+    as the interface is up): all other OS'es use SSH_TUN_COMPAT_AF or SSH_TUN_PREPEND_AF
+    which effectively uses OpenBSD AF_INET/AF_INET6 values.
+
+diff --git a/configure.ac b/configure.ac
+index 460ebd3b4..d274d1ab0 100644
+--- configure.ac.orig
++++ configure.ac
+@@ -1092,6 +1092,8 @@ mips-sony-bsd|mips-sony-newsos4)
+ *-*-freebsd*)
+ 	AC_DEFINE([LOCKED_PASSWD_PREFIX], ["*LOCKED*"], [Account locked with pw(1)])
+ 	AC_DEFINE([SSH_TUN_FREEBSD], [1], [Open tunnel devices the FreeBSD way])
++	AC_DEFINE([SSH_TUN_COMPAT_AF], [1],
++	    [Use tunnel device compatibility to OpenBSD])
+ 	AC_CHECK_HEADER([net/if_tap.h], ,
+ 	    AC_DEFINE([SSH_TUN_NO_L2], [1], [No layer 2 tunnel support]))
+ 	AC_DEFINE([BROKEN_GLOB], [1], [FreeBSD glob does not do what we need])
