@@ -1,5 +1,5 @@
 PORTNAME=	google-protobuf
-PORTVERSION=	4.32.0
+PORTVERSION=	4.32.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
