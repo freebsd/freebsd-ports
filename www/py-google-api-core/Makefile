@@ -7,7 +7,8 @@ DISTNAME=	google_api_core-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Core Google API Client Library
-WWW=		https://github.com/googleapis/python-api-core
+WWW=		https://googleapis.dev/python/google-api-core/latest/ \
+		https://github.com/googleapis/python-api-core
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
