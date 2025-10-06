@@ -7,7 +7,9 @@ DISTNAME=	google_cloud_audit_log-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Cloud Audit Protos
-WWW=		https://github.com/googleapis/python-audit-log
+WWW=		https://cloud.google.com/python/docs/reference/auditlog/latest \
+		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-audit-log \
+		https://github.com/googleapis/google-cloud-python
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
