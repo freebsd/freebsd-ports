@@ -9,6 +9,9 @@ WWW=		https://github.com/kirei/fpdns
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream repository has been archived on Sep 19, 2024
+EXPIRATION_DATE=2025-10-31
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Net-DNS>=0.42:dns/p5-Net-DNS
 
