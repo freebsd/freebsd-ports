@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		python
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 OPTIONS_GROUP=		RUNTIME
 OPTIONS_GROUP_RUNTIME=	NODE SPIDERMONKEY
 NODE_DESC=		Use www/node as JavaScript backend
