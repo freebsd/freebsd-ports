@@ -1,0 +1,11 @@
+--- fog-profitbricks.gemspec.orig	2025-10-04 07:25:11 UTC
++++ fog-profitbricks.gemspec
+@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<fog-core>.freeze, ["~> 1.42".freeze])
++  s.add_runtime_dependency(%q<fog-core>.freeze, [">= 1.42".freeze])
+   s.add_runtime_dependency(%q<fog-json>.freeze, ["~> 1.0".freeze])
+   s.add_development_dependency(%q<rake>.freeze, ["~> 10.4".freeze])
+   s.add_development_dependency(%q<minitest>.freeze, ["~> 4".freeze])
