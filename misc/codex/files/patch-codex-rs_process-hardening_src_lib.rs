@@ -1,6 +1,16 @@
---- codex-rs/cli/src/pre_main_hardening.rs.orig	2025-09-26 18:28:59 UTC
-+++ codex-rs/cli/src/pre_main_hardening.rs
-@@ -4,9 +4,12 @@ const PTRACE_DENY_ATTACH_FAILED_EXIT_CODE: i32 = 6;
+--- codex-rs/process-hardening/src/lib.rs.orig	2025-10-03 16:43:33 UTC
++++ codex-rs/process-hardening/src/lib.rs
+@@ -10,6 +10,9 @@ pub fn pre_main_hardening() {
+     #[cfg(target_os = "macos")]
+     pre_main_hardening_macos();
+ 
++    #[cfg(target_os = "freebsd")]
++    pre_main_hardening_freebsd();
++
+     #[cfg(windows)]
+     pre_main_hardening_windows();
+ }
+@@ -20,9 +23,12 @@ const PTRACE_DENY_ATTACH_FAILED_EXIT_CODE: i32 = 6;
  #[cfg(target_os = "macos")]
  const PTRACE_DENY_ATTACH_FAILED_EXIT_CODE: i32 = 6;
  
@@ -14,7 +24,7 @@
  #[cfg(any(target_os = "linux", target_os = "android"))]
  pub(crate) fn pre_main_hardening_linux() {
      // Disable ptrace attach / mark process non-dumpable.
-@@ -69,6 +72,43 @@ pub(crate) fn pre_main_hardening_macos() {
+@@ -85,6 +91,43 @@ pub(crate) fn pre_main_hardening_macos() {
          .collect();
  
      for key in dyld_keys {
