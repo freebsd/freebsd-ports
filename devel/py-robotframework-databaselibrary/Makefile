@@ -1,5 +1,5 @@
 PORTNAME=	robotframework-databaselibrary
-PORTVERSION=	2.1.4
+PORTVERSION=	2.2.0
 CATEGORIES=	devel www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,12 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}robotframework>=5.0.1:devel/py-robotframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}robotframework-assertion-engine>=0:devel/py-robotframework-assertion-engine@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlparse>=0:databases/py-sqlparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}robotframework>=5.0.1:devel/py-robotframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}robotframework-assertion-engine>=0:devel/py-robotframework-assertion-engine@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}robotframework-assertion-engine>=0:devel/py-robotframework-assertion-engine@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlparse>=0:databases/py-sqlparse@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
