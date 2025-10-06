@@ -1,5 +1,5 @@
 PORTNAME=	modin
-PORTVERSION=	0.35.0
+PORTVERSION=	0.36.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,8 @@ COMMENT=	Make your pandas code run faster
 WWW=		https://modin.readthedocs.io/en/stable/ \
 		https://github.com/modin-project/modin
 
-LICENSE=	APACHE20
+LICENSE=	APACHE20 BSD3CLAUSE
+LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
