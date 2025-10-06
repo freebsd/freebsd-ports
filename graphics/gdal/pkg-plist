@@ -137,6 +137,7 @@ share/bash-completion/completions/gdal_contour
 share/bash-completion/completions/gdal_create
 share/bash-completion/completions/gdal_edit.py
 share/bash-completion/completions/gdal_fillnodata.py
+share/bash-completion/completions/gdal_footprint
 share/bash-completion/completions/gdal_grid
 share/bash-completion/completions/gdal_merge.py
 share/bash-completion/completions/gdal_polygonize.py
@@ -148,12 +149,9 @@ share/bash-completion/completions/gdal_translate
 share/bash-completion/completions/gdal_viewshed
 share/bash-completion/completions/gdaladdo
 share/bash-completion/completions/gdalbuildvrt
-share/bash-completion/completions/gdalchksum.py
 share/bash-completion/completions/gdalcompare.py
 share/bash-completion/completions/gdaldem
 share/bash-completion/completions/gdalenhance
-share/bash-completion/completions/gdalident.py
-share/bash-completion/completions/gdalimport.py
 share/bash-completion/completions/gdalinfo
 share/bash-completion/completions/gdallocationinfo
 share/bash-completion/completions/gdalmanage
@@ -163,10 +161,12 @@ share/bash-completion/completions/gdaltindex
 share/bash-completion/completions/gdaltransform
 share/bash-completion/completions/gdalwarp
 share/bash-completion/completions/ogr2ogr
+share/bash-completion/completions/ogr_layer_algebra.py
 share/bash-completion/completions/ogrinfo
 share/bash-completion/completions/ogrlineref
 share/bash-completion/completions/ogrmerge.py
 share/bash-completion/completions/ogrtindex
+share/bash-completion/completions/sozip
 %%DATADIR%%/GDALLogoBW.svg
 %%DATADIR%%/GDALLogoColor.svg
 %%DATADIR%%/GDALLogoGS.svg
