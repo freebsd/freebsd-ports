@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.240.0
+PORTVERSION=	3.241.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -376,7 +376,6 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-signer>=1<2:devel/rubygem-aws-sdk-signer \
 		rubygem-aws-sdk-simpledb>=1<2:devel/rubygem-aws-sdk-simpledb \
 		rubygem-aws-sdk-simspaceweaver>=1<2:devel/rubygem-aws-sdk-simspaceweaver \
-		rubygem-aws-sdk-sms>=1<2:devel/rubygem-aws-sdk-sms \
 		rubygem-aws-sdk-snowball>=1<2:devel/rubygem-aws-sdk-snowball \
 		rubygem-aws-sdk-snowdevicemanagement>=1<2:devel/rubygem-aws-sdk-snowdevicemanagement \
 		rubygem-aws-sdk-sns>=1<2:devel/rubygem-aws-sdk-sns \
