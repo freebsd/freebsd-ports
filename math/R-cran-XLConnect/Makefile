@@ -1,5 +1,5 @@
 PORTNAME=	XLConnect
-PORTVERSION=	1.2.2
+DISTVERSION=	1.2.2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -26,24 +26,7 @@ TEST_DEPENDS=	R-cran-zoo>0:math/R-cran-zoo	\
 
 USES=		cran java
 
-# See PR 272855
-BROKEN=		a recent default JDK is required for a full apache-poi with bouncycastle
-
-DEP_JARS=	commons-codec commons-collections4 commons-compress commons-io	\
-		commons-lang3 commons-math log4j-api poi poi-ooxml poi-ooxml-full\
-		SparseBitSet xmlbeans
-
-post-stage:
-.for j in ${DEP_JARS}
-	${LN} -sf ${JAVALIBDIR}/${j}.jar ${STAGEDIR}${PREFIX}/${R_MOD_DIR}/java/
-.endfor
-	${LN} -sf ${JAVALIBDIR}/commons-lang3.jar	\
-		${STAGEDIR}${PREFIX}/${R_MOD_DIR}/java/commons-lang3-3.16.0.jar
-	${LN} -sf ${JAVALIBDIR}/commons-math.jar	\
-		${STAGEDIR}${PREFIX}/${R_MOD_DIR}/java/commons-math3.jar
-	${LN} -sf ${JAVALIBDIR}/commons-io.jar	\
-		${STAGEDIR}${PREFIX}/${R_MOD_DIR}/java/commons-io-2.18.0.jar
-	${LN} -sf ${JAVALIBDIR}/commons-codec.jar	\
-		${STAGEDIR}${PREFIX}/${R_MOD_DIR}/java/commons-codec-1.18.0.jar
+post-patch:
+	@${REINPLACE_CMD} -e 's|JAVALIBDIR|${JAVALIBDIR}|g' ${WRKSRC}/R/onLoad.R
 
 .include <bsd.port.mk>
