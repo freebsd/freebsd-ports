@@ -14,6 +14,9 @@ WWW=		https://datafusion.apache.org/python/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_armv7=	rustc-LLVM ERROR: out of memory
+BROKEN_i386=	rustc-LLVM ERROR: out of memory
+
 BUILD_DEPENDS=	protoc:devel/protobuf \
 		${PYTHON_PKGNAMEPREFIX}maturin>=1.8.1:devel/py-maturin@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyarrow>=11.0.0:databases/py-pyarrow@${PY_FLAVOR}
