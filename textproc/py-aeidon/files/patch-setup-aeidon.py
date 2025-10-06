@@ -1,6 +1,6 @@
---- setup-aeidon.py.orig	2020-12-30 21:35:12 UTC
+--- setup-aeidon.py.orig	2024-05-28 20:53:03 UTC
 +++ setup-aeidon.py
-@@ -2,30 +2,30 @@
+@@ -2,30 +2,31 @@
  
  """setuptools/wheel/PyPI version of the aeidon package."""
  
@@ -8,6 +8,7 @@
 +#import shutil
  
 -from setup import get_aeidon_version
++#from setup import get_aeidon_version
  from setuptools import find_packages
  from setuptools import setup
  
@@ -33,8 +34,8 @@
 -    package_data={"aeidon": ["data/*/*"]},
 +    package_data={"aeidon": ["aeidon/data/*/*"]},
 +    include_package_data=True,
-     python_requires=">=3.2.0",
-     install_requires=["chardet>=2.2.1"],
+     python_requires=">=3.5.0",
+     install_requires=["charset-normalizer>2.0"],
  )
  
 -shutil.rmtree("aeidon/data")
