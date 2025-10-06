@@ -1,0 +1,15 @@
+Essentials is a collection of general-purpose classes and functions for
+Python development. It provides commonly used utilities and helpers that
+can be reused across different projects.
+
+Key features:
+* Common utility classes and functions
+* String manipulation helpers
+* Date and time utilities
+* Collection manipulation tools
+* Type checking and validation helpers
+* Configuration management utilities
+* File system operation helpers
+
+The library is designed to reduce code duplication and provide a
+consistent set of tools for everyday Python programming tasks.

@@ -4864,6 +4864,7 @@
     SUBDIR += py-epc
     SUBDIR += py-epdb
     SUBDIR += py-epsilon
+    SUBDIR += py-essentials
     SUBDIR += py-etcd3gw
     SUBDIR += py-etils
     SUBDIR += py-etuples
