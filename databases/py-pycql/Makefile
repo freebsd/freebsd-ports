@@ -12,6 +12,9 @@ WWW=		https://github.com/geopython/pycql
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream repository has been archived on Aug 31, 2021
+EXPIRATION_DATE=2025-10-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateparser>=0:devel/py-dateparser@${PY_FLAVOR} \
