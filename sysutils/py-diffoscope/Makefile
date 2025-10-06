@@ -28,4 +28,12 @@ NO_ARCH=	yes
 
 CPE_VENDOR=	reproducible_builds
 
+OPTIONS_DEFINE=	CMDLINE DISTRO_DETECTION
+CMDLINE_DESC=		Command line support
+DISTRO_DETECTION_DESC=	OS distro detection
+
+CMDLINE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=0:devel/py-argcomplete@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}progressbar>=0:misc/py-progressbar@${PY_FLAVOR}
+DISTRO_DETECTION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distro>=0:sysutils/py-distro@${PY_FLAVOR}
+
 .include <bsd.port.mk>
