@@ -1,0 +1,7 @@
+This is a self-contained library for reading and writing Windows Registry "hive"
+binary files.
+
+Unlike many other tools in this area, it doesn't use the textual .REG format for
+output, because parsing that is as much trouble as parsing the original binary
+format. Instead it makes the file available through a C API, or there is a
+separate program to export the hive as XML.

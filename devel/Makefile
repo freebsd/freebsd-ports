@@ -983,6 +983,7 @@
     SUBDIR += hgsvn
     SUBDIR += highlighterkit
     SUBDIR += highway
+    SUBDIR += hivex
     SUBDIR += hoel
     SUBDIR += hotspot
     SUBDIR += hp48cc
