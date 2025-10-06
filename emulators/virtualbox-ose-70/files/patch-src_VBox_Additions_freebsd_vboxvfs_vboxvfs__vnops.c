@@ -1382,7 +1382,7 @@
 +	int 	lkflags = cnp->cn_lkflags;
 +	char	*fullpath = NULL;
 +
-+	*vpp = NULLVP;
++	*vpp = NULL;
 +	error = ENOENT;
 +	if (cnp->cn_flags & ISDOTDOT) {
 +		error = vn_vget_ino_gen(dvp, vboxfs_vn_get_ino_alloc,
@@ -1392,7 +1392,7 @@
 +			goto out;
 +
 +	} else if (cnp->cn_namelen == 1 && cnp->cn_nameptr[0] == '.') {
-+		VREF(dvp);
++		vref(dvp);
 +		*vpp = dvp;
 +		error = 0;
 +	} else {
