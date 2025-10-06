@@ -43,7 +43,6 @@ OPTIONS_DEFAULT=ALL HTTP LZ4
 ALL_IMPLIES=	HTTP LZ4
 ALL_DESC=	All optional dependencies
 HTTP_DESC=	HTTP support via fsspec
-LZ4_DESC=	Lz4 compression algorithm support
 
 HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=0:www/py-aiohttp@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}fsspec>=2022.8.2:filesystems/py-fsspec@${PY_FLAVOR}
