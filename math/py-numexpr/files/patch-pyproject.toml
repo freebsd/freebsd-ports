@@ -1,19 +1,21 @@
---- pyproject.toml.orig	2025-06-19 14:14:08 UTC
+--- pyproject.toml.orig	2025-09-11 10:39:22 UTC
 +++ pyproject.toml
-@@ -2,7 +2,7 @@ requires = [
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
  requires = [
-     "setuptools",
-     "wheel",
+-    "setuptools>=77.0.0",
 -    "numpy>=2.0.0",
++    "setuptools>=61.0.0",
 +    "numpy",
  ]
  build-backend = "setuptools.build_meta"
  
-@@ -15,7 +15,7 @@ maintainers = [{ name = "Blosc Development Team", emai
+@@ -14,8 +14,7 @@ maintainers = [{ name = "Blosc Development Team", emai
  readme = "README.rst"
  authors = [{name = "David M. Cooke, Francesc Alted, and others", email = "blosc@blosc.org"}]
  maintainers = [{ name = "Blosc Development Team", email = "blosc@blosc.org"}]
 -license = "MIT"
+-license-files = ["LICENSE.txt", "LICENSES/*"]
 +license = {text = "MIT"}
  classifiers = [
      "Development Status :: 6 - Mature",
