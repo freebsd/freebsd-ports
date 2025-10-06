@@ -1727,6 +1727,7 @@
     SUBDIR += py-dropbox
     SUBDIR += py-dtflickr
     SUBDIR += py-enmerkar
+    SUBDIR += py-essentials-openapi
     SUBDIR += py-fake-useragent
     SUBDIR += py-falcon
     SUBDIR += py-fastapi
