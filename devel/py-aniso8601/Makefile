@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Library for parsing ISO 8601 strings
-WWW=		https://bitbucket.org/nielsenb/aniso8601/
+WWW=		https://codeberg.org/nielsenb-jf/aniso8601
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
