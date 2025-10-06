@@ -7,7 +7,8 @@ DISTNAME=	google_cloud_iam-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	IAM Service Account Credentials API client library
-WWW=		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-iam \
+WWW=		https://cloud.google.com/python/docs/reference/iam/latest \
+		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-iam \
 		https://github.com/googleapis/google-cloud-python
 
 LICENSE=	APACHE20
