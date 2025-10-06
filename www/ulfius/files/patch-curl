@@ -1,0 +1,70 @@
+--- src/u_send_request.c.orig	2023-11-14 00:40:08 UTC
++++ src/u_send_request.c
+@@ -386,7 +386,7 @@ int ulfius_send_http_streaming_request_max_header(cons
+ 
+           // follow redirection if set
+           if (copy_request->follow_redirect) {
+-            if (curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1) != CURLE_OK) {
++            if (curl_easy_setopt(curl_handle, CURLOPT_FOLLOWLOCATION, 1L) != CURLE_OK) {
+               y_log_message(Y_LOG_LEVEL_ERROR, "Ulfius - Error setting follow redirection option");
+               ret = U_ERROR_LIBCURL;
+               break;
+@@ -622,21 +622,21 @@ int ulfius_send_http_streaming_request_max_header(cons
+ 
+           // Disable server certificate validation if needed
+           if (!copy_request->check_server_certificate) {
+-            if (curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0) != CURLE_OK || curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYHOST, 0) != CURLE_OK) {
++            if (curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0L) != CURLE_OK || curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYHOST, 0L) != CURLE_OK) {
+               y_log_message(Y_LOG_LEVEL_ERROR, "Ulfius - Error setting libcurl options (4)");
+               ret = U_ERROR_LIBCURL;
+               break;
+             }
+           } else {
+             if (!(copy_request->check_server_certificate_flag & U_SSL_VERIFY_PEER)) {
+-              if (curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0) != CURLE_OK) {
++              if (curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0L) != CURLE_OK) {
+                 y_log_message(Y_LOG_LEVEL_ERROR, "Ulfius - Error setting libcurl options (5)");
+                 ret = U_ERROR_LIBCURL;
+                 break;
+               }
+             }
+             if (!(copy_request->check_server_certificate_flag & U_SSL_VERIFY_HOSTNAME)) {
+-              if (curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYHOST, 0) != CURLE_OK) {
++              if (curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYHOST, 0L) != CURLE_OK) {
+                 y_log_message(Y_LOG_LEVEL_ERROR, "Ulfius - Error setting libcurl options (6)");
+                 ret = U_ERROR_LIBCURL;
+                 break;
+@@ -647,21 +647,21 @@ int ulfius_send_http_streaming_request_max_header(cons
+ #if LIBCURL_VERSION_NUM >= 0x073400
+           // Disable proxy certificate validation if needed
+           if (!copy_request->check_proxy_certificate) {
+-            if (curl_easy_setopt(curl_handle, CURLOPT_PROXY_SSL_VERIFYPEER, 0) != CURLE_OK || curl_easy_setopt(curl_handle, CURLOPT_PROXY_SSL_VERIFYHOST, 0) != CURLE_OK) {
++            if (curl_easy_setopt(curl_handle, CURLOPT_PROXY_SSL_VERIFYPEER, 0L) != CURLE_OK || curl_easy_setopt(curl_handle, CURLOPT_PROXY_SSL_VERIFYHOST, 0L) != CURLE_OK) {
+               y_log_message(Y_LOG_LEVEL_ERROR, "Ulfius - Error setting libcurl options (7)");
+               ret = U_ERROR_LIBCURL;
+               break;
+             }
+           } else {
+             if (!(copy_request->check_proxy_certificate_flag & U_SSL_VERIFY_PEER)) {
+-              if (curl_easy_setopt(curl_handle, CURLOPT_PROXY_SSL_VERIFYPEER, 0) != CURLE_OK) {
++              if (curl_easy_setopt(curl_handle, CURLOPT_PROXY_SSL_VERIFYPEER, 0L) != CURLE_OK) {
+                 y_log_message(Y_LOG_LEVEL_ERROR, "Ulfius - Error setting libcurl options (8)");
+                 ret = U_ERROR_LIBCURL;
+                 break;
+               }
+             }
+             if (!(copy_request->check_proxy_certificate_flag & U_SSL_VERIFY_HOSTNAME)) {
+-              if (curl_easy_setopt(curl_handle, CURLOPT_PROXY_SSL_VERIFYHOST, 0) != CURLE_OK) {
++              if (curl_easy_setopt(curl_handle, CURLOPT_PROXY_SSL_VERIFYHOST, 0L) != CURLE_OK) {
+                 y_log_message(Y_LOG_LEVEL_ERROR, "Ulfius - Error setting libcurl options (9)");
+                 ret = U_ERROR_LIBCURL;
+                 break;
+@@ -702,7 +702,7 @@ int ulfius_send_http_streaming_request_max_header(cons
+             }
+           }
+ 
+-          if (curl_easy_setopt(curl_handle, CURLOPT_NOSIGNAL, 1) != CURLE_OK) {
++          if (curl_easy_setopt(curl_handle, CURLOPT_NOSIGNAL, 1L) != CURLE_OK) {
+             y_log_message(Y_LOG_LEVEL_ERROR, "Ulfius - Error setting libcurl CURLOPT_NOSIGNAL");
+             ret = U_ERROR_LIBCURL;
+             break;
