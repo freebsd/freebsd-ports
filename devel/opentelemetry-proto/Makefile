@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-proto
 
-MAINTAINER=	osa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenTelemetry protocol (OTLP) specification and Protobuf definitions
 WWW=		https://github.com/open-telemetry/opentelemetry-proto
 
