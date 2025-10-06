@@ -1,7 +1,8 @@
 PORTNAME=	graphemeu
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.0
 CATEGORIES=	textproc python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/timendum/grapheme/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
