@@ -1,4 +1,3 @@
-/etc/vmware-tools/tools.conf.example
 bin/vm-support
 %%FUSE%%bin/vmhgfs-fuse
 bin/vmtoolsd
@@ -12,6 +11,7 @@ bin/vmware-toolbox-cmd
 %%FUSE%%bin/vmware-vmblock-fuse
 bin/vmware-xferlogs
 etc/pam.d/vmtoolsd
+@sample etc/vmware-tools/tools.conf.example
 %%X11%%etc/xdg/autostart/vmware-user.desktop
 %%DEPLOYPKG%%include/libDeployPkg/deployPkgFormat.h
 %%DEPLOYPKG%%include/libDeployPkg/deploypkg.h
@@ -85,5 +85,4 @@ share/vmware-tools/suspend-vm-default
 @dir lib/vmware-tools/modules/input
 @dir %%DATADIR%%/scripts/vmware
 @dir %%DATADIR%%/tests
-@dir /etc/vmware-tools
 @preunexec %%PREFIX%%/bin/vmware-rpctool 'tools.set.version 0' 2>/dev/null || /usr/bin/true

@@ -1,4 +1,4 @@
---- lib/guestApp/guestApp.c.orig	2024-10-10 15:05:07 UTC
+--- lib/guestApp/guestApp.c.orig	2025-06-19 04:05:18 UTC
 +++ lib/guestApp/guestApp.c
 @@ -65,7 +65,7 @@
  #elif defined __APPLE__

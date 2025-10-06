@@ -1,14 +1,12 @@
---- vmmemctl/os.c.orig	2025-05-15 19:16:07 UTC
+--- vmmemctl/os.c.orig	2025-09-30 06:45:41 UTC
 +++ vmmemctl/os.c
 @@ -91,8 +91,13 @@ MALLOC_DEFINE(M_VMMEMCTL, BALLOON_NAME, "vmmemctl meta
  /*
   * FreeBSD specific MACROS
   */
--#define VM_PAGE_LOCK(page) vm_page_lock(page);
--#define VM_PAGE_UNLOCK(page) vm_page_unlock(page)
 +#if __FreeBSD_version < 1500046
-+#define VM_PAGE_LOCK(page) vm_page_tryxbusy(page);
-+#define VM_PAGE_UNLOCK(page) vm_page_xunbusy(page)
+ #define VM_PAGE_LOCK(page) vm_page_lock(page);
+ #define VM_PAGE_UNLOCK(page) vm_page_unlock(page)
 +#else
 +#define VM_PAGE_LOCK(page) vm_page_tryxbusy(page);
 +#define VM_PAGE_UNLOCK(page) vm_page_xunbusy(page)

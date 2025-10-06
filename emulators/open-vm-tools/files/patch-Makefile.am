@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2025-06-19 04:05:18 UTC
++++ Makefile.am
+@@ -77,6 +77,6 @@ endif
+ 
+ 
+ install-data-local:
+-	$(INSTALL) -d $(DESTDIR)/etc/vmware-tools/
+-	$(INSTALL) -m 644 $(srcdir)/tools.conf $(DESTDIR)/etc/vmware-tools/tools.conf.example
++	$(INSTALL) -d $(DESTDIR)%%PREFIX%%/etc/vmware-tools/
++	$(INSTALL) -m 644 $(srcdir)/tools.conf $(DESTDIR)%%PREFIX%%/etc/vmware-tools/tools.conf.example
+ 

@@ -1,5 +1,5 @@
 PORTNAME=	open-vm-tools
-PORTVERSION=	12.5.2
+PORTVERSION=	13.0.5
 DISTVERSIONPREFIX=	stable-
 PORTEPOCH=	2
 CATEGORIES=	emulators
@@ -72,8 +72,16 @@ X11_USE=		GNOME=gdkpixbuf,gdkpixbuf2xlib,gtk30,gtkmm30 \
 X11_CONFIGURE_WITH=	gtk3 gtkmm3 x
 
 post-patch:
-	@${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@"\
-		${WRKSRC}/lib/guestApp/guestApp.c
+	@${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@" \
+		${WRKSRC}/Makefile.am \
+		${WRKSRC}/lib/guestApp/guestApp.c \
+		${WRKSRC}/lib/misc/codeset.c \
+		${WRKSRC}/scripts/common/vm-support \
+		${WRKSRC}/services/plugins/componentMgr/svtminion.sh \
+		${WRKSRC}/services/vmtoolsd/Makefile.am \
+		${WRKSRC}/vgauth/common/prefs.h \
+		${WRKSRC}/vgauth/service/Makefile.am \
+		${WRKSRC}/vmware-user-suid-wrapper/wrapper.h
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/drivers
