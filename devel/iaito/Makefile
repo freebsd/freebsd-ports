@@ -1,5 +1,5 @@
 PORTNAME=	iaito
-DISTVERSION=	6.0.0
+DISTVERSION=	6.0.4
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -15,8 +15,7 @@ LIB_DEPENDS=	libcapstone.so:devel/capstone \
 
 FLAVORS=		qt6 qt5
 FLAVOR?=		qt6
-qt5_PKGNAMESUFFIX=	-qt5
-qt6_PKGNAMESUFFIX=	-qt6
+${FLAVOR}_PKGNAMESUFFIX=	-${FLAVOR}
 
 USES=		compiler:c++17-lang desktop-file-utils gl gmake pkgconfig \
 		qmake:no_configure
@@ -48,10 +47,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/src/org.radare.iaito.desktop \
 			${STAGEDIR}${DESKTOPDIR}
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps \
+		 ${STAGEDIR}${PREFIX}/share/metainfo
 	${INSTALL_DATA} ${WRKSRC}/src/img/org.radare.iaito.svg \
 			${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo
 	${INSTALL_DATA} ${WRKSRC}/src/org.radare.iaito.appdata.xml \
 			${STAGEDIR}${PREFIX}/share/metainfo
 
