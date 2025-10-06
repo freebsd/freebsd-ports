@@ -1,8 +1,9 @@
 PORTNAME=	unifont
-PORTVERSION=	16.0.04
+PORTVERSION=	17.0.01
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	GNU/unifont/unifont-${PORTVERSION}
+MASTER_SITES=	GNU/unifont/unifont-${PORTVERSION} \
+		https://unifoundry.com/pub/unifont/unifont-${PORTVERSION}/font-builds/
 PKGNAMEPREFIX=	gnu-
 DISTFILES=	${FONTFILES:S|$|-${PORTVERSION}${FONTSUFFIX}|}
 EXTRACT_ONLY=	# empty
