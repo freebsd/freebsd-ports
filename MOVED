@@ -4796,3 +4796,5 @@ net/concourse-fly||2025-10-01|Has expired: Not updated in years, no demand for t
 net/netatalk3|net/netatalk4|2025-10-05|Has expired: End of support; use net/netatalk4 instead
 emulators/86Box@qt5||2025-10-08|Unflavorize port, qt5 flavor is no longer used in ports tree
 emulators/86Box@qt6|emulators/86Box|2025-10-08|Unflavorize port, as it is now qt6 only
+net-p2p/tremotesf@qt5||2025-10-08|Upstream removed Qt 5 support
+net-p2p/tremotesf@qt6|net-p2p/tremotesf|2025-10-08|Qt 6 is the only supported version, de-flavorize
