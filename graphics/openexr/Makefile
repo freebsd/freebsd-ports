@@ -34,7 +34,8 @@ WWW=		https://www.openexr.com/
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS?=	help2man:misc/help2man
+BUILD_DEPENDS?=	help2man:misc/help2man \
+		openjph>=0.23.0:graphics/openjph
 # exact libImath version required to avoid hard-to-debug issues
 # but this is due to Imath and OpenEXR being close in terms of their
 # release engineering, no other port should version pin Imath
