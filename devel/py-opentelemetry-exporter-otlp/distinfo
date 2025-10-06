@@ -1,3 +1,3 @@
-TIMESTAMP = 1755062506
-SHA256 (opentelemetry_exporter_otlp-1.36.0.tar.gz) = 72f166ea5a8923ac42889337f903e93af57db8893de200369b07401e98e4e06b
-SIZE (opentelemetry_exporter_otlp-1.36.0.tar.gz) = 6144
+TIMESTAMP = 1759324102
+SHA256 (opentelemetry_exporter_otlp-1.37.0.tar.gz) = f85b1929dd0d750751cc9159376fb05aa88bb7a08b6cdbf84edb0054d93e9f26
+SIZE (opentelemetry_exporter_otlp-1.37.0.tar.gz) = 6145
