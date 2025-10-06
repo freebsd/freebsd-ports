@@ -3,6 +3,9 @@ PORTVERSION=	3.7.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
+PATCH_SITES=	https://github.com/google/fruit/commit/
+PATCHFILES=	dab5bdfe01eb9f90a2b688c7f3be177a9bd8d5c6.patch:-p1
+
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dependency injection framework for C++
 WWW=		https://github.com/google/fruit/wiki \
