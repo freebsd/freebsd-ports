@@ -31,7 +31,7 @@ asset_env="V2RAY_LOCATION_ASSET=%%PREFIX%%/share/$name"
 pidfile="/var/run/$name.pid"
 procname="%%PREFIX%%/bin/$name"
 command="/usr/sbin/daemon"
-command_args="-c -p ${pidfile} /usr/bin/env ${asset_env} ${v2ray_env} ${procname} -config ${v2ray_config}"
+command_args="-c -p ${pidfile} /usr/bin/env ${asset_env} ${v2ray_env} ${procname} run -config ${v2ray_config}"
 required_files="${v2ray_config}"
 
 start_precmd="v2ray_startprecmd"
