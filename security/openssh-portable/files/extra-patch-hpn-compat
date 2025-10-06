@@ -16,12 +16,12 @@ r294563 was incomplete; re-add the client-side options as well.
 
 ------------------------------------------------------------------------
 
---- readconf.c.orig	2025-04-09 00:02:43.000000000 -0700
-+++ readconf.c	2025-04-10 21:55:30.974643000 -0700
-@@ -332,6 +332,12 @@ static struct {
- 	{ "obscurekeystroketiming", oObscureKeystrokeTiming },
- 	{ "channeltimeout", oChannelTimeout },
+--- readconf.c.orig	2025-10-05 19:25:16.000000000 -0700
++++ readconf.c	2025-10-06 08:47:03.024775000 -0700
+@@ -328,6 +328,12 @@ static struct {
  	{ "versionaddendum", oVersionAddendum },
+ 	{ "refuseconnection", oRefuseConnection },
+ 	{ "warnweakcrypto", oWarnWeakCrypto },
 +	{ "hpndisabled", oDeprecated },
 +	{ "hpnbuffersize", oDeprecated },
 +	{ "tcprcvbufpoll", oDeprecated },
