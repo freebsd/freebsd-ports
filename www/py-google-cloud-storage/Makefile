@@ -7,7 +7,8 @@ DISTNAME=	google_cloud_storage-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Client for Google Cloud Storage
-WWW=		https://github.com/googleapis/python-storage
+WWW=		https://cloud.google.com/python/docs/reference/storage/latest \
+		https://github.com/googleapis/python-storage
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
