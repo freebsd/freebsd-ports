@@ -7,7 +7,8 @@ DISTNAME=	google_cloud_logging-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Stackdriver Logging API client library
-WWW=		https://github.com/googleapis/python-logging
+WWW=		https://cloud.google.com/python/docs/reference/logging/latest \
+		https://github.com/googleapis/python-logging
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
