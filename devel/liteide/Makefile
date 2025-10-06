@@ -2,7 +2,11 @@ PORTNAME=	liteide
 DISTVERSIONPREFIX=	x
 DISTVERSION=	38.4
 CATEGORIES=	devel editors
+.ifmake makesum
 MASTER_SITES=	https://go.googlesource.com/sync/+archive/refs/tags/:errgroup
+.else
+MASTER_SITES=	LOCAL/vvd:errgroup
+.endif
 DISTFILES=	v0.17.0/errgroup.tar.gz:errgroup
 
 MAINTAINER=	ports@FreeBSD.org
