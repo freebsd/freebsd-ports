@@ -12,6 +12,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/composites.conf
 %%ETCDIR%%/groups.conf
 %%ETCDIR%%/lang_detection.inc
+%%ETCDIR%%/local.d/antivirus.conf.example
 %%ETCDIR%%/local.d/module.conf.example
 %%ETCDIR%%/logging.inc
 %%ETCDIR%%/lua.local.d/module.lua.example
@@ -162,6 +163,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/fun.lua
 %%DATADIR%%/lualib/global_functions.lua
 %%DATADIR%%/lualib/llm_common.lua
+%%DATADIR%%/lualib/llm_context.lua
 %%DATADIR%%/lualib/lpegre.lua
 %%DATADIR%%/lualib/lua_auth_results.lua
 %%DATADIR%%/lualib/lua_aws.lua
@@ -204,6 +206,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_scanners/init.lua
 %%DATADIR%%/lualib/lua_scanners/kaspersky_av.lua
 %%DATADIR%%/lualib/lua_scanners/kaspersky_se.lua
+%%DATADIR%%/lualib/lua_scanners/metadefender.lua
 %%DATADIR%%/lualib/lua_scanners/oletools.lua
 %%DATADIR%%/lualib/lua_scanners/p0f.lua
 %%DATADIR%%/lualib/lua_scanners/pyzor.lua
