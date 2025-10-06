@@ -1,5 +1,5 @@
 PORTNAME=	unicode-display_width
-PORTVERSION=	3.1.5
+PORTVERSION=	3.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/janlelis/unicode-display_width
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt
 
-RUN_DEPENDS=	rubygem-unicode-emoji>=4.0.4<5:devel/rubygem-unicode-emoji
+RUN_DEPENDS=	rubygem-unicode-emoji>=4.1<5:devel/rubygem-unicode-emoji
 
 USES=		gem
 
