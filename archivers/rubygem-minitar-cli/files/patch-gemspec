@@ -1,0 +1,11 @@
+--- minitar-cli.gemspec.orig	2025-10-01 18:46:51 UTC
++++ minitar-cli.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<minitar>.freeze, ["~> 1.0.0".freeze])
++  s.add_runtime_dependency(%q<minitar>.freeze, ["~> 1.0".freeze])
+   s.add_runtime_dependency(%q<powerbar>.freeze, ["~> 1.0".freeze])
+   s.add_development_dependency(%q<minitest>.freeze, ["~> 5.24".freeze])
+   s.add_development_dependency(%q<hoe>.freeze, ["~> 4.0".freeze])
