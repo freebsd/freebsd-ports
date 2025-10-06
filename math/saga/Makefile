@@ -1,5 +1,5 @@
 PORTNAME=	saga
-PORTVERSION=	9.9.2
+PORTVERSION=	9.9.3
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
