@@ -2,7 +2,7 @@ PORTNAME=	xorriso
 DISTVERSION=	1.5.6
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://files.libburnia-project.org/releases/
+MASTER_SITES=	https://files.libburnia-project.org/releases/
 DISTNAME=	libisoburn-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
