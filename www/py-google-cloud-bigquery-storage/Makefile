@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-bigquery-storage
-PORTVERSION=	2.33.0
+PORTVERSION=	2.33.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,7 +8,8 @@ DISTNAME=	google_cloud_bigquery_storage-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Cloud Bigquery Storage API client library
 WWW=		https://cloud.google.com/python/docs/reference/bigquerystorage/latest \
-		https://github.com/googleapis/python-bigquery-storage
+		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-bigquery-storage \
+		https://github.com/googleapis/google-cloud-python
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
