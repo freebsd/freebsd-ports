@@ -1,6 +1,7 @@
 PORTNAME=	opensearch
 DISTVERSION=	3.2.0
 DISTVERSIONSUFFIX=	-linux-${OPENSEARCH_ARCH}
+PORTREVISION=	1
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
 
@@ -9,6 +10,8 @@ COMMENT=	Full-text search engine for Java
 WWW=		https://opensearch.org
 
 LICENSE=	APACHE20
+
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	bash>0:shells/bash \
