@@ -14,7 +14,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-ExtUtils-MakeMaker-CPANfile>=0:devel/p5-ExtUtils-MakeMaker-CPANfile \
 		p5-File-Slurper>=0:devel/p5-File-Slurper \
-		p5-File-Which>=0:sysutils/p5-File-Which
+		p5-File-Which>=0:sysutils/p5-File-Which \
+		quickjs>=2025.04.26.20250709:lang/quickjs
 LIB_DEPENDS=	libquickjs.so:lang/quickjs
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-FailWarnings>=0:devel/p5-Test-FailWarnings \
