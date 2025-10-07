@@ -1,6 +1,5 @@
 PORTNAME=	qtile
-PORTVERSION=	0.18.1
-PORTREVISION=	5
+PORTVERSION=	0.33.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,14 +20,15 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>1.1.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR}
 LIB_DEPENDS=	libpangocairo-1.0.so:x11-toolkits/pango \
 		libpulse.so:audio/pulseaudio
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xcffib>=0.5.0:x11/py-xcffib@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>1.1.0:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>1.4.1:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cairocffi>=0.9:graphics/py-cairocffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xcffib>=0.5.0:x11/py-xcffib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:devel/py-dbus@${PY_FLAVOR}
 
-USE_GNOME=	pygobject3
-
 USES=		gnome python localbase
-USE_PYTHON=	distutils autoplist noflavors
+USE_GNOME=	pygobject3
+USE_PYTHON=	autoplist pep517
 NO_ARCH=	yes
 
 SUB_FILES=	qtile.desktop
