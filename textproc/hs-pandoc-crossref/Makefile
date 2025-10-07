@@ -1,5 +1,6 @@
 PORTNAME=	pandoc-crossref
 DISTVERSION=	0.3.21
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -45,7 +46,7 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		cabal-doctest-1.0.11 \
 		case-insensitive-1.2.1.0 \
 		cassava-0.5.4.1 \
-		cborg-0.2.10.0 \
+		cborg-0.2.10.0_3 \
 		cereal-0.5.8.3 \
 		character-ps-0.1 \
 		citeproc-0.10 \
@@ -118,7 +119,7 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		optparse-applicative-0.19.0.0 \
 		ordered-containers-0.2.4 \
 		os-string-2.0.8 \
-		pandoc-3.8.1 \
+		pandoc-3.8.2 \
 		pandoc-types-1.23.1_3 \
 		pem-0.2.4 \
 		pretty-show-1.10 \
@@ -150,7 +151,7 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		tagsoup-0.14.8 \
 		tasty-1.5.3_2 \
 		temporary-1.3 \
-		texmath-0.13 \
+		texmath-0.13.0.1 \
 		text-conversions-0.3.1.1 \
 		text-iso8601-0.1.1_2 \
 		text-short-0.1.6_3 \
@@ -172,7 +173,7 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		uniplate-1.6.13_1 \
 		unix-time-0.4.17 \
 		unliftio-core-0.2.1.0_4 \
-		unordered-containers-0.2.20_4 \
+		unordered-containers-0.2.20.1 \
 		utf8-string-1.0.2 \
 		utility-ht-0.0.17.2 \
 		uuid-types-1.0.6_3 \
@@ -194,7 +195,7 @@ SKIP_CABAL_PLIST=	yes
 PLIST_FILES=	bin/pandoc-crossref \
 		share/man/man1/pandoc-crossref.1.gz
 
-PANDOC_VER=	3.8.1
+PANDOC_VER=	3.8.2
 
 post-build:
 	${SETENV} pandoc_datadir=${WRKSRC}/_cabal_deps/pandoc-${PANDOC_VER} \
