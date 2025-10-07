@@ -41,7 +41,7 @@ pidfile=${openssh_pidfile:="/var/run/sshd.pid"}
 
 openssh_keygen()
 {
-	local skip_dsa= skip_rsa= skip_ecdsa= skip_ed25519=
+	local skip_rsa= skip_ecdsa= skip_ed25519=
 	checkyesno openssh_rsa_enable || skip_rsa=y
 	checkyesno openssh_ecdsa_enable || skip_ecdsa=y
 	checkyesno openssh_ed25519_enable || skip_ed25519=y
