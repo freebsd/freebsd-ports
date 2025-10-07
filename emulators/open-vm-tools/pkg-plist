@@ -11,7 +11,7 @@ bin/vmware-toolbox-cmd
 %%FUSE%%bin/vmware-vmblock-fuse
 bin/vmware-xferlogs
 etc/pam.d/vmtoolsd
-@sample etc/vmware-tools/tools.conf.example
+@sample etc/vmware-tools/tools.conf.sample
 %%X11%%etc/xdg/autostart/vmware-user.desktop
 %%DEPLOYPKG%%include/libDeployPkg/deployPkgFormat.h
 %%DEPLOYPKG%%include/libDeployPkg/deploypkg.h
