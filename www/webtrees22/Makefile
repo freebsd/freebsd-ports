@@ -1,5 +1,5 @@
 PORTNAME=	webtrees
-DISTVERSION=	2.2.1
+DISTVERSION=	2.2.4
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/fisharebest/${PORTNAME}/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	22${PHP_PKGNAMESUFFIX}
@@ -32,7 +32,8 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	-${MKDIR} ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC}/${PORTNAME} && ${COPYTREE_BIN} . ${STAGEDIR}${WWWDIR} "! -name *\.md"
+	@cd ${WRKSRC}/${PORTNAME} && ${COPYTREE_BIN} . ${STAGEDIR}${WWWDIR} "! -name *\.md" \
+		"! -name .DS_Store"
 	@(cd ${WRKSRC}/${PORTNAME}; ${FIND} . -not -type d) | ${SORT} | \
 		${SED} -ne 's,^${PORTNAME}/,${WWWDIR_REL}/,p' >> ${TMPPLIST}
 	@${ECHO_CMD} \
