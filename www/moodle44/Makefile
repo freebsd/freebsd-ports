@@ -1,5 +1,5 @@
 PORTNAME=	moodle
-PORTVERSION=	4.4.10
+PORTVERSION=	4.4.11
 CATEGORIES=	www education
 MASTER_SITES=	https://packaging.moodle.org/stable404/ \
 		LOCAL/wen
@@ -11,7 +11,7 @@ WWW=		https://www.moodle.org/
 
 LICENSE=	GPLv3
 
-CONFLICTS=	moodle45-4.5.[0-9]* moodle50-5.0-[0-9]*
+CONFLICTS=	moodle45-4.5.[0-9]* moodle50-5.0-[0-9]* moodle51-5.1
 
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom exif fileinfo filter gd \
