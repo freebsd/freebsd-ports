@@ -4794,3 +4794,5 @@ net/bosh-bootloader||2025-10-01|Has expired: Not updated in years, no demand for
 net/cf||2025-10-01|Has expired: Not updated in years, no demand for them
 net/concourse-fly||2025-10-01|Has expired: Not updated in years, no demand for them
 net/netatalk3|net/netatalk4|2025-10-05|Has expired: End of support; use net/netatalk4 instead
+emulators/86Box@qt5||2025-10-08|Unflavorize port, qt5 flavor is no longer used in ports tree
+emulators/86Box@qt6|emulators/86Box|2025-10-08|Unflavorize port, as it is now qt6 only
