@@ -895,6 +895,7 @@
     SUBDIR += py-bcrypt
     SUBDIR += py-bitbox02
     SUBDIR += py-btchip-python
+    SUBDIR += py-cart
     SUBDIR += py-cerealizer
     SUBDIR += py-cert-human
     SUBDIR += py-certbot
