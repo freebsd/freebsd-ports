@@ -1,1 +1,6 @@
-The C++ OpenTelemetry client.
+This is the C implementation of the OpenTelemetry Protocol (OTLP). It provides
+the official Protocol Buffers definitions and code for working with traces,
+metrics, and logs across the OpenTelemetry ecosystem.
+
+Use this if you need native C support for OTLP, or to integrate OpenTelemetry
+data into your own collectors, exporters, or backend services.
