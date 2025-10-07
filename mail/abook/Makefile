@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://abook.sourceforge.net/devel/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Addressbook program with mutt mail client support
 WWW=		http://abook.sourceforge.net/
 
