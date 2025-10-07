@@ -1,6 +1,6 @@
 PORTNAME=	86Box
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0
+DISTVERSION=	5.1
 CATEGORIES=	emulators
 
 MAINTAINER=	tiga@FreeBSD.org
@@ -23,38 +23,28 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libsndfile.so:audio/libsndfile \
 		libxkbcommon.so:x11/libxkbcommon
 
-FLAVORS=		qt6 qt5
-FLAVOR?=		qt6
-qt5_PKGNAMESUFFIX=	-qt5
-qt6_PKGNAMESUFFIX=	-qt6
-
-USES=		cmake compiler:c++11-lang gnome pkgconfig qmake sdl xorg
+USES=		cmake compiler:c++11-lang gl gnome pkgconfig qmake qt:6 sdl \
+		xorg
 USE_GITHUB=	yes
+USE_GL=		opengl
 USE_GNOME=	glib20
+USE_QT=		base tools:build
 USE_SDL=	sdl2
 USE_XORG=	x11 xcb xext xi
 
-.if ${FLAVOR} == qt5
-USES+=		qt:5
-USE_QT=		core gui network opengl widgets buildtools:build \
-		linguisttools:build
-.else
 BUILD_DEPENDS+=	vulkan-headers>0:graphics/vulkan-headers
-USES+=		gl qt:6
-USE_GL=		opengl
-USE_QT=		base tools:build
 CMAKE_ON=	USE_QT6
-CXXFLAGS+=	-I${LOCALBASE}/include/qt6/QtGui/`pkg-config --modversion Qt6Gui`/QtGui
-.endif
 
-CMAKE_ON+=		RELEASE	${CMAKE_ON_${ARCH}}
+CMAKE_ON+=		${CMAKE_ON_${ARCH}} RELEASE
 CMAKE_ON_aarch64=	NEW_DYNAREC
-CMAKE_OFF=		DISCORD ${CMAKE_OFF_${ARCH}}
+CMAKE_OFF=		${CMAKE_OFF_${ARCH}} DISCORD
 CMAKE_OFF_powerpc64le=	DYNAREC
 
-SUB_FILES=		86Box-install-roms.sh
-SUB_LIST=		DISTVERSION=${DISTVERSION} \
-			DISTVERSIONPREFIX=${DISTVERSIONPREFIX}
+CXXFLAGS+=	-I${LOCALBASE}/include/qt6/QtGui/`pkg-config --modversion Qt6Gui`/QtGui
+
+SUB_FILES=	86Box-install-roms.sh
+SUB_LIST=	DISTVERSION=${DISTVERSION} \
+		DISTVERSIONPREFIX=${DISTVERSIONPREFIX}
 
 OPTIONS_DEFINE=		NLS WAYLAND
 OPTIONS_DEFAULT=	WAYLAND
@@ -64,7 +54,7 @@ NLS_CONFIGURE_ENABLE=	nls
 
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_USES=		kde:5
-WAYLAND_USE=		kde=ecm:build
+WAYLAND_USE=		KDE=ecm:build
 WAYLAND_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Wayland:BOOL=ON
 
 ICON_RESOLUTIONS=	128x128 192x192 256x256 48x48 512x512 64x64 72x72 96x96
