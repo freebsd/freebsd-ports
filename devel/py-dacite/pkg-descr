@@ -1,0 +1,3 @@
+The dacite library provides a simple API to create Python data classes from
+dictionaries. It also includes support for more advanced features like nested
+data classes and type checking.

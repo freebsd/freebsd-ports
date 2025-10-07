@@ -4768,6 +4768,7 @@
     SUBDIR += py-cython-test-exception-raiser
     SUBDIR += py-cytoolz
     SUBDIR += py-d2to1
+    SUBDIR += py-dacite
     SUBDIR += py-daemon
     SUBDIR += py-daemon-runner
     SUBDIR += py-daemonize
