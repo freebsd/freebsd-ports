@@ -1,6 +1,5 @@
 PORTNAME=	pandoc
-DISTVERSION=	3.8.1
-PORTREVISION=	1
+DISTVERSION=	3.8.2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -151,7 +150,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		optparse-applicative-0.19.0.0 \
 		ordered-containers-0.2.4 \
 		os-string-2.0.8 \
-		pandoc-3.8.1 \
+		pandoc-3.8.2 \
 		pandoc-lua-engine-0.5 \
 		pandoc-lua-marshal-0.3.1 \
 		pandoc-server-0.1.1 \
@@ -194,7 +193,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		tagsoup-0.14.8 \
 		tasty-1.5.3_2 \
 		temporary-1.3 \
-		texmath-0.13 \
+		texmath-0.13.0.1 \
 		text-conversions-0.3.1.1 \
 		text-iso8601-0.1.1_2 \
 		text-short-0.1.6_3 \
@@ -219,7 +218,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		unix-compat-0.7.4.1 \
 		unix-time-0.4.17 \
 		unliftio-core-0.2.1.0_4 \
-		unordered-containers-0.2.20_4 \
+		unordered-containers-0.2.20.1 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.6_3 \
 		vault-0.3.1.5_10 \
