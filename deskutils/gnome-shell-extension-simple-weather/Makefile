@@ -11,7 +11,7 @@ WWW=		https://github.com/romanlefler/SimpleWeather
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	gnome-shell>=48.0:x11/gnome-shell \
+RUN_DEPENDS=	gnome-shell>=47.0:x11/gnome-shell \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
 USES=		gnome zip
