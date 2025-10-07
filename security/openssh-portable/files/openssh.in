@@ -23,8 +23,6 @@ load_rc_config ${name}
 : ${openssh_skipportscheck="NO"}
 
 # These only control ssh-keygen automatically generating host keys.
-: ${openssh_dsa_enable="YES"}
-: ${openssh_dsa_flags=""}
 : ${openssh_rsa_enable="YES"}
 : ${openssh_rsa_flags=""}
 : ${openssh_ecdsa_enable="YES"}
@@ -44,13 +42,11 @@ pidfile=${openssh_pidfile:="/var/run/sshd.pid"}
 openssh_keygen()
 {
 	local skip_dsa= skip_rsa= skip_ecdsa= skip_ed25519=
-	checkyesno openssh_dsa_enable || skip_dsa=y
 	checkyesno openssh_rsa_enable || skip_rsa=y
 	checkyesno openssh_ecdsa_enable || skip_ecdsa=y
 	checkyesno openssh_ed25519_enable || skip_ed25519=y
 
-	if [ \( -n "$skip_dsa" -o -f %%ETCDIR%%/ssh_host_dsa_key \) -a \
-	    \( -n "$skip_rsa" -o -f %%ETCDIR%%/ssh_host_rsa_key \) -a \
+	if [ \( -n "$skip_rsa" -o -f %%ETCDIR%%/ssh_host_rsa_key \) -a \
 	    \( -n "$skip_ecdsa" -o -f %%ETCDIR%%/ssh_host_ecdsa_key \) -a \
 	    \( -n "$skip_ed25519" -o -f %%ETCDIR%%/ssh_host_ed25519_key \) ]; then
 		return 0
@@ -61,15 +57,6 @@ openssh_keygen()
 	# Can't do anything if ssh is not installed
 	[ -x %%PREFIX%%/bin/ssh-keygen ] ||
 		err 1 "%%PREFIX%%/bin/ssh-keygen does not exist."
-
-	if [ -f %%ETCDIR%%/ssh_host_dsa_key ]; then
-		echo "You already have a DSA host key" \
-			"in %%ETCDIR%%/ssh_host_dsa_key"
-		echo "Skipping protocol version 2 DSA Key Generation"
-	elif checkyesno openssh_dsa_enable; then
-		%%PREFIX%%/bin/ssh-keygen -t dsa $openssh_dsa_flags \
-			-f %%ETCDIR%%/ssh_host_dsa_key -N ''
-	fi
 
 	if [ -f %%ETCDIR%%/ssh_host_rsa_key ]; then
 		echo "You already have a RSA host key" \
