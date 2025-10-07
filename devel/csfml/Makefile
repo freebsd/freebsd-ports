@@ -1,5 +1,5 @@
 PORTNAME=	csfml
-DISTVERSION=	2.5.2
+DISTVERSION=	2.6.1
 CATEGORIES=	devel games graphics multimedia
 
 MAINTAINER=	wen@FreeBSD.org

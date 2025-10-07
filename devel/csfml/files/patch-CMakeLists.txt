@@ -1,10 +1,13 @@
---- CMakeLists.txt.orig	2023-10-04 04:59:37 UTC
+--- CMakeLists.txt.orig	2025-10-07 12:01:33 UTC
 +++ CMakeLists.txt
-@@ -63,5 +63,5 @@ install(DIRECTORY include
-         DESTINATION .
-         COMPONENT devel
-         PATTERN ".svn" EXCLUDE)
+@@ -95,8 +95,8 @@ install(DIRECTORY include/
+ install(DIRECTORY include/
+         DESTINATION include
+         COMPONENT devel)
 -install(FILES license.md DESTINATION ${INSTALL_MISC_DIR})
 -install(FILES readme.md DESTINATION ${INSTALL_MISC_DIR})
 +#install(FILES license.md DESTINATION ${INSTALL_MISC_DIR})
 +#install(FILES readme.md DESTINATION ${INSTALL_MISC_DIR})
+ 
+ # add an option for building the examples
+ csfml_set_option(CSFML_BUILD_EXAMPLES FALSE BOOL "TRUE to build the CSFML examples, FALSE to ignore them")
