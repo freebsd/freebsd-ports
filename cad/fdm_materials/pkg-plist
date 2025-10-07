@@ -15,6 +15,7 @@ share/cura/resources/materials/Vertex_Delta_PLA_Mat.xml.fdm_material
 share/cura/resources/materials/Vertex_Delta_PLA_Satin.xml.fdm_material
 share/cura/resources/materials/Vertex_Delta_PLA_Wood.xml.fdm_material
 share/cura/resources/materials/Vertex_Delta_TPU.xml.fdm_material
+share/cura/resources/materials/basf_ultrafuse_316l_175.xml.fdm_material
 share/cura/resources/materials/bestfilament_abs_skyblue.xml.fdm_material
 share/cura/resources/materials/bestfilament_petg_orange.xml.fdm_material
 share/cura/resources/materials/bestfilament_pla_green.xml.fdm_material
@@ -28,6 +29,7 @@ share/cura/resources/materials/eSUN_PLA_PRO_Black.xml.fdm_material
 share/cura/resources/materials/eSUN_PLA_PRO_Grey.xml.fdm_material
 share/cura/resources/materials/eSUN_PLA_PRO_Purple.xml.fdm_material
 share/cura/resources/materials/eSUN_PLA_PRO_White.xml.fdm_material
+share/cura/resources/materials/eazao_clay.xml.fdm_material
 share/cura/resources/materials/emotiontech_abs.xml.fdm_material
 share/cura/resources/materials/emotiontech_absx.xml.fdm_material
 share/cura/resources/materials/emotiontech_acetate.xml.fdm_material
@@ -69,9 +71,11 @@ share/cura/resources/materials/generic_abs.xml.fdm_material
 share/cura/resources/materials/generic_abs_175.xml.fdm_material
 share/cura/resources/materials/generic_asa_175.xml.fdm_material
 share/cura/resources/materials/generic_bam.xml.fdm_material
+share/cura/resources/materials/generic_bvoh.xml.fdm_material
 share/cura/resources/materials/generic_bvoh_175.xml.fdm_material
 share/cura/resources/materials/generic_cffcpe.xml.fdm_material
 share/cura/resources/materials/generic_cffpa.xml.fdm_material
+share/cura/resources/materials/generic_cffpps.xml.fdm_material
 share/cura/resources/materials/generic_cpe.xml.fdm_material
 share/cura/resources/materials/generic_cpe_175.xml.fdm_material
 share/cura/resources/materials/generic_cpe_plus.xml.fdm_material
@@ -79,6 +83,7 @@ share/cura/resources/materials/generic_gffcpe.xml.fdm_material
 share/cura/resources/materials/generic_gffpa.xml.fdm_material
 share/cura/resources/materials/generic_hips.xml.fdm_material
 share/cura/resources/materials/generic_hips_175.xml.fdm_material
+share/cura/resources/materials/generic_nylon-cf-slide.xml.fdm_material
 share/cura/resources/materials/generic_nylon.xml.fdm_material
 share/cura/resources/materials/generic_nylon_175.xml.fdm_material
 share/cura/resources/materials/generic_pc.xml.fdm_material
@@ -115,6 +120,7 @@ share/cura/resources/materials/ideagen3D_ToughPLA.xml.fdm_material
 share/cura/resources/materials/imade3d_petg_175.xml.fdm_material
 share/cura/resources/materials/imade3d_pla_175.xml.fdm_material
 share/cura/resources/materials/innofill_innoflex60_175.xml.fdm_material
+share/cura/resources/materials/jabil_tpe_sebs_1300_95a_175.xml.fdm_material
 share/cura/resources/materials/layer_one_black_pla.xml.fdm_material
 share/cura/resources/materials/layer_one_dark_gray_pla.xml.fdm_material
 share/cura/resources/materials/layer_one_white_pla.xml.fdm_material
@@ -123,6 +129,7 @@ share/cura/resources/materials/leapfrog_epla_natural.xml.fdm_material
 share/cura/resources/materials/leapfrog_pva_natural.xml.fdm_material
 share/cura/resources/materials/octofiber_pla.xml.fdm_material
 share/cura/resources/materials/polyflex_pla.xml.fdm_material
+share/cura/resources/materials/polymaker_polymax_pc_175.xml.fdm_material
 share/cura/resources/materials/polymax_pla.xml.fdm_material
 share/cura/resources/materials/polyplus_pla.xml.fdm_material
 share/cura/resources/materials/polywood_pla.xml.fdm_material
@@ -141,6 +148,7 @@ share/cura/resources/materials/tizyx_pla.xml.fdm_material
 share/cura/resources/materials/tizyx_pla_bois.xml.fdm_material
 share/cura/resources/materials/tizyx_pva.xml.fdm_material
 share/cura/resources/materials/ultimaker_abs.xml.fdm_material
+share/cura/resources/materials/ultimaker_abs_175.xml.fdm_material
 share/cura/resources/materials/ultimaker_abs_black.xml.fdm_material
 share/cura/resources/materials/ultimaker_abs_blue.xml.fdm_material
 share/cura/resources/materials/ultimaker_abs_green.xml.fdm_material
@@ -169,10 +177,16 @@ share/cura/resources/materials/ultimaker_cpe_red.xml.fdm_material
 share/cura/resources/materials/ultimaker_cpe_transparent.xml.fdm_material
 share/cura/resources/materials/ultimaker_cpe_white.xml.fdm_material
 share/cura/resources/materials/ultimaker_cpe_yellow.xml.fdm_material
+share/cura/resources/materials/ultimaker_metallic_pla_175.xml.fdm_material
+share/cura/resources/materials/ultimaker_nylon-cf-slide.xml.fdm_material
+share/cura/resources/materials/ultimaker_nylon-cf_175.xml.fdm_material
 share/cura/resources/materials/ultimaker_nylon.xml.fdm_material
 share/cura/resources/materials/ultimaker_nylon12-cf_175.xml.fdm_material
+share/cura/resources/materials/ultimaker_nylon_175.xml.fdm_material
 share/cura/resources/materials/ultimaker_nylon_black.xml.fdm_material
 share/cura/resources/materials/ultimaker_nylon_transparent.xml.fdm_material
+share/cura/resources/materials/ultimaker_pc-abs-fr_175.xml.fdm_material
+share/cura/resources/materials/ultimaker_pc-abs_175.xml.fdm_material
 share/cura/resources/materials/ultimaker_pc.xml.fdm_material
 share/cura/resources/materials/ultimaker_pc_black.xml.fdm_material
 share/cura/resources/materials/ultimaker_pc_transparent.xml.fdm_material
@@ -182,6 +196,7 @@ share/cura/resources/materials/ultimaker_petcf_black.xml.fdm_material
 share/cura/resources/materials/ultimaker_petcf_blue.xml.fdm_material
 share/cura/resources/materials/ultimaker_petcf_gray.xml.fdm_material
 share/cura/resources/materials/ultimaker_petg.xml.fdm_material
+share/cura/resources/materials/ultimaker_petg_175.xml.fdm_material
 share/cura/resources/materials/ultimaker_petg_black.xml.fdm_material
 share/cura/resources/materials/ultimaker_petg_blue.xml.fdm_material
 share/cura/resources/materials/ultimaker_petg_blue_translucent.xml.fdm_material
@@ -197,6 +212,7 @@ share/cura/resources/materials/ultimaker_petg_white.xml.fdm_material
 share/cura/resources/materials/ultimaker_petg_yellow.xml.fdm_material
 share/cura/resources/materials/ultimaker_petg_yellow_fluorescent.xml.fdm_material
 share/cura/resources/materials/ultimaker_pla.xml.fdm_material
+share/cura/resources/materials/ultimaker_pla_175.xml.fdm_material
 share/cura/resources/materials/ultimaker_pla_black.xml.fdm_material
 share/cura/resources/materials/ultimaker_pla_blue.xml.fdm_material
 share/cura/resources/materials/ultimaker_pla_green.xml.fdm_material
@@ -209,10 +225,13 @@ share/cura/resources/materials/ultimaker_pla_transparent.xml.fdm_material
 share/cura/resources/materials/ultimaker_pla_white.xml.fdm_material
 share/cura/resources/materials/ultimaker_pla_yellow.xml.fdm_material
 share/cura/resources/materials/ultimaker_pp_transparent.xml.fdm_material
+share/cura/resources/materials/ultimaker_ppscf_metallic-anthracite.xml.fdm_material
 share/cura/resources/materials/ultimaker_pva.xml.fdm_material
+share/cura/resources/materials/ultimaker_pva_175.xml.fdm_material
 share/cura/resources/materials/ultimaker_rapidrinse_175.xml.fdm_material
 share/cura/resources/materials/ultimaker_sr30_175.xml.fdm_material
 share/cura/resources/materials/ultimaker_tough_pla.xml.fdm_material
+share/cura/resources/materials/ultimaker_tough_pla_175.xml.fdm_material
 share/cura/resources/materials/ultimaker_tough_pla_black.xml.fdm_material
 share/cura/resources/materials/ultimaker_tough_pla_blue.xml.fdm_material
 share/cura/resources/materials/ultimaker_tough_pla_gray.xml.fdm_material
