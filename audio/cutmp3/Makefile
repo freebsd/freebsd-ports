@@ -1,6 +1,6 @@
 PORTNAME=	cutmp3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.3
+DISTVERSION=	4.0
 CATEGORIES=	audio
 
 MAINTAINER=	matthew@matthewphillips.info
@@ -10,7 +10,9 @@ WWW=		https://github.com/tarjanm-movidius/cutmp3
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		readline
+USES=		gmake localbase:ldflags readline
+
+MAKE_ARGS=	CC="${CC}" LDFLAGS="${LDFLAGS} -lm -lreadline"
 USE_GITHUB=	yes
 GH_ACCOUNT=	tarjanm-movidius
 

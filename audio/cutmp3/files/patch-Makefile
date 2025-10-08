@@ -1,58 +1,74 @@
---- Makefile.orig	2024-02-04 18:59:38 UTC
-+++ Makefile
-@@ -3,37 +3,34 @@ DATADIR=${PREFIX}/share
- PREFIX?=/usr/local
- BINDIR=${PREFIX}/bin
- DATADIR=${PREFIX}/share
--MANDIR=${PREFIX}/share/man/man1
-+MANDIR=${DATADIR}/man/man1
- DOCDIR=${DATADIR}/doc/${NAME}-${VERSION}
--CFLAGS?=-Wall -Wformat-security -Wunused-result
-+CFLAGS+=-Wall -Wformat-security -Wunused-result
- #CFLAGS+=-DDEBUG
+--- Makefile.orig	2025-10-06 10:23:12.637550000 -0400
++++ Makefile	2025-10-06 10:23:45.199600000 -0400
+@@ -4,36 +4,31 @@
+ BINDIR=$(PREFIX)/bin
+ DATADIR=$(PREFIX)/share
+ MANDIR=$(PREFIX)/share/man/man1
+-DOCDIR=$(DATADIR)/doc/$(NAME)-$(VERSION)
+-CC=gcc
++DOCDIR=$(DATADIR)/doc/$(NAME)
++CC?=cc
+ CFLAGS?=-Wall -Wformat-security -Wunused-result -O2
+ LDFLAGS?=-lm -lreadline
+-DBGFLAGS:=-DDEBUG -g
+-LNSFLAGS:=-DLINENOISE
+-OBJECTS:=main.o mpglib.o
++DESTDIR?=
++DBGFLAGS=-DDEBUG -g
++OBJECTS=main.o mpglib.o
  
- all:
- 	@echo -e "\n\n*** You need readline-devel, ncurses-devel or similar to compile ${NAME} ***\n*** Maybe you want to try the binary on compile failures? ***\n\n"
--	gcc -O2 ${CFLAGS} -c mpglib.c
--	gcc -O2 ${CFLAGS} -c main.c
--	gcc main.o mpglib.o -o ${NAME} -lm -lreadline
-+	${CC} ${CFLAGS} ${CPPFLAGS} -c mpglib.c
-+	${CC} ${CFLAGS} ${CPPFLAGS} -c main.c
-+	${CC} ${CFLAGS} main.o mpglib.o -o ${NAME} ${LDFLAGS} -lm -lreadline
- #-lncurses
+ .PHONY: clean debug install uninstall
  
- i386:
--	gcc -Wall -O2 -c mpglib.c
--	gcc -Wall -O2 -c main.c
--	gcc main.o mpglib.o -o ${NAME} -lm -lreadline
-+	${CC} ${CFLAGS} -c mpglib.c
-+	${CC} ${CFLAGS} -c main.c
-+	${CC} main.o mpglib.o -o ${NAME} ${LDFLAGS} -lm -lreadline
+ all: $(NAME)
+-debug: CFLAGS+=$(DBGFLAGS)
+-debug: $(NAME)
+-main.o: cutmp3.h
+-main.o: CFLAGS+=-DVERSION=\"$(VERSION)\"
+-*.o: Makefile mpglib.h
++	@echo ""
++	@echo "*** You need readline-devel or similar to compile $(NAME) ***"
++	@echo "*** Maybe you want to try the binary on compile failures? ***"
++	@echo ""
  
- clean:
- 	rm -f *.o
- 	rm -f ${NAME}
+-ifeq ($(LNOISE), yes)
+-CFLAGS+=$(LNSFLAGS)
+-OBJECTS+=linenoise/linenoise.o
+-LDFLAGS:=$(filter-out -lreadline,$(LDFLAGS))
+-*.o: linenoise/linenoise.h
+-linenoise/linenoise.o: Makefile linenoise/linenoise.h
+-endif
++debug:
++	$(CC) $(CFLAGS) $(DBGFLAGS) -DVERSION=\"$(VERSION)\" main.c mpglib.c -o $(NAME) $(LDFLAGS)
  
- install:
--	install -d ${BINDIR}
--	install ${NAME} ${BINDIR}
--	strip ${BINDIR}/${NAME}
-+	install -d $(DESTDIR)${BINDIR}
-+	install ${NAME} $(DESTDIR)${BINDIR}
-+	strip $(DESTDIR)${BINDIR}/${NAME}
- 	if [ ! -z "${KDEDIR}" ]; then install -m 644 ${NAME}.desktop ${KDEDIR}/share/apps/konqueror/servicemenus; elif [ -d /usr/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /usr/share/apps/konqueror/servicemenus; elif [ -d /opt/kde/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /opt/kde/share/apps/konqueror/servicemenus; elif [ -d /opt/kde3/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /opt/kde3/share/apps/konqueror/servicemenus; fi
--	install -d ${DOCDIR}/${NAME}
--	install -m 644 README* USAGE ${DOCDIR}/${NAME}
--	install -d ${MANDIR}
- 	gzip ${NAME}.1
--	install -m 644 ${NAME}.1.gz ${MANDIR}
-+	install -m 644 ${NAME}.1.gz $(DESTDIR)${MANDIR}
- 	gunzip ${NAME}.1.gz
+-all: $(info )
+-all: $(info *** You need readline-devel or similar to compile $(NAME). Alternatively call 'make LNOISE=yes' ***)
+-all: $(info ***  to build with linenoise, a self contained line editor. (see README for more information)  ***)
+-all: $(info )
++main.o: cutmp3.h Makefile mpglib.h
++	$(CC) $(CFLAGS) -DVERSION=\"$(VERSION)\" -c main.c
+ 
++mpglib.o: Makefile mpglib.h
++	$(CC) $(CFLAGS) -c mpglib.c
++
+ $(NAME): $(OBJECTS)
+ 	$(CC) -o $(NAME) $(OBJECTS) $(LDFLAGS)
+ 	@echo ""
+@@ -42,12 +37,12 @@
+ 	@rm -vf *.o linenoise/*.o $(NAME)
+ 
+ install: $(NAME)
+-	@install -vd $(BINDIR)
+-	@install -vd $(MANDIR)
+-	@install -vd $(DOCDIR)
+-	@echo -n "strip: " && strip -vso $(BINDIR)/$(NAME) $(NAME)
+-	@gzip -vc9 $(NAME).1 2>&1 1> $(MANDIR)/$(NAME).1.gz | sed 's|stdout|$(MANDIR)/$(NAME).1.gz|'
+-	@install -vm 644 README* USAGE $(DOCDIR)
++	@install -vd $(DESTDIR)$(BINDIR)
++	@install -vd $(DESTDIR)$(MANDIR)
++	@install -vd $(DESTDIR)$(DOCDIR)
++	@install -m 755 $(NAME) $(DESTDIR)$(BINDIR)/$(NAME)
++	@gzip -vc9 $(NAME).1 2>&1 1> $(DESTDIR)$(MANDIR)/$(NAME).1.gz | sed 's|stdout|$(DESTDIR)$(MANDIR)/$(NAME).1.gz|'
++	@install -vm 644 README* USAGE $(DESTDIR)$(DOCDIR)
+ 	@if [ ! -z "$(KDEDIR)" ]; then install -vm 644 $(NAME).desktop $(KDEDIR)/share/apps/konqueror/servicemenus; elif [ -d /usr/share/apps/konqueror/servicemenus ]; then install -vm 644 $(NAME).desktop /usr/share/apps/konqueror/servicemenus; elif [ -d /opt/kde/share/apps/konqueror/servicemenus ]; then install -vm 644 $(NAME).desktop /opt/kde/share/apps/konqueror/servicemenus; elif [ -d /opt/kde3/share/apps/konqueror/servicemenus ]; then install -vm 644 $(NAME).desktop /opt/kde3/share/apps/konqueror/servicemenus; fi
  
  uninstall:
-@@ -41,4 +38,4 @@ debug:
- 	rm -f ${KDEDIR}/share/apps/konqueror/servicemenus/${NAME}.desktop
- 
- debug:
--	gcc ${CFLAGS} -DDEBUG -g mpglib.c main.c -o ${NAME} -lm -lreadline
-+	${CC} ${CFLAGS} -DDEBUG -g mpglib.c main.c -o ${NAME} -lm -lreadline
