@@ -1,3 +1,5 @@
-TIMESTAMP = 1759763325
+TIMESTAMP = 1759963002
 SHA256 (openssh-10.1p1.tar.gz) = b9fc7a2b82579467a6f2f43e4a81c8e1dfda614ddb4f9b255aafd7020bbf0758
 SIZE (openssh-10.1p1.tar.gz) = 1972831
+SHA256 (openssh-10.1p1-gsskex-all-debian-rh-10.1p1.patch) = b46e798092ea4e0653ea5e124b10a881f58b2e78a16b3e46475c52c39b725874
+SIZE (openssh-10.1p1-gsskex-all-debian-rh-10.1p1.patch) = 126336
