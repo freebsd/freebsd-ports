@@ -1,1 +1,4 @@
-Java Constraint Programming (JaCoP) solver for MiniZinc.
+JaCoP is an open-source Java Constraint Programming (JaCoP) solver.
+It provides a rich set of constraints to facilitate efficient modeling
+and solving of combinatorial problems. JaCoP can be used as a standalone
+Java library or as a backend for MiniZinc and other modeling languages.
