@@ -1051,6 +1051,7 @@
     SUBDIR += inilike
     SUBDIR += iniparser
     SUBDIR += initutil
+    SUBDIR += inja
     SUBDIR += injeqt
     SUBDIR += intel-graphics-compiler
     SUBDIR += interactive_rebase_tool

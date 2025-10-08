@@ -1,0 +1,17 @@
+include/inja/config.hpp
+include/inja/environment.hpp
+include/inja/exceptions.hpp
+include/inja/function_storage.hpp
+include/inja/inja.hpp
+include/inja/lexer.hpp
+include/inja/node.hpp
+include/inja/parser.hpp
+include/inja/renderer.hpp
+include/inja/statistics.hpp
+include/inja/template.hpp
+include/inja/token.hpp
+include/inja/utils.hpp
+lib/cmake/inja/injaConfig.cmake
+lib/cmake/inja/injaConfigVersion.cmake
+lib/cmake/inja/injaTargets.cmake
+libdata/pkgconfig/inja.pc
