@@ -1,9 +1,9 @@
 PORTNAME=	cairo-dock
 DISTVERSION=	3.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
-MAINTAINER=	nxjoseph@protonmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight and eye-candy dock (program launcher)
 WWW=		https://www.glx-dock.org/
 
