@@ -1,0 +1,5 @@
+UV-bump updates pyproject.toml dependency minimum versions to the latest
+feasible versions for projects using the uv Python package manager.
+
+This tool helps maintain up-to-date dependencies by automatically bumping
+version constraints in your project configuration files.
