@@ -6179,6 +6179,7 @@
     SUBDIR += py-usort
     SUBDIR += py-uuid7
     SUBDIR += py-uv
+    SUBDIR += py-uv-build
     SUBDIR += py-uv-dynamic-versioning
     SUBDIR += py-uvloop
     SUBDIR += py-validate-pyproject

@@ -1,0 +1,35 @@
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -7,7 +7,6 @@ keywords = [
+ keywords = [
+   "uv", "requirements", "packaging"
+ ]
+-license = "MIT OR Apache-2.0"
+ classifiers = [
+   "Development Status :: 5 - Production/Stable",
+   "Environment :: Console",
+@@ -37,19 +36,12 @@ Discord = "https://discord.gg/astral-sh"
+ Discord = "https://discord.gg/astral-sh"
+ 
+ [build-system]
+-requires = ["maturin>=1.0,<2.0"]
+-build-backend = "maturin"
++requires = ["setuptools>=61.0", "wheel"]
++build-backend = "setuptools.build_meta"
+ 
+-[tool.maturin]
+-bindings = "bin"
+-module-name = "uv_build"
+-python-source = "python"
+-strip = true
+-include = [
+-  { path = "LICENSE-APACHE", format = "sdist" },
+-  { path = "LICENSE-MIT", format = "sdist" },
+-]
+-manifest-path = "crates/uv-build/Cargo.toml"
++[tool.setuptools]
++packages = ["uv_build"]
++package-dir = {"" = "python"}
+ 
+ [tool.uv]
+ managed = false
