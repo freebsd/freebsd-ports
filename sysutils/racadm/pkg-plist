@@ -1,0 +1,12 @@
+etc/ld.so.conf.d/srvadmin-idrac7.conf
+opt/dell/srvadmin/bin/idracadm7
+opt/dell/srvadmin/lib64/openmanage/private/libargtable2.so.0
+opt/dell/srvadmin/lib64/openmanage/private/libargtable2.so.0.1.6
+opt/dell/srvadmin/lib64/openmanage/private/libssl.so
+opt/dell/srvadmin/sbin/racadm-wrapper-idrac7
+usr/share/doc/srvadmin-argtable2/AUTHORS
+usr/share/doc/srvadmin-argtable2/COPYING
+usr/share/doc/srvadmin-argtable2/ChangeLog
+usr/share/doc/srvadmin-argtable2/README
+usr/share/man/man3/argtable.3.gz
+usr/share/man/man3/argtable2.3.gz

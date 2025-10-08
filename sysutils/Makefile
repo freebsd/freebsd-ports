@@ -653,6 +653,7 @@
     SUBDIR += linux-c7-numactl-libs
     SUBDIR += linux-c7-userspace-rcu
     SUBDIR += linux-miniconda-installer
+    SUBDIR += linux-racadm
     SUBDIR += linux-rkbin
     SUBDIR += littlejet
     SUBDIR += lmmon
