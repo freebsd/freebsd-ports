@@ -1,6 +1,6 @@
 PORTNAME=	timescaledb-backup
 DISTVERSION=	0.1.1
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org

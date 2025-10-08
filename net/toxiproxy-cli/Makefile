@@ -1,5 +1,5 @@
 PORTNAME=	toxiproxy-cli
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	TCP proxy to simulate network and system conditions (client)
 

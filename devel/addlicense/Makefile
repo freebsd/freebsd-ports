@@ -1,6 +1,7 @@
 PORTNAME=	addlicense
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	nxjoseph@protonmail.com

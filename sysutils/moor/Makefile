@@ -1,6 +1,7 @@
 PORTNAME=	moor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	nxjoseph@protonmail.com

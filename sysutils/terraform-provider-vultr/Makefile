@@ -1,7 +1,7 @@
 PORTNAME=	terraform-provider-vultr
 PORTVERSION=	0.1.10
 DISTVERSIONPREFIX=	v
-PORTREVISION=	30
+PORTREVISION=	31
 CATEGORIES=	sysutils
 
 MAINTAINER=	zachary.crownover@gmail.com
