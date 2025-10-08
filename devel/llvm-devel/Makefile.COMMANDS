@@ -142,7 +142,9 @@ LLDB_COMMANDS=	\
 		lldb-dap \
 		lldb-instr \
 		lldb-mcp \
-		lldb-server
+		lldb-server \
+		lldb-tblgen \
+		yaml2macho-core
 
 MLIR_COMMANDS=	\
 		mlir-cat \
