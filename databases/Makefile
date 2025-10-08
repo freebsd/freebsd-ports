@@ -1121,6 +1121,7 @@
     SUBDIR += timescaledb-backup
     SUBDIR += timescaledb-tune
     SUBDIR += tinycdb
+    SUBDIR += tkrzw
     SUBDIR += tokyocabinet
     SUBDIR += tokyotyrant
     SUBDIR += trilogy
