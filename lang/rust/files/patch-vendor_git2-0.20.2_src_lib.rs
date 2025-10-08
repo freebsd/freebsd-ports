@@ -1,5 +1,5 @@
---- vendor/git2-0.20.0/src/lib.rs.orig	2025-02-21 20:02:44 UTC
-+++ vendor/git2-0.20.0/src/lib.rs
+--- vendor/git2-0.20.2/src/lib.rs.orig	2025-02-21 20:02:44 UTC
++++ vendor/git2-0.20.2/src/lib.rs
 @@ -759,6 +759,7 @@ fn init() {
      unix,
      not(target_os = "macos"),
