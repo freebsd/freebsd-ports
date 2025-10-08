@@ -33,7 +33,7 @@ in directory %%WWWDIR%%:
 username/root and password/homer as the administrator.
 
 7 More information please visit :
-https://docu.ilias.de/goto_docu_lm_367.html,
+https://github.com/ILIAS-eLearning/ILIAS/blob/release_10/docs/configuration/install.md,
 EOM
 }
 ]
