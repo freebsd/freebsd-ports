@@ -1,6 +1,16 @@
---- meson.build.orig	2025-05-17 22:51:03 UTC
+--- meson.build.orig	2025-10-05 17:14:02 UTC
 +++ meson.build
-@@ -1208,7 +1208,7 @@ if have_lua
+@@ -168,7 +168,8 @@ platform_linux = (
+ message('Host os: ' + host_os)
+ 
+ platform_linux = (
+-  host_os.contains('linux')
++  host_os.contains('linux') or
++  host_os.contains('bsd')
+ )
+ 
+ platform_windows = (
+@@ -1127,7 +1128,7 @@ if have_lua
  if have_lua
    have_lua_lgi = false
  
@@ -9,7 +19,7 @@
      lua = find_program(lua_bin, required: false)
  
      if lua.found() and meson.can_run_host_binaries()
-@@ -1247,7 +1247,7 @@ if have_lua
+@@ -1166,7 +1167,7 @@ if have_lua
        if is_supported_lua
          have_lua_lgi = run_command(lua, '-e',
                                     '''

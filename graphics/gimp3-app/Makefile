@@ -1,6 +1,5 @@
 PORTNAME=	gimp
-DISTVERSION=	3.0.4
-PORTREVISION=	2
+DISTVERSION=	3.0.6
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	GIMP/gimp/v${PORTVERSION:R}
 PKGNAMESUFFIX=	3-app
@@ -111,10 +110,10 @@ WMF_LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 			libwmf.so:graphics/libwmf
 WMF_MESON_ENABLED=	wmf
 
-JS_DESC=                Install Javascript plug-ins
-JS_LIB_DEPENDS=         libgjs.so:lang/gjs
-JS_RUN_DEPENDS=         gjs-console:lang/gjs
-JS_MESON_ENABLED=       javascript
+JS_DESC=		Install Javascript plug-ins
+JS_LIB_DEPENDS=		libgjs.so:lang/gjs
+JS_RUN_DEPENDS=		gjs-console:lang/gjs
+JS_MESON_ENABLED=	javascript
 
 DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
 DOCS_MESON_ENABLED=	gi-docgen
@@ -146,7 +145,7 @@ SHEBANG_FILES=	plug-ins/python/*.py \
 
 SHEBANG_LANG+=	gjs
 
-PLIST_SUB+=	BINVER=${PORTVERSION:R:R} ABIVER=${PORTVERSION:R} SHLIBVER=${PORTVERSION:E}
+PLIST_SUB+=	BINVER=${PORTVERSION:R:R} ABIVER=${PORTVERSION:R} SHLIBVER=${PORTVERSION:R:E}.${PORTVERSION:E}.${PORTVERSION:R:E}
 
 .include <bsd.port.options.mk>
 
