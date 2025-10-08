@@ -374,6 +374,7 @@
 %%WWWDIR%%/app/controllers/CControllerUserroleList.php
 %%WWWDIR%%/app/controllers/CControllerUserroleUpdate.php
 %%WWWDIR%%/app/controllers/CControllerValidate.php
+%%WWWDIR%%/app/controllers/CControllerValidateApiExists.php
 %%WWWDIR%%/app/controllers/CControllerValueMapCheck.php
 %%WWWDIR%%/app/controllers/CControllerValueMapEdit.php
 %%WWWDIR%%/app/controllers/CControllerWebScenarioStepCheck.php
