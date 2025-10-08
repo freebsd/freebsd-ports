@@ -11,7 +11,7 @@ WWW=		https://github.com/smortex/portshaker
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES+=		uidfix
+USES+=		uidfix python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	smortex
 GH_PROJECT=	portshaker
