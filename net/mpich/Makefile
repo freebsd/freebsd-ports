@@ -1,7 +1,7 @@
 PORTNAME=	mpich
-DISTVERSION=	4.3.1
+DISTVERSION=	4.3.2
 CATEGORIES=	net parallel
-MASTER_SITES=	https://www.mpich.org/static/downloads/${DISTVERSION}/
+MASTER_SITES=	https://github.com/pmodels/mpich/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	laurent.chardon@gmail.com
 COMMENT=	Portable implementation of MPI-1, MPI-2 and MPI-3
@@ -21,7 +21,7 @@ USES=		compiler:c11 libtool localbase perl5 pkgconfig python:build
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-fast="" \
+CONFIGURE_ARGS=	--enable-fast="" \
 		--with-libfabric=${LOCALBASE} \
 		--with-libfabric-include=${WRKDIR}/include \
 		--with-hwloc=${LOCALBASE} \
