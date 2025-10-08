@@ -1,5 +1,5 @@
 PORTNAME=	snd
-DISTVERSION=	25.5
+DISTVERSION=	25.7
 CATEGORIES=	audio
 MASTER_SITES=	https://ccrma.stanford.edu/software/snd/ \
 		SF
@@ -13,16 +13,15 @@ LICENSE_NAME=	snd license
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		localbase:ldflags
+USES=		localbase:ldflags pkgconfig
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-float-samples
 MAKEFILE=	makefile
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	snd snd-info sndplay
 
-OPTIONS_DEFINE=		DOCS EXAMPLES FFTW3 GSL GTK2 LADSPA MOTIF S7 X11
-OPTIONS_DEFAULT=	FFTW3 GSL GTK2 LADSPA X11
+OPTIONS_DEFINE=		DOCS EXAMPLES FFTW3 GSL LADSPA MOTIF S7
+OPTIONS_DEFAULT=	FFTW3 GSL LADSPA
 OPTIONS_SUB=		yes
 FFTW3_DESC=		Use FFTW
 GSL_DESC=		Use GNU Scientific Library
@@ -34,23 +33,15 @@ FFTW3_CONFIGURE_WITH=	fftw
 GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 GSL_CONFIGURE_WITH=	gsl
 
-GTK2_USES=		gnome
-GTK2_USE=		GNOME=gtk20
-GTK2_CONFIGURE_WITH=	gtk
-
 LADSPA_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 LADSPA_RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 LADSPA_CONFIGURE_WITH=	ladspa
 
-GTK2_USES=		gnome
-GTK2_USE=		GNOME=gtk20
-GTK2_CONFIGURE_WITH=	gtk
-
-MOTIF_USES=		motif
+MOTIF_USES=		motif xorg
+MOTIF_USE=		XORG=ice,sm,x11,xext,xt
 MOTIF_CONFIGURE_WITH=	motif
-S7_CONFIGURE_WITH=	s7
 
-X11_CONFIGURE_ON=	--with-no-gui
+S7_CONFIGURE_WITH=	s7
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^ _Complex| Vaiolate _Complex|g ; \
@@ -66,12 +57,11 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/snd.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pix
 .for i in HISTORY.Snd README.Snd
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}/
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pix
+	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/pix/*.png ${STAGEDIR}${DOCSDIR}/pix
 
 do-install-EXAMPLES-on:
@@ -79,11 +69,10 @@ do-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/DotEmacs ${STAGEDIR}${EXAMPLESDIR}
 
 do-install-S7-on:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/tools \
+		  ${STAGEDIR}${DATADIR}/sndins/samples
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${DATADIR}/tools
 	${INSTALL_DATA} ${WRKSRC}/tools/*.scm ${STAGEDIR}${DATADIR}/tools
-	@${MKDIR} ${STAGEDIR}${DATADIR}/sndins/samples
 	${INSTALL_DATA} ${WRKSRC}/sndins/samples/*.scm ${STAGEDIR}${DATADIR}/sndins/samples
 
 .include <bsd.port.mk>
