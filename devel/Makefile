@@ -8304,6 +8304,7 @@
     SUBDIR += statsvn
     SUBDIR += stb
     SUBDIR += stc
+    SUBDIR += stdgenerator
     SUBDIR += stdman
     SUBDIR += stdx-allocator
     SUBDIR += stfl
