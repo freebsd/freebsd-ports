@@ -1,11 +1,7 @@
 PORTNAME=	gegl
-DISTVERSION=	0.4.62
-PORTREVISION=	4
+DISTVERSION=	0.4.64
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
-
-PATCH_SITES+=	https://gitlab.gnome.org/GNOME/gegl/-/commit/
-PATCHFILES+=	eda8ba51786f197b72265eafcdab407d91ec9c70.diff:-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graph based image processing framework
@@ -34,8 +30,6 @@ MESON_ARGS=	-Ddocs=false \
 		-Dworkshop=false \
 		-Dintrospection=true \
 		-Dlensfun=disabled \
-		-Dlibjpeg=enabled \
-		-Dlibpng=enabled \
 		-Dmaxflow=disabled \
 		-Dmrg=disabled \
 		-Dpygobject=disabled \
@@ -44,7 +38,7 @@ MESON_ARGS=	-Ddocs=false \
 MESON_ARGS+=	-Dopenmp=disabled
 .endif
 
-GEGL_SHLIB=	0.461.1
+GEGL_SHLIB=	0.463.1
 GEGL_VER=	0.4
 PLIST_SUB+=	GEGL_SHLIB=${GEGL_SHLIB} GEGL_VER=${GEGL_VER}
 
