@@ -1,10 +1,9 @@
 PORTNAME=	goswagger
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.32.3
-PORTREVISION=	1
+DISTVERSION=	0.33.1
 CATEGORIES=	devel
 
-MAINTAINER=	atanubisbiswas484@gmail.com
+MAINTAINER=	atanubiswas484@gmail.com
 COMMENT=	Swagger 2.0 implementation for Go
 WWW=		https://goswagger.io/ \
 		https://github.com/go-swagger/go-swagger/
