@@ -1,7 +1,6 @@
 PORTNAME=	ticker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.6
-PORTREVISION=	1
+DISTVERSION=	5.0.7
 CATEGORIES=	finance
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -12,7 +11,6 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:1.24,modules
-GH_ACCOUNT=	achannarasappa
 
 GO_BUILDFLAGS=	-ldflags="-X github.com/achannarasappa/ticker/v4/cmd.Version=${DISTVERSIONPREFIX}${PKGVERSION}"
 GO_MODULE=	github.com/achannarasappa/ticker/v5
