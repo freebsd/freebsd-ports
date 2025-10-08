@@ -1,28 +1,25 @@
 PORTNAME=	rntrack
-PORTVERSION=	2.1.10
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.2.2
 CATEGORIES=	news mail
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	ftrack-as/RNtrack/${PORTVERSION}
-DISTNAME=	rntrack-2_1_10-src
 
 MAINTAINER=	admin@5034.ru
 COMMENT=	FTN Messages tracker
-WWW=		https://sourceforge.net/projects/ftrack-as/
+WWW=		https://github.com/vasilyevmax/rntrack/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 tar:bzip2
+USES=		compiler:c++14-lang
+USE_CXXSTD=	c++14
+USE_GITHUB=	yes
+GH_ACCOUNT=	vasilyevmax
 
-MAKE_ENV=	CONFIG=${ETCDIR}/rntrack.cfg
+MAKE_ENV=	CONFIG=${ETCDIR}/${PORTNAME}.cfg
 
-ETCDIR=		${PREFIX}/etc/fido/rntrack
+ETCDIR=		${PREFIX}/etc/fido/${PORTNAME}
 
-NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/MakeFiles/FreeBSD
-
-_DOCS=		FAQ_en FAQ_ru report.err report.err.ru
 
 OPTIONS_DEFINE=	DOCS EXAMPLES LOG_PID SCRIPTS SYSLOG_FORMAT
 
@@ -35,29 +32,28 @@ SCRIPTS_USES=			perl5
 SCRIPTS_MAKE_ARGS=		ENABLE_SCRIPTS=1
 SYSLOG_FORMAT_MAKE_ARGS=	ENABLE_SYSLOG_LOG_FORMAT=1
 
+_DOCS=		FAQ_en FAQ_ru report.err report.err.ru
+_EXAMPLES=	bignode.zip bignode2.zip node1042.zip node1157.zip \
+		node.cfg node2.cfg node3.cfg perl-test.cfg \
+		point.cfg point2.cfg traflog.tpl
+_TBL=		alt2koi.tbl koi2alt.tbl
+
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/rntrack ${STAGEDIR}${PREFIX}/sbin
-	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${MKDIR} ${STAGEDIR}${ETCDIR}/tpl
-	${INSTALL_DATA} ${WRKSRC}/samples/node.cfg ${STAGEDIR}${ETCDIR}/rntrack.cfg-dist
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${ETCDIR}/tbl \
+		 ${STAGEDIR}${ETCDIR}/tpl
+	${INSTALL_DATA} ${WRKSRC}/samples/node.cfg ${STAGEDIR}${ETCDIR}/${PORTNAME}.cfg.sample
 	${INSTALL_DATA} ${WRKSRC}/samples/test.pl ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/tpl/* ${STAGEDIR}${ETCDIR}/tpl
-	${INSTALL_DATA} ${WRKSRC}/doc/rntrack.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${MKDIR} ${STAGEDIR}${ETCDIR}/tbl
-.for f in alt2koi.tbl koi2alt.tbl
-	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${STAGEDIR}${ETCDIR}/tbl
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_DATA} ${_TBL:S|^|${WRKSRC}/samples/|} ${STAGEDIR}${ETCDIR}/tbl
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${_DOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for f in bignode.zip bignode2.zip node1042.zip node1157.zip node.cfg node2.cfg node3.cfg perl-test.cfg point.cfg point2.cfg traflog.tpl
-	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${STAGEDIR}${EXAMPLESDIR}
-.endfor
+	${INSTALL_DATA} ${_EXAMPLES:S|^|${WRKSRC}/samples/|} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
