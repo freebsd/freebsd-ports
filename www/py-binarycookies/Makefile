@@ -1,12 +1,13 @@
 PORTNAME=	binarycookies
-PORTVERSION=	2.1.5
+PORTVERSION=	2.2.3
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Binary cookies (de)serializer written in Python
-WWW=		https://pypi.org/project/binarycookies/
+WWW=		https://pypi.org/project/binarycookies/ \
+		https://github.com/dan1elt0m/binarycookies
 
 LICENSE=	MIT
 
