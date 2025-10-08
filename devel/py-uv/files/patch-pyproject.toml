@@ -1,0 +1,84 @@
+--- pyproject.toml.orig	2025-10-07 23:17:42 UTC
++++ pyproject.toml
+@@ -1,11 +1,11 @@
+ [build-system]
+-requires = ["maturin>=1.0,<2.0"]
+-build-backend = "maturin"
++requires = ["setuptools>=61.0", "wheel"]
++build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "uv"
+ version = "0.9.0"
+-description = "An extremely fast Python package and project manager, written in Rust."
++description = "Python package for uv - extremely fast Python package installer"
+ authors = [{ name = "Astral Software Inc.", email = "hey@astral.sh" }]
+ requires-python = ">=3.8"
+ keywords = [
+@@ -40,60 +40,9 @@ Discord = "https://discord.gg/astral-sh"
+ Releases = "https://github.com/astral-sh/uv/releases"
+ Discord = "https://discord.gg/astral-sh"
+ 
+-[tool.maturin]
+-bindings = "bin"
+-manifest-path = "crates/uv/Cargo.toml"
+-module-name = "uv"
+-python-source = "python"
+-strip = true
+-include = [
+-    { path = "rust-toolchain.toml", format = ["sdist", "wheel"] },
+-    # this one isn't discovered by maturin because it's behind a feature flag
+-    { path = "crates/uv-performance-memory-allocator/**/*", format = ["sdist", "wheel"] },
+-    { path = "crates/uv-trampoline/trampolines/*", format = "sdist" },
+-    { path = "LICENSE-APACHE", format = "sdist" },
+-    { path = "LICENSE-MIT", format = "sdist" },
+-]
++[tool.setuptools]
++packages = ["uv"]
++package-dir = {"" = "python"}
+ 
+-[tool.rooster]
+-changelog-contributors = false  # We exclude contributors from the CHANGELOG file
+-major-labels = []  # We do not use the major version number yet
+-minor-labels = ["breaking"]
+-ignore-labels = ["internal", "ci", "testing"]
+-version_files = [
+-  "README.md",
+-  "pyproject.toml",
+-  "crates/uv/Cargo.toml",
+-  "crates/uv-version/Cargo.toml",
+-  "crates/uv-build/Cargo.toml",
+-  "crates/uv-build/pyproject.toml",
+-  "docs/getting-started/installation.md",
+-  "docs/guides/integration/docker.md",
+-  "docs/guides/integration/pre-commit.md",
+-  "docs/guides/integration/github.md",
+-  "docs/guides/integration/aws-lambda.md",
+-  "docs/concepts/build-backend.md",
+-  "docs/concepts/projects/init.md",
+-  "docs/concepts/projects/workspaces.md",
+-]
+-
+-[tool.rooster.section-labels]
+-"Breaking changes" = ["breaking"]
+-"Enhancements" = ["enhancement", "compatibility", "error messages"]
+-"Preview features" = ["preview"]
+-"Configuration" = ["configuration"]
+-"Performance" = ["performance"]
+-"Bug fixes" = ["bug"]
+-"Rust API" = ["rustlib"]
+-"Documentation" = ["documentation"]
+-"Other changes" = ["__unknown__"]
+-
+-[tool.mypy]
+-ignore_missing_imports = true
+-files = [
+-  "crates/uv-python/*.py",
+-  "python/uv/*.py",
+-]
+-
+-[tool.uv]
+-managed = false
++[tool.setuptools.package-data]
++uv = ["py.typed"]
+\ No newline at end of file
