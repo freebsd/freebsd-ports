@@ -1,12 +1,8 @@
 PORTNAME=	mame
-DISTVERSION=	0.277
-PORTREVISION=	2
+DISTVERSION=	0.281
 CATEGORIES=	emulators games
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	b4e1f5f1b50fd3402232dd0385cac021ba488db6.patch:-p1 # Only link asmjit if native DRCs are built.
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laurent.chardon@gmail.com
 COMMENT=	MAME: a multi-purpose emulation framework
 WWW=		https://mamedev.org/
 
@@ -25,7 +21,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	not yet ported to any architecture other than armv7, arm64, x86, and powerpc*
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinxcontrib-svg2pdfconverter>0:textproc/py-sphinxcontrib-svg2pdfconverter@${PY_FLAVOR} \
-		asio>0:net/asio \
+		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
+		asio130>0:net/asio130 \
 		genie:devel/genie \
 		glm>0:math/glm \
 		rapidjson>0:devel/rapidjson
@@ -35,8 +32,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libutf8proc.so:textproc/utf8proc \
 		libzstd.so:archivers/zstd
 
-USES=		compiler:c++17-lang gmake jpeg llvm:min=16 localbase pkgconfig \
-		python:build sdl shebangfix sqlite:3 xorg
+USES=		compiler:c++17-lang gmake jpeg llvm:min=16 localbase \
+		pkgconfig python:build sdl sqlite:3 xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev
@@ -82,6 +79,7 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=			DOCS
 OPTIONS_DEFAULT=		MAME
+OPTIONS_DEFAULT+=		${ARCH:Mamd64:C/.+/SSE2/}
 OPTIONS_GROUP=			EMULATORS EXTRATOOLS HARDWARE
 OPTIONS_GROUP_EMULATORS=	MAME MAMENL MAMEVIRTUAL NLS QTDEBUGGER
 OPTIONS_GROUP_EXTRATOOLS=	TOOLS
@@ -89,9 +87,7 @@ OPTIONS_GROUP_HARDWARE=		OPENMP SSE2
 OPTIONS_RADIO=			BUILDTYPE
 OPTIONS_RADIO_BUILDTYPE=	DEBUG SIZE_OPTIMIZED_CFLAGS \
 				SPEED_OPTIMIZED_CFLAGS
-.if !exists(/usr/include/omp.h)
-OPTIONS_EXCLUDE=		OPENMP
-.endif
+OPTIONS_EXCLUDE+=		${ARCH:Namd64:Ni386:C/.+/SSE2/}
 OPTIONS_SUB=			yes
 
 BUILDTYPE_DESC=			Application production type
@@ -139,6 +135,7 @@ MAME_MAKE_ENV=				${_EMULATORS_MAKE_ENV}
 MAME_PLIST_SUB=				MAMEDATA=""
 MAME_PLIST_SUB_OFF=			MAMEDATA="@comment "
 NLS_USES=				gettext-runtime
+OPENMP_USES=				compiler:openmp
 OPENMP_MAKE_ENV=			OPENMP=1
 OPENMP_MAKE_ENV_OFF=			OPENMP=0
 QTDEBUGGER_USES=			qt:6
@@ -192,25 +189,25 @@ _TOOLS_MANUALS=		-name *.1 -depth 1 -type f -and -not -type d -and -not \
 .include <bsd.port.options.mk>
 
 .if ${ARCH:Maarch64} || ${ARCH:Mamd64} || ${ARCH:Mpowerpc64*}
-MAKE_ENV+=	PTR64=1
+MAKE_ENV+=		PTR64=1
 .endif
 
 .if ${ARCH} == aarch64 || ${ARCH} == armv7
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-3rdparty_lzma_C_AesOpt.c
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-3rdparty_lzma_C_AesOpt.c
 .endif
 
 # Compiling with -pg (PROFILE) causes the linker to run out of memory on i386,
 # build with less profiling data:
 .if ${ARCH:Mi386}
-DEBUG_MAKE_ENV=	PROFILER=1
+DEBUG_MAKE_ENV=		PROFILER=1
 .else
-DEBUG_MAKE_ENV=	PROFILE=1
+DEBUG_MAKE_ENV=		PROFILE=1
 .endif
 
 .if empty(PORT_OPTIONS:MMAME) && empty(PORT_OPTIONS:MMAMENL) && \
 	empty(PORT_OPTIONS:MMAMEVIRTUAL)
-MAKE_ENV+=	EMULATOR=0
-PLIST_SUB+=	MAMEDATA="@comment "
+MAKE_ENV+=		EMULATOR=0
+PLIST_SUB+=		MAMEDATA="@comment "
 .endif
 
 post-extract:

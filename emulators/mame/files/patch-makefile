@@ -1,9 +1,9 @@
  Remove redefinitions of toolchain, and hardcoded optimisations. Replace GENie
  build target with devel/genie binary. Add Clang ARM64 support.
 
---- makefile.orig	2023-10-23 15:53:41 UTC
+--- makefile.orig	2025-09-24 14:56:11 UTC
 +++ makefile
-@@ -448,9 +448,9 @@ ifneq ($(TARGETOS),asmjs)
+@@ -430,9 +430,9 @@ ifneq ($(TARGETOS),asmjs)
  endif
  
  ifneq ($(TARGETOS),asmjs)
@@ -16,7 +16,7 @@
  endif
  
  #-------------------------------------------------
-@@ -620,11 +620,6 @@ endif
+@@ -578,11 +578,6 @@ endif
  SYMBOLS = 1
  endif
  
@@ -28,7 +28,7 @@
  # set the symbols level
  ifdef SYMBOLS
  PARAMS += --SYMBOLS='$(SYMBOLS)'
-@@ -1078,7 +1073,7 @@ endif
+@@ -1042,7 +1037,7 @@ endif
  NEW_GIT_VERSION := unknown
  endif
  
@@ -37,7 +37,7 @@
  
  ifeq ($(TARGET),$(SUBTARGET_FULL))
  FULLTARGET := $(TARGET)
-@@ -1412,6 +1407,11 @@ $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile: make
+@@ -1376,6 +1371,11 @@ $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile: make
  
  $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile: makefile $(SCRIPTS) $(GENIE)
  	$(SILENT) $(GENIE) $(PARAMS) $(TARGET_PARAMS) --gcc=freebsd-clang --gcc_version=$(CLANG_VERSION) $(MAKETYPE)

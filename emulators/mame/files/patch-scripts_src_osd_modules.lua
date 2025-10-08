@@ -1,26 +1,26 @@
  Enable the build to find Qt-6.
 
---- scripts/src/osd/modules.lua.orig	2023-10-23 15:53:41 UTC
+--- scripts/src/osd/modules.lua.orig	2025-09-24 14:56:11 UTC
 +++ scripts/src/osd/modules.lua
-@@ -378,7 +378,7 @@ function qtdebuggerbuild()
+@@ -405,7 +405,7 @@ function qtdebuggerbuild()
  			MOC = "moc"
  		else
  			if _OPTIONS["QT_HOME"]~=nil then
--				MOCTST = backtick(_OPTIONS["QT_HOME"] .. "/bin/moc --version 2>/dev/null")
-+				MOCTST = backtick(_OPTIONS["QT_HOME"] .. "/libexec/qt6/moc --version 2>/dev/null")
- 				if (MOCTST=='') then
- 					MOCTST = backtick(_OPTIONS["QT_HOME"] .. "/libexec/moc --version 2>/dev/null")
- 					if (MOCTST=='') then
-@@ -388,7 +388,7 @@ function qtdebuggerbuild()
- 						MOC = _OPTIONS["QT_HOME"] .. "/libexec/moc"
+-				local MOCTST = backtick(_OPTIONS["QT_HOME"] .. "/bin/moc --version 2>/dev/null")
++				local MOCTST = backtick(_OPTIONS["QT_HOME"] .. "/libexec/qt6/moc --version 2>/dev/null")
+ 				if MOCTST=='' then
+ 					local qt_host_libexecs = backtick(_OPTIONS["QT_HOME"] .. "/bin/qmake -query QT_HOST_LIBEXECS")
+ 					if not string.starts(qt_host_libexecs,"/") then
+@@ -419,7 +419,7 @@ function qtdebuggerbuild()
+ 						MOC = qt_host_libexecs .. "/moc"
  					end
  				else
 -					MOC = _OPTIONS["QT_HOME"] .. "/bin/moc"
 +					MOC = _OPTIONS["QT_HOME"] .. "/libexec/qt6/moc"
  				end
  			else
- 				MOCTST = backtick("which moc-qt5 2>/dev/null")
-@@ -430,7 +430,7 @@ function qtdebuggerbuild()
+ 				local MOCTST = backtick("which moc-qt5 2>/dev/null")
+@@ -461,7 +461,7 @@ function qtdebuggerbuild()
  		else
  			if _OPTIONS["QT_HOME"]~=nil then
  				buildoptions {
@@ -29,8 +29,8 @@
  				}
  			else
  				buildoptions {
-@@ -500,9 +500,9 @@ function osdmodulestargetconf()
- 			}
+@@ -540,9 +540,9 @@ function osdmodulestargetconf()
+ 			end
  		else
  			if _OPTIONS["QT_HOME"]~=nil then
 -				local qt_version = str_to_version(backtick(_OPTIONS["QT_HOME"] .. "/bin/qmake -query QT_VERSION"))

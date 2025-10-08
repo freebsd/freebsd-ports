@@ -1,6 +1,6 @@
---- 3rdparty/lzma/C/Sha256Opt.c.orig	2023-05-30 17:50:57 UTC
+--- 3rdparty/lzma/C/Sha256Opt.c.orig	2025-09-24 14:56:11 UTC
 +++ 3rdparty/lzma/C/Sha256Opt.c
-@@ -212,7 +212,7 @@ void MY_FAST_CALL Sha256_UpdateBlocks_HW(UInt32 state[
+@@ -202,7 +202,7 @@ void Z7_FASTCALL Sha256_UpdateBlocks_HW(UInt32 state[8
  
  #endif // USE_HW_SHA
  
