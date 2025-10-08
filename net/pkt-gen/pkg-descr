@@ -1,3 +1,4 @@
-Packet sink/source using the netmap API useful for perforamce testing
-networks.  This is the upstream version of the program by the same name
-that lives in /usr/src/tools/tools/netmap, maintained by Luigi Rizzo.
+Packet sink/source (pkt-gen) and link emulator (tlem) using the netmap API
+useful for performance testing networks. This is the upstream version of the
+program by the same name that lives in /usr/src/tools/tools/netmap, maintained
+by Luigi Rizzo.
