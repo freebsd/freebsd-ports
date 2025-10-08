@@ -21,6 +21,7 @@ libexec/poudriere/sh
 libexec/poudriere/timeout
 libexec/poudriere/timestamp
 %%BASH%%share/bash-completion/completions/poudriere
+share/man/man8/poudriere-audit.8.gz
 share/man/man8/poudriere-bulk.8.gz
 share/man/man8/poudriere-distclean.8.gz
 share/man/man8/poudriere-image.8.gz
@@ -39,8 +40,10 @@ share/man/man8/poudriere.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx.conf.sample
 %%DATADIR%%/MANIFESTS
 %%DATADIR%%/api.sh
+%%DATADIR%%/audit.sh
 %%DATADIR%%/awk/dependency_loop.awk
 %%DATADIR%%/awk/file_cmp_reg.awk
+%%DATADIR%%/awk/git_dirty.awk
 %%DATADIR%%/awk/humanize.awk
 %%DATADIR%%/awk/json.awk
 %%DATADIR%%/awk/json_jail.awk
