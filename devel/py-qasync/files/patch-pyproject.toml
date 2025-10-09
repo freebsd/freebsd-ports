@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2025-10-09 05:15:30 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ build-backend = "uv_build"
+ [build-system]
+ build-backend = "uv_build"
+-requires = ["uv_build>=0.8.3,<0.9.0"]
++requires = ["uv_build>=0.8.3"]
+ 
+ [project]
+ name = "qasync"
