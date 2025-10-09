@@ -36,8 +36,6 @@ PLIST_FILES=	bin/moonlight-qt \
 		share/icons/hicolor/scalable/apps/moonlight.svg \
 
 OPTIONS_DEFAULT=	QT6
-QT5_DESC=	QT 5 toolkit support
-QT6_DESC=	QT 6 toolkit support
 OPTIONS_SINGLE=	QT
 OPTIONS_SINGLE_QT=	QT6 QT5
 QT5_USES=	qt:5
