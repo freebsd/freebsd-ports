@@ -7518,7 +7518,7 @@ lib/libpython%%PYTHON_VER%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_LIBDIR%%/test/typinganndata/ann_module8.py
 %%PYTHON_LIBDIR%%/test/typinganndata/ann_module9.py
 %%PYTHON_LIBDIR%%/test/typinganndata/mod_generics_cache.py
-%%PYTHON_LIBDIR%%/test/wheeldata/setuptools-67.6.1-py3-none-any.whl
+%%PYTHON_LIBDIR%%/test/wheeldata/setuptools-79.0.1-py3-none-any.whl
 %%PYTHON_LIBDIR%%/test/wheeldata/wheel-0.40.0-py3-none-any.whl
 %%PYTHON_LIBDIR%%/test/win_console_handler.py
 %%PYTHON_LIBDIR%%/test/xmltestdata/c14n-20/README
