@@ -4,7 +4,7 @@ DISTVERSION=	0.1.0
 CATEGORIES=	misc
 
 MAINTAINER=	tagattie@FreeBSD.org
-COMMENT=	QT6 theme provider for Hyprland
+COMMENT=	Qt6 theme provider for Hyprland
 WWW=		https://github.com/hyprwm/hyprqt6engine
 
 LICENSE=	BSD3CLAUSE

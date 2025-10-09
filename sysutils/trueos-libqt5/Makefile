@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	jt@obs-sec.com
-COMMENT=	TrueOS QT5 Library
+COMMENT=	TrueOS Qt5 Library
 WWW=		https://github.com/trueos/trueos-libqt5
 
 LICENSE=	BSD2CLAUSE

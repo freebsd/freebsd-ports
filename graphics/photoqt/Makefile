@@ -5,7 +5,7 @@ PORTREVISION=	5
 CATEGORIES=	graphics
 
 MAINTAINER=	melanhit@gmail.com
-COMMENT=	Simple, powerful and good looking QT5 image viewer
+COMMENT=	Simple, powerful and good looking Qt5 image viewer
 WWW=		https://photoqt.org/
 
 LICENSE=	GPLv2+

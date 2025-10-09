@@ -1,6 +1,6 @@
 PKGNAMESUFFIX?=  -qt6
 
-COMMENT=	Portable Delphi-like IDE for the FreePascal compiler (QT6)
+COMMENT=	Portable Delphi-like IDE for the FreePascal compiler (Qt6)
 
 CONFLICTS=	lazarus-gtk2 lazarus-gtk2-devel lazarus-gtk3-devel lazarus-qt5 \
 		lazarus-qt5-devel lazarus-qt6-devel

@@ -5,7 +5,7 @@ CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	Simple GUI based video editor (QT5 UI)
+COMMENT=	Simple GUI based video editor (Qt5 UI)
 
 LIB_DEPENDS=	libADM6avutil.so.56:multimedia/avidemux
 

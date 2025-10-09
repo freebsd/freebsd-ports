@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	lxqt@FreeBSD.org
-COMMENT=	Portal frontend service for LXQT
+COMMENT=	Portal frontend service for LXQt
 WWW=		https://github.com/lxqt/xdg-desktop-portal-lxqt
 
 LICENSE=	LGPL21

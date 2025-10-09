@@ -31,7 +31,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz
 
 OPTIONS_DEFINE=		QT_GUI
-QT_GUI_DESC=		QT GUI Support
+QT_GUI_DESC=		Qt GUI Support
 QT_GUI_BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 QT_GUI_USES=		gl qt:6
 QT_GUI_USE=		GL=opengl QT=base,declarative,positioning,webchannel,webengine

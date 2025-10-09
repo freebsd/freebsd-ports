@@ -1,4 +1,4 @@
-This library provides a Qt6 implementation of the DBusMenu protocol to LXQT 
+This library provides a Qt6 implementation of the DBusMenu protocol to LXQt 
 which is forked from libdbusmenu-qt
 
 The DBusMenu protocol makes it possible for applications to export and import

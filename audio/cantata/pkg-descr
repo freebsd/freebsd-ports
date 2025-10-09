@@ -1,4 +1,4 @@
-Cantata is a QT graphical client for MPD with the following features:
+Cantata is a Qt graphical client for MPD with the following features:
 - Multiple MPD collections.
 - Highly customisable layout.
 - Songs grouped by album in play queue.

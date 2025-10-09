@@ -3,7 +3,7 @@ DISTVERSION=	6.0.4
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
-COMMENT=	Official QT frontend of radare2, a libre reverse engineering framework
+COMMENT=	Official Qt frontend of radare2, a libre reverse engineering framework
 WWW=		https://github.com/radareorg/iaito
 
 LICENSE=	GPLv3

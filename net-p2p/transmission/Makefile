@@ -18,7 +18,7 @@ CLI_DESC=	Build command-line client (deprecated)
 DAEMON_DESC=	Build daemon
 DOCS_DESC=	Install documentation
 GTK_DESC=	Build GTK+ client
-QT_DESC=	Build QT client
+QT_DESC=	Build Qt client
 UTILS_DESC=	Build utilities (create, edit, remote, show)
 WEB_DESC=	Install web interface
 
