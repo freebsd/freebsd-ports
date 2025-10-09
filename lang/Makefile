@@ -290,6 +290,7 @@
     SUBDIR += ptoc
     SUBDIR += purescript
     SUBDIR += py-dhall
+    SUBDIR += py-gherkin-official
     SUBDIR += py-hy
     SUBDIR += py-lupa
     SUBDIR += py-sly
