@@ -1,2 +1,10 @@
-TruffleHog scans for sensitive keys in hidden content and version history from
-commonly used tools across your company.
+TruffleHog is a security tool that scans for secrets and credentials in your
+code. It can scan git repositories, GitHub, GitLab, S3 buckets, and more.
+TruffleHog finds API keys, private keys, and other sensitive information
+before they can be compromised.
+
+Features:
+* Scans for over 700 types of credentials.
+* Verifies found secrets to reduce false positives.
+* Can be integrated into CI/CD pipelines.
+* Scans the entire commit history of git repositories.
