@@ -1,2 +1,9 @@
-FlopC++ is an open source algebraic modelling language implemented as a C++
-class library.
+FlopC++ is an open-source algebraic modeling language implemented as a C++
+class library. It is a part of the COIN-OR project and allows users to
+formulate linear optimization problems (LP/MIP) in a declarative style
+directly within a C++ program, similar to established algebraic modeling
+languages like GAMS and AMPL.
+
+To achieve independence from specific solvers, FlopC++ utilizes the COIN
+Open Solver Interface (OSI). This allows it to be linked with any solver
+that has an OSI interface, such as CLP, CPLEX, GLPK, and XPRESS-MP.
