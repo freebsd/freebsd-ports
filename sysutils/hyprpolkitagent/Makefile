@@ -1,6 +1,7 @@
 PORTNAME=	hyprpolkitagent
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	tagattie@FreeBSD.org
