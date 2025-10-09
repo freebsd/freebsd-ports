@@ -1,0 +1,43 @@
+--- layout.json.orig	2025-10-07 21:15:01 UTC
++++ layout.json
+@@ -9,35 +9,35 @@
+         },
+         {
+             "label": "hibernate",
+-            "action": "systemctl hibernate",
++            "action": "acpiconf -s 4",
+             "text": "Hibernate",
+             "keybind": "h",
+             "icon": "/usr/share/wleave/icons/hibernate.svg"
+         },
+         {
+             "label": "logout",
+-            "action": "loginctl terminate-user $USER",
++            "action": "kill -9 -1",
+             "text": "Logout",
+             "keybind": "e",
+             "icon": "/usr/share/wleave/icons/logout.svg"
+         },
+         {
+             "label": "shutdown",
+-            "action": "systemctl poweroff",
++            "action": "shutdown -p now",
+             "text": "Shutdown",
+             "keybind": "s",
+             "icon": "/usr/share/wleave/icons/shutdown.svg"
+         },
+         {
+             "label": "suspend",
+-            "action": "systemctl suspend",
++            "action": "zzz",
+             "text": "Suspend",
+             "keybind": "u",
+             "icon": "/usr/share/wleave/icons/suspend.svg"
+         },
+         {
+             "label": "reboot",
+-            "action": "systemctl reboot",
++            "action": "shutdown -r now",
+             "text": "Reboot",
+             "keybind": "r",
+             "icon": "/usr/share/wleave/icons/reboot.svg"

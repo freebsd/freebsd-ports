@@ -488,6 +488,7 @@
     SUBDIR += wl-clipboard
     SUBDIR += wl-kbptr
     SUBDIR += wl-mirror
+    SUBDIR += wleave
     SUBDIR += wlogout
     SUBDIR += wlopm
     SUBDIR += wlr-randr
