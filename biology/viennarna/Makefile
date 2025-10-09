@@ -1,6 +1,6 @@
 PORTNAME=	viennarna
 DISTVERSION=	2.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_7_x/
 DISTNAME=	ViennaRNA-${DISTVERSION}
@@ -15,15 +15,13 @@ LICENSE_NAME=	Vienna RNA License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
-BROKEN_FreeBSD_13=	compilation fails with clang-19: see https://github.com/ViennaRNA/ViennaRNA/issues/253
-BROKEN_FreeBSD_15=	compilation fails with clang-19: see https://github.com/ViennaRNA/ViennaRNA/issues/253
-
 BUILD_DEPENDS=	bash:shells/bash \
 		lapacke>0:math/lapacke \
 		libgd>0:graphics/gd # for the static lib
 BUILD_DEPENDS+=	swig:devel/swig \
 		xxd:sysutils/xxd
-LIB_DEPENDS=	libgmp.so:math/gmp \
+LIB_DEPENDS=	libdlib.so:science/dlib-cpp \
+		libgmp.so:math/gmp \
 		libgsl.so:math/gsl \
 		liblapack.so:math/lapack \
 		libmpfr.so:math/mpfr
@@ -56,6 +54,10 @@ PORTEXAMPLES=	*
 
 post-configure: # remove -lstdc++ from .pc file
 	@${REINPLACE_CMD} -e 's| -lstdc++||' ${WRKSRC}/RNAlib2.pc
+
+post-extract:
+	# remove bundled dlib to ensure we use system version
+	@${RM} -rf ${WRKSRC}/src/dlib-19.24
 
 post-install:
 	# remove stray files
