@@ -17,7 +17,6 @@ USE_GITHUB=	yes
 USE_GNOME=	gdkpixbuf gtk40 libadwaita
 GH_ACCOUNT=	gabm
 GH_PROJECT=	Satty
-CARGO_ENV=	SOURCE_DIR="${WRKSRC}"
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg
