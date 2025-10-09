@@ -6,6 +6,7 @@ include/aquamarine/backend/Backend.hpp
 include/aquamarine/backend/DRM.hpp
 include/aquamarine/backend/Headless.hpp
 include/aquamarine/backend/Misc.hpp
+include/aquamarine/backend/Null.hpp
 include/aquamarine/backend/Session.hpp
 include/aquamarine/backend/Wayland.hpp
 include/aquamarine/backend/drm/Atomic.hpp
