@@ -1,5 +1,9 @@
 bin/mixxx
 share/applications/org.mixxx.Mixxx.desktop
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/Mixxx-Keyboard-Shortcuts.pdf
+%%DOCSDIR%%/README.md
 share/icons/hicolor/128x128/apps/mixxx.png
 share/icons/hicolor/256x256/apps/mixxx.png
 share/icons/hicolor/32x32/apps/mixxx.png
@@ -130,6 +134,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/Hercules_DJControl_Inpulse_500.midi.xml
 %%DATADIR%%/controllers/Hercules_DJControl_Jogvision-scripts.js
 %%DATADIR%%/controllers/Hercules_DJControl_Jogvision.midi.xml
+%%DATADIR%%/controllers/Icon-P1Nano-scripts.js
+%%DATADIR%%/controllers/Icon-P1Nano.midi.xml
 %%DATADIR%%/controllers/Icon-iControls-scripts.js
 %%DATADIR%%/controllers/Icon-iControls.midi.xml
 %%DATADIR%%/controllers/Intech TEK2.midi.xml

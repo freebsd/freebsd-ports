@@ -1,6 +1,5 @@
 PORTNAME=	mixxx
-DISTVERSION=	2.5.2
-PORTREVISION=	1
+DISTVERSION=	2.5.3
 CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
@@ -78,17 +77,20 @@ PLIST_SUB+=	QT6="@comment "
 CMAKE_ARGS+=	-DINSTALL_USER_UDEV_RULES:BOOL=OFF \
 		-DOPTIMIZE:STRING=portable \
 		-DBATTERY:BOOL=OFF \
-		-DFAAD:BOOL=OFF \
 		-DMODPLUG:BOOL=ON \
 		-DMAD:BOOL=ON
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		BROADCAST DOCS ENGINEPRIME FFMPEG GPERFTOOLS HID OPUS \
+OPTIONS_DEFINE=		AAC BROADCAST DOCS ENGINEPRIME FFMPEG GPERFTOOLS HID OPUS \
 			QTKEYCHAIN WAVPACK
 OPTIONS_DEFAULT=	BROADCAST FFMPEG HID OPUS QTKEYCHAIN WAVPACK
 OPTIONS_SUB=		yes
 
+AAC_DESC=		AAC (m4a and mp4) support
+AAC_CMAKE_BOOL=		FAAD
+AAC_LIB_DEPENDS=	libfaad.so:audio/faad \
+			libmp4v2.so:multimedia/mp4v2
 BROADCAST_DESC=		Live Broadcasting (Shoutcast) support
 #BROADCAST_LIB_DEPENDS=	libshout-idjc.so:audio/shout-idjc
 BROADCAST_CMAKE_BOOL=	BROADCAST
@@ -114,8 +116,6 @@ post-patch:
 		${WRKSRC}/res/linux/org.mixxx.Mixxx.desktop
 	@${REINPLACE_CMD} -e "s,(Q_OS_LINUX),(Q_OS_LINUX) || defined(Q_OS_FREEBSD),g" \
 		${WRKSRC}/src/util/screensaver.h
-	@${REINPLACE_CMD} -e "s|QUIET hidapi-libusb|QUIET hidapi|" \
-		${WRKSRC}/cmake/modules/Findhidapi.cmake
 .for i in midi/midimessage.h
 	@${ECHO_CMD} >> ${WRKSRC}/src/controllers/${i}
 .endfor
