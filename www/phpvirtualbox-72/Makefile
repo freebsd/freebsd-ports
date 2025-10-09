@@ -1,9 +1,17 @@
 PORTNAME=	phpvirtualbox
 DISTVERSION=	7.2-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 SUFFIX=		-72
 PKGNAMESUFFIX=	${SUFFIX}${PHP_PKGNAMESUFFIX}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+# Fix missing NVRAM file when creating new VM with EFI:
+# https://github.com/phpvirtualbox/phpvirtualbox/issues/364
+PATCHFILES+=	2d806b480c28c4343ceda12ac0f8614713eddaec.patch:-p1
+# Disable Page Fusion feature, does not work in VirtualBox 7.2:
+# https://github.com/phpvirtualbox/phpvirtualbox/issues/363
+PATCHFILES+=	ab759b995472b98bda9e49050dff65c11e0a62b7.patch:-p1
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	AJAX Web Interface for VirtualBox
