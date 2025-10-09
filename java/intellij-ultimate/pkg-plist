@@ -64,6 +64,7 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/modules/intellij.idea.customization.base.jar
 %%DATADIR%%/lib/modules/intellij.idea.ultimate.customizationTrial.jar
 %%DATADIR%%/lib/modules/intellij.libraries.ai.grazie.spell.gec.engine.local.jar
+%%DATADIR%%/lib/modules/intellij.libraries.coil.jar
 %%DATADIR%%/lib/modules/intellij.libraries.compose.foundation.desktop.jar
 %%DATADIR%%/lib/modules/intellij.libraries.grpc.jar
 %%DATADIR%%/lib/modules/intellij.libraries.grpc.netty.shaded.jar
@@ -142,7 +143,6 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/modules/intellij.platform.registry.cloud.jar
 %%DATADIR%%/lib/modules/intellij.platform.rpc.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.scopes.backend.jar
-%%DATADIR%%/lib/modules/intellij.platform.scopes.jar
 %%DATADIR%%/lib/modules/intellij.platform.searchEverywhere.backend.jar
 %%DATADIR%%/lib/modules/intellij.platform.searchEverywhere.frontend.jar
 %%DATADIR%%/lib/modules/intellij.platform.searchEverywhere.jar
@@ -151,7 +151,8 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/modules/intellij.platform.tasks.impl.jar
 %%DATADIR%%/lib/modules/intellij.platform.tasks.jar
 %%DATADIR%%/lib/modules/intellij.platform.tips.jar
-%%DATADIR%%/lib/modules/intellij.platform.trialPromotion.jar
+%%DATADIR%%/lib/modules/intellij.platform.trialPromotion.common.jar
+%%DATADIR%%/lib/modules/intellij.platform.trialPromotion.idesWithFreeTier.jar
 %%DATADIR%%/lib/modules/intellij.platform.vcs.dvcs.impl.jar
 %%DATADIR%%/lib/modules/intellij.platform.vcs.dvcs.impl.shared.jar
 %%DATADIR%%/lib/modules/intellij.platform.vcs.impl.backend.jar
@@ -262,7 +263,8 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/Kotlin/bin/lldb/renderers/lldb_formatters/lldb_group_value.py
 %%DATADIR%%/plugins/Kotlin/bin/lldb/renderers/lldb_formatters/lldb_qt.py
 %%DATADIR%%/plugins/Kotlin/bin/lldb/renderers/lldb_formatters/lldb_qt_init.py
-%%DATADIR%%/plugins/Kotlin/bin/macos/LLDBFrontend
+%%DATADIR%%/plugins/Kotlin/bin/macos/aarch64/LLDBFrontend
+%%DATADIR%%/plugins/Kotlin/bin/macos/x64/LLDBFrontend
 %%DATADIR%%/plugins/Kotlin/bin/windows/LLDBFrontend.exe
 %%DATADIR%%/plugins/Kotlin/kotlinc.ide/META-INF/MANIFEST.MF
 %%DATADIR%%/plugins/Kotlin/kotlinc.ide/bin/kapt
@@ -1001,10 +1003,11 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/protractor-intellij/lib/protractor-intellij-util.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
+%%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-file-path-resolver.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-b598e85cdad2.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-b598e85cdad2.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-3aa1da707db6.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-3aa1da707db6.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/!HowToUpdateBundledTypeScript.md
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_tsserver.js
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_typingsInstaller.js
@@ -1747,8 +1750,7 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/mcpserver/lib/io.github.smiley4.schema.kenerator.core.jar
 %%DATADIR%%/plugins/mcpserver/lib/io.github.smiley4.schema.kenerator.jsonschema.jar
 %%DATADIR%%/plugins/mcpserver/lib/io.github.smiley4.schema.kenerator.serialization.jar
-%%DATADIR%%/plugins/mcpserver/lib/io.ktor.utils.jar
-%%DATADIR%%/plugins/mcpserver/lib/ktor-server-cio.jar
+%%DATADIR%%/plugins/mcpserver/lib/ktor-server-cio-internal.jar
 %%DATADIR%%/plugins/mcpserver/lib/mcpserver-frontend.jar
 %%DATADIR%%/plugins/mcpserver/lib/mcpserver.jar
 %%DATADIR%%/plugins/micronaut/lib/micronaut-gradle-tooling.jar
