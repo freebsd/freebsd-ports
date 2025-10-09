@@ -113,7 +113,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: not set.
 # PATCH_SITES	- Primary location(s) for distribution patch files
 #				  if not found locally.
-# DIST_SUBDIR	- Suffix to ${DISTDIR}.  If set, all ${DISTFILES} and
+# DIST_SUBDIR	- Suffix to ${DISTDIR}.  If set to non-empty value, all ${DISTFILES} and
 #				  ${PATCHFILES} will be put in this subdirectory of
 #				  ${DISTDIR} (see below).  Also they will be fetched in this
 #				  subdirectory from FreeBSD mirror sites.
@@ -1007,7 +1007,7 @@ PORTSDIR?=		/usr/ports
 LOCALBASE?=		/usr/local
 LINUXBASE?=		/compat/linux
 DISTDIR?=		${PORTSDIR}/distfiles
-_DISTDIR?=		${DISTDIR}${DIST_SUBDIR:D/${DIST_SUBDIR}}
+_DISTDIR?=		${DISTDIR}${empty(DIST_SUBDIR):?:${DIST_SUBDIR:D/${DIST_SUBDIR}}}
 INDEXDIR?=		${PORTSDIR}
 SRC_BASE?=		/usr/src
 USESDIR?=		${PORTSDIR}/Mk/Uses
@@ -2544,7 +2544,7 @@ _PATCH_SITES_ENV+=	_PATCH_SITES_${_group}=${_PATCH_SITES_${_group}:Q}
 CKSUMFILES=		${ALLFILES}
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
-.    if defined(DIST_SUBDIR)
+.    if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 .      if defined(CKSUMFILES) && ${CKSUMFILES}!=""
 _CKSUMFILES?=	${CKSUMFILES:S/^/${DIST_SUBDIR}\//}
 .      endif
@@ -3910,7 +3910,7 @@ delete-distfiles:
 			fi; \
 		done; \
 	fi)
-.      if defined(DIST_SUBDIR)
+.      if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 	-@${RMDIR} ${_DISTDIR} >/dev/null 2>&1 || ${TRUE}
 .      endif
 .    endif
@@ -3927,7 +3927,7 @@ delete-distfiles-list:
 			fi; \
 		done; \
 	fi
-.      if defined(DIST_SUBDIR)
+.      if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 	@${ECHO_CMD} "${RMDIR} ${_DISTDIR} 2>/dev/null || ${TRUE}"
 .      endif
 .    endif
