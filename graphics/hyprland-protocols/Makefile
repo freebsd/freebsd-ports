@@ -1,6 +1,6 @@
 PORTNAME=	hyprland-protocols
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.4
+DISTVERSION=	0.7.0
 CATEGORIES=	graphics
 
 MAINTAINER=	tagattie@FreeBSD.org
