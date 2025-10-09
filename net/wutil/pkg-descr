@@ -1,0 +1,3 @@
+wutil is a WiFi management utility for FreeBSD with a CLI (wutil) and
+a TUI (wutui). It supports station-mode operations and manages
+wpa_supplicant configuration.
