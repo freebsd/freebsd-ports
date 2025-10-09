@@ -14,6 +14,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/licenses/SOURCE-LICENSE
 LICENSE_FILE_CC-BY-SA-3.0=	${WRKSRC}/licenses/ASSET-LICENSE
 
+NOT_FOR_ARCHS=	i386
+
 BUILD_DEPENDS=	git>0:devel/git \
 		sbcl>0:lang/sbcl
 LIB_DEPENDS=	libfixposix.so:devel/libfixposix \
