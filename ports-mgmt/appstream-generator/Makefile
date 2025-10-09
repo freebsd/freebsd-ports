@@ -20,6 +20,7 @@ LIB_DEPENDS=	libappstream.so:devel/appstream \
 		libCatch2.so:devel/catch2 \
 		libcurl.so:ftp/curl \
 		liblmdb.so:databases/lmdb \
+		libicuuc.so:devel/icu \
 		libtbb.so:devel/onetbb \
 		libfyaml.so:textproc/libfyaml
 
