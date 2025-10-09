@@ -1,5 +1,5 @@
 PORTNAME=	dolibarr18
-DISTVERSION=	18.0.6
+DISTVERSION=	18.0.8
 CATEGORIES=	www finance
 
 MAINTAINER=	acm@FreeBSD.org
