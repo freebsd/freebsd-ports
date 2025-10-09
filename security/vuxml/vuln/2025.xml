@@ -1,3 +1,31 @@
+  <vuln vid="0b5145e9-a500-11f0-a136-10ffe07f9334">
+    <topic>Mailpit -- Performance information disclosure</topic>
+    <affects>
+      <package>
+	<name>mailpit</name>
+	<range><lt>1.27.10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ralph Slooten (Mailpit developer) reports:</p>
+	<blockquote cite="https://github.com/axllent/mailpit/releases/tag/v1.27.10">
+	  <p>An HTTP endpoint was found which exposed expvar runtime
+	  information (memory usage, goroutine counts, GC behavior,
+	  uptime and potential runtime flags) due to the Prometheus
+	  client library dependency.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/axllent/mailpit/releases/tag/v1.27.10</url>
+    </references>
+    <dates>
+      <discovery>2025-10-09</discovery>
+      <entry>2025-10-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f60c790a-a394-11f0-9617-b42e991fc52e">
     <topic>Mozilla -- Incorrect boundary conditions</topic>
     <affects>
