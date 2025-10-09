@@ -46,6 +46,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/${d}/*.sample ${STAGEDIR}${ETCDIR}/tray-monitor.d/${d}/
 .endfor
 	${INSTALL_PROGRAM} ${CONFIGURE_WRKSRC}/core/src/qt-tray-monitor/bareos-tray-monitor ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/core/src/images/bareos_1.png ${STAGEDIR}${PREFIX}/share/pixmaps/bareos-tray-monitor.png
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps
+	${INSTALL_DATA} ${WRKSRC}/core/src/images/bareos-logo_128x128.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps/bareos-tray-monitor.png
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/core/src/images/bareos-logo.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/bareos-tray-monitor.svg
 	${INSTALL_DATA} ${WRKSRC}/core/src/qt-tray-monitor/bareos-tray-monitor.desktop.in ${STAGEDIR}${DESKTOPDIR}/bareos-tray-monitor.desktop
 .endif
