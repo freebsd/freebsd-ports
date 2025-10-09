@@ -1,0 +1,9 @@
+python-iso639 is a Python package for ISO 639 language codes, names, and
+other associated information.
+
+Current features:
+
+* A representation of languages mapped across ISO 639-1, 639-2, and 639-3.
+* Functionality to "guess" what a language is for a given unknown language
+code or name.
+* Optimized for speed in retrieving language information.
