@@ -1,0 +1,11 @@
+--- codex-rs/rmcp-client/Cargo.toml.orig	2025-10-09 07:52:04 UTC
++++ codex-rs/rmcp-client/Cargo.toml
+@@ -16,7 +16,7 @@ keyring = { workspace = true, features = [
+ keyring = { workspace = true, features = [
+     "apple-native",
+     "crypto-rust",
+-    "linux-native-async-persistent",
++    "linux-native",
+     "windows-native",
+ ] }
+ mcp-types = { path = "../mcp-types" }

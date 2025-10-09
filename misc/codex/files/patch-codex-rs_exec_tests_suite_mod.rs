@@ -1,7 +1,7 @@
---- codex-rs/exec/tests/suite/mod.rs.orig	2025-10-03 16:43:33 UTC
+--- codex-rs/exec/tests/suite/mod.rs.orig	2025-10-09 01:48:45 UTC
 +++ codex-rs/exec/tests/suite/mod.rs
-@@ -3,5 +3,6 @@ mod resume;
- mod auth_env;
+@@ -4,5 +4,6 @@ mod resume;
+ mod originator;
  mod output_schema;
  mod resume;
 +#[cfg(not(target_os = "freebsd"))]
