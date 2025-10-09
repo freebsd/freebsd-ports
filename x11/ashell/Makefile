@@ -1,6 +1,5 @@
 PORTNAME=	ashell
-DISTVERSION=	0.5.0
-PORTREVISION=	2
+DISTVERSION=	0.6.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -31,12 +30,17 @@ PORTDOCS=	CHANGELOG.md README.md
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${PATCH} -s -p0 -d ${WRKSRC_crate_iced} < \
-		${PATCHDIR}/extra-patch-iced
+	@${BSDMAKE} PATCHDIR=${PATCHDIR}/iced WRKSRC=${WRKSRC_crate_iced} \
+		do-patch
 # https://github.com/RazrFalcon/fontdb/issues/61
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g' \
 		${WRKSRC_crate_fontdb-0.18.0}/src/lib.rs \
 		${WRKSRC_crate_fontdb-0.23.0}/src/lib.rs
+# temporary hack to avoid the following error in configure phase
+# error: failed to select a version for the requirement `redox_syscall = "^0.4.1"`
+	@${REINPLACE_CMD} -E '/redox_syscall =/s/0\.4(\.[0-9])?/0\.5/' \
+		${WRKSRC_crate_softbuffer}/Cargo.toml \
+		${WRKSRC_crate_winit}/Cargo.toml
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
