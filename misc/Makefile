@@ -199,6 +199,7 @@
     SUBDIR += hulgalugha
     SUBDIR += hwdata
     SUBDIR += hxtools
+    SUBDIR += hyprqt6engine
     SUBDIR += ignition-fuel-tools
     SUBDIR += iio-oscilloscope
     SUBDIR += imerge
