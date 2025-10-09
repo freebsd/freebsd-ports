@@ -1,6 +1,5 @@
 PORTNAME=	pandoc-crossref
-DISTVERSION=	0.3.21
-PORTREVISION=	1
+DISTVERSION=	0.3.22
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -120,7 +119,7 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		ordered-containers-0.2.4 \
 		os-string-2.0.8 \
 		pandoc-3.8.2 \
-		pandoc-types-1.23.1_3 \
+		pandoc-types-1.23.1_4 \
 		pem-0.2.4 \
 		pretty-show-1.10 \
 		prettyprinter-1.7.1 \
@@ -189,7 +188,6 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		zlib-0.7.1.1
 
 CABAL_EXECUTABLES=	pandoc pandoc-crossref
-CABAL_REVISION=		1
 SKIP_CABAL_PLIST=	yes
 
 PLIST_FILES=	bin/pandoc-crossref \
