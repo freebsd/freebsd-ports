@@ -1,4 +1,4 @@
---- llama-cpp-sys-2/build.rs.orig	2025-09-12 14:16:40 UTC
+--- llama-cpp-sys-2/build.rs.orig	2025-10-06 14:29:33 UTC
 +++ llama-cpp-sys-2/build.rs
 @@ -20,6 +20,7 @@ enum TargetOs {
      Apple(AppleVariant),
@@ -17,7 +17,7 @@
      } else {
          Err(target)
      }
-@@ -632,7 +635,7 @@ fn main() {
+@@ -648,7 +651,7 @@ fn main() {
                  config.cflag("/FS");
                  config.cxxflag("/FS");
              }
@@ -26,7 +26,7 @@
                  println!("cargo:rustc-link-lib=vulkan");
              }
              _ => (),
-@@ -738,6 +741,9 @@ fn main() {
+@@ -754,6 +757,9 @@ fn main() {
          }
          TargetOs::Linux => {
              println!("cargo:rustc-link-lib=dylib=stdc++");
