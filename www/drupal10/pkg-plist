@@ -5478,6 +5478,7 @@
 %%WWWDIR%%/core/modules/block/tests/src/FunctionalJavascript/BlockDragTest.php
 %%WWWDIR%%/core/modules/block/tests/src/FunctionalJavascript/BlockFilterTest.php
 %%WWWDIR%%/core/modules/block/tests/src/Kernel/BlockConfigSchemaTest.php
+%%WWWDIR%%/core/modules/block/tests/src/Kernel/BlockConfigSyncTest.php
 %%WWWDIR%%/core/modules/block/tests/src/Kernel/BlockInterfaceTest.php
 %%WWWDIR%%/core/modules/block/tests/src/Kernel/BlockRebuildTest.php
 %%WWWDIR%%/core/modules/block/tests/src/Kernel/BlockStorageUnitTest.php
@@ -6473,6 +6474,7 @@
 %%WWWDIR%%/core/modules/config/tests/config_transformer_test/config_transformer_test.info.yml
 %%WWWDIR%%/core/modules/config/tests/config_transformer_test/config_transformer_test.services.yml
 %%WWWDIR%%/core/modules/config/tests/config_transformer_test/src/EventSubscriber.php
+%%WWWDIR%%/core/modules/config/tests/fixtures/not_just_config.tar.gz
 %%WWWDIR%%/core/modules/config/tests/src/Functional/CacheabilityMetadataConfigOverrideIntegrationTest.php
 %%WWWDIR%%/core/modules/config/tests/src/Functional/ConfigDependencyWebTest.php
 %%WWWDIR%%/core/modules/config/tests/src/Functional/ConfigDraggableListBuilderTest.php
@@ -9126,10 +9128,12 @@
 %%WWWDIR%%/core/modules/link/tests/src/Functional/LinkFieldUITest.php
 %%WWWDIR%%/core/modules/link/tests/src/Functional/Views/LinkViewsTokensTest.php
 %%WWWDIR%%/core/modules/link/tests/src/FunctionalJavascript/LinkFieldFormStatesTest.php
+%%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkFormatterTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkItemSerializationTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkItemTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkItemUrlValidationTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/Plugin/migrate/field/d7/LinkFieldTest.php
+%%WWWDIR%%/core/modules/link/tests/src/Unit/AttributeXssTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Unit/LinkFormatterTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Unit/Plugin/Validation/Constraint/LinkAccessConstraintValidatorTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Unit/Plugin/Validation/Constraint/LinkExternalProtocolsConstraintValidatorTest.php
@@ -10570,6 +10574,7 @@
 %%WWWDIR%%/core/modules/node/tests/src/Functional/NodeAccessMenuLinkTest.php
 %%WWWDIR%%/core/modules/node/tests/src/Functional/NodeAccessPagerTest.php
 %%WWWDIR%%/core/modules/node/tests/src/Functional/NodeAccessRebuildNodeGrantsTest.php
+%%WWWDIR%%/core/modules/node/tests/src/Functional/NodeAccessUnpublishedCacheabilityTest.php
 %%WWWDIR%%/core/modules/node/tests/src/Functional/NodeAdminTest.php
 %%WWWDIR%%/core/modules/node/tests/src/Functional/NodeBlockFunctionalTest.php
 %%WWWDIR%%/core/modules/node/tests/src/Functional/NodeCacheTagsTest.php
@@ -12752,6 +12757,7 @@
 %%WWWDIR%%/core/modules/system/tests/modules/system_project_namespace_test/system_project_namespace_test.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/system_status_obsolete_test/system_status_obsolete_test.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/system_test/src/Controller/BrokenSystemTestController.php
+%%WWWDIR%%/core/modules/system/tests/modules/system_test/src/Controller/OptionalServiceSystemTestController.php
 %%WWWDIR%%/core/modules/system/tests/modules/system_test/src/Controller/PageCacheAcceptHeaderController.php
 %%WWWDIR%%/core/modules/system/tests/modules/system_test/src/Controller/SystemTestController.php
 %%WWWDIR%%/core/modules/system/tests/modules/system_test/src/Form/CopyFieldValueTestForm.php
@@ -21046,6 +21052,7 @@
 %%WWWDIR%%/vendor/symfony/http-kernel/Fragment/RoutableFragmentRenderer.php
 %%WWWDIR%%/vendor/symfony/http-kernel/Fragment/SsiFragmentRenderer.php
 %%WWWDIR%%/vendor/symfony/http-kernel/HttpCache/AbstractSurrogate.php
+%%WWWDIR%%/vendor/symfony/http-kernel/HttpCache/CacheWasLockedException.php
 %%WWWDIR%%/vendor/symfony/http-kernel/HttpCache/Esi.php
 %%WWWDIR%%/vendor/symfony/http-kernel/HttpCache/HttpCache.php
 %%WWWDIR%%/vendor/symfony/http-kernel/HttpCache/ResponseCacheStrategy.php
@@ -21910,7 +21917,6 @@
 %%WWWDIR%%/vendor/symfony/var-dumper/Cloner/Cursor.php
 %%WWWDIR%%/vendor/symfony/var-dumper/Cloner/Data.php
 %%WWWDIR%%/vendor/symfony/var-dumper/Cloner/DumperInterface.php
-%%WWWDIR%%/vendor/symfony/var-dumper/Cloner/Internal/NoDefault.php
 %%WWWDIR%%/vendor/symfony/var-dumper/Cloner/Stub.php
 %%WWWDIR%%/vendor/symfony/var-dumper/Cloner/VarCloner.php
 %%WWWDIR%%/vendor/symfony/var-dumper/Command/Descriptor/CliDescriptor.php
