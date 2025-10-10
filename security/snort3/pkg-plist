@@ -216,6 +216,7 @@ include/snort/pub_sub/intrinsic_event_ids.h
 include/snort/pub_sub/netflow_event.h
 include/snort/pub_sub/opportunistic_tls_event.h
 include/snort/pub_sub/packet_events.h
+include/snort/pub_sub/quic_events.h
 include/snort/pub_sub/reputation_events.h
 include/snort/pub_sub/rna_events.h
 include/snort/pub_sub/shadowtraffic_aggregator.h
