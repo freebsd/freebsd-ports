@@ -141,6 +141,7 @@ bin/yosys-witness
 %%DATADIR%%/include/kernel/scopeinfo.h
 %%DATADIR%%/include/kernel/sexpr.h
 %%DATADIR%%/include/kernel/sigtools.h
+%%DATADIR%%/include/kernel/threading.h
 %%DATADIR%%/include/kernel/timinginfo.h
 %%DATADIR%%/include/kernel/utils.h
 %%DATADIR%%/include/kernel/yosys.h

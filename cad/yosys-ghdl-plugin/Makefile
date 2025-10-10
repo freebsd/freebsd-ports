@@ -1,6 +1,6 @@
 PORTNAME=	yosys-ghdl-plugin
 PORTVERSION=	g20230930
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 
 MAINTAINER=	nsonack@herrhotzenplotz.de
