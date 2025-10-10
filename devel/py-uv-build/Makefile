@@ -1,12 +1,12 @@
 PORTNAME=	uv-build
-DISTVERSION=	0.9.0
+DISTVERSION=	0.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	uv: Build backend
+COMMENT=	UV: Build backend
 WWW=		https://astral.sh/ \
 		https://docs.astral.sh/uv/ \
 		https://github.com/astral-sh/uv
