@@ -1,8 +1,11 @@
 PORTNAME=	unit
 PORTVERSION=	${UNIT_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES?=	https://unit.nginx.org/download/
 DISTFILES?=	${PORTNAME}-${PORTVERSION}.tar.gz
+
+PATCH_SITES=	https://github.com/nginx/unit/commit/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Dynamic web application server
@@ -10,6 +13,9 @@ WWW=		https://unit.nginx.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Upstream repo archived on Oct 8 2025
+EXPIRATION_DATE=2025-12-31
 
 USES+=		compiler:c11 cpe gmake ssl
 
@@ -106,6 +112,10 @@ CONFIGURE_ARGS+=--control=unix:${UNIT_SOCK}
 .if defined(UNIT_MODNAME) && ${UNIT_MODNAME:Mperl*}
 # Fix build failure on clang >= 12
 CFLAGS+=	-Wno-compound-token-split-by-macro
+.endif
+
+.if (defined(UNIT_MODNAME) && ${UNIT_MODNAME:Mphp}) || make(makesum)
+PATCHFILES=	ad736f9f4fddd844aed1eb6ee8a9dc88df5533fb.patch:-p1
 .endif
 
 .if !defined(UNIT_MODNAME)
