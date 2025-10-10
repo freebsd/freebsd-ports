@@ -9,13 +9,13 @@
  
  [project]
  name = "uv"
- version = "0.9.0"
+ version = "0.9.1"
 -description = "An extremely fast Python package and project manager, written in Rust."
 +description = "Python package for uv - extremely fast Python package installer"
  authors = [{ name = "Astral Software Inc.", email = "hey@astral.sh" }]
  requires-python = ">=3.8"
  keywords = [
-@@ -40,60 +40,9 @@ Discord = "https://discord.gg/astral-sh"
+@@ -40,62 +40,10 @@ Releases = "https://github.com/astral-sh/uv/releases"
  Releases = "https://github.com/astral-sh/uv/releases"
  Discord = "https://discord.gg/astral-sh"
  
@@ -33,9 +33,6 @@
 -    { path = "LICENSE-APACHE", format = "sdist" },
 -    { path = "LICENSE-MIT", format = "sdist" },
 -]
-+[tool.setuptools]
-+packages = ["uv"]
-+package-dir = {"" = "python"}
  
 -[tool.rooster]
 -changelog-contributors = false  # We exclude contributors from the CHANGELOG file
@@ -49,6 +46,7 @@
 -  "crates/uv-version/Cargo.toml",
 -  "crates/uv-build/Cargo.toml",
 -  "crates/uv-build/pyproject.toml",
+-  { target = "crates/uv-static/src/env_vars.rs", replace = "next release" },
 -  "docs/getting-started/installation.md",
 -  "docs/guides/integration/docker.md",
 -  "docs/guides/integration/pre-commit.md",
@@ -57,8 +55,12 @@
 -  "docs/concepts/build-backend.md",
 -  "docs/concepts/projects/init.md",
 -  "docs/concepts/projects/workspaces.md",
+-  { target = "docs/reference/environment.md", replace = "next release" },
 -]
--
++[tool.setuptools]
++packages = ["uv"]
++package-dir = {"" = "python"}
+ 
 -[tool.rooster.section-labels]
 -"Breaking changes" = ["breaking"]
 -"Enhancements" = ["enhancement", "compatibility", "error messages"]
@@ -81,4 +83,3 @@
 -managed = false
 +[tool.setuptools.package-data]
 +uv = ["py.typed"]
-\ No newline at end of file
