@@ -1,8 +1,7 @@
 PORTNAME=	saga
-PORTVERSION=	9.9.3
+PORTVERSION=	9.10.0
 CATEGORIES=	math
-MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
-
+MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/([0-9]).*/\1/1}/SAGA%20-%20${PORTVERSION}
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	System for Automated Geoscientific Analyses
 WWW=		http://www.saga-gis.org/en/index.html
@@ -36,7 +35,7 @@ DOS2UNIX_GLOB=	*.cpp *.h *.txt
 USE_LDCONFIG=	yes
 USE_WX=		3.2+
 
-GIT_TAGNAME=	5d95de070
+GIT_TAGNAME=	d5f9924a9
 
 CMAKE_ARGS=	-DSVM_INCLUDE:PATH=${LOCALBASE}/include/svm.h \
 		-DWITH_TOOLS_PDAL:BOOL=TRUE

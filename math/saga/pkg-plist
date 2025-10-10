@@ -47,6 +47,7 @@ lib/libsaga_gdi.so.%%PORTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySAGA/helper.py
 %%PYTHON_SITELIBDIR%%/PySAGA/plot.py
 %%PYTHON_SITELIBDIR%%/PySAGA/saga_api.py
+%%PYTHON_SITELIBDIR%%/PySAGA/saga_api.pyi
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/_tool_chains_uncategorized.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/climate_tools.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/contrib_perego.py
@@ -102,6 +103,7 @@ lib/libsaga_gdi.so.%%PORTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/sim_landscape_evolution.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/sim_qm_of_esp.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/sim_rivflow.py
+%%PYTHON_SITELIBDIR%%/PySAGA/tools/sim_scimap.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/statistics_grid.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/statistics_kriging.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/statistics_points.py
@@ -114,6 +116,7 @@ lib/libsaga_gdi.so.%%PORTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/ta_morphometry.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/ta_preprocessor.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/ta_profiles.py
+%%PYTHON_SITELIBDIR%%/PySAGA/tools/ta_scimap.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/ta_slope_stability.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/table_calculus.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/table_tools.py
@@ -179,6 +182,7 @@ lib/saga/libsim_ihacres.so
 lib/saga/libsim_landscape_evolution.so
 lib/saga/libsim_qm_of_esp.so
 lib/saga/libsim_rivflow.so
+lib/saga/libsim_scimap.so
 lib/saga/libstatistics_grid.so
 lib/saga/libstatistics_kriging.so
 lib/saga/libstatistics_points.so
