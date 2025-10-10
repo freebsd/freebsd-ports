@@ -1,6 +1,6 @@
 PORTNAME=	afl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.33c
+DISTVERSION=	4.34c
 CATEGORIES=	security
 PKGNAMESUFFIX=	++-${FLAVOR}
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	uses x86-only instrumentation or requires complete LLVM support
-BROKEN_FreeBSD_13=	fails to build, error: unknown type name 'mode_t'
 
 BUILD_DEPENDS=	ginstall:sysutils/coreutils
 
@@ -35,6 +34,7 @@ SHEBANG_FILES=	afl-cmin.py afl-persistent-config
 
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	AFL_NO_X86=1 AFL_NO_TEST_BUILD=1 \
+		NO_FRIDA=1 NO_UNICORN=1 NO_QEMU=1 \
 		PREFIX="${PREFIX}/${PKGBASE}"
 .if ${FLAVOR} == llvm
 CFLAGS_riscv64=	-mno-relax
