@@ -1,5 +1,6 @@
 PORTNAME=	sudo
 PORTVERSION=	1.9.17p2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
@@ -90,7 +91,8 @@ SSL_CONFIGURE_ON=	--enable-openssl=${OPENSSLBASE}
 
 .if ${FLAVOR:U} == sssd
 RUN_DEPENDS+=		sssd:security/sssd2
-CONFIGURE_ARGS+=	--with-sssd
+CONFIGURE_ARGS+=	--with-sssd \
+			--with-sssd-conf=${LOCALBASE}/etc/sssd/sssd.conf
 .endif
 
 LOGFAC?=		authpriv
