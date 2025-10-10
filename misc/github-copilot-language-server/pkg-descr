@@ -1,0 +1,7 @@
+GitHub Copilot is an AI pair programmer that provides code suggestions
+and completions. It is developed by GitHub and OpenAI and is powered by
+Anthropic's and OpenAI's GPT models.
+
+This port provides the language server for GitHub Copilot, which enables
+its features in various code editors that support the Language Server
+Protocol (LSP).
