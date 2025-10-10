@@ -1,8 +1,7 @@
 PORTNAME=	moor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
-PORTREVISION=	1
-CATEGORIES=	sysutils
+DISTVERSION=	2.5.0
+CATEGORIES=	textproc
 
 MAINTAINER=	nxjoseph@protonmail.com
 COMMENT=	Pager designed to do the right thing without any configuration

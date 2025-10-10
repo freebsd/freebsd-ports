@@ -494,6 +494,7 @@
     SUBDIR += mn-aspell
     SUBDIR += moar
     SUBDIR += modlogan
+    SUBDIR += moor
     SUBDIR += mp_doccer
     SUBDIR += mr-aspell
     SUBDIR += ms-aspell
