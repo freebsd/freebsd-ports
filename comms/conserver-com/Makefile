@@ -1,11 +1,11 @@
 PORTNAME=	conserver
 DISTVERSION=	8.2.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	https://github.com/bstansell/conserver/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-com
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Application that allows multiple users to watch serial consoles
 WWW=		https://www.conserver.com/
 
