@@ -1,7 +1,7 @@
 PORTNAME=	sdsl-lite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.1-137
-DISTVERSIONSUFFIX=	-gc32874c
+DISTVERSION=	2.3.1-vgteam-20
+DISTVERSIONSUFFIX=	-g8abd7c9
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,15 +11,16 @@ WWW=		https://github.com/simongog/sdsl-lite
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:testing compiler:c++11-lang
+USES=		cmake:testing compiler:c++17-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	simongog
 GH_TUPLE=	simongog:libdivsufsort:0f24acd:libdivsufsort/external/libdivsufsort \
-		google:googletest:c2d90bd:googletest/external/googletest
+		google:googletest:71815bb:googletest/external/googletest
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	WITH_GOOGLETEST
 
 CONFLICTS_INSTALL=	libdivsufsort
 
