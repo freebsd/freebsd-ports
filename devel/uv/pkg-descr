@@ -1,2 +1,14 @@
 uv is an extremely fast Python package installer and resolver, written in Rust.
-It is designed as a drop-in replacement for `pip` and `pip-compile`.
+It is designed as a drop-in replacement for pip and pip-compile, but is
+often 10-100 times faster.
+
+uv also provides a unified interface for managing Python projects, including
+virtual environment creation and management, dependency locking, and project
+initialization.
+
+Features:
+- Extremely fast package installation and resolution
+- Drop-in replacement for pip and pip-compile
+- Unified project management
+- Virtual environment management
+- Cross-platform support (macOS, Linux, Windows)
