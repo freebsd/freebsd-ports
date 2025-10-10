@@ -1,2 +1,9 @@
-Geometrical Counter-Poise Correction
-for quantum chemistry.
+The gCP (Geometrical Counter-Poise) correction method is a way to deal
+with the basis set superposition error (BSSE) in quantum chemical
+calculations.
+
+The BSSE is a fundamental error that occurs in all practical electronic
+structure calculations that use finite basis sets. The gCP is a
+semi-empirical method that is much more efficient than the standard
+Boys-Bernardi counterpoise (BB-CP) correction, especially for geometry
+optimizations.
