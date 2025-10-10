@@ -1,3 +1,38 @@
+  <vuln vid="87fdaf3c-a5b5-11f0-98b5-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.4.0</ge><lt>18.4.2</lt></range>
+	<range><ge>18.3.0</ge><lt>18.3.4</lt></range>
+	<range><ge>5.2.0</ge><lt>18.2.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/10/08/patch-release-gitlab-18-4-2-released/">
+	  <p>Incorrect authorization issue in GraphQL mutations impacts GitLab EE</p>
+	  <p>Denial of Service issue in GraphQL blob type impacts GitLab CE/EE</p>
+	  <p>Missing authorization issue in manual jobs impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in webhook endpoints impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11340</cvename>
+      <cvename>CVE-2025-10004</cvename>
+      <cvename>CVE-2025-9825</cvename>
+      <cvename>CVE-2025-2934</cvename>
+      <url>https://about.gitlab.com/releases/2025/10/08/patch-release-gitlab-18-4-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-10-08</discovery>
+      <entry>2025-10-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0b5145e9-a500-11f0-a136-10ffe07f9334">
     <topic>Mailpit -- Performance information disclosure</topic>
     <affects>
