@@ -1,5 +1,5 @@
-TIMESTAMP = 1750613153
-SHA256 (go/net_rospo/rospo-v0.15.0/v0.15.0.mod) = fb7e02a0a571d1d0e0427d486f137678154dd1d48128fdf41391c41398adbbd7
-SIZE (go/net_rospo/rospo-v0.15.0/v0.15.0.mod) = 1337
-SHA256 (go/net_rospo/rospo-v0.15.0/v0.15.0.zip) = 996632dc72ec827d7e9b9789c4f0eb009a82742ba11838c3d83e54b93e4ede92
-SIZE (go/net_rospo/rospo-v0.15.0/v0.15.0.zip) = 98205
+TIMESTAMP = 1760100235
+SHA256 (go/net_rospo/rospo-v0.15.1/v0.15.1.mod) = d804f2f92c82dc710ce02ebc82fd9bd6c7e47385e258cb21ce93e0a4ed1d6e01
+SIZE (go/net_rospo/rospo-v0.15.1/v0.15.1.mod) = 1339
+SHA256 (go/net_rospo/rospo-v0.15.1/v0.15.1.zip) = 084e3fa3bad63e693dedbc2bc4b131b258d602dc1d2ff33935315ebc35554f6c
+SIZE (go/net_rospo/rospo-v0.15.1/v0.15.1.zip) = 98238
