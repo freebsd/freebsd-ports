@@ -1,7 +1,6 @@
 PORTNAME=	lazyssh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.1
-PORTREVISION=	1
+DISTVERSION=	0.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -16,7 +15,7 @@ USES=		go:modules
 
 GO_MODULE=	github.com/Adembc/${PORTNAME}
 GO_TARGET=	./cmd:${PORTNAME}
-GO_BUILDFLAGS=	-ldflags="-X main.version=${DISTVERSIONFULL} -X main.gitCommit=b7fb586"
+GO_BUILDFLAGS=	-ldflags="-X main.version=${DISTVERSIONFULL} -X main.gitCommit=460bb0f"
 
 PLIST_FILES=	bin/${PORTNAME}
 
