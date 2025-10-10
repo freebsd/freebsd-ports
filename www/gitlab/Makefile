@@ -119,7 +119,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-fog-google-gitlab>=1.24.1<1.25:net/rubygem-fog-google-gitlab \
 	rubygem-fog-local-gitlab>=0.8<1.0:net/rubygem-fog-local-gitlab \
 	rubygem-fog-aliyun-gitlab>=0.4<1.0:net/rubygem-fog-aliyun-gitlab \
-	rubygem-gitlab-fog-azure-rm>=2.2.0<2.3:net/rubygem-gitlab-fog-azure-rm \
+	rubygem-gitlab-fog-azure-rm>=2.4.0<2.5:net/rubygem-gitlab-fog-azure-rm \
 	rubygem-google-apis-storage_v1-gitlab>=0.29<1:devel/rubygem-google-apis-storage_v1-gitlab \
 	rubygem-google-cloud-storage-gitlab>=1.45.0<1.46:net/rubygem-google-cloud-storage-gitlab \
 	rubygem-google-apis-core-gitlab>=0.18.0<0.19:devel/rubygem-google-apis-core-gitlab \
