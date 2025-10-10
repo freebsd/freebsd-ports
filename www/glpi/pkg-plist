@@ -855,6 +855,7 @@
 %%WWWDIR%%/install/mysql/glpi-10.0.7-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.8-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.9-empty.sql
+%%WWWDIR%%/install/mysql/glpi-11.0.0-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.1.0-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.1.1-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.1.2-empty.sql
@@ -3183,6 +3184,7 @@
 %%WWWDIR%%/src/Glpi/Form/QuestionType/AbstractQuestionTypeActors.php
 %%WWWDIR%%/src/Glpi/Form/QuestionType/AbstractQuestionTypeSelectable.php
 %%WWWDIR%%/src/Glpi/Form/QuestionType/AbstractQuestionTypeShortAnswer.php
+%%WWWDIR%%/src/Glpi/Form/QuestionType/CustomMandatoryMessageInterface.php
 %%WWWDIR%%/src/Glpi/Form/QuestionType/QuestionTypeActorsDefaultValueConfig.php
 %%WWWDIR%%/src/Glpi/Form/QuestionType/QuestionTypeActorsExtraDataConfig.php
 %%WWWDIR%%/src/Glpi/Form/QuestionType/QuestionTypeAssignee.php
@@ -3212,6 +3214,7 @@
 %%WWWDIR%%/src/Glpi/Form/QuestionType/QuestionTypeUrgency.php
 %%WWWDIR%%/src/Glpi/Form/QuestionType/QuestionTypeUserDevice.php
 %%WWWDIR%%/src/Glpi/Form/QuestionType/QuestionTypeUserDevicesConfig.php
+%%WWWDIR%%/src/Glpi/Form/QuestionType/QuestionTypeValidationInterface.php
 %%WWWDIR%%/src/Glpi/Form/QuestionType/QuestionTypesManager.php
 %%WWWDIR%%/src/Glpi/Form/QuestionType/TranslationAwareQuestionType.php
 %%WWWDIR%%/src/Glpi/Form/RenderLayout.php
@@ -3479,6 +3482,7 @@
 %%WWWDIR%%/src/Glpi/Toolbox/MapperInterface.php
 %%WWWDIR%%/src/Glpi/Toolbox/MarkdownBuilder.php
 %%WWWDIR%%/src/Glpi/Toolbox/MarkdownRenderer.php
+%%WWWDIR%%/src/Glpi/Toolbox/SanitizedStringsDecoder.php
 %%WWWDIR%%/src/Glpi/Toolbox/Sanitizer.php
 %%WWWDIR%%/src/Glpi/Toolbox/SingletonTrait.php
 %%WWWDIR%%/src/Glpi/Toolbox/URL.php
@@ -12159,7 +12163,7 @@
 %%WWWDIR%%/vendor/webonyx/graphql-php/src/Validator/Rules/VariablesInAllowedPosition.php
 %%WWWDIR%%/vendor/webonyx/graphql-php/src/Validator/SDLValidationContext.php
 %%WWWDIR%%/vendor/webonyx/graphql-php/src/Validator/ValidationContext.php
-%%WWWDIR%%/version/11.0.0
+%%WWWDIR%%/version/11.0.1
 @dir %%WWWDIR%%/ajax
 @dir %%WWWDIR%%/ajax/asset
 @dir %%WWWDIR%%/ajax/form
