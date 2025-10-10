@@ -1,5 +1,6 @@
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -49,7 +50,7 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 
 USES=		charsetfix compiler:c++17-lang desktop-file-utils fortran gl \
 		gmake iconv libtool localbase:ldflags ncurses octave:env perl5 \
-		pkgconfig readline tar:xz xorg
+		pkgconfig readline tar:xz xorg python:3.0+
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/${PORTVERSION}
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
@@ -111,6 +112,9 @@ NETLIB_USES=	blaslapack:netlib
 ATLAS_USES=	blaslapack:atlas
 
 BINARY_ALIAS=	sed=gsed
+
+post-patch:
+	${REINPLACE_CMD} -e s+python3+${PYTHON_CMD}+g ${WRKSRC}/scripts/miscellaneous/python.m
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
