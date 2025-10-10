@@ -1,7 +1,7 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.43.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -36,7 +36,6 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libwayland-cursor.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxxhash.so:devel/xxhash
-RUN_DEPENDS=	nerd-fonts>=3.1.1:x11-fonts/nerd-fonts
 
 USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
 		go:modules magick pkgconfig python shebangfix ssl tar:xz \
