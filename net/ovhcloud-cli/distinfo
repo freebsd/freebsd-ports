@@ -1,6 +1,6 @@
-TIMESTAMP = 1759215075
-SHA256 (ovh-ovhcloud-cli-v0.5.0_GH0.tar.gz) = 1e581c66df33d7c97f5d1e80c1492390762f92bc5b8a322de62059e6a427e9ac
-SIZE (ovh-ovhcloud-cli-v0.5.0_GH0.tar.gz) = 890713
+TIMESTAMP = 1760107763
+SHA256 (ovh-ovhcloud-cli-v0.6.0_GH0.tar.gz) = 99081ddfc3c7ef9fb6f3f7f230bd3d007b8c1733e7b813a37135b326bfdd6f0d
+SIZE (ovh-ovhcloud-cli-v0.6.0_GH0.tar.gz) = 894646
 SHA256 (PaesslerAG-gval-v1.2.4_GH0.tar.gz) = 86e08fbd86a768478afbe1e3aa683dbec5ceb790a58758b61f2884a5d8a58d14
 SIZE (PaesslerAG-gval-v1.2.4_GH0.tar.gz) = 68441
 SHA256 (PaesslerAG-jsonpath-v0.1.1_GH0.tar.gz) = 8d150dfdc8228cb68dbcb2a0d146e07bb2a87960c6b3855fa27ed9551ff686e8
