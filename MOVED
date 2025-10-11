@@ -23,6 +23,7 @@
 # This file can be linted with Tools/scripts/MOVEDlint.awk
 #
 # Port|Moved to|Date|Why
+mail/mu4e||2025-09-12|Becomes integrated as default to its backend port mail/mu
 www/wt3|www/wt|2021-01-03|Has expired: Upstream end of life, switch to www/wt instead
 archivers/ecm|archivers/cmdpack|2021-01-04|ECM is now included in cmdpack
 math/qhull5|math/qhull|2021-01-04|Has expired: Legacy version of port no longer required by math/octave
