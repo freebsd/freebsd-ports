@@ -59,4 +59,10 @@ do-test:
 	-cd ${WRKSRC}/test && bash ${test}
 .endfor
 
+# Extraction fails with poudriere on riscv64
+# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=289914
+.if ${ARCH} == riscv64
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+.endif
+
 .include <bsd.port.mk>
