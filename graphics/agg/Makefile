@@ -3,7 +3,7 @@ DISTVERSION=	2.7.0
 PORTREVISION=	0
 CATEGORIES=	graphics
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Quality Rendering Engine for C++
 WWW=		https://github.com/clausecker/agg
 
