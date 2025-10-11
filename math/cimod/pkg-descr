@@ -1,1 +1,8 @@
-cmod is a C++ library for a binary quadratic model.
+Cimod is a C++ header-only library for a binary quadratic model (BQM),
+which is a model of variables that can be in one of two states (0 or 1,
+or -1 or 1). BQMs are used to represent a wide range of optimization
+problems, and are particularly important in the context of quantum
+annealing and other heuristic optimization algorithms.
+
+This library provides tools to create and manipulate BQM instances,
+making it easier to work with these models in C++ applications.
