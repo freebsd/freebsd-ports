@@ -13,8 +13,8 @@ export LC_ALL=C
 
 # args
 
-REPOSITORY_URL="$1"
-TAG_PREFIX="$2"
+REPOSITORY_URL="$1" # mandatory
+TAG_PREFIX="$2" # optional
 
 if [ -z "$REPOSITORY_URL" ]; then
 	echo "Usage: $0 <repository-url> <tag-prefix>"
