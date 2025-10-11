@@ -1,11 +1,13 @@
 PORTNAME=	ffmpeg
 DISTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
 PKGNAMESUFFIX=	3
 
 PATCH_SITES=	https://github.com/hrydgard/ppsspp-ffmpeg/commit/
-PATCHFILES=	9c4f84d9d9ad147f4a44cff582829647a0c65420.patch:-p1
+PATCHFILES=	9c4f84d9d9ad147f4a44cff582829647a0c65420.patch:-p1 \
+		15f7d6bfeb1d2be9ec3c61a6eee4e843d61ddf69.patch:-p1
 
 MAINTAINER=	kreinholz@gmail.com
 COMMENT=	Realtime audio/video encoder/converter and streaming server (legacy 3.* series)
