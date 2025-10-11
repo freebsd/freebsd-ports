@@ -11,16 +11,13 @@ WWW=		https://nanodbc.github.io/nanodbc/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_13=	compilation fails with clang-19, see https://github.com/nanodbc/nanodbc/issues/421
-BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/nanodbc/nanodbc/issues/421
-
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 USES=		cmake:testing compiler:c++14-lang localbase:ldflags # pkgconfig python:build
-USE_LDCONFIG=	yes
 USE_CXXSTD=	c++14 # fix build broken by deprecated feature std::char_traits, see https://github.com/nanodbc/nanodbc/issues/387
 
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		NANODBC_DISABLE_TESTS NANODBC_DISABLE_EXAMPLES
