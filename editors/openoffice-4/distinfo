@@ -1,6 +1,6 @@
-TIMESTAMP = 1758871407
-SHA256 (openoffice/apache-openoffice-4.1.16-5b1f035b0f-src.tar.bz2) = aaed9f2d63480c3af726b8908fefa426ea6a5259c3ac9af31e9031d0dba8f015
-SIZE (openoffice/apache-openoffice-4.1.16-5b1f035b0f-src.tar.bz2) = 244018073
+TIMESTAMP = 1760133426
+SHA256 (openoffice/apache-openoffice-4.1.16-277251aa7e-src.tar.bz2) = 47815c676199c6b0d904f551d0c2ac0d3550e8b59fdfa11341ead3e13f25de61
+SIZE (openoffice/apache-openoffice-4.1.16-277251aa7e-src.tar.bz2) = 244012258
 SHA256 (openoffice/ApacheOpenOffice.ext_sources.4.x.x.20150707.tar.gz) = 966a8333c83a18ddd84401389006d6e0b52b8175924b808b54b88211669985fa
 SIZE (openoffice/ApacheOpenOffice.ext_sources.4.x.x.20150707.tar.gz) = 28957004
 SHA256 (openoffice/38c84292658ed4456157195f1c9bcbe1-Python-2.7.18.tgz) = da3080e3b488f648a3d7a4560ddee895284c3380b11d6de75edb986526b9a814
