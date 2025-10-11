@@ -1,4 +1,6 @@
-TIMESTAMP = 1746980343
+TIMESTAMP = 1760118652
+SHA256 (ghc-9.10.3-src.tar.xz) = d266864b9e0b7b741abe8c9d6a790d7c01c21cf43a1419839119255878ebc59a
+SIZE (ghc-9.10.3-src.tar.xz) = 32959164
 SHA256 (ghc-9.8.4-src.tar.xz) = 17e8188f3c8a5c2f73fb4e35d01032e8dc258835ec876d52c8ad8ee3d24b2fc5
 SIZE (ghc-9.8.4-src.tar.xz) = 32615492
 SHA256 (ghc-9.6.7-src.tar.xz) = d053bf6ce1d588a75cfe8c9316269486e9d8fb89dcdf6fd92836fa2e3df61305
@@ -7,6 +9,8 @@ SHA256 (ghc-9.4.8-src.tar.xz) = 0bf407eb67fe3e3c24b0f4c8dea8cb63e07f63ca0f76cf20
 SIZE (ghc-9.4.8-src.tar.xz) = 28655220
 SHA256 (ghc-9.2.8-src.tar.xz) = 5f13d1786bf4fd12f4b45faa37abedb5bb3f36d5e58f7da5307e8bfe88a567a1
 SIZE (ghc-9.2.8-src.tar.xz) = 24661260
+SHA256 (hadrian-9.10.3-boot.tar.gz) = a1faeba153b2a6d18882e750727284cbb560ee576413df98af3c0600d276c39a
+SIZE (hadrian-9.10.3-boot.tar.gz) = 1451082
 SHA256 (hadrian-9.8.4-boot.tar.gz) = 2fb02cce43603552387a241ece60a656fb8f4c97a9001134fd1c43f37e20906e
 SIZE (hadrian-9.8.4-boot.tar.gz) = 1582315
 SHA256 (hadrian-9.6.7-boot.tar.gz) = f81dc59b4aef59c62c645da7be0b1fb8720aba338c80004963a99bc1219d3a05
