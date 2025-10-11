@@ -10,6 +10,9 @@ WWW=		https://getgammy.com/
 
 LICENSE=	GPLv3
 
+BROKEN=		Abandoned and unfetchable
+EXPIRATION_DATE=2025-11-30
+
 USES=		compiler:c++11-lang gl qmake qt:5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	Fushko
