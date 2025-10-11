@@ -26,6 +26,7 @@ etc/dbus-1/system.d/xpra.conf
 %%ETCDIR%%/content-type/90_fallback.conf
 %%ETCDIR%%/http-headers/00_nocache.txt
 %%ETCDIR%%/http-headers/10_content_security_policy.txt
+%%ETCDIR%%/pulse/xpra.pa
 @sample %%ETCDIR%%/xorg.conf.sample
 @sample %%ETCDIR%%/xpra.conf.sample
 %%PYTHON_SITELIBDIR%%/xpra-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
