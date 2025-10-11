@@ -1,11 +1,12 @@
 PORTNAME=	cascade
 DISTVERSION=	0.1.0-RC1
 CATEGORIES=	dns net
+PKGNAMESUFFIX=	-dns
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Friendly DNSSEC signing solution
 WWW=		https://github.com/NLnetLabs/cascade
-#
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
