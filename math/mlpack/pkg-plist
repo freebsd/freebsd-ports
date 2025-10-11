@@ -91,6 +91,7 @@ include/mlpack/core/data/check_categorical_param.hpp
 include/mlpack/core/data/confusion_matrix.hpp
 include/mlpack/core/data/confusion_matrix_impl.hpp
 include/mlpack/core/data/data.hpp
+include/mlpack/core/data/data_options.hpp
 include/mlpack/core/data/dataset_mapper.hpp
 include/mlpack/core/data/dataset_mapper_impl.hpp
 include/mlpack/core/data/detect_file_type.hpp
@@ -100,6 +101,7 @@ include/mlpack/core/data/format.hpp
 include/mlpack/core/data/has_serialize.hpp
 include/mlpack/core/data/image_info.hpp
 include/mlpack/core/data/image_info_impl.hpp
+include/mlpack/core/data/image_resize_crop.hpp
 include/mlpack/core/data/imputation_methods/custom_imputation.hpp
 include/mlpack/core/data/imputation_methods/imputation_methods.hpp
 include/mlpack/core/data/imputation_methods/listwise_deletion.hpp
@@ -110,14 +112,15 @@ include/mlpack/core/data/is_naninf.hpp
 include/mlpack/core/data/load.hpp
 include/mlpack/core/data/load_arff.hpp
 include/mlpack/core/data/load_arff_impl.hpp
-include/mlpack/core/data/load_categorical_csv.hpp
-include/mlpack/core/data/load_csv.hpp
+include/mlpack/core/data/load_categorical.hpp
+include/mlpack/core/data/load_categorical_impl.hpp
 include/mlpack/core/data/load_image.hpp
 include/mlpack/core/data/load_image_impl.hpp
 include/mlpack/core/data/load_impl.hpp
 include/mlpack/core/data/load_model_impl.hpp
-include/mlpack/core/data/load_numeric_csv.hpp
+include/mlpack/core/data/load_numeric.hpp
 include/mlpack/core/data/load_vec_impl.hpp
+include/mlpack/core/data/matrix_options.hpp
 include/mlpack/core/data/map_policies/datatype.hpp
 include/mlpack/core/data/map_policies/increment_policy.hpp
 include/mlpack/core/data/map_policies/map_policies.hpp
@@ -150,8 +153,10 @@ include/mlpack/core/data/string_encoding_policies/tf_idf_encoding_policy.hpp
 include/mlpack/core/data/tokenizers/char_extract.hpp
 include/mlpack/core/data/tokenizers/split_by_any_of.hpp
 include/mlpack/core/data/tokenizers/tokenizers.hpp
+include/mlpack/core/data/text_options.hpp
 include/mlpack/core/data/types.hpp
 include/mlpack/core/data/types_impl.hpp
+include/mlpack/core/data/utilities.hpp
 include/mlpack/core/distances/distances.hpp
 include/mlpack/core/distances/iou_distance.hpp
 include/mlpack/core/distances/ip_metric.hpp
@@ -196,6 +201,10 @@ include/mlpack/core/kernels/pspectrum_string_kernel.hpp
 include/mlpack/core/kernels/pspectrum_string_kernel_impl.hpp
 include/mlpack/core/kernels/spherical_kernel.hpp
 include/mlpack/core/kernels/triangular_kernel.hpp
+include/mlpack/core/stb/bundled/stb_image.h
+include/mlpack/core/stb/bundled/stb_image_resize2.h
+include/mlpack/core/stb/bundled/stb_image_write.h
+include/mlpack/core/stb/stb.hpp
 include/mlpack/core/math/ccov.hpp
 include/mlpack/core/math/ccov_impl.hpp
 include/mlpack/core/math/columns_to_blocks.hpp
@@ -354,6 +363,7 @@ include/mlpack/core/util/backtrace.hpp
 include/mlpack/core/util/backtrace_impl.hpp
 include/mlpack/core/util/binding_details.hpp
 include/mlpack/core/util/conv_to.hpp
+include/mlpack/core/util/distr_param.hpp
 include/mlpack/core/util/ens_traits.hpp
 include/mlpack/core/util/first_element_is_arma.hpp
 include/mlpack/core/util/forward.hpp
@@ -533,6 +543,8 @@ include/mlpack/methods/ann/layer/linear3d_impl.hpp
 include/mlpack/methods/ann/layer/linear_impl.hpp
 include/mlpack/methods/ann/layer/linear_no_bias.hpp
 include/mlpack/methods/ann/layer/linear_no_bias_impl.hpp
+include/mlpack/methods/ann/layer/linear_recurrent.hpp
+include/mlpack/methods/ann/layer/linear_recurrent_impl.hpp
 include/mlpack/methods/ann/layer/log_softmax.hpp
 include/mlpack/methods/ann/layer/log_softmax_impl.hpp
 include/mlpack/methods/ann/layer/lstm.hpp

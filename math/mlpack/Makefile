@@ -1,5 +1,5 @@
 PORTNAME=	mlpack
-DISTVERSION=	4.5.1
+DISTVERSION=	4.6.2
 CATEGORIES=	math # machine-learning
 MASTER_SITES=	https://mlpack.org/files/
 
@@ -11,8 +11,6 @@ WWW=		https://www.mlpack.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_FreeBSD_13=	compilation fails with clang-19, see https://github.com/mlpack/mlpack/issues/3825
-BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/mlpack/mlpack/issues/3825
 BROKEN_i386=	undefined symbol: __atomic_load
 
 HPP_DEPENDS=	armadillo>0:math/armadillo \
@@ -22,7 +20,10 @@ HPP_DEPENDS=	armadillo>0:math/armadillo \
 BUILD_DEPENDS=	${HPP_DEPENDS}
 RUN_DEPENDS=	${HPP_DEPENDS}
 
-USES=		cmake:testing compiler:c++14-lang pkgconfig
+USES=		cmake:testing compiler:c++17-lang pkgconfig
+USE_CXXSTD=	c++17
+
+CXXFLAGS+=	-Wno-missing-template-arg-list-after-template-kw # workaround for https://github.com/mlpack/mlpack/issues/4016
 
 CMAKE_ARGS=	-DSTB_IMAGE_INCLUDE_DIR=${LOCALBASE}/include/stb
 CMAKE_OFF=	BUILD_PYTHON_BINDINGS BUILD_TESTS
