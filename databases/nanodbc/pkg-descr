@@ -1,1 +1,11 @@
-nanodbc is a small library that makes ODBC API programming easy and fun again.
+nanodbc is a small C++ library that simplifies ODBC API programming.
+
+nanodbc is a small C++ wrapper for the native C ODBC API. It aims to make
+common database tasks easy with concise code, incorporating modern C++
+standards.
+
+Features:
+* Portable and robust
+* Transaction support
+* Bound parameters
+* Clean separation of interface and implementation using the pimpl idiom
