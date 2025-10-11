@@ -1,6 +1,6 @@
 PORTNAME=	fluidsynth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.7
+DISTVERSION=	2.5.0
 CATEGORIES=	audio
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -10,17 +10,20 @@ WWW=		https://www.fluidsynth.org/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake cpe gnome pkgconfig
-USE_GNOME=	glib20
+BUILD_DEPENDS=	gcem>0:devel/gcem
+
+USES=		cmake compiler:c++17-lang cpe pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FluidSynth
 
+CMAKE_OFF=	enable-libinstpatch
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Doxygen \
 		CMAKE_DISABLE_FIND_PACKAGE_Git
+CMAKE_ARGS=	-Dosal=cpp11
 
-OPTIONS_DEFINE=		ALSA DBUS INSTPATCH JACK LADSPA PIPEWIRE PORTAUDIO \
+OPTIONS_DEFINE=		ALSA DBUS JACK LADSPA PIPEWIRE PORTAUDIO \
 			PULSEAUDIO READLINE SDL SNDFILE
 OPTIONS_DEFAULT=	JACK READLINE
 
@@ -33,9 +36,6 @@ ALSA_CMAKE_BOOL=	enable-alsa
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CMAKE_BOOL=	enable-dbus
-
-INSTPATCH_LIB_DEPENDS=	libinstpatch-1.0.so:audio/libinstpatch
-INSTPATCH_CMAKE_BOOL=	enable-libinstpatch
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_BOOL=	enable-jack
