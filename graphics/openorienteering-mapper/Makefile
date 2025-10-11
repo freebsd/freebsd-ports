@@ -11,11 +11,9 @@ WWW=		https://www.openorienteering.org/apps/mapper/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=         error: overload resolution selected deleted operator '='
-EXPIRATION_DATE=2025-10-31
-
 PATCH_SITES=	https://github.com/OpenOrienteering/mapper/commit/
-PATCHFILES=	69977dfd4cbb8608aafa8ca8b5388d4983f5430a.patch:-p1
+PATCHFILES=	69977dfd4cbb8608aafa8ca8b5388d4983f5430a.patch:-p1 \
+		a3cb8e4518f8d15a6938c9b1620c35703788c6ff.patch:-p1
 
 LIB_DEPENDS=	libpolyclipping.so:graphics/polyclipping \
 		libproj.so:graphics/proj
