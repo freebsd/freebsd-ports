@@ -1,6 +1,6 @@
 PORTNAME=	SNIP
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	www
 
 MAINTAINER=	ek@purplehat.org
@@ -37,8 +37,8 @@ SQLITE_USES=	sqlite
 SQLITE_USE=	PHP=sqlite3
 
 do-install:
-	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${MKDIR} ${STAGEDIR}${WWWDIR}
+	${MKDIR} ${STAGEDIR}${ETCDIR} \
+		 ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC}/htdocs && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 	${FIND} ${STAGEDIR}${WWWDIR} -type f -iname "*.orig" -delete
 	${INSTALL_DATA} ${STAGEDIR}${WWWDIR}/application/config/snip.php.dist ${STAGEDIR}${ETCDIR}/snip.php.sample
