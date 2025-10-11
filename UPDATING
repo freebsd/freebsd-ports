@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20251011:
+  AFFECTS: users of net-im/gotosocial
+  AUTHOR: dinoex@FreeBSD.org
+
+  The etc/gotosocial/config.yaml file needs to be edited.
+  Also includes breaking changes to prometheus metrics.
+  See release notes for details:
+  https://codeberg.org/superseriousbusiness/gotosocial/releases/tag/v0.20.0
+  Requires a lengthy database migration which must not be interrupted!
+
 20250930:
   AFFECTS: users of x11/nvidia-driver*
   AUTHOR: junchoon@dec.sakura.ne.jp
