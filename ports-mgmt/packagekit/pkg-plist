@@ -149,5 +149,6 @@ share/polkit-1/rules.d/org.freedesktop.packagekit.rules
 share/vala/vapi/packagekit-glib2.deps
 share/vala/vapi/packagekit-glib2.vapi
 @sample /var/lib/PackageKit/transactions.db.sample
+@postunexec /bin/rm -rf /var/lib/PackageKit/transactions.db
 @dir /var/lib/PackageKit
 @dir /var/lib
