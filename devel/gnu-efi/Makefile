@@ -1,5 +1,5 @@
 PORTNAME=	gnu-efi
-PORTVERSION=	3.0.15
+PORTVERSION=	3.0.18
 CATEGORIES=	devel
 MASTER_SITES=	SF/gnu-efi
 
@@ -15,8 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils
 
 USES=		compiler:c++11-lib gmake tar:bz2
 
-CFLAGS+=	-fPIC
-CPPFLAGS+=	-fPIC
+CPPFLAGS+=	-Wno-incompatible-pointer-types
 MAKE_ARGS+=	CC=${CC} HOSTCC=${CC} AR=${AR}
 
 .include <bsd.port.pre.mk>
