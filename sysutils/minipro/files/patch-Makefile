@@ -1,5 +1,5 @@
---- Makefile.orig	2023-12-03 05:11:49 UTC
-+++ Makefile
+--- Makefile.ori	2025-09-28 17:00:30.151771000 +0200
++++ Makefile	2025-09-28 17:00:47.077677000 +0200
 @@ -1,11 +1,11 @@
  # Install Configuration
  
@@ -9,8 +9,8 @@
  #CC=clang
  
  # Compiler options
--CFLAGS = -g -O0 -Wall -Wextra -W -Wno-sign-compare -Wno-unused-parameter
+-CFLAGS ?= -g -O0 -Wall -Wextra -W -Wno-sign-compare -Wno-unused-parameter
 +CFLAGS += -g -O0 -Wall -Wextra -W -Wno-sign-compare -Wno-unused-parameter
- CPPFLAGS = -DSHARE_INSTDIR="\"$(SHARE_INSTDIR)\""
- LDFLAGS =
+ CPPFLAGS += -DSHARE_INSTDIR="\"$(SHARE_INSTDIR)\""
+ LDFLAGS ?=
  
