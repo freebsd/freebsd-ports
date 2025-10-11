@@ -1,6 +1,6 @@
 PORTNAME=	openssh
 DISTVERSION=	10.1p1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -43,7 +43,7 @@ gssapi_PKGNAMESUFFIX=		-portable-gssapi
 OPTIONS_DEFINE=		DOCS PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN KERB_GSSAPI \
 			LDNS NONECIPHER XMSS FIDO_U2F BLACKLISTD
-OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS LDNS FIDO_U2F
+OPTIONS_DEFAULT=	BLACKLISTD LIBEDIT PAM TCP_WRAPPERS LDNS FIDO_U2F
 .if ${FLAVOR:U} == hpn
 OPTIONS_DEFAULT+=	HPN NONECIPHER
 .endif
@@ -98,6 +98,14 @@ ETCDIR?=		${PREFIX}/etc/ssh
 .include <bsd.port.pre.mk>
 
 PATCH_SITES+=	http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,hpn,gsskex
+
+# Must add this patch before HPN due to conflicts
+.if !${PORT_OPTIONS:MBLACKLISTD}
+.  if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
+# Needed glue for applying HPN patch without conflict
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-no-blocklistd-hpn-glue
+.  endif
+.endif
 
 # Must add this patch before HPN due to conflicts
 .if ${PORT_OPTIONS:MKERB_GSSAPI} || ${FLAVOR:U} == gssapi
