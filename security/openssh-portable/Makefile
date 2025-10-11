@@ -1,6 +1,6 @@
 PORTNAME=	openssh
 DISTVERSION=	10.0p1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -98,6 +98,14 @@ ETCDIR?=		${PREFIX}/etc/ssh
 .include <bsd.port.pre.mk>
 
 PATCH_SITES+=	http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,hpn,gsskex
+
+# Must add this patch before HPN due to conflicts
+.if !${PORT_OPTIONS:MBLACKLISTD}
+.  if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
+# Needed glue for applying HPN patch without conflict
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-no-blocklistd-hpn-glue
+.  endif
+.endif
 
 # Must add this patch before HPN due to conflicts
 .if ${PORT_OPTIONS:MKERB_GSSAPI} || ${FLAVOR:U} == gssapi

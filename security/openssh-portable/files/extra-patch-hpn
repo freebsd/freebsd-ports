@@ -1233,17 +1233,17 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	/*
  	 * Create a new session and process group since the 4.4BSD
  	 * setlogin() affects the entire process group.  We don't
---- work.clean/openssh-9.8p1/sshd-session.c.orig	2024-07-01 13:54:25.745441000 -0700
-+++ work/openssh-9.8p1/sshd-session.c	2024-07-01 13:54:57.335695000 -0700
-@@ -1305,7 +1305,7 @@ main(int ac, char **av)
- 		alarm(options.login_grace_time);
+--- work/openssh/sshd-session.c.orig	2025-10-11 10:19:18.935826000 -0700
++++ work/openssh/sshd-session.c	2025-10-11 10:20:11.460279000 -0700
+@@ -1281,7 +1281,7 @@ main(int ac, char **av)
+ 	}
  
  	if ((r = kex_exchange_identification(ssh, -1,
--	    options.version_addendum)) != 0)
-+	    options.version_addendum, options.hpn_disabled)) != 0)
+-	    options.version_addendum)) != 0) {
++	    options.version_addendum, options.hpn_disabled)) != 0) {
+ 		BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL, "Banner exchange");
  		sshpkt_fatal(ssh, r, "banner exchange");
- 
- 	ssh_packet_set_nonblocking(ssh);
+ 	}
 --- work.clean/openssh-6.8p1/sshd_config	2015-04-01 22:07:18.248858000 -0500
 +++ work/openssh-6.8p1/sshd_config	2015-04-01 22:16:49.932279000 -0500
 @@ -111,6 +111,20 @@ AuthorizedKeysFile	.ssh/authorized_keys
