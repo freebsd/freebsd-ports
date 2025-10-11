@@ -1,5 +1,5 @@
 PORTNAME=	PackageKit
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	https://www.freedesktop.org/software/PackageKit/releases/
 
