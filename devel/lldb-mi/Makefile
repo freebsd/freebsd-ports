@@ -1,5 +1,5 @@
 PORTNAME=	lldb-mi
-DISTVERSION=	g20231216
+DISTVERSION=	g20250923
 CATEGORIES=	devel lang
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		cmake llvm:lib,noexport
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lldb-tools
-GH_TAGNAME=	a6c8c66d70b13209f3dabba5b6aefb2c58c3976c
+GH_TAGNAME=	31ed003a15a4a8e44881401d065217dfb2642406
 
 PLIST_FILES=	bin/lldb-mi
 
