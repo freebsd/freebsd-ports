@@ -103,6 +103,7 @@
     SUBDIR += py-pymeeus
     SUBDIR += py-pymetar
     SUBDIR += py-pysofa
+    SUBDIR += py-pysolar
     SUBDIR += py-pytest-astropy
     SUBDIR += py-pytest-astropy-header
     SUBDIR += py-pyvo
