@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-10-11 17:30:54 UTC
++++ pyproject.toml
+@@ -17,7 +17,7 @@ requires = [
+     "scikit-build-core>=0.10",
+     "setuptools_scm[toml]",
+     "pybind11",
+-    "oldest-supported-numpy",
++    "numpy",
+ ]
+ build-backend = "scikit_build_core.build"
+ 
