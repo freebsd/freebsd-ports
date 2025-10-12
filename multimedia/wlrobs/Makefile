@@ -11,6 +11,7 @@ WWW=		https://hg.sr.ht/~scoopta/wlrobs
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
+BUILD_DEPENDS=	simde>0:devel/simde # XXX Move to RUN_DEPENDS in obs-studio
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libobs.so:multimedia/obs-studio
 
