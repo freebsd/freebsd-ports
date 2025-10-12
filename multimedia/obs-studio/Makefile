@@ -1,5 +1,6 @@
 PORTNAME=	obs-studio
 DISTVERSION=	32.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/obsproject/obs-studio/releases/download/${DISTVERSION}/
 DISTFILES=	OBS-Studio-${DISTVERSION}-Sources${EXTRACT_SUFX}
@@ -64,12 +65,12 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}" \
 		-DQT_VERSION=6 \
 		-DPython_EXECUTABLE="${PYTHON_CMD}"
-CMAKE_ARGS+=	-DCMAKE_INTERPROCEDURAL_OPTIMIZATION:BOOL=OFF # prevent errors like: ld: error: relocation R_X86_64_PC32 cannot be used against symbol '__stack_chk_guard'; recompile with -fPIC
-# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=290157
 
 CFLAGS+=	-Wno-error=attribute-warning
 CFLAGS_powerpc64=	-Wno-error=deprecated-altivec-src-compat -Wno-error=pass-failed
 CFLAGS_powerpc64le=	-Wno-error=deprecated-altivec-src-compat
+CFLAGS+=	-fPIC # otherwise we get: relocation R_X86_64_PC32 cannot be used against symbol '__stack_chk_guard'; recompile with -fPIC
+CXXFLAGS+=	-fPIC # otherwise we get: relocation R_X86_64_PC32 cannot be used against symbol '__stack_chk_guard'; recompile with -fPIC
 LDFLAGS+=	-fPIC # pending https://github.com/obsproject/obs-studio/issues/3436
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-sources
