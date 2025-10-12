@@ -246,5 +246,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		winnow-0.7.12 \
 		winsafe-0.0.19 \
 		wit-bindgen-rt-0.39.0 \
+		xdg-3.0.0 \
 		xml-rs-0.8.27 \
 		yaml-rust2-0.10.3
