@@ -1,5 +1,6 @@
 PORTNAME=	libde265
 DISTVERSION=	1.0.12
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/strukturag/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -10,9 +11,10 @@ WWW=		https://www.libde265.org
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf compiler:c++11-lib cpe libtool pathfix pkgconfig
+USES=		autoreconf compiler:c++11-lib cpe libtool pathfix pkgconfig sdl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_SDL=	sdl
 
 CPE_VENDOR=	struktur
 
