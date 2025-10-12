@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.104.2
-PORTREVISION=	2
+DISTVERSION=	1.105.0
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
@@ -61,14 +60,14 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 TEST_DEPENDS=	electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		bash:shells/bash
 
-USES=		desktop-file-utils gl gmake gnome gssapi:mit iconv:wchar_t \
-		jpeg localbase:ldflags nodejs:22,build pkgconfig python:build \
-		shebangfix xorg
+USES=		desktop-file-utils display:test gl gmake gnome gssapi:mit \
+		iconv:wchar_t jpeg localbase:ldflags nodejs:22,build pkgconfig \
+		python:build shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	e3a5acfb517a443235981655413d566533107e92
+SOURCE_COMMIT_HASH=	03c265b1adee71ac88f833e065f7bb956b60550a
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -261,7 +260,6 @@ pre-test:
 	@cd ${WRKSRC}/.build/electron && ${MV} -f electron code-oss
 
 do-test:
-# Note: Xvfb or something similar is necessary for headless testing
 # unit tests
 	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ./scripts/test.sh --build || ${TRUE}
 # UI smoke tests
