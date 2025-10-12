@@ -1,5 +1,6 @@
 PORTNAME=	Catalyst-Runtime
 PORTVERSION=	5.90132
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -51,8 +52,7 @@ RUN_DEPENDS=	p5-CGI-Simple>=1.109:www/p5-CGI-Simple \
 		p5-Tree-Simple>=1.15:devel/p5-Tree-Simple \
 		p5-Tree-Simple-VisitorFactory>=0:devel/p5-Tree-Simple-VisitorFactory \
 		p5-Try-Tiny>=0.17:lang/p5-Try-Tiny \
-		p5-URI>=1.65:net/p5-URI \
-		p5-URI-ws>=0.03:net/p5-URI-ws \
+		p5-URI>=5.34:net/p5-URI \
 		p5-libwww>=5.837:www/p5-libwww \
 		p5-namespace-clean>=0.23:devel/p5-namespace-clean
 TEST_DEPENDS=	p5-Term-Size-Any>=0:devel/p5-Term-Size-Any \

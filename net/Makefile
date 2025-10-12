@@ -911,7 +911,6 @@
     SUBDIR += p5-URI-Template-Restrict
     SUBDIR += p5-URI-cpan
     SUBDIR += p5-URI-db
-    SUBDIR += p5-URI-ws
     SUBDIR += p5-VM-EC2
     SUBDIR += p5-VM-EC2-Security-CredentialCache
     SUBDIR += p5-Validate-Net
