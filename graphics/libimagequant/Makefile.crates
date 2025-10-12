@@ -1,21 +1,25 @@
-CARGO_CRATES=	adler2-2.0.0 \
+CARGO_CRATES=	adler2-2.0.1 \
 		arrayvec-0.7.6 \
-		bitflags-2.8.0 \
-		bytemuck-1.21.0 \
-		cc-1.2.10 \
-		cfg-if-1.0.0 \
-		crc32fast-1.4.2 \
+		bitflags-2.9.4 \
+		bytemuck-1.24.0 \
+		cc-1.2.41 \
+		cfg-if-1.0.3 \
+		crc32fast-1.5.0 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
-		either-1.13.0 \
-		flate2-1.0.35 \
-		libc-0.2.169 \
-		lodepng-3.11.0 \
-		miniz_oxide-0.8.3 \
-		once_cell-1.20.2 \
-		rayon-1.10.0 \
-		rayon-core-1.12.1 \
-		rgb-0.8.50 \
+		either-1.15.0 \
+		find-msvc-tools-0.1.4 \
+		flate2-1.1.4 \
+		libc-0.2.177 \
+		libz-rs-sys-0.5.2 \
+		lodepng-3.12.1 \
+		miniz_oxide-0.8.9 \
+		once_cell-1.21.3 \
+		rayon-1.11.0 \
+		rayon-core-1.13.0 \
+		rgb-0.8.52 \
 		shlex-1.3.0 \
-		thread_local-1.1.8
+		simd-adler32-0.3.7 \
+		thread_local-1.1.9 \
+		zlib-rs-0.5.2
