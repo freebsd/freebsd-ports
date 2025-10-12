@@ -1,6 +1,6 @@
 PORTNAME=	moor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
+DISTVERSION=	2.5.1
 CATEGORIES=	textproc
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -22,6 +22,14 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SUB=	yes
+
+post-extract:
+	@cd ${WRKSRC}/sample-files && \
+		${LN} -s compressed.txt.zst compressed.txt.zstd
+
+post-patch:
+	@${REINPLACE_CMD} -e '22s,".*","${WRKSRC}/sample-files",g' \
+		${WRKSRC}/internal/reader/reader_test.go
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
