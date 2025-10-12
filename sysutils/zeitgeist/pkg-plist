@@ -1,6 +1,6 @@
 bin/zeitgeist-daemon
-bin/zeitgeist-datahub
-etc/xdg/autostart/zeitgeist-datahub.desktop
+%%DATAHUB%%bin/zeitgeist-datahub
+%%DATAHUB%%etc/xdg/autostart/zeitgeist-datahub.desktop
 include/zeitgeist-2.0/zeitgeist-datamodel.h
 include/zeitgeist-2.0/zeitgeist.h
 lib/girepository-1.0/Zeitgeist-2.0.typelib
@@ -25,7 +25,7 @@ lib/libzeitgeist-2.0.so.0.0.0
 @comment lib/systemd/user/zeitgeist.service
 libdata/pkgconfig/zeitgeist-2.0.pc
 share/man/man1/zeitgeist-daemon.1.gz
-share/man/man1/zeitgeist-datahub.1.gz
+%%DATAHUB%%share/man/man1/zeitgeist-datahub.1.gz
 share/bash-completion/completions/zeitgeist-daemon
 share/dbus-1/services/org.gnome.zeitgeist.Engine.service
 share/gir-1.0/Zeitgeist-2.0.gir
