@@ -1,4 +1,4 @@
---- Makefile.orig	2023-12-03 05:11:49 UTC
+--- Makefile.orig	2025-09-24 21:56:36 UTC
 +++ Makefile
 @@ -1,11 +1,11 @@
  # Install Configuration
@@ -9,8 +9,17 @@
  #CC=clang
  
  # Compiler options
--CFLAGS = -g -O0 -Wall -Wextra -W -Wno-sign-compare -Wno-unused-parameter
+-CFLAGS ?= -g -O0 -Wall -Wextra -W -Wno-sign-compare -Wno-unused-parameter
 +CFLAGS += -g -O0 -Wall -Wextra -W -Wno-sign-compare -Wno-unused-parameter
- CPPFLAGS = -DSHARE_INSTDIR="\"$(SHARE_INSTDIR)\""
- LDFLAGS =
+ CPPFLAGS += -DSHARE_INSTDIR="\"$(SHARE_INSTDIR)\""
+ LDFLAGS ?=
+ 
+@@ -160,7 +160,7 @@ install:
+ 	mkdir -p $(MAN_INSTDIR)
+ 	mkdir -p $(SHARE_INSTDIR)
+ 	cp $(MINIPRO) $(BIN_INSTDIR)/
+-	cp $(DUMP_ALG) $(BIN_INSTDIR)/
++	cp $(DUMP_ALG) $(SHARE_INSTDIR)/
+ 	cp $(INFOIC) $(SHARE_INSTDIR)/
+ 	cp $(LOGICIC) $(SHARE_INSTDIR)/
  
