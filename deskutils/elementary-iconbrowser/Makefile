@@ -1,5 +1,5 @@
 PORTNAME=	iconbrowser
-DISTVERSION=	8.0.0
+DISTVERSION=	8.1.0
 CATEGORIES=	deskutils
 PKGNAMEPREFIX=	elementary-
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgranite-7.so:x11-toolkits/granite7
 
-USES=		gettext-tools gnome meson pkgconfig python:build vala:build
+USES=		gettext-tools gnome meson pkgconfig vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 USE_GNOME=	glib20 gtk40 gtksourceview5
