@@ -65,6 +65,7 @@ CMAKE_ARGS=	-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}" \
 		-DQT_VERSION=6 \
 		-DPython_EXECUTABLE="${PYTHON_CMD}"
 CMAKE_ARGS+=	-DCMAKE_INTERPROCEDURAL_OPTIMIZATION:BOOL=OFF # prevent errors like: ld: error: relocation R_X86_64_PC32 cannot be used against symbol '__stack_chk_guard'; recompile with -fPIC
+# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=290157
 
 CFLAGS+=	-Wno-error=attribute-warning
 CFLAGS_powerpc64=	-Wno-error=deprecated-altivec-src-compat -Wno-error=pass-failed
