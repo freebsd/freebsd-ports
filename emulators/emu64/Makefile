@@ -3,7 +3,7 @@ DISTVERSION=	5.1.0
 PORTREVISION=	1
 CATEGORIES=	emulators
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commodore 64 emulator
 WWW=		https://github.com/ThKattanek/emu64
 

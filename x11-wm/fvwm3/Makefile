@@ -5,7 +5,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm3/releases/download/${DISTVERSION}/ \
 		http://fvwm.sourceforge.net/generated/icon_download/:icons
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	F? Virtual Window Manager
 WWW=		https://www.fvwm.org/
 

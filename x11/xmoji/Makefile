@@ -3,7 +3,7 @@ DISTVERSION=	0.8
 CATEGORIES=	x11
 MASTER_SITES=	${WWW}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plain X11 emoji keyboard
 WWW=		https://github.com/Zirias/xmoji
 

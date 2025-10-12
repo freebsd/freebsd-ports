@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${WWW}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Local self-authentication for pam_exec
 WWW=		https://github.com/Zirias/${PORTNAME}
 

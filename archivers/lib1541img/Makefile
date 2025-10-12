@@ -4,7 +4,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers devel emulators
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for handling commodore 1541 disk images
 WWW=		https://github.com/excess-c64/lib1541img
 

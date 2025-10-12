@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		1.5.5
 CATEGORIES=		audio
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music tracker for the C64, fork of goattracker
 WWW=		https://github.com/jpage8580/GTUltra
 

@@ -3,7 +3,7 @@ PORTVERSION=	5.0.18
 PORTEPOCH=	1
 CATEGORIES=	net
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SIP client supporting voice/video calls and text messaging
 WWW=		https://www.linphone.org/
 

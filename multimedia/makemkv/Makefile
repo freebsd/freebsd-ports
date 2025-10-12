@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.makemkv.com/download/:makemkv \
 DISTFILES=	${DISTFL_MAKEMKV:S/$/:makemkv/} \
 		${DISTFL_FFMPEG:S/$/:ffmpeg/}
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video converter reading from DVD and Bluray
 WWW=		https://www.makemkv.com
 
