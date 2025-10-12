@@ -4,7 +4,7 @@ PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download and view files from various digital cameras
 WWW=		http://www.gphoto.org/proj/gtkam/
 

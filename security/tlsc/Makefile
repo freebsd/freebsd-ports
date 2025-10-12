@@ -4,7 +4,7 @@ CATEGORIES=		security
 MASTER_SITES=		https://github.com/Zirias/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/download/v${DISTVERSION}
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TLS connect daemon
 WWW=		https://github.com/Zirias/tlsc
 

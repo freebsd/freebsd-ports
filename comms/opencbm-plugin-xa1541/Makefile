@@ -2,7 +2,7 @@ PORTNAME=	opencbm-plugin-xa1541
 PORTVERSION=	${OCBM_VERSION}
 CATEGORIES=	comms archivers
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenCBM plugin for parallel-port cables
 WWW=		http://opencbm.sourceforge.net/
 

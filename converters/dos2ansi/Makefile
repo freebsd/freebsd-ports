@@ -3,7 +3,7 @@ DISTVERSION=	2.0
 CATEGORIES=	converters
 MASTER_SITES=	${WWW}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converter for old MS-DOS/ANSI.SYS text files
 WWW=		https://github.com/Zirias/dos2ansi
 

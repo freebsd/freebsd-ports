@@ -3,7 +3,7 @@ DISTVERSION=	0.9.83
 PORTREVISION=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fork of SGML-tools specially tailored for linuxdoc SGMLs
 WWW=		https://gitlab.com/agmartin/linuxdoc-tools
 

@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	devel emulators
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulator for several Atmel AVR chips
 WWW=		https://github.com/buserror/simavr
 

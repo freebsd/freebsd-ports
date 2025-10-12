@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	8
 CATEGORIES=	graphics geography
 
-MAINTAINER=	zirias@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ terrain rendering toolkit for OpenSceneGraph
 WWW=		http://osgearth.org/
 
