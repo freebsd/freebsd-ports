@@ -1,5 +1,5 @@
 PORTNAME=	textshaping
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.4
 CATEGORIES=	print
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	R-cran-lifecycle>0:devel/R-cran-lifecycle \
 		R-cran-stringi>0:textproc/R-cran-stringi \
-		R-cran-systemfonts>=1.1.0:devel/R-cran-systemfonts
+		R-cran-systemfonts>=1.3.0:devel/R-cran-systemfonts
 TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
 		R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
