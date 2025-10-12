@@ -2,7 +2,7 @@ PORTNAME=	ortp
 DISTVERSION=	5.4.28
 CATEGORIES=	net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Real-time Transport Protocol (RTP) library
 WWW=		https://www.linphone.org/technical-corner/ortp.html
 
