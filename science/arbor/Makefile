@@ -12,8 +12,8 @@ WWW=		https://arbor-sim.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/arbor-sim/arbor/issues/2424
-BROKEN_armv7=	compilation fails: unknown type name 'float64x2_t'
+BROKEN=		compilation fails with clang-19, see https://github.com/arbor-sim/arbor/issues/2424
+#BROKEN_armv7=	compilation fails: unknown type name 'float64x2_t'
 
 BUILD_DEPENDS=	bash:shells/bash \
 		libfmt>0:devel/libfmt \
