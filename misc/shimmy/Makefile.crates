@@ -9,6 +9,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		anstyle-query-1.1.4 \
 		anstyle-wincon-3.0.10 \
 		anyhow-1.0.100 \
+		assert_cmd-2.0.17 \
 		async-trait-0.1.89 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.0 \
@@ -21,6 +22,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bitflags-1.3.2 \
 		bitflags-2.9.4 \
 		block-buffer-0.10.4 \
+		bstr-1.12.0 \
 		bumpalo-3.19.0 \
 		byteorder-1.5.0 \
 		bytes-1.10.1 \
@@ -50,10 +52,12 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		crunchy-0.2.4 \
 		crypto-common-0.1.6 \
 		data-encoding-2.9.0 \
+		difflib-0.4.0 \
 		digest-0.10.7 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
 		displaydoc-0.2.5 \
+		doc-comment-0.3.3 \
 		either-1.15.0 \
 		encoding_rs-0.8.35 \
 		enumflags2-0.7.12 \
@@ -63,10 +67,14 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		fastrand-2.3.0 \
 		find-msvc-tools-0.1.3 \
 		find_cuda_helper-0.2.0 \
+		float-cmp-0.10.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.2 \
+		futures-0.3.31 \
 		futures-channel-0.3.31 \
 		futures-core-0.3.31 \
+		futures-executor-0.3.31 \
+		futures-io-0.3.31 \
 		futures-macro-0.3.31 \
 		futures-sink-0.3.31 \
 		futures-task-0.3.31 \
@@ -114,7 +122,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		jobserver-0.1.34 \
 		js-sys-0.3.81 \
 		lazy_static-1.5.0 \
-		libc-0.2.176 \
+		libc-0.2.177 \
 		libloading-0.8.9 \
 		libredox-0.1.10 \
 		linux-raw-sys-0.11.0 \
@@ -132,6 +140,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		miniz_oxide-0.8.9 \
 		mio-1.0.4 \
 		nom-7.1.3 \
+		normalize-line-endings-0.3.0 \
 		ntapi-0.4.1 \
 		nu-ansi-term-0.50.1 \
 		num-traits-0.2.19 \
@@ -150,6 +159,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		plotters-svg-0.3.7 \
 		potential_utf-0.1.3 \
 		ppv-lite86-0.2.21 \
+		predicates-3.1.3 \
+		predicates-core-1.0.9 \
+		predicates-tree-1.0.12 \
 		prettyplease-0.2.37 \
 		proc-macro2-1.0.101 \
 		quote-1.0.41 \
@@ -176,8 +188,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ryu-1.0.20 \
 		safetensors-0.4.5 \
 		same-file-1.0.6 \
+		scc-2.4.0 \
 		scopeguard-1.2.0 \
 		sct-0.7.1 \
+		sdd-3.0.10 \
 		self_cell-1.2.0 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
@@ -185,8 +199,12 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		serde_json-1.0.145 \
 		serde_path_to_error-0.1.20 \
 		serde_urlencoded-0.7.1 \
+		serial_test-3.2.0 \
+		serial_test_derive-3.2.0 \
 		sha1-0.10.6 \
 		sharded-slab-0.1.7 \
+		shimmy-llama-cpp-2-0.1.123 \
+		shimmy-llama-cpp-sys-2-0.1.123 \
 		shlex-1.3.0 \
 		signal-hook-registry-1.4.6 \
 		slab-0.4.11 \
@@ -204,6 +222,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tempfile-3.23.0 \
+		termtree-0.5.1 \
 		thiserror-1.0.69 \
 		thiserror-impl-1.0.69 \
 		thread_local-1.1.9 \
@@ -237,6 +256,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		uuid-1.18.1 \
 		valuable-0.1.1 \
 		version_check-0.9.5 \
+		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
@@ -304,5 +324,4 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		zerofrom-derive-0.1.6 \
 		zerotrie-0.2.2 \
 		zerovec-0.11.4 \
-		zerovec-derive-0.11.1 \
-		llama-cpp-2,llama-cpp-sys-2@git+https://github.com/Michael-A-Kuykendall/llama-cpp-rs?branch=feat%2Fmoe-cpu-offload\#6c9a7044bbf83f7de16b39c15a3d00c1a239f3e0
+		zerovec-derive-0.11.1

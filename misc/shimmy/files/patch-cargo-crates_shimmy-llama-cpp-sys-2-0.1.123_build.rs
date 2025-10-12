@@ -1,5 +1,5 @@
---- llama-cpp-sys-2/build.rs.orig	2025-10-06 14:29:33 UTC
-+++ llama-cpp-sys-2/build.rs
+--- cargo-crates/shimmy-llama-cpp-sys-2-0.1.123/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/shimmy-llama-cpp-sys-2-0.1.123/build.rs
 @@ -20,6 +20,7 @@ enum TargetOs {
      Apple(AppleVariant),
      Linux,

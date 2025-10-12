@@ -1,6 +1,6 @@
 PORTNAME=	shimmy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.0
+DISTVERSION=	1.7.3
 CATEGORIES=	misc
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -14,7 +14,6 @@ USES=		cargo llvm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Michael-A-Kuykendall
-GH_TUPLE=	ggml-org:llama.cpp:128d522c04286e019666bd6ee4d18e3fbf8772e2:llama_cpp/../${_CARGO_GIT_WRKDIR}/llama-cpp-sys-2/llama.cpp
 
 CARGO_FEATURES=	llama-opencl
 CARGO_TEST_ARGS=--lib
@@ -37,19 +36,10 @@ VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
 			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_USES=		localbase:ldflags
-VULKAN_VARS=		CARGO_FEATURES+="llama-vulkan llama-cpp-2/vulkan"
-
-.include <bsd.port.pre.mk>
-
-_CARGO_GIT_WRKDIR!=	${_CARGO_AWK} ${SCRIPTSDIR}/cargo-crates-git-fetch.awk /dev/null | \
-			${CUT} -f 4 -d ' '
-
-post-patch:
-	@${BSDMAKE} PATCHDIR=${FILESDIR}/llama-cpp-rs \
-		WRKSRC=${WRKDIR}/${_CARGO_GIT_WRKDIR} do-patch
+VULKAN_VARS=		CARGO_FEATURES+="llama-vulkan shimmy-llama-cpp-2/vulkan"
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
