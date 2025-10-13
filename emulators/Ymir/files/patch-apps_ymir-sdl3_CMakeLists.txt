@@ -1,11 +1,18 @@
---- apps/ymir-sdl3/CMakeLists.txt.orig	2025-07-20 22:35:27 UTC
+--- apps/ymir-sdl3/CMakeLists.txt.orig	2025-10-12 17:41:59 UTC
 +++ apps/ymir-sdl3/CMakeLists.txt
-@@ -256,7 +256,7 @@ target_link_libraries(ymir-sdl3 PRIVATE
-     fmt
-     cxxopts
-     imgui::imgui
--    tomlplusplus::tomlplusplus
-+#    tomlplusplus::tomlplusplus
-     cereal::cereal
-     lz4::lz4
-     stb::stb
+@@ -352,12 +352,12 @@ find_package(date CONFIG REQUIRED)
+ find_package(cereal CONFIG REQUIRED)
+ find_package(cxxopts CONFIG REQUIRED)
+ find_package(date CONFIG REQUIRED)
+-find_package(OpenSSL CONFIG REQUIRED)
+ find_package(CURL REQUIRED)
++add_library(CURL::libcurl_static ALIAS CURL::libcurl)
+ find_package(fmt CONFIG REQUIRED)
+-find_package(rtmidi CONFIG REQUIRED)
++pkg_check_modules(rtmidi REQUIRED IMPORTED_TARGET rtmidi)
++add_library(RtMidi::rtmidi ALIAS PkgConfig::rtmidi)
+ find_package(SDL3 CONFIG REQUIRED)
+-find_package(Stb REQUIRED)
+ find_package(tomlplusplus CONFIG REQUIRED)
+ 
+ target_include_directories(ymir-sdl3
