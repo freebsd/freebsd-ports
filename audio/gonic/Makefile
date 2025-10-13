@@ -1,7 +1,6 @@
 PORTNAME=	gonic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0
-PORTREVISION=	1
+DISTVERSION=	0.19.0
 CATEGORIES=	audio net
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -11,11 +10,10 @@ WWW=		https://github.com/sentriz/gonic
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libtag.so:audio/taglib
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		mpv:multimedia/mpv
 
-USES=		go:1.25,modules pkgconfig sqlite
+USES=		go:1.25,modules
 
 USE_RC_SUBR=	${PORTNAME}
 
