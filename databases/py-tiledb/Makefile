@@ -1,5 +1,6 @@
 PORTNAME=	tiledb
 PORTVERSION=	0.34.2
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_i386=	error: static assertion failed due to requirement 'sizeof(unsigned long long) <= sizeof(int)': Implicit narrowing is not permitted.
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.25,1:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pybind11>=0<3:devel/py-pybind11@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0:devel/py-scikit-build-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		tiledb>=2.28.1:databases/tiledb
