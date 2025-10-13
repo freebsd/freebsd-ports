@@ -11,6 +11,7 @@ include/scs/scs_blas.h
 include/scs/scs_types.h
 include/scs/scs_work.h
 include/scs/util.h
+include/scs/util_spectral_cones.h
 lib/libscsdir.a
 lib/libscsdir.so
 lib/libscsindir.a
