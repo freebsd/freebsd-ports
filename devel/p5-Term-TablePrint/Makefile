@@ -1,5 +1,5 @@
 PORTNAME=	Term-TablePrint
-PORTVERSION=	0.173
+PORTVERSION=	0.174
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Term-Choose>=1.774:devel/p5-Term-Choose \
-		p5-Term-Choose-LineFold-XS>=0.001:devel/p5-Term-Choose-LineFold-XS \
+RUN_DEPENDS=	p5-Term-Choose>=1.776:devel/p5-Term-Choose \
+		p5-Term-Choose-LineFold-XS>=0.003:devel/p5-Term-Choose-LineFold-XS \
 		p5-Term-Choose-Util>=0.145:devel/p5-Term-Choose-Util \
 		p5-Term-Form>=0.561:devel/p5-Term-Form
 
