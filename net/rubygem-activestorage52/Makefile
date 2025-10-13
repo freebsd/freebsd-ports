@@ -1,5 +1,6 @@
 PORTNAME=	activestorage
 PORTVERSION=	5.2.8.1
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	52
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-actionpack52>=${PORTVERSION}:www/rubygem-actionpack52 \
 		rubygem-activerecord52>=${PORTVERSION}:databases/rubygem-activerecord52 \
-		rubygem-marcel>=1.0.0<1.1:devel/rubygem-marcel
+		rubygem-marcel>=1.0.0<2:devel/rubygem-marcel
 
 USES=		gem
 
