@@ -1,0 +1,4 @@
+The opentelemetry-metrics-api gem is an alpha implementation of the
+OpenTelemetry Metrics API for Ruby applications. Using
+opentelemetry-metrics-api, a library or application can code against the
+OpenTelemetry interfaces to produce metric data.
