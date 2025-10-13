@@ -9,6 +9,7 @@ WWW=		https://github.com/sorayuki/obs-multi-rtmp/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	simde>0:devel/simde
 LIB_DEPENDS=	libobs.so:multimedia/obs-studio
 
 USES=		cmake gl qt:6
