@@ -11,6 +11,9 @@ WWW=		https://github.com/Zirias/tlsc
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Unmaintained port
+EXPIRATION_DATE=2025-12-31
+
 LIB_DEPENDS=	libposercore.so:devel/poser
 
 USES=		compiler:c11 gmake pkgconfig tar:xz

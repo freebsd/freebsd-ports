@@ -10,6 +10,9 @@ WWW=		https://github.com/Zirias/${PORTNAME}
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Unmaintained port
+EXPIRATION_DATE=2025-12-31
+
 USES=		tar:xz
 
 MAKE_ARGS+=	MANDIR=${PREFIX}/share/man/man
