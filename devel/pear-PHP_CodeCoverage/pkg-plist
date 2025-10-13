@@ -135,4 +135,5 @@
 %%DATADIR%%/TestStatus/Unknown.php
 %%DATADIR%%/Util/Filesystem.php
 %%DATADIR%%/Util/Percentage.php
+%%DATADIR%%/Util/Xml.php
 %%DATADIR%%/Version.php
