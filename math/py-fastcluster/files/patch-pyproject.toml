@@ -1,8 +1,8 @@
---- pyproject.toml.orig	2022-02-27 10:25:41 UTC
+--- pyproject.toml.orig	2025-05-06 15:48:45 UTC
 +++ pyproject.toml
-@@ -10,4 +10,4 @@ requires = ["setuptools",
- # Scipy's "oldest_supported_numpy" package does this work for us.
+@@ -1,4 +1,4 @@ requires = ["setuptools",
+ [build-system]
  requires = ["setuptools",
              "wheel",
--            "oldest_supported_numpy"]
+-            "numpy >= 2"]
 +            "numpy"]
