@@ -1,5 +1,3 @@
-TIMESTAMP = 1742846930
-SHA256 (scribus-1.6.3.tar.xz) = 0ae58ced410101e82655e3b4c20a070cf1767145ada233dcef7c20b8ba6bd487
-SIZE (scribus-1.6.3.tar.xz) = 74909384
-SHA256 (3f0f902d6e47adb45d280947f448bcca6c4e2556.patch) = 81c7641e583e1a5d48dde4e41922e646bdd0e5925bd74fb81aaeccc5d0ffab74
-SIZE (3f0f902d6e47adb45d280947f448bcca6c4e2556.patch) = 7944
+TIMESTAMP = 1760353387
+SHA256 (scribus-1.6.4.tar.xz) = 533be7af03acfaa736ec5f7a3fc2562abd200fef5ca2a7cdee02b5f44d61829e
+SIZE (scribus-1.6.4.tar.xz) = 74761856

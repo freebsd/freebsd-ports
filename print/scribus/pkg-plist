@@ -3568,7 +3568,6 @@ share/pixmaps/scribus.png
 %%DATADIR%%/translations/scribus.th_TH.qm
 %%DATADIR%%/translations/scribus.tr.qm
 %%DATADIR%%/translations/scribus.uk.qm
-%%DATADIR%%/translations/scribus.untranslated.qm
 %%DATADIR%%/translations/scribus.zh_CN.qm
 %%DATADIR%%/translations/scribus.zh_TW.qm
 %%DATADIR%%/unicodenameslist.txt

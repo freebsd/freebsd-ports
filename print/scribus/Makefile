@@ -1,12 +1,8 @@
 PORTNAME=	scribus
-DISTVERSION=	1.6.3
-PORTREVISION=	4
+DISTVERSION=	1.6.4
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 		http://www.scribus.net/downloads/${PORTVERSION}/
-
-PATCH_SITES=	https://github.com/scribusproject/scribus/commit/
-PATCHFILES=		3f0f902d6e47adb45d280947f448bcca6c4e2556.patch:-p1
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Comprehensive desktop publishing program
