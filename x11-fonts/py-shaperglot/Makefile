@@ -1,5 +1,5 @@
 PORTNAME=	shaperglot
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ CARGO_CARGOTOML=${WRKSRC}/shaperglot-py/Cargo.toml
 CARGO_INSTALL=	no
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/cargo-crates/google-fonts-languages-0.7.6/build.rs
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/cargo-crates/google-fonts-languages-0.7.7/build.rs
 
 .include <bsd.port.mk>
