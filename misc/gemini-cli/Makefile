@@ -49,9 +49,7 @@ do-fetch:
 		${MV} node_modules/${PACKAGE_NAME} lib/node_modules/@google/ && \
 		${LN} -sf ../lib/node_modules/${PACKAGE_NAME}/dist/index.js bin/gemini && \
 		${RM} -rf node_modules package.json && \
-		${FIND} . -type f -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
-		${FIND} . -type d -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
-		${FIND} . -type l -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
+		${FIND} ${WRKDIR} -and -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
 		cd ${WRKDIR} && ${FIND} ${PORTNAME}-${DISTVERSION} -print0 | LC_ALL=C ${SORT} -z | \
 			${TAR} czf ${DISTDIR}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} --format=bsdtar --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T - \
 	); fi
