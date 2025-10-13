@@ -1,15 +1,25 @@
---- pyproject.toml.orig	2022-05-08 16:55:58 UTC
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
 +++ pyproject.toml
-@@ -23,10 +23,10 @@ python = "^3.7"
+@@ -4,8 +4,7 @@ readme = "README.md"
+ version = "1.8.1"
+ description = "Command Line Interface to Rich"
+ readme = "README.md"
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ authors = [{ name = "Will McGugan", email = "willmcgugan@gmail.com" }]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+@@ -22,10 +21,10 @@ dependencies = [
+ ]
+ requires-python = ">=3.9"
+ dependencies = [
+-    "rich (>=12.4.0,<13.0.0)",
++    "rich (>=12.4.0)",
+     "click (>=8.0.0,<9.0.0)",
+     "requests (>=2.0.0,<3.0.0)",
+-    "textual (>=0.1.18,<0.2.0)",
++    "textual (>=0.1.18)",
+     "rich-rst (>=1.1.7,<2.0.0)",
+ ]
  
- [tool.poetry.dependencies]
- python = "^3.7"
--rich = "^12.4.1"
-+rich = ">=12.4.1"
- click = "^8.0.0"
- requests = "^2.0.0"
--textual = "^0.1.18"
-+textual = ">=0.1.18"
- rich-rst = "^1.1.7"
- 
- [tool.poetry.dev-dependencies]
