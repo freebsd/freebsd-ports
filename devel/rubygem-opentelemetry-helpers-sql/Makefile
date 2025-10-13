@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-helpers-sql
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ WWW=		https://opentelemetry.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-opentelemetry-api>=1.0<2:devel/rubygem-opentelemetry-api
+RUN_DEPENDS=	rubygem-opentelemetry-api>=1.7<2:devel/rubygem-opentelemetry-api
 
 USES=		gem
 
