@@ -1,3 +1,29 @@
+  <vuln vid="50fd6a75-0587-4987-bef2-bb933cd78ea1">
+    <topic>zeek -- information leak vulnerability</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>8.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p>The KRB analyzer can leak information about hosts in
+	  analyzed traffic via external DNS lookups.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v8.0.2</url>
+    </references>
+    <dates>
+      <discovery>2025-10-13</discovery>
+      <entry>2025-10-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6dd86212-a859-11f0-bd95-b42e991fc52e">
     <topic>Firefox -- JIT miscompilation in the JavaScript Engine</topic>
     <affects>
