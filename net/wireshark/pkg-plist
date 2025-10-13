@@ -3,11 +3,11 @@
 bin/dumpcap
 @mode
 @group
-bin/idl2wrs
 bin/capinfos
 bin/captype
-bin/dftest
+%%DEVELOPMENT%%bin/dftest
 bin/editcap
+%%DEVELOPMENT%%bin/idl2wrs
 bin/mergecap
 %%MAXMIND%%bin/mmdbresolve
 bin/randpkt
