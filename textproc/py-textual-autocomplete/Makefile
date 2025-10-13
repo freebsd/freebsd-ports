@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSIONFULL}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Easily add autocomplete dropdowns to your Textual apps
-WWW=		https://github.com/Textualize/textual
+WWW=		https://github.com/darrenburns/textual-autocomplete
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
