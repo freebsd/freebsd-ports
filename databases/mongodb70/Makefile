@@ -131,6 +131,7 @@ MOZJS_WRKSRC=	${WRKSRC}/src/third_party/mozjs
 
 .if ${FLAVOR:U} == armv80a
 OPTIONS_SET+=	ARMV80A
+MAKE_JOBS_UNSAFE=	yes
 .endif
 
 .include <bsd.port.pre.mk>
