@@ -1,6 +1,6 @@
 PORTNAME=	theonionbox
 DISTVERSION=	4.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security net python
 MASTER_SITES=	PYPI
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}APScheduler>=3.4:devel/py-apscheduler@${PY_F
 		${PYTHON_PKGNAMEPREFIX}requests>2.18:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stem>=1.5.4:security/py-stem@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzlocal>=1.5:devel/py-tzlocal@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}urllib3>=1.21.1,1<1.27,1:net/py-urllib3@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}urllib3>=1.21.1,1:net/py-urllib3@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} # workaround for bug#230613: missing internal sqlite3 module in python
 
 USES=		python
