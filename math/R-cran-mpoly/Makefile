@@ -1,7 +1,7 @@
 PORTNAME=	mpoly
 DISTVERSION=	1.1.2
 CATEGORIES=	math
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Symbolic computing with multivariate polynomials in R
