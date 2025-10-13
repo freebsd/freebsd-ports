@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-08-22 03:02:13 UTC
+--- pyproject.toml.orig	2025-09-15 03:00:57 UTC
 +++ pyproject.toml
 @@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -9,7 +9,7 @@
  [project]
 -name = "types-PyYAML"
 +name = "types-pyyaml"
- version = "6.0.12.20250822"
+ version = "6.0.12.20250915"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
 +license = { text = "Apache-2.0" }
