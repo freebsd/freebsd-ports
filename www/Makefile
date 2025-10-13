@@ -1918,6 +1918,7 @@
     SUBDIR += py-qt5-webengine
     SUBDIR += py-qt6-webengine
     SUBDIR += py-quart
+    SUBDIR += py-quart-trio
     SUBDIR += py-quilt3
     SUBDIR += py-readability-lxml
     SUBDIR += py-recaptcha
