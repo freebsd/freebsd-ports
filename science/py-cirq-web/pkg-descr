@@ -1,0 +1,4 @@
+Cirq-web is a Python library that provides browser-based 3D visualization
+tools for quantum circuits created with the Cirq framework. It allows users
+to inspect and understand the structure of their quantum circuits in a visual
+way.
