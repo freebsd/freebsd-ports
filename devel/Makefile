@@ -7750,6 +7750,7 @@
     SUBDIR += rubygem-opentelemetry-instrumentation-redis
     SUBDIR += rubygem-opentelemetry-instrumentation-resque
     SUBDIR += rubygem-opentelemetry-instrumentation-restclient
+    SUBDIR += rubygem-opentelemetry-instrumentation-ruby_kafka
     SUBDIR += rubygem-opentelemetry-instrumentation-sidekiq
     SUBDIR += rubygem-opentelemetry-instrumentation-sinatra
     SUBDIR += rubygem-opentelemetry-instrumentation-trilogy
