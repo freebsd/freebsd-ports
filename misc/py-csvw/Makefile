@@ -1,6 +1,6 @@
 PORTNAME=	csvw
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.1
+DISTVERSION=	3.7.0
 CATEGORIES=	misc python
 #MASTER_SITES=	PYPI # tests are broken there
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -42,6 +42,6 @@ NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
 
-# tests as of 3.5.1: 782 passed, 16 xfailed in 15.37s
+# tests as of 3.7.0: running (very slow, >30min)
 
 .include <bsd.port.mk>
