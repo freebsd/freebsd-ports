@@ -1,6 +1,5 @@
 PORTNAME=	bcrypt
-DISTVERSION=	4.3.0
-PORTREVISION=	3
+PORTVERSION=	5.0.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,15 +20,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 USES=		cargo python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
-CARGO_CARGOLOCK=	${WRKSRC}/src/_bcrypt/Cargo.lock
-CARGO_CARGOTOML=	${WRKSRC}/src/_bcrypt/Cargo.toml
-CARGO_BUILD=		no
-CARGO_INSTALL=		no
-CARGO_TEST=		no
-
+CARGO_BUILD=	no
+CARGO_CARGOLOCK=${WRKSRC}/src/_bcrypt/Cargo.lock
+CARGO_CARGOTOML=${WRKSRC}/src/_bcrypt/Cargo.toml
+CARGO_INSTALL=	no
+CARGO_TEST=	no
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
-post-install:
+x-post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
