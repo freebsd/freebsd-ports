@@ -23,6 +23,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} 
 USES=		cpe python
 USE_PYTHON=	pep517 autoplist pytest # 1 test fails
 
+NO_ARCH=	yes
+
 CPE_VENDOR=	pydantic_project
 
 .include <bsd.port.mk>
