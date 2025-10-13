@@ -6,8 +6,8 @@ MASTER_SITES=	RG
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Registry for the OpenTelemetry Instrumentation libraries
 WWW=		https://opentelemetry.io/ \
-		https://github.com/open-telemetry/opentelemetry-ruby \
-		https://github.com/open-telemetry/opentelemetry-ruby/tree/main/registry
+		https://github.com/open-telemetry/opentelemetry-ruby/tree/main/registry \
+		https://github.com/open-telemetry/opentelemetry-ruby
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
