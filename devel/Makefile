@@ -8253,6 +8253,7 @@
     SUBDIR += sedsed
     SUBDIR += seer-gdb
     SUBDIR += selene
+    SUBDIR += semver
     SUBDIR += sentry-cli
     SUBDIR += serd
     SUBDIR += serdisplib
