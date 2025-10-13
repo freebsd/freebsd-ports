@@ -100,6 +100,7 @@
     SUBDIR += nwreckdum
     SUBDIR += ocaml-bz2
     SUBDIR += ocaml-zip
+    SUBDIR += openzl
     SUBDIR += opkg-openwrt
     SUBDIR += ouch
     SUBDIR += p5-Archive-Any

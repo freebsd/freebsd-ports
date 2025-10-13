@@ -1,0 +1,13 @@
+--- Makefile.orig	2025-10-08 09:05:16 UTC
++++ Makefile
+@@ -92,8 +92,8 @@ SDDL_COMPILER_CXXOBJS := $(filter-out %main.o, $(call 
+ TRAINING_TEST_CXXOBJS := $(call cxx_objs,$(TRAINING_TEST_DIRS))
+ SDDL_COMPILER_CXXOBJS := $(filter-out %main.o, $(call cxx_objs,$(SDDL_COMPILER_DIR)))
+ 
+-zli: CFLAGS += -O3
+-zli: CXXFLAGS += -O3
++zli: CFLAGS +=
++zli: CXXFLAGS +=
+ $(eval $(call cxx_program,zli, \
+ 	cli/zli.o \
+ 	$(CLI_CXXOBJS) \

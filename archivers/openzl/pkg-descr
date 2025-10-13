@@ -1,0 +1,11 @@
+OpenZL delivers high compression ratios while preserving high speed, a
+level of performance that is out of reach for generic compressors.
+
+OpenZL takes a description of your data and builds from it a
+specialized compressor optimized for your specific format.
+
+OpenZL consists of a core library and tools to generate specialized
+compressors - all compatible with a single universal decompressor. It
+is designed for engineers that deal with large quantities of
+specialized datasets (like AI workloads for example) and require high
+speed for their processing pipelines.
