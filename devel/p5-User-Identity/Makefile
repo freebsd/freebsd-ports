@@ -12,7 +12,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Geography-Countries>=1.4:misc/p5-Geography-Countries \
+RUN_DEPENDS=	p5-Geography-Countries>=2009041301:misc/p5-Geography-Countries \
 		p5-Hash-Ordered>=0.014:devel/p5-Hash-Ordered
 
 USES=		perl5
