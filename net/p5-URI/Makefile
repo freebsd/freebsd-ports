@@ -12,6 +12,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-MIME-Base32>=0:converters/p5-MIME-Base32 \
 		p5-MIME-Base64>=0:converters/p5-MIME-Base64
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
