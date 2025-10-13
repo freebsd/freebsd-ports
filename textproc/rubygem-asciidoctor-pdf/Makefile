@@ -1,6 +1,5 @@
 PORTNAME=	asciidoctor-pdf
-PORTVERSION=	2.3.19
-PORTREVISION=	3
+PORTVERSION=	2.3.20
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-asciidoctor>=2.0<3:textproc/rubygem-asciidoctor \
-		rubygem-concurrent-ruby>=1.1<2:devel/rubygem-concurrent-ruby \
+		rubygem-concurrent-ruby>=1.3<2:devel/rubygem-concurrent-ruby \
 		rubygem-matrix>=0.4<1:math/rubygem-matrix \
 		rubygem-prawn24>=2.4.0<2.5:print/rubygem-prawn24 \
 		rubygem-prawn-icon3>=3.1.0<3.2:print/rubygem-prawn-icon3 \
