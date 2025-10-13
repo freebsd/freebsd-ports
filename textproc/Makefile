@@ -1692,6 +1692,7 @@
     SUBDIR += py-textual
     SUBDIR += py-textual-autocomplete
     SUBDIR += py-textual-image
+    SUBDIR += py-textual-speedups
     SUBDIR += py-textual0
     SUBDIR += py-textwrap3
     SUBDIR += py-three-merge
