@@ -3,7 +3,7 @@ PORTVERSION=	1.22.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenTelemetry C++ client
 WWW=		https://github.com/open-telemetry/opentelemetry-cpp
 
