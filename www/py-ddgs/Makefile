@@ -1,5 +1,5 @@
 PORTNAME=	ddgs
-DISTVERSION=	9.6.0
+DISTVERSION=	9.6.1
 CATEGORIES=	www
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		python gmake
-USE_PYTHON=	pep517 autoplist
+USE_PYTHON=	pep517 autoplist pytest
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
@@ -22,5 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR}
 
 NO_ARCH=	yes
+
+# tests as of 9.6.1: 20 passed, 24 warnings in 88.20s (0:01:28)
 
 .include <bsd.port.mk>
