@@ -7730,6 +7730,7 @@
     SUBDIR += rubygem-opentelemetry-instrumentation-faraday
     SUBDIR += rubygem-opentelemetry-instrumentation-grape
     SUBDIR += rubygem-opentelemetry-instrumentation-graphql
+    SUBDIR += rubygem-opentelemetry-instrumentation-grpc
     SUBDIR += rubygem-opentelemetry-instrumentation-http
     SUBDIR += rubygem-opentelemetry-instrumentation-http_client
     SUBDIR += rubygem-opentelemetry-instrumentation-mysql2
