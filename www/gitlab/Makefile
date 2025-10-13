@@ -144,7 +144,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-aws-sdk-s3-gitlab>=1.193.0<1.194:devel/rubygem-aws-sdk-s3-gitlab \
 	rubygem-faraday-typhoeus-gitlab>=1.1<2:www/rubygem-faraday-typhoeus-gitlab \
 	rubygem-faraday_middleware-aws-sigv4-gitlab>=1.0.1<1.1:devel/rubygem-faraday_middleware-aws-sigv4-gitlab \
-	rubygem-typhoeus>=1.4.0<1.5:www/rubygem-typhoeus \
+	rubygem-typhoeus14>=1.4.0<1.5:www/rubygem-typhoeus14 \
 	rubygem-html-pipeline-gitlab>=2.14.3<2.15:textproc/rubygem-html-pipeline-gitlab \
 	rubygem-deckar01-task_list-gitlab>=2.3.4<2.4:www/rubygem-deckar01-task_list-gitlab \
 	rubygem-gitlab-markup>=2.0.0<2.1:textproc/rubygem-gitlab-markup \
@@ -173,7 +173,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-state_machines-activerecord-gitlab>=0.8.0<0.9.0:databases/rubygem-state_machines-activerecord-gitlab \
 	rubygem-sidekiq-gitlab>=7.3.9:devel/rubygem-sidekiq-gitlab \
 	rubygem-sidekiq-cron-rails-gitlab>=1.12.0<1.13:devel/rubygem-sidekiq-cron-rails-gitlab \
-	rubygem-fugit>=1.11.1<1.12:devel/rubygem-fugit \
+	rubygem-fugit111>=1.11.1<1.12:devel/rubygem-fugit111 \
 	rubygem-httparty-gitlab>=0.23.0<0.24:www/rubygem-httparty-gitlab \
 	rubygem-rainbow>=3.1.1<4.0:devel/rubygem-rainbow \
 	rubygem-ruby-progressbar>=1.11<2:devel/rubygem-ruby-progressbar \
@@ -295,7 +295,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-lockbox>=1.4.1<1.5:security/rubygem-lockbox \
 	rubygem-valid_email>=0.1<1:mail/rubygem-valid_email \
 	rubygem-jsonb_accessor>=1.4<2:www/rubygem-jsonb_accessor \
-	rubygem-json>=2.13.1<2.14:devel/rubygem-json \
+	rubygem-json-gitlab>=2.13.1<2.14:devel/rubygem-json-gitlab \
 	rubygem-json_schemer>=2.3.0<2.4:devel/rubygem-json_schemer \
 	rubygem-oj>=3.16.11<3.17:devel/rubygem-oj \
 	rubygem-oj-introspect>=0.8<1:devel/rubygem-oj-introspect \
