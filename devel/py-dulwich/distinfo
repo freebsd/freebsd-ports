@@ -1,6 +1,6 @@
-TIMESTAMP = 1757436491
-SHA256 (dulwich-0.24.1.tar.gz) = e19fd864f10f02bb834bb86167d92dcca1c228451b04458761fc13dabd447758
-SIZE (dulwich-0.24.1.tar.gz) = 806136
+TIMESTAMP = 1759816638
+SHA256 (dulwich-0.24.2.tar.gz) = d474844cf81bf95a6537a80aeec59d714d5d77d8e83d6d37991e2bde54746ca7
+SIZE (dulwich-0.24.2.tar.gz) = 883284
 SHA256 (rust/crates/autocfg-1.5.0.crate) = c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8
 SIZE (rust/crates/autocfg-1.5.0.crate) = 18729
 SHA256 (rust/crates/heck-0.5.0.crate) = 2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea
