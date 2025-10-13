@@ -1,6 +1,6 @@
 PORTNAME=	zapret
 DISTVERSIONPREFIX=	v
-DISTVERSION=	71.4
+DISTVERSION=	72
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,13 +13,14 @@ LICENSE_FILE=	${WRKSRC}/docs/LICENSE.txt
 USE_GITHUB=	yes
 GH_ACCOUNT=	bol-van
 
-EXES=		dvtws ip2net mdig tpws
-
 PLIST_FILES=	${EXES:S/^/bin\//}
+
+EXES=		dvtws ip2net mdig tpws
 
 do-install:
 .for exe in ${EXES}
-	${INSTALL_PROGRAM} ${WRKSRC}/binaries/my/${exe} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/binaries/my/${exe} \
+		${STAGEDIR}${PREFIX}/bin
 .endfor
 
 .include <bsd.port.mk>
