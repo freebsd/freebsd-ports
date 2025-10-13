@@ -1,13 +1,13 @@
 bin/ext2sim
 bin/ext2spice
 bin/magic
-@comment bin/spice2sim
 lib/magic/doc/addendum6_5.ps
 lib/magic/doc/copyright.ps
 lib/magic/doc/html/Makefile
 lib/magic/doc/html/addcommandentry.html
 lib/magic/doc/html/addpath.html
 lib/magic/doc/html/antennacheck.html
+lib/magic/doc/html/archive.html
 lib/magic/doc/html/array.html
 lib/magic/doc/html/box.html
 lib/magic/doc/html/calma.html
@@ -54,8 +54,6 @@ lib/magic/doc/html/ext2sim.html
 lib/magic/doc/html/ext2spice.html
 lib/magic/doc/html/extract.html
 lib/magic/doc/html/extresist.html
-lib/magic/doc/html/exttosim.html
-lib/magic/doc/html/exttospice.html
 lib/magic/doc/html/feedback.html
 lib/magic/doc/html/fill.html
 lib/magic/doc/html/findbox.html
@@ -282,8 +280,6 @@ lib/magic/tcl/bsitools.tcl
 lib/magic/tcl/cellmgr.tcl
 lib/magic/tcl/console.tcl
 lib/magic/tcl/drcmgr.tcl
-@comment lib/magic/tcl/exttosim.so
-@comment lib/magic/tcl/exttospice.so
 lib/magic/tcl/libmgr.tcl
 lib/magic/tcl/magic.tcl
 lib/magic/tcl/magicdnull
