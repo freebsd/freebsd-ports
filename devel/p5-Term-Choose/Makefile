@@ -1,5 +1,5 @@
 PORTNAME=	Term-Choose
-PORTVERSION=	1.775
+PORTVERSION=	1.776
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,7 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	XS
 OPTIONS_DEFAULT=XS
 
-XS_BUILD_DEPENDS=	p5-Term-Choose-LineFold-XS>=0.001:devel/p5-Term-Choose-LineFold-XS
-XS_RUN_DEPENDS=		p5-Term-Choose-LineFold-XS>=0.001:devel/p5-Term-Choose-LineFold-XS
+XS_BUILD_DEPENDS=	p5-Term-Choose-LineFold-XS>=0.003:devel/p5-Term-Choose-LineFold-XS
+XS_RUN_DEPENDS=		p5-Term-Choose-LineFold-XS>=0.003:devel/p5-Term-Choose-LineFold-XS
 
 .include <bsd.port.mk>
