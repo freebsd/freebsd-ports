@@ -16,6 +16,7 @@ LIB_DEPENDS=	libcblas.so:math/cblas \
 		liblapack.so:math/lapack
 
 USES=		cmake compiler:c++17-lang localbase:ldflags python:build
+USE_GCC=	yes # clang-19 fails to compile it due to math/openfst headers
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kaldi-asr
