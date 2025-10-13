@@ -49,6 +49,8 @@ CPE_PRODUCT=	net-snmp
 USE_PERL5=	build run
 USE_CSTD=	c99
 
+LIB_DEPENDS=	libpkg.so:${PKG_ORIGIN}
+
 CFLAGS+=	-I${LOCALBASE}/include -I${PKG_PREFIX}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	PERLPROG="${PERL}" PSPROG="${PS_CMD}" SED="${SED}"
