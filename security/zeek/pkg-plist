@@ -1,7 +1,10 @@
-@postexec chown %%ZEEKUSER%%:%%ZEEKGROUP%% %D/logs
-%%ZEEKCTL%%@postexec chown %%ZEEKUSER%%:%%ZEEKGROUP%% %D/spool
-%%ZEEKCTL%%@postexec chown %%ZEEKUSER%%:%%ZEEKGROUP%% %D/spool/tmp
-%%ZEEKCTL%%@postexec chown -R %%ZEEKUSER%%:%%ZEEKGROUP%% %D/spool/installed-scripts-do-not-touch
+@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/log/zeek
+@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek
+@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/tmp
+%%ZEEKCTL%%@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/installed-scripts-do-not-touch
+%%ZEEKCTL%%@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/installed-scripts-do-not-touch/auto
+%%ZEEKCTL%%@dir(%%ZEEKUSER%%,%%ZEEKGROUP%%,) /var/spool/zeek/installed-scripts-do-not-touch/site
+%%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/state.db
 bin/bifcl
 bin/binpac
 %%ZEEKCTL%%bin/capstats
@@ -2284,32 +2287,22 @@ share/zeek/tests
 %%ZEEKCTL%%share/zeekctl/scripts/set-zeek-path
 %%ZEEKCTL%%share/zeekctl/scripts/stats-to-csv
 %%ZEEKCTL%%share/zeekctl/scripts/zeekctl-config.sh
-%%ZEEKCTL%%spool/zeekctl-config.sh
-%%ZEEKCTL%%@preunexec rm -f %D/logs/current
-%%ZEEKCTL%%@preunexec rm -f %D/spool/zeekctl.dat
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/auto/zeekctl-config.zeek
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/auto/local-networks.zeek
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/auto/standalone-layout.zeek
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local-logger.zeek
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local-manager.zeek
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local-proxy.zeek
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local-worker.zeek
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local.zeek
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local.zeek.sample
-%%ZEEKCTL%%@preunexec rm -f %D/spool/state.db
-%%ZEEKCTL%%@dir spool/tmp
-%%ZEEKCTL%%@dir spool/installed-scripts-do-not-touch/site
-%%ZEEKCTL%%@dir spool/installed-scripts-do-not-touch/auto
-%%ZEEKCTL%%@dir spool/installed-scripts-do-not-touch
-%%ZEEKCTL%%@dir spool/extract_files
-%%ZEEKCTL%%@dir spool/brokerstore
-%%ZEEKCTL%%@dir spool
+%%ZEEKCTL%%@preunexec rm -f /var/log/zeek/current
+%%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/zeekctl.dat
+%%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/auto/zeekctl-config.zeek
+%%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/auto/local-networks.zeek
+%%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/auto/standalone-layout.zeek
+%%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/site/local-logger.zeek
+%%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/site/local-manager.zeek
+%%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/site/local-proxy.zeek
+%%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/site/local-worker.zeek
+%%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/site/local.zeek
+%%ZEEKCTL%%@preunexec rm -f /var/spool/zeek/installed-scripts-do-not-touch/site/local.zeek.sample
 @dir share/man/man8
 @dir share/man/man1
 @dir share/man
-%%ZEEKCTL%%@dir logs
 %%SPICY%%@dir lib/zeek/spicy
 @dir lib/zeek/plugins
 @dir include/zeek/analyzer/protocol/quic
 @dir include/zeek/analyzer/protocol/ldap
-%%ZEEKCTL%%@postexec su -fm %%ZEEKUSER%% -c '%D/bin/zeekctl install; rm -f %D/spool/debug.log'
+%%ZEEKCTL%%@postexec su -fm %%ZEEKUSER%% -c '%D/bin/zeekctl install; rm -f /var/spool/zeek/debug.log'

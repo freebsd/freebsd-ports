@@ -35,10 +35,30 @@ EOM
 During deinstall of this package, the cfg files for zeekctl are not
 deleted if you have edited them. Instead the software will create
 a .sample file and the edited files will remain in place when you
-upgrade. If you want to delete them, you have to remove the
-%%PREFIX%%/etc directory manually.
+upgrade. If you want to delete them, you have to remove
+%%PREFIX%%/etc/zeekctl.cfg manually.
 
-You may also need to manually remove %%PREFIX%%/spool/state.db
+You may also need to manually remove /var/spool/state.db
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+The default LogDir and SpoolDir have moved from %%PREFIX%% to /var.
+
+To migrate an existing installation to the new layout:
+
+ - service zeek stop
+
+ - pkg upgrade -y zeek
+
+ - edit %%PREFIX%%/etc/zeekctl.cfg and make these changes:
+
+    LogDir = /var/log/zeek
+    SpoolDir = /var/spool/zeek
+
+ - move/create the log directory
+
+ - service zeek deploy
 EOM
 }
 ]
