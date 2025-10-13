@@ -1,5 +1,6 @@
 PORTNAME=	xpra
 PORTVERSION=	6.3.4
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://xpra.org/src/
 
@@ -30,6 +31,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pyinotify>0:devel/py-pyinotify@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyOpenGL-accelerate>=3.1.0:graphics/py-PyOpenGL-accelerate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=3.1.0:graphics/py-PyOpenGL@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aioquic>=0:www/py-aioquic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rencode>1:converters/py-rencode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
 		setxkbmap:x11/setxkbmap \
