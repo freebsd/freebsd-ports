@@ -7736,6 +7736,7 @@
     SUBDIR += rubygem-opentelemetry-instrumentation-http_client
     SUBDIR += rubygem-opentelemetry-instrumentation-httpx
     SUBDIR += rubygem-opentelemetry-instrumentation-koala
+    SUBDIR += rubygem-opentelemetry-instrumentation-lmdb
     SUBDIR += rubygem-opentelemetry-instrumentation-mysql2
     SUBDIR += rubygem-opentelemetry-instrumentation-net_http
     SUBDIR += rubygem-opentelemetry-instrumentation-pg
