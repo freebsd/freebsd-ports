@@ -1,5 +1,6 @@
 PORTNAME=	openfst
 DISTVERSION=	1.8.2-20221207
+PORTREVISION=	1
 CATEGORIES=	math
 #MASTER_SITES=	http://www.openfst.org/twiki/pub/FST/FstDownload/
 
@@ -10,10 +11,9 @@ WWW=		https://www.openfst.org/ \
 
 LICENSE=	APACHE20
 
-BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/kkm000/openfst/issues/58
-
 USES=		cmake compiler:c++17-lang
 USE_LDCONFIG=	yes
+USE_GCC=	yes # clang-19 fails to compile it since migration to 14.3
 
 CXXFLAGS_i386=	-msse -msse2 -mfpmath=sse
 
