@@ -1,6 +1,6 @@
 PORTNAME=	oterm
 DISTVERSION=	0.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,14 +26,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosql>=10.1:databases/py-aiosql@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}pyperclip>=1.7.0:devel/py-pyperclip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.0.1:www/py-python-dotenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich-pixels>=3.0.1:graphics/py-rich-pixels@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}textual>=0.85.2:textproc/py-textual@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}textual0>=0.85.2:textproc/py-textual0@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}textualeffects>=0.1.3:devel/py-textualeffects@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.12.3:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uc-micro-py>=1.0.3:textproc/py-uc-micro-py@${PY_FLAVOR}
 
 USES=		python:3.10+
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist pep517 pytest
 
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
