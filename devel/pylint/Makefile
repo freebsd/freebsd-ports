@@ -1,7 +1,8 @@
 PORTNAME=	pylint
 PORTVERSION=	3.3.8
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/pylint-dev/pylint/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
