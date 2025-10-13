@@ -1,13 +1,13 @@
 PORTNAME=	opentelemetry-semantic_conventions
-PORTVERSION=	1.11.0
+PORTVERSION=	1.36.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Semantic Convention definitions for OpenTelemetry
 WWW=		https://opentelemetry.io/ \
-		https://github.com/open-telemetry/opentelemetry-ruby \
-		https://github.com/open-telemetry/opentelemetry-ruby/tree/main/semantic_conventions
+		https://github.com/open-telemetry/opentelemetry-ruby/tree/main/semantic_conventions \
+		https://github.com/open-telemetry/opentelemetry-ruby
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
