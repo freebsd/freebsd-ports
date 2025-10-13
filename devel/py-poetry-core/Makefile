@@ -1,5 +1,5 @@
 PORTNAME=	poetry-core
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-poetry/poetry-core/releases/download/${PORTVERSION}/
