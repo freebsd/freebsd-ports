@@ -7721,6 +7721,7 @@
     SUBDIR += rubygem-opentelemetry-instrumentation-aws_lambda
     SUBDIR += rubygem-opentelemetry-instrumentation-aws_sdk
     SUBDIR += rubygem-opentelemetry-instrumentation-base
+    SUBDIR += rubygem-opentelemetry-instrumentation-bunny
     SUBDIR += rubygem-opentelemetry-instrumentation-concurrent_ruby
     SUBDIR += rubygem-opentelemetry-instrumentation-dalli
     SUBDIR += rubygem-opentelemetry-instrumentation-delayed_job
