@@ -1,5 +1,5 @@
 PORTNAME=	railties
-PORTVERSION=	8.0.2.1
+PORTVERSION=	8.0.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	80
@@ -18,6 +18,7 @@ RUN_DEPENDS=	rubygem-actionpack80>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-
 		rubygem-rackup>=1.0.0:www/rubygem-rackup \
 		rubygem-rake>=12.2:devel/rubygem-rake \
 		rubygem-thor>=1.2.2<2:devel/rubygem-thor \
+		rubygem-tsort>=0.2:devel/rubygem-tsort \
 		rubygem-zeitwerk>=2.6<3:devel/rubygem-zeitwerk
 
 USES=		gem shebangfix
