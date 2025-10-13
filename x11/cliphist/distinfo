@@ -1,5 +1,5 @@
-TIMESTAMP = 1756120073
-SHA256 (go/x11_cliphist/cliphist-v0.6.1/v0.6.1.mod) = a681a215031bd4e8afb3d63cc44bd7f701d2fb3ca7a97491f24aa6a2b94e6a8f
-SIZE (go/x11_cliphist/cliphist-v0.6.1/v0.6.1.mod) = 266
-SHA256 (go/x11_cliphist/cliphist-v0.6.1/v0.6.1.zip) = d137ad819d7c248fd84c15461c71cf96d4ad7d4acc6ded78ccbf2ca4c452407e
-SIZE (go/x11_cliphist/cliphist-v0.6.1/v0.6.1.zip) = 33779
+TIMESTAMP = 1760364652
+SHA256 (go/x11_cliphist/cliphist-v0.7.0/v0.7.0.mod) = 6b514392b12e2f0d46491eaf130aa91ab321d9a4030099293d04cd9e4951f989
+SIZE (go/x11_cliphist/cliphist-v0.7.0/v0.7.0.mod) = 297
+SHA256 (go/x11_cliphist/cliphist-v0.7.0/v0.7.0.zip) = 6380409113ca27c6b9a7444b5051ea773eca5e6904e0f04a228ef1b9909eefdd
+SIZE (go/x11_cliphist/cliphist-v0.7.0/v0.7.0.zip) = 37843
