@@ -1,62 +1,64 @@
 CARGO_CRATES=	adler2-2.0.1 \
 		aho-corasick-1.1.3 \
-		anstream-0.6.19 \
+		anstream-0.6.20 \
 		anstyle-1.0.11 \
 		anstyle-parse-0.2.7 \
-		anstyle-query-1.1.3 \
-		anstyle-wincon-3.0.9 \
+		anstyle-query-1.1.4 \
+		anstyle-wincon-3.0.10 \
 		base64-0.22.1 \
 		bincode-1.3.3 \
 		bindgen-0.69.5 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
-		bitflags-2.9.1 \
-		bon-3.6.5 \
-		bon-macros-3.6.5 \
+		bitflags-2.9.4 \
+		bon-3.7.2 \
+		bon-macros-3.7.2 \
 		bumpalo-3.19.0 \
 		caseless-0.2.2 \
-		cc-1.2.31 \
+		cc-1.2.37 \
 		cexpr-0.6.0 \
-		cfg-if-1.0.1 \
+		cfg-if-1.0.3 \
 		clang-sys-1.8.1 \
-		clap-4.5.42 \
-		clap_builder-4.5.42 \
-		clap_derive-4.5.41 \
+		clap-4.5.47 \
+		clap_builder-4.5.47 \
+		clap_derive-4.5.47 \
 		clap_lex-0.7.5 \
 		colorchoice-1.0.4 \
-		comrak-0.41.0 \
+		comrak-0.43.0 \
 		crc32fast-1.5.0 \
-		darling-0.21.1 \
-		darling_core-0.21.1 \
-		darling_macro-0.21.1 \
-		deranged-0.4.0 \
+		darling-0.21.3 \
+		darling_core-0.21.3 \
+		darling_macro-0.21.3 \
+		deranged-0.5.3 \
 		deunicode-1.6.2 \
 		either-1.15.0 \
 		emojis-0.6.4 \
 		entities-1.0.1 \
 		equivalent-1.0.2 \
-		errno-0.3.13 \
+		errno-0.3.14 \
 		fancy-regex-0.11.0 \
+		find-msvc-tools-0.1.1 \
 		flate2-1.1.2 \
+		fmt2io-1.0.0 \
 		fnv-1.0.7 \
-		glob-0.3.2 \
-		hashbrown-0.15.4 \
+		glob-0.3.3 \
+		hashbrown-0.15.5 \
 		heck-0.5.0 \
 		ident_case-1.0.1 \
-		indexmap-2.10.0 \
+		indexmap-2.11.1 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.12.1 \
 		itoa-1.0.15 \
 		lazy_static-1.5.0 \
 		lazycell-1.3.0 \
-		libc-0.2.174 \
+		libc-0.2.175 \
 		libloading-0.8.8 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.9.4 \
-		log-0.4.27 \
-		magnus-0.7.1 \
-		magnus-macros-0.6.0 \
+		linux-raw-sys-0.11.0 \
+		log-0.4.28 \
+		magnus-0.8.1 \
+		magnus-macros-0.8.0 \
 		memchr-2.7.5 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
@@ -71,73 +73,66 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pkg-config-0.3.32 \
 		plist-1.7.4 \
 		powerfmt-0.2.0 \
-		prettyplease-0.2.36 \
-		proc-macro2-1.0.95 \
-		quick-xml-0.38.1 \
+		prettyplease-0.2.37 \
+		proc-macro2-1.0.101 \
+		quick-xml-0.38.3 \
 		quote-1.0.40 \
 		rb-sys-0.9.117 \
 		rb-sys-build-0.9.117 \
-		rb-sys-env-0.1.2 \
+		rb-sys-env-0.2.2 \
 		rctree-0.6.0 \
-		regex-1.11.1 \
-		regex-automata-0.4.9 \
-		regex-syntax-0.8.5 \
+		regex-1.11.2 \
+		regex-automata-0.4.10 \
+		regex-syntax-0.8.6 \
 		rustc-hash-1.1.0 \
-		rustix-1.0.8 \
-		rustversion-1.0.21 \
+		rustix-1.1.2 \
+		rustversion-1.0.22 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
 		seq-macro-0.3.6 \
-		serde-1.0.219 \
-		serde_derive-1.0.219 \
-		serde_json-1.0.142 \
+		serde-1.0.223 \
+		serde_core-1.0.223 \
+		serde_derive-1.0.223 \
+		serde_json-1.0.145 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
 		siphasher-1.0.1 \
 		slug-0.1.6 \
 		strsim-0.11.1 \
-		syn-2.0.104 \
+		syn-2.0.106 \
 		syntect-5.2.0 \
-		terminal_size-0.4.2 \
+		terminal_size-0.4.3 \
 		thiserror-1.0.69 \
 		thiserror-impl-1.0.69 \
-		time-0.3.41 \
-		time-core-0.1.4 \
-		time-macros-0.2.22 \
-		tinyvec-1.9.0 \
+		time-0.3.43 \
+		time-core-0.1.6 \
+		time-macros-0.2.24 \
+		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
 		typed-arena-2.0.2 \
-		unicode-ident-1.0.18 \
+		unicode-ident-1.0.19 \
 		unicode-normalization-0.1.24 \
 		unicode_categories-0.1.1 \
 		utf8parse-0.2.2 \
 		walkdir-2.5.0 \
-		wasm-bindgen-0.2.100 \
-		wasm-bindgen-backend-0.2.100 \
-		wasm-bindgen-macro-0.2.100 \
-		wasm-bindgen-macro-support-0.2.100 \
-		wasm-bindgen-shared-0.2.100 \
-		winapi-util-0.1.9 \
+		wasm-bindgen-0.2.101 \
+		wasm-bindgen-backend-0.2.101 \
+		wasm-bindgen-macro-0.2.101 \
+		wasm-bindgen-macro-support-0.2.101 \
+		wasm-bindgen-shared-0.2.101 \
+		winapi-util-0.1.11 \
 		windows-link-0.1.3 \
-		windows-sys-0.59.0 \
+		windows-link-0.2.0 \
 		windows-sys-0.60.2 \
-		windows-targets-0.52.6 \
+		windows-sys-0.61.0 \
 		windows-targets-0.53.3 \
-		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_gnullvm-0.53.0 \
-		windows_aarch64_msvc-0.52.6 \
 		windows_aarch64_msvc-0.53.0 \
-		windows_i686_gnu-0.52.6 \
 		windows_i686_gnu-0.53.0 \
-		windows_i686_gnullvm-0.52.6 \
 		windows_i686_gnullvm-0.53.0 \
-		windows_i686_msvc-0.52.6 \
 		windows_i686_msvc-0.53.0 \
-		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnu-0.53.0 \
-		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_gnullvm-0.53.0 \
-		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
 		xdg-2.5.2 \
 		yaml-rust-0.4.5
