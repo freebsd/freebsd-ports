@@ -5,12 +5,16 @@ CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OBS Studio Plugin: Audio spectral analyser
-WWW=		https://obsproject.com/forum/resources/waveform.1423/
+WWW=		https://obsproject.com/forum/resources/waveform.1423/ \
+		https://github.com/phandasm/waveform
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cpu_features>0:devel/cpu_features
+BROKEN=		incompatible with obs-studio-32.0.1, see https://github.com/phandasm/waveform/issues/82
+
+BUILD_DEPENDS=	cpu_features>0:devel/cpu_features \
+		simde>0:devel/simde
 LIB_DEPENDS=	libcpu_features.so:devel/cpu_features \
 		libfftw3f.so:math/fftw3-float \
 		libobs.so:multimedia/obs-studio
