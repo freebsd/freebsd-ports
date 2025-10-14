@@ -1,15 +1,16 @@
 PORTNAME=	paps
-PORTVERSION=	0.8.0
-DISTVERSIONPREFIX=	v
+DISTVERSION=	0.8.0
 PORTREVISION=	3
 CATEGORIES=	print
+MASTER_SITES=	https://github.com/dov/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-PATCH_SITES=	${WWW}/commit/
-PATCHFILES+=	e9270aaac5e0b8018a6fad9a562ee48e7b2c3113.patch:-p1 # https://github.com/dov/paps/pull/71
+PATCH_SITES=	https://github.com/dov/paps/commit/
+PATCHFILES=	e9270aaac5e0b8018a6fad9a562ee48e7b2c3113.patch:-p1 \
+		a26a20d7ca3feb08476a8a19fd97c3ececcc1e2e.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UTF-8 to PostScript converter using Pango
-WWW=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
+WWW=		https://github.com/dov/paps
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
@@ -18,18 +19,13 @@ BROKEN_i386=	compilation fails, see https://github.com/dov/paps/issues/60
 
 LIB_DEPENDS=	libfmt.so:devel/libfmt
 
-USES=		cmake:indirect compiler:c++17-lang meson gnome pkgconfig python:env shebangfix
-USE_CXXSTD=	c++17
-USE_GITHUB=	yes
-GH_ACCOUNT=	dov
+USES=		compiler:c++17-lang meson gnome pkgconfig python:env,run shebangfix
+SHEBANG_FILES=	${WRKSRC}/scripts/src-to-paps
 USE_GNOME=	cairo pango
 
-SHEBANG_FILES=	${WRKSRC}/scripts/src-to-paps
-
-PLIST_FILES=	bin/paps share/man/man1/paps.1.gz
-
-post-install:
-	${ECHO_CMD} "bin/src-to-paps" >> ${TMPPLIST}
-	${ECHO_CMD} "share/paps/pango_markup.outlang" >> ${TMPPLIST}
+PLIST_FILES=	bin/paps \
+		bin/src-to-paps \
+		share/man/man1/paps.1.gz \
+		share/paps/pango_markup.outlang
 
 .include <bsd.port.mk>
