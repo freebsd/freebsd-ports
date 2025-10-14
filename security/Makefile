@@ -234,7 +234,6 @@
     SUBDIR += hyperhotp
     SUBDIR += i2pd
     SUBDIR += iaikpkcs11wrapper
-    SUBDIR += iddawc
     SUBDIR += idea
     SUBDIR += identify
     SUBDIR += imds-filterd
