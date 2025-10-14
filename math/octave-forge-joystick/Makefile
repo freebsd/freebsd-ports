@@ -10,7 +10,7 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-BUILD_DEPENDS+	cmake:devel/cmake # Required by configure.
+BUILD_DEPENDS+=	cmake:devel/cmake # Required by configure.
 
 LIB_DEPENDS+=	libSDL2.so:devel/sdl20
 
