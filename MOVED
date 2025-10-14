@@ -4803,3 +4803,4 @@ net/p5-URI-ws|net/p5-URI|2025-10-12|URI-ws was folded into URI
 science/py-cirq-rigetti||2025-10-13|Deprecated by the upstream, see https://github.com/quantumlib/Cirq/issues/7058
 games/xqf||2025-10-14|Has expired: Fails to build
 games/galaxyhack||2025-10-14|Has expired: Fails to build with boost-1.85+
+x11-fm/fsv2||2025-10-14|Has expired: does not configure: No fonts installed on the system

@@ -7,7 +7,6 @@
     SUBDIR += dolphin
     SUBDIR += doublecmd
     SUBDIR += filerunner
-    SUBDIR += fsv2
     SUBDIR += gentoo
     SUBDIR += gprename
     SUBDIR += konqueror
