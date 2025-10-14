@@ -1,11 +1,13 @@
 PORTNAME=	github-copilot-cli
-DISTVERSION=	0.0.337
+DISTVERSION=	0.0.340
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} ${NODE_HEADERS}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GitHub Copilot CLI brings the power of the coding agent to terminal
 WWW=		https://github.com/github/copilot-cli
+
+BROKEN_i386=	fails to package due to sharp-freebsd-x64.node file in the plist
 
 FETCH_DEPENDS=	npm:www/npm
 BUILD_DEPENDS=	npm:www/npm \
