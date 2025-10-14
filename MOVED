@@ -4802,3 +4802,4 @@ sysutils/moor|textproc/moor|2025-10-10|Moved to a more appropriate category
 net/p5-URI-ws|net/p5-URI|2025-10-12|URI-ws was folded into URI
 science/py-cirq-rigetti||2025-10-13|Deprecated by the upstream, see https://github.com/quantumlib/Cirq/issues/7058
 games/xqf||2025-10-14|Has expired: Fails to build
+games/galaxyhack||2025-10-14|Has expired: Fails to build with boost-1.85+
