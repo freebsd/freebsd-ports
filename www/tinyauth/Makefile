@@ -12,7 +12,9 @@ WWW=		https://tinyauth.app
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+BROKEN_i386=	cannot use int64(off) (value of type int64) as int32 value in assignment
+
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	steveiliop56
 
