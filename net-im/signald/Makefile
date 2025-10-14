@@ -72,6 +72,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
+DEPRECATED=	this project is no longer actively maintained. Use signal-cli instead
+EXPIRATION_DATE=2025-11-01
+
 EXTRACT_DEPENDS=zip:archivers/zip
 BUILD_DEPENDS=	gradle6>=6.7:devel/gradle6
 LIB_DEPENDS=	libsignal_jni.so:net-im/libsignal-client \
