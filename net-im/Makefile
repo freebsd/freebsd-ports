@@ -49,7 +49,7 @@
     SUBDIR += libpurple
     SUBDIR += libqtelegram-ae
     SUBDIR += libquotient
-    SUBDIR += libsignal-client
+    SUBDIR += libsignal
     SUBDIR += libsignal-node
     SUBDIR += libsignon-glib
     SUBDIR += libstrophe
