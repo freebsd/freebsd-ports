@@ -45,6 +45,7 @@ SHEBANG_FILES?=	misc/wasm/go_js_wasm_exec misc/wasm/go_wasip1_wasm_exec
 SHEBANG_GLOB=	*.bash *.pl *.sh
 
 REINPLACE_ARGS=	-i''
+PORTSCOUT?=	limit:^${DISTVERSION:R:S/./\./g}
 
 # Upstream archive contains files with UTF-8 names
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 ${TAR}

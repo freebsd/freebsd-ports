@@ -15,7 +15,6 @@ SHEBANG_FILES=	lib/wasm/go_js_wasm_exec lib/wasm/go_wasip1_wasm_exec
 
 MASTERDIR=	${.CURDIR}/../go-devel
 PATCHDIR=	${.CURDIR}/files
-PORTSCOUT=	limit:^1\.24\.
 
 WRKSRC=		${WRKDIR}/go
 
