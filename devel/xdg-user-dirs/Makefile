@@ -1,5 +1,6 @@
 PORTNAME=	xdg-user-dirs
 DISTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://user-dirs.freedesktop.org/releases/
 
@@ -16,5 +17,10 @@ BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-
 USES=		gettext gnome iconv localbase:ldflags meson tar:xz
 USE_GNOME=	libxslt:build
 LDFLAGS+=	${ICONV_LIB}
+
+post-patch:
+	${REINPLACE_CMD} -e "s|get_option('sysconfdir')|'${PREFIX}/etc'|g" \
+		-e "s|get_option('localedir')|'${PREFIX}/share/locale'|g" \
+		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
