@@ -1137,7 +1137,6 @@
     SUBDIR += xpired
     SUBDIR += xpuzzletama
     SUBDIR += xpyraminx
-    SUBDIR += xqf
     SUBDIR += xrally
     SUBDIR += xray-16
     SUBDIR += xray_re-tools
