@@ -1,4 +1,8 @@
-CARGO_CRATES=	dcf77_utils-1.1.0 \
-		getopt-1.1.7 \
-		msf60_utils-1.1.0 \
-		radio_datetime_utils-1.1.0
+CARGO_CRATES=	byteorder-1.5.0 \
+		dcf77_utils-1.2.0 \
+		getopt-1.1.9 \
+		hash32-0.3.1 \
+		heapless-0.8.0 \
+		msf60_utils-1.2.0 \
+		radio_datetime_utils-1.2.0 \
+		stable_deref_trait-1.2.1
