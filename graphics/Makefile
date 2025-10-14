@@ -33,6 +33,7 @@
     SUBDIR += R-cran-qcc
     SUBDIR += R-cran-qpdf
     SUBDIR += R-cran-ragg
+    SUBDIR += R-cran-rgl
     SUBDIR += R-cran-s2
     SUBDIR += R-cran-scales
     SUBDIR += R-cran-shape
