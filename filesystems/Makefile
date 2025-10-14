@@ -76,6 +76,7 @@
     SUBDIR += mp3fs
     SUBDIR += mtools
     SUBDIR += mtpfs
+    SUBDIR += nbd-client-kmod
     SUBDIR += nbt
     SUBDIR += ntfs
     SUBDIR += ntfs-compression

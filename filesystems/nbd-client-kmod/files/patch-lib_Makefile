@@ -1,0 +1,12 @@
+--- lib/Makefile.orig	2025-10-14 17:24:26 UTC
++++ lib/Makefile
+@@ -21,9 +21,6 @@ LDADD+=	-lssl -lcrypto
+ LDADD+=	-lssl -lcrypto
+ #.endif
+ 
+-# Not needed when in tree
+-LINKS=	/sbin/geom /sbin/gnbd
+-
+ .PATH: ${SRCTOP}/sbin/geom/misc
+ 
+ .include <bsd.lib.mk>
