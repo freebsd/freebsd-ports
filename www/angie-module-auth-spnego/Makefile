@@ -1,11 +1,16 @@
 PORTNAME=	angie-module-auth-spnego
+PORTREVISION=	1
 GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:v1.1.3:module
 
 COMMENT=	Angie auth-spnego dynamic module
 
-USES=		gssapi
+USES=		gssapi:mit
 
 MASTERDIR=	${.CURDIR}/../../www/angie
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's|lgssapi\"|lgssapi_krb5"|' \
+		${WRKSRC_module}/config
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
