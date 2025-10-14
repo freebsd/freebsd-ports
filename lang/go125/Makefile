@@ -4,19 +4,22 @@ PORTREVISION=	0
 MASTER_SITES=	https://go.dev/dl/
 DISTFILES=	go${DISTVERSION}.src.tar.gz \
 		go1.24.6.${OPSYS:tl}-${GOARCH_${ARCH}}.tar.gz
+EXTRACT_ONLY=	${DISTFILES:[1]}
 
 # Avoid conflicting patch files
 PATCHFILES=
-PATCHDIR=	${.CURDIR}/files
 
 COMMENT=	Go programming language
 
-MASTERDIR=	${.CURDIR}/../go-devel
-WRKSRC=		${WRKDIR}/go
-DISTINFO_FILE=	${.CURDIR}/distinfo
-EXTRACT_ONLY=	${DISTFILES:[1]}
-
 SHEBANG_FILES=	lib/wasm/go_js_wasm_exec lib/wasm/go_wasip1_wasm_exec
+
+MASTERDIR=	${.CURDIR}/../go-devel
+PATCHDIR=	${.CURDIR}/files
+PORTSCOUT=	limit:^1\.25\.
+
+WRKSRC=		${WRKDIR}/go
+
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
 BOOTSTRAP_WRKSRC=	${WRKDIR}/go-${OPSYS:tl}-${GOARCH_${ARCH}}${GOARM_${ARCH}}-bootstrap
 
