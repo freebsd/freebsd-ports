@@ -910,6 +910,7 @@
     SUBDIR += go-bindata
     SUBDIR += go-bindata-assetfs
     SUBDIR += go-git
+    SUBDIR += go-critic
     SUBDIR += go-mode.el
     SUBDIR += go-perf
     SUBDIR += go-tools
@@ -917,7 +918,6 @@
     SUBDIR += gob2
     SUBDIR += gobject-introspection
     SUBDIR += gocheese
-    SUBDIR += gocritic
     SUBDIR += godot
     SUBDIR += godot-tools
     SUBDIR += godot35
