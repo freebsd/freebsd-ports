@@ -1,6 +1,7 @@
 PORTNAME=	ncbi-cxx-toolkit
 DISTVERSIONPREFIX=	release/
 DISTVERSION=	29.6.0
+PORTREVISION=	1
 CATEGORIES=	biology science devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/doc/public/LICENSE
 
 BROKEN_i386=	compilation fails: Only 64-bit Intel and ARM architectures are supported (in src/util/compress/zlib_cloudflare/deflate.c:149)
 
-LIB_DEPENDS=	libbz2.so:archivers/bzip2 \
-		libcdd.so:math/cddlib \
+LIB_DEPENDS=	libcdd.so:math/cddlib \
 		liblmdb.so:databases/lmdb \
 		libpcre.so:devel/pcre \
 		libunwind.so:devel/libunwind \
