@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-01-14 03:25:35 UTC
-+++ CMakeLists.txt
-@@ -72,10 +72,12 @@ ecm_generate_dbus_service_file(
+--- data/CMakeLists.txt.orig	2025-10-13 17:56:58 UTC
++++ data/CMakeLists.txt
+@@ -11,8 +11,10 @@ ecm_generate_dbus_service_file(
     DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR}
  )
  
@@ -15,5 +15,3 @@
 +		ecm_install_configured_files(INPUT kio-fuse.service.in DESTINATION ${SYSTEMD_USER_UNIT_INSTALL_DIR})
 +	endif()
  endif()
- 
- feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
