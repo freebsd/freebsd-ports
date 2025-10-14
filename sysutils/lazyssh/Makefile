@@ -1,6 +1,7 @@
 PORTNAME=	lazyssh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	nxjoseph@protonmail.com

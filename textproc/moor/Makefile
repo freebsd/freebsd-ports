@@ -1,6 +1,7 @@
 PORTNAME=	moor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	nxjoseph@protonmail.com
