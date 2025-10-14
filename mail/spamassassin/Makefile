@@ -1,6 +1,5 @@
 PORTNAME=	spamassassin
-PORTVERSION=	4.0.1
-PORTREVISION=	2
+PORTVERSION=	4.0.2
 CATEGORIES?=	mail perl5
 MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/source/ CPAN/Mail
 DISTNAME=	Mail-SpamAssassin-${PORTVERSION}
@@ -182,6 +181,7 @@ post-patch::
 		-e 's,B_CONFDIR)/v343.pre,B_CONFDIR)/v343.pre.sample,g' \
 		-e 's,B_CONFDIR)/v400.pre,B_CONFDIR)/v400.pre.sample,g' \
 		-e 's,B_CONFDIR)/v401.pre,B_CONFDIR)/v401.pre.sample,g' \
+		-e 's,B_CONFDIR)/v402.pre,B_CONFDIR)/v402.pre.sample,g' \
 		-e 's/require DBI/0/' \
 		${WRKSRC}/Makefile.PL
 	${REINPLACE_CMD} -e '/^CC =/d; \
