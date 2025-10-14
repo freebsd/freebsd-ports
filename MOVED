@@ -4804,3 +4804,4 @@ science/py-cirq-rigetti||2025-10-13|Deprecated by the upstream, see https://gith
 games/xqf||2025-10-14|Has expired: Fails to build
 games/galaxyhack||2025-10-14|Has expired: Fails to build with boost-1.85+
 x11-fm/fsv2||2025-10-14|Has expired: does not configure: No fonts installed on the system
+deskutils/gnome-shell-extension-openweather||2025-10-14|Has expired: Superseded by deskutils/gnome-shell-extension-simple-weather
