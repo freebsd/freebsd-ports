@@ -1,13 +1,12 @@
 PORTNAME=	signal-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
-PORTREVISION=	1
+DISTVERSION=	0.13.20
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${DISTVERSIONFULL}/:jars
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:jars
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jaap.aarts1@gmail.com
 COMMENT=	Command-line and D-Bus interface for Signal and libsignal-service-java
 WWW=		https://github.com/AsamK/signal-cli
 
@@ -16,15 +15,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 EXTRACT_DEPENDS=	zip:archivers/zip
 BUILD_DEPENDS=		asciidoc>0:textproc/asciidoc
-LIB_DEPENDS=		libsignal_jni.so:net-im/libsignal-client \
-			libzkgroup.so:net-im/zkgroup
-RUN_DEPENDS=		libsignal-client>=0.9.0:net-im/libsignal-client
+LIB_DEPENDS=		libsignal_jni.so:net-im/libsignal
 TEST_DEPENDS=		qrencode:graphics/libqrencode
 
 USES=		gmake java shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	AsamK
-JAVA_VERSION=	11+
+JAVA_VERSION=	21+
 USE_RC_SUBR=	signal_cli
 SHEBANG_FILES=	bin/${PORTNAME}
 SHEBANG_LANG=	sh
@@ -52,10 +49,9 @@ DBUS_PLIST_FILES=	etc/dbus-1/system.d/org.asamk.Signal.conf \
 			share/dbus-1/services/org.asamk.Signal.service
 
 post-extract:
-# Delete bundled libraries from the JARs. Otherwise, they are going to conflict
-# with the libraries installed by net-im/zkgroup and net-im/libsignal-client.
-	zip -d ${WRKSRC}/lib/zkgroup-java-*.jar libzkgroup.so
-	zip -d ${WRKSRC}/lib/signal-client-java-*.jar libsignal_jni.so
+# Delete bundled library from the JARs. Otherwise, they are going to conflict
+# with the library installed by net-im/libsignal.
+	zip -d ${WRKSRC}/lib/libsignal-client-*.jar libsignal_jni_amd64.so
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/bin
@@ -86,7 +82,7 @@ pre-test:
 do-test:
 	${SETENV} ${TEST_ENV} ${STAGEDIR}${DATADIR}/bin/signal-cli \
 		link --name "${PORTNAME} test $$(date)" | \
-		xargs -n 1 qrencode -t ANSI256
+		${XARGS} -n 1 qrencode -t ANSI256
 	${SETENV} ${TEST_ENV} ${STAGEDIR}${DATADIR}/bin/signal-cli \
 		send --message "${PORTNAME} test $$(date)" \
 		"${_TEST_SIGNAL_CLI_USERNAME}"
