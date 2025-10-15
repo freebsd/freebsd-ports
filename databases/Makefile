@@ -813,6 +813,7 @@
     SUBDIR += py-pony
     SUBDIR += py-postgresql
     SUBDIR += py-powa-collector
+    SUBDIR += py-prisma
     SUBDIR += py-psycogreen
     SUBDIR += py-psycopg
     SUBDIR += py-psycopg-c
