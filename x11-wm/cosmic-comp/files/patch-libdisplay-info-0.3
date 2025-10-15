@@ -1,8 +1,8 @@
 https://github.com/Smithay/libdisplay-info-rs/pull/17
 
---- Cargo.lock.orig	2025-04-24 10:45:50 UTC
+--- Cargo.lock.orig	2025-10-15 12:45:19 UTC
 +++ Cargo.lock
-@@ -2900,9 +2900,9 @@ name = "libdisplay-info"
+@@ -3005,9 +3005,9 @@ name = "libdisplay-info"
  
  [[package]]
  name = "libdisplay-info"
@@ -12,21 +12,9 @@ https://github.com/Smithay/libdisplay-info-rs/pull/17
 -checksum = "4210cfe93a0dc37228e08105e3c13171e5af816f7bd39e00e3d3adcf2b487a2b"
 +checksum = "59fd96dbb2381ff31f314f07accbdf8550febdcc5cd8761ecaf7c1763361c359"
  dependencies = [
-  "bitflags 2.8.0",
+  "bitflags 2.9.4",
   "libc",
-@@ -2913,9 +2913,9 @@ name = "libdisplay-info-derive"
- 
- [[package]]
- name = "libdisplay-info-derive"
--version = "0.1.0"
-+version = "0.1.1"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "ea1cd31036b732a546d845f9485c56b1b606b5e476b0821c680dd66c8cd6fcee"
-+checksum = "8dc2c710cf5819e91220a446d9e64acc6814386cc22c509c3f0df83c0b874a98"
- dependencies = [
-  "proc-macro2",
-  "quote",
-@@ -2924,9 +2924,9 @@ name = "libdisplay-info-sys"
+@@ -3029,9 +3029,9 @@ name = "libdisplay-info-sys"
  
  [[package]]
  name = "libdisplay-info-sys"
@@ -38,7 +26,7 @@ https://github.com/Smithay/libdisplay-info-rs/pull/17
  dependencies = [
   "semver",
   "system-deps",
---- Cargo.toml.orig	2025-09-19 13:33:10 UTC
+--- Cargo.toml.orig	2025-10-15 12:45:19 UTC
 +++ Cargo.toml
 @@ -32,7 +32,7 @@ cosmic-text = { git = "https://github.com/pop-os/cosmi
  cosmic-text = { git = "https://github.com/pop-os/cosmic-text.git", features = [
@@ -49,12 +37,14 @@ https://github.com/Smithay/libdisplay-info-rs/pull/17
  egui = { version = "0.31.0", optional = true }
  egui_plot = { version = "0.31.0", optional = true }
  i18n-embed = { version = "0.16", features = [
---- cosmic-comp-config/Cargo.toml.orig	2025-04-24 10:45:50 UTC
+--- cosmic-comp-config/Cargo.toml.orig	2025-10-15 12:45:19 UTC
 +++ cosmic-comp-config/Cargo.toml
-@@ -6,5 +6,5 @@ input = "0.9.0"
- [dependencies]
+@@ -7,7 +7,7 @@ input = "0.9.0"
  cosmic-config = { git = "https://github.com/pop-os/libcosmic/" }
+ cosmic-randr-shell = { git = "https://github.com/pop-os/cosmic-randr/", optional = true }
  input = "0.9.0"
 -libdisplay-info = { version = "0.2.0", optional = true }
 +libdisplay-info = { version = "0.3.0", optional = true }
  serde = { version = "1", features = ["derive"] }
+ ron = { version = "0.9.0-alpha.0", optional = true }
+ tracing = { version = "0.1.37", features = [
