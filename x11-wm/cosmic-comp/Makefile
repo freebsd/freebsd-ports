@@ -1,7 +1,6 @@
 PORTNAME=	cosmic-comp
 DISTVERSIONPREFIX=	epoch-
-DISTVERSION=	1.0.0-beta.1.1
-PORTREVISION=	1
+DISTVERSION=	1.0.0-beta.2
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,7 +24,7 @@ USE_GITHUB=	yes
 USE_GL=		gbm
 USE_XORG=	pixman
 GH_ACCOUNT=	pop-os
-GH_TUPLE=	pop-os:iced:0.4.2-3044-g13134181:iced/../${WRKSRC_crate_iced:T}/iced
+GH_TUPLE=	pop-os:iced:0.4.2-3049-gd0508750:iced/../${WRKSRC_crate_iced:T}/iced
 CARGO_FEATURES=	--no-default-features # disable systemd
 PLIST_FILES=	bin/${PORTNAME} \
 		share/cosmic/com.system76.CosmicSettings.Shortcuts/v1/defaults/keybindings.ron \
