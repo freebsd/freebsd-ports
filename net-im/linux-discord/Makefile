@@ -1,5 +1,5 @@
 PORTNAME=	discord
-DISTVERSION=	0.0.111
+DISTVERSION=	0.0.112
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://dl.discordapp.net/apps/linux/${DISTVERSION}/
