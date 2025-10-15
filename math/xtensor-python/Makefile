@@ -1,5 +1,5 @@
 PORTNAME=	xtensor-python
-DISTVERSION=	0.27.0
+DISTVERSION=	0.29.0
 CATEGORIES=	math python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,20 +17,23 @@ RUN_DEPENDS=	${HPP_DEPENDS}
 TEST_DEPENDS=	googletest>0:devel/googletest \
 		pybind11>0:devel/pybind11
 
-USES=		cmake compiler:c++14-lang python
+USES=		cmake compiler:c++20-lang localbase:ldflags python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xtensor-stack
 
 CXXFLAGS+=	-I${PYTHON_INCLUDEDIR} -I${PYTHON_SITELIBDIR}/numpy/core/include # workaround for https://github.com/xtensor-stack/xtensor-python/issues/272
+LDFLAGS+=	-lpython${PYTHON_VER}
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-do-test: install
+do-test:
 	@cd ${WRKSRC}/test && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} . && \
 		${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} && \
 		${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} xtest
+
+# tests as of 0.29.0: [  PASSED  ] 55 tests.
 
 .include <bsd.port.mk>
