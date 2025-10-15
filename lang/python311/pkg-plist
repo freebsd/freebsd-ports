@@ -2206,7 +2206,7 @@ lib/libpython%%PYTHON_VER%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_LIBDIR%%/ensurepip/__pycache__/_uninstall%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_LIBDIR%%/ensurepip/__pycache__/_uninstall%%PYTHON_TAG%%.pyc
 %%PYTHON_LIBDIR%%/ensurepip/_bundled/pip-24.0-py3-none-any.whl
-%%PYTHON_LIBDIR%%/ensurepip/_bundled/setuptools-65.5.0-py3-none-any.whl
+%%PYTHON_LIBDIR%%/ensurepip/_bundled/setuptools-79.0.1-py3-none-any.whl
 %%PYTHON_LIBDIR%%/ensurepip/_uninstall.py
 %%PYTHON_LIBDIR%%/enum.py
 %%PYTHON_LIBDIR%%/filecmp.py
