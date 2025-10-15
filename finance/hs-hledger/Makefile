@@ -1,5 +1,5 @@
 PORTNAME=	hledger
-DISTVERSION=	1.42.1
+DISTVERSION=	1.50.2
 CATEGORIES=	finance haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,25 +17,39 @@ USE_CABAL=	Decimal-0.5.2 \
 		Glob-0.10.2_3 \
 		OneTuple-0.4.2_1 \
 		Only-0.1_2 \
-		QuickCheck-2.15.0.1_1 \
+		QuickCheck-2.16.0.0 \
+		RSA-2.4.1_2 \
+		SHA-1.6.4.4 \
 		StateVar-1.2.2 \
-		aeson-2.2.3.0_3 \
+		aeson-2.2.3.0_4 \
 		aeson-pretty-0.8.10 \
-		ansi-terminal-1.1.2 \
-		ansi-terminal-types-1.1 \
+		ansi-terminal-1.1.3 \
+		ansi-terminal-types-1.1.3 \
+		appar-0.1.8 \
+		asn1-encoding-0.9.6_2 \
+		asn1-parse-0.9.5 \
+		asn1-types-0.3.4 \
 		assoc-1.1.1_1 \
+		async-2.2.5_3 \
 		attoparsec-0.14.4_6 \
 		attoparsec-aeson-2.2.2.0 \
+		authenticate-oauth-1.7_1 \
 		base-compat-0.14.1 \
 		base-orphans-0.9.3 \
+		base16-bytestring-1.0.2.0_1 \
+		base64-bytestring-1.2.1.0_1 \
+		basement-0.0.16 \
 		bifunctors-5.6.2_2 \
-		blaze-builder-0.4.2.3 \
+		blaze-builder-0.4.4.1 \
 		blaze-html-0.9.2.0_1 \
 		blaze-markup-0.8.3.0_2 \
+		byteorder-1.0.4 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
-		cassava-0.5.3.2_1 \
+		cassava-0.5.4.1 \
 		cassava-megaparsec-2.1.1 \
+		cborg-0.2.10.0_3 \
+		cereal-0.5.8.3 \
 		character-ps-0.1 \
 		clock-0.8.4 \
 		cmdargs-0.10.22 \
@@ -43,66 +57,99 @@ USE_CABAL=	Decimal-0.5.2 \
 		comonad-5.0.9_1 \
 		contravariant-1.5.5 \
 		control-monad-free-0.6.2 \
+		cookie-0.5.1 \
+		crypto-api-0.13.3_1 \
+		crypto-pubkey-types-0.4.3 \
+		crypton-1.0.4 \
+		crypton-connection-0.4.5 \
+		crypton-socks-0.6.2 \
+		crypton-x509-1.7.7 \
+		crypton-x509-store-1.6.11 \
+		crypton-x509-system-1.6.7 \
+		crypton-x509-validation-1.6.14 \
 		csv-0.1.2 \
-		data-default-0.8.0.0 \
+		data-default-0.8.0.1 \
 		data-default-class-0.2.0.0 \
 		data-fix-0.3.4_1 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_2 \
-		doclayout-0.5 \
+		doclayout-0.5.0.1 \
+		ech-config-0.0.1 \
 		emojis-0.1.4.1 \
-		encoding-0.10 \
+		encoding-0.10.2 \
+		entropy-0.4.1.11 \
 		extensible-exceptions-0.1.1.4 \
 		extra-1.8 \
 		file-embed-0.0.16.0 \
 		generically-0.1.1_4 \
 		githash-0.1.7.0 \
+		half-0.3.3_1 \
 		hashable-1.5.0.0_1 \
 		hashtables-1.4.2 \
-		hledger-lib-1.42.1 \
-		hsc2hs-0.68.10_3 \
+		hledger-lib-1.50.2 \
+		hourglass-0.2.12_1 \
+		hpke-0.0.0 \
+		hsc2hs-0.68.10_4 \
 		html-1.0.1.2 \
+		http-api-data-0.6.2 \
+		http-client-0.7.19 \
+		http-client-tls-0.3.6.4_2 \
+		http-types-0.12.4 \
 		indexed-traversable-0.1.4_1 \
 		indexed-traversable-instances-0.1.2_1 \
 		integer-conversion-0.1.1_1 \
 		integer-logarithms-1.0.4 \
+		iproute-1.7.15 \
 		lucid-2.11.20250303 \
 		math-functions-0.3.4.4 \
 		megaparsec-9.7.0 \
-		microlens-0.4.14.0 \
-		microlens-th-0.4.3.17 \
-		mmorph-1.2.0_3 \
+		memory-0.18.0_1 \
+		microlens-0.5.0.0 \
+		microlens-th-0.4.3.18 \
+		mime-types-0.1.2.0 \
+		mmorph-1.2.1_1 \
 		modern-uri-0.3.6.1_3 \
+		monad-control-1.0.3.1 \
+		mtl-compat-0.2.2 \
+		network-3.2.8.0 \
+		network-byte-order-0.1.7 \
 		network-uri-2.6.4.2_1 \
-		optparse-applicative-0.18.1.0_1 \
-		os-string-2.0.7 \
+		old-locale-1.0.0.7_2 \
+		old-time-1.1.0.4 \
+		optparse-applicative-0.19.0.0 \
+		os-string-2.0.8 \
 		parser-combinators-1.3.0_1 \
-		pretty-simple-4.1.3.0 \
+		pem-0.2.4 \
+		pretty-simple-4.1.4.0 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.9.0.0_2 \
-		profunctors-5.6.2_3 \
+		primitive-0.9.1.0 \
+		profunctors-5.6.3 \
 		quote-quot-0.2.1.0 \
-		random-1.2.1.3 \
+		random-1.3.1 \
 		reflection-2.1.9_1 \
 		regex-base-0.94.0.3 \
 		regex-compat-0.95.2.2 \
 		regex-posix-0.96.0.2 \
-		regex-tdfa-1.3.2.3 \
+		regex-tdfa-1.3.2.5 \
+		req-3.13.4_4 \
+		retry-0.9.3.1 \
 		safe-0.3.21_1 \
 		scientific-0.3.8.0_2 \
 		semialign-1.3.1_2 \
 		semigroupoids-6.0.1_2 \
-		shakespeare-2.1.0.1 \
+		serialise-0.2.6.1_5 \
+		shakespeare-2.1.7.1 \
 		split-0.2.5 \
-		splitmix-0.1.1 \
+		splitmix-0.1.3.1 \
+		streaming-commons-0.2.3.0 \
 		strict-0.5.1_1 \
 		tabular-0.2.2.8_1 \
 		tagged-0.8.9 \
-		tasty-1.5.3_1 \
+		tasty-1.5.3_2 \
 		tasty-hunit-0.10.2 \
 		temporary-1.3 \
-		terminal-size-0.3.4 \
+		terminal-size-0.3.4_1 \
 		text-ansi-0.3.0.1_2 \
 		text-builder-linear-0.1.3 \
 		text-iso8601-0.1.1_2 \
@@ -113,15 +160,20 @@ USE_CABAL=	Decimal-0.5.2 \
 		these-1.2.1_2 \
 		time-compat-1.9.8 \
 		timeit-2.0_2 \
+		tls-2.1.11 \
+		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		uglymemo-0.1.0.1 \
-		unordered-containers-0.2.20_4 \
+		unix-time-0.4.17 \
+		unliftio-core-0.2.1.0_4 \
+		unordered-containers-0.2.20.1 \
 		utf8-string-1.0.2 \
 		utility-ht-0.0.17.2 \
-		uuid-types-1.0.6_2 \
-		vector-0.13.2.0_1 \
-		vector-stream-0.1.0.1_3 \
+		uuid-types-1.0.6_3 \
+		vector-0.13.2.0_2 \
+		vector-stream-0.1.0.1_4 \
 		witherable-0.5_1 \
-		wizards-1.0.3_3
+		wizards-1.0.3_3 \
+		zlib-0.7.1.1
 
 .include <bsd.port.mk>
