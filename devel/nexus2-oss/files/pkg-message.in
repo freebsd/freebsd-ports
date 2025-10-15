@@ -32,6 +32,15 @@ Further documentation can be found at:
   https://help.sonatype.com/repomanager2
 EOM
 },
+{
+  type: upgrade
+  maximum_version: "2.15.1_1"
+  message: <<EOM
+With the upgrade to javaservicewrapper-3.6.3 Nexus won't start unless you
+remove all properties ending with '.stripquotes' in your
+%%ETCDIR%%/wrapper.conf.
+EOM
+},
 { type: remove
   message: <<EOM
 Consider deleting %%ETCDIR%%, %%RUNDIR%%, %%LOGDIR%% and %%WORKDIR%% manually!"

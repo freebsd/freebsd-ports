@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20251016:
+  AFFECTS: users of devel/nexus2-oss
+  AUTHOR: michaelo@FreeBSD.org
+
+  With the upgrade to javaservicewrapper-3.6.3 Nexus won't start unless you
+  remove all properties ending with '.stripquotes' in your
+  %%ETCDIR%%/wrapper.conf.
+
+20251016:
   AFFECTS: users of sysutils/javaservicewrapper
   AUTHOR: michaelo@FreeBSD.org
 
