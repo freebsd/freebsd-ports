@@ -1,5 +1,6 @@
 PORTNAME=	mac
 PORTVERSION=	11.62
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://www.monkeysaudio.com/files/
 DISTNAME=	${PORTNAME:tu}_${PORTVERSION:S|.||}_SDK
@@ -13,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 
 USES=		cmake dos2unix zip
 
-DOS2UNIX_FILES=	Source/Console/*.cpp \
+DOS2UNIX_FILES=	Shared/*.h \
+		Source/Console/*.cpp \
 		Source/Shared/*.cpp \
 		Source/Shared/*.h
 
