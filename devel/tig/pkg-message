@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+In version 2.6.0, users should update the settings for the blame,
+main, reflog, and refs views in their ~/.tigrc file to include the
+committer column.
+EOM
+}
+]
