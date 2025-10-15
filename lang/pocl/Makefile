@@ -1,7 +1,6 @@
 PORTNAME=	pocl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0
-PORTREVISION=	1
+DISTVERSION=	7.1
 CATEGORIES=	lang
 
 MAINTAINER=	ohartmann@walstatt.org
@@ -14,21 +13,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	only tested on ${ONLY_FOR_ARCHS:tW:S/ /, /g}
 
-BUILD_DEPENDS=	clang${LLVM_VER}:devel/llvm${LLVM_VER} \
-		opencl>=3:devel/opencl \
-		spirv-llvm-translator-llvm${LLVM_VER}>=${LLVM_VER}:devel/spirv-llvm-translator@llvm${LLVM_VER} \
+_BR_DEPENDS=	opencl>=3:devel/opencl \
+		spirv-llvm-translator-llvm${LLVM_VERSION}>=${LLVM_VERSION}:devel/spirv-llvm-translator@llvm${LLVM_VERSION} \
 		spirv-tools>0:graphics/spirv-tools
-
+BUILD_DEPENDS=	${_BR_DEPENDS}
 LIB_DEPENDS=	libhwloc.so:devel/hwloc2 \
-		libLLVM-${LLVM_VER}.so:devel/llvm${LLVM_VER} \
 		libOpenCL.so:devel/ocl-icd
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${_BR_DEPENDS}
 
 USES=		cmake:noninja gmake localbase:ldflags ncurses pkgconfig python
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-LLVM_VER=	20
 CMAKE_ARGS=	${CMAKE_ARGS_${ARCH}} \
 		-DENABLE_HOST_CPU_DEVICES=ON \
 		-DENABLE_HOST_CPU_DEVICES_OPENMP=ON \
@@ -38,30 +34,39 @@ CMAKE_ARGS=	${CMAKE_ARGS_${ARCH}} \
 		-DENABLE_SPIRV=ON \
 		-DHAVE_OCL_ICD_30_COMPATIBLE=ON \
 		-DHOST_COMPILER_SUPPORTS_FLOAT16:BOOL=OFF \
-		-DLLVM_CONFIG_LOCATION=${LOCALBASE}/bin/llvm-config${LLVM_VER}/ \
+		-DLLVM_CONFIG_LOCATION=${LOCALBASE}/bin/llvm-config${LLVM_VERSION}/ \
 		-DPOCL_ICD_ABSOLUTE_PATH=ON \
 		-DPOCL_INSTALL_PKGCONFIG_DIR="${PREFIX}/libdata/pkgconfig" \
-		-DWITH_LLVM_CONFIG="${LOCALBASE}/llvm${LLVM_VER}/bin/llvm-config"
+		-DWITH_LLVM_CONFIG="${LOCALBASE}/llvm${LLVM_VERSION}/bin/llvm-config"
 
 CMAKE_ARGS_aarch64=	-DLLC_HOST_CPU=cortex-a53
 CMAKE_ARGS_powerpc64=	-DLLC_HOST_CPU=ppc64
 CMAKE_ARGS_powerpc64le=	-DLLC_HOST_CPU=ppc64le
 CMAKE_ARGS_amd64=	-DKERNELLIB_HOST_CPU_VARIANTS=distro
 
-PLIST_SUB=	CONFIGURE_TARGET=${CONFIGURE_TARGET:S/amd64/x86_64/}
+PLIST_SUB=		CONFIGURE_TARGET=${CONFIGURE_TARGET:S/amd64/x86_64/}
 
 OPTIONS_DEFINE=		CONFORMANCE DEBUG DOCS DOCS_PDF LTTNG OMP REMOTE \
 			SHARED_LIBS STATIC_LLVM TESTS
-OPTIONS_DEFAULT=	OMP SHARED_LIBS TESTS
+OPTIONS_DEFAULT=	LLVM21 OMP SHARED_LIBS TESTS
+OPTIONS_SINGLE=		LLVM
+OPTIONS_SINGLE_LLVM=	LLVM17 LLVM18 LLVM19 LLVM20 LLVM21 LLVMDEFAULT
 OPTIONS_SUB=		yes
 
 CONFORMANCE_DESC=	Conformant pocl build (defaults to OFF)
 DEBUG_DESC=		Build POCL with DEBUG messages
 DOCS_DESC=		Build documentation (needs textproc/py-sphinx)
 DOCS_PDF_DESC=		Build PDF alongside with standard HTML docs
+LLVM17_DESC=		Use llvm 17
+LLVM18_DESC=		Use llvm 18
+LLVM19_DESC=		Use llvm 19
+LLVM20_DESC=		Use llvm 20
+LLVM21_DESC=		Use llvm 21
+LLVMDEFAULT_DESC=	Use default llvm version
+LLVM_DESC=		LLVM version to choose
 LTTNG_DESC=		Trace both server and client lib with lttng
 OMP_DESC=		Enable OpenMP on CPU driver
-REMOTE_DESC=		Enable pocld, a remote server
+REMOTE_DESC=		Enable pocld, a remote server (esperimental)
 SHARED_LIBS_DESC=	Build shared libs
 STATIC_LLVM_DESC=	Have static libLLVM
 TESTS_DESC=		Enable compilation of internal tests
@@ -78,6 +83,13 @@ DOCS_CMAKE_OFF=		-DENABLE_DOCS=OFF
 
 DOCS_PDF_IMPLIES=	DOCS
 DOCS_PDF_BROKEN=	TeX error: Unicode character ≈ (U+2248) not set up for use with LaTeX.
+
+LLVM17_USES=		llvm:17,build,lib,run
+LLVM18_USES=		llvm:18,build,lib,run
+LLVM19_USES=		llvm:19,build,lib,run
+LLVM20_USES=		llvm:20,build,lib,run
+LLVM21_USES=		llvm:21,build,lib,run
+LLVMDEFAULT_USES=	llvm:min=17,max=21,build,lib,run
 
 LTTNG_LIB_DEPENDS=	liblttng-ust.so:sysutils/lttng-ust
 LTTNG_CMAKE_ON=		-DENABLE_LTTNG=YES

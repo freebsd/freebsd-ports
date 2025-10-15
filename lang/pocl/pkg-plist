@@ -2,7 +2,7 @@ bin/poclcc
 etc/OpenCL/vendors/pocl.icd
 lib/libpocl.so
 lib/libpocl.so.2
-lib/libpocl.so.2.14.0
+lib/libpocl.so.2.15.0
 lib/pocl/libpocl-devices-basic.so
 lib/pocl/libpocl-devices-pthread.so
 libdata/pkgconfig/pocl.pc
@@ -33,6 +33,7 @@ libdata/pkgconfig/pocl.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/notes_5_0.html
 %%PORTDOCS%%%%DOCSDIR%%/html/notes_6_0.html
 %%PORTDOCS%%%%DOCSDIR%%/html/notes_7_0.html
+%%PORTDOCS%%%%DOCSDIR%%/html/notes_7_1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/opencl_status.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pocl_binary.html
 %%PORTDOCS%%%%DOCSDIR%%/html/proxy.html
