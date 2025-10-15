@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libhdf5.so:science/hdf5
 RUN_DEPENDS=	${LOCALBASE}/include/boost/multi_array.hpp:devel/boost-libs \
-		${LOCALBASE}/include/xtensor/xtensor.hpp:math/xtensor
+		${LOCALBASE}/include/xtensor.hpp:math/xtensor
 TEST_DEPENDS=	catch2>0:devel/catch2
 
 USES=		cmake eigen:3,run
