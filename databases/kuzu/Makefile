@@ -1,6 +1,6 @@
 PORTNAME=	kuzu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.2
+DISTVERSION=	0.11.3
 CATEGORIES=	databases
 
 MAINTAINER=	mahlon@martini.nu
@@ -10,11 +10,14 @@ WWW=		https://kuzudb.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream repository archived on Oct 11, 2025
+
 USES=		cmake ninja:build python:3.9+,build
-USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kuzudb
+
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${DISTVERSION}
 
