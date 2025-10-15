@@ -19,8 +19,8 @@ load_rc_config $name
 
 : ${ttyd_enable:="NO"}
 : ${ttyd_acct:="nobody"}
-: ${ttyd_exec:="/bin/sh"}
-: ${ttyd_args:="--interface lo0 --port 7681"}
+: ${ttyd_exec:="/usr/bin/login"}
+: ${ttyd_args:="--interface lo0 --port 7681 -W"}
 
 procname="/usr/local/bin/${name}"
 
