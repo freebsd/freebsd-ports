@@ -1,0 +1,10 @@
+--- libfwupdplugin/meson.build.orig	2025-09-12 09:55:19 UTC
++++ libfwupdplugin/meson.build
+@@ -387,6 +387,7 @@ fwupdplugin = library(
+   include_directories: [root_incdir, fwupd_incdir],
+   dependencies: [library_deps],
+   link_with: [fwupd],
++  install_rpath: '/usr/local/lib',
+   install_dir: libdir_pkg,
+   install: true,
+ )
