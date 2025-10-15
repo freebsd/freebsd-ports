@@ -1,5 +1,5 @@
 PORTNAME=	scikit-build-core
-DISTVERSION=	0.11.1
+DISTVERSION=	0.11.6
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -46,6 +46,6 @@ TEST_ENV=	${MAKE_ENV} \
 
 NO_ARCH=	yes
 
-# tests as of 0.11.1: 1 failed, 415 passed, 5 skipped, 3 xfailed, 1 warning in 603.00s (0:10:03), see https://github.com/scikit-build/scikit-build-core/issues/1057
+# tests as of 0.11.6: 2 failed, 460 passed, 5 skipped, 4 xfailed, 1 warning in 1152.80s (0:19:12), see https://github.com/scikit-build/scikit-build-core/issues/1159
 
 .include <bsd.port.mk>
