@@ -1,5 +1,5 @@
 PORTNAME=	zeek
-DISTVERSION=	8.0.2
+DISTVERSION=	8.0.3
 CATEGORIES=	security
 MASTER_SITES=	https://download.zeek.org/
 
