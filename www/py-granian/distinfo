@@ -1,6 +1,6 @@
-TIMESTAMP = 1759151368
-SHA256 (granian-2.5.4.tar.gz) = 85989a08052f1bbb174fd73759e1ae505e50b4c0690af366ca6ba844203dd463
-SIZE (granian-2.5.4.tar.gz) = 112016
+TIMESTAMP = 1760518635
+SHA256 (granian-2.5.5.tar.gz) = da785fae71cb45e92ce3fbb8633dc48b12f6a5055a7358226d78176967a5d2c9
+SIZE (granian-2.5.5.tar.gz) = 112143
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
