@@ -1,4 +1,3 @@
-include/xtl/xany.hpp
 include/xtl/xbase64.hpp
 include/xtl/xbasic_fixed_string.hpp
 include/xtl/xclosure.hpp
@@ -28,8 +27,6 @@ include/xtl/xspan_impl.hpp
 include/xtl/xsystem.hpp
 include/xtl/xtl_config.hpp
 include/xtl/xtype_traits.hpp
-include/xtl/xvariant.hpp
-include/xtl/xvariant_impl.hpp
 include/xtl/xvisitor.hpp
 share/cmake/xtl/xtlConfig.cmake
 share/cmake/xtl/xtlConfigVersion.cmake
