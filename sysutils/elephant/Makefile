@@ -1,7 +1,7 @@
 PORTNAME=	elephant
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -63,6 +63,10 @@ WEBSEARCH_PLIST_FILES=	etc/xdg/elephant/providers/websearch.so
 .include <bsd.port.options.mk>
 
 ENABLED_PROVIDERS=	${SELECTED_OPTIONS:NDOCS:tl}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${GO_WRKSRC}/vendor/github.com/adrg/xdg/paths_unix.go
 
 post-build:
 .for provider in ${ENABLED_PROVIDERS}
