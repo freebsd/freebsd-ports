@@ -1,3 +1,7 @@
+%%MANPAGES%%share/man/man1/gh-agent-task.1.gz
+%%MANPAGES%%share/man/man1/gh-agent-task-create.1.gz
+%%MANPAGES%%share/man/man1/gh-agent-task-list.1.gz
+%%MANPAGES%%share/man/man1/gh-agent-task-view.1.gz
 %%MANPAGES%%share/man/man1/gh-alias-delete.1.gz
 %%MANPAGES%%share/man/man1/gh-alias-import.1.gz
 %%MANPAGES%%share/man/man1/gh-alias-list.1.gz
@@ -134,6 +138,8 @@
 %%MANPAGES%%share/man/man1/gh-release-edit.1.gz
 %%MANPAGES%%share/man/man1/gh-release-list.1.gz
 %%MANPAGES%%share/man/man1/gh-release-upload.1.gz
+%%MANPAGES%%share/man/man1/gh-release-verify.1.gz
+%%MANPAGES%%share/man/man1/gh-release-verify-asset.1.gz
 %%MANPAGES%%share/man/man1/gh-release-view.1.gz
 %%MANPAGES%%share/man/man1/gh-release.1.gz
 %%MANPAGES%%share/man/man1/gh-repo-autolink-create.1.gz
