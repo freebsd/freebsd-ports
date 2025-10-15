@@ -60,7 +60,7 @@ include/glm/detail/type_vec3.hpp
 include/glm/detail/type_vec3.inl
 include/glm/detail/type_vec4.hpp
 include/glm/detail/type_vec4.inl
-include/glm/detail/type_vec4_simd.inl
+include/glm/detail/type_vec_simd.inl
 include/glm/exponential.hpp
 include/glm/ext.hpp
 include/glm/ext/_matrix_vectorize.hpp
@@ -310,7 +310,7 @@ include/glm/gtx/fast_square_root.hpp
 include/glm/gtx/fast_square_root.inl
 include/glm/gtx/fast_trigonometry.hpp
 include/glm/gtx/fast_trigonometry.inl
-include/glm/gtx/float_notmalize.inl
+include/glm/gtx/float_normalize.inl
 include/glm/gtx/functions.hpp
 include/glm/gtx/functions.inl
 include/glm/gtx/gradient_paint.hpp
@@ -325,6 +325,8 @@ include/glm/gtx/intersect.hpp
 include/glm/gtx/intersect.inl
 include/glm/gtx/io.hpp
 include/glm/gtx/io.inl
+include/glm/gtx/iteration.hpp
+include/glm/gtx/iteration.inl
 include/glm/gtx/log_base.hpp
 include/glm/gtx/log_base.inl
 include/glm/gtx/matrix_cross_product.hpp
@@ -382,6 +384,8 @@ include/glm/gtx/std_based_type.hpp
 include/glm/gtx/std_based_type.inl
 include/glm/gtx/string_cast.hpp
 include/glm/gtx/string_cast.inl
+include/glm/gtx/structured_bindings.hpp
+include/glm/gtx/structured_bindings.inl
 include/glm/gtx/texture.hpp
 include/glm/gtx/texture.inl
 include/glm/gtx/transform.hpp
