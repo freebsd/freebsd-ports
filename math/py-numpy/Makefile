@@ -1,6 +1,6 @@
 PORTNAME=	numpy
 PORTVERSION=	1.26.4
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
@@ -18,12 +18,14 @@ WWW=		https://www.numpy.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}meson-python>=0:devel/meson-python@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=6.24.1:devel/py-hypothesis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=6.2.5:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.2.0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		compiler:c11 cpe fortran python:3.9+
-USE_PYTHON=	allflavors autoplist concurrent cython distutils
+USES=		compiler:c11 cpe fortran pkgconfig python:3.9+ shebangfix
+USE_PYTHON=	autoplist concurrent cython pep517
 
 GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e \
 		s/libgfortran.so//
@@ -60,6 +62,10 @@ OPENBLAS_VARS=			BLASLIBS="openblas, gfortran" \
 				LAPACKLIBS="openblas, gfortran" \
 				LIBRARIES=libraries
 SUITESPARSE_LIB_DEPENDS=	libumfpack.so:math/suitesparse-umfpack
+
+SHEBANG_FILES=	numpy/f2py/crackfortran.py numpy/f2py/f2py2e.py \
+		numpy/f2py/rules.py numpy/testing/print_coercion_tables.py \
+		numpy/testing/setup.py
 
 post-extract:
 	@${TOUCH} ${WRKSRC}/numpy/f2py/tests/src/temp
