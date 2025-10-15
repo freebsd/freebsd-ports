@@ -10,7 +10,6 @@ libexec/poudriere/cpdup
 libexec/poudriere/dirempty
 libexec/poudriere/dirwatch
 libexec/poudriere/locked_mkdir
-libexec/poudriere/lockf
 libexec/poudriere/nc
 libexec/poudriere/poudriered
 libexec/poudriere/ptsort
