@@ -607,6 +607,7 @@
     SUBDIR += octave-forge-joystick
     SUBDIR += octave-forge-level-set
     SUBDIR += octave-forge-linear-algebra
+    SUBDIR += octave-forge-llms
     SUBDIR += octave-forge-lssa
     SUBDIR += octave-forge-ltfat
     SUBDIR += octave-forge-mapping
