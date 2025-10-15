@@ -1,8 +1,8 @@
 PORTNAME=	ghidra
-DISTVERSION=	11.3.1
+DISTVERSION=	11.4.2
 CATEGORIES=	devel security java
 MASTER_SITES=	https://github.com/NationalSecurityAgency/${PORTNAME}/releases/download/Ghidra_${DISTVERSION}_build/
-DISTNAME=	${PORTNAME}_${DISTVERSION}_PUBLIC_20250219
+DISTNAME=	${PORTNAME}_${DISTVERSION}_PUBLIC_20250826
 
 MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Software reverse engineering (SRE) framework
@@ -17,30 +17,38 @@ BUILD_DEPENDS=	bash:shells/bash \
 		gradle>=8.12:devel/gradle
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:gcc-c++11-lib cpe java shebangfix zip
+USES=		compiler:gcc-c++11-lib cpe java python shebangfix zip
 CPE_VENDOR=	nsa
 JAVA_VERSION=	21+
 
-SHEBANG_FILES=	Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/local-gdb.sh \
-		Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/qemu-gdb.sh \
-		Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/qemu-sys-gdb.sh \
-		Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/remote-gdb.sh \
-		Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/ssh-gdb.sh \
-		Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/ssh-gdbserver.sh \
-		Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/wine-gdb.sh \
-		Ghidra/Debug/Debugger-agent-lldb/data/debugger-launchers/android-lldb.sh \
-		Ghidra/Debug/Debugger-agent-lldb/data/debugger-launchers/kernel-lldb.sh \
-		Ghidra/Debug/Debugger-agent-lldb/data/debugger-launchers/local-lldb.sh \
-		Ghidra/Debug/Debugger-agent-lldb/data/debugger-launchers/remote-lldb.sh \
+SHEBANG_FILES=	docker/build-docker-image.sh \
+		docker/entrypoint.sh \
+		Ghidra/Debug/Debugger-agent-drgn/data/debugger-launchers/*.sh \
+		Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/*.sh \
+		Ghidra/Debug/Debugger-agent-gdb/data/support/gdbsetuputils.sh \
+		Ghidra/Debug/Debugger-agent-lldb/data/debugger-launchers/*.sh \
+		Ghidra/Debug/Debugger-agent-lldb/data/support/*.sh \
+		Ghidra/Debug/Debugger-agent-lldb/data/support/lldbsetuputils.sh \
+		Ghidra/Debug/Debugger-isf/support/runISFServer \
 		Ghidra/Debug/Debugger-rmi-trace/data/debugger-launchers/raw-python3.sh \
+		Ghidra/Debug/Debugger-rmi-trace/data/support/setuputils.sh \
 		Ghidra/Features/BSim/support/make-postgres.sh \
+		Ghidra/Features/Jython/data/jython-2.7.4/Lib/*.py \
+		Ghidra/Features/Jython/data/jython-2.7.4/Lib/distutils/command/build_scripts.py \
+		Ghidra/Features/Jython/data/jython-2.7.4/Lib/distutils/tests/*.py \
+		Ghidra/Features/Jython/data/jython-2.7.4/Lib/encodings/rot_13.py \
+		Ghidra/Features/Jython/data/jython-2.7.4/Lib/ensurepip/__init__.py \
+		Ghidra/Features/Jython/data/jython-2.7.4/Lib/lib2to3/fixes/fix_metaclass.py \
+		Ghidra/Features/Jython/data/jython-2.7.4/Lib/lib2to3/pgen2/token.py \
+		Ghidra/Features/Jython/data/jython-2.7.4/Lib/lib2to3/tests/data/different_encoding.py \
+		Ghidra/Features/Jython/data/jython-2.7.4/Lib/lib2to3/tests/pytree_idempotency.py \
+		Ghidra/Features/PyGhidra/pypkg/setup.py \
 		ghidraRun \
 		server/ghidraSvr \
 		server/jaas_external_program.example.sh \
 		server/svrAdmin \
 		server/svrInstall \
 		server/svrUninstall \
-		support/GhidraGo/ghidraGo \
 		support/analyzeHeadless \
 		support/bsim \
 		support/bsim_ctl \
@@ -49,7 +57,11 @@ SHEBANG_FILES=	Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/local-gdb
 		support/gdbGADPServerRun \
 		support/ghidraClean \
 		support/ghidraDebug \
+		support/GhidraGo/ghidraGo \
+		support/jshellRun \
+		support/jythonRun \
 		support/launch.sh \
+		support/pyghidraRun \
 		support/sleigh
 
 SUB_FILES=	ghidra.desktop
@@ -81,10 +93,6 @@ PROGRAM_FILES=	Ghidra/Features/FileFormats/${BUILD_SUBDIR}/lzfse \
 		GPL/DemanglerGnu/${BUILD_SUBDIR}/demangler_gnu_v2_24 \
 		GPL/DemanglerGnu/${BUILD_SUBDIR}/demangler_gnu_v2_41
 
-post-patch:
-	${REINPLACE_CMD} -e 's|%%CC_BINARY%%|${CXX}|' -e 's|%%CPP_BINARY%%|${CXX}|' \
-		${WRKSRC}/GPL/nativeBuildProperties.gradle
-
 do-build:
 	@cd ${WRKSRC}/support/gradle && ${GRADLE_RUN} build
 
@@ -98,8 +106,11 @@ do-install:
 .endfor
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 .for F in ${SHEBANG_FILES}
-	${RM} ${STAGEDIR}${DATADIR}/${F}
-	${INSTALL_SCRIPT} ${WRKSRC}/${F} ${STAGEDIR}${DATADIR}/${F}
+	@for fname in `ls ${WRKSRC}/${F} | ${XARGS} basename`; do \
+		xfname="`dirname $F`/$$fname"; \
+		${RM} ${STAGEDIR}${DATADIR}/$$xfname; \
+		${INSTALL_SCRIPT} ${WRKSRC}/$$xfname ${STAGEDIR}${DATADIR}/$$xfname; \
+	done
 .endfor
 .for F in ${PROGRAM_FILES}
 	${RM} ${STAGEDIR}${DATADIR}/${F}
