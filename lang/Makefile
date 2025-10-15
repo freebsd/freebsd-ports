@@ -162,6 +162,7 @@
     SUBDIR += julia
     SUBDIR += jython
     SUBDIR += kawa
+    SUBDIR += kefir
     SUBDIR += kf5-kross
     SUBDIR += kotlin
     SUBDIR += kturtle
