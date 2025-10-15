@@ -2,8 +2,8 @@
 +++ CMakeLists.txt
 @@ -1,5 +1,5 @@ cmake_minimum_required(VERSION 3.13)
  cmake_minimum_required(VERSION 3.13)
--project(Cppcheck VERSION 2.18.0 LANGUAGES CXX)
-+project(cppcheck VERSION 2.18.0 LANGUAGES CXX)
+-project(Cppcheck VERSION 2.18.3 LANGUAGES CXX)
++project(cppcheck VERSION 2.18.3 LANGUAGES CXX)
  
  include(cmake/options.cmake)
  
