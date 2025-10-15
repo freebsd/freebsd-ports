@@ -1,0 +1,11 @@
+--- meson.build.orig	2025-10-03 09:14:22 UTC
++++ meson.build
+@@ -10,7 +10,7 @@ cc_ld = find_program(cc.get_linker_id())
+ 
+ cc = meson.get_compiler('c')
+ cc_ld = find_program(cc.get_linker_id())
+-objcopy = find_program('objcopy')
++objcopy = find_program('/usr/local/bin/objcopy')
+ objcopy_version = run_command(objcopy, '--version', check: true).stdout().split('\n')[0].split(' ')[-1]
+ 
+ gnuefi = dependency('gnu-efi', version: '>= 3.0.18')
