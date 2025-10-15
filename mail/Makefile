@@ -544,6 +544,7 @@
     SUBDIR += py-pyspf
     SUBDIR += py-python-slimta
     SUBDIR += py-pyzmail
+    SUBDIR += py-resend
     SUBDIR += py-rfc6555
     SUBDIR += py-spf-engine
     SUBDIR += py-tlsrpt-reporter
