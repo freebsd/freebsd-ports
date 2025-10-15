@@ -3,15 +3,12 @@ DISTVERSION=	2.0
 CATEGORIES=	converters
 MASTER_SITES=	${WWW}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Converter for old MS-DOS/ANSI.SYS text files
 WWW=		https://github.com/Zirias/dos2ansi
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-DEPRECATED=	Unmaintained port
-EXPIRATION_DATE=2025-12-31
 
 FLAVORS=		x11 nox11
 FLAVOR?=		x11
