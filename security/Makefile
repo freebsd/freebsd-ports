@@ -952,6 +952,7 @@
     SUBDIR += py-google-auth
     SUBDIR += py-google-auth-httplib2
     SUBDIR += py-google-auth-oauthlib
+    SUBDIR += py-google-cloud-kms
     SUBDIR += py-gpg
     SUBDIR += py-gpsoauth
     SUBDIR += py-greenbone-feed-sync
