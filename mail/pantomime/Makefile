@@ -1,31 +1,27 @@
 PORTNAME=	pantomime
 DISTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnustep
 MASTER_SITES=	SAVANNAH/gnustep-nonfsf/
 DISTNAME=	Pantomime-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Mail/MIME handling library for GNUstep
-WWW=		http://www.collaboration-world.com/cgi-bin/project/index.cgi?pid=3
+WWW=		https://www.nongnu.org/gnustep-nonfsf/gnumail/
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/Documentation/LICENSE
 
 USES=		gnustep iconv ssl
 
-# The use of libiconv shouldn't be necessary, but a build dependency installs
-# it and we end up picking up the header.
-USE_GNUSTEP=	back build
-USE_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
-
-MAKE_ARGS+=	LIBRARIES_DEPEND_UPON='${ICONV_LIB} -lssl'
-
+USE_GNUSTEP=		back build
 DEFAULT_LIBVERSION=	${DISTVERSION:R}
 
-.include <bsd.port.pre.mk>
+USE_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
-.if ${OPSYS} == FreeBSD
-CFLAGS+=       -Wno-error=int-conversion
-.endif
+MAKE_ARGS+=	LIBRARIES_DEPEND_UPON='-lssl'
 
-.include <bsd.port.post.mk>
+post-install:
+		@${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Library/Frameworks/Pantomime.framework/Versions/${DISTVERSION:R}/libPantomime.so.${DISTVERSION}
+
+.include <bsd.port.mk>
