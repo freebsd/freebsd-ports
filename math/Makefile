@@ -1294,7 +1294,6 @@
     SUBDIR += vinci
     SUBDIR += visualpolylib
     SUBDIR += vowpal_wabbit
-    SUBDIR += vtk8
     SUBDIR += vtk9
     SUBDIR += wavelib
     SUBDIR += wcalc
