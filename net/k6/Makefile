@@ -1,6 +1,6 @@
 PORTNAME=	k6
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.3
+DISTVERSION=	1.3.0
 CATEGORIES=	net
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		go:1.23,modules
 NOT_FOR_ARCHS=	armv6 armv7 i386
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
-_BUILD_HASH=	e4a5a88
+_BUILD_HASH=	5870e99
 
 GO_MODULE=	github.com/grafana/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
