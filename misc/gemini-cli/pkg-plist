@@ -2,7 +2,6 @@ bin/gemini
 lib/node_modules/@google/gemini-cli/LICENSE
 lib/node_modules/@google/gemini-cli/README.md
 lib/node_modules/@google/gemini-cli/dist/.last_build
-lib/node_modules/@google/gemini-cli/dist/google-gemini-cli-0.8.1.tgz
 lib/node_modules/@google/gemini-cli/dist/index.d.ts
 lib/node_modules/@google/gemini-cli/dist/index.js
 lib/node_modules/@google/gemini-cli/dist/index.js.map
@@ -316,6 +315,9 @@ lib/node_modules/@google/gemini-cli/dist/src/ui/commands/permissionsCommand.test
 lib/node_modules/@google/gemini-cli/dist/src/ui/commands/privacyCommand.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/ui/commands/privacyCommand.js
 lib/node_modules/@google/gemini-cli/dist/src/ui/commands/privacyCommand.js.map
+lib/node_modules/@google/gemini-cli/dist/src/ui/commands/profileCommand.d.ts
+lib/node_modules/@google/gemini-cli/dist/src/ui/commands/profileCommand.js
+lib/node_modules/@google/gemini-cli/dist/src/ui/commands/profileCommand.js.map
 lib/node_modules/@google/gemini-cli/dist/src/ui/commands/quitCommand.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/ui/commands/quitCommand.js
 lib/node_modules/@google/gemini-cli/dist/src/ui/commands/quitCommand.js.map
@@ -367,6 +369,9 @@ lib/node_modules/@google/gemini-cli/dist/src/ui/components/AsciiArt.js.map
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/AutoAcceptIndicator.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/AutoAcceptIndicator.js
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/AutoAcceptIndicator.js.map
+lib/node_modules/@google/gemini-cli/dist/src/ui/components/CliSpinner.d.ts
+lib/node_modules/@google/gemini-cli/dist/src/ui/components/CliSpinner.js
+lib/node_modules/@google/gemini-cli/dist/src/ui/components/CliSpinner.js.map
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/Composer.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/Composer.js
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/Composer.js.map
@@ -394,6 +399,9 @@ lib/node_modules/@google/gemini-cli/dist/src/ui/components/ContextUsageDisplay.j
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/DebugProfiler.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/DebugProfiler.js
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/DebugProfiler.js.map
+lib/node_modules/@google/gemini-cli/dist/src/ui/components/DebugProfiler.test.d.ts
+lib/node_modules/@google/gemini-cli/dist/src/ui/components/DebugProfiler.test.js
+lib/node_modules/@google/gemini-cli/dist/src/ui/components/DebugProfiler.test.js.map
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/DetailedMessagesDisplay.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/DetailedMessagesDisplay.js
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/DetailedMessagesDisplay.js.map
@@ -640,6 +648,12 @@ lib/node_modules/@google/gemini-cli/dist/src/ui/components/shared/text-buffer.js
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/shared/vim-buffer-actions.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/shared/vim-buffer-actions.js
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/shared/vim-buffer-actions.js.map
+lib/node_modules/@google/gemini-cli/dist/src/ui/components/views/ChatList.d.ts
+lib/node_modules/@google/gemini-cli/dist/src/ui/components/views/ChatList.js
+lib/node_modules/@google/gemini-cli/dist/src/ui/components/views/ChatList.js.map
+lib/node_modules/@google/gemini-cli/dist/src/ui/components/views/ChatList.test.d.ts
+lib/node_modules/@google/gemini-cli/dist/src/ui/components/views/ChatList.test.js
+lib/node_modules/@google/gemini-cli/dist/src/ui/components/views/ChatList.test.js.map
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/views/ExtensionsList.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/views/ExtensionsList.js
 lib/node_modules/@google/gemini-cli/dist/src/ui/components/views/ExtensionsList.js.map
@@ -1144,9 +1158,6 @@ lib/node_modules/@google/gemini-cli/dist/src/utils/installationInfo.js.map
 lib/node_modules/@google/gemini-cli/dist/src/utils/installationInfo.test.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/utils/installationInfo.test.js
 lib/node_modules/@google/gemini-cli/dist/src/utils/installationInfo.test.js.map
-lib/node_modules/@google/gemini-cli/dist/src/utils/math.d.ts
-lib/node_modules/@google/gemini-cli/dist/src/utils/math.js
-lib/node_modules/@google/gemini-cli/dist/src/utils/math.js.map
 lib/node_modules/@google/gemini-cli/dist/src/utils/package.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/utils/package.js
 lib/node_modules/@google/gemini-cli/dist/src/utils/package.js.map
@@ -1180,6 +1191,18 @@ lib/node_modules/@google/gemini-cli/dist/src/utils/sandbox-macos-restrictive-pro
 lib/node_modules/@google/gemini-cli/dist/src/utils/sandbox.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/utils/sandbox.js
 lib/node_modules/@google/gemini-cli/dist/src/utils/sandbox.js.map
+lib/node_modules/@google/gemini-cli/dist/src/utils/sessionCleanup.d.ts
+lib/node_modules/@google/gemini-cli/dist/src/utils/sessionCleanup.integration.test.d.ts
+lib/node_modules/@google/gemini-cli/dist/src/utils/sessionCleanup.integration.test.js
+lib/node_modules/@google/gemini-cli/dist/src/utils/sessionCleanup.integration.test.js.map
+lib/node_modules/@google/gemini-cli/dist/src/utils/sessionCleanup.js
+lib/node_modules/@google/gemini-cli/dist/src/utils/sessionCleanup.js.map
+lib/node_modules/@google/gemini-cli/dist/src/utils/sessionCleanup.test.d.ts
+lib/node_modules/@google/gemini-cli/dist/src/utils/sessionCleanup.test.js
+lib/node_modules/@google/gemini-cli/dist/src/utils/sessionCleanup.test.js.map
+lib/node_modules/@google/gemini-cli/dist/src/utils/sessionUtils.d.ts
+lib/node_modules/@google/gemini-cli/dist/src/utils/sessionUtils.js
+lib/node_modules/@google/gemini-cli/dist/src/utils/sessionUtils.js.map
 lib/node_modules/@google/gemini-cli/dist/src/utils/settingsUtils.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/utils/settingsUtils.js
 lib/node_modules/@google/gemini-cli/dist/src/utils/settingsUtils.js.map
@@ -1444,7 +1467,6 @@ lib/node_modules/@google/gemini-cli/node_modules/@google-cloud/promisify/package
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/LICENSE
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/README.md
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/.last_build
-lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/google-gemini-cli-core-0.8.1.tgz
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.js
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.js.map
@@ -2060,6 +2082,9 @@ lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/sr
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/tools/tool-error.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/tools/tool-error.js
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/tools/tool-error.js.map
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/tools/tool-names.d.ts
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/tools/tool-names.js
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/tools/tool-names.js.map
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/tools/tool-registry.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/tools/tool-registry.js
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/tools/tool-registry.js.map
@@ -18299,6 +18324,9 @@ lib/node_modules/@google/gemini-cli/node_modules/ky/distribution/utils/options.j
 lib/node_modules/@google/gemini-cli/node_modules/ky/distribution/utils/timeout.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/ky/distribution/utils/timeout.js
 lib/node_modules/@google/gemini-cli/node_modules/ky/distribution/utils/timeout.js.map
+lib/node_modules/@google/gemini-cli/node_modules/ky/distribution/utils/type-guards.d.ts
+lib/node_modules/@google/gemini-cli/node_modules/ky/distribution/utils/type-guards.js
+lib/node_modules/@google/gemini-cli/node_modules/ky/distribution/utils/type-guards.js.map
 lib/node_modules/@google/gemini-cli/node_modules/ky/distribution/utils/types.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/ky/distribution/utils/types.js
 lib/node_modules/@google/gemini-cli/node_modules/ky/distribution/utils/types.js.map
