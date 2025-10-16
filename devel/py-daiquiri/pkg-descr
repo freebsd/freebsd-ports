@@ -1,0 +1,15 @@
+Daiquiri is a Python library that simplifies the configuration and usage of
+Python's built-in logging module. It provides an easy-to-use interface for
+setting up basic logging functionalities, often with a single call to
+`daiquiri.setup()`.
+
+Key features include:
+- Flexible output options: logs to stderr (with colored output), syslog, systemd
+  journal, or files.
+- Custom formatters: supports plain text and structured JSON logs.
+- Enhanced logger: allows passing keyword arguments to logging methods, which
+  become part of the log record.
+- Warning handling: overrides Python's default warning behavior to log warnings
+  via the logging system.
+- Exception handling: integrates with `sys.excepthook` to automatically log
+  uncaught exceptions.

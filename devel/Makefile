@@ -4775,6 +4775,7 @@
     SUBDIR += py-daemon-runner
     SUBDIR += py-daemonize
     SUBDIR += py-daemons
+    SUBDIR += py-daiquiri
     SUBDIR += py-dal
     SUBDIR += py-darts.util.lru
     SUBDIR += py-dask
