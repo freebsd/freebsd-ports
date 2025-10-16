@@ -5078,6 +5078,7 @@
     SUBDIR += py-inline-snapshot
     SUBDIR += py-inotify-simple
     SUBDIR += py-inotifyrecursive
+    SUBDIR += py-inquirer
     SUBDIR += py-installer
     SUBDIR += py-intbitset
     SUBDIR += py-intelhex
