@@ -1,5 +1,5 @@
 PORTNAME=	angie-module-cache-purge
-GH_TUPLE=	nginx-modules:ngx_cache_purge:2.5.3:module
+GH_TUPLE=	nginx-modules:ngx_cache_purge:2.5.4:module
 
 COMMENT=	Angie cache_purge dynamic module
 

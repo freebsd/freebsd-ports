@@ -1,5 +1,6 @@
 PORTNAME?=	angie
 DISTVERSION=	1.10.2
+PORTREVISION=	1
 CATEGORIES+=	www
 MASTER_SITES+=	https://download.angie.software/files/:angie
 DISTNAME=	angie-${DISTVERSIONFULL}
