@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library to read characters and key strokes
 WWW=		https://github.com/magmax/python-readchar
 
