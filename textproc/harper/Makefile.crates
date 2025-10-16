@@ -470,7 +470,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unicode-script-0.5.7 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.14 \
-		unicode-width-0.2.1 \
+		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
 		unscanny-0.1.0 \
 		unty-0.0.4 \
