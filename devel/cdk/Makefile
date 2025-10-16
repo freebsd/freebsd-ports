@@ -1,5 +1,5 @@
 PORTNAME=	cdk
-DISTVERSION=	5.0-20251001
+DISTVERSION=	5.0-20251014
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME}/ \
@@ -27,8 +27,8 @@ PORTEXAMPLES=	cli demos examples
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|$$(CC)| ; \
-		 /^CDKREADME/s| COPYING||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^CDKREADME/s| COPYING||' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcdk*.so
