@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-10-16 21:46:00 UTC
++++ pyproject.toml
+@@ -40,7 +40,7 @@ Funding = "https://github.com/sponsors/typeddjango"
+ "Release notes" = "https://github.com/typeddjango/django-stubs/releases"
+ 
+ [build-system]
+-requires = ["uv_build>=0.8.22,<0.9.0"]
++requires = ["uv_build"]
+ build-backend = "uv_build"
+ 
+ [tool.uv.build-backend]
