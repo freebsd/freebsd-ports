@@ -1,5 +1,6 @@
 PORTNAME=	fwupd
 DISTVERSION=	2.0.16
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -12,13 +13,12 @@ BROKEN_FreeBSD_14=	requires at least FreeBSD 15
 
 BUILD_DEPENDS=	blkid:filesystems/libblkid \
 		flashrom>0:sysutils/flashrom \
-		gtkdoc-scan:textproc/gtk-doc \
 		help2man:misc/help2man \
 		${LOCALBASE}/libdata/pkgconfig/fwupd-efi.pc:sysutils/fwupd-efi \
 		open-sans>0:x11-fonts/open-sans \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygobject>0:devel/py-pygobject@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pangocffi>0:x11-toolkits/py-pangocffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gi-docgen>0:textproc/py-gi-docgen@${PY_FLAVOR} \
 		valgrind>0:devel/valgrind
 LIB_DEPENDS=	libcbor.so:devel/libcbor \
 		libcurl.so:ftp/curl \
@@ -46,9 +46,15 @@ USE_LDCONFIG=	yes
 WITH_DEBUG=	yes
 USE_RC_SUBR=	fwupd
 
+OPTIONS_DEFINE=	DOCS
+
+DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc \
+			${PYTHON_PKGNAMEPREFIX}gi-docgen>0:textproc/py-gi-docgen@${PY_FLAVOR}
+DOCS_MESON_ENABLED=	docs
+
 SHEBANG_GLOB=	*.py
 
-MESON_ARGS=	-Dpolkit=disabled \
+MESON_ARGS+=	-Dpolkit=disabled \
 		-Dsystemd=disabled \
 		-Dpassim=disabled \
 		-Dtests=false \
