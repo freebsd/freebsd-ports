@@ -1,5 +1,5 @@
 PORTNAME=	qmmp-plugin-pack
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/${PORTNAME}/${PORTVERSION:R}/ \
 	SF/qmmp-dev/${PORTNAME}/${PORTVERSION:R}/
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libqmmpui.so:multimedia/qmmp-qt6
-BUILD_DEPENDS=	qmmp-qt6>=2.2:multimedia/qmmp-qt6
+BUILD_DEPENDS=	qmmp-qt6>=2.3:multimedia/qmmp-qt6
 
 CONFLICTS=	${PORTNAME}-qt5
 PORTSCOUT=	limit:^1\..*
@@ -31,6 +31,9 @@ OPTIONS_DEFINE_i386=	FFAPASM GOOMASM
 OPTIONS_DEFAULT_i386=	FFAPASM GOOMASM
 OPTIONS_DEFINE_amd64=	FFAPASM GOOMASM
 OPTIONS_DEFAULT_amd64=	FFAPASM GOOMASM
+
+CMAKE_OFF=	USE_MMS \
+		USE_MPLAYER
 
 FFAP_DESC=		Support APE sound file
 FFAP_LIB_DEPENDS=	libtag.so:audio/taglib
