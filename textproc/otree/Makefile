@@ -1,7 +1,6 @@
 PORTNAME=	otree
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
-PORTREVISION=	1
+DISTVERSION=	0.6.2
 CATEGORIES=	textproc
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -17,27 +16,27 @@ GH_ACCOUNT=	fioncat
 
 CARGO_CRATES=	aho-corasick-1.1.3 \
 		allocator-api2-0.2.21 \
-		anstream-0.6.20 \
-		anstyle-1.0.11 \
+		anstream-0.6.21 \
+		anstyle-1.0.13 \
 		anstyle-parse-0.2.7 \
 		anstyle-query-1.1.4 \
 		anstyle-wincon-3.0.10 \
-		anyhow-1.0.99 \
-		autocfg-1.5.0 \
+		anyhow-1.0.100 \
 		bitflags-1.3.2 \
-		bitflags-2.9.3 \
-		camino-1.1.11 \
+		bitflags-2.9.4 \
+		camino-1.2.1 \
 		cargo-platform-0.1.9 \
 		cargo_metadata-0.19.2 \
 		cassowary-0.3.0 \
 		castaway-0.2.4 \
-		cfg-if-1.0.3 \
-		clap-4.5.45 \
-		clap_builder-4.5.44 \
-		clap_derive-4.5.45 \
-		clap_lex-0.7.5 \
+		cfg-if-1.0.4 \
+		clap-4.5.49 \
+		clap_builder-4.5.49 \
+		clap_derive-4.5.49 \
+		clap_lex-0.7.6 \
 		colorchoice-1.0.4 \
 		compact_str-0.8.1 \
+		console-0.16.1 \
 		convert_case-0.7.1 \
 		crossterm-0.28.1 \
 		crossterm-0.29.0 \
@@ -45,7 +44,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		darling-0.20.11 \
 		darling_core-0.20.11 \
 		darling_macro-0.20.11 \
-		deranged-0.4.0 \
+		deranged-0.5.4 \
 		derive_builder-0.20.2 \
 		derive_builder_core-0.20.2 \
 		derive_builder_macro-0.20.2 \
@@ -55,21 +54,23 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		dirs-sys-0.5.0 \
 		document-features-0.2.11 \
 		either-1.15.0 \
+		encode_unicode-1.0.0 \
 		equivalent-1.0.2 \
-		errno-0.3.13 \
+		errno-0.3.14 \
 		filedescriptor-0.8.3 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		fsevent-sys-4.1.0 \
 		getrandom-0.2.16 \
 		hashbrown-0.15.5 \
-		hcl-edit-0.9.1 \
-		hcl-primitives-0.1.9 \
-		hcl-rs-0.19.2 \
+		hashbrown-0.16.0 \
+		hcl-edit-0.9.3 \
+		hcl-primitives-0.1.11 \
+		hcl-rs-0.19.4 \
 		heck-0.5.0 \
 		humansize-2.1.3 \
 		ident_case-1.0.1 \
-		indexmap-2.11.0 \
+		indexmap-2.11.4 \
 		indoc-2.0.6 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
@@ -80,57 +81,59 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
 		kstring-2.0.2 \
-		libc-0.2.175 \
+		libc-0.2.177 \
 		libm-0.2.15 \
-		libredox-0.1.9 \
+		libredox-0.1.10 \
 		libyml-0.0.5 \
 		linux-raw-sys-0.4.15 \
-		linux-raw-sys-0.9.4 \
+		linux-raw-sys-0.11.0 \
 		litrs-0.4.2 \
-		lock_api-0.4.13 \
-		log-0.4.27 \
+		lock_api-0.4.14 \
+		log-0.4.28 \
 		lru-0.12.5 \
-		memchr-2.7.5 \
+		memchr-2.7.6 \
 		mio-1.0.4 \
 		notify-8.2.0 \
 		notify-types-2.0.0 \
 		ntapi-0.4.1 \
 		num-conv-0.1.0 \
 		num_threads-0.1.7 \
-		objc2-core-foundation-0.3.1 \
+		objc2-core-foundation-0.3.2 \
+		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.1 \
 		option-ext-0.2.0 \
-		parking_lot-0.12.4 \
-		parking_lot_core-0.9.11 \
+		parking_lot-0.12.5 \
+		parking_lot_core-0.9.12 \
 		paste-1.0.15 \
 		powerfmt-0.2.0 \
 		pratt-0.4.0 \
 		proc-macro2-1.0.101 \
 		quick-xml-0.38.3 \
-		quote-1.0.40 \
+		quote-1.0.41 \
 		ratatui-0.29.0 \
-		redox_syscall-0.5.17 \
+		redox_syscall-0.5.18 \
 		redox_users-0.5.2 \
-		regex-1.11.2 \
-		regex-automata-0.4.10 \
-		regex-syntax-0.8.6 \
+		regex-1.12.2 \
+		regex-automata-0.4.13 \
+		regex-syntax-0.8.8 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
-		rustix-1.0.8 \
+		rustix-1.1.2 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		semver-1.0.26 \
-		serde-1.0.219 \
-		serde_derive-1.0.219 \
-		serde_json-1.0.143 \
-		serde_spanned-1.0.0 \
+		semver-1.0.27 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.145 \
+		serde_spanned-1.0.3 \
 		serde_yml-0.0.12 \
 		signal-hook-0.3.18 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.6 \
-		simple-error-0.3.1 \
+		simple-error-0.3.2 \
 		smallvec-1.15.1 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
@@ -139,25 +142,25 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		syn-2.0.106 \
 		sysinfo-0.34.2 \
 		thiserror-1.0.69 \
-		thiserror-2.0.16 \
+		thiserror-2.0.17 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.16 \
-		time-0.3.41 \
-		time-core-0.1.4 \
-		time-macros-0.2.22 \
-		toml-0.9.5 \
-		toml_datetime-0.7.0 \
-		toml_parser-1.0.2 \
-		toml_writer-1.0.2 \
+		thiserror-impl-2.0.17 \
+		time-0.3.44 \
+		time-core-0.1.6 \
+		time-macros-0.2.24 \
+		toml-0.9.8 \
+		toml_datetime-0.7.3 \
+		toml_parser-1.0.4 \
+		toml_writer-1.0.4 \
 		tui-textarea-0.7.0 \
 		tui-tree-widget-0.23.1 \
-		unicode-ident-1.0.18 \
+		unicode-ident-1.0.19 \
 		unicode-segmentation-1.12.0 \
 		unicode-truncate-1.1.0 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
 		utf8parse-0.2.2 \
-		vecmap-rs-0.2.3 \
+		vecmap-rs-0.2.4 \
 		vergen-9.0.6 \
 		vergen-lib-0.1.6 \
 		version_check-0.9.5 \
@@ -165,34 +168,35 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.10 \
+		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.57.0 \
 		windows-core-0.57.0 \
 		windows-implement-0.57.0 \
 		windows-interface-0.57.0 \
-		windows-link-0.1.3 \
+		windows-link-0.2.1 \
 		windows-result-0.1.2 \
 		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
+		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.3 \
+		windows-targets-0.53.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_gnullvm-0.53.0 \
+		windows_aarch64_gnullvm-0.53.1 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_aarch64_msvc-0.53.0 \
+		windows_aarch64_msvc-0.53.1 \
 		windows_i686_gnu-0.52.6 \
-		windows_i686_gnu-0.53.0 \
+		windows_i686_gnu-0.53.1 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_gnullvm-0.53.0 \
+		windows_i686_gnullvm-0.53.1 \
 		windows_i686_msvc-0.52.6 \
-		windows_i686_msvc-0.53.0 \
+		windows_i686_msvc-0.53.1 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnu-0.53.0 \
+		windows_x86_64_gnu-0.53.1 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_gnullvm-0.53.0 \
+		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.52.6 \
-		windows_x86_64_msvc-0.53.0 \
+		windows_x86_64_msvc-0.53.1 \
 		winnow-0.7.13
 
 PLIST_FILES=	bin/otree
