@@ -1,6 +1,6 @@
 PORTNAME=	graphviz
-PORTVERSION=	12.2.1
-PORTREVISION=	2
+PORTVERSION=	14.0.1
+PORTREVISION=	0
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/${PORTVERSION}/
 
@@ -50,6 +50,7 @@ FIX_TCL_SCRIPT=	tclpkg/gdtclft/demo/entities.tcl \
 		tclpkg/tcldot/demo/gcat.tcl
 FIX_TK_SCRIPT=	tclpkg/tcldot/demo/doted.tcl \
 		tclpkg/tclpathplan/demo/pathplan.tcl
+PLIST_SUB=	SH_VERSION_SHORT="8" SH_VERSION_FULL="8.0.1"
 
 OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS ANN GTS \
 		PANGOCAIRO POPPLER GDK GHOSTSCRIPT DEVIL \
@@ -69,7 +70,7 @@ GDK_DESC=	gdk plugin support (requires PANGOCAIRO)
 GHOSTSCRIPT_DESC=ghostscript plugin (requires PANGOCAIRO)
 DEVIL_DESC=	devil plugin
 SMYRNA_DESC=	SMYRNA graph viewer (GTK2)
-GVEDIT_DESC=	GVEDIT graph viewer (Qt6)
+GVEDIT_DESC=	GVEDIT graph viewer (QT6)
 PERL_DESC=	Perl bindings (swig)
 PHP_DESC=	PHP bindings (swig)
 PYTHON_DESC=	Python bindings (swig)
