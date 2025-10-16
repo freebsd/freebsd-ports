@@ -240,6 +240,7 @@
     SUBDIR += psgml
     SUBDIR += puff
     SUBDIR += py-babi
+    SUBDIR += py-editor
     SUBDIR += py-editorconfig
     SUBDIR += py-pynvim
     SUBDIR += py-vim-bridge
