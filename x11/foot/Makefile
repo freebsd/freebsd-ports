@@ -1,5 +1,5 @@
 PORTNAME=	foot
-DISTVERSION=	1.24.0
+DISTVERSION=	1.25.0
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
