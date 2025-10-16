@@ -1,8 +1,7 @@
 # CAVEAT cross-compilation (ex. CPUTYPE=znver3) fails, upstream needs to fix this: https://github.com/DISTRHO/Cardinal/issues/646
 
 PORTNAME=	cardinal
-DISTVERSION=	24.09
-PORTREVISION=	1
+DISTVERSION=	25.06
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/DISTRHO/Cardinal/releases/download/${DISTVERSION}/
 
