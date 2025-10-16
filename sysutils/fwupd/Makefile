@@ -1,6 +1,6 @@
 PORTNAME=	fwupd
 DISTVERSION=	2.0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -35,6 +35,7 @@ LIB_DEPENDS=	libcbor.so:devel/libcbor \
 		libprotobuf-c.so:devel/protobuf-c \
 		libxmlb.so:textproc/libxmlb
 RUN_DEPENDS=	blkid:filesystems/libblkid \
+		dbus-daemon:devel/dbus \
 		flashrom>0:sysutils/flashrom \
 		${LOCALBASE}/libdata/pkgconfig/fwupd-efi.pc:sysutils/fwupd-efi \
 		valgrind>0:devel/valgrind
