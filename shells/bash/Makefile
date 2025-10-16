@@ -1,7 +1,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		3
 PORTVERSION=		5.3.${PATCHLEVEL:S/^0//g}
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		shells
 MASTER_SITES=		GNU
 DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -83,6 +83,7 @@ post-patch:
 	${TOUCH} ${WRKSRC}/parse.y
 	${RM} ${WRKSRC}/y.tab.c
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		-e "s|\(/etc/profile\)|${PREFIX}\1|g" \
 		${WRKSRC}/doc/bash.1
 .if ${PORT_OPTIONS:MSYSLOG}
 	@${REINPLACE_CMD} \
