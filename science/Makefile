@@ -315,6 +315,7 @@
     SUBDIR += py-cirq-pasqal
     SUBDIR += py-cirq-web
     SUBDIR += py-coards
+    SUBDIR += py-corner
     SUBDIR += py-dftbplus
     SUBDIR += py-dftd4
     SUBDIR += py-dimod
