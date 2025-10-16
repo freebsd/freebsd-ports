@@ -1,6 +1,6 @@
 PORTNAME=	keepassxc
 DISTVERSION=	2.7.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libargon2.so:security/libargon2 \
 USES=		cmake compiler:c++17-lang desktop-file-utils minizip \
 		pkgconfig qt:5 readline shared-mime-info tar:xz xorg
 
-USE_QT=		concurrent core dbus gui network svg widgets x11extras \
+USE_QT=		concurrent core dbus gui network svg wayland widgets x11extras \
 		buildtools:build linguisttools:build qmake:build testlib:build
 USE_XORG=	x11
 
