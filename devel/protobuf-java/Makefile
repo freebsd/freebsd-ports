@@ -1,5 +1,5 @@
 PORTNAME=	protobuf-java
-DISTVERSION=	4.32.1
+DISTVERSION=	4.33.0
 CATEGORIES=	devel java
 MASTER_SITES=	https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/${DISTVERSION}/
 EXTRACT_SUFX=	.jar
