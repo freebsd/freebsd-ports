@@ -1,7 +1,6 @@
 PORTNAME=	trackballs
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -11,10 +10,13 @@ WWW=		https://trackballs.github.io/
 LICENSE=	GPLv2+ ETHYMONICS
 LICENSE_COMB=	multi
 
+# XXX Trackballs crashes if lang/guile2 is built with THREADS support
 USES=		cmake desktop-file-utils gettext-runtime gl gnome \
 		guile:2.2,conflicts pkgconfig sdl
 USE_GL=		gl
 USE_SDL=	image2 mixer2 sdl2 ttf2
+
+LIB_DEPENDS=	libgc.so:devel/boehm-gc
 
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_FILE_ETHYMONICS=	${WRKSRC}/share/music/README
