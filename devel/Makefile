@@ -5936,6 +5936,7 @@
     SUBDIR += py-ruamel.yaml.clib
     SUBDIR += py-rubymarshal
     SUBDIR += py-ruff
+    SUBDIR += py-runs
     SUBDIR += py-rush
     SUBDIR += py-rx
     SUBDIR += py-rx1
