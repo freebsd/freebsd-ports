@@ -20,6 +20,7 @@ bin/idevicescreenshot
 bin/idevicesetlocation
 bin/idevicesyslog
 include/libimobiledevice/afc.h
+include/libimobiledevice/bt_packet_logger.h
 include/libimobiledevice/companion_proxy.h
 include/libimobiledevice/debugserver.h
 include/libimobiledevice/diagnostics_relay.h
@@ -49,7 +50,7 @@ include/libimobiledevice/webinspector.h
 lib/libimobiledevice-1.0.a
 lib/libimobiledevice-1.0.so
 lib/libimobiledevice-1.0.so.6
-lib/libimobiledevice-1.0.so.6.0.0
+lib/libimobiledevice-1.0.so.6.1.0
 libdata/pkgconfig/libimobiledevice-1.0.pc
 share/man/man1/afcclient.1.gz
 share/man/man1/idevice_id.1.gz
