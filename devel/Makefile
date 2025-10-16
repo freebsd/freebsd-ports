@@ -6255,6 +6255,7 @@
     SUBDIR += py-xdoctest
     SUBDIR += py-xerox
     SUBDIR += py-xmltodict
+    SUBDIR += py-xmod
     SUBDIR += py-xsdata
     SUBDIR += py-xsdata-attrs
     SUBDIR += py-xsdata-plantuml
