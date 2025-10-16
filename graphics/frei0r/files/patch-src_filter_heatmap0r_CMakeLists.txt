@@ -1,0 +1,10 @@
+Don't forget to install it!
+
+--- src/filter/heatmap0r/CMakeLists.txt.orig	2025-10-07 14:15:56 UTC
++++ src/filter/heatmap0r/CMakeLists.txt
+@@ -9,3 +9,5 @@ set_target_properties (${TARGET} PROPERTIES PREFIX "")
+ 
+ # No «lib» prefix (name.so instead of libname.so)
+ set_target_properties (${TARGET} PROPERTIES PREFIX "")
++
++install (TARGETS ${TARGET} LIBRARY DESTINATION ${LIBDIR})

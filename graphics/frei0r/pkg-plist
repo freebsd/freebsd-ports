@@ -69,6 +69,7 @@ lib/frei0r-1/glow.so
 lib/frei0r-1/grain_extract.so
 lib/frei0r-1/grain_merge.so
 lib/frei0r-1/hardlight.so
+lib/frei0r-1/heatmap0r.so
 lib/frei0r-1/hue.so
 lib/frei0r-1/hueshift0r.so
 lib/frei0r-1/invert0r.so
