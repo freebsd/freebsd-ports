@@ -1,5 +1,6 @@
 PORTNAME=	fwupd-efi
 DISTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -35,5 +36,10 @@ FW_ARCH=${ARCH}
 
 PLIST_FILES=	libdata/pkgconfig/fwupd-efi.pc \
 		libexec/fwupd/efi/fwupd${FW_ARCH}.efi
+
+post-patch:
+	# use objcopy from binutils because GNU specific flags are used
+	@${REINPLACE_CMD} "s|find_program('objcopy')|find_program('${LOCALBASE}/bin/objcopy')|g" \
+		${WRKSRC}/meson.build
 
 .include <bsd.port.post.mk>
