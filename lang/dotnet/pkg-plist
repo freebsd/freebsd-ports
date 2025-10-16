@@ -12,7 +12,7 @@
 %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.DotNetAppHost.%%FULL_DOTNETVERSION%%.nupkg
 %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.ILAsm.%%FULL_DOTNETVERSION%%.nupkg
 %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.ILDAsm.%%FULL_DOTNETVERSION%%.nupkg
-@comment %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.TestHost.%%FULL_DOTNETVERSION%%-servicing.25419.16.nupkg
+@comment %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.TestHost.%%FULL_DOTNETVERSION%%-servicing.25475.15.nupkg
 %%DATADIR%%/metadata/workloads/%%MANIFESTSUFFIX%%/userlocal
 %%DATADIR%%/packs/Microsoft.AspNetCore.App.Ref/%%FULL_DOTNETVERSION%%/analyzers/dotnet/cs/Microsoft.AspNetCore.App.Analyzers.dll
 %%DATADIR%%/packs/Microsoft.AspNetCore.App.Ref/%%FULL_DOTNETVERSION%%/analyzers/dotnet/cs/Microsoft.AspNetCore.App.CodeFixes.dll
@@ -1636,6 +1636,7 @@
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll.config
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.runtimeconfig.json
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/Newtonsoft.Json.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/System.Collections.Immutable.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/System.CommandLine.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/cs/System.CommandLine.resources.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/BuildHost-netcore/de/System.CommandLine.resources.dll
@@ -1913,6 +1914,7 @@
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll.config
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.runtimeconfig.json
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/Newtonsoft.Json.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/System.Collections.Immutable.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/System.CommandLine.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/cs/System.CommandLine.resources.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-watch/%%SDKVERSION%%%%SDKSERVICESUFFIX%%/tools/net%%DOTNETVERSION%%/any/BuildHost-netcore/de/System.CommandLine.resources.dll
@@ -2433,6 +2435,8 @@
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/Microsoft.CodeAnalysis.CSharp.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/Microsoft.CodeAnalysis.VisualBasic.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/Microsoft.CodeAnalysis.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/System.Collections.Immutable.dll
+%%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/System.Reflection.Metadata.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/VBCSCompiler.deps.json
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/VBCSCompiler.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/Roslyn/bincore/VBCSCompiler.runtimeconfig.json
@@ -4568,5 +4572,5 @@
 %%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.common.itemtemplates.%%SDKVERSION%%.nupkg
 %%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.common.projecttemplates.%%DOTNETVERSION%%.%%SDKVERSION%%.nupkg
 %%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.test.projecttemplates.%%DOTNETVERSION%%.1.1.0-rtm.25262.1.nupkg
-%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.web.itemtemplates.%%FULL_DOTNETVERSION%%.0.9.nupkg
-%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.web.projecttemplates.%%FULL_DOTNETVERSION%%.0.9.nupkg
+%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.web.itemtemplates.%%DOTNETVERSION%%.9.0.10.nupkg
+%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.web.projecttemplates.%%DOTNETVERSION%%.9.0.10.nupkg
