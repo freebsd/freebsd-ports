@@ -104,16 +104,22 @@ _OS_LABEL4VERS=		[${OPSYS}${_GNAT_ARCH:S/amd//:S/x86_//:S/aarch/\/ARM/:S/i386/32
 _PHASE_FILE=		${WRKSRC}/gcc/DEV-PHASE
 _PKG_PREFIX=		${PREFIX}/${PORTNAME}
 _PLATFORM=		${OPSYS:tl}${OSREL}
-_PREV_ASSET_FILE=	gnat-${_GNAT_ARCH}-${OPSYS:tl}.${_PREV_ASSET_OSREL}-${_PREV_ASSET_VER}${_PREV_ASSET_REV}
-_PREV_ASSET_GCC=	${PREV_ASSET_VER:R:R}
-_PREV_ASSET_OSREL?=	${OSREL:R}
-_PREV_ASSET_VER?=	12.2.0	# To be changed to ${DISTVERSION} when 13 assets exist
-_PREV_ASSET_REV?=	_6
 _REV_FILE=		${WRKSRC}/gcc/REVISION
 _TARGLIB=		${_PKG_PREFIX}/lib ${_PKG_PREFIX}/lib/gcc${_GCC_VER}
 _TOOLCHAIN_PATHS=	/sbin:/bin:/usr/sbin:/usr/bin:${_GNAT12_PATH}:${PREFIX}/bin:${LOCALBASE}/bin
 
 .include <bsd.port.options.mk>
+
+_PREV_ASSET_GCC=	${PREV_ASSET_VER:R:R}
+_PREV_ASSET_OSREL=	${OSREL:R}
+.if ${_PREV_ASSET_OSREL} == 16
+_PREV_ASSET_VER=	12.3.0
+_PREV_ASSET_REV=	_1
+.else
+_PREV_ASSET_VER=	12.2.0	# To be changed to ${DISTVERSION} when 13 assets exist
+_PREV_ASSET_REV=	_6
+.endif
+_PREV_ASSET_FILE=	gnat-${_GNAT_ARCH}-${OPSYS:tl}.${_PREV_ASSET_OSREL}-${_PREV_ASSET_VER}${_PREV_ASSET_REV}
 
 .if ${ARCH} == i386 || ${ARCH} == aarch64
 LIB_DIR_32=	""
@@ -129,7 +135,7 @@ PLIST_SUB+=	32BITS=""
 .  endif
 .endif
 .if ${ARCH} == aarch64
-EXTRACT_CMD=    ${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 PLIST_SUB+=	ARM="" \
 		NOARM="@comment "
 .else
