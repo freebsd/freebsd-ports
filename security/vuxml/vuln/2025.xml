@@ -1,3 +1,33 @@
+  <vuln vid="511f5aac-ab46-11f0-9446-f02f7497ecda">
+    <topic>minio -- Privilege Escalation via Session Policy Bypass in Service Accounts and STS</topic>
+    <affects>
+      <package>
+	<name>minio</name>
+	<range><lt>RELEASE.2025-10-15T17-29-55Z</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>mino reports:</p>
+    <blockquote cite="https://github.com/minio/minio/security/advisories/GHSA-jjjj-jwhf-8rgr">
+      <p>A privilege escalation vulnerability allows service accounts and STS
+      (Security Token Service) accounts with restricted session policies to
+      bypass their inline policy restrictions when performing "own" account
+      operations, specifically when creating new service accounts for the same
+      user.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-62506</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-62506</url>
+    </references>
+    <dates>
+      <discovery>2025-10-17</discovery>
+      <entry>2025-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="50fd6a75-0587-4987-bef2-bb933cd78ea1">
     <topic>zeek -- information leak vulnerability</topic>
     <affects>
