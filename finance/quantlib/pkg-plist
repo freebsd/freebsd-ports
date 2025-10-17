@@ -355,8 +355,10 @@ include/ql/indexes/ibor/bibor.hpp
 include/ql/indexes/ibor/bkbm.hpp
 include/ql/indexes/ibor/cadlibor.hpp
 include/ql/indexes/ibor/cdor.hpp
+include/ql/indexes/ibor/cdi.hpp
 include/ql/indexes/ibor/chflibor.hpp
 include/ql/indexes/ibor/corra.hpp
+include/ql/indexes/ibor/custom.hpp
 include/ql/indexes/ibor/destr.hpp
 include/ql/indexes/ibor/dkklibor.hpp
 include/ql/indexes/ibor/eonia.hpp
@@ -374,6 +376,7 @@ include/ql/indexes/ibor/nzdlibor.hpp
 include/ql/indexes/ibor/nzocr.hpp
 include/ql/indexes/ibor/pribor.hpp
 include/ql/indexes/ibor/robor.hpp
+include/ql/indexes/ibor/saron.hpp
 include/ql/indexes/ibor/seklibor.hpp
 include/ql/indexes/ibor/shibor.hpp
 include/ql/indexes/ibor/sofr.hpp
@@ -382,6 +385,7 @@ include/ql/indexes/ibor/swestr.hpp
 include/ql/indexes/ibor/thbfix.hpp
 include/ql/indexes/ibor/tibor.hpp
 include/ql/indexes/ibor/tona.hpp
+include/ql/indexes/ibor/tonar.hpp
 include/ql/indexes/ibor/trlibor.hpp
 include/ql/indexes/ibor/usdlibor.hpp
 include/ql/indexes/ibor/wibor.hpp
@@ -439,9 +443,7 @@ include/ql/instruments/compoundoption.hpp
 include/ql/instruments/cpicapfloor.hpp
 include/ql/instruments/cpiswap.hpp
 include/ql/instruments/creditdefaultswap.hpp
-include/ql/instruments/dividendbarrieroption.hpp
 include/ql/instruments/dividendschedule.hpp
-include/ql/instruments/dividendvanillaoption.hpp
 include/ql/instruments/doublebarrieroption.hpp
 include/ql/instruments/doublebarriertype.hpp
 include/ql/instruments/equitytotalreturnswap.hpp
@@ -474,6 +476,8 @@ include/ql/instruments/overnightindexedswap.hpp
 include/ql/instruments/overnightindexfuture.hpp
 include/ql/instruments/partialtimebarrieroption.hpp
 include/ql/instruments/payoffs.hpp
+include/ql/instruments/perpetualfutures.hpp
+include/ql/instruments/softbarrieroption.hpp
 include/ql/instruments/quantobarrieroption.hpp
 include/ql/instruments/quantoforwardvanillaoption.hpp
 include/ql/instruments/quantovanillaoption.hpp
@@ -1016,6 +1020,8 @@ include/ql/pricingengine.hpp
 include/ql/pricingengines/all.hpp
 include/ql/pricingengines/americanpayoffatexpiry.hpp
 include/ql/pricingengines/americanpayoffathit.hpp
+include/ql/pricingengines/bacheliercalculator.hpp
+include/ql/pricingengines/blackdeltacalculator.hpp
 include/ql/pricingengines/asian/all.hpp
 include/ql/pricingengines/asian/analytic_cont_geom_av_price.hpp
 include/ql/pricingengines/asian/analytic_discr_geom_av_price.hpp
@@ -1036,6 +1042,7 @@ include/ql/pricingengines/barrier/analyticbinarybarrierengine.hpp
 include/ql/pricingengines/barrier/analyticdoublebarrierbinaryengine.hpp
 include/ql/pricingengines/barrier/analyticdoublebarrierengine.hpp
 include/ql/pricingengines/barrier/analyticpartialtimebarrieroptionengine.hpp
+include/ql/pricingengines/barrier/analyticsoftbarrierengine.hpp
 include/ql/pricingengines/barrier/analytictwoassetbarrierengine.hpp
 include/ql/pricingengines/barrier/binomialbarrierengine.hpp
 include/ql/pricingengines/barrier/discretizedbarrieroption.hpp
@@ -1101,6 +1108,8 @@ include/ql/pricingengines/forward/mcforwardeuropeanhestonengine.hpp
 include/ql/pricingengines/forward/mcforwardvanillaengine.hpp
 include/ql/pricingengines/forward/mcvarianceswapengine.hpp
 include/ql/pricingengines/forward/replicatingvarianceswapengine.hpp
+include/ql/pricingengines/futures/all.hpp
+include/ql/pricingengines/futures/discountingperpetualfuturesengine.hpp
 include/ql/pricingengines/genericmodelengine.hpp
 include/ql/pricingengines/greeks.hpp
 include/ql/pricingengines/inflation/all.hpp
@@ -1206,6 +1215,7 @@ include/ql/quote.hpp
 include/ql/quotes/all.hpp
 include/ql/quotes/compositequote.hpp
 include/ql/quotes/derivedquote.hpp
+include/ql/quotes/deltavolquote.hpp
 include/ql/quotes/eurodollarfuturesquote.hpp
 include/ql/quotes/forwardswapquote.hpp
 include/ql/quotes/forwardvaluequote.hpp
@@ -1329,10 +1339,13 @@ include/ql/termstructures/yield/nonlinearfittingmethods.hpp
 include/ql/termstructures/yield/oisratehelper.hpp
 include/ql/termstructures/yield/overnightindexfutureratehelper.hpp
 include/ql/termstructures/yield/piecewiseforwardspreadedtermstructure.hpp
+include/ql/termstructures/yield/piecewisespreadyieldcurve.hpp
 include/ql/termstructures/yield/piecewiseyieldcurve.hpp
 include/ql/termstructures/yield/piecewisezerospreadedtermstructure.hpp
 include/ql/termstructures/yield/quantotermstructure.hpp
 include/ql/termstructures/yield/ratehelpers.hpp
+include/ql/termstructures/yield/spreadbootstraptraits.hpp
+include/ql/termstructures/yield/spreaddiscountcurve.hpp
 include/ql/termstructures/yield/ultimateforwardtermstructure.hpp
 include/ql/termstructures/yield/zerocurve.hpp
 include/ql/termstructures/yield/zerospreadedtermstructure.hpp
@@ -1424,6 +1437,7 @@ include/ql/utilities/null.hpp
 include/ql/utilities/observablevalue.hpp
 include/ql/utilities/steppingiterator.hpp
 include/ql/utilities/tracing.hpp
+include/ql/utilities/variants.hpp
 include/ql/utilities/vectors.hpp
 include/ql/version.hpp
 include/ql/volatilitymodel.hpp
