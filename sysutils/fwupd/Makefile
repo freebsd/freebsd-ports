@@ -1,6 +1,6 @@
 PORTNAME=	fwupd
 DISTVERSION=	2.0.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -8,8 +8,7 @@ COMMENT=	Update firmware automatically, safely, and reliably
 
 LICENSE=	LGPL21
 
-BROKEN_FreeBSD_13=	requires at least FreeBSD 15
-BROKEN_FreeBSD_14=	requires at least FreeBSD 15
+BROKEN_FreeBSD_13=	requires at least FreeBSD 14
 
 BUILD_DEPENDS=	blkid:filesystems/libblkid \
 		flashrom>0:sysutils/flashrom \
@@ -62,5 +61,13 @@ MESON_ARGS+=	-Dpolkit=disabled \
 		-Dumockdev_tests=disabled \
 		-Dplugin_modem_manager=disabled \
 		-Dpython=${PYTHON_CMD}
+
+.include <bsd.port.options.mk>
+
+# FreeBSD 14.x needs extra libinotify dependency
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
+EXTRA_PATCHES=	${PATCHDIR}/extrapatch14-meson.build
+.endif
 
 .include <bsd.port.mk>

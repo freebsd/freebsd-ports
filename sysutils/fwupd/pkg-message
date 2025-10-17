@@ -4,20 +4,12 @@
 
  Warning: fwupd is highly experimental and DANGEROUS
 
- The fwupd utility is currently highly experimental on FreeBSD
- and may be unstable or unsafe to use.
- Proceed with caution - flashing firmware carries a significant
- risk of rendering your device unusable (“bricking”).
+ PLEASE do not attempt to flash any devices yet!
 
- Only attempt to flash firmware if you are prepared to accept
- this risk.
+ If you want to help testing use those non-destructive commands:
 
- If you successfully flash a device — or encounter a failure —
- please send a detailed report to decke@FreeBSD.org
-
- Include information about your hardware and the firmware you
- attempted to flash. This feedback will help track which devices
- work correctly and which do not.
+   fwupdmgr get-devices
+   fwupdmgr verify [DEVICE-ID|GUID]
 EOM
 }
 ]
