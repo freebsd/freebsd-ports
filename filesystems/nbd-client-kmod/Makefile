@@ -10,6 +10,8 @@ WWW=		https://github.com/ryan-moeller/kernel-nbd-client
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long')
+
 USES=		kmod ssl uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	ryan-moeller
