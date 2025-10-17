@@ -249,6 +249,7 @@
 %%DATADIR%%/Definitions/hebits.yml
 %%DATADIR%%/Definitions/hellashut-api.yml
 %%DATADIR%%/Definitions/hellashut.yml
+%%DATADIR%%/Definitions/hellenic-hd-api.yml
 %%DATADIR%%/Definitions/helltorrents.yml
 %%DATADIR%%/Definitions/hhanclub.yml
 %%DATADIR%%/Definitions/hhd-api.yml
@@ -435,9 +436,9 @@
 %%DATADIR%%/Definitions/seedpool-api.yml
 %%DATADIR%%/Definitions/selezen.yml
 %%DATADIR%%/Definitions/sewerpt.yml
-%%DATADIR%%/Definitions/sextorrent.yml
 %%DATADIR%%/Definitions/sexypics.yml
 %%DATADIR%%/Definitions/sfp.yml
+%%DATADIR%%/Definitions/shakaw.yml
 %%DATADIR%%/Definitions/shanaproject.yml
 %%DATADIR%%/Definitions/shareisland-api.yml
 %%DATADIR%%/Definitions/sharewood-api.yml
