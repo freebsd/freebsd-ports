@@ -1,3 +1,138 @@
+  <vuln vid="7b9a8247-ab7b-11f0-b961-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>142.0.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.2.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>142.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1938220%2C1980730%2C1981280%2C1981283%2C1984505%2C1985067">
+	  <p>Some of these bugs showed evidence of memory corruption
+	  and we presume that with enough effort some of these could
+	  have been exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10537</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-10537</url>
+    </references>
+    <dates>
+      <discovery>2025-09-16</discovery>
+      <entry>2025-10-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4fe6f98e-ab7b-11f0-b961-b42e991fc52e">
+    <topic>Mozilla -- Information disclosure</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>143.0.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.3.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>143.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1981502">
+	  <p>This vulnerability affects Firefox &lt; 143, Firefox ESR &lt; 140.3,
+	Thunderbird &lt; 143, and Thunderbird &lt; 140.3.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10536</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-10536</url>
+    </references>
+    <dates>
+      <discovery>2025-09-16</discovery>
+      <entry>2025-10-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1e8a6581-ab7b-11f0-b961-b42e991fc52e">
+    <topic>Mozilla -- spoofing</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>143.0.0,2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>143.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1665334">
+	  <p>Spoofing issue in the Site Permission component</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10534</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-10534</url>
+    </references>
+    <dates>
+      <discovery>2025-09-16</discovery>
+      <entry>2025-10-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c7383de4-ab7a-11f0-b961-b42e991fc52e">
+    <topic>Mozilla -- integer overflow</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>143.0.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>115.28.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>143.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1980788">
+	  <p>Integer overflow in the SVG component</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10533</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-10533</url>
+    </references>
+    <dates>
+      <discovery>2025-09-16</discovery>
+      <entry>2025-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="511f5aac-ab46-11f0-9446-f02f7497ecda">
     <topic>minio -- Privilege Escalation via Session Policy Bypass in Service Accounts and STS</topic>
     <affects>
