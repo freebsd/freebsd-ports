@@ -130,7 +130,7 @@ bin/offload-arch-devel
 %%LLDB%%bin/lldb-mcp-devel
 %%LLDB%%bin/lldb-server-devel
 %%LLDB%%bin/lldb-tblgen-devel
-bin/yaml2macho-core-devel
+%%LLDB%%bin/yaml2macho-core-devel
 %%MLIR%%bin/mlir-cat-devel
 %%MLIR%%bin/mlir-lsp-server-devel
 %%MLIR%%bin/mlir-minimal-opt-devel
@@ -339,7 +339,7 @@ llvm-devel/bin/sanstats
 %%FLANG%%llvm-devel/bin/tco
 llvm-devel/bin/verify-uselistorder
 %%LLD%%llvm-devel/bin/wasm-ld
-llvm-devel/bin/yaml2macho-core
+%%LLDB%%llvm-devel/bin/yaml2macho-core
 %%CLANG%%llvm-devel/include/clang-c/BuildSystem.h
 %%CLANG%%llvm-devel/include/clang-c/CXCompilationDatabase.h
 %%CLANG%%llvm-devel/include/clang-c/CXDiagnostic.h
