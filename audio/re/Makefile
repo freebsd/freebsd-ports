@@ -1,9 +1,9 @@
 PORTNAME=	re
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.0
+DISTVERSION=	4.2.0
 CATEGORIES=	audio devel
 
-MAINTAINER=	herbert@gojira.at
+MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
 COMMENT=	Library for real-time comms with async IO support
 WWW=		https://github.com/baresip/re
 
