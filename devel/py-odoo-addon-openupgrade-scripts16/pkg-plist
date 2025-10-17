@@ -917,7 +917,7 @@
 %%PYTHON_SITELIBDIR%%/odoo/addons/openupgrade_scripts/static/description/banner.png
 %%PYTHON_SITELIBDIR%%/odoo/addons/openupgrade_scripts/static/description/icon.png
 %%PYTHON_SITELIBDIR%%/odoo/addons/openupgrade_scripts/static/description/index.html
-%%PYTHON_SITELIBDIR%%/odoo_addon_openupgrade_scripts-16.0.1.0.5.9.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/odoo_addon_openupgrade_scripts-16.0.1.0.5.9.dist-info/RECORD
-%%PYTHON_SITELIBDIR%%/odoo_addon_openupgrade_scripts-16.0.1.0.5.9.dist-info/WHEEL
-%%PYTHON_SITELIBDIR%%/odoo_addon_openupgrade_scripts-16.0.1.0.5.9.dist-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/odoo_addon_openupgrade_scripts-16.0.1.0.5.11.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/odoo_addon_openupgrade_scripts-16.0.1.0.5.11.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/odoo_addon_openupgrade_scripts-16.0.1.0.5.11.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/odoo_addon_openupgrade_scripts-16.0.1.0.5.11.dist-info/top_level.txt
