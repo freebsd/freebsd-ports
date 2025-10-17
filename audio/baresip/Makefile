@@ -1,27 +1,39 @@
 PORTNAME=	baresip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.0
+DISTVERSION=	4.2.0
 CATEGORIES=	audio
 
-MAINTAINER=	herbert@gojira.at
+MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
 COMMENT=	Small SIP client
 WWW=		https://github.com/baresip
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	re>=${DISTVERSION:R}:audio/re
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LIB_DEPENDS=	libre.so:audio/re
+
+FLAVORS=			default nox11
+default_CONFLICTS_INSTALL=	barsip-nox11
+nox11_PKGNAMESUFFIX=		-nox11
+nox11_CONFLICTS_INSTALL=	baresip
 
 USES=		cmake pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	baresip
-PORTDOCS=	ChangeLog CONTRIBUTING.md THANKS
+PORTDOCS=	CONTRIBUTING.md ChangeLog THANKS
 
 OPTIONS_DEFINE=		ALSA AV1 AVCODEC AVFILTER AVFORMAT CTRL_DBUS DOCS \
-			EXAMPLES G711 G722 G726 GST GTK3 MQTT OPUS OPUS_MS PLC \
-			PORTAUDIO PULSEAUDIO SDL SNAPSHOT SNDFILE SWSCALE V4L2 \
-			VPX X11
+			EXAMPLES G711 G722 G726 GST GTK3 JACK MQTT OPUS OPUS_MS \
+			PLC PORTAUDIO PULSEAUDIO SDL SNAPSHOT SNDFILE SWSCALE \
+			V4L2 VPX X11
+OPTIONS_DEFAULT=	ALSA AV1 AVCODEC AVFILTER AVFORMAT CTRL_DBUS G711 G722 \
+			G726 GST GTK3 OPUS PLC PORTAUDIO SDL SNAPSHOT SNDFILE \
+			SWSCALE V4L2 VPX X11
+.if ${FLAVOR:U} == nox11
+COMMENT+=		(without X11 and video calls)
+OPTIONS_EXCLUDE=	AV1 AVCODEC AVFILTER AVFORMAT CTRL_DBUS GST GTK3 SDL \
+			SNAPSHOT SWSCALE V4L2 VPX X11
+.endif
 OPTIONS_SUB=		yes
 
 ALSA_DESC=	ALSA audio driver
@@ -34,6 +46,7 @@ G711_DESC=	G.711 audio codec
 G722_DESC=	G.722 audio codec
 G726_DESC=	G.726 audio codec
 GST_DESC=	Gstreamer audio module
+JACK_DESC=	JACK audio module
 MQTT_DESC=	Message Queue Telemetry Transport (MQTT) client
 OPUS_MS_DESC=	Opus Multistream audio codec
 PLC_DESC=	Packet Loss Concealment
@@ -46,10 +59,10 @@ VPX_DESC=	VP8/VP9 video codecs
 X11_DESC=	X11 video output
 
 _MODULES_LIST=	account aubridge auconv aufile auresamp ausine cons contact \
-		ctrl_tcp debug_cmd dtls_srtp echo fakevideo httpd \
-		httpreq ice l16 menu mixausrc mixminus mwi natpmp netroam pcp \
-		presence rtcpsummary selfview serreg srtp stdio stun syslog \
-		turn uuid vidbridge vidinfo vumeter
+		ctrl_tcp debug_cmd dtls_srtp echo fakevideo httpd httpreq ice \
+		l16 menu mixausrc mixminus mwi natpmp netroam pcp presence \
+		rtcpsummary selfview serreg srtp stdio stun syslog turn uuid \
+		vidbridge vidinfo vumeter
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_VARS=		_MODULES_LIST+=alsa
@@ -69,9 +82,13 @@ G722_VARS=		_MODULES_LIST+=g722
 G726_LIB_DEPENDS=	libspandsp.so:comms/spandsp
 G726_VARS=		_MODULES_LIST+=g726
 GST_USES=		gnome gstreamer:1
-GST_VARS=		USE_GNOME+=glib20
+GST_VARS=		_MODULES_LIST+=gst \
+			USE_GNOME+=glib20
 GTK3_USES=		gnome
-GTK3_VARS=		USE_GNOME+=gtk30 _MODULES_LIST+=gtk
+GTK3_VARS=		_MODULES_LIST+=gtk \
+			USE_GNOME+=gtk30
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
+JACK_VARS=		_MODULES_LIST+=jack
 MQTT_LIB_DEPENDS=	libmosquitto.so:net/mosquitto
 MQTT_VARS=		_MODULES_LIST+=mqtt
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
@@ -108,6 +125,10 @@ X11_VARS=		_MODULES_LIST+=x11 \
 CMAKE_ARGS+=	-DMODULES="$(_MODULES_LIST:ts;)" \
 		-DRE_INCLUDE_DIR:STRING="${LOCALBASE}/include/re" \
 		-DREM_INCLUDE_DIR:STRING="${LOCALBASE}/include/rem"
+
+post-patch:
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/cmake/FindGST.cmake
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
