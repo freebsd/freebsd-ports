@@ -12,6 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_FreeBSD_15=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276196
+BROKEN_FreeBSD_16=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276196
 
 LIB_DEPENDS=	libcosta.so:math/costa \
 		libgsl.so:math/gsl \
