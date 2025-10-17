@@ -1414,6 +1414,7 @@
     SUBDIR += py-hexdump
     SUBDIR += py-hieroglyph
     SUBDIR += py-hjson
+    SUBDIR += py-html-text
     SUBDIR += py-html2json
     SUBDIR += py-html2text
     SUBDIR += py-htmlmin2
