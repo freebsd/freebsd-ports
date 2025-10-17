@@ -11,8 +11,6 @@ WWW=		https://purei.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-BROKEN_aarch64=	linker error: uunable to find library -lGLESv2
-
 LIB_DEPENDS=	libicuuc.so:devel/icu
 
 USES=		cmake ssl gl compiler:c++17-lang
@@ -52,6 +50,7 @@ CMAKE_OFF=	BUILD_AOT_CACHE \
 		BUILD_PSFPLAYER \
 		BUILD_TESTS \
 		USE_AOT_CACHE \
+		USE_GLES \
 		ENABLE_AMAZON_S3
 CMAKE_ARGS=	-DGIT_TAG=${GH_TAGNAME_DEFAULT} \
 		-DGIT_DESCRIBE_RESULT=0 \
