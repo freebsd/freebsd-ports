@@ -155,6 +155,10 @@ PLIST_SUB+=	LUASCRIPTS=""
 PLIST_SUB+=	LUASCRIPTS="@comment "
 .endif
 
+.if !exists(/usr/include/omp.h)
+MESON_ARGS+=	-Dopenmp=disabled
+.endif
+
 #post-patch:
 #.for s in 16 22 24 32 48 64 256
 #	@${CP} ${WRKSRC}/desktop/${s}x${s}/gimp.png ${WRKSRC}/desktop/${s}x${s}/gimp3.png
