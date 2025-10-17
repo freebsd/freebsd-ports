@@ -1,10 +1,10 @@
 PORTNAME=	freetds
-DISTVERSION=	1.5.118
+DISTVERSION=	1.5.121
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/current/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-dev.${PORTVERSION}
+DISTNAME=	${PORTNAME}-dev.${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sybase/Microsoft TDS protocol library - nightly snapshot
