@@ -10,6 +10,8 @@ WWW=		https://github.com/kubernetes/kops
 
 LICENSE=	APACHE20
 
+BROKEN_i386=	linking fails: mapping output file failed: cannot allocate memory
+
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 
 USES=		go:modules
