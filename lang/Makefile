@@ -46,6 +46,7 @@
     SUBDIR += dhall
     SUBDIR += dlang-tools
     SUBDIR += dotnet
+    SUBDIR += dotnet-devel
     SUBDIR += dotnet-host
     SUBDIR += dotnet8
     SUBDIR += duktape

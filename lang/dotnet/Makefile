@@ -2,9 +2,9 @@ PORTNAME=	dotnet
 DISTVERSION?=	${DOTNETVERSION}.10
 PORTREVISION?=	0
 CATEGORIES=	lang devel
-MASTER_SITES=	https://github.com/dotnet/dotnet/releases/download/${GH_TAGNAME}/release.json?dummy=/:dotnetmanifest \
+MASTER_SITES=	${NO_RELEASE_JSON:Uhttps\://github.com/dotnet/dotnet/releases/download/${GH_TAGNAME}/release.json?dummy=/\:dotnetmanifest} \
 		LOCAL/arrowd/dotnet/:bootstrap
-DISTFILES=	release.json-${PORTVERSION}:dotnetmanifest \
+DISTFILES=	${NO_RELEASE_JSON:Urelease.json-${PORTVERSION}\:dotnetmanifest} \
 		${BOOTSTRAP_SOURCEBUILT_ARTIFACTS_DISTNAME}${EXTRACT_SUFX}:bootstrap \
 		${BOOTSTRAP_SDK_DISTNAME}${EXTRACT_SUFX}:bootstrap
 DIST_SUBDIR=	dotnet
@@ -34,7 +34,7 @@ USES=		autoreconf:build gssapi:mit llvm:noexport pkgconfig \
 		python:build,3.9+ shebangfix ssl
 
 USE_GITHUB=	yes
-GH_TAGNAME=	v${SDKVERSION}
+GH_TAGNAME?=	v${SDKVERSION}
 
 SHEBANG_FILES+=	src/diagnostics/src/Tools/dotnet-trace/*.sh
 
@@ -50,12 +50,18 @@ BOOTSTRAP_SDK_DISTNAME=				dotnet-sdk-${BOOTSTRAP_SDKVERSION}-freebsd-${DOTNET_A
 DOTNETVERSION?=		9.0
 SDKVERSION?=		${DOTNETVERSION}.111
 SDKVERSIONSUFFIX?=	-servicing.25475.17
-SDKSERVICESUFFIX=	-servicing.25476.1
+SDKSERVICESUFFIX?=	-servicing.25476.1
 MANIFESTSUFFIX=		${DOTNETVERSION}.100
 DOTNET_ARCH=		${ARCH:S|amd64|x64|:C|aarch64|arm64|}
 SDK_DISTNAME?=		dotnet-sdk-${SDKVERSION}-${SDK_RID}
 SDK_RID?=		freebsd.${_OSVERSION_MAJOR}-${DOTNET_ARCH}
 DOTNET_BUILD_SH_EXTRA_FLAGS?=	--source-build
+.ifndef NO_RELEASE_JSON
+DOTNET_BUILD_SH_SOURCELINK_FLAG=	--release-manifest release.json
+.else
+DOTNET_BUILD_SH_SOURCELINK_FLAG=	--source-repository https://github.com/dotnet/dotnet \
+					--source-version ${GH_TAGNAME}
+.endif
 
 ARTIFACTS_SUBDIR?=	/artifacts/assets/Release
 SOURCEBUILT_ARTIFACTS_DISTNAME?=Private.SourceBuilt.Artifacts.${SDKVERSION}${SDKSERVICESUFFIX}.freebsd-${DOTNET_ARCH}
@@ -94,7 +100,9 @@ PLIST_SUB+=	VXSORT="@comment "
 .endif
 
 post-extract:
+.ifndef NO_RELEASE_JSON
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/release.json-${PORTVERSION} ${WRKSRC}/release.json
+.endif
 
 	@${MKDIR} ${WRKDIR}/packages
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
@@ -112,7 +120,7 @@ post-extract:
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${DOTNET_ENV} ./build.sh \
-		--release-manifest release.json \
+		${DOTNET_BUILD_SH_SOURCELINK_FLAG} \
 		--clean-while-building \
 		--with-sdk ${WRKDIR}/bootstrap_sdk \
 		--with-packages ${WRKDIR}/packages \
