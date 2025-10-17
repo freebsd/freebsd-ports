@@ -1472,6 +1472,7 @@
     SUBDIR += py-mdx_wikilink_plus
     SUBDIR += py-meilisearch
     SUBDIR += py-merge3
+    SUBDIR += py-mf2py
     SUBDIR += py-mike
     SUBDIR += py-misaka
     SUBDIR += py-mistletoe
