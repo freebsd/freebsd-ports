@@ -1,7 +1,6 @@
 PORTNAME=	pymatgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.6.14
-PORTREVISION=	1
+DISTVERSION=	2025.10.7
 CATEGORIES=	science python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,8 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bibtexparser>=1.4.0:textproc/py-bibtexparser
 		${PYTHON_PKGNAMEPREFIX}palettable>=3.3.3:misc/py-palettable@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=2:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}plotly>=5.0.0:graphics/py-plotly@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pybtex>=0.24.0:textproc/py-pybtex@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.32:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.30:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.17.0:devel/py-ruamel.yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.13.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spglib>=2.5:science/py-spglib@${PY_FLAVOR} \
@@ -57,7 +55,6 @@ TEST_WRKSRC=	${WRKSRC}/tests
 
 post-install: # strip binaries
 	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME} && ${STRIP_CMD} \
-		optimization/linear_assignment*.so \
 		optimization/neighbors*.so \
 		util/coord_cython*.so
 
