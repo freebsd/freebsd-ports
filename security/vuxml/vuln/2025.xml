@@ -1,3 +1,30 @@
+  <vuln vid="f3550d26-ab7d-11f0-b961-b42e991fc52e">
+    <topic>Firefox -- Sandbox escape</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>143.0.3,2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1987246">
+	  <p>Sandbox excape due to integer overflow in the Graphics:
+	    Canvas2D component</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11152</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-11152</url>
+    </references>
+    <dates>
+      <discovery>2025-09-30</discovery>
+      <entry>2025-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7b9a8247-ab7b-11f0-b961-b42e991fc52e">
     <topic>Mozilla -- Memory safety bugs</topic>
     <affects>
