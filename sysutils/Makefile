@@ -475,6 +475,7 @@
     SUBDIR += gobi_loader
     SUBDIR += gomi
     SUBDIR += gomplate
+    SUBDIR += gonzo
     SUBDIR += google-compute-engine-oslogin
     SUBDIR += gotop
     SUBDIR += govmomi
