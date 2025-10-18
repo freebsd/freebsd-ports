@@ -16,6 +16,8 @@ RUN_DEPENDS+=	rubygem-ruby-augeas>0:textproc/rubygem-ruby-augeas \
 		rubygem-ffi>=1.0:devel/rubygem-ffi \
 		rubygem-rexml>0:textproc/rubygem-rexml \
 		rubygem-sys-filesystem>0:sysutils/rubygem-sys-filesystem
+# Ruby 3.4 support
+RUN_DEPENDS+=	rubygem-base64>0:converters/rubygem-base64
 
 USES=		cpe gem
 CPE_VENDOR=	puppet
