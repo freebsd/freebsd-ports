@@ -6,6 +6,7 @@
 %%DATADIR%%/Cacheresource/Custom.php
 %%DATADIR%%/Cacheresource/File.php
 %%DATADIR%%/Cacheresource/KeyValueStore.php
+%%DATADIR%%/Compile/AttributeCompiler.php
 %%DATADIR%%/Compile/Base.php
 %%DATADIR%%/Compile/BlockCompiler.php
 %%DATADIR%%/Compile/CompilerInterface.php
@@ -106,6 +107,8 @@
 %%DATADIR%%/Filter/FilterInterface.php
 %%DATADIR%%/Filter/FilterPluginWrapper.php
 %%DATADIR%%/Filter/Output/TrimWhitespace.php
+%%DATADIR%%/FunctionHandler/AttributeBase.php
+%%DATADIR%%/FunctionHandler/AttributeFunctionHandlerInterface.php
 %%DATADIR%%/FunctionHandler/BCPluginWrapper.php
 %%DATADIR%%/FunctionHandler/Base.php
 %%DATADIR%%/FunctionHandler/Count.php
