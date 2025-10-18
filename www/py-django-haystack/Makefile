@@ -8,6 +8,7 @@ DISTNAME=	django_haystack-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pluggable search for Django
 WWW=		https://haystacksearch.org/ \
+		https://django-haystack.readthedocs.io/en/master/ \
 		https://github.com/django-haystack/django-haystack
 
 LICENSE=	BSD3CLAUSE
