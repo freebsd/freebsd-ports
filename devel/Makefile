@@ -7235,7 +7235,6 @@
     SUBDIR += rubygem-cucumber-cucumber-expressions
     SUBDIR += rubygem-cucumber-cucumber-expressions17
     SUBDIR += rubygem-cucumber-messages
-    SUBDIR += rubygem-cucumber-messages25
     SUBDIR += rubygem-cucumber-messages27
     SUBDIR += rubygem-cucumber-messages28
     SUBDIR += rubygem-cucumber-messages29
