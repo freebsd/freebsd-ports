@@ -1,12 +1,12 @@
 PORTNAME=	xrootd
-PORTVERSION=	5.8.4
+PORTVERSION=	5.9.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python binding for XRootD (eXtended ROOT Daemon)
-WWW=		https://xrootd.slac.stanford.edu/ \
+WWW=		https://xrootd.org/ \
 		https://github.com/xrootd/xrootd/tree/master/bindings/python \
 		https://github.com/xrootd/xrootd
 
