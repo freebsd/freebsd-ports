@@ -22,4 +22,9 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	TEXTUAL
+TEXTUAL_DESC=	Textual support
+
+TEXTUAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}textual>=0.68.0:textproc/py-textual@${PY_FLAVOR}
+
 .include <bsd.port.mk>
