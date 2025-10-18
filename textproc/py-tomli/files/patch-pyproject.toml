@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-10-08 21:22:27 UTC
++++ pyproject.toml
+@@ -9,8 +9,7 @@ authors = [
+ authors = [
+     { name = "Taneli Hukkinen", email = "hukkin@users.noreply.github.com" },
+ ]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { file = "LICENSE" }
+ requires-python = ">=3.8"
+ readme = "README.md"
+ classifiers = [
