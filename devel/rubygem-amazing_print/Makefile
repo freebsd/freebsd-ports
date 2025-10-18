@@ -1,5 +1,5 @@
 PORTNAME=	amazing_print
-PORTVERSION=	1.6.0
+PORTVERSION=	2.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,7 +8,6 @@ COMMENT=	Great Ruby debugging companion
 WWW=		https://github.com/amazing-print/amazing_print
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
 
