@@ -1,7 +1,6 @@
 PORTNAME=	sift
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	55
 CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -11,18 +10,10 @@ WWW=		https://github.com/svent/sift
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		go:modules
 
-GO_PKGNAME=	github.com/svent/sift
+GO_MODULE=	github.com/svent/sift
 
 PLIST_FILES=	bin/sift
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	svent
-GH_TUPLE=	golang:crypto:v0.41.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:v0.35.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.34.0:golang_term/vendor/golang.org/x/term \
-		svent:go-flags:4bcbad3:svent_goflags/vendor/github.com/svent/go-flags \
-		svent:go-nbreader:7cef48d:svent_gonbreader/vendor/github.com/svent/go-nbreader
 
 .include <bsd.port.mk>
