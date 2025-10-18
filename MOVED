@@ -4820,3 +4820,4 @@ devel/rubygem-cucumber-messages25|devel/rubygem-cucumber-messages|2025-10-18|Rem
 devel/rubygem-fog-core210|devel/rubygem-fog-core|2025-10-18|Remove obsoleted port. Use devel/rubygem-fog-core instead
 devel/rubygem-fog-core250|devel/rubygem-fog-core|2025-10-18|Remove obsoleted port. Use devel/rubygem-fog-core instead
 devel/rubygem-json27|devel/rubygem-json|2025-10-18|Remove obsoleted port. Use devel/rubygem-json instead
+net/rubygem-fog-aws328|net/rubygem-fog-aws|2025-10-18|Remove obsoleted port. Use net/rubygem-fog-aws instead
