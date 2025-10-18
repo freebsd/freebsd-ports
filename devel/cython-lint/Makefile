@@ -1,5 +1,5 @@
 PORTNAME=	cython-lint
-PORTVERSION=	0.16.7
+PORTVERSION=	0.17.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/MarcoGorelli/cython-lint/releases/download/v${PORTVERSION}/
