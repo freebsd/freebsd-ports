@@ -1840,6 +1840,7 @@
     SUBDIR += rubygem-cucumber-gherkin27
     SUBDIR += rubygem-cucumber-gherkin30
     SUBDIR += rubygem-cucumber-gherkin32
+    SUBDIR += rubygem-cucumber-gherkin34
     SUBDIR += rubygem-cucumber-html-formatter
     SUBDIR += rubygem-dartsass
     SUBDIR += rubygem-diff-lcs
