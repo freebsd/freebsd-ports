@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 USES=		compiler:c11 python
 USE_PYTHON=	allflavors autoplist concurrent pep517
 
-CONFLICTS_INSTALL=	py*-cython py*-cython-devel # bin/cygdb bin/cython bin/cythonize
+CONFLICTS_INSTALL=	py*-cython # bin/cygdb bin/cython bin/cythonize
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Cython -name '*.so' -exec ${STRIP_CMD} {} +
