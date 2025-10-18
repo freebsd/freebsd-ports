@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-08-01 03:47:36 UTC
+--- pyproject.toml.orig	2025-10-01 03:04:18 UTC
 +++ pyproject.toml
 @@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -8,14 +8,14 @@
  
  [project]
  name = "types-psutil"
- version = "7.0.0.20250801"
+ version = "7.0.0.20251001"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
 +license = { text = "Apache-2.0" }
  description = "Typing stubs for psutil"
  readme = { text = """\
  ## Typing stubs for psutil
-@@ -45,5 +44,4 @@ dependencies = []
+@@ -46,5 +45,4 @@ dependencies = []
  "Chat" = "https://gitter.im/python/typing"
  
  [tool.setuptools]
