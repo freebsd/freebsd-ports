@@ -4823,3 +4823,4 @@ devel/rubygem-json27|devel/rubygem-json|2025-10-18|Remove obsoleted port. Use de
 net/rubygem-fog-aws328|net/rubygem-fog-aws|2025-10-18|Remove obsoleted port. Use net/rubygem-fog-aws instead
 textproc/rubygem-cucumber-gherkin27|textproc/rubygem-cucumber-gherkin|2025-10-18|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
 textproc/rubygem-cucumber-gherkin30|textproc/rubygem-cucumber-gherkin|2025-10-18|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
+textproc/rubygem-cucumber-gherkin32|textproc/rubygem-cucumber-gherkin|2025-10-18|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
