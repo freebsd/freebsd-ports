@@ -1,33 +1,32 @@
 PORTNAME=	opentelemetry-cpp
-PORTVERSION=	1.22.0
+PORTVERSION=	1.23.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenTelemetry C++ client
-WWW=		https://github.com/open-telemetry/opentelemetry-cpp
+WWW=		https://opentelemetry.io/ \
+		https://github.com/open-telemetry/opentelemetry-cpp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libgtest.so:devel/googletest
+
+USES=		cpe cmake:testing compiler:c++14-lang
+
+CMAKE_OFF=	BUILD_EXAMPLES \
+		BUILD_TESTING
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		CMAKE_POSITION_INDEPENDENT_CODE
+
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	open-telemetry
-GH_PROJECT=	${PORTNAME}
-
-USES=		cmake compiler:c++14-lang cpe
 
 CPE_VENDOR=	cncf
-
-CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON \
-		-DCMAKE_POSITION_INDEPENDENT_CODE=ON
-CMAKE_OFF=	BUILD_TESTING BUILD_EXAMPLES
-
-LIB_DEPENDS=	libgtest.so:devel/googletest \
-		libcurl.so:ftp/curl
-
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-
-PLIST_SUB=	SHLIBVER=${PORTVERSION}
 
 .include <bsd.port.mk>
