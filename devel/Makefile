@@ -7234,6 +7234,7 @@
     SUBDIR += rubygem-csv
     SUBDIR += rubygem-cucumber
     SUBDIR += rubygem-cucumber-ci-environment
+    SUBDIR += rubygem-cucumber-ci-environment10
     SUBDIR += rubygem-cucumber-core
     SUBDIR += rubygem-cucumber-core13
     SUBDIR += rubygem-cucumber-cucumber-expressions
