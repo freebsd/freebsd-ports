@@ -1,5 +1,5 @@
 PORTNAME=	awkward-cpp
-PORTVERSION=	47
+PORTVERSION=	48
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,12 +13,12 @@ WWW=		https://awkward-array.org/doc/main/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0.10:devel/py-scikit-build-core@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=3:devel/py-pybind11@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0.11:devel/py-scikit-build-core@${PY_FLAVOR} \
 		rapidjson>=0:devel/rapidjson
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.18.0,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		cmake:indirect compiler:c++11-lang localbase python:3.9+
+USES=		cmake:indirect compiler:c++11-lang localbase python
 USE_PYTHON=	autoplist concurrent pep517
 
 post-patch:
