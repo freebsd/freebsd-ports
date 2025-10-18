@@ -1,5 +1,5 @@
 PORTNAME=	google-api-core
-PORTVERSION=	2.25.1
+PORTVERSION=	2.26.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,8 +32,8 @@ ASYNC_REST_DESC=Asynchronous REST support
 GRPCGCP_DESC=	gRPC support for Google Cloud Platform
 
 ASYNC_REST_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=2.35.0<3.0.0:security/py-google-auth@${PY_FLAVOR}
-GRPC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>=1.49.1<2.0.0:devel/py-grpcio@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}grpcio-status>=1.49.1<2.0.0:devel/py-grpcio-status@${PY_FLAVOR}
+GRPC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>=1.75.1<2.0.0:devel/py-grpcio@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}grpcio-status>=1.75.1<2.0.0:devel/py-grpcio-status@${PY_FLAVOR}
 GRPCGCP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio-gcp>=0.2.2<1.0.0:devel/py-grpcio-gcp@${PY_FLAVOR}
 
 .include <bsd.port.mk>
