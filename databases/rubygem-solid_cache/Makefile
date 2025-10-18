@@ -1,5 +1,5 @@
 PORTNAME=	solid_cache
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
