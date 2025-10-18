@@ -1,5 +1,5 @@
 PORTNAME=	numexpr
-PORTVERSION=	2.13.0
+PORTVERSION=	2.13.1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
 		https://github.com/pydata/numexpr/releases/download/v${PORTVERSION}/
