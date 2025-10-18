@@ -5,6 +5,7 @@ share/man/man1/fetchmail.1.gz
 %%NLS%%share/locale/eo/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/es/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/fetchmail.mo
+%%NLS%%share/locale/it/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/fetchmail.mo
