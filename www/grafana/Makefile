@@ -1,7 +1,6 @@
 PORTNAME=	grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.1.0
-PORTREVISION=	4
+DISTVERSION=	12.2.0
 CATEGORIES=	www
 MASTER_SITES=	https://dl.grafana.com/oss/release/ \
 		https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
@@ -9,15 +8,20 @@ DISTFILES=	grafana-${DISTVERSION}.linux-amd64${EXTRACT_SUFX} \
 		go.mod:gomod \
 		go.work:gomod \
 		apps/advisor/go.mod:gomod \
+		apps/alerting/alertenrichment/go.mod:gomod \
 		apps/alerting/notifications/go.mod:gomod \
 		apps/dashboard/go.mod:gomod \
 		apps/folder/go.mod:gomod \
 		apps/iam/go.mod:gomod \
 		apps/investigations/go.mod:gomod \
 		apps/playlist/go.mod:gomod \
+		apps/plugins/go.mod:gomod \
+		apps/preferences/go.mod:gomod \
+		apps/provisioning/go.mod:gomod \
+		apps/secret/go.mod:gomod \
+		apps/shorturl/go.mod:gomod \
 		pkg/aggregator/go.mod:gomod \
 		pkg/apimachinery/go.mod:gomod \
-		pkg/apis/secret/go.mod:gomod \
 		pkg/apiserver/go.mod:gomod \
 		pkg/build/go.mod:gomod \
 		pkg/build/wire/go.mod:gomod \
@@ -44,7 +48,7 @@ USES=		cpe go:modules
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	grafana
-TAG=		ccd7b6c
+TAG=		92f1fba
 
 GO_MOD_DIST=	github
 GO_MODULE=	github.com/grafana/grafana
@@ -66,11 +70,15 @@ SUB_LIST=	GRAFANA_USER=${GRAFANA_USER} \
 # Disable some master port targets
 TARGET_ORDER_OVERRIDE=	-1:go-post-extract
 
-GRAFANA_USER?=	grafana
-GRAFANA_GROUP?=	grafana
+GRAFANA_USER?=	${PORTNAME}
+GRAFANA_GROUP?=	${PORTNAME}
 
+.if ${GRAFANA_USER} == ${PORTNAME}
 USERS=		${GRAFANA_USER}
+.endif
+.if ${GRAFANA_GROUP} == ${PORTNAME}
 GROUPS=		${GRAFANA_GROUP}
+.endif
 
 PLIST_SUB=	${SUB_LIST}
 
@@ -109,7 +117,7 @@ post-install:
 		 ${STAGEDIR}${GRAFANA_PLUGINDIR} \
 		 ${STAGEDIR}${GRAFANA_LOGDIR} \
 		 ${GRAFANA_PROVISIONING:M*:C|^|${STAGEDIR}${GRAFANA_PROVISIONINGDIR}/|}
-	(cd ${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX} \
+	(cd ${WRKDIR}/${PORTNAME}-${DISTVERSION}${DISTVERSIONSUFFIX} \
 		&& ${COPYTREE_SHARE} public ${STAGEDIR}${GRAFANA_HOMEDIR})
 	${INSTALL_DATA} ${WRKSRC}/conf/defaults.ini \
 		${STAGEDIR}${GRAFANA_HOMEDIR}/conf/defaults.ini
