@@ -1,5 +1,5 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.16.1
+PORTVERSION=	3.16.2
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/translate/translate/releases/download/${PORTVERSION}/
@@ -18,9 +18,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FL
 		${RUN_DEPENDS}
 RUN_DEPENDS=	bash:shells/bash \
 		msghack:devel/gettext-msghack \
-		${PYTHON_PKGNAMEPREFIX}cwcwidth>=0.1.10<0.2:devel/py-cwcwidth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=5.2.0<6.1:devel/py-lxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wcwidth>=0.2.8<0.3:devel/py-wcwidth@${PY_FLAVOR}
 
 USES=		gettext python shebangfix
 USE_PYTHON=	autoplist noflavors pep517
@@ -63,7 +63,7 @@ PHP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phply>=1.2.6<1.3:devel/py-phply@${PY_FLA
 PHP_VARS=		MANPAGES+="php2po po2php"
 RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.2.0<3.3:devel/py-pyparsing@${PY_FLAVOR}
 RC_VARS=		MANPAGES+="po2rc rc2po"
-SPELLCHECK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=3.2.2:textproc/py-enchant@${PY_FLAVOR}
+SPELLCHECK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=3.3.0:textproc/py-enchant@${PY_FLAVOR}
 SUBTITLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.14.1<1.16:textproc/py-aeidon@${PY_FLAVOR}
 TMSERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheroot>=10.0.1:www/py-cheroot@${PY_FLAVOR}
 TRADOS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.13.0:www/py-beautifulsoup@${PY_FLAVOR}
