@@ -1,6 +1,6 @@
 PORTNAME=	conduit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.3
+DISTVERSION=	0.9.5
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,6 +45,6 @@ MPICH_CMAKE_ON=		-DENABLE_MPI=ON
 OPENMPI_USES=		mpi:openmpi
 OPENMPI_CMAKE_ON=	-DENABLE_MPI=ON
 
-# 100% tests passed, 0 tests failed out of 3
+# tests as of 0.9.5: 100% tests passed, 0 tests failed out of 3
 
 .include <bsd.port.mk>
