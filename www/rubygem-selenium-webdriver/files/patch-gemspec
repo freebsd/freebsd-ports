@@ -1,0 +1,14 @@
+--- selenium-webdriver.gemspec.orig	2025-10-15 04:52:25 UTC
++++ selenium-webdriver.gemspec
+@@ -22,9 +22,9 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<base64>.freeze, ["~> 0.2".freeze])
+-  s.add_runtime_dependency(%q<json>.freeze, ["<= 2.13.2".freeze])
++  s.add_runtime_dependency(%q<json>.freeze, ["~> 2.15.0".freeze])
+   s.add_runtime_dependency(%q<logger>.freeze, ["~> 1.4".freeze])
+-  s.add_runtime_dependency(%q<prism>.freeze, ["~> 1.0".freeze, "< 1.5".freeze])
++  s.add_runtime_dependency(%q<prism>.freeze, ["~> 1.0".freeze])
+   s.add_runtime_dependency(%q<rexml>.freeze, ["~> 3.2".freeze, ">= 3.2.5".freeze])
+   s.add_runtime_dependency(%q<rubyzip>.freeze, [">= 1.2.2".freeze, "< 4.0".freeze])
+   s.add_runtime_dependency(%q<websocket>.freeze, ["~> 1.0".freeze])
