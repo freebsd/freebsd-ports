@@ -1,6 +1,7 @@
 PORTNAME=	openvsp
 DISTVERSIONPREFIX=	${GH_PROJECT}_
 DISTVERSION=	3.46.0
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -42,7 +43,7 @@ BINARY_ALIAS=	fltk::fluid=fluid
 
 USE_GL=		gl glew glu
 USE_GNOME=	libxml2
-USE_XORG=	ice sm x11 xau xcb xdamage xdmcp xext xfixes xft \
+USE_XORG=	ice sm x11 xau xcb xcursor xdamage xdmcp xext xfixes xft \
 		xinerama xrender xxf86vm
 
 CMAKE_ARGS=	-DVSP_USE_SYSTEM_CMINPACK:BOOLEAN=yes \
@@ -79,6 +80,8 @@ do-install:
 	${RM} -rf ${STAGEDIR}${PREFIX}/${d}
 .endfor
 	${CP} ${BUILD_WRKSRC}/${BUILD_PREFIX}/LICENSE ${STAGEDIR}${DATADIR}
+	${CP} ${BUILD_WRKSRC}/${BUILD_PREFIX}/README.md ${STAGEDIR}${DATADIR}
 	${RM} ${STAGEDIR}${PREFIX}/LICENSE
+	${RM} ${STAGEDIR}${PREFIX}/README.md
 
 .include <bsd.port.mk>

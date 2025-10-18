@@ -1,6 +1,5 @@
 CCE/SD-24L.cce
 CHANGELOG.md
-README.md
 bin/vsp
 bin/vspaero
 bin/vspaero_opt
@@ -46,6 +45,7 @@ help/vsp_help
 %%DATADIR%%/OpenVSPParasiteDragPlotData.m
 %%DATADIR%%/ParasiteDragScriptTest.vspscript
 %%DATADIR%%/PodMan.vsppart
+%%DATADIR%%/README.md
 %%DATADIR%%/Seat.vsppart
 %%DATADIR%%/SeatGroup.vsppart
 %%DATADIR%%/SharkTeeth.tga
