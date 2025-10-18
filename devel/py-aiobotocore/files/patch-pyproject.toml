@@ -1,31 +1,40 @@
---- pyproject.toml.orig	2025-09-05 11:55:29 UTC
+--- pyproject.toml.orig	2025-10-10 17:20:46 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
--requires = ["setuptools>=68.2.0"]
+-requires = ["setuptools>=77.0.0"]
 +requires = ["setuptools>=61"]
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -32,7 +32,7 @@ dependencies = [
+@@ -9,7 +9,7 @@ authors = [
+ authors = [
+     { name = "Nikolay Novik", email = "nickolainovik@gmail.com" },
+ ]
+-license = "Apache-2.0"
++license = { text = "Apache-2.0" }
+ classifiers = [
+     'Development Status :: 4 - Beta',
+     'Intended Audience :: Developers',
+@@ -31,7 +31,7 @@ dependencies = [
  dependencies = [
      "aiohttp >= 3.9.2, < 4.0.0",
      "aioitertools >= 0.5.1, < 1.0.0",
--    "botocore >= 1.40.15, < 1.40.19", # NOTE: When updating, always keep `project.optional-dependencies` aligned
-+    "botocore >= 1.40.15", # NOTE: When updating, always keep `project.optional-dependencies` aligned
+-    "botocore >= 1.40.46, < 1.40.50", # NOTE: When updating, always keep `project.optional-dependencies` aligned
++    "botocore >= 1.40.46", # NOTE: When updating, always keep `project.optional-dependencies` aligned
      "python-dateutil >= 2.1, < 3.0.0",
      "jmespath >= 0.7.1, < 2.0.0",
      "multidict >= 6.0.0, < 7.0.0",
-@@ -41,10 +41,10 @@ awscli = [
+@@ -40,10 +40,10 @@ awscli = [
  
  [project.optional-dependencies]
  awscli = [
--    "awscli >= 1.42.15, < 1.42.19",
-+    "awscli >= 1.42.15",
+-    "awscli >= 1.42.46, < 1.42.50",
++    "awscli >= 1.42.44",
  ]
  boto3 = [
--    "boto3 >= 1.40.15, < 1.40.19",
-+    "boto3 >= 1.40.15",
+-    "boto3 >= 1.40.46, < 1.40.50",
++    "boto3 >= 1.40.46",
  ]
  httpx = [
      "httpx >= 0.25.1, < 0.29"
