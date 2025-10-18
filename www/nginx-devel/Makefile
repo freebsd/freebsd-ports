@@ -8,7 +8,7 @@ MASTER_SITES=	https://nginx.org/download/ \
 PKGNAMESUFFIX?=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	joneum@FreeBSD.org
 COMMENT?=	Robust and small WWW server
 WWW=		https://nginx.com/
 
