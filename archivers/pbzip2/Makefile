@@ -1,11 +1,11 @@
 PORTNAME=	pbzip2
-PORTVERSION=	1.1.13
+DISTVERSION=	1.1.13
 CATEGORIES=	archivers
-MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.1/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpad.net/${PORTNAME}/1.1/${DISTVERSION}/+download/
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Parallel BZIP2
-WWW=		http://compression.ca/pbzip2/
+WWW=		https://launchpad.net/pbzip2/
 
 LICENSE=	BSD4CLAUSE
 
@@ -13,6 +13,12 @@ MAKE_ARGS=	CFLAGS="${CXXFLAGS}" CC="${CXX}"
 
 PLIST_FILES=	bin/pbzip2 bin/pbunzip2 \
 		share/man/man1/pbzip2.1.gz share/man/man1/pbunzip2.1.gz
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500000
+USES+=	gmake
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,PRI[iu]MAX, & ,g' ${WRKSRC}/pbzip2.cpp \
