@@ -1,0 +1,2 @@
+tree-sitter-regex provides Regex grammar for tree-sitter. Note that this grammar
+supports the PCRE2, POSIX, and JavaScript regex syntaxes.

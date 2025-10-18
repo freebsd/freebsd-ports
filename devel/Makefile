@@ -6119,6 +6119,7 @@
     SUBDIR += py-tree-sitter-javascript
     SUBDIR += py-tree-sitter-languages
     SUBDIR += py-tree-sitter-python
+    SUBDIR += py-tree-sitter-regex
     SUBDIR += py-tree-sitter023
     SUBDIR += py-treelib
     SUBDIR += py-trimesh
