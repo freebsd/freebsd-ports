@@ -1,5 +1,5 @@
 PORTNAME=	planet-auth
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}StrEnum>=0:devel/py-strenum@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.10+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
