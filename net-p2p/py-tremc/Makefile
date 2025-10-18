@@ -1,9 +1,9 @@
 PORTNAME=	tremc
-DISTVERSION=	0.9.4
+DISTVERSION=	0.9.5
 CATEGORIES=	net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Console client for the BitTorrent client Transmission
 WWW=		https://github.com/tremc/tremc
 
@@ -12,11 +12,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python shebangfix
 USE_GITHUB=	yes
-NO_ARCH=	yes
-NO_BUILD=	yes
+
 SHEBANG_FILES=	${PORTNAME}
 
-OPTIONS_DEFINE=	ADNS IPY PYPERCLIP
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+OPTIONS_DEFINE=		ADNS IPY PYPERCLIP
 OPTIONS_DEFAULT=	ADNS IPY PYPERCLIP
 
 ADNS_DESC=	Resolve IPs to host names
