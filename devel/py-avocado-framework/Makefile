@@ -1,7 +1,10 @@
 PORTNAME=	avocado-framework
-DISTVERSION=	111.0
+DISTVERSION=	112.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	dcfd5a7.patch:-p1 # https://github.com/avocado-framework/avocado/pull/6171/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Set of tools and libraries to help with automated testing
@@ -17,8 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	avocado
 USE_PYTHON=	autoplist distutils
-
-PYDISTUTILS_INSTALLARGS+=	--etcprefix="${PREFIX}"
 
 NO_ARCH=	yes
 
