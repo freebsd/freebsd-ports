@@ -6194,6 +6194,7 @@
     SUBDIR += py-uuid7
     SUBDIR += py-uv
     SUBDIR += py-uv-build
+    SUBDIR += py-uv-build08
     SUBDIR += py-uv-bump
     SUBDIR += py-uv-dynamic-versioning
     SUBDIR += py-uvloop
