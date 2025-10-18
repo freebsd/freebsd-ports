@@ -4813,3 +4813,4 @@ devel/rubygem-aws-sdk-opsworks||2025-10-18|Remove obsoleted port
 devel/rubygem-aws-sdk-opsworkscm||2025-10-18|Remove obsoleted port
 devel/rubygem-aws-sdk-sms||2025-10-18|Remove obsoleted port
 devel/rubygem-cucumber9|devel/rubygem-cucumber|2025-10-18|Remove obsoleted port. Use devel/rubygem-cucumber instead
+devel/rubygem-cucumber-core13|devel/rubygem-cucumber-core|2025-10-18|Remove obsoleted port. Use devel/rubygem-cucumber-core instead
