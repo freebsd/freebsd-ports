@@ -15930,6 +15930,10 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/marsLevtypeConcept.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/modelNameConcept.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/modelVersionConcept.IFS.def
+%%DATADIR%%/definitions/grib2/localConcepts/ecmf/modelVersionConcept.aifs-compo-ens-crps.def
+%%DATADIR%%/definitions/grib2/localConcepts/ecmf/modelVersionConcept.aifs-compo-ens.def
+%%DATADIR%%/definitions/grib2/localConcepts/ecmf/modelVersionConcept.aifs-compo-single-mse.def
+%%DATADIR%%/definitions/grib2/localConcepts/ecmf/modelVersionConcept.aifs-compo-single.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/modelVersionConcept.aifs-ens-crps.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/modelVersionConcept.aifs-ens-diff.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/modelVersionConcept.aifs-ens.def
@@ -15998,6 +16002,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/localConcepts/era6/name.def
 %%DATADIR%%/definitions/grib2/localConcepts/era6/paramId.def
 %%DATADIR%%/definitions/grib2/localConcepts/era6/shortName.def
+%%DATADIR%%/definitions/grib2/localConcepts/era6/timespanConcept.def
 %%DATADIR%%/definitions/grib2/localConcepts/era6/typeOfLevelConcept.def
 %%DATADIR%%/definitions/grib2/localConcepts/era6/units.def
 %%DATADIR%%/definitions/grib2/localConcepts/eswi/name.def
@@ -16097,12 +16102,14 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/paramtypeConcept.def
 %%DATADIR%%/definitions/grib2/postProcessingConcept.def
 %%DATADIR%%/definitions/grib2/post_meta_data.hook.products_12.def
+%%DATADIR%%/definitions/grib2/post_meta_data.hook.products_13.def
 %%DATADIR%%/definitions/grib2/productDefinitionTemplateConcept.def
 %%DATADIR%%/definitions/grib2/products_0.def
 %%DATADIR%%/definitions/grib2/products_1.def
 %%DATADIR%%/definitions/grib2/products_10.def
 %%DATADIR%%/definitions/grib2/products_11.def
 %%DATADIR%%/definitions/grib2/products_12.def
+%%DATADIR%%/definitions/grib2/products_13.def
 %%DATADIR%%/definitions/grib2/products_2.def
 %%DATADIR%%/definitions/grib2/products_3.def
 %%DATADIR%%/definitions/grib2/products_4.def
@@ -16130,6 +16137,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/shortName.def
 %%DATADIR%%/definitions/grib2/shortName.legacy.def
 %%DATADIR%%/definitions/grib2/shortName.lte33.def
+%%DATADIR%%/definitions/grib2/stattypeConcept.def
 %%DATADIR%%/definitions/grib2/stepUnits.def
 %%DATADIR%%/definitions/grib2/tables/0.0.table
 %%DATADIR%%/definitions/grib2/tables/1.0.table
@@ -19886,7 +19894,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/34/5.6.table
 %%DATADIR%%/definitions/grib2/tables/34/5.7.table
 %%DATADIR%%/definitions/grib2/tables/34/6.0.table
-%%DATADIR%%/definitions/grib2/tables/35/5.40.table
 %%DATADIR%%/definitions/grib2/tables/35/0.0.table
 %%DATADIR%%/definitions/grib2/tables/35/1.0.table
 %%DATADIR%%/definitions/grib2/tables/35/1.1.table
@@ -20064,6 +20071,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/35/5.26.table
 %%DATADIR%%/definitions/grib2/tables/35/5.3.table
 %%DATADIR%%/definitions/grib2/tables/35/5.4.table
+%%DATADIR%%/definitions/grib2/tables/35/5.40.table
 %%DATADIR%%/definitions/grib2/tables/35/5.5.table
 %%DATADIR%%/definitions/grib2/tables/35/5.6.table
 %%DATADIR%%/definitions/grib2/tables/35/5.7.table
@@ -20747,7 +20755,6 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.233.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.238.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.5.table
-%%DATADIR%%/definitions/grib2/tables/local/ecmf/4/1.2.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/obstat.1.0.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/obstat.10.0.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/obstat.11.0.table
@@ -21880,6 +21887,12 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.sfmm.fcstdev.def
 %%DATADIR%%/definitions/mars/grib.smma.em.def
 %%DATADIR%%/definitions/mars/grib.smma.fcmean.def
+%%DATADIR%%/definitions/mars/grib.sttd.an.def
+%%DATADIR%%/definitions/mars/grib.sttd.fc.def
+%%DATADIR%%/definitions/mars/grib.stte.an.def
+%%DATADIR%%/definitions/mars/grib.stte.em.def
+%%DATADIR%%/definitions/mars/grib.stte.es.def
+%%DATADIR%%/definitions/mars/grib.stte.fc.def
 %%DATADIR%%/definitions/mars/grib.supd.an.def
 %%DATADIR%%/definitions/mars/grib.swmm.fcmax.def
 %%DATADIR%%/definitions/mars/grib.swmm.fcmean.def
@@ -21954,6 +21967,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.wmfm.fcmin.def
 %%DATADIR%%/definitions/mars/grib.wmfm.fcstdev.def
 %%DATADIR%%/definitions/mars/mars.quantile.def
+%%DATADIR%%/definitions/mars/mars.wavelength.def
 %%DATADIR%%/definitions/mars/marsTypeConcept.def
 %%DATADIR%%/definitions/mars/model.96.table
 %%DATADIR%%/definitions/mars/stream.table
