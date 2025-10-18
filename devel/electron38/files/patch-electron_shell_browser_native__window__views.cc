@@ -1,4 +1,4 @@
---- electron/shell/browser/native_window_views.cc.orig	2025-09-02 20:56:04 UTC
+--- electron/shell/browser/native_window_views.cc.orig	2025-10-14 04:39:39 UTC
 +++ electron/shell/browser/native_window_views.cc
 @@ -53,7 +53,7 @@
  #include "ui/wm/core/shadow_types.h"
@@ -89,8 +89,8 @@
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // On Linux and Windows the minimum and maximum size should be updated with
    // window size when window is not resizable.
-   if (!resizable_) {
-@@ -1122,7 +1122,7 @@ bool NativeWindowViews::IsClosable() const {
+   if (!CanResize()) {
+@@ -1125,7 +1125,7 @@ bool NativeWindowViews::IsClosable() const {
      return false;
    }
    return !(info.fState & MFS_DISABLED);
@@ -99,7 +99,7 @@
    return true;
  #endif
  }
-@@ -1162,7 +1162,7 @@ void NativeWindowViews::Center() {
+@@ -1165,7 +1165,7 @@ void NativeWindowViews::Center() {
  // for now to avoid breaking API contract, but should consider the long
  // term plan for this aligning with upstream.
  void NativeWindowViews::Center() {
@@ -108,7 +108,7 @@
    auto display =
        display::Screen::GetScreen()->GetDisplayNearestWindow(GetNativeWindow());
    gfx::Rect window_bounds_in_screen = display.work_area();
-@@ -1378,7 +1378,7 @@ void NativeWindowViews::SetMenu(ElectronMenuModel* men
+@@ -1381,7 +1381,7 @@ void NativeWindowViews::SetMenu(ElectronMenuModel* men
  }
  
  void NativeWindowViews::SetMenu(ElectronMenuModel* menu_model) {
@@ -117,7 +117,7 @@
    // Remove global menu bar.
    if (global_menu_bar_ && menu_model == nullptr) {
      global_menu_bar_.reset();
-@@ -1434,7 +1434,7 @@ void NativeWindowViews::SetParentWindow(NativeWindow* 
+@@ -1437,7 +1437,7 @@ void NativeWindowViews::SetParentWindow(NativeWindow* 
  void NativeWindowViews::SetParentWindow(NativeWindow* parent) {
    NativeWindow::SetParentWindow(parent);
  
@@ -126,7 +126,7 @@
    if (x11_util::IsX11()) {
      auto* connection = x11::Connection::Get();
      connection->SetProperty(
-@@ -1480,7 +1480,7 @@ void NativeWindowViews::SetProgressBar(double progress
+@@ -1483,7 +1483,7 @@ void NativeWindowViews::SetProgressBar(double progress
                                         NativeWindow::ProgressState state) {
  #if BUILDFLAG(IS_WIN)
    taskbar_host_.SetProgressBar(GetAcceleratedWidget(), progress, state);
@@ -135,7 +135,7 @@
    if (unity::IsRunning()) {
      unity::SetProgressFraction(progress);
    }
-@@ -1606,7 +1606,7 @@ content::DesktopMediaID NativeWindowViews::GetDesktopM
+@@ -1609,7 +1609,7 @@ content::DesktopMediaID NativeWindowViews::GetDesktopM
  #if BUILDFLAG(IS_WIN)
    window_handle =
        reinterpret_cast<content::DesktopMediaID::Id>(accelerated_widget);
@@ -144,7 +144,7 @@
    window_handle = static_cast<uint32_t>(accelerated_widget);
  #endif
    aura::WindowTreeHost* const host =
-@@ -1704,7 +1704,7 @@ void NativeWindowViews::SetIcon(HICON window_icon, HIC
+@@ -1707,7 +1707,7 @@ void NativeWindowViews::SetIcon(HICON window_icon, HIC
    SendMessage(hwnd, WM_SETICON, ICON_BIG,
                reinterpret_cast<LPARAM>(app_icon_.get()));
  }
@@ -153,7 +153,7 @@
  void NativeWindowViews::SetIcon(const gfx::ImageSkia& icon) {
    auto* tree_host = views::DesktopWindowTreeHostLinux::GetHostForWidget(
        GetAcceleratedWidget());
-@@ -1825,7 +1825,7 @@ bool NativeWindowViews::CanMinimize() const {
+@@ -1828,7 +1828,7 @@ bool NativeWindowViews::CanMinimize() const {
  bool NativeWindowViews::CanMinimize() const {
  #if BUILDFLAG(IS_WIN)
    return minimizable_;
@@ -162,7 +162,7 @@
    return true;
  #endif
  }
-@@ -1867,7 +1867,7 @@ NativeWindowViews::CreateNonClientFrameView(views::Wid
+@@ -1870,7 +1870,7 @@ NativeWindowViews::CreateNonClientFrameView(views::Wid
  #endif
  }
  
@@ -171,7 +171,7 @@
  electron::ClientFrameViewLinux* NativeWindowViews::GetClientFrameViewLinux() {
    // Check to make sure this window's non-client frame view is a
    // ClientFrameViewLinux.  If either has_frame() or has_client_frame()
-@@ -1890,7 +1890,7 @@ void NativeWindowViews::HandleKeyboardEvent(
+@@ -1893,7 +1893,7 @@ void NativeWindowViews::HandleKeyboardEvent(
    if (widget_destroyed_)
      return;
  
@@ -180,7 +180,7 @@
    if (event.windows_key_code == ui::VKEY_BROWSER_BACK)
      NotifyWindowExecuteAppCommand(kBrowserBackward);
    else if (event.windows_key_code == ui::VKEY_BROWSER_FORWARD)
-@@ -1909,7 +1909,7 @@ void NativeWindowViews::OnMouseEvent(ui::MouseEvent* e
+@@ -1912,7 +1912,7 @@ void NativeWindowViews::OnMouseEvent(ui::MouseEvent* e
    // Alt+Click should not toggle menu bar.
    root_view_.ResetAltState();
  
