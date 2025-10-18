@@ -1,0 +1,2 @@
+Cron-converter provides a Cron string parser (from string/lists to string/lists)
+and iteration for the datetime object with a cron like format.
