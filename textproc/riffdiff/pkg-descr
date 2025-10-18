@@ -3,5 +3,5 @@ changed.
 
 Much like 'git', riff sends its output to a pager, trying these in order:
 1. whatever is specified in the '$PAGER' environment variable
-2. 'moar' because it is nice
+2. 'moor' because it is nice
 3. 'less' because it is ubiquitous

@@ -1,6 +1,5 @@
 PORTNAME=	riffdiff
-DISTVERSION=	3.4.1
-PORTREVISION=	1
+DISTVERSION=	3.4.2
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +9,7 @@ WWW=		https://github.com/walles/riff
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	moar:textproc/moar
+RUN_DEPENDS=	moor:textproc/moor
 
 USES=		cargo
 
