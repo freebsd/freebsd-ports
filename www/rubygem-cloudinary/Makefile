@@ -1,5 +1,6 @@
 PORTNAME=	cloudinary
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ WWW=		https://cloudinary.com/ \
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-faraday>=2.0.1<3.0.0:www/rubygem-faraday \
-		rubygem-faraday-follow_redirects>=0.3.0<0.4:www/rubygem-faraday-follow_redirects \
+		rubygem-faraday-follow_redirects>=0.3.0<1:www/rubygem-faraday-follow_redirects \
 		rubygem-faraday-multipart>=1.0.4<2:www/rubygem-faraday-multipart \
 		rubygem-ostruct>=0:devel/rubygem-ostruct
 

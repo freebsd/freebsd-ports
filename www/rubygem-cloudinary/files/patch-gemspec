@@ -1,0 +1,11 @@
+--- cloudinary.gemspec.orig	2025-10-15 12:38:36 UTC
++++ cloudinary.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+ 
+   s.add_runtime_dependency(%q<faraday>.freeze, [">= 2.0.1".freeze, "< 3.0.0".freeze])
+   s.add_runtime_dependency(%q<faraday-multipart>.freeze, ["~> 1.0".freeze, ">= 1.0.4".freeze])
+-  s.add_runtime_dependency(%q<faraday-follow_redirects>.freeze, ["~> 0.3.0".freeze])
++  s.add_runtime_dependency(%q<faraday-follow_redirects>.freeze, ["~> 0.3".freeze])
+   s.add_runtime_dependency(%q<ostruct>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<rails>.freeze, [">= 6.1.7".freeze, "< 8.0.0".freeze])
+   s.add_development_dependency(%q<rexml>.freeze, [">= 3.2.5".freeze, "< 4.0.0".freeze])
