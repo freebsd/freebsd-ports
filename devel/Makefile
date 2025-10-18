@@ -6113,6 +6113,7 @@
     SUBDIR += py-transitions
     SUBDIR += py-tree-format
     SUBDIR += py-tree-sitter
+    SUBDIR += py-tree-sitter-bash
     SUBDIR += py-tree-sitter-languages
     SUBDIR += py-tree-sitter-python
     SUBDIR += py-tree-sitter023
