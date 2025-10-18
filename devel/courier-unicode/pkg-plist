@@ -3,8 +3,8 @@ include/courier-unicode-script-tab.h
 include/courier-unicode.h
 lib/libcourier-unicode.a
 lib/libcourier-unicode.so
-lib/libcourier-unicode.so.8
-lib/libcourier-unicode.so.8.0.0
+lib/libcourier-unicode.so.10
+lib/libcourier-unicode.so.10.0.0
 share/man/man3/unicode::bidi.3.gz
 share/man/man3/unicode::bidi_calc.3.gz
 share/man/man3/unicode::bidi_calc_types.3.gz
@@ -33,6 +33,7 @@ share/man/man3/unicode::linebreak_iter.3.gz
 share/man/man3/unicode::linebreakc_callback_base.3.gz
 share/man/man3/unicode::linebreakc_iter.3.gz
 share/man/man3/unicode::tolower.3.gz
+share/man/man3/unicode::totitle.3.gz
 share/man/man3/unicode::toupper.3.gz
 share/man/man3/unicode::ucs_2.3.gz
 share/man/man3/unicode::ucs_4.3.gz
@@ -150,7 +151,8 @@ share/man/man3/unicode_wb_next_cnt.3.gz
 share/man/man3/unicode_wbscan_end.3.gz
 share/man/man3/unicode_wbscan_init.3.gz
 share/man/man3/unicode_wbscan_next.3.gz
+share/man/man3/unicode_wcwidth.3.gz
+share/man/man3/unicode_wcwidth_str.3.gz
 share/man/man3/unicode_word_break.3.gz
 share/man/man7/courier-unicode.7.gz
 share/aclocal/courier-unicode-version.m4
-share/aclocal/courier-unicode.m4
