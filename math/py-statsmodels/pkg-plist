@@ -90,6 +90,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/chi2_fitting.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/contrasts.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/copula.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/count_hurdle.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/deterministics.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/discrete_choice_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/discrete_choice_overview.py
@@ -114,10 +115,12 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/mediation_survival.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/metaanalysis1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/mixed_lm_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/mstl_decomposition.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/ols.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/ordinal_regression.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/pca_fertility_factors.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/plots_boxplots.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/postestimation_poisson.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/predict.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/quantile_regression.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/quasibinomial.py
@@ -146,8 +149,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/statespace_tvpvar_mcmc_cfa.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/statespace_varmax.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/stationarity_detrending_adf_kpss.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/stats_poisson.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/stats_rankcompare.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/stl_decomposition.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/theta-model.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/treatment_effect.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/tsa_arma_0.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/tsa_arma_1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/tsa_dates.py
