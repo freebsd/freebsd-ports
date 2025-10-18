@@ -4811,3 +4811,4 @@ editors/quilter||2025-10-15|Deprecated upstream
 devel/py-types-urllib3|net/py-urllib3|2025-10-18|Remove obsoleted port. The urllib3 package includes type annotations or type stubs since version 2.0.0. Use net/py-urllib3 instead
 devel/rubygem-aws-sdk-opsworks||2025-10-18|Remove obsoleted port
 devel/rubygem-aws-sdk-opsworkscm||2025-10-18|Remove obsoleted port
+devel/rubygem-aws-sdk-sms||2025-10-18|Remove obsoleted port
