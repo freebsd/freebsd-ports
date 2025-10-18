@@ -6,7 +6,8 @@ MASTER_SITES=	https://gstreamer.freedesktop.org/data/src/orc/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library and toolset to operate arrays of data
-WWW=		https://gstreamer.freedesktop.org/projects/orc.html
+WWW=		https://gstreamer.freedesktop.org/projects/orc.html \
+		https://gitlab.freedesktop.org/gstreamer/orc
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
