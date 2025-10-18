@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-10-11 12:52:01 UTC
++++ pyproject.toml
+@@ -13,7 +13,7 @@ authors = [
+   {name = "Uwe Schmitt", email = "uwe.schmitt@id.ethz.ch"}
+ ]
+ 
+-license = "MIT"
++license = {text = "MIT License"}
+ 
+ classifiers = [
+     "Intended Audience :: Developers",
