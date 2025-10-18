@@ -1,5 +1,5 @@
 PORTNAME=	rack-protection
-PORTVERSION=	4.1.1
+PORTVERSION=	4.2.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
