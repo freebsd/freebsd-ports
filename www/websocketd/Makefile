@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
+# https://github.com/joewalnes/websocketd/commit/0aa12c3913f5b86e15c232e4191a6ef1953a354f
 #GO_MODULE=	github.com/joewalnes/websocketd
 
 PLIST_FILES=	bin/websocketd
