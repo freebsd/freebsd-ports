@@ -1,5 +1,5 @@
 PORTNAME=	hiera-eyaml
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
