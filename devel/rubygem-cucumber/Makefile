@@ -1,5 +1,5 @@
 PORTNAME=	cucumber
-PORTVERSION=	10.1.0
+PORTVERSION=	10.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-base64>=0.2<1:converters/rubygem-base64 \
 		rubygem-builder>=3.2<4:devel/rubygem-builder \
-		rubygem-cucumber-ci-environment>=9<11:devel/rubygem-cucumber-ci-environment \
+		rubygem-cucumber-ci-environment10>=9<11:devel/rubygem-cucumber-ci-environment10 \
 		rubygem-cucumber-core>=15<17:devel/rubygem-cucumber-core \
 		rubygem-cucumber-cucumber-expressions>=17<19:devel/rubygem-cucumber-cucumber-expressions \
-		rubygem-cucumber-html-formatter>=20.3<22:textproc/rubygem-cucumber-html-formatter \
+		rubygem-cucumber-html-formatter21>=20.3<22:textproc/rubygem-cucumber-html-formatter21 \
 		rubygem-diff-lcs>=1.5<2:textproc/rubygem-diff-lcs \
 		rubygem-logger>=1.6<2:devel/rubygem-logger \
 		rubygem-mini_mime>=1.1<2:mail/rubygem-mini_mime \
