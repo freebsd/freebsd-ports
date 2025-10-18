@@ -23,6 +23,8 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
 		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas \
 		rubygem-scanf>=1.0:devel/rubygem-scanf \
 		rubygem-semantic_puppet>=1.0:devel/rubygem-semantic_puppet
+# Ruby 3.4 support
+RUN_DEPENDS+=	rubygem-syslog>0:devel/rubygem-syslog
 
 USES=		cpe ruby
 USE_GITHUB=	yes
