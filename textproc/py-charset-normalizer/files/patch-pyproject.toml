@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2025-10-14 03:34:24 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=68,<=81"]
++requires = ["setuptools>=61"]
+ build-backend = "backend"
+ backend-path = ["_mypyc_hook"]
+ 
