@@ -6115,6 +6115,7 @@
     SUBDIR += py-tree-sitter
     SUBDIR += py-tree-sitter-bash
     SUBDIR += py-tree-sitter-css
+    SUBDIR += py-tree-sitter-go
     SUBDIR += py-tree-sitter-languages
     SUBDIR += py-tree-sitter-python
     SUBDIR += py-tree-sitter023
