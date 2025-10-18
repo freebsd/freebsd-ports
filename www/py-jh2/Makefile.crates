@@ -1,24 +1,24 @@
-CARGO_CRATES=	autocfg-1.4.0 \
-		cc-1.2.19 \
-		cfg-if-1.0.0 \
+CARGO_CRATES=	autocfg-1.5.0 \
+		cc-1.2.40 \
+		find-msvc-tools-0.1.3 \
 		heck-0.5.0 \
 		httlib-hpack-0.1.3 \
 		httlib-huffman-0.3.4 \
 		indoc-2.0.6 \
-		libc-0.2.172 \
+		libc-0.2.176 \
 		memoffset-0.9.1 \
 		once_cell-1.21.3 \
-		portable-atomic-1.11.0 \
-		proc-macro2-1.0.95 \
-		pyo3-0.24.1 \
-		pyo3-build-config-0.24.1 \
-		pyo3-ffi-0.24.1 \
-		pyo3-macros-0.24.1 \
-		pyo3-macros-backend-0.24.1 \
-		python3-dll-a-0.2.13 \
-		quote-1.0.40 \
+		portable-atomic-1.11.1 \
+		proc-macro2-1.0.101 \
+		pyo3-0.26.0 \
+		pyo3-build-config-0.26.0 \
+		pyo3-ffi-0.26.0 \
+		pyo3-macros-0.26.0 \
+		pyo3-macros-backend-0.26.0 \
+		python3-dll-a-0.2.14 \
+		quote-1.0.41 \
 		shlex-1.3.0 \
-		syn-2.0.100 \
-		target-lexicon-0.13.2 \
-		unicode-ident-1.0.18 \
+		syn-2.0.106 \
+		target-lexicon-0.13.3 \
+		unicode-ident-1.0.19 \
 		unindent-0.2.4
