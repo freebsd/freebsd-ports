@@ -1,5 +1,5 @@
 PORTNAME=	xdis
-PORTVERSION=	6.1.6
+PORTVERSION=	6.1.7
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/rocky/python-xdis/releases/download/${PORTVERSION}/
@@ -12,7 +12,7 @@ WWW=		https://github.com/rocky/python-xdis
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.2:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR}
