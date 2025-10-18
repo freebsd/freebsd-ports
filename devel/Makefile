@@ -6861,7 +6861,6 @@
     SUBDIR += rubygem-aws-sdk-omics
     SUBDIR += rubygem-aws-sdk-opensearchserverless
     SUBDIR += rubygem-aws-sdk-opensearchservice
-    SUBDIR += rubygem-aws-sdk-opsworks
     SUBDIR += rubygem-aws-sdk-opsworkscm
     SUBDIR += rubygem-aws-sdk-organizations
     SUBDIR += rubygem-aws-sdk-osis
