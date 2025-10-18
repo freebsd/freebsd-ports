@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-compute_v1
-PORTVERSION=	0.132.0
+PORTVERSION=	0.133.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
