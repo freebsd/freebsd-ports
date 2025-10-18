@@ -1,5 +1,5 @@
 PORTNAME=	python-json-logger
-PORTVERSION=	3.3.0
+PORTVERSION=	4.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/nhairs/python-json-logger/releases/download/v${PORTVERSION}/
