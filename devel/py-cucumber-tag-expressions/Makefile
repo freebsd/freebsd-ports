@@ -1,5 +1,5 @@
 PORTNAME=	cucumber-tag-expressions
-PORTVERSION=	6.2.0
+PORTVERSION=	7.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,6 +10,7 @@ COMMENT=	Provide a tag-expression parser and evaluation logic for cucumber/behav
 WWW=		https://github.com/cucumber/tag-expressions
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8:devel/py-setuptools-scm@${PY_FLAVOR} \
