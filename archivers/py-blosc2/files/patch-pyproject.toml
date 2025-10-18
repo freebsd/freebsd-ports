@@ -4,7 +4,7 @@
  requires = [
      "scikit-build-core",
      "cython>=3",
--    "numpy>=2.0.0",
+-    "numpy>=2.1",
 +    "numpy",
  ]
  build-backend = "scikit_build_core.build"
