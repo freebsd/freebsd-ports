@@ -2101,6 +2101,9 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom-auth-path/custom_auth/core/auth_flow/AuthFlowState.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom-auth-path/custom_auth/core/auth_flow/AuthFlowState.mjs
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom-auth-path/custom_auth/core/auth_flow/AuthFlowState.mjs.map
+%%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom-auth-path/custom_auth/core/auth_flow/AuthFlowStateTypes.d.ts.map
+%%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom-auth-path/custom_auth/core/auth_flow/AuthFlowStateTypes.mjs
+%%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom-auth-path/custom_auth/core/auth_flow/AuthFlowStateTypes.mjs.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom-auth-path/custom_auth/core/auth_flow/jit/AuthMethodDetails.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom-auth-path/custom_auth/core/auth_flow/jit/error_type/AuthMethodRegistrationError.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom-auth-path/custom_auth/core/auth_flow/jit/error_type/AuthMethodRegistrationError.mjs
@@ -2567,6 +2570,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom_auth/core/auth_flow/AuthFlowErrorBase.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom_auth/core/auth_flow/AuthFlowResultBase.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom_auth/core/auth_flow/AuthFlowState.d.ts.map
+%%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom_auth/core/auth_flow/AuthFlowStateTypes.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom_auth/core/auth_flow/jit/AuthMethodDetails.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom_auth/core/auth_flow/jit/error_type/AuthMethodRegistrationError.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/custom_auth/core/auth_flow/jit/result/AuthMethodRegistrationChallengeMethodResult.d.ts.map
@@ -2896,6 +2900,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/custom-auth-path/types/custom_auth/core/auth_flow/AuthFlowErrorBase.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/custom-auth-path/types/custom_auth/core/auth_flow/AuthFlowResultBase.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/custom-auth-path/types/custom_auth/core/auth_flow/AuthFlowState.d.ts.map
+%%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/custom-auth-path/types/custom_auth/core/auth_flow/AuthFlowStateTypes.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/custom-auth-path/types/custom_auth/core/auth_flow/jit/AuthMethodDetails.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/custom-auth-path/types/custom_auth/core/auth_flow/jit/error_type/AuthMethodRegistrationError.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/custom-auth-path/types/custom_auth/core/auth_flow/jit/result/AuthMethodRegistrationChallengeMethodResult.d.ts.map
@@ -3136,6 +3141,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/types/custom_auth/core/auth_flow/AuthFlowErrorBase.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/types/custom_auth/core/auth_flow/AuthFlowResultBase.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/types/custom_auth/core/auth_flow/AuthFlowState.d.ts.map
+%%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/types/custom_auth/core/auth_flow/AuthFlowStateTypes.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/types/custom_auth/core/auth_flow/jit/AuthMethodDetails.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/types/custom_auth/core/auth_flow/jit/error_type/AuthMethodRegistrationError.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/types/custom_auth/core/auth_flow/jit/result/AuthMethodRegistrationChallengeMethodResult.d.ts.map
