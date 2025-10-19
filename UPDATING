@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20251019:
+  AFFECTS: users of security/clamav
+  AUTHOR: yasu@FreeBSD.org
+
+  After security/clamav is updated to 1.5.0, some users report that build
+  fails as below.
+
+    /usr/ports/security/clamav/work/clamav-1.5.1/libclamav/others.c:623:23: error: use of undeclared identifier 'CERTSDIR'
+      623 |         cvdcertsdir = CERTSDIR;
+          |                       ^
+    1 warning and 1 error generated.
+    ninja: build stopped: subcommand failed.
+    *** Error code 1
+
+  The error seems to happen with following conditions.
+
+  * Non-base SSL stack is used. That is, in /etc/make.conf there is such
+    setting as 'DEFAULT_VERSIONS+=ssl=openssl'.
+  * Previous version (1.4.3) of clamav package is already installed.
+
+  If you face it, you can work around it by uninstalling current clamav
+  package first.
+
 20251016:
   AFFECTS: users of devel/nexus2-oss
   AUTHOR: michaelo@FreeBSD.org
