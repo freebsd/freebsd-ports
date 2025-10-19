@@ -1,5 +1,6 @@
 PORTNAME=	omniauth_openid_connect
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/m0n9oose/omniauth_openid_connect
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-omniauth>=1.9<3:security/rubygem-omniauth \
+RUN_DEPENDS=	rubygem-omniauth-gl>=1.9<3:security/rubygem-omniauth-gl \
 		rubygem-openid_connect>=2.2<3:net/rubygem-openid_connect
 
 USES=		gem
