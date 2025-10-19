@@ -1,6 +1,5 @@
 PORTNAME=	v_sim
-DISTVERSION=	3.8.0
-PORTREVISION=	14
+DISTVERSION=	3.9.0
 CATEGORIES=	science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -16,7 +15,8 @@ BUILD_DEPENDS=	p5-XML-LibXML>0:textproc/p5-XML-LibXML	\
 		libarchive>0:archivers/libarchive	\
 		xcrysden:science/xcrysden	\
 		bash:shells/bash
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
+LIB_DEPENDS=	libgdkglext-x11-1.0.so:x11-toolkits/gtkglext	\
+		libfontconfig.so:x11-fonts/fontconfig	\
 		libopenbabel.so:science/openbabel	\
 		libfreetype.so:print/freetype2	\
 		libharfbuzz.so:print/harfbuzz	\
