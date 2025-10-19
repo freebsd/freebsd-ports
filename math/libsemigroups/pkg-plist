@@ -4,7 +4,6 @@ include/libsemigroups/action.tpp
 include/libsemigroups/adapters.hpp
 include/libsemigroups/aho-corasick.hpp
 include/libsemigroups/aho-corasick.tpp
-include/libsemigroups/backward-cpp/backward.hpp
 include/libsemigroups/bipart.hpp
 include/libsemigroups/bitset.hpp
 include/libsemigroups/bmat-adapters.hpp
