@@ -1,3 +1,3 @@
-TIMESTAMP = 1592693228
-SHA256 (nbdkit-1.20.4.tar.gz) = 16c7612cf95ea3908bccfe163d71a58dc3bb4d8b018e0bf86833ed9f7858b48b
-SIZE (nbdkit-1.20.4.tar.gz) = 1790677
+TIMESTAMP = 1760898952
+SHA256 (nbdkit-1.44.3.tar.gz) = 7c6fdd41e93652a03b619fb6ee22b06f6962cddfa075ba97640b977ee3cc0cf1
+SIZE (nbdkit-1.44.3.tar.gz) = 2656054
