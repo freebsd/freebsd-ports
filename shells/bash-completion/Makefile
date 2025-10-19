@@ -16,9 +16,6 @@ TEST_DEPENDS=	runtest:misc/dejagnu \
 
 USES=		autoreconf gmake pathfix tar:xz
 
-.if ${ARCH} == riscv64
-EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
-.endif
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 
@@ -42,6 +39,12 @@ BASH_SHARED_RUN_DEPENDS=bash:shells/bash
 BASH_STATIC_RUN_DEPENDS=bash:shells/bash-static
 FREEBSD_RUN_DEPENDS=	bash-completion-freebsd>=0:shells/bash-completion-freebsd
 ZFS_RUN_DEPENDS=	bash-completion-zfs>=0:shells/bash-completion-zfs
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == riscv64
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} \
