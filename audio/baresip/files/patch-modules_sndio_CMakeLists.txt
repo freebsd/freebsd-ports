@@ -1,0 +1,10 @@
+--- modules/sndio/CMakeLists.txt.orig	2025-10-14 10:55:26 UTC
++++ modules/sndio/CMakeLists.txt
+@@ -1,6 +1,6 @@ project(sndio)
+ project(sndio)
+ 
+-if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD|FreeBSD")
+   return()
+ endif()
+ 
