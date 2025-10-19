@@ -1,5 +1,5 @@
 PORTNAME=	purple-discord
-DISTVERSION=	g20250810
+DISTVERSION=	g20251012
 CATEGORIES=	net-im
 
 MAINTAINER=	atanubiswas484@gmail.com
@@ -15,12 +15,11 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libpurple.so:net-im/libpurple \
 		libqrencode.so:graphics/libqrencode
 
-USES=		dos2unix gettext-runtime gettext-tools gmake gnome \
-		magick:build pkgconfig
+USES=		dos2unix gettext gmake gnome magick:build pkgconfig
 DOS2UNIX_FILES=	Makefile
 USE_GITHUB=	yes
 GH_ACCOUNT=	EionRobb
-GH_TAGNAME=	nightly-e39f97e59c446d6af5d2ef2ef259391867fd95e4
+GH_TAGNAME=	nightly-f60596c3e6a22f819ad408232257dca1757a8519
 USE_GNOME=	glib20
 
 post-install:
