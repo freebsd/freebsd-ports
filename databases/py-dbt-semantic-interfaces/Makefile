@@ -11,9 +11,7 @@ WWW=		https://github.com/dbt-labs/dbt-semantic-interfaces
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	hatch:devel/py-hatch@${PY_FLAVOR} \
-		hatchling:devel/py-hatchling@${PY_FLAVOR}
-
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydantic>=1.10:devel/py-pydantic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4<5:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6<7:devel/py-pyyaml@${PY_FLAVOR} \
