@@ -1,47 +1,36 @@
---- configure.orig	2023-10-01 13:05:07 UTC
+--- configure.orig	2025-10-19 17:24:07 UTC
 +++ configure
-@@ -13,8 +13,8 @@ DOCS="usr.bin.badwolf README.md KnowledgeBase.md inter
+@@ -13,9 +13,6 @@ DOCS="usr.bin.badwolf README.md KnowledgeBase.md inter
  EXE_test="fmt_test uri_test bookmarks_test"
  DOCS="usr.bin.badwolf README.md KnowledgeBase.md interface.md"
  
--TRANS="fr pt_BR tr de vi"
--TRANS_MAN="de fr tr vi"
-+#TRANS="fr pt_BR tr de vi"
-+#TRANS_MAN="de fr tr vi"
- 
+-TRANS="fr pt_BR sr tr de vi"
+-TRANS_MAN="de fr sr tr vi"
+-
  lint_targets=""
  
-@@ -373,18 +373,18 @@ done >>config.ninja
- 	echo
- done >>config.ninja
+ min_webkitgtk=2.32.0
+@@ -364,19 +361,6 @@ fi >>config.ninja
+ 	echo 'build po/manpage.pot: xgettext_man badwolf.1 | po/pot_license.ed'
+ fi >>config.ninja
  
 -for trans in ${TRANS}; do
 -	echo "build po/${trans}.po: msgmerge po/messages.pot"
 -	echo "build locale/${trans}/LC_MESSAGES/Badwolf.mo: po2mo po/${trans}.po"
 -	all="${all} locale/${trans}/LC_MESSAGES/Badwolf.mo"
 -done >>config.ninja
-+#for trans in ${TRANS}; do
-+#	echo "build po/${trans}.po: msgmerge po/messages.pot"
-+#	echo "build locale/${trans}/LC_MESSAGES/Badwolf.mo: po2mo po/${trans}.po"
-+#	all="${all} locale/${trans}/LC_MESSAGES/Badwolf.mo"
-+#done >>config.ninja
- 
+-
 -for man in ${TRANS_MAN}; do
 -	echo "build po/${man}_man.po: xgettext_man badwolf.1"
 -	echo "build badwolf.${man}.1: translate_manpage po/${man}_man.po"
 -	bundled="${bundled} badwolf.${man}.1"
 -	trans_man="${trans_man} badwolf.${man}.1"
 -done >>config.ninja
-+#for man in ${TRANS_MAN}; do
-+#	echo "build po/${man}_man.po: xgettext_man badwolf.1"
-+#	echo "build badwolf.${man}.1: translate_manpage po/${man}_man.po"
-+#	bundled="${bundled} badwolf.${man}.1"
-+#	trans_man="${trans_man} badwolf.${man}.1"
-+#done >>config.ninja
- 
+-
  for i in 24 32 48 64 128 256; do
  	echo "build icons/hicolor/${i}x${i}/apps/badwolf.png: gen_icon icons/hicolor/scalable/apps/badwolf.svg
-@@ -438,10 +438,10 @@ doins "${MANDIR}/man1" ./badwolf.1
+   width = $i
+@@ -429,10 +413,6 @@ doins "${MANDIR}/man1" ./badwolf.1
  
  doins "${BINDIR}" ./badwolf
  doins "${MANDIR}/man1" ./badwolf.1
@@ -49,10 +38,6 @@
 -	newins "${MANDIR}/\${man}/man1" "./badwolf.\${man}.1" "badwolf.1"
 -done
 -doins "${DATADIR}" ./locale
-+#for man in ${TRANS_MAN}; do
-+#	newins "${MANDIR}/\${man}/man1" "./badwolf.\${man}.1" "badwolf.1"
-+#done
-+#doins "${DATADIR}" ./locale
  doins "${DATADIR}" ./interface.css
  doins "${APPSDIR}" badwolf.desktop
  doins "${DOCDIR}" ${DOCS}

@@ -1,8 +1,7 @@
 PORTNAME=	badwolf
-DISTVERSION=	1.3.0
-PORTREVISION=	5
+DISTVERSION=	1.4.0
 CATEGORIES=	www
-MASTER_SITES=	https://hacktivis.me/releases/
+MASTER_SITES=	https://hacktivis.me/releases/badwolf/
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Minimalist and privacy-oriented WebKitGTK browser
@@ -30,16 +29,14 @@ LIBSOUP_DESC=		Use libsoup
 URI_PARSER_DESC=	URI PARSER
 
 GSTREAMER_USES=		gstreamer
-GSTREAMER_USE=		GSTREAMER=bad,good,libav
+GSTREAMER_USE=		GSTREAMER=bad,good,libav,ugly
 GURI_CONFIGURE_ENV=	WITH_URI_PARSER=guri
+GURI_VARS=		USE_GNOME+=glib20
 LIBSOUP_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 LIBSOUP_CONFIGURE_ENV=	WITH_URI_PARSER=libsoup2
 
 NLS_USES=		gettext
 NLS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-configure
-
-GURI_USE_GNOME=		glib20
-LIBAV_USE_GSTREAMER=	libav
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
