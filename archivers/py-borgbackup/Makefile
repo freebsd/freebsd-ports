@@ -1,6 +1,6 @@
 PORTNAME=	borgbackup
 DISTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers python
 MASTER_SITES=	https://github.com/borgbackup/borg/releases/download/${DISTVERSION}/ \
 		PYPI
@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # note that borgbackup pins the msgpack version range per patchlevel version!
-_BB_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.3<1.1.1_99:devel/py-msgpack@${PY_FLAVOR}
+_BB_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.3<1.1.2_99:devel/py-msgpack@${PY_FLAVOR}
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pkgconfig>=0:devel/py-pkgconfig@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=1.7:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${_BB_DEPENDS}
