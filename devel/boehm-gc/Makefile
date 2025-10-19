@@ -1,5 +1,5 @@
 PORTNAME=	gc
-DISTVERSION=	8.2.8
+DISTVERSION=	8.2.10
 CATEGORIES=	devel
 MASTER_SITES=	https://www.hboehm.info/gc/gc_source/ \
 		https://github.com/bdwgc/bdwgc/releases/download/v${PORTVERSION}/
@@ -57,7 +57,7 @@ PLIST_FILES=		${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 			${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 			${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 			${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
-			${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.5.4,} \
+			${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.5.5,} \
 			${GCTBALIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 			${GCTBALIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 			${GCTBALIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
@@ -104,7 +104,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/include/gc
 . endif
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcord-${GC_VARIANT}.so.1.5.1
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgc-${GC_VARIANT}.so.1.5.4
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgc-${GC_VARIANT}.so.1.5.5
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgccpp-${GC_VARIANT}.so.1.5.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgctba-${GC_VARIANT}.so.1.5.0
 
