@@ -16,6 +16,9 @@ TEST_DEPENDS=	runtest:misc/dejagnu \
 
 USES=		autoreconf gmake pathfix tar:xz
 
+.if ${ARCH} == riscv64
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+.endif
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 
