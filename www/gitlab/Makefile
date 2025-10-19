@@ -70,14 +70,14 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-rexml>=3.4.1<3.5:textproc/rubygem-rexml \
 	rubygem-ruby-saml-gitlab>=1.18.1<2:security/rubygem-ruby-saml-gitlab \
 	rubygem-omniauth-saml-gitlab>=2.2.4<3:security/rubygem-omniauth-saml-gitlab \
-	rubygem-omniauth>=2.1.3<3:security/rubygem-omniauth \
+	rubygem-omniauth-gl>=2.1.3<3:security/rubygem-omniauth-gl \
 	rubygem-omniauth-auth0-gitlab>=3.1.1<3.2.0:net/rubygem-omniauth-auth0-gitlab \
 	rubygem-omniauth-azure-activedirectory-v2>=2.0<3:net/rubygem-omniauth-azure-activedirectory-v2 \
 	rubygem-omniauth-alicloud>=3.0.0<3.1:security/rubygem-omniauth-alicloud \
 	rubygem-omniauth-github-gitlab>=2.0.1<2.1:net/rubygem-omniauth-github-gitlab \
 	rubygem-omniauth-google-oauth2-gitlab>=1.1<2:net/rubygem-omniauth-google-oauth2-gitlab \
 	rubygem-omniauth-oauth2-generic-gitlab>=0.2.2<0.3.0:security/rubygem-omniauth-oauth2-generic-gitlab \
-	rubygem-omniauth-shibboleth-redux>=2.0<3:security/rubygem-omniauth-shibboleth-redux \
+	rubygem-omniauth-shibboleth-redux-gitlab>=2.0<3:security/rubygem-omniauth-shibboleth-redux-gitlab \
 	rubygem-omniauth_openid_connect>=0.8.0<0.9:net/rubygem-omniauth_openid_connect \
 	rubygem-openid_connect>=2.3.1<2.4:net/rubygem-openid_connect \
 	rubygem-omniauth-atlassian-oauth2>=0.2.0<0.3:security/rubygem-omniauth-atlassian-oauth2 \
@@ -96,7 +96,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-browser5>=5.3.1<5.4:www/rubygem-browser5 \
 	rubygem-ohai>=18.1.18<19:sysutils/rubygem-ohai \
 	rubygem-gpgme>=2.0.25<2.1.0:security/rubygem-gpgme \
-	rubygem-gitlab_omniauth-ldap>=2.2.0<2.3.0:net/rubygem-gitlab_omniauth-ldap \
+	rubygem-gitlab_omniauth-ldap-gitlab>=2.2.0<2.3.0:net/rubygem-gitlab_omniauth-ldap-gitlab \
 	rubygem-net-ldap017>=0.17.1<0.18:net/rubygem-net-ldap017 \
 	rubygem-grape20>=2.0.0<2.1:devel/rubygem-grape20 \
 	rubygem-grape-entity>=1.0.1<1.1,1:devel/rubygem-grape-entity \
