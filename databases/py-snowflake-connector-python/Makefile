@@ -1,10 +1,9 @@
 PORTNAME=	snowflake-connector-python
-DISTVERSION=	3.12.3
-PORTREVISION=	1
-DISTNAME=	snowflake_connector_python-${DISTVERSION}
+DISTVERSION=	4.0.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	snowflake_connector_python-${DISTVERSION}
 
 MAINTAINER=	pat@patmaddox.com
 COMMENT=	Snowflake Connector for Python
@@ -12,9 +11,11 @@ WWW=		https://github.com/snowflakedb/snowflake-connector-python
 
 LICENSE=	APACHE20
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=40.6.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>0.24.0<2.0.0:devel/py-asn1crypto@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cffi>=1.9<2:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openssl>=16.2.0:security/py-openssl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openssl>=22.0.0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt<3.0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests<3.0:www/py-requests@${PY_FLAVOR} \
@@ -29,12 +30,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>0.24.0<2.0.0:devel/py-asn1crypto@
 		${PYTHON_PKGNAMEPREFIX}tomlkit>0:textproc/py-tomlkit@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent cryptography cython3 distutils
+USE_PYTHON=	autoplist concurrent cryptography cython3 pep517
 
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}urllib3>=1.21.1:net/py-urllib3@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}urllib3>=1.21.1<2:net/py-urllib3@${PY_FLAVOR}
 .endif
+
+post-install:
+	${STRIP_CMD} \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/snowflake/connector/nanoarrow_arrow_iterator.cpython-${PYTHON_SUFFIX}.so
 
 .include <bsd.port.post.mk>
