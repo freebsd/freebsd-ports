@@ -1,5 +1,5 @@
 PORTNAME=	nvc
-DISTVERSION=	1.18.0
+DISTVERSION=	1.18.1
 CATEGORIES=	cad
 MASTER_SITES=	https://www.nickg.me.uk/files/
 
@@ -19,7 +19,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	compilation fails: jit-code.c:858:42: error: use of undeclared identifier 'veneer'
 
 BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-LIB_DEPENDS=	libffi.so:devel/libffi \
+LIB_DEPENDS=	libcapstone.so:devel/capstone \
+		libffi.so:devel/libffi \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	bash:shells/bash \
 		llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
