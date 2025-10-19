@@ -29,7 +29,7 @@ include/planarity/graphLib.h
 lib/libplanarity.a
 lib/libplanarity.so
 lib/libplanarity.so.2
-lib/libplanarity.so.2.0.0
+lib/libplanarity.so.2.1.0
 libdata/pkgconfig/libplanarity.pc
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT
 %%PORTDOCS%%%%DOCSDIR%%/README.md
@@ -37,6 +37,12 @@ libdata/pkgconfig/libplanarity.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/K10.g6.0-based.AdjList.out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/K10.g6.0-based.AdjList.out.txt.0-based.G6.out.g6
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/K10.g6.0-based.AdjMat.out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/K23-minus-edge.AdjList.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/K23.AdjList.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/K33-minus-edge.AdjList.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/K33.AdjList.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/K4-minus-edge.AdjList.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/K4.AdjList.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/N5-all.g6
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/N5-all.g6.0-based.AdjList.out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/N5-all.g6.0-based.AdjMat.out.txt
