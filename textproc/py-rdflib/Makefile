@@ -37,7 +37,7 @@ NETWORKX_DESC=	Network support
 BERKELEYDB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}berkeleydb>=0:databases/py-berkeleydb@${PY_FLAVOR}
 HTML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5rdf>=1.2<2:www/py-html5rdf@${PY_FLAVOR}
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.3<7.0:devel/py-lxml@${PY_FLAVOR}
-NEWORKX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=2,2<4,2:math/py-networkx@${PY_FLAVOR}
+NETWORKX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=2,2<4,2:math/py-networkx@${PY_FLAVOR}
 ORJSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}orjson>=3.9.14<4:devel/py-orjson@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
