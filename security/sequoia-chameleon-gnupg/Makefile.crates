@@ -220,10 +220,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		opaque-debug-0.3.1 \
 		openpgp-cert-d-0.3.4 \
 		openssh-keys-0.6.4 \
-		openssl-0.10.73 \
+		openssl-0.10.74 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
-		openssl-sys-0.9.109 \
+		openssl-sys-0.9.110 \
 		option-ext-0.2.0 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
