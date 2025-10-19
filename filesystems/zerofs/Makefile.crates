@@ -165,7 +165,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		js-sys-0.3.77 \
 		lazy_static-1.5.0 \
 		libc-0.2.175 \
-		libmimalloc-sys-0.1.43 \
 		libredox-0.1.9 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.9.4 \
@@ -183,7 +182,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		md-5-0.10.6 \
 		memchr-2.7.5 \
 		memoffset-0.9.1 \
-		mimalloc-0.1.47 \
 		miniz_oxide-0.8.9 \
 		mio-1.0.4 \
 		mixtrics-0.1.0 \
@@ -287,7 +285,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		signal-hook-registry-1.4.6 \
 		siphasher-1.0.1 \
 		slab-0.4.11 \
-		slatedb-0.8.1 \
+		slatedb-0.8.2 \
 		smallvec-1.15.1 \
 		socket2-0.5.10 \
 		socket2-0.6.0 \
@@ -308,6 +306,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.14 \
 		thread_local-1.1.9 \
+		tikv-jemalloc-sys-0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
+		tikv-jemallocator-0.6.0 \
 		time-0.3.41 \
 		time-core-0.1.4 \
 		tinystr-0.8.1 \
@@ -407,7 +407,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zerocopy-derive-0.8.26 \
 		zerofrom-0.1.6 \
 		zerofrom-derive-0.1.6 \
-		zerofs_nfsserve-0.14.0 \
+		zerofs_nfsserve-0.15.0 \
 		zeroize-1.8.1 \
 		zerotrie-0.2.2 \
 		zerovec-0.11.4 \
