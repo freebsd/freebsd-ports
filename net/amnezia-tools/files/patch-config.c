@@ -1,5 +1,14 @@
 --- config.c.orig	2024-10-01 13:02:42 UTC
 +++ config.c
+@@ -252,7 +252,7 @@ static inline bool parse_endpoint(struct sockaddr *end
+ 		 *
+ 		 * So this is what we do, except FreeBSD removed EAI_NODATA some time ago, so that's conditional.
+ 		 */
+-		if (ret == EAI_NONAME || ret == EAI_FAIL ||
++		if (ret == EAI_FAIL ||
+ 			#ifdef EAI_NODATA
+ 				ret == EAI_NODATA ||
+ 			#endif
 @@ -337,6 +337,20 @@ static bool validate_netmask(struct wgallowedip *allow
  	return true;
  }

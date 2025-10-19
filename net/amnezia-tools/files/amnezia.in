@@ -37,7 +37,7 @@ amnezia_start()
 	[ -n "${kmod}" ] && kldstat -q -n ${kmod} || kldload -n ${kmod}
 
 	for interface in ${amnezia_interfaces}; do
-		%%PREFIX%%/bin/awg-quick up ${interface}
+		daemon %%PREFIX%%/bin/awg-quick up ${interface}
 	done
 }
 

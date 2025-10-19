@@ -1,4 +1,4 @@
---- wg-quick/freebsd.bash.orig	2024-10-01 13:02:42 UTC
+--- wg-quick/freebsd.bash.orig	2025-10-19 18:21:50 UTC
 +++ wg-quick/freebsd.bash
 @@ -25,11 +25,20 @@ CONFIG_FILE=""
  POST_DOWN=( )
@@ -15,7 +15,7 @@
  
 +
 +declare -A ROUTES
-+declare -A ENDPOINTS
++declare -A ENDPOINTS_MAP
 +
 +
  cmd() {
@@ -74,14 +74,14 @@
 +			Endpoint)
 +				endpoint_host="${value%%:*}"
 +				if ! [[ "$endpoint_host" =~ ^[0-9]+ ]]; then
-+					ENDPOINTS["$last_public_key"]="$endpoint_host"
++					ENDPOINTS_MAP["$last_public_key"]="$endpoint_host"
 +				fi
 +				;;
 +			esac
  		fi
  		WG_CONFIG+="$line"$'\n'
  	done < "$CONFIG_FILE"
-@@ -129,12 +154,15 @@ add_if() {
+@@ -129,19 +154,22 @@ add_if() {
  
  add_if() {
  	local ret rc
@@ -101,6 +101,14 @@
  	fi
  	rc=$?
  	if [[ $ret == *"ifconfig: ioctl SIOCSIFNAME (set name): File exists"* ]]; then
+ 		echo "$ret" >&3
+ 		return $rc
+ 	fi
+-	echo "[!] Missing WireGuard kernel support ($ret). Falling back to slow userspace implementation." >&3
++	echo "[!] Missing Amnezia kernel support ($ret). Falling back to slow userspace implementation." >&3
+ 	cmd "${WG_QUICK_USERSPACE_IMPLEMENTATION:-amneziawg-go}" "$INTERFACE"
+ }
+ 
 @@ -209,7 +237,7 @@ set_mtu() {
  		[[ ${BASH_REMATCH[1]} == *:* ]] && family=inet6
  		output="$(route -n get "-$family" "${BASH_REMATCH[1]}" || true)"
@@ -140,7 +148,7 @@
  		ifconfig "$INTERFACE" >/dev/null 2>&1 || break
  		[[ $AUTO_ROUTE4 -eq 1 || $AUTO_ROUTE6 -eq 1 ]] && set_endpoint_direct_route
  		# TODO: set the mtu as well, but only if up
-@@ -316,6 +344,77 @@ monitor_daemon() {
+@@ -316,6 +344,76 @@ monitor_daemon() {
  	kill $pid) & disown
  }
  
@@ -178,7 +186,6 @@
 +	[[ $TRACK_DNS_CHANGES -eq 0 ]] && return 0
 +
 +	echo "[+] Backgrounding DNS tracker" >&2
-+	exec >/dev/null 2>&1
 +
 +	pid_file="$(tracker_pid_file)"
 +	[[ -f "$pid_file" ]] && kill $(cat "$pid_file") 2>/dev/null || true
@@ -193,7 +200,7 @@
 +
 +			$cmd awg showconf "$INTERFACE" 2> /dev/null | wg_endpoints | \
 +			while read -r pk peer_ip port; do
-+				peer_host="${ENDPOINTS[$pk]}"
++				peer_host="${ENDPOINTS_MAP[$pk]}"
 +				if [[ -n "$peer_host" ]]; then
 +					host_ip=$(host "$peer_host" 2>/dev/null | awk '/has address/ { print $4; exit; }') || continue
 +
@@ -210,7 +217,7 @@
 +			done
 +
 +		done
-+	) & disown
++	) </dev/null >/dev/null 2>&1 3>&- & disown
 +	echo "$!" > "$pid_file"
 +}
 +
@@ -218,7 +225,7 @@
  HAVE_SET_DNS=0
  set_dns() {
  	[[ ${#DNS[@]} -gt 0 ]] || return 0
-@@ -354,7 +453,7 @@ set_config() {
+@@ -354,7 +452,7 @@ set_config() {
  }
  
  set_config() {
@@ -227,7 +234,7 @@
  }
  
  save_config() {
-@@ -386,7 +485,7 @@ save_config() {
+@@ -386,7 +484,7 @@ save_config() {
  	done
  	old_umask="$(umask)"
  	umask 077
@@ -236,7 +243,21 @@
  	trap 'rm -f "$CONFIG_FILE.tmp"; clean_temp; exit' INT TERM EXIT
  	echo "${current_config/\[Interface\]$'\n'/$new_config}" > "$CONFIG_FILE.tmp" || die "Could not write configuration file"
  	sync "$CONFIG_FILE.tmp"
-@@ -433,6 +532,20 @@ cmd_usage() {
+@@ -412,7 +510,7 @@ cmd_usage() {
+ 	  followed by \`.conf'. Otherwise, INTERFACE is an interface name, with
+ 	  configuration found at:
+ 	  ${CONFIG_SEARCH_PATHS[@]/%//INTERFACE.conf}.
+-	  It is to be readable by wg(8)'s \`setconf' sub-command, with the exception
++	  It is to be readable by awg(8)'s \`setconf' sub-command, with the exception
+ 	  of the following additions to the [Interface] section, which are handled
+ 	  by $PROGRAM:
+ 
+@@ -429,10 +527,24 @@ cmd_usage() {
+ 	  - SaveConfig: if set to \`true', the configuration is saved from the current
+ 	    state of the interface upon shutdown.
+ 
+-	See wg-quick(8) for more info and examples.
++	See awg-quick(8) for more info and examples.
  	_EOF
  }
  
@@ -257,7 +278,7 @@
  cmd_up() {
  	local i
  	[[ -z $(ifconfig "$INTERFACE" 2>/dev/null) ]] || die "\`$INTERFACE' already exists"
-@@ -446,26 +559,31 @@ cmd_up() {
+@@ -446,26 +558,31 @@ cmd_up() {
  	set_mtu
  	up_if
  	set_dns
@@ -274,7 +295,7 @@
  
  cmd_down() {
 -	[[ " $(wg show interfaces) " == *" $INTERFACE "* ]] || die "\`$INTERFACE' is not a WireGuard interface"
-+	[[ " $(awg show interfaces) " == *" $INTERFACE "* ]] || die "\`$INTERFACE' is not a WireGuard interface"
++	[[ " $(awg show interfaces) " == *" $INTERFACE "* ]] || die "\`$INTERFACE' is not a Amnezia interface"
  	execute_hooks "${PRE_DOWN[@]}"
  	[[ $SAVE_CONFIG -eq 0 ]] || save_config
  	del_if
@@ -288,11 +309,11 @@
  
  cmd_save() {
 -	[[ " $(wg show interfaces) " == *" $INTERFACE "* ]] || die "\`$INTERFACE' is not a WireGuard interface"
-+	[[ " $(awg show interfaces) " == *" $INTERFACE "* ]] || die "\`$INTERFACE' is not a WireGuard interface"
++	[[ " $(awg show interfaces) " == *" $INTERFACE "* ]] || die "\`$INTERFACE' is not a Amnezia interface"
  	save_config
  }
  
-@@ -473,6 +591,10 @@ cmd_strip() {
+@@ -473,6 +590,10 @@ cmd_strip() {
  	echo "$WG_CONFIG"
  }
  
@@ -303,7 +324,7 @@
  # ~~ function override insertion point ~~
  
  make_temp
-@@ -496,6 +618,10 @@ elif [[ $# -eq 2 && $1 == strip ]]; then
+@@ -496,6 +617,10 @@ elif [[ $# -eq 2 && $1 == strip ]]; then
  	auto_su
  	parse_options "$2"
  	cmd_strip
