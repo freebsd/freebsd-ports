@@ -1,12 +1,11 @@
 PORTNAME=	sqwebmail
-PORTVERSION=	6.2.4
-PORTREVISION=	1
+PORTVERSION=	6.3.0
 CATEGORIES=	mail www
 MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
-WWW=		https://inter7.com/sqwebmail/
+WWW=		https://www.courier-mta.org/sqwebmail/
 
 LICENSE=	GPLv3
 
@@ -59,7 +58,7 @@ MAILGRP?=	courier
 #
 # End of user variables
 
-USES=		compiler:c++11-lang gettext gmake iconv perl5 tar:bzip2 pkgconfig
+USES=		compiler:c++17-lang gettext gmake iconv perl5 tar:bzip2 pkgconfig
 USE_RC_SUBR=	sqwebmail-sqwebmaild
 GNU_CONFIGURE=	yes
 
