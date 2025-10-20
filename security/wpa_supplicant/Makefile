@@ -110,7 +110,7 @@ SAKE_DESC=		Shared-Secret Authentication & Key Establishment
 GPSK_DESC=		Generalized Pre-Shared Key
 TNC_DESC=		Trusted Network Connect
 PASN_DESC=		Pre-Association Security Negotiation
-LIBWPA_DESC=	libwpa_client Shared Library
+LIBWPA_DESC=		libwpa_client Shared Library
 
 PRIVSEP_PLIST_FILES=	sbin/wpa_priv
 DBUS_PLIST_FILES=	share/dbus-1/system-services/fi.w1.wpa_supplicant1.service \
