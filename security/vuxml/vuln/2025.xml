@@ -1,3 +1,53 @@
+  <vuln vid="4553e4b3-addf-11f0-9b8d-40a6b7c3b3b8">
+    <topic>Hidden/Protected custom variables are prone to filter enumeration</topic>
+    <affects>
+      <package>
+	<name>icingaweb2-module-icingadb-php81</name>
+	<range><lt>1.1.4</lt></range>
+	<range><ge>1.2</ge><lt>1.2.3,1</lt></range>
+      </package>
+      <package>
+	<name>icingaweb2-module-icingadb-php82</name>
+	<range><lt>1.1.4</lt></range>
+	<range><ge>1.2</ge><lt>1.2.3,1</lt></range>
+      </package>
+      <package>
+	<name>icingaweb2-module-icingadb-php83</name>
+	<range><lt>1.1.4</lt></range>
+	<range><ge>1.2</ge><lt>1.2.3,1</lt></range>
+      </package>
+      <package>
+	<name>icingaweb2-module-icingadb-php84</name>
+	<range><lt>1.1.4</lt></range>
+	<range><ge>1.2</ge><lt>1.2.3,1</lt></range>
+      </package>
+      <package>
+	<name>icingaweb2-module-icingadb-php85</name>
+	<range><lt>1.1.4</lt></range>
+	<range><ge>1.2</ge><lt>1.2.3,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Icinga reports:</p>
+	<blockquote cite="https://github.com/Icinga/icingadb-web/security/advisories/GHSA-w57j-28jc-8429">
+	  <p>An authorized user with access to Icinga DB Web, can use
+	  a custom variable in a filter that is either protected by
+	  icingadb/protect/variables or hidden by icingadb/denylist/variables,
+	  to guess values assigned to it.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-61789</cvename>
+      <url>https://github.com/Icinga/icingadb-web/security/advisories/GHSA-w57j-28jc-8429</url>
+    </references>
+    <dates>
+      <discovery>2025-10-16</discovery>
+      <entry>2025-10-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4355ce42-ad06-11f0-b2aa-b42e991fc52e">
     <topic>Mozilla -- XSS in sites without content-type header</topic>
     <affects>
