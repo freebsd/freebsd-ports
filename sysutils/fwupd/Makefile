@@ -1,6 +1,6 @@
 PORTNAME=	fwupd
 DISTVERSION=	2.0.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -39,25 +39,26 @@ RUN_DEPENDS=	blkid:filesystems/libblkid \
 		${LOCALBASE}/libdata/pkgconfig/fwupd-efi.pc:sysutils/fwupd-efi \
 		valgrind>0:devel/valgrind
 
-USES=		cmake:indirect gettext gnome libarchive meson pkgconfig python shebangfix sqlite vala:build
+USES=		cmake:indirect gettext gnome libarchive meson pkgconfig python readline shebangfix sqlite vala:build
 USE_GITHUB=	yes
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 WITH_DEBUG=	yes
 USE_RC_SUBR=	fwupd
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS TEST
+OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc \
 			${PYTHON_PKGNAMEPREFIX}gi-docgen>0:textproc/py-gi-docgen@${PY_FLAVOR}
 DOCS_MESON_ENABLED=	docs
+TEST_MESON_TRUE=	tests
 
 SHEBANG_GLOB=	*.py
 
 MESON_ARGS+=	-Dpolkit=disabled \
 		-Dsystemd=disabled \
 		-Dpassim=disabled \
-		-Dtests=false \
 		-Dumockdev_tests=disabled \
 		-Dplugin_modem_manager=disabled \
 		-Dpython=${PYTHON_CMD}
