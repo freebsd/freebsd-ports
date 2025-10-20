@@ -1,6 +1,6 @@
 PORTNAME=	chamfer
 DISTVERSION=	s20240928
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -41,6 +41,7 @@ post-patch:
 # XXX import('python').find_installation().dependency()
 	@${REINPLACE_CMD} -e '/boost/!s/python3/python-${PYTHON_VER}/' \
 		-e '/boost/s/,/,static:true,/' \
+		-e "/boost/s/'system',//" \
 		${WRKSRC}/meson.build
 
 do-install:
