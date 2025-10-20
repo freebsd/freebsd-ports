@@ -30,11 +30,11 @@ bin/sc_wartsfilter
 bin/sc_wartsfix
 lib/libscamperctrl.a
 lib/libscamperctrl.so.4
-lib/libscamperctrl.so.4.0.1
+lib/libscamperctrl.so.4.1.0
 lib/libscamperctrl.so
 lib/libscamperfile.a
 lib/libscamperfile.so.13
-lib/libscamperfile.so.13.2.1
+lib/libscamperfile.so.13.4.0
 lib/libscamperfile.so
 share/man/man1/sc_ally.1.gz
 share/man/man1/sc_analysis_dump.1.gz
