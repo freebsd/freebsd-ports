@@ -1,5 +1,3 @@
-PORTREVISION=	3
-
 .include "${.CURDIR}/Makefile.common"
 
 MASTER_SITES=	https://download.documentfoundation.org/libreoffice/src/${LOVERSION}/ \
