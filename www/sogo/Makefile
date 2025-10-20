@@ -1,6 +1,5 @@
 PORTNAME=		sogo
-PORTVERSION=		5.12.3
-PORTREVISION=		1
+PORTVERSION=		5.12.4
 CATEGORIES=		www gnustep
 MASTER_SITES=		https://packages.sogo.nu/sources/
 PKGNAMESUFFIX=		-${FLAVOR}
