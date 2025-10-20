@@ -1,6 +1,6 @@
 PORTNAME=	bitwarden-cli
 DISTVERSIONPREFIX=	cli-v
-DISTVERSION=	2025.9.0
+DISTVERSION=	2025.10.0
 CATEGORIES=	security
 MASTER_SITES=	https://nodejs.org/dist/v${PKG_NODE_VER}/:node
 DISTFILES=	node-v${PKG_NODE_VER}${EXTRACT_SUFX}:node \
@@ -81,7 +81,36 @@ pre-fetch:
 		${FIND} ${WRKDIR}/node-modules-cache -type d -exec ${CHMOD} 755 {} ';'; \
 		for dir in `${FIND} -s ${WRKDIR}/node-modules-cache -type d -name node_modules -print | \
 			${GREP} -ve 'node_modules/.*/node_modules'`; do \
-			${MTREE_CMD} -cbnSp $${dir} | ${MTREE_CMD} -C | ${SED} \
+			${MTREE_CMD} -cbnSp $${dir} | ${MTREE_CMD} -C | \
+			${AWK} ' \
+				function oct2dec(octstr, i, c, val) { \
+					val = 0; \
+					for (i = 1; i <= length(octstr); i++) { \
+						c = substr(octstr, i, 1); \
+						if (c < "0" || c > "7") { \
+							break; \
+						} \
+						val = val * 8 + (c - "0"); \
+					} \
+					return val; \
+				} \
+				{ \
+					if (match($$0, /mode=[0-7]+/)) { \
+						mode_str = substr($$0, RSTART+5, RLENGTH-5); \
+						mode = oct2dec(mode_str); \
+						exec_bits = 73; \
+						special_bits = 3584; \
+						special = and(mode, special_bits); \
+						if (and(mode, exec_bits) != 0) { \
+							newmode = or(special, 493); \
+						} else { \
+							newmode = or(special, 420); \
+						} \
+						sub(/mode=[0-7]+/, "mode=" sprintf("%04o", newmode)); \
+					} \
+					print; \
+				}' | \
+			${SED} \
 				-e 's:time=[0-9.]*:time=${PREFETCH_TIMESTAMP}.000000000:' \
 				-e 's:\([gu]id\)=[0-9]*:\1=0:g' \
 				-e 's:flags=.*:flags=none:' \
@@ -101,7 +130,7 @@ post-extract:
 
 post-patch:
 	# apply FreeBSD patches for node
-	@${BSDMAKE} PATCHDIR=${FILESDIR}/node \
+	@${BSDMAKE} PATCHDIR=${PATCHDIR}/node \
 		WRKSRC=${WRKDIR}/node-v${PKG_NODE_VER} do-patch
 	# apply node patch from pkg-fetch
 	@${PATCH} -s -p1 -d ${WRKDIR}/node-v${PKG_NODE_VER} < \

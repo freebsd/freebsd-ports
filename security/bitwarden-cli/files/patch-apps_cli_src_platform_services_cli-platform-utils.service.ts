@@ -1,4 +1,4 @@
---- apps/cli/src/platform/services/cli-platform-utils.service.ts.orig	2025-07-01 17:12:33 UTC
+--- apps/cli/src/platform/services/cli-platform-utils.service.ts.orig	2025-10-10 16:12:57 UTC
 +++ apps/cli/src/platform/services/cli-platform-utils.service.ts
 @@ -28,7 +28,7 @@ export class CliPlatformUtilsService implements Platfo
          case "darwin":
@@ -9,7 +9,7 @@
          default:
            this.deviceCache = DeviceType.LinuxCLI;
            break;
-@@ -80,7 +80,7 @@ export class CliPlatformUtilsService implements Platfo
+@@ -84,7 +84,7 @@ export class CliPlatformUtilsService implements Platfo
    }
  
    launchUri(uri: string, options?: any): void {
