@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		ncurses
 MAKE_JOBS_UNSAFE=	yes
 
+CFLAGS+=	-Wno-error=gnu-statement-expression
+
 PLIST_FILES=	bin/fnc \
 		share/man/man1/fnc.1.gz
 

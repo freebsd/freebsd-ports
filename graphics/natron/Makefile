@@ -1,7 +1,7 @@
 PORTNAME=	natron
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.1-pre2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		gsed:textproc/gsed
 
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libcairo.so:graphics/cairo \
 		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \

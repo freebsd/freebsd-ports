@@ -1,7 +1,7 @@
 PORTNAME=	libint
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 PKGNAMESUFFIX=	2
 
@@ -12,7 +12,7 @@ WWW=		https://github.com/evaleev/libint
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgmpxx.so:math/gmp
 
 USES=		autoreconf:build compiler:c++11-lang gmake libtool localbase:ldflags

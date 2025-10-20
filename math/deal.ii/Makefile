@@ -1,6 +1,6 @@
 PORTNAME=	deal.II
 DISTVERSION=	9.6.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/dealii/dealii/releases/download/v${DISTVERSION}/
 DISTNAME=	dealii-${DISTVERSION}

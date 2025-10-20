@@ -1,6 +1,6 @@
 PORTNAME=	mailio
 DISTVERSION=	0.25.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/karastojko/mailio
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		cmake:testing compiler:c++17-lang ssl
 USE_LDCONFIG=	yes

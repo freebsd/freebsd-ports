@@ -1,7 +1,7 @@
 PORTNAME=	widelands
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libicuuc.so:devel/icu \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libminizip.so:archivers/minizip
 BUILD_DEPENDS=	${PREFIX}/include/asio.hpp:net/asio
 

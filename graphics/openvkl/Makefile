@@ -1,6 +1,7 @@
 PORTNAME=	openvkl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,7 +32,7 @@ OPTIONS_DEFAULT=	VDB
 
 VDB_DESC=		Build with OpenVDB
 VDB_CMAKE_ON=		-DOpenVDB_ROOT=${LOCALBASE}
-VDB_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+VDB_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 			libopenvdb.so:misc/openvdb
 
 PORTDOCS=	*

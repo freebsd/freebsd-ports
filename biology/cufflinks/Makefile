@@ -1,7 +1,7 @@
 PORTNAME=	cufflinks
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.1-89
-PORTREVISION=	12
+PORTREVISION=	13
 DISTVERSIONSUFFIX=	-gdc3b0cb
 CATEGORIES=	biology
 
@@ -15,7 +15,7 @@ WWW=		https://cole-trapnell-lab.github.io/cufflinks/
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libhts.so:biology/htslib
 
 USES=		autoreconf compiler:c++11-lang eigen:3 gmake python shebangfix

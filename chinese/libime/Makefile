@@ -1,6 +1,6 @@
 PORTNAME=	libime
 DISTVERSION=	1.1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:opengram_lm,opengram_dict,table_dict

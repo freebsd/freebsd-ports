@@ -1,7 +1,7 @@
 PORTNAME=	quickfix
 PORTVERSION=	1.15.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	finance devel
 
 MAINTAINER=	m.tsatsenko@gmail.com
@@ -45,7 +45,7 @@ INSTALL_TARGET=install-strip
 
 .if ${ARCH} != amd64 && ${ARCH} != i386
 CXXFLAGS+=	-DENABLE_BOOST_ATOMIC_COUNT
-LIB_DEPENDS+=	libboost_system.so:devel/boost-libs
+LIB_DEPENDS+=	libboost_thread.so:devel/boost-libs
 USES+=		compiler:c++11-lang localbase
 .endif
 

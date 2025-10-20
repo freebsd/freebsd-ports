@@ -1,7 +1,7 @@
 PORTNAME=	emulationstation
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.11.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 
 MAINTAINER=	freebsd@coombscloud.com
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/rapidjson/document.h:devel/rapidjson \
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libboost_filesystem.so:devel/boost-libs \
 		libboost_locale.so:devel/boost-libs \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libfreeimage.so:graphics/freeimage \
 		libfreetype.so:print/freetype2 \

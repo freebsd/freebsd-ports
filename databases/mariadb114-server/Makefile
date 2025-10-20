@@ -193,7 +193,7 @@ LZO_CMAKE_ON=		-DWITH_INNODB_LZO=ON
 LZO_CMAKE_OFF=		-DWITH_INNODB_LZO=OFF
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack-c
-OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+OQGRAPH_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 			libJudy.so:devel/judy
 ROCKSDB_BROKEN=		RocksDB engine build failyure "jemalloc_helper.h:65:61: error: use of undeclared identifier 'nothrow'"	
 ROCKSDB_USES=		python

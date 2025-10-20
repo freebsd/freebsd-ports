@@ -1,7 +1,7 @@
 PORTNAME=	openmvs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ BROKEN_aarch64=	use of undeclared identifier '__builtin_ia32_emms' # https://git
 BUILD_DEPENDS=	cgal>0:math/cgal \
 		${LOCALBASE}/include/sys/sysinfo.h:devel/libsysinfo \
 		vcglib>0:devel/vcglib
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libceres.so:math/ceres-solver \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \

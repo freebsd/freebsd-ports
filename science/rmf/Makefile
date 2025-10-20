@@ -1,6 +1,6 @@
 PORTNAME=	rmf
 DISTVERSION=	1.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://integrativemodeling.org/rmf/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libhdf5.so:science/hdf5
 
 USES=		compiler:c++17-lang cmake:testing localbase:ldflags python:build shebangfix

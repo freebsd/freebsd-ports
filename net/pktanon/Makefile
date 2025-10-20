@@ -1,6 +1,6 @@
 PORTNAME=	pktanon
 PORTVERSION=	1.4.0
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	net
 MASTER_SITES=	http://www.tm.uka.de/software/pktanon/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-dev

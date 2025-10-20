@@ -1,6 +1,6 @@
 PORTNAME=	visp
 DISTVERSION=	3.6.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	misc
 MASTER_SITES=	https://visp-doc.inria.fr/download/releases/
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	doxygen:devel/doxygen \
 		latex:print/tex-formats \
 		nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libblas.so:math/blas \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libdmtx.so:graphics/libdmtx \
 		libflann.so:math/flann \
 		libgsl.so:math/gsl \

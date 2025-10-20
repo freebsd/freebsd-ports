@@ -1,7 +1,7 @@
 PORTNAME=	ikos
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ BROKEN_armv7=	configure fails: error when running a program linked with GMP: Seg
 
 BUILD_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
 LIB_DEPENDS=	libapron.so:math/apron \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libmpfr.so:math/mpfr \
 		libgmp.so:math/gmp \
 		libppl.so:devel/ppl \

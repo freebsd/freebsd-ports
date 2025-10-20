@@ -1,5 +1,6 @@
 PORTNAME=	dakota
 DISTVERSION=	6.22.0
+PORTREVISION=	1
 PORTEVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/snl-dakota/dakota/releases/download/v${DISTVERSION}/

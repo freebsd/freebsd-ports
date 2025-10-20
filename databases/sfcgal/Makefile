@@ -1,6 +1,7 @@
 PORTNAME=	sfcgal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	databases math graphics
 
 MASTER_SITES=	https://github.com/CGAL/cgal/releases/download/v${CGAL_VERSION}/:source1

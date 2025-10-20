@@ -1,5 +1,6 @@
 PORTNAME=	hipercontracer
 DISTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://www.nntb.no/~dreibh/hipercontracer/download/
 
@@ -15,7 +16,6 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libboost_iostreams.so:devel/boost-libs \
 		libboost_log.so:devel/boost-libs \
 		libboost_program_options.so:devel/boost-libs \
-		libboost_system.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs \
 		libinotify.so:devel/libinotify
 RUN_DEPENDS=	getopt>=0:misc/getopt

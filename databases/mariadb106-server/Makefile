@@ -183,7 +183,7 @@ LZO_CMAKE_OFF=		-DWITH_INNODB_LZO=OFF
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 MROONGA_IMPLIES=	LZ4
 MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack-c
-OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+OQGRAPH_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 			libJudy.so:devel/judy
 ROCKSDB_USES=		python
 ROCKSDB_CMAKE_ON=	-DPYTHON_SHEBANG=${PYTHON_CMD} -DWITH_ROCKSDB_zstd=ON

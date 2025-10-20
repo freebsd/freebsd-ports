@@ -1,7 +1,7 @@
 PORTNAME=	openems
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.36
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	upstream only supports amd64 and powerpc64
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libCSXCAD.so:cad/csxcad \
 		libfparser-4.5.so:math/fparser \
 		libhdf5.so:science/hdf5 \

@@ -1,5 +1,6 @@
 PORTNAME=	osrm-backend
 DISTVERSION=	6.0.0.g20250916
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	freebsd@mosedal.net

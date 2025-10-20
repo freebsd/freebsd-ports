@@ -1,4 +1,4 @@
-PORTREVISION=	4
+PORTREVISION=	5
 PKGNAMESUFFIX=	-video-glide64mk2
 
 COMMENT=	Glide64mk2 video plugin for Mupen64Plus

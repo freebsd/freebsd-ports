@@ -1,7 +1,7 @@
 PORTNAME=	guitarix
 DISTVERSIONPREFIX=	V
 DISTVERSION=	0.46.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		sassc:textproc/sassc \
 		ladspa>0:audio/ladspa # https://sourceforge.net/p/guitarix/bugs/61/
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libfftw3f.so:math/fftw3-float \
 		libfontconfig.so:x11-fonts/fontconfig \

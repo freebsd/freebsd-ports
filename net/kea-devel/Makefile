@@ -1,5 +1,6 @@
 PORTNAME=	kea
 DISTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/cur/3.1
 PKGNAMESUFFIX=	-devel
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		liblog4cplus.so:devel/log4cplus
 
 USES=		compiler:c++11-lang cmake:indirect cpe iconv meson \

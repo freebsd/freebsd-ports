@@ -2,7 +2,7 @@ PORTNAME=	supertux
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.3
 DISTVERSIONSUFFIX=	-Source
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/SuperTux/supertux/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	2
@@ -13,7 +13,7 @@ COMMENT=	Side-scroller game similar to Super Mario Brothers
 WWW=		https://supertux.org/
 
 BUILD_DEPENDS=	glm>0:math/glm
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libharfbuzz.so:print/harfbuzz \
 		libfribidi.so:converters/fribidi \

@@ -1,5 +1,6 @@
 PORTNAME=	flightgear
 PORTVERSION=	2024.1.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	martymac@FreeBSD.org

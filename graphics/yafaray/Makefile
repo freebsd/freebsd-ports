@@ -1,7 +1,7 @@
 PORTNAME=	yafaray
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.5.1
-PORTREVISION=	31
+PORTREVISION=	32
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSES
 
 ONLY_FOR_ARCHS=	amd64 powerpc64le
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libImath.so:math/Imath \
 		libOpenEXR.so:graphics/openexr \

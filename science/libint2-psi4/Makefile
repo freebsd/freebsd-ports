@@ -1,6 +1,6 @@
 PORTNAME=	libint2-psi4
 DISTVERSION=	0.1-${VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/loriab/libint/releases/download/v${DISTVERSION:C/-.*//}/
 DISTFILES=	libint-${VERSION}-post1-5-4-3-6-5-4_mm4f12ob2_1.tgz
@@ -16,7 +16,7 @@ BROKEN_aarch64=	compilation fails: runaway processes and out-of-memory condition
 BROKEN_i386=	compilation fails: clang runs out of memory
 BROKEN_armv7=	compilation fails: clang runs out of memory
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgmpxx.so:math/gmp
 
 USES=		cmake:testing eigen:3 python:build

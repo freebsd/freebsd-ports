@@ -1,6 +1,6 @@
 PORTNAME=	ifcopenshell
 PORTVERSION=	0.7.0.231127
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 
@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 BUILD_DEPENDS=	${LOCALBASE}/include/CGAL/Cartesian.h:math/cgal \
 		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json \
 		${LOCALBASE}/include/svgpp/svgpp.hpp:graphics/svgpp
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgmp.so:math/gmp libmpfr.so:math/mpfr \
 		libTKernel.so:cad/opencascade740
 

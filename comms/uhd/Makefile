@@ -1,7 +1,7 @@
 PORTNAME=	uhd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.8.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 DIST_SUBDIR=	${PORTNAME}
 
@@ -17,7 +17,7 @@ WWW=		https://www.ettus.com/sdr-software/uhd-usrp-hardware-driver/
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	${PY_BOOST} \
-		libboost_system.so:devel/boost-libs
+		libboost_thread.so:devel/boost-libs
 BUILD_DEPENDS=	flatc:devel/flatbuffers \
 		orcc:devel/orc \
 		cheetah-analyze:devel/py-cheetah3@${PY_FLAVOR} \

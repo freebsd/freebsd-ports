@@ -2,6 +2,7 @@
 
 PORTNAME=	Imath
 PORTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	math devel graphics
 MASTER_SITES=	https://github.com/AcademySoftwareFoundation/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/mandree/

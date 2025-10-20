@@ -1,7 +1,7 @@
 PORTNAME=	ledger
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	finance
 
 MAINTAINER=	woodycarey@hotmail.com
@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	utf8cpp>=0:devel/utf8cpp
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 

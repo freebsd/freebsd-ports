@@ -1,6 +1,6 @@
 PORTNAME=	libtorrent-rasterbar
 DISTVERSION=	1.2.20 # 2.x is unusable until memory problems are resolved, see https://github.com/arvidn/libtorrent/issues/6781
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/
@@ -17,7 +17,7 @@ BROKEN=		fails to build with Boost>=1.87, see https://github.com/arvidn/libtorre
 
 LIB_DEPENDS=	libboost_chrono.so:devel/boost-libs \
 		libboost_random.so:devel/boost-libs \
-		libboost_system.so:devel/boost-libs
+		libboost_thread.so:devel/boost-libs
 
 USES=		cmake compiler:c++17-lang iconv:wchar_t localbase:ldflags pathfix pkgconfig python:test shebangfix ssl
 SHEBANG_FILES=	test/socks.py test/web_server.py

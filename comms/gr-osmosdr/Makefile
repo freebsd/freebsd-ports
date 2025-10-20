@@ -1,7 +1,7 @@
 PORTNAME=	gr-osmosdr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.6
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libgnuradio-pmt.so:comms/gnuradio \
 		libgnuradio-blocks.so:comms/gnuradio \
 		libvolk.so:devel/volk \
-		libboost_system.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs \
 		liblog4cpp.so:devel/log4cpp \
 		libgmpxx.so:math/gmp \

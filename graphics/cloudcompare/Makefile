@@ -1,7 +1,7 @@
 PORTNAME=	cloudcompare
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.12.4
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -69,7 +69,7 @@ PLUGINS_CXXFLAGS=	${PLUGINS_CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 PLUGINS_CXXFLAGS_clang=	-Wno-narrowing
 PLUGINS_CXXFLAGS+=	-DEIGEN_DONT_PARALLELIZE # OpenMP is broken in cmake: see bug#223678
 PLUGINS_USE=		XORG=ice,sm,x11,xext,xt GL=gl,glu
-PLUGINS_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+PLUGINS_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 			libexpat.so:textproc/expat2 \
 			libflann_cpp.so:math/flann \
 			libfreetype.so:print/freetype2 \

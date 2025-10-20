@@ -1,6 +1,6 @@
 PORTNAME=	libmesh
 DISTVERSION=	1.7.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/libMesh/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		compilation fails with nlopt-2.9.0, see https://github.com/libMesh/libmesh/issues/4009
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libnlopt.so:math/nlopt
 TEST_DEPENDS=	bash:shells/bash
 

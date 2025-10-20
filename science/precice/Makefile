@@ -1,7 +1,7 @@
 PORTNAME=	precice
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN=		fails to build with Boost>=1.87
 
 BUILD_DEPENDS=	${PYNUMPY}
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libmpicxx.so:net/mpich
 RUN_DEPENDS=	${PYNUMPY}
 

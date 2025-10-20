@@ -1,6 +1,6 @@
 PORTNAME=	din
 PORTVERSION=	59
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://dinisnoise.org/files/
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libjack.so:audio/jack
 
 USES=		autoreconf gl gnome sdl tcl:86+ xorg

@@ -1,6 +1,6 @@
 PORTNAME=	domoticz
 PORTVERSION=	2024.7.${DOMOTICZ_REL}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devel
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libjsoncpp.so:devel/jsoncpp \
 		libmosquitto.so:net/mosquitto
 

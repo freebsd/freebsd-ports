@@ -1,6 +1,6 @@
 PORTNAME=	haplohseq
 DISTVERSION=	0.1.2-3
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-gfeb9267
 CATEGORIES=	biology
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/outpaddling/haplohseq \
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 RUN_DEPENDS=	R-cran-optparse>0:devel/R-cran-optparse
 
 USES=		compiler:c++14-lang gmake localbase:ldflags python

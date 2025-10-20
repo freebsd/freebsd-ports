@@ -1,5 +1,6 @@
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/thrift/${PORTVERSION}
@@ -10,7 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ interface to Thrift
 WWW=		https://thrift.apache.org/
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+BROKEN_i386=	undefined reference to 'boost::atomics::detail::lockpool::scoped_lock::scoped_lock(void const volatile*)'
+
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libevent.so:devel/libevent
 
 USES=			bison cmake pkgconfig compiler:c++11-lang cpe \

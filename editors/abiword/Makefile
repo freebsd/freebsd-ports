@@ -1,6 +1,6 @@
 PORTNAME=	abiword
 PORTVERSION=	3.0.5
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	editors
 MASTER_SITES=	https://dev.alpinelinux.org/archive/${PORTNAME}/
 DIST_SUBDIR=	AbiWord
@@ -12,7 +12,7 @@ WWW=		https://gitlab.gnome.org/World/AbiWord
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpopt.so:devel/popt \
 		libpng.so:graphics/png \
 		libwv.so:textproc/wv \

@@ -1,5 +1,6 @@
 PORTNAME=	mkvtoolnix
 PORTVERSION=	95.0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	rake:devel/rubygem-rake \
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg \
 		libebml.so:textproc/libebml \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libpugixml.so:textproc/pugixml \
 		libmatroska.so:multimedia/libmatroska \
 		libcmark.so:textproc/cmark \

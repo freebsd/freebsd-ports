@@ -1,6 +1,6 @@
 PORTNAME=	supercollider
 DISTVERSION=	3.14.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/Version-${DISTVERSION}/
 DISTNAME=	SuperCollider-${DISTVERSION}-Source

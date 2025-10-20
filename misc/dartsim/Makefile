@@ -1,7 +1,7 @@
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.15.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	pagmo2>0:science/pagmo2 \
 		pybind11>0:devel/pybind11
 LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libBulletDynamics.so:devel/bullet \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libccd.so:math/libccd \
 		libconsole_bridge.so:devel/ros-console_bridge \
 		libfcl.so:math/fcl \

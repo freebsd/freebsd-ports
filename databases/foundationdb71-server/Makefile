@@ -1,6 +1,6 @@
 PORTNAME?=	foundationdb
 DISTVERSION=	7.1.59
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	databases
 PKGNAMESUFFIX?=	${DISTVERSION:C/([0-9]+)\.([0-9]+).*/\1\2/}-${_COMPONENT}
 
@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS_REASON=	not yet ported to anything else
 BUILD_DEPENDS=	bash:shells/bash \
 		msgpack-cxx>0:devel/msgpack-cxx \
 		toml11>0:devel/toml11
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libeio.so:devel/libeio
 
 USES=		cmake compiler:c++20-lang llvm:max=16 mono:build python:build \

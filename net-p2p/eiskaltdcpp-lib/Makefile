@@ -1,7 +1,7 @@
 PORTNAME=	eiskaltdcpp
 PORTVERSION=	2.2.10
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	34
+PORTREVISION?=	35
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX?=	-lib
 
@@ -22,7 +22,7 @@ EXTRA_PATCHES=	${GENTOO_PATCHES_PREFIX}-ipv6_upnp.patch:-p1 \
 USE_GITHUB=	yes
 
 .if !defined (MASTERDIR)
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		cmake gettext compiler:c++11-lib ssl
 USE_LDCONFIG=	yes

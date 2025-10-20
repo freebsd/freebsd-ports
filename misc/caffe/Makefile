@@ -1,7 +1,7 @@
 PORTNAME=	caffe
 DISTVERSION=	1.0-136
 DISTVERSIONSUFFIX=	-g9b891540
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	misc # machine-learning
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libsnappy.so:archivers/snappy \
 		libleveldb.so:databases/leveldb \
 		liblmdb.so:databases/lmdb \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		${PY_BOOST} \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \

@@ -1,5 +1,6 @@
 PORTNAME=	arrow
 DISTVERSION=	21.0.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION} \
 		https://github.com/apache/orc/archive/rel/:orc
@@ -15,7 +16,7 @@ WWW=		https://arrow.apache.org \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		cmake compiler:c++17-lang localbase pkgconfig python:build,test
 USE_LDCONFIG=	yes

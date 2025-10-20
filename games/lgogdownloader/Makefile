@@ -1,6 +1,6 @@
 PORTNAME=	lgogdownloader
 DISTVERSION=	3.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/Sude-/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libboost_iostreams.so:devel/boost-libs \
 		libboost_program_options.so:devel/boost-libs \
 		libboost_regex.so:devel/boost-libs \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libjsoncpp.so:devel/jsoncpp \
 		librhash.so:security/rhash \

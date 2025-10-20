@@ -1,7 +1,7 @@
 PORTNAME=	colobot
 DISTVERSIONPREFIX=	${PORTNAME}-gold-
 DISTVERSION=	0.2.0
-PORTREVISION=	13
+PORTREVISION=	14
 DISTVERSIONSUFFIX=	-alpha
 CATEGORIES=	games education
 MASTER_SITES=	https://colobot.info/files/music/:music
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libogg.so:audio/libogg \
 		libopenal.so:audio/openal-soft \
 		libphysfs.so:devel/physfs \
-		libboost_system.so:devel/boost-libs
+		libboost_thread.so:devel/boost-libs
 
 USES=		cmake compiler:c++11-lang gettext-runtime gettext-tools:build \
 		gl gnome localbase:ldflags openal perl5 python:build sdl \

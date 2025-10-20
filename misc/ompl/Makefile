@@ -1,6 +1,6 @@
 PORTNAME=	ompl
 DISTVERSION=	1.6.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc comms
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://ompl.kavrakilab.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		cmake:testing compiler:c++17-lang eigen:3 pkgconfig
 USE_GITHUB=	yes

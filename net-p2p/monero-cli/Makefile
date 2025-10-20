@@ -1,7 +1,7 @@
 PORTNAME=	monero-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	alex.perechnev@gmail.com
@@ -22,7 +22,6 @@ LIB_DEPENDS=	\
 		libboost_program_options.so:devel/boost-libs \
 		libboost_regex.so:devel/boost-libs \
 		libboost_serialization.so:devel/boost-libs \
-		libboost_system.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs \
 		libminiupnpc.so:net/miniupnpc \
 		libnorm.so:net/norm \

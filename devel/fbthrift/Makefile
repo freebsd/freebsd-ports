@@ -1,6 +1,7 @@
 PORTNAME=	fbthrift
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2025.08.18.00
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +15,7 @@ BROKEN_aarch64=	compilation fails, see https://github.com/facebook/fbthrift/issu
 BROKEN_armv7=	compilation fails, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283484
 
 BUILD_DEPENDS=	range-v3>0:devel/range-v3
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libbzip2.so:misc/vxl \
 		libdouble-conversion.so:devel/double-conversion \
 		libevent.so:devel/libevent \

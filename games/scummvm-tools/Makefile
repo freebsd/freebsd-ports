@@ -1,6 +1,6 @@
 PORTNAME=	scummvm-tools
 PORTVERSION=	2.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games emulators
 MASTER_SITES=	https://downloads.scummvm.org/frs/${PORTNAME}/${PORTVERSION}/
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	lame:audio/lame \
 		flac:audio/flac \
 		oggenc:audio/vorbis-tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpng.so:graphics/png \
 		libmad.so:audio/libmad \
 		libogg.so:audio/libogg \

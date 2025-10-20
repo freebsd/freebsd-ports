@@ -1,7 +1,7 @@
 PORTNAME=	csxcad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	cgal>0:math/cgal
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libfparser-4.5.so:math/fparser \
 		libgmp.so:math/gmp \
 		libhdf5.so:science/hdf5 \

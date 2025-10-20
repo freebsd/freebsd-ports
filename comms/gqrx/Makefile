@@ -1,7 +1,7 @@
 PORTNAME=	gqrx
 PORTVERSION=	2.17.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libgnuradio-digital.so:comms/gnuradio \
 		libgnuradio-pmt.so:comms/gnuradio \
 		libgnuradio-osmosdr.so:comms/gr-osmosdr \
-		libboost_system.so:devel/boost-libs \
+		libboost_thread.so:devel/boost-libs \
 		liblog4cpp.so:devel/log4cpp \
 		libgmpxx.so:math/gmp \
 		libgmp.so:math/gmp \
