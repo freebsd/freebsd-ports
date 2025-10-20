@@ -1,5 +1,5 @@
 PORTNAME=	yaru-gtk-themes
-DISTVERSION=	22.10.3
+DISTVERSION=	25.10.3
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -9,21 +9,22 @@ WWW=		https://github.com/ubuntu/yaru
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	bash>0:shells/bash \
+BUILD_DEPENDS=	bash:shells/bash \
 		coreutils>0:sysutils/coreutils \
 		sassc:textproc/sassc
-RUN_DEPENDS=	gtk-engines2>0:x11-themes/gtk-engines2 \
-		gtk-murrine-engine>0:x11-themes/gtk-murrine-engine
 
 USES=		gnome meson pkgconfig python shebangfix
-USE_GNOME=	glib20:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	ubuntu
 GH_PROJECT=	yaru
+USE_GNOME=	glib20:build
 
-NO_ARCH=	yes
-
-BINARY_ALIAS=	realpath=grealpath
+SHEBANG_FILES=	cinnamon-shell/src/post_install.py \
+		common/colorize-dummy-svg.py \
+		gnome-shell/gresources-xml-parser.py \
+		gtk/src/post_install.py \
+		metacity/src/post_install.py
+SHEBANG_LANG=	${PYTHON_CMD}
 
 MESON_ARGS=	-Dcinnamon-dark=true \
 		-Dcinnamon-shell=true \
@@ -35,9 +36,7 @@ MESON_ARGS=	-Dcinnamon-dark=true \
 		-Dsounds=false \
 		-Dxfwm4=true
 
-SHEBANG_LANG=	${PYTHON_CMD}
-SHEBANG_FILES=	cinnamon-shell/src/post_install.py common/colorize-dummy-svg.py \
-		gnome-shell/gresources-xml-parser.py gtk/src/post_install.py \
-		metacity/src/post_install.py
+BINARY_ALIAS=	realpath=grealpath cp=gcp mv=gmv
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
