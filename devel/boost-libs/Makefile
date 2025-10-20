@@ -1,5 +1,5 @@
 PORTNAME=	boost-libs
-PORTREVISION?=	2
+PORTREVISION?=	0
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 WWW=		https://www.boost.org/
@@ -40,7 +40,7 @@ ICONV_DESC=		Boost.Locale with iconv encoding support
 ICU_DESC=		Boost.Regex/Locale with ICU unicode support
 LLVM_FROM_PORTS_DESC=	Use LLVM from ports to build
 
-GIL_EXT_LIB_DEPENDS=	libpng.so:graphics/png	\
+GIL_EXT_LIB_DEPENDS=	libpng.so:graphics/png \
 			libraw.so:graphics/libraw \
 			libtiff.so:graphics/tiff
 GIL_EXT_USES=		localbase:ldflags jpeg

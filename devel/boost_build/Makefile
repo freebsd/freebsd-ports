@@ -23,7 +23,7 @@ DATADIR=	${PREFIX}/share/b2
 
 CONFLICTS_INSTALL=	b2
 
-PORTSCOUT=      skipv:2014.10 # a very old version is labeled with YYYY.MM scheme in their repository
+PORTSCOUT=	skipv:2014.10 # a very old version is labeled with YYYY.MM scheme in their repository
 
 SHEBANG_GLOB=	*.py
 

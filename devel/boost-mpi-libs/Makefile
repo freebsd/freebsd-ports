@@ -11,11 +11,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 PATCHDIR=	${.CURDIR:H}/boost-libs/files
 
 BUILD_DEPENDS=	bjam:devel/boost-jam \
-		${PYNUMPY}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.26:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		${PY_BOOST}
 
-USES=		python:3.9-3.11  # upper bound inherited from math/py-numpy
+USES=		python
 USE_PYTHON=	flavors
 
 #LDFLAGS+=	-Wl,--as-needed
