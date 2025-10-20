@@ -1,6 +1,5 @@
 PORTNAME=	xml2rfc
-PORTVERSION=	3.30.2
-PORTREVISION=	1
+PORTVERSION=	3.31.0
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +21,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=5.3.0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configargparse>=1.2.3:devel/py-configargparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.2:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.3.1:devel/py-pyyaml@${PY_FLAVOR} \
-		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wcwidth>=0.2.5:devel/py-wcwidth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=3.6.0:devel/py-platformdirs@${PY_FLAVOR}
 
