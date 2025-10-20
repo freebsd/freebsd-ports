@@ -119,6 +119,7 @@
     SUBDIR += py-pygmsh
     SUBDIR += py-pymtl
     SUBDIR += py-pyvcd
+    SUBDIR += py-verilog-parser
     SUBDIR += py-vunit-hdl
     SUBDIR += python-gdsii
     SUBDIR += qcad
