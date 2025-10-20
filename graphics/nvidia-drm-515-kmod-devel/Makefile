@@ -1,6 +1,6 @@
 NVIDIA_DISTVERSION?=	580.95.05
 # Explicitly set PORTREVISION as it can be overridden by the master port
-PORTREVISION=	0
+PORTREVISION=	1
 MASTERDIR=	${.CURDIR}/../nvidia-drm-515-kmod
 PKGNAMESUFFIX=	-devel
 
