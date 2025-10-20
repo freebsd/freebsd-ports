@@ -1,5 +1,6 @@
 PORTNAME=	asterisk
 DISTVERSION=	20.16.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -11,6 +12,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${ASTERISK_MOH_G729_SOUNDS}:g729
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	b8d0f81a69b9c785c17482f57fcca92c9f3e08a8.patch:-p1
 
 MAINTAINER=	o.kryvulia@flex-it.com.ua
 COMMENT=	Open Source PBX and telephony toolkit
