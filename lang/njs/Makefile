@@ -2,7 +2,7 @@ PORTNAME=	njs
 DISTVERSION=	0.9.1
 CATEGORIES=	lang www
 
-MAINTAINER=	osa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NGINX JavaScript command line utility
 WWW=		https://nginx.org/en/docs/njs/
 
