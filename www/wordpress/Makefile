@@ -1,5 +1,5 @@
 PORTNAME=	wordpress
-DISTVERSION=	6.8.2
+DISTVERSION=	6.8.3
 PORTREVISION?=	0
 .ifndef WORDPRESS_LANG
 PORTEPOCH=	1
@@ -9,7 +9,6 @@ DISTVERSIONSUFFIX=	-${WORDPRESS_LANG}
 MASTER_SITES?=	https://${WORDPRESS_LANG}.wordpress.org/
 .endif
 CATEGORIES+=	www
-
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
