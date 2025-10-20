@@ -1,6 +1,7 @@
 PORTNAME=	appstream-generator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -42,9 +43,17 @@ CFLAGS+=	-fexperimental-library
 DATADIR=	${PREFIX}/share/appstream
 OPTIONS_SUB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH:Marmv?}
+post-patch:
+	@${REINPLACE_CMD} -e "/tbb_dep/s|'tbb'|'tbb32'|" \
+		${WRKSRC}/meson.build
+.endif
+
 post-install:
 	cd ${WRKSRC}/data && \
 		${COPYTREE_SHARE} templates ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${PATCHDIR}/poudriere-hook-bulk.sh ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
