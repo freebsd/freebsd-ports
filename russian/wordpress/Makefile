@@ -1,4 +1,3 @@
-
 CATEGORIES=	russian
 MASTER_SITES=	https://ru.wordpress.org/
 
