@@ -1,5 +1,5 @@
 PORTNAME=	yaru-icon-theme
-DISTVERSION=	22.10.3
+DISTVERSION=	25.10.3
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -9,19 +9,19 @@ WWW=		https://github.com/ubuntu/yaru
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	bash>0:shells/bash \
+BUILD_DEPENDS=	bash:shells/bash \
 		coreutils>0:sysutils/coreutils \
 		sassc:textproc/sassc
 
 USES=		gnome meson ninja python shebangfix
-USE_GNOME=	glib20:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	ubuntu
 GH_PROJECT=	yaru
+USE_GNOME=	glib20:build
 
-NO_ARCH=	yes
-
-BINARY_ALIAS=	realpath=grealpath
+SHEBANG_FILES=	icons/meson/post_install.py \
+		icons/src/generate-index-theme.py
+SHEBANG_LANG=	${PYTHON_CMD}
 
 MESON_ARGS=	-Dgnome-shell=false \
 		-Dgtk=false \
@@ -30,7 +30,7 @@ MESON_ARGS=	-Dgnome-shell=false \
 		-Dsessions=false \
 		-Dsounds=false
 
-SHEBANG_LANG=	${PYTHON_CMD}
-SHEBANG_FILES=	icons/meson/post_install.py icons/src/generate-index-theme.py
+BINARY_ALIAS=	realpath=grealpath
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
