@@ -1,7 +1,6 @@
 PORTNAME=	sqlpage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.37.1
-PORTREVISION=	1
+DISTVERSION=	0.38.0
 CATEGORIES=	www databases
 MASTER_SITES=	https://cdn.jsdelivr.net/npm/:npm
 DISTFILES=	${NPM_DISTFILES}
@@ -13,7 +12,8 @@ WWW=		https://github.com/lovasoa/SQLPage
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libzstd.so:archivers/zstd
+LIB_DEPENDS=	libzstd.so:archivers/zstd \
+		libodbc.so:databases/unixODBC
 
 MAKE_ENV=	LIBCLANG_PATH=${LLVM_PREFIX}/lib \
 		LLVM_CONFIG_PATH=${LLVM_CONFIG}
