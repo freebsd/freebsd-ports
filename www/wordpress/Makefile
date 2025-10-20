@@ -29,7 +29,7 @@ PKGNAMESUFFIX=	-${WORDPRESS_LANG}
 CPE_LANG=	${WORDPRESS_LANG}
 .endif
 
-USE_PHP=	curl exif fileinfo ftp gd mysqli tokenizer xml zip zlib
+USE_PHP=	curl exif fileinfo filter ftp gd mysqli tokenizer xml zip zlib
 CONFLICTS_INSTALL=	??-wordpress
 NO_ARCH=	yes
 NO_BUILD=	yes
