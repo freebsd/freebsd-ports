@@ -1,6 +1,7 @@
 PORTNAME=	lincity-ng
 DISTVERSION=	2.14.2
 DISTVERSIONSUFFIX=	-Source
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
@@ -20,6 +21,8 @@ USE_GL=		gl
 USE_GNOME=	libxml2 libxslt
 USE_SDL=	image2 mixer2 sdl2 ttf2
 USE_XORG=	x11
+
+CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/share/man/man6
 
 LDFLAGS+=	-lpthread
 

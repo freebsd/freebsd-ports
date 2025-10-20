@@ -2,7 +2,7 @@ bin/lincity-ng
 share/applications/io.github.lincity_ng.lincity-ng.desktop
 share/icons/hicolor/128x128/apps/io.github.lincity_ng.lincity-ng.png
 share/icons/hicolor/256x256/apps/io.github.lincity_ng.lincity-ng.png
-share/man/lincity-ng.6.gz
+share/man/man6/lincity-ng.6.gz
 share/metainfo/io.github.lincity_ng.lincity-ng.metainfo.xml
 %%DATADIR%%/1328-to-2130.sh
 %%DATADIR%%/1328-to-2130.xsl
