@@ -121,6 +121,7 @@ TNC_DESC=		Trusted Network Connect
 WNM_DESC=		Wireless Network Monitoring
 MBO_DESC=		Multi Band Operation (Enables WNM)
 RSN_PREAUTH=		RSN Preauthentication
+LIBWPA_DESC=		libwpa_client Shared Library
 
 PRIVSEP_PLIST_FILES=	sbin/wpa_priv
 DBUS_PLIST_FILES=	share/dbus-1/system-services/fi.w1.wpa_supplicant1.service \
