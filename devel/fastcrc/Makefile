@@ -1,5 +1,6 @@
 PORTNAME=	fastcrc
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 
@@ -7,9 +8,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast CRC routines
 WWW=		http://www.whizkidtech.redprince.net/fports/
 
-BUILD_DEPENDS=	nasm:devel/nasm
+LICENSE=	BSD2CLAUSE
+
+DEPRECATED=	dead upstream
+EXPIRATION_DATE=	2025-12-31
 
 ONLY_FOR_ARCHS=	i386
+
+BUILD_DEPENDS=	nasm:devel/nasm
 
 USE_LDCONFIG=	yes
 
