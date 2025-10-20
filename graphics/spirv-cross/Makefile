@@ -1,6 +1,6 @@
 PORTNAME=	spirv-cross
 DISTVERSIONPREFIX=	vulkan-sdk-
-DISTVERSION=	1.4.313.0
+DISTVERSION=	1.4.328.1
 CATEGORIES=	graphics
 
 MAINTAINER=	vvd@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://github.com/KhronosGroup/SPIRV-Cross
 
 LICENSE=	APACHE20
 
-USES=		cmake compiler:c++11-lib pathfix python:build
+USES=		cmake compiler:c++11-lib python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup

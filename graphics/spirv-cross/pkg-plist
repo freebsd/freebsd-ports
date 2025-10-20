@@ -18,7 +18,7 @@ include/spirv_cross/spirv_parser.hpp
 include/spirv_cross/spirv_reflect.hpp
 lib/libspirv-cross-c-shared.so
 lib/libspirv-cross-c-shared.so.0
-lib/libspirv-cross-c-shared.so.0.65.0
+lib/libspirv-cross-c-shared.so.0.67.0
 lib/libspirv-cross-c.a
 lib/libspirv-cross-core.a
 lib/libspirv-cross-cpp.a
