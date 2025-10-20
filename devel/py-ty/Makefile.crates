@@ -4,8 +4,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
 		annotate-snippets-0.11.5 \
-		anstream-0.6.20 \
-		anstyle-1.0.11 \
+		anstream-0.6.21 \
+		anstyle-1.0.13 \
 		anstyle-lossy-1.1.4 \
 		anstyle-parse-0.2.7 \
 		anstyle-query-1.1.4 \
@@ -33,7 +33,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bumpalo-3.19.0 \
 		byteorder-1.5.0 \
 		cachedir-0.3.1 \
-		camino-1.2.0 \
+		camino-1.2.1 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
 		cc-1.2.38 \
@@ -187,9 +187,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
-		libc-0.2.175 \
-		libcst-1.8.4 \
-		libcst_derive-1.8.4 \
+		libc-0.2.177 \
+		libcst-1.8.5 \
+		libcst_derive-1.8.5 \
 		libloading-0.8.9 \
 		libmimalloc-sys-0.1.44 \
 		libredox-0.1.10 \
@@ -205,7 +205,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		matchers-0.2.0 \
 		matches-0.1.10 \
 		matchit-0.8.6 \
-		memchr-2.7.5 \
+		memchr-2.7.6 \
 		memoffset-0.9.1 \
 		mimalloc-0.1.48 \
 		minicov-0.3.7 \
@@ -265,7 +265,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		proc-macro-crate-3.4.0 \
 		proc-macro-utils-0.10.0 \
 		proc-macro2-1.0.101 \
-		pyproject-toml-0.13.6 \
+		pyproject-toml-0.13.7 \
 		quick-junit-0.5.1 \
 		quick-xml-0.37.5 \
 		quickcheck-1.0.3 \
@@ -464,5 +464,5 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
-		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=29ab321b45d00daa4315fa2a06f7207759a8c87e\#29ab321b45d00daa4315fa2a06f7207759a8c87e \
-		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439
+		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439 \
+		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=ef9f9329be6923acd050c8dddd172e3bc93e8051\#ef9f9329be6923acd050c8dddd172e3bc93e8051
