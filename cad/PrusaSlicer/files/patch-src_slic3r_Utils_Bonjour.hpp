@@ -1,5 +1,13 @@
 --- src/slic3r/Utils/Bonjour.hpp.orig	2024-12-20 11:54:34 UTC
 +++ src/slic3r/Utils/Bonjour.hpp
+@@ -13,6 +13,7 @@
+ #include <functional>
+
+ #include <boost/asio.hpp>
++#include <boost/asio/deadline_timer.hpp>
+ #include <boost/asio/ip/address.hpp>
+ #include <boost/optional.hpp>
+ #include <boost/system/error_code.hpp>
 @@ -155,11 +155,11 @@ class UdpSocket (public)
  	UdpSocket(Bonjour::ReplyFn replyfn
  		, const boost::asio::ip::address& multicast_address
