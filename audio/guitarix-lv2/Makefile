@@ -76,6 +76,9 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 NLS_USE=	GNOME=intltool:build
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/boost_system/boost_thread/' ${WRKSRC}/wscript
+
 post-install:
 	# strip, see https://sourceforge.net/p/guitarix/bugs/60/
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/guitarix
