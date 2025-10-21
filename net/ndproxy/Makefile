@@ -13,6 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler kmod
 
+BROKEN_FreeBSD_15=	ndpacket.c:186:46: error: incomplete definition of type 'struct ifnet'
+BROKEN_FreeBSD_16=	ndpacket.c:186:46: error: incomplete definition of type 'struct ifnet'
+
 SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	ndproxy
