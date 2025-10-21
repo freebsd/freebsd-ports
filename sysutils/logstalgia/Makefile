@@ -29,5 +29,6 @@ GNU_CONFIGURE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's| -Wno-unused-but-set-variable||' \
 		${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e '/AX_BOOST_SYSTEM/d' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
