@@ -16,7 +16,6 @@ USES=		compiler:c++0x dos2unix localbase
 USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-lboost_system
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/profiles
