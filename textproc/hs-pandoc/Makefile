@@ -1,5 +1,5 @@
 PORTNAME=	pandoc
-DISTVERSION=	3.8.2
+DISTVERSION=	3.8.2.1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -53,7 +53,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		cborg-0.2.10.0_3 \
 		cereal-0.5.8.3 \
 		character-ps-0.1 \
-		citeproc-0.10 \
+		citeproc-0.11 \
 		cmdargs-0.10.22 \
 		colour-2.3.6 \
 		commonmark-0.2.6.1 \
@@ -91,7 +91,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		generics-sop-0.5.1.4_2 \
 		gridtables-0.1.1.0 \
 		haddock-library-1.11.0_5 \
-		half-0.3.3 \
+		half-0.3.3_1 \
 		happy-2.1.7 \
 		happy-lib-2.1.7 \
 		hashable-1.5.0.0_1 \
@@ -108,10 +108,10 @@ USE_CABAL=	Glob-0.10.2_3 \
 		hslua-marshalling-2.3.1 \
 		hslua-module-doclayout-1.2.0.1 \
 		hslua-module-path-1.1.1 \
-		hslua-module-system-1.2.3 \
+		hslua-module-system-1.2.3_1 \
 		hslua-module-text-1.1.1 \
 		hslua-module-version-1.1.1 \
-		hslua-module-zip-1.1.4 \
+		hslua-module-zip-1.1.4_1 \
 		hslua-objectorientation-2.4.0 \
 		hslua-packaging-2.3.2 \
 		hslua-repl-0.1.2 \
@@ -138,7 +138,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		lua-2.3.3 \
 		memory-0.18.0_1 \
 		mime-types-0.1.2.0 \
-		mmorph-1.2.1 \
+		mmorph-1.2.1_1 \
 		monad-control-1.0.3.1 \
 		mono-traversable-1.0.21.0 \
 		network-3.2.8.0 \
@@ -150,11 +150,11 @@ USE_CABAL=	Glob-0.10.2_3 \
 		optparse-applicative-0.19.0.0 \
 		ordered-containers-0.2.4 \
 		os-string-2.0.8 \
-		pandoc-3.8.2 \
-		pandoc-lua-engine-0.5 \
+		pandoc-3.8.2.1 \
+		pandoc-lua-engine-0.5.0.1 \
 		pandoc-lua-marshal-0.3.1 \
 		pandoc-server-0.1.1 \
-		pandoc-types-1.23.1_3 \
+		pandoc-types-1.23.1_4 \
 		pem-0.2.4 \
 		pretty-show-1.10 \
 		prettyprinter-1.7.1 \
@@ -212,8 +212,8 @@ USE_CABAL=	Glob-0.10.2_3 \
 		typst-0.8.0.2 \
 		typst-symbols-0.1.8.1 \
 		unicode-collation-0.1.3.6_2 \
-		unicode-data-0.6.0_2 \
-		unicode-transforms-0.4.0.1_7 \
+		unicode-data-0.8.0 \
+		unicode-transforms-0.4.0.1_8 \
 		uniplate-1.6.13_1 \
 		unix-compat-0.7.4.1 \
 		unix-time-0.4.17 \
