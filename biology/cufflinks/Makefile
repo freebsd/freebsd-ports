@@ -44,5 +44,7 @@ PLIST_FILES=	bin/compress_gtf \
 
 post-patch: # https://github.com/cole-trapnell-lab/cufflinks/issues/116
 	@${GREP} -rl 'fabs(' ${WRKSRC} | ${GREP} "\.cpp$$" | ${XARGS} ${REINPLACE_CMD} 's|std::fabs(|fabs(| ; s|fabs(|::fabs(|'
+	@${REINPLACE_CMD} -e '/boost_system/d'  -e '/AX_BOOST_SYSTEM/d' \
+		${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
