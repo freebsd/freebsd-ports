@@ -12,8 +12,8 @@ LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libbcg729.so:audio/bcg729
 
-FLAVORS=	asterisk18 asterisk20 asterisk22
-FLAVOR?=	${FLAVORS:[3]}
+FLAVORS=	asterisk20 asterisk22
+FLAVOR?=	${FLAVORS:[2]}
 
 ${FLAVOR}_PKGNAMEPREFIX=	${FLAVOR}-
 ${FLAVOR}_BUILD_DEPENDS=	asterisk:net/${FLAVOR}
