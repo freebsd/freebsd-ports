@@ -1,11 +1,12 @@
 PORTNAME=	gdstk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.60
+DISTVERSION=	0.9.61
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for creation and manipulation of GDSII and OASIS files
-WWW=		https://heitzmann.github.io/gdstk/
+WWW=		https://heitzmann.github.io/gdstk/ \
+		https://github.com/heitzmann/gdstk/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
