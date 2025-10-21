@@ -109,6 +109,9 @@ post-install:
 
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e '/AX_BOOST_SYSTEM/d' ${WRKSRC}/configure.ac
+
 regression-test: build
 	# To use this sucessfully, remove --without-daemon and --without-utils
 	# from CONFIGURE_ARGS above.
