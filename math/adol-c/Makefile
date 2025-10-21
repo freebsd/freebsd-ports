@@ -19,6 +19,7 @@ USES=		compiler:c++11-lang gmake libtool tar:tgz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-boost-system=boost_thread
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
 
 INSTALL_TARGET=	install-strip
