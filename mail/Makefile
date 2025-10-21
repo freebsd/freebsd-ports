@@ -256,7 +256,6 @@
     SUBDIR += msglint
     SUBDIR += msmtp
     SUBDIR += mu
-    SUBDIR += mu4e
     SUBDIR += mu4e-maildirs
     SUBDIR += mulberry
     SUBDIR += mutt
