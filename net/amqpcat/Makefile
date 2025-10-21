@@ -1,14 +1,11 @@
 PORTNAME=	amqpcat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	net
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		cloudamqp-amq-protocol.cr-v1.1.14_GH0.tar.gz \
-		cloudamqp-amqp-client.cr-v1.2.3_GH0.tar.gz
-
-PATCH_SITES+=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/:patch
-PATCHFILES=	02577f21182de0c296df76b3812708a3c2f39c00.patch:-p1:patch # accommodate sleep(int) deprecation in modern crystal
+		cloudamqp-amq-protocol.cr-v1.1.15_GH0.tar.gz \
+		cloudamqp-amqp-client.cr-v1.3.1_GH0.tar.gz
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	CLI tool for publishing to and consuming from AMQP servers
@@ -23,8 +20,8 @@ BUILD_DEPENDS=	crystal:lang/crystal \
 USES=		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudamqp
-GH_TUPLE=	cloudamqp:amq-protocol.cr:v1.1.14:proto/deps/amq-protocol.cr \
-		cloudamqp:amqp-client.cr:v1.2.3:client/deps/amqp-client.cr
+GH_TUPLE=	cloudamqp:amq-protocol.cr:v1.1.15:proto/deps/amq-protocol.cr \
+		cloudamqp:amqp-client.cr:v1.3.1:client/deps/amqp-client.cr
 
 PLIST_FILES=	bin/amqpcat \
 		share/man/man1/amqpcat.1.gz
