@@ -28,6 +28,9 @@ MAKE_ENV=	STRIP=${STRIP}
 
 SUB_FILES=	haplohseq-example
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/-lboost_system //' ${WRKSRC}/makefile
+
 pre-configure:
 	@${REINPLACE_CMD} \
 		-e 's|/bin/bash|/bin/sh|' \
