@@ -1,0 +1,81 @@
+#!/bin/sh
+#
+# Created by: Mark Felder <feld@FreeBSD.org>
+
+# PROVIDE: omada
+# REQUIRE: LOGIN mongod
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable `omada':
+#
+# omada_enable="YES"
+#
+# Other configuration settings for omada that can be set in /etc/rc.conf:
+#
+# omada_user (str)
+#   This is the user that omada runs as
+#   Set to %%USERS%% by default
+#
+# omada_group (str)
+#   This is the group that omada runs as
+#   Set to %%GROUPS%% by default
+#
+# omada_java_home (str)
+#   The path to the base directory for the Java to use to run omada
+#   Defaults to %%JAVA_HOME%%
+#
+# omada_javaflags (str)
+#   Flags passed to Java to run omada
+#
+
+. /etc/rc.subr
+name=omada
+
+rcvar=omada_enable
+load_rc_config ${name}
+
+: ${omada_enable:=NO}
+: ${omada_user:=%%USERS%%}
+: ${omada_group:=%%GROUPS%%}
+: ${omada_java_home=%%JAVA_HOME%%}
+: ${omada_javaflags="-XX:MaxHeapFreeRatio=60 \
+	-XX:MinHeapFreeRatio=30 \
+	-XX:+HeapDumpOnOutOfMemoryError \
+	-XX:HeapDumpPath=%%JAVASHAREDIR%%/omada/logs/java_heapdump.hprof \
+	-Djava.awt.headless=true"}
+
+omada_chdir=%%JAVASHAREDIR%%/omada/lib
+pidfile="/var/run/omada/${name}.pid"
+procname=${omada_java_home}/bin/java
+command=/usr/sbin/daemon
+command_args="-f -p ${pidfile} ${omada_java_home}/bin/java ${omada_javaflags} -server -cp %%JAVASHAREDIR%%/omada/lib/*:%%JAVASHAREDIR%%/omada/properties com.tplink.smb.omada.starter.OmadaLinuxMain start"
+start_precmd=start_precmd
+stop_precmd=stop_precmd
+stop_postcmd=stop_postcmd
+
+start_precmd()
+{
+	if [ ! -e /var/run/omada ] ; then
+		install -d -o %%USERS%% -g %%GROUPS%% /var/run/omada;
+	fi
+}
+
+stop_precmd()
+{
+	if [ -r ${pidfile} ]; then
+		_OMADAPID=$(check_pidfile ${pidfile} ${procname})
+		export _OMADA_CHILDREN=$(pgrep -P ${_OMADAPID})
+	fi
+}
+
+stop_postcmd()
+{
+	if ! [ -z ${_OMADA_CHILDREN} ]; then
+		echo "Cleaning up leftover child processes."
+		kill $sig_stop ${_OMADA_CHILDREN}
+		wait_for_pids ${_OMADA_CHILDREN}
+	fi
+}
+
+run_rc_command "$1"
