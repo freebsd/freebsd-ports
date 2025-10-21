@@ -538,6 +538,7 @@
     SUBDIR += percona-orchestrator
     SUBDIR += percona-toolkit
     SUBDIR += pg-gvm
+    SUBDIR += pg-safeupdate
     SUBDIR += pg.el
     SUBDIR += pgFormatter
     SUBDIR += pg_activity
