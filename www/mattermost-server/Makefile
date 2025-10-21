@@ -4,8 +4,7 @@ CATEGORIES=	www
 MASTER_SITES=	LOCAL/decke
 PKGNAMESUFFIX=	-server
 
-# implicit-approval+ for decke
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Open source Slack-alternative in Golang and React
 WWW=		https://mattermost.org/
 
