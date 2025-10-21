@@ -21,14 +21,13 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 USES=		bison cpe desktop-file-utils gmake \
 		llvm:min=17,build,noexport localbase \
 		pkgconfig sdl shebangfix tar:xz
+CPE_VENDOR=	winehq
 USE_GCC=	yes
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/wine
 USE_SDL=	sdl2
 
-CPE_VENDOR=	winehq
-
-CONFLICTS_INSTALL=	wine-devel
-
+SHEBANG_FILES=	tools/make_requests tools/winemaker/winemaker \
+		tools/winedump/function_grep.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose \
 		--disable-kerberos \
@@ -56,15 +55,16 @@ CONFIGURE_ARGS+=--verbose \
 		--without-unwind \
 		--without-usb
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
-SHEBANG_FILES=	tools/make_requests tools/winemaker/winemaker \
-		tools/winedump/function_grep.pl
+
+PIE_UNSAFE=	yes
+
+CONFLICTS_INSTALL=	wine-devel
 
 BINARY_ALIAS+=	clang=${LOCALBASE}/bin/clang${LLVM_VERSION} \
 		lld-link=${LOCALBASE}/bin/lld-link${LLVM_VERSION}
+PORTSCOUT=	limit:^10\.0
 
 SUB_FILES=	pkg-message
-
-PIE_UNSAFE=	yes
 
 PORTDATA=	wine.inf
 
@@ -79,45 +79,43 @@ GECKO_DESC=	Bundle Gecko MSI package for Wine
 MONO_DESC=	Bundle Mono MSI package for Wine
 WAYLAND_DESC=	Wayland Support
 
-PORTSCOUT=	limit:^10\.0
-
-ALSA_CONFIGURE_WITH=	alsa
-ALSA_USES=		gnome gstreamer
-ALSA_USE=		GNOME=glib20
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_RUN_DEPENDS=	alsa-plugins>0:audio/alsa-plugins
+ALSA_USES=		gnome gstreamer
+ALSA_USE=		GNOME=glib20
+ALSA_CONFIGURE_WITH=	alsa
 
-CUPS_CONFIGURE_WITH=	cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
+CUPS_CONFIGURE_WITH=	cups
 
 DOSBOX_RUN_DEPENDS=	dosbox:emulators/dosbox
 
 GECKO_RUN_DEPENDS=	wine-gecko>0:emulators/wine-gecko
 
-GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+GNUTLS_CONFIGURE_WITH=	gnutls
 
 MONO_RUN_DEPENDS=	wine-mono>0:emulators/wine-mono
 
-OSS_CONFIGURE_WITH=	oss
 OSS_USES=		gnome gstreamer
 OSS_USE=		GNOME=glib20
+OSS_CONFIGURE_WITH=	oss
 
-V4L_CONFIGURE_WITH=	v4l2
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
+V4L_CONFIGURE_WITH=	v4l2
 
-WAYLAND_CONFIGURE_WITH=	wayland
 WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon
+WAYLAND_CONFIGURE_WITH=	wayland
 
-X11_CONFIGURE_WITH=	x fontconfig freetype opengl xinerama xinput2 xrandr xrender
-X11_USES=		gl xorg
-X11_USE=		GL=glu XORG=x11,xext,xcomposite,xcursor,xi,xinerama,xrandr,xrender
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			libvulkan.so:graphics/vulkan-loader
+X11_USES=		gl xorg
+X11_USE=		GL=glu XORG=x11,xcomposite,xcursor,xext,xi,xinerama,xrandr,xrender
+X11_CONFIGURE_WITH=	fontconfig freetype opengl x xinerama xinput2 xrandr xrender
 
 .include <bsd.port.pre.mk>
 
