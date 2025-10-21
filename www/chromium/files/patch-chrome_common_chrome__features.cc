@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.cc.orig	2025-10-02 04:28:32 UTC
+--- chrome/common/chrome_features.cc.orig	2025-10-18 06:45:48 UTC
 +++ chrome/common/chrome_features.cc
 @@ -64,7 +64,7 @@ BASE_FEATURE(UseAdHocSigningForWebAppShims, base::FEAT
  #endif  // BUILDFLAG(IS_MAC)
@@ -45,7 +45,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -997,7 +997,7 @@ BASE_FEATURE(KAnonymityServiceOHTTPRequests, base::FEA
+@@ -1008,7 +1008,7 @@ BASE_FEATURE(KAnonymityServiceOHTTPRequests, base::FEA
  // public keys.
  BASE_FEATURE(KAnonymityServiceStorage, base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -54,7 +54,7 @@
  BASE_FEATURE(LinuxLowMemoryMonitor, base::FEATURE_DISABLED_BY_DEFAULT);
  // Values taken from the low-memory-monitor documentation and also apply to the
  // portal API:
-@@ -1008,7 +1008,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -1019,7 +1019,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  
