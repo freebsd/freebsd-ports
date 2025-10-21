@@ -44,7 +44,6 @@ share/mime/application/x-pcb-footprint.xml
 share/mime/application/x-pcb-layout.xml
 share/mime/application/x-pcb-netlist.xml
 share/mime/packages/pcb.xml
-@dir %%DATADIR%%/newlib/sockets
 %%DATADIR%%/CreateLibrary.sh
 %%DATADIR%%/CreateLibraryContents.sh
 %%DATADIR%%/ListLibraryContents.sh

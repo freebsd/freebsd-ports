@@ -1,8 +1,8 @@
---- gts/rounding.h.orig	Mon Jun 17 12:05:45 2002
-+++ gts/rounding.h	Wed Sep 24 12:57:41 2003
-@@ -28,11 +28,11 @@
-                              _FPU_SETCW(fpu_round_double); }
- #  define FPU_RESTORE       {_FPU_SETCW(fpu_init);}
+--- gts/rounding.h.orig	2020-12-31 20:18:44 UTC
++++ gts/rounding.h
+@@ -42,11 +42,11 @@
+ #    define FPU_RESTORE
+ #  endif /* not FPU_EXTENDED */
  #else /* not HAVE_FPU_CONTROL_H */
 -#  ifdef __FreeBSD__
 +#  ifdef HAVE_FROATINGPOINT_H
