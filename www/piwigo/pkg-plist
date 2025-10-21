@@ -440,6 +440,7 @@
 %%WWWDIR%%/i.php
 %%WWWDIR%%/identification.php
 %%WWWDIR%%/include/Logger.class.php
+%%WWWDIR%%/include/base32.class.php
 %%WWWDIR%%/include/block.class.php
 %%WWWDIR%%/include/cache.class.php
 %%WWWDIR%%/include/calendar_base.class.php
@@ -496,6 +497,7 @@
 %%WWWDIR%%/include/phpmailer/PHPMailer.php
 %%WWWDIR%%/include/phpmailer/POP3.php
 %%WWWDIR%%/include/phpmailer/SMTP.php
+%%WWWDIR%%/include/phpqrcode.php
 %%WWWDIR%%/include/picture_comment.inc.php
 %%WWWDIR%%/include/picture_metadata.inc.php
 %%WWWDIR%%/include/picture_rate.inc.php
@@ -732,6 +734,7 @@
 %%WWWDIR%%/include/smarty/libs/sysplugins/smartyexception.php
 %%WWWDIR%%/include/srand.php
 %%WWWDIR%%/include/template.class.php
+%%WWWDIR%%/include/totp.class.php
 %%WWWDIR%%/include/user.inc.php
 %%WWWDIR%%/include/ws_core.inc.php
 %%WWWDIR%%/include/ws_functions.inc.php
