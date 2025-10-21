@@ -48,4 +48,8 @@ CONFIGURE_ARGS+=	--with-contrib-plugins=all
 PLIST_SUB=	X86=""
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e '/boost_system/d'  -e '/AX_BOOST_SYSTEM/d' \
+		${WRKSRC}/configure.ac
+
 .include <bsd.port.post.mk>
