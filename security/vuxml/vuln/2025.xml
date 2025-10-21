@@ -1,3 +1,73 @@
+  <vuln vid="88f34edb-ae9b-11f0-b3f7-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>141.0.7390.107</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>141.0.7390.107</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/10/stable-channel-update-for-desktop_14.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[447192722] High CVE-2025-11756: Use after free in Safe Browsing. Reported by asnine on 2025-09-25</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11756</cvename>
+      <url>https://chromereleases.googleblog.com/2025/10/stable-channel-update-for-desktop_14.html</url>
+    </references>
+    <dates>
+      <discovery>2025-10-14</discovery>
+      <entry>2025-10-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="60ddafd2-ae9e-11f0-b3f7-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>141.0.7390.65</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>141.0.7390.65</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/10/stable-channel-update-for-desktop.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[443196747] High CVE-2025-11458: Heap buffer overflow in Sync. Reported by raven at KunLun lab on 2025-09-05</li>
+	    <li>[446722008] High CVE-2025-11460: Use after free in Storage. Reported by Sombra on 2025-09-23</li>
+	    <li>[441917796] Medium CVE-2025-11211: Out of bounds read in WebCodecs. Reported by Jakob Košir on 2025-08-29</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11458</cvename>
+      <cvename>CVE-2025-11460</cvename>
+      <cvename>CVE-2025-11211</cvename>
+      <url>https://chromereleases.googleblog.com/2025/10/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2025-10-07</discovery>
+      <entry>2025-10-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cdf2abf7-ae83-11f0-b5fb-b42e991fc52e">
     <topic>Mongodb -- Use-after-free in the MongoDB</topic>
     <affects>
