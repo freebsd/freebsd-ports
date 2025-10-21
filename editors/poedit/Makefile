@@ -19,12 +19,15 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libicui18n.so:devel/icu \
 		liblucene++.so:textproc/luceneplusplus
 
-USES=				desktop-file-utils gettext-tools:build,run \
+USES=				autoreconf desktop-file-utils gettext-tools:build,run \
 				gmake gnome pkgconfig
 USE_GNOME=			cairo gdkpixbuf glib20 gtk30 pango
 USE_WX=				3.2
 WX_CONF_ARGS=			absolute
 GNU_CONFIGURE=			yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
+post-patch:
+	@${REINPLACE_CMD} -e '/AX_BOOST_SYSTEM/d' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
