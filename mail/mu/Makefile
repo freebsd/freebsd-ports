@@ -1,47 +1,55 @@
 PORTNAME=	mu
-PORTVERSION=	1.8.13
-PORTREVISION=	4
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.12.13
 CATEGORIES=	mail
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	rwn@mailo.com
 COMMENT=	Mail searching frontend for Xapian
 WWW=		https://www.djcbsoftware.nl/code/mu/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libxapian.so:databases/xapian-core \
-		libgmime-3.0.so:mail/gmime30 \
-		libgc-threaded.so:devel/boehm-gc-threaded \
-		libjson-glib-1.0.so:devel/json-glib
+BUILD_DEPENDS=	emacs:editors/emacs@nox
 
-USES=		autoreconf compiler:c++14-lang gettext-runtime gmake gnome \
-		libtool makeinfo pkgconfig
+LIB_DEPENDS=	libxapian.so:databases/xapian-core \
+		libfmt.so:devel/libfmt \
+		libgmime-3.0.so:mail/gmime30
+
+USES=		meson compiler:c++17-lang gnome \
+		makeinfo pkgconfig \
+		readline shebangfix python:build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	djcb
+
 USE_GNOME=	glib20
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=	--disable-mu4e
-INSTALL_TARGET=	install-strip
+SHEBANG_GLOB=	*.py
 
-OPTIONS_DEFINE=		DOCS GUILE
-OPTIONS_DEFAULT=	DOCS GUILE
+OPTIONS_DEFINE=		DOCS MU4E GUILE CLD2
+OPTIONS_DEFAULT=	MU4E
 OPTIONS_SUB=		yes
 
+MU4E_DESC=		Install mu4e e-mail client for emacs
+GUILE_DESC=		Install guile support
+CLD2_DESC=		Install CL2 support
+
+MU4E_RUN_DEPENDS=	emacs:editors/emacs
+MU4E_INFO=		mu4e
+
 GUILE_USES=		guile:3.0
-GUILE_USE=		ldconfig=yes
-GUILE_CONFIGURE_ENABLE=	guile
-GUILE_INFO=		mu-guile
+GUILE_MESON_ENABLED=	guile
+GUILE_INFO=		mu-guile mu-scm
 
-post-install:
-	cd ${FILESDIR} && ${INSTALL_SCRIPT} mu-ask \
-	    ${STAGEDIR}${PREFIX}/bin
+CLD2_MESON_ENABLED=	cld2
+CLD2_LIB_DEPENDS=	libcld2.so:devel/cld2
 
-post-install-GUILE-on:
-	${FIND} ${STAGEDIR}${PREFIX}/lib -name "*.so.*" -type f | \
-	    ${XARGS} ${STRIP_CMD}
+post-stage-GUILE-off:
+	${RM} ${STAGEDIR}${PREFIX}/share/info/mu-guile.info
+	${RM} ${STAGEDIR}${PREFIX}/share/info/mu-scm.info
+
+post-stage-MU4E-off:
+	${RM} ${STAGEDIR}${PREFIX}/share/info/mu4e.info
 
 .include <bsd.port.mk>
