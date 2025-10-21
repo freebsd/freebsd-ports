@@ -12,7 +12,7 @@ WWW=		https://mattermost.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		mattermost-webapp>=${PORTVERSION}:www/mattermost-webapp
