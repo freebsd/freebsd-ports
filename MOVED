@@ -4825,3 +4825,4 @@ textproc/rubygem-cucumber-gherkin27|textproc/rubygem-cucumber-gherkin|2025-10-18
 textproc/rubygem-cucumber-gherkin30|textproc/rubygem-cucumber-gherkin|2025-10-18|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
 textproc/rubygem-cucumber-gherkin32|textproc/rubygem-cucumber-gherkin|2025-10-18|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
 devel/gocritic|devel/go-critic|2025-10-19|Commands renamed up stream
+net/asterisk18||2025-10-21|Has expired: Migrate to newer asterisk, security support ends soon
