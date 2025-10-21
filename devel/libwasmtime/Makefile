@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	devel
 
-MAINTAINER=	osa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for fast and secure runtime for WebAssembly
 WWW=		https://wasmtime.dev/
 
