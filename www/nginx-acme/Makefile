@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	nginx-devel-
 DISTFILES=	nginx-${PORTNAME}-${DISTVERSION}.tar.gz:acme \
 		nginx-${NGINX_VERSION}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	ACME module for NGINX
 WWW=		https://github.com/nginx/nginx-acme
 
