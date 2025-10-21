@@ -15,6 +15,7 @@
     SUBDIR += R-cran-miniUI
     SUBDIR += R-cran-pixture
     SUBDIR += R-cran-pkgdown
+    SUBDIR += R-cran-revealjs
     SUBDIR += R-cran-rvest
     SUBDIR += R-cran-scrapeR
     SUBDIR += R-cran-selectr
