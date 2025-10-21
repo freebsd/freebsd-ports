@@ -245,16 +245,16 @@ include/spa-0.2/spa/utils/type.h
 %%GSTREAMER%%lib/gstreamer-1.0/libgstpipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.1401.0
+lib/libpipewire-0.3.so.0.1409.0
 %%JACK%%lib/pipewire-0.3/jack/libjack.so
 %%JACK%%lib/pipewire-0.3/jack/libjack.so.0
-%%JACK%%lib/pipewire-0.3/jack/libjack.so.0.3.1401
+%%JACK%%lib/pipewire-0.3/jack/libjack.so.0.3.1409
 %%JACK%%lib/pipewire-0.3/jack/libjacknet.so
 %%JACK%%lib/pipewire-0.3/jack/libjacknet.so.0
-%%JACK%%lib/pipewire-0.3/jack/libjacknet.so.0.3.1401
+%%JACK%%lib/pipewire-0.3/jack/libjacknet.so.0.3.1409
 %%JACK%%lib/pipewire-0.3/jack/libjackserver.so
 %%JACK%%lib/pipewire-0.3/jack/libjackserver.so.0
-%%JACK%%lib/pipewire-0.3/jack/libjackserver.so.0.3.1401
+%%JACK%%lib/pipewire-0.3/jack/libjackserver.so.0.3.1409
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
@@ -474,4 +474,5 @@ share/locale/zh_TW/LC_MESSAGES/pipewire.mo
 %%DATADIR%%/pipewire.conf
 %%DATADIR%%/pipewire.conf.avail/10-rates.conf
 %%DATADIR%%/pipewire.conf.avail/20-upmix.conf
+%%DATADIR%%/pipewire.conf.avail/50-raop.conf
 %%ALSA%%%%DATADIR%%/pipewire.conf.d/10-alsa-default.conf

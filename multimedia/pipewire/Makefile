@@ -1,6 +1,5 @@
 PORTNAME=	pipewire
-DISTVERSION=	1.4.1
-PORTREVISION=	1
+DISTVERSION=	1.4.9
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -10,10 +9,12 @@ WWW=		https://pipewire.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
+BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat \
+		${LOCALBASE}/include/fftw3.f:math/fftw3
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libinotify.so:devel/libinotify \
 		libepoll-shim.so:devel/libepoll-shim \
+		libfftw3f.so:math/fftw3-float \
 		libopus.so:audio/opus \
 		libsndfile.so:audio/libsndfile \
 		libudev.so:devel/libudev-devd \
@@ -75,6 +76,7 @@ VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
 
 X11_BELL_DESC=		Support for X11 bell via libcanberra
 X11_BELL_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
+X11_BELL_USES=		xorg
 X11_BELL_USE=		xorg=x11,xfixes
 X11_BELL_MESON_ENABLED=	libcanberra x11 x11-xfixes
 
