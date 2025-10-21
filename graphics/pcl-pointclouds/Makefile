@@ -80,4 +80,8 @@ VTK_LIB_DEPENDS=	libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
 # tests as of 1.15.0: 100% tests passed, 0 tests failed out of 133
 
 .include <../../math/vtk9/Makefile.version>
+
+post-patch:
+	@${REINPLACE_CMD} -e '/MODULES/s| system||' ${WRKSRC}/cmake/pcl_find_boost.cmake
+
 .include <bsd.port.mk>
