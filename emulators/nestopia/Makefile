@@ -1,5 +1,5 @@
 PORTNAME=	nestopia
-DISTVERSION=	1.53.1
+DISTVERSION=	1.53.2
 CATEGORIES=	emulators
 
 MAINTAINER=	mclay@astate.edu
@@ -18,14 +18,15 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libsamplerate.so:audio/libsamplerate
 
 USES=		autoreconf gl gnome jpeg libarchive \
-		localbase:ldflags pkgconfig sdl
+		localbase:ldflags pkgconfig sdl xorg
 USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 GH_ACCOUNT=	0ldsk00l
-GNU_CONFIGURE=	yes
 USE_GL=		gl glu
 USE_SDL=	sdl2
-USE_XORG=	xrender xcursor xfixes xext xft xinerama x11
+USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
+
+GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS JACK
 
