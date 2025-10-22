@@ -1,6 +1,6 @@
---- configure.orig	2025-04-14 17:41:37 UTC
+--- configure.orig	2025-10-16 14:17:04 UTC
 +++ configure
-@@ -158,10 +158,14 @@ if [ "$OS" = "freebsd" ]; then
+@@ -156,10 +156,14 @@ if [ "$OS" = "freebsd" ]; then
  if [ "$OS" = "freebsd" ]; then
    INCCURL="-I/usr/local/include"
    LIBCURL="-L/usr/local/lib -lcurl"
@@ -15,7 +15,7 @@
  else
    INCCURL=""
    LIBCURL="-lcurl"
-@@ -1211,6 +1215,9 @@ extern "C" int main(int argc, char** argv)
+@@ -1179,6 +1183,9 @@ extern "C" int main(int argc, char** argv)
    printf("found version %d.%d.%d",
           SDL_MAJOR_VERSION, SDL_MINOR_VERSION, SDL_PATCHLEVEL);
  #if SDL_VERSION_ATLEAST(1,2,7)
@@ -25,7 +25,7 @@
    printf(", OK.\n");
    return 0;
  #else
-@@ -1295,7 +1302,7 @@ EOF
+@@ -1263,7 +1270,7 @@ EOF
  #endif
  }
  EOF
@@ -34,7 +34,7 @@
      test_execute
    fi
  }
-@@ -1599,6 +1606,7 @@ EOF
+@@ -1567,6 +1574,7 @@ EOF
          SDKQT6=$PATH_SDK_QT6
        fi
        FLGQT6="-framework QtCore -std=c++17 -Wl,-rpath,`L_to_PATH "$LIBQT6"`"
@@ -42,28 +42,7 @@
      else
        log_failure "Qt6 framework not found (can be disabled using --disable-qt)"
        fail
-@@ -1875,9 +1883,9 @@ check_libvorbis()
-   if which_wrapper pkg-config > /dev/null; then
-     libvorbis_ver=`pkg-config vorbis --modversion 2>> $LOG`
-     if [ $? -eq 0 ]; then
--      FLGVRB=`pkg-config vorbis --cflags`
-+      FLGVRB=`pkg-config vorbis vorbisenc --cflags`
-       INCVRB=`strip_I "$FLGVRB"`
--      LIBVRB=`pkg-config vorbis --libs`
-+      LIBVRB=`pkg-config vorbis vorbisenc --libs`
-     fi
-     cat > $ODIR.tmp_src.cc << EOF
- #include <cstdio>
-@@ -1927,7 +1935,7 @@ EOF
-   return 0;
- }
- EOF
--    [ -n "$INCOGG" ] && I_INCVRB=`prefix_I "$INCOGG"`
-+    [ -n "$INCOGG" ] && I_INCOGG=`prefix_I "$INCOGG"`
-     if test_compile "$LIBOGG $I_INCOGG" ogg ogg nofatal; then
-       if test_execute; then
-         cnf_append "SDK_VBoxLibOgg_INCS" "$INCOGG"
-@@ -2194,8 +2202,8 @@ EOF
+@@ -2133,8 +2141,8 @@ EOF
          echo "compiling the following source file:" >> $LOG
          cat $ODIR.tmp_src.cc >> $LOG
          echo "using the following command line:" >> $LOG
@@ -74,7 +53,7 @@
          if [ $? -eq 0 ]; then
            found=1
            break
-@@ -2311,7 +2319,7 @@ check_gsoap()
+@@ -2250,7 +2258,7 @@ check_gsoap()
          else
            cnf_append "VBOX_GSOAP_CXX_SOURCES" ""
          fi
@@ -83,7 +62,7 @@
          gsoap_version=`pkg-config gsoapssl++ --modversion`
          log_success "found version $gsoap_version"
          return
-@@ -2687,7 +2695,7 @@ for option in "$@"; do
+@@ -2624,7 +2632,7 @@ for option in "$@"; do
      --with-openssl-dir=*)
        OPENSSLDIR=`echo $option | cut -d'=' -f2`
        INCCRYPTO="-I${OPENSSLDIR}/include"
@@ -92,7 +71,7 @@
        # On Darwin (at least for macports) static OpenSSL also needs zlib.
        [ "$OS" = "darwin" ] && LIBCRYPTO="$LIBCRYPTO ${OPENSSLDIR}/lib/libz.a"
        # On Linux static OpenSSL typically needs a few additional libraries.
-@@ -3054,12 +3062,22 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
+@@ -2988,12 +2996,22 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
    [ $WITH_JAVA   -eq 1 ] && check_java
  
    # PulseAudio
@@ -121,7 +100,7 @@
    fi
  fi
  
-@@ -3075,14 +3093,6 @@ if [ "$OS" = "linux" ]; then
+@@ -3009,14 +3027,6 @@ if [ "$OS" = "linux" ]; then
      cnf_append "VBOX_WITHOUT_LINUX_TEST_BUILDS" "1"
    fi
    if [ $ONLY_ADDITIONS -eq 0 ]; then
