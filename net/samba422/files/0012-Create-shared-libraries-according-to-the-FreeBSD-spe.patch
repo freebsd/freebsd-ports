@@ -1,0 +1,29 @@
+From 9731cc810b50b6694ff931135df398a6772200ae Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Sun, 30 May 2021 02:51:47 +0200
+Subject: [PATCH 12/28] Create shared libraries according to the
+ FreeBSD-specific naming schema, where only major.minor versions are used.
+
+https://docs.freebsd.org/en/books/developers-handbook/policies/#policies-shlib
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ buildtools/wafsamba/samba_install.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/buildtools/wafsamba/samba_install.py b/buildtools/wafsamba/samba_install.py
+index 2957e16c3da..82abbf893e2 100644
+--- a/buildtools/wafsamba/samba_install.py
++++ b/buildtools/wafsamba/samba_install.py
+@@ -115,7 +115,7 @@ def install_library(self):
+                 inst_name    = bld.make_libname(t.target)
+         elif self.vnum:
+             vnum_base    = self.vnum.split('.')[0]
+-            install_name = bld.make_libname(target_name, version=self.vnum)
++            install_name = bld.make_libname(target_name, version=vnum_base)
+             install_link = bld.make_libname(target_name, version=vnum_base)
+             inst_name    = bld.make_libname(t.target)
+             if not self.private_library or not t.env.SONAME_ST:
+-- 
+2.37.1
+

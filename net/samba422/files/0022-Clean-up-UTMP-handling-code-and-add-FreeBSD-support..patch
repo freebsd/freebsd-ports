@@ -1,0 +1,332 @@
+From 5019ad026f106d51dc2bb4c410a05b2f63b56cd0 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Mon, 31 May 2021 01:43:13 +0200
+Subject: [PATCH 22/28] Clean up UTMP handling code and add FreeBSD support.
+ Some really legacy platforms may have been dropped as a result.
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ source3/smbd/utmp.c |  152 +++++++++++-------------------------------
+ source3/wscript     |   36 +++++----
+ 2 files changed, 60 insertions(+), 128 deletions(-)
+
+diff -Naurp a/source3/smbd/utmp.c b/source3/smbd/utmp.c
+--- a/source3/smbd/utmp.c	2024-02-02 04:33:51.316490200 -0500
++++ b/source3/smbd/utmp.c	2024-08-05 12:50:57.691687000 -0400
+@@ -257,7 +257,7 @@ static char *uw_pathname(TALLOC_CTX *ctx,
+  Update utmp file directly.  No subroutine interface: probably a BSD system.
+ ****************************************************************************/
+ 
+-static void pututline_my(const char *uname, struct utmp *u, bool claim)
++static void pututline_my(const char *uname, STRUCT_UTMP *u, bool claim)
+ {
+ 	DEBUG(1,("pututline_my: not yet implemented\n"));
+ 	/* BSD implementor: may want to consider (or not) adjusting "lastlog" */
+@@ -271,7 +271,7 @@ static void pututline_my(const char *uname, struct utm
+  Credit: Michail Vidiassov <master@iaas.msu.ru>
+ ****************************************************************************/
+ 
+-static void updwtmp_my(const char *wname, struct utmp *u, bool claim)
++static void updwtmp_my(const char *wname, STRUCT_UTMP *u, bool claim)
+ {
+ 	int fd;
+ 	struct stat buf;
+@@ -303,7 +303,7 @@ static void updwtmp_my(const char *wname, struct utmp 
+ 	if ((fd = open(wname, O_WRONLY|O_APPEND, 0)) < 0)
+ 		return;
+ 	if (fstat(fd, &buf) == 0) {
+-		if (write(fd, (char *)u, sizeof(struct utmp)) != sizeof(struct utmp))
++		if (write(fd, (char *)u, sizeof(STRUCT_UTMP)) != sizeof(STRUCT_UTMP))
+ 		(void) ftruncate(fd, buf.st_size);
+ 	}
+ 	(void) close(fd);
+@@ -314,12 +314,12 @@ static void updwtmp_my(const char *wname, struct utmp 
+  Update via utmp/wtmp (not utmpx/wtmpx).
+ ****************************************************************************/
+ 
+-static void utmp_nox_update(struct utmp *u, bool claim)
++static void utmp_nox_update(STRUCT_UTMP *u, bool claim)
+ {
+ 	char *uname = NULL;
+ 	char *wname = NULL;
+ #if defined(PUTUTLINE_RETURNS_UTMP)
+-	struct utmp *urc;
++	STRUCT_UTMP *urc;
+ #endif /* PUTUTLINE_RETURNS_UTMP */
+ 
+ 	uname = uw_pathname(talloc_tos(), "utmp", ut_pathname);
+@@ -376,127 +376,52 @@ static void utmp_nox_update(struct utmp *u, bool claim
+ 	}
+ }
+ 
+-/****************************************************************************
+- Copy a string in the utmp structure.
+-****************************************************************************/
+ 
+-static void utmp_strcpy(char *dest, const char *src, size_t n)
+-{
+-	size_t len = 0;
+ 
+-	memset(dest, '\0', n);
+-	if (src)
+-		len = strlen(src);
+-	if (len >= n) {
+-		memcpy(dest, src, n);
+-	} else {
+-		if (len)
+-			memcpy(dest, src, len);
+-	}
+-}
+ 
++
+ /****************************************************************************
+  Update via utmpx/wtmpx (preferred) or via utmp/wtmp.
+ ****************************************************************************/
+ 
+-static void sys_utmp_update(struct utmp *u, const char *hostname, bool claim)
++static void sys_utmp_update(STRUCT_UTMP *u, const char *hostname, bool claim)
+ {
+-#if !defined(HAVE_UTMPX_H)
+-	/* No utmpx stuff.  Drop to non-x stuff */
+-	utmp_nox_update(u, claim);
+-#elif !defined(HAVE_PUTUTXLINE)
+-	/* Odd.  Have utmpx.h but no "pututxline()".  Drop to non-x stuff */
+-	DEBUG(1,("utmp_update: have utmpx.h but no pututxline() function\n"));
+-	utmp_nox_update(u, claim);
+-#elif !defined(HAVE_GETUTMPX)
+-	/* Odd.  Have utmpx.h but no "getutmpx()".  Drop to non-x stuff */
+-	DEBUG(1,("utmp_update: have utmpx.h but no getutmpx() function\n"));
+-	utmp_nox_update(u, claim);
+-#elif !defined(HAVE_UPDWTMPX)
+-	/* Have utmpx.h but no "updwtmpx()".  Drop to non-x stuff */
+-	DEBUG(1,("utmp_update: have utmpx.h but no updwtmpx() function\n"));
+-	utmp_nox_update(u, claim);
+-#else
+-	char *uname = NULL;
+-	char *wname = NULL;
+-	struct utmpx ux, *uxrc;
++	STRUCT_UTMP *urc;
+ 
+-	getutmpx(u, &ux);
+-
+-#if defined(HAVE_UX_UT_SYSLEN)
+-	if (hostname)
+-		ux.ut_syslen = strlen(hostname) + 1;	/* include end NULL */
+-	else
+-		ux.ut_syslen = 0;
+-#endif
+-#if defined(HAVE_UX_UT_HOST)
+-	utmp_strcpy(ux.ut_host, hostname, sizeof(ux.ut_host));
+-#endif
+-
+-	uname = uw_pathname(talloc_tos(), "utmpx", ux_pathname);
+-	wname = uw_pathname(talloc_tos(), "wtmpx", wx_pathname);
+-	if (uname && wname) {
+-		DEBUG(2,("utmp_update: uname:%s wname:%s\n", uname, wname));
++	setutxent();
++	urc = pututxline(u);
++	endutxent();
++	if (urc == NULL) {
++		DEBUG(2,("utmp_update: pututxline() failed\n"));
++		return;
+ 	}
+-
+-	/*
+-	 * Check for either uname or wname being empty.
+-	 * Some systems, such as Redhat 6, have a "utmpx.h" which doesn't
+-	 * define default filenames.
+-	 * Also, our local installation has not provided an override.
+-	 * Drop to non-x method.  (E.g. RH6 has good defaults in "utmp.h".)
+-	 */
+-	if (!uname || !wname || (strlen(uname) == 0) || (strlen(wname) == 0)) {
+-		utmp_nox_update(u, claim);
+-	} else {
+-		utmpxname(uname);
+-		setutxent();
+-		uxrc = pututxline(&ux);
+-		endutxent();
+-		if (uxrc == NULL) {
+-			DEBUG(2,("utmp_update: pututxline() failed\n"));
+-			return;
+-		}
+-		updwtmpx(wname, &ux);
+-	}
+-#endif /* HAVE_UTMPX_H */
+ }
+ 
+ #if defined(HAVE_UT_UT_ID)
+ /****************************************************************************
+  Encode the unique connection number into "ut_id".
+ ****************************************************************************/
+-
+-static int ut_id_encode(int i, char *fourbyte)
++static void ut_id_encode(char *buf, int id, size_t buf_size)
+ {
+-	int nbase;
+-	const char *ut_id_encstr = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
++	const char ut_id_encstr[] = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ 
+-/*
+- * 'ut_id_encstr' is the character set on which modulo arithmetic is done.
+- * Example: digits would produce the base-10 numbers from '001'.
+- */
+-	nbase = strlen(ut_id_encstr);
++	int nbase = sizeof(ut_id_encstr) - 1;
++	/*
++	 * 'ut_id_encstr' is the character set on which modulo arithmetic is done.
++	 * Example: digits would produce the base-10 numbers from '001'.
++	 */
+ 
+-	fourbyte[0] = ut_id_encstr[i % nbase];
+-	i /= nbase;
+-	fourbyte[1] = ut_id_encstr[i % nbase];
+-	i /= nbase;
+-	fourbyte[3] = ut_id_encstr[i % nbase];
+-	i /= nbase;
+-	fourbyte[2] = ut_id_encstr[i % nbase];
+-	i /= nbase;
+-
+-	/* we do not care about overflows as i is a random number */
+-	return 0;
++	for(int i = 0; i < buf_size; i++) {
++		buf[i] = ut_id_encstr[id % nbase];
++		id /= nbase;
++	}
+ }
+ #endif /* defined(HAVE_UT_UT_ID) */
+ 
+-
+ /*
+   fill a system utmp structure given all the info we can gather
+ */
+-static bool sys_utmp_fill(struct utmp *u,
++static bool sys_utmp_fill(STRUCT_UTMP *u,
+ 			const char *username, const char *hostname,
+ 			const char *id_str, int id_num)
+ {
+@@ -509,16 +434,16 @@ static bool sys_utmp_fill(struct utmp *u,
+ 	 *	rather than to try to detect and optimise.
+ 	 */
+ #if defined(HAVE_UT_UT_USER)
+-	utmp_strcpy(u->ut_user, username, sizeof(u->ut_user));
++	strncpy(u->ut_user, username, sizeof(u->ut_user));
+ #elif defined(HAVE_UT_UT_NAME)
+-	utmp_strcpy(u->ut_name, username, sizeof(u->ut_name));
++	strncpy(u->ut_name, username, sizeof(u->ut_name));
+ #endif
+ 
+ 	/*
+ 	 * ut_line:
+ 	 *	If size limit proves troublesome, then perhaps use "ut_id_encode()".
+ 	 */
+-	utmp_strcpy(u->ut_line, id_str, sizeof(u->ut_line));
++	strncpy(u->ut_line, id_str, sizeof(u->ut_line));
+ 
+ #if defined(HAVE_UT_UT_PID)
+ 	u->ut_pid = getpid();
+@@ -535,20 +460,23 @@ static bool sys_utmp_fill(struct utmp *u,
+ 	u->ut_time = timeval.tv_sec;
+ #elif defined(HAVE_UT_UT_TV)
+ 	GetTimeOfDay(&timeval);
+-	u->ut_tv = timeval;
++	u->ut_tv.tv_sec = timeval.tv_sec;
++	u->ut_tv.tv_usec = timeval.tv_usec;
+ #else
+ #error "with-utmp must have UT_TIME or UT_TV"
+ #endif
+ 
+ #if defined(HAVE_UT_UT_HOST)
+-	utmp_strcpy(u->ut_host, hostname, sizeof(u->ut_host));
++	if(hostname != NULL) {
++		strncpy(u->ut_host, hostname, sizeof(u->ut_host));
++#if defined(HAVE_UT_UT_SYSLEN)
++		u->ut_syslen = strlen(hostname) + 1;	/* include trailing NULL */
+ #endif
++	}
++#endif
+ 
+ #if defined(HAVE_UT_UT_ID)
+-	if (ut_id_encode(id_num, u->ut_id) != 0) {
+-		DEBUG(1,("utmp_fill: cannot encode id %d\n", id_num));
+-		return False;
+-	}
++	ut_id_encode(u->ut_id, id_num, sizeof(u->ut_id));
+ #endif
+ 
+ 	return True;
+@@ -561,7 +489,7 @@ void sys_utmp_yield(const char *username, const char *
+ void sys_utmp_yield(const char *username, const char *hostname,
+ 		    const char *id_str, int id_num)
+ {
+-	struct utmp u;
++	STRUCT_UTMP u;
+ 
+ 	ZERO_STRUCT(u);
+ 
+@@ -587,7 +515,7 @@ void sys_utmp_claim(const char *username, const char *
+ void sys_utmp_claim(const char *username, const char *hostname,
+ 		    const char *id_str, int id_num)
+ {
+-	struct utmp u;
++	STRUCT_UTMP u;
+ 
+ 	ZERO_STRUCT(u);
+ 
+diff -Naurp a/source3/wscript b/source3/wscript
+--- a/source3/wscript	2024-08-05 12:50:16.286549000 -0400
++++ b/source3/wscript	2024-08-05 13:02:31.909769000 -0400
+@@ -804,34 +804,38 @@ msg.msg_accrightslen = sizeof(fd);
+ 
+     if Options.options.with_utmp:
+         conf.env.with_utmp = True
+-        if not conf.CHECK_HEADERS('utmp.h'): conf.env.with_utmp = False
+-        conf.CHECK_FUNCS('pututline pututxline updwtmp updwtmpx getutmpx')
+-        conf.CHECK_STRUCTURE_MEMBER('struct utmp', 'ut_name', headers='utmp.h',
++        if not conf.CHECK_HEADERS('utmpx.h') and not conf.CHECK_HEADERS('utmp.h'):
++            conf.env.with_utmp = False
++        if conf.CONFIG_SET('HAVE_UTMPX_H'):
++            conf.DEFINE('STRUCT_UTMP', 'struct utmpx')
++        elif conf.CONFIG_SET('HAVE_UTMP_H'):
++            conf.DEFINE('STRUCT_UTMP', 'struct utmp')
++        conf.CHECK_FUNCS('pututxline getutxid getutxline updwtmpx getutmpx setutxent endutxent')
++        conf.CHECK_FUNCS('pututline getutid getutline updwtmp getutmp setutent endutent')
++        conf.CHECK_STRUCTURE_MEMBER('STRUCT_UTMP', 'ut_name', headers='utmpx.h utmp.h',
+                                     define='HAVE_UT_UT_NAME')
+-        conf.CHECK_STRUCTURE_MEMBER('struct utmp', 'ut_user', headers='utmp.h',
++        conf.CHECK_STRUCTURE_MEMBER('STRUCT_UTMP', 'ut_user', headers='utmpx.h utmp.h',
+                                     define='HAVE_UT_UT_USER')
+-        conf.CHECK_STRUCTURE_MEMBER('struct utmp', 'ut_id', headers='utmp.h',
++        conf.CHECK_STRUCTURE_MEMBER('STRUCT_UTMP', 'ut_id', headers='utmpx.h utmp.h',
+                                     define='HAVE_UT_UT_ID')
+-        conf.CHECK_STRUCTURE_MEMBER('struct utmp', 'ut_host', headers='utmp.h',
++        conf.CHECK_STRUCTURE_MEMBER('STRUCT_UTMP', 'ut_host', headers='utmpx.h utmp.h',
+                                     define='HAVE_UT_UT_HOST')
+-        conf.CHECK_STRUCTURE_MEMBER('struct utmp', 'ut_time', headers='utmp.h',
++        conf.CHECK_STRUCTURE_MEMBER('STRUCT_UTMP', 'ut_time', headers='utmpx.h utmp.h',
+                                     define='HAVE_UT_UT_TIME')
+-        conf.CHECK_STRUCTURE_MEMBER('struct utmp', 'ut_tv', headers='utmp.h',
++        conf.CHECK_STRUCTURE_MEMBER('STRUCT_UTMP', 'ut_tv', headers='utmpx.h utmp.h',
+                                     define='HAVE_UT_UT_TV')
+-        conf.CHECK_STRUCTURE_MEMBER('struct utmp', 'ut_type', headers='utmp.h',
++        conf.CHECK_STRUCTURE_MEMBER('STRUCT_UTMP', 'ut_type', headers='utmpx.h utmp.h',
+                                     define='HAVE_UT_UT_TYPE')
+-        conf.CHECK_STRUCTURE_MEMBER('struct utmp', 'ut_pid', headers='utmp.h',
++        conf.CHECK_STRUCTURE_MEMBER('STRUCT_UTMP', 'ut_pid', headers='utmpx.h utmp.h',
+                                     define='HAVE_UT_UT_PID')
+-        conf.CHECK_STRUCTURE_MEMBER('struct utmp', 'ut_exit.e_exit', headers='utmp.h',
++        conf.CHECK_STRUCTURE_MEMBER('STRUCT_UTMP', 'ut_exit.e_exit', headers='utmpx.h utmp.h',
+                                     define='HAVE_UT_UT_EXIT')
+-        conf.CHECK_STRUCTURE_MEMBER('struct utmpx', 'ut_syslen', headers='utmpx.h',
+-                                    define='HAVE_UX_UT_SYSLEN')
+-        conf.CHECK_STRUCTURE_MEMBER('struct utmpx', 'ut_host', headers='utmpx.h',
+-                                    define='HAVE_UX_UT_HOST')
++        conf.CHECK_STRUCTURE_MEMBER('STRUCT_UTMP', 'ut_syslen', headers='utmpx.h utmp.h',
++                                    define='HAVE_UT_UT_SYSLEN')
+         conf.CHECK_CODE('struct utmp utarg; struct utmp *utreturn; utreturn = pututline(&utarg);',
+                         'PUTUTLINE_RETURNS_UTMP', headers='utmp.h',
+                         msg="Checking whether pututline returns pointer")
+-        conf.CHECK_SIZEOF(['((struct utmp *)NULL)->ut_line'], headers='utmp.h',
++        conf.CHECK_SIZEOF(['((STRUCT_UTMP *)NULL)->ut_line'], headers='utmpx.h utmp.h',
+                           define='SIZEOF_UTMP_UT_LINE', critical=False)
+         if not conf.CONFIG_SET('SIZEOF_UTMP_UT_LINE'):
+             conf.env.with_utmp = False

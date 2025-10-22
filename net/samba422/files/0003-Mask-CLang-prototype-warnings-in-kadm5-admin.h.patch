@@ -1,0 +1,32 @@
+From 382c3edc95a1747e0a6edd05c76adc0ec21a66c7 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Sun, 30 May 2021 03:50:17 +0200
+Subject: [PATCH 03/28] Mask CLang prototype warnings in kadm5/admin.h
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ source4/kdc/kdc-service-mit.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/source4/kdc/kdc-service-mit.c b/source4/kdc/kdc-service-mit.c
+index 22663b6ecc8..5bef125206a 100644
+--- a/source4/kdc/kdc-service-mit.c
++++ b/source4/kdc/kdc-service-mit.c
+@@ -36,9 +36,13 @@
+ #include "kdc/samba_kdc.h"
+ #include "kdc/kdc-server.h"
+ #include "kdc/kpasswd-service.h"
+-#include <kadm5/admin.h>
+ #include <kdb.h>
+ 
++#pragma clang diagnostic push
++#pragma clang diagnostic ignored "-Wstrict-prototypes"
++#include <kadm5/admin.h>
++#pragma clang diagnostic pop
++
+ #include "source4/kdc/mit_kdc_irpc.h"
+ 
+ /* PROTOTYPES */
+-- 
+2.37.1
+

@@ -1,0 +1,32 @@
+--- a/samba-4.19.8/lib/replace/system/readline.h        2023-07-18 10:14:54.478091000 +0200
++++ b/lib/replace/system/readline.h     2024-10-02 13:47:48.773606000 +0200
+@@ -46,10 +46,10 @@
+ #endif
+
+ #ifdef HAVE_NEW_LIBREADLINE
+-#ifdef HAVE_CPPFUNCTION
++#if defined(HAVE_RL_COMPLETION_FUNC_T)
++#  define RL_COMPLETION_CAST (rl_completion_func_t *)
++#elif defined(HAVE_CPPFUNCTION)
+ #  define RL_COMPLETION_CAST (CPPFunction *)
+-#elif defined(HAVE_RL_COMPLETION_T)
+-#  define RL_COMPLETION_CAST (rl_completion_t *)
+ #else
+ #  define RL_COMPLETION_CAST
+ #endif
+diff -upr a/samba-4.19.8/libcli/smbreadline/wscript_configure b/libcli/smbreadline/wscript_configure
+--- a/samba-4.19.8/libcli/smbreadline/wscript_configure 2023-07-18 10:14:54.558091600 +0200
++++ b/libcli/smbreadline/wscript_configure      2024-10-02 13:47:48.774008000 +0200
+@@ -51,10 +51,10 @@ conf.CHECK_CODE('''
+ #    endif
+ #  endif
+ #endif
+-int main(void) {rl_completion_t f; return 0;}
++int main(void) {rl_completion_func_t f; return 0;}
+ ''',
+ 'HAVE_RL_COMPLETION_FUNC_T', execute=False, addmain=False,
+-msg='Checking for rl_completion_t')
++msg='Checking for rl_completion_func_t')
+
+ conf.CHECK_CODE('''
+ #ifdef HAVE_READLINE_READLINE_H

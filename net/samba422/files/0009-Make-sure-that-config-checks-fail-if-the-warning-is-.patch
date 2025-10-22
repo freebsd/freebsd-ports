@@ -1,0 +1,39 @@
+From 3189d57e9c6cf8d5d25566f2760cfa4f822d7a2c Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Sun, 30 May 2021 03:21:19 +0200
+Subject: [PATCH 09/28] Make sure that config checks fail if the warning is
+ raised, by adding -Werror flag to the CFLAGS(WERROR_CFLAGS)
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ buildtools/wafsamba/samba_autoconf.py | 2 +-
+ lib/replace/wscript                   | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/buildtools/wafsamba/samba_autoconf.py b/buildtools/wafsamba/samba_autoconf.py
+index 78927d85193..cf87c8bb9ff 100644
+--- a/buildtools/wafsamba/samba_autoconf.py
++++ b/buildtools/wafsamba/samba_autoconf.py
+@@ -987,5 +987,5 @@ def SAMBA_CHECK_UNDEFINED_SYMBOL_FLAGS(conf):
+         conf.env.undefined_ldflags = conf.ADD_LDFLAGS('-Wl,-no-undefined', testflags=True)
+ 
+         if (conf.env.undefined_ignore_ldflags == [] and
+-            conf.CHECK_LDFLAGS(['-undefined', 'dynamic_lookup'])):
++            conf.CHECK_LDFLAGS(['-undefined', 'dynamic_lookup'] + conf.env.WERROR_CFLAGS)):
+             conf.env.undefined_ignore_ldflags = ['-undefined', 'dynamic_lookup']
+diff --git a/lib/replace/wscript b/lib/replace/wscript
+index 0db93d8caf1..1f9806f1dd7 100644
+--- a/lib/replace/wscript
++++ b/lib/replace/wscript
+@@ -122,7 +122,7 @@ def configure(conf):
+     conf.CHECK_HEADERS('sys/atomic.h stdatomic.h')
+     conf.CHECK_HEADERS('libgen.h')
+ 
+-    if conf.CHECK_CFLAGS('-Wno-format-truncation'):
++    if conf.CHECK_CFLAGS(['-Wno-format-truncation'] + conf.env.WERROR_CFLAGS):
+         conf.define('HAVE_WNO_FORMAT_TRUNCATION', '1')
+ 
+     if conf.CHECK_CFLAGS('-Wno-unused-function'):
+-- 
+2.37.1
+
