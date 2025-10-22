@@ -18,7 +18,7 @@ samba_ARGS=	build run
 IGNORE=		USES=samba has invalid arguments: ${samba_ARGS:Nbuild:Nenv:Nlib:Nrun}
 .  endif
 
-.  if ${SAMBA_DEFAULT} != 4.16 && ${SAMBA_DEFAULT} != 4.19 && ${SAMBA_DEFAULT} != 4.20
+.  if ${SAMBA_DEFAULT} != 4.16 && ${SAMBA_DEFAULT} != 4.19 && ${SAMBA_DEFAULT} != 4.20 && ${SAMBA_DEFAULT} != 4.22
 IGNORE=		Invalid version of samba: ${SAMBA_DEFAULT}
 .  endif
 
@@ -39,11 +39,21 @@ SAMBA_LDB_PORT_420=	databases/ldb29
 SAMBA_TALLOC_PORT_420=	devel/talloc242
 SAMBA_TDB_PORT_420=	databases/tdb1410
 SAMBA_TEVENT_PORT_420=	devel/tevent016
+SAMBA_PORT_422=		net/samba422
+SAMBA_TALLOC_PORT_422=	devel/talloc243
+SAMBA_TDB_PORT_422=	databases/tdb1413
+SAMBA_TEVENT_PORT_422=	devel/tevent017
 
 SAMBA_PORT=		${SAMBA_PORT_${SAMBA_SUFFIX}}
 SAMBA_INCLUDEDIR=	${LOCALBASE}/include/samba4
 SAMBA_LIBDIR=		${LOCALBASE}/lib/samba4
+# Only define SAMBA_LDB_PORT if SAMBA_LDB_PORT_${SAMBA_SUFFIX} is set. Samba
+# requires ldb to be bundled since version 4.22, so it makes no sense to set
+# SAMBA_LDB_PORT in that case. By not setting SAMBA_LDB_PORT, we allow ports to
+# detect the lack of a separate ldb port more easily.
+.  if !empty(SAMBA_LDB_PORT_${SAMBA_SUFFIX})
 SAMBA_LDB_PORT=		${SAMBA_LDB_PORT_${SAMBA_SUFFIX}}
+.  endif
 SAMBA_TALLOC_PORT=	${SAMBA_TALLOC_PORT_${SAMBA_SUFFIX}}
 SAMBA_TDB_PORT=		${SAMBA_TDB_PORT_${SAMBA_SUFFIX}}
 SAMBA_TEVENT_PORT=	${SAMBA_TEVENT_PORT_${SAMBA_SUFFIX}}
