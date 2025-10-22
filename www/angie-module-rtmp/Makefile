@@ -3,6 +3,9 @@ GH_TUPLE=	arut:nginx-rtmp-module:v1.2.2:module
 
 COMMENT=	Angie RTMP dynamic module
 
+DEPRECATED=	Upstream development has slowed down and there are a lot of unresolved issues and PRs upstream, consider migrating to multimedia/mediamtx
+EXPIRATION_DATE=2025-12-31
+
 MASTERDIR=	${.CURDIR}/../../www/angie
 
 do-install:
