@@ -1,7 +1,7 @@
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
-DISTVERSION=	9.20.13
+DISTVERSION=	9.20.15
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
 PORTREVISION=	0
@@ -29,7 +29,7 @@ WWW=		https://www.isc.org/bind/
 # Uncomment when bind922 comes of age. +3 years if ESV, +1year otherwise, see
 # https://kb.isc.org/docs/aa-00896
 # DEPRECATED=	End of life, please migrate to a newer version of BIND9
-# EXPIRATION_DATE=	XXX-12-31
+# EXPIRATION_DATE=	2028-06-30
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
