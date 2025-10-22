@@ -182,10 +182,10 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-version_sorter>=2.3<3:textproc/rubygem-version_sorter \
 	rubygem-js_regex>=3.13.0<4.0:textproc/rubygem-js_regex \
 	rubygem-device_detector>=1.1.3:devel/rubygem-device_detector \
-	rubygem-redis>=5.4.1<5.5:databases/rubygem-redis \
+	rubygem-redis-gitlab>=5.4.0<5.4.1:databases/rubygem-redis-gitlab \
 	rubygem-redis-client>=0.25.1<1:databases/rubygem-redis-client \
 	rubygem-redis-cluster-client>=0.13.5<1:databases/rubygem-redis-cluster-client \
-	rubygem-redis-clustering>=5.4.1<5.5:databases/rubygem-redis-clustering \
+	rubygem-redis-clustering-gitlab>=5.4.0<5.4.1:databases/rubygem-redis-clustering-gitlab \
 	rubygem-connection_pool>=2.5.3<2.6:net/rubygem-connection_pool \
 	rubygem-redis-actionpack-rails-gitlab>=5.5.0<5.6:databases/rubygem-redis-actionpack-rails-gitlab \
 	rubygem-jira-ruby-gitlab>=2.3.0<2.4:devel/rubygem-jira-ruby-gitlab \

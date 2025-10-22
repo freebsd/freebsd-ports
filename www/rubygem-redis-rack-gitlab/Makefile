@@ -1,5 +1,6 @@
 PORTNAME=	redis-rack
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -13,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-rack-session10>=0.2.0:www/rubygem-rack-session10 \
-		rubygem-redis-store>=1.2<2:devel/rubygem-redis-store
+		rubygem-redis-store-gitlab>=1.2<2:devel/rubygem-redis-store-gitlab
 
 USES=		gem
 
