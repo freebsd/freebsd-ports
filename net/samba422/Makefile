@@ -192,7 +192,6 @@ SAMBA4_BUNDLED_CMOCKA?=		no
 SAMBA4_BUNDLED_TALLOC?=		no
 SAMBA4_BUNDLED_TEVENT?=		no
 SAMBA4_BUNDLED_TDB?=		no
-SAMBA4_BUNDLED_LDB?=		yes
 # cmocka
 .if defined(SAMBA4_BUNDLED_CMOCKA) && ${SAMBA4_BUNDLED_CMOCKA} == yes
 SAMBA4_BUNDLED_LIBS+=		cmocka
@@ -244,31 +243,21 @@ RUN_DEPENDS+=			tdb1413>=1.4.13:databases/tdb1413
 PLIST_SUB+=			SAMBA4_BUNDLED_TDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TDB="@comment "
 .endif
-# ldb
-.if defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes
-SAMBA4_BUNDLED_LDB=		yes
-SAMBA4_BUNDLED_LIBS+=		ldb
-CONFLICTS_INSTALL+=		ldb-* ldb2-*
-PLIST_SUB+=			SAMBA4_BUNDLED_LDB=""
-SUB_LIST+=			SAMBA4_BUNDLED_LDB=""
-SAMBA4_MODULEDIR=		${SAMBA4_LIBDIR}/modules
-.else
-SAMBA4_BUNDLED_LIBS+=		!ldb
-BUILD_DEPENDS+=			ldb29>=2.9.1:databases/ldb29
-RUN_DEPENDS+=			ldb29>=2.9.1:databases/ldb29
-PLIST_SUB+=			SAMBA4_BUNDLED_LDB="@comment "
-SUB_LIST+=			SAMBA4_BUNDLED_LDB="@comment "
-SAMBA4_MODULEDIR=		${PREFIX}/lib/shared-modules
-.endif
 
 .if (defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes) \
 	|| (defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes) \
-	|| (defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes) \
 	|| (defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes)
 SAMBA4_BUNDLED_LIBS+=		replace
 .endif
 # Don't use external libcom_err
 SAMBA4_BUNDLED_LIBS+=		com_err
+
+### Public libraries
+# ldb
+SAMBA4_PRIVATE_LIBS+=		!ldb
+CONFLICTS_INSTALL+=		ldb-* ldb2[0-9]-*
+SAMBA4_MODULEDIR=		${SAMBA4_LIBDIR}/modules
+
 # Set the test environment variables
 TEST_USES=			python
 TEST_ENV=			PYTHON="${PYTHON_CMD}" \
@@ -472,15 +461,15 @@ SAMBA4_BUNDLED_LIBS+=		pytdb
 SAMBA4_BUNDLED_LIBS+=		!pytdb
 .	endif
 
-.	if defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes
 SAMBA4_BUNDLED_LIBS+=		pyldb pyldb-util
-.	else
-SAMBA4_BUNDLED_LIBS+=		!pyldb !pyldb-util
-.	endif
 .endif
 
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
 SAMBA4_MODULES+=		${WANT_EXP_MODULES}
+.endif
+
+.if defined(SAMBA4_PRIVATE_LIBS) && !empty(SAMBA4_PRIVATE_LIBS)
+CONFIGURE_ARGS+=		--private-libraries="${SAMBA4_PRIVATE_LIBS:Q:C|(\\\\ )+|,|g:S|\\||g}"
 .endif
 
 .if defined(SAMBA4_BUNDLED_LIBS) && !empty(SAMBA4_BUNDLED_LIBS)
@@ -512,7 +501,7 @@ DEBUG_FLAGS?=			-g -ggdb3 -O0
 ##############################################################################
 # Only for 64-bit architectures
 .if ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != mips && ${ARCH} != powerpc && ${ARCH} != powerpcspe
-.	if defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes && (${PORT_OPTIONS:MAD_DC} || ${PORT_OPTIONS:MDEVELOPER})
+.	if (${PORT_OPTIONS:MAD_DC} || ${PORT_OPTIONS:MDEVELOPER})
 # LMDB
 SAMBA4_LMDB_DEPENDS=		lmdb>=0.9.16:databases/lmdb
 PLIST_FILES+=			${SAMBA4_LIBDIR}/private/libldb-mdb-int-private-samba.so \
