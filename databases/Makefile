@@ -1054,7 +1054,10 @@
     SUBDIR += rubygem-redis-client
     SUBDIR += rubygem-redis-cluster-client
     SUBDIR += rubygem-redis-clustering
+    SUBDIR += rubygem-redis-clustering-gitlab
+    SUBDIR += rubygem-redis-gitlab
     SUBDIR += rubygem-redis-namespace
+    SUBDIR += rubygem-redis-namespace-gitlab
     SUBDIR += rubygem-redis-namespace110
     SUBDIR += rubygem-ruby-mysql
     SUBDIR += rubygem-sdbm
