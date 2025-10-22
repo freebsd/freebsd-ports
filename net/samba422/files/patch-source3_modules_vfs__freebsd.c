@@ -1,207 +1,5 @@
-From f07e384150e53b18c3ea298f9a1ea588fb89e19b Mon Sep 17 00:00:00 2001
-From: "Timur I. Bakeyev" <timur@FreeBSD.org>
-Date: Sat, 29 May 2021 03:58:01 +0200
-Subject: [PATCH 27/28] Add VFS module vfs_freebsd that implements FreeBSD
- specific wrappers to some VFS functions.
-
-At the moment that is configurable mapping between Linux xattrs and
-FreeBSD extended attributes.
-
-Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
----
- docs-xml/manpages/vfs_freebsd.8.xml |  169 ++++++
- docs-xml/wscript_build              |    1
- source3/modules/vfs_freebsd.c       |  699 ++++++++++++++++++++++++++
- source3/modules/wscript_build       |    7
- 4 files changed, 876 insertions(+)
-
-diff -Naurp a/docs-xml/manpages/vfs_freebsd.8.xml b/docs-xml/manpages/vfs_freebsd.8.xml
---- a/docs-xml/manpages/vfs_freebsd.8.xml	1969-12-31 19:00:00.000000000 -0500
-+++ b/docs-xml/manpages/vfs_freebsd.8.xml	2024-08-05 13:57:36.246690000 -0400
-@@ -0,0 +1,169 @@
-+<?xml version="1.0" encoding="iso-8859-1"?>
-+<!DOCTYPE refentry PUBLIC "-//Samba-Team//DTD DocBook V4.2-Based Variant V1.0//EN" "http://www.samba.org/samba/DTD/samba-doc">
-+<refentry id="vfs_freebsd.8">
-+
-+<refmeta>
-+	<refentrytitle>vfs_freebsd</refentrytitle>
-+	<manvolnum>8</manvolnum>
-+	<refmiscinfo class="source">Samba</refmiscinfo>
-+	<refmiscinfo class="manual">System Administration tools</refmiscinfo>
-+	<refmiscinfo class="version">&doc.version;</refmiscinfo>
-+</refmeta>
-+
-+<refnamediv>
-+	<refname>vfs_freebsd</refname>
-+	<refpurpose>FreeBSD-specific VFS functions</refpurpose>
-+</refnamediv>
-+
-+<refsynopsisdiv>
-+	<cmdsynopsis>
-+		<command>vfs objects = freebsd</command>
-+	</cmdsynopsis>
-+</refsynopsisdiv>
-+
-+<refsect1>
-+	<title>DESCRIPTION</title>
-+
-+	<para>This VFS module is part of the <citerefentry><refentrytitle>samba</refentrytitle>
-+	<manvolnum>7</manvolnum></citerefentry> suite.</para>
-+
-+	<para>The <command>vfs_freebsd</command> module implements some of the FreeBSD-specific VFS functions.</para>
-+
-+	<para>This module is stackable.</para>
-+</refsect1>
-+
-+
-+<refsect1>
-+	<title>OPTIONS</title>
-+
-+	<variablelist>
-+
-+	<varlistentry>
-+		<term>freebsd:extattr mode=[legacy|compat|secure]</term>
-+		<listitem>
-+		<para>This parameter defines how the emulation of the Linux attr(5) extended attributes
-+		is performed through the FreeBSD native extattr(9) system calls.</para>
-+
-+		<para>Currently the <emphasis>security</emphasis>, <emphasis>system</emphasis>,
-+		<emphasis>trusted</emphasis> and <emphasis>user</emphasis> extended attribute(xattr)
-+		classes are defined in Linux. Contrary FreeBSD has only <emphasis>USER</emphasis>
-+		and <emphasis>SYSTEM</emphasis> extended attribute(extattr) namespaces, so mapping
-+		of one set into another isn't straightforward and can be done in different ways.</para>
-+
-+		<para>Historically the Samba(7) built-in xattr mapping implementation simply converted
-+		<emphasis>system</emphasis> and <emphasis>user</emphasis> xattr into corresponding
-+		<emphasis>SYSTEM</emphasis> and <emphasis>USER</emphasis> extattr namespaces, dropping
-+		the class prefix name with the separating dot and using attribute name only within the
-+		mapped namespace. It also rejected any other xattr classes, like <emphasis>security</emphasis>
-+		and <emphasis>trusted</emphasis> as invalid. Such behavior in particular broke AD
-+		provisioning on UFS2 file systems as essential <emphasis>security.NTACL</emphasis>
-+		xattr was rejected as invalid.</para>
-+
-+		<para>This module tries to address this problem and provide secure, where it's possible,
-+		way to map Linux xattr into FreeBSD's extattr.</para>
-+
-+		<para>When <emphasis>mode</emphasis> is set to the <emphasis>legacy (default)</emphasis>
-+		then modified version of built-in mapping is used, where <emphasis>system</emphasis> xattr
-+		is mapped into SYSTEM namespace, while <emphasis>secure</emphasis>, <emphasis>trusted</emphasis>
-+		and <emphasis>user</emphasis> xattr are all mapped into the USER namespace, dropping class
-+		prefixes and mix them all together. This is the way how Samba FreeBSD ports were patched
-+		up to the 4.9 version and that created multiple potential security issues. This mode is aimed for
-+		the compatibility with the legacy installations only and should be avoided in new setups.</para>
-+
-+		<para>The <emphasis>compat</emphasis> mode is mostly designed for the jailed environments,
-+		where it's not possible to write extattrs into the secure SYSTEM namespace, so all four
-+		classes are mapped into the USER namespace. To preserve information about origin of the
-+		extended attribute it is stored together with the class preffix in the <emphasis>class.attribute</emphasis>
-+		format.</para>
-+
-+		<para>The <emphasis>secure</emphasis> mode is meant for storing extended attributes in a secure
-+		manner, so that <emphasis>security</emphasis>, <emphasis>system</emphasis> and <emphasis>trusted</emphasis>
-+		are stored in the SYSTEM namespace, which can be modified only by root.
-+		</para>
-+		</listitem>
-+	</varlistentry>
-+
-+
-+	</variablelist>
-+</refsect1>
-+
-+<refsect1>
-+	<table frame="all" rowheader="firstcol">
-+		<title>Attributes mapping</title>
-+		<tgroup cols='5' align='left' colsep='1' rowsep='1'>
-+		<thead>
-+			<row>
-+			<entry> </entry>
-+			<entry>built-in</entry>
-+			<entry>legacy</entry>
-+			<entry>compat/jail</entry>
-+			<entry>secure</entry>
-+			</row>
-+		</thead>
-+		<tbody>
-+			<row>
-+			<entry>user</entry>
-+			<entry>USER; attribute</entry>
-+			<entry>USER; attribute</entry>
-+			<entry>USER; user.attribute</entry>
-+			<entry>USER; user.attribute</entry>
-+			</row>
-+			<row>
-+			<entry>system</entry>
-+			<entry>SYSTEM; attribute</entry>
-+			<entry>SYSTEM; attribute</entry>
-+			<entry>USER; system.attribute</entry>
-+			<entry>SYSTEM; system.attribute</entry>
-+			</row>
-+			<row>
-+			<entry>trusted</entry>
-+			<entry>FAIL</entry>
-+			<entry>USER; attribute</entry>
-+			<entry>USER; trusted.attribute</entry>
-+			<entry>SYSTEM; trusted.attribute</entry>
-+			</row>
-+			<row>
-+			<entry>security</entry>
-+			<entry>FAIL</entry>
-+			<entry>USER; attribute</entry>
-+			<entry>USER; security.attribute</entry>
-+			<entry>SYSTEM; security.attribute</entry>
-+			</row>
-+		</tbody>
-+		</tgroup>
-+	</table>
-+</refsect1>
-+
-+<refsect1>
-+	<title>EXAMPLES</title>
-+
-+	<para>Use secure method of setting extended attributes on the share:</para>
-+
-+<programlisting>
-+	<smbconfsection name="[sysvol]"/>
-+	<smbconfoption name="vfs objects">freebsd</smbconfoption>
-+	<smbconfoption name="freebsd:extattr mode">secure</smbconfoption>
-+</programlisting>
-+
-+</refsect1>
-+
-+<refsect1>
-+	<title>VERSION</title>
-+
-+	<para>This man page is part of version &doc.version; of the Samba suite.
-+	</para>
-+</refsect1>
-+
-+<refsect1>
-+	<title>AUTHOR</title>
-+
-+	<para>The original Samba software and related utilities
-+	were created by Andrew Tridgell. Samba is now developed
-+	by the Samba Team as an Open Source project similar
-+	to the way the Linux kernel is developed.</para>
-+
-+	<para>This module was written by Timur I. Bakeyev</para>
-+
-+</refsect1>
-+
-+</refentry>
-diff -Naurp a/docs-xml/wscript_build b/docs-xml/wscript_build
---- a/docs-xml/wscript_build	2024-08-02 07:54:09.597892000 -0400
-+++ b/docs-xml/wscript_build	2024-08-05 13:57:36.246975000 -0400
-@@ -87,6 +87,7 @@ vfs_module_manpages = ['vfs_acl_tdb',
-                        'vfs_extd_audit',
-                        'vfs_fake_perms',
-                        'vfs_fileid',
-+                       'vfs_freebsd',
-                        'vfs_fruit',
-                        'vfs_full_audit',
-                        'vfs_glusterfs',
-diff -Naurp a/source3/modules/vfs_freebsd.c b/source3/modules/vfs_freebsd.c
---- a/source3/modules/vfs_freebsd.c	1969-12-31 19:00:00.000000000 -0500
-+++ b/source3/modules/vfs_freebsd.c	2024-08-05 13:57:36.247358000 -0400
+--- source3/modules/vfs_freebsd.c.orig	2025-07-11 10:55:17 UTC
++++ source3/modules/vfs_freebsd.c
 @@ -0,0 +1,699 @@
 +/*
 + * This module implements VFS calls specific to FreeBSD
@@ -402,7 +200,7 @@ diff -Naurp a/source3/modules/vfs_freebsd.c b/source3/modules/vfs_freebsd.c
 +		const char *path = fsp->fsp_name->base_name;
 +		if (fsp->fsp_flags.have_proc_fds) {
 +			char buf[PATH_MAX];
-+			path = sys_proc_fd_path(fd, buf, sizeof(buf));
++			path = sys_proc_fd_path(fd, &buf);
 +			if (path == NULL) {
 +				return -1;
 +			}
@@ -456,7 +254,7 @@ diff -Naurp a/source3/modules/vfs_freebsd.c b/source3/modules/vfs_freebsd.c
 +			const char *path = fsp->fsp_name->base_name;
 +			if (fsp->fsp_flags.have_proc_fds) {
 +				char buf[PATH_MAX];
-+				path = sys_proc_fd_path(fd, buf, sizeof(buf));
++				path = sys_proc_fd_path(fd, &buf);
 +				if (path == NULL) {
 +					return -1;
 +				}
@@ -636,7 +434,7 @@ diff -Naurp a/source3/modules/vfs_freebsd.c b/source3/modules/vfs_freebsd.c
 +		const char *path = fsp->fsp_name->base_name;
 +		if (fsp->fsp_flags.have_proc_fds) {
 +			char buf[PATH_MAX];
-+			path = sys_proc_fd_path(fd, buf, sizeof(buf));
++			path = sys_proc_fd_path(fd, &buf);
 +			if (path == NULL) {
 +				return -1;
 +			}
@@ -711,7 +509,7 @@ diff -Naurp a/source3/modules/vfs_freebsd.c b/source3/modules/vfs_freebsd.c
 +		const char *path = fsp->fsp_name->base_name;
 +		if (fsp->fsp_flags.have_proc_fds) {
 +			char buf[PATH_MAX];
-+			path = sys_proc_fd_path(fd, buf, sizeof(buf));
++			path = sys_proc_fd_path(fd, &buf);
 +			if (path == NULL) {
 +				return -1;
 +			}
@@ -788,7 +586,7 @@ diff -Naurp a/source3/modules/vfs_freebsd.c b/source3/modules/vfs_freebsd.c
 +		const char *path = fsp->fsp_name->base_name;
 +		if (fsp->fsp_flags.have_proc_fds) {
 +			char buf[PATH_MAX];
-+			path = sys_proc_fd_path(fd, buf, sizeof(buf));
++			path = sys_proc_fd_path(fd, &buf);
 +			if (path == NULL) {
 +				return -1;
 +			}
@@ -902,20 +700,3 @@ diff -Naurp a/source3/modules/vfs_freebsd.c b/source3/modules/vfs_freebsd.c
 +
 +	return ret;
 +}
-diff -Naurp a/source3/modules/wscript_build b/source3/modules/wscript_build
---- a/source3/modules/wscript_build	2024-02-02 04:33:51.236489800 -0500
-+++ b/source3/modules/wscript_build	2024-08-05 13:57:36.247658000 -0400
-@@ -631,6 +631,13 @@ bld.SAMBA3_MODULE('vfs_delay_inject',
-                  enabled=bld.SAMBA3_IS_ENABLED_MODULE('vfs_delay_inject'),
-                  install=False)
- 
-+bld.SAMBA3_MODULE('vfs_freebsd',
-+                 subsystem='vfs',
-+                 source='vfs_freebsd.c',
-+                 init_function='',
-+                 internal_module=bld.SAMBA3_IS_STATIC_MODULE('vfs_freebsd'),
-+                 enabled=bld.SAMBA3_IS_ENABLED_MODULE('vfs_freebsd'))
-+
- bld.SAMBA3_MODULE('vfs_widelinks',
-                  subsystem='vfs',
-                  source='vfs_widelinks.c',

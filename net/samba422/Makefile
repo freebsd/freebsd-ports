@@ -1,6 +1,5 @@
-PORTNAME=			${SAMBA4_BASENAME}420
+PORTNAME=			${SAMBA4_BASENAME}422
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			10
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -29,7 +28,6 @@ EXTRA_PATCHES=			\
 				${PATCHDIR}/0010-Add-option-with-pkgconfigdir-to-specify-alternative-.patch:-p1 \
 				${PATCHDIR}/0011-Use-provided-by-port-location-of-the-XML-catalog.patch:-p1 \
 				${PATCHDIR}/0012-Create-shared-libraries-according-to-the-FreeBSD-spe.patch:-p1 \
-				${PATCHDIR}/0013-Pass-additional-msg-parameter-to-CHECK_LIB-so-it-can.patch:-p1 \
 				${PATCHDIR}/0014-Add-option-to-disable-CTDB-tests-failing-on-FreeBSD-.patch:-p1 \
 				${PATCHDIR}/0015-Add-extra-debug-class-to-trck-down-DB-locking-code.patch:-p1 \
 				${PATCHDIR}/0016-Make-ldb_schema_attribute_compare-a-stable-comparisi.patch:-p1 \
@@ -40,18 +38,12 @@ EXTRA_PATCHES=			\
 				${PATCHDIR}/0021-Fix-casting-warnings-in-the-nfs_quota-debug-message.patch:-p1 \
 				${PATCHDIR}/0022-Clean-up-UTMP-handling-code-and-add-FreeBSD-support..patch:-p1 \
 				${PATCHDIR}/0023-Add-cmd_get_quota-test-function-into-vfstest-to-test.patch:-p1 \
-				${PATCHDIR}/0024-Cherry-pick-ZFS-provisioning-code-by-iXsystems-Inc.patch:-p1 \
 				${PATCHDIR}/0025-From-d9b748869a8f4018ebee302aae8246bf29f60309-Mon-Se.patch:-p1 \
-				${PATCHDIR}/0026-vfs-add-a-compatibility-option-to-the-vfs_streams_xa.patch:-p1 \
-				${PATCHDIR}/0027-Add-VFS-module-vfs_freebsd-that-implements-FreeBSD-s.patch:-p1 \
-				${PATCHDIR}/0028-Fix-rl_completion_func_t.patch:-p1 \
 				${PATCHDIR}/0028-s3-lib-system-add-FreeBSD-proc_fd_pattern.patch \
-				${PATCHDIR}/0100-Fix-pathref-handling-for-FreeBSD-13plus_samba42x.patch:-p1 \
-				${PATCHDIR}/0102-FreeBSD-vfs_freebsd-fix-sys_proc_fd_path-args.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.20.7
+SAMBA4_VERSION=			4.22.3
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -98,7 +90,7 @@ CONFIGURE_ENV=			PTHREAD_LDFLAGS="-lpthread" \
 				PYTHONHASHSEED=1
 MAKE_ENV=			PYTHONHASHSEED=1
 
-USES=				bison compiler:c++11-lang iconv localbase:ldflags \
+USES=				compiler:c++11-lang iconv localbase:ldflags \
 				perl5 pkgconfig shebangfix waf gettext-runtime
 USE_PERL5=			build
 USE_LDCONFIG=			${SAMBA4_LIBDIR}
@@ -116,8 +108,8 @@ SUB_LIST=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
 ##############################################################################
 OPTIONS_SUB=			yes
 
-OPTIONS_DEFINE=			AD_DC ADS CLUSTER CUPS DOCS FAM GPGME \
-				LDAP MANPAGES PROFILE PYTHON3 QUOTAS \
+OPTIONS_DEFINE=			AD_DC ADS CLUSTER CUPS DOCS FAM LDAP GPGME \
+				MANPAGES PROFILE PYTHON3 QUOTAS \
 				SYSLOG UTMP
 #OPTIONS_DEFINE+=		DEVELOPER MEMORY_DEBUG
 
@@ -135,7 +127,7 @@ OPTIONS_DEFAULT=		AD_DC ADS DOCS FAM LDAP MANPAGES \
 				PROFILE PYTHON3 QUOTAS SYSLOG UTMP \
 				FRUIT GSSAPI_BUILTIN AVAHI
 ##############################################################################
-ADS_DESC=			Active Directory client(implies LDAP)
+ADS_DESC=			Active Directory client
 AD_DC_DESC=			Active Directory Domain Controller(implies PYTHON3)
 CLUSTER_DESC=			Clustering support
 DEVELOPER_DESC=			With developer framework
@@ -177,6 +169,9 @@ LIB_DEPENDS+=			libgnutls.so:security/gnutls
 LIB_DEPENDS+=			libgcrypt.so:security/libgcrypt
 # NFSv4 ACL glue
 LIB_DEPENDS+=			libsunacl.so:sysutils/libsunacl
+# libicu
+LIB_DEPENDS+=			libicui18n.so:devel/icu
+LIB_DEPENDS+=			libicuuc.so:devel/icu
 # Jansson
 BUILD_DEPENDS+=			jansson>=2.10:devel/jansson
 RUN_DEPENDS+=			jansson>=2.10:devel/jansson
@@ -197,7 +192,7 @@ SAMBA4_BUNDLED_CMOCKA?=		no
 SAMBA4_BUNDLED_TALLOC?=		no
 SAMBA4_BUNDLED_TEVENT?=		no
 SAMBA4_BUNDLED_TDB?=		no
-SAMBA4_BUNDLED_LDB?=		no
+SAMBA4_BUNDLED_LDB?=		yes
 # cmocka
 .if defined(SAMBA4_BUNDLED_CMOCKA) && ${SAMBA4_BUNDLED_CMOCKA} == yes
 SAMBA4_BUNDLED_LIBS+=		cmocka
@@ -218,8 +213,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC=""
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!talloc
-BUILD_DEPENDS+=			talloc242>=2.4.2:devel/talloc242
-RUN_DEPENDS+=			talloc242>=2.4.2:devel/talloc242
+BUILD_DEPENDS+=			talloc243>=2.4.3:devel/talloc243
+RUN_DEPENDS+=			talloc243>=2.4.3:devel/talloc243
 PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC="@comment "
 .endif
@@ -231,8 +226,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT=""
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!tevent
-BUILD_DEPENDS+=			tevent016>=0.16.1:devel/tevent016
-RUN_DEPENDS+=			tevent016>=0.16.1:devel/tevent016
+BUILD_DEPENDS+=			tevent017>=0.17:devel/tevent017
+RUN_DEPENDS+=			tevent017>=0.17:devel/tevent017
 PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT="@comment "
 .endif
@@ -244,8 +239,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_TDB=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!tdb
-BUILD_DEPENDS+=			tdb1410>=1.4.10:databases/tdb1410
-RUN_DEPENDS+=			tdb1410>=1.4.10:databases/tdb1410
+BUILD_DEPENDS+=			tdb1413>=1.4.13:databases/tdb1413
+RUN_DEPENDS+=			tdb1413>=1.4.13:databases/tdb1413
 PLIST_SUB+=			SAMBA4_BUNDLED_TDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TDB="@comment "
 .endif
@@ -253,6 +248,7 @@ SUB_LIST+=			SAMBA4_BUNDLED_TDB="@comment "
 .if defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes
 SAMBA4_BUNDLED_LDB=		yes
 SAMBA4_BUNDLED_LIBS+=		ldb
+CONFLICTS_INSTALL+=		ldb-* ldb2-*
 PLIST_SUB+=			SAMBA4_BUNDLED_LDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_LDB=""
 SAMBA4_MODULEDIR=		${SAMBA4_LIBDIR}/modules
@@ -290,6 +286,7 @@ TEST_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_
 CONFIGURE_ARGS+=		\
 				--with-pam \
 				--with-iconv \
+				--with-libiconv="${ICONV_PREFIX}" \
 				--with-winbind \
 				--with-regedit \
 				--disable-rpath \
@@ -341,7 +338,7 @@ DEVELOPER_TEST_DEPENDS=		${GDB_CMD}:devel/gdb
 DEVELOPER_VARS_OFF=		GDB_CMD=true
 ##############################################################################
 AD_DC_IMPLIES=			PYTHON3
-AD_DC_CONFIGURE_OFF=		--without-ad-dc
+AD_DC_CONFIGURE_OFF=		--without-ad-dc --without-ldb-lmdb
 AD_DC_BUILD_DEPENDS=		${SAMBA4_LMDB_DEPENDS}
 AD_DC_RUN_DEPENDS=		${SAMBA4_LMDB_DEPENDS}
 AD_DC_VARS=			PLIST+=${PKGDIR}/pkg-plist.ad_dc
@@ -351,7 +348,6 @@ AD_DC_BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.7:textproc/py-markdo
 AD_DC_RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.7:textproc/py-markdown@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}dnspython>=2.2.1:dns/py-dnspython@${PY_FLAVOR}
 
-ADS_IMPLIES=			LDAP
 ADS_CONFIGURE_WITH=		ads
 
 CLUSTER_CONFIGURE_WITH=		cluster-support
@@ -367,13 +363,7 @@ GPGME_CONFIGURE_WITH=		gpgme
 GPGME_LIB_DEPENDS=		libgpgme.so:security/gpgme
 GPGME_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gpg>=2.0.0:security/py-gpg@${PY_FLAVOR}
 
-.if exists(/usr/libexec/krb5kdc)
-GSSAPI_BUILTIN_USES=		gssapi
-GSSAPI_MIT_CONFIGURE_ON=	--with-system-mitkrb5 ${GSSAPIBASEDIR} \
-				--with-system-mitkdc=${GSSAPIBASEDIR}/libexec/krb5kdc
-.endif
-
-GSSAPI_BUILTIN_BUILD_DEPENDS=	p5-JSON>=4.0:converters/p5-JSON
+GSSAPI_BUILTIN_USES=		bison
 
 GSSAPI_MIT_CONFIGURE_ON=	--with-system-mitkrb5 ${GSSAPIBASEDIR} \
 				--with-system-mitkdc=${GSSAPIBASEDIR}/sbin/krb5kdc \
@@ -386,7 +376,8 @@ GSSAPI_HEIMDAL_PREVENTS=	AD_DC
 GSSAPI_HEIMDAL_PREVENTS_MSG=	GSSAPI_HEIMDAL and AD_DC enable conflicting options
 
 LDAP_CONFIGURE_WITH=		ldap
-LDAP_CONFIGURE_ON=		--with-openldap=${LOCALBASE}
+LDAP_CONFIGURE_ON=		--with-ldap
+LDAP_CONFIGURE_OFF=		--without-ldap
 LDAP_USES=			ldap
 LDAP_VARS=			SAMBA4_MODULES+=idmap_ldap
 
@@ -617,11 +608,6 @@ post-install-fix-manpages:
 .for f in vfs_aio_linux.8 vfs_btrfs.8 vfs_ceph.8 vfs_gpfs.8
 				${RM} ${STAGEDIR}${PREFIX}/share/man/man8/${f}
 .endfor
-.if defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes
-.	for f in ldbadd.1 ldbdel.1 ldbedit.1 ldbmodify.1 ldbrename.1 ldbsearch.1
-				${MV} ${STAGEDIR}${PREFIX}/share/man/man1/${f} ${STAGEDIR}${PREFIX}/share/man/man1/samba-${f}
-.	endfor
-.endif
 
 .if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
 .	for f in talloc.3
