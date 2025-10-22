@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.46.0
+DISTVERSION=	0.47.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -42,6 +42,8 @@ COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/zsh/site-functions/_${PORTNAME}
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|0\.0\.0|${DISTVERSION}|' \
+		${BUILD_WRKSRC}/app-server/tests/suite/user_agent.rs
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}&|' \
 		${BUILD_WRKSRC}/core/src/environment_context.rs \
 		${BUILD_WRKSRC}/core/src/shell.rs
