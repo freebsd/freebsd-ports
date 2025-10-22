@@ -1,6 +1,6 @@
 PORTNAME=	rofi-calc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.1
+DISTVERSION=	2.5.0
 CATEGORIES=	x11
 
 MAINTAINER=	vidar@karlsen.tech
@@ -10,20 +10,17 @@ WWW=		https://github.com/svenstaro/rofi-calc
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	rofi:x11/rofi
-LIB_DEPENDS=	libcairo.so:graphics/cairo \
-		libglib-2.0.so:devel/glib20 \
-		libqalculate.so:math/libqalculate
-RUN_DEPENDS=	rofi:x11/rofi
+BUILD_DEPENDS=	re2c:devel/re2c \
+		rofi:x11/rofi
+RUN_DEPENDS=	qalc:math/libqalculate \
+		rofi:x11/rofi
 
-USES=		autoreconf gettext-runtime libtool pkgconfig
+USES=		gnome meson pkgconfig
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	svenstaro
-GNU_CONFIGURE=	yes
+USE_GNOME=	glib20
+USE_LDCONFIG=	yes
 
-INSTALL_TARGET=	install-strip
-
-PLIST_FILES=	lib/rofi/calc.so
+PLIST_FILES=	lib/rofi/libcalc.so
 
 .include <bsd.port.mk>
