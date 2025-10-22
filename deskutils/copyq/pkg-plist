@@ -54,6 +54,7 @@ share/bash-completion/completions/copyq
 %%DATADIR%%/translations/copyq_sv.qm
 %%DATADIR%%/translations/copyq_tr.qm
 %%DATADIR%%/translations/copyq_uk.qm
+%%DATADIR%%/translations/copyq_vi.qm
 %%DATADIR%%/translations/copyq_zh_CN.qm
 %%DATADIR%%/translations/copyq_zh_TW.qm
 share/icons/hicolor/128x128/apps/copyq.png

@@ -1,5 +1,5 @@
 PORTNAME=	copyq
-DISTVERSION=	12.0.1
+DISTVERSION=	13.0.0
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/hluk/CopyQ/releases/download/v${DISTVERSION}/
 DISTNAME=	Copyq-${DISTVERSION}
@@ -11,13 +11,12 @@ WWW=		https://github.com/hluk/CopyQ
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
-		libxkbcommon.so:x11/libxkbcommon
+LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake gl kde:6 pkgconfig qt:6 xorg
 USE_GL=		opengl
-USE_KDE=	notifications ecm:build statusnotifieritem
-USE_QT=		base declarative svg wayland translations:build
+USE_KDE=	guiaddons notifications statusnotifieritem ecm:build
+USE_QT=		base declarative svg translations:build
 USE_XORG=	ice sm x11 xext xfixes xtst
 
 PORTSCOUT=	limit:^d\.d\.
