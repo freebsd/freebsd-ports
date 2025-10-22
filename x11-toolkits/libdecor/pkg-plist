@@ -4,7 +4,7 @@
 include/libdecor-0/libdecor.h
 lib/libdecor-0.so
 lib/libdecor-0.so.0
-lib/libdecor-0.so.0.200.3
+lib/libdecor-0.so.0.200.4
 %%CAIRO%%lib/libdecor/plugins-1/libdecor-cairo.so
 %%GTK3%%lib/libdecor/plugins-1/libdecor-gtk.so
 libdata/pkgconfig/libdecor-0.pc

@@ -1,5 +1,5 @@
 PORTNAME=	libdecor
-DISTVERSION=	0.2.3
+DISTVERSION=	0.2.4
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org
