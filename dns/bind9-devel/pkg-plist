@@ -125,7 +125,6 @@ include/isc/crypto.h
 include/isc/dir.h
 include/isc/dnsstream.h
 include/isc/endian.h
-include/isc/entropy.h
 include/isc/errno.h
 include/isc/error.h
 include/isc/file.h
@@ -235,11 +234,12 @@ include/ns/update.h
 include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
-lib/libdns-9.21.12.so
-lib/libisc-9.21.12.so
-lib/libisccc-9.21.12.so
-lib/libisccfg-9.21.12.so
-lib/libns-9.21.12.so
+lib/bind/synthrecord.so
+lib/libdns-9.21.14.so
+lib/libisc-9.21.14.so
+lib/libisccc-9.21.14.so
+lib/libisccfg-9.21.14.so
+lib/libns-9.21.14.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
 @comment share/man/man1/dig.1.gz
