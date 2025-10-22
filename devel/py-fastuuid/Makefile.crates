@@ -2,17 +2,17 @@ CARGO_CRATES=	atomic-0.6.1 \
 		autocfg-1.5.0 \
 		block-buffer-0.10.4 \
 		bumpalo-3.19.0 \
-		bytemuck-1.23.2 \
-		cfg-if-1.0.3 \
+		bytemuck-1.24.0 \
+		cfg-if-1.0.4 \
 		crypto-common-0.1.6 \
 		digest-0.10.7 \
-		generic-array-0.14.7 \
+		generic-array-0.14.9 \
 		getrandom-0.2.16 \
-		getrandom-0.3.3 \
+		getrandom-0.3.4 \
 		heck-0.5.0 \
 		indoc-2.0.6 \
 		js-sys-0.3.81 \
-		libc-0.2.176 \
+		libc-0.2.177 \
 		log-0.4.28 \
 		md-5-0.10.6 \
 		memoffset-0.9.1 \
@@ -20,27 +20,26 @@ CARGO_CRATES=	atomic-0.6.1 \
 		portable-atomic-1.11.1 \
 		ppv-lite86-0.2.21 \
 		proc-macro2-1.0.101 \
-		pyo3-0.22.6 \
-		pyo3-build-config-0.22.6 \
-		pyo3-ffi-0.22.6 \
-		pyo3-macros-0.22.6 \
-		pyo3-macros-backend-0.22.6 \
-		quote-1.0.40 \
+		pyo3-0.26.0 \
+		pyo3-build-config-0.26.0 \
+		pyo3-ffi-0.26.0 \
+		pyo3-macros-0.26.0 \
+		pyo3-macros-backend-0.26.0 \
+		quote-1.0.41 \
 		r-efi-5.3.0 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rustversion-1.0.22 \
 		sha1_smol-1.0.1 \
-		syn-2.0.106 \
-		target-lexicon-0.12.16 \
-		typenum-1.18.0 \
+		syn-2.0.107 \
+		target-lexicon-0.13.3 \
+		typenum-1.19.0 \
 		unicode-ident-1.0.19 \
 		unindent-0.2.4 \
 		uuid-1.18.1 \
 		version_check-0.9.5 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasi-0.14.7+wasi-0.2.4 \
 		wasip2-1.0.1+wasi-0.2.4 \
 		wasm-bindgen-0.2.104 \
 		wasm-bindgen-backend-0.2.104 \
