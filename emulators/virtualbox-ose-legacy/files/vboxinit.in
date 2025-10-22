@@ -16,7 +16,7 @@
 # vboxinit_stop (str):		Default stop cmd for VBoxManage controlvm.
 #				(default: savestate)
 # vboxinit_start_delay (int):	Default startup delay in seconds.
-#				(default: 0)
+#				(default: 1)
 # vboxinit_stop_delay (int):	Default shutdown delay in seconds.
 #				(default: 0)
 #
