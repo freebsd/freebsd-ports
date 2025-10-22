@@ -1,6 +1,6 @@
 PORTNAME=	framework-tool-tui
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.5.5
+DISTVERSION=	0.5.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	lme@FreeBSD.org
@@ -17,8 +17,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	grouzen
 
 PLIST_FILES=	bin/framework-tool-tui
-
-do-patch:
-		${REINPLACE_CMD} -e s/linux/freebsd/ ${WRKSRC}/src/main.rs
 
 .include <bsd.port.mk>

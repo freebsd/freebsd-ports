@@ -1,4 +1,4 @@
-TIMESTAMP = 1760983567
+TIMESTAMP = 1761167011
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -561,5 +561,5 @@ SHA256 (FrameworkComputer-rust-hwio-9bcff4277d8f3d7dce2b12c6ad81d092ae35c4ba_GH0
 SIZE (FrameworkComputer-rust-hwio-9bcff4277d8f3d7dce2b12c6ad81d092ae35c4ba_GH0.tar.gz) = 3502
 SHA256 (FrameworkComputer-smbios-lib-b3e2fff8a6f4b8c2d729467cbbf0c8c41974cd1c_GH0.tar.gz) = e5649380b465b478a45a0d5eeb5ed68a7fffd15205bdcc179292f8bca5c54347
 SIZE (FrameworkComputer-smbios-lib-b3e2fff8a6f4b8c2d729467cbbf0c8c41974cd1c_GH0.tar.gz) = 139972
-SHA256 (grouzen-framework-tool-tui-v0.5.5_GH0.tar.gz) = b6ae92d07ba445d4c46d9a05a71cb3950121175102ad95f794d8d49ef52e1b05
-SIZE (grouzen-framework-tool-tui-v0.5.5_GH0.tar.gz) = 623296
+SHA256 (grouzen-framework-tool-tui-v0.5.6_GH0.tar.gz) = bc7e2544de0e400b9a432778d4ad68d908f93d9663886496f4f48ae9f24c57bb
+SIZE (grouzen-framework-tool-tui-v0.5.6_GH0.tar.gz) = 623311
