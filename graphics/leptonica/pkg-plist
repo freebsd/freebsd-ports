@@ -11,6 +11,7 @@
 include/leptonica/allheaders.h
 include/leptonica/alltypes.h
 include/leptonica/array.h
+include/leptonica/array_internal.h
 include/leptonica/arrayaccess.h
 include/leptonica/bbuffer.h
 include/leptonica/bilateral.h
@@ -18,6 +19,7 @@ include/leptonica/bmf.h
 include/leptonica/bmfdata.h
 include/leptonica/bmp.h
 include/leptonica/ccbord.h
+include/leptonica/ccbord_internal.h
 include/leptonica/colorfill.h
 include/leptonica/dewarp.h
 include/leptonica/endianness.h
@@ -31,6 +33,7 @@ include/leptonica/leptwin.h
 include/leptonica/list.h
 include/leptonica/morph.h
 include/leptonica/pix.h
+include/leptonica/pix_internal.h
 include/leptonica/ptra.h
 include/leptonica/queue.h
 include/leptonica/rbtree.h
@@ -46,10 +49,10 @@ lib/cmake/leptonica/LeptonicaConfig.cmake
 lib/cmake/leptonica/LeptonicaTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/leptonica/LeptonicaTargets.cmake
 lib/liblept.so
-lib/liblept.so.5
-lib/liblept.so.5.4.0
+lib/liblept.so.6
+lib/liblept.so.6.0.0
 lib/libleptonica.so
-lib/libleptonica.so.5
-lib/libleptonica.so.5.4.0
+lib/libleptonica.so.6
+lib/libleptonica.so.6.0.0
 libdata/pkgconfig/lept.pc
 share/cmake/Modules/FindLeptonica.cmake
