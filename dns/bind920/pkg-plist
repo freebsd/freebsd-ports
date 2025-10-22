@@ -130,7 +130,6 @@ include/isc/crc64.h
 include/isc/dir.h
 include/isc/dnsstream.h
 include/isc/endian.h
-include/isc/entropy.h
 include/isc/errno.h
 include/isc/error.h
 include/isc/file.h
@@ -243,15 +242,15 @@ include/ns/update.h
 include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
-lib/libdns-9.20.13.so
+lib/libdns-9.20.15.so
 lib/libdns.so
-lib/libisc-9.20.13.so
+lib/libisc-9.20.15.so
 lib/libisc.so
-lib/libisccc-9.20.13.so
+lib/libisccc-9.20.15.so
 lib/libisccc.so
-lib/libisccfg-9.20.13.so
+lib/libisccfg-9.20.15.so
 lib/libisccfg.so
-lib/libns-9.20.13.so
+lib/libns-9.20.15.so
 lib/libns.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
