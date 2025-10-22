@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/partition_alloc.gni.orig	2025-09-10 13:22:16 UTC
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2025-10-21 16:57:35 UTC
 +++ base/allocator/partition_allocator/partition_alloc.gni
 @@ -87,7 +87,7 @@ if (current_cpu == "x64" || current_cpu == "arm64" || 
  # TODO(crbug.com/329199197): Clean this up when experiments are complete.
@@ -9,7 +9,7 @@
                       !is_hwasan && (is_linux || is_android)
  
  declare_args() {
-@@ -490,7 +490,7 @@ assert(!use_asan_backup_ref_ptr || use_raw_ptr_hookabl
+@@ -479,7 +479,7 @@ assert(!use_asan_backup_ref_ptr || use_raw_ptr_hookabl
  # dependencies that use partition_allocator are compiled in AOSP against a
  # version of glibc that does not include pkeys syscall numbers.
  is_pkeys_available =

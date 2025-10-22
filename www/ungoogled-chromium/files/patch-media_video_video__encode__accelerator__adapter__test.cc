@@ -1,4 +1,4 @@
---- media/video/video_encode_accelerator_adapter_test.cc.orig	2025-03-09 21:38:10 UTC
+--- media/video/video_encode_accelerator_adapter_test.cc.orig	2025-10-21 16:57:35 UTC
 +++ media/video/video_encode_accelerator_adapter_test.cc
 @@ -260,7 +260,7 @@ TEST_F(VideoEncodeAcceleratorAdapterTest, InitializeAf
        });
@@ -27,7 +27,7 @@
      expected_input_format = PIXEL_FORMAT_NV12;
  #endif
    const gfx::ColorSpace expected_color_space =
-@@ -674,7 +674,7 @@ TEST_F(VideoEncodeAcceleratorAdapterTest,
+@@ -714,7 +714,7 @@ TEST_F(VideoEncodeAcceleratorAdapterTest,
        });
  
    VideoPixelFormat expected_input_format = PIXEL_FORMAT_I420;

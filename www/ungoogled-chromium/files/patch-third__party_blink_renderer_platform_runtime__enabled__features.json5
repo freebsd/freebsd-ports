@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-09-10 13:22:16 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-10-21 16:57:35 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
 @@ -324,7 +324,7 @@
          "default": "",
@@ -18,7 +18,7 @@
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -379,7 +379,7 @@
+@@ -390,7 +390,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIRewriterAPI",
@@ -27,7 +27,7 @@
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -412,7 +412,7 @@
+@@ -423,7 +423,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIWriterAPI",
@@ -36,7 +36,7 @@
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -516,7 +516,7 @@
+@@ -535,7 +535,7 @@
        name: "AppTitle",
        status: "experimental",
        origin_trial_feature_name: "AppTitle",
@@ -45,7 +45,7 @@
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1720,7 +1720,7 @@
+@@ -1738,7 +1738,7 @@
      {
        name: "DeviceBoundSessionCredentials",
        origin_trial_feature_name: "DeviceBoundSessionCredentials",
@@ -54,7 +54,16 @@
        status: "experimental",
        // Killswitch is net::features::kDeviceBoundSessions
        base_feature: "none",
-@@ -1859,7 +1859,7 @@
+@@ -1746,7 +1746,7 @@
+     {
+       name: "DeviceBoundSessionCredentials2",
+       origin_trial_feature_name: "DeviceBoundSessionCredentials2",
+-      origin_trial_os: ["win", "linux", "mac"],
++      origin_trial_os: ["win", "linux", "mac", "openbsd", "freebsd"],
+       status: "experimental",
+       // Killswitch is net::features::kDeviceBoundSessions
+       base_feature: "none",
+@@ -1889,7 +1889,7 @@
        name: "DocumentIsolationPolicy",
        status: "experimental",
        origin_trial_feature_name: "DocumentIsolationPolicy",
@@ -63,7 +72,7 @@
        base_feature: "none",
      },
      {
-@@ -2119,7 +2119,7 @@
+@@ -2134,7 +2134,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -72,7 +81,7 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3624,7 +3624,7 @@
+@@ -3642,7 +3642,7 @@
        // Tracking bug for the implementation: https://crbug.com/1462930
        name: "PermissionElement",
        origin_trial_feature_name: "PermissionElement",
@@ -81,7 +90,7 @@
        status: "experimental",
        public: true,
        base_feature_status: "enabled",
-@@ -5166,7 +5166,7 @@
+@@ -5178,7 +5178,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -90,7 +99,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -5364,7 +5364,7 @@
+@@ -5363,7 +5363,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
@@ -99,7 +108,7 @@
        status: "experimental",
        base_feature: "none",
      },
-@@ -5466,7 +5466,7 @@
+@@ -5471,7 +5471,7 @@
      {
        name: "WebAuthenticationImmediateGet",
        origin_trial_feature_name: "WebAuthenticationImmediateGet",
@@ -108,12 +117,3 @@
        base_feature: "none",
        public: true,
      },
-@@ -5619,7 +5619,7 @@
-     {
-       name: "WebIdentityDigitalCredentials",
-       origin_trial_feature_name: "WebIdentityDigitalCredentials",
--      origin_trial_os: ["android", "win", "mac", "linux", "chromeos"],
-+      origin_trial_os: ["android", "win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
-       origin_trial_allows_third_party: true,
-       implied_by: ["WebIdentityDigitalCredentialsCreation"],
-       public: true,

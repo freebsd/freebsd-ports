@@ -1,4 +1,4 @@
---- chrome/app/chrome_main.cc.orig	2025-01-25 09:34:31 UTC
+--- chrome/app/chrome_main.cc.orig	2025-10-21 16:57:35 UTC
 +++ chrome/app/chrome_main.cc
 @@ -28,11 +28,11 @@
  #include "chrome/app/chrome_main_mac.h"
@@ -32,7 +32,7 @@
    PossiblyDetermineFallbackChromeChannel(argv[0]);
  #endif
  
-@@ -181,7 +181,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -180,7 +180,7 @@ int ChromeMain(int argc, const char** argv) {
    SetUpBundleOverrides();
  #endif
  

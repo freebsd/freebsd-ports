@@ -1,4 +1,4 @@
---- net/dns/BUILD.gn.orig	2025-09-10 13:22:16 UTC
+--- net/dns/BUILD.gn.orig	2025-10-21 16:57:35 UTC
 +++ net/dns/BUILD.gn
 @@ -140,7 +140,7 @@ source_set("dns") {
        "dns_config_service_android.cc",
@@ -25,7 +25,7 @@
    ]
  
    if (enable_mdns) {
-@@ -454,9 +456,9 @@ source_set("tests") {
+@@ -455,9 +457,9 @@ source_set("tests") {
  
    if (is_android) {
      sources += [ "dns_config_service_android_unittest.cc" ]

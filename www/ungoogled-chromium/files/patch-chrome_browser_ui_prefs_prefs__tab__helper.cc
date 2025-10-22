@@ -1,6 +1,6 @@
---- chrome/browser/ui/prefs/prefs_tab_helper.cc.orig	2025-09-10 13:22:16 UTC
+--- chrome/browser/ui/prefs/prefs_tab_helper.cc.orig	2025-10-21 16:57:35 UTC
 +++ chrome/browser/ui/prefs/prefs_tab_helper.cc
-@@ -68,7 +68,7 @@
+@@ -64,7 +64,7 @@
  #endif
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \

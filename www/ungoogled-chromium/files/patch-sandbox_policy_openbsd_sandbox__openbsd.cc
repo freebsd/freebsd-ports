@@ -1,6 +1,6 @@
---- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2025-09-10 13:22:16 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2025-10-21 16:57:35 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,393 @@
+@@ -0,0 +1,396 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -61,6 +61,7 @@
 +#endif
 +
 +#include "third_party/boringssl/src/include/openssl/crypto.h"
++#include "third_party/skia/experimental/rust_png/ffi/FFI.rs.h"
 +
 +#include <fontconfig/fontconfig.h>
 +#include "ui/gfx/linux/fontconfig_util.h"
@@ -126,6 +127,8 @@
 +      crypto::EnsureNSSInit();
 +#endif
 +      CRYPTO_pre_sandbox_init();
++
++      rust_png::initialize_cpudetect();
 +
 +      base::FilePath cache_directory, local_directory;
 +

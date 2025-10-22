@@ -1,8 +1,8 @@
---- net/base/sockaddr_util_posix_unittest.cc.orig	2024-07-31 14:19:23 UTC
+--- net/base/sockaddr_util_posix_unittest.cc.orig	2025-10-21 16:57:35 UTC
 +++ net/base/sockaddr_util_posix_unittest.cc
-@@ -88,7 +88,8 @@ TEST(FillUnixAddressTest, AbstractLinuxAddress) {
-   size_t path_max = MaxPathLength(&storage);
-   std::string path(path_max, '0');
+@@ -77,7 +77,8 @@ TEST(FillUnixAddressTest, AbstractLinuxAddress) {
+   SockaddrStorage storage;
+   std::string path(kMaxUnixAddressPath, '0');
  
 -#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
