@@ -1,6 +1,6 @@
 PORTNAME=	mu4e-maildirs
 PORTVERSION=	0.8.20201028
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	mail
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -10,10 +10,14 @@ WWW=		https://github.com/agpchil/mu4e-maildirs-extension
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Upstream discourages using this software and recommends feature now integrated into mail/mu
+EXPIRATION_DATE=	2025-11-30
+BROKEN=		does not build with recent version of mail/mu: Cannot open load file: No such file or directory, mu4e-config
+
 BUILD_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>0:devel/dash.el@${EMACS_FLAVOR} \
-		mu4e${EMACS_PKGNAMESUFFIX}>0:mail/mu4e@${EMACS_FLAVOR}
+		mu>0:mail/mu
 RUN_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>0:devel/dash.el@${EMACS_FLAVOR} \
-		mu4e${EMACS_PKGNAMESUFFIX}>0:mail/mu4e@${EMACS_FLAVOR}
+		mu>0:mail/mu
 
 USES=		emacs
 USE_GITHUB=	yes
