@@ -1,5 +1,5 @@
 PORTNAME=	recursor
-DISTVERSION=	5.3.0
+DISTVERSION=	5.3.1
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
