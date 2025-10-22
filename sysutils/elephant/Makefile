@@ -1,6 +1,6 @@
 PORTNAME=	elephant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.5
+DISTVERSION=	2.4.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -25,7 +25,8 @@ OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	${OPTIONS_GROUP_PROVIDERS}
 OPTIONS_GROUP=		PROVIDERS
 OPTIONS_GROUP_PROVIDERS=CALC CLIPBOARD DESKTOPAPPLICATIONS FILES MENUS \
-			PROVIDERLIST RUNNER SYMBOLS TODO UNICODE WEBSEARCH
+			PROVIDERLIST RUNNER SYMBOLS TODO UNICODE WEBSEARCH \
+			WINDOWS
 
 PROVIDERS_DESC=		Enabled providers
 CALC_DESC=		Perform calculation and unit-conversions
@@ -39,6 +40,7 @@ SYMBOLS_DESC=		Search for emojis and symbols
 TODO_DESC=		Basic Todolist
 UNICODE_DESC=		Search for unicode symbols
 WEBSEARCH_DESC=		Search web with custom defined search engines
+WINDOWS_DESC=		Find and focus opened windows
 
 CALC_RUN_DEPENDS=	qalc:math/libqalculate \
 			wl-copy:x11/wl-clipboard
@@ -58,6 +60,8 @@ TODO_PLIST_FILES=	etc/xdg/elephant/providers/todo.so
 UNICODE_RUN_DEPENDS=	wl-copy:x11/wl-clipboard
 UNICODE_PLIST_FILES=	etc/xdg/elephant/providers/unicode.so
 WEBSEARCH_PLIST_FILES=	etc/xdg/elephant/providers/websearch.so
+WINDOWS_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+WINDOWS_PLIST_FILES=	etc/xdg/elephant/providers/windows.so
 
 .include <bsd.port.options.mk>
 
