@@ -1,3 +1,44 @@
+  <vuln vid="f741ea93-af61-11f0-98b5-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.5.0</ge><lt>18.5.1</lt></range>
+	<range><ge>18.4.0</ge><lt>18.4.3</lt></range>
+	<range><ge>10.6.0</ge><lt>18.3.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/10/22/patch-release-gitlab-18-5-1-released/">
+	  <p>Improper access control issue in runner API impacts GitLab EE</p>
+	  <p>Denial of service issue in event collection impacts GitLab CE/EE</p>
+	  <p>Denial of service issue in JSON validation impacts GitLab CE/EE</p>
+	  <p>Denial of service issue in upload impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in pipeline builds impacts GitLab CE</p>
+	  <p>Business logic error issue in group memberships impacts GitLab EE</p>
+	  <p>Missing authorization issue in quick actions impacts GitLab EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11702</cvename>
+      <cvename>CVE-2025-10497</cvename>
+      <cvename>CVE-2025-11447</cvename>
+      <cvename>CVE-2025-11974</cvename>
+      <cvename>CVE-2025-11971</cvename>
+      <cvename>CVE-2025-6601</cvename>
+      <cvename>CVE-2025-11989</cvename>
+      <url>https://about.gitlab.com/releases/2025/10/22/patch-release-gitlab-18-5-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-10-22</discovery>
+      <entry>2025-10-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="88f34edb-ae9b-11f0-b3f7-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
