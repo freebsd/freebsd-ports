@@ -424,7 +424,7 @@ datadog:*:480:
 promxy:*:481:
 openbao:*:482:
 # free: 483
-# free: 484
+stalwart:*:484:
 # free: 485
 # free: 486
 # free: 487

@@ -430,7 +430,7 @@ datadog:*:480:480::0:0:DataDog Agent:/var/db/datadog:/usr/sbin/nologin
 promxy:*:481:481::0:0:Promxy Daemon:/nonexistent:/usr/sbin/nologin
 openbao:*:482:482:daemon:0:0:OpenBao Daemon:/nonexistent:/usr/sbin/nologin
 # free: 483
-# free: 484
+stalwart:*:484:484::0:0:stalwart Mail Server Daemon:/nonexistent:/usr/sbin/nologin
 # free: 485
 # free: 486
 # free: 487

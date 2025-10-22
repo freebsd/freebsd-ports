@@ -1,0 +1,19 @@
+--- crates/cli/Cargo.toml.orig  2025-03-25 09:55:38 UTC
++++ crates/cli/Cargo.toml
+@@ -30,3 +30,16 @@ mail-auth = { version = "0.6" }
+ pwhash = "1.0.0"
+ rand = "0.9.0"
+ mail-auth = { version = "0.6" }
++
++[features]
++default = []
++sqlite = []
++foundationdb = []
++postgres = []
++mysql = []
++rocks = []
++elastic = []
++s3 = []
++redis = []
++azure = []
++enterprise = []
