@@ -1,5 +1,5 @@
---- ../drizzle-nginx-module-3504fc6/config.orig	2020-01-22 18:04:58.000000000 -0500
-+++ ../drizzle-nginx-module-3504fc6/config	2020-04-24 06:23:01.264872000 -0400
+--- ../drizzle-nginx-module-c631276/config.orig	2020-01-22 18:04:58.000000000 -0500
++++ ../drizzle-nginx-module-c631276/config	2020-04-24 06:23:01.264872000 -0400
 @@ -34,12 +34,12 @@
  
      if [ $ngx_found = no ]; then

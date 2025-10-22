@@ -1,0 +1,39 @@
+.if ${PORT_OPTIONS:MECHO}
+IGNORE=		echo module: patching is required
+.endif
+
+.if ${PORT_OPTIONS:MHTTP_UPLOAD}
+IGNORE=		upload module: patching is required
+.endif
+
+.if ${PORT_OPTIONS:MLUA}
+IGNORE=		lua module: patching is required
+.endif
+
+.if ${PORT_OPTIONS:MLUASTREAM}
+IGNORE=		lua stream module: patching is required
+.endif
+
+.if ${PORT_OPTIONS:MOTEL}
+IGNORE=		otel module: patching is required
+.endif
+
+.if ${PORT_OPTIONS:MPASSENGER}
+IGNORE=		passenger module: patching is required
+.endif
+
+.if ${PORT_OPTIONS:MSET_MISC}
+IGNORE=		set_misc module: patching is required
+.endif
+
+.if ${PORT_OPTIONS:MSTS}
+IGNORE=		sts module: patching is required
+.endif
+
+.if ${PORT_OPTIONS:MVOD}
+IGNORE=		vod module: patching is required
+.endif
+
+.if ${PORT_OPTIONS:MVTS}
+IGNORE=		vts module: patching is required
+.endif

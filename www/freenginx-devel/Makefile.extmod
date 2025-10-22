@@ -2,16 +2,16 @@
 
 OPTIONS_GROUP+=	THIRDPARTYGRP
 # External modules (arrayvar MUST appear after devel_kit for build-dep)
-OPTIONS_GROUP_THIRDPARTYGRP=	AJP AWS_AUTH BROTLI CACHE_PURGE CT \
+OPTIONS_GROUP_THIRDPARTYGRP=	AJP BROTLI CACHE_PURGE \
 	DEVEL_KIT ARRAYVAR DRIZZLE DYNAMIC_UPSTREAM ECHO ENCRYPTSESSION \
 	FIPS_CHECK FORMINPUT GRIDFS HEADERS_MORE HTTP_ACCEPT_LANGUAGE HTTP_AUTH_DIGEST \
-	HTTP_AUTH_KRB5 HTTP_AUTH_LDAP HTTP_AUTH_PAM HTTP_DAV_EXT HTTP_EVAL \
-	HTTP_FANCYINDEX HTTP_FOOTER HTTP_GEOIP2 HTTP_IP2LOCATION HTTP_IP2PROXY \
-	HTTP_JSON_STATUS HTTP_MOGILEFS HTTP_NOTICE HTTP_PUSH \
+	HTTP_AUTH_JWT HTTP_AUTH_KRB5 HTTP_AUTH_LDAP HTTP_AUTH_PAM HTTP_DAV_EXT \
+	HTTP_EVAL HTTP_FANCYINDEX HTTP_FOOTER HTTP_GEOIP2 HTTP_IP2LOCATION \
+	HTTP_IP2PROXY HTTP_JSON_STATUS HTTP_MOGILEFS HTTP_NOTICE HTTP_PUSH \
 	HTTP_PUSH_STREAM HTTP_REDIS HTTP_SLICE_AHEAD HTTP_SUBS_FILTER HTTP_TARANTOOL \
-	HTTP_UPLOAD HTTP_UPLOAD_PROGRESS HTTP_UPSTREAM_CHECK HTTP_UPSTREAM_FAIR \
-	HTTP_UPSTREAM_STICKY HTTP_VIDEO_THUMBEXTRACTOR HTTP_ZIP ICONV LET LINK LUA \
-	LUASTREAM MEMC MODSECURITY3 NAXSI PASSENGER POSTGRES RDS_CSV RDS_JSON \
+	HTTP_UPLOAD HTTP_UPLOAD_PROGRESS HTTP_UPSTREAM_FAIR  HTTP_UPSTREAM_STICKY \
+	HTTP_VIDEO_THUMBEXTRACTOR HTTP_ZIP ICONV LET LINK LUA \
+	LUASTREAM MEMC MODSECURITY3 NATS NAXSI PASSENGER POSTGRES RDS_CSV RDS_JSON \
 	REDIS2 RTMP SET_MISC SFLOW SHIBBOLETH SLOWFS_CACHE SRCACHE STS \
 	VOD VTS XSS WEBSOCKIFY ZSTD
 
@@ -19,11 +19,8 @@ AJP_GH_TUPLE=		msva:nginx_ajp_module:fcbb2cc:ajp
 AJP_VARS=		DSO_EXTMODS+=ajp
 
 ARRAYVAR_IMPLIES=	DEVEL_KIT
-ARRAYVAR_GH_TUPLE=	openresty:array-var-nginx-module:v0.05:arrayvar
+ARRAYVAR_GH_TUPLE=	openresty:array-var-nginx-module:v0.06:arrayvar
 ARRAYVAR_VARS=		DSO_EXTMODS+=arrayvar
-
-AWS_AUTH_GH_TUPLE=	anomalizer:ngx_aws_auth:21931b2:aws_auth
-AWS_AUTH_VARS=		DSO_EXTMODS+=aws_auth
 
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
 BROTLI_GH_TUPLE=	google:ngx_brotli:a71f931:brotli
@@ -33,31 +30,26 @@ BROTLI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_brotli_filter_config
 CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:a84b0f3:cache_purge
 CACHE_PURGE_VARS=	DSO_EXTMODS+=cache_purge
 
-CT_IMPLIES=		HTTP_SSL
-CT_GH_TUPLE=		grahamedgecombe:nginx-ct:93e9884:ct
-CT_VARS=		DSO_EXTMODS+=ct
-CT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-ct-LibreSSL \
-			${PATCHDIR}/extra-patch-ngx_stream_ssl_ct_module.c
-
-ECHO_GH_TUPLE=		openresty:echo-nginx-module:5a402aa:echo
+ECHO_GH_TUPLE=		openresty:echo-nginx-module:4eeda3c:echo
 ECHO_VARS=		DSO_EXTMODS+=echo
 
 DRIZZLE_LIB_DEPENDS=	libdrizzle.so:databases/libdrizzle
 DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include \
 			LIBDRIZZLE_LIB=${LOCALBASE}/lib
-DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:3504fc6:drizzle
+DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:c631276:drizzle
 DRIZZLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
 DRIZZLE_VARS=		DSO_EXTMODS+=drizzle
 
 DYNAMIC_UPSTREAM_IMPLIES=	STREAM
-DYNAMIC_UPSTREAM_GH_TUPLE=	ZigzagAK:ngx_dynamic_upstream:960eef2:dynamic_upstream
+DYNAMIC_UPSTREAM_GH_TUPLE=	ZigzagAK:ngx_dynamic_upstream:ab67fe7:dynamic_upstream
 DYNAMIC_UPSTREAM_VARS=		DSO_EXTMODS+=dynamic_upstream
 
-DEVEL_KIT_GH_TUPLE=		vision5:ngx_devel_kit:v0.3.3:devel_kit
+DEVEL_KIT_GH_TUPLE=		vision5:ngx_devel_kit:v0.3.4:devel_kit
+DEVEL_KIT_USES=			iconv
 DEVEL_KIT_VARS=			FIRST_DSO_EXTMODS+=devel_kit
 
 ENCRYPTSESSION_IMPLIES=		DEVEL_KIT
-ENCRYPTSESSION_GH_TUPLE=	openresty:encrypted-session-nginx-module:v0.09:encryptsession
+ENCRYPTSESSION_GH_TUPLE=	openresty:encrypted-session-nginx-module:7ffe4ec:encryptsession
 ENCRYPTSESSION_VARS=		DSO_EXTMODS+=encryptsession
 
 FIPS_CHECK_GH_TUPLE=	ogarrett:nginx-fips-check-module:6cb4270:fipscheck
@@ -72,25 +64,31 @@ GRIDFS_LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
 			libmongoc-1.0.so:devel/mongo-c-driver
 GRIDFS_VARS=		DSO_EXTMODS+=gridfs GRIDFS_SUBDIR=/nginx-gridfs
 
-HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:06dc0be:headers_more
+HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:v0.39:headers_more
 HEADERS_MORE_VARS=		DSO_EXTMODS+=headers_more
 
 HTTP_ACCEPT_LANGUAGE_GH_TUPLE=	dvershinin:nginx_accept_language_module:5683967:accept_language
 HTTP_ACCEPT_LANGUAGE_VARS=	DSO_EXTMODS+=accept_language
 
-HTTP_AUTH_DIGEST_GH_TUPLE=	atomx:nginx-http-auth-digest:274490c:auth_digest
+HTTP_AUTH_DIGEST_GH_TUPLE=	atomx:nginx-http-auth-digest:ac91c88:auth_digest
 HTTP_AUTH_DIGEST_VARS=		DSO_EXTMODS+=auth_digest
 
-HTTP_AUTH_KRB5_GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:3575542:auth_krb5
+HTTP_AUTH_JWT_GH_TUPLE=		TeslaGov:ngx-http-auth-jwt-module:2.3.1:auth_jwt
+HTTP_AUTH_JWT_LIB_DEPENDS=	libjansson.so:devel/jansson \
+				libjwt.so:www/libjwt
+HTTP_AUTH_JWT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_auth_jwt_module.c
+HTTP_AUTH_JWT_VARS=		DSO_EXTMODS+=auth_jwt
+
+HTTP_AUTH_KRB5_GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:v1.1.3:auth_krb5
 HTTP_AUTH_KRB5_VARS=		DSO_EXTMODS+=auth_krb5
 HTTP_AUTH_KRB5_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-spnego-http-auth-nginx-module-config
 
-HTTP_AUTH_LDAP_GH_TUPLE=	kvspb:nginx-auth-ldap:83c059b:http_auth_ldap
+HTTP_AUTH_LDAP_GH_TUPLE=	kvspb:nginx-auth-ldap:241200e:http_auth_ldap
 HTTP_AUTH_LDAP_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_auth_ldap_module.c
 HTTP_AUTH_LDAP_VARS=		DSO_EXTMODS+=http_auth_ldap
 HTTP_AUTH_LDAP_USES=		ldap
 
-HTTP_AUTH_PAM_GH_TUPLE=		sto:ngx_http_auth_pam_module:v1.5.3:auth_pam
+HTTP_AUTH_PAM_GH_TUPLE=		sto:ngx_http_auth_pam_module:v1.5.5:auth_pam
 HTTP_AUTH_PAM_VARS=		DSO_EXTMODS+=auth_pam
 
 HTTP_DAV_EXT_IMPLIES=		HTTP_DAV
@@ -100,30 +98,30 @@ HTTP_DAV_EXT_GH_TUPLE=		arut:nginx-dav-ext-module:v3.0.0:dav_ext
 HTTP_DAV_EXT_VARS=		DSO_EXTMODS+=dav_ext
 HTTP_DAV_EXT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_dav_ext_module.c
 
-HTTP_EVAL_GH_TUPLE=		openresty:nginx-eval-module:582bd25:eval
+HTTP_EVAL_GH_TUPLE=		openresty:nginx-eval-module:13425e8:eval
 HTTP_EVAL_VARS=			DSO_EXTMODS+=eval
 
-HTTP_FANCYINDEX_GH_TUPLE=	aperezdc:ngx-fancyindex:v0.5.2:fancyindex
+HTTP_FANCYINDEX_GH_TUPLE=	aperezdc:ngx-fancyindex:cbc0d3f:fancyindex
 HTTP_FANCYINDEX_VARS=		DSO_EXTMODS+=fancyindex
 
 HTTP_FOOTER_GH_TUPLE=		alibaba:nginx-http-footer-filter:1.2.2:footer
 HTTP_FOOTER_VARS=		DSO_EXTMODS+=footer
 HTTP_FOOTER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-http-footer-filter-config
 
-HTTP_GEOIP2_GH_TUPLE=		leev:ngx_http_geoip2_module:3.4:geoip2
+HTTP_GEOIP2_GH_TUPLE=		leev:ngx_http_geoip2_module:445df24:geoip2
 HTTP_GEOIP2_CFLAGS=		-I${LOCALBASE}/include
 HTTP_GEOIP2_VARS=		DSO_EXTMODS+=geoip2
 HTTP_GEOIP2_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
-HTTP_IP2LOCATION_GH_TUPLE=	ip2location:ip2location-nginx:2df35fb:ip2location
+HTTP_IP2LOCATION_GH_TUPLE=	ip2location:ip2location-nginx:5f2c59a:ip2location
 HTTP_IP2LOCATION_LIB_DEPENDS=	libIP2Location.so:net/ip2location
 HTTP_IP2LOCATION_VARS=		DSO_EXTMODS+=ip2location
 
-HTTP_IP2PROXY_GH_TUPLE=		ip2location:ip2proxy-nginx:02ce447:ip2proxy
+HTTP_IP2PROXY_GH_TUPLE=		ip2location:ip2proxy-nginx:f3e7e7d:ip2proxy
 HTTP_IP2PROXY_LIB_DEPENDS=	libIP2Proxy.so:net/ip2proxy
 HTTP_IP2PROXY_VARS=		DSO_EXTMODS+=ip2proxy
 
-HTTP_JSON_STATUS_GH_TUPLE=	nginx-modules:ngx_http_json_status_module:1d2f303:json_status
+HTTP_JSON_STATUS_GH_TUPLE=	nginx-modules:ngx_http_json_status_module:c77dff4:json_status
 HTTP_JSON_STATUS_VARS=		DSO_EXTMODS+=json_status
 HTTP_JSON_STATUS_EXTRA_PATCHES= ${PATCHDIR}/extra-patch-ngx_http_json_status_module-config
 
@@ -138,20 +136,18 @@ HTTP_NOTICE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c \
 				${PATCHDIR}/extra-patch-nginx-notice-config
 HTTP_NOTICE_VARS=		DSO_EXTMODS+=notice
 
-HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.3.6:push
+HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.3.7:push
 HTTP_PUSH_VARS=			DSO_EXTMODS+=push
 
-HTTP_PUSH_STREAM_GH_TUPLE=	wandenberg:nginx-push-stream-module:8c02220:pushstream
+HTTP_PUSH_STREAM_GH_TUPLE=	wandenberg:nginx-push-stream-module:0.6.0:pushstream
 HTTP_PUSH_STREAM_VARS=		DSO_EXTMODS+=pushstream
 
-HTTP_REDIS_MASTER_SITES=	LOCAL/osa:redis
-HTTP_REDIS_DISTFILES=		ngx_http_redis-0.3.9.tar.gz:redis
-HTTP_REDIS_VARS=		DSO_EXTDIRS+=ngx_http_redis-0.3.9
-HTTP_REDIS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_redis_module.c
+HTTP_REDIS_GH_TUPLE=		osokin:ngx_http_redis:0.4.0:redis
+HTTP_REDIS_VARS=		DSO_EXTMODS+=redis
 
 HTTP_SLICE_AHEAD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_http_modules_ngx_http_slice_read_ahead.c
 
-HTTP_SUBS_FILTER_GH_TUPLE=	yaoweibin:ngx_http_substitutions_filter_module:c6f825f:subs_filter
+HTTP_SUBS_FILTER_GH_TUPLE=	yaoweibin:ngx_http_substitutions_filter_module:e12e965:subs_filter
 HTTP_SUBS_FILTER_VARS=		DSO_EXTMODS+=subs_filter
 
 HTTP_TARANTOOL_LIB_DEPENDS=	libmsgpuck.so:devel/msgpuck \
@@ -160,26 +156,17 @@ HTTP_TARANTOOL_GH_TUPLE=	tarantool:nginx_upstream_module:aeb8696:nginx_tarantool
 HTTP_TARANTOOL_VARS=		DSO_EXTMODS+=nginx_tarantool
 HTTP_TARANTOOL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config
 
-HTTP_UPLOAD_GH_TUPLE=		fdintino:nginx-upload-module:643b4c1:upload
+HTTP_UPLOAD_GH_TUPLE=		fdintino:nginx-upload-module:96e6460:upload
 HTTP_UPLOAD_VARS=		DSO_EXTMODS+=upload
 
-HTTP_UPLOAD_PROGRESS_GH_TUPLE=		masterzen:nginx-upload-progress-module:68b3ab3:uploadprogress
+HTTP_UPLOAD_PROGRESS_GH_TUPLE=		masterzen:nginx-upload-progress-module:v0.9.3:uploadprogress
 HTTP_UPLOAD_PROGRESS_VARS=		DSO_EXTMODS+=uploadprogress
-HTTP_UPLOAD_PROGRESS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_uploadprogress_module.c
-
-HTTP_UPSTREAM_CHECK_GH_TUPLE=		yaoweibin:nginx_upstream_check_module:9aecf15:upstreamcheck
-HTTP_UPSTREAM_CHECK_CONFIGURE_ON=	--add-module=${WRKSRC_upstreamcheck}
-HTTP_UPSTREAM_CHECK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_hash_module.c \
-					${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_ip_hash_module.c \
-					${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_least_conn_module.c \
-					${PATCHDIR}/extra-patch-src-http-ngx_http_upstream_round_robin.c \
-					${PATCHDIR}/extra-patch-src-http-ngx_http_upstream_round_robin.h
 
 HTTP_UPSTREAM_FAIR_GH_TUPLE=		jaygooby:nginx-upstream-fair:10ecdcf:upstreamfair
 HTTP_UPSTREAM_FAIR_VARS=		DSO_EXTMODS+=upstreamfair
 
 HTTP_UPSTREAM_STICKY_IMPLIES=		HTTP_SSL
-HTTP_UPSTREAM_STICKY_GH_TUPLE=		dvershinin:nginx-sticky-module-ng:2753211:upstreamsticky
+HTTP_UPSTREAM_STICKY_GH_TUPLE=		gdongca:nginx-sticky-module-ng:a3263ad:upstreamsticky
 HTTP_UPSTREAM_STICKY_VARS=		DSO_EXTMODS+=upstreamsticky
 
 HTTP_VIDEO_THUMBEXTRACTOR_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
@@ -191,7 +178,8 @@ HTTP_VIDEO_THUMBEXTRACTOR_GH_TUPLE=	wandenberg:nginx-video-thumbextractor-module
 HTTP_VIDEO_THUMBEXTRACTOR_VARS=		DSO_EXTMODS+=vte
 HTTP_VIDEO_THUMBEXTRACTOR_EXTRA_PATCHES=${PATCHDIR}/extra-patch-nginx-thumbextractor-module-config
 
-HTTP_ZIP_GH_TUPLE=	vince2678:mod_zip:5b2604b:mod_zip
+HTTP_ZIP_GH_TUPLE=	vince2678:mod_zip:39dc908:mod_zip
+HTTP_ZIP_USES=		iconv
 HTTP_ZIP_VARS=		DSO_EXTMODS+=mod_zip
 
 ICONV_IMPLIES=		DEVEL_KIT
@@ -203,12 +191,13 @@ ICONV_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module-config
 LET_GH_TUPLE=		baysao:nginx-let-module:c1f23aa:let
 LET_VARS=		DSO_EXTMODS+=let
 
+# YOU MUST UPDATE www/lua-resty-core IF YOU UPDATE THIS MODULE
 LUA_IMPLIES=		DEVEL_KIT
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUA_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
-LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.26:lua
+LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.28:lua
 LUA_VARS=		DSO_EXTMODS+=lua
 
 LUASTREAM_IMPLIES=	DEVEL_KIT
@@ -216,39 +205,44 @@ LUASTREAM_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUASTREAM_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
 LUASTREAM_CONFIGURE_ENV=LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
-LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:bea8a0c:luastream
+LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:v0.0.16:luastream
 LUASTREAM_VARS=		DSO_EXTMODS+=luastream
-LUASTREAM_EXTRA_PATCHES=${PATCHDIR}/extra-patch-stream-lua-nginx-module_config
 
 LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.4:link
 LINK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-link-function-config \
 			${PATCHDIR}/extra-patch-ngx_link_func_module.c
 LINK_VARS=		DSO_EXTMODS+=link
 
-MEMC_GH_TUPLE=		openresty:memc-nginx-module:v0.19:memc
+MEMC_GH_TUPLE=		openresty:memc-nginx-module:v0.20:memc
 MEMC_VARS=		DSO_EXTMODS+=memc
 
 MODSECURITY3_IMPLIES=		HTTP_ADDITION HTTP_IMAGE_FILTER HTTP_GUNZIP_FILTER HTTP_XSLT
 MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
-MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:v1.0.3:modsecurity3
+MODSECURITY3_GH_TUPLE=		owasp-modsecurity:ModSecurity-nginx:fd28e6a:modsecurity3
 MODSECURITY3_VARS=		DSO_EXTMODS+=modsecurity3
 
-NAXSI_NGINX_VER=	1.6
+NATS_GH_TUPLE=		nats-io:nginx-nats:6f7adf1:nats
+NATS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_nats.c
+NATS_VARS=		DSO_EXTMODS+=nats NATS_SUBDIR=/src
+
+NAXSI_NGINX_VER=	1.7
 NAXSI_GH_TUPLE=		wargio:naxsi:${NAXSI_NGINX_VER}:naxsi \
-			libinjection:libinjection:4aa3894:libinjection
+			libinjection:libinjection:b9fcaaf:libinjection
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 NAXSI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-naxsi-libinjection__sqli_c \
 			${PATCHDIR}/extra-patch-naxsi_config
 
-NJS_GH_TUPLE=		nginx:njs:0.8.5:njs
-NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
-NJS_IMPLIES=		STREAM
-
-NJS_XML_IMPLIES=	HTTP NJS
-NJS_XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
+NJS_GH_TUPLE=		nginx:njs:0.9.1:njs
+NJS_CONFIGURE_ON=	--with-cc-opt="-I ${LOCALBASE}/include/quickjs"
+NJS_LIB_DEPENDS=	libquickjs.so:lang/quickjs \
+			libxml2.so:textproc/libxml2 \
 			libxslt.so:textproc/libxslt
+NJS_QJS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-njs-auto-quickjs \
+			${PATCHDIR}/extra-patch-njs-nginx-config
+NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
+NJS_IMPLIES=		HTTP STREAM
 
-OTEL_GH_TUPLE=		osokin:nginx-otel:8f0857d:otel
+OTEL_GH_TUPLE=		osokin:nginx-otel:3a655df:otel
 OTEL_VARS=		DSO_EXTMODS+=otel OTEL_SUBDIR=/
 OTEL_LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 			libcares.so:dns/c-ares \
@@ -259,7 +253,7 @@ OTEL_LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 OTEL_BUILD_DEPENDS=	${LOCALBASE}/include/opentelemetry/proto/common/v1/common.proto:devel/opentelemetry-proto
 OTEL_CONFIGURE_ENV+=	NGX_OTEL_PROTO_DIR=${PREFIX}/include
 
-PASSENGER_NGINX_VER=	6.0.23
+PASSENGER_NGINX_VER=	6.0.27
 PASSENGER_CATEGORIES=	ruby
 PASSENGER_USES=		ruby
 PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake
@@ -276,52 +270,51 @@ POSTGRES_GH_TUPLE=	konstruxi:ngx_postgres:8aa7359:postgres
 POSTGRES_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_postgres-config
 POSTGRES_VARS=		DSO_EXTMODS+=postgres
 
-RDS_CSV_GH_TUPLE=	openresty:rds-csv-nginx-module:v0.09:rdscsv
+RDS_CSV_GH_TUPLE=	openresty:rds-csv-nginx-module:6a90686:rdscsv
 RDS_CSV_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-rds-csv-nginx-module-config
 RDS_CSV_VARS=		DSO_EXTMODS+=rdscsv
 
-RDS_JSON_GH_TUPLE=	openresty:rds-json-nginx-module:v0.15:rdsjson
-RDS_JSON_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-rds-json-nginx-module-config
+RDS_JSON_GH_TUPLE=	openresty:rds-json-nginx-module:e6517b9:rdsjson
 RDS_JSON_VARS=		DSO_EXTMODS+=rdsjson
 
-REDIS2_GH_TUPLE=	openresty:redis2-nginx-module:v0.15:redis2
+REDIS2_GH_TUPLE=	openresty:redis2-nginx-module:454c223:redis2
 REDIS2_VARS=		DSO_EXTMODS+=redis2
 
-RTMP_GH_TUPLE=		arut:nginx-rtmp-module:v1.2.2:rtmp
+RTMP_GH_TUPLE=		arut:nginx-rtmp-module:6c7719d:rtmp
 RTMP_VARS=		DSO_EXTMODS+=rtmp
 
 SET_MISC_IMPLIES=	DEVEL_KIT
-SET_MISC_GH_TUPLE=	openresty:set-misc-nginx-module:3937e7b:setmisc
+SET_MISC_GH_TUPLE=	openresty:set-misc-nginx-module:eb223c9:setmisc
 SET_MISC_VARS=		DSO_EXTMODS+=setmisc
 
-SFLOW_GH_TUPLE=		sflow:nginx-sflow-module:543c72a:sflow
+SFLOW_GH_TUPLE=		sflow:nginx-sflow-module:f15c87f:sflow
 SFLOW_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \
 			${PATCHDIR}/extra-patch-ngx_http_sflow_config.h \
 			${PATCHDIR}/extra-patch-ngx_http_sflow_module.c
 
-SHIBBOLETH_GH_TUPLE=	nginx-shib:nginx-http-shibboleth:be12df5:shibboleth
+SHIBBOLETH_GH_TUPLE=	nginx-shib:nginx-http-shibboleth:629ae1f:shibboleth
 SHIBBOLETH_VARS=	DSO_EXTMODS+=shibboleth
 
 SLOWFS_CACHE_GH_TUPLE=	baysao:ngx_slowfs_cache:d011a18:slowfs_cache
 SLOWFS_CACHE_VARS=	DSO_EXTMODS+=slowfs_cache
 
-SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:be22ac0:srcache
+SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:bcdcfdc:srcache
 SRCACHE_VARS=		DSO_EXTMODS+=srcache
 
 STS_IMPLIES=		STREAM
 STS_GH_TUPLE=		vozlt:nginx-module-sts:3c10d42:sts
 STS_VARS=		DSO_EXTMODS+=sts
 
-VOD_GH_TUPLE=		kaltura:nginx-vod-module:1.31:vod
+VOD_GH_TUPLE=		kaltura:nginx-vod-module:26f0687:vod
 VOD_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 			libavutil.so:multimedia/ffmpeg
 VOD_USES=		iconv
 VOD_VARS=		DSO_EXTMODS+=vod
 
-VTS_GH_TUPLE=		vozlt:nginx-module-vts:bf64dbf:vts
+VTS_GH_TUPLE=		vozlt:nginx-module-vts:c382342:vts
 VTS_VARS=		DSO_EXTMODS+=vts
 
-XSS_GH_TUPLE=		openresty:xss-nginx-module:v0.06:xss
+XSS_GH_TUPLE=		openresty:xss-nginx-module:de2d87a:xss
 XSS_VARS=		DSO_EXTMODS+=xss
 XSS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-xss-nginx-module-config
 

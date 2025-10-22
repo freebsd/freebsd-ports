@@ -10,12 +10,9 @@
 @sample %%ETCDIR%%/uwsgi_params-dist %%ETCDIR%%/uwsgi_params
 %%DSO%%%%AJP%%libexec/freenginx/ngx_http_ajp_module.so
 %%DSO%%%%ARRAYVAR%%libexec/freenginx/ngx_http_array_var_module.so
-%%DSO%%%%AWS_AUTH%%libexec/freenginx/ngx_http_aws_auth_module.so
 %%DSO%%%%BROTLI%%libexec/freenginx/ngx_http_brotli_filter_module.so
 %%DSO%%%%BROTLI%%libexec/freenginx/ngx_http_brotli_static_module.so
 %%DSO%%%%CACHE_PURGE%%libexec/freenginx/ngx_http_cache_purge_module.so
-%%DSO%%%%CT%%libexec/freenginx/ngx_http_ssl_ct_module.so
-%%DSO%%%%CT%%libexec/freenginx/ngx_ssl_ct_module.so
 %%DSO%%%%DEVEL_KIT%%libexec/freenginx/ndk_http_module.so
 %%DSO%%%%DRIZZLE%%libexec/freenginx/ngx_http_drizzle_module.so
 %%DSO%%%%DYNAMIC_UPSTREAM%%libexec/freenginx/ngx_http_dynamic_upstream_module.so
@@ -27,6 +24,7 @@
 %%DSO%%%%HEADERS_MORE%%libexec/freenginx/ngx_http_headers_more_filter_module.so
 %%DSO%%%%HTTP_ACCEPT_LANGUAGE%%libexec/freenginx/ngx_http_accept_language_module.so
 %%DSO%%%%HTTP_AUTH_DIGEST%%libexec/freenginx/ngx_http_auth_digest_module.so
+%%DSO%%%%HTTP_AUTH_JWT%%libexec/freenginx/ngx_http_auth_jwt_module.so
 %%DSO%%%%HTTP_AUTH_KRB5%%libexec/freenginx/ngx_http_auth_spnego_module.so
 %%DSO%%%%HTTP_AUTH_LDAP%%libexec/freenginx/ngx_http_auth_ldap_module.so
 %%DSO%%%%HTTP_AUTH_PAM%%libexec/freenginx/ngx_http_auth_pam_module.so
@@ -60,10 +58,10 @@
 %%DSO%%%%LINK%%libexec/freenginx/ngx_http_link_func_module.so
 %%DSO%%%%LUA%%libexec/freenginx/ngx_http_lua_module.so
 %%DSO%%%%LUASTREAM%%libexec/freenginx/ngx_stream_lua_module.so
-%%DSO%%%%MAIL%%%%CT%%libexec/freenginx/ngx_mail_ssl_ct_module.so
 %%DSO%%%%MAIL%%libexec/freenginx/ngx_mail_module.so
 %%DSO%%%%MEMC%%libexec/freenginx/ngx_http_memc_module.so
 %%DSO%%%%MODSECURITY3%%libexec/freenginx/ngx_http_modsecurity_module.so
+%%DSO%%%%NATS%%libexec/freenginx/ngx_nats_module.so
 %%DSO%%%%NAXSI%%libexec/freenginx/ngx_http_naxsi_module.so
 %%DSO%%%%OTEL%%libexec/freenginx/ngx_otel_module.so
 %%DSO%%%%PASSENGER%%libexec/freenginx/ngx_http_passenger_module.so
@@ -76,7 +74,6 @@
 %%DSO%%%%SHIBBOLETH%%libexec/freenginx/ngx_http_shibboleth_module.so
 %%DSO%%%%SLOWFS_CACHE%%libexec/freenginx/ngx_http_slowfs_module.so
 %%DSO%%%%SRCACHE%%libexec/freenginx/ngx_http_srcache_filter_module.so
-%%DSO%%%%STREAM%%%%CT%%libexec/freenginx/ngx_stream_ssl_ct_module.so
 %%DSO%%%%STREAM%%%%HTTP_GEOIP2%%libexec/freenginx/ngx_stream_geoip2_module.so
 %%DSO%%%%STREAM%%%%NJS%%libexec/freenginx/ngx_stream_js_module.so
 %%DSO%%%%STREAM%%libexec/freenginx/ngx_stream_module.so
@@ -87,8 +84,8 @@
 %%DSO%%%%XSS%%libexec/freenginx/ngx_http_xss_filter_module.so
 %%DSO%%%%ZSTD%%libexec/freenginx/ngx_http_zstd_filter_module.so
 %%DSO%%%%ZSTD%%libexec/freenginx/ngx_http_zstd_static_module.so
-%%HTTP_PERL%%%%SITE_ARCH%%/auto/freenginx/freenginx.so
-%%HTTP_PERL%%%%SITE_ARCH%%/freenginx.pm
+%%HTTP_PERL%%%%SITE_ARCH%%/auto/nginx/nginx.so
+%%HTTP_PERL%%%%SITE_ARCH%%/nginx.pm
 sbin/nginx
 share/vim/vimfiles/ftdetect/nginx.vim
 share/vim/vimfiles/ftplugin/nginx.vim

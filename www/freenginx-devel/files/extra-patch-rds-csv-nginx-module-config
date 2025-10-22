@@ -1,5 +1,5 @@
---- ../rds-csv-nginx-module-0.09/config.orig	2020-04-25 11:37:21.896900000 -0400
-+++ ../rds-csv-nginx-module-0.09/config	2020-04-25 11:39:06.371176000 -0400
+--- ../rds-csv-nginx-module-6a90686/config.orig	2020-04-25 11:37:21.896900000 -0400
++++ ../rds-csv-nginx-module-6a90686/config	2020-04-25 11:39:06.371176000 -0400
 @@ -1,5 +1,9 @@
  ngx_addon_name=ngx_http_rds_csv_filter_module
 -HTTP_AUX_FILTER_MODULES="$HTTP_AUX_FILTER_MODULES ngx_http_rds_csv_filter_module"
