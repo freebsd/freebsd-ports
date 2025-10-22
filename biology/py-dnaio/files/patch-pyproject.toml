@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2025-10-22 06:21:17 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools >= 78", "setuptools_scm >= 6.2", "Cython >= 3.1"]
++requires = ["setuptools >= 63", "setuptools_scm >= 6.2", "Cython >= 3.1"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -10,7 +10,7 @@ readme = "README.rst"
+ ]
+ description = "Read and write FASTA and FASTQ files efficiently"
+ readme = "README.rst"
+-license = "MIT"
++license = {text="MIT"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Science/Research",
