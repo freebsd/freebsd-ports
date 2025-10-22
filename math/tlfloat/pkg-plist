@@ -5,5 +5,7 @@ include/tlfloat/tlfloat.hpp
 include/tlfloat/tlfloatconfig.hpp
 include/tlfloat/tlmath.hpp
 include/tlfloat/tlmathcoef.hpp
-lib/libtlfloat.a
+lib/libtlfloat.so
+lib/libtlfloat.so.1
+lib/libtlfloat.so.1.15.0
 libdata/pkgconfig/tlfloat.pc
