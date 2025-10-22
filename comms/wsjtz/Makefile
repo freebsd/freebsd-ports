@@ -1,6 +1,5 @@
 PORTNAME=	wsjtz
-DISTVERSION=	2.5.4-1.22
-PORTREVISION=	14
+DISTVERSION=	2.7.0-rc7-1.48
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt-z/Source
 
@@ -9,45 +8,45 @@ COMMENT=	Clone of WSJT-X software with additional features
 WWW=		https://sourceforge.net/projects/wsjt-z/
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_log_setup.so:devel/boost-libs \
-		libfftw3.so:math/fftw3 \
-		libfftw3f.so:math/fftw3-float \
-		libhamlib.so:comms/hamlib \
-		libreadline.so:devel/readline
+PATCH_DEPENDS=	dos2unix:converters/dos2unix
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook:textproc/docbook-xsl \
 		a2x:textproc/asciidoc \
 		asciidoctor:textproc/rubygem-asciidoctor \
 		boost-libs>0:devel/boost-libs \
 		libtool:devel/libtool
+LIB_DEPENDS=	libboost_log_setup.so:devel/boost-libs \
+		libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float \
+		libhamlib.so:comms/hamlib \
+		libreadline.so:devel/readline
 
 USES=		cmake compiler:c++14-lang fortran makeinfo pkgconfig qt:5 zip
 USE_QT=		concurrent core gui multimedia network printsupport serialport \
 		sql sql-sqlite3 testlib widgets buildtools:build \
 		linguisttools:build qmake:build
 
-CONFLICTS=	wsjtx
-
-CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH+=${LOCALBASE}/wsjtx/lib \
+CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH+=${LOCALBASE}/${PORTNAME:S/z/x/}/lib \
 		-DLOCALBASE::STRING="${LOCALBASE}"
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=   --debug-output --trace
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+
+CONFLICTS=	wsjtx
+
+DATADIR=	${PREFIX}/share/${PORTNAME:S/z/x/}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/z/x/}
+
+WRKSRC=		${WRKDIR}/${PORTNAME:S/z/x/}
+
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=	yes
 
-PORTDOCS=	*
-
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/z/x/}
-DATADIR=	${PREFIX}/share/${PORTNAME:S/z/x/}
-WRKSRC=		${WRKDIR}/wsjtx
-
-.include <bsd.port.pre.mk>
-
-.if ${GCC_DEFAULT} >= 10
-# workaround for More actual than formal arguments in procedure call at (1)
-FFLAGS+=	-fallow-argument-mismatch
-.endif
+pre-patch:
+	${FIND} ${WRKSRC} -type f -not -name '*.png' \
+		-exec dos2unix {} > /dev/null 2>&1 \;
 
 post-install:
 .for f in fcal fmeasure fmtave fst4sim ft8code jt4code jt65code jt9 jt9code \
@@ -55,4 +54,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
-.include <bsd.port.post.mk>
+post-install-DOCS-off:
+	${RM} -r ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>
