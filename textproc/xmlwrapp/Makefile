@@ -28,8 +28,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-LDFLAGS+=	-lboost_system
-
 PORTDOCS=	*
 
 post-patch:
