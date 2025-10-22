@@ -1,5 +1,5 @@
 PORTNAME=	libudfread
-DISTVERSION=	1.1.2
+DISTVERSION=	1.2.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://get.videolan.org/${PORTNAME}/ \
 		https://download.videolan.org/pub/videolan/${PORTNAME}/
@@ -9,12 +9,12 @@ COMMENT=	UDF reader for media players
 WWW=		https://code.videolan.org/videolan/libudfread/
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf cpe libtool tar:bzip2
+USES=		cpe meson tar:xz
 CPE_VENDOR=	videolan
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-INSTALL_TARGET=	install-strip
+MESON_ARGS=	-Ddefault_library=shared
 
 .include <bsd.port.mk>
