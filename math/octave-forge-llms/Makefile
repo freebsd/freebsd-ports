@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-llms
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
