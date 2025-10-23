@@ -338,6 +338,7 @@ AD_DC_BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.7:textproc/py-markdo
 AD_DC_RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.7:textproc/py-markdown@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}dnspython>=2.2.1:dns/py-dnspython@${PY_FLAVOR}
 
+ADS_IMPLIES=			LDAP
 ADS_CONFIGURE_WITH=		ads
 
 CLUSTER_CONFIGURE_WITH=		cluster-support
