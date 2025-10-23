@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	4
 CATEGORIES=	benchmarks
 
-MAINTAINER=	dbaio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Measure throughput and other metrics for TCP
 WWW=		https://flowgrind.github.io
 

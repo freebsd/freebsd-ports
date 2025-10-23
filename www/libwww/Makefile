@@ -5,7 +5,7 @@ MASTER_SITES=	https://www.w3.org/Library/Distribution/ \
 		https://www.w3.org/Library/Distribution/old/
 DISTNAME=	w3c-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	dbaio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	W3C Reference Library
 WWW=		https://www.w3.org/Library/
 

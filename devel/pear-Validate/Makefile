@@ -2,7 +2,7 @@ PORTNAME=	Validate
 PORTVERSION=	0.8.6
 CATEGORIES=	devel www pear
 
-MAINTAINER=	dbaio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Validation class
 WWW=		https://pear.php.net/package/Validate
 
