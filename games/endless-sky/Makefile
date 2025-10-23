@@ -22,10 +22,9 @@ USE_GITHUB=	yes
 USES=		cmake compiler:c++11-lang gl jpeg openal sdl
 USE_SDL=	sdl2
 USE_GL=		gl glew
-CMAKE_OFF=	ES_USE_VCPKG CMAKE_CXX_SCAN_FOR_MODULES
+CMAKE_OFF=	ES_USE_VCPKG \
+		CMAKE_CXX_SCAN_FOR_MODULES
 CMAKE_ARGS=	-DCMAKE_INSTALL_DOCDIR="${DOCSDIR}"
-# https://github.com/endless-sky/endless-sky/issues/10714#issuecomment-2448722018
-TEST_ENV=	ASAN_OPTIONS=detect_container_overflow=0
 
 LDFLAGS_i386=	-Wl,-znotext
 
