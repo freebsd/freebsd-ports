@@ -1,6 +1,6 @@
 PORTNAME=	elephant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1
+DISTVERSION=	2.6.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -22,20 +22,22 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=		DOCS
-OPTIONS_DEFAULT=	${OPTIONS_GROUP_PROVIDERS}
+OPTIONS_DEFAULT=	${OPTIONS_GROUP_PROVIDERS:NNIRISESSIONS}
 OPTIONS_GROUP=		PROVIDERS
 OPTIONS_GROUP_PROVIDERS=CALC CLIPBOARD DESKTOPAPPLICATIONS FILES MENUS \
-			PROVIDERLIST RUNNER SYMBOLS TODO UNICODE WEBSEARCH \
-			WINDOWS
+			NIRISESSIONS PROVIDERLIST RUNNER SNIPPETS SYMBOLS \
+			TODO UNICODE WEBSEARCH WINDOWS
 
 PROVIDERS_DESC=		Enabled providers
 CALC_DESC=		Perform calculation and unit-conversions
 CLIPBOARD_DESC=		Store clipboard history
 DESKTOPAPPLICATIONS_DESC=Run installed desktop applications
 FILES_DESC=		Find files/folders
+NIRISESSIONS_DESC=	Create predefined session layouts and open them
 MENUS_DESC=		Create custom menus
 PROVIDERLIST_DESC=	Lists all providers and configured menus
 RUNNER_DESC=		Execute everything installed in your PATH
+SNIPPETS_DESC=		Create and access text snippets
 SYMBOLS_DESC=		Search for emojis and symbols
 TODO_DESC=		Basic Todolist
 UNICODE_DESC=		Search for unicode symbols
@@ -51,8 +53,12 @@ DESKTOPAPPLICATIONS_PLIST_FILES=etc/xdg/elephant/providers/desktopapplications.s
 FILES_RUN_DEPENDS=	fd:sysutils/fd
 FILES_PLIST_FILES=	etc/xdg/elephant/providers/files.so
 MENUS_PLIST_FILES=	etc/xdg/elephant/providers/menus.so
+NIRISESSIONS_RUN_DEPENDS=niri:x11-wm/niri
+NIRISESSIONS_PLIST_FILES=etc/xdg/elephant/providers/nirisessions.so
 PROVIDERLIST_PLIST_FILES=etc/xdg/elephant/providers/providerlist.so
 RUNNER_PLIST_FILES=	etc/xdg/elephant/providers/runner.so
+SNIPPETS_RUN_DEPENDS=	wtype:x11/wtype
+SNIPPETS_PLIST_FILES=	etc/xdg/elephant/providers/snippets.so
 SYMBOLS_RUN_DEPENDS=	wl-copy:x11/wl-clipboard
 SYMBOLS_PLIST_FILES=	etc/xdg/elephant/providers/symbols.so
 TODO_RUN_DEPENDS=	notify-send:devel/libnotify
