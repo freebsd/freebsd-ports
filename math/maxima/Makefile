@@ -1,5 +1,6 @@
 PORTNAME=	maxima
 DISTVERSION=	5.48.1
+PORTREVISION=	1
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -28,7 +29,7 @@ TEST_TARGET=	check
 
 BINARY_ALIAS=	expr=gexpr
 
-INFO=		imaxima maxima xmaxima abs_integrate drawutils kovacicODE logic \
+INFO=		imaxima maxima abs_integrate drawutils kovacicODE logic \
 		nelder_mead symplectic_ode
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
@@ -94,6 +95,7 @@ XMAXIMA_IMPLIES=		DOCS TEST
 XMAXIMA_USES=			tk
 XMAXIMA_CONFIGURE_WITH=		wish=${WISH}
 XMAXIMA_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-interfaces_Makefile.am
+XMAXIMA_INFO=			xmaxima
 
 post-patch:
 	${GREP} -Fe '.core' -l -r ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} 's;\.core;_core;g'
@@ -108,7 +110,6 @@ post-patch-XMAXIMA-on:
 	${WRKSRC}/interfaces/xmaxima/Tkmaxima/Paths.tcl
 
 post-configure:
-	${REINPLACE_CMD} '/ld-flags/s|" |"|' ${WRKSRC}/src/autoconf-variables.lisp
 	${REINPLACE_CMD} '/ld-flags/s| ")|")|' ${WRKSRC}/src/autoconf-variables.lisp
 
 pre-build-CCL-on:
@@ -116,6 +117,9 @@ pre-build-CCL-on:
 
 post-build-MANPAGES-on:
 	${GZIP_CMD} ${WRKSRC}/doc/man/maxima.1
+
+post-build-XMAXIMA-on:
+	${REINPLACE_CMD} "s;$$::xmaxima_priv(pReferenceToc);::xmaxima_priv(pReferenceToc);g" ${WRKSRC}/interfaces/xmaxima/xmaxima
 
 post-install:
 	for x in "" "-1" "-2" "-3"; do ${INSTALL_MAN} ${WRKSRC}/doc/info/maxima.info$$x ${STAGEDIR}${PREFIX}/${INFO_PATH}; done
