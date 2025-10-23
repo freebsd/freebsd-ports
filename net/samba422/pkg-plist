@@ -184,7 +184,7 @@ include/samba4/wbclient.h
 lib/nss_winbind.so.1
 lib/nss_wins.so.1
 lib/pam_winbind.so
-%%NO_AD_DC%%lib/samba4/modules/ldb/ldap.so
+%%AD_DC%%%%LDAP%%lib/samba4/modules/ldb/ldap.so
 %%CUPS%%libexec/samba/smbspool_krb5_wrapper
 libexec/samba/rpcd_classic
 libexec/samba/rpcd_epmapper
