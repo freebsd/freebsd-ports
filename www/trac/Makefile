@@ -1,6 +1,6 @@
 PORTNAME=	trac
 DISTVERSION=	1.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10:devel/py-Jinja2@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10:devel/py-Jinja2@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10:devel/py-Jinja2@${PY_FLAVOR} \
+		${PY_SETUPTOOLS}
 
 # some tests are failing with 3.8
 USES=		cpe python
