@@ -1,0 +1,8 @@
+High-quality, ubiquitous, and portable telemetry to enable effective
+observability. OpenTelemetry is a collection of tools, APIs, and
+SDKs used to instrument, generate, collect, and export telemetry
+data (metrics, logs, and traces) for analysis in order to understand
+your software's performance and behavior. This package implements
+the OpenTelemetry API: <https://opentelemetry.io/docs/specs/otel/>.
+Use this package as a dependency if you want to instrument your R
+package for OpenTelemetry.
