@@ -291,8 +291,8 @@ post-extract:
 	${MV} ${WRKDIR}/tree-sitter-wren-${TREE_SITTER_WREN_REV} ${WRKSRC}/runtime/grammars/sources/wren
 	${MV} ${WRKDIR}/tree-sitter-gemini-${TREE_SITTER_GEMINI_REV} ${WRKSRC}/runtime/grammars/sources/gemini
 	${MV} ${WRKDIR}/tree-sitter-prolog ${WRKSRC}/runtime/grammars/sources/prolog
-	${CP} -R ${DISTDIR}/${TREE_SITTER_TSHIGH_REV}-ts-highlights.scm ${WRKSRC}/runtime/grammars/sources/qmljs/queries/highlights-typescript.scm
-	${CP} -R ${DISTDIR}/${TREE_SITTER_JSHIGH_REV}-js-highlights.scm ${WRKSRC}/runtime/grammars/sources/qmljs/queries/highlights-javascript.scm
+	${INSTALL} ${DISTDIR}/${TREE_SITTER_TSHIGH_REV}-ts-highlights.scm ${WRKSRC}/runtime/grammars/sources/qmljs/queries/highlights-typescript.scm
+	${INSTALL} ${DISTDIR}/${TREE_SITTER_JSHIGH_REV}-js-highlights.scm ${WRKSRC}/runtime/grammars/sources/qmljs/queries/highlights-javascript.scm
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/runtime/grammars
