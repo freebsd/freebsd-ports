@@ -34,8 +34,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		crossbeam-utils-0.8.16 \
 		crossterm-0.25.0 \
 		crossterm_winapi-0.9.1 \
-		curl-0.4.44 \
-		curl-sys-0.4.64+curl-8.2.0 \
+		curl-0.4.46 \
+		curl-sys-0.4.72+curl-8.6.0 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
 		either-1.9.0 \
@@ -92,6 +92,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		object-0.31.1 \
 		once_cell-1.18.0 \
 		openssl-probe-0.1.5 \
+		openssl-src-111.26.0+1.1.1u \
 		openssl-sys-0.9.90 \
 		parking-2.1.0 \
 		parking_lot-0.12.1 \
@@ -128,6 +129,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		sluice-0.5.5 \
 		smallvec-1.11.0 \
 		socket2-0.4.9 \
+		socket2-0.5.4 \
 		strsim-0.8.0 \
 		structopt-0.3.26 \
 		structopt-derive-0.4.18 \
@@ -171,19 +173,29 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		windows-0.48.0 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
 		windows-targets-0.42.2 \
 		windows-targets-0.48.1 \
+		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.0 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.0 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.0 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.42.2 \
-		windows_x86_64_msvc-0.48.0
+		windows_x86_64_msvc-0.48.0 \
+		windows_x86_64_msvc-0.52.5
