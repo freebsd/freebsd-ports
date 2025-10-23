@@ -5,7 +5,7 @@ CATEGORIES=	net-mgmt python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dbaio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Azure-specific AutoRest swagger generator Python client runtime
 WWW=		https://github.com/Azure/msrestazure-for-python
 

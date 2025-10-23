@@ -1,7 +1,7 @@
 # Shared namespace for py-azure-* ports
 # Feature:	azurepy
 # Usage:	USES=	azurepy
-# MAINTAINER:	dbaio@FreeBSD.org
+# MAINTAINER:	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_AZUREPY_MK)
 _INCLUDE_USES_AZUREPY_MK=	yes
