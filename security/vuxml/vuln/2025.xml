@@ -1,3 +1,66 @@
+  <vuln vid="269c2de7-afaa-11f0-b4c8-792b26d8a051">
+    <topic>RT -- XSS via calendar invitations</topic>
+    <affects>
+      <package>
+       <name>rt60</name>
+       <name>rt50</name>
+       <range><ge>6.0.0</ge><lt>6.0.2</lt></range>
+       <range><ge>5.0.4</ge><lt>5.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>Mateusz Szymaniec and CERT Polska Reports:</p>
+      <blockquote cite="https://github.com/bestpractical/rt/releases/tag/rt-6.0.2">
+       <p>RT is vulnerable to XSS via calendar invitations added to a
+       ticket. Thanks to Mateusz Szymaniec and CERT Polska for
+       reporting this finding.</p>
+      </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9158</cvename>
+      <url>https://github.com/bestpractical/rt/releases/tag/rt-6.0.2</url>
+    </references>
+    <dates>
+      <discovery>2025-10-23</discovery>
+      <entry>2025-10-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b374df95-afa8-11f0-b4c8-792b26d8a051">
+    <topic>RT -- CSV injection</topic>
+    <affects>
+      <package>
+       <name>rt60</name>
+       <name>rt50</name>
+       <name>rt44</name>
+       <range><ge>6.0.0</ge><lt>6.0.2</lt></range>
+       <range><ge>5.0.0</ge><lt>5.0.9</lt></range>
+       <range><ge>4.4.0</ge><lt>4.4.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>Gareth Watkin-Jones from 4armed reports:</p>
+      <blockquote cite="https://github.com/bestpractical/rt/releases/tag/rt-6.0.2">
+       <p>RT is vulnerable to CSV injection via ticket values with
+       special characters that are exported to a TSV from search
+       results. Thanks to Gareth Watkin-Jones from 4armed for
+       reporting this finding.</p>
+      </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-61873</cvename>
+      <url>https://github.com/bestpractical/rt/releases/tag/rt-6.0.2</url>
+    </references>
+    <dates>
+      <discovery>2025-10-23</discovery>
+      <entry>2025-10-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="114cc98b-afad-11f0-af12-bc241121aa0a">
     <topic>FreeBSD -- SO_REUSEPORT_LB breaks connect(2) for UDP sockets</topic>
     <affects>
