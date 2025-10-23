@@ -33,7 +33,7 @@ start_cmd="${name}_start"
 start_precmd="${name}_prestart"
 
 forgejo_start() {
-	for d in /var/db/forgejo /var/log/forgejo; do
+	for d in %%DBDIR%% %%LOGDIR%%; do
 		if [ ! -e "$d" ]; then
 			mkdir "$d"
 			chown ${forgejo_user} "$d"

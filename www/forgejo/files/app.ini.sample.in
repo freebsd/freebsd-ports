@@ -23,7 +23,7 @@
 # localhost.
 #
 # If you'd rather use the web-based installer, remove this conf/app.ini file
-# and make %%PREFIX%%/etc/forgejo/conf writeable to the git user.
+# and make %%ETCDIR%%/conf writeable to the git user.
 
 APP_NAME = Forgejo: A self-hosted lightweight software forge
 RUN_MODE = prod
@@ -34,17 +34,17 @@ DB_TYPE  = sqlite3
 HOST     = 127.0.0.1:3306
 NAME     = forgejo
 PASSWD   =
-PATH     = /var/db/forgejo/forgejo.db
+PATH     = %%DBDIR%%/forgejo.db
 SSL_MODE = disable
 USER     = root
 
 [indexer]
-ISSUE_INDEXER_PATH = /var/db/forgejo/indexers/issues.bleve
+ISSUE_INDEXER_PATH = %%DBDIR%%/indexers/issues.bleve
 
 [log]
 LEVEL     = Info
 MODE      = file
-ROOT_PATH = /var/log/forgejo
+ROOT_PATH = %%LOGDIR%%
 
 [mailer]
 ENABLED = false
@@ -53,18 +53,18 @@ ENABLED = false
 JWT_SECRET = CHANGE_ME
 
 [picture]
-AVATAR_UPLOAD_PATH      = /var/db/forgejo/data/avatars
+AVATAR_UPLOAD_PATH      = %%DBDIR%%/data/avatars
 DISABLE_GRAVATAR        = true
 ENABLE_FEDERATED_AVATAR = false
 
 [repository]
-ROOT = /var/db/forgejo/forgejo-repositories
+ROOT = %%DBDIR%%/forgejo-repositories
 # Forgejo's default is 'bash', so if you have bash installed, you can comment
 # this out.
 SCRIPT_TYPE = sh
 
 [repository.upload]
-TEMP_PATH = /var/db/forgejo/data/tmp/uploads
+TEMP_PATH = %%DBDIR%%/data/tmp/uploads
 
 [security]
 INSTALL_LOCK   = true
@@ -73,10 +73,10 @@ SECRET_KEY     = CHANGE_ME
 
 [session]
 PROVIDER        = file
-PROVIDER_CONFIG = /var/db/forgejo/data/sessions
+PROVIDER_CONFIG = %%DBDIR%%/data/sessions
 
 [server]
-APP_DATA_PATH = /var/db/forgejo/data
+APP_DATA_PATH = %%DBDIR%%/data
 DISABLE_SSH   = false
 DOMAIN        = localhost
 HTTP_ADDR     = 127.0.0.1

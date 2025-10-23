@@ -1,13 +1,12 @@
 PORTNAME=	forgejo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.0.4
-PORTREVISION=	2
+DISTVERSION=	13.0.1
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/forgejo/forgejo/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	forgejo-src-${DISTVERSION}
 
-MAINTAINER=	stb@lassitu.de
-COMMENT=	Compact self-hosted Git service
+MAINTAINER=	des@FreeBSD.org
+COMMENT=	Compact self-hosted Git forge
 WWW=		https://forgejo.org/
 
 LICENSE=	MIT
@@ -23,8 +22,11 @@ PIE_UNSAFE=	yes
 CONFLICTS_INSTALL=	forgejo[0-79]*
 
 EXTRACT_AFTER_ARGS=	--strip-components 1
+DBDIR=		/var/db/forgejo
+LOGDIR=		/var/log/forgejo
 SUB_FILES=	app.ini.sample pkg-message
-SUB_LIST=	GITUSER=${USERS}
+SUB_LIST=	GITUSER=${USERS} DBDIR=${DBDIR} LOGDIR=${LOGDIR}
+PLIST_SUB=	DBDIR=${DBDIR} LOGDIR=${LOGDIR}
 
 NO_WRKSUBDIR=	yes
 
@@ -46,6 +48,15 @@ GIT_LFS_RUN_DEPENDS=	git-lfs:devel/git-lfs
 PAM_VARS=		GO_TAGS+=pam
 SQLITE_VARS=		GO_TAGS+="sqlite sqlite_unlock_notify"
 
+SSP_UNSAFE=	true
+LDFLAGS=	"'-X "forgejo.org/modules/setting.CustomPath=${PREFIX}/etc/forgejo"'" \
+		"'-X "forgejo.org/modules/setting.AppWorkPath=${DATADIR}"'"
+MAKE_ARGS=	GOFLAGS="-buildvcs=false" \
+		GOPATH=${WRKDIR} \
+		TAGS="${GO_TAGS}"
+ALL_TARGET=	backend
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
@@ -54,20 +65,7 @@ DAEMONARGS=	-S -l \$${forgejo_facility} -s \$${forgejo_priority} -T \
 .else
 DAEMONARGS=	-f
 .endif
-
 SUB_LIST+=	DAEMONARGS="${DAEMONARGS}"
-
-SSP_UNSAFE=	true
-LDFLAGS+=	"'-X "forgejo.org/modules/setting.CustomPath=${PREFIX}/etc/forgejo"'" \
-		"'-X "forgejo.org/modules/setting.AppWorkPath=${PREFIX}/share/forgejo"'"
-MAKE_ARGS=	GOFLAGS="-buildvcs=false" \
-		GOPATH=${WRKDIR} \
-		TAGS="${GO_TAGS}"
-ALL_TARGET=	backend
-MAKE_JOBS_UNSAFE=	yes
-
-post-patch:
-	${ECHO_CMD} ${DISTVERSION} >${WRKSRC}/VERSION
 
 # Too lazy to figure out why go install won't work.
 do-install:
@@ -81,9 +79,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/custom/conf/app.example.ini \
 		${STAGEDIR}${ETCDIR}/conf/app.ini.defaults
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${MKDIR} ${STAGEDIR}/var/db/forgejo/data
-	${MKDIR} ${STAGEDIR}/var/db/forgejo/forgejo-repositories
-	${MKDIR} ${STAGEDIR}/var/log/forgejo
+	${MKDIR} ${STAGEDIR}${DBDIR}/data
+	${MKDIR} ${STAGEDIR}${DBDIR}/forgejo-repositories
+	${MKDIR} ${STAGEDIR}${LOGDIR}
 
 do-install-BINDATA-off:
 	cd ${WRKSRC} && \
