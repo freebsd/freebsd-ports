@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-08-21 20:57:34 UTC
+--- CMakeLists.txt.orig	2024-12-23 20:22:56 UTC
 +++ CMakeLists.txt
-@@ -115,8 +115,8 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
+@@ -121,8 +121,8 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
  
      # Platform-dependent implementation of system.h
      # On FreeBSD we can use *_other
@@ -11,36 +11,13 @@
      # To avoid CMake warning
      set(CMAKE_MACOSX_RPATH 1)
  else()
-@@ -155,15 +155,8 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
- 
-     message(STATUS "Detected GCC version 4.7+")
- 
--    set(NORMAL_CXX_FLAGS "-std=gnu++11 -Wall -Werror -Wold-style-cast -pedantic-errors -Wmissing-declarations")
--    set(NORMAL_CXX_FLAGS "${NORMAL_CXX_FLAGS} -Wno-error=deprecated-declarations") # updated version of physfs is not available on some platforms so we keep using deprecated functions, see #958
-+    set(NORMAL_CXX_FLAGS "-std=gnu++11 -Wno-error=deprecated-declarations") # updated version of physfs is not available on some platforms so we keep using deprecated functions, see #958
- 
--    if(NOT CMAKE_CXX_COMPILER_VERSION VERSION_LESS 5.0)
--        set(NORMAL_CXX_FLAGS "${NORMAL_CXX_FLAGS} -Wsuggest-override")
--    endif()
--
--    set(RELEASE_CXX_FLAGS "-O2")
--    set(DEBUG_CXX_FLAGS "-g -O0")
-     set(TEST_CXX_FLAGS "-pthread")
-     add_definitions(-DNOEXCEPT=noexcept -DHAVE_DEMANGLE)
- elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-@@ -173,14 +166,7 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+@@ -176,9 +176,6 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
  
      message(STATUS "Detected Clang version 3.1+")
  
 -    if (${PLATFORM_FREEBSD})
 -	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fuse-ld=bfd")
 -    endif()
--
--    set(NORMAL_CXX_FLAGS "-std=c++11 -Wall -Werror -Wold-style-cast -pedantic-errors -Wmissing-prototypes")
--    set(NORMAL_CXX_FLAGS "${NORMAL_CXX_FLAGS} -Wno-error=deprecated-declarations") # updated version of physfs is not available on some platforms so we keep using deprecated functions, see #958
--    set(RELEASE_CXX_FLAGS "-O2")
--    set(DEBUG_CXX_FLAGS "-g -O0")
-+    set(NORMAL_CXX_FLAGS "-std=c++11 -Wno-error=deprecated-declarations") # updated version of physfs is not available on some platforms so we keep using deprecated functions, see #958
-     set(TEST_CXX_FLAGS "-pthread")
-     add_definitions(-DNOEXCEPT=noexcept -DHAVE_DEMANGLE)
- elseif(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+ 
+     set(NORMAL_CXX_FLAGS "-Wall -Wold-style-cast -pedantic-errors -Wmissing-prototypes")
+     set(NORMAL_CXX_FLAGS "${NORMAL_CXX_FLAGS} -Wno-error=deprecated-declarations") # updated version of physfs is not available on some platforms so we keep using deprecated functions, see #958

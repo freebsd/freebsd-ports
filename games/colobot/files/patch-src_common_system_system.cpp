@@ -1,4 +1,4 @@
---- src/common/system/system.cpp.orig	2021-08-21 20:57:34 UTC
+--- src/common/system/system.cpp.orig	2024-12-23 20:22:56 UTC
 +++ src/common/system/system.cpp
 @@ -24,7 +24,7 @@
  
@@ -9,7 +9,7 @@
      #include "common/system/system_linux.h"
  #elif defined(PLATFORM_MACOSX)
      #include "common/system/system_macosx.h"
-@@ -43,7 +43,7 @@ std::unique_ptr<CSystemUtils> CSystemUtils::Create()
+@@ -44,7 +44,7 @@ std::unique_ptr<CSystemUtils> CSystemUtils::Create()
      std::unique_ptr<CSystemUtils> instance;
  #if defined(PLATFORM_WINDOWS)
      instance = MakeUnique<CSystemUtilsWindows>();
