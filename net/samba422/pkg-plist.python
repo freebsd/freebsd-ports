@@ -2,6 +2,7 @@ bin/smbtorture
 sbin/samba-gpupdate
 %%MANPAGES%%share/man/man1/smbtorture.1.gz
 %%MANPAGES%%share/man/man8/samba-gpupdate.8.gz
+lib/samba4/private/libsamba-net-join%%PYTHON_TAG%%-private-samba.so
 lib/samba4/private/libsamba-python%%PYTHON_TAG%%-private-samba.so
 @comment Python block
 %%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/dckeytab%%PYTHON_TAG%%.so

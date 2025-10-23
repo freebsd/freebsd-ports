@@ -299,7 +299,6 @@ libexec/samba/samba-dcerpcd
 %%SAMBA4_LIBDIR%%/private/libsamba-cluster-support-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libsamba-debug-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libsamba-modules-private-samba.so
-%%SAMBA4_LIBDIR%%/private/libsamba-net-join%%PYTHON_TAG%%-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libsamba-net-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libsamba-security-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libsamba-sockets-private-samba.so
