@@ -1,11 +1,11 @@
 PORTNAME=	libedit
-DISTVERSION=	3.1-20250104
+DISTVERSION=	3.1-20251016
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://thrysoee.dk/editline/
 DISTNAME=	${PORTNAME}-${PORTVERSION:E}-${PORTVERSION:R}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Command line editor library
 WWW=		https://thrysoee.dk/editline/
 
