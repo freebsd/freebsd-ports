@@ -1,3 +1,42 @@
+  <vuln vid="114cc98b-afad-11f0-af12-bc241121aa0a">
+    <topic>FreeBSD -- SO_REUSEPORT_LB breaks connect(2) for UDP sockets</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.3</ge><lt>14.3_5</lt></range>
+	<range><ge>13.5</ge><lt>13.5_6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Connected sockets are not intended to belong to load-balancing
+	groups.  However, the kernel failed to check the connection state
+	of sockets when adding them to load-balancing groups.  Furthermore,
+	when looking up the destination socket for an incoming packet, the
+	kernel will match a socket belonging to a load-balancing group even
+	if it is connected.</p>
+	<p>Connected sockets are only supposed to receive packets originating
+	from the connected host.  The above behavior violates this contract.</p>
+	<h1>Impact:</h1>
+	<p>Software which sets SO_REUSEPORT_LB on a socket and then connects
+	it to a host will not observe any problems.  However, due to its
+	membership in a load-balancing group, that socket will receive
+	packets originating from any host.  This breaks the contract of the
+	connect(2) and implied connect via sendto(2), and may leave the
+	application vulnerable to spoofing attacks.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-24934</cvename>
+      <freebsdsa>SA-25:09.netinet</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2025-10-22</discovery>
+      <entry>2025-10-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f741ea93-af61-11f0-98b5-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
