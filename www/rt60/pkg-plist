@@ -302,6 +302,7 @@ bin/rt-run-scheduled-processes
 %%SITE_PERL%%/RT/Scrips.pm
 %%SITE_PERL%%/RT/Search.pm
 %%SITE_PERL%%/RT/Search/ActiveTicketsInQueue.pm
+%%SITE_PERL%%/RT/Search/Calendar.pm
 %%SITE_PERL%%/RT/Search/FromSQL.pm
 %%SITE_PERL%%/RT/Search/Simple.pm
 %%SITE_PERL%%/RT/SearchBuilder.pm
@@ -1083,6 +1084,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Asset/Elements/EditPeople
 %%DATADIR%%/html/Asset/Elements/EditPeopleInline
 %%DATADIR%%/html/Asset/Elements/EditRoleMembers
+%%DATADIR%%/html/Asset/Elements/PagedShowHistory
 %%DATADIR%%/html/Asset/Elements/Search
 %%DATADIR%%/html/Asset/Elements/SelectCatalog
 %%DATADIR%%/html/Asset/Elements/SelectRoleType
@@ -1252,6 +1254,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/SavedSearchSelectUser
 %%DATADIR%%/html/Elements/SavedSearches
 %%DATADIR%%/html/Elements/ScrubHTML
+%%DATADIR%%/html/Elements/SearchDisplayMode
 %%DATADIR%%/html/Elements/Section
 %%DATADIR%%/html/Elements/SelectArticle
 %%DATADIR%%/html/Elements/SelectArticleAutocomplete
@@ -1335,6 +1338,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/SystemWarnings
 %%DATADIR%%/html/Elements/TSVExport
 %%DATADIR%%/html/Elements/Tabs
+%%DATADIR%%/html/Elements/TransactionTypeFilterDropdown
 %%DATADIR%%/html/Elements/ValidateCustomFields
 %%DATADIR%%/html/Elements/WidgetBar
 %%DATADIR%%/html/Errors/WebRemoteUser/Deauthorized
@@ -1354,6 +1358,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Group/SavedSearches.html
 %%DATADIR%%/html/Group/Search.html
 %%DATADIR%%/html/Group/Summary.html
+%%DATADIR%%/html/Helpers/AddTicketMessage
 %%DATADIR%%/html/Helpers/AddTimeWorked
 %%DATADIR%%/html/Helpers/Admin/EditCustomFieldValue
 %%DATADIR%%/html/Helpers/AssetHistoryPage
@@ -1370,6 +1375,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Helpers/Autocomplete/Users
 %%DATADIR%%/html/Helpers/Autocomplete/autohandler
 %%DATADIR%%/html/Helpers/BuildFormatString
+%%DATADIR%%/html/Helpers/CalendarEventInfo
 %%DATADIR%%/html/Helpers/CollectionListRow
 %%DATADIR%%/html/Helpers/EditTicketDescription
 %%DATADIR%%/html/Helpers/Permalink
@@ -1469,10 +1475,13 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Search/Article.html
 %%DATADIR%%/html/Search/Build.html
 %%DATADIR%%/html/Search/Bulk.html
+%%DATADIR%%/html/Search/Calendar.html
 %%DATADIR%%/html/Search/Chart.html
 %%DATADIR%%/html/Search/Edit.html
 %%DATADIR%%/html/Search/Elements/Article
 %%DATADIR%%/html/Search/Elements/BuildFormatString
+%%DATADIR%%/html/Search/Elements/Calendar
+%%DATADIR%%/html/Search/Elements/CalendarEvent
 %%DATADIR%%/html/Search/Elements/Chart
 %%DATADIR%%/html/Search/Elements/ChartTable
 %%DATADIR%%/html/Search/Elements/ConditionRow
@@ -1532,12 +1541,15 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Elements/MyRequests
 %%DATADIR%%/html/SelfService/Elements/RequestUpdate
 %%DATADIR%%/html/SelfService/Elements/SearchArticle
+%%DATADIR%%/html/SelfService/Helpers/AssetHistoryPage
+%%DATADIR%%/html/SelfService/Helpers/Autocomplete/Articles
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/CustomFieldValues
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/Principals
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/Users
 %%DATADIR%%/html/SelfService/Helpers/SelectOwnerDropdown
 %%DATADIR%%/html/SelfService/Helpers/ShortcutHelp
 %%DATADIR%%/html/SelfService/Helpers/TextDiff
+%%DATADIR%%/html/SelfService/Helpers/TicketHistoryPage
 %%DATADIR%%/html/SelfService/Helpers/Upload/Add
 %%DATADIR%%/html/SelfService/Helpers/Upload/Delete
 %%DATADIR%%/html/SelfService/Helpers/UserImage/dhandler
@@ -1570,6 +1582,8 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Ticket/Elements/EditTimes
 %%DATADIR%%/html/Ticket/Elements/EditTransactionCustomFields
 %%DATADIR%%/html/Ticket/Elements/EditWatchers
+%%DATADIR%%/html/Ticket/Elements/MessageDetails
+%%DATADIR%%/html/Ticket/Elements/PagedShowHistory
 %%DATADIR%%/html/Ticket/Elements/PopupTimerLink
 %%DATADIR%%/html/Ticket/Elements/Reminders
 %%DATADIR%%/html/Ticket/Elements/ScrollShowHistory
@@ -1840,6 +1854,7 @@ sbin/standalone_httpd
 %%DATADIR%%/static/css/elevator/bootstrap-combobox.css
 %%DATADIR%%/static/css/elevator/bootstrap.css
 %%DATADIR%%/static/css/elevator/boxes.css
+%%DATADIR%%/static/css/elevator/calendar.css
 %%DATADIR%%/static/css/elevator/charts.css
 %%DATADIR%%/static/css/elevator/ckeditor5.css
 %%DATADIR%%/static/css/elevator/collection.css

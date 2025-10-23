@@ -1,6 +1,5 @@
 PORTNAME=	rt
-DISTVERSION=	6.0.1
-PORTREVISION=	1
+DISTVERSION=	6.0.2
 CATEGORIES=	www
 MASTER_SITES=	https://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	60
