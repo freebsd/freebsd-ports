@@ -7,6 +7,8 @@ COMMENT=	Ruby module for NGINX Unit
 RUN_DEPENDS=	rackup:www/rubygem-rackup \
 		unitd:www/unit
 
+BROKEN_RUBY33=	checking for Ruby library ... not found
+
 PLIST_FILES=	libexec/unit/modules/${UNIT_MODNAME}.unit.so
 
 USES=	ruby
