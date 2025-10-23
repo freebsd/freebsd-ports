@@ -1,12 +1,11 @@
 PORTNAME=	tealdeer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
-PORTREVISION=	19
+DISTVERSION=	1.8.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Fast tldr client written in Rust
-WWW=		https://github.com/dbrgn/tealdeer
+WWW=		https://github.com/tealdeer-rs/tealdeer
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
@@ -15,7 +14,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 USES=		cargo ssl
 USE_GITHUB=	yes
-GH_ACCOUNT=	dbrgn
+GH_ACCOUNT=	tealdeer-rs
 
 CONFLICTS_INSTALL=	tldr
 
