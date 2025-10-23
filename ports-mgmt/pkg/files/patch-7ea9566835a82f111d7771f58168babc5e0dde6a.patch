@@ -1,0 +1,33 @@
+From 7ea9566835a82f111d7771f58168babc5e0dde6a Mon Sep 17 00:00:00 2001
+From: Mark Johnston <markj@FreeBSD.org>
+Date: Thu, 23 Oct 2025 21:54:36 +0000
+Subject: [PATCH] libpkg: Use line buffering for the metalog file handle
+
+Otherwise we can get interleaved metalog entries when a package
+install script appends entries to the metalog as well.
+
+Reported by:	cperciva
+---
+ libpkg/metalog.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/libpkg/metalog.c b/libpkg/metalog.c
+index 9ffac87ae7..07b7419b66 100644
+--- libpkg/metalog.c
++++ libpkg/metalog.c
+@@ -37,11 +37,11 @@ int
+ metalog_open(const char *metalog)
+ {
+ 	metalogfp = fopen(metalog, "ae");
+-	if (metalogfp == NULL) {
++	if (metalogfp == NULL)
+ 		pkg_fatal_errno("Unable to open metalog '%s'", metalog);
+-	} 
+-
+-	return EPKG_OK;
++	/* Package install scripts may add entries, so avoid interleaving. */
++	setvbuf(metalogfp, NULL, _IOLBF, 0);
++	return (EPKG_OK);
+ }
+ 
+ int
