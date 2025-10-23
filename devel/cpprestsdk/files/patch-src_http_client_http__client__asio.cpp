@@ -1,5 +1,13 @@
 --- src/http/client/http_client_asio.cpp.orig	2023-12-05 04:23:31 UTC
 +++ src/http/client/http_client_asio.cpp
+@@ -27,6 +27,7 @@
+ #endif
+ #include <boost/algorithm/string.hpp>
+ #include <boost/asio.hpp>
++#include <boost/asio/deadline_timer.hpp>
+ #include <boost/asio/ssl.hpp>
+ #include <boost/asio/ssl/error.hpp>
+ #include <boost/asio/steady_timer.hpp>
 @@ -146,7 +146,7 @@ class asio_connection (public)
      friend class asio_client;
  
