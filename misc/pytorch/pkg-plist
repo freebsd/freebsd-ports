@@ -7667,7 +7667,7 @@ include/ATen/xpu/XPUDevice.h
 include/ATen/xpu/XPUEvent.h
 include/ATen/xpu/XPUGeneratorImpl.h
 include/ATen/xpu/detail/XPUHooks.h
-include/advisor-annotate.h
+%%AMD64%%include/advisor-annotate.h
 include/c10/core/Allocator.h
 include/c10/core/AutogradState.h
 include/c10/core/Backend.h
@@ -7933,9 +7933,9 @@ include/fp16/avx2.py
 include/fp16/bitcasts.h
 include/fp16/fp16.h
 include/fp16/psimd.h
-include/ittnotify-zca.h
-include/ittnotify.h
-include/jitprofiling.h
+%%AMD64%%include/ittnotify-zca.h
+%%AMD64%%include/ittnotify.h
+%%AMD64%%include/jitprofiling.h
 include/kineto/AbstractConfig.h
 include/kineto/ActivityProfilerInterface.h
 include/kineto/ActivityTraceInterface.h
@@ -7952,8 +7952,8 @@ include/kineto/TraceSpan.h
 include/kineto/libkineto.h
 include/kineto/output_base.h
 include/kineto/time_since_epoch.h
-include/legacy/ittnotify.h
-include/libittnotify.h
+%%AMD64%%include/legacy/ittnotify.h
+%%AMD64%%include/libittnotify.h
 include/libshm.h
 %%AMD64%%include/oneapi/dnnl/dnnl.h
 %%AMD64%%include/oneapi/dnnl/dnnl.hpp
@@ -9009,7 +9009,7 @@ include/torch/script.h
 lib/libc10.so
 lib/libcpuinfo.a
 %%AMD64%%lib/libdnnl.a
-lib/libittnotify.a
+%%AMD64%%lib/libittnotify.a
 lib/libkineto.a
 lib/libshm.so
 lib/libtorch.so
