@@ -38,7 +38,6 @@ sbin/samba_upgradedns
 %%SAMBA4_MODULEDIR%%/ldb/group_audit_log.so
 %%SAMBA4_MODULEDIR%%/ldb/instancetype.so
 %%SAMBA4_MODULEDIR%%/ldb/lazy_commit.so
-%%SAMBA4_MODULEDIR%%/ldb/ldap.so
 %%SAMBA4_MODULEDIR%%/ldb/linked_attributes.so
 %%SAMBA4_MODULEDIR%%/ldb/new_partition.so
 %%SAMBA4_MODULEDIR%%/ldb/objectclass_attrs.so
