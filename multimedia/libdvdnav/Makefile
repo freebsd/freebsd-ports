@@ -1,8 +1,6 @@
 PORTNAME=	libdvdnav
-DISTVERSION=	6.1.1
+DISTVERSION=	7.0.0
 CATEGORIES=	multimedia
-MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION}/ \
-		https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Videolan version of the libdvdnav project
@@ -13,13 +11,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig tar:bz2
-USE_CSTD=	c99
+USES=		meson pkgconfig
 USE_LDCONFIG=	yes
 
-PORTDOCS=	AUTHORS COPYING ChangeLog README TODO
+USE_GITLAB=	yes
+GL_SITE=	https://code.videolan.org/
+GL_ACCOUNT=	videolan
+
+PORTDOCS=	AUTHORS COPYING ChangeLog README.md TODO
+
+MESON_ARGS=	-Ddefault_library=shared
 
 OPTIONS_DEFINE=	DOCS
 
