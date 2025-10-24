@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v
 DISTNAME=	tdesktop-${DISTVERSION}-full
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Telegram Desktop messaging app
 WWW=		https://desktop.telegram.org/
 
