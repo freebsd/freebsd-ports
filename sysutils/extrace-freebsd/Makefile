@@ -17,11 +17,11 @@ GH_PROJECT=	extrace-freebsd
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 CFLAGS+=	-fPIC
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/extrace \
+		share/man/man1/extrace.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/extrace ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/extrace.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
