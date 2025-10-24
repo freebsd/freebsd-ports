@@ -1,0 +1,16 @@
+The sorl-thumbnail package provides an easy way to generate image
+thumbnails.
+
+Some of its features:
+- Storage support
+- Pluggable Engine support for Pillow, GraphicsMagick, ImageMagick and Wand
+- Pluggable Key Value Store support (cached db and redis)
+- Pluggable Backend support
+- Admin integration with possibility to delete
+- Dummy generation (placeholders)
+- Flexible, simple syntax, generates no html
+- ImageField for model that deletes thumbnails
+- CSS style cropping options
+- Back smart cropping, and remove borders from the images when cropping
+- Margin calculation for vertical positioning
+- Alternative resolutions versions of a thumbnail
