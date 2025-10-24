@@ -67,10 +67,6 @@ BUILD_WRKSRC=	${WRKSRC}/out
 PLIST_FILES=	lib/libSkiaSharp.so \
 		lib/libSkiaSharp.so.${SOVERSION}
 
-post-extract:
-	${MKDIR} ${WRKSRC}/third_party/externals
-	${RLN} ${WRKDIR}/libjpeg_turbo ${WRKSRC}/third_party/externals/libjpeg-turbo
-
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} gn gen 'out' --args='${GN_ARGS}'
 
