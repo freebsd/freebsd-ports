@@ -280,6 +280,7 @@
     SUBDIR += uhex
     SUBDIR += uzap
     SUBDIR += ved
+    SUBDIR += vertico.el
     SUBDIR += vigor
     SUBDIR += vile
     SUBDIR += vim
