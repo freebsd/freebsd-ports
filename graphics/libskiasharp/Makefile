@@ -59,7 +59,7 @@ GN_ARGS=	is_official_build=true \
 		extra_ldflags=["-L${LOCALBASE}/lib"] \
 		linux_soname_version="${SOVERSION}"
 
-BINARY_ALIAS=	python=${PYTHON_CMD} \
+BINARY_ALIAS=	python3=${PYTHON_CMD} \
 		ar=${LOCALBASE}/bin/ar
 
 ALL_TARGET=	SkiaSharp
