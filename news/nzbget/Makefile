@@ -1,12 +1,11 @@
 PORTNAME=	nzbget
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.3
-PORTREVISION=	1
+DISTVERSION=	25.4
 CATEGORIES=	news
 
 MAINTAINER=	a13xlevy@pm.me
 COMMENT=	Binary newsreader supporting NZB files
-WWW=		https://nzbget.net/
+WWW=		https://nzbget.com/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
