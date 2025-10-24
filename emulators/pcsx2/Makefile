@@ -1,6 +1,5 @@
 PORTNAME=	pcsx2
-PORTVERSION=	2.3.439
-PORTREVISION=	3
+PORTVERSION=	2.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	emulators
 
@@ -74,6 +73,9 @@ CMAKE_ARGS+=	\
 
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	Debugger.pdf GameIndex.pdf
+
+# Stable releases use an even minor number
+PORTSCOUT=	limit:^v[0-9]+.[02468].
 
 # - Program and resources are copied from target dir ${CONFIGURE_WRKSRC}/bin
 #   because only necessary resources are installed there (e.g. no dx11 stuff)
