@@ -1,0 +1,4 @@
+extrace-freebsd traces all program executions occurring on a system, or
+ones which descend from a specified process. Execution duration and exit
+status can be logged.
+Useful for debugging and security analysis.

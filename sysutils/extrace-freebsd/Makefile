@@ -1,4 +1,4 @@
-PORTNAME=	extrace
+PORTNAME=	extrace-freebsd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1
 CATEGORIES=	sysutils
