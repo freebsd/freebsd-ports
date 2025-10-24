@@ -1,5 +1,4 @@
-CARGO_CRATES=	addr2line-0.24.2 \
-		adler2-2.0.1 \
+CARGO_CRATES=	adler2-2.0.1 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.21 \
@@ -19,12 +18,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		async-channel-2.5.0 \
 		atomic_float-1.1.0 \
 		autocfg-1.5.0 \
-		backtrace-0.3.75 \
 		bincode-2.0.1 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
 		bitflags-1.3.2 \
-		bitflags-2.9.4 \
+		bitflags-2.10.0 \
 		blanket-0.4.0 \
 		block-0.1.6 \
 		bstr-1.12.0 \
@@ -186,10 +184,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		getopts-0.2.23 \
 		getrandom-0.2.16 \
 		getrandom-0.3.3 \
-		gimli-0.31.1 \
 		gl_generator-0.14.0 \
 		glob-0.3.2 \
-		globset-0.4.16 \
+		globset-0.4.18 \
 		glow-0.16.0 \
 		glutin_wgl_sys-0.6.1 \
 		gpu-alloc-0.6.0 \
@@ -220,8 +217,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ident_case-1.0.1 \
 		idna-1.0.3 \
 		idna_adapter-1.2.1 \
-		indexmap-2.11.4 \
-		io-uring-0.7.9 \
+		indexmap-2.12.0 \
 		is-docker-0.2.0 \
 		is-macro-0.3.7 \
 		is-wsl-0.4.0 \
@@ -244,7 +240,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		litrs-0.4.2 \
 		lock_api-0.4.13 \
 		log-0.4.27 \
-		lru-0.16.1 \
+		lru-0.16.2 \
 		lsp-types-0.97.0 \
 		mac-0.1.1 \
 		macerator-0.2.8 \
@@ -280,7 +276,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		num_enum-0.7.4 \
 		num_enum_derive-0.7.4 \
 		objc-0.2.7 \
-		object-0.36.7 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.1 \
 		oorandom-11.1.5 \
@@ -350,7 +345,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rs-conllu-0.3.0 \
 		rstest-0.25.0 \
 		rstest_macros-0.25.0 \
-		rustc-demangle-0.1.26 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.1 \
 		rustix-1.0.8 \
@@ -411,8 +405,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		time-macros-0.2.22 \
 		tinystr-0.8.1 \
 		tinytemplate-1.2.1 \
-		tokio-1.47.1 \
-		tokio-macros-2.5.0 \
+		tokio-1.48.0 \
+		tokio-macros-2.6.0 \
 		tokio-util-0.7.15 \
 		toml-0.8.23 \
 		toml-0.9.2 \
@@ -446,6 +440,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tree-sitter-ink-lbz-0.0.1 \
 		tree-sitter-java-0.23.5 \
 		tree-sitter-javascript-0.25.0 \
+		tree-sitter-jjdescription-0.0.1 \
 		tree-sitter-kotlin-ng-1.1.0 \
 		tree-sitter-language-0.1.5 \
 		tree-sitter-lua-0.2.0 \
@@ -522,6 +517,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
+		windows-sys-0.61.1 \
 		windows-targets-0.52.6 \
 		windows-targets-0.53.3 \
 		windows_aarch64_gnullvm-0.52.6 \
