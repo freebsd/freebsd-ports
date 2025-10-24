@@ -1,7 +1,6 @@
 PORTNAME=	libskiasharp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.88.3
-PORTREVISION=	2
+DISTVERSION=	117
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/bapt:libjpeg_turbo
 DISTFILES=	libjpeg_turbo-${LIBJPEG_TURBO_REV}.tar.gz:libjpeg_turbo
@@ -25,13 +24,14 @@ USES=		jpeg ninja python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	mono
 GH_PROJECT=	skia
+GH_TAGNAME=	5ab716e1f47fd2f5f258380c6feabc5997728dc7
 
 LIBJPEG_TURBO_REV=	22f1a22c99e9dde8cd3c72ead333f425c5a7aa77
 
 USE_LDCONFIG=	yes
 USE_BINUTILS=	yes
 
-SOVERSION=	118.0.0
+SOVERSION=	117.0.0
 #
 # see https://github.com/libjpeg-turbo/libjpeg-turbo/issues/795#issuecomment-2484148592
 GN_ARGS=	is_official_build=true \
@@ -41,6 +41,7 @@ GN_ARGS=	is_official_build=true \
 		skia_use_sfntly=false \
 		skia_use_piex=true \
 		skia_use_harfbuzz=false \
+		skia_use_wuffs=false \
 		skia_use_system_expat=true \
 		skia_use_system_libjpeg_turbo=false \
 		skia_use_system_freetype2=true \
