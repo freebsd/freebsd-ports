@@ -1,5 +1,7 @@
-TIMESTAMP = 1726633562
-SHA256 (Nuand-bladeRF-2024.05_GH0.tar.gz) = ac7d7991bc1e5faa2509da3c3046c60e9076ac293e479835aea5f19fa71f1fd2
-SIZE (Nuand-bladeRF-2024.05_GH0.tar.gz) = 2580546
-SHA256 (analogdevicesinc-no-OS-0bba46e_GH0.tar.gz) = f150fc06780eddad31968bb677a9445ff830aa47d7eed15c15c53559eca48b0c
-SIZE (analogdevicesinc-no-OS-0bba46e_GH0.tar.gz) = 44177429
+TIMESTAMP = 1761328337
+SHA256 (Nuand-bladeRF-2025.10_GH0.tar.gz) = f7a63f7ad53cf3478dc60cc476b377020a7c256ef37640b1a4fa715cd9784b23
+SIZE (Nuand-bladeRF-2025.10_GH0.tar.gz) = 2769136
+SHA256 (Nuand-bladeRF-fsk-fb903684_GH0.tar.gz) = 020a711fd7dfc5ed89e4d21561759a7e7b2f3e6a7838851697490e73bb6b5b1c
+SIZE (Nuand-bladeRF-fsk-fb903684_GH0.tar.gz) = 87480
+SHA256 (analogdevicesinc-no-OS-0bba46e6_GH0.tar.gz) = d329f2996c028fb0fc545e6594046a61080b7b5bb0022a0b098fec74d95dcf26
+SIZE (analogdevicesinc-no-OS-0bba46e6_GH0.tar.gz) = 44179855
