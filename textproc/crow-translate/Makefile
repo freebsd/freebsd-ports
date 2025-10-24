@@ -5,7 +5,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	KDE
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translator using Google, Yandex Bing, LibreTranslate and Lingva
 WWW=		https://apps.kde.org/crowtranslate/
 
