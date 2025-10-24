@@ -1,5 +1,5 @@
 PORTNAME=	kmscube
-PORTVERSION=	s20241106
+PORTVERSION=	s20251024
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,7 +22,7 @@ USE_GITLAB=	yes
 USE_GL=		egl gbm glesv2
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mesa
-GL_TAGNAME=	311eaaa
+GL_TAGNAME=	f60e50e
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/texturator \
 		${NULL}
@@ -32,7 +32,7 @@ OPTIONS_DEFAULT=PNG
 OPTIONS_SLAVE=	${${FLAVOR}_OPTIONS_SLAVE}
 
 GSTREAMER_USES=		gnome gstreamer
-GSTREAMER_USE=		GNOME=glib20
+GSTREAMER_USE=		GNOME=glib20 GSTREAMER=gl
 GSTREAMER_MESON_ENABLED=gstreamer
 
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
