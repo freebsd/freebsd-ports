@@ -1,0 +1,23 @@
+--- Makefile.orig	2025-10-17 08:57:36 UTC
++++ Makefile
+@@ -84,7 +84,7 @@ EXTRA_LDFLAGS ?=
+ GIT_COMMIT := $(shell GIT_CEILING_DIRECTORIES=$$(cd ..; pwd) git rev-parse HEAD 2> /dev/null || true)
+ 
+ EXTRA_LDFLAGS ?=
+-SKOPEO_LDFLAGS := -ldflags '-X main.gitCommit=${GIT_COMMIT} $(EXTRA_LDFLAGS)'
++SKOPEO_LDFLAGS := -ldflags '-X main.gitCommit="unknown" $(EXTRA_LDFLAGS)'
+ 
+ MANPAGES_MD = $(wildcard docs/*.md)
+ MANPAGES ?= $(MANPAGES_MD:%.md=%)
+@@ -131,9 +131,9 @@ bin/skopeo:
+ # Build w/o using containers
+ .PHONY: bin/skopeo
+ bin/skopeo:
+-	$(GO) build ${GO_DYN_FLAGS} ${SKOPEO_LDFLAGS} -gcflags "$(GOGCFLAGS)" -tags "$(BUILDTAGS)" -o $@ ./cmd/skopeo
++	$(GO) build -buildvcs=false ${GO_DYN_FLAGS} ${SKOPEO_LDFLAGS} -gcflags "$(GOGCFLAGS)" -tags "$(BUILDTAGS)" -o $@ ./cmd/skopeo
+ bin/skopeo.%:
+-	GOOS=$(word 2,$(subst ., ,$@)) GOARCH=$(word 3,$(subst ., ,$@)) $(GO) build ${SKOPEO_LDFLAGS} -tags "containers_image_openpgp $(BUILDTAGS)" -o $@ ./cmd/skopeo
++	GOOS=$(word 2,$(subst ., ,$@)) GOARCH=$(word 3,$(subst ., ,$@)) $(GO) build -buildvcs=false ${SKOPEO_LDFLAGS} -tags "containers_image_openpgp $(BUILDTAGS)" -o $@ ./cmd/skopeo
+ local-cross: bin/skopeo.darwin.amd64 bin/skopeo.linux.arm bin/skopeo.linux.arm64 bin/skopeo.windows.386.exe bin/skopeo.windows.amd64.exe
+ 
+ $(MANPAGES): %: %.md
