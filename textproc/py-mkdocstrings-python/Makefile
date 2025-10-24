@@ -1,5 +1,5 @@
 PORTNAME=	mkdocstrings-python
-DISTVERSION=	1.16.12
+DISTVERSION=	1.18.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}griffe>=1.6.2:textproc/py-griffe@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}griffe>=1.13.0:textproc/py-griffe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs-autorefs>=1.4:textproc/py-mkdocs-autorefs@${PY_FLAVOR}
 # textproc/py-mkdocstrings belongs to RUN_DEPENDS as well but would cause
 # a circular dependency (via py-mkdocstrings' PYTHON option).  It was therefore
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}griffe>=1.6.2:textproc/py-griffe@${PY_FLAVOR
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.12.3:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}inline-snapshot>=0.18.1:devel/py-inline-snapshot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=9.5:textproc/py-mkdocs-material@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=0.28.3:textproc/py-mkdocstrings@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=0.30.0:textproc/py-mkdocstrings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruff>=0.4:devel/py-ruff@${PY_FLAVOR}
 
 USES=		python
