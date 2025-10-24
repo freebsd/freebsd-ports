@@ -36,6 +36,7 @@
     SUBDIR += ebook2cw
     SUBDIR += ebusd
     SUBDIR += echolinux
+    SUBDIR += emacs-eat
     SUBDIR += ems-flasher
     SUBDIR += fl_moxgen
     SUBDIR += flamp
