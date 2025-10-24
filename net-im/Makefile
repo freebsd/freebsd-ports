@@ -66,6 +66,7 @@
     SUBDIR += meanwhile
     SUBDIR += mikutter
     SUBDIR += mtxclient
+    SUBDIR += nchat
     SUBDIR += neochat
     SUBDIR += nextcloud-spreed-signaling
     SUBDIR += nextcloud-talk
