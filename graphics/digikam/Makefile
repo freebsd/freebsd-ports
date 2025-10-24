@@ -1,5 +1,5 @@
 PORTNAME=	digikam
-DISTVERSION=	8.7.0
+DISTVERSION=	8.8.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION} \
 		https://files.kde.org/${PORTNAME}/%SUBDIR%/:aitools,aesthetic,autotags,face,testimage,yunet \

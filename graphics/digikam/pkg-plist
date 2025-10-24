@@ -205,6 +205,7 @@ lib/libdigikamgui.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/digikam/editor/Editor_AutoCorrectionTool_Plugin.so
 %%QT_PLUGINDIR%%/digikam/editor/Editor_AutoCropTool_Plugin.so
 %%QT_PLUGINDIR%%/digikam/editor/Editor_BWSepiaTool_Plugin.so
+%%QT_PLUGINDIR%%/digikam/editor/Editor_BackgroundBlurTool_Plugin.so
 %%QT_PLUGINDIR%%/digikam/editor/Editor_BcgTool_Plugin.so
 %%QT_PLUGINDIR%%/digikam/editor/Editor_BlurFxTool_Plugin.so
 %%QT_PLUGINDIR%%/digikam/editor/Editor_BlurTool_Plugin.so

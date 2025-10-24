@@ -1,6 +1,6 @@
-TIMESTAMP = 1755889431
-SHA256 (KDE/digikam/digiKam-8.7.0.tar.xz) = 79e35ec20a43934cf8322d47c9c0540b0b8b727fa7d9aceb90f710fcfe9da02f
-SIZE (KDE/digikam/digiKam-8.7.0.tar.xz) = 55060536
+TIMESTAMP = 1761264364
+SHA256 (KDE/digikam/digiKam-8.8.0.tar.xz) = db3a1b6e3c73f903e3dff8003f52455dd2ecd198cb66534fee4abbd0bdeb6b9a
+SIZE (KDE/digikam/digiKam-8.8.0.tar.xz) = 61419860
 SHA256 (KDE/digikam/weights_inceptionv3_299.pb) = 8923e3daff71c07533b9023ef32c69d8c058d1e0931d76d8b81241a201138538
 SIZE (KDE/digikam/weights_inceptionv3_299.pb) = 88007527
 SHA256 (KDE/digikam/deep-image-orientation-angle-detection.onnx) = e9f9d20330977750bc941b5f820f80a07eef3b23bd8b2271d44d14488d8709b5
