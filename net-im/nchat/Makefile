@@ -11,7 +11,7 @@ WWW=		https://github.com/d99kris/nchat
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake go:no_targets gperf localbase:ldflags ncurses:port \
+USES=		cmake gperf localbase:ldflags ncurses:port \
 		pkgconfig readline ssl sqlite
 
 USE_GITHUB=	yes
