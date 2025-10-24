@@ -30,7 +30,7 @@
  			    sshpam_authctxt->user, sshpam_rhost);
 --- auth.c.orig	2025-10-02 12:00:00.000000000
 +++ auth.c	2025-10-02 12:00:00.000000000
-@@ -75,6 +75,7 @@
+@@ -73,6 +73,7 @@
  #include "monitor_wrap.h"
  #include "ssherr.h"
  #include "channels.h"
@@ -38,7 +38,7 @@
  
  /* import */
  extern ServerOptions options;
-@@ -285,8 +286,12 @@
+@@ -283,8 +284,12 @@
  		authmsg = "Postponed";
  	else if (partial)
  		authmsg = "Partial";
@@ -52,7 +52,7 @@
  
  	if ((extra = format_method_key(authctxt)) == NULL) {
  		if (authctxt->auth_method_info != NULL)
-@@ -334,6 +339,7 @@
+@@ -332,6 +337,7 @@
  {
  	Authctxt *authctxt = (Authctxt *)ssh->authctxt;
  
@@ -60,7 +60,7 @@
  	error("maximum authentication attempts exceeded for "
  	    "%s%.100s from %.200s port %d ssh2",
  	    authctxt->valid ? "" : "invalid user ",
-@@ -494,6 +500,8 @@
+@@ -492,6 +498,8 @@
  	aix_restoreauthdb();
  #endif
  	if (pw == NULL) {
@@ -235,7 +235,7 @@
 +#endif /* BLACKLIST_CLIENT_H */
 --- monitor.c.orig	2025-10-02 12:00:00.000000000
 +++ monitor.c	2025-10-02 12:00:00.000000000
-@@ -85,6 +85,8 @@
+@@ -75,6 +75,8 @@
  #include "misc.h"
  #include "servconf.h"
  #include "monitor.h"
@@ -244,7 +244,7 @@
  #ifdef GSSAPI
  #include "ssh-gss.h"
  #endif
-@@ -353,16 +355,24 @@
+@@ -343,16 +345,24 @@
  			}
  		}
  		if (authctxt->failures > options.max_authtries) {
@@ -274,7 +274,7 @@
  	auth_attempted = 0;
 --- servconf.c.orig	2025-10-02 12:00:00.000000000
 +++ servconf.c	2025-10-02 12:00:00.000000000
-@@ -186,6 +186,7 @@
+@@ -184,6 +184,7 @@
  	options->max_sessions = -1;
  	options->banner = NULL;
  	options->use_dns = -1;
@@ -282,7 +282,7 @@
  	options->client_alive_interval = -1;
  	options->client_alive_count_max = -1;
  	options->num_authkeys_files = 0;
-@@ -455,6 +456,8 @@
+@@ -449,6 +458,8 @@
  		options->max_sessions = DEFAULT_SESSIONS_MAX;
  	if (options->use_dns == -1)
  		options->use_dns = 0;
@@ -291,7 +291,7 @@
  	if (options->client_alive_interval == -1)
  		options->client_alive_interval = 0;
  	if (options->client_alive_count_max == -1)
-@@ -563,6 +566,7 @@
+@@ -567,6 +568,7 @@
  	sGatewayPorts, sPubkeyAuthentication, sPubkeyAcceptedAlgorithms,
  	sXAuthLocation, sSubsystem, sMaxStartups, sMaxAuthTries, sMaxSessions,
  	sBanner, sUseDNS, sHostbasedAuthentication,
@@ -299,7 +299,7 @@
  	sHostbasedUsesNameFromPacketOnly, sHostbasedAcceptedAlgorithms,
  	sHostKeyAlgorithms, sPerSourceMaxStartups, sPerSourceNetBlockSize,
  	sPerSourcePenalties, sPerSourcePenaltyExemptList,
-@@ -706,6 +710,8 @@
+@@ -700,6 +712,8 @@
  	{ "maxsessions", sMaxSessions, SSHCFG_ALL },
  	{ "banner", sBanner, SSHCFG_ALL },
  	{ "usedns", sUseDNS, SSHCFG_GLOBAL },
@@ -308,7 +308,7 @@
  	{ "verifyreversemapping", sDeprecated, SSHCFG_GLOBAL },
  	{ "reversemappingcheck", sDeprecated, SSHCFG_GLOBAL },
  	{ "clientaliveinterval", sClientAliveInterval, SSHCFG_ALL },
-@@ -1788,6 +1794,10 @@
+@@ -1782,6 +1796,10 @@
  		intptr = &options->use_dns;
  		goto parse_flag;
  
@@ -319,7 +319,7 @@
  	case sLogFacility:
  		log_facility_ptr = &options->log_facility;
  		arg = argv_next(&ac, &av);
-@@ -3276,6 +3286,7 @@
+@@ -3279,6 +3297,7 @@
  	dump_cfg_fmtint(sCompression, o->compression);
  	dump_cfg_fmtint(sGatewayPorts, o->fwd_opts.gateway_ports);
  	dump_cfg_fmtint(sUseDNS, o->use_dns);
@@ -339,7 +339,7 @@
  					 * see if it's still there
 --- sshd-session.c.orig	2025-10-02 12:00:00.000000000
 +++ sshd-session.c	2025-10-02 12:00:00.000000000
-@@ -108,6 +108,7 @@
+@@ -102,6 +102,7 @@
  #include "sk-api.h"
  #include "srclimit.h"
  #include "dh.h"
@@ -347,16 +347,7 @@
  
  #ifdef LIBWRAP
  #include <tcpd.h>
-@@ -223,6 +224,8 @@
- static void
- grace_alarm_handler(int sig)
- {
-+	BLACKLIST_NOTIFY(the_active_state, BLACKLIST_AUTH_FAIL,
-+	    "Grace period expired");
- 	/*
- 	 * Try to kill any processes that we have spawned, E.g. authorized
- 	 * keys command helpers or privsep children.
-@@ -1206,6 +1209,8 @@
+@@ -1175,6 +1176,8 @@
  	ssh_signal(SIGQUIT, SIG_DFL);
  	ssh_signal(SIGCHLD, SIG_DFL);
  	ssh_signal(SIGINT, SIG_DFL);
@@ -365,7 +356,7 @@
  
  	/*
  	 * Register our connection.  This turns encryption off because we do
-@@ -1297,8 +1302,10 @@
+@@ -1249,8 +1271,10 @@
  	}
  
  	if ((r = kex_exchange_identification(ssh, -1,
@@ -377,7 +368,7 @@
  
  	ssh_packet_set_nonblocking(ssh);
  
-@@ -1443,7 +1450,10 @@
+@@ -1395,7 +1419,10 @@
  		audit_event(the_active_state, SSH_CONNECTION_ABANDON);
  #endif
  	/* Override default fatal exit value when auth was attempted */
