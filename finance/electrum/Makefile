@@ -6,7 +6,7 @@ MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Electrum-${PORTVERSION}
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use Bitcoin client
 WWW=		https://electrum.org/
 
