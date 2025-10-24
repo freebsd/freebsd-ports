@@ -72,8 +72,6 @@ lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_3dinspector_ui.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_3dinspector.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_actioninspector_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_actioninspector_ui_plugin.so
-%%QT5%%lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_codecbrowser_plugin.so
-%%QT5%%lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_codecbrowser_ui_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_eventmonitor_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_eventmonitor_ui_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_fontbrowser_plugin.so
@@ -102,11 +100,8 @@ lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_quickinspector.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_quickwidgetsupport.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_sceneinspector_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_sceneinspector_ui_plugin.so
-%%QT5%%lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_scriptenginedebugger_plugin.so
-%%QT5%%lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_scriptenginedebugger_ui_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_signalmonitor_ui.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_signalmonitor.so
-%%QT5%%lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_statemachineviewer_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_styleinspector_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_styleinspector_ui_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_sysinfo_plugin.so
@@ -152,8 +147,8 @@ mkspecs/modules/qt_GammaRayLauncherUi.pri
 mkspecs/modules/qt_GammaRayUi.pri
 share/metainfo/com.kdab.GammaRay.metainfo.xml
 share/applications/GammaRay.desktop
-%%QT6%%share/doc/GammaRay/gammaray-manual.qch
-%%QT6%%share/doc/GammaRay/gammaray.qhc
+share/doc/GammaRay/gammaray-manual.qch
+share/doc/GammaRay/gammaray.qhc
 share/icons/hicolor/16x16/apps/GammaRay.png
 share/icons/hicolor/16x16@2/apps/GammaRay.png
 share/icons/hicolor/16x16@3/apps/GammaRay.png
