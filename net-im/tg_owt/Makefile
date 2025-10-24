@@ -2,7 +2,7 @@ PORTNAME=	tg_owt
 PORTVERSION=	0.0.20250914
 CATEGORIES=	net-im
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Webrtc library used by telegram-desktop
 WWW=		https://github.com/desktop-app/tg_owt
 
