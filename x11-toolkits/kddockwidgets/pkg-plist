@@ -60,6 +60,7 @@ include/kddockwidgets-qt6/kddockwidgets/qtquick/MainWindowInstantiator.h
 include/kddockwidgets-qt6/kddockwidgets/qtquick/MainWindowMDI.h
 include/kddockwidgets-qt6/kddockwidgets/qtquick/MainWindowMDIInstantiator.h
 include/kddockwidgets-qt6/kddockwidgets/qtquick/Platform.h
+include/kddockwidgets-qt6/kddockwidgets/qtquick/QmlConfig.h
 include/kddockwidgets-qt6/kddockwidgets/qtquick/RubberBand.h
 include/kddockwidgets-qt6/kddockwidgets/qtquick/Separator.h
 include/kddockwidgets-qt6/kddockwidgets/qtquick/SideBar.h
@@ -122,6 +123,6 @@ lib/cmake/KDDockWidgets-qt6/KDDockWidgets-qt6ConfigVersion.cmake
 lib/cmake/KDDockWidgets-qt6/KDDockWidgets-qt6Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KDDockWidgets-qt6/KDDockWidgets-qt6Targets.cmake
 lib/libkddockwidgets-qt6.so
-lib/libkddockwidgets-qt6.so.2.2
-lib/libkddockwidgets-qt6.so.2.2.5
+lib/libkddockwidgets-qt6.so.2.3.0
+lib/libkddockwidgets-qt6.so.3
 %%QT_MKSPECDIR%%/modules/qt_KDDockWidgets.pri
