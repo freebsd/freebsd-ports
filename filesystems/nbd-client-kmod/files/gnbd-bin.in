@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec env GEOM_LIBRARY_PATH="%%LOCALBASE%%/lib/geom" /sbin/geom nbd "$@"

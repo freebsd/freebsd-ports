@@ -1,3 +1,174 @@
 #!/bin/sh
 
-exec env GEOM_LIBRARY_PATH="%%LOCALBASE%%/lib/geom" /sbin/geom nbd "$@"
+# PROVIDE: gnbd
+# REQUIRE: NETWORKING
+#
+# Configuration settings for gnbd in /etc/rc.conf:
+#
+# gnbd_enable (bool):                    Enable gnbd. (default=NO)
+# gnbd_devices (list):                   List of devices.
+# gnbd_<device>_host (str):              Required. Host to connect to.
+# gnbd_<device>_conns (int):             Use this many parallel connections.
+# gnbd_<device>_port (int):              Port to connect to.
+# gnbd_<device>_exportname (str):        Connect to the named export.
+# gnbd_<device>_cacert (str):            Verify TLS connections against the PEM-formatted
+#                                        CA certificate at the given path.
+# gnbd_<device>_cert (str):              Make a TLS connection using the PEM-formatted
+#                                        client certificate at the given path.
+# gnbd_<device>_key (str):               Make a TLS connection using the PEM-formatted
+#                                        client key at the given path.
+# gnbd_<device>_waitsec (int):           Retry until connections are re-established, waiting
+#                                        this many seconds between successive retries.
+#
+# Commands for gnbd:
+#
+# start:          Connect to <device>.
+# stop:           Disconnect from <device>.
+# restart:        Reconnect to <device>.
+#                 Tip: Use the devd.conf(5) file included with this port.
+# status:         Get status of each <device>.
+#
+# Examples:
+#
+#   service gnbd start - Connect to all devices.
+#   service gnbd stop - Disconnect from all devices.
+#   service gnbd start <device> - Connect to a specific device.
+
+. /etc/rc.subr
+
+name="gnbd"
+desc="NBD client for FreeBSD GEOM framework"
+rcvar="${name}_enable"
+start_precmd="gnbd_prestart"
+start_cmd="gnbd_start"
+stop_cmd="gnbd_stop"
+restart_cmd="gnbd_restart"
+status_cmd="gnbd_status"
+gnbd_bin="%%PREFIX%%/sbin/${name}"
+
+load_rc_config $name
+
+: ${gnbd_enable:="NO"}
+
+gnbd_prestart()
+{
+	${gnbd_bin} load
+}
+
+gnbd_start()
+{
+    local device="$1"
+
+    local host conns port exportname cacert cert key
+    local var
+
+    for var in host conns port exportname cacert cert key; do
+        eval ${var}="\${gnbd_${device}_${var}}"
+
+        local value
+
+        eval value="\$${var}"
+
+        if [ -n "${value}" ]; then
+            debug "${var}=${value}"
+        fi
+    done
+
+    if [ -z "${host}" ]; then
+        echo "gnbd_${device}_host: host is not configured, ignoring this device..."
+        return 1
+    fi
+
+    local gnbd_args=
+
+    if [ -n "${conns}" ]; then
+        gnbd_args="-c ${conns}"
+    fi
+
+    if [ -n "${port}" ]; then
+        gnbd_args="${gnbd_args} -p ${port}"
+    fi
+
+    if [ -n "${exportname}" ]; then
+        gnbd_args="${gnbd_args} -n \"${exportname}\""
+    fi
+
+    if [ -n "${cacert}" ]; then
+        gnbd_args="${gnbd_args} -A \"${cacert}\""
+    fi
+
+    if [ -n "${cert}" ]; then
+        gnbd_args="${gnbd_args} -C \"${cert}\""
+    fi
+
+    if [ -n "${key}" ]; then
+        gnbd_args="${gnbd_args} -K \"${key}\""
+    fi
+
+    if [ -n "${gnbd_args}" ]; then
+        debug "gnbd args: ${gnbd_args}"
+    fi
+
+    if [ ! -c "/dev/${device}" ]; then
+        eval ${gnbd_bin} connect ${gnbd_args} ${host}
+    fi
+}
+
+gnbd_stop()
+{
+    local device="$1"
+
+    if [ -c "/dev/${device}" ]; then
+        ${gnbd_bin} disconnect ${device}
+    fi
+}
+
+gnbd_restart()
+{
+    local device="$1"
+
+    local waitsec
+
+    eval waitsec="\${gnbd_${device}_waitsec}"
+
+    local gnbd_args=
+
+    if [ -n "${waitsec}" ]; then
+        gnbd_args="-r ${waitsec}"
+
+        debug "waitsec=${waitsec}"
+    fi
+
+    if [ -n "${gnbd_args}" ]; then
+        debug "gnbd args: ${gnbd_args}"
+    fi
+
+    eval ${gnbd_bin} reconnect ${gnbd_args} ${device}
+}
+
+gnbd_status()
+{
+    local device="$1"
+
+    if [ -c "/dev/${device}" ]; then
+        ${gnbd_bin} status -s "${device}"
+    fi
+}
+
+cmd="$1"
+
+if [ $# -gt 0 ]; then
+    shift
+fi
+
+if [ -n "$1" ]; then
+    gnbd_devices="$1"
+fi
+
+if [ -z "${gnbd_devices}" ]; then
+    warn "No devices are configured, configure one to make this rc script useful!"
+fi
+
+for device in ${gnbd_devices}; do
+    run_rc_command "${cmd}" "${device}"
+done
