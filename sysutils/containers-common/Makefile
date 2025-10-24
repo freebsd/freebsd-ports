@@ -29,6 +29,10 @@ IMAGEVERSION=	5.36.2
 SKOPEOVERSION=	1.20.0
 STORAGEVERSION=	1.59.1
 
+post-patch:
+	${SED} -I '' /golangci/d ${WRKSRC_storage}/tests/tools/Makefile
+	${SED} -I '' -Ee s/go-md2man../go-md2man/ ${WRKSRC_storage}/tests/tools/Makefile
+
 do-build:
 	${GMAKE} -C ${WRKSRC_common}/docs
 	${GMAKE} -C ${WRKSRC_storage} install.tools
