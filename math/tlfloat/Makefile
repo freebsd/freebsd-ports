@@ -4,7 +4,7 @@ DISTVERSION=	1.15.0
 PORTREVISION=	1
 CATEGORIES=	math
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ template library for floating point operations
 WWW=		https://shibatch.github.io/tlfloat-doxygen/
 
