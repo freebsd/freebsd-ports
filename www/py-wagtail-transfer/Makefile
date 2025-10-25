@@ -1,9 +1,9 @@
 PORTNAME=	wagtail-transfer
 PORTVERSION=	0.10
-DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
-#MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	wagtail_transfer-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Content transfer for Wagtail
@@ -20,8 +20,5 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	wagtail
 
 .include <bsd.port.mk>
