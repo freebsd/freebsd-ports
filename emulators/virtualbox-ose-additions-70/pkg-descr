@@ -1,0 +1,6 @@
+VirtualBox Guest Additions provide closer integration between host and
+guest, and improve the performance of guest systems.
+
+This FreeBSD provided package can be installed in FreeBSD guest machines.
+
+Additions are not intended for use on Host machines.
