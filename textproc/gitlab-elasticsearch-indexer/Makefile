@@ -1,7 +1,6 @@
 PORTNAME=	gitlab-elasticsearch-indexer
-PORTVERSION=	5.7.0
+PORTVERSION=	5.9.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	textproc
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -11,7 +10,8 @@ WWW=		https://gitlab.com/gitlab-org/gitlab-elasticsearch-indexer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	git>=2.38.1:devel/git
+BUILD_DEPENDS=	git>=2.38.1:devel/git \
+		gitlab-code-parser>=0.20.1:textproc/gitlab-code-parser
 LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libicuuc.so:devel/icu
 #RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool
@@ -28,6 +28,9 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 MAKE_ENV+=	${GO_ENV}
 
 PLIST_FILES=	bin/${PORTNAME}
+
+post-patch:
+	${REINPLACE_CMD} -e '/libparser-download/d' ${WRKSRC}/Makefile
 
 # add a git tag, as that is required by the build script
 pre-build:

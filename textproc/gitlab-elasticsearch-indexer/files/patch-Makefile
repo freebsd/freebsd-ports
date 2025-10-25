@@ -1,0 +1,11 @@
+--- Makefile.orig	2025-10-25 04:31:58 UTC
++++ Makefile
+@@ -67,7 +67,7 @@ all: build
+ all: build
+ 
+ .PHONY: build
+-build: tmp/libparser
++build:
+ 	$(if ${FORCE_BUILD}, @echo "Forcing a rebuild since pkg-config flags changed since last run")
+ 	$Q PKG_CONFIG_PATH="${PKG_CONFIG_PATH}" $(GO) build $(if ${FORCE_BUILD},-a) $(if $V,-v) $(VERSION_FLAGS) -o bin/gitlab-elasticsearch-indexer .
+ 
