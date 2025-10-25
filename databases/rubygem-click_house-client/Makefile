@@ -1,5 +1,5 @@
 PORTNAME=	click_house-client
-PORTVERSION=	0.3.5
+PORTVERSION=	0.5.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
