@@ -1,0 +1,15 @@
+The Perspective package provides multiple named workspaces (or
+"perspectives") in Emacs, similar to multiple desktops in window
+managers like Awesome and XMonad, and Spaces on the Mac.
+
+Each perspective has its own buffer list and its own window layout,
+along with some other isolated niceties, like the xref ring. This
+makes it easy to work on many separate projects without getting lost
+in all the buffers. Switching to a perspective activates its window
+configuration, and when in a perspective, only its buffers are
+available (by default).
+
+Each Emacs frame has a distinct list of perspectives.
+
+Perspective supports saving its state to a file, so long-lived work
+sessions may be saved and recovered as needed.
