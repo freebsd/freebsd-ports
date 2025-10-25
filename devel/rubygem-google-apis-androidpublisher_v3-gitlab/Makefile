@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-androidpublisher_v3
-PORTVERSION=	0.84.0
+PORTVERSION=	0.86.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -16,7 +16,5 @@ RUN_DEPENDS=	rubygem-google-apis-core-gitlab>=0.15.0<2.0:devel/rubygem-google-ap
 USES=		gem
 
 NO_ARCH=	yes
-
-PORTSCOUT=	limit:^0\.84\.
 
 .include <bsd.port.mk>
