@@ -26,7 +26,6 @@ include/njs_generator.h
 include/njs_iterator.h
 include/njs_json.h
 include/njs_lexer.h
-include/njs_lvlhsh.h
 include/njs_main.h
 include/njs_malloc.h
 include/njs_math.h
@@ -66,5 +65,6 @@ include/njs_variable.h
 include/njs_vm.h
 include/njs_vmcode.h
 include/qjs.h
+include/quickjs_compat.h
 lib/libnjs.a
 libdata/pkgconfig/njs.pc
