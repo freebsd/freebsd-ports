@@ -1,9 +1,9 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	7.1.14
+DISTVERSION=	7.0.26
 PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/
-PKGNAMESUFFIX?=	-additions-71
+PKGNAMESUFFIX?=	-additions-70
 DISTNAME=	VirtualBox-${DISTVERSION}
 
 MAINTAINER=	vbox@FreeBSD.org
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	yasm:devel/yasm \
 		kmk:devel/kBuild \
 		xsltproc:textproc/libxslt
 
-USES=		compiler:c++17-lang cpe iconv kmod tar:bzip2
+USES=		compiler:c++14-lang cpe iconv kmod tar:bzip2
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 USE_RC_SUBR=	vboxguest vboxservice
@@ -37,18 +37,14 @@ CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
 MAKE_JOBS_UNSAFE=	yes
 
-CONFLICTS_INSTALL=	virtualbox-ose-additions-legacy \
-			virtualbox-ose-additions-nox11-legacy \
-			virtualbox-ose-additions \
+CONFLICTS_INSTALL=	virtualbox-ose-additions \
 			virtualbox-ose-additions-nox11 \
-			virtualbox-ose-additions-70 \
-			virtualbox-ose-additions-nox11-70 \
-			virtualbox-ose-additions-72 \
-			virtualbox-ose-additions-nox11-72
+			virtualbox-ose-additions-legacy \
+			virtualbox-ose-additions-nox11-legacy
 
-PATCHDIR=		${.CURDIR}/../${PORTNAME}-71/files
+PATCHDIR=		${.CURDIR}/../${PORTNAME}-70/files
 EXTRACT_AFTER_ARGS=	--exclude tools/*.x86 --exclude tools/*.amd64 --exclude Firmware
-PORTSCOUT=		limit:^7\.1\.
+PORTSCOUT=		limit:^7\.0\.
 
 WRKSRC=			${WRKDIR}/VirtualBox-${DISTVERSION}
 
@@ -70,9 +66,9 @@ X11_VARS=		VBOX_WITH_X11=1
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == no
-CONFLICTS_INSTALL+=	virtualbox-ose-additions-nox11-71
+CONFLICTS_INSTALL+=	virtualbox-ose-additions-nox11-70
 .else
-CONFLICTS_INSTALL+=	virtualbox-ose-additions-71
+CONFLICTS_INSTALL+=	virtualbox-ose-additions-70
 .endif
 
 VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers
