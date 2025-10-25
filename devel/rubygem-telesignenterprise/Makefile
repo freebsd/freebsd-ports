@@ -1,5 +1,5 @@
 PORTNAME=	telesignenterprise
-PORTVERSION=	2.3.1
+PORTVERSION=	2.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,7 @@ WWW=		https://rubygems.org/gems/telesignenterprise
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-telesign>=2.2.3<2.3:devel/rubygem-telesign
+RUN_DEPENDS=	rubygem-telesign>=2.4.0<2.5:devel/rubygem-telesign
 
 USES=		gem
 
