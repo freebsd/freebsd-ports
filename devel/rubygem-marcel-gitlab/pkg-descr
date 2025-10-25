@@ -1,0 +1,3 @@
+Marcel attempts to choose the most appropriate content type for a given file by
+looking at the binary data, the filename, and any declared type (perhaps passed
+as a request header).
