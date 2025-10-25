@@ -1,9 +1,9 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	6.1.50
-PORTREVISION?=	2
+DISTVERSION=	7.1.14
+PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/
-PKGNAMESUFFIX?=	-additions
+PKGNAMESUFFIX?=	-additions-71
 DISTNAME=	VirtualBox-${DISTVERSION}
 
 MAINTAINER=	vbox@FreeBSD.org
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	yasm:devel/yasm \
 		kmk:devel/kBuild \
 		xsltproc:textproc/libxslt
 
-USES=		compiler:c++11-lang cpe iconv kmod tar:bzip2
+USES=		compiler:c++17-lang cpe iconv kmod tar:bzip2
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 USE_RC_SUBR=	vboxguest vboxservice
@@ -39,16 +39,16 @@ MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	virtualbox-ose-additions-legacy \
 			virtualbox-ose-additions-nox11-legacy \
+			virtualbox-ose-additions \
+			virtualbox-ose-additions-nox11 \
 			virtualbox-ose-additions-70 \
 			virtualbox-ose-additions-nox11-70 \
-			virtualbox-ose-additions-71 \
-			virtualbox-ose-additions-nox11-71 \
 			virtualbox-ose-additions-72 \
 			virtualbox-ose-additions-nox11-72
 
-PATCHDIR=		${.CURDIR}/../${PORTNAME}/files
+PATCHDIR=		${.CURDIR}/../${PORTNAME}-71/files
 EXTRACT_AFTER_ARGS=	--exclude tools/*.x86 --exclude tools/*.amd64 --exclude Firmware
-PORTSCOUT=		limit:^6\.
+PORTSCOUT=		limit:^7\.1\.
 
 WRKSRC=			${WRKDIR}/VirtualBox-${DISTVERSION}
 
@@ -70,9 +70,9 @@ X11_VARS=		VBOX_WITH_X11=1
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == no
-CONFLICTS_INSTALL+=	virtualbox-ose-additions-nox11
+CONFLICTS_INSTALL+=	virtualbox-ose-additions-nox11-71
 .else
-CONFLICTS_INSTALL+=	virtualbox-ose-additions
+CONFLICTS_INSTALL+=	virtualbox-ose-additions-71
 .endif
 
 VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers
@@ -86,7 +86,7 @@ VBOX_SBINS=	VBoxControl \
 BUILD_WRKSRC=	${VBOX_BIN}/src
 
 KMK_ARCH=	freebsd.${ARCH:S/i386/x86/}
-KMK_CONFIG+=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
+KMK_CONFIG+=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys VBOX_ONLY_ADDITIONS=1
 
 .if ${PORT_OPTIONS:MX11}
 .else
@@ -96,7 +96,6 @@ VBOX_WITH_X11=
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${ECHO_CMD} 'VBOX_ONLY_ADDITIONS = 1' > ${WRKSRC}/LocalConfig.kmk
 	@${ECHO_CMD} 'VBOX_WITH_DRAG_AND_DROP = ${VBOX_WITH_X11}' >> \
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO_CMD} 'VBOX_WITH_DRAG_AND_DROP_GH = ${VBOX_WITH_X11}' >> \
