@@ -1,7 +1,6 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.3
-PORTREVISION=	3
+DISTVERSION=	2.7.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/:netdata \
 		https://raw.githubusercontent.com/netdata/netdata/refs/tags/v${DISTVERSION}/src/go/:goplugin \
@@ -50,7 +49,8 @@ CMAKE_OFF=	ENABLE_PLUGIN_EBPF \
 		ENABLE_PLUGIN_SYSTEMD_JOURNAL \
 		ENABLE_PLUGIN_CGROUP_NETWORK \
 		ENABLE_PLUGIN_LOCAL_LISTENERS \
-		ENABLE_PLUGIN_NETWORK_VIEWER
+		ENABLE_PLUGIN_NETWORK_VIEWER \
+		ENABLE_NETDATA_JOURNAL_FILE_READER
 
 CFLAGS+=	-D_WANT_VMMETER
 
@@ -75,22 +75,24 @@ NETDATA_CACHE=	/var/cache/${PORTNAME}
 NETDATA_LOG=	/var/log/${PORTNAME}
 NETDATA_PERST=	/var/db/${PORTNAME}
 NETDATA_RUN=	/var/run/${PORTNAME}
-NETDATA_DASHBOARD_VERSION=	20250824
+NETDATA_DASHBOARD_VERSION=	20251023
 
 PLIST_SUB=	NETDATA_CACHE=${NETDATA_CACHE} \
 		NETDATA_LOG=${NETDATA_LOG} \
 		NETDATA_PERST=${NETDATA_PERST} \
 		NETDATA_RUN=${NETDATA_RUN}
 
-OPTIONS_DEFINE=		CUPS DASHBOARD FREEIPMI GOPLUGIN ML PROMETHEUS
+OPTIONS_DEFINE=		CUPS DASHBOARD FREEIPMI GOPLUGIN ML OPENTELEMETRY \
+			PROMETHEUS
 OPTIONS_DEFAULT=	DASHBOARD GOPLUGIN ML
-OPTIONS_SUB=		YES
+OPTIONS_SUB=		yes
 
 CUPS_DESC=		Enable support for cups
 DASHBOARD_DESC=		Enable agent dashboard
 FREEIPMI_DESC=		Enable support for freeipmi
 GOPLUGIN_DESC=		Enable the go collector plugin
 ML_DESC=		Enable anomaly detection via dlib
+OPENTELEMETRY_DESC=	Enable collection of OpenTelemetry metrics and logs
 PROMETHEUS_DESC=	Enable prometheus remote write exporter
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_CMAKE_BOOL=	ENABLE_PLUGIN_CUPS
@@ -104,6 +106,9 @@ GOPLUGIN_USES=		go:no_targets,modules
 GOPLUGIN_CMAKE_BOOL=	ENABLE_PLUGIN_GO
 ML_BUILD_DEPENDS=	${LOCALBASE}/include/dlib/matrix.h:science/dlib-cpp
 ML_CMAKE_BOOL=		ENABLE_ML
+OPENTELEMETRY_BROKEN=		when using a proxy and in poudriere - download during build
+OPENTELEMETRY_BUILD_DEPENDS=	${LOCALBASE}/share/cmake/Corrosion.cmake:devel/corrosion
+OPENTELEMETRY_CMAKE_BOOL=	ENABLE_PLUGIN_OTEL
 PROMETHEUS_LIB_DEPENDS=	libsnappy.so:archivers/snappy \
 			libabsl_base.so:devel/abseil \
 			libprotobuf.so:devel/protobuf
@@ -112,6 +117,12 @@ PROMETHEUS_CMAKE_BOOL=	ENABLE_EXPORTER_PROMETHEUS_REMOTE_WRITE
 post-fetch-GOPLUGIN-on:
 	@(cd ${DISTDIR}/${DIST_SUBDIR}; \
 		${SETENVI} ${WRK_ENV} \
+		${HTTP_PROXY:DHTTP_PROXY=${HTTP_PROXY:Q}} \
+		${http_proxy:Dhttp_proxy=${http_proxy:Q}} \
+		${HTTPS_PROXY:DHTTPS_PROXY=${HTTPS_PROXY:Q}} \
+		${https_proxy:Dhttps_proxy=${https_proxy:Q}} \
+		${NO_PROXY:DNO_PROXY=${NO_PROXY:Q}} \
+		${no_proxy:Dno_proxy=${no_proxy:Q}} \
 		${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
 
 post-extract-GOPLUGIN-on:
