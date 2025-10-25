@@ -1,5 +1,6 @@
 PORTNAME=	pgcli
 PORTVERSION=	4.3.0
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,6 +40,6 @@ KEYRING_DESC=	keyring support
 SSHTUNNEL_DESC=	SSH tunnel support
 
 KEYRING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyring>=12.2.0,1:security/py-keyring@${PY_FLAVOR}
-SSHTUNNEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sshtunnel>=0:net/py-sshtunnel@${PY_FLAVOR}
+SSHTUNNEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sshtunnel>=0.4.0:net/py-sshtunnel@${PY_FLAVOR}
 
 .include <bsd.port.mk>
