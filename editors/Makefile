@@ -22,6 +22,7 @@
     SUBDIR += calligraplan
     SUBDIR += chexedit
     SUBDIR += cooledit
+    SUBDIR += consult.el
     SUBDIR += cpeditor
     SUBDIR += cream
     SUBDIR += cudatext
