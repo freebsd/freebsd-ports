@@ -37,10 +37,14 @@ CONFIGURE_ARGS+=	--nofatal --with-gcc="${CC}" --with-g++="${CXX}"
 
 MAKE_JOBS_UNSAFE=	yes
 
-CONFLICTS_INSTALL=	virtualbox-ose-additions \
+CONFLICTS_INSTALL=	virtualbox-ose-additions-legacy \
+			virtualbox-ose-additions-nox11-legacy \
+			virtualbox-ose-additions \
 			virtualbox-ose-additions-nox11 \
-			virtualbox-ose-additions-legacy \
-			virtualbox-ose-additions-nox11-legacy
+			virtualbox-ose-additions-71 \
+			virtualbox-ose-additions-nox11-71 \
+			virtualbox-ose-additions-72 \
+			virtualbox-ose-additions-nox11-72
 
 PATCHDIR=		${.CURDIR}/../${PORTNAME}-70/files
 EXTRACT_AFTER_ARGS=	--exclude tools/*.x86 --exclude tools/*.amd64 --exclude Firmware
