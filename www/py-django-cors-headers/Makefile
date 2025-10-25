@@ -1,9 +1,9 @@
 PORTNAME=	django-cors-headers
-PORTVERSION=	4.7.0
+DISTVERSION=	4.9.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	django_cors_headers-${PORTVERSION}
+DISTNAME=	django_cors_headers-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Handles server headers required for Cross-Origin Resource Sharing
