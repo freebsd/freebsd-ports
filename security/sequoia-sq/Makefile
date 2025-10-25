@@ -1,9 +1,10 @@
-PORTNAME=	sq
-DISTVERSIONPREFIX=	v
+PORTNAME=	sequoia-sq
 DISTVERSION=	1.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
-PKGNAMEPREFIX=	sequoia-
+MASTER_SITES=	CRATESIO
+# XXX Teach USES=cargo to have proper default
+DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Sequoia-PGP command line tool
@@ -16,10 +17,6 @@ BUILD_DEPENDS=	capnp:devel/capnproto
 LIB_DEPENDS=	libnettle.so:security/nettle
 
 USES=	cargo llvm sqlite ssl
-
-USE_GITLAB=	yes
-GL_ACCOUNT=	sequoia-pgp
-GL_PROJECT=	${PKGNAMEPREFIX}${PORTNAME}
 
 CARGO_ENV+=	ASSET_OUT_DIR=${CARGO_TARGET_DIR}
 
@@ -38,17 +35,17 @@ CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 
 post-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
-	${INSTALL_DATA} ${CARGO_TARGET_DIR}/shell-completions/${PORTNAME}.bash \
-		${STAGEDIR}${PREFIX}/share/bash-completion/completions/${PORTNAME}
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/shell-completions/sq.bash \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/sq
 
 post-install-ELVISH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/elvish/lib
-	${INSTALL_DATA} ${CARGO_TARGET_DIR}/shell-completions/${PORTNAME}.elv \
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/shell-completions/sq.elv \
 		${STAGEDIR}${PREFIX}/share/elvish/lib
 
 post-install-FISH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
-	${INSTALL_DATA} ${CARGO_TARGET_DIR}/shell-completions/${PORTNAME}.fish \
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/shell-completions/sq.fish \
 		${STAGEDIR}${PREFIX}/share/fish/completions
 
 post-install-MANPAGES-on:
@@ -57,8 +54,8 @@ post-install-MANPAGES-on:
 
 post-install-ZSH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${CARGO_TARGET_DIR}/shell-completions/_${PORTNAME} \
-	${CARGO_TARGET_DIR}/shell-completions/_${PORTNAME}.ps1 \
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/shell-completions/_sq \
+		${CARGO_TARGET_DIR}/shell-completions/_sq.ps1 \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
 .include <bsd.port.post.mk>

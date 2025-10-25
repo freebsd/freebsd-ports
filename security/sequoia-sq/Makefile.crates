@@ -236,6 +236,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		log-0.4.26 \
 		loom-0.5.6 \
 		lru-cache-0.1.2 \
+		lru-slab-0.1.2 \
 		marked-yaml-0.7.2 \
 		match_cfg-0.1.0 \
 		matchers-0.1.0 \
@@ -246,7 +247,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.5 \
 		mio-1.0.3 \
-		native-tls-0.2.13 \
+		native-tls-0.2.14 \
 		nettle-7.4.0 \
 		nettle-sys-2.3.1 \
 		new_debug_unreachable-1.0.6 \
@@ -309,11 +310,17 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pulldown-cmark-0.12.2 \
 		pulldown-cmark-escape-0.11.0 \
 		quick-error-1.2.3 \
+		quinn-0.11.9 \
+		quinn-proto-0.11.13 \
+		quinn-udp-0.5.14 \
 		quote-1.0.39 \
 		radix_trie-0.2.1 \
 		rand-0.8.5 \
+		rand-0.9.2 \
 		rand_chacha-0.3.1 \
+		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
+		rand_core-0.9.3 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.5.9 \
@@ -338,9 +345,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rusqlite-0.31.0 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
+		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
 		rustls-0.23.23 \
+		rustls-native-certs-0.8.2 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.11.0 \
 		rustls-webpki-0.102.8 \
@@ -479,6 +488,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wasm-streams-0.4.2 \
 		web-sys-0.3.77 \
 		web-time-1.1.0 \
+		webpki-roots-0.26.11 \
+		webpki-roots-1.0.3 \
 		widestring-1.1.0 \
 		win-crypto-ng-0.5.1 \
 		winapi-0.3.9 \
