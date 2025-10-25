@@ -22,4 +22,6 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=		yes
 
+PORTSCOUT=	ignore:1
+
 .include <bsd.port.mk>
