@@ -1,8 +1,8 @@
 PORTNAME=	multi_json
-PORTVERSION=	1.14.1
+PORTVERSION=	1.17.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
-PKGNAMESUFFIX=	114
+PKGNAMESUFFIX=	-gitlab
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby library provide swappable JSON backends
