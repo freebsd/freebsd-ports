@@ -8179,7 +8179,7 @@
     SUBDIR += rubygem-virtus
     SUBDIR += rubygem-vite_rails-gitlab
     SUBDIR += rubygem-vite_ruby
-    SUBDIR += rubygem-vite_ruby33
+    SUBDIR += rubygem-vite_ruby-gitlab
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-warden
     SUBDIR += rubygem-warning
