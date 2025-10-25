@@ -97,7 +97,7 @@ LINUX_DEFAULT?=		rl9
 LLVM_DEFAULT?=		19
 # Possible values: 5.1, 5.2, 5.3, 5.4
 LUA_DEFAULT?=		5.4
-# Possible values: luajit, luajit-devel, luajit-openresty
+# Possible values: luajit, luajit-openresty
 .  if ${ARCH:Mpowerpc64*}
 LUAJIT_DEFAULT?=	luajit-openresty
 .  else
