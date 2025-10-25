@@ -10,7 +10,7 @@ COMMENT=	Cartographic Projections library
 WWW=		https://github.com/OSGeo/PROJ
 
 LICENSE=	MIT
-#LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	nlohmann-json>=3:devel/nlohmann-json
 LIB_DEPENDS=	libcurl.so:ftp/curl \
