@@ -25,4 +25,7 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=		yes
 
+# Release 25.2 dropped support for Django < 5.2
+PORTSCOUT=	ignore:1
+
 .include <bsd.port.mk>
