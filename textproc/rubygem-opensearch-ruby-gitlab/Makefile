@@ -1,5 +1,6 @@
 PORTNAME=	opensearch-ruby
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -12,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-faraday-gitlab>=1.0<3:www/rubygem-faraday-gitlab \
-		rubygem-multi_json>=1.0:devel/rubygem-multi_json
+		rubygem-multi_json-gitlab>=1.0:devel/rubygem-multi_json-gitlab
 
 USES=		gem
 
