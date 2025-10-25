@@ -1,5 +1,5 @@
 PORTNAME=	strawberry-graphql-django
-DISTVERSION=	0.65.1
+DISTVERSION=	0.66.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.8:www/py-asgiref@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django42>=4.2:www/py-django42@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}strawberry-graphql>=0.276.2:devel/py-strawberry-graphql@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}strawberry-graphql>=0.283.3:devel/py-strawberry-graphql@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
@@ -31,7 +31,7 @@ OPTIONS_DEFAULT=	DEBUG-TOOLBAR ENUM
 DEBUG-TOOLBAR_DESC=	Debug support
 ENUM_DESC=		Integration for Django's TextChoices/IntegerChoices enumerations
 
-DEBUG-TOOLBAR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-debug-toolbar>=3.4:www/py-django-debug-toolbar@${PY_FLAVOR}
+DEBUG-TOOLBAR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-debug-toolbar>=6.0.0:www/py-django-debug-toolbar@${PY_FLAVOR}
 ENUM_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}django-choices-field>=2.2.2:www/py-django-choices-field@${PY_FLAVOR}
 
 .include <bsd.port.mk>
