@@ -1,6 +1,7 @@
 PORTNAME=	node
 PORTVERSION=	${NODEJS_PORTVERSION}
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	${PORTVERSION:R:R}
@@ -21,6 +22,7 @@ BUILD_DEPENDS=	objdump:devel/binutils
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
 		libicui18n.so:devel/icu \
+		libllhttp.so:www/llhttp \
 		libnghttp2.so:www/libnghttp2 \
 		libnghttp3.so:www/libnghttp3 \
 		libngtcp2.so:net/libngtcp2 \
@@ -32,6 +34,8 @@ USES=		compiler:c++11-lang gmake localbase pkgconfig python:build shebangfix tar
 CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-brotli \
 		--shared-cares \
+		--shared-http-parser \
+		--shared-http-parser-libname=llhttp \
 		--shared-libuv \
 		--shared-nghttp2 \
 		--shared-nghttp3 \
@@ -80,6 +84,8 @@ post-patch:
 # Clean up bundled libraries
 	@${RM} -r ${WRKSRC}/deps/brotli/
 	@${RM} -r ${WRKSRC}/deps/cares/
+	@${RM} -r ${WRKSRC}/deps/icu-small/
+	@${RM} -r ${WRKSRC}/deps/llhttp/
 	@${RM} -r ${WRKSRC}/deps/nghttp2/
 	@${RM} -r ${WRKSRC}/deps/ngtcp2/
 	@${RM} -r ${WRKSRC}/deps/npm/
