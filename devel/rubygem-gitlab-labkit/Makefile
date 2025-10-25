@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-labkit
-PORTVERSION=	0.39.0
-PORTREVISION=	1
+PORTVERSION=	0.40.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,9 +15,10 @@ RUN_DEPENDS=	rubygem-actionpack-gitlab>=5<8.1:www/rubygem-actionpack-gitlab \
 		rubygem-google-protobuf3>=3<4:devel/rubygem-google-protobuf3 \
 		rubygem-grpc-gitlab>=1.62:net/rubygem-grpc-gitlab \
 		rubygem-jaeger-client>=1.1.0<1.2:devel/rubygem-jaeger-client \
+		rubygem-json-schema-gitlab>=5.1<6:devel/rubygem-json-schema-gitlab \
 		rubygem-opentracing>=0.4<1:devel/rubygem-opentracing \
 		rubygem-pg_query>=6.1.0<7:databases/rubygem-pg_query \
-		rubygem-prometheus-client-mmap>=1.2.8<1.3:devel/rubygem-prometheus-client-mmap \
+		rubygem-prometheus-client-mmap>=1.2.9<1.3:devel/rubygem-prometheus-client-mmap \
 		rubygem-redis-gitlab>3.0.0<6.0.0:databases/rubygem-redis-gitlab
 
 USES=		gem
