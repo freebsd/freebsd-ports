@@ -1,0 +1,6 @@
+This package provides an orderless completion style that divides the
+pattern into space-separated components, and matches candidates that
+match all of the components in any order. Each component can match in
+any one of several ways: literally, as a regexp, as an initialism, in
+the flex style, or as multiple word prefixes. By default, regexp and
+literal matches are enabled.

@@ -225,6 +225,7 @@
     SUBDIR += omegaT
     SUBDIR += openoffice-4
     SUBDIR += openoffice-devel
+    SUBDIR += orderless.el
     SUBDIR += orbiton
     SUBDIR += ox
     SUBDIR += p5-Proc-InvokeEditor
