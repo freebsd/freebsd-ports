@@ -1,15 +1,17 @@
---- src/VBox/Additions/common/VBoxGuest/freebsd/Makefile.orig	2025-08-13 19:41:14 UTC
+--- src/VBox/Additions/common/VBoxGuest/freebsd/Makefile.orig	2025-10-16 14:25:29 UTC
 +++ src/VBox/Additions/common/VBoxGuest/freebsd/Makefile
-@@ -35,7 +35,7 @@ KMOD = vboxguest
+@@ -34,9 +34,8 @@ KMOD = vboxguest
+ # SPDX-License-Identifier: GPL-3.0-only OR CDDL-1.0
  #
  KMOD = vboxguest
- 
--CFLAGS += -DRT_OS_FREEBSD -DIN_RING0 -DIN_RT_R0 -DIN_SUP_R0 -DVBOX -DRT_WITH_VBOX -Iinclude -I. -Ir0drv -w -DVBGL_VBOXGUEST -DVBOX_WITH_HGCM -DVBOX_WITH_64_BITS_GUESTS
 +CFLAGS += -DRT_OS_FREEBSD -DIN_RING0 -DIN_RT_R0 -DIN_GUEST -DIN_GUEST_R0 -DIN_SUP_R0 -DVBOX -DRT_WITH_VBOX -Iinclude -I. -Ir0drv -w -DVBGL_VBOXGUEST -DVBOX_WITH_HGCM -DVBOX_WITH_64_BITS_GUESTS
  
+-CFLAGS += -DRT_OS_FREEBSD -DIN_RING0 -DIN_RT_R0 -DIN_SUP_R0 -DVBOX -DRT_WITH_VBOX -Iinclude -I. -Ir0drv -w -DVBGL_VBOXGUEST -DVBOX_WITH_HGCM -DVBOX_WITH_64_BITS_GUESTS
+-
  .if (${MACHINE_ARCH} == "i386")
   CFLAGS += -DRT_ARCH_X86
-@@ -91,6 +91,7 @@ SRCS += \
+ .elif (${MACHINE_ARCH} == "amd64")
+@@ -91,6 +90,7 @@ SRCS += \
  	handletable.c \
  	handletablectx.c \
  	once.c \
@@ -17,7 +19,7 @@
  	thread.c
  
  .PATH:	${.CURDIR}/common/string
-@@ -163,6 +164,7 @@ SRCS += \
+@@ -163,6 +163,7 @@ SRCS += \
  
  .PATH:	${.CURDIR}/r0drv
  SRCS += \
@@ -25,3 +27,12 @@
  	alloc-r0drv.c \
  	initterm-r0drv.c \
  	memobj-r0drv.c \
+@@ -196,7 +197,7 @@ SRCS += \
+ SRCS += \
+ 	log-vbox.c \
+ 	logbackdoor.c \
+-	RTLogWriteVmm-amd64-x86.
++	RTLogWriteVmm-amd64-x86.c
+ 
+ .include <bsd.kmod.mk>
+ 

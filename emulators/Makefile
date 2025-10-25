@@ -163,10 +163,12 @@
     SUBDIR += virtualbox-ose-additions
     SUBDIR += virtualbox-ose-additions-70
     SUBDIR += virtualbox-ose-additions-71
+    SUBDIR += virtualbox-ose-additions-72
     SUBDIR += virtualbox-ose-additions-legacy
     SUBDIR += virtualbox-ose-additions-nox11
     SUBDIR += virtualbox-ose-additions-nox11-70
     SUBDIR += virtualbox-ose-additions-nox11-71
+    SUBDIR += virtualbox-ose-additions-nox11-72
     SUBDIR += virtualbox-ose-additions-nox11-legacy
     SUBDIR += virtualbox-ose-kmod
     SUBDIR += virtualbox-ose-kmod-70

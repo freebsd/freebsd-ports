@@ -1,4 +1,4 @@
---- src/VBox/Additions/common/VBoxGuest/VBoxGuest-freebsd.c.orig	2025-08-13 19:41:14 UTC
+--- src/VBox/Additions/common/VBoxGuest/VBoxGuest-freebsd.c.orig	2025-10-16 14:25:28 UTC
 +++ src/VBox/Additions/common/VBoxGuest/VBoxGuest-freebsd.c
 @@ -55,6 +55,7 @@
  #include <sys/uio.h>
@@ -147,7 +147,7 @@
       * Create a new session.
       */
      fRequestor = VMMDEV_REQUESTOR_USERMODE | VMMDEV_REQUESTOR_TRUST_NOT_GIVEN;
-@@ -272,47 +211,20 @@ static int vgdrvFreeBSDOpen(struct cdev *pDev, int fOp
+@@ -272,14 +211,13 @@ static int vgdrvFreeBSDOpen(struct cdev *pDev, int fOp
      rc = VGDrvCommonCreateUserSession(&g_DevExt, fRequestor, &pSession);
      if (RT_SUCCESS(rc))
      {
@@ -168,10 +168,10 @@
      }
  
      LogRel(("vgdrvFreeBSDOpen: failed. rc=%d\n", rc));
-     return RTErrConvertToErrno(rc);
+@@ -287,33 +225,6 @@ static int vgdrvFreeBSDOpen(struct cdev *pDev, int fOp
  }
  
--/**
+ /**
 - * File close handler
 - *
 - */
@@ -179,7 +179,7 @@
 -{
 -    PVBOXGUESTSESSION pSession = (PVBOXGUESTSESSION)pDev->si_drv1;
 -    Log(("vgdrvFreeBSDClose: fFile=%#x pSession=%p\n", fFile, pSession));
- 
+-
 -    /*
 -     * Close the session if it's still hanging on to the device...
 -     */
@@ -198,10 +198,11 @@
 -}
 -
 -
- /**
+-/**
   * I/O control request.
   *
-@@ -326,8 +238,12 @@ static int vgdrvFreeBSDIOCtl(struct cdev *pDev, u_long
+  * @returns depends...
+@@ -326,8 +237,12 @@ static int vgdrvFreeBSDIOCtl(struct cdev *pDev, u_long
  static int vgdrvFreeBSDIOCtl(struct cdev *pDev, u_long ulCmd, caddr_t pvData, int fFile, struct thread *pTd)
  {
      PVBOXGUESTSESSION pSession;
@@ -215,20 +216,25 @@
      /*
       * Deal with the fast ioctl path first.
       */
-@@ -526,8 +442,10 @@ static int vgdrvFreeBSDPoll(struct cdev *pDev, int fEv
+@@ -522,12 +437,14 @@ static int vgdrvFreeBSDPoll(struct cdev *pDev, int fEv
+ 
+ static int vgdrvFreeBSDPoll(struct cdev *pDev, int fEvents, struct thread *td)
+ {
+-    int fEventsProcessed;
++    PVBOXGUESTSESSION pSession;
++    int fEventsProcessed, rc;
  
      LogFlow(("vgdrvFreeBSDPoll: fEvents=%d\n", fEvents));
  
 -    PVBOXGUESTSESSION pSession = (PVBOXGUESTSESSION)pDev->si_drv1;
 -    if (RT_UNLIKELY(!RT_VALID_PTR(pSession))) {
-+
 +    rc = devfs_get_cdevpriv((void **)&pSession);
 +    if (rc)
-+      {
++    {
          Log(("vgdrvFreeBSDPoll: no state data for %s\n", devtoname(pDev)));
          return (fEvents & (POLLHUP|POLLIN|POLLRDNORM|POLLOUT|POLLWRNORM));
      }
-@@ -568,11 +486,8 @@ static int vgdrvFreeBSDDetach(device_t pDevice)
+@@ -568,11 +485,8 @@ static int vgdrvFreeBSDDetach(device_t pDevice)
      /*
       * Reverse what we did in vgdrvFreeBSDAttach.
       */
@@ -241,7 +247,7 @@
      vgdrvFreeBSDRemoveIRQ(pDevice, pState);
  
      if (pState->pVMMDevMemRes)
-@@ -738,18 +653,21 @@ static int vgdrvFreeBSDAttach(device_t pDevice)
+@@ -738,18 +652,21 @@ static int vgdrvFreeBSDAttach(device_t pDevice)
                      VGDrvCommonProcessOptionsFromHost(&g_DevExt);
  
                      /*
@@ -269,7 +275,7 @@
                      vgdrvFreeBSDRemoveIRQ(pDevice, pState);
                  }
                  else
-@@ -793,8 +711,12 @@ static driver_t vgdrvFreeBSDDriver =
+@@ -793,8 +710,12 @@ static driver_t vgdrvFreeBSDDriver =
      sizeof(struct VBoxGuestDeviceState),
  };
  
