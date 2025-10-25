@@ -1,6 +1,5 @@
 PORTNAME=	fog-google
-PORTVERSION=	1.24.1
-PORTREVISION=	1
+PORTVERSION=	1.25.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -13,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-addressable>=2.7.0:www/rubygem-addressable \
-		rubygem-fog-core-gitlab>=0<2.5:devel/rubygem-fog-core-gitlab \
+		rubygem-fog-core-gitlab>=2.5<3:devel/rubygem-fog-core-gitlab \
 		rubygem-fog-json-gitlab>=1.2<2:devel/rubygem-fog-json-gitlab \
 		rubygem-fog-xml-gitlab>=0.1.0<0.2:textproc/rubygem-fog-xml-gitlab \
 		rubygem-google-apis-compute_v1-gitlab>=0.53<1:devel/rubygem-google-apis-compute_v1-gitlab \
