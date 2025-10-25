@@ -4830,3 +4830,4 @@ mail/mu4e|mail/mu|2025-10-21|Becomes integrated as default to its backend port m
 sysutils/extrace|sysutils/extrace-freebsd|2025-10-24|Rename to better match upstream name
 devel/rubygem-vite_rails-rails70|devel/rubygem-vite_rails-gitlab|2025-10-25|Use devel/rubygem-vite_rails-gitlab instead
 devel/rubygem-vite_ruby33|devel/rubygem-vite_ruby-gitlab|2025-10-25|Use devel/rubygem-vite_ruby-gitlab instead
+devel/rubygem-multi_json114|devel/rubygem-multi_json-gitlab|2025-10-25|Use devel/rubygem-multi_json-gitlab instead
