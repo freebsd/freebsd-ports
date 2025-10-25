@@ -1,0 +1,14 @@
+This package provides marginalia-mode which adds marginalia to the
+minibuffer completions. Marginalia are marks or annotations placed at
+the margin of the page of a book or in this case helpful colorful
+annotations placed at the margin of the minibuffer for your completion
+candidates. Marginalia can only add annotations to the completion
+candidates. It cannot modify the appearance of the candidates
+themselves, which are shown unaltered as supplied by the original
+command.
+
+The annotations are added based on the completion category. For
+example find-file reports the file category and M-x reports the
+command category. You can cycle between more or less detailed
+annotators or even disable the annotator with command
+marginalia-cycle.

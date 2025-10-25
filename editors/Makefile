@@ -202,6 +202,7 @@
     SUBDIR += lite
     SUBDIR += lite-xl
     SUBDIR += marker
+    SUBDIR += marginalia.el
     SUBDIR += mg
     SUBDIR += mickey
     SUBDIR += micro
