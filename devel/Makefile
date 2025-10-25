@@ -8136,7 +8136,7 @@
     SUBDIR += rubygem-versionomy
     SUBDIR += rubygem-view_component-rails-gitlab
     SUBDIR += rubygem-virtus
-    SUBDIR += rubygem-vite_rails-rails70
+    SUBDIR += rubygem-vite_rails-gitlab
     SUBDIR += rubygem-vite_ruby
     SUBDIR += rubygem-vite_ruby33
     SUBDIR += rubygem-warbler

@@ -4794,3 +4794,4 @@ net/bosh-bootloader||2025-10-01|Has expired: Not updated in years, no demand for
 net/cf||2025-10-01|Has expired: Not updated in years, no demand for them
 net/concourse-fly||2025-10-01|Has expired: Not updated in years, no demand for them
 math/vtk8|math/vtk9|2025-10-14|Last user switched to math/vtk9
+devel/rubygem-vite_rails-rails70|devel/rubygem-vite_rails-gitlab|2025-10-25|Use devel/rubygem-vite_rails-gitlab instead
