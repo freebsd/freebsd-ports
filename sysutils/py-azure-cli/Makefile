@@ -5,7 +5,7 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Command-Line Tools
 WWW=		https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest
 

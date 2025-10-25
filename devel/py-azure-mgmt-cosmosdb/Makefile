@@ -6,7 +6,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Cosmos DB Management Client Library for Python
 WWW=		https://pypi.org/project/azure-mgmt-cosmosdb/
 
