@@ -7556,6 +7556,7 @@
     SUBDIR += rubygem-json-canonicalization
     SUBDIR += rubygem-json-gitlab
     SUBDIR += rubygem-json-schema
+    SUBDIR += rubygem-json-schema-gitlab
     SUBDIR += rubygem-json1
     SUBDIR += rubygem-json27
     SUBDIR += rubygem-json_pure
@@ -7601,6 +7602,7 @@
     SUBDIR += rubygem-manpages
     SUBDIR += rubygem-map
     SUBDIR += rubygem-marcel
+    SUBDIR += rubygem-marcel-gitlab
     SUBDIR += rubygem-memo_wise
     SUBDIR += rubygem-memoist
     SUBDIR += rubygem-memoist3
