@@ -8,4 +8,5 @@ share/postgresql/extension/pgactive--2.1.2--2.1.3.sql
 share/postgresql/extension/pgactive--2.1.3--2.1.4.sql
 share/postgresql/extension/pgactive--2.1.4--2.1.5.sql
 share/postgresql/extension/pgactive--2.1.5--2.1.6.sql
+share/postgresql/extension/pgactive--2.1.6--2.1.7.sql
 share/postgresql/extension/pgactive.control
