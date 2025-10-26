@@ -612,6 +612,7 @@
     SUBDIR += kshutdown
     SUBDIR += ksystemlog
     SUBDIR += kubectl
+    SUBDIR += kubetail
     SUBDIR += kubie
     SUBDIR += kubo-go
     SUBDIR += kustomize
