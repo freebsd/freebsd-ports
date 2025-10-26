@@ -1,5 +1,5 @@
 PORTNAME=	zerotier
-DISTVERSION=	1.14.2
+DISTVERSION=	1.16.0
 CATEGORIES=	net
 
 PATCH_SITES+=	https://github.com/zerotier/zerotierone/commit/
