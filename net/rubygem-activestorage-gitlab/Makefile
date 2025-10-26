@@ -1,5 +1,6 @@
 PORTNAME=	activestorage
 PORTVERSION=	${RAILS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -16,7 +17,7 @@ RUN_DEPENDS=	rubygem-actionpack-gitlab>=${PORTVERSION}<${PORTVERSION}_99:www/rub
 		rubygem-activejob-gitlab>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activejob-gitlab \
 		rubygem-activerecord-gitlab>=${PORTVERSION}<${PORTVERSION}_99:databases/rubygem-activerecord-gitlab \
 		rubygem-activesupport-gitlab>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport-gitlab \
-		rubygem-marcel>=1.0<2:devel/rubygem-marcel
+		rubygem-marcel-gitlab>=1.0<2:devel/rubygem-marcel-gitlab
 
 USES=		gem
 
