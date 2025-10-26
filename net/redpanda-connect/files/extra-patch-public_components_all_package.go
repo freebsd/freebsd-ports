@@ -1,6 +1,6 @@
 --- public/components/all/package.go.orig
 +++ public/components/all/package.go
-@@ -15,18 +15,4 @@
+@@ -15,19 +15,4 @@
  import (
  	// Import all community components.
  	_ "github.com/redpanda-data/connect/v4/public/components/community"
@@ -9,6 +9,7 @@
 -	_ "github.com/redpanda-data/connect/v4/public/components/gateway"
 -	_ "github.com/redpanda-data/connect/v4/public/components/gcp/enterprise"
 -	_ "github.com/redpanda-data/connect/v4/public/components/google"
+-	_ "github.com/redpanda-data/connect/v4/public/components/jira"
 -	_ "github.com/redpanda-data/connect/v4/public/components/kafka/enterprise"
 -	_ "github.com/redpanda-data/connect/v4/public/components/mongodb/enterprise"
 -	_ "github.com/redpanda-data/connect/v4/public/components/mssqlserver"
