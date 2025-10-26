@@ -145,7 +145,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-aws-sdk-s3-gitlab>=1.193.0<1.194:devel/rubygem-aws-sdk-s3-gitlab \
 	rubygem-faraday-typhoeus-gitlab>=1.1<2:www/rubygem-faraday-typhoeus-gitlab \
 	rubygem-faraday_middleware-aws-sigv4-gitlab>=1.0.1<1.1:devel/rubygem-faraday_middleware-aws-sigv4-gitlab \
-	rubygem-typhoeus14>=1.4.0<1.5:www/rubygem-typhoeus14 \
+	rubygem-typhoeus-gitlab>=1.4.0<1.5:www/rubygem-typhoeus-gitlab \
 	rubygem-html-pipeline-gitlab>=2.14.3<2.15:textproc/rubygem-html-pipeline-gitlab \
 	rubygem-deckar01-task_list-gitlab>=2.3.4<2.4:www/rubygem-deckar01-task_list-gitlab \
 	rubygem-gitlab-markup>=2.0.0<2.1:textproc/rubygem-gitlab-markup \
