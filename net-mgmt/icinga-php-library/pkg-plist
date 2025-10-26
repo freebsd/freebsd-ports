@@ -102,6 +102,7 @@
 %%WWWDIR%%/vendor/brick/math/src/Internal/Calculator/BcMathCalculator.php
 %%WWWDIR%%/vendor/brick/math/src/Internal/Calculator/GmpCalculator.php
 %%WWWDIR%%/vendor/brick/math/src/Internal/Calculator/NativeCalculator.php
+%%WWWDIR%%/vendor/brick/math/src/Internal/CalculatorRegistry.php
 %%WWWDIR%%/vendor/brick/math/src/RoundingMode.php
 %%WWWDIR%%/vendor/composer/ClassLoader.php
 %%WWWDIR%%/vendor/composer/InstalledVersions.php
@@ -751,7 +752,9 @@
 %%WWWDIR%%/vendor/symfony/polyfill-php84/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-php84/Php84.php
 %%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/stubs/Deprecated.php
+%%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/stubs/ReflectionConstant.php
 %%WWWDIR%%/vendor/symfony/polyfill-php84/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-php84/bootstrap82.php
 %%WWWDIR%%/vendor/symfony/polyfill-php84/composer.json
 %%WWWDIR%%/vendor/webmozart/assert/LICENSE
 %%WWWDIR%%/vendor/webmozart/assert/composer.json
