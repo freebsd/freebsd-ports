@@ -1,6 +1,6 @@
 PORTNAME=	phply
 PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +20,8 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
+
+post-patch:
+	@${RM} -r ${WRKSRC}/tests/
 
 .include <bsd.port.mk>
