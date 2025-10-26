@@ -1,5 +1,6 @@
 PORTNAME=	winrm-elevated
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -12,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-erubi>=1.8<2:www/rubygem-erubi \
-		rubygem-winrm>=2.0<3:sysutils/rubygem-winrm \
+		rubygem-winrm-gitlab>=2.0<3:sysutils/rubygem-winrm-gitlab \
 		rubygem-winrm-fs-gitlab>=1.0<2:filesystems/rubygem-winrm-fs-gitlab
 
 USES=		gem
