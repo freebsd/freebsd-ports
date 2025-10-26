@@ -174,7 +174,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-state_machines-activerecord-gitlab>=0.8.0<0.9.0:databases/rubygem-state_machines-activerecord-gitlab \
 	rubygem-sidekiq-gitlab>=7.3.9:devel/rubygem-sidekiq-gitlab \
 	rubygem-sidekiq-cron-rails-gitlab>=1.12.0<1.13:devel/rubygem-sidekiq-cron-rails-gitlab \
-	rubygem-fugit111>=1.11.2<1.12:devel/rubygem-fugit111 \
+	rubygem-fugit-gitlab>=1.11.2<1.12:devel/rubygem-fugit-gitlab \
 	rubygem-httparty-gitlab>=0.23.0<0.24:www/rubygem-httparty-gitlab \
 	rubygem-rainbow>=3.1.1<4.0:devel/rubygem-rainbow \
 	rubygem-ruby-progressbar>=1.11<2:devel/rubygem-ruby-progressbar \
