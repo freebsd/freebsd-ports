@@ -1,7 +1,7 @@
 PORTNAME=	minecraft-server
-DISTVERSION=	1.21.8
+DISTVERSION=	1.21.10
 CATEGORIES=	games java
-MASTER_SITES=	https://piston-data.mojang.com/v1/objects/6bce4ef400e4efaa63a13d5e6f6b500be969ef81/
+MASTER_SITES=	https://piston-data.mojang.com/v1/objects/95495a7f485eedd84ce928cef5e223b757d2f764/
 DISTNAME=	server
 EXTRACT_SUFX=	.jar
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
@@ -43,13 +43,12 @@ DAEMON_RUN_DEPENDS=	tmux:sysutils/tmux
 DAEMON_VARS=		USE_RC_SUBR=minecraft
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME} \
+		 ${STAGEDIR}${ETCDIR} \
+		 ${STAGEDIR}/var/db/minecraft-server \
+		 ${STAGEDIR}/var/log/minecraft-server/debug
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
 		${STAGEDIR}${PREFIX}/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${MKDIR} ${STAGEDIR}/var/db/minecraft-server
-	${MKDIR} ${STAGEDIR}/var/log/minecraft-server
-	${MKDIR} ${STAGEDIR}/var/log/minecraft-server/debug
 .for file in ${CONFIG_FILES}
 	${LN} -s ${ETCDIR}/${file} ${STAGEDIR}${PREFIX}/${PORTNAME}/${file}
 .endfor
@@ -60,6 +59,6 @@ do-install:
 post-install-STANDALONE-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/minecraft-server \
 		${STAGEDIR}${PREFIX}/bin
-	${CP} ${FILESDIR}/java-args.txt ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/java-args.txt ${STAGEDIR}${ETCDIR}
 
 .include <bsd.port.mk>

@@ -27,10 +27,10 @@ minecraft-server/world
 @rmtry minecraft-server/libraries/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar
 @rmtry minecraft-server/libraries/com/google/guava/guava/33.3.1-jre/guava-33.3.1-jre.jar
 @rmtry minecraft-server/libraries/com/microsoft/azure/msal4j/1.17.2/msal4j-1.17.2.jar
-@rmtry minecraft-server/libraries/com/mojang/authlib/6.0.58/authlib-6.0.58.jar
+@rmtry minecraft-server/libraries/com/mojang/authlib/7.0.61/authlib-7.0.61.jar
 @rmtry minecraft-server/libraries/com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar
 @rmtry minecraft-server/libraries/com/mojang/datafixerupper/8.0.16/datafixerupper-8.0.16.jar
-@rmtry minecraft-server/libraries/com/mojang/jtracy/1.0.29/jtracy-1.0.29.jar
+@rmtry minecraft-server/libraries/com/mojang/jtracy/1.0.36/jtracy-1.0.36.jar
 @rmtry minecraft-server/libraries/com/mojang/logging/1.5.10/logging-1.5.10.jar
 @rmtry minecraft-server/libraries/com/nimbusds/content-type/2.3/content-type-2.3.jar
 @rmtry minecraft-server/libraries/com/nimbusds/lang-tag/1.7/lang-tag-1.7.jar
@@ -39,6 +39,7 @@ minecraft-server/world
 @rmtry minecraft-server/libraries/commons-io/commons-io/2.17.0/commons-io-2.17.0.jar
 @rmtry minecraft-server/libraries/io/netty/netty-buffer/4.1.118.Final/netty-buffer-4.1.118.Final.jar
 @rmtry minecraft-server/libraries/io/netty/netty-codec/4.1.118.Final/netty-codec-4.1.118.Final.jar
+@rmtry minecraft-server/libraries/io/netty/netty-codec-http/4.1.118.Final/netty-codec-http-4.1.118.Final.jar
 @rmtry minecraft-server/libraries/io/netty/netty-common/4.1.118.Final/netty-common-4.1.118.Final.jar
 @rmtry minecraft-server/libraries/io/netty/netty-handler/4.1.118.Final/netty-handler-4.1.118.Final.jar
 @rmtry minecraft-server/libraries/io/netty/netty-resolver/4.1.118.Final/netty-resolver-4.1.118.Final.jar
