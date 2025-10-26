@@ -1,6 +1,6 @@
 PORTNAME=	spylls
 DISTVERSION=	0.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,5 +15,8 @@ USES=		python
 USE_PYTHON=	autoplist distutils concurrent
 
 NO_ARCH=	yes
+
+post-patch:
+	@${RM} -r ${WRKSRC}/tests/
 
 .include <bsd.port.mk>
