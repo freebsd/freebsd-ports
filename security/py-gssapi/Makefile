@@ -1,6 +1,5 @@
 PORTNAME=	gssapi
-DISTVERSION=	1.8.3
-PORTREVISION=	1
+DISTVERSION=	1.10.1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +10,13 @@ WWW=		https://github.com/pythongssapi/python-gssapi
 
 LICENSE=	ISCL
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator@${PY_FLAVOR}
 
-# Officially: 3.7-3.12
+# Officially: 3.9-3.14
 USES=	python
-USE_PYTHON=	autoplist cython distutils
+USE_PYTHON=	autoplist cython3 pep517
 
 OPTIONS_SINGLE=	GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
