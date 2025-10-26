@@ -7615,6 +7615,7 @@
     SUBDIR += rubygem-logger-gitlab
     SUBDIR += rubygem-logger15
     SUBDIR += rubygem-logging
+    SUBDIR += rubygem-logging-gitlab
     SUBDIR += rubygem-logster
     SUBDIR += rubygem-loquacious
     SUBDIR += rubygem-lrama

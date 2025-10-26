@@ -1257,6 +1257,7 @@
     SUBDIR += rubygem-win32-file-security
     SUBDIR += rubygem-win32-file-stat
     SUBDIR += rubygem-winrm
+    SUBDIR += rubygem-winrm-gitlab
     SUBDIR += rubygem-winrm-elevated
     SUBDIR += rubygem-winrm-elevated-gitlab
     SUBDIR += rubygem-yell
