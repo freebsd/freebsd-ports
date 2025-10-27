@@ -1,3 +1,3 @@
-TIMESTAMP = 1759324114
-SHA256 (opentelemetry_instrumentation_dbapi-0.58b0.tar.gz) = 34ca7e7bf942d5ebf1ea3838e34154b3900bd00d17115a99b83c4ee280e658ac
-SIZE (opentelemetry_instrumentation_dbapi-0.58b0.tar.gz) = 14223
+TIMESTAMP = 1761446664
+SHA256 (opentelemetry_instrumentation_dbapi-0.59b0.tar.gz) = c50112ae1cdb7f55bddcf57eca96aaa0f2dd78732be2b00953183439a4740493
+SIZE (opentelemetry_instrumentation_dbapi-0.59b0.tar.gz) = 16308
