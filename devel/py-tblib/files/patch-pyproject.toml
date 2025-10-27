@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-10-21 08:22:05 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools>=80",
++    "setuptools>=61",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+@@ -10,8 +10,7 @@ version = "3.2.0"
+ ]
+ name = "tblib"
+ version = "3.2.0"
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE"]
++license = {text = "BSD-2-Clause"}
+ description = "Traceback serialization library."
+ authors = [
+     { name = "Ionel Cristian Mărieș", email = "contact@ionelmc.ro" },

@@ -1,19 +1,22 @@
 PORTNAME=	tblib
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	3.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Traceback serialization library in Python
-WWW=		https://pypi.org/project/tblib/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Traceback serialization library
+WWW=		https://python-tblib.readthedocs.io/en/latest/ \
+		https://github.com/ionelmc/python-tblib
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
