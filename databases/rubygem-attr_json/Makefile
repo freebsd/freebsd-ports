@@ -1,5 +1,5 @@
 PORTNAME=	attr_json
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gem
 
-RUN_DEPENDS=	rubygem-activerecord72>=6.0.0<8.1:databases/rubygem-activerecord72
+RUN_DEPENDS=	rubygem-activerecord72>=6.0.0<8.2:databases/rubygem-activerecord72
 
 NO_ARCH=	yes
 
