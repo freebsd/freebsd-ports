@@ -196,6 +196,7 @@ include/armadillo_bits/fn_prod.hpp
 include/armadillo_bits/fn_qr.hpp
 include/armadillo_bits/fn_quantile.hpp
 include/armadillo_bits/fn_qz.hpp
+include/armadillo_bits/fn_rande.hpp
 include/armadillo_bits/fn_randg.hpp
 include/armadillo_bits/fn_randi.hpp
 include/armadillo_bits/fn_randn.hpp
