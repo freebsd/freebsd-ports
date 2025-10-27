@@ -1,5 +1,5 @@
 PORTNAME=	endless-sky
-PORTVERSION=	0.10.14
+PORTVERSION=	0.10.16
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -15,11 +15,13 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/license.txt
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libmad.so:audio/libmad \
 		libuuid.so:misc/libuuid \
-		libminizip.so:archivers/minizip
+		libminizip.so:archivers/minizip \
+		libavif.so:graphics/libavif \
+		libFLAC++.so:audio/flac
 
 USE_GITHUB=	yes
 
-USES=		cmake compiler:c++11-lang gl jpeg openal sdl
+USES=		cmake compiler:c++11-lang gl jpeg openal pkgconfig sdl
 USE_SDL=	sdl2
 USE_GL=		gl glew
 CMAKE_OFF=	ES_USE_VCPKG \
