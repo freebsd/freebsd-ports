@@ -1,5 +1,5 @@
 PORTNAME=	async-rest
-PORTVERSION=	0.19.1
+PORTVERSION=	0.20.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md
 
 RUN_DEPENDS=	rubygem-async-http>=0.42<1:www/rubygem-async-http \
-		rubygem-protocol-http>=0.45<1:www/rubygem-protocol-http
+		rubygem-protocol-url>=0.2<1:www/rubygem-protocol-url
 
 USES=		gem
 
