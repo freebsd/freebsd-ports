@@ -4,7 +4,7 @@ CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dbaio@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure python SSH tunnels
 WWW=		https://github.com/pahaz/sshtunnel
 
