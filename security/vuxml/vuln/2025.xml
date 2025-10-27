@@ -1,3 +1,31 @@
+  <vuln vid="1f1cf967-b35c-11f0-bce7-bc2411002f50">
+    <topic>strongSwan -- Heap-based buffer overflow in eap-mschapv2 plugin due to improper handling of failure request packets</topic>
+    <affects>
+      <package>
+       <name>strongswan</name>
+       <range><ge>4.2.12</ge><lt>6.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Xu Biang reports:</p>
+       <blockquote cite="https://www.strongswan.org/blog/2025/10/27/strongswan-vulnerability-(cve-2025-62291).html">
+       <p>The eap-mschapv2 plugin doesn't correctly check the length of an EAP-MSCHAPv2 Failure Request packet on the client,
+       which can cause an integer underflow that leads to a crash and, depending on the compiler options, even a heap-based
+       buffer overflow that's potentially exploitable for remote code execution. Affected are all strongSwan versions since 4.2.12.</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-62291</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2025-62291</url>
+    </references>
+    <dates>
+      <discovery>2025-10-27</discovery>
+      <entry>2025-10-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="823b4e48-b340-11f0-b3f7-a8a1599412c6">
     <topic>chromium -- security fix</topic>
     <affects>
