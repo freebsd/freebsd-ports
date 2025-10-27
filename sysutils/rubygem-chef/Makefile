@@ -1,5 +1,5 @@
 PORTNAME=	chef
-PORTVERSION=	18.8.11
+PORTVERSION=	18.8.46
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ WWW=		https://www.chef.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport70>=4.2.7.1<7.1.3.2_99:devel/rubygem-activesupport70 \
+RUN_DEPENDS=	rubygem-activesupport71>=4.2.7.1<7.1.5.2_99:devel/rubygem-activesupport71 \
 		rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-aws-sdk-s3>=1.91<2:devel/rubygem-aws-sdk-s3 \
 		rubygem-aws-sdk-secretsmanager>=1.46<2:devel/rubygem-aws-sdk-secretsmanager \
@@ -39,7 +39,7 @@ RUN_DEPENDS=	rubygem-activesupport70>=4.2.7.1<7.1.3.2_99:devel/rubygem-activesup
 		rubygem-plist>=3.2<4:devel/rubygem-plist \
 		rubygem-proxifier2>=1.1<2:net/rubygem-proxifier2 \
 		rubygem-syslog-logger>=1.6<2:sysutils/rubygem-syslog-logger \
-		rubygem-train-core>=3.10:net/rubygem-train-core \
+		rubygem-train-core>=3.13.4<4:net/rubygem-train-core \
 		rubygem-train-rest>=0.4.1:net/rubygem-train-rest \
 		rubygem-train-winrm>=0.2.17:net/rubygem-train-winrm \
 		rubygem-unf_ext>=0.0.8.2:textproc/rubygem-unf_ext \
@@ -47,15 +47,12 @@ RUN_DEPENDS=	rubygem-activesupport70>=4.2.7.1<7.1.3.2_99:devel/rubygem-activesup
 		rubygem-uuidtools>=2.1.5:devel/rubygem-uuidtools \
 		rubygem-vault>=0.18.2<0.19:security/rubygem-vault
 
-USES=		cpe gem shebangfix
+USES=		cpe gem
 
 NO_ARCH=	yes
 
 SUB_LIST=	RUBY=${RUBY}
 USE_RC_SUBR=	chef_client
-
-SHEBANG_FILES=	spec/functional/assets/chefinittest \
-		spec/functional/assets/testchefsubsys
 
 post-install:
 	${MKDIR} ${STAGEDIR}/var/chef
