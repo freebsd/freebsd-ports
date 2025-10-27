@@ -1,3 +1,3 @@
-TIMESTAMP = 1759816490
-SHA256 (rubygem/opentelemetry-exporter-otlp-logs-0.2.1.gem) = dc9bcd104e226211fb3f35110fbf5f632ebb0fc7f891dab0056dc6fd72596ef4
-SIZE (rubygem/opentelemetry-exporter-otlp-logs-0.2.1.gem) = 19968
+TIMESTAMP = 1761447664
+SHA256 (rubygem/opentelemetry-exporter-otlp-logs-0.2.2.gem) = 23b79e339a46edb0f54447dd40bb40202e765183bd241032335df6ec188d6fcc
+SIZE (rubygem/opentelemetry-exporter-otlp-logs-0.2.2.gem) = 21504
