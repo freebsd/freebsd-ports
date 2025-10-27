@@ -1,11 +1,6 @@
---- pyproject.toml.orig	2025-08-24 09:56:07 UTC
+--- pyproject.toml.orig	2025-10-26 09:59:30 UTC
 +++ pyproject.toml
-@@ -5,11 +5,11 @@ name = "geventhttpclient"
- 
- [project]
- name = "geventhttpclient"
--version = "2.3.4" # don't forget to update version __init__.py as well
-+version = "%%PORTVERSION%%" # don't forget to update version __init__.py as well
+@@ -9,7 +9,7 @@ requires-python = ">=3.9"
  description = "HTTP client library for gevent"
  readme = "README.md"
  requires-python = ">=3.9"
