@@ -1,5 +1,5 @@
 PORTNAME=	libwww
-PORTVERSION=	6.80
+PORTVERSION=	6.81
 DISTVERSIONPREFIX=	perl-
 CATEGORIES=	www devel perl5
 MASTER_SITES=	CPAN
@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Authen-NTLM>=1.02:security/p5-Authen-NTLM \
 		p5-HTML-Parser>=3.71:www/p5-HTML-Parser \
 		p5-HTTP-Cookies>=6:www/p5-HTTP-Cookies \
 		p5-HTTP-Date>=6:www/p5-HTTP-Date \
-		p5-HTTP-Message>=6.18:www/p5-HTTP-Message \
+		p5-HTTP-Message>=7.01:www/p5-HTTP-Message \
 		p5-HTTP-Negotiate>=6:www/p5-HTTP-Negotiate \
 		p5-LWP-MediaTypes>=6:www/p5-LWP-MediaTypes \
 		p5-Net-HTTP>=6.18:net/p5-Net-HTTP \
