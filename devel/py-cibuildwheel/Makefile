@@ -24,4 +24,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bashlex>=0.13:devel/py-bashlex@${PY_FLAVOR} 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
