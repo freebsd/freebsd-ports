@@ -1,5 +1,6 @@
 PORTNAME=	logbook
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,5 @@ LICENSE=	BSD3CLAUSE
 
 USES=		python:3.9+
 USE_PYTHON=	distutils autoplist cython
-
-NO_ARCH=	yes
 
 .include <bsd.port.mk>
