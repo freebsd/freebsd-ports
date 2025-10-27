@@ -1,6 +1,6 @@
 PORTNAME=	keepassxc
 DISTVERSION=	2.7.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -36,16 +36,19 @@ CONFLICTS_INSTALL=	keepassx keepassx-0.* keepassx2 keepassxc276
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
 OPTIONS_DEFINE=		AUTOTYPE BROWSER FDOSECRETS KEESHARE NETWORKING \
-			SSHAGENT TEST YUBIKEY
+			PASSKEYS SSHAGENT TEST YUBIKEY
 OPTIONS_DEFAULT=	AUTOTYPE BROWSER FDOSECRETS KEESHARE NETWORKING \
-			SSHAGENT
+			PASSKEYS SSHAGENT
 OPTIONS_SUB=		yes
+PASSKEYS_IMPLIES=	BROWSER
 
 AUTOTYPE_DESC=		Auto-type passwords in input fields
 BROWSER_DESC=		Browser integration with KeePassXC-Browser
 FDOSECRETS_DESC=	freedesktop.org secrets service support
 KEESHARE_DESC=		Sharing integration with KeeShare
 NETWORKING_DESC=	Networking support (e.g. for downloading website icons)
+PASSKEYS_DESC=		Passkeys support for browser integration\
+			(requires BROWSER)
 SSHAGENT_DESC=		SSH agent support
 YUBIKEY_DESC=		YubiKey support (broken on <= 14.x)
 
@@ -59,6 +62,8 @@ FDOSECRETS_CMAKE_BOOL=	WITH_XC_FDOSECRETS
 KEESHARE_CMAKE_BOOL=	WITH_XC_KEESHARE
 
 NETWORKING_CMAKE_BOOL=	WITH_XC_NETWORKING
+
+PASSKEYS_CMAKE_BOOL=	WITH_XC_BROWSER_PASSKEYS
 
 SSHAGENT_CMAKE_BOOL=	WITH_XC_SSHAGENT
 
