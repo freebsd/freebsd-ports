@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-helpers-sql
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
