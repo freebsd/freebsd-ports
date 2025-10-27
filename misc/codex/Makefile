@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.47.0
+DISTVERSION=	0.50.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -12,7 +12,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libonig.so:devel/oniguruma
-RUN_DEPENDS=	rg:textproc/ripgrep
+RUN_DEPENDS=	bash:shells/bash \
+		rg:textproc/ripgrep
 TEST_DEPENDS=	bash:shells/bash
 
 USES=		cargo python:test ssl
@@ -46,9 +47,23 @@ post-patch:
 		${BUILD_WRKSRC}/app-server/tests/suite/user_agent.rs
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}&|' \
 		${BUILD_WRKSRC}/core/src/environment_context.rs \
-		${BUILD_WRKSRC}/core/src/shell.rs
+		${BUILD_WRKSRC}/core/src/shell.rs \
+		${BUILD_WRKSRC}/core/src/tools/handlers/unified_exec.rs \
+		${BUILD_WRKSRC}/core/src/tools/spec.rs \
+		${BUILD_WRKSRC}/core/src/unified_exec/mod.rs \
+		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
+		${BUILD_WRKSRC}/core/tests/suite/shell_serialization.rs \
+		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
+		${BUILD_WRKSRC}/core/tests/suite/user_notification.rs \
+		${BUILD_WRKSRC}/tui/src/exec_command.rs
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|' \
-		${BUILD_WRKSRC}/core/src/exec_command/session_manager.rs
+		${BUILD_WRKSRC}/app-server/tests/suite/codex_message_processor_flow.rs \
+		${BUILD_WRKSRC}/core/src/command_safety/is_safe_command.rs \
+		${BUILD_WRKSRC}/core/tests/suite/approvals.rs \
+		${BUILD_WRKSRC}/core/tests/suite/seatbelt.rs \
+		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
+		${BUILD_WRKSRC}/exec/tests/suite/sandbox.rs \
+		${BUILD_WRKSRC}/mcp-server/tests/suite/codex_tool.rs
 
 post-build-COMPLETIONS-on:
 	@${MKDIR} ${WRKSRC}/completions
