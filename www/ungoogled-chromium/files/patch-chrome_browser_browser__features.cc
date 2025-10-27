@@ -1,6 +1,6 @@
---- chrome/browser/browser_features.cc.orig	2025-09-10 13:22:16 UTC
+--- chrome/browser/browser_features.cc.orig	2025-10-21 16:57:35 UTC
 +++ chrome/browser/browser_features.cc
-@@ -80,7 +80,7 @@ BASE_FEATURE(kClearUserDataUponProfileDestruction,
+@@ -86,7 +86,7 @@ BASE_FEATURE(kClearUserDataUponProfileDestruction,
               "ClearUserDataUponProfileDestruction",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -9,7 +9,7 @@
  // Enables usage of os_crypt_async::SecretPortalKeyProvider.  Once
  // `kSecretPortalKeyProviderUseForEncryption` is enabled, this flag cannot be
  // disabled without losing data.
-@@ -99,7 +99,7 @@ BASE_FEATURE(kUseFreedesktopSecretKeyProvider,
+@@ -105,7 +105,7 @@ BASE_FEATURE(kUseFreedesktopSecretKeyProvider,
  // the browser exits.
  BASE_FEATURE(kDestroyProfileOnBrowserClose,
               "DestroyProfileOnBrowserClose",

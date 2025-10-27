@@ -1,7 +1,7 @@
---- chrome/browser/accessibility/page_colors.cc.orig	2024-08-26 14:40:28 UTC
-+++ chrome/browser/accessibility/page_colors.cc
-@@ -12,7 +12,7 @@
- #include "components/sync_preferences/pref_service_syncable.h"
+--- chrome/browser/accessibility/page_colors_controller.cc.orig	2025-10-21 16:57:35 UTC
++++ chrome/browser/accessibility/page_colors_controller.cc
+@@ -11,7 +11,7 @@
+ #include "components/prefs/pref_service.h"
  #include "ui/native_theme/native_theme.h"
  
 -#if BUILDFLAG(IS_LINUX)
@@ -9,9 +9,9 @@
  #include "ui/linux/linux_ui.h"
  #include "ui/linux/linux_ui_factory.h"
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -55,7 +55,7 @@ void PageColors::Init() {
+@@ -88,7 +88,7 @@ void PageColorsController::OnPreferredContrastChanged(
  
- void PageColors::OnPageColorsChanged() {
+ void PageColorsController::OnPageColorsChanged() {
    auto* native_theme = ui::NativeTheme::GetInstanceForNativeUi();
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

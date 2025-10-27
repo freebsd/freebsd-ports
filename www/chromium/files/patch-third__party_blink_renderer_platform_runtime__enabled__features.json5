@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-10-02 04:28:32 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-10-18 06:45:48 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
 @@ -324,7 +324,7 @@
          "default": "",
@@ -45,7 +45,7 @@
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1748,7 +1748,7 @@
+@@ -1738,7 +1738,7 @@
      {
        name: "DeviceBoundSessionCredentials",
        origin_trial_feature_name: "DeviceBoundSessionCredentials",
@@ -54,7 +54,7 @@
        status: "experimental",
        // Killswitch is net::features::kDeviceBoundSessions
        base_feature: "none",
-@@ -1756,7 +1756,7 @@
+@@ -1746,7 +1746,7 @@
      {
        name: "DeviceBoundSessionCredentials2",
        origin_trial_feature_name: "DeviceBoundSessionCredentials2",
@@ -63,7 +63,7 @@
        status: "experimental",
        // Killswitch is net::features::kDeviceBoundSessions
        base_feature: "none",
-@@ -1899,7 +1899,7 @@
+@@ -1889,7 +1889,7 @@
        name: "DocumentIsolationPolicy",
        status: "experimental",
        origin_trial_feature_name: "DocumentIsolationPolicy",
@@ -72,7 +72,7 @@
        base_feature: "none",
      },
      {
-@@ -2144,7 +2144,7 @@
+@@ -2134,7 +2134,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -81,7 +81,7 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3643,7 +3643,7 @@
+@@ -3633,7 +3633,7 @@
        // Tracking bug for the implementation: https://crbug.com/1462930
        name: "PermissionElement",
        origin_trial_feature_name: "PermissionElement",
@@ -90,7 +90,7 @@
        status: "experimental",
        public: true,
        base_feature_status: "enabled",
-@@ -5179,7 +5179,7 @@
+@@ -5169,7 +5169,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -99,7 +99,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -5364,7 +5364,7 @@
+@@ -5354,7 +5354,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
@@ -108,7 +108,7 @@
        status: "experimental",
        base_feature: "none",
      },
-@@ -5472,7 +5472,7 @@
+@@ -5462,7 +5462,7 @@
      {
        name: "WebAuthenticationImmediateGet",
        origin_trial_feature_name: "WebAuthenticationImmediateGet",

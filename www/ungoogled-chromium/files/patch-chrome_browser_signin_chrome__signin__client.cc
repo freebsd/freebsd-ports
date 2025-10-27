@@ -1,6 +1,6 @@
---- chrome/browser/signin/chrome_signin_client.cc.orig	2025-09-10 13:22:16 UTC
+--- chrome/browser/signin/chrome_signin_client.cc.orig	2025-10-21 16:57:35 UTC
 +++ chrome/browser/signin/chrome_signin_client.cc
-@@ -162,7 +162,7 @@ signin_metrics::ProfileSignout kAlwaysAllowedSignoutSo
+@@ -163,7 +163,7 @@ signin_metrics::ProfileSignout kAlwaysAllowedSignoutSo
  std::string HatsSurveyTriggerForAccessPoint(
      signin_metrics::AccessPoint access_point) {
    switch (access_point) {

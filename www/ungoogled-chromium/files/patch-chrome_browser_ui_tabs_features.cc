@@ -1,6 +1,6 @@
---- chrome/browser/ui/tabs/features.cc.orig	2025-09-10 13:22:16 UTC
+--- chrome/browser/ui/tabs/features.cc.orig	2025-10-21 16:57:35 UTC
 +++ chrome/browser/ui/tabs/features.cc
-@@ -60,7 +60,7 @@ bool CanShowTabSearchPositionSetting() {
+@@ -64,7 +64,7 @@ bool CanShowTabSearchPositionSetting() {
    }
  // Mac and other platforms will always have the tab search position in the
  // correct location, cros/linux/win git the user the option to change.

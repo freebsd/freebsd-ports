@@ -1,4 +1,4 @@
---- sandbox/policy/BUILD.gn.orig	2025-09-10 13:22:16 UTC
+--- sandbox/policy/BUILD.gn.orig	2025-10-21 16:57:35 UTC
 +++ sandbox/policy/BUILD.gn
 @@ -45,7 +45,7 @@ component("policy") {
        "//third_party/jni_zero",
@@ -9,7 +9,7 @@
      sources += [
        "linux/bpf_audio_policy_linux.cc",
        "linux/bpf_audio_policy_linux.h",
-@@ -113,6 +113,27 @@ component("policy") {
+@@ -113,6 +113,26 @@ component("policy") {
        "//sandbox/linux:sandbox_services",
        "//sandbox/linux:seccomp_bpf",
        "//sandbox/linux:suid_sandbox_client",
@@ -20,10 +20,6 @@
 +      "openbsd/sandbox_openbsd.cc",
 +      "openbsd/sandbox_openbsd.h",
 +    ]
-+    deps += [
-+      "//sandbox:sandbox_buildflags",
-+      "//ui/gfx/x",
-+    ]
 +    libs = [ "util" ]
 +  }
 +  if (is_freebsd) {
@@ -31,8 +27,11 @@
 +      "freebsd/sandbox_freebsd.cc",
 +      "freebsd/sandbox_freebsd.h",
 +    ]
++  }
++  if (is_bsd) {
 +    deps += [
 +      "//sandbox:sandbox_buildflags",
++      "//skia",
 +      "//ui/gfx/x",
      ]
    }

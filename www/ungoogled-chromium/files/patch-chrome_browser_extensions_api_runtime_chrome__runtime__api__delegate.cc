@@ -1,13 +1,13 @@
---- chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc.orig	2025-09-10 13:22:16 UTC
+--- chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc.orig	2025-10-21 16:57:35 UTC
 +++ chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc
-@@ -356,7 +356,9 @@ bool ChromeRuntimeAPIDelegate::GetPlatformInfo(Platfor
-   } else if (strcmp(os, "linux") == 0) {
+@@ -353,7 +353,9 @@ bool ChromeRuntimeAPIDelegate::GetPlatformInfo(Platfor
+   } else if (UNSAFE_TODO(strcmp(os, "linux")) == 0) {
      info->os = extensions::api::runtime::PlatformOs::kLinux;
-   } else if (strcmp(os, "openbsd") == 0) {
+   } else if (UNSAFE_TODO(strcmp(os, "openbsd")) == 0) {
 -    info->os = extensions::api::runtime::PlatformOs::kOpenbsd;
 +    info->os = extensions::api::runtime::PlatformOs::kLinux;
-+  } else if (strcmp(os, "freebsd") == 0) {
++  } else if (UNSAFE_TODO(strcmp(os, "freebsd")) == 0) {
 +    info->os = extensions::api::runtime::PlatformOs::kLinux;
-   } else if (strcmp(os, "android") == 0) {
+   } else if (UNSAFE_TODO(strcmp(os, "android")) == 0) {
      info->os = extensions::api::runtime::PlatformOs::kAndroid;
    } else {

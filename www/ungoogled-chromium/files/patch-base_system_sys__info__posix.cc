@@ -1,6 +1,6 @@
---- base/system/sys_info_posix.cc.orig	2025-09-10 13:22:16 UTC
+--- base/system/sys_info_posix.cc.orig	2025-10-21 16:57:35 UTC
 +++ base/system/sys_info_posix.cc
-@@ -144,7 +144,7 @@ void GetKernelVersionNumbers(int32_t* major_version,
+@@ -142,7 +142,7 @@ void GetKernelVersionNumbers(int32_t* major_version,
  
  namespace base {
  
@@ -9,7 +9,7 @@
  // static
  int SysInfo::NumberOfProcessors() {
  #if BUILDFLAG(IS_MAC)
-@@ -200,7 +200,7 @@ int SysInfo::NumberOfProcessors() {
+@@ -198,7 +198,7 @@ int SysInfo::NumberOfProcessors() {
  
    return cached_num_cpus;
  }

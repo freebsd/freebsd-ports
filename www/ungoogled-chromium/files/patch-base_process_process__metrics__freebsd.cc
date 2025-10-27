@@ -1,4 +1,4 @@
---- base/process/process_metrics_freebsd.cc.orig	2025-09-10 13:22:16 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2025-10-21 16:57:35 UTC
 +++ base/process/process_metrics_freebsd.cc
 @@ -3,41 +3,92 @@
  // found in the LICENSE file.
@@ -128,12 +128,12 @@
 +  return nproc;
 +}
 +
-+bool GetSystemMemoryInfo(SystemMemoryInfoKB *meminfo) {
++bool GetSystemMemoryInfo(SystemMemoryInfo *meminfo) {
 +  unsigned int mem_total, mem_free, swap_total, swap_used;
 +  size_t length;
-+  int pagesizeKB;
++  int pagesize;
 +
-+  pagesizeKB = getpagesize() / 1024;
++  pagesize = getpagesize();
 +
 +  length = sizeof(mem_total);
 +  if (sysctlbyname("vm.stats.vm.v_page_count", &mem_total,
@@ -155,10 +155,10 @@
 +      != 0 || length != sizeof(swap_used))
 +    return false;
 +
-+  meminfo->total = mem_total * pagesizeKB;
-+  meminfo->free = mem_free * pagesizeKB;
-+  meminfo->swap_total = swap_total * pagesizeKB;
-+  meminfo->swap_free = (swap_total - swap_used) * pagesizeKB;
++  meminfo->total = ByteCount::FromUnsigned(mem_total * pagesize);
++  meminfo->free = ByteCount::FromUnsigned(mem_free * pagesize);
++  meminfo->swap_total = ByteCount::FromUnsigned(swap_total * pagesize);
++  meminfo->swap_free = ByteCount::FromUnsigned((swap_total - swap_used) * pagesize);
 +
 +  return true;
 +}

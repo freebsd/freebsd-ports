@@ -1,4 +1,4 @@
---- content/utility/on_device_model/on_device_model_sandbox_init.cc.orig	2025-09-10 13:22:16 UTC
+--- content/utility/on_device_model/on_device_model_sandbox_init.cc.orig	2025-10-21 16:57:35 UTC
 +++ content/utility/on_device_model/on_device_model_sandbox_init.cc
 @@ -17,16 +17,20 @@
  #include "services/on_device_model/ml/gpu_blocklist.h"  // nogncheck
@@ -48,16 +48,25 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -101,7 +105,7 @@ bool PreSandboxInit() {
- #endif
+@@ -82,7 +86,7 @@ BASE_FEATURE(kOnDeviceModelWarmDrivers,
  
+ bool ShouldWarmDrivers() {
+ #if BUILDFLAG(IS_FUCHSIA) || \
+-    (BUILDFLAG(IS_LINUX) && BUILDFLAG(ENABLE_CAST_RECEIVER))
++    ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(ENABLE_CAST_RECEIVER))
+   return false;
+ #else
+   bool is_gpu_not_blocklisted = true;
+@@ -122,7 +126,7 @@ bool PreSandboxInit() {
+     // good measure we initialize a device instance for any adapter with an
+     // appropriate backend on top of any integrated or discrete GPU.
  #if !BUILDFLAG(IS_FUCHSIA) && \
 -    !(BUILDFLAG(IS_LINUX) && BUILDFLAG(ENABLE_CAST_RECEIVER))
 +    !((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(ENABLE_CAST_RECEIVER))
-   if (base::FeatureList::IsEnabled(kOnDeviceModelWarmDrivers)
- #if defined(ENABLE_ML_INTERNAL)
-       && !ml::IsGpuBlocked(ml::ChromeML::Get()->api(), /*log_histogram=*/false)
-@@ -141,7 +145,7 @@ bool PreSandboxInit() {
+     dawnProcSetProcs(&dawn::native::GetProcs());
+     auto instance = std::make_unique<dawn::native::Instance>();
+     const wgpu::RequestAdapterOptions adapter_options{
+@@ -154,7 +158,7 @@ bool PreSandboxInit() {
    return true;
  }
  
@@ -66,7 +75,7 @@
  void AddSandboxLinuxOptions(sandbox::policy::SandboxLinux::Options& options) {
    // Make sure any necessary vendor-specific options are set.
    gpu::GPUInfo info;
-@@ -153,6 +157,7 @@ void AddSandboxLinuxOptions(sandbox::policy::SandboxLi
+@@ -166,6 +170,7 @@ void AddSandboxLinuxOptions(sandbox::policy::SandboxLi
  }
  
  bool PreSandboxHook(sandbox::policy::SandboxLinux::Options options) {
@@ -74,7 +83,7 @@
    std::vector<sandbox::syscall_broker::BrokerFilePermission> file_permissions =
        content::FilePermissionsForGpu(options);
    file_permissions.push_back(
-@@ -161,6 +166,7 @@ bool PreSandboxHook(sandbox::policy::SandboxLinux::Opt
+@@ -174,6 +179,7 @@ bool PreSandboxHook(sandbox::policy::SandboxLinux::Opt
  
    sandbox::policy::SandboxLinux::GetInstance()->StartBrokerProcess(
        content::CommandSetForGPU(options), file_permissions, options);

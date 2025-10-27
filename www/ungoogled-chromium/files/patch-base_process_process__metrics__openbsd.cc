@@ -1,4 +1,4 @@
---- base/process/process_metrics_openbsd.cc.orig	2025-09-10 13:22:16 UTC
+--- base/process/process_metrics_openbsd.cc.orig	2025-10-21 16:57:35 UTC
 +++ base/process/process_metrics_openbsd.cc
 @@ -6,73 +6,85 @@
  
@@ -145,7 +145,7 @@
 +  return false;
 +}
 +
-+bool GetSystemMemoryInfo(SystemMemoryInfoKB* meminfo) {
++bool GetSystemMemoryInfo(SystemMemoryInfo* meminfo) {
 +  NOTIMPLEMENTED();
 +  return false;
 +}

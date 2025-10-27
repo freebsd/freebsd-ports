@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_view_host_impl.cc.orig	2025-09-10 13:22:16 UTC
+--- content/browser/renderer_host/render_view_host_impl.cc.orig	2025-10-21 16:57:35 UTC
 +++ content/browser/renderer_host/render_view_host_impl.cc
-@@ -275,7 +275,7 @@ void RenderViewHostImpl::GetPlatformSpecificPrefs(
+@@ -277,7 +277,7 @@ void RenderViewHostImpl::GetPlatformSpecificPrefs(
        display::win::GetScreenWin()->GetSystemMetricsInDIP(SM_CYVSCROLL);
    prefs->arrow_bitmap_width_horizontal_scroll_bar_in_dips =
        display::win::GetScreenWin()->GetSystemMetricsInDIP(SM_CXHSCROLL);

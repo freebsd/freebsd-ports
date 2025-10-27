@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_view.cc.orig	2025-09-23 12:08:14 UTC
+--- chrome/browser/ui/views/frame/browser_view.cc.orig	2025-10-21 16:57:35 UTC
 +++ chrome/browser/ui/views/frame/browser_view.cc
-@@ -2480,7 +2480,7 @@ void BrowserView::ToolbarSizeChanged(bool is_animating
+@@ -2467,7 +2467,7 @@ void BrowserView::ToolbarSizeChanged(bool is_animating
  }
  
  void BrowserView::TabDraggingStatusChanged(bool is_dragging) {
@@ -9,7 +9,7 @@
    std::vector<ContentsWebView*> contents_web_views =
        GetAllVisibleContentsWebViews();
  
-@@ -5977,7 +5977,7 @@ void BrowserView::MaybeShowProfileSwitchIPH() {
+@@ -5959,7 +5959,7 @@ void BrowserView::MaybeShowProfileSwitchIPH() {
  }
  
  void BrowserView::MaybeShowSupervisedUserProfileSignInIPH() {

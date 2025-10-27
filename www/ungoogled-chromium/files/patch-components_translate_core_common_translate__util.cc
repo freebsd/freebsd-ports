@@ -1,6 +1,6 @@
---- components/translate/core/common/translate_util.cc.orig	2023-09-17 07:59:53 UTC
+--- components/translate/core/common/translate_util.cc.orig	2025-10-21 16:57:35 UTC
 +++ components/translate/core/common/translate_util.cc
-@@ -21,7 +21,7 @@ const char kSecurityOrigin[] = "trk:220:https://transl
+@@ -20,7 +20,7 @@ const char kSecurityOrigin[] = "trk:220:https://transl
  BASE_FEATURE(kTFLiteLanguageDetectionEnabled,
               "TFLiteLanguageDetectionEnabled",
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \

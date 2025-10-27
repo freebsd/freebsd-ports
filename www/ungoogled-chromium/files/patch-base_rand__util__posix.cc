@@ -1,4 +1,4 @@
---- base/rand_util_posix.cc.orig	2025-09-10 13:22:16 UTC
+--- base/rand_util_posix.cc.orig	2025-10-21 16:57:35 UTC
 +++ base/rand_util_posix.cc
 @@ -30,7 +30,7 @@
  #include "build/build_config.h"
@@ -28,7 +28,7 @@
  
  bool KernelSupportsGetRandom() {
    return base::SysInfo::KernelVersionNumber::Current() >=
-@@ -122,6 +124,7 @@ bool UseBoringSSLForRandBytes() {
+@@ -120,6 +122,7 @@ bool UseBoringSSLForRandBytes() {
  namespace {
  
  void RandBytesInternal(span<uint8_t> output, bool avoid_allocation) {
@@ -36,7 +36,7 @@
    // The BoringSSL experiment takes priority over everything else.
    if (!avoid_allocation && internal::UseBoringSSLForRandBytes()) {
      // BoringSSL's RAND_bytes always returns 1. Any error aborts the program.
-@@ -152,6 +155,9 @@ void RandBytesInternal(span<uint8_t> output, bool avoi
+@@ -150,6 +153,9 @@ void RandBytesInternal(span<uint8_t> output, bool avoi
    const int urandom_fd = GetUrandomFD();
    const bool success = ReadFromFD(urandom_fd, as_writable_chars(output));
    CHECK(success);
@@ -46,7 +46,7 @@
  }
  
  }  // namespace
-@@ -171,9 +177,11 @@ void RandBytes(span<uint8_t> output) {
+@@ -169,9 +175,11 @@ void RandBytes(span<uint8_t> output) {
    RandBytesInternal(output, /*avoid_allocation=*/false);
  }
  

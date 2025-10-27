@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_interface_binders_webui.cc.orig	2025-09-11 16:30:26 UTC
+--- chrome/browser/chrome_browser_interface_binders_webui.cc.orig	2025-10-21 16:57:35 UTC
 +++ chrome/browser/chrome_browser_interface_binders_webui.cc
 @@ -51,18 +51,18 @@
  #include "mojo/public/cpp/bindings/binder_map.h"
@@ -22,7 +22,7 @@
  #include "chrome/browser/ui/webui/app_settings/web_app_settings_ui.h"
  #include "chrome/browser/ui/webui/on_device_translation_internals/on_device_translation_internals_ui.h"
  #include "chrome/browser/ui/webui/signin/history_sync_optin/history_sync_optin.mojom.h"
-@@ -483,7 +483,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -489,7 +489,7 @@ void PopulateChromeWebUIFrameBinders(
                                           policy::DlpInternalsUI>(map);
  #endif
  
@@ -31,7 +31,7 @@
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  
-@@ -635,14 +635,14 @@ void PopulateChromeWebUIFrameBinders(
+@@ -642,14 +642,14 @@ void PopulateChromeWebUIFrameBinders(
          HistoryClustersSidePanelUI, NewTabPageUI, BookmarksSidePanelUI>(map);
    }
  
@@ -48,7 +48,7 @@
        WhatsNewUI,
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
        NewTabPageUI>(map);
-@@ -1191,7 +1191,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1198,7 +1198,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
