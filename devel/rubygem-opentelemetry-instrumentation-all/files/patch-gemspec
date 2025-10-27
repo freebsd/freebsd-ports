@@ -1,7 +1,11 @@
---- opentelemetry-instrumentation-all.gemspec.orig	2025-10-12 16:41:48 UTC
+--- opentelemetry-instrumentation-all.gemspec.orig	2025-10-26 01:30:20 UTC
 +++ opentelemetry-instrumentation-all.gemspec
-@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
-   s.add_runtime_dependency(%q<opentelemetry-instrumentation-active_model_serializers>.freeze, ["~> 0.23.0".freeze])
+@@ -22,10 +22,10 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<opentelemetry-instrumentation-active_model_serializers>.freeze, ["~> 0.23.0".freeze])
++  s.add_runtime_dependency(%q<opentelemetry-instrumentation-active_model_serializers>.freeze, ["~> 0.23".freeze])
    s.add_runtime_dependency(%q<opentelemetry-instrumentation-anthropic>.freeze, ["~> 0.2.0".freeze])
    s.add_runtime_dependency(%q<opentelemetry-instrumentation-aws_lambda>.freeze, ["~> 0.5.0".freeze])
 -  s.add_runtime_dependency(%q<opentelemetry-instrumentation-aws_sdk>.freeze, ["~> 0.10.0".freeze])
