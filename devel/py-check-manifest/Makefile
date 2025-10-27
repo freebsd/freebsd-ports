@@ -1,9 +1,9 @@
 PORTNAME=	check-manifest
-PORTVERSION=	0.49
-PORTREVISION=	1
+PORTVERSION=	0.51
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	check_manifest-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool to check the completeness of MANIFEST.in for Python packages
