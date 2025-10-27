@@ -1,6 +1,6 @@
 --- courier/Makefile.in.orig	2010-02-15 18:58:00.000000000 +0100
 +++ courier/Makefile.in	2010-02-15 19:11:12.000000000 +0100
-@@ -441,6 +441,7 @@
+@@ -626,6 +626,7 @@
  mkdir_p = @mkdir_p@
  oldincludedir = @oldincludedir@
  pdfdir = @pdfdir@
@@ -8,3 +8,33 @@
  prefix = @prefix@
  program_transform_name = @program_transform_name@
  psdir = @psdir@
+@@ -2478,21 +2479,21 @@
+ 	$(INSTALL_SCRIPT) imapd.rc $(DESTDIR)$(datadir)/imapd
+ 	$(INSTALL_SCRIPT) imapd-ssl.rc $(DESTDIR)$(datadir)/imapd-ssl
+ 	rm -f $(DESTDIR)$(sbindir)/imapd
+-	$(LN_S) `realpath -m --relative-to $(sbindir) $(datadir)/imapd` $(DESTDIR)$(sbindir)/imapd
++	$(LN_S) $(datadir)/imapd $(DESTDIR)$(sbindir)/imapd
+ 	rm -f $(DESTDIR)$(sbindir)/imapd-ssl
+-	$(LN_S) `realpath -m --relative-to $(sbindir) $(datadir)/imapd-ssl` $(DESTDIR)$(sbindir)/imapd-ssl
++	$(LN_S) $(datadir)/imapd-ssl $(DESTDIR)$(sbindir)/imapd-ssl
+ 	rm -f $(DESTDIR)$(sbindir)/mkdhparams
+-	$(LN_S) `realpath -m --relative-to $(sbindir) $(datadir)/mkdhparams` $(DESTDIR)$(sbindir)/mkdhparams
++	$(LN_S) $(datadir)/mkdhparams $(DESTDIR)$(sbindir)/mkdhparams
+ 	rm -f $(DESTDIR)$(sbindir)/mkimapdcert
+-	$(LN_S) `realpath -m --relative-to $(sbindir) $(datadir)/mkimapdcert` $(DESTDIR)$(sbindir)/mkimapdcert
++	$(LN_S) $(datadir)/mkimapdcert $(DESTDIR)$(sbindir)/mkimapdcert
+ 	rm -f $(DESTDIR)$(sbindir)/mkpop3dcert
+-	$(LN_S) `realpath -m --relative-to $(sbindir) $(datadir)/mkpop3dcert` $(DESTDIR)$(sbindir)/mkpop3dcert
++	$(LN_S) $(datadir)/mkpop3dcert $(DESTDIR)$(sbindir)/mkpop3dcert
+ 	rm -f $(DESTDIR)$(bindir)/makedat
+-	$(LN_S) `realpath -m --relative-to $(bindir) $(datadir)/makedat` $(DESTDIR)$(bindir)/makedat
++	$(LN_S) $(datadir)/makedat $(DESTDIR)$(bindir)/makedat
+ 	for f in makealiases makehosteddomains makeimapaccess pop3d pop3d-ssl \
+ 		; do rm -f $(DESTDIR)$(sbindir)/$$f ; \
+-		$(LN_S) `realpath -m --relative-to $(sbindir) $(datadir)/$$f` $(DESTDIR)$(sbindir)/$$f ; done
+-	rm -f $(DESTDIR)$(sbindir)/webgpg ; $(LN_S) `realpath -m --relative-to $(sbindir) $(datadir)/sqwebmail/webgpg` $(DESTDIR)$(sbindir)/webgpg
++		$(LN_S) $(datadir)/$$f $(DESTDIR)$(sbindir)/$$f ; done
++	rm -f $(DESTDIR)$(sbindir)/webgpg ; $(LN_S) $(datadir)/sqwebmail/webgpg $(DESTDIR)$(sbindir)/webgpg
+ 	$(INSTALL_PROGRAM) ../webadmin/webadmin $(DESTDIR)$(webmaildir)/webadmin
+ 	mkdir -p $(DESTDIR)$(sysconfdir)/shared
+ 	chmod 755 $(DESTDIR)$(sysconfdir)/shared

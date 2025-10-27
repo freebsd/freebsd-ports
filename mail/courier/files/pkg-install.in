@@ -6,7 +6,7 @@ USER=%%MAILOWN%%;	UID=%%MAILUID%%
 GROUP=%%MAILGRP%%;	GID=%%MAILGID%%
 
 if [ ":$2" = ":POST-INSTALL" ]; then
-    if [ "%%MAILCONF%%" = "y" ]; then
+    if [ "%%MAILCONFACT%%" = "y" ]; then
         mv -f /etc/mail/mailer.conf /etc/mail/mailer.conf.old
         echo "# created by courier's pkg-install"		>  /etc/mail/mailer.conf
         echo -n "# Execute the Courier sendmail program"	>> /etc/mail/mailer.conf
@@ -17,9 +17,5 @@ if [ ":$2" = ":POST-INSTALL" ]; then
         echo "mailq		${PKG_PREFIX}/bin/mailq"	>> /etc/mail/mailer.conf
         echo "newaliases	${PKG_PREFIX}/sbin/makealiases"	>> /etc/mail/mailer.conf
         echo "Done."
-    fi
-    if [ "%%RCCONF%%" = "y" ]; then
-    fi
-    if [ "%%PERIODIC%%" = "y" ]; then
     fi
 fi

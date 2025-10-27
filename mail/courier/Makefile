@@ -1,6 +1,5 @@
 PORTNAME=	courier
-PORTVERSION=	1.1.11
-PORTREVISION=	4
+PORTVERSION=	1.5.1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -12,25 +11,18 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
 BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base \
+		gpg2:security/gnupg \
 		wget:ftp/wget
-LIB_DEPENDS=	libidn.so:dns/libidn \
-		libpcre.so:devel/pcre \
+LIB_DEPENDS=	libcourier-unicode.so:devel/courier-unicode \
 		libgdbm.so:databases/gdbm \
-		libcourier-unicode.so:devel/courier-unicode \
+		libidn2.so:dns/libidn2 \
 		libpcre2-8.so:devel/pcre2
-RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support \
 		${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool \
-		${LOCALBASE}/etc/mime.types:misc/mime-support \
-		p5-Net-CIDR>=0:net-mgmt/p5-Net-CIDR \
 		ca_root_nss>=3.*:security/ca_root_nss \
-		${LOCALBASE}/bin/wget:ftp/wget
-CONFLICTS=	courier-imap-2.* couriermlm-0.* \
-		exim-4.* maildrop-1.* \
-		panda-imap-201* postfix-1.* postfix-2.* \
-		qmail-*-1.* qmail-1.* \
-		sendmail-*-8.* sendmail-8.* \
-		smail-3.* sqwebmail-3.* \
-		zmailer-2.*
+		courierauthconfig:security/courier-authlib-base \
+		p5-Net-CIDR>=0:net-mgmt/p5-Net-CIDR \
+		wget:ftp/wget
 
 #
 # User-serviceable variables
@@ -43,9 +35,9 @@ CONFLICTS=	courier-imap-2.* couriermlm-0.* \
 #     recomended values are: /var/mail, ./Mailbox or ./Maildir
 #
 
-IMAGEURL?=	/webmail
-CACHEOWN?=	pop
-MAILDROPDEFAULT?=./Maildir
+IMAGEURL?=		/webmail
+CACHEOWN?=		pop
+MAILDROPDEFAULT?=	./Maildir
 
 # End of user-serviceable variables
 
@@ -53,7 +45,6 @@ MAILOWN?=	courier
 MAILGRP?=	courier
 MAILUID?=	465
 MAILGID?=	465
-ETCDIR=		${PREFIX}/etc
 SYSCONFDIR=	${ETCDIR}/courier
 LIBEXECDIR=	${PREFIX}/libexec
 LOCALSTATEDIR=	/var/spool/courier
@@ -62,215 +53,147 @@ CALENDIR=	/var/spool/calendar
 MIMETYPES=	${LOCALBASE}/etc/mime.types
 WITH_TRANSPORT=	local esmtp dsn
 
-USES=		fam gettext gmake libtool perl5 pkgconfig tar:bzip2 ssl shebangfix
-USE_SUBMAKE=	yes
+USES=		fam gettext gmake libtool localbase perl5 pkgconfig shebangfix \
+		ssl tar:bzip2
 USE_RC_SUBR=	courier
+USE_SUBMAKE=	yes
 SHEBANG_FILES=	courier/filters/perlfilter/perlfilter-ratelimit.pl \
 		courier/filters/perlfilter/perlfilter-wrapper.pl
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--disable-root-check \
-		--with-db=gdbm \
-		--enable-syslog=1 --enable-use-flock \
-		--program-transform-name=s,^,, \
-		--enable-utf7-folder-encoding \
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS=	--datadir=${DATADIR} \
+		--disable-root-check \
+		--enable-imageurl=${IMAGEURL} \
+		--enable-mimetypes=${MIMETYPES} \
+		--enable-syslog=1 \
 		--enable-unicode \
-		--with-mailuser=${MAILOWN} \
-		--with-mailgroup=${MAILGRP} \
-		--with-mailuid=${MAILUID} \
-		--with-mailgid=${MAILGID} \
-		--with-etcdir=${ETCDIR} \
-		--sysconfdir=${SYSCONFDIR} \
-		--datadir=${DATADIR} \
+		--enable-use-flock \
+		--enable-utf7-folder-encoding \
+		--enable-workarounds-for-imap-client-bugs \
 		--libexecdir=${LIBEXECDIR} \
 		--localstatedir=${LOCALSTATEDIR} \
-		--enable-mimetypes=${MIMETYPES} \
-		--enable-imageurl=${IMAGEURL} \
+		--program-transform-name=s,^,, \
+		--sysconfdir=${SYSCONFDIR} \
 		--with-cachedir=${CACHEDIR} \
 		--with-cacheowner=${CACHEOWN} \
 		--with-calendardir=${CALENDIR} \
-		--with-mydatadir=${SYSCONFDIR} \
-		--with-transport='${WITH_TRANSPORT}' \
+		--with-db=gdbm \
 		--with-default-maildrop=${MAILDROPDEFAULT} \
+		--with-etcdir=${ETCDIR} \
+		--with-mailgid=${MAILGID} \
+		--with-mailgroup=${MAILGRP} \
+		--with-mailuid=${MAILUID} \
+		--with-mailuser=${MAILOWN} \
+		--with-mydatadir=${SYSCONFDIR} \
+		--with-notice=unicode \
 		--with-paranoid-smtpext \
-		--enable-workarounds-for-imap-client-bugs \
-		--with-notice=unicode
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-
+		--with-transport='${WITH_TRANSPORT}'
 INSTALL_TARGET=	install-strip install-perms
 
-PLIST_SUB+=	BINOWN="${BINOWN}" BINGRP="${BINGRP}" \
-		CACHEOWN="${CACHEOWN}" CACHEDIR="${CACHEDIR}" \
-		CALENDIR="${CALENDIR}" LOCALSTATEDIR="${LOCALSTATEDIR}" \
-		MAILOWN="${MAILOWN}" MAILGRP="${MAILGRP}" \
-		MAILUID="${MAILUID}" MAILGID="${MAILGID}" \
-		SHAREOWN="${SHAREOWN}" SHAREGRP="${SHAREGRP}"
+CONFLICTS=	courier-imap-2.* couriermlm-0.* exim-4.* maildrop-1.* \
+		panda-imap-201* postfix-1.* postfix-2.* qmail-*-1.* qmail-1.* \
+		sendmail-*-8.* sendmail-8.* smail-3.* sqwebmail-3.* zmailer-2.*
 
+ETCDIR=		${PREFIX}/etc
+SUB_FILES+=	crontab pkg-message sharedindexupdate
 SUB_LIST:=	${PLIST_SUB}
-SUB_FILES+=	pkg-message crontab sharedindexupdate
 
-OPTIONS_DEFINE=	LDAP PROCMAIL SENDFAX UUCP IPV6 DOCS CERTSDIR
-OPTIONS_GROUP=	WEBMAIL
-OPTIONS_GROUP_WEBMAIL=	GNUPG WEBMAILRSENT WEBMAILFLAGS WEBMAILXFACE
-OPTIONS_RADIO=	ALIASES SPELL
-OPTIONS_RADIO_ALIASES=	SYSTEMALIASES EMPTYALIASES
+PLIST_SUB+=	BINGRP="${BINGRP}" \
+		BINOWN="${BINOWN}" \
+		CACHEDIR="${CACHEDIR}" \
+		CACHEOWN="${CACHEOWN}" \
+		CALENDIR="${CALENDIR}" \
+		LOCALSTATEDIR="${LOCALSTATEDIR}" \
+		MAILGID="${MAILGID}" \
+		MAILGRP="${MAILGRP}" \
+		MAILOWN="${MAILOWN}" \
+		MAILUID="${MAILUID}" \
+		SHAREGRP="${SHAREGRP}" \
+		SHAREOWN="${SHAREOWN}"
+
+OPTIONS_DEFINE=		CERTSDIR DOCS IPV6 LDAP MAILCONF PROCMAIL SENDFAX UUCP
+OPTIONS_DEFAULT=	SYSTEMALIASES WEBMAILRSENT
+OPTIONS_GROUP=		WEBMAIL
+OPTIONS_GROUP_WEBMAIL=	GNUPG WEBMAILFLAGS WEBMAILRSENT WEBMAILXFACE
+OPTIONS_RADIO=		ALIASES SPELL
+OPTIONS_RADIO_ALIASES=	EMPTYALIASES SYSTEMALIASES
 OPTIONS_RADIO_SPELL=	ASPELL ISPELL
-OPTIONS_DEFAULT=WEBMAILRSENT SYSTEMALIASES
+OPTIONS_SUB=		yes
 
-LDAP_DESC=	LDAP-based mail aliasing support
-GNUPG_DESC=	GNU Privacy Guard support for WebMail
-ASPELL_DESC=	ASpell support for WebMail
-ISPELL_DESC=	ISpell support for WebMail
-PROCMAIL_DESC=	Procmail local delivery support
-SENDFAX_DESC=	mgetty+sendfax support
-UUCP_DESC=	UUCP support
-CERTSDIR_DESC=	separate .pem directory for certificates
-WEBMAILRSENT_DESC=	enable Autorename Sent folder
-WEBMAILFLAGS_DESC=	webmail show flags patch
-WEBMAILXFACE_DESC=	experimental webmail X-Face patch
-SYSTEMALIASES_DESC=	symlink system /etc/aliases
+ASPELL_DESC=		ASpell support for WebMail
+ISPELL_DESC=		ISpell support for WebMail
+CERTSDIR_DESC=		separate .pem directory for certificates
 EMPTYALIASES_DESC=	create empty aliases file
-RCCONF_DESC=	modify rc.conf to enable courier/disable sendmail
-MAILCONF_DESC=	modify mailer.conf to use courier instead of sendmail
-PERIODIC_DESC=	modify/create periodic.conf
+GNUPG_DESC=		GNU Privacy Guard support for WebMail
+LDAP_DESC=		LDAP-based mail aliasing support
+MAILCONF_DESC=		modify mailer.conf to use courier instead of sendmail
+PROCMAIL_DESC=		Procmail local delivery support
+SENDFAX_DESC=		mgetty+sendfax support
+SYSTEMALIASES_DESC=	symlink system /etc/aliases
+UUCP_DESC=		UUCP support
+WEBMAILFLAGS_DESC=	webmail show flags patch
+WEBMAILRSENT_DESC=	enable Autorename Sent folder
+WEBMAILXFACE_DESC=	experimental webmail X-Face patch
+
+ASPELL_BUILD_DEPENDS=	aspell:textproc/aspell
+ASPELL_RUN_DEPENDS=	aspell:textproc/aspell
+ASPELL_CONFIGURE_ON=	--with-ispell=${LOCALBASE}/bin/aspell
+
+ISPELL_BUILD_DEPENDS=	ispell:textproc/aspell-ispell
+ISPELL_RUN_DEPENDS=	ispell:textproc/aspell-ispell
+ISPELL_CONFIGURE_ON=	--with-ispell=${LOCALBASE}/bin/ispell
+
+CERTSDIR_CONFIGURE_ON=	--with-certsdir=${SYSCONFDIR}/.pem
+CERTSDIR_CONFIGURE_OFF=	--with-certsdir=${SYSCONFDIR}
+CERTSDIR_SUB_LIST=	CERTSDIRPATH="${SYSCONFDIR}/.pem"
+CERTSDIR_SUB_LIST_OFF=	CERTSDIRPATH="${SYSCONFDIR}"
+
+GNUPG_RUN_DEPENDS=	gpg2:security/gnupg
+GNUPG_CONFIGURE_ENV=	GPG="${LOCALBASE}/bin/gpg2"
+
+IPV6_CONFIGURE_WITH=	ipv6
+
+LDAP_RUN_DEPENDS=	${LOCALBASE}/lib/courier-authlib/libauthldap.so:net/courier-authlib-ldap
+LDAP_USES=		ldap
+LDAP_CONFIGURE_WITH=	ldapaliasd
+
+MAILCONF_SUB_LIST=	MAILCONFACT="y"
+MAILCONF_SUB_LIST_OFF=	MAILCONFACT="n"
+
+PROCMAIL_BUILD_DEPENDS=	procmail:mail/procmail
+PROCMAIL_RUN_DEPENDS=	procmail:mail/procmail
+
+SENDFAX_BUILD_DEPENDS=	pnmscale:graphics/netpbm \
+			sendfax:comms/mgetty+sendfax
+SENDFAX_RUN_DEPENDS=	pnmscale:graphics/netpbm \
+			sendfax:comms/mgetty+sendfax
+SENDFAX_USES=		ghostscript
+SENDFAX_VARS=		WITH_TRANSPORT+=fax
+
+UUCP_BUILD_DEPENDS=	uux:net/freebsd-uucp
+UUCP_RUN_DEPENDS=	uux:net/freebsd-uucp
+UUCP_VARS=		WITH_TRANSPORT+=uucp
+
+WEBMAILFLAGS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-libs__sqwebmail__folder.c \
+				${FILESDIR}/extra-patch-libs__sqwebmail__maildir.c \
+				${FILESDIR}/extra-patch-libs__sqwebmail__maildir.h \
+				${FILESDIR}/extra-patch-libs__sqwebmail__images__sqwebmail.css
+
+WEBMAILRSENT_CONFIGURE_ENABLE=	autorenamesent
+
+WEBMAILXFACE_EXTRA_PATCHES=	${FILESDIR}/extra-patch-libs__sqwebmail__msg2html.c
 
 .include <bsd.port.options.mk>
 
+.if !${PORT_OPTIONS:MASPELL} && !${PORT_OPTIONS:MISPELL}
+CONFIGURE_ARGS+=	--without-ispell
+.endif
+
 .include "${.CURDIR}/Makefile.doc"
-
-.if ${PORT_OPTIONS:MLDAP}
-USES+=	ldap
-WITH_AUTH_LDAP=	yes
-RUN_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthldap.so:net/courier-authlib-ldap
-CONFIGURE_ARGS+=--with-ldapaliasd
-PLIST_SUB+=	WITHLDAP=""
-SUB_LIST+=	WITHLDAP=""
-.else
-CONFIGURE_ARGS+=--without-ldapaliasd
-PLIST_SUB+=	WITHLDAP="@comment "
-SUB_LIST+=	WITHLDAP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSYSTEMALIASES}
-PLIST_SUB+=	WITHSYSTEMALIASES=""
-SUB_LIST+=	WITHSYSTEMALIASES=""
-.else
-PLIST_SUB+=	WITHSYSTEMALIASES="@comment "
-SUB_LIST+=	WITHSYSTEMALIASES="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MEMPTYALIASES}
-PLIST_SUB+=	WITHEMPTYALIASES=""
-SUB_LIST+=	WITHEMPTYALIASES=""
-.else
-PLIST_SUB+=	WITHEMPTYALIASES="@comment "
-SUB_LIST+=	WITHEMPTYALIASES="@comment "
-.endif
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
-.endif
-
-.if ${PORT_OPTIONS:MGNUPG}
-BUILD_DEPENDS+=	gpg:security/gnupg
-RUN_DEPENDS+=	gpg:security/gnupg
-.else
-# This is a hack! But works well (at least partially) for me...
-CONFIGURE_ENV+=	GPG="${WRKSRC}/fakegpg"
-.endif
-
-.if ${PORT_OPTIONS:MASPELL}
-BUILD_DEPENDS+=	aspell:textproc/aspell
-RUN_DEPENDS+=	aspell:textproc/aspell
-CONFIGURE_ARGS+=--with-ispell=${LOCALBASE}/bin/aspell
-.elif ${PORT_OPTIONS:MISPELL}
-BUILD_DEPENDS+=	ispell:textproc/aspell-ispell
-RUN_DEPENDS+=	ispell:textproc/aspell-ispell
-CONFIGURE_ARGS+=--with-ispell=${LOCALBASE}/bin/ispell
-.else
-CONFIGURE_ARGS+=--without-ispell
-.endif
-
-.if ${PORT_OPTIONS:MPROCMAIL}
-BUILD_DEPENDS+=	procmail:mail/procmail
-RUN_DEPENDS+=	procmail:mail/procmail
-.endif
-
-.if ${PORT_OPTIONS:MSENDFAX}
-USES+=		ghostscript
-SENDFAX_DEPENDS=sendfax:comms/mgetty+sendfax \
-		pnmscale:graphics/netpbm
-BUILD_DEPENDS+=	${SENDFAX_DEPENDS}
-RUN_DEPENDS+=	${SENDFAX_DEPENDS}
-WITH_TRANSPORT+=fax
-PLIST_SUB+=	WITHFAX=""
-SUB_LIST+=	WITHFAX=""
-.else
-PLIST_SUB+=	WITHFAX="@comment "
-SUB_LIST+=	WITHFAX="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MUUCP}
-.if !exists(/usr/bin/uux)
-BUILD_DEPENDS+=	uux:net/freebsd-uucp
-RUN_DEPENDS+=	uux:net/freebsd-uucp
-.endif
-WITH_TRANSPORT+=uucp
-PLIST_SUB+=	WITHUUCP=""
-.else
-PLIST_SUB+=	WITHUUCP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=--with-ipv6
-.else
-CONFIGURE_ARGS+=--without-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MWEBMAILXFACE}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libs__sqwebmail__msg2html.c
-.endif
-
-.if ${PORT_OPTIONS:MWEBMAILFLAGS}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libs__sqwebmail__folder.c ${FILESDIR}/extra-patch-libs__sqwebmail__maildir.c
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libs__sqwebmail__maildir.h ${FILESDIR}/extra-patch-libs__sqwebmail__images__sqwebmail.css
-.endif
-
-.if ${PORT_OPTIONS:MWEBMAILRSENT}
-CONFIGURE_ARGS+=--enable-autorenamesent
-.else
-CONFIGURE_ARGS+=--disable-autorenamesent
-.endif
-
-.if ${PORT_OPTIONS:MMAILCONF}
-SUB_LIST+=	MAILCONF="y"
-.else
-SUB_LIST+=	MAILCONF="n"
-.endif
-
-.if ${PORT_OPTIONS:MRCCONF}
-SUB_LIST+=	RCCONF="y"
-.else
-SUB_LIST+=	RCCONF="n"
-.endif
-
-.if ${PORT_OPTIONS:MPERIODIC}
-SUB_LIST+=	PERIODIC="y"
-.else
-SUB_LIST+=	PERIODIC="n"
-.endif
-
-.if ${PORT_OPTIONS:MCERTSDIR}
-CONFIGURE_ARGS+=--with-certsdir=${SYSCONFDIR}/.pem
-PLIST_SUB+=	WITHCERTSDIR=""
-SUB_LIST+=	CERTSDIR="${SYSCONFDIR}/.pem"
-.else
-CONFIGURE_ARGS+=--with-certsdir=${SYSCONFDIR}
-PLIST_SUB+=	WITHCERTSDIR="@comment "
-SUB_LIST+=	CERTSDIR="${SYSCONFDIR}"
 .endif
 
 _CNFFILES=	esmtpd.cnf \
@@ -292,11 +215,6 @@ _DISTEXFILES=	courierd.dist \
 		pop3d.dist \
 		sqwebmaild.dist \
 		webmlmrc.dist
-
-pre-everything::
-	@${ECHO_MSG} "===> --------------------------------------------------------"
-	@${ECHO_MSG} "===>	Run 'make config' to (re)configure ${PKGNAME}"
-	@${ECHO_MSG} "===> --------------------------------------------------------"
 
 pre-patch:
 	${CP} ${TEMPLATES}/config.guess ${TEMPLATES}/config.sub ${WRKSRC}
@@ -339,11 +257,6 @@ post-patch:
 	${FIND} ${WRKSRC} -name configure -exec ${REINPLACE_CMD} \
 		-i .c++20 '/^version.*cat/s,/version,&.txt,' {} +
 
-pre-configure:
-# This is a hack! But works well (at least partially) for me...
-	touch ${WRKSRC}/fakegpg
-	chmod +x ${WRKSRC}/fakegpg
-
 post-build:
 	${PERL} -pi -e 's|^(auth)\s+(required).*|$$1\t\t$$2\tpam_unix.so\ttry_first_pass|g;' \
 		    -e 's|^(account)\s+(required).*|$$1 \t$$2\tpam_unix.so|g;' \
@@ -384,12 +297,12 @@ post-install:
 .endfor
 	${INSTALL_DATA} ${STAGEDIR}${DATADIR}/htmldoc/* ${STAGEDIR}${DOCSDIR}/html
 .endif
-.if ${PORT_OPTIONS:MCERTSDIR}
-	${MKDIR} ${STAGEDIR}${SYSCONFDIR}/.pem
-.endif
 	${RM} -r ${STAGEDIR}${DATADIR}/htmldoc
 	${CHMOD} -R a+r ${STAGEDIR}${DATADIR}/courierwebadmin
 	${CHMOD} -R a-w ${STAGEDIR}${DATADIR} ${STAGEDIR}${LIBEXECDIR}/courier
 	${CHMOD} 550 ${STAGEDIR}${LIBEXECDIR}/courier/modules/esmtp/courieresmtp*
+
+post-install-CERTSDIR-on:
+	${MKDIR} ${STAGEDIR}${SYSCONFDIR}/.pem
 
 .include <bsd.port.mk>

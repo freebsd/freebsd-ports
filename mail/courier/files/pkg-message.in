@@ -9,13 +9,13 @@ Check and/or modify the following configuration files to suit your needs:
 	%%PREFIX%%/etc/courier/esmtpd
 	%%PREFIX%%/etc/courier/esmtpd-msa
 	%%PREFIX%%/etc/courier/esmtpd-ssl
-%%WITHFAX%%	%%PREFIX%%/etc/courier/faxcoverpage.tr
-%%WITHFAX%%	%%PREFIX%%/etc/courier/faxnotifyrc
-%%WITHFAX%%	%%PREFIX%%/etc/courier/faxrc
+%%SENDFAX%%	%%PREFIX%%/etc/courier/faxcoverpage.tr
+%%SENDFAX%%	%%PREFIX%%/etc/courier/faxnotifyrc
+%%SENDFAX%%	%%PREFIX%%/etc/courier/faxrc
 	%%PREFIX%%/etc/courier/imapd
 	%%PREFIX%%/etc/courier/imapd-ssl
 	%%PREFIX%%/etc/courier/ldapaddressbook
-%%WITHLDAP%%	%%PREFIX%%/etc/courier/ldapaliasrc
+%%LDAP%%	%%PREFIX%%/etc/courier/ldapaliasrc
 	%%PREFIX%%/etc/courier/pop3d
 	%%PREFIX%%/etc/courier/pop3d-ssl
 
