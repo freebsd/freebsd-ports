@@ -1,0 +1,27 @@
+--- pyproject.toml.orig	2025-10-22 22:23:23 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=80.9.0", "cffi>=2.0.0", "pycparser>=2.06"]
++requires = ["setuptools>=61", "cffi>=1.15.0", "pycparser>=2.06"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,7 +8,7 @@ requires-python = ">=3.9"
+ description = "Minimal bindings to GitHub's fork of cmark"
+ readme = "README.rst"
+ requires-python = ">=3.9"
+-license = "MIT"
++license = {text = "MIT"}
+ authors = [
+     {name = "The Python Packaging Authority", email = "me@thea.codes"},
+     {email = "pypa-dev@googlegroups.com"}
+@@ -26,7 +26,7 @@ dependencies = [
+     "Programming Language :: Python :: 3.14",
+ ]
+ dependencies = [
+-    "cffi>=2.0.0",
++    "cffi>=1.15.0",
+ ]
+ 
+ [project.urls]
