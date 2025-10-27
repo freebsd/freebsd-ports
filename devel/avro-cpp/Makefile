@@ -1,6 +1,5 @@
 PORTNAME=	avro
-PORTVERSION=	1.12.0
-PORTREVISION=	6
+PORTVERSION=	1.12.1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/avro/avro-${PORTVERSION}/cpp
 PKGNAMESUFFIX=	-cpp
@@ -16,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libfmt.so:devel/libfmt \
-		libsnappy.so:archivers/snappy
+		libsnappy.so:archivers/snappy \
+		libzstd.so:archivers/zstd
 
 USES=		cmake compiler:c++17-lang cpe
 

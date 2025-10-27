@@ -1,0 +1,308 @@
+Obtained from:	https://github.com/apache/avro/commit/2b11dba4fb28c7bb6ff08b40509a6a71fcaf4c21
+		https://github.com/apache/avro/blob/main/lang/c%2B%2B/cmake/avro-cpp-config.cmake.in
+
+--- CMakeLists.txt.orig	2025-09-05 08:05:13 UTC
++++ CMakeLists.txt
+@@ -70,7 +70,6 @@ if (WIN32 AND NOT CYGWIN AND NOT MSYS)
+     add_definitions (/EHa)
+     add_definitions (
+         -DNOMINMAX
+-        -DBOOST_SYSTEM_DYN_LINK
+         -DBOOST_ALL_NO_LIB)
+ endif()
+ 
+@@ -80,9 +79,8 @@ if (AVRO_BUILD_TESTS OR AVRO_USE_BOOST)
+ 
+ if (AVRO_BUILD_TESTS OR AVRO_USE_BOOST)
+     # Boost 1.70 and above provide a BoostConfig.cmake package configuration file.
+-    # It guarantees that Boost::system target exists if found.
+     # See https://cmake.org/cmake/help/latest/policy/CMP0167.html
+-    find_package (Boost 1.70 REQUIRED CONFIG COMPONENTS system)
++    find_package (Boost 1.70 REQUIRED CONFIG)
+ endif ()
+ 
+ find_package(fmt)
+@@ -153,11 +151,9 @@ function (setup_avro_lib target lib_type)
+       $<BUILD_INTERFACE:ZLIB::ZLIB>
+       $<BUILD_INTERFACE:$<TARGET_NAME_IF_EXISTS:Snappy::snappy>>
+       $<$<BOOL:${zstd_FOUND}>:$<BUILD_INTERFACE:$<TARGET_NAME_IF_EXISTS:${ZSTD_TARGET}>>>
+-      $<BUILD_INTERFACE:$<TARGET_NAME_IF_EXISTS:Boost::system>>
+       $<INSTALL_INTERFACE:ZLIB::ZLIB>
+       $<INSTALL_INTERFACE:$<TARGET_NAME_IF_EXISTS:Snappy::snappy>>
+       $<$<BOOL:${zstd_FOUND}>:$<INSTALL_INTERFACE:$<TARGET_NAME_IF_EXISTS:${ZSTD_TARGET}>>>
+-      $<INSTALL_INTERFACE:$<TARGET_NAME_IF_EXISTS:Boost::system>>
+     )
+     target_include_directories (${target} PUBLIC
+       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+@@ -226,7 +222,7 @@ if (AVRO_BUILD_TESTS)
+ 
+     macro (unittest name)
+         add_executable (${name} test/${name}.cc)
+-        target_link_libraries (${name} ${AVRO_LINK_LIB} Boost::system ZLIB::ZLIB $<TARGET_NAME_IF_EXISTS:Snappy::snappy> $<$<BOOL:${zstd_FOUND}>:$<TARGET_NAME_IF_EXISTS:${ZSTD_TARGET}>>)
++        target_link_libraries (${name} ${AVRO_LINK_LIB} ZLIB::ZLIB $<TARGET_NAME_IF_EXISTS:Snappy::snappy> $<$<BOOL:${zstd_FOUND}>:$<TARGET_NAME_IF_EXISTS:${ZSTD_TARGET}>>)
+         add_test (NAME ${name} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+             COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${name})
+     endmacro (unittest)
+--- cmake/avro-cpp-config.cmake.in.orig	2025-10-27 04:56:52 UTC
++++ cmake/avro-cpp-config.cmake.in
+@@ -0,0 +1,65 @@
++#
++# Licensed to the Apache Software Foundation (ASF) under one
++# or more contributor license agreements.  See the NOTICE file
++# distributed with this work for additional information
++# regarding copyright ownership.  The ASF licenses this file
++# to you under the Apache License, Version 2.0 (the
++# "License"); you may not use this file except in compliance
++# with the License.  You may obtain a copy of the License at
++#
++#   https://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing,
++# software distributed under the License is distributed on an
++# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++# KIND, either express or implied.  See the License for the
++# specific language governing permissions and limitations
++# under the License.
++#
++# This config sets the following variables in your project::
++#
++#   avro-cpp_FOUND - true if avro-cpp found on the system
++#   avro-cpp_VERSION - version of the found avro-cpp
++#
++# This config sets the following targets in your project::
++#
++#   avro-cpp::avrocpp_shared
++#   avro-cpp::avrocpp_static
++
++@PACKAGE_INIT@
++
++include(CMakeFindDependencyMacro)
++
++if(DEFINED CMAKE_MODULE_PATH)
++  set(AVRO_CMAKE_MODULE_PATH_OLD ${CMAKE_MODULE_PATH})
++else()
++  unset(AVRO_CMAKE_MODULE_PATH_OLD)
++endif()
++set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}")
++
++find_dependency(ZLIB REQUIRED)
++find_dependency(fmt REQUIRED)
++if(@Snappy_FOUND@)
++    find_dependency(Snappy REQUIRED)
++endif()
++if(@Boost_FOUND@)
++    find_dependency(Boost 1.70 REQUIRED)
++endif()
++
++if(DEFINED AVRO_CMAKE_MODULE_PATH_OLD)
++  set(CMAKE_MODULE_PATH ${AVRO_CMAKE_MODULE_PATH_OLD})
++  unset(AVRO_CMAKE_MODULE_PATH_OLD)
++else()
++    unset(CMAKE_MODULE_PATH)
++endif()
++
++include("${CMAKE_CURRENT_LIST_DIR}/avro-cpp-targets.cmake")
++
++if(@AVRO_BUILD_STATIC@)
++  add_library(avro-cpp::avrocpp_static ALIAS avro-cpp::avrocpp_s)
++endif()
++if(@AVRO_BUILD_SHARED@)
++  add_library(avro-cpp::avrocpp_shared ALIAS avro-cpp::avrocpp)
++endif()
++
++check_required_components(avro-cpp)
+--- include/avro/buffer/detail/BufferDetail.hh.orig	2025-09-05 08:05:13 UTC
++++ include/avro/buffer/detail/BufferDetail.hh
+@@ -19,9 +19,6 @@
+ #ifndef avro_BufferDetail_hh__
+ #define avro_BufferDetail_hh__
+ 
+-#ifdef HAVE_BOOST_ASIO
+-#include <boost/asio/buffer.hpp>
+-#endif
+ #include <cassert>
+ #include <deque>
+ #include <exception>
+@@ -42,10 +39,6 @@ typedef size_t size_type;
+ 
+ typedef char data_type;
+ typedef size_t size_type;
+-#ifdef HAVE_BOOST_ASIO
+-typedef boost::asio::const_buffer ConstAsioBuffer;
+-typedef boost::asio::mutable_buffer MutableAsioBuffer;
+-#endif
+ 
+ /// The size in bytes for blocks backing buffer chunks.
+ const size_type kMinBlockSize = 4096;
+--- include/avro/buffer/detail/BufferDetailIterator.hh.orig	2025-09-05 08:05:13 UTC
++++ include/avro/buffer/detail/BufferDetailIterator.hh
+@@ -57,15 +57,6 @@ struct InputIteratorHelper {
+         return iter_->dataSize();
+     }
+ 
+-    /// Conversion operator.   It doesn't check for null, because the only
+-    /// the only time the chunk should be null is when it's the iterator
+-    /// end(), which should never be dereferenced anyway.
+-#ifdef HAVE_BOOST_ASIO
+-    operator ConstAsioBuffer() const {
+-        return ConstAsioBuffer(data(), size());
+-    }
+-#endif
+-
+     BufferImpl::ChunkList::const_iterator iter_; ///< the current iterator
+ };
+ 
+@@ -94,15 +85,6 @@ struct OutputIteratorHelper {
+     size_type size() const {
+         return iter_->freeSize();
+     }
+-
+-    /// Conversion operator.   It doesn't check for null, because the only
+-    /// the only time the chunk should be null is when it's the iterator
+-    /// end(), which should never be dereferenced anyway.
+-#ifdef HAVE_BOOST_ASIO
+-    operator MutableAsioBuffer() const {
+-        return MutableAsioBuffer(data(), size());
+-    }
+-#endif
+ 
+     BufferImpl::ChunkList::const_iterator iter_; ///< the current iterator
+ };
+--- test/buffertest.cc.orig	2025-09-05 08:05:13 UTC
++++ test/buffertest.cc
+@@ -20,9 +20,6 @@
+ 
+ #include <boost/bind/bind.hpp>
+ 
+-#ifdef HAVE_BOOST_ASIO
+-#include <boost/asio.hpp>
+-#endif
+ #include "buffer/BufferPrint.hh"
+ #include "buffer/BufferReader.hh"
+ #include "buffer/BufferStream.hh"
+@@ -607,108 +604,46 @@ void TestIterator() {
+     }
+ }
+ 
+-#ifdef HAVE_BOOST_ASIO
+-void server(boost::barrier &b) {
+-    using boost::asio::ip::tcp;
+-    boost::asio::io_service io_service;
+-    tcp::acceptor a(io_service, tcp::endpoint(tcp::v4(), 33333));
+-    tcp::socket sock(io_service);
+-    a.listen();
+-
+-    b.wait();
+-
+-    a.accept(sock);
+-    avro::OutputBuffer buf(100);
+-
+-    size_t length = sock.receive(buf);
+-    buf.wroteTo(length);
+-    cout << "Server got " << length << " bytes\n";
+-
+-    InputBuffer rbuf(buf);
+-
+-    std::string res;
+-
+-    avro::InputBuffer::const_iterator iter = rbuf.begin();
+-    while (iter != rbuf.end()) {
+-        res.append(boost::asio::buffer_cast<const char *>(*iter), boost::asio::buffer_size(*iter));
+-        cout << "Received Buffer size: " << boost::asio::buffer_size(*iter) << endl;
+-        BOOST_CHECK_EQUAL(length, boost::asio::buffer_size(*iter));
+-        cout << "Received Buffer: \"" << res << '"' << endl;
+-        ++iter;
+-    }
+-
+-    BOOST_CHECK_EQUAL(res, "hello world");
+-}
+-
++// Historical context: Prior to AVRO-4178, InputBuffer and OutputBuffer iterators
++// had implicit conversion operators to boost::asio::const_buffer and
++// boost::asio::mutable_buffer (via ConstAsioBuffer and MutableAsioBuffer typedefs).
++// These conversions were removed to eliminate the Boost::system dependency.
++// This test demonstrates the recommended workaround: users should access the
++// public data() and size() member functions of the dereferenced iterator instead.
++// These functions provide the same underlying buffer pointer and size information
++// that the ASIO conversions provided, allowing integration with any I/O library.
+ void TestAsioBuffer() {
+-    using boost::asio::ip::tcp;
+     BOOST_TEST_MESSAGE("TestAsioBuffer");
+     {
+-        boost::barrier b(2);
+-
+-        boost::thread t(boost::bind(server, boost::ref(b)));
+-
+-        b.wait();
+-
+-        // set up the thing
+-        boost::asio::io_service io_service;
+-
+-        tcp::resolver resolver(io_service);
+-        tcp::resolver::query query(tcp::v4(), "localhost", "33333");
+-        tcp::resolver::iterator endpoint_iterator = resolver.resolve(query);
+-        tcp::resolver::iterator end;
+-
+-        tcp::socket socket(io_service);
+-        boost::system::error_code error = boost::asio::error::host_not_found;
+-        while (error && endpoint_iterator != end) {
+-            socket.close();
+-            socket.connect(*endpoint_iterator++, error);
+-        }
+-        if (error) {
+-            throw error;
+-        }
+-
+         std::string hello = "hello ";
+         std::string world = "world";
++
++        // Create a buffer with data
+         avro::OutputBuffer buf;
+         buf.writeTo(hello.c_str(), hello.size());
+ 
+-        BOOST_CHECK_EQUAL(buf.size(), hello.size());
+-
+         avro::OutputBuffer buf2;
+         buf2.writeTo(world.c_str(), world.size());
+-        BOOST_CHECK_EQUAL(buf2.size(), world.size());
+ 
+         buf.append(buf2);
+         BOOST_CHECK_EQUAL(buf.size(), hello.size() + world.size());
+ 
+-        cout << "Distance " << std::distance(buf.begin(), buf.end()) << endl;
+-        BOOST_CHECK_EQUAL(std::distance(buf.begin(), buf.end()), 1);
+-
++        // Convert to InputBuffer for reading
+         const avro::InputBuffer rbuf(buf);
+ 
++        // Demonstrate the workaround: instead of relying on implicit ASIO conversions,
++        // users can access data() and size() directly from the dereferenced iterator.
++        std::string reconstructed;
+         avro::InputBuffer::const_iterator iter = rbuf.begin();
+         while (iter != rbuf.end()) {
+-            std::string str(boost::asio::buffer_cast<const char *>(*iter), boost::asio::buffer_size(*iter));
+-            cout << "Buffer size: " << boost::asio::buffer_size(*iter) << endl;
+-            cout << "Buffer: \"" << str << '"' << endl;
++            reconstructed.append(iter->data(), iter->size());
+             ++iter;
+         }
+ 
+-        cout << "Buffer size " << rbuf.size() << endl;
+-
+-        std::size_t wrote = boost::asio::write(socket, rbuf);
+-        cout << "Wrote " << wrote << endl;
+-        BOOST_CHECK_EQUAL(wrote, rbuf.size());
+-
+-        t.join();
++        BOOST_CHECK_EQUAL(reconstructed, "hello world");
++        BOOST_CHECK_EQUAL(reconstructed.size(), rbuf.size());
+     }
+ }
+-#else
+-void TestAsioBuffer() {
+-    cout << "Skipping asio test\n";
+-}
+-#endif // HAVE_BOOST_ASIO
+ 
+ void TestSplit() {
+     BOOST_TEST_MESSAGE("TestSplit");
