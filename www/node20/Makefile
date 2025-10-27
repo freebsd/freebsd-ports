@@ -1,7 +1,7 @@
 PORTNAME=	node
 PORTVERSION=	${NODEJS_PORTVERSION}
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	${PORTVERSION:R:R}
@@ -28,6 +28,7 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libngtcp2.so:net/libngtcp2 \
 		libsimdjson.so:devel/simdjson \
 		libuv.so:devel/libuv
+RUN_DEPENDS=	corepack>=0:www/corepack
 
 USES=		compiler:c++11-lang gmake localbase pkgconfig python:build shebangfix tar:xz
 
@@ -42,6 +43,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-ngtcp2 \
 		--shared-simdjson \
 		--shared-zlib \
+		--without-corepack \
 		--with-intl=system-icu \
 		--without-npm
 CXXFLAGS_powerpc64=	-mpower8-vector
@@ -84,6 +86,7 @@ post-patch:
 # Clean up bundled libraries
 	@${RM} -r ${WRKSRC}/deps/brotli/
 	@${RM} -r ${WRKSRC}/deps/cares/
+	@${RM} -r ${WRKSRC}/deps/corepack/
 	@${RM} -r ${WRKSRC}/deps/icu-small/
 	@${RM} -r ${WRKSRC}/deps/llhttp/
 	@${RM} -r ${WRKSRC}/deps/nghttp2/
