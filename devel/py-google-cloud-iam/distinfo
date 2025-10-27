@@ -1,3 +1,3 @@
-TIMESTAMP = 1753796060
-SHA256 (google_cloud_iam-2.19.1.tar.gz) = f059c369ad98af6be3401f0f5d087775d775fb96833be1e9ab8048c422fb1bf4
-SIZE (google_cloud_iam-2.19.1.tar.gz) = 479801
+TIMESTAMP = 1761446620
+SHA256 (google_cloud_iam-2.20.0.tar.gz) = 06568ed8313f59fac46d21a5aae4c54eb1dda9f6bcecf2736c58ab1065dc9173
+SIZE (google_cloud_iam-2.20.0.tar.gz) = 480552
