@@ -1,5 +1,5 @@
-TIMESTAMP = 1756886356
-SHA256 (go/devel_api-linter/api-linter-v1.71.0/v1.71.0.mod) = f7e3b139d4f539a7fa6ba0674d543150732ea6fa1de9e830e3efa531f96dbc36
-SIZE (go/devel_api-linter/api-linter-v1.71.0/v1.71.0.mod) = 1089
-SHA256 (go/devel_api-linter/api-linter-v1.71.0/v1.71.0.zip) = a1f65eadaa868f84b3764dad4f4a5d6f72f91aeb88fdbad580501a2ea735f48b
-SIZE (go/devel_api-linter/api-linter-v1.71.0/v1.71.0.zip) = 1405090
+TIMESTAMP = 1761560732
+SHA256 (go/devel_api-linter/api-linter-v1.72.0/v1.72.0.mod) = e618908f35cb9bba3f9fec3fec2fd1cb12adddb51b3557d876dba74a16a366a0
+SIZE (go/devel_api-linter/api-linter-v1.72.0/v1.72.0.mod) = 1091
+SHA256 (go/devel_api-linter/api-linter-v1.72.0/v1.72.0.zip) = fc7f5af28817c5143baa1371ec1e1a95721d73c5a0d52a79d7b535004edd4ae1
+SIZE (go/devel_api-linter/api-linter-v1.72.0/v1.72.0.zip) = 1404969
