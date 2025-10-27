@@ -14,21 +14,21 @@ CARGO_CRATES=	abi_stable-0.11.3 \
 		arc-swap-1.7.1 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
-		arrow-56.1.0 \
-		arrow-arith-56.1.0 \
-		arrow-array-56.1.0 \
-		arrow-buffer-56.1.0 \
-		arrow-cast-56.1.0 \
-		arrow-csv-56.1.0 \
-		arrow-data-56.1.0 \
-		arrow-ipc-56.1.0 \
-		arrow-json-56.1.0 \
-		arrow-ord-56.1.0 \
-		arrow-pyarrow-56.1.0 \
-		arrow-row-56.1.0 \
-		arrow-schema-56.1.0 \
-		arrow-select-56.1.0 \
-		arrow-string-56.1.0 \
+		arrow-56.2.0 \
+		arrow-arith-56.2.0 \
+		arrow-array-56.2.0 \
+		arrow-buffer-56.2.0 \
+		arrow-cast-56.2.0 \
+		arrow-csv-56.2.0 \
+		arrow-data-56.2.0 \
+		arrow-ipc-56.2.0 \
+		arrow-json-56.2.0 \
+		arrow-ord-56.2.0 \
+		arrow-pyarrow-56.2.0 \
+		arrow-row-56.2.0 \
+		arrow-schema-56.2.0 \
+		arrow-select-56.2.0 \
+		arrow-string-56.2.0 \
 		as_derive_utils-0.11.0 \
 		async-compression-0.4.19 \
 		async-ffi-0.5.0 \
@@ -61,7 +61,7 @@ CARGO_CRATES=	abi_stable-0.11.3 \
 		chrono-0.4.42 \
 		chrono-tz-0.10.4 \
 		cmake-0.1.54 \
-		comfy-table-7.2.1 \
+		comfy-table-7.1.2 \
 		const-random-0.1.18 \
 		const-random-macro-0.1.16 \
 		const_panic-0.2.15 \
@@ -82,41 +82,41 @@ CARGO_CRATES=	abi_stable-0.11.3 \
 		darling_core-0.21.3 \
 		darling_macro-0.21.3 \
 		dashmap-6.1.0 \
-		datafusion-50.1.0 \
-		datafusion-catalog-50.1.0 \
-		datafusion-catalog-listing-50.1.0 \
-		datafusion-common-50.1.0 \
-		datafusion-common-runtime-50.1.0 \
-		datafusion-datasource-50.1.0 \
-		datafusion-datasource-avro-50.1.0 \
-		datafusion-datasource-csv-50.1.0 \
-		datafusion-datasource-json-50.1.0 \
-		datafusion-datasource-parquet-50.1.0 \
-		datafusion-doc-50.1.0 \
-		datafusion-execution-50.1.0 \
-		datafusion-expr-50.1.0 \
-		datafusion-expr-common-50.1.0 \
-		datafusion-ffi-50.1.0 \
-		datafusion-functions-50.1.0 \
-		datafusion-functions-aggregate-50.1.0 \
-		datafusion-functions-aggregate-common-50.1.0 \
-		datafusion-functions-nested-50.1.0 \
-		datafusion-functions-table-50.1.0 \
-		datafusion-functions-window-50.1.0 \
-		datafusion-functions-window-common-50.1.0 \
-		datafusion-macros-50.1.0 \
-		datafusion-optimizer-50.1.0 \
-		datafusion-physical-expr-50.1.0 \
-		datafusion-physical-expr-adapter-50.0.0 \
-		datafusion-physical-expr-common-50.1.0 \
-		datafusion-physical-optimizer-50.1.0 \
-		datafusion-physical-plan-50.1.0 \
-		datafusion-proto-50.1.0 \
-		datafusion-proto-common-50.1.0 \
-		datafusion-pruning-50.1.0 \
-		datafusion-session-50.1.0 \
-		datafusion-sql-50.1.0 \
-		datafusion-substrait-50.1.0 \
+		datafusion-50.2.0 \
+		datafusion-catalog-50.2.0 \
+		datafusion-catalog-listing-50.2.0 \
+		datafusion-common-50.2.0 \
+		datafusion-common-runtime-50.2.0 \
+		datafusion-datasource-50.2.0 \
+		datafusion-datasource-avro-50.2.0 \
+		datafusion-datasource-csv-50.2.0 \
+		datafusion-datasource-json-50.2.0 \
+		datafusion-datasource-parquet-50.2.0 \
+		datafusion-doc-50.2.0 \
+		datafusion-execution-50.2.0 \
+		datafusion-expr-50.2.0 \
+		datafusion-expr-common-50.2.0 \
+		datafusion-ffi-50.2.0 \
+		datafusion-functions-50.2.0 \
+		datafusion-functions-aggregate-50.2.0 \
+		datafusion-functions-aggregate-common-50.2.0 \
+		datafusion-functions-nested-50.2.0 \
+		datafusion-functions-table-50.2.0 \
+		datafusion-functions-window-50.2.0 \
+		datafusion-functions-window-common-50.2.0 \
+		datafusion-macros-50.2.0 \
+		datafusion-optimizer-50.2.0 \
+		datafusion-physical-expr-50.2.0 \
+		datafusion-physical-expr-adapter-50.2.0 \
+		datafusion-physical-expr-common-50.2.0 \
+		datafusion-physical-optimizer-50.2.0 \
+		datafusion-physical-plan-50.2.0 \
+		datafusion-proto-50.2.0 \
+		datafusion-proto-common-50.2.0 \
+		datafusion-pruning-50.2.0 \
+		datafusion-session-50.2.0 \
+		datafusion-sql-50.2.0 \
+		datafusion-substrait-50.2.0 \
 		digest-0.10.7 \
 		displaydoc-0.2.5 \
 		dyn-clone-1.0.20 \
@@ -150,6 +150,7 @@ CARGO_CRATES=	abi_stable-0.11.3 \
 		half-2.6.0 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
+		hashbrown-0.16.0 \
 		heck-0.5.0 \
 		hex-0.4.3 \
 		http-1.3.1 \
@@ -197,7 +198,7 @@ CARGO_CRATES=	abi_stable-0.11.3 \
 		libz-rs-sys-0.5.2 \
 		linux-raw-sys-0.11.0 \
 		litemap-0.8.0 \
-		lock_api-0.4.13 \
+		lock_api-0.4.14 \
 		log-0.4.28 \
 		lru-slab-0.1.2 \
 		lz4_flex-0.11.5 \
@@ -217,12 +218,12 @@ CARGO_CRATES=	abi_stable-0.11.3 \
 		num-rational-0.4.2 \
 		num-traits-0.2.19 \
 		object-0.36.7 \
-		object_store-0.12.3 \
+		object_store-0.12.4 \
 		once_cell-1.21.3 \
 		openssl-probe-0.1.6 \
 		ordered-float-2.10.1 \
-		parking_lot-0.12.4 \
-		parking_lot_core-0.9.11 \
+		parking_lot-0.12.5 \
+		parking_lot_core-0.9.12 \
 		parquet-56.1.0 \
 		paste-1.0.15 \
 		pbjson-0.7.0 \
@@ -318,7 +319,9 @@ CARGO_CRATES=	abi_stable-0.11.3 \
 		stacker-0.1.21 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
+		strum-0.26.3 \
 		strum-0.27.2 \
+		strum_macros-0.26.4 \
 		strum_macros-0.27.2 \
 		substrait-0.58.0 \
 		subtle-2.6.1 \
