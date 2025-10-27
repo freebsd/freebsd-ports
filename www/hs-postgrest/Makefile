@@ -1,6 +1,6 @@
 PORTNAME=	postgrest
 DISTVERSIONPREFIX=	v
-DISTVERSION=	13.0.7
+DISTVERSION=	14.0
 CATEGORIES=	www databases haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,15 +16,15 @@ BUILD_DEPENDS=	ghc-9.6.7:lang/ghc96 \
 		pg_config:databases/postgresql${PGSQL_DEFAULT}-client
 
 USES=		cabal pgsql
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	PostgREST
-
 USE_RC_SUBR=	postgrest
 
 CABAL_PROJECT=	remove
 SKIP_CABAL_PLIST=	yes
 
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,even
 SUB_FILES=	default.conf
 SUB_LIST=	ETCDIR=${ETCDIR} \
 		POSTGREST_GROUP=${POSTGREST_GROUP} \
@@ -35,7 +35,6 @@ GROUPS=		${POSTGREST_GROUP}
 
 PLIST_FILES=	"@sample ${ETCDIR}/default.conf.sample" \
 		sbin/postgrest
-
 PLIST_SUB=	ETCDIR=${ETCDIR} \
 		POSTGREST_GROUP=${POSTGREST_GROUP} \
 		POSTGREST_USER=${POSTGREST_USER}
