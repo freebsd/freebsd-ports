@@ -1,5 +1,5 @@
 PORTNAME=	rocksdb
-PORTVERSION=	10.5.1
+PORTVERSION=	10.7.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgflags.so:devel/gflags \
 		libsnappy.so:archivers/snappy
 
-USES=		compiler:c++17-lang gmake localbase:ldflags perl5
+USES=		compiler:c++20-lang gmake localbase:ldflags perl5
 USE_PERL5=	build
 
 ALL_TARGET=	shared_lib static_lib all
@@ -31,7 +31,7 @@ CONFIGURE_ENV=	PORTABLE=0 ROCKSDB_ROOT=${WRKSRC}
 CONFIGURE_SCRIPT=	build_tools/build_detect_platform
 HAS_CONFIGURE=	yes
 MAKE_ENV=	CXX=${CXX} INSTALL_PATH=${STAGEDIR}${PREFIX} USE_RTTI=1 V=1
-USE_CXXSTD=	c++17
+USE_CXXSTD=	c++20
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 

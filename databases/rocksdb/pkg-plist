@@ -61,6 +61,7 @@ include/rocksdb/options.h
 include/rocksdb/perf_context.h
 include/rocksdb/perf_level.h
 include/rocksdb/persistent_cache.h
+include/rocksdb/point_lock_bench_tool.h
 include/rocksdb/port_defs.h
 include/rocksdb/rate_limiter.h
 include/rocksdb/rocksdb_namespace.h
