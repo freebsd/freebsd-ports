@@ -27,6 +27,8 @@
 %%WWWDIR%%/apps/comments/l10n/ast.json
 %%WWWDIR%%/apps/comments/l10n/az.js
 %%WWWDIR%%/apps/comments/l10n/az.json
+%%WWWDIR%%/apps/comments/l10n/be.js
+%%WWWDIR%%/apps/comments/l10n/be.json
 %%WWWDIR%%/apps/comments/l10n/bg_BG.js
 %%WWWDIR%%/apps/comments/l10n/bg_BG.json
 %%WWWDIR%%/apps/comments/l10n/bn_BD.js
@@ -55,6 +57,8 @@
 %%WWWDIR%%/apps/comments/l10n/el.json
 %%WWWDIR%%/apps/comments/l10n/en_GB.js
 %%WWWDIR%%/apps/comments/l10n/en_GB.json
+%%WWWDIR%%/apps/comments/l10n/en_US.js
+%%WWWDIR%%/apps/comments/l10n/en_US.json
 %%WWWDIR%%/apps/comments/l10n/eo.js
 %%WWWDIR%%/apps/comments/l10n/eo.json
 %%WWWDIR%%/apps/comments/l10n/es.js
@@ -451,6 +455,8 @@
 %%WWWDIR%%/apps/dav/l10n/ast.json
 %%WWWDIR%%/apps/dav/l10n/az.js
 %%WWWDIR%%/apps/dav/l10n/az.json
+%%WWWDIR%%/apps/dav/l10n/be.js
+%%WWWDIR%%/apps/dav/l10n/be.json
 %%WWWDIR%%/apps/dav/l10n/bg_BG.js
 %%WWWDIR%%/apps/dav/l10n/bg_BG.json
 %%WWWDIR%%/apps/dav/l10n/bn_BD.js
@@ -477,6 +483,8 @@
 %%WWWDIR%%/apps/dav/l10n/el.json
 %%WWWDIR%%/apps/dav/l10n/en_GB.js
 %%WWWDIR%%/apps/dav/l10n/en_GB.json
+%%WWWDIR%%/apps/dav/l10n/en_US.js
+%%WWWDIR%%/apps/dav/l10n/en_US.json
 %%WWWDIR%%/apps/dav/l10n/eo.js
 %%WWWDIR%%/apps/dav/l10n/eo.json
 %%WWWDIR%%/apps/dav/l10n/es.js
@@ -1152,6 +1160,8 @@
 %%WWWDIR%%/apps/federatedfilesharing/l10n/ast.json
 %%WWWDIR%%/apps/federatedfilesharing/l10n/az.js
 %%WWWDIR%%/apps/federatedfilesharing/l10n/az.json
+%%WWWDIR%%/apps/federatedfilesharing/l10n/be.js
+%%WWWDIR%%/apps/federatedfilesharing/l10n/be.json
 %%WWWDIR%%/apps/federatedfilesharing/l10n/bg_BG.js
 %%WWWDIR%%/apps/federatedfilesharing/l10n/bg_BG.json
 %%WWWDIR%%/apps/federatedfilesharing/l10n/bn_BD.js
@@ -1316,6 +1326,8 @@
 %%WWWDIR%%/apps/federation/l10n/ast.json
 %%WWWDIR%%/apps/federation/l10n/az.js
 %%WWWDIR%%/apps/federation/l10n/az.json
+%%WWWDIR%%/apps/federation/l10n/be.js
+%%WWWDIR%%/apps/federation/l10n/be.json
 %%WWWDIR%%/apps/federation/l10n/bg_BG.js
 %%WWWDIR%%/apps/federation/l10n/bg_BG.json
 %%WWWDIR%%/apps/federation/l10n/bn_BD.js
@@ -1567,6 +1579,8 @@
 %%WWWDIR%%/apps/files/l10n/cy_GB.json
 %%WWWDIR%%/apps/files/l10n/da.js
 %%WWWDIR%%/apps/files/l10n/da.json
+%%WWWDIR%%/apps/files/l10n/da_DK.js
+%%WWWDIR%%/apps/files/l10n/da_DK.json
 %%WWWDIR%%/apps/files/l10n/de.js
 %%WWWDIR%%/apps/files/l10n/de.json
 %%WWWDIR%%/apps/files/l10n/de_AT.js
@@ -1579,6 +1593,8 @@
 %%WWWDIR%%/apps/files/l10n/el.json
 %%WWWDIR%%/apps/files/l10n/en_GB.js
 %%WWWDIR%%/apps/files/l10n/en_GB.json
+%%WWWDIR%%/apps/files/l10n/en_US.js
+%%WWWDIR%%/apps/files/l10n/en_US.json
 %%WWWDIR%%/apps/files/l10n/eo.js
 %%WWWDIR%%/apps/files/l10n/eo.json
 %%WWWDIR%%/apps/files/l10n/es.js
@@ -1760,6 +1776,8 @@
 %%WWWDIR%%/apps/files/l10n/xgettextfiles
 %%WWWDIR%%/apps/files/l10n/zh-Hans.js
 %%WWWDIR%%/apps/files/l10n/zh-Hans.json
+%%WWWDIR%%/apps/files/l10n/zh.js
+%%WWWDIR%%/apps/files/l10n/zh.json
 %%WWWDIR%%/apps/files/l10n/zh_CN.GB2312.js
 %%WWWDIR%%/apps/files/l10n/zh_CN.GB2312.json
 %%WWWDIR%%/apps/files/l10n/zh_CN.js
@@ -1825,6 +1843,8 @@
 %%WWWDIR%%/apps/files_external/l10n/ast.json
 %%WWWDIR%%/apps/files_external/l10n/az.js
 %%WWWDIR%%/apps/files_external/l10n/az.json
+%%WWWDIR%%/apps/files_external/l10n/be.js
+%%WWWDIR%%/apps/files_external/l10n/be.json
 %%WWWDIR%%/apps/files_external/l10n/bg_BG.js
 %%WWWDIR%%/apps/files_external/l10n/bg_BG.json
 %%WWWDIR%%/apps/files_external/l10n/bn_BD.js
@@ -1853,6 +1873,8 @@
 %%WWWDIR%%/apps/files_external/l10n/el.json
 %%WWWDIR%%/apps/files_external/l10n/en_GB.js
 %%WWWDIR%%/apps/files_external/l10n/en_GB.json
+%%WWWDIR%%/apps/files_external/l10n/en_US.js
+%%WWWDIR%%/apps/files_external/l10n/en_US.json
 %%WWWDIR%%/apps/files_external/l10n/eo.js
 %%WWWDIR%%/apps/files_external/l10n/eo.json
 %%WWWDIR%%/apps/files_external/l10n/es.js
@@ -2165,6 +2187,8 @@
 %%WWWDIR%%/apps/files_sharing/l10n/ast.json
 %%WWWDIR%%/apps/files_sharing/l10n/az.js
 %%WWWDIR%%/apps/files_sharing/l10n/az.json
+%%WWWDIR%%/apps/files_sharing/l10n/be.js
+%%WWWDIR%%/apps/files_sharing/l10n/be.json
 %%WWWDIR%%/apps/files_sharing/l10n/bg_BG.js
 %%WWWDIR%%/apps/files_sharing/l10n/bg_BG.json
 %%WWWDIR%%/apps/files_sharing/l10n/bn_BD.js
@@ -2193,6 +2217,8 @@
 %%WWWDIR%%/apps/files_sharing/l10n/el.json
 %%WWWDIR%%/apps/files_sharing/l10n/en_GB.js
 %%WWWDIR%%/apps/files_sharing/l10n/en_GB.json
+%%WWWDIR%%/apps/files_sharing/l10n/en_US.js
+%%WWWDIR%%/apps/files_sharing/l10n/en_US.json
 %%WWWDIR%%/apps/files_sharing/l10n/eo.js
 %%WWWDIR%%/apps/files_sharing/l10n/eo.json
 %%WWWDIR%%/apps/files_sharing/l10n/es.js
@@ -2457,6 +2483,8 @@
 %%WWWDIR%%/apps/files_trashbin/l10n/el.json
 %%WWWDIR%%/apps/files_trashbin/l10n/en_GB.js
 %%WWWDIR%%/apps/files_trashbin/l10n/en_GB.json
+%%WWWDIR%%/apps/files_trashbin/l10n/en_US.js
+%%WWWDIR%%/apps/files_trashbin/l10n/en_US.json
 %%WWWDIR%%/apps/files_trashbin/l10n/eo.js
 %%WWWDIR%%/apps/files_trashbin/l10n/eo.json
 %%WWWDIR%%/apps/files_trashbin/l10n/es.js
@@ -3116,6 +3144,8 @@
 %%WWWDIR%%/apps/systemtags/l10n/ast.json
 %%WWWDIR%%/apps/systemtags/l10n/az.js
 %%WWWDIR%%/apps/systemtags/l10n/az.json
+%%WWWDIR%%/apps/systemtags/l10n/be.js
+%%WWWDIR%%/apps/systemtags/l10n/be.json
 %%WWWDIR%%/apps/systemtags/l10n/bg_BG.js
 %%WWWDIR%%/apps/systemtags/l10n/bg_BG.json
 %%WWWDIR%%/apps/systemtags/l10n/bn_BD.js
@@ -3144,6 +3174,8 @@
 %%WWWDIR%%/apps/systemtags/l10n/el.json
 %%WWWDIR%%/apps/systemtags/l10n/en_GB.js
 %%WWWDIR%%/apps/systemtags/l10n/en_GB.json
+%%WWWDIR%%/apps/systemtags/l10n/en_US.js
+%%WWWDIR%%/apps/systemtags/l10n/en_US.json
 %%WWWDIR%%/apps/systemtags/l10n/eo.js
 %%WWWDIR%%/apps/systemtags/l10n/eo.json
 %%WWWDIR%%/apps/systemtags/l10n/es.js
@@ -3398,6 +3430,8 @@
 %%WWWDIR%%/apps/updatenotification/l10n/th_TH.json
 %%WWWDIR%%/apps/updatenotification/l10n/tr.js
 %%WWWDIR%%/apps/updatenotification/l10n/tr.json
+%%WWWDIR%%/apps/updatenotification/l10n/ug.js
+%%WWWDIR%%/apps/updatenotification/l10n/ug.json
 %%WWWDIR%%/apps/updatenotification/l10n/uk.js
 %%WWWDIR%%/apps/updatenotification/l10n/uk.json
 %%WWWDIR%%/apps/updatenotification/l10n/zh_CN.js
@@ -3885,6 +3919,8 @@
 %%WWWDIR%%/core/l10n/el.json
 %%WWWDIR%%/core/l10n/en_GB.js
 %%WWWDIR%%/core/l10n/en_GB.json
+%%WWWDIR%%/core/l10n/en_US.js
+%%WWWDIR%%/core/l10n/en_US.json
 %%WWWDIR%%/core/l10n/eo.js
 %%WWWDIR%%/core/l10n/eo.json
 %%WWWDIR%%/core/l10n/es.js
@@ -6324,8 +6360,8 @@
 %%WWWDIR%%/lib/composer/doctrine/dbal/lib/Doctrine/DBAL/VersionAwarePlatformDriver.php
 %%WWWDIR%%/lib/composer/doctrine/deprecations/LICENSE
 %%WWWDIR%%/lib/composer/doctrine/deprecations/composer.json
-%%WWWDIR%%/lib/composer/doctrine/deprecations/lib/Doctrine/Deprecations/Deprecation.php
-%%WWWDIR%%/lib/composer/doctrine/deprecations/lib/Doctrine/Deprecations/PHPUnit/VerifyDeprecations.php
+%%WWWDIR%%/lib/composer/doctrine/deprecations/src/Deprecation.php
+%%WWWDIR%%/lib/composer/doctrine/deprecations/src/PHPUnit/VerifyDeprecations.php
 %%WWWDIR%%/lib/composer/doctrine/event-manager/LICENSE
 %%WWWDIR%%/lib/composer/doctrine/event-manager/composer.json
 %%WWWDIR%%/lib/composer/doctrine/event-manager/src/EventArgs.php
@@ -6666,6 +6702,9 @@
 %%WWWDIR%%/lib/composer/guzzlehttp/psr7/src/UriResolver.php
 %%WWWDIR%%/lib/composer/guzzlehttp/psr7/src/Utils.php
 %%WWWDIR%%/lib/composer/icewind/smb/LICENSE.txt
+%%WWWDIR%%/lib/composer/icewind/smb/LICENSES/AGPL-3.0-or-later.txt
+%%WWWDIR%%/lib/composer/icewind/smb/LICENSES/CC0-1.0.txt
+%%WWWDIR%%/lib/composer/icewind/smb/LICENSES/MIT.txt
 %%WWWDIR%%/lib/composer/icewind/smb/composer.json
 %%WWWDIR%%/lib/composer/icewind/smb/src/ACL.php
 %%WWWDIR%%/lib/composer/icewind/smb/src/AbstractServer.php
@@ -6732,6 +6771,10 @@
 %%WWWDIR%%/lib/composer/icewind/smb/src/Wrapped/RawConnection.php
 %%WWWDIR%%/lib/composer/icewind/smb/src/Wrapped/Server.php
 %%WWWDIR%%/lib/composer/icewind/smb/src/Wrapped/Share.php
+%%WWWDIR%%/lib/composer/icewind/streams/LICENSE.txt
+%%WWWDIR%%/lib/composer/icewind/streams/LICENSES/AGPL-3.0-or-later.txt
+%%WWWDIR%%/lib/composer/icewind/streams/LICENSES/CC0-1.0.txt
+%%WWWDIR%%/lib/composer/icewind/streams/LICENSES/MIT.txt
 %%WWWDIR%%/lib/composer/icewind/streams/composer.json
 %%WWWDIR%%/lib/composer/icewind/streams/src/CallbackWrapper.php
 %%WWWDIR%%/lib/composer/icewind/streams/src/CountWrapper.php
@@ -7302,16 +7345,20 @@
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/JsonDecoder.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/Emulative.php
+%%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/AsymmetricVisibilityTokenEmulator.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/AttributeEmulator.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/EnumTokenEmulator.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/ExplicitOctalEmulator.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/KeywordEmulator.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/MatchTokenEmulator.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/NullsafeTokenEmulator.php
+%%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/PipeOperatorEmulator.php
+%%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/PropertyTokenEmulator.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/ReadonlyFunctionTokenEmulator.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/ReadonlyTokenEmulator.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/ReverseEmulator.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/TokenEmulator.php
+%%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/VoidCastEmulator.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Modifiers.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/NameContext.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node.php
@@ -7365,6 +7412,7 @@
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mul.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotEqual.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotIdentical.php
+%%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Pipe.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Plus.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Pow.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftLeft.php
@@ -7383,6 +7431,7 @@
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Object_.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/String_.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Unset_.php
+%%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Void_.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Expr/ClassConstFetch.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Expr/Clone_.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Expr/Closure.php
@@ -7429,6 +7478,7 @@
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Name/Relative.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/NullableType.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Param.php
+%%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Scalar.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Scalar/DNumber.php
@@ -7446,6 +7496,7 @@
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Line.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Method.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Namespace_.php
+%%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Property.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Trait_.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/Node/StaticVar.php
@@ -7732,6 +7783,7 @@
 %%WWWDIR%%/lib/composer/phpseclib/phpseclib/phpseclib/Exception/InvalidPacketLengthException.php
 %%WWWDIR%%/lib/composer/phpseclib/phpseclib/phpseclib/Exception/NoKeyLoadedException.php
 %%WWWDIR%%/lib/composer/phpseclib/phpseclib/phpseclib/Exception/NoSupportedAlgorithmsException.php
+%%WWWDIR%%/lib/composer/phpseclib/phpseclib/phpseclib/Exception/TimeoutException.php
 %%WWWDIR%%/lib/composer/phpseclib/phpseclib/phpseclib/Exception/UnableToConnectException.php
 %%WWWDIR%%/lib/composer/phpseclib/phpseclib/phpseclib/Exception/UnsupportedAlgorithmException.php
 %%WWWDIR%%/lib/composer/phpseclib/phpseclib/phpseclib/Exception/UnsupportedCurveException.php
@@ -9613,6 +9665,8 @@
 %%WWWDIR%%/lib/l10n/el.json
 %%WWWDIR%%/lib/l10n/en_GB.js
 %%WWWDIR%%/lib/l10n/en_GB.json
+%%WWWDIR%%/lib/l10n/en_US.js
+%%WWWDIR%%/lib/l10n/en_US.json
 %%WWWDIR%%/lib/l10n/eo.js
 %%WWWDIR%%/lib/l10n/eo.json
 %%WWWDIR%%/lib/l10n/es.js
@@ -10731,6 +10785,8 @@
 %%WWWDIR%%/settings/l10n/bs.json
 %%WWWDIR%%/settings/l10n/ca.js
 %%WWWDIR%%/settings/l10n/ca.json
+%%WWWDIR%%/settings/l10n/cs.js
+%%WWWDIR%%/settings/l10n/cs.json
 %%WWWDIR%%/settings/l10n/cs_CZ.js
 %%WWWDIR%%/settings/l10n/cs_CZ.json
 %%WWWDIR%%/settings/l10n/cy_GB.js
@@ -10749,6 +10805,8 @@
 %%WWWDIR%%/settings/l10n/el.json
 %%WWWDIR%%/settings/l10n/en_GB.js
 %%WWWDIR%%/settings/l10n/en_GB.json
+%%WWWDIR%%/settings/l10n/en_US.js
+%%WWWDIR%%/settings/l10n/en_US.json
 %%WWWDIR%%/settings/l10n/eo.js
 %%WWWDIR%%/settings/l10n/eo.json
 %%WWWDIR%%/settings/l10n/es.js
