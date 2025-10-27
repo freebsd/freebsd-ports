@@ -1,5 +1,5 @@
-TIMESTAMP = 1737322434
-SHA256 (dav1d-1.5.1.tar.bz2) = 4eddffd108f098e307b93c9da57b6125224dc5877b1b3d157b31be6ae8f1f093
-SIZE (dav1d-1.5.1.tar.bz2) = 1214503
-SHA256 (dav1d-test-data-1.5.1.tar.bz2) = 94bcd3423ead0d9ccc79ddebc336b0a6fd8dcd293402a71042d4c7652689d4bf
-SIZE (dav1d-test-data-1.5.1.tar.bz2) = 53088076
+TIMESTAMP = 1761594287
+SHA256 (dav1d-1.5.2.tar.bz2) = c748a3214cf02a6d23bc179a0e8caea9d6ece1e46314ef21f5508ca6b5de6262
+SIZE (dav1d-1.5.2.tar.bz2) = 1214561
+SHA256 (dav1d-test-data-1.5.2.tar.bz2) = 4127378b088483d6ae6583417329b0ad618ccab94ffdc759b3f6dca07c064340
+SIZE (dav1d-test-data-1.5.2.tar.bz2) = 53088047
