@@ -1,6 +1,5 @@
 PORTNAME=	dra
-DISTVERSION=	0.8.2
-PORTREVISION=	4
+DISTVERSION=	0.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,23 +30,23 @@ CARGO_CRATES=	adler2-2.0.0 \
 		bstr-1.6.0 \
 		bumpalo-3.16.0 \
 		bytes-1.10.1 \
-		bzip2-0.5.2 \
-		bzip2-sys-0.1.13+1.0.8 \
+		bzip2-0.6.0 \
 		cc-1.2.16 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.37 \
-		clap_builder-4.5.37 \
-		clap_complete-4.5.48 \
-		clap_derive-4.5.32 \
+		clap-4.5.45 \
+		clap_builder-4.5.44 \
+		clap_complete-4.5.57 \
+		clap_derive-4.5.45 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.0 \
 		console-0.15.0 \
+		console-0.16.0 \
 		cookie-0.18.1 \
 		cookie_store-0.21.1 \
 		crc32fast-1.4.2 \
 		crossbeam-utils-0.8.21 \
-		ctrlc-3.4.6 \
+		ctrlc-3.4.7 \
 		deranged-0.4.1 \
 		derive_arbitrary-1.4.1 \
 		dialoguer-0.11.0 \
@@ -57,11 +56,12 @@ CARGO_CRATES=	adler2-2.0.0 \
 		document-features-0.2.11 \
 		either-1.13.0 \
 		encode_unicode-0.3.6 \
+		encode_unicode-1.0.0 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
 		fastrand-1.9.0 \
 		filetime-0.2.17 \
-		flate2-1.1.1 \
+		flate2-1.1.2 \
 		float-cmp-0.10.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
@@ -84,13 +84,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
 		indexmap-2.6.0 \
-		indicatif-0.17.11 \
+		indicatif-0.18.0 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.2 \
 		itertools-0.14.0 \
 		itoa-1.0.6 \
 		js-sys-0.3.74 \
-		libc-0.2.158 \
+		libbz2-rs-sys-0.2.1 \
+		libc-0.2.172 \
 		libz-sys-1.1.20 \
 		linux-raw-sys-0.1.3 \
 		linux-raw-sys-0.4.14 \
@@ -101,11 +102,10 @@ CARGO_CRATES=	adler2-2.0.0 \
 		lzma-sys-0.1.19 \
 		memchr-2.7.4 \
 		miniz_oxide-0.8.5 \
-		nix-0.29.0 \
+		nix-0.30.1 \
 		normalize-line-endings-0.3.0 \
 		num-conv-0.1.0 \
 		num-traits-0.2.15 \
-		number_prefix-0.4.0 \
 		once_cell-1.19.0 \
 		percent-encoding-2.3.1 \
 		pkg-config-0.3.25 \
@@ -160,9 +160,10 @@ CARGO_CRATES=	adler2-2.0.0 \
 		unicode-ident-1.0.5 \
 		unicode-width-0.1.9 \
 		unicode-width-0.2.0 \
+		unit-prefix-0.5.1 \
 		untrusted-0.9.0 \
-		ureq-3.0.11 \
-		ureq-proto-0.4.1 \
+		ureq-3.0.12 \
+		ureq-proto-0.4.2 \
 		url-2.5.4 \
 		urlencoding-2.1.3 \
 		utf-8-0.7.6 \
@@ -193,36 +194,46 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
 		windows-targets-0.42.1 \
 		windows-targets-0.48.0 \
 		windows-targets-0.52.6 \
+		windows-targets-0.53.2 \
 		windows_aarch64_gnullvm-0.42.1 \
 		windows_aarch64_gnullvm-0.48.0 \
 		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_gnullvm-0.53.0 \
 		windows_aarch64_msvc-0.36.1 \
 		windows_aarch64_msvc-0.42.1 \
 		windows_aarch64_msvc-0.48.0 \
 		windows_aarch64_msvc-0.52.6 \
+		windows_aarch64_msvc-0.53.0 \
 		windows_i686_gnu-0.36.1 \
 		windows_i686_gnu-0.42.1 \
 		windows_i686_gnu-0.48.0 \
 		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.0 \
 		windows_i686_gnullvm-0.52.6 \
+		windows_i686_gnullvm-0.53.0 \
 		windows_i686_msvc-0.36.1 \
 		windows_i686_msvc-0.42.1 \
 		windows_i686_msvc-0.48.0 \
 		windows_i686_msvc-0.52.6 \
+		windows_i686_msvc-0.53.0 \
 		windows_x86_64_gnu-0.36.1 \
 		windows_x86_64_gnu-0.42.1 \
 		windows_x86_64_gnu-0.48.0 \
 		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.0 \
 		windows_x86_64_gnullvm-0.42.1 \
 		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.36.1 \
 		windows_x86_64_msvc-0.42.1 \
 		windows_x86_64_msvc-0.48.0 \
 		windows_x86_64_msvc-0.52.6 \
+		windows_x86_64_msvc-0.53.0 \
 		wit-bindgen-rt-0.33.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
