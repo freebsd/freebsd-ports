@@ -508,6 +508,7 @@
     SUBDIR += node20
     SUBDIR += node22
     SUBDIR += node24
+    SUBDIR += node25
     SUBDIR += nostromo
     SUBDIR += novnc
     SUBDIR += npc
