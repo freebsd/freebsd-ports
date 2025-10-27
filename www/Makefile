@@ -127,6 +127,7 @@
     SUBDIR += codeigniter
     SUBDIR += colly
     SUBDIR += coppermine
+    SUBDIR += corepack
     SUBDIR += cpp-httplib
     SUBDIR += cpr
     SUBDIR += crawl

@@ -1,0 +1,55 @@
+bin/corepack
+lib/node_modules/corepack/CHANGELOG.md
+lib/node_modules/corepack/LICENSE.md
+lib/node_modules/corepack/README.md
+@(,,755) lib/node_modules/corepack/dist/corepack.js
+lib/node_modules/corepack/dist/lib/corepack.cjs
+@(,,755) lib/node_modules/corepack/dist/npm.js
+@(,,755) lib/node_modules/corepack/dist/npx.js
+@(,,755) lib/node_modules/corepack/dist/pnpm.js
+@(,,755) lib/node_modules/corepack/dist/pnpx.js
+@(,,755) lib/node_modules/corepack/dist/yarn.js
+@(,,755) lib/node_modules/corepack/dist/yarnpkg.js
+lib/node_modules/corepack/package.json
+@(,,755) lib/node_modules/corepack/shims/corepack
+@(,,755) lib/node_modules/corepack/shims/corepack.cmd
+@(,,755) lib/node_modules/corepack/shims/corepack.ps1
+lib/node_modules/corepack/shims/nodewin/corepack
+lib/node_modules/corepack/shims/nodewin/corepack.cmd
+lib/node_modules/corepack/shims/nodewin/corepack.ps1
+lib/node_modules/corepack/shims/nodewin/npm
+lib/node_modules/corepack/shims/nodewin/npm.cmd
+lib/node_modules/corepack/shims/nodewin/npm.ps1
+lib/node_modules/corepack/shims/nodewin/npx
+lib/node_modules/corepack/shims/nodewin/npx.cmd
+lib/node_modules/corepack/shims/nodewin/npx.ps1
+lib/node_modules/corepack/shims/nodewin/pnpm
+lib/node_modules/corepack/shims/nodewin/pnpm.cmd
+lib/node_modules/corepack/shims/nodewin/pnpm.ps1
+lib/node_modules/corepack/shims/nodewin/pnpx
+lib/node_modules/corepack/shims/nodewin/pnpx.cmd
+lib/node_modules/corepack/shims/nodewin/pnpx.ps1
+lib/node_modules/corepack/shims/nodewin/yarn
+lib/node_modules/corepack/shims/nodewin/yarn.cmd
+lib/node_modules/corepack/shims/nodewin/yarn.ps1
+lib/node_modules/corepack/shims/nodewin/yarnpkg
+lib/node_modules/corepack/shims/nodewin/yarnpkg.cmd
+lib/node_modules/corepack/shims/nodewin/yarnpkg.ps1
+@(,,755) lib/node_modules/corepack/shims/npm
+@(,,755) lib/node_modules/corepack/shims/npm.cmd
+@(,,755) lib/node_modules/corepack/shims/npm.ps1
+@(,,755) lib/node_modules/corepack/shims/npx
+@(,,755) lib/node_modules/corepack/shims/npx.cmd
+@(,,755) lib/node_modules/corepack/shims/npx.ps1
+@(,,755) lib/node_modules/corepack/shims/pnpm
+@(,,755) lib/node_modules/corepack/shims/pnpm.cmd
+@(,,755) lib/node_modules/corepack/shims/pnpm.ps1
+@(,,755) lib/node_modules/corepack/shims/pnpx
+@(,,755) lib/node_modules/corepack/shims/pnpx.cmd
+@(,,755) lib/node_modules/corepack/shims/pnpx.ps1
+@(,,755) lib/node_modules/corepack/shims/yarn
+@(,,755) lib/node_modules/corepack/shims/yarn.cmd
+@(,,755) lib/node_modules/corepack/shims/yarn.ps1
+@(,,755) lib/node_modules/corepack/shims/yarnpkg
+@(,,755) lib/node_modules/corepack/shims/yarnpkg.cmd
+@(,,755) lib/node_modules/corepack/shims/yarnpkg.ps1

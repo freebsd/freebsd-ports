@@ -1,0 +1,4 @@
+Corepack is a zero-runtime-dependency Node.js script that acts as a bridge
+between Node.js projects and the package managers they are intended to be used
+with during development. In practical terms, Corepack lets you use Yarn, npm,
+and pnpm without having to install them.
