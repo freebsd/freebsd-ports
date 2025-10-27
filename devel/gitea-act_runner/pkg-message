@@ -6,4 +6,13 @@ When configuring the runner, use 'host' as the label. e.g.
 act-runner register --labels FreeBSD:host,FreeBSD-14.3:host
 EOM
 }
+{ type: upgrade
+  message: <<EOM
+The rcvar act_runner_flags has been removed in lieu of act_runner_args.
+If the variable act_runner_flags is defined it will show an error while
+starting the service.
+
+Change the variable act_runner_flags to act_runner_args.
+EOM
+}
 ]
