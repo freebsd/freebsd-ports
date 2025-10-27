@@ -1,6 +1,6 @@
 PORTNAME?=	arcanist
 PORTVERSION?=	20220518
-PORTREVISION?=	7
+PORTREVISION?=	8
 CATEGORIES?=	devel
 PKGNAMESUFFIX=	${SLAVE_PKGNAMESUFFIX}${PHP_PKGNAMESUFFIX}
 
@@ -50,6 +50,13 @@ PLIST_FILES=	bin/arc
 
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${PHP_VER} >= 83
+post-patch:
+	@${REINPLACE_CMD} -e 's/ | E_STRICT//' ${WRKSRC}/support/init/init-script.php
+.endif
+
 do-install:
 .if ${SLAVEPORT} == bin
 	${RLN} ../${PHP_DESTDIR}/bin/arc ${STAGEDIR}${PREFIX}/bin/arc
@@ -83,4 +90,4 @@ do-install:
 	${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/bin/arc shell-complete --generate
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
