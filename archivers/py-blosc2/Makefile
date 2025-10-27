@@ -1,5 +1,5 @@
 PORTNAME=	blosc2
-PORTVERSION=	3.10.0
+PORTVERSION=	3.10.2
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	c-blosc2>=2.19.1:archivers/c-blosc2 \
 LIB_DEPENDS=	libblosc2.so:archivers/c-blosc2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ndindex>=0:math/py-ndindex@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numexpr>=2.13.1:math/py-numexpr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numexpr>=2.14.1:math/py-numexpr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.26,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}py-cpuinfo>=0:sysutils/py-py-cpuinfo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
