@@ -1,5 +1,5 @@
 PORTNAME=	po_to_json
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	converters rubygems
 MASTER_SITES=	RG
 
