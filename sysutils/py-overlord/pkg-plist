@@ -3,6 +3,7 @@
 libexec/overlord/safe-exc.sh
 libexec/overlord/vm-install-from-appjail-image.sh
 libexec/overlord/vm-install-from-components.sh
+libexec/overlord/vm-install-from-pkgbase.sh
 libexec/overlord/vm-start.sh
 libexec/overlord/create.py
 share/man/man1/overlord.1.gz
@@ -135,3 +136,4 @@ bin/overlord
 %%PYTHON_SITELIBDIR%%/overlord/util.py
 %%PYTHON_SITELIBDIR%%/overlord/version.py
 %%PYTHON_SITELIBDIR%%/overlord/vm.py
+%%DATADIR%%/files/pkgbase/base.conf
