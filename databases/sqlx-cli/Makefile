@@ -1,7 +1,6 @@
 PORTNAME=	sqlx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.5
-PORTREVISION=	4
+DISTVERSION=	0.8.6
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
 
@@ -235,6 +234,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		libsqlite3-sys-0.30.1 \
 		linux-raw-sys-0.3.8 \
 		linux-raw-sys-0.4.15 \
+		linux-raw-sys-0.9.4 \
 		litemap-0.7.4 \
 		lock_api-0.4.12 \
 		log-0.4.24 \
@@ -325,6 +325,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustc-hash-1.1.0 \
 		rustix-0.37.28 \
 		rustix-0.38.43 \
+		rustix-1.0.5 \
 		rustls-0.23.21 \
 		rustls-native-certs-0.8.1 \
 		rustls-pki-types-1.10.1 \
@@ -386,6 +387,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		target-triple-0.1.3 \
 		tempfile-3.15.0 \
 		termcolor-1.4.1 \
+		terminal_size-0.4.2 \
 		termtree-0.5.1 \
 		thiserror-1.0.69 \
 		thiserror-2.0.11 \
