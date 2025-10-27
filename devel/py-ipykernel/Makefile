@@ -1,5 +1,5 @@
 PORTNAME=	ipykernel
-PORTVERSION=	6.30.1
+PORTVERSION=	6.31.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/ipython/ipykernel/releases/download/v${PORTVERSION}/
@@ -14,7 +14,7 @@ WWW=		https://ipython.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.4:devel/py-hatchling@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.22:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-client>=6:devel/py-jupyter-client@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}comm>=0.1.1:devel/py-comm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}debugpy>=1.6.5:devel/py-debugpy@${PY_FLAVOR} \
