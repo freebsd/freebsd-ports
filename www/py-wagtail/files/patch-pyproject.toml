@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-08-04 15:00:13 UTC
+--- pyproject.toml.orig	2025-10-23 15:58:48 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -17,3 +17,12 @@
  authors = [
    { name = "Wagtail core team + contributors", email = "hello@wagtail.org" },
  ]
+@@ -50,7 +49,7 @@ dependencies = [
+   "anyascii>=0.1.5",
+   "telepath>=0.3.1,<1",
+   "laces>=0.1,<0.2",
+-  "django-tasks>=0.8,<0.9",
++  "django-tasks>=0.8,<0.10",
+ ]
+ 
+ [project.urls]
