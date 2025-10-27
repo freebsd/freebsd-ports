@@ -1,3 +1,36 @@
+  <vuln vid="823b4e48-b340-11f0-b3f7-a8a1599412c6">
+    <topic>chromium -- security fix</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>141.0.7390.122</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>141.0.7390.122</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/10/stable-channel-update-for-desktop_21.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[452296415] High CVE-2025-12036: Inappropriate implementation in V8. Reported by Google Big Sleep on 2025-10-15</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-12036</cvename>
+      <url>https://chromereleases.googleblog.com/2025/10/stable-channel-update-for-desktop_21.html</url>
+    </references>
+    <dates>
+      <discovery>2025-10-21</discovery>
+      <entry>2025-10-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ea1c485f-b025-11f0-bce7-bc2411002f50">
     <topic>unbound -- Possible domain hijacking via promiscuous records in the authority section</topic>
     <affects>
@@ -10,7 +43,7 @@
        <body xmlns="http://www.w3.org/1999/xhtml">
        <p>sep@nlnetlabs.nl reports:</p>
        <blockquote cite="https://www.nlnetlabs.nl/downloads/unbound/CVE-2025-11411.txt">
-         <p>NLnet Labs Unbound up to and including version 1.24.0 is vulnerable
+       <p>NLnet Labs Unbound up to and including version 1.24.0 is vulnerable
        to possible domain hijack attacks.  Promiscuous NS RRSets that
        complement positive DNS replies in the authority section can be
        used to trick resolvers to update their delegation information for
