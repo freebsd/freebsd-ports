@@ -1,8 +1,8 @@
 Set DATADIR url to Help pages
 
---- gui-wx/wxmain.cpp.orig	2021-01-23 03:06:47 UTC
+--- gui-wx/wxmain.cpp.orig	2025-09-26 02:31:41 UTC
 +++ gui-wx/wxmain.cpp
-@@ -1446,29 +1446,29 @@ void MainFrame::OnMenu(wxCommandEvent& event)
+@@ -1410,29 +1410,29 @@ void MainFrame::OnMenu(wxCommandEvent& event)
          case ID_TILE:           ToggleTileLayers(); break;
              
          // Help menu
