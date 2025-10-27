@@ -1,5 +1,5 @@
 PORTNAME=	xdis
-PORTVERSION=	6.1.7
+PORTVERSION=	6.1.8
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/rocky/python-xdis/releases/download/${PORTVERSION}/
