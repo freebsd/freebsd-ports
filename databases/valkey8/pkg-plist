@@ -1,0 +1,11 @@
+bin/valkey-benchmark
+bin/valkey-check-aof
+bin/valkey-check-rdb
+bin/valkey-cli
+bin/valkey-sentinel
+bin/valkey-server
+@sample etc/valkey.conf.sample
+@sample(%%VALKEY_USER%%,%%VALKEY_GROUP%%,) etc/valkey-sentinel.conf.sample
+@dir(%%VALKEY_USER%%,%%VALKEY_GROUP%%,) %%VALKEY_DBDIR%%
+@dir(%%VALKEY_USER%%,%%VALKEY_GROUP%%,) %%VALKEY_LOGDIR%%
+@dir(%%VALKEY_USER%%,%%VALKEY_GROUP%%,) %%VALKEY_RUNDIR%%
