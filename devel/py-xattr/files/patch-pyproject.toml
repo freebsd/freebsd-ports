@@ -1,10 +1,19 @@
---- pyproject.toml.orig	2025-07-14 02:33:11 UTC
+--- pyproject.toml.orig	2025-10-13 21:46:56 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ requires = [
  [build-system]
  requires = [
--    "setuptools>=68",
+-    "setuptools>=77.0.3",
 +    "setuptools>=61",
      "wheel",
      "cffi>=1.16.0",
  ]
+@@ -21,7 +21,7 @@ description="Python wrapper for extended filesystem at
+     {name = "Bob Ippolito", email = "bob@redivi.com"},
+ ]
+ description="Python wrapper for extended filesystem attributes"
+-license = "MIT"
++license = {file = "LICENSE.txt"}
+ keywords = ["xattr"]
+ classifiers = [
+     "Environment :: Console",
