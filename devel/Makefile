@@ -910,8 +910,8 @@
     SUBDIR += gnustep-make
     SUBDIR += go-bindata
     SUBDIR += go-bindata-assetfs
-    SUBDIR += go-git
     SUBDIR += go-critic
+    SUBDIR += go-git
     SUBDIR += go-mode.el
     SUBDIR += go-perf
     SUBDIR += go-tools

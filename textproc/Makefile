@@ -234,8 +234,8 @@
     SUBDIR += gdome2
     SUBDIR += gh-grep
     SUBDIR += git-chglog
-    SUBDIR += gitlab-elasticsearch-indexer
     SUBDIR += gitlab-code-parser
+    SUBDIR += gitlab-elasticsearch-indexer
     SUBDIR += gitlab-zoekt-indexer
     SUBDIR += gl-aspell
     SUBDIR += gladtex
