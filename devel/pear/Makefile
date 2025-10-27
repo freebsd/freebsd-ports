@@ -1,10 +1,19 @@
 PORTNAME=	pear
-PORTVERSION=	1.10.13
+PORTVERSION=	1.10.16
 CATEGORIES=	devel
-MASTER_SITES=	http://build.dimapanov.com/~fluffy/distfiles/ \
-		LOCAL/fluffy \
-		LOCAL/joneum
+MASTER_SITES=	https://pear.php.net/:go \
+		https://download.pear.php.net/package/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
+DISTNAME=	PEAR-${DISTVERSION}
+DISTFILES=	go-pear:go ${DISTNAME}${EXTRACT_SUFX} \
+		${SGRAPH_DISTNAME} ${TAR_DISTNAME} \
+		${XMLU_DISTNAME} ${GETOPT_DISTNAME}
+DIST_SUBDIR=	PEAR
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
+		${GETOPT_DISTNAME} \
+		${TAR_DISTNAME} \
+		${SGRAPH_DISTNAME} \
+		${XMLU_DISTNAME}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	PEAR framework for PHP
@@ -12,27 +21,47 @@ WWW=		https://pear.php.net/
 
 LICENSE=	PHP301
 
-USES=		cpe php:build,cli,flavors tar:xz
+USES=		cpe php:build,cli,flavors tar:tgz
 CPE_VENDOR=	php
 NO_BUILD=	yes
 NO_ARCH=	yes
 
 USE_PHP=	xml:build zlib:build
 
+TAR_DISTNAME=		Archive_Tar-1.6.0${EXTRACT_SUFX}
+GETOPT_DISTNAME=	Console_Getopt-1.4.3${EXTRACT_SUFX}
+SGRAPH_DISTNAME=	Structures_Graph-1.2.0${EXTRACT_SUFX}
+XMLU_DISTNAME=		XML_Util-1.4.5${EXTRACT_SUFX}
+
 PEARDIR=	${PREFIX}/share/pear
 
 OPTIONS_DEFINE=	DOCS
 
+post-extract:
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/go-pear ${WRKSRC}/
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \
-		-e "s|%%BUNDLEDIR%%|${WRKSRC}/go-pear-bundle|" \
+		-e "s|%%BUNDLEDIR%%|${WRKSRC}|" \
 		-e "s|%%TMPDIR%%|/tmp/pear|" \
 		${WRKSRC}/go-pear
-	@cd ${WRKSRC}/go-pear-bundle && ${MKDIR} tmp && ${TAR} -C tmp -xzf PEAR-${PORTVERSION}.tgz
+	@${MKDIR} ${WRKSRC}/go-pear-bundle
+	@${CP} ${WRKSRC}/PEAR.php ${WRKSRC}/go-pear-bundle/PEAR.php
+	@${CP} ${WRKDIR}/${TAR_DISTNAME:S/${EXTRACT_SUFX}//}/Archive/Tar.php ${WRKSRC}/go-pear-bundle/
+	@${CP} ${WRKDIR}/${GETOPT_DISTNAME:S/${EXTRACT_SUFX}//}/Console/Getopt.php ${WRKSRC}/go-pear-bundle/
+	@${CP} -r ${WRKDIR}/${TAR_DISTNAME:S/${EXTRACT_SUFX}//}/Archive ${WRKSRC}/
+	@${CP} -r ${WRKDIR}/${GETOPT_DISTNAME:S/${EXTRACT_SUFX}//}/Console ${WRKSRC}/
+	@${CP} -r ${WRKDIR}/${SGRAPH_DISTNAME:S/${EXTRACT_SUFX}//}/Structures ${WRKSRC}/
+	@${CP} -r ${WRKDIR}/${XMLU_DISTNAME:S/${EXTRACT_SUFX}//}/XML ${WRKSRC}/
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${TAR_DISTNAME} ${WRKSRC}/go-pear-bundle/
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${GETOPT_DISTNAME} ${WRKSRC}/go-pear-bundle/
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} ${WRKSRC}/go-pear-bundle/
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${SGRAPH_DISTNAME} ${WRKSRC}/go-pear-bundle/
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${XMLU_DISTNAME} ${WRKSRC}/go-pear-bundle/
+	@cd ${WRKSRC}/go-pear-bundle && ${MKDIR} tmp && ${TAR} -C tmp -xzf PEAR-${PORTVERSION}${EXTRACT_SUFX}
 	@cd ${WRKSRC}/go-pear-bundle/tmp/PEAR-${PORTVERSION} && ${PATCH} -s -p0 < ${FILESDIR}/extra-patch-PEAR-Config.php
 	@${RM} ${WRKSRC}/go-pear-bundle/tmp/PEAR-${PORTVERSION}/PEAR/Config.php.orig
-	@${MD5} -q ${WRKSRC}/go-pear-bundle/tmp/PEAR-${PORTVERSION}/PEAR/Config.php > ${WRKSRC}/Config.php.md5
-	@cd ${WRKSRC}/go-pear-bundle/tmp && ${TAR} -czf ../PEAR-${PORTVERSION}.tgz PEAR-${PORTVERSION} package.xml
+	@cd ${WRKSRC}/go-pear-bundle/tmp && ${TAR} -czf ../PEAR-${PORTVERSION}${EXTRACT_SUFX} PEAR-${PORTVERSION} package.xml
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${LOCALBASE}/bin/php -q ./go-pear
