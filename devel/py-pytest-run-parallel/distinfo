@@ -1,3 +1,3 @@
-TIMESTAMP = 1759816668
-SHA256 (pytest_run_parallel-0.7.0.tar.gz) = 05088a808d26975f095739a06efc9e8ba4749c194457f9927903eaacdd1e05ce
-SIZE (pytest_run_parallel-0.7.0.tar.gz) = 50185
+TIMESTAMP = 1761446702
+SHA256 (pytest_run_parallel-0.7.1.tar.gz) = ba53069f6c16147d6f5c275f5123947d1d0c31bd6ba57efc27e845a79afbe79e
+SIZE (pytest_run_parallel-0.7.1.tar.gz) = 65445
