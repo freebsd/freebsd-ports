@@ -1,8 +1,8 @@
-TIMESTAMP = 1756263493
-SHA256 (handbrake/HandBrake-1.10.1-source.tar.bz2) = eafa87d64b99c457240675f6b89a7f6aa3c1eb56352ec057a0a0949ba449fe8e
-SIZE (handbrake/HandBrake-1.10.1-source.tar.bz2) = 9484661
-SHA256 (handbrake/SVT-AV1-v3.1.0.tar.gz) = 3999586c261dc3d8690fd1489fc74da4e0fdff9159c8ce2b76ddfac001ad96d3
-SIZE (handbrake/SVT-AV1-v3.1.0.tar.gz) = 10908555
+TIMESTAMP = 1761124098
+SHA256 (handbrake/HandBrake-1.10.2-source.tar.bz2) = c65e1cc4f8cfc36c24107b92c28d60e71ef185ec983e9a5841facffafea5f8db
+SIZE (handbrake/HandBrake-1.10.2-source.tar.bz2) = 9481895
+SHA256 (handbrake/SVT-AV1-v3.1.2.tar.gz) = d0d73bfea42fdcc1222272bf2b0e2319e9df5574721298090c3d28315586ecb1
+SIZE (handbrake/SVT-AV1-v3.1.2.tar.gz) = 10909754
 SHA256 (handbrake/fdk-aac-2.0.3.tar.gz) = e25671cd96b10bad896aa42ab91a695a9e573395262baed4e4a2ff178d6a3a78
 SIZE (handbrake/fdk-aac-2.0.3.tar.gz) = 2518649
 SHA256 (handbrake/ffmpeg-7.1.1.tar.bz2) = 0c8da2f11579a01e014fc007cbacf5bb4da1d06afd0b43c7f8097ec7c0f143ba

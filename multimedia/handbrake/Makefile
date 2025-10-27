@@ -1,5 +1,5 @@
 PORTNAME=	handbrake
-DISTVERSION=	1.10.1
+DISTVERSION=	1.10.2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/HandBrake/HandBrake/releases/download/${DISTVERSION}/
 MASTER_SITES+=	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/:contrib
@@ -45,7 +45,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 USES=		autoreconf:build compiler:c11 gmake iconv libtool:build \
 		localbase:ldflags ninja:build pkgconfig python:build
 
-CONTRIB_FILES=	SVT-AV1-v3.1.0.tar.gz \
+CONTRIB_FILES=	SVT-AV1-v3.1.2.tar.gz \
 		fdk-aac-2.0.3.tar.gz \
 		ffmpeg-7.1.1.tar.bz2 \
 		libbluray-1.3.4.tar.bz2 \
