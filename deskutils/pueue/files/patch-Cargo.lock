@@ -1,6 +1,6 @@
---- Cargo.lock.orig	2025-03-10 06:00:47 UTC
+--- Cargo.lock.orig	2025-07-07 12:10:13 UTC
 +++ Cargo.lock
-@@ -1061,17 +1061,6 @@ dependencies = [
+@@ -1038,17 +1038,6 @@ dependencies = [
  ]
  
  [[package]]
@@ -18,7 +18,7 @@
  name = "libredox"
  version = "0.1.3"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -1506,18 +1495,6 @@ dependencies = [
+@@ -1492,18 +1481,6 @@ dependencies = [
  ]
  
  [[package]]
@@ -30,14 +30,14 @@
 - "bitflags",
 - "hex",
 - "procfs-core",
-- "rustix",
+- "rustix 0.38.44",
 -]
 -
 -[[package]]
  name = "procfs-core"
  version = "0.17.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -1547,11 +1524,9 @@ dependencies = [
+@@ -1535,11 +1512,9 @@ dependencies = [
   "flate2",
   "handlebars",
   "interim",
@@ -47,5 +47,5 @@
   "pretty_assertions",
 - "procfs",
   "pueue-lib",
+  "rcgen",
   "rstest",
-  "serde",
