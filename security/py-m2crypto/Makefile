@@ -1,5 +1,5 @@
 PORTNAME=	m2crypto
-PORTVERSION=	0.46.0
+PORTVERSION=	0.46.2
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,6 +10,7 @@ WWW=		https://m2crypto.readthedocs.io/en/latest/ \
 		https://gitlab.com/m2crypto/m2crypto
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSES/BSD-2-Clause.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
