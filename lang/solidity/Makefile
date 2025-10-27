@@ -1,13 +1,12 @@
 PORTNAME=	solidity
-PORTVERSION=	0.8.30
-PORTREVISION=	1
+DISTVERSION=	0.8.31-pre.1
 CATEGORIES=	lang
-MASTER_SITES=	https://github.com/ethereum/solidity/releases/download/v${PORTVERSION}/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	https://github.com/argotorg/solidity/releases/download/v${DISTVERSION}/
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Solidity Contract-Oriented Programming Language
-WWW=		https://github.com/ethereum/solidity
+WWW=		https://github.com/argotorg/solidity
 
 LICENSE=	GPLv3
 
