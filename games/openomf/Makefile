@@ -1,5 +1,6 @@
 PORTNAME=	openomf
 DISTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.omf2097.com/pub/files/omf/:data
 DISTFILES=	omf2097.rar:data

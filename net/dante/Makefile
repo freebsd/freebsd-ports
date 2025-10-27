@@ -1,6 +1,6 @@
 PORTNAME=	dante
 PORTVERSION=	1.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net security
 MASTER_SITES=	http://www.inet.no/dante/files/ \
 		ftp://ftp.inet.no/pub/socks/
