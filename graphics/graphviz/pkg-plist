@@ -173,11 +173,11 @@ lib/libgvc.so.7.0.1
 lib/libgvpr.la
 lib/libgvpr.so
 lib/libgvpr.so.2
-lib/libgvpr.so.2.0.1
+lib/libgvpr.so.2.0.2
 lib/libpathplan.la
 lib/libpathplan.so
 lib/libpathplan.so.4
-lib/libpathplan.so.4.0.1
+lib/libpathplan.so.4.0.2
 lib/libxdot.la
 lib/libxdot.so
 lib/libxdot.so.4
