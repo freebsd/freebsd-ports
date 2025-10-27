@@ -5616,6 +5616,7 @@
     SUBDIR += py-pycognito
     SUBDIR += py-pycompilation
     SUBDIR += py-pycomplete
+    SUBDIR += py-pycomposefile
     SUBDIR += py-pyconify
     SUBDIR += py-pycparser
     SUBDIR += py-pycrdt
@@ -6339,7 +6340,6 @@
     SUBDIR += pycanberra
     SUBDIR += pycdc
     SUBDIR += pycharm
-    SUBDIR += pycomposefile
     SUBDIR += pycos
     SUBDIR += pycount
     SUBDIR += pydbus-common
