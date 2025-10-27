@@ -1,6 +1,5 @@
 PORTNAME=	solid_queue
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails72
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-activejob72>=7.1:devel/rubygem-activejob72 \
 		rubygem-activerecord72>=7.1:databases/rubygem-activerecord72 \
 		rubygem-concurrent-ruby>=1.3.1:devel/rubygem-concurrent-ruby \
-		rubygem-fugit111>=1.11.0<1.12:devel/rubygem-fugit111 \
+		rubygem-fugit>=1.11<2:devel/rubygem-fugit \
 		rubygem-railties72>=7.1:www/rubygem-railties72 \
 		rubygem-thor>=1.3.1:devel/rubygem-thor
 
