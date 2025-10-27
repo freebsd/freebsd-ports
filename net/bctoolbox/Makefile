@@ -9,8 +9,6 @@ WWW=		https://gitlab.linphone.org/BC/public/bctoolbox
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-IGNORE_FreeBSD_13=	is not supported on systems with OpenSSL 1.1.1
-
 LIB_DEPENDS=	libbcunit.so:devel/bcunit
 
 USES=		cmake compiler:c++17-lang ssl
@@ -28,6 +26,12 @@ CMAKE_OFF=		ENABLE_UNIT_TESTS
 
 CFLAGS+=	-DHAVE_ARC4RANDOM
 LDFLAGS+=		-lpthread
+
+.include <bsd.port.options.mk>
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} < 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl111}
+IGNORE=	is not supported on systems with OpenSSL 1.1.1
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} '/clock_gettime/d' ${WRKSRC}/CMakeLists.txt
