@@ -1,5 +1,5 @@
-TIMESTAMP = 1759774529
-SHA256 (go/devel_openapi/openapi-v1.7.11/v1.7.11.mod) = 7bc52ccfa3ab68def866e59b7f34cafdcbb2c2aa87acfb98cb243fcbd6ff8e70
-SIZE (go/devel_openapi/openapi-v1.7.11/v1.7.11.mod) = 929
-SHA256 (go/devel_openapi/openapi-v1.7.11/v1.7.11.zip) = 082652e07cb27ba13dc4a133f7098be14315034fe2b5c15ddf5499c7bd5621ce
-SIZE (go/devel_openapi/openapi-v1.7.11/v1.7.11.zip) = 1049279
+TIMESTAMP = 1761446486
+SHA256 (go/devel_openapi/openapi-v1.9.0/v1.9.0.mod) = 0fc08745c9092bd87ebdd1d1098d6c9644295e25f332a99134aa2bfbdf3ce059
+SIZE (go/devel_openapi/openapi-v1.9.0/v1.9.0.mod) = 929
+SHA256 (go/devel_openapi/openapi-v1.9.0/v1.9.0.zip) = 43dccfef3dcbbcb47b232c4c985a76847254a1f0a4a8f99b5dcc9df0bb226295
+SIZE (go/devel_openapi/openapi-v1.9.0/v1.9.0.zip) = 1090019
