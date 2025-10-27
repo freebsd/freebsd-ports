@@ -1,21 +1,15 @@
---- pyproject.toml.orig	2025-10-07 23:17:42 UTC
+--- pyproject.toml.orig	2025-10-21 16:14:22 UTC
 +++ pyproject.toml
-@@ -1,11 +1,11 @@
+@@ -1,6 +1,6 @@
  [build-system]
 -requires = ["maturin>=1.0,<2.0"]
 -build-backend = "maturin"
-+requires = ["setuptools>=61.0", "wheel"]
++requires = ["setuptools>0", "wheel"]
 +build-backend = "setuptools.build_meta"
  
  [project]
  name = "uv"
- version = "0.9.1"
--description = "An extremely fast Python package and project manager, written in Rust."
-+description = "Python package for uv - extremely fast Python package installer"
- authors = [{ name = "Astral Software Inc.", email = "hey@astral.sh" }]
- requires-python = ">=3.8"
- keywords = [
-@@ -40,62 +40,10 @@ Releases = "https://github.com/astral-sh/uv/releases"
+@@ -40,62 +40,10 @@ Discord = "https://discord.gg/astral-sh"
  Releases = "https://github.com/astral-sh/uv/releases"
  Discord = "https://discord.gg/astral-sh"
  
