@@ -1,47 +1,42 @@
 PORTNAME=	orthanc-dicomweb
-DISTVERSION=	1.8
-PORTREVISION=	15
+DISTVERSION=	1.21
 CATEGORIES=	science
-MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/plugin-dicom-web/:main \
-		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/:framework \
-		https://orthanc.osimis.io/ThirdPartyDownloads/:thirdparty \
-		https://orthanc.osimis.io/ThirdPartyDownloads/dicom-web/:thirdpartydicomweb
-DISTFILES=	OrthancDicomWeb-${PORTVERSION}.tar.gz:main
-EXTRADISTFILES=	Orthanc-1.11.0.tar.gz:framework \
+MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-dicomweb/:dicomweb \
+		https://orthanc.uclouvain.be/downloads/third-party-downloads/:thirdparty \
+		https://orthanc.uclouvain.be/downloads/third-party-downloads/dicom-web/:thirdpartyweb \
+		https://orthanc.uclouvain.be/downloads/sources/orthanc/:orthanc
+DISTFILES=	OrthancDicomWeb-${PORTVERSION}.tar.gz:dicomweb
+EXTRADISTFILES=	Orthanc-${ORTHANC_VER}.tar.gz:orthanc \
 		e2fsprogs-1.44.5.tar.gz:thirdparty \
-		bootstrap-4.3.1.zip:thirdpartydicomweb \
-		vuejs-2.6.10.tar.gz:thirdpartydicomweb \
-		axios-0.19.0.tar.gz:thirdpartydicomweb \
-		Font-Awesome-4.7.0.tar.gz:thirdpartydicomweb \
-		bootstrap-vue-2.0.0-rc.24-dist.tar.gz:thirdpartydicomweb \
-		babel-polyfill-6.26.0.min.js.gz:thirdpartydicomweb
+		bootstrap-5.3.3.zip:thirdparty \
+		babel-polyfill-6.26.0.min.js.gz:thirdpartyweb \
+		vuejs-2.6.10.tar.gz:thirdpartyweb \
+		axios-0.19.0.tar.gz:thirdpartyweb \
+		Font-Awesome-4.7.0.tar.gz:thirdpartyweb
 DISTFILES+=	${EXTRADISTFILES}
 DIST_SUBDIR=	orthanc
 EXTRACT_ONLY=	OrthancDicomWeb-${PORTVERSION}.tar.gz
 
-MAINTAINER=	maintainer.freebsd@xpoundit.com
-COMMENT=	Orthanc plugin to bring support of the DICOMweb standard into Orthanc
+MAINTAINER=	jwb@FreeBSD.org
+COMMENT=	Orthanc DICOMWeb plugin
 WWW=		https://www.orthanc-server.com/static.php?page=dicomweb
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build with boost-1.86+
-
-BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCPlugin.h:science/orthanc
+BUILD_DEPENDS=	orthanc>=${ORTHANC_VER}:science/orthanc \
+		googletest>0:devel/googletest
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
-		libexpat.so:textproc/expat2 \
-		libgdcmCommon.so:devel/gdcm \
-		libicudata.so:devel/icu \
 		libjsoncpp.so:devel/jsoncpp \
-		libopenjp2.so:graphics/openjpeg \
 		libpugixml.so:textproc/pugixml
-RUN_DEPENDS=	Orthanc:science/orthanc
+RUN_DEPENDS=	orthanc>=${ORTHANC_VER}:science/orthanc
 
 USES=		cmake localbase python:build
-USE_LDCONFIG=	yes
+# FIXME: Should plugins be moved to lib?
+USE_LDCONFIG=	${DATADIR}/plugins
 
-CMAKE_ARGS=	-DORTHANC_FRAMEWORK_ROOT=${WRKSRC}/ThirdPartyDownloads/Orthanc-1.11.0/OrthancFramework/Sources \
+ORTHANC_VER=	1.12.9
+CMAKE_ARGS=	-DORTHANC_FRAMEWORK_ROOT=${WRKSRC}/ThirdPartyDownloads/Orthanc-${ORTHANC_VER}/OrthancFramework/Sources \
 		-DORTHANC_FRAMEWORK_SOURCE=path
 CMAKE_OFF=	USE_SYSTEM_UUID
 
@@ -57,7 +52,7 @@ post-extract:
 .for f in ${EXTRADISTFILES:C/:[^:]*//}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${WRKSRC}/ThirdPartyDownloads
 .endfor
-	${TAR} -C ${WRKSRC}/ThirdPartyDownloads -xf ${WRKSRC}/ThirdPartyDownloads/Orthanc-1.11.0.tar.gz
+	${TAR} -C ${WRKSRC}/ThirdPartyDownloads -xf ${WRKSRC}/ThirdPartyDownloads/Orthanc-${ORTHANC_VER}.tar.gz
 
 do-test:
 	@cd ${BUILD_WRKSRC} && ./UnitTests
