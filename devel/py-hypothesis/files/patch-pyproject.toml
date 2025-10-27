@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-04-18 21:15:51 UTC
+--- pyproject.toml.orig	2025-10-25 16:18:53 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@
  [build-system]
@@ -14,6 +14,6 @@
  """, "content-type" = "text/markdown"}
 -license = "MPL-2.0"
 +license = { text = "MPL-2.0" }
- requires-python = ">= 3.9"
+ requires-python = ">= 3.10"
  keywords = ["python", "testing", "fuzzing", "property-based-testing"]
  classifiers = [
