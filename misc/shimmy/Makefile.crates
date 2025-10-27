@@ -1,6 +1,4 @@
-CARGO_CRATES=	addr2line-0.25.1 \
-		adler2-2.0.1 \
-		aho-corasick-1.1.3 \
+CARGO_CRATES=	aho-corasick-1.1.3 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
 		anstream-0.6.21 \
@@ -15,30 +13,29 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		autocfg-1.5.0 \
 		axum-0.7.9 \
 		axum-core-0.4.5 \
-		backtrace-0.3.76 \
 		base64-0.21.7 \
 		base64-0.22.1 \
 		bindgen-0.72.1 \
 		bitflags-1.3.2 \
-		bitflags-2.9.4 \
+		bitflags-2.10.0 \
 		block-buffer-0.10.4 \
 		bstr-1.12.0 \
 		bumpalo-3.19.0 \
 		byteorder-1.5.0 \
 		bytes-1.10.1 \
 		cast-0.3.0 \
-		cc-1.2.40 \
+		cc-1.2.41 \
 		cexpr-0.6.0 \
-		cfg-if-1.0.3 \
+		cfg-if-1.0.4 \
 		chrono-0.4.42 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
 		clang-sys-1.8.1 \
-		clap-4.5.48 \
-		clap_builder-4.5.48 \
-		clap_derive-4.5.47 \
-		clap_lex-0.7.5 \
+		clap-4.5.50 \
+		clap_builder-4.5.50 \
+		clap_derive-4.5.49 \
+		clap_lex-0.7.6 \
 		cmake-0.1.54 \
 		colorchoice-1.0.4 \
 		core-foundation-0.9.4 \
@@ -65,7 +62,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		fastrand-2.3.0 \
-		find-msvc-tools-0.1.3 \
+		find-msvc-tools-0.1.4 \
 		find_cuda_helper-0.2.0 \
 		float-cmp-0.10.0 \
 		fnv-1.0.7 \
@@ -79,13 +76,12 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		futures-sink-0.3.31 \
 		futures-task-0.3.31 \
 		futures-util-0.3.31 \
-		generic-array-0.14.7 \
+		generic-array-0.14.9 \
 		getrandom-0.2.16 \
-		getrandom-0.3.3 \
-		gimli-0.32.3 \
+		getrandom-0.3.4 \
 		glob-0.3.3 \
 		h2-0.3.27 \
-		half-2.7.0 \
+		half-2.7.1 \
 		hashbrown-0.16.0 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
@@ -111,11 +107,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		icu_provider-2.0.0 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
-		indexmap-2.11.4 \
-		io-uring-0.7.10 \
+		indexmap-2.12.0 \
 		ipnet-2.11.0 \
 		is-terminal-0.4.16 \
-		is_terminal_polyfill-1.70.1 \
+		is_terminal_polyfill-1.70.2 \
 		itertools-0.10.5 \
 		itertools-0.13.0 \
 		itoa-1.0.15 \
@@ -132,21 +127,19 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		matchers-0.2.0 \
 		matchit-0.7.3 \
 		memchr-2.7.6 \
-		memmap2-0.9.8 \
+		memmap2-0.9.9 \
 		memo-map-0.3.3 \
 		mime-0.3.17 \
 		minijinja-2.12.0 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.8.9 \
-		mio-1.0.4 \
+		mio-1.1.0 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
 		ntapi-0.4.1 \
-		nu-ansi-term-0.50.1 \
+		nu-ansi-term-0.50.3 \
 		num-traits-0.2.19 \
-		object-0.37.3 \
 		once_cell-1.21.3 \
-		once_cell_polyfill-1.70.1 \
+		once_cell_polyfill-1.70.2 \
 		oorandom-11.1.5 \
 		option-ext-0.2.0 \
 		parking_lot-0.12.5 \
@@ -163,7 +156,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		predicates-core-1.0.9 \
 		predicates-tree-1.0.12 \
 		prettyplease-0.2.37 \
-		proc-macro2-1.0.101 \
+		proc-macro2-1.0.102 \
 		quote-1.0.41 \
 		r-efi-5.3.0 \
 		rand-0.8.5 \
@@ -173,12 +166,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
 		redox_users-0.4.6 \
-		regex-1.11.3 \
-		regex-automata-0.4.11 \
-		regex-syntax-0.8.6 \
+		regex-1.12.2 \
+		regex-automata-0.4.13 \
+		regex-syntax-0.8.8 \
 		reqwest-0.11.27 \
 		ring-0.17.14 \
-		rustc-demangle-0.1.26 \
 		rustc-hash-2.1.1 \
 		rustix-1.1.2 \
 		rustls-0.21.12 \
@@ -192,7 +184,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		scopeguard-1.2.0 \
 		sct-0.7.1 \
 		sdd-3.0.10 \
-		self_cell-1.2.0 \
+		self_cell-1.2.1 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
@@ -210,10 +202,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		slab-0.4.11 \
 		smallvec-1.15.1 \
 		socket2-0.5.10 \
-		socket2-0.6.0 \
+		socket2-0.6.1 \
 		stable_deref_trait-1.2.1 \
 		strsim-0.11.1 \
-		syn-2.0.106 \
+		syn-2.0.108 \
 		sync_wrapper-0.1.2 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
@@ -228,8 +220,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		thread_local-1.1.9 \
 		tinystr-0.8.1 \
 		tinytemplate-1.2.1 \
-		tokio-1.47.1 \
-		tokio-macros-2.5.0 \
+		tokio-1.48.0 \
+		tokio-macros-2.6.0 \
 		tokio-rustls-0.24.1 \
 		tokio-stream-0.1.17 \
 		tokio-tungstenite-0.20.1 \
@@ -247,7 +239,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tungstenite-0.20.1 \
 		tungstenite-0.24.0 \
 		typenum-1.19.0 \
-		unicode-ident-1.0.19 \
+		unicode-ident-1.0.20 \
 		untrusted-0.9.0 \
 		url-2.5.7 \
 		utf-8-0.7.6 \
@@ -260,7 +252,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasi-0.14.7+wasi-0.2.4 \
 		wasip2-1.0.1+wasi-0.2.4 \
 		wasm-bindgen-0.2.104 \
 		wasm-bindgen-backend-0.2.104 \
