@@ -13,8 +13,7 @@ WWW=		https://github.com/mwilliamson/jq.py
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3@${PY_FLAVOR}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libjq.so:textproc/jq \
 		libonig.so:devel/oniguruma
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
@@ -26,7 +25,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR}
 MAKE_ENV+=	JQPY_USE_SYSTEM_LIBS=1
 
 USES=		localbase python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist cython3 distutils
 
 post-install:
 		${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jq*.so
