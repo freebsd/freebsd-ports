@@ -1,5 +1,5 @@
 PORTNAME=	benchmark
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	benchmarks rubygems
 MASTER_SITES=	RG
 
