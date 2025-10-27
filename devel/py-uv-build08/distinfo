@@ -1,6 +1,6 @@
-TIMESTAMP = 1759774513
-SHA256 (uv_build-0.8.23.tar.gz) = d30b7f33fa85f0ac1057845a8246b9e24d935439a99d8354bf54c6b157b1b824
-SIZE (uv_build-0.8.23.tar.gz) = 332290
+TIMESTAMP = 1761446714
+SHA256 (uv_build-0.8.24.tar.gz) = 02e1256ac4524b06319a7fbfa30aa4959d9ef0b63076a959cce20a588448def8
+SIZE (uv_build-0.8.24.tar.gz) = 332743
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
