@@ -1,6 +1,5 @@
 PORTNAME=	ddtrace
-PORTVERSION=	2.21.11
-PORTREVISION=	2
+PORTVERSION=	2.21.12
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/abseil/abseil-cpp/releases/download/${ABSEIL_VERSION}/:abseil
@@ -27,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bytecode>=0.16.0:devel/py-bytecode@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3,1:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wrapt>=1:devel/py-wrapt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wrapt>=1<2:devel/py-wrapt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xmltodict>=0.12:devel/py-xmltodict@${PY_FLAVOR}
 
 USES=		cargo cmake:indirect compiler:c++17-lang python shebangfix
