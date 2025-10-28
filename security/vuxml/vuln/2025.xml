@@ -1,3 +1,30 @@
+  <vuln vid="a8dacd4b-b416-11f0-9f23-ecf4bbefc954">
+    <topic>privatebin - Missing HTML sanitisation of attached filename in file size hint enabling persistent XSS</topic>
+    <affects>
+      <package>
+      <name>privatebin</name>
+      <range><lt>2.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PrivateBin reports:</p>
+	<blockquote cite="https://privatebin.info/reports/vulnerability-2025-10-28.html">
+	  <p>We've identified an HTML injection/XSS vulnerability in the PrivateBin
+	   service that allows the injection of arbitrary HTML markup via the attached
+	   filename.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://privatebin.info/reports/vulnerability-2025-10-28.html</url>
+    </references>
+    <dates>
+      <discovery>2025-10-23</discovery>
+      <entry>2025-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1f1cf967-b35c-11f0-bce7-bc2411002f50">
     <topic>strongSwan -- Heap-based buffer overflow in eap-mschapv2 plugin due to improper handling of failure request packets</topic>
     <affects>
