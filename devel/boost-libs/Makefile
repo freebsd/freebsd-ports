@@ -1,5 +1,5 @@
 PORTNAME=	boost-libs
-PORTREVISION?=	0
+PORTREVISION?=	1
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 WWW=		https://www.boost.org/
@@ -10,7 +10,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 BROKEN_sparc64=	https://github.com/boostorg/context/commit/f2ef6326b6ed
 
 BUILD_DEPENDS+=	bjam:devel/boost-jam
-LIB_DEPENDS+=	libzstd.so:archivers/zstd
 
 # Note about LLVM_FROM_PORTS option:
 # Build of this port fails with assertion failure of compiler due to
@@ -72,6 +71,11 @@ ALL_TARGET=	stage
 MAKE_ARGS+=	-sZSTD_PATH=${LOCALBASE}
 MAKE_ARGS+=	-sZSTD_LIBRARY_PATH=${LOCALBASE}/lib
 MAKE_ARGS+=	-sZSTD_INCLUDE=${LOCALBASE}/include
+
+# prevent hook up broken and outdated libbacktrace.so from devel/libbacktrace 
+# which caused build errors with ZSTD or GIL enabled
+# TODO: port it to libexecinfo from base
+MAKE_ARGS+=	boost.stacktrace.backtrace=off
 
 .include <bsd.port.options.mk>
 
