@@ -1,7 +1,7 @@
 PORTNAME=	libosmium
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.22.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro geography devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs \
 		gdal>=0:graphics/gdal \
+		gdalcpp>=0:graphics/gdalcpp \
 		protozero>=0:devel/protozero \
 		expat>=0:textproc/expat2 \
 		liblz4>=0:archivers/liblz4 \
@@ -21,8 +22,7 @@ BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs \
 USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	osmcode
-CMAKE_ON=	INSTALL_GDALCPP  # until it appears as a port
-CMAKE_ON+=	BUILD_HEADERS
+CMAKE_ON=	BUILD_HEADERS
 CMAKE_OFF=	BUILD_EXAMPLES
 
 # although it builds tests the library itself is header-only
