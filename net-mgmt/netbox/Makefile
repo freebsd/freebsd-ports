@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.4
+DISTVERSION=	4.4.5
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -40,10 +40,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2.7<5.3:www/py-django52@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj52-djangorestframework>=3.16.1<3.17.0:www/py-dj52-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-drf-spectacular>=0.28.0<1:www/py-dj52-drf-spectacular@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-drf-spectacular-sidecar>=2025.10.1:www/py-dj52-drf-spectacular-sidecar@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-social-auth-app-django>=5.5.1<6:www/py-dj52-social-auth-app-django@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-social-auth-app-django>=5.6.0<6:www/py-dj52-social-auth-app-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-sorl-thumbnail>=12.11.0<13:graphics/py-dj52-sorl-thumbnail@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-strawberry-graphql>=0.283.3<0.300:devel/py-dj52-strawberry-graphql@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-strawberry-graphql-django>=0.66.2<1:www/py-dj52-strawberry-graphql-django@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-strawberry-graphql>=0.284.1<0.300:devel/py-dj52-strawberry-graphql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-strawberry-graphql-django>=0.67.0<1:www/py-dj52-strawberry-graphql-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.4.6<1:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.12<7:textproc/py-feedparser@${PY_FLAVOR} \

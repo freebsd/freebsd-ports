@@ -790,6 +790,7 @@
 %%DATADIR%%/ipam/migrations/0080_populate_service_parent.py
 %%DATADIR%%/ipam/migrations/0081_remove_service_device_virtual_machine_add_parent_gfk_index.py
 %%DATADIR%%/ipam/migrations/0082_add_prefix_network_containment_indexes.py
+%%DATADIR%%/ipam/migrations/0083_vlangroup_populate_total_vlan_ids.py
 %%DATADIR%%/ipam/migrations/__init__.py
 %%DATADIR%%/ipam/models/__init__.py
 %%DATADIR%%/ipam/models/asns.py
