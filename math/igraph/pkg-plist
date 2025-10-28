@@ -1,8 +1,6 @@
 include/igraph/igraph.h
 include/igraph/igraph_adjlist.h
 include/igraph/igraph_arpack.h
-include/igraph/igraph_array.h
-include/igraph/igraph_array_pmt.h
 include/igraph/igraph_attributes.h
 include/igraph/igraph_bipartite.h
 include/igraph/igraph_bitset.h
@@ -42,6 +40,7 @@ include/igraph/igraph_heap_pmt.h
 include/igraph/igraph_hrg.h
 include/igraph/igraph_interface.h
 include/igraph/igraph_interrupt.h
+include/igraph/igraph_isomorphism.h
 include/igraph/igraph_iterators.h
 include/igraph/igraph_lapack.h
 include/igraph/igraph_layout.h
@@ -51,7 +50,6 @@ include/igraph/igraph_matrix.h
 include/igraph/igraph_matrix_list.h
 include/igraph/igraph_matrix_pmt.h
 include/igraph/igraph_memory.h
-include/igraph/igraph_microscopic_update.h
 include/igraph/igraph_mixing.h
 include/igraph/igraph_motifs.h
 include/igraph/igraph_neighborhood.h
@@ -65,16 +63,18 @@ include/igraph/igraph_psumtree.h
 include/igraph/igraph_qsort.h
 include/igraph/igraph_random.h
 include/igraph/igraph_reachability.h
+include/igraph/igraph_sampling.h
 include/igraph/igraph_scan.h
 include/igraph/igraph_separators.h
+include/igraph/igraph_setup.h
 include/igraph/igraph_sparsemat.h
+include/igraph/igraph_spatial.h
 include/igraph/igraph_stack.h
 include/igraph/igraph_stack_pmt.h
 include/igraph/igraph_statusbar.h
 include/igraph/igraph_structural.h
 include/igraph/igraph_strvector.h
 include/igraph/igraph_threading.h
-include/igraph/igraph_topology.h
 include/igraph/igraph_transitivity.h
 include/igraph/igraph_typed_list_pmt.h
 include/igraph/igraph_types.h
@@ -90,6 +90,6 @@ lib/cmake/igraph/igraph-config.cmake
 lib/cmake/igraph/igraph-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/igraph/igraph-targets.cmake
 lib/libigraph.so
-lib/libigraph.so.3
-lib/libigraph.so.3.1.7
+lib/libigraph.so.4
+lib/libigraph.so.4.0.0
 libdata/pkgconfig/igraph.pc
