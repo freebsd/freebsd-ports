@@ -1,3 +1,39 @@
+  <vuln vid="2cd61f76-b41b-11f0-bf21-b42e991fc52e">
+    <topic>SQLite -- Integer Overflow vulnerability</topic>
+    <affects>
+    <package>
+	<name>sqlite</name>
+	<range><lt>3.50.1</lt></range>
+    </package>
+      <package>
+	<name>linux_base-rl9-9.6</name>
+	<range><le>9.6_1</le></range>
+      </package>
+      <package>
+	<name>linux-c7-sqlite</name>
+	<range><lt>3.50.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>http://sqlite3.com reports:</p>
+	<blockquote cite="http://sqlite3.com">
+	  <p>Integer Overflow vulnerability in SQLite SQLite3 v.3.50.0
+	  allows a remote attacker to cause a denial of service via
+	  the setupLookaside function</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-52099</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-52099</url>
+    </references>
+    <dates>
+      <discovery>2025-10-24</discovery>
+      <entry>2025-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8dacd4b-b416-11f0-9f23-ecf4bbefc954">
     <topic>privatebin - Missing HTML sanitisation of attached filename in file size hint enabling persistent XSS</topic>
     <affects>
