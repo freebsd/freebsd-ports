@@ -43,7 +43,7 @@
       </package>
     </affects>
     <description>
-        <body xmlns="http://www.w3.org/1999/xhtml">
+	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>PrivateBin reports:</p>
 	<blockquote cite="https://privatebin.info/reports/vulnerability-2025-10-28.html">
 	  <p>We've identified an HTML injection/XSS vulnerability in the PrivateBin
