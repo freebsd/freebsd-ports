@@ -1,7 +1,7 @@
-TIMESTAMP = 1759459477
-SHA256 (go/www_filebrowser/filebrowser-filebrowser-v2.44.0_GH0/filebrowser-v2.44.0.frontend.tar.gz) = fb434faf31ed3b1ee3a8402d2a673b148602b220576ac0f3cbb712ccafd05d2f
-SIZE (go/www_filebrowser/filebrowser-filebrowser-v2.44.0_GH0/filebrowser-v2.44.0.frontend.tar.gz) = 2337854
-SHA256 (go/www_filebrowser/filebrowser-filebrowser-v2.44.0_GH0/go.mod) = 2d9ea37e7c9c4de9f21ebc040de03ea38bb5fd35c89a770d2535240a54c6df19
-SIZE (go/www_filebrowser/filebrowser-filebrowser-v2.44.0_GH0/go.mod) = 3248
-SHA256 (go/www_filebrowser/filebrowser-filebrowser-v2.44.0_GH0/filebrowser-filebrowser-v2.44.0_GH0.tar.gz) = b2ceb3c9bbfb6e0e2c31764b8ff1d7788fa965081eb3d43452b6a5065027f71f
-SIZE (go/www_filebrowser/filebrowser-filebrowser-v2.44.0_GH0/filebrowser-filebrowser-v2.44.0_GH0.tar.gz) = 5295078
+TIMESTAMP = 1761602202
+SHA256 (go/www_filebrowser/filebrowser-filebrowser-v2.44.2_GH0/filebrowser-v2.44.2.frontend.tar.gz) = eb01e1430a0c86e3c1eb5936962a0cd52c73ce325307ca8107f12870104e3ccf
+SIZE (go/www_filebrowser/filebrowser-filebrowser-v2.44.2_GH0/filebrowser-v2.44.2.frontend.tar.gz) = 2338827
+SHA256 (go/www_filebrowser/filebrowser-filebrowser-v2.44.2_GH0/go.mod) = 2d9ea37e7c9c4de9f21ebc040de03ea38bb5fd35c89a770d2535240a54c6df19
+SIZE (go/www_filebrowser/filebrowser-filebrowser-v2.44.2_GH0/go.mod) = 3248
+SHA256 (go/www_filebrowser/filebrowser-filebrowser-v2.44.2_GH0/filebrowser-filebrowser-v2.44.2_GH0.tar.gz) = a1825ead2a890fb5b7d6c73d3a5f4518fb8479b0a1c10aa6ce5ba495ebaa4b65
+SIZE (go/www_filebrowser/filebrowser-filebrowser-v2.44.2_GH0/filebrowser-filebrowser-v2.44.2_GH0.tar.gz) = 5296320
