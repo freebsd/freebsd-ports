@@ -315,5 +315,5 @@ NUPKG_NUGET+=runtime.unix.system.private.uri:4.3.0
 NUPKG_NUGET+=runtime.unix.system.runtime.extensions:4.3.0
 NUPKG_NUGET+=xunit.abstractions:2.0.3
 NUPKG_NUGET+=xunit.extensibility.core:2.7.1
-NUPKG_NUGET+=z440.atl.core:7.5.0
+NUPKG_NUGET+=z440.atl.core:7.6.0
 NUPKG_NUGET+=zlib.net-mutliplatform:1.0.8
