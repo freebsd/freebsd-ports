@@ -1,0 +1,238 @@
+--- linux/Makefile.am.orig	2021-12-15 17:05:37 UTC
++++ linux/Makefile.am
+@@ -5,110 +5,6 @@ ccextractor_SOURCES = \
+ ccextractor_SOURCES = \
+ 				../src/ccextractor.c \
+ 				../src/ccextractor.h \
+-				../src/thirdparty/gpacmp4/avc_ext.c \
+-				../src/thirdparty/gpacmp4/avilib.c \
+-				../src/thirdparty/gpacmp4/av_parsers.c \
+-				../src/thirdparty/gpacmp4/base_encoding.c \
+-				../src/thirdparty/gpacmp4/bitstream.c \
+-				../src/thirdparty/gpacmp4/box_code_3gpp.c \
+-				../src/thirdparty/gpacmp4/box_code_adobe.c \
+-				../src/thirdparty/gpacmp4/box_code_apple.c \
+-				../src/thirdparty/gpacmp4/box_code_base.c \
+-				../src/thirdparty/gpacmp4/box_code_drm.c \
+-				../src/thirdparty/gpacmp4/box_dump.c \
+-				../src/thirdparty/gpacmp4/box_code_meta.c \
+-				../src/thirdparty/gpacmp4/box_funcs.c \
+-				../src/thirdparty/gpacmp4/color.c \
+-				../src/thirdparty/gpacmp4/configfile.c \
+-				../src/thirdparty/gpacmp4/data_map.c \
+-				../src/thirdparty/gpacmp4/desc_private.c \
+-				../src/thirdparty/gpacmp4/descriptors.c \
+-				../src/thirdparty/gpacmp4/drm_sample.c \
+-				../src/thirdparty/gpacmp4/error.c \
+-				../src/thirdparty/gpacmp4/gpac_ogg.c \
+-				../src/thirdparty/gpacmp4/hint_track.c \
+-				../src/thirdparty/gpacmp4/hinting.c \
+-				../src/thirdparty/gpacmp4/ipmpx_code.c \
+-				../src/thirdparty/gpacmp4/ipmpx_parse.c \
+-				../src/thirdparty/gpacmp4/isom_intern.c \
+-				../src/thirdparty/gpacmp4/isom_read.c \
+-				../src/thirdparty/gpacmp4/isom_store.c \
+-				../src/thirdparty/gpacmp4/isom_write.c \
+-				../src/thirdparty/gpacmp4/list.c \
+-				../src/thirdparty/gpacmp4/math.c \
+-				../src/thirdparty/gpacmp4/media.c \
+-				../src/thirdparty/gpacmp4/media_odf.c \
+-				../src/thirdparty/gpacmp4/meta.c \
+-				../src/thirdparty/gpacmp4/movie_fragments.c \
+-				../src/thirdparty/gpacmp4/odf_code.c \
+-				../src/thirdparty/gpacmp4/odf_codec.c \
+-				../src/thirdparty/gpacmp4/odf_command.c \
+-				../src/thirdparty/gpacmp4/os_config_init.c \
+-				../src/thirdparty/gpacmp4/os_divers.c \
+-				../src/thirdparty/gpacmp4/os_file.c \
+-				../src/thirdparty/gpacmp4/qos.c \
+-				../src/thirdparty/gpacmp4/sample_descs.c \
+-				../src/thirdparty/gpacmp4/slc.c \
+-				../src/thirdparty/gpacmp4/stbl_read.c \
+-				../src/thirdparty/gpacmp4/stbl_write.c \
+-				../src/thirdparty/gpacmp4/track.c \
+-				../src/thirdparty/gpacmp4/tx3g.c \
+-				../src/thirdparty/gpacmp4/url.c \
+-				../src/thirdparty/gpacmp4/utf.c \
+-				../src/thirdparty/gpacmp4/os_thread.c \
+-				../src/thirdparty/gpacmp4/module.c \
+-				../src/thirdparty/gpacmp4/os_module.c \
+-				../src/thirdparty/gpacmp4/xml_parser.c \
+-				../src/thirdparty/gpacmp4/constants.c \
+-				../src/thirdparty/gpacmp4/gpac/avparse.h \
+-				../src/thirdparty/gpacmp4/gpac/base_coding.h \
+-				../src/thirdparty/gpacmp4/gpac/bitstream.h \
+-				../src/thirdparty/gpacmp4/gpac/color.h \
+-				../src/thirdparty/gpacmp4/gpac/config_file.h \
+-				../src/thirdparty/gpacmp4/gpac/configuration.h \
+-				../src/thirdparty/gpacmp4/gpac/constants.h \
+-				../src/thirdparty/gpacmp4/gpac/events_constants.h \
+-				../src/thirdparty/gpacmp4/gpac/ietf.h \
+-				../src/thirdparty/gpacmp4/gpac/isomedia.h \
+-				../src/thirdparty/gpacmp4/gpac/list.h \
+-				../src/thirdparty/gpacmp4/gpac/maths.h \
+-				../src/thirdparty/gpacmp4/gpac/media_tools.h \
+-				../src/thirdparty/gpacmp4/gpac/mpeg4_odf.h \
+-				../src/thirdparty/gpacmp4/gpac/network.h \
+-				../src/thirdparty/gpacmp4/gpac/revision.h \
+-				../src/thirdparty/gpacmp4/gpac/setup.h \
+-				../src/thirdparty/gpacmp4/gpac/tools.h \
+-				../src/thirdparty/gpacmp4/gpac/utf.h \
+-				../src/thirdparty/gpacmp4/gpac/version.h \
+-				../src/thirdparty/gpacmp4/gpac/iso639.h \
+-				../src/thirdparty/gpacmp4/gpac/internal/avilib.h \
+-				../src/thirdparty/gpacmp4/gpac/internal/isomedia_dev.h \
+-				../src/thirdparty/gpacmp4/gpac/internal/media_dev.h \
+-				../src/thirdparty/gpacmp4/gpac/internal/odf_dev.h \
+-				../src/thirdparty/gpacmp4/gpac/internal/odf_parse_common.h \
+-				../src/thirdparty/gpacmp4/gpac/internal/ogg.h \
+-				../src/thirdparty/libpng/pngstruct.h \
+-				../src/thirdparty/libpng/pngpriv.h \
+-				../src/thirdparty/libpng/pnginfo.h \
+-				../src/thirdparty/libpng/pnglibconf.h \
+-				../src/thirdparty/libpng/pngconf.h \
+-				../src/thirdparty/libpng/pngdebug.h \
+-				../src/thirdparty/libpng/png.h \
+-				../src/thirdparty/libpng/png.c \
+-				../src/thirdparty/libpng/pngerror.c \
+-				../src/thirdparty/libpng/pngget.c \
+-				../src/thirdparty/libpng/pngmem.c \
+-				../src/thirdparty/libpng/pngpread.c \
+-				../src/thirdparty/libpng/pngread.c \
+-				../src/thirdparty/libpng/pngrio.c \
+-				../src/thirdparty/libpng/pngrtran.c \
+-				../src/thirdparty/libpng/pngrutil.c \
+-				../src/thirdparty/libpng/pngset.c \
+-				../src/thirdparty/libpng/pngtrans.c \
+-				../src/thirdparty/libpng/pngwio.c \
+-				../src/thirdparty/libpng/pngwrite.c \
+-				../src/thirdparty/libpng/pngwtran.c \
+-				../src/thirdparty/libpng/pngwutil.c \
+ 				../src/lib_ccx/ccx_common_common.h \
+ 				../src/lib_ccx/ccx_common_option.h \
+ 				../src/lib_ccx/utility.h \
+@@ -230,38 +126,6 @@ ccextractor_SOURCES = \
+ 				../src/lib_ccx/ts_tables_epg.c \
+ 				../src/lib_ccx/wtv_constants.h \
+ 				../src/lib_ccx/wtv_functions.c \
+-				../src/thirdparty/zlib/adler32.c \
+-				../src/thirdparty/zlib/compress.c \
+-				../src/thirdparty/zlib/crc32.c \
+-				../src/thirdparty/zlib/crc32.h \
+-				../src/thirdparty/zlib/deflate.c \
+-				../src/thirdparty/zlib/deflate.h \
+-				../src/thirdparty/zlib/gzclose.c \
+-				../src/thirdparty/zlib/gzguts.h \
+-				../src/thirdparty/zlib/gzlib.c \
+-				../src/thirdparty/zlib/gzread.c \
+-				../src/thirdparty/zlib/gzwrite.c \
+-				../src/thirdparty/zlib/infback.c \
+-				../src/thirdparty/zlib/inffast.c \
+-				../src/thirdparty/zlib/inffast.h \
+-				../src/thirdparty/zlib/inffixed.h \
+-				../src/thirdparty/zlib/inflate.c \
+-				../src/thirdparty/zlib/inflate.h \
+-				../src/thirdparty/zlib/inftrees.c \
+-				../src/thirdparty/zlib/inftrees.h \
+-				../src/thirdparty/zlib/trees.c \
+-				../src/thirdparty/zlib/trees.h \
+-				../src/thirdparty/zlib/uncompr.c \
+-				../src/thirdparty/zlib/zconf.h \
+-				../src/thirdparty/zlib/zlib.h \
+-				../src/thirdparty/zlib/zutil.c \
+-				../src/thirdparty/zlib/zutil.h \
+-				../src/thirdparty/utf8proc/utf8proc.c \
+-				../src/thirdparty/utf8proc/utf8proc.h \
+-				../src/thirdparty/lib_hash/sha2.c \
+-				../src/thirdparty/lib_hash/sha2.h \
+-				../src/thirdparty/protobuf-c/protobuf-c.c \
+-				../src/thirdparty/protobuf-c/protobuf-c.h \
+ 				../src/lib_ccx/zvbi/bcd.h \
+ 				../src/lib_ccx/zvbi/bit_slicer.c \
+ 				../src/lib_ccx/zvbi/bit_slicer.h \
+@@ -274,61 +138,13 @@ ccextractor_SOURCES = \
+ 				../src/lib_ccx/zvbi/sampling_par.h \
+ 				../src/lib_ccx/zvbi/sliced.h \
+ 				../src/lib_ccx/zvbi/zvbi_decoder.h \
+-				../src/freetype/* \
+-				../src/thirdparty/freetype/autofit/autofit.c \
+-				../src/thirdparty/freetype/base/ftbase.c \
+-				../src/thirdparty/freetype/base/ftbbox.c \
+-				../src/thirdparty/freetype/base/ftbdf.c \
+-				../src/thirdparty/freetype/base/ftbitmap.c \
+-				../src/thirdparty/freetype/base/ftcid.c \
+-				../src/thirdparty/freetype/base/ftfntfmt.c \
+-				../src/thirdparty/freetype/base/ftfstype.c \
+-				../src/thirdparty/freetype/base/ftgasp.c \
+-				../src/thirdparty/freetype/base/ftglyph.c \
+-				../src/thirdparty/freetype/base/ftgxval.c \
+-				../src/thirdparty/freetype/base/ftinit.c \
+-				../src/thirdparty/freetype/base/ftlcdfil.c \
+-				../src/thirdparty/freetype/base/ftmm.c \
+-				../src/thirdparty/freetype/base/ftotval.c \
+-				../src/thirdparty/freetype/base/ftpatent.c \
+-				../src/thirdparty/freetype/base/ftpfr.c \
+-				../src/thirdparty/freetype/base/ftstroke.c \
+-				../src/thirdparty/freetype/base/ftsynth.c \
+-				../src/thirdparty/freetype/base/ftsystem.c \
+-				../src/thirdparty/freetype/base/fttype1.c \
+-				../src/thirdparty/freetype/base/ftwinfnt.c \
+-				../src/thirdparty/freetype/bdf/bdf.c \
+-				../src/thirdparty/freetype/bzip2/ftbzip2.c \
+-				../src/thirdparty/freetype/cache/ftcache.c \
+-				../src/thirdparty/freetype/cff/cff.c \
+-				../src/thirdparty/freetype/cid/type1cid.c \
+-				../src/thirdparty/freetype/gzip/ftgzip.c \
+-				../src/thirdparty/freetype/include/ft2build.h \
+-				../src/thirdparty/freetype/lzw/ftlzw.c \
+-				../src/thirdparty/freetype/pcf/pcf.c \
+-				../src/thirdparty/freetype/pfr/pfr.c \
+-				../src/thirdparty/freetype/psaux/psaux.c \
+-				../src/thirdparty/freetype/pshinter/pshinter.c \
+-				../src/thirdparty/freetype/psnames/psnames.c \
+-				../src/thirdparty/freetype/raster/raster.c \
+-				../src/thirdparty/freetype/sfnt/sfnt.c \
+-				../src/thirdparty/freetype/smooth/smooth.c \
+-				../src/thirdparty/freetype/truetype/truetype.c \
+-				../src/thirdparty/freetype/type1/type1.c \
+-				../src/thirdparty/freetype/type42/type42.c \
+-				../src/thirdparty/freetype/winfonts/winfnt.c
++				../src/freetype/*
+ 
+-if SYS_IS_APPLE_SILICON
+-ccextractor_SOURCES += 	../src/thirdparty/libpng/arm/arm_init.c \
+-  						../src/thirdparty/libpng/arm/filter_neon_intrinsics.c \
+-  						../src/thirdparty/libpng/arm/palette_neon_intrinsics.c
+-endif
++ccextractor_CFLAGS = -std=gnu99 -Wno-write-strings -Wno-pointer-sign -D_FILE_OFFSET_BITS=64 -DVERSION_FILE_PRESENT -DFT2_BUILD_LIBRARY -DGPAC_DISABLE_VTT -DGPAC_DISABLE_OD_DUMP -DGPAC_DISABLE_REMOTERY -DNO_GZIP
+ 
+-ccextractor_CFLAGS = -std=gnu99 -Wno-write-strings -Wno-pointer-sign -D_FILE_OFFSET_BITS=64 -DVERSION_FILE_PRESENT -DFT2_BUILD_LIBRARY -DGPAC_DISABLE_VTT -DGPAC_DISABLE_OD_DUMP -DGPAC_DISABLE_REMOTERY -DNO_GZIP -DGPAC_HAVE_CONFIG_H
++ccextractor_CPPFLAGS =-I../src/lib_ccx/ -I../src/lib_ccx/zvbi/ -I../src/
+ 
+-ccextractor_CPPFLAGS =-I../src/lib_ccx/ -I../src/thirdparty/gpacmp4/ -I../src/thirdparty/libpng/ -I../src/thirdparty/zlib/ -I../src/lib_ccx/zvbi/ -I../src/thirdparty/lib_hash/ -I../src/thirdparty/protobuf-c/ -I../src/thirdparty -I../src/ -I../src/thirdparty/freetype/include/
+ 
+-
+ ccextractor_LDADD=-lm -lpthread -ldl
+ 
+ if WITH_RUST
+@@ -434,20 +250,10 @@ ccextractorGUI_LDADD = ${glfw3_LIBS}
+ ccextractorGUI_LDADD = ${glfw3_LIBS}
+ 
+ 
+-if SYS_IS_LINUX
+ ccextractorGUI_CFLAGS += -s -O3 -DUNIX
+ ccextractorGUI_CFLAGS += ${glew_CFLAGS}
+ ccextractorGUI_LDADD += ${glew_LIBS}
+ ccextractorGUI_LDADD += -lX11 -lXinerama -lXcursor -lXi -lXrandr -lXxf86vm -lm -ldl -lpthread
+-endif
+-
+-if SYS_IS_MAC
+-ccextractorGUI_CFLAGS += -O3 -DUNIX
+-ccextractorGUI_CFLAGS += ${glew_CFLAGS}
+-ccextractorGUI_LDADD += ${glew_LIBS}
+-ccextractorGUI_LDFLAGS = -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo
+-ccextractorGUI_LDADD += -lglfw  -lm -L/usr/local/lib -lpthread
+-endif
+ 
+ if HARDSUBX_IS_ENABLED
+ if OCR_IS_ENABLED

@@ -1,0 +1,54 @@
+PORTNAME=	ccextractor
+DISTVERSION=	0.94
+CATEGORIES=	multimedia converters
+MASTER_SITES=	https://github.com/CCExtractor/ccextractor/releases/download/v${DISTVERSION}/
+DISTFILES=	ccextractor_minimal.tar.gz
+DIST_SUBDIR=	ccextractor-${DISTVERSION}
+
+MAINTAINER=	fuz@FreeBSD.org
+WWW=		https://ccextractor.org/
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
+
+# needs libiconv_open()
+USES+=		autoreconf iconv:translit localbase:ldflags pkgconfig
+GNU_CONFIGURE=	yes
+
+CFLAGS+=	-fcommon -DUNIX
+LIBS+=		${ICONV_LIB}
+
+PATCH_WRKSRC=	${WRKDIR}/ccextractor
+WRKSRC=		${PATCH_WRKSRC}/linux
+PLIST_FILES=	bin/${ALL_TARGET}
+
+.include <bsd.port.options.mk>
+.include "${.CURDIR}/../ffmpeg4/override.mk"
+
+# ensure we do not bundle any dependencies by accident
+post-extract:
+	${RM} -r ${PATCH_WRKSRC}/src/thirdparty
+
+pre-configure:
+	${REINPLACE_CMD} -e 's,\./ccextractor,${LOCALBASE}/bin/ccextractor,' \
+		${PATCH_WRKSRC}/src/GUI/command_builder.c
+
+pre-build:
+	(cd ${WRKSRC}/../src/lib_ccx && \
+	echo "#ifndef CCX_CCEXTRACTOR_COMPILE_REAL_H" >compile_info_real.h ;\
+	echo "#define CCX_CCEXTRACTOR_COMPILE_REAL_H" >>compile_info_real.h ;\
+	echo "#define GIT_COMMIT \"${PKGVERSION} (FreeBSD ports)\"" >>compile_info_real.h ;\
+	echo "#define COMPILE_DATE \"$$(date -u +%Y-%m-%d)\"" >>compile_info_real.h ;\
+	echo "#endif" >>compile_info_real.h)
+
+pre-build-RUST-on:
+	${CARGO_CARGO_RUN} build \
+		--manifest-path ${CARGO_CARGOTOML} \
+		--verbose \
+		--verbose \
+		${CARGO_BUILD_ARGS}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${ALL_TARGET} ${STAGEDIR}${PREFIX}/bin
+
+.include <bsd.port.mk>

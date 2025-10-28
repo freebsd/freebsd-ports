@@ -24,6 +24,8 @@
     SUBDIR += blind
     SUBDIR += btavctpd
     SUBDIR += butt
+    SUBDIR += ccextractor
+    SUBDIR += ccextractor-gui
     SUBDIR += celluloid
     SUBDIR += cheese
     SUBDIR += chilitags

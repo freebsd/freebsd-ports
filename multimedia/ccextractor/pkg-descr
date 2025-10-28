@@ -1,0 +1,7 @@
+CCExtractor is the de-facto open source standard for closed captions /
+subtitles extraction from any media file.  While the software itself
+belong to the niche category (main users being universities, media
+companies and enthusiasts) its output (meaning the .srt files it
+generates) is used by millions.  If you've ever downloaded an external
+subtitle file for a TV show - most likely the original file came from
+CCExtractor.

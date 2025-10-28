@@ -1,0 +1,20 @@
+--- linux/configure.ac.orig	2021-12-15 17:05:37 UTC
++++ linux/configure.ac
+@@ -25,7 +25,7 @@ AC_CHECK_LIB([m], [sin], [], [AC_MSG_ERROR(Math librar
+ 
+ # Checks for libraries.
+ AC_CHECK_LIB([m], [sin], [], [AC_MSG_ERROR(Math library not installed. Install it before proceeding.)])
+-AC_CHECK_LIB([lept], [getLeptonicaVersion], [HAS_LEPT=1 && PKG_CHECK_MODULES([lept], [lept])], [HAS_LEPT=0])
++AC_CHECK_LIB([leptonica], [getLeptonicaVersion], [HAS_LEPT=1 && PKG_CHECK_MODULES([lept], [lept])], [HAS_LEPT=0])
+ AC_CHECK_LIB([tesseract], [TessVersion], [HAS_TESSERACT=1 && PKG_CHECK_MODULES([tesseract], [tesseract])], [HAS_TESSERACT=0])
+ AC_CHECK_LIB([avcodec], [avcodec_version], [HAS_AVCODEC=1 && PKG_CHECK_MODULES([libavcodec], [libavcodec])], [HAS_AVCODEC=0])
+ AC_CHECK_LIB([avformat], [avformat_version], [HAS_AVFORMAT=1 && PKG_CHECK_MODULES([libavformat], [libavformat])], [HAS_AVFORMAT=0])
+@@ -154,7 +154,7 @@ AM_CONDITIONAL(FFMPEG_IS_ENABLED, [ test x$ffmpeg = xt
+ AM_CONDITIONAL(HARDSUBX_IS_ENABLED, [ test x$hardsubx = xtrue ])
+ AM_CONDITIONAL(OCR_IS_ENABLED, [ test x$ocr = xtrue || test x$hardsubx = xtrue ])
+ AM_CONDITIONAL(FFMPEG_IS_ENABLED, [ test x$ffmpeg = xtrue ])
+-AM_CONDITIONAL(TESSERACT_PRESENT, [ test ! -z  `pkg-config --libs-only-l --silence-errors tesseract` ])
++AM_CONDITIONAL(TESSERACT_PRESENT, [ test ! -z  "`pkg-config --libs-only-l --silence-errors tesseract`" ])
+ AM_CONDITIONAL(TESSERACT_PRESENT_RPI, [ test -d "/usr/include/tesseract" && test `ls -A /usr/include/tesseract | wc -l` -gt 0 ])
+ AM_CONDITIONAL(SYS_IS_LINUX, [ test `uname -s` = "Linux"])
+ AM_CONDITIONAL(SYS_IS_MAC, [ test `uname -s` = "Darwin"])
