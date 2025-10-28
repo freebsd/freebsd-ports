@@ -11,6 +11,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libuuid.so:misc/libuuid
 
-USES=		php:pecl
+USES=		localbase:ldflags php:pecl
 
 .include <bsd.port.mk>
