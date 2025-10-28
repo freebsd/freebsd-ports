@@ -23,8 +23,8 @@ GL_PROJECT=	rust/gitlab-code-parser
 # Try to fix on i386: compilation fails: ld: error: undefined symbol: __atomic_load
 # I cannot test it, so lets wait for next cluster build
 .if ${ARCH} == i386
-LIB_DEPENDS+=   libatomic.so:lang/gcc${GCC_DEFAULT}
-LDFLAGS+=       -L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
+LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
+LDFLAGS+=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}
