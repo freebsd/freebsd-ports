@@ -25,7 +25,7 @@ lib/cmake/f3d/f3dTargets.cmake
 lib/cmake/f3d/library-config.cmake
 lib/libf3d.so
 lib/libf3d.so.3
-lib/libf3d.so.3.2
+lib/libf3d.so.3.3
 lib/libvtkext.so
 %%ALEMBIC%%share/applications/f3d-plugin-alembic.desktop
 %%ASSIMP%%share/applications/f3d-plugin-assimp.desktop
