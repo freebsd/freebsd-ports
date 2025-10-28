@@ -1,6 +1,6 @@
 PORTNAME=	forgejo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	13.0.1
+DISTVERSION=	13.0.2
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/forgejo/forgejo/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	forgejo-src-${DISTVERSION}
@@ -14,12 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		cpe gmake go:no_targets
+USES=		cpe gmake go:1.25,no_targets
 USE_RC_SUBR=	forgejo
 
 PIE_UNSAFE=	yes
 
-CONFLICTS_INSTALL=	forgejo[0-79]*
+CONFLICTS_INSTALL=	forgejo-lts forgejo7
 
 EXTRACT_AFTER_ARGS=	--strip-components 1
 DBDIR=		/var/db/forgejo
