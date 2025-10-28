@@ -1,6 +1,6 @@
 PORTNAME=	gmic-qt
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	3.6.2
+DISTVERSION=	3.6.3
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	https://github.com/GreycLab/gmic/releases/download/${DISTVERSIONFULL}/ \
