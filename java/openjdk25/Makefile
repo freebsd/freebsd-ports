@@ -1,22 +1,24 @@
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_FULL_VERSION:S/.0.0//}
-
 CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VERSION}
+
 WWW=		https://openjdk.java.net/projects/jdk/25/
 
 LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
-BUILD_DEPENDS=	zip:archivers/zip \
-		${LOCALBASE}/include/cups/cups.h:print/cups \
+BUILD_DEPENDS=	${LOCALBASE}/include/cups/cups.h:print/cups \
 		bash:shells/bash \
-		gsed:textproc/gsed
+		gsed:textproc/gsed \
+		zip:archivers/zip
+
+.if ${FLAVORS:U} != headless
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -24,18 +26,65 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libharfbuzz.so:print/harfbuzz \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png
-RUN_DEPENDS=	javavm:java/javavmwrapper \
-		xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype
+.endif
 
-USES=	autoreconf:build compiler:features cpe gmake iconv jpeg pkgconfig xorg
-USE_XORG=	x11 xext xi xrandr xrender xt xtst
+RUN_DEPENDS=	javavm:java/javavmwrapper
+.if ${FLAVORS:U} != headless
+RUN_DEPENDS+=	xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype
+.endif
+
+FLAVORS=	jdk jre headless
+FLAVOR?=	${BUILD_JRE:?jre:${FLAVORS:[1]}}
+
+headless_PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}-headless
+jre_PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}-jre
+
+USES=		autoreconf:build compiler:features cpe gmake iconv pkgconfig
+.if ${FLAVORS:U} != headless
+USES+=		jpeg xorg
+.endif
 
 CPE_VENDOR=	oracle
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 
-NO_CCACHE=	yes
+.if ${FLAVORS:U} != headless
+USE_XORG=	x11 xext xi xrandr xrender xt xtst
+.endif
+
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--disable-ccache \
+			--disable-javac-server \
+			--with-alsa=${LOCALBASE} \
+			--with-boot-jdk=${BOOTSTRAPJDKDIR} \
+			--with-cups=${LOCALBASE} \
+			--with-debug-level=release \
+			--with-fontconfig=${LOCALBASE} \
+			--with-freetype=system \
+			--with-giflib-include=${LOCALBASE}/include \
+			--with-giflib-lib=${LOCALBASE}/lib \
+			--with-giflib=system \
+			--with-harfbuzz=system \
+			--with-lcms=system \
+			--with-libjpeg=system \
+			--with-libpng=system \
+			--with-native-debug-symbols=none \
+			--with-num-cores=${MAKE_JOBS_NUMBER} \
+			--with-vendor-bug-url="${JDK_BUG_URL}" \
+			--with-vendor-name="OpenJDK BSD Porting Team" \
+			--with-vendor-url="https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/" \
+			--with-vendor-vm-bug-url="${JDK_BUG_URL}" \
+			--with-version-string=${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION} \
+			--with-zlib=system \
+			--x-includes=${LOCALBASE}/include \
+			--x-libraries=${LOCALBASE}/lib
+CONFIGURE_ENV=		ac_cv_path_SED=${LOCALBASE}/bin/gsed
+CONFIGURE_TARGET=	${JDK_ARCH}-portbld-${OPSYS:tl}${OSREL}
+
+.if ${FLAVOR:U} == headless
+CONFIGURE_ARGS+=	--enable-headless-only
+.endif
 
 # Suppress passing -j to do-build target via Mk/bsd.port.mk
 # In the JDK build the number of parallel jobs is passed in via configure --with-num-cores=N
@@ -46,16 +95,25 @@ MAKE_ENV=	CLASSPATH="" \
 		LOG=cmdlines \
 		MAKEFLAGS=""
 
+.if ${FLAVOR:U} == jre
+ALL_TARGET=	legacy-images
+.else
+ALL_TARGET=	images
+.endif
+JDK_BUILD_TYPE=	release
+
 JDK_ARCH=	${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc64/ppc64/}
 JDK_OSARCH=	bsd-${JDK_ARCH}
 JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-${JDK_BUILD_JVM}-${JDK_BUILD_TYPE}
-.if defined(BUILD_JRE)
+.if ${FLAVOR:U} == jre
+BUILD_JRE=	true
 JDK_IMAGEDIR=	${JDK_BUILDDIR}/images/jre
 .else
 JDK_IMAGEDIR=	${JDK_BUILDDIR}/images/jdk
 .endif
 INSTALLDIR=	${PREFIX}/${PKGBASE}
 
+NO_CCACHE=	yes
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	25
@@ -67,43 +125,9 @@ JDK_FULL_VERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}
 
 JDK_BUG_URL=	https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26%20Packages&component=Individual%20Port(s)&short_desc=java/${PORTNAME}${JDK_MAJOR_VERSION}%3A%20
 
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=${JDK_ARCH}-portbld-${OPSYS:tl}${OSREL}
-CONFIGURE_ENV=	ac_cv_path_SED=${LOCALBASE}/bin/gsed
-CONFIGURE_ARGS=	--with-boot-jdk=${BOOTSTRAPJDKDIR} \
-		--disable-ccache \
-		--disable-javac-server \
-		--with-alsa=${LOCALBASE} \
-		--with-cups=${LOCALBASE} \
-		--with-fontconfig=${LOCALBASE} \
-		--with-freetype=system \
-		--with-libjpeg=system \
-		--with-giflib=system \
-		--with-giflib-include=${LOCALBASE}/include \
-		--with-giflib-lib=${LOCALBASE}/lib \
-		--with-harfbuzz=system \
-		--with-libpng=system \
-		--with-num-cores=${MAKE_JOBS_NUMBER} \
-		--with-zlib=system \
-		--with-lcms=system \
-		--x-includes=${LOCALBASE}/include \
-		--x-libraries=${LOCALBASE}/lib \
-		--with-version-string=${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION} \
-		--with-native-debug-symbols=none \
-		--with-debug-level=release \
-		--with-vendor-name="OpenJDK BSD Porting Team" \
-		--with-vendor-url="https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/" \
-		--with-vendor-bug-url="${JDK_BUG_URL}" \
-		--with-vendor-vm-bug-url="${JDK_BUG_URL}"
-
+.ifnmake portclippy
 JAVAVMS_COMMENT=	OpenJDK${JDK_MAJOR_VERSION}
-
-.if defined(BUILD_JRE)
-ALL_TARGET=		legacy-images
-.else
-ALL_TARGET=		images
 .endif
-JDK_BUILD_TYPE=		release
 
 .include <bsd.port.pre.mk>
 
@@ -129,15 +153,15 @@ CONFIGURE_ARGS+=	--with-toolchain-type=${COMPILER_TYPE}
 CONFIGURE_ARGS+=	--disable-warnings-as-errors
 
 .if ${COMPILER_TYPE} == gcc
-USE_GCC=	yes
-CONFIGURE_ARGS+=	--with-extra-ldflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT} -L${LOCALBASE}/lib/gcc${GCC_DEFAULT}" \
-			--with-extra-cflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT}" \
-			--with-extra-cxxflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT}"
+USE_GCC=		yes
+CONFIGURE_ARGS+=	--with-extra-cflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT}" \
+			--with-extra-cxxflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT}" \
+			--with-extra-ldflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT} -L${LOCALBASE}/lib/gcc${GCC_DEFAULT}"
 .else
-MAKE_ENV+=	USE_CLANG=true
+MAKE_ENV+=		USE_CLANG=true
 EXTRA_CFLAGS+=		-Wno-unused-but-set-parameter
-EXTRA_CFLAGS+=		-Wno-bitwise-instead-of-logical
-EXTRA_CFLAGS+=		-Wno-error=deprecated-non-prototype
+EXTRA_CFLAGS+=		-Wno-bitwise-instead-of-logical \
+			-Wno-error=deprecated-non-prototype
 CONFIGURE_ARGS+=	--with-extra-cflags="${EXTRA_CFLAGS}"
 CONFIGURE_ARGS+=	--with-extra-cxxflags="${EXTRA_CFLAGS}"
 .endif
