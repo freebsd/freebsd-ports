@@ -1,7 +1,7 @@
 PORTNAME=	forgejo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.0.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/forgejo/forgejo/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMESUFFIX=	7
@@ -14,12 +14,15 @@ WWW=		https://forgejo.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please switch to www/forgejo-lts
+EXPIRATION_DATE=	2025-12-31
+
 RUN_DEPENDS=	git:devel/git
 
 USES=		cpe gmake go:1.23,no_targets
 USE_RC_SUBR=	forgejo
 
-CONFLICTS_INSTALL=	forgejo forgejo[0-689]*
+CONFLICTS_INSTALL=	forgejo forgejo-lts
 
 EXTRACT_AFTER_ARGS=	--strip-components 1
 SUB_FILES=	app.ini.sample pkg-message
