@@ -44,7 +44,7 @@ lib/exaile/xl/migrations/__init__.py
 lib/exaile/xl/migrations/database/__init__.py
 lib/exaile/xl/migrations/database/covers_1to2.py
 lib/exaile/xl/migrations/database/from1to2.py
-lib/exaile/xl/migrations/database/to_bsddb.py
+lib/exaile/xl/migrations/database/to_sqlite.py
 lib/exaile/xl/migrations/settings/__init__.py
 lib/exaile/xl/migrations/settings/engine.py
 lib/exaile/xl/migrations/settings/flac_tempo.py
@@ -69,7 +69,7 @@ lib/exaile/xl/plugins.py
 lib/exaile/xl/providers.py
 lib/exaile/xl/radio.py
 lib/exaile/xl/settings.py
-lib/exaile/xl/shelve_compat.py
+lib/exaile/xl/sqlitedbm.py
 lib/exaile/xl/transcoder.py
 lib/exaile/xl/trax/__init__.py
 lib/exaile/xl/trax/search.py
