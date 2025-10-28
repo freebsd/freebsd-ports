@@ -54,10 +54,10 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		base64-0.21.7 \
 		base64-0.22.1 \
 		base64ct-1.8.0 \
-		bigdecimal-0.4.8 \
+		bigdecimal-0.4.9 \
 		bindgen-0.72.1 \
 		bitflags-1.3.2 \
-		bitflags-2.9.4 \
+		bitflags-2.10.0 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
 		block2-0.5.1 \
@@ -71,15 +71,15 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		bytes-1.10.1 \
 		bytestring-1.5.0 \
 		calloop-0.13.0 \
-		cc-1.2.41 \
+		cc-1.2.43 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
-		cfg-if-1.0.3 \
+		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.42 \
 		clang-sys-1.8.1 \
-		clap-4.5.49 \
-		clap_builder-4.5.49 \
+		clap-4.5.50 \
+		clap_builder-4.5.50 \
 		clap_derive-4.5.49 \
 		clap_lex-0.7.6 \
 		cmake-0.1.54 \
@@ -109,7 +109,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		crypto-bigint-0.5.5 \
 		crypto-common-0.1.6 \
 		csv-async-1.3.1 \
-		csv-core-0.1.12 \
+		csv-core-0.1.13 \
 		cursor-icon-1.2.0 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
@@ -123,7 +123,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		data-encoding-2.9.0 \
 		der-0.7.10 \
 		der-parser-9.0.0 \
-		deranged-0.5.4 \
+		deranged-0.5.5 \
 		derive_builder-0.20.2 \
 		derive_builder_core-0.20.2 \
 		derive_builder_macro-0.20.2 \
@@ -158,10 +158,11 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		ff-0.13.1 \
 		fiat-crypto-0.2.9 \
 		find-msvc-tools-0.1.4 \
-		flate2-1.1.4 \
+		flate2-1.1.5 \
 		flume-0.11.1 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
+		foldhash-0.2.0 \
 		foreign-types-0.5.0 \
 		foreign-types-macros-0.2.3 \
 		foreign-types-shared-0.3.1 \
@@ -218,8 +219,8 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		include_dir-0.7.4 \
 		include_dir_macros-0.7.4 \
 		indexmap-1.9.3 \
-		indexmap-2.11.4 \
-		is_terminal_polyfill-1.70.1 \
+		indexmap-2.12.0 \
+		is_terminal_polyfill-1.70.2 \
 		itertools-0.10.5 \
 		itertools-0.13.0 \
 		itoa-1.0.15 \
@@ -228,7 +229,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		jni-0.21.1 \
 		jni-sys-0.3.0 \
 		jobserver-0.1.34 \
-		js-sys-0.3.81 \
+		js-sys-0.3.82 \
 		json5-0.4.1 \
 		lambda-web-0.2.1 \
 		lambda_runtime-0.7.3 \
@@ -236,8 +237,8 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		language-tags-0.3.2 \
 		lazy_static-1.5.0 \
 		libc-0.2.177 \
-		libflate-2.1.0 \
-		libflate_lz77-2.1.0 \
+		libflate-2.2.0 \
+		libflate_lz77-2.2.0 \
 		libloading-0.8.9 \
 		libm-0.2.15 \
 		libredox-0.1.10 \
@@ -256,7 +257,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		mime_guess-2.0.5 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
-		mio-1.0.4 \
+		mio-1.1.0 \
 		ndk-0.9.0 \
 		ndk-context-0.1.1 \
 		ndk-sys-0.6.0+11769913 \
@@ -269,8 +270,8 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		num-modular-0.6.1 \
 		num-order-1.2.0 \
 		num-traits-0.2.19 \
-		num_enum-0.7.4 \
-		num_enum_derive-0.7.4 \
+		num_enum-0.7.5 \
+		num_enum_derive-0.7.5 \
 		oauth2-5.0.0 \
 		objc-sys-0.3.5 \
 		objc2-0.5.2 \
@@ -290,9 +291,10 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		objc2-uniform-type-identifiers-0.2.2 \
 		objc2-user-notifications-0.2.2 \
 		odbc-api-19.1.0 \
+		odbc-sys-0.27.4 \
 		oid-registry-0.7.1 \
 		once_cell-1.21.3 \
-		once_cell_polyfill-1.70.1 \
+		once_cell_polyfill-1.70.2 \
 		openidconnect-4.0.1 \
 		openssl-probe-0.1.6 \
 		option-ext-0.2.0 \
@@ -332,7 +334,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		prettyplease-0.2.37 \
 		primeorder-0.13.6 \
 		proc-macro-crate-3.4.0 \
-		proc-macro2-1.0.101 \
+		proc-macro2-1.0.103 \
 		quote-1.0.41 \
 		r-efi-5.3.0 \
 		rand-0.8.5 \
@@ -363,11 +365,11 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		rusticata-macros-4.1.0 \
 		rustix-0.38.44 \
 		rustix-1.1.2 \
-		rustls-0.23.32 \
+		rustls-0.23.34 \
 		rustls-acme-0.14.1 \
-		rustls-native-certs-0.8.1 \
+		rustls-native-certs-0.8.2 \
 		rustls-pemfile-2.2.0 \
-		rustls-pki-types-1.12.0 \
+		rustls-pki-types-1.13.0 \
 		rustls-webpki-0.103.7 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
@@ -390,8 +392,8 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		serde_plain-1.0.2 \
 		serde_spanned-1.0.3 \
 		serde_urlencoded-0.7.1 \
-		serde_with-3.15.0 \
-		serde_with_macros-3.15.0 \
+		serde_with-3.15.1 \
+		serde_with_macros-3.15.1 \
 		sha1-0.10.6 \
 		sha2-0.10.9 \
 		shlex-1.3.0 \
@@ -415,7 +417,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		stringprep-0.1.5 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
-		syn-2.0.106 \
+		syn-2.0.108 \
 		synstructure-0.13.2 \
 		tempfile-3.23.0 \
 		thiserror-1.0.69 \
@@ -451,11 +453,12 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		unicase-2.8.1 \
 		unicode-bidi-0.3.18 \
 		unicode-id-0.3.6 \
-		unicode-ident-1.0.19 \
+		unicode-ident-1.0.20 \
 		unicode-normalization-0.1.24 \
 		unicode-properties-0.1.3 \
 		unicode-segmentation-1.12.0 \
 		unicode-xid-0.2.6 \
+		unix-odbc-0.1.3 \
 		untrusted-0.9.0 \
 		url-2.5.7 \
 		utf8_iter-1.0.4 \
@@ -468,13 +471,12 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.1+wasi-0.2.4 \
 		wasite-0.1.0 \
-		wasm-bindgen-0.2.104 \
-		wasm-bindgen-backend-0.2.104 \
-		wasm-bindgen-futures-0.4.54 \
-		wasm-bindgen-macro-0.2.104 \
-		wasm-bindgen-macro-support-0.2.104 \
-		wasm-bindgen-shared-0.2.104 \
-		web-sys-0.3.81 \
+		wasm-bindgen-0.2.105 \
+		wasm-bindgen-futures-0.4.55 \
+		wasm-bindgen-macro-0.2.105 \
+		wasm-bindgen-macro-support-0.2.105 \
+		wasm-bindgen-shared-0.2.105 \
+		web-sys-0.3.82 \
 		web-time-1.1.0 \
 		webpki-roots-0.26.11 \
 		webpki-roots-1.0.3 \
@@ -539,5 +541,4 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		zerovec-derive-0.11.1 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
-		zstd-sys-2.0.16+zstd.1.5.7 \
-		odbc-sys,unix-odbc@git+https://github.com/sqlpage/odbc-sys?branch=no-autotools\#ae3e15446bb2c5c191f05e7c6affc37dfd6fcabe
+		zstd-sys-2.0.16+zstd.1.5.7
