@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-Note: If you need npm (Node Package Manager), please install www/npm-node24.
+Note: If you need npm (Node Package Manager), please install www/npm-node25.
 EOM
 }
 ]
