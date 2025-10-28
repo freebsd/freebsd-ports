@@ -1,13 +1,13 @@
 PORTNAME=	vedo
-DISTVERSION=	2024.5.3
-PORTREVISION=	1
+DISTVERSION=	2025.5.4
 CATEGORIES=	science graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python module for scientific analysis and visualization of 3D objects
-WWW=		https://vedo.embl.es/
+WWW=		https://vedo.embl.es/ \
+		https://github.com/marcomusy/vedo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
