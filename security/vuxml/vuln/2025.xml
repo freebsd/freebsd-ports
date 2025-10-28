@@ -1,3 +1,47 @@
+  <vuln vid="3116b6f3-b433-11f0-82ac-901b0edee044">
+    <topic>py-social-auth-app-django -- Unsafe account association</topic>
+    <affects>
+      <package>
+       <name>py39-social-auth-app-django</name>
+       <name>py310-social-auth-app-django</name>
+       <name>py311-social-auth-app-django</name>
+       <name>py312-social-auth-app-django</name>
+       <range><lt>5.4.3_1</lt></range>
+      </package>
+      <package>
+       <name>py310-dj51-social-auth-app-django</name>
+       <name>py311-dj51-social-auth-app-django</name>
+       <name>py312-dj51-social-auth-app-django</name>
+       <range><lt>5.6.0</lt></range>
+      </package>
+      <package>
+       <name>py310-dj52-social-auth-app-django</name>
+       <name>py311-dj52-social-auth-app-django</name>
+       <name>py312-dj52-social-auth-app-django</name>
+       <range><lt>5.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michal Čihař reports:</p>
+	<blockquote cite="https://github.com/python-social-auth/social-app-django/security/advisories/GHSA-wv4w-6qv2-qqfg">
+	<p>Upon authentication, the user could be associated by e-mail even if the
+	associate_by_email pipeline was not included. This could lead to account
+	compromise when a third-party authentication service does not validate
+	provided e-mail addresses or doesn't require unique e-mail addresses.</p>
+	</blockquote>
+       </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-61783</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-61783</url>
+    </references>
+    <dates>
+      <discovery>2025-10-09</discovery>
+      <entry>2025-10-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2cd61f76-b41b-11f0-bf21-b42e991fc52e">
     <topic>SQLite -- Integer Overflow vulnerability</topic>
     <affects>
