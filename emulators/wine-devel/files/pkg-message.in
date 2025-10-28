@@ -18,4 +18,15 @@ EOF
 $ wine64 regedit wayland.reg
 EOM
 }
+{ type: upgrade
+  maximum_version: "10.17"
+  message: <<EOM
+Since the version 10.17, wine require hwloc2 as an additional
+dependency. If it was not automatically installed, then install it
+for the 64bit part with:
+# pkg install hwloc2
+And for the 32bit part do as the user that would use wine:
+$ %%PREFIX%%/share/wine/pkg32.sh install hwloc2
+EOM
+}
 ]

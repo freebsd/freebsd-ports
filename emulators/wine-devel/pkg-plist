@@ -908,6 +908,8 @@ include/wine/windows/robuffer.h
 include/wine/windows/robuffer.idl
 include/wine/windows/roerrorapi.h
 include/wine/windows/rometadata.h
+include/wine/windows/rometadataapi.h
+include/wine/windows/rometadataapi.idl
 include/wine/windows/rometadataresolution.h
 include/wine/windows/roparameterizediid.h
 include/wine/windows/roparameterizediid.idl
@@ -1752,6 +1754,7 @@ lib/wine/%%WINEARCH%%-windows/colorcnv.dll
 lib/wine/%%WINEARCH%%-windows/combase.dll
 lib/wine/%%WINEARCH%%-windows/comcat.dll
 lib/wine/%%WINEARCH%%-windows/comctl32.dll
+lib/wine/%%WINEARCH%%-windows/comctl32_v6.dll
 lib/wine/%%WINEARCH%%-windows/comdlg32.dll
 lib/wine/%%WINEARCH%%-windows/coml2.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/comm.drv16
@@ -2612,6 +2615,7 @@ lib/wine/%%WINEARCH%%-windows/win32u.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/win87em.dll16
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/winaspi.dll16
 lib/wine/%%WINEARCH%%-windows/winbio.dll
+lib/wine/%%WINEARCH%%-windows/winbrand.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/windebug.dll16
 lib/wine/%%WINEARCH%%-windows/windows.applicationmodel.dll
 lib/wine/%%WINEARCH%%-windows/windows.devices.bluetooth.dll

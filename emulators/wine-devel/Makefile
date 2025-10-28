@@ -1,5 +1,5 @@
 PORTNAME=	wine
-DISTVERSION=	10.16
+DISTVERSION=	10.17
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/10.x/
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
+LIB_DEPENDS=	libhwloc.so:devel/hwloc2
 
 # Only devel/llvm17 and later come with necessary include files - PR274542
 USES=		bison cpe desktop-file-utils gmake llvm:min=17,build,noexport \
@@ -42,6 +43,7 @@ CONFIGURE_ARGS=	--verbose \
 		--without-gettext --without-gettextpo \
 		--without-gphoto \
 		--without-gssapi \
+		--with-hwloc \
 		--without-inotify \
 		--without-krb5 \
 		--with-mingw CROSSCC="clang" \
