@@ -1,7 +1,6 @@
 PORTNAME=	kew
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.1
-PORTREVISION=	1
+DISTVERSION=	3.6.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,9 +30,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ravachol
 
 MAKE_ARGS=	CC=${CC} PREFIX=${PREFIX}
-
-PLIST_FILES=	bin/kew \
-		share/man/man1/kew.1.gz
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/kew
