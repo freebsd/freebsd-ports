@@ -11,6 +11,8 @@ WWW=		https://gitlab.gnome.org/GNOME/at-spi2-core
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
+
 USES=		gettext-tools gnome localbase meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build libxml2:build
 USE_LDCONFIG=	yes
