@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-05-23 11:37:06.693431000 +0200
-+++ CMakeLists.txt	2023-05-23 11:37:14.422198000 +0200
-@@ -395,11 +395,9 @@
+--- CMakeLists.txt.orig	2025-10-13 11:42:57.000000000 +0200
++++ CMakeLists.txt	2025-10-23 12:10:14.143268000 +0200
+@@ -417,7 +417,6 @@
  
  # Target
  set(
@@ -8,11 +8,7 @@
  main/stdafx.cpp
  main/Helper.cpp
  main/CmdLine.cpp
--main/domoticz_tester.cpp
- main/BaroForecastCalculator.cpp
- main/HTMLSanitizer.cpp
- main/localtime_r.cpp
-@@ -412,9 +410,6 @@
+@@ -434,9 +433,6 @@
  
  #main/IFTTT.cpp
  
@@ -22,7 +18,7 @@
  #
  # LUA
  #
-@@ -513,7 +508,6 @@
+@@ -535,7 +531,6 @@
  
  # explicitly say that the executable depends on the revisiontag
  add_dependencies(domoticz revisiontag)
@@ -30,7 +26,7 @@
  
  TEST_BIG_ENDIAN(BIGENDIAN)
  IF(${BIGENDIAN})
-@@ -533,7 +527,6 @@
+@@ -555,7 +550,6 @@
    set(JSONCPP_WITH_PKGCONFIG_SUPPORT OFF CACHE BOOL "Enable jsoncpp pkgconfig support" FORCE)
    add_subdirectory (extern/jsoncpp EXCLUDE_FROM_ALL)
    target_link_libraries(domoticz jsoncpp_static)
@@ -38,7 +34,7 @@
    INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/extern/jsoncpp/include)
  ELSE(USE_BUILTIN_JSONCPP)
    find_package(PkgConfig)
-@@ -543,9 +536,6 @@
+@@ -565,9 +559,6 @@
      target_include_directories(domoticz PRIVATE ${JSONCPP_INCLUDE_DIRS})
      target_link_directories(domoticz PRIVATE ${JSONCPP_LIBRARY_DIRS})
      target_link_libraries(domoticz ${JSONCPP_LIBRARIES})
@@ -48,7 +44,7 @@
    ELSE(JSONCPP_FOUND)
      MESSAGE(FATAL_ERROR "JSONCPP not found on your system! try 'sudo apt-get install jsoncpp-dev'")
    ENDIF(JSONCPP_FOUND)
-@@ -558,7 +548,6 @@
+@@ -580,7 +571,6 @@
    option(DOCUMENTATION "Build documentation?" OFF)
    add_subdirectory (extern/mosquitto EXCLUDE_FROM_ALL)
    target_link_libraries(domoticz libmosquitto_static)
@@ -56,7 +52,7 @@
    INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/extern/mosquitto/include)
    INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/extern/mosquitto/lib)
  ELSE(USE_BUILTIN_MQTT)
-@@ -577,7 +566,6 @@
+@@ -599,7 +589,6 @@
    MESSAGE(STATUS "Using builtin SQLite library")
    add_subdirectory (extern/sqlite-amalgamation EXCLUDE_FROM_ALL)
    target_link_libraries(domoticz SQLite3)
@@ -64,7 +60,7 @@
    INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/extern/sqlite-amalgamation)
  ELSE(USE_BUILTIN_SQLITE)
    find_package(SQLite3)
-@@ -586,7 +574,6 @@
+@@ -608,7 +597,6 @@
      MESSAGE(STATUS "SQLite includes found at: ${SQLite3_INCLUDE_DIRS}")
      INCLUDE_DIRECTORIES(${SQLite3_INCLUDE_DIRS})
      target_link_libraries(domoticz ${SQLite3_LIBRARIES})
@@ -72,7 +68,7 @@
    ELSE(SQLite3_FOUND)
      MESSAGE(FATAL_ERROR "SQLite3 not found on your system! try 'sudo apt-get install libsqlite3-dev'")
    ENDIF(SQLite3_FOUND)
-@@ -596,7 +583,6 @@
+@@ -618,7 +606,6 @@
  IF(USE_BUILTIN_MINIZIP)
    add_subdirectory (extern/minizip EXCLUDE_FROM_ALL)
    target_link_libraries(domoticz minizip)
@@ -80,7 +76,7 @@
    INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/extern/minizip)
  ELSE(USE_BUILTIN_MINIZIP)
    find_package(PkgConfig)
-@@ -606,9 +592,6 @@
+@@ -628,9 +615,6 @@
      target_include_directories(domoticz PRIVATE ${MINIZIP_INCLUDE_DIRS})
      target_link_directories(domoticz PRIVATE ${MINIZIP_LIBRARY_DIRS})
      target_link_libraries(domoticz ${MINIZIP_LIBRARIES})
@@ -90,7 +86,7 @@
    ELSE(MINIZIP_FOUND)
      MESSAGE(FATAL_ERROR "MINIZIP not found on your system! try 'sudo apt-get install minizip-dev'")
    ENDIF(MINIZIP_FOUND)
-@@ -630,7 +613,6 @@
+@@ -658,7 +642,6 @@
    find_library(MD_LIBRARY NAMES md)
    IF(MD_LIBRARY)
      target_link_libraries(domoticz ${MD_LIBRARY})
@@ -98,7 +94,7 @@
    ENDIF(MD_LIBRARY)
  ELSE()
    message(STATUS "OPENSSL library found at: ${OPENSSL_LIBRARIES}")
-@@ -638,7 +620,6 @@
+@@ -666,7 +649,6 @@
    add_definitions(-DWITH_TLS)
    include_directories(${OPENSSL_INCLUDE_DIR})
    target_link_libraries(domoticz ${OPENSSL_LIBRARIES})
@@ -106,20 +102,20 @@
  ENDIF()
  
  #
-@@ -779,7 +760,6 @@
- ENDIF(TELLDUSCORE_INCLUDE)
+@@ -804,7 +786,6 @@
+ endif()
  
- target_link_libraries(domoticz ${Boost_LIBRARIES} ${ZLIB_LIBRARIES} ${MINIZIP_LIBRARIES} ${CURL_LIBRARIES} pthread ${MQTT_LIBRARIES} ${LUA_LIBRARIES} ${CMAKE_DL_LIBS} ${TELLDUS_LIBRARIES})
--target_link_libraries(domoticztester ${Boost_LIBRARIES} ${ZLIB_LIBRARIES} ${MINIZIP_LIBRARIES} ${CURL_LIBRARIES} pthread ${MQTT_LIBRARIES} ${LUA_LIBRARIES} ${CMAKE_DL_LIBS} ${TELLDUS_LIBRARIES})
+ target_link_libraries(domoticz ${Boost_LIBRARIES} ${ZLIB_LIBRARIES} ${MINIZIP_LIBRARIES} ${RESOLV_LIBRARIES} ${CURL_LIBRARIES} pthread ${MQTT_LIBRARIES} ${LUA_LIBRARIES} ${CMAKE_DL_LIBS} ${TELLDUS_LIBRARIES})
+-target_link_libraries(domoticztester ${Boost_LIBRARIES} ${ZLIB_LIBRARIES} ${MINIZIP_LIBRARIES} ${RESOLV_LIBRARIES} ${CURL_LIBRARIES} pthread ${MQTT_LIBRARIES} ${LUA_LIBRARIES} ${CMAKE_DL_LIBS} ${TELLDUS_LIBRARIES})
  
- IF(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
-   target_link_libraries(domoticz -lresolv)
-@@ -789,13 +769,11 @@
+ IF(EXECINFO_LIBRARIES)
    target_link_libraries(domoticz ${EXECINFO_LIBRARIES})
- ELSE()
-   target_link_libraries(domoticz -lrt -lresolv ${EXECINFO_LIBRARIES})
--  target_link_libraries(domoticztester -lrt -lresolv ${EXECINFO_LIBRARIES})
- ENDIF()
+@@ -813,13 +794,11 @@
+ find_library(LIBRT rt)
+ if(LIBRT)
+   target_link_libraries(domoticz -lrt)
+-  target_link_libraries(domoticztester -lrt)
+ endif()
  
  IF(USE_PRECOMPILED_HEADER)
    message(STATUS "Using precompiled headers")
