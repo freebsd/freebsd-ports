@@ -1,0 +1,4 @@
+Flask-Limiter adds rate limiting to Flask applications. You can
+configure rate limits at different levels such as: application
+wide global limits per user, default limits per route, by
+blueprints, class based views and individual routes.
