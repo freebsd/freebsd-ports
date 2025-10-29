@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-09-28 03:59:57 UTC
+--- pyproject.toml.orig	2025-10-26 21:34:57 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ requires = [
  [build-system]
@@ -8,3 +8,12 @@
      "wheel",
      "pybind11>=2.10",
  ]
+@@ -25,8 +25,6 @@ maintainers = [
+ maintainers = [
+   {name = "The icet developer team"}
+ ]
+-license = "MPL-2.0"
+-license-files = ["LICENSE"]
+ readme = "README.rst"
+ requires-python = ">=3.9"
+ keywords = ["chemistry", "physics", "scientific"]
