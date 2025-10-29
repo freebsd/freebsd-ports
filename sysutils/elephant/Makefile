@@ -1,6 +1,6 @@
 PORTNAME=	elephant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.7
+DISTVERSION=	2.7.9
 CATEGORIES=	sysutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -48,6 +48,7 @@ CALC_RUN_DEPENDS=	qalc:math/libqalculate \
 			wl-copy:x11/wl-clipboard
 CALC_PLIST_FILES=	etc/xdg/elephant/providers/calc.so
 CLIPBOARD_RUN_DEPENDS=	wl-copy:x11/wl-clipboard
+CLIPBOARD_USES=		magick:run
 CLIPBOARD_PLIST_FILES=	etc/xdg/elephant/providers/clipboard.so
 DESKTOPAPPLICATIONS_PLIST_FILES=etc/xdg/elephant/providers/desktopapplications.so
 FILES_RUN_DEPENDS=	fd:sysutils/fd
