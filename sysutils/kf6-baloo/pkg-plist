@@ -289,6 +289,16 @@ share/locale/ie/LC_MESSAGES/baloo_file6.mo
 share/locale/ie/LC_MESSAGES/baloo_file_extractor6.mo
 share/locale/ie/LC_MESSAGES/kio6_baloosearch.mo
 share/locale/ie/LC_MESSAGES/kio6_timeline.mo
+share/locale/is/LC_MESSAGES/baloo_file6.mo
+share/locale/is/LC_MESSAGES/baloo_file_extractor6.mo
+share/locale/is/LC_MESSAGES/balooctl6.mo
+share/locale/is/LC_MESSAGES/baloodb6.mo
+share/locale/is/LC_MESSAGES/balooengine6.mo
+share/locale/is/LC_MESSAGES/baloosearch6.mo
+share/locale/is/LC_MESSAGES/balooshow6.mo
+share/locale/is/LC_MESSAGES/kio6_baloosearch.mo
+share/locale/is/LC_MESSAGES/kio6_tags.mo
+share/locale/is/LC_MESSAGES/kio6_timeline.mo
 share/locale/it/LC_MESSAGES/baloo_file6.mo
 share/locale/it/LC_MESSAGES/baloo_file_extractor6.mo
 share/locale/it/LC_MESSAGES/balooctl6.mo
