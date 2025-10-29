@@ -133,6 +133,7 @@
     SUBDIR += qucsator
     SUBDIR += repsnapper
     SUBDIR += rubygem-gdsii
+    SUBDIR += sch-rnd
     SUBDIR += scotch
     SUBDIR += silice
     SUBDIR += solvespace
