@@ -1,6 +1,6 @@
 PORTNAME=	podman-desktop
 PORTVERSION=	1.21.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/arrowd/podman-desktop/releases/download/v${PORTVERSION}/ \
 		https://raw.githubusercontent.com/podman-desktop/podman-desktop/refs/tags/v${PORTVERSION}/buildResources/:icon
