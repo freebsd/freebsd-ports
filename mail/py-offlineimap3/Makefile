@@ -1,8 +1,6 @@
 PORTNAME=	offlineimap3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.0.0-70
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-g${GH_TAGNAME}
+DISTVERSION=	8.0.1
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -33,7 +31,6 @@ USES=		python
 # https://github.com/OfflineIMAP/offlineimap3/issues/111
 USE_GITHUB=	yes
 GH_ACCOUNT=	OfflineIMAP
-GH_TAGNAME=	93f358dee9d7cf800d11679ee4e9c61abfc0c5f6
 
 USE_PYTHON=	autoplist concurrent distutils pytest
 
