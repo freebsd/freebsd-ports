@@ -1,6 +1,6 @@
---- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig	2025-09-11 13:19:19 UTC
+--- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig	2025-10-28 14:29:43 UTC
 +++ components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h
-@@ -223,7 +223,7 @@ class VIZ_SERVICE_EXPORT RootCompositorFrameSinkImpl
+@@ -222,7 +222,7 @@ class VIZ_SERVICE_EXPORT RootCompositorFrameSinkImpl
    base::TimeDelta display_frame_interval_ = BeginFrameArgs::DefaultInterval();
    base::TimeDelta preferred_frame_interval_;
  

@@ -1,6 +1,6 @@
---- content/app/content_main.cc.orig	2025-09-11 13:19:19 UTC
+--- content/app/content_main.cc.orig	2025-10-28 14:29:43 UTC
 +++ content/app/content_main.cc
-@@ -225,7 +225,7 @@ NO_STACK_PROTECTOR int RunContentProcess(
+@@ -217,7 +217,7 @@ NO_STACK_PROTECTOR int RunContentProcess(
      base::EnableTerminationOnOutOfMemory();
      logging::RegisterAbslAbortHook();
  
@@ -9,7 +9,7 @@
      // The various desktop environments set this environment variable that
      // allows the dbus client library to connect directly to the bus. When this
      // variable is not set (test environments like xvfb-run), the dbus client
-@@ -319,7 +319,7 @@ NO_STACK_PROTECTOR int RunContentProcess(
+@@ -311,7 +311,7 @@ NO_STACK_PROTECTOR int RunContentProcess(
  #endif
  #endif
  

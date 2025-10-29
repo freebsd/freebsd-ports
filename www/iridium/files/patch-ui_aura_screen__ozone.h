@@ -1,4 +1,4 @@
---- ui/aura/screen_ozone.h.orig	2025-05-07 06:48:23 UTC
+--- ui/aura/screen_ozone.h.orig	2025-10-28 14:29:43 UTC
 +++ ui/aura/screen_ozone.h
 @@ -44,7 +44,7 @@ class AURA_EXPORT ScreenOzone : public display::Screen
    display::Display GetDisplayMatching(
@@ -9,7 +9,7 @@
    std::unique_ptr<display::Screen::ScreenSaverSuspender> SuspendScreenSaver()
        override;
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -68,7 +68,7 @@ class AURA_EXPORT ScreenOzone : public display::Screen
+@@ -69,7 +69,7 @@ class AURA_EXPORT ScreenOzone : public display::Screen
    ui::PlatformScreen* platform_screen() { return platform_screen_.get(); }
  
   private:

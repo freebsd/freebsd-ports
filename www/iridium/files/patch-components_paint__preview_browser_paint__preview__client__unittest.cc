@@ -1,6 +1,6 @@
---- components/paint_preview/browser/paint_preview_client_unittest.cc.orig	2025-09-11 13:19:19 UTC
+--- components/paint_preview/browser/paint_preview_client_unittest.cc.orig	2025-10-28 14:29:43 UTC
 +++ components/paint_preview/browser/paint_preview_client_unittest.cc
-@@ -172,8 +172,8 @@ TEST_P(PaintPreviewClientRenderViewHostTest, CaptureMa
+@@ -228,8 +228,8 @@ TEST_P(PaintPreviewClientRenderViewHostTest, CaptureMa
    metadata->set_version(kPaintPreviewVersion);
    auto* chromeVersion = metadata->mutable_chrome_version();
    const auto& current_chrome_version = version_info::GetVersion();

@@ -1,6 +1,6 @@
---- components/optimization_guide/core/optimization_guide_features.cc.orig	2025-09-11 13:19:19 UTC
+--- components/optimization_guide/core/optimization_guide_features.cc.orig	2025-10-28 14:29:43 UTC
 +++ components/optimization_guide/core/optimization_guide_features.cc
-@@ -119,7 +119,7 @@ BASE_FEATURE(kOptimizationGuideModelExecution,
+@@ -120,7 +120,7 @@ BASE_FEATURE(kOptimizationGuideModelExecution,
  BASE_FEATURE(kOptimizationGuideOnDeviceModel,
               "OptimizationGuideOnDeviceModel",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

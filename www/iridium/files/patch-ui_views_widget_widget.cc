@@ -1,6 +1,6 @@
---- ui/views/widget/widget.cc.orig	2025-09-11 13:19:19 UTC
+--- ui/views/widget/widget.cc.orig	2025-10-28 14:29:43 UTC
 +++ ui/views/widget/widget.cc
-@@ -63,7 +63,7 @@
+@@ -64,7 +64,7 @@
  #include "ui/views/widget/widget_removals_observer.h"
  #include "ui/views/window/dialog_delegate.h"
  
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -2498,7 +2498,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
+@@ -2524,7 +2524,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
      return parent_->GetNativeTheme();
    }
  

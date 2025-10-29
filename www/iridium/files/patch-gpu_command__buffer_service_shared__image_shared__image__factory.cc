@@ -1,4 +1,4 @@
---- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2025-09-11 13:19:19 UTC
+--- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2025-10-28 14:29:43 UTC
 +++ gpu/command_buffer/service/shared_image/shared_image_factory.cc
 @@ -50,7 +50,7 @@
  #include "gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.h"
@@ -27,7 +27,7 @@
    return gfx::GpuMemoryBufferType::NATIVE_PIXMAP;
  #elif BUILDFLAG(IS_WIN)
    return gfx::GpuMemoryBufferType::DXGI_SHARED_HANDLE;
-@@ -297,7 +297,7 @@ SharedImageFactory::SharedImageFactory(
+@@ -306,7 +306,7 @@ SharedImageFactory::SharedImageFactory(
          context_state_, workarounds_);
      factories_.push_back(std::move(ozone_factory));
    }

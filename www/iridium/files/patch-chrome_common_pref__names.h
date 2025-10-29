@@ -1,6 +1,6 @@
---- chrome/common/pref_names.h.orig	2025-09-11 13:19:19 UTC
+--- chrome/common/pref_names.h.orig	2025-10-28 14:29:43 UTC
 +++ chrome/common/pref_names.h
-@@ -1333,7 +1333,7 @@ inline constexpr char kGeminiSettings[] = "browser.gem
+@@ -1351,7 +1351,7 @@ inline constexpr char kGeminiSettings[] = "browser.gem
  inline constexpr char kAllowedDomainsForApps[] =
      "settings.allowed_domains_for_apps";
  
@@ -9,7 +9,7 @@
  // Linux specific preference on whether we should match the system theme.
  inline constexpr char kSystemTheme[] = "extensions.theme.system_theme";
  #endif
-@@ -1503,7 +1503,7 @@ inline constexpr char kShowUpdatePromotionInfoBar[] =
+@@ -1517,7 +1517,7 @@ inline constexpr char kShowUpdatePromotionInfoBar[] =
      "browser.show_update_promotion_info_bar";
  #endif
  
@@ -18,7 +18,7 @@
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  inline constexpr char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -2156,7 +2156,7 @@ inline constexpr char kDownloadDefaultDirectory[] =
+@@ -2168,7 +2168,7 @@ inline constexpr char kDownloadDefaultDirectory[] =
  inline constexpr char kDownloadDirUpgraded[] = "download.directory_upgrade";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -27,7 +27,7 @@
  inline constexpr char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
  #endif
-@@ -2659,7 +2659,7 @@ inline constexpr char kMediaStorageIdSalt[] = "media.s
+@@ -2671,7 +2671,7 @@ inline constexpr char kMediaStorageIdSalt[] = "media.s
  inline constexpr char kMediaCdmOriginData[] = "media.cdm.origin_data";
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -36,7 +36,7 @@
  // A boolean pref to determine whether or not the network service is running
  // sandboxed.
  inline constexpr char kNetworkServiceSandboxEnabled[] =
-@@ -2673,7 +2673,7 @@ inline constexpr char kNetworkServiceSandboxEnabled[] 
+@@ -2685,7 +2685,7 @@ inline constexpr char kNetworkServiceSandboxEnabled[] 
  inline constexpr char kNetworkServiceFailedLaunchMajorVersion[] =
      "net.network_service_failed_launch_major_version";
  
@@ -45,7 +45,7 @@
  // Records whether the user has seen an HTTP auth "negotiate" header.
  inline constexpr char kReceivedHttpAuthNegotiateHeader[] =
      "net.received_http_auth_negotiate_headers";
-@@ -2765,7 +2765,7 @@ inline constexpr char kIsolatedWebAppInstallForceList[
+@@ -2777,7 +2777,7 @@ inline constexpr char kIsolatedWebAppInstallForceList[
  inline constexpr char kIsolatedWebAppPendingInitializationCount[] =
      "profile.isolated_web_app.install.pending_initialization_count";
  
@@ -54,7 +54,7 @@
  // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
  // along with kAuthNegotiateDelegateAllowlist.
  inline constexpr char kAuthNegotiateDelegateByKdcPolicy[] =
-@@ -3288,7 +3288,7 @@ inline constexpr char kKioskApplicationLogCollectionEn
+@@ -3275,7 +3275,7 @@ inline constexpr char kKioskApplicationLogCollectionEn
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -63,7 +63,7 @@
  // Defines administrator-set availability of Chrome for Testing.
  inline constexpr char kChromeForTestingAllowed[] = "chrome_for_testing.allowed";
  #endif
-@@ -3806,7 +3806,7 @@ inline constexpr char kScreenCaptureWithoutGestureAllo
+@@ -3793,7 +3793,7 @@ inline constexpr char kScreenCaptureWithoutGestureAllo
  inline constexpr char kSandboxExternalProtocolBlocked[] =
      "profile.sandbox_external_protocol_blocked";
  
@@ -72,7 +72,7 @@
  // Boolean that indicates if system notifications are allowed to be used in
  // place of Chrome notifications.
  inline constexpr char kAllowSystemNotifications[] =
-@@ -3997,7 +3997,7 @@ inline constexpr char kLensDesktopNTPSearchEnabled[] =
+@@ -3984,7 +3984,7 @@ inline constexpr char kLensDesktopNTPSearchEnabled[] =
      "policy.lens_desktop_ntp_search_enabled";
  #endif
  
@@ -81,7 +81,7 @@
  // A dict mapping the edition name with the major version it was shown.
  inline constexpr char kWhatsNewEditionUsed[] = "browser.whats_new.edition_used";
  // A list containing the features of each module in order of when they
-@@ -4094,7 +4094,7 @@ inline constexpr char kPrintingOAuth2AuthorizationServ
+@@ -4081,7 +4081,7 @@ inline constexpr char kPrintingOAuth2AuthorizationServ
      "printing.oauth2_authorization_servers";
  #endif
  

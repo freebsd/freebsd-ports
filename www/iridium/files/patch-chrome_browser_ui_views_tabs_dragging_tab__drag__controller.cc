@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc.orig	2025-10-28 14:29:43 UTC
 +++ chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc
-@@ -194,7 +194,7 @@ bool IsWindowDragUsingSystemDragDropAllowed() {
+@@ -179,7 +179,7 @@ bool IsWindowDragUsingSystemDragDropAllowed() {
  
  void UpdateSystemDnDDragImage(TabDragContext* attached_context,
                                const gfx::ImageSkia& image) {
@@ -9,7 +9,7 @@
    VLOG(1) << __func__ << " image size=" << image.size().ToString();
    aura::Window* root_window =
        attached_context->GetWidget()->GetNativeWindow()->GetRootWindow();
-@@ -406,7 +406,7 @@ TabDragController::Liveness TabDragController::Init(
+@@ -391,7 +391,7 @@ TabDragController::Liveness TabDragController::Init(
    //     synchronous on desktop Linux, so use that.
    // - ChromeOS Ash
    //     Releasing capture on Ash cancels gestures so avoid it.
@@ -18,7 +18,7 @@
    ref->can_release_capture_ = false;
  #endif
    ref->start_point_in_screen_ =
-@@ -980,7 +980,7 @@ TabDragController::Liveness TabDragController::DragBro
+@@ -982,7 +982,7 @@ TabDragController::Liveness TabDragController::DragBro
        CHECK_EQ(SetCapture(target_context), Liveness::ALIVE);
      }
  
@@ -27,7 +27,7 @@
      // EndMoveLoop is going to snap the window back to its original location.
      // Hide it so users don't see this. Hiding a window in Linux aura causes
      // it to lose capture so skip it.
-@@ -2132,7 +2132,7 @@ void TabDragController::CompleteDrag() {
+@@ -2135,7 +2135,7 @@ void TabDragController::CompleteDrag() {
      }
  
      // If source window was maximized - maximize the new window as well.
@@ -36,7 +36,7 @@
      // Keeping maximized state breaks snap to Grid on Windows when dragging
      // tabs from maximized windows. TODO:(crbug.com/727051) Explore doing this
      // for other desktop OS's. kMaximizedStateRetainedOnTabDrag in
-@@ -2549,7 +2549,7 @@ TabDragController::Liveness TabDragController::GetLoca
+@@ -2551,7 +2551,7 @@ TabDragController::Liveness TabDragController::GetLoca
      }
    }
  

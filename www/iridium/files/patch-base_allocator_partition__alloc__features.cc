@@ -1,9 +1,9 @@
---- base/allocator/partition_alloc_features.cc.orig	2025-09-11 13:19:19 UTC
+--- base/allocator/partition_alloc_features.cc.orig	2025-10-28 14:29:43 UTC
 +++ base/allocator/partition_alloc_features.cc
-@@ -154,7 +154,7 @@ BASE_FEATURE(kPartitionAllocEventuallyZeroFreedMemory,
+@@ -143,7 +143,7 @@ BASE_FEATURE(PartitionAllocEventuallyZeroFreedMemory,
+ // Evaluated and positive stability and peformance-wise on Linux-based systems,
  // disabled elsewhere (for now). Does not apply to Windows.
- BASE_FEATURE(kPartitionAllocFewerMemoryRegions,
-              "PartitionAllocFewerMemoryRegions",
+ BASE_FEATURE(PartitionAllocFewerMemoryRegions,
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
               FEATURE_ENABLED_BY_DEFAULT);
