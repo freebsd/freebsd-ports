@@ -4833,3 +4833,4 @@ devel/rubygem-vite_ruby33|devel/rubygem-vite_ruby-gitlab|2025-10-25|Use devel/ru
 devel/rubygem-multi_json114|devel/rubygem-multi_json-gitlab|2025-10-25|Use devel/rubygem-multi_json-gitlab instead
 devel/pycomposefile|devel/py-pycomposefile|2025-10-27|Rename to add py- prefix. Move devel/pycomposefile to devel/py-pycomposefile
 devel/rubygem-fugit111|devel/rubygem-fugit|2025-10-27|Remove obsoleted port. Use devel/rubygem-fugit instead
+science/py-hiphive|science/py-hiPhive|2025-10-28|Spelling changed into camel case on PYPI and GH

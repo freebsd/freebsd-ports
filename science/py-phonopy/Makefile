@@ -1,6 +1,6 @@
 PORTNAME=	phonopy
 DISTVERSION=	2.42.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}symfc>=1.1.6:science/py-symfc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.3:devel/py-pyyaml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hiphive>0:science/py-hiphive@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}hiPhive>0:science/py-hiPive@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 cython autoplist pytest
