@@ -39,6 +39,13 @@ share/wallpapers/Cascade/metadata.json
 share/wallpapers/Cluster/contents/images/3840x2160.png
 share/wallpapers/Cluster/contents/screenshot.png
 share/wallpapers/Cluster/metadata.json
+share/wallpapers/Coast/contents/images/1440x2960.png
+share/wallpapers/Coast/contents/images/5120x2880.png
+share/wallpapers/Coast/contents/images/7680x2160.png
+share/wallpapers/Coast/contents/images_dark/1440x2960.png
+share/wallpapers/Coast/contents/images_dark/5120x2880.png
+share/wallpapers/Coast/contents/images_dark/7680x2160.png
+share/wallpapers/Coast/metadata.json
 share/wallpapers/ColdRipple/contents/images/1280x1024.jpg
 share/wallpapers/ColdRipple/contents/images/1280x800.jpg
 share/wallpapers/ColdRipple/contents/images/1440x900.jpg

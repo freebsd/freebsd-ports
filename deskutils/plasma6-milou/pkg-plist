@@ -3,8 +3,8 @@
 %%QT_QMLDIR%%/org/kde/milou/ResultsListViewDelegate.qml
 %%QT_QMLDIR%%/org/kde/milou/ResultsView.qml
 %%QT_QMLDIR%%/org/kde/milou/kde-qmlmodule.version
-%%QT_QMLDIR%%/org/kde/milou/libmilouqmlplugin.so
-%%QT_QMLDIR%%/org/kde/milou/milouqmlplugin.qmltypes
+%%QT_QMLDIR%%/org/kde/milou/libmilou.so
+%%QT_QMLDIR%%/org/kde/milou/milou.qmltypes
 %%QT_QMLDIR%%/org/kde/milou/qmldir
 share/locale/ar/LC_MESSAGES/milou.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.milou.mo

@@ -10,9 +10,9 @@ LIB_DEPENDS=	libcups.so:print/cups
 
 USES=		cmake compiler:c++11-lang gettext kde:6 pkgconfig qt:6 tar:xz \
 		xorg
-USE_KDE=	completion config configwidgets coreaddons dbusaddons i18n \
-		iconthemes jobwidgets kio kirigami-addons libplasma \
-		notifications service solid widgetsaddons windowsystem \
+USE_KDE=	config configwidgets coreaddons dbusaddons i18n \
+		kio kirigami2 kcmutils libplasma \
+		notifications widgetsaddons windowsystem \
 		ecm:build
 USE_QT=		base declarative
 USE_XORG=	x11

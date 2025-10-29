@@ -1,11 +1,12 @@
 bin/configure-printer
 bin/kde-print-queue
-lib/libkcupslib.so.%%KDE_PLASMA_VERSION%%
+lib/libkcups.so
 %%QT_PLUGINDIR%%/kf6/kded/printmanager.so
+%%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.printmanager.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_printer_manager.so
-%%QT_QMLDIR%%/org/kde/plasma/printmanager/kcupslib.qmltypes
+%%QT_QMLDIR%%/org/kde/plasma/printmanager/kcups.qmltypes
 %%QT_QMLDIR%%/org/kde/plasma/printmanager/kde-qmlmodule.version
-%%QT_QMLDIR%%/org/kde/plasma/printmanager/libkcupslibplugin.so
+%%QT_QMLDIR%%/org/kde/plasma/printmanager/libkcupsplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/printmanager/qmldir
 share/applications/kcm_printer_manager.desktop
 share/applications/org.kde.ConfigurePrinter.desktop
@@ -107,6 +108,9 @@ share/locale/ko/LC_MESSAGES/print-manager.mo
 share/locale/lt/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/lt/LC_MESSAGES/print-manager.mo
+share/locale/lv/LC_MESSAGES/kcm_printer_manager.mo
+share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
+share/locale/lv/LC_MESSAGES/print-manager.mo
 share/locale/mr/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/mr/LC_MESSAGES/print-manager.mo
 share/locale/nb/LC_MESSAGES/kcm_printer_manager.mo
@@ -176,9 +180,4 @@ share/locale/zh_TW/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/zh_TW/LC_MESSAGES/print-manager.mo
 share/metainfo/org.kde.print-manager.metainfo.xml
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/config/main.xml
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/FullRepresentation.qml
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PrinterDelegate.qml
-share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.plasma.printmanager/metadata.json
 share/qlogging-categories6/pmlogs.categories

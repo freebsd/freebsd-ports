@@ -125,6 +125,10 @@ lib/libPlasmaQuick.so.%%KDE_PLASMA_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/components/private/RoundShadow.qml
 %%QT_QMLDIR%%/org/kde/plasma/components/private/TextFieldFocus.qml
 %%QT_QMLDIR%%/org/kde/plasma/components/qmldir
+%%QT_QMLDIR%%/org/kde/plasma/configuration/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/plasma/configuration/libplasmaconfigplugin.so
+%%QT_QMLDIR%%/org/kde/plasma/configuration/plasmaconfigplugin.qmltypes
+%%QT_QMLDIR%%/org/kde/plasma/configuration/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/core/DefaultToolTip.qml
 %%QT_QMLDIR%%/org/kde/plasma/core/DialogBackground.qml
 %%QT_QMLDIR%%/org/kde/plasma/core/corebindingsplugin.qmltypes
@@ -156,10 +160,13 @@ lib/libPlasmaQuick.so.%%KDE_PLASMA_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/extras/plasmaextracomponentsplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/plasma/extras/private/BackgroundMetrics.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/qmldir
+%%QT_QMLDIR%%/org/kde/plasma/plasmoid/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/plasma/plasmoid/libplasmoidplugin.so
+%%QT_QMLDIR%%/org/kde/plasma/plasmoid/plasmoidplugin.qmltypes
+%%QT_QMLDIR%%/org/kde/plasma/plasmoid/qmldir
 share/kdevappwizard/templates/cpp-plasmoid6.tar.bz2
 share/kdevappwizard/templates/plasma6-wallpaper-with-qml-extension.tar.bz2
 share/kdevappwizard/templates/plasma6-wallpaper.tar.bz2
-share/kdevappwizard/templates/qml-plasmoid6-with-qml-extension.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid6.tar.bz2
 share/locale/ar/LC_MESSAGES/libplasma6.mo
 share/locale/ast/LC_MESSAGES/libplasma6.mo

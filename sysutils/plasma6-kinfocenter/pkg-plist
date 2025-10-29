@@ -218,8 +218,11 @@ share/locale/id/LC_MESSAGES/kcm_about-distro.mo
 share/locale/id/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/id/LC_MESSAGES/kcm_samba.mo
 share/locale/id/LC_MESSAGES/kcmusb.mo
+share/locale/is/LC_MESSAGES/kcm_about-distro.mo
+share/locale/is/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/is/LC_MESSAGES/kcm_samba.mo
 share/locale/is/LC_MESSAGES/kcmusb.mo
+share/locale/is/LC_MESSAGES/kinfocenter.mo
 share/locale/it/LC_MESSAGES/kcm_about-distro.mo
 share/locale/it/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/it/LC_MESSAGES/kcm_samba.mo

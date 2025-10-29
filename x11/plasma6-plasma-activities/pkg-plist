@@ -19,7 +19,7 @@ lib/cmake/PlasmaActivities/PlasmaActivitiesLibraryTargets-%%CMAKE_BUILD_TYPE%%.c
 lib/cmake/PlasmaActivities/PlasmaActivitiesLibraryTargets.cmake
 lib/libPlasmaActivities.so
 lib/libPlasmaActivities.so.%%KDE_PLASMA_VERSION%%
-lib/libPlasmaActivities.so.6
+lib/libPlasmaActivities.so.7
 %%QT_QMLDIR%%/org/kde/activities/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/activities/libplasmaactivitiesextensionplugin.so
 %%QT_QMLDIR%%/org/kde/activities/plasmaactivitiesextensionplugin.qmltypes

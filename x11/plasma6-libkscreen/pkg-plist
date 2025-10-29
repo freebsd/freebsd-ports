@@ -40,7 +40,6 @@ lib/libKF6ScreenDpms.so.8
 lib/libexec/kf6/kscreen_backend_launcher
 %%QT_PLUGINDIR%%/kf6/kscreen/KSC_Fake.so
 %%QT_PLUGINDIR%%/kf6/kscreen/KSC_KWayland.so
-%%QT_PLUGINDIR%%/kf6/kscreen/KSC_QScreen.so
 %%QT_PLUGINDIR%%/kf6/kscreen/KSC_XRandR.so
 @comment lib/systemd/user/plasma-kscreen.service
 libdata/pkgconfig/KF6Screen.pc

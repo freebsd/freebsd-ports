@@ -7,7 +7,7 @@ COMMENT=	ssh-add helper that uses KWallet and KPasswordDialog
 
 USES=		cmake gettext gl kde:6 qt:6 tar:xz
 USE_KDE=	coreaddons i18n wallet widgetsaddons \
-		ecm:build
+		doctools:build ecm:build
 USE_QT=		base
 USE_GL=		gl opengl
 

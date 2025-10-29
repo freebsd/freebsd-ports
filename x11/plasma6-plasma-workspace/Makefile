@@ -1,9 +1,6 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
-PATCH_SITES=	https://invent.kde.org/plasma/plasma-workspace/-/commit/
-PATCHFILES=	30273fb2afcc6e304951c8895bb17d38255fed39.patch:-p1
 
 COMMENT=	KDE Plasma Workspace
 MAINTAINER=	kde@FreeBSD.org
@@ -42,7 +39,7 @@ USE_KDE=	activities activities-stats archive attica auth baloo \
 		newstuff notifications notifyconfig package parts phonon \
 		plasma5support prison runner service solid sonnet \
 		statusnotifieritem svg syntaxhighlighting texteditor \
-		textwidgets unitconversion userfeedback wallet wayland \
+		textwidgets userfeedback wallet wayland \
 		widgetsaddons windowsystem xmlgui \
 		ecm:build plasma-wayland-protocols:build \
 		kwin-x11:run

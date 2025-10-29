@@ -53,3 +53,4 @@ share/locale/uk/LC_MESSAGES/ksshaskpass.mo
 share/locale/vi/LC_MESSAGES/ksshaskpass.mo
 share/locale/zh_CN/LC_MESSAGES/ksshaskpass.mo
 share/locale/zh_TW/LC_MESSAGES/ksshaskpass.mo
+share/man/man1/ksshaskpass.1.gz

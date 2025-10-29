@@ -1,7 +1,6 @@
 bin/hdrcalibrator
 bin/kscreen-console
 lib/libexec/kscreen_osd_service
-%%DATADIR%%/graz.png
 %%QT_PLUGINDIR%%/kf6/kded/kscreen.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.kscreen.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_kscreen.so
@@ -113,9 +112,11 @@ share/locale/ko/LC_MESSAGES/hdrcalibrator.mo
 share/locale/ko/LC_MESSAGES/kcm_kscreen.mo
 share/locale/ko/LC_MESSAGES/kscreen_common.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
+share/locale/lt/LC_MESSAGES/hdrcalibrator.mo
 share/locale/lt/LC_MESSAGES/kcm_kscreen.mo
 share/locale/lt/LC_MESSAGES/kscreen_common.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
+share/locale/lv/LC_MESSAGES/hdrcalibrator.mo
 share/locale/lv/LC_MESSAGES/kcm_kscreen.mo
 share/locale/lv/LC_MESSAGES/kscreen_common.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo

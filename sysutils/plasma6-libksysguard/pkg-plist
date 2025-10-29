@@ -63,6 +63,7 @@ lib/libprocesscore.so.%%KDE_PLASMA_VERSION%%
 %%QT_QMLDIR%%/org/kde/ksysguard/faces/SensorFace.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/faces/SensorFaces.qmltypes
 %%QT_QMLDIR%%/org/kde/ksysguard/faces/SensorRangeSpinBox.qml
+%%QT_QMLDIR%%/org/kde/ksysguard/faces/SuffixSpinBox.qml
 %%QT_QMLDIR%%/org/kde/ksysguard/faces/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/ksysguard/faces/libSensorFacesplugin.so
 %%QT_QMLDIR%%/org/kde/ksysguard/faces/private/SensorFacesPrivate.qmltypes
@@ -74,9 +75,9 @@ lib/libprocesscore.so.%%KDE_PLASMA_VERSION%%
 %%QT_QMLDIR%%/org/kde/ksysguard/formatter/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/ksysguard/formatter/libFormatterplugin.so
 %%QT_QMLDIR%%/org/kde/ksysguard/formatter/qmldir
-%%QT_QMLDIR%%/org/kde/ksysguard/process/ProcessPlugin.qmltypes
 %%QT_QMLDIR%%/org/kde/ksysguard/process/kde-qmlmodule.version
-%%QT_QMLDIR%%/org/kde/ksysguard/process/libProcessPlugin.so
+%%QT_QMLDIR%%/org/kde/ksysguard/process/libprocesscoreplugin.so
+%%QT_QMLDIR%%/org/kde/ksysguard/process/processcore.qmltypes
 %%QT_QMLDIR%%/org/kde/ksysguard/process/qmldir
 %%QT_QMLDIR%%/org/kde/ksysguard/sensors/Sensors.qmltypes
 %%QT_QMLDIR%%/org/kde/ksysguard/sensors/kde-qmlmodule.version
@@ -443,10 +444,12 @@ share/locale/lt/LC_MESSAGES/KSysGuardSensorFaces.mo
 share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
 share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
+share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.horizontalbars.mo
 share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
 share/locale/lt/LC_MESSAGES/ksysguard_sensors.mo
+share/locale/lt/LC_MESSAGES/ksysguard_systemstats.mo
 share/locale/lt/LC_MESSAGES/processcore.mo
 share/locale/lv/LC_MESSAGES/KSysGuardFormatter.mo
 share/locale/lv/LC_MESSAGES/KSysGuardSensorFaces.mo
