@@ -51,7 +51,6 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/kronos.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/pybonjour.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/pystone.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/rarfile.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/rarvolinfo.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/sleepless.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/ssdp.py
