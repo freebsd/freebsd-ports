@@ -37,9 +37,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	${ECHO_CMD} 'USER_CFLAGS += -DSCCONFIG_ACCEPT_IMPLICIT' >> ${WRKSRC}/scconfig/Makefile
-
 post-install:
 .for f in bxl2txt gsch2pcb-rnd pcb-rnd rect-union-rnd txt2bxl
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/$f
