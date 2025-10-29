@@ -1,5 +1,5 @@
 PORTNAME=	instructor
-DISTVERSION=	1.11.3
+DISTVERSION=	1.12.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,13 +23,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openai>=1.70.0<2.0.0:misc/py-openai@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}jiter>=0.6.1:textproc/py-jiter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.4<4.0.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3<3.0.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}diskcache>=5.6.3:devel/py-diskcache@${PY_FLAVOR}
-# TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-examples>=0.0.15:devel/py-pytest-examples@${PY_FLAVOR} \
-# 		${PYTHON_PKGNAMEPREFIX}sqlmodel>=0.0.22<1.0.0:databases/py-sqlmodel@${PY_FLAVOR} \
-# 		${PYTHON_PKGNAMEPREFIX}anthropic>=0.53.0:misc/py-anthropic@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}diskcache>=5.6.3:devel/py-diskcache@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pre-commit>=4.3.0:devel/py-pre-commit@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517 pytest
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
