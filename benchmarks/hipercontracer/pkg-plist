@@ -103,11 +103,14 @@ share/bash-completion/completions/udp-echo-server
 %%DATADIR%%/TestDB/9-uninstall-database
 %%DATADIR%%/TestDB/CertificateHelper.py
 %%DATADIR%%/TestDB/README.md
+%%DATADIR%%/TestDB/check-certificate
+%%DATADIR%%/TestDB/extract-pem
 %%DATADIR%%/TestDB/generate-test-certificates
 %%DATADIR%%/TestDB/hpct-users.conf.example
 %%DATADIR%%/TestDB/name-in-etc-hosts
 %%DATADIR%%/TestDB/run-full-test
 %%DATADIR%%/TestDB/test-tls-connection
+%%DATADIR%%/TestDB/view-certificate
 %%DATADIR%%/hipercontracer-database.conf
 %%DATADIR%%/hipercontracer-importer.conf
 %%DATADIR%%/hipercontracer.bib

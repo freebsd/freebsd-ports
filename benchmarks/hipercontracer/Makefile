@@ -1,6 +1,5 @@
 PORTNAME=	hipercontracer
-DISTVERSION=	2.1.1
-PORTREVISION=	1
+DISTVERSION=	2.1.3
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://www.nntb.no/~dreibh/hipercontracer/download/
 
@@ -64,7 +63,7 @@ ICONS_BUILD_DEPENDS=		gm:graphics/GraphicsMagick \
 				gs:print/ghostscript10 \
 				pdf2svg:graphics/pdf2svg
 ICONS_CMAKE_BOOL=		WITH_ICONS
-IMPMARIADB_LIB_DEPENDS=		libmariadb.so:databases/mariadb106-client
+IMPMARIADB_LIB_DEPENDS=		libmariadb.so:databases/mariadb118-client
 IMPMARIADB_CMAKE_BOOL=		ENABLE_BACKEND_MARIADB
 IMPMONGO_LIB_DEPENDS=		libbson-1.0.so:devel/libbson \
 				libmongoc-1.0.so:devel/mongo-c-driver
