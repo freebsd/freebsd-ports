@@ -1,3 +1,7 @@
+include/KirigamiAddons/App/KirigamiApp
+include/KirigamiAddons/App/kirigamiapp.h
+include/KirigamiAddons/App/kirigamiapp_export.h
+include/KirigamiAddons/App/kirigamiapp_version.h
 include/KirigamiAddonsStatefulApp/AbstractKirigamiApplication
 include/KirigamiAddonsStatefulApp/KirigamiActionCollection
 include/KirigamiAddonsStatefulApp/abstractkirigamiapplication.h
@@ -11,6 +15,9 @@ lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets.cmake
 lib/libKirigamiAddonsStatefulApp.so
 lib/libKirigamiAddonsStatefulApp.so.%%SHLIB_VER%%
 lib/libKirigamiAddonsStatefulApp.so.6
+lib/libKirigamiApp.so
+lib/libKirigamiApp.so.%%SHLIB_VER%%
+lib/libKirigamiApp.so.6
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/components/Avatar.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/components/AvatarButton.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/components/Banner.qml
