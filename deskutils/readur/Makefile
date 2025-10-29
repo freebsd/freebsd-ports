@@ -1,6 +1,6 @@
 PORTNAME=	readur
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.2
+DISTVERSION=	2.6.3
 CATEGORIES=	deskutils
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX} \
@@ -13,7 +13,8 @@ WWW=		https://github.com/readur/${PORTNAME}
 LICENSE=	MIT
 
 LIB_DEPENDS=	libleptonica.so:graphics/leptonica \
-		libtesseract.so:graphics/tesseract
+		libtesseract.so:graphics/tesseract \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ocrmypdf>=0:textproc/py-ocrmypdf@${PY_FLAVOR} \
 		poppler-utils>=0:graphics/poppler-utils
 
@@ -21,6 +22,7 @@ USES=		cargo llvm:build pkgconfig python ssl
 USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}
 
+CARGO_FEATURES=		ocr s3
 CARGO_INSTALL_ARGS=	--bin ${PORTNAME}
 
 MAKE_ENV=	LIBCLANG_PATH=${LLVM_PREFIX}/lib \
