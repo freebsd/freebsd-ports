@@ -1,6 +1,5 @@
 PORTNAME=	sym
-DISTVERSION=	0.3.5
-PORTREVISION=	2
+DISTVERSION=	0.3.7
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes
+
+TEST_WRKSRC=	${WRKSRC}/sym/tests
+
+# tests as of 0.3.7: 117 passed, 3 warnings in 0.91s
 
 .include <bsd.port.mk>
