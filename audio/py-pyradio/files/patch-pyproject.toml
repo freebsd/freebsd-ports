@@ -1,0 +1,26 @@
+--- pyproject.toml.orig	2025-10-23 09:44:51 UTC
++++ pyproject.toml
+@@ -14,9 +14,6 @@ classifiers = [
+     "Programming Language :: Python :: 3",
+     "Operating System :: OS Independent",
+ ]
+-dependencies = [
+-    'importlib_resources; python_version<"3.9"'
+-]
+ 
+ [project.optional-dependencies]
+ cli = [
+@@ -32,13 +29,6 @@ pyradio-client = "pyradio.main:run_client"
+ [project.urls]
+ "Homepage" = "https://github.com/coderholic/pyradio"
+ "Bug Tracker" = "https://github.com/coderholic/pyradio/issues"
+-
+-[tool.setuptools]
+-include-package-data = true
+-
+-[tool.setuptools_scm]
+-version_scheme = "no-guess-dev"
+-local_scheme = "no-local-version"
+ 
+ [tool.setuptools.packages.find]
+ include = [
