@@ -1,6 +1,6 @@
 PORTNAME=	miniupnpc
 PORTVERSION=	2.3.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/ \
 		https://miniupnp.tuxfamily.org/files/
