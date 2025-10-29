@@ -1,3 +1,41 @@
+  <vuln vid="c5889223-b4e1-11f0-ae9b-b42e991fc52e">
+    <topic>SQLite -- CWE-190 Integer Overflow or Wraparound</topic>
+    <affects>
+    <package>
+	<name>SQLite</name>
+	<range><lt>3.50.3</lt></range>
+    </package>
+      <package>
+	<name>linux_base-rl9-9.6</name>
+	<range><le>9.6_1</le></range>
+      </package>
+      <package>
+	<name>linux-c7-sqlite</name>
+	<range><lt>3.50.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/google/security-research/security/advisories/GHSA-v2c8-vqqp-hv3g reports:</p>
+	<blockquote cite="https://github.com/google/security-research/security/advisories/GHSA-v2c8-vqqp-hv3g">
+	  <p>An integer overflow exists in the FTS5 https://sqlite.org/fts5.html
+	  extension. It occurs when the size of an array of tombstone
+	  pointers is calculated and truncated into a 32-bit integer.
+	  A pointer to partially controlled data can then be written
+	  out of bounds.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-7709</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-7709</url>
+    </references>
+    <dates>
+      <discovery>2025-09-08</discovery>
+      <entry>2025-10-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3116b6f3-b433-11f0-82ac-901b0edee044">
     <topic>py-social-auth-app-django -- Unsafe account association</topic>
     <affects>
