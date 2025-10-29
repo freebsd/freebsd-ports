@@ -1,4 +1,4 @@
---- ui/accessibility/ax_tree.cc.orig	2025-09-11 13:19:19 UTC
+--- ui/accessibility/ax_tree.cc.orig	2025-10-28 14:29:43 UTC
 +++ ui/accessibility/ax_tree.cc
 @@ -700,7 +700,7 @@ struct AXTreeUpdateState {
    // (crrev.com/c/2892259).
@@ -27,7 +27,7 @@
    ClearExtraAnnouncementNodes();
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
  
-@@ -1600,7 +1600,7 @@ bool AXTree::Unserialize(const AXTreeUpdate& update) {
+@@ -1602,7 +1602,7 @@ bool AXTree::Unserialize(const AXTreeUpdate& update) {
    observers_.Notify(&AXTreeObserver::OnAtomicUpdateFinished, this,
                      root_->id() != old_root_id, changes);
  
@@ -36,7 +36,7 @@
    if (update_state.should_clear_extra_announcement_nodes) {
      ClearExtraAnnouncementNodes();
    }
-@@ -2186,7 +2186,7 @@ void AXTree::NotifyNodeAttributesWillChange(
+@@ -2188,7 +2188,7 @@ void AXTree::NotifyNodeAttributesWillChange(
                      new_data);
  }
  
@@ -45,7 +45,7 @@
  void AXTree::ClearExtraAnnouncementNodes() {
    if (!extra_announcement_nodes_) {
      return;
-@@ -2596,7 +2596,7 @@ bool AXTree::CreateNewChildVector(
+@@ -2598,7 +2598,7 @@ bool AXTree::CreateNewChildVector(
      AXTreeUpdateState* update_state) {
    DCHECK(GetTreeUpdateInProgressState());
    bool success = true;

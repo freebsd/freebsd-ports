@@ -1,15 +1,15 @@
---- components/signin/public/base/signin_switches.cc.orig	2025-09-11 13:19:19 UTC
+--- components/signin/public/base/signin_switches.cc.orig	2025-10-28 14:29:43 UTC
 +++ components/signin/public/base/signin_switches.cc
-@@ -73,7 +73,7 @@ BASE_FEATURE(kSmartEmailLineBreaking,
+@@ -73,7 +73,7 @@ BASE_FEATURE(kSupportWebSigninAddSession,
               base::FEATURE_ENABLED_BY_DEFAULT);
- #endif
+ #endif  // BUILDFLAG(IS_ANDROID)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // Enables the History Sync Opt-in on Desktop.
  BASE_FEATURE(kEnableHistorySyncOptin,
               "EnableHistorySyncOptin",
-@@ -292,7 +292,7 @@ BASE_FEATURE(kSyncEnableBookmarksInTransportMode,
+@@ -293,7 +293,7 @@ BASE_FEATURE(kSyncEnableBookmarksInTransportMode,
  #endif  // BUILDFLAG(IS_IOS)
  );
  

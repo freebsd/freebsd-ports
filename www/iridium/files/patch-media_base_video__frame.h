@@ -1,4 +1,4 @@
---- media/base/video_frame.h.orig	2025-09-11 13:19:19 UTC
+--- media/base/video_frame.h.orig	2025-10-28 14:29:43 UTC
 +++ media/base/video_frame.h
 @@ -41,7 +41,7 @@
  #include "ui/gfx/geometry/size.h"
@@ -27,7 +27,7 @@
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/html/latest/driver-api/dma-buf.html) with a
    // VideoFrame. The frame will take ownership of |dmabuf_fds|, and will
-@@ -692,7 +692,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -712,7 +712,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // wait for the included sync point.
    scoped_refptr<gpu::ClientSharedImage> shared_image() const;
  
@@ -36,7 +36,7 @@
    // The number of DmaBufs will be equal or less than the number of planes of
    // the frame. If there are less, this means that the last FD contains the
    // remaining planes. Should be > 0 for STORAGE_DMABUFS.
-@@ -927,7 +927,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -947,7 +947,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // GpuMemoryBuffers. Clients will set this flag while creating a VideoFrame.
    bool is_mappable_si_enabled_ = false;
  

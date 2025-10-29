@@ -1,8 +1,8 @@
---- services/tracing/public/cpp/perfetto/track_name_recorder.cc.orig	2025-09-11 13:19:19 UTC
+--- services/tracing/public/cpp/perfetto/track_name_recorder.cc.orig	2025-10-28 14:29:43 UTC
 +++ services/tracing/public/cpp/perfetto/track_name_recorder.cc
-@@ -51,7 +51,7 @@ void FillThreadTrack(const perfetto::ThreadTrack& trac
-   if (thread_type != ChromeThreadDescriptor::THREAD_UNSPECIFIED) {
-     desc.mutable_chrome_thread()->set_thread_type(thread_type);
+@@ -53,7 +53,7 @@ void FillThreadTrack(const perfetto::ThreadTrack& trac
+     desc.mutable_chrome_thread()->set_thread_type(
+         static_cast<int32_t>(thread_type));
    }
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_AIX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_AIX) || BUILDFLAG(IS_BSD)

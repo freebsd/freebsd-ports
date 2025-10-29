@@ -1,4 +1,4 @@
---- services/network/network_service.h.orig	2025-09-11 13:19:19 UTC
+--- services/network/network_service.h.orig	2025-10-28 14:29:43 UTC
 +++ services/network/network_service.h
 @@ -243,7 +243,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
        const std::vector<ContentSettingPatternSource>& settings) override;
@@ -18,7 +18,7 @@
    // This is called just before a GSSAPI library may be loaded.
    void OnBeforeGssapiLibraryLoad();
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -550,7 +550,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
+@@ -542,7 +542,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
    // leaking stale listeners between tests.
    std::unique_ptr<net::NetworkChangeNotifier> mock_network_change_notifier_;
  

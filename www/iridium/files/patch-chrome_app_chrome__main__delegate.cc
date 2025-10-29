@@ -1,4 +1,4 @@
---- chrome/app/chrome_main_delegate.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/app/chrome_main_delegate.cc.orig	2025-10-28 14:29:43 UTC
 +++ chrome/app/chrome_main_delegate.cc
 @@ -179,17 +179,17 @@
  #include "v8/include/v8.h"
@@ -66,7 +66,7 @@
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -643,7 +643,7 @@ void RecordMainStartupMetrics(const StartupTimestamps&
+@@ -651,7 +651,7 @@ void RecordMainStartupMetrics(const StartupTimestamps&
  #endif
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
@@ -75,7 +75,7 @@
    // Record the startup process creation time on supported platforms. On Android
    // this is recorded in ChromeMainDelegateAndroid.
    startup_metric_utils::GetCommon().RecordStartupProcessCreationTime(
-@@ -802,7 +802,7 @@ std::optional<int> ChromeMainDelegate::PostEarlyInitia
+@@ -810,7 +810,7 @@ std::optional<int> ChromeMainDelegate::PostEarlyInitia
  #if BUILDFLAG(IS_OZONE)
    // Initialize Ozone platform and add required feature flags as per platform's
    // properties.
@@ -84,7 +84,7 @@
    ui::SetOzonePlatformForLinuxIfNeeded(*base::CommandLine::ForCurrentProcess());
  #endif
    ui::OzonePlatform::PreEarlyInitialization();
-@@ -957,7 +957,7 @@ void ChromeMainDelegate::CommonEarlyInitialization() {
+@@ -965,7 +965,7 @@ void ChromeMainDelegate::CommonEarlyInitialization() {
    const bool is_canary_dev = IsCanaryDev();
    const bool emit_crashes =
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -93,7 +93,7 @@
        is_canary_dev;
  #else
        false;
-@@ -1105,7 +1105,7 @@ std::optional<int> ChromeMainDelegate::BasicStartupCom
+@@ -1113,7 +1113,7 @@ std::optional<int> ChromeMainDelegate::BasicStartupCom
      return 0;  // Got a --credits switch; exit with a success error code.
    }
  
@@ -102,7 +102,7 @@
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -1409,7 +1409,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1426,7 +1426,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
      CHECK(!loaded_locale.empty()) << "Locale could not be found for " << locale;
    }
  

@@ -1,4 +1,4 @@
---- media/base/video_frame.cc.orig	2025-09-11 13:19:19 UTC
+--- media/base/video_frame.cc.orig	2025-10-28 14:29:43 UTC
 +++ media/base/video_frame.cc
 @@ -87,7 +87,7 @@ std::string VideoFrame::StorageTypeToString(
        return "OWNED_MEMORY";
@@ -27,7 +27,7 @@
    bool is_native_buffer = !shared_image->IsSharedMemoryForVideoFrame();
    if (is_native_buffer) {
      const auto gmb_handle = shared_image->CloneGpuMemoryBufferHandle();
-@@ -861,7 +861,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
+@@ -860,7 +860,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
  }
  #endif
  
@@ -36,7 +36,7 @@
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      const VideoFrameLayout& layout,
-@@ -1535,7 +1535,7 @@ scoped_refptr<gpu::ClientSharedImage> VideoFrame::shar
+@@ -1547,7 +1547,7 @@ scoped_refptr<gpu::ClientSharedImage> VideoFrame::shar
    return wrapped_frame_ ? wrapped_frame_->shared_image() : shared_image_;
  }
  
