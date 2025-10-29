@@ -10,6 +10,8 @@ WWW=		https://gitlab.com/gitlab-org/rust/gitlab-code-parser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN_i386=	compilation fails: error: undefined symbol: __atomic_load
+
 BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
 LIB_DEPENDS=	libonig.so:devel/oniguruma \
 		libzstd.so:archivers/zstd
@@ -19,14 +21,6 @@ USES=		cargo ssl
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	rust/gitlab-code-parser
-
-# Try to fix on i386: compilation fails: ld: error: undefined symbol: __atomic_load
-# I cannot test it, so lets wait for next cluster build
-.if ${ARCH} == i386
-LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
-LDFLAGS+=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
-.endif
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}
 
 PLIST_FILES=	bin/parser-cli \
