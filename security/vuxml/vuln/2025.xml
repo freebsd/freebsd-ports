@@ -1,3 +1,41 @@
+  <vuln vid="55c4e822-b4e4-11f0-8438-001b217e4ee5">
+    <topic>ISC KEA -- Invalid characters cause assert</topic>
+    <affects>
+      <package>
+       <name>kea</name>
+       <range><ge>3.0.1</ge><lt>3.0.2</lt></range>
+      </package>
+      <package>
+       <name>kea-devel</name>
+       <range><ge>3.1.1</ge><lt>3.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Internet Systems Consortium, Inc. reports:</p>
+       <blockquote cite="https://kb.isc.org/docs/cve-2025-11232">
+       <p>To trigger the issue, three configuration parameters
+       must have specific settings: "hostname-char-set" must be
+       left at the default setting, which is "[^A-Za-z0-9.-]";
+       "hostname-char-replacement" must be empty (the default);
+       and "ddns-qualifying-suffix" must NOT be empty (the default is empty).
+       DDNS updates do not need to be enabled for this issue to manifest.
+       A client that sends certain option content would then
+       cause kea-dhcp4 to exit unexpectedly.
+       This addresses CVE-2025-11232 [#4142, #4155].</p>
+       </blockquote>
+       </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11232</cvename>
+      <url>https://kb.isc.org/docs/cve-2025-11232</url>
+    </references>
+    <dates>
+      <discovery>2025-10-29</discovery>
+      <entry>2025-10-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c5889223-b4e1-11f0-ae9b-b42e991fc52e">
     <topic>SQLite -- CWE-190 Integer Overflow or Wraparound</topic>
     <affects>
