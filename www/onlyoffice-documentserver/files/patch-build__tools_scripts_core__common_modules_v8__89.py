@@ -1,13 +1,13 @@
---- build_tools/scripts/core_common/modules/v8_89.py.orig	2025-08-05 15:06:08 UTC
+--- build_tools/scripts/core_common/modules/v8_89.py.orig	2025-10-15 14:25:47 UTC
 +++ build_tools/scripts/core_common/modules/v8_89.py
-@@ -123,46 +123,7 @@ def make():
+@@ -150,57 +150,6 @@
      base.cmd("git", ["config", "--global", "http.postBuffer", "157286400"], True)
  
    os.chdir(base_dir)
 -  if not base.is_dir("depot_tools"):
 -    base.cmd("git", ["clone", "https://chromium.googlesource.com/chromium/tools/depot_tools.git"])
 -    change_bootstrap()
- 
+-
 -  os.environ["PATH"] = base_dir + "/depot_tools" + os.pathsep + os.environ["PATH"]
 -
 -  if ("windows" == base.host_platform()):
@@ -30,8 +30,19 @@
 -
 -  if ("windows" == base.host_platform()):
 -    base.replaceInFile("v8/build/config/win/BUILD.gn", ":static_crt", ":dynamic_crt")
+-    
+-    # fix for new depot_tools and vs2019, as VC folder contains a folder with a symbol in the name
+-    # sorting is done by increasing version, so 0 is a dummy value
+-    replace_src = "  def to_int_if_int(x):\n    try:\n      return int(x)\n    except ValueError:\n      return x"
+-    replace_dst = "  def to_int_if_int(x):\n    try:\n      return int(x)\n    except ValueError:\n      return 0"
+-    base.replaceInFile("v8/build/vs_toolchain.py", replace_src, replace_dst)
+-    
+-    
 -    if not base.is_file("v8/src/base/platform/wrappers.cc"):
 -      base.writeFile("v8/src/base/platform/wrappers.cc", "#include \"src/base/platform/wrappers.h\"\n")
+-  
+-    if config.check_option("platform", "win_arm64"):
+-      base.replaceInFile("v8/build/toolchain/win/setup_toolchain.py", "SDK_VERSION = \'10.0.26100.0\'", "SDK_VERSION = \'10.0.22621.0\'")
 -  else:
 -    base.replaceInFile("depot_tools/gclient_paths.py", "@functools.lru_cache", "")
 -
@@ -47,7 +58,7 @@
    os.chdir("v8")
    
    gn_args = ["v8_static_library=true",
-@@ -170,6 +131,11 @@ def make():
+@@ -208,6 +157,11 @@
               "v8_monolithic=true",
               "v8_use_external_startup_data=false",
               "treat_warnings_as_errors=false"]
@@ -58,4 +69,4 @@
 +
  
    if config.check_option("platform", "linux_64"):
-     base.cmd2("gn", ["gen", "out.gn/linux_64", make_args(gn_args, "linux")])
+     if config.option("sysroot") != "":

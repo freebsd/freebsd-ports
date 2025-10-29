@@ -64,13 +64,24 @@ NOTE: documentserver-update-securelink.sh will only update ./nginx/ds.conf and l
   - start nginx:
     # service nginx start
 
-6. Follow the following doc If you want to use Onlyoffice with Nextcloud:
+6. Follow the following doc if you want to use Onlyoffice with Nextcloud:
   - https://api.onlyoffice.com/editors/nextcloud
 
 7. Install OnlyOffice plugins (you'll need internet):
-  # %%PREFIX%%/bin/documentserver-pluginsmanager.sh --update=%%PREFIX%%/www/onlyoffice/documentserver/sdkjs-plugins/plugin-list-default.json
+   # %%PREFIX%%/bin/documentserver-pluginsmanager.sh --update=%%PREFIX%%/www/onlyoffice/documentserver/sdkjs-plugins/plugin-list-default.json
 
-8. Enjoy.
+8. Set up Admin Panel, if desired:
+  - locate your temporary bootstrap code in the adminpanel log file:
+      /var/log/onlyoffice/documentserver/adminpanel/out.log
+
+  - access the admin panel at http://host/admin
+
+  - use the bootstrap code to complete setup of new admin password
+
+  - see the following for more info:
+      https://www.onlyoffice.com/blog/2025/10/docs-admin-panel-enterprise
+
+9. Enjoy.
 EOM
 }
 { type: upgrade

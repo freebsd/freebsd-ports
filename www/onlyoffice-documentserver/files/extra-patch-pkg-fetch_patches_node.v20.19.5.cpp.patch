@@ -1,8 +1,8 @@
-https://github.com/yao-pkg/pkg-fetch/raw/refs/tags/v3.5.24/patches/node.v20.19.4.cpp.patch
+https://github.com/yao-pkg/pkg-fetch/raw/refs/tags/v3.5.29/patches/node.v20.19.5.cpp.patch
 + local FreeBSD patches
 
---- yao-pkg/node_modules/@yao-pkg/pkg-fetch/patches/node.v20.19.4.cpp.patch
-+++ yao-pkg/node_modules/@yao-pkg/pkg-fetch/patches/node.v20.19.4.cpp.patch
+--- yao-pkg/node_modules/@yao-pkg/pkg-fetch/patches/node.v20.19.5.cpp.patch
++++ yao-pkg/node_modules/@yao-pkg/pkg-fetch/patches/node.v20.19.5.cpp.patch
 @@ -600,3 +600,186 @@ index 2655b9e694..1d951571c7 100644
               'cflags_cc!': [ '-fno-rtti' ],
             }],

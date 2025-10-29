@@ -1,7 +1,6 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.0.4
-PORTREVISION=	1
+DISTVERSION=	9.1.0
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		https://nodejs.org/dist/v${PKGFETCH_NODE_VERSION}/:source3 \
@@ -17,32 +16,33 @@ WWW=		https://www.onlyoffice.com/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_SSL=	boringssl libressl libressl-devel
-BROKEN_SSL_REASON=	Node.js requires OpenSSL
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and arm64
 
-# node version used with "npm install @yao-pkg/pkg@6.6.0"
+# node version used with "npm install @yao-pkg/pkg@6.9.0"
 # keep in sync with patch-build__tools_scripts_build__server.py and patch-document-server-package_Makefile
-PKGFETCH_NODE_VERSION=	20.19.4
-DS_BUILD=	50
+PKGFETCH_NODE_VERSION=	20.19.5
+DS_BUILD=	177
+DS_MODERN_SYSLOG_VER=       1.2.0
+DS_SHARP_VER=        0.32.6
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		boost-libs>0:devel/boost-libs \
 		glib>=2.54:devel/glib20 \
 		gn:devel/gn \
-		java:java/openjdk11 \
 		ninja:devel/ninja \
 		npm:www/npm-node20
 
+# Need libvips because npm module sharp requires it on Unix OS's
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
-		libetonyek-0.1.so:graphics/libetonyek01 \
 		libcurl.so:ftp/curl \
+		libetonyek-0.1.so:graphics/libetonyek01 \
 		libharfbuzz.so:print/harfbuzz \
-		libiconv.so:converters/libiconv \
+		libheif.so:graphics/libheif \
 		libicuuc.so:devel/icu \
 		libodfgen-0.1.so:textproc/libodfgen01 \
-		librevenge-0.0.so:textproc/librevenge
+		librevenge-0.0.so:textproc/librevenge \
+		libvips.so:graphics/vips
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
@@ -52,8 +52,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLA
 		rabbitmq>0:net/rabbitmq \
 		webfonts>=0:x11-fonts/webfonts
 
-USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv localbase pkgconfig \
+USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv:wchar_t localbase java:build pkgconfig \
 		python:build qt:5 ssl trigger
+
+BROKEN_SSL=	boringssl libressl libressl-devel
+BROKEN_SSL_REASON=	Node.js requires OpenSSL
 
 DOS2UNIX_FILES=	document-server-package/common/documentserver/nginx/includes/http-common.conf.m4
 
@@ -79,7 +82,9 @@ GH_TUPLE=	ONLYOFFICE:core:${DS_TAGNAME}:core/core \
 		hunspell:hyphen:73dd296:hunspell_hyphen/core/Common/3dParty/hyphen/hyphen \
 		mity:md4c:481fbfb:mity_md4c/core/Common/3dParty/md/md4c \
 		fsbruva:onlyoffice-DS-pkg-cache:v${PKGFETCH_NODE_VERSION}:pkg_cache/ \
-		fsbruva:onlyoffice-DS-npm-cache:${DS_TAGNAME}-20250831:npm_cache/
+		fsbruva:onlyoffice-DS-npm-cache:${DS_TAGNAME}-20251019:npm_cache
+
+JAVA_VERSION=	11+
 
 USE_LDCONFIG=	yes
 USE_QT=		qmake:build
@@ -157,7 +162,7 @@ post-extract:
 
 	# linux has moved to systemd init files, continue to using supervisord for now
 	${MKDIR} ${WRKSRC}/document-server-package/common/documentserver/supervisor
-.for i in ds-converter.conf ds-docservice.conf ds-metrics.conf ds.conf
+.for i in ds-adminpanel.conf ds-converter.conf ds-docservice.conf ds-metrics.conf ds.conf
 	${CP} ${FILESDIR}/${i} \
 		${WRKSRC}/document-server-package/common/documentserver/supervisor
 .endfor
@@ -167,6 +172,7 @@ pre-configure:
 		${WRKSRC}/build_tools/tools/freebsd/automate.py \
 		${WRKSRC}/core/Apple/IWork.pro \
 		${WRKSRC}/core/Common/3dParty/boost/boost.pri \
+		${WRKSRC}/core/Common/3dParty/heif/heif.pri \
 		${WRKSRC}/core/Common/3dParty/icu/icu.pri \
 		${WRKSRC}/core/Common/3dParty/v8_89/v8/build/toolchain/gcc_toolchain.gni \
 		${WRKSRC}/core/Common/3dParty/v8_89/v8/buildtools/third_party/libc++/BUILD.gn \
@@ -176,10 +182,12 @@ pre-configure:
 		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-pluginsmanager.sh.m4 \
 		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-static-gzip.sh.m4 \
 		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-update-securelink.sh.m4 \
+		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-adminpanel.conf \
 		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-converter.conf \
 		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-docservice.conf \
 		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-metrics.conf \
-		${WRKSRC}/server/Metrics/patches/modern-syslog+1.2.0.patch
+		${WRKSRC}/server/DocService/patches/sharp+${DS_SHARP_VER}.patch \
+		${WRKSRC}/server/Metrics/patches/modern-syslog+${DS_MODERN_SYSLOG_VER}.patch
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|' -e 's|%%CXX%%|${CXX}|' \
 		${WRKSRC}/core/Common/3dParty/v8_89/v8/build/toolchain/gcc_toolchain.gni \
 		${WRKSRC}/core/Common/base.pri
@@ -204,7 +212,8 @@ pre-configure:
 	@${REINPLACE_CMD} 's|%%OPENSSL_LIB%%|${OPENSSLLIB}|' \
 		${WRKSRC}/core/Common/3dParty/openssl/openssl.pri
 	@${RM} ${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch.orig
-	@${RM} ${WRKSRC}/server/Metrics/patches/modern-syslog+1.2.0.patch.orig
+	@${RM} ${WRKSRC}/server/DocService/patches/sharp+${DS_SHARP_VER}.patch.orig
+	@${RM} ${WRKSRC}/server/Metrics/patches/modern-syslog+${DS_MODERN_SYSLOG_VER}.patch.orig
 
 	@${FIND} ${WRKSRC}/server -type f -name npm-shrinkwrap.json -delete
 
@@ -223,16 +232,25 @@ do-build:
 
 	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install grunt-cli
 	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install grunt
-	@cd ${WRKSRC}/server/Metrics ; ${SETENV} ${MAKE_ENV} npm install modern-syslog@1.2.0 --ignore-scripts
+
+	# This is required for offline builds on whichever architecture didn't build the npm cache, so do it universally
+	@cd ${WRKSRC}/server/DocService ; ${SETENV} ${MAKE_ENV} npm install sharp@${DS_SHARP_VER} --ignore-scripts
+	@cd ${WRKSRC}/server/DocService ; ${SETENV} ${MAKE_ENV} npm install patch-package
+	@cd ${WRKSRC}/server/DocService ; node_modules/.bin/patch-package
+	@cd ${WRKSRC}/server/DocService ; ${SETENV} ${MAKE_ENV} npm install sharp@${DS_SHARP_VER}
+
+	# This is required for offline builds
+	@cd ${WRKSRC}/server/Metrics ; ${SETENV} ${MAKE_ENV} npm install modern-syslog@${DS_MODERN_SYSLOG_VER} --ignore-scripts
 	@cd ${WRKSRC}/server/Metrics ; ${SETENV} ${MAKE_ENV} npm install patch-package
 	@cd ${WRKSRC}/server/Metrics ; node_modules/.bin/patch-package
 	@cd ${WRKSRC}/server/Metrics/node_modules/modern-syslog ; ${SETENV} ${MAKE_ENV} ${GMAKE}
+
 	@cd ${WRKSRC}/sdkjs  ; ${SETENV} ${MAKE_ENV} npm install grunt-cli
 	@cd ${WRKSRC}/sdkjs  ; ${SETENV} ${MAKE_ENV} npm install grunt
 
 	@${MKDIR} ${WRKSRC}/yao-pkg
 	@${CP} ${FILESDIR}/package* ${WRKSRC}/yao-pkg
-	@cd ${WRKSRC}/yao-pkg ; ${SETENV} ${MAKE_ENV} npm install @yao-pkg/pkg@6.6.0
+	@cd ${WRKSRC}/yao-pkg ; ${SETENV} ${MAKE_ENV} npm install @yao-pkg/pkg@6.9.0
 
 	@cd ${WRKSRC} && ${PATCH} -N -s -i ${FILESDIR}/extra-patch-pkg-fetch_lib-es5_build.js || ${TRUE}
 	@cd ${WRKSRC} && ${PATCH} -N -s -i ${FILESDIR}/extra-patch-pkg-fetch_patches_node.v${PKGFETCH_NODE_VERSION}.cpp.patch || ${TRUE}
@@ -261,7 +279,7 @@ do-install:
 	cd ${WRKSRC}/document-server-package/common/documentserver/supervisor && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver/supervisor "-name *\.conf"
 	cd ${WRKSRC}/document-server-package/common/documentserver/logrotate && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver/logrotate "-name *\.conf"
 	@${CP} ${WRKSRC}/document-server-package/common/documentserver/nginx/ds-ssl.conf.tmpl ${WRKSRC}/document-server-package/common/documentserver/nginx/ds-ssl.conf
-.for f in ds.conf ds-ssl.conf includes/http-common.conf includes/ds-common.conf \
+.for f in ds.conf ds-ssl.conf includes/http-common.conf includes/ds-adminpanel.conf includes/ds-common.conf \
 	includes/ds-docservice.conf includes/ds-letsencrypt.conf \
 	includes/ds-mime.types.conf
 	${INSTALL_DATA} ${WRKSRC}/document-server-package/common/documentserver/nginx/${f} ${STAGEDIR}${ETCDIR}/documentserver/nginx/${f}.sample
@@ -275,6 +293,7 @@ do-install:
 
 # create missing dir
 	${MKDIR} ${STAGEDIR}/var/log/onlyoffice/documentserver/docservice \
+		 ${STAGEDIR}/var/log/onlyoffice/documentserver/adminpanel \
 		 ${STAGEDIR}/var/log/onlyoffice/documentserver/converter \
 		 ${STAGEDIR}/var/log/onlyoffice/documentserver/metrics \
 		 ${STAGEDIR}/var/db/onlyoffice/documentserver/App_Data/cache/files \
