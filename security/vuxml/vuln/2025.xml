@@ -1,3 +1,49 @@
+  <vuln vid="237f4f57-b50f-11f0-ae9b-b42e991fc52e">
+    <topic>Erlang - Absolute Path in Zip Module</topic>
+    <affects>
+	<package>
+	  <name>erlang</name>
+	  <range><ge>17.0</ge><lt>26.2.5.13,4</lt></range>
+	</package>
+	<package>
+	  <name>erlang-runtime26</name>
+	  <range><lt>26.2.5.13</lt></range>
+	</package>
+	<package>
+	  <name>erlang-runtime27</name>
+	  <range><lt>27.3.4.1</lt></range>
+	</package>
+	<package>
+	  <name>erlang-runtime28</name>
+	  <range><lt>28.0.1</lt></range>
+	</package>
+	</affects>
+	<description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-9g37-pgj9-wrhc reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-9g37-pgj9-wrhc">
+	  <p>Improper Limitation of a Pathname to a Restricted
+	  Directory ('Path Traversal') vulnerability in Erlang OTP
+	(stdlib modules) allows Absolute Path Traversal, File Manipulation.
+	This vulnerability is associated with program files lib/stdlib/src/zip.erl
+	and program routines zip:unzip/1, zip:unzip/2, zip:extract/1,
+	zip:extract/2unless the memory option is passed. This issue
+	affects OTP from OTP 17.0 until OTP28.0.1, OTP27.3.4.1 and
+	OTP26.2.5.13, corresponding to stdlib from 2.0 until 7.0.1,
+	6.2.2.1 and 5.2.3.4.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-4748</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-4748</url>
+    </references>
+    <dates>
+      <discovery>2025-06-16</discovery>
+      <entry>2025-10-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="55c4e822-b4e4-11f0-8438-001b217e4ee5">
     <topic>ISC KEA -- Invalid characters cause assert</topic>
     <affects>
