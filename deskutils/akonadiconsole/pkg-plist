@@ -9,6 +9,7 @@ share/icons/hicolor/256x256/apps/akonadiconsole.png
 share/icons/hicolor/32x32/apps/akonadiconsole.png
 share/icons/hicolor/48x48/apps/akonadiconsole.png
 share/icons/hicolor/64x64/apps/akonadiconsole.png
+share/locale/ar/LC_MESSAGES/akonadiconsole.mo
 share/locale/ast/LC_MESSAGES/akonadiconsole.mo
 share/locale/ca/LC_MESSAGES/akonadiconsole.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadiconsole.mo

@@ -17,6 +17,7 @@ share/icons/hicolor/64x64/apps/kcachegrind.png
 %%DATADIR%%/icons/hicolor/32x32/actions/percent.png
 %%DATADIR%%/tips
 share/locale/ar/LC_MESSAGES/kcachegrind.mo
+share/locale/ar/LC_MESSAGES/kcachegrind_qt.qm
 share/locale/ast/LC_MESSAGES/kcachegrind.mo
 share/locale/ast/LC_MESSAGES/kcachegrind_qt.qm
 share/locale/be/LC_MESSAGES/kcachegrind.mo

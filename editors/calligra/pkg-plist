@@ -5277,6 +5277,7 @@ share/locale/ar/LC_MESSAGES/KarbonTools.mo
 share/locale/ar/LC_MESSAGES/braindump.mo
 share/locale/ar/LC_MESSAGES/calligra-defaulttools.mo
 share/locale/ar/LC_MESSAGES/calligra-dockers.mo
+share/locale/ar/LC_MESSAGES/calligra-opener.mo
 share/locale/ar/LC_MESSAGES/calligra.mo
 share/locale/ar/LC_MESSAGES/calligra_semanticitem_contact.mo
 share/locale/ar/LC_MESSAGES/calligra_semanticitem_event.mo
@@ -5292,7 +5293,10 @@ share/locale/ar/LC_MESSAGES/calligra_shape_plugin.mo
 share/locale/ar/LC_MESSAGES/calligra_shape_spreadsheet.mo
 share/locale/ar/LC_MESSAGES/calligra_shape_template.mo
 share/locale/ar/LC_MESSAGES/calligra_shape_text.mo
+share/locale/ar/LC_MESSAGES/calligra_shape_threed.mo
+share/locale/ar/LC_MESSAGES/calligra_shape_vector.mo
 share/locale/ar/LC_MESSAGES/calligra_shape_video.mo
+share/locale/ar/LC_MESSAGES/calligra_shape_webshape.mo
 share/locale/ar/LC_MESSAGES/calligra_textediting_autocorrect.mo
 share/locale/ar/LC_MESSAGES/calligra_textediting_changecase.mo
 share/locale/ar/LC_MESSAGES/calligra_textediting_spellcheck.mo

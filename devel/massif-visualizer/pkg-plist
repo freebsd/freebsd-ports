@@ -2,6 +2,7 @@ bin/massif-visualizer
 share/applications/org.kde.massif-visualizer.desktop
 share/config.kcfg/massif-visualizer-settings.kcfg
 share/icons/hicolor/scalable/apps/massif-visualizer.svg
+share/locale/ar/LC_MESSAGES/massif-visualizer.mo
 share/locale/bg/LC_MESSAGES/massif-visualizer.mo
 share/locale/bs/LC_MESSAGES/massif-visualizer.mo
 share/locale/ca/LC_MESSAGES/massif-visualizer.mo

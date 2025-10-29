@@ -9,6 +9,7 @@ share/icons/hicolor/32x32/apps/kuiviewer.png
 share/icons/hicolor/48x48/apps/kuiviewer.png
 share/icons/hicolor/64x64/apps/kuiviewer.png
 share/icons/hicolor/scalable/apps/kuiviewer.svg
+share/locale/ar/LC_MESSAGES/kpartloader.mo
 share/locale/ar/LC_MESSAGES/kuiviewer.mo
 share/locale/ast/LC_MESSAGES/kpartloader.mo
 share/locale/ast/LC_MESSAGES/kuiviewer.mo

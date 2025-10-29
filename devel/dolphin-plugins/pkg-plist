@@ -8,6 +8,11 @@
 share/config.kcfg/fileviewgitpluginsettings.kcfg
 share/config.kcfg/fileviewhgpluginsettings.kcfg
 share/config.kcfg/fileviewsvnpluginsettings.kcfg
+share/locale/ar/LC_MESSAGES/fileviewbazaarplugin.mo
+share/locale/ar/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/ar/LC_MESSAGES/fileviewhgplugin.mo
+share/locale/ar/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/ar/LC_MESSAGES/makefileactions.mo
 share/locale/ar/LC_MESSAGES/mountisoaction.mo
 share/locale/ast/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/ast/LC_MESSAGES/fileviewgitplugin.mo

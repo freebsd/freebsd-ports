@@ -144,6 +144,7 @@ share/kdevpythonsupport/documentation_files/unicodedata.py
 share/kdevpythonsupport/documentation_files/zipimport.py
 share/kdevpythonsupport/documentation_files/zlib.py
 share/kdevpythonsupport/scripts/introspect.py
+share/locale/ar/LC_MESSAGES/kdevpython.mo
 share/locale/bs/LC_MESSAGES/kdevpython.mo
 share/locale/ca/LC_MESSAGES/kdevpython.mo
 share/locale/ca@valencia/LC_MESSAGES/kdevpython.mo
