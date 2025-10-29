@@ -1,0 +1,7 @@
+camv-rnd is a Free Software small, flexible viewer for PCB-related CAM file
+formats
+
+- supports gerber, excellon, g-code
+- imports/exports multiple file formats
+- is part of the Ringdove EDA suite
+- is part of the coralEDA ecosystem

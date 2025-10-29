@@ -17,6 +17,7 @@
     SUBDIR += calculix
     SUBDIR += calculix-ccx
     SUBDIR += camotics
+    SUBDIR += camv-rnd
     SUBDIR += caneda
     SUBDIR += cascade
     SUBDIR += cascade-compiler
