@@ -1725,6 +1725,8 @@
 %%DATADIR%%/crt/crt-1tap-bloom.slangp
 %%DATADIR%%/crt/crt-1tap-bloom_fast.slangp
 %%DATADIR%%/crt/crt-1tap.slangp
+%%DATADIR%%/crt/crt-CreativeForce-Arcade.slangp
+%%DATADIR%%/crt/crt-CreativeForce-SharpSmooth.slangp
 %%DATADIR%%/crt/crt-Cyclon.slangp
 %%DATADIR%%/crt/crt-aperture.slangp
 %%DATADIR%%/crt/crt-beans-fast.slangp
@@ -1734,6 +1736,7 @@
 %%DATADIR%%/crt/crt-blurPi-soft.slangp
 %%DATADIR%%/crt/crt-caligari.slangp
 %%DATADIR%%/crt/crt-cgwg-fast.slangp
+%%DATADIR%%/crt/crt-consumer-1w-ntsc.slangp
 %%DATADIR%%/crt/crt-consumer.slangp
 %%DATADIR%%/crt/crt-easymode-halation.slangp
 %%DATADIR%%/crt/crt-easymode.slangp
@@ -1808,6 +1811,8 @@
 %%DATADIR%%/crt/ray_traced_curvature.slangp
 %%DATADIR%%/crt/ray_traced_curvature_append.slangp
 %%DATADIR%%/crt/shaders/Advanced_CRT_shader_whkrmrgks0.slang
+%%DATADIR%%/crt/shaders/CreativeForce/crt-CreativeForce-Arcade.slang
+%%DATADIR%%/crt/shaders/CreativeForce/crt-CreativeForce-SharpSmooth.slang
 %%DATADIR%%/crt/shaders/GritsScanlines/Fake-Self-Illumination.png
 %%DATADIR%%/crt/shaders/GritsScanlines/GritsScanlines.slang
 %%DATADIR%%/crt/shaders/GritsScanlines/Scanline-LUT-4px.png
@@ -1868,7 +1873,10 @@
 %%DATADIR%%/crt/shaders/crt-cgwg-fast.slang
 %%DATADIR%%/crt/shaders/crt-consumer.slang
 %%DATADIR%%/crt/shaders/crt-consumer/bezel.png
+%%DATADIR%%/crt/shaders/crt-consumer/crt-consumer-1w.slang
+%%DATADIR%%/crt/shaders/crt-consumer/linear.slang
 %%DATADIR%%/crt/shaders/crt-consumer/linearize.slang
+%%DATADIR%%/crt/shaders/crt-consumer/ntsc_module.slang
 %%DATADIR%%/crt/shaders/crt-easymode-halation/blur_horiz.slang
 %%DATADIR%%/crt/shaders/crt-easymode-halation/blur_params.inc
 %%DATADIR%%/crt/shaders/crt-easymode-halation/blur_vert.slang
@@ -2261,6 +2269,7 @@
 %%DATADIR%%/crt/shaders/zfast_crt/zfast_crt_curvature.slang
 %%DATADIR%%/crt/shaders/zfast_crt/zfast_crt_finemask.slang
 %%DATADIR%%/crt/shaders/zfast_crt/zfast_crt_geo.slang
+%%DATADIR%%/crt/shaders/zfast_crt/zfast_crt_geo_svideo.slang
 %%DATADIR%%/crt/shaders/zfast_crt/zfast_crt_impl.inc
 %%DATADIR%%/crt/simple-crt-fxaa.slangp
 %%DATADIR%%/crt/simple-crt.slangp
@@ -2273,6 +2282,7 @@
 %%DATADIR%%/crt/zfast-crt-composite.slangp
 %%DATADIR%%/crt/zfast-crt-curvature.slangp
 %%DATADIR%%/crt/zfast-crt-geo.slangp
+%%DATADIR%%/crt/zfast-crt-geo-svideo.slangp
 %%DATADIR%%/crt/zfast-crt-hdmask.slangp
 %%DATADIR%%/crt/zfast-crt.slangp
 %%DATADIR%%/deblur/deblur-luma.slangp
@@ -2716,8 +2726,10 @@
 %%DATADIR%%/handheld/console-border/gb-pocket.slangp
 %%DATADIR%%/handheld/console-border/gba-agb001-color-motionblur.slangp
 %%DATADIR%%/handheld/console-border/gba-ags001-color-motionblur.slangp
+%%DATADIR%%/handheld/console-border/gba-dmg.slangp
 %%DATADIR%%/handheld/console-border/gba-lcd-grid-v2.slangp
 %%DATADIR%%/handheld/console-border/gba.slangp
+%%DATADIR%%/handheld/console-border/gbc-dmg.slangp
 %%DATADIR%%/handheld/console-border/gbc-lcd-grid-v2.slangp
 %%DATADIR%%/handheld/console-border/gbc.slangp
 %%DATADIR%%/handheld/console-border/gg.slangp
@@ -2824,11 +2836,13 @@
 %%DATADIR%%/handheld/shaders/gameboy/resources/sample-palettes/gblight-palette.png
 %%DATADIR%%/handheld/shaders/gameboy/resources/sample-palettes/gbp-palette-high-contrast.png
 %%DATADIR%%/handheld/shaders/gameboy/resources/sample-palettes/gbp-palette.png
+%%DATADIR%%/handheld/shaders/gameboy/shader-files/gb-params.inc
 %%DATADIR%%/handheld/shaders/gameboy/shader-files/gb-pass0.slang
 %%DATADIR%%/handheld/shaders/gameboy/shader-files/gb-pass1.slang
 %%DATADIR%%/handheld/shaders/gameboy/shader-files/gb-pass2.slang
 %%DATADIR%%/handheld/shaders/gameboy/shader-files/gb-pass3.slang
 %%DATADIR%%/handheld/shaders/gameboy/shader-files/gb-pass4.slang
+%%DATADIR%%/handheld/shaders/gameboy/shader-files/gb-pass5.slang
 %%DATADIR%%/handheld/shaders/gb-palette/gb-palette.slang
 %%DATADIR%%/handheld/shaders/gb-palette/resources/palette-dmg.png
 %%DATADIR%%/handheld/shaders/gb-palette/resources/palette-light.png
@@ -2969,6 +2983,7 @@
 %%DATADIR%%/interpolation/jinc2-sharp.slangp
 %%DATADIR%%/interpolation/jinc2-sharper.slangp
 %%DATADIR%%/interpolation/jinc2.slangp
+%%DATADIR%%/interpolation/lanczos16-AR.slangp
 %%DATADIR%%/interpolation/lanczos2-5-taps.slangp
 %%DATADIR%%/interpolation/lanczos2-6-taps-fast.slangp
 %%DATADIR%%/interpolation/lanczos2-fast.slangp
@@ -3020,6 +3035,7 @@
 %%DATADIR%%/interpolation/shaders/lanczos/lanczos6-y.slang
 %%DATADIR%%/interpolation/shaders/lanczos/lanczos8-x.slang
 %%DATADIR%%/interpolation/shaders/lanczos/lanczos8-y.slang
+%%DATADIR%%/interpolation/shaders/lanczos16-AR.slang
 %%DATADIR%%/interpolation/shaders/lanczos2-5-taps.slang
 %%DATADIR%%/interpolation/shaders/lanczos2.slang
 %%DATADIR%%/interpolation/shaders/quilez.slang
