@@ -2,9 +2,9 @@ PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}${AOORCN:?.p${AOORCN}:}
 PORTREVISION=	0
 CATEGORIES=	editors java
-MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}${AOORCN:?-RC${AOORCN}:}/source/
-#MASTER_SITES=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
-#		https://archive.apache.org/dist/openoffice/${PORTVERSION}/source
+#MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}${AOORCN:?-RC${AOORCN}:}/source/
+MASTER_SITES=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
+		https://archive.apache.org/dist/openoffice/${PORTVERSION}/source
 MASTER_SITES+=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
 		LOCAL/truckman/openoffice:extsrc \
@@ -126,7 +126,7 @@ CONFLICTS_INSTALL=	apache-openoffice-devel
 AOOVERSION1=	4
 AOOVERSION2=	1
 AOOVERSION3=	16
-AOORCN=		3
+#AOORCN=		3
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO4116m3\(Build:9816\)
 GITREVISION=	277251aa7e
