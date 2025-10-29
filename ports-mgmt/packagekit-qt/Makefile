@@ -1,8 +1,7 @@
 PORTNAME=	PackageKit-Qt
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	https://www.freedesktop.org/software/PackageKit/releases/
-PKGNAMESUFFIX=	6
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	DBUS packaging abstraction layer (Qt bindings)
@@ -18,7 +17,6 @@ CPE_VENDOR=	packagekit_project
 USE_LDCONFIG=	yes
 USE_QT=		base
 
-PLIST_SUB=	QT_VER=6 \
-		SHLIB_VER=${PORTVERSION}
+PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
 .include <bsd.port.mk>
