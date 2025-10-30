@@ -1,4 +1,4 @@
---- chrome/browser/safe_browsing/safe_browsing_pref_change_handler.cc.orig	2025-03-09 21:38:10 UTC
+--- chrome/browser/safe_browsing/safe_browsing_pref_change_handler.cc.orig	2025-11-01 06:40:37 UTC
 +++ chrome/browser/safe_browsing/safe_browsing_pref_change_handler.cc
 @@ -12,7 +12,7 @@
  #include "content/public/browser/web_contents.h"
@@ -18,3 +18,12 @@
    if (!profile_ ||
        !base::FeatureList::IsEnabled(safe_browsing::kEsbAsASyncedSetting)) {
      return;
+@@ -186,7 +186,7 @@ void SafeBrowsingPrefChangeHandler::
+ }
+ 
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
+-    BUILDFLAG(IS_MAC)
++    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+ void SafeBrowsingPrefChangeHandler::SetToastControllerForTesting(
+     ToastController* controller) {
+   toast_controller_for_testing_ = controller;

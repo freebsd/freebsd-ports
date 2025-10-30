@@ -1,4 +1,4 @@
---- third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig	2024-09-30 07:45:04 UTC
+--- third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig	2025-10-30 15:44:36 UTC
 +++ third_party/abseil-cpp/absl/base/internal/sysinfo.cc
 @@ -30,7 +30,7 @@
  #include <sys/syscall.h>
@@ -50,16 +50,3 @@
  
    return 1.0;
  #endif  // !ABSL_INTERNAL_UNSCALED_CYCLECLOCK_FREQUENCY_IS_CPU_FREQUENCY
-@@ -463,6 +469,12 @@ pid_t GetTID() {
-   static_assert(sizeof(pid_t) == sizeof(thread),
-                 "In NaCL int expected to be the same size as a pointer");
-   return reinterpret_cast<pid_t>(thread);
-+}
-+
-+#elif defined(__OpenBSD__)
-+
-+pid_t GetTID() {
-+  return getthrid();
- }
- 
- #elif defined(__Fuchsia__)

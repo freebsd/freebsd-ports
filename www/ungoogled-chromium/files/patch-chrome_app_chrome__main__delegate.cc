@@ -1,6 +1,15 @@
---- chrome/app/chrome_main_delegate.cc.orig	2025-10-21 16:57:35 UTC
+--- chrome/app/chrome_main_delegate.cc.orig	2025-11-01 06:40:37 UTC
 +++ chrome/app/chrome_main_delegate.cc
-@@ -179,17 +179,17 @@
+@@ -105,7 +105,7 @@
+ #include "ui/base/ui_base_switches.h"
+ 
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
+-    BUILDFLAG(IS_MAC)
++    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+ #include "components/webapps/isolated_web_apps/scheme.h"
+ #endif
+ 
+@@ -184,17 +184,17 @@
  #include "v8/include/v8.h"
  #endif
  
@@ -21,7 +30,16 @@
  #include "chrome/browser/policy/policy_path_parser.h"
  #include "components/crash/core/app/crashpad.h"
  #endif
-@@ -294,7 +294,7 @@ void AdjustLinuxOOMScore(const std::string& process_ty
+@@ -228,7 +228,7 @@ const char* const ChromeMainDelegate::kNonWildcardDoma
+ #endif
+     chrome::kChromeSearchScheme,
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
+-    BUILDFLAG(IS_MAC)
++    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+     webapps::kIsolatedAppScheme,
+ #endif
+     content::kChromeDevToolsScheme,    content::kChromeUIScheme,
+@@ -303,7 +303,7 @@ void AdjustLinuxOOMScore(const std::string& process_ty
  // and resources loaded.
  bool SubprocessNeedsResourceBundle(const std::string& process_type) {
    return
@@ -30,7 +48,7 @@
        // The zygote process opens the resources for the renderers.
        process_type == switches::kZygoteProcess ||
  #endif
-@@ -373,7 +373,7 @@ bool HandleVersionSwitches(const base::CommandLine& co
+@@ -382,7 +382,7 @@ bool HandleVersionSwitches(const base::CommandLine& co
    return false;
  }
  
@@ -39,7 +57,7 @@
  // Show the man page if --help or -h is on the command line.
  void HandleHelpSwitches(const base::CommandLine& command_line) {
    if (command_line.HasSwitch(switches::kHelp) ||
-@@ -385,7 +385,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
+@@ -394,7 +394,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
  }
  #endif  // BUILDFLAG(IS_LINUX)
  
@@ -48,7 +66,7 @@
  void SIGTERMProfilingShutdown(int signal) {
    content::Profiling::Stop();
    struct sigaction sigact;
-@@ -467,7 +467,7 @@ std::optional<int> AcquireProcessSingleton(
+@@ -476,7 +476,7 @@ std::optional<int> AcquireProcessSingleton(
    // process can be exited.
    ChromeProcessSingleton::CreateInstance(user_data_dir);
  
@@ -57,7 +75,7 @@
    // Read the xdg-activation token and set it in the command line for the
    // duration of the notification in order to ensure this is propagated to an
    // already running browser process if it exists.
-@@ -545,7 +545,7 @@ void InitializeUserDataDir(base::CommandLine* command_
+@@ -554,7 +554,7 @@ void InitializeUserDataDir(base::CommandLine* command_
    std::string process_type =
        command_line->GetSwitchValueASCII(switches::kProcessType);
  
@@ -66,7 +84,7 @@
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -651,7 +651,7 @@ void RecordMainStartupMetrics(const StartupTimestamps&
+@@ -660,7 +660,7 @@ void RecordMainStartupMetrics(const StartupTimestamps&
  #endif
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
@@ -75,7 +93,7 @@
    // Record the startup process creation time on supported platforms. On Android
    // this is recorded in ChromeMainDelegateAndroid.
    startup_metric_utils::GetCommon().RecordStartupProcessCreationTime(
-@@ -810,7 +810,7 @@ std::optional<int> ChromeMainDelegate::PostEarlyInitia
+@@ -819,7 +819,7 @@ std::optional<int> ChromeMainDelegate::PostEarlyInitia
  #if BUILDFLAG(IS_OZONE)
    // Initialize Ozone platform and add required feature flags as per platform's
    // properties.
@@ -84,7 +102,7 @@
    ui::SetOzonePlatformForLinuxIfNeeded(*base::CommandLine::ForCurrentProcess());
  #endif
    ui::OzonePlatform::PreEarlyInitialization();
-@@ -965,7 +965,7 @@ void ChromeMainDelegate::CommonEarlyInitialization() {
+@@ -976,7 +976,7 @@ void ChromeMainDelegate::CommonEarlyInitialization() {
    const bool is_canary_dev = IsCanaryDev();
    const bool emit_crashes =
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -93,7 +111,7 @@
        is_canary_dev;
  #else
        false;
-@@ -1113,7 +1113,7 @@ std::optional<int> ChromeMainDelegate::BasicStartupCom
+@@ -1124,7 +1124,7 @@ std::optional<int> ChromeMainDelegate::BasicStartupCom
      return 0;  // Got a --credits switch; exit with a success error code.
    }
  
@@ -102,7 +120,7 @@
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -1426,7 +1426,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1437,7 +1437,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
      CHECK(!loaded_locale.empty()) << "Locale could not be found for " << locale;
    }
  

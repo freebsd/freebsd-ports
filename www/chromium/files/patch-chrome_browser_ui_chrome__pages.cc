@@ -1,6 +1,6 @@
---- chrome/browser/ui/chrome_pages.cc.orig	2025-10-02 04:28:32 UTC
+--- chrome/browser/ui/chrome_pages.cc.orig	2025-10-30 15:44:36 UTC
 +++ chrome/browser/ui/chrome_pages.cc
-@@ -86,7 +86,7 @@
+@@ -86,12 +86,12 @@
  #include "components/signin/public/identity_manager/identity_manager.h"
  #endif
  
@@ -9,7 +9,22 @@
  #include "chrome/browser/web_applications/web_app_utils.h"
  #endif
  
-@@ -394,7 +394,7 @@ void ShowChromeTips(Browser* browser) {
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ #include "components/webapps/isolated_web_apps/scheme.h"
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
+         // BUILDFLAG(IS_CHROMEOS)
+@@ -253,7 +253,7 @@ bool SiteGURLIsValid(const GURL& url) {
+   return !site_origin.opaque() && (url.SchemeIsHTTPOrHTTPS() ||
+                                    url.SchemeIs(extensions::kExtensionScheme)
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+                                    || url.SchemeIs(webapps::kIsolatedAppScheme)
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
+         // BUILDFLAG(IS_CHROMEOS)
+@@ -415,7 +415,7 @@ void ShowChromeTips(Browser* browser) {
    ShowSingletonTab(browser, GURL(kChromeTipsURL));
  }
  
@@ -18,7 +33,7 @@
  void ShowChromeWhatsNew(Browser* browser) {
    ShowSingletonTab(browser, GURL(kChromeUIWhatsNewURL));
  }
-@@ -719,7 +719,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
+@@ -744,7 +744,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
  }
  #endif  // BUILDFLAG(IS_CHROMEOS)
  

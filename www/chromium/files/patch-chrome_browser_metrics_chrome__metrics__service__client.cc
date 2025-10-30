@@ -1,4 +1,4 @@
---- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2025-10-02 04:28:32 UTC
+--- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2025-10-30 15:44:36 UTC
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
 @@ -204,11 +204,11 @@
  #include "chrome/browser/metrics/google_update_metrics_provider_mac.h"
@@ -51,7 +51,7 @@
    // window from startup to this point during which crash reports will not have
    // an environment set.
 @@ -740,7 +740,7 @@ void ChromeMetricsServiceClient::Initialize() {
-         std::make_unique<metrics::dwa::DwaService>(this, local_state);
+         this, local_state, g_browser_process->shared_url_loader_factory());
    }
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_CHROMEOS)

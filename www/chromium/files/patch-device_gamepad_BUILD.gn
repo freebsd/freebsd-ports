@@ -1,6 +1,6 @@
---- device/gamepad/BUILD.gn.orig	2025-04-04 08:52:13 UTC
+--- device/gamepad/BUILD.gn.orig	2025-10-30 15:44:36 UTC
 +++ device/gamepad/BUILD.gn
-@@ -98,7 +98,7 @@ component("gamepad") {
+@@ -105,7 +105,7 @@ component("gamepad") {
        "hid_writer_linux.cc",
        "hid_writer_linux.h",
      ]

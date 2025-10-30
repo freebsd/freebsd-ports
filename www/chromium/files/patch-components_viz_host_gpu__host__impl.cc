@@ -1,6 +1,6 @@
---- components/viz/host/gpu_host_impl.cc.orig	2025-02-19 07:43:18 UTC
+--- components/viz/host/gpu_host_impl.cc.orig	2025-10-30 15:44:36 UTC
 +++ components/viz/host/gpu_host_impl.cc
-@@ -135,7 +135,7 @@ GpuHostImpl::GpuHostImpl(Delegate* delegate,
+@@ -156,7 +156,7 @@ GpuHostImpl::GpuHostImpl(Delegate* delegate,
        mojom::GpuServiceCreationParams::New();
  #if BUILDFLAG(IS_OZONE)
  

@@ -1,4 +1,4 @@
---- chrome/browser/component_updater/wasm_tts_engine_component_installer.cc.orig	2025-09-06 10:01:20 UTC
+--- chrome/browser/component_updater/wasm_tts_engine_component_installer.cc.orig	2025-10-30 15:44:36 UTC
 +++ chrome/browser/component_updater/wasm_tts_engine_component_installer.cc
 @@ -11,7 +11,7 @@
  #include "components/prefs/pref_registry_simple.h"
@@ -27,7 +27,7 @@
  class WasmTTSEngineDirectory {
   public:
    static WasmTTSEngineDirectory* Get() {
-@@ -103,7 +103,7 @@ WasmTtsEngineComponentInstallerPolicy::WasmTtsEngineCo
+@@ -108,7 +108,7 @@ WasmTtsEngineComponentInstallerPolicy::WasmTtsEngineCo
  // static
  void WasmTtsEngineComponentInstallerPolicy::RegisterPrefs(
      PrefRegistrySimple* registry) {
@@ -36,7 +36,7 @@
    registry->RegisterTimePref(prefs::kAccessibilityReadAnythingDateLastOpened,
                               base::Time());
    registry->RegisterBooleanPref(
-@@ -136,7 +136,7 @@ void WasmTtsEngineComponentInstallerPolicy::ComponentR
+@@ -141,7 +141,7 @@ void WasmTtsEngineComponentInstallerPolicy::ComponentR
    VLOG(1) << "Component ready, version " << version.GetString() << " in "
            << install_dir.value();
  
@@ -45,7 +45,7 @@
    if (!features::IsWasmTtsEngineAutoInstallDisabled()) {
      // Instead of installing the component extension as soon as it is ready,
      // store the install directory, so that the install can be triggered
-@@ -160,7 +160,7 @@ void WasmTtsEngineComponentInstallerPolicy::ComponentR
+@@ -165,7 +165,7 @@ void WasmTtsEngineComponentInstallerPolicy::ComponentR
  // be removed the next time Chrome is restarted.
  void WasmTtsEngineComponentInstallerPolicy::MaybeReinstallTtsEngine(
      const base::FilePath& install_dir) {
@@ -54,7 +54,7 @@
    const base::Time current_time = base::Time::Now();
    const base::Time date_last_opened =
        pref_service_->GetTime(prefs::kAccessibilityReadAnythingDateLastOpened);
-@@ -222,7 +222,7 @@ void WasmTtsEngineComponentInstallerPolicy::MaybeReins
+@@ -227,7 +227,7 @@ void WasmTtsEngineComponentInstallerPolicy::MaybeReins
  bool WasmTtsEngineComponentInstallerPolicy::VerifyInstallation(
      const base::Value::Dict& /* manifest */,
      const base::FilePath& install_dir) const {
@@ -63,7 +63,7 @@
    if (features::IsWasmTtsComponentUpdaterV3Enabled()) {
      return base::PathExists(install_dir.Append(kManifestV3FileName)) &&
             base::PathExists(install_dir.Append(kBindingsMainWasmFileName)) &&
-@@ -272,7 +272,7 @@ void RegisterWasmTtsEngineComponent(ComponentUpdateSer
+@@ -277,7 +277,7 @@ void RegisterWasmTtsEngineComponent(ComponentUpdateSer
  
  void WasmTtsEngineComponentInstallerPolicy::GetWasmTTSEngineDirectory(
      base::OnceCallback<void(const base::FilePath&)> callback) {
@@ -72,3 +72,12 @@
    WasmTTSEngineDirectory* wasm_directory = WasmTTSEngineDirectory::Get();
    wasm_directory->Get(std::move(callback));
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+@@ -285,7 +285,7 @@ void WasmTtsEngineComponentInstallerPolicy::GetWasmTTS
+ 
+ // static
+ bool WasmTtsEngineComponentInstallerPolicy::IsWasmTTSEngineDirectorySet() {
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   return WasmTTSEngineDirectory::Get()->IsSet();
+ #else
+   return false;

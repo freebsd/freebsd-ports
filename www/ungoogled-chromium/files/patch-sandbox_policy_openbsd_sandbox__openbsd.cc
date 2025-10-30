@@ -1,4 +1,4 @@
---- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2025-10-21 16:57:35 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2025-11-01 06:40:37 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.cc
 @@ -0,0 +1,396 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -61,7 +61,7 @@
 +#endif
 +
 +#include "third_party/boringssl/src/include/openssl/crypto.h"
-+#include "third_party/skia/experimental/rust_png/ffi/FFI.rs.h"
++#include "third_party/skia/rust/png/FFI.rs.h"
 +
 +#include <fontconfig/fontconfig.h>
 +#include "ui/gfx/linux/fontconfig_util.h"

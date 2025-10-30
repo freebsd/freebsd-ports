@@ -1,4 +1,4 @@
---- net/tools/net_watcher/net_watcher.cc.orig	2025-10-02 04:28:32 UTC
+--- net/tools/net_watcher/net_watcher.cc.orig	2025-10-30 15:44:36 UTC
 +++ net/tools/net_watcher/net_watcher.cc
 @@ -31,7 +31,7 @@
  #include "net/proxy_resolution/proxy_config_service.h"
@@ -18,7 +18,7 @@
  // Flag to specifies which network interfaces to ignore. Interfaces should
  // follow as a comma seperated list.
  const char kIgnoreNetifFlag[] = "ignore-netif";
-@@ -162,7 +162,7 @@ class NetWatcher :
+@@ -159,7 +159,7 @@ class NetWatcher :
  }  // namespace
  
  int main(int argc, char* argv[]) {
@@ -27,7 +27,7 @@
    base::apple::ScopedNSAutoreleasePool pool;
  #endif
    base::AtExitManager exit_manager;
-@@ -179,7 +179,7 @@ int main(int argc, char* argv[]) {
+@@ -176,7 +176,7 @@ int main(int argc, char* argv[]) {
  
    NetWatcher net_watcher;
  

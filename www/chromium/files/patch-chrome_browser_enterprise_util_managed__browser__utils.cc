@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/util/managed_browser_utils.cc.orig	2025-10-02 04:28:32 UTC
+--- chrome/browser/enterprise/util/managed_browser_utils.cc.orig	2025-10-30 15:44:36 UTC
 +++ chrome/browser/enterprise/util/managed_browser_utils.cc
 @@ -300,7 +300,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
    // The updated consent screen also ask the user for consent to share device
@@ -18,7 +18,7 @@
      SetEnterpriseProfileLabel(profile);
  #endif
      entry->SetUserAcceptedAccountManagement(accepted);
-@@ -428,7 +428,7 @@ bool CanShowEnterpriseProfileUI(Profile* profile) {
+@@ -408,7 +408,7 @@ bool CanShowEnterpriseProfileUI(Profile* profile) {
  }
  
  bool CanShowEnterpriseBadgingForNTPFooter(Profile* profile) {
@@ -27,7 +27,7 @@
    BrowserManagementNoticeState management_notice_state =
        GetManagementNoticeStateForNTPFooter(profile);
    switch (management_notice_state) {
-@@ -446,7 +446,7 @@ bool CanShowEnterpriseBadgingForNTPFooter(Profile* pro
+@@ -426,7 +426,7 @@ bool CanShowEnterpriseBadgingForNTPFooter(Profile* pro
  
  BrowserManagementNoticeState GetManagementNoticeStateForNTPFooter(
      Profile* profile) {

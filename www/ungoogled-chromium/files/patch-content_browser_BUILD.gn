@@ -1,6 +1,6 @@
---- content/browser/BUILD.gn.orig	2025-10-21 16:57:35 UTC
+--- content/browser/BUILD.gn.orig	2025-11-01 06:40:37 UTC
 +++ content/browser/BUILD.gn
-@@ -2614,6 +2614,14 @@ source_set("browser") {
+@@ -2613,6 +2613,14 @@ source_set("browser") {
      ]
    }
  
@@ -15,7 +15,7 @@
    if (is_linux || is_chromeos) {
      sources -=
          [ "file_system_access/file_path_watcher/file_path_watcher_stub.cc" ]
-@@ -2662,6 +2670,15 @@ source_set("browser") {
+@@ -2661,6 +2669,15 @@ source_set("browser") {
    if (allow_oop_video_decoder) {
      sources += [ "media/oop_video_decoder_factory.cc" ]
      deps += [ "//media/mojo/mojom" ]

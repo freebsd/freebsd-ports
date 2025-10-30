@@ -1,4 +1,4 @@
---- chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc.orig	2025-09-10 13:22:16 UTC
+--- chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc.orig	2025-11-01 06:40:37 UTC
 +++ chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc
 @@ -57,7 +57,7 @@
  #include "chrome/browser/policy/browser_dm_token_storage_mac.h"
@@ -27,7 +27,7 @@
    storage_delegate = std::make_unique<BrowserDMTokenStorageLinux>();
  #elif BUILDFLAG(IS_WIN)
    storage_delegate = std::make_unique<BrowserDMTokenStorageWin>();
-@@ -275,7 +275,7 @@ ChromeBrowserCloudManagementControllerDesktop::CreateC
+@@ -276,7 +276,7 @@ ChromeBrowserCloudManagementControllerDesktop::CreateC
  
  std::unique_ptr<enterprise_connectors::DeviceTrustKeyManager>
  ChromeBrowserCloudManagementControllerDesktop::CreateDeviceTrustKeyManager() {
@@ -36,7 +36,7 @@
    auto* browser_dm_token_storage = BrowserDMTokenStorage::Get();
    auto* device_management_service = GetDeviceManagementService();
    auto shared_url_loader_factory = GetSharedURLLoaderFactory();
-@@ -297,7 +297,7 @@ ChromeBrowserCloudManagementControllerDesktop::CreateD
+@@ -298,7 +298,7 @@ ChromeBrowserCloudManagementControllerDesktop::CreateD
  std::unique_ptr<client_certificates::CertificateProvisioningService>
  ChromeBrowserCloudManagementControllerDesktop::
      CreateCertificateProvisioningService() {

@@ -1,4 +1,4 @@
---- content/browser/browser_child_process_host_impl.cc.orig	2025-10-21 16:57:35 UTC
+--- content/browser/browser_child_process_host_impl.cc.orig	2025-11-01 06:40:37 UTC
 +++ content/browser/browser_child_process_host_impl.cc
 @@ -296,6 +296,7 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
        switches::kIPCConnectionTimeout,
@@ -8,7 +8,7 @@
    };
    cmd_line->CopySwitchesFrom(browser_command_line, kForwardSwitches);
  
-@@ -649,7 +650,7 @@ void BrowserChildProcessHostImpl::OnProcessLaunched() 
+@@ -660,7 +661,7 @@ void BrowserChildProcessHostImpl::OnProcessLaunched() 
            ->child_process());
  #endif
  

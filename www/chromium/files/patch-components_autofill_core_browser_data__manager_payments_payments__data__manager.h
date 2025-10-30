@@ -1,6 +1,6 @@
---- components/autofill/core/browser/data_manager/payments/payments_data_manager.h.orig	2025-10-02 04:28:32 UTC
+--- components/autofill/core/browser/data_manager/payments/payments_data_manager.h.orig	2025-10-30 15:44:36 UTC
 +++ components/autofill/core/browser/data_manager/payments/payments_data_manager.h
-@@ -371,7 +371,7 @@ class PaymentsDataManager : public AutofillWebDataServ
+@@ -377,7 +377,7 @@ class PaymentsDataManager : public AutofillWebDataServ
    void SetAutofillHasSeenIban();
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
    // Returns the value of the kAutofillHasSeenBnpl pref.
    bool IsAutofillHasSeenBnplPrefEnabled() const;
  
-@@ -708,7 +708,7 @@ class PaymentsDataManager : public AutofillWebDataServ
+@@ -716,7 +716,7 @@ class PaymentsDataManager : public AutofillWebDataServ
    void ClearAllCreditCardBenefits();
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
