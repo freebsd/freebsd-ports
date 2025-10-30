@@ -4,7 +4,7 @@ DISTVERSION=	3.7
 CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	pkaipila@gmail.com
 COMMENT=	FUSE based implementation of the well-known unionfs
 WWW=		https://github.com/rpodgorny/unionfs-fuse
 
