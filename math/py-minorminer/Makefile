@@ -5,7 +5,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Heuristic tool for minor embedding of graphs
-WWW=		https://docs.ocean.dwavesys.com/projects/minorminer/en/latest/
+WWW=		https://docs.ocean.dwavesys.com/projects/minorminer/en/latest/ \
+		https://github.com/dwavesystems/minorminer
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
