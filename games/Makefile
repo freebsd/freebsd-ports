@@ -132,7 +132,7 @@
     SUBDIR += bugsx
     SUBDIR += bumprace
     SUBDIR += burgerspace
-    SUBDIR += burrtools
+    SUBDIR += burr-tools
     SUBDIR += bzflag
     SUBDIR += bzflag-server
     SUBDIR += cake
