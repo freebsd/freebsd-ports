@@ -86,7 +86,7 @@
     <topic>SQLite -- CWE-190 Integer Overflow or Wraparound</topic>
     <affects>
     <package>
-	<name>SQLite</name>
+	<name>sqlite3</name>
 	<range><lt>3.50.3</lt></range>
     </package>
       <package>
@@ -168,7 +168,7 @@
     <topic>SQLite -- Integer Overflow vulnerability</topic>
     <affects>
     <package>
-	<name>sqlite</name>
+	<name>sqlite3</name>
 	<range><lt>3.50.1</lt></range>
     </package>
       <package>
