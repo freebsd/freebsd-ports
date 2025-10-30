@@ -1,5 +1,5 @@
 PORTNAME=	magic
-DISTVERSION=	8.3.561
+DISTVERSION=	8.3.570
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/
 
@@ -28,7 +28,8 @@ CONFIGURE_ARGS=	--enable-modular \
 
 ALL_TARGET=	tcllibrary
 
-BINARY_ALIAS=	python3=${PYTHON_CMD} # this is needed, see https://github.com/RTimothyEdwards/magic/issues/173#issuecomment-1200065429
+BINARY_ALIAS=	git=${FALSE} \
+		python3=${PYTHON_CMD} # this is needed, see https://github.com/RTimothyEdwards/magic/issues/173#issuecomment-1200065429
 
 DESKTOP_ENTRIES="Magic" "" "" "${PORTNAME}" "" ""
 
