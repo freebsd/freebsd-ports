@@ -1,0 +1,11 @@
+--- SConstruct.orig	2024-06-07 07:47:17 UTC
++++ SConstruct
+@@ -140,7 +140,7 @@ def configure(env, server_only):
+         print("Could not find libboost_date_time or libboost_date_time-mt or boost/thread/thread.hpp")
+         missing.append("libboost_date_time")
+     env.Append(LIBS=[boost_date_time])
+-    env.Append(LIBS=["boost_system", "pthread"])
++    env.Append(LIBS=["pthread"])
+     
+ 
+     if not conf.CheckCXXHeader("boost/shared_ptr.hpp"):
