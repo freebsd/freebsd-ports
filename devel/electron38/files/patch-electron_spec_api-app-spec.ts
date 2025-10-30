@@ -1,4 +1,4 @@
---- electron/spec/api-app-spec.ts.orig	2025-08-13 14:21:20 UTC
+--- electron/spec/api-app-spec.ts.orig	2025-10-28 14:56:59 UTC
 +++ electron/spec/api-app-spec.ts
 @@ -129,11 +129,11 @@ describe('app module', () => {
    });
@@ -63,12 +63,12 @@
      });
    });
  
--  ifdescribe(process.platform !== 'linux')('accessibilitySupportEnabled property', () => {
-+  ifdescribe(process.platform !== 'linux' && process.platform !== 'freebsd')('accessibilitySupportEnabled property', () => {
+-  ifdescribe(process.platform !== 'linux')('accessibility support functionality', () => {
++  ifdescribe(process.platform !== 'linux' && process.platform !== 'freebsd')('accessibility support functionality', () => {
      it('is mutable', () => {
        const values = [false, true, false];
        const setters: Array<(arg: boolean) => void> = [
-@@ -1233,7 +1233,7 @@ describe('app module', () => {
+@@ -1288,7 +1288,7 @@ describe('app module', () => {
      });
    });
  
@@ -77,7 +77,7 @@
      let w: BrowserWindow;
  
      before(function () {
-@@ -1368,7 +1368,7 @@ describe('app module', () => {
+@@ -1423,7 +1423,7 @@ describe('app module', () => {
  
    describe('getApplicationNameForProtocol()', () => {
      // TODO: Linux CI doesn't have registered http & https handlers
@@ -86,7 +86,7 @@
        // We can't expect particular app names here, but these protocols should
        // at least have _something_ registered. Except on our Linux CI
        // environment apparently.
-@@ -1386,7 +1386,7 @@ describe('app module', () => {
+@@ -1441,7 +1441,7 @@ describe('app module', () => {
      });
    });
  
@@ -95,7 +95,7 @@
      it('returns promise rejection for a bogus protocol', async function () {
        await expect(
          app.getApplicationInfoForProtocol('bogus-protocol://')
-@@ -1436,7 +1436,7 @@ describe('app module', () => {
+@@ -1491,7 +1491,7 @@ describe('app module', () => {
    });
  
    // FIXME Get these specs running on Linux CI
@@ -104,7 +104,7 @@
      const iconPath = path.join(__dirname, 'fixtures/assets/icon.ico');
      const sizes = {
        small: 16,
-@@ -1518,7 +1518,7 @@ describe('app module', () => {
+@@ -1573,7 +1573,7 @@ describe('app module', () => {
            expect(entry.memory).to.have.property('privateBytes').that.is.greaterThan(0);
          }
  
@@ -113,7 +113,7 @@
            expect(entry.sandboxed).to.be.a('boolean');
          }
  
-@@ -1592,7 +1592,7 @@ describe('app module', () => {
+@@ -1647,7 +1647,7 @@ describe('app module', () => {
  
      it('succeeds with complete GPUInfo', async () => {
        const completeInfo = await getGPUInfo('complete');
@@ -122,7 +122,7 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo);
          const basicInfo = await getGPUInfo('basic');
-@@ -1616,7 +1616,7 @@ describe('app module', () => {
+@@ -1671,7 +1671,7 @@ describe('app module', () => {
      });
    });
  
