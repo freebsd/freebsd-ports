@@ -408,6 +408,7 @@
     SUBDIR += cgdb
     SUBDIR += cgit
     SUBDIR += cgprof
+    SUBDIR += chai
     SUBDIR += charva
     SUBDIR += check
     SUBDIR += checkbashisms
