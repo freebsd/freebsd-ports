@@ -87,6 +87,7 @@ include/rfl/cbor/load.hpp
 include/rfl/cbor/read.hpp
 include/rfl/cbor/save.hpp
 include/rfl/cbor/write.hpp
+include/rfl/common.hpp
 include/rfl/comparisons.hpp
 include/rfl/concepts.hpp
 include/rfl/config.hpp
@@ -335,7 +336,6 @@ include/rfl/parsing/schema/Definition.hpp
 include/rfl/parsing/schema/Type.hpp
 include/rfl/parsing/schema/ValidationType.hpp
 include/rfl/parsing/schema/make.hpp
-include/rfl/parsing/schema/to_numeric_type.hpp
 include/rfl/parsing/schemaful/IsSchemafulReader.hpp
 include/rfl/parsing/schemaful/IsSchemafulWriter.hpp
 include/rfl/parsing/schemaful/OptionalReader.hpp
