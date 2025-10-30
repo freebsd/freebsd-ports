@@ -611,6 +611,7 @@
     SUBDIR += quantum++
     SUBDIR += quary
     SUBDIR += radio_datetime_analyzer
+    SUBDIR += raja
     SUBDIR += randomx
     SUBDIR += rash
     SUBDIR += raspberrypi-gpioshutdown
