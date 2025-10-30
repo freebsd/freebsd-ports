@@ -1,3 +1,74 @@
+  <vuln vid="7c09fcb7-b5d6-11f0-b3f7-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>142.0.7444.59</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>142.0.7444.59</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/10/stable-channel-update-for-desktop_28.html">
+	 <p>This update includes 20 security fixes:</p>
+	 <ul>
+	    <li>[447613211] High CVE-2025-12428: Type Confusion in V8. Reported by Man Yue Mo of GitHub Security Lab on 2025-09-26</li>
+	    <li>[450618029] High CVE-2025-12429: Inappropriate implementation in V8. Reported by Aorui Zhang on 2025-10-10</li>
+	    <li>[442860743] High CVE-2025-12430: Object lifecycle issue in Media. Reported by round.about on 2025-09-04</li>
+	    <li>[436887350] High CVE-2025-12431: Inappropriate implementation in Extensions. Reported by Alesandro Ortiz on 2025-08-06</li>
+	    <li>[439522866] High CVE-2025-12432: Race in V8. Reported by Google Big Sleep on 2025-08-18</li>
+	    <li>[449760249] High CVE-2025-12433: Inappropriate implementation in V8. Reported by Google Big Sleep on 2025-10-07</li>
+	    <li>[452296415] High CVE-2025-12036: Inappropriate implementation in V8. Reported by Google Big Sleep on 2025-10-15</li>
+	    <li>[337356054] Medium CVE-2025-12434: Race in Storage. Reported by Lijo A.T on 2024-04-27</li>
+	    <li>[446463993] Medium CVE-2025-12435: Incorrect security UI in Omnibox. Reported by Hafiizh on 2025-09-21</li>
+	    <li>[40054742] Medium CVE-2025-12436: Policy bypass in Extensions. Reported by Luan Herrera (@lbherrera_) on 2021-02-08</li>
+	    <li>[446294487] Medium CVE-2025-12437: Use after free in PageInfo. Reported by Umar Farooq on 2025-09-20</li>
+	    <li>[433027577] Medium CVE-2025-12438: Use after free in Ozone. Reported by Wei Yuan of MoyunSec VLab on 2025-07-20</li>
+	    <li>[382234536] Medium CVE-2025-12439: Inappropriate implementation in App-Bound Encryption. Reported by Ari Novick on 2024-12-04</li>
+	    <li>[430555440] Low CVE-2025-12440: Inappropriate implementation in Autofill. Reported by Khalil Zhani on 2025-07-09</li>
+	    <li>[444049512] Medium CVE-2025-12441: Out of bounds read in V8. Reported by Google Big Sleep on 2025-09-10</li>
+	    <li>[452071845] Medium CVE-2025-12443: Out of bounds read in WebXR. Reported by Aisle Research on 2025-10-15</li>
+	    <li>[390571618] Low CVE-2025-12444: Incorrect security UI in Fullscreen UI. Reported by syrf on 2025-01-18</li>
+	    <li>[428397712] Low CVE-2025-12445: Policy bypass in Extensions. Reported by Thomas Greiner on 2025-06-29</li>
+	    <li>[444932667] Low CVE-2025-12446: Incorrect security UI in SplitView. Reported by Hafiizh on 2025-09-14</li>
+	    <li>[442636157] Low CVE-2025-12447: Incorrect security UI in Omnibox. Reported by Khalil Zhani on 2025-09-03</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-12036</cvename>
+      <cvename>CVE-2025-12428</cvename>
+      <cvename>CVE-2025-12429</cvename>
+      <cvename>CVE-2025-12430</cvename>
+      <cvename>CVE-2025-12431</cvename>
+      <cvename>CVE-2025-12432</cvename>
+      <cvename>CVE-2025-12433</cvename>
+      <cvename>CVE-2025-12434</cvename>
+      <cvename>CVE-2025-12435</cvename>
+      <cvename>CVE-2025-12436</cvename>
+      <cvename>CVE-2025-12437</cvename>
+      <cvename>CVE-2025-12438</cvename>
+      <cvename>CVE-2025-12439</cvename>
+      <cvename>CVE-2025-12440</cvename>
+      <cvename>CVE-2025-12441</cvename>
+      <cvename>CVE-2025-12443</cvename>
+      <cvename>CVE-2025-12444</cvename>
+      <cvename>CVE-2025-12445</cvename>
+      <cvename>CVE-2025-12446</cvename>
+      <cvename>CVE-2025-12447</cvename>
+      <url>https://chromereleases.googleblog.com/2025/10/stable-channel-update-for-desktop_28.html</url>
+    </references>
+    <dates>
+      <discovery>2025-10-29</discovery>
+      <entry>2025-10-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="291773e6-b5b2-11f0-8f61-b42e991fc52e">
     <topic>Firefox -- use-after-free in the GPU or browser process</topic>
     <affects>
