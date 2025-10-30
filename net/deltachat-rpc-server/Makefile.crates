@@ -30,7 +30,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		async-smtp-0.10.2 \
 		async-trait-0.1.86 \
 		async_io_stream-0.3.3 \
-		async_zip-0.0.17 \
+		async_zip-0.0.18 \
 		atomic-waker-1.1.2 \
 		attohttpc-0.24.1 \
 		autocfg-1.4.0 \
@@ -413,7 +413,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		qrcode-0.14.1 \
 		qrcodegen-1.8.0 \
 		quick-error-2.0.1 \
-		quick-xml-0.37.5 \
+		quick-xml-0.38.3 \
 		quinn-0.11.6 \
 		quinn-proto-0.11.9 \
 		quinn-udp-0.5.10 \
