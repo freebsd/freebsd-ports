@@ -19,7 +19,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		rubygem-pkg-config>=1.1<2:devel/rubygem-pkg-config
 RUN_DEPENDS=	rubygem-racc>=1.4<2:devel/rubygem-racc
 
-USES=		cpe gem gnome gettext-runtime
+# rubygem-pkg-config doesn't seem to work right on armv7
+USES=		cpe gem gnome gettext-runtime ${USES_${ARCH}}
+USES_armv7=	pkgconfig
 USE_GNOME=	libxml2 libxslt
 
 CONFIGURE_ARGS=	--use-system-libraries
