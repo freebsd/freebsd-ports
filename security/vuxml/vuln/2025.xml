@@ -1,3 +1,33 @@
+  <vuln vid="291773e6-b5b2-11f0-8f61-b42e991fc52e">
+    <topic>Firefox -- use-after-free in the GPU or browser process</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>144.0.2,2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1993113 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1993113">
+	  <p>Starting with Firefox 142, it was possible for a
+	  compromised child process to trigger a use-after-free in the
+	  GPU or browser process using WebGPU-related IPC calls.
+	  This may have been usable to escape the child process
+	  sandbox.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-12380</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-12380</url>
+    </references>
+    <dates>
+      <discovery>2025-10-28</discovery>
+      <entry>2025-10-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="237f4f57-b50f-11f0-ae9b-b42e991fc52e">
     <topic>Erlang - Absolute Path in Zip Module</topic>
     <affects>
