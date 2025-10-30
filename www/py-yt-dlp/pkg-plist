@@ -10,7 +10,6 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/compat/compat_utils.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/compat/imghdr.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/compat/shutil.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/compat/types.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/compat/urllib/__init__.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/compat/urllib/request.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/cookies.py
@@ -383,6 +382,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/hytale.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/icareus.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/ichinanalive.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/idagio.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/idolplus.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/ign.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/iheart.py
