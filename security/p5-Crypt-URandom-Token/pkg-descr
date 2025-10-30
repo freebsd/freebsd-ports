@@ -1,0 +1,3 @@
+This module provides a secure way to generate a random token
+for passwords and similar using Crypt::URandom
+as the source of random bits.
