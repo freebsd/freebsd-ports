@@ -1,5 +1,5 @@
 PORTNAME=	webtrees
-DISTVERSION=	2.1.22
+DISTVERSION=	2.1.25
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/fisharebest/${PORTNAME}/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	21${PHP_PKGNAMESUFFIX}
@@ -11,10 +11,10 @@ WWW=		https://webtrees.net/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/${PORTNAME}/LICENSE.md
 
-IGNORE_WITH_PHP=	83 84 85
-USES=		cpe php shebangfix zip
+USES=		cpe php:flavors shebangfix zip
 # php pcre extension is required but it's statically linked in default php
 USE_PHP=	calendar curl dom filter gd iconv pdo_mysql session xml
+IGNORE_WITH_PHP=	83 84 85
 
 SHEBANG_FILES=	webtrees/vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
 
@@ -32,7 +32,8 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	-${MKDIR} ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC}/${PORTNAME} && ${COPYTREE_BIN} . ${STAGEDIR}${WWWDIR} "! -name *\.md"
+	@cd ${WRKSRC}/${PORTNAME} && ${COPYTREE_BIN} . ${STAGEDIR}${WWWDIR} "! -name *\.md" \
+		"! -name .DS_Store"
 	@(cd ${WRKSRC}/${PORTNAME}; ${FIND} . -not -type d) | ${SORT} | \
 		${SED} -ne 's,^${PORTNAME}/,${WWWDIR_REL}/,p' >> ${TMPPLIST}
 	@${ECHO_CMD} \
