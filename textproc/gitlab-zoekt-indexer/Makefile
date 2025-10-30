@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-zoekt-indexer
-PORTVERSION=	1.4.4
+PORTVERSION=	1.6.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 

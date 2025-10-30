@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libiconv.so:converters/libiconv \
 		libpcre2-8.so:devel/pcre2
 
-USES=		cpe gmake go:modules,no_targets,1.23 iconv pkgconfig
+USES=		cpe gmake go:modules,no_targets,1.24 iconv pkgconfig
 
 CPE_VENDOR=	gitlab
 

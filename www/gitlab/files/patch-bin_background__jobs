@@ -1,11 +1,23 @@
---- bin/background_jobs.orig	2021-12-01 10:42:56 UTC
+--- bin/background_jobs.orig	2025-10-21 19:12:22 UTC
 +++ bin/background_jobs
-@@ -58,7 +58,7 @@ start_sidekiq()
+@@ -49,19 +49,14 @@ start_sidekiq()
+ start_sidekiq()
+ {
+   cmd="exec"
+-  chpst=$(command -v chpst)
+ 
+-  if [ -n "$chpst" ]; then
+-    cmd="${cmd} ${chpst} -P"
+-  fi
+-
+   # sidekiq-cluster expects an argument per process.
+   for (( i=1; i<=sidekiq_workers; i++ ))
+   do
      processes_args+=("${sidekiq_queues}")
    done
  
--  ${cmd} bin/sidekiq-cluster "${processes_args[@]}" -P $sidekiq_pidfile -e $RAILS_ENV "$@" 2>&1 | tee -a $sidekiq_logfile
-+  ${cmd} bin/sidekiq-cluster "${processes_args[@]}" -P $sidekiq_pidfile -e $RAILS_ENV "$@" 2>&1 >> $sidekiq_logfile
+-  ${cmd} bin/sidekiq-cluster "${processes_args[@]}" -P "$sidekiq_pidfile" -e "$RAILS_ENV" "$@" 2>&1 | tee -a "$sidekiq_logfile"
++  ${cmd} bin/sidekiq-cluster "${processes_args[@]}" -P "$sidekiq_pidfile" -e "$RAILS_ENV" "$@" 2>&1 >> "$sidekiq_logfile"
  }
  
  cleanup()
