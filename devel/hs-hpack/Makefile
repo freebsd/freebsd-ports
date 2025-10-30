@@ -1,5 +1,5 @@
 PORTNAME=	hpack
-DISTVERSION=	0.38.2
+DISTVERSION=	0.38.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -47,7 +47,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		crypton-connection-0.4.5 \
 		crypton-socks-0.6.2 \
 		crypton-x509-1.7.7 \
-		crypton-x509-store-1.6.11 \
+		crypton-x509-store-1.6.12_1 \
 		crypton-x509-system-1.6.7 \
 		crypton-x509-validation-1.6.14 \
 		data-default-0.8.0.1 \
@@ -57,7 +57,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		dlist-1.0_2 \
 		ech-config-0.0.1 \
 		generically-0.1.1_4 \
-		half-0.3.3 \
+		half-0.3.3_1 \
 		hashable-1.5.0.0_1 \
 		hourglass-0.2.12_1 \
 		hpke-0.0.0 \
@@ -95,7 +95,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		serialise-0.2.6.1_5 \
 		split-0.2.5 \
 		splitmix-0.1.3.1 \
-		streaming-commons-0.2.3.0 \
+		streaming-commons-0.2.3.1 \
 		strict-0.5.1_1 \
 		tagged-0.8.9 \
 		tasty-1.5.3_2 \
@@ -106,17 +106,17 @@ USE_CABAL=	Glob-0.10.2_3 \
 		th-compat-0.1.6 \
 		these-1.2.1_2 \
 		time-compat-1.9.8 \
-		tls-2.1.11 \
+		tls-2.1.12 \
 		transformers-compat-0.7.2 \
 		unix-time-0.4.17 \
 		unliftio-core-0.2.1.0_4 \
-		unordered-containers-0.2.20_4 \
+		unordered-containers-0.2.20.1 \
 		uuid-types-1.0.6_3 \
 		vector-0.13.2.0_2 \
 		vector-algorithms-0.9.1.0 \
 		vector-stream-0.1.0.1_4 \
 		witherable-0.5_1 \
 		yaml-0.11.11.2_2 \
-		zlib-0.7.1.0_2
+		zlib-0.7.1.1
 
 .include <bsd.port.mk>
