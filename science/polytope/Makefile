@@ -1,10 +1,11 @@
 PORTNAME=	polytope
-DISTVERSION=	0.7.3
+DISTVERSION=	0.7.3-18
+DISTVERSIONSUFFIX=	-gcf83206
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for generating Voronoi and Voronoi-like tessellations
-WWW=		https://github.com/pbtoast/polytope
+WWW=		https://github.com/LLNL/polytope
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,11 +17,13 @@ USES=		cmake:testing
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	pbtoast
+GH_ACCOUNT=	LLNL
+
+CXXFLAGS+=	-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE # prevent hardening issues with libc++
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	TESTING
-CMAKE_TESTING_ON=	TESTING # 1 test is known to fail, see https://github.com/pbtoast/polytope/issues/18
+CMAKE_TESTING_ON=	TESTING
 
 OPTIONS_DEFINE=		SILO
 OPTIONS_DEFAULT=	SILO
@@ -28,5 +31,7 @@ OPTIONS_DEFAULT=	SILO
 SILO_DESC=		Use SILO reader/writer
 SILO_CMAKE_BOOL=	USE_SILO
 SILO_LIB_DEPENDS=	libsiloh5.so:science/silo
+
+# tests as of 0.7.3-18: 96% tests passed, 1 tests failed out of 28
 
 .include <bsd.port.mk>
