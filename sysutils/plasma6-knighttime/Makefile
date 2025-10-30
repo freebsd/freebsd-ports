@@ -2,7 +2,7 @@ PORTNAME=	knighttime
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	sysutils kde kde-plasma
 
-MAINTAINER=	kde@FreeBSD
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Helpers for scheduling the dark-light cycle
 
 USES=		cmake gettext kde:6 qt:6 tar:xz xorg
