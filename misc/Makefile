@@ -6,6 +6,7 @@
     SUBDIR += R-cran-xfun
     SUBDIR += aclgen
     SUBDIR += actiona
+    SUBDIR += adiak
     SUBDIR += adios2
     SUBDIR += aichat
     SUBDIR += air
