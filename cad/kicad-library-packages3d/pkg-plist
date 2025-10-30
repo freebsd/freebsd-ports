@@ -11096,6 +11096,7 @@
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-64-1EP_8x8mm_P0.4mm_EP6.5x6.5mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-64-1EP_9x9mm_P0.5mm_EP4.1x4.1mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-64-1EP_9x9mm_P0.5mm_EP4.1x4.1mm.wrl
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-64-1EP_9x9mm_P0.5mm_EP6x6mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-64-1EP_9x9mm_P0.5mm_EP7.35x7.35mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-64-1EP_9x9mm_P0.5mm_EP7.35x7.35mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-68-1EP_8x8mm_P0.4mm_EP5.2x5.2mm.step
@@ -11817,10 +11818,6 @@
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/TQFP-80_12x12mm_P0.5mm.wrl
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/TQFP-80_14x14mm_P0.65mm.step
 %%DATADIR%%/3dmodels/Package_QFP.3dshapes/TQFP-80_14x14mm_P0.65mm.wrl
-%%DATADIR%%/3dmodels/Package_QFP.3dshapes/VQFP-128_14x14mm_P0.4mm.step
-%%DATADIR%%/3dmodels/Package_QFP.3dshapes/VQFP-128_14x14mm_P0.4mm.wrl
-%%DATADIR%%/3dmodels/Package_QFP.3dshapes/VQFP-176_20x20mm_P0.4mm.step
-%%DATADIR%%/3dmodels/Package_QFP.3dshapes/VQFP-176_20x20mm_P0.4mm.wrl
 %%DATADIR%%/3dmodels/Package_SIP.3dshapes/PowerIntegrations_eSIP-7C.step
 %%DATADIR%%/3dmodels/Package_SIP.3dshapes/PowerIntegrations_eSIP-7C.wrl
 %%DATADIR%%/3dmodels/Package_SIP.3dshapes/PowerIntegrations_eSIP-7F.step
