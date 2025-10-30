@@ -1,4 +1,4 @@
---- make_freebsd.mak.orig	2021-07-27 10:18:21 UTC
+--- make_freebsd.mak.orig	2025-10-30 18:52:21 UTC
 +++ make_freebsd.mak
 @@ -12,7 +12,7 @@
  #     IBM Corporation - initial API and implementation
@@ -9,7 +9,7 @@
  
  # SWT debug flags for various SWT components.
  #SWT_WEBKIT_DEBUG = -DWEBKIT_DEBUG
-@@ -66,11 +66,11 @@ CAIROLIBS = `pkg-config --libs-only-L cairo` -lcairo
+@@ -66,11 +66,11 @@ GTKCFLAGS = `pkg-config --cflags gtk4 gtk4-x11 gtk4-un
  # Do not use pkg-config to get libs because it includes unnecessary dependencies (i.e. pangoxft-1.0)
  ifeq ($(GTK_VERSION), 4.0)
  GTKCFLAGS = `pkg-config --cflags gtk4 gtk4-x11 gtk4-unix-print`
@@ -23,7 +23,7 @@
  ATKCFLAGS = `pkg-config --cflags atk gtk+-$(GTK_VERSION) gtk+-unix-print-$(GTK_VERSION)`
  endif
  
-@@ -79,12 +79,13 @@ AWT_LIBS = -L$(AWT_LIB_PATH) -ljawt
+@@ -79,12 +79,13 @@ ATKLIBS = `pkg-config --libs-only-L atk` -latk-1.0 
  
  ATKLIBS = `pkg-config --libs-only-L atk` -latk-1.0 
  
@@ -39,9 +39,12 @@
  WEBKITCFLAGS = `pkg-config --cflags gio-2.0`
  
  WEBKIT_EXTENSION_CFLAGS=`pkg-config --cflags gtk+-3.0 webkit2gtk-web-extension-4.0`
-@@ -120,7 +121,8 @@ CFLAGS := $(CFLAGS) \
+@@ -118,23 +119,24 @@ CFLAGS := $(CFLAGS) \
+ 		$(NATIVE_STATS) \
+ 		$(SWT_DEBUG) \
  		$(SWT_WEBKIT_DEBUG) \
- 		-DLINUX -DGTK \
+-		-DLINUX -DGTK \
++		-DLINUX -DGTK -Wno-error=deprecated-non-prototype \
  		-I$(JAVA_HOME)/include \
 -		-I$(JAVA_HOME)/include/linux \
 +		-I$(JAVA_HOME)/include/freebsd \
@@ -49,8 +52,10 @@
  		${SWT_PTR_CFLAGS}
  LFLAGS = -shared -fPIC ${SWT_LFLAGS}
  
-@@ -129,12 +131,12 @@ LFLAGS = -shared -fPIC ${SWT_LFLAGS}
- CFLAGS += -Werror
+ # Treat all warnings as errors. If your new code produces a warning, please
+ # take time to properly understand and fix/silence it as necessary.
+-CFLAGS += -Werror
++#CFLAGS += -Werror
  
  ifndef NO_STRIP
 -	# -s = Remove all symbol table and relocation information from the executable.
