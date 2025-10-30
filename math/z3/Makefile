@@ -1,12 +1,13 @@
 PORTNAME=	z3
-DISTVERSION=	4.15.3.0
+DISTVERSION=	4.15.4.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Z3Prover/z3/releases/download/${PORTNAME}-${DISTVERSION:R}/
 DISTNAME=	${PORTNAME}_solver-${DISTVERSION}
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Z3 Theorem Prover
-WWW=		https://github.com/Z3Prover/z3
+WWW=		https://z3prover.github.io/ \
+		https://github.com/Z3Prover/z3/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -17,6 +18,8 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig
 CMAKE_OFF=	Z3_ENABLE_EXAMPLE_TARGETS
 
 WRKSRC_SUBDIR=	core
+
+PLIST_SUB=	SOVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=	GMP
 OPTIONS_SUB=	yes
