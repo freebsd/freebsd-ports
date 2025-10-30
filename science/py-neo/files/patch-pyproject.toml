@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-10-30 06:25:36 UTC
++++ pyproject.toml
+@@ -36,7 +36,7 @@ download = "http://pypi.python.org/pypi/neo"
+ 
+ 
+ [build-system]
+-requires = ["setuptools>=78.0.2"]
++requires = ["setuptools"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project.optional-dependencies]
