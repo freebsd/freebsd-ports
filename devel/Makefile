@@ -8475,6 +8475,7 @@
     SUBDIR += ultragetopt
     SUBDIR += umbrello
     SUBDIR += umlgraph
+    SUBDIR += umpire
     SUBDIR += undead
     SUBDIR += unibilium
     SUBDIR += unit-otel

@@ -1,0 +1,36 @@
+--- src/tpl/CMakeLists.txt.orig	2025-09-09 19:07:47 UTC
++++ src/tpl/CMakeLists.txt
+@@ -106,6 +106,8 @@ add_subdirectory(umpire/judy)
+ 
+ add_subdirectory(umpire/judy)
+ 
++find_package(camp REQUIRED)
++
+ if (NOT TARGET camp)
+   if (DEFINED camp_DIR)
+     find_package(camp REQUIRED
+@@ -136,6 +138,8 @@ endif ()
+   endif()
+ endif ()
+ 
++find_package(fmt REQUIRED)
++
+ if (NOT TARGET ${UMPIRE_FMT_TARGET})
+   if (DEFINED fmt_DIR)
+     find_package(fmt REQUIRED
+@@ -144,8 +148,7 @@ if (NOT TARGET ${UMPIRE_FMT_TARGET})
+         ${fmt_DIR}
+         ${fmt_DIR}/lib64/cmake/fmt)
+ 
+-    set_target_properties(${UMPIRE_FMT_TARGET} PROPERTIES IMPORTED_GLOBAL TRUE)
+-    blt_convert_to_system_includes(TARGET ${UMPIRE_FMT_TARGET})
++    #blt_convert_to_system_includes(TARGET ${UMPIRE_FMT_TARGET})
+     set(UMPIRE_CONFIG_fmt_DIR ${fmt_DIR} CACHE PATH "")
+   else ()
+     if (NOT EXISTS ${PROJECT_SOURCE_DIR}/src/tpl/umpire/fmt/CMakeLists.txt)
+@@ -161,4 +164,4 @@ set(UMPIRE_ENABLE_TESTS ${OLD_ENABLE_TESTS})
+ endif ()
+ 
+ set(UMPIRE_ENABLE_TESTS ${OLD_ENABLE_TESTS})
+-set(UMPIRE_ENABLE_FORTRAN ${OLD_ENABLE_FORTRAN})
++#set(UMPIRE_ENABLE_FORTRAN FALSE)
