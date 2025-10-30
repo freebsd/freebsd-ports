@@ -1,6 +1,6 @@
---- base/process/kill.h.orig	2025-02-20 09:59:21 UTC
+--- base/process/kill.h.orig	2025-11-01 06:40:37 UTC
 +++ base/process/kill.h
-@@ -123,7 +123,7 @@ BASE_EXPORT TerminationStatus GetTerminationStatus(Pro
+@@ -125,7 +125,7 @@ BASE_EXPORT TerminationStatus GetTerminationStatus(Pro
  BASE_EXPORT TerminationStatus
  GetKnownDeadTerminationStatus(ProcessHandle handle, int* exit_code);
  

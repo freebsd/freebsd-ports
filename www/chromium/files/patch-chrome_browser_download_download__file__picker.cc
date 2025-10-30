@@ -1,4 +1,4 @@
---- chrome/browser/download/download_file_picker.cc.orig	2025-04-04 08:52:13 UTC
+--- chrome/browser/download/download_file_picker.cc.orig	2025-10-30 15:44:36 UTC
 +++ chrome/browser/download/download_file_picker.cc
 @@ -18,7 +18,7 @@
  #include "content/public/browser/web_contents.h"
@@ -6,8 +6,8 @@
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- #include "chrome/browser/ui/browser_list.h"
  #include "chrome/browser/ui/browser_window.h"
+ #include "chrome/browser/ui/browser_window/public/browser_window_interface_iterator.h"
  #include "ui/aura/window.h"
 @@ -83,7 +83,7 @@ DownloadFilePicker::DownloadFilePicker(download::Downl
    // dialog in Linux (See SelectFileImpl() in select_file_dialog_linux_gtk.cc).
@@ -16,5 +16,5 @@
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    if (!owning_window || !owning_window->GetHost()) {
-     owning_window = BrowserList::GetInstance()
-                         ->GetLastActive()
+     owning_window = GetLastActiveBrowserWindowInterfaceWithAnyProfile()
+                         ->GetWindow()

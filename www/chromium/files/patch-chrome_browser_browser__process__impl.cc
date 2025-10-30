@@ -1,4 +1,4 @@
---- chrome/browser/browser_process_impl.cc.orig	2025-10-02 04:28:32 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2025-10-30 15:44:36 UTC
 +++ chrome/browser/browser_process_impl.cc
 @@ -253,7 +253,7 @@
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
@@ -27,7 +27,7 @@
    os_crypt_async::SecretPortalKeyProvider::RegisterLocalPrefs(registry);
  #endif
  }
-@@ -1435,7 +1435,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -1368,7 +1368,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
            local_state())));
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -36,7 +36,7 @@
    base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
    if (cmd_line->GetSwitchValueASCII(password_manager::kPasswordStore) !=
        "basic") {
-@@ -1715,7 +1715,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1718,7 +1718,7 @@ void BrowserProcessImpl::Unpin() {
  }
  
  // Mac is currently not supported.

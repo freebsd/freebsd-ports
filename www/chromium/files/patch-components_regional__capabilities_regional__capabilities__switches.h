@@ -1,6 +1,6 @@
---- components/regional_capabilities/regional_capabilities_switches.h.orig	2025-10-02 04:28:32 UTC
+--- components/regional_capabilities/regional_capabilities_switches.h.orig	2025-10-30 15:44:36 UTC
 +++ components/regional_capabilities/regional_capabilities_switches.h
-@@ -47,7 +47,7 @@ BASE_DECLARE_FEATURE(kMitigateLegacySearchEnginePromoO
+@@ -53,7 +53,7 @@ BASE_DECLARE_FEATURE(kRestrictLegacySearchEnginePromoO
  BASE_DECLARE_FEATURE(kResolveRegionalCapabilitiesFromDevice);
  #endif
  

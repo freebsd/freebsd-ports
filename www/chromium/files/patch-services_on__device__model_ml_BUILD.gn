@@ -1,11 +1,11 @@
---- services/on_device_model/ml/BUILD.gn.orig	2025-10-02 04:28:32 UTC
+--- services/on_device_model/ml/BUILD.gn.orig	2025-10-30 15:44:36 UTC
 +++ services/on_device_model/ml/BUILD.gn
 @@ -82,7 +82,7 @@ if (use_blink || (is_ios && build_with_internal_optimi
      if (!is_fuchsia) {
        deps += [ "//services/on_device_model/safety:bert_safety_model" ]
      }
 -    if (is_win || is_mac || is_linux) {
-+    if (!is_bsd && (is_win || is_mac || is_linux)) {
++    if ((is_win || is_mac || is_linux) && !is_bsd) {
        deps += [ "//third_party/xnnpack" ]
      }
      public_deps = [

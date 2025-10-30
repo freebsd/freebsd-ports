@@ -1,4 +1,4 @@
---- components/password_manager/core/browser/password_manager_client.h.orig	2025-10-02 04:28:32 UTC
+--- components/password_manager/core/browser/password_manager_client.h.orig	2025-10-30 15:44:36 UTC
 +++ components/password_manager/core/browser/password_manager_client.h
 @@ -30,7 +30,7 @@
  #include "net/cert/cert_status_flags.h"
@@ -9,7 +9,7 @@
  #include "base/i18n/rtl.h"
  #include "components/password_manager/core/browser/password_cross_domain_confirmation_popup_controller.h"
  #include "ui/gfx/geometry/rect_f.h"
-@@ -543,7 +543,7 @@ class PasswordManagerClient {
+@@ -540,7 +540,7 @@ class PasswordManagerClient {
    virtual void TriggerSignIn(signin_metrics::AccessPoint access_point) const;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

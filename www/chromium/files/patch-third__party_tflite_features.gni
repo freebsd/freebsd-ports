@@ -1,6 +1,6 @@
---- third_party/tflite/features.gni.orig	2025-05-28 14:55:43 UTC
+--- third_party/tflite/features.gni.orig	2025-10-30 15:44:36 UTC
 +++ third_party/tflite/features.gni
-@@ -8,7 +8,7 @@ import("//services/on_device_model/on_device_model.gni
+@@ -11,7 +11,7 @@ if (build_with_chromium) {
  
  declare_args() {
    # This enables building TFLite with XNNPACK.

@@ -1,17 +1,26 @@
---- components/signin/public/base/signin_switches.h.orig	2025-10-21 16:57:35 UTC
+--- components/signin/public/base/signin_switches.h.orig	2025-11-01 06:40:37 UTC
 +++ components/signin/public/base/signin_switches.h
-@@ -67,7 +67,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
- BASE_DECLARE_FEATURE(kSupportWebSigninAddSession);
+@@ -77,7 +77,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ BASE_DECLARE_FEATURE(kCctSignInPrompt);
  #endif  // BUILDFLAG(IS_ANDROID)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Enables surveys to measure the effectiveness of the identity model.
+ // These surveys would be displayed after interactions such as signin, profile
+ // switching, etc. Please keep sorted alphabetically.
+@@ -109,7 +109,7 @@ BASE_DECLARE_FEATURE(kChromeIdentitySurveySwitchProfil
+ // LINT.ThenChange(//chrome/browser/signin/signin_hats_util.cc)
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Controls the duration for which the launch of an identity survey is delayed.
  COMPONENT_EXPORT(SIGNIN_SWITCHES)
- BASE_DECLARE_FEATURE(kEnableHistorySyncOptin);
- COMPONENT_EXPORT(SIGNIN_SWITCHES)
-@@ -235,7 +235,7 @@ BASE_DECLARE_FEATURE(kSyncEnableBookmarksInTransportMo
- COMPONENT_EXPORT(SIGNIN_SWITCHES)
- bool IsExtensionsExplicitBrowserSigninEnabled();
+ BASE_DECLARE_FEATURE(kChromeIdentitySurveyLaunchWithDelay);
+@@ -277,7 +277,7 @@ COMPONENT_EXPORT(SIGNIN_SWITCHES)
+ BASE_DECLARE_FEATURE(kRollbackDiceMigration);
+ #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

@@ -1,8 +1,8 @@
---- gpu/config/gpu_finch_features.cc.orig	2025-10-21 16:57:35 UTC
+--- gpu/config/gpu_finch_features.cc.orig	2025-11-01 06:40:37 UTC
 +++ gpu/config/gpu_finch_features.cc
-@@ -125,7 +125,8 @@ BASE_FEATURE(AllowHardwareBufferUsageFlagsFromVulkanFo
+@@ -122,7 +122,8 @@ BASE_FEATURE(kAllowHardwareBufferUsageFlagsFromVulkanF
  // Android and Linux.
- BASE_FEATURE(DefaultEnableGpuRasterization,
+ BASE_FEATURE(kDefaultEnableGpuRasterization,
  #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || \
 -    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX)
 +    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || \

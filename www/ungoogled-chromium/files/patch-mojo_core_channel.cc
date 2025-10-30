@@ -1,6 +1,6 @@
---- mojo/core/channel.cc.orig	2025-09-10 13:22:16 UTC
+--- mojo/core/channel.cc.orig	2025-11-01 06:40:37 UTC
 +++ mojo/core/channel.cc
-@@ -80,7 +80,11 @@ const size_t kMaxAttachedHandles = 64;
+@@ -81,7 +81,11 @@ const size_t kMaxAttachedHandles = 64;
  const size_t kMaxAttachedHandles = 253;
  #endif  // BUILDFLAG(IS_FUCHSIA)
  
@@ -12,7 +12,7 @@
  Channel::AlignedBuffer MakeAlignedBuffer(size_t size) {
    // Generic allocators (such as malloc) return a pointer that is suitably
    // aligned for storing any type of object with a fundamental alignment
-@@ -1162,7 +1166,7 @@ void Channel::LogHistogramForIPCMetrics(MessageType ty
+@@ -1121,7 +1125,7 @@ bool Channel::OnControlMessage(Message::MessageType me
  }
  
  // Currently only CrOs, Linux, and Android support upgrades.

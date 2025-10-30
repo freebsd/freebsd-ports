@@ -1,8 +1,8 @@
---- components/translate/core/common/translate_util.cc.orig	2025-10-02 04:28:32 UTC
+--- components/translate/core/common/translate_util.cc.orig	2025-10-30 15:44:36 UTC
 +++ components/translate/core/common/translate_util.cc
-@@ -20,7 +20,7 @@ const char kSecurityOrigin[] = "https://translate.goog
+@@ -19,7 +19,7 @@ const char kSecurityOrigin[] = "https://translate.goog
+ // TODO(crbug.com/40819484): Enable the feature on WebView.
  BASE_FEATURE(kTFLiteLanguageDetectionEnabled,
-              "TFLiteLanguageDetectionEnabled",
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
 -    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS)
 +    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS) || BUILDFLAG(IS_BSD)

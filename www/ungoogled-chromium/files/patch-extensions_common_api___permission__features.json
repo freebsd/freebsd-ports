@@ -1,4 +1,4 @@
---- extensions/common/api/_permission_features.json.orig	2025-10-21 16:57:35 UTC
+--- extensions/common/api/_permission_features.json.orig	2025-11-01 06:40:37 UTC
 +++ extensions/common/api/_permission_features.json
 @@ -61,7 +61,7 @@
      "channel": "stable",
@@ -135,7 +135,7 @@
    },
    "storage": [
      {
-@@ -676,13 +676,13 @@
+@@ -678,13 +678,13 @@
        "channel": "stable",
        "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
        // "desktop_android" is not supported.
@@ -151,7 +151,7 @@
        "allowlist": ["B44D08FD98F1523ED5837D78D0A606EA9D6206E5"]  // Web Store
      }
    ],
-@@ -691,13 +691,13 @@
+@@ -693,13 +693,13 @@
        "channel": "stable",
        "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
        // "desktop_android" is not supported.
@@ -167,7 +167,7 @@
        "allowlist": ["B44D08FD98F1523ED5837D78D0A606EA9D6206E5"]  // Web Store
      }
    ],
-@@ -725,7 +725,7 @@
+@@ -727,7 +727,7 @@
        "channel": "stable",
        "extension_types": ["platform_app"],
        // "desktop_android" is not supported.
@@ -176,7 +176,7 @@
      },
      {
        "channel": "dev",
-@@ -811,7 +811,7 @@
+@@ -813,7 +813,7 @@
      "channel": "stable",
      "extension_types": ["platform_app"],
      // "desktop_android" is not supported.

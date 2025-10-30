@@ -1,28 +1,28 @@
---- content/public/common/content_features.cc.orig	2025-10-21 16:57:35 UTC
+--- content/public/common/content_features.cc.orig	2025-11-01 06:40:37 UTC
 +++ content/public/common/content_features.cc
-@@ -102,7 +102,7 @@ BASE_FEATURE(AudioServiceLaunchOnStartup, base::FEATUR
+@@ -95,7 +95,7 @@ BASE_FEATURE(kAudioServiceLaunchOnStartup, base::FEATU
  
  // Runs the audio service in a separate process.
- BASE_FEATURE(AudioServiceOutOfProcess,
+ BASE_FEATURE(kAudioServiceOutOfProcess,
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1164,9 +1164,10 @@ BASE_FEATURE(WebAssemblyTiering, base::FEATURE_ENABLED
+@@ -1152,10 +1152,10 @@ BASE_FEATURE(kWebAssemblyTiering, base::FEATURE_ENABLE
+ 
  // Enable WebAssembly trap handler.
- BASE_FEATURE(WebAssemblyTrapHandler,
- #if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) ||  \
--      BUILDFLAG(IS_MAC)) &&                                                  \
-+      BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)) &&                             \
+ BASE_FEATURE(kWebAssemblyTrapHandler,
+-#if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) ||  \
++#if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) ||  \
+       BUILDFLAG(IS_MAC)) &&                                                  \
       defined(ARCH_CPU_X86_64)) ||                                            \
 -    ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)) && \
-+    ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) ||  \
-+      BUILDFLAG(IS_BSD)) &&                                                  \
++    ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)) && \
       defined(ARCH_CPU_ARM64))
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -1214,7 +1215,11 @@ BASE_FEATURE(WebUIJSErrorReportingExtended, base::FEAT
+@@ -1203,7 +1203,11 @@ BASE_FEATURE(kWebUIJSErrorReportingExtended, base::FEA
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb
@@ -33,4 +33,4 @@
 +#endif
  
  // Apply `PrefetchPriority::kHighest` for Webview Prefetch API.
- BASE_FEATURE(WebViewPrefetchHighestPrefetchPriority,
+ BASE_FEATURE(kWebViewPrefetchHighestPrefetchPriority,

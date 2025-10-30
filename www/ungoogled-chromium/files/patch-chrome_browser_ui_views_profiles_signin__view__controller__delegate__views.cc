@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig	2025-10-21 16:57:35 UTC
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig	2025-11-01 06:40:37 UTC
 +++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc
-@@ -63,14 +63,14 @@
+@@ -65,14 +65,14 @@
  #include "chrome/browser/ui/webui/signin/signout_confirmation/signout_confirmation_ui.h"
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  
@@ -17,7 +17,7 @@
  const int kManagedUserNoticeConfirmationDialogWidth = 780;
  const int kManagedUserNoticeConfirmationDialogHeight = 560;
  #endif
-@@ -137,7 +137,7 @@ SigninViewControllerDelegateViews::CreateSyncConfirmat
+@@ -139,7 +139,7 @@ SigninViewControllerDelegateViews::CreateSyncConfirmat
        kSyncConfirmationDialogWidth, InitializeSigninWebDialogUI(true));
  }
  
@@ -26,7 +26,7 @@
  std::unique_ptr<views::WebView>
  SigninViewControllerDelegateViews::CreateHistorySyncOptInWebView(
      Browser* browser,
-@@ -228,7 +228,7 @@ SigninViewControllerDelegateViews::CreateSignoutConfir
+@@ -230,7 +230,7 @@ SigninViewControllerDelegateViews::CreateSignoutConfir
  }
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  
@@ -35,7 +35,7 @@
  // static
  std::unique_ptr<views::WebView>
  SigninViewControllerDelegateViews::CreateManagedUserNoticeConfirmationWebView(
-@@ -404,7 +404,7 @@ SigninViewControllerDelegateViews::SigninViewControlle
+@@ -406,7 +406,7 @@ SigninViewControllerDelegateViews::SigninViewControlle
  
    SetButtons(static_cast<int>(ui::mojom::DialogButton::kNone));
  
@@ -44,7 +44,7 @@
    // On the local profile creation dialog, cancelling the dialog (for instance
    // through the VKEY_ESCAPE accelerator) should delete the profile.
    if (delete_profile_on_cancel) {
-@@ -496,7 +496,7 @@ void SigninViewControllerDelegateViews::DisplayModal()
+@@ -498,7 +498,7 @@ void SigninViewControllerDelegateViews::DisplayModal()
    content_view_->RequestFocus();
  }
  
@@ -53,7 +53,7 @@
  void SigninViewControllerDelegateViews::DeleteProfileOnCancel() {
    ProfileAttributesEntry* entry =
        g_browser_process->profile_manager()
-@@ -536,7 +536,7 @@ SigninViewControllerDelegate::CreateSyncConfirmationDe
+@@ -538,7 +538,7 @@ SigninViewControllerDelegate::CreateSyncConfirmationDe
        /*animate_on_resize=*/true);
  }
  
@@ -62,7 +62,7 @@
  // static
  SigninViewControllerDelegate*
  SigninViewControllerDelegate::CreateSyncHistoryOptInDelegate(
-@@ -593,7 +593,7 @@ SigninViewControllerDelegate::CreateSignoutConfirmatio
+@@ -597,7 +597,7 @@ SigninViewControllerDelegate::CreateSignoutConfirmatio
  }
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  

@@ -1,6 +1,6 @@
---- components/metrics/dwa/dwa_service.cc.orig	2025-09-06 10:01:20 UTC
+--- components/metrics/dwa/dwa_service.cc.orig	2025-10-30 15:44:36 UTC
 +++ components/metrics/dwa/dwa_service.cc
-@@ -187,7 +187,7 @@ void DwaService::RecordCoarseSystemInformation(
+@@ -243,7 +243,7 @@ void DwaService::RecordCoarseSystemInformation(
    coarse_system_info->set_platform(::dwa::CoarseSystemInfo::PLATFORM_WINDOWS);
  #elif BUILDFLAG(IS_MAC)
    coarse_system_info->set_platform(::dwa::CoarseSystemInfo::PLATFORM_MACOS);

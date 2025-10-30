@@ -1,6 +1,6 @@
---- ui/display/screen.cc.orig	2025-10-21 16:57:35 UTC
+--- ui/display/screen.cc.orig	2025-11-01 06:40:37 UTC
 +++ ui/display/screen.cc
-@@ -87,7 +87,7 @@ void Screen::SetDisplayForNewWindows(int64_t display_i
+@@ -82,7 +82,7 @@ void Screen::SetDisplayForNewWindows(int64_t display_i
    display_id_for_new_windows_ = display_id;
  }
  

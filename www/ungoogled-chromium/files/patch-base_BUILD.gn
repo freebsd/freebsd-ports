@@ -1,6 +1,6 @@
---- base/BUILD.gn.orig	2025-10-21 16:57:35 UTC
+--- base/BUILD.gn.orig	2025-11-01 06:40:37 UTC
 +++ base/BUILD.gn
-@@ -1113,11 +1113,26 @@ component("base") {
+@@ -1115,11 +1115,26 @@ component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -28,7 +28,7 @@
    if (use_allocator_shim) {
      if (is_apple) {
        sources += [ "allocator/early_zone_registration_apple.h" ]
-@@ -1137,7 +1152,7 @@ component("base") {
+@@ -1139,7 +1154,7 @@ component("base") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -112,7 +112,7 @@
    # This test must compile with -fstack-protector-all
    source_set("stack_canary_linux_unittests") {
      testonly = true
-@@ -3920,7 +3978,7 @@ test("base_unittests") {
+@@ -3923,7 +3981,7 @@ test("base_unittests") {
      configs += [ ":delayload_esent_dll" ]
    }
  
@@ -121,7 +121,7 @@
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3944,7 +4002,7 @@ test("base_unittests") {
+@@ -3947,7 +4005,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
@@ -130,7 +130,7 @@
        sources += [
          "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3955,7 +4013,7 @@ test("base_unittests") {
+@@ -3958,7 +4016,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -139,7 +139,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -4142,7 +4200,7 @@ test("base_unittests") {
+@@ -4145,7 +4203,7 @@ test("base_unittests") {
      deps += [ ":base_profiler_test_support_library" ]
    }
  

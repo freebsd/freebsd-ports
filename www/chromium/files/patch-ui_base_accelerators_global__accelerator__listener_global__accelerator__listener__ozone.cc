@@ -1,4 +1,4 @@
---- ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc.orig	2025-09-24 06:14:47 UTC
+--- ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc.orig	2025-10-30 15:44:36 UTC
 +++ ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc
 @@ -12,7 +12,7 @@
  #include "ui/base/accelerators/accelerator.h"
@@ -15,10 +15,10 @@
  namespace {
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_DBUS)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_DBUS)
- BASE_FEATURE(kGlobalShortcutsPortal,
-              "GlobalShortcutsPortal",
-              base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -75,7 +75,7 @@ GlobalAcceleratorListener* GlobalAcceleratorListener::
+ BASE_FEATURE(kGlobalShortcutsPortal, base::FEATURE_ENABLED_BY_DEFAULT);
+ constexpr char kChannelEnvVar[] = "CHROME_VERSION_EXTRA";
+ 
+@@ -73,7 +73,7 @@ GlobalAcceleratorListener* GlobalAcceleratorListener::
      return instance->get();
    }
  

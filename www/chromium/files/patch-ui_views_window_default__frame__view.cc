@@ -1,4 +1,4 @@
---- ui/views/window/default_frame_view.cc.orig	2025-08-07 06:57:29 UTC
+--- ui/views/window/default_frame_view.cc.orig	2025-10-30 15:44:36 UTC
 +++ ui/views/window/default_frame_view.cc
 @@ -285,7 +285,7 @@ int DefaultFrameView::NonClientTopBorderHeight() const
  int DefaultFrameView::CaptionButtonY() const {
@@ -8,4 +8,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return FrameBorderThickness();
  #else
-   return frame_->IsMaximized() ? FrameBorderThickness() : kFrameShadowThickness;
+   return widget_->IsMaximized() ? FrameBorderThickness()

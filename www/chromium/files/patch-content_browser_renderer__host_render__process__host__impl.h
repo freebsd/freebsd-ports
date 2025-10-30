@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_process_host_impl.h.orig	2025-10-02 04:28:32 UTC
+--- content/browser/renderer_host/render_process_host_impl.h.orig	2025-10-30 15:44:36 UTC
 +++ content/browser/renderer_host/render_process_host_impl.h
-@@ -101,7 +101,7 @@
+@@ -103,7 +103,7 @@
  #include "media/fuchsia_media_codec_provider_impl.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "content/browser/child_thread_type_switcher_linux.h"
  #include "media/mojo/mojom/video_encode_accelerator.mojom.h"
  #endif
-@@ -994,7 +994,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+@@ -1014,7 +1014,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
      mojo::Remote<media::mojom::VideoEncodeAcceleratorProviderFactory>
          video_encode_accelerator_factory_remote_;
  #endif
@@ -18,7 +18,7 @@
      ChildThreadTypeSwitcher child_thread_type_switcher_;
  #endif
    };
-@@ -1237,7 +1237,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+@@ -1268,7 +1268,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
    // if the request isn't handled on the IO thread.
    void OnBindHostReceiver(mojo::GenericPendingReceiver receiver);
  
