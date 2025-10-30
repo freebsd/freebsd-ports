@@ -9,6 +9,7 @@
     SUBDIR += coyim
     SUBDIR += cutegram
     SUBDIR += debugtox
+    SUBDIR += deltachat-desktop
     SUBDIR += dendrite
     SUBDIR += dino
     SUBDIR += discordo
