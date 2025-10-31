@@ -19,7 +19,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
 
-CXXFLAGS+=	-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE # prevent hardening issues with libc++
+CXXFLAGS+=	-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE # prevent hardening issues with libc++, see https://github.com/LLNL/polytope/issues/24
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	TESTING
