@@ -1,12 +1,19 @@
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	2025_03_1
-PORTREVISION=	3
+DISTVERSION=	2025_09_1
 CATEGORIES=	science
-MASTER_SITES=	LOCAL/yuri/:font # unstable, changing font file: https://fonts.google.com/download?family=Comic%20Neue&dummy=/:font
-DISTFILES=	ComicNeue-Regular.ttf:font
+MASTER_SITES=	https://github.com/schrodinger/maeparser/archive/:maeparser \
+		https://github.com/schrodinger/coordgenlibs/archive/:coordgen \
+		https://codeload.github.com/Glysade/chemdraw/tar.gz/refs/tags/:chemdraw \
+		https://github.com/Tencent/rapidjson/archive/:rapidjson \
+		LOCAL/yuri/:font # unstable, changing font file: https://fonts.google.com/download?family=Comic%20Neue&dummy=/:font
+DISTFILES=	v${MAEPARSER_VERSION}.tar.gz:maeparser \
+		v${COORDGEN_VERSION}.tar.gz:coordgen \
+		v${CHEMDRAW_VERSION}:chemdraw \
+		v${RAPIDJSON_VERSION}.tar.gz:rapidjson \
+		ComicNeue-Regular.ttf:font
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.ttf}
+EXTRACT_ONLY=	${DISTFILES:C/:.*//:Nv*:N*.ttf}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of cheminformatics and machine-learning software
@@ -16,20 +23,12 @@ WWW=		https://www.rdkit.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BROKEN_FreeBSD_15_aarch64=	clang-17 crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=272652
-BROKEN_FreeBSD_15_amd64=	clang-17 crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=272652
-BROKEN_FreeBSD_15_i386=		clang-17 crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=272652
-BROKEN_FreeBSD_16_amd64=	clang-17 crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=272652
-
 BUILD_DEPENDS=	catch>0:devel/catch \
-		flex:textproc/flex \
-		rapidjson>=0:devel/rapidjson
+		flex:textproc/flex
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
-		libcoordgen.so:science/coordgenlibs \
-		libfreetype.so:print/freetype2 \
-		libmaeparser.so:science/maeparser
+		libfreetype.so:print/freetype2
 
-USES=		bison:build cmake:testing compiler:c++11-lang eigen:3 gnome python
+USES=		bison:build cmake:testing compiler:c++11-lang eigen:3 gnome pkgconfig python
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes
 
@@ -37,6 +36,11 @@ USE_GITHUB=	yes
 GH_TUPLE=	rareylab:RingDecomposerLib:v1.1.3_rdkit:RingDecomposerLib/External/RingFamilies/RingDecomposerLib
 GH_TUPLE+=	ncbi:pubchem-align3d:daefab3:align3d/External/pubchem_shape/pubchem-align3d \
 		aantron:better-enums:520d8ee:better_enums/better_enums
+
+MAEPARSER_VERSION=	1.3.3
+COORDGEN_VERSION=	3.0.2
+CHEMDRAW_VERSION=	1.0.10
+RAPIDJSON_VERSION=	1.1.0
 
 CMAKE_ON=	RDK_BUILD_CAIRO_SUPPORT
 CMAKE_OFF=	RDK_INSTALL_INTREE RDK_USE_FLEXBISON \
@@ -90,14 +94,35 @@ PLIST_SUB+=	LITTLE_ENDIAN=""
 .endif
 
 post-extract:
-	@${MKDIR} ${WRKSRC}/External/rapidjson-1.1.0
-	@cd ${WRKSRC}/External/rapidjson-1.1.0 && ${LN} -s ${LOCALBASE}/include/rapidjson include
+	#@${MKDIR} ${WRKSRC}/External/rapidjson-1.1.0
+	#@cd ${WRKSRC}/External/rapidjson-1.1.0 && ${LN} -s ${LOCALBASE}/include/rapidjson include
 	@cd ${WRKSRC}/Data/Fonts && ${CP} ${DISTDIR}/${DIST_SUBDIR}/ComicNeue-Regular.ttf .
 	@${CP} ${WRKSRC}/better_enums/enum.h ${WRKSRC}/Code/RDGeneral
+
+post-patch:
+	# replace the URLs for fetched libs with the local file path to the distfiles, so that it can be used without internet access
+	@${REINPLACE_CMD} \
+		-e 's|https://github.com/schrodinger/maeparser/archive/|file://${DISTDIR}/${DIST_SUBDIR}/|g' \
+		${WRKSRC}/External/CoordGen/CMakeLists.txt
+	@${REINPLACE_CMD} \
+		-e 's|https://github.com/schrodinger/coordgenlibs/archive/|file://${DISTDIR}/${DIST_SUBDIR}/|g' \
+		${WRKSRC}/External/CoordGen/CMakeLists.txt
+	@${REINPLACE_CMD} \
+		-e 's|https://codeload.github.com/Glysade/chemdraw/tar.gz/refs/tags/|file://${DISTDIR}/${DIST_SUBDIR}/|g' \
+		${WRKSRC}/External/ChemDraw/CMakeLists.txt
+	@${REINPLACE_CMD} \
+		-e 's|https://github.com/Tencent/rapidjson/archive/|file://${DISTDIR}/${DIST_SUBDIR}/|g' \
+		${WRKSRC}/Code/GraphMol/MolInterchange/CMakeLists.txt
+
+pre-build:
+	@${REINPLACE_CMD} \
+		-e 's|const SizeType length;|SizeType length;|g' \
+		${WRKSRC}/External/rapidjson/rapidjson-1.1.0/include/rapidjson/document.h
 
 post-install-PGSQL-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/rdkit.so
 
 # many tests fail, see https://github.com/rdkit/rdkit/issues/7779
+# tests as of 2025_09_1: 65% tests passed, 24 tests failed out of 68
 
 .include <bsd.port.mk>
