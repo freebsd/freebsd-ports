@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.3
 CATEGORIES=	comms hamradio
 
-MAINTAINER=	unitrunker@gmail.com
+MAINTAINER=	unitrunker@unitrunker.net
 COMMENT=	HydraSDR RFONE\'s host library and associated tools
 WWW=		https://hydrasdr.com/
 
