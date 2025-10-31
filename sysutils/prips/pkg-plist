@@ -1,3 +1,12 @@
 bin/prips
 share/man/man1/prips.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/changes.md
+%%PORTDOCS%%%%DOCSDIR%%/download.md
+%%PORTDOCS%%%%DOCSDIR%%/examples/tests/01-cidr.t
+%%PORTDOCS%%%%DOCSDIR%%/examples/tests/02-range.t
+%%PORTDOCS%%%%DOCSDIR%%/examples/tests/03-skip.t
+%%PORTDOCS%%%%DOCSDIR%%/examples/tests/04-format.t
+%%PORTDOCS%%%%DOCSDIR%%/examples/tests/05-except.t
+%%PORTDOCS%%%%DOCSDIR%%/examples/tests/06-cidrize.t
+%%PORTDOCS%%%%DOCSDIR%%/examples/tests/07-features.t
+%%PORTDOCS%%%%DOCSDIR%%/index.md
