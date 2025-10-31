@@ -1,3 +1,33 @@
+  <vuln vid="c4fb21e4-b579-11f0-871c-6805ca2fa271">
+    <topic>powerdns-recursor -- cache pollution</topic>
+    <affects>
+    <package>
+	<name>powerdns_recursor</name>
+	<range><lt>5.3.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://blog.powerdns.com/powerdns-security-advisory-2025-06-2025-10-22">
+	  <p>It has been brought to our attention that the Recursor does not
+	  apply strict enough validation of received delegation information.
+	  The malicious delegation information can be sent by an attacker
+	  spoofing packets.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-59023</cvename>
+      <cvename>CVE-2025-59024</cvename>
+      <url>https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2025-06.html</url>
+    </references>
+    <dates>
+      <discovery>2025-10-15</discovery>
+      <entry>2025-10-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7c09fcb7-b5d6-11f0-b3f7-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
