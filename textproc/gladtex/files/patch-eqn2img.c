@@ -1,24 +1,15 @@
---- eqn2img.c.orig	2013-01-27 04:17:45 UTC
+--- eqn2img.c.orig	2014-02-20 19:54:58 UTC
 +++ eqn2img.c
-@@ -367,7 +367,7 @@ png_bytepp png_read(char *filename, int 
-   info_ptr = png_create_info_struct(png_ptr);
-   assert(info_ptr);
-   
--  if(setjmp(png_ptr->jmpbuf)) {
-+  if(setjmp(png_jmpbuf(png_ptr))) {
-     png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
-     fclose(fp);
-     return NULL;
-@@ -580,7 +580,7 @@ int png_write(png_bytepp image, char *im
-   assert(info_ptr);
+@@ -30,7 +30,7 @@ This utility is part of\n\
  
-   /* error handling, libpng longjmps here on any error */
--  if(setjmp(png_ptr->jmpbuf)) {
-+  if(setjmp(png_jmpbuf(png_ptr))) {
-     png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
-     fclose(fp);
-     return -1;
-@@ -623,19 +623,31 @@ int gif_write(png_bytepp image, char *im
+ #define USAGE "\
+ This utility is part of\n\
+-gladtex version 1.4.1, Copyright (C) 1999-2010 Martin G. Gulbrandsen\n\
++gladtex version 1.4.2, Copyright (C) 1999-2010 Martin G. Gulbrandsen\n\
+                                  (C) 2014 Sebastian Humenda\n\
+ \n\
+ GladTXx comes with ABSOLUTELY NO WARRANTY. This is free software,\n\
+@@ -634,19 +634,31 @@ int gif_write(png_bytepp image, char *img_name, int wi
    };
  
    if(img_name) {
@@ -50,7 +41,7 @@
  
    /* EGifSetGifVersion("89a"); this causes segfault (but is really required for transparency, I think) */
    EGifPutScreenDesc(fp, width, height, 256, 255, color_map);
-@@ -649,7 +661,11 @@ int gif_write(png_bytepp image, char *im
+@@ -660,7 +672,11 @@ int gif_write(png_bytepp image, char *img_name, int wi
        return -1;
    }
  
@@ -62,7 +53,7 @@
  
    return 0;
  }  
-@@ -715,7 +731,7 @@ int to_ps(char *basename, int verbose) {
+@@ -726,7 +742,7 @@ int to_ps(char *basename, int verbose) {
      fprintf(stderr, " -> ps");
  
    cmd = NEW(char, 2*strlen(basename) + 46);
