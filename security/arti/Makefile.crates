@@ -91,6 +91,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		compression-codecs-0.4.31 \
 		compression-core-0.4.29 \
 		concurrent-queue-2.5.0 \
+		const-hex-1.16.0 \
 		const-oid-0.9.6 \
 		content_inspector-0.2.4 \
 		convert_case-0.7.1 \
@@ -131,6 +132,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		deadpool-sync-0.1.4 \
 		der-0.7.10 \
 		der-parser-10.0.0 \
+		der_derive-0.7.3 \
 		deranged-0.5.4 \
 		derive-deftly-0.14.6 \
 		derive-deftly-1.3.0 \
@@ -154,8 +156,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		dsa-0.6.3 \
 		dunce-1.0.5 \
 		dyn-clone-1.0.20 \
-		dynasm-3.2.1 \
-		dynasmrt-3.2.1 \
+		dynasm-4.0.1 \
+		dynasmrt-4.0.1 \
 		ecdsa-0.16.9 \
 		ed25519-2.2.3 \
 		ed25519-dalek-2.2.0 \
@@ -183,6 +185,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		filetime-0.2.26 \
 		find-msvc-tools-0.1.2 \
 		fixed-capacity-vec-1.0.1 \
+		flagset-0.4.7 \
 		flate2-1.1.2 \
 		float-cmp-0.10.0 \
 		float-ord-0.3.2 \
@@ -338,12 +341,12 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		openssl-probe-0.1.6 \
 		openssl-src-300.5.3+3.5.4 \
 		openssl-sys-0.9.109 \
-		opentelemetry-0.30.0 \
-		opentelemetry-appender-tracing-0.30.1 \
-		opentelemetry-http-0.30.0 \
-		opentelemetry-otlp-0.30.0 \
-		opentelemetry-proto-0.30.0 \
-		opentelemetry_sdk-0.30.0 \
+		opentelemetry-0.31.0 \
+		opentelemetry-appender-tracing-0.31.1 \
+		opentelemetry-http-0.31.0 \
+		opentelemetry-otlp-0.31.0 \
+		opentelemetry-proto-0.31.0 \
+		opentelemetry_sdk-0.31.0 \
 		option-ext-0.2.0 \
 		ordered-float-2.10.1 \
 		os_pipe-1.2.2 \
@@ -390,8 +393,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		proc-macro-error-attr2-2.0.0 \
 		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.101 \
-		prost-0.13.5 \
-		prost-derive-0.13.5 \
+		proptest-1.8.0 \
+		prost-0.14.1 \
+		prost-derive-0.14.1 \
 		pwd-grp-1.0.0 \
 		quanta-0.12.6 \
 		quote-1.0.41 \
@@ -406,6 +410,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rand_distr-0.4.3 \
 		rand_distr-0.5.1 \
 		rand_jitter-0.5.0 \
+		rand_xorshift-0.4.0 \
 		rand_xoshiro-0.7.0 \
 		rangemap-1.6.0 \
 		raw-cpuid-11.6.0 \
@@ -439,7 +444,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rustls-pki-types-1.12.0 \
 		rustls-platform-verifier-0.6.1 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.6 \
+		rustls-webpki-0.103.7 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
 		safe_arch-0.7.4 \
@@ -533,6 +538,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
+		tls_codec-0.4.2 \
+		tls_codec_derive-0.4.2 \
 		tokio-1.47.1 \
 		tokio-macros-2.5.0 \
 		tokio-native-tls-0.3.1 \
@@ -548,7 +555,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		toml_parser-1.0.3 \
 		toml_write-0.1.2 \
 		toml_writer-1.0.3 \
-		tonic-0.13.1 \
+		tonic-0.14.2 \
+		tonic-prost-0.14.2 \
 		tower-0.5.2 \
 		tower-http-0.6.6 \
 		tower-layer-0.3.3 \
@@ -559,7 +567,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tracing-core-0.1.34 \
 		tracing-journald-0.3.1 \
 		tracing-log-0.2.0 \
-		tracing-opentelemetry-0.31.0 \
+		tracing-opentelemetry-0.32.0 \
 		tracing-subscriber-0.3.20 \
 		tracing-test-0.2.5 \
 		tracing-test-macro-0.2.5 \
@@ -570,6 +578,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		typenum-1.18.0 \
 		typetag-0.2.21 \
 		typetag-impl-0.2.21 \
+		unarray-0.1.4 \
 		uncased-0.9.10 \
 		unicode-ident-1.0.19 \
 		unicode-segmentation-1.12.0 \
@@ -665,6 +674,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		writeable-0.6.1 \
 		wyz-0.5.1 \
 		x25519-dalek-2.0.1 \
+		x509-cert-0.2.5 \
 		xxhash-rust-0.8.15 \
 		yoke-0.8.0 \
 		yoke-derive-0.8.0 \
