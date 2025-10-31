@@ -15,16 +15,17 @@ CARGO_CRATES=	adler2-2.0.0 \
 		autocfg-1.4.0 \
 		az-1.2.1 \
 		base64-0.22.1 \
-		biblatex-0.10.0 \
+		biblatex-0.11.0 \
 		bincode-1.3.3 \
-		bit-set-0.5.3 \
-		bit-vec-0.6.3 \
+		bit-set-0.8.0 \
+		bit-vec-0.8.0 \
 		bitflags-1.3.2 \
-		bitflags-2.8.0 \
+		bitflags-2.9.1 \
 		bitvec-1.0.1 \
 		bumpalo-3.17.0 \
 		by_address-1.2.1 \
-		bytemuck-1.21.0 \
+		bytemuck-1.23.1 \
+		bytemuck_derive-1.8.1 \
 		byteorder-1.5.0 \
 		byteorder-lite-0.1.0 \
 		cc-1.2.11 \
@@ -36,7 +37,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		citationberg-0.5.0 \
+		citationberg-0.6.1 \
 		clap-4.5.28 \
 		clap_builder-4.5.27 \
 		clap_complete-4.5.44 \
@@ -45,18 +46,18 @@ CARGO_CRATES=	adler2-2.0.0 \
 		clap_mangen-0.2.26 \
 		cobs-0.2.3 \
 		codespan-reporting-0.11.1 \
-		codex-0.1.1 \
+		codex-0.2.0 \
 		color-print-0.3.7 \
 		color-print-proc-macro-0.3.7 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.3 \
-		comemo-0.4.0 \
-		comemo-macros-0.4.0 \
+		comemo-0.5.0 \
+		comemo-macros-0.5.0 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.7 \
 		core_maths-0.1.1 \
 		crc32fast-1.4.2 \
-		crossbeam-channel-0.5.14 \
+		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
@@ -69,7 +70,6 @@ CARGO_CRATES=	adler2-2.0.0 \
 		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
 		displaydoc-0.2.5 \
-		downcast-rs-1.2.1 \
 		ecow-0.2.3 \
 		either-1.13.0 \
 		embedded-io-0.4.0 \
@@ -79,17 +79,19 @@ CARGO_CRATES=	adler2-2.0.0 \
 		env_proxy-0.4.1 \
 		equivalent-1.0.1 \
 		errno-0.3.10 \
-		fancy-regex-0.11.0 \
+		euclid-0.22.11 \
+		fancy-regex-0.16.2 \
 		fast-srgb8-1.0.0 \
 		fastrand-2.3.0 \
 		fdeflate-0.3.7 \
 		filetime-0.2.25 \
-		flate2-1.0.35 \
+		flate2-1.1.2 \
 		float-cmp-0.9.0 \
+		float-cmp-0.10.0 \
 		fnv-1.0.7 \
-		foldhash-0.1.4 \
+		font-types-0.10.0 \
 		fontconfig-parser-0.5.7 \
-		fontdb-0.21.0 \
+		fontdb-0.23.0 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
@@ -100,10 +102,17 @@ CARGO_CRATES=	adler2-2.0.0 \
 		getrandom-0.2.15 \
 		getrandom-0.3.1 \
 		gif-0.13.1 \
+		glidesort-0.1.2 \
 		half-2.4.1 \
 		hashbrown-0.12.3 \
 		hashbrown-0.15.2 \
-		hayagriva-0.8.1 \
+		hayagriva-0.9.1 \
+		hayro-0.4.0 \
+		hayro-font-0.3.0 \
+		hayro-interpret-0.4.0 \
+		hayro-svg-0.2.0 \
+		hayro-syntax-0.4.0 \
+		hayro-write-0.3.0 \
 		heck-0.5.0 \
 		httpdate-1.0.3 \
 		hypher-0.1.5 \
@@ -125,12 +134,13 @@ CARGO_CRATES=	adler2-2.0.0 \
 		icu_segmenter_data-1.5.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
-		if_chain-1.0.2 \
-		image-0.25.5 \
-		image-webp-0.1.3 \
+		image-0.25.6 \
+		image-webp-0.2.1 \
 		imagesize-0.13.0 \
+		imagesize-0.14.0 \
 		indexmap-1.9.3 \
 		indexmap-2.7.1 \
+		infer-0.19.0 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
 		is-docker-0.2.0 \
@@ -142,13 +152,17 @@ CARGO_CRATES=	adler2-2.0.0 \
 		kamadak-exif-0.6.1 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
-		kurbo-0.11.1 \
+		krilla-0.5.0 \
+		krilla-svg-0.2.0 \
+		kurbo-0.11.2 \
+		kurbo-0.12.0 \
 		libc-0.2.169 \
 		libdeflate-sys-1.23.0 \
 		libdeflater-1.23.0 \
 		libfuzzer-sys-0.4.9 \
 		libm-0.2.11 \
 		libredox-0.1.3 \
+		libz-rs-sys-0.5.1 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.15 \
 		lipsum-0.9.1 \
@@ -160,9 +174,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		memchr-2.7.4 \
 		memmap2-0.9.5 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.8.3 \
-		mio-1.0.3 \
-		multi-stash-0.2.0 \
+		miniz_oxide-0.8.5 \
+		mio-1.0.4 \
+		moxcms-0.7.5 \
 		mutate_once-0.1.1 \
 		native-tls-0.2.13 \
 		nom-7.1.3 \
@@ -172,14 +186,13 @@ CARGO_CRATES=	adler2-2.0.0 \
 		num-conv-0.1.0 \
 		num-integer-0.1.46 \
 		num-traits-0.2.19 \
-		numerals-0.1.4 \
 		once_cell-1.20.2 \
 		open-5.3.2 \
-		openssl-0.10.70 \
+		openssl-0.10.72 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
 		openssl-src-300.4.1+3.4.0 \
-		openssl-sys-0.9.105 \
+		openssl-sys-0.9.107 \
 		option-ext-0.2.0 \
 		oxipng-9.1.3 \
 		palette-0.7.6 \
@@ -188,14 +201,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		parking_lot_core-0.9.10 \
 		paste-1.0.15 \
 		pathdiff-0.2.3 \
-		pdf-writer-0.12.1 \
+		pdf-writer-0.14.0 \
 		percent-encoding-2.3.1 \
-		phf-0.11.3 \
-		phf_generator-0.11.3 \
-		phf_macros-0.11.3 \
-		phf_shared-0.11.3 \
+		phf-0.13.1 \
+		phf_generator-0.13.1 \
+		phf_macros-0.13.1 \
+		phf_shared-0.13.1 \
 		pico-args-0.5.0 \
-		pixglyph-0.5.1 \
+		pixglyph-0.6.0 \
 		pkg-config-0.3.31 \
 		plist-1.7.0 \
 		png-0.17.16 \
@@ -203,13 +216,15 @@ CARGO_CRATES=	adler2-2.0.0 \
 		postcard-1.1.1 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.20 \
-		proc-macro2-1.0.93 \
+		proc-macro-hack-0.5.20+deprecated \
+		proc-macro2-1.0.101 \
 		psm-0.1.24 \
 		pulldown-cmark-0.9.6 \
+		pxfm-0.1.24 \
 		qcms-0.3.0 \
 		quick-error-2.0.1 \
 		quick-xml-0.32.0 \
-		quick-xml-0.36.2 \
+		quick-xml-0.38.3 \
 		quote-1.0.38 \
 		radium-0.7.0 \
 		rand-0.8.5 \
@@ -217,20 +232,22 @@ CARGO_CRATES=	adler2-2.0.0 \
 		rand_core-0.6.4 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
+		read-fonts-0.35.0 \
 		redox_syscall-0.5.8 \
 		redox_users-0.5.0 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		resvg-0.43.0 \
+		resvg-0.45.0 \
 		rgb-0.8.50 \
 		roff-0.2.2 \
+		roman-numerals-rs-3.1.0 \
 		roxmltree-0.20.0 \
 		rust_decimal-1.36.0 \
-		rustc-hash-2.1.0 \
+		rustc-hash-2.1.1 \
 		rustix-0.38.44 \
 		rustversion-1.0.19 \
-		rustybuzz-0.18.0 \
+		rustybuzz-0.20.1 \
 		ryu-1.0.19 \
 		same-file-1.0.6 \
 		schannel-0.1.27 \
@@ -251,32 +268,30 @@ CARGO_CRATES=	adler2-2.0.0 \
 		simd-adler32-0.3.7 \
 		simplecss-0.2.2 \
 		siphasher-1.0.1 \
+		skrifa-0.37.0 \
+		slab-0.4.11 \
 		slotmap-1.0.7 \
-		smallvec-1.13.2 \
+		smallvec-1.15.1 \
 		spin-0.9.8 \
 		stable_deref_trait-1.2.0 \
-		stacker-0.1.17 \
+		stacker-0.1.21 \
 		strict-num-0.1.1 \
-		string-interner-0.18.0 \
 		strsim-0.11.1 \
-		strum-0.26.3 \
-		strum_macros-0.26.4 \
-		subsetter-0.2.0 \
-		svg2pdf-0.12.0 \
+		strum-0.27.2 \
+		strum_macros-0.27.2 \
+		subsetter-0.2.3 \
 		svgtypes-0.15.3 \
 		syn-2.0.98 \
 		synstructure-0.13.1 \
-		syntect-5.2.0 \
+		syntect-5.3.0 \
 		tap-1.0.1 \
 		tar-0.4.43 \
 		tempfile-3.16.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.1 \
 		thin-vec-0.2.13 \
-		thiserror-1.0.69 \
-		thiserror-2.0.11 \
-		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.11 \
+		thiserror-2.0.16 \
+		thiserror-impl-2.0.16 \
 		time-0.3.37 \
 		time-core-0.1.2 \
 		time-macros-0.2.19 \
@@ -284,21 +299,24 @@ CARGO_CRATES=	adler2-2.0.0 \
 		tiny-skia-path-0.11.4 \
 		tiny_http-0.12.0 \
 		tinystr-0.7.6 \
+		tinystr-0.8.1 \
 		tinyvec-1.8.1 \
 		tinyvec_macros-0.1.1 \
 		toml-0.8.19 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.23 \
-		ttf-parser-0.24.1 \
+		ttf-parser-0.25.1 \
 		two-face-0.4.3 \
 		typed-arena-2.0.2 \
-		typst-assets-0.13.1 \
-		unic-langid-0.9.5 \
-		unic-langid-impl-0.9.5 \
+		typst-assets-0.14.0 \
+		unic-langid-0.9.6 \
+		unic-langid-impl-0.9.6 \
+		unic-langid-macros-0.9.6 \
+		unic-langid-macros-impl-0.9.6 \
 		unicase-2.8.1 \
 		unicode-bidi-0.3.18 \
-		unicode-bidi-mirroring-0.3.0 \
-		unicode-ccc-0.3.0 \
+		unicode-bidi-mirroring-0.4.0 \
+		unicode-ccc-0.4.0 \
 		unicode-ident-1.0.16 \
 		unicode-math-class-0.1.0 \
 		unicode-normalization-0.1.24 \
@@ -311,7 +329,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		unscanny-0.1.0 \
 		ureq-2.12.1 \
 		url-2.5.4 \
-		usvg-0.43.0 \
+		usvg-0.45.0 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
@@ -325,11 +343,11 @@ CARGO_CRATES=	adler2-2.0.0 \
 		wasm-bindgen-macro-0.2.100 \
 		wasm-bindgen-macro-support-0.2.100 \
 		wasm-bindgen-shared-0.2.100 \
-		wasmi-0.40.0 \
-		wasmi_collections-0.40.0 \
-		wasmi_core-0.40.0 \
-		wasmi_ir-0.40.0 \
-		wasmparser-0.221.2 \
+		wasmi-0.51.1 \
+		wasmi_collections-0.51.1 \
+		wasmi_core-0.51.1 \
+		wasmi_ir-0.51.1 \
+		wasmparser-0.228.0 \
 		web-sys-0.3.77 \
 		weezl-0.1.8 \
 		winapi-util-0.1.9 \
@@ -347,27 +365,32 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.7.1 \
 		wit-bindgen-rt-0.33.0 \
+		write-fonts-0.43.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		wyz-0.5.1 \
 		xattr-1.4.0 \
 		xmlparser-0.13.6 \
 		xmlwriter-0.1.0 \
-		xmp-writer-0.3.1 \
+		xmp-writer-0.3.2 \
 		xz2-0.1.7 \
 		yaml-front-matter-0.1.0 \
 		yaml-rust-0.4.5 \
 		yoke-0.7.5 \
+		yoke-0.8.0 \
 		yoke-derive-0.7.5 \
+		yoke-derive-0.8.0 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
 		zerofrom-0.1.5 \
 		zerofrom-derive-0.1.5 \
 		zerotrie-0.1.3 \
 		zerovec-0.10.4 \
+		zerovec-0.11.4 \
 		zerovec-derive-0.10.3 \
-		zip-2.2.2 \
+		zip-5.1.1 \
+		zlib-rs-0.5.1 \
 		zopfli-0.8.1 \
 		zune-core-0.4.12 \
 		zune-jpeg-0.4.14 \
-		typst-dev-assets@git+https://github.com/typst/typst-dev-assets?tag=v0.13.1\#9879589f4b3247b12c5e694d0d7fa86d4d8a198e
+		typst-dev-assets@git+https://github.com/typst/typst-dev-assets?tag=v0.14.0\#0b12d75772199e07294749ffe078ea030b857746
