@@ -1,5 +1,5 @@
 PORTNAME=	libunrar
-PORTVERSION=	7.1.10
+PORTVERSION=	7.2.1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
