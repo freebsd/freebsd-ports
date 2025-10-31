@@ -1,4 +1,4 @@
---- internal/sourceanalysis/go.go.orig	2025-09-13 17:59:56 UTC
+--- internal/sourceanalysis/go.go.orig	1979-11-30 00:00:00 UTC
 +++ internal/sourceanalysis/go.go
 @@ -21,7 +21,7 @@ func goAnalysis(pkgs []models.PackageVulns, source mod
  

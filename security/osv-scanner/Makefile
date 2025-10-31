@@ -1,6 +1,6 @@
 PORTNAME=	osv-scanner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.3
+DISTVERSION=	2.2.4
 CATEGORIES=	security
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -11,6 +11,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:1.24,modules,run
+
+NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
 
 _BUILD_VERSION=	${DISTVERSION}
 _BUILD_COMMIT=	a66ef4b
