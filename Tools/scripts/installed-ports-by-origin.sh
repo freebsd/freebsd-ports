@@ -1,10 +1,10 @@
 #!/bin/sh
 
-# Constributed by Ralf van der Enden <tremere@cainites.net>
+# Contributed by Ralf van der Enden <tremere@cainites.net>
 # Public domain.
 
-# print a list of all installed ports by origin with flavour.
-# this is similar to pkg info -qoa, but prints a flavour if the
+# Print a list of all installed ports by origin with flavour.
+# This is similar to pkg info -qoa, but prints a flavour if the
 # package has one.
 
 sqlite3 /var/db/pkg/local.sqlite \
