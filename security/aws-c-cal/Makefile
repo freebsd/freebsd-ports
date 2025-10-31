@@ -1,6 +1,6 @@
 PORTNAME=	aws-c-cal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.7
+DISTVERSION=	0.9.8
 CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -19,7 +19,5 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTING
-
-TESTING_UNSAFE=	https://github.com/awslabs/aws-c-cal/issues/237
 
 .include <bsd.port.mk>
