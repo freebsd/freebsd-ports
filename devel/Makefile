@@ -611,6 +611,7 @@
     SUBDIR += dev86
     SUBDIR += devhelp
     SUBDIR += devtodo
+    SUBDIR += dfuzzer
     SUBDIR += dia2code
     SUBDIR += dill
     SUBDIR += ding-libs

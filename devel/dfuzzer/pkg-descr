@@ -1,0 +1,5 @@
+dfuzzer is a tool for fuzz testing processes communicating through D-Bus.
+It can be used to test processes connected to both the session bus and the
+system bus. The fuzzer works as a client, first connecting to a bus and then
+traversing and fuzzing all the methods and properties provided by a D-Bus
+service.
