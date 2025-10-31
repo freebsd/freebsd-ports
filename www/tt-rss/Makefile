@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
-WWW=		https://tt-rss.org/
+WWW=		https://github.com/tt-rss/tt-rss/
 
 LICENSE=	GPLv2
 
@@ -14,7 +14,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/git:devel/git
 
 USES=		gettext-tools php:cli,web,flavors shebangfix
 
-# dist download is blocked by cloudflare DDOS.  Need to upload to LOCAL/
 USE_GITHUB=	yes
 GH_TAGNAME=	942f3e1bbac865d3c7da948db197067949cbb3e7
 # phe json/openssl extension is required but it's statically linked in default php
