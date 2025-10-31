@@ -1,5 +1,5 @@
-TIMESTAMP = 1739764004
-SHA256 (go/devel_scc/scc-v3.5.0/v3.5.0.mod) = 6936ee458ad1f22a884af11b158f44a36d24576dab548dbe1a4a40f0d06e705b
-SIZE (go/devel_scc/scc-v3.5.0/v3.5.0.mod) = 922
-SHA256 (go/devel_scc/scc-v3.5.0/v3.5.0.zip) = 6c787d923fddb906be66366cb503a812799377f2a6ec39c792122bf585b0f365
-SIZE (go/devel_scc/scc-v3.5.0/v3.5.0.zip) = 805183
+TIMESTAMP = 1761916161
+SHA256 (go/devel_scc/scc-v3.6.0/v3.6.0.mod) = 69d440e6f51afb2ebbf3f19ede5bf9c89f7a421c04689fca294b1dc1225f2424
+SIZE (go/devel_scc/scc-v3.6.0/v3.6.0.mod) = 992
+SHA256 (go/devel_scc/scc-v3.6.0/v3.6.0.zip) = e05d48697c309c1b3c8bd3daacb1fbea17ccf181467a8cc99926818ca1ab6e73
+SIZE (go/devel_scc/scc-v3.6.0/v3.6.0.zip) = 825740
