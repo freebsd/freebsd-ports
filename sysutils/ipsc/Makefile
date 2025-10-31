@@ -1,6 +1,5 @@
 PORTNAME=	ipsc
-PORTVERSION=	0.4.3
-PORTREVISION=	2
+PORTVERSION=	0.4.4
 CATEGORIES=	sysutils
 MASTER_SITES=	MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -26,6 +25,6 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ipsc ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/ipsc.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/ipsc.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
