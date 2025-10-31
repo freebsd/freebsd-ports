@@ -1,6 +1,5 @@
 PORTNAME=	butt
-PORTVERSION=	1.44.0
-PORTREVISION=	1
+PORTVERSION=	1.45.0
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	https://danielnoethen.de/butt/release/${PORTVERSION}/
 
@@ -11,6 +10,7 @@ WWW=		https://danielnoethen.de/butt/
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libdatachannel.so:www/libdatachannel \
 		libdbus-1.so:devel/dbus \
 		libFLAC.so:audio/flac \
 		libfdk-aac.so:audio/fdk-aac \
@@ -29,6 +29,7 @@ USES=		autoreconf compiler:c++11-lang gettext \
 		gmake jpeg pkgconfig xorg ssl uidfix
 USE_XORG=	x11 xrender xcursor xfixes xext xft xinerama
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--enable-webrtc
 CFLAGS+=	-I/usr/local/include
 LDFLAGS+=	-L/usr/local/lib -lintl
 PLIST_FILES=	bin/butt \
