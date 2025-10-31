@@ -32,6 +32,7 @@ include/mfem/fem/dgmassinv.hpp
 include/mfem/fem/dgmassinv_kernels.hpp
 include/mfem/fem/doftrans.hpp
 include/mfem/fem/eltrans.hpp
+include/mfem/fem/eltrans/eltrans_basis.hpp
 include/mfem/fem/estimators.hpp
 include/mfem/fem/fe.hpp
 include/mfem/fem/fe/face_map_utils.hpp
@@ -42,6 +43,7 @@ include/mfem/fem/fe/fe_l2.hpp
 include/mfem/fem/fe/fe_nd.hpp
 include/mfem/fem/fe/fe_nurbs.hpp
 include/mfem/fem/fe/fe_pos.hpp
+include/mfem/fem/fe/fe_pyramid.hpp
 include/mfem/fem/fe/fe_rt.hpp
 include/mfem/fem/fe/fe_ser.hpp
 include/mfem/fem/fe_coll.hpp
@@ -54,6 +56,7 @@ include/mfem/fem/geom.hpp
 include/mfem/fem/gridfunc.hpp
 include/mfem/fem/gslib.hpp
 include/mfem/fem/hybridization.hpp
+include/mfem/fem/hybridization_ext.hpp
 include/mfem/fem/hyperbolic.hpp
 include/mfem/fem/integ/bilininteg_diffusion_kernels.hpp
 include/mfem/fem/integ/bilininteg_elasticity_kernels.hpp
@@ -61,9 +64,12 @@ include/mfem/fem/integ/bilininteg_hcurl_kernels.hpp
 include/mfem/fem/integ/bilininteg_hcurlhdiv_kernels.hpp
 include/mfem/fem/integ/bilininteg_hdiv_kernels.hpp
 include/mfem/fem/integ/bilininteg_mass_kernels.hpp
+include/mfem/fem/integrator.hpp
 include/mfem/fem/intrules.hpp
 include/mfem/fem/intrules_cut.hpp
 include/mfem/fem/kdtree.hpp
+include/mfem/fem/kernel_dispatch.hpp
+include/mfem/fem/kernel_reporter.hpp
 include/mfem/fem/kernels.hpp
 include/mfem/fem/linearform.hpp
 include/mfem/fem/linearform_ext.hpp
@@ -97,8 +103,8 @@ include/mfem/fem/plinearform.hpp
 include/mfem/fem/pnonlinearform.hpp
 include/mfem/fem/prestriction.hpp
 include/mfem/fem/qfunction.hpp
-include/mfem/fem/qinterp/dispatch.hpp
 include/mfem/fem/qinterp/eval.hpp
+include/mfem/fem/qinterp/eval_hdiv.hpp
 include/mfem/fem/qinterp/grad.hpp
 include/mfem/fem/qspace.hpp
 include/mfem/fem/quadinterpolator.hpp
@@ -142,6 +148,7 @@ include/mfem/general/mem_manager.hpp
 include/mfem/general/occa.hpp
 include/mfem/general/optparser.hpp
 include/mfem/general/osockstream.hpp
+include/mfem/general/reducers.hpp
 include/mfem/general/sets.hpp
 include/mfem/general/socketstream.hpp
 include/mfem/general/sort_pairs.hpp
@@ -154,6 +161,11 @@ include/mfem/general/version.hpp
 include/mfem/general/zstr.hpp
 include/mfem/linalg/amgxsolver.hpp
 include/mfem/linalg/auxiliary.hpp
+include/mfem/linalg/batched/batched.hpp
+include/mfem/linalg/batched/gpu_blas.hpp
+include/mfem/linalg/batched/magma.hpp
+include/mfem/linalg/batched/native.hpp
+include/mfem/linalg/batched/solver.hpp
 include/mfem/linalg/blockmatrix.hpp
 include/mfem/linalg/blockoperator.hpp
 include/mfem/linalg/blockvector.hpp
@@ -172,8 +184,10 @@ include/mfem/linalg/hypre.hpp
 include/mfem/linalg/hypre_parcsr.hpp
 include/mfem/linalg/invariants.hpp
 include/mfem/linalg/kernels.hpp
+include/mfem/linalg/lapack.hpp
 include/mfem/linalg/linalg.hpp
 include/mfem/linalg/matrix.hpp
+include/mfem/linalg/mma.hpp
 include/mfem/linalg/mumps.hpp
 include/mfem/linalg/ode.hpp
 include/mfem/linalg/operator.hpp
@@ -223,6 +237,8 @@ include/mfem/mesh/pyramid.hpp
 include/mfem/mesh/quadrilateral.hpp
 include/mfem/mesh/segment.hpp
 include/mfem/mesh/spacing.hpp
+include/mfem/mesh/submesh/ncsubmesh.hpp
+include/mfem/mesh/submesh/pncsubmesh.hpp
 include/mfem/mesh/submesh/psubmesh.hpp
 include/mfem/mesh/submesh/ptransfermap.hpp
 include/mfem/mesh/submesh/submesh.hpp
@@ -238,10 +254,12 @@ include/mfem/mesh/wedge.hpp
 include/mfem/mfem-performance.hpp
 include/mfem/mfem.hpp
 lib/cmake/mfem/MFEMConfig.cmake
+lib/cmake/mfem/MFEMConfig.cmake.bak
 lib/cmake/mfem/MFEMConfigVersion.cmake
 lib/cmake/mfem/MFEMTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mfem/MFEMTargets.cmake
 lib/libmfem.so
-lib/libmfem.so.4.7.0
+lib/libmfem.so.4.8.0
 %%DATADIR%%/config.mk
 %%DATADIR%%/test.mk
+@dir include/mfem/fem/gslib
