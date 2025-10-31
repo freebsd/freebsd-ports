@@ -261,11 +261,12 @@
 %%WWWDIR%%/nodes/core/AssignNode.js
 %%WWWDIR%%/nodes/core/AttributeNode.js
 %%WWWDIR%%/nodes/core/BypassNode.js
-%%WWWDIR%%/nodes/core/CacheNode.js
 %%WWWDIR%%/nodes/core/ConstNode.js
 %%WWWDIR%%/nodes/core/ContextNode.js
 %%WWWDIR%%/nodes/core/IndexNode.js
 %%WWWDIR%%/nodes/core/InputNode.js
+%%WWWDIR%%/nodes/core/InspectorNode.js
+%%WWWDIR%%/nodes/core/IsolateNode.js
 %%WWWDIR%%/nodes/core/LightingModel.js
 %%WWWDIR%%/nodes/core/MRTNode.js
 %%WWWDIR%%/nodes/core/Node.js
@@ -315,6 +316,7 @@
 %%WWWDIR%%/nodes/display/ViewportTextureNode.js
 %%WWWDIR%%/nodes/fog/Fog.js
 %%WWWDIR%%/nodes/functions/BSDF/BRDF_GGX.js
+%%WWWDIR%%/nodes/functions/BSDF/BRDF_GGX_Multiscatter.js
 %%WWWDIR%%/nodes/functions/BSDF/BRDF_Lambert.js
 %%WWWDIR%%/nodes/functions/BSDF/BRDF_Sheen.js
 %%WWWDIR%%/nodes/functions/BSDF/DFGApprox.js
@@ -447,6 +449,7 @@
 %%WWWDIR%%/renderers/common/Buffer.js
 %%WWWDIR%%/renderers/common/BufferUtils.js
 %%WWWDIR%%/renderers/common/BundleGroup.js
+%%WWWDIR%%/renderers/common/CanvasTarget.js
 %%WWWDIR%%/renderers/common/ChainMap.js
 %%WWWDIR%%/renderers/common/ClippingContext.js
 %%WWWDIR%%/renderers/common/Color4.js
@@ -457,6 +460,7 @@
 %%WWWDIR%%/renderers/common/Geometries.js
 %%WWWDIR%%/renderers/common/IndirectStorageBufferAttribute.js
 %%WWWDIR%%/renderers/common/Info.js
+%%WWWDIR%%/renderers/common/InspectorBase.js
 %%WWWDIR%%/renderers/common/Lighting.js
 %%WWWDIR%%/renderers/common/Pipeline.js
 %%WWWDIR%%/renderers/common/Pipelines.js
@@ -499,6 +503,7 @@
 %%WWWDIR%%/renderers/common/nodes/NodeUniformBuffer.js
 %%WWWDIR%%/renderers/common/nodes/NodeUniformsGroup.js
 %%WWWDIR%%/renderers/common/nodes/Nodes.js
+%%WWWDIR%%/renderers/shaders/DFGLUTData.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/alphahash_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/alphahash_pars_fragment.glsl.js
