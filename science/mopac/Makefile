@@ -1,6 +1,6 @@
 PORTNAME=	mopac
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.1.2
+DISTVERSION=	23.2.2
 PORTEPOCH=	1
 CATEGORIES=	science # chemistry
 
@@ -32,5 +32,6 @@ PLIST_FILES=	bin/mopac \
 		lib/libmopac.so.2
 
 # tests as of 23.1.2: 100% tests passed, 0 tests failed out of 125
+# tests as of 23.2.2: 99% tests passed, 1 tests failed out of 125, see https://github.com/openmopac/mopac/issues/302
 
 .include <bsd.port.mk>
