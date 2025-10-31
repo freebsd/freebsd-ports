@@ -1,5 +1,5 @@
 PORTNAME=	gemini-cli
-DISTVERSION=	0.9.0
+DISTVERSION=	0.11.2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,12 +10,10 @@ WWW=		https://geminicli.com/ \
 
 LICENSE=	APACHE20
 
+BUILD_DEPENDS=	npm:www/npm
 FETCH_DEPENDS=	npm:www/npm
 
-USES=		nodejs:run
-
-NO_BUILD=	yes
-NO_ARCH=	yes
+USES=		nodejs:build,run python:build
 
 PACKAGE_NAME=	@google/gemini-cli
 
@@ -53,6 +51,12 @@ do-fetch:
 		cd ${WRKDIR} && ${FIND} ${PORTNAME}-${DISTVERSION} -print0 | LC_ALL=C ${SORT} -z | \
 			${TAR} czf ${DISTDIR}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} --format=bsdtar --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T - \
 	); fi
+
+do-build:
+	# Build native modules for node-pty
+	@cd ${WRKSRC}/lib/node_modules/${PACKAGE_NAME}/node_modules/node-pty && \
+		${SETENV} HOME=${WRKDIR} CFLAGS="-I${LOCALBASE}/include" CXXFLAGS="-I${LOCALBASE}/include" \
+		npm rebuild --nodedir=${LOCALBASE}
 
 do-install:
 	# install files
