@@ -1,5 +1,5 @@
 PORTNAME=	MathMod
-PORTVERSION=	12.1
+PORTVERSION=	13.0
 CATEGORIES=	math graphics
 
 MAINTAINER=	thierry@FreeBSD.org
