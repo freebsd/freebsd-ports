@@ -1,7 +1,6 @@
 PORTNAME=	comrak
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.40.0
-PORTREVISION=	2
+DISTVERSION=	0.47.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,11 +42,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		derive_arbitrary-1.3.2 \
 		deunicode-0.4.5 \
 		deunicode-1.4.4 \
+		diff-0.1.13 \
 		emojis-0.6.2 \
 		entities-1.0.1 \
 		errno-0.3.8 \
 		fancy-regex-0.7.1 \
 		flate2-1.0.25 \
+		fmt2io-1.0.0 \
 		fnv-1.0.7 \
 		hashbrown-0.12.3 \
 		heck-0.4.1 \
@@ -58,6 +59,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		io-lifetimes-1.0.11 \
 		is-terminal-0.4.5 \
 		itoa-1.0.5 \
+		jetscii-0.5.3 \
 		lazy_static-1.4.0 \
 		libc-0.2.153 \
 		line-wrap-0.1.1 \
@@ -71,12 +73,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		ntest_timeout-0.9.2 \
 		once_cell-1.19.0 \
 		onig-6.4.0 \
-		onig_sys-69.8.1 \
+		onig_sys-69.9.1 \
 		os_str_bytes-6.6.1 \
+		percent-encoding-rfc3986-0.1.3 \
 		phf-0.11.1 \
 		phf_shared-0.11.1 \
 		pkg-config-0.3.26 \
 		plist-1.3.1 \
+		pretty_assertions-1.4.1 \
 		prettyplease-0.2.25 \
 		proc-macro-crate-1.2.1 \
 		proc-macro-error-1.0.4 \
@@ -158,7 +162,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		winnow-0.3.8 \
 		xdg-2.5.2 \
 		xml-rs-0.8.14 \
-		yaml-rust-0.4.5
+		yaml-rust-0.4.5 \
+		yansi-1.0.1
 
 PLIST_FILES=	bin/${PORTNAME}
 
