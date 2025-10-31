@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-10-30 17:35:11 UTC
++++ pyproject.toml
+@@ -4,7 +4,7 @@ requires-python = ">=3.10"
+ description = "Web interface for the accounting tool Beancount."
+ readme = "README.rst"
+ requires-python = ">=3.10"
+-license = "MIT"
++license = {text = "MIT"}
+ authors = [
+   {name = "Dominik Aumayr", email = "dominik@aumayr.name"}
+ ]
