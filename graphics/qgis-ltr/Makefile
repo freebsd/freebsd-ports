@@ -1,5 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.40.11
+DISTVERSION=	3.40.12
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
@@ -56,7 +56,6 @@ LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
 		libqt5keychain.so:security/qtkeychain@qt5 \
 		libqwt.so:x11-toolkits/qwt6@qt5 \
 		librttopo.so:devel/librttopo \
-		libspatialindex.so:devel/spatialindex \
 		libspatialite.so:databases/spatialite \
 		libsz.so:science/libaec \
 		libxerces-c.so:textproc/xerces-c3 \
@@ -134,9 +133,14 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/include/qt5/qwt6 \
 		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt.so \
 		-DQGIS_MANUAL_SUBDIR:PATH=share/man
+# [2025-10-25] Use internal spatialindex, as the one in the ports is too new:
+# -- Found Spatialindex: /usr/local/lib/libspatialindex.so (2.1.0)
+# CMake Error at CMakeLists.txt:460 (message):
+#   Cannot build QGIS using libspatialindex >= 2.1, see
+#   https://github.com/libspatialindex/libspatialindex/issues/276
 CMAKE_ON=	USE_OPENCL WITH_3D WITH_ASTYLE WITH_BINDINGS WITH_COPC \
 		WITH_CUSTOM_WIDGETS WITH_DRACO WITH_EPT WITH_INTERNAL_LAZPERF \
-		WITH_POSTGRESQL WITH_QTWEBENGINE
+		WITH_POSTGRESQL WITH_QTWEBENGINE WITH_INTERNAL_SPATIALINDEX
 CMAKE_OFF=	ENABLE_TESTS USE_CCACHE WITH_INTERNAL_MDAL WITH_QTWEBKIT WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis
