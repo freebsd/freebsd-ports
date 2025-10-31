@@ -18,4 +18,6 @@ USE_TEX=	dvipsk:run latex:run
 
 SHEBANG_FILES=	gladtex
 
+CONFLICTS_INSTALL=	py-gladtex
+
 .include <bsd.port.mk>
