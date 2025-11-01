@@ -147,7 +147,6 @@
     SUBDIR += sshout
     SUBDIR += tde2e
     SUBDIR += tdlib
-    SUBDIR += tdlib-purple
     SUBDIR += telegram-cli
     SUBDIR += telegram-desktop
     SUBDIR += telegramqml
