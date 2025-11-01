@@ -1,5 +1,3 @@
-TIMESTAMP = 1625410349
-SHA256 (hobu-laz-perf-2.0.0_GH0.tar.gz) = 0b088e17b7ed96333fc4d791fb78d021e37a63c97fe85dff59b19a0098df6462
-SIZE (hobu-laz-perf-2.0.0_GH0.tar.gz) = 4968421
-SHA256 (a003d1ead4afb9a0c61cde8b00340c489f2ce370.patch) = 9dc35fcf10ef722a9901152faeb4c727532010f690484329df98249af9234a4e
-SIZE (a003d1ead4afb9a0c61cde8b00340c489f2ce370.patch) = 857
+TIMESTAMP = 1759662522
+SHA256 (hobu-laz-perf-3.4.0_GH0.tar.gz) = ddc1219cac345aee53a33b52dde6b28892e85708b848ab6831dc0c9aa795534d
+SIZE (hobu-laz-perf-3.4.0_GH0.tar.gz) = 4992941

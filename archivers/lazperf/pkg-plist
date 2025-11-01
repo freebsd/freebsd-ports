@@ -1,7 +1,10 @@
 include/lazperf/filestream.hpp
-include/lazperf/io.hpp
+include/lazperf/header.hpp
 include/lazperf/lazperf.hpp
+include/lazperf/lazperf_base.hpp
+include/lazperf/readers.hpp
 include/lazperf/vlr.hpp
+include/lazperf/writers.hpp
 lib/cmake/LAZPERF/lazperf-config-version.cmake
 lib/cmake/LAZPERF/lazperf-config.cmake
 lib/cmake/LAZPERF/lazperf-targets-%%CMAKE_BUILD_TYPE%%.cmake
