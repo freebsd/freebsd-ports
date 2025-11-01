@@ -4845,3 +4845,4 @@ emulators/citra-qt5||2025-11-01|Has expired: project has been discontinued and b
 emulators/citra||2025-11-01|Has expired: project has been discontinued and build fails with FFmpeg >7
 games/renpy||2025-11-01|Has expired: Uses deprecated version of python
 security/rhonabwy||2025-11-01|Has expired: Upstream repository has been archived on Nov 11, 2024
+devel/electron35||2025-11-01|Has expired: EOLed upstream, switch to newer version
