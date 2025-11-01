@@ -18,7 +18,6 @@
     SUBDIR += cemu
     SUBDIR += cingb
     SUBDIR += citra
-    SUBDIR += citra-qt5
     SUBDIR += cpmtools
     SUBDIR += cpmtools2
     SUBDIR += darcnes
