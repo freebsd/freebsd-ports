@@ -1,5 +1,5 @@
 PORTNAME=	valkey
-DISTVERSION=	8.1.4
+DISTVERSION=	9.0.0
 CATEGORIES=	databases
 
 MAINTAINER=	bofh@freebsd.org
@@ -62,6 +62,9 @@ post-install:
 	${MKDIR} ${STAGEDIR}${VALKEY_LOGDIR} \
 		${STAGEDIR}${VALKEY_DBDIR} \
 		${STAGEDIR}${VALKEY_RUNDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/valkey-benchmark
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/valkey-cli
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/valkey-server
 
 do-test:
 	@cd ${WRKSRC} && ${TCLSH} tests/test_helper.tcl
