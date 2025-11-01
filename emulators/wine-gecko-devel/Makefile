@@ -1,9 +1,9 @@
 PORTNAME=	wine-gecko
 DISTVERSION=	2.47.4
+DISTVERSIONSUFFIX=-x86
 CATEGORIES=	emulators
 MASTER_SITES=	http://dl.winehq.org/wine/wine-gecko/${DISTVERSION}/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	wine-gecko-${DISTVERSION}-x86
 EXTRACT_SUFX=	.msi
 EXTRACT_ONLY=
 
