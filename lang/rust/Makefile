@@ -1,6 +1,6 @@
 PORTNAME=	rust
-PORTVERSION?=	1.90.0
-PORTREVISION?=	2
+PORTVERSION?=	1.91.0
+PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://dev-static.rust-lang.org/dist/:src \
@@ -47,7 +47,7 @@ CONFLICTS_INSTALL?=	rust-nightly rust188
 TMPDIR?=	${WRKDIR}
 
 OPTIONS_DEFINE=		DOCS GDB LTO PORT_LLVM SOURCES WASM
-OPTIONS_DEFAULT=	DOCS SOURCES WASM
+OPTIONS_DEFAULT=	DOCS SOURCES
 OPTIONS_DEFINE_i386=	SSE2
 OPTIONS_DEFAULT_i386=	SSE2
 
@@ -65,14 +65,15 @@ DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
 PORT_LLVM_USES=		llvm:min=19,lib,noexport
 PORT_LLVM_MAKE_ENV=	RUSTFLAGS="-Lnative=${LOCALBASE}/lib"
+WASM_USES=		llvm:min=19,lib,noexport
 SOURCES_VARS=		_COMPONENTS+=rust-src-${_PACKAGE_VERS} \
 			_RUST_TOOLS+=src
 WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown rust-std-${_PACKAGE_VERS}-wasm32-unknown-unknown" \
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
 # See WRKSRC/src/stage0 for the date and version values
-BOOTSTRAPS_DATE?=		2025-08-07
-RUST_BOOTSTRAP_VERSION?=	1.89.0
+BOOTSTRAPS_DATE?=		2025-09-18
+RUST_BOOTSTRAP_VERSION?=	1.90.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -217,16 +218,25 @@ do-configure:
 .if ${ARCH} == powerpc
 	@${ECHO_CMD} 'cc="${WRKDIR}/cc-wrapper"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'cxx="${WRKDIR}/cxx-wrapper"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'linker="${CC}"' >> ${WRKSRC}/config.toml
+.else
+# base clang doesn't support wasm32-unknown-unknown, use llvm from ports
+.if ${_target} == "wasm32-unknown-unknown"
+	@${ECHO_CMD} 'cc="${LOCALBASE}/bin/clang${LLVM_VERSION}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'cxx="${LOCALBASE}/bin/clang++${LLVM_VERSION}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'linker="${LOCALBASE}/bin/clang${LLVM_VERSION}"' >> ${WRKSRC}/config.toml
 .else
 	@${ECHO_CMD} 'cc="${CC}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'cxx="${CXX}"' >> ${WRKSRC}/config.toml
-.endif
 	@${ECHO_CMD} 'linker="${CC}"' >> ${WRKSRC}/config.toml
+.endif
+.endif # powerpc
 .if ${PORT_OPTIONS:MPORT_LLVM}
 	@${ECHO_CMD} 'llvm-config="${LOCALBASE}/bin/${LLVM_CONFIG}"' >> ${WRKSRC}/config.toml
 .endif
 .endfor
 	@${ECHO_CMD} '[dist]' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'compression-formats=["xz"]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'src-tarball=false' >> ${WRKSRC}/config.toml
 
 do-build:

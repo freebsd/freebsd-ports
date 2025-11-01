@@ -109,7 +109,7 @@ WRKSRC_crate_${_crate}=	${WRKDIR}/${_wrksrc}
 
 CARGO_BUILDDEP?=	yes
 .  if ${CARGO_BUILDDEP:tl} == "yes"
-BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.90.0:lang/${RUST_DEFAULT}
+BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.91.0:lang/${RUST_DEFAULT}
 .  elif ${CARGO_BUILDDEP:tl} == "any-version"
 BUILD_DEPENDS+=	${RUST_DEFAULT}>=0:lang/${RUST_DEFAULT}
 .  endif
