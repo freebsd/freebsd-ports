@@ -1,6 +1,6 @@
 PORTNAME=	Mathics3
 PORTVERSION=	9.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -73,7 +73,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 #GH_ACCOUNT=	${PORTNAME:tl}
 
 USES=		python shebangfix
-USE_PYTHON=	cython cython_run noflavors pep517
+USE_PYTHON=	cython3 cython3_run noflavors pep517
 MAKE_ENV+=	USE_CYTHON=yes
 SHEBANG_GLOB=	*.py
 
