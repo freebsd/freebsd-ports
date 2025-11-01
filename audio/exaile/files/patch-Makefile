@@ -8,7 +8,96 @@
  
  .PHONY: all all_no_locale builddir compile make-install-dirs uninstall \
  	install install_no_locale install-target locale install-locale \
-@@ -243,7 +244,7 @@ pot:
+@@ -54,19 +55,7 @@ make-install-dirs:
+ make-install-dirs:
+ 	install -d -m 755 $(EXAILEBINDIR)
+ 	install -d -m 755 $(EXAILELIBDIR)
+-	install -d -m 755 $(EXAILELIBDIR)/xl
+-	install -d -m 755 $(EXAILELIBDIR)/xl/externals
+-	install -d -m 755 $(EXAILELIBDIR)/xl/metadata
+-	install -d -m 755 $(EXAILELIBDIR)/xl/player
+-	install -d -m 755 $(EXAILELIBDIR)/xl/player/gst
+-	install -d -m 755 $(EXAILELIBDIR)/xl/migrations
+-	install -d -m 755 $(EXAILELIBDIR)/xl/migrations/database
+-	install -d -m 755 $(EXAILELIBDIR)/xl/migrations/settings
+-	install -d -m 755 $(EXAILELIBDIR)/xl/trax
+-	install -d -m 755 $(EXAILELIBDIR)/xlgui
+-	install -d -m 755 $(EXAILELIBDIR)/xlgui/panel
+-	install -d -m 755 $(EXAILELIBDIR)/xlgui/preferences
+-	install -d -m 755 $(EXAILELIBDIR)/xlgui/widgets
++	find xl xlgui -type d -exec install -d -m 755 $(EXAILELIBDIR)/'{}' ';'
+ 	install -d -m 755 $(EXAILESHAREDIR)
+ 	install -d -m 755 $(EXAILESHAREDIR)/data
+ 	install -d -m 755 $(EXAILESHAREDIR)/data/images/16x16
+@@ -77,10 +66,7 @@ make-install-dirs:
+ 	install -d -m 755 $(EXAILESHAREDIR)/data/images/128x128
+ 	install -d -m 755 $(EXAILESHAREDIR)/data/images/scalable
+ 	install -d -m 755 $(EXAILESHAREDIR)/data/ui
+-	install -d -m 755 $(EXAILESHAREDIR)/data/ui/panel
+-	install -d -m 755 $(EXAILESHAREDIR)/data/ui/preferences
+-	install -d -m 755 $(EXAILESHAREDIR)/data/ui/preferences/widgets
+-	install -d -m 755 $(EXAILESHAREDIR)/data/ui/widgets
++	find data/ui -type d -exec install -d -m 755 $(EXAILESHAREDIR)/'{}' ';'
+ 	install -d -m 755 $(DESTDIR)$(DATADIR)/icons/hicolor/16x16/apps/
+ 	install -d -m 755 $(DESTDIR)$(DATADIR)/icons/hicolor/22x22/apps/
+ 	install -d -m 755 $(DESTDIR)$(DATADIR)/icons/hicolor/24x24/apps/
+@@ -128,40 +114,8 @@ install-target: make-install-dirs
+ 
+ install-target: make-install-dirs
+ 	install -p -m 644 exaile.py $(EXAILELIBDIR)
+-	-install -p -m 644 xl/*.py[co] $(EXAILELIBDIR)/xl
+-	install -p -m 644 xl/*.py $(EXAILELIBDIR)/xl
+-	-install -p -m 644 xl/externals/*.py[co] $(EXAILELIBDIR)/xl/externals
+-	install -p -m 644 xl/externals/*.py $(EXAILELIBDIR)/xl/externals
+-	-install -p -m 644 xl/metadata/*.py[co] $(EXAILELIBDIR)/xl/metadata
+-	install -p -m 644 xl/metadata/*.py $(EXAILELIBDIR)/xl/metadata
+-	-install -p -m 644 xl/player/*.py[co] $(EXAILELIBDIR)/xl/player
+-	install -p -m 644 xl/player/*.py $(EXAILELIBDIR)/xl/player
+-	-install -p -m 644 xl/player/gst/*.py[co] $(EXAILELIBDIR)/xl/player/gst
+-	install -p -m 644 xl/player/gst/*.py $(EXAILELIBDIR)/xl/player/gst
+-	-install -p -m 644 xl/migrations/*.py[co] $(EXAILELIBDIR)/xl/migrations
+-	install -p -m 644 xl/migrations/*.py $(EXAILELIBDIR)/xl/migrations
+-	-install -p -m 644 xl/migrations/database/*.py[co] $(EXAILELIBDIR)/xl/migrations/database/
+-	install -p -m 644 xl/migrations/database/*.py $(EXAILELIBDIR)/xl/migrations/database/
+-	-install -p -m 644 xl/migrations/settings/*.py[co] $(EXAILELIBDIR)/xl/migrations/settings/
+-	install -p -m 644 xl/migrations/settings/*.py $(EXAILELIBDIR)/xl/migrations/settings/
+-	-install -p -m 644 xl/trax/*.py[co] $(EXAILELIBDIR)/xl/trax
+-	install -p -m 644 xl/trax/*.py $(EXAILELIBDIR)/xl/trax
+-	-install -p -m 644 xlgui/*.py[co] $(EXAILELIBDIR)/xlgui
+-	install -p -m 644 xlgui/*.py $(EXAILELIBDIR)/xlgui
+-	-install -p -m 644 xlgui/panel/*.py[co] $(EXAILELIBDIR)/xlgui/panel
+-	install -p -m 644 xlgui/panel/*.py $(EXAILELIBDIR)/xlgui/panel
+-	-install -p -m 644 xlgui/preferences/*.py[co] $(EXAILELIBDIR)/xlgui/preferences
+-	install -p -m 644 xlgui/preferences/*.py $(EXAILELIBDIR)/xlgui/preferences
+-	-install -p -m 644 xlgui/widgets/*.py[co] $(EXAILELIBDIR)/xlgui/widgets
+-	install -p -m 644 xlgui/widgets/*.py $(EXAILELIBDIR)/xlgui/widgets
+-	install -p -m 644 data/images/16x16/*.png $(EXAILESHAREDIR)/data/images/16x16
+-	install -p -m 644 data/images/22x22/*.png $(EXAILESHAREDIR)/data/images/22x22
+-	install -p -m 644 data/images/24x24/*.png $(EXAILESHAREDIR)/data/images/24x24
+-	install -p -m 644 data/images/32x32/*.png $(EXAILESHAREDIR)/data/images/32x32
+-	install -p -m 644 data/images/48x48/*.png $(EXAILESHAREDIR)/data/images/48x48
+-	install -p -m 644 data/images/128x128/*.png $(EXAILESHAREDIR)/data/images/128x128
+-	install -p -m 644 data/images/scalable/*.svg $(EXAILESHAREDIR)/data/images/scalable
+-	install -p -m 644 data/images/*.png $(EXAILESHAREDIR)/data/images
++	find xl xlgui '(' -name '*.py' -o -name '*.pyc' ')' -exec install -p -m 644 '{}' $(EXAILELIBDIR)/'{}' ';'
++	find data/images '(' -name '*.png' -o -name '*.svg' ')' -exec install -p -m 644 '{}' $(EXAILESHAREDIR)/'{}' ';'
+ 	install -p -m 644 data/images/16x16/exaile.png \
+ 		$(DESTDIR)$(DATADIR)/icons/hicolor/16x16/apps/exaile.png
+ 	install -p -m 644 data/images/22x22/exaile.png \
+@@ -176,11 +130,7 @@ install-target: make-install-dirs
+ 		$(DESTDIR)$(DATADIR)/icons/hicolor/128x128/apps/exaile.png
+ 	install -p -m 644 data/images/scalable/exaile.svg \
+ 		$(DESTDIR)$(DATADIR)/icons/hicolor/scalable/apps/exaile.svg
+-	install -p -m 644 data/ui/*.ui $(EXAILESHAREDIR)/data/ui
+-	install -p -m 644 data/ui/panel/*.ui $(EXAILESHAREDIR)/data/ui/panel
+-	install -p -m 644 data/ui/preferences/*.ui $(EXAILESHAREDIR)/data/ui/preferences
+-	install -p -m 644 data/ui/preferences/widgets/*.ui $(EXAILESHAREDIR)/data/ui/preferences/widgets
+-	install -p -m 644 data/ui/widgets/*.ui $(EXAILESHAREDIR)/data/ui/widgets
++	find data/ui -name '*.ui' -exec install -p -m 644 '{}' $(EXAILESHAREDIR)/'{}' ';'
+ 	-install -p -m 644 build/exaile.desktop $(DESTDIR)$(DATADIR)/applications/
+ 	-install -p -m 644 build/org.exaile.exaile.appdata.xml $(DESTDIR)$(DATADIR)/metainfo/
+ 	-install -p -m 644 build/exaile.1.gz $(EXAILEMANDIR)/man1/
+@@ -243,7 +193,7 @@ pot:
  #   dash (Debian's /bin/sh) doesn't support it and exits immediately, so we test it in a subshell.
  # The "export LC_ALL=C" disables any locale-dependent sort behavior.
  pot:
