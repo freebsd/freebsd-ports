@@ -14,10 +14,6 @@ IGNORE=		lua module: patching is required
 IGNORE=		lua stream module: patching is required
 .endif
 
-.if ${PORT_OPTIONS:MOTEL}
-IGNORE=		otel module: patching is required
-.endif
-
 .if ${PORT_OPTIONS:MPASSENGER}
 IGNORE=		passenger module: patching is required
 .endif
