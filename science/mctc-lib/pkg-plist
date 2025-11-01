@@ -22,7 +22,9 @@ include/mctc-lib/modules/mctc_io_read_cjson.mod
 include/mctc-lib/modules/mctc_io_read_ctfile.mod
 include/mctc-lib/modules/mctc_io_read_gaussian.mod
 include/mctc-lib/modules/mctc_io_read_genformat.mod
+include/mctc-lib/modules/mctc_io_read_json.mod
 include/mctc-lib/modules/mctc_io_read_pdb.mod
+include/mctc-lib/modules/mctc_io_read_pymatgen.mod
 include/mctc-lib/modules/mctc_io_read_qchem.mod
 include/mctc-lib/modules/mctc_io_read_qcschema.mod
 include/mctc-lib/modules/mctc_io_read_turbomole.mod
@@ -40,6 +42,7 @@ include/mctc-lib/modules/mctc_io_write_ctfile.mod
 include/mctc-lib/modules/mctc_io_write_gaussian.mod
 include/mctc-lib/modules/mctc_io_write_genformat.mod
 include/mctc-lib/modules/mctc_io_write_pdb.mod
+include/mctc-lib/modules/mctc_io_write_pymatgen.mod
 include/mctc-lib/modules/mctc_io_write_qchem.mod
 include/mctc-lib/modules/mctc_io_write_qcschema.mod
 include/mctc-lib/modules/mctc_io_write_turbomole.mod
@@ -53,12 +56,14 @@ include/mctc-lib/modules/mctc_ncoord_erf_en.mod
 include/mctc-lib/modules/mctc_ncoord_exp.mod
 include/mctc-lib/modules/mctc_ncoord_type.mod
 include/mctc-lib/modules/mctc_version.mod
-lib/cmake/mctc-lib/Findjsonfortran.cmake
+lib/cmake/mctc-lib/Findjonquil.cmake
+lib/cmake/mctc-lib/Findtoml-f.cmake
 lib/cmake/mctc-lib/mctc-lib-config-version.cmake
 lib/cmake/mctc-lib/mctc-lib-config.cmake
 lib/cmake/mctc-lib/mctc-lib-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mctc-lib/mctc-lib-targets.cmake
+lib/cmake/mctc-lib/mctc-utils.cmake
 lib/libmctc-lib.so
 lib/libmctc-lib.so.0
-lib/libmctc-lib.so.0.4.0
+lib/libmctc-lib.so.0.5.0
 libdata/pkgconfig/mctc-lib.pc
