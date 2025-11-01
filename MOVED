@@ -4838,3 +4838,4 @@ databases/mongodb60|databases/mongodb70|2025-11-01|Has expired: EOL starting Aug
 www/phpmustache||2025-11-01|Has expired: Installation mode changed from systemwide to per-application with Composer
 dns/fpdns||2025-11-01|Has expired: Upstream repository has been archived on Sep 19, 2024
 databases/py-pycql||2025-11-01|Has expired: Upstream repository has been archived on Aug 31, 2021
+devel/py-types-ujson||2025-11-01|Has expired: No longer required by devel/py-ujson ≥ 5.11
