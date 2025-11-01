@@ -4753,7 +4753,6 @@
     SUBDIR += py-crosshair-tool
     SUBDIR += py-cson
     SUBDIR += py-csv23
-    SUBDIR += py-ctags
     SUBDIR += py-ctypesgen
     SUBDIR += py-cucumber-expressions
     SUBDIR += py-cucumber-tag-expressions
