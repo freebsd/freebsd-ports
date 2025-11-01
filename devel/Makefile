@@ -5661,7 +5661,6 @@
     SUBDIR += py-pyinstaller
     SUBDIR += py-pyinstaller-hooks-contrib
     SUBDIR += py-pyintelowl
-    SUBDIR += py-pyjq
     SUBDIR += py-pyjsparser
     SUBDIR += py-pykdtree
     SUBDIR += py-pylama
