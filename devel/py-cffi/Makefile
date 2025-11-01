@@ -18,7 +18,7 @@ LIB_DEPENDS=	libffi.so:devel/libffi
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycparser>=0:devel/py-pycparser@${PY_FLAVOR}
 
 USES=		compiler:c11 localbase python
-USE_PYTHON=	autoplist concurrent cython pep517 pytest
+USE_PYTHON=	autoplist concurrent cython3 pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
