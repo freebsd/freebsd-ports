@@ -29,7 +29,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bitvec-1.0.1 \
 		block-buffer-0.10.4 \
 		boxcar-0.2.14 \
-		bstr-1.12.0 \
+		bstr-1.12.1 \
 		bumpalo-3.19.0 \
 		byteorder-1.5.0 \
 		cachedir-0.3.1 \
@@ -45,8 +45,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
 		clang-sys-1.8.1 \
-		clap-4.5.49 \
-		clap_builder-4.5.49 \
+		clap-4.5.50 \
+		clap_builder-4.5.50 \
 		clap_complete-4.5.58 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.8 \
@@ -126,8 +126,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fsevent-sys-4.1.0 \
 		funty-2.0.0 \
 		generic-array-0.14.7 \
-		get-size-derive2-0.7.0 \
-		get-size2-0.7.0 \
+		get-size-derive2-0.7.1 \
+		get-size2-0.7.1 \
 		getopts-0.2.24 \
 		getrandom-0.2.16 \
 		getrandom-0.3.4 \
@@ -155,7 +155,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
-		ignore-0.4.23 \
+		ignore-0.4.24 \
 		imara-diff-0.1.8 \
 		imperative-1.0.6 \
 		indexmap-2.11.4 \
@@ -465,5 +465,5 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
-		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=d38145c29574758de7ffbe8a13cd4584c3b09161\#d38145c29574758de7ffbe8a13cd4584c3b09161 \
-		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439
+		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439 \
+		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=cdd0b85516a52c18b8a6d17a2279a96ed6c3e198\#cdd0b85516a52c18b8a6d17a2279a96ed6c3e198
