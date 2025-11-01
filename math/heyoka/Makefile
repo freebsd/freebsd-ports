@@ -11,7 +11,8 @@ WWW=		https://bluescarni.github.io/heyoka/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_13=	compilation fails: no member named 'transform' in namespace 'std::ranges'; did you mean 'llvm::transform' (std::ranges::transform isn't present)
+BROKEN=		Fails to build with fmt 12+, The supported fmt versions are in the range [9, 11], but version 12 was found instead.
+#BROKEN_FreeBSD_13=	compilation fails: no member named 'transform' in namespace 'std::ranges'; did you mean 'llvm::transform' (std::ranges::transform isn't present)
 
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libfmt.so:devel/libfmt \
