@@ -1,0 +1,17 @@
+--- CMakeLists.txt.orig	2025-07-31 19:41:17 UTC
++++ CMakeLists.txt
+@@ -21,10 +21,10 @@ add_compile_options(-std=gnu99 -Wall -Wextra -Wpedanti
+ include(GNUInstallDirs)
+ 
+ add_compile_options(-std=gnu99 -Wall -Wextra -Wpedantic)
+-if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+-    add_compile_options(-g -O0 -fsanitize=address -fno-omit-frame-pointer)
+-    add_link_options(-fsanitize=address)
+-endif()
++# if(CMAKE_BUILD_TYPE STREQUAL "Debug")
++#     add_compile_options(-g -O0 -fsanitize=address -fno-omit-frame-pointer)
++#     add_link_options(-fsanitize=address)
++# endif()
+ if (LINUX)
+     # For srandom(), random() & getopt().
+     add_compile_definitions(_GNU_SOURCE)

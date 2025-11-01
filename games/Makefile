@@ -594,6 +594,7 @@
     SUBDIR += lm-solve
     SUBDIR += lmarbles
     SUBDIR += lmpc
+    SUBDIR += loderunner-ng
     SUBDIR += lolcat
     SUBDIR += lordsawar
     SUBDIR += lpairs
