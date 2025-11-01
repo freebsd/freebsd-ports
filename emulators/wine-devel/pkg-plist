@@ -1021,6 +1021,7 @@ include/wine/windows/tbs.h
 include/wine/windows/tchar.h
 include/wine/windows/tcpestats.h
 include/wine/windows/tcpmib.h
+include/wine/windows/tdh.h
 include/wine/windows/textserv.h
 include/wine/windows/textstor.h
 include/wine/windows/textstor.idl
@@ -1627,6 +1628,7 @@ lib/wine/%%WINEARCH%%-unix/libstrmiids.a
 lib/wine/%%WINEARCH%%-unix/libsxs.a
 lib/wine/%%WINEARCH%%-unix/libt2embed.a
 lib/wine/%%WINEARCH%%-unix/libtapi32.a
+lib/wine/%%WINEARCH%%-unix/libtdh.a
 lib/wine/%%WINEARCH%%-unix/libucrtbase.a
 lib/wine/%%WINEARCH%%-unix/libuiautomationcore.a
 lib/wine/%%WINEARCH%%-unix/libunicows.a
@@ -2191,6 +2193,7 @@ lib/wine/%%WINEARCH%%-windows/libstrmiids.a
 lib/wine/%%WINEARCH%%-windows/libsxs.a
 lib/wine/%%WINEARCH%%-windows/libt2embed.a
 lib/wine/%%WINEARCH%%-windows/libtapi32.a
+lib/wine/%%WINEARCH%%-windows/libtdh.a
 lib/wine/%%WINEARCH%%-windows/libucrtbase.a
 lib/wine/%%WINEARCH%%-windows/libuiautomationcore.a
 lib/wine/%%WINEARCH%%-windows/libunicows.a
@@ -2640,6 +2643,7 @@ lib/wine/%%WINEARCH%%-windows/windows.storage.applicationdata.dll
 lib/wine/%%WINEARCH%%-windows/windows.storage.dll
 lib/wine/%%WINEARCH%%-windows/windows.system.profile.systemid.dll
 lib/wine/%%WINEARCH%%-windows/windows.system.profile.systemmanufacturers.dll
+lib/wine/%%WINEARCH%%-windows/windows.ui.core.textinput.dll
 lib/wine/%%WINEARCH%%-windows/windows.ui.dll
 lib/wine/%%WINEARCH%%-windows/windows.ui.xaml.dll
 lib/wine/%%WINEARCH%%-windows/windows.web.dll
