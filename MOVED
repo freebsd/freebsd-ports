@@ -4847,5 +4847,5 @@ games/renpy||2025-11-01|Has expired: Uses deprecated version of python
 security/rhonabwy||2025-11-01|Has expired: Upstream repository has been archived on Nov 11, 2024
 devel/electron35||2025-11-01|Has expired: EOLed upstream, switch to newer version
 lang/python39||2025-11-01|Has expired: Upgrade to a newer Python version. 3.9 is in maintenance status and gets security fixes only. End-of-Life: 2025-10. See https://devguide.python.org/versions/
-devel/py-pyjq|textproc/py-jq|2025-11-01|Removed: Depended on expired Python version
-devel/py-ctags||2025-11-01|Removed
+devel/py-pyjq|textproc/py-jq|2025-11-01|Removed: Depended on expired Python version 3.9 and does not build with newer Python
+devel/py-ctags||2025-11-01|Removed: Depended on expired Python version 3.9 and does not build with newer Python
