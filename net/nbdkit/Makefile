@@ -1,12 +1,12 @@
 PORTNAME=	nbdkit
-PORTVERSION=	1.44.3
+PORTVERSION=	1.44.4
 CATEGORIES=	net
 # XXX Although nbdkit uses github for its homepage, the release tarballs served
 # by github haven't been through autoconf.  So we must download the sources
 # from libguestfs.org instead.
 MASTER_SITES=	http://download.libguestfs.org/${PORTNAME}/${PORTVERSION:R}-stable/
 
-MAINTAINER=	asomers@FreeBSD.org
+MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Network Block Device server toolkit with stable ABI and permissive license
 WWW=		https://gitlab.com/nbdkit/nbdkit
 
@@ -20,6 +20,7 @@ USES=		compiler:c11 cpe gmake libtool pkgconfig
 
 CPE_VENDOR=	nbdkit_project
 USE_LDCONFIG=	yes
+USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=		yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
