@@ -400,7 +400,6 @@
     SUBDIR += minio-client
     SUBDIR += miniserve
     SUBDIR += mirrorselect
-    SUBDIR += mitmproxy
     SUBDIR += mknmz-wwwoffle
     SUBDIR += mod_asn
     SUBDIR += mod_auth_cas
