@@ -1,6 +1,7 @@
 PORTNAME=	timestamp-authority
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.9
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org

@@ -1,6 +1,6 @@
 PORTNAME=	hockeypuck
 DISTVERSION=	2.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 
 MAINTAINER=	me@svmhdvn.name
