@@ -6,16 +6,17 @@ PKGNAMESUFFIX=	${PYTHON_SUFFIX}
 DISTNAME=	Python-${DISTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
 WWW=		https://www.python.org/
 
 LICENSE=	PSFL
 
-LIB_DEPENDS=	libffi.so:devel/libffi
+LIB_DEPENDS=	libffi.so:devel/libffi \
+		libzstd.so:archivers/zstd
 
 USES=		compiler:c11 cpe ncurses pathfix pkgconfig readline \
-		shebangfix ssl tar:xz
+		shebangfix sqlite ssl tar:xz
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -30,15 +31,16 @@ PYTHON_VER=		${PYTHON_DISTVERSION:R}
 PYTHON_VERSION=		python${PYTHON_VER}
 PYTHON_SUFFIX=		${PYTHON_VER:S/.//g}
 
-DISABLED_EXTENSIONS=	_sqlite3 _tkinter _gdbm
-CONFIGURE_ARGS+=	--enable-shared --without-ensurepip \
-			--with-system-ffi
+DISABLED_EXTENSIONS=	_tkinter _gdbm
+CONFIGURE_ARGS+=	--enable-shared --without-ensurepip
 CONFIGURE_ENV+=		OPT="" # Null out OPT to respect user CFLAGS and remove optimizations
 
 INSTALL_TARGET=		altinstall						# Don't want cloberring of unprefixed files
 
-TEST_TARGET=		buildbottest
-TEST_ARGS=		TESTOPTS=-j${MAKE_JOBS_NUMBER}
+# TEST_TARGET=		buildbottest # that's the --slow-ci with more resources/longer timeouts
+TEST_TARGET=		test # that's the --fast-ci with tighter timeouts and using less resources
+# TEST_ARGS: test_gdb requires debug symbols for the test_gdb.test_pretty_print test, so skip it unless defined(WITH_DEBUG)
+TEST_ARGS=		TESTOPTS="-j${MAKE_JOBS_NUMBER} ${WITH_DEBUG:U-x test_gdb}"
 
 MAKE_ARGS+=		INSTALL_SHARED="${INSTALL_LIB}"				# Strip shared library
 

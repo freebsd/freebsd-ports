@@ -2600,6 +2600,7 @@ lib/python%%XYDOT%%/lib-dynload/_sha1.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_sha2.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_sha3.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_socket.cpython-%%XY%%%%ABI%%.so
+lib/python%%XYDOT%%/lib-dynload/_sqlite3.cpython-%%XY%%.so
 lib/python%%XYDOT%%/lib-dynload/_ssl.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_statistics.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_struct.cpython-%%XY%%%%ABI%%.so
@@ -2615,6 +2616,7 @@ lib/python%%XYDOT%%/lib-dynload/_testsinglephase.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_uuid.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_xxtestfuzz.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_zoneinfo.cpython-%%XY%%%%ABI%%.so
+lib/python%%XYDOT%%/lib-dynload/_zstd.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/array.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/binascii.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/cmath.cpython-%%XY%%%%ABI%%.so
