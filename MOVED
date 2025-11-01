@@ -4834,3 +4834,4 @@ devel/pycomposefile|devel/py-pycomposefile|2025-10-27|Rename to add py- prefix. 
 devel/rubygem-fugit111|devel/rubygem-fugit|2025-10-27|Remove obsoleted port. Use devel/rubygem-fugit instead
 science/py-hiphive|science/py-hiPhive|2025-10-28|Spelling changed into camel case on PYPI and GH
 games/burrtools|games/burr-tools|2025-10-31|Harmonise with upstream repository name
+databases/mongodb60|databases/mongodb70|2025-11-01|Has expired: EOL starting August 2025, see https://www.mongodb.com/legal/support-policy/lifecycles, please use databases/mongodb70
