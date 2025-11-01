@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+You can install the preferences file Autofirma.js in your Firefox profile:
+
+ln -s %%DATADIR%%/Autofirma.js ~/.mozilla/firefox/xxxxxxx.default-release/
+EOM
+}
+]
