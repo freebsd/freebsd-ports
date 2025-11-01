@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-USES=		compiler:c11 python:-3.13 tar:xz
+USES=		compiler:c11 python:3.10-3.13 tar:xz
 USE_PYTHON=	allflavors autoplist pep517
 
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
