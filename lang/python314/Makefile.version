@@ -1,0 +1,7 @@
+# Mk/Uses/python.mk includes this file, don't remove it!
+
+# Do not forget to
+# 1. Update python documentation (lang/python-doc-*)
+#    Run "make -C lang/python-doc-html makesum"
+# 2. Remove PORTREVISION in Makefile
+PYTHON_DISTVERSION=	3.14.0
