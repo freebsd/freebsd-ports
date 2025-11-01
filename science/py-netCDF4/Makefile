@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Interface to the NetCDF Library (versions 3 and 4)
 WWW=		https://unidata.github.io/netcdf4-python/
 
