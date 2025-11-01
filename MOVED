@@ -4840,3 +4840,4 @@ dns/fpdns||2025-11-01|Has expired: Upstream repository has been archived on Sep 
 databases/py-pycql||2025-11-01|Has expired: Upstream repository has been archived on Aug 31, 2021
 devel/py-types-ujson||2025-11-01|Has expired: No longer required by devel/py-ujson ≥ 5.11
 devel/pysvn||2025-11-01|Has expired: Fails to build
+cad/impact||2025-11-01|Has expired: Does not work as intended

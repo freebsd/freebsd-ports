@@ -1,5 +1,0 @@
-#!/bin/sh
-
-cd %%DATADIR%%
-"%%LOCALBASE%%/bin/java" -Xmx1000m -Xss1m -cp .:bin:doc:lib/jogl.jar:lib/gluegen-rt.jar:lib/patbinfree153.jar:lib/LogDB.jar:lib/mysql-connector-java-5.1.11-bin.jar gui.ImpactGUI
-cd -
