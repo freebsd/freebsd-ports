@@ -6,7 +6,7 @@ include/archive.h
 include/archive_entry.h
 lib/libarchive.so
 lib/libarchive.so.13
-lib/libarchive.so.13.8.1
+lib/libarchive.so.13.8.2
 libdata/pkgconfig/libarchive.pc
 share/man/man1/bsdcat.1.gz
 share/man/man1/bsdcpio.1.gz
