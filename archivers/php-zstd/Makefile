@@ -3,7 +3,7 @@ DISTVERSION=	0.15.2
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
-MAINTAINER=	pkapila@gmail.com
+MAINTAINER=	pkaipila@gmail.com
 COMMENT=	Zstandard extension for PHP
 WWW=		https://github.com/kjdev/php-ext-zstd
 
