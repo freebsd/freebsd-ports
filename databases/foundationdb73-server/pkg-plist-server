@@ -1,6 +1,0 @@
-sbin/fdbmonitor
-sbin/fdbserver
-@sample %%ETCDIR%%/foundationdb.conf.sample
-@dir(%%FOUNDATIONDB_USER%%,%%FOUNDATIONDB_GROUP%%,755) %%ETCDIR%%
-@dir(%%FOUNDATIONDB_USER%%,%%FOUNDATIONDB_GROUP%%,755) %%FOUNDATIONDB_DBDIR%%
-@dir(%%FOUNDATIONDB_USER%%,%%FOUNDATIONDB_GROUP%%,755) %%FOUNDATIONDB_LOGDIR%%

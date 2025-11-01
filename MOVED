@@ -4850,3 +4850,7 @@ lang/python39||2025-11-01|Has expired: Upgrade to a newer Python version. 3.9 is
 devel/py-pyjq|textproc/py-jq|2025-11-01|Removed: Depended on expired Python version 3.9 and does not build with newer Python
 devel/py-ctags||2025-11-01|Removed: Depended on expired Python version 3.9 and does not build with newer Python
 net-im/tdlib-purple||2025-11-01|Remove broken port
+databases/foundationdb71-client||2025-11-01|Remove broken port
+databases/foundationdb71-server||2025-11-01|Remove broken port
+databases/foundationdb73-client||2025-11-01|Remove broken port
+databases/foundationdb73-server||2025-11-01|Remove broken port
