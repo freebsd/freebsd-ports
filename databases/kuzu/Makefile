@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Upstream repository archived on Oct 11, 2025
 
-USES=		cmake ninja:build python:3.9+,build
+USES=		cmake ninja:build python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kuzudb

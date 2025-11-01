@@ -25,7 +25,7 @@ TEST_DEPENDS=	asciidoc>=0:textproc/asciidoc \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}textile>=0:www/py-textile@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517 unittest
 
 NO_ARCH=	yes

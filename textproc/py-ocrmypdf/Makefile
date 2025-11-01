@@ -28,7 +28,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=6.36.0:devel/py-hypothesis@${PY
 		${PYTHON_PKGNAMEPREFIX}python-xmp-toolkit>=2.0.1:textproc/py-python-xmp-toolkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>=3.6.8:print/py-reportlab@${PY_FLAVOR}
 
-USES=		ghostscript:run python:3.10+ shebangfix
+USES=		ghostscript:run python shebangfix
 USE_PYTHON=	autoplist concurrent pep517 pytest
 # Skip some checks as they yield wrong results if run with the root account
 PYTEST_IGNORED_TESTS=	test_chmod \

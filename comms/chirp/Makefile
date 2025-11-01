@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyserial>0:comms/py-pyserial@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yattag>0:devel/py-yattag@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}suds>0:net/py-suds@${PY_FLAVOR}
 
-USES=		desktop-file-utils gnome python:3.10+ shebangfix
+USES=		desktop-file-utils gnome python shebangfix
 SHEBANG_GLOB=	*.py
 
 USE_GITHUB=	yes

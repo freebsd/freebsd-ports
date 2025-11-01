@@ -31,7 +31,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosql>=10.1:databases/py-aiosql@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}typer>=0.12.3:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uc-micro-py>=1.0.3:textproc/py-uc-micro-py@${PY_FLAVOR}
 
-USES=		python:3.10+
+USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}

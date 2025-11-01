@@ -66,7 +66,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=1.3:devel/py-arrow@${PY_FLAVOR} \
 # watchdog is pulled in by streamlit
 # google-generativeai is not a popular aider dependency
 
-USES=		python:3.10+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent pep517
 SHEBANG_FILES=	aider/coders/base_coder.py aider/coders/search_replace.py
 

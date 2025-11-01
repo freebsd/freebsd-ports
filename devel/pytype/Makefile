@@ -31,7 +31,7 @@ RUN_DEPENDS=	ninja>=1.10.2:devel/ninja \
 		${PYTHON_PKGNAMEPREFIX}toml>=0.10.2:textproc/py-toml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.3.0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python:3.10+
+USES=		compiler:c++11-lang python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}

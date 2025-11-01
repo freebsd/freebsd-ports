@@ -12,7 +12,7 @@ WWW=		https://github.com/yaroslaff/evalidate
 
 LICENSE=	MIT
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest # the test tests/test_jailbreak.py::TestJailbreak::test_mul_overflow runs in  a very high memory - 12+GB, see https://github.com/yaroslaff/evalidate/issues/8
 
 USE_GITHUB=	yes

@@ -24,7 +24,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR} \
 		redis-server:databases/redis
 
-USES=		python:3.10+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 TEST_ENV=	DJANGO_SETTINGS_MODULE=settings.sqlite \

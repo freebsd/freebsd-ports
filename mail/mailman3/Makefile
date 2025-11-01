@@ -36,7 +36,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosmtpd>=1.4.3:mail/py-aiosmtpd@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}zope.event>0:devel/py-zope.event@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=5.0:devel/py-zope.interface@${PY_FLAVOR}
 
-USES=		cpe python:3.9+
+USES=		cpe python
 
 CPE_VENDOR=	gnu
 USE_PYTHON=	autoplist concurrent pep517

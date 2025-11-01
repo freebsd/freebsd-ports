@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.59.0:print/py-fonttools@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}ufolib2>=0.18.1:print/py-ufolib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ufonormalizer>=0.6.1:x11-fonts/py-ufonormalizer@${PY_FLAVOR}
 
-USES=		python:3.10+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

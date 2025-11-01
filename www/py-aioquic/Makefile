@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}openssl>=24,1:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}service-identity>=24.1.0:security/py-service-identity@${PY_FLAVOR}
 
-USES=		python:3.10+ ssl
+USES=		python ssl
 USE_PYTHON=	autoplist concurrent cryptography pep517
 
 post-install:

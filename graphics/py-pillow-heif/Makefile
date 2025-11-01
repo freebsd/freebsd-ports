@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FL
 LIB_DEPENDS=	libheif.so:graphics/libheif
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=10.1.0:graphics/py-pillow@${PY_FLAVOR}
 
-USES=		localbase python:3.9+
+USES=		localbase python
 USE_PYTHON=	autoplist concurrent pep517
 
 LDFLAGS+=	-lheif

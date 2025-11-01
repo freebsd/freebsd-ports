@@ -20,7 +20,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		liblcms2.so:graphics/lcms2 \
 		libzstd.so:archivers/zstd
 
-USES=		cargo cpe gmake gnome llvm:min=16,build ninja:build pkgconfig:build python:3.9+,build
+USES=		cargo cpe gmake gnome llvm:min=16,build ninja:build pkgconfig:build python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	denoland

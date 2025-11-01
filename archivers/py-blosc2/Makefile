@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}py-cpuinfo>=0:sysutils/py-py-cpuinfo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
-USES=		cmake:indirect pkgconfig python:3.10+
+USES=		cmake:indirect pkgconfig python
 USE_PYTHON=	autoplist concurrent cython3 pep517
 
 MAKE_ENV=	USE_SYSTEM_BLOSC2=1

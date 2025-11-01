@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	distutils autoplist unittest
 
 USE_GITHUB=	yes

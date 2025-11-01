@@ -31,7 +31,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=1.0.0:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.15.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}terminaltables>=3.1.0:textproc/py-terminaltables@${PY_FLAVOR}
 
-USES=		python:3.9-3.12
+USES=		python:-3.12
 USE_GITHUB=	yes
 GH_ACCOUNT=	oracle
 USE_PYTHON=	autoplist concurrent cryptography pep517

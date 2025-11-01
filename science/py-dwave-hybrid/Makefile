@@ -24,7 +24,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>5:devel/py-click@${PY_FLAVOR} \
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	distutils autoplist unittest # several tests fail, see https://github.com/dwavesystems/dwave-hybrid/issues/276
 
 USE_GITHUB=	yes

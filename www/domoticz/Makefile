@@ -50,7 +50,7 @@ PYTHON_DESC=	Enable Python for Plugins and Event-Scripts
 
 PRECOMP_CMAKE_BOOL=	USE_PRECOMPILED_HEADER
 
-PYTHON_USES=		python:3.9+
+PYTHON_USES=		python
 PYTHON_CMAKE_BOOL=	USE_PYTHON
 
 post-install:

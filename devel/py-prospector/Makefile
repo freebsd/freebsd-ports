@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dodgy>=0.2.1<0.3.0:devel/py-dodgy@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}toml>=0.10.2<0.11.0:textproc/py-toml@${PY_FLAVOR} \
 		pylint${PYTHON_PKGNAMESUFFIX}>=3.0:devel/pylint
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

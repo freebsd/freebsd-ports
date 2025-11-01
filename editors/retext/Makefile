@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0:textproc/py-docutils@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}python-markdown-math>=0.6:textproc/py-python-markdown-math@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymdown-extensions>0:textproc/py-pymdown-extensions@${PY_FLAVOR}
 
-USES=		desktop-file-utils display:test pyqt:6 python:3.9+ qt:6
+USES=		desktop-file-utils display:test pyqt:6 python qt:6
 USE_PYQT=	pyqt6:run
 USE_PYTHON=	autoplist noflavors pep517 pytest
 USE_QT=		tools:build

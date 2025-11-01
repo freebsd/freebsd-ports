@@ -51,7 +51,7 @@ RUN_DEPENDS=	adcli:net-mgmt/adcli \
 		cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 
 USES=	autoreconf cpe gettext gmake gssapi:flags,mit iconv ldap \
-	libtool localbase:ldflags pathfix pkgconfig python:3.9+ samba:env \
+	libtool localbase:ldflags pathfix pkgconfig python samba:env \
 	shebangfix ssl
 
 USE_LDCONFIG=	yes

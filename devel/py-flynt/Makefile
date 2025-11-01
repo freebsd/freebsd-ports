@@ -12,7 +12,7 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist pep517
 

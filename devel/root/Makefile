@@ -138,8 +138,8 @@ PGSQL_USES=		pgsql:13+
 PYROOT_CMAKE_BOOL=	pyroot tpython tmva-pymva
 PYROOT_DESC=		Enable bindings between Python and C++ with PyROOT
 PYROOT_BUILD_DEPENDS=	${PYNUMPY}
-PYROOT_USES=		python:3.9+,build,run
-PYROOT_USES_OFF=	python:3.9+,build
+PYROOT_USES=		python:build,run
+PYROOT_USES_OFF=	python:build
 
 QT6WEB_CMAKE_BOOL=	qt6web
 QT6WEB_DESC=		Enable support for Qt6 web-based display

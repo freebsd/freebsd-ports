@@ -22,7 +22,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup@${PY_
 		${PYTHON_PKGNAMEPREFIX}django-requests-debug-toolbar>=0:www/py-django-requests-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isort>=0:devel/py-isort@${PY_FLAVOR}
 
-USES=		cpe python:3.9+ shebangfix
+USES=		cpe python shebangfix
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

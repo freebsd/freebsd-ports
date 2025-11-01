@@ -14,7 +14,7 @@ BUILD_DEPENDS=	sq:security/sequoia-sq \
 RUN_DEPENDS=	bash:shells/bash \
 		pacman-key:sysutils/pacman@archlinux
 
-USES=		gmake pkgconfig python:3.10+ shebangfix trigger
+USES=		gmake pkgconfig python shebangfix trigger
 SHEBANG_FILES=	keyringctl wkd_sync
 BINARY_ALIAS=	install=ginstall
 

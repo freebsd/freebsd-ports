@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.9.0:devel/py-flit-core@${PY_F
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydata-sphinx-theme>=0.15.4:textproc/py-pydata-sphinx-theme@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=5.3,1:textproc/py-sphinx@${PY_FLAVOR} \
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

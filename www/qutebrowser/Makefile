@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0:devel/py-colorama@${PY_FLAVOR} \
 FLAVORS=	qt6 qt5
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		cpe desktop-file-utils python:3.9+
+USES=		cpe desktop-file-utils python
 USE_PYQT=	webengine
 USE_PYTHON=	autoplist noflavors pep517
 

@@ -21,7 +21,7 @@ TEST_TARGET=	check-TESTS
 
 OPTIONS_DEFINE=	TEST
 
-TEST_USES=		python:3.9+
+TEST_USES=		python
 TEST_CONFIGURE_ENABLE=	ptool-checks unit
 TEST_LIB_DEPENDS=	libcmocka.so:sysutils/cmocka
 TEST_RUN_DEPENDS=	dbus-run-session:devel/dbus

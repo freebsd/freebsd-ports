@@ -37,7 +37,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansi2html>0:textproc/py-ansi2html@${PY_FLAV
 		git>0:devel/git \
 		rsync>0:net/rsync
 
-USES=		pytest python:3.9+
+USES=		pytest python
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
 USE_PYTHON=	autoplist concurrent pep517

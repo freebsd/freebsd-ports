@@ -12,7 +12,7 @@ WWW=		https://logbook.readthedocs.org/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	distutils autoplist cython
 
 .include <bsd.port.mk>

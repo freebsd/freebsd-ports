@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}marshmallow>=3.18.0:devel/py-marshmallow@${P
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=1.4.40<3.0:databases/py-sqlalchemy20@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-lazy-fixture>=0.6.2:devel/py-pytest-lazy-fixture@${PY_FLAVOR} \
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes

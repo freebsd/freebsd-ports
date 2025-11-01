@@ -12,7 +12,7 @@ WWW=		https://github.com/rubenvannieuwpoort/reals
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.10+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

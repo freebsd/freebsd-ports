@@ -35,7 +35,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}annotated-types>0:devel/py-annotated-types@
 		${PYTHON_PKGNAMEPREFIX}tabulate>0:devel/py-tabulate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unicodeitplus>0:textproc/py-unicodeitplus@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang python:3.9+
+USES=		compiler:c++14-lang python
 USE_PYTHON=	pep517 cython_test autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}

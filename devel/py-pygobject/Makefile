@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.16:graphics/py-cairo@${PY_FLAVOR}
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-USES=		gnome pkgconfig python:3.9+
+USES=		gnome pkgconfig python
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 PORTSCOUT=	limitw:1,even

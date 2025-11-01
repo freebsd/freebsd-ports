@@ -18,7 +18,7 @@ BUILD_DEPENDS=	arrow>=${PORTVERSION}<${PORTVERSION}_99:databases/arrow \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libarrow.so:databases/arrow
 
-USES=		cmake:indirect python:3.9+ shebangfix
+USES=		cmake:indirect python shebangfix
 USE_PYTHON=	autoplist concurrent cython3 pep517
 
 SHEBANG_FILES=	cmake_modules/aws_sdk_cpp_generate_variables.sh

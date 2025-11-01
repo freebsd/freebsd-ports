@@ -11,7 +11,7 @@ WWW=		https://github.com/intellimath/recordclass
 
 LICENSE=	MIT
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	distutils
 
 .if ! defined(WITH_DEBUG)

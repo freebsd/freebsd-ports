@@ -57,7 +57,7 @@ PYTHON_DESC=		Enable support for Python Plugins
 
 PRECOMP_CMAKE_BOOL=	USE_PRECOMPILED_HEADER
 
-PYTHON_USES=		python:3.10+
+PYTHON_USES=		python
 PYTHON_CMAKE_BOOL=	USE_PYTHON
 
 post-patch:

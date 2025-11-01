@@ -21,7 +21,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR} \
 		redis-server:databases/redis
 
-USES=		python:3.10+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 # Required for Python 3.11+ as the cgi module is deprecated and slated for removal in Python 3.13

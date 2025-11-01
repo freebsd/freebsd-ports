@@ -53,7 +53,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLA
 		webfonts>=0:x11-fonts/webfonts
 
 USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv localbase pkgconfig \
-		python:3.9+,build qt:5 ssl trigger
+		python:build qt:5 ssl trigger
 
 DOS2UNIX_FILES=	document-server-package/common/documentserver/nginx/includes/http-common.conf.m4
 
