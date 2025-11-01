@@ -1,3 +1,27 @@
+  <vuln vid="77a0f93a-b71e-11f0-8d86-d7789240c8c2">
+    <topic>python 3.9 -- end of life, not receiving security support</topic>
+    <affects>
+      <package>
+	<name>python39</name>
+	<range><ge>3</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://devguide.python.org/versions/">
+	  <p>Unsupported versions: [...] End of life: 2025-10-31.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://devguide.python.org/versions/</url>
+    </references>
+    <dates>
+      <discovery>2020-10-05</discovery>
+      <entry>2025-11-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c4fb21e4-b579-11f0-871c-6805ca2fa271">
     <topic>powerdns-recursor -- cache pollution</topic>
     <affects>
@@ -3743,7 +3767,7 @@
 	function.  The resulting, truncated integer is then used to allocate
 	a buffer.  When SQLite then writes the resulting string to the
 	buffer, it uses the original, untruncated size and thus a wild Heap
-	Buffer overflow of size ~4GB can be triggered.  This can result in
+	Buffer overflow of size ~4GB can be triggered.	This can result in
 	arbitrary code execution.</p>
 	</blockquote>
 	</body>
@@ -4867,7 +4891,7 @@
 	i.e., at least one of the &apos;send-client-subnet&apos;,
 	&apos;client-subnet-zone&apos; or &apos;client-subnet-always-forward&apos;
 	options is used.  Resolvers supporting ECS need to segregate outgoing
-	queries to accommodate for different outgoing ECS information.  This
+	queries to accommodate for different outgoing ECS information.	This
 	re-opens up resolvers to a birthday paradox attack (Rebirthday
 	Attack) that tries to match the DNS transaction ID in order to cache
 	non-ECS poisonous replies.</p>
@@ -6522,7 +6546,7 @@
 	by ClamAV on an affected device.  A successful exploit could allow
 	the attacker to trigger a buffer overflow, likely resulting in the
 	termination of the ClamAV scanning process and a DoS condition on
-	the affected software.  Although unproven, there is also a possibility
+	the affected software.	Although unproven, there is also a possibility
 	that an attacker could leverage the buffer overflow to execute
 	arbitrary code with the privileges of the ClamAV process.</p>
 	</blockquote>
@@ -6880,7 +6904,7 @@
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>secalert@redhat.com reports:</p>
 	<blockquote cite="https://access.redhat.com/errata/RHSA-2025:4450">
-	  <p>A flaw was found in Yelp.  The Gnome user help application allows
+	  <p>A flaw was found in Yelp.	The Gnome user help application allows
 	the help document to execute arbitrary scripts.  This vulnerability
 	allows malicious users to input help documents, which may exfiltrate
 	user files to an external environment.</p>
@@ -6909,7 +6933,7 @@
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>secalert@redhat.com reports:</p>
 	<blockquote cite="https://access.redhat.com/errata/RHSA-2025:4450">
-	  <p>A flaw was found in Yelp.  The Gnome user help application allows
+	  <p>A flaw was found in Yelp.	The Gnome user help application allows
 	the help document to execute arbitrary scripts.  This vulnerability
 	allows malicious users to input help documents, which may exfiltrate
 	user files to an external environment.</p>
@@ -7327,7 +7351,7 @@
 	<p>zdi-disclosures@trendmicro.com reports:</p>
 	<blockquote cite="https://www.zerodayinitiative.com/advisories/ZDI-25-204/">
 	  <p>GIMP FLI File Parsing Out-Of-Bounds Write Remote Code Execution
-	Vulnerability.  This vulnerability allows remote attackers to execute
+	Vulnerability.	This vulnerability allows remote attackers to execute
 	arbitrary code on affected installations of GIMP.  User interaction
 	is required to exploit this vulnerability in that the target must
 	visit a malicious page or open a malicious file.
@@ -7362,7 +7386,7 @@
 	<p>zdi-disclosures@trendmicro.com reports:</p>
 	<blockquote cite="https://www.zerodayinitiative.com/advisories/ZDI-25-203/">
 	  <p>GIMP XWD File Parsing Integer Overflow Remote Code Execution
-	Vulnerability.  This vulnerability allows remote attackers to execute
+	Vulnerability.	This vulnerability allows remote attackers to execute
 	arbitrary code on affected installations of GIMP.  User interaction
 	is required to exploit this vulnerability in that the target must
 	visit a malicious page or open a malicious file.
@@ -7533,7 +7557,7 @@
 	    <li>[417169470] High CVE-2025-5280: Out of bounds write in V8. Reported by [pwn2car] on 2025-05-12</li>
 	    <li>[40058068] Medium CVE-2025-5064: Inappropriate implementation in Background Fetch API. Reported by Maurice Dauer  on 2021-11-29</li>
 	    <li>[40059071] Medium CVE-2025-5065: Inappropriate implementation in FileSystemAccess API. Reported by NDevTK on 2022-03-11</li>
-	    <li>[356658477] Medium CVE-2025-5066: Inappropriate implementation in Messages. Reported by Mohit Raj (shadow2639)  on 2024-07-31</li>
+	    <li>[356658477] Medium CVE-2025-5066: Inappropriate implementation in Messages. Reported by Mohit Raj (shadow2639)	on 2024-07-31</li>
 	    <li>[417215501] Medium CVE-2025-5281: Inappropriate implementation in BFCache. Reported by Jesper van den Ende (Pelican Party Studios) on 2025-05-12</li>
 	    <li>[419467315] Medium CVE-2025-5283: Use after free in libvpx. Reported by Mozilla on 2025-05-22</li>
 	    <li>[40075024] Low CVE-2025-5067: Inappropriate implementation in Tab Strip. Reported by Khalil Zhani on 2023-10-17</li>
@@ -7764,7 +7788,7 @@
 	special case (in stable released versions): when the payload&apos;s
 	content type is `application/json`, and there is at least one rule
 	which does a `sanitiseMatchedBytes` action.  A patch is available
-	at pull request 3389 and expected to be part of version 2.9.9.  No
+	at pull request 3389 and expected to be part of version 2.9.9.	No
 	known workarounds are available.</p>
 	</blockquote>
 	</body>
@@ -8017,7 +8041,7 @@
 	  <p>A cross-site scripting (XSS) vulnerability exists in Grafana caused
 	by combining a client path traversal and open redirect.  This allows
 	attackers to redirect users to a website that hosts a frontend
-	plugin that will execute arbitrary JavaScript.  This vulnerability
+	plugin that will execute arbitrary JavaScript.	This vulnerability
 	does not require editor permissions and if anonymous access is
 	enabled, the XSS will work.  If the Grafana Image Renderer plugin
 	is installed, it is possible to exploit the open redirect to achieve
@@ -8066,7 +8090,7 @@
 	`bytes.decode(&quot;unicode_escape&quot;,
 	error=&quot;ignore|replace&quot;)`.  If you are not using the
 	&quot;unicode_escape&quot; encoding or an error handler your
-	usage is not affected.  To work-around this issue you may stop
+	usage is not affected.	To work-around this issue you may stop
 	using the error= handler and instead wrap the bytes.decode()
 	call in a try-except catching the DecodeError.</p>
 	</blockquote>
@@ -10440,7 +10464,7 @@
 	<p>cna@mongodb.com reports:</p>
 	<blockquote cite="https://jira.mongodb.org/browse/SERVER-103153">
 	  <p>When run on commands with certain arguments set, explain may fail
-	to validate these arguments before using them.  This can lead to
+	to validate these arguments before using them.	This can lead to
 	crashes in router servers.  This affects MongoDB Server v5.0 prior
 	to 5.0.31, MongoDB Server v6.0 prior to 6.0.20, MongoDB Server v7.0
 	prior to 7.0.16 and MongoDB Server v8.0 prior to 8.0.4</p>
@@ -10593,8 +10617,8 @@
 	responds out of order when `CLIENT SETINFO` times out during
 	connection establishment.  This can happen when the client is
 	configured to transmit its identity, there are network connectivity
-	issues, or the client was configured with aggressive timeouts.  The
-	problem occurs for multiple use cases.  For sticky connections, you
+	issues, or the client was configured with aggressive timeouts.	The
+	problem occurs for multiple use cases.	For sticky connections, you
 	receive persistent out-of-order responses for the lifetime of the
 	connection.  All commands in the pipeline receive incorrect responses.
 	When used with the default ConnPool once a connection is returned
@@ -10611,7 +10635,7 @@
 	Authorization header consists of Bearer followed by many period
 	characters, a call to that function incurs allocations to the tune
 	of O(n) bytes (where n stands for the length of the function&apos;s
-	argument), with a constant factor of about 16.  This issue is fixed
+	argument), with a constant factor of about 16.	This issue is fixed
 	in 5.2.2 and 4.5.2.</p>
 	</blockquote>
 	</body>
@@ -10660,12 +10684,12 @@
 	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1945392">
 	  <p>An inconsistent comparator in xslt/txNodeSorter could have resulted
 	in potentially exploitable out-of-bounds access.  Only affected
-	version 122 and later.  This vulnerability affects Firefox &lt;
+	version 122 and later.	This vulnerability affects Firefox &lt;
 	136, Firefox ESR &lt; 128.8, Thunderbird &lt; 136, and Thunderbird
 	&lt; 128.8.</p>
 	  <p>Under certain circumstances, a user opt-in setting that Focus should
 	require authentication before use could have been be bypassed
-	(distinct from CVE-2025-0245).  This vulnerability affects Firefox
+	(distinct from CVE-2025-0245).	This vulnerability affects Firefox
 	&lt; 136.</p>
 	  <p>When String.toUpperCase() caused a string to get longer it was
 	possible for uninitialized memory to be incorporated into the result
@@ -11266,7 +11290,7 @@
 	  <p>LibreOffice supports Office URI Schemes to enable browser integration
 	of LibreOffice with MS SharePoint server.  An additional scheme
 	&apos;vnd.libreoffice.command&apos; specific to LibreOffice was
-	added.  In the affected versions of LibreOffice a link in a browser
+	added.	In the affected versions of LibreOffice a link in a browser
 	using that scheme could be constructed with an embedded inner URL
 	that when passed to LibreOffice could call internal macros with
 	arbitrary arguments.  This issue affects LibreOffice: from 24.8
@@ -11421,13 +11445,13 @@
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>security-advisories@github.com reports:</p>
 	<blockquote cite="https://github.com/pallets/jinja/commit/90457bbf33b8662926ae65cdde4c4c32e756e403">
-	  <p>Jinja is an extensible templating engine.  Prior to 3.1.6, an
+	  <p>Jinja is an extensible templating engine.	Prior to 3.1.6, an
 	oversight in how the Jinja sandboxed environment interacts with the
 	|attr filter allows an attacker that controls the content of a
 	template to execute arbitrary Python code.  To exploit the
 	vulnerability, an attacker needs to control the content of a template.
 	Whether that is the case depends on the type of application using
-	Jinja.  This vulnerability impacts users of applications which
+	Jinja.	This vulnerability impacts users of applications which
 	execute untrusted templates.  Jinja&apos;s sandbox does catch calls
 	to str.format and ensures they don&apos;t escape the sandbox.
 	However, it&apos;s possible to use the |attr filter to get a reference
@@ -11657,9 +11681,9 @@
 	<blockquote cite="https://github.com/spotipy-dev/spotipy/blob/master/spotipy/cache_handler.py#L93-L98">
 	  <p>Spotipy is a lightweight Python library for the Spotify Web API.
 	The `CacheHandler` class creates a cache file to store the auth
-	token.  Prior to version 2.25.1, the file created has `rw-r--r--`
+	token.	Prior to version 2.25.1, the file created has `rw-r--r--`
 	(644) permissions by default, when it could be locked down to
-	`rw-------` (600) permissions.  This leads to overly broad exposure
+	`rw-------` (600) permissions.	This leads to overly broad exposure
 	of the spotify auth token.  If this token can be read by an attacker
 	(another user on the machine, or a process running as another user),
 	it can be used to perform administrative actions on the Spotify
@@ -12510,7 +12534,7 @@
 	opened in normal browsing windows.  This could have resulted in a
 	potential privacy leak.</p>
 	<p>Certificate length was not properly checked when added to a certificate
-	store.  In practice only trusted data was processed.</p>
+	store.	In practice only trusted data was processed.</p>
 	<p>Memory safety bugs present in Firefox 134, Thunderbird 134, Firefox
 	ESR 128.6, and Thunderbird 128.6.  Some of these bugs showed evidence
 	of memory corruption and we presume that with enough effort some
@@ -12600,7 +12624,7 @@
 	use-after-free.</p>
 	<p>Memory safety bugs present in Firefox 134, Thunderbird 134, Firefox
 	ESR 115.19, Firefox ESR 128.6, Thunderbird 115.19, and Thunderbird
-	128.6.  Some of these bugs showed evidence of memory corruption and
+	128.6.	Some of these bugs showed evidence of memory corruption and
 	we presume that with enough effort some of these could have been
 	exploited to run arbitrary code.</p>
 	</blockquote>
@@ -12711,7 +12735,7 @@
 	    <li>CVE-2018-20547: Illegal READ memory access at caca/dither.c</li>
 	    <li>CVE-2018-20548: Illegal WRITE memory access at common-image.c</li>
 	    <li>CVE-2018-20549: Illegal WRITE memory access at caca/file.c</li>
-	    <li>CVE-2021-3410:  Buffer overflow in libcaca/caca/canvas.c in function caca_resize</li>
+	    <li>CVE-2021-3410:	Buffer overflow in libcaca/caca/canvas.c in function caca_resize</li>
 	    <li>CVE-2021-30498: Heap buffer overflow in export.c in function export_tga</li>
 	    <li>CVE-2021-30499: Buffer overflow in export.c in function export_troff</li>
 	  </ul>
@@ -12999,7 +13023,7 @@
 	can be made to panic by mounting and accessing the export with an
 	NFS client.  Further exploitation (e.g., bypassing file permission
 	checking or remote kernel code execution) is potentially possible,
-	though this has not been demonstrated.  In particular, release
+	though this has not been demonstrated.	In particular, release
 	kernels are compiled with stack protection enabled, and some instances
 	of the overflow are caught by this mechanism, causing a panic.</p>
       </body>
