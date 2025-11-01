@@ -53,6 +53,11 @@
 %%MANPAGES%%share/man/man1/glab-deploy-key.1.gz
 %%MANPAGES%%share/man/man1/glab-duo-ask.1.gz
 %%MANPAGES%%share/man/man1/glab-duo.1.gz
+%%MANPAGES%%share/man/man1/glab-gpg-key-add.1.gz
+%%MANPAGES%%share/man/man1/glab-gpg-key-delete.1.gz
+%%MANPAGES%%share/man/man1/glab-gpg-key-get.1.gz
+%%MANPAGES%%share/man/man1/glab-gpg-key-list.1.gz
+%%MANPAGES%%share/man/man1/glab-gpg-key.1.gz
 %%MANPAGES%%share/man/man1/glab-incident-close.1.gz
 %%MANPAGES%%share/man/man1/glab-incident-list.1.gz
 %%MANPAGES%%share/man/man1/glab-incident-note.1.gz
@@ -127,6 +132,9 @@
 %%MANPAGES%%share/man/man1/glab-repo-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-repo-fork.1.gz
 %%MANPAGES%%share/man/man1/glab-repo-list.1.gz
+%%MANPAGES%%share/man/man1/glab-repo-members-add.1.gz
+%%MANPAGES%%share/man/man1/glab-repo-members-remove.1.gz
+%%MANPAGES%%share/man/man1/glab-repo-members.1.gz
 %%MANPAGES%%share/man/man1/glab-repo-mirror.1.gz
 %%MANPAGES%%share/man/man1/glab-repo-publish-catalog.1.gz
 %%MANPAGES%%share/man/man1/glab-repo-publish.1.gz
