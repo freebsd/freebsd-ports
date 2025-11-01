@@ -1,7 +1,6 @@
 PORTNAME=	spdlog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.2
-PORTREVISION=	3
+DISTVERSION=	1.16.0
 CATEGORIES=	devel
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -12,21 +11,26 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfmt.so:devel/libfmt
+TEST_DEPENDS=	catch2>0:devel/catch2
 
-USES=		cmake compiler:c++11-lib pathfix
+USES=		cmake:testing compiler:c++14-lang pathfix
+.if make(test)
+USES+=		pkgconfig
+.endif
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gabime
-USE_LDCONFIG=	yes
-CMAKE_ON=	SPDLOG_BUILD_SHARED SPDLOG_FMT_EXTERNAL
-CMAKE_OFF=	SPDLOG_BUILD_BENCH
+
+EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/include/spdlog/fmt/bundled
+
 PLIST_SUB=	SOVERSION="${DISTVERSION}"
 
-post-extract:
-	${RM} -r ${WRKSRC}/include/spdlog/fmt/bundled
+CMAKE_TESTING_ON=	SPDLOG_BUILD_TESTS
 
-post-patch:
-	${RM} ${WRKSRC}/include/spdlog/fmt/*.h.orig
+CMAKE_ON=	SPDLOG_BUILD_SHARED \
+		SPDLOG_FMT_EXTERNAL
+CMAKE_OFF=	SPDLOG_BUILD_BENCH
 
 post-stage:
 # let consumers know that this package was compiled with SPDLOG_FMT_EXTERNAL=yes
