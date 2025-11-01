@@ -10,6 +10,9 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Real-time strategy (RTS) game of ancient warfare
 WWW=		https://play0ad.com/
 
+DEPRECATED=	Depends on expired lang/python39
+EXPIRATION_DATE=2025-12-31
+
 BROKEN_aarch64=		fails to compile: no member named verifyHeapAccessDisassembly
 BROKEN_armv6=		fails to link: fatal error: conftest: Unknown error: -1
 BROKEN_armv7=		fails to link: fatal error: conftest: Unknown error: -1
