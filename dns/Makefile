@@ -67,7 +67,6 @@
     SUBDIR += encrypted-dns-server
     SUBDIR += fastresolve
     SUBDIR += flamethrower
-    SUBDIR += fpdns
     SUBDIR += gdnsd2
     SUBDIR += gdnsd3
     SUBDIR += gen6dns

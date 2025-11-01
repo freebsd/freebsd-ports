@@ -1,4 +1,0 @@
-bin/fpdns
-%%SITE_PERL%%/Net/DNS/Fingerprint.pm
-%%SITE_PERL%%/Net/DNS/REPLACE
-%%PERL5_MAN1%%/fpdns.1.gz
