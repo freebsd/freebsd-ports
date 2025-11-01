@@ -4854,3 +4854,4 @@ databases/foundationdb71-client||2025-11-01|Remove broken port
 databases/foundationdb71-server||2025-11-01|Remove broken port
 databases/foundationdb73-client||2025-11-01|Remove broken port
 databases/foundationdb73-server||2025-11-01|Remove broken port
+databases/erlfdb||2025-11-01|Depends on removed port databases/foundationdb71-client

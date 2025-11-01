@@ -57,7 +57,6 @@
     SUBDIR += duckdb
     SUBDIR += ejdb
     SUBDIR += emacsql
-    SUBDIR += erlfdb
     SUBDIR += evolution-data-server
     SUBDIR += fastdb
     SUBDIR += firebird30-client
