@@ -14,6 +14,9 @@ WWW=		https://github.com/KDAB/Charm
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandoned upstream, upstream repo archived Sep 24, 2023
+EXPIRATION_DATE=2025-12-31
+
 LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5
 
 USES=		cmake compiler:c++11-lib pkgconfig qt:5 xorg
