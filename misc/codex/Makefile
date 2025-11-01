@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.50.0
+DISTVERSION=	0.53.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -62,6 +62,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/approvals.rs \
 		${BUILD_WRKSRC}/core/tests/suite/seatbelt.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
+		${BUILD_WRKSRC}/core/tests/suite/user_shell_cmd.rs \
 		${BUILD_WRKSRC}/exec/tests/suite/sandbox.rs \
 		${BUILD_WRKSRC}/mcp-server/tests/suite/codex_tool.rs
 

@@ -1,0 +1,29 @@
+--- codex-rs/core/Cargo.toml.orig	2025-10-31 00:56:28 UTC
++++ codex-rs/core/Cargo.toml
+@@ -32,6 +32,7 @@ codex-utils-tokenizer = { workspace = true }
+ codex-utils-readiness = { workspace = true }
+ codex-utils-string = { workspace = true }
+ codex-utils-tokenizer = { workspace = true }
++codex_windows_sandbox = { package = "codex-windows-sandbox", path = "../windows-sandbox-rs" }
+ dirs = { workspace = true }
+ dunce = { workspace = true }
+ env-flags = { workspace = true }
+@@ -42,8 +43,9 @@ keyring = { workspace = true, features = [
+ keyring = { workspace = true, features = [
+     "apple-native",
+     "crypto-rust",
+-    "linux-native-async-persistent",
++    "linux-native",
+     "windows-native",
++    "async-secret-service",
+ ] }
+ libc = { workspace = true }
+ mcp-types = { workspace = true }
+@@ -83,7 +85,6 @@ wildmatch = { workspace = true }
+ uuid = { workspace = true, features = ["serde", "v4"] }
+ which = { workspace = true }
+ wildmatch = { workspace = true }
+-codex_windows_sandbox = { package = "codex-windows-sandbox", path = "../windows-sandbox-rs" }
+ 
+ 
+ [target.'cfg(target_os = "linux")'.dependencies]
