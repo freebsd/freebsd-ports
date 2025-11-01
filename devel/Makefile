@@ -6358,7 +6358,6 @@
     SUBDIR += pyside6
     SUBDIR += pyside6-tools
     SUBDIR += pystring
-    SUBDIR += pysvn
     SUBDIR += pythontidy
     SUBDIR += pytype
     SUBDIR += qbe
