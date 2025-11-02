@@ -19,6 +19,9 @@ LICENSE_PERMS_FREEWARE=	dist-mirror pkg-mirror auto-accept
 LICENSE_DISTFILES_GPLv3=	${DISTFILES:[3]}
 LICENSE_DISTFILES_FREEWARE=	${DISTFILES:[2]:S/:data//}
 
+BROKEN=		Fails to build, error: implicit instantiation of undefined template 'std::char_traits<fmt::char8_t>'
+EXPIRATION_DATE=2025-12-31
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cmake compiler:c++11-lang jpeg sdl
