@@ -1,6 +1,5 @@
 PORTNAME=	zathura-pdf-poppler
-DISTVERSION=	0.3.3
-PORTREVISION=	3
+DISTVERSION=	0.3.4
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-pdf-poppler/download/
 
@@ -11,7 +10,7 @@ WWW=		https://pwmt.org/projects/zathura-pdf-poppler/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
+BUILD_DEPENDS=	appstreamcli:devel/appstream \
 		zathura:graphics/zathura
 LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara \
 		libpoppler-glib.so:graphics/poppler-glib
