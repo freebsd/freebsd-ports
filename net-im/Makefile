@@ -139,7 +139,6 @@
     SUBDIR += sendxmpp
     SUBDIR += signal-cli
     SUBDIR += signal-desktop
-    SUBDIR += signald
     SUBDIR += slack-term
     SUBDIR += snac
     SUBDIR += spectral

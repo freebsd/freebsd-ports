@@ -1,7 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-  Please see `man signald' for details on how to get started.
-EOM
-}
-]
