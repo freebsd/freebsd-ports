@@ -1,9 +1,10 @@
-lib/fcitx5/m17n.so
+lib/fcitx5/libm17n.so
 share/fcitx5/addon/m17n.conf
 share/fcitx5/m17n/default
 share/locale/ca/LC_MESSAGES/fcitx5-m17n.mo
 share/locale/da/LC_MESSAGES/fcitx5-m17n.mo
 share/locale/de/LC_MESSAGES/fcitx5-m17n.mo
+share/locale/fr/LC_MESSAGES/fcitx5-m17n.mo
 share/locale/he/LC_MESSAGES/fcitx5-m17n.mo
 share/locale/ja/LC_MESSAGES/fcitx5-m17n.mo
 share/locale/ko/LC_MESSAGES/fcitx5-m17n.mo
