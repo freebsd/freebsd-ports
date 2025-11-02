@@ -13,6 +13,9 @@ LICENSE_NAME=	Volition Copyright
 LICENSE_FILE=	${WRKSRC}/Copying.md
 LICENSE_PERMS=	dist-mirror auto-accept
 
+BROKEN=         Fails to build, error: cannot assign to non-static data member 'length' with const-qualified type 'const SizeType' (aka 'const unsigned int')
+EXPIRATION_DATE=2025-12-31
+
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libjansson.so:devel/jansson \
 		libpng.so:graphics/png \
