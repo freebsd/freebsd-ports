@@ -1,10 +1,10 @@
 PORTNAME=	Time-Piece
-PORTVERSION=	1.3701
-PORTEPOCH=	1
+PORTVERSION=	1.39
+PORTEPOCH=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:ESAYM
 PKGNAMEPREFIX=	p5-
-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object-oriented time objects for Perl
 WWW=		https://metacpan.org/release/Time-Piece
