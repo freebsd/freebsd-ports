@@ -10,10 +10,6 @@ IGNORE=		lua stream module: patching is required
 IGNORE=		passenger module: patching is required
 .endif
 
-.if ${PORT_OPTIONS:MSET_MISC}
-IGNORE=		set_misc module: patching is required
-.endif
-
 .if ${PORT_OPTIONS:MSTS}
 IGNORE=		sts module: patching is required
 .endif
