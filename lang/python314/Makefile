@@ -165,5 +165,19 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Tools/gdb/libpython.py \
 		${STAGEDIR}${PREFIX}/lib/libpython${PYTHON_VER}${ABIFLAGS}.so.1.0-gdb.py
 
+_sigstorebundle=${DISTFILES}.sigstore
+${_sigstorebundle}:
+	${FETCH_CMD} ${MASTER_SITES}/${_sigstorebundle}
+
+sigstore-verify: ${_sigstorebundle} checksum
+	sigstore verify identity \
+		--bundle ${DISTFILES}.sigstore \
+		--cert-identity hugo@python.org \
+		--cert-oidc-issuer https://github.com/login/oauth \
+		${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
+
+post-clean:
+	${RM} ${_sigstorebundle}
+
 .include <bsd.port.mk>
 
