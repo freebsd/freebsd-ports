@@ -1,6 +1,6 @@
 PORTNAME=	arbor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.11.0
 CATEGORIES=	science
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,9 +16,10 @@ BUILD_DEPENDS=	gmake:devel/gmake \
 		pybind11>0:devel/pybind11 \
 		nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libarbor.so:science/arbor
+RUN_DEPENDS=	${PYNUMPY}
 
 USES=		cmake compiler:c++17-lang localbase:ldflags python
-USE_PYTHON=	flavors pytest # tests fail to run, see https://github.com/arbor-sim/arbor/issues/2395
+USE_PYTHON=	flavors unittest # tests fail to run, see https://github.com/arbor-sim/arbor/issues/2395
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arbor-sim
@@ -29,9 +30,11 @@ CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD} \
 		-DARB_PYTHON_LIB_PATH=${PYTHONPREFIX_SITELIBDIR}
 
 CXXFLAGS+=	-fPIC
+CXXFLAGS+=	-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_NONE # prevent hardening issues with libc++, see https://github.com/arbor-sim/arbor/issues/2484
 
 TEST_WRKSRC=	${WRKSRC}/test/unit_distributed
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 BINARY_ALIAS=	make=${GMAKE}
 
@@ -41,7 +44,7 @@ post-patch:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/arbor/_arbor${PYTHON_TAG}.so
 
-do-test: # some tests fail with 'make'-related errors
+do-test: # tests fail to run due to a bug with nadling complex CXXFLAGS in the test runner, see https://github.com/arbor-sim/arbor/issues/2395
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${TEST_ENV} ${PYTHON_CMD} -munittest discover -v -s ${WRKSRC}
 
