@@ -1,9 +1,9 @@
-TIMESTAMP = 1745159783
-SHA256 (libime/libime-1.1.10.tar.zst) = ad2fca9c8520b30a72e052ca9c01cbac578728fdb525054cd5c77a04f31bb8b0
-SIZE (libime/libime-1.1.10.tar.zst) = 565637
+TIMESTAMP = 1762030624
+SHA256 (libime/libime-1.1.12.tar.zst) = c76ac36695350f8ca9408ef59616e0413bb75738f99d0fc8a0780c3863621287
+SIZE (libime/libime-1.1.12.tar.zst) = 568906
 SHA256 (libime/lm_sc.arpa-20250113.tar.zst) = ee83ecf20d52e8bccdba4cf6cd57183d53c257713a5eb77ee3a63d50fc3796dd
 SIZE (libime/lm_sc.arpa-20250113.tar.zst) = 42045779
-SHA256 (libime/dict-20241001.tar.zst) = d3313b88a68620a23bc8d5f9564cf1b678848dc7af541c4f5f02198e5a3686bf
-SIZE (libime/dict-20241001.tar.zst) = 2315822
+SHA256 (libime/dict-20250327.tar.zst) = 7ca6be4754c0d4c27ba7702c0dce651659bd2ca1faa5cbf2848d81a0053c8c13
+SIZE (libime/dict-20250327.tar.zst) = 2311762
 SHA256 (libime/table-20240108.tar.zst) = 3e9d87b04a393f131723472c8eaa860dd23c378a3d4f6a9005513b2a95b3614b
 SIZE (libime/table-20240108.tar.zst) = 4656038
