@@ -1,6 +1,6 @@
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.4
+DISTVERSION=	0.11.5
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -28,8 +28,8 @@ USES=		cmake cpe gettext iconv lua:51,build luajit \
 USE_GITHUB=	yes
 GH_TUPLE=	tree-sitter:tree-sitter-c:v0.24.1:treesitter_c \
 		tree-sitter-grammars:tree-sitter-lua:v0.4.0:treesitter_lua \
-		tree-sitter-grammars:tree-sitter-markdown:v0.5.0:treesitter_markdown \
-		tree-sitter-grammars:tree-sitter-query:v0.6.2:treesitter_query \
+		tree-sitter-grammars:tree-sitter-markdown:v0.5.1:treesitter_markdown \
+		tree-sitter-grammars:tree-sitter-query:v0.7.0:treesitter_query \
 		tree-sitter-grammars:tree-sitter-vim:v0.7.0:treesitter_vim \
 		neovim:tree-sitter-vimdoc:v4.0.0:treesitter_vimdoc
 
