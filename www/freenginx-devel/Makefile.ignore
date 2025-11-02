@@ -1,7 +1,3 @@
-.if ${PORT_OPTIONS:MECHO}
-IGNORE=		echo module: patching is required
-.endif
-
 .if ${PORT_OPTIONS:MHTTP_UPLOAD}
 IGNORE=		upload module: patching is required
 .endif
