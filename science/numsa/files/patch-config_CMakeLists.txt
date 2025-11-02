@@ -1,0 +1,11 @@
+--- config/CMakeLists.txt.orig	2025-11-02 00:19:55 UTC
++++ config/CMakeLists.txt
+@@ -14,7 +14,7 @@
+ # You should have received a copy of the GNU Lesser General Public License
+ # along with numsa.  If not, see <https://www.gnu.org/licenses/>.
+ 
+-if(NOT DEFINED "${PROJECT_NAME}-dependeny-method")
++if(NOT DEFINED "${PROJECT_NAME}-dependency-method")
+   set(
+  "${PROJECT_NAME}-dependency-method"
+     "subproject" "cmake" "pkgconf" "fetch"

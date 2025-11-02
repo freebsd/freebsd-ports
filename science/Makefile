@@ -210,6 +210,7 @@
     SUBDIR += netcdf-fortran
     SUBDIR += nifticlib
     SUBDIR += nlcglib
+    SUBDIR += numsa
     SUBDIR += nwchem
     SUBDIR += nwchem-data
     SUBDIR += ocean
