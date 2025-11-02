@@ -1,7 +1,13 @@
 PORTNAME=	zstd
 PORTVERSION=	1.5.7
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/facebook/zstd/releases/download/v${PORTVERSION}/
+
+# update manpages to v1.5.7, were missed in the release,
+# see https://github.com/facebook/zstd/releases/tag/v1.5.7
+PATCH_SITES=	https://github.com/facebook/zstd/commit/
+PATCHFILES=	6af3842118ea5325480b403213b2a9fbed3d3d74.diff:-p1 # v1.5.7 manpages
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast real-time compression algorithm
@@ -13,8 +19,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	liblz4.so:archivers/liblz4
-
+# Note this port is in the dependency chain of lang/python314
+# as a requisite, thus cannot use meson or python to build
 USES=		cpe gmake localbase:ldflags tar:zst
 
 ALL_TARGET=	default
@@ -25,6 +31,7 @@ MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		V=1
+MAKE_ARGS+=	${_MAKE_JOBS} HAVE_LZ4=0
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
