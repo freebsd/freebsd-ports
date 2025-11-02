@@ -3,6 +3,7 @@ bin/lz4c
 bin/lz4cat
 bin/unlz4
 include/lz4.h
+include/lz4file.h
 include/lz4frame.h
 include/lz4frame_static.h
 include/lz4hc.h
