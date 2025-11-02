@@ -20,7 +20,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}meson-python>=0.17.1:devel/meson-python@${PY_FLAVOR}
 
 USES=		fortran python localbase shebangfix
-USE_PYTHON=	autoplist cython3 pep517
+USE_PYTHON=	autoplist cython3 pep517 pytest
+
+TEST_ARGS=	sklearn
+TEST_WRKSRC=	${STAGEDIR}${PYTHON_SITELIBDIR}
 
 SHEBANG_FILES=	sklearn/_build_utils/version.py
 
