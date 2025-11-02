@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+devel/git-delta uses diff(1) when git is not installed.
+If this is not what you want, install a variant of devel/git.
+EOM
+}
+]
