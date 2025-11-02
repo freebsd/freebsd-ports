@@ -31,11 +31,13 @@ share/icons/hicolor/64x64/apps/org.fcitx.Fcitx5.fcitx-hangul.png
 share/locale/ca/LC_MESSAGES/fcitx5-hangul.mo
 share/locale/da/LC_MESSAGES/fcitx5-hangul.mo
 share/locale/de/LC_MESSAGES/fcitx5-hangul.mo
+share/locale/fr/LC_MESSAGES/fcitx5-hangul.mo
 share/locale/he/LC_MESSAGES/fcitx5-hangul.mo
 share/locale/ja/LC_MESSAGES/fcitx5-hangul.mo
 share/locale/ko/LC_MESSAGES/fcitx5-hangul.mo
 share/locale/ru/LC_MESSAGES/fcitx5-hangul.mo
 share/locale/tr/LC_MESSAGES/fcitx5-hangul.mo
+share/locale/vi/LC_MESSAGES/fcitx5-hangul.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx5-hangul.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx5-hangul.mo
 share/metainfo/org.fcitx.Fcitx5.Addon.Hangul.metainfo.xml

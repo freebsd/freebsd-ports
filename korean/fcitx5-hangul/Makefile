@@ -1,5 +1,5 @@
 PORTNAME=	fcitx5-hangul
-DISTVERSION=	5.1.6
+DISTVERSION=	5.1.8
 CATEGORIES=	korean textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
