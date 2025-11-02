@@ -1,7 +1,7 @@
 PORTNAME=	freenginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/osa

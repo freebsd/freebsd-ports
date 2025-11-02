@@ -17,7 +17,3 @@ IGNORE=		sts module: patching is required
 .if ${PORT_OPTIONS:MVOD}
 IGNORE=		vod module: patching is required
 .endif
-
-.if ${PORT_OPTIONS:MVTS}
-IGNORE=		vts module: patching is required
-.endif
