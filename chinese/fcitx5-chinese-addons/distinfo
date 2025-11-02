@@ -1,7 +1,7 @@
-TIMESTAMP = 1744777202
-SHA256 (fcitx5-chinese-addons/fcitx5-chinese-addons-5.1.8.tar.zst) = 0207a4ccdf62ae2d5a687b564574b4769e15e11129a7dc243ded60982cc5381d
-SIZE (fcitx5-chinese-addons/fcitx5-chinese-addons-5.1.8.tar.zst) = 375001
-SHA256 (fcitx5-chinese-addons/py_stroke-20121124.tar.gz) = 8eb128a9bfa43952e67cf2fcee1fd134c6f4cfd317bc2f6c38a615f5eb64e248
-SIZE (fcitx5-chinese-addons/py_stroke-20121124.tar.gz) = 445601
+TIMESTAMP = 1762030445
+SHA256 (fcitx5-chinese-addons/fcitx5-chinese-addons-5.1.10.tar.zst) = 1dcefa96e06015ae15536deeb04ccd6e462ca78a20ff0c9b755f43b9639bfdf9
+SIZE (fcitx5-chinese-addons/fcitx5-chinese-addons-5.1.10.tar.zst) = 381692
+SHA256 (fcitx5-chinese-addons/py_stroke-20250329.tar.gz) = c1a7ca7225d3614ab83353fc827503006a980447762018f53760425d7b5303a6
+SIZE (fcitx5-chinese-addons/py_stroke-20250329.tar.gz) = 445984
 SHA256 (fcitx5-chinese-addons/py_table-20121124.tar.gz) = 42146ac97de6c13d55f9e99ed873915f4c66739e9c11532a34556badf9792c04
 SIZE (fcitx5-chinese-addons/py_table-20121124.tar.gz) = 186822
