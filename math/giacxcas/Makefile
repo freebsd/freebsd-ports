@@ -22,6 +22,7 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_PERMS_DOC=	dist-mirror pkg-mirror auto-accept
 LICENSE_DISTFILES_DOC=	giac_${DISTVERSION}${EXTRACT_SUFX}
 
+BROKEN=		fails to fetch since http://www-fourier.ujf-grenoble.fr is down (domain doesn't resolve), other distros have the same issue
 BROKEN_armv7=	compilation fails: constant expression evaluates to 61171872541 which cannot be narrowed to type 'long' [-Wc++11-narrowing]
 BROKEN_i386=	compilation fails: constant expression evaluates to 61171872541 which cannot be narrowed to type 'long' [-Wc++11-narrowing]
 BROKEN_powerpc=	compilation fails: constant expression evaluates to 61171872541 which cannot be narrowed to type 'long' [-Wc++11-narrowing]
