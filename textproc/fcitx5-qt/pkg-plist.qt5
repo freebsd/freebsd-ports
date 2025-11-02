@@ -21,7 +21,6 @@ lib/cmake/Fcitx5Qt5WidgetsAddons/Fcitx5Qt5WidgetsAddonsConfig.cmake
 lib/cmake/Fcitx5Qt5WidgetsAddons/Fcitx5Qt5WidgetsAddonsConfigVersion.cmake
 lib/cmake/Fcitx5Qt5WidgetsAddons/Fcitx5Qt5WidgetsAddonsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Fcitx5Qt5WidgetsAddons/Fcitx5Qt5WidgetsAddonsTargets.cmake
-lib/fcitx5/qt5/libfcitx-quickphrase-editor5.so
 lib/libFcitx5Qt5DBusAddons.so
 lib/libFcitx5Qt5DBusAddons.so.1
 lib/libFcitx5Qt5DBusAddons.so.%%VER%%
