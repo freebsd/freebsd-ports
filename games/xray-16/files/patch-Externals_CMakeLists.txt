@@ -1,9 +1,9 @@
---- Externals/CMakeLists.txt.orig	2025-07-20 11:05:19 UTC
+--- Externals/CMakeLists.txt.orig	2025-10-14 13:38:51 UTC
 +++ Externals/CMakeLists.txt
-@@ -13,7 +13,7 @@ add_subdirectory(OPCODE)
- add_subdirectory(luabind)
+@@ -13,7 +13,7 @@ add_subdirectory(GameSpy)
+ add_compile_options(${XRAY_DISABLE_WARNINGS})
+ 
  add_subdirectory(GameSpy)
- add_subdirectory(OPCODE)
 -add_subdirectory(imgui-proj)
 +#add_subdirectory(imgui-proj)
  
