@@ -1,3 +1,381 @@
+  <vuln vid="1ba0b62b-b80a-11f0-8016-b42e991fc52e">
+    <topic>Mozilla -- Denial-of-service due to out-of-memory</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>142.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.2.0</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>142.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1975837 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1975837">
+	  <p>Denial-of-service due to out-of-memory in the Graphics:
+	  WebRender component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9182</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-9182</url>
+    </references>
+    <dates>
+      <discovery>2025-08-19</discovery>
+      <entry>2025-11-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0723a60e-b80a-11f0-8016-b42e991fc52e">
+    <topic>Mozilla -- Same-origin policy bypass in the Graphics: Canvas2D component</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>142.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.2.0</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>142.0.0</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>140.2.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1979782 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1979782">
+	  <p>Same-origin policy bypass in the Graphics: Canvas2D
+	    component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9180</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-9180</url>
+    </references>
+    <dates>
+      <discovery>2025-08-19</discovery>
+      <entry>2025-11-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f752879f-b809-11f0-8016-b42e991fc52e">
+    <topic>Firefox -- Sandbox escape due to integer overflow</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>143.0.3,2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1987246 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1987246">
+	  <p>Sandbox escape due to integer overflow in the Graphics:
+	  Canvas2D component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11152</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-11152</url>
+    </references>
+    <dates>
+      <discovery>2025-09-30</discovery>
+      <entry>2025-11-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ea017037-b808-11f0-8016-b42e991fc52e">
+    <topic>Firefox -- Information disclosure in the Networking: Cache component</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>143.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.3.0</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>143.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1981502 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1981502">
+	  <p>Information disclosure in the Networking: Cache
+	    component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10536</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-10536</url>
+    </references>
+    <dates>
+      <discovery>2025-09-16</discovery>
+      <entry>2025-11-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d09efc3b-b808-11f0-8016-b42e991fc52e">
+    <topic>Firefox -- Spoofing issue in the Site Permissions component</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>143.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>143.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1665334 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1665334">
+	  <p>Spoofing issue in the Site Permissions component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10534</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-10534</url>
+    </references>
+    <dates>
+      <discovery>2025-09-16</discovery>
+      <entry>2025-11-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c80baae7-b808-11f0-8016-b42e991fc52e">
+    <topic>Firefox -- Integer overflow in the SVG component</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>143.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.3.0</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>143.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1980788 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1980788">
+	  <p>Integer overflow in the SVG component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10533</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-10533</url>
+    </references>
+    <dates>
+      <discovery>2025-09-16</discovery>
+      <entry>2025-11-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="af9c5b99-b808-11f0-8016-b42e991fc52e">
+    <topic>Firefox -- Incorrect boundary conditions</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>143.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.3.0</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>143</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1979502 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1979502">
+	  <p>Incorrect boundary conditions in the JavaScript: GC
+	    component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10532</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-10532</url>
+    </references>
+    <dates>
+      <discovery>2025-09-16</discovery>
+      <entry>2025-11-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a4bebda9-b808-11f0-8016-b42e991fc52e">
+    <topic>Firefox -- Mitigation bypass</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>143.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>143.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1978453 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1978453">
+	  <p>Mitigation bypass in the Web Compatibility: Tooling
+	    component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10531</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-10531</url>
+    </references>
+    <dates>
+      <discovery>2025-09-16</discovery>
+      <entry>2025-11-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="944d968c-b808-11f0-8016-b42e991fc52e">
+    <topic>Firefox -- Same-origin policy bypass</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>143.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.3.0</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>143.0.0</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>140.3.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1970490 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1970490">
+	  <p>Same-origin policy bypass in the Layout component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10529</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-10529</url>
+    </references>
+    <dates>
+      <discovery>2025-09-16</discovery>
+      <entry>2025-11-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8b5f4eb3-b808-11f0-8016-b42e991fc52e">
+    <topic>Firefox -- Sandbox escape due to undefined behavior</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>143.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.3.0</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>143.0.0</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>140.3.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1986185 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1986185">
+	  <p>Sandbox escape due to undefined behavior, invalid pointer
+	  in the Graphics: Canvas2D component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10528</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-10528</url>
+    </references>
+    <dates>
+      <discovery>2025-09-16</discovery>
+      <entry>2025-11-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="82595339-b808-11f0-8016-b42e991fc52e">
+    <topic>Firefox -- Sandbox escape due to use-after-free</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>143.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.3.0</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>143.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1984825 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1984825">
+	  <p>Sandbox escape due to use-after-free in the Graphics:
+	  Canvas2D component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-10527</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-10527</url>
+    </references>
+    <dates>
+      <discovery>2025-09-16</discovery>
+      <entry>2025-11-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="77a0f93a-b71e-11f0-8d86-d7789240c8c2">
     <topic>python 3.9 -- end of life, not receiving security support</topic>
     <affects>
