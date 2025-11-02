@@ -2,7 +2,6 @@ bin/gemini
 lib/node_modules/@google/gemini-cli/LICENSE
 lib/node_modules/@google/gemini-cli/README.md
 lib/node_modules/@google/gemini-cli/dist/.last_build
-lib/node_modules/@google/gemini-cli/dist/google-gemini-cli-0.11.1.tgz
 lib/node_modules/@google/gemini-cli/dist/index.d.ts
 lib/node_modules/@google/gemini-cli/dist/index.js
 lib/node_modules/@google/gemini-cli/dist/index.js.map
@@ -1691,7 +1690,6 @@ lib/node_modules/@google/gemini-cli/node_modules/@google-cloud/promisify/package
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/LICENSE
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/README.md
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/.last_build
-lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/google-gemini-cli-core-0.11.1.tgz
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.js
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.js.map
@@ -2067,6 +2065,12 @@ lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/sr
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/routing/strategies/overrideStrategy.test.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/routing/strategies/overrideStrategy.test.js
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/routing/strategies/overrideStrategy.test.js.map
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/services/chatCompressionService.d.ts
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/services/chatCompressionService.js
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/services/chatCompressionService.js.map
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/services/chatCompressionService.test.d.ts
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/services/chatCompressionService.test.js
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/services/chatCompressionService.test.js.map
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/services/chatRecordingService.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/services/chatRecordingService.js
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/services/chatRecordingService.js.map
