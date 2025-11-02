@@ -1,6 +1,6 @@
 PORTNAME=	forge
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.2
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=2.3:databases/closql@${EMACS_FLAVOR} \
 		compat.el${EMACS_PKGNAMESUFFIX}>=30.1.0.0:misc/compat.el@${EMACS_FLAVOR} \
-		cond-let${EMACS_PKGNAMESUFFIX}>=0.1:devel/cond-let@${EMACS_FLAVOR} \
+		cond-let${EMACS_PKGNAMESUFFIX}>=0.2:devel/cond-let@${EMACS_FLAVOR} \
 		emacsql${EMACS_PKGNAMESUFFIX}>=4.3.1:databases/emacsql@${EMACS_FLAVOR} \
 		ghub${EMACS_PKGNAMESUFFIX}>=5.0:devel/ghub@${EMACS_FLAVOR} \
 		llama.el${EMACS_PKGNAMESUFFIX}>=1.0:devel/llama.el@${EMACS_FLAVOR} \
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=2.3:databases/closql@${EMACS_FLAVOR
 		yaml.el${EMACS_PKGNAMESUFFIX}>=1.2.0:textproc/yaml.el@${EMACS_FLAVOR}
 RUN_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=2.3:databases/closql@${EMACS_FLAVOR} \
 		compat.el${EMACS_PKGNAMESUFFIX}>=30.1.0.0:misc/compat.el@${EMACS_FLAVOR} \
-		cond-let${EMACS_PKGNAMESUFFIX}>=0.1:devel/cond-let@${EMACS_FLAVOR} \
+		cond-let${EMACS_PKGNAMESUFFIX}>=0.2:devel/cond-let@${EMACS_FLAVOR} \
 		emacsql${EMACS_PKGNAMESUFFIX}>=4.3.1:databases/emacsql@${EMACS_FLAVOR} \
 		ghub${EMACS_PKGNAMESUFFIX}>=5.0:devel/ghub@${EMACS_FLAVOR} \
 		llama.el${EMACS_PKGNAMESUFFIX}>=1.0:devel/llama.el@${EMACS_FLAVOR} \
