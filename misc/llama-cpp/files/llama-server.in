@@ -55,8 +55,8 @@ llama_server_precmd()
 	fi
 
 	# ensure that the log file exists and has right permissions
-	touch ${llama_server_log}
-	chown ${llama_server_user} ${llama_server_log}
+	touch ${llama_server_log} ${pidfile}
+	chown ${llama_server_user} ${llama_server_log} ${pidfile}
 	chmod 640 ${llama_server_log}
 }
 
