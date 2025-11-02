@@ -204,6 +204,7 @@ libexec/pyenv-plugins/python-build/share/python-build/3.9.21
 libexec/pyenv-plugins/python-build/share/python-build/3.9.22
 libexec/pyenv-plugins/python-build/share/python-build/3.9.23
 libexec/pyenv-plugins/python-build/share/python-build/3.9.24
+libexec/pyenv-plugins/python-build/share/python-build/3.9.25
 libexec/pyenv-plugins/python-build/share/python-build/3.10-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.10.0
 libexec/pyenv-plugins/python-build/share/python-build/3.10.1
@@ -392,6 +393,7 @@ libexec/pyenv-plugins/python-build/share/python-build/graalpy-24.1.1
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-24.1.2
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-24.2.0
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-25.0.0
+libexec/pyenv-plugins/python-build/share/python-build/graalpy-25.0.1
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-24.2.1
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-24.2.2
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-community-23.1.0
@@ -402,6 +404,7 @@ libexec/pyenv-plugins/python-build/share/python-build/graalpy-community-24.1.1
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-community-24.1.2
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-community-24.2.0
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-community-25.0.0
+libexec/pyenv-plugins/python-build/share/python-build/graalpy-community-25.0.1
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-community-24.2.1
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-community-24.2.2
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-dev
