@@ -1,13 +1,11 @@
 PORTNAME=	libime-jyutping
-DISTVERSION=	1.0.13
-PORTREVISION=	2
+DISTVERSION=	1.0.15
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:dict,model
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DICT_TAR}:dict \
 		${MODEL_TAR}:model
-DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	khng@FreeBSD.org
@@ -41,7 +39,7 @@ DICT_TAR=	jyutping-dict-20180104.tar.xz
 MODEL_TAR=	jyutping-model-20180103.tar.xz
 
 post-extract:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${DICT_TAR} ${WRKSRC}/data
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${MODEL_TAR} ${WRKSRC}/data
+	${CP} ${DISTDIR}/${DICT_TAR} ${WRKSRC}/data
+	${CP} ${DISTDIR}/${MODEL_TAR} ${WRKSRC}/data
 
 .include <bsd.port.mk>
