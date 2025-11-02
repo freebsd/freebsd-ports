@@ -8,7 +8,7 @@ JARFILES=	integration jcl-over-slf4j jul-to-slf4j log4j-over-slf4j \
 DISTFILES=	${JARFILES:C|(.+)|slf4j/\1/${DISTVERSION}/\1-${DISTVERSION}.jar:source1|}
 EXTRACT_ONLY=
 
-MAINTAINER=	skreuzer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple facade or abstraction for various logging frameworks
 WWW=		https://www.slf4j.org/
 
