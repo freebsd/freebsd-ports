@@ -1,6 +1,6 @@
 PORTNAME=	lrcalc
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LIB_DEPENDS=	liblrcalc.so:math/lrcalc
 
 USES=		localbase python
 
-USE_PYTHON=	cython distutils
+USE_PYTHON=	cython3 distutils
 
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s
