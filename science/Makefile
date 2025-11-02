@@ -64,6 +64,7 @@
     SUBDIR += coordgenlibs
     SUBDIR += cp2k
     SUBDIR += cp2k-data
+    SUBDIR += cpcmx
     SUBDIR += csvtk
     SUBDIR += dakota
     SUBDIR += dalton
