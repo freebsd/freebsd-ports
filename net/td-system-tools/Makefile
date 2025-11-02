@@ -1,5 +1,5 @@
 PORTNAME=	td-system-tools
-DISTVERSION=	2.1.7
+DISTVERSION=	2.1.8
 CATEGORIES=	net
 MASTER_SITES=	https://www.nntb.no/~dreibh/system-tools/download/
 
@@ -11,6 +11,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	bash:shells/bash \
+		getopt>=0:misc/getopt \
 		figlet:misc/figlet \
 		mbuffer:misc/mbuffer
 
