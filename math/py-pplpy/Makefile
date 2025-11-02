@@ -1,6 +1,5 @@
 PORTNAME=	pplpy
-PORTVERSION=	0.8.9
-PORTREVISION=	2
+PORTVERSION=	0.8.10
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,9 @@ LICENSE=	GPLv3
 
 BROKEN_aarch64=	runaway build, 7200 seconds with no output
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmpy2>0:math/py-gmpy2@${PY_FLAVOR}	\
+BUILD_DEPENDS=	${PY_SETUPTOOLS}	\
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}	\
+		${PYTHON_PKGNAMEPREFIX}gmpy2>0:math/py-gmpy2@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}
 LIB_DEPENDS=	libgmp.so:math/gmp	\
 		libmpfr.so:math/mpfr	\
@@ -24,26 +25,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmpy2>0:math/py-gmpy2@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}
 TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang localbase python
-USE_PYTHON=	cython distutils
+USES=		compiler:c++14-lang localbase python
+USE_PYTHON=	cython3 pep517
 
 CFLAGS+=	-std=c++14
 
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s
 .endif
-
-OPTIONS_DEFINE=		DOCS
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
-DOCS_USES=		gmake
-PORTDOCS=		*
-
-do-build-DOCS-on:
-	(cd ${WRKSRC}/docs && ${GMAKE} html)
-
-post-build-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/build/html/* ${STAGEDIR}${DOCSDIR}
 
 do-test: install
 	(cd ${WRKSRC} && py.test)
