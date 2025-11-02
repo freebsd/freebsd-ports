@@ -1,6 +1,6 @@
 PORTNAME=	filebrowser-quantum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.11-beta
+DISTVERSION=	1.0.0-beta
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX} \
@@ -8,7 +8,8 @@ DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Web File Browser
-WWW=		https://github.com/gtsteffaniak/filebrowser
+WWW=		https://filebrowserquantum.com \
+		https://github.com/gtsteffaniak/filebrowser
 
 LICENSE=	APACHE20
 
