@@ -1,5 +1,5 @@
 PORTNAME=	Data-ObjectDriver
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-DBI>=0:databases/p5-DBI \
 		p5-Text-SimpleTable>=0:textproc/p5-Text-SimpleTable
 TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
-		p5-Test-Exception>=0:devel/p5-Test-Exception
+		p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
 
 USES=		perl5
 USE_PERL5=	modbuildtiny
