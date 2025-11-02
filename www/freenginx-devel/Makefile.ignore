@@ -2,10 +2,6 @@
 IGNORE=		upload module: patching is required
 .endif
 
-.if ${PORT_OPTIONS:MLUA}
-IGNORE=		lua module: patching is required
-.endif
-
 .if ${PORT_OPTIONS:MLUASTREAM}
 IGNORE=		lua stream module: patching is required
 .endif
