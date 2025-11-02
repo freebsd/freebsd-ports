@@ -68,9 +68,11 @@ include/Fcitx5/Utils/fcitx-utils/dbus/objectvtable.h
 include/Fcitx5/Utils/fcitx-utils/dbus/servicewatcher.h
 include/Fcitx5/Utils/fcitx-utils/dbus/variant.h
 include/Fcitx5/Utils/fcitx-utils/element.h
+include/Fcitx5/Utils/fcitx-utils/environ.h
 include/Fcitx5/Utils/fcitx-utils/event.h
 include/Fcitx5/Utils/fcitx-utils/eventdispatcher.h
 include/Fcitx5/Utils/fcitx-utils/eventloopinterface.h
+include/Fcitx5/Utils/fcitx-utils/fdstreambuf.h
 include/Fcitx5/Utils/fcitx-utils/fcitxutils_export.h
 include/Fcitx5/Utils/fcitx-utils/flags.h
 include/Fcitx5/Utils/fcitx-utils/fs.h
@@ -93,6 +95,7 @@ include/Fcitx5/Utils/fcitx-utils/semver.h
 include/Fcitx5/Utils/fcitx-utils/signals.h
 include/Fcitx5/Utils/fcitx-utils/signals_details.h
 include/Fcitx5/Utils/fcitx-utils/standardpath.h
+include/Fcitx5/Utils/fcitx-utils/standardpaths.h
 include/Fcitx5/Utils/fcitx-utils/stringutils.h
 include/Fcitx5/Utils/fcitx-utils/stringutils_details.h
 include/Fcitx5/Utils/fcitx-utils/testing.h

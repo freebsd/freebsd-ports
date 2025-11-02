@@ -1,6 +1,5 @@
 PORTNAME=	fcitx5
-DISTVERSION=	5.1.12
-PORTREVISION=	2
+DISTVERSION=	5.1.16
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:dict
@@ -15,13 +14,10 @@ WWW=		https://github.com/fcitx/fcitx5
 
 LICENSE=	LGPL21+
 
-BROKEN=		Fails to build with fmt 12+, error: no member named 'localtime' in namespace 'fmt'
-
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		uthash>=0:devel/uthash
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libexpat.so:textproc/expat2 \
-		libfmt.so:devel/libfmt \
 		libjson-c.so:devel/json-c \
 		libuuid.so:misc/libuuid \
 		libuv.so:devel/libuv \
@@ -30,8 +26,10 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		xkeyboard-config>=0:x11/xkeyboard-config
 
 # gettext-tools for both build-time hard requirement and Fcitx5 helper shell scripts
-USES=		cmake compiler:c++17-lang gettext-runtime \
+USES=		cmake compiler:c++20-lang gettext-runtime \
 		gettext-tools:build,run gnome kde:5 pkgconfig tar:zst
+
+CXXFLAGS+=	-fexperimental-library
 
 PLIST_SUB=	VER=${DISTVERSION}
 
