@@ -1,7 +1,6 @@
 PORTNAME=	arbor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
-PORTREVISION=	3
+DISTVERSION=	0.11.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,25 +11,26 @@ WWW=		https://arbor-sim.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		compilation fails with clang-19, see https://github.com/arbor-sim/arbor/issues/2424
 #BROKEN_armv7=	compilation fails: unknown type name 'float64x2_t'
 
 BUILD_DEPENDS=	bash:shells/bash \
 		libfmt>0:devel/libfmt \
 		nlohmann-json>0:devel/nlohmann-json \
 		random123>0:devel/random123 \
-		${PYTHON_PKGNAMEPREFIX}svgwrite>0:graphics/py-svgwrite@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}svgwrite>0:graphics/py-svgwrite@${PY_FLAVOR} \
+		tinyopt>0:devel/tinyopt
 BUILD_DEPENDS+=	${LOCALBASE}/lib/cmake/GTest/GTestConfig.cmake:devel/googletest # https://github.com/arbor-sim/arbor/issues/2205
 LIB_DEPENDS=	libhwloc.so:devel/hwloc2 \
 		libpugixml.so:textproc/pugixml \
 		libunits.so:misc/units
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}svgwrite>0:graphics/py-svgwrite@${PY_FLAVOR}
-TEST_DEPENDS=	googletest>=0:devel/googletest
+TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake compiler:c++17-lang localbase python shebangfix
+USES=		cmake compiler:c++20-lang localbase pkgconfig python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arbor-sim
+GH_TUPLE=	cpm-cmake:CPM.cmake:v0.39.0:cpm
 
 SHEBANG_FILES=	scripts/arbor-build-catalogue
 
@@ -38,6 +38,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	ARB_USE_BUNDLED_UNITS
 CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
 
+CONFIGURE_ENV=	CPM_REPO=${WRKSRC_cpm}
 LDFLAGS+=	-L${LOCALBASE}/lib -lunits
 
 OPTIONS_DEFINE=		NATIVE
@@ -45,9 +46,16 @@ OPTIONS_DEFINE=		NATIVE
 NATIVE_CMAKE_ON=	-DARB_ARCH=native
 NATIVE_CMAKE_OFF=	-DARB_ARCH=none
 
-TEST_TARGET=	tests # tests fail to build, see https://github.com/arbor-sim/arbor/issues/2075
+TEST_TARGET=	tests
 
 post-install:
 	@${RMDIR} ${STAGEDIR}${DOCSDIR}
+
+post-test: # run tests
+	@${BUILD_WRKSRC}/bin/unit
+	@${BUILD_WRKSRC}/bin/unit-local
+	@${BUILD_WRKSRC}/bin/unit-modcc
+
+# tests fail with LIBCPP assertion for invalid array element access, see https://github.com/arbor-sim/arbor/issues/2484
 
 .include <bsd.port.mk>

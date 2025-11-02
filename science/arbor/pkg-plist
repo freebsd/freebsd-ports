@@ -21,7 +21,6 @@ include/arbor/domdecexcept.hpp
 include/arbor/event_generator.hpp
 include/arbor/export.hpp
 include/arbor/fvm_types.hpp
-include/arbor/generic_event.hpp
 include/arbor/gpu/cuda_api.hpp
 include/arbor/gpu/gpu_api.hpp
 include/arbor/gpu/gpu_common.hpp
@@ -52,7 +51,6 @@ include/arbor/morph/segment_tree.hpp
 include/arbor/morph/stitch.hpp
 include/arbor/network.hpp
 include/arbor/network_generation.hpp
-include/arbor/profile/clock.hpp
 include/arbor/profile/meter.hpp
 include/arbor/profile/meter_manager.hpp
 include/arbor/profile/profiler.hpp
@@ -90,7 +88,6 @@ include/arbor/util/expected.hpp
 include/arbor/util/extra_traits.hpp
 include/arbor/util/handle_set.hpp
 include/arbor/util/hash_def.hpp
-include/arbor/util/lexcmp_def.hpp
 include/arbor/util/pp_util.hpp
 include/arbor/util/scope_exit.hpp
 include/arbor/util/typed_map.hpp
@@ -106,6 +103,7 @@ include/arborenv/gpu_env.hpp
 include/arborenv/with_mpi.hpp
 include/arborio/cableio.hpp
 include/arborio/cv_policy_parse.hpp
+include/arborio/debug.hpp
 include/arborio/export.hpp
 include/arborio/json_serdes.hpp
 include/arborio/label_parse.hpp

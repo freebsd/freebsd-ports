@@ -1,3 +1,5 @@
-TIMESTAMP = 1724617928
-SHA256 (arbor-sim-arbor-v0.10.1_GH0.tar.gz) = 6a9a209dc20ab6edcf9847a70b0b4dbabf0c0d3c7e6e29b5bec7c00de9d7b8ae
-SIZE (arbor-sim-arbor-v0.10.1_GH0.tar.gz) = 10159032
+TIMESTAMP = 1762075604
+SHA256 (arbor-sim-arbor-v0.11.0_GH0.tar.gz) = 6df68b308dd629df993eda40319676cd43407ae211d0846100b0cf42e8c9ad22
+SIZE (arbor-sim-arbor-v0.11.0_GH0.tar.gz) = 12511038
+SHA256 (cpm-cmake-CPM.cmake-v0.39.0_GH0.tar.gz) = 621cfca03a5a0fcf316f08aee37d775a71620879e768ebf74be8495773f6b578
+SIZE (cpm-cmake-CPM.cmake-v0.39.0_GH0.tar.gz) = 100981
