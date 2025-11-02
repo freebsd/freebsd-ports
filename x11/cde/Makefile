@@ -1,6 +1,6 @@
 PORTNAME=	cde
 DISTVERSION=	2.5.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	SF/cdesktopenv/src/
 
@@ -15,7 +15,6 @@ BROKEN_i386=		cannot bind to a temporary of type va_list
 BUILD_DEPENDS=	ksh93:shells/ksh			\
 		bdftopcf:x11-fonts/bdftopcf		\
 		mkfontscale>=0:x11-fonts/mkfontscale	\
-		biconv:converters/iconv			\
 		${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:x11-fonts/fontconfig \
 		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2 \
 		onsgmls:textproc/opensp \
@@ -29,7 +28,7 @@ RUN_DEPENDS=	ksh93:shells/ksh			\
 		sessreg:x11/sessreg
 LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
-USES=		autoreconf:build iconv:wchar_t gmake jpeg libtool motif perl5 \
+USES=		autoreconf:build iconv gmake jpeg libtool motif perl5 \
 		shebangfix tcl:86 xorg
 SHEBANG_LANG=	pl
 SHEBANG_FILES=	programs/dtinfo/tools/bin/ccdate \
