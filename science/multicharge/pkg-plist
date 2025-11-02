@@ -2,12 +2,9 @@ bin/multicharge
 include/multicharge/multicharge.mod
 include/multicharge/multicharge_blas.mod
 include/multicharge/multicharge_cutoff.mod
-include/multicharge/multicharge_data.mod
-include/multicharge/multicharge_data_covrad.mod
 include/multicharge/multicharge_ewald.mod
 include/multicharge/multicharge_lapack.mod
 include/multicharge/multicharge_model.mod
-include/multicharge/multicharge_ncoord.mod
 include/multicharge/multicharge_output.mod
 include/multicharge/multicharge_param.mod
 include/multicharge/multicharge_param_eeq2019.mod
@@ -24,5 +21,5 @@ lib/cmake/multicharge/multicharge-targets.cmake
 lib/cmake/multicharge/multicharge-utils.cmake
 lib/libmulticharge.so
 lib/libmulticharge.so.0
-lib/libmulticharge.so.0.3.0
+lib/libmulticharge.so.0.4.0
 libdata/pkgconfig/multicharge.pc
