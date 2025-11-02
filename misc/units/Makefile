@@ -1,12 +1,12 @@
 PORTNAME=	units
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.3
+DISTVERSION=	0.13.1
 CATEGORIES=	misc
 PKGNAMESUFFIX=	-library
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for working with units of measurement
-WWW=		https://units.readthedocs.io/en/latest \
+WWW=		https://units.readthedocs.io/en/latest/ \
 		https://github.com/LLNL/units
 
 LICENSE=	BSD3CLAUSE
