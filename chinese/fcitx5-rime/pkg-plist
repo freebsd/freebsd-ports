@@ -28,6 +28,7 @@ share/icons/hicolor/scalable/apps/org.fcitx.Fcitx5.fcitx-rime.svg
 share/locale/ca/LC_MESSAGES/fcitx5-rime.mo
 share/locale/da/LC_MESSAGES/fcitx5-rime.mo
 share/locale/de/LC_MESSAGES/fcitx5-rime.mo
+share/locale/fr/LC_MESSAGES/fcitx5-rime.mo
 share/locale/he/LC_MESSAGES/fcitx5-rime.mo
 share/locale/ja/LC_MESSAGES/fcitx5-rime.mo
 share/locale/ko/LC_MESSAGES/fcitx5-rime.mo
