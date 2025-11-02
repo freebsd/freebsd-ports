@@ -591,6 +591,7 @@
     SUBDIR += openvswitch
     SUBDIR += ortp
     SUBDIR += osrtspproxy
+    SUBDIR += otelcol-contrib
     SUBDIR += ovhcloud-cli
     SUBDIR += owamp
     SUBDIR += p5-Acme-HTTP

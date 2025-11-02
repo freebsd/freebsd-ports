@@ -1,0 +1,10 @@
+The OpenTelemetry Collector components that are not suitable
+for the core repository of the collector.
+
+This distribution contains all the components from both the
+OpenTelemetry Collector,
+https://github.com/open-telemetry/opentelemetry-collector
+repository and the OpenTelemetry Collector Contrib,
+https://github.com/open-telemetry/opentelemetry-collector-contrib
+repository.  This distribution includes open source and
+vendor supported components.
