@@ -3,7 +3,11 @@
 %%PYTHON_SITELIBDIR%%/memory_allocator/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/memory_allocator/__pycache__/__init__%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/memory_allocator/memory.pxd
+%%PYTHON_SITELIBDIR%%/memory_allocator/memory_allocator.c
 %%PYTHON_SITELIBDIR%%/memory_allocator/memory_allocator%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/memory_allocator/memory_allocator.pxd
+%%PYTHON_SITELIBDIR%%/memory_allocator/memory_allocator.pyx
 %%PYTHON_SITELIBDIR%%/memory_allocator/signals.pxd
+%%PYTHON_SITELIBDIR%%/memory_allocator/test.c
 %%PYTHON_SITELIBDIR%%/memory_allocator/test%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/memory_allocator/test.pyx

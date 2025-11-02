@@ -1,6 +1,5 @@
 PORTNAME=	memory_allocator
-PORTVERSION=	0.1.3
-PORTREVISION=	1
+PORTVERSION=	0.1.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +10,7 @@ WWW=		https://pypi.org/project/memory-allocator/
 
 LICENSE=	GPLv3
 
-USES=		python
-USE_PYTHON=	cython distutils
+USES=		pytest python
+USE_PYTHON=	cython3 distutils
 
 .include <bsd.port.mk>
