@@ -5,7 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Hassle-free Python experience
-WWW=		https://rye-up.com \
+WWW=		https://rye.astral.sh/ \
 		https://github.com/astral-sh/rye
 
 LICENSE=	MIT
@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	error: This crate works only on `aarch64`, `loongarch64`, `x86`, and `x86-64` targets. (crate cpufeatures-0.2.12)
+DEPRECATED=		Rye is no longer developed. All users should migrate to uv, the successor project from the same maintainers, which is actively maintained and much more widely used.
+EXPIRATION_DATE=	2026-06-01
 
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libzstd.so:archivers/zstd
