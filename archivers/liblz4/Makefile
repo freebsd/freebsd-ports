@@ -1,6 +1,6 @@
 PORTNAME=	lz4
 PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/lz4/lz4/releases/download/v${PORTVERSION}/
@@ -26,16 +26,23 @@ MAKE_ARGS=	PREFIX="${PREFIX}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		MANDIR="${PREFIX}/share/man"
 MAKE_ENV+=	TARGET_ARCH=
-
 TEST_TARGET=	check
+
+CFLAGS+=	-DLZ4IO_MULTITHREAD -pthread
+LDFLAGS+=	-pthread
+
+BINARY_ALIAS=	make=${GMAKE}
 
 PORTSCOUT=	limit:^[0-9]*\.
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	TEST
-TEST_DESC=	Run complete tests
+TEST_DESC=	Run extensive tests
 
+# we need to do something else when python 3.14 is
+# the oldest version in the tree (~ October 2029).
+TEST_USES=	python:-3.13,build
 TEST_TEST_TARGET=test
 
 .include <bsd.port.mk>
