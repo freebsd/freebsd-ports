@@ -23,6 +23,6 @@ lib/cmake/fluidsynth/FluidSynthConfig.cmake
 lib/cmake/fluidsynth/FluidSynthConfigVersion.cmake
 lib/libfluidsynth.so
 lib/libfluidsynth.so.3
-lib/libfluidsynth.so.3.4.0
+lib/libfluidsynth.so.3.5.0
 libdata/pkgconfig/fluidsynth.pc
 share/man/man1/fluidsynth.1.gz
