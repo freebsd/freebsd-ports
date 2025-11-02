@@ -243,7 +243,7 @@ cat << EOF >> "${tmp}" || exit 1
 ${package_list}
     </affects>
     <description>
-        ${DESC_BODY}
+	${DESC_BODY}
     </description>
     <references>
       <cvename>${cvename}</cvename>
