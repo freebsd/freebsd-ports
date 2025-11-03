@@ -1,5 +1,5 @@
 PORTNAME=	crystal
-DISTVERSION=	1.16.3
+DISTVERSION=	1.18.2
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/dmgk/crystal-bootstrap/releases/download/${_BOOTSTRAP_VERSION}/:bootstrap \
 		LOCAL/dmgk/crystal:bootstrap
