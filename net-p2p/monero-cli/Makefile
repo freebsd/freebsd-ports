@@ -1,7 +1,6 @@
 PORTNAME=	monero-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.4.0
-PORTREVISION=	3
+DISTVERSION=	0.18.4.3
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	alex.perechnev@gmail.com
@@ -19,8 +18,8 @@ LIB_DEPENDS=	\
 		libboost_chrono.so:devel/boost-libs \
 		libboost_date_time.so:devel/boost-libs \
 		libboost_filesystem.so:devel/boost-libs \
+		libboost_locale.so:devel/boost-libs \
 		libboost_program_options.so:devel/boost-libs \
-		libboost_regex.so:devel/boost-libs \
 		libboost_serialization.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs \
 		libminiupnpc.so:net/miniupnpc \
@@ -30,16 +29,16 @@ LIB_DEPENDS=	\
 		libunbound.so:dns/unbound \
 		libzmq.so:net/libzmq4
 
-USES=		cmake compiler:c++11-lib pkgconfig readline ssl
+USES=		cmake compiler:c++14-lang pkgconfig readline ssl
 USE_GITHUB=	yes
 .if defined(PKGNAMESUFFIX)
 GIT_COMMIT=	${PKGNAMESUFFIX:C/-git-//}
 .else
-GIT_COMMIT=	${DISTVERSIONPREFIX}${PORTVERSION}
+GIT_COMMIT=	${DISTVERSIONPREFIX}${DISTVERSION}
 .endif
 GH_TUPLE=	monero-project:monero:${GIT_COMMIT} \
 		monero-project:supercop:633500ad8c875999:ext1/external/supercop \
-		tevador:RandomX:85c527a62301b7b8be89d941:ext2/external/randomx \
+		tevador:RandomX:102f8acf90a7649ada410de5:ext2/external/randomx \
 		trezor:trezor-common:bff7fdfe436c727982c:ext3/external/trezor-common
 
 CFLAGS+=	-D_WANT_SEMUN
@@ -58,24 +57,12 @@ NATIVE_CMAKE_OFF=	-DARCH=default
 # /usr/bin/ld -melf_amd64 -r -b binary -o blocksdat.o blocks.dat
 # See Bug 226996 - net-p2p/monero-cli: fails to link with lld as the system linker
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=226996
-.if ${ARCH} == aarch64
-LD_EMULATION=	aarch64elf
-.elif ${ARCH} == amd64
-LD_EMULATION=	elf_amd64
-.elif ${ARCH} == i386
-LD_EMULATION=	elf_i386_fbsd
-.elif ${ARCH} == powerpc
-LD_EMULATION=	elf32ppc
-.elif ${ARCH} == powerpc64
-LD_EMULATION=	elf64ppc
-.elif ${ARCH} == powerpc64le
-LD_EMULATION=	elf64lppc
-.endif
+LD_EMULATION=	${ARCH:S|aarch64|aarch64elf|:S|amd64|elf_amd64|:C|armv[67]|armelf|:S|i386|elf_i386_fbsd|:S|powerpc64|elf64ppc|:S|powerpc64le|elf64lppc|:C|powerpc(spe)*|elf32ppc_fbsd|:S|riscv64|elf64lriscv|}
 
 CMAKE_ARGS+=	-DLD_RAW_FLAGS:STRING=-m${LD_EMULATION}
 
 # keep in sync with all platforms where libunwind is available
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH:Marmv?} || ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH:Mpowerpc64*}
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .else
 CMAKE_ARGS+=	-DSTACK_TRACE:BOOL=OFF
