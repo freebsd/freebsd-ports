@@ -1,4 +1,4 @@
---- mail.local/mail.local.c.orig	2023-04-27 10:39:42 UTC
+--- mail.local/mail.local.c.orig	2025-06-27 17:57:30 UTC
 +++ mail.local/mail.local.c
 @@ -154,6 +154,8 @@ bool	BounceQuota = false;		/* permanent error when ove
  bool	HoldErrs = false;		/* Hold errors in ErrBuf */
@@ -83,8 +83,8 @@
  		notifybiff(biffmsg);
  
  	if (
-@@ -1618,9 +1630,9 @@ usage()
- 	ExitVal = EX_USAGE;
+@@ -1617,9 +1629,9 @@ usage()
+ {
  	/* XXX add U to options for USE_EAI */
  #if _FFR_SPOOL_PATH
 -	mailerr(NULL, "usage: mail.local [-7] [-b] [-d] [-l] [-f from|-r from] [-h filename] [-p path] user ...");
@@ -93,5 +93,5 @@
 -	mailerr(NULL, "usage: mail.local [-7] [-b] [-d] [-l] [-f from|-r from] [-h filename] user ...");
 +	mailerr(NULL, "usage: mail.local [-7] [-b] [-B] [-d] [-l] [-f from|-r from] [-h filename] user ...");
  #endif
- 	sm_exit(ExitVal);
+ 	sm_exit(EX_USAGE);
  }

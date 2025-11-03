@@ -1,6 +1,6 @@
---- sendmail/srvrsmtp.c.orig	2025-04-09 08:39:43 UTC
+--- sendmail/srvrsmtp.c.orig	2025-10-20 19:09:43 UTC
 +++ sendmail/srvrsmtp.c
-@@ -972,6 +972,9 @@ do								\
+@@ -953,6 +953,9 @@ do								\
  # define SHOWCMDINREPLY(inp) inp
  # define SHOWSHRTCMDINREPLY(inp) shortenstring(inp, MAXSHORTSTR)
  #endif
@@ -10,7 +10,7 @@
  
  void
  smtp(nullserver, d_flags, e)
-@@ -1562,6 +1565,8 @@ smtp(nullserver, d_flags, e)
+@@ -1546,6 +1549,8 @@ smtp(nullserver, d_flags, e)
  			/* check if data is on the socket during the pause */
  			if ((tp = channel_readable(InChannel, msecs)) != NULL)
  			{
@@ -19,7 +19,7 @@
  				greetcode = "554";
  				nullserver = "Command rejected";
  				sm_syslog(LOG_INFO, e->e_id,
-@@ -1571,6 +1576,8 @@ smtp(nullserver, d_flags, e)
+@@ -1555,6 +1560,8 @@ smtp(nullserver, d_flags, e)
  					  (int) tp->tv_sec +
  						(tp->tv_usec >= 500000 ? 1 : 0)
  					 );
@@ -28,7 +28,7 @@
  			}
  		}
  	}
-@@ -1690,6 +1697,10 @@ smtp(nullserver, d_flags, e)
+@@ -1674,6 +1681,10 @@ smtp(nullserver, d_flags, e)
  		SmtpPhase = "server cmd read";
  		sm_setproctitle(true, e, "server %s cmd read", CurSmtpClient);
  
@@ -39,7 +39,7 @@
  		/* handle errors */
  		if (sm_io_error(OutChannel) ||
  		    (p = sfgets(inp, sizeof(inp), InChannel,
-@@ -2005,8 +2016,11 @@ smtp(nullserver, d_flags, e)
+@@ -1989,8 +2000,11 @@ smtp(nullserver, d_flags, e)
  #define LOGAUTHFAIL	\
  	do	\
  	{	\
@@ -51,7 +51,7 @@
  		if (LogLevel >= 9)	\
  			sm_syslog(LOG_WARNING, e->e_id,	\
  				  "AUTH failure (%s): %s (%d) %s%s%.*s, relay=%.100s",	\
-@@ -2105,6 +2119,13 @@ smtp(nullserver, d_flags, e)
+@@ -2089,6 +2103,13 @@ smtp(nullserver, d_flags, e)
  			  case CMDEHLO:
  			  case CMDNOOP:
  			  case CMDRSET:
@@ -65,7 +65,7 @@
  			  case CMDERROR:
  				/* process normally */
  				break;
-@@ -2132,6 +2153,11 @@ smtp(nullserver, d_flags, e)
+@@ -2116,6 +2137,11 @@ smtp(nullserver, d_flags, e)
  #endif /* MAXBADCOMMANDS > 0 */
  				if (nullserver != NULL)
  				{
@@ -77,7 +77,7 @@
  					if (ISSMTPREPLY(nullserver))
  					{
  						/* Can't use ("%s", ...) due to usrerr() requirements */
-@@ -2156,6 +2182,9 @@ smtp(nullserver, d_flags, e)
+@@ -2140,6 +2166,9 @@ smtp(nullserver, d_flags, e)
  			DELAY_CONN("AUTH");
  			if (!sasl_ok || n_mechs <= 0)
  			{
@@ -87,7 +87,7 @@
  				message("503 5.3.3 AUTH not available");
  				break;
  			}
-@@ -3908,10 +3937,17 @@ smtp(nullserver, d_flags, e)
+@@ -3929,10 +3958,17 @@ smtp(nullserver, d_flags, e)
  				**  timeouts for the same connection.
  				*/
  
@@ -105,7 +105,7 @@
  			if (tTd(93, 100))
  			{
  				/* return to handle next connection */
-@@ -3993,7 +4029,10 @@ smtp(nullserver, d_flags, e)
+@@ -4014,7 +4050,10 @@ smtp(nullserver, d_flags, e)
  #if MAXBADCOMMANDS > 0
  			if (++n_badcmds > MAXBADCOMMANDS)
  			{
@@ -116,7 +116,7 @@
  				message("421 4.7.0 %s Too many bad commands; closing connection",
  					MyHostName);
  
-@@ -4047,6 +4086,9 @@ smtp(nullserver, d_flags, e)
+@@ -4068,6 +4107,9 @@ smtp(nullserver, d_flags, e)
  		}
  #if SASL
  		}
