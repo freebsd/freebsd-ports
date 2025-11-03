@@ -577,9 +577,6 @@
 %%WWWDIR%%/panes/settingsStorage.html
 %%WWWDIR%%/panes/settingsSystem.html
 %%WWWDIR%%/panes/settingsUSB.html
-%%WWWDIR%%/panes/tabVMConsole.html
-%%WWWDIR%%/panes/tabVMConsoleRDP.html
-%%WWWDIR%%/panes/tabVMConsoleVNC.html
 %%WWWDIR%%/panes/tabVMDetails.html
 %%WWWDIR%%/panes/tabVMSnapshots.html
 %%WWWDIR%%/panes/tabs.html
@@ -604,11 +601,5 @@
 %%WWWDIR%%/panes/wizardNewVM.html
 %%WWWDIR%%/panes/wizardNewVMAdvanced.html
 %%WWWDIR%%/phpvirtualbox-72.conf
-%%WWWDIR%%/rdpweb/RDPClientUI.swf
-%%WWWDIR%%/rdpweb/license_3rd.txt
-%%WWWDIR%%/rdpweb/swfobject.js
-%%WWWDIR%%/rdpweb/webclient.js
-%%WWWDIR%%/rdpweb/webclient3.html
 %%WWWDIR%%/recovery.php-disabled
-%%WWWDIR%%/tightvnc/VncViewer.jar
 %%WWWDIR%%/vboxinit

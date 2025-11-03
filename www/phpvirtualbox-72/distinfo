@@ -1,7 +1,3 @@
-TIMESTAMP = 1760000000
-SHA256 (phpvirtualbox-phpvirtualbox-7.2-1_GH0.tar.gz) = 8025ed6b6af7ab4f32b0ac548fee94621469d5f5bc89d6a8a553a3989ada5ca9
-SIZE (phpvirtualbox-phpvirtualbox-7.2-1_GH0.tar.gz) = 5271540
-SHA256 (2d806b480c28c4343ceda12ac0f8614713eddaec.patch) = 216cc7af1bdec4b64efad505fd606b3699cf10e29df4a8e3b114e2419bb1f1ea
-SIZE (2d806b480c28c4343ceda12ac0f8614713eddaec.patch) = 1076
-SHA256 (ab759b995472b98bda9e49050dff65c11e0a62b7.patch) = eea7c0051c80dd7d32cd04b220f45598c5611c7e5372ce137e2817a3416b8513
-SIZE (ab759b995472b98bda9e49050dff65c11e0a62b7.patch) = 5435
+TIMESTAMP = 1762111111
+SHA256 (phpvirtualbox-phpvirtualbox-7.2-2_GH0.tar.gz) = 06c3cc1585f05c21b2efb74650114054433776ab08980d939e4062b739f697cd
+SIZE (phpvirtualbox-phpvirtualbox-7.2-2_GH0.tar.gz) = 5119608
