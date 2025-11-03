@@ -10,6 +10,8 @@ WWW=		https://github.com/freenas/py-bsd
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=2025-12-04
 BROKEN_FreeBSD_15=	Requires deprecated header dlg_keys.h
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
