@@ -1,6 +1,6 @@
 PORTNAME=	verilator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.040
+DISTVERSION=	5.042
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,10 +8,10 @@ COMMENT=	Synthesizable Verilog to C++ compiler
 WWW=		https://www.veripool.org/verilator/ \
 		https://github.com/verilator/verilator
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_i386=	see https://github.com/verilator/verilator/issues/3037
+LICENSE=	ART20 LGPL3+
+LICENSE_COMB=	dual
+LICENSE_FILE_ART20=	${WRKSRC}/Artistic
+LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils \
 		autoconf>0:devel/autoconf \
