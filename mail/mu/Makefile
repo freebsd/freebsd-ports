@@ -1,7 +1,10 @@
 PORTNAME=	mu
-DISTVERSIONPREFIX=	v
 DISTVERSION=	1.12.13
 CATEGORIES=	mail
+MASTER_SITES=	https://github.com/djcb/${PORTNAME}/releases/download/v${DISTVERSION}/
+
+PATCH_SITES=	https://github.com/djcb/mu/commit/
+PATCHFILES=	0a4fabbf446d15b538600dfe7d879cad70ce941e.patch:-p1
 
 MAINTAINER=	rwn@mailo.com
 COMMENT=	Mail searching frontend for Xapian
@@ -10,46 +13,31 @@ WWW=		https://www.djcbsoftware.nl/code/mu/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	emacs:editors/emacs@nox
-
 LIB_DEPENDS=	libxapian.so:databases/xapian-core \
 		libfmt.so:devel/libfmt \
 		libgmime-3.0.so:mail/gmime30
 
-USES=		meson compiler:c++17-lang gnome \
-		makeinfo pkgconfig \
-		readline shebangfix python:build
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	djcb
-
+USES=		compiler:c++17-lang gnome meson pkgconfig python:build \
+		readline shebangfix tar:xz
+SHEBANG_FILES=	build-aux/date.py
 USE_GNOME=	glib20
 
-SHEBANG_GLOB=	*.py
-
-OPTIONS_DEFINE=		DOCS MU4E GUILE CLD2
-OPTIONS_DEFAULT=	MU4E
+OPTIONS_DEFINE=		CLD2 DOCS GUILE MANPAGES MU4E
+OPTIONS_DEFAULT=	MANPAGES MU4E
 OPTIONS_SUB=		yes
 
-MU4E_DESC=		Install mu4e e-mail client for emacs
-GUILE_DESC=		Install guile support
 CLD2_DESC=		Install CL2 support
+GUILE_DESC=		Install guile support
+MU4E_DESC=		Install mu4e e-mail client for emacs
 
-MU4E_RUN_DEPENDS=	emacs:editors/emacs
-MU4E_INFO=		mu4e
+CLD2_LIB_DEPENDS=	libcld2.so:devel/cld2
+CLD2_MESON_ENABLED=	cld2
 
 GUILE_USES=		guile:3.0
 GUILE_MESON_ENABLED=	guile
-GUILE_INFO=		mu-guile mu-scm
 
-CLD2_MESON_ENABLED=	cld2
-CLD2_LIB_DEPENDS=	libcld2.so:devel/cld2
+MANPAGES_BUILD_DEPENDS=	emacs:editors/emacs@nox
 
-post-stage-GUILE-off:
-	${RM} ${STAGEDIR}${PREFIX}/share/info/mu-guile.info
-	${RM} ${STAGEDIR}${PREFIX}/share/info/mu-scm.info
-
-post-stage-MU4E-off:
-	${RM} ${STAGEDIR}${PREFIX}/share/info/mu4e.info
+MU4E_RUN_DEPENDS=	emacs:editors/emacs
 
 .include <bsd.port.mk>
