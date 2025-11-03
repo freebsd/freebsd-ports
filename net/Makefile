@@ -1018,6 +1018,7 @@
     SUBDIR += pktanon
     SUBDIR += pload
     SUBDIR += plugdaemon
+    SUBDIR += pmix
     SUBDIR += poptop
     SUBDIR += portfwd
     SUBDIR += pptpclient
