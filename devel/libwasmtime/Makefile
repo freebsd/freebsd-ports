@@ -1,7 +1,6 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	36.0.2
+PORTVERSION=	38.0.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -31,8 +30,9 @@ CMAKE_SOURCE_PATH=	${WRKSRC}/crates/c-api
 
 .include "${.CURDIR}/Makefile.cargo"
 
-GH_TUPLE=	WebAssembly:testsuite:f50a662:testsuite/tests/spec_testsuite \
-		WebAssembly:wasi-testsuite:2fec29e:wasi_testsuite/tests/wasi_testsuite/wasi-common \
+GH_TUPLE=	WebAssembly:component-model:8021b51:component_model/tests/component-model \
+		WebAssembly:testsuite:7b59001:testsuite/tests/spec_testsuite \
+		WebAssembly:wasi-testsuite:26ea2ff:wasi_testsuite/tests/wasi_testsuite/wasi-common \
 		WebAssembly:wasi-threads:e1893c0:wasi_threads/tests/wasi_testsuite/wasi-threads
 
 post-configure:
