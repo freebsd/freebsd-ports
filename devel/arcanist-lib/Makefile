@@ -1,11 +1,11 @@
 PORTNAME?=	arcanist
 PORTVERSION?=	20220518
-PORTREVISION?=	8
+PORTREVISION?=	9
 CATEGORIES?=	devel
 PKGNAMESUFFIX=	${SLAVE_PKGNAMESUFFIX}${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
-COMMENT?=	Libraries for the command line interface for Phabricator
+COMMENT?=	Phabricator Arcanist libraries
 WWW?=		https://secure.phabricator.com/book/arcanist/
 
 LICENSE=	APACHE20
