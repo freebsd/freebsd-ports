@@ -1,5 +1,5 @@
 PORTNAME=	agrum
-DISTVERSION=	2.2.1
+DISTVERSION=	2.3.0
 CATEGORIES=	science math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ LLD_UNSAFE=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	agrumery
 GL_PROJECT=	aGrUM
-GL_TAGNAME=	40993102
+GL_TAGNAME=	50ed291c
 
 SHEBANG_FILES=	act
 
@@ -60,6 +60,6 @@ do-test:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ./act test release agrum -t all
 
-# tests as of 2.2.1: Failed 0 of 1485 tests
+# tests as of 2.3.0: Failed 0 of 1486 tests
 
 .include <bsd.port.mk>
