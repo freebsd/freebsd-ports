@@ -1230,6 +1230,7 @@
     SUBDIR += rdesktop
     SUBDIR += rdist6
     SUBDIR += rdist7
+    SUBDIR += rdp2tcp
     SUBDIR += read_bbrlog
     SUBDIR += realtek-re-kmod
     SUBDIR += realtek-re-kmod198
