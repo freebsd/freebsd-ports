@@ -1,5 +1,5 @@
 PORTNAME=	objconv
-DISTVERSION=	2.55_1
+DISTVERSION=	2.56
 CATEGORIES=	devel
 MASTER_SITES=	http://fuz.su/pub/objconv/ \
 		https://www.agner.org/optimize/objconv.zip?dummy=/
