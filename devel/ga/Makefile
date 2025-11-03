@@ -1,12 +1,12 @@
 PORTNAME=	ga
-DISTVERSION=	5.8.2
-PORTREVISION=	5
+DISTVERSION=	5.9.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/GlobalArrays/ga/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Partitioned Global Address Space (PGAS) library for distributed arrays
-WWW=		https://hpc.pnl.gov//globalarrays/
+WWW=		https://globalarrays.github.io/ \
+		https://github.com/GlobalArrays/ga
 
 LICENSE=	BSD3CLAUSE
 
@@ -18,7 +18,7 @@ USES=		autoreconf fortran gmake libtool localbase
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-peigs --enable-shared --disable-static --with-scalapack
+CONFIGURE_ARGS=	--disable-peigs --enable-shared --disable-static --with-scalapack # PeIGS is part of NWChem, usure why the --enable-peigs even exists here
 
 LDFLAGS+=	-lscalapack
 
