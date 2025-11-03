@@ -1,17 +1,17 @@
 PORTNAME=	lavinmq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
+DISTVERSION=	2.4.5
 CATEGORIES=	net
 
 # JavaScripts
-MASTER_SITES+=	https://github.com/chartjs/Chart.js/releases/download/v4.0.1/:chartjs \
-		https://github.com/cloudamqp/amqp-client.js/releases/download/v3.1.1/:amqpclient \
+MASTER_SITES+=	https://github.com/chartjs/Chart.js/releases/download/v${_CHARTJS}/:chartjs \
+		https://github.com/cloudamqp/amqp-client.js/releases/download/v${_AMQP_JS}/:amqpclient \
 		https://moment.github.io/luxon/es6/:luxon \
-		https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.3.1/dist/:chartjsadapter \
-		https://unpkg.com/@stoplight/elements@8.2.0/:elements \
+		https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@${_LUXON_JS}/dist/:chartjsadapter \
+		https://unpkg.com/@stoplight/elements@${_ELEMENTS}/:elements \
 		https://raw.githubusercontent.com/eclipse-paho/paho.mqtt.javascript/master/src/:paho
 
-DISTFILES+=	chart.js-4.0.1.tgz:chartjs \
+DISTFILES+=	chart.js-${_CHARTJS}.tgz:chartjs \
 		amqp-websocket-client.mjs:amqpclient \
 		amqp-websocket-client.mjs.map:amqpclient \
 		luxon.js:luxon \
@@ -23,20 +23,22 @@ DISTFILES+=	chart.js-4.0.1.tgz:chartjs \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		84codes-lz4.cr-${_LZ4}_GH0.tar.gz \
 		84codes-systemd.cr-v2.0.0_GH0.tar.gz \
-		cloudamqp-amq-protocol.cr-v1.1.15_GH0.tar.gz \
-		cloudamqp-amqp-client.cr-v1.3.1_GH0.tar.gz \
+		cloudamqp-amq-protocol.cr-v${_AMQP_PROTO}_GH0.tar.gz \
+		cloudamqp-amqp-client.cr-v${_AMQP_CLIENT}_GH0.tar.gz \
 		84codes-mqtt-protocol.cr-${_MQTT}_GH0.tar.gz \
 		chart.js-${_CHARTJS}.tgz
 
 # Crystal library versions
+_AMQP_CLIENT=		1.3.1
+_AMQP_PROTO=		1.1.15
 _LZ4=		96d714f7593c66ca7425872fd26c7b1286806d3d
-_MQTT=		d01a1210ed7adfed9aa5cd055f1788a45d9c4d52
+_MQTT=		36ff248ff8e9aaa749cfff3d251103e0e5f661bc
 
 # JavaScript library versions
+_AMQP_JS=		3.1.1
 _CHARTJS=		4.0.1
 _ELEMENTS=		8.2.0
-_AMQP_CLIENT=		3.1.1
-_CHARTJS_ADAPTER=	1.3.1
+_LUXON_JS=		1.3.1
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Next-generation AMQP 0.9.1 based message broker
@@ -53,8 +55,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cloudamqp
 GH_TUPLE=	84codes:lz4.cr:${_LZ4}:a/deps/lz4.cr \
 		84codes:systemd.cr:v2.0.0:systemd/deps/systemd.cr \
-		cloudamqp:amq-protocol.cr:v1.1.15:proto/deps/amq-protocol.cr \
-		cloudamqp:amqp-client.cr:v1.3.1:client/deps/amqp-client.cr \
+		cloudamqp:amq-protocol.cr:v${_AMQP_PROTO}:proto/deps/amq-protocol.cr \
+		cloudamqp:amqp-client.cr:v${_AMQP_CLIENT}:client/deps/amqp-client.cr \
 		84codes:mqtt-protocol.cr:${_MQTT}:mqtt/deps/mqtt-protocol.cr
 
 USE_RC_SUBR=	lavinmq
@@ -67,7 +69,7 @@ PORTDOCS=	CHANGELOG.md NOTICE README.md SECURITY.md
 OPTIONS_DEFINE=	DOCS
 
 SHARDS_ENV=	--time --verbose --production --release --no-color --stats \
-		--static
+		--static -Dgc_none --error-on-warnings -Dpreview_mt -Dexecution_context
 
 .include <bsd.port.options.mk>
 
