@@ -1,5 +1,6 @@
 PORTNAME=	dnspython
 DISTVERSION=	2.8.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	dns python
 MASTER_SITES=	PYPI
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent cython pep517 pytest
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 BINARY_ALIAS=	git=false
 NO_ARCH=	yes
