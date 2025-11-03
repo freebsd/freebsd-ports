@@ -1,7 +1,3 @@
-.if ${PORT_OPTIONS:MHTTP_UPLOAD}
-IGNORE=		upload module: patching is required
-.endif
-
 .if ${PORT_OPTIONS:MLUASTREAM}
 IGNORE=		lua stream module: patching is required
 .endif

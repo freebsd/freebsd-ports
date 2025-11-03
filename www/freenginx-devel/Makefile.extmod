@@ -158,6 +158,7 @@ HTTP_TARANTOOL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config
 
 HTTP_UPLOAD_GH_TUPLE=		fdintino:nginx-upload-module:96e6460:upload
 HTTP_UPLOAD_VARS=		DSO_EXTMODS+=upload
+HTTP_UPLOAD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_upload_module.c
 
 HTTP_UPLOAD_PROGRESS_GH_TUPLE=		masterzen:nginx-upload-progress-module:v0.9.3:uploadprogress
 HTTP_UPLOAD_PROGRESS_VARS=		DSO_EXTMODS+=uploadprogress
