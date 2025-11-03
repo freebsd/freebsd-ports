@@ -1,3 +1,54 @@
+  <vuln vid="e99a32c8-b8e2-11f0-8510-b42e991fc52e">
+    <topic>Xorg -- multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>xorg-server</name>
+	<range><lt>21.1.19</lt></range>
+    </package>
+    <package>
+	<name>xwayland</name>
+	<range><lt>24.1.9</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://access.redhat.com/errata/RHSA-2025:19432 reports:</p>
+	<blockquote cite="https://access.redhat.com/errata/RHSA-2025:19432">
+	  <p>CVE-2025-62229: A flaw was found in the X.Org X server
+	  and Xwayland when processing X11 Present extension
+	  notifications.  Improper error handling during notification
+	  creation can leave dangling pointers that lead to a
+	  use-after-free condition.  This can cause memory corruption
+	  or a crash, potentially allowing an attacker to execute
+	  arbitrary code or cause a denial of service.</p>
+	  <p>CVE-2025-62230: A flaw was discovered in the X.Org X
+	  servers X Keyboard (Xkb) extension when handling client
+	  resource cleanup.  The software frees certain data
+	  structures without properly detaching related resources,
+	  leading to a use-after-free condition.  This can cause
+	  memory corruption or a crash when affected clients
+	  disconnect.</p>
+	  <p>CVE-2025-62231: A flaw was identified in the X.Org X
+	  servers X Keyboard (Xkb) extension where improper bounds
+	  checking in the XkbSetCompatMap() function can cause an
+	  unsigned short overflow.  If an attacker sends specially
+	  crafted input data, the value calculation may overflow,
+	  leading to memory corruption or a crash.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-62229</cvename>
+      <cvename>CVE-2025-62230</cvename>
+      <cvename>CVE-2025-62231</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-62229</url>
+    </references>
+    <dates>
+      <discovery>2025-10-30</discovery>
+      <entry>2025-11-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5523394e-b889-11f0-9446-f02f7497ecda">
     <topic>redis -- Bug in XACKDEL may lead to stack overflow and potential RCE</topic>
     <affects>
