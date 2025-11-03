@@ -1,6 +1,5 @@
 PORTNAME=	phpvirtualbox
-DISTVERSION=	7.1-1
-PORTREVISION=	1
+DISTVERSION=	7.1-2
 CATEGORIES=	www
 SUFFIX=		-71
 PKGNAMESUFFIX=	${SUFFIX}${PHP_PKGNAMESUFFIX}
@@ -29,7 +28,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#Alias /phpvirtualbox#Alias /phpvirtualbox${SUFFIX}#' \
 		-e 's#/usr/share/phpvirtualbox#${WWWDIR}#g' \
 		${WRKSRC}/phpvirtualbox${SUFFIX}.conf
-	@${REINPLACE_CMD} -e 's#\r#\n#g' ${WRKSRC}/languages/zh_tw.xml
+	@${REINPLACE_CMD} -e 's#7.1-1#${DISTVERSION}#' \
+		${WRKSRC}/endpoints/lib/config.php
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
