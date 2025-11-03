@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	8.2.2
+DISTVERSION=	8.2.3
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 
@@ -26,7 +26,7 @@ LDFLAGS+=	-lpthread -lm -lexecinfo
 #PIE_UNSAFE=	ld: error: relocation R_X86_64_32 cannot be used against local \
 #		symbol; recompile with -fPIC
 
-CONFLICTS_INSTALL=	redis-devel redis62 redis72 redis74
+CONFLICTS_INSTALL=	redis-devel redis[0-9]*
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 SUB_FILES=	pkg-message
