@@ -18,15 +18,18 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-certgen \
+		--enable-context-extra-user-data \
 		--enable-des3 \
 		--enable-dh \
 		--enable-dsa \
 		--enable-dtls \
 		--enable-ecc \
+		--enable-haproxy \
 		--enable-ipv6 \
 		--enable-keygen \
 		--enable-opensslall \
 		--enable-opensslextra \
+		--enable-quic \
 		--enable-ripemd \
 		--enable-sessioncerts \
 		--enable-sha512 \
@@ -35,10 +38,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-ssh \
 		--enable-static \
 		--enable-tls13 \
-		--enable-tls13-draft18 \
-		--enable-haproxy \
-		--enable-quic \
-		--enable-context-extra-user-data
+		--enable-tls13-draft18
 TEST_TARGET=	check
 CFLAGS+=	-DWOLFSSL_ALT_NAMES -DWOLFSSL_GETRANDOM=1
 CFLAGS_i386=	-DWOLFSSL_SHA224
