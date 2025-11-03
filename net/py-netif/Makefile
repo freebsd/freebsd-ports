@@ -10,6 +10,9 @@ WWW=		https://github.com/freenas/py-netif
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Upstream unmaintained
+EXPIRATION_DATE=	2025-12-03
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsd>0:devel/py-bsd@${PY_FLAVOR}
 
 USES=		python
