@@ -1,0 +1,12 @@
+--- lib/CMakeLists.txt.orig	2025-11-04 12:49:44 UTC
++++ lib/CMakeLists.txt
+@@ -61,6 +61,6 @@ ADD_SUBDIRECTORY(imgui)
+ 
+ ADD_SUBDIRECTORY(imgui)
+ 
+-if(NOT APPLE)
++if(NOT APPLE AND NOT CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+ 	add_subdirectory(openxr)
+-endif()
+\ No newline at end of file
++endif()

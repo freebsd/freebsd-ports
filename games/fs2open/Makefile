@@ -1,7 +1,6 @@
 PORTNAME=	fs2open
 DISTVERSIONPREFIX=	release_
-DISTVERSION=	23_2_1
-PORTREVISION=	1
+DISTVERSION=	24_2_0
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -13,9 +12,6 @@ LICENSE_NAME=	Volition Copyright
 LICENSE_FILE=	${WRKSRC}/Copying.md
 LICENSE_PERMS=	dist-mirror auto-accept
 
-BROKEN=         Fails to build, error: cannot assign to non-static data member 'length' with const-qualified type 'const SizeType' (aka 'const unsigned int')
-EXPIRATION_DATE=2025-12-31
-
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libjansson.so:devel/jansson \
 		libpng.so:graphics/png \
@@ -26,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	scp-fs2open
 GH_PROJECT=	fs2open.github.com
 GH_TUPLE=	asarium:cmake-modules:7cef957:cmakemodules/cmake/external/rpavlik-cmake-modules \
-		asarium:libRocket:ecd648a:libRocket/lib/libRocket
+		asarium:libRocket:ae8a8d9:libRocket/lib/libRocket
 USE_SDL=	sdl2
 
 LDFLAGS_i386=	-Wl,-znotext
