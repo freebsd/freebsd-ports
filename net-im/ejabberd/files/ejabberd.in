@@ -22,7 +22,7 @@ name="ejabberd"
 rcvar=ejabberd_enable
 
 reload_cmd="ejabberd_reload"
-restart_cmd="ejabberd_reload"
+restart_cmd="ejabberd_restart"
 start_cmd="ejabberd_start"
 status_cmd="ejabberd_status"
 stop_cmd="ejabberd_stop"
@@ -66,9 +66,19 @@ ejabberd_stop()
 
 ejabberd_reload()
 {
-    echo "Restarting $name."
+    echo "Reloading $name config."
     if ejabberd_checkstatus; then
         su $EJABBERDUSER -c "env ERL_EPMD_ADDRESS=\"${ejabberd_epmd_address}\" $EJABBERDCTL --node $ejabberd_node reload_config"
+    else
+        ejabberd_start
+    fi
+}
+
+ejabberd_restart()
+{
+    echo "Restarting $name."
+    if ejabberd_checkstatus; then
+        su $EJABBERDUSER -c "env ERL_EPMD_ADDRESS=\"${ejabberd_epmd_address}\" $EJABBERDCTL --node $ejabberd_node restart"
     else
         ejabberd_start
     fi
