@@ -1,6 +1,5 @@
 bin/opengist
 %%ETCDIR%%/config.yml.sample
-etc/rc.d/opengist
 %%WWWDIR%%/assets/KaTeX_AMS-Regular-0cdd387c.woff2
 %%WWWDIR%%/assets/KaTeX_AMS-Regular-30da91e8.woff
 %%WWWDIR%%/assets/KaTeX_AMS-Regular-68534840.ttf
