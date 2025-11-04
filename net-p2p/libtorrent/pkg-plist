@@ -31,6 +31,7 @@ include/torrent/net/fd.h
 include/torrent/net/http_get.h
 include/torrent/net/http_stack.h
 include/torrent/net/network_config.h
+include/torrent/net/network_manager.h
 include/torrent/net/resolver.h
 include/torrent/net/socket_address.h
 include/torrent/net/socket_address_key.h
@@ -72,6 +73,6 @@ include/torrent/utils/string_manip.h
 include/torrent/utils/thread.h
 include/torrent/utils/uri_parser.h
 lib/libtorrent.so
-lib/libtorrent.so.31
-lib/libtorrent.so.31.0.0
+lib/libtorrent.so.32
+lib/libtorrent.so.32.0.0
 libdata/pkgconfig/libtorrent.pc
