@@ -44,7 +44,7 @@ command="%%PREFIX%%/sbin/nginx"
 _pidprefix="%%NGINX_RUNDIR%%"
 pidfile="${_pidprefix}/${name}.pid"
 _tmpprefix="%%NGINX_TMPDIR%%"
-required_files=%%PREFIX%%/etc/nginx/freenginx.conf
+required_files=%%PREFIX%%/etc/freenginx/nginx.conf
 extra_commands="reload configtest upgrade gracefulstop"
 
 [ -z "$nginx_enable" ]		&& nginx_enable="NO"
