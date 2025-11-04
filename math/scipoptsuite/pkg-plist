@@ -1099,11 +1099,11 @@ lib/libgcg.so.3.7.2.0
 lib/libpapilo-core.a
 lib/libscip.so
 lib/libscip.so.9.2
-lib/libscip.so.9.2.3.0
+lib/libscip.so.9.2.4.0
 lib/libsoplex-pic.a
 lib/libsoplex.a
 lib/libsoplexshared.so
 lib/libsoplexshared.so.7.1
-lib/libsoplexshared.so.7.1.5.0
+lib/libsoplexshared.so.7.1.6.0
 lib/libzimpl-pic.a
 lib/libzimpl.a

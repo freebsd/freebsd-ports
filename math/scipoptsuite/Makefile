@@ -1,6 +1,5 @@
 PORTNAME=	scipoptsuite
-DISTVERSION=	9.2.3
-PORTREVISION=	1
+DISTVERSION=	9.2.4
 CATEGORIES=	math
 MASTER_SITES=	https://scipopt.org/download/release/
 
@@ -22,5 +21,9 @@ USES=		bison cmake compiler:c++14-lang mpi:openmpi pkgconfig readline tar:tgz
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+
+LDFLAGS+=	-lpthread # fix build after it began breaking on 2025-11-03 for unclear reason
+
+INSTALL_CONFLICTS=	SCIP
 
 .include <bsd.port.mk>
