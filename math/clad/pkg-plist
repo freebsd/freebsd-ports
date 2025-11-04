@@ -24,6 +24,7 @@ include/clad/Differentiator/MultiplexExternalRMVSource.h
 include/clad/Differentiator/NumericalDiff.h
 include/clad/Differentiator/ParseDiffArgsTypes.h
 include/clad/Differentiator/PushForwardModeVisitor.h
+include/clad/Differentiator/RestoreTracker.h
 include/clad/Differentiator/ReverseModeForwPassVisitor.h
 include/clad/Differentiator/ReverseModeVisitor.h
 include/clad/Differentiator/ReverseModeVisitorDirectionKinds.h
@@ -31,9 +32,13 @@ include/clad/Differentiator/STLBuiltins.h
 include/clad/Differentiator/Sins.h
 include/clad/Differentiator/StmtClone.h
 include/clad/Differentiator/Tape.h
+include/clad/Differentiator/ThrustBuiltins.h
+include/clad/Differentiator/ThrustDerivatives.h
+include/clad/Differentiator/Timers.h
 include/clad/Differentiator/VectorForwardModeVisitor.h
 include/clad/Differentiator/VectorPushForwardModeVisitor.h
 include/clad/Differentiator/Version.h
+include/clad/Differentiator/Version.inc
 include/clad/Differentiator/VisitorBase.h
 include/clad/tools/ClangBackendPlugin.h
 include/clad/tools/ClangPlugin.h
