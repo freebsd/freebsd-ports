@@ -3,11 +3,11 @@
     <affects>
     <package>
 	<name>xorg-server</name>
-	<range><lt>21.1.19</lt></range>
+	<range><lt>21.1.19,1</lt></range>
     </package>
     <package>
 	<name>xwayland</name>
-	<range><lt>24.1.9</lt></range>
+	<range><lt>24.1.9,1</lt></range>
     </package>
     </affects>
     <description>
