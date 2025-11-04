@@ -11,6 +11,9 @@ WWW=		https://www.net2ftp.com/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		Unfetchable
+EXPIRATION_DATE=2025-12-31
+
 USES=		cpe php zip
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	ftp mysqli session zlib
