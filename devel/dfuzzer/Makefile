@@ -1,6 +1,6 @@
 PORTNAME=	dfuzzer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4
+DISTVERSION=	2.5
 CATEGORIES=	devel sysutils
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -25,12 +25,6 @@ OPTIONS_DEFINE=		MANPAGES
 MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			docbook-xsl>=0:textproc/docbook-xsl
 MANPAGES_PLIST_FILES=	share/man/man1/dfuzzer.1.gz
-
-post-patch:
-	${REINPLACE_CMD} -e 's|/etc/dfuzzer.conf|${PREFIX}/etc/dfuzzer.conf|' \
-		${WRKSRC}/man/dfuzzer.xml \
-		${WRKSRC}/src/suppression.c
-	${REINPLACE_CMD} -e 's|/stat|/status|g' ${WRKSRC}/test/test-util.c
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/dfuzzer.conf \
