@@ -1,5 +1,5 @@
 PORTNAME=	netgen
-DISTVERSION=	1.5.300
+DISTVERSION=	1.5.305
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-lvs
 
@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	RTimothyEdwards
 USE_XORG=	x11
 
-SHEBANG_FILES=	tcltk/netgen.sh.in
+SHEBANG_FILES=	python/*.py python/*.py.in tcltk/netgen.sh.in
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-interpreter=tcl \
@@ -27,11 +27,6 @@ CONFIGURE_ARGS=	--with-interpreter=tcl \
 CONFIGURE_ENV=	HAVE_PYTHON3=yes
 
 CONFLICTS_INSTALL=	netgen # bin/netgen
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|^#!/bin/env python3$$|#!${PYTHON_CMD}|' \
-		${WRKSRC}/python/*.py \
-		${WRKSRC}/python/*.py.in
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX}/lib/netgen/tcl && \
