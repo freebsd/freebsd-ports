@@ -1,5 +1,5 @@
 PORTNAME=	rustrover
-DISTVERSION=	2025.2.2
+DISTVERSION=	2025.2.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/rustrover/
 PKGNAMEPREFIX=	jetbrains-
