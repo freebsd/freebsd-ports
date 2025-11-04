@@ -1,5 +1,5 @@
 PORTNAME=	github-copilot-cli
-DISTVERSION=	0.0.353
+DISTVERSION=	0.0.354
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${NODE_HEADERS}${EXTRACT_SUFX}
@@ -115,7 +115,7 @@ do-install:
 	cd ${WRKSRC} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib
 	# remove *.node files for other OSes
-	@${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME} -name "*.node" | \
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME} -name "*\\.node" | \
 		${GREP} -v freebsd | \
 		${XARGS} ${RM}
 	# update shebang to use system node
