@@ -1,5 +1,6 @@
 PORTNAME=	openmpi
 DISTVERSION=	5.0.9
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${DISTVERSION:R}/
 
@@ -86,6 +87,7 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 ROMIO_CONFIGURE_OFF=	--disable-io-romio
 
 SLURM_CONFIGURE_WITH=	slurm
+SLURM_LIB_DEPENDS=	libslurm.so:sysutils/slurm-wlm
 
 .include <bsd.port.pre.mk>
 
