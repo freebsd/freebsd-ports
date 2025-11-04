@@ -1,5 +1,5 @@
 PORTNAME=	cocogitto
-DISTVERSION=	6.4.0
+DISTVERSION=	6.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
