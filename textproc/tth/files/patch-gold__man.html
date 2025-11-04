@@ -1,0 +1,38 @@
+--- gold_man.html.orig	2011-01-25 01:20:04 UTC
++++ gold_man.html
+@@ -325,7 +325,7 @@ the extra command:
+ <p>
+ 
+ <pre>
+-\input /usr/local/tth/tthprep.sty
++\input %%DATADIR%%/styles/tthprep.sty
+ 
+ </pre>
+ 
+@@ -432,7 +432,7 @@ line, for example
+ <p>
+ 
+ <pre>
+-%%tth: \input /usr/local/tth/swedish.bab
++%%tth: \input %%DATADIR%%/babel/swedish.bab
+ 
+ </pre>
+ 
+@@ -452,7 +452,7 @@ supported by the simplified TtH style file input via:
+ <p>
+ 
+ <pre>
+-%%tth:\input /usr/local/tth/amslatex.sty
++%%tth:\input %%DATADIR%%/styles/amslatex.sty
+ 
+ </pre>
+ 
+@@ -492,7 +492,7 @@ you can add the following line in the preamble.
+ you can add the following line in the preamble.
+ 
+ <pre>
+-%%tth: \input /usr/local/tth/tthntbib.sty
++%%tth: \input %%DATADIR%%/styles/tthntbib.sty
+ 
+ </pre>
+ Your file might already contain, or you might want also to add lines like:
