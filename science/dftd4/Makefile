@@ -1,12 +1,13 @@
 PORTNAME=	dftd4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.0
-PORTREVISION=	1
+DISTVERSION=	3.7.0-31
+DISTVERSIONSUFFIX=	-g476e6be
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Atomic-charge dependent london dispersion correction computation
-WWW=		https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dftd4/
+WWW=		https://dftd4.readthedocs.io/en/latest/ \
+		https://github.com/dftd4/dftd4
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

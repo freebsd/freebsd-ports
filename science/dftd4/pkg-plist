@@ -13,9 +13,14 @@ include/dftd4/dftd4_data_covrad.mod
 include/dftd4/dftd4_data_en.mod
 include/dftd4/dftd4_data_hardness.mod
 include/dftd4/dftd4_data_r4r2.mod
+include/dftd4/dftd4_data_wfpair.mod
 include/dftd4/dftd4_data_zeff.mod
 include/dftd4/dftd4_disp.mod
 include/dftd4/dftd4_model.mod
+include/dftd4/dftd4_model_d4.mod
+include/dftd4/dftd4_model_d4s.mod
+include/dftd4/dftd4_model_type.mod
+include/dftd4/dftd4_model_utils.mod
 include/dftd4/dftd4_ncoord.mod
 include/dftd4/dftd4_numdiff.mod
 include/dftd4/dftd4_output.mod
