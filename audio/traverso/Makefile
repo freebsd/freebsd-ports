@@ -13,6 +13,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+EXPIRATION_DATE=2025-12-31
+
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libFLAC.so:audio/flac \
 		libjack.so:audio/jack \
