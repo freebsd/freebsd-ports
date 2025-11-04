@@ -1,0 +1,28 @@
+--- meson_options.txt.orig	2025-06-18 16:25:56 UTC
++++ meson_options.txt
+@@ -57,12 +57,12 @@ option('int10', type: 'combo', choices: ['stub', 'x86e
+ option('int10', type: 'combo', choices: ['stub', 'x86emu', 'vm86', 'auto', 'false'],
+        value: 'auto',
+        description: 'Xorg int10 backend (default: usually x86emu)')
+-option('suid_wrapper', type: 'boolean', value: 'false',
++option('suid_wrapper', type: 'boolean', value: false,
+        description: 'SUID wrapper for legacy driver support')
+-option('pciaccess', type: 'boolean', value: 'true',
++option('pciaccess', type: 'boolean', value: true,
+        description: 'Xorg pciaccess support')
+-option('udev', type: 'boolean', value: 'true')
+-option('udev_kms', type: 'boolean', value: 'true')
++option('udev', type: 'boolean', value: true)
++option('udev_kms', type: 'boolean', value: true)
+ option('hal', type: 'combo', choices: ['true', 'false', 'auto'], value: 'auto',
+        description: 'Enable HAL integration')
+ option('systemd_logind', type: 'combo', choices: ['true', 'false', 'auto'], value: 'auto',
+@@ -107,7 +107,7 @@ option('dri3', type: 'combo', choices: ['true', 'false
+ option('dri1', type: 'combo', choices: ['true', 'false', 'auto'], value: 'auto', description: 'Build DRI1 extension (default: auto)')
+ option('dri2', type: 'combo', choices: ['true', 'false', 'auto'], value: 'auto', description: 'Build DRI2 extension (default: auto)')
+ option('dri3', type: 'combo', choices: ['true', 'false', 'auto'], value: 'auto', description: 'Build DRI3 extension (default: auto)')
+-option('drm', type: 'boolean', value: 'true',
++option('drm', type: 'boolean', value: true,
+         description: 'Build Xorg with libdrm support')
+ 
+ option('apple-applications-dir', type: 'string', value: '/Applications/Utilities',
