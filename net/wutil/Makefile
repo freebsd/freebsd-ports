@@ -1,6 +1,6 @@
 PORTNAME=	wutil
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
+DISTVERSION=	0.4.2
 CATEGORIES=	net sysutils
 
 MAINTAINER=	saheed@FreeBSD.org
@@ -8,8 +8,6 @@ COMMENT=	CLI and TUI for WiFi Management
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-IGNORE_FreeBSD_13=	requires <sys/queue_mergesort.h> introduced in FreeBSD 14
 
 LIB_DEPENDS=	libifconfig.so:net/libifconfig
 
