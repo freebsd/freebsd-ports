@@ -5,7 +5,11 @@ lib/cmake/SuiteSparse/SuiteSparseBLAS64.cmake
 lib/cmake/SuiteSparse/SuiteSparseLAPACK.cmake
 lib/cmake/SuiteSparse/SuiteSparsePolicy.cmake
 lib/cmake/SuiteSparse/SuiteSparseReport.cmake
+lib/cmake/SuiteSparse/SuiteSparse__blas_threading.cmake
 lib/cmake/SuiteSparse/SuiteSparse__thread.cmake
+lib/cmake/SuiteSparse/check_mkl.c
+lib/cmake/SuiteSparse/check_openblas_Apr2024.c
+lib/cmake/SuiteSparse/check_openblas_Mar2015.c
 lib/cmake/SuiteSparse_config/SuiteSparse_configConfig.cmake
 lib/cmake/SuiteSparse_config/SuiteSparse_configConfigVersion.cmake
 lib/cmake/SuiteSparse_config/SuiteSparse_configTargets-%%CMAKE_BUILD_TYPE%%.cmake

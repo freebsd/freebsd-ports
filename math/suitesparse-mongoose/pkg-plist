@@ -9,5 +9,6 @@ lib/cmake/SuiteSparse_Mongoose/SuiteSparse_MongooseTargets_static.cmake
 lib/libsuitesparse_mongoose.a
 lib/libsuitesparse_mongoose.so
 lib/libsuitesparse_mongoose.so.3
+lib/libsuitesparse_mongoose.so.%%VER%%
 libdata/pkgconfig/SuiteSparse_Mongoose.pc
 %%PORTDOCS%%%%DOCSDIR%%/Mongoose_UserGuide.pdf
