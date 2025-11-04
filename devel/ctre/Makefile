@@ -1,11 +1,12 @@
 PORTNAME=	ctre
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.9.0
+DISTVERSION=	3.10.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ header-only library for Compile Time Regular Expressions
-WWW=		https://compile-time.re/
+WWW=		https://compile-time.re/ \
+		https://github.com/hanickadot/compile-time-regular-expressions
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -48,7 +48,7 @@ include/ctre/wrapper.hpp
 include/unicode-db.hpp
 include/unicode-db/unicode-db.hpp
 include/unicode-db/unicode_interface.hpp
-share/cmake/ctre/ctre-config-version.cmake
-share/cmake/ctre/ctre-config.cmake
-share/cmake/ctre/ctre-targets.cmake
-share/pkgconfig/ctre.pc
+lib/cmake/ctre/ctre-config-version.cmake
+lib/cmake/ctre/ctre-config.cmake
+lib/cmake/ctre/ctre-targets.cmake
+libdata/pkgconfig/ctre.pc
