@@ -11,6 +11,8 @@ WWW=		https://raja.readthedocs.io/en/develop/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: undefined reference: RAJA::TypedIndexSet<RAJA::TypedRangeSegment<int, int>, RAJA::TypedListSegment<int>>::T0_TypeId, see https://github.com/LLNL/RAJA/issues/1936
+
 LIB_DEPENDS=	libcamp.so:devel/camp
 
 USES=		cmake:testing pkgconfig
