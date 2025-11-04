@@ -1,13 +1,13 @@
 PORTNAME=	openfpgaloader
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.1
+DISTVERSION=	1.0.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Universal utility for programming FPGA
 WWW=		https://github.com/trabucayre/openFPGALoader
 
-LICENSE=	AGPLv3
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libftdi1.so:devel/libftdi1 \
