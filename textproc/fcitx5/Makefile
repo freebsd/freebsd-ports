@@ -49,10 +49,12 @@ X11_LIB_DEPENDS=	libxcb-ewmh.so:x11/xcb-util-wm \
 			libxcb-keysyms.so:x11/xcb-util-keysyms \
 			libxcb-util.so:x11/xcb-util
 X11_RUN_DEPENDS=	xcb-imdkit>=1.0.3:x11/xcb-imdkit
+X11_CMAKE_BOOL=		ENABLE_X11
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols \
 			wayland-scanner:graphics/wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+WAYLAND_CMAKE_BOOL=	ENABLE_WAYLAND
 
 ENCHANT_DESC=		Dictionary/spellchecking framework
 ENCHANT_LIB_DEPENDS=	libenchant-2.so:textproc/enchant2
