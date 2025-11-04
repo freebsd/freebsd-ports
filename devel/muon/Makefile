@@ -3,9 +3,9 @@ DISTVERSION=	0.5.0
 CATEGORIES=	devel
 MASTER_SITES=	https://muon.build/releases/v${DISTVERSION}/ \
 		https://muon.build/releases/v${DISTVERSION}/docs/:docs
-DISTFILES+=	${PORTNAME}-v${DISTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}-v${DISTVERSION}${EXTRACT_SUFX} \
 		man.tar.gz:docs
-DIST_SUBDIR=	muon
+DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Build system compatible with meson
@@ -24,7 +24,7 @@ ALL_TARGET=
 PLIST_FILES=	bin/muon \
 		share/man/man1/muon.1.gz \
 		share/man/man5/meson.build.5.gz
-USE_CSTD=	c99
+
 CFLAGS+=	-D__XSI_VISIBLE=1
 CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
