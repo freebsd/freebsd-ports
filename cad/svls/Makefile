@@ -1,7 +1,6 @@
 PORTNAME=	svls
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.13
-PORTREVISION=	1
+DISTVERSION=	0.2.14
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +18,7 @@ GH_ACCOUNT=	dalance
 CARGO_CRATES=	addr2line-0.24.2 \
 		adler2-2.0.1 \
 		aho-corasick-1.1.3 \
-		anyhow-1.0.99 \
+		anyhow-1.0.100 \
 		async-trait-0.1.89 \
 		atty-0.2.14 \
 		auto_impl-1.3.0 \
@@ -68,7 +67,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
 		indexmap-1.9.3 \
-		indexmap-2.11.1 \
+		indexmap-2.11.4 \
 		io-uring-0.7.10 \
 		itoa-1.0.15 \
 		libc-0.2.175 \
@@ -115,12 +114,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.219 \
-		serde_derive-1.0.219 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
 		serde_json-1.0.143 \
 		serde_regex-1.1.0 \
 		serde_repr-0.1.20 \
-		serde_spanned-1.0.0 \
+		serde_spanned-1.0.3 \
 		simplelog-0.12.2 \
 		slab-0.4.11 \
 		smallvec-1.15.1 \
@@ -128,13 +128,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		str-concat-0.2.0 \
 		strsim-0.10.0 \
 		sv-filelist-parser-0.1.3 \
-		sv-parser-0.13.3 \
-		sv-parser-error-0.13.3 \
-		sv-parser-macros-0.13.3 \
-		sv-parser-parser-0.13.3 \
-		sv-parser-pp-0.13.3 \
-		sv-parser-syntaxtree-0.13.3 \
-		svlint-0.9.4 \
+		sv-parser-0.13.4 \
+		sv-parser-error-0.13.4 \
+		sv-parser-macros-0.13.4 \
+		sv-parser-parser-0.13.4 \
+		sv-parser-pp-0.13.4 \
+		sv-parser-syntaxtree-0.13.4 \
+		svlint-0.9.5 \
 		syn-1.0.109 \
 		syn-2.0.106 \
 		synstructure-0.13.2 \
@@ -142,7 +142,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		termcolor-1.4.1 \
 		textwrap-0.16.2 \
 		thiserror-1.0.69 \
+		thiserror-2.0.17 \
 		thiserror-impl-1.0.69 \
+		thiserror-impl-2.0.17 \
 		time-0.3.43 \
 		time-core-0.1.6 \
 		time-macros-0.2.24 \
@@ -150,10 +152,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tokio-1.47.1 \
 		tokio-macros-2.5.0 \
 		tokio-util-0.7.16 \
-		toml-0.9.5 \
-		toml_datetime-0.7.0 \
-		toml_parser-1.0.2 \
-		toml_writer-1.0.2 \
+		toml-0.9.8 \
+		toml_datetime-0.7.3 \
+		toml_parser-1.0.4 \
+		toml_writer-1.0.4 \
 		tower-0.4.13 \
 		tower-layer-0.3.3 \
 		tower-lsp-0.20.0 \
