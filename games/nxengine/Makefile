@@ -19,12 +19,13 @@ LICENSE_PERMS_FREEWARE=	dist-mirror pkg-mirror auto-accept
 LICENSE_DISTFILES_GPLv3=	${DISTFILES:[3]}
 LICENSE_DISTFILES_FREEWARE=	${DISTFILES:[2]:S/:data//}
 
-BROKEN=		Fails to build, error: implicit instantiation of undefined template 'std::char_traits<fmt::char8_t>'
-EXPIRATION_DATE=2025-12-31
+LDFLAGS+=	-lfmt
 
-LIB_DEPENDS=	libpng.so:graphics/png
+BUILD_DEPENDS=	${LOCALBASE}/include/spdlog/spdlog.h:devel/spdlog
+LIB_DEPENDS=	libfmt.so:devel/libfmt \
+		libpng.so:graphics/png
 
-USES=		cmake compiler:c++11-lang jpeg sdl
+USES=		cmake compiler:c++11-lang jpeg localbase:ldflags sdl
 USE_SDL=	image2 mixer2 sdl2
 
 USE_GITHUB=	yes
@@ -32,6 +33,9 @@ GH_PROJECT=	${PORTNAME}-evo
 
 DESKTOP_ENTRIES="NXEngine" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;AdventureGame;" ""
+
+post-patch:
+	${RM} -r ${WRKSRC}/deps/spdlog
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
