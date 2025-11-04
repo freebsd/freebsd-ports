@@ -940,6 +940,7 @@ share/locale/ca@valencia/LC_MESSAGES/kcmkwincommon.mo
 share/locale/ca@valencia/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/ca@valencia/LC_MESSAGES/kcmkwm.mo
 share/locale/ca@valencia/LC_MESSAGES/kwin.mo
+share/locale/cs/LC_MESSAGES/kcm_animations.mo
 share/locale/cs/LC_MESSAGES/kcm_kwin_effects.mo
 share/locale/cs/LC_MESSAGES/kcm_kwin_scripts.mo
 share/locale/cs/LC_MESSAGES/kcm_kwin_virtualdesktops.mo

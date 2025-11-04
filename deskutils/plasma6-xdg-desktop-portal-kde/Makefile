@@ -21,6 +21,4 @@ USE_QT=		base declarative wayland
 USE_XORG=	x11
 USE_GL=		gl opengl
 
-CMAKE_ARGS=	-DQT_MAJOR_VERSION=6
-
 .include <bsd.port.mk>

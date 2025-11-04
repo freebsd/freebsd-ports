@@ -15,6 +15,7 @@ OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 PULSEAUDIO_USE=		KDE=plasma-pa:run
 QT5_DESC=		Install Plasma 6 integration plugins for Qt5 applications
-QT5_RUN_DEPENDS=	plasma6-plasma-integration-qt5>0:x11/plasma6-plasma-integration@qt5
+QT5_RUN_DEPENDS=	plasma6-plasma-integration-qt5>0:x11/plasma6-plasma-integration@qt5 \
+			plasma6-breeze-qt5>0:x11-themes/plasma6-breeze@qt5
 
 .include <bsd.port.mk>

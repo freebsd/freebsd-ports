@@ -2774,6 +2774,7 @@ share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
+share/locale/nn/LC_MESSAGES/plasma_runner_keys.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/nn/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -3062,6 +3063,7 @@ share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
+share/locale/ru/LC_MESSAGES/plasma_runner_keys.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ru/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo

@@ -806,6 +806,8 @@ share/doc/HTML/ru/kcontrol/icons/size.png
 share/doc/HTML/ru/kcontrol/icons/use-of-icons.png
 share/doc/HTML/ru/kcontrol/kcmstyle/index.cache.bz2
 share/doc/HTML/ru/kcontrol/kcmstyle/index.docbook
+share/doc/HTML/ru/kcontrol/lookandfeel/index.cache.bz2
+share/doc/HTML/ru/kcontrol/lookandfeel/index.docbook
 share/doc/HTML/ru/kcontrol/notifications/index.cache.bz2
 share/doc/HTML/ru/kcontrol/notifications/index.docbook
 share/doc/HTML/ru/kcontrol/region_language/index.cache.bz2
@@ -1000,8 +1002,8 @@ share/kstyle/themes/qtgtk.themerc
 share/kstyle/themes/qtmotif.themerc
 share/kstyle/themes/qtplastique.themerc
 share/kstyle/themes/qtwindows.themerc
-share/kxmlgui5/kfontview/kfontviewpart.rc
 share/kxmlgui5/kfontview/kfontviewui.rc
+share/kxmlgui5/kfontviewpart/kfontviewpart.rc
 share/locale/af/LC_MESSAGES/kcm_colors.mo
 share/locale/af/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/af/LC_MESSAGES/kcm_cursortheme.mo
@@ -1664,6 +1666,7 @@ share/locale/cs/LC_MESSAGES/kcm_regionandlang.mo
 share/locale/cs/LC_MESSAGES/kcm_soundtheme.mo
 share/locale/cs/LC_MESSAGES/kcm_style.mo
 share/locale/cs/LC_MESSAGES/kcm_users.mo
+share/locale/cs/LC_MESSAGES/kcm_wallpaper.mo
 share/locale/cs/LC_MESSAGES/kcminit.mo
 share/locale/cs/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/cs/LC_MESSAGES/kded_donationmessage.mo
@@ -2290,6 +2293,7 @@ share/locale/eu/LC_MESSAGES/kcm_regionandlang.mo
 share/locale/eu/LC_MESSAGES/kcm_soundtheme.mo
 share/locale/eu/LC_MESSAGES/kcm_style.mo
 share/locale/eu/LC_MESSAGES/kcm_users.mo
+share/locale/eu/LC_MESSAGES/kcm_wallpaper.mo
 share/locale/eu/LC_MESSAGES/kcminit.mo
 share/locale/eu/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/eu/LC_MESSAGES/kded_donationmessage.mo
@@ -4288,14 +4292,17 @@ share/locale/nn/LC_MESSAGES/kcm_fonts.mo
 share/locale/nn/LC_MESSAGES/kcm_icons.mo
 share/locale/nn/LC_MESSAGES/kcm_lookandfeel.mo
 share/locale/nn/LC_MESSAGES/kcm_nightlight.mo
+share/locale/nn/LC_MESSAGES/kcm_nighttime.mo
 share/locale/nn/LC_MESSAGES/kcm_notifications.mo
 share/locale/nn/LC_MESSAGES/kcm_regionandlang.mo
 share/locale/nn/LC_MESSAGES/kcm_soundtheme.mo
 share/locale/nn/LC_MESSAGES/kcm_style.mo
 share/locale/nn/LC_MESSAGES/kcm_users.mo
+share/locale/nn/LC_MESSAGES/kcm_wallpaper.mo
 share/locale/nn/LC_MESSAGES/kcminit.mo
 share/locale/nn/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/nn/LC_MESSAGES/kded_donationmessage.mo
+share/locale/nn/LC_MESSAGES/kded_geotimezoned.mo
 share/locale/nn/LC_MESSAGES/kfontinst.mo
 share/locale/nn/LC_MESSAGES/kio_applications.mo
 share/locale/nn/LC_MESSAGES/kio_desktop.mo
@@ -4307,6 +4314,7 @@ share/locale/nn/LC_MESSAGES/libkicker.mo
 share/locale/nn/LC_MESSAGES/libkmpris.mo
 share/locale/nn/LC_MESSAGES/libkworkspace.mo
 share/locale/nn/LC_MESSAGES/libnotificationmanager.mo
+share/locale/nn/LC_MESSAGES/oom-notifier.mo
 share/locale/nn/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
@@ -4482,6 +4490,7 @@ share/locale/pl/LC_MESSAGES/kcm_regionandlang.mo
 share/locale/pl/LC_MESSAGES/kcm_soundtheme.mo
 share/locale/pl/LC_MESSAGES/kcm_style.mo
 share/locale/pl/LC_MESSAGES/kcm_users.mo
+share/locale/pl/LC_MESSAGES/kcm_wallpaper.mo
 share/locale/pl/LC_MESSAGES/kcminit.mo
 share/locale/pl/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/pl/LC_MESSAGES/kded_donationmessage.mo
@@ -4774,6 +4783,7 @@ share/locale/ru/LC_MESSAGES/kcm_regionandlang.mo
 share/locale/ru/LC_MESSAGES/kcm_soundtheme.mo
 share/locale/ru/LC_MESSAGES/kcm_style.mo
 share/locale/ru/LC_MESSAGES/kcm_users.mo
+share/locale/ru/LC_MESSAGES/kcm_wallpaper.mo
 share/locale/ru/LC_MESSAGES/kcminit.mo
 share/locale/ru/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/ru/LC_MESSAGES/kded_donationmessage.mo
