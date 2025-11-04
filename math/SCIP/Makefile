@@ -1,5 +1,5 @@
 PORTNAME=	SCIP
-DISTVERSION=	9.2.2
+DISTVERSION=	9.2.4
 CATEGORIES=	math science
 MASTER_SITES=	https://www.scipopt.org/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -37,5 +37,7 @@ ZIMPL_DESC=		Build with Zimpl to translate LP models
 ZIMPL_CMAKE_BOOL=	ZIMPL
 ZIMPL_LIB_DEPENDS=	libzimpl.so:math/zimpl
 ZIMPL_BROKEN=		see https://github.com/scipopt/scip/issues/4
+
+INSTALL_CONFLICTS=	scipoptsuite
 
 .include <bsd.port.mk>

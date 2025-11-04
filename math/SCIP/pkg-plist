@@ -569,4 +569,4 @@ lib/cmake/scip/scip-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/scip/scip-targets.cmake
 lib/libscip.so
 lib/libscip.so.9.2
-lib/libscip.so.9.2.2.0
+lib/libscip.so.9.2.4.0
