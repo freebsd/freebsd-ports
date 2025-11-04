@@ -1,3 +1,5 @@
+PORTREVISION=	1
+
 COMMENT=	Subtitle extractor
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
@@ -11,8 +13,10 @@ CFLAGS+=	-I${LOCALBASE}/include/freetype2 \
 		-I${LOCALBASE}/include/protobuf-c
 LIBS+=		-lfreetype -lgpac -lmd -lpng -lprotobuf-c -lutf8proc -lz
 
+# OCR broken with leptonica >= 1.83
+# probably fixed in next version
 OPTIONS_DEFINE=	HARDSUBX OCR RUST
-OPTIONS_DEFAULT=	HARDSUBX OCR RUST
+OPTIONS_DEFAULT=	RUST
 HARDSUBX_DESC=	Extraction of burnt subtitles (hard subtitles)
 OCR_DESC=	Optical Character Recognition
 RUST_DESC=	Build Rust-based components
