@@ -10,6 +10,9 @@ WWW=		https://jdebp.eu/Softwares/redo/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/source/COPYING
 
+BROKEN=		Unfetchable
+EXPIRATION_DATE=2025-12-31
+
 USES=		compiler:c++11-lang
 
 NO_WRKSUBDIR=	yes
