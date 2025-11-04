@@ -23,6 +23,8 @@ WWW=		https://www.rdkit.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN_FreeBSD_16_amd64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=272652
+
 BUILD_DEPENDS=	catch>0:devel/catch \
 		flex:textproc/flex
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
