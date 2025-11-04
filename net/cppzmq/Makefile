@@ -1,18 +1,18 @@
 PORTNAME=	cppzmq
-PORTVERSION=	4.10.0
+PORTVERSION=	4.11.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ bindings for 0MQ
-WWW=		https://github.com/zeromq/cppzmq
+WWW=		https://github.com/zeromq/cppzmq \
+		https://zeromq.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libzmq.so:net/libzmq4
-TEST_DEPENDS=	catch>0:devel/catch
+TEST_DEPENDS=	catch2>0:devel/catch2
 
 USES=		cmake:testing pkgconfig
 
@@ -46,5 +46,7 @@ post-patch:
 	${SED} -i '.orig' \
 		-e 's|ZeroMQ_LIBRARY AND ZeroMQ_STATIC_LIBRARY|ZeroMQ_LIBRARY|' \
 		${WRKSRC}/libzmq-pkg-config/FindZeroMQ.cmake
+
+# tests as of 4.11.0: 100% tests passed, 0 tests failed out of 107
 
 .include <bsd.port.mk>
