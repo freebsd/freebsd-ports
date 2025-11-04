@@ -87,7 +87,8 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 ROMIO_CONFIGURE_OFF=	--disable-io-romio
 
 SLURM_CONFIGURE_WITH=	slurm
-SLURM_LIB_DEPENDS=	libslurm.so:sysutils/slurm-wlm
+# Slurm integration in OpenMPI is handled through the PMIx interface
+#SLURM_LIB_DEPENDS=	libslurm.so:sysutils/slurm-wlm
 
 .include <bsd.port.pre.mk>
 
