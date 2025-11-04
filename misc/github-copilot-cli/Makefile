@@ -1,5 +1,6 @@
 PORTNAME=	github-copilot-cli
 DISTVERSION=	0.0.354
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${NODE_HEADERS}${EXTRACT_SUFX}
@@ -9,8 +10,8 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GitHub Copilot CLI brings the power of the coding agent to terminal
 WWW=		https://github.com/github/copilot-cli
 
-ONLY_FOR_ARCHS=		amd64
-ONLY_FOR_ARCHS_REASON=	binaries are installed in folders with architecture encoded as x64, patches are welcome to fix this limitation
+ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	binaries are installed in folders with architecture encoded in them, patches are welcome to fix this limitation
 
 FETCH_DEPENDS=	npm:www/npm \
 		jq:textproc/jq
@@ -27,6 +28,9 @@ WRKSRC=		${WRKDIR}/copilot-${DISTVERSION}
 PACKAGE_NAME=	@github/copilot
 
 NODE_HEADERS=	node-v22.19.0-headers
+
+JS_ARCH=	${ARCH:S/amd64/x64/:S/aarch64/arm64/}
+PLIST_SUB=	JS_ARCH=${JS_ARCH}
 
 DD=		${DISTDIR}/${DIST_SUBDIR}
 
@@ -118,6 +122,14 @@ do-install:
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME} -name "*\\.node" | \
 		${GREP} -v freebsd | \
 		${XARGS} ${RM}
+	# remove files for other OSes
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME} -name "*linux*" | ${XARGS} ${RM} -r
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME} -name "*win32*" | ${XARGS} ${RM} -r
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME} -name "*darwin*" | ${XARGS} ${RM} -r
+	# remove unnecessary files
+	@${FIND} ${STAGEDIR}${PREFIX}/lib -type f -and -name "*package*.json" -delete
+	@${FIND} ${STAGEDIR}${PREFIX}/lib -type f -and -name "README.md" -delete
+	@${FIND} ${STAGEDIR}${PREFIX}/lib -type f -and -name "LICENSE.md" -delete
 	# update shebang to use system node
 	@${REINPLACE_CMD} -i '' \
 		-e "s|#!/usr/bin/env node|#!${PREFIX}/bin/node|" \

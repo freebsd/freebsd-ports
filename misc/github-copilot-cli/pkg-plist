@@ -1,109 +1,15 @@
 bin/copilot
 lib/node_modules/.bin/copilot
-lib/node_modules/.package-lock.json
-lib/node_modules/@github/copilot/LICENSE.md
-lib/node_modules/@github/copilot/README.md
 lib/node_modules/@github/copilot/index.js
-lib/node_modules/@github/copilot/package.json
-lib/node_modules/@github/copilot/prebuilds/darwin-arm64/compile_commands.json
-lib/node_modules/@github/copilot/prebuilds/darwin-arm64/spawn-helper
-lib/node_modules/@github/copilot/prebuilds/darwin-x64/compile_commands.json
-lib/node_modules/@github/copilot/prebuilds/darwin-x64/spawn-helper
-lib/node_modules/@github/copilot/prebuilds/freebsd-x64/keytar.node
-lib/node_modules/@github/copilot/prebuilds/freebsd-x64/pty.node
-lib/node_modules/@github/copilot/prebuilds/linux-arm64/compile_commands.json
-lib/node_modules/@github/copilot/prebuilds/linux-x64/compile_commands.json
-lib/node_modules/@github/copilot/prebuilds/win32-arm64/compile_commands.json
-lib/node_modules/@github/copilot/prebuilds/win32-arm64/conpty.pdb
-lib/node_modules/@github/copilot/prebuilds/win32-arm64/conpty/OpenConsole.exe
-lib/node_modules/@github/copilot/prebuilds/win32-arm64/conpty/conpty.dll
-lib/node_modules/@github/copilot/prebuilds/win32-arm64/conpty_console_list.pdb
-lib/node_modules/@github/copilot/prebuilds/win32-arm64/pty.pdb
-lib/node_modules/@github/copilot/prebuilds/win32-arm64/winpty-agent.exe
-lib/node_modules/@github/copilot/prebuilds/win32-arm64/winpty-agent.pdb
-lib/node_modules/@github/copilot/prebuilds/win32-arm64/winpty.dll
-lib/node_modules/@github/copilot/prebuilds/win32-arm64/winpty.pdb
-lib/node_modules/@github/copilot/prebuilds/win32-x64/compile_commands.json
-lib/node_modules/@github/copilot/prebuilds/win32-x64/conpty.pdb
-lib/node_modules/@github/copilot/prebuilds/win32-x64/conpty/OpenConsole.exe
-lib/node_modules/@github/copilot/prebuilds/win32-x64/conpty/conpty.dll
-lib/node_modules/@github/copilot/prebuilds/win32-x64/conpty_console_list.pdb
-lib/node_modules/@github/copilot/prebuilds/win32-x64/pty.pdb
-lib/node_modules/@github/copilot/prebuilds/win32-x64/winpty-agent.exe
-lib/node_modules/@github/copilot/prebuilds/win32-x64/winpty-agent.pdb
-lib/node_modules/@github/copilot/prebuilds/win32-x64/winpty.dll
-lib/node_modules/@github/copilot/prebuilds/win32-x64/winpty.pdb
+lib/node_modules/@github/copilot/prebuilds/freebsd-%%JS_ARCH%%/keytar.node
+lib/node_modules/@github/copilot/prebuilds/freebsd-%%JS_ARCH%%/pty.node
 lib/node_modules/@github/copilot/sdk/index.d.ts
 lib/node_modules/@github/copilot/sdk/index.js
 lib/node_modules/@github/copilot/sharp/index.js
-lib/node_modules/@github/copilot/sharp/node_modules/@img/colour/LICENSE.md
-lib/node_modules/@github/copilot/sharp/node_modules/@img/colour/README.md
 lib/node_modules/@github/copilot/sharp/node_modules/@img/colour/color.cjs
 lib/node_modules/@github/copilot/sharp/node_modules/@img/colour/index.cjs
-lib/node_modules/@github/copilot/sharp/node_modules/@img/colour/package.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-darwin-arm64/LICENSE
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-darwin-arm64/README.md
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-darwin-arm64/package.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-darwin-x64/LICENSE
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-darwin-x64/README.md
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-darwin-x64/package.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-darwin-arm64/README.md
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-darwin-arm64/lib/glib-2.0/include/glibconfig.h
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-darwin-arm64/lib/index.js
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-darwin-arm64/lib/libvips-cpp.8.17.2.dylib
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-darwin-arm64/package.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-darwin-arm64/versions.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-darwin-x64/README.md
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-darwin-x64/lib/glib-2.0/include/glibconfig.h
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-darwin-x64/lib/index.js
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-darwin-x64/lib/libvips-cpp.8.17.2.dylib
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-darwin-x64/package.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-darwin-x64/versions.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-linux-arm64/README.md
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-linux-arm64/lib/glib-2.0/include/glibconfig.h
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-linux-arm64/lib/index.js
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-linux-arm64/lib/libvips-cpp.so.8.17.2
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-linux-arm64/package.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-linux-arm64/versions.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-linux-x64/README.md
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-linux-x64/lib/glib-2.0/include/glibconfig.h
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-linux-x64/lib/index.js
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-linux-x64/lib/libvips-cpp.so.8.17.2
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-linux-x64/package.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-libvips-linux-x64/versions.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-linux-arm64/LICENSE
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-linux-arm64/README.md
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-linux-arm64/package.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-linux-x64/LICENSE
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-linux-x64/README.md
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-linux-x64/package.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-win32-arm64/LICENSE
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-win32-arm64/README.md
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-win32-arm64/lib/libvips-42.dll
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-win32-arm64/lib/libvips-cpp-8.17.2.dll
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-win32-arm64/package.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-win32-arm64/versions.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-win32-x64/LICENSE
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-win32-x64/README.md
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-win32-x64/lib/libvips-42.dll
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-win32-x64/lib/libvips-cpp-8.17.2.dll
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-win32-x64/package.json
-lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-win32-x64/versions.json
 lib/node_modules/@github/copilot/tree-sitter-bash.wasm
 lib/node_modules/@github/copilot/tree-sitter-powershell.wasm
 lib/node_modules/@github/copilot/tree-sitter.wasm
 lib/node_modules/@github/copilot/worker/conoutSocketWorker.js
-lib/node_modules/@img/sharp-freebsd-x64/sharp.node
-lib/package-lock.json
-lib/package.json
-@dir lib/node_modules/@github/copilot/prebuilds/linux-arm
-@dir lib/node_modules/@github/copilot/prebuilds/linux-armv7l
-@dir lib/node_modules/@github/copilot/prebuilds/linux-ia32
-@dir lib/node_modules/@github/copilot/prebuilds/linuxmusl-arm
-@dir lib/node_modules/@github/copilot/prebuilds/linuxmusl-arm64
-@dir lib/node_modules/@github/copilot/prebuilds/linuxmusl-x64
-@dir lib/node_modules/@github/copilot/prebuilds/win32-ia32
-@dir lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-darwin-arm64/lib
-@dir lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-darwin-x64/lib
-@dir lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-linux-arm64/lib
-@dir lib/node_modules/@github/copilot/sharp/node_modules/@img/sharp-linux-x64/lib
+lib/node_modules/@img/sharp-freebsd-%%JS_ARCH%%/sharp.node
