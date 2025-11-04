@@ -2600,7 +2600,6 @@ lib/python%%XYDOT%%/lib-dynload/_sha1.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_sha2.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_sha3.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_socket.cpython-%%XY%%%%ABI%%.so
-lib/python%%XYDOT%%/lib-dynload/_sqlite3.cpython-%%XY%%.so
 lib/python%%XYDOT%%/lib-dynload/_ssl.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_statistics.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_struct.cpython-%%XY%%%%ABI%%.so
