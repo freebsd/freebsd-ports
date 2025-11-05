@@ -1,3 +1,36 @@
+  <vuln vid="c71a3914-ba96-11f0-aada-f59a8ea34d12">
+    <topic>OpenEXR &lt; 3.4.3 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openexr</name>
+	<range><lt>3.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cary Phillips reports:</p>
+	<blockquote cite="https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.4.3">
+	  <p>
+	    Patch release that addresses several bugs, primarily involving
+	    properly rejecting corrupt input data.
+	  </p>
+	</blockquote>
+	<p>
+	  He goes on to report various relevant items including heap buffer
+	  overflows, use-after-free, use of uninitialized memory and other bugs,
+	  several of them found by OSS-fuzz, and some also found in OpenJPH.
+	</p>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.4.3</url>
+    </references>
+    <dates>
+      <discovery>2025-10-29</discovery>
+      <entry>2025-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="970159e6-ba60-11f0-8447-b42e991fc52e">
     <topic>MongoDB -- Improper Check for Unusual or Exceptional Conditions</topic>
     <affects>
