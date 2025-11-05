@@ -1,19 +1,20 @@
 PORTNAME=	htop
-DISTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/${PORTNAME}-dev/${PORTNAME}/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://github.com/htop-dev/htop/releases/download/${PORTVERSION}/
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Better top(1) - interactive process viewer
-WWW=		https://htop.dev/
+WWW=		https://htop.dev/ \
+		https://github.com/htop-dev/htop
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		ncurses tar:xz
 
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-unicode
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/htop \
 		share/man/man1/htop.1.gz \
@@ -25,7 +26,15 @@ OPTIONS_DEFINE=	LSOF
 
 LSOF_RUN_DEPENDS=	lsof:sysutils/lsof
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
+CONFIGURE_ARGS+=--enable-libunwind
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
+USES+=		localbase
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's/3.4.0-dev-3.4.0/3.4.0/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|${PORTVERSION}-${PORTVERSION}|${PORTVERSION}|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
