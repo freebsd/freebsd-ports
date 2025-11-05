@@ -2,6 +2,7 @@ bin/walker-launcher
 etc/xdg/walker/config.toml
 etc/xdg/walker/themes/default/item.xml
 etc/xdg/walker/themes/default/item_archlinuxpkgs.xml
+etc/xdg/walker/themes/default/item_bookmarks.xml
 etc/xdg/walker/themes/default/item_calc.xml
 etc/xdg/walker/themes/default/item_clipboard.xml
 etc/xdg/walker/themes/default/item_dmenu.xml
