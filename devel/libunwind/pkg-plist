@@ -7,7 +7,7 @@ include/libunwind.h
 lib/libunwind-%%ARCH%%.a
 lib/libunwind-%%ARCH%%.so
 lib/libunwind-%%ARCH%%.so.8
-lib/libunwind-%%ARCH%%.so.8.1.0
+lib/libunwind-%%ARCH%%.so.8.2.0
 %%COREDUMP%%lib/libunwind-coredump.a
 %%COREDUMP%%lib/libunwind-coredump.so
 %%COREDUMP%%lib/libunwind-coredump.so.0
@@ -25,7 +25,7 @@ lib/libunwind-setjmp.so.0.0.0
 lib/libunwind.a
 lib/libunwind.so
 lib/libunwind.so.8
-lib/libunwind.so.8.1.0
+lib/libunwind.so.8.2.0
 %%COREDUMP%%libdata/pkgconfig/libunwind-coredump.pc
 libdata/pkgconfig/libunwind-generic.pc
 libdata/pkgconfig/libunwind-ptrace.pc
