@@ -1,13 +1,23 @@
 [
 { type: install
   message: <<EOM
-You can use spoofdpi rc.d service and specify arguments
-for spoofdpi program in rc.conf file like this below:
-	spoofdpi_args="-port 8181 -dns-addr 1.1.1.1 -enable-doh"
+You can use SpoofDPI rc.d service and specify arguments
+for SpoofDPI program in rc.conf file like this below:
+	# sysrc spoofdpi_args="-listen-port 8181 -dns-addr 1.1.1.1 -enable-doh"
 To enable/start spoofdpi service:
 	# service spoofdpi enable
 	# service spoofdpi start
 Now, you can configure your web browser to use this proxy.
+SpoofDPI listens on port 8080 by default and uses DNS as 8.8.8.8.
+EOM
+}
+{ type: upgrade
+  maximum_version: "0.12.2"
+  message: << EOM
+Some command-line arguments of SpoofDPI has been refactored, a few examples:
+	# -addr => -listen-addr, -port => -listen-port and etc.
+See the commit link below or project page for new changes in arguments usage.
+	# https://github.com/xvzc/SpoofDPI/commit/a2993ac68d87a0525a93bc23984d21e341214199
 EOM
 }
 ]

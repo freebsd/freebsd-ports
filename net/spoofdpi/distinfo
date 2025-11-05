@@ -1,6 +1,6 @@
-TIMESTAMP = 1725844927
-SHA256 (xvzc-SpoofDPI-v0.12.0_GH0.tar.gz) = 8350cacb0a5cc7b3c1d9aa7cbd2e519dfb61e7d59d49475de11387f8229a01c0
-SIZE (xvzc-SpoofDPI-v0.12.0_GH0.tar.gz) = 34504
+TIMESTAMP = 1762360442
+SHA256 (xvzc-SpoofDPI-v0.12.2_GH0.tar.gz) = 6b963e5c52e129f1bcac3b5adc59322715f5d31e593eb317e363c18c77f53a5b
+SIZE (xvzc-SpoofDPI-v0.12.2_GH0.tar.gz) = 42450
 SHA256 (atomicgo-cursor-v0.2.0_GH0.tar.gz) = 61760aaf6b2a0b51adcea56913104aa070b844426063a21dac60551f239e5044
 SIZE (atomicgo-cursor-v0.2.0_GH0.tar.gz) = 11330
 SHA256 (atomicgo-keyboard-v0.2.9_GH0.tar.gz) = 6855b6e6e6837de6e9cfb98e0f49f6224eb599c688bdd4ce3a0c96b2f409bd07
