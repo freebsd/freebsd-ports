@@ -1,6 +1,6 @@
 PORTNAME=	paps
 DISTVERSION=	0.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/dov/${PORTNAME}/releases/download/v${DISTVERSION}/
 

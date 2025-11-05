@@ -1,6 +1,6 @@
 PORTNAME=	knxd
 PORTVERSION=	0.14.72
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 # make is compatible with fmt >= 10, https://github.com/knxd/knxd/pull/549

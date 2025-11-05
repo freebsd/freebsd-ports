@@ -1,7 +1,7 @@
 PORTNAME=	ecal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.13.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net devel
 
 BROKEN=		incompatible with asio >= 1.33, see https://github.com/eclipse-ecal/ecal/issues/2340
