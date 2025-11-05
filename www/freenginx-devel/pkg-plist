@@ -54,6 +54,8 @@
 %%DSO%%%%HTTP%%%%HTTP_GEOIP2%%libexec/freenginx/ngx_http_geoip2_module.so
 %%DSO%%%%HTTP%%%%NJS%%libexec/freenginx/ngx_http_js_module.so
 %%DSO%%%%ICONV%%libexec/freenginx/ngx_http_iconv_module.so
+%%DSO%%%%KEYVAL%%libexec/freenginx/ngx_http_keyval_module.so
+%%DSO%%%%KEYVAL%%libexec/freenginx/ngx_stream_keyval_module.so
 %%DSO%%%%LET%%libexec/freenginx/ngx_http_let_module.so
 %%DSO%%%%LINK%%libexec/freenginx/ngx_http_link_func_module.so
 %%DSO%%%%LUA%%libexec/freenginx/ngx_http_lua_module.so

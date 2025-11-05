@@ -73,6 +73,7 @@ HTTP_XSLT_DESC=			Enable http_xslt module
 HTTP_ZIP_DESC=			3rd party http_zip module
 ICONV_DESC=			3rd party iconv module
 IPV6_DESC=			Enable IPv6 support
+KEYVAL_DESC=			3rd party keyval module
 LET_DESC=			3rd party let module
 LINK_DESC=			3rd party link function module
 LUA_DESC=			3rd party lua module
