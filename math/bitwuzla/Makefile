@@ -21,6 +21,8 @@ USES=		compiler:c++17-lang localbase:ldflags meson pkgconfig python:build
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
+CFLAGS+=	-I${LOCALBASE}/include/cadical
+CXXFLAGS+=	-I${LOCALBASE}/include/cadical
 LDFLAGS+=	-lcadical
 
 MESON_ARGS=	-Ddefault_library=shared \
