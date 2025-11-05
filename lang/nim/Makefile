@@ -1,6 +1,5 @@
 PORTNAME=	nim
-DISTVERSION=	2.2.4
-PORTREVISION=	1
+DISTVERSION=	2.2.6
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
 
@@ -30,7 +29,9 @@ TEST_BINARY_ALIAS=	node=nodejs
 
 .include <bsd.port.pre.mk>
 
-TLIST=		nimgrep nimpretty nimsuggest testament
+CLIST=	nim.cfg nimdoc.cfg nimdoc.tex.cfg
+DLIST=	dochack.nim dochack.js fuzzysearch.nim
+TLIST=	nimgrep nimpretty nimsuggest testament
 
 NIMDIR=	${STAGEDIR}${PREFIX}/nim
 
@@ -55,38 +56,30 @@ do-build-TOOLS-on:
 		-d:release --nimcache=${WRKSRC}/nimcache
 
 do-install:
-	${MKDIR} ${NIMDIR}
-	${MKDIR} ${NIMDIR}/bin
+	${MKDIR} ${NIMDIR}/bin \
+		 ${NIMDIR}/lib/compiler \
+		 ${NIMDIR}/config
 	# Install nim compiler
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/nim ${NIMDIR}/bin
 	${STRIP_CMD} ${NIMDIR}/bin/nim
 	# Install lib nim rtl
-	${MKDIR} ${NIMDIR}/lib
 	${INSTALL_LIB} ${WRKSRC}/lib/libnimrtl.so ${NIMDIR}/lib
 	# Install nim lib files
 	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${NIMDIR}/lib "! -name libnimrtl.so")
-	${MKDIR} ${NIMDIR}/lib/compiler
 	(cd ${WRKSRC}/compiler && ${COPYTREE_SHARE} . ${NIMDIR}/lib/compiler "! -name nim ! -name nim1")
 	(cd ${WRKSRC}/dist/checksums && ${COPYTREE_SHARE} . ${NIMDIR}/lib/dist/checksums)
 	# Configuration files
-	${MKDIR} ${NIMDIR}/config
-.for file in nim.cfg nimdoc.cfg nimdoc.tex.cfg
-	${INSTALL_DATA} ${WRKSRC}/config/${file} ${NIMDIR}/config
-.endfor
+	${INSTALL_DATA} ${CLIST:S|^|${WRKSRC}/config/|} ${NIMDIR}/config
 
 do-install-DOCS-on:
 	${FIND} ${WRKSRC}/doc -name "*.idx" -delete
-	${MKDIR} ${NIMDIR}/doc
+	${MKDIR} ${NIMDIR}/doc \
+		 ${NIMDIR}/tools/dochack
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${NIMDIR}/doc)
-	${MKDIR} ${NIMDIR}/tools/dochack
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/dochack.nim ${NIMDIR}/tools/dochack
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/dochack.js ${NIMDIR}/tools/dochack
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/fuzzysearch.nim ${NIMDIR}/tools/dochack
+	${INSTALL_SCRIPT} ${DLIST:S|^|${WRKSRC}/tools/dochack/|} ${NIMDIR}/tools/dochack
 
 do-install-TOOLS-on:
-.for t in ${TLIST}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${t} ${NIMDIR}/bin
-.endfor
+	${INSTALL_PROGRAM} ${TLIST:S|^|${WRKSRC}/bin/|} ${NIMDIR}/bin
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ./koch test all -d:release \

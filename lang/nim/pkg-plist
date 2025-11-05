@@ -937,6 +937,7 @@ nim/lib/system/orc.nim
 nim/lib/system/osalloc.nim
 nim/lib/system/platforms.nim
 nim/lib/system/profiler.nim
+nim/lib/system/ptrarith.nim
 nim/lib/system/rawquits.nim
 nim/lib/system/repr.nim
 nim/lib/system/repr_impl.nim
