@@ -1,6 +1,6 @@
 PORTNAME=	ImageMagick
 DISTVERSION=	7.1.1-45
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/releases/ \
 		https://mirror.dogado.de/imagemagick/releases/ \
@@ -338,5 +338,8 @@ post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/ImageMagick-7/${i} \
 		${STAGEDIR}${PREFIX}/etc/ImageMagick-7/${i}.sample
 .endfor
+
+post-install-PERL-on:
+	${STRIP_CMD} ${STAGEDIR}${SITE_ARCH}/auto/Image/Magick/*/*.so
 
 .include <bsd.port.mk>
