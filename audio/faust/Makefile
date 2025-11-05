@@ -1,5 +1,5 @@
 PORTNAME=	faust
-DISTVERSION=	2.81.8
+DISTVERSION=	2.81.10
 CATEGORIES=	audio devel
 MASTER_SITES=	https://github.com/grame-cncm/faust/releases/download/${DISTVERSION}/
 
@@ -70,6 +70,8 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/faust
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/faust # https://github.com/grame-cncm/faust/issues/135
 	@${FIND} ${STAGEDIR} -name android | ${XARGS} ${RM} -r
+	# update QT modules in installes bin/faust2*
+	${REINPLACE_CMD} -i '' -e 's| printsupport||g' ${STAGEDIR}${PREFIX}/bin/faust2*
 
 post-install-HIGHLIGHT-on:
 	# 1) kate

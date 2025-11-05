@@ -288,7 +288,7 @@ lib/ios-libsndfile.a
 lib/libOSCFaust.a
 lib/libfaust.so
 lib/libfaust.so.2
-lib/libfaust.so.2.81.8
+lib/libfaust.so.2.81.10
 %%HIGHLIGHT%%share/apps/katepart/syntax/faust.xml
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.cpp
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.h
@@ -425,6 +425,14 @@ lib/libfaust.so.2.81.8
 %%DATADIR%%/chaos-stratus/build-install-effect.sh
 %%DATADIR%%/chaos-stratus/install-effect.sh
 %%DATADIR%%/chaos-stratus/stratus.cpp
+%%DATADIR%%/clap/Makefile.simple
+%%DATADIR%%/clap/clap-arch.cpp
+%%DATADIR%%/clap/clap-helpers-impl.cpp
+%%DATADIR%%/clap/clap-mapui.h
+%%DATADIR%%/clap/faust-hot-reload.py
+%%DATADIR%%/clap/interpreter-clap.cpp
+%%DATADIR%%/clap/interpreter-clap.h
+%%DATADIR%%/clap/simple-faust.cpp
 %%DATADIR%%/cmajor/Makefile
 %%DATADIR%%/cmajor/README.md
 %%DATADIR%%/cmajor/cmajor-faust-editor.cpp
@@ -955,26 +963,26 @@ lib/libfaust.so.2.81.8
 %%DATADIR%%/wwise/README.md
 %%DATADIR%%/wwise/__init__.py
 %%DATADIR%%/wwise/config.py
-%%DATADIR%%/wwise/default/effect (in-place)/SoundEnginePlugin/ProjectNameFX.cpp
-%%DATADIR%%/wwise/default/effect (in-place)/SoundEnginePlugin/ProjectNameFX.h
-%%DATADIR%%/wwise/default/effect (in-place)/SoundEnginePlugin/ProjectNameFXParams.cpp
-%%DATADIR%%/wwise/default/effect (in-place)/SoundEnginePlugin/ProjectNameFXParams.h
-%%DATADIR%%/wwise/default/effect (in-place)/WwisePlugin/ProjectNamePlugin.cpp
-%%DATADIR%%/wwise/default/effect (out-of-place)/SoundEnginePlugin/ProjectNameFX.cpp
-%%DATADIR%%/wwise/default/effect (out-of-place)/SoundEnginePlugin/ProjectNameFX.h
-%%DATADIR%%/wwise/default/effect (out-of-place)/SoundEnginePlugin/ProjectNameFXParams.cpp
-%%DATADIR%%/wwise/default/effect (out-of-place)/SoundEnginePlugin/ProjectNameFXParams.h
-%%DATADIR%%/wwise/default/effect (out-of-place)/WwisePlugin/ProjectNamePlugin.cpp
-%%DATADIR%%/wwise/default/source/SoundEnginePlugin/ProjectNameSource.cpp
-%%DATADIR%%/wwise/default/source/SoundEnginePlugin/ProjectNameSource.h
-%%DATADIR%%/wwise/default/source/SoundEnginePlugin/ProjectNameSourceParams.cpp
-%%DATADIR%%/wwise/default/source/SoundEnginePlugin/ProjectNameSourceParams.h
-%%DATADIR%%/wwise/default/source/WwisePlugin/ProjectNamePlugin.cpp
 %%DATADIR%%/wwise/integrator.py
 %%DATADIR%%/wwise/jsonprocessor.py
 %%DATADIR%%/wwise/orchestrator.py
 %%DATADIR%%/wwise/parameters.py
 %%DATADIR%%/wwise/processor.py
+%%DATADIR%%/wwise/scaffolding.2024/effect (in-place)/SoundEnginePlugin/ProjectNameFX.cpp
+%%DATADIR%%/wwise/scaffolding.2024/effect (in-place)/SoundEnginePlugin/ProjectNameFX.h
+%%DATADIR%%/wwise/scaffolding.2024/effect (in-place)/SoundEnginePlugin/ProjectNameFXParams.cpp
+%%DATADIR%%/wwise/scaffolding.2024/effect (in-place)/SoundEnginePlugin/ProjectNameFXParams.h
+%%DATADIR%%/wwise/scaffolding.2024/effect (in-place)/WwisePlugin/ProjectNamePlugin.cpp
+%%DATADIR%%/wwise/scaffolding.2024/effect (out-of-place)/SoundEnginePlugin/ProjectNameFX.cpp
+%%DATADIR%%/wwise/scaffolding.2024/effect (out-of-place)/SoundEnginePlugin/ProjectNameFX.h
+%%DATADIR%%/wwise/scaffolding.2024/effect (out-of-place)/SoundEnginePlugin/ProjectNameFXParams.cpp
+%%DATADIR%%/wwise/scaffolding.2024/effect (out-of-place)/SoundEnginePlugin/ProjectNameFXParams.h
+%%DATADIR%%/wwise/scaffolding.2024/effect (out-of-place)/WwisePlugin/ProjectNamePlugin.cpp
+%%DATADIR%%/wwise/scaffolding.2024/source/SoundEnginePlugin/ProjectNameSource.cpp
+%%DATADIR%%/wwise/scaffolding.2024/source/SoundEnginePlugin/ProjectNameSource.h
+%%DATADIR%%/wwise/scaffolding.2024/source/SoundEnginePlugin/ProjectNameSourceParams.cpp
+%%DATADIR%%/wwise/scaffolding.2024/source/SoundEnginePlugin/ProjectNameSourceParams.h
+%%DATADIR%%/wwise/scaffolding.2024/source/WwisePlugin/ProjectNamePlugin.cpp
 %%DATADIR%%/wwise/spkcfg.py
 %%DATADIR%%/wwise/test.py
 %%DATADIR%%/wwise/utils.py
