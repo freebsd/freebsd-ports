@@ -1,3 +1,33 @@
+  <vuln vid="77bac392-ba98-11f0-aada-f59a8ea34d12">
+	  <topic>OpenJPH &lt; 0.24.5 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openjph</name>
+	<range><lt>0.24.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Aous Naman reports several vulnerabilities fixed in OpenJPH versions
+	up to 0.24.5 and credits Cary Phillips for reporting them from the
+	  OSS-fuzz project.</p>
+	<blockquote cite="https://github.com/aous72/OpenJPH/releases">
+	  <p>[0.24.5] Addresses OpenEXR OSS-fuzz issue 5747129672073216 that can cause heap corruption.</p>
+	  <p>[0.24.4...] we now check that the ATK marker segment length (Latk) makes sense.
+	    The issue was identified in OpenEXR fuzzing.</p>
+	  <p>[0.24.3] This is an important bug fix.  It protects against illegally long QCD and QCC marker segments.  It was discovered during OpenEXR fussing; thanx to [Cary Phillips].</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/aous72/OpenJPH/releases</url>
+    </references>
+    <dates>
+      <discovery>2025-10-29</discovery>
+      <entry>2025-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c71a3914-ba96-11f0-aada-f59a8ea34d12">
     <topic>OpenEXR &lt; 3.4.3 -- multiple vulnerabilities</topic>
     <affects>
