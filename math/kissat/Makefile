@@ -1,6 +1,6 @@
 PORTNAME=	kissat
 DISTVERSIONPREFIX=	rel-
-DISTVERSION=	4.0.3
+DISTVERSION=	4.0.4
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -48,6 +48,6 @@ do-install: # https://github.com/arminbiere/kissat/issues/62
 	${INSTALL_LIB} ${WRKSRC}/build/libkissat.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/build/libkissat.a ${STAGEDIR}${PREFIX}/lib
 
-# tests as of 4.0.3: All 1043 test jobs succeeded in 6.65 seconds.
+# tests as of 4.0.4: All 1043 test jobs succeeded in 0.85 seconds.
 
 .include <bsd.port.mk>
