@@ -3,7 +3,7 @@ DISTVERSION=	3.9.0
 PORTREVISION=	1
 CATEGORIES=	math
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SIMD Library for Evaluating Elementary Functions, vectorized libm
 WWW=		https://sleef.org
 
