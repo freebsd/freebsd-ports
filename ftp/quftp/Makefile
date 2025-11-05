@@ -14,6 +14,7 @@ USES=		ncurses readline
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
+CPPFLAGS+=	-DWANT_OBSOLETE_TYPEDEFS
 LDFLAGS+=	-lpthread
 PLIST_FILES=	bin/quftp share/man/man1/quftp.1.gz
 
