@@ -1,3 +1,3 @@
-TIMESTAMP = 1761537055
-SHA256 (litellm-1.79.0.tar.gz) = f58bb751222ee0e1ffecb2d44987999f9fa94130a6d1a478e19a3e5e8b9a7414
-SIZE (litellm-1.79.0.tar.gz) = 11146414
+TIMESTAMP = 1762311223
+SHA256 (litellm-1.79.1.tar.gz) = c1cf0232c01e7ad4b8442d2cdd78973ce74dfda37ad1d9f0ec3c911510e26523
+SIZE (litellm-1.79.1.tar.gz) = 11216675
