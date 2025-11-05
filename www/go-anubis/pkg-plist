@@ -11,6 +11,7 @@ sbin/robots2policy
 %%DATADIR%%/bots/ai-catchall.yaml
 %%DATADIR%%/bots/ai-robots-txt.yaml
 %%DATADIR%%/bots/cloudflare-workers.yaml
+%%DATADIR%%/bots/custom-async-http-client.yaml
 %%DATADIR%%/bots/headless-browsers.yaml
 %%DATADIR%%/bots/irc-bots/archlinux-phrik.yaml
 %%DATADIR%%/bots/irc-bots/gentoo-chat.yaml
@@ -32,11 +33,13 @@ sbin/robots2policy
 %%DATADIR%%/crawlers/_allow-good.yaml
 %%DATADIR%%/crawlers/ai-search.yaml
 %%DATADIR%%/crawlers/ai-training.yaml
+%%DATADIR%%/crawlers/alibaba-cloud.yaml
 %%DATADIR%%/crawlers/applebot.yaml
 %%DATADIR%%/crawlers/bingbot.yaml
 %%DATADIR%%/crawlers/commoncrawl.yaml
 %%DATADIR%%/crawlers/duckduckbot.yaml
 %%DATADIR%%/crawlers/googlebot.yaml
+%%DATADIR%%/crawlers/huawei-cloud.yaml
 %%DATADIR%%/crawlers/internet-archive.yaml
 %%DATADIR%%/crawlers/kagibot.yaml
 %%DATADIR%%/crawlers/marginalia.yaml
@@ -44,11 +47,10 @@ sbin/robots2policy
 %%DATADIR%%/crawlers/openai-gptbot.yaml
 %%DATADIR%%/crawlers/openai-searchbot.yaml
 %%DATADIR%%/crawlers/qwantbot.yaml
+%%DATADIR%%/crawlers/tencent-cloud.yaml
 %%DATADIR%%/meta/README.md
 %%DATADIR%%/meta/ai-block-aggressive.yaml
 %%DATADIR%%/meta/ai-block-moderate.yaml
 %%DATADIR%%/meta/ai-block-permissive.yaml
+%%DATADIR%%/meta/default-config.yaml
 %%DATADIR%%/services/uptime-robot.yaml
-%%DATADIR%%/bots/custom-async-http-client.yaml
-%%DATADIR%%/crawlers/alibaba-cloud.yaml
-%%DATADIR%%/crawlers/huawei-cloud.yaml
