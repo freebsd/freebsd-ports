@@ -1,5 +1,5 @@
 PORTNAME=	picolisp
-PORTVERSION=	25.6
+PORTVERSION=	25.9
 CATEGORIES=	lang
 MASTER_SITES=	https://software-lab.de/
 DISTNAME=	picoLisp-${PORTVERSION}
@@ -26,6 +26,7 @@ post-patch:
 		-e 's|llvm-link|llvm-link${LLVM_VERSION}|' \
 		-e 's|llvm-config|${LLVM_CONFIG}|' \
 		-e '/^.SILENT:/d' \
+		-e '52s|$$| `pkg-config --cflags readline libffi`|' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -i '' -e 's|/usr|${PREFIX}|g' ${WRKSRC}/../bin/*
 
@@ -34,6 +35,7 @@ post-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/picolisp
+	${RM} ${WRKSRC}/../soTest.c
 	cd ${WRKSRC}/.. && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/picolisp "! -name '*.bak'"
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/picolisp/src
 	${FIND} ${STAGEDIR}${PREFIX}/lib/picolisp/bin -exec ${CHMOD} a+x {} \;
