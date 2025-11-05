@@ -11,6 +11,8 @@ WWW=		https://github.com/simongog/sdsl-lite
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	compilation fails: error: static assertion failed due to requirement 'sizeof(unsigned int) % sizeof(unsigned long long) == 0': The size of a serializable type must be a multiple of 8 bytes
+
 USES=		cmake:testing compiler:c++17-lang
 USE_LDCONFIG=	yes
 
