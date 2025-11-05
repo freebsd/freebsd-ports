@@ -11,6 +11,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake libedit readline
+
+CPPFLAGS+=	-DWANT_OBSOLETE_TYPEDEFS
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/elf share/man/man1/elf.1.gz
 
