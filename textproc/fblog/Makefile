@@ -1,6 +1,6 @@
 PORTNAME=	fblog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.16.0
+DISTVERSION=	4.17.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	brocode
 
 CARGO_CRATES=	aho-corasick-1.1.3 \
-		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.18 \
 		anstyle-1.0.10 \
@@ -30,11 +29,11 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		bumpalo-3.17.0 \
 		cc-1.2.22 \
 		cfg-if-1.0.0 \
-		chrono-0.4.41 \
-		clap-4.5.46 \
-		clap_builder-4.5.46 \
-		clap_complete-4.5.57 \
-		clap_derive-4.5.45 \
+		chrono-0.4.42 \
+		clap-4.5.51 \
+		clap_builder-4.5.51 \
+		clap_complete-4.5.60 \
+		clap_derive-4.5.49 \
 		clap_lex-0.7.4 \
 		colorchoice-1.0.3 \
 		core-foundation-sys-0.8.7 \
@@ -57,12 +56,12 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		generic-array-0.14.7 \
 		getrandom-0.2.16 \
 		handlebars-6.3.2 \
-		hashbrown-0.15.3 \
+		hashbrown-0.16.0 \
 		heck-0.5.0 \
 		iana-time-zone-0.1.63 \
 		iana-time-zone-haiku-0.1.2 \
 		ident_case-1.0.1 \
-		indexmap-2.11.4 \
+		indexmap-2.12.0 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.15 \
 		js-sys-0.3.77 \
@@ -75,7 +74,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		lua-src-548.1.1 \
 		luajit-src-210.6.1+f9140a6 \
 		memchr-2.7.4 \
-		mlua-0.11.3 \
+		mlua-0.11.4 \
 		mlua-sys-0.8.3 \
 		num-modular-0.6.1 \
 		num-order-1.2.0 \
@@ -93,18 +92,19 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		quote-1.0.40 \
 		redox_syscall-0.5.12 \
 		redox_users-0.5.0 \
-		regex-1.11.2 \
-		regex-automata-0.4.9 \
+		regex-1.12.2 \
+		regex-automata-0.4.13 \
 		regex-syntax-0.8.5 \
 		rustc-hash-2.1.1 \
 		rustix-1.0.7 \
 		rustversion-1.0.20 \
 		ryu-1.0.20 \
 		scopeguard-1.2.0 \
-		serde-1.0.219 \
-		serde_derive-1.0.219 \
-		serde_json-1.0.143 \
-		serde_spanned-1.0.0 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.145 \
+		serde_spanned-1.0.3 \
 		sha2-0.10.9 \
 		shlex-1.3.0 \
 		smallvec-1.15.0 \
@@ -112,10 +112,10 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		syn-2.0.101 \
 		thiserror-2.0.12 \
 		thiserror-impl-2.0.12 \
-		toml-0.9.5 \
-		toml_datetime-0.7.0 \
-		toml_parser-1.0.2 \
-		toml_writer-1.0.2 \
+		toml-0.9.8 \
+		toml_datetime-0.7.3 \
+		toml_parser-1.0.4 \
+		toml_writer-1.0.4 \
 		typenum-1.18.0 \
 		ucd-trie-0.1.7 \
 		unicode-ident-1.0.18 \
@@ -132,6 +132,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows-implement-0.60.0 \
 		windows-interface-0.59.1 \
 		windows-link-0.1.1 \
+		windows-link-0.2.0 \
 		windows-result-0.3.2 \
 		windows-strings-0.4.0 \
 		windows-sys-0.59.0 \
@@ -144,7 +145,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.7.10 \
+		winnow-0.7.13 \
 		winsafe-0.0.19 \
 		yansi-1.0.1
 
