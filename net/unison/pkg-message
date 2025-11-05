@@ -1,8 +1,13 @@
 [
-{ type: install
+{ type: upgrade
+  minimum_version: "2.53.7"
   message: <<EOM
-Together with a gtk-enabled version, a text-only unison-text binary
-is installed as it depends on a smaller number of libraries.
+STarting with version 2.53.8 the "unison" binary is the text only version.
+The GUI version is installed as unison-gui and no "unison-text" binary is
+installed anymore.
+
+Please make sure to update any local scripts and configurations that were
+using the old naming scheme.
 EOM
 }
 ]
