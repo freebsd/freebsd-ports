@@ -1,11 +1,12 @@
-PORTNAME=	bitwuzla
+PORTNAME=	bitwuzla # successor of Boolector
 DISTVERSION=	0.7.0
 PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SMT solver for the theories of fixed-size bit-vectors
-WWW=		https://bitwuzla.github.io/
+WWW=		https://bitwuzla.github.io/ \
+		https://github.com/bitwuzla/bitwuzla
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
