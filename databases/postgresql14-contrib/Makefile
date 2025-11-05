@@ -1,5 +1,5 @@
 PORTNAME=	postgresql
-PORTREVISION=	0
+REVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	pgsql@FreeBSD.org

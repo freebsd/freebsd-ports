@@ -1,6 +1,6 @@
 PORTNAME=	postgresql
 # Keep the ?=, it is used by the other pltcl ports.
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases tcl
 PKGNAMESUFFIX?=	${WANT_PGSQL_VER}${COMPONENT}
 

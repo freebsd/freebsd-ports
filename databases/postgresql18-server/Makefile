@@ -2,7 +2,7 @@ PORTNAME?=	postgresql
 DISTVERSION?=	18.0
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
@@ -24,7 +24,7 @@ PKGINSTALL?=	${PKGDIR}/pkg-install${COMPONENT}
 USES+=		tar:bzip2 cpe
 .if ${DISTVERSION:C/([0-9][0-9]).*/\1/g} >= 17
 USES+=		bison perl5
-USE_PERL5=	build
+USE_PERL5+=	build
 .endif
 
 .if !defined(NO_BUILD)
@@ -219,23 +219,28 @@ post-patch:
 .  endif
 
 do-install:
-	@for dir in ${INSTALL_DIRS}; do \
+	for dir in ${INSTALL_DIRS}; do \
 	    cd ${WRKSRC}/$${dir} && \
 		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${INSTALL_TARGET}; \
 	done
 .  if defined(SERVER_ONLY)
-	@ ${MKDIR} ${STAGEDIR}${PREFIX}/share/postgresql ;\
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily ;\
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/*.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/postgresql
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/502.pgsql \
 			${STAGEDIR}${PREFIX}/etc/periodic/daily
 .  endif # SERVER_ONLY
 .  if defined(CLIENT_ONLY)
-	@ cd ${WRKSRC}/src && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-local
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/lib*.so
+	cd ${WRKSRC}/src && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-local
 .    if ${DISTVERSION:C/([0-9][0-9]).*/\1/g} >= 17
-	@ cd ${WRKSRC}/doc/src/sgml && ${COPYTREE_SHARE} "man1 man3 man7" ${STAGEDIR}${PREFIX}/share/man
+	cd ${WRKSRC}/doc/src/sgml && ${COPYTREE_SHARE} "man1 man3 man7" ${STAGEDIR}${PREFIX}/share/man
 .    endif
 .  endif
-	@ if [ -r ${PKGMESSAGE} ]; then \
+.  if defined(SLAVE_ONLY)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/*.so
+.  endif
+	if [ -r ${PKGMESSAGE} ]; then \
 		${MKDIR} ${STAGEDIR}${DOCSDIR} ;\
 		${INSTALL_DATA} ${PKGMESSAGE} ${STAGEDIR}${DOCSDIR}/README${COMPONENT} ;\
 	fi

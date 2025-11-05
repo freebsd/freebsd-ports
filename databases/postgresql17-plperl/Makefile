@@ -1,6 +1,6 @@
 PORTNAME=	postgresql
 # Keep the ?=, this port is used as master by the other plperl.
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases perl5
 PKGNAMESUFFIX?=	${WANT_PGSQL_VER}${COMPONENT}
 
@@ -13,7 +13,8 @@ MASTERDIR=	${.CURDIR}/../../databases/postgresql${WANT_PGSQL_VER}-server
 
 WANT_PGSQL_VER?=17
 
-USES+=		perl5 readline
+USES=		readline
+USE_PERL5=	run
 CONFIGURE_ARGS=	--with-perl
 
 BUILD_DIRS=	src/backend ${INSTALL_DIRS}
