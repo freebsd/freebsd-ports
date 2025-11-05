@@ -1,5 +1,6 @@
 include/quic/QuicConstants.h
 include/quic/QuicException.h
+include/quic/QuicTLSException.h
 include/quic/api/FollyQuicAsyncUDPSocket.h
 include/quic/api/FollyQuicEventBase.h
 include/quic/api/HighResQuicTimer.h
@@ -64,6 +65,7 @@ include/quic/common/Optional.h
 include/quic/common/QuicBuffer.h
 include/quic/common/QuicRange.h
 include/quic/common/SocketUtil.h
+include/quic/common/StringUtils.h
 include/quic/common/TimePoints.h
 include/quic/common/TimeUtil.h
 include/quic/common/TransportKnobs.h
@@ -130,6 +132,7 @@ include/quic/fizz/handshake/FizzRetryIntegrityTagGenerator.h
 include/quic/fizz/handshake/FizzTransportParameters.h
 include/quic/fizz/handshake/QuicFizzFactory.h
 include/quic/flowcontrol/QuicFlowController.h
+include/quic/folly_utils/Utils.h
 include/quic/handshake/Aead.h
 include/quic/handshake/CryptoFactory.h
 include/quic/handshake/HandshakeLayer.h
@@ -183,10 +186,10 @@ include/quic/state/ClonedPacketIdentifier.h
 include/quic/state/DatagramHandlers.h
 include/quic/state/LossState.h
 include/quic/state/OutstandingPacket.h
-include/quic/state/PendingPathRateLimiter.h
 include/quic/state/QuicAckFrequencyFunctions.h
 include/quic/state/QuicConnectionStats.h
 include/quic/state/QuicPacingFunctions.h
+include/quic/state/QuicPathManager.h
 include/quic/state/QuicPriorityQueue.h
 include/quic/state/QuicStateFunctions.h
 include/quic/state/QuicStreamFunctions.h
@@ -236,6 +239,8 @@ lib/libmvfst_codec_types.so
 lib/libmvfst_codec_types.so.0
 lib/libmvfst_constants.so
 lib/libmvfst_constants.so.0
+lib/libmvfst_contiguous_cursor.so
+lib/libmvfst_contiguous_cursor.so.0
 lib/libmvfst_dsr_frontend.so
 lib/libmvfst_dsr_frontend.so.0
 lib/libmvfst_dsr_types.so
@@ -250,6 +255,8 @@ lib/libmvfst_fizz_handshake.so
 lib/libmvfst_fizz_handshake.so.0
 lib/libmvfst_flowcontrol.so
 lib/libmvfst_flowcontrol.so.0
+lib/libmvfst_folly_utils.so
+lib/libmvfst_folly_utils.so.0
 lib/libmvfst_handshake.so
 lib/libmvfst_handshake.so.0
 lib/libmvfst_happyeyeballs.so
@@ -286,6 +293,8 @@ lib/libmvfst_state_stream.so
 lib/libmvfst_state_stream.so.0
 lib/libmvfst_state_stream_functions.so
 lib/libmvfst_state_stream_functions.so.0
+lib/libmvfst_string_utils.so
+lib/libmvfst_string_utils.so.0
 lib/libmvfst_transport.so
 lib/libmvfst_transport.so.0
 lib/libmvfst_transport_knobs.so
