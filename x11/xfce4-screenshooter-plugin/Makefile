@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-screenshooter-plugin
-PORTVERSION=	1.11.2
+PORTVERSION=	1.11.3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DISTNAME=	xfce4-screenshooter-${DISTVERSIONFULL}
