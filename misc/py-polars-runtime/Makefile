@@ -1,6 +1,7 @@
 PORTNAME=	polars-runtime
 DISTVERSIONPREFIX=	py-
 DISTVERSION=	1.43.1
+PORTREVISION=	1
 CATEGORIES=	misc
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +24,7 @@ FLAVOR?=	${FLAVORS:[1]}
 ${FLAVOR}_PKGNAMESUFFIX=	-${FLAVOR} # there's no default runtime for Polars, all of them are needed
 
 USES=		cargo pkgconfig python
-USE_PYTHON=	pep517 noflavors # autoplist is broken
+USE_PYTHON=	autoplist noflavors pep517
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pola-rs
@@ -34,8 +35,6 @@ GH_PROJECT=	polars
 # the reason is unclear, needs to be investigated
 RUSTFLAGS=	--cfg allocator=\"default\" # other choices are "default" and "jemalloc" (jemalloc is broken due to the conflict with system allocator)
 MAKE_ENV+=	RUSTFLAGS="${RUSTFLAGS}" # pass RUSTFLAGS to rustc via python's "build" module and maturin
-
-PEP517_INSTALL_CMD=	${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --prefix ${PREFIX} ${BUILD_WRKSRC}/dist/${PORTNAME:C|[-_]+|_|g}_${FLAVOR}-${DISTVERSION}*.whl
 
 CARGO_BUILDDEP=	no
 CARGO_CRATES=	adler2-2.0.1 \
@@ -575,13 +574,11 @@ CARGO_TARGET_DIR=	${WRKSRC}/target
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 
-BUILD_WRKSRC=	${WRKSRC}/py-polars # for Python build
-INSTALL_WRKSRC=	${WRKSRC}/py-polars # for Python install
+BUILD_WRKSRC=	${WRKSRC}/py-polars/runtime/${PORTNAME}-${FLAVOR} # for Python build
+INSTALL_WRKSRC=	${WRKSRC}/py-polars/runtime/${PORTNAME}-${FLAVOR} # for Python install
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${CARGO_WRKSRC}/tests
-
-BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 xpost-patch:
 	@${REINPLACE_CMD} -e 's|ethnum-1.5.2|ethnum-1.5.3|' ${WRKSRC}/Cargo.lock
@@ -589,16 +586,30 @@ xpost-patch:
 PLIST_SUB+=	FLAVOR=${FLAVOR} \
 		PORTVERSION=${PORTVERSION}
 
-do-build:
-	# build
-	@cd ${WRKSRC}/py-polars && \
-		${SETENV} ${MAKE_ENV} maturin build -o dist --release --locked --strip --manifest-path runtime/polars-runtime-${FLAVOR}/Cargo.toml
-	# adjust wheel name
-	@cd ${WRKSRC}/py-polars/dist && \
-		${LN} -s `ls *.whl` `ls *.whl | ${SED} -e "s/_${FLAVOR}//"`
+PYWHEEL_NAME=	${PORTNAME:C|[-_]+|_|g}_${FLAVOR}
+
+PEP517_BUILD_CONFIG_SETTING=	-C "maturin.build-args=--locked --strip"
+
+PEP517_INSTALL_CMD=	${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --prefix ${PREFIX} ${BUILD_WRKSRC}/dist/${PYWHEEL_NAME}-${DISTVERSION}*.whl
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	@cd ${INSTALL_WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${PEP517_INSTALL_CMD}
+	@${PYTHON_CMD} -B ${PORTSDIR}/Mk/Scripts/strip_RECORD.py \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PYWHEEL_NAME}-${DISTVERSION}*.dist-info/RECORD >> ${_PYTHONPKGLIST}
+	@${REINPLACE_CMD} \
+		-e '/\.pyc$$/d' \
+		-e 's|^|${PYTHONPREFIX_SITELIBDIR}/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../etc/|etc/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../bin/|bin/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../include/|include/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../lib/|lib/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../libdata/|libdata/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../libexec/|libexec/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../man/|man/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../sbin/|sbin/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../share/|share/|' \
+			${_PYTHONPKGLIST}
+	@cd ${STAGEDIR}${PREFIX} && ${FIND} lib -name '*.pyc' >> ${_PYTHONPKGLIST}
 
 .include <bsd.port.mk>
