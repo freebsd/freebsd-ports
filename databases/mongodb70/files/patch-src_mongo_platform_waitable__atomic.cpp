@@ -4,7 +4,7 @@
 #   https://github.com/mongodb/mongo/pull/1607
 #   https://jira.mongodb.org/browse/SERVER-99225
 #
---- src/mongo/platform/waitable_atomic.cpp.orig	2024-11-20 23:53:48 UTC
+--- src/mongo/platform/waitable_atomic.cpp.orig	2025-10-24 20:47:00 UTC
 +++ src/mongo/platform/waitable_atomic.cpp
 @@ -34,6 +34,9 @@
  #ifdef __linux__
@@ -16,7 +16,7 @@
  #elif defined(_WIN32)
  #include <synchapi.h>
  #endif
-@@ -233,6 +236,45 @@ bool waitUntil(const void* uaddr,
+@@ -217,6 +220,45 @@ bool waitUntil(const void* uaddr,
      // There isn't a good list of possible errors, so assuming that anything other than a timeout
      // error is a possible spurious wakeup.
      return timeoutOverflow || errno != ETIMEDOUT;
