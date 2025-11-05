@@ -1,7 +1,6 @@
 PORTNAME=	f2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.3
-PORTREVISION=	9
+DISTVERSION=	2.2.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +11,7 @@ WWW=		https://f2.freshman.tech/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USES=		go:modules
+USES=		go:1.25,modules
 
 GO_MODULE=	github.com/ayoisaiah/f2/v2
 GO_TARGET=	./cmd/f2
