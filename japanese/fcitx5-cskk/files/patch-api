@@ -1,0 +1,128 @@
+--- gui/adddictdialog.cpp.orig	2023-02-04 23:41:16 UTC
++++ gui/adddictdialog.cpp
+@@ -15,7 +15,7 @@
+ #include <QFileDialog>
+ #include <QLineEdit>
+ #include <QPushButton>
+-#include <fcitx-utils/standardpath.h>
++#include <fcitx-utils/standardpaths.h>
+ #include <fcitxqti18nhelper.h>
+
+ #define FCITX_CONFIG_DIR "$FCITX_CONFIG_DIR"
+@@ -95,17 +95,17 @@ void AddDictDialog::browseClicked() {
+     path = QFileDialog::getOpenFileName(this, _("Select Dictionary File"),
+                                         info.path());
+   } else {
+-    auto fcitxBasePath = stringutils::joinPath(
+-        StandardPath::global().userDirectory(StandardPath::Type::PkgData),
+-        "cskk");
++    auto fcitxBasePath =
++        StandardPaths::global().userDirectory(StandardPathsType::PkgData) /
++        "cskk";
+     fs::makePath(fcitxBasePath);
+     QString fcitxConfigBasePath =
+         QDir::cleanPath(QString::fromStdString(fcitxBasePath));
+
+     if (path.isEmpty()) {
+-      auto baseDataPath = stringutils::joinPath(
+-          StandardPath::global().userDirectory(StandardPath::Type::Data),
+-          "fcitx5-cskk");
++      auto baseDataPath =
++          StandardPaths::global().userDirectory(StandardPathsType::Data) /
++          "fcitx5-cskk";
+       fs::makePath(baseDataPath);
+       QString basePath = QDir::cleanPath(QString::fromStdString(baseDataPath));
+       path = basePath;
+--- gui/dictmodel.cpp.orig	2023-02-04 23:41:16 UTC
++++ gui/dictmodel.cpp
+@@ -12,7 +12,7 @@
+ #include <QStringList>
+ #include <QTemporaryFile>
+ #include <QtGlobal>
+-#include <fcitx-utils/standardpath.h>
++#include <fcitx-utils/standardpaths.h>
+ #include <fcntl.h>
+ #include <iostream>
+
+@@ -23,16 +23,16 @@ void SkkDictModel::defaults() {
+ SkkDictModel::SkkDictModel(QObject *parent) : QAbstractListModel(parent) {}
+
+ void SkkDictModel::defaults() {
+-  auto path = StandardPath::fcitxPath("pkgdatadir", config_path.c_str());
+-  QFile f(path.data());
++  auto path = StandardPaths::fcitxPath("pkgdatadir", config_path.c_str());
++  QFile f(path.c_str());
+   if (f.open(QIODevice::ReadOnly)) {
+     load(f);
+   }
+ }
+
+ void SkkDictModel::load() {
+-  auto file = StandardPath::global().open(StandardPath::Type::PkgData,
+-                                          config_path, O_RDONLY);
++  auto file =
++      StandardPaths::global().open(StandardPathsType::PkgData, config_path);
+   if (file.fd() < 0) {
+     return;
+   }
+@@ -61,8 +61,8 @@ bool SkkDictModel::save() {
+ }
+
+ bool SkkDictModel::save() {
+-  return StandardPath::global().safeSave(
+-      StandardPath::Type::PkgData, config_path, [this](int fd) {
++  return StandardPaths::global().safeSave(
++      StandardPathsType::PkgData, config_path, [this](int fd) {
+         QFile tempFile;
+         if (!tempFile.open(fd, QIODevice::WriteOnly)) {
+           return false;
+--- gui/dictwidget.cpp.orig	2023-02-04 23:41:16 UTC
++++ gui/dictwidget.cpp
+@@ -10,7 +10,7 @@
+ #include "dictmodel.h"
+ #include <QItemSelectionModel>
+ #include <fcitx-utils/fs.h>
+-#include <fcitx-utils/standardpath.h>
++#include <fcitx-utils/standardpaths.h>
+ #include <fcitx-utils/stringutils.h>
+ #include <fcitxqti18nhelper.h>
+
+@@ -21,9 +21,9 @@ SkkDictWidget::SkkDictWidget(QWidget *parent)
+       m_ui(std::make_unique<Ui::SkkDictWidget>()) {
+   m_ui->setupUi(this);
+   m_dictModel = new SkkDictModel(this);
+-  auto fcitxBasePath = stringutils::joinPath(
+-      StandardPath::global().userDirectory(StandardPath::Type::PkgData),
+-      "cskk");
++  auto fcitxBasePath =
++      StandardPaths::global().userDirectory(StandardPathsType::PkgData) /
++      "cskk";
+   fs::makePath(fcitxBasePath);
+
+   m_dictModel->load();
+--- src/cskk.cpp.orig	2023-02-04 23:41:16 UTC
++++ src/cskk.cpp
+@@ -109,8 +109,8 @@ void FcitxCskkEngine::loadDictionary() {
+ void FcitxCskkEngine::loadDictionary() {
+   freeDictionaries();
+
+-  auto dict_config_file = StandardPath::global().open(
+-      StandardPath::Type::PkgData, "cskk/dictionary_list", O_RDONLY);
++  auto dict_config_file = StandardPaths::global().open(
++      StandardPathsType::PkgData, "cskk/dictionary_list");
+
+   UniqueFilePtr fp(fdopen(dict_config_file.fd(), "rb"));
+   if (!fp) {
+@@ -196,9 +196,9 @@ void FcitxCskkEngine::loadDictionary() {
+         constexpr auto var_len = sizeof(configDir) - 1;
+         std::string realpath = path;
+         if (stringutils::startsWith(path, configDir)) {
+-          realpath = stringutils::joinPath(
+-              StandardPath::global().userDirectory(StandardPath::Type::PkgData),
+-              path.substr(var_len));
++          realpath =
++              StandardPaths::global().userDirectory(StandardPathsType::PkgData) /
++              path.substr(var_len);
+         }
+         auto *userdict =
+             skk_user_dict_new(realpath.c_str(), encoding.c_str(), complete);
