@@ -68,6 +68,8 @@ GO_BUILDFLAGS+=	-ldflags="-s -w"
 
 CONFLICTS_INSTALL=	${PORTNAME}-devel
 
+PORTSCOUT=	skipv:4.2.0
+
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	readme.md
 
