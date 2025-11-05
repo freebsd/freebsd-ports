@@ -23,6 +23,7 @@ INSTALL_TARGET=	install-strip
 PORTDOCS=	*
 
 CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-DWANT_OBSOLETE_TYPEDEFS
 LIBS+=		-lm
 
 CONFIGURE_ARGS=	--with-expat-lib=${LOCALBASE}/lib \
