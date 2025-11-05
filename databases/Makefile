@@ -1036,6 +1036,7 @@
     SUBDIR += rubygem-red-arrow
     SUBDIR += rubygem-red-arrow-dataset
     SUBDIR += rubygem-red-arrow-flight
+    SUBDIR += rubygem-red-arrow-flight-sql
     SUBDIR += rubygem-red-gandiva
     SUBDIR += rubygem-red-parquet
     SUBDIR += rubygem-redis
