@@ -1,6 +1,5 @@
 PORTNAME=	readline
-PORTVERSION=	8.2.${PATCHLEVEL}
-PORTREVISION=	2
+PORTVERSION=	8.3.${PATCHLEVEL}
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 DISTNAME=	readline-${PORTVERSION:R}
@@ -21,13 +20,12 @@ USE_LDCONFIG=	yes
 
 INFO=		history readline rluserman
 PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
-PORTDOCS=	CHANGES INSTALL README
 
 CPE_VENDOR=	gnu
 CPE_VERSION=	${PORTVERSION:R}
 
-# https://ftp.gnu.org/gnu/readline/readline-8.2-patches/
-PATCHES=	1 2 3 4 5 6 7 8 9 10 11 12 13
+# https://ftp.gnu.org/gnu/readline/readline-8.3-patches/
+PATCHES=	1
 .if defined(PATCHES)
 CPE_UPDATE=	${PATCHLEVEL}
 PATCHLEVEL=	${PATCHES:On:[-1]}

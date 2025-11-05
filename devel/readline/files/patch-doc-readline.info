@@ -1,21 +1,23 @@
---- doc/readline.info.orig	2020-10-30 14:07:51 UTC
+% sed -i .orig 's|/etc/inputrc|%%PREFIX%%&|g' doc/readline.3 doc/readline.info doc/rluserman.info
+
+--- doc/readline.info.orig	2025-03-31 14:28:42 UTC
 +++ doc/readline.info
-@@ -313,7 +313,7 @@ putting commands in an "inputrc" file, conventionally 
+@@ -327,7 +327,7 @@ is ‘~/.inputrc’.  If that file does not exist or c
  directory.  The name of this file is taken from the value of the
- environment variable 'INPUTRC'.  If that variable is unset, the default
- is '~/.inputrc'.  If that file does not exist or cannot be read, the
--ultimate default is '/etc/inputrc'.
-+ultimate default is '%%PREFIX%%/etc/inputrc'.
+ environment variable ‘INPUTRC’.  If that variable is unset, the default
+ is ‘~/.inputrc’.  If that file does not exist or cannot be read,
+-Readline looks for ‘/etc/inputrc’.
++Readline looks for ‘%%PREFIX%%/etc/inputrc’.
  
-    When a program which uses the Readline library starts up, the init
- file is read, and the key bindings are set.
-@@ -853,8 +853,8 @@ four parser directives used.
- '$include'
+    When a program that uses the Readline library starts up, Readline
+ reads the init file and sets any variables and key bindings it contains.
+@@ -954,8 +954,8 @@ four parser directives available.
+ ‘$include’
       This directive takes a single filename as an argument and reads
-      commands and bindings from that file.  For example, the following
--     directive reads from '/etc/inputrc':
+      commands and key bindings from that file.  For example, the
+-     following directive reads from ‘/etc/inputrc’:
 -          $include /etc/inputrc
-+     directive reads from '%%PREFIX%%/etc/inputrc':
++     following directive reads from ‘%%PREFIX%%/etc/inputrc’:
 +          $include %%PREFIX%%/etc/inputrc
  
  

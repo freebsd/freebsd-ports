@@ -1,25 +1,27 @@
---- doc/readline.3.orig	2020-10-29 20:48:10 UTC
+% sed -i .orig 's|/etc/inputrc|%%PREFIX%%&|g' doc/readline.3 doc/readline.info doc/rluserman.info
+
+--- doc/readline.3.orig	2025-02-03 15:12:54 UTC
 +++ doc/readline.3
-@@ -118,7 +118,7 @@ The name of this file is taken from the value of the
- environment variable.  If that variable is unset, the default is
- .IR ~/.inputrc .
- If that file  does not exist or cannot be read, the ultimate default is
+@@ -180,7 +180,7 @@ If that file  does not exist or cannot be read, \fBrea
+ If that variable is unset, the default is
+ .IR \*~/.inputrc .
+ If that file  does not exist or cannot be read, \fBreadline\fP looks for
 -.IR /etc/inputrc .
 +.IR %%PREFIX%%/etc/inputrc .
- When a program which uses the readline library starts up, the
- init file is read, and the key bindings and variables are set.
- There are only a few basic constructs allowed in the
-@@ -722,11 +722,11 @@ the test fails.
- .IP \fB$include\fP
+ When a program that uses the \fBreadline\fP library starts up,
+ \fBreadline\fP reads the initialization file
+ and sets the key bindings and variables found there,
+@@ -936,11 +936,11 @@ and key bindings from that file.
+ .B $include
  This directive takes a single filename as an argument and reads commands
- and bindings from that file.  For example, the following directive
--would read \fI/etc/inputrc\fP:
-+would read \fI%%PREFIX%%/etc/inputrc\fP:
- .sp 1
+ and key bindings from that file.
+-For example, the following directive would read \fI/etc/inputrc\fP:
++For example, the following directive would read \fI%%PREFIX%%/etc/inputrc\fP:
+ .PP
  .RS
  .nf
 -\fB$include\fP \^ \fI/etc/inputrc\fP
 +\fB$include\fP \^ \fI%%PREFIX%%/etc/inputrc\fP
- .fi 
+ .fi
  .RE
  .SH SEARCHING
