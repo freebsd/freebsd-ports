@@ -1,5 +1,5 @@
-Mmg is an open source software for simplicial remeshing. It provides 3
-applications and 4 libraries:
+Mmg is a Free Software for bidimensional and tridimensional surface and volume
+remeshing. It provides 3 applications and 4 libraries:
 
 - the mmg2d application and the libmmg2d library: adaptation and optimization of
   a two-dimensional triangulation and generation of a triangulation from a set
