@@ -79,6 +79,14 @@ CONFIGURE_ARGS+=	--buildtype release \
 			--strip
 .  endif
 
+.  for _bool in true false enabled disabled
+.    if defined(MESON_${_bool:tu})
+.      for _meson_arg in ${MESON_${_bool:tu}}
+MESON_ARGS+=		-D${_meson_arg}=${_bool}
+.      endfor
+.    endif
+.  endfor
+
 HAS_CONFIGURE=		yes
 .  if !empty(meson_ARGS:Mmuon)
 CONFIGURE_CMD=		muon
