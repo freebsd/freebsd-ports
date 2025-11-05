@@ -2,7 +2,7 @@ PORTNAME=	libxc
 DISTVERSION=	6.2.2
 CATEGORIES=	science
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library of exchange-correlation functionals for DFT
 WWW=		https://gitlab.com/libxc/libxc
 
