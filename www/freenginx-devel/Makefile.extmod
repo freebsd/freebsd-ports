@@ -201,10 +201,8 @@ LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUA_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
-LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.29:lua
+LUA_GH_TUPLE=		openresty:lua-nginx-module:de02114:lua
 LUA_VARS=		DSO_EXTMODS+=lua
-LUA_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_lua_time.c \
-			${PATCHDIR}/extra-patch-ngx_http_lua_subrequest.c
 
 LUASTREAM_IMPLIES=	DEVEL_KIT
 LUASTREAM_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
