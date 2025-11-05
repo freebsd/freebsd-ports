@@ -1,5 +1,6 @@
 PORTNAME=	pandoc
 DISTVERSION=	3.8.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
