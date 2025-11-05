@@ -1,5 +1,5 @@
 PORTNAME=	libsigsegv
-PORTVERSION=	2.14
+DISTVERSION=	2.15
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -11,16 +11,16 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	AWK="${AWK}" --enable-shared
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/sigsegv.h \
 		lib/libsigsegv.a \
 		lib/libsigsegv.so \
 		lib/libsigsegv.so.2 \
-		lib/libsigsegv.so.2.0.7
+		lib/libsigsegv.so.2.0.8
 
 .include <bsd.port.mk>
