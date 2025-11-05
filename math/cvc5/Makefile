@@ -1,6 +1,6 @@
 PORTNAME=	cvc5
 DISTVERSIONPREFIX=	cvc5-
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	math java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -21,6 +21,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR}
 LIB_DEPENDS=	libcadical.so:math/cadical
 
+TEST_ENV=	ARGS=-V
+
 USES=		cmake:testing ncurses compiler:c++17-lang \
 		localbase:ldflags pkgconfig python:build
 USE_LDCONFIG=	yes
@@ -39,10 +41,10 @@ PLIST_SUB=		VERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=			COCOALIB EDITLINE JAVA
 OPTIONS_GROUP=			SOLVERS
-OPTIONS_GROUP_SOLVERS=		CRYPTOMINISAT KISSAT
+OPTIONS_GROUP_SOLVERS=		CRYPTOMINISAT GLPK KISSAT
 OPTIONS_RADIO=			NUMLIB
 OPTIONS_RADIO_NUMLIB=		GMP CLN
-OPTIONS_DEFAULT=		CRYPTOMINISAT EDITLINE GMP # COCOALIB KISSAT # JAVA is broken
+OPTIONS_DEFAULT=		CRYPTOMINISAT EDITLINE GMP KISSAT # COCOALIB # JAVA is broken
 OPTIONS_SUB=			yes
 
 COCOALIB_DESC=			Use CoCoALib for further polynomial operations
@@ -69,7 +71,7 @@ CRYPTOMINISAT_LIB_DEPENDS=	libcryptominisat5.so:math/cryptominisat
 
 KISSAT_DESC=			Use Kissat solver
 KISSAT_CMAKE_BOOL=		USE_KISSAT
-KISSAT_BROKEN=			fails to link with libkissat.so, see https://github.com/cvc5/cvc5/issues/9483
+KISSAT_LIB_DEPENDS=		libkissat.so:math/kissat
 
 # NUMLIB options
 
@@ -90,8 +92,6 @@ CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 
 PORTSCOUT=	limit:^[1-9]\.[0-9]+\.[0-9]+ # prevent older generation versions like 1.8, 1.7, etc.
 
-# some tests are skipped without any explanation, see https://github.com/cvc5/cvc5/issues/10456
-# test interactive_shell_define_fun_rec_multiline fails, see https://github.com/cvc5/cvc5/issues/11146
-# tests as of 1.3.0: 99% tests passed, 1 tests failed out of 4040, see https://github.com/cvc5/cvc5/issues/11996
+# tests as of 1.3.1: 1 test fails, see https://github.com/cvc5/cvc5/issues/12215
 
 .include <bsd.port.mk>
