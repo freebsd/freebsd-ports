@@ -1,7 +1,6 @@
 PORTNAME=	fbthrift
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.08.18.00
-PORTREVISION=	1
+DISTVERSION=	2025.11.03.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,7 +45,6 @@ CXXFLAGS+=	-DGLOG_USE_GLOG_EXPORT
 post-install: # https://github.com/facebook/fbthrift/issues/393
 	@${FIND} ${STAGEDIR}${PREFIX}/include -type d -empty -delete
 
-do-test: # no 'test' target, contrary to what the documentation says, see https://github.com/facebook/fbthrift/issues/533
-	@cd ${TEST_WRKSRC} && ${MAKE_CMD} test
+# tests as of 2025.11.03.00: 100% tests passed, 0 tests failed out of 306
 
 .include <bsd.port.mk>
