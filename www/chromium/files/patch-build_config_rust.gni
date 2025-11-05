@@ -1,6 +1,16 @@
---- build/config/rust.gni.orig	2025-10-02 04:28:32 UTC
+--- build/config/rust.gni.orig	2025-11-05 15:35:54 UTC
 +++ build/config/rust.gni
-@@ -329,7 +329,11 @@ if (is_linux || is_chromeos) {
+@@ -62,7 +62,8 @@ declare_args() {
+   # set this to the output of `rustc -V`. Changing this string will cause all
+   # Rust targets to be rebuilt, which allows you to update your toolchain and
+   # not break incremental builds.
+-  rustc_version = ""
++  rustc_version = exec_script("//build/gn_run_binary.py",
++    [ "/usr/local/bin/rustc", "-V" ], "trim string")
+ 
+   # Whether artifacts produced by the Rust compiler can participate in ThinLTO.
+   #
+@@ -329,7 +330,11 @@ if (is_linux || is_chromeos) {
    }
  }
  
