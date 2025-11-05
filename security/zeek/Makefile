@@ -1,5 +1,5 @@
 PORTNAME=	zeek
-DISTVERSION=	8.0.3
+DISTVERSION=	8.0.4
 CATEGORIES=	security
 MASTER_SITES=	https://download.zeek.org/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 RUN_DEPENDS=	c-ares>=1.25.0:dns/c-ares
 
 USES=		bison cmake compiler:c++17-lang cpe gettext-runtime perl5 \
-		python shebangfix ssl
+		python:3.9+ shebangfix ssl
 
 USE_LDCONFIG=	yes
 
