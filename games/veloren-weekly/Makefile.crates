@@ -50,7 +50,6 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		base64-0.22.1 \
 		bincode-2.0.1 \
 		bincode_derive-2.0.1 \
-		bindgen-0.72.1 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
 		bitflags-1.3.2 \
@@ -82,7 +81,6 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		cc-1.2.36 \
 		censor-0.3.0 \
 		cesu8-1.1.0 \
-		cexpr-0.6.0 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.3 \
 		cfg_aliases-0.2.1 \
@@ -92,7 +90,6 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clang-sys-1.8.1 \
 		clap-4.5.47 \
 		clap_builder-4.5.47 \
 		clap_derive-4.5.47 \
@@ -120,9 +117,8 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		core-graphics-0.23.2 \
 		core-graphics-types-0.1.3 \
 		core-graphics-types-0.2.0 \
-		coreaudio-rs-0.11.3 \
-		coreaudio-sys-0.2.17 \
-		cpal-0.15.3 \
+		coreaudio-rs-0.13.0 \
+		cpal-0.16.0 \
 		cpp_demangle-0.4.4 \
 		cpufeatures-0.2.17 \
 		cranelift-assembler-x64-0.123.2 \
@@ -275,7 +271,6 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		gimli-0.32.2 \
 		gl_generator-0.14.0 \
 		glam-0.30.5 \
-		glob-0.3.3 \
 		glow-0.16.0 \
 		glutin_wgl_sys-0.6.1 \
 		glyph_brush-0.7.12 \
@@ -363,6 +358,7 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		khronos-egl-6.0.0 \
 		khronos_api-3.1.0 \
 		kiddo-4.2.0 \
+		kira-0.11.0 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
 		lazy-bytes-cast-5.0.1 \
@@ -416,10 +412,8 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		mumble-link-0.2.0 \
 		naga-26.0.0 \
 		native-dialog-0.9.0 \
-		ndk-0.8.0 \
 		ndk-0.9.0 \
 		ndk-context-0.1.1 \
-		ndk-sys-0.5.0+25.2.9519653 \
 		ndk-sys-0.6.0+11769913 \
 		nibble_vec-0.1.0 \
 		nix-0.24.3 \
@@ -457,19 +451,22 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		objc2-0.6.2 \
 		objc2-app-kit-0.2.2 \
 		objc2-app-kit-0.3.1 \
+		objc2-audio-toolbox-0.3.2 \
 		objc2-cloud-kit-0.2.2 \
 		objc2-cloud-kit-0.3.1 \
 		objc2-contacts-0.2.2 \
+		objc2-core-audio-0.3.2 \
+		objc2-core-audio-types-0.3.2 \
 		objc2-core-data-0.2.2 \
 		objc2-core-data-0.3.1 \
-		objc2-core-foundation-0.3.1 \
+		objc2-core-foundation-0.3.2 \
 		objc2-core-graphics-0.3.1 \
 		objc2-core-image-0.2.2 \
 		objc2-core-image-0.3.1 \
 		objc2-core-location-0.2.2 \
 		objc2-encode-4.1.0 \
 		objc2-foundation-0.2.2 \
-		objc2-foundation-0.3.1 \
+		objc2-foundation-0.3.2 \
 		objc2-io-surface-0.3.1 \
 		objc2-link-presentation-0.2.2 \
 		objc2-metal-0.2.2 \
@@ -483,8 +480,6 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		objc_id-0.1.1 \
 		object-0.36.7 \
 		object-0.37.3 \
-		oboe-0.6.1 \
-		oboe-sys-0.6.1 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.1 \
 		oorandom-11.1.5 \
@@ -500,6 +495,7 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		parking_lot-0.12.4 \
 		parking_lot_core-0.9.11 \
 		paste-1.0.15 \
+		pastey-0.1.1 \
 		pathdiff-0.2.3 \
 		pem-3.0.5 \
 		percent-encoding-2.3.2 \
@@ -959,5 +955,4 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		auth-common,authc@git+https://gitlab.com/veloren/auth.git?rev=ae0e16783a9f9041951296885f082308e155db79\#ae0e16783a9f9041951296885f082308e155db79 \
 		iced_core,iced_futures,iced_native@git+https://github.com/Imberflur/iced?tag=veloren-winit-0.28\#47243c257c8b8dd6c506b060804cb00b618aa0aa \
 		portpicker@git+https://github.com/xMAC94x/portpicker-rs?rev=df6b37872f3586ac3b21d08b56c8ec7cd92fb172\#df6b37872f3586ac3b21d08b56c8ec7cd92fb172 \
-		conrod_core,conrod_derive@git+https://gitlab.com/veloren/conrod.git?branch=copypasta_0.7\#c74446362371dc837b8b4b6d6ddcd7693b48d9b6 \
-		kira@git+https://github.com/DaforLynx/kira.git?tag=v0.10.7-with-config\#83dda1845bbf17cc9066fafc98ec47cd843d3ba2
+		conrod_core,conrod_derive@git+https://gitlab.com/veloren/conrod.git?branch=copypasta_0.7\#c74446362371dc837b8b4b6d6ddcd7693b48d9b6
