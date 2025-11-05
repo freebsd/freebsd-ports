@@ -1,11 +1,11 @@
 CARGO_CRATES=	adler2-2.0.1 \
 		ahash-0.8.12 \
-		aho-corasick-1.1.3 \
+		aho-corasick-1.1.4 \
 		aligned-vec-0.6.4 \
 		allocator-api2-0.2.21 \
 		android_system_properties-0.1.5 \
 		ansi_colours-1.2.3 \
-		anstream-0.6.20 \
+		anstream-0.6.21 \
 		anstyle-1.0.13 \
 		anstyle-parse-0.2.7 \
 		anstyle-query-1.1.4 \
@@ -19,7 +19,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
 		autocfg-1.5.0 \
-		av1-grain-0.2.4 \
+		av1-grain-0.2.5 \
 		avif-serialize-0.8.6 \
 		base64-0.13.1 \
 		base64-0.22.1 \
@@ -29,27 +29,27 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bit-vec-0.6.3 \
 		bit_field-0.10.3 \
 		bitflags-1.3.2 \
-		bitflags-2.9.4 \
+		bitflags-2.10.0 \
 		bitstream-io-2.6.0 \
 		block2-0.5.1 \
-		bstr-1.12.0 \
+		bstr-1.12.1 \
 		built-0.7.7 \
 		bumpalo-3.19.0 \
-		bytemuck-1.23.2 \
+		bytemuck-1.24.0 \
 		byteorder-lite-0.1.0 \
-		cc-1.2.39 \
+		cc-1.2.44 \
 		cfg-expr-0.15.8 \
-		cfg-if-1.0.3 \
+		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		char_reader-0.1.1 \
 		chrono-0.4.42 \
-		clap-4.5.48 \
+		clap-4.5.51 \
 		clap-help-1.5.0 \
-		clap_builder-4.5.48 \
-		clap_complete-4.5.58 \
-		clap_derive-4.5.47 \
-		clap_lex-0.7.5 \
-		clap_mangen-0.2.29 \
+		clap_builder-4.5.51 \
+		clap_complete-4.5.60 \
+		clap_derive-4.5.49 \
+		clap_lex-0.7.6 \
+		clap_mangen-0.2.31 \
 		cli-log-2.1.0 \
 		clipboard-win-4.5.0 \
 		clipboard_macos-0.1.1 \
@@ -73,12 +73,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crossterm-0.29.0 \
 		crossterm_winapi-0.9.1 \
 		crunchy-0.2.4 \
-		csv-1.3.1 \
-		csv-core-0.1.12 \
+		csv-1.4.0 \
+		csv-core-0.1.13 \
 		csv2svg-0.2.3 \
 		custom_error-1.9.2 \
 		data-url-0.3.2 \
-		deranged-0.5.4 \
+		deranged-0.5.5 \
 		derive_more-2.0.1 \
 		derive_more-impl-2.0.1 \
 		deser-hjson-2.2.4 \
@@ -87,8 +87,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		dirs-sys-0.3.7 \
 		dirs-sys-0.4.1 \
 		displaydoc-0.2.5 \
-		doc-comment-0.3.3 \
-		document-features-0.2.11 \
+		doc-comment-0.3.4 \
+		document-features-0.2.12 \
 		either-1.15.0 \
 		equator-0.4.2 \
 		equator-macro-0.4.2 \
@@ -105,40 +105,38 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fax_derive-0.2.0 \
 		fdeflate-0.3.7 \
 		file-size-1.0.3 \
-		find-msvc-tools-0.1.2 \
-		flate2-1.1.2 \
+		find-msvc-tools-0.1.4 \
+		flate2-1.1.5 \
 		flex-grow-0.1.0 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
-		foldhash-0.1.5 \
+		foldhash-0.2.0 \
 		fontconfig-parser-0.5.8 \
 		fontdb-0.23.0 \
 		form_urlencoded-1.2.2 \
 		fsevent-sys-4.1.0 \
 		gethostname-0.3.0 \
 		getrandom-0.2.16 \
-		getrandom-0.3.3 \
+		getrandom-0.3.4 \
 		gif-0.13.3 \
 		git2-0.20.2 \
 		glassbench-0.4.4 \
 		glob-0.3.3 \
-		half-2.6.0 \
+		half-2.7.1 \
 		hashbrown-0.14.5 \
-		hashbrown-0.15.5 \
 		hashbrown-0.16.0 \
 		hashlink-0.9.1 \
 		heck-0.4.1 \
 		heck-0.5.0 \
-		home-0.5.11 \
 		iana-time-zone-0.1.64 \
 		iana-time-zone-haiku-0.1.2 \
-		icu_collections-2.0.0 \
-		icu_locale_core-2.0.0 \
-		icu_normalizer-2.0.0 \
-		icu_normalizer_data-2.0.0 \
-		icu_properties-2.0.1 \
-		icu_properties_data-2.0.1 \
-		icu_provider-2.0.0 \
+		icu_collections-2.1.1 \
+		icu_locale_core-2.1.1 \
+		icu_normalizer-2.1.1 \
+		icu_normalizer_data-2.1.1 \
+		icu_properties-2.1.1 \
+		icu_properties_data-2.1.1 \
+		icu_provider-2.1.1 \
 		id-arena-2.2.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
@@ -148,18 +146,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		imgref-1.12.0 \
 		include_dir-0.7.4 \
 		include_dir_macros-0.7.4 \
-		indexmap-2.11.4 \
+		indexmap-2.12.0 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
 		interpolate_name-0.2.4 \
 		io-kit-sys-0.4.1 \
 		is_executable-1.0.5 \
-		is_terminal_polyfill-1.70.1 \
+		is_terminal_polyfill-1.70.2 \
 		itertools-0.12.1 \
 		itoa-1.0.15 \
 		jobserver-0.1.34 \
 		jpeg-encoder-0.5.1 \
-		js-sys-0.3.81 \
+		js-sys-0.3.82 \
 		jxl-bitstream-0.2.3 \
 		jxl-coding-0.2.3 \
 		jxl-color-0.3.2 \
@@ -174,12 +172,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
 		kurbo-0.11.3 \
-		lazy-regex-3.4.1 \
-		lazy-regex-proc_macros-3.4.1 \
+		lazy-regex-3.4.2 \
+		lazy-regex-proc_macros-3.4.2 \
 		lazy_static-1.5.0 \
 		lebe-0.5.3 \
 		lfs-core-0.14.1 \
-		libc-0.2.176 \
+		libc-0.2.177 \
 		libfuzzer-sys-0.4.10 \
 		libgit2-sys-0.18.2+1.9.1 \
 		libm-0.2.15 \
@@ -189,27 +187,26 @@ CARGO_CRATES=	adler2-2.0.1 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.11.0 \
-		litemap-0.8.0 \
-		litrs-0.4.2 \
-		lock_api-0.4.13 \
+		litemap-0.8.1 \
+		litrs-1.0.0 \
+		lock_api-0.4.14 \
 		log-0.4.28 \
 		loop9-0.1.5 \
-		lru-0.16.1 \
+		lru-0.16.2 \
 		mach2-0.4.3 \
 		maybe-rayon-0.1.1 \
 		memchr-2.7.6 \
-		memmap2-0.9.8 \
+		memmap2-0.9.9 \
 		memoffset-0.7.1 \
 		minimad-0.13.1 \
-		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
-		mio-1.0.4 \
-		moxcms-0.7.5 \
+		mio-1.1.0 \
+		moxcms-0.7.9 \
 		mutate_once-0.1.2 \
 		new_debug_unreachable-1.0.6 \
 		nix-0.26.4 \
 		nix-0.29.0 \
-		nom-7.1.3 \
+		nom-8.0.0 \
 		noop_proc_macro-0.3.0 \
 		normpath-1.5.0 \
 		notify-8.2.0 \
@@ -222,22 +219,22 @@ CARGO_CRATES=	adler2-2.0.1 \
 		num-traits-0.2.19 \
 		objc-sys-0.3.5 \
 		objc2-0.5.2 \
-		objc2-0.6.2 \
+		objc2-0.6.3 \
 		objc2-app-kit-0.2.2 \
 		objc2-core-data-0.2.2 \
 		objc2-core-image-0.2.2 \
 		objc2-encode-4.1.0 \
 		objc2-foundation-0.2.2 \
-		objc2-foundation-0.3.1 \
+		objc2-foundation-0.3.2 \
 		objc2-metal-0.2.2 \
 		objc2-quartz-core-0.2.2 \
 		once_cell-1.21.3 \
-		once_cell_polyfill-1.70.1 \
+		once_cell_polyfill-1.70.2 \
 		open-1.7.1 \
 		opener-0.8.3 \
 		option-ext-0.2.0 \
-		parking_lot-0.12.4 \
-		parking_lot_core-0.9.11 \
+		parking_lot-0.12.5 \
+		parking_lot_core-0.9.12 \
 		paste-1.0.15 \
 		pathdiff-0.2.3 \
 		percent-encoding-2.3.2 \
@@ -251,14 +248,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		plist-1.8.0 \
 		png-0.17.16 \
 		png-0.18.0 \
-		potential_utf-0.1.3 \
+		potential_utf-0.1.4 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
-		proc-macro2-1.0.101 \
+		proc-macro2-1.0.103 \
 		proc-status-0.1.1 \
 		profiling-1.0.17 \
 		profiling-procmacros-1.0.17 \
-		pxfm-0.1.24 \
+		pxfm-0.1.25 \
 		qoi-0.4.1 \
 		quick-error-2.0.1 \
 		quick-xml-0.38.3 \
@@ -271,11 +268,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ravif-0.11.20 \
 		rayon-1.11.0 \
 		rayon-core-1.13.0 \
-		redox_syscall-0.5.17 \
+		redox_syscall-0.5.18 \
 		redox_users-0.4.6 \
-		regex-1.11.3 \
-		regex-automata-0.4.11 \
-		regex-syntax-0.8.6 \
+		regex-1.12.2 \
+		regex-automata-0.4.13 \
+		regex-syntax-0.8.8 \
 		resvg-0.45.1 \
 		rgb-0.8.52 \
 		roff-0.2.2 \
@@ -296,10 +293,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_derive-1.0.228 \
 		serde_json-1.0.145 \
 		serde_spanned-0.6.9 \
-		serde_spanned-1.0.2 \
+		serde_spanned-1.0.3 \
 		shlex-1.3.0 \
 		signal-hook-0.3.18 \
-		signal-hook-mio-0.2.4 \
+		signal-hook-mio-0.2.5 \
 		signal-hook-registry-1.4.6 \
 		simd-adler32-0.3.7 \
 		simd_helpers-0.1.0 \
@@ -310,7 +307,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		snafu-0.7.5 \
 		snafu-derive-0.7.5 \
 		splitty-1.0.2 \
-		stable_deref_trait-1.2.0 \
+		stable_deref_trait-1.2.1 \
 		str-buf-1.0.6 \
 		strict-0.2.0 \
 		strict-num-0.1.1 \
@@ -318,7 +315,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		svg-0.16.0 \
 		svgtypes-0.15.3 \
 		syn-1.0.109 \
-		syn-2.0.106 \
+		syn-2.0.108 \
 		synstructure-0.13.2 \
 		syntect-no-panic-6.0.0 \
 		system-deps-6.2.2 \
@@ -339,32 +336,32 @@ CARGO_CRATES=	adler2-2.0.1 \
 		time-macros-0.2.24 \
 		tiny-skia-0.11.4 \
 		tiny-skia-path-0.11.4 \
-		tinystr-0.8.1 \
+		tinystr-0.8.2 \
 		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.8.23 \
-		toml-0.9.7 \
+		toml-0.9.8 \
 		toml_datetime-0.6.11 \
-		toml_datetime-0.7.2 \
+		toml_datetime-0.7.3 \
 		toml_edit-0.22.27 \
-		toml_parser-1.0.3 \
-		toml_writer-1.0.3 \
+		toml_parser-1.0.4 \
+		toml_writer-1.0.4 \
 		tracing-0.1.41 \
 		tracing-core-0.1.34 \
-		trash-5.2.3 \
+		trash-5.2.5 \
 		ttf-parser-0.25.1 \
 		umask-2.1.0 \
 		unicode-bidi-0.3.18 \
 		unicode-bidi-mirroring-0.4.0 \
 		unicode-ccc-0.4.0 \
-		unicode-ident-1.0.19 \
-		unicode-normalization-0.1.24 \
-		unicode-properties-0.1.3 \
+		unicode-ident-1.0.22 \
+		unicode-normalization-0.1.25 \
+		unicode-properties-0.1.4 \
 		unicode-script-0.5.7 \
 		unicode-segmentation-1.12.0 \
 		unicode-vo-0.1.0 \
 		unicode-width-0.1.14 \
-		unicode-width-0.2.1 \
+		unicode-width-0.2.2 \
 		url-2.5.7 \
 		urlencoding-2.1.3 \
 		usvg-0.45.1 \
@@ -373,20 +370,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		uzers-0.12.1 \
 		v_frame-0.3.9 \
 		vcpkg-0.2.15 \
-		version-compare-0.2.0 \
+		version-compare-0.2.1 \
 		version_check-0.9.5 \
 		vte-0.15.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasi-0.14.7+wasi-0.2.4 \
 		wasip2-1.0.1+wasi-0.2.4 \
-		wasm-bindgen-0.2.104 \
-		wasm-bindgen-backend-0.2.104 \
-		wasm-bindgen-macro-0.2.104 \
-		wasm-bindgen-macro-support-0.2.104 \
-		wasm-bindgen-shared-0.2.104 \
+		wasm-bindgen-0.2.105 \
+		wasm-bindgen-macro-0.2.105 \
+		wasm-bindgen-macro-support-0.2.105 \
+		wasm-bindgen-shared-0.2.105 \
 		weezl-0.1.10 \
-		which-4.4.2 \
+		which-4.4.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
@@ -394,63 +389,63 @@ CARGO_CRATES=	adler2-2.0.1 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.56.0 \
 		windows-core-0.56.0 \
-		windows-core-0.62.1 \
+		windows-core-0.62.2 \
 		windows-implement-0.56.0 \
-		windows-implement-0.60.1 \
+		windows-implement-0.60.2 \
 		windows-interface-0.56.0 \
-		windows-interface-0.59.2 \
-		windows-link-0.2.0 \
+		windows-interface-0.59.3 \
+		windows-link-0.2.1 \
 		windows-result-0.1.2 \
-		windows-result-0.4.0 \
-		windows-strings-0.5.0 \
+		windows-result-0.4.1 \
+		windows-strings-0.5.1 \
 		windows-sys-0.48.0 \
 		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
-		windows-sys-0.61.1 \
+		windows-sys-0.61.2 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.4 \
+		windows-targets-0.53.5 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_gnullvm-0.53.0 \
+		windows_aarch64_gnullvm-0.53.1 \
 		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_aarch64_msvc-0.53.0 \
+		windows_aarch64_msvc-0.53.1 \
 		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
-		windows_i686_gnu-0.53.0 \
+		windows_i686_gnu-0.53.1 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_gnullvm-0.53.0 \
+		windows_i686_gnullvm-0.53.1 \
 		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
-		windows_i686_msvc-0.53.0 \
+		windows_i686_msvc-0.53.1 \
 		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnu-0.53.0 \
+		windows_x86_64_gnu-0.53.1 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_gnullvm-0.53.0 \
+		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		windows_x86_64_msvc-0.53.0 \
+		windows_x86_64_msvc-0.53.1 \
 		winnow-0.7.13 \
 		wit-bindgen-0.46.0 \
-		writeable-0.6.1 \
+		writeable-0.6.2 \
 		x11-clipboard-0.8.1 \
 		x11rb-0.12.0 \
 		x11rb-protocol-0.12.0 \
 		xmlwriter-0.1.0 \
 		xterm-query-0.5.2 \
 		yaml-rust-0.4.5 \
-		yoke-0.8.0 \
-		yoke-derive-0.8.0 \
+		yoke-0.8.1 \
+		yoke-derive-0.8.1 \
 		zerocopy-0.8.27 \
 		zerocopy-derive-0.8.27 \
 		zerofrom-0.1.6 \
 		zerofrom-derive-0.1.6 \
-		zerotrie-0.2.2 \
-		zerovec-0.11.4 \
-		zerovec-derive-0.11.1 \
+		zerotrie-0.2.3 \
+		zerovec-0.11.5 \
+		zerovec-derive-0.11.2 \
 		zune-bmp-0.4.0 \
 		zune-core-0.4.12 \
 		zune-farbfeld-0.4.0 \
