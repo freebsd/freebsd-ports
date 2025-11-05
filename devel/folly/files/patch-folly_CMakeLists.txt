@@ -1,6 +1,6 @@
---- folly/CMakeLists.txt.orig	2024-07-06 16:18:12 UTC
+--- folly/CMakeLists.txt.orig	2025-11-02 05:43:14 UTC
 +++ folly/CMakeLists.txt
-@@ -29,7 +29,9 @@ add_subdirectory(debugging/exception_tracer)
+@@ -30,7 +30,9 @@ add_subdirectory(debugging/exception_tracer)
  )
  
  add_subdirectory(debugging/exception_tracer)

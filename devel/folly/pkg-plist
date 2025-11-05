@@ -240,6 +240,7 @@ include/folly/container/detail/F14Table.h
 include/folly/container/detail/Util.h
 include/folly/container/detail/tape_detail.h
 include/folly/container/heap_vector_types.h
+include/folly/container/irange.h
 include/folly/container/range_traits.h
 include/folly/container/small_vector.h
 include/folly/container/sorted_vector_types.h
@@ -256,8 +257,7 @@ include/folly/coro/AsyncScope.h
 include/folly/coro/AsyncStack.h
 include/folly/coro/AutoCleanup-fwd.h
 include/folly/coro/AutoCleanup.h
-include/folly/coro/AwaitImmediately.h
-include/folly/coro/AwaitResult.h
+include/folly/coro/BasePromise.h
 include/folly/coro/Baton.h
 include/folly/coro/BlockingWait.h
 include/folly/coro/BoundedQueue.h
@@ -281,8 +281,8 @@ include/folly/coro/Merge-inl.h
 include/folly/coro/Merge.h
 include/folly/coro/Mutex.h
 include/folly/coro/Noexcept.h
+include/folly/coro/Nothrow.h
 include/folly/coro/Promise.h
-include/folly/coro/Ready.h
 include/folly/coro/Result.h
 include/folly/coro/Retry.h
 include/folly/coro/RustAdaptors.h
@@ -304,6 +304,7 @@ include/folly/coro/Traits.h
 include/folly/coro/Transform-inl.h
 include/folly/coro/Transform.h
 include/folly/coro/UnboundedQueue.h
+include/folly/coro/ValueOrError.h
 include/folly/coro/ViaIfAsync.h
 include/folly/coro/WithAsyncStack.h
 include/folly/coro/WithCancellation.h
@@ -439,6 +440,7 @@ include/folly/executors/task_queue/BlockingQueue.h
 include/folly/executors/task_queue/LifoSemMPMCQueue.h
 include/folly/executors/task_queue/PriorityLifoSemMPMCQueue.h
 include/folly/executors/task_queue/PriorityUnboundedBlockingQueue.h
+include/folly/executors/task_queue/StripedPriorityUnboundedBlockingQueue.h
 include/folly/executors/task_queue/UnboundedBlockingQueue.h
 include/folly/executors/thread_factory/InitThreadFactory.h
 include/folly/executors/thread_factory/NamedThreadFactory.h
@@ -702,7 +704,9 @@ include/folly/gen/String-inl.h
 include/folly/gen/String.h
 include/folly/hash/Checksum.h
 include/folly/hash/FarmHash.h
+include/folly/hash/FnvHash.h
 include/folly/hash/Hash.h
+include/folly/hash/HsiehHash.h
 include/folly/hash/MurmurHash.h
 include/folly/hash/SpookyHashV1.h
 include/folly/hash/SpookyHashV2.h
@@ -853,6 +857,7 @@ include/folly/lang/Extern.h
 include/folly/lang/Hint-inl.h
 include/folly/lang/Hint.h
 include/folly/lang/Keep.h
+include/folly/lang/MustUseImmediately.h
 include/folly/lang/New.h
 include/folly/lang/Ordering.h
 include/folly/lang/Pretty.h
@@ -874,6 +879,7 @@ include/folly/lang/bind/Bind.h
 include/folly/lang/bind/Named.h
 include/folly/lang/bind/NamedToStorage.h
 include/folly/lang/bind/ToStorage.h
+include/folly/lang/cstring_view.h
 include/folly/logging/AsyncFileWriter.h
 include/folly/logging/AsyncLogWriter.h
 include/folly/logging/AutoTimer.h
@@ -997,12 +1003,15 @@ include/folly/python/executor.h
 include/folly/python/futures.h
 include/folly/python/import.h
 include/folly/python/iobuf.h
+include/folly/python/request_context.h
 include/folly/random/hash.h
 include/folly/random/xoshiro256pp.h
+include/folly/result/coro.h
 include/folly/result/gtest_helpers.h
 include/folly/result/result.h
 include/folly/result/try.h
 include/folly/result/value_only_result.h
+include/folly/result/value_only_result_coro.h
 include/folly/settings/CommandLineParser.h
 include/folly/settings/Immutables.h
 include/folly/settings/Observer.h
@@ -1081,6 +1090,7 @@ include/folly/synchronization/RelaxedAtomic.h
 include/folly/synchronization/SanitizeThread.h
 include/folly/synchronization/SaturatingSemaphore.h
 include/folly/synchronization/SmallLocks.h
+include/folly/synchronization/StripedThrottledLifoSem.h
 include/folly/synchronization/ThrottledLifoSem.h
 include/folly/synchronization/WaitOptions.h
 include/folly/synchronization/detail/AtomicUtils.h
