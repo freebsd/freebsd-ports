@@ -4493,7 +4493,6 @@ games/hedgewars-server||2025-06-04|Depends on expired lang/ghc810, does not buil
 lang/ghc810||2025-06-04|Old version, unsupported upstream
 audio/mp3check||2025-06-06|Has expired: Depends on expired audio/id3tool
 audio/id3tool||2025-06-06|Has expired: Can't read ID3v2 tags which have been around for 20+ years and discontinued in 2005 feature-wise according to readme file
-science/py-pysal||2025-06-06|Has expired: Depends on expired math/py-spvcm
 textproc/xincluder||2025-06-06|Has expired: Depends on expiring java/jdom
 math/py-spvcm||2025-06-06|Has expired: Upstream repository has been archived on Jul 9, 2024
 sysutils/screen50|sysutils/screen|2025-06-09|Replace the screen metaport with screen50, renaming screen50 to screen
