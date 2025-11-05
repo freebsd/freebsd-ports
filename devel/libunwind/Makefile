@@ -5,7 +5,8 @@ MASTER_SITES=	https://github.com/libunwind/libunwind/releases/download/v${LIBUNW
 DISTNAME=	libunwind-${LIBUNWIND_VERSION}
 
 PATCH_SITES=	https://github.com/libunwind/libunwind/commit/
-PATCHFILES=	2ad7f439d6d04a808947e04b07e1efb34371c8b2.patch:-p1
+PATCHFILES=	b841b2a2665da25dd28fd16977a77bf8b3494dc7.patch:-p1 \
+		2ad7f439d6d04a808947e04b07e1efb34371c8b2.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic stack unwinding library
