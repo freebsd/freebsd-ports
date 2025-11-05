@@ -1,6 +1,5 @@
 PORTNAME=	texinfo
-PORTVERSION=	7.1
-PORTREVISION=	12
+PORTVERSION=	7.2
 PORTEPOCH=	1
 CATEGORIES=	print
 MASTER_SITES=	GNU \
@@ -28,7 +27,10 @@ RUN_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
 
 USES=		charsetfix cpe gmake iconv:wchar_t libtool ncurses perl5 tar:xz tex
 
-CONFIGURE_ARGS=	--with-external-libintl-perl \
+CONFIGURE_ARGS=	--enable-perl-api-texi-build \
+		--enable-perl-xs \
+		--enable-xs-perl-libintl \
+		--with-external-libintl-perl \
 		--with-external-Text-Unidecode \
 		--with-external-Unicode-EastAsianWidth
 CONFIGURE_ENV=	PERL_EXT_CC="${CC}"
@@ -58,8 +60,5 @@ post-patch:
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/htmlxref.cnf-${HTMLXREF_CNF_RELDATE} ${WRKSRC}/util/htmlxref.cnf
 	@${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/texi2dvi-${TEXI2DVI_RELDATE} ${WRKSRC}/util/texi2dvi
 	@${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/texi2pdf-${TEXI2PDF_RELDATE} ${WRKSRC}/util/texi2pdf
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/util/htmlxref.cnf ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
