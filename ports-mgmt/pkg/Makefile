@@ -1,5 +1,6 @@
 PORTNAME=	pkg
 DISTVERSION=	2.4.2
+PORTREVISION=	1
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 
@@ -54,6 +55,7 @@ PKG_BIN=	${WRKSRC}/src/pkg-static
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpkg.so ${STAGEDIR}${PREFIX}/sbin/pkg*
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
