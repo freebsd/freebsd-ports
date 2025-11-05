@@ -11,7 +11,6 @@ include/fb303/FollyLoggingHandler.h
 include/fb303/HistogramExporter.h
 include/fb303/LegacyClock.h
 include/fb303/LimitUtils.h
-include/fb303/MutexWrapper.h
 include/fb303/QuantileStat-inl.h
 include/fb303/QuantileStat.h
 include/fb303/ServiceData.h
@@ -42,12 +41,6 @@ include/fb303/thrift/gen-cpp2/fb303_core_metadata.h
 include/fb303/thrift/gen-cpp2/fb303_core_types.h
 include/fb303/thrift/gen-cpp2/fb303_core_types.tcc
 include/fb303/thrift/gen-cpp2/fb303_core_types_custom_protocol.h
-@dir include/fb303/thrift/rust/clients
-@dir include/fb303/thrift/rust/gen_safe_patch/clients
-@dir include/fb303/thrift/rust/gen_safe_patch/mocks
-@dir include/fb303/thrift/rust/gen_safe_patch/services
-@dir include/fb303/thrift/rust/mocks
-@dir include/fb303/thrift/rust/services
 include/thrift-files/fb303/thrift/fb303_core.thrift
 lib/cmake/fb303/fb303-config.cmake
 lib/cmake/fb303/fb303-targets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -56,3 +49,9 @@ lib/libfb303.so
 lib/libfb303.so.1.0.0
 lib/libfb303_thrift_cpp.so
 lib/libfb303_thrift_cpp.so.1.0.0
+@dir include/fb303/thrift/rust/clients
+@dir include/fb303/thrift/rust/gen_safe_patch/clients
+@dir include/fb303/thrift/rust/gen_safe_patch/mocks
+@dir include/fb303/thrift/rust/gen_safe_patch/services
+@dir include/fb303/thrift/rust/mocks
+@dir include/fb303/thrift/rust/services
