@@ -1,6 +1,6 @@
 PORTNAME=	odin
 DISTVERSIONPREFIX=	dev-
-DISTVERSION=	2025-07
+DISTVERSION=	2025-11
 CATEGORIES=	lang devel
 PKGNAMESUFFIX=	-lang
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_armv7=	compilation fails:  use of undeclared identifier 'LLVMInitializeWebAssemblyTargetInfo'
 BROKEN_i386=	compilation fails:  use of undeclared identifier 'LLVMInitializeAArch64TargetInfo', see https://github.com/odin-lang/Odin/issues/4875
 
-USES=		gmake llvm:20,lib python:test
+USES=		gmake llvm:21,lib python:test
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	odin-lang
@@ -57,9 +57,9 @@ do-test:
 		 ${SETENV} ${TEST_ENV} ./odin test tests/vendor -all-packages -define:ODIN_TEST_FANCY=false && \
 		 ${SETENV} ${TEST_ENV} ./odin test tests/internal -all-packages -define:ODIN_TEST_FANCY=false
 
-# tests as of 2025-02:
-#   Finished 398 tests in 7.059992681s. All tests were successful.
-#   Finished 41 tests in 575.880234ms. All tests were successful.
-#   Finished 20 tests in 4.259498249s. All tests were successful.
+# tests as of 2025-11:
+# Finished 465 tests in 1.666276338s. All tests were successful.
+# Finished 56 tests in 409.763299ms. All tests were successful.
+# Finished 32 tests in 1.116643878s. All tests were successful.
 
 .include <bsd.port.mk>
