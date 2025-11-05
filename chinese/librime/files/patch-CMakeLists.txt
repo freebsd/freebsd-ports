@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2025-11-05 18:57:40 UTC
++++ CMakeLists.txt
+@@ -174,9 +174,9 @@ endif()
+   set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /LARGEADDRESSAWARE")
+ endif()
+ 
+-if(UNIX)
+-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+-endif()
++#if(UNIX)
++#  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
++#endif()
+ 
+ if (NOT CMAKE_BUILD_PARALLEL_LEVEL)
+   include(ProcessorCount)
