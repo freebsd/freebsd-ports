@@ -1,6 +1,6 @@
 PORTNAME=	libxcrypt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.38
+DISTVERSION=	4.5.0
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,5 +25,14 @@ TEST_TARGET=	check
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcrypt.so.2.0.0
+
+# tests as of 4.5.0:
+# TOTAL: 52
+# PASS:  51
+# SKIP:  1
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
 
 .include <bsd.port.mk>
