@@ -57,6 +57,7 @@ bin/gm4
 %%NLS%%share/locale/hr/LC_MESSAGES/m4.mo
 %%NLS%%share/locale/id/LC_MESSAGES/m4.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/m4.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/m4.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/m4.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/m4.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/m4.mo
