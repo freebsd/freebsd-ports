@@ -12,6 +12,7 @@ WWW=		https://opengist.io/
 LICENSE=	AGPLv3
 
 BROKEN_i386=	fails to build
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 BUILD_DEPENDS=	npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
 RUN_DEPENDS=	git:devel/git
@@ -24,10 +25,10 @@ GH_PROJECT=	opengist
 USE_RC_SUBR=	opengist
 
 GO_MODULE=	github.com/thomiceli/opengist
+GO_ENV+=	GOTOOLCHAIN=local+path
 GO_TARGET=	.
 GO_BUILDFLAGS=	-tags fs_embed \
 		-ldflags="-X github.com/thomiceli/opengist/internal/config.OpengistVersion=v${DISTVERSION}"
-GO_ENV+=	GOTOOLCHAIN=local+path
 
 GROUP=		opengist
 USER=		opengist
@@ -73,11 +74,11 @@ post-install:
 regenerate-node_modules-distfile: patch
 	cd ${WRKSRC} && \
 		${RM} -r node_modules && \
-		${MAKE_ENV} npm install --prefix ${WRKSRC} && \
-		${MAKE_ENV} npm install --prefix ${WRKSRC} --os freebsd --cpu \
-		amd64 esbuild@0.18.20 && \
 		${MAKE_ENV} npm install --prefix ${WRKSRC} --os freebsd --cpu \
 		arm64 esbuild@0.18.20 && \
+		${MAKE_ENV} npm install --prefix ${WRKSRC} --os freebsd --cpu \
+		amd64 esbuild@0.18.20 && \
+		${MAKE_ENV} npm install --prefix ${WRKSRC} && \
 		${TAR} czf ${DISTDIR}/opengist-${DISTVERSION}-node_modules.tgz \
 		node_modules && \
 		${ECHO} "Please upload the file ${DISTDIR}/opengist-${DISTVERSION}-node_modules.tgz"

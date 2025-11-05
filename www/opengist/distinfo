@@ -1,6 +1,6 @@
-TIMESTAMP = 1762159245
-SHA256 (go/www_opengist/opengist-v1.11.1/opengist-1.11.1-node_modules.tgz) = fead2b40980ab115623b47e64e439ba66e2d7ec9c63c4ed9393c4bc885a8a888
-SIZE (go/www_opengist/opengist-v1.11.1/opengist-1.11.1-node_modules.tgz) = 25500787
+TIMESTAMP = 1762322900
+SHA256 (go/www_opengist/opengist-v1.11.1/opengist-1.11.1-node_modules.tgz) = 340ebaa290ab0e91fec8e20014ec15286a108a76ba6260a982762c06f163463f
+SIZE (go/www_opengist/opengist-v1.11.1/opengist-1.11.1-node_modules.tgz) = 29311888
 SHA256 (go/www_opengist/opengist-v1.11.1/v1.11.1.mod) = 9c44b9e720c397348bdfcd5774f3c681c64c114c4f817f559f97b1bef1631203
 SIZE (go/www_opengist/opengist-v1.11.1/v1.11.1.mod) = 5783
 SHA256 (go/www_opengist/opengist-v1.11.1/v1.11.1.zip) = 6e9361f2433d2d1249d5b68bca8b4accd2661430ef271e0839f06953818c3d7a
