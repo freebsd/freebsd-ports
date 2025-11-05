@@ -24,6 +24,13 @@ include/arrow-flight-glib/common.hpp
 include/arrow-flight-glib/server.h
 include/arrow-flight-glib/server.hpp
 include/arrow-flight-glib/version.h
+include/arrow-flight-sql-glib/arrow-flight-sql-glib.h
+include/arrow-flight-sql-glib/arrow-flight-sql-glib.hpp
+include/arrow-flight-sql-glib/client.h
+include/arrow-flight-sql-glib/client.hpp
+include/arrow-flight-sql-glib/server.h
+include/arrow-flight-sql-glib/server.hpp
+include/arrow-flight-sql-glib/version.h
 include/arrow-glib/array-builder.h
 include/arrow-glib/array-builder.hpp
 include/arrow-glib/array.h
@@ -142,6 +149,7 @@ include/parquet-glib/version.h
 lib/girepository-1.0/Arrow-1.0.typelib
 lib/girepository-1.0/ArrowDataset-1.0.typelib
 lib/girepository-1.0/ArrowFlight-1.0.typelib
+lib/girepository-1.0/ArrowFlightSQL-1.0.typelib
 lib/girepository-1.0/Gandiva-1.0.typelib
 lib/girepository-1.0/Parquet-1.0.typelib
 lib/libarrow-dataset-glib.a
@@ -152,6 +160,10 @@ lib/libarrow-flight-glib.a
 lib/libarrow-flight-glib.so
 lib/libarrow-flight-glib.so.%%SHLIB_MAJOR%%
 lib/libarrow-flight-glib.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%.0
+lib/libarrow-flight-sql-glib.a
+lib/libarrow-flight-sql-glib.so
+lib/libarrow-flight-sql-glib.so.%%SHLIB_MAJOR%%
+lib/libarrow-flight-sql-glib.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%.0
 lib/libarrow-glib.a
 lib/libarrow-glib.so
 lib/libarrow-glib.so.%%SHLIB_MAJOR%%
@@ -166,6 +178,7 @@ lib/libparquet-glib.so.%%SHLIB_MAJOR%%
 lib/libparquet-glib.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%.0
 libdata/pkgconfig/arrow-dataset-glib.pc
 libdata/pkgconfig/arrow-flight-glib.pc
+libdata/pkgconfig/arrow-flight-sql-glib.pc
 libdata/pkgconfig/arrow-glib.pc
 libdata/pkgconfig/gandiva-glib.pc
 libdata/pkgconfig/parquet-glib.pc
@@ -191,5 +204,6 @@ share/arrow-glib/example/vala/write-stream.vala
 share/gir-1.0/Arrow-1.0.gir
 share/gir-1.0/ArrowDataset-1.0.gir
 share/gir-1.0/ArrowFlight-1.0.gir
+share/gir-1.0/ArrowFlightSQL-1.0.gir
 share/gir-1.0/Gandiva-1.0.gir
 share/gir-1.0/Parquet-1.0.gir
