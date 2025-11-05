@@ -4,7 +4,7 @@ DISTVERSION=	6.5.1
 PORTREVISION=	4
 CATEGORIES=	science
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Semiempirical Extended Tight-Binding Program Package
 WWW=		https://github.com/grimme-lab/xtb
 
