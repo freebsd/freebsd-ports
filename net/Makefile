@@ -194,7 +194,6 @@
     SUBDIR += gitup
     SUBDIR += glflow
     SUBDIR += glib-networking
-    SUBDIR += glusterfs
     SUBDIR += gmid
     SUBDIR += gnet2
     SUBDIR += gnetcat
