@@ -1,7 +1,0 @@
-TIMESTAMP = 1509445273
-SHA256 (pokerth-1.1.2.tar.gz) = 02cb3dee8077de20cd4491b66049b123d8bdd7fa243855f97c817934875c297a
-SIZE (pokerth-1.1.2.tar.gz) = 21354306
-SHA256 (pokerth-1.1.2-boost-1.73.patch) = 4dc22f47d534f3cf415e57310b02d8b11a410e904682f33044b6693ec36a25ba
-SIZE (pokerth-1.1.2-boost-1.73.patch) = 2281
-SHA256 (pokerth-1.1.2-boost-1.85.patch) = 0064cd2ce0781470fea91da611e5f0f2f6c9cae00d856b7650c4ae23fa8a9082
-SIZE (pokerth-1.1.2-boost-1.85.patch) = 10725

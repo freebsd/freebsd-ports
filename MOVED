@@ -4859,3 +4859,4 @@ net-im/signald|net-im/signal-cli|2025-11-02|Has expired: this project is no long
 net-im/libsignal-client|net-im/libsignal|2025-11-05|Renamed to match upstream name
 games/openlierox||2025-11-06|Remove broken port
 net/glusterfs||2025-11-06|Remove broken port
+games/pokerth||2025-11-06|Remove broken port
