@@ -5,10 +5,12 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	alex@stangl.us
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display pertinent parts of {PORTSDIR}/UPDATING
 
 LICENSE=	ISCL
+
+DEPRECATED=	Likely out of date and not very useful
 
 NO_BUILD=	yes
 USES=		perl5 shebangfix

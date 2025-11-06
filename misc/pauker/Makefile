@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	alex@stangl.us
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java-based flashcard learning using the Leitner system
 WWW=		https://pauker.sourceforge.net
 
