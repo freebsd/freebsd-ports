@@ -28,8 +28,6 @@ DISTFILES+=	v2/Stereo/Trunks.exr:testimages
 DIST_SUBDIR=	openexr # hardcode - not using ${PORTNAME} - so we can share the distdir with openexr-website-docs, avoiding double download of ...
 EXTRACT_ONLY=	openexr-${PORTVERSION}${EXTRACT_SUFX}
 
-BROKEN=		needs backport of security fix OpenJPH 0.24.5 or newer first, 2025Q4 quarterly branch has 0.22.0
-
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
 WWW=		https://www.openexr.com/
