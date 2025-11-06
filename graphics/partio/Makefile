@@ -1,6 +1,5 @@
 PORTNAME=	partio
-PORTVERSION=	1.14.6
-PORTREVISION=	3
+PORTVERSION=	1.19.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics math
 
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	swig:devel/swig
 
-USES=		cmake compiler:c++11-lang gl python:run shebangfix xorg
+USES=		cmake compiler:c++14-lang gl python:run,test shebangfix xorg
 SHEBANG_FILES=	src/tools/partedit.py src/tools/partinspect.py \
 		src/tools/partjson.py
 USE_GL=		gl glu glut
@@ -41,6 +40,7 @@ PYQT_USE=		PYQT=pyqt5
 PYQT_PLIST_FILES=	bin/partedit bin/partinspect
 
 TEST_LIB_DEPENDS=	libgtest.so:devel/googletest
+TEST_TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 TEST_CMAKE_ON=		-DPARTIO_GTEST_ENABLED:BOOL=ON
 TEST_VARS=		SHEBANG_FILES+="src/tests/testpartio.py \
 			src/tests/testpartjson.py"

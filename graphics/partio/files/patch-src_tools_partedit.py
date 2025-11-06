@@ -1,13 +1,11 @@
---- src/tools/partedit.py.orig	2021-10-18 09:08:43 UTC
+--- src/tools/partedit.py.orig	2025-01-28 22:44:08 UTC
 +++ src/tools/partedit.py
-@@ -72,9 +72,7 @@ def getAttrs(numAttributesFunc, attributeInfoFunc, sor
-     numAttr = numAttributesFunc()
+@@ -1080,7 +1080,7 @@ class PartEdit(QMainWindow):
+     def dataDirtiedSlot(self, dirty):
+         """ Sets the window title with or without "*" for dirty state """
  
-     nameToIndex = {attributeInfoFunc(anum).name:anum for anum in range(numAttr)}
--    names = nameToIndex.keys()
--    if sort:
--        names.sort()
-+    names = sorted(nameToIndex) if sort else nameToIndex.keys()
- 
-     id_offset = 0
-     for name in names:
+-        title = self.data.filename
++        title = self.data.filename or ''
+         if dirty:
+             title += '*'
+         self.setWindowTitle(title)
