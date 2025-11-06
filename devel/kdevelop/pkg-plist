@@ -1846,9 +1846,11 @@ share/locale/he/LC_MESSAGES/kdevbazaar.mo
 share/locale/he/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/he/LC_MESSAGES/kdevcodeutils.mo
 share/locale/he/LC_MESSAGES/kdevcompileanalyzercommon.mo
+share/locale/he/LC_MESSAGES/kdevcontextbrowser.mo
 share/locale/he/LC_MESSAGES/kdevdocker.mo
 share/locale/he/LC_MESSAGES/kdevdocumentswitcher.mo
 share/locale/he/LC_MESSAGES/kdevdocumentview.mo
+share/locale/he/LC_MESSAGES/kdevexecute.mo
 share/locale/he/LC_MESSAGES/kdevfilemanager.mo
 share/locale/he/LC_MESSAGES/kdevghprovider.mo
 share/locale/he/LC_MESSAGES/kdevkonsole.mo
@@ -1857,6 +1859,7 @@ share/locale/he/LC_MESSAGES/kdevninja.mo
 share/locale/he/LC_MESSAGES/kdevokteta.mo
 share/locale/he/LC_MESSAGES/kdevopenwith.mo
 share/locale/he/LC_MESSAGES/kdevoutlineview.mo
+share/locale/he/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/he/LC_MESSAGES/kdevqmakebuilder.mo
 share/locale/he/LC_MESSAGES/kdevsourceformatter.mo
 share/locale/he/LC_MESSAGES/kdevswitchtobuddy.mo

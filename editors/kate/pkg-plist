@@ -1294,6 +1294,7 @@ share/locale/pt_BR/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/ro/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/ro/LC_MESSAGES/kate.mo
 share/locale/ro/LC_MESSAGES/katebacktracebrowserplugin.mo
+share/locale/ro/LC_MESSAGES/katebookmarksplugin.mo
 share/locale/ro/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ro/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/ro/LC_MESSAGES/kateexternaltoolsplugin.mo
