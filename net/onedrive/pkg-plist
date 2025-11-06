@@ -1,5 +1,6 @@
 bin/onedrive
 etc/logrotate.d/onedrive
+share/icons/hicolor/scalable/places/onedrive.svg
 share/man/man1/onedrive.1.gz
 %%COMPLETION%%share/bash-completion/completions/onedrive
 %%COMPLETION%%share/zsh/site-functions/_onedrive
