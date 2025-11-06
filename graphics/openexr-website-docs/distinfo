@@ -1,6 +1,6 @@
 TIMESTAMP = 1759951809
-SHA256 (openexr/openexr-3.4.1.tar.gz) = 55de71610ceb134b79c900e6aed3bf8994ec1972382395c1732f1b32da4c7527
-SIZE (openexr/openexr-3.4.1.tar.gz) = 25545228
+SHA256 (openexr/openexr-3.4.3.tar.gz) = db0c3f9a6bbfc6853d5ee21164ef151e616f07d6f2bac80339b3a0698d13fcc0
+SIZE (openexr/openexr-3.4.3.tar.gz) = 25547346
 SHA256 (openexr/TestImages/README.rst) = 3cbb0a9ab20868940de1b9bf582bdc5ff4244cc585c682d6e40b9befb8fd593c
 SIZE (openexr/TestImages/README.rst) = 2588
 SHA256 (openexr/TestImages/AllHalfValues.exr) = eede573a0b59b79f21de15ee9d3b7649d58d8f2a8e7787ea34f192db3b3c84a4
