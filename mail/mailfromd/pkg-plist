@@ -7,6 +7,10 @@ include/mailfromd/mfmod.h
 sbin/calloutd
 sbin/mailfromd
 share/aclocal/mfmod.m4
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/mfl-mode.el
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/mfl-mode.elc
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/obfemail-mode.el
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/obfemail-mode.elc
 %%NLS%%share/locale/da/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/id/LC_MESSAGES/mailfromd.mo
