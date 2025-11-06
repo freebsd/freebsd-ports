@@ -16,6 +16,9 @@ LICENSE_DIR=	${WRKSRC}
 LICENSE_FILE_BSD3CLAUSE=${LICENSE_DIR}/utils/unittest/googletest/LICENSE.TXT
 .include "${.CURDIR}/../llvm-devel/Makefile.LICENSE"
 
+DEPRECATED=	obsolete with few dependencies
+EXPIRATION_DATE=	2025-12-31
+
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 LLVM_MAJOR=	${LLVM_RELEASE:C/\.[0-9]\.[0-9]$//}
 LLVM_SUFFIX=	${LLVM_MAJOR}
