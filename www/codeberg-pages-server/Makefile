@@ -1,7 +1,7 @@
 PORTNAME=	codeberg-pages-server
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.2.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/Codeberg/pages-server/archive/
 DISTFILES=	${DISTVERSIONFULL}.zip
