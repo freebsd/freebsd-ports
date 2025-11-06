@@ -116,7 +116,6 @@ lib/libsaga_gdi.so.%%PORTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/ta_morphometry.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/ta_preprocessor.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/ta_profiles.py
-%%PYTHON_SITELIBDIR%%/PySAGA/tools/ta_scimap.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/ta_slope_stability.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/table_calculus.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/table_tools.py
