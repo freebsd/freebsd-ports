@@ -16,8 +16,6 @@ lib/io.elementary.code/plugins/pastebin/libpastebin.so
 lib/io.elementary.code/plugins/pastebin/pastebin.plugin
 lib/io.elementary.code/plugins/preserve-indent/libpreserve-indent.so
 lib/io.elementary.code/plugins/preserve-indent/preserve-indent.plugin
-lib/io.elementary.code/plugins/spell/libspell.so
-lib/io.elementary.code/plugins/spell/spell.plugin
 lib/io.elementary.code/plugins/vim-emulation/libvim-emulation.so
 lib/io.elementary.code/plugins/vim-emulation/vim-emulation.plugin
 lib/io.elementary.code/plugins/word-completion/libword-completion.so
@@ -238,6 +236,8 @@ share/locale/yo/LC_MESSAGES/io.elementary.code.mo
 share/locale/za/LC_MESSAGES/io.elementary.code.mo
 share/locale/zh/LC_MESSAGES/io.elementary.code.mo
 share/locale/zh_CN/LC_MESSAGES/io.elementary.code.mo
+share/locale/zh_HANS/LC_MESSAGES/io.elementary.code.mo
+share/locale/zh_HANT/LC_MESSAGES/io.elementary.code.mo
 share/locale/zh_HK/LC_MESSAGES/io.elementary.code.mo
 share/locale/zh_TW/LC_MESSAGES/io.elementary.code.mo
 share/locale/zu/LC_MESSAGES/io.elementary.code.mo
