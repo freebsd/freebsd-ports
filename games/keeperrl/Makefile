@@ -15,6 +15,10 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.txt
 LICENSE_FILE_OFL11=	${WRKSRC}/data_contrib/SIL_Open_Font_License.txt
 
+BROKEN=		Fails to build, error: a template argument list is expected after a name prefixed by the template keyword
+DEPRECATED=	Very outdated, fails to build and unmaintained in tree for years
+EXPIRATION_DATE=2025-12-31
+
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libcurl.so:ftp/curl
 
