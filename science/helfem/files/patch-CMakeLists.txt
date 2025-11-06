@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-11-06 01:10:35 UTC
++++ CMakeLists.txt
+@@ -1,7 +1,7 @@ project (helfem CXX Fortran)
+ # CMake project file for HelFEM
+ cmake_minimum_required (VERSION 3.5)
+ project (helfem CXX Fortran)
+-set(CMAKE_CXX_STANDARD 11)
++set(CMAKE_CXX_STANDARD 14)
+ 
+ # Ensure we are building out-of-source so that the tests work (issue 120)
+ get_filename_component(srcdir "${CMAKE_SOURCE_DIR}" REALPATH)
