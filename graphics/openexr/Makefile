@@ -1,5 +1,5 @@
 PORTNAME?=	openexr
-PORTVERSION?=	3.4.0 # ALSO update openexr-website-docs! -- verify sigstore: make makesum verify-sigstore
+PORTVERSION?=	3.4.3 # ALSO update openexr-website-docs! -- verify sigstore: make makesum verify-sigstore
 PORTREVISION?=	0
 CATEGORIES=	graphics devel
 .if !defined(MASTERDIR)
@@ -34,7 +34,8 @@ WWW=		https://www.openexr.com/
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS?=	help2man:misc/help2man
+BUILD_DEPENDS?=	help2man:misc/help2man \
+		openjph>=0.23.0:graphics/openjph
 # exact libImath version required to avoid hard-to-debug issues
 # but this is due to Imath and OpenEXR being close in terms of their
 # release engineering, no other port should version pin Imath

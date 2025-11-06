@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-09-26 23:34:32 UTC
+--- CMakeLists.txt.orig	2025-10-07 15:22:39 UTC
 +++ CMakeLists.txt
-@@ -63,8 +63,6 @@ include(cmake/OpenEXRSetup.cmake)
+@@ -60,8 +60,6 @@ include(cmake/OpenEXRSetup.cmake)
  
  include(cmake/LibraryDefine.cmake)
  include(cmake/OpenEXRSetup.cmake)
@@ -9,7 +9,7 @@
  
  # Hint: This can be set to enable custom find_package
  # search paths, probably best to set it when configuring
-@@ -81,15 +79,6 @@ endif()
+@@ -78,15 +76,6 @@ endif()
    enable_testing()
  endif()
  
@@ -22,10 +22,10 @@
 -  add_subdirectory(src/bin)
 -endif()
 -
- # Tell CMake where to find the OpenEXRConfig.cmake file. Makes it possible to call 
+ # Tell CMake where to find the OpenEXRConfig.cmake file. Makes it possible to call
  # find_package(OpenEXR) in downstream projects
  set(OpenEXR_DIR "${CMAKE_CURRENT_BINARY_DIR}/cmake" CACHE PATH "" FORCE)
-@@ -97,10 +86,6 @@ file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/cmake/OpenEXRT
+@@ -94,10 +83,6 @@ file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/cmake/OpenEXRT
  # Can be empty since we already defined the targets in add_subdirectory
  file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/cmake/OpenEXRTargets.cmake" "# Dummy file")
  
@@ -36,7 +36,7 @@
  # If you want to use ctest to configure, build and
  # upload the results, cmake has builtin support for
  # submitting to CDash, or any server who speaks the
-@@ -123,33 +108,10 @@ endif()
+@@ -120,33 +105,10 @@ endif()
  #set(CTEST_DROP_SITE "open.cdash.org")
  #set(CTEST_DROP_LOCATION "/submit.php?project=MyProject")
  #set(CTEST_DROP_SITE_CDASH TRUE)
