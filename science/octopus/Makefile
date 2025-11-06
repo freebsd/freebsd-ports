@@ -1,6 +1,5 @@
 PORTNAME=	octopus
-DISTVERSION=	15.1
-PORTREVISION=	2
+DISTVERSION=	16.0
 CATEGORIES=	science # chemistry
 MASTER_SITES=	https://octopus-code.org/download/${DISTVERSION}/
 
@@ -30,8 +29,7 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libxc.so:science/libxc \
 		libyaml.so:textproc/libyaml
 
-USES=		compiler:c++14-lang fortran gmake jpeg libtool localbase:ldflags perl5 python shebangfix
-USE_CXXSTD=	c++14
+USES=		compiler:c++14-lang fortran gmake jpeg libtool localbase:ldflags perl5 pkgconfig python shebangfix
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	src/fdep/fortran_dependencies.pl testsuite/performance/create_combinations.py
