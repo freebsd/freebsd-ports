@@ -1,5 +1,5 @@
 PORTNAME=	loaders-update
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	GH
 
@@ -12,9 +12,9 @@ LICENSE=	BSD2CLAUSE
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	Utility is specific to amd64's boot code
 
-GH_PROJECT=	uploaders
 USE_GITHUB=	yes
 GH_ACCOUNT=	emrion
+GH_PROJECT=	uploaders
 
 NO_BUILD=	yes
 
