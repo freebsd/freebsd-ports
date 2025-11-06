@@ -36,6 +36,7 @@ include/sirius/src/core/cmd_args.hpp
 include/sirius/src/core/constants.hpp
 include/sirius/src/core/debug.hpp
 include/sirius/src/core/env/env.hpp
+include/sirius/src/core/expected.hpp
 include/sirius/src/core/fft/fft.hpp
 include/sirius/src/core/fft/fft3d_grid.hpp
 include/sirius/src/core/fft/gvec.hpp
@@ -43,6 +44,7 @@ include/sirius/src/core/hdf5_tree.hpp
 include/sirius/src/core/json.hpp
 include/sirius/src/core/la/blacs_grid.hpp
 include/sirius/src/core/la/blas_lapack.h
+include/sirius/src/core/la/dlaf.hpp
 include/sirius/src/core/la/dmatrix.hpp
 include/sirius/src/core/la/eigenproblem.hpp
 include/sirius/src/core/la/eigensolver.hpp
@@ -139,6 +141,8 @@ include/sirius/src/nlcglib/overlap.hpp
 include/sirius/src/nlcglib/preconditioner/diag_mm.hpp
 include/sirius/src/nlcglib/preconditioner/ultrasoft_precond_k.hpp
 include/sirius/src/nlcglib/ultrasoft_precond.hpp
+include/sirius/src/potential/dftd3_correction.hpp
+include/sirius/src/potential/dftd4_correction.hpp
 include/sirius/src/potential/potential.hpp
 include/sirius/src/potential/xc_functional.hpp
 include/sirius/src/potential/xc_functional_base.hpp
@@ -180,6 +184,8 @@ lib/cmake/sirius/siriusTargets.cmake
 lib/cmake/sirius_cxx/cudalibs_target.cmake
 lib/cmake/sirius_cxx/hdf5_target.cmake
 lib/cmake/sirius_cxx/modules/FindCRAY_LIBSCI.cmake
+lib/cmake/sirius_cxx/modules/FindDFTD3.cmake
+lib/cmake/sirius_cxx/modules/FindDFTD4.cmake
 lib/cmake/sirius_cxx/modules/FindElpa.cmake
 lib/cmake/sirius_cxx/modules/FindLibSPG.cmake
 lib/cmake/sirius_cxx/modules/FindLibVDWXC.cmake

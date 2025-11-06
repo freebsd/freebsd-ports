@@ -1,6 +1,6 @@
 PORTNAME=	sirius
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.7.0
+DISTVERSION=	7.9.0
 CATEGORIES=	science
 PKGNAMESUFFIX=	-quantum-chemistry # other software also has the name "sirius"
 
@@ -10,9 +10,6 @@ WWW=		https://github.com/electronic-structure/SIRIUS/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_FreeBSD_15=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276196
-BROKEN_FreeBSD_16=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276196
 
 LIB_DEPENDS=	libcosta.so:math/costa \
 		libgsl.so:math/gsl \
