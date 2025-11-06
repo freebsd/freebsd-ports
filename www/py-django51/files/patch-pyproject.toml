@@ -1,8 +1,8 @@
---- pyproject.toml.orig	2025-05-07 01:30:47 UTC
+--- pyproject.toml.orig	2025-11-06 06:12:12 UTC
 +++ pyproject.toml
 @@ -1,9 +1,9 @@
  [build-system]
--requires = ["setuptools>=75.8.1"]
+-requires = ["setuptools>=77.0.3"]
 +requires = ["setuptools>=63"]
  build-backend = "setuptools.build_meta"
  
@@ -12,3 +12,14 @@
  dynamic = ["version"]
  requires-python = ">= 3.10"
  dependencies = [
+@@ -16,8 +16,8 @@ readme = "README.rst"
+ ]
+ description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
+ readme = "README.rst"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE", "LICENSE.python"]
++license = {text="BSD-3-Clause"}
++#license-files = ["LICENSE", "LICENSE.python"]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Web Environment",
