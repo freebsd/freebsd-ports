@@ -1,13 +1,14 @@
 Use system OpenSSL instead of vendored one
 
 https://github.com/panter-dsd/tatuin/commit/2380e344736bd5622a48ba31f58a28af1c0a547f#diff-2e9d962a08321605940b5a657135052fbcef87b5e360662bb527c96d9a615542R43
---- Cargo.toml.orig	2025-10-11 07:48:31 UTC
+--- Cargo.toml.orig	2025-11-06 04:19:49 UTC
 +++ Cargo.toml
-@@ -40,6 +40,6 @@ xdg = "3.0.0"
+@@ -39,7 +39,7 @@ uuid = { version = "1.18.1", features = ["v4"] }
+ tracing-appender = "0.2.3"
  tracing-subscriber = "0.3.19"
  uuid = { version = "1.18.1", features = ["v4"] }
- xdg = "3.0.0"
 -openssl = { version = "0.10", features = ["vendored"] }
 +openssl = { version = "0.10", features = [] }
- tatuin-core = { path = "./tatuin-core", version = "0.2.2" }
- tatuin-providers = { path = "./tatuin-providers", version = "0.3.1" }
+ tatuin-core = { path = "./tatuin-core", version = "0.3.0" }
+ tatuin-providers = { path = "./tatuin-providers", version = "0.4.0" }
+ dirs = "6.0.0"
