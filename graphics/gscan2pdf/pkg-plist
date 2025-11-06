@@ -18,6 +18,7 @@ bin/gscan2pdf
 %%SITE_PERL%%/Gscan2pdf/EntryCompletion.pm
 %%SITE_PERL%%/Gscan2pdf/Frontend/CLI.pm
 %%SITE_PERL%%/Gscan2pdf/Frontend/Image_Sane.pm
+%%SITE_PERL%%/Gscan2pdf/Helpers.pm
 %%SITE_PERL%%/Gscan2pdf/NetPBM.pm
 %%SITE_PERL%%/Gscan2pdf/Page.pm
 %%SITE_PERL%%/Gscan2pdf/PageRange.pm
@@ -62,6 +63,7 @@ share/locale/hu/LC_MESSAGES/gscan2pdf.mo
 share/locale/it/LC_MESSAGES/gscan2pdf.mo
 share/locale/ja/LC_MESSAGES/gscan2pdf.mo
 share/locale/ko/LC_MESSAGES/gscan2pdf.mo
+share/locale/lo/LC_MESSAGES/gscan2pdf.mo
 share/locale/nb/LC_MESSAGES/gscan2pdf.mo
 share/locale/nl/LC_MESSAGES/gscan2pdf.mo
 share/locale/oc/LC_MESSAGES/gscan2pdf.mo
