@@ -1,6 +1,6 @@
---- chrome/common/chrome_switches.cc.orig	2025-10-28 14:29:43 UTC
+--- chrome/common/chrome_switches.cc.orig	2025-11-06 10:11:34 UTC
 +++ chrome/common/chrome_switches.cc
-@@ -914,7 +914,7 @@ const char kDebugPrint[] = "debug-print";
+@@ -939,7 +939,7 @@ const char kDebugPrint[] = "debug-print";
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -9,7 +9,7 @@
  const char kEnableNewAppMenuIcon[] = "enable-new-app-menu-icon";
  
  // Causes the browser to launch directly in guest mode.
-@@ -950,7 +950,7 @@ const char kGlicHostLogging[] = "glic-host-logging";
+@@ -975,7 +975,7 @@ const char kGlicHostLogging[] = "glic-host-logging";
  const char kGlicAdminRedirectPatterns[] = "glic-admin-redirect-patterns";
  #endif
  

@@ -1,6 +1,6 @@
---- chrome/browser/sync/sync_service_factory.cc.orig	2025-10-28 14:29:43 UTC
+--- chrome/browser/sync/sync_service_factory.cc.orig	2025-11-06 10:11:34 UTC
 +++ chrome/browser/sync/sync_service_factory.cc
-@@ -135,7 +135,7 @@ namespace {
+@@ -134,7 +134,7 @@ namespace {
  tab_groups::TabGroupSyncService* GetTabGroupSyncService(Profile* profile) {
    CHECK(profile);
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

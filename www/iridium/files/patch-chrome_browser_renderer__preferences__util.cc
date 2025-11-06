@@ -1,4 +1,4 @@
---- chrome/browser/renderer_preferences_util.cc.orig	2025-10-28 14:29:43 UTC
+--- chrome/browser/renderer_preferences_util.cc.orig	2025-11-06 10:11:34 UTC
 +++ chrome/browser/renderer_preferences_util.cc
 @@ -38,7 +38,7 @@
  #include "ui/base/ui_base_features.h"
@@ -18,7 +18,7 @@
    content::UpdateFontRendererPreferencesFromSystemSettings(prefs);
  #endif
    prefs->focus_ring_color = BUILDFLAG(IS_MAC) ? SkColorSetRGB(0x00, 0x5F, 0xCC)
-@@ -125,7 +125,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
+@@ -123,7 +123,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
    prefs->inactive_selection_fg_color = SK_ColorBLACK;
  #endif
  

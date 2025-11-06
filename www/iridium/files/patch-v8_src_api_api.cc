@@ -1,4 +1,4 @@
---- v8/src/api/api.cc.orig	2025-10-28 14:29:43 UTC
+--- v8/src/api/api.cc.orig	2025-11-06 10:11:34 UTC
 +++ v8/src/api/api.cc
 @@ -159,7 +159,7 @@
  #include "src/objects/intl-objects.h"
@@ -9,7 +9,7 @@
  #include <signal.h>
  #include <unistd.h>
  
-@@ -6487,7 +6487,7 @@ bool v8::V8::Initialize(const int build_config) {
+@@ -6480,7 +6480,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  

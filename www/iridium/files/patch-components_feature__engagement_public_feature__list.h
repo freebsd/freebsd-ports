@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_list.h.orig	2025-10-28 14:29:43 UTC
+--- components/feature_engagement/public/feature_list.h.orig	2025-11-06 10:11:34 UTC
 +++ components/feature_engagement/public/feature_list.h
 @@ -359,7 +359,7 @@ DEFINE_VARIATION_PARAM(kIPHiOSAIHubNewBadge, "IPH_iOSA
  #endif  // BUILDFLAG(IS_IOS)
@@ -28,16 +28,16 @@
  DEFINE_VARIATION_PARAM(kIPHDesktopPWAsLinkCapturingLaunch,
                         "IPH_DesktopPWAsLinkCapturingLaunch");
  DEFINE_VARIATION_PARAM(kIPHDesktopPWAsLinkCapturingLaunchAppInTab,
-@@ -776,7 +777,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
-         VARIATION_ENTRY(kIPHiOSSafariImportFeature),
+@@ -783,7 +784,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
          VARIATION_ENTRY(kIPHIOSPageActionMenu),
+         VARIATION_ENTRY(kIPHiOSAIHubNewBadge),
  #elif BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
          VARIATION_ENTRY(kIPHBatterySaverModeFeature),
          VARIATION_ENTRY(kIPHCompanionSidePanelFeature),
          VARIATION_ENTRY(kIPHCompanionSidePanelRegionSearchFeature),
-@@ -837,7 +838,8 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
+@@ -844,7 +845,8 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -47,7 +47,7 @@
          VARIATION_ENTRY(kIPHAutofillAiOptInFeature),
          VARIATION_ENTRY(kIPHAutofillCreditCardBenefitFeature),
          VARIATION_ENTRY(kIPHAutofillCardInfoRetrievalSuggestionFeature),
-@@ -892,7 +894,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
+@@ -899,7 +901,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
          VARIATION_ENTRY(kIPHScalableIphGamingFeature),
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -55,4 +55,4 @@
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
          VARIATION_ENTRY(kIPHDesktopPWAsLinkCapturingLaunch),
          VARIATION_ENTRY(kIPHDesktopPWAsLinkCapturingLaunchAppInTab),
-         VARIATION_ENTRY(kIPHSupervisedUserProfileSigninFeature),
+         VARIATION_ENTRY(kIPHSignInBenefitsFeature),

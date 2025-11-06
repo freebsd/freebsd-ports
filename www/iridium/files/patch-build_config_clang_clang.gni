@@ -1,6 +1,6 @@
---- build/config/clang/clang.gni.orig	2025-10-28 14:29:43 UTC
+--- build/config/clang/clang.gni.orig	2025-11-06 10:11:34 UTC
 +++ build/config/clang/clang.gni
-@@ -58,7 +58,7 @@ declare_args() {
+@@ -88,7 +88,7 @@ declare_args() {
    #
    # TODO(https://crbug.com/440260716): Enable for Cronet in AOSP once gn2bp
    # supports copy targets.
@@ -8,4 +8,4 @@
 +  use_clang_modules = !is_bsd &&
        # Clang modules doesn't work with translation_unit used in codesearch
        # pipeline http://b/436082487.
-       !enable_kythe_annotations && is_clang && is_linux &&
+       !enable_kythe_annotations && is_clang &&

@@ -1,6 +1,6 @@
---- chrome/browser/ui/test/test_browser_ui.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/ui/test/test_browser_ui.cc.orig	2025-11-06 10:11:34 UTC
 +++ chrome/browser/ui/test/test_browser_ui.cc
-@@ -19,7 +19,7 @@
+@@ -21,7 +21,7 @@
  #include "ui/views/widget/widget.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "content/public/common/content_switches.h"
  #include "ui/base/test/skia_gold_matching_algorithm.h"
  #include "ui/compositor/compositor.h"
-@@ -33,7 +33,7 @@
+@@ -35,7 +35,7 @@
  #endif
  
  // TODO(crbug.com/40625383) support Mac for pixel tests.

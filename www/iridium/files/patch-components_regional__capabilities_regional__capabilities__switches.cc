@@ -1,6 +1,6 @@
---- components/regional_capabilities/regional_capabilities_switches.cc.orig	2025-10-28 14:29:43 UTC
+--- components/regional_capabilities/regional_capabilities_switches.cc.orig	2025-11-06 10:11:34 UTC
 +++ components/regional_capabilities/regional_capabilities_switches.cc
-@@ -21,7 +21,7 @@ BASE_FEATURE(kResolveRegionalCapabilitiesFromDevice,
+@@ -23,7 +23,7 @@ BASE_FEATURE(kResolveRegionalCapabilitiesFromDevice,
               base::FEATURE_ENABLED_BY_DEFAULT);
  #endif
  

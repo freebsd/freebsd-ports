@@ -1,5 +1,5 @@
---- chrome/browser/ui/views/frame/browser_frame.cc.orig	2025-10-28 14:29:43 UTC
-+++ chrome/browser/ui/views/frame/browser_frame.cc
+--- chrome/browser/ui/views/frame/browser_widget.cc.orig	2025-11-06 10:11:34 UTC
++++ chrome/browser/ui/views/frame/browser_widget.cc
 @@ -53,7 +53,7 @@
  #include "ui/aura/window.h"
  #endif
@@ -27,7 +27,7 @@
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -204,7 +204,7 @@ void BrowserFrame::InitBrowserFrame() {
+@@ -214,7 +214,7 @@ void BrowserWidget::InitBrowserWidget() {
  
    Init(std::move(params));
  
@@ -36,7 +36,7 @@
    SelectNativeTheme();
  #else
    SetNativeTheme(ui::NativeTheme::GetInstanceForNativeUi());
-@@ -450,7 +450,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
+@@ -419,7 +419,7 @@ void BrowserWidget::OnNativeWidgetWorkspaceChanged() {
    chrome::SaveWindowWorkspace(browser_view_->browser(), GetWorkspace());
    chrome::SaveWindowVisibleOnAllWorkspaces(browser_view_->browser(),
                                             IsVisibleOnAllWorkspaces());
@@ -45,17 +45,17 @@
    // If the window was sent to a different workspace, prioritize it if
    // it was sent to the current workspace and deprioritize it
    // otherwise.  This is done by MoveBrowsersInWorkspaceToFront()
-@@ -649,7 +649,7 @@ void BrowserFrame::OnMenuClosed() {
+@@ -606,7 +606,7 @@ void BrowserWidget::OnMenuClosed() {
  }
  
- void BrowserFrame::SelectNativeTheme() {
+ void BrowserWidget::SelectNativeTheme() {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // Use the regular NativeTheme instance if running incognito mode, regardless
    // of system theme (gtk, qt etc).
    ui::NativeTheme* native_theme = ui::NativeTheme::GetInstanceForNativeUi();
-@@ -690,7 +690,7 @@ void BrowserFrame::OnTouchUiChanged() {
- bool BrowserFrame::RegenerateFrameOnThemeChange(
+@@ -647,7 +647,7 @@ void BrowserWidget::OnTouchUiChanged() {
+ bool BrowserWidget::RegenerateFrameOnThemeChange(
      BrowserThemeChangeType theme_change_type) {
    bool need_regenerate = false;
 -#if BUILDFLAG(IS_LINUX)
