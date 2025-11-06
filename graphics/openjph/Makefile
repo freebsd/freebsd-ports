@@ -6,6 +6,8 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open-source implementation of JPEG2000 Part-15
 WWW=		https://github.com/aous72/OpenJPH
 
+FORBIDDEN=	https://vuxml.freebsd.org/freebsd/77bac392-ba98-11f0-aada-f59a8ea34d12.html
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
