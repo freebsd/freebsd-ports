@@ -297,6 +297,7 @@
     SUBDIR += molequeue
     SUBDIR += mtx
     SUBDIR += najitool
+    SUBDIR += nanocoder
     SUBDIR += navi
     SUBDIR += ncnn
     SUBDIR += netron

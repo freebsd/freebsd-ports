@@ -1,0 +1,5 @@
+nanocoder is a local-first CLI coding agent developed by Nano-Collective.
+
+It's an open-source tool written in TypeScript that allows
+for agentic coding using local AI models or controlled APIs, and it supports
+various AI providers, file operations, and command execution.
