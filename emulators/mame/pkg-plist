@@ -1181,6 +1181,7 @@ share/man/man1/MAME.1.gz
 %%MAMEDATA%%%%DATADIR%%/hash/mo6_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/mobigo_cart.xml
 %%MAMEDATA%%%%DATADIR%%/hash/monon_color.xml
+%%MAMEDATA%%%%DATADIR%%/hash/mpc3000_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/mpf1_rom.xml
 %%MAMEDATA%%%%DATADIR%%/hash/mpu1000.xml
 %%MAMEDATA%%%%DATADIR%%/hash/mpz80.xml
@@ -1218,6 +1219,7 @@ share/man/man1/MAME.1.gz
 %%MAMEDATA%%%%DATADIR%%/hash/mz80b_cass.xml
 %%MAMEDATA%%%%DATADIR%%/hash/mz80b_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/mz800_cass.xml
+%%MAMEDATA%%%%DATADIR%%/hash/mz800_rom.xml
 %%MAMEDATA%%%%DATADIR%%/hash/n64.xml
 %%MAMEDATA%%%%DATADIR%%/hash/n64_lodgenet.xml
 %%MAMEDATA%%%%DATADIR%%/hash/n64dd.xml
@@ -1245,6 +1247,7 @@ share/man/man1/MAME.1.gz
 %%MAMEDATA%%%%DATADIR%%/hash/ondra.xml
 %%MAMEDATA%%%%DATADIR%%/hash/orao.xml
 %%MAMEDATA%%%%DATADIR%%/hash/oric1_cass.xml
+%%MAMEDATA%%%%DATADIR%%/hash/orina_stylish_plus_cart.xml
 %%MAMEDATA%%%%DATADIR%%/hash/orion_cart.xml
 %%MAMEDATA%%%%DATADIR%%/hash/orion_cass.xml
 %%MAMEDATA%%%%DATADIR%%/hash/orion_flop.xml
@@ -1416,6 +1419,7 @@ share/man/man1/MAME.1.gz
 %%MAMEDATA%%%%DATADIR%%/hash/stepone_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/studio2.xml
 %%MAMEDATA%%%%DATADIR%%/hash/stv.xml
+%%MAMEDATA%%%%DATADIR%%/hash/sun_sparc.xml
 %%MAMEDATA%%%%DATADIR%%/hash/super6.xml
 %%MAMEDATA%%%%DATADIR%%/hash/super80_cass.xml
 %%MAMEDATA%%%%DATADIR%%/hash/super80_flop.xml

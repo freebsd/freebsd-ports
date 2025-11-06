@@ -1,5 +1,5 @@
 PORTNAME=	mame
-DISTVERSION=	0.281
+DISTVERSION=	0.282
 CATEGORIES=	emulators games
 
 MAINTAINER=	laurent.chardon@gmail.com
@@ -72,6 +72,9 @@ MAKE_ENV=	FORCE_DRC_C_BACKEND=1 \
 CFLAGS_aarch64=	-march=armv8-a+crc+crypto
 
 EXTRACT_AFTER_ARGS=	${_DIST_EXCLUDES:S,^,--exclude ,}
+
+PORTSCOUT=	site:https://github.com/mamedev/mame/releases \
+		limit:0\.[0-9]+
 
 SUB_FILES=	mame.ini pkg-message plugin.ini ui.ini
 
@@ -244,16 +247,15 @@ post-build:
 do-install:
 . if ${PORT_OPTIONS:MMAME} || ${PORT_OPTIONS:MMAMENL} || \
 	${PORT_OPTIONS:MMAMEVIRTUAL}
-.  for DATA in artwork bgfx ctrlr ini hash plugins samples
 	(cd ${WRKSRC} && \
-		${COPYTREE_SHARE} ${DATA} ${STAGEDIR}${DATADIR})
-.  endfor
-	${MKDIR} ${STAGEDIR}${ETCDIR}
+		${COPYTREE_SHARE} "artwork bgfx ctrlr ini hash plugins samples" \
+			${STAGEDIR}${DATADIR})
+	${MKDIR} ${STAGEDIR}${ETCDIR} \
+		 ${STAGEDIR}${DATADIR}/keymaps
 .  for INI in mame plugin ui
 	${INSTALL_DATA} ${WRKDIR}/${INI}.ini \
 		${STAGEDIR}${ETCDIR}/${INI}.ini.sample
 .  endfor
-	${MKDIR} ${STAGEDIR}${DATADIR}/keymaps
 .  for KEYMAP in be br ch de es fr gb it pt se
 	${INSTALL_DATA} ${WRKSRC}/keymaps/km_${KEYMAP}_LINUX.map \
 		${STAGEDIR}${DATADIR}/keymaps/km_${KEYMAP}.map
@@ -289,5 +291,8 @@ do-install-TOOLS-on:
 		${STAGEDIR}${PREFIX}/bin/ \;
 	${FIND} ${WRKSRC}/docs/man ${_TOOLS_MANUALS} -exec ${INSTALL_MAN} \
 		{} ${STAGEDIR}${PREFIX}/share/man/man1/ \;
+
+do-test:
+	${WRKSRC}/${PORTNAME} -validate
 
 .include <bsd.port.mk>
