@@ -1,10 +1,11 @@
 PORTNAME=	abc
-DISTVERSION=	g20251002
+DISTVERSION=	g202511104
 CATEGORIES=	cad
 
 MAINTAINER=	alven@FreeBSD.org
 COMMENT=	System for sequential synthesis and verification
-WWW=		https://people.eecs.berkeley.edu/~alanmi/abc/
+WWW=		https://people.eecs.berkeley.edu/~alanmi/abc/ \
+		https://github.com/berkeley-abc/abc/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/copyright.txt
@@ -14,7 +15,7 @@ BUILD_DEPENDS=	gmake:devel/gmake
 USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	berkeley-abc
-GH_TAGNAME=	c8eac759
+GH_TAGNAME=	474e7fbe
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	ABC_SKIP_TESTS
