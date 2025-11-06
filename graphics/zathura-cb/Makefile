@@ -1,5 +1,5 @@
 PORTNAME=	zathura-cb
-DISTVERSION=	0.1.11
+DISTVERSION=	0.1.12
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-cb/download/
 
@@ -10,7 +10,7 @@ WWW=		https://pwmt.org/projects/zathura-cb/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
+BUILD_DEPENDS=	appstreamcli:devel/appstream \
 		zathura:graphics/zathura
 LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara
 RUN_DEPENDS=	zathura:graphics/zathura
