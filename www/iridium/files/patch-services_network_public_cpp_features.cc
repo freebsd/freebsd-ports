@@ -1,17 +1,17 @@
---- services/network/public/cpp/features.cc.orig	2025-10-28 14:29:43 UTC
+--- services/network/public/cpp/features.cc.orig	2025-11-06 10:11:34 UTC
 +++ services/network/public/cpp/features.cc
-@@ -109,7 +109,7 @@ BASE_FEATURE(kSplitAuthCacheByNetworkIsolationKey,
+@@ -93,7 +93,7 @@ BASE_FEATURE(kSplitAuthCacheByNetworkIsolationKey,
+ // Enable usage of hardcoded DoH upgrade mapping for use in automatic mode.
  BASE_FEATURE(kDnsOverHttpsUpgrade,
-              "DnsOverHttpsUpgrade",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
 +    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -393,7 +393,7 @@ BASE_FEATURE(kAvoidResourceRequestCopies,
+@@ -345,7 +345,7 @@ BASE_FEATURE(kAvoidResourceRequestCopies, base::FEATUR
+ // https://github.com/WICG/document-isolation-policy
  BASE_FEATURE(kDocumentIsolationPolicy,
-              "DocumentIsolationPolicy",
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || \
 -    BUILDFLAG(IS_LINUX)
 +    BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

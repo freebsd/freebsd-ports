@@ -1,4 +1,4 @@
---- chrome/browser/background/glic/glic_status_icon.cc.orig	2025-10-28 14:29:43 UTC
+--- chrome/browser/background/glic/glic_status_icon.cc.orig	2025-11-06 10:11:34 UTC
 +++ chrome/browser/background/glic/glic_status_icon.cc
 @@ -89,7 +89,7 @@ GlicStatusIcon::GlicStatusIcon(GlicController* control
      return;
@@ -18,7 +18,7 @@
      status_icon_->RemoveObserver(this);
  #endif
      std::unique_ptr<StatusIcon> removed_icon =
-@@ -257,7 +257,7 @@ void GlicStatusIcon::UpdateHotkey(const ui::Accelerato
+@@ -258,7 +258,7 @@ void GlicStatusIcon::UpdateHotkey(const ui::Accelerato
  }
  
  void GlicStatusIcon::UpdateVisibilityOfExitInContextMenu() {
@@ -27,7 +27,7 @@
    if (context_menu_) {
      const bool is_visible = BrowserList::GetInstance()->empty();
      const std::optional<size_t> index =
-@@ -321,7 +321,7 @@ std::unique_ptr<StatusIconMenuModel> GlicStatusIcon::C
+@@ -322,7 +322,7 @@ std::unique_ptr<StatusIconMenuModel> GlicStatusIcon::C
    menu->AddItem(IDC_GLIC_STATUS_ICON_MENU_SETTINGS,
                  l10n_util::GetStringUTF16(IDS_GLIC_STATUS_ICON_MENU_SETTINGS));
  

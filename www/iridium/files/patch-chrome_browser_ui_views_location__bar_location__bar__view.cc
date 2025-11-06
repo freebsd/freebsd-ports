@@ -1,9 +1,9 @@
---- chrome/browser/ui/views/omnibox/omnibox_view_views.cc.orig	2025-10-28 14:29:43 UTC
-+++ chrome/browser/ui/views/omnibox/omnibox_view_views.cc
-@@ -2335,7 +2335,7 @@ void OmniboxViewViews::MaybeAddSendTabToSelfItem(
+--- chrome/browser/ui/views/location_bar/location_bar_view.cc.orig	2025-11-06 10:11:34 UTC
++++ chrome/browser/ui/views/location_bar/location_bar_view.cc
+@@ -527,7 +527,7 @@ bool LocationBarView::IsInitialized() const {
  }
  
- void OmniboxViewViews::OnPopupOpened() {
+ void LocationBarView::OnPopupOpened() {
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // It's not great for promos to overlap the omnibox if the user opens the

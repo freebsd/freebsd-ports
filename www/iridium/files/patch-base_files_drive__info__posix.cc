@@ -1,6 +1,6 @@
---- base/files/drive_info_posix.cc.orig	2025-05-07 06:48:23 UTC
+--- base/files/drive_info_posix.cc.orig	2025-11-06 10:11:34 UTC
 +++ base/files/drive_info_posix.cc
-@@ -24,7 +24,7 @@ namespace base {
+@@ -27,7 +27,7 @@ namespace base {
  
  std::optional<DriveInfo> GetFileDriveInfo(const FilePath& file_path) {
    DriveInfo drive_info;

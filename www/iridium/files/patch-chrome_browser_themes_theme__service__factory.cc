@@ -1,6 +1,6 @@
---- chrome/browser/themes/theme_service_factory.cc.orig	2025-10-28 14:29:43 UTC
+--- chrome/browser/themes/theme_service_factory.cc.orig	2025-11-06 10:11:34 UTC
 +++ chrome/browser/themes/theme_service_factory.cc
-@@ -26,7 +26,7 @@
+@@ -27,7 +27,7 @@
  #include "chrome/browser/themes/theme_helper_win.h"
  #endif
  

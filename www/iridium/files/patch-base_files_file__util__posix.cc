@@ -1,6 +1,6 @@
---- base/files/file_util_posix.cc.orig	2025-09-11 13:19:19 UTC
+--- base/files/file_util_posix.cc.orig	2025-11-06 10:11:34 UTC
 +++ base/files/file_util_posix.cc
-@@ -941,6 +941,7 @@ bool CreateNewTempDirectory(const FilePath::StringType
+@@ -943,6 +943,7 @@ bool CreateNewTempDirectory(const FilePath::StringType
  bool CreateDirectoryAndGetError(const FilePath& full_path, File::Error* error) {
    ScopedBlockingCall scoped_blocking_call(
        FROM_HERE, BlockingType::MAY_BLOCK);  // For call to mkdir().
@@ -8,7 +8,7 @@
  
    // Avoid checking subdirs if directory already exists.
    if (DirectoryExists(full_path)) {
-@@ -950,8 +951,8 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
+@@ -952,8 +953,8 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
    // Collect a list of all missing directories.
    std::vector<FilePath> missing_subpaths({full_path});
    FilePath last_path = full_path;
@@ -19,7 +19,7 @@
      if (DirectoryExists(path)) {
        break;
      }
-@@ -969,21 +970,14 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
+@@ -971,21 +972,14 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
      }
  #endif  // BUILDFLAG(IS_CHROMEOS)
  

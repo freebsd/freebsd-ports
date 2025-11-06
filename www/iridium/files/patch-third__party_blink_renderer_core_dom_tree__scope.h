@@ -1,8 +1,8 @@
---- third_party/blink/renderer/core/dom/tree_scope.h.orig	2025-10-28 14:29:43 UTC
+--- third_party/blink/renderer/core/dom/tree_scope.h.orig	2025-11-06 10:11:34 UTC
 +++ third_party/blink/renderer/core/dom/tree_scope.h
-@@ -29,6 +29,7 @@
+@@ -28,6 +28,7 @@
+ #define THIRD_PARTY_BLINK_RENDERER_CORE_DOM_TREE_SCOPE_H_
  
- #include "third_party/blink/renderer/bindings/core/v8/v8_observable_array_css_style_sheet.h"
  #include "third_party/blink/renderer/core/core_export.h"
 +#include "third_party/blink/renderer/core/css/css_style_sheet.h"
  #include "third_party/blink/renderer/core/dom/tree_ordered_map.h"

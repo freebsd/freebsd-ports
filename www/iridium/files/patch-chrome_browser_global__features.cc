@@ -1,6 +1,6 @@
---- chrome/browser/global_features.cc.orig	2025-10-28 14:29:43 UTC
+--- chrome/browser/global_features.cc.orig	2025-11-06 10:11:34 UTC
 +++ chrome/browser/global_features.cc
-@@ -24,7 +24,7 @@
+@@ -25,7 +25,7 @@
  #include "chrome/browser/glic/public/glic_enabling.h"               // nogncheck
  #endif
  
@@ -9,7 +9,7 @@
  // This causes a gn error on Android builds, because gn does not understand
  // buildflags, so we include it only on platforms where it is used.
  #include "chrome/browser/ui/webui/whats_new/whats_new_registrar.h"
-@@ -70,7 +70,7 @@ void GlobalFeatures::ReplaceGlobalFeaturesForTesting(
+@@ -71,7 +71,7 @@ void GlobalFeatures::ReplaceGlobalFeaturesForTesting(
  
  void GlobalFeatures::Init() {
    system_permissions_platform_handle_ = CreateSystemPermissionsPlatformHandle();
@@ -18,7 +18,7 @@
    whats_new_registry_ = CreateWhatsNewRegistry();
  #endif
  
-@@ -119,7 +119,7 @@ GlobalFeatures::CreateSystemPermissionsPlatformHandle(
+@@ -123,7 +123,7 @@ GlobalFeatures::CreateSystemPermissionsPlatformHandle(
    return system_permission_settings::PlatformHandle::Create();
  }
  
