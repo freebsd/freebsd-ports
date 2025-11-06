@@ -720,7 +720,6 @@
     SUBDIR += openglad
     SUBDIR += openjazz
     SUBDIR += openjk
-    SUBDIR += openlierox
     SUBDIR += openmortal
     SUBDIR += openmsx
     SUBDIR += openmw

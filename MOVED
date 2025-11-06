@@ -4857,3 +4857,4 @@ databases/erlfdb||2025-11-01|Depends on removed port databases/foundationdb71-cl
 www/mitmproxy||2025-11-02|Remove broken port
 net-im/signald|net-im/signal-cli|2025-11-02|Has expired: this project is no longer actively maintained. Use signal-cli instead
 net-im/libsignal-client|net-im/libsignal|2025-11-05|Renamed to match upstream name
+games/openlierox||2025-11-06|Remove broken port
