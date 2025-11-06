@@ -183,6 +183,9 @@ libexec/appjail/network/network
 %%EXAMPLESDIR%%/templates/linux.conf
 %%EXAMPLESDIR%%/templates/vnet.conf
 %%EXAMPLESDIR%%/templates/xorg.conf
+%%EXAMPLESDIR%%/hooks/pre.d/history.sh
+%%EXAMPLESDIR%%/hooks/pre.d/security-group.sh
+%%EXAMPLESDIR%%/hooks/pre.d/security-table.sh
 share/man/man1/appjail-apply.1.gz
 share/man/man1/appjail-checkOld.1.gz
 share/man/man1/appjail-cmd.1.gz
