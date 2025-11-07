@@ -82,13 +82,13 @@ lib/libs6.a
 lib/libs6.so
 lib/libs6.so.2.13
 @mode
-lib/libs6.so.2.13.1.0
+lib/libs6.so.2.13.2.0
 lib/libs6auto.a
 @mode 755
 lib/libs6auto.so
 lib/libs6auto.so.2.13
 @mode
-lib/libs6auto.so.2.13.1.0
+lib/libs6auto.so.2.13.2.0
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/fifodir.html
