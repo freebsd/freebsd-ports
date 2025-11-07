@@ -1,4 +1,4 @@
---- codex-rs/core/Cargo.toml.orig	2025-10-31 00:56:28 UTC
+--- codex-rs/core/Cargo.toml.orig	2025-11-04 20:00:53 UTC
 +++ codex-rs/core/Cargo.toml
 @@ -32,6 +32,7 @@ codex-utils-tokenizer = { workspace = true }
  codex-utils-readiness = { workspace = true }
@@ -20,7 +20,7 @@
  libc = { workspace = true }
  mcp-types = { workspace = true }
 @@ -83,7 +85,6 @@ wildmatch = { workspace = true }
- uuid = { workspace = true, features = ["serde", "v4"] }
+ uuid = { workspace = true, features = ["serde", "v4", "v5"] }
  which = { workspace = true }
  wildmatch = { workspace = true }
 -codex_windows_sandbox = { package = "codex-windows-sandbox", path = "../windows-sandbox-rs" }
