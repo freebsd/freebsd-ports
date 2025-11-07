@@ -88,7 +88,7 @@ lib/libskarnet.a
 lib/libskarnet.so
 lib/libskarnet.so.2.14
 @mode
-lib/libskarnet.so.2.14.3.0
+lib/libskarnet.so.2.14.4.0
 lib/skalibs/sysdeps/pthread.lib
 lib/skalibs/sysdeps/socket.lib
 lib/skalibs/sysdeps/spawn.lib
