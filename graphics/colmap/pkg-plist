@@ -105,6 +105,7 @@ include/colmap/scene/camera.h
 include/colmap/scene/correspondence_graph.h
 include/colmap/scene/database.h
 include/colmap/scene/database_cache.h
+include/colmap/scene/database_sqlite.h
 include/colmap/scene/frame.h
 include/colmap/scene/image.h
 include/colmap/scene/point2d.h
@@ -116,6 +117,8 @@ include/colmap/scene/reconstruction_io_binary.h
 include/colmap/scene/reconstruction_io_text.h
 include/colmap/scene/reconstruction_io_utils.h
 include/colmap/scene/reconstruction_manager.h
+include/colmap/scene/reconstruction_matchers.h
+include/colmap/scene/reconstruction_pruning.h
 include/colmap/scene/rig.h
 include/colmap/scene/scene_clustering.h
 include/colmap/scene/synthetic.h
