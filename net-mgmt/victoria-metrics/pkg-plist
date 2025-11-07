@@ -1,11 +1,13 @@
 bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/FAQ.md
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/Migration.md
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/Presets.md
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/QuickStart.md
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/README.md
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/Scaling vmanomaly.md
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/Self-monitoring.md
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/UI.md
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/_index.md
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/components/README.md
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/components/_index.md
@@ -43,7 +45,6 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/guides/guide-vmanomaly-vmalert/guide-vmanomaly-vmalert_docker-compose.webp
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/guides/guide-vmanomaly-vmalert/guide-vmanomaly-vmalert_files.webp
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/guides/guide-vmanomaly-vmalert/guide-vmanomaly-vmalert_overview.webp
-%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/presets-localhost.webp
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/presets_anomalies_by_node.webp
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/presets_anomalous_node_selection.webp
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/presets_cpu_seconds_softirq.webp
@@ -67,6 +68,18 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-holtwinters-example.webp
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-prophet-example.webp
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-sharding-ha-diagram.webp
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-model-config-menu-yaml-tab.webp
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-model-config-menu.webp
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-model-config-wizard.webp
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-open-config-btn.webp
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-open-config-menu.webp
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-overview.webp
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-sections-explore.webp
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-sections-model.webp
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-sections-plot-area-detect-mode.webp
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-sections-plot-area-query-mode.webp
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-sections-settings.webp
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-state-sharing-url.webp
 %%PORTDOCS%%%%DOCSDIR%%/guides/_index.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/collecting-openshift-logs-with-victoria-logs/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/collecting-openshift-logs-with-victoria-logs/_index.md
@@ -142,6 +155,11 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-monitoring-via-vm-single/grafana-k8s-dashboard.webp
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-monitoring-via-vm-single/grafana.webp
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-monitoring-via-vm-single/k8s-scheme.webp
+%%PORTDOCS%%%%DOCSDIR%%/guides/k8s-ui-headlamp/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/k8s-ui-headlamp/_index.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/k8s-ui-headlamp/cluster-metrics.webp
+%%PORTDOCS%%%%DOCSDIR%%/guides/k8s-ui-headlamp/vmcluster-plugin-settings.webp
+%%PORTDOCS%%%%DOCSDIR%%/guides/k8s-ui-headlamp/vmsingle-plugin-settings.webp
 %%PORTDOCS%%%%DOCSDIR%%/guides/migrate-from-influx/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/migrate-from-influx/_index.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/migrate-from-influx/data-sample-in-influx.webp
@@ -152,6 +170,15 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/guides/multi-regional-setup-dedicated-regions/setup.webp
 %%PORTDOCS%%%%DOCSDIR%%/guides/understand-your-setup-size/README.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/understand-your-setup-size/_index.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/vm-architectures/README.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/vm-architectures/_index.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/vm-architectures/arch-schemas.excalidraw
+%%PORTDOCS%%%%DOCSDIR%%/guides/vm-architectures/basic-architecture.webp
+%%PORTDOCS%%%%DOCSDIR%%/guides/vm-architectures/decision-tree.webp
+%%PORTDOCS%%%%DOCSDIR%%/guides/vm-architectures/hyperscale-architecture.webp
+%%PORTDOCS%%%%DOCSDIR%%/guides/vm-architectures/logical-layers-architecture.webp
+%%PORTDOCS%%%%DOCSDIR%%/guides/vm-architectures/multi-az-architecture.webp
+%%PORTDOCS%%%%DOCSDIR%%/guides/vm-architectures/single-az-architecture.webp
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/Articles.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/BestPractices.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/CONTRIBUTING.md
@@ -192,6 +219,7 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/data-ingestion/vmagent.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/enterprise.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/goals.md
+%%PORTDOCS%%%%DOCSDIR%%/victoriametrics/integrations/OpenShift.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/integrations/_index.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/integrations/datadog.md
 %%PORTDOCS%%%%DOCSDIR%%/victoriametrics/integrations/datadog_sending_metrics_to_VM.webp
