@@ -4,6 +4,7 @@ include/hyprgraphics/image/Image.hpp
 include/hyprgraphics/resource/AsyncResourceGatherer.hpp
 include/hyprgraphics/resource/resources/AsyncResource.hpp
 include/hyprgraphics/resource/resources/ImageResource.hpp
+include/hyprgraphics/resource/resources/StaticImageResource.hpp
 include/hyprgraphics/resource/resources/TextResource.hpp
 lib/libhyprgraphics.so
 lib/libhyprgraphics.so.%%SOVERSION_MAJOR%%
