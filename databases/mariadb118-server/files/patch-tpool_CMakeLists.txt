@@ -1,11 +1,11 @@
---- tpool/CMakeLists.txt.orig	2025-07-28 19:35:07 UTC
+--- tpool/CMakeLists.txt.orig	2025-11-04 17:38:14 UTC
 +++ tpool/CMakeLists.txt
-@@ -11,7 +11,7 @@ TARGET_INCLUDE_DIRECTORIES(tpool PUBLIC "${CMAKE_CURRE
+@@ -8,7 +8,7 @@ SET(COMMON_SOURCES
+   wait_notification.cc
+ )
  
- TARGET_INCLUDE_DIRECTORIES(tpool PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}"
-  PRIVATE ${PROJECT_SOURCE_DIR}/include)
 -
 +ADD_DEFINITIONS(-fPIC)
- IF(WIN32)
-   TARGET_SOURCES(tpool PRIVATE tpool_win.cc aio_win.cc)
- ELSEIF(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+ IF(NOT CMAKE_SYSTEM_NAME STREQUAL "Linux")
+   ADD_LIBRARY(tpool OBJECT ${COMMON_SOURCES}  aio_simulated.cc)
+   IF(WIN32)

@@ -22,20 +22,14 @@ FreeBSD 14.x and 15.x when LD_LIBRARY_PATH is not set (when using
 FreeBSD packages or installing from FreeBSD ports). Setting
 LD_LIBRARY_PATH manually like the script does, breaks mariadb-backup
 with the "Undefined symbol" error on FreeBSD 15.0 but not on 14.x.
----
- scripts/wsrep_sst_common.sh | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/scripts/wsrep_sst_common.sh b/scripts/wsrep_sst_common.sh
-index 38aa18d5f6967..edde8328effe9 100644
---- scripts/wsrep_sst_common.sh.orig
+--- scripts/wsrep_sst_common.sh.orig	2025-11-07 08:07:31 UTC
 +++ scripts/wsrep_sst_common.sh
-@@ -25,7 +25,7 @@ OS="$(uname)"
+@@ -25,7 +25,7 @@ export PATH="${PATH:+$PATH:}/usr/local/bin:/usr/local/
  
  # Setting the paths for some utilities on CentOS
- export PATH="${PATH:+$PATH:}/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+ export PATH="${PATH:+$PATH:}/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin"
 -if [ "$OS" != 'Darwin' ]; then
 +if [ "$OS" != 'Darwin' ] && [ "$OS" != 'FreeBSD' ]; then
-     export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}/usr/local/lib:/usr/lib:/lib:/opt/lib"
+     export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}/usr/local/lib:/lib:/usr/lib:/opt/lib"
  fi
  

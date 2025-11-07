@@ -1,5 +1,4 @@
 PORTNAME=	mariadb
-PORTREVISION=	1
 PKGNAMESUFFIX=	118-client
 
 COMMENT=	Multithreaded SQL database (client)
