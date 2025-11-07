@@ -30,7 +30,15 @@
    # List of Rust stdlib rlibs which are present in the official Rust toolchain
    # we are using from the Android team. This is usually a version or two behind
    # nightly. Generally this matches the toolchain we build ourselves, but if
-@@ -74,13 +51,20 @@ if (toolchain_has_rust) {
+@@ -66,7 +43,6 @@ if (toolchain_has_rust) {
+     "rustc_demangle",
+     "std_detect",
+     "test",
+-    "unicode_width",
+     "unwind",
+   ]
+ 
+@@ -74,13 +50,20 @@ if (toolchain_has_rust) {
      # These are no longer present in the Windows toolchain.
      stdlib_files += [
        "addr2line",
@@ -52,7 +60,7 @@
    }
  
    if (toolchain_for_rust_host_build_tools) {
-@@ -100,7 +84,6 @@ if (toolchain_has_rust) {
+@@ -100,7 +83,6 @@ if (toolchain_has_rust) {
    # don't need to pass to the C++ linker because they're used for specialized
    # purposes.
    skip_stdlib_files = [
@@ -60,7 +68,7 @@
      "rustc_std_workspace_alloc",
      "rustc_std_workspace_core",
      "rustc_std_workspace_std",
-@@ -254,8 +237,6 @@ if (toolchain_has_rust) {
+@@ -254,8 +236,6 @@ if (toolchain_has_rust) {
        foreach(libname, stdlib_files + skip_stdlib_files) {
          deps += [ "rules:$libname" ]
        }
@@ -69,7 +77,7 @@
      }
    } else {
      action("find_stdlib") {
-@@ -381,12 +362,6 @@ if (toolchain_has_rust) {
+@@ -381,12 +361,6 @@ if (toolchain_has_rust) {
          ":stdlib_public_dependent_libs",
        ]
        deps = [ ":prebuilt_rustc_copy_to_sysroot" ]
