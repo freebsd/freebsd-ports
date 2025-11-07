@@ -29,7 +29,6 @@ CMAKE_OFF=	GENERATE_SOURCES BUILD_BUNDLE
 
 WRKSRC=		${WRKDIR}/pharo-vm
 
-USE_HCC=	yes
 USE_SDL=	sdl image
 
 do-install:
