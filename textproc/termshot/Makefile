@@ -1,17 +1,16 @@
 PORTNAME=	termshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
-PORTREVISION=	1
+DISTVERSION=	0.6.0
 CATEGORIES=	textproc graphics
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates screenshots based on terminal command output
 WWW=		https://github.com/homeport/termshot
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:1.24,modules
 GO_MODULE=	github.com/homeport/termshot
 GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-tags noupdater \
