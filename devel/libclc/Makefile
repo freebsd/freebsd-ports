@@ -46,4 +46,3 @@ PLIST_SUB+=	${i:S/^/llvm/:tu}="@comment "
 PLIST_SUB+=	LLVM_VERSION=${FLAVOR}
 
 .include <bsd.port.post.mk>
-

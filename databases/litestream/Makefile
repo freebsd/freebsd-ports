@@ -77,4 +77,3 @@ post-extract:
 	@${RLN} ${WRKSRC_googleapis_google_cloud_go_storage}/storage ${WRKSRC}/vendor/cloud.google.com/go/storage
 
 .include <bsd.port.mk>
-

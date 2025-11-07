@@ -14,4 +14,3 @@ HAS_CONFIGURE=	yes
 USES=		tar:xz
 
 .include <bsd.port.mk>
-

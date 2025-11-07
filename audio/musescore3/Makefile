@@ -86,4 +86,3 @@ CXXFLAGS+=	-Wno-inconsistent-missing-override
 .endif
 
 .include <bsd.port.post.mk>
-

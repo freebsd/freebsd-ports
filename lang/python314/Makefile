@@ -181,4 +181,3 @@ post-clean:
 	${RM} ${_sigstorebundle}
 
 .include <bsd.port.mk>
-
