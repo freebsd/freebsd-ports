@@ -1,8 +1,9 @@
 PORTNAME=	alacritty
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.1
-PORTREVISION=	2
+DISTVERSION=	0.16.1
 CATEGORIES=	x11 wayland
+MASTER_SITES=	CRATESIO
+# XXX Teach USES=cargo to have proper default
+DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	GPU-accelerated terminal emulator
@@ -17,11 +18,8 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 TEST_DEPENDS=	dejavu>0:x11-fonts/dejavu
 
 USES=		cargo localbase:ldflags python:build
-USE_GITHUB=	yes
 
-CARGO_INSTALL_PATH=	alacritty
 CARGO_FEATURES+=	--no-default-features
-CARGO_CARGOTOML=	${WRKSRC}/${PORTNAME}/Cargo.toml
 
 # For xcb crate
 BINARY_ALIAS=	python3=${PYTHON_CMD}
