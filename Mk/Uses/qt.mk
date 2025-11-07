@@ -22,7 +22,7 @@ _QT_MK_INCLUDED=	qt.mk
 
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=		5 6
-QT5_VERSION?=		5.15.17
+QT5_VERSION?=		5.15.18
 QT6_VERSION?=		6.9.3
 PYSIDE6_VERSION?=	6.9.3
 
