@@ -1,7 +1,6 @@
 PORTNAME=	uTox
-DISTVERSION=	0.17.2
+DISTVERSION=	0.18.1
 DISTVERSIONSUFFIX=	-full
-PORTREVISION=	10
 CATEGORIES=	net-im net-p2p
 MASTER_SITES=	https://github.com/uTox/uTox/releases/download/v${DISTVERSION}/
 
