@@ -20,6 +20,7 @@ bin/execline-umask
 bin/execlineb
 bin/exit
 bin/export
+bin/export-array
 bin/fdblock
 bin/fdclose
 bin/fdmove
@@ -63,7 +64,7 @@ lib/libexecline.a
 lib/libexecline.so
 lib/libexecline.so.2.9
 @mode
-lib/libexecline.so.2.9.6.1
+lib/libexecline.so.2.9.7.0
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/background.html
@@ -91,6 +92,7 @@ lib/libexecline.so.2.9.6.1
 %%PORTDOCS%%%%DOCSDIR%%/execlineb.html
 %%PORTDOCS%%%%DOCSDIR%%/exit.html
 %%PORTDOCS%%%%DOCSDIR%%/exitcodes.html
+%%PORTDOCS%%%%DOCSDIR%%/export-array.html
 %%PORTDOCS%%%%DOCSDIR%%/export.html
 %%PORTDOCS%%%%DOCSDIR%%/fdblock.html
 %%PORTDOCS%%%%DOCSDIR%%/fdclose.html
