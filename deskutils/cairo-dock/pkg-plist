@@ -68,10 +68,11 @@ include/cairo-dock/gldit/gldi-icon-names.h
 include/cairo-dock/implementations/cairo-dock-gauge.h
 include/cairo-dock/implementations/cairo-dock-graph.h
 include/cairo-dock/implementations/cairo-dock-progressbar.h
+include/cairo-dock/implementations/cairo-dock-wayland-manager.h
 lib/cairo-dock/libcd-Help.so
 lib/libgldi.so
 lib/libgldi.so.3
-lib/libgldi.so.3.5.2
+lib/libgldi.so.3.6.1
 libdata/pkgconfig/gldi.pc
 share/applications/cairo-dock-cairo.desktop
 share/applications/cairo-dock.desktop
@@ -84,6 +85,7 @@ share/applications/cairo-dock.desktop
 %%DATADIR%%/gauges/Turbo-night-fuel/background.svg
 %%DATADIR%%/gauges/Turbo-night-fuel/foreground.svg
 %%DATADIR%%/gauges/Turbo-night-fuel/needle.svg
+%%DATADIR%%/gauges/Turbo-night-fuel/preview
 %%DATADIR%%/gauges/Turbo-night-fuel/readme
 %%DATADIR%%/gauges/Turbo-night-fuel/theme.xml
 %%DATADIR%%/icons/balloons.png
@@ -167,6 +169,7 @@ share/applications/cairo-dock.desktop
 %%DATADIR%%/themes/Default-Panel/launchers/01container.desktop
 %%DATADIR%%/themes/Default-Panel/launchers/01firefox.desktop
 %%DATADIR%%/themes/Default-Panel/launchers/01gnome-calculator.desktop
+%%DATADIR%%/themes/Default-Panel/launchers/01gnome-terminal.desktop
 %%DATADIR%%/themes/Default-Panel/launchers/01libreoffice-calc.desktop
 %%DATADIR%%/themes/Default-Panel/launchers/01libreoffice-impress.desktop
 %%DATADIR%%/themes/Default-Panel/launchers/01libreoffice-writer.desktop
@@ -182,7 +185,6 @@ share/applications/cairo-dock.desktop
 %%DATADIR%%/themes/Default-Panel/plug-ins/Calendar/Calendar.conf
 %%DATADIR%%/themes/Default-Panel/plug-ins/Clipper/Clipper.conf
 %%DATADIR%%/themes/Default-Panel/plug-ins/GMenu/GMenu.conf
-%%DATADIR%%/themes/Default-Panel/plug-ins/Help/Help.conf
 %%DATADIR%%/themes/Default-Panel/plug-ins/Indicator-Generic/Indicator-Generic.conf
 %%DATADIR%%/themes/Default-Panel/plug-ins/Messaging-Menu/Messaging-Menu.conf
 %%DATADIR%%/themes/Default-Panel/plug-ins/Recent-Events/Recent-Events.conf

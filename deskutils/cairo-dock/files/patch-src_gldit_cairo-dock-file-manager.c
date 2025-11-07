@@ -1,18 +1,20 @@
---- src/gldit/cairo-dock-file-manager.c.orig	2014-10-15 14:16:34 UTC
+--- src/gldit/cairo-dock-file-manager.c.orig	2025-11-02 19:18:06 UTC
 +++ src/gldit/cairo-dock-file-manager.c
-@@ -21,7 +21,11 @@
+@@ -22,7 +22,13 @@
  #include <string.h>      // memset
  #include <sys/stat.h>    // stat
  #include <fcntl.h>  // open
 +#if defined (__FreeBSD__) || defined (__DragonFly__)
++#include <sys/types.h>
 +#include <sys/socket.h>
++#include <sys/uio.h>
 +#else
  #include <sys/sendfile.h>  // sendfile
 +#endif
  #include <errno.h>  // errno
  
  #include "gldi-config.h"
-@@ -500,7 +504,7 @@ gboolean cairo_dock_copy_file (const gch
+@@ -492,7 +498,7 @@ gboolean cairo_dock_copy_file (const gchar *cFilePath,
  	{
  		// perform in-kernel transfer (zero copy to user space)
  		int size;
