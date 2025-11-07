@@ -1,7 +1,6 @@
 PORTNAME=	osm2pgrouting
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.8
-PORTREVISION=	11
+DISTVERSION=	3.0.0
 CATEGORIES=	converters databases geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org
