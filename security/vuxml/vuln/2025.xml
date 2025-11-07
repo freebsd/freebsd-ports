@@ -837,15 +837,15 @@
   </vuln>
 
   <vuln vid="c5889223-b4e1-11f0-ae9b-b42e991fc52e">
-    <topic>SQLite -- CWE-190 Integer Overflow or Wraparound</topic>
+    <topic>SQLite &lt; 3.50.3 -- CWE-190 Integer Overflow or Wraparound in FTS5 module</topic>
     <affects>
     <package>
 	<name>sqlite3</name>
-	<range><lt>3.50.3,1</lt></range>
+	<range><ge>3.49.1,1</ge><lt>3.50.3,1</lt></range>
     </package>
       <package>
-	<name>linux_base-rl9-9.6</name>
-	<range><le>9.6_1</le></range>
+	<name>linux_base-rl9</name>
+	<range><ge>0</ge></range> <!-- unknown and unrelated fixes might make this disappear, so set >= 0 instead of <= 9.6_1 to err on the safe side -->
       </package>
       <package>
 	<name>linux-c7-sqlite</name>
@@ -862,6 +862,7 @@
 	  A pointer to partially controlled data can then be written
 	  out of bounds.</p>
 	</blockquote>
+	<p>The FreeBSD build enables the FTS5 extension by default.</p>
 	</body>
     </description>
     <references>
@@ -869,8 +870,9 @@
       <url>https://cveawg.mitre.org/api/cve/CVE-2025-7709</url>
     </references>
     <dates>
-      <discovery>2025-09-08</discovery>
+      <discovery>2025-07-15</discovery>
       <entry>2025-10-29</entry>
+      <modified>2025-11-07</modified>
     </dates>
   </vuln>
 
