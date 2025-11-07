@@ -1,5 +1,5 @@
 PORTNAME=	sqlite3
-DISTVERSION=	3.50.2
+DISTVERSION=	3.50.4
 # SECURITY WARNING: when updating this port, also file vuxml entry
 # for ports/databases/linux-c7-sqlite3 (but mind it has a different EPOCH)
 # and coordinate with ports/emulators/linux_base which also ships sqlite3.
@@ -279,6 +279,7 @@ post-configure:
 
 post-install:
 .if !defined(TEA)
+	${INSTALL_DATA} ${WRKSRC}/sqlite_cfg.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_MAN} "${WRKSRC}/${PORTNAME}.1" "${STAGEDIR}${PREFIX}/share/man/man1"
 	${RM} "${STAGEDIR}${PREFIX}/include/msvc.h"
 	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${PREFIX}/bin/${PORTNAME}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so"

@@ -1,6 +1,7 @@
 %%NO_TEA%%bin/sqlite3
 %%NO_TEA%%bin/sqldiff
 %%TCL%%bin/sqlite3_analyzer
+%%NO_TEA%%include/sqlite_cfg.h
 %%NO_TEA%%include/sqlite3.h
 %%NO_TEA%%include/sqlite3ext.h
 %%NO_TEA%%%%STATIC%%lib/libsqlite3.a
