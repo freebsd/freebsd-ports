@@ -41,8 +41,13 @@ OPTIONS_DEFINE=	TEST
 TEST_DESC=	Run extensive tests
 
 # we need to do something else when python 3.14 is
-# the oldest version in the tree (~ October 2029).
-TEST_USES=	python:-3.13,build
+# the oldest or default version in the tree
+# (between October 2026 and October 2029)
+# unless zstd gives up on the lz4 depdencency.
+#   This is in order to solve a circular dependency:
+# python314 -> zstd -> lz4
+# test(lz4) -> python
+TEST_USES=	python:-3.13,test
 TEST_TEST_TARGET=test
 
 .include <bsd.port.mk>
