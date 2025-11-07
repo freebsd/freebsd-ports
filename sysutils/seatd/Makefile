@@ -1,5 +1,6 @@
 PORTNAME=	seatd
 DISTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
