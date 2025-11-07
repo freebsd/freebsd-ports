@@ -1,5 +1,5 @@
 PORTNAME=	s6-rc
-DISTVERSION=	0.5.5.0
+DISTVERSION=	0.5.6.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -10,12 +10,12 @@ WWW=		https://www.skarnet.org/software/s6-rc/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	execline>=2.9.6.1:lang/execline \
-		skalibs>=2.14.3.0:devel/skalibs \
-		s6>=2.13.1.0:sysutils/s6
-RUN_DEPENDS=	execline>=2.9.6.1:lang/execline \
-		skalibs>=2.14.3.0:devel/skalibs \
-		s6>=2.13.1.0:sysutils/s6
+BUILD_DEPENDS=	execline>=2.9.7.0:lang/execline \
+		skalibs>=2.14.4.0:devel/skalibs \
+		s6>=2.13.2.0:sysutils/s6
+RUN_DEPENDS=	execline>=2.9.7.0:lang/execline \
+		skalibs>=2.14.4.0:devel/skalibs \
+		s6>=2.13.2.0:sysutils/s6
 LIB_DEPENDS=	libs6.so:sysutils/s6 \
 		libskarnet.so:devel/skalibs
 

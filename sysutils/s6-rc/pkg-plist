@@ -17,7 +17,7 @@ lib/libs6rc.a
 lib/libs6rc.so
 lib/libs6rc.so.0.5
 @mode
-lib/libs6rc.so.0.5.5.0
+lib/libs6rc.so.0.5.6.0
 libexec/s6-rc-fdholder-filler
 libexec/s6-rc-oneshot-run
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
