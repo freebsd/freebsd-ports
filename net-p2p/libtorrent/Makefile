@@ -36,5 +36,6 @@ OPTIONS_DEFAULT=	KQUEUE
 
 KQUEUE_DESC=		Use kqueue(2) support
 KQUEUE_CONFIGURE_WITH=	kqueue
+KQUEUE_BROKEN_OFF=	rtorrent fails to build without kqueue(2) support, https://github.com/rakshasa/rtorrent/issues/1633
 
 .include <bsd.port.mk>
