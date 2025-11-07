@@ -1,5 +1,6 @@
 PORTNAME=	librenms
 PORTVERSION=	25.10.0
+PORTREVSISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -24,8 +25,8 @@ USES=		cpe php python shebangfix
 USE_GITHUB=	yes
 # php hash/json/openssl extension is required but it's statically linked in default php
 USE_PHP=	ctype curl dom fileinfo filter gd iconv ldap mbstring mysqli \
-		pdo pdo_mysql phar posix session simplexml snmp sockets \
-		tokenizer xml xmlwriter zip zlib
+		pdo pdo_mysql phar posix readline session simplexml snmp \
+		sockets tokenizer xml xmlwriter zip zlib
 USE_RC_SUBR=	librenms
 
 SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/paragonie/random_compat/build-phar.sh \
