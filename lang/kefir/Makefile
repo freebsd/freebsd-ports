@@ -21,10 +21,13 @@ TEST_DEPENDS=	bash:shells/bash
 
 USES=		gmake
 USE_LDCONFIG=	yes
-TEST_TARGET= 	test
+
 MAKE_ARGS=	prefix=${PREFIX}
 .if "${WITH_DEBUG}" == "yes"
 MAKE_ARGS+=	PROFILE=debug
 .endif
+
+TEST_ENV=	LC_ALL=C.UTF-8
+TEST_TARGET= 	test
 
 .include <bsd.port.mk>
