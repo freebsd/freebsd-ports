@@ -123,6 +123,6 @@ lib/cmake/KDDockWidgets-qt6/KDDockWidgets-qt6ConfigVersion.cmake
 lib/cmake/KDDockWidgets-qt6/KDDockWidgets-qt6Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KDDockWidgets-qt6/KDDockWidgets-qt6Targets.cmake
 lib/libkddockwidgets-qt6.so
-lib/libkddockwidgets-qt6.so.2.3.0
+lib/libkddockwidgets-qt6.so.%%SHLIB_VER%%
 lib/libkddockwidgets-qt6.so.3
 %%QT_MKSPECDIR%%/modules/qt_KDDockWidgets.pri
