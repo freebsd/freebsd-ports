@@ -1,10 +1,9 @@
 PORTNAME=	bozohttpd
-PORTVERSION=	20210227
-PORTREVISION=	1
+DISTVERSION=	20240126
 CATEGORIES=	www
 MASTER_SITES=	http://eterna23.net/bozohttpd/
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	cpetrik@proton.me
 COMMENT=	Bozotic HTTP server from NetBSD
 WWW=		http://eterna23.net/bozohttpd/
 

@@ -1,6 +1,6 @@
---- auth-bozo.c.orig	2021-02-14 09:39:00 UTC
+--- auth-bozo.c.orig	2024-02-04 05:55:04 UTC
 +++ auth-bozo.c
-@@ -106,9 +106,9 @@ bozo_auth_check(bozo_httpreq_t *request, const char *f
+@@ -111,9 +111,9 @@ bozo_auth_check(bozo_httpreq_t *request, const char *f
  				break;
  			fclose(fp);
  
