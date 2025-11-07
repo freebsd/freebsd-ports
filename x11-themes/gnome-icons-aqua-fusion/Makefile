@@ -6,7 +6,7 @@ PORTNAME=	aqua-fusion
 PORTVERSION=	20030216
 PORTREVISION=	4
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	GNOME/teams/art.gnome.org/archive/themes/icon
+MASTER_SITES=	https://download.gnome.org/teams/art.gnome.org/archive/themes/icon/
 DISTNAME=	ICON-AquaFusion
 
 MAINTAINER=	ports@FreeBSD.org

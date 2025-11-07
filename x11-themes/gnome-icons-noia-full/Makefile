@@ -6,7 +6,7 @@ PORTNAME=	noia-full
 PORTVERSION=	20041102
 PORTREVISION=	3
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	GNOME/teams/art.gnome.org/archive/themes/icon
+MASTER_SITES=	https://download.gnome.org/teams/art.gnome.org/archive/themes/icon/
 DISTNAME=	ICON-Noia
 
 MAINTAINER=	ports@FreeBSD.org

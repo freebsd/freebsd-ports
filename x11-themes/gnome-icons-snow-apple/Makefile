@@ -6,7 +6,7 @@ PORTNAME=	snow-apple
 PORTVERSION=	20030202
 PORTREVISION=	4
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	GNOME/teams/art.gnome.org/archive/themes/icon
+MASTER_SITES=	https://download.gnome.org/teams/art.gnome.org/archive/themes/icon/
 DISTNAME=	ICON-Snow-Apple
 
 MAINTAINER=	ports@FreeBSD.org
