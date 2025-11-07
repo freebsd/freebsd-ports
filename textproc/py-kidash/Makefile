@@ -4,7 +4,8 @@ CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bofh@FreeBSD.org
+# Ask clusteradm@ before removal
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GrimoireLab script to manage Kibana dashboards from the command line
 WWW=		https://github.com/chaoss/grimoirelab-kidash
 
