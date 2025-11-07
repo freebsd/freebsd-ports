@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-11-01 06:40:37 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2025-11-07 07:18:16 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
 @@ -340,7 +340,7 @@
          "default": "",
@@ -81,7 +81,7 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3723,7 +3723,7 @@
+@@ -3724,7 +3724,7 @@
        // Tracking bug for the implementation: https://crbug.com/1462930
        name: "PermissionElement",
        origin_trial_feature_name: "PermissionElement",
@@ -90,7 +90,7 @@
        status: "experimental",
        public: true,
        base_feature_status: "enabled",
-@@ -5315,7 +5315,7 @@
+@@ -5324,7 +5324,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -99,7 +99,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -5509,7 +5509,7 @@
+@@ -5518,7 +5518,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
@@ -108,7 +108,7 @@
        status: "experimental",
        base_feature: "none",
      },
-@@ -5617,7 +5617,7 @@
+@@ -5626,7 +5626,7 @@
      {
        name: "WebAuthenticationImmediateGet",
        origin_trial_feature_name: "WebAuthenticationImmediateGet",

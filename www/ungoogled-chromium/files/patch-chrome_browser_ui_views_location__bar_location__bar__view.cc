@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/location_bar/location_bar_view.cc.orig	2025-11-01 06:40:37 UTC
+--- chrome/browser/ui/views/location_bar/location_bar_view.cc.orig	2025-11-07 07:18:16 UTC
 +++ chrome/browser/ui/views/location_bar/location_bar_view.cc
-@@ -527,7 +527,7 @@ bool LocationBarView::IsInitialized() const {
+@@ -539,7 +539,7 @@ bool LocationBarView::IsInitialized() const {
  }
  
  void LocationBarView::OnPopupOpened() {
