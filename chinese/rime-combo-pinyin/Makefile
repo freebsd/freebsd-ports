@@ -1,9 +1,8 @@
 PORTNAME=	rime-combo-pinyin
-DISTVERSION=	g20211108
-PORTREVISION=	1
+DISTVERSION=	g20250926
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	eric@camachat.org
 COMMENT=	Rime Combo Pinyin schema support
 WWW=		https://github.com/rime/rime-combo-pinyin
 
@@ -24,7 +23,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	c9d8aca2fbc50ccab419d54cb9aaded362c1029d
+GH_TAGNAME=	1ea77823edf83c12e675f58d677a28af2ba66ca5
 
 NO_ARCH=	yes
 
@@ -33,8 +32,7 @@ PORTDOCS=	AUTHORS README.md
 PRELUDE_FILES=	default.yaml key_bindings.yaml punctuation.yaml symbols.yaml
 ESSAY_FILES=	essay.txt
 LUNA_PINYIN_FILES=	luna_pinyin.dict.yaml
-SCHEMA_FILES=	combo_pinyin.schema.yaml combo_pinyin_kbcon.schema.yaml \
-		combo_pinyin_left.schema.yaml
+SCHEMA_FILES=	combo_pinyin.schema.yaml combo_pinyin_split.schema.yaml
 MY_OUTDIR=	${WRKDIR}/out
 
 do-build:

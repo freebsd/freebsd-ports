@@ -1,9 +1,10 @@
+share/rime-data/build/combo_pinyin_split.schema.yaml
 share/rime-data/build/combo_pinyin.prism.bin
 share/rime-data/build/combo_pinyin.prism.txt
 share/rime-data/build/combo_pinyin.schema.yaml
-share/rime-data/build/combo_pinyin_kbcon.schema.yaml
-share/rime-data/build/combo_pinyin_left.schema.yaml
-share/rime-data/combo_pinyin.schema.yaml
-share/rime-data/combo_pinyin_kbcon.schema.yaml
 share/rime-data/combo_pinyin_layouts.yaml
-share/rime-data/combo_pinyin_left.schema.yaml
+share/rime-data/combo_pinyin_split.schema.yaml
+share/rime-data/combo_pinyin.schema.yaml
+share/rime-data/combo_pinyin_tonal_chords.schema.yaml
+share/rime-data/combo_pinyin_tonal_chords.yaml
+share/rime-data/combo_pinyin_with_tones.schema.yaml
