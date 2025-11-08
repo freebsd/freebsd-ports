@@ -6,3 +6,4 @@ share/rime-data/build/terra_pinyin.table.bin
 share/rime-data/build/terra_pinyin.table.txt
 share/rime-data/terra_pinyin.dict.yaml
 share/rime-data/terra_pinyin.schema.yaml
+share/rime-data/terra_pinyin_12345.schema.yaml
