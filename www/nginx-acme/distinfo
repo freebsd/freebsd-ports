@@ -1,10 +1,10 @@
-TIMESTAMP = 1755534627
+TIMESTAMP = 1762538753
 SHA256 (nginx-acme-0.1.1.tar.gz) = c2158d7f9baa53a9186c406e82c3068832f03b87a1d1066b0d214a8bf834ddfd
 SIZE (nginx-acme-0.1.1.tar.gz) = 77853
 SHA256 (nginx-1.28.0.tar.gz) = c6b5c6b086c0df9d3ca3ff5e084c1d0ef909e6038279c71c1c3e985f576ff76a
 SIZE (nginx-1.28.0.tar.gz) = 1280111
-SHA256 (nginx-1.29.2.tar.gz) = 5669e3c29d49bf7f6eb577275b86efe4504cf81af885c58a1ed7d2e7b8492437
-SIZE (nginx-1.29.1.tar.gz) = 1287399
+SHA256 (nginx-1.29.3.tar.gz) = 9befcced12ee09c2f4e1385d7e8e21c91f1a5a63b196f78f897c2d044b8c9312
+SIZE (nginx-1.29.3.tar.gz) = 1289818
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
