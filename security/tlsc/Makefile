@@ -4,15 +4,12 @@ CATEGORIES=		security
 MASTER_SITES=		https://github.com/Zirias/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/download/v${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	TLS connect daemon
 WWW=		https://github.com/Zirias/tlsc
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-DEPRECATED=	Unmaintained port
-EXPIRATION_DATE=2025-12-31
 
 LIB_DEPENDS=	libposercore.so:devel/poser
 
