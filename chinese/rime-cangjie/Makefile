@@ -1,9 +1,8 @@
 PORTNAME=	rime-cangjie
-DISTVERSION=	g20210223
-PORTREVISION=	1
+DISTVERSION=	g20240324
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	eric@camachat.org
 COMMENT=	Rime Cangjie v5 schema support
 WWW=		https://github.com/rime/rime-cangjie
 
@@ -22,7 +21,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	8dfad9e537f18821b71ba28773315d9c670ae245
+GH_TAGNAME=	0ac8452eeb4abbcd8dd1f9e7314012310743285f
 
 NO_ARCH=	yes
 
