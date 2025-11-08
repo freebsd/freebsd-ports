@@ -23,13 +23,4 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if defined(PYTHON_VER) && ${PYTHON_VER} < 3.10
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=7.1.0:devel/py-importlib-metadata@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}importlib-resources>=6.4.0:devel/py-importlib-resources@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=7.1.0:devel/py-importlib-metadata@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}importlib-resources>=6.4.0:devel/py-importlib-resources@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
