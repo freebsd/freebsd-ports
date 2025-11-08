@@ -1,7 +1,6 @@
 PORTNAME=	inferno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.2
-PORTREVISION=	5
+DISTVERSION=	0.12.3
 CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -47,7 +46,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		crc32fast-1.4.2 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
-		crossbeam-channel-0.5.14 \
+		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
