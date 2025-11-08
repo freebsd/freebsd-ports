@@ -1,7 +1,7 @@
 PORTNAME=	haproxy
-DISTVERSION=	3.0-dev13
+DISTVERSION=	3.3-dev10
 CATEGORIES=	net www
-MASTER_SITES=	http://www.haproxy.org/download/3.0/src/devel/
+MASTER_SITES=	http://www.haproxy.org/download/3.3/src/devel/
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 

@@ -1,6 +1,6 @@
---- src/cpuset.c.orig	2021-12-23 16:47:51 UTC
+--- src/cpuset.c.orig	2025-10-18 09:24:05 UTC
 +++ src/cpuset.c
-@@ -53,7 +53,11 @@ void ha_cpuset_and(struct hap_cpuset *dst, const struc
+@@ -51,7 +51,11 @@ void ha_cpuset_and(struct hap_cpuset *dst, struct hap_
  	CPU_AND(&dst->cpuset, &dst->cpuset, &src->cpuset);
  
  #elif defined(CPUSET_USE_FREEBSD_CPUSET)
