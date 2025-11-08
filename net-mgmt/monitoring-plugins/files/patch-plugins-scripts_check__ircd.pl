@@ -1,6 +1,6 @@
---- plugins-scripts/check_ircd.pl.orig	2016-11-29 08:45:08 UTC
-+++ plugins-scripts/check_ircd.pl
-@@ -65,6 +65,7 @@ sub bindRemote ($$);
+--- plugins-scripts/check_ircd.pl.orig	2025-11-08 16:25:06.105511000 +0100
++++ plugins-scripts/check_ircd.pl	2025-11-08 16:27:22.763542000 +0100
+@@ -65,6 +65,7 @@ $ENV{'ENV'}='';
  $ENV{'PATH'}='@TRUSTED_PATH@';
  $ENV{'BASH_ENV'}=''; 
  $ENV{'ENV'}='';
@@ -8,12 +8,3 @@
  
  # -----------------------------------------------------------------[ Global ]--
  
-@@ -152,7 +153,7 @@ sub bindRemote ($$)
- 	    print "IRCD UNKNOWN: Could not start socket ($!)\n";
- 	    exit $ERRORS{"UNKNOWN"};
- 	}
--	$sockaddr = 'S n a4 x8';
-+	$sockaddr = 'x C n a4 x8';
- 	$that = pack($sockaddr, AF_INET, $in_remoteport, $thataddr);
- 	if (!connect(ClientSocket, $that)) { 
- 	    print "IRCD UNKNOWN: Could not connect socket ($!)\n";

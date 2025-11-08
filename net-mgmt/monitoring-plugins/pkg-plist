@@ -1,5 +1,6 @@
 libexec/nagios/check_apt
 libexec/nagios/check_breeze
+libexec/nagios/check_mssql
 %%SSH%%libexec/nagios/check_by_ssh
 libexec/nagios/check_clamd
 libexec/nagios/check_cluster
@@ -68,5 +69,3 @@ libexec/nagios/negate
 libexec/nagios/urlize
 libexec/nagios/utils.pm
 libexec/nagios/utils.sh
-%%NLS%%share/locale/de/LC_MESSAGES/monitoring-plugins.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/monitoring-plugins.mo
