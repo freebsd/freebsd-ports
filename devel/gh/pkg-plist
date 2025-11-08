@@ -170,6 +170,7 @@
 %%MANPAGES%%share/man/man1/gh-repo-unarchive.1.gz
 %%MANPAGES%%share/man/man1/gh-repo-view.1.gz
 %%MANPAGES%%share/man/man1/gh-repo.1.gz
+%%MANPAGES%%share/man/man1/gh-pr-revert.1.gz
 %%MANPAGES%%share/man/man1/gh-ruleset-check.1.gz
 %%MANPAGES%%share/man/man1/gh-ruleset-list.1.gz
 %%MANPAGES%%share/man/man1/gh-ruleset-view.1.gz
