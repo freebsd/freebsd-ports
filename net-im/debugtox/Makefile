@@ -10,6 +10,8 @@ WWW=		https://tox.chat \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to compile with toxcore-0.2.20
+
 LIB_DEPENDS=	libsodium.so:security/libsodium \
 		libtoxcore.so:net-im/tox
 
