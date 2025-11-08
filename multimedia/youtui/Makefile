@@ -1,7 +1,6 @@
 PORTNAME=	youtui
 DISTVERSIONPREFIX=	youtui/v
-DISTVERSION=	0.0.25
-PORTREVISION=	3
+DISTVERSION=	0.0.26
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -325,7 +324,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		nix-0.26.4 \
 		nom-7.1.3 \
 		noop_proc_macro-0.3.0 \
-		nu-ansi-term-0.46.0 \
+		nu-ansi-term-0.50.1 \
 		num-bigint-0.4.6 \
 		num-conv-0.1.0 \
 		num-derive-0.4.2 \
@@ -366,7 +365,6 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		option-ext-0.2.0 \
 		orbclient-0.3.48 \
 		ordered-stream-0.2.0 \
-		overload-0.1.1 \
 		owned_ttf_parser-0.25.0 \
 		parking-2.2.1 \
 		parking_lot-0.11.2 \
@@ -567,7 +565,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		tracing-attributes-0.1.29 \
 		tracing-core-0.1.34 \
 		tracing-log-0.2.0 \
-		tracing-subscriber-0.3.19 \
+		tracing-subscriber-0.3.20 \
 		try-lock-0.2.5 \
 		ttf-parser-0.25.1 \
 		tui-logger-0.14.5 \
@@ -603,6 +601,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		wasm-bindgen-macro-0.2.100 \
 		wasm-bindgen-macro-support-0.2.100 \
 		wasm-bindgen-shared-0.2.100 \
+		wasm-streams-0.4.2 \
 		wasm-timer-0.2.5 \
 		wayland-backend-0.3.10 \
 		wayland-client-0.31.10 \
