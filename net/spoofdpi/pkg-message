@@ -20,4 +20,11 @@ See the commit link below or project page for new changes in arguments usage.
 	# https://github.com/xvzc/SpoofDPI/commit/a2993ac68d87a0525a93bc23984d21e341214199
 EOM
 }
+{ type: upgrade
+  maximum_version: "1.0.1"
+  message: << EOM
+A new feature (-fake-https-packets) has been added that adds up a dependency on SpoofDPI: libpcap. This feature requires the daemon to be run as root if it is enabled with an argument, it will fail with the default 'spoofdpi' user, to be able to use it, switch the daemon user to root.
+	# sysrc spoofdpi_user="root"
+EOM
+}
 ]
