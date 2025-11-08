@@ -85,7 +85,7 @@ include/xsimd/types/xsimd_traits.hpp
 include/xsimd/types/xsimd_utils.hpp
 include/xsimd/types/xsimd_wasm_register.hpp
 include/xsimd/xsimd.hpp
-lib/cmake/xsimd/xsimdConfig.cmake
-lib/cmake/xsimd/xsimdConfigVersion.cmake
-lib/cmake/xsimd/xsimdTargets.cmake
-libdata/pkgconfig/xsimd.pc
+share/cmake/xsimd/xsimdConfig.cmake
+share/cmake/xsimd/xsimdConfigVersion.cmake
+share/cmake/xsimd/xsimdTargets.cmake
+share/pkgconfig/xsimd.pc

@@ -1,5 +1,5 @@
 PORTNAME=	xsimd
-DISTVERSION=	13.0.0
+DISTVERSION=	13.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,5 +20,10 @@ GH_ACCOUNT=	xtensor-stack
 CMAKE_TESTING_ON=	BUILD_TESTS # tests fail, see https://github.com/xtensor-stack/xsimd/issues/917
 
 NO_ARCH=	yes
+
+# tests as of 13.2.0:
+# [doctest] test cases:   325 |   323 passed | 2 failed | 0 skipped
+# [doctest] assertions: 16741 | 16739 passed | 2 failed |
+# [doctest] Status: FAILURE!
 
 .include <bsd.port.mk>
