@@ -1,6 +1,6 @@
 PORTNAME=	clickhouse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	22.2.3.5
+DISTVERSION=	22.4.2.1
 DISTVERSIONSUFFIX=-stable
 CATEGORIES=	databases
 
@@ -62,9 +62,10 @@ GROUPS=		clickhouse
 PLIST_SUB=	SOVERSION=${SOVERSION}
 
 OPTIONS_DEFINE=		TEST
+OPTIONS_SUB=		yes
 
 TEST_RUN_DEPENDS=	expect>0:lang/expect
-TEST_CMAKE_BOOL=	ENABLE_TESTS
+TEST_CMAKE_BOOL=	ENABLE_CLICKHOUSE_TEST ENABLE_TESTS
 
 .include <bsd.port.options.mk>
 
@@ -83,12 +84,16 @@ SUB_LIST+=	LEGACY_LIMITS="" \
 
 SOVERSION=	${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|;s|/etc/clickhouse-server|${PREFIX}/etc/clickhouse-server|' ${WRKSRC}/programs/server/config.xml
 	@${REINPLACE_CMD} -e 's|%%OSREL%%|${OSREL:R}|' ${WRKSRC}/cmake/freebsd/toolchain-x86_64.cmake
 	cd ${WRKSRC}/contrib/openldap-cmake && ${LN} -s freebsd_x86_64 freebsd_aarch64
+
+do-install-TEST-on:
+	${FIND} -s ${STAGEDIR}${PREFIX}/tests -not -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	${FIND} -s ${STAGEDIR}${PREFIX}/tests -type d -empty | ${SORT} -r | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/config-processor
@@ -98,6 +103,7 @@ post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/lib/libcxx.a
 	@${RM} ${STAGEDIR}${PREFIX}/lib/libcxxabi.a
 	@${RM} ${STAGEDIR}${PREFIX}/lib/libunwind.a
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/debug
 	${MV} ${STAGEDIR}${PREFIX}/etc/clickhouse-client/config.xml \
 		${STAGEDIR}${PREFIX}/etc/clickhouse-client/config.xml.sample
 	${MV} ${STAGEDIR}${PREFIX}/etc/clickhouse-server/config.xml \
@@ -144,11 +150,11 @@ _make-touples:
 	${AWK} 'NR==FNR { urls[$$1]=$$2; next } \
 		{ path=$$1; sha=$$2; url=urls[path]; if (url == "") next; \
 		  n=split(url, parts, "/"); org=parts[n-1]; repo=parts[n]; sub(/\.git$$/, "", repo); \
-		  org_repl=org; repo_repl=repo; gsub("-", "_", org_repl); gsub("-", "_", repo_repl); \
+		  org_repl=org; repo_repl=repo; gsub(/[-.]/, "_", org_repl); gsub(/[-.]/, "_", repo_repl); \
 		  printf("GH_TUPLE+=\t%s:%s:%s:%s_%s/%s\n", \
 		         org, repo, substr(sha,1,7), org_repl, repo_repl, path); }' \
 		"$${_TMPDIR}/modules.txt" "$${_TMPDIR}/tree.txt" > "$${_OUTFILE}"; \
 	${ECHO_CMD} "===> Writing $${_OUTFILE} completed"
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
