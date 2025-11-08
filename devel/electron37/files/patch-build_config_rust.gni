@@ -1,6 +1,16 @@
---- build/config/rust.gni.orig	2025-06-30 07:04:30 UTC
+--- build/config/rust.gni.orig	2025-08-25 14:15:51 UTC
 +++ build/config/rust.gni
-@@ -373,7 +373,11 @@ if (is_linux || is_chromeos) {
+@@ -62,7 +62,8 @@ declare_args() {
+   # set this to the output of `rustc -V`. Changing this string will cause all
+   # Rust targets to be rebuilt, which allows you to update your toolchain and
+   # not break incremental builds.
+-  rustc_version = ""
++  rustc_version = exec_script("//build/gn_run_binary.py",
++    [ "${LOCALBASE}/bin/rustc", "-V" ], "trim string")
+ 
+   # If you're using a Rust toolchain as specified by rust_sysroot_absolute,
+   # you can specify whether it supports nacl here.
+@@ -373,7 +374,11 @@ if (is_linux || is_chromeos) {
    }
  }
  
