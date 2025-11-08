@@ -1,9 +1,8 @@
 PORTNAME=	rime-wubi
-DISTVERSION=	g20200908
-PORTREVISION=	1
+DISTVERSION=	g20231024
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	eric@camachat.org
 COMMENT=	Rime Wubi schema support
 WWW=		https://github.com/rime/rime-wubi
 
@@ -24,7 +23,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	f1876f08f1d4a9696395be0070c0e8e4353c44cb
+GH_TAGNAME=	152a0d3f3efe40cae216d1e3b338242446848d07
 
 NO_ARCH=	yes
 
