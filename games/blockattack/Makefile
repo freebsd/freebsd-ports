@@ -1,7 +1,6 @@
 PORTNAME=	blockattack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.1
-PORTREVISION=	1
+DISTVERSION=	2.10.0
 CATEGORIES=	games
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -15,8 +14,8 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		zip:archivers/zip
 LIB_DEPENDS=	libphysfs.so:devel/physfs
 
-USES=		cmake compiler:c++11-lib gettext-tools localbase:ldflags \
-		pkgconfig sdl shebangfix
+USES=		cmake compiler:c++11-lib gettext localbase:ldflags pkgconfig \
+		sdl shebangfix
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-game
 USE_SDL=	image2 mixer2 ttf2
