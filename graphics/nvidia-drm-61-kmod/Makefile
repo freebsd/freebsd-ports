@@ -1,5 +1,5 @@
 PORTNAME=	nvidia-drm-61-kmod
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	graphics
 
 RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-61-kmod

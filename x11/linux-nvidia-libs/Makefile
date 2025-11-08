@@ -280,7 +280,9 @@ PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-gpucomp\.so,d'
 
 # nvidia-egl-X11 supports (not in x11/nvidia-driver nor separate ports)
 # Estimated to be upgrated often.
-.if ${NVVERSION} >= 570.18100	# 570.181
+.if ${NVVERSION} >= 580.10508	# 580.105.08
+NV_EGL_X_VERSION=	1.0.4
+.elif ${NVVERSION} >= 570.18100	# 570.181
 NV_EGL_X_VERSION=	1.0.3
 .elif ${NVVERSION} >= 570.15302	# 570.153.02
 NV_EGL_X_VERSION=	1.0.2
