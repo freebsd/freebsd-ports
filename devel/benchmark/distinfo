@@ -1,5 +1,5 @@
-TIMESTAMP = 1742971044
-SHA256 (google-benchmark-v1.9.2_GH0.tar.gz) = 409075176168dc46bbb81b74c1b4b6900385b5d16bfc181d678afb060d928bd3
-SIZE (google-benchmark-v1.9.2_GH0.tar.gz) = 258938
+TIMESTAMP = 1762590756
+SHA256 (google-benchmark-v1.9.4_GH0.tar.gz) = b334658edd35efcf06a99d9be21e4e93e092bd5f95074c1673d5c8705d95c104
+SIZE (google-benchmark-v1.9.4_GH0.tar.gz) = 262499
 SHA256 (google-googletest-release-1.12.1_GH0.tar.gz) = 81964fe578e9bd7c94dfdb09c8e4d6e6759e19967e397dbea48d1c10e45d0df2
 SIZE (google-googletest-release-1.12.1_GH0.tar.gz) = 854944
