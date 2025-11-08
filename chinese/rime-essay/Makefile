@@ -1,8 +1,8 @@
 PORTNAME=	rime-essay
-DISTVERSION=	g20210805
+DISTVERSION=	g20251103
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	eric@camachat.org
 COMMENT=	Essay - the shared vocabulary and language model for Rime
 WWW=		https://github.com/rime/rime-essay
 
@@ -14,7 +14,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	8882482d07f38b5713ea3f49cb593eed94e671dd
+GH_TAGNAME=	e0160b8ef723a423e84ee52b53614ac3382f6d16
 
 NO_BUILD=	yes
 NO_ARCH=	yes
