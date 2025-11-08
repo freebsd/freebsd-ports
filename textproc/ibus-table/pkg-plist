@@ -60,6 +60,7 @@ share/icons/hicolor/scalable/apps/ibus-table.svg
 %%NLS%%share/locale/kab/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/ibus-table.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/si/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/ibus-table.mo
