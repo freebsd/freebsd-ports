@@ -1,19 +1,19 @@
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.39.4
-PORTREVISION=	6
+DISTVERSION=	4.39.13
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/authelia/authelia/releases/download/v${DISTVERSION}/:public_html
 DISTFILES=	authelia-${DISTVERSIONFULL}-public_html${EXTRACT_SUFX}:public_html # html root directory needs to be built in a special way
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Single sign-on multi-factor portal for web apps
-WWW=		https://www.authelia.com/
+WWW=		https://www.authelia.com/ \
+		https://github.com/authelia/authelia
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:1.24,modules
+USES=		cpe go:1.25,modules
 
 GO_MODULE=	github.com/authelia/authelia/v4
 GO_TARGET=	./cmd/${PORTNAME}
