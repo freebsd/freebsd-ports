@@ -1,6 +1,5 @@
 PORTNAME=	pipewire-spa-oss
-DISTVERSION=	g20250416
-PORTREVISION=	4
+DISTVERSION=	g20251105
 CATEGORIES=	audio
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -19,7 +18,7 @@ USES=		cargo llvm:lib,noexport
 USE_GITHUB=	yes
 GH_ACCOUNT=	shkhln
 GH_PROJECT=	pw-oss
-GH_TAGNAME=	2fd15da459d6ed099a276ec6428301e8ac43bfb4
+GH_TAGNAME=	af1656d04f4f45db3cd5cd882068bb7f617ba07c
 
 CARGO_CRATES=	aho-corasick-1.1.3 \
 		annotate-snippets-0.9.2 \
