@@ -38,6 +38,7 @@ include/snort/flow/flow_data.h
 include/snort/flow/flow_key.h
 include/snort/flow/flow_stash.h
 include/snort/flow/ha.h
+include/snort/flow/prune_stats.h
 include/snort/flow/session.h
 include/snort/flow/stream_flow.h
 include/snort/framework/api_options.h
@@ -198,6 +199,7 @@ include/snort/pub_sub/detection_events.h
 include/snort/pub_sub/domain_fronting.h
 include/snort/pub_sub/dhcp_events.h
 include/snort/pub_sub/dns_events.h
+include/snort/pub_sub/dns_payload_event.h
 include/snort/pub_sub/eof_event.h
 include/snort/pub_sub/eve_process_event.h
 include/snort/pub_sub/expect_events.h
