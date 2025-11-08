@@ -34,6 +34,7 @@ include/taskflow/cuda/algorithm/matmul.hpp
 include/taskflow/cuda/algorithm/merge.hpp
 include/taskflow/cuda/algorithm/reduce.hpp
 include/taskflow/cuda/algorithm/scan.hpp
+include/taskflow/cuda/algorithm/single_task.hpp
 include/taskflow/cuda/algorithm/sort.hpp
 include/taskflow/cuda/algorithm/transform.hpp
 include/taskflow/cuda/algorithm/transpose.hpp
@@ -42,12 +43,11 @@ include/taskflow/cuda/cuda_device.hpp
 include/taskflow/cuda/cuda_error.hpp
 include/taskflow/cuda/cuda_execution_policy.hpp
 include/taskflow/cuda/cuda_graph.hpp
+include/taskflow/cuda/cuda_graph_exec.hpp
 include/taskflow/cuda/cuda_memory.hpp
 include/taskflow/cuda/cuda_meta.hpp
-include/taskflow/cuda/cuda_object.hpp
 include/taskflow/cuda/cuda_optimizer.hpp
 include/taskflow/cuda/cuda_stream.hpp
-include/taskflow/cuda/cuda_task.hpp
 include/taskflow/cuda/cudaflow.hpp
 include/taskflow/dsl/connection.hpp
 include/taskflow/dsl/dsl.hpp
@@ -68,6 +68,7 @@ include/taskflow/sycl/syclflow.hpp
 include/taskflow/taskflow.hpp
 include/taskflow/utility/iterator.hpp
 include/taskflow/utility/latch.hpp
+include/taskflow/utility/lazy_string.hpp
 include/taskflow/utility/macros.hpp
 include/taskflow/utility/math.hpp
 include/taskflow/utility/mpmc.hpp
