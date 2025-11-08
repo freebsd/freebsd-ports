@@ -8071,6 +8071,8 @@ share/bash-completion/completions/clickhouse-local
 %%DATADIR%%-test/queries/0_stateless/02220_array_join_format.sql
 %%DATADIR%%-test/queries/0_stateless/02221_parallel_replicas_bug.reference
 %%DATADIR%%-test/queries/0_stateless/02221_parallel_replicas_bug.sh
+%%DATADIR%%-test/queries/0_stateless/02224_s2_test_const_columns.reference
+%%DATADIR%%-test/queries/0_stateless/02224_s2_test_const_columns.sql
 %%DATADIR%%-test/queries/0_stateless/country_polygons.tsv
 %%DATADIR%%-test/queries/0_stateless/country_rings.tsv
 %%DATADIR%%-test/queries/0_stateless/data_arrow/test.arrow

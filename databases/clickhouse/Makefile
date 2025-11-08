@@ -1,6 +1,6 @@
 PORTNAME=	clickhouse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	22.2.2.1
+DISTVERSION=	22.2.3.5
 DISTVERSIONSUFFIX=-stable
 CATEGORIES=	databases
 
@@ -16,9 +16,12 @@ ONLY_FOR_ARCHS_REASON=	only supported on aarch64 and amd64
 
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
+.if defined(MAINTAINER_MODE)
+RUN_DEPENDS+=	jq:textproc/jq
+.endif
 
 USES=		cmake cpe localbase perl5 python shebangfix
-CPE_VENDOR=	yandex
+CPE_VENDOR=	${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	ClickHouse
 GH_PROJECT=	ClickHouse
@@ -66,7 +69,7 @@ TEST_CMAKE_BOOL=	ENABLE_TESTS
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
-USES+=	llvm:max=15
+USES+=	llvm:15
 CFLAGS+=-Wno-error=int-conversion
 .endif
 
@@ -84,6 +87,7 @@ SOVERSION=	${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|;s|/etc/clickhouse-server|${PREFIX}/etc/clickhouse-server|' ${WRKSRC}/programs/server/config.xml
+	@${REINPLACE_CMD} -e 's|%%OSREL%%|${OSREL:R}|' ${WRKSRC}/cmake/freebsd/toolchain-x86_64.cmake
 	cd ${WRKSRC}/contrib/openldap-cmake && ${LN} -s freebsd_x86_64 freebsd_aarch64
 
 post-install:

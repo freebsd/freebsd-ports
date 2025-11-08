@@ -1,6 +1,6 @@
-TIMESTAMP = 1762542575
-SHA256 (ClickHouse-ClickHouse-v22.2.2.1-stable_GH0.tar.gz) = aed980266974a7b0dfaeb4b4355ae3a190b8f83ff5e95d35eebfdf0ba9016df2
-SIZE (ClickHouse-ClickHouse-v22.2.2.1-stable_GH0.tar.gz) = 100009261
+TIMESTAMP = 1762604926
+SHA256 (ClickHouse-ClickHouse-v22.2.3.5-stable_GH0.tar.gz) = ed95a1e15574bb3cab926ffb5746ca22167eb74d34fa6bf0ec0821738e916d9c
+SIZE (ClickHouse-ClickHouse-v22.2.3.5-stable_GH0.tar.gz) = 100006365
 SHA256 (ClickHouse-Extras-AMQP-CPP-1a6c51f_GH0.tar.gz) = 50d116a8e01042d7734a90c6f4d7cee3fc15aa584263eda71921abc6dea0ab3d
 SIZE (ClickHouse-Extras-AMQP-CPP-1a6c51f_GH0.tar.gz) = 158209
 SHA256 (ClickHouse-Extras-NuRaft-1707a75_GH0.tar.gz) = 321dafee31168a032b3f958b1c61a2dd5a5c861ddbce05b0d4555ae0e8c615d0
