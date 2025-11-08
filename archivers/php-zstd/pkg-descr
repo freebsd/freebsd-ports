@@ -1,2 +1,6 @@
-This is the PHP extension for zstandard,
-or zstd a fast lossless compression algorithm.
+This is the PHP extension for zstandard or zstd, a fast lossless
+compression algorithm with competitive compression ratios and
+multi-core scalability.
+
+This extension can also transparently compress objects stored in
+APCu cache. Just set apc.serializer=zstd in your php.ini.
