@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2025-04-04 15:03:07 UTC
+--- CMakeLists.txt.orig	2025-11-07 15:20:22 UTC
 +++ CMakeLists.txt
 @@ -155,6 +155,8 @@ elseif(NOT EMSCRIPTEN AND NOT ANDROID AND NOT IOS)
      find_package(Libgit2 REQUIRED)
@@ -33,18 +33,17 @@
          endif()
      endif()
  endif()
-@@ -540,7 +541,9 @@ else()
+@@ -540,7 +541,8 @@ else()
                              ${HarfBuzz_INCLUDE_DIRS}
                              ${ICU_INCLUDE_DIRS}
                              ${PUGIXML_INCLUDE_DIRS}
 -                            ${SDL2_INCLUDE_DIR})
 +                            ${SDL2_INCLUDE_DIR}
-+                            ${UTF8CPP_INCLUDE_DIR}
 +                            ${lunasvg_INCLUDE_DIRS})
  endif()
  
  # Add libCEC include directory.
-@@ -698,7 +701,9 @@ else()
+@@ -694,7 +696,9 @@ else()
                           ${HarfBuzz_LIBRARIES}
                           ${ICU_LIBRARIES}
                           ${PUGIXML_LIBRARIES}
@@ -55,7 +54,7 @@
      if(Intl_LIBRARY)
          # On Unix systems where the gettext functions are not part of the C standard library
          # we need to explicitly link with the libintl library.
-@@ -714,9 +719,6 @@ if(NOT WIN32)
+@@ -710,9 +714,6 @@ if(NOT WIN32)
      elseif(IOS)
          set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/${CMAKE_BUILD_TYPE}/liblunasvg.a)
          set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/${CMAKE_BUILD_TYPE}/librlottie.a)
@@ -65,7 +64,7 @@
      endif()
  endif()
  
-@@ -770,18 +772,9 @@ add_subdirectory(es-pdf-converter)
+@@ -766,18 +767,9 @@ add_subdirectory(es-pdf-converter)
  endif()
  
  add_subdirectory(es-pdf-converter)

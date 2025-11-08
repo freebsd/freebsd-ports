@@ -1,7 +1,6 @@
 PORTNAME=	es-de
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.0
-PORTREVISION=	2
+DISTVERSION=	3.4.0
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
@@ -34,28 +33,25 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		librlottie.so:graphics/rlottie
 RUN_DEPENDS=	${_BR_DEPENDS}
 
-USES=		cmake compiler:c++17-lang gl pkgconfig sdl
+USES=		cmake compiler:c++17-lang gettext gl pkgconfig sdl
 USE_GITLAB=	yes
 GL_PROJECT=	emulationstation-de
 USE_GL=		opengl
 USE_SDL=	sdl2
 
-CMAKE_ARGS=	-DUTF8CPP_INCLUDE_DIR=${LOCALBASE}/include/utf8cpp
 CMAKE_ON=	VIDEO_HW_DECODING
+
+CFLAGS+=	-I${LOCALBASE}/include/utf8cpp
 
 EXTRACT_AFTER_ARGS=	--exclude external \
 			--no-same-owner --no-same-permissions
 
-OPTIONS_DEFINE=		DEINIT DOCS NLS
+OPTIONS_DEFINE=		DEINIT DOCS
 OPTIONS_DEFAULT=	DEINIT
-OPTIONS_SUB=		yes
 
 DEINIT_DESC=	Deinit frontend on emulator launch
 
 DEINIT_CMAKE_BOOL=	DEINIT_ON_LAUNCH
-
-NLS_USES=		gettext-runtime gettext-tools
-NLS_CMAKE_BOOL=		COMPILE_LOCALIZATIONS
 
 post-install:
 	${LN} -sf ${LOCALBASE}/share/fonts/Droid/DroidSansFallbackFull.ttf \
