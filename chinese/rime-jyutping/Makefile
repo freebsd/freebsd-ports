@@ -1,9 +1,8 @@
 PORTNAME=	rime-jyutping
-DISTVERSION=	g20200809
-PORTREVISION=	1
+DISTVERSION=	g20220517
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	eric@camachat.org
 COMMENT=	Rime Jyutping (old) schema support
 WWW=		https://github.com/rime/rime-jyutping
 
@@ -22,7 +21,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	1e24baa6998815c716c581effe8ec65ee87c4e8c
+GH_TAGNAME=	50100769f645bf92afef5170e3bf42be5147b41b
 
 NO_ARCH=	yes
 
