@@ -22,6 +22,7 @@ share/icons/hicolor/64x64/apps/ibus-m17n.png
 %%NLS%%share/locale/el/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/es/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/ibus-m17n.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/hi/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/id/LC_MESSAGES/ibus-m17n.mo
