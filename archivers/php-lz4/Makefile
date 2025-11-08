@@ -1,6 +1,6 @@
 PORTNAME=	lz4
 DISTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -20,5 +20,12 @@ GH_ACCOUNT=	kjdev
 GH_PROJECT=	php-ext-lz4
 
 CONFIGURE_ARGS=	--with-lz4-includedir=${LOCALBASE}
+
+OPTIONS_DEFINE=		APCU
+OPTIONS_DEFAULT=	APCU
+
+APCU_DESC=		APCu cache compression support for objects
+
+APCU_BUILD_DEPENDS=	${LOCALBASE}/include/php/ext/apcu/apc_serializer.h:devel/pecl-APCu@${PHP_FLAVOR}
 
 .include <bsd.port.mk>
