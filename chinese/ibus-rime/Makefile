@@ -3,7 +3,7 @@ DISTVERSION=	1.5.0
 PORTREVISION=	1
 CATEGORIES=	chinese
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	eric@camachat.org
 COMMENT=	IBus engine for Rime users
 WWW=		https://github.com/rime/ibus-rime/
 

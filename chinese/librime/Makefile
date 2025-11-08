@@ -3,7 +3,7 @@ DISTVERSION=	1.14.0
 PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	eric@camachat.org
 COMMENT=	Rime Input Method Engine, the core library
 WWW=		https://rime.github.io/
 

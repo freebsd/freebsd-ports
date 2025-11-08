@@ -2,7 +2,7 @@ PORTNAME=	rime-data-full
 PORTVERSION=	g20211129
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	eric@camachat.org
 COMMENT=	Rime data files full set
 WWW=		https://github.com/rime/plum
 

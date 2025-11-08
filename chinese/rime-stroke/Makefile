@@ -3,7 +3,7 @@ DISTVERSION=	g20191221
 PORTREVISION=	2
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	eric@camachat.org
 COMMENT=	Rime Stroke schema support
 WWW=		https://github.com/rime/rime-stroke
 

@@ -3,7 +3,7 @@ DISTVERSION=	g20210131
 PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	eric@camachat.org
 COMMENT=	Rime Chewing schema support
 WWW=		https://github.com/rime/rime-bopomofo
 

@@ -3,7 +3,7 @@ DISTVERSION=	g20191007
 PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	eric@camachat.org
 COMMENT=	Rime Stenotype schema support
 WWW=		https://github.com/rime/rime-stenotype
 
