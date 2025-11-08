@@ -1,6 +1,5 @@
 PORTNAME=	gsm
-DISTVERSION=	1.0.22
-PORTREVISION=	1
+DISTVERSION=	1.0.23
 CATEGORIES=	audio
 MASTER_SITES=	http://www.quut.com/gsm/
 
@@ -15,6 +14,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/gsm-1.0-pl22
+WRKSRC=		${WRKDIR}/gsm-1.0-pl23
 
 .include <bsd.port.mk>
