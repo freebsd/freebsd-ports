@@ -1,6 +1,5 @@
 PORTNAME=	aeron
-DISTVERSION=	1.47.3
-PORTREVISION=	1
+DISTVERSION=	1.49.1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,6 +33,6 @@ CMAKE_TESTING_ON=	AERON_TESTS \
 LDFLAGS+=	-lm \
 		-luuid
 
-TESTING_UNSAFE=	tests as of 1.44.6: 89% tests passed, 15 tests failed out of 131, see https://github.com/real-logic/aeron/issues/1696
+TESTING_UNSAFE=	tests as of 1.44.6: 74% tests passed, 35 tests failed out of 136, see https://github.com/real-logic/aeron/issues/1696
 
 .include <bsd.port.mk>
