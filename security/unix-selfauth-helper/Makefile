@@ -4,14 +4,11 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${WWW}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Local self-authentication for pam_exec
 WWW=		https://github.com/Zirias/${PORTNAME}
 
 LICENSE=	BSD2CLAUSE
-
-DEPRECATED=	Unmaintained port
-EXPIRATION_DATE=2025-12-31
 
 USES=		tar:xz
 
