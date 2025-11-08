@@ -6,8 +6,10 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Fixed width sans fonts for use with powerline
 WWW=		https://github.com/powerline/fonts
 
-USES=		fonts
+DEPRECATED=		Use x11-fonts/nerd-fonts instead
+EXPIRATION_DATE=	2025-12-31
 
+USES=		fonts
 USE_GITHUB=	yes
 GH_ACCOUNT=	powerline
 GH_PROJECT=	fonts
