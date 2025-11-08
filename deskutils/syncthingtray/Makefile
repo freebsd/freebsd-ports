@@ -1,7 +1,6 @@
 PORTNAME=	syncthingtray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.2
-PORTREVISION=	1
+DISTVERSION=	2.0.3
 CATEGORIES=	deskutils
 
 MAINTAINER=	dsh@bamus.cz
@@ -25,11 +24,11 @@ USES=		cmake:insource iconv perl5 xorg
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	Martchus
 GH_TUPLE:=	${GH_ACCOUNT}:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:${PORTNAME}/../${PORTNAME} \
-		${GH_ACCOUNT}:cpp-utilities:v5.31.0:cpputilities/../c++utilities \
-		${GH_ACCOUNT}:qtutilities:v6.18.2:qtutilities/../qtutilities \
-		${GH_ACCOUNT}:qtforkawesome:v0.3.1:qtforkawesome/../qtforkawesome \
+		${GH_ACCOUNT}:cpp-utilities:v5.31.1:cpputilities/../c++utilities \
+		${GH_ACCOUNT}:qtutilities:v6.18.3:qtutilities/../qtutilities \
+		${GH_ACCOUNT}:qtforkawesome:v0.3.2:qtforkawesome/../qtforkawesome \
 		ForkAwesome:Fork-Awesome:4fef70f:ForkAwesome/../forkawesome \
-		${GH_ACCOUNT}:subdirs:0a522cf:subdirs/../subdirs
+		${GH_ACCOUNT}:subdirs:95d599d:subdirs/../subdirs
 
 USE_PERL5=	build
 USE_QT=		declarative svg
