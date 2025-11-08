@@ -1,8 +1,8 @@
 PORTNAME=	rime-emoji
-DISTVERSION=	g20210909
+DISTVERSION=	g20250331
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	eric@camachat.org
 COMMENT=	Rime emoji suggestions support
 WWW=		https://github.com/rime/rime-emoji
 
@@ -14,7 +14,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	fc13f2caf2f02de8a5096c9de3a003d0f9a9f5b4
+GH_TAGNAME=	3dd83a264b4686b56abddedecbde75360cbbbfab
 
 NO_ARCH=	yes
 NO_BUILD=	yes
