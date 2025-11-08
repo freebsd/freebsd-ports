@@ -1,0 +1,12 @@
+--- test/CMakeLists.txt.orig	2025-11-08 21:48:08 UTC
++++ test/CMakeLists.txt
+@@ -22,7 +22,8 @@
+ # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+-CPMAddPackage("gh:catchorg/Catch2@3.4.0")
++#CPMAddPackage("gh:catchorg/Catch2@3.4.0")
++find_package(Catch2 3.4.0 REQUIRED)
+ 
+ add_executable(mcfp-unit-test ${CMAKE_CURRENT_SOURCE_DIR}/unit-test.cpp)
+ 

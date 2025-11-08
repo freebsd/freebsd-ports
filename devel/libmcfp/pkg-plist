@@ -4,9 +4,6 @@ include/mcfp/error.hpp
 include/mcfp/mcfp.hpp
 include/mcfp/text.hpp
 include/mcfp/utilities.hpp
-lib/cmake/libmcfp/libmcfpConfig.cmake
-lib/cmake/libmcfp/libmcfpConfigVersion.cmake
-lib/cmake/libmcfp/libmcfpTargets.cmake
 lib/cmake/mcfp/mcfpConfig.cmake
 lib/cmake/mcfp/mcfpConfigVersion.cmake
 lib/cmake/mcfp/mcfpTargets.cmake

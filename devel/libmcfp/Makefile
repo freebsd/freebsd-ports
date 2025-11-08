@@ -1,6 +1,6 @@
 PORTNAME=	libmcfp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.5
+DISTVERSION=	1.4.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,6 +24,6 @@ NO_ARCH=	yes
 
 PORTSCOUT=	limit:^.*[0-9]\.[0-9].*
 
-# 100% tests passed, 0 tests failed out of 1
+# tests as of 1.4.2: 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>
