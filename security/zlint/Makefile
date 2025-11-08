@@ -1,7 +1,6 @@
 PORTNAME=	zlint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.6
-PORTREVISION=	1
+DISTVERSION=	3.6.8
 CATEGORIES=	security www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/zmap/zlint
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:1.24,modules
 
 GO_MODULE=	github.com/zmap/zlint/v3
 GO_TARGET=	./cmd/${PORTNAME}
