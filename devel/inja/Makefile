@@ -1,6 +1,6 @@
 PORTNAME=	inja
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.0
+DISTVERSION=	3.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -13,20 +13,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	bash:shells/bash \
 		nlohmann-json>=3:devel/nlohmann-json
 
-USES=		bison cmake:noninja compiler:c++17-lang gettext pathfix pkgconfig python:build shebangfix
+USES=		bison cmake:testing compiler:c++17-lang gettext pathfix \
+		pkgconfig shebangfix python:build
 
 SHEBANG_FILES=	scripts/update_single_include.sh third_party/amalgamate/amalgamate.py
 BINARY_ALIAS=	python3=${PYTHON_CMD}
+NO_ARCH=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pantor
 
-OPTIONS_DEFINE=	TESTS
-
-TESTS_DESC=		Build self tests
-TESTS_CMAKE_BOOL=	BUILD_TESTING BUILD_BENCHMARK
-#TESTS_MESON_TRUE=	build_tests build_benchmark
-
-CMAKE_OFF=	INJA_USE_EMBEDDED_JSON
+CMAKE_OFF=		INJA_USE_EMBEDDED_JSON BUILD_TESTING
+CMAKE_TESTING_ON=	BUILD_TESTING BUILD_BENCHMARK
 
 .include <bsd.port.mk>
