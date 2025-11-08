@@ -1,5 +1,6 @@
 lib/postgresql/timescaledb-%%PORTVERSION%%.so
 %%TSL%%lib/postgresql/timescaledb-tsl-%%PORTVERSION%%.so
+%%TSL%%lib/postgresql/timescaledb-invalidations-%%PORTVERSION%%.so
 lib/postgresql/timescaledb.so
 share/postgresql/extension/timescaledb--2.9.0--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb--2.9.1--%%PORTVERSION%%.sql
@@ -43,5 +44,9 @@ share/postgresql/extension/timescaledb--2.20.3--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb--2.21.0--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb--2.21.1--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb--2.21.2--%%PORTVERSION%%.sql
+share/postgresql/extension/timescaledb--2.21.3--%%PORTVERSION%%.sql
+share/postgresql/extension/timescaledb--2.21.4--%%PORTVERSION%%.sql
+share/postgresql/extension/timescaledb--2.22.0--%%PORTVERSION%%.sql
+share/postgresql/extension/timescaledb--2.22.1--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb.control

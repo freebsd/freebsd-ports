@@ -1,5 +1,5 @@
 PORTNAME=	timescaledb
-PORTVERSION=	2.21.3
+PORTVERSION=	2.23.0
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE_PERMS_TSL=	dist-mirror pkg-mirror auto-accept
 
 BROKEN_i386=	compilation fails: undeclared type '__uint128_t'
 
-USES=		cmake compiler:c11 cpe pgsql:15-17
+USES=		cmake compiler:c11 cpe pgsql:15-18
 
 CPE_VENDOR=	timescale
 WANT_PGSQL=	lib server
