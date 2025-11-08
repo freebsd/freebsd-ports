@@ -7,11 +7,13 @@ share/rime-data/build/jyut6ping3.table.txt
 share/rime-data/build/jyut6ping3_ipa.prism.bin
 share/rime-data/build/jyut6ping3_ipa.prism.txt
 share/rime-data/build/jyut6ping3_ipa.schema.yaml
+share/rime-data/jyut6ping3.chars.dict.yaml
 share/rime-data/jyut6ping3.dict.yaml
 share/rime-data/jyut6ping3.lettered.dict.yaml
 share/rime-data/jyut6ping3.maps.dict.yaml
 share/rime-data/jyut6ping3.phrase.dict.yaml
 share/rime-data/jyut6ping3.schema.yaml
+share/rime-data/jyut6ping3.words.dict.yaml
 share/rime-data/jyut6ping3_ipa.schema.yaml
 share/rime-data/opencc/HKVariantsFull.txt
 share/rime-data/opencc/t2hkf.json

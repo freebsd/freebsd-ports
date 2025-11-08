@@ -1,9 +1,8 @@
 PORTNAME=	rime-cantonese
-DISTVERSION=	g20211029
-PORTREVISION=	1
+DISTVERSION=	g20241130
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	eric@camachat.org
 COMMENT=	Rime Cantonese (Jyutping) schema support
 WWW=		https://github.com/rime/rime-cantonese
 
@@ -25,7 +24,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	5b6d334a878af8cdb180bb48408fae7cf839da1c
+GH_TAGNAME=	ac277184f161f297c2031b497588975234019f9d
 
 NO_ARCH=	yes
 
