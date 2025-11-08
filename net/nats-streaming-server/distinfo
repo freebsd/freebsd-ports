@@ -1,6 +1,6 @@
-TIMESTAMP = 1687345367
-SHA256 (nats-io-nats-streaming-server-v0.25.5_GH0.tar.gz) = e235b0229fd088e047d3f7313285cc984b91232263f4225cd87ee8a3fc6f8499
-SIZE (nats-io-nats-streaming-server-v0.25.5_GH0.tar.gz) = 426585
+TIMESTAMP = 1762620572
+SHA256 (nats-io-nats-streaming-server-v0.25.6_GH0.tar.gz) = 6f53792784e909870c04441127ca855b6d4cf007ccb93d8884d3278fd23b74cf
+SIZE (nats-io-nats-streaming-server-v0.25.6_GH0.tar.gz) = 426298
 SHA256 (armon-go-metrics-v0.4.1_GH0.tar.gz) = 1d57217a743e15c89e56abc339872045ffc986bf07ae5d62116ac33b25e62a0d
 SIZE (armon-go-metrics-v0.4.1_GH0.tar.gz) = 38330
 SHA256 (etcd-io-bbolt-v1.3.7_GH0.tar.gz) = a99c0371bd041a3ca45bd314428976f3f13408ea53dbf2f8aa74b0288889acb2
