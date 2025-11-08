@@ -3,6 +3,7 @@ include/postgresql/server/distributed/adaptive_executor.h
 include/postgresql/server/distributed/argutils.h
 include/postgresql/server/distributed/backend_data.h
 include/postgresql/server/distributed/background_jobs.h
+include/postgresql/server/distributed/background_worker_utils.h
 include/postgresql/server/distributed/cancel_utils.h
 include/postgresql/server/distributed/causal_clock.h
 include/postgresql/server/distributed/citus_acquire_lock.h
@@ -13,6 +14,7 @@ include/postgresql/server/distributed/citus_nodefuncs.h
 include/postgresql/server/distributed/citus_nodes.h
 include/postgresql/server/distributed/citus_ruleutils.h
 include/postgresql/server/distributed/citus_safe_lib.h
+include/postgresql/server/distributed/clonenode_utils.h
 include/postgresql/server/distributed/colocation_utils.h
 include/postgresql/server/distributed/combine_query_planner.h
 include/postgresql/server/distributed/commands.h
@@ -166,6 +168,7 @@ share/postgresql/extension/citus--11.3-2--12.0-1.sql
 share/postgresql/extension/citus--12.0-1--12.1-1.sql
 share/postgresql/extension/citus--12.1-1--13.0-1.sql
 share/postgresql/extension/citus--13.0-1--13.1-1.sql
+share/postgresql/extension/citus--13.1-1--13.2-1.sql
 share/postgresql/extension/citus--8.0-1--8.0-2.sql
 share/postgresql/extension/citus--8.0-1.sql
 share/postgresql/extension/citus--8.0-10--8.0-11.sql
@@ -211,6 +214,7 @@ share/postgresql/extension/citus_columnar--11.1-1--11.2-1.sql
 share/postgresql/extension/citus_columnar--11.1-1.sql
 share/postgresql/extension/citus_columnar--11.2-1--11.3-1.sql
 share/postgresql/extension/citus_columnar--11.3-1--12.2-1.sql
+share/postgresql/extension/citus_columnar--12.2-1--13.2-1.sql
 share/postgresql/extension/citus_columnar.control
 share/postgresql/extension/columnar--10.0-1--10.0-2.sql
 share/postgresql/extension/columnar--10.0-3--10.1-1.sql
