@@ -9,6 +9,7 @@ WWW=		https://github.com/ruby/bigdecimal
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
+LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE
 
 USES=		gem
 
