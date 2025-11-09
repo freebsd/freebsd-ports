@@ -1,5 +1,6 @@
 PORTNAME=	libiconv
 PORTVERSION=	1.18
+PORTREVISION=	1
 CATEGORIES=	converters devel
 MASTER_SITES=	GNU
 
@@ -31,5 +32,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:ei_ksc5601:ei_euc_kr:g' ${WRKSRC}/lib/aliases.h
 	@${REINPLACE_CMD} -e 's:gawk:awk:g' ${WRKSRC}/configure \
 		${WRKSRC}/libcharset/configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so
 
 .include <bsd.port.mk>
