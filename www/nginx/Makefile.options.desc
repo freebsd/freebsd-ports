@@ -115,3 +115,4 @@ VTS_DESC=			3rd party vts module
 WWW_DESC=			Enable html sample files
 XSS_DESC=			3rd party xss module
 WEBSOCKIFY_DESC=		3rd party websockify module
+ZSTD_DESC=			3rd party zstd module
