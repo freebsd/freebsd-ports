@@ -109,7 +109,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-ffaker>=2.25.0<3:devel/rubygem-ffaker \
 	rubygem-hashie>=5.0.0<5.1:devel/rubygem-hashie \
 	rubygem-kaminari-rails-gitlab>=1.2.2<1.3:www/rubygem-kaminari-rails-gitlab \
-	rubygem-hamlit>=3.0.3<3.1:www/rubygem-hamlit \
+	rubygem-hamlit-gitlab>=3.0.3<3.1:www/rubygem-hamlit-gitlab \
 	rubygem-carrierwave-gitlab>=1.3.4<2.0:www/rubygem-carrierwave-gitlab \
 	rubygem-mini_magick4>=4.12<5:graphics/rubygem-mini_magick4 \
 	rubygem-marcel-gitlab>=1.0.4<1.1:devel/rubygem-marcel-gitlab \
@@ -318,7 +318,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-base6402>=0.2.0<0.3:converters/rubygem-base6402 \
 	rubygem-net-protocol>=0.2.2<0.3:net/rubygem-net-protocol \
 	rubygem-nkf>=0.2.0<0.3:net/rubygem-nkf \
-	rubygem-net-http>=0.6.0<0.6.1:www/rubygem-net-http \
+	rubygem-net-http-gitlab>=0.6.0<0.6.1:www/rubygem-net-http-gitlab \
 	rubygem-uri-gitlab>=0.13.2<0.13.3:net/rubygem-uri-gitlab \
 	rubygem-duo_api>=1.4<2:security/rubygem-duo_api \
 	rubygem-gitlab-sdk>=0.3.0<0.4:devel/rubygem-gitlab-sdk \
