@@ -1,5 +1,5 @@
 PORTNAME=	ipykernel
-PORTVERSION=	6.31.0
+PORTVERSION=	7.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/ipython/ipykernel/releases/download/v${PORTVERSION}/
