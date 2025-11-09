@@ -1,5 +1,5 @@
 PORTNAME=	unifont
-PORTVERSION=	17.0.02
+PORTVERSION=	17.0.03
 CATEGORIES=	x11-fonts
 MASTER_SITES=	GNU/unifont/unifont-${PORTVERSION} \
 		https://unifoundry.com/pub/unifont/unifont-${PORTVERSION}/font-builds/
