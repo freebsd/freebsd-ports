@@ -1,5 +1,5 @@
-TIMESTAMP = 1759670837
-SHA256 (go/audio_go-librespot/go-librespot-v0.5.0/v0.5.0.mod) = dfb7c599404395927cf1755213c311f48ea63344b30f1f516be4c57bb4ea8654
-SIZE (go/audio_go-librespot/go-librespot-v0.5.0/v0.5.0.mod) = 1828
-SHA256 (go/audio_go-librespot/go-librespot-v0.5.0/v0.5.0.zip) = db94a0c511f586d5e1662417c82c1debf1bc01934440d22e2dc37ab18a78d2eb
-SIZE (go/audio_go-librespot/go-librespot-v0.5.0/v0.5.0.zip) = 424569
+TIMESTAMP = 1762685080
+SHA256 (go/audio_go-librespot/go-librespot-v0.5.3/v0.5.3.mod) = dfb7c599404395927cf1755213c311f48ea63344b30f1f516be4c57bb4ea8654
+SIZE (go/audio_go-librespot/go-librespot-v0.5.3/v0.5.3.mod) = 1828
+SHA256 (go/audio_go-librespot/go-librespot-v0.5.3/v0.5.3.zip) = 1bb1f08e099cce605847f436264b2f46e0256d58dc53cb8bceee5f72d3e5d9d7
+SIZE (go/audio_go-librespot/go-librespot-v0.5.3/v0.5.3.zip) = 458975
