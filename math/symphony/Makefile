@@ -1,7 +1,6 @@
 PORTNAME=	symphony
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	5.7.2
-PORTREVISION=	3
+DISTVERSION=	5.7.3
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -34,5 +33,11 @@ GH_PROJECT=	${PORTNAME:tu}
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	test
+
+# tests as og 5.7.3:
+# Severity NOTE      :    0  thereof expected:    0
+# Severity PASSED    :  683  thereof expected:    0
+# Severity WARNING   :    0  thereof expected:    0
+# Severity ERROR     :    0  thereof expected:    0
 
 .include <bsd.port.mk>
