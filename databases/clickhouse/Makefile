@@ -1,6 +1,6 @@
 PORTNAME=	clickhouse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	22.4.5.9
+DISTVERSION=	22.9.1.2603
 DISTVERSIONSUFFIX=-stable
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
@@ -32,8 +32,6 @@ USE_PERL5=	build
 USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	tests/clickhouse-test \
-		tests/queries/0_stateless/00963_temporary_live_view_watch_live_timeout.py.disabled \
-		tests/queries/0_stateless/00979_live_view_watch_live_moving_avg.py.disabled \
 		tests/queries/0_stateless/01526_client_start_and_exit.expect-not-a-test-case \
 		tests/queries/0_stateless/02010_lc_native.python \
 		tests/queries/0_stateless/02203_shebang
@@ -50,6 +48,7 @@ CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=20 \
 		-DENABLE_PARQUET=OFF \
 		-DENABLE_UTILS=ON \
 		-DNO_WERROR=1
+CMAKE_OFF=	ENABLE_CCACHE
 .if defined(WITH_DEBUG)
 CMAKE_BUILD_TYPE=Debug
 .else
@@ -88,6 +87,7 @@ SOVERSION=	${PORTVERSION}
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|;s|/etc/clickhouse-server|${PREFIX}/etc/clickhouse-server|' ${WRKSRC}/programs/server/config.xml
 	@${REINPLACE_CMD} -e 's|%%OSREL%%|${OSREL:R}|' ${WRKSRC}/cmake/freebsd/toolchain-x86_64.cmake
+	@${REINPLACE_CMD} -e 's|sys/statfs.h|sys/mount.h|' ${WRKSRC}/utils/self-extracting-executable/decompressor.cpp
 	cd ${WRKSRC}/contrib/openldap-cmake && ${LN} -s freebsd_x86_64 freebsd_aarch64
 
 do-install-TEST-on:

@@ -3,6 +3,7 @@ bin/clickhouse-benchmark
 bin/clickhouse-client
 bin/clickhouse-compressor
 bin/clickhouse-copier
+bin/clickhouse-disks
 bin/clickhouse-extract-from-config
 bin/clickhouse-format
 bin/clickhouse-git-import
@@ -12,6 +13,7 @@ bin/clickhouse-obfuscator
 bin/clickhouse-report
 bin/clickhouse-server
 bin/clickhouse-static-files-disk-uploader
+bin/clickhouse-su
 %%TEST%%bin/clickhouse-test
 cmake/global-%%CMAKE_BUILD_TYPE%%.cmake
 cmake/global.cmake
