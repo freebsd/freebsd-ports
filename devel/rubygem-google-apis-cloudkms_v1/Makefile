@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-cloudkms_v1
-PORTVERSION=	0.63.0
+PORTVERSION=	0.64.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
