@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-location
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
