@@ -29,4 +29,12 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	PLUS
+PLUS_DESC=	Extra features
+
+PLUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}esda>=0:science/py-esda@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}inequality>=0:science/py-inequality@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}mapclassify>=0:graphics/py-mapclassify@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}numba>=0:devel/py-numba@${PY_FLAVOR}
+
 .include <bsd.port.mk>
