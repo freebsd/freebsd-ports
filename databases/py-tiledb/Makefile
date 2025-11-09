@@ -1,5 +1,5 @@
 PORTNAME=	tiledb
-PORTVERSION=	0.35.1
+PORTVERSION=	0.35.2
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.25,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0:devel/py-scikit-build-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR} \
-		tiledb>=2.29.1:databases/tiledb
+		tiledb>=2.29.2:databases/tiledb
 LIB_DEPENDS=	libtiledb.so:databases/tiledb
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.25,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
@@ -27,9 +27,6 @@ USES=		cmake:indirect compiler:c++17-lang localbase python
 USE_PYTHON=	autoplist concurrent pep517
 
 MAKE_ENV=	TILEDB_PATH=${LOCALBASE}
-
-post-patch:
-	@${RM} -r ${WRKSRC}/ci/
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
