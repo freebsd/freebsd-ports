@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-wafregional
-PORTVERSION=	1.86.0
+PORTVERSION=	1.87.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
