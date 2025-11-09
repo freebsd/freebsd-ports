@@ -1,5 +1,5 @@
 PORTNAME=	libdatadog
-PORTVERSION=	22.1.0
+PORTVERSION=	23.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -14,6 +14,7 @@ BROKEN_i386=	error: could not compile `datadog-sidecar` (lib) due to 2 previous 
 
 BUILD_DEPENDS=	bindgen:devel/rust-bindgen-cli \
 		protoc:devel/protobuf
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo llvm
 
