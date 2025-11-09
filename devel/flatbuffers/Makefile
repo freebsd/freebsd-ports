@@ -1,12 +1,13 @@
 PORTNAME=	flatbuffers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.1.24
+DISTVERSION=	25.9.23
 PORTEPOCH=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Memory efficient serialization library
-WWW=		https://flatbuffers.dev/
+WWW=		https://flatbuffers.dev/ \
+		https://github.com/google/flatbuffers
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
