@@ -31,5 +31,7 @@ include/qpOASES/Utils.ipp
 include/qpOASES/extras/OQPinterface.hpp
 include/qpOASES/extras/SolutionAnalysis.hpp
 include/qpOASES/extras/SolutionAnalysis.ipp
+lib/cmake/qpOASES/qpOASESConfig.cmake
+lib/cmake/qpOASES/qpOASESConfigVersion.cmake
 lib/libqpOASES.so
 lib/libqpOASES.so.3.2
