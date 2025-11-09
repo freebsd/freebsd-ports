@@ -1,6 +1,5 @@
 PORTNAME=	glvis
-DISTVERSION=	4.3.2
-PORTREVISION=	2
+DISTVERSION=	4.4
 CATEGORIES=	graphics
 MASTER_SITES=	https://glvis.github.io/releases/
 PKGNAMESUFFIX=	-mesh-visualizer # other software also has the name glvis
@@ -24,7 +23,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-image>0:graphics/py-scikit-image@${PY_FLAVOR}
 
-USES=		cmake:testing gl python:test sdl tar:tgz
+USES=		cmake:testing gl mpi:mpich python:test sdl tar:tgz
 USE_GL=		gl glew
 USE_SDL=	sdl2
 
