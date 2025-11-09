@@ -726,6 +726,7 @@
     SUBDIR += powa-archivist
     SUBDIR += powa-web
     SUBDIR += powerarchitect
+    SUBDIR += prisma-engines
     SUBDIR += proftpd-mod_sql_mysql
     SUBDIR += proftpd-mod_sql_odbc
     SUBDIR += proftpd-mod_sql_postgres
