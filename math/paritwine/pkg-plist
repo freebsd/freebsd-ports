@@ -3,5 +3,5 @@ include/paritwine.h
 lib/libparitwine.a
 lib/libparitwine.so
 lib/libparitwine.so.0
-lib/libparitwine.so.0.0.0
+lib/libparitwine.so.0.2.0
 %%DATADIR%%/paritwine.gp

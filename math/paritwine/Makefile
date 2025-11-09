@@ -1,12 +1,11 @@
 PORTNAME=	paritwine
-DISTVERSION=	0.1
-PORTREVISION=	4
+DISTVERSION=	0.2.2
 CATEGORIES=	math
-MASTER_SITES=	http://www.multiprecision.org/downloads/
+MASTER_SITES=	https://www.multiprecision.org/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Glue library between PARI/GP and other mathematics libraries
-WWW=		https://www.multiprecision.org/paritwine/home.html
+WWW=		https://www.multiprecision.org/paritwine/index.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -29,5 +28,16 @@ INSTALL_TARGET=	install-strip
 INFO=		paritwine
 
 TEST_TARGET=	check
+
+# ============================================================================
+# Testsuite summary for paritwine 0.2.2
+# ============================================================================
+# TOTAL: 4
+# PASS:  3
+# SKIP:  1
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
 
 .include <bsd.port.mk>
