@@ -47,6 +47,11 @@ share/man/man1/murphi2xml.1.gz
 share/man/man1/rumur-run.1.gz
 share/man/man1/rumur.1.gz
 %%DATADIR%%/lib/README.rst
-%%DATADIR%%/lib/list
+%%DATADIR%%/lib/_list
+%%DATADIR%%/lib/_set
 %%DATADIR%%/lib/v2025.01.04/list
 %%DATADIR%%/lib/v2025.01.05/list
+%%DATADIR%%/lib/v2025.02.02/_list
+%%DATADIR%%/lib/v2025.02.02/_set
+%%DATADIR%%/lib/v2025.08.31/_list
+%%DATADIR%%/lib/v2025.08.31/_set
