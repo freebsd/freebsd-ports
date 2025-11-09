@@ -1,5 +1,5 @@
-TIMESTAMP = 1760887013
-SHA256 (go/sysutils_cloud-nuke/cloud-nuke-v0.43.0/v0.43.0.mod) = cd95fbc82f351a8ba7da31a327ca88555fb30917070f49b843dfb86223f39d9f
-SIZE (go/sysutils_cloud-nuke/cloud-nuke-v0.43.0/v0.43.0.mod) = 7419
-SHA256 (go/sysutils_cloud-nuke/cloud-nuke-v0.43.0/v0.43.0.zip) = a4467934cf2558af219531976bd70bb06e49f2205e863f69f7e18aed9c48f425
-SIZE (go/sysutils_cloud-nuke/cloud-nuke-v0.43.0/v0.43.0.zip) = 592876
+TIMESTAMP = 1762590013
+SHA256 (go/sysutils_cloud-nuke/cloud-nuke-v0.45.0/v0.45.0.mod) = cd95fbc82f351a8ba7da31a327ca88555fb30917070f49b843dfb86223f39d9f
+SIZE (go/sysutils_cloud-nuke/cloud-nuke-v0.45.0/v0.45.0.mod) = 7419
+SHA256 (go/sysutils_cloud-nuke/cloud-nuke-v0.45.0/v0.45.0.zip) = 370cae91eb1f113976bb498f6e38828dee24425d039cac6a982d4245944b80f3
+SIZE (go/sysutils_cloud-nuke/cloud-nuke-v0.45.0/v0.45.0.zip) = 595429
