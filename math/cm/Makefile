@@ -1,6 +1,5 @@
 PORTNAME=	cm
-DISTVERSION=	0.4.3
-PORTREVISION=	1
+DISTVERSION=	0.4.4
 CATEGORIES=	math
 MASTER_SITES=	https://www.multiprecision.org/downloads/
 
@@ -27,5 +26,16 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 INFO=		cm
+
+# ============================================================================
+# Testsuite summary for cm 0.4.4
+# ============================================================================
+# TOTAL: 3
+# PASS:  3
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
 
 .include <bsd.port.mk>
