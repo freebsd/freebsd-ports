@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2025-11-09 09:21:35 UTC
++++ CMakeLists.txt
+@@ -180,7 +180,8 @@ if(HIGHFIVE_UNIT_TESTS)
+ endif()
+ 
+ if(HIGHFIVE_UNIT_TESTS)
+-  add_subdirectory(deps/catch2 EXCLUDE_FROM_ALL)
++  #add_subdirectory(deps/catch2 EXCLUDE_FROM_ALL)
++  find_package(Catch2 REQUIRED)
+   list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/deps/catch2/contrib)
+   enable_testing()
+   add_subdirectory(tests/unit)
