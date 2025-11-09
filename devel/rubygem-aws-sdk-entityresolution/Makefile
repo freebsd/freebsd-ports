@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-entityresolution
-PORTVERSION=	1.38.0
+PORTVERSION=	1.39.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
