@@ -1,4 +1,4 @@
---- bin/quarto.orig	2024-08-01 13:18:09 UTC
+--- bin/quarto.orig	2025-11-06 10:21:37 UTC
 +++ bin/quarto
 @@ -1,23 +1,7 @@
  #!/usr/bin/env bash
@@ -21,12 +21,12 @@
 -else
 -  SCRIPT_PATH="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 -fi
-+SCRIPT_PATH="%%SCRIPT_PATH%%"
-+ARCH_DIR="%%ARCH_DIR%%"
++SCRIPT_PATH="/usr/local/share/quarto/bin"
++ARCH_DIR="amd64"
  
  # Check if we are running 'Dev Mode' and if so, override values for devs
  SCRIPT_BASENAME=$(basename "$SCRIPT_PATH")
-@@ -141,14 +125,6 @@ else
+@@ -153,14 +137,6 @@ else
  
  else
    NIXARCH=$(uname -m)

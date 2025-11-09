@@ -1,5 +1,5 @@
-TIMESTAMP = 1746509031
-SHA256 (quarto-1.7.30-linux-amd64.tar.gz) = 25c0de6467b1bd5c422dfd55720b39f48b252d8002b346e021a18c229862c3f9
-SIZE (quarto-1.7.30-linux-amd64.tar.gz) = 132101946
-SHA256 (quarto-dev-quarto-cli-v1.7.30_GH0.tar.gz) = 2938b315502352c7fcd63640cd0681af0c0d18c150fc7a0819b62ac3496828b5
-SIZE (quarto-dev-quarto-cli-v1.7.30_GH0.tar.gz) = 110033341
+TIMESTAMP = 1762712346
+SHA256 (quarto-1.9.10-linux-amd64.tar.gz) = ca6e69bf18efdd96300dab7f20cde1a8bf91c09ef4b992220b4069c3c986caa3
+SIZE (quarto-1.9.10-linux-amd64.tar.gz) = 127538371
+SHA256 (quarto-dev-quarto-cli-v1.9.10_GH0.tar.gz) = 4405c99d68518817200591ec9433f4b786220c0cbdaa490abc2b4567a8dfaa52
+SIZE (quarto-dev-quarto-cli-v1.9.10_GH0.tar.gz) = 110789321
