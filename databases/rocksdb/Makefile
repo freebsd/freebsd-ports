@@ -41,8 +41,6 @@ PORTDATA=	make_config.mk
 GH_ACCOUNT=	facebook
 USE_GITHUB=	yes
 
-CONFLICTS_INSTALL=	rocksdb-lite
-
 BENCHMARKS=	cache_bench db_bench memtablerep_bench persistent_cache_bench range_del_aggregator_bench table_reader_bench
 TOOLS=		blob_dump db_repl_stress db_sanity_test db_stress ldb rocksdb_dump rocksdb_undump sst_dump trace_analyzer write_stress
 
