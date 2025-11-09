@@ -1,12 +1,12 @@
 PORTNAME=	qmidiarp
 DISTVERSIONPREFIX=	qmidiarp-
-DISTVERSION=	0.7.0
-PORTREVISION=	1
+DISTVERSION=	0.7.1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	MIDI arpeggiator, sequencer and LFO for JACK
-WWW=		https://qmidiarp.sourceforge.net/
+WWW=		https://github.com/emuse/qmidiarp \
+		https://qmidiarp.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,13 +20,17 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 PORTSCOUT=	limit:^qmidiarp
 
 USES=		autoreconf compiler:c++11-lib desktop-file-utils \
-		gmake gnome localbase:ldflags libtool pkgconfig qt:5
+		gl gmake gnome localbase:ldflags libtool pkgconfig qt:5 xorg
 USE_QT=		core gui network widgets buildtools:build \
 		linguisttools:build
+USE_GL=		glu opengl
+USE_GNOME=	cairo pango
+USE_XORG=	x11
 USE_CXXSTD=	c++11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	emuse
+GH_TUPLE=	x42:robtk:ec6456e:robtk/robtk
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
