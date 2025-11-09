@@ -1,11 +1,11 @@
 PORTNAME=	ggml
-DISTVERSION=	g20250916
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.4
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tensor library for machine learning
-WWW=		https://github.com/ggerganov/ggml
+WWW=		https://github.com/ggml-org/ggml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,8 +16,7 @@ USE_LDCONFIG=	yes
 BROKEN_i386=	compilation fails: LLVM ERROR: out of memory
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	ggerganov
-GH_TAGNAME=	978f6e1
+GH_ACCOUNT=	ggml-org
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	GGML_BUILD_TESTS \
@@ -42,6 +41,6 @@ VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
 			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
-# tests as of g20250828: 100% tests passed, 0 tests failed out of 21
+# tests as of 0.9.4: 100% tests passed, 0 tests failed out of 21
 
 .include <bsd.port.mk>
