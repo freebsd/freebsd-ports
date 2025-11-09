@@ -13,6 +13,7 @@ CARGO_CRATES=	autocfg-1.5.0 \
 		pyo3-macros-0.27.0 \
 		pyo3-macros-backend-0.27.0 \
 		quote-1.0.41 \
+		similar-2.7.0 \
 		syn-2.0.107 \
 		target-lexicon-0.13.3 \
 		unicode-ident-1.0.19 \
