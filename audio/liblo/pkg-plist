@@ -13,7 +13,7 @@ include/lo/lo_throw.h
 include/lo/lo_types.h
 lib/liblo.so
 lib/liblo.so.7
-lib/liblo.so.7.5.0
+lib/liblo.so.7.6.1
 libdata/pkgconfig/liblo.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
