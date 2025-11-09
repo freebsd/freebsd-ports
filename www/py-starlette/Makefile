@@ -1,12 +1,12 @@
 PORTNAME=	starlette
-PORTVERSION=	0.48.0
+PORTVERSION=	0.50.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight ASGI framework/toolkit
-WWW=		https://www.starlette.io/ \
+WWW=		https://starlette.dev/ \
 		https://github.com/Kludex/starlette
 
 LICENSE=	BSD3CLAUSE
