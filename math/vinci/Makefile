@@ -1,11 +1,11 @@
 PORTNAME=	vinci
 DISTVERSION=	1.0.5
 CATEGORIES=	math
-MASTER_SITES=	http://www.multiprecision.org/downloads/
+MASTER_SITES=	https://www.multiprecision.org/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Package that implements algorithms for convex body volume computation
-WWW=		https://www.multiprecision.org/vinci/home.html
+WWW=		https://www.multiprecision.org/vinci/index.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
