@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-gameliftstreams
-PORTVERSION=	1.14.0
+PORTVERSION=	1.16.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
