@@ -17,6 +17,7 @@ sbin/robots2policy
 %%DATADIR%%/bots/irc-bots/gentoo-chat.yaml
 %%DATADIR%%/bots/us-ai-scraper.yaml
 %%DATADIR%%/clients/ai.yaml
+%%DATADIR%%/clients/docker-client.yaml
 %%DATADIR%%/clients/git.yaml
 %%DATADIR%%/clients/go-get.yaml
 %%DATADIR%%/clients/mistral-mistralai-user.yaml
