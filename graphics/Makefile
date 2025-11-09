@@ -389,6 +389,7 @@
     SUBDIR += jdraw
     SUBDIR += jgraph
     SUBDIR += jhead
+    SUBDIR += jkqtplotter
     SUBDIR += jogamp-jogl
     SUBDIR += jogl
     SUBDIR += jp
