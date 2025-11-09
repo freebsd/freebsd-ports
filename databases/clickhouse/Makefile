@@ -1,8 +1,9 @@
 PORTNAME=	clickhouse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	22.4.2.1
+DISTVERSION=	22.4.5.9
 DISTVERSIONSUFFIX=-stable
 CATEGORIES=	databases
+DIST_SUBDIR=	${PORTNAME}
 
 # implicit-approval+: pi
 MAINTAINER=	bofh@FreeBSD.org
