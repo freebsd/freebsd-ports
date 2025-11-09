@@ -1877,6 +1877,7 @@
     SUBDIR += py-mailman-hyperkitty
     SUBDIR += py-mechanicalsoup
     SUBDIR += py-mechanize
+    SUBDIR += py-modelsearch
     SUBDIR += py-multidict
     SUBDIR += py-mwoauth
     SUBDIR += py-nevow
