@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-10-21 08:22:05 UTC
+--- pyproject.toml.orig	2025-10-31 10:54:08 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ requires = [
  [build-system]
@@ -8,10 +8,10 @@
  ]
  build-backend = "setuptools.build_meta"
  
-@@ -10,8 +10,7 @@ version = "3.2.0"
+@@ -10,8 +10,7 @@ version = "3.2.1"
  ]
  name = "tblib"
- version = "3.2.0"
+ version = "3.2.1"
 -license = "BSD-2-Clause"
 -license-files = ["LICENSE"]
 +license = {text = "BSD-2-Clause"}
