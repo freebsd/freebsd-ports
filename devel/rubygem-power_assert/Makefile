@@ -1,5 +1,5 @@
 PORTNAME=	power_assert
-PORTVERSION=	2.0.5
+PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
