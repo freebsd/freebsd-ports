@@ -85,6 +85,8 @@
 %%DSO%%%%VTS%%libexec/freenginx/ngx_http_vhost_traffic_status_module.so
 %%DSO%%%%WEBSOCKIFY%%libexec/freenginx/ngx_http_websockify_module.so
 %%DSO%%%%XSS%%libexec/freenginx/ngx_http_xss_filter_module.so
+%%DSO%%%%ZSTD%%libexec/nginx/ngx_http_zstd_filter_module.so
+%%DSO%%%%ZSTD%%libexec/nginx/ngx_http_zstd_static_module.so
 %%HTTP_PERL%%%%SITE_ARCH%%/auto/freenginx/freenginx.so
 %%HTTP_PERL%%%%SITE_ARCH%%/freenginx.pm
 sbin/nginx
