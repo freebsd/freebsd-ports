@@ -1,3 +1,3 @@
-TIMESTAMP = 1759324190
-SHA256 (elasticsearch-9.1.1.tar.gz) = be20acda2a97591a9a6cf4981fc398ee6fca3291cf9e7a9e52b6a9f41a46d393
-SIZE (elasticsearch-9.1.1.tar.gz) = 857802
+TIMESTAMP = 1762586884
+SHA256 (elasticsearch-9.2.0.tar.gz) = 99656baa34b10130402b6c38429feddf7aee1c3247566e8f95f0d0267fe9f9ab
+SIZE (elasticsearch-9.2.0.tar.gz) = 875370
