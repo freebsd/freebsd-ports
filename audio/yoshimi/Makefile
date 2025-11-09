@@ -1,11 +1,11 @@
 PORTNAME=	yoshimi
-DISTVERSION=	2.3.5.1
+DISTVERSION=	2.3.5.2
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${DISTVERSION:R:R}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sophisticated software synthesizer
-WWW=		https://yoshimi.github.io/
+WWW=		https://yoshimi.github.io/ \
+		https://github.com/yoshimi/yoshimi/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -21,6 +21,9 @@ LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gnome ncurses pkgconfig readline tar:bz2
 USE_GNOME=	cairo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Yoshimi
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 LDFLAGS+=		-Wl,--as-needed
