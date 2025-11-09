@@ -171,6 +171,7 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ipv6.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keepalive.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/localport.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/log_failed_transfers.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/maxconnects.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-app.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-debugcallback.c
@@ -327,6 +328,8 @@ share/man/man3/CURLMOPT_MAX_HOST_CONNECTIONS.3.gz
 share/man/man3/CURLMOPT_MAX_PIPELINE_LENGTH.3.gz
 share/man/man3/CURLMOPT_MAX_TOTAL_CONNECTIONS.3.gz
 share/man/man3/CURLMOPT_NETWORK_CHANGED.3.gz
+share/man/man3/CURLMOPT_NOTIFYDATA.3.gz
+share/man/man3/CURLMOPT_NOTIFYFUNCTION.3.gz
 share/man/man3/CURLMOPT_PIPELINING.3.gz
 share/man/man3/CURLMOPT_PIPELINING_SERVER_BL.3.gz
 share/man/man3/CURLMOPT_PIPELINING_SITE_BL.3.gz
@@ -704,6 +707,8 @@ share/man/man3/curl_multi_get_handles.3.gz
 share/man/man3/curl_multi_get_offt.3.gz
 share/man/man3/curl_multi_info_read.3.gz
 share/man/man3/curl_multi_init.3.gz
+share/man/man3/curl_multi_notify_disable.3.gz
+share/man/man3/curl_multi_notify_enable.3.gz
 share/man/man3/curl_multi_perform.3.gz
 share/man/man3/curl_multi_poll.3.gz
 share/man/man3/curl_multi_remove_handle.3.gz
