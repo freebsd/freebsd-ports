@@ -6,7 +6,8 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+# Ask clusteradm@ before removal
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GrimoireELK processes and stores software development data to ElasticSearch
 WWW=		https://github.com/chaoss/grimoirelab-elk
 
