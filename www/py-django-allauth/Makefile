@@ -1,5 +1,5 @@
 PORTNAME=	django-allauth
-PORTVERSION=	65.12.1
+PORTVERSION=	65.13.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,9 +25,10 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	HEADLESS_SPEC IDP_OIDC MFA OPENID SAML SOCIALACCOUNT STEAM
-OPTIONS_DEFAULT=HEADLESS_SPEC IDP_OIDC MFA OPENID SAML SOCIALACCOUNT STEAM
-HEADLESS_SPEC_DESC=	Single-page and mobile application support
+OPTIONS_DEFINE=	HEADLESS HEADLESS_SPEC IDP_OIDC MFA OPENID SAML SOCIALACCOUNT STEAM
+OPTIONS_DEFAULT=HEADLESS HEADLESS_SPEC IDP_OIDC MFA OPENID SAML SOCIALACCOUNT STEAM
+HEADLESS_DESC=		Single-page and mobile application support
+HEADLESS_SPEC_DESC=	API specification for headless suport
 IDP_OIDC_DESC=		Identity provider functionality with OpenID Connect support
 MFA_DESC=		Multi-Factor Authentication support
 OPENID_DESC=		OpenID authentication support
@@ -35,6 +36,7 @@ SAML_DESC=		Security Assertion Markup Language support
 SOCIALACCOUNT_DESC=	Social network account support
 STEAM_DESC=		Steam OpenID authentication support
 
+HEADLESS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyjwt>=2.0<3:www/py-pyjwt@${PY_FLAVOR}
 HEADLESS_SPEC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=6<7:devel/py-pyyaml@${PY_FLAVOR}
 IDP_OIDC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oauthlib>=3.3.0<4:security/py-oauthlib@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyjwt>=2.0<3:www/py-pyjwt@${PY_FLAVOR}
