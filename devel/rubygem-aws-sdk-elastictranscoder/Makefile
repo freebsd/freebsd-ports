@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-elastictranscoder
-PORTVERSION=	1.77.0
+PORTVERSION=	1.78.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
