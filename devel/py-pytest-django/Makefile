@@ -1,8 +1,9 @@
 PORTNAME=	pytest-django
-PORTVERSION=	4.8.0
+PORTVERSION=	4.11.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pytest_django-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Django plugin for py.test
