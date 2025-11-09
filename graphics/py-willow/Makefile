@@ -1,6 +1,5 @@
 PORTNAME=	willow
-PORTVERSION=	1.11.0
-PORTREVISION=	1
+PORTVERSION=	1.12.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,9 +30,9 @@ OPENCV_DESC=	Use OpenCV as backend
 PILLOW_DESC=	Use Pillow as backend
 WAND_DESC=	Use Wand as backend
 
-HEIF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow-heif>=0.13.0:graphics/py-pillow-heif@${PY_FLAVOR}
+HEIF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow-heif>=1.0.0:graphics/py-pillow-heif@${PY_FLAVOR}
 OPENCV_RUN_DEPENDS=	opencv>=0:graphics/opencv
-PILLOW_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=11.3.0<12.0.0:graphics/py-pillow@${PY_FLAVOR}
+PILLOW_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=11.3.0:graphics/py-pillow@${PY_FLAVOR}
 WAND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wand>=0.6<1.0:graphics/py-wand@${PY_FLAVOR}
 
 .include <bsd.port.mk>
