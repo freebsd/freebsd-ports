@@ -31,4 +31,15 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	PLUS
+PLUS_DESC=	Extra features
+
+PLUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}joblib>=1.2:devel/py-joblib@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}networkx>=2.7:math/py-networkx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}numba>=0.55:devel/py-numba@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pyarrow>=7.0:databases/py-pyarrow@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=2.0:databases/py-sqlalchemy20@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}xarray>=2022.3:devel/py-xarray@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}zstd>=0:archivers/py-zstd@${PY_FLAVOR}
+
 .include <bsd.port.mk>
