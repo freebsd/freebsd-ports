@@ -1,6 +1,5 @@
 PORTNAME=	libmodulemd
-DISTVERSION=	2.15.0
-PORTREVISION=	1
+DISTVERSION=	2.15.2
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/fedora-modularity/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	modulemd-${DISTVERSION}
@@ -27,5 +26,13 @@ SHEBANG_FILES=	modulemd/tests/test-import-headers.sh
 MESON_ARGS=	-Dwith_manpages="enabled" -Dwith_docs=false
 
 BINARY_ALIAS=	gcc=${CC} g++=${CXX}
+
+# tests as of 2.15.2:
+# Ok:                 115
+# Expected Fail:      0
+# Fail:               0
+# Unexpected Pass:    0
+# Skipped:            0
+# Timeout:            0
 
 .include <bsd.port.mk>
