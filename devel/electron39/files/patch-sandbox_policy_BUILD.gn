@@ -1,0 +1,38 @@
+--- sandbox/policy/BUILD.gn.orig	2025-10-21 20:19:54 UTC
++++ sandbox/policy/BUILD.gn
+@@ -47,7 +47,7 @@ component("policy") {
+       "//third_party/jni_zero",
+     ]
+   }
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "linux/bpf_audio_policy_linux.cc",
+       "linux/bpf_audio_policy_linux.h",
+@@ -117,6 +117,26 @@ component("policy") {
+       "//sandbox/linux:sandbox_services",
+       "//sandbox/linux:seccomp_bpf",
+       "//sandbox/linux:suid_sandbox_client",
++    ]
++  }
++  if (is_openbsd) {
++    sources += [
++      "openbsd/sandbox_openbsd.cc",
++      "openbsd/sandbox_openbsd.h",
++    ]
++    libs = [ "util" ]
++  }
++  if (is_freebsd) {
++    sources += [
++      "freebsd/sandbox_freebsd.cc",
++      "freebsd/sandbox_freebsd.h",
++    ]
++  }
++  if (is_bsd) {
++    deps += [
++      "//sandbox:sandbox_buildflags",
++      "//skia",
++      "//ui/gfx/x",
+     ]
+   }
+   if (is_chromeos) {

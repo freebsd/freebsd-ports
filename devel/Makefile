@@ -666,6 +666,7 @@
     SUBDIR += electron36
     SUBDIR += electron37
     SUBDIR += electron38
+    SUBDIR += electron39
     SUBDIR += elf
     SUBDIR += elf-dissector
     SUBDIR += elfcat

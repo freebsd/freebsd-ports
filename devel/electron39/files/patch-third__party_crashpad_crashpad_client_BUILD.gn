@@ -1,0 +1,16 @@
+--- third_party/crashpad/crashpad/client/BUILD.gn.orig	2025-06-30 07:04:30 UTC
++++ third_party/crashpad/crashpad/client/BUILD.gn
+@@ -148,6 +148,13 @@ static_library("common") {
+   if (crashpad_is_win) {
+     sources += [ "crash_report_database_win.cc" ]
+   }
++
++  if (crashpad_is_posix) {
++    sources += [
++      "crashpad_client_posix.cc",
++    ]
++  }
++
+   if (crashpad_is_linux || crashpad_is_android || crashpad_is_fuchsia) {
+     sources += [
+       "crash_report_database_generic.cc",

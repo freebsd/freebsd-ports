@@ -1,0 +1,33 @@
+--- content/browser/BUILD.gn.orig	2025-11-02 19:17:57 UTC
++++ content/browser/BUILD.gn
+@@ -2613,6 +2613,14 @@ source_set("browser") {
+     ]
+   }
+ 
++  if (is_bsd) {
++    sources += [
++      "file_system_access/file_path_watcher/file_path_watcher_bsd.cc",
++      "file_system_access/file_path_watcher/file_path_watcher_kqueue.cc",
++      "file_system_access/file_path_watcher/file_path_watcher_kqueue.h",
++    ]
++  }
++
+   if (is_linux || is_chromeos) {
+     sources -=
+         [ "file_system_access/file_path_watcher/file_path_watcher_stub.cc" ]
+@@ -2661,6 +2669,15 @@ source_set("browser") {
+   if (allow_oop_video_decoder) {
+     sources += [ "media/oop_video_decoder_factory.cc" ]
+     deps += [ "//media/mojo/mojom" ]
++  }
++
++  if (is_bsd) {
++    sources -= [
++      "file_system_access/file_path_watcher/file_path_watcher_inotify.cc",
++      "file_system_access/file_path_watcher/file_path_watcher_inotify.h",
++      "sandbox_ipc_linux.cc",
++      "sandbox_ipc_linux.h",
++    ]
+   }
+ 
+   if (is_chromeos) {

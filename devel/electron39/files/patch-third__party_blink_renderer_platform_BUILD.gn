@@ -1,0 +1,11 @@
+--- third_party/blink/renderer/platform/BUILD.gn.orig	2025-11-02 19:17:58 UTC
++++ third_party/blink/renderer/platform/BUILD.gn
+@@ -2081,7 +2081,7 @@ static_library("test_support") {
+   ]
+ 
+   # fuzzed_data_provider may not work with a custom toolchain.
+-  if (custom_toolchain == "" && is_clang) {
++  if ((custom_toolchain == "" && is_clang) && !is_bsd) {
+     sources += [
+       "testing/fuzzed_data_provider.cc",
+       "testing/fuzzed_data_provider.h",

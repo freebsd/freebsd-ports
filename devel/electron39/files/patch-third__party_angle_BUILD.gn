@@ -1,0 +1,29 @@
+--- third_party/angle/BUILD.gn.orig	2025-08-26 20:49:50 UTC
++++ third_party/angle/BUILD.gn
+@@ -367,7 +367,6 @@ config("extra_warnings") {
+       "-Wtautological-type-limit-compare",
+       "-Wundefined-reinterpret-cast",
+       "-Wunneeded-internal-declaration",
+-      "-Wunused-but-set-variable",
+       "-Wsuggest-destructor-override",
+       "-Wsuggest-override",
+ 
+@@ -544,7 +543,7 @@ template("angle_common_lib") {
+       all_dependent_configs = [ ":angle_disable_pool_alloc" ]
+     }
+ 
+-    if (is_linux || is_chromeos) {
++    if ((is_linux || is_chromeos) && !is_bsd) {
+       libs = [ "dl" ]
+     }
+ 
+@@ -707,6 +706,9 @@ angle_static_library("angle_gpu_info_util") {
+         "Xi",
+         "Xext",
+       ]
++      if (is_bsd) {
++        libs += [ "GL" ]
++      }
+     }
+ 
+     if (angle_use_wayland && angle_has_build) {
