@@ -1,5 +1,5 @@
 PORTNAME=	json-fortran
-DISTVERSION=	9.0.2
+DISTVERSION=	9.0.5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,5 +29,7 @@ TESTING_UNSAFE=	https://github.com/llvm/llvm-project/issues/161568
 .else
 PLIST_SUB+=	LIBSUFFIX=gnu
 .endif
+
+# tests as of 9.0.5: 100% tests passed, 0 tests failed out of 53
 
 .include <bsd.port.post.mk>

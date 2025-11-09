@@ -4,12 +4,12 @@ include/json_module.mod
 include/json_parameters.mod
 include/json_string_utilities.mod
 include/json_value_module.mod
-lib/cmake/jsonfortran-%%LIBSUFFIX%%-9.0.2/jsonfortran-%%LIBSUFFIX%%-config-version.cmake
-lib/cmake/jsonfortran-%%LIBSUFFIX%%-9.0.2/jsonfortran-%%LIBSUFFIX%%-config.cmake
-lib/cmake/jsonfortran-%%LIBSUFFIX%%-9.0.2/jsonfortran-%%LIBSUFFIX%%-targets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/jsonfortran-%%LIBSUFFIX%%-9.0.2/jsonfortran-%%LIBSUFFIX%%-targets.cmake
+lib/cmake/jsonfortran-%%LIBSUFFIX%%-9.0.5/jsonfortran-%%LIBSUFFIX%%-config-version.cmake
+lib/cmake/jsonfortran-%%LIBSUFFIX%%-9.0.5/jsonfortran-%%LIBSUFFIX%%-config.cmake
+lib/cmake/jsonfortran-%%LIBSUFFIX%%-9.0.5/jsonfortran-%%LIBSUFFIX%%-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/jsonfortran-%%LIBSUFFIX%%-9.0.5/jsonfortran-%%LIBSUFFIX%%-targets.cmake
 lib/libjsonfortran.a
 lib/libjsonfortran.so
 lib/libjsonfortran.so.9.0
-lib/libjsonfortran.so.9.0.2
+lib/libjsonfortran.so.9.0.5
 libdata/pkgconfig/json-fortran.pc
