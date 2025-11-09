@@ -1,5 +1,5 @@
 PORTNAME=	lupa
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	lang python
 MASTER_SITES=	PYPI \
 		https://github.com/scoder/lupa/releases/download/lupa-${PORTVERSION}/
