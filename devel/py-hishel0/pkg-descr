@@ -1,0 +1,18 @@
+Hishel is a library that implements HTTP Caching for HTTPX and HTTP Core
+libraries in accordance with RFC 9111, the most recent caching specification.
+
+Features:
+- Persistence: Responses are cached in the persistent memory for later use.
+- Compatibility: It is completely compatible with your existing transports or
+  connection pools, whether they are default, custom, or provided by third-party
+  libraries.
+- Easy to use: You continue to use httpx while also enabling web cache.
+- Smart: Attempts to clearly implement RFC 9111, understands Vary, Etag,
+  Last-Modified, Cache-Control, and Expires headers, and handles response
+  re-validation automatically.
+- Configurable: You have complete control over how the responses are stored and
+  serialized.
+- From the package:
+  - Built-in support for File system, Redis, SQLite, and AWS S3 backends.
+  - Built-in support for JSON, YAML, and pickle serializers.
+- Very fast: Your requests will be even faster if there are no IO operations.
