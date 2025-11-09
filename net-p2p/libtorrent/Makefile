@@ -1,5 +1,6 @@
 PORTNAME=	libtorrent
 DISTVERSION=	0.16.2
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v${DISTVERSION}/
 
@@ -18,7 +19,9 @@ USES=		compiler:c++17-lang cpe libtool localbase:ldflags pathfix \
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-debug
+CONFIGURE_ARGS=	--disable-debug \
+		--with-kqueue \
+		--without-epoll
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I ${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 
@@ -30,12 +33,5 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 TESTING_UNSAFE=	https://github.com/rakshasa/libtorrent/issues/292
-
-OPTIONS_DEFINE=		KQUEUE
-OPTIONS_DEFAULT=	KQUEUE
-
-KQUEUE_DESC=		Use kqueue(2) support
-KQUEUE_CONFIGURE_WITH=	kqueue
-KQUEUE_BROKEN_OFF=	rtorrent fails to build without kqueue(2) support, https://github.com/rakshasa/rtorrent/issues/1633
 
 .include <bsd.port.mk>
