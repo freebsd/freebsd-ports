@@ -2218,6 +2218,7 @@
     SUBDIR += rubygem-haml-rails-rails4
     SUBDIR += rubygem-haml5
     SUBDIR += rubygem-hamlit
+    SUBDIR += rubygem-hamlit-gitlab
     SUBDIR += rubygem-hamlit-rails
     SUBDIR += rubygem-hamlit-rails-rails5
     SUBDIR += rubygem-hamlit-rails-rails50
