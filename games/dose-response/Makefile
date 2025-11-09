@@ -11,6 +11,9 @@ WWW=		https://tryjumping.com/dose-response-roguelike/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+DEPRECATED=	fails to build with rust-1.91.0 and no maintainer for this port
+EXPIRATION_DATE=2025-11-31
+
 USES=		cargo gnome sdl
 USE_SDL=	sdl2
 USE_GITHUB=	yes
