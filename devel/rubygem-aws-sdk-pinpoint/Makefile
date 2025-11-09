@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-pinpoint
-PORTVERSION=	1.114.0
+PORTVERSION=	1.115.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
