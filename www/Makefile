@@ -1599,6 +1599,7 @@
     SUBDIR += py-dj52-django-taggit
     SUBDIR += py-dj52-django-tasks
     SUBDIR += py-dj52-django-timezone-field
+    SUBDIR += py-dj52-django-treebeard
     SUBDIR += py-dj52-djangorestframework
     SUBDIR += py-dj52-djangorestframework-guardian
     SUBDIR += py-dj52-drf-spectacular
