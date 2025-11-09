@@ -1,5 +1,5 @@
 PORTNAME=	nanocoder
-DISTVERSION=	1.15.1
+DISTVERSION=	1.16.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
