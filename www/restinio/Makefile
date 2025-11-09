@@ -1,6 +1,5 @@
 PORTNAME=	restinio
-DISTVERSION=	0.7.7
-PORTREVISION=	1
+DISTVERSION=	0.7.8
 CATEGORIES=	www devel
 MASTER_SITES=	https://github.com/Stiffstream/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-full
@@ -63,7 +62,6 @@ SAMPLES_CMAKE_BOOL=	RESTINIO_SAMPLE RESTINIO_INSTALL_SAMPLES
 SAMPLES_VARS_OFF=	NO_ARCH=yes
 SAMPLES_BUILD_DEPENDS=	json-dto>0:devel/json-dto
 
-# many tests fail due to port being in use, see https://github.com/Stiffstream/restinio/issues/223
-# 0.7.3: Tests fail to run, see https://github.com/Stiffstream/restinio/issues/230
+# tests as of 0.7.8: 78% tests passed, 143 tests failed out of 660, tests fail due to the port collition issue, see https://github.com/Stiffstream/restinio/issues/238
 
 .include <bsd.port.mk>
