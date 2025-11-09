@@ -1,6 +1,5 @@
 PORTNAME=	fwupd
-DISTVERSION=	2.0.16
-PORTREVISION=	4
+DISTVERSION=	2.0.17
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -56,19 +55,12 @@ TEST_MESON_TRUE=	tests
 
 SHEBANG_GLOB=	*.py
 
-MESON_ARGS+=	-Dpolkit=disabled \
+MESON_ARGS+=	-Dlibmnl=disabled \
+		-Dpolkit=disabled \
 		-Dsystemd=disabled \
 		-Dpassim=disabled \
 		-Dumockdev_tests=disabled \
 		-Dplugin_modem_manager=disabled \
 		-Dpython=${PYTHON_CMD}
-
-.include <bsd.port.options.mk>
-
-# FreeBSD 14.x needs extra libinotify dependency
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
-LIB_DEPENDS+=	libinotify.so:devel/libinotify
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch14-meson.build
-.endif
 
 .include <bsd.port.mk>
