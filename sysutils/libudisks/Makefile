@@ -1,5 +1,5 @@
 PORTNAME=	libudisks
-DISTVERSION=	2.10.2
+DISTVERSION=	2.11.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/storaged-project/udisks/releases/download/udisks-${DISTVERSION}/
 DISTNAME=	udisks-${DISTVERSION}
