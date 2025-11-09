@@ -26,12 +26,14 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/_arduino-cli
 %%DATADIR%%/completions/_argc
 %%DATADIR%%/completions/_argo
+%%DATADIR%%/completions/_asdf
 %%DATADIR%%/completions/_atlas
 %%DATADIR%%/completions/_atmos
 %%DATADIR%%/completions/_bao
 %%DATADIR%%/completions/_bashbot
 %%DATADIR%%/completions/_black
 %%DATADIR%%/completions/_blackd
+%%DATADIR%%/completions/_bombadil
 %%DATADIR%%/completions/_bosh
 %%DATADIR%%/completions/_buf
 %%DATADIR%%/completions/_caddy
@@ -71,6 +73,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/_depot
 %%DATADIR%%/completions/_devspace
 %%DATADIR%%/completions/_diesel
+%%DATADIR%%/completions/_diffoci
 %%DATADIR%%/completions/_dlv
 %%DATADIR%%/completions/_dmesg
 %%DATADIR%%/completions/_docker
@@ -95,10 +98,13 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/_gitconfig
 %%DATADIR%%/completions/_gitleaks
 %%DATADIR%%/completions/_gitsign
+%%DATADIR%%/completions/_glab
+%%DATADIR%%/completions/_glances
 %%DATADIR%%/completions/_glen
 %%DATADIR%%/completions/_glow
 %%DATADIR%%/completions/_go-licenses
 %%DATADIR%%/completions/_golangci-lint
+%%DATADIR%%/completions/_gomarklint
 %%DATADIR%%/completions/_gopass
 %%DATADIR%%/completions/_gopherjs
 %%DATADIR%%/completions/_goreleaser
@@ -164,6 +170,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/_limactl
 %%DATADIR%%/completions/_linkerd
 %%DATADIR%%/completions/_look
+%%DATADIR%%/completions/_mado
 %%DATADIR%%/completions/_mattermost
 %%DATADIR%%/completions/_mdbook
 %%DATADIR%%/completions/_melange
@@ -226,7 +233,9 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/_runuser
 %%DATADIR%%/completions/_rustic
 %%DATADIR%%/completions/_rustup
+%%DATADIR%%/completions/_secret-tool
 %%DATADIR%%/completions/_sentry-cli
+%%DATADIR%%/completions/_shtab
 %%DATADIR%%/completions/_sinker
 %%DATADIR%%/completions/_skaffold
 %%DATADIR%%/completions/_slackpkg
@@ -257,9 +266,15 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/_timoni
 %%DATADIR%%/completions/_tkn
 %%DATADIR%%/completions/_tkn-pac
+%%DATADIR%%/completions/_tldr
 %%DATADIR%%/completions/_todoist
 %%DATADIR%%/completions/_tofu
 %%DATADIR%%/completions/_tokio-console
+%%DATADIR%%/completions/_trash
+%%DATADIR%%/completions/_trash-empty
+%%DATADIR%%/completions/_trash-list
+%%DATADIR%%/completions/_trash-put
+%%DATADIR%%/completions/_trash-restore
 %%DATADIR%%/completions/_trivy
 %%DATADIR%%/completions/_udevadm
 %%DATADIR%%/completions/_umount
@@ -342,6 +357,8 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/bind
 %%DATADIR%%/completions/bk
 %%DATADIR%%/completions/bmake
+%%DATADIR%%/completions/brave
+%%DATADIR%%/completions/brave-browser
 %%DATADIR%%/completions/brctl
 %%DATADIR%%/completions/bsdtar
 %%DATADIR%%/completions/btdownloadcurses.py
@@ -381,6 +398,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/civclient
 %%DATADIR%%/completions/civserver
 %%DATADIR%%/completions/cksfv
+%%DATADIR%%/completions/cksum
 %%DATADIR%%/completions/cleanarch
 %%DATADIR%%/completions/clisp
 %%DATADIR%%/completions/clone_member
@@ -464,6 +482,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/fprintd-enroll
 %%DATADIR%%/completions/fprintd-list
 %%DATADIR%%/completions/fprintd-verify
+%%DATADIR%%/completions/free
 %%DATADIR%%/completions/freebsd-update
 %%DATADIR%%/completions/freeciv
 %%DATADIR%%/completions/freeciv-gtk2
@@ -471,6 +490,8 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/freeciv-sdl
 %%DATADIR%%/completions/freeciv-server
 %%DATADIR%%/completions/freeciv-xaw
+%%DATADIR%%/completions/fsnotifywait
+%%DATADIR%%/completions/fsnotifywatch
 %%DATADIR%%/completions/function
 %%DATADIR%%/completions/fusermount
 %%DATADIR%%/completions/g++
@@ -733,6 +754,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/newlist
 %%DATADIR%%/completions/newusers
 %%DATADIR%%/completions/ngrep
+%%DATADIR%%/completions/nload
 %%DATADIR%%/completions/nmap
 %%DATADIR%%/completions/nproc
 %%DATADIR%%/completions/nslookup
@@ -909,7 +931,6 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/screen
 %%DATADIR%%/completions/scrub
 %%DATADIR%%/completions/sdptool
-%%DATADIR%%/completions/secret-tool
 %%DATADIR%%/completions/set
 %%DATADIR%%/completions/setquota
 %%DATADIR%%/completions/sftp
@@ -967,6 +988,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/tightvncviewer
 %%DATADIR%%/completions/timeout
 %%DATADIR%%/completions/tipc
+%%DATADIR%%/completions/tmux
 %%DATADIR%%/completions/tox
 %%DATADIR%%/completions/tracepath
 %%DATADIR%%/completions/tracepath6
