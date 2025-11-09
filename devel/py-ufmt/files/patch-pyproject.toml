@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-10-31 06:20:26 UTC
++++ pyproject.toml
+@@ -20,7 +20,7 @@ dependencies = [
+ requires-python = ">= 3.10"
+ dependencies = [
+     "black>=20.8b0",
+-    "click>=8.2",
++    "click>=8.0",
+     "libcst>=0.4.0",
+     "moreorless>=0.4.0",
+     "tomlkit>=0.7.2",
