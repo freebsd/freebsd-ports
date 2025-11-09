@@ -13,6 +13,9 @@ WWW=		https://www.virtualbox.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Upstream EOL reaches on 2025-04-15, use emulators/virtualbox-ose${PKGNAMESUFFIX:S|0|2|} instead
+EXPIRATION_DATE=	2026-12-31
+
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	yasm:devel/yasm \
