@@ -63,6 +63,7 @@ lib/cairo-lang/corelib/src/ops.cairo
 lib/cairo-lang/corelib/src/ops/arith.cairo
 lib/cairo-lang/corelib/src/ops/deref.cairo
 lib/cairo-lang/corelib/src/ops/function.cairo
+lib/cairo-lang/corelib/src/ops/get.cairo
 lib/cairo-lang/corelib/src/ops/index.cairo
 lib/cairo-lang/corelib/src/ops/range.cairo
 lib/cairo-lang/corelib/src/option.cairo
@@ -128,7 +129,14 @@ lib/cairo-lang/corelib/src/test/language_features/for_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/glob_use_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/macro_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/match_test.cairo
+lib/cairo-lang/corelib/src/test/language_features/other_paths/a.cairo
+lib/cairo-lang/corelib/src/test/language_features/other_paths/b.cairo
+lib/cairo-lang/corelib/src/test/language_features/other_paths/c.cairo
+lib/cairo-lang/corelib/src/test/language_features/other_paths/define_c.cairo
+lib/cairo-lang/corelib/src/test/language_features/other_paths/inner/a.cairo
+lib/cairo-lang/corelib/src/test/language_features/other_paths/inner/b.cairo
 lib/cairo-lang/corelib/src/test/language_features/panics_test.cairo
+lib/cairo-lang/corelib/src/test/language_features/path_attr_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/trait_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/while_test.cairo
 lib/cairo-lang/corelib/src/test/let_else_test.cairo
