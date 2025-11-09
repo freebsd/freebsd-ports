@@ -1,7 +1,7 @@
 PORTNAME=	nwchem
 #DISTVERSIONPREFIX=	v
-DISTVERSION=	7.3.0
-DISTVERSIONSUFFIX=	-release.revision-e60d3d90-src.2025-10-24
+DISTVERSION=	7.3.1
+DISTVERSIONSUFFIX=	-release.revision-23c3b41b-src.2025-11-06
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/nwchemgit/nwchem/releases/download/v${DISTVERSION}-release/ \
 		https://www.chemie.uni-bonn.de/grimme/de/software/dft-d3/:dft3 \
