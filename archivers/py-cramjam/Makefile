@@ -23,6 +23,5 @@ USE_PYTHON=	autoplist concurrent pep517
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
-MAKE_ENV=	RUSTFLAGS="-L ${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
