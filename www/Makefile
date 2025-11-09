@@ -1597,6 +1597,7 @@
     SUBDIR += py-dj52-django-stubs-ext
     SUBDIR += py-dj52-django-tables2
     SUBDIR += py-dj52-django-taggit
+    SUBDIR += py-dj52-django-tasks
     SUBDIR += py-dj52-django-timezone-field
     SUBDIR += py-dj52-djangorestframework
     SUBDIR += py-dj52-djangorestframework-guardian

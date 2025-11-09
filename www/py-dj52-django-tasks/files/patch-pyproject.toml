@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-07-04 15:51:35 UTC
++++ pyproject.toml
+@@ -12,8 +12,7 @@ readme = "README.md"
+ ]
+ version = "0.8.1"
+ readme = "README.md"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = {file = "LICENSE"}
+ classifiers = [
+     "Development Status :: 3 - Alpha",
+     "Programming Language :: Python :: 3",
