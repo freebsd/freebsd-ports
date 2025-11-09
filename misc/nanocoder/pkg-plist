@@ -187,6 +187,10 @@ lib/node_modules/@nanocollective/nanocoder/dist/config/index.d.ts
 lib/node_modules/@nanocollective/nanocoder/dist/config/index.d.ts.map
 lib/node_modules/@nanocollective/nanocoder/dist/config/index.js
 lib/node_modules/@nanocollective/nanocoder/dist/config/index.js.map
+lib/node_modules/@nanocollective/nanocoder/dist/config/index.spec.d.ts
+lib/node_modules/@nanocollective/nanocoder/dist/config/index.spec.d.ts.map
+lib/node_modules/@nanocollective/nanocoder/dist/config/index.spec.js
+lib/node_modules/@nanocollective/nanocoder/dist/config/index.spec.js.map
 lib/node_modules/@nanocollective/nanocoder/dist/config/paths.d.ts
 lib/node_modules/@nanocollective/nanocoder/dist/config/paths.d.ts.map
 lib/node_modules/@nanocollective/nanocoder/dist/config/paths.js
