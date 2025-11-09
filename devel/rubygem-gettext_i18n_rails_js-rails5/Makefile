@@ -1,5 +1,5 @@
 PORTNAME=	gettext_i18n_rails_js
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
