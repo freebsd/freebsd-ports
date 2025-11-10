@@ -1572,6 +1572,7 @@
     SUBDIR += vtm
     SUBDIR += vttest
     SUBDIR += wait_on
+    SUBDIR += waitforssh
     SUBDIR += walk
     SUBDIR += watchfolder
     SUBDIR += watchman
