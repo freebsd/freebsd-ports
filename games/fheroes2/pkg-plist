@@ -6,6 +6,7 @@ share/applications/fheroes2.desktop
 %%PORTDOCS%%%%DOCSDIR%%/demo/download_demo_version.sh
 %%PORTDOCS%%%%DOCSDIR%%/homm2/extract_homm2_resources.sh
 %%DATADIR%%/files/data/resurrection.h2d
+%%DATADIR%%/maps/4_dimensions.fh2m
 %%DATADIR%%/maps/7_deserts_English.fh2m
 %%DATADIR%%/maps/7_deserts_French.fh2m
 %%DATADIR%%/maps/Good,_Bad,_Magne.fh2m
