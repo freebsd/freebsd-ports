@@ -1,8 +1,6 @@
-bin/%%BINPREFIX%%coreutils
 bin/%%BINPREFIX%%[
 bin/%%BINPREFIX%%arch
 bin/%%BINPREFIX%%b2sum
-bin/%%BINPREFIX%%b3sum
 bin/%%BINPREFIX%%base32
 bin/%%BINPREFIX%%base64
 bin/%%BINPREFIX%%basename
@@ -14,6 +12,7 @@ bin/%%BINPREFIX%%chown
 bin/%%BINPREFIX%%chroot
 bin/%%BINPREFIX%%cksum
 bin/%%BINPREFIX%%comm
+bin/%%BINPREFIX%%coreutils
 bin/%%BINPREFIX%%cp
 bin/%%BINPREFIX%%csplit
 bin/%%BINPREFIX%%cut
@@ -74,15 +73,8 @@ bin/%%BINPREFIX%%seq
 bin/%%BINPREFIX%%sha1sum
 bin/%%BINPREFIX%%sha224sum
 bin/%%BINPREFIX%%sha256sum
-bin/%%BINPREFIX%%sha3-224sum
-bin/%%BINPREFIX%%sha3-256sum
-bin/%%BINPREFIX%%sha3-384sum
-bin/%%BINPREFIX%%sha3-512sum
 bin/%%BINPREFIX%%sha384sum
-bin/%%BINPREFIX%%sha3sum
 bin/%%BINPREFIX%%sha512sum
-bin/%%BINPREFIX%%shake128sum
-bin/%%BINPREFIX%%shake256sum
 bin/%%BINPREFIX%%shred
 bin/%%BINPREFIX%%shuf
 bin/%%BINPREFIX%%sleep
