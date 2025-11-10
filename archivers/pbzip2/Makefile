@@ -16,16 +16,14 @@ PLIST_FILES=	bin/pbzip2 bin/pbunzip2 \
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500000
-USES+=	gmake
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,PRI[iu]MAX, & ,g' ${WRKSRC}/pbzip2.cpp \
 		${WRKSRC}/BZ2StreamScanner.cpp
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500053
 # Spell target sources to be understood by both BSD and GNU make(1)
 	@${REINPLACE_CMD} -e '/-O2/s,^,#, ; s,$$^,$$>&,' \
 		${WRKSRC}/Makefile
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
