@@ -1,7 +1,6 @@
 PORTNAME=	sing-box
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.9
-PORTREVISION=	1
+DISTVERSION=	1.12.2
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +11,7 @@ WWW=		https://sing-box.sagernet.org \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:1.24,modules
 
 GO_MODULE=	github.com/sagernet/sing-box
 GO_TARGET=	./cmd/sing-box
