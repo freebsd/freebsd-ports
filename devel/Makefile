@@ -1842,6 +1842,7 @@
     SUBDIR += opencl-clang
     SUBDIR += opencvs
     SUBDIR += opendht
+    SUBDIR += openfec
     SUBDIR += opengrok
     SUBDIR += openocd
     SUBDIR += openocd-devel
