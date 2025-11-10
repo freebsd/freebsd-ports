@@ -1,7 +1,6 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24
-PORTREVISION=	9
+DISTVERSION=	1.25.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -97,6 +96,6 @@ PORTEXAMPLES=		*
 post-install:
 	@${RM} -r ${STAGEDIR}${DOCSDIR}
 
-# tests as of 1.24: 99% tests passed, 1 tests failed out of 537, see https://github.com/openturns/openturns/issues/2862
+# tests as of 1.25.1: 99% tests passed, 1 tests failed out of 539, the test cppcheck_Normal_large was killed because it used too much memory
 
 .include <bsd.port.mk>
