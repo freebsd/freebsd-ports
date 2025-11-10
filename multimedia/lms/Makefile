@@ -1,7 +1,6 @@
 PORTNAME=	lms
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.68.1
-PORTREVISION=	2
+DISTVERSION=	3.71.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,6 +14,7 @@ BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libboost_program_options.so:devel/boost-libs \
 		libconfig++.so:devel/libconfig \
+		libpugixml.so:textproc/pugixml \
 		libtag.so:audio/taglib \
 		libwthttp.so:www/wt \
 		libxxhash.so:devel/xxhash
