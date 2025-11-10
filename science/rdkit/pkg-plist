@@ -1200,6 +1200,7 @@ lib/libRDKitmaeparser.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%DATADIR%%/Scripts/create_deb_packages.sh
 %%PYTHON%%%%DATADIR%%/Scripts/gen_rdkit_stubs/__init__.py
 %%PYTHON%%%%DATADIR%%/Scripts/gen_rdkit_stubs/__main__.py
+%%PYTHON%%%%DATADIR%%/Scripts/gen_rdkit_stubs/patch/rdkit/Chem/inchi.pyi.diff
 %%PYTHON%%%%DATADIR%%/Scripts/gen_rdkit_stubs/worker.py
 %%PYTHON%%%%DATADIR%%/Scripts/patch_rdkit_docstrings/__init__.py
 %%PYTHON%%%%DATADIR%%/Scripts/patch_rdkit_docstrings/__main__.py

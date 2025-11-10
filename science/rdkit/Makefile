@@ -1,6 +1,6 @@
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	2025_09_1
+DISTVERSION=	2025_09_2
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/schrodinger/maeparser/archive/:maeparser \
 		https://github.com/schrodinger/coordgenlibs/archive/:coordgen \
@@ -41,7 +41,7 @@ GH_TUPLE+=	ncbi:pubchem-align3d:daefab3:align3d/External/pubchem_shape/pubchem-a
 
 MAEPARSER_VERSION=	1.3.3
 COORDGEN_VERSION=	3.0.2
-CHEMDRAW_VERSION=	1.0.10
+CHEMDRAW_VERSION=	1.0.11
 RAPIDJSON_VERSION=	1.1.0
 
 CMAKE_ON=	RDK_BUILD_CAIRO_SUPPORT
@@ -121,10 +121,14 @@ pre-build:
 		-e 's|const SizeType length;|SizeType length;|g' \
 		${WRKSRC}/External/rapidjson/rapidjson-1.1.0/include/rapidjson/document.h
 
+post-install:
+	@${RM} -f ${STAGEDIR}${PREFIX}/lib/libexpat.a
+
 post-install-PGSQL-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/rdkit.so
 
 # many tests fail, see https://github.com/rdkit/rdkit/issues/7779
 # tests as of 2025_09_1: 65% tests passed, 24 tests failed out of 68
+# tests as of 2025_09_2: 63% tests passed, 26 tests failed out of 70
 
 .include <bsd.port.mk>
