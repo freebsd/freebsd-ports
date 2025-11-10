@@ -1,6 +1,6 @@
 PORTNAME=	clickhouse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	22.9.1.2603
+DISTVERSION=	23.5.2.7
 DISTVERSIONSUFFIX=-stable
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
@@ -15,7 +15,8 @@ LICENSE=	APACHE20
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	only supported on aarch64 and amd64
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash \
+	nasm:devel/nasm
 RUN_DEPENDS=	bash:shells/bash
 .if defined(MAINTAINER_MODE)
 RUN_DEPENDS+=	jq:textproc/jq
@@ -47,8 +48,8 @@ CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=20 \
 		-DENABLE_THINLTO=OFF \
 		-DENABLE_PARQUET=OFF \
 		-DENABLE_UTILS=ON \
-		-DNO_WERROR=1
-CMAKE_OFF=	ENABLE_CCACHE
+		-DNO_WERROR=1 \
+		-DCOMPILER_CACHE=disabled
 .if defined(WITH_DEBUG)
 CMAKE_BUILD_TYPE=Debug
 .else
@@ -87,7 +88,6 @@ SOVERSION=	${PORTVERSION}
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|;s|/etc/clickhouse-server|${PREFIX}/etc/clickhouse-server|' ${WRKSRC}/programs/server/config.xml
 	@${REINPLACE_CMD} -e 's|%%OSREL%%|${OSREL:R}|' ${WRKSRC}/cmake/freebsd/toolchain-x86_64.cmake
-	@${REINPLACE_CMD} -e 's|sys/statfs.h|sys/mount.h|' ${WRKSRC}/utils/self-extracting-executable/decompressor.cpp
 	cd ${WRKSRC}/contrib/openldap-cmake && ${LN} -s freebsd_x86_64 freebsd_aarch64
 
 do-install-TEST-on:
