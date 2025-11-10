@@ -1,5 +1,5 @@
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.17.3
+PORTVERSION=	4.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -20,7 +20,7 @@ USES=		cmake:noninja compiler:c++20-lang desktop-file-utils gl gmake \
 		sqlite ssl
 USE_CXXSTD=	c++20
 USE_GL=		opengl
-USE_KDE=	archive
+USE_KDE=	archive ecm:build
 USE_LDCONFIG=	yes
 USE_QT=		5compat base declarative positioning svg websockets
 CMAKE_ARGS=	-DBUILD_UPDATER:BOOL=OFF \
