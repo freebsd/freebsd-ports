@@ -919,6 +919,7 @@ share/man/man7/gitworkflows.7.gz
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.50.1.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.51.0.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.51.1.adoc
+%%DOCS%%%%DOCSDIR%%/RelNotes/2.51.2.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.5.0.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.5.1.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.5.2.adoc
