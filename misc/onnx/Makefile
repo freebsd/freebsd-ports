@@ -1,7 +1,6 @@
 PORTNAME=	onnx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.0
-PORTREVISION=	3
+DISTVERSION=	1.19.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +20,7 @@ USES=		cmake:testing compiler:c++17-lang python:build
 USE_GITHUB=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	BUILD_ONNX_PYTHON
+CMAKE_OFF=	ONNX_BUILD_PYTHON
 CMAKE_TESTING_ON=	ONNX_BUILD_TESTS
 CMAKE_TESTING_TARGET=
 
@@ -33,6 +32,8 @@ post-install:
 post-test:
 	cd ${BUILD_WRKSRC} && ./onnx_gtests
 
-# tests as of 1.17.0: 84 tests from 11 test suites ran. (160 ms total)
+# tests as of 1.19.1: (NOTE: tests require static build, so the CMAKE_ON=BUILD_SHARED_LIBS needs to be commented out)
+# [==========] 95 tests from 13 test suites ran. (18 ms total)
+# [  PASSED  ] 95 tests.
 
 .include <bsd.port.mk>
