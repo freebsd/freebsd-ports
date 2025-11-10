@@ -1,5 +1,5 @@
 PORTNAME=	solr
-PORTVERSION=	2.7.0
+PORTVERSION=	2.8.1
 CATEGORIES=	www
 
 MAINTAINER=	gaod@hychen.org
@@ -13,7 +13,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gnome php:build,pecl pkgconfig
 USE_GNOME=	libxml2
-IGNORE_WITH_PHP=	84 85
 
 CONFIGURE_ARGS=	LIBXML_CFLAGS=-I${LOCALBASE}/include/libxml2 \
 		LIBXML_LIBS=-L${LOCALBASE}/include/libxml2
