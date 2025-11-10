@@ -37,7 +37,7 @@ post-patch:
 
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/alex4
-	${INSTALL_DATA} ${_DISTDIR}${PORTNAME}.png \
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
