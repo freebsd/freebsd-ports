@@ -33,6 +33,7 @@
 %%DATADIR%%/language/phpmailer.lang-ja.php
 %%DATADIR%%/language/phpmailer.lang-ka.php
 %%DATADIR%%/language/phpmailer.lang-ko.php
+%%DATADIR%%/language/phpmailer.lang-ku.php
 %%DATADIR%%/language/phpmailer.lang-lt.php
 %%DATADIR%%/language/phpmailer.lang-lv.php
 %%DATADIR%%/language/phpmailer.lang-mg.php
@@ -54,6 +55,7 @@
 %%DATADIR%%/language/phpmailer.lang-tl.php
 %%DATADIR%%/language/phpmailer.lang-tr.php
 %%DATADIR%%/language/phpmailer.lang-uk.php
+%%DATADIR%%/language/phpmailer.lang-ur.php
 %%DATADIR%%/language/phpmailer.lang-vi.php
 %%DATADIR%%/language/phpmailer.lang-zh.php
 %%DATADIR%%/language/phpmailer.lang-zh_cn.php
