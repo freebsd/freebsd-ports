@@ -478,6 +478,7 @@
     SUBDIR += phplist
     SUBDIR += phpmailer
     SUBDIR += phpmailer6
+    SUBDIR += phpmailer7
     SUBDIR += pine-pgp-filters
     SUBDIR += pizauth
     SUBDIR += pm-lib
