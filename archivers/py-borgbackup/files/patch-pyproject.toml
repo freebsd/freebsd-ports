@@ -1,0 +1,31 @@
+This file shall be removed once we install a new enough setuptools as our default version.
+
+--- pyproject.toml.orig	2025-10-31 18:16:12 UTC
++++ pyproject.toml
+@@ -12,6 +12,7 @@ classifiers = [
+     "Development Status :: 4 - Beta",
+     "Environment :: Console",
+     "Intended Audience :: System Administrators",
++    "License :: OSI Approved :: BSD License",
+     "Operating System :: POSIX :: BSD :: FreeBSD",
+     "Operating System :: POSIX :: BSD :: OpenBSD",
+     "Operating System :: POSIX :: BSD :: NetBSD",
+@@ -28,8 +29,7 @@ classifiers = [
+     "Topic :: Security :: Cryptography",
+     "Topic :: System :: Archiving :: Backup",
+ ]
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE", "AUTHORS"]
++license = {text="BSD"}
+ dependencies = [
+     # We are rather picky about msgpack versions, because a good working msgpack is
+     # very important for Borg, see: https://github.com/borgbackup/borg/issues/3753
+@@ -73,7 +73,7 @@ where = ["src"]
+ "*" = ["*.c", "*.h", "*.pyx"]
+ 
+ [build-system]
+-requires = ["setuptools>=78.1.1", "setuptools_scm>=8", "wheel", "pkgconfig", "Cython>=3.0.3"]
++requires = ["setuptools>=64", "setuptools_scm>=8", "wheel", "pkgconfig", "Cython>=3.0.3"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools_scm]

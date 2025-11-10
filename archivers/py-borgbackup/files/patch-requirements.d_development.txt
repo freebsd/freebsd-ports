@@ -1,0 +1,10 @@
+This file shall be removed once we install a new enough setuptools as our default version.
+
+--- requirements.d/development.txt.orig	2025-10-31 18:16:12 UTC
++++ requirements.d/development.txt
+@@ -1,4 +1,4 @@
+-setuptools>=78.1.1
++setuptools>=64
+ setuptools_scm>=8
+ pip
+ virtualenv
