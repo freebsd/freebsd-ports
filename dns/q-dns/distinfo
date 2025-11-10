@@ -1,5 +1,5 @@
-TIMESTAMP = 1762711425
-SHA256 (go/dns_q-dns/q-dns-v0.19.10/v0.19.10.mod) = 3eeaac333435f551daffb3157eba500afe2b586e0f1b7704dd68e6ac73a961b8
-SIZE (go/dns_q-dns/q-dns-v0.19.10/v0.19.10.mod) = 2313
-SHA256 (go/dns_q-dns/q-dns-v0.19.10/v0.19.10.zip) = ef8e885f6bae1717f7a8ab7b868f14e245d33da43d718d5dcbc47245a31e40f0
-SIZE (go/dns_q-dns/q-dns-v0.19.10/v0.19.10.zip) = 407111
+TIMESTAMP = 1762736435
+SHA256 (go/dns_q-dns/q-dns-v0.19.11/v0.19.11.mod) = 3eeaac333435f551daffb3157eba500afe2b586e0f1b7704dd68e6ac73a961b8
+SIZE (go/dns_q-dns/q-dns-v0.19.11/v0.19.11.mod) = 2313
+SHA256 (go/dns_q-dns/q-dns-v0.19.11/v0.19.11.zip) = c2eae57e8f231949bb69a1719feca4be1eb0f8f3afce202bdf1d6c00d78cc9c2
+SIZE (go/dns_q-dns/q-dns-v0.19.11/v0.19.11.zip) = 407606
