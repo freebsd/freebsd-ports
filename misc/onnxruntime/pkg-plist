@@ -4,6 +4,8 @@ include/onnxruntime/cpu_provider_factory.h
 include/onnxruntime/onnxruntime_c_api.h
 include/onnxruntime/onnxruntime_cxx_api.h
 include/onnxruntime/onnxruntime_cxx_inline.h
+include/onnxruntime/onnxruntime_ep_c_api.h
+include/onnxruntime/onnxruntime_ep_device_ep_metadata_keys.h
 include/onnxruntime/onnxruntime_float16.h
 include/onnxruntime/onnxruntime_lite_custom_op.h
 include/onnxruntime/onnxruntime_run_options_config_keys.h
@@ -15,6 +17,6 @@ lib/cmake/onnxruntime/onnxruntimeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/onnxruntime/onnxruntimeTargets.cmake
 lib/libonnxruntime.so
 lib/libonnxruntime.so.1
-lib/libonnxruntime.so.1.21.1
+lib/libonnxruntime.so.1.23.2
 lib/libonnxruntime_providers_shared.so
 libdata/pkgconfig/libonnxruntime.pc

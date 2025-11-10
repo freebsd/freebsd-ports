@@ -3,8 +3,8 @@ MASTER_SITES=	\
 		https://github.com/apple/coremltools/archive/refs/tags/:coremltools \
 		https://github.com/jarro2783/cxxopts/archive/:cxxopts \
 		https://github.com/HowardHinnant/date/archive/refs/tags/:date \
-		https://github.com/dmlc/dlpack/archive/refs/tags/:dlpack \
-		https://gitlab.com/libeigen/eigen/-/archive/1d8b82b0740839c0de7f1242a3585e3390ff5f33/:eigen \
+		https://github.com/dmlc/dlpack/archive/:dlpack \
+		https://github.com/eigen-mirror/eigen/archive/1d8b82b0740839c0de7f1242a3585e3390ff5f33/:eigen \
 		https://github.com/google/flatbuffers/archive/refs/tags/:flatbuffers \
 		https://github.com/Maratyszcza/FP16/archive/:fp16 \
 		https://github.com/Maratyszcza/FXdiv/archive/:fxdiv \
@@ -33,10 +33,9 @@ MASTER_SITES=	\
 		https://github.com/dcleblanc/SafeInt/archive/refs/tags/:safeint \
 		https://github.com/tensorflow/tensorboard/archive/:tensorboard \
 		https://github.com/NVIDIA/cutlass/archive/refs/tags/:cutlass \
-		https://github.com/protocolbuffers/utf8_range/archive/:utf8_range \
 		https://github.com/microsoft/onnxruntime-extensions/archive/:extensions \
-		https://github.com/ROCmSoftwarePlatform/composable_kernel/archive/:composable_kernel \
 		https://github.com/microsoft/DirectX-Headers/archive/refs/tags/:directx_headers \
 		https://github.com/NVIDIA/cudnn-frontend/archive/refs/tags/:cudnn_frontend \
 		https://github.com/google/dawn/archive/:dawn \
-		https://gitlab.arm.com/kleidi/kleidiai/-/archive/d15722976120710080ca098fe8ddabf4556cb40f/:kleidiai \
+		https://github.com/ARM-software/kleidiai/archive/refs/tags/:kleidiai \
+		https://github.com/svaarala/duktape/releases/download/v2.7.0/:duktape \

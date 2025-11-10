@@ -1,7 +1,6 @@
 PORTNAME=	onnxruntime
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.21.1
-PORTREVISION=	1
+DISTVERSION=	1.23.2
 CATEGORIES=	misc # machine-learning
 DIST_SUBDIR=	${PORTNAME}
 
@@ -20,6 +19,7 @@ BROKEN_i386=	compilation fails: error: requested alignment is less than minimum 
 BUILD_DEPENDS=	gpatch:devel/patch
 
 USES=		cmake:testing compiler:c++11-lang python:build
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
@@ -36,12 +36,13 @@ CMAKE_TESTING_ON=	onnxruntime_BUILD_UNIT_TESTS
 
 CXXFLAGS+=	-Wno-array-bounds # workaround for https://github.com/microsoft/onnxruntime/issues/23410
 CXXFLAGS+=	-I${WRKSRC}/include/onnxruntime/core/common/logging # otherwise logging.h isn't found
+CXXFLAGS+=	-frtti # fixes error: onnxruntime/test/contrib_ops/gather_block_quantized_op_test.cc:85:77: error: use of typeid requires -frtti
 
 BINARY_ALIAS=	patch=gpatch
 
 DEPS_FILE=	${WRKSRC}/cmake/deps.txt
 
-xCONFLICTS_BUILD=	abseil benchmark nsync googletest dlpack flatbuffers gsl mimalloc \
+CONFLICTS_BUILD=	abseil benchmark nsync googletest dlpack flatbuffers gsl mimalloc \
 			nlohmann-json onnx protobuf psimd pthreadpool pybind11 re2
 
 dev-update-deps-in-makefiles: extract # this should be run when the port is updated

@@ -1,23 +1,23 @@
 DISTFILES=	\
-		20240722.0.zip:abseil_cpp \
+		20250512.0.zip:abseil_cpp \
 		7.1.zip:coremltools \
 		3c73d91c0b04e2b59462f0a741be8c07024c1bc0.zip:cxxopts \
 		v3.0.1.zip:date \
-		v0.6.zip:dlpack \
+		5c210da409e7f1e51ddf445134a4376fdbd70d7d.zip:dlpack \
 		eigen-1d8b82b0740839c0de7f1242a3585e3390ff5f33.zip:eigen \
 		v23.5.26.zip:flatbuffers \
 		0a92994d729ff76a58f692d3028ca1b64b145d91.zip:fp16 \
 		63058eff77e11aa15bf531df5dd34395ec3017c8.zip:fxdiv \
 		v1.8.5.zip:google_benchmark \
-		v1.15.0.zip:googletest \
+		v1.17.0.zip:googletest \
 		fe98e0b93565382648129271381c14d6205255e3.zip:googlexnnpack \
 		v3.11.3.zip:json \
 		v4.0.0.zip:microsoft_gsl \
 		v1.0.230629.1.zip:microsoft_wil \
 		v2.1.1.zip:mimalloc \
 		boost-1.82.0.zip:mp11 \
-		v1.17.0.zip:onnx \
-		c5ca8912f30e9ad630a0ef565e3d5f4bd5e91563.zip:onnx_tensorrt \
+		v1.18.0.zip:onnx \
+		d5dce67db7c2e64b07e055571f5ec06f7f254de2.zip:onnx_tensorrt \
 		v21.12.zip:protobuf \
 		protoc-21.12-win64.zip:protoc_win64 \
 		protoc-21.12-win32.zip:protoc_win32 \
@@ -32,11 +32,10 @@ DISTFILES=	\
 		2024-07-02.zip:re2 \
 		3.0.28.zip:safeint \
 		373eb09e4c5d2b3cc2493f0949dc4be6b6a45e81.zip:tensorboard \
-		v3.5.1.zip:cutlass \
-		72c943dea2b9240cd09efde15191e144bc7c7d38.zip:utf8_range \
+		v3.9.2.zip:cutlass \
 		c24b7bab0c12f53da76d0c31b03b9f0f8ec8f3b4.zip:extensions \
-		204da9c522cebec5220bba52cd3542ebcaf99e7a.zip:composable_kernel \
 		v1.613.1.zip:directx_headers \
-		v1.7.0.zip:cudnn_frontend \
-		40a9fa79f76e6c76cca9e2fa69ea07f202f1d2e6.zip:dawn \
-		kleidiai-d15722976120710080ca098fe8ddabf4556cb40f.zip:kleidiai \
+		v1.12.0.zip:cudnn_frontend \
+		9733be39e18186961d503e064874afe3e9ceb8d1.zip:dawn \
+		v1.9.0.tar.gz:kleidiai \
+		duktape-2.7.0.tar.xz:duktape \
