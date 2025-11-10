@@ -26,6 +26,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/maps.d/surbl-whitelist.inc
 %%ETCDIR%%/metrics.conf
 %%ETCDIR%%/modules.conf
+%%ETCDIR%%/modules.d/aliases.conf
 %%ETCDIR%%/modules.d/antivirus.conf
 %%ETCDIR%%/modules.d/arc.conf
 %%ETCDIR%%/modules.d/asn.conf
@@ -164,7 +165,9 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/global_functions.lua
 %%DATADIR%%/lualib/llm_common.lua
 %%DATADIR%%/lualib/llm_context.lua
+%%DATADIR%%/lualib/llm_search_context.lua
 %%DATADIR%%/lualib/lpegre.lua
+%%DATADIR%%/lualib/lua_aliases.lua
 %%DATADIR%%/lualib/lua_auth_results.lua
 %%DATADIR%%/lualib/lua_aws.lua
 %%DATADIR%%/lualib/lua_bayes_learn.lua
@@ -185,6 +188,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_ffi/linalg.lua
 %%DATADIR%%/lualib/lua_ffi/spf.lua
 %%DATADIR%%/lualib/lua_fuzzy.lua
+%%DATADIR%%/lualib/lua_fuzzy_html.lua
 %%DATADIR%%/lualib/lua_lexer.lua
 %%DATADIR%%/lualib/lua_magic/heuristics.lua
 %%DATADIR%%/lualib/lua_magic/init.lua
@@ -273,6 +277,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/rspamadm/template.lua
 %%DATADIR%%/lualib/rspamadm/vault.lua
 %%DATADIR%%/lualib/tableshape.lua
+%%DATADIR%%/plugins/aliases.lua
 %%DATADIR%%/plugins/antivirus.lua
 %%DATADIR%%/plugins/arc.lua
 %%DATADIR%%/plugins/asn.lua
@@ -335,6 +340,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/rules/controller/neural.lua
 %%DATADIR%%/rules/controller/selectors.lua
 %%DATADIR%%/rules/forwarding.lua
+%%DATADIR%%/rules/fuzzy_html_phishing.lua
 %%DATADIR%%/rules/headers_checks.lua
 %%DATADIR%%/rules/html.lua
 %%DATADIR%%/rules/mid.lua
@@ -350,12 +356,11 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/www/README.md
 %%DATADIR%%/www/apple-touch-icon.png
 %%DATADIR%%/www/browserconfig.xml
-%%DATADIR%%/www/css/FooTable.Glyphicons.css
+%%DATADIR%%/www/css/FooTable.FontAwesome.css
 %%DATADIR%%/www/css/bootstrap.min.css
 %%DATADIR%%/www/css/codejar-linenumbers.css
 %%DATADIR%%/www/css/d3evolution.css
 %%DATADIR%%/www/css/d3pie.css
-%%DATADIR%%/www/css/font-glyphicons.css
 %%DATADIR%%/www/css/footable.standalone.min.css
 %%DATADIR%%/www/css/nprogress.css
 %%DATADIR%%/www/css/prism.css
@@ -364,16 +369,15 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/www/favicon-16x16.png
 %%DATADIR%%/www/favicon-32x32.png
 %%DATADIR%%/www/favicon.ico
-%%DATADIR%%/www/fonts/glyphicons-halflings-regular.ttf
-%%DATADIR%%/www/fonts/glyphicons-halflings-regular.woff
-%%DATADIR%%/www/fonts/glyphicons-halflings-regular.woff2
 %%DATADIR%%/www/img/asc.png
 %%DATADIR%%/www/img/desc.png
 %%DATADIR%%/www/img/drop-area.svg
 %%DATADIR%%/www/img/rspamd_logo_navbar.png
+%%DATADIR%%/www/img/rspamd_logo_navbar_dark.png
 %%DATADIR%%/www/index.html
 %%DATADIR%%/www/js/app/common.js
 %%DATADIR%%/www/js/app/config.js
+%%DATADIR%%/www/js/app/footable-fontawesome.js
 %%DATADIR%%/www/js/app/graph.js
 %%DATADIR%%/www/js/app/history.js
 %%DATADIR%%/www/js/app/libft.js
