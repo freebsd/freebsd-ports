@@ -1,6 +1,6 @@
 PORTNAME=	vvdec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
+DISTVERSION=	3.0.0
 CATEGORIES=	multimedia python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,12 +20,15 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 		VVDEC_INSTALL_VVDECAPP
 CMAKE_OFF=	FREEBSD_VVDEC_ENABLE_X86_SIMD \
 		VVDEC_ENABLE_WARNINGS_AS_WERROR
-CMAKE_TESTING_TARGET=	test enable-bitstream-download=1 # tests fail to download bitstreams, see https://github.com/fraunhoferhhi/vvdec/issues/125
+CMAKE_TESTING_ON=	BUILD_TESTING VVDEC_ENABLE_BITSTREAM_DOWNLOAD
+CMAKE_TESTING_TARGET=	test
 
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == riscv64
 CMAKE_ARGS+=	-DVVDEC_ENABLE_LINK_TIME_OPT:BOOL=OFF
 .endif
+
+# tests as of 3.0.0: 100% tests passed, 0 tests failed out of 239
 
 .include <bsd.port.mk>
