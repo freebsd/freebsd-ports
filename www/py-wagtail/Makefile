@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}dj52-django-taggit>=5.0<7:www/py-dj52-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-tasks>=0.8<0.10:www/py-dj52-django-tasks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-treebeard>=4.5.1<5.0:www/py-dj52-django-treebeard@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-djangorestframework>=3.15.1,1<4.0,1:www/py-dj52-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-djangorestframework>=3.15.1<4.0:www/py-dj52-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}draftjs-exporter>=2.1.5<6.0:www/py-draftjs-exporter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-laces>=0.1<0.2:www/py-dj52-laces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}modelsearch>=1.1<1.2:www/py-modelsearch@${PY_FLAVOR} \
