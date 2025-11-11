@@ -1,13 +1,13 @@
 PORTNAME=	qdrant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.1
-PORTREVISION=	3
+DISTVERSION=	1.15.5
 PORTEPOCH=	1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Vector search engine and database for the next gen AI applications
-WWW=		https://qdrant.tech
+WWW=		https://qdrant.tech \
+		https://github.com/qdrant/qdrant
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
