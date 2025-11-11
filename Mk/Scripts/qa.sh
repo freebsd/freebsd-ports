@@ -1043,10 +1043,44 @@ prefixman() {
 	return 0
 }
 
+pythonpackagedir() {
+	# Detects Python packages installing top-level directories like docs/, tests/,
+	# etc. into site-packages, which can cause conflicts between packages.
+
+	# Only check Python ports
+	[ -z "${USESPYTHON}" ] && return 0
+
+	# Only check if site-packages exists
+	[ -z "${PYTHONPREFIX_SITELIBDIR}" ] && return 0
+	[ ! -d "${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}" ] && return 0
+
+	# List of directories that should not be installed in site-packages.
+	# This is a subset of setuptools.discovery.FlatLayoutPackageFinder.DEFAULT_EXCLUDE,
+	# focusing on directories commonly shipped by mistake that cause file conflicts.
+	local problematic_dirs="docs doc tests test examples benchmarks scripts tools util utils htmlcov tasks ci"
+	local rc=0
+
+	for dir in ${problematic_dirs}; do
+		if [ -d "${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${dir}" ]; then
+			# Check if it's actually a top-level directory and not part of a package
+			# (e.g., mypackage/tests is OK, but tests/ at top level is not)
+			err "Python package installs top-level '${dir}/' directory in site-packages"
+			err "  Location: ${PYTHONPREFIX_SITELIBDIR#${PREFIX}/}/${dir}"
+			err "This causes file conflicts with other packages. Exclude it via pyproject.toml:"
+			err "  [tool.setuptools.packages.find]"
+			err "  exclude = [\"${dir}\", \"${dir}.*\"]"
+			err "See: https://setuptools.pypa.io/en/latest/userguide/package_discovery.html"
+			rc=1
+		fi
+	done
+
+	return ${rc}
+}
+
 checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo"
 checks="$checks suidfiles libtool libperl prefixvar baselibs terminfo"
 checks="$checks proxydeps sonames perlcore no_arch gemdeps gemfiledeps flavors"
-checks="$checks license depends_blacklist pkgmessage reinplace prefixman"
+checks="$checks license depends_blacklist pkgmessage reinplace prefixman pythonpackagedir"
 
 ret=0
 cd ${STAGEDIR} || exit 1
