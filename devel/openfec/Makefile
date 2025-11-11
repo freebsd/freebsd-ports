@@ -1,6 +1,7 @@
 PORTNAME=	openfec
-PORTVERSION=	1.4.2.12
-DISTVERSIONPREFIX=v
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.4.2.12
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	feld@FreeBSD.org
@@ -22,16 +23,16 @@ LICENSE_NAME_LDPC=	Radford Neal's LDPC simulator licence
 LICENSE_FILE_LDPC=	${FILESDIR}/COPYRIGHT-LDPC
 LICENSE_PERMS_LDPC=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libuv.so:devel/libuv \
-		libunwind.so:devel/libunwind
-
-USES=	cmake tar:tgz
-
+USES=		cmake pathfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	roc-streaming
 
-CMAKE_OFF+=	DEBUG:STRING
+.if defined(WITH_DEBUG)
+CFLAGS+=	-DOF_DEBUG
+.endif
+
+TEST_TARGET=	test
 
 .include <bsd.port.mk>
