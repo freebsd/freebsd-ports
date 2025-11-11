@@ -1,6 +1,6 @@
 PORTNAME=	uv
 DISTVERSION=	0.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,6 +40,12 @@ PROGS=		uv \
 PLIST_FILES=	${PROGS:S/^/bin\//}
 
 PORTSCOUT=	limit:.*\..*$$ # prevent tags like perma-39
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc/uv|${PREFIX}/etc/uv|g' \
+		-e 's|/etc/xdg|${PREFIX}/etc/xdg|g' \
+		${WRKSRC}/crates/uv-dirs/src/lib.rs \
+		${WRKSRC}/crates/uv-settings/src/settings.rs
 
 do-install:
 # workaround for error: found a virtual manifest at `xx` instead of a package manifest
