@@ -20,6 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=0:devel/py-hypothesis@${PY_FLAV
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
+NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV} \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
