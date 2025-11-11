@@ -1,5 +1,6 @@
 PORTNAME=	webauthn
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>=1.5.1:devel/py-asn1crypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cbor2>=5.6.5:devel/py-cbor2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openssl>=25.0.0,1:security/py-openssl@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyopenssl>=25.0.0,1:security/py-pyopenssl@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent cryptography pep517 unittest

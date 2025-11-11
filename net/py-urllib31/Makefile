@@ -1,5 +1,6 @@
 PORTNAME=	urllib3
 PORTVERSION=	1.26.20
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	PYPI \
 		https://github.com/urllib3/urllib3/releases/download/${PORTVERSION}/
@@ -44,7 +45,7 @@ BROTLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.9:archivers/py-brotli@${P
 SOCKS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysocks>=1.5.6<2.0:net/py-pysocks@${PY_FLAVOR}
 SSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}idna>=2.0.0:dns/py-idna@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}openssl>=0.14:security/py-openssl@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}pyopenssl>=0.14:security/py-pyopenssl@${PY_FLAVOR}
 SSL_USE=		PYTHON=cryptography
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	twisted
 PORTVERSION=	24.7.0
+PORTREVISION=	1
 CATEGORIES=	devel net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -46,7 +47,7 @@ HTTP2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h2>=3.0<5.0:www/py-h2@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}priority1>=1.1.0<2.0:www/py-priority1@${PY_FLAVOR}
 SERIAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyserial>=3.0:comms/py-pyserial@${PY_FLAVOR}
 TLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}idna>=2.4:dns/py-idna@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}openssl>=21.0.0,1:security/py-openssl@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pyopenssl>=21.0.0,1:security/py-pyopenssl@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}service-identity>=18.1.0:security/py-service-identity@${PY_FLAVOR}
 
 # We need twisted.trial in PYTHONPATH

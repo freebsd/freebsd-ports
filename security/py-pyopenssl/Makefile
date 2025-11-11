@@ -1,28 +1,30 @@
-PORTNAME=	openssl
+PORTNAME=	pyopenssl
 PORTVERSION=	25.3.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pyopenssl-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to the OpenSSL library
-WWW=		https://github.com/pyca/pyopenssl
+WWW=		https://www.pyopenssl.org/en/latest/ \
+		https://github.com/pyca/pyopenssl
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pretend>0:devel/py-pretend@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-rerunfailures>0:devel/py-pytest-rerunfailures@${PY_FLAVOR}
 
 USES=		cpe python
-USE_PYTHON=	autoplist concurrent cryptography distutils pytest pythonprefix
+USE_PYTHON=	autoplist concurrent cryptography pep517 pytest pythonprefix
 
 NO_ARCH=	yes
 
 CPE_VENDOR=	jean-paul_calderone
-CPE_PRODUCT=	py${PORTNAME}
 
 # These tests will be skipped due the following reasons:
 #

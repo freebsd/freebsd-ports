@@ -1,6 +1,7 @@
 PORTNAME=	dshell
 PORTVERSION=	3.2.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pcapy-ng>0:net/py-pcapy-ng@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pypacker>0:net/py-pypacker@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyopenssl>0:security/py-pyopenssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}elasticsearch>0:textproc/py-elasticsearch@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

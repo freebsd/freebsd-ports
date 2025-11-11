@@ -4860,3 +4860,4 @@ net-im/libsignal-client|net-im/libsignal|2025-11-05|Renamed to match upstream na
 games/openlierox||2025-11-06|Remove broken port
 net/glusterfs||2025-11-06|Remove broken port
 games/pokerth||2025-11-06|Remove broken port
+security/py-openssl|security/py-pyopenssl|2025-11-11|Move security/py-openssl to security/py-pyopenssl

@@ -1,6 +1,6 @@
 PORTNAME=	tahoe-lafs
 DISTVERSION=	1.20.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	filesystems python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,9 +32,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}klein>=0:www/py-klein@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}magic-wormhole>=0:net/py-magic-wormhole@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netifaces>=0:net/py-netifaces@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycddl>=0:textproc/py-pycddl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyopenssl>=0:security/py-pyopenssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyrsistent>=0:devel/py-pyrsistent@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyutil>=0:devel/py-pyutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \

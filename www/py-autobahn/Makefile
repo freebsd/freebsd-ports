@@ -1,7 +1,7 @@
 PORTNAME=	autobahn
 DISTVERSIONPREFIX=	v
 DISTVERSION=	24.4.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -36,7 +36,7 @@ SERIALIZATION_DESC=	Serializers (MessagePack, CBOR, UBJSON, Flatbuffers)
 TWISTED_DESC=		Twisted network backend support
 
 COMPRESS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}python-snappy>=0.6.0:archivers/py-python-snappy@${PY_FLAVOR}
-ENCRYPTION_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}openssl>=20.0.1:security/py-openssl@${PY_FLAVOR} \
+ENCRYPTION_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyopenssl>=20.0.1:security/py-pyopenssl@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pynacl>=1.4.0:security/py-pynacl@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}qrcode>=7.3.1:textproc/py-qrcode@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pytrie>=0.4.0:devel/py-pytrie@${PY_FLAVOR} \

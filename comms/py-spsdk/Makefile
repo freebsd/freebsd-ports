@@ -1,6 +1,6 @@
 PORTNAME=	spsdk
 DISTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,7 +40,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>=1.2,<1.6:devel/py-asn1crypto@${P
 		${PYTHON_PKGNAMEPREFIX}sly>0:lang/py-sly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions<=5.0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy>=1.5.1:devel/py-mypy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openssl>=16.2.0:security/py-openssl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyopenssl>=16.2.0:security/py-pyopenssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tox>=0:devel/py-tox@${PY_FLAVOR}
 
 USES=		python
