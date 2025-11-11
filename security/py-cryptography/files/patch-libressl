@@ -1,0 +1,12 @@
+Obtained from:	https://github.com/rust-openssl/rust-openssl/commit/12800873a0255b61a9e08a4d47095b1b2529835c
+
+--- cargo-crates/openssl-sys-0.9.108/build/main.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/openssl-sys-0.9.108/build/main.rs
+@@ -451,6 +451,7 @@ See rust-openssl documentation for more information:
+             (4, 0, _) => ('4', '0', 'x'),
+             (4, 1, 0) => ('4', '1', '0'),
+             (4, 1, _) => ('4', '1', 'x'),
++            (4, 2, _) => ('4', '2', 'x'),
+             _ => version_error(),
+         };
+ 
