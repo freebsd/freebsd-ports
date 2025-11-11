@@ -53,11 +53,13 @@ bin/merge_wann.x
 bin/molecularnexafs.x
 bin/molecularpdos.x
 bin/neb.x
+bin/nscf2supercond.x
 bin/open_grid.x
 bin/path_interpolation.x
 bin/pawplot.x
 bin/ph.x
 bin/phcg.x
+bin/pioud.x
 bin/plan_avg.x
 bin/plotband.x
 bin/plotproj.x
@@ -126,8 +128,8 @@ include/qe/qe_atomic/kli.mod
 include/qe/qe_atomic/ld1_parameters.mod
 include/qe/qe_atomic/ld1inc.mod
 include/qe/qe_atomic/paw_type.mod
+include/qe/qe_couple/libqecouple.h
 include/qe/qe_cpv/betax.mod
-include/qe/qe_cpv/cell_nose.mod
 include/qe/qe_cpv/cg_module.mod
 include/qe/qe_cpv/cg_sub.mod
 include/qe/qe_cpv/core.mod
@@ -136,6 +138,7 @@ include/qe/qe_cpv/cp_electronic_mass.mod
 include/qe/qe_cpv/cp_interfaces.mod
 include/qe/qe_cpv/cp_main_variables.mod
 include/qe/qe_cpv/cp_restart_new.mod
+include/qe/qe_cpv/cp_wavefunctions.mod
 include/qe/qe_cpv/dener.mod
 include/qe/qe_cpv/efcalc.mod
 include/qe/qe_cpv/efield_module.mod
@@ -147,7 +150,6 @@ include/qe/qe_cpv/ensemble_dft.mod
 include/qe/qe_cpv/environ_cp_module.mod
 include/qe/qe_cpv/exx_module.mod
 include/qe/qe_cpv/input.mod
-include/qe/qe_cpv/ions_nose.mod
 include/qe/qe_cpv/ions_positions.mod
 include/qe/qe_cpv/kohn_sham_states.mod
 include/qe/qe_cpv/ldau_cp.mod
@@ -196,6 +198,8 @@ include/qe/qe_epw/cumulant.mod
 include/qe/qe_epw/dvqpsi.mod
 include/qe/qe_epw/ep_coarse.mod
 include/qe/qe_epw/ep_constants.mod
+include/qe/qe_epw/exphonon.mod
+include/qe/qe_epw/expolaron.mod
 include/qe/qe_epw/global_var.mod
 include/qe/qe_epw/ifconstants.mod
 include/qe/qe_epw/indabs.mod
@@ -212,6 +216,7 @@ include/qe/qe_epw/kfold.mod
 include/qe/qe_epw/longrange.mod
 include/qe/qe_epw/low_lvl.mod
 include/qe/qe_epw/parallelism.mod
+include/qe/qe_epw/phph.mod
 include/qe/qe_epw/polaron.mod
 include/qe/qe_epw/printing.mod
 include/qe/qe_epw/pw2wan.mod
@@ -227,7 +232,13 @@ include/qe/qe_epw/supercond_common.mod
 include/qe/qe_epw/supercond_coul.mod
 include/qe/qe_epw/supercond_driver.mod
 include/qe/qe_epw/supercond_iso.mod
+include/qe/qe_epw/supercond_vertex.mod
 include/qe/qe_epw/symmetry.mod
+include/qe/qe_epw/tdbe_common.mod
+include/qe/qe_epw/tdbe_driver.mod
+include/qe/qe_epw/tdbe_eph_common.mod
+include/qe/qe_epw/tdbe_mod.mod
+include/qe/qe_epw/tdbe_phph_common.mod
 include/qe/qe_epw/transport.mod
 include/qe/qe_epw/transport_legacy.mod
 include/qe/qe_epw/transport_mag.mod
@@ -342,6 +353,7 @@ include/qe/qe_modules/bfgs_module.mod
 include/qe/qe_modules/bspline.mod
 include/qe/qe_modules/bz_form.mod
 include/qe/qe_modules/cell_base.mod
+include/qe/qe_modules/cell_nose.mod
 include/qe/qe_modules/check_stop.mod
 include/qe/qe_modules/command_line_options.mod
 include/qe/qe_modules/constants.mod
@@ -373,6 +385,7 @@ include/qe/qe_modules/io_files.mod
 include/qe/qe_modules/io_global.mod
 include/qe/qe_modules/io_rism_xml.mod
 include/qe/qe_modules/ions_base.mod
+include/qe/qe_modules/ions_nose.mod
 include/qe/qe_modules/kinds.mod
 include/qe/qe_modules/lauefft.mod
 include/qe/qe_modules/libmbd_interface.mod
@@ -470,6 +483,7 @@ include/qe/qe_phonon_ph/cryst_ph.mod
 include/qe/qe_phonon_ph/d2nsq_bare_module.mod
 include/qe/qe_phonon_ph/dfile_autoname.mod
 include/qe/qe_phonon_ph/dfile_star.mod
+include/qe/qe_phonon_ph/dfpt_kernels.mod
 include/qe/qe_phonon_ph/dielectric.mod
 include/qe/qe_phonon_ph/diffs.mod
 include/qe/qe_phonon_ph/disp.mod
@@ -502,7 +516,6 @@ include/qe/qe_phonon_ph/ramanm.mod
 include/qe/qe_phonon_ph/recover_mod.mod
 include/qe/qe_phonon_ph/rigid.mod
 include/qe/qe_phonon_ph/save_ph.mod
-include/qe/qe_phonon_ph/sym_def_module.mod
 include/qe/qe_phonon_ph/symmetry.mod
 include/qe/qe_phonon_ph/term_one_1_module.mod
 include/qe/qe_phonon_ph/term_one_module.mod
@@ -511,6 +524,16 @@ include/qe/qe_phonon_ph/term_three_module.mod
 include/qe/qe_phonon_ph/units_ph.mod
 include/qe/qe_phonon_ph/write_hub.mod
 include/qe/qe_phonon_ph/yambo.mod
+include/qe/qe_pioud/fcp_opt_routines.mod
+include/qe/qe_pioud/fcp_variables.mod
+include/qe/qe_pioud/pimd_variables.mod
+include/qe/qe_pioud/random_pioud.mod
+include/qe/qe_pioud/ring_formats.mod
+include/qe/qe_pioud/ring_input_parameters_module.mod
+include/qe/qe_pioud/ring_io_units_module.mod
+include/qe/qe_pioud/ring_variables.mod
+include/qe/qe_pioud/trpmd_base.mod
+include/qe/qe_pioud/trpmd_io_routines.mod
 include/qe/qe_pp/adduscore.mod
 include/qe/qe_pp/atproj.mod
 include/qe/qe_pp/chdens_module.mod
@@ -543,7 +566,6 @@ include/qe/qe_pw/cellmd.mod
 include/qe/qe_pw/coul_cut_2d.mod
 include/qe/qe_pw/d3hess_mod.mod
 include/qe/qe_pw/dfunct.mod
-include/qe/qe_pw/dfunct_gpum.mod
 include/qe/qe_pw/dynamics_module.mod
 include/qe/qe_pw/ener.mod
 include/qe/qe_pw/environ_pw_module.mod
@@ -565,7 +587,6 @@ include/qe/qe_pw/fcp_relaxation.mod
 include/qe/qe_pw/fixed_occ.mod
 include/qe/qe_pw/force_mod.mod
 include/qe/qe_pw/g_psi_mod.mod
-include/qe/qe_pw/g_psi_mod_gpum.mod
 include/qe/qe_pw/gcscf_module.mod
 include/qe/qe_pw/io_rho_xml.mod
 include/qe/qe_pw/klist.mod
@@ -615,7 +636,6 @@ include/qe/qe_pwcond_exe/scattnl_cond.mod
 include/qe/qe_tddfpt/charg_resp.mod
 include/qe/qe_tddfpt/environ_td_module.mod
 include/qe/qe_tddfpt/linear_solvers.mod
-include/qe/qe_tddfpt/lr_dav_debug.mod
 include/qe/qe_tddfpt/lr_dav_routines.mod
 include/qe/qe_tddfpt/lr_dav_variables.mod
 include/qe/qe_tddfpt/lr_exx_kernel.mod
@@ -759,7 +779,6 @@ lib/libqe_kssolver_davidson.a
 lib/libqe_kssolver_davidsonrci.a
 lib/libqe_kssolver_dense.a
 lib/libqe_kssolver_paro.a
-lib/libqe_kssolver_ppcg.a
 lib/libqe_kssolver_rmmdiis.a
 lib/libqe_lax.a
 lib/libqe_libbeef.a
@@ -771,6 +790,7 @@ lib/libqe_phonon_fd.a
 lib/libqe_phonon_gamma.a
 lib/libqe_phonon_ph.a
 lib/libqe_phonon_phaux.a
+lib/libqe_pioud.a
 lib/libqe_pp.a
 lib/libqe_pw.a
 lib/libqe_tddfpt.a
@@ -1065,6 +1085,5 @@ share/GUI/QE-modes/qe-modes/qe-funcs.el
 share/GUI/QE-modes/qe-modes/qe-mode.el
 share/GUI/QE-modes/qe-modes/qe-modes.el
 share/GUI/README
-@dir include/qe/qe_couple
 @dir include/qe/qe_device_lapack
 @dir include/qe/qe_qeheat_exe

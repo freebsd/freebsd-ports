@@ -1,7 +1,6 @@
 PORTNAME=	quantum-espresso
 DISTVERSIONPREFIX=	qe-
-DISTVERSION=	7.4
-PORTREVISION=	1
+DISTVERSION=	7.5
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,24 +12,26 @@ WWW=		https://www.quantum-espresso.org \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/License
 
-BROKEN_aarch64=	compilation fails: cannot find an intrinsic module named 'ieee_arithmetic', see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278942
-BROKEN_armv6=	fails to build: gfortran8: error: iotk_base_tmp.f90: No such file or directory
-BROKEN_armv7=	fails to build: gfortran8: error: iotk_base_tmp.f90: No such file or directory
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	requires the intrinsic module 'ieee_arithmetic' which is not available on other architectures
+#BROKEN_aarch64=	compilation fails: cannot find an intrinsic module named 'ieee_arithmetic', see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278942
+#BROKEN_armv6=	fails to build: gfortran8: error: iotk_base_tmp.f90: No such file or directory
+#BROKEN_armv7=	fails to build: gfortran8: error: iotk_base_tmp.f90: No such file or directory
 
-BUILD_DEPENDS=	fox-xml>0:textproc/fox-xml \
+#BUILD_DEPENDS=	fox-xml>0:textproc/fox-xml \
 		bash:shells/bash
 LIB_DEPENDS=	libblas.so:math/blas \
 		libfftw3.so:math/fftw3 \
 		liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
 
-USES=		cmake fortran python shebangfix
+USES=		cmake fortran localbase:ldflags python shebangfix
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	QEF
 GH_PROJECT=	q-e
-GH_TUPLE=	anharmonic:d3q:de47183:anharmonic_d3q/external/d3q \
+GH_TUPLE=	anharmonic:d3q:6e5f978:anharmonic_d3q/external/d3q \
 		pietrodelugas:fox:3453648e6837658b747b895bb7bef4b1ed2eac40:pietrodelugas_fox/external/fox \
 		Reference-LAPACK:lapack:12d825396fcef1e0a1b27be9f119f9e554621e55:Reference_LAPACK_lapack/external/lapack \
 		libmbd:libmbd:89a3cc1:libmbd_libmbd/external/mbd \
@@ -57,7 +58,7 @@ OPTIONS_DEFAULT=	OPENMPI
 
 MPICH_USES=		mpi:mpich
 
-OPENMPI_USES=		mpi:openmpi
+OPENMPI_USES=		mpi:mpich # SEGV with openmpi4
 
 .include <bsd.port.pre.mk>
 
@@ -80,13 +81,18 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.x
 
 do-test:
-	@cd ${WRKSRC}/test-suite && ${GMAKE} run-tests
+	@cd ${WRKSRC}/test-suite && \
+		${GMAKE} ESPRESSO_BUILD=${BUILD_WRKSRC} ESPRESSO_PSEUDO=${WRKSRC}/pseudo run-tests
 
 run-examples: build
 .for c in PP PW PWCOND PHonon
-	@cd ${WRKSRC}/$c/examples && PREFIX=${STAGEDIR}${PREFIX} ./run_all_examples
+	@cd ${WRKSRC}/$c/examples && PREFIX=${STAGEDIR}${PREFIX} PSEUDO_DIR=/usr/local/share/quantum-espresso  ./run_all_examples
 .endfor
 
-# all tests fail, possibly due to wrong pseudo-potentials, see https://gitlab.com/QEF/q-e/-/issues/745
+# tests as of QE 7.5: 243 out of 247 tests passed (5 skipped, 4 unknown)
+
+# many pseudopotentials that can be used with QE are listed in https://pseudopotentials.quantum-espresso.org/
+# QE became so popular that many other parties develop and distribute pseudopotentials compatible with QE
+# ESPRESSO_PSEUDO is an env variable that can be set to point to a directory with pseudopotentials
 
 .include <bsd.port.post.mk>
