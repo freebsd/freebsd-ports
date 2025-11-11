@@ -1,5 +1,5 @@
 PORTNAME=	x42-plugins
-DISTVERSION=	20240611 # the version is published here: http://gareus.org/misc/x42-plugins.php
+DISTVERSION=	20251025 # the version is published here: http://gareus.org/misc/x42-plugins.php
 CATEGORIES=	audio
 MASTER_SITES=	http://gareus.org/misc/x42-plugins/
 PKGNAMESUFFIX=	-lv2
