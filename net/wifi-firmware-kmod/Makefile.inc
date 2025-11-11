@@ -130,9 +130,9 @@ post-extract:
 ################################################################################
 .for _f in ${DISTFILES_${FLAVOR}:O:u}
 	# Create firmware source directory and copy in distfile.
-	@${MKDIR} ${WRKSRC}/fw/${_f:H}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f} ${WRKSRC}/fw/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@}
-	@${ECHO_CMD} ${BOOTFWDIR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@} >> ${PLIST}.tmp
+	@${MKDIR} ${WRKSRC}/fw/${_f:S@${STRIP_FWSUBDIR:Q}@@:H}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f} ${WRKSRC}/fw/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S@${STRIP_FWSUBDIR:Q}@@}
+	@${ECHO_CMD} ${BOOTFWDIR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S@${STRIP_FWSUBDIR:Q}@@} >> ${PLIST}.tmp
 .endfor
 	# Create PLIST for firmware files.
 	(cd ${WRKSRC}/fw/ && ${FIND} . -type d -mindepth 1 | \
