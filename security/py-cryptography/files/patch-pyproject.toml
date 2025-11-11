@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-05-18 02:39:52 UTC
++++ pyproject.toml
+@@ -21,8 +21,7 @@ readme = "README.rst"
+ ]
+ description = "cryptography is a package which provides cryptographic recipes and primitives to Python developers."
+ readme = "README.rst"
+-license = "Apache-2.0 OR BSD-3-Clause"
+-license-files = [ "LICENSE", "LICENSE.APACHE", "LICENSE.BSD" ]
++license = { text = "Apache-2.0 OR BSD-3-Clause" }
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",
