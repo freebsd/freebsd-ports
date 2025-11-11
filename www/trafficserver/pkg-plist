@@ -5,24 +5,21 @@ bin/traffic_ctl
 bin/traffic_layout
 bin/traffic_logcat
 bin/traffic_logstats
-bin/traffic_manager
 bin/traffic_server
 bin/traffic_top
 bin/traffic_via
-%%WCCP%%bin/traffic_wccp
 bin/trafficserver
-bin/tspush
-bin/tsxs
-%%ETCDIR%%/trafficserver-release
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/.body_factory_info
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/README
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/access#denied
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/access#proxy_auth_required
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/access#redirect_url
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/access#ssl_forbidden
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/cache#not_in_cache
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/cache#read_error
+@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/connect#all_down
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/connect#dns_failed
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/connect#failed_connect
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/connect#hangup
@@ -46,10 +43,11 @@ bin/tsxs
 @sample %%ETCDIR%%/cache.config.sample
 @sample %%ETCDIR%%/hosting.config.sample
 @sample %%ETCDIR%%/ip_allow.yaml.sample
+@sample %%ETCDIR%%/jsonrpc.yaml.sample
 @sample %%ETCDIR%%/logging.yaml.sample
 @sample %%ETCDIR%%/parent.config.sample
 @sample %%ETCDIR%%/plugin.config.sample
-@sample %%ETCDIR%%/records.config.sample
+@sample %%ETCDIR%%/records.yaml.sample
 @sample %%ETCDIR%%/remap.config.sample
 @sample %%ETCDIR%%/sni.yaml.sample
 @sample %%ETCDIR%%/socks.config.sample
@@ -58,16 +56,44 @@ bin/tsxs
 @sample %%ETCDIR%%/storage.config.sample
 @sample %%ETCDIR%%/strategies.yaml.sample
 @sample %%ETCDIR%%/volume.config.sample
+include/swoc/ArenaWriter.h
+include/swoc/BufferWriter.h
+include/swoc/DiscreteRange.h
+include/swoc/Errata.h
+include/swoc/HashFNV.h
+include/swoc/IPAddr.h
+include/swoc/IPEndpoint.h
+include/swoc/IPRange.h
+include/swoc/IPSrv.h
+include/swoc/IntrusiveDList.h
+include/swoc/IntrusiveHashMap.h
+include/swoc/Lexicon.h
+include/swoc/MemArena.h
+include/swoc/MemSpan.h
+include/swoc/RBTree.h
+include/swoc/Scalar.h
+include/swoc/TextView.h
+include/swoc/Vectray.h
+include/swoc/bwf_base.h
+include/swoc/bwf_ex.h
+include/swoc/bwf_fwd.h
+include/swoc/bwf_ip.h
+include/swoc/bwf_std.h
+include/swoc/string_view_util.h
+include/swoc/swoc_file.h
+include/swoc/swoc_ip.h
+include/swoc/swoc_ip_util.h
+include/swoc/swoc_meta.h
+include/swoc/swoc_version.h
+include/ts/TsException.h
 include/ts/apidefs.h
-include/ts/experimental.h
-include/ts/mgmtapi.h
-include/ts/parentselectdefs.h
 include/ts/remap.h
 include/ts/ts.h
 include/tscpp/api/Async.h
 include/tscpp/api/AsyncHttpFetch.h
 include/tscpp/api/AsyncTimer.h
 include/tscpp/api/CaseInsensitiveStringComparator.h
+include/tscpp/api/Cleanup.h
 include/tscpp/api/ClientRequest.h
 include/tscpp/api/Continuation.h
 include/tscpp/api/GlobalPlugin.h
@@ -91,36 +117,81 @@ include/tscpp/api/TransformationPlugin.h
 include/tscpp/api/Url.h
 include/tscpp/api/noncopyable.h
 include/tscpp/api/utils.h
-include/tscpp/util/IntrusiveDList.h
-include/tscpp/util/LocalBuffer.h
-include/tscpp/util/PostScript.h
-include/tscpp/util/TextView.h
-include/tscpp/util/TsSharedMutex.h
-lib/libtscore.so
-lib/libtscore.so.9
-lib/libtscore.so.%%PORTVERSION%%
+include/tsutil/Assert.h
+include/tsutil/Bravo.h
+include/tsutil/Convert.h
+include/tsutil/DbgCtl.h
+include/tsutil/DenseThreadId.h
+include/tsutil/Histogram.h
+include/tsutil/LocalBuffer.h
+include/tsutil/Metrics.h
+include/tsutil/PostScript.h
+include/tsutil/Regex.h
+include/tsutil/SourceLocation.h
+include/tsutil/Strerror.h
+include/tsutil/StringConvert.h
+include/tsutil/TsSharedMutex.h
+include/tsutil/YamlCfg.h
+include/tsutil/ts_bw_format.h
+include/tsutil/ts_diag_levels.h
+include/tsutil/ts_errata.h
+include/tsutil/ts_ip.h
+include/tsutil/ts_meta.h
+include/tsutil/ts_time_parser.h
+include/tsutil/ts_unit_parser.h
+include/yaml-cpp/anchor.h
+include/yaml-cpp/binary.h
+include/yaml-cpp/contrib/anchordict.h
+include/yaml-cpp/contrib/graphbuilder.h
+include/yaml-cpp/depthguard.h
+include/yaml-cpp/dll.h
+include/yaml-cpp/emitfromevents.h
+include/yaml-cpp/emitter.h
+include/yaml-cpp/emitterdef.h
+include/yaml-cpp/emittermanip.h
+include/yaml-cpp/emitterstyle.h
+include/yaml-cpp/eventhandler.h
+include/yaml-cpp/exceptions.h
+include/yaml-cpp/mark.h
+include/yaml-cpp/node/convert.h
+include/yaml-cpp/node/detail/impl.h
+include/yaml-cpp/node/detail/iterator.h
+include/yaml-cpp/node/detail/iterator_fwd.h
+include/yaml-cpp/node/detail/memory.h
+include/yaml-cpp/node/detail/node.h
+include/yaml-cpp/node/detail/node_data.h
+include/yaml-cpp/node/detail/node_iterator.h
+include/yaml-cpp/node/detail/node_ref.h
+include/yaml-cpp/node/emit.h
+include/yaml-cpp/node/impl.h
+include/yaml-cpp/node/iterator.h
+include/yaml-cpp/node/node.h
+include/yaml-cpp/node/parse.h
+include/yaml-cpp/node/ptr.h
+include/yaml-cpp/node/type.h
+include/yaml-cpp/noexcept.h
+include/yaml-cpp/null.h
+include/yaml-cpp/ostream_wrapper.h
+include/yaml-cpp/parser.h
+include/yaml-cpp/stlemitter.h
+include/yaml-cpp/traits.h
+include/yaml-cpp/yaml.h
+lib/cmake/Findtsapi.cmake
+lib/cmake/yaml-cpp/yaml-cpp-config-version.cmake
+lib/cmake/yaml-cpp/yaml-cpp-config.cmake
+lib/cmake/yaml-cpp/yaml-cpp-targets-release.cmake
+lib/cmake/yaml-cpp/yaml-cpp-targets.cmake
+lib/libswoc.so
+lib/libswoc.so.1
+lib/libswoc.so.1.5.12
+lib/libtsapi.so
 lib/libtscppapi.so
-lib/libtscppapi.so.9
-lib/libtscppapi.so.%%PORTVERSION%%
-lib/libtscpputil.so
-lib/libtscpputil.so.9
-lib/libtscpputil.so.%%PORTVERSION%%
-lib/libtsmgmt.so
-lib/libtsmgmt.so.9
-lib/libtsmgmt.so.%%PORTVERSION%%
-lib/plugin_init_fail.so
-lib/plugin_instinit_fail.so
-lib/plugin_missing_deleteinstance.so
-lib/plugin_missing_doremap.so
-lib/plugin_missing_init.so
-lib/plugin_missing_newinstance.so
-lib/plugin_required_cb.so
-lib/plugin_testing_calls.so
-lib/plugin_v1.so
-lib/plugin_v2.so
-libdata/pkgconfig/trafficserver.pc
+lib/libyaml-cpp.so
+lib/libyaml-cpp.so.0.8
+lib/libyaml-cpp.so.0.8.0
+libdata/pkgconfig/ts.pc
+libdata/pkgconfig/yaml-cpp.pc
 libexec/trafficserver/access_control.so
-libexec/trafficserver/acme.so
 libexec/trafficserver/authproxy.so
 libexec/trafficserver/background_fetch.so
 libexec/trafficserver/block_errors.so
@@ -130,7 +201,6 @@ libexec/trafficserver/cache_range_requests.so
 libexec/trafficserver/cachekey.so
 libexec/trafficserver/cert_reporting_tool.so
 libexec/trafficserver/certifier.so
-libexec/trafficserver/collapsed_forwarding.so
 libexec/trafficserver/combo_handler.so
 libexec/trafficserver/compress.so
 libexec/trafficserver/conf_remap.so
@@ -140,23 +210,24 @@ libexec/trafficserver/escalate.so
 libexec/trafficserver/esi.so
 libexec/trafficserver/fq_pacing.so
 libexec/trafficserver/generator.so
-libexec/trafficserver/geoip_acl.so
+%%GEOIP%%libexec/trafficserver/geoip_acl.so
 libexec/trafficserver/header_freq.so
 libexec/trafficserver/header_rewrite.so
 libexec/trafficserver/hook-trace.so
 libexec/trafficserver/http_stats.so
-libexec/trafficserver/icap.so
+libexec/trafficserver/icap_plugin.so
 libexec/trafficserver/inliner.so
+libexec/trafficserver/ja4_fingerprint.so
 libexec/trafficserver/ja3_fingerprint.so
 libexec/trafficserver/libloader.so
 %%IMAGEMAGICK%%libexec/trafficserver/magick.so
 %%GEOIP%%libexec/trafficserver/maxmind_acl.so
+libexec/trafficserver/memcache.so
 libexec/trafficserver/memory_profile.so
-libexec/trafficserver/metalink.so
 libexec/trafficserver/money_trace.so
 libexec/trafficserver/mp4.so
 libexec/trafficserver/multiplexer.so
-libexec/trafficserver/parent_select.so
+libexec/trafficserver/origin_server_auth.so
 libexec/trafficserver/prefetch.so
 libexec/trafficserver/rate_limit.so
 libexec/trafficserver/redo_cache_lookup.so
@@ -168,6 +239,7 @@ libexec/trafficserver/s3_auth.so
 libexec/trafficserver/server_push_preload.so
 libexec/trafficserver/slice.so
 libexec/trafficserver/sslheaders.so
+libexec/trafficserver/stale_response.so
 libexec/trafficserver/statichit.so
 libexec/trafficserver/stats_over_http.so
 libexec/trafficserver/stream_editor.so
@@ -176,19 +248,11 @@ libexec/trafficserver/tcpinfo.so
 libexec/trafficserver/tls_bridge.so
 libexec/trafficserver/traffic_dump.so
 libexec/trafficserver/tslua.so
-libexec/trafficserver/tsmemcache.so
+libexec/trafficserver/txn_box.so
+libexec/trafficserver/uri_signing.so
 libexec/trafficserver/url_sig.so
 %%IMAGEMAGICK%%libexec/trafficserver/webp_transform.so
 libexec/trafficserver/xdebug.so
-lib/perl5/%%ARCH%%-freebsd-thread-multi/auto/Apache/TS/.packlist
-lib/perl5/%%ARCH%%-freebsd-thread-multi/perllocal.pod
-lib/perl5/Apache/TS.pm
-lib/perl5/Apache/TS/AdminClient.pm
-lib/perl5/Apache/TS/Config.pm
-lib/perl5/Apache/TS/Config/Records.pm
-share/man/man3/Apache::TS.3.gz
-share/man/man3/Apache::TS::AdminClient.3.gz
-share/man/man3/Apache::TS::Config::Records.3.gz
 @dir(,,) libexec/trafficserver
 @dir(,,) include/ts
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default
