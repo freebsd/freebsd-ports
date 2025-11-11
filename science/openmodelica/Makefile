@@ -1,7 +1,7 @@
 PORTNAME=	openmodelica
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.25.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science cad java
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
@@ -38,11 +38,9 @@ RUN_DEPENDS=	bash:shells/bash \
 		gmake:devel/gmake
 
 USES=		cmake compiler:c++14-lang iconv fortran gettext-runtime gl \
-		gnome blaslapack localbase:ldflags qt:5 readline pkgconfig \
+		gnome blaslapack localbase:ldflags qt:6 readline pkgconfig \
 		python:build shebangfix java
-USE_QT=		concurrent core declarative gui location network opengl \
-		printsupport svg webchannel webengine widgets xml xmlpatterns \
-		buildtools:build linguisttools:build qmake:build
+USE_QT=		5compat base declarative positioning webchannel webengine svg tools:build
 USE_GL=		gl opengl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	${PREFIX}/lib/omc ${PREFIX}/lib/omc/OMSimulator ${PREFIX}/lib/omc/cpp ${PREFIX}/lib/omc/ffi # https://github.com/OpenModelica/OpenModelica/issues/9925
@@ -66,7 +64,8 @@ GH_TUPLE+=	OpenModelica:OMBootstrapping:04d16f7461e5401321f0f72613daf466ae2f76be
 
 # this should change make program everywhere, but it doesn't,
 # hence the patches in OMCompiler/Compiler/runtime/CMakeLists.txt, OMEdit/OMEditLIB/Simulation/SimulationOutputWidget.cpp
-CMAKE_ARGS=	-DCMAKE_MAKE_PROGRAM=gmake \
+CMAKE_ARGS=	-DOM_QT_MAJOR_VERSION=6 \
+		-DCMAKE_MAKE_PROGRAM=gmake \
 		-DPython_EXECUTABLE=${PYTHON_CMD}
 
 CMAKE_ARGS+=	-DOM_USE_CCACHE:BOOL=${CCACHE_ENABLED:S/yes/ON/:S/no/OFF/} # if refuses to build w/out ccache by default
