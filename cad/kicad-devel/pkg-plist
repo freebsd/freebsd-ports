@@ -403,6 +403,10 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-worksheet.svg
 %%DATADIR%%/demos/royalblue54L_feather/sch/nPM1300.kicad_sch
 %%DATADIR%%/demos/royalblue54L_feather/sch/nRF54L15.kicad_sch
 %%DATADIR%%/demos/royalblue54L_feather/sym-lib-table
+%%DATADIR%%/demos/simulation/amplifier-ac/2n2222.model
+%%DATADIR%%/demos/simulation/amplifier-ac/amplifier-ac.kicad_pro
+%%DATADIR%%/demos/simulation/amplifier-ac/amplifier-ac.kicad_sch
+%%DATADIR%%/demos/simulation/amplifier-ac/sym-lib-table
 %%DATADIR%%/demos/simulation/analog-multiplier/a-multi.kicad_pro
 %%DATADIR%%/demos/simulation/analog-multiplier/a-multi.kicad_sch
 %%DATADIR%%/demos/simulation/analog-multiplier/a-multi.wbk
@@ -463,11 +467,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-worksheet.svg
 %%DATADIR%%/demos/simulation/power_supplies/royer/royer1.kicad_pro
 %%DATADIR%%/demos/simulation/power_supplies/royer/royer1.kicad_sch
 %%DATADIR%%/demos/simulation/power_supplies/royer/royer1.wbk
-%%DATADIR%%/demos/simulation/pspice/2n2222.model
-%%DATADIR%%/demos/simulation/pspice/pspice.kicad_pro
-%%DATADIR%%/demos/simulation/pspice/pspice.kicad_sch
-%%DATADIR%%/demos/simulation/pspice/schematic_libspice.kicad_sym
-%%DATADIR%%/demos/simulation/pspice/sym-lib-table
 %%DATADIR%%/demos/simulation/q17/BA4558R_Rev002.lib
 %%DATADIR%%/demos/simulation/q17/OPA1641.LIB
 %%DATADIR%%/demos/simulation/q17/Q17ng.kicad_pro
