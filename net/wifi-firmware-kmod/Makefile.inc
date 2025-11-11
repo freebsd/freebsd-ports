@@ -3,10 +3,11 @@ PORTVERSION=	${FWDRV_VERSION}
 PORTREVISION?=	2
 CATEGORIES=	net
 MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
-		https://ams.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
-		https://dfw.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
-		https://nyc.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
-		https://sin.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/
+		https://fra.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
+		https://sea.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
+		https://sg2.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
+		https://sto.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
+		https://tor.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/
 
 MAINTAINER=	bz@FreeBSD.org
 COMMENT=	Firmware modules for the ${FWDRV} (${FLAVOR}) WiFi NIC driver
