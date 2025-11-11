@@ -1,5 +1,6 @@
 PORTNAME=	typescript
 DISTVERSION=	5.9.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/microsoft/TypeScript/releases/download/v${DISTVERSION}/ \
 		https://registry.npmjs.org/${PORTNAME}/-/

@@ -1,5 +1,6 @@
 PORTNAME=	github-copilot-language-server
 DISTVERSION=	1.380.0
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
