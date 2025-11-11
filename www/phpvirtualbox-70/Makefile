@@ -13,6 +13,9 @@ WWW=		https://sourceforge.net/projects/phpvirtualbox-7-0/
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Upstream EOL reaches on 2025-04-15, use www/phpvirtualbox-72 instead
+EXPIRATION_DATE=	2026-12-31
+
 USES=		php:flavors zip
 USE_PHP=	session simplexml soap xml
 
