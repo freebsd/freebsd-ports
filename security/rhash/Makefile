@@ -1,6 +1,6 @@
 PORTNAME=	rhash
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -42,6 +42,9 @@ NLS_INSTALL_TARGET=	install-gmo
 post-patch:
 	@${REINPLACE_CMD} -e '/BYTE_ORDER/s,__,_,g' \
 		${WRKSRC}/librhash/byte_order.h
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rhash ${STAGEDIR}${PREFIX}/lib/librhash.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
