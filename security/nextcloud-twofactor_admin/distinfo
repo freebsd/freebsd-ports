@@ -1,3 +1,3 @@
-TIMESTAMP = 1742283701
-SHA256 (nextcloud/twofactor_admin-4.8.0/twofactor_admin.tar.gz) = cd9bc7ef17d2a282811b808abd2b9ff03ffa2a7284ba72daf8344b024586a28c
-SIZE (nextcloud/twofactor_admin-4.8.0/twofactor_admin.tar.gz) = 412465
+TIMESTAMP = 1762845626
+SHA256 (nextcloud/twofactor_admin-4.9.0/twofactor_admin.tar.gz) = 9b16e3278cbdf1130aeb7059771cbc4ad1a6c723cb285122a03bc30799800dbf
+SIZE (nextcloud/twofactor_admin-4.9.0/twofactor_admin.tar.gz) = 427916
