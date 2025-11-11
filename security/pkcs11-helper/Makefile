@@ -1,11 +1,7 @@
 PORTNAME=	pkcs11-helper
-PORTVERSION=	1.29.0
-PORTREVISION=	3
+PORTVERSION=	1.31.0
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-${PORTVERSION}/
-
-PATCH_SITES=	https://github.com/OpenSC/pkcs11-helper/commit/
-PATCHFILES=	98b16208d5c7d27e1f15835f3d4961349f425351.diff:-p1
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Helper library for multiple PKCS\#11 providers
