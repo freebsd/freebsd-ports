@@ -1,6 +1,5 @@
 PORTNAME=	libmesh
-DISTVERSION=	1.7.5
-PORTREVISION=	4
+DISTVERSION=	1.8.4
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/libMesh/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -12,13 +11,11 @@ WWW=		https://libmesh.github.io \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		compilation fails with nlopt-2.9.0, see https://github.com/libMesh/libmesh/issues/4009
-
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libnlopt.so:math/nlopt
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++17-lang eigen:3 gmake libtool localbase perl5 pkgconfig shebangfix tar:xz
+USES=		cmake:indirect compiler:c++17-lang eigen:3 gmake libtool localbase perl5 pkgconfig shebangfix tar:xz
 
 SHEBANG_GLOB=	*.sh # for one or more run.sh files in tests
 
@@ -64,7 +61,9 @@ EXAMPLES_VARS=			PKGMESSAGE=pkg-message-examples
 
 SUB_FILES=			pkg-message-examples
 
-PORTEXAMPLES=	*
+PORTEXAMPLES=			*
+
+BINARY_ALIAS=			git=false
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
