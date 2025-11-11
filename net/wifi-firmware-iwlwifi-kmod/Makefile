@@ -1,9 +1,15 @@
 BASEDIR=	${.CURDIR}/../wifi-firmware-kmod
 
 FWDRV=		iwlwifi
-FWSUBDIR=
+FWSUBDIR=	intel/iwlwifi
+# The iwlwifi(4) driver [still] expects the firmware at the toplevel.
+# Alternatively we would have to create symlinks, which in the longer-term
+# may allow a path to migration should iwlwifi(4) change.
+# Same is true for iwx(4).
+STRIP_FWSUBDIR=	intel/iwlwifi/
 #FWDRV_VERSION=	20240513
-FWDRV_VERSION=	20241017
+#FWDRV_VERSION=	20241017
+FWDRV_VERSION=	20251021
 
 LICENSE_FILE=	LICENCE.iwlwifi_firmware
 LICENSE_NAME=	Intel firmware license (${FWDRV})
@@ -19,10 +25,14 @@ COMPAT_LINUXKPI_HWCRYPTO_HT_VHT=	22000 ax210 bz
 # also helping to generate the fwget(8) definitions.
 # { sys/contrib/dev/iwlwifi/zzz_fw_ports_fwget.sh }
 #
+# Note: the script no longer works as of FreeBSD 15 as Intel
+# more dynamically picks firmware for cards (no longer coded in
+# the driver).  See files/extract-fw-list.sh for now.
+#
 # Note: we manually added (kept) some older versions (outside
 # the generated template) to be able to support all branches.
 #
-### >>> main
+### >>> main, stable/15, 15.0
 
 FWSUBS= \
 	7000 \
@@ -32,42 +42,49 @@ FWSUBS= \
 	ax210 \
 	bz
 
-# Do not prefix with empty ${FWSUBDIR}/!
 DISTFILES_7000+= \
-	iwlwifi-3160-17.ucode${DISTURL_SUFFIX} \
-	iwlwifi-3168-29.ucode${DISTURL_SUFFIX} \
-	iwlwifi-7260-17.ucode${DISTURL_SUFFIX} \
-	iwlwifi-7265D-29.ucode${DISTURL_SUFFIX} \
-	iwlwifi-7265-17.ucode${DISTURL_SUFFIX}
+	${FWSUBDIR}/iwlwifi-3160-17.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-3168-29.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-7260-17.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-7265-17.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-7265D-29.ucode${DISTURL_SUFFIX}
 DISTFILES_8000+= \
-	iwlwifi-8000C-36.ucode${DISTURL_SUFFIX} \
-	iwlwifi-8265-36.ucode${DISTURL_SUFFIX}
+	${FWSUBDIR}/iwlwifi-8000C-36.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-8265-36.ucode${DISTURL_SUFFIX}
 DISTFILES_9000+= \
-	iwlwifi-9000-pu-b0-jf-b0-46.ucode${DISTURL_SUFFIX} \
-	iwlwifi-9260-th-b0-jf-b0-46.ucode${DISTURL_SUFFIX}
+	${FWSUBDIR}/iwlwifi-9000-pu-b0-jf-b0-46.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-9260-th-b0-jf-b0-46.ucode${DISTURL_SUFFIX}
 DISTFILES_22000+= \
-	iwlwifi-QuZ-a0-hr-b0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-QuZ-a0-jf-b0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-Qu-b0-hr-b0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-Qu-b0-jf-b0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-Qu-c0-hr-b0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-cc-a0-77.ucode${DISTURL_SUFFIX}
+	${FWSUBDIR}/iwlwifi-Qu-b0-hr-b0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-Qu-b0-jf-b0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-Qu-c0-hr-b0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-Qu-c0-jf-b0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-QuZ-a0-hr-b0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-QuZ-a0-jf-b0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-cc-a0-77.ucode${DISTURL_SUFFIX}
 DISTFILES_ax210+= \
-	iwlwifi-ma-b0-gf4-a0.pnvm${DISTURL_SUFFIX} \
-	iwlwifi-ma-b0-gf4-a0-89.ucode${DISTURL_SUFFIX} \
-	iwlwifi-ma-b0-gf-a0.pnvm${DISTURL_SUFFIX} \
-	iwlwifi-ma-b0-gf-a0-89.ucode${DISTURL_SUFFIX} \
-	iwlwifi-ma-b0-hr-b0-89.ucode${DISTURL_SUFFIX} \
-	iwlwifi-so-a0-gf4-a0.pnvm${DISTURL_SUFFIX} \
-	iwlwifi-so-a0-gf-a0.pnvm${DISTURL_SUFFIX} \
-	iwlwifi-so-a0-gf-a0-89.ucode${DISTURL_SUFFIX} \
-	iwlwifi-so-a0-hr-b0-89.ucode${DISTURL_SUFFIX} \
-	iwlwifi-so-a0-jf-b0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-ty-a0-gf-a0.pnvm${DISTURL_SUFFIX} \
-	iwlwifi-ty-a0-gf-a0-89.ucode${DISTURL_SUFFIX}
+	${FWSUBDIR}/iwlwifi-ma-b0-gf-a0.pnvm${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-ma-b0-gf-a0-89.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-ma-b0-gf4-a0.pnvm${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-ma-b0-gf4-a0-89.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-ma-b0-hr-b0-89.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-so-a0-gf-a0.pnvm${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-so-a0-gf-a0-89.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-so-a0-gf4-a0.pnvm${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-so-a0-gf4-a0-89.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-so-a0-hr-b0-89.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-so-a0-jf-b0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-ty-a0-gf-a0.pnvm${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-ty-a0-gf-a0-89.ucode${DISTURL_SUFFIX}
 DISTFILES_bz+= \
-	iwlwifi-gl-c0-fm-c0.pnvm${DISTURL_SUFFIX} \
-	iwlwifi-gl-c0-fm-c0-92.ucode${DISTURL_SUFFIX}
+	${FWSUBDIR}/iwlwifi-bz-b0-fm-c0.pnvm${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-bz-b0-fm-c0-101.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-bz-b0-gf-a0.pnvm${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-bz-b0-gf-a0-100.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-bz-b0-hr-b0.pnvm${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-bz-b0-hr-b0-100.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-gl-c0-fm-c0.pnvm${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-gl-c0-fm-c0-101.ucode${DISTURL_SUFFIX}
 
 DISTFILES_${FWDRV}= \
 	${DISTFILES_7000} \
@@ -77,39 +94,44 @@ DISTFILES_${FWDRV}= \
 	${DISTFILES_ax210} \
 	${DISTFILES_bz}
 DISTFILES_${FWDRV}_lic=
-### <<< main
+### <<< main, stable/15, 15.0
+
+### >>> 14.3, stable/14
+DISTFILES_bz+= \
+	${FWSUBDIR}/iwlwifi-gl-c0-fm-c0-92.ucode${DISTURL_SUFFIX}
+### <<< 14.3, stable/14
 
 ### >>> 14.2, stable/14
 DISTFILES_ax210+= \
-	iwlwifi-ma-b0-gf4-a0-83.ucode${DISTURL_SUFFIX} \
-	iwlwifi-ma-b0-gf-a0-83.ucode${DISTURL_SUFFIX} \
-	iwlwifi-ma-b0-hr-b0-83.ucode${DISTURL_SUFFIX} \
-	iwlwifi-so-a0-gf-a0-83.ucode${DISTURL_SUFFIX} \
-	iwlwifi-so-a0-hr-b0-83.ucode${DISTURL_SUFFIX} \
-	iwlwifi-ty-a0-gf-a0-83.ucode${DISTURL_SUFFIX}
+	${FWSUBDIR}/iwlwifi-ma-b0-gf4-a0-83.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-ma-b0-gf-a0-83.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-ma-b0-hr-b0-83.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-so-a0-gf-a0-83.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-so-a0-hr-b0-83.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-ty-a0-gf-a0-83.ucode${DISTURL_SUFFIX}
 DISTFILES_bz+= \
-	iwlwifi-gl-c0-fm-c0-83.ucode${DISTURL_SUFFIX}
+	${FWSUBDIR}/iwlwifi-gl-c0-fm-c0-83.ucode${DISTURL_SUFFIX}
 ### <<< stable/14
 
 ### >>> iwx(4)
 DISTFILES_22000+= \
-	iwlwifi-cc-a0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-Qu-b0-hr-b0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-Qu-b0-jf-b0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-Qu-c0-hr-b0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-QuZ-a0-hr-b0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-QuZ-a0-jf-b0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-Qu-c0-jf-b0-77.ucode${DISTURL_SUFFIX}
+	${FWSUBDIR}/iwlwifi-cc-a0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-Qu-b0-hr-b0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-Qu-b0-jf-b0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-Qu-c0-hr-b0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-QuZ-a0-hr-b0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-QuZ-a0-jf-b0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-Qu-c0-jf-b0-77.ucode${DISTURL_SUFFIX}
 
 DISTFILES_ax210+= \
-	iwlwifi-ty-a0-gf-a0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-ty-a0-gf-a0.pnvm${DISTURL_SUFFIX} \
-	iwlwifi-so-a0-gf-a0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-so-a0-gf-a0.pnvm${DISTURL_SUFFIX} \
-	iwlwifi-so-a0-gf4-a0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-so-a0-gf4-a0.pnvm${DISTURL_SUFFIX} \
-	iwlwifi-so-a0-hr-b0-77.ucode${DISTURL_SUFFIX} \
-	iwlwifi-so-a0-jf-b0-77.ucode${DISTURL_SUFFIX}
+	${FWSUBDIR}/iwlwifi-ty-a0-gf-a0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-ty-a0-gf-a0.pnvm${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-so-a0-gf-a0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-so-a0-gf-a0.pnvm${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-so-a0-gf4-a0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-so-a0-gf4-a0.pnvm${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-so-a0-hr-b0-77.ucode${DISTURL_SUFFIX} \
+	${FWSUBDIR}/iwlwifi-so-a0-jf-b0-77.ucode${DISTURL_SUFFIX}
 ### <<< iwx
 
 .include "${BASEDIR}/Makefile.inc"
