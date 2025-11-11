@@ -1,6 +1,5 @@
 PORTNAME=	chafa
-DISTVERSION=	1.16.2
-PORTREVISION=	1
+DISTVERSION=	1.18.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://hpjansson.org/chafa/releases/ \
 		https://github.com/hpjansson/chafa/releases/download/${PORTVERSION}/
