@@ -75,7 +75,6 @@ OPTIONS_RADIO_AUDIO=	ALSA OSS
 OPTIONS_SUB=		yes
 
 DOSBOX_DESC=	Use DOSBox to run MS-DOS programs
-FFMPEG_DESC=	FFMPEG support
 GECKO_DESC=	Bundle Gecko MSI package for Wine
 MONO_DESC=	Bundle Mono MSI package for Wine
 WAYLAND_DESC=	Wayland Support
