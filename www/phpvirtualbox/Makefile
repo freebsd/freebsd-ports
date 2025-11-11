@@ -10,6 +10,9 @@ WWW=		https://sourceforge.net/projects/phpvirtualbox/
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Upstream EOL reaches on 2024-01-31, use www/phpvirtualbox-72 instead
+EXPIRATION_DATE=	2026-12-31
+
 USES=		dos2unix php:flavors
 DOS2UNIX_REGEX=	.*\.(php|txt|js|css|html)
 USE_GITHUB=	yes
