@@ -12,8 +12,8 @@
 # Note:
 # - The supported versions follow upstream release schedule
 #   https://github.com/nodejs/Release/blob/main/README.md#release-schedule
-#   - lts is 22 now
-#   - current is 24 now
+#   - lts is 24 now
+#   - current is 25 now
 # - USES=nodejs means USES=nodejs:build,run
 # - If you define a version, you must provide run and/or build
 #
@@ -47,7 +47,7 @@ _NODEJS_VER=	${version}
 _NODEJS_VER=	${NODEJS_DEFAULT}
 .  endif
 
-NODEJS_VERSION=	${_NODEJS_VER:S|current|24|:S|lts|22|}
+NODEJS_VERSION=	${_NODEJS_VER:S|current|25|:S|lts|24|}
 NODEJS_SUFFIX=	-node${NODEJS_VERSION}
 
 .  if ${nodejs_ARGS:M*build*}
