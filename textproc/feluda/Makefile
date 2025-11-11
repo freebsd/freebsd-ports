@@ -1,6 +1,7 @@
 PORTNAME=	feluda
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.1 # Cargo.lock patched: `make patch cargo-crates`
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	nxjoseph@protonmail.com

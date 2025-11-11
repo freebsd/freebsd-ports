@@ -1,6 +1,6 @@
 PORTNAME=	helix
 DISTVERSION=	25.07.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~ecs/tree-sitter-hare/archive/:treesitterhare \
 		https://git.sr.ht/~jummit/tree-sitter-wren/archive/:treesitterwren \

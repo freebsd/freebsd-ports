@@ -1,5 +1,6 @@
 PORTNAME=	wleave
 DISTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org

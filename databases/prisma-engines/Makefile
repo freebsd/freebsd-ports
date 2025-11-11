@@ -1,5 +1,6 @@
 PORTNAME=	prisma-engines
 DISTVERSION=	6.19.0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	otis@FreeBSD.org

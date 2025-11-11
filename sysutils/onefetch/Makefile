@@ -1,5 +1,6 @@
 PORTNAME=	onefetch
 DISTVERSION=	2.25.0
+PORTREVISION=	1
 CATEGORIES=	sysutils devel
 
 MAINTAINER=	lcook@FreeBSD.org

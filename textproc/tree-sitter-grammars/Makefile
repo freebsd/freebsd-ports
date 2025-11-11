@@ -2,7 +2,7 @@ PORTNAME=	tree-sitter-grammars
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.4.2
 DISTVERSIONSUFFIX=	+1f9f9dd
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES+=	https://git.sr.ht/~nbsp/tree-sitter-gemini/archive/:gemini \
 		https://git.sr.ht/~ecs/tree-sitter-hare/archive/:hare \

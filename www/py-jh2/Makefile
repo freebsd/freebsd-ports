@@ -1,5 +1,6 @@
 PORTNAME=	jh2
 PORTVERSION=	5.0.10
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/jawah/h2/releases/download/v${PORTVERSION}/
