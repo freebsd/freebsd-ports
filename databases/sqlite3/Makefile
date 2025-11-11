@@ -3,7 +3,7 @@ DISTVERSION=	3.50.4
 # SECURITY WARNING: when updating this port, also file vuxml entry
 # for ports/databases/linux-c7-sqlite3 (but mind it has a different EPOCH)
 # and coordinate with ports/emulators/linux_base which also ships sqlite3.
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${_YEAR}/ https://www2.sqlite.org/${_YEAR}/ https://www3.sqlite.org/${_YEAR}/
@@ -23,9 +23,11 @@ COMMENT+=	(TCL flavor)
 .if defined(TEA)
 COMMENT=	SQLite extension for Tcl using the Tcl Extension Architecture (TEA)
 .endif
-WWW=		https://www.sqlite.org/
+WWW=		https://www.sqlite.org/ \
+		https://github.com/sqlite/sqlite
 
 LICENSE=	PD
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 .if !defined(TEA)
 FLAVORS=	default icu tcl
@@ -38,14 +40,13 @@ USES=	libtool ncurses zip
 USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--linemacros \
-			--soname=legacy OPTIONS='${_OPTIONS}'
+CONFIGURE_ARGS=	--linemacros \
+		--prefix=${PREFIX} \
+		--soname=legacy OPTIONS='${_OPTIONS}'
 # [The Chronicles of SONAME](https://sqlite.org/src/forumpost/5a3b44f510df8ded)
 # [Set features OPTIONS for autosetup configurator](https://msteveb.github.io/autosetup/)
-
 MAKE_JOBS_UNSAFE=	yes
-ALL_TARGET+=	sqldiff
+ALL_TARGET=	sqldiff
 .if defined(TEA)
 INSTALL_TARGET=	tcl_install
 .endif
@@ -61,7 +62,7 @@ CPPFLAGS+=	-DSQLITE_DEFAULT_FILE_PERMISSIONS=${DEFAULT_FILE_PERMISSIONS}
 CONFLICTS_INSTALL=	sqlite3 sqlite3-icu sqlite3-tcl tcl-sqlite3 # include/sqlite3.h share/examples/sqlite3/example.tcl
 
 SUB_FILES=	example.tcl
-SUB_LIST=	TCLSH_CMD="${TCLSH}"
+SUB_LIST=	TCLSH_CMD=${TCLSH}
 
 .if defined(TEA)
 USES+=	sqlite
@@ -84,7 +85,7 @@ OPTIONS_DEFINE+=	ARMOR DBPAGE DBSTAT DIRECT_READ DQS EXTENSION FTS3_TOKEN \
 			UPDATE_LIMIT URI URI_AUTHORITY
 .endif
 OPTIONS_DEFAULT=	DBPAGE DBSTAT DIRECT_READ EXTENSION FTS3_TOKEN FTS4 FTS5 LIBEDIT METADATA \
-			RTREE SECURE_DELETE STRIP THREADS TS1 UNICODE61 UNLOCK_NOTIFY URI
+			RTREE SECURE_DELETE SESSION STRIP THREADS TS1 UNICODE61 UNLOCK_NOTIFY URI
 # SECURE_DELETE, UNLOCK_NOTIFY, DBSTAT (since 41.0) used by www/firefox et al.
 # RTREE used by graphics/mapnik, databases/spatialite
 # FTS3_TOKEN used by audio/clementine-player, mail/thunderbird, www/seamonkey
@@ -280,29 +281,29 @@ post-configure:
 post-install:
 .if !defined(TEA)
 	${INSTALL_DATA} ${WRKSRC}/sqlite_cfg.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_MAN} "${WRKSRC}/${PORTNAME}.1" "${STAGEDIR}${PREFIX}/share/man/man1"
-	${RM} "${STAGEDIR}${PREFIX}/include/msvc.h"
-	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${PREFIX}/bin/${PORTNAME}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so"
-	${INSTALL_PROGRAM} "${WRKSRC}/sqldiff" "${STAGEDIR}${PREFIX}/bin"
+	${INSTALL_MAN} ${WRKSRC}/sqlite3.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${RM} ${STAGEDIR}${PREFIX}/include/msvc.h
+	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a ${STAGEDIR}${PREFIX}/bin/sqlite3 ${STAGEDIR}${PREFIX}/lib/libsqlite3.so
+	${INSTALL_PROGRAM} ${WRKSRC}/sqldiff ${STAGEDIR}${PREFIX}/bin
 .else
-	${RM} "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.${DISTVERSION}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.a"
+	${RM} ${STAGEDIR}${PREFIX}/lib/libsqlite3.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libsqlite3.a
 .endif
 
 post-install-STRIP-on:
 .if !defined(TEA)
-	${STRIP_CMD} "${STAGEDIR}${PREFIX}/bin/${PORTNAME}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so"
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sqlite3 ${STAGEDIR}${PREFIX}/lib/libsqlite3.so
 .endif
 .if ${PORT_OPTIONS:MTCL}
-	${STRIP_CMD} "${STAGEDIR}${PREFIX}/lib/tcl${TCL_VER}/${PORTNAME}/libtcl${PORTNAME}.so"
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/tcl${TCL_VER}/sqlite3/libtclsqlite3.so
 .endif
 
 post-install-TCL-on:
-	${INSTALL_PROGRAM} "${WRKSRC}/${PORTNAME}_analyzer" "${STAGEDIR}${PREFIX}/bin"
+	${INSTALL_PROGRAM} ${WRKSRC}/sqlite3_analyzer ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/mann
-	${INSTALL_MAN} "${WRKSRC}/autoconf/tea/doc/${PORTNAME}.n" "${STAGEDIR}${PREFIX}/share/man/mann/${PORTNAME}.tcl${TCL_VER:S/.//g}.n"
+	${INSTALL_MAN} ${WRKSRC}/autoconf/tea/doc/sqlite3.n ${STAGEDIR}${PREFIX}/share/man/mann/sqlite3.tcl${TCL_VER:S/.//g}.n
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} "${STAGEDIR}${EXAMPLESDIR}"
-	${INSTALL_SCRIPT} "${WRKDIR}/${SUB_FILES}" "${WRKSRC}/contrib/sqlitecon.tcl" "${STAGEDIR}${EXAMPLESDIR}"
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${SUB_FILES} ${WRKSRC}/contrib/sqlitecon.tcl ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 pre-test:
