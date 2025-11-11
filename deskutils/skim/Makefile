@@ -1,7 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.4
-PORTREVISION=	3
+DISTVERSION=	0.20.5
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -20,11 +19,11 @@ GH_ACCOUNT=	lotabout
 CARGO_CRATES=	aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.19 \
+		anstream-0.6.20 \
 		anstyle-1.0.11 \
 		anstyle-parse-0.2.7 \
-		anstyle-query-1.1.3 \
-		anstyle-wincon-3.0.9 \
+		anstyle-query-1.1.4 \
+		anstyle-wincon-3.0.10 \
 		arrayvec-0.7.6 \
 		autocfg-1.5.0 \
 		beef-0.5.2 \
@@ -32,13 +31,13 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		bitflags-2.9.1 \
 		bstr-1.12.0 \
 		bumpalo-3.19.0 \
-		cc-1.2.31 \
+		cc-1.2.32 \
 		cfg-if-1.0.1 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.41 \
-		clap-4.5.42 \
-		clap_builder-4.5.42 \
-		clap_complete-4.5.55 \
+		clap-4.5.43 \
+		clap_builder-4.5.43 \
+		clap_complete-4.5.56 \
 		clap_complete_fig-4.5.2 \
 		clap_complete_nushell-4.5.8 \
 		clap_derive-4.5.41 \
@@ -73,7 +72,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		fuzzy-matcher-0.3.7 \
 		getrandom-0.2.16 \
 		getrandom-0.3.3 \
-		hashbrown-0.15.4 \
+		hashbrown-0.15.5 \
 		heck-0.5.0 \
 		iana-time-zone-0.1.63 \
 		iana-time-zone-haiku-0.1.2 \
@@ -113,7 +112,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-syntax-0.8.5 \
 		roff-0.2.2 \
 		rustix-1.0.8 \
-		rustversion-1.0.21 \
+		rustversion-1.0.22 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
 		shell-quote-0.7.2 \
