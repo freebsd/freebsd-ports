@@ -156,8 +156,8 @@ MODBUS_DESC=		Support for Modbus checks
 MODBUS_CONFIGURE_WITH=	libmodbus
 MODBUS_LIB_DEPENDS=	libmodbus.so:comms/libmodbus
 
-NMAP_RUN_DEPENDS=	nmap:security/nmap \
-			sudo:security/sudo
+NMAP_RUN_DEPENDS=	nmap:security/nmap
+NMAP_USES=		sudo
 
 OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_USES=		ssl

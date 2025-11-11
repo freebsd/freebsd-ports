@@ -11,9 +11,7 @@ WWW=		https://github.com/topgrade-rs/topgrade
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	sudo:security/sudo
-
-USES=		cargo
+USES=		cargo sudo
 USE_GITHUB=	yes
 GH_ACCOUNT=	topgrade-rs
 

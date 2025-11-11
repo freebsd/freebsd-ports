@@ -12,10 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=  gtk-update-icon-cache:graphics/gtk-update-icon-cache \
 		${PYTHON_PKGNAMEPREFIX}python-distutils-extra>=2.15:devel/py-python-distutils-extra@${PY_FLAVOR}
-RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
-		sudo:security/sudo
+RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
 
-USES=		gettext-tools gnome python shebangfix
+USES=		gettext-tools gnome python shebangfix sudo
 USE_GITHUB=	yes
 GH_ACCOUNT=	GhostBSD
 USE_GNOME=	pygobject3 intltool

@@ -23,6 +23,6 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	SUDO
 SUDO_DESC=	Run shell commands via sudo
 
-SUDO_RUN_DEPENDS=	sudo:security/sudo
+SUDO_USES=	sudo
 
 .include <bsd.port.mk>

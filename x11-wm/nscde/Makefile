@@ -83,7 +83,8 @@ SUDO_DESC=			Use sudo to elevate privileges
 ASTKSH_RUN_DEPENDS=	ksh93:shells/ast-ksh93
 DOAS_RUN_DEPENDS=	doas:security/doas
 KSH2020_RUN_DEPENDS=	ksh93:shells/ksh
-SUDO_RUN_DEPENDS=	sudo:security/sudo
+
+SUDO_USES=	sudo
 
 _SUDOFILES=	data/fvwm/Functions.fvwmconf.in lib/scripts/SysActionDialog
 

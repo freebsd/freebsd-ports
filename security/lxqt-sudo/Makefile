@@ -10,10 +10,8 @@ WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
 
-RUN_DEPENDS=	sudo:security/sudo
-
 USES=		cmake compiler:c++20-lang gettext kde:6 lxqt:2 qt:6 perl5 tar:xz \
-		gnome xorg
+		gnome sudo xorg
 USE_PERL5=	build
 USE_QT=		base:run tools:build svg
 

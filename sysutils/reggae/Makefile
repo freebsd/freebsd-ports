@@ -9,8 +9,7 @@ WWW=		https://github.com/cbsd/reggae
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	sudo:security/sudo
-
+USES=		sudo
 USE_GITHUB=	yes
 GH_ACCOUNT=	cbsd
 USE_RC_SUBR=	reggae reggae_pf

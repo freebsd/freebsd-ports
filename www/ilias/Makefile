@@ -18,10 +18,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Auth/Auth.php:security/pear-Auth@${PHP_FLAV
 		${PECL_PKGNAMEPREFIX}imagick>=0:graphics/pecl-imagick@${PHP_FLAVOR} \
 		${UNZIP_CMD}:archivers/unzip \
 		composer:devel/php-composer@${PHP_FLAVOR} \
-		sudo:security/sudo \
 		zip:archivers/zip
 
-USES=		cpe jpeg magick:7,run php:flavors
+USES=		cpe jpeg magick:7,run php:flavors sudo
 USE_GITHUB=	yes
 GH_ACCOUNT=	ILIAS-eLearning
 GH_PROJECT=	ILIAS

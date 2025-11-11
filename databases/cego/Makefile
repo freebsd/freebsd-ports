@@ -13,10 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblfcbase.so:devel/lfcbase \
 		liblfcxml.so:devel/lfcxml
-RUN_DEPENDS=	${LOCALBASE}/bin/sudo:security/sudo \
-		bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
-USES=		libtool localbase ncurses readline shebangfix
+USES=		libtool localbase ncurses readline shebangfix sudo
 SHEBANG_FILES=	tools/cgbackup tools/cgrecover tools/cgsimload \
 		tools/logManager tools/backupManager
 USE_LDCONFIG=	yes

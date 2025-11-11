@@ -10,15 +10,14 @@ WWW=		https://github.com/Azure/WALinuxAgent/
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	sudo:security/sudo \
-		bash:shells/bash \
+RUN_DEPENDS=	bash:shells/bash \
 		dmidecode:sysutils/dmidecode \
 		${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1@${PY_FLAVOR} \
 		ca_root_nss>0:security/ca_root_nss
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		python shebangfix
+USES=		python shebangfix sudo
 
 SHEBANG_FILES=	bin/waagent bin/waagent2.0
 

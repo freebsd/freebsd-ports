@@ -20,10 +20,9 @@ RUN_DEPENDS=	rrdtool:databases/rrdtool \
 		mtr:net/mtr@nox11 \
 		${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4@${PHP_FLAVOR} \
 		${LOCALBASE}/share/pear/Net/IPv6.php:net/pear-Net_IPv6@${PHP_FLAVOR} \
-		snmpget:net-mgmt/net-snmp \
-		sudo:security/sudo
+		snmpget:net-mgmt/net-snmp
 
-USES=		cpe php:cli,flavors python shebangfix
+USES=		cpe php:cli,flavors python shebangfix sudo
 USE_PHP=	ctype filter gd iconv mysqli posix session snmp tokenizer xml zlib
 IGNORE_WITH_PHP=	81
 SHEBANG_FILES=	\

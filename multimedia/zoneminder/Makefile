@@ -33,14 +33,13 @@ LIB_DEPENDS=	libx264.so:multimedia/libx264 \
 		libmp4v2.so:multimedia/mp4v2 \
 		libgcrypt.so:security/libgcrypt
 RUN_DEPENDS=	${ZM_DEPENDS} \
-		sudo:security/sudo \
 		p5-Device-SerialPort>=0:comms/p5-Device-SerialPort \
 		p5-Crypt-Eksblowfish>=0:security/p5-Crypt-Eksblowfish \
 		p5-Bytes-Random-Secure>=0:security/p5-Bytes-Random-Secure \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
 		zip:archivers/zip
 
-USES=		cmake:insource,noninja cpe jpeg mysql perl5 php:flavors shebangfix ssl
+USES=		cmake:insource,noninja cpe jpeg mysql perl5 php:flavors shebangfix ssl sudo
 USE_GITHUB=	yes
 GH_TUPLE=	FriendsOfCake:crud:1429237:crud/web/api/app/Plugin/Crud \
 		ZoneMinder:CakePHP-Enum-Behavior:ea90c0c:crud_plugin/web/api/app/Plugin/CakePHP-Enum-Behavior \

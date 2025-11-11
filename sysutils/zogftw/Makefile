@@ -11,11 +11,11 @@ WWW=		https://www.fabiankeil.de/gehacktes/zogftw/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	mbuffer:misc/mbuffer \
-		sudo:security/sudo
+RUN_DEPENDS=	mbuffer:misc/mbuffer
 TEST_DEPENDS=	atf-sh:devel/atf \
 		kyua:devel/kyua
 
+USES=		sudo
 NO_BUILD=	yes
 PORTSCOUT=	ignore:1
 

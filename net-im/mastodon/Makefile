@@ -20,11 +20,10 @@ RUN_DEPENDS=	autoconf>=2.71:devel/autoconf \
 		gnupg>0:security/gnupg \
 		redis>0:databases/redis \
 		rubygem-bundler>=0:sysutils/rubygem-bundler \
-		sudo>0:security/sudo \
 		wget>0:ftp/wget \
 		yarn>:www/yarn
 
-USES=		magick:7,run pgsql
+USES=		magick:7,run pgsql sudo
 USE_GITHUB=	yes
 USE_RC_SUBR=	mastodon_sidekiq mastodon_streaming mastodon_web
 
