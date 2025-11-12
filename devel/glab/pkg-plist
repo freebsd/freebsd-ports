@@ -86,8 +86,16 @@
 %%MANPAGES%%share/man/man1/glab-job.1.gz
 %%MANPAGES%%share/man/man1/glab-label-create.1.gz
 %%MANPAGES%%share/man/man1/glab-label-delete.1.gz
+%%MANPAGES%%share/man/man1/glab-label-edit.1.gz
+%%MANPAGES%%share/man/man1/glab-label-get.1.gz
 %%MANPAGES%%share/man/man1/glab-label-list.1.gz
 %%MANPAGES%%share/man/man1/glab-label.1.gz
+%%MANPAGES%%share/man/man1/glab-milestone-create.1.gz
+%%MANPAGES%%share/man/man1/glab-milestone-delete.1.gz
+%%MANPAGES%%share/man/man1/glab-milestone-edit.1.gz
+%%MANPAGES%%share/man/man1/glab-milestone-get.1.gz
+%%MANPAGES%%share/man/man1/glab-milestone-list.1.gz
+%%MANPAGES%%share/man/man1/glab-milestone.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-approve.1.gz
 %%MANPAGES%%share/man/man1/glab-mcp-serve.1.gz
 %%MANPAGES%%share/man/man1/glab-mcp.1.gz
