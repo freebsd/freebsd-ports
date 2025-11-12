@@ -1,6 +1,5 @@
 PORTNAME=	elementpath
-DISTVERSION=	4.8.0
-PORTREVISION=	2
+DISTVERSION=	5.0.4
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +11,13 @@ WWW=		https://github.com/sissaschool/elementpath
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xmlschema>=2.0.0:textproc/py-xmlschema@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist pytest
+USE_PYTHON=	pep517 concurrent autoplist pytest
 
 NO_ARCH=	yes
 
