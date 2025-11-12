@@ -1,5 +1,5 @@
 PORTNAME=	astc-encoder
-DISTVERSION=	5.1.0
+DISTVERSION=	5.3.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,5 +25,7 @@ CMAKE_TESTING_ON=	ASTCENC_UNITTEST
 LDFLAGS+=	-pthread
 
 PLIST_FILES=	bin/astcenc-native
+
+# tests as of 5.3.0: 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>
