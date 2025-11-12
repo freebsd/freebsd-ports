@@ -1,6 +1,6 @@
 PORTNAME=	openjdk8
 PORTVERSION=	${DISTVERSION_${JDK_ARCH}}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/jkim \
 		LOCAL/mikael \
@@ -35,6 +35,8 @@ USES=		tar:xz
 WRKSRC=		${WRKDIR}/${JDK_ROOT}
 
 INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
+
+BUNDLE_LIBS=	yes
 
 .include <bsd.port.pre.mk>
 

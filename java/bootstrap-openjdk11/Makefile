@@ -1,5 +1,6 @@
 PORTNAME=	openjdk11
 PORTVERSION=	11.0.5.10.1
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/glewis/bootstrap-openjdk11 \
 		LOCAL/pkubaj
@@ -26,6 +27,8 @@ JDK_ARCH=	${ARCH:C/armv.*/arm/}${JDK_ARCH_SUFFIX_${ARCH}}
 JDK_ARCH_SUFFIX_powerpc64=	-elfv2
 
 INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
+
+BUNDLE_LIBS=	yes
 
 .include <bsd.port.pre.mk>
 
