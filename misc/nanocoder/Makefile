@@ -1,6 +1,5 @@
 PORTNAME=	nanocoder
-DISTVERSION=	1.16.1
-PORTREVISION=	1
+DISTVERSION=	1.16.3
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,6 +38,8 @@ do-install:
 	# install files
 	cd ${WRKSRC} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib
+	# remove unnecessary files
+	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/*.json
 	# update shebang to use system node
 	@${REINPLACE_CMD} -i '' \
 		-e "s|#!/usr/bin/env node|#!${PREFIX}/bin/node|" \
