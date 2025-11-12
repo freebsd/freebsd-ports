@@ -868,6 +868,7 @@ include/folly/lang/SafeAlias.h
 include/folly/lang/SafeAssert.h
 include/folly/lang/SafeClosure.h
 include/folly/lang/StaticConst.h
+include/folly/lang/Strong.h
 include/folly/lang/Switch.h
 include/folly/lang/Thunk.h
 include/folly/lang/ToAscii.h
