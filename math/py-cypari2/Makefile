@@ -1,5 +1,5 @@
 PORTNAME=	cypari2
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.4
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,22 +16,16 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}	\
 LIB_DEPENDS=	libgmp.so:math/gmp	\
 		libpari.so:math/pari
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}
-TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}	\
-		${PYTHON_PKGNAMEPREFIX}flaky>=3.8.1:devel/py-flaky@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flaky>=3.8.1:devel/py-flaky@${PY_FLAVOR}
 
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	sagemath
 
-USES=		compiler:c11 python
-USE_PYTHON=	cython3 pep517
+USES=		compiler:c11 localbase:ldflags meson pytest python
+USE_PYTHON=	cython3
 
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s
 .endif
-
-PLIST_SUB+=	VER=${DISTVERSION}
-
-do-test: install
-	(cd ${WRKSRC} && py.test)
 
 .include <bsd.port.mk>
