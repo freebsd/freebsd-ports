@@ -1,10 +1,9 @@
 PORTNAME=	alertmanager
-PORTVERSION=	0.26.0
+PORTVERSION=	0.29.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	17
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	michal@hanu.la
+MAINTAINER=	dutra@FreeBSD.org
 COMMENT=	Alert routing for Prometheus
 WWW=		https://prometheus.io/docs/alerting/alertmanager/
 
@@ -20,6 +19,18 @@ GO_TARGET=	./cmd/alertmanager ./cmd/amtool
 
 USERS=		alertmanager
 GROUPS=		alertmanager
+
+GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}"
+
+_BUILD_USER?=	${USER}
+_BUILD_DATE=	$$(date +%Y-%m-%d)
+LD_FLAG_STRING=	-s \
+		${LD_FLAG_X_PREFIX}.Version=${PORTVERSION} \
+		${LD_FLAG_X_PREFIX}.Revision=${PORTREVISION} \
+		${LD_FLAG_X_PREFIX}.Branch=release-${PORTVERSION:R} \
+		${LD_FLAG_X_PREFIX}.BuildUser=${_BUILD_USER} \
+		${LD_FLAG_X_PREFIX}.BuildDate=${_BUILD_DATE}
+LD_FLAG_X_PREFIX=	-X github.com/prometheus/common/version
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/alertmanager
