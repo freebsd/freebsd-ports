@@ -133,6 +133,7 @@
     SUBDIR += hybrid-bar
     SUBDIR += hyprcursor
     SUBDIR += hypridle
+    SUBDIR += hyprland-guiutils
     SUBDIR += hyprland-qtutils
     SUBDIR += hyprlock
     SUBDIR += hyprls
