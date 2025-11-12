@@ -460,6 +460,7 @@
     SUBDIR += mailcommon
     SUBDIR += mailimporter
     SUBDIR += malo-firmware-kmod
+    SUBDIR += mcast-bridge
     SUBDIR += mcjoin
     SUBDIR += mdns-bridge
     SUBDIR += mdns-repeater
