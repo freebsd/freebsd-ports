@@ -11,7 +11,9 @@ WWW=		https://weaviate.io/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	build error: no error messages printed
+# https://github.com/weaviate/weaviate/issues/9692
+NOT_FOR_ARCHS=	armv7 i386 powerpc
+NOT_FOR_ARCHS_REASON=	port seems to not support 32 bit platforms
 
 USES=		go:modules
 
