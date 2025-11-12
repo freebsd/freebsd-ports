@@ -9,6 +9,9 @@ MAINTAINER?=	enlightenment@FreeBSD.org
 COMMENT?=	X11 terminal emulator based on rxvt/xterm
 WWW=		http://www.eterm.org/
 
+DEPRECATED=	unmaintained upstream, use x11/terminology instead
+EXPIRATION_DATE=2025-12-31
+
 BUILD_DEPENDS=	man2html:textproc/man2html
 LIB_DEPENDS=	libast.so:devel/libast \
 		libImlib2.so:graphics/imlib2
