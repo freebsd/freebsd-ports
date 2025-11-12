@@ -1,7 +1,6 @@
 PORTNAME=	feluda
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.1 # Cargo.lock patched: `make patch cargo-crates`
-PORTREVISION=	1
+DISTVERSION=	1.10.3 # Cargo.lock patched: `make patch cargo-crates`
 CATEGORIES=	textproc
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -13,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
+RUN_DEPENDS=	noto-emoji>0:x11-fonts/noto-emoji
 
 USES=		cargo localbase ssl
 USE_GITHUB=	yes
