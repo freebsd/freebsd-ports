@@ -5,7 +5,11 @@ CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 
 MAINTAINER=	java@FreeBSD.org
-COMMENT=	Java Development Kit ${JDK_MAJOR_VERSION}
+COMMENT=	${COMMENT_${FLAVOR}} ${JDK_MAJOR_VERSION}
+COMMENT_jdk=	Java Development Kit
+COMMENT_headless=	Java Development Kit (headless version)
+COMMENT_jre=	Java Runtime Environment
+COMMENT_jre_headless=	Java Runtime Environment (headless version)
 
 WWW=		https://openjdk.java.net/projects/jdk/25/
 
@@ -13,12 +17,25 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
+# This port supports the following flavors:
+#
+# - jdk (default)	Full OpenJDK including dev tools and x11 support
+# - headless		Full OpenJDK including dev tools, but without x11 support
+# - jre			Java Runtime Environment including x11 support
+# - jre_headless	Jave Runtime Environment without x11 support
+FLAVORS=	jdk jre headless jre_headless
+
+headless_PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}-headless
+jre_PKGNAMESUFFIX=	-jre
+jre_headless_PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}-jre-headless
+
+FLAVOR?=	${BUILD_JRE:?jre:${FLAVORS:[1]}}
+
 BUILD_DEPENDS=	${LOCALBASE}/include/cups/cups.h:print/cups \
 		bash:shells/bash \
 		gsed:textproc/gsed \
 		zip:archivers/zip
 
-.if ${FLAVORS:U} != headless
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -26,22 +43,15 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libharfbuzz.so:print/harfbuzz \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png
-.endif
 
 RUN_DEPENDS=	javavm:java/javavmwrapper
-.if ${FLAVORS:U} != headless
+.if ${FLAVOR:M*headless} == ""
 RUN_DEPENDS+=	xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype
 .endif
 
-FLAVORS=	jdk jre headless
-FLAVOR?=	${BUILD_JRE:?jre:${FLAVORS:[1]}}
-
-headless_PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}-headless
-jre_PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}-jre
-
-USES=		autoreconf:build compiler:features cpe gmake iconv pkgconfig
-.if ${FLAVORS:U} != headless
-USES+=		jpeg xorg
+USES=		autoreconf:build compiler:features cpe gmake iconv jpeg pkgconfig
+.if ${FLAVOR:M*headless} == ""
+USES+=		xorg
 .endif
 
 CPE_VENDOR=	oracle
@@ -49,7 +59,7 @@ CPE_VENDOR=	oracle
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 
-.if ${FLAVORS:U} != headless
+.if ${FLAVOR:M*headless} == ""
 USE_XORG=	x11 xext xi xrandr xrender xt xtst
 .endif
 
@@ -79,12 +89,12 @@ CONFIGURE_ARGS=		--disable-ccache \
 			--with-zlib=system \
 			--x-includes=${LOCALBASE}/include \
 			--x-libraries=${LOCALBASE}/lib
-CONFIGURE_ENV=		ac_cv_path_SED=${LOCALBASE}/bin/gsed
-CONFIGURE_TARGET=	${JDK_ARCH}-portbld-${OPSYS:tl}${OSREL}
-
-.if ${FLAVOR:U} == headless
+.if ${FLAVOR:M*headless}
 CONFIGURE_ARGS+=	--enable-headless-only
 .endif
+
+CONFIGURE_ENV=		ac_cv_path_SED=${LOCALBASE}/bin/gsed
+CONFIGURE_TARGET=	${JDK_ARCH}-portbld-${OPSYS:tl}${OSREL}
 
 # Suppress passing -j to do-build target via Mk/bsd.port.mk
 # In the JDK build the number of parallel jobs is passed in via configure --with-num-cores=N
@@ -95,7 +105,7 @@ MAKE_ENV=	CLASSPATH="" \
 		LOG=cmdlines \
 		MAKEFLAGS=""
 
-.if ${FLAVOR:U} == jre
+.if ${FLAVOR:Mjre*}
 ALL_TARGET=	legacy-images
 .else
 ALL_TARGET=	images
@@ -105,7 +115,7 @@ JDK_BUILD_TYPE=	release
 JDK_ARCH=	${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc64/ppc64/}
 JDK_OSARCH=	bsd-${JDK_ARCH}
 JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-${JDK_BUILD_JVM}-${JDK_BUILD_TYPE}
-.if ${FLAVOR:U} == jre
+.if ${FLAVOR:Mjre*}
 BUILD_JRE=	true
 JDK_IMAGEDIR=	${JDK_BUILDDIR}/images/jre
 .else
