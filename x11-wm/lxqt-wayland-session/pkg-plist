@@ -1,3 +1,4 @@
+bin/lxqt-qdbus
 bin/startlxqtwayland
 %%LXQT_SHAREDIR%%/graphics/lxqt-labwc.png
 %%LXQT_SHAREDIR%%/wallpapers/origami-dark-labwc.png

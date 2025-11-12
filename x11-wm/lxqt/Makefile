@@ -1,5 +1,5 @@
 PORTNAME=	lxqt
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	lxqt@FreeBSD.org
@@ -12,21 +12,19 @@ RUN_DEPENDS=	startlxqt:x11-wm/lxqt-session \
 	lxqt-config>=${PORTVERSION}:sysutils/lxqt-config \
 	lxqt-qtplugin>=1.4.0:sysutils/lxqt-qtplugin \
 	lxqt-qt6plugin>=${PORTVERSION}:sysutils/lxqt-qt6plugin \
-	qterminal>=2.2.0:x11/qterminal \
-	obconf-qt>=0.16.5:x11-wm/obconf-qt \
+	qterminal>=2.3.0:x11/qterminal \
+	obconf-qt>=0.16.6:x11-wm/obconf-qt \
 	lximage-qt>=${PORTVERSION}:graphics/lximage-qt \
-	lxqt-panel>=${PORTVERSION}:x11-wm/lxqt-panel \
 	lxqt-runner>=${PORTVERSION}:x11/lxqt-runner \
 	lxqt-powermanagement>=${PORTVERSION}:sysutils/lxqt-powermanagement \
 	${PREFIX}/share/lxqt/themes/frost/lxqt-panel.qss:x11-themes/lxqt-themes \
 	pcmanfm-qt>=${PORTVERSION}:x11-fm/pcmanfm-qt \
-	screengrab>=2.10.0:x11/screengrab \
-	lxqt-archiver>=1.2.0:archivers/lxqt-archiver \
+	screengrab>=3.1.0:x11/screengrab \
+	lxqt-archiver>=1.3.0:archivers/lxqt-archiver \
 	lxqt-notificationd>=${PORTVERSION}:deskutils/lxqt-notificationd \
 	lxqt-panel>=${PORTVERSION}:x11-wm/lxqt-panel \
 	lxqt-policykit>=${PORTVERSION}:sysutils/lxqt-policykit \
-	lxqt-session>=${PORTVERSION}:x11-wm/lxqt-session \
-	lxqt-wayland-session>=0.2.0:x11-wm/lxqt-wayland-session \
+	lxqt-wayland-session>=0.3.0:x11-wm/lxqt-wayland-session \
 	qlipper:deskutils/qlipper \
 	openbox:x11-wm/openbox \
 	xdg-desktop-portal-lxqt>0:deskutils/xdg-desktop-portal-lxqt

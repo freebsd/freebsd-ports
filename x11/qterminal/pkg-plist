@@ -46,7 +46,9 @@ share/metainfo/qterminal.metainfo.xml
 %%DATADIR%%/translations/qterminal_ru.qm
 %%DATADIR%%/translations/qterminal_si.qm
 %%DATADIR%%/translations/qterminal_sk_SK.qm
+%%DATADIR%%/translations/qterminal_sv.qm
 %%DATADIR%%/translations/qterminal_tr.qm
 %%DATADIR%%/translations/qterminal_uk.qm
+%%DATADIR%%/translations/qterminal_vi.qm
 %%DATADIR%%/translations/qterminal_zh_CN.qm
 %%DATADIR%%/translations/qterminal_zh_TW.qm

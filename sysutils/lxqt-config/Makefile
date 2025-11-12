@@ -1,6 +1,5 @@
 PORTNAME=	lxqt-config
-PORTVERSION=	2.2.0
-PORTREVISION=	4
+PORTVERSION=	2.3.0
 CATEGORIES=	sysutils
 DIST_SUBDIR=	lxqt
 
@@ -11,7 +10,7 @@ WWW=		https://lxqt-project.org
 LICENSE=	GPLv2 LGPL21+
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	lxqt-menu-data>=2.0.0:x11/lxqt-menu-data \
+BUILD_DEPENDS=	lxqt-menu-data>=2.3.0:x11/lxqt-menu-data \
 		${LOCALBASE}/lib/xorg/modules/input/libinput_drv.so:x11-drivers/xf86-input-libinput
 RUN_DEPENDS=	lxqt-menu-data>=2.0.0:x11/lxqt-menu-data
 

@@ -2,6 +2,7 @@ etc/xdg/menus/lxqt-applications-compact.menu
 etc/xdg/menus/lxqt-applications-fm.menu
 etc/xdg/menus/lxqt-applications.menu
 etc/xdg/menus/lxqt-config.menu
+etc/xdg/menus/lxqt-panel-applications.menu
 share/cmake/lxqt-menu-data/lxqt-menu-data-config-version.cmake
 share/cmake/lxqt-menu-data/lxqt-menu-data-config.cmake
 share/desktop-directories/lxqt-audio-video.directory

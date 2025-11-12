@@ -1,9 +1,5 @@
 bin/screengrab
 share/applications/screengrab.desktop
-%%DOCSDIR%%/html/default.css
-%%DOCSDIR%%/html/en/index.html
-%%DOCSDIR%%/html/pt_BR/index.html
-%%DOCSDIR%%/html/ru/index.html
 share/icons/hicolor/scalable/apps/screengrab.svg
 share/metainfo/screengrab.metainfo.xml
 %%DATADIR%%/screengrab.conf
