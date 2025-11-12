@@ -1,5 +1,4 @@
 bin/limine
-include/limine.h
 %%DATADIR%%/BOOTAA64.EFI
 %%DATADIR%%/BOOTIA32.EFI
 %%DATADIR%%/BOOTRISCV64.EFI

@@ -1,5 +1,5 @@
 PORTNAME=	limine
-DISTVERSION=	10.2.1
+DISTVERSION=	10.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://codeberg.org/Limine/Limine/releases/download/v${DISTVERSION}/
 
@@ -23,7 +23,7 @@ MAKEFILE=	GNUmakefile
 
 INSTALL_TARGET=	install-strip
 
-PORTDOCS=	3RDPARTY.md CONFIG.md FAQ.md PROTOCOL.md USAGE.md
+PORTDOCS=	3RDPARTY.md CONFIG.md FAQ.md USAGE.md
 
 OPTIONS_DEFINE=	DOCS
 
