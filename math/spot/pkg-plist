@@ -7,8 +7,11 @@ bin/ltl2tgba
 bin/ltl2tgta
 bin/ltlcross
 bin/ltldo
+bin/ltlf2dfa
 bin/ltlfilt
+bin/ltlfsynt
 bin/ltlgrind
+bin/ltlmix
 bin/ltlsynt
 bin/randaut
 bin/randltl
@@ -23,6 +26,7 @@ include/spot/bricks/brick-shmem
 include/spot/bricks/brick-types
 include/spot/gen/automata.hh
 include/spot/gen/formulas.hh
+include/spot/graph/adjlist.hh
 include/spot/graph/graph.hh
 include/spot/graph/ngraph.hh
 include/spot/kripke/fairkripke.hh
@@ -64,6 +68,7 @@ include/spot/misc/memusage.hh
 include/spot/misc/minato.hh
 include/spot/misc/mspool.hh
 include/spot/misc/optionmap.hh
+include/spot/misc/permute.hh
 include/spot/misc/position.hh
 include/spot/misc/random.hh
 include/spot/misc/satsolver.hh
@@ -89,6 +94,7 @@ include/spot/tl/apcollect.hh
 include/spot/tl/contain.hh
 include/spot/tl/declenv.hh
 include/spot/tl/defaultenv.hh
+include/spot/tl/delta2.hh
 include/spot/tl/dot.hh
 include/spot/tl/environment.hh
 include/spot/tl/exclusive.hh
@@ -119,6 +125,7 @@ include/spot/twa/twaproduct.hh
 include/spot/twaalgos/aiger.hh
 include/spot/twaalgos/alternation.hh
 include/spot/twaalgos/are_isomorphic.hh
+include/spot/twaalgos/backprop.hh
 include/spot/twaalgos/bfssteps.hh
 include/spot/twaalgos/canonicalize.hh
 include/spot/twaalgos/cleanacc.hh
@@ -131,6 +138,7 @@ include/spot/twaalgos/copy.hh
 include/spot/twaalgos/couvreurnew.hh
 include/spot/twaalgos/cycles.hh
 include/spot/twaalgos/dbranch.hh
+include/spot/twaalgos/deadends.hh
 include/spot/twaalgos/degen.hh
 include/spot/twaalgos/determinize.hh
 include/spot/twaalgos/dot.hh
@@ -143,6 +151,7 @@ include/spot/twaalgos/forq_contains.hh
 include/spot/twaalgos/game.hh
 include/spot/twaalgos/genem.hh
 include/spot/twaalgos/gfguarantee.hh
+include/spot/twaalgos/given.hh
 include/spot/twaalgos/gtec/ce.hh
 include/spot/twaalgos/gtec/gtec.hh
 include/spot/twaalgos/gtec/sccstack.hh
@@ -157,10 +166,14 @@ include/spot/twaalgos/langmap.hh
 include/spot/twaalgos/lbtt.hh
 include/spot/twaalgos/ltl2taa.hh
 include/spot/twaalgos/ltl2tgba_fm.hh
+include/spot/twaalgos/ltlf2dfa.hh
 include/spot/twaalgos/magic.hh
 include/spot/twaalgos/mask.hh
+include/spot/twaalgos/matchstates.hh
+include/spot/twaalgos/mcs.hh
 include/spot/twaalgos/mealy_machine.hh
 include/spot/twaalgos/minimize.hh
+include/spot/twaalgos/mtdtwa.hh
 include/spot/twaalgos/neverclaim.hh
 include/spot/twaalgos/parity.hh
 include/spot/twaalgos/postproc.hh
@@ -222,8 +235,11 @@ share/man/man1/ltl2tgba.1.gz
 share/man/man1/ltl2tgta.1.gz
 share/man/man1/ltlcross.1.gz
 share/man/man1/ltldo.1.gz
+share/man/man1/ltlf2dfa.1.gz
 share/man/man1/ltlfilt.1.gz
+share/man/man1/ltlfsynt.1.gz
 share/man/man1/ltlgrind.1.gz
+share/man/man1/ltlmix.1.gz
 share/man/man1/ltlsynt.1.gz
 share/man/man1/randaut.1.gz
 share/man/man1/randltl.1.gz
