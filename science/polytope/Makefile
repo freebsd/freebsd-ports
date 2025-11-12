@@ -1,6 +1,5 @@
 PORTNAME=	polytope
-DISTVERSION=	0.7.3-18
-DISTVERSIONSUFFIX=	-gcf83206
+DISTVERSION=	0.7.4
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,6 +31,6 @@ SILO_DESC=		Use SILO reader/writer
 SILO_CMAKE_BOOL=	USE_SILO
 SILO_LIB_DEPENDS=	libsiloh5.so:science/silo
 
-# tests as of 0.7.3-18: 96% tests passed, 1 tests failed out of 28
+# tests as of 0.7.4: 96% tests passed, 1 tests failed out of 28
 
 .include <bsd.port.mk>
