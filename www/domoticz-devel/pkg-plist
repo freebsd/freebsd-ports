@@ -409,9 +409,11 @@ domoticz/www/app/log/chart-hour.html
 domoticz/www/app/log/chart-month.html
 domoticz/www/app/log/chart-week.html
 domoticz/www/app/log/chart-year.html
+domoticz/www/app/log/components/CounterStatChart.js
 domoticz/www/app/log/components/DeviceLevelChart.js
 domoticz/www/app/log/components/DeviceOnOffChart.js
 domoticz/www/app/log/components/DeviceTextLogTable.js
+domoticz/www/app/log/components/chart-counter-stat.html
 domoticz/www/app/log/factories.js
 domoticz/www/app/main.js
 domoticz/www/app/notifications/DeviceNotifications.js
