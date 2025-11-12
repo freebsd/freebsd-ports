@@ -1,7 +1,6 @@
 PORTNAME=	PySCIPOpt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.4.1
-PORTREVISION=	1
+DISTVERSION=	5.6.0
 CATEGORIES=	math python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +26,10 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyscipopt/scip*.so
 
-# tests as of 5.3.0: 310 passed, 106 skipped, 11 xfailed, 4 warnings in 127.77s (0:02:07)
+# tests as of 5.6.0:
+# Results (26.54s):
+#      330 passed
+#       11 xfailed
+#      105 skipped
 
 .include <bsd.port.mk>
