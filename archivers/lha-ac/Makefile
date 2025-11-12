@@ -1,12 +1,11 @@
 PORTNAME=	lha
-PORTVERSION=	1.14i.20211125
-PORTREVISION=	1
+PORTVERSION=	1.14i.20250923
 CATEGORIES=	archivers
 PKGNAMESUFFIX=	-ac
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
-WWW=		https://lha.osdn.jp
+WWW=		https://github.com/jca02266/lha
 
 # Converted from RESTRICTED
 LICENSE=	LHA
@@ -19,7 +18,7 @@ CPE_VENDOR=	tsugio_okamoto
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jca02266
-GH_TAGNAME=	release-${PORTVERSION:E}
+GH_TAGNAME=	0a07ec7
 
 GNU_CONFIGURE=	yes
 
