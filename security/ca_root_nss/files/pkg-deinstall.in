@@ -2,5 +2,5 @@
 
 if [ "$2" = POST-DEINSTALL ]; then
 	CERTCTL_ARGS="-D ${PKG_ROOTDIR}"
-	certctl ${CERTCTL_ARGS} rehash
+	%%CERTCTL_CMD%% ${CERTCTL_ARGS} rehash
 fi
