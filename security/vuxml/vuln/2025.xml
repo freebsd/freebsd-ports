@@ -1,3 +1,35 @@
+  <vuln vid="6e1105d8-bfc2-11f0-bb2b-ecf4bbefc954">
+    <topic>privatebin XSS</topic>
+    <affects>
+      <package>
+       <name>privatebin</name>
+       <range><lt>2.0.3</lt></range>
+       </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>privatebin reports:</p>
+	<blockquote cite="https://privatebin.info/reports/vulnerability-2025-11-12-drag-drop.html">
+	  <p>Dragging a file whose filename contains HTML is reflected verbatim
+	  into the page via the drag-and-drop helper, so any user who drops a
+	  crafted file on PrivateBin will execute arbitrary JavaScript within
+	  their own session (self-XSS). This allows an attacker who can entice
+	  a victim to drag or otherwise attach such a file to exfiltrate
+	  plaintext, encryption keys, or stored pastes before they are
+	  encrypted or sent.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-62796</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-62796</url>
+    </references>
+    <dates>
+      <discovery>2025-11-09</discovery>
+      <entry>2025-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6e05f716-bf9e-11f0-b3f7-a8a1599412c6">
     <topic>chromium -- security fix</topic>
     <affects>
