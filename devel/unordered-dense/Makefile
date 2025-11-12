@@ -1,6 +1,6 @@
 PORTNAME=	unordered-dense
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.0
+DISTVERSION=	4.8.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	martinus
 GH_PROJECT=	${PORTNAME:S/-/_/}
 
-PLIST_FILES=	include/ankerl/unordered_dense.h \
+PLIST_FILES=	include/ankerl/stl.h \
+		include/ankerl/unordered_dense.h \
 		lib/cmake/unordered_dense/unordered_denseConfig.cmake \
 		lib/cmake/unordered_dense/unordered_denseConfigVersion.cmake \
 		lib/cmake/unordered_dense/unordered_denseTargets.cmake
