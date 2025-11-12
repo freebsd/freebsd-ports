@@ -9,6 +9,7 @@ include/Spectra/JDSymEigsBase.h
 include/Spectra/LinAlg/Arnoldi.h
 include/Spectra/LinAlg/BKLDLT.h
 include/Spectra/LinAlg/DoubleShiftQR.h
+include/Spectra/LinAlg/Givens.h
 include/Spectra/LinAlg/Lanczos.h
 include/Spectra/LinAlg/Orthogonalization.h
 include/Spectra/LinAlg/RitzPairs.h
