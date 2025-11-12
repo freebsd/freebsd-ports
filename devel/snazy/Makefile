@@ -1,6 +1,5 @@
 PORTNAME=	snazy
-DISTVERSION=	0.55.0
-PORTREVISION=	7
+DISTVERSION=	0.58.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,90 +16,101 @@ GH_ACCOUNT=	chmouel
 CARGO_CRATES=	aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.18 \
-		anstyle-1.0.10 \
-		anstyle-parse-0.2.6 \
-		anstyle-query-1.1.2 \
-		anstyle-wincon-3.0.7 \
-		autocfg-1.4.0 \
-		bitflags-2.8.0 \
-		bumpalo-3.17.0 \
-		cc-1.2.13 \
-		cfg-if-1.0.0 \
-		chrono-0.4.39 \
-		chrono-tz-0.10.1 \
-		chrono-tz-build-0.4.0 \
-		clap-4.5.29 \
-		clap_builder-4.5.29 \
-		clap_complete-4.5.44 \
-		clap_derive-4.5.28 \
-		clap_lex-0.7.4 \
+		anstream-0.6.19 \
+		anstyle-1.0.11 \
+		anstyle-parse-0.2.7 \
+		anstyle-query-1.1.3 \
+		anstyle-wincon-3.0.9 \
+		autocfg-1.5.0 \
+		bitflags-2.9.1 \
+		bumpalo-3.19.0 \
+		cc-1.2.31 \
+		cfg-if-1.0.1 \
+		chrono-0.4.41 \
+		chrono-tz-0.10.4 \
+		clap-4.5.42 \
+		clap_builder-4.5.42 \
+		clap_complete-4.5.55 \
+		clap_derive-4.5.41 \
+		clap_lex-0.7.5 \
 		color-print-0.3.7 \
 		color-print-proc-macro-0.3.7 \
-		colorchoice-1.0.3 \
+		colorchoice-1.0.4 \
 		core-foundation-sys-0.8.7 \
-		errno-0.3.10 \
+		errno-0.3.13 \
 		fastrand-2.3.0 \
-		getrandom-0.3.1 \
+		getrandom-0.3.3 \
 		heck-0.5.0 \
-		hermit-abi-0.4.0 \
-		iana-time-zone-0.1.61 \
+		hermit-abi-0.5.2 \
+		iana-time-zone-0.1.63 \
 		iana-time-zone-haiku-0.1.2 \
-		is-terminal-0.4.15 \
+		is-terminal-0.4.16 \
 		is_terminal_polyfill-1.70.1 \
-		itoa-1.0.14 \
+		itoa-1.0.15 \
 		js-sys-0.3.77 \
-		libc-0.2.169 \
-		linux-raw-sys-0.4.15 \
-		log-0.4.25 \
-		memchr-2.7.4 \
+		libc-0.2.174 \
+		linux-raw-sys-0.9.4 \
+		log-0.4.27 \
+		memchr-2.7.5 \
 		minimal-lexical-0.2.1 \
 		nom-7.1.3 \
 		num-traits-0.2.19 \
-		once_cell-1.20.3 \
-		parse-zoneinfo-0.3.1 \
-		phf-0.11.3 \
-		phf_codegen-0.11.3 \
-		phf_generator-0.11.3 \
-		phf_shared-0.11.3 \
-		proc-macro2-1.0.93 \
-		quote-1.0.38 \
-		rand-0.8.5 \
-		rand_core-0.6.4 \
+		once_cell-1.21.3 \
+		once_cell_polyfill-1.70.1 \
+		phf-0.12.1 \
+		phf_shared-0.12.1 \
+		proc-macro2-1.0.95 \
+		quote-1.0.40 \
+		r-efi-5.3.0 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		rustix-0.38.44 \
-		rustversion-1.0.19 \
-		ryu-1.0.19 \
-		serde-1.0.217 \
-		serde_derive-1.0.217 \
-		serde_json-1.0.138 \
+		rustix-1.0.8 \
+		rustversion-1.0.21 \
+		ryu-1.0.20 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
+		serde_json-1.0.142 \
 		shlex-1.3.0 \
 		siphasher-1.0.1 \
 		strsim-0.11.1 \
-		syn-2.0.98 \
-		tempfile-3.16.0 \
-		unicode-ident-1.0.16 \
+		syn-2.0.104 \
+		tempfile-3.20.0 \
+		unicode-ident-1.0.18 \
 		utf8parse-0.2.2 \
-		wasi-0.13.3+wasi-0.2.2 \
+		wasi-0.14.2+wasi-0.2.4 \
 		wasm-bindgen-0.2.100 \
 		wasm-bindgen-backend-0.2.100 \
 		wasm-bindgen-macro-0.2.100 \
 		wasm-bindgen-macro-support-0.2.100 \
 		wasm-bindgen-shared-0.2.100 \
-		windows-core-0.52.0 \
+		windows-core-0.61.2 \
+		windows-implement-0.60.0 \
+		windows-interface-0.59.1 \
+		windows-link-0.1.3 \
+		windows-result-0.3.4 \
+		windows-strings-0.4.2 \
 		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
 		windows-targets-0.52.6 \
+		windows-targets-0.53.3 \
 		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_gnullvm-0.53.0 \
 		windows_aarch64_msvc-0.52.6 \
+		windows_aarch64_msvc-0.53.0 \
 		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.0 \
 		windows_i686_gnullvm-0.52.6 \
+		windows_i686_gnullvm-0.53.0 \
 		windows_i686_msvc-0.52.6 \
+		windows_i686_msvc-0.53.0 \
 		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.0 \
 		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.52.6 \
-		wit-bindgen-rt-0.33.0 \
+		windows_x86_64_msvc-0.53.0 \
+		wit-bindgen-rt-0.39.0 \
 		yansi-1.0.1
 
 PLIST_FILES=	bin/${PORTNAME}
