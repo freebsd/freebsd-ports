@@ -1,8 +1,8 @@
 - this patch prevents -U from updating yt-dlp - it makes it "unrecognized"
 
---- yt_dlp/update.py.orig	2024-04-09 17:03:56 UTC
+--- yt_dlp/update.py.orig	2025-11-12 00:51:24 UTC
 +++ yt_dlp/update.py
-@@ -73,7 +73,7 @@ def _get_variant_and_executable_path():
+@@ -105,7 +105,7 @@ def _get_variant_and_executable_path():
  
      path = os.path.dirname(__file__)
      if isinstance(__loader__, zipimporter):
@@ -11,9 +11,9 @@
      elif (os.path.basename(sys.argv[0]) in ('__main__.py', '-m')
            and os.path.exists(os.path.join(path, '../.git/HEAD'))):
          return 'source', path
-@@ -114,7 +114,7 @@ _NON_UPDATEABLE_REASONS = {
-     **{variant: f'Auto-update is not supported for unpackaged {name} executable; Re-download the latest release'
-        for variant, name in {'win32_dir': 'Windows', 'darwin_dir': 'MacOS', 'linux_dir': 'Linux'}.items()},
+@@ -148,7 +148,7 @@ _NON_UPDATEABLE_REASONS = {
+         'Auto-update is not supported for unpackaged executables; Re-download the latest release'),
+     'py2exe': 'py2exe is no longer supported by yt-dlp; This executable cannot be updated',
      'source': 'You cannot update when running from source code; Use git to pull the latest changes',
 -    'unknown': 'You installed yt-dlp from a manual build or with a package manager; Use that to update',
 +    'unknown': 'Please use the command \'pkg upgrade yt-dlp\' to upgrade.',
