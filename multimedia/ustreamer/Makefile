@@ -1,6 +1,6 @@
 PORTNAME=	ustreamer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.41
+DISTVERSION=	6.42
 CATEGORIES=	multimedia net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,6 +39,7 @@ JANUS_MAKE_ARGS=		WITH_JANUS=1
 JANUS_USES=			gettext-runtime gnome
 JANUS_USE=			GNOME=glib20
 JANUS_CFLAGS=			-I${LOCALBASE}/include/janus # https://github.com/meetecho/janus-gateway/issues/3523, https://github.com/pikvm/ustreamer/issues/305
+JANUS_CFLAGS+=			`pkg-config --cflags glib-2.0` # because janus includes glib.h
 JANUS_BUILD_DEPENDS=		janus>0:www/janus
 JANUS_LIB_DEPENDS=		libasound.so:audio/alsa-lib \
 				libjansson.so:devel/jansson \
