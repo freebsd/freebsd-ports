@@ -2,6 +2,7 @@ include/hyprutils/animation/AnimatedVariable.hpp
 include/hyprutils/animation/AnimationConfig.hpp
 include/hyprutils/animation/AnimationManager.hpp
 include/hyprutils/animation/BezierCurve.hpp
+include/hyprutils/i18n/I18nEngine.hpp
 include/hyprutils/math/Box.hpp
 include/hyprutils/math/Edges.hpp
 include/hyprutils/math/Mat3x3.hpp
@@ -22,6 +23,7 @@ include/hyprutils/signal/Signal.hpp
 include/hyprutils/string/ConstVarList.hpp
 include/hyprutils/string/String.hpp
 include/hyprutils/string/VarList.hpp
+include/hyprutils/string/VarList2.hpp
 include/hyprutils/utils/ScopeGuard.hpp
 lib/libhyprutils.so
 lib/libhyprutils.so.%%SOVERSION_MAJOR%%
