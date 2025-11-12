@@ -1,0 +1,28 @@
+--- CMakeLists.txt.orig	2025-11-10 12:58:11 UTC
++++ CMakeLists.txt
+@@ -82,9 +82,15 @@ if(NOT HAS_TIMERFD AND epoll_FOUND)
+ check_include_file("sys/timerfd.h" HAS_TIMERFD)
+ pkg_check_modules(epoll IMPORTED_TARGET epoll-shim)
+ if(NOT HAS_TIMERFD AND epoll_FOUND)
+-  target_link_libraries(hyprtoolkit PkgConfig::epoll)
++  target_link_libraries(hyprtoolkit PUBLIC PkgConfig::epoll)
+ endif()
+ 
++check_include_file("sys/inotify.h" HAS_INOTIFY)
++pkg_check_modules(inotify IMPORTED_TARGET libinotify)
++if(NOT HAS_INOTIFY AND inotify_FOUND)
++  target_link_libraries(hyprtoolkit PUBLIC PkgConfig::inotify)
++endif()
++
+ if (NOT DISABLE_TESTS)
+   enable_testing()
+ 
+@@ -111,7 +117,7 @@ if (NOT DISABLE_TESTS)
+   target_compile_options(hyprtoolkit_inline_tests PRIVATE --coverage)
+   target_link_options(hyprtoolkit_inline_tests PRIVATE --coverage)
+   target_include_directories(hyprtoolkit_inline_tests PUBLIC "./include" PRIVATE "./src" "./src/include" "./protocols" "${CMAKE_BINARY_DIR}")
+-  target_link_libraries(hyprtoolkit_inline_tests PRIVATE GTest::gtest_main OpenGL::EGL OpenGL::OpenGL PkgConfig::deps)
++  target_link_libraries(hyprtoolkit_inline_tests PRIVATE GTest::gtest_main OpenGL::EGL OpenGL::OpenGL PkgConfig::deps PkgConfig::epoll PkgConfig::inotify)
+   gtest_discover_tests(hyprtoolkit_inline_tests)
+ endif()
+ 
