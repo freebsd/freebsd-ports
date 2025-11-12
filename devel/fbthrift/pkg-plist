@@ -645,6 +645,7 @@ include/thrift/lib/cpp2/transport/rocket/core/StreamUtil.h
 include/thrift/lib/cpp2/transport/rocket/flush/FlushManager.h
 include/thrift/lib/cpp2/transport/rocket/framing/ErrorCode.h
 include/thrift/lib/cpp2/transport/rocket/framing/Flags.h
+include/thrift/lib/cpp2/transport/rocket/framing/FrameDataFirstFieldAligner.h
 include/thrift/lib/cpp2/transport/rocket/framing/FrameType.h
 include/thrift/lib/cpp2/transport/rocket/framing/Frames.h
 include/thrift/lib/cpp2/transport/rocket/framing/Parser.h
@@ -682,13 +683,17 @@ include/thrift/lib/cpp2/transport/rocket/server/ThriftRocketServerHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/ConnectionAdapter.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/ConnectionBufferCallback.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/ConnectionWriterCallback.h
+include/thrift/lib/cpp2/transport/rocket/server/detail/ExistingStreamFrameHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/IncomingFrameBatcher.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/IncomingFrameHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/KeepAliveHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/MetadataPushHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/OutgoingFrameHandler.h
+include/thrift/lib/cpp2/transport/rocket/server/detail/RequestFnfHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/RequestResponseHandler.h
+include/thrift/lib/cpp2/transport/rocket/server/detail/RequestStreamHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/SetupFrameAcceptor.h
+include/thrift/lib/cpp2/transport/rocket/server/detail/StreamCallbackManager.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/WriteBatchTypes.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/WriteBatcher.h
 include/thrift/lib/cpp2/transport/rocket/test/fuzz/FuzzUtil.h
