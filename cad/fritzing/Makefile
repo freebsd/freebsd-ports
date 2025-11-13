@@ -8,6 +8,8 @@ WWW=		https://fritzing.org/
 
 LICENSE=	GPLv2+
 
+IGNORE_FreeBSD_13=	Requires OpenSSL >= 3
+
 BUILD_DEPENDS=	boost-libs>1.52:devel/boost-libs \
 		svgpp>0:graphics/svgpp
 
