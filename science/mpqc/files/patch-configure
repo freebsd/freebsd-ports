@@ -1,6 +1,6 @@
 --- configure.orig	2006-03-22 19:13:52 UTC
 +++ configure
-@@ -2268,14 +2268,12 @@ echo Using FORTRAN runtime libraries: $withval
+@@ -2268,14 +2268,12 @@ fi;
  
  fi;
  
@@ -15,7 +15,7 @@
  echo Using extra library directories: $withval
  
  fi;
-@@ -2290,7 +2288,7 @@ if test "${with_cca_chem_config+set}" = set; then
+@@ -2290,7 +2288,7 @@ else
  
  else
  
@@ -24,7 +24,7 @@
      # Extract the first word of "cca-chem-config", so it can be a program name with args.
  set dummy cca-chem-config; ac_word=$2
  echo "$as_me:$LINENO: checking for $ac_word" >&5
-@@ -5207,7 +5205,7 @@ case $target_cpu in
+@@ -5207,7 +5205,7 @@ esac
       ;;
  esac
  
@@ -33,7 +33,7 @@
    echo "$as_me:$LINENO: checking for C++ cpu tuning flag" >&5
  echo $ECHO_N "checking for C++ cpu tuning flag... $ECHO_C" >&6
  
-@@ -5265,7 +5263,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+@@ -5265,7 +5263,7 @@ fi
  echo "${ECHO_T}$cxx_tuneflag" >&6
  fi
  
@@ -42,6 +42,15 @@
    echo "$as_me:$LINENO: checking for C cpu tuning flag" >&5
  echo $ECHO_N "checking for C cpu tuning flag... $ECHO_C" >&6
    CFLAGS_SAV=$CFLAGS
+@@ -12444,7 +12442,7 @@ if test -n "$F77" -a "$F77" != no ; then
+   echo "      return" >> ffunc.f
+   echo "      end" >> ffunc.f
+   $F77 -c ffunc.f 1>/dev/null 2>/dev/null
+-  echo "main(){ FF(); return 0; }" > flink.c
++  echo "int FF(void); int main(){ FF(); return 0; }" > flink.c
+   if $CC -o flink -DFF=ffunc flink.c ffunc.o $LDFLAGS $LIBS 1>/dev/null 2>/dev/null; then
+     echo "$as_me:$LINENO: result: same as C" >&5
+ echo "${ECHO_T}same as C" >&6
 @@ -28629,10 +28627,10 @@ ENABLESHARED=$enable_shared
  
  
