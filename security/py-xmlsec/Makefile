@@ -1,6 +1,5 @@
 PORTNAME=	xmlsec
-DISTVERSION=	1.3.16
-PORTREVISION=	1
+DISTVERSION=	1.3.17
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +11,7 @@ WWW=		https://github.com/mehcode/python-xmlsec/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=5.4.0:devel/py-lxml@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=6.0.1:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pkgconfig>=1.5.1:devel/py-pkgconfig@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=3.4:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PY_SETUPTOOLS} \
@@ -26,6 +25,9 @@ USE_GNOME=	libxml2 libxslt
 USE_PYTHON=	autoplist pep517 flavors pytest
 
 INSTALL_TARGET=	install-strip
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|==80.9.0|>=63|g; s|==6.0.2|>=6.0.1|g' ${WRKSRC}/pyproject.toml
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/xmlsec*.so
