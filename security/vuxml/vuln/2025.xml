@@ -1,3 +1,31 @@
+  <vuln vid="2063f110-c0b8-11f0-a633-8c164580114f">
+    <topic>lightdm-kde-greeter -- Privilege Escalation from lightdm Service User to root</topic>
+    <affects>
+    <package>
+	<name>lightdm-kde-greeter</name>
+	<range><lt>6.0.4</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SUSE Security Team reports:</p>
+	<blockquote cite="https://security.opensuse.org/2025/11/13/lightdm-kde-greeter-auth-helper.html">
+	  <p>A Execution with Unnecessary Privileges vulnerability in
+	  lightdm-kde-greeter allows escalation from the service user to
+	  root. This issue affects lightdm-kde-greeter before 6.0.4.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-62876</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-62876</url>
+    </references>
+    <dates>
+      <discovery>2025-11-12</discovery>
+      <entry>2025-11-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bff06006-c0b7-11f0-ab42-b42e991fc52e">
     <topic>Mozilla -- Memory safety bugs</topic>
     <affects>
