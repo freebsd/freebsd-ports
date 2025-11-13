@@ -1,5 +1,5 @@
 PORTNAME=	strawberry-graphql
-DISTVERSION=	0.284.1
+DISTVERSION=	0.285.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj51-
@@ -52,13 +52,13 @@ CHANNELS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}asgiref>=3.2<4:www/py-asgiref@${PY
 CLI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}libcst>0:devel/py-libcst@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pygments>=2.3<3:textproc/py-pygments@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}rich>=12.0.0:textproc/py-rich@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}typer>=0.7.0:devel/py-typer@${PY_FLAVOR}
+				${PYTHON_PKGNAMEPREFIX}typer>=0.12.4:devel/py-typer@${PY_FLAVOR}
 DEBUG-SERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libcst>0:devel/py-libcst@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}multipart>=0.0.7:devel/py-multipart@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pygments>=2.3<3:textproc/py-pygments@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}rich>=12.0.0:textproc/py-rich@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}starlette>=0.18.0:www/py-starlette@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}typer>=0.7.0:devel/py-typer@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}typer>=0.12.4:devel/py-typer@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}uvicorn>=0.11.6:www/py-uvicorn@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}websockets>=15.0.1<16:devel/py-websockets@${PY_FLAVOR}
 DEBUG_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}libcst>0:devel/py-libcst@${PY_FLAVOR} \
