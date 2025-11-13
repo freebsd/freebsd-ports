@@ -1,6 +1,6 @@
 PORTNAME=	clickhouse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.5.2.7
+DISTVERSION=	23.9.1.1854
 DISTVERSIONSUFFIX=-stable
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	bash:shells/bash
 RUN_DEPENDS+=	jq:textproc/jq
 .endif
 
-USES=		cmake cpe localbase perl5 python shebangfix
+USES=		cmake cpe localbase ninja perl5 python shebangfix
 CPE_VENDOR=	${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	ClickHouse
@@ -44,16 +44,17 @@ expect_OLD_CMD=	/usr/bin/expect
 expect_CMD=	${LOCALBASE}/bin/expect
 
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=20 \
-		-DENABLE_EMBEDDED_COMPILER=OFF \
-		-DENABLE_THINLTO=OFF \
-		-DENABLE_PARQUET=OFF \
-		-DENABLE_UTILS=ON \
 		-DNO_WERROR=1 \
-		-DCOMPILER_CACHE=disabled
+		-DCOMPILER_CACHE=disabled \
+		-DPARALLEL_COMPILE_JOBS=1024 \
+		-DPARALLEL_LINK_JOBS=1024
+CMAKE_ON=	ENABLE_UTILS
+CMAKE_OFF=	ENABLE_EMBEDDED_COMPILER ENABLE_PARQUET ENABLE_THINLTO
+
 .if defined(WITH_DEBUG)
 CMAKE_BUILD_TYPE=Debug
 .else
-CMAKE_BUILD_TYPE=RelWithDebInfo
+CMAKE_BUILD_TYPE=Release
 .endif
 
 USERS=		clickhouse
@@ -71,7 +72,7 @@ TEST_CMAKE_BOOL=	ENABLE_CLICKHOUSE_TEST ENABLE_TESTS
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
-USES+=	llvm:15
+USES+=	llvm:16
 CFLAGS+=-Wno-error=int-conversion
 .endif
 
@@ -87,7 +88,6 @@ SOVERSION=	${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|;s|/etc/clickhouse-server|${PREFIX}/etc/clickhouse-server|' ${WRKSRC}/programs/server/config.xml
-	@${REINPLACE_CMD} -e 's|%%OSREL%%|${OSREL:R}|' ${WRKSRC}/cmake/freebsd/toolchain-x86_64.cmake
 	cd ${WRKSRC}/contrib/openldap-cmake && ${LN} -s freebsd_x86_64 freebsd_aarch64
 
 do-install-TEST-on:
@@ -156,6 +156,9 @@ _make-touples:
 		         org, repo, substr(sha,1,7), org_repl, repo_repl, path); }' \
 		"$${_TMPDIR}/modules.txt" "$${_TMPDIR}/tree.txt" > "$${_OUTFILE}"; \
 	${ECHO_CMD} "===> Writing $${_OUTFILE} completed"
+	${REINPLACE_CMD} -e 's|unum-cloud:usearch|unum-cloud:USearch|' \
+		${.CURDIR}/Makefile.submodules
+	${RM} ${.CURDIR}/Makefile.submodules.bak
 .endif
 
 .include <bsd.port.mk>
