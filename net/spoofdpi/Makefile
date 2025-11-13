@@ -1,6 +1,6 @@
 PORTNAME=	spoofdpi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	net
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -14,7 +14,8 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	xvzc
 GH_PROJECT=	SpoofDPI
-GH_TUPLE=	atomicgo:cursor:v0.2.0:atomicgo_cursor/vendor/atomicgo.dev/cursor \
+GH_TUPLE=	BurntSushi:toml:v1.5.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
+		atomicgo:cursor:v0.2.0:atomicgo_cursor/vendor/atomicgo.dev/cursor \
 		atomicgo:keyboard:v0.2.9:atomicgo_keyboard/vendor/atomicgo.dev/keyboard \
 		atomicgo:schedule:v0.1.0:atomicgo_schedule/vendor/atomicgo.dev/schedule \
 		containerd:console:v1.0.3:containerd_console/vendor/github.com/containerd/console \
@@ -43,6 +44,7 @@ GH_TUPLE=	atomicgo:cursor:v0.2.0:atomicgo_cursor/vendor/atomicgo.dev/cursor \
 		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		stretchr:objx:v0.5.2:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.11.1:stretchr_testify/vendor/github.com/stretchr/testify \
+		urfave:cli-altsrc:v3.1.0:urfave_cli_altsrc_v3/vendor/github.com/urfave/cli-altsrc/v3 \
 		urfave:cli:v1.22.17:urfave_cli/vendor/github.com/urfave/cli \
 		urfave:cli:v3.5.0:urfave_cli_v3/vendor/github.com/urfave/cli/v3 \
 		xo:terminfo:abceb7e1c41e:xo_terminfo/vendor/github.com/xo/terminfo
@@ -52,13 +54,24 @@ GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-s -w"
 CGO_CFLAGS+=	-I/usr/include
 CGO_LDFLAGS+=	-L/usr/lib
+SUB_FILES=	pkg-message
 SUB_LIST=	USER=${USERS}
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	"@dir(${USERS},${GROUPS},0770) ${ETCDIR}" \
+		"@sample(${USERS},${GROUPS},0770) ${ETCDIR}/${PORTNAME}.toml.sample" \
+		bin/${PORTNAME}
 
 post-patch:
 	${CP} ${FILESDIR}/modules.txt ${WRKSRC}/vendor
+	@${REINPLACE_CMD} -e '67s#/etc#${ETCDIR}#g' \
+		-e '233s#"etc"#"${ETCDIR}"#g' \
+		${WRKSRC}/internal/config/cli.go
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/example_config.toml \
+		${STAGEDIR}${ETCDIR}/${PORTNAME}.toml.sample
 
 .include <bsd.port.mk>

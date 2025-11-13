@@ -1,0 +1,37 @@
+[
+{ type: install
+  message: <<EOM
+You can use ${PORTNAME} rc.d service and specify arguments for ${PORTNAME} program in rc.conf file like this below or you can use the configuration file located in '%%ETCDIR%%':
+To enable/start ${PORTNAME} service:
+	# service ${PORTNAME} enable
+	# service ${PORTNAME} start
+Now, you can configure your web browser to use this proxy.
+${PORTNAME} listens on port 8080 by default and uses DNS as 8.8.8.8.
+EOM
+}
+{ type: upgrade
+  maximum_version: "0.12.2"
+  message: << EOM
+Some command-line arguments of ${PORTNAME} has been refactored, a few examples:
+	# -addr => -listen-addr, -port => -listen-port and etc.
+See the commit link below or project page for the new documentation.
+	# https://github.com/xvzc/${PORTNAME}/commit/a2993ac68d87a0525a93bc23984d21e341214199
+EOM
+}
+{ type: upgrade
+  maximum_version: "1.0.1"
+  message: << EOM
+A new feature (-fake-https-packets) has been added that adds up a dependency on ${PORTNAME}: libpcap. This feature requires the daemon to be run as root if it is enabled with an argument, it will fail with the default '${PORTNAME}' user, to be able to use it, switch the daemon user to root.
+	# sysrc ${PORTNAME}_user="root"
+EOM
+}
+{ type: upgrade
+  maximum_version: "1.0.2"
+  message: << EOM
+${PORTNAME} now supports configuration files written in TOML, installed in ${ETCDIR} directory with a sample config file.
+Options given through the command-line flags (via rc.conf or as user) will override the options set by the config file.
+You can edit the config via being as root or adding your user to the ${PORTNAME} group (default group).
+Config locations are: $SPOOFDPI_CONFIG environment variable, ${ETCDIR}/${PORTNAME}.toml, $XDG_CONFIG_HOME/${PORTNAME}/${PORTNAME}.toml and $HOME/.config/${PORTNAME}/${PORTNAME}.toml
+EOM
+}
+]

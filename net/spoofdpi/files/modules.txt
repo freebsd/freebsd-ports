@@ -4,6 +4,10 @@
 ## explicit; go 1.15
 # atomicgo.dev/schedule v0.1.0
 ## explicit; go 1.18
+# github.com/BurntSushi/toml v1.5.0
+## explicit; go 1.18
+github.com/BurntSushi/toml
+github.com/BurntSushi/toml/internal
 # github.com/containerd/console v1.0.3
 ## explicit; go 1.13
 # github.com/cpuguy83/go-md2man/v2 v2.0.7
@@ -46,6 +50,7 @@ github.com/pmezard/go-difflib/difflib
 github.com/rs/zerolog
 github.com/rs/zerolog/internal/cbor
 github.com/rs/zerolog/internal/json
+github.com/rs/zerolog/log
 # github.com/russross/blackfriday/v2 v2.1.0
 ## explicit
 # github.com/stretchr/objx v0.5.2
@@ -58,8 +63,11 @@ github.com/stretchr/testify/assert/yaml
 github.com/stretchr/testify/mock
 # github.com/urfave/cli v1.22.17
 ## explicit; go 1.11
+# github.com/urfave/cli-altsrc/v3 v3.1.0
+## explicit; go 1.23.2
 # github.com/urfave/cli/v3 v3.5.0
 ## explicit; go 1.22
+github.com/urfave/cli/v3
 # github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e
 ## explicit; go 1.19
 # golang.org/x/mod v0.18.0
@@ -80,7 +88,6 @@ golang.org/x/sync/errgroup
 ## explicit; go 1.23.0
 golang.org/x/sys/unix
 golang.org/x/sys/windows
-golang.org/x/sys/windows/registry
 # golang.org/x/term v0.30.0
 ## explicit; go 1.23.0
 # golang.org/x/text v0.23.0
