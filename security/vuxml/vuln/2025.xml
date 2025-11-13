@@ -1,11 +1,13 @@
   <vuln vid="5a1d6309-c04a-11f0-85d8-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
+      <package>
 	<name>gitlab-ce</name>
 	<name>gitlab-ee</name>
 	<range><ge>18.5.0</ge><lt>18.5.2</lt></range>
 	<range><ge>18.4.0</ge><lt>18.4.4</lt></range>
 	<range><ge>13.2.0</ge><lt>18.3.6</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
