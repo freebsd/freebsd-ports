@@ -31,6 +31,9 @@ share/dbus-1/system.d/org.kde.kcontrol.kcmlightdm.conf
 %%DATADIR%%/themes/userbar/main.qml
 %%DATADIR%%/themes/userbar/preview.png
 %%DATADIR%%/themes/userbar/theme.desktop
+share/locale/ar/LC_MESSAGES/kcm_lightdm.mo
+share/locale/ar/LC_MESSAGES/lightdm_kde_greeter.mo
+share/locale/ar/LC_MESSAGES/lightdm_theme_userbar.mo
 share/locale/ca/LC_MESSAGES/kcm_lightdm.mo
 share/locale/ca/LC_MESSAGES/lightdm_kde_greeter.mo
 share/locale/ca/LC_MESSAGES/lightdm_theme_userbar.mo
@@ -85,6 +88,9 @@ share/locale/ka/LC_MESSAGES/lightdm_theme_userbar.mo
 share/locale/ko/LC_MESSAGES/kcm_lightdm.mo
 share/locale/ko/LC_MESSAGES/lightdm_kde_greeter.mo
 share/locale/ko/LC_MESSAGES/lightdm_theme_userbar.mo
+share/locale/lt/LC_MESSAGES/kcm_lightdm.mo
+share/locale/lt/LC_MESSAGES/lightdm_kde_greeter.mo
+share/locale/lt/LC_MESSAGES/lightdm_theme_userbar.mo
 share/locale/lv/LC_MESSAGES/kcm_lightdm.mo
 share/locale/lv/LC_MESSAGES/lightdm_kde_greeter.mo
 share/locale/lv/LC_MESSAGES/lightdm_theme_userbar.mo
@@ -96,6 +102,8 @@ share/locale/pl/LC_MESSAGES/kcm_lightdm.mo
 share/locale/pl/LC_MESSAGES/lightdm_kde_greeter.mo
 share/locale/pl/LC_MESSAGES/lightdm_theme_userbar.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_lightdm.mo
+share/locale/pt_BR/LC_MESSAGES/lightdm_kde_greeter.mo
+share/locale/pt_BR/LC_MESSAGES/lightdm_theme_userbar.mo
 share/locale/sa/LC_MESSAGES/kcm_lightdm.mo
 share/locale/sa/LC_MESSAGES/lightdm_kde_greeter.mo
 share/locale/sa/LC_MESSAGES/lightdm_theme_userbar.mo
