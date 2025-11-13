@@ -1,4 +1,4 @@
-DISTVERSION?=	13.22
+DISTVERSION?=	13.23
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
@@ -20,5 +20,8 @@ INSTALL_DIRS?=	src/common src/timezone src/backend \
 PG_USER?=	postgres
 PG_GROUP?=	postgres
 PG_UID?=	770
+
+DEPRECATED=	This is the final release of PostgreSQL 13. PostgreSQL 13 is now end-of-life and will no longer receive security and bug fixes.
+EXPIRATION_DATE=2026-02-12
 
 .include "${.CURDIR}/../postgresql18-server/Makefile"
