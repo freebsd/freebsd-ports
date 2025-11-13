@@ -7,6 +7,7 @@ include/mlt-7/framework/mlt_chain.h
 include/mlt-7/framework/mlt_consumer.h
 include/mlt-7/framework/mlt_deque.h
 include/mlt-7/framework/mlt_events.h
+include/mlt-7/framework/mlt_export.h
 include/mlt-7/framework/mlt_factory.h
 include/mlt-7/framework/mlt_field.h
 include/mlt-7/framework/mlt_filter.h
@@ -252,6 +253,7 @@ share/man/man1/melt-7.1.gz
 %%PLUSGPL%%%%DATADIR%%/plusgpl/consumer_cbrts.yml
 %%PLUSGPL%%%%DATADIR%%/plusgpl/filter_burningtv.yml
 %%PLUSGPL%%%%DATADIR%%/plusgpl/filter_lumaliftgaingamma.yml
+%%PLUSGPL%%%%DATADIR%%/plusgpl/filter_outline.yml
 %%PLUSGPL%%%%DATADIR%%/plusgpl/filter_rotoscoping.yml
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/AAC
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ALAC
