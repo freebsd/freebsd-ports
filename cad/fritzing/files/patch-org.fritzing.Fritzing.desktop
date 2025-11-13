@@ -1,0 +1,11 @@
+--- org.fritzing.Fritzing.desktop.orig	2025-04-02 10:33:24 UTC
++++ org.fritzing.Fritzing.desktop
+@@ -6,7 +6,7 @@ Comment[ru]=Создавайте схемы и вык�
+ Comment=Create circuits and lay out printed circuit boards
+ Comment[fi]=Suunnittele elektronisia kytkentöjä ja piirilevyjä
+ Comment[ru]=Создавайте схемы и выкладывайте печатные платы
+-Exec=Fritzing %F
++Exec=Fritzing -f /usr/local/share/fritzing %F
+ Icon=fritzing
+ Terminal=false
+ Type=Application

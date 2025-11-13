@@ -1,39 +1,53 @@
 PORTNAME=	fritzing
-PORTVERSION=	0.9.2
-DISTVERSIONSUFFIX=	b
-PORTREVISION=	21
+PORTVERSION=	1.0.6
 CATEGORIES=	cad
 
-MAINTAINER=	lenzi.sergio@gmail.com
+MAINTAINER=	kenrap@kennethraplee.com
 COMMENT=	CAD for printed circuit boards
 WWW=		https://fritzing.org/
 
 LICENSE=	GPLv2+
 
-SUB_FILES+=	pkg-install
+BUILD_DEPENDS=	boost-libs>1.52:devel/boost-libs \
+		svgpp>0:graphics/svgpp
 
-USES=		compiler:c++11-lang dos2unix gmake gnome python qmake qt:5 \
-		tar:bzip2
-USE_CXXSTD=	c++14
-USE_QT=		buildtools concurrent core dbus gui imageformats network printsupport qmake serialport sql-sqlite3 svg xml
-DOS2UNIX_REGEX=	.*pro
+LIB_DEPENDS=	libgit2.so:devel/libgit2 \
+		libngspice.so:cad/ngspice_rework@shlib \
+		libpolyclipping.so:graphics/polyclipping \
+		libquazip1-qt6.so:archivers/quazip@qt6
+
+USES=		compiler:c++17-lang desktop-file-utils gl gmake pkgconfig \
+		qmake qt:6 shared-mime-info ssl xorg
+
 USE_GITHUB=	yes
-GH_PROJECT=	fritzing-app fritzing-parts:parts
+GH_PROJECT=	fritzing-app \
+		fritzing-parts:parts
+GH_TAGNAME=	04e5bb0241e8f1de24d0fce9be070041c6d5b68e \
+		12761296fc8bcc53ed481b78e3a99c907d85b18d:parts
 
-PORTDATA=	*
-MAKE_ENV=	INSTALL_ROOT="${STAGEDIR}"
-
-BUILD_DEPENDS+=	boost-libs>1.52:devel/boost-libs
-
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
+USE_CXXSTD=	c++17
+USE_GL=		egl gl opengl
+USE_QT=		base serialport svg tools
+USE_XORG=	x11 xau xcb xdmcp
 
 post-extract:
 	cd ${WRKSRC_parts};\
-	${MKDIR} parts;${MV} -f * parts 2> /dev/null || true;\
-	${MKDIR} pdb;${MV} parts/core pdb;${MKDIR} parts/core;\
-	${MV} ${WRKSRC}/bins .
+		${MKDIR} parts;${MV} -f * parts 2> /dev/null || true;\
+
+post-patch:
+	${REINPLACE_CMD} -e '/CONFIG += debug_and_release/d' ${WRKSRC}/phoenix.pro
+	${REINPLACE_CMD} -e 's|QT_MOST=.*|QT_MOST=${QT6_VERSION}|' ${WRKSRC}/phoenix.pro
+	${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${FILESDIR}/pri_quazipdetect.pri > ${WRKSRC}/pri/quazipdetect.pri
+	${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${FILESDIR}/pri_spicedetect.pri > ${WRKSRC}/pri/spicedetect.pri
+	${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${FILESDIR}/pri_clipper1detect.pri > ${WRKSRC}/pri/clipper1detect.pri
 
 post-install:
-	cd ${WRKSRC_parts}; ${COPYTREE_SHARE} . ${STAGEDIR}${LOCALBASE}/share/fritzing
+	cd ${WRKSRC_parts}; ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	${RM} -r ${STAGEDIR}${DATADIR}/.github
+	${STAGEDIR}${PREFIX}/bin/Fritzing \
+		-db ${STAGEDIR}${DATADIR}/parts/parts.db \
+		-pp ${STAGEDIR}${DATADIR}/parts \
+		-f  ${STAGEDIR}${DATADIR} \
+		-platform offscreen
 
 .include <bsd.port.mk>
